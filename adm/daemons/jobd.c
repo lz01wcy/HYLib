@@ -3,195 +3,208 @@
 inherit F_DBASE;
 #define MPFILE "/data/npc/menpai.o"
 #define MPFILEA "/data/npc/menpai1.o"
+
 void init_creat_job();
+
 void get_job();
+
 void do_clone(mapping target);
-mapping *where=({
-        (["party":        "ÉÙÁÖÅÉ",
-        "where" :         "/d/shaolin/guangchang2",]),
-        (["party":      "Îäµ±ÅÉ",
-        "where" :       "/d/wudang/guangchang",]),
-        (["party":       "ÁéğÕ¹¬",
-        "where" :       "/d/lingjiu/dating",]),
-        (["party":       "»ªÉ½ÅÉ",
-        "where" :       "/d/huashan/qunxianguan",]),
-        (["party":       "Ø¤°ï",
-         "where" :       "/d/city/pomiao",]),
-         (["party":       "´óÀí¶Î¼Ò",
-         "where" :       "/d/dali/wfdating",]),
-       (["party":       "¹ÅÄ¹ÅÉ",
-         "where" :       "/d/gumu/qianting",]),
-              (["party":       "ĞÇËŞÅÉ",
-         "where" :       "/d/xingxiu/xxh2",]),
-               (["party":       "ÉñÁú½Ì",
-         "where" :       "/d/shenlong/dating",]),
-               (["party":       "åĞÒ£ÅÉ",
-         "where" :       "/d/xiaoyao/qingcaop",]),
-               (["party":       "ÌúÕÆ°ï",
-         "where" :       "/d/tiezhang/wztang",]),
-                (["party":       "À¥ÂØÅÉ",
-         "where" :       "/d/kunlun/guangchang",]),
-               (["party":       "ÌÒ»¨µº",
-         "where" :       "/d/taohua/dating",]),
-              (["party":       "°×ÍÕÉ½ÅÉ",
-         "where" :       "/d/baituo/dating",]),
-               (["party":       "Ñ©É½ËÂ",
-         "where" :       "/d/xueshan/dadian",]),
-               (["party":       "È«Õæ½Ì",
-         "where" :       "/d/quanzhen/datang1",]),
-                (["party":       "¹ÃËÕÄ½Èİ",
-         "where" :       "/d/mr/yanziwu",]),
-                (["party":       "ÁèÏö³Ç",
-         "where" :       "/d/lingxiao/dadian",]),
-                (["party":       "Îå¶¾½Ì",
-         "where" :       "/d/wudujiao/dating",]),
-                (["party":       "ÌÆÃÅ",
-         "where" :       "/d/tangmen/liujiantang",]),
-                (["party":       "·ÉÌìÓù½£Á÷",
-         "where" :       "/d/feitian/daochang",]),
 
- });
- 
-mapping *where2=({
-        (["party":        "ÉÙÁÖÅÉ",
-        "where" :         "/d/shaolin/guangchang2",]),
-        (["party":      "Îäµ±ÅÉ",
-        "where" :       "/d/wudang/guangchang",]),
-        (["party":       "ÁéğÕ¹¬",
-        "where" :       "/d/lingjiu/dating",]),
-        (["party":       "»ªÉ½ÅÉ",
-        "where" :       "/d/huashan/qunxianguan",]),
-        (["party":       "Ø¤°ï",
-         "where" :       "/d/city/pomiao",]),
-         (["party":       "´óÀí¶Î¼Ò",
-         "where" :       "/d/dali/wfdating",]),
-       (["party":       "¹ÅÄ¹ÅÉ",
-         "where" :       "/d/gumu/qianting",]),
-              (["party":       "ĞÇËŞÅÉ",
-         "where" :       "/d/xingxiu/xxh2",]),
-               (["party":       "ÉñÁú½Ì",
-         "where" :       "/d/shenlong/dating",]),
-               (["party":       "åĞÒ£ÅÉ",
-         "where" :       "/d/xiaoyao/qingcaop",]),
-               (["party":       "ÌúÕÆ°ï",
-         "where" :       "/d/tiezhang/wztang",]),
-                (["party":       "À¥ÂØÅÉ",
-         "where" :       "/d/kunlun/guangchang",]),
-               (["party":       "ÌÒ»¨µº",
-         "where" :       "/d/guiyun/qianyuan",]),
-              (["party":       "°×ÍÕÉ½ÅÉ",
-         "where" :       "/d/baituo/dating",]),
-               (["party":       "Ñ©É½ËÂ",
-         "where" :       "/d/xueshan/dadian",]),
-               (["party":       "È«Õæ½Ì",
-         "where" :       "/d/quanzhen/datang1",]),
-                (["party":       "¹ÃËÕÄ½Èİ",
-         "where" :       "/d/mr/yanziwu",]),
-                (["party":       "ÁèÏö³Ç",
-         "where" :       "/d/lingxiao/dadian",]),
-                (["party":       "Îå¶¾½Ì",
-         "where" :       "/d/wudujiao/dating",]),
-                (["party":       "ÌÆÃÅ",
-         "where" :       "/d/tangmen/liujiantang",]),
-                (["party":       "·ÉÌìÓù½£Á÷",
-         "where" :       "/d/feitian/daochang",]),
+mapping *where = ({
+    (["party":        "å°‘æ—æ´¾",
+            "where" :         "/d/shaolin/guangchang2",]),
+    (["party":      "æ­¦å½“æ´¾",
+            "where" :       "/d/wudang/guangchang",]),
+    (["party":       "çµé¹«å®«",
+            "where" :       "/d/lingjiu/dating",]),
+    (["party":       "åå±±æ´¾",
+            "where" :       "/d/huashan/qunxianguan",]),
+    (["party":       "ä¸å¸®",
+            "where" :       "/d/city/pomiao",]),
+    (["party":       "å¤§ç†æ®µå®¶",
+            "where" :       "/d/dali/wfdating",]),
+    (["party":       "å¤å¢“æ´¾",
+            "where" :       "/d/gumu/qianting",]),
+    (["party":       "æ˜Ÿå®¿æ´¾",
+            "where" :       "/d/xingxiu/xxh2",]),
+    (["party":       "ç¥é¾™æ•™",
+            "where" :       "/d/shenlong/dating",]),
+    (["party":       "é€é¥æ´¾",
+            "where" :       "/d/xiaoyao/qingcaop",]),
+    (["party":       "é“æŒå¸®",
+            "where" :       "/d/tiezhang/wztang",]),
+    (["party":       "æ˜†ä»‘æ´¾",
+            "where" :       "/d/kunlun/guangchang",]),
+    (["party":       "æ¡ƒèŠ±å²›",
+            "where" :       "/d/taohua/dating",]),
+    (["party":       "ç™½é©¼å±±æ´¾",
+            "where" :       "/d/baituo/dating",]),
+    (["party":       "é›ªå±±å¯º",
+            "where" :       "/d/xueshan/dadian",]),
+    (["party":       "å…¨çœŸæ•™",
+            "where" :       "/d/quanzhen/datang1",]),
+    (["party":       "å§‘è‹æ…•å®¹",
+            "where" :       "/d/mr/yanziwu",]),
+    (["party":       "å‡Œéœ„åŸ",
+            "where" :       "/d/lingxiao/dadian",]),
+    (["party":       "äº”æ¯’æ•™",
+            "where" :       "/d/wudujiao/dating",]),
+    (["party":       "å”é—¨",
+            "where" :       "/d/tangmen/liujiantang",]),
+    (["party":       "é£å¤©å¾¡å‰‘æµ",
+            "where" :       "/d/feitian/daochang",]),
 
- });	
+});
 
-void create()
-{
-        seteuid(getuid());
-        set("channel_id", "ÈÎÎñ¾«Áé");
-        set("id", "JOB");
-        init_creat_job();
-}
-void init_creat_job()
-{
-        CHANNEL_D->do_channel( this_object(), "sys", "ºÆ½ÙÈÎÎñ¼ÓÔØ³É¹¦£¡");
-        remove_call_out("get_job");
-  call_out("get_job",600);
-}
-void get_job()
-{
-        object *obs = users(), ob, robot,killer1,killer2;
-        string ppl;
-        mapping target;
-        string *dir,roomname;
-        object room;
-        int i,j,k,a,b,c;
-        target=where[random(sizeof(where))];
-if (random(2)==0)
-target=where2[random(sizeof(where2))];	
-                j=random(24)+1;
-        robot = clone_object("/quest/haojie/jobnpc/"+j);
-if (robot->query("family/family_name") == target["party"])
-{
-j=random(24)+1;
-robot = clone_object("/quest/haojie/jobnpc/"+j);
-}
-if (robot->query("family/family_name") == target["party"])
-{
-j=random(24)+1;
-robot = clone_object("/quest/haojie/jobnpc/"+j);
+mapping *where2 = ({
+    (["party":        "å°‘æ—æ´¾",
+            "where" :         "/d/shaolin/guangchang2",]),
+    (["party":      "æ­¦å½“æ´¾",
+            "where" :       "/d/wudang/guangchang",]),
+    (["party":       "çµé¹«å®«",
+            "where" :       "/d/lingjiu/dating",]),
+    (["party":       "åå±±æ´¾",
+            "where" :       "/d/huashan/qunxianguan",]),
+    (["party":       "ä¸å¸®",
+            "where" :       "/d/city/pomiao",]),
+    (["party":       "å¤§ç†æ®µå®¶",
+            "where" :       "/d/dali/wfdating",]),
+    (["party":       "å¤å¢“æ´¾",
+            "where" :       "/d/gumu/qianting",]),
+    (["party":       "æ˜Ÿå®¿æ´¾",
+            "where" :       "/d/xingxiu/xxh2",]),
+    (["party":       "ç¥é¾™æ•™",
+            "where" :       "/d/shenlong/dating",]),
+    (["party":       "é€é¥æ´¾",
+            "where" :       "/d/xiaoyao/qingcaop",]),
+    (["party":       "é“æŒå¸®",
+            "where" :       "/d/tiezhang/wztang",]),
+    (["party":       "æ˜†ä»‘æ´¾",
+            "where" :       "/d/kunlun/guangchang",]),
+    (["party":       "æ¡ƒèŠ±å²›",
+            "where" :       "/d/guiyun/qianyuan",]),
+    (["party":       "ç™½é©¼å±±æ´¾",
+            "where" :       "/d/baituo/dating",]),
+    (["party":       "é›ªå±±å¯º",
+            "where" :       "/d/xueshan/dadian",]),
+    (["party":       "å…¨çœŸæ•™",
+            "where" :       "/d/quanzhen/datang1",]),
+    (["party":       "å§‘è‹æ…•å®¹",
+            "where" :       "/d/mr/yanziwu",]),
+    (["party":       "å‡Œéœ„åŸ",
+            "where" :       "/d/lingxiao/dadian",]),
+    (["party":       "äº”æ¯’æ•™",
+            "where" :       "/d/wudujiao/dating",]),
+    (["party":       "å”é—¨",
+            "where" :       "/d/tangmen/liujiantang",]),
+    (["party":       "é£å¤©å¾¡å‰‘æµ",
+            "where" :       "/d/feitian/daochang",]),
+
+});
+
+void create() {
+    seteuid(getuid());
+    set("channel_id", "ä»»åŠ¡ç²¾çµ");
+    set("id", "JOB");
+    init_creat_job();
 }
 
-if (robot->query("family/family_name") != target["party"])
-{
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":ÖÚµÜ×ÓÌıÁî!"NOR"¡£\n", users());
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":Ë³ÎÒÕßÉú£¬ÄæÎÒÕßÍö!"NOR"¡£\n", users());
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":" + target["party"]+"ÓëÎÒÅÉ×ö¶Ô£¬ÕâÒ»´ÎÊÄ±ØÒªÏûÃğ"+target["party"]+"!"NOR"¡£\n", users());
-write_file(MPFILE,sprintf("%s",
-	robot->query("family/family_name")),1);
+void init_creat_job() {
+    CHANNEL_D->do_channel(this_object(), "sys", "æµ©åŠ«ä»»åŠ¡åŠ è½½æˆåŠŸï¼");
+    remove_call_out("get_job");
+    call_out("get_job", 600);
+}
 
-write_file(MPFILEA,sprintf("%s",
-	target["party"]),1);
-a=random(3000000)+1000000;
-b=random(6000)+1800;
-c=random(420)+100;        
+void get_job() {
+    object *obs = users(), ob, robot, killer1, killer2;
+    string ppl;
+    mapping target;
+    string *dir, roomname;
+    object room;
+    int i, j, k, a, b, c;
+    target = where[random(sizeof(where))];
+    if (random(2) == 0)
+        target = where2[random(sizeof(where2))];
+    j = random(24) + 1;
+    robot = clone_object("/quest/haojie/jobnpc/" + j);
+    if (robot->query("family/family_name") == target["party"]) {
+        j = random(24) + 1;
+        robot = clone_object("/quest/haojie/jobnpc/" + j);
+    }
+    if (robot->query("family/family_name") == target["party"]) {
+        j = random(24) + 1;
+        robot = clone_object("/quest/haojie/jobnpc/" + j);
+    }
+
+    if (robot->query("family/family_name") != target["party"]) {
+        message("channel:chat", HIC
+        "\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘" + robot->query("family/family_name") + ":ä¼—å¼Ÿå­å¬ä»¤!"
+        NOR
+        "ã€‚\n", users());
+        message("channel:chat", HIC
+        "\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘" + robot->query("family/family_name") + ":é¡ºæˆ‘è€…ç”Ÿï¼Œé€†æˆ‘è€…äº¡!"
+        NOR
+        "ã€‚\n", users());
+        message("channel:chat", HIC
+        "\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘" + robot->query("family/family_name") + ":" + target["party"] + "ä¸æˆ‘æ´¾åšå¯¹ï¼Œè¿™ä¸€æ¬¡èª“å¿…è¦æ¶ˆç­" + target["party"] +
+        "!"
+        NOR
+        "ã€‚\n", users());
+        write_file(MPFILE, sprintf("%s",
+                                   robot->query("family/family_name")), 1);
+
+        write_file(MPFILEA, sprintf("%s",
+                                    target["party"]), 1);
+        a = random(3000000) + 1000000;
+        b = random(6000) + 1800;
+        c = random(420) + 100;
         remove_call_out("do_dest");
-        call_out("do_dest",800,robot);
-        for(k=0;k<=7;k++)
-        {
-                killer1=clone_object("/quest/haojie/jobnpc/"+j);
-                killer1->set("hated",target["party"]);
-                if( room = find_object(target["where"]+".c")){
-                        CHANNEL_D->do_channel( this_object(), "sys","²éÕÒ³É¹¦£¬Ä¿Ç°"+killer1->query("name")+"ÔÚ"+file_name(room)+"\n");
-                killer1=clone_object("/quest/haojie/jobnpc/"+j);
-                killer1->set("hated",target["party"]);
-                killer1->set("combat_exp",a);
-                killer1->set("max_qi",b);
-                killer1->set("qi",b);
-                killer1->set("max_jing",b);
-                killer1->set("jing",b);
-                killer1->set("max_neili",b*2);
-                killer1->set("neili",b*2);
+        call_out("do_dest", 800, robot);
+        for (k = 0; k <= 7; k++) {
+            killer1 = clone_object("/quest/haojie/jobnpc/" + j);
+            killer1->set("hated", target["party"]);
+            if (room = find_object(target["where"] + ".c")) {
+                CHANNEL_D->do_channel(this_object(), "sys",
+                                      "æŸ¥æ‰¾æˆåŠŸï¼Œç›®å‰" + killer1->query("name") + "åœ¨" + file_name(room) + "\n");
+                killer1 = clone_object("/quest/haojie/jobnpc/" + j);
+                killer1->set("hated", target["party"]);
+                killer1->set("combat_exp", a);
+                killer1->set("max_qi", b);
+                killer1->set("qi", b);
+                killer1->set("max_jing", b);
+                killer1->set("jing", b);
+                killer1->set("max_neili", b * 2);
+                killer1->set("neili", b * 2);
                 killer1->move(room);
                 killer1->random_move();
-                }else if(room = load_object(target["where"]+".c")){
-                        CHANNEL_D->do_channel( this_object(), "sys","²éÕÒ³É¹¦£¬Ä¿Ç°"+killer1->query("name")+"ÔÚ"+file_name(room)+"\n");
-                killer1=clone_object("/quest/haojie/jobnpc/"+j);
-                killer1->set("hated",target["party"]);
-                killer1->set("combat_exp",a);
-                killer1->set("max_qi",b);
-                killer1->set("qi",b);
-                killer1->set("max_jing",b);
-                killer1->set("jing",b);
-                killer1->set("max_neili",b*2);
-                killer1->set("neili",b*2);
+            } else if (room = load_object(target["where"] + ".c")) {
+                CHANNEL_D->do_channel(this_object(), "sys",
+                                      "æŸ¥æ‰¾æˆåŠŸï¼Œç›®å‰" + killer1->query("name") + "åœ¨" + file_name(room) + "\n");
+                killer1 = clone_object("/quest/haojie/jobnpc/" + j);
+                killer1->set("hated", target["party"]);
+                killer1->set("combat_exp", a);
+                killer1->set("max_qi", b);
+                killer1->set("qi", b);
+                killer1->set("max_jing", b);
+                killer1->set("jing", b);
+                killer1->set("max_neili", b * 2);
+                killer1->set("neili", b * 2);
                 killer1->move(room);
                 killer1->random_move();
-                }
+            }
         }
-}
+    }
 }
 
-void do_dest(object robot)
-{
-        object *obj=users(),ob;
-       int i;
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":ºß£¬Õâ´Î¾ÍÏÈ·ÅÄãÃÇÒ»Âí£¬ÏÂ´ÎÒ»¶¨É±µÃÄãÃÇ¼¦È®²»Áô£¡"NOR"¡£\n", users());
-//        CHANNEL_D->do_channel(robot, "chat",HIR"ºß£¬Õâ´Î¾ÍÏÈ·ÅÄãÃÇÒ»Âí£¬ÏÂ´ÎÒ»¶¨É±µÃÄãÃÇ¼¦È®²»Áô£¡"NOR);
-        destruct(robot);
-        remove_call_out("get_job");
-        call_out("get_job",1800);
+void do_dest(object robot) {
+    object *obj = users(), ob;
+    int i;
+    message("channel:chat", HIC
+    "\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘" + robot->query("family/family_name") + ":å“¼ï¼Œè¿™æ¬¡å°±å…ˆæ”¾ä½ ä»¬ä¸€é©¬ï¼Œä¸‹æ¬¡ä¸€å®šæ€å¾—ä½ ä»¬é¸¡çŠ¬ä¸ç•™ï¼"
+    NOR
+    "ã€‚\n", users());
+//        CHANNEL_D->do_channel(robot, "chat",HIR"å“¼ï¼Œè¿™æ¬¡å°±å…ˆæ”¾ä½ ä»¬ä¸€é©¬ï¼Œä¸‹æ¬¡ä¸€å®šæ€å¾—ä½ ä»¬é¸¡çŠ¬ä¸ç•™ï¼"NOR);
+    destruct(robot);
+    remove_call_out("get_job");
+    call_out("get_job", 1800);
 }

@@ -7,181 +7,142 @@
 #include <weapon.h>
 
 
-
-
 inherit BLADE;
 inherit F_CLEAN_UP;
 
 
-
-
-void init()
-{
-        add_action("do_aim","aim");
-        add_action("do_fire","fire");
-	add_action("do_moto","moto");
-	add_action("do_spy","spy");
+void init() {
+    add_action("do_aim", "aim");
+    add_action("do_fire", "fire");
+    add_action("do_moto", "moto");
+    add_action("do_spy", "spy");
 }
 
 
+void create() {
+    set_name("è¿·ä½ æœºå…³æª", ({ "qiang", "gun", "temp" }));
 
 
-void create()
-{
-        set_name("ÃÔÄã»ú¹ØÇ¹", ({ "qiang", "gun","temp"}) );
-
-
-
-
-        set_weight(1000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("unit", "°Ñ");
-                set("bullet", 10000);
-		set("value", 0);
-                set("material", "steel");
-                set("long", "ÕâÊÇÒ»°Ñ°¢ÅµÓÃ¹ıµÄÃÔÄã»ú¹ØÇ¹¡£\n");
-                set("wield_msg", "$N¶Ë³öÒ»°Ñ$n£¬È¡³öÒ»Ïä×Óµ¯¿¸ÔÚ¼çÉÏ¡£\n");
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞ$n£¬È¡ÏÂ×Óµ¯Ïä¡£\n");
-        }
-        init_blade(100);
-        setup();
+    set_weight(1000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "æŠŠ");
+        set("bullet", 10000);
+        set("value", 0);
+        set("material", "steel");
+        set("long", "è¿™æ˜¯ä¸€æŠŠé˜¿è¯ºç”¨è¿‡çš„è¿·ä½ æœºå…³æªã€‚\n");
+        set("wield_msg", "$Nç«¯å‡ºä¸€æŠŠ$nï¼Œå–å‡ºä¸€ç®±å­å¼¹æ‰›åœ¨è‚©ä¸Šã€‚\n");
+        set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­$nï¼Œå–ä¸‹å­å¼¹ç®±ã€‚\n");
+    }
+    init_blade(100);
+    setup();
 }
 
 
+int do_spy(string arg) {
+    object me, ob;
+    mapping mine;
+    string line;
+    int basic_data;
 
 
-int do_spy(string arg)
-{	
-	object me,ob;
-	mapping mine;
-	string line;
-	int basic_data;
+    me = this_player();
 
 
+    if (!arg)
+        ob = me;
+    else if (wizardp(me)) {
+        ob = present(arg, environment(me));
+        if (!ob) ob = find_player(arg);
+        if (!ob) ob = find_living(arg);
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
+    } else
+        return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹åˆ«äººçš„çŠ¶æ€ã€‚\n");
+
+    mine = ob->query_entire_dbase();
+    line = sprintf("\n-------å…ˆå¤©èµ„è´¨-------\n");
+    line += sprintf(
+            " è†‚åŠ›ï¼š[%s]  æ‚Ÿæ€§ï¼š[%s]  æ ¹éª¨ï¼š[%s]  èº«æ³•ï¼š[%s]\n\n",
+            sprintf("%3d", mine["str"]),
+            sprintf("%3d", mine["int"]),
+            sprintf("%3d", mine["con"]),
+            sprintf("%3d", mine["dex"]));
+    line += sprintf("-------åå¤©èµ„è´¨-------\n");
+    line += sprintf(
+            " è†‚åŠ›ï¼š[%s]  æ‚Ÿæ€§ï¼š[%s]  æ ¹éª¨ï¼š[%s]  èº«æ³•ï¼š[%s]\n\n",
+            sprintf("%3d", ob->query_str()),
+            sprintf("%3d", ob->query_int()),
+            sprintf("%3d", ob->query_con()),
+            sprintf("%3d", ob->query_dex()));
 
 
-	me = this_player();
+    basic_data = mine["str"] + mine["int"] + mine["con"] + mine["dex"];
+    if (basic_data > 80)
+        line += sprintf(HIY
+    "å…ˆå¤©èµ„è´¨å¼‚å¸¸, %3d - 80 = %3d\n\n"
+    NOR, basic_data, (basic_data - 80));
+
+    write(line);
 
 
-
-
-	if(!arg)
-		ob = me;
-	else if (wizardp(me)) {
-		ob = present(arg, environment(me));
-		if (!ob) ob = find_player(arg);
-		if (!ob) ob = find_living(arg);
-		if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
-	} else
-		return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
-	
-	mine = ob->query_entire_dbase();
-	line = sprintf("\n-------ÏÈÌì×ÊÖÊ-------\n");
-	line += sprintf(
-			" ëöÁ¦£º[%s]  ÎòĞÔ£º[%s]  ¸ù¹Ç£º[%s]  Éí·¨£º[%s]\n\n", 
-			sprintf("%3d",mine["str"]),
-			sprintf("%3d",mine["int"]),
-			sprintf("%3d",mine["con"]),
-			sprintf("%3d",mine["dex"]));
-	line += sprintf("-------ºóÌì×ÊÖÊ-------\n");
-	line += sprintf(
-			" ëöÁ¦£º[%s]  ÎòĞÔ£º[%s]  ¸ù¹Ç£º[%s]  Éí·¨£º[%s]\n\n", 
-			sprintf("%3d",ob->query_str()),
-			sprintf("%3d",ob->query_int()),
-			sprintf("%3d",ob->query_con()),
-			sprintf("%3d",ob->query_dex()));
-
-
-
-
-	basic_data = mine["str"] + mine["int"] + mine["con"] + mine["dex"];
-	if(basic_data > 80)
- 	  line += sprintf(HIY "ÏÈÌì×ÊÖÊÒì³£, %3d - 80 = %3d\n\n" NOR,basic_data,(basic_data-80));
-			
-	write(line); 
-
-
-
-
-	return 1;
+    return 1;
 }
 
 
+int do_moto(string arg) {
+    object me, obj;
+    if (!arg)
+        return notify_fail("ä½ æƒ³å»å“ªï¼Ÿ\n");
 
 
-int do_moto(string arg)
-{
-	object me, obj;
-      if( !arg )
-                return notify_fail("ÄãÏëÈ¥ÄÄ£¿\n");
+    obj = find_player(arg);
+    if (!obj) {
+        return notify_fail("ä»–ç°åœ¨ä¸åœ¨æ¸¸æˆä¸­\n");
+    }
+    me = this_player();
+    me->move(environment(obj));
 
-
-
-
-	obj = find_player(arg);
-	if (!obj)  
-	{
- 		return notify_fail("ËûÏÖÔÚ²»ÔÚÓÎÏ·ÖĞ\n");
-	}
-	me = this_player();
-	me->move(environment(obj));
-	
-	return 1;
+    return 1;
 }
-	
 
 
+int do_aim(string arg) {
+    object me, obj;
 
 
-int do_aim(string arg)
-{
-        object me, obj;
+    me = this_player();
+    if (!wizardp(me)) return notify_fail("å°±ä½ ä¹Ÿæƒ³ç”¨é˜¿è¯ºçš„æªï¼Œå›å»å…ˆç»ƒå‡ ç™¾å¹´å“‘é“ƒå§!\n");
 
 
+    if (!arg)
+        return notify_fail("ä½ æƒ³æ€è°ï¼Ÿ\n");
 
 
-        me = this_player();
-        if ( !wizardp(me) ) return notify_fail("¾ÍÄãÒ²ÏëÓÃ°¢ÅµµÄÇ¹£¬»ØÈ¥ÏÈÁ·¼¸°ÙÄêÑÆÁå°É!\n");
+    if (!objectp(obj = present(arg, environment(me))))
+        return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 
+    if (!obj->is_character() || obj->is_corpse())
+        return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
 
-        if( !arg )
-                return notify_fail("ÄãÏëÉ±Ë­£¿\n");
-
-
-
-
-        if(!objectp(obj = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
-
-
-
-
-        if( !obj->is_character() || obj->is_corpse() )
-               return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
-
-
-
-
-        if(obj == me)
-                return notify_fail("ÓÃ suicide Ö¸Áî»á±È½Ï¿ì:P¡£\n");
+    if (obj == me)
+        return notify_fail("ç”¨ suicide æŒ‡ä»¤ä¼šæ¯”è¾ƒå¿«:Pã€‚\n");
 /*-------
-        message_vision(HIY "\n$N¾ÙÆğÃÔÄã»ú¹ØÇ¹£¬Ô¶Ô¶µØÃé×¼$n£¬½Ó×Å¡¸¿Ë¡¹µØÒ»Éù£¬°Ñ×Óµ¯ÉÏÌÅ¡£ \n\n"NOR, 
+        message_vision(HIY "\n$Nä¸¾èµ·è¿·ä½ æœºå…³æªï¼Œè¿œè¿œåœ°ç„å‡†$nï¼Œæ¥ç€ã€Œå…‹ã€åœ°ä¸€å£°ï¼ŒæŠŠå­å¼¹ä¸Šè†›ã€‚ \n\n"NOR, 
                        me, obj);
 
 
 
 
-        message_vision(HIR "\n$N¶Ô×¼$n¿Û¶¯ÁË°â»ú£¡£¡£¡\nÖ»Ìı¡¸ßÕßÕ¡¹µØÒ»Õó¾ŞÏì£¬$n±»´òµÃÏë·äÎÑÒ»Ñù£¬ÂıÂıµØµ¹ÔÚÑª²´ÖĞ¡£\n\n"NOR,
+        message_vision(HIR "\n$Nå¯¹å‡†$næ‰£åŠ¨äº†æ‰³æœºï¼ï¼ï¼\nåªå¬ã€Œå“’å“’ã€åœ°ä¸€é˜µå·¨å“ï¼Œ$nè¢«æ‰“å¾—æƒ³èœ‚çªä¸€æ ·ï¼Œæ…¢æ…¢åœ°å€’åœ¨è¡€æ³Šä¸­ã€‚\n\n"NOR,
                        me, obj);
 
 
 
 
-        tell_object(obj, HIR "\nÄãÃÍ¾õ»ëÉíÈç»ğÉÕ°ã¾çÍ´£¬ÉñÖ¾ÃÔÀ§£¬Í·ÄÔÖĞÒ»Æ¬¿Õ°×£¡\n" NOR);
+        tell_object(obj, HIR "\nä½ çŒ›è§‰æµ‘èº«å¦‚ç«çƒ§èˆ¬å‰§ç—›ï¼Œç¥å¿—è¿·å›°ï¼Œå¤´è„‘ä¸­ä¸€ç‰‡ç©ºç™½ï¼\n" NOR);
 ------------------*/
 
 
@@ -192,7 +153,7 @@ int do_aim(string arg)
 
 
 
-	me = find_player("rgod");
+    me = find_player("rgod");
 
 
 
@@ -202,88 +163,71 @@ int do_aim(string arg)
 
 
 
-	obj->set("qi",-1);
-	obj->set("jing",-1);
-		obj->fight_ob(me);
-		me->fight_ob(obj);
+    obj->set("qi", -1);
+    obj->set("jing", -1);
+    obj->fight_ob(me);
+    me->fight_ob(obj);
 
 
-
-
-		me->set("jing",3000);
-		me->set("eff_jing",3000);
-		me->set("qi",1000);
-		me->set("eff_qi",1000);
-        return 1;
+    me->set("jing", 3000);
+    me->set("eff_jing", 3000);
+    me->set("qi", 1000);
+    me->set("eff_qi", 1000);
+    return 1;
 }
 
 
+int do_fire() {
+    object me;
+    object *obj;
+    int i;
+
+    me = this_player();
+    if (!wizardp(me)) return notify_fail("å°±ä½ ä¹Ÿæƒ³ç”¨é˜¿è¯ºçš„æªï¼Œå›å»å…ˆç»ƒå‡ ç™¾å¹´å“‘é“ƒå§!\n");
+    obj = all_inventory(environment(me));
 
 
-int do_fire()
-{
-        object me;
-        object* obj;
-        int i;
-	  
-	  me = this_player();
-        if ( !wizardp(me) ) return notify_fail("¾ÍÄãÒ²ÏëÓÃ°¢ÅµµÄÇ¹£¬»ØÈ¥ÏÈÁ·¼¸°ÙÄêÑÆÁå°É!\n");
-        obj = all_inventory(environment(me));
-
-
-
-
-	  me = find_player("rgod");  /* Ç¿ÖÃ me == "rgod" */
+    me = find_player("rgod");  /* å¼ºç½® me == "rgod" */
 
 
 
 
-         for(i=0; i<sizeof(obj); i++) {
+    for (i = 0; i < sizeof(obj); i++) {
 
 
+        if (obj[i] == me) continue;
 
 
-         if( obj[i]==me ) continue;
-
-
-
-
-         if( !obj[i]->is_character() || obj[i]->is_corpse() ) continue;
+        if (!obj[i]->is_character() || obj[i]->is_corpse()) continue;
 /*
-//         message_vision(HIR //"\n$N¶Ô×¼$n¿Û¶¯ÁË°â»ú£¡£¡£¡\nÖ»Ìı¡¸ßÕßÕ¡¹µØÒ»Õó¾ŞÏì£¬$n±»´òµÃÏë·äÎÑÒ»Ñù£¬ÂıÂıµØµ¹ÔÚÑª²´ÖĞ¡£\n\//n"NOR,
+//         message_vision(HIR //"\n$Nå¯¹å‡†$næ‰£åŠ¨äº†æ‰³æœºï¼ï¼ï¼\nåªå¬ã€Œå“’å“’ã€åœ°ä¸€é˜µå·¨å“ï¼Œ$nè¢«æ‰“å¾—æƒ³èœ‚çªä¸€æ ·ï¼Œæ…¢æ…¢åœ°å€’åœ¨è¡€æ³Šä¸­ã€‚\n\//n"NOR,
 //                        me, obj[i]);
 //
-//         tell_object(obj[i], HIR"\nÄã¾õµÃ»ëÉíÈç»ğÉÕ°ã¾çÍ´£¬ÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¬Í·ÄÔÖĞÒ»Æ¬¿Õ°×¡£ //\n"NOR);
+//         tell_object(obj[i], HIR"\nä½ è§‰å¾—æµ‘èº«å¦‚ç«çƒ§èˆ¬å‰§ç—›ï¼Œçœ¼å‰ä¸€é˜µé‡‘æ˜Ÿä¹±å†’ï¼Œå¤´è„‘ä¸­ä¸€ç‰‡ç©ºç™½ã€‚ //\n"NOR);
 //  
 //                         
 //         obj[i]->die();
 */
 //      	if ( wizardp(obj[i]) ) obj[i]->set("env/immortal",0);
-  
-	    	if ( wizardp(obj[i]) ) obj[i]->set("env/invisibility",0);
+
+        if (wizardp(obj[i])) obj[i]->set("env/invisibility", 0);
 
 
+        obj[i]->set("qi", -1);
+        obj[i]->set("jing", -1);
+        obj[i]->fight_ob(me);
+        me->fight_ob(obj[i]);
 
 
-		obj[i]->set("qi",-1);
-		obj[i]->set("jing",-1);
-		obj[i]->fight_ob(me);
-		me->fight_ob(obj[i]);
+        me->set("jing", 3000);
+        me->set("eff_jing", 3000);
+        me->set("qi", 1000);
+        me->set("eff_qi", 1000);
+//      if ( wizardp(obj[i]) ) obj[i]->set("env/immortal",1);   /*æ¢å¤*/
+    }
 
 
-
-
-		me->set("jing",3000);
-		me->set("eff_jing",3000);
-		me->set("qi",1000);
-		me->set("eff_qi",1000);
-//      if ( wizardp(obj[i]) ) obj[i]->set("env/immortal",1);   /*»Ö¸´*/
-		}
-
-
-
-
-        return 1;
+    return 1;
 }
 
 

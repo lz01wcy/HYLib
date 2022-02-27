@@ -3,426 +3,404 @@
 inherit F_DBASE;
 inherit F_SAVE;
 
-static mapping wiz_status=([]);//
+static mapping wiz_status =
+([]);//
 
 string *wiz_levels = ({
-        "(player)",
-        "(immortal)",
-        "(apprentice)",
-        "(wizard)",
-        "(arch)",
-        "(admin)",
- });
+    "(player)",
+            "(immortal)",
+            "(apprentice)",
+            "(wizard)",
+            "(arch)",
+            "(admin)",
+});
 
-//³õÊ¼ÉèÖÃÎª¿Õ£¬È»ºóÔÚcreate()µÄÊ±ºò´ÓÊı¾İÎÄ¼şÀï¶ÁÈ¡½øÀ´
-static mapping trusted_write = ([]);
-mapping exclude_write = ([]);
-static mapping trusted_read = ([]);
-static mapping exclude_read = ([]);
+//åˆå§‹è®¾ç½®ä¸ºç©ºï¼Œç„¶ååœ¨create()çš„æ—¶å€™ä»æ•°æ®æ–‡ä»¶é‡Œè¯»å–è¿›æ¥
+static mapping trusted_write =
+([]);
+mapping exclude_write =
+([]);
+static mapping trusted_read =
+([]);
+static mapping exclude_read =
+([]);
 
-string query_save_file()
-{
-        return __DIR__"securd.o";
+string query_save_file() {
+    return __DIR__
+    "securd.o";
 }
 
-void restore_list()
-{
-        //Õâ¸öº¯Êı²»¿ÉÒÔµ÷ÓÃmodify_access_list()£¬·ñÔòÔì³ÉËÀÑ­»·£¡
-        string *t_read,*t_write;
-        string *e_read,*e_write;
-        //Ô¤ÏÈÁô¸öÃÅ£¬²»È»ÎŞ·¨¸øÏµÍ³Ôö¼ÓÎ×Ê¦£¬µ«ÊÇÒ»¶¨Òª±£Ö¤¹ÜÀíÕß×îÏÈ»ñÈ¡Õâ¸öID
-           set("wiz_status/hxsd","(admin)");
-        // "/" ÊÇ±È½ÏÌØÊâµÄÄ¿Â¼£¬Ò»¶¨ÒªÔÊĞíRootºÍ(admin)¶ÁÈ¡ºÍĞ´Èë£¡
-        // µ«ÊÇÍ¬Ê±»¹Òª×¢ÒâÓĞÒ»Ğ©ÉèÖÃÊÇ²»ÔÊĞíexcludeµÄ£¬±ÈÈçRoot¶Ô/µÄ¶ÁĞ´£¬Domain¶Ô/dµÄ¶ÁÈ¡µÈµÈ
-        // ÕâĞ©Ó¦¸ÃÓÃ´úÂë¿ØÖÆ²»¿É¸Ä±ä£¬È»ºóÔÚÕâ¸ö×îĞ¡»¯µÄ¿ÉÆô¶¯ÉèÖÃÉÏÈÃadmin×öÁé»îµÄÈ¨ÏŞ·ÖÅä£¡
-        // ÁíÍâËÄ¸öÊôĞÔ±í¶¼²»¿ÉÒÔÎª¿Õ£¬·ñÔòÔÚvalid_readºÍvalid_writeÀï¼ì²éÊ±½«»á³ö´í£¡ËùÒÔ×îºÃÔÚ
-        // ÕâÀïÔö¼ÓÒ»Ğ©Ä¬ÈÏµÄÖµ!exclude±¾ÎŞĞëÄ¬ÈÏÉèÖÃ£¬µ«ÊÇ¿ÉÒÔ¶¨ÒåÉÏ(player)²»¿ÉÒÔ¶ÁĞ´"/"£¬¾¡¹Ü
-        // Õâ¸ö±¾À´¾Í²»ÔÊĞíµÄ£¡(ËäÈ»¶àÓà£¬È´²¢·Ç»­ÉßÌí×ã£¡)
-        t_read=query("trusted_read/\n");
-        t_write=query("trusted_write/\n");
-        if(sizeof(t_read))
-        {
-                t_read=t_read - ({ROOT_UID});
-                t_read=t_read - ({"(admin)"});
-                t_read=t_read + ({ROOT_UID,"(admin)"});
-        }
-        else
-                t_read=({ROOT_UID,"(admin)"});
-        if(sizeof(t_write))
-        {
-                t_write=t_write - ({ROOT_UID});
-                t_write=t_write - ({"(admin)"});
-                t_write=t_write + ({ROOT_UID,"(admin)"});
-        }
-        else
-                t_write=({ROOT_UID,"(admin)"});
-        set("trusted_read/\n",t_read);
-        set("trusted_write/\n",t_write);
-        
-        e_read=query("exclude_read/\n");
-        e_write=query("exclude_write/\n");
-        if(sizeof(e_read))
-        {
-                e_read=e_read - ({"(player)"});
-                e_read=e_read + ({"(player)"});
-        }
-        else
-                e_read=({"(player)"});
-        if(sizeof(e_write))
-        {
-                e_write=e_write - ({"(player)"});
-                e_write=e_write + ({"(player)"});
-        }
-        else
-                e_write=({"(player)"});
-        set("exclude_read/\n",e_read);
-        set("exclude_write/\n",e_write);
-        
-        wiz_status = query("wiz_status");
-        trusted_write = query("trusted_write");
-        trusted_read = query("trusted_read");
-        exclude_write = query("exclude_write");
-        exclude_read = query("exclude_read");
-        return ;
+void restore_list() {
+    //è¿™ä¸ªå‡½æ•°ä¸å¯ä»¥è°ƒç”¨modify_access_list()ï¼Œå¦åˆ™é€ æˆæ­»å¾ªç¯ï¼
+    string *t_read, *t_write;
+    string *e_read, *e_write;
+    //é¢„å…ˆç•™ä¸ªé—¨ï¼Œä¸ç„¶æ— æ³•ç»™ç³»ç»Ÿå¢åŠ å·«å¸ˆï¼Œä½†æ˜¯ä¸€å®šè¦ä¿è¯ç®¡ç†è€…æœ€å…ˆè·å–è¿™ä¸ªID
+    set("wiz_status/hxsd", "(admin)");
+    // "/" æ˜¯æ¯”è¾ƒç‰¹æ®Šçš„ç›®å½•ï¼Œä¸€å®šè¦å…è®¸Rootå’Œ(admin)è¯»å–å’Œå†™å…¥ï¼
+    // ä½†æ˜¯åŒæ—¶è¿˜è¦æ³¨æ„æœ‰ä¸€äº›è®¾ç½®æ˜¯ä¸å…è®¸excludeçš„ï¼Œæ¯”å¦‚Rootå¯¹/çš„è¯»å†™ï¼ŒDomainå¯¹/dçš„è¯»å–ç­‰ç­‰
+    // è¿™äº›åº”è¯¥ç”¨ä»£ç æ§åˆ¶ä¸å¯æ”¹å˜ï¼Œç„¶ååœ¨è¿™ä¸ªæœ€å°åŒ–çš„å¯å¯åŠ¨è®¾ç½®ä¸Šè®©adminåšçµæ´»çš„æƒé™åˆ†é…ï¼
+    // å¦å¤–å››ä¸ªå±æ€§è¡¨éƒ½ä¸å¯ä»¥ä¸ºç©ºï¼Œå¦åˆ™åœ¨valid_readå’Œvalid_writeé‡Œæ£€æŸ¥æ—¶å°†ä¼šå‡ºé”™ï¼æ‰€ä»¥æœ€å¥½åœ¨
+    // è¿™é‡Œå¢åŠ ä¸€äº›é»˜è®¤çš„å€¼!excludeæœ¬æ— é¡»é»˜è®¤è®¾ç½®ï¼Œä½†æ˜¯å¯ä»¥å®šä¹‰ä¸Š(player)ä¸å¯ä»¥è¯»å†™"/"ï¼Œå°½ç®¡
+    // è¿™ä¸ªæœ¬æ¥å°±ä¸å…è®¸çš„ï¼(è™½ç„¶å¤šä½™ï¼Œå´å¹¶éç”»è›‡æ·»è¶³ï¼)
+    t_read = query("trusted_read/\n");
+    t_write = query("trusted_write/\n");
+    if (sizeof(t_read)) {
+        t_read = t_read - ({ ROOT_UID });
+        t_read = t_read - ({ "(admin)" });
+        t_read = t_read + ({ ROOT_UID, "(admin)" });
+    } else
+        t_read = ({ ROOT_UID, "(admin)" });
+    if (sizeof(t_write)) {
+        t_write = t_write - ({ ROOT_UID });
+        t_write = t_write - ({ "(admin)" });
+        t_write = t_write + ({ ROOT_UID, "(admin)" });
+    } else
+        t_write = ({ ROOT_UID, "(admin)" });
+    set("trusted_read/\n", t_read);
+    set("trusted_write/\n", t_write);
+
+    e_read = query("exclude_read/\n");
+    e_write = query("exclude_write/\n");
+    if (sizeof(e_read)) {
+        e_read = e_read - ({ "(player)" });
+        e_read = e_read + ({ "(player)" });
+    } else
+        e_read = ({ "(player)" });
+    if (sizeof(e_write)) {
+        e_write = e_write - ({ "(player)" });
+        e_write = e_write + ({ "(player)" });
+    } else
+        e_write = ({ "(player)" });
+    set("exclude_read/\n", e_read);
+    set("exclude_write/\n", e_write);
+
+    wiz_status = query("wiz_status");
+    trusted_write = query("trusted_write");
+    trusted_read = query("trusted_read");
+    exclude_write = query("exclude_write");
+    exclude_read = query("exclude_read");
+    return;
 }
 
-void save_list()
-{
-        set("trusted_write",trusted_write);
-        set("trusted_read",trusted_read);
-        set("exclude_write",exclude_write);
-        set("exclude_read",exclude_read);
-        return ;
+void save_list() {
+    set("trusted_write", trusted_write);
+    set("trusted_read", trusted_read);
+    set("exclude_write", exclude_write);
+    set("exclude_read", exclude_read);
+    return;
 }
 
-int save()
-{
-        save_list();
-        return ::save();
+int save() {
+    save_list();
+    return ::save();
 }
 
-//ÓÃ»§½Ó¿Ú³ÌĞò£¬¸ºÔğÊä³öÈ¨ÏŞÁĞ±í£¡
-string print_access_list(object user,string type)
-{
-        string str,file,*acc;
-        if(wiz_level(user)<wiz_level("(admin)"))
-                return "È¨ÏŞ²»¹»ÎŞ·¨¶ÁÈ¡Access_List!\n";
-        str="È¨ÏŞ·ÖÅä±íÈçÏÂ£º\n";
-        if(type=="all"||type=="exclude_read")
+//ç”¨æˆ·æ¥å£ç¨‹åºï¼Œè´Ÿè´£è¾“å‡ºæƒé™åˆ—è¡¨ï¼
+string print_access_list(object user, string type) {
+    string str, file, *acc;
+    if (wiz_level(user) < wiz_level("(admin)"))
+        return "æƒé™ä¸å¤Ÿæ— æ³•è¯»å–Access_List!\n";
+    str = "æƒé™åˆ†é…è¡¨å¦‚ä¸‹ï¼š\n";
+    if (type == "all" || type == "exclude_read") {
+        str += "ä¸å¯è¯»>>\n";
+        if (sizeof(exclude_read))
+            foreach(file
+        in
+        keys(exclude_read))
         {
-                str+="²»¿É¶Á>>\n";
-                if(sizeof(exclude_read))
-                        foreach(file in keys(exclude_read))
-                        {
-                                acc=exclude_read[file];
-                                file=replace_string(file,"\n","/");
-                                str+=file+"\t: "+implode(acc,",")+"\n";
-                        }
+            acc = exclude_read[file];
+            file = replace_string(file, "\n", "/");
+            str += file + "\t: " + implode(acc, ",") + "\n";
         }
-        if(type=="all"||type=="trusted_read")
+    }
+    if (type == "all" || type == "trusted_read") {
+        str += "å¯è¯»>>\n";
+        if (sizeof(trusted_read))
+            foreach(file
+        in
+        keys(trusted_read))
         {
-                str+="¿É¶Á>>\n";
-                if(sizeof(trusted_read))
-                        foreach(file in keys(trusted_read))
-                        {
-                                acc=trusted_read[file];
-                                file=replace_string(file,"\n","/");
-                                str+=file+"\t: "+implode(acc,",")+"\n";
-                        }
+            acc = trusted_read[file];
+            file = replace_string(file, "\n", "/");
+            str += file + "\t: " + implode(acc, ",") + "\n";
         }
-        if(type=="all"||type=="exclude_write")
+    }
+    if (type == "all" || type == "exclude_write") {
+        str += "ä¸å¯å†™>>\n";
+        if (sizeof(exclude_write))
+            foreach(file
+        in
+        keys(exclude_write))
         {
-                str+="²»¿ÉĞ´>>\n";
-                if(sizeof(exclude_write))
-                        foreach(file in keys(exclude_write))
-                        {
-                                acc=exclude_write[file];
-                                file=replace_string(file,"\n","/");
-                                str+=file+"\t: "+implode(acc,",")+"\n";
-                        }
+            acc = exclude_write[file];
+            file = replace_string(file, "\n", "/");
+            str += file + "\t: " + implode(acc, ",") + "\n";
         }
-        if(type=="all"||type=="trusted_write")
+    }
+    if (type == "all" || type == "trusted_write") {
+        str += "å¯å†™>>\n";
+        if (sizeof(trusted_write))
+            foreach(file
+        in
+        keys(trusted_write))
         {
-                str+="¿ÉĞ´>>\n";
-                if(sizeof(trusted_write))
-                        foreach(file in keys(trusted_write))
-                        {
-                                acc=trusted_write[file];
-                                file=replace_string(file,"\n","/");
-                                str+=file+"\t: "+implode(acc,",")+"\n";
-                        }
+            acc = trusted_write[file];
+            file = replace_string(file, "\n", "/");
+            str += file + "\t: " + implode(acc, ",") + "\n";
         }
-        return str;
+    }
+    return str;
 }
 
-//ÓÃ»§½Ó¿Ú³ÌĞò£¬¸ºÔğÎ¬»¤È¨ÏŞÁĞ±íaccess_list
-int modify_access_list(object user,string op,string type,string file,string *acc_user)
-{
-        string *acc;
-        int i;
-        if(!file||!sizeof(acc_user))
-                return 0;
-        if(wiz_level(user)!=wiz_level("(admin)"))//Ö»ÔÊĞíadminÎ¬»¤ÁĞ±í
-                return 0;
-        file=replace_string(file,"/","\n");//¶ÔÎÄ¼ş½øĞĞ±àÂë²Ù×÷£¡²»È»Â·¾¶µÄ"/"ºÍmappingµÄ"/"»ìÏı£¡
-        switch(op)
-        {
-                case "add":
-                        switch(type)
-                        {
-                                case "trusted_read":
-                                case "trusted_write":
-                                case "exclude_read":
-                                case "exclude_write":
-                                        sscanf(file,"/%s",file);//´¦ÀíµôµÚÒ»¸ö/·ûºÅ
-                                        acc=query(type+"/"+file);
-                                        if(sizeof(acc))
-                                        {
-                                                for(i=sizeof(acc_user);i>0;i--)
-                                                {
-                                                        acc=acc - ({acc_user[i-1]});
-                                                        acc=acc + ({acc_user[i-1]});
-                                                }
-                                        }
-                                        else
-                                                acc= acc_user;
-                                        set(type+"/"+file,acc);
-                                        break;
-                                default:
-                                        //²»ÄÜÊ¶±ğµÄÀàĞÍ
-                                        return 0;
+//ç”¨æˆ·æ¥å£ç¨‹åºï¼Œè´Ÿè´£ç»´æŠ¤æƒé™åˆ—è¡¨access_list
+int modify_access_list(object user, string op, string type, string file, string *acc_user) {
+    string *acc;
+    int i;
+    if (!file || !sizeof(acc_user))
+        return 0;
+    if (wiz_level(user) != wiz_level("(admin)"))//åªå…è®¸adminç»´æŠ¤åˆ—è¡¨
+        return 0;
+    file = replace_string(file, "/", "\n");//å¯¹æ–‡ä»¶è¿›è¡Œç¼–ç æ“ä½œï¼ä¸ç„¶è·¯å¾„çš„"/"å’Œmappingçš„"/"æ··æ·†ï¼
+    switch (op) {
+        case "add":
+            switch (type) {
+                case "trusted_read":
+                case "trusted_write":
+                case "exclude_read":
+                case "exclude_write":
+                    sscanf(file, "/%s", file);//å¤„ç†æ‰ç¬¬ä¸€ä¸ª/ç¬¦å·
+                    acc = query(type + "/" + file);
+                    if (sizeof(acc)) {
+                        for (i = sizeof(acc_user); i > 0; i--) {
+                            acc = acc - ({ acc_user[i - 1] });
+                            acc = acc + ({ acc_user[i - 1] });
                         }
-                        break;
-                case "del":
-                        switch(type)
-                        {
-                                case "trusted_read"://
-                                case "trusted_write":
-                                case "exclude_read":
-                                case "exclude_write":
-                                        sscanf(file,"/%s",file);//´¦ÀíµôµÚÒ»¸ö/·ûºÅ
-                                        acc=query(type+"/"+file);
-                                        if(sizeof(acc))
-                                        {
-                                                for(i=sizeof(acc_user);i>0;i--)
-                                                        acc=acc - ({acc_user[i-1]});
-                                        }
-                                        if(sizeof(acc))
-                                                set(type+"/"+file,acc);
-                                        else
-                                                delete(type+"/" +file);
-                                        break;
-                                default:
-                                        //²»ÄÜÊ¶±ğµÄÀàĞÍ
-                                        return 0;
-                        }
-                        break;
+                    } else
+                        acc = acc_user;
+                    set(type + "/" + file, acc);
+                    break;
                 default:
-                        //È¨ÏŞÉèÖÃ²Ù×÷²»ÄÜÊ¶±ğ£¡
-                        return 0;
-        }
-        save();
-        restore_list();
-        return 1;
+                    //ä¸èƒ½è¯†åˆ«çš„ç±»å‹
+                    return 0;
+            }
+            break;
+        case "del":
+            switch (type) {
+                case "trusted_read"://
+                case "trusted_write":
+                case "exclude_read":
+                case "exclude_write":
+                    sscanf(file, "/%s", file);//å¤„ç†æ‰ç¬¬ä¸€ä¸ª/ç¬¦å·
+                    acc = query(type + "/" + file);
+                    if (sizeof(acc)) {
+                        for (i = sizeof(acc_user); i > 0; i--)
+                            acc = acc - ({ acc_user[i - 1] });
+                    }
+                    if (sizeof(acc))
+                        set(type + "/" + file, acc);
+                    else
+                        delete(type + "/" + file);
+                    break;
+                default:
+                    //ä¸èƒ½è¯†åˆ«çš„ç±»å‹
+                    return 0;
+            }
+            break;
+        default:
+            //æƒé™è®¾ç½®æ“ä½œä¸èƒ½è¯†åˆ«ï¼
+            return 0;
+    }
+    save();
+    restore_list();
+    return 1;
 }
 
-void create()
-{
-        //ÔÚwizlistÊôĞÔÀï´¢´æ£¬¶ø²»ÔÙÔÚ/adm/etc/wizlistÀï´æ´¢£¡
-        set("channel_id","°²È«¾«Áé");
-        restore();
-        restore_list(); 
+void create() {
+    //åœ¨wizlistå±æ€§é‡Œå‚¨å­˜ï¼Œè€Œä¸å†åœ¨/adm/etc/wizlisté‡Œå­˜å‚¨ï¼
+    set("channel_id", "å®‰å…¨ç²¾çµ");
+    restore();
+    restore_list();
 }
 
 string *query_wizlist() { return keys(wiz_status); }
 
-// Õâ¸öº¯Êı·µ»ØÒ»¸öuid»òÕßobjµÄstatus
-string get_status(mixed ob)
-{
-        string euid;
-        if( objectp(ob) ) 
-        {
-                euid = geteuid(ob);
-                if( !euid ) euid = getuid(ob);
-        }
-        else if( stringp(ob) ) euid = ob;
-        if( !undefinedp(wiz_status[euid]) ) return wiz_status[euid];
-        else if( member_array(euid, wiz_levels)!=-1 ) return euid;
-        else return "(player)";
+// è¿™ä¸ªå‡½æ•°è¿”å›ä¸€ä¸ªuidæˆ–è€…objçš„status
+string get_status(mixed ob) {
+    string euid;
+    if (objectp(ob)) {
+        euid = geteuid(ob);
+        if (!euid) euid = getuid(ob);
+    } else if (stringp(ob)) euid = ob;
+    if (!undefinedp(wiz_status[euid])) return wiz_status[euid];
+    else if (member_array(euid, wiz_levels) != -1) return euid;
+    else return "(player)";
 }
 
-int get_wiz_level(mixed ob)
-{
-        return member_array(get_status(ob), wiz_levels);
+int get_wiz_level(mixed ob) {
+    return member_array(get_status(ob), wiz_levels);
 }
 
-int set_status(mixed ob, string status)
-{
-        string uid;
+int set_status(mixed ob, string status) {
+    string uid;
 
-        //Ó¦¸Ã¼ì²éÒ»ÏÂstatusÊÇ·ñ¸ñÊ½ÕıÈ·£¡
-        if( geteuid(previous_object())!= ROOT_UID)
-                if(!wiz_level(previous_object())>wiz_level("(admin)"))//ÔÊĞíadminÉèÖÃÎ×Ê¦±í
-                        return 0;
-        if( previous_object(0)!=find_object("/cmds/adm/access"))
+    //åº”è¯¥æ£€æŸ¥ä¸€ä¸‹statusæ˜¯å¦æ ¼å¼æ­£ç¡®ï¼
+    if (geteuid(previous_object()) != ROOT_UID)
+        if (!wiz_level(previous_object()) > wiz_level("(admin)"))//å…è®¸adminè®¾ç½®å·«å¸ˆè¡¨
+            return 0;
+    if (previous_object(0) != find_object("/cmds/adm/access"))
         return 0;
-        //Õâ¸öµØ·½Ó¦¸ÃÑÏ¸ñÉóºËÊÇ·ñÓĞÈ¨½øĞĞÌáÉı²Ù×÷£¡
-        if( objectp(ob)&&userp(ob) )    
-                uid = getuid(ob);
-        else 
-                if(stringp(ob))
-                        uid = ob;
-                else
-                {
-                        CHANNEL_D->do_channel(this_object(),"sys","·Ç·¨ÉèÖÃÎ×Ê¦¼¶±ğ£º"+ob+" "+status+"\n");
-                        return 0;
-                }
-        if( status == "(player)" )
-                map_delete(wiz_status, uid);
-        else
-                wiz_status[uid] = status;
-        set("wiz_status",wiz_status);
-        save();
-        log_file( "static/promotion", capitalize(uid)
-         + " ³ÉÎª " + status + " Ê±¼ä£º" + "/cmds/usr/rtime.c"->chinese_time(5,ctime(time())) + "\n" );
-        return 1;
+    //è¿™ä¸ªåœ°æ–¹åº”è¯¥ä¸¥æ ¼å®¡æ ¸æ˜¯å¦æœ‰æƒè¿›è¡Œæå‡æ“ä½œï¼
+    if (objectp(ob) && userp(ob))
+        uid = getuid(ob);
+    else if (stringp(ob))
+        uid = ob;
+    else {
+        CHANNEL_D->do_channel(this_object(), "sys", "éæ³•è®¾ç½®å·«å¸ˆçº§åˆ«ï¼š" + ob + " " + status + "\n");
+        return 0;
+    }
+    if (status == "(player)")
+        map_delete(wiz_status, uid);
+    else
+        wiz_status[uid] = status;
+    set("wiz_status", wiz_status);
+    save();
+    log_file("static/promotion", capitalize(uid)
+                                 + " æˆä¸º " + status + " æ—¶é—´ï¼š" + "/cmds/usr/rtime.c"->chinese_time(5, ctime(time())) +
+                                 "\n");
+    return 1;
 }
 
 string *get_wizlist() { return keys(wiz_status); }
 
-int valid_read(string file, mixed user, string func)
-{
-        string euid, status, *path, dir;
-        int i;
-        if( !objectp(user) )
-                error("SECURITY_D->valid_read: userÕâ¸ö²ÎÊıµÄÖµ·Ç·¨£¡\n");
-        // Modify By JackyBoy
-        if(file==query_save_file()) return 1;//Èç¹ûÊÇ×ÔÉíµÄ´æ´¢ÎÄ¼ş£¬ÔòÈÎºÎÈË¶¼¿ÉÒÔ¶ÁÈ¡£¡
-        if( func=="restore_object" ) {
-                if(sscanf(file,DATA_DIR+"SaveRoom/%*s"))
-                        return 1;
-                if( sscanf(base_name(user), "/clone/%*s")
-                        && sscanf(file, "/data/%*s")
-                        && file == (string)user->query_save_file()+__SAVE_EXTENSION__  )
-                        return 1;
-                if( sscanf(file,"/data/board/%*s"))
-                        return 1;//ÔÊĞíÎŞÌõ¼ş¶ÁÈ¡boardÊı¾İ
-        }
+int valid_read(string file, mixed user, string func) {
+    string euid, status, *path, dir;
+    int i;
+    if (!objectp(user))
+        error("SECURITY_D->valid_read: userè¿™ä¸ªå‚æ•°çš„å€¼éæ³•ï¼\n");
+    // Modify By JackyBoy
+    if (file == query_save_file()) return 1;//å¦‚æœæ˜¯è‡ªèº«çš„å­˜å‚¨æ–‡ä»¶ï¼Œåˆ™ä»»ä½•äººéƒ½å¯ä»¥è¯»å–ï¼
+    if (func == "restore_object") {
+        if (sscanf(file, DATA_DIR + "SaveRoom/%*s"))
+            return 1;
+        if (sscanf(base_name(user), "/clone/%*s")
+            && sscanf(file, "/data/%*s")
+            && file == (string) user->query_save_file() + __SAVE_EXTENSION__)
+            return 1;
+        if (sscanf(file, "/data/board/%*s"))
+            return 1;//å…è®¸æ— æ¡ä»¶è¯»å–boardæ•°æ®
+    }
 
-        // È¡µÃÓÃ»§µÄeuidºÍstatus
-        euid = geteuid(user);
-        if( !euid ) return 0;
-        status = get_status(user);
-        //"NONAME"ÔÚÏµÍ³¸ÕÆô¶¯Ê±¾­³£Óöµ½£¬ËùÒÔÕâÓ¦¸ÃÊÇ°²È«µÄ
-        //²»¹ıÕâÒ²ÊÇ½¨Á¢ÔÚÃ»ÓĞÈË¿ÉÒÔ×Ô¼ºÉèÖÃ×Ô¼ºµÄeuidÕâ¸ö»ù´¡ÉÏµÄ¡£
-        if( euid==ROOT_UID|| euid=="NONAME" ) return 1;
-        //immortalÒÔÉÏµÄ²Å¿ÉÒÔ½øÈë/uÄ¿Â¼£¡
-        if((file=="/u/"||file=="/u")&&wiz_level(status)>wiz_level("(immortal)"))
+    // å–å¾—ç”¨æˆ·çš„euidå’Œstatus
+    euid = geteuid(user);
+    if (!euid) return 0;
+    status = get_status(user);
+    //"NONAME"åœ¨ç³»ç»Ÿåˆšå¯åŠ¨æ—¶ç»å¸¸é‡åˆ°ï¼Œæ‰€ä»¥è¿™åº”è¯¥æ˜¯å®‰å…¨çš„
+    //ä¸è¿‡è¿™ä¹Ÿæ˜¯å»ºç«‹åœ¨æ²¡æœ‰äººå¯ä»¥è‡ªå·±è®¾ç½®è‡ªå·±çš„euidè¿™ä¸ªåŸºç¡€ä¸Šçš„ã€‚
+    if (euid == ROOT_UID || euid == "NONAME") return 1;
+    //immortalä»¥ä¸Šçš„æ‰å¯ä»¥è¿›å…¥/uç›®å½•ï¼
+    if ((file == "/u/" || file == "/u") && wiz_level(status) > wiz_level("(immortal)"))
         return 1;
-        //¶ÔÓÚ/uÏÂµÄ¿ÉÒÔ¶Á×Ô¼ºµÄÄ¿Â¼£¡
-        if( sscanf(file, "/u/" + euid + "/%*s") 
-                ||file=="/u/"+euid)
-return 1;
-  if( sscanf(file, "/" + "/%*s") 
-                ||file=="/")
-return 1;
+    //å¯¹äº/uä¸‹çš„å¯ä»¥è¯»è‡ªå·±çš„ç›®å½•ï¼
+    if (sscanf(file, "/u/" + euid + "/%*s")
+        || file == "/u/" + euid)
+        return 1;
+    if (sscanf(file, "/" + "/%*s")
+        || file == "/")
+        return 1;
 
-        path = explode(file, "/");
+    path = explode(file, "/");
 
-        // ¼ì²é¶ÁÅÅ³ı±í£¡Èç¹ûÅÅ³ıÁË£¬ÔòÖ±½Ó·µ»Ø1£¬·ñÔò¼ÌĞøÅĞ¶Ï£¡
-        // ÓÉÓÚ±àÂëµÄ¹ØÏµ£¬"/"±»"\n"È¡´ú£¡
-        for(i=sizeof(path)-1; i>=0; i--) {
-                dir = implode(path[0..i], "\n");
-                //´Ë´¦Èç¹ûexclude_readÎª¿Õ¾Í³ö´í£¡
-                if( undefinedp(exclude_read[dir]) ) continue;
-                if( member_array(euid, exclude_read[dir])!=-1 ) return 0;
-                if( member_array(status, exclude_read[dir])!=-1 ) return 0;
-        }
+    // æ£€æŸ¥è¯»æ’é™¤è¡¨ï¼å¦‚æœæ’é™¤äº†ï¼Œåˆ™ç›´æ¥è¿”å›1ï¼Œå¦åˆ™ç»§ç»­åˆ¤æ–­ï¼
+    // ç”±äºç¼–ç çš„å…³ç³»ï¼Œ"/"è¢«"\n"å–ä»£ï¼
+    for (i = sizeof(path) - 1; i >= 0; i--) {
+        dir = implode(path[0..i], "\n");
+        //æ­¤å¤„å¦‚æœexclude_readä¸ºç©ºå°±å‡ºé”™ï¼
+        if (undefinedp(exclude_read[dir])) continue;
+        if (member_array(euid, exclude_read[dir]) != -1) return 0;
+        if (member_array(status, exclude_read[dir]) != -1) return 0;
+    }
 
-        // ¼ì²é¶ÁĞÅÈÎ±í£¬Èç¹ûĞÅÈÎÔò·µ»Ø1£¬·ñÔòÊ§°Ü
-        if( member_array(euid, trusted_read["\n"])!=-1 ) return 1;
-        if( member_array(status, trusted_read["\n"])!=-1 ) return 1;
-        for(i=sizeof(path)-1; i>=0; i--) {
-                dir = implode(path[0..i], "\n");
-                if( undefinedp(trusted_read[dir]) ) continue;
-                if( member_array(euid, trusted_read[dir])!=-1 ) return 1;
-                if( member_array(status, trusted_read[dir])!=-1 ) return 1;
-        }
-        if(wizhood(user)!="(player)")
-                log_file("wiz_read_fail.log", sprintf("%s(%s) ÊÔÍ¼Ô½È¨¶ÁÈ¡ %s £¡\n", 
-                        geteuid(user), wizhood(user), file));
-        else
-                log_file("read_fail.log", sprintf("%s(%s) ÊÔÍ¼µ÷ÓÃ %s Ê§°Ü¡£\n", 
-                        geteuid(user), wizhood(user), file));
-        return 0;
+    // æ£€æŸ¥è¯»ä¿¡ä»»è¡¨ï¼Œå¦‚æœä¿¡ä»»åˆ™è¿”å›1ï¼Œå¦åˆ™å¤±è´¥
+    if (member_array(euid, trusted_read["\n"]) != -1) return 1;
+    if (member_array(status, trusted_read["\n"]) != -1) return 1;
+    for (i = sizeof(path) - 1; i >= 0; i--) {
+        dir = implode(path[0..i], "\n");
+        if (undefinedp(trusted_read[dir])) continue;
+        if (member_array(euid, trusted_read[dir]) != -1) return 1;
+        if (member_array(status, trusted_read[dir]) != -1) return 1;
+    }
+    if (wizhood(user) != "(player)")
+        log_file("wiz_read_fail.log", sprintf("%s(%s) è¯•å›¾è¶Šæƒè¯»å– %s ï¼\n",
+                                              geteuid(user), wizhood(user), file));
+    else
+        log_file("read_fail.log", sprintf("%s(%s) è¯•å›¾è°ƒç”¨ %s å¤±è´¥ã€‚\n",
+                                          geteuid(user), wizhood(user), file));
+    return 0;
 }
 
-int valid_write(string file, mixed user, string func)
-{
-        string euid, status, *path, dir;
-        int i;
+int valid_write(string file, mixed user, string func) {
+    string euid, status, *path, dir;
+    int i;
 
-        if( !objectp(user) )
-                error("SECURITY_D->valid_write: ²ÎÊıuserµÄÖµ·Ç·¨£¡\n");
+    if (!objectp(user))
+        error("SECURITY_D->valid_write: å‚æ•°userçš„å€¼éæ³•ï¼\n");
 
-        if( sscanf(file, LOG_DIR + "%*s") && func=="write_file" ) return 1;
-        
-        // ÈÃÓÃ»§ºÍ¿É´æ´¢¶ÔÏóÄÜ´æ´¢×Ô¼ºµÄ
-        // »òĞí¿ÉÒÔÊ¹ÓÃÕâÑùµÄËã·¨£ºÈç¹ûUSERP(user)£¬ÄÇÃ´Èç¹ûfile==user->query_save_file()¾Í¿ÉÒÔĞ´£¿
-        if( func=="save_object" )
-        {
-                if( sscanf(base_name(user), "/clone/%*s")
-                        &&      sscanf(file, "/data/%*s")
-                        &&      file == (string)user->query_save_file()+__SAVE_EXTENSION__  )
-                    return 1;
-            log_file("dpm.log","´íÎó´æ´¢£º\n"+user->name(1)+geteuid(user)+get_status(user)+
-                "file:"+file+"\n");
-        }
+    if (sscanf(file, LOG_DIR + "%*s") && func == "write_file") return 1;
 
-        // Get the euid and status of the user.
-        euid = geteuid(user);
+    // è®©ç”¨æˆ·å’Œå¯å­˜å‚¨å¯¹è±¡èƒ½å­˜å‚¨è‡ªå·±çš„
+    // æˆ–è®¸å¯ä»¥ä½¿ç”¨è¿™æ ·çš„ç®—æ³•ï¼šå¦‚æœUSERP(user)ï¼Œé‚£ä¹ˆå¦‚æœfile==user->query_save_file()å°±å¯ä»¥å†™ï¼Ÿ
+    if (func == "save_object") {
+        if (sscanf(base_name(user), "/clone/%*s")
+            && sscanf(file, "/data/%*s")
+            && file == (string) user->query_save_file() + __SAVE_EXTENSION__)
+            return 1;
+        log_file("dpm.log", "é”™è¯¯å­˜å‚¨ï¼š\n" + user->name(1) + geteuid(user) + get_status(user) +
+                            "file:" + file + "\n");
+    }
 
-        if( !euid ) return 0;
-        if( euid==ROOT_UID || euid=="NONAME") return 1;
-        //²»¿É¶Á¾Í²»¿ÉĞ´ add by jackyboy
-        if(valid_read(file,user,func)==0)
-                return 0;
-        status = get_status(user);
+    // Get the euid and status of the user.
+    euid = geteuid(user);
 
-        path = explode(file, "/");
-
-        // ¼ì²éĞ´ÅÅ³ı±í£¬Èç¹û±»ÅÅ³ıÔò·µ»Ø0£¬·ñÔò¼ÌĞøÅĞ¶Ï
-        // ±àÂëµÄ¹ØÏµ£¬ÔÚ"/"·ÖÀëºóÔÙÓÃ"\n"ºÏ²¢ÅĞ¶Ï£¡
-        for(i=sizeof(path)-1; i>=0; i--) {
-                dir = implode(path[0..i], "\n");
-                if( undefinedp(exclude_write[dir]) ) continue;
-                if( member_array(euid, exclude_write[dir])!=-1 ) return 0;
-                if( member_array(status, exclude_write[dir])!=-1 ) return 0;
-        }
-
-        // ¼ì²éĞÂĞÅÈÎ±í£¬Èç¹ûĞÅÈÎÔò·µ»Ø1£¬·ñÔò²»ÔÊĞíĞ´£¡
-        if( member_array(euid, trusted_write["\n"])!=-1 ) return 1;
-        if( member_array(status, trusted_write["\n"])!=-1 ) return 1;
-        for(i=sizeof(path)-1; i>=0; i--) {
-                dir = implode(path[0..i], "\n");
-                if( undefinedp(trusted_write[dir]) ) continue;
-                if( member_array(euid, trusted_write[dir])!=-1 ) return 1;
-                if( member_array(status, trusted_write[dir])!=-1 ) return 1;
-        }
-
-        log_file("write_fail.log", sprintf("%s(%s) ÊÔÍ¼Ğ´Èë %s Ê§°Ü¡£\n", geteuid(user), wizhood(user), file));
+    if (!euid) return 0;
+    if (euid == ROOT_UID || euid == "NONAME") return 1;
+    //ä¸å¯è¯»å°±ä¸å¯å†™ add by jackyboy
+    if (valid_read(file, user, func) == 0)
         return 0;
+    status = get_status(user);
+
+    path = explode(file, "/");
+
+    // æ£€æŸ¥å†™æ’é™¤è¡¨ï¼Œå¦‚æœè¢«æ’é™¤åˆ™è¿”å›0ï¼Œå¦åˆ™ç»§ç»­åˆ¤æ–­
+    // ç¼–ç çš„å…³ç³»ï¼Œåœ¨"/"åˆ†ç¦»åå†ç”¨"\n"åˆå¹¶åˆ¤æ–­ï¼
+    for (i = sizeof(path) - 1; i >= 0; i--) {
+        dir = implode(path[0..i], "\n");
+        if (undefinedp(exclude_write[dir])) continue;
+        if (member_array(euid, exclude_write[dir]) != -1) return 0;
+        if (member_array(status, exclude_write[dir]) != -1) return 0;
+    }
+
+    // æ£€æŸ¥æ–°ä¿¡ä»»è¡¨ï¼Œå¦‚æœä¿¡ä»»åˆ™è¿”å›1ï¼Œå¦åˆ™ä¸å…è®¸å†™ï¼
+    if (member_array(euid, trusted_write["\n"]) != -1) return 1;
+    if (member_array(status, trusted_write["\n"]) != -1) return 1;
+    for (i = sizeof(path) - 1; i >= 0; i--) {
+        dir = implode(path[0..i], "\n");
+        if (undefinedp(trusted_write[dir])) continue;
+        if (member_array(euid, trusted_write[dir]) != -1) return 1;
+        if (member_array(status, trusted_write[dir]) != -1) return 1;
+    }
+
+    log_file("write_fail.log", sprintf("%s(%s) è¯•å›¾å†™å…¥ %s å¤±è´¥ã€‚\n", geteuid(user), wizhood(user), file));
+    return 0;
 }
 
-int valid_seteuid( object ob, string uid )
-{
-        if( uid==0 ) return 1;
-        if( uid==getuid(ob) ) return 1;
-        if( getuid(ob)==ROOT_UID ) return 1;
-        if( sscanf(file_name(ob), "/adm/%*s") ) return 1;
-        if( wiz_status[uid] != "(admin)"
-        &&      wiz_status[getuid(ob)] == "(admin)" )
-                return 1;
-        return 0;
+int valid_seteuid(object ob, string uid) {
+    if (uid == 0) return 1;
+    if (uid == getuid(ob)) return 1;
+    if (getuid(ob) == ROOT_UID) return 1;
+    if (sscanf(file_name(ob), "/adm/%*s")) return 1;
+    if (wiz_status[uid] != "(admin)"
+        && wiz_status[getuid(ob)] == "(admin)")
+        return 1;
+    return 0;
 }
 

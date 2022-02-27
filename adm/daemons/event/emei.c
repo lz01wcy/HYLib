@@ -1,122 +1,140 @@
-// emei.c ÊÂ¼ş£º¶ëáÒ½ğ¶¥ÈÕ³ö
+// emei.c äº‹ä»¶ï¼šå³¨åµ‹é‡‘é¡¶æ—¥å‡º
 // for XKX100 , by Sir 2003.11.3
 
 #include <ansi.h>
 
-// ½±Àø
-private void do_bonus(object room)
-{
-        object *obs;
-        string msg;
-        int lvl,p_bonus,s_bonus;
-        int r,i;
+// å¥–åŠ±
+private void do_bonus(object room) {
+    object *obs;
+    string msg;
+    int lvl, p_bonus, s_bonus;
+    int r, i;
 
-        obs = all_inventory(room);
-        if (sizeof(obs) < 1)
-                return;
+    obs = all_inventory(room);
+    if (sizeof(obs) < 1)
+        return;
 
-        r = random(365);
-        if (r == 0)
-        {
-                msg = HIY "¡¾×ÔÈ»Ææ¹Û¡¿¶ëáÒ·ğ¹â\n"NOR;
-                msg += HIR "Ö»¼ûÌ«ÑôÒ»µãÒ»µãµÄÉıÁËÆğÀ´£¬Ù¿µÄÑÛÇ°Ò»ÁÁ£¬Ò»µÀ¹âÔÎ³öÏÖÔÚÔÆ¼Ê£¬\n"
-                          "ëüëüëÊëÊËÆºõÓĞÒ»¸ö·ğÓ°Á¢ÔÚµ±ÖĞ£¬ÁîÈËÌ¾ÏÛ²»ÒÑ¡£\n" NOR;
-                msg += HIG "ÄãÚ¤Ú¤ÖĞ·Â·ğµÃµ½ÁË·ğÖ÷µÄÖ¸Ê¾£¬µÇÊ±ÓĞÃ©Èû¶Ù¿ªµÄ¸Ğ¾õ¡£\n" NOR;
-                
-               
-               
+    r = random(365);
+    if (r == 0) {
+        msg = HIY
+        "ã€è‡ªç„¶å¥‡è§‚ã€‘å³¨åµ‹ä½›å…‰\n"
+        NOR;
+        msg += HIR
+        "åªè§å¤ªé˜³ä¸€ç‚¹ä¸€ç‚¹çš„å‡äº†èµ·æ¥ï¼Œå€çš„çœ¼å‰ä¸€äº®ï¼Œä¸€é“å…‰æ™•å‡ºç°åœ¨äº‘é™…ï¼Œ\n"
+        "æœ¦æœ¦èƒ§èƒ§ä¼¼ä¹æœ‰ä¸€ä¸ªä½›å½±ç«‹åœ¨å½“ä¸­ï¼Œä»¤äººå¹ç¾¡ä¸å·²ã€‚\n"
+        NOR;
+        msg += HIG
+        "ä½ å†¥å†¥ä¸­ä»¿ä½›å¾—åˆ°äº†ä½›ä¸»çš„æŒ‡ç¤ºï¼Œç™»æ—¶æœ‰èŒ…å¡é¡¿å¼€çš„æ„Ÿè§‰ã€‚\n"
+        NOR;
 
-                // ·ğÃÅµÜ×ÓÔö¼Ó·ğÑ§¼¼ÄÜ
-                for ( i = 0 ; i < sizeof(obs); i++)
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;
-			p_bonus = 5000 + random( 5000 );
-			s_bonus = 1000 + random( 500 );
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score",s_bonus);
-                        if (obs[i]->query("class") == "bonze")
-                           {
-				lvl = obs[i]->query_skill("buddhism", 1);
-                        	if (lvl >= 50 && lvl< 200 )
-                                	obs[i]->set_skill("buddhism", lvl + 1);
-                                
-				lvl = obs[i]->query_skill("mahayana", 1);
-                        	if ( lvl >= 50 && lvl < 200)
-                                	obs[i]->set_skill("mahayana", lvl + 1);
-				lvl = obs[i]->query_skill("lamaism", 1);
-                        	if (lvl >= 50 && lvl <200 )
-                                	obs[i]->set_skill("lamaism", lvl + 1);
-                            }
-                }
 
-                message("vision", msg, obs);
-		message("channel:rumor", HIM"¡¾Ò¥ÑÔ¡¿"+"ÌıËµ¶ëáÒ½ğ¶¥·ğ¹â³öÏÖ£¬ÁîÈËÌ¾Îª¹ÛÖ¹£¬ÔŞÌ¾²»ÒÑ¡£\n"NOR, users());
-               
-        } else
-        if (r < 250)
-        {
-        	msg = HIY "¡¾×ÔÈ»Ææ¹Û¡¿¶ëáÒÈÕ³ö\n"NOR;
-        	msg +=HIG "ÔÚ¶ëáÒÉ½ÉÏĞÀÉÍÈÕ³öÁîÈËĞÄ¿õÉñâù£¬¸ñÍâÁìÂÔ¶ëáÒÉ½µÄöÁĞãÏÕÆæ¡£\n"NOR;
-        	
-                switch (random(3))
-                {
-                case 0:
-                        msg += HIY "Ò»ÂÖºìÈÕÔ¾³öÌì¼Ê£¬Ó³ÉäµÃ²ãÂÍµş´ä·ÖÍâÑıæ¬£¬Ã£Ã£ÔÆº££¬¾¡Åûºì×±¡£\n" NOR;
-                        break;
-                case 1:
-                        msg += HIY "ºöÈ»¼äÒ»ÂÖºìÈÕÔ¾ÁËÉÏÀ´£¬ÌìµØÖ®¼äµÇÊ±»Ô»ÍÎŞ±È£¬Ö»ÉäµÃÄãÑÛ¾¦¶¼ÎŞ·¨Õö¿ª¡£\n" NOR;
-                        break;
-                default:
-                        msg += HIY "İëÈ»ÑÛÇ°½ğ¹âËÄÉä£¬Ò»ÂÖºìÈÕÈ½È½ÉıÆğ¡£\n" NOR;
-                        break;
-                }
-                msg += HIG "ÄãĞÄÍ·ÉÁ¹ıÒ»µÀÁé¹â£¬ËÆºõÊÜµ½ÁËÄ³ÖÖÆôµÏ¡£\n" NOR;
-                
-                for ( i = 0 ; i < sizeof(obs); i++)
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;
-			p_bonus = 500 + random( 500 );
-			s_bonus = 200 + random( 200 );			
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score", s_bonus);
-		}
 
-                message("vision", msg, obs);
 
-                
-        } else
-        {
-                switch (random(3))
-                {
-                case 0:
-                        msg = WHT "ÑÛ¼ûÌ«ÑôëüëüëÊëÊµÄ¾ÍÒªÉıÉÏÀ´£¬È´¼ûÒ»Æ¬ÎÚÔÆÆ®¹ı£¬ÕÚÁË¸öÑÏÑÏÊµÊµ¡£\n" NOR;
-                        break;
-                case 1:
-                        msg = WHT "ÄãÑÛÇ°Ô½À´Ô½ÁÁ£¬µ«ÊÇÎíÆøºÃÖØ£¬ÈÃÄãÊ²Ã´¶¼¿´²»Çå³ş¡£\n" NOR;
-                        break;
-                default:
-                        msg = WHT "Ìì±ß½¥½¥µÄ·¢°×£¬µ«ÊÇÒ»²ãÒ»²ãµÄÔÆÆø½«ÈÕÍ·Ñ¹µÃ¹âÃ¢Ò»Ë¿¶¼¿´²»¼û¡£\n" NOR;
-                        break;
-                }
-                msg += HIG "ÄãĞÄÖĞÁ¬Ì¾£º¡°Ì«¿ÉÏ§ÁË£¡¡±\n" NOR;
+        // ä½›é—¨å¼Ÿå­å¢åŠ ä½›å­¦æŠ€èƒ½
+        for (i = 0; i < sizeof(obs); i++) {
+            if (!living(obs[i]) || !userp(obs[i])) continue;
+            p_bonus = 5000 + random(5000);
+            s_bonus = 1000 + random(500);
+            obs[i]->add("potential", p_bonus);
+            obs[i]->add("score", s_bonus);
+            if (obs[i]->query("class") == "bonze") {
+                lvl = obs[i]->query_skill("buddhism", 1);
+                if (lvl >= 50 && lvl < 200)
+                    obs[i]->set_skill("buddhism", lvl + 1);
 
-                message("vision", msg, obs);
+                lvl = obs[i]->query_skill("mahayana", 1);
+                if (lvl >= 50 && lvl < 200)
+                    obs[i]->set_skill("mahayana", lvl + 1);
+                lvl = obs[i]->query_skill("lamaism", 1);
+                if (lvl >= 50 && lvl < 200)
+                    obs[i]->set_skill("lamaism", lvl + 1);
+            }
         }
+
+        message("vision", msg, obs);
+        message("channel:rumor", HIM
+        "ã€è°£è¨€ã€‘" + "å¬è¯´å³¨åµ‹é‡‘é¡¶ä½›å…‰å‡ºç°ï¼Œä»¤äººå¹ä¸ºè§‚æ­¢ï¼Œèµå¹ä¸å·²ã€‚\n"
+        NOR, users());
+
+    } else if (r < 250) {
+        msg = HIY
+        "ã€è‡ªç„¶å¥‡è§‚ã€‘å³¨åµ‹æ—¥å‡º\n"
+        NOR;
+        msg += HIG
+        "åœ¨å³¨åµ‹å±±ä¸Šæ¬£èµæ—¥å‡ºä»¤äººå¿ƒæ—·ç¥æ€¡ï¼Œæ ¼å¤–é¢†ç•¥å³¨åµ‹å±±çš„éš½ç§€é™©å¥‡ã€‚\n"
+        NOR;
+
+        switch (random(3)) {
+            case 0:
+                msg += HIY
+                "ä¸€è½®çº¢æ—¥è·ƒå‡ºå¤©é™…ï¼Œæ˜ å°„å¾—å±‚å³¦å ç¿ åˆ†å¤–å¦–å¨†ï¼ŒèŒ«èŒ«äº‘æµ·ï¼Œå°½æŠ«çº¢å¦†ã€‚\n"
+                NOR;
+                break;
+            case 1:
+                msg += HIY
+                "å¿½ç„¶é—´ä¸€è½®çº¢æ—¥è·ƒäº†ä¸Šæ¥ï¼Œå¤©åœ°ä¹‹é—´ç™»æ—¶è¾‰ç…Œæ— æ¯”ï¼Œåªå°„å¾—ä½ çœ¼ç›éƒ½æ— æ³•çå¼€ã€‚\n"
+                NOR;
+                break;
+            default:
+                msg += HIY
+                "è“¦ç„¶çœ¼å‰é‡‘å…‰å››å°„ï¼Œä¸€è½®çº¢æ—¥å†‰å†‰å‡èµ·ã€‚\n"
+                NOR;
+                break;
+        }
+        msg += HIG
+        "ä½ å¿ƒå¤´é—ªè¿‡ä¸€é“çµå…‰ï¼Œä¼¼ä¹å—åˆ°äº†æŸç§å¯è¿ªã€‚\n"
+        NOR;
+
+        for (i = 0; i < sizeof(obs); i++) {
+            if (!living(obs[i]) || !userp(obs[i])) continue;
+            p_bonus = 500 + random(500);
+            s_bonus = 200 + random(200);
+            obs[i]->add("potential", p_bonus);
+            obs[i]->add("score", s_bonus);
+        }
+
+        message("vision", msg, obs);
+
+
+    } else {
+        switch (random(3)) {
+            case 0:
+                msg = WHT
+                "çœ¼è§å¤ªé˜³æœ¦æœ¦èƒ§èƒ§çš„å°±è¦å‡ä¸Šæ¥ï¼Œå´è§ä¸€ç‰‡ä¹Œäº‘é£˜è¿‡ï¼Œé®äº†ä¸ªä¸¥ä¸¥å®å®ã€‚\n"
+                NOR;
+                break;
+            case 1:
+                msg = WHT
+                "ä½ çœ¼å‰è¶Šæ¥è¶Šäº®ï¼Œä½†æ˜¯é›¾æ°”å¥½é‡ï¼Œè®©ä½ ä»€ä¹ˆéƒ½çœ‹ä¸æ¸…æ¥šã€‚\n"
+                NOR;
+                break;
+            default:
+                msg = WHT
+                "å¤©è¾¹æ¸æ¸çš„å‘ç™½ï¼Œä½†æ˜¯ä¸€å±‚ä¸€å±‚çš„äº‘æ°”å°†æ—¥å¤´å‹å¾—å…‰èŠ’ä¸€ä¸éƒ½çœ‹ä¸è§ã€‚\n"
+                NOR;
+                break;
+        }
+        msg += HIG
+        "ä½ å¿ƒä¸­è¿å¹ï¼šâ€œå¤ªå¯æƒœäº†ï¼â€\n"
+        NOR;
+
+        message("vision", msg, obs);
+    }
 }
 
-//ÊÂ¼ş´¥·¢
-void trigger_event()
-{
-        object room;
+//äº‹ä»¶è§¦å‘
+void trigger_event() {
+    object room;
 
-        // ¶ëáÒ½ğ¶¥ÈÕ³ö
-        if (objectp(room = find_object("/d/emei/jinding")))
-                do_bonus(room);
+    // å³¨åµ‹é‡‘é¡¶æ—¥å‡º
+    if (objectp(room = find_object("/d/emei/jinding")))
+        do_bonus(room);
 }
 
-void create() 
-{ 
-	seteuid(getuid()); 
-	message("channel:sys", HIR"¡¾×ÔÈ»Ææ¹Û¡¿¶ëáÒ½ğ¶¥ÈÕ³ö¡£\n"NOR, users());
-	trigger_event();
+void create() {
+    seteuid(getuid());
+    message("channel:sys", HIR
+    "ã€è‡ªç„¶å¥‡è§‚ã€‘å³¨åµ‹é‡‘é¡¶æ—¥å‡ºã€‚\n"
+    NOR, users());
+    trigger_event();
 }

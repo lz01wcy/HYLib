@@ -22,59 +22,41 @@
 #include <net/macros.h>
 
 
-
-
 inherit F_CLEAN_UP;
-
-
 
 
 int have_mudlist = 0;
 
 
-
-
 void create() { seteuid(ROOT_UID); }
 
 
-
-
 // Someone replyed to our query and has sent us their mudlist.
-void incoming_request(mapping info)
-{
+void incoming_request(mapping info) {
     string *junk;
 
 
-
-
-    if(!ACCESS_CHECK(previous_object())) return;
+    if (!ACCESS_CHECK(previous_object())) return;
 
 
 
 
     // the keys to info are number identifying each mud
     junk = keys(info);
-    if(sizeof(junk)) have_mudlist = 1;
-
-
+    if (sizeof(junk)) have_mudlist = 1;
 
 
     filter_array(junk, "process_list", this_object(), info);
 }
 
 
-
-
-int process_list(string idx, mapping info)
-{
+int process_list(string idx, mapping info) {
     string *inf, name, value;
     int j;
     mapping new_list, old;
 
 
-
-
-    if(previous_object() != this_object()) return 0;
+    if (previous_object() != this_object()) return 0;
 
 
 
@@ -88,17 +70,18 @@ int process_list(string idx, mapping info)
     // build up the mapping for the individual muds
     new_list = ([ ]);
     j = sizeof(inf);
-    while (j--) if (sscanf(inf[j], "%s:%s", name, value) == 2)
-        new_list[name] = value;
-    if(!new_list["NAME"]) return 0;
+    while (j--)
+        if (sscanf(inf[j], "%s:%s", name, value) == 2)
+            new_list[name] = value;
+    if (!new_list["NAME"]) return 0;
 
 
 
 
     // make sure the name is in the proper form
-    name = htonn( new_list["NAME"] );
-    while( name[strlen(name)-1] == '.' )
-        name = name[ 0..strlen(name)-2 ];
+    name = htonn(new_list["NAME"]);
+    while (name[strlen(name) - 1] == '.')
+        name = name[0..strlen(name) - 2];
     new_list["ALIAS"] = nntoh(new_list["NAME"]);
 
 
@@ -117,9 +100,7 @@ int process_list(string idx, mapping info)
 
 
     // if it is a static mud we delete the entry
-    if(!DNS_MASTER->dns_mudp(name)) old = 0;
-
-
+    if (!DNS_MASTER->dns_mudp(name)) old = 0;
 
 
     if (!old) DNS_MASTER->set_mud_info(name, new_list);
@@ -133,16 +114,11 @@ int process_list(string idx, mapping info)
 }
 
 
-
-
 // these is used by the dns master to find out if we have a mudlist
-int clear_db_flag()
-{
-    if(ACCESS_CHECK(previous_object()))
+int clear_db_flag() {
+    if (ACCESS_CHECK(previous_object()))
         have_mudlist = 0;
 }
-
-
 
 
 int query_db_flag() { return have_mudlist; }

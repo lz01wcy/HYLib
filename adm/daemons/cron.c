@@ -8,29 +8,34 @@
 #include <net/daemons.h>
 #include <net/macros.h>
 
-int LAST_HARD_DIS= 0;
+int LAST_HARD_DIS = 0;
+
 void init_cron();
+
 void autosave();
+
 void check_dns();
+
 void check_pets();
+
 void check_whonature();
-void create()
-{
-        seteuid( ROOT_UID );
-        init_cron();
+
+void create() {
+    seteuid(ROOT_UID);
+    init_cron();
 }
-int query_last_hard_dis()
-{
-        return LAST_HARD_DIS;
+
+int query_last_hard_dis() {
+    return LAST_HARD_DIS;
 }
-int set_last_hard_dis()
-{
-        LAST_HARD_DIS = time();
-        return time();
+
+int set_last_hard_dis() {
+    LAST_HARD_DIS = time();
+    return time();
 }
-void init_cron()
-{
-        mixed *local;
+
+void init_cron() {
+    mixed *local;
 //Edit by cloth
 //___________________________________________________________________________________
 //        int hour,min,sec,i,j;
@@ -50,466 +55,450 @@ void init_cron()
 //        }
 //        }
 //___________________________________________________________________________________
-        local = localtime(time());
-        if ( !random(120)) 
+    local = localtime(time());
+    if (!random(120))
         TASK_D->init_dynamic_quest();
 //        if ( !((local[1])%1)) autosave();
-        if ( !((local[1])%45)) autosave();
-        
+    if (!((local[1]) % 45)) autosave();
+
 
 //How long the system will refresh all tasks. Added by FY@SH-Morrison
 //--------------------------------------------------------------------
- if ( !((local[1])%260))
-      {
+    if (!((local[1]) % 260)) {
         message("system",
-                HIW     "\t\t°æ∫£—ÛII°øΩ´‘⁄ŒÂ∑÷÷”∫Û÷ÿ–¬∑÷≤ºtask£°\n\n" NOR,
-                users() );
+                HIW
+        "\t\t„ÄêÊµ∑Ê¥ãII„ÄëÂ∞ÜÂú®‰∫îÂàÜÈíüÂêéÈáçÊñ∞ÂàÜÂ∏ÉtaskÔºÅ\n\n"
+        NOR,
+                users());
         call_out("countdown", 60, 5);
-   }
+    }
 //--------------------------------------------------------------------
-//–ﬁ∏ƒ“‘…œµ⁄“ª––÷–∞Ÿ∑÷∫≈∫Ûµƒ ˝◊÷(œ÷‘⁄…Ëµƒ60¥˙±Ì1–° ±)æÕø…“‘–ﬁ∏ƒtask÷ÿ–¬∑÷≤ºµƒ ±º‰º‰º‰∏Ù¡À°£
+//‰øÆÊîπ‰ª•‰∏äÁ¨¨‰∏ÄË°å‰∏≠ÁôæÂàÜÂè∑ÂêéÁöÑÊï∞Â≠ó(Áé∞Âú®ËÆæÁöÑ60‰ª£Ë°®1Â∞èÊó∂)Â∞±ÂèØ‰ª•‰øÆÊîπtaskÈáçÊñ∞ÂàÜÂ∏ÉÁöÑÊó∂Èó¥Èó¥Èó¥Èöî‰∫Ü„ÄÇ
 //above is add by Morrison
 
 // Check pets that's lost heartbeat
-        if( !(local[1]%5)) 
-       if(!find_object(VOID_OB))
-                call_other(VOID_OB,"???");
-        check_pets();
+    if (!(local[1] % 5))
+        if (!find_object(VOID_OB))
+            call_other(VOID_OB, "???");
+    check_pets();
 // if dns_master not working, every 15 mins re-initalize it
-        if ( !(local[1]%15)) 
-        {
+    if (!(local[1] % 15)) {
         check_dns();
 // if WHO_D,NATURE_D dies restart them
         check_whonature();
         STATUS_D->write_list();
-        }
-        call_out("init_cron", 60);//zzz modify 20 to 60 
+    }
+    call_out("init_cron", 60);//zzz modify 20 to 60
 }
 
-private void countdown(int min)
-{
-	object *allp = users();
-	object present;
-        object *ob_list;
-        int i;
-        min--;
-        if( min ) {
-                message("system",
-                        HIR     "\t\t°æ∫£—ÛII°øΩ´‘⁄" + chinese_number(min) + "∑÷÷”∫Û÷ÿ–¬∑÷≤ºtask£°\n\n"NOR,                  users() );
-                call_out("countdown", 60, min);
-        } else {
-            message("system",HIR "÷ÿ–¬∑÷≤ºÀ˘”– π√¸°£°£°£" NOR,users());
-//Œ™Ω‚æˆœÙ«ÔÀÆ¥´∆ÊŒ Ã‚∂¯º” 
-           ob_list = children("/quest/shenshu/npc/man2");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-		message_vision("$N–¶¡À–¶Àµ£∫∂´Œ˜“—æ≠µΩ ÷£¨»ŒŒÒÕÍ≥…£¨≥∑¡À£°\n",ob_list[i]);
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/npc/man");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-		message_vision("$N–¶¡À–¶Àµ£∫∂´Œ˜“—æ≠µΩ ÷£¨»ŒŒÒÕÍ≥…£¨≥∑¡À£°\n",ob_list[i]);
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/gbook");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/jinbook");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/gbook1");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/gbook2");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/jbook1");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/jbook2");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/shang");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/xia");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book1");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                      ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book2");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                   ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book3");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book4");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book5");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                    ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book6");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book7");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-ob_list[i]->move(VOID_OB);
-                        destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book8");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book9");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book10");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book11");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book12");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book13");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book14");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book15");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book16");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book17");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book18");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book19");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book20");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book21");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book22");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book23");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book24");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book25");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book26");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book27");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book28");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book29");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book30");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book31");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book32");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book33");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book34");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book35");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book36");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book37");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book38");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book39");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book40");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book41");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/book42");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-           ob_list = children("/clone/misc/findbook");
-                for(i=0; i<sizeof(ob_list); i++) 
-                if(environment(ob_list[i]))
-                {
-                        ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
-               }
-//Ω· ¯
-            TASK_D->init_dynamic_quest(1);
-            message("system",HIG "°£°£°£À˘”– π√¸∑÷≤ºÕÍ±œ\n" NOR,users());
-        }
+private void countdown(int min) {
+    object *allp = users();
+    object present;
+    object *ob_list;
+    int i;
+    min--;
+    if (min) {
+        message("system",
+                HIR
+        "\t\t„ÄêÊµ∑Ê¥ãII„ÄëÂ∞ÜÂú®" + chinese_number(min) + "ÂàÜÈíüÂêéÈáçÊñ∞ÂàÜÂ∏ÉtaskÔºÅ\n\n"
+        NOR, users());
+        call_out("countdown", 60, min);
+    } else {
+        message("system", HIR
+        "ÈáçÊñ∞ÂàÜÂ∏ÉÊâÄÊúâ‰ΩøÂëΩ„ÄÇ„ÄÇ„ÄÇ"
+        NOR, users());
+//‰∏∫Ëß£ÂÜ≥ËêßÁßãÊ∞¥‰º†Â•áÈóÆÈ¢òËÄåÂä† 
+        ob_list = children("/quest/shenshu/npc/man2");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                message_vision("$NÁ¨ë‰∫ÜÁ¨ëËØ¥Ôºö‰∏úË•øÂ∑≤ÁªèÂà∞ÊâãÔºå‰ªªÂä°ÂÆåÊàêÔºåÊí§‰∫ÜÔºÅ\n", ob_list[i]);
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/npc/man");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                message_vision("$NÁ¨ë‰∫ÜÁ¨ëËØ¥Ôºö‰∏úË•øÂ∑≤ÁªèÂà∞ÊâãÔºå‰ªªÂä°ÂÆåÊàêÔºåÊí§‰∫ÜÔºÅ\n", ob_list[i]);
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/gbook");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/jinbook");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/gbook1");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/gbook2");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/jbook1");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/jbook2");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/shang");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/xia");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book1");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book2");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book3");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book4");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book5");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book6");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book7");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book8");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book9");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book10");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book11");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book12");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book13");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book14");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book15");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book16");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book17");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book18");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book19");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book20");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book21");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book22");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book23");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book24");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book25");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book26");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book27");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book28");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book29");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book30");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book31");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book32");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book33");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book34");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book35");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book36");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book37");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book38");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book39");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book40");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book41");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/book42");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/clone/misc/findbook");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                ob_list[i]->move(VOID_OB);
+                destruct(ob_list[i]);
+            }
+//ÁªìÊùü
+        TASK_D->init_dynamic_quest(1);
+        message("system", HIG
+        "„ÄÇ„ÄÇ„ÄÇÊâÄÊúâ‰ΩøÂëΩÂàÜÂ∏ÉÂÆåÊØï\n"
+        NOR, users());
+    }
 }
 
-void check_dns()
-{
-        mapping mud_list;
-        mixed *muds;
-        object dns;
+void check_dns() {
+    mapping mud_list;
+    mixed *muds;
+    object dns;
 
-        if(!dns = find_object(DNS_MASTER))
+    if (!dns = find_object(DNS_MASTER))
         // dns not started, not our problem
         return;
-        mud_list = (mapping) DNS_MASTER->query_muds();
-        muds=keys(mud_list);
-        if(sizeof(muds)<= 1)
-        { destruct(dns);
-        call_other(DNS_MASTER,"???");
-        }
-        return;
+    mud_list = (mapping) DNS_MASTER->query_muds();
+    muds = keys(mud_list);
+    if (sizeof(muds) <= 1) {
+        destruct(dns);
+        call_other(DNS_MASTER, "???");
+    }
+    return;
 }
 
-void check_whonature()
-{
-        mixed *info;
-        int i;
-        object ob;
-        int who=0, nature=0;
-        info = call_out_info();
-        for(i=0; i<sizeof(info); i++)
-        {
-        if( "/"+sprintf("%O",info[i][0]) == WHO_D ) who =1;
-        if( "/"+sprintf("%O",info[i][0]) == NATURE_D ) nature=1;
-        }
-        if(!who)
-        {
-                if(ob=find_object(WHO_D)) destruct(ob);
-                call_other(WHO_D,"???"); 
-        }
-        if(!nature)
-        {
-                if(ob=find_object(NATURE_D)) destruct(ob);
-                call_other(NATURE_D,"???");
-        }
-        return;
+void check_whonature() {
+    mixed *info;
+    int i;
+    object ob;
+    int who = 0, nature = 0;
+    info = call_out_info();
+    for (i = 0; i < sizeof(info); i++) {
+        if ("/" + sprintf("%O", info[i][0]) == WHO_D) who = 1;
+        if ("/" + sprintf("%O", info[i][0]) == NATURE_D) nature = 1;
+    }
+    if (!who) {
+        if (ob = find_object(WHO_D)) destruct(ob);
+        call_other(WHO_D, "???");
+    }
+    if (!nature) {
+        if (ob = find_object(NATURE_D)) destruct(ob);
+        call_other(NATURE_D, "???");
+    }
+    return;
 }
 
-void check_pets()
-{
-int i;
-object ob,*ob_list;
-ob_list=children("/clone/npc/pet");
-for(i=0; i<sizeof(ob_list); i++) {
-if( !ob = environment(ob_list[i]) ) continue;
-ob->heal_up();
-                }
+void check_pets() {
+    int i;
+    object ob, *ob_list;
+    ob_list = children("/clone/npc/pet");
+    for (i = 0; i < sizeof(ob_list); i++) {
+        if (!ob = environment(ob_list[i])) continue;
+        ob->heal_up();
+    }
 
-return;
+    return;
 }
 
-void autosave()
-{
- object *ob;
-object *n;
- object *user ;
- int i,z;
- n = filter_array( livings(),
-(: $1->is_character() && !userp($1) && !query_heart_beat($1) && clonep($1):) );
-         user = users();
-        message("system", HIR "\n »´≤øÕÊº“◊‘∂Ø¥Êµµ£Æ£Æ£Æ", users());
-        for(i=0; i<sizeof(user); i++) 
+void autosave() {
+    object *ob;
+    object *n;
+    object *user;
+    int i, z;
+    n = filter_array(livings(),
+            (: $1->is_character() && !userp($1) && !query_heart_beat($1) && clonep($1):));
+    user = users();
+    message("system", HIR
+    "\n ÂÖ®ÈÉ®Áé©ÂÆ∂Ëá™Âä®Â≠òÊ°£ÔºéÔºéÔºé", users());
+    for (i = 0; i < sizeof(user); i++)
         user[i]->save();
-	message("system", HIG "£Æ£Æ£Æ¥ÊµµÕÍ±œ \n" NOR, users()); 
+    message("system", HIG
+    "ÔºéÔºéÔºéÂ≠òÊ°£ÂÆåÊØï \n"
+    NOR, users());
 }

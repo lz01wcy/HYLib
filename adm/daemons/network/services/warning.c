@@ -12,31 +12,22 @@
 #include <net/macros.h>
 
 
-
-
 inherit F_CLEAN_UP;
-
-
 
 
 /*
  * The udp warning service... Hmmm...
  */
 void
-incoming_request(mapping info)
-{
-  string warn;
+incoming_request(mapping info) {
+    string warn;
 
 
+    if (!ACCESS_CHECK(previous_object())) return;
 
 
-  if(!ACCESS_CHECK(previous_object())) return;
+    warn = "DNS warning from " + info["NAME"] + info["MSG"] + " Fakehost: " +
+           info["FAKEHOST"];
 
-
-
-
-  warn = "DNS warning from "+info["NAME"]+ info["MSG"]+" Fakehost: "+
-		info["FAKEHOST"];
-  
-  dns_log("dns_warning", warn);
+    dns_log("dns_warning", warn);
 }

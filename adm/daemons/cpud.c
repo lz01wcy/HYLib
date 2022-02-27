@@ -9,8 +9,8 @@ inherit F_DBASE;
 
 int clean_up() { return 1; }
 
-#define CHECK_PERIOD    100     // 100s¼ì²éÒ»´Î
-#define EXPECTATION     50      // Ï£ÍûÐÄÌø50´Î
+#define CHECK_PERIOD    100     // 100sæ£€æŸ¥ä¸€æ¬¡
+#define EXPECTATION     50      // å¸Œæœ›å¿ƒè·³50æ¬¡
 
 #define check_period    my["check_period"]
 #define expectation     my["expectation"]
@@ -23,75 +23,71 @@ int clean_up() { return 1; }
 #define last_3          my["last_3"]
 #define last_4          my["last_4"]
 
-void create()
-{
-        mapping my;
+void create() {
+    mapping my;
 
-        seteuid(getuid());
-        set("channel_id", "ÏµÍ³¾«Áé");
-        CHANNEL_D->do_channel(this_object(), "sys", "ÏµÍ³¾«ÁéÒÑ¾­Æô¶¯¡£");
-        set_heart_beat(1);
+    seteuid(getuid());
+    set("channel_id", "ç³»ç»Ÿç²¾çµ");
+    CHANNEL_D->do_channel(this_object(), "sys", "ç³»ç»Ÿç²¾çµå·²ç»å¯åŠ¨ã€‚");
+    set_heart_beat(1);
 
-        // ³õÊ¼»¯É¨ÃèÊ±¼ä
-        my = query_entire_dbase();
-        if (CONFIG_D->query_int("cpu_check_period") < 2)
-        {
-                check_period = CHECK_PERIOD;
-                expectation = EXPECTATION;
-        } else
-        {
-                check_period = CONFIG_D->query_int("cpu_check_period");
-                if (CONFIG_D->query_int("cpu_expectation") < 1)
-                        expectation = check_period / 2;
-                else
-                        expectation = CONFIG_D->query_int("cpu_expectation");
-        }
+    // åˆå§‹åŒ–æ‰«ææ—¶é—´
+    my = query_entire_dbase();
+    if (CONFIG_D->query_int("cpu_check_period") < 2) {
+        check_period = CHECK_PERIOD;
+        expectation = EXPECTATION;
+    } else {
+        check_period = CONFIG_D->query_int("cpu_check_period");
+        if (CONFIG_D->query_int("cpu_expectation") < 1)
+            expectation = check_period / 2;
+        else
+            expectation = CONFIG_D->query_int("cpu_expectation");
+    }
 
-        last_4 = ([ "supplied" : 100, "cost" : 0 ]);
-        last_3 = ([ "supplied" : 100, "cost" : 0 ]);
-        last_2 = ([ "supplied" : 100, "cost" : 0 ]);
-        last_1 = ([ "supplied" : 100, "cost" : 0 ]);
-        last_0 = ([ "supplied" : 100, "cost" : 0 ]);
+    last_4 = ([ "supplied" : 100, "cost" : 0 ]);
+    last_3 = ([ "supplied" : 100, "cost" : 0 ]);
+    last_2 = ([ "supplied" : 100, "cost" : 0 ]);
+    last_1 = ([ "supplied" : 100, "cost" : 0 ]);
+    last_0 = ([ "supplied" : 100, "cost" : 0 ]);
 
-        last_check = time();
-        last_rusage = rusage();
-        counter = 0;
+    last_check = time();
+    last_rusage = rusage();
+    counter = 0;
 }
 
-void heart_beat()
-{
-        mapping my;
-        mapping info;
-        int tlen;
-        int supp, cost;
+void heart_beat() {
+    mapping my;
+    mapping info;
+    int tlen;
+    int supp, cost;
 
-        my = query_entire_dbase();
+    my = query_entire_dbase();
 
-        counter++;
-        if ((tlen = (time() - last_check)) < check_period)
-                return;
+    counter++;
+    if ((tlen = (time() - last_check)) < check_period)
+        return;
 
-        // rotate the stat.
-        last_4["supplied"] = last_3["supplied"];
-        last_4["cost"]     = last_3["cost"];
-        last_3["supplied"] = last_2["supplied"];
-        last_3["cost"]     = last_2["cost"];
-        last_2["supplied"] = last_1["supplied"];
-        last_2["cost"]     = last_1["cost"];
-        last_1["supplied"] = last_0["supplied"];
-        last_1["cost"]     = last_0["cost"];
+    // rotate the stat.
+    last_4["supplied"] = last_3["supplied"];
+    last_4["cost"] = last_3["cost"];
+    last_3["supplied"] = last_2["supplied"];
+    last_3["cost"] = last_2["cost"];
+    last_2["supplied"] = last_1["supplied"];
+    last_2["cost"] = last_1["cost"];
+    last_1["supplied"] = last_0["supplied"];
+    last_1["cost"] = last_0["cost"];
 
-        supp = counter * 100 / expectation;
-        if (supp > 100) supp = 100;
-        info = rusage();
-        cost = info["stime"] + info["utime"] -
-               last_rusage["stime"] - last_rusage["utime"];
-        cost = cost / tlen / 10;
+    supp = counter * 100 / expectation;
+    if (supp > 100) supp = 100;
+    info = rusage();
+    cost = info["stime"] + info["utime"] -
+           last_rusage["stime"] - last_rusage["utime"];
+    cost = cost / tlen / 10;
 
-        last_rusage = info;
-        last_check  = time();
-        counter = 0;
+    last_rusage = info;
+    last_check = time();
+    counter = 0;
 
-        last_0 = ([ "supplied" : supp,
-                    "cost"     : cost ]);
+    last_0 = ([ "supplied" : supp,
+            "cost"     : cost ]);
 }

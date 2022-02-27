@@ -12,36 +12,25 @@
 #include <net/macros.h>
 
 
-
-
 inherit F_CLEAN_UP;
-
-
 
 
 // We got a startup message.
 void
-incoming_request(mapping info)
-{
-  if(!ACCESS_CHECK(previous_object())) return;
+incoming_request(mapping info) {
+    if (!ACCESS_CHECK(previous_object())) return;
 
 
-
-
-  if (stringp(info["NAME"]))
-    {
-      // send info PING_A so it will be added to the mud address mapping
-      PING_A->incoming_request(info);
-      // send them a ping answer so they get our mud info
-      PING_Q->incoming_request(info);
+    if (stringp(info["NAME"])) {
+        // send info PING_A so it will be added to the mud address mapping
+        PING_A->incoming_request(info);
+        // send them a ping answer so they get our mud info
+        PING_Q->incoming_request(info);
     }
 }
 
 
-
-
 void
-create()
-{
-  seteuid(ROOT_UID);
+create() {
+    seteuid(ROOT_UID);
 }

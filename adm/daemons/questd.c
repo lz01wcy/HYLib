@@ -13,11 +13,12 @@ varargs void init_dynamic_quest(int hard);
 varargs int spread_quest(mapping one_quest, int hard);
 
 object find_env(object ob);
+
 object find_book(object ob);
 
 varargs int already_spreaded(string str, int hard);
 
-int quest_reward( object me, object who,object quest_item);
+int quest_reward(object me, object who, object quest_item);
 
 string dyn_quest_list();
 
@@ -30,539 +31,535 @@ string dyn_quest_list();
 #include <ansi.h>
 
 string locate_obj(string str);
-int random_move()
-{
-        mapping exits;
-        string *dirs;
-        object me = this_object();
+
+int random_move() {
+    mapping exits;
+    string *dirs;
+    object me = this_object();
 
 //        if (!query_heart_beat(me)) return 0;
-	if( !environment(me) ) return 0;
-        if( me->query_temp("is_unconcious") ) return 0;
+    if (!environment(me)) return 0;
+    if (me->query_temp("is_unconcious")) return 0;
 
-	if( !living(me)) return 0;
+    if (!living(me)) return 0;
 
-	if( !mapp(exits = environment()->query("exits")) ) return 0;
-        if( !environment() 
-        || !mapp(exits = environment()->query("exits")) 
+    if (!mapp(exits = environment()->query("exits"))) return 0;
+    if (!environment()
+        || !mapp(exits = environment()->query("exits"))
         || me->is_busy())
 // || me->is_fighting()
-        return 0;                 
-//        if( !mapp(exits = environment()->query("exits")) 
+        return 0;
+//        if( !mapp(exits = environment()->query("exits"))
 //        || me->is_busy()) return 0;
-        dirs = keys(exits);
-        if (!dirs)  return 0;
-        if (sizeof(dirs) < 1) return 0;
-        command("go " + dirs[random(sizeof(dirs))]);
+    dirs = keys(exits);
+    if (!dirs) return 0;
+    if (sizeof(dirs) < 1) return 0;
+    command("go " + dirs[random(sizeof(dirs))]);
 }
 
-void create()
+void create() {
 
-{
+    string file;
 
-	string file;
+    quests = read_table("/quest/dynamic_quest");
 
-	quests = read_table("/quest/dynamic_quest");
+    file = read_file("/quest/dynamic_location");
 
-	file = read_file("/quest/dynamic_location");
+    roomlines = explode(file, "\n");
 
-	roomlines = explode(file,"\n");	
+    //CRON_D->set_last_hard_dis();
 
-	//CRON_D->set_last_hard_dis();
-
-	init_dynamic_quest(1);
+    init_dynamic_quest(1);
 
 }
 
-int quest_reward(object me, object who,object quest_item)
+int quest_reward(object me, object who, object quest_item) {
 
-{
+    mapping quest;
 
-	mapping quest;
+    int exp, pot, score;
 
-	int exp,pot,score;
+    int color;
 
-	int color;
+    object ob;
+    quest = quest_item->query("dynamic_quest");
 
-  object ob;
-	quest = quest_item->query("dynamic_quest");
+    if (base_name(who) != quest["owner_name"]) return 0;
 
-	if(base_name(who) != quest["owner_name"]) return 0;
+    exp = 888 + random(888);
 
-        exp =888+random(888);
+    pot = exp * 2 / 3;
 
-        pot = exp*2/3;
+    score = random(50) + 50;
 
-        score = random(50)+50;
+    me->add("combat_exp", exp);
 
-        me->add("combat_exp",exp);
+    me->add("potential", pot);
 
-        me->add("potential",pot);
+    me->add("score", score);
 
-        me->add("score",score);
+    color = random(5);
 
-	color=random(5);
+    if (color > 3) {
+        tell_object(me, HIR
+        "ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
 
-	if (color>3)
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
 
-	{tell_object(me,HIR"Äã±»½±ÀøÁË£º\n" +
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
 
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
+        chinese_number(score) + "ç‚¹æ±Ÿæ¹–é˜…å†\n"
+        NOR);
+    } else if (color > 2) {
+        tell_object(me, HIB
+        "ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
 
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
 
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
 
-	else if (color>2)
+        chinese_number(score) + "ç‚¹æ±Ÿæ¹–é˜…å†\n"
+        NOR);
+    } else if (color > 1) {
+        tell_object(me, HIM
+        "ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
 
-	{tell_object(me,HIB"Äã±»½±ÀøÁË£º\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
 
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
 
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
+        chinese_number(score) + "ç‚¹æ±Ÿæ¹–é˜…å†\n"
+        NOR);
+    } else if (color > 0) {
+        tell_object(me, HIY
+        "ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
 
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
 
-	else if (color>1)
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
 
-	{tell_object(me,HIM"Äã±»½±ÀøÁË£º\n" +
+        chinese_number(score) + "ç‚¹æ±Ÿæ¹–é˜…å†\n"
+        NOR);
+    } else {
+        tell_object(me, HIC
+        "ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
 
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
 
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
 
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+        chinese_number(score) + "ç‚¹æ±Ÿæ¹–é˜…å†\n"
+        NOR);
+    }
 
-	else if (color>0)
-
-	{tell_object(me,HIY"Äã±»½±ÀøÁË£º\n" +
-
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
-
-	else 
-
-	{tell_object(me,HIC"Äã±»½±ÀøÁË£º\n" +
-
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
-
-	me->add("TASK",1);
+    me->add("TASK", 1);
     if (me->query("4zhuan")
-    || me->query("5zhuan"))
-{
-if (random(5)==1)
-{
+        || me->query("5zhuan")) {
+        if (random(5) == 1) {
 
-me->add("expmax",1);
+            me->add("expmax", 1);
 
-tell_object(me,HIR"ÄãµÄ³É³¤×ÊÀú»ñµÃ³É¹¦!\n"+NOR);
-}
-}
+            tell_object(me, HIR
+            "ä½ çš„æˆé•¿èµ„å†è·å¾—æˆåŠŸ!\n" + NOR);
+        }
+    }
 
-if (random(12)==1)
-{
-        ob=new("/quest/shenshu/sdan2");
+    if (random(12) == 1) {
+        ob = new("/quest/shenshu/sdan2");
         ob->move(me);
-message("channel:chat", HIC"¡¾½­ºş´«ÎÅ¡¿"GRN + me->query("name")+"µÃµ½Ò»¿Å"+HIY":" + ob->query("name")+HIG"À²£¡\n"NOR,users() );
-}
+        message("channel:chat", HIC
+        "ã€æ±Ÿæ¹–ä¼ é—»ã€‘"
+        GRN + me->query("name") + "å¾—åˆ°ä¸€é¢—" + HIY
+        ":" + ob->query("name") + HIG
+        "å•¦ï¼\n"
+        NOR, users());
+    }
 
-	if( !undefinedp(quest["fin_func"]))
+    if (!undefinedp(quest["fin_func"]))
 
-	call_other(this_object(),quest["fin_func"],me,who,quest_item);
+        call_other(this_object(), quest["fin_func"], me, who, quest_item);
 
-	if(quest_item)
+    if (quest_item)
 
-	destruct(quest_item);
+        destruct(quest_item);
 //	destruct(present("xdshi",me));
-//	tell_object(me,HIW"ÄãÉíÉÏµÄ"+HIR+"Æß"+HIC+"²Ê"+HIY+"Ïò"+HIM+"µ¼"+HIG+"Ê¯"HIW"¸ú×ÅÉñÊéÒ»ÆğÏûÊ§ÁË¡£\n"NOR);
+//	tell_object(me,HIW"ä½ èº«ä¸Šçš„"+HIR+"ä¸ƒ"+HIC+"å½©"+HIY+"å‘"+HIM+"å¯¼"+HIG+"çŸ³"HIW"è·Ÿç€ç¥ä¹¦ä¸€èµ·æ¶ˆå¤±äº†ã€‚\n"NOR);
 
-	return 1;
-
-}
-
-
-
-varargs void init_dynamic_quest(int hard)
-
-{
-
-	int i;
-
-	for( i=0; i < sizeof(quests); i++)
-
-		spread_quest(quests[i],hard);
+    return 1;
 
 }
 
-varargs int spread_quest(mapping quest, int hard)
 
-{
+varargs void init_dynamic_quest(int hard) {
 
-	object obj0,obj1,obj2,obj3,jobnpc;
+    int i;
 
-	object cur_obj;
+    for (i = 0; i < sizeof(quests); i++)
 
-	object next_obj;
-
-	object tar;
-
-	object *inv;
-
-	object *target=({});
-
-	int i;
-
-	string location;
-
-	if(already_spreaded(quest["file_name"],hard)) return 0;
-
-	reset_eval_cost();
-
-	location = roomlines[random(sizeof(roomlines))];
-
-	obj0=find_object(location);
-
-	if(obj0)
-
-	obj0->reset();
-
-	else
-
-	obj0=load_object(location);
-
-	cur_obj =obj0;
-
-	if(cur_obj)
-
-	{
-
-	inv = all_inventory(cur_obj);
-
-	for(i=0; i<sizeof(inv); i++) {
-
-	if(inv[i]->is_character() && !userp(inv[i]))
-
-	target += ({ inv[i] });
-
-	if(inv[i]->is_container()) target += ({ inv[i] });
-
-		}
-
-	}
-
-	if(!sizeof(target)) 
-{
-		jobnpc = new("/quest/shenshu/npc/man");
-		jobnpc->move(cur_obj);
-		jobnpc = new("/quest/shenshu/npc/man");
-		jobnpc->move(cur_obj);
-		jobnpc = new("/quest/shenshu/npc/man");
-		jobnpc->move(cur_obj);
-		jobnpc = new("/quest/shenshu/npc/man");
-		jobnpc->move(cur_obj);
-if (random(3)==0)
-{
-		jobnpc = new("/quest/shenshu/npc/man2");
-		jobnpc->move(cur_obj);
-}
-}
-	if(cur_obj)
-
-	{
-
-	inv = all_inventory(cur_obj);
-
-	for(i=0; i<sizeof(inv); i++) {
-
-	if(inv[i]->is_character() && !userp(inv[i]))
-
-	target += ({ inv[i] });
-
-	if(inv[i]->is_container()) target += ({ inv[i] });
-
-		}
-
-	}
-
-	if(sizeof(target)) cur_obj = target[random(sizeof(target))];
-
-	if(cur_obj)
-
-	{
-
-	tar = new(quest["file_name"]);
-
-	tar->set("value",0);
-
-	tar->set("dynamic_quest",quest);
-
-	tar->move(cur_obj);		
-cur_obj->set_temp("apply/attack", 30);
-cur_obj->set_temp("apply/defense",130);
-cur_obj->set_temp("apply/armor", 100);
-cur_obj->set_temp("apply/damage", 160+random(80));
-cur_obj->set("dex",150);
-cur_obj->set("no_get",1);
-cur_obj->set("qi",8000);
-cur_obj->set("jing",8000);
-cur_obj->set("eff_qi",8000);
-cur_obj->set("eff_jing",10000);
-cur_obj->set("max_qi",8000);
-cur_obj->set("max_jing",15000);
-cur_obj->set_skill("dodge",300);
-cur_obj->set("chat_chance_combat", 90);
-cur_obj->set("chat_msg_combat", ({ (: random_move :), }) );
-cur_obj->set("chat_chance", 50);
-cur_obj->set("chat_msg", ({(: random_move :),}) );
-	}
-
-return 1;
+        spread_quest(quests[i], hard);
 
 }
 
-string dyn_quest_list()
+varargs int spread_quest(mapping quest, int hard) {
 
-{
+    object obj0, obj1, obj2, obj3, jobnpc;
 
-	string output="";
+    object cur_obj;
 
-	object owner,item;
+    object next_obj;
 
-        int i;
+    object tar;
 
-        for( i=0; i < sizeof(quests); i++)
+    object *inv;
 
-	{
+    object *target = ({});
 
-	reset_eval_cost();
+    int i;
 
-	if(!objectp(owner= find_object(quests[i]["owner_name"])))
+    string location;
 
-	owner = load_object(quests[i]["owner_name"]);
+    if (already_spreaded(quest["file_name"], hard)) return 0;
 
-        if(!objectp(item= find_object(quests[i]["file_name"])))
+    reset_eval_cost();
 
-        item = load_object(quests[i]["file_name"]);
+    location = roomlines[random(sizeof(roomlines))];
 
-	if(already_spreaded(quests[i]["file_name"]))
+    obj0 = find_object(location);
 
-	{
+    if (obj0)
 
-	if(random(2))
+        obj0->reset();
 
-	output += sprintf(HIG"%10s"NOR"µÄ"HIW"%10s"NOR"£¨%s£©\n",owner->query("name"),item->query("name"),item->query("id"));
+    else
 
-	else
+        obj0 = load_object(location);
 
-	output = sprintf(HIG"%10s"NOR"µÄ"HIW"%10s"NOR"£¨%s£©\n",owner->query("name"),item->query("name"),item->query("id")) + output;
+    cur_obj = obj0;
 
-	}
+    if (cur_obj) {
 
-	else
+        inv = all_inventory(cur_obj);
 
-	{
+        for (i = 0; i < sizeof(inv); i++) {
 
-	if(random(2))
+            if (inv[i]->is_character() && !userp(inv[i]))
 
-	output += sprintf(HIG"%10s"NOR"µÄ"HIY"%10s"NOR"£¨%s£© [1;31m¡¼ [32mÒÑÍê³É[31m ¡½[m\n",owner->query("name"),item->query("name"),item->query("id"));
+                target += ({ inv[i] });
 
-	else
+            if (inv[i]->is_container()) target += ({ inv[i] });
 
-	output = sprintf(HIG"%10s"NOR"µÄ"HIY"%10s"NOR"£¨%s£©[1;31m ¡¼ [32m ÒÑÍê³É[31m ¡½[m\n",owner->query("name"),item->query("name"),item->query("id")) + output;
+        }
 
-	}
+    }
 
-	}
+    if (!sizeof(target)) {
+        jobnpc = new("/quest/shenshu/npc/man");
+        jobnpc->move(cur_obj);
+        jobnpc = new("/quest/shenshu/npc/man");
+        jobnpc->move(cur_obj);
+        jobnpc = new("/quest/shenshu/npc/man");
+        jobnpc->move(cur_obj);
+        jobnpc = new("/quest/shenshu/npc/man");
+        jobnpc->move(cur_obj);
+        if (random(3) == 0) {
+            jobnpc = new("/quest/shenshu/npc/man2");
+            jobnpc->move(cur_obj);
+        }
+    }
+    if (cur_obj) {
 
-//            if(random(2))output += sprintf(HIG"%10s"NOR"µÄ"HIW"%10s"NOR"£¨%s£©\n",item->query("owner_name"),item->query("name"),item->query("id"));
-//            else output=sprintf(HIG"%10s"NOR"µÄ"HIW"%10s"NOR"£¨%s£©\n",item->query("owner_name"),item->query("name"),item->query("id"))+output;
+        inv = all_inventory(cur_obj);
+
+        for (i = 0; i < sizeof(inv); i++) {
+
+            if (inv[i]->is_character() && !userp(inv[i]))
+
+                target += ({ inv[i] });
+
+            if (inv[i]->is_container()) target += ({ inv[i] });
+
+        }
+
+    }
+
+    if (sizeof(target)) cur_obj = target[random(sizeof(target))];
+
+    if (cur_obj) {
+
+        tar = new(quest["file_name"]);
+
+        tar->set("value", 0);
+
+        tar->set("dynamic_quest", quest);
+
+        tar->move(cur_obj);
+        cur_obj->set_temp("apply/attack", 30);
+        cur_obj->set_temp("apply/defense", 130);
+        cur_obj->set_temp("apply/armor", 100);
+        cur_obj->set_temp("apply/damage", 160 + random(80));
+        cur_obj->set("dex", 150);
+        cur_obj->set("no_get", 1);
+        cur_obj->set("qi", 8000);
+        cur_obj->set("jing", 8000);
+        cur_obj->set("eff_qi", 8000);
+        cur_obj->set("eff_jing", 10000);
+        cur_obj->set("max_qi", 8000);
+        cur_obj->set("max_jing", 15000);
+        cur_obj->set_skill("dodge", 300);
+        cur_obj->set("chat_chance_combat", 90);
+        cur_obj->set("chat_msg_combat", ({ (: random_move :), }));
+        cur_obj->set("chat_chance", 50);
+        cur_obj->set("chat_msg", ({ (: random_move :), }));
+    }
+
+    return 1;
+
+}
+
+string dyn_quest_list() {
+
+    string output = "";
+
+    object owner, item;
+
+    int i;
+
+    for (i = 0; i < sizeof(quests); i++) {
+
+        reset_eval_cost();
+
+        if (!objectp(owner = find_object(quests[i]["owner_name"])))
+
+            owner = load_object(quests[i]["owner_name"]);
+
+        if (!objectp(item = find_object(quests[i]["file_name"])))
+
+            item = load_object(quests[i]["file_name"]);
+
+        if (already_spreaded(quests[i]["file_name"])) {
+
+            if (random(2))
+
+                output += sprintf(HIG
+            "%10s"
+            NOR
+            "çš„"
+            HIW
+            "%10s"
+            NOR
+            "ï¼ˆ%sï¼‰\n", owner->query("name"), item->query("name"), item->query("id"));
+
+            else
+
+            output = sprintf(HIG
+            "%10s"
+            NOR
+            "çš„"
+            HIW
+            "%10s"
+            NOR
+            "ï¼ˆ%sï¼‰\n", owner->query("name"), item->query("name"), item->query("id")) +output;
+
+        } else {
+
+            if (random(2))
+
+                output += sprintf(HIG
+            "%10s"
+            NOR
+            "çš„"
+            HIY
+            "%10s"
+            NOR
+            "ï¼ˆ%sï¼‰ [1;31mã€– [32må·²å®Œæˆ[31m ã€—[m\n", owner->query("name"), item->query("name"), item->query("id"));
+
+            else
+
+            output = sprintf(HIG
+            "%10s"
+            NOR
+            "çš„"
+            HIY
+            "%10s"
+            NOR
+            "ï¼ˆ%sï¼‰[1;31m ã€– [32m å·²å®Œæˆ[31m ã€—[m\n", owner->query("name"), item->query("name"), item->query(
+                    "id")) +output;
+
+        }
+
+    }
+
+//            if(random(2))output += sprintf(HIG"%10s"NOR"çš„"HIW"%10s"NOR"ï¼ˆ%sï¼‰\n",item->query("owner_name"),item->query("name"),item->query("id"));
+//            else output=sprintf(HIG"%10s"NOR"çš„"HIW"%10s"NOR"ï¼ˆ%sï¼‰\n",item->query("owner_name"),item->query("name"),item->query("id"))+output;
 //        else
-//            if(random(2))output += sprintf(HIG"%10s"NOR"µÄ"HIY"%10s"NOR"£¨%s£© [1;31m¡¼ [32mÒÑÍê³É[31m ¡½[m\n",item->query("owner_name"),item->query("name"),item->query("id"));
-//            else output=sprintf(HIG"%10s"NOR"µÄ"HIY"%10s"NOR"£¨%s£©[1;31m ¡¼ [32m ÒÑÍê³É[31m ¡½[m\n",item->query("owner_name"),item->query("name"),item->query("id"))+output;
+//            if(random(2))output += sprintf(HIG"%10s"NOR"çš„"HIY"%10s"NOR"ï¼ˆ%sï¼‰ [1;31mã€– [32må·²å®Œæˆ[31m ã€—[m\n",item->query("owner_name"),item->query("name"),item->query("id"));
+//            else output=sprintf(HIG"%10s"NOR"çš„"HIY"%10s"NOR"ï¼ˆ%sï¼‰[1;31m ã€– [32m å·²å®Œæˆ[31m ã€—[m\n",item->query("owner_name"),item->query("name"),item->query("id"))+output;
 
-	return output;
+    return output;
 
 }
 
-string locate_obj(string strr)
+string locate_obj(string strr) {
 
-{
+    string *distance = ({
 
-        string *distance = ({
+        "æè¿‘", "å¾ˆè¿‘", "æ¯”è¾ƒè¿‘", "ä¸è¿œ",
 
-"¼«½ü", "ºÜ½ü", "±È½Ï½ü", "²»Ô¶",
+                "ä¸è¿‘", "æ¯”è¾ƒè¿œ", "å¾ˆè¿œ", "æè¿œ"
 
-"²»½ü", "±È½ÏÔ¶", "ºÜÔ¶", "¼«Ô¶"
+    });
 
-        });
+    string *altitude = ({
 
-        string *altitude =({
+        "é«˜å¤„", "åœ°æ–¹", "ä½å¤„"
 
-"¸ß´¦", "µØ·½", "µÍ´¦"
+    });
 
-        });
+    string *directions = ({
 
-        string *directions=({
+        "å‘¨å›´", "åŒ—æ–¹", "å—æ–¹", "ä¸œæ–¹", "è¥¿æ–¹",
 
-"ÖÜÎ§","±±·½", "ÄÏ·½", "¶«·½","Î÷·½",
+                "ä¸œåŒ—æ–¹", "è¥¿åŒ—æ–¹", "ä¸œå—æ–¹", "è¥¿å—æ–¹"
 
-"¶«±±·½","Î÷±±·½","¶«ÄÏ·½","Î÷ÄÏ·½"
+    });
 
-        });
+    object ob, tmpobj, where, *ob_list, me, obtwo, obthree, tob;
 
-        object ob, tmpobj,where, *ob_list,me,obtwo,obthree,tob;
+    object item, room;
 
-        object item,room;
+    string output, outputt, dis, alt, dir, local, tlocal, ck;
 
-        string output,outputt,dis,alt,dir,local,tlocal,ck;
-        
-        int i;
+    int i;
 
-        int x,y,z,x0,y0,z0;
+    int x, y, z, x0, y0, z0;
 
-        int realdis;
-	 mixed map,mapt;
+    int realdis;
+    mixed map, mapt;
 
-        int tmp;
-        string *dir1;
-        string *dir2;
+    int tmp;
+    string *dir1;
+    string *dir2;
 
-	string str="";
+    string str = "";
 
-	reset_eval_cost();
+    reset_eval_cost();
 
-        for( i=0; i < sizeof(quests); i++)
+    for (i = 0; i < sizeof(quests); i++) {
 
-	{
+        if (!objectp(item = find_object(quests[i]["file_name"])))
 
-        if(!objectp(item= find_object(quests[i]["file_name"])))
+            item = load_object(quests[i]["file_name"]);
 
-        item = load_object(quests[i]["file_name"]);
+        if (item->query("id") == strr || item->query("name") == strr) str = quests[i]["file_name"];
 
-	if(item->query("id") == strr || item->query("name") == strr) str = quests[i]["file_name"];
+    }
 
-	}
+    if (str != "") {
 
-	if(str != "") {
+        //room = environment(me);
 
-                //room = environment(me);
+        ob_list = children(str);
 
-                ob_list = children(str);
+        for (i = 0; i < sizeof(ob_list); i++) {
 
-                for(i=0; i<sizeof(ob_list); i++) {
-                
-                ob=find_book(ob_list[i]);
+            ob = find_book(ob_list[i]);
 
-                this_player()->add("jing",-5);
+            this_player()->add("jing", -5);
 
-if(ob)
- {
-ck=HIC"ÎŞ"NOR;
-local=ob->query("short");
-tlocal=ob->query("short");                
+            if (ob) {
+                ck = HIC
+                "æ— "
+                NOR;
+                local = ob->query("short");
+                tlocal = ob->query("short");
 
-if (wizardp(this_player()) && ob)
-{
-outputt ="1:"+ob->query("short")+"¡»\n";
-}
-                if(sizeof(ob->query("exits"))) 
-                {
-ck=chinese_number(sizeof(ob->query("exits")));
-                map=values(ob->query("exits"));
-if (map && sizeof(ob->query("exits"))>=1)
-{
-                 obtwo=load_object(map[random(sizeof(map))]);
-if (ob==obtwo) obtwo=load_object(map[random(sizeof(map))]);	
-if (ob==obtwo) obtwo=load_object(map[random(sizeof(map))]);		
-if (ob==obtwo) obtwo=load_object(map[random(sizeof(map))]);		
+                if (wizardp(this_player()) && ob) {
+                    outputt = "1:" + ob->query("short") + "ã€\n";
+                }
+                if (sizeof(ob->query("exits"))) {
+                    ck = chinese_number(sizeof(ob->query("exits")));
+                    map = values(ob->query("exits"));
+                    if (map && sizeof(ob->query("exits")) >= 1) {
+                        obtwo = load_object(map[random(sizeof(map))]);
+                        if (ob == obtwo) obtwo = load_object(map[random(sizeof(map))]);
+                        if (ob == obtwo) obtwo = load_object(map[random(sizeof(map))]);
+                        if (ob == obtwo) obtwo = load_object(map[random(sizeof(map))]);
 
-if (obtwo)
-{
-if (wizardp(this_player())  && obtwo)
-{
-outputt +="2:"+obtwo->query("short")+"¡»\n";
-}
- 
-                 local=obtwo->query("short");
-              if(obtwo->query("exits")) 
-               { //obtwoexits
-                 mapt=values(obtwo->query("exits"));
-if (mapt && sizeof(obtwo->query("exits"))>=1 )
-{
+                        if (obtwo) {
+                            if (wizardp(this_player()) && obtwo) {
+                                outputt += "2:" + obtwo->query("short") + "ã€\n";
+                            }
+
+                            local = obtwo->query("short");
+                            if (obtwo->query("exits")) { //obtwoexits
+                                mapt = values(obtwo->query("exits"));
+                                if (mapt && sizeof(obtwo->query("exits")) >= 1) {
 //if (find_object(mapt[random(sizeof(mapt))]))
 //{
-obthree=load_object(mapt[random(sizeof(mapt))]);
-if (obthree==obtwo) obthree=load_object(mapt[random(sizeof(mapt))]);
-if (obthree==obtwo) obthree=load_object(mapt[random(sizeof(mapt))]);
-if (obthree==obtwo) obthree=load_object(mapt[random(sizeof(mapt))]);
-tob=obthree;
-if (wizardp(this_player()) && obthree)
-{
-outputt +="3:"+obthree->query("short")+"¡»\n";
-}
+                                    obthree = load_object(mapt[random(sizeof(mapt))]);
+                                    if (obthree == obtwo) obthree = load_object(mapt[random(sizeof(mapt))]);
+                                    if (obthree == obtwo) obthree = load_object(mapt[random(sizeof(mapt))]);
+                                    if (obthree == obtwo) obthree = load_object(mapt[random(sizeof(mapt))]);
+                                    tob = obthree;
+                                    if (wizardp(this_player()) && obthree) {
+                                        outputt += "3:" + obthree->query("short") + "ã€\n";
+                                    }
 
-if (obthree)
-{
-if (sizeof(obthree->query("exits"))>=1 )
-{
-mapt=values(obthree->query("exits"));
-obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-tob=obthree;
-if (wizardp(this_player()) && obthree)
-{
-outputt +="4:"+obthree->query("short")+"¡»\n";
-}
-}
-}
+                                    if (obthree) {
+                                        if (sizeof(obthree->query("exits")) >= 1) {
+                                            mapt = values(obthree->query("exits"));
+                                            obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            tob = obthree;
+                                            if (wizardp(this_player()) && obthree) {
+                                                outputt += "4:" + obthree->query("short") + "ã€\n";
+                                            }
+                                        }
+                                    }
 
-if (obthree)
-{
-if (sizeof(obthree->query("exits"))>=1 )
-{
+                                    if (obthree) {
+                                        if (sizeof(obthree->query("exits")) >= 1) {
 //if (tob!=obthree)
 //{
-mapt=values(obthree->query("exits"));
-obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);		
-tob=obthree;
-if (wizardp(this_player()) && obthree)
-{
-outputt +="5:"+obthree->query("short")+"¡»\n";
-}
-}
+                                            mapt = values(obthree->query("exits"));
+                                            obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            tob = obthree;
+                                            if (wizardp(this_player()) && obthree) {
+                                                outputt += "5:" + obthree->query("short") + "ã€\n";
+                                            }
+                                        }
 //}
-}
+                                    }
 
-if (obthree)
-{
-if (sizeof(obthree->query("exits"))>=1 )
-{
+                                    if (obthree) {
+                                        if (sizeof(obthree->query("exits")) >= 1) {
 //if (tob!=obthree)
 //{
-mapt=values(obthree->query("exits"));
-obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-tob=obthree;
-if (wizardp(this_player()) && obthree)
-{
-outputt +="6:"+obthree->query("short")+"¡»\n";
-}
-}
-}
+                                            mapt = values(obthree->query("exits"));
+                                            obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            if (tob == obthree || obtwo == obthree || obthree == ob)
+                                                obthree = load_object(mapt[random(sizeof(mapt))]);
+                                            tob = obthree;
+                                            if (wizardp(this_player()) && obthree) {
+                                                outputt += "6:" + obthree->query("short") + "ã€\n";
+                                            }
+                                        }
+                                    }
 //}
 /*
 if (obthree)
@@ -572,14 +569,14 @@ if (sizeof(obthree->query("exits"))>=1 )
 //if (tob!=obthree)
 //{
 mapt=values(obthree->query("exits"));
-obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
+obthree=load_object(mapt[random(sizeof(mapt))]);
+if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);
+if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);
+if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);
 tob=obthree;
 if (wizardp(this_player()) && obthree)
 {
-outputt +="7:"+obthree->query("short")+"¡»\n";
+outputt +="7:"+obthree->query("short")+"ã€\n";
 }
 }
 //}
@@ -592,742 +589,924 @@ if (sizeof(obthree->query("exits"))>=1 )
 //if (tob!=obthree)
 //{
 mapt=values(obthree->query("exits"));
-obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
-if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);	
+obthree=load_object(mapt[random(sizeof(mapt))]);
+if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);
+if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);
+if (tob==obthree || obtwo==obthree  || obthree==ob) obthree=load_object(mapt[random(sizeof(mapt))]);
 tob=obthree;
 if (wizardp(this_player()) && obthree)
 {
-outputt +="8:"+obthree->query("short")+"¡»\n";
+outputt +="8:"+obthree->query("short")+"ã€\n";
 }
 }
 }
 */
 //}
 //}
-if (obthree)
-{
-if (obthree!= ob)
-{
-                 local=obthree->query("short");
-} //obthree
-} //obthree
-} //mapt
-} //map
-}//obtwoexits
-}
+                                    if (obthree) {
+                                        if (obthree != ob) {
+                                            local = obthree->query("short");
+                                        } //obthree
+                                    } //obthree
+                                } //mapt
+                            } //map
+                        }//obtwoexits
+                    }
 //add by hxsd
-}
-else local=ob->query("short");
+                } else local = ob->query("short");
 
 //dir1=explode(base_name(environment(me)),"/");
-dir2=explode(base_name(ob),"/");
+                dir2 = explode(base_name(ob), "/");
 //    if(sizeof(dir1)==3 && sizeof(dir2)==3 && dir1[0]=="d" && dir2[0]=="d" && dir1[1]!=dir2[1])
 //{
-      	if (dir2[1]=="baituo")  
+                if (dir2[1] == "baituo")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIR"°×ÍÕÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIR
+                "ç™½é©¼å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="binghuodao")  
+                else if (dir2[1] == "binghuodao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIB"±ù»ğµºµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIB
+                "å†°ç«å²›çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="city")  
+                else if (dir2[1] == "city")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"ÑïÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "æ‰¬å·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="city2" || dir2[1]=="beijing"  || dir2[1]=="huanggon"  || dir2[1]=="huanggong" || dir2[1]=="beihai")  
+                else if (dir2[1] == "city2" || dir2[1] == "beijing" || dir2[1] == "huanggon" ||
+                         dir2[1] == "huanggong" || dir2[1] == "beihai")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"±±¾©³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "åŒ—äº¬åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="city4" || dir2[1]=="changan")   
+                else if (dir2[1] == "city4" || dir2[1] == "changan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIM"³¤°²³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIM
+                "é•¿å®‰åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="dali")  
+                else if (dir2[1] == "dali")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+RED"´óÀíµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + RED
+                "å¤§ç†çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="emei")  
+                else if (dir2[1] == "emei")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+GRN"¶ğÃ¼É½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + GRN
+                "å¨¥çœ‰å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="foshan")  
+                else if (dir2[1] == "foshan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+YEL"·ğÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + YEL
+                "ä½›å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="gaibang")  
+                else if (dir2[1] == "gaibang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+BLU"Ø¤°ïµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + BLU
+                "ä¸å¸®çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="gaochang")  
+                else if (dir2[1] == "gaochang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"¸ß²ıÃÔ¹¬µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "é«˜æ˜Œè¿·å®«çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="guanwai")  
+                else if (dir2[1] == "guanwai")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+CYN"¹ØÍâµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + CYN
+                "å…³å¤–çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="guiyun")  
+                else if (dir2[1] == "guiyun")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+MAG"¹éÔÆ×¯µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + MAG
+                "å½’äº‘åº„çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="gumu")  
+                else if (dir2[1] == "gumu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+WHT"¹ÅÄ¹ÅÉµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + WHT
+                "å¤å¢“æ´¾çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="hangzhou")  
+                else if (dir2[1] == "hangzhou")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"º¼ÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "æ­å·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="heimuya")  
+                else if (dir2[1] == "heimuya")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ºÚÄ¾ÑÂµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "é»‘æœ¨å´–çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="hengshan")  
+                else if (dir2[1] == "hengshan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIB"ºãÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIB
+                "æ’å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="henshan")  
+                else if (dir2[1] == "henshan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"ºâÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "è¡¡å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="huanghe")  
+                else if (dir2[1] == "huanghe")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"»ÆºÓ¾ÅÇúµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "é»„æ²³ä¹æ›²çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="huashan")  
+                else if (dir2[1] == "huashan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"»ªÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "åå±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="jinshe")  
+                else if (dir2[1] == "jinshe")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+YEL"½ğÉßÉ½¶´µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + YEL
+                "é‡‘è›‡å±±æ´çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="lingjiu")  
+                else if (dir2[1] == "lingjiu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"ÁéğÕ¹¬µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "çµé¹«å®«çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="lingzhou")  
+                else if (dir2[1] == "lingzhou")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIB"ÁéÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIB
+                "çµå·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="meizhuang")  
+                else if (dir2[1] == "meizhuang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIM"Ã·×¯µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIM
+                "æ¢…åº„çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="mingjiao")  
+                else if (dir2[1] == "mingjiao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Ã÷½ÌµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "æ˜æ•™çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="qingcheng")  
+                else if (dir2[1] == "qingcheng")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"Çà³ÇÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "é’åŸå±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="quanzhen")  
+                else if (dir2[1] == "quanzhen")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIB"È«ÕæÅÉµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIB
+                "å…¨çœŸæ´¾çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="quanzhou")  
+                else if (dir2[1] == "quanzhou")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"ÈªÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "æ³‰å·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="shaolin")  
+                else if (dir2[1] == "shaolin")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+YEL"ÉÙÁÖËÂµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + YEL
+                "å°‘æ—å¯ºçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="shenlong")  
+                else if (dir2[1] == "shenlong")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+GRN"ÉñÁúµºµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + GRN
+                "ç¥é¾™å²›çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="songshan")  
+                else if (dir2[1] == "songshan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIM"áÔÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIM
+                "åµ©å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="suzhou")  
+                else if (dir2[1] == "suzhou")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"ËÕÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "è‹å·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="taishan")  
+                else if (dir2[1] == "taishan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+MAG"Ì©É½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + MAG
+                "æ³°å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="taohua")  
+                else if (dir2[1] == "taohua")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+RED"ÌÒ»¨µºµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + RED
+                "æ¡ƒèŠ±å²›çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="tianlongsi")  
+                else if (dir2[1] == "tianlongsi")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÌìÁúËÂµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "å¤©é¾™å¯ºçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="wanjiegu")  
+                else if (dir2[1] == "wanjiegu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"Íò½Ù¹ÈµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "ä¸‡åŠ«è°·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="wudang")  
+                else if (dir2[1] == "wudang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+GRN"Îäµ±É½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + GRN
+                "æ­¦å½“å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="xiakedao")  
+                else if (dir2[1] == "xiakedao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+BLU"ÏÀ¿ÍµºµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + BLU
+                "ä¾ å®¢å²›çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="xiangyang")  
+                else if (dir2[1] == "xiangyang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"ÏåÑô³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "è¥„é˜³åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="xiaoyao")  
+                else if (dir2[1] == "xiaoyao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"åĞÒ£ÁÖµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "é€é¥æ—çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="xingxiu")  
+                else if (dir2[1] == "xingxiu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+YEL"ĞÇËŞº£µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + YEL
+                "æ˜Ÿå®¿æµ·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="xueshan")  
+                else if (dir2[1] == "xueshan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"Ñ©É½ËÂµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "é›ªå±±å¯ºçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="xuedao")  
+                else if (dir2[1] == "xuedao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"´óÑ©É½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "å¤§é›ªå±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="mr")  
+                else if (dir2[1] == "mr")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+BLU"Ä½ÈİÊÀ¼ÒµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + BLU
+                "æ…•å®¹ä¸–å®¶çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="kunlun")  
+                else if (dir2[1] == "kunlun")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+WHT"À¥ÂØÉ½µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + WHT
+                "æ˜†ä»‘å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="tiezhang")  
+                else if (dir2[1] == "tiezhang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIR"ÌúÕÆÃÅµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIR
+                "é“æŒé—¨çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="huizhu")  
+                else if (dir2[1] == "huizhu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"»Ø×å²¿ÂäµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "å›æ—éƒ¨è½çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="yinju")  
+                else if (dir2[1] == "yinju")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"Ò»µÆ´óÊ¦¾ÓµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "ä¸€ç¯å¤§å¸ˆå±…çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="menggu")  
+                else if (dir2[1] == "menggu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"ÃÉ¹Å²İÔ­µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "è’™å¤è‰åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="qianjin")  
+                else if (dir2[1] == "qianjin")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIM"±±¾©Ç§½ğÂ¥µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIM
+                "åŒ—äº¬åƒé‡‘æ¥¼çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="lingshedao")  
+                else if (dir2[1] == "lingshedao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+BLU"ÁéÉßµºµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + BLU
+                "çµè›‡å²›çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="ruzhou")  
+                else if (dir2[1] == "ruzhou")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+RED"ÈêÖİ³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + RED
+                "æ±å·åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="kunming")  
+                else if (dir2[1] == "kunming")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIB"À¥Ã÷µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIB
+                "æ˜†æ˜çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="jingzhou")  
+                else if (dir2[1] == "jingzhou")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"¾£ÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "è†å·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="yanjing")  
+                else if (dir2[1] == "yanjing")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Ñà¾©µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "ç‡•äº¬çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="lanzhou" || dir2[1]=="lanzhouchen")  
+                else if (dir2[1] == "lanzhou" || dir2[1] == "lanzhouchen")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+YEL"À¼ÖİµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + YEL
+                "å…°å·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="jyguan")  
+                else if (dir2[1] == "jyguan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"À¼ÖİÒÔ±±¼ÎÓø¹ØµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "å…°å·ä»¥åŒ—å˜‰å³ªå…³çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="changcheng")  
+                else if (dir2[1] == "changcheng")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"±±¾©ÒÔ±±³¤³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "åŒ—äº¬ä»¥åŒ—é•¿åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="fairyland")  
+                else if (dir2[1] == "fairyland")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"À¥ÂØ¸½½üµÄºìÃ·É½×¯"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "æ˜†ä»‘é™„è¿‘çš„çº¢æ¢…å±±åº„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="sdxl")  
+                else if (dir2[1] == "sdxl")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIR"½£Ä§¶À¹ÂÇó°ÜÄ¹"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIR
+                "å‰‘é­”ç‹¬å­¤æ±‚è´¥å¢“"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="jqg")  
+                else if (dir2[1] == "jqg")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"¾øÇé¹È"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "ç»æƒ…è°·"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="nio")  
+                else if (dir2[1] == "nio")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"Å£¼Ò´åµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "ç‰›å®¶æ‘çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="feihu")  
+                else if (dir2[1] == "feihu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"´³Íõ±¦²ØµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "é—¯ç‹å®è—çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="wuguan")  
+                else if (dir2[1] == "wuguan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"ÏåÑôÎä¹İµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "è¥„é˜³æ­¦é¦†çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="village")  
+                else if (dir2[1] == "village")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"»ªÉ½´åµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "åå±±æ‘çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="taohuacun")  
+                else if (dir2[1] == "taohuacun")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIR"ÌÒ»¨´åµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIR
+                "æ¡ƒèŠ±æ‘çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="pingan")  
+                else if (dir2[1] == "pingan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"Æ½°²³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "å¹³å®‰åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="lingxiao")  
+                else if (dir2[1] == "lingxiao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIW"ÁèÏö³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIW
+                "å‡Œéœ„åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="wudujiao")  
+                else if (dir2[1] == "wudujiao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIR"Îå¶¾½ÌµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIR
+                "äº”æ¯’æ•™çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="hj")  
+                else if (dir2[1] == "hj")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"ÌìÉ½¸½½ü²İÔ­µÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="dali/yuxu")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "å¤©å±±é™„è¿‘è‰åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "dali/yuxu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"´óÀíÓñĞé¹ÛµÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="dali/wuliang")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "å¤§ç†ç‰è™šè§‚çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "dali/wuliang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIC"´óÀíÎŞÁ¿É½µÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="huanghe/yyd")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIC
+                "å¤§ç†æ— é‡å±±çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "huanghe/yyd")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"»ÆºÓÏô¸®µÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="kaifeng")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "é»„æ²³è§åºœçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "kaifeng")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIM"¿ª·â³ÇµÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="feitian")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIM
+                "å¼€å°åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "feitian")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIR"·ÉÌìÓù½£Á÷µÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="japan")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIR
+                "é£å¤©å¾¡å‰‘æµçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "japan")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÈÕ±¾Éñ»§µÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="tangmen")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "æ—¥æœ¬ç¥æˆ·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "tangmen")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIG"ÌÆÃÅµÄ"NOR+local+"¸½½ü¡£\n";
-else if (dir2[1]=="luoyang")  
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIG
+                "å”é—¨çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
+                else if (dir2[1] == "luoyang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÂåÑô³ÇµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "æ´›é˜³åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="chengdu" || dir2[1]=="city3")  
+                else if (dir2[1] == "chengdu" || dir2[1] == "city3")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"³É¶¼µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "æˆéƒ½çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="baihuagu")  
+                else if (dir2[1] == "baihuagu")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"°Ù»¨¹ÈµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "ç™¾èŠ±è°·çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="heizhao")  
+                else if (dir2[1] == "heizhao")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"°Ù»¨¹È¸½½üºÚÕÓµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "ç™¾èŠ±è°·é™„è¿‘é»‘æ²¼çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="jiaxing")  
+                else if (dir2[1] == "jiaxing")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¼ÎĞËµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "å˜‰å…´çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="shiliang")  
+                else if (dir2[1] == "shiliang")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÎÂ¼Ò×¯µÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "æ¸©å®¶åº„çš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="wuyi")  
+                else if (dir2[1] == "wuyi")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÎäÒÄÉ½ÇøµÄ"NOR+local+"¸½½ü¡£\n";
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "æ­¦å¤·å±±åŒºçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else if (dir2[1]=="yanping")  
+                else if (dir2[1] == "yanping")
 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÑÓÆ½³ÇµÄ"NOR+local+"¸½½ü¡£\n";
-	
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                "å»¶å¹³åŸçš„"
+                NOR + local + "é™„è¿‘ã€‚\n";
 
-else 	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÄ³¸öµØ·½µÄ"+local+"¸½½ü,³ö¿ÚÊıÎª£º"+HIW""+ck+""+NOR"µÄµØ·½¡£\n";
 
+                else    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨æŸä¸ªåœ°æ–¹çš„" + local + "é™„è¿‘,å‡ºå£æ•°ä¸ºï¼š" + HIW
+                "" + ck + "" + NOR
+                "çš„åœ°æ–¹ã€‚\n";
 
-if (dir2[1]=="jiangling")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"½­Áê³ÇµÄ"NOR+local+"¸½½ü¡£\n";
-}
 
-if (dir2[1]=="yueyang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÔÀÑô³ÇµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="qilian")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÆîÁ¬É½µÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="shouxihu")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÊİÎ÷ºşµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="wuxi")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÎŞÎı³ÇµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="yixing")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÒËĞË³ÇµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="taiwan")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Ì¨ÍåµØÇøµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="nanyang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÄÏÑôµØÇøµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="nanshaolin")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÄÏÉÙÁÖµØÇøµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="cangzhou")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"²×ÖİµØÇøµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="tanggu")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÌÁ¹Á³ÇµØÇøµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="yunhe")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¾©º¼´óÔËºÓµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="hainan")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"º£ÄÏµºµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="jindezheng")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¾°µÂÕòµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="yandang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Ñãµ´É½µÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="jinling")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"½ğÁê³ÇµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="sandboy")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"½­ÄÏÅ©´åµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="huangshan")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"»ÆÉ½µÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="yubifeng")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Óñ±Ê·åµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="quanzhouchen")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÈªÖİ³ÇÄÚµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="qingzh")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Çà²Ø¸ßÔ­¸½½ü"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="changbaishan" || dir2[1]=="gaoli")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¸ßÀö ³¤°×É½¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="annan")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"°²ÄÏ ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="taiyuan")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Ì«Ô­ ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="hefei")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ºÏ·Ê ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="jiujiang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¾Å½­ ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="baling")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"°ÍÁê ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="xinjiang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ĞÂ½® ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="dingxiang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¶¨Ïå ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="suiye")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ËéÒ¶ ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-
-if (dir2[1]=="mayi")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÂíÒØ±ß½® ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="xuzhou")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ĞìÖİ³Ç ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="jinan")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¼ÃÄÏ³Ç ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (dir2[1]=="guizhou")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"¹óÑô³Ç ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="nanchang")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÄÏ²ı³Ç ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-
-if (dir2[1]=="changsha")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"³¤É³³Ç ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-
-if (dir2[1]=="zhongzhou")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"ÖĞÖİ³Ç ¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-
-if (dir2[1]=="xizang" || dir2[1]=="zangbei")  
-{
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+HIY"Î÷²Ø»ò²Ø±±¸½½üµÄ"NOR+local+"¸½½ü¡£\n";	
-}
-if (wizardp(this_player()))
-{
-outputt +="¡º"+ob_list[i]->query("name")+"¡»ÔÚ"+dir2[1]+"µÄ"+local+"¸½½ü,³ö¿ÚÊıÎª£º"+HIW""+ck+""+NOR"µÄµØ·½¡£\n";
-output=outputt;
-}
-	return output;
-
+                if (dir2[1] == "jiangling") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ±Ÿé™µåŸçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
                 }
 
+                if (dir2[1] == "yueyang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å²³é˜³åŸçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
                 }
 
-	}
+                if (dir2[1] == "qilian") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "ç¥è¿å±±çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
 
-                return "È·¶¨²»ÁË"+strr+"µÄ´ó¸ÅÎ»ÖÃ.\n";
+                if (dir2[1] == "shouxihu") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "ç˜¦è¥¿æ¹–çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
 
+                if (dir2[1] == "wuxi") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ— é”¡åŸçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "yixing") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å®œå…´åŸçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "taiwan") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å°æ¹¾åœ°åŒºçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "nanyang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å—é˜³åœ°åŒºçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "nanshaolin") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å—å°‘æ—åœ°åŒºçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "cangzhou") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ²§å·åœ°åŒºçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "tanggu") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å¡˜æ²½åŸåœ°åŒºçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "yunhe") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "äº¬æ­å¤§è¿æ²³çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "hainan") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æµ·å—å²›çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "jindezheng") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ™¯å¾·é•‡çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "yandang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é›è¡å±±çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "jinling") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é‡‘é™µåŸçš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "sandboy") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ±Ÿå—å†œæ‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "huangshan") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é»„å±±çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "yubifeng") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "ç‰ç¬”å³°çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "quanzhouchen") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ³‰å·åŸå†…çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "qingzh") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é’è—é«˜åŸé™„è¿‘"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "changbaishan" || dir2[1] == "gaoli") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é«˜ä¸½ é•¿ç™½å±±é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "annan") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å®‰å— é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "taiyuan") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å¤ªåŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "hefei") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "åˆè‚¥ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "jiujiang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "ä¹æ±Ÿ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "baling") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å·´é™µ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "xinjiang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æ–°ç–† é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "dingxiang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å®šè¥„ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "suiye") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "ç¢å¶ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+
+                if (dir2[1] == "mayi") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é©¬é‚‘è¾¹ç–† é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "xuzhou") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å¾å·åŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "jinan") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "æµå—åŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (dir2[1] == "guizhou") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "è´µé˜³åŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "nanchang") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "å—æ˜ŒåŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+
+                if (dir2[1] == "changsha") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "é•¿æ²™åŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+
+                if (dir2[1] == "zhongzhou") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "ä¸­å·åŸ é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+
+                if (dir2[1] == "xizang" || dir2[1] == "zangbei") {
+                    output = "ã€" + ob_list[i]->query("name") + "ã€ä¼¼ä¹åœ¨" + HIY
+                    "è¥¿è—æˆ–è—åŒ—é™„è¿‘çš„"
+                    NOR + local + "é™„è¿‘ã€‚\n";
+                }
+                if (wizardp(this_player())) {
+                    outputt += "ã€" + ob_list[i]->query("name") + "ã€åœ¨" + dir2[1] + "çš„" + local + "é™„è¿‘,å‡ºå£æ•°ä¸ºï¼š" + HIW
+                    "" + ck + "" + NOR
+                    "çš„åœ°æ–¹ã€‚\n";
+                    output = outputt;
+                }
+                return output;
+
+            }
+
+        }
+
+    }
+
+    return "ç¡®å®šä¸äº†" + strr + "çš„å¤§æ¦‚ä½ç½®.\n";
 
 
 }
 
-varargs int already_spreaded(string str,int hard)
+varargs int already_spreaded(string str, int hard) {
 
-{
+    object ob, *ob_list;
 
-        object ob,*ob_list;
+    int i;
 
-        int i;
+    if (!str) return 0;
 
-        if(!str) return 0;
-
-	if(hard)
-
-	{
+    if (hard) {
 
         ob_list = children(str);
 
-        for(i=0; i<sizeof(ob_list); i++) {
+        for (i = 0; i < sizeof(ob_list); i++) {
 
-                ob=find_env(ob_list[i]);
+            ob = find_env(ob_list[i]);
 
-                if(ob)
+            if (ob) {
+                ob_list[i]->move(VOID_OB);
 
-		{ ob_list[i]->move(VOID_OB);
-
-		 destruct(ob_list[i]);
-		}
-
-	}
-
-	return 0;
-
-	}
-
-	else
-
-	{
-
-	if(!str) return 0;
-
-	ob_list = children(str);
-
-	for(i=0; i<sizeof(ob_list); i++) {
-
-                ob=find_env(ob_list[i]);
-
-                if(ob)
-
-			return 1;
-
-	}
-
-	return 0;
-
-	}
-
-}
-
-object find_env(object ob)
-
-{
-
-        while(ob)
-
-        { ob=environment(ob);
-          if(ob)
-          if(ob->query("short") ) return ob;
-
-     //   else ob=environment(ob);
+                destruct(ob_list[i]);
+            }
 
         }
 
-        return ob;
+        return 0;
+
+    } else {
+
+        if (!str) return 0;
+
+        ob_list = children(str);
+
+        for (i = 0; i < sizeof(ob_list); i++) {
+
+            ob = find_env(ob_list[i]);
+
+            if (ob)
+
+                return 1;
+
+        }
+
+        return 0;
+
+    }
 
 }
 
-object find_book(object ob)
+object find_env(object ob) {
 
-{
+    while (ob) {
+        ob = environment(ob);
+        if (ob)
+            if (ob->query("short")) return ob;
 
-        while(ob)
+        //   else ob=environment(ob);
 
-        {
+    }
 
-          if(ob->query("short") ) return ob;
+    return ob;
+
+}
+
+object find_book(object ob) {
+
+    while (ob) {
+
+        if (ob->query("short")) return ob;
 //        if(ob->query("exits") ) return ob;
-     
-        else ob=environment(ob);
+
+        else ob = environment(ob);
+
+    }
+
+    return ob;
+
+}
+
+mapping *read_table(string file) {
+
+    string *line, *field, *format;
+
+    mapping *data;
+
+    int i, rn, fn;
+
+
+    line = explode(read_file(file), "\n");
+
+    data = ({});
+
+    for (i = 0; i < sizeof(line); i++) {
+
+        if (line[i] == "" || line[i][0] == '#') continue;
+
+        if (!pointerp(field)) {
+
+            field = explode(line[i], ":");
+
+            continue;
 
         }
 
-        return ob;
+        if (!pointerp(format)) {
 
-}
-mapping *read_table(string file)
+            format = explode(line[i], ":");
 
-{
+            continue;
 
-	string *line, *field, *format;
+        }
 
-	mapping *data;
+        break;
 
-	int i, rn, fn;
-
+    }
 
 
-	line = explode(read_file(file), "\n");
+    for (rn = 0, fn = 0; i < sizeof(line); i++) {
 
-	data = ({});
+        if (line[i] == "" || line[i][0] == '#') continue;
 
-	for(i=0; i<sizeof(line); i++) {
+        if (!fn) data += ({ allocate_mapping(sizeof(field)) });
 
-		if( line[i]=="" || line[i][0]=='#' ) continue;
+        sscanf(line[i], format[fn], data[rn][field[fn]]);
 
-		if( !pointerp(field) ) {
+        fn = (++fn) % sizeof(field);
 
-			field = explode( line[i], ":" );
+        if (!fn) ++rn;
 
-			continue;
+    }
 
-		}
-
-		if( !pointerp(format) ) {
-
-			format = explode( line[i], ":" );
-
-			continue;
-
-		}
-
-		break;
-
-	}
-
-
-
-	for( rn = 0, fn = 0; i<sizeof(line); i++) {
-
-		if( line[i]=="" || line[i][0]=='#' ) continue;
-
-		if( !fn ) data += ({ allocate_mapping(sizeof(field)) });
-
-		sscanf( line[i], format[fn], data[rn][field[fn]] );
-
-		fn = (++fn) % sizeof(field);
-
-		if( !fn ) ++rn;
-
-	}
-
-	return data;
+    return data;
 
 }
 
-void big_reward(object me, object who, object item)
+void big_reward(object me, object who, object item) {
 
-{
-
-	tell_object(me,"ÄãÕæĞĞ£¡£¡\n");
+    tell_object(me, "ä½ çœŸè¡Œï¼ï¼\n");
 
 }
 
 
+void execute_accept_object(object me, object who, object item) {
 
-void execute_accept_object(object me, object who, object item)
-
-{
-
-	who->accept_object(me,item);
+    who->accept_object(me, item);
 
 }
 

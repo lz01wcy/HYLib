@@ -1,14 +1,15 @@
-//ÒÔÏÂÊÇ/adm/daemons/tenrichmand.c¶¨ÒåÁËÒ»Ğ©»ù±¾º¯Êı£º
+//ä»¥ä¸‹æ˜¯/adm/daemons/tenrichmand.cå®šä¹‰äº†ä¸€äº›åŸºæœ¬å‡½æ•°ï¼š
 
 //tenrichmand.c
 ////////////////////////////////////////////////////////////////////////////////
 //
 //1997.5.20 finished
 //by maxim@nju_mud
-//1997.12.1ÖØĞÂÕûÀí
+//1997.12.1é‡æ–°æ•´ç†
 ////////////////////////////////////////////////////////////////////////////////
 //
 #include <login.h>
+
 string *gaoshou_status;
 string gaoshou_id_min;
 string gaoshou_name_min;
@@ -16,135 +17,146 @@ int gaoshou_exp_min;
 int gaoshou_number_min;
 string gaoshou_title_min;
 
-void create()
-{
-seteuid(geteuid());
+void create() {
+    seteuid(geteuid());
 }
 
 // This function returns the status of an uid.
-int set_rich(mixed ob, int exp)
-{
-string uid, gaoshou_id,gaoshou_name,gaoshou_title;
-string now_id,now_name,now_title;
-string *gaoshoulist,gaoshoulist2;
-int i,j,gaoshou_exp,now_exp;
+int set_rich(mixed ob, int exp) {
+    string uid, gaoshou_id, gaoshou_name, gaoshou_title;
+    string now_id, now_name, now_title;
+    string *gaoshoulist, gaoshoulist2;
+    int i, j, gaoshou_exp, now_exp;
 
-if( userp(ob) ) uid = getuid(ob);
-else if(stringp(ob)) uid = ob;
-else
-return 0;
-
+    if (userp(ob)) uid = getuid(ob);
+    else if (stringp(ob)) uid = ob;
+    else
+        return 0;
 
 
-gaoshoulist = explode(read_file(RICHMAN), "\n");
+    gaoshoulist = explode(read_file(RICHMAN), "\n");
 
 //RICHMAN is the file to be read
-//ÔÚ/include/login.hÖĞÓĞ¶¨Òå¡£
-//ÓÉÓÚÃ»ÓĞÅĞ¶ÏÎÄ¼ş¶Á´íµÄ´úÂë£¬ËùÒÔÊÂÏÈÒª±£Ö¤
-//ÎÄ¼şµÄ¸ñÊ½ÕıÈ·¡£
+//åœ¨/include/login.hä¸­æœ‰å®šä¹‰ã€‚
+//ç”±äºæ²¡æœ‰åˆ¤æ–­æ–‡ä»¶è¯»é”™çš„ä»£ç ï¼Œæ‰€ä»¥äº‹å…ˆè¦ä¿è¯
+//æ–‡ä»¶çš„æ ¼å¼æ­£ç¡®ã€‚
 
-gaoshou_status = allocate(sizeof(gaoshoulist));
-for(i=0; i<10; i++) {
-if( sscanf(gaoshoulist[i], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,
-gaoshou_exp)!=4 ) continue;
-gaoshou_status[i] = (string)gaoshou_id+" "+
-(string)gaoshou_name+" "+
-(string)gaoshou_title+" "+
-(string)gaoshou_exp;
-}
+    gaoshou_status = allocate(sizeof(gaoshoulist));
+    for (i = 0; i < 10; i++) {
+        if (sscanf(gaoshoulist[i], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title,
+                   gaoshou_exp) != 4)
+            continue;
+        gaoshou_status[i] = (string) gaoshou_id + " " +
+                            (string) gaoshou_name + " " +
+                            (string) gaoshou_title + " " +
+                            (string) gaoshou_exp;
+    }
 
-for(i=0; i<9; i++){
-for(j=0;j<9-i;j++){
-if( gaoshou_status[j][0]=='#'
-|| sscanf(gaoshou_status[j], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp)!=4 ) continue;
-if( gaoshou_status[j+1][0]=='#'
-|| sscanf(gaoshou_status[j+1], "%s %s %s %d", now_id,now_name,now_title,now_exp)
-!=4 ) continue;
-if(gaoshou_exp < now_exp){
-gaoshou_status[j]=now_id+" "+now_name+" "+now_title+" "+(string)now_exp;
-gaoshou_status[j+1]=gaoshou_id+" "+gaoshou_name+" "+gaoshou_title+" "+(string)gaoshou_exp;
-}
-}
-}
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9 - i; j++) {
+            if (gaoshou_status[j][0] == '#'
+                || sscanf(gaoshou_status[j], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp) != 4)
+                continue;
+            if (gaoshou_status[j + 1][0] == '#'
+                || sscanf(gaoshou_status[j + 1], "%s %s %s %d", now_id, now_name, now_title, now_exp)
+                   != 4)
+                continue;
+            if (gaoshou_exp < now_exp) {
+                gaoshou_status[j] = now_id + " " + now_name + " " + now_title + " " + (string) now_exp;
+                gaoshou_status[j + 1] =
+                        gaoshou_id + " " + gaoshou_name + " " + gaoshou_title + " " + (string) gaoshou_exp;
+            }
+        }
+    }
 
-gaoshou_exp_min=3000000000000;
-//×î¸»µÄÈËµÄÇ®ÒªÉÙÓÚÕâ¸öÊıÄ¿
-sscanf(gaoshou_status[4], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp) ;
-gaoshou_exp_min=gaoshou_exp;
+    gaoshou_exp_min = 3000000000000;
+//æœ€å¯Œçš„äººçš„é’±è¦å°‘äºè¿™ä¸ªæ•°ç›®
+    sscanf(gaoshou_status[4], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp);
+    gaoshou_exp_min = gaoshou_exp;
 
-//È¡µÃ¹Ø¼üÂë×îĞ¡ÖµµÄÊı¾İĞÅÏ¢
-for(i=0; i<10; i++) {
-if( sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp)!=4 ) continue;
-if(gaoshou_exp < gaoshou_exp_min){
-gaoshou_id_min=gaoshou_id;
-gaoshou_number_min=i;
-gaoshou_name_min=gaoshou_name;
-gaoshou_title_min=gaoshou_title;
-gaoshou_exp_min=gaoshou_exp;
-}
-}
+//å–å¾—å…³é”®ç æœ€å°å€¼çš„æ•°æ®ä¿¡æ¯
+    for (i = 0; i < 10; i++) {
+        if (sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp) !=
+            4)
+            continue;
+        if (gaoshou_exp < gaoshou_exp_min) {
+            gaoshou_id_min = gaoshou_id;
+            gaoshou_number_min = i;
+            gaoshou_name_min = gaoshou_name;
+            gaoshou_title_min = gaoshou_title;
+            gaoshou_exp_min = gaoshou_exp;
+        }
+    }
 
-for(i=0; i<10; i++) {
-if( sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp)!=4 ) continue;
-if(uid == gaoshou_id){
-gaoshou_id_min=gaoshou_id;
-gaoshou_number_min=i;
-gaoshou_name_min=gaoshou_name;
-gaoshou_title_min=gaoshou_title;
-gaoshou_exp_min=gaoshou_exp;
-break;
-}
-}
+    for (i = 0; i < 10; i++) {
+        if (sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp) !=
+            4)
+            continue;
+        if (uid == gaoshou_id) {
+            gaoshou_id_min = gaoshou_id;
+            gaoshou_number_min = i;
+            gaoshou_name_min = gaoshou_name;
+            gaoshou_title_min = gaoshou_title;
+            gaoshou_exp_min = gaoshou_exp;
+            break;
+        }
+    }
 
 
-gaoshou_name=(string)ob->query("name");
-gaoshou_title=(string)ob->query("title");
+    gaoshou_name = (string) ob->query("name");
+    gaoshou_title = (string) ob->query("title");
 
-//¸üĞÂÒÑ¾­´æÔÚµÄÈËµÄÊı¾İ£¬»òÕß°Ñ×îĞ¡ÖµµÄÈËµÄÊı¾İÌæ´ú
-if( (int)exp > (int)gaoshou_exp_min || uid == gaoshou_id) {
-gaoshou_status[gaoshou_number_min]=
-uid+" "+gaoshou_name+" "+gaoshou_title+" "+ (string)exp;
+//æ›´æ–°å·²ç»å­˜åœ¨çš„äººçš„æ•°æ®ï¼Œæˆ–è€…æŠŠæœ€å°å€¼çš„äººçš„æ•°æ®æ›¿ä»£
+    if ((int) exp > (int) gaoshou_exp_min || uid == gaoshou_id) {
+        gaoshou_status[gaoshou_number_min] =
+                uid + " " + gaoshou_name + " " + gaoshou_title + " " + (string) exp;
 
-//ÓÉÓÚÊı¾İÒÑ¾­¸Ä±ä£¬´Ë´¦ÊÇÖØĞÂÅÅĞò
-for(i=0; i<9; i++){
-for(j=0;j<9-i;j++){
-if( gaoshou_status[j][0]=='#'
-|| sscanf(gaoshou_status[j], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp)!=4 ) continue;
-if( gaoshou_status[j+1][0]=='#'
-|| sscanf(gaoshou_status[j+1], "%s %s %s %d", now_id,now_name,now_title,now_exp) !=4 ) continue;
-if(gaoshou_exp < now_exp){
-gaoshou_status[j]=now_id+" "+now_name+" "+now_title+" "+(string)now_exp;
-gaoshou_status[j+1]=gaoshou_id+" "+gaoshou_name+" "+gaoshou_title+" "+(string)gaoshou_exp;
+//ç”±äºæ•°æ®å·²ç»æ”¹å˜ï¼Œæ­¤å¤„æ˜¯é‡æ–°æ’åº
+        for (i = 0; i < 9; i++) {
+            for (j = 0; j < 9 - i; j++) {
+                if (gaoshou_status[j][0] == '#'
+                    ||
+                    sscanf(gaoshou_status[j], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp) != 4)
+                    continue;
+                if (gaoshou_status[j + 1][0] == '#'
+                    || sscanf(gaoshou_status[j + 1], "%s %s %s %d", now_id, now_name, now_title, now_exp) != 4)
+                    continue;
+                if (gaoshou_exp < now_exp) {
+                    gaoshou_status[j] = now_id + " " + now_name + " " + now_title + " " + (string) now_exp;
+                    gaoshou_status[j + 1] =
+                            gaoshou_id + " " + gaoshou_name + " " + gaoshou_title + " " + (string) gaoshou_exp;
 
-}
-}
-}
-//ÒÔÏÂÎªĞ´ÎÄ¼ş
-for(gaoshoulist2 = "", i=0; i<10; i++){
-if( gaoshou_status[i][0]=='#'
-|| sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp)!=4 ) continue;
+                }
+            }
+        }
+//ä»¥ä¸‹ä¸ºå†™æ–‡ä»¶
+        for (gaoshoulist2 = "", i = 0; i < 10; i++) {
+            if (gaoshou_status[i][0] == '#'
+                || sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp) != 4)
+                continue;
 
-gaoshoulist2+= gaoshou_id+" "+gaoshou_name+" "+gaoshou_title+" "+(string)gaoshou_exp+"\n";
-}
+            gaoshoulist2 += gaoshou_id + " " + gaoshou_name + " " + gaoshou_title + " " + (string) gaoshou_exp + "\n";
+        }
 
-rm(RICHMAN);
-write_file(RICHMAN, gaoshoulist2);
+        rm(RICHMAN);
+        write_file(RICHMAN, gaoshoulist2);
 
-//¼ÇÂ¼¸üĞÂĞÅÏ¢
-log_file( "static/tenrich", capitalize(uid)
-+ " become Ê®´ó¸»ÎÌÖ®Ò»: " + exp + " on " + ctime(time()) + "\n" );
+//è®°å½•æ›´æ–°ä¿¡æ¯
+        log_file("static/tenrich", capitalize(uid)
+                                   + " become åå¤§å¯Œç¿ä¹‹ä¸€: " + exp + " on " + ctime(time()) + "\n");
 
-//×¼±¸·µ»Ø´ËÍæ¼Ò×îĞÂÅÅÃûÖµ
-for(i=0; i<10; i++) {
-if( sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id,gaoshou_name,gaoshou_title,gaoshou_exp)!=4 ) continue;
-if(uid == gaoshou_id){
-break;
-}
-}
+//å‡†å¤‡è¿”å›æ­¤ç©å®¶æœ€æ–°æ’åå€¼
+        for (i = 0; i < 10; i++) {
+            if (sscanf(gaoshou_status[i], "%s %s %s %d", gaoshou_id, gaoshou_name, gaoshou_title, gaoshou_exp) !=
+                4)
+                continue;
+            if (uid == gaoshou_id) {
+                break;
+            }
+        }
 
-return (i+1);
-}
-else return 0;
+        return (i + 1);
+    } else return 0;
 
 }
 

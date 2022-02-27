@@ -13,8 +13,6 @@
 inherit F_CLEAN_UP;
 
 
-
-
 /* The tcp file is used to allow other muds to find out which tcp services
  * are supported.
  */
@@ -22,19 +20,13 @@ inherit F_CLEAN_UP;
 
 
 
-int support_tcp_mail()      { return 1; }
+int support_tcp_mail() { return 1; }
 
 
+int support_tcp_tell() { return 1; }
 
 
-int support_tcp_tell()      { return 1; }
+int support_tcp_finger() { return 1; }
 
 
-
-
-int support_tcp_finger()    { return 1; }
-
-
-
-
-int support_tcp_interwiz()  { return 1; }
+int support_tcp_interwiz() { return 1; }

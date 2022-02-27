@@ -1,69 +1,81 @@
 // Deamon:/adm/daemons/autorebootd.c
-/* Õâ¸öÊÇÓÉjjgodÎªÄ£Äâ»ª¸½´ó·ù¶È¸ÄĞ´Ô­waiwaiµÄ×Ô¶¯ÖØÆôÏµÍ³£¬
-    ×Ô¶¯ÖØÆô¿´ÆğÀ´»¹ÊÇ±ØÒªµÄ£¬µ±Î×Ê¦Æ½Ê±²»ÔÚÏßµÄÊ±ºò£¬¿ÉÒÔÍ¨¹ı
-    ÖØÆô»Ö¸´Ô­À´µÄ×´Ì¬¡£Ô­ÏÈwaiwaiµÄÄÇ¸öÏµÍ³Ì«¹ı·±Ëö£¬15·ÖÖÓ
-    µ¹¼ÆÊ±¾ÓÈ»ÒªĞ´15¸öº¯Êı£¡¼ÙÈç200·ÖÖÓµ¹¼ÆÊ±Æñ²»ÊÇÒªĞ´200¸ö
-    º¯Êı£¿ÕæÊÇºÃĞ¦¡£ÎÒÏÖÔÚ¸ÄÎªÖ»ĞèÒª2¸öº¯Êı¾Í¹»ÁË£¬ÎŞÂÛ¶à³¤µÄ
-    µ¹¼ÆÊ±¶¼¿ÉÒÔ×Ô¼ºÉèÖÃ¡£*/
+/* è¿™ä¸ªæ˜¯ç”±jjgodä¸ºæ¨¡æ‹Ÿåé™„å¤§å¹…åº¦æ”¹å†™åŸwaiwaiçš„è‡ªåŠ¨é‡å¯ç³»ç»Ÿï¼Œ
+    è‡ªåŠ¨é‡å¯çœ‹èµ·æ¥è¿˜æ˜¯å¿…è¦çš„ï¼Œå½“å·«å¸ˆå¹³æ—¶ä¸åœ¨çº¿çš„æ—¶å€™ï¼Œå¯ä»¥é€šè¿‡
+    é‡å¯æ¢å¤åŸæ¥çš„çŠ¶æ€ã€‚åŸå…ˆwaiwaiçš„é‚£ä¸ªç³»ç»Ÿå¤ªè¿‡ç¹çï¼Œ15åˆ†é’Ÿ
+    å€’è®¡æ—¶å±…ç„¶è¦å†™15ä¸ªå‡½æ•°ï¼å‡å¦‚200åˆ†é’Ÿå€’è®¡æ—¶å²‚ä¸æ˜¯è¦å†™200ä¸ª
+    å‡½æ•°ï¼ŸçœŸæ˜¯å¥½ç¬‘ã€‚æˆ‘ç°åœ¨æ”¹ä¸ºåªéœ€è¦2ä¸ªå‡½æ•°å°±å¤Ÿäº†ï¼Œæ— è®ºå¤šé•¿çš„
+    å€’è®¡æ—¶éƒ½å¯ä»¥è‡ªå·±è®¾ç½®ã€‚*/
 
 #include <ansi.h>
 #include <net/daemons.h>
 
 inherit F_DBASE;
+
 private void count_time(int min);
+
 void auto_reboot_start();
+
 void auto_reboot_done();
-void create()
-{
-//	object *ob = users();±¾À´ÏëÊµÏÖÓĞÌìÉñÔÚÏßÊ±¾Í²»Æô¶¯´Ë³ÌĞòÀ´Õ¼ÓÃ×ÊÔ´£¬µ±ÓÎÏ·ÖĞÒ»¸öÌìÉñ¶¼Ã»ÓĞµÄÊ±ºò£¬
-//	int i;		 ÖØÆô¹¤×÷¾Í½»ÓÉ´Ë³ÌĞòÍĞ¹ÜµÄ£¬µ«Ô½×öÔ½Âé·³£¬»¹ÊÇËãÁË£¬ÓĞĞËÈ¤µÄÓÃÕâÀïµÄ´úÂë×Ô¼º×ö°É¡£
-	seteuid(ROOT_UID);
-	set("channel_id", "×Ô¶¯¶¨Ê±Æô¶¯¾«Áé");
+
+void create() {
+//	object *ob = users();æœ¬æ¥æƒ³å®ç°æœ‰å¤©ç¥åœ¨çº¿æ—¶å°±ä¸å¯åŠ¨æ­¤ç¨‹åºæ¥å ç”¨èµ„æºï¼Œå½“æ¸¸æˆä¸­ä¸€ä¸ªå¤©ç¥éƒ½æ²¡æœ‰çš„æ—¶å€™ï¼Œ
+//	int i;		 é‡å¯å·¥ä½œå°±äº¤ç”±æ­¤ç¨‹åºæ‰˜ç®¡çš„ï¼Œä½†è¶Šåšè¶Šéº»çƒ¦ï¼Œè¿˜æ˜¯ç®—äº†ï¼Œæœ‰å…´è¶£çš„ç”¨è¿™é‡Œçš„ä»£ç è‡ªå·±åšå§ã€‚
+    seteuid(ROOT_UID);
+    set("channel_id", "è‡ªåŠ¨å®šæ—¶å¯åŠ¨ç²¾çµ");
 /*	for(i=0; i<sizeof(ob); i++){
 		if (wizhood(ob[i])=="(admin)")
 		{
-		tell_object(ob[i],ob[i]->name()+"£¬ÒòÎª×÷ÎªÌìÉñµÄÄã»¹ÔÚÏß£¬ËùÒÔ×Ô¶¯ÖØÆô¾«Áé²»±»¼ÓÔØ£¡\n");
-		log_file("AUTOREBOOT", sprintf("autorebootÆô¶¯Ê§°Ü£¡\n"));
+		tell_object(ob[i],ob[i]->name()+"ï¼Œå› ä¸ºä½œä¸ºå¤©ç¥çš„ä½ è¿˜åœ¨çº¿ï¼Œæ‰€ä»¥è‡ªåŠ¨é‡å¯ç²¾çµä¸è¢«åŠ è½½ï¼\n");
+		log_file("AUTOREBOOT", sprintf("autorebootå¯åŠ¨å¤±è´¥ï¼\n"));
 		return;
 		}
 		else {*/
-		CHANNEL_D->do_channel( this_object(), "sys", "×Ô¶¯¶¨Ê±ÖØÆô¾«ÁéÒÑ¾­Æô¶¯¡£");
-		call_out("auto_reboot_start", 86400+random(500));// 2Ìì×Ô¶¯ÖØÆô
-//		call_out("auto_reboot_start", 2);// 2Ìì×Ô¶¯ÖØÆô
+    CHANNEL_D->do_channel(this_object(), "sys", "è‡ªåŠ¨å®šæ—¶é‡å¯ç²¾çµå·²ç»å¯åŠ¨ã€‚");
+    call_out("auto_reboot_start", 86400 + random(500));// 2å¤©è‡ªåŠ¨é‡å¯
+//		call_out("auto_reboot_start", 2);// 2å¤©è‡ªåŠ¨é‡å¯
 /*		call_out("auto_reboot_start",20);
-		log_file("AUTOREBOOT", sprintf("autorebootÆô¶¯³É¹¦£¡\n"));
+		log_file("AUTOREBOOT", sprintf("autorebootå¯åŠ¨æˆåŠŸï¼\n"));
 		return;
 		}
 	}*/
 }
 
-void auto_reboot_start()
-{
-	remove_call_out("auto_reboot_start");
-	message("system",RED"¡¾ÖØÆô¾«Áé¡¿"BLU"ÏÖÔÚ¿ªÊ¼º£ÑóII×Ô¶¯ÖØÆôµ¹¼ÆÊ±£¬»¹ÓĞ5·ÖÖÓ£¡\n" NOR,users());
-	call_out("count_time",60,5); // "15"ÊÇÖ¸Õû¸öµ¹¼ÆÊ±Ê±¼ä15·ÖÖÓ£¬¿ÉÒÔ×Ô¼ºĞŞ¸Ä
+void auto_reboot_start() {
+    remove_call_out("auto_reboot_start");
+    message("system", RED
+    "ã€é‡å¯ç²¾çµã€‘"
+    BLU
+    "ç°åœ¨å¼€å§‹æµ·æ´‹IIè‡ªåŠ¨é‡å¯å€’è®¡æ—¶ï¼Œè¿˜æœ‰5åˆ†é’Ÿï¼\n"
+    NOR, users());
+    call_out("count_time", 60, 5); // "15"æ˜¯æŒ‡æ•´ä¸ªå€’è®¡æ—¶æ—¶é—´15åˆ†é’Ÿï¼Œå¯ä»¥è‡ªå·±ä¿®æ”¹
 }
 
-private void count_time(int min)
-{
-	min--;
-	if( min ) {
-		message("system",RED"¡¾ÖØÆô¾«Áé¡¿"BLU"¸÷Î»Íæ¼Ò£¬Àëº£ÑóII×Ô¶¯ÖØÆô»¹ÓĞ" + chinese_number(min) +"·ÖÖÓµÄÊ±¼ä£¡\n"NOR,users() );
-		call_out("count_time", 60, min); // ¸æËß´ó¼Ò»¹ÓĞ¼¸·ÖÖÓÊ±¼ä
-	} else {
-		message("system",RED"¡¾ÖØÆô¾«Áé¡¿"BLU"¸÷Î»Íæ¼Ò£¬º£ÑóIIÏÖÔÚ×Ô¶¯ÖØÆô£¡£¡£¡\n"NOR,users() );
-		call_out("auto_reboot_done", 3+random(8)); // µ½µãÀ²
-	}
+private void count_time(int min) {
+    min--;
+    if (min) {
+        message("system", RED
+        "ã€é‡å¯ç²¾çµã€‘"
+        BLU
+        "å„ä½ç©å®¶ï¼Œç¦»æµ·æ´‹IIè‡ªåŠ¨é‡å¯è¿˜æœ‰" + chinese_number(min) + "åˆ†é’Ÿçš„æ—¶é—´ï¼\n"
+        NOR, users());
+        call_out("count_time", 60, min); // å‘Šè¯‰å¤§å®¶è¿˜æœ‰å‡ åˆ†é’Ÿæ—¶é—´
+    } else {
+        message("system", RED
+        "ã€é‡å¯ç²¾çµã€‘"
+        BLU
+        "å„ä½ç©å®¶ï¼Œæµ·æ´‹IIç°åœ¨è‡ªåŠ¨é‡å¯ï¼ï¼ï¼\n"
+        NOR, users());
+        call_out("auto_reboot_done", 3 + random(8)); // åˆ°ç‚¹å•¦
+    }
 }
 
-void auto_reboot_done()
-{
-	int i,j;
-	object *ob, link_ob;
-	string id;
-	j=0;
-	seteuid(getuid());
-//	set("channel_id", "´æÅÌ¾«Áé"); // Õâ¶Î´æÅÌµÄ´úÂë¿´ÉÏÈ¥¾Í²»´óË³ÑÛ£¬¿Ï¶¨Ğ´µÄ²»Ì«ºÃ£¬µ«Ì«ÍíÁËÎÒ¾Í²»¸ÄËüÁË
+void auto_reboot_done() {
+    int i, j;
+    object *ob, link_ob;
+    string id;
+    j = 0;
+    seteuid(getuid());
+//	set("channel_id", "å­˜ç›˜ç²¾çµ"); // è¿™æ®µå­˜ç›˜çš„ä»£ç çœ‹ä¸Šå»å°±ä¸å¤§é¡ºçœ¼ï¼Œè‚¯å®šå†™çš„ä¸å¤ªå¥½ï¼Œä½†å¤ªæ™šäº†æˆ‘å°±ä¸æ”¹å®ƒäº†
 //	ob=users();
 //	i=sizeof(ob);
 //	for( i=0;i<sizeof(ob);i++) {
@@ -72,9 +84,9 @@ void auto_reboot_done()
 //	if(!environment(ob[i]) )        continue;
 //	if( !objectp(link_ob = ob[i]->query_temp("link_ob")) ) continue;
 //	if( (int)link_ob->save() && (int)ob[i]->save() ) j = 1;
-//	else CHANNEL_D->do_channel( this_object(), "sys", ob[i]->query("name")+"µµ°¸×Ô¶¯´æÅÌÊ§°Ü¡£");
+//	else CHANNEL_D->do_channel( this_object(), "sys", ob[i]->query("name")+"æ¡£æ¡ˆè‡ªåŠ¨å­˜ç›˜å¤±è´¥ã€‚");
 //	}
-//	CHANNEL_D->do_channel( this_object(), "sys", "µµ°¸×Ô¶¯´æÅÌ³É¹¦¡£");
-	shutdown(0);
-	return;
+//	CHANNEL_D->do_channel( this_object(), "sys", "æ¡£æ¡ˆè‡ªåŠ¨å­˜ç›˜æˆåŠŸã€‚");
+    shutdown(0);
+    return;
 }

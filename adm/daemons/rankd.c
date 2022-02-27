@@ -3,922 +3,1582 @@
 
 #include <ansi.h>
 
-string query_rank(object ob)
-{
-        mapping fam;
+string query_rank(object ob) {
+    mapping fam;
 
-        int exp;
-        int shen;
-        int budd;
-        int age;
-string family;
-        if( ob->is_ghost() )
-                return HIB "¡¾¹Â»êÒ°¹í¡¿" NOR;
+    int exp;
+    int shen;
+    int budd;
+    int age;
+    string family;
+    if (ob->is_ghost())
+        return HIB
+    "ã€å­¤é­‚é‡é¬¼ã€‘"
+    NOR;
 
-        shen = ob->query("shen");
-        exp = ob->query("combat_exp");
-        age = ob->query("age");
-        family = ob->query("family/family_name");
-        if ( (fam = ob->query("family")) && (fam["family_name"] == "ÉÙÁÖÅÉ"
-                || fam["family_name"] == "¶ëáÒÅÉ"
-                || fam["family_name"] == "ÌìÁúËÂ"
-                || fam["family_name"] == "Ñ©É½ÅÉ"
-                || fam["family_name"] == "ºãÉ½ÅÉ"
-                ))
-                budd = ob->query_skill("buddhism",1);
+    shen = ob->query("shen");
+    exp = ob->query("combat_exp");
+    age = ob->query("age");
+    family = ob->query("family/family_name");
+    if ((fam = ob->query("family")) && (fam["family_name"] == "å°‘æ—æ´¾"
+                                        || fam["family_name"] == "å³¨åµ‹æ´¾"
+                                        || fam["family_name"] == "å¤©é¾™å¯º"
+                                        || fam["family_name"] == "é›ªå±±æ´¾"
+                                        || fam["family_name"] == "æ’å±±æ´¾"
+    ))
+        budd = ob->query_skill("buddhism", 1);
 //        if(exp >=2500000 && shen >=200000)
-//                return HIW "¡¾´«ËµÖĞµÄ´óÏÀ¡¿" NOR;
+//                return HIW "ã€ä¼ è¯´ä¸­çš„å¤§ä¾ ã€‘" NOR;
 //        if(exp >=2500000 && shen <=-200000)
-//                return HIW "¡¾´«ËµÖĞµÄÄ§Íõ¡¿" NOR;
+//                return HIW "ã€ä¼ è¯´ä¸­çš„é­”ç‹ã€‘" NOR;
 //        if(exp >=1500000)
-//                return HIW "¡¾ÎäÁÖ´«Ææ¡¿" NOR;
+//                return HIW "ã€æ­¦æ—ä¼ å¥‡ã€‘" NOR;
 
 
-        switch(ob->query("gender")) {
-        case "Å®ĞÔ":
-                switch(wizhood(ob)) {
+    switch (ob->query("gender")) {
+        case "å¥³æ€§":
+            switch (wizhood(ob)) {
                 case "(admin)":
-                        return HIM "¡¾¾ÅÌìĞşÅ®¡¿" NOR;
+                    return HIM
+                    "ã€ä¹å¤©ç„å¥³ã€‘"
+                    NOR;
                 case "(arch)":
-                        return HIY "¡¾ĞŞÂŞÅ®Éñ¡¿" NOR;
+                    return HIY
+                    "ã€ä¿®ç½—å¥³ç¥ã€‘"
+                    NOR;
                 case "(wizard)":
-                        return HIG "¡¾Ñş³ØÏÉÅ®¡¿" NOR;
+                    return HIG
+                    "ã€ç‘¶æ± ä»™å¥³ã€‘"
+                    NOR;
                 case "(apprentice)":
-                        return HIC "¡¾ ÏÉ  åú ¡¿" NOR;
+                    return HIC
+                    "ã€ ä»™  å¦ƒ ã€‘"
+                    NOR;
                 case "(immortal)":
-                        return HIC "¡¾º£ÑóÊ¹Õß¡¿" NOR;
+                    return HIC
+                    "ã€æµ·æ´‹ä½¿è€…ã€‘"
+                    NOR;
                 default:
 /*if (!ob->query("class") || !family) {
                         if (((int)ob->query("PKS") > 100) &&
                             ((int)ob->query("PKS") > (int)ob->query("MKS")))
-                                return HIR "¡¾ÒûÑªÅ®Ä§¡¿" NOR;
+                                return HIR "ã€é¥®è¡€å¥³é­”ã€‘" NOR;
                         if ((int)ob->query("thief") > 10 )
-                                return HIC "¡¾Å® ¹ß ÇÔ¡¿" NOR;
-                       if (shen >= 1000000) return HIC "¡¾¾øÊÀÌì½¿¡¿" NOR;
+                                return HIC "ã€å¥³ æƒ¯ çªƒã€‘" NOR;
+                       if (shen >= 1000000) return HIC "ã€ç»ä¸–å¤©å¨‡ã€‘" NOR;
                         else if (shen >= 100000 && exp >=800000)
-                                return HIC "¡¾¿õÊÀÅ®ÏÀ¡¿" NOR;
+                                return HIC "ã€æ—·ä¸–å¥³ä¾ ã€‘" NOR;
                         else if (shen >= 10000 && exp >=400000)
-                                return HIC "¡¾ ´óÅ®ÏÀ ¡¿" NOR;
+                                return HIC "ã€ å¤§å¥³ä¾  ã€‘" NOR;
                         else if (shen >= 1000 && exp >=200000)
-                                return HIC "¡¾ Å®  ÏÀ ¡¿" NOR;
+                                return HIC "ã€ å¥³  ä¾  ã€‘" NOR;
                         else if (shen >= 100 && exp >=50000)
-                                return HIC "¡¾ Å®ÉÙÏÀ ¡¿" NOR;
-                        if (shen <= -1000000) return HIR "¡¾¸ÇÊÀÂŞÉ²¡¿" NOR;
+                                return HIC "ã€ å¥³å°‘ä¾  ã€‘" NOR;
+                        if (shen <= -1000000) return HIR "ã€ç›–ä¸–ç½—åˆ¹ã€‘" NOR;
                         else if (shen <= -100000 && exp >=800000)
-                                return HIC "¡¾¿õÊÀÅ®Ä§¡¿" NOR;
+                                return HIC "ã€æ—·ä¸–å¥³é­”ã€‘" NOR;
                         else if (shen <= -10000 && exp >=400000)
-                                return HIC "¡¾ ´óÅ®Ä§ ¡¿" NOR;
+                                return HIC "ã€ å¤§å¥³é­” ã€‘" NOR;
                         else if (shen <= -1000 && exp >=200000)
-                                return HIC "¡¾ Å®  Ä§ ¡¿" NOR;
+                                return HIC "ã€ å¥³  é­” ã€‘" NOR;
                         else if (shen <= -100 && exp >=50000)
-                                return HIC "¡¾ Å®ÉÙÄ§ ¡¿" NOR;
+                                return HIC "ã€ å¥³å°‘é­” ã€‘" NOR;
 }
                         else*/
-if (family=="ÈÕÔÂÉñ½Ì")
- {
-                       if (exp>= 1000000 ) return HIW "¡¾ Ê¥  ¹Ã ¡¿" NOR;
-                       else if (exp>= 800000 ) return HIW "¡¾ ×ó»¤·¨ ¡¿" NOR;
-                       else if (exp>= 700000) return HIY "¡¾ ÌÃ  Ö÷ ¡¿" NOR;
-                       else if (exp>= 600000)  return HIY "¡¾ Ì³  Ö÷ ¡¿" NOR;
-                       else if (exp>= 50000) return YEL "¡¾ Ïã  Ö÷ ¡¿" NOR;
-                       else if (exp>= 30000 || age >= 20) return CYN "¡¾ Å®½ÌÖÚ ¡¿" NOR;
-                       else return CYN "¡¾ Å®½ÌÍ½ ¡¿" NOR;
- }else
- if (family=="åĞÒ£ÅÉ" || family=="ÌÒ»¨µº")
- {
-                       if (exp>= 1000000 ) return HIW "¡¾ Òİ  ÏÉ ¡¿" NOR;
-                       else if (exp>= 800000 ) return HIW "¡¾ Òİ  ÏÍ ¡¿" NOR;
-                       else if (exp>= 700000) return HIY "¡¾ Òİ  Ê¿ ¡¿" NOR;
-                       else if (exp>= 600000)  return HIY "¡¾ Òİ  Ê¿ ¡¿" NOR;
-                       else if (exp>= 50000) return YEL "¡¾ Òİ  Ê¿ ¡¿" NOR;
-                       else if (exp>= 30000 || age >= 20) return CYN "¡¾ Çà  ÒÂ ¡¿" NOR;
-                       else return CYN "¡¾Å® ÉÙ ¹Ú¡¿" NOR;
- }else
-if (family=="Ñ©É½ËÂ")
- {
-                       if (exp>= 1000000 && shen >= 0) return HIW "¡¾ »¶Ï²·ğ ¡¿" NOR;
-                       else if (exp>= 1000000 && shen < 0) return HIW "¡¾ »¶Ï²Ä§ ¡¿" NOR;
-                       else if (exp>= 700000) return HIY "¡¾ Ê¥  Å® ¡¿" NOR;
-                       else if (exp>= 600000)  return HIY "¡¾ ·É  Ìì ¡¿" NOR;
-                       else if (exp>= 50000) return YEL "¡¾ Ç¬´ïÆÅ ¡¿" NOR;
-                       else if (exp>= 30000 || age >= 20) return CYN "¡¾ ÉñÃîÅ® ¡¿" NOR;
-                       else return CYN "¡¾ ÊÚ  ÊÂ ¡¿" NOR;
- }else
- if (family=="¹ÅÄ¹ÅÉ" || family=="»ªÉ½ÅÉ" || family=="ÁèÏö³Ç")
- {
-                       if (exp>= 2000000 && shen > 0) return HIW "¡¾¾ªÌìÒ»½£¡¿" NOR;
-                       else if (exp>= 2000000 && shen < 0) return HIW "¡¾¾ªÄ§Ò»½£¡¿" NOR;
-                        else if (exp>= 1000000) return HIR "¡¾ ½£  Ê¥ ¡¿" NOR;
-                        else if (exp>= 800000) return HIY "¡¾ ½£  ÏÉ ¡¿" NOR;
-                        else if (exp>= 700000) return HIC "¡¾ Å®½£ÏÀ ¡¿" NOR;
-                        else if (exp>= 500000 )  return YEL "¡¾ Å®½£¿Í ¡¿" NOR; 
-                        else return "¡¾ Å®½£Ê¿ ¡¿";
- }else
- if (family=="¹ÃËÕÄ½Èİ" || family=="´óÀí¶Î¼Ò")
- {
-                        if (exp>= 1000000) return HIR "¡¾ Íõ  åú ¡¿" NOR;
-                        else if (exp>= 800000) return HIY "¡¾ Ú¾Ãü·òÈË ¡¿" NOR;
-                        else if (exp>= 700000) return HIC "¡¾ Å®  ¹Ù ¡¿" NOR;
-                        else if (exp>= 500000 )  return YEL "¡¾ Å®  ¹Ù ¡¿" NOR; 
-                        else if ( age >= 18)  return CYN "¡¾ Å®  ¹Ù ¡¿" NOR; 
-                        else return "¡¾ Å®  ÊÌ ¡¿";
- }else
-  if (family=="ÁéğÕ¹¬")
- {
-                        if (exp>= 1000000) return HIR "¡¾ Ğş  Å® ¡¿" NOR;
-                        else if (exp>= 800000) return HIY "¡¾ ÏÉ  ×Ó ¡¿" NOR;
-                        else if (exp>= 700000) return HIC "¡¾ Ìì  Å® ¡¿" NOR;
-                        else if (exp>= 500000 )  return YEL "¡¾åĞÒ£Å®ÏÉ¡¿" NOR; 
-                        else if ( age >= 18)  return CYN "¡¾ ÏÉ  ¹Ã ¡¿" NOR; 
-                        else return "¡¾ ÏÉ  ¹Ã ¡¿";
- }else
-  if (family=="Ã÷½Ì")
- {
-						if (exp>10000000)
-								return NOR "¡¾"HIR"Å®¸±½ÌÖ÷"NOR"¡¿";
-						if (exp>5000000)
-								return NOR "¡¾"HIM" ·¨  Íõ "NOR"¡¿";
-						if (exp>1000000)
-								return NOR "¡¾"GRN"Å®×Ü»¤·¨"NOR"¡¿";
-						if (exp>500000)
-								return NOR "¡¾"YEL"Å® »¤ ·¨"NOR"¡¿";
-						if (exp>300000)
-								return NOR "¡¾"YEL"Å®×ÜÌÃÖ÷"NOR"¡¿";
-						if (exp>100000)
-								return NOR "¡¾"CYN"Å®¸±ÌÃÖ÷"NOR"¡¿";
-						if (exp>25000)
-								return NOR "¡¾"CYN"Å® Æì Ö÷"NOR"¡¿";
-						if (exp>10000)
-								return NOR "¡¾"MAG"Å®¸±ÆìÖ÷"NOR"¡¿";
-						if (exp>5000)
-								return NOR "¡¾"MAG"Å® ½Ì ÖÚ"NOR"¡¿";
-						return "¡¾  ½Ì  ÖÚ  ¡¿" ;
- }else
-  if (family=="ÔÆÁúÃÅ")
- {
-                        return HIG"¡¾Å® Òå Ê¿¡¿"NOR;
- }else
-  if (family=="ĞÇËŞÅÉ")
- {
-						if (exp>10000000)
-								return NOR "¡¾"HIR"¶¾   ºó"NOR"¡¿";
-						if (exp>5000000)
-								return NOR "¡¾"HIM"¶¾   ¼§"NOR"¡¿";
-						if (exp>1000000)
-								return NOR "¡¾"GRN"¶¾   Ñı"NOR"¡¿";
-						if (exp>500000)
-								return NOR "¡¾"YEL" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>300000)
-								return NOR "¡¾"YEL" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>100000)
-								return NOR "¡¾"CYN" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>25000)
-								return NOR "¡¾"CYN" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>10000)
-								return NOR "¡¾"MAG" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>5000)
-								return NOR "¡¾"MAG"¶¾    ¹Ö"NOR"¡¿";
-						return "¡¾  ÂíÆ¨³æ  ¡¿" ;
- }else
-  if (family=="Îå¶¾½Ì")
- {
-						if (exp>10000000)
-								return NOR "¡¾"HIR"¶¾   ºó"NOR"¡¿";
-						if (exp>5000000)
-								return NOR "¡¾"HIM"¶¾   ¼§"NOR"¡¿";
-						if (exp>1000000)
-								return NOR "¡¾"GRN"¶¾   Ñı"NOR"¡¿";
-						if (exp>500000)
-								return NOR "¡¾"YEL" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>300000)
-								return NOR "¡¾"YEL" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>100000)
-								return NOR "¡¾"CYN" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>25000)
-								return NOR "¡¾"CYN" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>10000)
-								return NOR "¡¾"MAG" ¶¾ÂŞÉ² "NOR"¡¿";
-						if (exp>5000)
-								return NOR "¡¾"MAG"¶¾    ¹Ö"NOR"¡¿";
-						return "¡¾  Å®½ÌÖÚ  ¡¿" ;
- }else
+                    if (family == "æ—¥æœˆç¥æ•™") {
+                        if (exp >= 1000000) return HIW
+                        "ã€ åœ£  å§‘ ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIW
+                        "ã€ å·¦æŠ¤æ³• ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIY
+                        "ã€ å ‚  ä¸» ã€‘"
+                        NOR;
+                        else if (exp >= 600000) return HIY
+                        "ã€ å›  ä¸» ã€‘"
+                        NOR;
+                        else if (exp >= 50000) return YEL
+                        "ã€ é¦™  ä¸» ã€‘"
+                        NOR;
+                        else if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ å¥³æ•™ä¼— ã€‘"
+                        NOR;
+                        else return CYN
+                        "ã€ å¥³æ•™å¾’ ã€‘"
+                        NOR;
+                    } else if (family == "é€é¥æ´¾" || family == "æ¡ƒèŠ±å²›") {
+                        if (exp >= 1000000) return HIW
+                        "ã€ é€¸  ä»™ ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIW
+                        "ã€ é€¸  è´¤ ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIY
+                        "ã€ é€¸  å£« ã€‘"
+                        NOR;
+                        else if (exp >= 600000) return HIY
+                        "ã€ é€¸  å£« ã€‘"
+                        NOR;
+                        else if (exp >= 50000) return YEL
+                        "ã€ é€¸  å£« ã€‘"
+                        NOR;
+                        else if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ é’  è¡£ ã€‘"
+                        NOR;
+                        else return CYN
+                        "ã€å¥³ å°‘ å† ã€‘"
+                        NOR;
+                    } else if (family == "é›ªå±±å¯º") {
+                        if (exp >= 1000000 && shen >= 0) return HIW
+                        "ã€ æ¬¢å–œä½› ã€‘"
+                        NOR;
+                        else if (exp >= 1000000 && shen < 0) return HIW
+                        "ã€ æ¬¢å–œé­” ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIY
+                        "ã€ åœ£  å¥³ ã€‘"
+                        NOR;
+                        else if (exp >= 600000) return HIY
+                        "ã€ é£  å¤© ã€‘"
+                        NOR;
+                        else if (exp >= 50000) return YEL
+                        "ã€ ä¹¾è¾¾å©† ã€‘"
+                        NOR;
+                        else if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ ç¥å¦™å¥³ ã€‘"
+                        NOR;
+                        else return CYN
+                        "ã€ æˆ  äº‹ ã€‘"
+                        NOR;
+                    } else if (family == "å¤å¢“æ´¾" || family == "åå±±æ´¾" || family == "å‡Œéœ„åŸ") {
+                        if (exp >= 2000000 && shen > 0) return HIW
+                        "ã€æƒŠå¤©ä¸€å‰‘ã€‘"
+                        NOR;
+                        else if (exp >= 2000000 && shen < 0) return HIW
+                        "ã€æƒŠé­”ä¸€å‰‘ã€‘"
+                        NOR;
+                        else if (exp >= 1000000) return HIR
+                        "ã€ å‰‘  åœ£ ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIY
+                        "ã€ å‰‘  ä»™ ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIC
+                        "ã€ å¥³å‰‘ä¾  ã€‘"
+                        NOR;
+                        else if (exp >= 500000) return YEL
+                        "ã€ å¥³å‰‘å®¢ ã€‘"
+                        NOR;
+                        else return "ã€ å¥³å‰‘å£« ã€‘";
+                    } else if (family == "å§‘è‹æ…•å®¹" || family == "å¤§ç†æ®µå®¶") {
+                        if (exp >= 1000000) return HIR
+                        "ã€ ç‹  å¦ƒ ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIY
+                        "ã€ è¯°å‘½å¤«äºº ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIC
+                        "ã€ å¥³  å®˜ ã€‘"
+                        NOR;
+                        else if (exp >= 500000) return YEL
+                        "ã€ å¥³  å®˜ ã€‘"
+                        NOR;
+                        else if (age >= 18) return CYN
+                        "ã€ å¥³  å®˜ ã€‘"
+                        NOR;
+                        else return "ã€ å¥³  ä¾ ã€‘";
+                    } else if (family == "çµé¹«å®«") {
+                        if (exp >= 1000000) return HIR
+                        "ã€ ç„  å¥³ ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIY
+                        "ã€ ä»™  å­ ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIC
+                        "ã€ å¤©  å¥³ ã€‘"
+                        NOR;
+                        else if (exp >= 500000) return YEL
+                        "ã€é€é¥å¥³ä»™ã€‘"
+                        NOR;
+                        else if (age >= 18) return CYN
+                        "ã€ ä»™  å§‘ ã€‘"
+                        NOR;
+                        else return "ã€ ä»™  å§‘ ã€‘";
+                    } else if (family == "æ˜æ•™") {
+                        if (exp > 10000000)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "å¥³å‰¯æ•™ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000000)
+                            return NOR
+                        "ã€"
+                        HIM
+                        " æ³•  ç‹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 1000000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "å¥³æ€»æŠ¤æ³•"
+                        NOR
+                        "ã€‘";
+                        if (exp > 500000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "å¥³ æŠ¤ æ³•"
+                        NOR
+                        "ã€‘";
+                        if (exp > 300000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "å¥³æ€»å ‚ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 100000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "å¥³å‰¯å ‚ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 25000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "å¥³ æ—— ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 10000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "å¥³å‰¯æ——ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "å¥³ æ•™ ä¼—"
+                        NOR
+                        "ã€‘";
+                        return "ã€  æ•™  ä¼—  ã€‘";
+                    } else if (family == "äº‘é¾™é—¨") {
+                        return HIG
+                        "ã€å¥³ ä¹‰ å£«ã€‘"
+                        NOR;
+                    } else if (family == "æ˜Ÿå®¿æ´¾") {
+                        if (exp > 10000000)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "æ¯’   å"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000000)
+                            return NOR
+                        "ã€"
+                        HIM
+                        "æ¯’   å§¬"
+                        NOR
+                        "ã€‘";
+                        if (exp > 1000000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "æ¯’   å¦–"
+                        NOR
+                        "ã€‘";
+                        if (exp > 500000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 300000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 100000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 25000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 10000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "æ¯’    æ€ª"
+                        NOR
+                        "ã€‘";
+                        return "ã€  é©¬å±è™«  ã€‘";
+                    } else if (family == "äº”æ¯’æ•™") {
+                        if (exp > 10000000)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "æ¯’   å"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000000)
+                            return NOR
+                        "ã€"
+                        HIM
+                        "æ¯’   å§¬"
+                        NOR
+                        "ã€‘";
+                        if (exp > 1000000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "æ¯’   å¦–"
+                        NOR
+                        "ã€‘";
+                        if (exp > 500000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 300000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 100000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 25000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 10000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        " æ¯’ç½—åˆ¹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "æ¯’    æ€ª"
+                        NOR
+                        "ã€‘";
+                        return "ã€  å¥³æ•™ä¼—  ã€‘";
+                    } else if (family == "ç™½é©¼å±±æ´¾") {
+                        if (shen >= 0)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "é­” è§ æ„"
+                        NOR
+                        "ã€‘";
+                        else
+                        return NOR
+                        "ã€"
+                        HIR
+                        " ç‹‚  é­” "
+                        NOR
+                        "ã€‘";
+                    } else
 
-  if (family=="°×ÍÕÉ½ÅÉ")
- {
-	if (shen >= 0)
-	return NOR "¡¾"HIR"Ä§ ¼û ³î"NOR"¡¿";
-	else
-	return NOR "¡¾"HIR" ¿ñ  Ä§ "NOR"¡¿";
- }else
+                        switch (ob->query("class")) {
+                            case "bonze":
 
-                        switch(ob->query("class")) {
-                        case "bonze":
-  
-                             if (budd >= 150)
-                                return HIY "¡¾ Éñ  Äá ¡¿" NOR;
-                             else if (budd >= 120)
-                                return HIY "¡¾ Ê¥  Äá ¡¿" NOR;
-                             else if (budd >= 90)
-                                return HIY "¡¾ µÂ  Äá ¡¿" NOR;
-                             else if (budd >= 60)
-                                return HIC "¡¾ ÏÍ  Äá ¡¿" NOR;
-                             else if (budd >= 30)
-                                return HIG "¡¾ ±ÈÇğÄá ¡¿" NOR;
-                             else if (age <= 16)
-                                return HIW "¡¾ É³ÃÖÄá ¡¿" NOR;
-                             else
-                                return HIW "¡¾ Ñ§½äÅ® ¡¿" NOR;
-                        case "taoist":
-                        if (budd >= 180) return HIW "¡¾ Ğş  Å® ¡¿" NOR;
-                        else if (budd >= 140) return HIY "¡¾ ÏÉ  ¹Ã ¡¿" NOR;
-                        else if (budd >= 100) return YEL "¡¾ É¢  ÈË ¡¿" NOR;
-                        else if (budd >= 50 || age >= 20) return YEL "¡¾ µÀ  ¹Ã ¡¿" NOR;
-                        else return "¡¾ Ğ¡µÀ¹Ã ¡¿"; 
-                        case "bandit":
-                                return HIW "¡¾ Å®·ÉÔô ¡¿" NOR;
-                        case "dancer":
-                                return HIW "¡¾¾øÉ«Îè¼§¡¿" NOR;
-                        case "scholar":
-                             if (age <= 16)
-                                return HIW "¡¾ Å®Ñ§Í¯ ¡¿" NOR;
-                             else if (age <= 30)
-                                return HIW "¡¾Ò£Ò£¼ÑÈË¡¿" NOR;
-                             else
-                                return HIW "¡¾ Å®Ñ§Ê¿ ¡¿" NOR;
-                        case "officer":
-                                return HIW "¡¾ Å®  ¹Ù ¡¿" NOR;
-                        case "fighter":
-                                return HIW "¡¾ Å®ÎäÕß ¡¿" NOR;
-                        case "swordsman":
-                        if (exp>= 1000000) return HIR "¡¾ ½£  Ê¥ ¡¿" NOR;
-                        else if (exp>= 800000) return HIY "¡¾ ½£  ÏÉ ¡¿" NOR;
-                        else if (exp>= 700000) return HIC "¡¾ Å®½£ÏÀ ¡¿" NOR;
-                        else if (exp>= 500000 )  return YEL "¡¾ Å®½£¿Í ¡¿" NOR; 
-                        else return "¡¾ Å®½£Ê¿ ¡¿";
-                        case "alchemist":
-                                return HIW "¡¾ Å®·½Ê¿ ¡¿" NOR;
-                        case "shaman":
-                                return HIW "¡¾ Å®Î×Ò½ ¡¿" NOR;
-                        case "beggar":
-                                return HIW "¡¾ Å®½Ğ»¯ ¡¿" NOR;
-                        case "prostitute":
-                                return HIW "¡¾ ¼Ë  Å® ¡¿" NOR;
-			    case "mr":
-                                return HIB "¡¾ Ä½ÈİÊÀ¼Ò ¡¿" NOR;
-			    case "tiezhang":
-                                return HIY "¡¾ ÌúÕÆµÜ×Ó ¡¿" NOR;
-                        default:
-                        if (((int)ob->query("PKS") > 100) &&
-                            ((int)ob->query("PKS") > (int)ob->query("MKS")))
-                                return HIR "¡¾ÒûÑªÅ®Ä§¡¿" NOR;
-                        if ((int)ob->query("thief") > 10 )
-                                return HIC "¡¾Å® ¹ß ÇÔ¡¿" NOR;
-                       if (shen >= 1000000) return HIC "¡¾¾øÊÀÌì½¿¡¿" NOR;
-                        else if (shen >= 100000 && exp >=800000)
-                                return HIM "¡¾¿õÊÀÅ®ÏÀ¡¿" NOR;
-                        else if (shen >= 10000 && exp >=400000)
-                                return HIG "¡¾½íàşÓ¢ĞÛ¡¿" NOR;
-                        else if (shen >= 1000 && exp >=200000)
-                                return HIY "¡¾Å®ÖĞºÀ½Ü¡¿" NOR;
-                        else if (shen >= 100 && exp >=50000)
-                                return CYN "¡¾·ç³¾ÏÀÅ®¡¿" NOR;
-                        if (shen <= -1000000) return HIR "¡¾¸ÇÊÀÂŞÉ²¡¿" NOR;
-                        else if (shen <= -100000 && exp >=800000)
-                                return HIG "¡¾¿õÊÀÅ®Ä§¡¿" NOR;
-                        else if (shen <= -10000 && exp >=400000)
-                                return CYN "¡¾ÊÈÑªÅ®Ä§¡¿" NOR;
-                        else if (shen <= -1000 && exp >=200000)
-                                return HIY "¡¾ÒûÑªÄ§Å®¡¿" NOR;
-                        else if (shen <= -100 && exp >=50000)
-                                return CYN "¡¾µóÂù¶ñÅ®¡¿" NOR;
-                                if (age <= 16)
-                                    return HIC "¡¾ÃîÁäÉÙÅ®¡¿" NOR;
+                                if (budd >= 150)
+                                    return HIY
+                                "ã€ ç¥  å°¼ ã€‘"
+                                NOR;
+                                else if (budd >= 120)
+                            return HIY
+                                "ã€ åœ£  å°¼ ã€‘"
+                                NOR;
+                                else if (budd >= 90)
+                            return HIY
+                                "ã€ å¾·  å°¼ ã€‘"
+                                NOR;
+                                else if (budd >= 60)
+                            return HIC
+                                "ã€ è´¤  å°¼ ã€‘"
+                                NOR;
+                                else if (budd >= 30)
+                            return HIG
+                                "ã€ æ¯”ä¸˜å°¼ ã€‘"
+                                NOR;
+                                else if (age <= 16)
+                            return HIW
+                                "ã€ æ²™å¼¥å°¼ ã€‘"
+                                NOR;
                                 else
-                                    return HIM "¡¾Ü·Ü·ÃñÅ®¡¿" NOR;
+                                return HIW
+                                "ã€ å­¦æˆ’å¥³ ã€‘"
+                                NOR;
+                            case "taoist":
+                                if (budd >= 180) return HIW
+                                "ã€ ç„  å¥³ ã€‘"
+                                NOR;
+                                else if (budd >= 140) return HIY
+                                "ã€ ä»™  å§‘ ã€‘"
+                                NOR;
+                                else if (budd >= 100) return YEL
+                                "ã€ æ•£  äºº ã€‘"
+                                NOR;
+                                else if (budd >= 50 || age >= 20) return YEL
+                                "ã€ é“  å§‘ ã€‘"
+                                NOR;
+                                else return "ã€ å°é“å§‘ ã€‘";
+                            case "bandit":
+                                return HIW
+                                "ã€ å¥³é£è´¼ ã€‘"
+                                NOR;
+                            case "dancer":
+                                return HIW
+                                "ã€ç»è‰²èˆå§¬ã€‘"
+                                NOR;
+                            case "scholar":
+                                if (age <= 16)
+                                    return HIW
+                                "ã€ å¥³å­¦ç«¥ ã€‘"
+                                NOR;
+                                else if (age <= 30)
+                            return HIW
+                                "ã€é¥é¥ä½³äººã€‘"
+                                NOR;
+                                else
+                                return HIW
+                                "ã€ å¥³å­¦å£« ã€‘"
+                                NOR;
+                            case "officer":
+                                return HIW
+                                "ã€ å¥³  å®˜ ã€‘"
+                                NOR;
+                            case "fighter":
+                                return HIW
+                                "ã€ å¥³æ­¦è€… ã€‘"
+                                NOR;
+                            case "swordsman":
+                                if (exp >= 1000000) return HIR
+                                "ã€ å‰‘  åœ£ ã€‘"
+                                NOR;
+                                else if (exp >= 800000) return HIY
+                                "ã€ å‰‘  ä»™ ã€‘"
+                                NOR;
+                                else if (exp >= 700000) return HIC
+                                "ã€ å¥³å‰‘ä¾  ã€‘"
+                                NOR;
+                                else if (exp >= 500000) return YEL
+                                "ã€ å¥³å‰‘å®¢ ã€‘"
+                                NOR;
+                                else return "ã€ å¥³å‰‘å£« ã€‘";
+                            case "alchemist":
+                                return HIW
+                                "ã€ å¥³æ–¹å£« ã€‘"
+                                NOR;
+                            case "shaman":
+                                return HIW
+                                "ã€ å¥³å·«åŒ» ã€‘"
+                                NOR;
+                            case "beggar":
+                                return HIW
+                                "ã€ å¥³å«åŒ– ã€‘"
+                                NOR;
+                            case "prostitute":
+                                return HIW
+                                "ã€ å¦“  å¥³ ã€‘"
+                                NOR;
+                            case "mr":
+                                return HIB
+                                "ã€ æ…•å®¹ä¸–å®¶ ã€‘"
+                                NOR;
+                            case "tiezhang":
+                                return HIY
+                                "ã€ é“æŒå¼Ÿå­ ã€‘"
+                                NOR;
+                            default:
+                                if (((int) ob->query("PKS") > 100) &&
+                                    ((int) ob->query("PKS") > (int) ob->query("MKS")))
+                                    return HIR
+                                "ã€é¥®è¡€å¥³é­”ã€‘"
+                                NOR;
+                                if ((int) ob->query("thief") > 10)
+                                    return HIC
+                                "ã€å¥³ æƒ¯ çªƒã€‘"
+                                NOR;
+                                if (shen >= 1000000) return HIC
+                                "ã€ç»ä¸–å¤©å¨‡ã€‘"
+                                NOR;
+                                else if (shen >= 100000 && exp >= 800000)
+                            return HIM
+                                "ã€æ—·ä¸–å¥³ä¾ ã€‘"
+                                NOR;
+                                else if (shen >= 10000 && exp >= 400000)
+                            return HIG
+                                "ã€å·¾å¸¼è‹±é›„ã€‘"
+                                NOR;
+                                else if (shen >= 1000 && exp >= 200000)
+                            return HIY
+                                "ã€å¥³ä¸­è±ªæ°ã€‘"
+                                NOR;
+                                else if (shen >= 100 && exp >= 50000)
+                            return CYN
+                                "ã€é£å°˜ä¾ å¥³ã€‘"
+                                NOR;
+                                if (shen <= -1000000) return HIR
+                                "ã€ç›–ä¸–ç½—åˆ¹ã€‘"
+                                NOR;
+                                else if (shen <= -100000 && exp >= 800000)
+                            return HIG
+                                "ã€æ—·ä¸–å¥³é­”ã€‘"
+                                NOR;
+                                else if (shen <= -10000 && exp >= 400000)
+                            return CYN
+                                "ã€å—œè¡€å¥³é­”ã€‘"
+                                NOR;
+                                else if (shen <= -1000 && exp >= 200000)
+                            return HIY
+                                "ã€é¥®è¡€é­”å¥³ã€‘"
+                                NOR;
+                                else if (shen <= -100 && exp >= 50000)
+                            return CYN
+                                "ã€åˆè›®æ¶å¥³ã€‘"
+                                NOR;
+                                if (age <= 16)
+                                    return HIC
+                                "ã€å¦™é¾„å°‘å¥³ã€‘"
+                                NOR;
+                                else
+                                return HIM
+                                "ã€èŠŠèŠŠæ°‘å¥³ã€‘"
+                                NOR;
                         }
-                        if (((int)ob->query("PKS") > 100) &&
-                            ((int)ob->query("PKS") > (int)ob->query("MKS")))
-                                return HIR "¡¾ÒûÑªÅ®Ä§¡¿" NOR;
-                        if ((int)ob->query("thief") > 10 )
-                                return HIC "¡¾Å® ¹ß ÇÔ¡¿" NOR;
-                       if (shen >= 1000000) return HIC "¡¾¾øÊÀÌì½¿¡¿" NOR;
-                        else if (shen >= 100000 && exp >=800000)
-                                return HIM "¡¾¿õÊÀÅ®ÏÀ¡¿" NOR;
-                        else if (shen >= 10000 && exp >=400000)
-                                return HIG "¡¾½íàşÓ¢ĞÛ¡¿" NOR;
-                        else if (shen >= 1000 && exp >=200000)
-                                return HIY "¡¾Å®ÖĞºÀ½Ü¡¿" NOR;
-                        else if (shen >= 100 && exp >=50000)
-                                return CYN "¡¾·ç³¾ÏÀÅ®¡¿" NOR;
-                        if (shen <= -1000000) return HIR "¡¾¸ÇÊÀÂŞÉ²¡¿" NOR;
-                        else if (shen <= -100000 && exp >=800000)
-                                return HIG "¡¾¿õÊÀÅ®Ä§¡¿" NOR;
-                        else if (shen <= -10000 && exp >=400000)
-                                return CYN "¡¾ÊÈÑªÅ®Ä§¡¿" NOR;
-                        else if (shen <= -1000 && exp >=200000)
-                                return HIY "¡¾ÒûÑªÄ§Å®¡¿" NOR;
-                        else if (shen <= -100 && exp >=50000)
-                                return CYN "¡¾µóÂù¶ñÅ®¡¿" NOR;
-                }
+                    if (((int) ob->query("PKS") > 100) &&
+                        ((int) ob->query("PKS") > (int) ob->query("MKS")))
+                        return HIR
+                    "ã€é¥®è¡€å¥³é­”ã€‘"
+                    NOR;
+                    if ((int) ob->query("thief") > 10)
+                        return HIC
+                    "ã€å¥³ æƒ¯ çªƒã€‘"
+                    NOR;
+                    if (shen >= 1000000) return HIC
+                    "ã€ç»ä¸–å¤©å¨‡ã€‘"
+                    NOR;
+                    else if (shen >= 100000 && exp >= 800000)
+                return HIM
+                    "ã€æ—·ä¸–å¥³ä¾ ã€‘"
+                    NOR;
+                    else if (shen >= 10000 && exp >= 400000)
+                return HIG
+                    "ã€å·¾å¸¼è‹±é›„ã€‘"
+                    NOR;
+                    else if (shen >= 1000 && exp >= 200000)
+                return HIY
+                    "ã€å¥³ä¸­è±ªæ°ã€‘"
+                    NOR;
+                    else if (shen >= 100 && exp >= 50000)
+                return CYN
+                    "ã€é£å°˜ä¾ å¥³ã€‘"
+                    NOR;
+                    if (shen <= -1000000) return HIR
+                    "ã€ç›–ä¸–ç½—åˆ¹ã€‘"
+                    NOR;
+                    else if (shen <= -100000 && exp >= 800000)
+                return HIG
+                    "ã€æ—·ä¸–å¥³é­”ã€‘"
+                    NOR;
+                    else if (shen <= -10000 && exp >= 400000)
+                return CYN
+                    "ã€å—œè¡€å¥³é­”ã€‘"
+                    NOR;
+                    else if (shen <= -1000 && exp >= 200000)
+                return HIY
+                    "ã€é¥®è¡€é­”å¥³ã€‘"
+                    NOR;
+                    else if (shen <= -100 && exp >= 50000)
+                return CYN
+                    "ã€åˆè›®æ¶å¥³ã€‘"
+                    NOR;
+            }
         default:
-                switch(wizhood(ob)) {
+            switch (wizhood(ob)) {
                 case "(admin)":
-                        return HIM "¡¾ Ìì  µÛ ¡¿" NOR;
+                    return HIM
+                    "ã€ å¤©  å¸ ã€‘"
+                    NOR;
                 case "(arch)":
-                        return HIY "¡¾ ´ó  Éñ ¡¿" NOR;
+                    return HIY
+                    "ã€ å¤§  ç¥ ã€‘"
+                    NOR;
                 case "(wizard)":
-                        return HIG "¡¾ Éñ  ÏÉ ¡¿" NOR;
+                    return HIG
+                    "ã€ ç¥  ä»™ ã€‘"
+                    NOR;
                 case "(apprentice)":
-                        return HIC "¡¾ É¢  ÏÉ ¡¿" NOR;
+                    return HIC
+                    "ã€ æ•£  ä»™ ã€‘"
+                    NOR;
                 case "(immortal)":
-                        return HIC "¡¾ °ë  ÏÉ ¡¿" NOR;
+                    return HIC
+                    "ã€ åŠ  ä»™ ã€‘"
+                    NOR;
                 default:
 /*if (!ob->query("class") || !family){
-                        if (shen >= 1000000) return HIC "¡¾¾øÊÀÉñÏÀ¡¿" NOR;
+                        if (shen >= 1000000) return HIC "ã€ç»ä¸–ç¥ä¾ ã€‘" NOR;
                         else if (shen >= 100000 && exp >=800000)
-                                return HIC "¡¾¿õÊÀ´óÏÀ¡¿" NOR;
+                                return HIC "ã€æ—·ä¸–å¤§ä¾ ã€‘" NOR;
                         else if (shen >= 10000 && exp >=400000)
-                                return HIC "¡¾½­ºşºÀ½Ü¡¿" NOR;
+                                return HIC "ã€æ±Ÿæ¹–è±ªæ°ã€‘" NOR;
                         else if (shen >= 1000 && exp >=200000)
-                                return HIC "¡¾ÎäÁÖĞÂĞã¡¿" NOR;
+                                return HIC "ã€æ­¦æ—æ–°ç§€ã€‘" NOR;
                         else if (shen >= 100 && exp >=50000)
-                                return HIC "¡¾Ğ¡ÓĞÏÀÒå¡¿" NOR;
-                        else if (shen <= -1000000) return HIR "¡¾¸ÇÊÀ¿ñÄ§¡¿" NOR;
+                                return HIC "ã€å°æœ‰ä¾ ä¹‰ã€‘" NOR;
+                        else if (shen <= -1000000) return HIR "ã€ç›–ä¸–ç‹‚é­”ã€‘" NOR;
                         else if (shen <= -100000 && exp >=800000)
-                                return HIC "¡¾»ìÊÀÄ§Íõ¡¿" NOR;
+                                return HIC "ã€æ··ä¸–é­”ç‹ã€‘" NOR;
                         else if (shen <= -10000 && exp >=400000)
-                                return HIC "¡¾¶ñ°ÔÒ»·½¡¿" NOR;
+                                return HIC "ã€æ¶éœ¸ä¸€æ–¹ã€‘" NOR;
                         else if (shen <= -1000 && exp >=200000)
-                                return HIC "¡¾¶ñÃûÔ¶Ñï¡¿" NOR;
+                                return HIC "ã€æ¶åè¿œæ‰¬ã€‘" NOR;
                         else if (shen <= -100 && exp >=50000)
-                                return HIC "¡¾Ğ¡ÓĞ¶ñÃû¡¿" NOR;
+                                return HIC "ã€å°æœ‰æ¶åã€‘" NOR;
                         else
                         if (((int)ob->query("PKS") > 100) &&
                             ((int)ob->query("PKS") > (int)ob->query("MKS")))
-                                return HIR "¡¾ É±ÈËÄ§ ¡¿" NOR;
+                                return HIR "ã€ æ€äººé­” ã€‘" NOR;
                         if ((int)ob->query("thief") > 10 )
-                                return HIC "¡¾ ¹ß  ÇÔ ¡¿" NOR;
+                                return HIC "ã€ æƒ¯  çªƒ ã€‘" NOR;
 }
                         else*/
- if (family=="ÈÕÔÂÉñ½Ì")
- {
-                       if (exp>= 1000000) return HIW "¡¾ ¸±½ÌÖ÷ ¡¿" NOR;
-                       if (exp>= 800000 ) return HIW "¡¾ ×ó»¤·¨ ¡¿" NOR;
-                       if (exp>= 700000) return HIY "¡¾ ÌÃ  Ö÷ ¡¿" NOR;
-                       if (exp>= 600000)  return HIY "¡¾ Ì³  Ö÷ ¡¿" NOR;
-                       if (exp>= 50000) return YEL "¡¾ Ïã  Ö÷ ¡¿" NOR;
-                       if (exp>= 30000 || age >= 20) return CYN "¡¾ ½Ì  ÖÚ ¡¿" NOR;
-                       return CYN "¡¾ ½Ì  Í½ ¡¿" NOR;
- }else
- if (family=="åĞÒ£ÅÉ" || family=="ÌÒ»¨µº")
- {
-                       if (exp>= 1000000 && shen >= 0) return HIW "¡¾ Òş  Ê¥ ¡¿" NOR;
-                       if (exp>= 1000000 && shen < 0) return HIW "¡¾ Òş  ÏÍ ¡¿" NOR;
-                       if (exp>= 700000) return HIY "¡¾ Òş  ÏÍ ¡¿" NOR;
-                       if (exp>= 600000)  return HIY "¡¾ Òş  Ê¿ ¡¿" NOR;
-                       if (exp>= 50000) return YEL "¡¾ Òş  Ê¿ ¡¿" NOR;
-                       if (exp>= 30000 || age >= 20) return CYN "¡¾ ÃÅ  Éú ¡¿" NOR;
-                       return CYN "¡¾¶àÇé½£¿Í¡¿" NOR;
- }else
- if (family=="ÌúÕÆ°ï")
- {
-                       if (exp>= 1000000 && shen >= 0) return HIW "¡¾ É½´óÍõ ¡¿" NOR;
-                       if (exp>= 1000000 && shen < 0) return HIW "¡¾ Õ¯  Ö÷ ¡¿" NOR;
-                       if (exp>= 700000) return HIY "¡¾ Õ¯  Ö÷ ¡¿" NOR;
-                       if (exp>= 600000)  return HIY "¡¾ µ±  ¼Ò ¡¿" NOR;
-                       if (exp>= 50000) return YEL "¡¾ µ±  ¼Ò ¡¿" NOR;
-                       if (exp>= 30000 || age >= 20) return CYN "¡¾ Í·  Ä¿ ¡¿" NOR;
-                       return CYN "¡¾ Ğ¡à¶ÂŞ ¡¿" NOR;
- }else
- if (family=="¹ÅÄ¹ÅÉ" || family=="»ªÉ½ÅÉ" || family=="ÁèÏö³Ç")
- {
-                       if (exp>= 2000000 && shen > 0) return HIW "¡¾¾ªÌìÒ»½£¡¿" NOR;
-                       else if (exp>= 2000000 && shen < 0) return HIW "¡¾¾ªÄ§Ò»½£¡¿" NOR;
-                        else 
-                        if (exp>= 1000000) return HIR "¡¾ ½£  ×Ú ¡¿" NOR;
-                        else if (exp>= 800000) return HIY "¡¾ ½£  ¿ñ ¡¿" NOR;
-                        else if (exp>= 700000) return HIC "¡¾ ½£  ÏÀ ¡¿" NOR;
-                        else if (exp>= 500000 )  return YEL "¡¾ ½£  ¿Í ¡¿" NOR; 
-                        else return "¡¾ ½£  Ê¿ ¡¿";
- }else
- if (family=="Ñ©É½ËÂ")
- {
-                       if (exp>= 1000000 && shen >= 0) return HIW "¡¾ »¶Ï²·ğ ¡¿" NOR;
-                       if (exp>= 1000000 && shen < 0) return HIW "¡¾ »¶Ï²Ä§ ¡¿" NOR;
-                       if (exp>= 700000) return HIY "¡¾ Ìì  Íõ ¡¿" NOR;
-                       if (exp>= 600000)  return HIY "¡¾ ´ó»¤·¨ ¡¿" NOR;
-                       if (exp>= 50000) return YEL "¡¾ ½ğ  ¸Õ ¡¿" NOR;
-                       if (exp>= 30000 || age >= 20) return CYN "¡¾ Á¦  Ê¿ ¡¿" NOR;
-                       return CYN "¡¾ ÔÓ  ÒÛ ¡¿" NOR;
- }else
- if (family=="¹ÃËÕÄ½Èİ" || family=="´óÀí¶Î¼Ò")
- {
-                        if (exp>= 1000000) return HIR "¡¾ Ç×  Íõ ¡¿" NOR;
-                        else if (exp>= 800000) return HIY "¡¾ ºî  Ò¯ ¡¿" NOR;
-                        else if (exp>= 700000) return HIC "¡¾ ½«  ¹Ù ¡¿" NOR;
-                        else if (exp>= 500000 )  return YEL "¡¾ ÊÌ  ÎÀ ¡¿" NOR; 
-                        else if ( age >= 18)  return CYN "¡¾ Ğ£  Î¾ ¡¿" NOR; 
-                        else return "¡¾ ±ø  Ê¿ ¡¿";
- }
- else
-  if (family=="Ã÷½Ì")
- {
- 						if (exp>10000000)
-								return NOR "¡¾"HIR"¸± ½Ì Ö÷"NOR"¡¿";
-						if (exp>5000000)
-								return NOR "¡¾"HIM" ·¨  Íõ "NOR"¡¿";
-						if (exp>1000000)
-								return NOR "¡¾"GRN"×Ü »¤ ·¨"NOR"¡¿";
-						if (exp>500000)
-								return NOR "¡¾"YEL" »¤  ·¨ "NOR"¡¿";
-						if (exp>300000)
-								return NOR "¡¾"YEL"×Ü ÌÃ Ö÷"NOR"¡¿";
-						if (exp>100000)
-								return NOR "¡¾"CYN"¸± ÌÃ Ö÷"NOR"¡¿";
-						if (exp>25000)
-								return NOR "¡¾"CYN" Æì  Ö÷ "NOR"¡¿";
-						if (exp>10000)
-								return NOR "¡¾"GRN"¸± Æì Ö÷"NOR"¡¿";
-						if (exp>5000)
-								return NOR "¡¾"HIB" ½Ì  ÖÚ "NOR"¡¿";
-						return "¡¾ ½Ì  ÖÚ ¡¿" ;
-
- }else
-  if (family=="ÔÆÁúÃÅ")
- {
-                        return HIG"¡¾½­ºşÒåÊ¿¡¿"NOR;
- }
- else
-  if (family=="ĞÇËŞÅÉ")
- {
-						if (exp>10000000)
-								return NOR "¡¾"HIR"¶¾   ×ğ"NOR"¡¿";
-						if (exp>5000000)
-								return NOR "¡¾"HIM"¶¾   °Ô"NOR"¡¿";
-						if (exp>1000000)
-								return NOR "¡¾"GRN"¶¾   ¾ı"NOR"¡¿";
-						if (exp>500000)
-								return NOR "¡¾"YEL"¶¾  Íõ "NOR"¡¿";
-						if (exp>300000)
-								return NOR "¡¾"YEL"¶¾  Ä§ "NOR"¡¿";
-						if (exp>100000)
-								return NOR "¡¾"CYN"¶¾   Ä§"NOR"¡¿";
-						if (exp>25000)
-								return NOR "¡¾"CYN"¶¾   Ä§"NOR"¡¿";
-						if (exp>10000)
-								return NOR "¡¾"MAG"¶¾   Ä§"NOR"¡¿";
-						if (exp>5000)
-								return NOR "¡¾"MAG"¶¾   Ä§"NOR"¡¿";
-						return "¡¾  ·¨ÂİÍõ  ¡¿" ;
- }else
-  if (family=="Îå¶¾½Ì")
- {
-						if (exp>10000000)
-								return NOR "¡¾"HIR"¶¾   ×ğ"NOR"¡¿";
-						if (exp>5000000)
-								return NOR "¡¾"HIM"¶¾   °Ô"NOR"¡¿";
-						if (exp>1000000)
-								return NOR "¡¾"GRN"¶¾   ¾ı"NOR"¡¿";
-						if (exp>500000)
-								return NOR "¡¾"YEL"¶¾  Íõ "NOR"¡¿";
-						if (exp>300000)
-								return NOR "¡¾"YEL"¶¾  Ä§ "NOR"¡¿";
-						if (exp>100000)
-								return NOR "¡¾"CYN"¶¾   Ä§"NOR"¡¿";
-						if (exp>25000)
-								return NOR "¡¾"CYN"¶¾   Ä§"NOR"¡¿";
-						if (exp>10000)
-								return NOR "¡¾"MAG"¶¾   Ä§"NOR"¡¿";
-						if (exp>5000)
-								return NOR "¡¾"MAG"¶¾   Ä§"NOR"¡¿";						return "¡¾  Å®½ÌÖÚ  ¡¿" ;
-						return "¡¾  ÄĞ½ÌÖÚ  ¡¿" ;
- }else
-  if (family=="°×ÍÕÉ½ÅÉ")
- {
-	if (shen >= 0)
-	return NOR "¡¾"HIR"Ä§ ¼û ³î"NOR"¡¿";
-	else
-	return NOR "¡¾"HIR" ¿ñ  Ä§ "NOR"¡¿";
- }else
-                                 switch(ob->query("class")) {
-                                case "bonze":
-                       if (budd >= 180) return HIW "¡¾ Éñ  É® ¡¿" NOR;
-                      else if (budd >= 150) return WHT "¡¾ ³¤  ÀÏ ¡¿" NOR;
-                      else if (budd >= 120) return HIY "¡¾ Ê¥  É® ¡¿" NOR;
-                      else if (budd >= 80) return HIY "¡¾ ÂŞ  ºº ¡¿" NOR;
-                      else if (budd >= 60) return YEL "¡¾ ×ğ  Õß ¡¿" NOR;
-                      else if (budd >= 40) return YEL "¡¾ ìø  Ê¦ ¡¿" NOR;
-                      else if (budd >= 30) return YEL "¡¾ ±È  Çğ ¡¿" NOR;
-                      return "¡¾ É®  ÈË ¡¿";
-                                 case "taoist":
-                                        if (ob->query_skill("taoism",1) >= 180) return HIW "¡¾ Ìì  ×ğ ¡¿" NOR;
-                                        else if (ob->query_skill("taoism",1) >= 140) return HIY "¡¾ Ìì  Ê¦ ¡¿" NOR;
-                                        else if (ob->query_skill("taoism",1)>100)
-                                           return HIW "¡¾ Õæ  ÈË ¡¿" NOR;
-                                        else if (age <= 16)
-                                           return HIW "¡¾ Ğ¡µÀÊ¿ ¡¿" NOR;
-                                        else if (age <= 30)
-                                           return HIW "¡¾ µÀ  Ê¿ ¡¿" NOR;
-                                        else
-                                           return HIW "¡¾ µÀ  ³¤ ¡¿" NOR;
-                                case "bandit":
-                                 if (exp>= 1000000) return HIC "¡¾ Õ¯  Ö÷ ¡¿" NOR;
-                                 if (exp>= 600000) return CYN "¡¾ µ±  ¼Ò ¡¿" NOR;
-                                 if (exp>= 100000 || age >= 18)  return CYN "¡¾ Í·  Ä¿ ¡¿" NOR; 
-                                 return "¡¾ Ğ¡à¶ÂŞ ¡¿"; 
-                                case "scholar":
-                                     if (age <= 16)
-                                        return HIW "¡¾ Ñ§  Í¯ ¡¿" NOR;
-                                     else if (age <= 45)
-                                        return HIW "¡¾ Êé  Éú ¡¿" NOR;
-                                     else
-                                        return HIW "¡¾ ÀÏĞã²Å ¡¿" NOR;
-                                case "officer":
-                                        return HIW "¡¾ ¹Ù  ²î ¡¿" NOR;
-                                case "fighter":
-                                        return HIW "¡¾ Îä  Õß ¡¿" NOR;
-                                case "swordsman":
-                                if (exp>= 1000000) return HIR "¡¾ ½£  ×Ú ¡¿" NOR;
-                                if (exp>= 800000) return HIY "¡¾ ½£  ¿ñ ¡¿" NOR;
-                                if (exp>= 500000) return HIC "¡¾ ½£  ÏÀ ¡¿" NOR;
-                                if (exp>= 100000 || age >= 18) return YEL "¡¾ ½£  ¿Í ¡¿" NOR;
-                                return "¡¾ ½£  Ê¿ ¡¿";
-                                case "alchemist":
-                                        return HIW "¡¾ ·½  Ê¿ ¡¿" NOR;
-                                case "shaman":
-                                        return HIW "¡¾ Î×  Ò½ ¡¿" NOR;
-                                case "mr":
-                                return HIB "¡¾ Ä½ÈİÊÀ¼Ò ¡¿" NOR;
-			            case "tiezhang":
-                                return HIY "¡¾ ÌúÕÆµÜ×Ó ¡¿" NOR;
-			        	case "beggar":
-                                if (exp>= 2000000) return HIW "¡¾ Éñ  Ø¤ ¡¿" NOR;
-                                else if (exp>= 1000000 && ob->query("shen") >= 0 ) return HIC "¡¾ Òå  Ø¤ ¡¿" NOR;
-                                else if (exp>= 1000000 && ob->query("shen") < 0 ) return HIR "¡¾ ¶ñ  Ø¤ ¡¿" NOR;
-                                else if (exp>= 600000) return HIC "¡¾ ¶æ  Ö÷ ¡¿" NOR;
-                                else if (exp>= 200000) return CYN "¡¾ Áú  Í· ¡¿" NOR;
-                                else if ( age >= 18)  return CYN "¡¾ ½Ğ»¯×Ó ¡¿" NOR; 
-                                else return "¡¾ Ğ¡ÆòØ¤ ¡¿";
-                                case "eunach":
-                                        budd = ob->query_skill("pixie-jian",1);
-                                        if (budd >= 110)
-                                                return HIY "¡¾´óÄÚ¸ßÊÖ¡¿" NOR;
-                                        else if (budd >= 100)
-                                                return HIY "¡¾¶«³§Íò»§¡¿" NOR;
-                                        else if (budd >= 90)
-                                                return HIY "¡¾¶«³§Ç§»§¡¿" NOR;
-                                        else if (budd >= 80)
-                                                return HIY "¡¾¶«³§°Ù»§¡¿" NOR;
-                                        else if (budd >= 70)
-                                                return HIY "¡¾¶«³§Ê®»§¡¿" NOR;
-                                        else if (budd >= 60)
-                                                return HIY "¡¾¶«³§¹«¹«¡¿" NOR;
-                                        else return HIW "¡¾ ÄÚ  ÊÌ ¡¿" NOR;
-                                case "prostitute":
-                                        return HIM "¡¾ ¹ê  ¹« ¡¿" NOR;
-                                default:
-                        if (shen >= 1000000) return HIC "¡¾¾øÊÀÉñÏÀ¡¿" NOR;
-                        else if (shen >= 100000 && exp >=800000)
-                                return HIC "¡¾¿õÊÀ´óÏÀ¡¿" NOR;
-                        else if (shen >= 10000 && exp >=400000)
-                                return HIG "¡¾½­ºşºÀ½Ü¡¿" NOR;
-                        else if (shen >= 1000 && exp >=200000)
-                                return HIY "¡¾ÎäÁÖĞÂĞã¡¿" NOR;
-                        else if (shen >= 100 && exp >=50000)
-                                return CYN "¡¾Ğ¡ÓĞÏÀÒå¡¿" NOR;
-                        else if (shen <= -1000000) return HIR "¡¾¸ÇÊÀ¿ñÄ§¡¿" NOR;
-                        else if (shen <= -100000 && exp >=800000)
-                                return RED "¡¾»ìÊÀÄ§Íõ¡¿" NOR;
-                        else if (shen <= -10000 && exp >=400000)
-                                return HIG "¡¾¶ñ°ÔÒ»·½¡¿" NOR;
-                        else if (shen <= -1000 && exp >=200000)
-                                return HIY "¡¾¶ñÃûÔ¶Ñï¡¿" NOR;
-                        else if (shen <= -100 && exp >=50000)
-                                return BLU "¡¾Ğ¡ÓĞ¶ñÃû¡¿" NOR;
+                    if (family == "æ—¥æœˆç¥æ•™") {
+                        if (exp >= 1000000) return HIW
+                        "ã€ å‰¯æ•™ä¸» ã€‘"
+                        NOR;
+                        if (exp >= 800000) return HIW
+                        "ã€ å·¦æŠ¤æ³• ã€‘"
+                        NOR;
+                        if (exp >= 700000) return HIY
+                        "ã€ å ‚  ä¸» ã€‘"
+                        NOR;
+                        if (exp >= 600000) return HIY
+                        "ã€ å›  ä¸» ã€‘"
+                        NOR;
+                        if (exp >= 50000) return YEL
+                        "ã€ é¦™  ä¸» ã€‘"
+                        NOR;
+                        if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ æ•™  ä¼— ã€‘"
+                        NOR;
+                        return CYN
+                        "ã€ æ•™  å¾’ ã€‘"
+                        NOR;
+                    } else if (family == "é€é¥æ´¾" || family == "æ¡ƒèŠ±å²›") {
+                        if (exp >= 1000000 && shen >= 0) return HIW
+                        "ã€ éš  åœ£ ã€‘"
+                        NOR;
+                        if (exp >= 1000000 && shen < 0) return HIW
+                        "ã€ éš  è´¤ ã€‘"
+                        NOR;
+                        if (exp >= 700000) return HIY
+                        "ã€ éš  è´¤ ã€‘"
+                        NOR;
+                        if (exp >= 600000) return HIY
+                        "ã€ éš  å£« ã€‘"
+                        NOR;
+                        if (exp >= 50000) return YEL
+                        "ã€ éš  å£« ã€‘"
+                        NOR;
+                        if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ é—¨  ç”Ÿ ã€‘"
+                        NOR;
+                        return CYN
+                        "ã€å¤šæƒ…å‰‘å®¢ã€‘"
+                        NOR;
+                    } else if (family == "é“æŒå¸®") {
+                        if (exp >= 1000000 && shen >= 0) return HIW
+                        "ã€ å±±å¤§ç‹ ã€‘"
+                        NOR;
+                        if (exp >= 1000000 && shen < 0) return HIW
+                        "ã€ å¯¨  ä¸» ã€‘"
+                        NOR;
+                        if (exp >= 700000) return HIY
+                        "ã€ å¯¨  ä¸» ã€‘"
+                        NOR;
+                        if (exp >= 600000) return HIY
+                        "ã€ å½“  å®¶ ã€‘"
+                        NOR;
+                        if (exp >= 50000) return YEL
+                        "ã€ å½“  å®¶ ã€‘"
+                        NOR;
+                        if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ å¤´  ç›® ã€‘"
+                        NOR;
+                        return CYN
+                        "ã€ å°å–½ç½— ã€‘"
+                        NOR;
+                    } else if (family == "å¤å¢“æ´¾" || family == "åå±±æ´¾" || family == "å‡Œéœ„åŸ") {
+                        if (exp >= 2000000 && shen > 0) return HIW
+                        "ã€æƒŠå¤©ä¸€å‰‘ã€‘"
+                        NOR;
+                        else if (exp >= 2000000 && shen < 0) return HIW
+                        "ã€æƒŠé­”ä¸€å‰‘ã€‘"
+                        NOR;
                         else
-                        if (((int)ob->query("PKS") > 100) &&
-                            ((int)ob->query("PKS") > (int)ob->query("MKS")))
-                                return HIR "¡¾ É±ÈËÄ§ ¡¿" NOR;
-                        if ((int)ob->query("thief") > 10 )
-                                return HIC "¡¾ ¹ß  ÇÔ ¡¿" NOR;
-                                        if (age < 18) return HIC"¡¾Óñ¹ÚÉÙÄê¡¿"NOR;
-                                        else if (age < 30) return HIG"¡¾ôæôæ²Å×Ó¡¿"NOR;
-                                        else if (age < 50) return HIB"¡¾ÎäÁÖºÀ½Ü¡¿"NOR;
-                                        else
-                                            return HIM "¡¾½­ºşºÀ½Ü¡¿" NOR;
-                                }
-                        if (shen >= 1000000) return HIC "¡¾¾øÊÀÉñÏÀ¡¿" NOR;
-                        else if (shen >= 100000 && exp >=800000)
-                                return HIC "¡¾¿õÊÀ´óÏÀ¡¿" NOR;
-                        else if (shen >= 10000 && exp >=400000)
-                                return HIG "¡¾½­ºşºÀ½Ü¡¿" NOR;
-                        else if (shen >= 1000 && exp >=200000)
-                                return HIY "¡¾ÎäÁÖĞÂĞã¡¿" NOR;
-                        else if (shen >= 100 && exp >=50000)
-                                return CYN "¡¾Ğ¡ÓĞÏÀÒå¡¿" NOR;
-                        else if (shen <= -1000000) return HIR "¡¾¸ÇÊÀ¿ñÄ§¡¿" NOR;
-                        else if (shen <= -100000 && exp >=800000)
-                                return RED "¡¾»ìÊÀÄ§Íõ¡¿" NOR;
-                        else if (shen <= -10000 && exp >=400000)
-                                return HIG "¡¾¶ñ°ÔÒ»·½¡¿" NOR;
-                        else if (shen <= -1000 && exp >=200000)
-                                return HIY "¡¾¶ñÃûÔ¶Ñï¡¿" NOR;
-                        else if (shen <= -100 && exp >=50000)
-                                return BLU "¡¾Ğ¡ÓĞ¶ñÃû¡¿" NOR;
+                        if (exp >= 1000000) return HIR
+                        "ã€ å‰‘  å®— ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIY
+                        "ã€ å‰‘  ç‹‚ ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIC
+                        "ã€ å‰‘  ä¾  ã€‘"
+                        NOR;
+                        else if (exp >= 500000) return YEL
+                        "ã€ å‰‘  å®¢ ã€‘"
+                        NOR;
+                        else return "ã€ å‰‘  å£« ã€‘";
+                    } else if (family == "é›ªå±±å¯º") {
+                        if (exp >= 1000000 && shen >= 0) return HIW
+                        "ã€ æ¬¢å–œä½› ã€‘"
+                        NOR;
+                        if (exp >= 1000000 && shen < 0) return HIW
+                        "ã€ æ¬¢å–œé­” ã€‘"
+                        NOR;
+                        if (exp >= 700000) return HIY
+                        "ã€ å¤©  ç‹ ã€‘"
+                        NOR;
+                        if (exp >= 600000) return HIY
+                        "ã€ å¤§æŠ¤æ³• ã€‘"
+                        NOR;
+                        if (exp >= 50000) return YEL
+                        "ã€ é‡‘  åˆš ã€‘"
+                        NOR;
+                        if (exp >= 30000 || age >= 20) return CYN
+                        "ã€ åŠ›  å£« ã€‘"
+                        NOR;
+                        return CYN
+                        "ã€ æ‚  å½¹ ã€‘"
+                        NOR;
+                    } else if (family == "å§‘è‹æ…•å®¹" || family == "å¤§ç†æ®µå®¶") {
+                        if (exp >= 1000000) return HIR
+                        "ã€ äº²  ç‹ ã€‘"
+                        NOR;
+                        else if (exp >= 800000) return HIY
+                        "ã€ ä¾¯  çˆ· ã€‘"
+                        NOR;
+                        else if (exp >= 700000) return HIC
+                        "ã€ å°†  å®˜ ã€‘"
+                        NOR;
+                        else if (exp >= 500000) return YEL
+                        "ã€ ä¾  å« ã€‘"
+                        NOR;
+                        else if (age >= 18) return CYN
+                        "ã€ æ ¡  å°‰ ã€‘"
+                        NOR;
+                        else return "ã€ å…µ  å£« ã€‘";
+                    } else if (family == "æ˜æ•™") {
+                        if (exp > 10000000)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "å‰¯ æ•™ ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000000)
+                            return NOR
+                        "ã€"
+                        HIM
+                        " æ³•  ç‹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 1000000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "æ€» æŠ¤ æ³•"
+                        NOR
+                        "ã€‘";
+                        if (exp > 500000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        " æŠ¤  æ³• "
+                        NOR
+                        "ã€‘";
+                        if (exp > 300000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "æ€» å ‚ ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 100000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "å‰¯ å ‚ ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 25000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        " æ——  ä¸» "
+                        NOR
+                        "ã€‘";
+                        if (exp > 10000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "å‰¯ æ—— ä¸»"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000)
+                            return NOR
+                        "ã€"
+                        HIB
+                        " æ•™  ä¼— "
+                        NOR
+                        "ã€‘";
+                        return "ã€ æ•™  ä¼— ã€‘";
+
+                    } else if (family == "äº‘é¾™é—¨") {
+                        return HIG
+                        "ã€æ±Ÿæ¹–ä¹‰å£«ã€‘"
+                        NOR;
+                    } else if (family == "æ˜Ÿå®¿æ´¾") {
+                        if (exp > 10000000)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "æ¯’   å°Š"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000000)
+                            return NOR
+                        "ã€"
+                        HIM
+                        "æ¯’   éœ¸"
+                        NOR
+                        "ã€‘";
+                        if (exp > 1000000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "æ¯’   å›"
+                        NOR
+                        "ã€‘";
+                        if (exp > 500000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "æ¯’  ç‹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 300000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "æ¯’  é­” "
+                        NOR
+                        "ã€‘";
+                        if (exp > 100000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        if (exp > 25000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        if (exp > 10000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        return "ã€  æ³•èºç‹  ã€‘";
+                    } else if (family == "äº”æ¯’æ•™") {
+                        if (exp > 10000000)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "æ¯’   å°Š"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000000)
+                            return NOR
+                        "ã€"
+                        HIM
+                        "æ¯’   éœ¸"
+                        NOR
+                        "ã€‘";
+                        if (exp > 1000000)
+                            return NOR
+                        "ã€"
+                        GRN
+                        "æ¯’   å›"
+                        NOR
+                        "ã€‘";
+                        if (exp > 500000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "æ¯’  ç‹ "
+                        NOR
+                        "ã€‘";
+                        if (exp > 300000)
+                            return NOR
+                        "ã€"
+                        YEL
+                        "æ¯’  é­” "
+                        NOR
+                        "ã€‘";
+                        if (exp > 100000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        if (exp > 25000)
+                            return NOR
+                        "ã€"
+                        CYN
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        if (exp > 10000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        if (exp > 5000)
+                            return NOR
+                        "ã€"
+                        MAG
+                        "æ¯’   é­”"
+                        NOR
+                        "ã€‘";
+                        return "ã€  å¥³æ•™ä¼—  ã€‘";
+                        return "ã€  ç”·æ•™ä¼—  ã€‘";
+                    } else if (family == "ç™½é©¼å±±æ´¾") {
+                        if (shen >= 0)
+                            return NOR
+                        "ã€"
+                        HIR
+                        "é­” è§ æ„"
+                        NOR
+                        "ã€‘";
                         else
-                        if (((int)ob->query("PKS") > 100) &&
-                            ((int)ob->query("PKS") > (int)ob->query("MKS")))
-                                return HIR "¡¾ É±ÈËÄ§ ¡¿" NOR;
-                        if ((int)ob->query("thief") > 10 )
-                                return HIC "¡¾ ¹ß  ÇÔ ¡¿" NOR;
-                }
-        }
+                        return NOR
+                        "ã€"
+                        HIR
+                        " ç‹‚  é­” "
+                        NOR
+                        "ã€‘";
+                    } else
+                        switch (ob->query("class")) {
+                            case "bonze":
+                                if (budd >= 180) return HIW
+                                "ã€ ç¥  åƒ§ ã€‘"
+                                NOR;
+                                else if (budd >= 150) return WHT
+                                "ã€ é•¿  è€ ã€‘"
+                                NOR;
+                                else if (budd >= 120) return HIY
+                                "ã€ åœ£  åƒ§ ã€‘"
+                                NOR;
+                                else if (budd >= 80) return HIY
+                                "ã€ ç½—  æ±‰ ã€‘"
+                                NOR;
+                                else if (budd >= 60) return YEL
+                                "ã€ å°Š  è€… ã€‘"
+                                NOR;
+                                else if (budd >= 40) return YEL
+                                "ã€ ç¦…  å¸ˆ ã€‘"
+                                NOR;
+                                else if (budd >= 30) return YEL
+                                "ã€ æ¯”  ä¸˜ ã€‘"
+                                NOR;
+                                return "ã€ åƒ§  äºº ã€‘";
+                            case "taoist":
+                                if (ob->query_skill("taoism", 1) >= 180) return HIW
+                                "ã€ å¤©  å°Š ã€‘"
+                                NOR;
+                                else if (ob->query_skill("taoism", 1) >= 140) return HIY
+                                "ã€ å¤©  å¸ˆ ã€‘"
+                                NOR;
+                                else if (ob->query_skill("taoism", 1) > 100)
+                            return HIW
+                                "ã€ çœŸ  äºº ã€‘"
+                                NOR;
+                                else if (age <= 16)
+                            return HIW
+                                "ã€ å°é“å£« ã€‘"
+                                NOR;
+                                else if (age <= 30)
+                            return HIW
+                                "ã€ é“  å£« ã€‘"
+                                NOR;
+                                else
+                                return HIW
+                                "ã€ é“  é•¿ ã€‘"
+                                NOR;
+                            case "bandit":
+                                if (exp >= 1000000) return HIC
+                                "ã€ å¯¨  ä¸» ã€‘"
+                                NOR;
+                                if (exp >= 600000) return CYN
+                                "ã€ å½“  å®¶ ã€‘"
+                                NOR;
+                                if (exp >= 100000 || age >= 18) return CYN
+                                "ã€ å¤´  ç›® ã€‘"
+                                NOR;
+                                return "ã€ å°å–½ç½— ã€‘";
+                            case "scholar":
+                                if (age <= 16)
+                                    return HIW
+                                "ã€ å­¦  ç«¥ ã€‘"
+                                NOR;
+                                else if (age <= 45)
+                            return HIW
+                                "ã€ ä¹¦  ç”Ÿ ã€‘"
+                                NOR;
+                                else
+                                return HIW
+                                "ã€ è€ç§€æ‰ ã€‘"
+                                NOR;
+                            case "officer":
+                                return HIW
+                                "ã€ å®˜  å·® ã€‘"
+                                NOR;
+                            case "fighter":
+                                return HIW
+                                "ã€ æ­¦  è€… ã€‘"
+                                NOR;
+                            case "swordsman":
+                                if (exp >= 1000000) return HIR
+                                "ã€ å‰‘  å®— ã€‘"
+                                NOR;
+                                if (exp >= 800000) return HIY
+                                "ã€ å‰‘  ç‹‚ ã€‘"
+                                NOR;
+                                if (exp >= 500000) return HIC
+                                "ã€ å‰‘  ä¾  ã€‘"
+                                NOR;
+                                if (exp >= 100000 || age >= 18) return YEL
+                                "ã€ å‰‘  å®¢ ã€‘"
+                                NOR;
+                                return "ã€ å‰‘  å£« ã€‘";
+                            case "alchemist":
+                                return HIW
+                                "ã€ æ–¹  å£« ã€‘"
+                                NOR;
+                            case "shaman":
+                                return HIW
+                                "ã€ å·«  åŒ» ã€‘"
+                                NOR;
+                            case "mr":
+                                return HIB
+                                "ã€ æ…•å®¹ä¸–å®¶ ã€‘"
+                                NOR;
+                            case "tiezhang":
+                                return HIY
+                                "ã€ é“æŒå¼Ÿå­ ã€‘"
+                                NOR;
+                            case "beggar":
+                                if (exp >= 2000000) return HIW
+                                "ã€ ç¥  ä¸ ã€‘"
+                                NOR;
+                                else if (exp >= 1000000 && ob->query("shen") >= 0) return HIC
+                                "ã€ ä¹‰  ä¸ ã€‘"
+                                NOR;
+                                else if (exp >= 1000000 && ob->query("shen") < 0) return HIR
+                                "ã€ æ¶  ä¸ ã€‘"
+                                NOR;
+                                else if (exp >= 600000) return HIC
+                                "ã€ èˆµ  ä¸» ã€‘"
+                                NOR;
+                                else if (exp >= 200000) return CYN
+                                "ã€ é¾™  å¤´ ã€‘"
+                                NOR;
+                                else if (age >= 18) return CYN
+                                "ã€ å«åŒ–å­ ã€‘"
+                                NOR;
+                                else return "ã€ å°ä¹ä¸ ã€‘";
+                            case "eunach":
+                                budd = ob->query_skill("pixie-jian", 1);
+                                if (budd >= 110)
+                                    return HIY
+                                "ã€å¤§å†…é«˜æ‰‹ã€‘"
+                                NOR;
+                                else if (budd >= 100)
+                            return HIY
+                                "ã€ä¸œå‚ä¸‡æˆ·ã€‘"
+                                NOR;
+                                else if (budd >= 90)
+                            return HIY
+                                "ã€ä¸œå‚åƒæˆ·ã€‘"
+                                NOR;
+                                else if (budd >= 80)
+                            return HIY
+                                "ã€ä¸œå‚ç™¾æˆ·ã€‘"
+                                NOR;
+                                else if (budd >= 70)
+                            return HIY
+                                "ã€ä¸œå‚åæˆ·ã€‘"
+                                NOR;
+                                else if (budd >= 60)
+                            return HIY
+                                "ã€ä¸œå‚å…¬å…¬ã€‘"
+                                NOR;
+                                else return HIW
+                                "ã€ å†…  ä¾ ã€‘"
+                                NOR;
+                            case "prostitute":
+                                return HIM
+                                "ã€ é¾Ÿ  å…¬ ã€‘"
+                                NOR;
+                            default:
+                                if (shen >= 1000000) return HIC
+                                "ã€ç»ä¸–ç¥ä¾ ã€‘"
+                                NOR;
+                                else if (shen >= 100000 && exp >= 800000)
+                            return HIC
+                                "ã€æ—·ä¸–å¤§ä¾ ã€‘"
+                                NOR;
+                                else if (shen >= 10000 && exp >= 400000)
+                            return HIG
+                                "ã€æ±Ÿæ¹–è±ªæ°ã€‘"
+                                NOR;
+                                else if (shen >= 1000 && exp >= 200000)
+                            return HIY
+                                "ã€æ­¦æ—æ–°ç§€ã€‘"
+                                NOR;
+                                else if (shen >= 100 && exp >= 50000)
+                            return CYN
+                                "ã€å°æœ‰ä¾ ä¹‰ã€‘"
+                                NOR;
+                                else if (shen <= -1000000) return HIR
+                                "ã€ç›–ä¸–ç‹‚é­”ã€‘"
+                                NOR;
+                                else if (shen <= -100000 && exp >= 800000)
+                            return RED
+                                "ã€æ··ä¸–é­”ç‹ã€‘"
+                                NOR;
+                                else if (shen <= -10000 && exp >= 400000)
+                            return HIG
+                                "ã€æ¶éœ¸ä¸€æ–¹ã€‘"
+                                NOR;
+                                else if (shen <= -1000 && exp >= 200000)
+                            return HIY
+                                "ã€æ¶åè¿œæ‰¬ã€‘"
+                                NOR;
+                                else if (shen <= -100 && exp >= 50000)
+                            return BLU
+                                "ã€å°æœ‰æ¶åã€‘"
+                                NOR;
+                                else
+                                if (((int) ob->query("PKS") > 100) &&
+                                    ((int) ob->query("PKS") > (int) ob->query("MKS")))
+                                    return HIR
+                                "ã€ æ€äººé­” ã€‘"
+                                NOR;
+                                if ((int) ob->query("thief") > 10)
+                                    return HIC
+                                "ã€ æƒ¯  çªƒ ã€‘"
+                                NOR;
+                                if (age < 18) return HIC
+                                "ã€ç‰å† å°‘å¹´ã€‘"
+                                NOR;
+                                else if (age < 30) return HIG
+                                "ã€ç¿©ç¿©æ‰å­ã€‘"
+                                NOR;
+                                else if (age < 50) return HIB
+                                "ã€æ­¦æ—è±ªæ°ã€‘"
+                                NOR;
+                                else
+                                return HIM
+                                "ã€æ±Ÿæ¹–è±ªæ°ã€‘"
+                                NOR;
+                        }
+                    if (shen >= 1000000) return HIC
+                    "ã€ç»ä¸–ç¥ä¾ ã€‘"
+                    NOR;
+                    else if (shen >= 100000 && exp >= 800000)
+                return HIC
+                    "ã€æ—·ä¸–å¤§ä¾ ã€‘"
+                    NOR;
+                    else if (shen >= 10000 && exp >= 400000)
+                return HIG
+                    "ã€æ±Ÿæ¹–è±ªæ°ã€‘"
+                    NOR;
+                    else if (shen >= 1000 && exp >= 200000)
+                return HIY
+                    "ã€æ­¦æ—æ–°ç§€ã€‘"
+                    NOR;
+                    else if (shen >= 100 && exp >= 50000)
+                return CYN
+                    "ã€å°æœ‰ä¾ ä¹‰ã€‘"
+                    NOR;
+                    else if (shen <= -1000000) return HIR
+                    "ã€ç›–ä¸–ç‹‚é­”ã€‘"
+                    NOR;
+                    else if (shen <= -100000 && exp >= 800000)
+                return RED
+                    "ã€æ··ä¸–é­”ç‹ã€‘"
+                    NOR;
+                    else if (shen <= -10000 && exp >= 400000)
+                return HIG
+                    "ã€æ¶éœ¸ä¸€æ–¹ã€‘"
+                    NOR;
+                    else if (shen <= -1000 && exp >= 200000)
+                return HIY
+                    "ã€æ¶åè¿œæ‰¬ã€‘"
+                    NOR;
+                    else if (shen <= -100 && exp >= 50000)
+                return BLU
+                    "ã€å°æœ‰æ¶åã€‘"
+                    NOR;
+                    else
+                    if (((int) ob->query("PKS") > 100) &&
+                        ((int) ob->query("PKS") > (int) ob->query("MKS")))
+                        return HIR
+                    "ã€ æ€äººé­” ã€‘"
+                    NOR;
+                    if ((int) ob->query("thief") > 10)
+                        return HIC
+                    "ã€ æƒ¯  çªƒ ã€‘"
+                    NOR;
+            }
+    }
 }
 
-string query_respect(object ob)
-{
-        int age;
-        string str;
+string query_respect(object ob) {
+    int age;
+    string str;
 
-        if( stringp(str = ob->query("rank_info/respect")) )
-                return str;
+    if (stringp(str = ob->query("rank_info/respect")))
+        return str;
 
-	if(ob->query("race") != "ÈËÀà") return ob->name();
+    if (ob->query("race") != "äººç±»") return ob->name();
 
-        age = ob->query("age");
-        switch(ob->query("gender")) {
-                case "Å®ĞÔ":
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 18 ) return "Ğ¡Ê¦Ì«";
-                                else return "Ê¦Ì«";
-                                break;
-                        case "taoist":
-                                if( age < 18 ) return "Ğ¡ÏÉ¹Ã";
-                                else return "ÏÉ¹Ã";
-                                break;
-                        default:
-                                if( age < 18 ) return "Ğ¡¹ÃÄï";
-                                else if( age < 30 ) return "¹ÃÄï";
-                                else if( age < 40 ) return "´óÉô";
-                                else return "ÆÅÆÅ";
-                                break;
-                        }
-                case "ÄĞĞÔ":
+    age = ob->query("age");
+    switch (ob->query("gender")) {
+        case "å¥³æ€§":
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 18) return "å°å¸ˆå¤ª";
+                    else return "å¸ˆå¤ª";
+                    break;
+                case "taoist":
+                    if (age < 18) return "å°ä»™å§‘";
+                    else return "ä»™å§‘";
+                    break;
                 default:
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 18 ) return "Ğ¡Ê¦¸¸";
-                                else return "´óÊ¦";
-                                break;
-                        case "taoist":
-                                if( age < 18 ) return "µÀĞÖ";
-                                else return "µÀ³¤";
-                                break;
-                        case "scholar":
-                                if( age < 18 ) return "Ğ¡Ïà¹«";
-                                else if( age < 50 ) return "Ïà¹«";
-                                else return "ÀÏÏÈÉú";
-                                break;
-                        case "fighter":
-                        case "swordsman":
-                                if( age < 18 ) return "Ğ¡ÀÏµÜ";
-                                else if( age < 50 ) return "×³Ê¿";
-                                else return "ÀÏÇ°±²";
-                                break;
-                        default:
-                                if( age < 20 ) return "Ğ¡ĞÖµÜ";
-                                else if( age < 50 ) return "×³Ê¿";
-                                else return "ÀÏÒ¯×Ó";
-                                break;
-                        }
-        }
-}
-
-string query_rude(object ob)
-{
-        int age;
-        string str;
-
-        if( stringp(str = ob->query("rank_info/rude")) )
-                return str;
-
-        age = ob->query("age");
-        switch(ob->query("gender")) {
-                case "Å®ĞÔ":
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 18 ) return "Ğ¡ÔôÄá";
-                                if( age < 30 ) return "ÔôÄá";
-                                else return "ÀÏÔôÄá";
-                                break;
-                        case "taoist":
-                                if( age < 18 ) return "Ğ¡ÑıÅ®";
-                                if( age < 30 ) return "ÑıÅ®";
-                                else return "ÀÏÑıÆÅ";
-                                break;
-                        default:
-                                if( age < 18 ) return "Ğ¡ÄïÆ¤";
-                                if( age < 25 ) return "Ğ¡¼úÈË";
-                                if( age < 40 ) return "ÔôÆÅÄï";
-                                else return "ËÀÀÏÌ«ÆÅ";
-                                break;
-                        }
-                case "ÄĞĞÔ":
+                    if (age < 18) return "å°å§‘å¨˜";
+                    else if (age < 30) return "å§‘å¨˜";
+                    else if (age < 40) return "å¤§å©¶";
+                    else return "å©†å©†";
+                    break;
+            }
+        case "ç”·æ€§":
+        default:
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 18) return "å°å¸ˆçˆ¶";
+                    else return "å¤§å¸ˆ";
+                    break;
+                case "taoist":
+                    if (age < 18) return "é“å…„";
+                    else return "é“é•¿";
+                    break;
+                case "scholar":
+                    if (age < 18) return "å°ç›¸å…¬";
+                    else if (age < 50) return "ç›¸å…¬";
+                    else return "è€å…ˆç”Ÿ";
+                    break;
+                case "fighter":
+                case "swordsman":
+                    if (age < 18) return "å°è€å¼Ÿ";
+                    else if (age < 50) return "å£®å£«";
+                    else return "è€å‰è¾ˆ";
+                    break;
                 default:
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 18 ) return "Ğ¡ÔôÍº";
-                                if( age < 50 ) return "ËÀÍºÂ¿";
-                                else return "ÀÏÍºÂ¿";
-                                break;
-                        case "taoist":
-                                if( age < 18 ) return "Ğ¡ÔÓÃ«";
-                                if( age < 30 ) return "ËÀÅ£±Ç×Ó";
-                                else return "ÀÏÔÓÃ«";
-                                break;
-                        case "scholar":
-                                if( age < 18 ) return "Ğ¡Êé´ô×Ó";
-                                else if( age < 50 ) return "³ôÊé´ô×Ó";
-                                else return "ÀÏÍ¯Éú";
-                                break;
-                        default:
-                                if( age < 20 ) return "Ğ¡Íõ°Ëµ°";
-                                if( age < 30 ) return "Ö±ÄïÔô";
-                                if( age < 50 ) return "³ôÔô";
-                                if( age < 80 ) return "ÀÏÆ¥·ò";
-                                else return "ÀÏ²»ËÀ";
-                                break;
-                        }
-        }
+                    if (age < 20) return "å°å…„å¼Ÿ";
+                    else if (age < 50) return "å£®å£«";
+                    else return "è€çˆ·å­";
+                    break;
+            }
+    }
 }
 
-string query_self(object ob)
-{
-        int age;
-        string str;
+string query_rude(object ob) {
+    int age;
+    string str;
 
-        if( stringp(str = ob->query("rank_info/self")) )
-                return str;
+    if (stringp(str = ob->query("rank_info/rude")))
+        return str;
 
-        age = ob->query("age");
-        switch(ob->query("gender")) {
-                case "Å®ĞÔ":
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 50 ) return "Æ¶Äá";
-                                else return "ÀÏÄá";
-                                break;
-                        case "taoist":
-                                return "Æ¶µÀ";
-                                break;
-                        default:
-                                if( age < 20 ) return "Ğ¡Å®×Ó";
-                                if( age > 50 ) return "ÀÏÉí";
-                                else return "æªÉí";
-                                break;
-                        }
-                case "ÄĞĞÔ":
+    age = ob->query("age");
+    switch (ob->query("gender")) {
+        case "å¥³æ€§":
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 18) return "å°è´¼å°¼";
+                    if (age < 30) return "è´¼å°¼";
+                    else return "è€è´¼å°¼";
+                    break;
+                case "taoist":
+                    if (age < 18) return "å°å¦–å¥³";
+                    if (age < 30) return "å¦–å¥³";
+                    else return "è€å¦–å©†";
+                    break;
                 default:
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 18 ) return "Ğ¡ñÄ";
-                                if( age < 40 ) return "Æ¶É®";
-                                else return "ÀÏñÄ";
-                                break;
-                        case "taoist":
-                                if( age < 18 ) return "Ğ¡µÀ";
-                                if( age < 30 ) return "Æ¶µÀ";
-                                else return "ÀÏµÀ";
-                                break;
-                        case "scholar":
-                                if( age < 30 ) return "ÍíÉú";
-                                else return "²»²Å";
-                                break;
-                        default:
-                                if( age < 50 ) return "ÔÚÏÂ";
-                                else return "ÀÏÍ·×Ó";
-                                break;
-                        }
-        }
-}
-
-string query_self_rude(object ob)
-{
-        int age;
-        string str;
-
-        if( stringp(str = ob->query("rank_info/self_rude")) )
-                return str;
-
-        age = ob->query("age");
-        switch(ob->query("gender")) {
-                case "Å®ĞÔ":
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 50 ) return "Æ¶Äá";
-                                else return "ÀÏÄá";
-                                break;
-                        case "taoist":
-                                return "±¾ÏÉ¹Ã";
-                                break;
-                        default:
-                                if( age < 20 ) return "±¾¹ÃÄï";
-                                if( age < 30 ) return "±¾¹ÃÄÌÄÌ";
-                                else return "ÀÏÄï";
-                                break;
-                        }
-                case "ÄĞĞÔ":
+                    if (age < 18) return "å°å¨˜çš®";
+                    if (age < 25) return "å°è´±äºº";
+                    if (age < 40) return "è´¼å©†å¨˜";
+                    else return "æ­»è€å¤ªå©†";
+                    break;
+            }
+        case "ç”·æ€§":
+        default:
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 18) return "å°è´¼ç§ƒ";
+                    if (age < 50) return "æ­»ç§ƒé©´";
+                    else return "è€ç§ƒé©´";
+                    break;
+                case "taoist":
+                    if (age < 18) return "å°æ‚æ¯›";
+                    if (age < 30) return "æ­»ç‰›é¼»å­";
+                    else return "è€æ‚æ¯›";
+                    break;
+                case "scholar":
+                    if (age < 18) return "å°ä¹¦å‘†å­";
+                    else if (age < 50) return "è‡­ä¹¦å‘†å­";
+                    else return "è€ç«¥ç”Ÿ";
+                    break;
                 default:
-                        switch(ob->query("class")) {
-                        case "bonze":
-                                if( age < 50 ) return "´óºÍÉĞÎÒ";
-                                else return "ÀÏºÍÉĞÎÒ";
-                                break;
-                        case "taoist":
-                                if( age < 30 ) return "±¾É½ÈË";
-                                return "ÀÏµÀÎÒ";
-                                break;
-                        case "scholar":
-                                if( age < 50 ) return "±¾Ïà¹«";
-                                else return "ÀÏ·ò×ÓÎÒ";
-                                break;
-                        default:
-                                if( age < 20 ) return "±¾ÉÙÒ¯ÎÒ";
-                                if( age < 40 ) return "´óÒ¯ÎÒ";
-                                else return "ÀÏ×Ó";
-                                break;
-                        }
-        }
+                    if (age < 20) return "å°ç‹å…«è›‹";
+                    if (age < 30) return "ç›´å¨˜è´¼";
+                    if (age < 50) return "è‡­è´¼";
+                    if (age < 80) return "è€åŒ¹å¤«";
+                    else return "è€ä¸æ­»";
+                    break;
+            }
+    }
 }
-string query_close(object ob)
-{
-        int a1, a2;
 
-        if (objectp(ob))
-        {
-                if (a2 = (int)ob->query("mud_age"))
-                {
-                        a1 = this_player()->query("mud_age");
-                } else
-                {
-                        a1 = this_player()->query("age");
-                        a2 = ob->query("age");
-                }
-        } else
-        {
-                a1 = this_player()->query("age");
-                a2 = 0;
+string query_self(object ob) {
+    int age;
+    string str;
+
+    if (stringp(str = ob->query("rank_info/self")))
+        return str;
+
+    age = ob->query("age");
+    switch (ob->query("gender")) {
+        case "å¥³æ€§":
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 50) return "è´«å°¼";
+                    else return "è€å°¼";
+                    break;
+                case "taoist":
+                    return "è´«é“";
+                    break;
+                default:
+                    if (age < 20) return "å°å¥³å­";
+                    if (age > 50) return "è€èº«";
+                    else return "å¦¾èº«";
+                    break;
+            }
+        case "ç”·æ€§":
+        default:
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 18) return "å°è¡²";
+                    if (age < 40) return "è´«åƒ§";
+                    else return "è€è¡²";
+                    break;
+                case "taoist":
+                    if (age < 18) return "å°é“";
+                    if (age < 30) return "è´«é“";
+                    else return "è€é“";
+                    break;
+                case "scholar":
+                    if (age < 30) return "æ™šç”Ÿ";
+                    else return "ä¸æ‰";
+                    break;
+                default:
+                    if (age < 50) return "åœ¨ä¸‹";
+                    else return "è€å¤´å­";
+                    break;
+            }
+    }
+}
+
+string query_self_rude(object ob) {
+    int age;
+    string str;
+
+    if (stringp(str = ob->query("rank_info/self_rude")))
+        return str;
+
+    age = ob->query("age");
+    switch (ob->query("gender")) {
+        case "å¥³æ€§":
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 50) return "è´«å°¼";
+                    else return "è€å°¼";
+                    break;
+                case "taoist":
+                    return "æœ¬ä»™å§‘";
+                    break;
+                default:
+                    if (age < 20) return "æœ¬å§‘å¨˜";
+                    if (age < 30) return "æœ¬å§‘å¥¶å¥¶";
+                    else return "è€å¨˜";
+                    break;
+            }
+        case "ç”·æ€§":
+        default:
+            switch (ob->query("class")) {
+                case "bonze":
+                    if (age < 50) return "å¤§å’Œå°šæˆ‘";
+                    else return "è€å’Œå°šæˆ‘";
+                    break;
+                case "taoist":
+                    if (age < 30) return "æœ¬å±±äºº";
+                    return "è€é“æˆ‘";
+                    break;
+                case "scholar":
+                    if (age < 50) return "æœ¬ç›¸å…¬";
+                    else return "è€å¤«å­æˆ‘";
+                    break;
+                default:
+                    if (age < 20) return "æœ¬å°‘çˆ·æˆ‘";
+                    if (age < 40) return "å¤§çˆ·æˆ‘";
+                    else return "è€å­";
+                    break;
+            }
+    }
+}
+
+string query_close(object ob) {
+    int a1, a2;
+
+    if (objectp(ob)) {
+        if (a2 = (int) ob->query("mud_age")) {
+            a1 = this_player()->query("mud_age");
+        } else {
+            a1 = this_player()->query("age");
+            a2 = ob->query("age");
         }
+    } else {
+        a1 = this_player()->query("age");
+        a2 = 0;
+    }
 
-        switch (ob->query("gender")) {
-        case "Å®ĞÔ" :
+    switch (ob->query("gender")) {
+        case "å¥³æ€§" :
 
-                if (a2 - a1 >= 24) return "¹Ã¹Ã";
-                else if (a1 - a2 >= 24) return "Ö¶Å®";
-                else if (a1 >= a2) return "ÏÍÃÃ";
-                else  return "½ã½ã";
-                break;
+            if (a2 - a1 >= 24) return "å§‘å§‘";
+            else if (a1 - a2 >= 24) return "ä¾„å¥³";
+            else if (a1 >= a2) return "è´¤å¦¹";
+            else return "å§å§";
+            break;
         default :
-                if (a2 - a1 >= 24) return "ÊåÊå";
-                else if (a1 - a2 >= 24) return "ÏÍÖ¶";
-                else if (a1 >= a2) return "ÏÍµÜ";
-                else  return "¸ç¸ç";
-        }
+            if (a2 - a1 >= 24) return "å”å”";
+            else if (a1 - a2 >= 24) return "è´¤ä¾„";
+            else if (a1 >= a2) return "è´¤å¼Ÿ";
+            else return "å“¥å“¥";
+    }
 }
 
-string query_self_close(object ob)
-{
-        int a1, a2;
+string query_self_close(object ob) {
+    int a1, a2;
 
-        if (objectp(ob))
-        {
-                if (a2 = (int)ob->query("mud_age"))
-                {
-                        a1 = this_player()->query("mud_age");
-                } else
-                {
-                        a1 = this_player()->query("age");
-                        a2 = ob->query("age");
-                }
-        } else
-        {
-                a1 = this_player()->query("age");
-                a2 = 0;
+    if (objectp(ob)) {
+        if (a2 = (int) ob->query("mud_age")) {
+            a1 = this_player()->query("mud_age");
+        } else {
+            a1 = this_player()->query("age");
+            a2 = ob->query("age");
         }
+    } else {
+        a1 = this_player()->query("age");
+        a2 = 0;
+    }
 
-        switch (this_player()->query("gender")) {
-        case "Å®ĞÔ" :
-                if (a1 - a2 >= 24) return "¹Ã¹ÃÎÒ";
-                else if (a2 - a1 >= 24) return "Ö¶Å®ÎÒ";
-                else if (a1 >= a2) return "½ã½ãÎÒ";
-                else return "Ğ¡ÃÃÎÒ";
-                break;
+    switch (this_player()->query("gender")) {
+        case "å¥³æ€§" :
+            if (a1 - a2 >= 24) return "å§‘å§‘æˆ‘";
+            else if (a2 - a1 >= 24) return "ä¾„å¥³æˆ‘";
+            else if (a1 >= a2) return "å§å§æˆ‘";
+            else return "å°å¦¹æˆ‘";
+            break;
         default :
-                if (a1 - a2 >= 240) return "ÊåÊåÎÒ";
-                else if (a2 - a1 >= 240) return "Ğ¡Ö¶ÎÒ";
-                else if (a1 >= a2) return "ÓŞĞÖÎÒ";
-                else return "Ğ¡µÜÎÒ";
-        }
+            if (a1 - a2 >= 240) return "å”å”æˆ‘";
+            else if (a2 - a1 >= 240) return "å°ä¾„æˆ‘";
+            else if (a1 >= a2) return "æ„šå…„æˆ‘";
+            else return "å°å¼Ÿæˆ‘";
+    }
 }
 

@@ -5,133 +5,130 @@
 
 inherit F_DBASE;
 
-static string *event_name;      // œµÕ≥÷–À˘”–µƒ ¬º˛
-static mapping event_list;      // ¥˝¥•∑¢µƒ ¬º˛
+static string *event_name;      // Á≥ªÁªü‰∏≠ÊâÄÊúâÁöÑ‰∫ã‰ª∂
+static mapping event_list;      // ÂæÖËß¶ÂèëÁöÑ‰∫ã‰ª∂
 
 void collect_all_event();
 
-void create()
-{
-        string event;
-        object eob;
+void create() {
+    string event;
+    object eob;
 
-        seteuid(ROOT_UID);
-        set("channel_id", " ¬º˛æ´¡È");
-        CHANNEL_D->do_channel(this_object(), "sys", " ¬º˛œµÕ≥“—æ≠∆Ù∂Ø°£");
+    seteuid(ROOT_UID);
+    set("channel_id", "‰∫ã‰ª∂Á≤æÁÅµ");
+    CHANNEL_D->do_channel(this_object(), "sys", "‰∫ã‰ª∂Á≥ªÁªüÂ∑≤ÁªèÂêØÂä®„ÄÇ");
 
-        event_name = get_dir(EVENT_DIR + "*.c");
-        event_name = map_array(event_name, (: $1[0..<3] :));
+    event_name = get_dir(EVENT_DIR + "*.c");
+    event_name = map_array(event_name,(: $1[0.. < 3] :));
 
-        // ŒˆππÀ˘”–µƒ ¬º˛
-        foreach (event in event_name)
-                if (objectp(eob = find_object(EVENT_DIR + event)))
-                        destruct(eob);
+    // ÊûêÊûÑÊâÄÊúâÁöÑ‰∫ã‰ª∂
+    foreach(event
+    in
+    event_name)
+    if (objectp(eob = find_object(EVENT_DIR + event)))
+        destruct(eob);
 
-        event_list = ([ ]);
-        collect_all_event();
-        set_heart_beat(5);      // √ø∏ˆ–° ±–ƒÃ¯“ª¥Œ
+    event_list = ([ ]);
+    collect_all_event();
+    set_heart_beat(5);      // ÊØè‰∏™Â∞èÊó∂ÂøÉË∑≥‰∏ÄÊ¨°
 }
 
-int clean_up()
-{
-        return 1;
+int clean_up() {
+    return 1;
 }
 
-string *query_all_event()
-{
-        return event_name;
+string *query_all_event() {
+    return event_name;
 }
 
-mapping query_event_list()
-{
-        return event_list;
+mapping query_event_list() {
+    return event_list;
 }
 
-// EVENT_D∆Ù∂Ø ± ’ºØÀ˘”–µƒ ¬º˛
-void collect_all_event()
-{
-        string event;
+// EVENT_DÂêØÂä®Êó∂Êî∂ÈõÜÊâÄÊúâÁöÑ‰∫ã‰ª∂
+void collect_all_event() {
+    string event;
 
-        foreach (event in event_name)
-                (EVENT_DIR + event)->create_event();
+    foreach(event
+    in
+    event_name)
+    (EVENT_DIR + event)->create_event();
 }
 
-// µ«º«‘⁄ƒ≥ ±øÃ∆Ù∂Ø ¬º˛
-int test(string st, int year, int month, int day, int hour, mixed para)
-{
-        if (undefinedp(event_list[st]))
-                return notify_fail("not found..\n");
+// ÁôªËÆ∞Âú®ÊüêÊó∂ÂàªÂêØÂä®‰∫ã‰ª∂
+int test(string st, int year, int month, int day, int hour, mixed para) {
+    if (undefinedp(event_list[st]))
+        return notify_fail("not found..\n");
 
-        event_list[st] = ({ year, month, day, hour, para });
+    event_list[st] = ({ year, month, day, hour, para });
 }
 
-// µ«º«‘⁄ƒ≥ ±øÃ∆Ù∂Ø ¬º˛
-int at_when(int year, int month, int day, int hour, mixed para)
-{
-        object pob;
-        int t;
-        mixed *lt;
+// ÁôªËÆ∞Âú®ÊüêÊó∂ÂàªÂêØÂä®‰∫ã‰ª∂
+int at_when(int year, int month, int day, int hour, mixed para) {
+    object pob;
+    int t;
+    mixed *lt;
 
-        if (! objectp(pob = previous_object()))
-                return 0;
+    if (!objectp(pob = previous_object()))
+        return 0;
 
-        if (geteuid(pob) != ROOT_UID)
-                // Œ™¡À∞≤»´£¨÷ª”–æﬂ”–ROOT…Ì∑›µƒ∂‘œÛ≤≈ƒ‹πªµ«º« ¬º˛
-                return 0;
+    if (geteuid(pob) != ROOT_UID)
+        // ‰∏∫‰∫ÜÂÆâÂÖ®ÔºåÂè™ÊúâÂÖ∑ÊúâROOTË∫´‰ªΩÁöÑÂØπË±°ÊâçËÉΩÂ§üÁôªËÆ∞‰∫ã‰ª∂
+        return 0;
 
-        event_list[base_name(pob)] = ({ year, month, day, hour, para });
+    event_list[base_name(pob)] = ({ year, month, day, hour, para });
 }
 
-// µ«º«‘⁄“ª∂Œ ±º‰“‘∫Û∆Ù∂Ø ¬º˛
-// »Áπ˚¥´»Îµƒ≤Œ ˝ «∏∫ ˝£¨‘Ú±Í÷æ¡À“ª∏ˆæ¯∂‘µƒ ±º‰
-// ±»»Á£∫Y = 0 month = 0 day = 1 hour = -5 ±Ì æ√˜ÃÏ5µ„÷” 
-int at_after(int year, int month, int day, int hour, mixed para)
-{
-        mixed *lt;
+// ÁôªËÆ∞Âú®‰∏ÄÊÆµÊó∂Èó¥‰ª•ÂêéÂêØÂä®‰∫ã‰ª∂
+// Â¶ÇÊûú‰º†ÂÖ•ÁöÑÂèÇÊï∞ÊòØË¥üÊï∞ÔºåÂàôÊ†áÂøó‰∫Ü‰∏Ä‰∏™ÁªùÂØπÁöÑÊó∂Èó¥
+// ÊØîÂ¶ÇÔºöY = 0 month = 0 day = 1 hour = -5 Ë°®Á§∫ÊòéÂ§©5ÁÇπÈíü 
+int at_after(int year, int month, int day, int hour, mixed para) {
+    mixed *lt;
 
-        lt = NATURE_D->query_localtime(time());
-        if (year < 0)  year = -year;   else year += lt[LT_YEAR];
-        if (month < 0) month = -month; else month += lt[LT_MON] + 1;
-        if (day < 0)   day = -day;     else day += lt[LT_MDAY];
-        if (hour < 0)  hour = -hour;   else hour += lt[LT_HOUR];
-        return at_when(year, month, day, hour, para);
+    lt = NATURE_D->query_localtime(time());
+    if (year < 0) year = -year; else year += lt[LT_YEAR];
+    if (month < 0) month = -month; else month += lt[LT_MON] + 1;
+    if (day < 0) day = -day; else day += lt[LT_MDAY];
+    if (hour < 0) hour = -hour; else hour += lt[LT_HOUR];
+    return at_when(year, month, day, hour, para);
 }
 
-// √ø∏ˆ–° ±–ƒÃ¯“ª¥Œ£¨ºÏ≤ÈÀ˘”–µƒ ¬º˛
-void heart_beat()
-{
-        mixed *lt;
-        string *ks;
-        string event;
-        mixed *el;
-        int tnow, tt;
-        int r;
+// ÊØè‰∏™Â∞èÊó∂ÂøÉË∑≥‰∏ÄÊ¨°ÔºåÊ£ÄÊü•ÊâÄÊúâÁöÑ‰∫ã‰ª∂
+void heart_beat() {
+    mixed *lt;
+    string *ks;
+    string event;
+    mixed *el;
+    int tnow, tt;
+    int r;
 
-        lt = NATURE_D->query_localtime(time());
-        lt[LT_MON]++;
-        tnow = lt[LT_YEAR] * 1000000 +
-               lt[LT_MON] * 10000 +
-               lt[LT_MDAY] * 100 +
-               lt[LT_HOUR];
+    lt = NATURE_D->query_localtime(time());
+    lt[LT_MON]++;
+    tnow = lt[LT_YEAR] * 1000000 +
+           lt[LT_MON] * 10000 +
+           lt[LT_MDAY] * 100 +
+           lt[LT_HOUR];
 
-        ks = keys(event_list);
-        foreach (event in ks)
-        {
-                el = event_list[event];
-                tt = el[0] * 1000000 +
-                     el[1] * 10000 +
-                     el[2] * 100 +
-                     el[3];
-                if (tnow < tt) continue;
+    ks = keys(event_list);
+    foreach(event
+    in
+    ks)
+    {
+        el = event_list[event];
+        tt = el[0] * 1000000 +
+             el[1] * 10000 +
+             el[2] * 100 +
+             el[3];
+        if (tnow < tt) continue;
 
-                // œ»»•µÙ’‚∏ˆ ¬º˛ - ’‚∏ˆ≤Ÿ◊˜±ÿ–Î‘⁄¥•∑¢«∞ÕÍ≥…
-                map_delete(event_list, event);
+        // ÂÖàÂéªÊéâËøô‰∏™‰∫ã‰ª∂ - Ëøô‰∏™Êìç‰ΩúÂøÖÈ°ªÂú®Ëß¶ÂèëÂâçÂÆåÊàê
+        map_delete(event_list, event);
 
-                //  ¬º˛–Ë“™¥•∑¢£¨µ˜”√¥´»Î≤Œ ˝
-                r = catch(event->trigger_event(el[4],
-                                               lt[LT_YEAR], lt[LT_MON],
-                                               lt[LT_MON], lt[LT_MDAY]));
+        // ‰∫ã‰ª∂ÈúÄË¶ÅËß¶ÂèëÔºåË∞ÉÁî®‰º†ÂÖ•ÂèÇÊï∞
+        r = catch(event->trigger_event(el[4],
+                                       lt[LT_YEAR], lt[LT_MON],
+                                       lt[LT_MON], lt[LT_MDAY]));
 //                if (r) log_file("static/event", sprintf("%s event:%s trigger occur an error.\n",
 //                                                        log_time(), ks));
-        }
+    }
 }

@@ -8,146 +8,147 @@
 #include <net/daemons.h>
 #include <net/macros.h>
 
-int LAST_HARD_DIS= 0;
+int LAST_HARD_DIS = 0;
+
 void init_cron();
+
 //void autosave();
 void check_dns();
+
 void check_pets();
+
 void check_whonature();
-void create()
-{
- 	seteuid( ROOT_UID );
-	init_cron();
+
+void create() {
+    seteuid(ROOT_UID);
+    init_cron();
 }
-int query_last_hard_dis()
-{
-	return LAST_HARD_DIS;
+
+int query_last_hard_dis() {
+    return LAST_HARD_DIS;
 }
-int set_last_hard_dis()
-{
-	LAST_HARD_DIS = time();
-	return time();
+
+int set_last_hard_dis() {
+    LAST_HARD_DIS = time();
+    return time();
 }
-void init_cron()
-{
-	mixed *local;
-	local = localtime(time());
-        if ( !random(30)) 
-	TASK_D->init_dynamic_quest();
-	
+
+void init_cron() {
+    mixed *local;
+    local = localtime(time());
+    if (!random(30))
+        TASK_D->init_dynamic_quest();
+
 
 //How long the system will refresh all tasks. Added by FY@SH-Morrison
 //--------------------------------------------------------------------
- if ( !((local[1])%180))
-      {
+    if (!((local[1]) % 180)) {
         message("system",
-                HIW     "\t\t¡¾º£ÑóII¡¿½«ÔÚÎå·ÖÖÓºóÖØĞÂ·Ö²¼task£¡\n\n" NOR,
-                users() );
+                HIW
+        "\t\tã€æµ·æ´‹IIã€‘å°†åœ¨äº”åˆ†é’Ÿåé‡æ–°åˆ†å¸ƒtaskï¼\n\n"
+        NOR,
+                users());
         call_out("countdown", 60, 5);
-   }
+    }
 //--------------------------------------------------------------------
-//ĞŞ¸ÄÒÔÉÏµÚÒ»ĞĞÖĞ°Ù·ÖºÅºóµÄÊı×Ö(ÏÖÔÚÉèµÄ60´ú±í1Ğ¡Ê±)¾Í¿ÉÒÔĞŞ¸ÄtaskÖØĞÂ·Ö²¼µÄÊ±¼ä¼ä¼ä¸ôÁË¡£
+//ä¿®æ”¹ä»¥ä¸Šç¬¬ä¸€è¡Œä¸­ç™¾åˆ†å·åçš„æ•°å­—(ç°åœ¨è®¾çš„60ä»£è¡¨1å°æ—¶)å°±å¯ä»¥ä¿®æ”¹taské‡æ–°åˆ†å¸ƒçš„æ—¶é—´é—´é—´éš”äº†ã€‚
 //above is add by Morrison
 
 // Check pets that's lost heartbeat
-	if( !(local[1]%5)) 
-       if(!find_object(VOID_OB))
-                call_other(VOID_OB,"???");
-	check_pets();
+    if (!(local[1] % 5))
+        if (!find_object(VOID_OB))
+            call_other(VOID_OB, "???");
+    check_pets();
 // if dns_master not working, every 15 mins re-initalize it
-	if ( !(local[1]%15)) 
-	{
-	check_dns();
+    if (!(local[1] % 15)) {
+        check_dns();
 // if WHO_D,NATURE_D dies restart them
-	check_whonature();
-	STATUS_D->write_list();
-	}
-	call_out("init_cron", 60);//zzz modify 20 to 60	
+        check_whonature();
+        STATUS_D->write_list();
+    }
+    call_out("init_cron", 60);//zzz modify 20 to 60
 }
 
-private void countdown(int min)
-{
-        object *ob_list;
-        int i;
-	min--;
-	if( min ) {
-		message("system",
-                        HIR     "\t\t¡¾º£ÑóII¡¿½«ÔÚ" + chinese_number(min) + "·ÖÖÓºóÖØĞÂ·Ö²¼task£¡\n\n"NOR,			users() );
-		call_out("countdown", 60, min);
-	} else {
-            message("system",HIR "ÖØĞÂ·Ö²¼ËùÓĞÊ¹Ãü¡£¡£¡£" NOR,users());
-            TASK_D->init_dynamic_quest(1);
-//Îª½â¾öÏôÇïË®´«ÆæÎÊÌâ¶ø¼Ó 
-           ob_list = children("/quest/shenshu/shang");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-			destruct(ob_list[i]);
-               }
-           ob_list = children("/quest/shenshu/xia");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-			destruct(ob_list[i]);
-               }
-//½áÊø
-            message("system",HIG "¡£¡£¡£ËùÓĞÊ¹Ãü·Ö²¼Íê±Ï\n" NOR,users());
+private void countdown(int min) {
+    object *ob_list;
+    int i;
+    min--;
+    if (min) {
+        message("system",
+                HIR
+        "\t\tã€æµ·æ´‹IIã€‘å°†åœ¨" + chinese_number(min) + "åˆ†é’Ÿåé‡æ–°åˆ†å¸ƒtaskï¼\n\n"
+        NOR, users());
+        call_out("countdown", 60, min);
+    } else {
+        message("system", HIR
+        "é‡æ–°åˆ†å¸ƒæ‰€æœ‰ä½¿å‘½ã€‚ã€‚ã€‚"
+        NOR, users());
+        TASK_D->init_dynamic_quest(1);
+//ä¸ºè§£å†³è§ç§‹æ°´ä¼ å¥‡é—®é¢˜è€ŒåŠ  
+        ob_list = children("/quest/shenshu/shang");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                destruct(ob_list[i]);
+            }
+        ob_list = children("/quest/shenshu/xia");
+        for (i = 0; i < sizeof(ob_list); i++)
+            if (environment(ob_list[i])) {
+                destruct(ob_list[i]);
+            }
+//ç»“æŸ
+        message("system", HIG
+        "ã€‚ã€‚ã€‚æ‰€æœ‰ä½¿å‘½åˆ†å¸ƒå®Œæ¯•\n"
+        NOR, users());
 
-	}
+    }
 }
 
-void check_dns()
-{
-	mapping mud_list;
-	mixed *muds;
-	object dns;
+void check_dns() {
+    mapping mud_list;
+    mixed *muds;
+    object dns;
 
-	if(!dns = find_object(DNS_MASTER))
-	// dns not started, not our problem
-	return;
-	mud_list = (mapping) DNS_MASTER->query_muds();
-	muds=keys(mud_list);
-	if(sizeof(muds)<= 1)
-	{ destruct(dns);
-	call_other(DNS_MASTER,"???");
-	}
-	return;
-}
-
-void check_whonature()
-{
-	mixed *info;
-	int i;
-	object ob;
-	int who=0, nature=0;
-	info = call_out_info();
-	for(i=0; i<sizeof(info); i++)
-	{
-	if( "/"+sprintf("%O",info[i][0]) == WHO_D ) who =1;
-	if( "/"+sprintf("%O",info[i][0]) == NATURE_D ) nature=1;
-	}
-	if(!who)
-        {
-                if(ob=find_object(WHO_D)) destruct(ob);
-                call_other(WHO_D,"???"); 
-        }
-        if(!nature)
-        {
-                if(ob=find_object(NATURE_D)) destruct(ob);
-                call_other(NATURE_D,"???");
-        }
+    if (!dns = find_object(DNS_MASTER))
+        // dns not started, not our problem
         return;
+    mud_list = (mapping) DNS_MASTER->query_muds();
+    muds = keys(mud_list);
+    if (sizeof(muds) <= 1) {
+        destruct(dns);
+        call_other(DNS_MASTER, "???");
+    }
+    return;
 }
 
-void check_pets()
-{
-int i;
-object ob,*ob_list;
-ob_list=children("/clone/npc/pet");
-for(i=0; i<sizeof(ob_list); i++) {
-if( !ob = environment(ob_list[i]) ) continue;
-ob->heal_up();
-                }
+void check_whonature() {
+    mixed *info;
+    int i;
+    object ob;
+    int who = 0, nature = 0;
+    info = call_out_info();
+    for (i = 0; i < sizeof(info); i++) {
+        if ("/" + sprintf("%O", info[i][0]) == WHO_D) who = 1;
+        if ("/" + sprintf("%O", info[i][0]) == NATURE_D) nature = 1;
+    }
+    if (!who) {
+        if (ob = find_object(WHO_D)) destruct(ob);
+        call_other(WHO_D, "???");
+    }
+    if (!nature) {
+        if (ob = find_object(NATURE_D)) destruct(ob);
+        call_other(NATURE_D, "???");
+    }
+    return;
+}
 
-return;
+void check_pets() {
+    int i;
+    object ob, *ob_list;
+    ob_list = children("/clone/npc/pet");
+    for (i = 0; i < sizeof(ob_list); i++) {
+        if (!ob = environment(ob_list[i])) continue;
+        ob->heal_up();
+    }
+
+    return;
 }

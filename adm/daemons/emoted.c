@@ -62,7 +62,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote,str
 if (me->query("combat_exp") < 2000 )
 {
         if ( ((int)time() - (int)me->query_temp("emoted_time")) < 1 )
-        return notify_fail("�л��ú�˵Ŷ��\n");
+        return notify_fail("有话好好说哦。\n");
 }
 
                      me->set_temp("emoted_time", time());
@@ -112,7 +112,7 @@ if (me->query("combat_exp") < 2000 )
                 }
 
                 if( !target->is_character() || !me->visible(target) )
-                        return notify_fail("ʲô?\n");
+                        return notify_fail("什么?\n");
 
                 target_gender = target->query("gender");
                 if( target==me ) {

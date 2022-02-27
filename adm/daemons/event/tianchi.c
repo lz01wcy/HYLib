@@ -1,104 +1,117 @@
-// emei.c ÊÂ¼ş£º³¤°×É½Ìì³ØÁ÷ĞÇ
+// emei.c äº‹ä»¶ï¼šé•¿ç™½å±±å¤©æ± æµæ˜Ÿ
 // for XKX100 , by Sir 2003.11.3
 
 #include <ansi.h>
 
-// ½±Àø
-private void do_bonus(object room)
-{
-        object *obs;
-        string msg;
-        int lvl,p_bonus,s_bonus;
-        int r,i;
+// å¥–åŠ±
+private void do_bonus(object room) {
+    object *obs;
+    string msg;
+    int lvl, p_bonus, s_bonus;
+    int r, i;
 
-        obs = all_inventory(room);
-        if (sizeof(obs) < 1)
-                return;
+    obs = all_inventory(room);
+    if (sizeof(obs) < 1)
+        return;
 
-        r = random(365);
-        if (r == 0)
+    r = random(365);
+    if (r == 0) {
+        msg = HIW
+        "ã€è‡ªç„¶å¥‡è§‚ã€‘å¤©æ± æµæ˜Ÿé›¨\n"
+        NOR;
+        msg += HIC
+        "åªå¬å¤©ç©ºéª¤ç„¶ä¼ æ¥ä¸€é˜µåˆºè€³çš„æ‘©æ“¦å£°ï¼Œä½ ä»°æœ›ä¸Šè‹ï¼Œå‘ç°ç©¹è‹é‡Œå·²è±ç„¶å‡ºç°\n"
+        "æ— æ•°é¢—æµæ˜Ÿã€‚å¤œé™¨å¦‚é›¨é£å ï¼Œé”‹èŠ’åˆ’ç©ºï¼Œå°”è½å…¥å¤©æ± ä¹‹ä¸­ï¼Œåˆå†æ¿€èµ·ä¸‡è‚¡ä¸ƒ\n"
+        "è‰²æµªæ¶›ï¼Œæ¼†é»‘å¤œç©¹ç«ŸçŠ¹å¦‚ç™½æ˜¼ä¸€èˆ¬ã€‚ä½ ä¸ç¦æ„Ÿå¹ï¼Œå¤§è‡ªç„¶ä¹‹å¨ï¼Œå½“çœŸç¥é¬¼è«\n"
+        "æµ‹ã€‚\n"
+        NOR;
+
+        msg += HIG
+        "ä½ ä»”ç»†çš„è§‚å¯Ÿäº†æµæ˜Ÿé›¨çš„å…¨è¿‡ç¨‹ï¼Œå‘ç°å…¶ä¸­ç«Ÿæœ‰å¾ˆå¤šå¥¥ç§˜å¯ä»¥èäºæ­¦å­¦ã€‚\n"
+        NOR;
+
+        for (i = 0; i < sizeof(obs); i++)  // å¢åŠ æ½œèƒ½åŸºæœ¬è½»åŠŸåŸºæœ¬æš—å™¨
         {
-        	msg = HIW "¡¾×ÔÈ»Ææ¹Û¡¿Ìì³ØÁ÷ĞÇÓê\n"NOR;
-                msg += HIC "Ö»ÌıÌì¿ÕÖèÈ»´«À´Ò»Õó´Ì¶úµÄÄ¦²ÁÉù£¬ÄãÑöÍûÉÏ²Ô£¬·¢ÏÖñ·²ÔÀïÒÑ»íÈ»³öÏÖ\n"
-                           "ÎŞÊı¿ÅÁ÷ĞÇ¡£Ò¹ÔÉÈçÓê·É×¹£¬·æÃ¢»®¿Õ£¬¶ûÂäÈëÌì³ØÖ®ÖĞ£¬ÓÖÔÙ¼¤ÆğÍò¹ÉÆß\n"
-                           "É«ÀËÌÎ£¬ÆáºÚÒ¹ñ·¾¹ÓÌÈç°×ÖçÒ»°ã¡£Äã²»½û¸ĞÌ¾£¬´ó×ÔÈ»Ö®Íş£¬µ±ÕæÉñ¹íÄª\n"
-                           "²â¡£\n" NOR;
+            if (!living(obs[i]) || !userp(obs[i])) continue;
+            p_bonus = 5000 + random(5000);
+            s_bonus = 1000 + random(500);
+            obs[i]->add("potential", p_bonus);
+            obs[i]->add("score", s_bonus);
 
-                msg += HIG "Äã×ĞÏ¸µÄ¹Û²ìÁËÁ÷ĞÇÓêµÄÈ«¹ı³Ì£¬·¢ÏÖÆäÖĞ¾¹ÓĞºÜ¶à°ÂÃØ¿ÉÒÔÈÚÓÚÎäÑ§¡£\n" NOR;
-                
-                for ( i = 0 ; i < sizeof(obs); i++)  // Ôö¼ÓÇ±ÄÜ»ù±¾Çá¹¦»ù±¾°µÆ÷
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;                
-			p_bonus = 5000 + random( 5000 );
-			s_bonus = 1000 + random( 500 );
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score",s_bonus);
-                        
-			lvl = obs[i]->query_skill("throwing", 1);
-                        if (lvl >= 50 && lvl< 300 )
-                               	obs[i]->set_skill("throwing", lvl + 10);
-                        else if ( lvl >= 300 )
-                               	obs[i]->set_skill("throwing", lvl + 1);
-                                	
-                        lvl = obs[i]->query_skill("dodge", 1);
-                        if (lvl >= 50 && lvl< 300 )
-                               	obs[i]->set_skill("sword", lvl + 10);
-                        else if ( lvl >= 300 )
-                               	obs[i]->set_skill("sword", lvl + 1);
-                }
-                
-                
-                message("vision", msg, obs);
-                message("channel:rumor", HIM"¡¾Ò¥ÑÔ¡¿"+"ÌıËµ³¤°×É½Ìì³ØÉÏÒ¹¿Õ¾¹ÏÖÁ÷ĞÇÓê£¬Îå²ÊçÍ·×£¬É·Îª×³¹Û¡£\n"NOR, users());
-        } else
-        if (r < 40)
-        {
-        	msg = HIW "¡¾×ÔÈ»Ææ¹Û¡¿Ò¹¿ÕÁ÷ĞÇ\n"NOR;
-                msg += HIC "Ö»ÌıÔ¶´¦Ò»Õó´Ì¶úµÄÄ¦²ÁÉù£¬¾ÙÄ¿ÍûÈ¥£¬·¢ÏÖ¾¹ÓĞÁ÷ĞÇ´ÓÌì±ß»®¹ı£¬ÔõÄÎ¾à\n"
-                          "¸ôÎ¯ÊµÌ«Ô¶£¬¸ù±¾ÎŞ·¨¿´Çå¡£\n" NOR;
+            lvl = obs[i]->query_skill("throwing", 1);
+            if (lvl >= 50 && lvl < 300)
+                obs[i]->set_skill("throwing", lvl + 10);
+            else if (lvl >= 300)
+                obs[i]->set_skill("throwing", lvl + 1);
 
-                msg += HIG "Äã¹Û°ÕÁ÷ĞÇ£¬ÒşÒşµÄ¶ÔÎäÑ§ÓĞÁËÒ»Ë¿Ìå»á¡£\n" NOR;
-
-                for ( i = 0 ; i < sizeof(obs); i++)
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;
-			p_bonus = 500 + random( 500 );
-			s_bonus = 200 + random( 200 );			
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score", s_bonus);
-		}      
-                message("vision", msg, obs);
-
-        } else
-        {
-                switch (random(2))
-                {
-                case 0:
-                        msg = WHT "ÑÛ¼ûÌì±ßÒ»Æ¬Ã÷ÁÁ£¬ÖªÊÇÁ÷ĞÇÓê½«ÖÁ£¬¿ÉÔõÄÎ¼ä¸ôÒ£ÇÒÔÆ²ãºñ£¬È´ÎŞÔµµÃ¼û¡£\n" NOR;
-                        break;
-                default:
-                        msg = WHT "ÑÛ¼ûÌì±ßÒ»Æ¬Ã÷ÁÁ£¬µ«ÊÇË®Æø£¬ÎíÆøºÍÔÆ²ã½»ÔÓ£¬ÈÃÄãÊ²Ã´¶¼¿´²»Çå³ş¡£\n" NOR;
-                        break;
-                }
-                msg += HIG "ÄãĞÄÖĞÁ¬Ì¾£º¡°Ì«¿ÉÏ§ÁË£¡¡±\n" NOR;
-
-                message("vision", msg, obs);
+            lvl = obs[i]->query_skill("dodge", 1);
+            if (lvl >= 50 && lvl < 300)
+                obs[i]->set_skill("sword", lvl + 10);
+            else if (lvl >= 300)
+                obs[i]->set_skill("sword", lvl + 1);
         }
+
+
+        message("vision", msg, obs);
+        message("channel:rumor", HIM
+        "ã€è°£è¨€ã€‘" + "å¬è¯´é•¿ç™½å±±å¤©æ± ä¸Šå¤œç©ºç«Ÿç°æµæ˜Ÿé›¨ï¼Œäº”å½©ç¼¤çº·ï¼Œç…ä¸ºå£®è§‚ã€‚\n"
+        NOR, users());
+    } else if (r < 40) {
+        msg = HIW
+        "ã€è‡ªç„¶å¥‡è§‚ã€‘å¤œç©ºæµæ˜Ÿ\n"
+        NOR;
+        msg += HIC
+        "åªå¬è¿œå¤„ä¸€é˜µåˆºè€³çš„æ‘©æ“¦å£°ï¼Œä¸¾ç›®æœ›å»ï¼Œå‘ç°ç«Ÿæœ‰æµæ˜Ÿä»å¤©è¾¹åˆ’è¿‡ï¼Œæ€å¥ˆè·\n"
+        "éš”å§”å®å¤ªè¿œï¼Œæ ¹æœ¬æ— æ³•çœ‹æ¸…ã€‚\n"
+        NOR;
+
+        msg += HIG
+        "ä½ è§‚ç½¢æµæ˜Ÿï¼Œéšéšçš„å¯¹æ­¦å­¦æœ‰äº†ä¸€ä¸ä½“ä¼šã€‚\n"
+        NOR;
+
+        for (i = 0; i < sizeof(obs); i++) {
+            if (!living(obs[i]) || !userp(obs[i])) continue;
+            p_bonus = 500 + random(500);
+            s_bonus = 200 + random(200);
+            obs[i]->add("potential", p_bonus);
+            obs[i]->add("score", s_bonus);
+        }
+        message("vision", msg, obs);
+
+    } else {
+        switch (random(2)) {
+            case 0:
+                msg = WHT
+                "çœ¼è§å¤©è¾¹ä¸€ç‰‡æ˜äº®ï¼ŒçŸ¥æ˜¯æµæ˜Ÿé›¨å°†è‡³ï¼Œå¯æ€å¥ˆé—´éš”é¥ä¸”äº‘å±‚åšï¼Œå´æ— ç¼˜å¾—è§ã€‚\n"
+                NOR;
+                break;
+            default:
+                msg = WHT
+                "çœ¼è§å¤©è¾¹ä¸€ç‰‡æ˜äº®ï¼Œä½†æ˜¯æ°´æ°”ï¼Œé›¾æ°”å’Œäº‘å±‚äº¤æ‚ï¼Œè®©ä½ ä»€ä¹ˆéƒ½çœ‹ä¸æ¸…æ¥šã€‚\n"
+                NOR;
+                break;
+        }
+        msg += HIG
+        "ä½ å¿ƒä¸­è¿å¹ï¼šâ€œå¤ªå¯æƒœäº†ï¼â€\n"
+        NOR;
+
+        message("vision", msg, obs);
+    }
 }
 
-// ÊÂ¼ş´¥·¢
-void trigger_event()
-{
-        object room;
+// äº‹ä»¶è§¦å‘
+void trigger_event() {
+    object room;
 
-        // ³¤°×É½Ìì³ØÒ¹ÔÉ
-        if (objectp(room = find_object("/d/guanwai/tianchi1")))
-                do_bonus(room);
+    // é•¿ç™½å±±å¤©æ± å¤œé™¨
+    if (objectp(room = find_object("/d/guanwai/tianchi1")))
+        do_bonus(room);
 }
 
-void create() 
-{ 
-	seteuid(getuid()); 
-	message("channel:sys", HIR"¡¾×ÔÈ»Ææ¹Û¡¿³¤°×É½Ìì³ØÁ÷ĞÇ¡£\n"NOR, users());
-	trigger_event();
+void create() {
+    seteuid(getuid());
+    message("channel:sys", HIR
+    "ã€è‡ªç„¶å¥‡è§‚ã€‘é•¿ç™½å±±å¤©æ± æµæ˜Ÿã€‚\n"
+    NOR, users());
+    trigger_event();
 }

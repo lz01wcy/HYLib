@@ -1,8 +1,9 @@
-//ÏÀ¿ÍĞĞ100º£ÑóII
-//ĞÇĞÇ(lywin)ÓÉÇ°ÈËµÄnatured.cÎª»ù´¡£¡¼ÓÈëÒ¹¼ä³öÏÖµÄ·ÉÔôºÍÍ¨¸æ¡£2000/5/30
+//ä¾ å®¢è¡Œ100æµ·æ´‹II
+//æ˜Ÿæ˜Ÿ(lywin)ç”±å‰äººçš„natured.cä¸ºåŸºç¡€ï¼åŠ å…¥å¤œé—´å‡ºç°çš„é£è´¼å’Œé€šå‘Šã€‚2000/5/30
 
 // natured.c
 #include <ansi.h>
+
 #define TIME_TICK (time()*60)
 #define TIME_TICK1 (time()*60)
 //#define TIME_TICK (time()*60-890000000)
@@ -14,132 +15,130 @@ static string ppl;
 mapping *day_phase;
 
 string *month_desc = ({
-	"¡¸Â¡¶¬¡¹:",
-	"¡¸º®¶¬¡¹:",
-	"¡¸³õ´º¡¹:",
-	"¡¸Ôç´º¡¹:",
-	"¡¸Ñô´º¡¹:",
-	"¡¸³õÏÄ¡¹:",
-	"¡¸Ê¢ÏÄ¡¹:",
-	"¡¸ÖÙÏÄ¡¹:",
-	"¡¸³õÇï¡¹:",
-	"¡¸¸ßÇï¡¹:",
-	"¡¸ÉîÇï¡¹:",
-	"¡¸³õ¶¬¡¹:",
+    "ã€Œéš†å†¬ã€:",
+            "ã€Œå¯’å†¬ã€:",
+            "ã€Œåˆæ˜¥ã€:",
+            "ã€Œæ—©æ˜¥ã€:",
+            "ã€Œé˜³æ˜¥ã€:",
+            "ã€Œåˆå¤ã€:",
+            "ã€Œç››å¤ã€:",
+            "ã€Œä»²å¤ã€:",
+            "ã€Œåˆç§‹ã€:",
+            "ã€Œé«˜ç§‹ã€:",
+            "ã€Œæ·±ç§‹ã€:",
+            "ã€Œåˆå†¬ã€:",
 });
 
 string *weather_msg = ({
-        "Ìì¿ÕÖĞÍòÀïÎŞÔÆ",
-        "¼¸¶äµ­µ­µÄÔÆ²Ê×±µãÖøÇåÀÊµÄÌì¿Õ",
-        "°×ÔÆÔÚÌì¿ÕÖĞÆ®À´Æ®È¥",
-        "ºñºñµÄÔÆ²ã¶Ñ»ıÔÚÌì±ß",
-        "Ìì¿ÕÖĞÎÚÔÆÃÜ²¼",
+    "å¤©ç©ºä¸­ä¸‡é‡Œæ— äº‘",
+            "å‡ æœµæ·¡æ·¡çš„äº‘å½©å¦†ç‚¹è‘—æ¸…æœ—çš„å¤©ç©º",
+            "ç™½äº‘åœ¨å¤©ç©ºä¸­é£˜æ¥é£˜å»",
+            "åšåšçš„äº‘å±‚å †ç§¯åœ¨å¤©è¾¹",
+            "å¤©ç©ºä¸­ä¹Œäº‘å¯†å¸ƒ",
 });
 
 mapping *read_table(string file);
+
 void init_day_phase();
 
-void create()
-{
+void create() {
 //        day_phase = read_table("/adm/etc/nature/day_phase");
 //        init_day_phase();
-	string get_month, get_day;
-	mixed *local;
-	local = localtime(TIME_TICK1);
-        get_day = CHINESE_D->chinese_number(local[3]);
-	get_month = CHINESE_D->chinese_number(local[4]);
-	switch(get_month)
-	{
-		//spring weather
-		case "Èı":
-		case "ËÄ":
-		case "Îå":
-		     switch(random(3))
-		     {
-			case 0:
-			   day_phase = read_table("/adm/etc/nature/spring_rain");
-			   break;
-			case 1:
-			   day_phase = read_table("/adm/etc/nature/spring_sun");
-			   break;
-			case 2:
-			   day_phase = read_table("/adm/etc/nature/spring_wind");
-			   break;
-		     }
-		     break;
-		//summer weather
-		case "Áù":
-		case "Æß":
-		case "°Ë":
-		     switch(random(3))
-		     {
-			case 0:
-			   day_phase = read_table("/adm/etc/nature/summer_rain");
-			   break;
-			case 1:
-			   day_phase = read_table("/adm/etc/nature/summer_sun");
-			   break;
-			case 2:
-			   day_phase = read_table("/adm/etc/nature/summer_wind");
-			   break;
-		     }
-		     break;
-		//autumn weather
-		case "¾Å":
-		case "Ê®":
-		case "Ê®Ò»":
-		     switch(random(3))
-		     {
-			case 0:
-			   day_phase = read_table("/adm/etc/nature/autumn_rain");
-			   break;
-			case 1:
-			   day_phase = read_table("/adm/etc/nature/autumn_sun");
-			   break;
-			case 2:
-			   day_phase = read_table("/adm/etc/nature/autumn_wind");
-			   break;
-		     }
-		     break;
-		//winter weather
-                case "Áã":
-		case "¶ş":
-		     switch(random(3))
-		     {
-			case 0:
-			   day_phase = read_table("/adm/etc/nature/winter_rain");
-			   break;
-			case 1:		
-			   day_phase = read_table("/adm/etc/nature/winter_sun");
-			   break;
-			case 2:
-			   day_phase = read_table("/adm/etc/nature/winter_wind");
-			   break;
-		     }
-		case "Ò»":
-		        if(get_day=="Ò»")
-		      { day_phase = read_table("/adm/etc/nature/spring");break;}
-		      else switch(random(3))
-		     {
-			case 0:
-			   day_phase = read_table("/adm/etc/nature/winter_rain");
-			   break;
-			case 1:		
-			   day_phase = read_table("/adm/etc/nature/winter_sun");
-			   break;
-			case 2:
-			   day_phase = read_table("/adm/etc/nature/winter_wind");
-			   break;
-		     }
-		        
-		     break;
-		default:
-		     day_phase = read_table("/adm/etc/nature/day_phase");
-	}
+    string get_month, get_day;
+    mixed *local;
+    local = localtime(TIME_TICK1);
+    get_day = CHINESE_D->chinese_number(local[3]);
+    get_month = CHINESE_D->chinese_number(local[4]);
+    switch (get_month) {
+        //spring weather
+        case "ä¸‰":
+        case "å››":
+        case "äº”":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/spring_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/spring_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/spring_wind");
+                    break;
+            }
+            break;
+            //summer weather
+        case "å…­":
+        case "ä¸ƒ":
+        case "å…«":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/summer_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/summer_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/summer_wind");
+                    break;
+            }
+            break;
+            //autumn weather
+        case "ä¹":
+        case "å":
+        case "åä¸€":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/autumn_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/autumn_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/autumn_wind");
+                    break;
+            }
+            break;
+            //winter weather
+        case "é›¶":
+        case "äºŒ":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/winter_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/winter_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/winter_wind");
+                    break;
+            }
+        case "ä¸€":
+            if (get_day == "ä¸€") {
+                day_phase = read_table("/adm/etc/nature/spring");
+                break;
+            }
+            else
+                switch (random(3)) {
+                    case 0:
+                        day_phase = read_table("/adm/etc/nature/winter_rain");
+                        break;
+                    case 1:
+                        day_phase = read_table("/adm/etc/nature/winter_sun");
+                        break;
+                    case 2:
+                        day_phase = read_table("/adm/etc/nature/winter_wind");
+                        break;
+                }
+
+            break;
+        default:
+            day_phase = read_table("/adm/etc/nature/day_phase");
+    }
 
 
-	init_day_phase();
+    init_day_phase();
 }
+
 /*
 void init_day_phase()
 {
@@ -166,768 +165,831 @@ void init_day_phase()
         call_out("update_day_phase",
       (int)day_phase[(current_day_phase+1) % sizeof(day_phase)]["length"] - t);
 }*/
-void init_day_phase()
-{
-	mixed *local;
-	int i, t;
+void init_day_phase() {
+    mixed *local;
+    int i, t;
 
 
-	local = localtime(TIME_TICK1);
-	t = local[2] * 60 + local[1];      
+    local = localtime(TIME_TICK1);
+    t = local[2] * 60 + local[1];
 
 
-	for( i=0; i < sizeof(day_phase); i++)
-		if( t >= day_phase[i]["length"] )
-			t -= (int)day_phase[i]["length"];
-		else
-			break;
+    for (i = 0; i < sizeof(day_phase); i++)
+        if (t >= day_phase[i]["length"])
+            t -= (int) day_phase[i]["length"];
+        else
+            break;
 
-	current_day_phase = (i==0? sizeof(day_phase)-1: i - 1);
-	current_month = local[4];
-
-
-	remove_call_out("init_day_phase");
-	call_out("init_day_phase", 180);
+    current_day_phase = (i == 0 ? sizeof(day_phase) - 1 : i - 1);
+    current_month = local[4];
 
 
-	remove_call_out("update_day_phase");	
+    remove_call_out("init_day_phase");
+    call_out("init_day_phase", 180);
 
 
+    remove_call_out("update_day_phase");
 
-	call_out("update_day_phase",
-	(int)day_phase[(current_day_phase+1) % sizeof(day_phase)]["length"] - t);
+
+    call_out("update_day_phase",
+             (int) day_phase[(current_day_phase + 1) % sizeof(day_phase)]["length"] - t);
 }
 
-void update_day_phase()
-{
-        remove_call_out("update_day_phase");
+void update_day_phase() {
+    remove_call_out("update_day_phase");
 
-        current_day_phase = (++current_day_phase) % sizeof(day_phase);
-        switch (day_phase[current_day_phase]["outcolor"])
-        {
-              case "BLK":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"BLK + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "RED":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"RED + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIR":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIR + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "GRN":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"GRN + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIG":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIG + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "YEL":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"YEL + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIY":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIY + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "BLU":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"BLU + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIB":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIB + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "MAG":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"MAG + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIM":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIM + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "CYN":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"CYN + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIC":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIC + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "WHT":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"WHT + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              case "HIW":
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIW + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-              default:
-                   message("channel:chat", HIG"¡¾´°Íâ¡¿"HIG + day_phase[current_day_phase]["time_msg"] + "\n"NOR, users());
-                   break;
-        }
+    current_day_phase = (++current_day_phase) % sizeof(day_phase);
+    switch (day_phase[current_day_phase]["outcolor"]) {
+        case "BLK":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            BLK + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "RED":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            RED + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIR":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIR + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "GRN":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            GRN + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIG":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIG + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "YEL":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            YEL + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIY":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIY + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "BLU":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            BLU + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIB":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIB + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "MAG":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            MAG + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIM":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIM + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "CYN":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            CYN + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIC":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIC + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "WHT":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            WHT + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        case "HIW":
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIW + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+        default:
+            message("channel:chat", HIG
+            "ã€çª—å¤–ã€‘"
+            HIG + day_phase[current_day_phase]["time_msg"] + "\n"
+            NOR, users());
+            break;
+    }
 //        message("outdoor:vision", day_phase[current_day_phase]["time_msg"] + "\n", users());
-        if( !undefinedp(day_phase[current_day_phase]["event_fun"]) )
-            call_other(this_object(), day_phase[current_day_phase]["event_fun"]);
+    if (!undefinedp(day_phase[current_day_phase]["event_fun"]))
+        call_other(this_object(), day_phase[current_day_phase]["event_fun"]);
 
-        call_out("update_day_phase", day_phase[current_day_phase]["length"]);
+    call_out("update_day_phase", day_phase[current_day_phase]["length"]);
 //	call_out("test_robot", 5+random(20));
 }
 
-void test_robot()
-{
-	object *obs = users(), ob, robot;
+void test_robot() {
+    object *obs = users(), ob, robot;
     int i = sizeof(obs), j = 10;
 
-	if (i < 1) return;
-	while (j--) {
-		ob = obs[random(i)];
-		if (wiz_level(ob)) continue;
-		if (!living(ob)) continue;
-		if (!interactive(ob)) continue;
-                if (query_idle(ob) > 30) continue;
-		if (!environment(ob)) continue;
-		break;
-	}
-	if (j < 0) return;
-	ppl = ob->query("id");
-        if (!ob->is_fighting() 
+    if (i < 1) return;
+    while (j--) {
+        ob = obs[random(i)];
+        if (wiz_level(ob)) continue;
+        if (!living(ob)) continue;
+        if (!interactive(ob)) continue;
+        if (query_idle(ob) > 30) continue;
+        if (!environment(ob)) continue;
+        break;
+    }
+    if (j < 0) return;
+    ppl = ob->query("id");
+    if (!ob->is_fighting()
         && interactive(ob) && living(ob)
-        || ob->query("combat_exp")> 1000000 )
-        ob->set_temp("testrobot",1);
-        call_out("ok_robot", 1, ob);
+        || ob->query("combat_exp") > 1000000)
+        ob->set_temp("testrobot", 1);
+    call_out("ok_robot", 1, ob);
 }
 
-void ok_robot(object ob)
-{
-if (ob)
-{
-ob->set_temp("testrobot",0);
-ob->delete_temp("testrobot");
-}
+void ok_robot(object ob) {
+    if (ob) {
+        ob->set_temp("testrobot", 0);
+        ob->delete_temp("testrobot");
+    }
 }
 
-void event_morning()
-{
-	object badguy;
-	object room;
-        if (random(12) == 1)
-        {
-		if(objectp(room=load_object("/d/city/guangchang")) && 
-		objectp(badguy = new("/quest/weiguo/japan/japan4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-  message("channel:chat", HIY"¡¾³¯Í¢¼±±¨¡¿"HIR + "ÔÚÑïÖİ³ÇÖĞ·¢ÏÖÈÕ±¾¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 2)
-        {
-		if(objectp(room=load_object("/d/city2/di_anmen")) && 
-		objectp(badguy = new("/quest/weiguo/japan/japan4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-  message("channel:chat", HIY"¡¾³¯Í¢¼±±¨¡¿"HIM + "ÔÚ±±¾©³ÇÖĞ·¢ÏÖÈÕ±¾¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 3)
-        {
-		if(objectp(room=load_object("/d/city3/guangchang")) && 
-		objectp(badguy = new("/quest/weiguo/japan/japan4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
- message("channel:chat", HIY"¡¾³¯Í¢¼±±¨¡¿"HIM + "ÔÚ³É¶¼³ÇÖĞ·¢ÏÖÈÕ±¾¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 4)
-        {
-		if(objectp(room=load_object("/d/quanzhen/zhongxin")) && 
-		objectp(badguy = new("/quest/weiguo/jinbing/jin4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-  message("channel:chat", HIB"¡¾³¯Í¢¼±±¨¡¿"GRN + "ÔÚÎä¹¦ÕòÖĞ·¢ÏÖ½ğ¹ú¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 5)
-        {
-		if(objectp(room=load_object("/d/dali/taihejiekou")) && 
-		objectp(badguy = new("/quest/weiguo/jinbing/jin4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-message("channel:chat", HIB"¡¾³¯Í¢¼±±¨¡¿"GRN + "ÔÚ´óÀí³ÇÖĞ·¢ÏÖ½ğ¹ú¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 6)
-        {
-		if(objectp(room=load_object("/d/foshan/street3")) && 
-		objectp(badguy = new("/quest/weiguo/jinbing/jin4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-message("channel:chat", HIB"¡¾³¯Í¢¼±±¨¡¿"GRN + "ÔÚ·ğÉ½ÕòÖĞ·¢ÏÖ½ğ¹ú¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 7)
-        {
-		if(objectp(room=load_object("/d/fuzhou/dongjiekou")) && 
-		objectp(badguy = new("/quest/weiguo/menggu/mengu4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-  message("channel:chat", HIG"¡¾³¯Í¢¼±±¨¡¿"CYN + "ÔÚ¸£Öİ³ÇÖĞ·¢ÏÖÃÉ¹Å¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 8)
-        {
-		if(objectp(room=load_object("/d/hangzhou/road13")) && 
-		objectp(badguy = new("/quest/weiguo/menggu/mengu4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-  message("channel:chat", HIG"¡¾³¯Í¢¼±±¨¡¿"CYN + "ÔÚº¼Öİ³ÇÖĞÖĞ·¢ÏÖÃÉ¹Å¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 9)
-        {
-		if(objectp(room=load_object("/d/lingzhou/center")) && 
-		objectp(badguy = new("/quest/weiguo/menggu/mengu4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-  message("channel:chat", HIG"¡¾³¯Í¢¼±±¨¡¿"CYN + "ÔÚÁéÖİ³ÇÖĞÖĞ·¢ÏÖÃÉ¹Å¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 10)
-        {
-		if(objectp(room=load_object("/d/quanzhou/zhongxin")) && 
-		objectp(badguy = new("/quest/weiguo/xixiabing/xixia4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-  message("channel:chat", HIR"¡¾³¯Í¢¼±±¨¡¿"BLU + "ÔÚÈªÖİ³ÇÖĞ·¢ÏÖÎ÷ÏÄ¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 11)
-        {
-		if(objectp(room=load_object("/d/suzhou/baodaiqiao")) && 
-		objectp(badguy = new("/quest/weiguo/xixiabing/xixia4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-  message("channel:chat", HIR"¡¾³¯Í¢¼±±¨¡¿"BLU + "ÔÚËÕÖİ³ÇÖĞ·¢ÏÖÎ÷ÏÄ¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(12) == 12)
-        {
-		if(objectp(room=load_object("/d/xiangyang/guangchang")) && 
-		objectp(badguy = new("/quest/weiguo/xixiabing/xixia4")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-  message("channel:chat", HIR"¡¾³¯Í¢¼±±¨¡¿"BLU + "ÔÚÏåÑô³ÇÖĞ·¢ÏÖÎ÷ÏÄ¼éÏ¸£¡\n"NOR,users() );
-	}
-        if (random(16) == 1)
-        {
-		if(objectp(room=load_object("/d/huanghe/yongdeng")) && 
-		objectp(badguy = new("/quest/weiguo/xixiabing/xixia3")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/xixiabing/xixia1");
-                badguy->move(room);
-                message("channel:chat", HIR"¡¾Ç°Ïß¸æ¼±¡¿"HIW + "Î÷ÏÄ´ó¾ü¹¥´òÎ÷±±µÄ¾üÊÂÖØÕòÓÀµÇ£¡\n"NOR,users() );
-	}
-        if (random(16) == 2)
-        {
-		if(objectp(room=load_object("/d/quanzhou/zhongxin")) && 
-		objectp(badguy = new("/quest/weiguo/japan/japan3")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/japan/japan1");
-                badguy->move(room);
-  message("channel:chat", HIR"¡¾Ç°Ïß¸æ¼±¡¿"HIW + "ÙÁ¿Ü´ó¾üÔÚÈªÖİ¸½½üµÇÂ½£¡É±ÎÒ°ÙĞÕ!!\n"NOR,users() );
-	}
-        if (random(16) == 4)
-        {
-		if(objectp(room=load_object("/d/xiangyang/eastgate1")) && 
-		objectp(badguy = new("/quest/weiguo/menggu/mengu3")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/menggu/mengu1");
-                badguy->move(room);
-               message("channel:chat", HIR"¡¾Ç°Ïß¸æ¼±¡¿"HIW + "ÃÉ¹Å´ó¾ü½ø¾üÊÂÖØÕòÏåÑô£¡ÏåÑô¸æ¼±!!\n"NOR,users() );
-	}
-        if (random(16) == 7)
-        {
-		if(objectp(room=load_object("/d/city2/di_anmen.")) && 
-		objectp(badguy = new("/quest/weiguo/jinbing/jin3")))
-		badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin2");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin1");
-                badguy->move(room);
-                badguy = new("/quest/weiguo/jinbing/jin1");
-                badguy->move(room);
-  message("channel:chat", HIR"¡¾Ç°Ïß¸æ¼±¡¿"HIW + "½ğ¹úÍêÑÕÊÏµÄ²¿¶ÓÉ±ÈëÁË¾©³Ç£¡¾©³Ç¸æÎ£!!\n"NOR,users() );
-	}
+void event_morning() {
+    object badguy;
+    object room;
+    if (random(12) == 1) {
+        if (objectp(room = load_object("/d/city/guangchang")) &&
+            objectp(badguy = new("/quest/weiguo/japan/japan4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        message("channel:chat", HIY
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        HIR + "åœ¨æ‰¬å·åŸä¸­å‘ç°æ—¥æœ¬å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 2) {
+        if (objectp(room = load_object("/d/city2/di_anmen")) &&
+            objectp(badguy = new("/quest/weiguo/japan/japan4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        message("channel:chat", HIY
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        HIM + "åœ¨åŒ—äº¬åŸä¸­å‘ç°æ—¥æœ¬å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 3) {
+        if (objectp(room = load_object("/d/city3/guangchang")) &&
+            objectp(badguy = new("/quest/weiguo/japan/japan4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        message("channel:chat", HIY
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        HIM + "åœ¨æˆéƒ½åŸä¸­å‘ç°æ—¥æœ¬å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 4) {
+        if (objectp(room = load_object("/d/quanzhen/zhongxin")) &&
+            objectp(badguy = new("/quest/weiguo/jinbing/jin4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        message("channel:chat", HIB
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        GRN + "åœ¨æ­¦åŠŸé•‡ä¸­å‘ç°é‡‘å›½å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 5) {
+        if (objectp(room = load_object("/d/dali/taihejiekou")) &&
+            objectp(badguy = new("/quest/weiguo/jinbing/jin4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        message("channel:chat", HIB
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        GRN + "åœ¨å¤§ç†åŸä¸­å‘ç°é‡‘å›½å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 6) {
+        if (objectp(room = load_object("/d/foshan/street3")) &&
+            objectp(badguy = new("/quest/weiguo/jinbing/jin4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        message("channel:chat", HIB
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        GRN + "åœ¨ä½›å±±é•‡ä¸­å‘ç°é‡‘å›½å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 7) {
+        if (objectp(room = load_object("/d/fuzhou/dongjiekou")) &&
+            objectp(badguy = new("/quest/weiguo/menggu/mengu4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        message("channel:chat", HIG
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        CYN + "åœ¨ç¦å·åŸä¸­å‘ç°è’™å¤å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 8) {
+        if (objectp(room = load_object("/d/hangzhou/road13")) &&
+            objectp(badguy = new("/quest/weiguo/menggu/mengu4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        message("channel:chat", HIG
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        CYN + "åœ¨æ­å·åŸä¸­ä¸­å‘ç°è’™å¤å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 9) {
+        if (objectp(room = load_object("/d/lingzhou/center")) &&
+            objectp(badguy = new("/quest/weiguo/menggu/mengu4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        message("channel:chat", HIG
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        CYN + "åœ¨çµå·åŸä¸­ä¸­å‘ç°è’™å¤å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 10) {
+        if (objectp(room = load_object("/d/quanzhou/zhongxin")) &&
+            objectp(badguy = new("/quest/weiguo/xixiabing/xixia4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        BLU + "åœ¨æ³‰å·åŸä¸­å‘ç°è¥¿å¤å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 11) {
+        if (objectp(room = load_object("/d/suzhou/baodaiqiao")) &&
+            objectp(badguy = new("/quest/weiguo/xixiabing/xixia4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        BLU + "åœ¨è‹å·åŸä¸­å‘ç°è¥¿å¤å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 12) {
+        if (objectp(room = load_object("/d/xiangyang/guangchang")) &&
+            objectp(badguy = new("/quest/weiguo/xixiabing/xixia4")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€æœå»·æ€¥æŠ¥ã€‘"
+        BLU + "åœ¨è¥„é˜³åŸä¸­å‘ç°è¥¿å¤å¥¸ç»†ï¼\n"
+        NOR, users());
+    }
+    if (random(16) == 1) {
+        if (objectp(room = load_object("/d/huanghe/yongdeng")) &&
+            objectp(badguy = new("/quest/weiguo/xixiabing/xixia3")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/xixiabing/xixia1");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€å‰çº¿å‘Šæ€¥ã€‘"
+        HIW + "è¥¿å¤å¤§å†›æ”»æ‰“è¥¿åŒ—çš„å†›äº‹é‡é•‡æ°¸ç™»ï¼\n"
+        NOR, users());
+    }
+    if (random(16) == 2) {
+        if (objectp(room = load_object("/d/quanzhou/zhongxin")) &&
+            objectp(badguy = new("/quest/weiguo/japan/japan3")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/japan/japan1");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€å‰çº¿å‘Šæ€¥ã€‘"
+        HIW + "å€­å¯‡å¤§å†›åœ¨æ³‰å·é™„è¿‘ç™»é™†ï¼æ€æˆ‘ç™¾å§“!!\n"
+        NOR, users());
+    }
+    if (random(16) == 4) {
+        if (objectp(room = load_object("/d/xiangyang/eastgate1")) &&
+            objectp(badguy = new("/quest/weiguo/menggu/mengu3")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/menggu/mengu1");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€å‰çº¿å‘Šæ€¥ã€‘"
+        HIW + "è’™å¤å¤§å†›è¿›å†›äº‹é‡é•‡è¥„é˜³ï¼è¥„é˜³å‘Šæ€¥!!\n"
+        NOR, users());
+    }
+    if (random(16) == 7) {
+        if (objectp(room = load_object("/d/city2/di_anmen.")) &&
+            objectp(badguy = new("/quest/weiguo/jinbing/jin3")))
+            badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin2");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin1");
+        badguy->move(room);
+        badguy = new("/quest/weiguo/jinbing/jin1");
+        badguy->move(room);
+        message("channel:chat", HIR
+        "ã€å‰çº¿å‘Šæ€¥ã€‘"
+        HIW + "é‡‘å›½å®Œé¢œæ°çš„éƒ¨é˜Ÿæ€å…¥äº†äº¬åŸï¼äº¬åŸå‘Šå±!!\n"
+        NOR, users());
+    }
 }
 
-void event_night()
-{
-	object badguy;
-	object room;
-        if (random(12) == 1)
-        {
-		if(objectp(room=load_object("/d/city/guangchang")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "ÑïÖİ³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 2)
-        {
-		if(objectp(room=load_object("/d/city2/di_anmen")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "±±¾©³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 3)
-        {
-		if(objectp(room=load_object("/d/city3/guangchang")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "³É¶¼³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 4)
-        {
-		if(objectp(room=load_object("/d/quanzhen/zhongxin")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "³¤°²³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 5)
-        {
-		if(objectp(room=load_object("/d/dali/taihejiekou")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "´óÀí³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 6)
-        {
-		if(objectp(room=load_object("/d/foshan/street3")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "·ğÉ½³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 7)
-        {
-		if(objectp(room=load_object("/d/fuzhou/dongjiekou")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "¸£Öİ³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 8)
-        {
-		if(objectp(room=load_object("/d/hangzhou/road13")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "º¼Öİ³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 9)
-        {
-		if(objectp(room=load_object("/d/lingzhou/center")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "ÁéÖİ³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 10)
-        {
-		if(objectp(room=load_object("/d/quanzhou/zhongxin")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "ÈªÖİ³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 11)
-        {
-		if(objectp(room=load_object("/d/suzhou/baodaiqiao")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "ËÕÖİ³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
-        if (random(12) == 12)
-        {
-		if(objectp(room=load_object("/d/xiangyang/guangchang")) && 
-		objectp(badguy = new("/quest/feizei/feizei")))
-		badguy->move(room);
-  message("channel:chat", HIW"¡¾¹Ù¸®Í¨¸æ¡¿"HIR + "ÏåÑô³ÇÖĞ½ñÒ¹ÓĞ·ÉÔôºáĞĞ£¬Á¼Ãñ°ÙĞÕÇë±ÕÃÅ²»³ö£¬ÇĞÄª×ÔÎó£¡\n"NOR,users() );
-	}
+void event_night() {
+    object badguy;
+    object room;
+    if (random(12) == 1) {
+        if (objectp(room = load_object("/d/city/guangchang")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "æ‰¬å·åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 2) {
+        if (objectp(room = load_object("/d/city2/di_anmen")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "åŒ—äº¬åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 3) {
+        if (objectp(room = load_object("/d/city3/guangchang")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "æˆéƒ½åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 4) {
+        if (objectp(room = load_object("/d/quanzhen/zhongxin")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "é•¿å®‰åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 5) {
+        if (objectp(room = load_object("/d/dali/taihejiekou")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "å¤§ç†åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 6) {
+        if (objectp(room = load_object("/d/foshan/street3")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "ä½›å±±åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 7) {
+        if (objectp(room = load_object("/d/fuzhou/dongjiekou")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "ç¦å·åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 8) {
+        if (objectp(room = load_object("/d/hangzhou/road13")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "æ­å·åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 9) {
+        if (objectp(room = load_object("/d/lingzhou/center")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "çµå·åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 10) {
+        if (objectp(room = load_object("/d/quanzhou/zhongxin")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "æ³‰å·åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 11) {
+        if (objectp(room = load_object("/d/suzhou/baodaiqiao")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "è‹å·åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
+    if (random(12) == 12) {
+        if (objectp(room = load_object("/d/xiangyang/guangchang")) &&
+            objectp(badguy = new("/quest/feizei/feizei")))
+            badguy->move(room);
+        message("channel:chat", HIW
+        "ã€å®˜åºœé€šå‘Šã€‘"
+        HIR + "è¥„é˜³åŸä¸­ä»Šå¤œæœ‰é£è´¼æ¨ªè¡Œï¼Œè‰¯æ°‘ç™¾å§“è¯·é—­é—¨ä¸å‡ºï¼Œåˆ‡è«è‡ªè¯¯ï¼\n"
+        NOR, users());
+    }
 
 }
 
-void event_afternoon()
-{
-	object *ob_list;
-	int i;
-	ob_list = children("/quest/weiguo/japan/japan1");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-	ob_list = children("/quest/weiguo/japan/japan2");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-	ob_list = children("/quest/weiguo/japan/japan3");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-	ob_list = children("/quest/weiguo/japan/japan4");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬¶«Î÷Ò²µ½ÊÖÁË£¬ÎÒÉÁ£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-	ob_list = children("/quest/weiguo/jinbing/jin1");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-	ob_list = children("/quest/weiguo/jinbing/jin2");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/jinbing/jin3");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/jinbing/jin4");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬¶«Î÷Ò²µ½ÊÖÁË£¬ÎÒÉÁ£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/menggu/mengu1");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/menggu/mengu2");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/menggu/mengu3");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/menggu/mengu4");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬¶«Î÷Ò²µ½ÊÖÁË£¬ÎÒÉÁ£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/xixiabing/xixia1");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/xixiabing/xixia2");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/xixiabing/xixia3");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬³·±ø£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-     	ob_list = children("/quest/weiguo/xixiabing/xixia4");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-		message_vision("$NËµµÀ£ºÌìÒªºÚÁË£¬¶«Î÷Ò²µ½ÊÖÁË£¬ÎÒÉÁ£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-}
-
-void event_dawn()
-{
-	object *ob_list;
-	int i;
-	ob_list = children("/quest/feizei/feizei");
-                for(i=0; i<sizeof(ob_list); i++) 
-		if(environment(ob_list[i]))
-		{
-			message_vision("$NĞ¦µÀ£ºÌìÁÁÁË£¬¶«Î÷Ò²µ½ÊÖÁË£¬ÎÒÉÁ£¡\n",ob_list[i]);
-			destruct(ob_list[i]);
-                }
-}
-
-void event_midnight()
-{
-        string get_month, get_day;
-        get_day = CHINESE_D->chinese_monthday(TIME_TICK1);
-        get_month = CHINESE_D->chinese_month(TIME_TICK1);
-        switch(get_month)
-        {
-                //spring weather
-                case "Èı":
-                case "ËÄ":
-                case "Îå":
-                     switch(random(3))
-                     {
-                        case 0:
-                           day_phase = read_table("/adm/etc/nature/spring_rain");
-                           break;
-                        case 1:
-                           day_phase = read_table("/adm/etc/nature/spring_sun");
-                           break;
-                        case 2:
-                           day_phase = read_table("/adm/etc/nature/spring_wind");
-                           break;
-                     }
-                     break;
-                //summer weather
-                case "Áù":
-                case "Æß":
-                case "°Ë":
-                     switch(random(3))
-                     {
-                        case 0:
-                           day_phase = read_table("/adm/etc/nature/summer_rain");
-                           break;
-                        case 1:
-                           day_phase = read_table("/adm/etc/nature/summer_sun");
-                           break;
-                        case 2:
-                           day_phase = read_table("/adm/etc/nature/summer_wind");
-                           break;
-                     }
-                     break;
-                //autumn weather
-                case "¾Å":
-                case "Ê®":
-                case "Ê®Ò»":
-                     switch(random(3))
-                     {
-                        case 0:
-                           day_phase = read_table("/adm/etc/nature/autumn_rain");
-                           break;
-                        case 1:
-                           day_phase = read_table("/adm/etc/nature/autumn_sun");
-                           break;
-                        case 2:
-                           day_phase = read_table("/adm/etc/nature/autumn_wind");
-                           break;
-                     }
-                     break;
-                //winter weather
-                case "Ê®¶ş":
-                case "Ò»":
-                case "¶ş":
-                     switch(random(3))
-                     {
-                        case 0:
-                           day_phase = read_table("/adm/etc/nature/winter_rain");
-                           break;
-                        case 1:
-                           day_phase = read_table("/adm/etc/nature/winter_sun");
-                           break;
-                        case 2:
-                           day_phase = read_table("/adm/etc/nature/winter_wind");
-                           break;
-                     }
-                     break;
-                default:
-                     day_phase = read_table("/adm/etc/nature/day_phase");
+void event_afternoon() {
+    object *ob_list;
+    int i;
+    ob_list = children("/quest/weiguo/japan/japan1");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
         }
+    ob_list = children("/quest/weiguo/japan/japan2");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/japan/japan3");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/japan/japan4");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œä¸œè¥¿ä¹Ÿåˆ°æ‰‹äº†ï¼Œæˆ‘é—ªï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/jinbing/jin1");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/jinbing/jin2");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/jinbing/jin3");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/jinbing/jin4");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œä¸œè¥¿ä¹Ÿåˆ°æ‰‹äº†ï¼Œæˆ‘é—ªï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/menggu/mengu1");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/menggu/mengu2");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/menggu/mengu3");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/menggu/mengu4");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œä¸œè¥¿ä¹Ÿåˆ°æ‰‹äº†ï¼Œæˆ‘é—ªï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/xixiabing/xixia1");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/xixiabing/xixia2");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/xixiabing/xixia3");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œæ’¤å…µï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+    ob_list = children("/quest/weiguo/xixiabing/xixia4");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nè¯´é“ï¼šå¤©è¦é»‘äº†ï¼Œä¸œè¥¿ä¹Ÿåˆ°æ‰‹äº†ï¼Œæˆ‘é—ªï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+}
+
+void event_dawn() {
+    object *ob_list;
+    int i;
+    ob_list = children("/quest/feizei/feizei");
+    for (i = 0; i < sizeof(ob_list); i++)
+        if (environment(ob_list[i])) {
+            message_vision("$Nç¬‘é“ï¼šå¤©äº®äº†ï¼Œä¸œè¥¿ä¹Ÿåˆ°æ‰‹äº†ï¼Œæˆ‘é—ªï¼\n", ob_list[i]);
+            destruct(ob_list[i]);
+        }
+}
+
+void event_midnight() {
+    string get_month, get_day;
+    get_day = CHINESE_D->chinese_monthday(TIME_TICK1);
+    get_month = CHINESE_D->chinese_month(TIME_TICK1);
+    switch (get_month) {
+        //spring weather
+        case "ä¸‰":
+        case "å››":
+        case "äº”":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/spring_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/spring_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/spring_wind");
+                    break;
+            }
+            break;
+            //summer weather
+        case "å…­":
+        case "ä¸ƒ":
+        case "å…«":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/summer_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/summer_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/summer_wind");
+                    break;
+            }
+            break;
+            //autumn weather
+        case "ä¹":
+        case "å":
+        case "åä¸€":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/autumn_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/autumn_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/autumn_wind");
+                    break;
+            }
+            break;
+            //winter weather
+        case "åäºŒ":
+        case "ä¸€":
+        case "äºŒ":
+            switch (random(3)) {
+                case 0:
+                    day_phase = read_table("/adm/etc/nature/winter_rain");
+                    break;
+                case 1:
+                    day_phase = read_table("/adm/etc/nature/winter_sun");
+                    break;
+                case 2:
+                    day_phase = read_table("/adm/etc/nature/winter_wind");
+                    break;
+            }
+            break;
+        default:
+            day_phase = read_table("/adm/etc/nature/day_phase");
+    }
 //        switch(get_day)
 //        {
-//                case "Ò»ÔÂÒ»ÈÕ":
+//                case "ä¸€æœˆä¸€æ—¥":
 //                     day_phase = read_table("/adm/etc/nature/spring");
 //                     break;
-//                case "ÎåÔÂÎåÈÕ":
-//                case "ÆßÔÂÆßÈÕ":
-//                case "°ËÔÂÊ®ÎåÈÕ":
-//                case "¾ÅÔÂ¾ÅÈÕ":
-//                case "Ê®¶şÔÂ°ËÈÕ":
+//                case "äº”æœˆäº”æ—¥":
+//                case "ä¸ƒæœˆä¸ƒæ—¥":
+//                case "å…«æœˆåäº”æ—¥":
+//                case "ä¹æœˆä¹æ—¥":
+//                case "åäºŒæœˆå…«æ—¥":
 //        }
 }
 
 // This is called everyday noon by update_day_phase, defined in the
 // "event_fun" field in /adm/etc/nature/day_phase
 
-void event_noon()
-{
-        object *ob;
-        int i, skill,con,con1,con2,con3;
-        string get_month,ill,msg;
-        get_month = CHINESE_D->chinese_month(TIME_TICK1);
-        switch(get_month)
-        {
-                case "Èı":
-                case "ËÄ":
-                case "Îå":
-                     ill = "ill_kesou";
-                     msg = HIG + "ºöÈ»ºíÍ·Ò»ÕóºÛÑ÷£¬Äã¸Ğ¾õËÆºõÒª¿ÈËÔÁË¡£\n" + NOR;
-                     break;
-                case "Áù":
-                case "Æß":
-                case "°Ë":
-                     ill = "ill_zhongshu";
-                     msg = HIG+"Í»È»ÄãĞØÒÜÖ®¼äÒ»Õó·­ÌÚ£¬ÄãÖĞÊîÁË¡£\n" + NOR;
-                     break;
-                case "¾Å":
-                case "Ê®":
-                case "Ê®Ò»":
-                     ill = "ill_shanghan";
-                     msg = HIG+"¶¸µÄÄã´òÁË¸öÀäÕ½£¬Í·»è³Á³ÁµÄ£¬ÄãµÃÉËº®²¡ÁË¡£\n"+NOR;
-                     break;
-                case "Ê®¶ş":
-                case "Ò»":
-                case "¶ş":
-                     ill = "ill_dongshang";
-                     msg = HIG+"ÄãÖ«ÌåÄ©¶ËÒ»Õó½©Ö±£¬¿´À´Äã±»¶³ÉËÁË¡£\n"+NOR;
-                     break;
+void event_noon() {
+    object *ob;
+    int i, skill, con, con1, con2, con3;
+    string get_month, ill, msg;
+    get_month = CHINESE_D->chinese_month(TIME_TICK1);
+    switch (get_month) {
+        case "ä¸‰":
+        case "å››":
+        case "äº”":
+            ill = "ill_kesou";
+            msg = HIG + "å¿½ç„¶å–‰å¤´ä¸€é˜µç—•ç—’ï¼Œä½ æ„Ÿè§‰ä¼¼ä¹è¦å’³å—½äº†ã€‚\n" + NOR;
+            break;
+        case "å…­":
+        case "ä¸ƒ":
+        case "å…«":
+            ill = "ill_zhongshu";
+            msg = HIG + "çªç„¶ä½ èƒ¸è‡†ä¹‹é—´ä¸€é˜µç¿»è…¾ï¼Œä½ ä¸­æš‘äº†ã€‚\n" + NOR;
+            break;
+        case "ä¹":
+        case "å":
+        case "åä¸€":
+            ill = "ill_shanghan";
+            msg = HIG + "é™¡çš„ä½ æ‰“äº†ä¸ªå†·æˆ˜ï¼Œå¤´æ˜æ²‰æ²‰çš„ï¼Œä½ å¾—ä¼¤å¯’ç—…äº†ã€‚\n" + NOR;
+            break;
+        case "åäºŒ":
+        case "ä¸€":
+        case "äºŒ":
+            ill = "ill_dongshang";
+            msg = HIG + "ä½ è‚¢ä½“æœ«ç«¯ä¸€é˜µåƒµç›´ï¼Œçœ‹æ¥ä½ è¢«å†»ä¼¤äº†ã€‚\n" + NOR;
+            break;
+    }
+    if (random(2)) {
+        ill = "ill_fashao";
+        msg = HIG + "ä½ å¶æ„Ÿé£å¯’ï¼Œç«Ÿè€Œå‘èµ·çƒ§æ¥ã€‚\n" + NOR;
+    }
+    ob = users();
+    for (i = 0; i < sizeof(ob); i++) {
+        if (!environment(ob[i])) continue;
+        if (!environment(ob[i])->query("outdoors")) continue;
+        if (ob[i]->query("age") == 14) continue;
+        con1 = ob[i]->query("qi");
+        con2 = ob[i]->query("max_qi");
+        (int) con = con1 / con2 * 50;//å½¢æˆç¬¬ä¸€ä¸ªç”Ÿç—…åˆ¤æ–­æ¡ä»¶
+        con3 = ob[i]->query("neili");
+        con2 = ob[i]->query("max_neili");
+        if (con2 == 0) con2 = 1;
+        (int) con1 = con3 / con2 * 50;//å½¢æˆç¬¬äºŒä¸ªç”Ÿç—…åˆ¤æ–­æ¡ä»¶
+        if (random(con) + random(50) + random(con1) < 25) {
+            ob[i]->apply_condition(ill, 10);
+            tell_object(ob[i], msg);
         }
-        if(random(2))
-        {
-                ill = "ill_fashao";msg = HIG+"ÄãÅ¼¸Ğ·çº®£¬¾¹¶ø·¢ÆğÉÕÀ´¡£\n"+NOR;
-        }
-        ob = users();
-        for(i=0; i<sizeof(ob); i++)
-        {
-                if( !environment(ob[i]) ) continue;
-                if( !environment(ob[i])->query("outdoors") ) continue;
-                if( ob[i]->query("age")==14 ) continue;
-                con1 = ob[i]->query("qi");
-                con2 = ob[i]->query("max_qi");
-                (int)con = con1/con2*50;//ĞÎ³ÉµÚÒ»¸öÉú²¡ÅĞ¶ÏÌõ¼ş
-                con3 = ob[i]->query("neili");
-                con2 = ob[i]->query("max_neili");
-		if( con2 == 0) con2 = 1;
-                (int)con1 = con3/con2*50;//ĞÎ³ÉµÚ¶ş¸öÉú²¡ÅĞ¶ÏÌõ¼ş
-                if(random(con)+random(50)+random(con1)<25)
-                {
-                        ob[i]->apply_condition(ill, 10);
-                        tell_object(ob[i], msg);
-                }
-        }
+    }
 }
 
-string outdoor_room_description()
-{
-	return "    " + sprintf(
-		day_phase[current_day_phase]["desc_msg"],
-		month_desc[current_month]) + "¡£\n";
-}
-string outdoor_room_outcolor()
-{
-        return day_phase[current_day_phase]["outcolor"];
+string outdoor_room_description() {
+    return "    " + sprintf(
+            day_phase[current_day_phase]["desc_msg"],
+            month_desc[current_month]) + "ã€‚\n";
 }
 
-string game_time()
-{
-        return CHINESE_D->chinese_date(TIME_TICK1);
+string outdoor_room_outcolor() {
+    return day_phase[current_day_phase]["outcolor"];
 }
 
-mapping *read_table(string file)
-{
-        string *line, *field, *format;
-        mapping *data;
-        int i, rn, fn;
+string game_time() {
+    return CHINESE_D->chinese_date(TIME_TICK1);
+}
 
-        line = explode(read_file(file), "\n");
-        data = ({});
-        for(i=0; i<sizeof(line); i++) {
-                if( line[i]=="" || line[i][0]=='#' ) continue;
-                if( !pointerp(field) ) {
-                        field = explode( line[i], ":" );
-                        continue;
-                }
-                if( !pointerp(format) ) {
-                        format = explode( line[i], ":" );
-                        continue;
-                }
-                break;
+mapping *read_table(string file) {
+    string *line, *field, *format;
+    mapping *data;
+    int i, rn, fn;
+
+    line = explode(read_file(file), "\n");
+    data = ({});
+    for (i = 0; i < sizeof(line); i++) {
+        if (line[i] == "" || line[i][0] == '#') continue;
+        if (!pointerp(field)) {
+            field = explode(line[i], ":");
+            continue;
         }
-
-        for( rn = 0, fn = 0; i<sizeof(line); i++) {
-                if( line[i]=="" || line[i][0]=='#' ) continue;
-                if( !fn ) data += ({ allocate_mapping(sizeof(field)) });
-                sscanf( line[i], format[fn], data[rn][field[fn]] );
-                fn = (++fn) % sizeof(field);
-                if( !fn ) ++rn;
+        if (!pointerp(format)) {
+            format = explode(line[i], ":");
+            continue;
         }
-        return data;
+        break;
+    }
+
+    for (rn = 0, fn = 0; i < sizeof(line); i++) {
+        if (line[i] == "" || line[i][0] == '#') continue;
+        if (!fn) data += ({ allocate_mapping(sizeof(field)) });
+        sscanf(line[i], format[fn], data[rn][field[fn]]);
+        fn = (++fn) % sizeof(field);
+        if (!fn) ++rn;
+    }
+    return data;
 }
 
 mapping *query_day_phase() { return day_phase; }

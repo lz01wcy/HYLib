@@ -12,11 +12,7 @@
 #include <net/macros.h>
 
 
-
-
 inherit F_CLEAN_UP;
-
-
 
 
 void send_locate_q(string who) {
@@ -25,40 +21,34 @@ void send_locate_q(string who) {
     int i;
 
 
-
-
-    i = sizeof(muds = keys(info=(mapping)DNS_MASTER->query_muds()));
-    while(i--) {
-        if(lower_case(muds[i]) == lower_case(Mud_name())) continue;
+    i = sizeof(muds = keys(info = (mapping) DNS_MASTER->query_muds()));
+    while (i--) {
+        if (lower_case(muds[i]) == lower_case(Mud_name())) continue;
         DNS_MASTER->send_udp(info[muds[i]]["HOSTADDRESS"],
-          info[muds[i]]["PORTUDP"], "@@@"+DNS_LOCATE_Q+
-      "||NAME:"+Mud_name()+
-      "||PORTUDP:"+ udp_port() +
-      "||TARGET:"+lower_case(who)+
-      "||ASKWIZ:"+(string)this_player()->query("name")+
-        "@@@\n");
+                             info[muds[i]]["PORTUDP"], "@@@" + DNS_LOCATE_Q +
+                                                       "||NAME:" + Mud_name() +
+                                                       "||PORTUDP:" + udp_port() +
+                                                       "||TARGET:" + lower_case(who) +
+                                                       "||ASKWIZ:" + (string) this_player()->query("name") +
+                                                       "@@@\n");
     }
     return;
 }
-
-
 
 
 void incoming_request(mapping info) {
     string field;
 
 
-
-
-    if(!info["NAME"] || !info["PORTUDP"]) return;
-    if(!DNS_MASTER->query_mud_info(info["NAME"]))
-      PING_Q->send_ping_q(info["HOSTADDRESS"], info["PORTUDP"]);
-    if(!info["TARGET"]) field = "NO";
+    if (!info["NAME"] || !info["PORTUDP"]) return;
+    if (!DNS_MASTER->query_mud_info(info["NAME"]))
+        PING_Q->send_ping_q(info["HOSTADDRESS"], info["PORTUDP"]);
+    if (!info["TARGET"]) field = "NO";
     else field = (find_player(lower_case(info["TARGET"])) ? "YES" : "NO");
     DNS_MASTER->send_udp(info["HOSTADDRESS"], info["PORTUDP"],
-      "@@@"+DNS_LOCATE_A+"||NAME:"+Mud_name()+
-      "||PORTUDP:"+udp_port()+
-      "||LOCATE:"+field+
-      "||TARGET:"+info["TARGET"]+
-      "||ASKWIZ:"+info["ASKWIZ"]+"@@@\n");
+                         "@@@" + DNS_LOCATE_A + "||NAME:" + Mud_name() +
+                         "||PORTUDP:" + udp_port() +
+                         "||LOCATE:" + field +
+                         "||TARGET:" + info["TARGET"] +
+                         "||ASKWIZ:" + info["ASKWIZ"] + "@@@\n");
 }

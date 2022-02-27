@@ -17,20 +17,19 @@ inherit F_DBASE;
 
 void create() {
     seteuid(ROOT_UID);
-    set("channel_id", "ÍøÂ·ÆµµÀ¾«Áé(remote_a)");
+    set("channel_id", "ç½‘è·¯é¢‘é“ç²¾çµ(remote_a)");
 }
 
-void incoming_request(mapping info)
-{
+void incoming_request(mapping info) {
     object ob;
 
-    if( !ACCESS_CHECK(previous_object())) return;
+    if (!ACCESS_CHECK(previous_object())) return;
 
     if (stringp(info["PORTUDP"]) && stringp(info["HOSTADDRESS"])) {
-        if (info["NAME"] == Mud_name()) return ;
+        if (info["NAME"] == Mud_name()) return;
         if (!DNS_MASTER->dns_mudp(info["NAME"]))
             PING_Q->send_ping_q(info["HOSTADDRESS"], info["PORTUDP"]);
-        if (!(ob = find_player(lower_case(info["ASKWIZ"])))) return ;
+        if (!(ob = find_player(lower_case(info["ASKWIZ"])))) return;
         tell_object(ob, info["RWHO"]);
     }
 }

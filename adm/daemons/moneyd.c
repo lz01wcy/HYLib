@@ -1,133 +1,127 @@
-// moneyd.c  Ç®µÄ¹¦ÄÜ
+// moneyd.c  é’±çš„åŠŸèƒ½
 
 // by Xiang@XKX (95/12/22)
 
-string money_str(int amount)
-{
-        // returns a chinese string of `amount` of money
-        string output;
+string money_str(int amount) {
+    // returns a chinese string of `amount` of money
+    string output;
 
-        if (amount / 10000) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ð";
-                amount %= 10000;
-        }
+    if (amount / 10000) {
+        output = chinese_number(amount / 10000) + "ä¸¤é»„é‡‘";
+        amount %= 10000;
+    } else
+        output = "";
+    if (amount / 100) {
+        output = output + chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
+        amount %= 100;
+    }
+    if (amount)
+        return output + chinese_number(amount) + "æ–‡é“œé’±";
+    return output;
+}
+
+string price_str(int amount) {
+    // returns a chinese string of `amount` of money
+    string output;
+
+    if (amount < 1)
+        amount = 1;
+
+    if (amount / 10000) {
+        output = chinese_number(amount / 10000) + "ä¸¤é»„é‡‘";
+        amount %= 10000;
+    } else
+        output = "";
+    if (amount / 100) {
+        if (output != "")
+            output += "åˆ" + chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
         else
-                output = "";
-        if (amount / 100) {
-                output = output + chinese_number(amount / 100) + "Á½°×Òø";
-                amount %= 100;
-        }
-        if (amount)
-                return output + chinese_number(amount) + "ÎÄÍ­Ç®";
-        return output;
-}
-
-string price_str(int amount)
-{
-        // returns a chinese string of `amount` of money
-	string output;
-
-        if (amount < 1)
-                amount = 1;
-
-        if (amount / 10000) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ð";
-                amount %= 10000;
-        }
+            output = chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
+        amount %= 100;
+    }
+    if (amount)
+        if (output != "")
+            return output + "åˆ" + chinese_number(amount) + "æ–‡é“œæ¿";
         else
-                output = "";
-        if (amount / 100) {
-		if (output != "")
-                	output += "ÓÖ" + chinese_number(amount / 100) + "Á½°×Òø";
-		else
-			output = chinese_number(amount / 100) + "Á½°×Òø";
-                amount %= 100;
-        }
-        if (amount)
-		if (output != "")
-                	return output + "ÓÖ" + chinese_number(amount) + "ÎÄÍ­°å";
-		else
-			return chinese_number(amount) + "ÎÄÍ­°å";
-        return output;
+            return chinese_number(amount) + "æ–‡é“œæ¿";
+    return output;
 }
 
-void pay_player(object who, int amount)
-{
-        int v;
-        object ob;
+void pay_player(object who, int amount) {
+    int v;
+    object ob;
 
-	seteuid(getuid());
-        if (amount < 1)
-                amount = 1;
-        if (v = amount / 10000) {
-                ob = new(GOLD_OB);
-                ob->set_amount(amount / 10000);
-                ob->move(who);
-                amount %= 10000;
-        }
-        if (amount / 100) {
-                ob = new(SILVER_OB);
-                ob->set_amount(amount / 100);
-                ob->move(who);
-                amount %= 100;
-        }
-        if (amount) {
-                ob = new(COIN_OB);
-                ob->set_amount(amount);
-                ob->move(who);
-        }
+    seteuid(getuid());
+    if (amount < 1)
+        amount = 1;
+    if (v = amount / 10000) {
+        ob = new(GOLD_OB);
+        ob->set_amount(amount / 10000);
+        ob->move(who);
+        amount %= 10000;
+    }
+    if (amount / 100) {
+        ob = new(SILVER_OB);
+        ob->set_amount(amount / 100);
+        ob->move(who);
+        amount %= 100;
+    }
+    if (amount) {
+        ob = new(COIN_OB);
+        ob->set_amount(amount);
+        ob->move(who);
+    }
 }
 
-int player_pay(object who, int amount)
-{
-	object g_ob, s_ob, c_ob;
-	int gc, sc, cc, left;
+int player_pay(object who, int amount) {
+    object g_ob, s_ob, c_ob;
+    int gc, sc, cc, left;
 
-	seteuid(getuid());
+    seteuid(getuid());
 
-	if (g_ob = present("gold_money", who))
-		gc = g_ob->query_amount();
-	else
-		gc = 0;
-	if (s_ob = present("silver_money", who))
-		sc = s_ob->query_amount();
-	else
-		sc = 0;
-	if (c_ob = present("coin_money", who))
-		cc = c_ob->query_amount();
-	else
-		cc = 0;
-	
-	if (cc + sc * 100 + gc * 10000 < amount) 
-		if (present("thousand-cash", who))
-			return 2;
-		else 
-			return 0;
-	else {
-		left = cc + sc * 100 + gc * 10000 - amount;
-		gc = left / 10000;
-		left = left % 10000;
-		sc = left / 100;
-		cc = left % 100;
+    if (g_ob = present("gold_money", who))
+        gc = g_ob->query_amount();
+    else
+        gc = 0;
+    if (s_ob = present("silver_money", who))
+        sc = s_ob->query_amount();
+    else
+        sc = 0;
+    if (c_ob = present("coin_money", who))
+        cc = c_ob->query_amount();
+    else
+        cc = 0;
 
-		if (g_ob)
-			g_ob->set_amount(gc);
-		else sc += (gc * 100);
-		if (s_ob)
-		 	s_ob->set_amount(sc);
-		else if (sc) {
-			s_ob = new(SILVER_OB);
-			s_ob->set_amount(sc);
-			s_ob->move(who);
-		}
-		if (c_ob)
-			c_ob->set_amount(cc);
-		else if (cc) {
-			c_ob = new(COIN_OB);
-			c_ob->set_amount(cc);
-			c_ob->move(who);
-		}
+    if (cc + sc * 100 + gc * 10000 < amount)
+        if (present("thousand-cash", who))
+            return 2;
+        else
+            return 0;
+    else {
+        left = cc + sc * 100 + gc * 10000 - amount;
+        gc = left / 10000;
+        left = left % 10000;
+        sc = left / 100;
+        cc = left % 100;
 
-		return 1;
-	}
+        if (g_ob)
+            g_ob->set_amount(gc);
+        else sc += (gc * 100);
+        if (s_ob)
+            s_ob->set_amount(sc);
+        else if (sc) {
+            s_ob = new(SILVER_OB);
+            s_ob->set_amount(sc);
+            s_ob->move(who);
+        }
+        if (c_ob)
+            c_ob->set_amount(cc);
+        else if (cc) {
+            c_ob = new(COIN_OB);
+            c_ob->set_amount(cc);
+            c_ob->move(who);
+        }
+
+        return 1;
+    }
 }

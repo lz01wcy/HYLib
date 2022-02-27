@@ -1,66 +1,75 @@
-// qiantang.c ÊÂ¼ş£ºÇ®ÌÁ½­³±ĞÅ
+// qiantang.c äº‹ä»¶ï¼šé’±å¡˜æ±Ÿæ½®ä¿¡
 // for XKX100 , by Sir 2003.11.3
 
 #include <ansi.h>
 
-// ½±Àø
-private void do_bonus(object room)
-{
-        object *obs;
-        string msg;
-        int lvl,p_bonus,s_bonus;
-        int r,i;
+// å¥–åŠ±
+private void do_bonus(object room) {
+    object *obs;
+    string msg;
+    int lvl, p_bonus, s_bonus;
+    int r, i;
 
-        obs = all_inventory(room);
-        if (sizeof(obs) < 1)
-                return;
-	
-	msg = HIW "¡¾×ÔÈ»Ææ¹Û¡¿Ç®ÌÁ½­³±ĞÅ\n"NOR;
-	msg += HIC "Ã¿Äê°ËÔÂÊ®°ËÇ®ÌÁ½­ÕÇ³±£¬·Ç³£×¼Ê±£¬¹Ê³ÆÖ®Îª³±ĞÅ¡£ \n"
-	          "Ã¿´Î³±Ë®À´ÁÙÊ±²¨ÌÎĞÚÓ¿£¬ÆøÊÆ±ÆÈË£¬Ê®·Ö×³¹Û¡£\n";NOR;
-        msg += HIC "Ö»Ìı¡°Â¡Â¡¡±Ò»ÕóÀ×ÃùÏì¹ı£¬³±Ë®ÈçÓ¿Ò»°ãµÄÏò°¶±ß¾íÀ´¡£\n"
-                  "É²ÄÇ¼ä£¬Âş½­·ĞÌÚ£¬²¨ÌÎÍòÇê£¬³±¸ßÕÉâÅ£¬ÍòÂí±¼ÌÚ£¬ÕæÓĞ\n"
-                  "¡°ÌÎÀ´ÊÆ×ªĞÛ£¬ÁÔÁÔ¼İ³¤·ç¡£À×ÕğÔÆÄŞÀï£¬É½·ÉËªÑ©ÖĞ¡±µÄ\n"
-                  "×³ÀöÆøÊÆ£¡ÕıËùÎ½¡°Ô¶ÈôËØÁ·ºá½­£¬ÉùÈç½ğ¹Ä£»½üÔòØ¨ÈçÉ½\n"
-                  "ÔÀ£¬·ÜÈçÀ×öª¡±¡£Ò»Ê±¼äÄã²»½û³Á½şµ±ÖĞ£¬ÌìµØÍòÎï¶¼ÒÑÈ»\n"
-                  "Íü»³ÁË¡£\n" NOR;
-                                   
-        msg += HIG "ÄãÍû×ÅĞÚÓ¿µÄ³±Ë®£¬ÈôÓĞËùÎò£¬¶ÔÎä¹¦ÓÖÓĞÁËĞÂµÄÌå»á¡£\n" NOR;
-        message("vision", msg, obs);
+    obs = all_inventory(room);
+    if (sizeof(obs) < 1)
+        return;
 
-	message("channel:rumor", HIM"¡¾Ò¥ÑÔ¡¿"+"°ËÔÂÊ®°ËÓÖµ½ÁË£¬ÌıËµ²»ÉÙÈËÇ°ÍùÇ®ÌÁ½­¹Û³±¡£\n"NOR, users()); 
-	        
-        for ( i = 0 ; i < sizeof(obs); i++)  // Ôö¼ÓÇ±ÄÜ»ù±¾ÄÚ¹¦¼°Ç±ÄÜ
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;  
-			p_bonus = 5000 + random( 5000 );
-			s_bonus = 1000 + random( 500 );
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score",s_bonus);
-                        
-			lvl = obs[i]->query_skill("force", 1);
-                        if (lvl >= 50 && lvl< 300 )
-                               	obs[i]->set_skill("force", lvl + 10);
-                        else if ( lvl >= 300 )
-                               	obs[i]->set_skill("force", lvl + 1);                                	                        
-                          
-                }
+    msg = HIW
+    "ã€è‡ªç„¶å¥‡è§‚ã€‘é’±å¡˜æ±Ÿæ½®ä¿¡\n"
+    NOR;
+    msg += HIC
+    "æ¯å¹´å…«æœˆåå…«é’±å¡˜æ±Ÿæ¶¨æ½®ï¼Œéå¸¸å‡†æ—¶ï¼Œæ•…ç§°ä¹‹ä¸ºæ½®ä¿¡ã€‚ \n"
+    "æ¯æ¬¡æ½®æ°´æ¥ä¸´æ—¶æ³¢æ¶›æ±¹æ¶Œï¼Œæ°”åŠ¿é€¼äººï¼Œååˆ†å£®è§‚ã€‚\n";
+    NOR;
+    msg += HIC
+    "åªå¬â€œéš†éš†â€ä¸€é˜µé›·é¸£å“è¿‡ï¼Œæ½®æ°´å¦‚æ¶Œä¸€èˆ¬çš„å‘å²¸è¾¹å·æ¥ã€‚\n"
+    "åˆ¹é‚£é—´ï¼Œæ¼«æ±Ÿæ²¸è…¾ï¼Œæ³¢æ¶›ä¸‡é¡·ï¼Œæ½®é«˜ä¸ˆé¦€ï¼Œä¸‡é©¬å¥”è…¾ï¼ŒçœŸæœ‰\n"
+    "â€œæ¶›æ¥åŠ¿è½¬é›„ï¼ŒçŒçŒé©¾é•¿é£ã€‚é›·éœ‡äº‘éœ“é‡Œï¼Œå±±é£éœœé›ªä¸­â€çš„\n"
+    "å£®ä¸½æ°”åŠ¿ï¼æ­£æ‰€è°“â€œè¿œè‹¥ç´ ç»ƒæ¨ªæ±Ÿï¼Œå£°å¦‚é‡‘é¼“ï¼›è¿‘åˆ™äº˜å¦‚å±±\n"
+    "å²³ï¼Œå¥‹å¦‚é›·éœ†â€ã€‚ä¸€æ—¶é—´ä½ ä¸ç¦æ²‰æµ¸å½“ä¸­ï¼Œå¤©åœ°ä¸‡ç‰©éƒ½å·²ç„¶\n"
+    "å¿˜æ€€äº†ã€‚\n"
+    NOR;
+
+    msg += HIG
+    "ä½ æœ›ç€æ±¹æ¶Œçš„æ½®æ°´ï¼Œè‹¥æœ‰æ‰€æ‚Ÿï¼Œå¯¹æ­¦åŠŸåˆæœ‰äº†æ–°çš„ä½“ä¼šã€‚\n"
+    NOR;
+    message("vision", msg, obs);
+
+    message("channel:rumor", HIM
+    "ã€è°£è¨€ã€‘" + "å…«æœˆåå…«åˆåˆ°äº†ï¼Œå¬è¯´ä¸å°‘äººå‰å¾€é’±å¡˜æ±Ÿè§‚æ½®ã€‚\n"
+    NOR, users());
+
+    for (i = 0; i < sizeof(obs); i++)  // å¢åŠ æ½œèƒ½åŸºæœ¬å†…åŠŸåŠæ½œèƒ½
+    {
+        if (!living(obs[i]) || !userp(obs[i])) continue;
+        p_bonus = 5000 + random(5000);
+        s_bonus = 1000 + random(500);
+        obs[i]->add("potential", p_bonus);
+        obs[i]->add("score", s_bonus);
+
+        lvl = obs[i]->query_skill("force", 1);
+        if (lvl >= 50 && lvl < 300)
+            obs[i]->set_skill("force", lvl + 10);
+        else if (lvl >= 300)
+            obs[i]->set_skill("force", lvl + 1);
+
+    }
 }
 
-// ÊÂ¼ş´¥·¢
-void trigger_event()
-{
-        object room;
-                
-        // Ç®ÌÁ½­³±ĞÅ
-        if (objectp(room = find_object("/d/hangzhou/qiantang")))
-                do_bonus(room);
-                
+// äº‹ä»¶è§¦å‘
+void trigger_event() {
+    object room;
+
+    // é’±å¡˜æ±Ÿæ½®ä¿¡
+    if (objectp(room = find_object("/d/hangzhou/qiantang")))
+        do_bonus(room);
+
 }
 
-void create() 
-{ 
-	seteuid(getuid()); 
-	message("channel:sys", HIR"¡¾×ÔÈ»Ææ¹Û¡¿Ç®ÌÁ½­³±ĞÅ¡£\n"NOR, users());
-	trigger_event();
+void create() {
+    seteuid(getuid());
+    message("channel:sys", HIR
+    "ã€è‡ªç„¶å¥‡è§‚ã€‘é’±å¡˜æ±Ÿæ½®ä¿¡ã€‚\n"
+    NOR, users());
+    trigger_event();
 }

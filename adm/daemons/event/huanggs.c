@@ -1,145 +1,160 @@
-// puliu.c ÊÂ¼ş£º»Æ¹ûÊ÷ÆÙ²¼
+// puliu.c äº‹ä»¶ï¼šé»„æœæ ‘ç€‘å¸ƒ
 
 #include <ansi.h>
 
 
-// ½±Àø
-private void do_bonus(object room)
-{
-        object *obs;
-        object ob;
-        string msg;
-        int lvl;
-        int r;
-        int p_bonus,s_bonus,i;
-        obs = all_inventory(room);
-        //obs = filter_array(obs, (: playerp($1) && living($1) :));
+// å¥–åŠ±
+private void do_bonus(object room) {
+    object *obs;
+    object ob;
+    string msg;
+    int lvl;
+    int r;
+    int p_bonus, s_bonus, i;
+    obs = all_inventory(room);
+    //obs = filter_array(obs, (: playerp($1) && living($1) :));
 //                CHANNEL_D->do_channel(this_object(), "rumor",
-//                                      "ÌıËµ»Æ¹ûÊ÷¼¤Á÷ÅìÅÈ£¬Ææ¾°·Ç·²£¬ÎŞÊıÓÎÈËÌ¾ÏÛ²»ÒÑ¡£");
+//                                      "å¬è¯´é»„æœæ ‘æ¿€æµæ¾æ¹ƒï¼Œå¥‡æ™¯éå‡¡ï¼Œæ— æ•°æ¸¸äººå¹ç¾¡ä¸å·²ã€‚");
 
-        if (sizeof(obs) < 1)
-                return;
+    if (sizeof(obs) < 1)
+        return;
 
-        r = random(365);
-        if (r == 0)
-        { 
-      	        	msg = HIG "¡¾×ÔÈ»Ææ¹Û¡¿»Æ¹ûÊ÷ÆÙ²¼\n"NOR;
-                msg += HIR "Ö»ÌıºäÂ¡Â¡ÉùÒô´ó×ö£¬·¢¶úÓûñù£¬ÁîÈËĞÄÉñ¾ãÒ¡£¡ÄãÌ§Í·¿´È¥£¬Ö»¼û\n"
-                          "³¿êØÖĞ»Æ¹ûÊ÷ÆÙ²¼ÁıÕÖ×Å²ã²ãÎíÆø£¬·ÖÍâÒªÈË¡£Ë®Á÷·ÉĞº£¬ÆøÊÆ¾ªÈË£¡\n" NOR;
-                msg += HIG "ÄãÍû×ÅÍÄ¼±µÄÆÙ²¼·ÉÁ·£¬ÎªÕâÊÀ¼äÃÀ¾°¾ªÌ¾²»ÒÑ£¬´Ó"
-                           "ÖĞ²»½ûÁìÎòµ½ÁËÎäÑ§µÄµÀÀí¡£\n" NOR; 
-                 message("vision", msg, obs);           
- for ( i = 0 ; i < sizeof(obs); i++)  // Ôö¼ÓÇ±ÄÜ»ù±¾ÄÚ¹¦¼°Ç±ÄÜ
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;
-			p_bonus = 1000 + random( 500 );
-			s_bonus = 800 + random( 500 );
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score",s_bonus);
-                        
-			lvl = obs[i]->query_skill("force", 1);
-                        if (lvl >= 50 && lvl< 300 )
-                               	obs[i]->set_skill("force", lvl + 10);
-                        else if ( lvl >= 300 )
-                               	obs[i]->set_skill("force", lvl + 1);
-
-                }
-
-                message("vision", msg, obs);
-
-                // ¼ÇÂ¼ÊÂ¼ş
-                
-
-                CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "ÌıËµ»Æ¹ûÊ÷¼¤Á÷ÅìÅÈ£¬Ææ¾°·Ç·²£¬ÎŞÊıÓÎÈËÌ¾ÏÛ²»ÒÑ¡£");
-        } else 
-        if (r < 250) 
+    r = random(365);
+    if (r == 0) {
+        msg = HIG
+        "ã€è‡ªç„¶å¥‡è§‚ã€‘é»„æœæ ‘ç€‘å¸ƒ\n"
+        NOR;
+        msg += HIR
+        "åªå¬è½°éš†éš†å£°éŸ³å¤§åšï¼Œå‘è€³æ¬²è©ï¼Œä»¤äººå¿ƒç¥ä¿±æ‘‡ï¼ä½ æŠ¬å¤´çœ‹å»ï¼Œåªè§\n"
+        "æ™¨æ›¦ä¸­é»„æœæ ‘ç€‘å¸ƒç¬¼ç½©ç€å±‚å±‚é›¾æ°”ï¼Œåˆ†å¤–è¦äººã€‚æ°´æµé£æ³»ï¼Œæ°”åŠ¿æƒŠäººï¼\n"
+        NOR;
+        msg += HIG
+        "ä½ æœ›ç€æ¹æ€¥çš„ç€‘å¸ƒé£ç»ƒï¼Œä¸ºè¿™ä¸–é—´ç¾æ™¯æƒŠå¹ä¸å·²ï¼Œä»"
+        "ä¸­ä¸ç¦é¢†æ‚Ÿåˆ°äº†æ­¦å­¦çš„é“ç†ã€‚\n"
+        NOR;
+        message("vision", msg, obs);
+        for (i = 0; i < sizeof(obs); i++)  // å¢åŠ æ½œèƒ½åŸºæœ¬å†…åŠŸåŠæ½œèƒ½
         {
-                msg = HIY "Ò»ÕóºäÂ¡ºäÂ¡µÄµÃÉùÒô´«À´£¬ÄãÌ§Í·Ò»Ñù£¬Ö»¼û³¿êØÖĞÆÙ²¼ÌÚÆğ²ã²ãÎíÆø¡£\n" NOR;
-                switch (random(3)) 
-                { 
-                case 0: 
-                        msg += HIY "¿´×ÅÕâ×³ÀöµÄÆÙÁ÷£¬Äã²»½û¸ĞÌ¾£¬ÕıËùÎ½¡¸·ÉÁ÷Ö±"
-                                    "ÏÂÈıÇ§³ß£¬ÒÉÊÇÒøºÓÂä¾ÅÌì¡¹°¡¡£\n" NOR; 
-                        break; 
-                case 1: 
-                        msg += HIY "ÆÙÁ÷¾ÍÏñÒ»Ï¯µ¹¹ÒµÄ°×Á±£¬ÆøÊÆÈçºç£¬ÌìµØ¶¼²»½ûÎªÖ®Ê§É«¡£\n" NOR; 
-                        break; 
-                default: 
+            if (!living(obs[i]) || !userp(obs[i])) continue;
+            p_bonus = 1000 + random(500);
+            s_bonus = 800 + random(500);
+            obs[i]->add("potential", p_bonus);
+            obs[i]->add("score", s_bonus);
 
-                        msg += HIY "ÆÙÁ÷Ö±ÈçË®ÒøĞ¹µØÒ»°ã£¬Ë®»¨ËÄ½¦¡£\n" NOR; 
-                        break; 
-                } 
-                msg += HIG "¹ÛÉÍ×Å·ÉÁ÷Ö±ÏÂµÄË®ÆÙ£¬Äã²»ÓÉµÃ¸ĞÌ¾×ÔÈ»Ôì»¯µÄÆæÃî£¬Òş"
-                           "ÒşÈ»¶ÔÎäÑ§Ò²ÓĞÁËÒ»µãÁì»á¡£\n" NOR; 
- for ( i = 0 ; i < sizeof(obs); i++)  // Ôö¼ÓÇ±ÄÜ»ù±¾ÄÚ¹¦¼°Ç±ÄÜ
-                {
-                	if( !living(obs[i]) || !userp(obs[i]) ) continue;
-			p_bonus = 600 + random( 500 );
-			s_bonus = 300 + random( 500 );
-			obs[i]->add("potential", p_bonus);
-			obs[i]->add("score",s_bonus);
-                        
-			lvl = obs[i]->query_skill("force", 1);
-                        if (lvl >= 50 && lvl< 300 )
-                               	obs[i]->set_skill("force", lvl + 10);
-                        else if ( lvl >= 300 )
-                               	obs[i]->set_skill("force", lvl + 1);
+            lvl = obs[i]->query_skill("force", 1);
+            if (lvl >= 50 && lvl < 300)
+                obs[i]->set_skill("force", lvl + 10);
+            else if (lvl >= 300)
+                obs[i]->set_skill("force", lvl + 1);
 
-                }
- 
-                message("vision", msg, obs);
-
-                // ¼ÇÂ¼ÊÂ¼ş
-                
-        } else
-        {
-                switch (random(3))
-                {
-                case 0:
-                        msg = WHT "ÆÙÁ÷½¥½¥»ºÁËÏÂÀ´¡£\n" NOR;
-                        break;
-                case 1:
-                        msg = WHT "ÆÙÁ÷×ÜÊÇ²»¼ûÓĞÔöÇ¿µÄÇ÷ÊÆ¡£\n" NOR;
-                        break;
-                default:
-                        msg = WHT "ÆÙÁ÷ÓĞÈçĞ¡ÇÅÁ÷Ë®£¬¶£¶£ßËßË£¬ÀëÄãËùÆÚÍûµÄÏà²îÉõÔ¶¡£\n" NOR;
-                        break;
-                }
-                msg += HIG "ÄãĞÄÖĞ´ó¸ĞÊ§Íû¡£\n" NOR;
-
-                message("vision", msg, obs);
         }
-} 
- 
-// ÊÂ¼ş´¥·¢ 
-void trigger_event() 
-{ 
-        object room; 
-        // »Æ¹ûÊ÷ÆÙÁ÷ 
-        if (objectp(room = find_object("/d/kunming/pubu"))) 
-                do_bonus(room); 
- 
-       // create_event(); 
-} 
+
+        message("vision", msg, obs);
+
+        // è®°å½•äº‹ä»¶
 
 
-void create() 
-{ 
-	seteuid(getuid()); 
-	message("channel:sys", HIR"¡¾×ÔÈ»Ææ¹Û¡¿»Æ¹ûÊ÷ÆÙ²¼¡£\n"NOR, users());
-	trigger_event();
+        CHANNEL_D->do_channel(this_object(), "rumor",
+                              "å¬è¯´é»„æœæ ‘æ¿€æµæ¾æ¹ƒï¼Œå¥‡æ™¯éå‡¡ï¼Œæ— æ•°æ¸¸äººå¹ç¾¡ä¸å·²ã€‚");
+    } else if (r < 250) {
+        msg = HIY
+        "ä¸€é˜µè½°éš†è½°éš†çš„å¾—å£°éŸ³ä¼ æ¥ï¼Œä½ æŠ¬å¤´ä¸€æ ·ï¼Œåªè§æ™¨æ›¦ä¸­ç€‘å¸ƒè…¾èµ·å±‚å±‚é›¾æ°”ã€‚\n"
+        NOR;
+        switch (random(3)) {
+            case 0:
+                msg += HIY
+                "çœ‹ç€è¿™å£®ä¸½çš„ç€‘æµï¼Œä½ ä¸ç¦æ„Ÿå¹ï¼Œæ­£æ‰€è°“ã€Œé£æµç›´"
+                "ä¸‹ä¸‰åƒå°ºï¼Œç–‘æ˜¯é“¶æ²³è½ä¹å¤©ã€å•Šã€‚\n"
+                NOR;
+                break;
+            case 1:
+                msg += HIY
+                "ç€‘æµå°±åƒä¸€å¸­å€’æŒ‚çš„ç™½å¸˜ï¼Œæ°”åŠ¿å¦‚è™¹ï¼Œå¤©åœ°éƒ½ä¸ç¦ä¸ºä¹‹å¤±è‰²ã€‚\n"
+                NOR;
+                break;
+            default:
+
+                msg += HIY
+                "ç€‘æµç›´å¦‚æ°´é“¶æ³„åœ°ä¸€èˆ¬ï¼Œæ°´èŠ±å››æº…ã€‚\n"
+                NOR;
+                break;
+        }
+        msg += HIG
+        "è§‚èµç€é£æµç›´ä¸‹çš„æ°´ç€‘ï¼Œä½ ä¸ç”±å¾—æ„Ÿå¹è‡ªç„¶é€ åŒ–çš„å¥‡å¦™ï¼Œéš"
+        "éšç„¶å¯¹æ­¦å­¦ä¹Ÿæœ‰äº†ä¸€ç‚¹é¢†ä¼šã€‚\n"
+        NOR;
+        for (i = 0; i < sizeof(obs); i++)  // å¢åŠ æ½œèƒ½åŸºæœ¬å†…åŠŸåŠæ½œèƒ½
+        {
+            if (!living(obs[i]) || !userp(obs[i])) continue;
+            p_bonus = 600 + random(500);
+            s_bonus = 300 + random(500);
+            obs[i]->add("potential", p_bonus);
+            obs[i]->add("score", s_bonus);
+
+            lvl = obs[i]->query_skill("force", 1);
+            if (lvl >= 50 && lvl < 300)
+                obs[i]->set_skill("force", lvl + 10);
+            else if (lvl >= 300)
+                obs[i]->set_skill("force", lvl + 1);
+
+        }
+
+        message("vision", msg, obs);
+
+        // è®°å½•äº‹ä»¶
+
+    } else {
+        switch (random(3)) {
+            case 0:
+                msg = WHT
+                "ç€‘æµæ¸æ¸ç¼“äº†ä¸‹æ¥ã€‚\n"
+                NOR;
+                break;
+            case 1:
+                msg = WHT
+                "ç€‘æµæ€»æ˜¯ä¸è§æœ‰å¢å¼ºçš„è¶‹åŠ¿ã€‚\n"
+                NOR;
+                break;
+            default:
+                msg = WHT
+                "ç€‘æµæœ‰å¦‚å°æ¡¥æµæ°´ï¼Œå®å®å’šå’šï¼Œç¦»ä½ æ‰€æœŸæœ›çš„ç›¸å·®ç”šè¿œã€‚\n"
+                NOR;
+                break;
+        }
+        msg += HIG
+        "ä½ å¿ƒä¸­å¤§æ„Ÿå¤±æœ›ã€‚\n"
+        NOR;
+
+        message("vision", msg, obs);
+    }
 }
 
-// ÃèÊö 
-string query_detail(string topic) 
-{ 
-        switch (topic) 
-        { 
-        case "»Æ¹ûÊ÷¼¤Á÷": 
-                return "»Æ¹ûÊ÷ÆÙ²¼Ë®Á÷ÍÄ¼±£¬Ê±ÓĞ¼¤Á÷ÅìÅÈ£¬ÄËÊÇº±¼ûµÄ¾°¹Û¡£\n"; 
- 
-        case "»Æ¹ûÊ÷ÆÙ²¼": 
-                return "´óÀíµÄ»Æ¹ûÊ÷ÆÙ²¼×ÔÈ»·ç¹âÃÔÈË£¬ÆÙÁ÷ÃÀÀö×³¹Û¡£\n"; 
-        }
+// äº‹ä»¶è§¦å‘ 
+void trigger_event() {
+    object room;
+    // é»„æœæ ‘ç€‘æµ
+    if (objectp(room = find_object("/d/kunming/pubu")))
+        do_bonus(room);
+
+    // create_event();
+}
+
+
+void create() {
+    seteuid(getuid());
+    message("channel:sys", HIR
+    "ã€è‡ªç„¶å¥‡è§‚ã€‘é»„æœæ ‘ç€‘å¸ƒã€‚\n"
+    NOR, users());
+    trigger_event();
+}
+
+// æè¿° 
+string query_detail(string topic) {
+    switch (topic) {
+        case "é»„æœæ ‘æ¿€æµ":
+            return "é»„æœæ ‘ç€‘å¸ƒæ°´æµæ¹æ€¥ï¼Œæ—¶æœ‰æ¿€æµæ¾æ¹ƒï¼Œä¹ƒæ˜¯ç½•è§çš„æ™¯è§‚ã€‚\n";
+
+        case "é»„æœæ ‘ç€‘å¸ƒ":
+            return "å¤§ç†çš„é»„æœæ ‘ç€‘å¸ƒè‡ªç„¶é£å…‰è¿·äººï¼Œç€‘æµç¾ä¸½å£®è§‚ã€‚\n";
+    }
 } 
