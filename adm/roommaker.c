@@ -1,612 +1,636 @@
-//: ·¿Îİ±à¼­Æ÷ be made by wade(in fss)
+//: æˆ¿å±‹ç¼–è¾‘å™¨ be made by wade(in fss)
 //:            be fixed byBao(in ocs)
 //:            be fixed again by Gigin(in tnm)
-#define RMK_VERSION " (v3.2 ĞŞÕı°æ) "
+#define RMK_VERSION " (v3.2 ä¿®æ­£ç‰ˆ) "
 inherit ITEM;
 
 string *special_props = ({
-        "short", "long" });
+    "short", "long"
+});
+
 int save_room_file(string yn, string file, string str);
-int do_mkroom (string file);
-int get_short (string rep, string arg);
-int get_long (string rep, string arg);
-int get_file_name (string rep);
-int get_no_fight (string rep);
-int get_no_magic (string ep);
-int get_no_clean_up (string rep);
-int get_valid_startroom (string rep);
-int confirm_outdoors (string rep, string arg);
-int get_item_desc_name (string rep);
-int get_item_desc (string rep, string arg);
-int get_exits (string rep);
-int get_exit (string rep, string arg);
-int get_objects (string rep);
+
+int do_mkroom(string file);
+
+int get_short(string rep, string arg);
+
+int get_long(string rep, string arg);
+
+int get_file_name(string rep);
+
+int get_no_fight(string rep);
+
+int get_no_magic(string ep);
+
+int get_no_clean_up(string rep);
+
+int get_valid_startroom(string rep);
+
+int confirm_outdoors(string rep, string arg);
+
+int get_item_desc_name(string rep);
+
+int get_item_desc(string rep, string arg);
+
+int get_exits(string rep);
+
+int get_exit(string rep, string arg);
+
+int get_objects(string rep);
+
 int save_file();
+
 int init_var();
 
-mapping tmp = ([
-  "no_fight"            :       0,
-  "no_magic"            :       0,
-  "no_clean_up"         :       0,
-  "valid_startroom"     :       0,
-  "file_name"           :       "",
-  "short"               :       "",
-  "long"                :       "",
-  "outdoors"            :       "",
-  "item_desc"           :       ([]),
-  "exits"               :       ([]),
-  "objects"             :       ([]),
+mapping tmp =
+([
+"no_fight"            :       0,
+"no_magic"            :       0,
+"no_clean_up"         :       0,
+"valid_startroom"     :       0,
+"file_name"           :       "",
+"short"               :       "",
+"long"                :       "",
+"outdoors"            :       "",
+"item_desc"           :       ([]),
+"exits"               :       ([]),
+"objects"             :       ([]),
 ]);
 
 string *special_props = ({
-        "short", "long", "file_name" });
+    "short", "long", "file_name"
+});
 
-int create()
-{
-        set_name("·¿Îİ±à¼­Æ÷" + RMK_VERSION, ({ "roommaker", "maker" }) );
-        set_weight(1);
+int create() {
+    set_name("æˆ¿å±‹ç¼–è¾‘å™¨" + RMK_VERSION, ({ "roommaker", "maker" }));
+    set_weight(1);
 //        set("no_drop",1);
-        set("unit", "­Ó" );
-        set("long", @LONG
-ÕâÊÇÒ»¸öÓÃÀ´[¿ìËÙ]ÖÆÔì·¿¼äµÄ±à¼­Æ÷£¬°ïÖúÊ±¼ä²»¶à»òÓĞÑÏlagµÄÎ×Ê¦
-ÀûÓÃÏßÉÏÊäÈëÖÆÔì·¿¼äµÄ¹¤¾ß¡M²»¹ıÈç¹ûÄãÏëÌá¸ß×Ô¼ºÇøÓò·¿¼äµÄÆ·ÖÊ,×îºÃ
-²»ÒªÌ«ÒÀÀµÕâ¸ö¶«Î÷, µ±ÄãÖÆÔì·¿¼äÊ±»áÓĞÒ»´ó¶ÑÎÊÌâ, Èç¹ûÄãÏëÓÃÔ¤ÉèÖµ,
-ÇëÖ±½Ó enter, Èç¹ûÏë·ÅÆú, ÇëÓÃ¾äºÅ½áÊø¡£
+    set("unit", "î…Œ");
+    set("long", @LONG
+    è¿™æ˜¯ä¸€ä¸ªç”¨æ¥[å¿«é€Ÿ]
+    åˆ¶é€ æˆ¿é—´çš„ç¼–è¾‘å™¨ï¼Œå¸®åŠ©æ—¶é—´ä¸å¤šæˆ–æœ‰ä¸¥lagçš„å·«å¸ˆ
+    åˆ©ç”¨çº¿ä¸Šè¾“å…¥åˆ¶é€ æˆ¿é—´çš„å·¥å…·î““ä¸è¿‡å¦‚æœä½ æƒ³æé«˜è‡ªå·±åŒºåŸŸæˆ¿é—´çš„å“è´¨, æœ€å¥½
+    ä¸è¦å¤ªä¾èµ–è¿™ä¸ªä¸œè¥¿, å½“ä½ åˆ¶é€ æˆ¿é—´æ—¶ä¼šæœ‰ä¸€å¤§å †é—®é¢˜, å¦‚æœä½ æƒ³ç”¨é¢„è®¾å€¼,
+            è¯·ç›´æ¥
+    enter, å¦‚æœæƒ³æ”¾å¼ƒ, è¯·ç”¨å¥å·ç»“æŸã€‚
 
-mkroom <·½Ïò> <·¿¼äµµÃû>        Ôì³öÒ»¸ö[¿Õ]·¿¼ä
-rset <·¿¼äÊôĞÔ> <ÊôĞÔÄÚÈİ>      Éè¶¨ÄãÄ¿Ç°ËùÔÚ·¿¼äµÄÊôĞÔ
-uset <·¿¼äÊôĞÔ>                 È¡ÏûÄ¿Ç°ËùÔÚ·¿¼äµÄÄ³ÏîÊôĞÔ
-connect <·½Ïò> <·¿¼äµµÃû>       ½«ÄãÄ¿Ç°ËùÔÚµÄ·¿¼äÁ¬½ÓÒ»¸ö³ö¿Úµ½ÁíÒ»¸ö·¿¼ä¡£
-dconnect <·½Ïò>                 È¡ÏûÒ»¸ö³ö¿Ú
-addobj <Îï¼şµµÃû> <¸öÊı>        ÔÚ¸Ã·¿¼äÔö¼ÓÎï¼ş
-delobj <Îï¼şµµÃû>               È¡Ïû¸Ã·¿¼äµÄÎï¼ş
-saveroom                        ½«ÄãÄ¿Ç°ËùÔÚµÄ·¿¼ä´æµµ¡£
+    mkroom < æ–¹å‘ > < æˆ¿é—´æ¡£å > é€ å‡ºä¸€ä¸ª[ç©º]
+    æˆ¿é—´
+    rset < æˆ¿é—´å±æ€§ > < å±æ€§å†…å®¹ > è®¾å®šä½ ç›®å‰æ‰€åœ¨æˆ¿é—´çš„å±æ€§
+    uset <æˆ¿é—´å±æ€§> å–æ¶ˆç›®å‰æ‰€åœ¨æˆ¿é—´çš„æŸé¡¹å±æ€§
+    connect < æ–¹å‘ > < æˆ¿é—´æ¡£å > å°†ä½ ç›®å‰æ‰€åœ¨çš„æˆ¿é—´è¿æ¥ä¸€ä¸ªå‡ºå£åˆ°å¦ä¸€ä¸ªæˆ¿é—´ã€‚
+    dconnect <æ–¹å‘> å–æ¶ˆä¸€ä¸ªå‡ºå£
+    addobj < ç‰©ä»¶æ¡£å > < ä¸ªæ•° > åœ¨è¯¥æˆ¿é—´å¢åŠ ç‰©ä»¶
+    delobj <ç‰©ä»¶æ¡£å> å–æ¶ˆè¯¥æˆ¿é—´çš„ç‰©ä»¶
+    saveroom
+    å°†ä½ ç›®å‰æ‰€åœ¨çš„æˆ¿é—´å­˜æ¡£ã€‚
 
-×¢Òâ: ¿ÉÒÔÓÃ help roommaker È¡µÃÏêÏ¸½âËµ
-LONG
-        );
-        setup();
+    æ³¨æ„:
+    å¯ä»¥ç”¨
+    help
+    roommaker
+    å–å¾—è¯¦ç»†è§£è¯´
+    LONG
+    );
+    setup();
 }
 
-int init()
-{
-        if( wizardp(environment()) ) {
-                seteuid(getuid(environment()));
-                add_action("do_mkroom", "mkroom");
-                add_action("do_rset", "rset");
-                add_action("do_uset", "uset");
-                add_action("do_setlong", "setlong");
-                add_action("do_connect", "connect");
-                add_action("do_dconnect", "dconnect");
-                add_action ("do_addobj", "addobj");
-                add_action ("do_delobj", "delobj");
-                add_action("do_saveroom", "saveroom");
-        }
+int init() {
+    if (wizardp(environment())) {
+        seteuid(getuid(environment()));
+        add_action("do_mkroom", "mkroom");
+        add_action("do_rset", "rset");
+        add_action("do_uset", "uset");
+        add_action("do_setlong", "setlong");
+        add_action("do_connect", "connect");
+        add_action("do_dconnect", "dconnect");
+        add_action("do_addobj", "addobj");
+        add_action("do_delobj", "delobj");
+        add_action("do_saveroom", "saveroom");
+    }
 }
 
-string ob_path(mixed ob)
-{
-        string file;
-        string *dir;
-        int     i;
+string ob_path(mixed ob) {
+    string file;
+    string *dir;
+    int i;
 
-        if (objectp(ob))
-          file = base_name(ob);
-        else if (stringp(ob)) file = ob;
-        else return "/";
-        dir = explode(file, "/");
-        file = "/";
-        for (i=0; i<sizeof(dir)-1; i++)
-          file += dir[i]+"/";
-        return file;
+    if (objectp(ob))
+        file = base_name(ob);
+    else if (stringp(ob)) file = ob;
+    else return "/";
+    dir = explode(file, "/");
+    file = "/";
+    for (i = 0; i < sizeof(dir) - 1; i++)
+        file += dir[i] + "/";
+    return file;
 }
 
-string get_cwd()
-{
-  object        env;
-  string        file;
-  int           i;
+string get_cwd() {
+    object env;
+    string file;
+    int i;
 
-  env = environment(this_player());
-  file = file_name(env) + ".c";
-  i = strlen(file)-1;
-  while( (i > 0) && (file[i]!='/')) i--;
-  if (i>0) return file[0..i];
-  else return "/";
+    env = environment(this_player());
+    file = file_name(env) + ".c";
+    i = strlen(file) - 1;
+    while ((i > 0) && (file[i] != '/')) i--;
+    if (i > 0) return file[0..i];
+    else return "/";
 }
 
-int do_delobj (string arg)
-{
-        mapping objects;
-        object  ob;
-        string file, cwd;
-        int     num;
+int do_delobj(string arg) {
+    mapping objects;
+    object ob;
+    string file, cwd;
+    int num;
 
-        if( !arg || sscanf(arg, "%s", file)!=1 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºdelobj <Îï¼şµµÃû>\n"
-                                   "      Èç: delobj /open/su/obj/cloth\n");
-        objects = environment(this_player())->query("objects");
-        if (ob=present (file, environment(this_player()))) {
-          file = resolve_path(this_player()->query("cwd"), file);
-          if( mapp(objects) )
-                map_delete (objects, file);
-          destruct (ob);
-          write("Ok.\n");
-          return 1;
-        }
-        else
-          return notify_fail ("ÏµÍ³¸æËßÄã, Ã»ÕâÑù¶«¶«: "+file+"\n");
-}
-
-int do_addobj (string arg)
-{
-  mapping objects;
-  string file;
-  object ob, me;
-  int   num;
-
-  if( !arg || sscanf(arg, "%s %d", file, num)!=2 )
-    return notify_fail("Ö¸Áî¸ñÊ½£ºaddobj <Îï¼şµµÃû> <Îï¼ş¸öÊı>\n");
-  me = this_player();
-  file = resolve_path(me->query("cwd"), file);
-  ob = new (file);
-  if (!ob) return notify_fail ("ÏµÍ³¸æËßÄã: Ã»ÄÇ¸öÎï¼ş: "+file+"¡£\n");
-  ob->move(environment (me));
-  objects  = environment(me)->query("objects");
-log_file( "static/addobj", sprintf("%s --> %s (%s)\n",me->query("id"),
-ob->query("name"), ob->query("id")));
-  if( mapp(objects) )
-    objects[file] = num;
-  else
-    environment(me)->set("objects", ([ file:num ]) );
-  write("Ok.\n");
-
-  return 1;
-}
-
-void done_setlong (object me, string text)
-{
-        environment(me)->set("long", text);
-        return ;
-}
-
-int do_setlong ()
-{
-  this_player()->edit( (: done_setlong, this_player() :) );
-  return 1;
-}
-
-int do_uset(string arg)
-{
-        string prop, str;
-
-        if( !arg || sscanf(arg, "%s", prop)!=1 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºuset <·¿¼äÊôĞÔ>\n"
-                                   "      Èç: uset light\n");
-
-        environment(this_player())->delete(prop);
+    if (!arg || sscanf(arg, "%s", file) != 1)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdelobj <ç‰©ä»¶æ¡£å>\n"
+                           "      å¦‚: delobj /open/su/obj/cloth\n");
+    objects = environment(this_player())->query("objects");
+    if (ob = present(file, environment(this_player()))) {
+        file = resolve_path(this_player()->query("cwd"), file);
+        if (mapp(objects))
+            map_delete(objects, file);
+        destruct(ob);
         write("Ok.\n");
         return 1;
+    } else
+        return notify_fail("ç³»ç»Ÿå‘Šè¯‰ä½ , æ²¡è¿™æ ·ä¸œä¸œ: " + file + "\n");
 }
 
-int do_rset(string arg)
-{
-        string prop,str;
-        int data, i, n;
+int do_addobj(string arg) {
+    mapping objects;
+    string file;
+    object ob, me;
+    int num;
 
-        if( !arg || sscanf(arg, "%s %s", prop, str)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºrset <·¿¼äÊôĞÔ> <ÊôĞÔÄÚÈİ>\n");
+    if (!arg || sscanf(arg, "%s %d", file, num) != 2)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šaddobj <ç‰©ä»¶æ¡£å> <ç‰©ä»¶ä¸ªæ•°>\n");
+    me = this_player();
+    file = resolve_path(me->query("cwd"), file);
+    ob = new(file);
+    if (!ob) return notify_fail("ç³»ç»Ÿå‘Šè¯‰ä½ : æ²¡é‚£ä¸ªç‰©ä»¶: " + file + "ã€‚\n");
+    ob->move(environment(me));
+    objects = environment(me)->query("objects");
+    log_file("static/addobj", sprintf("%s --> %s (%s)\n", me->query("id"),
+                                      ob->query("name"), ob->query("id")));
+    if (mapp(objects))
+        objects[file] = num;
+    else
+        environment(me)->set("objects",([ file:
+    num ]));
+    write("Ok.\n");
 
-        n = strlen (str);
-        if (str[0] == '"' && str[n-1] == '"') {
-          write ("set "+prop+" = \""+str[1..n-2]+"\"\n");
-          environment(this_player())->set(prop, str[1..n-2]);
-          return 1;
-        }
-
-        data = 0;
-        for (i=0; i<n; i++)
-          if (str[i] < '0' || str[i] > '9') {
-            data = 1;
-            break;
-          }
-
-        if( !data && sscanf(str, "%d", data)==1 ) {
-          write ("set "+prop+" = "+data+"\n");
-          environment(this_player())->add(prop, data);
-        }
-        else {
-          write ("set "+prop+" = \""+str+"\"\n");
-          environment(this_player())->set(prop, str);
-        }
-        return 1;
+    return 1;
 }
 
-int do_dconnect(string arg)
-{
-        mapping exits;
-        string dir;
-
-        if( !arg || sscanf(arg, "%s", dir)!=1 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºdconnect <·½Ïò>\n"
-                                   "      Èç: dconnect east\n");
-        exits = environment(this_player())->query("exits");
-        if( mapp(exits) )
-                map_delete (exits, dir);
-        write("Ok.\n");
-        return 1;
+void done_setlong(object me, string text) {
+    environment(me)->set("long", text);
+    return;
 }
 
-int do_connect(string arg)
-{
-        object  from;
-        mapping exits;
-        string dir, file;
-
-        from = environment(this_player());
-        if( !arg || sscanf(arg, "%s %s", dir, file)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºconnect <·½Ïò> <·¿¼äµµÃû>\n");
-        file = resolve_path(ob_path(from), file);
-        exits = from->query("exits");
-        if( mapp(exits) )
-                exits[dir] = file;
-        else
-                from->set("exits", ([ dir: file ]) );
-         write("Ok.\n");
-        return 1;
+int do_setlong() {
+    this_player()->edit((: done_setlong, this_player() :));
+    return 1;
 }
 
-int save_room_file(string yn, string file, string str)
-{
-  string        tmp;
-  int           i;
+int do_uset(string arg) {
+    string prop, str;
 
-  if( strlen(yn)<1 || yn[0]!='y' ) return 1;
+    if (!arg || sscanf(arg, "%s", prop) != 1)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šuset <æˆ¿é—´å±æ€§>\n"
+                           "      å¦‚: uset light\n");
 
-  i = sizeof(file)-1;
-  if (!(file[i] == 'c' && file[i-1] == '.')) file = file+".c";
-  write ("file name is " + file + "\n");
-  if ( write_file(file, str, 1) ) {
+    environment(this_player())->delete(prop);
     write("Ok.\n");
     return 1;
-  }
-  else {
-    write ("roommaker ³¢ÊÔĞ´Èë("+file+")Ê§°Ü!!\n");
-    return 0;
-  }
+}
+
+int do_rset(string arg) {
+    string prop, str;
+    int data, i, n;
+
+    if (!arg || sscanf(arg, "%s %s", prop, str) != 2)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šrset <æˆ¿é—´å±æ€§> <å±æ€§å†…å®¹>\n");
+
+    n = strlen(str);
+    if (str[0] == '"' && str[n - 1] == '"') {
+        write("set " + prop + " = \"" + str[1..n - 2] + "\"\n");
+        environment(this_player())->set(prop, str[1..n - 2]);
+        return 1;
+    }
+
+    data = 0;
+    for (i = 0; i < n; i++)
+        if (str[i] < '0' || str[i] > '9') {
+            data = 1;
+            break;
+        }
+
+    if (!data && sscanf(str, "%d", data) == 1) {
+        write("set " + prop + " = " + data + "\n");
+        environment(this_player())->add(prop, data);
+    } else {
+        write("set " + prop + " = \"" + str + "\"\n");
+        environment(this_player())->set(prop, str);
+    }
+    return 1;
+}
+
+int do_dconnect(string arg) {
+    mapping exits;
+    string dir;
+
+    if (!arg || sscanf(arg, "%s", dir) != 1)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdconnect <æ–¹å‘>\n"
+                           "      å¦‚: dconnect east\n");
+    exits = environment(this_player())->query("exits");
+    if (mapp(exits))
+        map_delete(exits, dir);
+    write("Ok.\n");
+    return 1;
+}
+
+int do_connect(string arg) {
+    object from;
+    mapping exits;
+    string dir, file;
+
+    from = environment(this_player());
+    if (!arg || sscanf(arg, "%s %s", dir, file) != 2)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconnect <æ–¹å‘> <æˆ¿é—´æ¡£å>\n");
+    file = resolve_path(ob_path(from), file);
+    exits = from->query("exits");
+    if (mapp(exits))
+        exits[dir] = file;
+    else
+        from->set("exits",([ dir:
+    file ]));
+    write("Ok.\n");
+    return 1;
+}
+
+int save_room_file(string yn, string file, string str) {
+    string tmp;
+    int i;
+
+    if (strlen(yn) < 1 || yn[0] != 'y') return 1;
+
+    i = sizeof(file) - 1;
+    if (!(file[i] == 'c' && file[i - 1] == '.')) file = file + ".c";
+    write("file name is " + file + "\n");
+    if (write_file(file, str, 1)) {
+        write("Ok.\n");
+        return 1;
+    } else {
+        write("roommaker å°è¯•å†™å…¥(" + file + ")å¤±è´¥!!\n");
+        return 0;
+    }
 }
 
 void owner_is_killed() { destruct(this_object()); }
 
-int do_mkroom(string arg)
-{
-  string        here, dir;
-  int           status=0;
+int do_mkroom(string arg) {
+    string here, dir;
+    int status = 0;
 
-  if (!arg) return
-    notify_fail ("mkroom [<·½Ïò> <·¿¼äµÄµµÃû>] »ò mkroom <·¿¼äµÄµµÃû>\n");
-  init_var();
-  here  = file_name (environment(this_player()));
-  if (sscanf (arg, "%s %s", dir, arg) == 2) {
-    arg = resolve_path(get_cwd(), arg);
-    do_connect (dir+" "+arg);
-  }
-  else
-   arg = resolve_path(this_player()->query("cwd"), arg);
+    if (!arg)
+        return
+                notify_fail("mkroom [<æ–¹å‘> <æˆ¿é—´çš„æ¡£å>] æˆ– mkroom <æˆ¿é—´çš„æ¡£å>\n");
+    init_var();
+    here = file_name(environment(this_player()));
+    if (sscanf(arg, "%s %s", dir, arg) == 2) {
+        arg = resolve_path(get_cwd(), arg);
+        do_connect(dir + " " + arg);
+    } else
+        arg = resolve_path(this_player()->query("cwd"), arg);
 
-  if (arg == here) {
-    write ("ÇëÊäÈëµµÃû, ÇëÎğÃüÃûÎª "+here+" : ");
-    input_to ( "get_file_name" );
-  }
-  else {
-    tmp["file_name"] = arg;
-    write ("file name is "+arg+"\n");
-    write ("ÇëÊäÈë no_fight µÄÖµ (0 Ô¤ÉèÎª¿ÉÕ½¶·) : ");
-    input_to ( "get_no_fight" );
-  }
-  return 1;
-}
-
-int get_file_name (string rep)
-{
-  string        dir, *path;
-
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep=="") {
-    write ("²»¿ÉÒÔÃ»ÓĞµµÃû, ÇëÔÙÊäÈëÒ»´Î, ·ÅÆú±à¼­Çë°´¾äµã . ½áÊø\n");
-    input_to ( "get_file_name" );
+    if (arg == here) {
+        write("è¯·è¾“å…¥æ¡£å, è¯·å‹¿å‘½åä¸º " + here + " : ");
+        input_to("get_file_name");
+    } else {
+        tmp["file_name"] = arg;
+        write("file name is " + arg + "\n");
+        write("è¯·è¾“å…¥ no_fight çš„å€¼ (0 é¢„è®¾ä¸ºå¯æˆ˜æ–—) : ");
+        input_to("get_no_fight");
+    }
     return 1;
-  }
-  else {
-    dir = file_name (environment(this_player()));
-    path = explode (dir, "/");
-    path[sizeof(path)-1] = "/"+rep;
-    tmp["file_name"] = "/"+implode (path, "/");
-    write ("file name is "+rep+"\n");
-  }
-
-  write ("ÇëÊäÈë no_fight µÄÖµ (0 Ô¤ÉèÎª¿ÉÕ½¶·) : ");
-  input_to ( "get_no_fight" );
-  return 1;
 }
 
-int get_no_fight (string rep)
-{
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep == "") tmp["no_fight"] = 0;
-  else if (sscanf (rep, "%d", tmp["no_fight"]) != 1) {
-    write ("ÄãµÄÊäÈë²»ÊÇÊı×Ö, Ó¦¸ÃÊÇ 0 »ò 1\n");
-    write ("ÇëÊäÈë no_fight µÄÖµ (0 Ô¤ÉèÎª¿ÉÕ½¶·) : ");
-    input_to ( "get_no_fight" );
-    return 1;
-  }
+int get_file_name(string rep) {
+    string dir, *path;
 
-  write ("ÇëÊäÈë no_magic µÄÖµ (0 Ô¤ÉèÎª¿ÉÊ©Ä§·¨) : ");
-  input_to ( "get_no_magic" );
-
-  return 1;
-}
-
-int get_no_magic (string rep)
-{
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep == "") tmp["no_magic"] = 0;
-  else if (sscanf (rep, "%d", tmp["no_magic"]) != 1) {
-    write ("ÄãµÄÊäÈë²»ÊÇÊı×Ö, Ó¦¸ÃÊÇ 0 »ò 1\n");
-    write ("ÇëÊäÈë no_magic µÄÖµ (0 Ô¤ÉèÎª¿ÉÊ©Ä§·¨) : ");
-    input_to ( "get_no_magic" );
-    return 1;
-  }
-
-  write ("ÇëÊäÈë no_clean_up µÄÖµ (0 Ô¤ÉèÎªÒª reborn) : ");
-  input_to ( "get_no_clean_up" );
-  return 1;
-}
-
-int get_no_clean_up (string rep)
-{
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep == "") tmp["no_clean_up"] = 0;
-  else if (sscanf (rep, "%d", tmp["no_clean_up"]) != 1) {
-    write ("ÄãµÄÊäÈë²»ÊÇÊı×Ö, Ó¦¸ÃÊÇ 0 »ò 1\n");
-    write ("ÇëÊäÈë no_clean_up µÄÖµ (0 Ô¤ÉèÎª¿ÉÊ©Ä§·¨) : ");
-    input_to ( "get_no_clean_up" );
-    return 1;
-  }
-
-  write ("ÇëÊäÈë valid_startroom µÄÖµ (0 Ô¤ÉèÎª±¾·¿¼ä²»¿Éµ±Æğµã) : ");
-  input_to ( "get_valid_startroom" );
-  return 1;
-}
-
-int get_valid_startroom (string rep)
-{
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep == "") tmp["valid_startroom"] = 0;
-  else if (sscanf (rep, "%d", tmp["no_clean_up"]) != 1) {
-    write ("ÄãµÄÊäÈë²»ÊÇÊı×Ö, Ó¦¸ÃÊÇ 0 »ò 1\n");
-    write ("ÇëÊäÈë valid_startroom µÄÖµ (0 Ô¤ÉèÎª±¾·¿¼ä²»¿Éµ±Æğµã) : ");
-    input_to ( "get_valid_startroom" );
-    return 1;
-  }
-
-  write ("ÇëÊäÈë·¿¼äÃû³Æ short (¿Õ·¿¼ä) : ");
-  input_to ( "get_short", "¿Õ·¿¼ä" );
-  return 1;
-}
-
-int get_short (string rep, string arg)
-{
-  string long="ÕâÊÇÒ»¼äÊ²÷á¶¼Ã»ÓĞµÄ·¿¼ä¡£\n";
-
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep=="") tmp["short"] = arg;
-  else tmp["short"] = rep;
-
-  write ("ÇëÊäÈë long µÄÖµ (" + long + ") : \n");
-  this_player()->edit( (: get_long, long :) );
-
-  return 1;
-}
-
-int get_long (string arg, string rep)
-{
-  if (rep=="") tmp["long"] = arg;
- else tmp["long"] = rep;
-
-  write ("ÊÇ»§ÍâÂğ? (y) : ");
-  input_to ( "confirm_outdoors", "y" );
-  return 1;
-}
-
-int confirm_outdoors (string rep, string arg)
-{
-  string d;
-
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep == "n") {
-        write ("ÇëÊäÈë¾°¹Û item_desc µÄÃû³Æ, Èç¹ûÏë½áÊø¾°¹Û, ÇëÖ±½Ó°´ enter : ")
-;
-        input_to ( "get_item_desc_name" );
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
         return 1;
- }
-  else if ( arg == "y" && (rep == "" || rep[0] == 'y' || rep[0] == 'Y') ) {
-    d = "/"+implode( explode(this_player()->query("cwd"), "/")[0..1], "/");
-    write ("»§ÍâÊÇÊôì¶ÄÄÒ»¸öÄ¿Â¼? ("+d+") : ");
-    input_to ( "confirm_outdoors", d );
-    return 1;
- }
-  else if (rep=="") tmp["outdoors"] = arg;
-  else tmp["outdoors"] = rep;
-
-  write ("ÇëÊäÈë¾°¹Û item_desc µÄÃû³Æ, Èç¹ûÏë½áÊø¾°¹Û, ÇëÖ±½Ó°´ enter : ");
-  input_to ( "get_item_desc_name" );
-  return 1;
-}
-
-int get_item_desc_name (string rep)
-{
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep=="") {
-    write ("ÇëÉè¶¨³ö¿Ú exits µÄÁ¬½á·½Ïò, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter : ");
-    input_to ( "get_exits" );
-    return 1;
-  }
-
-  write ("ÇëÊäÈë "+rep+" µÄ¾°¹ÛÄÚÈİ, Ïë½áÊøÊ±ÇëÖ±½Ó°´ . Àë¿ª±à¼­\n");
-  tmp["item_desc"][rep] = "";
-  this_player()->edit ( (: get_item_desc, rep :) );
-  return 1;
-}
-
-int get_item_desc (string arg, string rep)
-{
-  if (rep != "") {
-    tmp["item_desc"][arg] = rep;
-    write ("ÇëÊäÈëÏÂÒ»¾°¹Û item_desc µÄÃû³Æ, Ïë½áÊø¾°¹Û, ÇëÖ±½Ó°´ enter : ");
-    input_to ( "get_item_desc_name" );
-    return 1;
-  }
-
-  write ("ÇëÉè¶¨³ö¿Ú exits µÄÁ¬½á·½Ïò, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter : ");
-  input_to ( "get_exits" );
-  return 1;
-}
-
-int get_exits (string rep)
-{
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep=="") {
-    if (tmp["exits"][""]) map_delete(tmp["exits"], "");
-    write ("ÇëÉè¶¨Îï¼ş objects µÄµµÃû, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter :\n");
-    input_to ( "get_objects" );
-    return 1;
- }
-  else {
-    write ("ÇëÊäÈë "+rep+" µÄÁ¬½á·¿¼äµµÃû, ¿ÉÒÔ²ÉÓÃÏà¶ÔÂ·¾¶·¨ : ");
-    tmp["exits"][rep] = "";
-    input_to ( "get_exit", rep );
-  }
-  return 1;
-}
-
-int get_exit (string rep, string arg)
-{
-  if (rep != "") {
-    tmp["exits"][arg] = resolve_path(this_player()->query("cwd"), rep);
-    write ("ÇëÉè¶¨³ö¿Ú exits µÄ·½Ïò, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter : ");
-    input_to ( "get_exits" );
-    return 1;
-  }
-
-  write ("ÇëÉè¶¨Îï¼ş objects µÄµµÃû, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter : ");
-  input_to ( "get_objects" );
-  return 1;
-}
-int get_objects (string rep)
-{
-  object        ob;
-
-  if (rep == ".") { write ("Äã·ÅÆú±¾´Î±à¼­¡£\n"); return 1; }
-  else if (rep=="") {
-    save_file ();
-    return 1;
-  }
-
-  rep=resolve_path(this_player()->query("cwd"), rep);
-  ob = new (rep);
-  if (!ob) {
-    write ("ÏµÍ³¸æËßÄã: Ã»ÄÇ¸öÎï¼ş: "+rep+"¡£\n");
-    write ("ÇëÉè¶¨Îï¼ş objects µÄµµÃû, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter : ");
-    input_to ( "get_objects" );
-    return 1;
-  }
-
-  destruct (ob);
-
-  write ("ÇëÊäÈë "+rep+" µÄÎï¼ş¸öÊı : ");
-  tmp["objects"][rep] = 1;
-  input_to ( "get_object", rep );
-  return 1;
-}
-
-int get_object (string rep, string arg)
-{
-  int           n;
-
-  if (rep != "") {
-    if (sscanf(rep, "%d", n) != 1) {
-      write ("ÄãÊäµÄÖµ²»ºÏ·¨, ÇëÖØĞÂÊäÈë "+arg+" µÄÎï¼ş¸öÊı : ");
-      input_to ( "get_object", arg );
-      return 1;
     }
-    else {
-      tmp["objects"][arg] = n;
-      write ("ÇëÉè¶¨Îï¼ş objects µÄµµÃû, Ïë½áÊøÉè¶¨, ÇëÖ±½Ó°´ enter : ");
-      input_to ( "get_objects" );
-      return 1;
+    else if (rep == "") {
+        write("ä¸å¯ä»¥æ²¡æœ‰æ¡£å, è¯·å†è¾“å…¥ä¸€æ¬¡, æ”¾å¼ƒç¼–è¾‘è¯·æŒ‰å¥ç‚¹ . ç»“æŸ\n");
+        input_to("get_file_name");
+        return 1;
+    } else {
+        dir = file_name(environment(this_player()));
+        path = explode(dir, "/");
+        path[sizeof(path) - 1] = "/" + rep;
+        tmp["file_name"] = "/" + implode(path, "/");
+        write("file name is " + rep + "\n");
     }
-  }
 
-  tmp["objects"][arg] = 1;
-  save_file();
-  return 1;
-}
-
-int save_file()
-{
-  string        room_code, *name, file;
-  int           i, n;
-
-  // room_code ÊÇ·¿¼äµÄ³ÌÊ½Âë, µ×ÏÂÕâÒ»¶ÎÊÇËùÓĞ·¿¼äµÄ¹²Í¨µã
-  room_code = "// Room: " + tmp["file_name"] + @ROOM_CODE
-
-inherit ROOM;
-
-void create()
-{
-ROOM_CODE;
-  // Ò»Ö±µ½Õâ±ß½áÊø
-
-  room_code =
-    sprintf ("%s  set (\"short\", \"%s\");\n"
-               "  set (\"long\", @LONG\n%sLONG);\n\n",
-             room_code, tmp["short"], tmp["long"]);
-
-  name = keys(tmp);
-  for(i=0; i<sizeof(name); i++) {
-    if( member_array(name[i], special_props)!=-1 ) continue;
-      if ( (intp(tmp[name[i]]) && tmp[name[i]]>0) ||
-        (stringp(tmp[name[i]]) && tmp[name[i]] != "") ||
-                (mapp(tmp[name[i]]) && tmp[name[i]] == ([])) ||
-                sizeof (tmp[name[i]]) > 0)
-                    room_code += sprintf("  set(\"%s\", %O);\n",
-                                   name[i], tmp[name[i]] );
-  }
-
-  room_code += "  setup();\n  replace_program(ROOM);\n}\n";
-
-  // Replace current directory with __DIR__ macro to make relocatable code.
-  file = tmp["file_name"];
-  i = strlen(file)-1;
-  if (!file[i] == 'c' || !file[i-1] == '.') file += ".c";
-  while( (i > 0) && (file[i]!='/')) i--;
-  if( i>0 ) {
-    write("Ä¿Ç°Ä¿Â¼£º" + file[0..i] + " ÒÔ __DIR__ È¡´ú¡£\n");
-    room_code = replace_string(room_code, "\"" + file[0..i], "__DIR__\"");
-  }
-
-  if( file_size(file)!=-1 ) {
-    write("µµ°¸ " + file + " ÒÑ´æÔÚ£¬ÒªÉ¾³ı¾ÉµµÂğ£¿[y/n]");
-    input_to("save_room_file", file, room_code);
+    write("è¯·è¾“å…¥ no_fight çš„å€¼ (0 é¢„è®¾ä¸ºå¯æˆ˜æ–—) : ");
+    input_to("get_no_fight");
     return 1;
-  }
-
-  return save_room_file("y", file, room_code);
 }
 
-int do_saveroom(string arg)
-{
+int get_no_fight(string rep) {
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") tmp["no_fight"] = 0;
+    else if (sscanf(rep, "%d", tmp["no_fight"]) != 1) {
+        write("ä½ çš„è¾“å…¥ä¸æ˜¯æ•°å­—, åº”è¯¥æ˜¯ 0 æˆ– 1\n");
+        write("è¯·è¾“å…¥ no_fight çš„å€¼ (0 é¢„è®¾ä¸ºå¯æˆ˜æ–—) : ");
+        input_to("get_no_fight");
+        return 1;
+    }
+
+    write("è¯·è¾“å…¥ no_magic çš„å€¼ (0 é¢„è®¾ä¸ºå¯æ–½é­”æ³•) : ");
+    input_to("get_no_magic");
+
+    return 1;
+}
+
+int get_no_magic(string rep) {
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") tmp["no_magic"] = 0;
+    else if (sscanf(rep, "%d", tmp["no_magic"]) != 1) {
+        write("ä½ çš„è¾“å…¥ä¸æ˜¯æ•°å­—, åº”è¯¥æ˜¯ 0 æˆ– 1\n");
+        write("è¯·è¾“å…¥ no_magic çš„å€¼ (0 é¢„è®¾ä¸ºå¯æ–½é­”æ³•) : ");
+        input_to("get_no_magic");
+        return 1;
+    }
+
+    write("è¯·è¾“å…¥ no_clean_up çš„å€¼ (0 é¢„è®¾ä¸ºè¦ reborn) : ");
+    input_to("get_no_clean_up");
+    return 1;
+}
+
+int get_no_clean_up(string rep) {
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") tmp["no_clean_up"] = 0;
+    else if (sscanf(rep, "%d", tmp["no_clean_up"]) != 1) {
+        write("ä½ çš„è¾“å…¥ä¸æ˜¯æ•°å­—, åº”è¯¥æ˜¯ 0 æˆ– 1\n");
+        write("è¯·è¾“å…¥ no_clean_up çš„å€¼ (0 é¢„è®¾ä¸ºå¯æ–½é­”æ³•) : ");
+        input_to("get_no_clean_up");
+        return 1;
+    }
+
+    write("è¯·è¾“å…¥ valid_startroom çš„å€¼ (0 é¢„è®¾ä¸ºæœ¬æˆ¿é—´ä¸å¯å½“èµ·ç‚¹) : ");
+    input_to("get_valid_startroom");
+    return 1;
+}
+
+int get_valid_startroom(string rep) {
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") tmp["valid_startroom"] = 0;
+    else if (sscanf(rep, "%d", tmp["no_clean_up"]) != 1) {
+        write("ä½ çš„è¾“å…¥ä¸æ˜¯æ•°å­—, åº”è¯¥æ˜¯ 0 æˆ– 1\n");
+        write("è¯·è¾“å…¥ valid_startroom çš„å€¼ (0 é¢„è®¾ä¸ºæœ¬æˆ¿é—´ä¸å¯å½“èµ·ç‚¹) : ");
+        input_to("get_valid_startroom");
+        return 1;
+    }
+
+    write("è¯·è¾“å…¥æˆ¿é—´åç§° short (ç©ºæˆ¿é—´) : ");
+    input_to("get_short", "ç©ºæˆ¿é—´");
+    return 1;
+}
+
+int get_short(string rep, string arg) {
+    string
+    long="è¿™æ˜¯ä¸€é—´ä»€éº½éƒ½æ²¡æœ‰çš„æˆ¿é—´ã€‚\n";
+
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") tmp["short"] = arg;
+    else tmp["short"] = rep;
+
+    write("è¯·è¾“å…¥ long çš„å€¼ (" +
+    long
+    +") : \n");
+    this_player()->edit((: get_long,
+    long :));
+
+    return 1;
+}
+
+int get_long(string arg, string rep) {
+    if (rep == "") tmp["long"] = arg;
+    else tmp["long"] = rep;
+
+    write("æ˜¯æˆ·å¤–å—? (y) : ");
+    input_to("confirm_outdoors", "y");
+    return 1;
+}
+
+int confirm_outdoors(string rep, string arg) {
+    string d;
+
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "n") {
+        write("è¯·è¾“å…¥æ™¯è§‚ item_desc çš„åç§°, å¦‚æœæƒ³ç»“æŸæ™¯è§‚, è¯·ç›´æ¥æŒ‰ enter : ");
+        input_to("get_item_desc_name");
+        return 1;
+    } else if (arg == "y" && (rep == "" || rep[0] == 'y' || rep[0] == 'Y')) {
+        d = "/" + implode(explode(this_player()->query("cwd"), "/")[0..1], "/");
+        write("æˆ·å¤–æ˜¯å±æ–¼å“ªä¸€ä¸ªç›®å½•? (" + d + ") : ");
+        input_to("confirm_outdoors", d);
+        return 1;
+    } else if (rep == "") tmp["outdoors"] = arg;
+    else tmp["outdoors"] = rep;
+
+    write("è¯·è¾“å…¥æ™¯è§‚ item_desc çš„åç§°, å¦‚æœæƒ³ç»“æŸæ™¯è§‚, è¯·ç›´æ¥æŒ‰ enter : ");
+    input_to("get_item_desc_name");
+    return 1;
+}
+
+int get_item_desc_name(string rep) {
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") {
+        write("è¯·è®¾å®šå‡ºå£ exits çš„è¿ç»“æ–¹å‘, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter : ");
+        input_to("get_exits");
+        return 1;
+    }
+
+    write("è¯·è¾“å…¥ " + rep + " çš„æ™¯è§‚å†…å®¹, æƒ³ç»“æŸæ—¶è¯·ç›´æ¥æŒ‰ . ç¦»å¼€ç¼–è¾‘\n");
+    tmp["item_desc"][rep] = "";
+    this_player()->edit((: get_item_desc, rep :));
+    return 1;
+}
+
+int get_item_desc(string arg, string rep) {
+    if (rep != "") {
+        tmp["item_desc"][arg] = rep;
+        write("è¯·è¾“å…¥ä¸‹ä¸€æ™¯è§‚ item_desc çš„åç§°, æƒ³ç»“æŸæ™¯è§‚, è¯·ç›´æ¥æŒ‰ enter : ");
+        input_to("get_item_desc_name");
+        return 1;
+    }
+
+    write("è¯·è®¾å®šå‡ºå£ exits çš„è¿ç»“æ–¹å‘, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter : ");
+    input_to("get_exits");
+    return 1;
+}
+
+int get_exits(string rep) {
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") {
+        if (tmp["exits"][""]) map_delete(tmp["exits"], "");
+        write("è¯·è®¾å®šç‰©ä»¶ objects çš„æ¡£å, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter :\n");
+        input_to("get_objects");
+        return 1;
+    } else {
+        write("è¯·è¾“å…¥ " + rep + " çš„è¿ç»“æˆ¿é—´æ¡£å, å¯ä»¥é‡‡ç”¨ç›¸å¯¹è·¯å¾„æ³• : ");
+        tmp["exits"][rep] = "";
+        input_to("get_exit", rep);
+    }
+    return 1;
+}
+
+int get_exit(string rep, string arg) {
+    if (rep != "") {
+        tmp["exits"][arg] = resolve_path(this_player()->query("cwd"), rep);
+        write("è¯·è®¾å®šå‡ºå£ exits çš„æ–¹å‘, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter : ");
+        input_to("get_exits");
+        return 1;
+    }
+
+    write("è¯·è®¾å®šç‰©ä»¶ objects çš„æ¡£å, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter : ");
+    input_to("get_objects");
+    return 1;
+}
+
+int get_objects(string rep) {
+    object ob;
+
+    if (rep == ".") {
+        write("ä½ æ”¾å¼ƒæœ¬æ¬¡ç¼–è¾‘ã€‚\n");
+        return 1;
+    }
+    else if (rep == "") {
+        save_file();
+        return 1;
+    }
+
+    rep = resolve_path(this_player()->query("cwd"), rep);
+    ob = new(rep);
+    if (!ob) {
+        write("ç³»ç»Ÿå‘Šè¯‰ä½ : æ²¡é‚£ä¸ªç‰©ä»¶: " + rep + "ã€‚\n");
+        write("è¯·è®¾å®šç‰©ä»¶ objects çš„æ¡£å, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter : ");
+        input_to("get_objects");
+        return 1;
+    }
+
+    destruct(ob);
+
+    write("è¯·è¾“å…¥ " + rep + " çš„ç‰©ä»¶ä¸ªæ•° : ");
+    tmp["objects"][rep] = 1;
+    input_to("get_object", rep);
+    return 1;
+}
+
+int get_object(string rep, string arg) {
+    int n;
+
+    if (rep != "") {
+        if (sscanf(rep, "%d", n) != 1) {
+            write("ä½ è¾“çš„å€¼ä¸åˆæ³•, è¯·é‡æ–°è¾“å…¥ " + arg + " çš„ç‰©ä»¶ä¸ªæ•° : ");
+            input_to("get_object", arg);
+            return 1;
+        } else {
+            tmp["objects"][arg] = n;
+            write("è¯·è®¾å®šç‰©ä»¶ objects çš„æ¡£å, æƒ³ç»“æŸè®¾å®š, è¯·ç›´æ¥æŒ‰ enter : ");
+            input_to("get_objects");
+            return 1;
+        }
+    }
+
+    tmp["objects"][arg] = 1;
+    save_file();
+    return 1;
+}
+
+int save_file() {
+    string room_code, *name, file;
+    int i, n;
+
+    // room_code æ˜¯æˆ¿é—´çš„ç¨‹å¼ç , åº•ä¸‹è¿™ä¸€æ®µæ˜¯æ‰€æœ‰æˆ¿é—´çš„å…±é€šç‚¹
+    room_code = "// Room: " + tmp["file_name"] + @ROOM_CODE
+
+    inherit ROOM;
+
+    void create() {
+        ROOM_CODE;
+        // ä¸€ç›´åˆ°è¿™è¾¹ç»“æŸ
+
+        room_code =
+                sprintf("%s  set (\"short\", \"%s\");\n"
+                        "  set (\"long\", @LONG\n%sLONG);\n\n",
+                        room_code, tmp["short"], tmp["long"]);
+
+        name = keys(tmp);
+        for (i = 0; i < sizeof(name); i++) {
+            if (member_array(name[i], special_props) != -1) continue;
+            if ((intp(tmp[name[i]]) && tmp[name[i]] > 0) ||
+                (stringp(tmp[name[i]]) && tmp[name[i]] != "") ||
+                (mapp(tmp[name[i]]) && tmp[name[i]] ==([])) ||
+            sizeof(tmp[name[i]]) > 0)
+            room_code += sprintf("  set(\"%s\", %O);\n",
+                                 name[i], tmp[name[i]]);
+        }
+
+        room_code += "  setup();\n  replace_program(ROOM);\n}\n";
+
+        // Replace current directory with __DIR__ macro to make relocatable code.
+        file = tmp["file_name"];
+        i = strlen(file) - 1;
+        if (!file[i] == 'c' || !file[i - 1] == '.') file += ".c";
+        while ((i > 0) && (file[i] != '/')) i--;
+        if (i > 0) {
+            write("ç›®å‰ç›®å½•ï¼š" + file[0..i] + " ä»¥ __DIR__ å–ä»£ã€‚\n");
+            room_code = replace_string(room_code, "\"" + file[0..i], "__DIR__\"");
+        }
+
+        if (file_size(file) != -1) {
+            write("æ¡£æ¡ˆ " + file + " å·²å­˜åœ¨ï¼Œè¦åˆ é™¤æ—§æ¡£å—ï¼Ÿ[y/n]");
+            input_to("save_room_file", file, room_code);
+            return 1;
+        }
+
+        return save_room_file("y", file, room_code);
+    }
+
+    int do_saveroom(string arg) {
         object env;
         string str, *name, file, pre, suc;
         mapping prop;
@@ -616,74 +640,75 @@ int do_saveroom(string arg)
         env = environment(this_player());
         file = file_name(env) + ".c";
 
-        if (file_size(file) <= 0) return
-          notify_fail ("Ã»ÓĞÕâ·¿¼äµÄµµ°¸: "+file+"\n");
+        if (file_size(file) <= 0)
+            return
+                    notify_fail("æ²¡æœ‰è¿™æˆ¿é—´çš„æ¡£æ¡ˆ: " + file + "\n");
 
-        name = explode (read_file (file), "\n");
+        name = explode(read_file(file), "\n");
         pre = "";
-        for (i=0; i<sizeof (name); i++)
-          if (strsrch (name[i], "void create") != 0)
-            pre += name[i] + "\n";
-          else break;
+        for (i = 0; i < sizeof(name); i++)
+            if (strsrch(name[i], "void create") != 0)
+                pre += name[i] + "\n";
+            else break;
         pre += "void create ()\n{\n";
 
         i += 2;
         while (name && name[i][0..0] != "}") i++;
-        suc = ""; i++;
-        while (i<sizeof(name)) suc += name[i++]+"\n";
+        suc = "";
+        i++;
+        while (i < sizeof(name)) suc += name[i++] + "\n";
 
         prop = env->query_entire_dbase();
 
         str = pre;
-        str = sprintf ("%s  set (\"short\", \"%s\");\n"
-               "  set (\"long\", @LONG\n%sLONG);\n\n",
-             str, prop["short"], prop["long"]);
+        str = sprintf("%s  set (\"short\", \"%s\");\n"
+                      "  set (\"long\", @LONG\n%sLONG);\n\n",
+                      str, prop["short"], prop["long"]);
 
         name = keys(prop);
-        for(i=0; i<sizeof(name); i++) {
-          if( member_array(name[i], special_props)!=-1 ) continue;
-          if ( (intp(prop[name[i]]) && prop[name[i]]>0) ||
-                (stringp(prop[name[i]]) && prop[name[i]] != "" ) ||
-                (mapp(prop[name[i]]) && prop[name[i]] == ([])) ||
-                sizeof (prop[name[i]]) > 0)
-                    str += sprintf("  set(\"%s\", %O);\n",
-                                   name[i], prop[name[i]] );
+        for (i = 0; i < sizeof(name); i++) {
+            if (member_array(name[i], special_props) != -1) continue;
+            if ((intp(prop[name[i]]) && prop[name[i]] > 0) ||
+                (stringp(prop[name[i]]) && prop[name[i]] != "") ||
+                (mapp(prop[name[i]]) && prop[name[i]] ==([])) ||
+            sizeof(prop[name[i]]) > 0)
+            str += sprintf("  set(\"%s\", %O);\n",
+                           name[i], prop[name[i]]);
         }
-        if (sizeof (suc) < 5)
-         str += "\n  setup();\n  replace_program(ROOM);\n}\n";
+        if (sizeof(suc) < 5)
+            str += "\n  setup();\n  replace_program(ROOM);\n}\n";
         else
-         str += "\n  setup();\n  replace_program(ROOM);\n}\n"+suc;
+            str += "\n  setup();\n  replace_program(ROOM);\n}\n" + suc;
 
 
         // Replace current directory with __DIR__ macro to make relocatable code
         file = file_name(env);
-        i = strlen(file)-1;
-        while( (i > 0) && (file[i]!='/')) i--;
-        if( i>0 ) {
-          write("Ä¿Ç°Ä¿Â¼£º" + file[0..i] + " ÒÔ __DIR__ È¡´ú¡£\n");
-          str = replace_string(str, "\"" + file[0..i], "__DIR__\"");
+        i = strlen(file) - 1;
+        while ((i > 0) && (file[i] != '/')) i--;
+        if (i > 0) {
+            write("ç›®å‰ç›®å½•ï¼š" + file[0..i] + " ä»¥ __DIR__ å–ä»£ã€‚\n");
+            str = replace_string(str, "\"" + file[0..i], "__DIR__\"");
         }
 
-        if( file_size(file)!=-1 ) {
-                write("µµ°¸ " + file + " ÒÑ´æÔÚ£¬ÒªÉ¾³ı¾ÉµµÂğ£¿[y/n]");
-                input_to("save_room_file", file, str);
-                return 1;
+        if (file_size(file) != -1) {
+            write("æ¡£æ¡ˆ " + file + " å·²å­˜åœ¨ï¼Œè¦åˆ é™¤æ—§æ¡£å—ï¼Ÿ[y/n]");
+            input_to("save_room_file", file, str);
+            return 1;
         }
 
         return save_room_file("y", file, str);
-}
+    }
 
-int init_var ()
-{
-  tmp["no_fight"]               =       0;
-  tmp["no_magic"]               =       0;
-  tmp["no_clean_up"]            =       0;
-  tmp["valid_startroom"]        =       0;
-  tmp["file_name"]              =       "";
-  tmp["short"]                  =       "";
-  tmp["long"]                   =       "";
-  tmp["outdoors"]               =       "";
-  tmp["item_desc"]              =       ([]);
-  tmp["exits"]                  =       ([]);
-  tmp["objects"]                =       ([]);
-}
+    int init_var() {
+        tmp["no_fight"] = 0;
+        tmp["no_magic"] = 0;
+        tmp["no_clean_up"] = 0;
+        tmp["valid_startroom"] = 0;
+        tmp["file_name"] = "";
+        tmp["short"] = "";
+        tmp["long"] = "";
+        tmp["outdoors"] = "";
+        tmp["item_desc"] =       ([]);
+        tmp["exits"] =       ([]);
+        tmp["objects"] =       ([]);
+    }

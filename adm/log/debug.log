@@ -1,6 +1,7 @@
 Can't find "mudos", ignoring old binaries.
 Try invoking the driver using the full pathname.
-System Error: init_addr_server: connect: ÓÉÓÚÄ¿±ê»úÆ÷»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£
+System Error: init_addr_server: connect: ç”±äºç›®æ ‡æœºå™¨ç§¯ææ‹’ç»ï¼Œæ— æ³•è¿æ¥ã€‚
+
 
 
 Loading preloaded files ...
@@ -12,34 +13,34 @@ Accepting connections on port 2002.
 Accepting connections on port 2003.
 Accepting connections on port 2004.
 
-Ö´ĞĞÊ±¶Î´íÎó£º*Bad argument 2 to present()
+æ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š*Bad argument 2 to present()
 Expected: object Got: 0.
 
-³ÌÊ½£ºd/guiyun/matou.c µÚ 205 ĞĞ
-ºô½ĞÀ´×Ô£ºd/guiyun/matou.c µÄ rjinbing() µÚ 205 ĞĞ£¬Îï¼ş£º d/guiyun/matou ("0(0)")
+ç¨‹å¼ï¼šd/guiyun/matou.c ç¬¬ 205 è¡Œ
+å‘¼å«æ¥è‡ªï¼šd/guiyun/matou.c çš„ rjinbing() ç¬¬ 205 è¡Œï¼Œç‰©ä»¶ï¼š d/guiyun/matou ("0(0)")
 
-Ö´ĞĞÊ±¶Î´íÎó£º*Bad argument 2 to present()
+æ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š*Bad argument 2 to present()
 Expected: object Got: 0.
 
-³ÌÊ½£ºd/guiyun/matou.c µÚ 205 ĞĞ
-ºô½ĞÀ´×Ô£ºd/guiyun/matou.c µÄ rjinbing() µÚ 205 ĞĞ£¬Îï¼ş£º d/guiyun/matou ("0(0)")
+ç¨‹å¼ï¼šd/guiyun/matou.c ç¬¬ 205 è¡Œ
+å‘¼å«æ¥è‡ªï¼šd/guiyun/matou.c çš„ rjinbing() ç¬¬ 205 è¡Œï¼Œç‰©ä»¶ï¼š d/guiyun/matou ("0(0)")
 
-Ö´ĞĞÊ±¶Î´íÎó£º*Bad argument 2 to present()
+æ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š*Bad argument 2 to present()
 Expected: object Got: 0.
 
-³ÌÊ½£ºd/guiyun/matou.c µÚ 204 ĞĞ
-ºô½ĞÀ´×Ô£ºd/guiyun/matou.c µÄ rjinbing() µÚ 204 ĞĞ£¬Îï¼ş£º d/guiyun/matou ("0(0)")
+ç¨‹å¼ï¼šd/guiyun/matou.c ç¬¬ 204 è¡Œ
+å‘¼å«æ¥è‡ªï¼šd/guiyun/matou.c çš„ rjinbing() ç¬¬ 204 è¡Œï¼Œç‰©ä»¶ï¼š d/guiyun/matou ("0(0)")
 
-Ö´ĞĞÊ±¶Î´íÎó£º*Bad argument 2 to present()
+æ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š*Bad argument 2 to present()
 Expected: object Got: 0.
 
-³ÌÊ½£ºd/guiyun/matou.c µÚ 204 ĞĞ
-ºô½ĞÀ´×Ô£ºd/guiyun/matou.c µÄ rjinbing() µÚ 204 ĞĞ£¬Îï¼ş£º d/guiyun/matou ("0(0)")
-´íÎóÑ¶Ï¢±»À¹½Ø: 
-Ö´ĞĞÊ±¶Î´íÎó£º*Error in loading object '/quest/menpaijob/taohua/xiake'
+ç¨‹å¼ï¼šd/guiyun/matou.c ç¬¬ 204 è¡Œ
+å‘¼å«æ¥è‡ªï¼šd/guiyun/matou.c çš„ rjinbing() ç¬¬ 204 è¡Œï¼Œç‰©ä»¶ï¼š d/guiyun/matou ("0(0)")
+é”™è¯¯è®¯æ¯è¢«æ‹¦æˆª: 
+æ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š*Error in loading object '/quest/menpaijob/taohua/xiake'
 
-³ÌÊ½£ºcmds/arch/updatedir.c µÚ 75 ĞĞ
-ºô½ĞÀ´×Ô£ºfeature/command.c µÄ command_hook() µÚ 67 ĞĞ£¬Îï¼ş£º clone/user/user#1195 ("Ä³ÈË(hxsd)")
-ºô½ĞÀ´×Ô£ºcmds/arch/updatedir.c µÄ main() µÚ 40 ĞĞ£¬Îï¼ş£º cmds/arch/updatedir ("0(0)")
-ºô½ĞÀ´×Ô£ºcmds/arch/updatedir.c µÄ updatefile() µÚ 75 ĞĞ£¬Îï¼ş£º cmds/arch/updatedir ("0(0)")
-ºô½ĞÀ´×Ô£ºcmds/arch/updatedir.c µÄ CATCH() µÚ 75 ĞĞ£¬Îï¼ş£º cmds/arch/updatedir ("0(0)")
+ç¨‹å¼ï¼šcmds/arch/updatedir.c ç¬¬ 75 è¡Œ
+å‘¼å«æ¥è‡ªï¼šfeature/command.c çš„ command_hook() ç¬¬ 67 è¡Œï¼Œç‰©ä»¶ï¼š clone/user/user#1195 ("æŸäºº(hxsd)")
+å‘¼å«æ¥è‡ªï¼šcmds/arch/updatedir.c çš„ main() ç¬¬ 40 è¡Œï¼Œç‰©ä»¶ï¼š cmds/arch/updatedir ("0(0)")
+å‘¼å«æ¥è‡ªï¼šcmds/arch/updatedir.c çš„ updatefile() ç¬¬ 75 è¡Œï¼Œç‰©ä»¶ï¼š cmds/arch/updatedir ("0(0)")
+å‘¼å«æ¥è‡ªï¼šcmds/arch/updatedir.c çš„ CATCH() ç¬¬ 75 è¡Œï¼Œç‰©ä»¶ï¼š cmds/arch/updatedir ("0(0)")
