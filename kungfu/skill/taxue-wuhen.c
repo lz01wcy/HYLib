@@ -1,108 +1,110 @@
-// taxue-wuhen.c Ì¤Ñ©ÎŞºÛ 
+// taxue-wuhen.c è¸é›ªæ— ç—• 
 
 #include <combat.h>
 #include <ansi.h>
+
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$nÒ»Ê½¡¸ÑãÂäÆ½É³¡¹£¬±äÕĞÆæËÙ£¬ÓÒ×ãÏòÇ°Ìß³ö£¬Éí×ÓÒÑÈ»ÌÚÆğ£¬ÇáÇáÇÉÇÉµØÂäÔÚÒ»ÅÔ¡£\n",
-        "$nÒ»Ê½¡¸ÓñÁú·ÉÆğ¡¹£¬×İÉí¸ßÔ¾£¬°ë¿ÕÖĞÒ»ÕÛÒ»×ª£¬ÒÑÆ®ÉíÔÚÊıÕÉÖ®Íâ¡£\n",
-        "$nÒ»Ê½¡¸ÏÄÈÕÏûÈÚ¡¹£¬Á½×ã×ã¸ú²»¶¯£¬×ã¼â×óÄ¥£¬Éí×ÓËæÖ®ÓÒ×ª£¬Ğ¶¿ªÁË$NÕâÒ»ÕĞ¡£\n",
-        "$nÒ»Ê½¡¸¿İËÉµ¹¹Ò¡¹£¬Ö»¼û$nÉí×ÓºóÑö£¬Ë«ÕÆÍùµØÏÂÒ»³Å£¬Éí×Ó½èÊÆµ¹Éä¶ø³ö£¬$N±ãÒÑ´ò$n²»×Å¡£\n",
-        "$nÒ»Ê½¡¸ÇçÑ©·ÉÌ²¡¹£¬×İ¸ß·üµÍ£¬¶«±¼Î÷ÉÁ£¬ÉíĞÎÆ®ºö²»¶¨£¬$NÊÖÎŞ×ã´ë£¬Ö»µÃ»ØÕĞ×ÔÊØ¡£\n",
-        "$nÒ»Ê½¡¸±ùË¿´øÓê¡¹£¬Í»È»·´ÊÖÒ»ÕĞ£¬¾¹È»ÊÇÁ½°Ü¾ãÉËµÄ´ò·¨£¬³Ã$NÊÖÃ¦½ÅÂÒ°²È«ÍÑÉí¡£\n",
-        "$nÒ»Ê½¡¸º®½­µöÑ©¡¹£¬²»ÕĞ²»¼Ü£¬Ö»Î¢Î¢Ò»²àÉí£¬$NÓÌÈç±©·çÖèÓê°ãµÄ½ø¹¥±ã¼´Âä¿Õ¡£\n",
-        "$nÒ»Ê½¡¸ÓãÁúÇ±Ô¾¡¹£¬¶¸È»¼äÉíĞÎ°ÎÆğ£¬Ö±³åÔÆÏö£¬Ö±ÈçÓ¥öÀ£¬¼¸¸öÅÌĞı£¬Æ®Æ®µ´µ´ÂäÔÚÊıÕÉÖ®Íâ¡£\n",
-        "$nÒ»Ê½¡¸Ì¤Ñ©ÎŞºÛ¡¹£¬ÉíĞÎ¼±ËÙĞı×ª£¬¼¸ÏÂ¾Í»®µ½ÊıÕÉÖ®Íâ¡£\n",
+    "$nä¸€å¼ã€Œé›è½å¹³æ²™ã€ï¼Œå˜æ‹›å¥‡é€Ÿï¼Œå³è¶³å‘å‰è¸¢å‡ºï¼Œèº«å­å·²ç„¶è…¾èµ·ï¼Œè½»è½»å·§å·§åœ°è½åœ¨ä¸€æ—ã€‚\n",
+            "$nä¸€å¼ã€Œç‰é¾™é£èµ·ã€ï¼Œçºµèº«é«˜è·ƒï¼ŒåŠç©ºä¸­ä¸€æŠ˜ä¸€è½¬ï¼Œå·²é£˜èº«åœ¨æ•°ä¸ˆä¹‹å¤–ã€‚\n",
+            "$nä¸€å¼ã€Œå¤æ—¥æ¶ˆèã€ï¼Œä¸¤è¶³è¶³è·Ÿä¸åŠ¨ï¼Œè¶³å°–å·¦ç£¨ï¼Œèº«å­éšä¹‹å³è½¬ï¼Œå¸å¼€äº†$Nè¿™ä¸€æ‹›ã€‚\n",
+            "$nä¸€å¼ã€Œæ¯æ¾å€’æŒ‚ã€ï¼Œåªè§$nèº«å­åä»°ï¼ŒåŒæŒå¾€åœ°ä¸‹ä¸€æ’‘ï¼Œèº«å­å€ŸåŠ¿å€’å°„è€Œå‡ºï¼Œ$Nä¾¿å·²æ‰“$nä¸ç€ã€‚\n",
+            "$nä¸€å¼ã€Œæ™´é›ªé£æ»©ã€ï¼Œçºµé«˜ä¼ä½ï¼Œä¸œå¥”è¥¿é—ªï¼Œèº«å½¢é£˜å¿½ä¸å®šï¼Œ$Næ‰‹æ— è¶³æªï¼Œåªå¾—å›æ‹›è‡ªå®ˆã€‚\n",
+            "$nä¸€å¼ã€Œå†°ä¸å¸¦é›¨ã€ï¼Œçªç„¶åæ‰‹ä¸€æ‹›ï¼Œç«Ÿç„¶æ˜¯ä¸¤è´¥ä¿±ä¼¤çš„æ‰“æ³•ï¼Œè¶$Næ‰‹å¿™è„šä¹±å®‰å…¨è„±èº«ã€‚\n",
+            "$nä¸€å¼ã€Œå¯’æ±Ÿé’“é›ªã€ï¼Œä¸æ‹›ä¸æ¶ï¼Œåªå¾®å¾®ä¸€ä¾§èº«ï¼Œ$NçŠ¹å¦‚æš´é£éª¤é›¨èˆ¬çš„è¿›æ”»ä¾¿å³è½ç©ºã€‚\n",
+            "$nä¸€å¼ã€Œé±¼é¾™æ½œè·ƒã€ï¼Œé™¡ç„¶é—´èº«å½¢æ‹”èµ·ï¼Œç›´å†²äº‘éœ„ï¼Œç›´å¦‚é¹°éš¼ï¼Œå‡ ä¸ªç›˜æ—‹ï¼Œé£˜é£˜è¡è¡è½åœ¨æ•°ä¸ˆä¹‹å¤–ã€‚\n",
+            "$nä¸€å¼ã€Œè¸é›ªæ— ç—•ã€ï¼Œèº«å½¢æ€¥é€Ÿæ—‹è½¬ï¼Œå‡ ä¸‹å°±åˆ’åˆ°æ•°ä¸ˆä¹‹å¤–ã€‚\n",
 });
 
 int valid_enable(string usage) { return (usage == "dodge") || (usage == "move"); }
 
 int valid_learn(object me) { return 1; }
 
-string query_dodge_msg()
-{
-        return dodge_msg[random(sizeof(dodge_msg))];
+string query_dodge_msg() {
+    return dodge_msg[random(sizeof(dodge_msg))];
 }
 
-int practice_skill(object me)
-{
-        if( (int)me->query("qi") < 60 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·Ì¤Ñ©ÎŞºÛ¡£\n");
+int practice_skill(object me) {
+    if ((int) me->query("qi") < 60)
+        return notify_fail("ä½ çš„ä½“åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒè¸é›ªæ— ç—•ã€‚\n");
 
-        if ((int)me->query("neili") < 60)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«²îÁË£¬²»ÄÜÁ·Ï°Ì¤Ñ©ÎŞºÛ¡£\n");
+    if ((int) me->query("neili") < 60)
+        return notify_fail("ä½ çš„å†…åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒä¹ è¸é›ªæ— ç—•ã€‚\n");
 
-        me->receive_damage("qi", 50);
-        me->add("neili", -50);
-        return 1;
+    me->receive_damage("qi", 50);
+    me->add("neili", -50);
+    return 1;
 }
 
-string perform_action_file(string action)
-{       
-        return __DIR__"taxue-wuhen/" + action;
+string perform_action_file(string action) {
+    return __DIR__
+    "taxue-wuhen/" + action;
 }
 
-mixed valid_damage(object me, object victim, int damage, object weapon)
-{
-        int ap, dp, level;
-        object weapon1 = me->query_temp("weapon");
-        mapping prepare;
-        string result, attack_skill;
+mixed valid_damage(object me, object victim, int damage, object weapon) {
+    int ap, dp, level;
+    object weapon1 = me->query_temp("weapon");
+    mapping prepare;
+    string result, attack_skill;
 
-        if ( victim->query_skill("taxue-wuhen", 1) < 100
-         || victim->query_skill_mapped("force") != "xuantian-wuji" 
-         || victim->query_skill("xuantian-wuji", 1) < 100 
-         || victim->query_skill("mantian-huayu", 1) < 100 
-        || !living(victim) )
-                return;
+    if (victim->query_skill("taxue-wuhen", 1) < 100
+        || victim->query_skill_mapped("force") != "xuantian-wuji"
+        || victim->query_skill("xuantian-wuji", 1) < 100
+        || victim->query_skill("mantian-huayu", 1) < 100
+        || !living(victim))
+        return;
 
-        dp = COMBAT_D->skill_power(victim, "dodge", SKILL_USAGE_DEFENSE);
-          if( victim->query_skill_mapped("force") == "xuantian-wuji" )
-                dp += COMBAT_D->skill_power(victim, "force", SKILL_USAGE_DEFENSE);
+    dp = COMBAT_D->skill_power(victim, "dodge", SKILL_USAGE_DEFENSE);
+    if (victim->query_skill_mapped("force") == "xuantian-wuji")
+        dp += COMBAT_D->skill_power(victim, "force", SKILL_USAGE_DEFENSE);
 
-        ap = COMBAT_D->skill_power(me, "dodge", SKILL_USAGE_DEFENSE);
-        prepare = me->query_skill_prepare();
-        if( !prepare ) prepare = ([]);
+    ap = COMBAT_D->skill_power(me, "dodge", SKILL_USAGE_DEFENSE);
+    prepare = me->query_skill_prepare();
+    if (!prepare) prepare = ([]);
 
-        if( objectp(weapon1) ) attack_skill = weapon1->query("skill_type");
-        else switch( sizeof(prepare) )
-        {
-                case 0: attack_skill = "unarmed"; break;
-                case 1: attack_skill = (keys(prepare))[0]; break;
-                case 2: attack_skill = (keys(prepare))[me->query_temp("action_flag")]; break;
+    if (objectp(weapon1)) attack_skill = weapon1->query("skill_type");
+    else
+        switch (sizeof(prepare)) {
+            case 0:
+                attack_skill = "unarmed";
+                break;
+            case 1:
+                attack_skill = (keys(prepare))[0];
+                break;
+            case 2:
+                attack_skill = (keys(prepare))[me->query_temp("action_flag")];
+                break;
         }
 
-        ap += COMBAT_D->skill_power(me, attack_skill, SKILL_USAGE_ATTACK);
+    ap += COMBAT_D->skill_power(me, attack_skill, SKILL_USAGE_ATTACK);
 
-        ap /= 100;
-        dp /= 100;
+    ap /= 100;
+    dp /= 100;
 
-        if ( random(ap+dp) > ap ) {
-                result =  "$nÉíĞÎÒ»»ÎÉÁ¹ıÒ»±ß£¬ÊÖ×öÖÀ°µÆ÷×´£¬$NĞÄÍ·Ò»¾ª£¬Ò»Ê±ÓĞµãÊÖÃ¦½ÅÂÒ£¡\n";
-                result += "$n¼ûÓĞ»ú¿É³Ã£¬Á¢¿Ì¶Ô$N·¢¶¯¹¥ÊÆ£¡\n" ;
+    if (random(ap + dp) > ap) {
+        result = "$nèº«å½¢ä¸€æ™ƒé—ªè¿‡ä¸€è¾¹ï¼Œæ‰‹åšæ·æš—å™¨çŠ¶ï¼Œ$Nå¿ƒå¤´ä¸€æƒŠï¼Œä¸€æ—¶æœ‰ç‚¹æ‰‹å¿™è„šä¹±ï¼\n";
+        result += "$nè§æœ‰æœºå¯è¶ï¼Œç«‹åˆ»å¯¹$Nå‘åŠ¨æ”»åŠ¿ï¼\n";
 
-                return ([ "msg" : result, "damage" : -damage ]);
-        }
-         else if ( random(ap+dp) > ap ) {
-                result = HIW "Ö»¼û$n¾ÙÖØÈôÇá,ÒÔ¼«ÇÉÃîÉí·¨£¬ÉíÓ°ÂúÌì·ÉÎè£¬ÊÖ×öÖÀ°µÆ÷×´£¬$NĞÄÍ·Ò»¾ª£¬Ò»Ê±ÓĞµãÊÖÃ¦½ÅÂÒ£¡\n" NOR;
-                result += "$n×½½ôÊ±»ú£¬Á¢¿Ì¶Ô$N·¢¶¯¹¥ÊÆ£¡\n" ;
-                COMBAT_D->do_attack(victim, me, victim->query_temp("weapon"));
-                victim->add("jingli", random(-20));
+        return ([ "msg" : result, "damage" : -damage ]);
+    } else if (random(ap + dp) > ap) {
+        result = HIW
+        "åªè§$nä¸¾é‡è‹¥è½»,ä»¥æå·§å¦™èº«æ³•ï¼Œèº«å½±æ»¡å¤©é£èˆï¼Œæ‰‹åšæ·æš—å™¨çŠ¶ï¼Œ$Nå¿ƒå¤´ä¸€æƒŠï¼Œä¸€æ—¶æœ‰ç‚¹æ‰‹å¿™è„šä¹±ï¼\n"
+        NOR;
+        result += "$næ‰ç´§æ—¶æœºï¼Œç«‹åˆ»å¯¹$Nå‘åŠ¨æ”»åŠ¿ï¼\n";
+        COMBAT_D->do_attack(victim, me, victim->query_temp("weapon"));
+        victim->add("jingli", random(-20));
 
-                return ([ "msg" : result, "damage" : -damage ]);
-        }
-        else if ( random(ap+2*dp) > ap ) {
-                result = "$nÉíĞÎÒ»»ÎÉÁ¹ıÒ»±ß£¬ÒÑÈ»ÇáÒ×µØ±Ü¿ªÁË$NµÄ¹¥»÷¡£\n" ;
+        return ([ "msg" : result, "damage" : -damage ]);
+    } else if (random(ap + 2 * dp) > ap) {
+        result = "$nèº«å½¢ä¸€æ™ƒé—ªè¿‡ä¸€è¾¹ï¼Œå·²ç„¶è½»æ˜“åœ°é¿å¼€äº†$Nçš„æ”»å‡»ã€‚\n";
 
-                return ([ "msg" : result, "damage" : -damage ]);
-        }
-        else if ( random(ap+3*dp) > ap ) {
-                result = "$nÉíĞÎÒ»»ÎÉÁ¹ıÒ»±ß£¬$NÖ»¾õµÃÓÃÁ¦´¦Á¦µÀÈ«ÎŞ¡£\n";
-      
-                return ([ "msg" : result, "damage" : -damage ]);
-        }
-        else 
-                return;
+        return ([ "msg" : result, "damage" : -damage ]);
+    } else if (random(ap + 3 * dp) > ap) {
+        result = "$nèº«å½¢ä¸€æ™ƒé—ªè¿‡ä¸€è¾¹ï¼Œ$Nåªè§‰å¾—ç”¨åŠ›å¤„åŠ›é“å…¨æ— ã€‚\n";
+
+        return ([ "msg" : result, "damage" : -damage ]);
+    } else
+        return;
 }
 

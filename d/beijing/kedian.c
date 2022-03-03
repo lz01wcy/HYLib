@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�͵�");
+	set("short", "客店");
 	set("long", @LONG
-����һ�Ҽ�Ǯ�����Ŀ�ջ������ǳ���¡����˵ȫ�����ض�������
-�ķֵ꣬�������еĿ�ջ����һ�������С�������������¶�棬˭Ҳ��
-֪��������������һ���ˡ�
+这是一家价钱低廉的客栈，生意非常兴隆。据说全国各地都有这样
+的分店，而且所有的客栈都归一个人所有。不过他从来不露面，谁也不
+知道他究竟是怎样一个人。
 LONG );
 	set("no_fight", 1);
 	set("valid_startroom", 1);

@@ -6,10 +6,10 @@ string look_gaoshi();
 
 void create()
 {
-	set("short", "°²¶¨ÃÅ");
+	set("short", "å®‰å®šé—¨");
 	set("long", @LONG
-ÕâÀïÊÇÓÀ¶¨ÃÅ£¬³ÇÃÅÕýÉÏ·½¿Ì×Å¡°°²¶¨ÃÅ¡±Èý¸ö´ó×Ö£¬³ÇÇ½ÉÏÌù×Å
-¼¸ÕÅ¹Ù¸®¸æÊ¾ (gaoshi)¡£¼¸¸ö¹Ù±øÊØÔÚÁ½ÅÔ¡£
+è¿™é‡Œæ˜¯æ°¸å®šé—¨ï¼ŒåŸŽé—¨æ­£ä¸Šæ–¹åˆ»ç€â€œå®‰å®šé—¨â€ä¸‰ä¸ªå¤§å­—ï¼ŒåŸŽå¢™ä¸Šè´´ç€
+å‡ å¼ å®˜åºœå‘Šç¤º (gaoshi)ã€‚å‡ ä¸ªå®˜å…µå®ˆåœ¨ä¸¤æ—ã€‚
 LONG );
         set("outdoors", "beijing");
 	set("item_desc", ([
@@ -31,5 +31,5 @@ LONG );
 
 string look_gaoshi()
 {
-	return "¼­ÄÃÌìµØ»áÒ»ÖÚ·´Ôô! \n¾Ù±¨Ò»ÈË£¬ÉÍ½ðÊ®Á½;\n×½ÄÃÒ»ÈË£¬ÉÍ½ð°ÙÁ½¡£\nÖªÇé²»±¨Õß£¬Á¢Õ¶!\n÷¡°Ý·¢\n";
+	return "è¾‘æ‹¿å¤©åœ°ä¼šä¸€ä¼—åè´¼! \nä¸¾æŠ¥ä¸€äººï¼Œèµé‡‘åä¸¤;\næ‰æ‹¿ä¸€äººï¼Œèµé‡‘ç™¾ä¸¤ã€‚\nçŸ¥æƒ…ä¸æŠ¥è€…ï¼Œç«‹æ–©!\né³Œæ‹œå‘\n";
 }

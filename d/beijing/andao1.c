@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÌìµØ»á°µµÀ");
+	set("short", "å¤©åœ°ä¼šæš—é“");
 	set("long", @LONG
-ÕâÊÇÒ»ÌõºÚÆáÆáµÄµØµÀ£¬ÇúÇúÕÛÕÛµØÍ¨ÏòÇ°·½¡£Á½±ß¶¼ÊÇÍÁÇ½£¬Òş
-Ô¼¿ÉÒÔÌıµ½ÉÏÃæ½Åµ×ÂäµØµÄÉùÒô¡£¿ÕÆøÖĞÃÖÂş×Å³±ÊªµÄÄàÍÁÆøÏ¢£¬ÁîÈË
-¸Ğµ½Ê®·ÖÁ¹Ë¬¡£Ò»¸öµÀÈËÕ¾ÔÚÕâÀï£¬ÊØÎÀ×ÅÉÏÃæµÄÁ½¸ö³ö¿Ú¡£
+è¿™æ˜¯ä¸€æ¡é»‘æ¼†æ¼†çš„åœ°é“ï¼Œæ›²æ›²æŠ˜æŠ˜åœ°é€šå‘å‰æ–¹ã€‚ä¸¤è¾¹éƒ½æ˜¯åœŸå¢™ï¼Œéš
+çº¦å¯ä»¥å¬åˆ°ä¸Šé¢è„šåº•è½åœ°çš„å£°éŸ³ã€‚ç©ºæ°”ä¸­å¼¥æ¼«ç€æ½®æ¹¿çš„æ³¥åœŸæ°”æ¯ï¼Œä»¤äºº
+æ„Ÿåˆ°ååˆ†å‡‰çˆ½ã€‚ä¸€ä¸ªé“äººç«™åœ¨è¿™é‡Œï¼Œå®ˆå«ç€ä¸Šé¢çš„ä¸¤ä¸ªå‡ºå£ã€‚
 LONG );
 	set("exits", ([
 		"north"  : __DIR__"andao2",
@@ -31,10 +31,10 @@ int valid_leave(object me, string dir)
 	if (objectp(present("xuan", environment(me))) && 
 		(dir == "east"||dir == "west") &&
 		living(present("xuan", environment(me))))
-	message("vision","ĞşÕæµÀÈË°ÑÃÅ¹ØÉÏÁË¡£\n","/d/beijing/andao1");
+	message("vision","ç„çœŸé“äººæŠŠé—¨å…³ä¸Šäº†ã€‚\n","/d/beijing/andao1");
 	if(dir=="east")
-		message("vision","Ò»Õ£ÑÛ£¬ÎİÀïºöÈ»¶àÁËÒ»¸öÈË¡£\n","/d/beijing/neishi");
+		message("vision","ä¸€çœ¨çœ¼ï¼Œå±‹é‡Œå¿½ç„¶å¤šäº†ä¸€ä¸ªäººã€‚\n","/d/beijing/neishi");
 	if(dir=="west")
-		message("vision","Ò»Õ£ÑÛ£¬ÎİÀïºöÈ»¶àÁËÒ»¸öÈË¡£\n","/d/beijing/guancai2");
+		message("vision","ä¸€çœ¨çœ¼ï¼Œå±‹é‡Œå¿½ç„¶å¤šäº†ä¸€ä¸ªäººã€‚\n","/d/beijing/guancai2");
 	return ::valid_leave(me, dir);
 }

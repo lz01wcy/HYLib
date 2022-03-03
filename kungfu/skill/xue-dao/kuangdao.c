@@ -1,43 +1,55 @@
-//kuang.c -Ñªµ¶¡¸Ñª¼À¡¹
+//kuang.c -è¡€åˆ€ã€Œè¡€ç¥­ã€
 // Modified by Venus Oct.1997
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
-int perform(object me, object target)
-{
+
+int perform(object me, object target) {
     int extra;
-	object weapon;
+    object weapon;
     string msg;
-	extra=me->query_skill("xue-dao",1)/ 6;
-    if( !target ) target = offensive_target(me);
-    if( !target||!target->is_character()||!me->is_fighting(target) )
-    return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡¸Ñª¼À¡¹¡£\n");
-    if( (int)me->query_skill("xue-dao",1) < 120)
-    return notify_fail("ÄãÄ¿Ç°¹¦Á¦»¹Ê¹²»³ö¡¸Ñª¼À¡¹¡£\n");
-    	if (!objectp(weapon = me->query_temp("weapon"))
-		|| (string)weapon->query("skill_type") != "blade")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
-	if( (int)me->query("neili") < 500 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    extra = me->query_skill("xue-dao", 1) / 6;
+    if (!target) target = offensive_target(me);
+    if (!target || !target->is_character() || !me->is_fighting(target))
+        return notify_fail("ä½ åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€Œè¡€ç¥­ã€ã€‚\n");
+    if ((int) me->query_skill("xue-dao", 1) < 120)
+        return notify_fail("ä½ ç›®å‰åŠŸåŠ›è¿˜ä½¿ä¸å‡ºã€Œè¡€ç¥­ã€ã€‚\n");
+    if (!objectp(weapon = me->query_temp("weapon"))
+        || (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
+    if ((int) me->query("neili") < 500)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     me->add("neili", -300);
-    me->add_temp("apply/attack", extra);	
+    me->add_temp("apply/attack", extra);
     me->add_temp("apply/damage", extra);
-    msg = HIC"$NÊÖÖĞµÄµ¶£¬Ñª¹âÒ»ÉÁ£¡ÄãÖ»¾õÑÛÇ°Ò»ºì"NOR;
-        message_vision(msg, me, target);                
-	msg = RED  "<<<>>>Ñª¹âÒ»ÏÖ£¡" NOR;
-	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED  "<<<<<>>>>>µ¶É½Ñªº££¡£¡" NOR;
-        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED  "<<<<<<>>>>>>Ñªº£Éî³ğ£¡£¡£¡" NOR;
-        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED  "<<<<<<<>>>>>>>ÑªÁ÷³ÉºÓ£¡£¡£¡£¡" NOR;
-        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED  "<<<<<<<<>>>>>>>>ÒÔÑª¼Àµ¶£¡!!!!" NOR;
-        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    me->add_temp("apply/attack", -extra);	
+    msg = HIC
+    "$Næ‰‹ä¸­çš„åˆ€ï¼Œè¡€å…‰ä¸€é—ªï¼ä½ åªè§‰çœ¼å‰ä¸€çº¢"
+    NOR;
+    message_vision(msg, me, target);
+    msg = RED
+    "<<<>>>è¡€å…‰ä¸€ç°ï¼"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = RED
+    "<<<<<>>>>>åˆ€å±±è¡€æµ·ï¼ï¼"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = RED
+    "<<<<<<>>>>>>è¡€æµ·æ·±ä»‡ï¼ï¼ï¼"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = RED
+    "<<<<<<<>>>>>>>è¡€æµæˆæ²³ï¼ï¼ï¼ï¼"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = RED
+    "<<<<<<<<>>>>>>>>ä»¥è¡€ç¥­åˆ€ï¼!!!!"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    me->add_temp("apply/attack", -extra);
     me->add_temp("apply/damage", -extra);
-	me->start_busy(2);
+    me->start_busy(2);
 
 
     return 1;

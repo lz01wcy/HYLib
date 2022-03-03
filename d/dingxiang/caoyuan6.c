@@ -1,60 +1,60 @@
-// caoyuan3.c ²İÔ­
+// caoyuan3.c è‰åŸ
 inherit ROOM;
 
 #include <ansi.h>
 
-void create()
-{
-        set("short", "²İÔ­");
-        set("long", @LONG
-Äã×ß½øÁËÕâ±éÃàÃà²»¾øµÄ´ó²İÔ­£¬½ÅÏÂÊÇ´çºñµÄÇà²İ£¬ÈíÃàÃàµÄ»¹
-Õæ²»ºÃ×ß£¬¿´À´ÂòÆ¥ÂíÀ´´ú²½µ½ÊÇµÄºÃÖ÷Òâ¡£Î÷±ß¿ÉÒÔ¿´¼ûÑàÔ­¼¯£¬Íù
-¶«È¥¾ÍÊÇÉ³Ä®ÁË¡£ÕâÀïËÊÁ¢×ÅÒ»Ğ©¹Å´úµÄÊ¯Ïñ£¬²»ÖªµÀÓÃÇ¹´ÌÒ»ÏÂ»áÔõ
-Ã´Ñù¡£
-LONG);
-        set("exits", ([
-            "southwest" : __DIR__"caoyuan3",
-           
-        ]));
-set("objects",(["/clone/npc/man":1,]));	
-        set("outdoors", "dingxiang");
-        setup();
-        
+void create() {
+    set("short", "è‰åŸ");
+    set("long", @LONG
+ä½ èµ°è¿›äº†è¿™éç»µç»µä¸ç»çš„å¤§è‰åŸï¼Œè„šä¸‹æ˜¯å¯¸åšçš„é’è‰ï¼Œè½¯ç»µç»µçš„è¿˜
+çœŸä¸å¥½èµ°ï¼Œçœ‹æ¥ä¹°åŒ¹é©¬æ¥ä»£æ­¥åˆ°æ˜¯çš„å¥½ä¸»æ„ã€‚è¥¿è¾¹å¯ä»¥çœ‹è§ç‡•åŸé›†ï¼Œå¾€
+ä¸œå»å°±æ˜¯æ²™æ¼ äº†ã€‚è¿™é‡Œè€¸ç«‹ç€ä¸€äº›å¤ä»£çš„çŸ³åƒï¼Œä¸çŸ¥é“ç”¨æªåˆºä¸€ä¸‹ä¼šæ€
+ä¹ˆæ ·ã€‚
+    LONG);
+    set("exits",([
+    "southwest" : __DIR__
+    "caoyuan3",
+
+    ]));
+    set("objects",(["/clone/npc/man":1,]));
+    set("outdoors", "dingxiang");
+    setup();
+
 }
 
-void init()
-{
-   add_action("do_ci","ci");
+void init() {
+    add_action("do_ci", "ci");
 }
 
-int do_ci(string arg)
-{
-   object me,weapon;
-   me=this_player();
-   if(!arg||arg!="Ê¯Ïñ")
-   return notify_fail("ÄãÒª´ÌÊ²Ã´£¿\n");
-   if(!objectp(weapon=me->query_temp("weapon")))
-   return notify_fail("Ã»ÓĞÎäÆ÷£¬ÄãÒªÓÃÊÖ´ÌÂğ£¿\n");
-   if(weapon->query("skill_type")!="spear")
-   return notify_fail("Äã»Ó¶¯"+weapon->name()+"»ÎÁË¼¸ÏÂ£¬·¢ÏÖºÁÎŞÓÃ´¦£¡\n");
-   if(weapon->query("flag")==1)
-   return notify_fail("Äã¾ÚÉ¥µÄ·¢ÏÖÊÖÖĞµÄ±øÈĞÒÑ¾­¶ÏµôÁË£¡\n");
-   if(me->query("sen")<20)
-   return notify_fail("Äã¾«ÉñÌ«²îÁË£¡\n");
-   if(me->query_skill("spear",1)>=101)
-   return notify_fail("Ò»¸öÄÁÈËÅÜÁË¹ıÀ´£º±£»¤ÎÄÎï£¬²»×¼ÂÒ´Ì£¡\n");
-   if(me->is_busy())
-   return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
-   
-   message_vision(YEL"$NµÍºÈÒ»Éù£¬Ò»»ÓÊÖÖĞµÄ"+weapon->name()+"£¬³¯Ê¯Ïñ´ÌÈ¥£¡\n"NOR,me);
-   me->improve_skill("spear",me->query_int()/2+20+random(5));
-   me->add("sen",-20);
-   if(me->query_skill("spear",1)<50)
-   message_vision("$NÍóÁ¦²»×ã£¬ÉË²»µ½Ê¯Ïñ·ÖºÁ¡£\n",me);
-   else if(me->query_skill("spear",1)<100)
-   message_vision("Ö»ÌıßêµØÒ»Éù£¬Ê¯ÏñÉÏ±»$N´Ì³öÁËÒ»¸öÇ³¿Ó¡£\n",me);
-   else if(me->query_skill("spear",1)<150)
-   message_vision("Ö»ÌıßêµÄÒ»Éù£¬$NµÄ"+weapon->name()+"¾¢Í¸Ê¯Ïñ£¡\n",me);
-  
-   return 1;
+int do_ci(string arg) {
+    object me, weapon;
+    me = this_player();
+    if (!arg || arg != "çŸ³åƒ")
+        return notify_fail("ä½ è¦åˆºä»€ä¹ˆï¼Ÿ\n");
+    if (!objectp(weapon = me->query_temp("weapon")))
+        return notify_fail("æ²¡æœ‰æ­¦å™¨ï¼Œä½ è¦ç”¨æ‰‹åˆºå—ï¼Ÿ\n");
+    if (weapon->query("skill_type") != "spear")
+        return notify_fail("ä½ æŒ¥åŠ¨" + weapon->name() + "æ™ƒäº†å‡ ä¸‹ï¼Œå‘ç°æ¯«æ— ç”¨å¤„ï¼\n");
+    if (weapon->query("flag") == 1)
+        return notify_fail("ä½ æ²®ä¸§çš„å‘ç°æ‰‹ä¸­çš„å…µåˆƒå·²ç»æ–­æ‰äº†ï¼\n");
+    if (me->query("sen") < 20)
+        return notify_fail("ä½ ç²¾ç¥å¤ªå·®äº†ï¼\n");
+    if (me->query_skill("spear", 1) >= 101)
+        return notify_fail("ä¸€ä¸ªç‰§äººè·‘äº†è¿‡æ¥ï¼šä¿æŠ¤æ–‡ç‰©ï¼Œä¸å‡†ä¹±åˆºï¼\n");
+    if (me->is_busy())
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
+
+    message_vision(YEL
+    "$Nä½å–ä¸€å£°ï¼Œä¸€æŒ¥æ‰‹ä¸­çš„" + weapon->name() + "ï¼ŒæœçŸ³åƒåˆºå»ï¼\n"
+    NOR, me);
+    me->improve_skill("spear", me->query_int() / 2 + 20 + random(5));
+    me->add("sen", -20);
+    if (me->query_skill("spear", 1) < 50)
+        message_vision("$Nè…•åŠ›ä¸è¶³ï¼Œä¼¤ä¸åˆ°çŸ³åƒåˆ†æ¯«ã€‚\n", me);
+    else if (me->query_skill("spear", 1) < 100)
+        message_vision("åªå¬å“§åœ°ä¸€å£°ï¼ŒçŸ³åƒä¸Šè¢«$Nåˆºå‡ºäº†ä¸€ä¸ªæµ…å‘ã€‚\n", me);
+    else if (me->query_skill("spear", 1) < 150)
+        message_vision("åªå¬å“§çš„ä¸€å£°ï¼Œ$Nçš„" + weapon->name() + "åŠ²é€çŸ³åƒï¼\n", me);
+
+    return 1;
 }

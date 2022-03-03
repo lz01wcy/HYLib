@@ -1,11 +1,11 @@
 // THIS IS PLAYER'S OWN SKILL (write by maxim@nju_fengxue)
 // linly
-// ÐÄÒÇ·ç
-// ÌÒ»¨µºµÚ¶þ´úµÜ×Ó
+// å¿ƒä»ªé£Ž
+// æ¡ƒèŠ±å²›ç¬¬äºŒä»£å¼Ÿå­
 // 2885662
-// Å®ÐÔ
+// å¥³æ€§
 // unarmed
-// ÌÒ»¨ÂäÒ¶È­
+// æ¡ƒèŠ±è½å¶æ‹³
 
 
 
@@ -19,47 +19,48 @@ mapping *action = ({
 
 // ZHAOSHI :0
 
-([
-"action" :"$NË«È­»ØÂ££¬·¢Ë¿Æ®Ñï£¬ÃæÉ«Í»ÏÔÌÒºì£¬ËæÖ®Ë«È­·ÉÎè£¬Èç±éµØÌÒ»¨°ãÁýÕÖ×¡$nÈ«Éí¡£",
-"force" :60,
-"damage" :40,
-"damage_type": "ðöÉË",
-"lvl" : 0,
-"skill_name" : "ÈËÃæÌÒ»¨"
-]),
- });
+    ([
+    "action" :"$NåŒæ‹³å›žæ‹¢ï¼Œå‘ä¸é£˜æ‰¬ï¼Œé¢è‰²çªæ˜¾æ¡ƒçº¢ï¼Œéšä¹‹åŒæ‹³é£žèˆžï¼Œå¦‚éåœ°æ¡ƒèŠ±èˆ¬ç¬¼ç½©ä½$nå…¨èº«ã€‚",
+            "force" :60,
+            "damage" :40,
+            "damage_type": "ç˜€ä¼¤",
+            "lvl" : 0,
+            "skill_name" : "äººé¢æ¡ƒèŠ±"
+    ]),
+});
+
 // ZHAOSHI :1
-int valid_learn(object me)
-{
-	if( me->query_temp("weapon") || me->query_temp("secondary_weapon") )
-		return notify_fail("Á·"+"ÌÒ»¨ÂäÒ¶È­"+"±ØÐë¿ÕÊÖ¡£\n");
-	if( (int)me->query("max_neili") < 50 )
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·"+"ÌÒ»¨ÂäÒ¶È­"+"¡£\n");
-	return 1;
+int valid_learn(object me) {
+    if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+        return notify_fail("ç»ƒ" + "æ¡ƒèŠ±è½å¶æ‹³" + "å¿…é¡»ç©ºæ‰‹ã€‚\n");
+    if ((int) me->query("max_neili") < 50)
+        return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒ" + "æ¡ƒèŠ±è½å¶æ‹³" + "ã€‚\n");
+    return 1;
 }
-int valid_enable(string usage) { return usage== "unarmed" || usage=="parry"; }
-string query_skill_name(int level)
-{
-        int i;
-        for(i = sizeof(action)-1; i >= 0; i--)
-                if(level >= action[i]["lvl"])
-                        return action[i]["skill_name"];
+
+int valid_enable(string usage) { return usage == "unarmed" || usage == "parry"; }
+
+string query_skill_name(int level) {
+    int i;
+    for (i = sizeof(action) - 1; i >= 0; i--)
+        if (level >= action[i]["lvl"])
+            return action[i]["skill_name"];
 }
-mapping query_action(object me, object weapon)
-{
-        int i, level;
-    level = (int)me->query_skill("taohualuoye-unarmed",1);
-        for(i = sizeof(action); i > 0; i--)
-                if(level > action[i-1]["lvl"])
-                        return action[NewRandom(i, 20, level/5)];
+
+mapping query_action(object me, object weapon) {
+    int i, level;
+    level = (int) me->query_skill("taohualuoye-unarmed", 1);
+    for (i = sizeof(action); i > 0; i--)
+        if (level > action[i - 1]["lvl"])
+            return action[NewRandom(i, 20, level / 5)];
 }
-int practice_skill(object me)
-{
-	if( (int)me->query("qi") < 25 )
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ÐÝÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
-	if( (int)me->query("neili") < 3 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ÐÝÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
-	me->receive_damage("qi", 25);
-	me->add("neili", -3);
-	return 1;
+
+int practice_skill(object me) {
+    if ((int) me->query("qi") < 25)
+        return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
+    if ((int) me->query("neili") < 3)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
+    me->receive_damage("qi", 25);
+    me->add("neili", -3);
+    return 1;
 } //total 34 lines!

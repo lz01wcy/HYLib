@@ -18,10 +18,10 @@ string* books = ({
 
 void create()
 {
-	set("short", "����");
+	set("short", "侧厅");
 	set("long", @LONG
-�����ǲ�������ǽ��һ����ܣ������˸���ȭ�ס��鼮��ǽ����һ
-��ľ������ػ��ܶ����½��ϳ�����������顢��Ϣ��
+这里是侧厅，靠墙是一排书架，摆满了各种拳谱、书籍。墙角有一
+张木床。天地会总舵主陈近南常常在这里读书、休息。
 LONG );
 	set("exits", ([
 		"west" : __DIR__"dating",

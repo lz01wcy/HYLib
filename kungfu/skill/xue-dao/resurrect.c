@@ -1,57 +1,60 @@
-// resurrect.c Ô¡ÑªÖØÉú
+// resurrect.c æµ´è¡€é‡ç”Ÿ
 
 #include <ansi.h>
 
-#define R "¡¸" HIR "Ô¡ÑªÖØÉú" NOR "¡¹"
+#define R "ã€Œ" HIR "æµ´è¡€é‡ç”Ÿ" NOR "ã€"
 
 inherit F_CLEAN_UP;
 
-int perform(object me, object target)
-{
-        int skill;
-        string msg;
-        mapping my;
-        int rp;
-        int neili_cost;
+int perform(object me, object target) {
+    int skill;
+    string msg;
+    mapping my;
+    int rp;
+    int neili_cost;
 
 
-        if ((int)me->query_skill("xue-dao", 1) < 120)
-                return notify_fail("ÄãµÄÑªµ¶´ó·¨²»¹»Éîºñ£¬ÄÑÒÔÊ©Õ¹" R "¡£\n");
+    if ((int) me->query_skill("xue-dao", 1) < 120)
+        return notify_fail("ä½ çš„è¡€åˆ€å¤§æ³•ä¸å¤Ÿæ·±åšï¼Œéš¾ä»¥æ–½å±•" R "ã€‚\n");
 
-        if ((int)me->query("max_neili") < 1000) 
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" R "¡£\n");
+    if ((int) me->query("max_neili") < 1000)
+        return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" R "ã€‚\n");
 
-        if ((int)me->query("neili") < 200) 
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" R "¡£\n");
+    if ((int) me->query("neili") < 200)
+        return notify_fail("ä½ ç°åœ¨çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" R "ã€‚\n");
 
-        my = me->query_entire_dbase();
-        if ((rp = (my["max_qi"] - my["eff_qi"])) < 1)
-                return (SKILL_D("force") + "/recover")->exert(me, target);
+    my = me->query_entire_dbase();
+    if ((rp = (my["max_qi"] - my["eff_qi"])) < 1)
+        return (SKILL_D("force") + "/recover")->exert(me, target);
 
-        if (rp >= my["max_qi"] / 10)
-                rp = my["max_qi"] / 10;
+    if (rp >= my["max_qi"] / 10)
+        rp = my["max_qi"] / 10;
 
-        skill = me->query_skill("xue-dao", 1);
-        msg = HIR "$N" HIR "ÉîÉîÎüÈëÒ»¿ÚÆø£¬Á³É«ÓÉºì×ª°×£¬¸´ÓÖÓÉ°×·­"
-              "ºì£¬ÉËÊÆ»Ö¸´ÁË²»ÉÙ¡£\n" NOR;
-        message_combatd(msg, me);
+    skill = me->query_skill("xue-dao", 1);
+    msg = HIR
+    "$N"
+    HIR
+    "æ·±æ·±å¸å…¥ä¸€å£æ°”ï¼Œè„¸è‰²ç”±çº¢è½¬ç™½ï¼Œå¤åˆç”±ç™½ç¿»"
+    "çº¢ï¼Œä¼¤åŠ¿æ¢å¤äº†ä¸å°‘ã€‚\n"
+    NOR;
+    message_combatd(msg, me);
 
-        neili_cost = rp + 100;
-        if (neili_cost > my["neili"])
-        {
-                neili_cost = my["neili"];
-                rp = neili_cost - 100;
-        }
-        me->receive_curing("qi", rp);
-        me->receive_healing("qi", rp * 3 / 2);
-        me->add("neili", -neili_cost);
+    neili_cost = rp + 100;
+    if (neili_cost > my["neili"]) {
+        neili_cost = my["neili"];
+        rp = neili_cost - 100;
+    }
+    me->receive_curing("qi", rp);
+    me->receive_healing("qi", rp * 3 / 2);
+    me->add("neili", -neili_cost);
 
-        if (random(10) < 3)
-        {
-                tell_object(me, HIC "ÓÉÓÚÄã¹ı¶ÈµÄ´ß¶¯ÕæÔª£¬µ¼ÖÂÄãµÄÄÚ"
-                                "Á¦ÓĞËùËğºÄ¡£\n" NOR);
-                me->add("max_neili", -1);
-        }
-        me->start_busy(3);
-        return 1;
+    if (random(10) < 3) {
+        tell_object(me, HIC
+        "ç”±äºä½ è¿‡åº¦çš„å‚¬åŠ¨çœŸå…ƒï¼Œå¯¼è‡´ä½ çš„å†…"
+        "åŠ›æœ‰æ‰€æŸè€—ã€‚\n"
+        NOR);
+        me->add("max_neili", -1);
+    }
+    me->start_busy(3);
+    return 1;
 }

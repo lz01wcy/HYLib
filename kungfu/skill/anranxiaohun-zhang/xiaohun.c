@@ -1,4 +1,4 @@
-// xiaohun.c ÷öÈ»Ïû»ê
+// xiaohun.c é»¯ç„¶æ¶ˆé­‚
 // By Kayin @ CuteRabbit Studio 99-4-16 19:18 new
 #include <ansi.h>
 #include <skill.h>
@@ -6,78 +6,97 @@
 #include <combat.h>
 
 inherit F_SSERVER;
- 
-int perform(object me, object target)
-{
-        string msg;
-	int extra;
-	object weapon,ob;
-	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
-	extra = me->query_skill("anranxiaohun-zhang",1);
-        if( !target ) target = offensive_target(me);
-if( !target
-	||	!target->is_character()
-	||	!me->is_fighting(target) )
-                return notify_fail("¡¸÷öÈ»Ïû»ê¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
- 
-	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¸÷öÈ»Ïû»ê¡¹Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
-       
-	 if( (int)me->query("neili") < 1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
-    if(me->query_skill_mapped("force") != "yunv-xinfa" )
-        return notify_fail("ÄãÒª°ÑÓñÅ®ÐÄ·¨×öÎªÄÚ¹¦²ÅÄÜÓÃ¡£\n");
 
-        if( (int)me->query_skill("anranxiaohun-zhang",1) < 300 )
-                return notify_fail("ÄãµÄ÷öÈ»Ïû»êÕÆ»ðºò²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸÷öÈ»Ïû»ê¡¹£¡\n");
-	if( (int)me->query_skill("xuantie-sword",1) < 100 )
-                return notify_fail("ÄãµÄÐþÌú½£·¨»ðºò²»¹»£¬ÎÞ·¨ÁìÎò¡¸÷öÈ»Ïû»ê¡¹£¡\n");
-        if( (int)me->query_skill("force",1) < 200 )
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸÷öÈ»Ïû»ê¡¹£¡\n");
-	weapon = me->query_temp("weapon");
-	me->add_temp("apply/attack",extra*2);
-	me->add_temp("apply/damage",800);
+int perform(object me, object target) {
+    string msg;
+    int extra;
+    object weapon, ob;
+    if (me->is_busy())
+        return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
+    extra = me->query_skill("anranxiaohun-zhang", 1);
+    if (!target) target = offensive_target(me);
+    if (!target
+        || !target->is_character()
+        || !me->is_fighting(target))
+        return notify_fail("ã€Œé»¯ç„¶æ¶ˆé­‚ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
-        msg = HIM "$NÐÄÈçÖ¹Ë®£¬ÐÄÖÐË¼Äî×Å$NµÄ°®ÈË£¬ÎÞÒâÖ®ÖÐÊ¹³öÁË"HIR"¡°÷öÈ»Ïû»ê¡±£¡\n" NOR;
-        msg += HIM   "¾ÍËÆ°øÍíµÄÒ£ÑÌ£¬¶ÙÊ±ÌìµØ¼ä²úÉúÒ»Ë¿¿àÉ¬£¡\n" NOR;
-	         message_vision(msg, me, target);                
-	 msg = HIC  "\n   ÷ö \n" NOR;
-	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "\n      È»\n" NOR;
-               COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIW  "\n        Ïû\n" NOR;
-               COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR  "\n          »ê\n" NOR;
-             	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIB "\n             ÕÆ\n" NOR;
-          COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        me->add_temp("apply/attack",-extra*2);
-	 me->add_temp("apply/damage",-800);
+    if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+        return notify_fail("ã€Œé»¯ç„¶æ¶ˆé­‚ã€åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");
 
-        if( me->query("shen") > 10000
-        && target->query("shen") < 10000 )
-{
-msg = HIG "\n$NÅ­ÊÓ$n,´ó³ªÒ»Éù£¬´ò³ö×îºóµÄÒ»ÕÆ£¡¾ÍËÆ°øÍíµÄÒ£ÑÌ£¬¶ÙÊ±ÌìµØ¼ä²úÉúÒ»Ë¿¿àÉ¬£¡\n"NOR;
-	if( random(me->query("combat_exp")) > target->query("combat_exp")/4 )
-	 {
+    if ((int) me->query("neili") < 1000)
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
+    if (me->query_skill_mapped("force") != "yunv-xinfa")
+        return notify_fail("ä½ è¦æŠŠçŽ‰å¥³å¿ƒæ³•åšä¸ºå†…åŠŸæ‰èƒ½ç”¨ã€‚\n");
 
-                msg += RED"\n½á¹û¡¸ºä¡¹µØÒ»Éù£¬$nÈ«ÉíÆøÑªµ¹Á÷£¬¿ÚÖÐÏÊÑª¿ñÅç¶ø³ö£¡\n"NOR;
-		target->receive_damage("qi",(int)me->query_skill("anranxiaohun-zhang")*3);
-		target->receive_wound("qi",(int)me->query_skill("anranxiaohun-zhang")*3);
+    if ((int) me->query_skill("anranxiaohun-zhang", 1) < 300)
+        return notify_fail("ä½ çš„é»¯ç„¶æ¶ˆé­‚æŽŒç«å€™ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œé»¯ç„¶æ¶ˆé­‚ã€ï¼\n");
+    if ((int) me->query_skill("xuantie-sword", 1) < 100)
+        return notify_fail("ä½ çš„çŽ„é“å‰‘æ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•é¢†æ‚Ÿã€Œé»¯ç„¶æ¶ˆé­‚ã€ï¼\n");
+    if ((int) me->query_skill("force", 1) < 200)
+        return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œé»¯ç„¶æ¶ˆé­‚ã€ï¼\n");
+    weapon = me->query_temp("weapon");
+    me->add_temp("apply/attack", extra * 2);
+    me->add_temp("apply/damage", 800);
+
+    msg = HIM
+    "$Nå¿ƒå¦‚æ­¢æ°´ï¼Œå¿ƒä¸­æ€å¿µç€$Nçš„çˆ±äººï¼Œæ— æ„ä¹‹ä¸­ä½¿å‡ºäº†"
+    HIR
+    "â€œé»¯ç„¶æ¶ˆé­‚â€ï¼\n"
+    NOR;
+    msg += HIM
+    "å°±ä¼¼å‚æ™šçš„é¥çƒŸï¼Œé¡¿æ—¶å¤©åœ°é—´äº§ç”Ÿä¸€ä¸è‹¦æ¶©ï¼\n"
+    NOR;
+    message_vision(msg, me, target);
+    msg = HIC
+    "\n   é»¯ \n"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = HIY
+    "\n      ç„¶\n"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = HIW
+    "\n        æ¶ˆ\n"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = HIR
+    "\n          é­‚\n"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    msg = HIB
+    "\n             æŽŒ\n"
+    NOR;
+    COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+    me->add_temp("apply/attack", -extra * 2);
+    me->add_temp("apply/damage", -800);
+
+    if (me->query("shen") > 10000
+        && target->query("shen") < 10000) {
+        msg = HIG
+        "\n$Næ€’è§†$n,å¤§å”±ä¸€å£°ï¼Œæ‰“å‡ºæœ€åŽçš„ä¸€æŽŒï¼å°±ä¼¼å‚æ™šçš„é¥çƒŸï¼Œé¡¿æ—¶å¤©åœ°é—´äº§ç”Ÿä¸€ä¸è‹¦æ¶©ï¼\n"
+        NOR;
+        if (random(me->query("combat_exp")) > target->query("combat_exp") / 4) {
+
+            msg += RED
+            "\nç»“æžœã€Œè½°ã€åœ°ä¸€å£°ï¼Œ$nå…¨èº«æ°”è¡€å€’æµï¼Œå£ä¸­é²œè¡€ç‹‚å–·è€Œå‡ºï¼\n"
+            NOR;
+            target->receive_damage("qi", (int) me->query_skill("anranxiaohun-zhang") * 3);
+            target->receive_wound("qi", (int) me->query_skill("anranxiaohun-zhang") * 3);
 // should not busy target if he already in busy (by xbd)
-                if (!target->is_busy()) target->start_busy(3);
+            if (!target->is_busy()) target->start_busy(3);
 //             	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-		message_combatd(msg, me, target);
-                COMBAT_D->report_status(target);
-	} else {
-		msg += HIY"¿ÉÊÇ$p¼±ÖÐÉúÖÇ£¬·üµØ·­¹ö¶ø³ö£¬±Ü¹ýÁËÕâÖÂÃüÒ»»÷,¶ãÁË¿ªÈ¥¡£\n" NOR;
-		message_combatd(msg, me, target);
-	}
-}
-        me->add("neili", -500);
-        me->start_busy(3);
+            message_combatd(msg, me, target);
+            COMBAT_D->report_status(target);
+        } else {
+            msg += HIY
+            "å¯æ˜¯$pæ€¥ä¸­ç”Ÿæ™ºï¼Œä¼åœ°ç¿»æ»šè€Œå‡ºï¼Œé¿è¿‡äº†è¿™è‡´å‘½ä¸€å‡»,èº²äº†å¼€åŽ»ã€‚\n"
+            NOR;
+            message_combatd(msg, me, target);
+        }
+    }
+    me->add("neili", -500);
+    me->start_busy(3);
 
-        return 1;
+    return 1;
 }
 

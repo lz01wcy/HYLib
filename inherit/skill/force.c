@@ -2,31 +2,30 @@
 
 inherit SKILL;
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor)
-{
-	int damage;
+mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+    int damage;
 
-	me->add("neili", - factor );
-	damage = (int)me->query("neili")/20 + 2*factor
-		- (int)victim->query("neili")/25;
+    me->add("neili", -factor);
+    damage = (int) me->query("neili") / 20 + 2 * factor
+             - (int) victim->query("neili") / 25;
 
-	if( damage < 0 ) {
-		if( !me->query_temp("weapon")
-		&&	random(victim->query_skill("force")) > me->query_skill("force")/2 ) {
-			damage = - damage;
-			me->receive_damage( "qi", damage * 2 );
-			me->receive_wound( "qi", damage );
-			if( damage < 10 ) return "$NÊÜµ½$nµÄÄÚÁ¦·´Õð£¬ÃÆºßÒ»Éù¡£\n";
-			else if( damage < 20 ) return "$N±»$nÒÔÄÚÁ¦·´Õð£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n";
-			else if( damage < 40 ) return "$N±»$NÒÔÄÚÁ¦Ò»Õð£¬ÐØ¿ÚÓÐÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n";
-			else return "$N±»$nµÄÄÚÁ¦Ò»Õð£¬ÑÛÇ°Ò»ºÚ£¬Éí×ÓÏòºó·É³öÕÉÐí£¡£¡\n";
-		}
-		if( damage_bonus + damage < 0 ) return - damage_bonus;
-		return damage;
-	}
+    if (damage < 0) {
+        if (!me->query_temp("weapon")
+            && random(victim->query_skill("force")) > me->query_skill("force") / 2) {
+            damage = -damage;
+            me->receive_damage("qi", damage * 2);
+            me->receive_wound("qi", damage);
+            if (damage < 10) return "$Nå—åˆ°$nçš„å†…åŠ›åéœ‡ï¼Œé—·å“¼ä¸€å£°ã€‚\n";
+            else if (damage < 20) return "$Nè¢«$nä»¥å†…åŠ›åéœ‡ï¼Œã€Œå˜¿ã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n";
+            else if (damage < 40) return "$Nè¢«$Nä»¥å†…åŠ›ä¸€éœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿žé€€äº†äº”å…­æ­¥ï¼\n";
+            else return "$Nè¢«$nçš„å†…åŠ›ä¸€éœ‡ï¼Œçœ¼å‰ä¸€é»‘ï¼Œèº«å­å‘åŽé£žå‡ºä¸ˆè®¸ï¼ï¼\n";
+        }
+        if (damage_bonus + damage < 0) return -damage_bonus;
+        return damage;
+    }
 
-	//damage -= victim->query_temp("apply/armor_vs_force");
-	if( damage_bonus + damage < 0 ) return - damage_bonus;
-	//if( random(me->query_skill("force")) < damage )
-		return damage;
+    //damage -= victim->query_temp("apply/armor_vs_force");
+    if (damage_bonus + damage < 0) return -damage_bonus;
+    //if( random(me->query_skill("force")) < damage )
+    return damage;
 }

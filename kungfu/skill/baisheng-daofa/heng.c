@@ -5,120 +5,138 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HENG "¡¸" HIR "ºáÉ¨Ç§¾ü" NOR "¡¹"
+#define HENG "ã€Œ" HIR "æ¨ªæ‰«åƒå†›" NOR "ã€"
 
 inherit F_SSERVER;
 
 string final(object me, object target, int ap, int dp);
- 
-int perform(object me, object target)
-{
-        object weapon;
-        string msg;
-        int ap, dp;
-        int damage;
+
+int perform(object me, object target) {
+    object weapon;
+    string msg;
+    int ap, dp;
+    int damage;
 
 
+    if (!target) {
+        me->clean_up_enemy();
+        target = me->select_opponent();
+    }
 
-        if (! target)
-        {
-                me->clean_up_enemy();
-                target = me->select_opponent();
-        }
+    if (!target || !me->is_fighting(target))
+        return notify_fail(HENG "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-        if (! target || ! me->is_fighting(target))
-                return notify_fail(HENG "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
- 
-        if (! objectp(weapon = me->query_temp("weapon")) ||
-            (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" HENG "¡£\n");
+    if (!objectp(weapon = me->query_temp("weapon")) ||
+        (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ï¼Œéš¾ä»¥æ–½å±•" HENG "ã€‚\n");
 
-        if ((int)me->query_skill("baisheng-daofa", 1) < 150)
-                return notify_fail("Äã°ÙÊ¤µ¶·¨»¹²»µ½¼Ò£¬ÄÑÒÔÊ©Õ¹" HENG "¡£\n");
+    if ((int) me->query_skill("baisheng-daofa", 1) < 150)
+        return notify_fail("ä½ ç™¾èƒœåˆ€æ³•è¿˜ä¸åˆ°å®¶ï¼Œéš¾ä»¥æ–½å±•" HENG "ã€‚\n");
 
-        if (me->query_skill_mapped("blade") != "baisheng-daofa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ÙÊ¤µ¶·¨£¬ÄÑÒÔÊ©Õ¹" HENG "¡£\n");
+    if (me->query_skill_mapped("blade") != "baisheng-daofa")
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘ç™¾èƒœåˆ€æ³•ï¼Œéš¾ä»¥æ–½å±•" HENG "ã€‚\n");
 
-        if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" HENG "¡£\n");
+    if ((int) me->query_skill("force") < 200)
+        return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HENG "ã€‚\n");
 
-        if ((int)me->query("neili") < 500)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HENG "¡£\n");
+    if ((int) me->query("neili") < 500)
+        return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HENG "ã€‚\n");
 
-        if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+    if (!living(target))
+        return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-                ap = me->query_skill("blade",1);
-        dp = target->query_skill("force",1);
-        ap = me->query_skill("blade",1) + me->query_str() * 5;
-        if (random(2)==0)
-        {
-                msg = HIR "$N" HIR "àÁÄ¿´óºÈ£¬É±ÆøÁÝÈ»¶øÆð£¬ÊÖ³Ö" + weapon->name() +
-                      HIR "ÒåÎÞ·´¹ËµÄÃÍÈ»ºáÉ¨$n" HIR "£¬È«È»²»¹ËÉúËÀ£¬ºÆÆøâêÈ»£¡\n" NOR;
-                ap += ap * 1 / 4;
+    ap = me->query_skill("blade", 1);
+    dp = target->query_skill("force", 1);
+    ap = me->query_skill("blade", 1) + me->query_str() * 5;
+    if (random(2) == 0) {
+        msg = HIR
+        "$N"
+        HIR
+        "å—”ç›®å¤§å–ï¼Œæ€æ°”å‡›ç„¶è€Œèµ·ï¼Œæ‰‹æŒ" + weapon->name() +
+        HIR
+        "ä¹‰æ— åé¡¾çš„çŒ›ç„¶æ¨ªæ‰«$n"
+        HIR
+        "ï¼Œå…¨ç„¶ä¸é¡¾ç”Ÿæ­»ï¼Œæµ©æ°”æ€…ç„¶ï¼\n"
+        NOR;
+        ap += ap * 1 / 4;
+    } else
+        msg = HIR
+    "$N"
+    HIR
+    "ç‹‚æå†…åŠ²ï¼Œå°†å…¨èº«åŠ›é“çŒæ³¨äºŽ" + weapon->name() +
+    HIR
+    "ä¹‹ä¸Šç–¾æ–©åŠˆå‡ºï¼Œâ€œå”°â€çš„ä¸€å£°æ‰«å‘$n"
+    HIR
+    "è€ŒåŽ»ï¼\n"
+    NOR;
+
+    dp = target->query_skill("force", 1) + target->query_str() * 5;
+    damage = 0;
+    if (ap / 2 + random(ap) > dp) {
+        damage = me->query_skill("blade", 1) * 2;
+        me->add("neili", -350);
+        target->add("qi", -damage);
+        target->add("eff_qi", -damage / 2);
+        me->add("neili", -150);
+        msg += HIR
+        "$n"
+        HIR
+        "è¿žå¿™æŠµæŒ¡ï¼Œå´é‚£é‡Œæ‹›æž¶å¾—ä½ï¼Œæ•´ä¸ªäºº"
+        "è¢«è¿™ä¸€å‡»æ‰“å¾—é£žèº«è€Œèµ·ï¼Œè¿œè½å¹³æ²™ã€‚";
+        if (ap / 3 > dp && userp(target)) {
+            msg += "å°±æ­¤æ¯™å‘½ï¼\n"
+            NOR;
+            call_out("char_killed", 0, target, me);
+        } else if ((ap / 2 > dp) && objectp(weapon = target->query_temp("weapon"))) {
+            msg += "æ‰‹ä¸­çš„" + weapon->name() + HIR
+            "å†ä¹Ÿæ‹¿æä¸ä½ï¼Œåº”å£°è€Œå‡ºã€‚\n"
+            NOR;
+            weapon->move(environment(me));
         } else
-                msg = HIR "$N" HIR "¿ñÌáÄÚ¾¢£¬½«È«ÉíÁ¦µÀ¹à×¢ÓÚ" + weapon->name() +
-                      HIR "Ö®ÉÏ¼²Õ¶Åü³ö£¬¡°à§¡±µÄÒ»ÉùÉ¨Ïò$n" HIR "¶øÈ¥£¡\n" NOR;
+            msg += "\n"
+        NOR;
 
-        dp = target->query_skill("force",1)  + target->query_str() * 5;
-        damage = 0;
-        if (ap / 2 + random(ap) > dp)
-        {
-                damage = me->query_skill("blade",1)*2;
-                me->add("neili", -350);
-		target->add("qi",-damage);
-		target->add("eff_qi",-damage/2);
-                me->add("neili", -150);
-      msg += HIR "$n" HIR "Á¬Ã¦µÖµ²£¬È´ÄÇÀïÕÐ¼ÜµÃ×¡£¬Õû¸öÈË"
-              "±»ÕâÒ»»÷´òµÃ·ÉÉí¶øÆð£¬Ô¶ÂäÆ½É³¡£";
-        if (ap / 3 > dp && userp(target))
-        {
-                msg += "¾Í´Ë±ÐÃü£¡\n" NOR;
-                call_out("char_killed", 0, target, me);
-        } else
-        if ((ap / 2 > dp) && objectp(weapon = target->query_temp("weapon")))
-        {
-                msg += "ÊÖÖÐµÄ" + weapon->name() + HIR "ÔÙÒ²ÄÃÄó²»×¡£¬Ó¦Éù¶ø³ö¡£\n" NOR;
-                weapon->move(environment(me));
-        } else
-                msg += "\n" NOR;
-        
-                me->start_busy(2);
-        } else 
-        {
-                msg += HIC "$n" HIC "·ÜÁ¦ÕÐ¼Ü£¬Ó²ÉúÉúµÄµ²×¡ÁËÕâÁîÌìµØÊ§É«Ö®±ØÉ±Ò»»÷£¡\n" NOR;
-                me->add("neili", -150);
-                me->start_busy(2);
-        }
-        message_combatd(msg, me, target);
+        me->start_busy(2);
+    } else {
+        msg += HIC
+        "$n"
+        HIC
+        "å¥‹åŠ›æ‹›æž¶ï¼Œç¡¬ç”Ÿç”Ÿçš„æŒ¡ä½äº†è¿™ä»¤å¤©åœ°å¤±è‰²ä¹‹å¿…æ€ä¸€å‡»ï¼\n"
+        NOR;
+        me->add("neili", -150);
+        me->start_busy(2);
+    }
+    message_combatd(msg, me, target);
 
-        return 1;
+    return 1;
 }
 
-string final(object me, object target, int ap, int dp)
-{
-        object weapon;
-        string msg;
+string final(object me, object target, int ap, int dp) {
+    object weapon;
+    string msg;
 
-        msg = HIR "$n" HIR "Á¬Ã¦µÖµ²£¬È´ÄÇÀïÕÐ¼ÜµÃ×¡£¬Õû¸öÈË"
-              "±»ÕâÒ»»÷´òµÃ·ÉÉí¶øÆð£¬Ô¶ÂäÆ½É³¡£";
-        if (ap / 3 > dp && userp(target))
-        {
-                msg += "¾Í´Ë±ÐÃü£¡\n" NOR;
-                call_out("char_killed", 0, target, me);
-        } else
-        if ((ap / 2 > dp) && objectp(weapon = target->query_temp("weapon")))
-        {
-                msg += "ÊÖÖÐµÄ" + weapon->name() + HIR "ÔÙÒ²ÄÃÄó²»×¡£¬Ó¦Éù¶ø³ö¡£\n" NOR;
-                weapon->move(environment(me));
-        } else
-                msg += "\n" NOR;
-        return msg;
+    msg = HIR
+    "$n"
+    HIR
+    "è¿žå¿™æŠµæŒ¡ï¼Œå´é‚£é‡Œæ‹›æž¶å¾—ä½ï¼Œæ•´ä¸ªäºº"
+    "è¢«è¿™ä¸€å‡»æ‰“å¾—é£žèº«è€Œèµ·ï¼Œè¿œè½å¹³æ²™ã€‚";
+    if (ap / 3 > dp && userp(target)) {
+        msg += "å°±æ­¤æ¯™å‘½ï¼\n"
+        NOR;
+        call_out("char_killed", 0, target, me);
+    } else if ((ap / 2 > dp) && objectp(weapon = target->query_temp("weapon"))) {
+        msg += "æ‰‹ä¸­çš„" + weapon->name() + HIR
+        "å†ä¹Ÿæ‹¿æä¸ä½ï¼Œåº”å£°è€Œå‡ºã€‚\n"
+        NOR;
+        weapon->move(environment(me));
+    } else
+        msg += "\n"
+    NOR;
+    return msg;
 }
 
-void char_killed(object ob, object me)
-{
-        if (objectp(ob) && objectp(me) && me->is_fighting(ob) &&
-            environment(ob) == environment(me))      
-                ob->unconcious();
+void char_killed(object ob, object me) {
+    if (objectp(ob) && objectp(me) && me->is_fighting(ob) &&
+        environment(ob) == environment(me))
+        ob->unconcious();
 }
