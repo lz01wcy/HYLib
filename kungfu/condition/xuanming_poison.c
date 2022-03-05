@@ -5,29 +5,31 @@ inherit F_CLEAN_UP;
 
 string name() { return "xuanming_poison"; }
 
-string chinese_name() { return "玄冥寒毒"; }
+string chinese_name() { return "鐜勫啣瀵掓瘨"; }
 
-int update_condition(object me, int duration)
-{
-   int damage,damage2;
-damage=me->query("qi")/8;
-damage2=me->query("jing")/8;
-if (damage > 5000) damage=5000;   
-if (damage2 > 5000) damage2=5000;   	
+int update_condition(object me, int duration) {
+    int damage, damage2;
+    damage = me->query("qi") / 8;
+    damage2 = me->query("jing") / 8;
+    if (damage > 5000) damage = 5000;
+    if (damage2 > 5000) damage2 = 5000;
 
-        if( duration < 1 ) return 0;
+    if (duration < 1) return 0;
 
- message("vision", me->name() + HIW"脸色发紫，全身不住的颤抖，牙关格格作响。\n"NOR, environment(me), me);
-                tell_object(me, HIW "只感到一股奇寒从体内犹然而升，沁入三焦六脉，看来是玄冥神掌之毒发作了！\n" NOR );
-if ((int)me->query("jing") < 60000)
-{
+    message("vision", me->name() + HIW
+    "鑴歌壊鍙戠传锛屽叏韬笉浣忕殑棰ゆ姈锛岀墮鍏虫牸鏍间綔鍝嶃�俓n"
+    NOR, environment(me), me);
+    tell_object(me, HIW
+    "鍙劅鍒颁竴鑲″瀵掍粠浣撳唴鐘圭劧鑰屽崌锛屾瞾鍏ヤ笁鐒﹀叚鑴夛紝鐪嬫潵鏄巹鍐ョ鎺屼箣姣掑彂浣滀簡锛乗n"
+    NOR );
+    if ((int) me->query("jing") < 60000) {
         me->receive_wound("jing", damage2);
         me->receive_damage("jing", damage2);
-}else    me->receive_wound("qi", damage);
-        if (!me->is_busy())
+    } else me->receive_wound("qi", damage);
+    if (!me->is_busy())
         me->start_busy(5);
-        me->apply_condition(name(), duration - 1);
+    me->apply_condition(name(), duration - 1);
 
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

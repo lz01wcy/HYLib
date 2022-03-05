@@ -2,46 +2,54 @@
 
 #include <login.h>
 
-int update_condition(object me, int duration)
-{
-        object room;
-        object ob;
-          object obb;
-        object* inv;
-        int i;
-                
-        ob=this_player();
-        room = environment(ob);     
+int update_condition(object me, int duration) {
+    object room;
+    object ob;
+    object obb;
+    object *inv;
+    int i;
 
-        if (me->query_temp("where")) {
-        if (me->query_temp("where")!=environment(me)) {
-                message_vision(HIY"Ò»¸öËÎ±øÅÜ¹ýÀ´¶Ô$NËµµÀ£º½ÐÄãÊØ³Ç£¬ÄãÈ´µ½´¦ÏÐ¹ä£¬ÎÒÈ¥±¨¸æ¹ù´óÈË£¡\n"NOR,me);
-                me->set_temp("job_failed",1);
-                return 0;
-        }
-        }
+    ob = this_player();
+    room = environment(ob);
 
+    if (me->query_temp("where")) {
+        if (me->query_temp("where") != environment(me)) {
+            message_vision(HIY
+            "ä¸€ä¸ªå®‹å…µè·‘è¿‡æ¥å¯¹$Nè¯´é“ï¼šå«ä½ å®ˆåŸŽï¼Œä½ å´åˆ°å¤„é—²é€›ï¼Œæˆ‘åŽ»æŠ¥å‘Šéƒ­å¤§äººï¼\n"
+            NOR, me);
+            me->set_temp("job_failed", 1);
+            return 0;
+        }
+    }
+
+    if (me->query_temp("start_job")) {
+        message_vision(HIY
+        "$Næ­£ç«™åœ¨åŸŽå¢™ä¸Šå¯†åˆ‡æ³¨è§†ç€åŸŽä¸‹"
+        HIR
+        "è’™å¤å…µ"
+        HIY
+        "çš„ä¸€ä¸¾ä¸€åŠ¨ã€‚\n"
+        NOR, ob);
+    }
+    me->apply_condition("jobshadi_limit", duration - 1);
+
+    if (duration < 1) {
+        message_vision(CYN
+        "\nä¸€ä¸ªå®ˆåŸŽå®‹å…µè·‘è¿‡æ¥è¯´é“ï¼šè’™å¤é¼å­æš‚æ—¶è¢«å‡»é€€äº†ï¼Œ$Nå¯ä»¥å›žåŽ»å¤å‘½äº†ï¼\n"
+        NOR, ob);
         if (me->query_temp("start_job")) {
-        message_vision(HIY"$NÕýÕ¾ÔÚ³ÇÇ½ÉÏÃÜÇÐ×¢ÊÓ×Å³ÇÏÂ"HIR"ÃÉ¹Å±ø"HIY"µÄÒ»¾ÙÒ»¶¯¡£\n"NOR,ob);
+            ob->set_temp("job_over", 1);
         }
-        me->apply_condition("jobshadi_limit", duration - 1);
-
-        if(duration<1)
-        {
-                message_vision(CYN"\nÒ»¸öÊØ³ÇËÎ±øÅÜ¹ýÀ´ËµµÀ£ºÃÉ¹Å÷°×ÓÔÝÊ±±»»÷ÍËÁË£¬$N¿ÉÒÔ»ØÈ¥¸´ÃüÁË£¡\n"NOR,ob);
-        if (me->query_temp("start_job")) {
-                ob->set_temp("job_over",1);
+        ob->delete_temp("start_job");
+        inv = all_inventory(room);
+        for (i = 0; i < sizeof(inv); i++) {
+            obb = inv[i];
+            if (obb->is_character()) {
+                if (obb->query("ygjg") == ob) destruct(obb);
+            }
+            continue;
         }
-                ob->delete_temp("start_job");
-                inv=all_inventory(room);
-                for (i = 0; i < sizeof(inv); i++) {
-                     obb=inv[i];
-                        if (obb->is_character()) {
-                        if (obb->query("ygjg")==ob) destruct(obb);
-                    }
-                        continue;
-                }
-                return 0;
-        }
-        return 1;
+        return 0;
+    }
+    return 1;
 }

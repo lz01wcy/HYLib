@@ -9,7 +9,6 @@ int update_condition(object me, int duration)
 	return 1;
 }
 
-string query_type(object me)
-{
+string query_type(object me) {
 	return "job";
 }

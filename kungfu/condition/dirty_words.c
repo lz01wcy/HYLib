@@ -1,31 +1,42 @@
 // zhongkui_qiushi.c
 #include <condition.h>
 #include <ansi.h>
+
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
+int update_condition(object me, int duration) {
 
 
-     if (duration < 1) {
-         message("channel:rumor",sprintf(HIM"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º¾ÝËµ%s(%s)·þÐÌÆÛÂú£¬±»´ÓÁ÷Ã¥ÀÎ·¿Àï·Å³öÀ´ÁË¡£\n"NOR,
-         me->query("name"),me->query("id")),users());
-         if (file_name(environment(me))=="/d/death/qiushi"){
-         tell_object(me, HIY "ÄãÖ»¾õÒ»ÕóÌÚÔÆ¼ÝÎí°ã±»ÈÓ³öÁËµØÓüÇôÊÒ£¡Ô­À´ÒÑ¾­»ñµÃÊÍ·Å£¡¹§Ï²£¡¹§Ï²£¡\n\n" NOR);
-         me->move("/d/city/wumiao");
-         message("vision",HIY "Í»È»Ò»¸ö¼Ò»ï´ÓÌìÉÏµôÁËÏÂÀ´£¬Ô­À´ÊÇ»ñµÃÊÍ·ÅµÄ"+me->query("name")+HIY"£¡\n" NOR, environment(me), me);
-         }
-         me->set("startroom", "/d/city/wumiao");
-         me->save();
-         return 0;
-	 }
+    if (duration < 1) {
+        message("channel:rumor", sprintf(HIM
+        "ã€è°£è¨€ã€‘æŸäººï¼šæ®è¯´%s(%s)æœåˆ‘æ¬ºæ»¡ï¼Œè¢«ä»Žæµæ°“ç‰¢æˆ¿é‡Œæ”¾å‡ºæ¥äº†ã€‚\n"
+        NOR,
+                me->query("name"), me->query("id")),users());
+        if (file_name(environment(me)) == "/d/death/qiushi") {
+            tell_object(me, HIY
+            "ä½ åªè§‰ä¸€é˜µè…¾äº‘é©¾é›¾èˆ¬è¢«æ‰”å‡ºäº†åœ°ç‹±å›šå®¤ï¼åŽŸæ¥å·²ç»èŽ·å¾—é‡Šæ”¾ï¼æ­å–œï¼æ­å–œï¼\n\n"
+            NOR);
+            me->move("/d/city/wumiao");
+            message("vision", HIY
+            "çªç„¶ä¸€ä¸ªå®¶ä¼™ä»Žå¤©ä¸ŠæŽ‰äº†ä¸‹æ¥ï¼ŒåŽŸæ¥æ˜¯èŽ·å¾—é‡Šæ”¾çš„" + me->query("name") + HIY
+            "ï¼\n"
+            NOR, environment(me), me);
+        }
+        me->set("startroom", "/d/city/wumiao");
+        me->save();
+        return 0;
+    }
 
-     if (!wizardp(me) && file_name(environment(me)) !="/d/death/qiushi") {
-         tell_object(me,HIC"ËÄÉÈÃÅ¸ßÊÖ³öÏÖÔÚÄãÑÛÇ°£º¡°ÄãµÄÀÎ»¹Ã»×øÍêÄØ£¡¿ì¹Ô¹ÔµÄ¸øÎÒ¹ö»ØÈ¥£¡¡±\n\n\n"NOR);
-         message_vision(HIC"ËÄÉÈÃÅ¸ßÊÖÍ»È»³öÏÖ£¬Ò»Ë¦Ë÷Ì×£¬Ì××¡$NµÄ²±×ÓÀ­ÁË¾Í×ß¡£\n\n\n"NOR,me);
-         me->move("/d/death/qiushi");
-         }
+    if (!wizardp(me) && file_name(environment(me)) != "/d/death/qiushi") {
+        tell_object(me, HIC
+        "å››æ‰‡é—¨é«˜æ‰‹å‡ºçŽ°åœ¨ä½ çœ¼å‰ï¼šâ€œä½ çš„ç‰¢è¿˜æ²¡åå®Œå‘¢ï¼å¿«ä¹–ä¹–çš„ç»™æˆ‘æ»šå›žåŽ»ï¼â€\n\n\n"
+        NOR);
+        message_vision(HIC
+        "å››æ‰‡é—¨é«˜æ‰‹çªç„¶å‡ºçŽ°ï¼Œä¸€ç”©ç´¢å¥—ï¼Œå¥—ä½$Nçš„è„–å­æ‹‰äº†å°±èµ°ã€‚\n\n\n"
+        NOR, me);
+        me->move("/d/death/qiushi");
+    }
 
-     me->apply_condition("dirty_words", duration - 1);
-     return 1;
+    me->apply_condition("dirty_words", duration - 1);
+    return 1;
 }

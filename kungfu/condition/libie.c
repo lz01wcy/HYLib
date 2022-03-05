@@ -1,4 +1,4 @@
-// libie.c Àë±ð
+// libie.c ç¦»åˆ«
 
 #include <action.h>
 #include <ansi.h>
@@ -9,31 +9,27 @@
 inherit F_CLEAN_UP;
 
 
-
-int update_condition(object me, int duration)
-
-{
-        mapping exits;
-        string *dirs;
-        //duration--;
-        //if( duration < 0 )      return 0; 
-        me->receive_wound("jing", 60);
-        if(mapp(exits = environment(me)->query("exits"))) { 
-                dirs = keys(exits);
-                tell_object(me, WHT"ÄãÐÄÖÐºöÈ»Ó¿ÆðÄªÃûÉË¸Ð£¬Ö»¾õ±¯¿àÆàÁ¹£¬Ã£È»²»ÖªºÎÍù¡£\n"NOR); 
-                message("vision", me->name() + "ÃæÈÝÆà¿à£¬Ê§ÉñÒ»°ãÂþÎÞÄ¿µÄµØÂÒ×ß¡£\n", 
-                        environment(me), me); 
-if (userp(me))                
-{
-               GO_CMD->do_flee(me);
-}
-else
-{
-me->start_busy(6);
-}
+int update_condition(object me, int duration) {
+    mapping exits;
+    string *dirs;
+    //duration--;
+    //if( duration < 0 )      return 0;
+    me->receive_wound("jing", 60);
+    if (mapp(exits = environment(me)->query("exits"))) {
+        dirs = keys(exits);
+        tell_object(me, WHT
+        "ä½ å¿ƒä¸­å¿½ç„¶æ¶Œèµ·èŽ«åä¼¤æ„Ÿï¼Œåªè§‰æ‚²è‹¦å‡„å‡‰ï¼ŒèŒ«ç„¶ä¸çŸ¥ä½•å¾€ã€‚\n"
+        NOR);
+        message("vision", me->name() + "é¢å®¹å‡„è‹¦ï¼Œå¤±ç¥žä¸€èˆ¬æ¼«æ— ç›®çš„åœ°ä¹±èµ°ã€‚\n",
+                environment(me), me);
+        if (userp(me)) {
+            GO_CMD->do_flee(me);
+        } else {
+            me->start_busy(6);
         }
-      me->apply_condition("libie", duration - 1);
+    }
+    me->apply_condition("libie", duration - 1);
 
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }    

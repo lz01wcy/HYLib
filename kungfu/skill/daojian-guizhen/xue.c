@@ -5,92 +5,115 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define XUE "¡¸" HIW "ÌìÏÂÓÐ" HIR "Ñª" NOR "¡¹"
+#define XUE "ã€Œ" HIW "å¤©ä¸‹æœ‰" HIR "è¡€" NOR "ã€"
 
 inherit F_SSERVER;
 
 
-int perform(object me, object target)
-{
-        string type, msg;
-        object weapon, weapon2;
-        int i, count, damage;
-        int ap, dp;
+int perform(object me, object target) {
+    string type, msg;
+    object weapon, weapon2;
+    int i, count, damage;
+    int ap, dp;
 
-        if (me->query_skill("daojian-guizhen", 1) < 200)
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖÐÃ»ÓÐÕâÖÖ¹¦ÄÜ¡£\n");
+    if (me->query_skill("daojian-guizhen", 1) < 200)
+        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²¡æœ‰è¿™ç§åŠŸèƒ½ã€‚\n");
 
-        if (! target)
-        {
-                me->clean_up_enemy();
-                target = me->select_opponent();
-        }
-	if( me->is_busy() )
-		return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÊ©ÓÃÄÚ¹¦¡£)\n");
-        if (! me->is_fighting(target))
-                return notify_fail(XUE "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+    if (!target) {
+        me->clean_up_enemy();
+        target = me->select_opponent();
+    }
+    if (me->is_busy())
+        return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½ç”¨å†…åŠŸã€‚)\n");
+    if (!me->is_fighting(target))
+        return notify_fail(XUE "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-        if (! objectp(weapon = me->query_temp("weapon"))
-           || (string)weapon->query("skill_type") != "sword"
-           && (string)weapon->query("skill_type") != "blade" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+    if (!objectp(weapon = me->query_temp("weapon"))
+        || (string) weapon->query("skill_type") != "sword"
+           && (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ï¼Œéš¾ä»¥æ–½å±•" XUE "ã€‚\n");
 
-        type = weapon->query("skill_type");
+    type = weapon->query("skill_type");
 
-        if (me->query_skill(type, 1) < 250)
-                return notify_fail("ÄãµÄ" + to_chinese(type) + "Ì«²î£¬"
-                                   "ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+    if (me->query_skill(type, 1) < 250)
+        return notify_fail("ä½ çš„" + to_chinese(type) + "å¤ªå·®ï¼Œ"
+                                                     "éš¾ä»¥æ–½å±•" XUE "ã€‚\n");
 
-        if (me->query_skill_mapped(type) != "daojian-guizhen")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢µ¶½£¹éÕæ£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+    if (me->query_skill_mapped(type) != "daojian-guizhen")
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘åˆ€å‰‘å½’çœŸï¼Œéš¾ä»¥æ–½å±•" XUE "ã€‚\n");
 
-        if (me->query_skill("daojian-guizhen", 1) < 250)
-                return notify_fail("ÄãµÄ½£¹éÕæµÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+    if (me->query_skill("daojian-guizhen", 1) < 250)
+        return notify_fail("ä½ çš„å‰‘å½’çœŸç­‰çº§ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" XUE "ã€‚\n");
 
-        if (me->query("neili") < 500)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+    if (me->query("neili") < 500)
+        return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" XUE "ã€‚\n");
 
-        if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+    if (!living(target))
+        return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "ÊÖÖÐ" + weapon->name() + HIW "ÝëµØÒ»¶¶"
-              "£¬½«¡¸" NOR + WHT "ºú¼Òµ¶·¨" HIW "¡¹²¢¡¸" NOR + WHT
-              "Ãç¼Ò½£·¨" HIW "¡¹Á¬»·Ê©³ö¡£ö®Ê±º®\n¹âµãµã£¬ÓÌÈçÒ¹ÔÉ"
-              "»®¿Õ£¬ÆÌÌì¸ÇµØÕÖÏò$n" HIW "£¬ÕýÊÇÒ»ÕÐ¡¸" HIW "ÌìÏÂ"
-              "ÓÐ" HIR "Ñª" HIW "¡¹¡£\n" NOR;
+    msg = HIW
+    "$N"
+    HIW
+    "æ‰‹ä¸­" + weapon->name() + HIW
+    "è“¦åœ°ä¸€æŠ–"
+    "ï¼Œå°†ã€Œ"
+    NOR + WHT
+    "èƒ¡å®¶åˆ€æ³•"
+    HIW
+    "ã€å¹¶ã€Œ"
+    NOR + WHT
+    "è‹—å®¶å‰‘æ³•"
+    HIW
+    "ã€è¿žçŽ¯æ–½å‡ºã€‚éœŽæ—¶å¯’\nå…‰ç‚¹ç‚¹ï¼ŒçŠ¹å¦‚å¤œé™¨"
+    "åˆ’ç©ºï¼Œé“ºå¤©ç›–åœ°ç½©å‘$n"
+    HIW
+    "ï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œ"
+    HIW
+    "å¤©ä¸‹"
+    "æœ‰"
+    HIR
+    "è¡€"
+    HIW
+    "ã€ã€‚\n"
+    NOR;
 
-        ap = me->query_skill("blade",1);
-        dp = target->query_skill("parry",1);
+    ap = me->query_skill("blade", 1);
+    dp = target->query_skill("parry", 1);
 
-        if (ap * 2 / 3 + random(ap) > dp)
-        {
-                msg += HIW "$n" HIW "Ö»¼ûÎÞÊýµ¶¹â½£Ó°Ïò×Ô¼º±Æ"
-                       "À´£¬¶Ù¸ÐÑÛ»¨çÔÂÒ£¬ÐÄµ×º®ÒâÓÍÈ»¶øÉú¡£\n" NOR;
-                count = ap / 15; 
-                me->set_temp("daojian-guizhen/max_pfm", 1);
-        } else
-        {
-                msg += HIG "$n" HIG "Í»È»·¢ÏÖ×Ô¼ºËÄÖÜ½Ô±»µ¶¹â"
-                       "½£Ó°Ëù°üÎ§£¬ÐÄÖª²»Ãî£¬¼±Ã¦Ð¡ÐÄÕÐ¼Ü¡£\n" NOR;
-                count = ap / 30; 
-        }
-        message_combatd(msg, me, target);
+    if (ap * 2 / 3 + random(ap) > dp) {
+        msg += HIW
+        "$n"
+        HIW
+        "åªè§æ— æ•°åˆ€å…‰å‰‘å½±å‘è‡ªå·±é€¼"
+        "æ¥ï¼Œé¡¿æ„Ÿçœ¼èŠ±ç¼­ä¹±ï¼Œå¿ƒåº•å¯’æ„æ²¹ç„¶è€Œç”Ÿã€‚\n"
+        NOR;
+        count = ap / 15;
+        me->set_temp("daojian-guizhen/max_pfm", 1);
+    } else {
+        msg += HIG
+        "$n"
+        HIG
+        "çªç„¶å‘çŽ°è‡ªå·±å››å‘¨çš†è¢«åˆ€å…‰"
+        "å‰‘å½±æ‰€åŒ…å›´ï¼Œå¿ƒçŸ¥ä¸å¦™ï¼Œæ€¥å¿™å°å¿ƒæ‹›æž¶ã€‚\n"
+        NOR;
+        count = ap / 30;
+    }
+    message_combatd(msg, me, target);
 
-        me->add("neili", -300);
-        me->add_temp("apply/attack", count);
-        me->add_temp("apply/damage", count * 2 / 3);
+    me->add("neili", -300);
+    me->add_temp("apply/attack", count);
+    me->add_temp("apply/damage", count * 2 / 3);
 
-        for (i = 0; i < 9; i++)
-        {
-                if (! me->is_fighting(target))
-                        break;
-if (random(3)==0) target->start_busy(2);
+    for (i = 0; i < 9; i++) {
+        if (!me->is_fighting(target))
+            break;
+        if (random(3) == 0) target->start_busy(2);
 
-                COMBAT_D->do_attack(me, target, weapon, 0);
-        }
-        me->add_temp("apply/attack", -count);
-        me->add_temp("apply/damage", -count * 2 / 3);
-        me->delete_temp("daojian-guizhen/max_pfm");
-        me->start_busy(1 + random(8));
-        return 1;
+        COMBAT_D->do_attack(me, target, weapon, 0);
+    }
+    me->add_temp("apply/attack", -count);
+    me->add_temp("apply/damage", -count * 2 / 3);
+    me->delete_temp("daojian-guizhen/max_pfm");
+    me->start_busy(1 + random(8));
+    return 1;
 }

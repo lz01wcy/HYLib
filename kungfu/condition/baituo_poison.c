@@ -5,26 +5,35 @@ inherit F_CLEAN_UP;
 
 string name() { return "baituo_poison"; }
 
-string chinese_name() { return "°×ÍÕ¹ÖÉß·Û"; }
+string chinese_name() { return "ç™½é©¼æ€ªè›‡ç²‰"; }
 
-int update_condition(object me, int duration)
-{
-        if( duration < 1 ) return 0;
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
 
- message("vision", me->name() + YEL"È«Éí¾·ÂÎ£¬²»×¡µÄ²ü¶¶£¬È«ÉíÎÞÁ¦£¬»è»èÓûµ¹¡£\n"NOR, environment(me), me);
-                tell_object(me, YEL "È«Éí¾·ÂÎ£¬²»×¡µÄ²ü¶¶£¬È«ÉíÎÞÁ¦£¬»è»èÓûµ¹!¿´À´ÊÇ°×ÍÕ¹ÖÉß·Û·¢×÷ÁË£¡\n" NOR );
+    message("vision", me->name() + YEL
+    "å…¨èº«ç—‰æŒ›ï¼Œä¸ä½çš„é¢¤æŠ–ï¼Œå…¨èº«æ— åŠ›ï¼Œæ˜æ˜æ¬²å€’ã€‚\n"
+    NOR, environment(me), me);
+    tell_object(me, YEL
+    "å…¨èº«ç—‰æŒ›ï¼Œä¸ä½çš„é¢¤æŠ–ï¼Œå…¨èº«æ— åŠ›ï¼Œæ˜æ˜æ¬²å€’!çœ‹æ¥æ˜¯ç™½é©¼æ€ªè›‡ç²‰å‘ä½œäº†ï¼\n"
+    NOR );
 
-        me->set_temp("apply/attack", -50);
-  tell_object(me,HIG"ÄãµÄ¹¥»÷Á¦¼õµÍÁË!\n"NOR);
-        me->set_temp("apply/dodge", -50);
-  tell_object(me,HIG"ÄãµÄ¶ãÉÁÁ¦¼õµÍÁË!\n"NOR);
-        me->set_temp("apply/defense", -50);
-  tell_object(me,HIG"ÄãµÄ·ÀÓùÁ¦¼õµÍÁË!\n"NOR);
+    me->set_temp("apply/attack", -50);
+    tell_object(me, HIG
+    "ä½ çš„æ”»å‡»åŠ›å‡ä½Žäº†!\n"
+    NOR);
+    me->set_temp("apply/dodge", -50);
+    tell_object(me, HIG
+    "ä½ çš„èº²é—ªåŠ›å‡ä½Žäº†!\n"
+    NOR);
+    me->set_temp("apply/defense", -50);
+    tell_object(me, HIG
+    "ä½ çš„é˜²å¾¡åŠ›å‡ä½Žäº†!\n"
+    NOR);
 
-        if (!me->is_busy())
+    if (!me->is_busy())
         me->start_busy(3);
-        me->apply_condition(name(), duration - 1);
+    me->apply_condition(name(), duration - 1);
 
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

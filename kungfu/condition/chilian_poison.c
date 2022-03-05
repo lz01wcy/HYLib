@@ -5,25 +5,24 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   if( !living(me) ) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
-   }
-   else {
-      tell_object(me, HIR "ºöÈ»Ò»ÕóÔÎÐýÊ¹Äã¼±Óû×÷Å»£¬ÄãÖÐµÄ³àÁ¶ÕÆ¶¾·¢×÷ÁË£¡\n" NOR );
-if (environment(me) && me)
-{
-      message("vision", me->name() + "Í·ÖØ½ÅÇá£¬Éí×ÓÍ»È»»ÎÁËÁ½»Î¡£\n",
-            environment(me), me);
-}
-   }
-      me->receive_damage("qi", random(me->query("qi"))/5+80);
-      me->receive_damage("jing", random(me->query("jing"))/5+80);
-      me->apply_condition("chilian_poison", duration - 1);
-	
-   if( duration == 1) me->delete("poisoner");
+int update_condition(object me, int duration) {
+    if (!living(me)) {
+        message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
+    } else {
+        tell_object(me, HIR
+        "å¿½ç„¶ä¸€é˜µæ™•æ—‹ä½¿ä½ æ€¥æ¬²ä½œå‘•ï¼Œä½ ä¸­çš„èµ¤ç‚¼æŽŒæ¯’å‘ä½œäº†ï¼\n"
+        NOR );
+        if (environment(me) && me) {
+            message("vision", me->name() + "å¤´é‡è„šè½»ï¼Œèº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒã€‚\n",
+                    environment(me), me);
+        }
+    }
+    me->receive_damage("qi", random(me->query("qi")) / 5 + 80);
+    me->receive_damage("jing", random(me->query("jing")) / 5 + 80);
+    me->apply_condition("chilian_poison", duration - 1);
 
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+    if (duration == 1) me->delete("poisoner");
+
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

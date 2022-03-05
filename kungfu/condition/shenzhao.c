@@ -3,29 +3,34 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   if( duration < 1 ) return 0;
-   if( !living(me) ) {
-      message("vision", HIR "Ö»¼û"+me->name()+ HIR "ÇºÇºÍËÁËÊý²½£¬Éí×ÓÒ¡»Î£¬Ë«"
-              "ÍÈ½¥½¥ÍäÇú£¬ËÆºõºÈ×íÁËÒ»°ã¡£\n" NOR, environment(me), me);
-   }
-   else {
-      tell_object(me, HIB "ÄãÖ»¸ÐÄÚÏ¢¶ÙÖÍ£¬ÕæÆø²»³©£¬Ò»ÕÅÁ³ÕÇµÃÍ¨ºì£¬±ãÒªµøµ¹¡££¡\n" NOR );
-if (environment(me) &&  me)
-{
-      message("vision", HIR "Ö»¼û"+me->name()+ HIR "ÇºÇºÍËÁËÊý²½£¬Éí×ÓÒ¡»Î£¬Ë«"
-              "ÍÈ½¥½¥ÍäÇú£¬ËÆºõºÈ×íÁËÒ»°ã¡£\n" NOR,
-            environment(me), me);
-}
-   }
-      me->receive_wound("qi",50 + random(100));
-      me->receive_wound("jing", 50);
-      me->start_busy(2);
-      me->apply_condition("shenzhao", duration - 1);
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
+    if (!living(me)) {
+        message("vision", HIR
+        "åªè§" + me->name() + HIR
+        "å‘›å‘›é€€äº†æ•°æ­¥ï¼Œèº«å­æ‘‡æ™ƒï¼ŒåŒ"
+        "è…¿æ¸æ¸å¼¯æ›²ï¼Œä¼¼ä¹Žå–é†‰äº†ä¸€èˆ¬ã€‚\n"
+        NOR, environment(me), me);
+    } else {
+        tell_object(me, HIB
+        "ä½ åªæ„Ÿå†…æ¯é¡¿æ»žï¼ŒçœŸæ°”ä¸ç•…ï¼Œä¸€å¼ è„¸æ¶¨å¾—é€šçº¢ï¼Œä¾¿è¦è·Œå€’ã€‚ï¼\n"
+        NOR );
+        if (environment(me) && me) {
+            message("vision", HIR
+            "åªè§" + me->name() + HIR
+            "å‘›å‘›é€€äº†æ•°æ­¥ï¼Œèº«å­æ‘‡æ™ƒï¼ŒåŒ"
+            "è…¿æ¸æ¸å¼¯æ›²ï¼Œä¼¼ä¹Žå–é†‰äº†ä¸€èˆ¬ã€‚\n"
+            NOR,
+                    environment(me), me);
+        }
+    }
+    me->receive_wound("qi", 50 + random(100));
+    me->receive_wound("jing", 50);
+    me->start_busy(2);
+    me->apply_condition("shenzhao", duration - 1);
 
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
 

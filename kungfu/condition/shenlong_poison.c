@@ -5,21 +5,24 @@ inherit F_CLEAN_UP;
 
 string name() { return "shenlong_poison"; }
 
-string chinese_name() { return "ÉñÁú±ª½îÉ¢"; }
+string chinese_name() { return "ç¥žé¾™è±¹ç­‹æ•£"; }
 
-int update_condition(object me, int duration)
-{
-        if( duration < 1 ) return 0;
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
 
- message("vision", me->name() + HIY"ÐØÖÐ·¢Í´£¬È«Éí²»×¡µÄ²ü¶¶£¬°Ñ³ÔµÄ¶«Î÷È«²¿ÍÂ³öÀ´ÁË¡£\n"NOR, environment(me), me);
-                tell_object(me, HIY "ÐØÖÐ·¢Í´£¬È«Éí²»×¡µÄ²ü¶¶£¬°Ñ³ÔµÄ¶«Î÷È«²¿ÍÂ³öÀ´ÁË!¿´À´ÊÇÉñÁú±ª½îÉ¢·¢×÷ÁË£¡\n" NOR );
+    message("vision", me->name() + HIY
+    "èƒ¸ä¸­å‘ç—›ï¼Œå…¨èº«ä¸ä½çš„é¢¤æŠ–ï¼ŒæŠŠåƒçš„ä¸œè¥¿å…¨éƒ¨åå‡ºæ¥äº†ã€‚\n"
+    NOR, environment(me), me);
+    tell_object(me, HIY
+    "èƒ¸ä¸­å‘ç—›ï¼Œå…¨èº«ä¸ä½çš„é¢¤æŠ–ï¼ŒæŠŠåƒçš„ä¸œè¥¿å…¨éƒ¨åå‡ºæ¥äº†!çœ‹æ¥æ˜¯ç¥žé¾™è±¹ç­‹æ•£å‘ä½œäº†ï¼\n"
+    NOR );
 
-        me->set("food",0);
-        me->set("water",0);
-        if (!me->is_busy())
+    me->set("food", 0);
+    me->set("water", 0);
+    if (!me->is_busy())
         me->start_busy(8);
-        me->apply_condition(name(), duration - 1);
+    me->apply_condition(name(), duration - 1);
 
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

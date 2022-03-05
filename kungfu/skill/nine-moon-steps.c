@@ -2,61 +2,57 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-	"$nÒ»ÕÐ¡¸Òõ²îÑô´í¡¹ÇáÇáÇÉÇÉµØ±ÜÁË¿ªÈ¥¡£\n",
-	"Ö»¼û$nÉíÓ°Ò»»Î£¬Ò»Ê½¡¸Òõ·ç·÷Ãæ¡¹ÔçÒÑ±ÜÔÚÆß³ßÖ®Íâ¡£\n",
-	"$nÊ¹³ö¡¸Òõ¶¯ÑôËæ¡¹£¬ÇáÇáËÉËÉµØÉÁ¹ý¡£\n",
-	"$n×ó×ãÒ»µã£¬Ò»ÕÐ¡¸ÒõÆø³åÌì¡¹ÌÚ¿Õ¶øÆð£¬±ÜÁË¿ªÈ¥¡£\n",
-	"¿ÉÊÇ$nÊ¹Ò»ÕÐ¡¸ÒõÑô½»´í¡¹£¬Éí×ÓÇáÇáÆ®ÁË¿ªÈ¥¡£\n",
-	"$nÉíÓ°Î¢¶¯£¬ÒÑ¾­½åÒ»ÕÐ¡¸Òõ¹íÅÑÑÖ¡¹ÇáÇáÉÁ¹ý¡£\n",
-	"µ«ÊÇ$nÒ»ÕÐ¡¸ÒõÆøÉ­É­¡¹Ê¹³ö£¬ÔçÒÑÈÆµ½$NÉíáá£¡\n"
+    "$nä¸€æ‹›ã€Œé˜´å·®é˜³é”™ã€è½»è½»å·§å·§åœ°é¿äº†å¼€åŽ»ã€‚\n",
+            "åªè§$nèº«å½±ä¸€æ™ƒï¼Œä¸€å¼ã€Œé˜´é£Žæ‹‚é¢ã€æ—©å·²é¿åœ¨ä¸ƒå°ºä¹‹å¤–ã€‚\n",
+            "$nä½¿å‡ºã€Œé˜´åŠ¨é˜³éšã€ï¼Œè½»è½»æ¾æ¾åœ°é—ªè¿‡ã€‚\n",
+            "$nå·¦è¶³ä¸€ç‚¹ï¼Œä¸€æ‹›ã€Œé˜´æ°”å†²å¤©ã€è…¾ç©ºè€Œèµ·ï¼Œé¿äº†å¼€åŽ»ã€‚\n",
+            "å¯æ˜¯$nä½¿ä¸€æ‹›ã€Œé˜´é˜³äº¤é”™ã€ï¼Œèº«å­è½»è½»é£˜äº†å¼€åŽ»ã€‚\n",
+            "$nèº«å½±å¾®åŠ¨ï¼Œå·²ç»è—‰ä¸€æ‹›ã€Œé˜´é¬¼å›é˜Žã€è½»è½»é—ªè¿‡ã€‚\n",
+            "ä½†æ˜¯$nä¸€æ‹›ã€Œé˜´æ°”æ£®æ£®ã€ä½¿å‡ºï¼Œæ—©å·²ç»•åˆ°$Nèº«å¾Œï¼\n"
 });
 
-int valid_enable(string usage)
-{
-	return (usage=="dodge") || (usage=="dodge");
+int valid_enable(string usage) {
+    return (usage == "dodge") || (usage == "dodge");
 }
 
-int valid_learn(object me)
-{
-       if( (string)me->query("gender") != "Å®ÐÔ" )
-                return notify_fail("¾ÅÒõÉí·¨ÊÇÖ»ÓÐÅ®×Ó²ÅÄÜÁ·µÄÎä¹¦¡£\n");
-	if( (int)me->query("max_neili") < 50 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓÐ°ì·¨Á·¾ÅÒõÉí·¨¡£\n");
+int valid_learn(object me) {
+    if ((string) me->query("gender") != "å¥³æ€§")
+        return notify_fail("ä¹é˜´èº«æ³•æ˜¯åªæœ‰å¥³å­æ‰èƒ½ç»ƒçš„æ­¦åŠŸã€‚\n");
+    if ((int) me->query("max_neili") < 50)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠžæ³•ç»ƒä¹é˜´èº«æ³•ã€‚\n");
 
-	return 1;
-}
-
-string query_dodge_msg(string limb)
-{
-	return dodge_msg[random(sizeof(dodge_msg))];
+    return 1;
 }
 
-int practice_skill(object me)
-{
-	if( (int)me->query("qi") < 30
-	||	(int)me->query("neili") < 3 )
-		return notify_fail("ÄãµÄÆø»òÄÚÁ¦²»¹»£¬²»ÄÜÁ·¾ÅÒõÉí·¨¡£\n");
-	me->receive_damage("qi", 30);
-	me->add("neili", -3);
-	return 1;
-}
-string perform_action_file(string action)
-{
-   return __DIR__"ninemoonsteps/" + action;
+string query_dodge_msg(string limb) {
+    return dodge_msg[random(sizeof(dodge_msg))];
 }
 
-int effective_level() { return 15;}
+int practice_skill(object me) {
+    if ((int) me->query("qi") < 30
+        || (int) me->query("neili") < 3)
+        return notify_fail("ä½ çš„æ°”æˆ–å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ç»ƒä¹é˜´èº«æ³•ã€‚\n");
+    me->receive_damage("qi", 30);
+    me->add("neili", -3);
+    return 1;
+}
 
-int learn_bonus()
-{
-	return 10;
+string perform_action_file(string action) {
+    return __DIR__
+    "ninemoonsteps/" + action;
 }
-int practice_bonus()
-{
-	return 5;
+
+int effective_level() { return 15; }
+
+int learn_bonus() {
+    return 10;
 }
-int black_white_ness()
-{
-	return 20;
+
+int practice_bonus() {
+    return 5;
+}
+
+int black_white_ness() {
+    return 20;
 }
 

@@ -3,52 +3,53 @@
 // by acep
 
 #include <ansi.h>
-string* xuedao = ({
-        "¾Ş¹ÇÑ¨",
-        "µØ²ÖÑ¨",
-        "¼ç¾®Ñ¨",
-        "¼Õ³µÑ¨",
-        "³ĞÆüÑ¨",
-        "·ç³ØÑ¨",
-        "ÕÂÃÅÑ¨",
-        "·ç¸®Ñ¨",
-        "¾«´ÙÑ¨",
-        "ÌÕµÀÑ¨",
-        "Ç¿¼äÑ¨",
-        "ÉÙº£Ñ¨",
-        "¶¿±ÇÑ¨",
-        "ÉñÃÅÑ¨",
-        "»ª¸ÇÑ¨",
-        "´ó×µÑ¨",
-        "·ïÎ²Ñ¨",
-        "ÖÁÑôÑ¨",
-        "ÀÍ¹¬Ñ¨",
-        "°Ù»áÑ¨",
-        "ÁéÌ¨Ñ¨",
-        "Ì«ÑôÑ¨",
-        "ëşÖĞÑ¨",
-        "ÃüÃÅÑ¨",
-        "ğ¯Î²Ñ¨",
-        "ÈıÒõ½»",
-        "ÌìÖùÑ¨"
+
+string *xuedao = ({
+    "å·¨éª¨ç©´",
+            "åœ°ä»“ç©´",
+            "è‚©äº•ç©´",
+            "é¢Šè½¦ç©´",
+            "æ‰¿æ³£ç©´",
+            "é£æ± ç©´",
+            "ç« é—¨ç©´",
+            "é£åºœç©´",
+            "ç²¾ä¿ƒç©´",
+            "é™¶é“ç©´",
+            "å¼ºé—´ç©´",
+            "å°‘æµ·ç©´",
+            "çŠŠé¼»ç©´",
+            "ç¥é—¨ç©´",
+            "åç›–ç©´",
+            "å¤§æ¤ç©´",
+            "å‡¤å°¾ç©´",
+            "è‡³é˜³ç©´",
+            "åŠ³å®«ç©´",
+            "ç™¾ä¼šç©´",
+            "çµå°ç©´",
+            "å¤ªé˜³ç©´",
+            "è†»ä¸­ç©´",
+            "å‘½é—¨ç©´",
+            "é¸ å°¾ç©´",
+            "ä¸‰é˜´äº¤",
+            "å¤©æŸ±ç©´"
 });
 
 
-int update_condition(object me, int duration)
-{
-	object ob;
-   if( duration < 1 ) return 0;
-	if (!living(me)) {
-		message("vision", me->name() + "ÃÆºßÁËÒ»Éù¡£\n", environment(me), me);
-	}
-		tell_object(me,HIR"Äã¸Ğµ½"+xuedao[random(sizeof(xuedao))]+"Ò»ÕóËáÂé£¬ÑªÆø²»³©£¬¶ÙÊ±¶¯µ¯²»µÃ£¡\n"NOR);
-  if( !me->is_busy() )
-{ 
-		me->start_busy(5);
-}
-                me->receive_damage("qi", duration*2 );
-                me->receive_wound("qi", duration*2);
-      me->apply_condition("yyz_damage", duration - 1);
-      if( duration < 1 ) return 0;
-	return 1;
+int update_condition(object me, int duration) {
+    object ob;
+    if (duration < 1) return 0;
+    if (!living(me)) {
+        message("vision", me->name() + "é—·å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
+    }
+    tell_object(me, HIR
+    "ä½ æ„Ÿåˆ°" + xuedao[random(sizeof(xuedao))] + "ä¸€é˜µé…¸éº»ï¼Œè¡€æ°”ä¸ç•…ï¼Œé¡¿æ—¶åŠ¨å¼¹ä¸å¾—ï¼\n"
+    NOR);
+    if (!me->is_busy()) {
+        me->start_busy(5);
+    }
+    me->receive_damage("qi", duration * 2);
+    me->receive_wound("qi", duration * 2);
+    me->apply_condition("yyz_damage", duration - 1);
+    if (duration < 1) return 0;
+    return 1;
 }

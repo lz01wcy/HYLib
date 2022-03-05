@@ -2,23 +2,22 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-	int limit;
+int update_condition(object me, int duration) {
+    int limit;
 
-	limit = (me->query("con") + (int)me->query("max_force") / 50) * 2;
+    limit = (me->query("con") + (int) me->query("max_force") / 50) * 2;
 
-	if( duration > limit
-	&&	living(me) ) {
-		me->unconcious();
-		return 0;
-	} else if( duration > limit/2 ) {
-		tell_object(me, "Äã¾õµÃÄÔÖĞ»è»è³Á³Á£¬ĞÄÖĞ¿Õµ´µ´µÄ£¬Ö±ÏëÌÉÏÂÀ´Ë¯Ò»¾õ¡£\n");
-		message("vision", me->name() + "Ò¡Í·»ÎÄÔµØÕ¾¶¼Õ¾²»ÎÈ£¬ÏÔÈ»ÊÇÃÉº¹Ò©µÄÒ©Á¦·¢×÷ÁË¡£\n",
-			environment(me), me);
-	}
+    if (duration > limit
+        && living(me)) {
+        me->unconcious();
+        return 0;
+    } else if (duration > limit / 2) {
+        tell_object(me, "ä½ è§‰å¾—è„‘ä¸­æ˜æ˜æ²‰æ²‰ï¼Œå¿ƒä¸­ç©ºè¡è¡çš„ï¼Œç›´æƒ³èººä¸‹æ¥ç¡ä¸€è§‰ã€‚\n");
+        message("vision", me->name() + "æ‘‡å¤´æ™ƒè„‘åœ°ç«™éƒ½ç«™ä¸ç¨³ï¼Œæ˜¾ç„¶æ˜¯è’™æ±—è¯çš„è¯åŠ›å‘ä½œäº†ã€‚\n",
+                environment(me), me);
+    }
 
-	me->apply_condition("slumber_drug", duration - 1);
-	if( !duration ) return 0;
-	return 1;
+    me->apply_condition("slumber_drug", duration - 1);
+    if (!duration) return 0;
+    return 1;
 }

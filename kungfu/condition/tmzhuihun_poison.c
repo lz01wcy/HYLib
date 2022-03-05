@@ -3,27 +3,26 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   if( duration < 1 ) return 0;
-   if( !living(me) ) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
-   }
-   else {
-      tell_object(me, HIC "ºöÈ»Ò»ÕóÖÁÃüµÄÆæº®Ï®À´£¬ÄãÖÐµÄÌÆÃÅµÄ×·»ê¶áÃüïÚ·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "µÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬Á³ÉÏÒ»ÕóÅ¤Çú,ºÃÏñÍò·ÖÍ´¿à¡£\n",
-            environment(me), me);
-   }
-if (me->query("qi") >200)
-      me->receive_wound("qi",185 + random(10));
-if ((int)me->query("jing") < 100000)
-{
-      me->receive_wound("jing", me->query("jing")/15);
-}else    me->receive_wound("qi", 2000);
-      me->start_busy(3);
-if (me->query("neili") >200)
-      me->add("neili",-150);
-      me->apply_condition("tmzhuihun_poison", duration - 1);
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
+    if (!living(me)) {
+        message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
+    } else {
+        tell_object(me, HIC
+        "å¿½ç„¶ä¸€é˜µè‡³å‘½çš„å¥‡å¯’è¢­æ¥ï¼Œä½ ä¸­çš„å”é—¨çš„è¿½é­‚å¤ºå‘½é•–å‘ä½œäº†ï¼\n"
+        NOR );
+        message("vision", me->name() + "çš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œè„¸ä¸Šä¸€é˜µæ‰­æ›²,å¥½åƒä¸‡åˆ†ç—›è‹¦ã€‚\n",
+                environment(me), me);
+    }
+    if (me->query("qi") > 200)
+        me->receive_wound("qi", 185 + random(10));
+    if ((int) me->query("jing") < 100000) {
+        me->receive_wound("jing", me->query("jing") / 15);
+    } else me->receive_wound("qi", 2000);
+    me->start_busy(3);
+    if (me->query("neili") > 200)
+        me->add("neili", -150);
+    me->apply_condition("tmzhuihun_poison", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

@@ -2,33 +2,32 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-	int limit;
+int update_condition(object me, int duration) {
+    int limit;
 
-	limit = (me->query("con") + (int)me->query("max_neili") / 50) * 2;
+    limit = (me->query("con") + (int) me->query("max_neili") / 50) * 2;
 
-	if( duration > limit
-	&&	living(me) ) {
-		me->unconcious();
-		return 0;
-	} else if( !living(me) ) {
-		message("vision", me->name() + "´òÁË¸öàÃ£¬²»¹ıÒÀÈ»ÀÃ×íÈçÄà¡£\n",
-			environment(me), me);
-	} else if( duration > limit/2 ) {
-		tell_object(me, "Äã¾õµÃÄÔÖĞ»è»è³Á³Á£¬Éí×ÓÇáÆ®Æ®µØ£¬´ó¸ÅÊÇ×íÁË¡£\n");
-		message("vision", me->name() + "Ò¡Í·»ÎÄÔµØÕ¾¶¼Õ¾²»ÎÈ£¬ÏÔÈ»ÊÇºÈ×íÁË¡£\n",
-			environment(me), me);
-		me->receive_damage("jing", 10);
-	} else if( duration > limit/4 ) {
-		tell_object(me, "Äã¾õµÃÒ»Õó¾ÆÒâÉÏ³å£¬ÑÛÆ¤ÓĞĞ©³ÁÖØÁË¡£\n");
-		message("vision", me->name() + "Á³ÉÏÒÑ¾­ÂÔÏÔ¾ÆÒâÁË¡£\n",
-			environment(me), me);
-		me->receive_healing("jing", 10);
-		me->receive_healing("qi", 15);
-	}
+    if (duration > limit
+        && living(me)) {
+        me->unconcious();
+        return 0;
+    } else if (!living(me)) {
+        message("vision", me->name() + "æ‰“äº†ä¸ªå—ï¼Œä¸è¿‡ä¾ç„¶çƒ‚é†‰å¦‚æ³¥ã€‚\n",
+                environment(me), me);
+    } else if (duration > limit / 2) {
+        tell_object(me, "ä½ è§‰å¾—è„‘ä¸­æ˜æ˜æ²‰æ²‰ï¼Œèº«å­è½»é£˜é£˜åœ°ï¼Œå¤§æ¦‚æ˜¯é†‰äº†ã€‚\n");
+        message("vision", me->name() + "æ‘‡å¤´æ™ƒè„‘åœ°ç«™éƒ½ç«™ä¸ç¨³ï¼Œæ˜¾ç„¶æ˜¯å–é†‰äº†ã€‚\n",
+                environment(me), me);
+        me->receive_damage("jing", 10);
+    } else if (duration > limit / 4) {
+        tell_object(me, "ä½ è§‰å¾—ä¸€é˜µé…’æ„ä¸Šå†²ï¼Œçœ¼çš®æœ‰äº›æ²‰é‡äº†ã€‚\n");
+        message("vision", me->name() + "è„¸ä¸Šå·²ç»ç•¥æ˜¾é…’æ„äº†ã€‚\n",
+                environment(me), me);
+        me->receive_healing("jing", 10);
+        me->receive_healing("qi", 15);
+    }
 
-	me->apply_condition("drunk", duration - 1);
-	if( !duration ) return 0;
-	return 1;
+    me->apply_condition("drunk", duration - 1);
+    if (!duration) return 0;
+    return 1;
 }

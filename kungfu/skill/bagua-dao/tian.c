@@ -1,79 +1,84 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define TIAN "¡¸" HIY "Ììµ¶°ËÊÆ" NOR "¡¹"
+#define TIAN "ã€Œ" HIY "å¤©åˆ€å…«åŠ¿" NOR "ã€"
 
 inherit F_SSERVER;
 
-int perform(object me, object target)
-{
-        int damage;
-        string msg;
-        object weapon;
-        int i, count;
+int perform(object me, object target) {
+    int damage;
+    string msg;
+    object weapon;
+    int i, count;
 
 
-        if (! target) target = offensive_target(me);
+    if (!target) target = offensive_target(me);
 
-        if (! target || ! me->is_fighting(target))
-                return notify_fail(TIAN "Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+    if (!target || !me->is_fighting(target))
+        return notify_fail(TIAN "åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-        if (! objectp(weapon = me->query_temp("weapon")) ||
-            (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+    if (!objectp(weapon = me->query_temp("weapon")) ||
+        (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
-        if ((int)me->query_skill("bagua-dao", 1) < 250)
-                return notify_fail("ÄãµÄ°ËØÔµ¶·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
-
-
-        if ((int)me->query_skill("linji-zhuang", 1) < 120)
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯»ðºòÌ«Ç³¡£\n");
-                
-        if (me->query_skill("bagua-dao", 1) < 220)
-                return notify_fail("ÄãµÄ°ËØÔµ¶·¨ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
-
-        if (me->query_skill_mapped("blade") != "bagua-dao")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ËØÔµ¶·¨£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+    if ((int) me->query_skill("bagua-dao", 1) < 250)
+        return notify_fail("ä½ çš„å…«å¦åˆ€æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
 
-        if ((int)me->query_skill("bagua-zhang") < 150)
-                return notify_fail("ÄãµÄ°ËØÔÕÆ»ðºòÌ«Ç³¡£\n");
-                
-        if ((int)me->query("max_neili") < 3000)
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+    if ((int) me->query_skill("linji-zhuang", 1) < 120)
+        return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ç«å€™å¤ªæµ…ã€‚\n");
 
-        if ((int)me->query("neili") < 500)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+    if (me->query_skill("bagua-dao", 1) < 220)
+        return notify_fail("ä½ çš„å…«å¦åˆ€æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
-        if (me->query_skill_mapped("blade") != "bagua-dao")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ËØÔµ¶·¨£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+    if (me->query_skill_mapped("blade") != "bagua-dao")
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å…«å¦åˆ€æ³•ï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
-        if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
 
-        message_combatd(HIY "$N" HIY "ÝëµØÒ»ÕñÊÖÖÐ" + weapon->name() +
-                        HIY "£¬·¢³öÍòÇ§ÁúÒ÷£¬ö®Ê±µ¶¹â¹ö¹ö£¬ÏòËÄÃæÓ¿³ö"
-                        "£¬ÁýÕÖ$n" HIY "È«Éí¡£\n" NOR, me, target);
+    if ((int) me->query_skill("bagua-zhang") < 150)
+        return notify_fail("ä½ çš„å…«å¦æŽŒç«å€™å¤ªæµ…ã€‚\n");
 
-        count = me->query_skill("bagua-dao", 1) / 6;
+    if ((int) me->query("max_neili") < 3000)
+        return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
-        me->add("neili", -250);
-        me->add_temp("apply/attack", count);
+    if ((int) me->query("neili") < 500)
+        return notify_fail("ä½ çŽ°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
-        for (i = 0; i < 8; i++)
-        {
-                if (! me->is_fighting(target))
-                        break;
+    if (me->query_skill_mapped("blade") != "bagua-dao")
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å…«å¦åˆ€æ³•ï¼Œéš¾ä»¥æ–½å±•" TIAN "ã€‚\n");
 
-                if (random(3) == 1 && ! target->is_busy())
-                        target->start_busy(2);
+    if (!living(target))
+        return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-                me->add_temp("pfm_tiandao", 1);
-                COMBAT_D->do_attack(me, target, weapon, 0);
-        }
+    message_combatd(HIY
+    "$N"
+    HIY
+    "è“¦åœ°ä¸€æŒ¯æ‰‹ä¸­" + weapon->name() +
+    HIY
+    "ï¼Œå‘å‡ºä¸‡åƒé¾™åŸï¼ŒéœŽæ—¶åˆ€å…‰æ»šæ»šï¼Œå‘å››é¢æ¶Œå‡º"
+    "ï¼Œç¬¼ç½©$n"
+    HIY
+    "å…¨èº«ã€‚\n"
+    NOR, me, target);
 
-        me->add_temp("apply/attack", -count);
-        me->delete_temp("pfm_tiandao");
-        me->start_busy(4);
-        return 1;
+    count = me->query_skill("bagua-dao", 1) / 6;
+
+    me->add("neili", -250);
+    me->add_temp("apply/attack", count);
+
+    for (i = 0; i < 8; i++) {
+        if (!me->is_fighting(target))
+            break;
+
+        if (random(3) == 1 && !target->is_busy())
+            target->start_busy(2);
+
+        me->add_temp("pfm_tiandao", 1);
+        COMBAT_D->do_attack(me, target, weapon, 0);
+    }
+
+    me->add_temp("apply/attack", -count);
+    me->delete_temp("pfm_tiandao");
+    me->start_busy(4);
+    return 1;
 }

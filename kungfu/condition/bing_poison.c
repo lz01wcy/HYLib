@@ -3,24 +3,26 @@
 
 #include <ansi.h>
 #include <condition.h>
+
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-  if (me->is_ghost()) return 1;
-	tell_object(me,HIB"Í»È»Äã¸Ð¾õËÄÖ«ÂéÂéµÄËÆºõ²»´óÁé±ã£¡\n"NOR);
-	tell_room(environment(me),HIB+me->name()+"Í»È»È«ÉíÒ»²ü£¬Á½ÕÅÊÖÕÆÐÄÒÑÈ«³ÉºÚÉ«£¬ºÚÆø¸üË³×ÅÊÖ±ÛÏòÉÏÅÊÉý£¡\n"NOR, ({ me }));     
-	me->receive_damage("qi", 125);
-	if(userp(me)) me->receive_wound("jing", 120);
-	else me->receive_wound("jing", 140);
-	if(!me->is_busy()) me->start_busy(2);
-	if ((int)me->query("eff_jing")<0 || (int)me->query("eff_qi")<0) return 0;
-	me->apply_condition("bing_poison", duration - 1);
-	if( duration < 1 ) return 0;
-	return CND_CONTINUE;
+int update_condition(object me, int duration) {
+    if (me->is_ghost()) return 1;
+    tell_object(me, HIB
+    "çªç„¶ä½ æ„Ÿè§‰å››è‚¢éº»éº»çš„ä¼¼ä¹Žä¸å¤§çµä¾¿ï¼\n"
+    NOR);
+    tell_room(environment(me), HIB + me->name() + "çªç„¶å…¨èº«ä¸€é¢¤ï¼Œä¸¤å¼ æ‰‹æŽŒå¿ƒå·²å…¨æˆé»‘è‰²ï¼Œé»‘æ°”æ›´é¡ºç€æ‰‹è‡‚å‘ä¸Šæ”€å‡ï¼\n"
+    NOR, ({ me }));
+    me->receive_damage("qi", 125);
+    if (userp(me)) me->receive_wound("jing", 120);
+    else me->receive_wound("jing", 140);
+    if (!me->is_busy()) me->start_busy(2);
+    if ((int) me->query("eff_jing") < 0 || (int) me->query("eff_qi") < 0) return 0;
+    me->apply_condition("bing_poison", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "poison";
+string query_type(object me) {
+    return "poison";
 }

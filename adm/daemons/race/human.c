@@ -9,510 +9,455 @@ inherit F_DBASE;
 inherit F_SKILL;
 
 mapping *combat_action = ({
-        ([      "action":               "$N»ÓÈ­¹¥»÷$nµÄ$l",
-                "damage_type":  "ğöÉË",
-        ]),
-        ([      "action":               "$NÍù$nµÄ$lÒ»×¥",
-                "damage_type":  "×¥ÉË",
-        ]),
-        ([      "action":               "$NÍù$nµÄ$lºİºİµØÌßÁËÒ»½Å",
-                "damage_type":  "ğöÉË",
-        ]),
-        ([      "action":               "$NÌáÆğÈ­Í·Íù$nµÄ$l´·È¥",
-                "damage_type":  "ğöÉË",
-        ]),
-        ([      "action":               "$N¶Ô×¼$nµÄ$lÓÃÁ¦»Ó³öÒ»È­",
-                "damage_type":  "ğöÉË",
-        ]),
+    ([      "action":               "$NæŒ¥æ‹³æ”»å‡»$nçš„$l",
+            "damage_type":  "ç˜€ä¼¤",
+    ]),
+    ([      "action":               "$Nå¾€$nçš„$lä¸€æŠ“",
+            "damage_type":  "æŠ“ä¼¤",
+    ]),
+    ([      "action":               "$Nå¾€$nçš„$lç‹ ç‹ åœ°è¸¢äº†ä¸€è„š",
+            "damage_type":  "ç˜€ä¼¤",
+    ]),
+    ([      "action":               "$Næèµ·æ‹³å¤´å¾€$nçš„$læ¶å»",
+            "damage_type":  "ç˜€ä¼¤",
+    ]),
+    ([      "action":               "$Nå¯¹å‡†$nçš„$lç”¨åŠ›æŒ¥å‡ºä¸€æ‹³",
+            "damage_type":  "ç˜€ä¼¤",
+    ]),
 });
 
-void create()
-{
-        seteuid(getuid());
-        set("unit", "Î»");
-        set("gender", "ÄĞĞÔ");
-        set("can_speak", 1);
-        set("attitude", "peaceful");
-        set("limbs", ({
-                "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-                "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Ñü¼ä", "Ğ¡¸¹", "×óÍÈ", "ÓÒÍÈ",
-                "×ó½Å", "ÓÒ½Å"
-        }) );
+void create() {
+    seteuid(getuid());
+    set("unit", "ä½");
+    set("gender", "ç”·æ€§");
+    set("can_speak", 1);
+    set("attitude", "peaceful");
+    set("limbs", ({
+        "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+                "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "è…°é—´", "å°è…¹", "å·¦è…¿", "å³è…¿",
+                "å·¦è„š", "å³è„š"
+    }));
 }
 
-void setup_human(object ob)
-{
-        mapping my;
-        int xism_age;
+void setup_human(object ob) {
+    mapping my;
+    int xism_age;
 
-        my = ob->query_entire_dbase();
+    my = ob->query_entire_dbase();
 
-        ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
+    ob->set("default_actions",(: call_other, __FILE__, "query_action" :));
 
-        ob->set_default_action(__FILE__, "query_action");
-        if (! stringp(my["unit"])) my["unit"] = "Î»";
-        if (! stringp(my["gender"])) my["gender"] = "ÄĞĞÔ";
-        if (undefinedp(my["can_speak"])) my["can_speak"] = 1;
-        if (! stringp(my["attitude"])) my["attitude"] = "peaceful";
-        if (! pointerp(my["limbs"])) my["limbs"] = ({
-                "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-                "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Ñü¼ä", "Ğ¡¸¹", "×óÍÈ", "ÓÒÍÈ",
-                "×ó½Å", "ÓÒ½Å"
+    ob->set_default_action(__FILE__, "query_action");
+    if (!stringp(my["unit"])) my["unit"] = "ä½";
+    if (!stringp(my["gender"])) my["gender"] = "ç”·æ€§";
+    if (undefinedp(my["can_speak"])) my["can_speak"] = 1;
+    if (!stringp(my["attitude"])) my["attitude"] = "peaceful";
+    if (!pointerp(my["limbs"]))
+        my["limbs"] = ({
+            "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+                    "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "è…°é—´", "å°è…¹", "å·¦è…¿", "å³è…¿",
+                    "å·¦è„š", "å³è„š"
         });
 
-        if( undefinedp(my["age"]) ) my["age"] = 14;
-        if (undefinedp(my["str"])) my["str"] = 10 + random(21);
-        if (undefinedp(my["con"])) my["con"] = 10 + random(21);
-        if (undefinedp(my["dex"])) my["dex"] = 10 + random(21);
-        if (undefinedp(my["int"])) my["int"] = 10 + random(21);
-        if (undefinedp(my["per"])) my["per"] = 10 + random(21);
-        if (undefinedp(my["kar"])) my["kar"] = 10 + random(21);
+    if (undefinedp(my["age"])) my["age"] = 14;
+    if (undefinedp(my["str"])) my["str"] = 10 + random(21);
+    if (undefinedp(my["con"])) my["con"] = 10 + random(21);
+    if (undefinedp(my["dex"])) my["dex"] = 10 + random(21);
+    if (undefinedp(my["int"])) my["int"] = 10 + random(21);
+    if (undefinedp(my["per"])) my["per"] = 10 + random(21);
+    if (undefinedp(my["kar"])) my["kar"] = 10 + random(21);
 
-        if( userp(ob) || undefinedp(my["max_jing"]) )
-        {
-                if( my["age"] <= 14 ) my["max_jing"] = 100;
-                else if( my["age"] <= 30 ) my["max_jing"] = 100 + (my["age"] - 14) * my["int"];
-                else my["max_jing"] = my["int"] * 16 + 100;
+    if (userp(ob) || undefinedp(my["max_jing"])) {
+        if (my["age"] <= 14) my["max_jing"] = 100;
+        else if (my["age"] <= 30) my["max_jing"] = 100 + (my["age"] - 14) * my["int"];
+        else my["max_jing"] = my["int"] * 16 + 100;
 
-                if( my["age"] > 60 ) my["max_jing"] -= (my["age"] - 60) * 5 ;
+        if (my["age"] > 60) my["max_jing"] -= (my["age"] - 60) * 5;
 
-                // µÀ¼Ò±£¾«£º
+        // é“å®¶ä¿ç²¾ï¼š
 //                if(my["age"] > 20 && ob->query("ob->query("breakup"))
 //                {
 //                        my["max_jing"] += 1000;
 //                }
-                if(my["age"] > 20 && (int)ob->query_skill("biguan", 1) >= 100)
-                {
-                        my["max_jing"] += 1000;
-                }
-
-                if(my["age"] > 60 && (int)ob->query_skill("taoism", 1) >= 120)
-                {
-                        my["max_jing"] += (my["age"] - 60) * 5;
-                }
-
-                // ·ğ¼ÒÑø¾«£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
-                if((xism_age=(int)ob->query_skill("buddhism", 1)) > 39)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_jing"] += xism_age *((int)ob->query_skill("hunyuan-yiqi", 1)/10);
-                }
-
-                if( my["max_jingli"] > 0 ) my["max_jing"] += my["max_jingli"] / 2;
-                if(my["age"] > 20 && (int)ob->query_skill("biguan", 1) >= 100)
-                {
-                        my["max_jingli"] += 100;
-                }
-
+        if (my["age"] > 20 && (int) ob->query_skill("biguan", 1) >= 100) {
+            my["max_jing"] += 1000;
         }
-        if( userp(ob) || undefinedp(my["max_qi"]) )
-        {
-                if( my["age"] <= 14 ) my["max_qi"] = 100;
-                else if( my["age"] <= 30 ) my["max_qi"] = 100 + (my["age"] - 14) * my["con"];
-                else my["max_qi"] = my["con"] * 16 + 100;
 
-                if( my["age"] > 60 ) my["max_qi"] -= (my["age"] - 60) * 5;
+        if (my["age"] > 60 && (int) ob->query_skill("taoism", 1) >= 120) {
+            my["max_jing"] += (my["age"] - 60) * 5;
+        }
 
-                // ·ğ¼Ò±£Æø£º
-                if(my["age"] > 60 && (int)ob->query_skill("buddhism", 1) >= 120)
-                {
-                        my["max_qi"] += (my["age"] - 60) * 5;
-                }
+        // ä½›å®¶å…»ç²¾ï¼šï¼“ï¼å²å‰è¡¥ç²¾ï¼Œï¼“ï¼å²åé•¿ç²¾
+        if ((xism_age = (int) ob->query_skill("buddhism", 1)) > 39) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
 
-                // µÀ¼ÒÁ·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if((xism_age=(int)ob->query_skill("taoism", 1)) > 39)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+            if (xism_age > 0) my["max_jing"] += xism_age * ((int) ob->query_skill("hunyuan-yiqi", 1) / 10);
+        }
 
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("taiji-shengong", 1)/10);
-                }
+        if (my["max_jingli"] > 0) my["max_jing"] += my["max_jingli"] / 2;
+        if (my["age"] > 20 && (int) ob->query_skill("biguan", 1) >= 100) {
+            my["max_jingli"] += 100;
+        }
 
-                // ¶¾¼¼Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if((xism_age=(int)ob->query_skill("poison", 1)) > 39)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+    }
+    if (userp(ob) || undefinedp(my["max_qi"])) {
+        if (my["age"] <= 14) my["max_qi"] = 100;
+        else if (my["age"] <= 30) my["max_qi"] = 100 + (my["age"] - 14) * my["con"];
+        else my["max_qi"] = my["con"] * 16 + 100;
 
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("huagong-dafa", 1)/15);
-                }
+        if (my["age"] > 60) my["max_qi"] -= (my["age"] - 60) * 5;
+
+        // ä½›å®¶ä¿æ°”ï¼š
+        if (my["age"] > 60 && (int) ob->query_skill("buddhism", 1) >= 120) {
+            my["max_qi"] += (my["age"] - 60) * 5;
+        }
+
+        // é“å®¶ç»ƒæ°”ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
+        if ((xism_age = (int) ob->query_skill("taoism", 1)) > 39) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("taiji-shengong", 1) / 10);
+        }
+
+        // æ¯’æŠ€ç»ƒæ°”ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
+        if ((xism_age = (int) ob->query_skill("poison", 1)) > 39) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("huagong-dafa", 1) / 15);
+        }
 //baituo
-                if((xism_age=(int)ob->query_skill("training", 1)) > 139
-                && (int)ob->query_skill("hamagong", 1)> 1 )
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+        if ((xism_age = (int) ob->query_skill("training", 1)) > 139
+            && (int) ob->query_skill("hamagong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
 
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("hamagong", 1)/18);
-                }
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("hamagong", 1) / 18);
+        }
 //dali
-else            if((xism_age=(int)ob->query_skill("buddhism", 1)) > 139
-                && (int)ob->query_skill("kurong-changong", 1) > 1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+        else if ((xism_age = (int) ob->query_skill("buddhism", 1)) > 139
+                 && (int) ob->query_skill("kurong-changong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
 
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("kurong-changong", 1)/18);
-                }
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("kurong-changong", 1) / 18);
+        }
 //emei
-else            if((xism_age=(int)ob->query_skill("mahayana", 1)) > 139
-                && (int)ob->query_skill("linji-zhuang", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+        else if ((xism_age = (int) ob->query_skill("mahayana", 1)) > 139
+                 && (int) ob->query_skill("linji-zhuang", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
 
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("linji-zhuang", 1)/15);
-                }
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("linji-zhuang", 1) / 15);
+        }
 //qingcheng
-else            if((xism_age=(int)ob->query_skill("taoism", 1)) > 139
-                && (int)ob->query_skill("qingming-xuangong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-if (ob->query("family/family_name")=="Çà³ÇÅÉ")
-{
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("qingming-xuangong", 1)/15);
-}
-                }
+        else if ((xism_age = (int) ob->query_skill("taoism", 1)) > 139
+                 && (int) ob->query_skill("qingming-xuangong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+            if (ob->query("family/family_name") == "é’åŸæ´¾") {
+                if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("qingming-xuangong", 1) / 15);
+            }
+        }
 //henshan
-else            if((xism_age=(int)ob->query_skill("buddhism", 1)) > 139
-                && (int)ob->query_skill("huiyan-xinfa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+        else if ((xism_age = (int) ob->query_skill("buddhism", 1)) > 139
+                 && (int) ob->query_skill("huiyan-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
 
-if (ob->query("family/family_name")=="ºãÉ½ÅÉ")
-{
-                        if (xism_age > 0) my["max_jing"] += xism_age *((int)ob->query_skill("huiyan-xinfa", 1)/15);
-}
-                }
+            if (ob->query("family/family_name") == "æ’å±±æ´¾") {
+                if (xism_age > 0) my["max_jing"] += xism_age * ((int) ob->query_skill("huiyan-xinfa", 1) / 15);
+            }
+        }
 
 //hujia
-else            if((xism_age=(int)ob->query_skill("martial-cognize", 1)) > 139
-                && (int)ob->query_skill("lengyue-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
+        else if ((xism_age = (int) ob->query_skill("martial-cognize", 1)) > 139
+                 && (int) ob->query_skill("lengyue-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
 
-if (ob->query("family/family_name")=="¹ØÍâºú¼Ò")
-{
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("martial-cognize", 1)/15);
-}
-                }
-
-//meizhuang
-else            if((xism_age=(int)ob->query_skill("piaoyibu", 1)) > 139
-                && (int)ob->query_skill("wuzheng-xinfa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-if (ob->query("family/family_name")=="Ã·×¯")
-{
-                        if (xism_age > 0) my["max_jing"] += xism_age *((int)ob->query_skill("wuzheng-xinfa", 1)/18);
-}
-                }
-//gaibang
-else            if((xism_age=(int)ob->query_skill("begging", 1)) > 139
-                && (int)ob->query_skill("huntian-qigong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("huntian-qigong", 1)/20);
-                }
-//mr
-else            if((xism_age=(int)ob->query_skill("douzhuan-xingyi", 1)) > 139
-                && (int)ob->query_skill("shenyuan-gong", 1)>1 )
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("shenyuan-gong", 1)/18);
-                }
-//gumu
-else            if((xism_age=(int)ob->query_skill("qufeng", 1)) > 139
-                && (int)ob->query_skill("yunv-xinfa", 1) > 1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("yunv-xinfa", 1)/15);
-                }
-//huashan
-else            if((xism_age=(int)ob->query_skill("zhengqijue", 1)) > 139
-                &&(int)ob->query_skill("zixia-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("zixia-shengong", 1)/20);
-if ((int)ob->query_skill("huashan-neigong", 1)>(int)ob->query_skill("zixia-shengong", 1))
-{
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("huashan-neigong", 1)/20);
-}
-if(((int)ob->query_skill("ziyunyin", 1)) > 1 && ob->query("family/family_name")=="»ªÉ½ÅÉ")
-{
-	if (xism_age > 0) my["max_jing"] += xism_age *((int)ob->query_skill("ziyunyin", 1)/20);
-}
-
-                }
-//kl
-else            if((xism_age=(int)ob->query_skill("art", 1)) > 139
-                && (int)ob->query_skill("xuantian-wuji", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("xuantian-wuji", 1)/16);
-                }
-//lj
-else            if((xism_age=(int)ob->query_skill("yangyanshu", 1)) > 139
-&& (int)ob->query_skill("bahuang-gong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("bahuang-gong", 1)/15);
-                }
-//mz
-else            if((xism_age=(int)ob->query_skill("lamaism", 1)) > 139
-&& (int)ob->query_skill("longxiang", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("longxiang", 1)/20);
-                }
-//mj
-else            if((xism_age=(int)ob->query_skill("shenghuo-shengong", 1)) > 139
-&& (int)ob->query_skill("jiuyang-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("jiuyang-shengong", 1)/18);
-                }
-//qz
-else            if((xism_age=(int)ob->query_skill("taoism", 1)) > 139
-&& (int)ob->query_skill("xiantian-qigong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("xiantian-qigong", 1)/18);
-                }
-//ry
-else            if((xism_age=(int)ob->query_skill("kuihua-xinfa", 1)) > 139
-&& (int)ob->query_skill("tmdafa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("tmdafa", 1)/18);
-                }
-//sl
-else            if((xism_age=(int)ob->query_skill("yijinjing", 1)) > 139
-&& (int)ob->query_skill("hunyuan-yiqi", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("hunyuan-yiqi", 1)/20);
-                }
-//shenlong
-else            if((xism_age=(int)ob->query_skill("yangsheshu", 1)) > 139
-&& (int)ob->query_skill("shenlong-xinfa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("shenlong-xinfa", 1)/15);
-                }
-//taohua
-else            if((xism_age=(int)ob->query_skill("count", 1)) > 139
-&& (int)ob->query_skill("bibo-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("bibo-shengong", 1)/15);
-                }
-//tiandi
-else            if((xism_age=(int)ob->query_skill("yunlong-shenfa", 1)) > 139
-                && (int)ob->query_skill("yunlong-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("yunlong-shengong", 1)/15);
-                }
-//tz
-else            if((xism_age=(int)ob->query_skill("shuishangpiao", 1)) > 139
-                && (int)ob->query_skill("guiyuan-tunafa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("guiyuan-tunafa", 1)/15);
-                }
-//xiaoyao
-else            if((xism_age=(int)ob->query_skill("yangyanshu", 1)) > 139
-                && (int)ob->query_skill("beiming-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("beiming-shengong", 1)/15);
-                }
-//lingxiao
-else            if((xism_age=(int)ob->query_skill("snowstep", 1)) > 139
-                && (int)ob->query_skill("bingxue-xinfa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("bingxue-xinfa", 1)/18);
-                }
-//wudu
-else            if((xism_age=(int)ob->query_skill("duji", 1)) > 139
-                && (int)ob->query_skill("wudu-shengong", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("wudu-shengong", 1)/18);
-                }
- 
-//
-//ÌÆÃÅ
-else            if((xism_age=(int)ob->query_skill("throwing", 1)) > 139
-                && (int)ob->query_skill("biyun-xinfa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("biyun-xinfa", 1)/18);
-                }
- 
-//
-//·ÉÌì
-else            if((xism_age=(int)ob->query_skill("shayi", 1)) > 139
-                && (int)ob->query_skill("shayi-xinfa", 1)>1)
-                {
-                        xism_age = xism_age/2;
-                        if (my["age"] <= 30) xism_age -= my["age"];
-                        else xism_age -= 30;
-
-                        if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("shayi-xinfa", 1)/18);
-                }
- 
-  if(((int)ob->query_skill("chengzi18po", 1)) >= 100)
-                {
-
-                        my["max_qi"] += ((int)ob->query_skill("chengzi18po", 1)*2);
-                }
-
-  if(((int)ob->query_skill("qingzi9da", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("qingzi9da", 1));
-                }
-
-  if(((int)ob->query_skill("dramaturgy", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("dramaturgy", 1));
-                }
-
-  if(((int)ob->query_skill("goplaying", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("goplaying", 1));
-                }
- 
-  if(((int)ob->query_skill("horticulture", 1)) >= 100)
-                {
-
-                        my["max_qi"] += ((int)ob->query_skill("horticulture", 1));
-                }
-
-  if(((int)ob->query_skill("luteplaying", 1)) >= 100)
-                {
-
-                        my["max_qi"] += ((int)ob->query_skill("luteplaying", 1));
-                }
-
-  if(((int)ob->query_skill("medicine", 1)) >= 100)
-                {
-
-                        my["max_qi"] += ((int)ob->query_skill("medicine", 1)*2);
-                }
-  if(((int)ob->query_skill("miaoshouhuichun", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("miaoshouhuichun", 1));
-                }
-                
-                
-  if(((int)ob->query_skill("painting", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("painting", 1));
-                }
-  if(((int)ob->query_skill("construction", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("construction", 1));
-                }
-
-  if(((int)ob->query_skill("martial-cognize", 1)) >= 100)
-                {
-
-                        my["max_jing"] += ((int)ob->query_skill("martial-cognize", 1));
-                        my["max_qi"] += ((int)ob->query_skill("martial-cognize", 1));
-                }
-
-//
-                if( my["max_neili"] > 0 ) my["max_qi"] += my["max_neili"] / 2;
+            if (ob->query("family/family_name") == "å…³å¤–èƒ¡å®¶") {
+                if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("martial-cognize", 1) / 15);
+            }
         }
 
-        ob->set_default_object(__FILE__);
-        if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 10)*2000);
+//meizhuang
+        else if ((xism_age = (int) ob->query_skill("piaoyibu", 1)) > 139
+                 && (int) ob->query_skill("wuzheng-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (ob->query("family/family_name") == "æ¢…åº„") {
+                if (xism_age > 0) my["max_jing"] += xism_age * ((int) ob->query_skill("wuzheng-xinfa", 1) / 18);
+            }
+        }
+//gaibang
+        else if ((xism_age = (int) ob->query_skill("begging", 1)) > 139
+                 && (int) ob->query_skill("huntian-qigong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("huntian-qigong", 1) / 20);
+        }
+//mr
+        else if ((xism_age = (int) ob->query_skill("douzhuan-xingyi", 1)) > 139
+                 && (int) ob->query_skill("shenyuan-gong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("shenyuan-gong", 1) / 18);
+        }
+//gumu
+        else if ((xism_age = (int) ob->query_skill("qufeng", 1)) > 139
+                 && (int) ob->query_skill("yunv-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("yunv-xinfa", 1) / 15);
+        }
+//huashan
+        else if ((xism_age = (int) ob->query_skill("zhengqijue", 1)) > 139
+                 && (int) ob->query_skill("zixia-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("zixia-shengong", 1) / 20);
+            if ((int) ob->query_skill("huashan-neigong", 1) > (int) ob->query_skill("zixia-shengong", 1)) {
+                if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("huashan-neigong", 1) / 20);
+            }
+            if (((int) ob->query_skill("ziyunyin", 1)) > 1 && ob->query("family/family_name") == "åå±±æ´¾") {
+                if (xism_age > 0) my["max_jing"] += xism_age * ((int) ob->query_skill("ziyunyin", 1) / 20);
+            }
+
+        }
+//kl
+        else if ((xism_age = (int) ob->query_skill("art", 1)) > 139
+                 && (int) ob->query_skill("xuantian-wuji", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("xuantian-wuji", 1) / 16);
+        }
+//lj
+        else if ((xism_age = (int) ob->query_skill("yangyanshu", 1)) > 139
+                 && (int) ob->query_skill("bahuang-gong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("bahuang-gong", 1) / 15);
+        }
+//mz
+        else if ((xism_age = (int) ob->query_skill("lamaism", 1)) > 139
+                 && (int) ob->query_skill("longxiang", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("longxiang", 1) / 20);
+        }
+//mj
+        else if ((xism_age = (int) ob->query_skill("shenghuo-shengong", 1)) > 139
+                 && (int) ob->query_skill("jiuyang-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("jiuyang-shengong", 1) / 18);
+        }
+//qz
+        else if ((xism_age = (int) ob->query_skill("taoism", 1)) > 139
+                 && (int) ob->query_skill("xiantian-qigong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("xiantian-qigong", 1) / 18);
+        }
+//ry
+        else if ((xism_age = (int) ob->query_skill("kuihua-xinfa", 1)) > 139
+                 && (int) ob->query_skill("tmdafa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("tmdafa", 1) / 18);
+        }
+//sl
+        else if ((xism_age = (int) ob->query_skill("yijinjing", 1)) > 139
+                 && (int) ob->query_skill("hunyuan-yiqi", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("hunyuan-yiqi", 1) / 20);
+        }
+//shenlong
+        else if ((xism_age = (int) ob->query_skill("yangsheshu", 1)) > 139
+                 && (int) ob->query_skill("shenlong-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("shenlong-xinfa", 1) / 15);
+        }
+//taohua
+        else if ((xism_age = (int) ob->query_skill("count", 1)) > 139
+                 && (int) ob->query_skill("bibo-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("bibo-shengong", 1) / 15);
+        }
+//tiandi
+        else if ((xism_age = (int) ob->query_skill("yunlong-shenfa", 1)) > 139
+                 && (int) ob->query_skill("yunlong-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("yunlong-shengong", 1) / 15);
+        }
+//tz
+        else if ((xism_age = (int) ob->query_skill("shuishangpiao", 1)) > 139
+                 && (int) ob->query_skill("guiyuan-tunafa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("guiyuan-tunafa", 1) / 15);
+        }
+//xiaoyao
+        else if ((xism_age = (int) ob->query_skill("yangyanshu", 1)) > 139
+                 && (int) ob->query_skill("beiming-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("beiming-shengong", 1) / 15);
+        }
+//lingxiao
+        else if ((xism_age = (int) ob->query_skill("snowstep", 1)) > 139
+                 && (int) ob->query_skill("bingxue-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("bingxue-xinfa", 1) / 18);
+        }
+//wudu
+        else if ((xism_age = (int) ob->query_skill("duji", 1)) > 139
+                 && (int) ob->query_skill("wudu-shengong", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("wudu-shengong", 1) / 18);
+        }
+
+//
+//å”é—¨
+        else if ((xism_age = (int) ob->query_skill("throwing", 1)) > 139
+                 && (int) ob->query_skill("biyun-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("biyun-xinfa", 1) / 18);
+        }
+
+//
+//é£å¤©
+        else if ((xism_age = (int) ob->query_skill("shayi", 1)) > 139
+                 && (int) ob->query_skill("shayi-xinfa", 1) > 1) {
+            xism_age = xism_age / 2;
+            if (my["age"] <= 30) xism_age -= my["age"];
+            else xism_age -= 30;
+
+            if (xism_age > 0) my["max_qi"] += xism_age * ((int) ob->query_skill("shayi-xinfa", 1) / 18);
+        }
+
+        if (((int) ob->query_skill("chengzi18po", 1)) >= 100) {
+
+            my["max_qi"] += ((int) ob->query_skill("chengzi18po", 1) * 2);
+        }
+
+        if (((int) ob->query_skill("qingzi9da", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("qingzi9da", 1));
+        }
+
+        if (((int) ob->query_skill("dramaturgy", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("dramaturgy", 1));
+        }
+
+        if (((int) ob->query_skill("goplaying", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("goplaying", 1));
+        }
+
+        if (((int) ob->query_skill("horticulture", 1)) >= 100) {
+
+            my["max_qi"] += ((int) ob->query_skill("horticulture", 1));
+        }
+
+        if (((int) ob->query_skill("luteplaying", 1)) >= 100) {
+
+            my["max_qi"] += ((int) ob->query_skill("luteplaying", 1));
+        }
+
+        if (((int) ob->query_skill("medicine", 1)) >= 100) {
+
+            my["max_qi"] += ((int) ob->query_skill("medicine", 1) * 2);
+        }
+        if (((int) ob->query_skill("miaoshouhuichun", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("miaoshouhuichun", 1));
+        }
+
+
+        if (((int) ob->query_skill("painting", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("painting", 1));
+        }
+        if (((int) ob->query_skill("construction", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("construction", 1));
+        }
+
+        if (((int) ob->query_skill("martial-cognize", 1)) >= 100) {
+
+            my["max_jing"] += ((int) ob->query_skill("martial-cognize", 1));
+            my["max_qi"] += ((int) ob->query_skill("martial-cognize", 1));
+        }
+
+//
+        if (my["max_neili"] > 0) my["max_qi"] += my["max_neili"] / 2;
+    }
+
+    ob->set_default_object(__FILE__);
+    if (!ob->query_weight()) ob->set_weight(BASE_WEIGHT + (my["str"] - 10) * 2000);
 }
 
-mapping query_action()
-{
-        return combat_action[random(sizeof(combat_action))];
+mapping query_action() {
+    return combat_action[random(sizeof(combat_action))];
 }

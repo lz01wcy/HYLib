@@ -1,72 +1,87 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define FUMO "¡¸" HIR "·üÄ§½£¾÷" NOR "¡¹"
+#define FUMO "ã€Œ" HIR "ä¼é­”å‰‘è¯€" NOR "ã€"
 
 inherit F_SSERVER;
 
 
 string final(object me, object target, int damage);
 
-int perform(object me, object target)
-{
-        object weapon;
-        string msg;
-        int ap, dp;
-        int damage;
+int perform(object me, object target) {
+    object weapon;
+    string msg;
+    int ap, dp;
+    int damage;
 
 
-        if (! target) target = offensive_target(me);
+    if (!target) target = offensive_target(me);
 
-        if (! target || ! me->is_fighting(target))
-                return notify_fail(FUMO "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+    if (!target || !me->is_fighting(target))
+        return notify_fail(FUMO "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-        if (! objectp(weapon = me->query_temp("weapon")) ||
-            (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÎŞ·¨Ê©Õ¹" FUMO "¡£\n");
+    if (!objectp(weapon = me->query_temp("weapon")) ||
+        (string) weapon->query("skill_type") != "sword")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ï¼Œæ— æ³•æ–½å±•" FUMO "ã€‚\n");
 
-        if ((int)me->query_skill("yitian-jian", 1) < 120)
-                return notify_fail("ÄãµÄÒĞÌì½£·¨²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹" FUMO "¡£\n");
+    if ((int) me->query_skill("yitian-jian", 1) < 120)
+        return notify_fail("ä½ çš„å€šå¤©å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•æ–½å±•" FUMO "ã€‚\n");
 
-        if (me->query("neili") < 200)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" FUMO "¡£\n");
+    if (me->query("neili") < 200)
+        return notify_fail("ä½ ç°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•" FUMO "ã€‚\n");
 
-        if (me->query_skill_mapped("sword") != "yitian-jian") 
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÒĞÌì½£·¨£¬ÎŞ·¨Ê©Õ¹" FUMO "¡£\n");
+    if (me->query_skill_mapped("sword") != "yitian-jian")
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å€šå¤©å‰‘æ³•ï¼Œæ— æ³•æ–½å±•" FUMO "ã€‚\n");
 
-        if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+    if (!living(target))
+        return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ò»ÉùÀäºß£¬ÊÖÖĞ" + weapon->name() +
-              HIW "Ò»Õñ£¬½£ÉíÎ¢²ü£¬ÉùÈôÁúÒ÷£¬½£¹âĞ¯×ÅÊı¸ö½£»¨"
-              "Í¬Ê±È÷Ïò$n" HIW "¡£\n" NOR;
+    msg = HIW
+    "$N"
+    HIW
+    "ä¸€å£°å†·å“¼ï¼Œæ‰‹ä¸­" + weapon->name() +
+    HIW
+    "ä¸€æŒ¯ï¼Œå‰‘èº«å¾®é¢¤ï¼Œå£°è‹¥é¾™åŸï¼Œå‰‘å…‰æºç€æ•°ä¸ªå‰‘èŠ±"
+    "åŒæ—¶æ´’å‘$n"
+    HIW
+    "ã€‚\n"
+    NOR;
 
-        me->add("neili", -150);
-        ap = me->query_skill("sword");
-        dp = target->query_skill("parry");
-        if ((int)target->query("shen") < 0) ap += ap / 5;
+    me->add("neili", -150);
+    ap = me->query_skill("sword");
+    dp = target->query_skill("parry");
+    if ((int) target->query("shen") < 0) ap += ap / 5;
 
-        me->start_busy(3);
-        if (ap / 2 + random(ap) > dp)
-        {
-                damage = me->query_skill("sword");
-   target->add("qi",-damage);
-		target->add("eff_qi",-damage);
-                msg += HIR "Ö»Ìı$n" HIR "Ò»Éù²Ò½Ğ£¬±»ÕâÒ»½£´©ĞØ¶øÈë£¬¶Ù"
-                "Ê±ÏÊÑªËÄ´¦·É½¦¡£\n" NOR;
-        } else
-        {
-                msg += HIC "¿É$n" HIC "È´ÊÇÕò¶¨Óâºã£¬Ò»Ë¿²»ÂÒ£¬"
-                       "È«Éñ½«´ËÕĞ»¯½â¿ªÀ´¡£\n" NOR;
-        }
-        message_combatd(msg, me, target);
+    me->start_busy(3);
+    if (ap / 2 + random(ap) > dp) {
+        damage = me->query_skill("sword");
+        target->add("qi", -damage);
+        target->add("eff_qi", -damage);
+        msg += HIR
+        "åªå¬$n"
+        HIR
+        "ä¸€å£°æƒ¨å«ï¼Œè¢«è¿™ä¸€å‰‘ç©¿èƒ¸è€Œå…¥ï¼Œé¡¿"
+        "æ—¶é²œè¡€å››å¤„é£æº…ã€‚\n"
+        NOR;
+    } else {
+        msg += HIC
+        "å¯$n"
+        HIC
+        "å´æ˜¯é•‡å®šé€¾æ’ï¼Œä¸€ä¸ä¸ä¹±ï¼Œ"
+        "å…¨ç¥å°†æ­¤æ‹›åŒ–è§£å¼€æ¥ã€‚\n"
+        NOR;
+    }
+    message_combatd(msg, me, target);
 
-        return 1;
+    return 1;
 }
 
-string final(object me, object target, int damage)
-{
-        return  HIR "Ö»Ìı$n" HIR "Ò»Éù²Ò½Ğ£¬±»ÕâÒ»½£´©ĞØ¶øÈë£¬¶Ù"
-                "Ê±ÏÊÑªËÄ´¦·É½¦¡£\n" NOR;
+string final(object me, object target, int damage) {
+    return HIR
+    "åªå¬$n"
+    HIR
+    "ä¸€å£°æƒ¨å«ï¼Œè¢«è¿™ä¸€å‰‘ç©¿èƒ¸è€Œå…¥ï¼Œé¡¿"
+    "æ—¶é²œè¡€å››å¤„é£æº…ã€‚\n"
+    NOR;
 }
 

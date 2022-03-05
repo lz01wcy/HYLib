@@ -5,21 +5,21 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   if( duration < 1 ) return 0;
-   if( !living(me) ) {
-      message("vision", me->name() + "Àä²»¶¡´òÁË¸öÀäÕ½£¬Í·»è³Á³ÁµÄ£¬ºÃÏóÊÇµÃÉËº®²¡ÁË¡£\n", environment(me), me);
-   }
-   else {
-      tell_object(me, HIB "´òÁË¸öÀäÕ½£¬Í·»è³Á³ÁµÄ£¬ºÃÏóÊÇµÃÉËº®²¡ÁË£¡\n" NOR );
-      message("vision", me->name() + "Àä²»¶¡´òÁË¸öÀäÕ½£¬Í·»è³Á³ÁµÄ£¬ºÃÏóÊÇµÃÉËº®²¡ÁË¡£\n",
-          environment(me), me);
-   }
-   me->receive_wound("qi", 1);
-   me->receive_damage("qi", 1);
-   me->apply_condition("ill_shanghan", duration - 1);
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
+    if (!living(me)) {
+        message("vision", me->name() + "å†·ä¸ä¸æ‰“äº†ä¸ªå†·æˆ˜ï¼Œå¤´æ˜æ²‰æ²‰çš„ï¼Œå¥½è±¡æ˜¯å¾—ä¼¤å¯’ç—…äº†ã€‚\n", environment(me), me);
+    } else {
+        tell_object(me, HIB
+        "æ‰“äº†ä¸ªå†·æˆ˜ï¼Œå¤´æ˜æ²‰æ²‰çš„ï¼Œå¥½è±¡æ˜¯å¾—ä¼¤å¯’ç—…äº†ï¼\n"
+        NOR );
+        message("vision", me->name() + "å†·ä¸ä¸æ‰“äº†ä¸ªå†·æˆ˜ï¼Œå¤´æ˜æ²‰æ²‰çš„ï¼Œå¥½è±¡æ˜¯å¾—ä¼¤å¯’ç—…äº†ã€‚\n",
+                environment(me), me);
+    }
+    me->receive_wound("qi", 1);
+    me->receive_damage("qi", 1);
+    me->apply_condition("ill_shanghan", duration - 1);
 
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

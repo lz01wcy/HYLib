@@ -7,147 +7,166 @@
 inherit F_CLEAN_UP;
 
 void shengle(object me);
+
 int birth1(object me);
+
 void birth2(object me);
 
-int update_condition(object me, int duration)
-{
-	if ( duration == 10 ){
-		tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈËºÃÏó¶¼ÔÚÍµÍµ¿´Äã£¬ĞÄÀïºÃ²»×ÔÔÚ£¡\n" NOR );
-		message("vision", me->name() + HIY "ĞßÉ¬µÄµÍ×ÅÍ·£¬°ÚÅª×Å×Ô¼ºµÄÒÂ½Ç¡£\n" NOR,
-		environment(me), me);
-	}
-	else if (duration == 9 ){
-			tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈË¶¼ºÃÆæ¹Ö£¬¶ÔÄãÖ¸Ö¸µãµã£¬ÕæÊÇÌÖÑá£¡\n" NOR );
-			message("vision", me->name() + HIY "µÉ×ÅÄã£¬ºÃÏóÄãÇ·ÁËËıÊ²Ã´ËÆµÄ¡­¡­\n" NOR,
-			environment(me), me);
-	}
-	else if (duration == 8 ){
-			tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈË¶¼ÔÚĞ¦ÎûÎûµÄ¿´×ÅÄã£¬¿ÉÄÜËûÃÇÒÑ¾­¿´³öÀ´ÁËÄã¡­¡­¡£\n" NOR );
-			message("vision", me->name() + HIY "ÓÃÒ»ÖÖÒì³£´ÈÏéµÄÄ¿¹â£¬·´¸´´òÁ¿×Å×Ô¼ºµÄ¶Ç×Ó¡£\n" NOR,
-			environment(me), me);
-	}
-	else if (duration == 7 ){
-			tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈËÓëÊÀ½ç¶¼ÊÇÄÇ÷áµÄÃÀºÃ£¬ĞÄÇéÎŞ±ÈµÄÊæ³©£¡\n" NOR );
-			message("vision", me->name() + HIY "Ò»Éí³äÂúÁË°²ÏêµÄÆøÏ¢£¬ÄÇ»ı¾Û×ÅÄ¸°®µÄÄ¿¹â²»Ê±É¨ÊÓ×ÅÖÜÎ§£¡\n" NOR,
-			environment(me), me);
-	}
-	else if (duration == 6 ){
-			tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈË¶¼ÓÃ×Å¼«Æä¹ØÇĞµÄÄ¿¹â×¢ÊÓ×ÅÄã£¬ÄÑµÀÊÇ¡­¡­¿ìÁË£¿\n" NOR );
-			message("vision", me->name() + HIY "ÒÑ¾­ĞĞ¶¯Ê®·ÖµÄ³Ù»ºÁË£¬²»Ê±µÄÍ£ÏÂÀ´´­Æø¡£\n" NOR,
-			environment(me), me);
-	}
-
-	else if (duration == 0 ){
-			tell_object(me, HIY "ÖÜÎ§µÄÈË¶¼¾ªÑÈµÄºÏ²»ÉÏÁË×ì°Í£¬Ò»¶¨ÊÇ¼ûµ½ÁËÊ²Ã´Ææ¹ÖÊÂÇé£¡\n¿´À´
-ÄãÊÇÂíÉÏ¾ÍÒªÉúÁË£¬Çë¸Ï½ôºÍÄãµÄÕÉ·ò»Ø¼Ò°É£¬·ñÔò»áÓĞÉúÃüÎ£ÏÕµÄ£¡" NOR );
-			message("vision", me->name() + HIY "Îæ×Å´ó´óµÄ¶Ç×Ó£¬¶×ÔÚÁËµØÉÏ£¬Á³ÉÏÒ»¸±¼«ÆäÍ´¿àµÄÉñÇé£¡\n" NOR,
-			environment(me), me);
-                        me->delete("long");
-			me->clear_condition("huaiyun");
-			call_out("shengle", 60, me);
-		     }
-	me->apply_condition("huaiyun", duration - 1);
-	return 1;
+int update_condition(object me, int duration) {
+    if (duration == 10) {
+        tell_object(me, HIY
+        "ä½ è§‰å¾—å‘¨å›´çš„äººå¥½è±¡éƒ½åœ¨å·å·çœ‹ä½ ï¼Œå¿ƒé‡Œå¥½ä¸è‡ªåœ¨ï¼\n"
+        NOR );
+        message("vision", me->name() + HIY
+        "ç¾æ¶©çš„ä½ç€å¤´ï¼Œæ‘†å¼„ç€è‡ªå·±çš„è¡£è§’ã€‚\n"
+        NOR,
+                environment(me), me);
+    } else if (duration == 9) {
+        tell_object(me, HIY
+        "ä½ è§‰å¾—å‘¨å›´çš„äººéƒ½å¥½å¥‡æ€ªï¼Œå¯¹ä½ æŒ‡æŒ‡ç‚¹ç‚¹ï¼ŒçœŸæ˜¯è®¨åŒï¼\n"
+        NOR );
+        message("vision", me->name() + HIY
+        "çªç€ä½ ï¼Œå¥½è±¡ä½ æ¬ äº†å¥¹ä»€ä¹ˆä¼¼çš„â€¦â€¦\n"
+        NOR,
+                environment(me), me);
+    } else if (duration == 8) {
+        tell_object(me, HIY
+        "ä½ è§‰å¾—å‘¨å›´çš„äººéƒ½åœ¨ç¬‘å˜»å˜»çš„çœ‹ç€ä½ ï¼Œå¯èƒ½ä»–ä»¬å·²ç»çœ‹å‡ºæ¥äº†ä½ â€¦â€¦ã€‚\n"
+        NOR );
+        message("vision", me->name() + HIY
+        "ç”¨ä¸€ç§å¼‚å¸¸æ…ˆç¥¥çš„ç›®å…‰ï¼Œåå¤æ‰“é‡ç€è‡ªå·±çš„è‚šå­ã€‚\n"
+        NOR,
+                environment(me), me);
+    } else if (duration == 7) {
+        tell_object(me, HIY
+        "ä½ è§‰å¾—å‘¨å›´çš„äººä¸ä¸–ç•Œéƒ½æ˜¯é‚£éº½çš„ç¾å¥½ï¼Œå¿ƒæƒ…æ— æ¯”çš„èˆ’ç•…ï¼\n"
+        NOR );
+        message("vision", me->name() + HIY
+        "ä¸€èº«å……æ»¡äº†å®‰è¯¦çš„æ°”æ¯ï¼Œé‚£ç§¯èšç€æ¯çˆ±çš„ç›®å…‰ä¸æ—¶æ‰«è§†ç€å‘¨å›´ï¼\n"
+        NOR,
+                environment(me), me);
+    } else if (duration == 6) {
+        tell_object(me, HIY
+        "ä½ è§‰å¾—å‘¨å›´çš„äººéƒ½ç”¨ç€æå…¶å…³åˆ‡çš„ç›®å…‰æ³¨è§†ç€ä½ ï¼Œéš¾é“æ˜¯â€¦â€¦å¿«äº†ï¼Ÿ\n"
+        NOR );
+        message("vision", me->name() + HIY
+        "å·²ç»è¡ŒåŠ¨ååˆ†çš„è¿Ÿç¼“äº†ï¼Œä¸æ—¶çš„åœä¸‹æ¥å–˜æ°”ã€‚\n"
+        NOR,
+                environment(me), me);
+    } else if (duration == 0) {
+        tell_object(me, HIY
+        "å‘¨å›´çš„äººéƒ½æƒŠè®¶çš„åˆä¸ä¸Šäº†å˜´å·´ï¼Œä¸€å®šæ˜¯è§åˆ°äº†ä»€ä¹ˆå¥‡æ€ªäº‹æƒ…ï¼\nçœ‹æ¥
+        ä½ æ˜¯é©¬ä¸Šå°±è¦ç”Ÿäº†ï¼Œè¯·èµ¶ç´§å’Œä½ çš„ä¸ˆå¤«å›å®¶å§ï¼Œå¦åˆ™ä¼šæœ‰ç”Ÿå‘½å±é™©çš„ï¼" NOR );
+        message("vision", me->name() + HIY
+        "æ‚ç€å¤§å¤§çš„è‚šå­ï¼Œè¹²åœ¨äº†åœ°ä¸Šï¼Œè„¸ä¸Šä¸€å‰¯æå…¶ç—›è‹¦çš„ç¥æƒ…ï¼\n"
+        NOR,
+                environment(me), me);
+        me->delete("long");
+        me->clear_condition("huaiyun");
+        call_out("shengle", 60, me);
+    }
+    me->apply_condition("huaiyun", duration - 1);
+    return 1;
 }
 
-void shengle(object me)
-{
-	object obj = find_player(me->query("fuqi/father"));
-	if((int)(me->query("mud_age")/86400) < 6 )
-	{
-		message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚ$NÄêÁäÌ«Ğ¡£¬²»ÊÊºÏÉúÓı£¬\nËùÒÔ$NµÄº¢×Ó
-Á÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n"NOR, me);
-		me->set("qi",1);
-		me->set("jing",1);
-		me->set("neili", me->query("neili")/2);
+void shengle(object me) {
+    object obj = find_player(me->query("fuqi/father"));
+    if ((int) (me->query("mud_age") / 86400) < 6) {
+        message_vision(HIY
+        "\n$Nä¼¼ä¹è§‰å¾—è…¹ä¸­ä¸€é˜µå·¨ç—›ï¼Œå¤§å«ä¸€å£°ï¼Œç”±äº$Nå¹´é¾„å¤ªå°ï¼Œä¸é€‚åˆç”Ÿè‚²ï¼Œ\næ‰€ä»¥$Nçš„å­©å­
+        æµäº§äº†ï¼Œå¥½å¯æ€œå•Šï¼\n
+        "NOR, me);
+        me->set("qi", 1);
+        me->set("jing", 1);
+        me->set("neili", me->query("neili") / 2);
 //		me->clear_condition("huaiyun");
-		me->unconcious();
-	}
-	else if( !environment(me)->query("home_host"))
-	{
-		message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚÕâÀïµÄ»·¾³ÊµÔÚÊÇÌ«¶ñÁÓÁË£¬\nËùÒÔ$NµÄº¢×Ó
-Á÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n"NOR, me);
-		me->set("qi",1);
-		me->set("jing",1);
-		me->set("neili", me->query("neili")/2);
+        me->unconcious();
+    } else if (!environment(me)->query("home_host")) {
+        message_vision(HIY
+        "\n$Nä¼¼ä¹è§‰å¾—è…¹ä¸­ä¸€é˜µå·¨ç—›ï¼Œå¤§å«ä¸€å£°ï¼Œç”±äºè¿™é‡Œçš„ç¯å¢ƒå®åœ¨æ˜¯å¤ªæ¶åŠ£äº†ï¼Œ\næ‰€ä»¥$Nçš„å­©å­
+        æµäº§äº†ï¼Œå¥½å¯æ€œå•Šï¼\n
+        "NOR, me);
+        me->set("qi", 1);
+        me->set("jing", 1);
+        me->set("neili", me->query("neili") / 2);
 //		me->clear_condition("huaiyun");
-		me->unconcious();
-	 }
-	 else if (!obj || !userp(obj) || !find_player(obj->query("id")))
-	 {
-		message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚ¹Ø¼üÊ±¿ÌÄãµÄÄĞÈËÃ»ÓĞÊØºîÔÚÉí±ß£¬\nËùÒÔ$NµÄº¢×Ó
-Á÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n"NOR, me);
-		me->set("qi",1);
-		me->set("jing",1);
-		me->set("neili", me->query("neili")/2);
+        me->unconcious();
+    } else if (!obj || !userp(obj) || !find_player(obj->query("id"))) {
+        message_vision(HIY
+        "\n$Nä¼¼ä¹è§‰å¾—è…¹ä¸­ä¸€é˜µå·¨ç—›ï¼Œå¤§å«ä¸€å£°ï¼Œç”±äºå…³é”®æ—¶åˆ»ä½ çš„ç”·äººæ²¡æœ‰å®ˆä¾¯åœ¨èº«è¾¹ï¼Œ\næ‰€ä»¥$Nçš„å­©å­
+        æµäº§äº†ï¼Œå¥½å¯æ€œå•Šï¼\n
+        "NOR, me);
+        me->set("qi", 1);
+        me->set("jing", 1);
+        me->set("neili", me->query("neili") / 2);
 //		me->clear_condition("huaiyun");
-		me->unconcious();
-	 }
-	 else if (userp(present(obj, environment(me)))&& environment(me)->query("home_host"))
-	 {
-		me->set_temp("is_bearing",1);
-		me->start(100);
-		obj->start(100);
-		message_vision(HIY "\n$Nºö¾õ¸¹ÖĞÒ»Õó²ü¶¯£¬¸Ï½ôÀ­×¡$nµÄÊÖ£¬ÈáÉùËµµÀ£ºÒªÉúÁË! \n" NOR, me,obj);
-		call_out("birth1",15,me,obj);
+        me->unconcious();
+    } else if (userp(present(obj, environment(me))) && environment(me)->query("home_host")) {
+        me->set_temp("is_bearing", 1);
+        me->start(100);
+        obj->start(100);
+        message_vision(HIY
+        "\n$Nå¿½è§‰è…¹ä¸­ä¸€é˜µé¢¤åŠ¨ï¼Œèµ¶ç´§æ‹‰ä½$nçš„æ‰‹ï¼ŒæŸ”å£°è¯´é“ï¼šè¦ç”Ÿäº†! \n"
+        NOR, me, obj);
+        call_out("birth1", 15, me, obj);
 //		me->clear_condition("huaiyun");
-	 }
-      me->clear_condition("huaiyun");
-	 return ;
-}
-int birth1(object me)
-{        object obj = find_player(me->query("fuqi/father"));
-	 message_vision(HIY "\n$NÒÑÊÇ´óº¹ÁÜÀì£¬Ò»Ö±¶¼ÔÚºôÌìÇÀµØ£¬Ë«ÊÖ½ô½ô¿Û×¡$nµÄÊÖ²»·Å¡£\n"+
-		 "\nÓ¤¶ùÒÑ¾­Ì½³öÁËÍ·£®£®£®\n"NOR,me,obj);
-	 call_out("birth2",15,me,obj);
-	 return 1;
+    }
+    me->clear_condition("huaiyun");
+    return;
 }
 
-void birth2(object me)
-{
-	object obj = find_player(me->query("fuqi/father"));
-	object baby;
-	int number;
-	message_vision(HIY "\n¡¸ÍÛ¡¹£®£®£®£¬Ó¤¶ù³öÊÀÁË£¡\n"+
-		"\n$NÃæÉ«²Ô°×£¬Ğ±ÒĞÔÚ´²Í·£¬¿´¿´º¢×ÓÂúÒâµØÂ¶³öÒ»Ë¿Î¢Ğ¦¡£\n"NOR, me);
-	me->start_busy(1);
-	obj->start_busy(1);
-	me->set("neili",0);
-	me->set("qi",0);
-	me->set("jing",0);
-	baby = new("/d/taohuacun/npc/baby");
-	baby->set("long", baby->query("long")+"ÕâÊÇ"+obj->query("name")+"ºÍ"+me->query("name")+"µÄº¢×Ó¡£\n");
-	if (random(100)<50)
-	{
-		baby->set("gender","ÄĞĞÔ");
-		baby->set_name("Ğ¡"+obj->query("name"),({"xiao "+obj->query("id"),"baby"}));
-	}
-	else
-	{
-		baby->set("gender","Å®ĞÔ");
-		baby->set_name("Ğ¡"+me->query("name"),({"xiao "+me->query("id"),"baby"}));
-	}
-	me->add("child",1);
-	obj->add("child",1);
-	baby->set("parents",({me->query("id"),obj->query("id")}));
-	number = me->query("child");
-	me->set("child_"+number+"/gender",baby->query("gender"));
-	me->set("child_"+number+"/long",baby->query("long"));
-	me->set("child_"+number+"/name",baby->query("name"));
-	me->set("child_"+number+"/id",({baby->query("id"),"baby"}));
-	me->set("child_"+number+"/parents",baby->query("parents"));
-	number = obj->query("child");
-	obj->set("child_"+number+"/gender",baby->query("gender"));
-	obj->set("child_"+number+"/long",baby->query("long"));
-	obj->set("child_"+number+"/name",baby->query("name"));
-	obj->set("child_"+number+"/id",({baby->query("id"),"baby"}));
-	obj->set("child_"+number+"/parents",baby->query("parents"));
-	me->delete_temp("is_bearing");
-	me->save();
-	obj->save();
+int birth1(object me) {
+    object obj = find_player(me->query("fuqi/father"));
+    message_vision(HIY
+    "\n$Nå·²æ˜¯å¤§æ±—æ·‹æ¼“ï¼Œä¸€ç›´éƒ½åœ¨å‘¼å¤©æŠ¢åœ°ï¼ŒåŒæ‰‹ç´§ç´§æ‰£ä½$nçš„æ‰‹ä¸æ”¾ã€‚\n" +
+    "\nå©´å„¿å·²ç»æ¢å‡ºäº†å¤´ï¼ï¼ï¼\n"
+    NOR, me, obj);
+    call_out("birth2", 15, me, obj);
+    return 1;
+}
+
+void birth2(object me) {
+    object obj = find_player(me->query("fuqi/father"));
+    object baby;
+    int number;
+    message_vision(HIY
+    "\nã€Œå“‡ã€ï¼ï¼ï¼ï¼Œå©´å„¿å‡ºä¸–äº†ï¼\n" +
+    "\n$Né¢è‰²è‹ç™½ï¼Œæ–œå€šåœ¨åºŠå¤´ï¼Œçœ‹çœ‹å­©å­æ»¡æ„åœ°éœ²å‡ºä¸€ä¸å¾®ç¬‘ã€‚\n"
+    NOR, me);
+    me->start_busy(1);
+    obj->start_busy(1);
+    me->set("neili", 0);
+    me->set("qi", 0);
+    me->set("jing", 0);
+    baby = new("/d/taohuacun/npc/baby");
+    baby->set("long", baby->query("long") + "è¿™æ˜¯" + obj->query("name") + "å’Œ" + me->query("name") + "çš„å­©å­ã€‚\n");
+    if (random(100) < 50) {
+        baby->set("gender", "ç”·æ€§");
+        baby->set_name("å°" + obj->query("name"), ({ "xiao " + obj->query("id"), "baby" }));
+    } else {
+        baby->set("gender", "å¥³æ€§");
+        baby->set_name("å°" + me->query("name"), ({ "xiao " + me->query("id"), "baby" }));
+    }
+    me->add("child", 1);
+    obj->add("child", 1);
+    baby->set("parents", ({ me->query("id"), obj->query("id") }));
+    number = me->query("child");
+    me->set("child_" + number + "/gender", baby->query("gender"));
+    me->set("child_" + number + "/long", baby->query("long"));
+    me->set("child_" + number + "/name", baby->query("name"));
+    me->set("child_" + number + "/id", ({ baby->query("id"), "baby" }));
+    me->set("child_" + number + "/parents", baby->query("parents"));
+    number = obj->query("child");
+    obj->set("child_" + number + "/gender", baby->query("gender"));
+    obj->set("child_" + number + "/long", baby->query("long"));
+    obj->set("child_" + number + "/name", baby->query("name"));
+    obj->set("child_" + number + "/id", ({ baby->query("id"), "baby" }));
+    obj->set("child_" + number + "/parents", baby->query("parents"));
+    me->delete_temp("is_bearing");
+    me->save();
+    obj->save();
 //this needs to be put at the last since
 //can only move the baby after it's parameters are set.
-	if(!baby->move(environment(me)))
-	baby->move(environment(environment(me)));
+    if (!baby->move(environment(me)))
+        baby->move(environment(environment(me)));
 }

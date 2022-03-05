@@ -4,19 +4,19 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-	if( duration == 0 )
-	{
-		tell_object(me, 
-HIB "ºöÈ»Äã¾õµÃÈ«ÉíÀÁÑóÑóµÄ£¬Á¬¸öÐ¡Ö¸Í·Ò²²»Ïë¶¯ÁË£¬Ô­À´ÄãµÄ
-Áúº××¯ÊÕ¹¦ÁË£¡\n" NOR );
-                me->delete_temp("apply/constitution");
+int update_condition(object me, int duration) {
+    if (duration == 0) {
+        tell_object(me,
+                    HIB
+        "å¿½ç„¶ä½ è§‰å¾—å…¨èº«æ‡’æ´‹æ´‹çš„ï¼Œè¿žä¸ªå°æŒ‡å¤´ä¹Ÿä¸æƒ³åŠ¨äº†ï¼ŒåŽŸæ¥ä½ çš„
+        é¾™é¹¤åº„æ”¶åŠŸäº†ï¼\n
+        " NOR );
+        me->delete_temp("apply/constitution");
 //		me->add("con", 0 - me->query("linji/con"));
-		me->delete("linji/con");
-		return 0;
-	}
-	me->apply_condition("linji_longhe", duration - 1);
+        me->delete("linji/con");
+        return 0;
+    }
+    me->apply_condition("linji_longhe", duration - 1);
 
-	return CND_CONTINUE;
+    return CND_CONTINUE;
 }

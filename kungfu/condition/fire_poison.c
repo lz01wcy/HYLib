@@ -8,25 +8,33 @@ inherit F_CLEAN_UP;
 
 string name() { return "fire_poison"; }
 
-string chinese_name() { return "ÐÇËÞ¶¾Ñæ"; }
+string chinese_name() { return "æ˜Ÿå®¿æ¯’ç„°"; }
 
-int update_condition(object me, int duration)
-{
-        if( duration < 1 ) return 0;
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
 
- message("vision", me->name() + HIR"Ò»Éù²Òº¿£¬È«Éí¾¹È¼ÆðÁË" HIG "±ÌÂÌÉ«"
-               HIR "µÄ»ðÑæ¡£\n"NOR, environment(me), me);
-                tell_object(me, HIY "Ö»¾õÈ«Éí×ÆÈÈÎÞ±È£¬ÉíÌåÉÏÈ¼ÆðµÄ" HIG "±ÌÑæ"
-               HIR "Ö±·ÙÐÄËè¡££¡\n" NOR );
-if ((int)me->query("qi") < 100000)
-{
-        me->receive_wound("qi", me->query("qi")/8);
-        me->receive_damage("qi", me->query("qi")/9);
-}else    me->receive_wound("qi", 2000);
-        if (!me->is_busy())
+    message("vision", me->name() + HIR
+    "ä¸€å£°æƒ¨åšŽï¼Œå…¨èº«ç«Ÿç‡ƒèµ·äº†"
+    HIG
+    "ç¢§ç»¿è‰²"
+    HIR
+    "çš„ç«ç„°ã€‚\n"
+    NOR, environment(me), me);
+    tell_object(me, HIY
+    "åªè§‰å…¨èº«ç¼çƒ­æ— æ¯”ï¼Œèº«ä½“ä¸Šç‡ƒèµ·çš„"
+    HIG
+    "ç¢§ç„°"
+    HIR
+    "ç›´ç„šå¿ƒé«“ã€‚ï¼\n"
+    NOR );
+    if ((int) me->query("qi") < 100000) {
+        me->receive_wound("qi", me->query("qi") / 8);
+        me->receive_damage("qi", me->query("qi") / 9);
+    } else me->receive_wound("qi", 2000);
+    if (!me->is_busy())
         me->start_busy(3);
-        me->apply_condition(name(), duration - 1);
+    me->apply_condition(name(), duration - 1);
 
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

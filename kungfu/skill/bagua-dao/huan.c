@@ -1,85 +1,101 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUAN "¡¸" HIG "ÒõÑô»·" NOR "¡¹"
+#define HUAN "ã€Œ" HIG "é˜´é˜³çŽ¯" NOR "ã€"
 
 inherit F_SSERVER;
 
-int perform(object me, object target)
-{
-	object weapon;
-	string msg;
-	int ap, dp;
-        int count;
-	int i, attack_time;
+int perform(object me, object target) {
+    object weapon;
+    string msg;
+    int ap, dp;
+    int count;
+    int i, attack_time;
 
 
-        if (! target) target = offensive_target(me);
+    if (!target) target = offensive_target(me);
 
-        if (! target || ! me->is_fighting(target))
-                return notify_fail(HUAN "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+    if (!target || !me->is_fighting(target))
+        return notify_fail(HUAN "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
-        if (! objectp(weapon = me->query_temp("weapon")) ||
-              (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+    if (!objectp(weapon = me->query_temp("weapon")) ||
+        (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
-        if (me->query_skill("dodge") < 220)
-                return notify_fail("ÄãµÄÒõÑôÈÐ·¨ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+    if (me->query_skill("dodge") < 220)
+        return notify_fail("ä½ çš„é˜´é˜³åˆƒæ³•ä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
-        if (me->query("neili") < 270)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+    if (me->query("neili") < 270)
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
-        if ((int)me->query_skill("linji-zhuang", 1) < 120)
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯»ðºòÌ«Ç³¡£\n");
-                
-        if (me->query_skill("bagua-dao", 1) < 140)
-                return notify_fail("ÄãµÄ°ËØÔµ¶·¨ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+    if ((int) me->query_skill("linji-zhuang", 1) < 120)
+        return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ç«å€™å¤ªæµ…ã€‚\n");
 
-        if (me->query_skill_mapped("blade") != "bagua-dao")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ËØÔµ¶·¨£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+    if (me->query_skill("bagua-dao", 1) < 140)
+        return notify_fail("ä½ çš„å…«å¦åˆ€æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
-	msg = HIY "$N" HIY "³¤Ð¥Ò»Éù£¬ÊÖÖÐ" + weapon->name() + HIY "»¯³ö"
-              "ÎÞÊý¹â»·£¬ÃÍÈ»¼ä¹âÃ¢ÆÙÕÇ£¬Á¬Á¬È÷Ïò$n" HIY "¡£\n" NOR;
+    if (me->query_skill_mapped("blade") != "bagua-dao")
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å…«å¦åˆ€æ³•ï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
-        // ¸ù¾ÝËù¼¤·¢µÄÊÇsword»òbladeÀ´ÅÐ¶ÏapÖµ¡£
-                ap = me->query_skill("blade");
+    msg = HIY
+    "$N"
+    HIY
+    "é•¿å•¸ä¸€å£°ï¼Œæ‰‹ä¸­" + weapon->name() + HIY
+    "åŒ–å‡º"
+    "æ— æ•°å…‰çŽ¯ï¼ŒçŒ›ç„¶é—´å…‰èŠ’ç€‘æ¶¨ï¼Œè¿žè¿žæ´’å‘$n"
+    HIY
+    "ã€‚\n"
+    NOR;
 
-	dp = target->query_skill("dodge");
-        attack_time = 4;
+    // æ ¹æ®æ‰€æ¿€å‘çš„æ˜¯swordæˆ–bladeæ¥åˆ¤æ–­apå€¼ã€‚
+    ap = me->query_skill("blade");
 
-	if (ap / 2 + random(ap * 2) > dp)
-	{
-		msg += HIR "½á¹û$n" HIR "±»$N" HIR "¹¥ÁË¸ö´ëÊÖ²»¼°£¬$n"
-                       HIR "»ÅÃ¦ÕÐ¼Ü£¬ÐÄÖÐ½Ð¿à¡£\n" NOR;
-                count = ap / 12;
-                attack_time += random(ap / 45);
-        if (count > 100) count=100;
+    dp = target->query_skill("dodge");
+    attack_time = 4;
 
-        } else
-        {
-                msg += HIC "$n" HIC "¼û$N" HIC "Õâ¼¸ÕÐÁèÀ÷ÎÞ±È£¬Ð×ÃÍÒì"
-                       "³££¬Ö»µÃ¿à¿àÕÐ¼Ü¡£\n" NOR;
-                count = 0;
-        }
-	message_combatd(msg, me, target);
+    if (ap / 2 + random(ap * 2) > dp) {
+        msg += HIR
+        "ç»“æžœ$n"
+        HIR
+        "è¢«$N"
+        HIR
+        "æ”»äº†ä¸ªæŽªæ‰‹ä¸åŠï¼Œ$n"
+        HIR
+        "æ…Œå¿™æ‹›æž¶ï¼Œå¿ƒä¸­å«è‹¦ã€‚\n"
+        NOR;
+        count = ap / 12;
+        attack_time += random(ap / 45);
+        if (count > 100) count = 100;
 
-        if (attack_time > 8)
-                attack_time = 8;
+    } else {
+        msg += HIC
+        "$n"
+        HIC
+        "è§$N"
+        HIC
+        "è¿™å‡ æ‹›å‡ŒåŽ‰æ— æ¯”ï¼Œå‡¶çŒ›å¼‚"
+        "å¸¸ï¼Œåªå¾—è‹¦è‹¦æ‹›æž¶ã€‚\n"
+        NOR;
+        count = 0;
+    }
+    message_combatd(msg, me, target);
 
-	me->add("neili", -attack_time * 20);
-        me->add_temp("apply/attack", count);
-        me->add_temp("apply/damage", 200);
-	for (i = 0; i < attack_time; i++)
-	{
-		if (! me->is_fighting(target))
-			break;
+    if (attack_time > 8)
+        attack_time = 8;
 
-	        COMBAT_D->do_attack(me, target, weapon, 0);
-	}
-        me->add_temp("apply/attack", -count);
-	me->add_temp("apply/damage", -200);
-	me->start_busy(4);
+    me->add("neili", -attack_time * 20);
+    me->add_temp("apply/attack", count);
+    me->add_temp("apply/damage", 200);
+    for (i = 0; i < attack_time; i++) {
+        if (!me->is_fighting(target))
+            break;
 
-	return 1;
+        COMBAT_D->do_attack(me, target, weapon, 0);
+    }
+    me->add_temp("apply/attack", -count);
+    me->add_temp("apply/damage", -200);
+    me->start_busy(4);
+
+    return 1;
 }

@@ -5,21 +5,21 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   if( duration < 1 ) return 0;
-   if( !living(me) ) {
-      message("vision", me->name() + "头重脚轻，脑门发热，看来是中暑了。\n", environment(me), me);
-   }
-   else {
-      tell_object(me, HIB "你觉得头重脚轻，脑门发热，看来是中暑了。\n" NOR );
-      message("vision", me->name() + "只觉得胸臆之间一阵翻腾，头重脚轻，抬不起头来，脑门发热，看来是中暑了。\n",
-            environment(me), me);
-   }
-   me->receive_wound("qi", 1);
-   me->receive_damage("qi", 1);
-   me->apply_condition("ill_zhongshu", duration - 1);
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
+    if (!living(me)) {
+        message("vision", me->name() + "澶撮噸鑴氳交锛岃剳闂ㄥ彂鐑紝鐪嬫潵鏄腑鏆戜簡銆俓n", environment(me), me);
+    } else {
+        tell_object(me, HIB
+        "浣犺寰楀ご閲嶈剼杞伙紝鑴戦棬鍙戠儹锛岀湅鏉ユ槸涓殤浜嗐�俓n"
+        NOR );
+        message("vision", me->name() + "鍙寰楄兏鑷嗕箣闂翠竴闃电炕鑵撅紝澶撮噸鑴氳交锛屾姮涓嶈捣澶存潵锛岃剳闂ㄥ彂鐑紝鐪嬫潵鏄腑鏆戜簡銆俓n",
+                environment(me), me);
+    }
+    me->receive_wound("qi", 1);
+    me->receive_damage("qi", 1);
+    me->apply_condition("ill_zhongshu", duration - 1);
 
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

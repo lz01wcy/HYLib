@@ -6,25 +6,27 @@ inherit F_CLEAN_UP;
 
 string name() { return "tiezhang_yang"; }
 
-string chinese_name() { return "ÌúÕÆ´¿Ñô¾¢"; }
+string chinese_name() { return "é“æŒçº¯é˜³åŠ²"; }
 
 
+int update_condition(object me, int duration) {
+    if (duration < 1) return 0;
 
-int update_condition(object me, int duration)
-{
-        if( duration < 1 ) return 0;
-
- message("vision", me->name() + RED"ÃÆºßÒ»Éù£¬Ë«Ä¿Í¹³ö£¬×ì½ÇÉø³ö¼¸Ë¿ÏÊÑª¡£\n"NOR, environment(me), me);
-                tell_object(me, RED "ÄãÖ»¾õµ¤Ìï´¦ÓĞÈç»ğ·Ù£¬±ãËÆÓĞÇ§Íò¸ÖÕëÒ»ÆëÔúÈëÌåÄÚ¡££¡\n" NOR );
-me->add("neili",-me->query("neili")/4);
-        if (!me->is_busy())
+    message("vision", me->name() + RED
+    "é—·å“¼ä¸€å£°ï¼ŒåŒç›®å‡¸å‡ºï¼Œå˜´è§’æ¸—å‡ºå‡ ä¸é²œè¡€ã€‚\n"
+    NOR, environment(me), me);
+    tell_object(me, RED
+    "ä½ åªè§‰ä¸¹ç”°å¤„æœ‰å¦‚ç«ç„šï¼Œä¾¿ä¼¼æœ‰åƒä¸‡é’¢é’ˆä¸€é½æ‰å…¥ä½“å†…ã€‚ï¼\n"
+    NOR );
+    me->add("neili", -me->query("neili") / 4);
+    if (!me->is_busy())
         me->start_busy(3);
 
 
-        me->apply_condition(name(), duration - 1);
+    me->apply_condition(name(), duration - 1);
 
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
 

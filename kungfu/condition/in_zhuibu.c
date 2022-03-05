@@ -9,65 +9,57 @@
 #include <condition.h>
 
 
-
 inherit F_CLEAN_UP;
 
 
+int update_condition(object me, int duration) {
 
-int update_condition(object me, int duration)
+    if (duration < 1) {
 
-{
+        if (!me->query_condition("after_zhuibu")) {
 
-	if ( duration < 1 ) {
+            if (me->query_temp("æŠ“/thief"))
 
-		if (!me->query_condition("after_zhuibu"))
+                me->delete_temp("æŠ“/thief");
 
-		{
+            else if (me->query_temp("æŠ“/caihua zei"))
 
-			if (me->query_temp("×¥/thief"))
+                me->delete_temp("æŠ“/caihua zei");
 
-				me->delete_temp("×¥/thief");
+            else if (me->query_temp("æŠ“/jiangyang dadao"))
 
-			else if (me->query_temp("×¥/caihua zei"))
+                me->delete_temp("æŠ“/jiangyang dadao");
 
-				me->delete_temp("×¥/caihua zei");
+            else if (me->query_temp("æŠ“/chaoting qinfan"))
 
-			else if (me->query_temp("×¥/jiangyang dadao"))
+                me->delete_temp("æŠ“/chaoting qinfan");
 
-				me->delete_temp("×¥/jiangyang dadao");
+            else if (me->query_temp("æŠ“/shanzhai dawang"))
 
-			else if (me->query_temp("×¥/chaoting qinfan"))
-
-				me->delete_temp("×¥/chaoting qinfan");
-
-			else if (me->query_temp("×¥/shanzhai dawang"))
-
-				me->delete_temp("×¥/shanzhai dawang");
+                me->delete_temp("æŠ“/shanzhai dawang");
 
 
+            me->set("title", me->query("oldtitle"));
 
-			me->set("title",me->query("oldtitle"));
+            me->delete("oldtitle");
 
-			me->delete("oldtitle");
+            me->apply_condition("after_zhuibu", 7);
 
-			me->apply_condition("after_zhuibu", 7);
+            tell_object(me, HIW
+            "ä½ æ²¡åœ¨æŒ‡å®šçš„æ—¶é—´å†…æŠ“å›žé€ƒçŠ¯ï¼Œäººå®¶å·²ç»ç¿»æ¡ˆäº†ï¼\n"
+            NOR);
 
-			tell_object(me, HIW"ÄãÃ»ÔÚÖ¸¶¨µÄÊ±¼äÄÚ×¥»ØÌÓ·¸£¬ÈË¼ÒÒÑ¾­·­°¸ÁË£¡\n"NOR);
-
-		}
-
-
-
-		return 0;
-
-       	}
+        }
 
 
+        return 0;
 
-	me->apply_condition("in_zhuibu", duration - 1);
+    }
 
-	
 
-	return 1;
+    me->apply_condition("in_zhuibu", duration - 1);
+
+
+    return 1;
 
 }

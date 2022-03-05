@@ -4,19 +4,19 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-	if( duration == 0 )
-	{
-		tell_object(me, 
-HIB "ºöÈ»Äã¾õµÃÒ»¹É×ÇÆø×ÔÑü¼äÃÍÏòÏÂ³ÁÈ¥£¬¶ÙÊ±Ë«×ãÈç¹àÇ¦°ã³Á
-ÖØ£¬Ô­À´ÄãµÄ·çÔÆ×¯ÊÕ¹¦ÁË£¡\n" NOR );
-                me->delete_temp("apply/dexerity");
+int update_condition(object me, int duration) {
+    if (duration == 0) {
+        tell_object(me,
+                    HIB
+        "å¿½ç„¶ä½ è§‰å¾—ä¸€è‚¡æµŠæ°”è‡ªè…°é—´çŒ›å‘ä¸‹æ²‰åŽ»ï¼Œé¡¿æ—¶åŒè¶³å¦‚çŒé“…èˆ¬æ²‰
+        é‡ï¼ŒåŽŸæ¥ä½ çš„é£Žäº‘åº„æ”¶åŠŸäº†ï¼\n
+        " NOR );
+        me->delete_temp("apply/dexerity");
 //		me->add("dex", 0 - me->query("linji/dex"));
-		me->delete("linji/dex");
-		return 0;
-	}
-	me->apply_condition("linji_fengyun", duration - 1);
+        me->delete("linji/dex");
+        return 0;
+    }
+    me->apply_condition("linji_fengyun", duration - 1);
 
-	return CND_CONTINUE;
+    return CND_CONTINUE;
 }

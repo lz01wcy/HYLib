@@ -3,30 +3,30 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-        if( !living(me) ) {
-                message("vision",HIY + me->name() + "ÉªÉª·¢¶¶£¬È«Éí½áÉÏÒ»²ã±¡±¡µÄ°×Ëª£¬¡£\n"NOR, environment(me), me);
+int update_condition(object me, int duration) {
+    if (!living(me)) {
+        message("vision", HIY + me->name() + "ç‘Ÿç‘Ÿå‘æŠ–ï¼Œå…¨èº«ç»“ä¸Šä¸€å±‚è–„è–„çš„ç™½éœœï¼Œã€‚\n"
+        NOR, environment(me), me);
+    } else {
+        if (userp(me)) {
+            tell_object(me, HIY
+            "å¿½ç„¶ä¸€è‚¡å¯’æ°”ä¼˜ä¼¼å†°ç®­ï¼Œå¾ªç€æ‰‹è‡‚ï¼Œè¿…é€Ÿæ— ä¼¦çš„å°„å…¥èƒ¸è†›ï¼Œä½ ä¸­çš„å¯’æ¯’å‘ä½œäº†ï¼\n"
+            NOR );
+            message("vision", HIY + me->name() + "å…¨èº«å‘é¢¤ï¼Œç‰™å…³æ ¼æ ¼ç›´å“ï¼Œè¿‡å¾—ç‰‡åˆ»ï¼Œå˜´å”‡ä¹Ÿç´«äº†ï¼Œè„¸è‰²æ¸æ¸ç”±é’è€Œç™½ã€‚\n"
+            NOR,
+                    environment(me), me);
         }
-        else {
-if (userp(me))
-{
-                tell_object(me, HIY "ºöÈ»Ò»¹Éº®ÆøÓÅËÆ±ù¼ý£¬Ñ­×ÅÊÖ±Û£¬Ñ¸ËÙÎÞÂ×µÄÉäÈëÐØÌÅ£¬ÄãÖÐµÄº®¶¾·¢×÷ÁË£¡\n" NOR );
-                message("vision", HIY + me->name() + "È«Éí·¢²ü£¬ÑÀ¹Ø¸ñ¸ñÖ±Ïì£¬¹ýµÃÆ¬¿Ì£¬×ì´½Ò²×ÏÁË£¬Á³É«½¥½¥ÓÉÇà¶ø°×¡£\n"NOR,
-                                environment(me), me);
-}
-        }
-        me->receive_damage("qi", 50);
-        if(userp(me))
+    }
+    me->receive_damage("qi", 50);
+    if (userp(me))
         me->receive_wound("jing", 20);
-        else me->receive_wound("jing", 40);
-        if(!me->is_busy()) me->start_busy(3);
-        me->apply_condition("cold_poison", duration - 1);
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    else me->receive_wound("jing", 40);
+    if (!me->is_busy()) me->start_busy(3);
+    me->apply_condition("cold_poison", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "poison";
+string query_type(object me) {
+    return "poison";
 }

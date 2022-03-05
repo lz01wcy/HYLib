@@ -3,38 +3,37 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{   int l_temp;
-    me->set_temp("last_damage_from", "¾«Ôª¿Ý½ß");
+int update_condition(object me, int duration) {
+    int l_temp;
+    me->set_temp("last_damage_from", "ç²¾å…ƒæž¯ç«­");
 //    if( !living(me) ) return CND_CONTINUE;
-   if (random(4)>=3 )
-   {
-    if( !living(me) )
-      message("vision", me->name() + "»ëÉíÒ»Õó¶ßàÂ£¬ÀäµÃÑÀ³Ý[¿©¿©]Ïì¡£\n", environment(me), me);
-    else
-     {
-      tell_object(me, HIB "ÄãºöÈ»¸Ðµ½ÌåÄÚ¾«ÔªÁ÷Ð¹£¬Í·»è³Á³ÁµÄ¡£\n" NOR );
-      message("vision", me->name() + "Í»È»Á½ÍÈ·¢Èí£¬Á½ÊÖ±§³ÉÒ»ÍÅ£¬ÀäµÃÖ±·¢¶¶¡£\n",
-            environment(me), me);
-      }
-         l_temp=50-(int)me->query_skill("force", 1)/20;
-        me->add("jing",-l_temp);
-         l_temp=60-(int)me->query_skill("force", 1)/20;
-        me->add("qi",-l_temp);
-        if ((int)me->query_skill("force", 1)<180)
-          { me->receive_wound("jing", random(1));
-            if( me->query("qi",1)<0)
-               me->unconcious();
-            if( me->query("eff_jing",1)<0)
-               me->die();
-          } 
+    if (random(4) >= 3) {
+        if (!living(me))
+            message("vision", me->name() + "æµ‘èº«ä¸€é˜µå“†å—¦ï¼Œå†·å¾—ç‰™é½¿[å’¯å’¯]å“ã€‚\n", environment(me), me);
+        else {
+            tell_object(me, HIB
+            "ä½ å¿½ç„¶æ„Ÿåˆ°ä½“å†…ç²¾å…ƒæµæ³„ï¼Œå¤´æ˜æ²‰æ²‰çš„ã€‚\n"
+            NOR );
+            message("vision", me->name() + "çªç„¶ä¸¤è…¿å‘è½¯ï¼Œä¸¤æ‰‹æŠ±æˆä¸€å›¢ï¼Œå†·å¾—ç›´å‘æŠ–ã€‚\n",
+                    environment(me), me);
+        }
+        l_temp = 50 - (int) me->query_skill("force", 1) / 20;
+        me->add("jing", -l_temp);
+        l_temp = 60 - (int) me->query_skill("force", 1) / 20;
+        me->add("qi", -l_temp);
+        if ((int) me->query_skill("force", 1) < 180) {
+            me->receive_wound("jing", random(1));
+            if (me->query("qi", 1) < 0)
+                me->unconcious();
+            if (me->query("eff_jing", 1) < 0)
+                me->die();
+        }
     }
-     me->apply_condition("juehu_hurt", duration - 1);
-     if( duration < 1 ) return 0;
-     return CND_CONTINUE;
+    me->apply_condition("juehu_hurt", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "hurt";
+string query_type(object me) {
+    return "hurt";
 }

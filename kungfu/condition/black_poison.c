@@ -1,33 +1,32 @@
-// black_poison ºÚÉ°ÕÆ¶¾
+// black_poison é»‘ç ‚æŽŒæ¯’
 // Last Modified by winder on Aug. 25 2001
 
 #include <ansi.h>
 #include <condition.h>
+
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-  if (me->is_ghost()) return 1;
-	if( !living(me) || me->query_temp("noliving") )
-	{
-		message("vision", me->name()+"´­×Å´ÖÆø£¬ÖÐÕÆ´¦ºÚË¿ÈçÄ«¡£\n", environment(me), me);
-	}
-	else
-	{
-		tell_object(me, HIB"ÄãÖ»¾õ»ëÉí±ùÀä´Ì¹Ç£¬ÉõÎªÄÑÊÜ£¡\n" NOR );
-		message("vision", HIB+me->name()+"Í»È»ÃæÉ«ÌúÇà£¬È«ÉíÉÏÏÂºÚË¿ÒþÔ¼¿É±æ£¬¿´À´ÊÇÖÐÁËºÚÉ°ÕÆºóÕÆ¶¾·¢×÷ÁË¡£\n"NOR, environment(me), me);
-	}
-	me->receive_damage("qi", 125);
-	me->receive_wound("jing", 120);
-	me->start_busy(2);
-	if ((int)me->query("eff_jing")<0 || (int)me->query("eff_qi")<0) return 0;
-	me->apply_condition("black_poison", duration - 1);
-	if( duration < 1 ) return 0;
-	return CND_CONTINUE;
+int update_condition(object me, int duration) {
+    if (me->is_ghost()) return 1;
+    if (!living(me) || me->query_temp("noliving")) {
+        message("vision", me->name() + "å–˜ç€ç²—æ°”ï¼Œä¸­æŽŒå¤„é»‘ä¸å¦‚å¢¨ã€‚\n", environment(me), me);
+    } else {
+        tell_object(me, HIB
+        "ä½ åªè§‰æµ‘èº«å†°å†·åˆºéª¨ï¼Œç”šä¸ºéš¾å—ï¼\n"
+        NOR );
+        message("vision", HIB + me->name() + "çªç„¶é¢è‰²é“é’ï¼Œå…¨èº«ä¸Šä¸‹é»‘ä¸éšçº¦å¯è¾¨ï¼Œçœ‹æ¥æ˜¯ä¸­äº†é»‘ç ‚æŽŒåŽæŽŒæ¯’å‘ä½œäº†ã€‚\n"
+        NOR, environment(me), me);
+    }
+    me->receive_damage("qi", 125);
+    me->receive_wound("jing", 120);
+    me->start_busy(2);
+    if ((int) me->query("eff_jing") < 0 || (int) me->query("eff_qi") < 0) return 0;
+    me->apply_condition("black_poison", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "poison";
+string query_type(object me) {
+    return "poison";
 }
 

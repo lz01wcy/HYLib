@@ -1,31 +1,31 @@
 #include <ansi.h>
 #include <condition.h>
 #include "/kungfu/skill/eff_msg.h";
+
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-      int damage, p;
-      string msg;
-      
-      damage = me->query_condition("dashouyin") +2;
-      damage *= me->query_con();
-      
-      tell_object(me, "Í»È»Äã¸Ð¾õÐØ¿ÚÌÛÍ´Òì³££¬¸Õ²Å±»´óÊÖÓ¡ÅÄÖÐµÄÀß¹Ç´¦ºÃÏóÒªÁÑ¿ªÁËËÆµÄ£¬ÏÊÑªÒ²´Ó¿ÚÖÐÅçÁË³öÀ´£¡\n");
-      tell_room(environment(me), HIR + me->name()+"Í»È»Ò»ÑÔ²»·¢£¬Ë«ÊÖÎæÐØ£¬µÅµÅíãµ¹ÍËÁËÊý²½£¬½Ó×ÅÍÛµÃÒ»ÉùÍÂ³ö¿ÚÏÊÑªÀ´£¡\n" NOR,({ me }));
-      me->receive_damage("qi", damage);
-      me->receive_wound("qi", damage/2);
-      p = (int)me->query("qi")*100/(int)me->query("max_qi");
-      msg = "( $N"+eff_status_msg(p)+" )\n";
-      if(living(me)) 
-             message_vision(msg, me);
-      me->set_temp("last_damage_from", "´óÊÖÓ¡¾¢Á¦·¢×÷");
-      me->apply_condition("dashouyin", duration - 1);
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+int update_condition(object me, int duration) {
+    int damage, p;
+    string msg;
+
+    damage = me->query_condition("dashouyin") + 2;
+    damage *= me->query_con();
+
+    tell_object(me, "çªç„¶ä½ æ„Ÿè§‰èƒ¸å£ç–¼ç—›å¼‚å¸¸ï¼Œåˆšæ‰è¢«å¤§æ‰‹å°æ‹ä¸­çš„è‚‹éª¨å¤„å¥½è±¡è¦è£‚å¼€äº†ä¼¼çš„ï¼Œé²œè¡€ä¹Ÿä»Žå£ä¸­å–·äº†å‡ºæ¥ï¼\n");
+    tell_room(environment(me), HIR + me->name() + "çªç„¶ä¸€è¨€ä¸å‘ï¼ŒåŒæ‰‹æ‚èƒ¸ï¼Œè¹¬è¹¬ç£´å€’é€€äº†æ•°æ­¥ï¼ŒæŽ¥ç€å“‡å¾—ä¸€å£°åå‡ºå£é²œè¡€æ¥ï¼\n"
+    NOR, ({ me }));
+    me->receive_damage("qi", damage);
+    me->receive_wound("qi", damage / 2);
+    p = (int) me->query("qi") * 100 / (int) me->query("max_qi");
+    msg = "( $N" + eff_status_msg(p) + " )\n";
+    if (living(me))
+        message_vision(msg, me);
+    me->set_temp("last_damage_from", "å¤§æ‰‹å°åŠ²åŠ›å‘ä½œ");
+    me->apply_condition("dashouyin", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "hurt";
+string query_type(object me) {
+    return "hurt";
 }

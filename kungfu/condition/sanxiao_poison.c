@@ -2,26 +2,28 @@
 
 #include <ansi.h>
 
-int update_condition(object me, int duration)
-{
-   int damage,damage2;
-damage=me->query("qi")/3;
-damage2=me->query("jing")/3;
-if (damage > 5000) damage=5000;   
-if (damage2 > 5000) damage2=5000;   	
-if ((int)me->query("qi") < 100000)
-{
-	me->receive_wound("qi", damage);
-	me->receive_damage("qi",damage);
-}
-else
-{
-	me->receive_wound("qi", damage);
-	me->receive_damage("qi", damage);
-}
-        me->start_busy(3);
-	me->apply_condition("sanxiao_poison", duration - 1);
-message_vision(HIG"$NÁ³ÉÏºöÈ»Â¶³ö¹îÒìµÄÒ»Ğ¦£¬¿´À´ÊÇ"HIB"ÈıĞ¦åĞÒ£É¢"HIG"·¢×÷ÁË£¡\n" NOR, me);
-	if( duration < 1 ) return 0;
-	return 1;
+int update_condition(object me, int duration) {
+    int damage, damage2;
+    damage = me->query("qi") / 3;
+    damage2 = me->query("jing") / 3;
+    if (damage > 5000) damage = 5000;
+    if (damage2 > 5000) damage2 = 5000;
+    if ((int) me->query("qi") < 100000) {
+        me->receive_wound("qi", damage);
+        me->receive_damage("qi", damage);
+    } else {
+        me->receive_wound("qi", damage);
+        me->receive_damage("qi", damage);
+    }
+    me->start_busy(3);
+    me->apply_condition("sanxiao_poison", duration - 1);
+    message_vision(HIG
+    "$Nè„¸ä¸Šå¿½ç„¶éœ²å‡ºè¯¡å¼‚çš„ä¸€ç¬‘ï¼Œçœ‹æ¥æ˜¯"
+    HIB
+    "ä¸‰ç¬‘é€é¥æ•£"
+    HIG
+    "å‘ä½œäº†ï¼\n"
+    NOR, me);
+    if (duration < 1) return 0;
+    return 1;
 }

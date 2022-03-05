@@ -1,784 +1,772 @@
 #include <ansi.h>
 #include <login.h>
 
-int update_condition(object me, int duration)
-{
-object obj,gift;
+int update_condition(object me, int duration) {
+    object obj, gift;
     object *team;
-        int j;
-	mapping npc,mp;
-	mapping hp_status, skill_status, map_status, prepare_status;
-mapping my;
-string *sname, *mname, *pname;
-	string sex;
-	object ob, weapon;
-	int k,a,b,c,d,e,f,temp;
-	
-int maxpot,maxexp,minexp;      
-     int i=0,count=0;
-maxexp=me->query("combat_exp");
-team=me->query_team();
-	  for(i=1;i<count;i++)
-      { if(team[i]!=0)
-	  { if(team[i]->query("combat_exp")<minexp)
-	    minexp=team[i]->query("combat_exp");
-		if(team[i]->query("combat_exp")>maxexp)
-        maxexp=team[i]->query("combat_exp");
-	  }
-	  }
-for(i=100;i*i*i/10<=maxexp;i++);
-maxpot=i;
+    int j;
+    mapping npc, mp;
+    mapping hp_status, skill_status, map_status, prepare_status;
+    mapping my;
+    string *sname, *mname, *pname;
+    string sex;
+    object ob, weapon;
+    int k, a, b, c, d, e, f, temp;
 
-if(environment(me)->query("short")!=me->query_temp("tjob")
-&& duration<17)
-{
-tell_object(me, HIY "\n¼éÏ¸ÍµÍµÁï³öÁË³Ç£¬ÄãÈÎÎñÊ§°Ü£¡\n" NOR); 
-me->delete_temp("tjob");
-me->apply_condition("mptjob",0);
-return 0;	
-}
-else     if (!duration)
-{
-message_vision(HIR"\n$NµĞÈËµÄÍ·ÁìÉ±µ½ÁË!!\n"NOR,me); 
-	     obj=new(__DIR__"npc/jianxi"); 
-   	     obj->do_copy(me,maxpot);
-   	     obj->set("title",HIR"µĞÅÉ¼éÏ¸"NOR);
-  	     obj->move(environment(me));
-e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-	     message_vision(HIY"$N¿ñĞ¦²»ÒÑ£º¾ÍÆ¾ÄãÃÇ¼¸¸öÒ²Ïëµ²×¡ÎÒµÄÈ¥Â·?\n"NOR, obj);
-	     obj->kill_ob(me);me->kill(this_object());
-  	     me->delete_temp("tjob");
-  	     gift=new(__DIR__"npc/mijian");
-  	     gift->set_temp("host",me->query("id"));
-  	     gift->move(obj);
-      return 0;
-}
-else  	 if( duration%3==0 && duration <17
-		 &&!environment(me)->query("no_fight")
-		 )
-       {  me->start_busy(1);
-          call_out("zuji", 0, me);    
-     
-	 }
-if (!environment(me)->query("no_fight"))
-{
+    int maxpot, maxexp, minexp;
+    int i = 0, count = 0;
+    maxexp = me->query("combat_exp");
+    team = me->query_team();
+    for (i = 1; i < count; i++) {
+        if (team[i] != 0) {
+            if (team[i]->query("combat_exp") < minexp)
+                minexp = team[i]->query("combat_exp");
+            if (team[i]->query("combat_exp") > maxexp)
+                maxexp = team[i]->query("combat_exp");
+        }
+    }
+    for (i = 100; i * i * i / 10 <= maxexp; i++);
+    maxpot = i;
+
+    if (environment(me)->query("short") != me->query_temp("tjob")
+        && duration < 17) {
+        tell_object(me, HIY
+        "\nå¥¸ç»†å·å·æºœå‡ºäº†åŸï¼Œä½ ä»»åŠ¡å¤±è´¥ï¼\n"
+        NOR);
+        me->delete_temp("tjob");
+        me->apply_condition("mptjob", 0);
+        return 0;
+    } else if (!duration) {
+        message_vision(HIR
+        "\n$Næ•Œäººçš„å¤´é¢†æ€åˆ°äº†!!\n"
+        NOR, me);
+        obj = new(__DIR__
+        "npc/jianxi");
+        obj->do_copy(me, maxpot);
+        obj->set("title", HIR
+        "æ•Œæ´¾å¥¸ç»†"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        message_vision(HIY
+        "$Nç‹‚ç¬‘ä¸å·²ï¼šå°±å‡­ä½ ä»¬å‡ ä¸ªä¹Ÿæƒ³æŒ¡ä½æˆ‘çš„å»è·¯?\n"
+        NOR, obj);
+        obj->kill_ob(me);
+        me->kill(this_object());
+        me->delete_temp("tjob");
+        gift = new(__DIR__
+        "npc/mijian");
+        gift->set_temp("host", me->query("id"));
+        gift->move(obj);
+        return 0;
+    } else if (duration % 3 == 0 && duration < 17
+               && !environment(me)->query("no_fight")
+            ) {
+        me->start_busy(1);
+        call_out("zuji", 0, me);
+
+    }
+    if (!environment(me)->query("no_fight")) {
         me->apply_condition("mptjob", duration - 1);
-tell_object(me, RED "\nÈÎÎñ½ô¼±£¬Çë¿ìËÙÏ¸ÖÂ£¡\n" NOR); 
-}
-        return 1;
-}
-
-
-void zuji(object me)
-{   
-    object *team,obj,gift;
-int maxpot,maxexp,minexp;      
-
-        int j;
-	mapping npc,mp;
-	mapping hp_status, skill_status, map_status, prepare_status;
-mapping my;
-string *sname, *mname, *pname;
-	string sex;
-	object ob, weapon;
-	int k,a,b,c,d,e,f,temp;
-     int i=0,count=0;
-maxexp=me->query("combat_exp");
-team=me->query_team();
-	  for(i=1;i<count;i++)
-      { if(team[i]!=0)
-	  { if(team[i]->query("combat_exp")<minexp)
-	    minexp=team[i]->query("combat_exp");
-		if(team[i]->query("combat_exp")>maxexp)
-        maxexp=team[i]->query("combat_exp");
-	  }
-	  }
-for(i=100;i*i*i/10<=maxexp;i++);
-maxpot=i;
-        if (!me) return;
-if (!me->query_temp("tjob")) return;
-	    if (random(19)== 0)
-	    {
-	      obj=new("quest/menpai/jobnpc/btshan");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"°×ÍÕÉ½Ê××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-              me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 2)
-	    {
-	      obj=new("quest/menpai/jobnpc/tangmen");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÌÆÃÅÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-              me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 3)
-	    {
-	      obj=new("quest/menpai/jobnpc/feitian");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Óù½£Á÷Ê××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-              me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 4)
-	    {
-	      obj=new("quest/menpai/jobnpc/wudujiao");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Îå¶¾½ÌÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-              me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 5)
-	    {
-	      obj=new("quest/menpai/jobnpc/lingxiao");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÁèÏö³ÇÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-              me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 1)
-	    {
-	      obj=new("quest/menpai/jobnpc/gumu");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"¹ÅÄ¹ÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 2)
-	    {
-	      obj=new("quest/menpai/jobnpc/gaibang");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Ø¤°ïÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-   e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 3)
-	    {
-	      obj=new("quest/menpai/jobnpc/emei");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"¶ëáÒÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 4)
-	    {
-	      obj=new("quest/menpai/jobnpc/dali");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"´óÀí¹úÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 5)
-	    {
-	      obj=new("quest/menpai/jobnpc/huashan");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"»ªÉ½ÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 6)
-	    {
-	      obj=new("quest/menpai/jobnpc/kunlun");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"À¥ÂØÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 7)
-	    {
-	      obj=new("quest/menpai/jobnpc/shaolin");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÉÙÁÖÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 8)
-	    {
-	      obj=new("quest/menpai/jobnpc/mr");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Ä½ÈİÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 9)
-	    {
-	      obj=new("quest/menpai/jobnpc/mingjiao");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Ã÷½ÌÊ××ùµÜ×Ó"NOR);     
-                 obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 10)
-	    {
-	      obj=new("quest/menpai/jobnpc/lingjiu");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÁéğÕ¹¬Ê××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 11)
-	    {
-	      obj=new("quest/menpai/jobnpc/taohua");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÌÒ»¨µºÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 12)
-	    {
-	      obj=new("quest/menpai/jobnpc/xueshan1");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Ñ©É½ÅÉ»¤½ÌµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 13)
-	    {
-	      obj=new("quest/menpai/jobnpc/xueshan2");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Ñ©É½ÅÉ»¤½Ì·¨Íõ"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 14)
-	    {
-	      obj=new("quest/menpai/jobnpc/xueshan3");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Ñ©É½ÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 15)
-	    {
-	      obj=new("quest/menpai/jobnpc/xingxiu");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ĞÇËŞÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 16)
-	    {
-	      obj=new("quest/menpai/jobnpc/wudang");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"Îäµ±ÅÉÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	     else 
-	    if (random(19)== 17)
-	    {
-	      obj=new("quest/menpai/jobnpc/tiezhang");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÌúÕÆ°ïÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	    else 
-	    if (random(19)== 18)
-	    {
-	      obj=new("quest/menpai/jobnpc/yunlong");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÔÆÁú»áÊ××ùµÜ×Ó"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-   if (random(10)>= 8 && me->query("combat_exp",1)>= 20000000 )
-	{
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);		
-	}
-              obj->kill_ob(me);me->kill(this_object());
-	     }
-	      obj=new(__DIR__"npc/mengbing");   
-	      obj->do_copy(me,maxpot,3);
-	      obj->set("title",HIY"ÃÉ¹ÅÓÂÊ¿"NOR);     
-              obj->move(environment(me));
-e=(int)me->query_skill("force",1)*3/4;
-if (random(5)==0) e=(int)me->query_skill("force",1)*4/5;
-if (!me->query_skill("force")) e=320;
-if (e<= 300) e=320;
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
-{
-skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
-temp = sizeof(skill_status);
-for (i = 0; i < temp; i++)
-obj->set_skill(sname[i],e);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
-}
-                 obj->kill_ob(me);me->kill(this_object());
-       obj->set_temp("apply/defense", 200);
-        obj->set_temp("apply/armor", 500);
-        obj->set_temp("apply/damage", 200);
-        obj->set_temp("apply/attack", 200);
+        tell_object(me, RED
+        "\nä»»åŠ¡ç´§æ€¥ï¼Œè¯·å¿«é€Ÿç»†è‡´ï¼\n"
+        NOR);
+    }
+    return 1;
 }
 
-string query_type(object me)
-{
-	return "job";
+
+void zuji(object me) {
+    object *team, obj, gift;
+    int maxpot, maxexp, minexp;
+
+    int j;
+    mapping npc, mp;
+    mapping hp_status, skill_status, map_status, prepare_status;
+    mapping my;
+    string *sname, *mname, *pname;
+    string sex;
+    object ob, weapon;
+    int k, a, b, c, d, e, f, temp;
+    int i = 0, count = 0;
+    maxexp = me->query("combat_exp");
+    team = me->query_team();
+    for (i = 1; i < count; i++) {
+        if (team[i] != 0) {
+            if (team[i]->query("combat_exp") < minexp)
+                minexp = team[i]->query("combat_exp");
+            if (team[i]->query("combat_exp") > maxexp)
+                maxexp = team[i]->query("combat_exp");
+        }
+    }
+    for (i = 100; i * i * i / 10 <= maxexp; i++);
+    maxpot = i;
+    if (!me) return;
+    if (!me->query_temp("tjob")) return;
+    if (random(19) == 0) {
+        obj = new("quest/menpai/jobnpc/btshan");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "ç™½é©¼å±±é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+        me->kill(this_object());
+    } else if (random(19) == 2) {
+        obj = new("quest/menpai/jobnpc/tangmen");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å”é—¨é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+        me->kill(this_object());
+    } else if (random(19) == 3) {
+        obj = new("quest/menpai/jobnpc/feitian");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å¾¡å‰‘æµé¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+        me->kill(this_object());
+    } else if (random(19) == 4) {
+        obj = new("quest/menpai/jobnpc/wudujiao");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "äº”æ¯’æ•™é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+        me->kill(this_object());
+    } else if (random(19) == 5) {
+        obj = new("quest/menpai/jobnpc/lingxiao");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å‡Œéœ„åŸé¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+        me->kill(this_object());
+    } else if (random(19) == 1) {
+        obj = new("quest/menpai/jobnpc/gumu");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å¤å¢“æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 2) {
+        obj = new("quest/menpai/jobnpc/gaibang");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "ä¸å¸®æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 3) {
+        obj = new("quest/menpai/jobnpc/emei");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å³¨åµ‹æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 4) {
+        obj = new("quest/menpai/jobnpc/dali");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å¤§ç†å›½é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 5) {
+        obj = new("quest/menpai/jobnpc/huashan");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "åå±±æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 6) {
+        obj = new("quest/menpai/jobnpc/kunlun");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "æ˜†ä»‘æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 7) {
+        obj = new("quest/menpai/jobnpc/shaolin");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "å°‘æ—æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 8) {
+        obj = new("quest/menpai/jobnpc/mr");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "æ…•å®¹æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 9) {
+        obj = new("quest/menpai/jobnpc/mingjiao");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "æ˜æ•™é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 10) {
+        obj = new("quest/menpai/jobnpc/lingjiu");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "çµé¹«å®«é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 11) {
+        obj = new("quest/menpai/jobnpc/taohua");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "æ¡ƒèŠ±å²›é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 12) {
+        obj = new("quest/menpai/jobnpc/xueshan1");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "é›ªå±±æ´¾æŠ¤æ•™å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 13) {
+        obj = new("quest/menpai/jobnpc/xueshan2");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "é›ªå±±æ´¾æŠ¤æ•™æ³•ç‹"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 14) {
+        obj = new("quest/menpai/jobnpc/xueshan3");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "é›ªå±±æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 15) {
+        obj = new("quest/menpai/jobnpc/xingxiu");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "æ˜Ÿå®¿æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 16) {
+        obj = new("quest/menpai/jobnpc/wudang");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "æ­¦å½“æ´¾é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 17) {
+        obj = new("quest/menpai/jobnpc/tiezhang");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "é“æŒå¸®é¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    } else if (random(19) == 18) {
+        obj = new("quest/menpai/jobnpc/yunlong");
+        obj->do_copy(me, maxpot, 3);
+        obj->set("title", HIY
+        "äº‘é¾™ä¼šé¦–åº§å¼Ÿå­"
+        NOR);
+        obj->move(environment(me));
+        e = (int) me->query_skill("force", 1) * 3 / 4;
+        if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+        if (!me->query_skill("force")) e = 320;
+        if (e <= 300) e = 320;
+        if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+        {
+            skill_status = obj->query_skills();
+            sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+            temp = sizeof(skill_status);
+            for (i = 0; i < temp; i++)
+                obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+        }
+        if (random(10) >= 8 && me->query("combat_exp", 1) >= 20000000) {
+            obj->set_temp("apply/defense", 200);
+            obj->set_temp("apply/armor", 500);
+            obj->set_temp("apply/damage", 200);
+            obj->set_temp("apply/attack", 200);
+        }
+        obj->kill_ob(me);
+        me->kill(this_object());
+    }
+    obj = new(__DIR__
+    "npc/mengbing");
+    obj->do_copy(me, maxpot, 3);
+    obj->set("title", HIY
+    "è’™å¤å‹‡å£«"
+    NOR);
+    obj->move(environment(me));
+    e = (int) me->query_skill("force", 1) * 3 / 4;
+    if (random(5) == 0) e = (int) me->query_skill("force", 1) * 4 / 5;
+    if (!me->query_skill("force")) e = 320;
+    if (e <= 300) e = 320;
+    if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
+    {
+        skill_status = obj->query_skills();
+        sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
+        temp = sizeof(skill_status);
+        for (i = 0; i < temp; i++)
+            obj->set_skill(sname[i], e);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
+    }
+    obj->kill_ob(me);
+    me->kill(this_object());
+    obj->set_temp("apply/defense", 200);
+    obj->set_temp("apply/armor", 500);
+    obj->set_temp("apply/damage", 200);
+    obj->set_temp("apply/attack", 200);
+}
+
+string query_type(object me) {
+    return "job";
 }

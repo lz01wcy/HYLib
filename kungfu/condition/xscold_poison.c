@@ -3,29 +3,30 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-        if( !living(me) ) {
-                message("vision",HIB + me->name() + "ÉªÉª·¢¶¶£¬ÉíÉÏº®ÆøËÄÒç,È«Éí½áÉÏÒ»²ã±¡±¡µÄ°×Ëª£¬¡£\n"NOR, environment(me), me);
-        }
-        else {
+int update_condition(object me, int duration) {
+    if (!living(me)) {
+        message("vision", HIB + me->name() + "ç‘Ÿç‘Ÿå‘æŠ–ï¼Œèº«ä¸Šå¯’æ°”å››æº¢,å…¨èº«ç»“ä¸Šä¸€å±‚è–„è–„çš„ç™½éœœï¼Œã€‚\n"
+        NOR, environment(me), me);
+    } else {
 
-                tell_object(me, HIB "ºöÈ»Ò»¹Éº®ÆøÓÅËÆ±ù¼ý£¬Ñ­×ÅÊÖ±Û£¬Ñ¸ËÙÎÞÂ×µÄÉäÈëÐØÌÅ£¬ÄãÖÐµÄÑ©É½º®¶¾·¢×÷ÁË£¡\n" NOR );
-                message("vision", HIY + me->name() + "ÉË¿Ú´¦º®ÆøËÄÒç £¬×ì´½Ò²×ÏÁË£¬Á³É«½¥½¥ÓÉÇà¶ø°×¡£\n"NOR,
-                                environment(me), me);
+        tell_object(me, HIB
+        "å¿½ç„¶ä¸€è‚¡å¯’æ°”ä¼˜ä¼¼å†°ç®­ï¼Œå¾ªç€æ‰‹è‡‚ï¼Œè¿…é€Ÿæ— ä¼¦çš„å°„å…¥èƒ¸è†›ï¼Œä½ ä¸­çš„é›ªå±±å¯’æ¯’å‘ä½œäº†ï¼\n"
+        NOR );
+        message("vision", HIY + me->name() + "ä¼¤å£å¤„å¯’æ°”å››æº¢ ï¼Œå˜´å”‡ä¹Ÿç´«äº†ï¼Œè„¸è‰²æ¸æ¸ç”±é’è€Œç™½ã€‚\n"
+        NOR,
+                environment(me), me);
 
-        }
-        me->receive_damage("qi", 150);
-        if(userp(me))
+    }
+    me->receive_damage("qi", 150);
+    if (userp(me))
         me->receive_wound("jing", 120);
-        else me->receive_wound("jing", 120);
-        me->start_busy(5);
-        me->apply_condition("xscold_poison", duration - 1);
-        if( duration < 1 ) return 0;
-        return CND_CONTINUE;
+    else me->receive_wound("jing", 120);
+    me->start_busy(5);
+    me->apply_condition("xscold_poison", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "poison";
+string query_type(object me) {
+    return "poison";
 }

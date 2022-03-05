@@ -5,28 +5,28 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   int damage,damage2;
-damage=me->query("qi")/18;
-damage2=me->query("jing")/18;
-if (damage > 5000) damage=5000;   
-if (damage2 > 5000) damage2=5000;   	
+int update_condition(object me, int duration) {
+    int damage, damage2;
+    damage = me->query("qi") / 18;
+    damage2 = me->query("jing") / 18;
+    if (damage > 5000) damage = 5000;
+    if (damage2 > 5000) damage2 = 5000;
 
-   if( duration < 1 ) return 0;
-   if( !living(me) ) {
-      message("vision", me->name() + "Ò»Éù²Òº¿£¬ÄÚÏ¢ÄæÁ÷£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»´ó¿ÚÏÊÑª¡£\n", environment(me), me);
-   }
-   else {
-      tell_object(me, HIB "ÄãÖ»¸Ðµ½ÎåÔàÁù¸­·­ÌÚ²»Ö¹£¬¾ç¶¾¹¥ÐÄ£¬¿´À´ÊÇÖÐÁË´ßÐÄÕÆÕÆ¾¢µÄ¸ÉÈÅ£¡\n" NOR );
-      message("vision", me->name() + "µÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬ÑÀ¹Ø¸ñ¸ñµØÏìÁËÆðÀ´¡£\n",
-            environment(me), me);
-   }
-        me->start_busy(3);
-      me->receive_wound("qi",damage);
-      me->receive_wound("jing", damage2);
-      me->apply_condition("cuixin_zhang", duration - 1);
+    if (duration < 1) return 0;
+    if (!living(me)) {
+        message("vision", me->name() + "ä¸€å£°æƒ¨åšŽï¼Œå†…æ¯é€†æµï¼Œâ€œå“‡â€çš„ä¸€å£°å–·å‡ºä¸€å¤§å£é²œè¡€ã€‚\n", environment(me), me);
+    } else {
+        tell_object(me, HIB
+        "ä½ åªæ„Ÿåˆ°äº”è„å…­è…‘ç¿»è…¾ä¸æ­¢ï¼Œå‰§æ¯’æ”»å¿ƒï¼Œçœ‹æ¥æ˜¯ä¸­äº†å‚¬å¿ƒæŽŒæŽŒåŠ²çš„å¹²æ‰°ï¼\n"
+        NOR );
+        message("vision", me->name() + "çš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œç‰™å…³æ ¼æ ¼åœ°å“äº†èµ·æ¥ã€‚\n",
+                environment(me), me);
+    }
+    me->start_busy(3);
+    me->receive_wound("qi", damage);
+    me->receive_wound("jing", damage2);
+    me->apply_condition("cuixin_zhang", duration - 1);
 
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }

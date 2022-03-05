@@ -2,13 +2,18 @@
 
 #include <ansi.h>
 
-int update_condition(object me, int duration)
-{
-        me->start_busy(random(3));
-	me->receive_wound("qi", 20);
-	me->receive_damage("qi", 10);
-	me->apply_condition("rose_poison", duration - 1);
-	tell_object(me, HIG "ÄãÖĞµÄ" HIR "»ğÃµ¹å¶¾" HIG "·¢×÷ÁË£¡\n" NOR );
-	if( duration < 1 ) return 0;
-	return 1;
+int update_condition(object me, int duration) {
+    me->start_busy(random(3));
+    me->receive_wound("qi", 20);
+    me->receive_damage("qi", 10);
+    me->apply_condition("rose_poison", duration - 1);
+    tell_object(me, HIG
+    "ä½ ä¸­çš„"
+    HIR
+    "ç«ç«ç‘°æ¯’"
+    HIG
+    "å‘ä½œäº†ï¼\n"
+    NOR );
+    if (duration < 1) return 0;
+    return 1;
 }

@@ -3,55 +3,62 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
+int update_condition(object me, int duration) {
     string msg;
-   int damage,damage2;
-damage=me->query("qi")/8;
-damage2=me->query("jing")/8;
-if (damage > 5000) damage=5000;   
-if (damage2 > 5000) damage2=5000;   	
-msg = HIR"$NÁ³É«Ò»±ä ÍÂ³öÒ»¿ÚÏÊÑª£¡ "NOR;
-      switch(random(5)){
-      case 0 : 
-              msg = HIR"$NÍ»È»½ÅÏÂÒ»Âý£¬ºÃÏó´óÍÈµÄÑ¨µÀ±»·â×¡ÁË£¡\n"NOR;
-              me->start_busy(3);
-              break;
-      case 1 : 
-              msg = HIR"$NÍ»È»Ã¼Í·Ò»Öå£¬ºÃÏóÊÇÊÜÁËÄÚÉË£¡\n"NOR;
-              me->receive_damage("qi", damage);
-              me->receive_wound("qi", damage);
-              break;
-      case 2 : 
-              msg = HIR"$NµÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬ºÃÏóÊÇÖÐÁËÒõ¶¾µÄÄÚÉË£¡\n"NOR;
-              me->add("neili", -damage*2);
-              break;
-      case 3 : 
-              msg = HIR"$NÍ»È»½ÅÏÂÒ»»Î£¬ºÃÏóÊÇÊÜÁË°µÉË£¡\n"NOR;
-              me->receive_damage("jing", damage2);
-              me->receive_wound("jing", damage2);
-              break;
-      case 4 : 
-              msg = HIR"$N½ÅÏÂ»Ðã±£¬¾«Éñ²»ÄÜ¼¯ÖÐ£¬ºÃÏóÊÇÖÐÁËÄÚÉË£¡\n"NOR;
-              me->add("max_neili", -5);
-              break;
-      }
-      me->start_busy(3);
-      if (userp(me))
-      {
-      message_vision(msg, me);     
-      }
-      else
-      {
-        message("vision", me->name() + "Á³É«Ò»±ä ÍÂ³öÒ»¿ÚÏÊÑª,¿´À´ÊÇÆßÉËÈ­È­¾¢·¢×÷ÁË¡£\n", environment(me), me);
-      }
+    int damage, damage2;
+    damage = me->query("qi") / 8;
+    damage2 = me->query("jing") / 8;
+    if (damage > 5000) damage = 5000;
+    if (damage2 > 5000) damage2 = 5000;
+    msg = HIR
+    "$Nè„¸è‰²ä¸€å˜ åå‡ºä¸€å£é²œè¡€ï¼ "
+    NOR;
+    switch (random(5)) {
+        case 0 :
+            msg = HIR
+            "$Nçªç„¶è„šä¸‹ä¸€æ…¢ï¼Œå¥½è±¡å¤§è…¿çš„ç©´é“è¢«å°ä½äº†ï¼\n"
+            NOR;
+            me->start_busy(3);
+            break;
+        case 1 :
+            msg = HIR
+            "$Nçªç„¶çœ‰å¤´ä¸€çš±ï¼Œå¥½è±¡æ˜¯å—äº†å†…ä¼¤ï¼\n"
+            NOR;
+            me->receive_damage("qi", damage);
+            me->receive_wound("qi", damage);
+            break;
+        case 2 :
+            msg = HIR
+            "$Nçš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œå¥½è±¡æ˜¯ä¸­äº†é˜´æ¯’çš„å†…ä¼¤ï¼\n"
+            NOR;
+            me->add("neili", -damage * 2);
+            break;
+        case 3 :
+            msg = HIR
+            "$Nçªç„¶è„šä¸‹ä¸€æ™ƒï¼Œå¥½è±¡æ˜¯å—äº†æš—ä¼¤ï¼\n"
+            NOR;
+            me->receive_damage("jing", damage2);
+            me->receive_wound("jing", damage2);
+            break;
+        case 4 :
+            msg = HIR
+            "$Nè„šä¸‹ææƒšï¼Œç²¾ç¥žä¸èƒ½é›†ä¸­ï¼Œå¥½è±¡æ˜¯ä¸­äº†å†…ä¼¤ï¼\n"
+            NOR;
+            me->add("max_neili", -5);
+            break;
+    }
+    me->start_busy(3);
+    if (userp(me)) {
+        message_vision(msg, me);
+    } else {
+        message("vision", me->name() + "è„¸è‰²ä¸€å˜ åå‡ºä¸€å£é²œè¡€,çœ‹æ¥æ˜¯ä¸ƒä¼¤æ‹³æ‹³åŠ²å‘ä½œäº†ã€‚\n", environment(me), me);
+    }
     //message("vision", msg, environment(me), me);
-      me->apply_condition("qishang_poison", duration - 1);
-      if( duration < 1 ) return 0;
-      return CND_CONTINUE;
+    me->apply_condition("qishang_poison", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-	return "hurt";
+string query_type(object me) {
+    return "hurt";
 }

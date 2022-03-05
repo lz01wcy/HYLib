@@ -1,37 +1,39 @@
 // huanyin_poison.c
 #include <ansi.h>
 
-int update_condition(object me, int duration)
-{
-   int damage,damage2;
-damage=me->query("qi")/20;
-damage2=me->query("jing")/20;
-if (damage > 5000) damage=5000;   
-if (damage2 > 5000) damage2=5000;   	
-	
-if ((int)me->query("jing") < 100000)
-{
-    me->receive_damage("jing", damage2);
-    me->receive_wound("jing", damage2);
- }  else    me->receive_wound("jing", damage2);
-      me->start_busy(random(3)+1);
-if ((int)me->query("qi") < 100000)
-{
-    me->receive_damage("qi", damage);
-    me->receive_wound("qi", damage);
-}  else    me->receive_wound("qi", damage);
-	
-me->start_busy(2);
-        me->apply_condition("huanyin_poison", duration - 1);
-if (me)
-{
-        message_vision(HIG "$N" HIG "µÄÍ´¿àµÄÉëÒ÷ÁËÒ»Éù£¬Á³ÉÏÁı"
-              "ÕÖÁËÒ»¹Éµ­µ­µÄÂÌÆø¡£\n" NOR, me);
-        tell_object(me, HIR "ÄãºöÈ»¸Ğµ½Ò»Õóº®Æø×Ôµ¤ÌïµÄ¶øÆğ£¬Öğ²½ÉøÍ¸µ½ËÄ"
-               "Ö«°×êà£¬Í¸³öÕóÕóº®Òâ¡££¡\n" NOR );
-}
-        if( duration < 1 ) return 0;
-        return 1;
+int update_condition(object me, int duration) {
+    int damage, damage2;
+    damage = me->query("qi") / 20;
+    damage2 = me->query("jing") / 20;
+    if (damage > 5000) damage = 5000;
+    if (damage2 > 5000) damage2 = 5000;
+
+    if ((int) me->query("jing") < 100000) {
+        me->receive_damage("jing", damage2);
+        me->receive_wound("jing", damage2);
+    } else me->receive_wound("jing", damage2);
+    me->start_busy(random(3) + 1);
+    if ((int) me->query("qi") < 100000) {
+        me->receive_damage("qi", damage);
+        me->receive_wound("qi", damage);
+    } else me->receive_wound("qi", damage);
+
+    me->start_busy(2);
+    me->apply_condition("huanyin_poison", duration - 1);
+    if (me) {
+        message_vision(HIG
+        "$N"
+        HIG
+        "çš„ç—›è‹¦çš„å‘»åŸäº†ä¸€å£°ï¼Œè„¸ä¸Šç¬¼"
+        "ç½©äº†ä¸€è‚¡æ·¡æ·¡çš„ç»¿æ°”ã€‚\n"
+        NOR, me);
+        tell_object(me, HIR
+        "ä½ å¿½ç„¶æ„Ÿåˆ°ä¸€é˜µå¯’æ°”è‡ªä¸¹ç”°çš„è€Œèµ·ï¼Œé€æ­¥æ¸—é€åˆ°å››"
+        "è‚¢ç™½èµ…ï¼Œé€å‡ºé˜µé˜µå¯’æ„ã€‚ï¼\n"
+        NOR );
+    }
+    if (duration < 1) return 0;
+    return 1;
 }
 
 

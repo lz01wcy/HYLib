@@ -3,28 +3,27 @@
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-   if( !living(me) ) {
-      message("vision", me->name() + "¶ÏÍó´¦ÏÊÑª²»¶ÏÁ÷³ö¡£\n", environment(me), me);
-   }
-   else {
-      tell_object(me, HIR "Äã¶ÏÍó´¦ÏÊÑª²»¶ÏÁ÷³ö£¬Á¦Æø²»¶ÏµÄ¼õÉÙ¡£\n" NOR );
-      message("vision", me->name() + "¶ÏÍó´¦ÏÊÑª²»¶ÏÁ÷³ö¡£\n",
-            environment(me), me);
-   }
-      me->receive_wound("qi", 50);
-      me->add_temp("apply/strength",-1);
-      if (me->query_str() <0)
-              me->add_temp("apply/strength",1);
-      if(!me->is_busy()) me->start_busy(2); 
-      me->apply_condition("broken_arm", duration -1 );
-   if( duration < 1 ) return 0;
-   return CND_CONTINUE;
+int update_condition(object me, int duration) {
+    if (!living(me)) {
+        message("vision", me->name() + "æ–­è…•å¤„é²œè¡€ä¸æ–­æµå‡ºã€‚\n", environment(me), me);
+    } else {
+        tell_object(me, HIR
+        "ä½ æ–­è…•å¤„é²œè¡€ä¸æ–­æµå‡ºï¼ŒåŠ›æ°”ä¸æ–­çš„å‡å°‘ã€‚\n"
+        NOR );
+        message("vision", me->name() + "æ–­è…•å¤„é²œè¡€ä¸æ–­æµå‡ºã€‚\n",
+                environment(me), me);
+    }
+    me->receive_wound("qi", 50);
+    me->add_temp("apply/strength", -1);
+    if (me->query_str() < 0)
+        me->add_temp("apply/strength", 1);
+    if (!me->is_busy()) me->start_busy(2);
+    me->apply_condition("broken_arm", duration - 1);
+    if (duration < 1) return 0;
+    return CND_CONTINUE;
 }
 
-string query_type(object me)
-{
-        return "wound";
+string query_type(object me) {
+    return "wound";
 }
 

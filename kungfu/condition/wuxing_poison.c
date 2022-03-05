@@ -1,55 +1,53 @@
-// wuxing_poison.c ÎŞĞÎÖ®¶¾
+// wuxing_poison.c æ— å½¢ä¹‹æ¯’
 
 inherit F_CLEAN_UP;
 
-int update_condition(object me, int duration)
-{
-        int limit,limit1,limit2,limit3,limit4,damage;
-        damage = me->query("max_qi")/30;
-        if(damage < 20) damage = 20;
-        limit = me->query("con") + (int)me->query_skill("force",1) / 10;
-        if(me->query_temp("nopoison")) return 0;
-        if(limit >50) limit =49;
-        limit1=50 - limit + 2;
-        limit2=50 - limit*2/3;
-        limit3=50 - limit/2;
-        limit4=50 - limit/4;
-        if( duration < limit1
-        &&      living(me) ) {
-                tell_object(me, "Äã¶¾Æø¹¥ĞÄ£¬ĞÄÈçµ¶½Ê£¬²»ÓÉµÃ´ó½ĞÒ»Éù£¬Ò»¿ÚÏÊÑª¿ñÅç¶ø³ö¡£\n");
-                message("vision", me->name() + "ºöÈ»´ó½ĞÒ»Éù£¬¿ÚÖĞÏÊÑª¿ñÅç²»Ö¹£¬Ò»Í·ÔÔµ¹ÔÚµØÉÏ¡£\n",
-                        environment(me), me);
-                me->unconcious();
-                me->die();
-                return 0;
-        } 
-        if( duration > limit4 ) {
-                tell_object(me, "ÄãºöÈ»¾õµÃ¸¹Í´Èç½Ê£¬ÑÛÇ°Ò»Õó·¢ºÚ£¬Ò»¶¨ÊÇ³ÔÁËÊ²Ã´ÓĞ¶¾µÄ¶«Î÷¡£\n");
-                message("vision", me->name() + "ºöÈ»Á³É«²Ô°×£¬¶¹´óµÄº¹Öé´Ó¶îÍ·Éø³ö¡£\n",
-                        environment(me), me);
-        }
-        if( duration > limit3 && duration < limit4) {
-                tell_object(me, "Äã¾õµÃ¸Î³¦´ç¶Ï£¬È«ÉíÍ´¿àµÃËõ³ÉÒ»ÍÅ£¬¶¾ÆøËÆºõÒÑ¾­¿ªÊ¼À©É¢ÁË¡£\n");
-                message("vision", me->name() + "×ì´½·¢Çà£¬ÑÀ¹ØÒ§µÄ¿©¿©Ö±Ïì£¬Éí×ÓÒÑ¾­òéËõ³ÉÁËÒ»ÍÅ¡£\n",
-                        environment(me), me);
-        }
-        if( duration > limit2 && duration < limit3) {
-                tell_object(me, "Äã¾õµÃËÄÖ«ÒÑ¾­ÂéÄ¾£¬¶¾ÆøÒÑ¾­ÉıÖÁĞ¡¸¹£¬¿ìÕÒ½âÒ©°É£¬·ñÔò»áËÀµÄ¡£\n");
-                message("vision", me->name() + "ÃæÉÏÏÖ³öÒ»¹ÉºÚÆø£¬Ë«Ä¿Í»³ö£¬ÑÛÖĞÈ«ÊÇÍ¨ºìµÄÑªË¿¡£\n",
-                        environment(me), me);
-        }
-        if( duration > limit1 && duration < limit2) {
-                tell_object(me, "Äã¾õµÃÒ»ÕóÌìĞıµØ×ª£¬¶¾ÆøÒÑÉıÖÁĞØ¿Ú£¬¿ìÕÒ½âÒ©°É£¬·ñÔò»áËÀµÄ¡£\n");
-                message("vision", me->name() + "ÃæÉÏºÚÆøÔ½À´Ô½Å¨ÁË£¬È«Éí´óº¹ÁÜÀì£¬×ì½ÇÉø³öÁËÒ»ÂÆºÚÑª¡£\n",
-                        environment(me), me);
-        }
-if ((int)me->query("qi") < 100000)
-{
+int update_condition(object me, int duration) {
+    int limit, limit1, limit2, limit3, limit4, damage;
+    damage = me->query("max_qi") / 30;
+    if (damage < 20) damage = 20;
+    limit = me->query("con") + (int) me->query_skill("force", 1) / 10;
+    if (me->query_temp("nopoison")) return 0;
+    if (limit > 50) limit = 49;
+    limit1 = 50 - limit + 2;
+    limit2 = 50 - limit * 2 / 3;
+    limit3 = 50 - limit / 2;
+    limit4 = 50 - limit / 4;
+    if (duration < limit1
+        && living(me)) {
+        tell_object(me, "ä½ æ¯’æ°”æ”»å¿ƒï¼Œå¿ƒå¦‚åˆ€ç»ï¼Œä¸ç”±å¾—å¤§å«ä¸€å£°ï¼Œä¸€å£é²œè¡€ç‹‚å–·è€Œå‡ºã€‚\n");
+        message("vision", me->name() + "å¿½ç„¶å¤§å«ä¸€å£°ï¼Œå£ä¸­é²œè¡€ç‹‚å–·ä¸æ­¢ï¼Œä¸€å¤´æ ½å€’åœ¨åœ°ä¸Šã€‚\n",
+                environment(me), me);
+        me->unconcious();
+        me->die();
+        return 0;
+    }
+    if (duration > limit4) {
+        tell_object(me, "ä½ å¿½ç„¶è§‰å¾—è…¹ç—›å¦‚ç»ï¼Œçœ¼å‰ä¸€é˜µå‘é»‘ï¼Œä¸€å®šæ˜¯åƒäº†ä»€ä¹ˆæœ‰æ¯’çš„ä¸œè¥¿ã€‚\n");
+        message("vision", me->name() + "å¿½ç„¶è„¸è‰²è‹ç™½ï¼Œè±†å¤§çš„æ±—ç ä»é¢å¤´æ¸—å‡ºã€‚\n",
+                environment(me), me);
+    }
+    if (duration > limit3 && duration < limit4) {
+        tell_object(me, "ä½ è§‰å¾—è‚è‚ å¯¸æ–­ï¼Œå…¨èº«ç—›è‹¦å¾—ç¼©æˆä¸€å›¢ï¼Œæ¯’æ°”ä¼¼ä¹å·²ç»å¼€å§‹æ‰©æ•£äº†ã€‚\n");
+        message("vision", me->name() + "å˜´å”‡å‘é’ï¼Œç‰™å…³å’¬çš„å’¯å’¯ç›´å“ï¼Œèº«å­å·²ç»èœ·ç¼©æˆäº†ä¸€å›¢ã€‚\n",
+                environment(me), me);
+    }
+    if (duration > limit2 && duration < limit3) {
+        tell_object(me, "ä½ è§‰å¾—å››è‚¢å·²ç»éº»æœ¨ï¼Œæ¯’æ°”å·²ç»å‡è‡³å°è…¹ï¼Œå¿«æ‰¾è§£è¯å§ï¼Œå¦åˆ™ä¼šæ­»çš„ã€‚\n");
+        message("vision", me->name() + "é¢ä¸Šç°å‡ºä¸€è‚¡é»‘æ°”ï¼ŒåŒç›®çªå‡ºï¼Œçœ¼ä¸­å…¨æ˜¯é€šçº¢çš„è¡€ä¸ã€‚\n",
+                environment(me), me);
+    }
+    if (duration > limit1 && duration < limit2) {
+        tell_object(me, "ä½ è§‰å¾—ä¸€é˜µå¤©æ—‹åœ°è½¬ï¼Œæ¯’æ°”å·²å‡è‡³èƒ¸å£ï¼Œå¿«æ‰¾è§£è¯å§ï¼Œå¦åˆ™ä¼šæ­»çš„ã€‚\n");
+        message("vision", me->name() + "é¢ä¸Šé»‘æ°”è¶Šæ¥è¶Šæµ“äº†ï¼Œå…¨èº«å¤§æ±—æ·‹æ¼“ï¼Œå˜´è§’æ¸—å‡ºäº†ä¸€ç¼•é»‘è¡€ã€‚\n",
+                environment(me), me);
+    }
+    if ((int) me->query("qi") < 100000) {
         me->receive_wound("qi", damage);
         me->receive_damage("jing", damage);
-}else    me->receive_wound("qi", 2000);
-        me->apply_condition("wuxing_poison", duration - 1);
-        if( !duration ) return 0;
-        return 1;
+    } else me->receive_wound("qi", 2000);
+    me->apply_condition("wuxing_poison", duration - 1);
+    if (!duration) return 0;
+    return 1;
 }
  
