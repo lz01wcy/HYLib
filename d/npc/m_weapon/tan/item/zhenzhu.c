@@ -1,15 +1,15 @@
 //zhenzhu.c
 inherit ITEM;
-void create()
-{
-        set_name( "Ò¹Ã÷Öé", ({ "yeming zhu","zhu"}));
-        set_weight(30000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("unit", "¿Å");
-                set("long","ÕâÊÇÒ»¿ÅÒ¹Ã÷Öé£¬ÓÆÓÆµÄ·Å×ÅÈáºÍµÄ¹â£¬¿´ÆğÀ´ÊÇ×ö×°ÊÎµÄºÃ¶«Î÷¡£\n");
-                set("value", 10000);
-                set("material", "iron");
-              }
+
+void create() {
+    set_name("å¤œæ˜ç ", ({ "yeming zhu", "zhu" }));
+    set_weight(30000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "é¢—");
+        set("long", "è¿™æ˜¯ä¸€é¢—å¤œæ˜ç ï¼Œæ‚ æ‚ çš„æ”¾ç€æŸ”å’Œçš„å…‰ï¼Œçœ‹èµ·æ¥æ˜¯åšè£…é¥°çš„å¥½ä¸œè¥¿ã€‚\n");
+        set("value", 10000);
+        set("material", "iron");
+    }
 }

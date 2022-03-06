@@ -1,69 +1,67 @@
-// wudu-yanluobu Îå¶¾ÑÌÂÜ²½
+// wudu-yanluobu äº”æ¯’çƒŸèæ­¥
 // inherit F_CLEAN_UP;
 inherit SKILL;
+
 #include <ansi.h>
+
 mapping *action = ({
-([	"action" : "$n²»»Å²»Ã¦£¬Ò»Ê½¡¸½­Ë®ºáÁ÷¡¹£¬ÉíĞĞÙ¿µÄÏòÒ»ÅÔÆ½ÒÆÊı³ß,¿°¿°¶ã¹ıÁË$NµÄ¹¦ÊÆ¡£\n",
-	"dodge"  : 20
-]),
-([	"action" : "$nÉíĞĞÈç¹í÷È°ãÒ»»Î£¬É²ÄÇ¼äÒÑÔ¶È¥ÊıÕÉÖ®Íâ£¬$N¶ÙÊ±ÆËÁË¸ö¿Õ¡£\n",
-	"dodge"  : 40
-]),
-([	"action" : "$nÉíĞĞºöµÄ¼Ó¿ì£¬ÈçÒ»ÂÆÇàÑÌ°ãÈÆ×Å$N·É¿ìĞı×ª£¬¿´µÃ$NÒ»ÕóÍ·ÔÎÑÛ»¨£¬\n¼±Ã¦ÊÕÕĞÌø¿ª¡£\n",
-	"dodge"  : 60
-]),
-([	"action" : "$n¹ÖÒìµÄÒ»Ğ¦£¬ÉíĞĞºöµÄ±äµÃëüëÊ²»Çå£¬$NµÄÁèÀ÷ÕĞÊ½¾¹È»Í¸Ìå¶ø¹ı£¬Ô­À´¾¹ÊÇÒ»¾ß»ÃÓ°¡£\n",
-	"dodge"  : 80
-]),
-([	"action" : "$nµÄÉíĞĞ¶ÙÊ±±äµÃÈçÉßÒ»°ãÈáÈí£¬Ëæ×Å$NµÄÕĞÊ½×óÓÒ°Ú¶¯£¬¾¹Ê¹µÃ$NÕĞÕĞÂä¿Õ¡£\n",
-	"dodge"  : 100
-]),
+    ([    "action" : "$nä¸æ…Œä¸å¿™ï¼Œä¸€å¼ã€Œæ±Ÿæ°´æ¨ªæµã€ï¼Œèº«è¡Œå€çš„å‘ä¸€æ—å¹³ç§»æ•°å°º,å ªå ªèº²è¿‡äº†$Nçš„åŠŸåŠ¿ã€‚\n",
+            "dodge"  : 20
+    ]),
+    ([    "action" : "$nèº«è¡Œå¦‚é¬¼é­…èˆ¬ä¸€æ™ƒï¼Œåˆ¹é‚£é—´å·²è¿œå»æ•°ä¸ˆä¹‹å¤–ï¼Œ$Né¡¿æ—¶æ‰‘äº†ä¸ªç©ºã€‚\n",
+            "dodge"  : 40
+    ]),
+    ([    "action" : "$nèº«è¡Œå¿½çš„åŠ å¿«ï¼Œå¦‚ä¸€ç¼•é’çƒŸèˆ¬ç»•ç€$Né£å¿«æ—‹è½¬ï¼Œçœ‹å¾—$Nä¸€é˜µå¤´æ™•çœ¼èŠ±ï¼Œ\næ€¥å¿™æ”¶æ‹›è·³å¼€ã€‚\n",
+            "dodge"  : 60
+    ]),
+    ([    "action" : "$næ€ªå¼‚çš„ä¸€ç¬‘ï¼Œèº«è¡Œå¿½çš„å˜å¾—æœ¦èƒ§ä¸æ¸…ï¼Œ$Nçš„å‡Œå‰æ‹›å¼ç«Ÿç„¶é€ä½“è€Œè¿‡ï¼ŒåŸæ¥ç«Ÿæ˜¯ä¸€å…·å¹»å½±ã€‚\n",
+            "dodge"  : 80
+    ]),
+    ([    "action" : "$nçš„èº«è¡Œé¡¿æ—¶å˜å¾—å¦‚è›‡ä¸€èˆ¬æŸ”è½¯ï¼Œéšç€$Nçš„æ‹›å¼å·¦å³æ‘†åŠ¨ï¼Œç«Ÿä½¿å¾—$Næ‹›æ‹›è½ç©ºã€‚\n",
+            "dodge"  : 100
+    ]),
 });
 
-mapping query_action(object me, object weapon)
-{
-	int zhaoshu, level;
+mapping query_action(object me, object weapon) {
+    int zhaoshu, level;
 
-	zhaoshu = sizeof(action);
-	level   = (int) me->query_skill("wudu-yanluobu");
+    zhaoshu = sizeof(action);
+    level = (int) me->query_skill("wudu-yanluobu");
 
 
-	return action[random(zhaoshu)];
+    return action[random(zhaoshu)];
 }
 
-int valid_enable(string usage)
-{
-	return usage == "dodge" || usage == "move";
+int valid_enable(string usage) {
+    return usage == "dodge" || usage == "move";
 }
 
-int valid_learn(object me)
-{
-	return 1;
+int valid_learn(object me) {
+    return 1;
 }
 
-string query_dodge_msg(string limb)
-{
-	object me, ob;
-	mapping action;
+string query_dodge_msg(string limb) {
+    object me, ob;
+    mapping action;
 
-	me = this_player();
-	action = query_action(me, ob);
+    me = this_player();
+    action = query_action(me, ob);
 
-	return action["action"];
+    return action["action"];
 }
 
-int practice_skill(object me)
-{
-	if( (int)me->query("qi") < 40 )
-		return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·Îå¶¾ÑÌÂÜ²½¡£\n");
-	me->receive_damage("qi", 20);
-	return 1;
+int practice_skill(object me) {
+    if ((int) me->query("qi") < 40)
+        return notify_fail("ä½ çš„ä½“åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒäº”æ¯’çƒŸèæ­¥ã€‚\n");
+    me->receive_damage("qi", 20);
+    return 1;
 }
-int valid_effect(object me, object weapon, string action_name, int skill)
-{
-	message_vision("ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·Îå¶¾ÑÌÂÜ²½¡£\n",me);
+
+int valid_effect(object me, object weapon, string action_name, int skill) {
+    message_vision("ä½ çš„ä½“åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒäº”æ¯’çƒŸèæ­¥ã€‚\n", me);
 }
-string perform_action_file(string action)
-{
-	return __DIR__"wudu-yanluobu/" + action;
+
+string perform_action_file(string action) {
+    return __DIR__
+    "wudu-yanluobu/" + action;
 }

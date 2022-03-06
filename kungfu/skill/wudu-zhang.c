@@ -1,105 +1,99 @@
-// wudu-zhang Îå¶¾ÕÆ
+// wudu-zhang äº”æ¯’æŽŒ
 // pal 1997.05.26
 
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$NË«ÊÖÒ»·­£¬Á½ÕÆ´ø×Åµ­µ­µÄÀ¶¹â£¬Ö±Ïò$nÅÄÈ¥",
-	"force" : 180,
-        "dodge" : 5,
-        "parry" : 20,
-	"damage": 50,
-	"lvl" : 0,
-	"skill_name" : "Îå¶¾ÕÆ",
-        "damage_type" : "ðöÉË"
-]),
-([	"action" : "$N×óÕÆÐé»Î£¬ÓÒÕÆÖ±³ö£¬ÓÌÈç¶¾ÉßÒ»°ãÖ±ÆÈ$nµÄÐØÇ°",
-	"force" : 220,
-        "dodge" : 10,
-        "parry" : 15,
-	"damage": 60,
-	"lvl" : 10,
-	"skill_name" : "Îå¶¾ÕÆ",
-        "damage_type" : "ðöÉË"
-]),
-([	"action" : "$NË«ÕÆ·­·É£¬ËÄÖÜÃÔÃ£×ÅÒ»¹É°µµ­µÄÎíÆø£¬ÅÅÏò$nµÄÈ«Éí",
-	"force" : 260,
-        "dodge" : 15,
-        "parry" : 20,
-	"damage": 70,
-	"lvl" : 20,
-	"skill_name" : "Îå¶¾ÕÆ",
-        "damage_type" : "ðöÉË"
-]),
-([	"action" : "$NÁ½ÕÆÒ»·Ö£¬×óÕÆÈçÐ«£¬ÓÒÕÆËÆÉß£¬Í¬Ê±Ïò$n»÷¹ýÈ¥",
-	"force" : 300,
-        "dodge" : 20,
-        "parry" : 30,
-	"damage": 80,
-	"lvl" : 30,
-	"skill_name" : "Îå¶¾ÕÆ",
-        "damage_type" : "ðöÉË"
-]),
-([	"action" : "$NÄ¬ÔËÄÚÁ¦£¬Ë«ÕÆºöÈ»±äºÚ£¬´ø×ÅÒ»¹ÉÒõ·çÖ»ÆË$nµÄÈ«Éí",
-	"force" : 340,
-        "dodge" : 25,
-        "parry" : 20,
-	"damage":100,
-	"lvl" : 40,
-	"skill_name" : "Îå¶¾ÕÆ",
-        "damage_type" : "ðöÉË"
-])
+    ([    "action" : "$NåŒæ‰‹ä¸€ç¿»ï¼Œä¸¤æŽŒå¸¦ç€æ·¡æ·¡çš„è“å…‰ï¼Œç›´å‘$næ‹åŽ»",
+            "force" : 180,
+            "dodge" : 5,
+            "parry" : 20,
+            "damage": 50,
+            "lvl" : 0,
+            "skill_name" : "äº”æ¯’æŽŒ",
+            "damage_type" : "ç˜€ä¼¤"
+    ]),
+    ([    "action" : "$Nå·¦æŽŒè™šæ™ƒï¼Œå³æŽŒç›´å‡ºï¼ŒçŠ¹å¦‚æ¯’è›‡ä¸€èˆ¬ç›´è¿«$nçš„èƒ¸å‰",
+            "force" : 220,
+            "dodge" : 10,
+            "parry" : 15,
+            "damage": 60,
+            "lvl" : 10,
+            "skill_name" : "äº”æ¯’æŽŒ",
+            "damage_type" : "ç˜€ä¼¤"
+    ]),
+    ([    "action" : "$NåŒæŽŒç¿»é£žï¼Œå››å‘¨è¿·èŒ«ç€ä¸€è‚¡æš—æ·¡çš„é›¾æ°”ï¼ŒæŽ’å‘$nçš„å…¨èº«",
+            "force" : 260,
+            "dodge" : 15,
+            "parry" : 20,
+            "damage": 70,
+            "lvl" : 20,
+            "skill_name" : "äº”æ¯’æŽŒ",
+            "damage_type" : "ç˜€ä¼¤"
+    ]),
+    ([    "action" : "$Nä¸¤æŽŒä¸€åˆ†ï¼Œå·¦æŽŒå¦‚èŽï¼Œå³æŽŒä¼¼è›‡ï¼ŒåŒæ—¶å‘$nå‡»è¿‡åŽ»",
+            "force" : 300,
+            "dodge" : 20,
+            "parry" : 30,
+            "damage": 80,
+            "lvl" : 30,
+            "skill_name" : "äº”æ¯’æŽŒ",
+            "damage_type" : "ç˜€ä¼¤"
+    ]),
+    ([    "action" : "$Né»˜è¿å†…åŠ›ï¼ŒåŒæŽŒå¿½ç„¶å˜é»‘ï¼Œå¸¦ç€ä¸€è‚¡é˜´é£Žåªæ‰‘$nçš„å…¨èº«",
+            "force" : 340,
+            "dodge" : 25,
+            "parry" : 20,
+            "damage":100,
+            "lvl" : 40,
+            "skill_name" : "äº”æ¯’æŽŒ",
+            "damage_type" : "ç˜€ä¼¤"
+    ])
 });
 
-int valid_enable(string usage)
-{
-	return usage=="strike" || usage=="parry" ;
+int valid_enable(string usage) {
+    return usage == "strike" || usage == "parry";
 }
 
-int valid_learn(object me)
-{
-	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Á·Îå¶¾ÕÆ±ØÐë¿ÕÊÖ¡£\n");
-	if ((int)me->query_skill("wudu-xinfa", 1) < 20)
-		return notify_fail("ÄãµÄÎå¶¾ÐÄ·¨»ðºò²»¹»£¬ÎÞ·¨Ñ§Îå¶¾ÕÆ¡£\n");
-	if ((int)me->query("max_neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·Îå¶¾ÕÆ¡£\n");
-	return 1;
+int valid_learn(object me) {
+    if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+        return notify_fail("ç»ƒäº”æ¯’æŽŒå¿…é¡»ç©ºæ‰‹ã€‚\n");
+    if ((int) me->query_skill("wudu-xinfa", 1) < 20)
+        return notify_fail("ä½ çš„äº”æ¯’å¿ƒæ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦äº”æ¯’æŽŒã€‚\n");
+    if ((int) me->query("max_neili") < 100)
+        return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒäº”æ¯’æŽŒã€‚\n");
+    return 1;
 }
 
-string query_skill_name(int level)
-{
-        int i;
-        for(i = sizeof(action)-1; i >= 0; i--)
-                if(level >= action[i]["lvl"])
-                        return action[i]["skill_name"];
+string query_skill_name(int level) {
+    int i;
+    for (i = sizeof(action) - 1; i >= 0; i--)
+        if (level >= action[i]["lvl"])
+            return action[i]["skill_name"];
 }
 
-mapping query_action(object me, object weapon)
-{
-        int i, level;
-	level   = (int) me->query_skill("wudu-zhang",1);
-        for(i = sizeof(action); i > 0; i--)
-                if(level > action[i-1]["lvl"])
-                        return action[NewRandom(i, 20, level/5)];
+mapping query_action(object me, object weapon) {
+    int i, level;
+    level = (int) me->query_skill("wudu-zhang", 1);
+    for (i = sizeof(action); i > 0; i--)
+        if (level > action[i - 1]["lvl"])
+            return action[NewRandom(i, 20, level / 5)];
 }
 
-int practice_skill(object me)
-{
-	if ((int)me->query("qi") < 30)
-		return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
-	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Îå¶¾ÕÆ¡£\n");
-	me->receive_damage("qi", 30);
-	me->add("neili", -10);
-	return 1;
+int practice_skill(object me) {
+    if ((int) me->query("qi") < 30)
+        return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½Žäº†ã€‚\n");
+    if ((int) me->query("neili") < 20)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒäº”æ¯’æŽŒã€‚\n");
+    me->receive_damage("qi", 30);
+    me->add("neili", -10);
+    return 1;
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor)
-{
-	if( random(me->query_skill("wudu-zhang")) > 10 )
-	victim->apply_condition("wudu_poison",
-	 random(me->query_skill("wudu-zhang")/10) + 1 + 
-	 victim->query_condition("wudu_poison"));
+mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+    if (random(me->query_skill("wudu-zhang")) > 10)
+        victim->apply_condition("wudu_poison",
+                                random(me->query_skill("wudu-zhang") / 10) + 1 +
+                                victim->query_condition("wudu_poison"));
 }
 

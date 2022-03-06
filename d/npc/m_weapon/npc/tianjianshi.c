@@ -1,364 +1,368 @@
 // npc: /d/npc/m_weapon/npc/tianjianshi.c
 // Jay 3/26/96
 #include <ansi.h>
+
 inherit NPC;
 
 string ask_met();
+
 int do_weapon();
+
 object creat_weapon();
 
-void create()
-{
-        set_name("Å·Ò±×Ó", ({ "ouye zi", "zi" }) );
-        set("nickname", RED "³àĞÄ½£µ¨" NOR );
-	set("gender", "ÄĞĞÔ" );
-        set("age", 60);
-        set("long", 	
-            "ËûÍ·ÉÏ°ü×ÅÍ·½í£¬ÈıÂÆ³¤÷×Æ®È÷ĞØÇ°£¬ÃæÄ¿ÇåÊİµ«ºìÔÎÓĞ¹â£¬\n"
-            "¶şÄ¿¾¼¾¼ÓĞÉñ£¬Ë¸Ë¸ÉÁ×Å¾¹ËÆÊÇÁİÁİµÄ½£¹â£¬»ëÉíËÆºõ¶¼°üÎ§\n"
-	    "ÔÚÒ»¹É½£ÆøÖ®ÖĞ¡£\n");
-        set("str", 25);
-        set("dex", 20);
-        set("con", 17);
-        set("int", 30);
-        set("shen_type", 0);
-	set("max_neli",5000);
-	set("jiali",50);
+void create() {
+    set_name("æ¬§å†¶å­", ({ "ouye zi", "zi" }));
+    set("nickname", RED
+    "èµ¤å¿ƒå‰‘èƒ†"
+    NOR );
+    set("gender", "ç”·æ€§");
+    set("age", 60);
+    set("long",
+        "ä»–å¤´ä¸ŠåŒ…ç€å¤´å·¾ï¼Œä¸‰ç¼•é•¿é«¯é£˜æ´’èƒ¸å‰ï¼Œé¢ç›®æ¸…ç˜¦ä½†çº¢æ™•æœ‰å…‰ï¼Œ\n"
+        "äºŒç›®ç‚¯ç‚¯æœ‰ç¥ï¼Œçƒçƒé—ªç€ç«Ÿä¼¼æ˜¯å‡›å‡›çš„å‰‘å…‰ï¼Œæµ‘èº«ä¼¼ä¹éƒ½åŒ…å›´\n"
+        "åœ¨ä¸€è‚¡å‰‘æ°”ä¹‹ä¸­ã€‚\n");
+    set("str", 25);
+    set("dex", 20);
+    set("con", 17);
+    set("int", 30);
+    set("shen_type", 0);
+    set("max_neli", 5000);
+    set("jiali", 50);
 
-        set_skill("unarmed", 100);
-        set_skill("dodge", 100);
-        set_skill("claw",200);
-        set_skill("jiuyin-baiguzhao",200);
-        set_skill("force",150);
-        set_skill("sword",150);
-        set_skill("bibo-shengong",100);
-        set_skill("luoying-shenjian",100);
-        set_skill("parry",90);
-        set_skill("anying-fuxiang",100);
-        set_temp("apply/attack", 50);
-        set_temp("apply/defense", 50);
-        set_temp("apply/damage",50);
+    set_skill("unarmed", 100);
+    set_skill("dodge", 100);
+    set_skill("claw", 200);
+    set_skill("jiuyin-baiguzhao", 200);
+    set_skill("force", 150);
+    set_skill("sword", 150);
+    set_skill("bibo-shengong", 100);
+    set_skill("luoying-shenjian", 100);
+    set_skill("parry", 90);
+    set_skill("anying-fuxiang", 100);
+    set_temp("apply/attack", 50);
+    set_temp("apply/defense", 50);
+    set_temp("apply/damage", 50);
 
-	create_family("ĞşÌìÅÉ",1,"µÜ×Ó");
+    create_family("ç„å¤©æ´¾", 1, "å¼Ÿå­");
 
-        set("combat_exp", 250000);
-	set("score",0);
-	
-        map_skill("force","bibo-shengong");
-	map_skill("parry","luoying-shenjian");
-	map_skill("sword","luoying-shenjian");
-	map_skill("claw","jiuyin-baiguzhao");
-	map_skill("dodge","anying-fuxiang");
+    set("combat_exp", 250000);
+    set("score", 0);
 
-	
-	set("attitude", "peaceful");
-        
-	set("inquiry", ([
-            "Öı½£"  : "Öı½£¿ÉÊÇ¼şÊ®·Ö¼è¿àµÄÊÂ£¬ÒªÏûºÄÈËµÄ¾«ÆøºÍÄÚÁ¦£¬ÄãÓĞ¾öĞÄºÍÒãÁ¦Âğ£¿\n",
-	    "Ô­ÁÏ"  : "Öı½£¿ÉÓÃÇ§ÄêĞşÌú¡£¡£¡£ÄãÕÒµ½ÁËÎÒ²ÅÄÜ°ïÄãÖı½£¡£\n",
-	    "±øÆ÷"  :  (: do_weapon() :),
-	    "ĞŞÀí"  :  (: ask_met() :),
-       ]) );
+    map_skill("force", "bibo-shengong");
+    map_skill("parry", "luoying-shenjian");
+    map_skill("sword", "luoying-shenjian");
+    map_skill("claw", "jiuyin-baiguzhao");
+    map_skill("dodge", "anying-fuxiang");
 
-        setup();
-        set("chat_chance", 3);
-        set("chat_msg", ({
-             "Å·Ò±×Ó¸§½£¶ø¸è£º¾ŞãÚÉñ±øÙâ£¬ÈËÖı¾Í¡£¸ÇÊÀ±¦½£Ùâ£¬ÅäÓ¢ĞÛ£¡\n",
-	     "Å·Ò±×ÓµÍÍ·³ÁÒ÷£¬ËÆºõÔÚË¼¿¼Ê²Ã´¡£\n"
-	     "Å·Ò±×ÓÌ¾ÁËÒ»¿ÚÆø£ºÉñ±øÅäÓ¢ĞÛ£¬¿ÉÓ¢ĞÛ¡£¡£¡£¡£¡£¡£\n"
-       }) );
-        carry_object("/clone/misc/cloth")->wear();
-        carry_object("/clone/weapon/changjian")->wield();
+
+    set("attitude", "peaceful");
+
+    set("inquiry",([
+    "é“¸å‰‘"  : "é“¸å‰‘å¯æ˜¯ä»¶ååˆ†è‰°è‹¦çš„äº‹ï¼Œè¦æ¶ˆè€—äººçš„ç²¾æ°”å’Œå†…åŠ›ï¼Œä½ æœ‰å†³å¿ƒå’Œæ¯…åŠ›å—ï¼Ÿ\n",
+            "åŸæ–™"  : "é“¸å‰‘å¯ç”¨åƒå¹´ç„é“ã€‚ã€‚ã€‚ä½ æ‰¾åˆ°äº†æˆ‘æ‰èƒ½å¸®ä½ é“¸å‰‘ã€‚\n",
+            "å…µå™¨"  :  (: do_weapon() :),
+    "ä¿®ç†"  :  (: ask_met() :),
+    ]));
+
+    setup();
+    set("chat_chance", 3);
+    set("chat_msg", ({
+        "æ¬§å†¶å­æŠšå‰‘è€Œæ­Œï¼šå·¨é˜™ç¥å…µå…®ï¼Œäººé“¸å°±ã€‚ç›–ä¸–å®å‰‘å…®ï¼Œé…è‹±é›„ï¼\n",
+                "æ¬§å†¶å­ä½å¤´æ²‰åŸï¼Œä¼¼ä¹åœ¨æ€è€ƒä»€ä¹ˆã€‚\n"
+                "æ¬§å†¶å­å¹äº†ä¸€å£æ°”ï¼šç¥å…µé…è‹±é›„ï¼Œå¯è‹±é›„ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n"
+    }));
+    carry_object("/clone/misc/cloth")->wear();
+    carry_object("/clone/weapon/changjian")->wield();
 }
 
-void init()
-{
-        ::init();
-        add_action("do_answer","answer");
+void init() {
+    ::init();
+    add_action("do_answer", "answer");
 }
 
 
-int accept_object(object who, object ob)
-{	
-	switch ((string)ob->query("name") ) 
-	{
-		case "ÆĞÌá×Ó"  :
-		case "½Ğ»¯¼¦"  :
-		case "ÊÖïí":
-		case "±ÙĞ°½£Æ×":
-		case "°×»¢ÌÃÁîÅÆ":
-			if( (who->query_temp("condition")) != (string)ob->query("name")  )
-			{
-				message_vision(HIC "Å·Ò±×ÓÒ»ã¶£ºÎÒ¶ÔÄãËµ¹ıÎÒÒªÕâÑù¶«Î÷Ã´£¿\n" NOR, who);
-				return 2;
-			}
-			else {
-			who->delete_temp("condition");
-			message_vision(HIG "Å·Ò±×ÓÎ¢Ğ¦×Å£ººÜºÃºÜºÃ£¡ÄÇÎÒ¾Í°ïÄãÕâÒ»´Î°É£¡\n" NOR, who);
-			who->set_temp("condition_ok",1);
-			do_weapon();
-			return 2;
-			}
-	}
-	if((int)(who->query("weapon/make")) ){
-		say("Å·Ò±×ÓÒ»Á³Ã£È»£ºÄúÒÑ¾­ÓĞÒ»°Ñ×ÔÔìµÄÎäÆ÷ÁË£¬»¹À´¸ÉÊ²Ã´£¿ÄÑµ½²»¿ÉÊÖÃ´£¿\n");
-		return 2;
-	}
+int accept_object(object who, object ob) {
+    switch ((string) ob->query("name")) {
+        case "è©æå­"  :
+        case "å«åŒ–é¸¡"  :
+        case "æ‰‹é•¯":
+        case "è¾Ÿé‚ªå‰‘è°±":
+        case "ç™½è™å ‚ä»¤ç‰Œ":
+            if ((who->query_temp("condition")) != (string) ob->query("name")) {
+                message_vision(HIC
+                "æ¬§å†¶å­ä¸€æ„£ï¼šæˆ‘å¯¹ä½ è¯´è¿‡æˆ‘è¦è¿™æ ·ä¸œè¥¿ä¹ˆï¼Ÿ\n"
+                NOR, who);
+                return 2;
+            } else {
+                who->delete_temp("condition");
+                message_vision(HIG
+                "æ¬§å†¶å­å¾®ç¬‘ç€ï¼šå¾ˆå¥½å¾ˆå¥½ï¼é‚£æˆ‘å°±å¸®ä½ è¿™ä¸€æ¬¡å§ï¼\n"
+                NOR, who);
+                who->set_temp("condition_ok", 1);
+                do_weapon();
+                return 2;
+            }
+    }
+    if ((int) (who->query("weapon/make"))) {
+        say("æ¬§å†¶å­ä¸€è„¸èŒ«ç„¶ï¼šæ‚¨å·²ç»æœ‰ä¸€æŠŠè‡ªé€ çš„æ­¦å™¨äº†ï¼Œè¿˜æ¥å¹²ä»€ä¹ˆï¼Ÿéš¾åˆ°ä¸å¯æ‰‹ä¹ˆï¼Ÿ\n");
+        return 2;
+    }
 //	switch ((string)ob->query("name") ) 
-	switch ((string)ob->query("id") ) 
-	{
-//		case "Ç§ÄêÉñÄ¾": 
-		case "shen mu": 
-			who->set_temp("or",1);
-			who->set_temp("get_orc",1);
-                destruct(present("shen mu",ob));
-			break;
-//		case "º£µ×½ğÄ¸":
-		case "jin mu":
-			who->set_temp("or",2);
-			who->set_temp("get_orc",1);
-                destruct(present("jin mu",ob));
-			break;
-//		case "º®Ë¿ÓğÖñ": 
-		case "han zhu": 
-			who->set_temp("or",3);
-			who->set_temp("get_orc",1);
-                destruct(present("han zhu",ob));
-			break;
-		default :
-			message("vision","ÕâÊÇÊ²Ã´£¡Õâ²»ÄÜÓÃÀ´´òÔì±øÆ÷£¡",who);
-			return 2;
-	}
-	message("vision","Å·Ò±×ÓµÍÍ·¼ìÊÓÁËÒ»ÏÂÊÖÖĞµÄ"+(string)ob->query("name")+
-			"µãÁËµãÍ·Ëµ£º\n",who);
-	write("ÎÒÕâ¶ù¿ÉÒÔ´òÔìÒÔÏÂ±øÆ÷£º\n"+
-	      "     ½£(sword)\n"+
-	      "     µ¶(blade)\n"+
-	      "     ¹÷(stick)\n"+
-	      "     ÕÈ(staff)\n"+
-	      "     ´¸(hammer)\n"+
-	      "     ±Ş(whip)\n");	  	
-	say("ÕâÎ»"+RANK_D->query_respect(who)+"ÒªÔìÊ²Ã´±øÆ÷£¿¾ö¶¨ÁË¸æËßÎÒ(answer)¡£\n");
-	return 2;
+    switch ((string) ob->query("id")) {
+//		case "åƒå¹´ç¥æœ¨": 
+        case "shen mu":
+            who->set_temp("or", 1);
+            who->set_temp("get_orc", 1);
+            destruct(present("shen mu", ob));
+            break;
+//		case "æµ·åº•é‡‘æ¯":
+        case "jin mu":
+            who->set_temp("or", 2);
+            who->set_temp("get_orc", 1);
+            destruct(present("jin mu", ob));
+            break;
+//		case "å¯’ä¸ç¾½ç«¹": 
+        case "han zhu":
+            who->set_temp("or", 3);
+            who->set_temp("get_orc", 1);
+            destruct(present("han zhu", ob));
+            break;
+        default :
+            message("vision", "è¿™æ˜¯ä»€ä¹ˆï¼è¿™ä¸èƒ½ç”¨æ¥æ‰“é€ å…µå™¨ï¼", who);
+            return 2;
+    }
+    message("vision", "æ¬§å†¶å­ä½å¤´æ£€è§†äº†ä¸€ä¸‹æ‰‹ä¸­çš„" + (string) ob->query("name") +
+                      "ç‚¹äº†ç‚¹å¤´è¯´ï¼š\n", who);
+    write("æˆ‘è¿™å„¿å¯ä»¥æ‰“é€ ä»¥ä¸‹å…µå™¨ï¼š\n" +
+          "     å‰‘(sword)\n" +
+          "     åˆ€(blade)\n" +
+          "     æ£(stick)\n" +
+          "     æ–(staff)\n" +
+          "     é”¤(hammer)\n" +
+          "     é­(whip)\n");
+    say("è¿™ä½" + RANK_D->query_respect(who) + "è¦é€ ä»€ä¹ˆå…µå™¨ï¼Ÿå†³å®šäº†å‘Šè¯‰æˆ‘(answer)ã€‚\n");
+    return 2;
 
 }
 
-int do_answer(string arg)
-{
-	object me,w_or;
-	me = this_player();
-	if(!(me->query_temp("get_orc") ) ){
-		write("ÄãÕÒµ½Ô­ÁÏÁËÂğ£¿\n");
-		return 0;
-	}
-	
-	if(!arg){
-	   write("ÄãÒªÔìÊ²Ã´±øÆ÷£¿\n");
-	  return 0;
-	}
-	message("vision",me->name()+"¶ÔÅ·Ò±×ÓÇáÉùËµÁË¼¸¾ä¡£\n",environment(me), ({me}) );
-	
-	switch (arg) {
-	  case "sword" :
-		me->add_temp("sword",1);
-		write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ½£°É£¡\n");
-		message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
-		break;
-	  case "blade" :
-		me->add_temp("blade",1);
-		write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌµ¶°É£¡\n");
-		message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
-		break;
-	  case "stick" :
-		me->add_temp("club",1);
-		write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ¹÷°É£¡\n");
-		message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
-		break;
-	  case "staff" :
-		me->add_temp("staff",1);
-		write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌÕÈ°É£¡\n");
-		message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
-		break;
-	  case "hammer" :
-		me->add_temp("hammer",1);
-		write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ´¸°É£¡\n");
-		message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
-		break;
-	  case "whip" :
-		me->add_temp("whip",1);
-		write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ±Ş°É£¡\n");
-		message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
-		break;
-	  default :
-		message_vision(HIC "Å·Ò±×ÓÒ»Á³ºüÒÉ£ºÊ²Ã´±øÆ÷£¿\n" NOR,me);
-		return notify_fail("Å·Ò±×Ó×ĞÏ¸µÄËµ£º´ËÊÂ²»¿É¶ùÏ·£¬ÇëÉ÷ÖØ!!\n");
-	}
-if (!me->query_temp("weaponok"))
-{
-	switch ( me->query_temp("or") ) {
-	  case 1:
-		w_or = new("/d/npc/m_weapon/tan/item/shenmu",1);
-		w_or->move(me);
-		message_vision(HIC "Å·Ò±×Ó¸øÁË$NÒ»¿éÇ§ÄêÉñÄ¾¡£\n" NOR, me);
-		break;
-	  case 2:
-		w_or = new("/d/npc/m_weapon/tan/item/jinmu",1);
-		w_or->move(me);
-		message_vision(HIC "Å·Ò±×Ó¸øÁË$NÒ»¿éº£µ×½ğÄ¸¡£\n" NOR, me);
-		break;
-	  case 3:
-		w_or = new("/d/npc/m_weapon/tan/item/hanzhu",1);
-		w_or->move(me);
-		message_vision(HIC "Å·Ò±×Ó¸øÁË$NÒ»¿éº®Ë¿ÓğÖñ¡£\n" NOR, me);
-		break;
-	}
-}
-me->set_temp("weaponok",1);
-	return 1;
-}
+int do_answer(string arg) {
+    object me, w_or;
+    me = this_player();
+    if (!(me->query_temp("get_orc"))) {
+        write("ä½ æ‰¾åˆ°åŸæ–™äº†å—ï¼Ÿ\n");
+        return 0;
+    }
 
-int do_weapon()
-{
-	object me,weapon,obj;
-	string w_id;
-	me = this_player();
-	w_id = me->query("weapon/id");
+    if (!arg) {
+        write("ä½ è¦é€ ä»€ä¹ˆå…µå™¨ï¼Ÿ\n");
+        return 0;
+    }
+    message("vision", me->name() + "å¯¹æ¬§å†¶å­è½»å£°è¯´äº†å‡ å¥ã€‚\n", environment(me), ({ me }));
 
-	if( !(me->query("weapon/make")) )
-		return notify_fail("ÄãÔì¹ı±øÆ÷Âğ£¿\n");
-
-	if( objectp(obj = present(w_id, me)) )
-	{
-		say("Å·Ò±×ÓÁ³É«Ò»³Á£ºÄúµÄÎäÆ÷²»¾ÍÔÚÄãÊÖ±ßÃ´£¿»¹À´¸ÉÊ²Ã´£¡\n");
-		return 1;
-	}
-	if (me->query_temp("condition") )
-	{
-		say("Å·Ò±×ÓÁ³É«Ò»³Á£º²»ÊÇÈÃÄãÈ¥ÄÃ"+(me->query_temp("condition") )+
-"ÁËÃ´£¿»¹Ã»ÄÃµ½»ØÀ´¸ÉÂï£¡\n");
-		return 1;
-	}
-
-	if( !(me->query_temp("condition_ok")) ) {
-		message_vision(HIY "ÕâÎ»"+RANK_D->query_respect(me)+"ÏëÒªÖØĞÂµÃµ½±øÆ÷£¿Õâ²»ÄÑ¡£²»¹ı......\n" NOR, me);
-		message_vision(HIY "Å·Ò±×Ó³ÁÒ÷ÁËÒ»ÏÂËµ£ºÄãµÃÕÒµ½ÎÒÒªµÄ¶«Î÷¡£\n" NOR, me);
-		switch( random(5) ) {
-			case 0:
-				message_vision("ÄÃµ½ÆĞÌá×Ó£¬ÔÙÀ´°É£¡\n",me);
-				me->set_temp("condition","ÆĞÌá×Ó");
-				break;
-			case 1:
-				message_vision("¸øÎÒ½Ğ»¯¼¦£¬ÎÒ¾Í°ïÄã£¡£¡\n",me);
-				me->set_temp("condition","½Ğ»¯¼¦");
-				break;
-			case 2:
-				message_vision("àÅ...Äã¾ÍÄÃºÚÄ¾ÑÂ°×»¢ÌÃÁîÅÆÀ´»»°É£¡£¡\n",me);
-				me->set_temp("condition","°×»¢ÌÃÁîÅÆ");
-				break;
-			case 3:
-				message_vision("....ÎÒÏë¿´¿´ÓĞÃûµÄÊÖïí£¡\n",me);
-				me->set_temp("condition","ÊÖïí");
-				break;
-			case 4:
-				message_vision("Èç¹ûÄãÄÜÌæÎÒÕÒµ½±ÙĞ°½£Æ×µÄ»°......\n",me);
-				me->set_temp("condition","±ÙĞ°½£Æ×");
-				break;
-			}
-		}
-	else	{
-		me->delete_temp("condition_ok");
-		weapon = creat_weapon();
-		weapon->move(me);
-	}
-	return 1;
+    switch (arg) {
+        case "sword" :
+            me->add_temp("sword", 1);
+            write("å¸¦ç€åŸæ–™å»æ‰¾ä¾å‰‘å§ï¼\n");
+            message("vision", "å»å§ï¼" + me->name() + "ï¼\n", me);
+            break;
+        case "blade" :
+            me->add_temp("blade", 1);
+            write("å¸¦ç€åŸæ–™å»æ‰¾ä¾åˆ€å§ï¼\n");
+            message("vision", "å»å§ï¼" + me->name() + "ï¼\n", me);
+            break;
+        case "stick" :
+            me->add_temp("club", 1);
+            write("å¸¦ç€åŸæ–™å»æ‰¾ä¾æ£å§ï¼\n");
+            message("vision", "å»å§ï¼" + me->name() + "ï¼\n", me);
+            break;
+        case "staff" :
+            me->add_temp("staff", 1);
+            write("å¸¦ç€åŸæ–™å»æ‰¾ä¾æ–å§ï¼\n");
+            message("vision", "å»å§ï¼" + me->name() + "ï¼\n", me);
+            break;
+        case "hammer" :
+            me->add_temp("hammer", 1);
+            write("å¸¦ç€åŸæ–™å»æ‰¾ä¾é”¤å§ï¼\n");
+            message("vision", "å»å§ï¼" + me->name() + "ï¼\n", me);
+            break;
+        case "whip" :
+            me->add_temp("whip", 1);
+            write("å¸¦ç€åŸæ–™å»æ‰¾ä¾é­å§ï¼\n");
+            message("vision", "å»å§ï¼" + me->name() + "ï¼\n", me);
+            break;
+        default :
+            message_vision(HIC
+            "æ¬§å†¶å­ä¸€è„¸ç‹ç–‘ï¼šä»€ä¹ˆå…µå™¨ï¼Ÿ\n"
+            NOR, me);
+            return notify_fail("æ¬§å†¶å­ä»”ç»†çš„è¯´ï¼šæ­¤äº‹ä¸å¯å„¿æˆï¼Œè¯·æ…é‡!!\n");
+    }
+    if (!me->query_temp("weaponok")) {
+        switch (me->query_temp("or")) {
+            case 1:
+                w_or = new("/d/npc/m_weapon/tan/item/shenmu", 1);
+                w_or->move(me);
+                message_vision(HIC
+                "æ¬§å†¶å­ç»™äº†$Nä¸€å—åƒå¹´ç¥æœ¨ã€‚\n"
+                NOR, me);
+                break;
+            case 2:
+                w_or = new("/d/npc/m_weapon/tan/item/jinmu", 1);
+                w_or->move(me);
+                message_vision(HIC
+                "æ¬§å†¶å­ç»™äº†$Nä¸€å—æµ·åº•é‡‘æ¯ã€‚\n"
+                NOR, me);
+                break;
+            case 3:
+                w_or = new("/d/npc/m_weapon/tan/item/hanzhu", 1);
+                w_or->move(me);
+                message_vision(HIC
+                "æ¬§å†¶å­ç»™äº†$Nä¸€å—å¯’ä¸ç¾½ç«¹ã€‚\n"
+                NOR, me);
+                break;
+        }
+    }
+    me->set_temp("weaponok", 1);
+    return 1;
 }
 
-object creat_weapon()
-{
-	object me,weapon;
-	string mask;	//the verible that record the type of weapon
-	me = this_player();
-	mask = me->query("weapon/type");
-	switch(mask)	{
-		case "½£":
-			weapon = new("/d/npc/m_weapon/weapon/m_sword",1);
-			return weapon;
-		case "µ¶":
-			weapon = new("/d/npc/m_weapon/weapon/m_blade",1);
-			return weapon;
-		case "¹÷":
-			weapon = new("/d/npc/m_weapon/weapon/m_club",1);
-			return weapon;
-		case "ÕÈ":
-			weapon = new("/d/npc/m_weapon/weapon/m_staff",1);
-			return weapon;
-		case "´¸":
-			weapon = new("/d/npc/m_weapon/weapon/m_hammer",1);
-			return weapon;
-		case "±Ş":
-			weapon = new("/d/npc/m_weapon/weapon/m_whip",1);
-			return weapon;
-	}
+int do_weapon() {
+    object me, weapon, obj;
+    string w_id;
+    me = this_player();
+    w_id = me->query("weapon/id");
+
+    if (!(me->query("weapon/make")))
+        return notify_fail("ä½ é€ è¿‡å…µå™¨å—ï¼Ÿ\n");
+
+    if (objectp(obj = present(w_id, me))) {
+        say("æ¬§å†¶å­è„¸è‰²ä¸€æ²‰ï¼šæ‚¨çš„æ­¦å™¨ä¸å°±åœ¨ä½ æ‰‹è¾¹ä¹ˆï¼Ÿè¿˜æ¥å¹²ä»€ä¹ˆï¼\n");
+        return 1;
+    }
+    if (me->query_temp("condition")) {
+        say("æ¬§å†¶å­è„¸è‰²ä¸€æ²‰ï¼šä¸æ˜¯è®©ä½ å»æ‹¿" + (me->query_temp("condition")) +
+            "äº†ä¹ˆï¼Ÿè¿˜æ²¡æ‹¿åˆ°å›æ¥å¹²å˜›ï¼\n");
+        return 1;
+    }
+
+    if (!(me->query_temp("condition_ok"))) {
+        message_vision(HIY
+        "è¿™ä½" + RANK_D->query_respect(me) + "æƒ³è¦é‡æ–°å¾—åˆ°å…µå™¨ï¼Ÿè¿™ä¸éš¾ã€‚ä¸è¿‡......\n"
+        NOR, me);
+        message_vision(HIY
+        "æ¬§å†¶å­æ²‰åŸäº†ä¸€ä¸‹è¯´ï¼šä½ å¾—æ‰¾åˆ°æˆ‘è¦çš„ä¸œè¥¿ã€‚\n"
+        NOR, me);
+        switch (random(5)) {
+            case 0:
+                message_vision("æ‹¿åˆ°è©æå­ï¼Œå†æ¥å§ï¼\n", me);
+                me->set_temp("condition", "è©æå­");
+                break;
+            case 1:
+                message_vision("ç»™æˆ‘å«åŒ–é¸¡ï¼Œæˆ‘å°±å¸®ä½ ï¼ï¼\n", me);
+                me->set_temp("condition", "å«åŒ–é¸¡");
+                break;
+            case 2:
+                message_vision("å—¯...ä½ å°±æ‹¿é»‘æœ¨å´–ç™½è™å ‚ä»¤ç‰Œæ¥æ¢å§ï¼ï¼\n", me);
+                me->set_temp("condition", "ç™½è™å ‚ä»¤ç‰Œ");
+                break;
+            case 3:
+                message_vision("....æˆ‘æƒ³çœ‹çœ‹æœ‰åçš„æ‰‹é•¯ï¼\n", me);
+                me->set_temp("condition", "æ‰‹é•¯");
+                break;
+            case 4:
+                message_vision("å¦‚æœä½ èƒ½æ›¿æˆ‘æ‰¾åˆ°è¾Ÿé‚ªå‰‘è°±çš„è¯......\n", me);
+                me->set_temp("condition", "è¾Ÿé‚ªå‰‘è°±");
+                break;
+        }
+    } else {
+        me->delete_temp("condition_ok");
+        weapon = creat_weapon();
+        weapon->move(me);
+    }
+    return 1;
 }
 
-string ask_met() 
-{ 
-	object weapon;
-	object gold;
-	object *inv;
-	int i;
-        object me = this_player(); 
-	inv = all_inventory(me);
-	for(i=0; i<sizeof(inv); i++) {
-        if((int)(inv[i]->query("weapon_prop")&&inv[i]->query("ownmake")))
-        return "ÄãÉíÉÏ²»ÊÇÓĞÎäÆ÷Âğ£¿"; 
+object creat_weapon() {
+    object me, weapon;
+    string mask;    //the verible that record the type of weapon
+    me = this_player();
+    mask = me->query("weapon/type");
+    switch (mask) {
+        case "å‰‘":
+            weapon = new("/d/npc/m_weapon/weapon/m_sword", 1);
+            return weapon;
+        case "åˆ€":
+            weapon = new("/d/npc/m_weapon/weapon/m_blade", 1);
+            return weapon;
+        case "æ£":
+            weapon = new("/d/npc/m_weapon/weapon/m_club", 1);
+            return weapon;
+        case "æ–":
+            weapon = new("/d/npc/m_weapon/weapon/m_staff", 1);
+            return weapon;
+        case "é”¤":
+            weapon = new("/d/npc/m_weapon/weapon/m_hammer", 1);
+            return weapon;
+        case "é­":
+            weapon = new("/d/npc/m_weapon/weapon/m_whip", 1);
+            return weapon;
+    }
+}
+
+string ask_met() {
+    object weapon;
+    object gold;
+    object *inv;
+    int i;
+    object me = this_player();
+    inv = all_inventory(me);
+    for (i = 0; i < sizeof(inv); i++) {
+        if ((int) (inv[i]->query("weapon_prop") && inv[i]->query("ownmake")))
+            return "ä½ èº«ä¸Šä¸æ˜¯æœ‰æ­¦å™¨å—ï¼Ÿ";
 
 
-        if(me->is_busy())
-        return "ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£";
+        if (me->is_busy())
+            return "ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚";
 
         gold = present("gold_money", this_player());
-        if( !gold) return "ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£";
+        if (!gold) return "ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚";
 
-        if((int) gold->query_amount() < 101)
-        return "ÄãÉíÉÏÃ»´ø¹»Ò»°ÙÁ½½ğ×Ó¡£";
+        if ((int) gold->query_amount() < 101)
+            return "ä½ èº«ä¸Šæ²¡å¸¦å¤Ÿä¸€ç™¾ä¸¤é‡‘å­ã€‚";
 
-	if (me->query("weapon/type")) {
-		switch((string)me->query("weapon/type"))
-		{
-			case "½£":
-			weapon = new("/d/npc/m_weapon/weapon/m_sword");
-			weapon->move(me);
-        gold->add_amount(-100);
-        me->start_busy(5);
-                        return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "µ¶":
-			weapon = new("/d/npc/m_weapon/weapon/m_blade");
-			weapon->move(me);
-        gold->add_amount(-100);
-        me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "±Ş":
-			weapon = new("/d/npc/m_weapon/weapon/m_whip");
-			weapon->move(me);
-        gold->add_amount(-100);
-        me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "ÕÈ":
-			weapon = new("/d/npc/m_weapon/weapon/m_staff");
-			weapon->move(me);
-        gold->add_amount(-100);
-        me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "¹÷":
-			weapon = new("/d/npc/m_weapon/weapon/m_club");
-			weapon->move(me);
-        gold->add_amount(-100);
-        me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-		}
-          }
-else return "ÄãÔì¹ıÎäÆ÷Âğ£¿"; 
-}
+        if (me->query("weapon/type")) {
+            switch ((string) me->query("weapon/type")) {
+                case "å‰‘":
+                    weapon = new("/d/npc/m_weapon/weapon/m_sword");
+                    weapon->move(me);
+                    gold->add_amount(-100);
+                    me->start_busy(5);
+                    return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!";
+                case "åˆ€":
+                    weapon = new("/d/npc/m_weapon/weapon/m_blade");
+                    weapon->move(me);
+                    gold->add_amount(-100);
+                    me->start_busy(5);
+                    return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!";
+                case "é­":
+                    weapon = new("/d/npc/m_weapon/weapon/m_whip");
+                    weapon->move(me);
+                    gold->add_amount(-100);
+                    me->start_busy(5);
+                    return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!";
+                case "æ–":
+                    weapon = new("/d/npc/m_weapon/weapon/m_staff");
+                    weapon->move(me);
+                    gold->add_amount(-100);
+                    me->start_busy(5);
+                    return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!";
+                case "æ£":
+                    weapon = new("/d/npc/m_weapon/weapon/m_club");
+                    weapon->move(me);
+                    gold->add_amount(-100);
+                    me->start_busy(5);
+                    return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!";
+            }
+        } else return "ä½ é€ è¿‡æ­¦å™¨å—ï¼Ÿ";
+    }
 
 }

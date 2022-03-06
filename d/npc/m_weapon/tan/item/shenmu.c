@@ -1,22 +1,24 @@
 //xuantie.c
 inherit ITEM;
+
 #include <ansi.h>
-void create()
-{
-        set_name(RED"Ç§ÄêÉñÄ¾"NOR, ({ "shen mu","mu"}));
-        set_weight(30000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("unit", "¿é");
-                set("long","ÕâÊÇÒ»¿éÇ§ÄêÉñÄ¾£¬±íÃæºÚÖĞÍ¸ºìµÄ£¬¿´ÉÏÈ¥Ê®·Ö¼áÓ²¡£\n"
-		    "ËÆºõÊÇÖÆÔì±øÆ÷µÄ¾øºÃ²ÄÁÏ¡£\n");
-                set("value", 0);
-                set("material", "wood");
-              }
+
+void create() {
+    set_name(RED
+    "åƒå¹´ç¥æœ¨"
+    NOR, ({ "shen mu", "mu" }));
+    set_weight(30000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "å—");
+        set("long", "è¿™æ˜¯ä¸€å—åƒå¹´ç¥æœ¨ï¼Œè¡¨é¢é»‘ä¸­é€çº¢çš„ï¼Œçœ‹ä¸Šå»ååˆ†åšç¡¬ã€‚\n"
+                    "ä¼¼ä¹æ˜¯åˆ¶é€ å…µå™¨çš„ç»å¥½ææ–™ã€‚\n");
+        set("value", 0);
+        set("material", "wood");
+    }
 }
 
-void owner_is_killed()
-{
-        destruct(this_object());
+void owner_is_killed() {
+    destruct(this_object());
 }

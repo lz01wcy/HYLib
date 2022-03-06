@@ -1,85 +1,84 @@
-// murong-daofa.c Ä½ÈÝµ¶·¨
+// murong-daofa.c æ…•å®¹åˆ€æ³•
 
 #include <ansi.h>
+
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N´óºÈÒ»Éù¡¸¿´ÕÐ¡¹£¬Ò»ÕÐ¡¸ÅüÌì¸ÇµØÂú×³Ö¾¡¹£¬µ¶·æ×ÔÉÏ¶øÏÂÏò$nµÄ$l»ÓÈ¥",
-        "force" : 160,
-        "dodge" : 10,
-        "damage": 230,
-        "lvl" : 0,
-        "skill_name" : "ÅüÌì¸ÇµØÂú×³Ö¾",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$NÒ»ÕÐ¡¸Íäµ¶Äæ×ªµ¹Ç¬À¤¡¹£¬ÊÖÖÐ$wÔÚ¿ÕÖÐ¼±ËÙ×ª¶¯ÊýÈ¦£¬»®Ïò$nµÄ$l",
-        "force" : 200,
-        "dodge" : 10,
-        "damage": 260,
-        "lvl" : 30,
-        "skill_name" : "Íäµ¶Äæ×ªµ¹Ç¬À¤",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$NÃÍÒ»´ìÉí£¬Ò»ÕÐ¡¸Ò£¿´Íò½®Ç§ÀïÑ©¡¹,$wÖ±Ïò$nµÄ¾±ÖÐÕ¶È¥",
-        "force" : 260,
-        "dodge" : 5,
-        "damage": 290,
-        "lvl" : 70,
-        "skill_name" : "Ò£¿´Íò½®Ç§ÀïÑ©",
-        "damage_type" : "¸îÉË",
-]),
-([      "action" : "$NÒ»ÕÐ¡¸×³Ö¾ºÀÆøÂú½­ºþ¡¹£¬ÎÞÊýµ¶¼â»¯×÷µãµã·±ÐÇ£¬Ïò$nµÄ$lÌôÈ¥",
-        "force" : 300,
-        "dodge" : 5,
-        "damage": 220,
-        "lvl" : 100,
-        "skill_name" : "×³Ö¾ºÀÆøÂú½­ºþ",
-        "damage_type" : "¸îÉË"
-]),
+    ([      "action" : "$Nå¤§å–ä¸€å£°ã€Œçœ‹æ‹›ã€ï¼Œä¸€æ‹›ã€ŒåŠˆå¤©ç›–åœ°æ»¡å£®å¿—ã€ï¼Œåˆ€é”‹è‡ªä¸Šè€Œä¸‹å‘$nçš„$læŒ¥åŽ»",
+            "force" : 160,
+            "dodge" : 10,
+            "damage": 230,
+            "lvl" : 0,
+            "skill_name" : "åŠˆå¤©ç›–åœ°æ»¡å£®å¿—",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$Nä¸€æ‹›ã€Œå¼¯åˆ€é€†è½¬å€’ä¹¾å¤ã€ï¼Œæ‰‹ä¸­$wåœ¨ç©ºä¸­æ€¥é€Ÿè½¬åŠ¨æ•°åœˆï¼Œåˆ’å‘$nçš„$l",
+            "force" : 200,
+            "dodge" : 10,
+            "damage": 260,
+            "lvl" : 30,
+            "skill_name" : "å¼¯åˆ€é€†è½¬å€’ä¹¾å¤",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$NçŒ›ä¸€æŒ«èº«ï¼Œä¸€æ‹›ã€Œé¥çœ‹ä¸‡ç–†åƒé‡Œé›ªã€,$wç›´å‘$nçš„é¢ˆä¸­æ–©åŽ»",
+            "force" : 260,
+            "dodge" : 5,
+            "damage": 290,
+            "lvl" : 70,
+            "skill_name" : "é¥çœ‹ä¸‡ç–†åƒé‡Œé›ª",
+            "damage_type" : "å‰²ä¼¤",
+    ]),
+    ([      "action" : "$Nä¸€æ‹›ã€Œå£®å¿—è±ªæ°”æ»¡æ±Ÿæ¹–ã€ï¼Œæ— æ•°åˆ€å°–åŒ–ä½œç‚¹ç‚¹ç¹æ˜Ÿï¼Œå‘$nçš„$læŒ‘åŽ»",
+            "force" : 300,
+            "dodge" : 5,
+            "damage": 220,
+            "lvl" : 100,
+            "skill_name" : "å£®å¿—è±ªæ°”æ»¡æ±Ÿæ¹–",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
 });
 
 int valid_enable(string usage) { return usage == "blade" || usage == "parry"; }
 
 
-int valid_learn(object me)
-{
-        if ((int)me->query("max_neili") < 50)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
-        if ((int)me->query_skill("shenyuan-gong", 1) < 10)
-                return notify_fail("ÄãµÄÉñÔª¹¦»ðºòÌ«Ç³¡£\n");
-        return 1;
+int valid_learn(object me) {
+    if ((int) me->query("max_neili") < 50)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
+    if ((int) me->query_skill("shenyuan-gong", 1) < 10)
+        return notify_fail("ä½ çš„ç¥žå…ƒåŠŸç«å€™å¤ªæµ…ã€‚\n");
+    return 1;
 }
 
-string query_skill_name(int level)
-{
-        int i;
-        for(i = sizeof(action)-1; i >= 0; i--)
-                if(level >= action[i]["lvl"])
-                        return action[i]["skill_name"];
+string query_skill_name(int level) {
+    int i;
+    for (i = sizeof(action) - 1; i >= 0; i--)
+        if (level >= action[i]["lvl"])
+            return action[i]["skill_name"];
 }
 
 
-mapping query_action(object me, object weapon)
-{
-        int i, level;
-        level   = (int) me->query_skill("murong-daofa",1);
-        
-        for(i = sizeof(action); i > 0; i--) {
-                if(level > action[i-1]["lvl"]) {
-                if(random(level) >= 145){
-return ([
-                "action":GRN+action[NewRandom(i, 20, level/5)]["action"]+NOR,
-                "damage":level+random(250),
-                "damage_type": "¸îÉË",
-                "dodge": level/3+random(50),
-                "force": level+300+random(100),
+mapping query_action(object me, object weapon) {
+    int i, level;
+    level = (int) me->query_skill("murong-daofa", 1);
+
+    for (i = sizeof(action); i > 0; i--) {
+        if (level > action[i - 1]["lvl"]) {
+            if (random(level) >= 145) {
+                return ([
+                "action":GRN + action[NewRandom(i, 20, level / 5)]["action"] + NOR,
+                        "damage":level + random(250),
+                        "damage_type": "å‰²ä¼¤",
+                        "dodge": level / 3 + random(50),
+                        "force": level + 300 + random(100),
                 ]);
-        } else {
-                        return action[NewRandom(i, 20, level/5)];
+            } else {
+                return action[NewRandom(i, 20, level / 5)];
+            }
+        }
+    }
 }
-}
-}
-}
+
 /*
 mapping query_action(object me, object weapon)
 {
@@ -91,82 +90,82 @@ mapping query_action(object me, object weapon)
 }
 */
 
-int practice_skill(object me)
-{
-        object weapon;
+int practice_skill(object me) {
+    object weapon;
 
-        if (!objectp(weapon = me->query_temp("weapon"))
-        || (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
-        if ((int)me->query("jing") < 40)
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ä½ÈÝµ¶·¨¡£\n");
-		if ((int)me->query("neili") < 15)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ä½ÈÝµ¶·¨¡£\n");
-        me->receive_damage("jing", 25);
-		me->add("neili",-8);
-        return 1;
+    if (!objectp(weapon = me->query_temp("weapon"))
+        || (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
+    if ((int) me->query("jing") < 40)
+        return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒæ…•å®¹åˆ€æ³•ã€‚\n");
+    if ((int) me->query("neili") < 15)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ…•å®¹åˆ€æ³•ã€‚\n");
+    me->receive_damage("jing", 25);
+    me->add("neili", -8);
+    return 1;
 }
-           
-string perform_action_file(string action)
-{
-        return __DIR__"murong-daofa/" + action;
+
+string perform_action_file(string action) {
+    return __DIR__
+    "murong-daofa/" + action;
 }
-mixed hit_ob(object me, object victim, int damage_bonus, int factor)
-{                
-   object weapon = me->query_temp("weapon");
-	if( damage_bonus < 20 ) return 0; 
-         if( damage_bonus > 20 ) 
-{
-        victim->receive_wound("qi", damage_bonus/2 );
-        return HIR "Ö»ÌýÒ»Éù²Òº¿£¬Ò»¹ÉÏÊÑª´Ó$n±»¿³ÖÐµÄÉË¿ÚÅç³ö£¡\n" NOR;	
-}
-   if(me->query_temp("lianhuan") && !me->query_temp("lianhuan_hit")
-      && me->query_skill_prepared("finger") == "canhe-zhi"
-      && me->query_skill_mapped("finger") == "canhe-zhi"
-      && objectp(weapon)) {
+
+mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+    object weapon = me->query_temp("weapon");
+    if (damage_bonus < 20) return 0;
+    if (damage_bonus > 20) {
+        victim->receive_wound("qi", damage_bonus / 2);
+        return HIR
+        "åªå¬ä¸€å£°æƒ¨åšŽï¼Œä¸€è‚¡é²œè¡€ä»Ž$nè¢«ç ä¸­çš„ä¼¤å£å–·å‡ºï¼\n"
+        NOR;
+    }
+    if (me->query_temp("lianhuan") && !me->query_temp("lianhuan_hit")
+        && me->query_skill_prepared("finger") == "canhe-zhi"
+        && me->query_skill_mapped("finger") == "canhe-zhi"
+        && objectp(weapon)) {
         me->set_temp("lianhuan_hit", 1);
         weapon->unequip();
-        if (random(2)==0) victim->start_busy(2);
-        COMBAT_D->do_attack(me, victim, me->query_temp("weapon"), 1);  
+        if (random(2) == 0) victim->start_busy(2);
+        COMBAT_D->do_attack(me, victim, me->query_temp("weapon"), 1);
         weapon->wield();
         me->add("neili", -30);
         me->delete_temp("lianhuan_hit");
         me->add_temp("lianhuan", -1);
+    }
+}
+
+int ob_hit(object ob, object me, int damage) {
+    object wp1, weapon;
+    string msg;
+    int p, j, skill, neili, neili1;
+    int level, level2, damage2;
+    level = (int) me->query_skill("unarmed", 1);
+    level2 = (int) me->query_skill("shenyuan-gong", 1);
+    skill = me->query_skill("shenyuan-gong", 1);
+    neili = me->query("neili");
+    neili1 = ob->query("neili");
+    if (level2 <= 0) level2 = (int) me->query_skill("shenyuan-gong", 1);
+    damage2 = (int) ob->query("neili", 1) / 10;
+    if (random(8) == 0 && level2 >= 300 &&
+        (me->query_skill_mapped("force") == "shenyuan-gong" || me->query_skill_mapped("force") == "shenyuan-gong")) {
+        j = -damage / 2;
+        if (damage2 > 5000) damage2 = 5000;
+        msg = HIC
+        "$N" + HIC + "å‡ç¥žè¿æ°”å‘$nçŒ›æ”»å¿«æ‰“ï¼Œä½¿å‡ºçš„æ‹›æ•°å¥½ä¼¼$nçš„æˆåç»æŠ€ï¼ŒæŠŠ$nçš„æ‹›æ•°åŒ–äºŽæ— è¡Œï¼\n"
+        NOR;
+        ob->start_busy(3);
+        if (random(2) == 0) {
+            msg += HIC
+            "$N" + HIC + "ä½¿å‡ºæ˜Ÿç§»æ–—è½¬ï¼Œ$nè¿™æ‹›èŽ«åå…¶å¦™çš„åœ¨ä¸­é€”è½¬äº†æ–¹å‘ï¼Œç›´å¥”è‡ªå·±è¢­æ¥!" + NOR;
+            if (ob->query("qi") > damage2) {
+                ob->receive_damage("qi", damage2 / 2);
+                ob->receive_wound("qi", damage2 / 2);
+            }
+
         }
-}
 
-int ob_hit(object ob, object me, int damage)
-{
-        object wp1,weapon;
-        string msg;
-        int p,j,skill, neili, neili1;
-        int level,level2,damage2;
-        level = (int) me->query_skill("unarmed",1);
-        level2= (int) me->query_skill("shenyuan-gong",1);
-        skill = me->query_skill("shenyuan-gong", 1);
-        neili = me->query("neili");
-        neili1 = ob->query("neili");
-if ( level2<= 0) level2= (int) me->query_skill("shenyuan-gong",1);
-damage2= (int) ob->query("neili",1)/10;
-if (random(8)==0 && level2>=300 && (me->query_skill_mapped("force") == "shenyuan-gong" || me->query_skill_mapped("force") == "shenyuan-gong"))
-{
-j = -damage/2; 
-if (damage2> 5000)	damage2=5000;
-msg = HIC"$N"+HIC+"ÄýÉñÔËÆøÏò$nÃÍ¹¥¿ì´ò£¬Ê¹³öµÄÕÐÊýºÃËÆ$nµÄ³ÉÃû¾ø¼¼£¬°Ñ$nµÄÕÐÊý»¯ÓÚÎÞÐÐ£¡\n"NOR;
-ob->start_busy(3);
-if (random(2)==0)
-{
-msg += HIC"$N"+HIC+"Ê¹³öÐÇÒÆ¶·×ª£¬$nÕâÕÐÄªÃûÆäÃîµÄÔÚÖÐÍ¾×ªÁË·½Ïò£¬Ö±±¼×Ô¼ºÏ®À´!"+NOR;
-if (ob->query("qi") > damage2)
-{
-		ob->receive_damage("qi", damage2/2);
-		ob->receive_wound("qi", damage2/2);
-}
-
-}
-
-           message_vision(msg, me, ob);
-           return j;
-}      
+        message_vision(msg, me, ob);
+        return j;
+    }
 }
 

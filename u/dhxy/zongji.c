@@ -1,63 +1,58 @@
-// lingzhi.c Ç§ÄêÑ©Á«
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´é›ªè²
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
+
 inherit ITEM;
 
-void setup()
-{}
+void setup() {}
 
-void init()
-{
-	add_action("do_eat", "eat");
+void init() {
+    add_action("do_eat", "eat");
 }
 
-void create()
-{
-   set_name(HIG"ôÕ×Ó"NOR, ({"zong zi", "zongzi"}))
-;
-	if (clonep())
-		set_default_object(__FILE__);
-	else {
-          set("unit", "¸ö")
-;
-          set("long", "ÕâÊÇÒ»¸ö¶ËÎç½ÚµÄôÕ×Ó¡£\n")
-;
-    set("value", 0);
-	}
-	setup();
+void create() {
+    set_name(HIG
+    "ç²½å­"
+    NOR, ({ "zong zi", "zongzi" }));
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "ä¸ª");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªç«¯åˆèŠ‚çš„ç²½å­ã€‚\n");
+        set("value", 0);
+    }
+    setup();
 }
 
-int do_eat(string arg)
-{
-	int exp,pot,score;
-object corpse;
-        object me = this_player();
-	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        this_player()->start_busy(30);
-exp=300000+random(500)
-;
-pot=exp*2/3
-;
-             score = random(20)+10;
-        me->add("max_neili", 5);
-        me->add("combat_exp", exp);
-        me->add("potential", pot);
-tell_object(me,HIY"Äã±»½±ÀøÁË£º5µãÄÚÁ¦ÉÏÏŞ\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);
+int do_eat(string arg) {
+    int exp, pot, score;
+    object corpse;
+    object me = this_player();
+    if (!id(arg))
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+    this_player()->start_busy(30);
+    exp = 300000 + random(500);
+    pot = exp * 2 / 3;
+    score = random(20) + 10;
+    me->add("max_neili", 5);
+    me->add("combat_exp", exp);
+    me->add("potential", pot);
+    tell_object(me, HIY
+    "ä½ è¢«å¥–åŠ±äº†ï¼š5ç‚¹å†…åŠ›ä¸Šé™\n" +
+    chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+    chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+    chinese_number(score) + "ç‚¹æ±Ÿæ¹–é˜…å†\n"
+    NOR);
 
-    message_vision(HIY 
-"½ñÌìÊÇ¶ËÎç½Ú£¬$N³ÔÏÂÒ»¸öôÕ×Ó£¬¶¹É³ÏÚµÄ£¬¸Ğ¾õºÜ²»´í£¬»¹ÏëÔÙ³Ô¼¸¸ö!\n" NOR, me)
-;
+    message_vision(HIY
+    "ä»Šå¤©æ˜¯ç«¯åˆèŠ‚ï¼Œ$Nåƒä¸‹ä¸€ä¸ªç²½å­ï¼Œè±†æ²™é¦…çš„ï¼Œæ„Ÿè§‰å¾ˆä¸é”™ï¼Œè¿˜æƒ³å†åƒå‡ ä¸ª!\n"
+    NOR, me);
 
-	destruct(this_object());
-	return 1;
+    destruct(this_object());
+    return 1;
 }
 
-void owner_is_killed()
-{
-	destruct(this_object());
+void owner_is_killed() {
+    destruct(this_object());
 }

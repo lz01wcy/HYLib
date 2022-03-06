@@ -1,5 +1,5 @@
 // Last Modified by winder on Sep. 12 2001
-// wuying-feidao.c ÎŞÓ°·Éµ¶
+// wuying-feidao.c æ— å½±é£åˆ€
 
 #include <ansi.h>
 inherit SKILL;
@@ -7,32 +7,32 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([      "action": "$NË«ÊÖÒ»»Î£¬ÊÖÖĞµÄ$wÈçÒ»ÌõÒøÉß°ã·ÉÏò$nµÄ$l",
+([      "action": "$NåŒæ‰‹ä¸€æ™ƒï¼Œæ‰‹ä¸­çš„$wå¦‚ä¸€æ¡é“¶è›‡èˆ¬é£å‘$nçš„$l",
         "force" : 20,
         "dodge" : 20,
         "damage": 190,
-        "damage_type": "´ÌÉË",
+        "damage_type": "åˆºä¼¤",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
-([      "action": "$NÓÒÊÖÒ»¶¶£¬$w·¢³ö´Ì¶úµÄÆÆ¿ÕÉùÖ±Éä$nµÄ$l",
+([      "action": "$Nå³æ‰‹ä¸€æŠ–ï¼Œ$wå‘å‡ºåˆºè€³çš„ç ´ç©ºå£°ç›´å°„$nçš„$l",
         "force" : 120,
         "dodge" : 30,
         "damage": 190,
-        "damage_type": "´ÌÉË",
+        "damage_type": "åˆºä¼¤",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
-([      "action": "$NÊÖÖ¸Î¢¶¯£¬$wĞ±Ğ±µÄ·ÉÏò$nµÄ$l",
+([      "action": "$Næ‰‹æŒ‡å¾®åŠ¨ï¼Œ$wæ–œæ–œçš„é£å‘$nçš„$l",
         "force" : 220,
         "dodge" : 20,
         "damage": 290,
-        "damage_type": "´ÌÉË",
+        "damage_type": "åˆºä¼¤",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
-([      "action": "$NÁ¦·¢¼çÖâ£¬ÓÒÊÖÒ»Ë¦£¬ÊÖÖĞµÄ$w»¯×÷Ò»µÀ»¡¹âÉäÏò$nµÄ$l",
+([      "action": "$NåŠ›å‘è‚©è‚˜ï¼Œå³æ‰‹ä¸€ç”©ï¼Œæ‰‹ä¸­çš„$wåŒ–ä½œä¸€é“å¼§å…‰å°„å‘$nçš„$l",
         "force" : 320,
         "dodge" : 40,
         "damage": 390,
-        "damage_type": "´ÌÉË",
+        "damage_type": "åˆºä¼¤",
         "post_action": (: call_other, WEAPON_D, "throw_weapon" :),
 ]),
 });
@@ -43,22 +43,22 @@ int valid_learn(object me)
         object ob;
 
         if( (int)me->query("max_neili") < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞ°ì·¨Á·ÎŞÓ°·Éµ¶¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•ç»ƒæ— å½±é£åˆ€ã€‚\n");
         if( !(ob = me->query_temp("weapon")) || 
 		(string)ob->query("skill_type") != "throwing" )
-                return notify_fail("Äã±ØĞëÏÈÕÒÒ»Ğ©°µÆ÷²ÅÄÜÁ·ÎŞÓ°·Éµ¶¡£\n");
+                return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€äº›æš—å™¨æ‰èƒ½ç»ƒæ— å½±é£åˆ€ã€‚\n");
 	if ((int)me->query_skill("honghua-shengong", 1) < 50)
-		return notify_fail("ÄãµÄºì»¨Éñ¹¦»ğºò²»¹»£¬ÎŞ·¨Ñ§ÎŞÓ°·Éµ¶¡£\n");
+		return notify_fail("ä½ çš„çº¢èŠ±ç¥åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦æ— å½±é£åˆ€ã€‚\n");
 
         return 1;
 }
 int practice_skill(object me)
 {
         if( (int)me->query("qi") < 30 || (int)me->query("neili") < 50 )
-                return notify_fail("ÄãµÄÄÚÁ¦»òÆø²»¹»£¬Ã»°ì·¨Á·Ï°ÎŞÓ°·Éµ¶¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›æˆ–æ°”ä¸å¤Ÿï¼Œæ²¡åŠæ³•ç»ƒä¹ æ— å½±é£åˆ€ã€‚\n");
         me->receive_damage("qi", 30);
         me->add("neili", -30);
-  //      write("Äã°´ÖøËùÑ§Á·ÁËÒ»±éÎŞÓ°·Éµ¶¡£\n");
+  //      write("ä½ æŒ‰è‘—æ‰€å­¦ç»ƒäº†ä¸€éæ— å½±é£åˆ€ã€‚\n");
         return 1;
 }
 mapping query_action(object me, object weapon)
@@ -77,15 +77,15 @@ string perform_action_file(string action)
  
 int help(object me)
 {
-	write(HIM"\nÎŞÓ°·Éµ¶£º"NOR"\n");
+	write(HIM"\næ— å½±é£åˆ€ï¼š"NOR"\n");
 	write(@HELP
 
-    ÎŞÓ°·Éµ¶ÎªÉñµ¶ÂæÔªÍ¨µÄ¼Ò´«¹¦·ò¡£ÂæÔªÍ¨Ö®Å®Âæ±ù±ãÊÇ
-ºì»¨»áµÄÎÄËÄÄÌÄÌ¡£
+    æ— å½±é£åˆ€ä¸ºç¥åˆ€éª†å…ƒé€šçš„å®¶ä¼ åŠŸå¤«ã€‚éª†å…ƒé€šä¹‹å¥³éª†å†°ä¾¿æ˜¯
+çº¢èŠ±ä¼šçš„æ–‡å››å¥¶å¥¶ã€‚
 
-	Ñ§Ï°ÒªÇó£º
-		ºì»¨Éñ¹¦50¼¶
-		ÄÚÁ¦ĞŞÎª500
+	å­¦ä¹ è¦æ±‚ï¼š
+		çº¢èŠ±ç¥åŠŸ50çº§
+		å†…åŠ›ä¿®ä¸º500
 HELP
 	);
 	return 1;

@@ -3,325 +3,357 @@
 
 inherit M_WEAPON;
 inherit F_GEMS;
-string *du=({
-"ice_poison",
-"ill_dongshang",
-"ill_fashao",
-"ill_kesou",
-"ill_shanghan",
-"ill_zhongshu",
-"xx_poison",
-"cold_poison",
-"flower_poison",
-"rose_poison",
-"x2_poison",
-"sanpoison",
-"scorpion_poison",
-"qx_snake_poison",
-"anqi_poison",
-"yf_poison",
-"nx_poison",
-"chilian_poison",
-"yufeng_poison",
-"insect_poison",
-"xscold_poison",
+string *du = ({
+    "ice_poison",
+            "ill_dongshang",
+            "ill_fashao",
+            "ill_kesou",
+            "ill_shanghan",
+            "ill_zhongshu",
+            "xx_poison",
+            "cold_poison",
+            "flower_poison",
+            "rose_poison",
+            "x2_poison",
+            "sanpoison",
+            "scorpion_poison",
+            "qx_snake_poison",
+            "anqi_poison",
+            "yf_poison",
+            "nx_poison",
+            "chilian_poison",
+            "yufeng_poison",
+            "insect_poison",
+            "xscold_poison",
 });
 
-void init_sockets(object me)
-{
-	set("max_sockets", 3);
-	if (me->query("combat_exp") > 10000000)
-		add("max_sockets", 1);
+void init_sockets(object me) {
+    set("max_sockets", 3);
+    if (me->query("combat_exp") > 10000000)
+        add("max_sockets", 1);
 
-        if (me->query("combat_exp") < 10000000 && (int)query("sockets/max",1)>=3)
-        set("sockets/max",3);
+    if (me->query("combat_exp") < 10000000 && (int) query("sockets/max", 1) >= 3)
+        set("sockets/max", 3);
 
-        if (me->query("combat_exp") < 20000000 && (int)query("sockets/max",1)>=4)
-        set("sockets/max",4);
-        
-        if ((int)query("sockets/max",1)>5)
-        set("sockets/max",5);
+    if (me->query("combat_exp") < 20000000 && (int) query("sockets/max", 1) >= 4)
+        set("sockets/max", 4);
 
-	if (me->query("diablo/weapon/id") != query("id")) return;
+    if ((int) query("sockets/max", 1) > 5)
+        set("sockets/max", 5);
 
-	set("sockets", me->query("diablo/weapon/sockets"));
-	set_weapon_desc();
+    if (me->query("diablo/weapon/id") != query("id")) return;
+
+    set("sockets", me->query("diablo/weapon/sockets"));
+    set_weapon_desc();
 }
 
-void setup()
-{
-	init_sockets(this_player());
-	::setup();
+void setup() {
+    init_sockets(this_player());
+    ::setup();
 }
 
-void spec_prop(object me, string socket, int socket_level, int mode)
-{
-int i;
-	if (!valid_gem(socket, socket_level)) return;
-	if (me->query("diablo/weapon/id") != query("id")) return;
-        if (query("weapon_prop/damage") < 20) return;
-	switch (socket) {
-	case "ruby":
-		break;
-	case "topaz":
-		break;
-	case "sapphire":
-		break;
-	case "emerald":
-		break;
-	case "amethyst":
-		if (mode == 1)
-			message_vision(MAG + query("name") + MAG"·¢³öÈáºÍµÄ¹âÃ¢Î§ÈÆ×Å$N£¬¼¤·¢ÁË$PµÄÕ½¶·Á¦£¡\n"NOR, me);
-		else
-			message_vision(MAG"Ëæ×Å×ÏÉ«¹âÃ¢ÂıÂıµÄÉ¢È¥£¬$NµÄÕ½¶·Á¦ÓÖ¸´Ô­ÁË¡£\n"NOR, me);
-		me->add_temp("apply/attack", 30 * socket_level * mode);
-		break;
-	case "diamond":
-		if (mode == 1)
-			message_vision(HIW"Ö»¼ûÒ»µÀ°×¹âÖ±Í¸" + query("name") + HIW"£¬ÍşÁ¦ÃÍÈ»´óÔö£¡\n"NOR, me);
-		else
-			message_vision(HIW"°×¹â½¥½¥ÒşÈëÁË" + query("name") + HIW"¡£\n"NOR, me);
-	me->add_temp("apply/damage", query("weapon_prop/damage") * socket_level * mode /16);
-		break;
-	case "skull":
-		break;
-	}
-	return;
+void spec_prop(object me, string socket, int socket_level, int mode) {
+    int i;
+    if (!valid_gem(socket, socket_level)) return;
+    if (me->query("diablo/weapon/id") != query("id")) return;
+    if (query("weapon_prop/damage") < 20) return;
+    switch (socket) {
+        case "ruby":
+            break;
+        case "topaz":
+            break;
+        case "sapphire":
+            break;
+        case "emerald":
+            break;
+        case "amethyst":
+            if (mode == 1)
+                message_vision(MAG + query("name") + MAG
+            "å‘å‡ºæŸ”å’Œçš„å…‰èŠ’å›´ç»•ç€$Nï¼Œæ¿€å‘äº†$Pçš„æˆ˜æ–—åŠ›ï¼\n"
+            NOR, me);
+            else
+            message_vision(MAG
+            "éšç€ç´«è‰²å…‰èŠ’æ…¢æ…¢çš„æ•£å»ï¼Œ$Nçš„æˆ˜æ–—åŠ›åˆå¤åŸäº†ã€‚\n"
+            NOR, me);
+            me->add_temp("apply/attack", 30 * socket_level * mode);
+            break;
+        case "diamond":
+            if (mode == 1)
+                message_vision(HIW
+            "åªè§ä¸€é“ç™½å…‰ç›´é€" + query("name") + HIW
+            "ï¼Œå¨åŠ›çŒ›ç„¶å¤§å¢ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIW
+            "ç™½å…‰æ¸æ¸éšå…¥äº†" + query("name") + HIW
+            "ã€‚\n"
+            NOR, me);
+            me->add_temp("apply/damage", query("weapon_prop/damage") * socket_level * mode / 16);
+            break;
+        case "skull":
+            break;
+    }
+    return;
 }
 
-int wield()
-{
-	int i, sockets, ret;
-	object me = environment();
+int wield() {
+    int i, sockets, ret;
+    object me = environment();
 
-	if (!(ret = ::wield())) return 0;
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), 1);
-	return ret;
+    if (!(ret = ::wield())) return 0;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), 1);
+    return ret;
 }
 
-int unequip()
-{
-	int i, sockets, ret;
-	object me = environment();
+int unequip() {
+    int i, sockets, ret;
+    object me = environment();
 
-	if (!(ret = ::unequip())) return 0;
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), -1);
-	return ret;
+    if (!(ret = ::unequip())) return 0;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), -1);
+    return ret;
 }
 
-string spec_effect(object me, object victim, int damage_bonus, string socket, int socket_level)
-{
-	int damage;
-	string msg = "";
-	object weapon;
+string spec_effect(object me, object victim, int damage_bonus, string socket, int socket_level) {
+    int damage;
+    string msg = "";
+    object weapon;
 
-	if (!valid_gem(socket, socket_level)) return msg;
-	if (random(100) + me->query_temp("apply/magic") < 70) return msg;
-	if (me->query("diablo/weapon/id") != query("id")) return msg;
-	switch (socket) {
-	case "ruby":
-		msg = HIR"Ò»µÀºì¹âÃÍµÄ»÷ÖĞÁË$n£¬$pÖ»¾õµÃ»ëÉíÒ»Õó¾ŞÍ´£¡\n"NOR;
-		damage = damage_bonus * socket_level / 7;
-if (damage < 1) damage =1;
-if (damage > 300 * socket_level / 7)
-			damage = 300 * socket_level / 7;
-if (damage > (int)victim->query("qi")/7) damage=(int)victim->query("qi")/7;
-if ((int)victim->query("qi")+50 > damage)
-		victim->receive_wound("qi", damage);
-		if (wizardp(me))
-			tell_object(me, sprintf("ÆøÑªÊÜÉË£º%d\n", damage));
-		break;
-	case "topaz":
-		msg = HIY"Ò»µÀ»Æ¹âÃÍµÄ»÷ÖĞÁË$n£¬$pÖ»¾õµÃÒâË¼Ô½À´Ô½Ä£ºı£¡\n"NOR;
-		damage = damage_bonus * socket_level / 15;
-		if (damage > 300 * socket_level / 15)
-			damage = 300 * socket_level / 15;
-if (damage < 1) damage =1;
-if (damage > (int)victim->query("jing")/5) damage=(int)victim->query("jing")/5;
-if ((int)victim->query("jing")+50 > damage)
-{
-		victim->receive_damage("jing", damage);
-		victim->receive_wound("jing", random(damage));
-}
-		if (wizardp(me))
-			tell_object(me, sprintf("jing damage is: %d\n", damage));
-		break;
-	case "sapphire":
-		if (!victim->is_busy())
-			msg = HIB"Ò»µÀÆæÒìµÄÀ¶¹â°üÎ§×Å$n£¬$pÖ»¾õÌìĞıµØ×ª£¬ÉíÌåÎŞ·¨¶¯µ¯£¡\n"NOR;
-			victim->start_busy(random(socket_level) + 3);
-		break;
-	case "emerald":
-		if (!victim->query_condition("emerald_poison")) {
-			msg = HIG"$nÖ»¼ûÒ»µÀÂÌÆøÑ¸ËÙµÄ´ÓÉË¿ÚÉøÈëÁË$pµÄ¾­Âö£¡\n"NOR;
-			victim->apply_condition("emerald_poison", victim->query_condition("emerald_poison") + random(5) + 8);
-			victim->set("emerald_poison", socket_level);
-			victim->apply_condition("snake_poison", victim->query_condition("snake_poison") + random(5) + 8);
-			victim->apply_condition("zhizhu_poison", victim->query_condition("zhizhu_poison") + random(5) + 8);
-			victim->apply_condition("wugong_poison", victim->query_condition("wugong_poison") + random(5) + 8);
-			victim->apply_condition("xiezi_poison", victim->query_condition("xiezi_poison") + random(5) + 8);
-			victim->apply_condition("chanchu_poison", victim->query_condition("chanchu_poison") + random(5) + 8);
+    if (!valid_gem(socket, socket_level)) return msg;
+    if (random(100) + me->query_temp("apply/magic") < 70) return msg;
+    if (me->query("diablo/weapon/id") != query("id")) return msg;
+    switch (socket) {
+        case "ruby":
+            msg = HIR
+            "ä¸€é“çº¢å…‰çŒ›çš„å‡»ä¸­äº†$nï¼Œ$påªè§‰å¾—æµ‘èº«ä¸€é˜µå·¨ç—›ï¼\n"
+            NOR;
+            damage = damage_bonus * socket_level / 7;
+            if (damage < 1) damage = 1;
+            if (damage > 300 * socket_level / 7)
+                damage = 300 * socket_level / 7;
+            if (damage > (int) victim->query("qi") / 7) damage = (int) victim->query("qi") / 7;
+            if ((int) victim->query("qi") + 50 > damage)
+                victim->receive_wound("qi", damage);
+            if (wizardp(me))
+                tell_object(me, sprintf("æ°”è¡€å—ä¼¤ï¼š%d\n", damage));
+            break;
+        case "topaz":
+            msg = HIY
+            "ä¸€é“é»„å…‰çŒ›çš„å‡»ä¸­äº†$nï¼Œ$påªè§‰å¾—æ„æ€è¶Šæ¥è¶Šæ¨¡ç³Šï¼\n"
+            NOR;
+            damage = damage_bonus * socket_level / 15;
+            if (damage > 300 * socket_level / 15)
+                damage = 300 * socket_level / 15;
+            if (damage < 1) damage = 1;
+            if (damage > (int) victim->query("jing") / 5) damage = (int) victim->query("jing") / 5;
+            if ((int) victim->query("jing") + 50 > damage) {
+                victim->receive_damage("jing", damage);
+                victim->receive_wound("jing", random(damage));
+            }
+            if (wizardp(me))
+                tell_object(me, sprintf("jing damage is: %d\n", damage));
+            break;
+        case "sapphire":
+            if (!victim->is_busy())
+                msg = HIB
+            "ä¸€é“å¥‡å¼‚çš„è“å…‰åŒ…å›´ç€$nï¼Œ$påªè§‰å¤©æ—‹åœ°è½¬ï¼Œèº«ä½“æ— æ³•åŠ¨å¼¹ï¼\n"
+            NOR;
+            victim->start_busy(random(socket_level) + 3);
+            break;
+        case "emerald":
+            if (!victim->query_condition("emerald_poison")) {
+                msg = HIG
+                "$nåªè§ä¸€é“ç»¿æ°”è¿…é€Ÿçš„ä»ä¼¤å£æ¸—å…¥äº†$pçš„ç»è„‰ï¼\n"
+                NOR;
+                victim->apply_condition("emerald_poison", victim->query_condition("emerald_poison") + random(5) + 8);
+                victim->set("emerald_poison", socket_level);
+                victim->apply_condition("snake_poison", victim->query_condition("snake_poison") + random(5) + 8);
+                victim->apply_condition("zhizhu_poison", victim->query_condition("zhizhu_poison") + random(5) + 8);
+                victim->apply_condition("wugong_poison", victim->query_condition("wugong_poison") + random(5) + 8);
+                victim->apply_condition("xiezi_poison", victim->query_condition("xiezi_poison") + random(5) + 8);
+                victim->apply_condition("chanchu_poison", victim->query_condition("chanchu_poison") + random(5) + 8);
 
-		}
-		break;
-	case "amethyst":
-		break;
-	case "diamond":
-		if (objectp(weapon = victim->query_temp("weapon"))) {
-			if (random(query("weapon_prop/damage")) > weapon->query("weapon_prop/damage") / 2
-			&& random(me->query("str")) > victim->query("str") / 2
-			&& random(6)==0) {
-				victim->start_busy(random(socket_level) + 3);
-				if (query("skill_type") == "sword" || query("skill_type") == "blade" || query("skill_type") == "axe") {
-					message_vision(HIW"Ö»Ìı¼û¡¸ßÑ¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖĞµÄ" + weapon->query("name") + HIW"ÒÑ¾­±»" + query("name") + HIW"Ï÷ÎªÁ½½Ø£¡\n"NOR, victim);
-					weapon->unequip();
-					weapon->move(environment(victim));
-					weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
-					weapon->set("value", 0);
-					weapon->set("weapon_prop", 0);
-					victim->reset_action();
-				};
-				if (query("skill_type") == "staff" || query("skill_type") == "hammer" || query("skill_type") == "club") {
-					message_vision(HIW "$NÖ»¾õµÃÊÖÖĞ" + weapon->query("name") + HIW"°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n" NOR, victim);
-					weapon->unequip();
-					weapon->move(environment(victim));
-					victim->reset_action();
-				};
-				if (query("skill_type") == "whip") {
-					message_vision(HIW"Ö»Ìı¼û¡¸à§¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖĞµÄ" + weapon->query("name") + HIW"ÒÑ¾­±»" + query("name") + HIW"¾íÎªÁ½½Ø£¡\n"NOR, victim );
-					weapon->unequip();
-					weapon->move(environment(victim));
-					weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
-					weapon->set("value", 0);
-					weapon->set("weapon_prop", 0);
-					victim->reset_action();
-				};
-			}
-else if (random(3)==0)
-{
-victim->start_busy(random(socket_level) + 3);
-		damage = damage_bonus * socket_level / 8;
-		if ((int)victim->query("qi")+100 > damage)
-		victim->receive_damage("qi", damage+socket_level*30);
-		if ((int)victim->query("jing")+100 > damage)
-		victim->receive_damage("jing", random(damage));
-					message_vision(HIW"Ö»¼û°×¹âÒ»ÉÁ£¬$N±»»®³öÁËºÜ³¤µÄÒ»µÀÉË¿Ú£¡\n"NOR, victim);
+            }
+            break;
+        case "amethyst":
+            break;
+        case "diamond":
+            if (objectp(weapon = victim->query_temp("weapon"))) {
+                if (random(query("weapon_prop/damage")) > weapon->query("weapon_prop/damage") / 2
+                    && random(me->query("str")) > victim->query("str") / 2
+                    && random(6) == 0) {
+                    victim->start_busy(random(socket_level) + 3);
+                    if (query("skill_type") == "sword" || query("skill_type") == "blade" ||
+                        query("skill_type") == "axe") {
+                        message_vision(HIW
+                        "åªå¬è§ã€Œå“ã€åœ°ä¸€å£°è½»å“ï¼Œ$Næ‰‹ä¸­çš„" + weapon->query("name") + HIW
+                        "å·²ç»è¢«" + query("name") + HIW
+                        "å‰Šä¸ºä¸¤æˆªï¼\n"
+                        NOR, victim);
+                        weapon->unequip();
+                        weapon->move(environment(victim));
+                        weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
+                        weapon->set("value", 0);
+                        weapon->set("weapon_prop", 0);
+                        victim->reset_action();
+                    };
+                    if (query("skill_type") == "staff" || query("skill_type") == "hammer" ||
+                        query("skill_type") == "club") {
+                        message_vision(HIW
+                        "$Nåªè§‰å¾—æ‰‹ä¸­" + weapon->query("name") + HIW
+                        "æŠŠæŒä¸å®šï¼Œè„±æ‰‹é£å‡ºï¼\n"
+                        NOR, victim);
+                        weapon->unequip();
+                        weapon->move(environment(victim));
+                        victim->reset_action();
+                    };
+                    if (query("skill_type") == "whip") {
+                        message_vision(HIW
+                        "åªå¬è§ã€Œå”°ã€åœ°ä¸€å£°è½»å“ï¼Œ$Næ‰‹ä¸­çš„" + weapon->query("name") + HIW
+                        "å·²ç»è¢«" + query("name") + HIW
+                        "å·ä¸ºä¸¤æˆªï¼\n"
+                        NOR, victim );
+                        weapon->unequip();
+                        weapon->move(environment(victim));
+                        weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
+                        weapon->set("value", 0);
+                        weapon->set("weapon_prop", 0);
+                        victim->reset_action();
+                    };
+                } else if (random(3) == 0) {
+                    victim->start_busy(random(socket_level) + 3);
+                    damage = damage_bonus * socket_level / 8;
+                    if ((int) victim->query("qi") + 100 > damage)
+                        victim->receive_damage("qi", damage + socket_level * 30);
+                    if ((int) victim->query("jing") + 100 > damage)
+                        victim->receive_damage("jing", random(damage));
+                    message_vision(HIW
+                    "åªè§ç™½å…‰ä¸€é—ªï¼Œ$Nè¢«åˆ’å‡ºäº†å¾ˆé•¿çš„ä¸€é“ä¼¤å£ï¼\n"
+                    NOR, victim);
 
-}
-		}
-		break;
-	case "skull":
-		msg = WHT"ºöÈ»¼ä£¬$nÖ»¾õ¹í¿ŞÀÇº¿Éù²»¾øÓÚ¶ú£¬Èı»êÁùÆÇ¶¼¸øÎüÁË³öÈ¥£¡\n"NOR;
-		damage = damage_bonus * socket_level / 15;
-if (damage > 300 * socket_level / 15)
-damage = 300 * socket_level / 15;
-		if (victim->query("qi") < damage)
-			damage = victim->query("qi");
-		if (damage > 0) {
-if ((int)victim->query("qi")+100 > damage)
-{
-if (damage > (int)victim->query("qi")/5) damage=(int)victim->query("qi")/5;
-			victim->receive_damage("qi", damage+socket_level*30);
-			victim->receive_wound("qi", random(damage)+socket_level*30);
-			me->add("qi", damage/2);
-}
-			if (me->query("qi") > me->query("eff_qi"))
-				me->set("qi", me->query("eff_qi"));
-			if (wizardp(me))
-				tell_object(me, sprintf("suck qi: %d\n", damage));
-		}
-		damage = damage_bonus * socket_level / 25;
-		if (victim->query("neili") < damage)
-			damage = victim->query("neili");
-		if (damage >  0) {
-if ((int)victim->query("neili")+100 > damage)
-{
-if (damage > (int)victim->query("qi")/5) damage=(int)victim->query("qi")/5;
-			victim->add("neili", -damage);
-			me->add("neili", damage/2);
-}
-			if (me->query("neili") > me->query("max_neili") * 2)
-				me->set("neili", me->query("max_neili") * 2);
-			if (wizardp(me))
-				tell_object(me, sprintf("suck neili: %d\n", damage));
-		}
-		break;
-	case "windjade":
-		if (!victim->is_busy())
-		{
-			msg = GRN"·ÉÎèÔÚ¿ÕÖĞµÄÎŞĞÎÖ®ÀûÈĞ°üÎ§×Å$n£¬$pÖ»¾õ´ç²½ÄÑĞĞ£¡\n"NOR;
-			victim->start_busy(random(socket_level)+2);
-if (victim->query("apply/dodge",1) >= -200)
-		victim->add_temp("apply/dodge", -(6 * socket_level));
-if (victim->query("apply/defense",1) >= -200)
-		victim->add_temp("apply/defense", -(6 * socket_level));
-		}
-		break;
-	case "firejade":
-		msg = RED"Ò»µÀ»ğ¹âÒ»ÉÁ£¬»®¹ıÁË$n£¬$pÖ»¾õµÃÉË¿ÚÒ»ÕóÌÌÍ´£¡\n"NOR;
-		damage = damage_bonus * socket_level / 8;
-if (damage < 1) damage =1;
-if (damage > 300 * socket_level / 8)
-			damage = 300 * socket_level / 8;
-if (damage > (int)victim->query("qi")/8) damage=(int)victim->query("qi")/8;
-if ((int)victim->query("qi")+10 > damage)
-		victim->receive_wound("qi", damage+socket_level*30);
-		victim->add_temp("apply/defense", -(6 * socket_level));
-		break;
-	case "icejade":
-		msg = CYN"³åÌìµÄº®ÆøÍ»È»°üÎ§ÁË$n£¬$pÖ»¾õµÃÈ«Éí¶¼¶³½©ÁË£¡\n"NOR;
-		damage = damage_bonus * socket_level / 8;
-if (damage < 1) damage =1;
-if (damage > 300 * socket_level / 8)
-			damage = 300 * socket_level / 8;
-if (damage > (int)victim->query("qi")/8) damage=(int)victim->query("qi")/8;
-if ((int)victim->query("qi")+10 > damage)
-		victim->receive_damage("qi", damage+socket_level*30);
-		victim->receive_wound("qi", random(damage)+socket_level*30);
-if ((int)victim->query("jing")+10 > damage)
-		victim->receive_damage("jing", damage);
-		victim->start_busy(random(socket_level) + 2);
-		victim->add_temp("apply/attack", -(6 * socket_level));
-		break;
-	case "thunderjade":
-		msg = MAG"Ò»µÀÉÁµçÒ»ÉÁ¶ø¹ı»÷ÖĞÁË$n£¬$pÖ»¾õµÃÈ«ÉíÓÖÍ´ÓÖÂé£¡\n"NOR;
-		damage = damage_bonus * socket_level / 8;
-if (damage < 1) damage =1;
-if (damage > 300 * socket_level / 8)
-			damage = 300 * socket_level / 8;
-if (damage > (int)victim->query("qi")/8) damage=(int)victim->query("qi")/8;
-		victim->add("neili", -damage+socket_level*30);
-if ((int)victim->query("jing")+10 > damage)
-		victim->start_busy(random(socket_level) + 3);
-		victim->receive_wound("jing", damage);
-		break;
-	case "earthjade":
-		if (!victim->is_busy())
-			msg = YEL"»ÆÉ«µÄÑÌÎí´ÓµØÉÏ³öÏÖ°üÎ§ÁË$n£¬$pÖ»¾õÆøÑªÒ»ÕóÄæÁ÷£¡\n"NOR;
-			victim->start_busy(random(socket_level) + 1);
-victim->apply_condition(du[random(sizeof(du))], socket_level*3);
-victim->apply_condition(du[random(sizeof(du))], socket_level*3);
-victim->apply_condition(du[random(sizeof(du))], socket_level*3);
-victim->apply_condition(du[random(sizeof(du))], socket_level*3);
-victim->apply_condition(du[random(sizeof(du))], socket_level*3);
-victim->apply_condition(du[random(sizeof(du))], socket_level*3);
-		break;
-	}
-	return msg;
+                }
+            }
+            break;
+        case "skull":
+            msg = WHT
+            "å¿½ç„¶é—´ï¼Œ$nåªè§‰é¬¼å“­ç‹¼åšå£°ä¸ç»äºè€³ï¼Œä¸‰é­‚å…­é­„éƒ½ç»™å¸äº†å‡ºå»ï¼\n"
+            NOR;
+            damage = damage_bonus * socket_level / 15;
+            if (damage > 300 * socket_level / 15)
+                damage = 300 * socket_level / 15;
+            if (victim->query("qi") < damage)
+                damage = victim->query("qi");
+            if (damage > 0) {
+                if ((int) victim->query("qi") + 100 > damage) {
+                    if (damage > (int) victim->query("qi") / 5) damage = (int) victim->query("qi") / 5;
+                    victim->receive_damage("qi", damage + socket_level * 30);
+                    victim->receive_wound("qi", random(damage) + socket_level * 30);
+                    me->add("qi", damage / 2);
+                }
+                if (me->query("qi") > me->query("eff_qi"))
+                    me->set("qi", me->query("eff_qi"));
+                if (wizardp(me))
+                    tell_object(me, sprintf("suck qi: %d\n", damage));
+            }
+            damage = damage_bonus * socket_level / 25;
+            if (victim->query("neili") < damage)
+                damage = victim->query("neili");
+            if (damage > 0) {
+                if ((int) victim->query("neili") + 100 > damage) {
+                    if (damage > (int) victim->query("qi") / 5) damage = (int) victim->query("qi") / 5;
+                    victim->add("neili", -damage);
+                    me->add("neili", damage / 2);
+                }
+                if (me->query("neili") > me->query("max_neili") * 2)
+                    me->set("neili", me->query("max_neili") * 2);
+                if (wizardp(me))
+                    tell_object(me, sprintf("suck neili: %d\n", damage));
+            }
+            break;
+        case "windjade":
+            if (!victim->is_busy()) {
+                msg = GRN
+                "é£èˆåœ¨ç©ºä¸­çš„æ— å½¢ä¹‹åˆ©åˆƒåŒ…å›´ç€$nï¼Œ$påªè§‰å¯¸æ­¥éš¾è¡Œï¼\n"
+                NOR;
+                victim->start_busy(random(socket_level) + 2);
+                if (victim->query("apply/dodge", 1) >= -200)
+                    victim->add_temp("apply/dodge", -(6 * socket_level));
+                if (victim->query("apply/defense", 1) >= -200)
+                    victim->add_temp("apply/defense", -(6 * socket_level));
+            }
+            break;
+        case "firejade":
+            msg = RED
+            "ä¸€é“ç«å…‰ä¸€é—ªï¼Œåˆ’è¿‡äº†$nï¼Œ$påªè§‰å¾—ä¼¤å£ä¸€é˜µçƒ«ç—›ï¼\n"
+            NOR;
+            damage = damage_bonus * socket_level / 8;
+            if (damage < 1) damage = 1;
+            if (damage > 300 * socket_level / 8)
+                damage = 300 * socket_level / 8;
+            if (damage > (int) victim->query("qi") / 8) damage = (int) victim->query("qi") / 8;
+            if ((int) victim->query("qi") + 10 > damage)
+                victim->receive_wound("qi", damage + socket_level * 30);
+            victim->add_temp("apply/defense", -(6 * socket_level));
+            break;
+        case "icejade":
+            msg = CYN
+            "å†²å¤©çš„å¯’æ°”çªç„¶åŒ…å›´äº†$nï¼Œ$påªè§‰å¾—å…¨èº«éƒ½å†»åƒµäº†ï¼\n"
+            NOR;
+            damage = damage_bonus * socket_level / 8;
+            if (damage < 1) damage = 1;
+            if (damage > 300 * socket_level / 8)
+                damage = 300 * socket_level / 8;
+            if (damage > (int) victim->query("qi") / 8) damage = (int) victim->query("qi") / 8;
+            if ((int) victim->query("qi") + 10 > damage)
+                victim->receive_damage("qi", damage + socket_level * 30);
+            victim->receive_wound("qi", random(damage) + socket_level * 30);
+            if ((int) victim->query("jing") + 10 > damage)
+                victim->receive_damage("jing", damage);
+            victim->start_busy(random(socket_level) + 2);
+            victim->add_temp("apply/attack", -(6 * socket_level));
+            break;
+        case "thunderjade":
+            msg = MAG
+            "ä¸€é“é—ªç”µä¸€é—ªè€Œè¿‡å‡»ä¸­äº†$nï¼Œ$påªè§‰å¾—å…¨èº«åˆç—›åˆéº»ï¼\n"
+            NOR;
+            damage = damage_bonus * socket_level / 8;
+            if (damage < 1) damage = 1;
+            if (damage > 300 * socket_level / 8)
+                damage = 300 * socket_level / 8;
+            if (damage > (int) victim->query("qi") / 8) damage = (int) victim->query("qi") / 8;
+            victim->add("neili", -damage + socket_level * 30);
+            if ((int) victim->query("jing") + 10 > damage)
+                victim->start_busy(random(socket_level) + 3);
+            victim->receive_wound("jing", damage);
+            break;
+        case "earthjade":
+            if (!victim->is_busy())
+                msg = YEL
+            "é»„è‰²çš„çƒŸé›¾ä»åœ°ä¸Šå‡ºç°åŒ…å›´äº†$nï¼Œ$påªè§‰æ°”è¡€ä¸€é˜µé€†æµï¼\n"
+            NOR;
+            victim->start_busy(random(socket_level) + 1);
+            victim->apply_condition(du[random(sizeof(du))], socket_level * 3);
+            victim->apply_condition(du[random(sizeof(du))], socket_level * 3);
+            victim->apply_condition(du[random(sizeof(du))], socket_level * 3);
+            victim->apply_condition(du[random(sizeof(du))], socket_level * 3);
+            victim->apply_condition(du[random(sizeof(du))], socket_level * 3);
+            victim->apply_condition(du[random(sizeof(du))], socket_level * 3);
+            break;
+    }
+    return msg;
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus)
-{
-	int i, sockets;
-	string msg = "";
+mixed hit_ob(object me, object victim, int damage_bonus) {
+    int i, sockets;
+    string msg = "";
 
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		msg += spec_effect(me, victim, damage_bonus,
-query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)));
-	return msg;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        msg += spec_effect(me, victim, damage_bonus,
+                           query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)));
+    return msg;
 }

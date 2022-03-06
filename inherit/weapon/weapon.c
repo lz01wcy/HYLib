@@ -8,216 +8,205 @@ inherit EQUIP;
 #endif
 
 // axe.c
-varargs void init_axe(int damage, int flag)
-{
-	
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | EDGED);
-	set("skill_type", "axe");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "chop", "slice", "hack" }) );
-	}
+varargs void init_axe(int damage, int flag) {
+
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | EDGED);
+    set("skill_type", "axe");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "chop", "slice", "hack" }));
+    }
 }
 
 
 // blade.c
-varargs void init_blade(int damage, int flag)
-{
-	
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | EDGED);
-	set("skill_type", "blade");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "slash", "slice", "hack" }) );
-	}
+varargs void init_blade(int damage, int flag) {
+
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | EDGED);
+    set("skill_type", "blade");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "slash", "slice", "hack" }));
+    }
 }
 
 // club.c
-varargs void init_club(int damage, int flag)
-{
-	
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | LONG );
-	set("skill_type", "club");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "bash", "crush", "slam" }) );
-	}
+varargs void init_club(int damage, int flag) {
+
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | LONG);
+    set("skill_type", "club");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "bash", "crush", "slam" }));
+    }
 }
 
 // spear.c
 
-varargs void init_spear(int damage, int flag)
-{
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | LONG | SECONDARY);
+varargs void init_spear(int damage, int flag) {
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | LONG | SECONDARY);
 //	set("flag", 1);
-	set("skill_type", "spear");
-	set("rigidity", (int)(damage/4));
-	if( !query("actions") ) {
-		set("actions", (: call_other, WEAPON_D, "query_action" :) );
-		set("verbs", ({ "bash", "thrust", "pierce", "impale", "crush" }) );
-	}
+    set("skill_type", "spear");
+    set("rigidity", (int) (damage / 4));
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "bash", "thrust", "pierce", "impale", "crush" }));
+    }
 }
 
 
 // dagger.c
 
-varargs void init_dagger(int damage, int flag)
-{
-	
+varargs void init_dagger(int damage, int flag) {
 
-	set("weapon_prop/damage", damage);
-	set("flag", flag | EDGED | SECONDARY );
-	set("skill_type", "dagger");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "slice", "pierce", "thrust" }) );
-	}
+
+    set("weapon_prop/damage", damage);
+    set("flag", flag | EDGED | SECONDARY);
+    set("skill_type", "dagger");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "slice", "pierce", "thrust" }));
+    }
 }
 
 // fork.c
 
-varargs void init_fork(int damage, int flag)
-{
-	
+varargs void init_fork(int damage, int flag) {
 
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | POINTED);
-	set("skill_type", "fork");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "thrust" }) );
-	}
+
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | POINTED);
+    set("skill_type", "fork");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "thrust" }));
+    }
 }
 
 // hammer.c
 
-varargs void init_hammer(int damage, int flag)
-{
-	
+varargs void init_hammer(int damage, int flag) {
 
-	set("weapon_prop/damage", damage);
-	set("flag", flag );
-	set("skill_type", "hammer");
-	if( !query("actions") ) {
-		set("actions", (: call_other, WEAPON_D, "query_action" :) );
-		set("verbs", ({ "bash", "crush", "slam" }) );
-	}
+
+    set("weapon_prop/damage", damage);
+    set("flag", flag);
+    set("skill_type", "hammer");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "bash", "crush", "slam" }));
+    }
 }
 
 // staff.c
 
-varargs void init_staff(int damage, int flag)
-{
-	
+varargs void init_staff(int damage, int flag) {
 
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | LONG );
-	set("skill_type", "staff");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "bash", "crush", "slam" }) );
-	}
+
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | LONG);
+    set("skill_type", "staff");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "bash", "crush", "slam" }));
+    }
 }
 
 // sword.c
 
 
-varargs void init_sword(int damage, int flag)
-{
-	
+varargs void init_sword(int damage, int flag) {
 
-	set("weapon_prop/damage", damage);
-	set("flag", (int)flag | EDGED);
-	set("skill_type", "sword");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "slash", "slice", "thrust" }) );
-	}
+
+    set("weapon_prop/damage", damage);
+    set("flag", (int) flag | EDGED);
+    set("skill_type", "sword");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "slash", "slice", "thrust" }));
+    }
 }
 
 // whip.c
 
-varargs void init_whip(int damage, int flag)
-{
-	
+varargs void init_whip(int damage, int flag) {
 
-	set("weapon_prop/damage", damage);
-	set("flag", flag );
-	set("skill_type", "whip");
-	if( !query("actions") ) {
-		set("actions", (: call_other,WEAPON_D, "query_action" :) );
-		set("verbs", ({ "whip" }) );
-	}
+
+    set("weapon_prop/damage", damage);
+    set("flag", flag);
+    set("skill_type", "whip");
+    if (!query("actions")) {
+        set("actions",(: call_other, WEAPON_D, "query_action" :));
+        set("verbs", ({ "whip" }));
+    }
 }
 
 
-int set_desc(int w_lv,string w_or,string w_name)
-{
-	object weapon,me;
-	string w_liang,player_name,make_time;
-	string result1,result2,result3,result4,result;
+int set_desc(int w_lv, string w_or, string w_name) {
+    object weapon, me;
+    string w_liang, player_name, make_time;
+    string result1, result2, result3, result4, result;
 
-	weapon = this_object();
-	me = this_player();
-	w_liang = weapon->query("unit");
-	player_name=me->query("name");
-	make_time=me->query("weapon/Ê±¼ä");
+    weapon = this_object();
+    me = this_player();
+    w_liang = weapon->query("unit");
+    player_name = me->query("name");
+    make_time = me->query("weapon/æ—¶é—´");
 
-	result1="\t      ÕâÊÇÒ»"+w_liang+"ÓÃ"+w_or+"´òÔì¶ø³ÉµÄ"+w_name+"¡£\n";
-	switch(w_or) {
-		case "Ç§ÄêÉñÄ¾":
-			result2="¿´ÆðÀ´ºÚÖÐÍ¸ºì£¬ËÆºõÊ®·Ö¼áÓ²¡£";
-			break;
-		case "º£µ×½ðÄ¸":
-			result2="¿´ÆðÀ´×Ï³Î³ÎµÄ£¬ËÆºõÊ®·Ö³ÁÖØ¡£";
-			break;
-		case "º®Ë¿ÓðÖñ":
-			result2="¿´ÆðÀ´¾§Ó¨±ÌÂÌ£¬Í¸×ÅË¿Ë¿µÄº®Òâ¡£";
-			break;
-		default:
-			break;
-		}
-	switch(w_lv) {
-		case 1:
-			result3="µ«ËÆºõÍþÁ¦»¹Ã»ÓÐ¿ª·¢³öÀ´£¬ÊÇÏ°ÎäÖ®\nÈË³£ÓÃµÄÁ·Îä±øÆ÷¡£\n";
-			break;
-		case 2:
-			result3="µ«ËÆºõÍþÁ¦²¢²»ºÜ´ó£¬ÏóÊÇ½­ºþÈË³£ÓÃ\nµÄ»¤Éí±øÈÐ¡£\n";
-			break;
-		case 3:
-			result3="ÒþÒþµÄÉ¢·¢×ÅÒ»Ë¿ÁîÈË²»°²µÄÆøÏ¢.\n";
-			break;
-		case 4:
-			result3="É¢·¢×ÅÒ»Ë¿ÁîÈË²»°²µÄÆøÏ¢, ÏÔÈ»ÆÕÍ¨\n±øÆ÷ÒÑ²»ÄÜºÍËûÏà±ÈÁË¡£\n";
-			break;
-		case 5:
-			result3="ÏòÍâÉ¢·¢×ÅÒ»Ë¿ÃÔÃÉµÄÎíÆø£¬¾¹ÓÐÒ»ÖÖ\n°ÔÆøÉ¢·¢ÁË³öÀ´¡£\n";
-			break;
-		case 6:
-			result3="Ò»¹É°ÔÆøÖ±³åÏöºº£¬Ö±½ÐÉñ¾ª¹íÆü.\n";
-			break;
-		case 7:
-			result3="°ÔÆøËÆºõÓÐËùÊÕÁ²£¬µ«¸ü¶àµÄÊÇÓÐÁËÒ»¹É\nº§ÈËµÄìåÆø¡£\n";
-			break;
-		case 8:
-			result3="³åÌìµÄìåÆø½ÐÈË¿´ÁË²»ÓÉÐÄ¾ªµ¨Õ½£¬²»Ô¸\nÔÙ¿´µÚ¶þÑÛ¡£\n";
-			break;
-		case 9:
-			result3="ìåÆøËÆºõÏ÷¼õÁË²»ÉÙ£¬Ò»¹ÉÎÂºÍµÄÍõÕßÖ®\nÆøÍ¸ÁË³öÀ´¡£\n";
-			break;
-		case 10:
-			result3="Ò»¹ÉÎÂºÍµÄÍõÕßÖ®ÆøÓÆÓÆµÄÉ¢·¢ÁË³öÀ´.\n";
-			break;
-		default:
-			result3="Ò»ÖÖ×¯ÑÏ£¬ÎÂºÍ£¬ÁÝÈ»¶ø²»¿ÉÇÖ·¸µÄÆøÏ¢ÈÃ\nÈË²»¸ÒÓÐÒ»Ë¿ÙôäÂÖ®Òâ, ËüÒÑ¾­·µÆÓ¹éÕæ£¬³ÉÎªÕæÕýµÄÉÏ¹ÅÉñ±ø. \n";
-		}
+    result1 = "\t      è¿™æ˜¯ä¸€" + w_liang + "ç”¨" + w_or + "æ‰“é€ è€Œæˆçš„" + w_name + "ã€‚\n";
+    switch (w_or) {
+        case "åƒå¹´ç¥žæœ¨":
+            result2 = "çœ‹èµ·æ¥é»‘ä¸­é€çº¢ï¼Œä¼¼ä¹Žååˆ†åšç¡¬ã€‚";
+            break;
+        case "æµ·åº•é‡‘æ¯":
+            result2 = "çœ‹èµ·æ¥ç´«æ¾„æ¾„çš„ï¼Œä¼¼ä¹Žååˆ†æ²‰é‡ã€‚";
+            break;
+        case "å¯’ä¸ç¾½ç«¹":
+            result2 = "çœ‹èµ·æ¥æ™¶èŽ¹ç¢§ç»¿ï¼Œé€ç€ä¸ä¸çš„å¯’æ„ã€‚";
+            break;
+        default:
+            break;
+    }
+    switch (w_lv) {
+        case 1:
+            result3 = "ä½†ä¼¼ä¹Žå¨åŠ›è¿˜æ²¡æœ‰å¼€å‘å‡ºæ¥ï¼Œæ˜¯ä¹ æ­¦ä¹‹\näººå¸¸ç”¨çš„ç»ƒæ­¦å…µå™¨ã€‚\n";
+            break;
+        case 2:
+            result3 = "ä½†ä¼¼ä¹Žå¨åŠ›å¹¶ä¸å¾ˆå¤§ï¼Œè±¡æ˜¯æ±Ÿæ¹–äººå¸¸ç”¨\nçš„æŠ¤èº«å…µåˆƒã€‚\n";
+            break;
+        case 3:
+            result3 = "éšéšçš„æ•£å‘ç€ä¸€ä¸ä»¤äººä¸å®‰çš„æ°”æ¯.\n";
+            break;
+        case 4:
+            result3 = "æ•£å‘ç€ä¸€ä¸ä»¤äººä¸å®‰çš„æ°”æ¯, æ˜¾ç„¶æ™®é€š\nå…µå™¨å·²ä¸èƒ½å’Œä»–ç›¸æ¯”äº†ã€‚\n";
+            break;
+        case 5:
+            result3 = "å‘å¤–æ•£å‘ç€ä¸€ä¸è¿·è’™çš„é›¾æ°”ï¼Œç«Ÿæœ‰ä¸€ç§\néœ¸æ°”æ•£å‘äº†å‡ºæ¥ã€‚\n";
+            break;
+        case 6:
+            result3 = "ä¸€è‚¡éœ¸æ°”ç›´å†²éœ„æ±‰ï¼Œç›´å«ç¥žæƒŠé¬¼æ³£.\n";
+            break;
+        case 7:
+            result3 = "éœ¸æ°”ä¼¼ä¹Žæœ‰æ‰€æ”¶æ•›ï¼Œä½†æ›´å¤šçš„æ˜¯æœ‰äº†ä¸€è‚¡\néª‡äººçš„æˆ¾æ°”ã€‚\n";
+            break;
+        case 8:
+            result3 = "å†²å¤©çš„æˆ¾æ°”å«äººçœ‹äº†ä¸ç”±å¿ƒæƒŠèƒ†æˆ˜ï¼Œä¸æ„¿\nå†çœ‹ç¬¬äºŒçœ¼ã€‚\n";
+            break;
+        case 9:
+            result3 = "æˆ¾æ°”ä¼¼ä¹Žå‰Šå‡äº†ä¸å°‘ï¼Œä¸€è‚¡æ¸©å’Œçš„çŽ‹è€…ä¹‹\næ°”é€äº†å‡ºæ¥ã€‚\n";
+            break;
+        case 10:
+            result3 = "ä¸€è‚¡æ¸©å’Œçš„çŽ‹è€…ä¹‹æ°”æ‚ æ‚ çš„æ•£å‘äº†å‡ºæ¥.\n";
+            break;
+        default:
+            result3 = "ä¸€ç§åº„ä¸¥ï¼Œæ¸©å’Œï¼Œå‡›ç„¶è€Œä¸å¯ä¾µçŠ¯çš„æ°”æ¯è®©\näººä¸æ•¢æœ‰ä¸€ä¸äºµæ¸Žä¹‹æ„, å®ƒå·²ç»è¿”æœ´å½’çœŸï¼Œæˆä¸ºçœŸæ­£çš„ä¸Šå¤ç¥žå…µ. \n";
+    }
 
-	result4="ÉÏÃæÓÃÐ¡×­¿Ì×ÅÒ»ÐÐÐ¡×Ö£º"+player_name+"Ôì"+"\n";
-	result=result1+result2+result3+result4;
-	weapon->set("long",result);
+    result4 = "ä¸Šé¢ç”¨å°ç¯†åˆ»ç€ä¸€è¡Œå°å­—ï¼š" + player_name + "é€ " + "\n";
+    result = result1 + result2 + result3 + result4;
+    weapon->set("long", result);
 
 }

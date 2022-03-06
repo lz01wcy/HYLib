@@ -2,35 +2,38 @@
 // Last modified by winder 2003.10.10
 
 inherit NPC;
+
 #include <ansi.h>
-void create()
-{
-	set_name("Ö£¿ËË¬", ({ "zheng keshuang", "zheng" }));
-	set("title", HIC"Ò»µÈº£³Î¹«"NOR);
-	set("long", "ÕâÊÇÒ»¸ö¹­ÑüÇú±³µÄÀÏÍ·¶ù£¬Í··¢»¨°×£¬ÈÝÉ«ã¾ã²²»¿°£¬\n"
-		"×ÐÏ¸ÔÙ¿´£¬ÕâÈËÄê¼Íµ¹Ò²²»ÔõÃ´ÀÏ£¬Ö»ÊÇ³îÃ¼¿àÁ³£¬ÑÛ½Ç\n"
-		"±ß¶¼ÊÇÖåÎÆ£¬ò¤ÏÂÁôÁË¶ÌÐë£¬Ò²ÒÑ»¨°×£¬ÔÙÄýÉñÒ»¿´£¬È´\n"
-		"²»ÊÇÖ£¿ËË¬ÊÇË­\n");
-	set("gender", "ÄÐÐÔ");
-	set("age", 32);
-	set("attitude", "peaceful");
-	set("shen_type", 1);
-	set("str", 50);
-	set("int", 40);
-	set("con", 40);
-	set("per", 40);
-	
-	set("neili", 300);
-	set("max_neili", 300);
 
-	set("combat_exp", 100000);
+void create() {
+    set_name("éƒ‘å…‹çˆ½", ({ "zheng keshuang", "zheng" }));
+    set("title", HIC
+    "ä¸€ç­‰æµ·æ¾„å…¬"
+    NOR);
+    set("long", "è¿™æ˜¯ä¸€ä¸ªå¼“è…°æ›²èƒŒçš„è€å¤´å„¿ï¼Œå¤´å‘èŠ±ç™½ï¼Œå®¹è‰²æ†”æ‚´ä¸å ªï¼Œ\n"
+                "ä»”ç»†å†çœ‹ï¼Œè¿™äººå¹´çºªå€’ä¹Ÿä¸æ€Žä¹ˆè€ï¼Œåªæ˜¯æ„çœ‰è‹¦è„¸ï¼Œçœ¼è§’\n"
+                "è¾¹éƒ½æ˜¯çš±çº¹ï¼Œé¢ä¸‹ç•™äº†çŸ­é¡»ï¼Œä¹Ÿå·²èŠ±ç™½ï¼Œå†å‡ç¥žä¸€çœ‹ï¼Œå´\n"
+                "ä¸æ˜¯éƒ‘å…‹çˆ½æ˜¯è°\n");
+    set("gender", "ç”·æ€§");
+    set("age", 32);
+    set("attitude", "peaceful");
+    set("shen_type", 1);
+    set("str", 50);
+    set("int", 40);
+    set("con", 40);
+    set("per", 40);
 
-	set_skill("unarmed", 100);
-	set_skill("force", 100);
-	set_skill("dodge", 100);
-	set_skill("parry", 100);
+    set("neili", 300);
+    set("max_neili", 300);
 
-	setup();
-	carry_object("/d/beijing/obj/goldcloth")->wear();
+    set("combat_exp", 100000);
+
+    set_skill("unarmed", 100);
+    set_skill("force", 100);
+    set_skill("dodge", 100);
+    set_skill("parry", 100);
+
+    setup();
+    carry_object("/d/beijing/obj/goldcloth")->wear();
 }
 

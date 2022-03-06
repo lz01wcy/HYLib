@@ -1,34 +1,36 @@
 // gaoshou.c
 #include <ansi.h>
 #include <login.h>
+
 inherit ITEM;
 //inherit F_AUTOLOAD;
 inherit F_AUTOLOAD;
-void create()
-{
-        set_name(HIR"¸ßÊÖÅÅÐÐ°ñ"NOR, ({ "stone" }) );
-        set("long","ÅÅÐÐ°ñ\n");
-        set("unit", "±¾");
-        set("value",4000);
+
+void create() {
+    set_name(HIR
+    "é«˜æ‰‹æŽ’è¡Œæ¦œ"
+    NOR, ({ "stone" }));
+    set("long", "æŽ’è¡Œæ¦œ\n");
+    set("unit", "æœ¬");
+    set("value", 4000);
 }
 
-//int query_autoload() { return 1; }//autoload±ØÐë
-int query_autoload() { return 1; }//autoload±ØÐë
+//int query_autoload() { return 1; }//autoloadå¿…é¡»
+int query_autoload() { return 1; }//autoloadå¿…é¡»
 
-void init()
-{
-        add_action("do_cha", "chabang");
+void init() {
+    add_action("do_cha", "chabang");
 }
-int do_cha(string arg)
-{
-        string* gaoshoulist;
-        gaoshoulist = explode(read_file(GAOSHOU), "\n");
+
+int do_cha(string arg) {
+    string *gaoshoulist;
+    gaoshoulist = explode(read_file(GAOSHOU), "\n");
 //for(int i=0; i<sizeof(gaoshoulist); i++)
-        for(int i=0; i<sizeof(gaoshoulist); i++)
+    for (int i = 0; i < sizeof(gaoshoulist); i++)
 
-                printf(gaoshoulist);
-                printf(gaoshoulist, '\n');
+        printf(gaoshoulist);
+    printf(gaoshoulist, '\n');
 
-        write("\n");
-        return 1;
+    write("\n");
+    return 1;
 }

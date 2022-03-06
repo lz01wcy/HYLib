@@ -1,52 +1,58 @@
-// zhenwu-jian.c ÕæÎä½£
+// zhenwu-jian.c çœŸæ­¦å‰‘
 #include <ansi.h>
 #include <weapon.h>
+
 inherit SWORD;
 inherit F_UNIQUE;
 
-void create()
-{
-        set_name(HIW"ÕæÎä½£"NOR, ({"zhenwu jian", "sword", "zhenwu"}));
-        set_weight(15000);
+void create() {
+    set_name(HIW
+    "çœŸæ­¦å‰‘"
+    NOR, ({ "zhenwu jian", "sword", "zhenwu" }));
+    set_weight(15000);
 
-        if (clonep())
-                set_default_object(__FILE__);
-        else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°ÑºÁ²»ÆğÑÛµÄ¹Å½£,½£Éí²»¹æÔòµÄ»¨ÎÆÉÏËÆºõ»¹´øÓĞĞ©ÌúĞâ,½£·æÉÏ¾ÓÈ»»¹ÓĞ¼¸¸öÈ±¿Ú¡£\n");
-                set("unique", 1);
-                set("value", 0);
-                set("no_put", 1);
-                set("no_give", 1);
-                set("no_get", 1);
-                set("no_steal", 1);
-                set("rigidity", 5);
-                set("sharpness", 3);
-                set("material", "blacksteel");
-                set("weapon_prop/dodge", 2);
-                set("weapon_prop/parry", 3);
-                set("treasure",1);       
-                set("wield_neili", 300);
-                set("wield_maxneili", 700);
-                set("wield_str", 22);        
-                set("skill", ([
-                        "name": "sword",
-                        "exp_required": 50000,
-                        "difficulty": 25,
-                        "min_skill":  10,
-                             "max_skill": 150,              
-                ]) );
-                set("wield_msg",HIW"$N[àá]µÄÒ»Éù³é³öÒ»°ÑÕæÎä½£,¿ÕÆøÖĞ¶ÙÊ±³äÂúÁËÎŞ±ßµÄÉ±Æø¡£\n"NOR);
-                set("unwield_msg",HIW"$N°ÑÊÖÖĞµÄ±¦½£²åÈë½£ÇÊ¡£ËÄÖÜµÄÉ±ÆøÒ²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
-        }
-     init_sword(600);
-        setup();
-}       
-void owner_is_killed()
-{
-       destruct(this_object());
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "æŠŠ");
+        set("long", "ä¸€æŠŠæ¯«ä¸èµ·çœ¼çš„å¤å‰‘,å‰‘èº«ä¸è§„åˆ™çš„èŠ±çº¹ä¸Šä¼¼ä¹è¿˜å¸¦æœ‰äº›é“é”ˆ,å‰‘é”‹ä¸Šå±…ç„¶è¿˜æœ‰å‡ ä¸ªç¼ºå£ã€‚\n");
+        set("unique", 1);
+        set("value", 0);
+        set("no_put", 1);
+        set("no_give", 1);
+        set("no_get", 1);
+        set("no_steal", 1);
+        set("rigidity", 5);
+        set("sharpness", 3);
+        set("material", "blacksteel");
+        set("weapon_prop/dodge", 2);
+        set("weapon_prop/parry", 3);
+        set("treasure", 1);
+        set("wield_neili", 300);
+        set("wield_maxneili", 700);
+        set("wield_str", 22);
+        set("skill",([
+        "name": "sword",
+                "exp_required": 50000,
+                "difficulty": 25,
+                "min_skill":  10,
+                "max_skill": 150,
+        ]));
+        set("wield_msg", HIW
+        "$N[å™Œ]çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠçœŸæ­¦å‰‘,ç©ºæ°”ä¸­é¡¿æ—¶å……æ»¡äº†æ— è¾¹çš„æ€æ°”ã€‚\n"
+        NOR);
+        set("unwield_msg", HIW
+        "$NæŠŠæ‰‹ä¸­çš„å®å‰‘æ’å…¥å‰‘é˜ã€‚å››å‘¨çš„æ€æ°”ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"
+        NOR);
+    }
+    init_sword(600);
+    setup();
 }
-int query_autoload()
-{
-       return 1;
+
+void owner_is_killed() {
+    destruct(this_object());
+}
+
+int query_autoload() {
+    return 1;
 }

@@ -1,4 +1,4 @@
-// fanliangyi-dao.c ·´Á½ÒÇµ¶·¨
+// fanliangyi-dao.c åä¸¤ä»ªåˆ€æ³•
 
 #include <ansi.h>
 #include <skill.h>
@@ -8,271 +8,264 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÊÖÖĞ$wĞ±Ö¸£¬Ò»ÕĞ¡¸»ìãçÒ»ÆÆ¡¹£¬·´ÉíÒ»¶Ù£¬Ò»µ¶Ïò$nµÄ$lÁÃÈ¥",
-        "force" : 120,
-        "dodge" : 10,
-        "damage" : 75,
-        "lvl" : 0,
-        "skill_name" : "»ìãçÒ»ÆÆ",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$NÒ»ÕĞ¡¸Ì«ÒÒÉúÃÈ¡¹£¬×óÓÒÍÈĞéµã£¬$wÒ»ÌáÒ»ÊÕ£¬Æ½ÈĞ»ÓÏò$nµÄ¾±²¿",
-        "force" : 140,
-        "dodge" : 10,
-        "damage" : 55,
-        "lvl" : 20,
-        "skill_name" : "Ì«ÒÒÉúÃÈ",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$NÕ¹ÉíĞé²½£¬ÌáÑüÔ¾Âä£¬Ò»ÕĞ¡¸Á½ÒÇºÏµÂ¡¹£¬µ¶·æ»¯×÷Á½¹ÉÕ¶Ïò$n",
-        "force" : 160,
-        "dodge" : 15,
-        "damage" : 55,
-        "lvl" : 40,
-        "skill_name" : "Á½ÒÇºÏµÂ",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$NÒ»ÕĞ¡¸ÈÕÔÂ»ŞÃ÷¡¹£¬$w´ó¿ª´óãØ£¬×ÔÉÏ¶øÏÂ»®³öÒ»¸ö´ó»¡£¬±ÊÖ±ÅüÏò$n",
-        "force" : 180,
-        "dodge" : 15,
-        "damage" : 25,
-        "lvl" : 60,
-        "skill_name" : "ÈÕÔÂ»ŞÃ÷",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$NÊÖÖĞ$wÒ»³Á£¬Ò»ÕĞ¡¸ÎŞÉ«ÎŞÏà¡¹£¬Ë«ÊÖ³ÖÈĞÀ¹Ñü·´ÇĞ£¬¿³Ïò$nµÄĞØ¿Ú",
-        "force" : 200,
-        "dodge" : 10,
-        "damage" : 30,
-        "damage" : 75,
-        "lvl" : 80,
-        "skill_name" : "ÎŞÉ«ÎŞÏà",
-        "damage_type" : "¸îÉË"
-]),
-([      "action" : "$N»ÓÎè$w£¬Ê¹³öÒ»ÕĞ¡¸Íò½Ù²»¸´¡¹£¬ÉÏÅüÏÂÁÃ£¬×óµ²ÓÒ¿ª£¬ÆëÆëÕÖÏò$n",
-        "force" : 250,
-        "dodge" : 15,
-        "damage" : 75,
-        "lvl" : 100,
-        "skill_name" : "Íò½Ù²»¸´",
-        "damage_type" : "¸îÉË"
-])
+    ([      "action" : "$Næ‰‹ä¸­$wæ–œæŒ‡ï¼Œä¸€æ‹›ã€Œæ··æ²Œä¸€ç ´ã€ï¼Œåèº«ä¸€é¡¿ï¼Œä¸€åˆ€å‘$nçš„$læ’©å»",
+            "force" : 120,
+            "dodge" : 10,
+            "damage" : 75,
+            "lvl" : 0,
+            "skill_name" : "æ··æ²Œä¸€ç ´",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$Nä¸€æ‹›ã€Œå¤ªä¹™ç”ŸèŒã€ï¼Œå·¦å³è…¿è™šç‚¹ï¼Œ$wä¸€æä¸€æ”¶ï¼Œå¹³åˆƒæŒ¥å‘$nçš„é¢ˆéƒ¨",
+            "force" : 140,
+            "dodge" : 10,
+            "damage" : 55,
+            "lvl" : 20,
+            "skill_name" : "å¤ªä¹™ç”ŸèŒ",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$Nå±•èº«è™šæ­¥ï¼Œæè…°è·ƒè½ï¼Œä¸€æ‹›ã€Œä¸¤ä»ªåˆå¾·ã€ï¼Œåˆ€é”‹åŒ–ä½œä¸¤è‚¡æ–©å‘$n",
+            "force" : 160,
+            "dodge" : 15,
+            "damage" : 55,
+            "lvl" : 40,
+            "skill_name" : "ä¸¤ä»ªåˆå¾·",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$Nä¸€æ‹›ã€Œæ—¥æœˆæ™¦æ˜ã€ï¼Œ$wå¤§å¼€å¤§é˜–ï¼Œè‡ªä¸Šè€Œä¸‹åˆ’å‡ºä¸€ä¸ªå¤§å¼§ï¼Œç¬”ç›´åŠˆå‘$n",
+            "force" : 180,
+            "dodge" : 15,
+            "damage" : 25,
+            "lvl" : 60,
+            "skill_name" : "æ—¥æœˆæ™¦æ˜",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$Næ‰‹ä¸­$wä¸€æ²‰ï¼Œä¸€æ‹›ã€Œæ— è‰²æ— ç›¸ã€ï¼ŒåŒæ‰‹æŒåˆƒæ‹¦è…°ååˆ‡ï¼Œç å‘$nçš„èƒ¸å£",
+            "force" : 200,
+            "dodge" : 10,
+            "damage" : 30,
+            "damage" : 75,
+            "lvl" : 80,
+            "skill_name" : "æ— è‰²æ— ç›¸",
+            "damage_type" : "å‰²ä¼¤"
+    ]),
+    ([      "action" : "$NæŒ¥èˆ$wï¼Œä½¿å‡ºä¸€æ‹›ã€Œä¸‡åŠ«ä¸å¤ã€ï¼Œä¸ŠåŠˆä¸‹æ’©ï¼Œå·¦æŒ¡å³å¼€ï¼Œé½é½ç½©å‘$n",
+            "force" : 250,
+            "dodge" : 15,
+            "damage" : 75,
+            "lvl" : 100,
+            "skill_name" : "ä¸‡åŠ«ä¸å¤",
+            "damage_type" : "å‰²ä¼¤"
+    ])
 });
 
 
-int valid_enable(string usage) { return usage == "blade" || usage == "parry" ||
-usage == "array"; }
+int valid_enable(string usage) {
+    return usage == "blade" || usage == "parry" ||
+           usage == "array";
+}
 
 int form_array(object leader)
 //int perform(object leader, object target)
 {
-        object *member,ob, weapon;
-        int i,j,n;
-        int max,min,skill;
+    object *member, ob, weapon;
+    int i, j, n;
+    int max, min, skill;
 
-        member = leader->query_team();
-        if( sizeof(member) != 2 )
-                return notify_fail("·´Á½ÒÇµ¶¹²ĞèÁ½ÈË£¬ÉÙÒ»¸ö¶àÒ»¸ö¶¼²»ĞĞ¡£\n");
+    member = leader->query_team();
+    if (sizeof(member) != 2)
+        return notify_fail("åä¸¤ä»ªåˆ€å…±éœ€ä¸¤äººï¼Œå°‘ä¸€ä¸ªå¤šä¸€ä¸ªéƒ½ä¸è¡Œã€‚\n");
 
-        j=sizeof (member);
-        for (i=0;i<j;i++)
-        {
-                ob=member[i];
-                if (!ob||!living(ob)||!ob->is_character())
-                {
-                        return notify_fail("ÄãÏëºÍË­Í¬Ê¹·´Á½ÒÇµ¶£¿\n");
-                }
-                if (ob->query_temp("array/name"))
-                {
-                        return notify_fail("ÒÑ¾­×é³Éµ¶ÕóÁË¡£\n");
-                }
-                if (environment(leader)!=environment(ob))
-                {
-                        return notify_fail("ÈËÊı²»¹»Á½ÈË¡£\n");
-                }
-                if (!ob->query_skill("fanliangyi-dao",1))
-                {
-                        return notify_fail(ob->name()+"»¹²»»á·´Á½ÒÇµ¶·¨¡£\n");
-                }
-                if (ob->is_ghost())
-                {
-                        return notify_fail("Ö»ÓĞÑô¼äµÄÈË²ÅÄÜ×éµ¶Õó¡£\n");
-                }
-
-                if( (int)ob->query("max_neili") < 50 )
-                        return notify_fail(ob->query("name")+"µÄÄÚÁ¦²»¹»¡£\n");
-
-                if( (string)ob->query_skill_mapped("force")!= "zixia-shengong")
-                        return notify_fail(ob->query("name")+"Ã»ÓĞÊ¹ÓÃ»ªÉ½ÅÉÄÚ¹¦¡£\n");
-
-                if( !(weapon = ob->query_temp("weapon"))
-                ||      (string)weapon->query("skill_type") != "blade" )
-                        return notify_fail(ob->query("name")+"±ØĞëÄÃ°Ñµ¶×öÎäÆ÷¡£\n");
-
-                if( (int)ob->query_skill("fanliangyi-dao",1)<30)
-                        return notify_fail(ob->query("name")+"µÄ·´Á½ÒÇµ¶·¨»¹²»¹»ÊìÁ·¡£\n");
-
-                if( (string)ob->query_skill_mapped("blade")!="fanliangyi-dao")
-                        return notify_fail(ob->query("name")+"±ØĞëÊ¹ÓÃ·´Á½ÒÇµ¶·¨¡£\n");
-
+    j = sizeof(member);
+    for (i = 0; i < j; i++) {
+        ob = member[i];
+        if (!ob || !living(ob) || !ob->is_character()) {
+            return notify_fail("ä½ æƒ³å’Œè°åŒä½¿åä¸¤ä»ªåˆ€ï¼Ÿ\n");
         }
+        if (ob->query_temp("array/name")) {
+            return notify_fail("å·²ç»ç»„æˆåˆ€é˜µäº†ã€‚\n");
+        }
+        if (environment(leader) != environment(ob)) {
+            return notify_fail("äººæ•°ä¸å¤Ÿä¸¤äººã€‚\n");
+        }
+        if (!ob->query_skill("fanliangyi-dao", 1)) {
+            return notify_fail(ob->name() + "è¿˜ä¸ä¼šåä¸¤ä»ªåˆ€æ³•ã€‚\n");
+        }
+        if (ob->is_ghost()) {
+            return notify_fail("åªæœ‰é˜³é—´çš„äººæ‰èƒ½ç»„åˆ€é˜µã€‚\n");
+        }
+
+        if ((int) ob->query("max_neili") < 50)
+            return notify_fail(ob->query("name") + "çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
+
+        if ((string) ob->query_skill_mapped("force") != "zixia-shengong")
+            return notify_fail(ob->query("name") + "æ²¡æœ‰ä½¿ç”¨åå±±æ´¾å†…åŠŸã€‚\n");
+
+        if (!(weapon = ob->query_temp("weapon"))
+            || (string) weapon->query("skill_type") != "blade")
+            return notify_fail(ob->query("name") + "å¿…é¡»æ‹¿æŠŠåˆ€åšæ­¦å™¨ã€‚\n");
+
+        if ((int) ob->query_skill("fanliangyi-dao", 1) < 30)
+            return notify_fail(ob->query("name") + "çš„åä¸¤ä»ªåˆ€æ³•è¿˜ä¸å¤Ÿç†Ÿç»ƒã€‚\n");
+
+        if ((string) ob->query_skill_mapped("blade") != "fanliangyi-dao")
+            return notify_fail(ob->query("name") + "å¿…é¡»ä½¿ç”¨åä¸¤ä»ªåˆ€æ³•ã€‚\n");
+
+    }
 
 //get the average array skill of the team
-        n=0;
-        for (i=0;i<j;i++)
-        {
-                ob=member[i];
-                n+=(int)ob->query_skill("fanliangyi-dao",1);
-        }
-        n/=2;
+    n = 0;
+    for (i = 0; i < j; i++) {
+        ob = member[i];
+        n += (int) ob->query_skill("fanliangyi-dao", 1);
+    }
+    n /= 2;
 
 //get the difference of the array skill,
 //first get the max and mix skill level of the array
-        max=member[0]->query_skill("fanliangyi-dao",1);
-        min=max;
-        for (i=0;i<j;i++)
-        {
-                skill=member[i]->query_skill("fanliangyi-dao",1);
-                if(skill>max)
-                        max=skill;
-                else if(skill<min)
-                        min=skill;
-        }
+    max = member[0]->query_skill("fanliangyi-dao", 1);
+    min = max;
+    for (i = 0; i < j; i++) {
+        skill = member[i]->query_skill("fanliangyi-dao", 1);
+        if (skill > max)
+            max = skill;
+        else if (skill < min)
+            min = skill;
+    }
 
 //and the leader is important
-        n += leader->query_skill("fanliangyi-dao", 1) * 5;
-        n /= max - min + 1;
-if (n> 200) n=200;
-if (n< 80) n=80;	
-        for (i=0;i<j;i++)
-        {
-                ob=member[i];
-                ob->set_temp("no_quit",1);
+    n += leader->query_skill("fanliangyi-dao", 1) * 5;
+    n /= max - min + 1;
+    if (n > 200) n = 200;
+    if (n < 80) n = 80;
+    for (i = 0; i < j; i++) {
+        ob = member[i];
+        ob->set_temp("no_quit", 1);
 
-                ob->set_temp("array/name","fanliangyi-dao");
-                ob->set_temp("array/level",n);
+        ob->set_temp("array/name", "fanliangyi-dao");
+        ob->set_temp("array/level", n);
 
-                ob->add_temp("apply/attack",n);
-                ob->add_temp("apply/defense", n);
-                ob->add_temp("apply/damage",n);
-                ob->add_temp("apply/armor", n);
-        }
-        message_vision( HIG "$NÂÊÁì$NÕ¾¶¨Á½ÒÇ·½Î»£¬¶ÙÊ±Á½ÈËÖ®¼äÏÔµÃ»ëÈ»Ìì³É¡¢ºÁÎŞÆÆÕÀ!\n" NOR, leader);
-        return 1;
+        ob->add_temp("apply/attack", n);
+        ob->add_temp("apply/defense", n);
+        ob->add_temp("apply/damage", n);
+        ob->add_temp("apply/armor", n);
+    }
+    message_vision(HIG
+    "$Nç‡é¢†$Nç«™å®šä¸¤ä»ªæ–¹ä½ï¼Œé¡¿æ—¶ä¸¤äººä¹‹é—´æ˜¾å¾—æµ‘ç„¶å¤©æˆã€æ¯«æ— ç ´ç»½!\n"
+    NOR, leader);
+    return 1;
 }
 
-int dismiss_array(object person)
-{
-        int i,j,n;
-        object *member,ob;
+int dismiss_array(object person) {
+    int i, j, n;
+    object *member, ob;
 
-        member = person->query_team();
-        j=sizeof(member);
-        n=person->query_temp("array/level");
-        for (i=0;i<j;i++)
-        {
-                ob=member[i];
-                ob->delete_temp("array");
-                ob->add_temp("apply/attack",-n);
-                ob->add_temp("apply/damage",-n);
-                ob->add_temp("apply/defense",-n);
-                ob->add_temp("apply/armor", -n);
-                tell_object(ob,"µ¶Õó½âÉ¢ÁË\n");
-        }
+    member = person->query_team();
+    j = sizeof(member);
+    n = person->query_temp("array/level");
+    for (i = 0; i < j; i++) {
+        ob = member[i];
+        ob->delete_temp("array");
+        ob->add_temp("apply/attack", -n);
+        ob->add_temp("apply/damage", -n);
+        ob->add_temp("apply/defense", -n);
+        ob->add_temp("apply/armor", -n);
+        tell_object(ob, "åˆ€é˜µè§£æ•£äº†\n");
+    }
 }
 
 //if the leader kills enemy, then all members in the array kill enemy
-int array_kill(object leader, object enemy)
-{
-        object *member, ob;
-        int i,j;
-        member=leader->query_team();
-        j=sizeof(member);
+int array_kill(object leader, object enemy) {
+    object *member, ob;
+    int i, j;
+    member = leader->query_team();
+    j = sizeof(member);
 
-        for(i=0;i<j;i++) {
-                ob=member[i];
-                ob->kill_ob(enemy);
+    for (i = 0; i < j; i++) {
+        ob = member[i];
+        ob->kill_ob(enemy);
+    }
+
+    return 1;
+}
+
+int effective_level() { return 10; }
+
+int valid_learn(object me) {
+    if ((int) me->query("max_neili") < 50)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
+    if ((int) me->query_skill("zixia-shengong", 1) < 10)
+        return notify_fail("ä½ çš„ã€Œç´«éœç¥åŠŸã€ç«å€™å¤ªæµ…ã€‚\n");
+    return 1;
+}
+
+string query_skill_name(int level) {
+    int i;
+    for (i = sizeof(action) - 1; i >= 0; i--)
+        if (level >= action[i]["lvl"])
+            return action[i]["skill_name"];
+}
+
+mapping query_action(object me, object weapon) {
+    int i, level;
+    level = (int) me->query_skill("fanliangyi-dao", 1);
+    for (i = sizeof(action); i > 0; i--)
+        if (level > action[i - 1]["lvl"])
+            return action[NewRandom(i, 20, level / 5)];
+}
+
+int practice_skill(object me) {
+    object weapon;
+
+    if (!me->query_skill("zixia-shengong", 1))
+        return notify_fail("ç»ƒã€Œåä¸¤ä»ªåˆ€æ³•ã€å¿…é¡»è¦ä»¥ã€Œç´«éœç¥åŠŸã€ä¸ºåŸºç¡€ã€‚\n");
+
+    if (!objectp(weapon = me->query_temp("weapon"))
+        || (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
+
+    if ((int) me->query("qi") < 50)
+        return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒã€Œåä¸¤ä»ªåˆ€æ³•ã€ã€‚\n");
+
+    me->receive_damage("qi", 25);
+    return 1;
+}
+
+string perform_action_file(string action) {
+    return __DIR__
+    "fanliangyi-dao/" + action;
+}
+
+mixed hit_ob(object me, object victim, int damage_bonus, int factor, string limb) {
+    int level, jiali, time, level2;
+    object weapon;
+    int damage;
+    weapon = me->query_temp("weapon");
+    level = (int) me->query_skill("zixia-shengong", 1);
+    level2 = (int) me->query_skill("zixia-shengong", 1);
+    if (random(8) == 0 && level >= 300 && me->query_skill_mapped("force") == "zixia-shengong") {
+        if (random(2) == 0) {
+            victim->start_busy(2);
+        } else victim->receive_wound("qi", (random(damage_bonus)) + 200);
+        return random(2) ? HIR "$N"
+        HIR
+        "è¿èµ·ç´«éœç¥åŠŸï¼Œåˆ€èµ°ä¸¤ä»ªï¼Œ,$nåŒçœ¼ä¸€èŠ±,ä¸çŸ¥å¦‚ä½•æ˜¯å¥½!\n"
+        NOR:
+        HIR
+        "$N"
+        HIR
+        "åˆ€éšæ„èµ°,æ‰‹ä¸­" + weapon->name() + HIR
+        "åˆ€æŠ«å››è±¡,$nåŒçœ¼ä¸€èŠ±,ä¸çŸ¥å¦‚ä½•æ˜¯å¥½!\n"
+        NOR;
+    }
+    weapon = me->query_temp("weapon");
+    level2 = (int) me->query_skill("zixia-shengong", 1);
+    if (random(3) == 1 && me->query_skill("zixia-shengong", 1) > 300) {
+        if (damage_bonus > 50 && random(level2) > 100) {
+            victim->receive_wound("qi", (random(damage_bonus)));
+            return HIM
+            "$Nåˆ€æ°”çºµæ¨ª! ä¸€é“åˆ€æ°”åˆ’è¿‡äº†$nçš„$lã€‚ç»“æœé²œè¡€ç‹‚å¥”!\n"
+            NOR;
         }
-
-        return 1;
-}
-
-int effective_level() { return 10;}
-
-int valid_learn(object me)
-{
-        if ((int)me->query("max_neili") < 50)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
-        if ((int)me->query_skill("zixia-shengong", 1) < 10)
-                return notify_fail("ÄãµÄ¡¸×ÏÏ¼Éñ¹¦¡¹»ğºòÌ«Ç³¡£\n");
-        return 1;
-}
-
-string query_skill_name(int level)
-{
-        int i;
-        for(i = sizeof(action)-1; i >= 0; i--)
-                if(level >= action[i]["lvl"])
-                        return action[i]["skill_name"];
-}
-
-mapping query_action(object me, object weapon)
-{
-        int i, level;
-        level   = (int) me->query_skill("fanliangyi-dao",1);
-        for(i = sizeof(action); i > 0; i--)
-                if(level > action[i-1]["lvl"])
-                        return action[NewRandom(i, 20, level/5)];
-}
-
-int practice_skill(object me)
-{
-        object weapon;
-
-        if( !me->query_skill("zixia-shengong",1))
-                return notify_fail("Á·¡¸·´Á½ÒÇµ¶·¨¡¹±ØĞëÒªÒÔ¡¸×ÏÏ¼Éñ¹¦¡¹Îª»ù´¡¡£\n");
-
-        if (!objectp(weapon = me->query_temp("weapon"))
-        || (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
-
-        if ((int)me->query("qi") < 50)
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·¡¸·´Á½ÒÇµ¶·¨¡¹¡£\n");
-
-        me->receive_damage("qi", 25);
-        return 1;
-}
-
-string perform_action_file(string action)
-{
-        return __DIR__"fanliangyi-dao/" + action;
-}
-
-mixed hit_ob(object me, object victim, int damage_bonus, int factor, string limb)
-{
-	int level, jiali, time,level2;
-	object weapon;
-	int damage;
-	weapon = me->query_temp("weapon");
-        level = (int) me->query_skill("zixia-shengong",1);
-        level2= (int) me->query_skill("zixia-shengong",1);
-if (random(8)==0 && level>=300 && me->query_skill_mapped("force") == "zixia-shengong")
-{
-if (random(2)==0)
-{
-	victim->start_busy(2);
-}
-else 	victim->receive_wound("qi", (random(damage_bonus))+200);
-                  return random(2) ? HIR "$N" HIR "ÔËÆğ×ÏÏ¼Éñ¹¦£¬µ¶×ßÁ½ÒÇ£¬,$nË«ÑÛÒ»»¨,²»ÖªÈçºÎÊÇºÃ!\n" NOR:
-                                     HIR "$N" HIR "µ¶ËæÒâ×ß,ÊÖÖĞ" + weapon->name() + HIR "µ¶ÅûËÄÏó,$nË«ÑÛÒ»»¨,²»ÖªÈçºÎÊÇºÃ!\n"NOR;
-}
-	weapon = me->query_temp("weapon");
-level2= (int) me->query_skill("zixia-shengong",1);             
-	if (random(3)==1 && me->query_skill("zixia-shengong",1)>300)
-	{
-	if( damage_bonus > 50 && random(level2)>100) {
-	victim->receive_wound("qi", (random(damage_bonus)));
-	return HIM"$Nµ¶Æø×İºá! Ò»µÀµ¶Æø»®¹ıÁË$nµÄ$l¡£½á¹ûÏÊÑª¿ñ±¼!\n"NOR;
-        }
-}
+    }
 }

@@ -1,4 +1,4 @@
-// powerup.c ¾ÅÑôÉñ¹¦¼ÓÁ¦
+// powerup.c ä¹é˜³ç¥åŠŸåŠ åŠ›
 
 #include <ansi.h>
 
@@ -6,53 +6,54 @@ inherit F_CLEAN_UP;
 
 void remove_effect(object me, int amount);
 
-int exert(object me, object target)
-{
-	int skill;
+int exert(object me, object target) {
+    int skill;
 
-	if ( !wizardp(this_player()) && (me->query("family/family_name") != "Ã÷½Ì"))
-		return notify_fail("Äã²»ÊÇÃ÷½Ì½ÌÖÚ²»ÄÜÊ¹ÓÃ¾ÅÑôÉñ¹¦¡£\n");
-//		 		    ¾ÅÑôÉñ¹¦²©´ó¾«Éî, ·ÇÉÙÁÖµÜ×Ó²»´«, Õæ²»ÖªµÀÄãÊÇÔõÃ´Ñ§»áµÄ!\n
-//				    ÉÆÔÕ, ÉÆÔÕ, ¸óÏÂÔÚµÂĞĞ·½ÃæÊÇ·ñĞèÒªÔÙºÃºÃÑ§Ò»Ñ§.\n");
-	if( target != me ) 
-		return notify_fail("ÄãÖ»ÄÜÓÃ¾ÅÑôÉñ¹¦À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+    if (!wizardp(this_player()) && (me->query("family/family_name") != "æ˜æ•™"))
+        return notify_fail("ä½ ä¸æ˜¯æ˜æ•™æ•™ä¼—ä¸èƒ½ä½¿ç”¨ä¹é˜³ç¥åŠŸã€‚\n");
+//		 		    ä¹é˜³ç¥åŠŸåšå¤§ç²¾æ·±, éå°‘æ—å¼Ÿå­ä¸ä¼ , çœŸä¸çŸ¥é“ä½ æ˜¯æ€ä¹ˆå­¦ä¼šçš„!\n
+//				    å–„å“‰, å–„å“‰, é˜ä¸‹åœ¨å¾·è¡Œæ–¹é¢æ˜¯å¦éœ€è¦å†å¥½å¥½å­¦ä¸€å­¦.\n");
+    if (target != me)
+        return notify_fail("ä½ åªèƒ½ç”¨ä¹é˜³ç¥åŠŸæ¥æå‡è‡ªå·±çš„æˆ˜æ–—åŠ›ã€‚\n");
 
-	if( (int)me->query("neili") < 100  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
-	if( (int)me->query_temp("powerup") ) 
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+    if ((int) me->query("neili") < 100)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
+    if ((int) me->query_temp("powerup"))
+        return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
-	skill = me->query_skill("force");
-	me->add("neili", -100);
-	me->receive_damage("qi", 0);
+    skill = me->query_skill("force");
+    me->add("neili", -100);
+    me->receive_damage("qi", 0);
 
-	message_combatd(
-	HIR "$NÎ¢Ò»ÄıÉñ£¬ÔËÆğ¾ÅÑôÉñ¹¦£¬È«Éí¹Ç½Ú·¢³öÒ»Õó±¬¶¹°ãµÄÉùÏì, ½«È«ÉíÇ±ÄÜ¾¡ÊıÌáÆğ¡£\n" NOR, me);
-me->clear_condition("xuanming_poison");
-me->clear_condition("cold_poison");
-me->clear_condition("xscold_poison");
-me->clear_condition("ice_poison");
-me->clear_condition("iceshock");
+    message_combatd(
+            HIR
+    "$Nå¾®ä¸€å‡ç¥ï¼Œè¿èµ·ä¹é˜³ç¥åŠŸï¼Œå…¨èº«éª¨èŠ‚å‘å‡ºä¸€é˜µçˆ†è±†èˆ¬çš„å£°å“, å°†å…¨èº«æ½œèƒ½å°½æ•°æèµ·ã€‚\n"
+    NOR, me);
+    me->clear_condition("xuanming_poison");
+    me->clear_condition("cold_poison");
+    me->clear_condition("xscold_poison");
+    me->clear_condition("ice_poison");
+    me->clear_condition("iceshock");
 
-	me->add_temp("apply/attack", skill/3);
-	me->add_temp("apply/dodge", skill/3);
-	me->set_temp("powerup", 1);
+    me->add_temp("apply/attack", skill / 3);
+    me->add_temp("apply/dodge", skill / 3);
+    me->set_temp("powerup", 1);
 
-	me->start_call_out( (: call_other, __FILE__, "remove_effect", me, skill/3 :), skill);
+    me->start_call_out((: call_other, __FILE__, "remove_effect", me, skill / 3 :), skill);
 
-	if( me->is_fighting() ) me->start_busy(3);
+    if (me->is_fighting()) me->start_busy(3);
 
-	return 1;
+    return 1;
 }
 
-void remove_effect(object me, int amount)
-{
-   int skill;
-   skill = me->query_skill("force");
+void remove_effect(object me, int amount) {
+    int skill;
+    skill = me->query_skill("force");
 
-   if ( (int)me->query_temp("powerup") ) {
-   me->add_temp("apply/attack", -skill/3);
-   me->add_temp("apply/dodge", -skill/3);
-	me->delete_temp("powerup");
-	tell_object(me, "ÄãµÄ¾ÅÑôÉñ¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");}
+    if ((int) me->query_temp("powerup")) {
+        me->add_temp("apply/attack", -skill / 3);
+        me->add_temp("apply/dodge", -skill / 3);
+        me->delete_temp("powerup");
+        tell_object(me, "ä½ çš„ä¹é˜³ç¥åŠŸè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
+    }
 }

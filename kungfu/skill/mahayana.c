@@ -1,27 +1,27 @@
-//mahayana.c  ´ó³ËÄùÅÍ¹¦
+//mahayana.c  å¤§ä¹˜æ¶…ç£åŠŸ
 inherit SKILL;
 
 string type() { return "knowledge"; }
-int valid_learn(object me)
-{
-    mapping myfam;
-    myfam = (mapping)me->query("family");
-    if (!myfam || (myfam["family_name"] != "¶ëáÒÅÉ"))
-       return notify_fail("Äã²»ÊÇ¶ëáÒµÜ×Ó£¬²»ÄÜĞŞÁ¶´ó³ËÄùÅÍ¹¦¡£\n");
 
-    if ((int)me->query("shen") < 0 )
-       return notify_fail("ÄãµÄĞ°ÆøÌ«ÖØ£¬ÎŞ·¨ĞŞÁ¶´ó³ËÄùÅÍ¹¦¡£\n");
+int valid_learn(object me) {
+    mapping myfam;
+    myfam = (mapping) me->query("family");
+    if (!myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾"))
+        return notify_fail("ä½ ä¸æ˜¯å³¨åµ‹å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç‚¼å¤§ä¹˜æ¶…ç£åŠŸã€‚\n");
+
+    if ((int) me->query("shen") < 0)
+        return notify_fail("ä½ çš„é‚ªæ°”å¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼å¤§ä¹˜æ¶…ç£åŠŸã€‚\n");
 
 //    if (me->query_skill("persuading",1) <= me->query_skill("mahayana",1))
-//       return notify_fail("ÄãµÄÉÆĞĞÌ«ÉÙ£¬ĞŞÁ¶´ó³ËÄùÅÍ¹¦Ò²Ã»ÓÃ¡£\n");
+//       return notify_fail("ä½ çš„å–„è¡Œå¤ªå°‘ï¼Œä¿®ç‚¼å¤§ä¹˜æ¶…ç£åŠŸä¹Ÿæ²¡ç”¨ã€‚\n");
 
-    if(me->query_skill("taoism",1) > 1)
-       return notify_fail("¹ş¹ş£¡"+RANK_D->query_respect(me)
-                   +"Ñ§ÁËÅ£±Ç×ÓµÄ¹¦·ò£¬ÔõÃ´È´À´Ñ§´ó³ËÄùÅÍ¹¦£¿\n");
-    if( (int)me->query_skill("poison",1) > 1 )
-      return notify_fail("ÄãÑ§ÁËĞ°ÃÅ¶¾¼¼£¬ÎŞ·¨ĞŞÁ¶´ó³ËÄùÅÍ¹¦¡£\n");
+    if (me->query_skill("taoism", 1) > 1)
+        return notify_fail("å“ˆå“ˆï¼" + RANK_D->query_respect(me)
+                           + "å­¦äº†ç‰›é¼»å­çš„åŠŸå¤«ï¼Œæ€ä¹ˆå´æ¥å­¦å¤§ä¹˜æ¶…ç£åŠŸï¼Ÿ\n");
+    if ((int) me->query_skill("poison", 1) > 1)
+        return notify_fail("ä½ å­¦äº†é‚ªé—¨æ¯’æŠ€ï¼Œæ— æ³•ä¿®ç‚¼å¤§ä¹˜æ¶…ç£åŠŸã€‚\n");
 
     return 1;
 }
-void skill_improved(object me)
-{}
+
+void skill_improved(object me) {}

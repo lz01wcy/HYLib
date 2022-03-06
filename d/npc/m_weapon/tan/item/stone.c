@@ -1,97 +1,108 @@
 // stone.c
-// ¸÷ÖÖÔ­ÁÏ³õÊ¼×´Ì¬
+// å„ç§åŸæ–™åˆå§‹çŠ¶æ€
 
 #include <ansi.h>
 
 inherit ITEM;
 
 int do_yelian();
+
 int do_eat(string stone);
 
-void init()
-{
-	add_action("do_yelian","yelian");
-	add_action("do_eat","eat");
+void init() {
+    add_action("do_yelian", "yelian");
+    add_action("do_eat", "eat");
 }
 
-void create()
-{
-	set_name( "²¹ÌìÊ¯", ({ "butian shi","shi","butian"}));
-	set_weight(30000);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("unit", "¿é");
-		set("long","ÕâÊÇÒ»¿éÎå²ÊµÄÊ¯Í·£¬¹â»ªÉÁË¸£¬½ĞÈË°®²»ÊÍÊÖ£¬¾Ã¾Ã°ÑÍæ²»Ô¸·ÅÏÂ¡£\n"
-			+"Õâ¿éÊ¯Í·ËÆºõ°üº¬×ÅÊ²Ã´£¬Äã²»ÓÉÏëÒ±Á¶(yelian)Ò»ÏÂ£¬¿ÉÄÜ»áÓĞĞ©Ê²\n"
-			+"Ã´ĞÂÆæµÄ¶«Î÷³öÏÖ\n");
-		set("value", 0);
-		set("material", "iron");
-	}
+void create() {
+    set_name("è¡¥å¤©çŸ³", ({ "butian shi", "shi", "butian" }));
+    set_weight(30000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "å—");
+        set("long", "è¿™æ˜¯ä¸€å—äº”å½©çš„çŸ³å¤´ï¼Œå…‰åé—ªçƒï¼Œå«äººçˆ±ä¸é‡Šæ‰‹ï¼Œä¹…ä¹…æŠŠç©ä¸æ„¿æ”¾ä¸‹ã€‚\n"
+                    + "è¿™å—çŸ³å¤´ä¼¼ä¹åŒ…å«ç€ä»€ä¹ˆï¼Œä½ ä¸ç”±æƒ³å†¶ç‚¼(yelian)ä¸€ä¸‹ï¼Œå¯èƒ½ä¼šæœ‰äº›ä»€\n"
+                    + "ä¹ˆæ–°å¥‡çš„ä¸œè¥¿å‡ºç°\n");
+        set("value", 0);
+        set("material", "iron");
+    }
 }
 
-int do_yelian()
-{
-	object me,stone,new_ob;
-	int n;
-	me=this_player();
-	stone=this_object();
+int do_yelian() {
+    object me, stone, new_ob;
+    int n;
+    me = this_player();
+    stone = this_object();
 
-	if( (int)me->query("neili") < 50 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÎŞ·¨¶ÍÁ¶²¹ÌìÊ¯£¡\n");
-	message_vision(HIR "$NÅÌÏ¥¶ø×ø£¬ÊÖÍĞ²¹ÌìÊ¯£¬ÕæÆøÓÎ×ß£¬¿ªÊ¼Ò±Á¶²¹ÌìÊ¯¡£\n" NOR, me);
-	me->add("neili",-50);
-	switch(random(4) ) {
-		case 0:
-			new_ob=new("/d/npc/m_weapon/tan/item/jinmu",1);
-			new_ob->move(me);			
-			message_vision(HIY "²¹ÌìÊ¯½¥½¥±äĞÎ£¬ÖÕÓÚ³ÉÁËÒ»¿é×ÏÉ«µÄ½ğÊô£¡£¡\n" NOR, me );
-	destruct(this_object() );
-			destruct(stone);
-			break;
-		case 1:
-			new_ob=new("/d/npc/m_weapon/tan/item/shenmu",1);
-			new_ob->move(me);			
-			message_vision(HIY "²¹ÌìÊ¯²ã²ã°şÂä£¬ÖÕÓÚ³ÉÁËÒ»¿éºÚÖĞÍ¸ºìµÄÄ¾Í·£¡£¡\n" NOR, me );
-	destruct(this_object() );
-			destruct(stone);
-			break;
-		case 2:
-			new_ob=new("/d/npc/m_weapon/tan/item/hanzhu",1);
-			new_ob->move(me);			
-			message_vision(HIY "²¹ÌìÊ¯Å¾µÄÒ»Éù±¬ÏìÌıÆğÀ´¾¹ÏóÊÇÖñ×ÓÈ¼ÉÕµÄÉùÒô£¡£¡\n" NOR, me );
-	destruct(this_object() );
-			destruct(stone);	
-			break;
-		default:
-			message_vision(HIY "²¹ÌìÊ¯½¥½¥±äÈí£¬ÖÕÓÚ»¯×öÒ»Ì²ÄàË®ÉøÈëµØÏÂ£¬²»¼ûÁË¡£\n" NOR, me );
-	destruct(this_object() );
-			destruct(stone);
-	}
-	return 1;
+    if ((int) me->query("neili") < 50)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿæ— æ³•é”»ç‚¼è¡¥å¤©çŸ³ï¼\n");
+    message_vision(HIR
+    "$Nç›˜è†è€Œåï¼Œæ‰‹æ‰˜è¡¥å¤©çŸ³ï¼ŒçœŸæ°”æ¸¸èµ°ï¼Œå¼€å§‹å†¶ç‚¼è¡¥å¤©çŸ³ã€‚\n"
+    NOR, me);
+    me->add("neili", -50);
+    switch (random(4)) {
+        case 0:
+            new_ob = new("/d/npc/m_weapon/tan/item/jinmu", 1);
+            new_ob->move(me);
+            message_vision(HIY
+            "è¡¥å¤©çŸ³æ¸æ¸å˜å½¢ï¼Œç»ˆäºæˆäº†ä¸€å—ç´«è‰²çš„é‡‘å±ï¼ï¼\n"
+            NOR, me );
+            destruct(this_object());
+            destruct(stone);
+            break;
+        case 1:
+            new_ob = new("/d/npc/m_weapon/tan/item/shenmu", 1);
+            new_ob->move(me);
+            message_vision(HIY
+            "è¡¥å¤©çŸ³å±‚å±‚å‰¥è½ï¼Œç»ˆäºæˆäº†ä¸€å—é»‘ä¸­é€çº¢çš„æœ¨å¤´ï¼ï¼\n"
+            NOR, me );
+            destruct(this_object());
+            destruct(stone);
+            break;
+        case 2:
+            new_ob = new("/d/npc/m_weapon/tan/item/hanzhu", 1);
+            new_ob->move(me);
+            message_vision(HIY
+            "è¡¥å¤©çŸ³å•ªçš„ä¸€å£°çˆ†å“å¬èµ·æ¥ç«Ÿè±¡æ˜¯ç«¹å­ç‡ƒçƒ§çš„å£°éŸ³ï¼ï¼\n"
+            NOR, me );
+            destruct(this_object());
+            destruct(stone);
+            break;
+        default:
+            message_vision(HIY
+            "è¡¥å¤©çŸ³æ¸æ¸å˜è½¯ï¼Œç»ˆäºåŒ–åšä¸€æ»©æ³¥æ°´æ¸—å…¥åœ°ä¸‹ï¼Œä¸è§äº†ã€‚\n"
+            NOR, me );
+            destruct(this_object());
+            destruct(stone);
+    }
+    return 1;
 }
 
 
-int do_eat(string stone)
-{
-	object me;
-	int n;
-	string stone_name;
-	me=this_player();
-	stone_name = this_object()->query("id");
-	if( !stone || stone!=stone_name )
-		return notify_fail("ÄãÒª³ÔÊ²Ã´?\n");
-	n=random(3);
-	switch(n) {
-		case 0:
-			message_vision(HIY "$N¿´À´¼±»µÁË£¬ÄÃÆğ²¹ÌìÊ¯¾Í¿Ğ£¬½á¹ûµ±³¡´óÑÀ±ÄµôÁËÊ®¶ş¿Å!ÕâÒ²ËãÒ±Á¶£¿ÕæÉµ£¡\n" NOR,me);
-			me->add("food",200);
-			me->add("water",200);
-			break;
-		default:
-			message_vision(HIY "$N¿´À´¶ö»µÁË£¬ÄÃÆğ²¹ÌìÊ¯¾Í¿Ğ£¬½á¹ûµ±³¡´óÑÀ±ÄµôÁËÊ®¶ş¿Å!\n" NOR,me);
-		}
-	destruct(this_object() );
-	return 1;
+int do_eat(string stone) {
+    object me;
+    int n;
+    string stone_name;
+    me = this_player();
+    stone_name = this_object()->query("id");
+    if (!stone || stone != stone_name)
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆ?\n");
+    n = random(3);
+    switch (n) {
+        case 0:
+            message_vision(HIY
+            "$Nçœ‹æ¥æ€¥åäº†ï¼Œæ‹¿èµ·è¡¥å¤©çŸ³å°±å•ƒï¼Œç»“æœå½“åœºå¤§ç‰™è¹¦æ‰äº†åäºŒé¢—!è¿™ä¹Ÿç®—å†¶ç‚¼ï¼ŸçœŸå‚»ï¼\n"
+            NOR, me);
+            me->add("food", 200);
+            me->add("water", 200);
+            break;
+        default:
+            message_vision(HIY
+            "$Nçœ‹æ¥é¥¿åäº†ï¼Œæ‹¿èµ·è¡¥å¤©çŸ³å°±å•ƒï¼Œç»“æœå½“åœºå¤§ç‰™è¹¦æ‰äº†åäºŒé¢—!\n"
+            NOR, me);
+    }
+    destruct(this_object());
+    return 1;
 }
 

@@ -1,270 +1,296 @@
-// dragon.c ÁúÖ®Á¦Á¿
+// dragon.c é¾™ä¹‹åŠ›é‡
 #include <ansi.h>
-inherit SKILL;  
+
+inherit SKILL;
+
 #include <ansi.h>
 #include <combat.h>
 //inherit F_SSERVER;
 
 #include "/kungfu/skill/eff_msg.h";
-string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
+
+string *order = ({
+    ""
+    HIY
+    "", ""
+    HIG
+    "", ""
+    RED
+    "", ""
+    MAG
+    "", ""
+    YEL
+    "", ""
+    HIC
+    "", ""
+    HIW
+    "", ""
+    HIR
+    "", ""
+    HIB
+    "", ""
+    CYN
+    "", ""
+    WHT
+    "", ""
+    HIM
+    "", ""
+    BLU
+    ""
+});
 
 
 string *dodge_msg = ({
-        "¿ÉÊÇ$nÒ»Éù¿ñºğ£¬$N¾¹ã¶×¡ÁË£¬²»¸Ò·ÅÊÖ½ø¹¥¡£\n",
-        "µ«ÊÇ$nÉí×ÓÒ»ÉÁ£¬$NÕâÒ»ÕĞÆËÁË¸ö¿Õ¡£\n",
-        "$nÌÚ¿ÕÔ¾Æğ£¬¶ã¿ªÁË$NµÄÕâÒ»ÕĞ¡£\n",
-        "$nÒ²²»¶ãÉÁ£¬Ö±³å$N¶øÈ¥£¬$NÒ»¿´²»ÃîÖ»µÃÊÕÕĞÍË¿ª¡£\n",
+    "å¯æ˜¯$nä¸€å£°ç‹‚å¼ï¼Œ$Nç«Ÿæ„£ä½äº†ï¼Œä¸æ•¢æ”¾æ‰‹è¿›æ”»ã€‚\n",
+            "ä½†æ˜¯$nèº«å­ä¸€é—ªï¼Œ$Nè¿™ä¸€æ‹›æ‰‘äº†ä¸ªç©ºã€‚\n",
+            "$nè…¾ç©ºè·ƒèµ·ï¼Œèº²å¼€äº†$Nçš„è¿™ä¸€æ‹›ã€‚\n",
+            "$nä¹Ÿä¸èº²é—ªï¼Œç›´å†²$Nè€Œå»ï¼Œ$Nä¸€çœ‹ä¸å¦™åªå¾—æ”¶æ‹›é€€å¼€ã€‚\n",
 });
 
 mapping *action = ({
-([  "action":"$NÉí×ÓÒ»²à£¬Î²°ÍºöÈ»´ÓÉíºóË¦³ö£¬É¨Ïò$n",
-    "dodge" : 40,
-    "damage": 600,
-    "damage_type":  "ğöÉË"
-]),
-([  "action":"$NÃÍÈ»½Ó½ü£¬ÕÅ×ì¾ÍÒ§$n",
-    "dodge" : 60,
-    "damage": 300,
-    "damage_type":  "ğöÉË"
-]),
-([  "action":"$NÓÒ×¥³ÅµØ£¬×ó×¥Ö±»÷$nÃæ²¿",
-    "dodge" : 50,
-    "damage": 400,
-    "damage_type":  "ğöÉË"
-]),
-([  "action":"$NÍ»È»Ò»Ô¾£¬´Ó¿ÕÖĞÖ±ÆË$n",
-    "dodge" : 100,
-    "damage": 600,
-    "damage_type":  "ğöÉË"
-]),
-([  "action":"$NÉí×ÓÇ°Çã£¬ÒÔÈ«ÉíÖ®Á¦×²Ïò$n",
-    "dodge" : 40,
-    "damage": 1000,
-    "damage_type":  "ğöÉË"
-]),
-([  "action" : 		"$NÓÃ"+HIM+"ºóÍÈ"+NOR+"Íù$nµÄ$lÓÃÁ¦Ò»µÅ",
-    "damage": 500,
-	"dodge":		10,
-        "force":		200,
-    "lvl" : 0,
-    "skill_name" : "ÍÜÃùÈıÆğ",
-    "damage_type" : "ğöÉË"
-]),
-([  "action" : "$N·´×ªÉíÓÃ"+HIG+"Î²°Í¼â"+NOR+"¶Ô×¼$nµÄ$lÒ»´Ì",
-    "dodge" : 10,
-    "damage": 500,
-	"dodge":		10,
-        "force":		200,
-    "lvl" : 0,
-    "skill_name" : "·´ÊÖµãÑ¨",
-    "damage_type":	"Ò§ÉË",
-]),
-([  "action" : "$NÆËÉÏÀ´"+HIC+"ÕÅ×ì"+NOR+"Íù$nµÄ$lºİºİµØÒ»Ò§",
-	"dodge":		10,
-        "force":		200,
-    "dodge" : 15,
-    "damage": 520,
-    "lvl" : 0,
-    "skill_name" : "Ç°Õ°ºóÌø",
-		"damage_type":	"Ò§ÉË",
-]),
-([  "action" : "$NÓÃ"+HIW+"×¦×Ó"+NOR+"Íù$nµÄ$lÒ»×¥",
-	"dodge":		10,
-        "force":		200,
-    "dodge" : 25,
-    "damage": 580,
-    "lvl" : 0,
-    "skill_name" : "·ÖÉíÎŞÓ°",
-    "damage_type":	"×¥ÉË",
-]),
-([  "action" : "$NÌ§Æğ"+HIR+"×¦×Ó"+NOR+"Íù$nµÄ$lÒ»õß",
-	"dodge":		10,
-        "force":		200,
-    "dodge" : 30,
-    "damage": 500,
-    "lvl" : 0,
-    "skill_name" : "ÎŞµĞ¸òó¡",
-    "damage_type":	"ğöÉË",
-])
+    ([  "action":"$Nèº«å­ä¸€ä¾§ï¼Œå°¾å·´å¿½ç„¶ä»èº«åç”©å‡ºï¼Œæ‰«å‘$n",
+            "dodge" : 40,
+            "damage": 600,
+            "damage_type":  "ç˜€ä¼¤"
+    ]),
+    ([  "action":"$NçŒ›ç„¶æ¥è¿‘ï¼Œå¼ å˜´å°±å’¬$n",
+            "dodge" : 60,
+            "damage": 300,
+            "damage_type":  "ç˜€ä¼¤"
+    ]),
+    ([  "action":"$Nå³æŠ“æ’‘åœ°ï¼Œå·¦æŠ“ç›´å‡»$né¢éƒ¨",
+            "dodge" : 50,
+            "damage": 400,
+            "damage_type":  "ç˜€ä¼¤"
+    ]),
+    ([  "action":"$Nçªç„¶ä¸€è·ƒï¼Œä»ç©ºä¸­ç›´æ‰‘$n",
+            "dodge" : 100,
+            "damage": 600,
+            "damage_type":  "ç˜€ä¼¤"
+    ]),
+    ([  "action":"$Nèº«å­å‰å€¾ï¼Œä»¥å…¨èº«ä¹‹åŠ›æ’å‘$n",
+            "dodge" : 40,
+            "damage": 1000,
+            "damage_type":  "ç˜€ä¼¤"
+    ]),
+    ([  "action" :        "$Nç”¨" + HIM + "åè…¿" + NOR + "å¾€$nçš„$lç”¨åŠ›ä¸€è¹¬",
+            "damage": 500,
+            "dodge":        10,
+            "force":        200,
+            "lvl" : 0,
+            "skill_name" : "è›™é¸£ä¸‰èµ·",
+            "damage_type" : "ç˜€ä¼¤"
+    ]),
+    ([  "action" : "$Nåè½¬èº«ç”¨" + HIG + "å°¾å·´å°–" + NOR + "å¯¹å‡†$nçš„$lä¸€åˆº",
+            "dodge" : 10,
+            "damage": 500,
+            "dodge":        10,
+            "force":        200,
+            "lvl" : 0,
+            "skill_name" : "åæ‰‹ç‚¹ç©´",
+            "damage_type":    "å’¬ä¼¤",
+    ]),
+    ([  "action" : "$Næ‰‘ä¸Šæ¥" + HIC + "å¼ å˜´" + NOR + "å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
+            "dodge":        10,
+            "force":        200,
+            "dodge" : 15,
+            "damage": 520,
+            "lvl" : 0,
+            "skill_name" : "å‰ç»åè·³",
+            "damage_type":    "å’¬ä¼¤",
+    ]),
+    ([  "action" : "$Nç”¨" + HIW + "çˆªå­" + NOR + "å¾€$nçš„$lä¸€æŠ“",
+            "dodge":        10,
+            "force":        200,
+            "dodge" : 25,
+            "damage": 580,
+            "lvl" : 0,
+            "skill_name" : "åˆ†èº«æ— å½±",
+            "damage_type":    "æŠ“ä¼¤",
+    ]),
+    ([  "action" : "$NæŠ¬èµ·" + HIR + "çˆªå­" + NOR + "å¾€$nçš„$lä¸€è¸¹",
+            "dodge":        10,
+            "force":        200,
+            "dodge" : 30,
+            "damage": 500,
+            "lvl" : 0,
+            "skill_name" : "æ— æ•Œè›¤èŸ†",
+            "damage_type":    "ç˜€ä¼¤",
+    ])
 });
 
-int valid_enable(string usage) 
-{ 
-	return usage == "unarmed" ||  usage == "dodge" ||usage == "parry" ; 
+int valid_enable(string usage) {
+    return usage == "unarmed" || usage == "dodge" || usage == "parry";
 }
 
-mapping query_action(object me, object weapon)
-{
-return action[random(sizeof(action))];
-}
-
-
-int practice_skill(object me)
-{
-	return notify_fail("ÁúÖ®Á¦Á¿ÎŞ·¨Í¨¹ıÁ·Ï°À´³É³¤¡£\n");
-}
-int valid_learn(object me)
-{
-	 return 1; 
- }
-
-string query_dodge_msg(string limb)
-{
-        return dodge_msg[random(sizeof(dodge_msg))];
-}
-string perform_action_file(string action)
-{
-        return __DIR__"dragon/" + action;
+mapping query_action(object me, object weapon) {
+    return action[random(sizeof(action))];
 }
 
 
+int practice_skill(object me) {
+    return notify_fail("é¾™ä¹‹åŠ›é‡æ— æ³•é€šè¿‡ç»ƒä¹ æ¥æˆé•¿ã€‚\n");
+}
 
-mixed hit_ob(object me, object victim,int damage_bonus)
-        
-{	
-        int i, level;
-        object target;
-object weapon;
-        level   = (int) me->query_skill("dragon",1);
+int valid_learn(object me) {
+    return 1;
+}
+
+string query_dodge_msg(string limb) {
+    return dodge_msg[random(sizeof(dodge_msg))];
+}
+
+string perform_action_file(string action) {
+    return __DIR__
+    "dragon/" + action;
+}
+
+
+mixed hit_ob(object me, object victim, int damage_bonus) {
+    int i, level;
+    object target;
+    object weapon;
+    level = (int) me->query_skill("dragon", 1);
 //        target = me->select_opponent();
-        weapon = me->query_temp("weapon");
+    weapon = me->query_temp("weapon");
 
-	if( random(5)==1 && random(level) > 160)
-	{
+    if (random(5) == 1 && random(level) > 160) {
         if (userp(victim))
-        victim->start_busy(2);
-else    victim->start_busy(2);
-        return HIC "¡¸ÍÂÏ¢!!¡¹£¡$NÍ»È»ÍÂÏ¢£¬$n±»ÃÔ×¡ÔİÊ±²»ÄÜ¶¯ÁË!!\n" NOR;
-	}
-  	if( random(5)==1 && random(level) > 160)
-	{
+            victim->start_busy(2);
+        else victim->start_busy(2);
+        return HIC
+        "ã€Œåæ¯!!ã€ï¼$Nçªç„¶åæ¯ï¼Œ$nè¢«è¿·ä½æš‚æ—¶ä¸èƒ½åŠ¨äº†!!\n"
+        NOR;
+    }
+    if (random(5) == 1 && random(level) > 160) {
         if (userp(victim) && victim->query("eff_qi") > 50
-        && victim->query("qi") > 50)
-{
-if (victim->query("qi")/15 > 20)
-        victim->add("qi",-victim->query("qi")/35);
-if (victim->query("eff_qi")/15 > 20)
-        victim->add("eff_qi",-victim->query("eff_qi")/35);
-}else 
-{
-        victim->add("qi",-100);
-        victim->add("eff_qi",-100);
-}
-        return HIR "¡¸ÍÂÑ×!!¡¹£¡$NÍ»È»ÍÂÑ×£¬$n±»ÉÕµÃ·ÉÁËÆğÀ´!!\n" NOR;
-	}
- 	if( random(5)==1 && random(level) > 150)
-	{
+            && victim->query("qi") > 50) {
+            if (victim->query("qi") / 15 > 20)
+                victim->add("qi", -victim->query("qi") / 35);
+            if (victim->query("eff_qi") / 15 > 20)
+                victim->add("eff_qi", -victim->query("eff_qi") / 35);
+        } else {
+            victim->add("qi", -100);
+            victim->add("eff_qi", -100);
+        }
+        return HIR
+        "ã€Œåç‚!!ã€ï¼$Nçªç„¶åç‚ï¼Œ$nè¢«çƒ§å¾—é£äº†èµ·æ¥!!\n"
+        NOR;
+    }
+    if (random(5) == 1 && random(level) > 150) {
         if (userp(victim) && victim->query("jing") > 50
-        && victim->query("eff_jing") > 50)
-{
-if (victim->query("jing")/20 > 20)
-        victim->add("jing",-victim->query("jing")/40);
-if (victim->query("eff_jing")/20 > 20)
-        victim->add("eff_jing",-victim->query("eff_jing")/40);
-}
-else {
-        victim->add("jing",-400);
-        victim->add("eff_jing",-400);
-}
-        return HIY "¡¸Áúºğ!!¡¹£¡$NÍ»È»Áúºğ£¬$n±»ÁúºğÖĞºó¾õµÃÍ·Í´ÎŞ±È!!\n" NOR;
-	}
-if (damage_bonus < 100) damage_bonus=100;
-        if( damage_bonus > 200 ) 
-{
-        victim->receive_wound("qi", damage_bonus );	
-        victim->receive_wound("qi", damage_bonus );
-        return HIR "Áú×¦!!Ò»¹ÉÏÊÑª´Ó$nµÄÉí×ÓÅç³ö\n" NOR;	
-}
-        if( damage_bonus < 120 ) 
-{
-        victim->receive_wound("qi", damage_bonus );	
-        victim->receive_wound("qi", damage_bonus );	
-        return YEL "Áú×¦!!£¡£¡$nÃÆºßÒ»Éù,Éí×Ó»ÎÁËÁ½»Î£¡\n" NOR;
-}
-else
-{       
-        victim->receive_wound("qi", damage_bonus );	
-        victim->receive_wound("qi", damage_bonus );	
-        return HIM "Áú×¦!!£¡ÄãÌıµ½¡¸àÍÀ²¡¹Ò»ÉùÇáÏì£¬Á³ÉÏ¾¹½¦µ½Ò»Ğ©ÑªµÎ£¡\n" NOR;
-}
+            && victim->query("eff_jing") > 50) {
+            if (victim->query("jing") / 20 > 20)
+                victim->add("jing", -victim->query("jing") / 40);
+            if (victim->query("eff_jing") / 20 > 20)
+                victim->add("eff_jing", -victim->query("eff_jing") / 40);
+        } else {
+            victim->add("jing", -400);
+            victim->add("eff_jing", -400);
+        }
+        return HIY
+        "ã€Œé¾™å¼!!ã€ï¼$Nçªç„¶é¾™å¼ï¼Œ$nè¢«é¾™å¼ä¸­åè§‰å¾—å¤´ç—›æ— æ¯”!!\n"
+        NOR;
+    }
+    if (damage_bonus < 100) damage_bonus = 100;
+    if (damage_bonus > 200) {
+        victim->receive_wound("qi", damage_bonus);
+        victim->receive_wound("qi", damage_bonus);
+        return HIR
+        "é¾™çˆª!!ä¸€è‚¡é²œè¡€ä»$nçš„èº«å­å–·å‡º\n"
+        NOR;
+    }
+    if (damage_bonus < 120) {
+        victim->receive_wound("qi", damage_bonus);
+        victim->receive_wound("qi", damage_bonus);
+        return YEL
+        "é¾™çˆª!!ï¼ï¼$né—·å“¼ä¸€å£°,èº«å­æ™ƒäº†ä¸¤æ™ƒï¼\n"
+        NOR;
+    } else {
+        victim->receive_wound("qi", damage_bonus);
+        victim->receive_wound("qi", damage_bonus);
+        return HIM
+        "é¾™çˆª!!ï¼ä½ å¬åˆ°ã€Œå—¤å•¦ã€ä¸€å£°è½»å“ï¼Œè„¸ä¸Šç«Ÿæº…åˆ°ä¸€äº›è¡€æ»´ï¼\n"
+        NOR;
+    }
 
 }
-int ob_hit(object ob, object me, int damage)
-{
-	object weapon = me->query_temp("weapon");
-        string msg,dodge_skill,*limbs;
-        int i, j, level, p, q;
-        
-        limbs = ob->query("limbs");
-        level = me->query_skill("dragon", 1);
+
+int ob_hit(object ob, object me, int damage) {
+    object weapon = me->query_temp("weapon");
+    string msg, dodge_skill, *limbs;
+    int i, j, level, p, q;
+
+    limbs = ob->query("limbs");
+    level = me->query_skill("dragon", 1);
 
 //        if( me->is_busy()) return 1;
-        if( damage < 100 ) return 1;
-        if (  random(level) > 150  && random(3) ==1   ){
-         msg = RED"$NÃæ¶Ô$nµÄ¹¥ÊÆ¡£ÉíĞÎÒ»ÉÁ£¬·´ÆËÉÏÈ¥!!!¡£\n"NOR;
-            message_vision(msg, me, ob);
-            if ( random(5) == 0 && random(level) > 150){
-         msg = YEL"¡¸ÍÂÏ¢!!¡¹£¡$NÍ»È»ÍÂÏ¢£¬$n±»ÃÔ×¡ÔİÊ±²»ÄÜ¶¯ÁË!!\n"NOR;
+    if (damage < 100) return 1;
+    if (random(level) > 150 && random(3) == 1) {
+        msg = RED
+        "$Né¢å¯¹$nçš„æ”»åŠ¿ã€‚èº«å½¢ä¸€é—ªï¼Œåæ‰‘ä¸Šå»!!!ã€‚\n"
+        NOR;
+        message_vision(msg, me, ob);
+        if (random(5) == 0 && random(level) > 150) {
+            msg = YEL
+            "ã€Œåæ¯!!ã€ï¼$Nçªç„¶åæ¯ï¼Œ$nè¢«è¿·ä½æš‚æ—¶ä¸èƒ½åŠ¨äº†!!\n"
+            NOR;
 //             if (!ob->is_busy())
-        if (userp(ob) && ob->query("qi") > 50 && ob->query("jing") > 50
-        && ob->query("eff_qi") > 50 && ob->query("eff_jing") > 50){
-             ob->start_busy(2);
-if (ob->query("qi")/20 > 20)
-             ob->add("qi",-ob->query("qi")/45);
-if (ob->query("eff_qi")/20 > 20)
-             ob->add("eff_qi",-ob->query("eff_qi")/50);
-}
-else
-{
-             ob->start_busy(3);
-             ob->add("qi",-1000);
-             ob->add("eff_qi",-1000);
-}
-msg += damage_msg(damage, "ğöÉË");
+            if (userp(ob) && ob->query("qi") > 50 && ob->query("jing") > 50
+                && ob->query("eff_qi") > 50 && ob->query("eff_jing") > 50) {
+                ob->start_busy(2);
+                if (ob->query("qi") / 20 > 20)
+                    ob->add("qi", -ob->query("qi") / 45);
+                if (ob->query("eff_qi") / 20 > 20)
+                    ob->add("eff_qi", -ob->query("eff_qi") / 50);
+            } else {
+                ob->start_busy(3);
+                ob->add("qi", -1000);
+                ob->add("eff_qi", -1000);
             }
-else  if (random(5)==1&& random(level) > 150){
-         msg = HIR"¡¸ÍÂÑ×!!¡¹£¡$NÍ»È»ÍÂÑ×£¬$n±»ÉÕµÃ·ÉÁËÆğÀ´!!!!\n"NOR;
-        if (userp(ob) && ob->query("qi") > 50 
-        && ob->query("eff_qi") > 50)
-{
-if (ob->query("qi")/15 > 20)
-             ob->add("qi",-ob->query("qi")/45);
-if (ob->query("eff_qi")/15 > 20)
-             ob->add("eff_qi",-ob->query("eff_qi")/45);
-}
-else {
-             ob->add("qi",-2000);
-             ob->add("eff_qi",-2000);
-}
-msg += damage_msg(damage, "ğöÉË");
+            msg += damage_msg(damage, "ç˜€ä¼¤");
+        } else if (random(5) == 1 && random(level) > 150) {
+            msg = HIR
+            "ã€Œåç‚!!ã€ï¼$Nçªç„¶åç‚ï¼Œ$nè¢«çƒ§å¾—é£äº†èµ·æ¥!!!!\n"
+            NOR;
+            if (userp(ob) && ob->query("qi") > 50
+                && ob->query("eff_qi") > 50) {
+                if (ob->query("qi") / 15 > 20)
+                    ob->add("qi", -ob->query("qi") / 45);
+                if (ob->query("eff_qi") / 15 > 20)
+                    ob->add("eff_qi", -ob->query("eff_qi") / 45);
+            } else {
+                ob->add("qi", -2000);
+                ob->add("eff_qi", -2000);
             }
-else  if (random(5)==2&& random(level) > 150){
-         msg = HIC"¡¸Áúºğ!!¡¹£¡$NÍ»È»Áúºğ£¬$n±»ÁúºğÖĞºó¾õµÃÍ·Í´ÎŞ±È!!\n"NOR;
-        if (userp(ob) && ob->query("qi") > 50
-        && ob->query("jing") > 50
-        && ob->query("eff_qi") > 50
-        && ob->query("eff_jing") > 50)
-{
-if (ob->query("qi")/30 > 20)
-             ob->add("qi",-ob->query("qi")/45);
-if (ob->query("eff_qi")/30 > 20)
-             ob->add("eff_qi",-ob->query("eff_qi")/45);
-if (ob->query("jing")/30 > 20)
-             ob->add("jing",-ob->query("jing")/45);
-if (ob->query("eff_jing")/30 > 20)
-             ob->add("eff_jing",-ob->query("eff_jing")/45);
-}
-else
-{
-             ob->add("qi",-1000);
-             ob->add("eff_qi",-1000);
+            msg += damage_msg(damage, "ç˜€ä¼¤");
+        } else if (random(5) == 2 && random(level) > 150) {
+            msg = HIC
+            "ã€Œé¾™å¼!!ã€ï¼$Nçªç„¶é¾™å¼ï¼Œ$nè¢«é¾™å¼ä¸­åè§‰å¾—å¤´ç—›æ— æ¯”!!\n"
+            NOR;
+            if (userp(ob) && ob->query("qi") > 50
+                && ob->query("jing") > 50
+                && ob->query("eff_qi") > 50
+                && ob->query("eff_jing") > 50) {
+                if (ob->query("qi") / 30 > 20)
+                    ob->add("qi", -ob->query("qi") / 45);
+                if (ob->query("eff_qi") / 30 > 20)
+                    ob->add("eff_qi", -ob->query("eff_qi") / 45);
+                if (ob->query("jing") / 30 > 20)
+                    ob->add("jing", -ob->query("jing") / 45);
+                if (ob->query("eff_jing") / 30 > 20)
+                    ob->add("eff_jing", -ob->query("eff_jing") / 45);
+            } else {
+                ob->add("qi", -1000);
+                ob->add("eff_qi", -1000);
 
-}
-msg += damage_msg(damage, "ğöÉË");
             }
-else
-           msg = HIG"$nÇÀÏÈ³öÕĞ£¬Ê¹$NµÄ·´ÆËÊ§°ÜÁË!¡£\n"NOR;
-            message_vision(msg, me, ob);
-            return damage;
-        }
+            msg += damage_msg(damage, "ç˜€ä¼¤");
+        } else
+            msg = HIG
+        "$næŠ¢å…ˆå‡ºæ‹›ï¼Œä½¿$Nçš„åæ‰‘å¤±è´¥äº†!ã€‚\n"
+        NOR;
+        message_vision(msg, me, ob);
+        return damage;
+    }
 }

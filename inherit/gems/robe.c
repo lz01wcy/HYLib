@@ -4,296 +4,320 @@
 inherit CLOTH;
 inherit F_GEMS;
 
-void init_sockets(object me)
-{
-	set("max_sockets", 3);
-	if (me->query("combat_exp") > 10000000)
-		add("max_sockets", 1);
+void init_sockets(object me) {
+    set("max_sockets", 3);
+    if (me->query("combat_exp") > 10000000)
+        add("max_sockets", 1);
 
-        if (me->query("combat_exp") < 10000000 && (int)query("sockets/max",1)>=3)
-        set("sockets/max",3);
+    if (me->query("combat_exp") < 10000000 && (int) query("sockets/max", 1) >= 3)
+        set("sockets/max", 3);
 
-        if (me->query("combat_exp") < 20000000 && (int)query("sockets/max",1)>=4)
-        set("sockets/max",4);
+    if (me->query("combat_exp") < 20000000 && (int) query("sockets/max", 1) >= 4)
+        set("sockets/max", 4);
 
-        if ((int)query("sockets/max",1)>5)
-        set("sockets/max",5);
+    if ((int) query("sockets/max", 1) > 5)
+        set("sockets/max", 5);
 
-	if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
+    if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
 
-	set("sockets", me->query("diablo/" + TYPE_CLOTH + "/sockets"));
-	set_armor_desc();
+    set("sockets", me->query("diablo/" + TYPE_CLOTH + "/sockets"));
+    set_armor_desc();
 }
 
-void setup()
-{
-	init_sockets(this_player());
-	::setup();
+void setup() {
+    init_sockets(this_player());
+    ::setup();
 }
 
-void spec_prop(object me, string socket, int socket_level, int mode)
-{
-int i;
-	if (!valid_gem(socket, socket_level)) return;
-	if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
-if (query("armor_prop/armor") < 20) return;
-	switch (socket) {
-	case "ruby":
-		break;
-	case "topaz":
-		break;
-	case "sapphire":
-		break;
-	case "emerald":
-		break;
-	case "amethyst":
-		if (mode == 1)
-			message_vision(MAG + query("name") + MAG"É¢³öÒ»Æ¬×ÏÉ«ÔÆ¹â»·ÈÆ×Å$N£¬½¥½¥$PµÄÉíĞÎÏÔµÃÔ½À´Ô½ëüëÊ£¡\n"NOR, me);
-		else
-			message_vision(MAG"×ÏÉ«Ô½À´Ô½µ­£¬$NµÄÉíĞÎÓÖÏÔÂ¶ÁË³öÀ´¡£\n"NOR, me);
-		me->add_temp("apply/defense", 30 * socket_level * mode);
-		break;
-	case "diamond":
-		if (mode == 1)
-			message_vision(HIW"Ö»¼û$NÉíÉÏµÄ" + query("name") + HIW"±íÃæ¾§²ÊÁ÷¶¯£¬ºÁ¹âËÄÉä£¡\n"NOR, me);
-		else
-			message_vision(HIW"½¥½¥µÄ£¬" + query("name") + HIW"ËÆºõÓÖ»Ö¸´ÁËÑ°³£¡£\n"NOR, me);
-              me->add_temp("apply/armor", query("armor_prop/armor") * socket_level * mode / 16);
-		break;
-	case "skull":
-		break;
-	}
-	return;
+void spec_prop(object me, string socket, int socket_level, int mode) {
+    int i;
+    if (!valid_gem(socket, socket_level)) return;
+    if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
+    if (query("armor_prop/armor") < 20) return;
+    switch (socket) {
+        case "ruby":
+            break;
+        case "topaz":
+            break;
+        case "sapphire":
+            break;
+        case "emerald":
+            break;
+        case "amethyst":
+            if (mode == 1)
+                message_vision(MAG + query("name") + MAG
+            "æ•£å‡ºä¸€ç‰‡ç´«è‰²äº‘å…‰ç¯ç»•ç€$Nï¼Œæ¸æ¸$Pçš„èº«å½¢æ˜¾å¾—è¶Šæ¥è¶Šæœ¦èƒ§ï¼\n"
+            NOR, me);
+            else
+            message_vision(MAG
+            "ç´«è‰²è¶Šæ¥è¶Šæ·¡ï¼Œ$Nçš„èº«å½¢åˆæ˜¾éœ²äº†å‡ºæ¥ã€‚\n"
+            NOR, me);
+            me->add_temp("apply/defense", 30 * socket_level * mode);
+            break;
+        case "diamond":
+            if (mode == 1)
+                message_vision(HIW
+            "åªè§$Nèº«ä¸Šçš„" + query("name") + HIW
+            "è¡¨é¢æ™¶å½©æµåŠ¨ï¼Œæ¯«å…‰å››å°„ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIW
+            "æ¸æ¸çš„ï¼Œ" + query("name") + HIW
+            "ä¼¼ä¹åˆæ¢å¤äº†å¯»å¸¸ã€‚\n"
+            NOR, me);
+            me->add_temp("apply/armor", query("armor_prop/armor") * socket_level * mode / 16);
+            break;
+        case "skull":
+            break;
+    }
+    return;
 }
 
-int wear()
-{
-	int i, sockets, ret;
-	object me = environment();
+int wear() {
+    int i, sockets, ret;
+    object me = environment();
 
-	if (!(ret = ::wear())) return 0;
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), 1);
+    if (!(ret = ::wear())) return 0;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), 1);
 
-	remove_call_out("check_fight");
-	call_out("check_fight", 1, me);
+    remove_call_out("check_fight");
+    call_out("check_fight", 1, me);
 
-	return ret;
+    return ret;
 }
 
-int unequip()
-{
-	int i, sockets, ret;
-	object me = environment();
+int unequip() {
+    int i, sockets, ret;
+    object me = environment();
 
-	if (!(ret = ::unequip())) return 0;
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), -1);
+    if (!(ret = ::unequip())) return 0;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), -1);
 
-	remove_call_out("check_fight");
+    remove_call_out("check_fight");
 
-	return ret;
+    return ret;
 }
 
-int spec_effect(object ob, object me, int damage, string socket, int socket_level)
-{
-	int i, def = 0;
+int spec_effect(object ob, object me, int damage, string socket, int socket_level) {
+    int i, def = 0;
 
-	if (!valid_gem(socket, socket_level)) return def;
-	if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return 0;
-	if (random(100) + me->query_temp("apply/magic") < 70) return def;
+    if (!valid_gem(socket, socket_level)) return def;
+    if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return 0;
+    if (random(100) + me->query_temp("apply/magic") < 70) return def;
 
-	switch (socket) {
-	case "ruby":
-		break;
-	case "topaz":
-		break;
-	case "sapphire":
-		break;
-	case "emerald":
-			i = damage * socket_level / 15;
-if (i > (int)me->query("qi")/6) i=(int)me->query("qi")/6;
-			if ((int)me->query("qi")< (int)me->query("max_qi"))
-{
-			message_vision(HIG"Ö»¼û$NµÄÉË¿ÚÂÌÆøÉÁ¶¯£¬ºÃÏñ»îÁ¦×ãÁËÒ»Ğ©£¡\n"NOR, me);
-			me->add("qi", i);
-			me->add("eff_qi", i);
+    switch (socket) {
+        case "ruby":
+            break;
+        case "topaz":
+            break;
+        case "sapphire":
+            break;
+        case "emerald":
+            i = damage * socket_level / 15;
+            if (i > (int) me->query("qi") / 6) i = (int) me->query("qi") / 6;
+            if ((int) me->query("qi") < (int) me->query("max_qi")) {
+                message_vision(HIG
+                "åªè§$Nçš„ä¼¤å£ç»¿æ°”é—ªåŠ¨ï¼Œå¥½åƒæ´»åŠ›è¶³äº†ä¸€äº›ï¼\n"
+                NOR, me);
+                me->add("qi", i);
+                me->add("eff_qi", i);
+            }
+
+            if (!ob->query_condition("emerald_poison")) {
+                message_vision(HIG
+                "$nå¤§å«ï¼šä¸å¥½ï¼åªè§ä¸€é“ç»¿æ°”è¿…é€Ÿå»¶ä¼¸åˆ°$pçš„æ‰‹è‡‚ï¼\n"
+                NOR, me, ob);
+                ob->apply_condition("snake_poison", ob->query_condition("snake_poison") + random(5) + 8);
+                ob->apply_condition("zhizhu_poison", ob->query_condition("zhizhu_poison") + random(5) + 8);
+                ob->apply_condition("wugong_poison", ob->query_condition("wugong_poison") + random(5) + 8);
+                ob->apply_condition("xiezi_poison", ob->query_condition("xiezi_poison") + random(5) + 8);
+                ob->apply_condition("chanchu_poison", ob->query_condition("chanchu_poison") + random(5) + 8);
+                ob->apply_condition("emerald_poison", ob->query_condition("emerald_poison") + random(5) + 8);
+                ob->set("emerald_poison", socket_level);
+            }
+            break;
+        case "amethyst":
+            break;
+
+        case "windjade":
+            message_vision(GRN
+            "$nåªè§‰$Nèº«ä½“å‘¨å›´å½¢æˆæ—‹é£å°†$pçš„æ”»å‡»åŒ–å»ä¸å°‘ï¼\n"
+            NOR, me, ob);
+            def = -damage * socket_level / 10;
+            me->add("qi", socket_level * 30);
+            me->add("eff_qi", socket_level * 30);
+            if (def < 1) def = 1;
+
+            break;
+        case "firejade":
+            i = damage * socket_level / 13;
+            if (i > 0) {
+                message_vision(RED
+                "å¿½ç„¶$Nçš„èº«ä¸Šçƒˆç„°ä¸€é—ªï¼Œ$nåªæ„Ÿåˆ°ç¼çƒ­éš¾æŒ¡ï¼Œå·²å—äº†ä¼¤ï¼\n"
+                NOR, me, ob);
+                if (i > (int) ob->query("qi") / 5) i = (int) ob->query("qi") / 5;
+                ob->receive_damage("qi", i + socket_level * 30);
+                ob->receive_wound("qi", random(i) + socket_level * 30);
+                if (wizardp(me))
+                    tell_object(me, sprintf("çƒ§ä¼¤ä¼¤å®³åŠ›ï¼š %d\n", i));
+            }
+            break;
+        case "icejade":
+            i = damage;
+            if (i > 0) {
+                message_vision(CYN
+                "å¿½ç„¶$Nå‘¨å›´å¯’æ°”å†²å¤©ï¼Œå½¢æˆäº†ä¸€é“æ°´æ™¶å¢™,$nçš„æ”»å‡»åå¼¹äº†å›æ¥ï¼\n"
+                NOR, me, ob);
+                if (i > (int) ob->query("qi") / 6) i = (int) ob->query("qi") / 6;
+                ob->receive_damage("qi", i + socket_level * 20);
+                ob->receive_wound("qi", i + socket_level * 20);
+                if (i > (int) ob->query("jing") / 7) i = (int) ob->query("jing") / 7;
+                ob->receive_damage("jing", i + socket_level * 20);
+                if (wizardp(me))
+                    tell_object(me, sprintf("åéœ‡ä¼¤å®³åŠ›ï¼š %d\n", i));
+            }
+            break;
+        case "thunderjade":
+            i = damage * socket_level / 15;
+            if (i > 0) {
+                message_vision(MAG
+                "$Nèº«ä¸Šç”µå…‰ä¸€é—ªï¼Œ$nåªæ„Ÿå…¨èº«ä¸€éº»ï¼Œä¸çŸ¥æ‰€æªï¼\n"
+                NOR, me, ob);
+                if (!ob->is_busy())
+                    ob->start_busy(random(socket_level) + 2);
+                if (i > (int) ob->query("neili") / 4) i = (int) ob->query("neili") / 4;
+                ob->add("neili", -i);
+                ob->start_busy(random(socket_level) + 2);
+            }
+            break;
+        case "earthjade":
+            i = damage * socket_level / 15;
+            message_vision(YEL
+            "$Nè¢«å¤§åœ°å†ç”Ÿçš„å…‰èŠ’åŒ…å›´ï¼Œ$Nçš„ä¼¤å¥½äº†å¾ˆå¤šï¼\n"
+            NOR, me, ob);
+            if (i <= 0) i = 1;
+            if (i > (int) me->query("qi") / 6) i = (int) me->query("qi") / 6;
+            if ((int) me->query("qi") < (int) me->query("max_qi"))
+                me->add("qi", i);
+            me->add("eff_qi", i);
+            if (i > (int) me->query("jing") / 6) i = (int) me->query("jing") / 6;
+            if ((int) me->query("jing") < (int) me->query("max_jing"))
+                me->add("jing", i);
+            me->add("eff_jing", i);
+            break;
+        case "diamond":
+            message_vision(HIW
+            "$nåªè§‰$Nèº«ä¸Šä¼¼ä¹æœ‰ä¸€è‚¡æŸ”åŠ›å°†$pçš„åŠ²åŠ›åŒ–å»ä¸å°‘ï¼\n"
+            NOR, me, ob);
+            def = -damage * socket_level / 10;
+            if (def < 1) def = 1;
+            me->add("qi", socket_level * 30);
+            me->add("eff_qi", socket_level * 30);
+            break;
+        case "skull":
+            if (objectp(ob->query_temp("weapon")))
+                i = damage * socket_level / 25;
+            else
+                i = damage * socket_level / 15;
+            if (i > 0) {
+                message_vision(WHT
+                "å¿½ç„¶$Nå‘¨å›´é˜´æ°”å¤§ç››ï¼Œ$nåªæ„Ÿåˆ°æ°”è¡€æ±¹æ¶Œï¼Œæ— æ³•è‡ªæ§ï¼\n"
+                NOR, me, ob);
+                if (i > (int) ob->query("qi") / 5) i = (int) ob->query("qi") / 5;
+                ob->receive_damage("qi", i + socket_level * 20);
+                ob->receive_wound("qi", random(i) + socket_level * 20);
+                if (wizardp(me))
+                    tell_object(me, sprintf("åéœ‡ä¼¤å®³åŠ›ï¼š %d\n", i));
+            }
+            break;
+    }
+    return def;
 }
 
-		if (!ob->query_condition("emerald_poison")) {
-			message_vision(HIG"$n´ó½Ğ£º²»ºÃ£¡Ö»¼ûÒ»µÀÂÌÆøÑ¸ËÙÑÓÉìµ½$pµÄÊÖ±Û£¡\n"NOR, me, ob);
-			ob->apply_condition("snake_poison", ob->query_condition("snake_poison") + random(5) + 8);
-			ob->apply_condition("zhizhu_poison", ob->query_condition("zhizhu_poison") + random(5) + 8);
-			ob->apply_condition("wugong_poison", ob->query_condition("wugong_poison") + random(5) + 8);
-			ob->apply_condition("xiezi_poison", ob->query_condition("xiezi_poison") + random(5) + 8);
-			ob->apply_condition("chanchu_poison", ob->query_condition("chanchu_poison") + random(5) + 8);
-			ob->apply_condition("emerald_poison", ob->query_condition("emerald_poison") + random(5) + 8);
-			ob->set("emerald_poison", socket_level);
-		}
-		break;
-	case "amethyst":
-		break;
+int ob_hit(object ob, object me, int damage) {
+    int i, sockets, ret = 0;
 
-	case "windjade":
-		message_vision(GRN"$nÖ»¾õ$NÉíÌåÖÜÎ§ĞÎ³ÉĞı·ç½«$pµÄ¹¥»÷»¯È¥²»ÉÙ£¡\n"NOR, me, ob);
-		def = -damage * socket_level / 10;
-			me->add("qi", socket_level*30);
-			me->add("eff_qi", socket_level*30);
-if (def < 1) def=1;
-
-		break;
-	case "firejade":
-			i = damage * socket_level / 13;
-		if (i > 0) {
-			message_vision(RED"ºöÈ»$NµÄÉíÉÏÁÒÑæÒ»ÉÁ£¬$nÖ»¸Ğµ½×ÆÈÈÄÑµ²£¬ÒÑÊÜÁËÉË£¡\n"NOR, me, ob);
-if (i > (int)ob->query("qi")/5) i=(int)ob->query("qi")/5;
-			ob->receive_damage("qi", i+socket_level*30);
-			ob->receive_wound("qi", random(i)+socket_level*30);
-			if (wizardp(me))
-				tell_object(me, sprintf("ÉÕÉËÉËº¦Á¦£º %d\n", i));
-		}
-		break;
-	case "icejade":
-			i = damage;
-		if (i > 0) {
-			message_vision(CYN"ºöÈ»$NÖÜÎ§º®Æø³åÌì£¬ĞÎ³ÉÁËÒ»µÀË®¾§Ç½,$nµÄ¹¥»÷·´µ¯ÁË»ØÀ´£¡\n"NOR, me, ob);
-if (i > (int)ob->query("qi")/6) i=(int)ob->query("qi")/6;
-			ob->receive_damage("qi", i+socket_level*20);
-			ob->receive_wound("qi", i+socket_level*20);
-if (i > (int)ob->query("jing")/7) i=(int)ob->query("jing")/7;
-			ob->receive_damage("jing", i+socket_level*20);
-			if (wizardp(me))
-				tell_object(me, sprintf("·´ÕğÉËº¦Á¦£º %d\n", i));
-		}
-		break;
-	case "thunderjade":
-			i = damage * socket_level / 15;
-		if (i > 0) {
-		message_vision(MAG"$NÉíÉÏµç¹âÒ»ÉÁ£¬$nÖ»¸ĞÈ«ÉíÒ»Âé£¬²»ÖªËù´ë£¡\n"NOR, me, ob);
-                        if (!ob->is_busy())
-			ob->start_busy(random(socket_level)+2);
-if (i > (int)ob->query("neili")/4) i=(int)ob->query("neili")/4;
-			ob->add("neili", -i);
-ob->start_busy(random(socket_level)+2);
-}
-		break;
-	case "earthjade":
-			i = damage * socket_level / 15;
-			message_vision(YEL"$N±»´óµØÔÙÉúµÄ¹âÃ¢°üÎ§£¬$NµÄÉËºÃÁËºÜ¶à£¡\n"NOR, me, ob);
-if (i <=0) i=1;
-if (i > (int)me->query("qi")/6) i=(int)me->query("qi")/6;
-			if ((int)me->query("qi")< (int)me->query("max_qi"))
-			me->add("qi", i);
-			me->add("eff_qi", i);
-if (i > (int)me->query("jing")/6) i=(int)me->query("jing")/6;
-			if ((int)me->query("jing")< (int)me->query("max_jing"))
-			me->add("jing", i);
-			me->add("eff_jing", i);
-		break;
-	case "diamond":
-		message_vision(HIW"$nÖ»¾õ$NÉíÉÏËÆºõÓĞÒ»¹ÉÈáÁ¦½«$pµÄ¾¢Á¦»¯È¥²»ÉÙ£¡\n"NOR, me, ob);
-		def = -damage * socket_level / 10;
-if (def < 1) def=1;
-			me->add("qi", socket_level*30);
-			me->add("eff_qi", socket_level*30);
-		break;
-	case "skull":
-		if (objectp(ob->query_temp("weapon")))
-			i = damage * socket_level / 25;
-		else
-			i = damage * socket_level / 15;
-		if (i > 0) {
-			message_vision(WHT"ºöÈ»$NÖÜÎ§ÒõÆø´óÊ¢£¬$nÖ»¸Ğµ½ÆøÑªĞÚÓ¿£¬ÎŞ·¨×Ô¿Ø£¡\n"NOR, me, ob);
-if (i > (int)ob->query("qi")/5) i=(int)ob->query("qi")/5;
-			ob->receive_damage("qi", i+socket_level*20);
-			ob->receive_wound("qi", random(i)+socket_level*20);
-			if (wizardp(me))
-				tell_object(me, sprintf("·´ÕğÉËº¦Á¦£º %d\n", i));
-		}
-		break;
-	}
-	return def;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        ret += spec_effect(ob, me, damage,
+                           query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)));
+    return ret;
 }
 
-int ob_hit(object ob, object me, int damage)
-{
-	int i, sockets, ret = 0;
-
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		ret += spec_effect(ob, me, damage,
-query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)));
-	return ret;
-}
-
-void spec_recover(object me, string socket, int socket_level)
-{
-	int i;
+void spec_recover(object me, string socket, int socket_level) {
+    int i;
 
 //if (ob->query_temp("combat_yield")) return;
-	if (!valid_gem(socket, socket_level)) return;
-	if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
-        if ((int)me->query_temp("combat_yield")==1) return;
-	if (random(100) + me->query_temp("apply/magic") < 70) return;
+    if (!valid_gem(socket, socket_level)) return;
+    if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
+    if ((int) me->query_temp("combat_yield") == 1) return;
+    if (random(100) + me->query_temp("apply/magic") < 70) return;
 
-	switch (socket) {
-	case "ruby":
-		if (me->query("max_qi") > me->query("eff_qi") || me->query("eff_qi") > me->query("qi")
-		&& random(2)==0) {
-			message_vision(HIR"Ö»¼û$NµÄÉË¿Úºì¹âÁ÷¶¯£¬ÑªÁ÷¶ÙÊ±Ö¹×¡ÁË£¬Á¬ÉË¿ÚËÆºõÒ²¿ªÊ¼½¥½¥ÓúºÏ£¡\n"NOR, me);
-			me->add("eff_qi", 40 * socket_level);
-			if (me->query("eff_qi") > me->query("max_qi"))
-				me->set("eff_qi", me->query("max_qi"));
-			me->add("qi", 70 * socket_level);
-			if (me->query("qi") > me->query("eff_qi"))
-				me->set("qi", me->query("eff_qi"));
-		}
-		break;
-	case "topaz":
-		if (me->query("max_jing") > me->query("eff_jing") || me->query("eff_jing") > me->query("jing")
-		&& random(2)==0) {
-			message_vision(HIY"Ö»¼û$NµÄË«ÑÛ¿ªºÏÖ®¼ä½ğ¹âÉÁÏÖ£¬¾«Éñ¶ÙÊ±´óÕñ£¡\n"NOR, me);
-			me->add("eff_jing", 15 * socket_level);
-			if (me->query("eff_jing") > me->query("max_jing"))
-				me->set("eff_jing", me->query("max_jing"));
-			me->add("jing", 25 * socket_level);
-			if (me->query("jing") > me->query("eff_jing"))
-				me->set("jing", me->query("eff_jing"));
-		}
-		break;
-	case "sapphire":
-		if (me->is_busy() && me->is_busy() <= (socket_level + 1) / 2 + 1
-		&& random(3)==0) {
-			message_vision(HIB"$NÖ»¾õÒ»¹É¾¢Á¦Òıµ¼×ÅÄÚÆøÓÎ×ßÈ«Éí£¬±»×èÈûµÄÑ¨µÀÔÚËüµÄ³å»÷ÏÂÒÑÒ»¹á¶øÍ¨£¡\n"NOR, me);
-			me->start_busy(1);
-		}
-		break;
-	case "emerald":
-		break;
-	case "amethyst":
-		break;
-	case "diamond":
-		break;
-	case "skull":
-		break;
-	}
-	return;
+    switch (socket) {
+        case "ruby":
+            if (me->query("max_qi") > me->query("eff_qi") || me->query("eff_qi") > me->query("qi")
+                                                             && random(2) == 0) {
+                message_vision(HIR
+                "åªè§$Nçš„ä¼¤å£çº¢å…‰æµåŠ¨ï¼Œè¡€æµé¡¿æ—¶æ­¢ä½äº†ï¼Œè¿ä¼¤å£ä¼¼ä¹ä¹Ÿå¼€å§‹æ¸æ¸æ„ˆåˆï¼\n"
+                NOR, me);
+                me->add("eff_qi", 40 * socket_level);
+                if (me->query("eff_qi") > me->query("max_qi"))
+                    me->set("eff_qi", me->query("max_qi"));
+                me->add("qi", 70 * socket_level);
+                if (me->query("qi") > me->query("eff_qi"))
+                    me->set("qi", me->query("eff_qi"));
+            }
+            break;
+        case "topaz":
+            if (me->query("max_jing") > me->query("eff_jing") || me->query("eff_jing") > me->query("jing")
+                                                                 && random(2) == 0) {
+                message_vision(HIY
+                "åªè§$Nçš„åŒçœ¼å¼€åˆä¹‹é—´é‡‘å…‰é—ªç°ï¼Œç²¾ç¥é¡¿æ—¶å¤§æŒ¯ï¼\n"
+                NOR, me);
+                me->add("eff_jing", 15 * socket_level);
+                if (me->query("eff_jing") > me->query("max_jing"))
+                    me->set("eff_jing", me->query("max_jing"));
+                me->add("jing", 25 * socket_level);
+                if (me->query("jing") > me->query("eff_jing"))
+                    me->set("jing", me->query("eff_jing"));
+            }
+            break;
+        case "sapphire":
+            if (me->is_busy() && me->is_busy() <= (socket_level + 1) / 2 + 1
+                && random(3) == 0) {
+                message_vision(HIB
+                "$Nåªè§‰ä¸€è‚¡åŠ²åŠ›å¼•å¯¼ç€å†…æ°”æ¸¸èµ°å…¨èº«ï¼Œè¢«é˜»å¡çš„ç©´é“åœ¨å®ƒçš„å†²å‡»ä¸‹å·²ä¸€è´¯è€Œé€šï¼\n"
+                NOR, me);
+                me->start_busy(1);
+            }
+            break;
+        case "emerald":
+            break;
+        case "amethyst":
+            break;
+        case "diamond":
+            break;
+        case "skull":
+            break;
+    }
+    return;
 }
 
-void check_fight(object me)
-{
-	int i, sockets;
+void check_fight(object me) {
+    int i, sockets;
 
-	if (!me || !query("equipped")) return;
-	if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
-	if (living(me) && me->is_fighting()) {
-		sockets = query("sockets/max");
-		for (i = 1; i <= sockets; i++)
-			spec_recover(me, query(sprintf("sockets/socket%d", i)),
-query(sprintf("sockets/socket%d_level", i)));
-	}
+    if (!me || !query("equipped")) return;
+    if (me->query("diablo/" + TYPE_CLOTH + "/id") != query("id")) return;
+    if (living(me) && me->is_fighting()) {
+        sockets = query("sockets/max");
+        for (i = 1; i <= sockets; i++)
+            spec_recover(me, query(sprintf("sockets/socket%d", i)),
+                         query(sprintf("sockets/socket%d_level", i)));
+    }
 
-	call_out("check_fight", 1, me);
+    call_out("check_fight", 1, me);
 }

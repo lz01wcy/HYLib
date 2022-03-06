@@ -2,18 +2,18 @@
 
 inherit ROOM;
 
-void create()
-{
-	set("short", "沙漠绿洲");
-	set("long",
-	     "这里是沙漠中不多的一块绿洲，向南不远隐约可以看见一座黑黑的山洞。随风传来一些\n"
-	     "叮叮当当的打铁的声音。也不知是谁在打造什么。\n"
+void create() {
+    set("short", "娌欐紶缁挎床");
+    set("long",
+        "杩欓噷鏄矙婕犱腑涓嶅鐨勪竴鍧楃豢娲诧紝鍚戝崡涓嶈繙闅愮害鍙互鐪嬭涓�搴ч粦榛戠殑灞辨礊銆傞殢椋庝紶鏉ヤ竴浜沑n"
+        "鍙彯褰撳綋鐨勬墦閾佺殑澹伴煶銆備篃涓嶇煡鏄皝鍦ㄦ墦閫犱粈涔堛�俓n"
 
-	);
-	set("exits", ([
-		"east" : "/d/xingxiu/nanjiang2",
-		"south" : __DIR__"xuanbing",
-	]));
-	setup();
-	replace_program(ROOM);
+    );
+    set("exits",([
+    "east" : "/d/xingxiu/nanjiang2",
+            "south" : __DIR__
+    "xuanbing",
+    ]));
+    setup();
+    replace_program(ROOM);
 }

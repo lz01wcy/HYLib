@@ -1,70 +1,73 @@
 #include <ansi.h>
+
 inherit ITEM;
 
-void create()
-{
-        set_name(HIR"ÃÅÅÉÃÜ¼þ"NOR, ({ "mi jian"}));
-        set_weight(10);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("unit", "·â");
-                set("long",
-                        "Ò»·â¾ü»úÃÜ¼þ,¼ÇÔØ×Å¸÷¸öÃÅÅÉÇé¿ö¡£\n");
-                set("value", 0);
-                set("material", "paper");
-		 
-         }
-}
-void init()
-{    
-	add_action("do_xiaohui", "xiaohui");
+void create() {
+    set_name(HIR
+    "é—¨æ´¾å¯†ä»¶"
+    NOR, ({ "mi jian" }));
+    set_weight(10);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "å°");
+        set("long",
+            "ä¸€å°å†›æœºå¯†ä»¶,è®°è½½ç€å„ä¸ªé—¨æ´¾æƒ…å†µã€‚\n");
+        set("value", 0);
+        set("material", "paper");
+
+    }
 }
 
-int do_xiaohui(string arg)
-{
-        int i,exp,pot,count,base_exp,add_exp;
-        object ob,me,*team;
-              
-		me=this_player();
-        ob=this_object();
-		if(!arg||arg!="mi jian") return notify_fail("ÄãÒªÏú»ÙÊ²Ã´£¿\n");
-        if(ob->query_temp("host")!= me->query("id")
-			||!me->query_condition("mjb_busy")||!me->query_temp("team_count"))
-		return notify_fail("Õâ¼þÊÂºÃÏñºÍÄãÃ»¹ØÏµ°É?\n");
-		if (!present("mi jian",me) )
-        return notify_fail("ÄãÉíÉÏÃ»ÓÐÃÜ¼þ¡£\n"); 
-        //check ok
-		message_vision("$N´Ó»³ÖÐÌÍ³öÒ»Ö»»ðÕÛµãÈ¼ÁËÃÜ¼þ¡£\n"+HIR"Ö»Ìý¡¸ºä¡¹µÄÒ»Éù£¬ÃÜ¼þÔÚ»ðÖÐÂýÂý»¯Îª»Ò½ý ¡£\n"NOR, me);
-        count=me->query_temp("team_count");
-		if (count<2) count=2;	
-        base_exp=3000/count;
-		team=me->query_team();
-		count=sizeof(team);
-		//write("\n"+sprintf("%d",count));
-		for(i=0;i<count;i++)
-		{ if(team[i]!=0)
-		{
-			if (team[i]->query_condition("mjb_busy"))
-			{if(!team[i]->query("mjb_job_count"))
-		     team[i]->set("mjb_job_count",1);
-             else
-		     team[i]->add("mjb_job_count",1);  
-			 add_exp=team[i]->query("mjb_job_count")/10;
-		     exp=base_exp+random(600)+add_exp+600;
-		     pot=exp*2/3+random(400);
-             if (environment(me)==environment(team[i])) team[i]->add("potential",pot);
-             if (environment(me)==environment(team[i])) team[i]->add("combat_exp",exp);
- 		       tell_object(team[i],HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
-                       NOR);
-			}
-			} 
-		}
-		  me->delete_temp("team_count");
-         	  
-		  destruct(this_object());
-          return 1;
+void init() {
+    add_action("do_xiaohui", "xiaohui");
+}
+
+int do_xiaohui(string arg) {
+    int i, exp, pot, count, base_exp, add_exp;
+    object ob, me, *team;
+
+    me = this_player();
+    ob = this_object();
+    if (!arg || arg != "mi jian") return notify_fail("ä½ è¦é”€æ¯ä»€ä¹ˆï¼Ÿ\n");
+    if (ob->query_temp("host") != me->query("id")
+        || !me->query_condition("mjb_busy") || !me->query_temp("team_count"))
+        return notify_fail("è¿™ä»¶äº‹å¥½åƒå’Œä½ æ²¡å…³ç³»å§?\n");
+    if (!present("mi jian", me))
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰å¯†ä»¶ã€‚\n");
+    //check ok
+    message_vision("$Nä»Žæ€€ä¸­æŽå‡ºä¸€åªç«æŠ˜ç‚¹ç‡ƒäº†å¯†ä»¶ã€‚\n" + HIR
+    "åªå¬ã€Œè½°ã€çš„ä¸€å£°ï¼Œå¯†ä»¶åœ¨ç«ä¸­æ…¢æ…¢åŒ–ä¸ºç°çƒ¬ ã€‚\n"
+    NOR, me);
+    count = me->query_temp("team_count");
+    if (count < 2) count = 2;
+    base_exp = 3000 / count;
+    team = me->query_team();
+    count = sizeof(team);
+    //write("\n"+sprintf("%d",count));
+    for (i = 0; i < count; i++) {
+        if (team[i] != 0) {
+            if (team[i]->query_condition("mjb_busy")) {
+                if (!team[i]->query("mjb_job_count"))
+                    team[i]->set("mjb_job_count", 1);
+                else
+                    team[i]->add("mjb_job_count", 1);
+                add_exp = team[i]->query("mjb_job_count") / 10;
+                exp = base_exp + random(600) + add_exp + 600;
+                pot = exp * 2 / 3 + random(400);
+                if (environment(me) == environment(team[i])) team[i]->add("potential", pot);
+                if (environment(me) == environment(team[i])) team[i]->add("combat_exp", exp);
+                tell_object(team[i], HIW
+                "ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+                chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n" +
+                chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+                NOR);
+            }
+        }
+    }
+    me->delete_temp("team_count");
+
+    destruct(this_object());
+    return 1;
 }
 

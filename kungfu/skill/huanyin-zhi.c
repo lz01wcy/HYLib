@@ -1,146 +1,155 @@
 // huanyin-zhi.c
 #include <ansi.h>
+
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$NÒ»Ö±´Á³ö£¬»ÃÆðÒ»ÍÅÖ¸Ó°£¬±ÆÏò$nµÄ$l",
-        "force" : 250,
-        "attack": 19,
-        "parry" : 22,
-        "dodge" : 18,
-        "damage": 228,
-        "lvl"   : 0,
-        "damage_type" : "´ÌÉË"
-]),
-([      "action": "$NÈ«ÉíÖ®Á¦¾ÛÓÚÒ»Ö¸£¬Ö±Ö¸Ïò$nµÄÐØÇ°",
-        "force" : 270,
-        "attack": 36,
-        "parry" : 31,
-        "dodge" : 28,
-        "damage": 235,
-        "lvl"   : 30,
-        "skill_name" : "ÌìËÆÎÞÇé",
-        "damage_type" : "´ÌÉË"
-]),
-([      "action": "$NÌáÉíÈ´²½£¬ÓÒÊÖºöµÄµã³ö£¬Ïò$nµÄ$l»®¹ý",
-        "force" : 290,
-        "attack": 39,
-        "parry" : 22,
-        "dodge" : 38,
-        "damage": 245,
-        "lvl"   : 60,
-        "skill_name" : "Çé¸ùÉîÖÖ",
-        "damage_type" : "´ÌÉË"
-]),
-([      "action": "$NÇáÉùÍÂÆø£¬Ë«Ö¸·ÉËÆµÄ´ÌÏò$nµÄ¶î¡¢¾±¡¢¼ç¡¢±Û¡¢ÐØ¡¢±³",
-        "force" : 300,
-        "attack": 47,
-        "parry" : 42,
-        "dodge" : 35,
-        "damage": 248,
-        "lvl"   : 90,
-        "skill_name" : "ÇéÔÚÌìÑÄ",
-        "damage_type" : "´ÌÉË"
-]),
-([      "action": "$N×óÕÆÕÆÐÄÏòÍâ£¬ÓÒÖ¸ÐîÊÆµãÏò$nµÄ$l",
-        "force" : 330,
-        "attack": 55,
-        "parry" : 50,
-        "dodge" : 48,
-        "damage": 55,
-        "lvl"   : 120,
-        "skill_name" : "¶ÀÒûÇéÉË",
-        "damage_type" : "´ÌÉË"
-]),
-([      "action": "$NÓÒÊÖÉì³ö£¬Ê®Ö¸²æ¿ª£¬Ð¡Ö¸·÷Ïò$nµÄÌ«Ô¨Ñ¨",
-        "force" : 350,
-        "attack": 70,
-        "parry" : 60,
-        "dodge" : 58,
-        "damage": 260,
-        "lvl"   : 150,
-        "skill_name" : "ÎÞËß±ðÇé",
-        "damage_type" : "´ÌÉË"
-]),
+    ([      "action": "$Nä¸€ç›´æˆ³å‡ºï¼Œå¹»èµ·ä¸€å›¢æŒ‡å½±ï¼Œé€¼å‘$nçš„$l",
+            "force" : 250,
+            "attack": 19,
+            "parry" : 22,
+            "dodge" : 18,
+            "damage": 228,
+            "lvl"   : 0,
+            "damage_type" : "åˆºä¼¤"
+    ]),
+    ([      "action": "$Nå…¨èº«ä¹‹åŠ›èšäºŽä¸€æŒ‡ï¼Œç›´æŒ‡å‘$nçš„èƒ¸å‰",
+            "force" : 270,
+            "attack": 36,
+            "parry" : 31,
+            "dodge" : 28,
+            "damage": 235,
+            "lvl"   : 30,
+            "skill_name" : "å¤©ä¼¼æ— æƒ…",
+            "damage_type" : "åˆºä¼¤"
+    ]),
+    ([      "action": "$Næèº«å´æ­¥ï¼Œå³æ‰‹å¿½çš„ç‚¹å‡ºï¼Œå‘$nçš„$låˆ’è¿‡",
+            "force" : 290,
+            "attack": 39,
+            "parry" : 22,
+            "dodge" : 38,
+            "damage": 245,
+            "lvl"   : 60,
+            "skill_name" : "æƒ…æ ¹æ·±ç§",
+            "damage_type" : "åˆºä¼¤"
+    ]),
+    ([      "action": "$Nè½»å£°åæ°”ï¼ŒåŒæŒ‡é£žä¼¼çš„åˆºå‘$nçš„é¢ã€é¢ˆã€è‚©ã€è‡‚ã€èƒ¸ã€èƒŒ",
+            "force" : 300,
+            "attack": 47,
+            "parry" : 42,
+            "dodge" : 35,
+            "damage": 248,
+            "lvl"   : 90,
+            "skill_name" : "æƒ…åœ¨å¤©æ¶¯",
+            "damage_type" : "åˆºä¼¤"
+    ]),
+    ([      "action": "$Nå·¦æŽŒæŽŒå¿ƒå‘å¤–ï¼Œå³æŒ‡è“„åŠ¿ç‚¹å‘$nçš„$l",
+            "force" : 330,
+            "attack": 55,
+            "parry" : 50,
+            "dodge" : 48,
+            "damage": 55,
+            "lvl"   : 120,
+            "skill_name" : "ç‹¬é¥®æƒ…ä¼¤",
+            "damage_type" : "åˆºä¼¤"
+    ]),
+    ([      "action": "$Nå³æ‰‹ä¼¸å‡ºï¼ŒåæŒ‡å‰å¼€ï¼Œå°æŒ‡æ‹‚å‘$nçš„å¤ªæ¸Šç©´",
+            "force" : 350,
+            "attack": 70,
+            "parry" : 60,
+            "dodge" : 58,
+            "damage": 260,
+            "lvl"   : 150,
+            "skill_name" : "æ— è¯‰åˆ«æƒ…",
+            "damage_type" : "åˆºä¼¤"
+    ]),
 });
 
-int valid_enable(string usage) { return usage=="finger" || usage=="parry"; }
+int valid_enable(string usage) { return usage == "finger" || usage == "parry"; }
 
 
-int valid_learn(object me)
-{
-        if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("Á·»ÃÒõÖ¸·¨±ØÐë¿ÕÊÖ¡£\n");
+int valid_learn(object me) {
+    if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+        return notify_fail("ç»ƒå¹»é˜´æŒ‡æ³•å¿…é¡»ç©ºæ‰‹ã€‚\n");
 
-        if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÎÞ·¨Ñ§»ÃÒõÖ¸·¨¡£\n");
+    if ((int) me->query_skill("force") < 200)
+        return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦å¹»é˜´æŒ‡æ³•ã€‚\n");
 
-        if ((int)me->query("max_neili") < 800)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·»ÃÒõÖ¸·¨¡£\n");
+    if ((int) me->query("max_neili") < 800)
+        return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒå¹»é˜´æŒ‡æ³•ã€‚\n");
 
-        if ((int)me->query_skill("finger", 1) < (int)me->query_skill("huanyin-zhi", 1))
-                return notify_fail("ÄãµÄ»ù±¾Ö¸·¨Ë®Æ½ÓÐÏÞ£¬ÎÞ·¨Áì»á¸ü¸ßÉîµÄ»ÃÒõÖ¸·¨¡£\n");
+    if ((int) me->query_skill("finger", 1) < (int) me->query_skill("huanyin-zhi", 1))
+        return notify_fail("ä½ çš„åŸºæœ¬æŒ‡æ³•æ°´å¹³æœ‰é™ï¼Œæ— æ³•é¢†ä¼šæ›´é«˜æ·±çš„å¹»é˜´æŒ‡æ³•ã€‚\n");
 
-        return 1;
+    return 1;
 }
 
-string query_skill_name(int level)
-{
-        int i;
-        for(i = sizeof(action)-1; i >= 0; i--)
-                if (level >= action[i]["lvl"])
-                        return action[i]["skill_name"];
+string query_skill_name(int level) {
+    int i;
+    for (i = sizeof(action) - 1; i >= 0; i--)
+        if (level >= action[i]["lvl"])
+            return action[i]["skill_name"];
 }
 
-mapping query_action(object me, object weapon)
-{
-        int i, level;
-        level = (int) me->query_skill("huanyin-zhi",1);
-        for (i = sizeof(action); i > 0; i--)
-                if (level > action[i-1]["lvl"])
-                        return action[NewRandom(i, 20, level/5)];
+mapping query_action(object me, object weapon) {
+    int i, level;
+    level = (int) me->query_skill("huanyin-zhi", 1);
+    for (i = sizeof(action); i > 0; i--)
+        if (level > action[i - 1]["lvl"])
+            return action[NewRandom(i, 20, level / 5)];
 }
 
-int practice_skill(object me)
-{
-        if ((int)me->query("qi") < 80)
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+int practice_skill(object me) {
+    if ((int) me->query("qi") < 80)
+        return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½Žäº†ã€‚\n");
 
-        if ((int)me->query("neili") < 75)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·»ÃÒõÖ¸·¨¡£\n");
+    if ((int) me->query("neili") < 75)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒå¹»é˜´æŒ‡æ³•ã€‚\n");
 
-        me->receive_damage("qi", 72);
-        me->add("neili", -69);
-        return 1;
+    me->receive_damage("qi", 72);
+    me->add("neili", -69);
+    return 1;
 }
 
-string perform_action_file(string action)
-{
-        return __DIR__"huanyin-zhi/" + action;
+string perform_action_file(string action) {
+    return __DIR__
+    "huanyin-zhi/" + action;
 }
-mixed hit_ob(object me, object target)
-{
+
+mixed hit_ob(object me, object target) {
     string msg;
     int j;
     j = me->query_skill("huanyin-zhi", 1);
-   
-    if( random(3) == 0 && !target->is_busy() && j > 100 &&
-       me->query("neili") > target->query("neili") &&
-       me->query("neili") > 500 && me->query("max_neili") > 500 &&
-        j > random(target->query_skill("dodge",1))){
-          switch(random(2)){
+
+    if (random(3) == 0 && !target->is_busy() && j > 100 &&
+        me->query("neili") > target->query("neili") &&
+        me->query("neili") > 500 && me->query("max_neili") > 500 &&
+        j > random(target->query_skill("dodge", 1))) {
+        switch (random(2)) {
             case 0 :
-               msg = HIC"$N"HIC"ÉîÎüÒ»¿ÚÆø£¬È«ÉíÖ®Á¦¾ÛÓÚÒ»Ö¸£¬Ð®´ýÒ»¹Éº®Æø£¬ÉäÏò$nµÄÈ«ÉíÒªÑ¨£¡\n"NOR;
-               msg += RED"$nÖ»¾õÈ«ÉíÒ»Âé£¬È«ÉíÒ»º®£¡\n"NOR; 
-               target->start_busy(3);
-               break;
+                msg = HIC
+                "$N"
+                HIC
+                "æ·±å¸ä¸€å£æ°”ï¼Œå…¨èº«ä¹‹åŠ›èšäºŽä¸€æŒ‡ï¼ŒæŒŸå¾…ä¸€è‚¡å¯’æ°”ï¼Œå°„å‘$nçš„å…¨èº«è¦ç©´ï¼\n"
+                NOR;
+                msg += RED
+                "$nåªè§‰å…¨èº«ä¸€éº»ï¼Œå…¨èº«ä¸€å¯’ï¼\n"
+                NOR;
+                target->start_busy(3);
+                break;
             case 1 :
-               msg = HIC"$N"HIC"ÇáÉùÍÂÆø£¬Ë«Ö¸ Ð®´ýÒ»¹Éº®Æø·ÉËÆµÄ´ÌÏò$nµÄÐØ¸¹¼ä£¡\n"NOR;
-               msg += RED"½á¹û$nÆøÑªÒ»ÖÍ£¬È«ÉíÒ»º®£¡\n"NOR;
-               target->start_busy(3);
-               break;
-            
-            }         
-        message_vision(msg, me, target);
+                msg = HIC
+                "$N"
+                HIC
+                "è½»å£°åæ°”ï¼ŒåŒæŒ‡ æŒŸå¾…ä¸€è‚¡å¯’æ°”é£žä¼¼çš„åˆºå‘$nçš„èƒ¸è…¹é—´ï¼\n"
+                NOR;
+                msg += RED
+                "ç»“æžœ$næ°”è¡€ä¸€æ»žï¼Œå…¨èº«ä¸€å¯’ï¼\n"
+                NOR;
+                target->start_busy(3);
+                break;
+
         }
+        message_vision(msg, me, target);
+    }
 }

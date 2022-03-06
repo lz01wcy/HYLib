@@ -5,142 +5,148 @@
 inherit ITEM;
 inherit F_GEMS;
 
-void create()
-{
-	int lev, i;
-	string gem, s;
-	object me = this_player();
+void create() {
+    int lev, i;
+    string gem, s;
+    object me = this_player();
 
-	i = random(17);
-	if (i < 1) gem = "ruby";
-	else if (i < 3) gem = "topaz";
-	else if (i < 5) gem = "sapphire";
-	else if (i < 7) gem = "emerald";
-	else if (i < 9) gem = "amethyst";
-	else if (i < 11) gem = "windjade";
-	else if (i < 12) gem = "firejade";
-	else if (i < 13) gem = "icejade";
-	else if (i < 14) gem = "thunderjade";
-	else if (i < 15) gem = "earthjade";
-	else if (i < 16) gem = "diamond";
-	else gem = "skull";
+    i = random(17);
+    if (i < 1) gem = "ruby";
+    else if (i < 3) gem = "topaz";
+    else if (i < 5) gem = "sapphire";
+    else if (i < 7) gem = "emerald";
+    else if (i < 9) gem = "amethyst";
+    else if (i < 11) gem = "windjade";
+    else if (i < 12) gem = "firejade";
+    else if (i < 13) gem = "icejade";
+    else if (i < 14) gem = "thunderjade";
+    else if (i < 15) gem = "earthjade";
+    else if (i < 16) gem = "diamond";
+    else gem = "skull";
 
-	i = random(100);
-	if (i < 50) lev = 1;
-	else if (i < 75) lev = 2;
-	else if (i < 90) lev = 3;
-	else if (i < 95) lev = 4;
-	else if (i < 96) lev = 5;
-	else if (i < 97) lev = 6;
-	else if (i < 98) lev = 7;
-	else lev = 8;
-if (lev >4 && random(2)==1)
-lev=3;
-if (lev >5 && random(2)==1)
-lev=4;
-if (lev >=6 && random(2)==1)
-lev=6;
-if (lev >=7 && random(2)==1)
-lev=6;
-	set_name(query_gem_name(gem, lev), ({query_gem_id(gem, lev)}));
-	set_weight(100);
-	set("long", query_all_effect(gem));
-	set("unit", "¿Å");
-	set("no_put",1);
-       set("treasure",1);       
+    i = random(100);
+    if (i < 50) lev = 1;
+    else if (i < 75) lev = 2;
+    else if (i < 90) lev = 3;
+    else if (i < 95) lev = 4;
+    else if (i < 96) lev = 5;
+    else if (i < 97) lev = 6;
+    else if (i < 98) lev = 7;
+    else lev = 8;
+    if (lev > 4 && random(2) == 1)
+        lev = 3;
+    if (lev > 5 && random(2) == 1)
+        lev = 4;
+    if (lev >= 6 && random(2) == 1)
+        lev = 6;
+    if (lev >= 7 && random(2) == 1)
+        lev = 6;
+    set_name(query_gem_name(gem, lev), ({ query_gem_id(gem, lev) }));
+    set_weight(100);
+    set("long", query_all_effect(gem));
+    set("unit", "é¢—");
+    set("no_put", 1);
+    set("treasure", 1);
 //	set("no_get",1);
 //	set("no_drop",1);
-	set("no_beg",1);
-	set("no_steal",1);
+    set("no_beg", 1);
+    set("no_steal", 1);
 //        set("no_clone",1);
-        set("no_pawn",1);
-            set("treasure",1);	
-	set("value", 20000 * lev * lev * lev);
-	set("material", gem);
-	set("level", lev);
-	setup();
+    set("no_pawn", 1);
+    set("treasure", 1);
+    set("value", 20000 * lev * lev * lev);
+    set("material", gem);
+    set("level", lev);
+    setup();
 }
 
-void init()
-{
-	add_action("do_insert", "insert");
-	add_action("do_combine", "combine");
+void init() {
+    add_action("do_insert", "insert");
+    add_action("do_combine", "combine");
 }
 
-int do_insert(string arg)
-{
-	int index;
-	string gem, item_name;
-	object ob, me = this_player();
+int do_insert(string arg) {
+    int index;
+    string gem, item_name;
+    object ob, me = this_player();
 
-	if (!arg || arg == "")
-		return notify_fail("Ö¸Áî¸ñÊ½£ºinsert ±¦Ê¯ into ÎïÆ· at socket ±àºÅ\n");
-	if (sscanf(arg, "%s into %s at socket %d", gem, item_name, index) != 3)
-		return notify_fail("Ö¸Áî¸ñÊ½£ºinsert ±¦Ê¯ into ÎïÆ· at socket ±àºÅ\n");
-	if (gem != query("id")) return 0;
-	if (!objectp(ob = present(item_name, me)))
-		return notify_fail("ÄãÏë°ÑËüÏâÇ¶ÔÚÊ²Ã´¶«Î÷ÉÏ£¿\n");
-	if (index > ob->query("sockets/max"))
-		return notify_fail(ob->name() + "ÉÏºÃÏó²¢Ã»ÓĞÕâ¸ö½Ó¿×Ñ½£¡\n");
-	if (ob->query("equipped"))
-		return notify_fail(ob->name() + "Õı×°±¸×ÅÄØ£¡\n");
-	if (me->query("max_neili") < 1000 || me->query("neili") < 1500)
-		return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎª£¬»¹ÎŞ·¨ÔË¹¦ÏâÇ¶±¦Ê¯£¡\n");
+    if (!arg || arg == "")
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šinsert å®çŸ³ into ç‰©å“ at socket ç¼–å·\n");
+    if (sscanf(arg, "%s into %s at socket %d", gem, item_name, index) != 3)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šinsert å®çŸ³ into ç‰©å“ at socket ç¼–å·\n");
+    if (gem != query("id")) return 0;
+    if (!objectp(ob = present(item_name, me)))
+        return notify_fail("ä½ æƒ³æŠŠå®ƒé•¶åµŒåœ¨ä»€ä¹ˆä¸œè¥¿ä¸Šï¼Ÿ\n");
+    if (index > ob->query("sockets/max"))
+        return notify_fail(ob->name() + "ä¸Šå¥½è±¡å¹¶æ²¡æœ‰è¿™ä¸ªæ¥å­”å‘€ï¼\n");
+    if (ob->query("equipped"))
+        return notify_fail(ob->name() + "æ­£è£…å¤‡ç€å‘¢ï¼\n");
+    if (me->query("max_neili") < 1000 || me->query("neili") < 1500)
+        return notify_fail("ä»¥ä½ ç°åœ¨çš„å†…åŠ›ä¿®ä¸ºï¼Œè¿˜æ— æ³•è¿åŠŸé•¶åµŒå®çŸ³ï¼\n");
 
-	message_vision(HIG"$N°µÔËÄÚÁ¦£¬Ò»Ê¹¾¢°Ñ" + name() + HIG"ÏâÈëÁË" + ob->name() + HIG"ÖĞ£¬
-É²ÄÇ¼ä£¬Ö»¾õ" + ob->name() + HIG"ÉÏ·º³öÒ»µÀÆæÒìµÄ¹âÃ¢£¬ËÆºõÓĞÒ»¹ÉÉñÆæµÄÁ¦Á¿¸½ÔÚÆäÖĞ£¡\n", me);
-	me->add("max_neili", -100);
-	me->add("neili", -1000);
-	me->start_busy(2);
-	ob->set(sprintf("sockets/socket%d", index), query("material"));
-	ob->set(sprintf("sockets/socket%d_level", index), query("level"));
+    message_vision(HIG
+    "$Næš—è¿å†…åŠ›ï¼Œä¸€ä½¿åŠ²æŠŠ" + name() + HIG
+    "é•¶å…¥äº†" + ob->name() + HIG
+    "ä¸­ï¼Œ
+    åˆ¹é‚£é—´ï¼Œåªè§‰
+    " + ob->name() + HIG"
+    ä¸Šæ³›å‡ºä¸€é“å¥‡å¼‚çš„å…‰èŠ’ï¼Œä¼¼ä¹æœ‰ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡é™„åœ¨å…¶ä¸­ï¼\n
+    ", me);
+    me->add("max_neili", -100);
+    me->add("neili", -1000);
+    me->start_busy(2);
+    ob->set(sprintf("sockets/socket%d", index), query("material"));
+    ob->set(sprintf("sockets/socket%d_level", index), query("level"));
 
-	seteuid(ROOT_UID);
-	reload_object(ob);
-        seteuid(getuid());
-	destruct(this_object());
+    seteuid(ROOT_UID);
+    reload_object(ob);
+    seteuid(getuid());
+    destruct(this_object());
 
-	return 1;
+    return 1;
 }
 
-int do_combine(string arg)
-{
-	int i;
-	object *inv, gem, me = this_player();
+int do_combine(string arg) {
+    int i;
+    object *inv, gem, me = this_player();
 
-	if (!arg || arg == "")
-		return notify_fail("ÄãÏëºÏ²¢Ê²Ã´±¦Ê¯£¿\n");
-	if (arg != query("id")) return 0;
-	if (query("level") == 8)
-		return notify_fail("Õâ¸ö±¦Ê¯ÒÑ¾­ÊÇ×î¸ßµÈ¼¶ÁË£¡\n");
-	if (me->query("max_neili") < 500 || me->query("neili") < 800)
-		return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎª£¬»¹ÎŞ·¨ÔË¹¦ºÏ²¢±¦Ê¯£¡\n");
+    if (!arg || arg == "")
+        return notify_fail("ä½ æƒ³åˆå¹¶ä»€ä¹ˆå®çŸ³ï¼Ÿ\n");
+    if (arg != query("id")) return 0;
+    if (query("level") == 8)
+        return notify_fail("è¿™ä¸ªå®çŸ³å·²ç»æ˜¯æœ€é«˜ç­‰çº§äº†ï¼\n");
+    if (me->query("max_neili") < 500 || me->query("neili") < 800)
+        return notify_fail("ä»¥ä½ ç°åœ¨çš„å†…åŠ›ä¿®ä¸ºï¼Œè¿˜æ— æ³•è¿åŠŸåˆå¹¶å®çŸ³ï¼\n");
 
-	inv = all_inventory(me);
-	for(i = 0; i < sizeof(inv); i++)
-		if (inv[i] != this_object() && inv[i]->query("id") == query("id")) {
-			if (!objectp(gem))
-				gem = inv[i];
-			else {
-				message_vision(HIG"$N°µÔËÄÚÁ¦¾¢Í¸±¦Ê¯£¬µ«¼û" + name() + HIG"±íÃæÒì²ÊÁ÷¶¯£¬
-½¥½¥µÄ$NÊÕ»ØÁËÄÚÁ¦£¬Ö»¾õ" + name() + HIG"ËÆºõ±äµÃ¸ü¼ÓÍêÃÀÁË£¡\n", me);
-				me->add("max_neili", -10);
-				me->add("neili", -500);
-				me->start_busy(1);
-if (random(5)==0)
-{
-				new_gem(query("material"), query("level") + 1)->move(me);
-}
-else
-{
-				message_vision(RED"$N´ó½ĞÒ»Éù²»ºÃ! " + name() + RED"Í»È»ÁÑ¿ªÁË£¬Ê§È¥ÁË¹âÔó£¡\n", me);
-	
-}
-				destruct(gem);
-				destruct(inv[i]);
-				destruct(this_object());
-				return 1;
-			}
-		}
-	return notify_fail("Äã±ØĞëÓĞÈı¿éÍ¬ÑùµÄ±¦Ê¯²ÅÄÜ½øĞĞºÏ²¢£¡\n");
+    inv = all_inventory(me);
+    for (i = 0; i < sizeof(inv); i++)
+        if (inv[i] != this_object() && inv[i]->query("id") == query("id")) {
+            if (!objectp(gem))
+                gem = inv[i];
+            else {
+                message_vision(HIG
+                "$Næš—è¿å†…åŠ›åŠ²é€å®çŸ³ï¼Œä½†è§" + name() + HIG
+                "è¡¨é¢å¼‚å½©æµåŠ¨ï¼Œ
+                æ¸æ¸çš„$Næ”¶å›äº†å†…åŠ›ï¼Œåªè§‰
+                " + name() + HIG"
+                ä¼¼ä¹å˜å¾—æ›´åŠ å®Œç¾äº†ï¼\n
+                ", me);
+                me->add("max_neili", -10);
+                me->add("neili", -500);
+                me->start_busy(1);
+                if (random(5) == 0) {
+                    new_gem(query("material"), query("level") + 1)->move(me);
+                } else {
+                    message_vision(RED
+                    "$Nå¤§å«ä¸€å£°ä¸å¥½! " + name() + RED
+                    "çªç„¶è£‚å¼€äº†ï¼Œå¤±å»äº†å…‰æ³½ï¼\n", me);
+
+                }
+                destruct(gem);
+                destruct(inv[i]);
+                destruct(this_object());
+                return 1;
+            }
+        }
+    return notify_fail("ä½ å¿…é¡»æœ‰ä¸‰å—åŒæ ·çš„å®çŸ³æ‰èƒ½è¿›è¡Œåˆå¹¶ï¼\n");
 }

@@ -1,281 +1,257 @@
-// zhang.c ÕÅÌìÊ¦
+// zhang.c å¼ å¤©å¸ˆ
 
 #include <ansi.h>
 
 inherit NPC;
 
 int ask_me();
+
 int ask_hui();
 
-void create()
-{
-	set_name("ÕÅÌìÊ¦", ({ "zhang tianshi", "zhang" }));
-	set("age", 57);
-	set("gender", "ÄĞĞÔ");
-	set("long", "ÕâÊÇÒ»Î»ÏÉ·çÉñ¹Ç£¬µÀÃ²°¶È»µÄ·¨Ê¦¡£\n");
-	set("attitude", "peaceful");
+void create() {
+    set_name("å¼ å¤©å¸ˆ", ({ "zhang tianshi", "zhang" }));
+    set("age", 57);
+    set("gender", "ç”·æ€§");
+    set("long", "è¿™æ˜¯ä¸€ä½ä»™é£ç¥éª¨ï¼Œé“è²Œå²¸ç„¶çš„æ³•å¸ˆã€‚\n");
+    set("attitude", "peaceful");
 
-	set("str", 28);
-        set("int", 35);
-        set("con", 38);
-	set("dex", 31);
+    set("str", 28);
+    set("int", 35);
+    set("con", 38);
+    set("dex", 31);
 
-        set("max_qi", 8000);
-        set("max_jing", 8000);
-        set("max_neili", 8000);
+    set("max_qi", 8000);
+    set("max_jing", 8000);
+    set("max_neili", 8000);
 
-        set_skill("magic", 200);
-        set_skill("taoism", 350);
+    set_skill("magic", 200);
+    set_skill("taoism", 350);
 
-        set("chat_chance_combat", 3);
-	set("chat_msg_combat", ({
-                "ÕÅÌìÊ¦Ò¡Ò¡Áåîõ£¬µÀ£ºÌìÁéÁé£¬µØÁãÁã£¬Ì«ÉÏÀÏ¾ı»¹²»ÏÔÁé£¿\n",
-                "ÕÅÌìÊ¦ºôºôµÄ´µÁË¼¸¿ÚÆø¡£\n",
-	}));
+    set("chat_chance_combat", 3);
+    set("chat_msg_combat", ({
+        "å¼ å¤©å¸ˆæ‘‡æ‘‡é“ƒé“›ï¼Œé“ï¼šå¤©çµçµï¼Œåœ°é›¶é›¶ï¼Œå¤ªä¸Šè€å›è¿˜ä¸æ˜¾çµï¼Ÿ\n",
+                "å¼ å¤©å¸ˆå‘¼å‘¼çš„å¹äº†å‡ å£æ°”ã€‚\n",
+    }));
 
-        set("inquiry", ([
-                "Ïú»Ù" : (: ask_hui :),
-                "¿ª¹â" : (: ask_me :),
-                "Ã»Ç®" : "Ã»Ç®¾ÍÈ¥×¬£¬¸úÎÒËµÊ²Ã´¡£",
-                "Çî"   : "¿´ÄãÒ²ÊÇÒ»¸±ÇîÃü¡£",
-                "Ä§·¨" : "Ä§·¨£¿Ê²Ã´ÍæÒÕ£¿",
-                "·¨Êõ" : "·¨Êõ»¹·ÖºÜ¶àÖÖÄØ£¬µÀÊõ¡¢ÑıÊõ¡¢ÏÉÊõ²»Ò»¶ø×ã¡£",
-                "µÀÊõ" : "µÀÊõ£¿Õâ¿ÉÊÇ±¾Ô´Õı×Ú£¡",
-                "ÑıÊõ" : "ÑıÊõ°¡£¬Ç÷ÓÚÏÂ³Ë£¬²»×ãÎªÌá¡£",
-                "ÏÉÊõ" : "ÏÉÊõÖ»ºÃËãÊÇÖĞ³Ë£¬»¹ÊÇ²»ÄÜºÍµÀÊõÏà±È¡£",
-//                "½şÈë" : "ÄãÒªÊÇ²»ĞĞÎÒ¿ÉÒÔ°ïÄã¿´¿´(show)½şÈëĞèÒªÓÃÊ²Ã´ÎïÆ·¡£",
-        ]));
+    set("inquiry",([
+    "é”€æ¯" : (: ask_hui :),
+    "å¼€å…‰" : (: ask_me :),
+    "æ²¡é’±" : "æ²¡é’±å°±å»èµšï¼Œè·Ÿæˆ‘è¯´ä»€ä¹ˆã€‚",
+            "ç©·"   : "çœ‹ä½ ä¹Ÿæ˜¯ä¸€å‰¯ç©·å‘½ã€‚",
+            "é­”æ³•" : "é­”æ³•ï¼Ÿä»€ä¹ˆç©è‰ºï¼Ÿ",
+            "æ³•æœ¯" : "æ³•æœ¯è¿˜åˆ†å¾ˆå¤šç§å‘¢ï¼Œé“æœ¯ã€å¦–æœ¯ã€ä»™æœ¯ä¸ä¸€è€Œè¶³ã€‚",
+            "é“æœ¯" : "é“æœ¯ï¼Ÿè¿™å¯æ˜¯æœ¬æºæ­£å®—ï¼",
+            "å¦–æœ¯" : "å¦–æœ¯å•Šï¼Œè¶‹äºä¸‹ä¹˜ï¼Œä¸è¶³ä¸ºæã€‚",
+            "ä»™æœ¯" : "ä»™æœ¯åªå¥½ç®—æ˜¯ä¸­ä¹˜ï¼Œè¿˜æ˜¯ä¸èƒ½å’Œé“æœ¯ç›¸æ¯”ã€‚",
+//                "æµ¸å…¥" : "ä½ è¦æ˜¯ä¸è¡Œæˆ‘å¯ä»¥å¸®ä½ çœ‹çœ‹(show)æµ¸å…¥éœ€è¦ç”¨ä»€ä¹ˆç‰©å“ã€‚",
+    ]));
 
-	setup();
-	carry_object("/clone/cloth/dao-cloth")->wear();
+    setup();
+    carry_object("/clone/cloth/dao-cloth")->wear();
 }
 
-void init()
-{
-        add_action("do_show", "show");
-        add_action("do_summon", "summon");
+void init() {
+    add_action("do_show", "show");
+    add_action("do_summon", "summon");
 }
 
-int ask_me()
-{
+int ask_me() {
+    command("heihei");
+    command("say æˆ‘åªç»™ç¥å…µåˆ©å™¨å¼€å…‰ï¼Œå¯»å¸¸åˆ€å‰‘è«æï¼è¦"
+            "ä½ æœ¬äººçš„ï¼Œæˆ‘å¯ä¸èƒ½å¸®ä½ åšåäº‹ï¼");
+    tell_object(this_player(), GRN
+    "å¼ å¤©å¸ˆåœ¨ä½ è€³è¾¹æ‚„æ‚„è¯´ï¼š"
+    "ä½ æŠŠè¦å¼€å…‰çš„æ‹¿å‡ºæ¥ç»™æˆ‘çœ‹çœ‹(show)ï¼\n"
+    NOR);
+    return 1;
+}
+
+int ask_hui() {
+    command("sigh");
+    this_player()->delete("diablo");
+    this_player()->save();
+    tell_object(this_player(), GRN
+    "å¼ å¤©å¸ˆåœ¨ä½ è€³è¾¹æ‚„æ‚„è¯´ï¼š"
+    "é‡æ–°è¿›å…¥æ¸¸æˆï¼Œä½ çš„æ­¦å™¨å¯ä»¥é‡æ–°å¼€å…‰ï¼Œæ”¾å®çŸ³äº†ï¼\n"
+    NOR);
+    return 1;
+}
+
+int do_summon(string arg) {
+    if (!wizardp(this_player())) {
+        command("say ä½ åœ¨æˆ‘é¢å‰çæŠ“ä¸ªä»€ä¹ˆåŠ²ï¼Ÿåˆ«åœ°è¯•å»ï¼");
+        return 1;
+    }
+
+    return 0;
+}
+
+int do_show(string arg) {
+    object money;
+    object ob;
+    object me;
+    string type;
+
+    if (!arg)
+        return notify_fail("ä½ è¦äº®å‡ºä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
+
+    me = this_player();
+    if (!objectp(ob = present(arg, me)))
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
+
+    if (ob->query("equipped"))
+        return notify_fail("ä½ å…ˆè§£é™¤" + ob->name() + "çš„è£…å¤‡å†è¯´ï¼\n");
+
+    message_vision("$næ‹¿å‡ºä¸€" + ob->query("unit") + ob->name() +
+                   "å¯¹$Nè¯´ï¼šâ€œæ‹œæ‰˜æ‹œæ‰˜...â€\n",
+                   this_object(), me);
+
+    if (ob->query("money_id")) {
+        command("say ä½ äº®å‡ºé’±å¹²ä»€ä¹ˆï¼Ÿæƒ³çŒ®ç»™è§‚é‡Œï¼Ÿé‚£å°±ç»™æˆ‘å¥½äº†ã€‚");
+        return 1;
+    }
+
+    if (!me->query_temp("paid/å¼ å¤©å¸ˆ", 1)) {
         command("heihei");
-        command("say ÎÒÖ»¸øÉñ±øÀûÆ÷¿ª¹â£¬Ñ°³£µ¶½£ÄªÌá£¡Òª"
-                "Äã±¾ÈËµÄ£¬ÎÒ¿É²»ÄÜ°ïÄã×ö»µÊÂ£¡");
-        tell_object(this_player(), GRN "ÕÅÌìÊ¦ÔÚÄã¶ú±ßÇÄÇÄËµ£º"
-                    "Äã°ÑÒª¿ª¹âµÄÄÃ³öÀ´¸øÎÒ¿´¿´(show)£¡\n" NOR);
+        command("say è¿™...æ€ä¹ˆä¹Ÿçš„æœ‰ç‚¹æ„æ€æ„æ€å§ï¼Ÿä½ "
+                "è¯´ä¸€åƒä¸¤é»„é‡‘æ€ä¹ˆæ ·ï¼Ÿå½“ç„¶å¤šäº›æˆ‘ä¹Ÿä¸åå¯¹ã€‚");
         return 1;
-}
+    }
 
-int ask_hui()
-{
-        command("sigh");
-this_player()->delete("diablo");
-this_player()->save();
-        tell_object(this_player(), GRN "ÕÅÌìÊ¦ÔÚÄã¶ú±ßÇÄÇÄËµ£º"
-                    "ÖØĞÂ½øÈëÓÎÏ·£¬ÄãµÄÎäÆ÷¿ÉÒÔÖØĞÂ¿ª¹â£¬·Å±¦Ê¯ÁË£¡\n" NOR);
+    if (!ob->query("max_sockets")) {
+        command("say å“¦ï¼æˆ‘çœ‹å®ƒä¸èƒ½å¼€å…‰ï¼");
         return 1;
-}
+    }
+    if (mapp(ob->query("weapon_prop")))
+        type = "weapon";
+    else if (mapp(ob->query("armor_prop")))
+        type = ob->query("armor_type");
 
-int do_summon(string arg)
-{
-        if (! wizardp(this_player()))
-        {
-                command("say ÄãÔÚÎÒÃæÇ°Ï¹×¥¸öÊ²Ã´¾¢£¿±ğµØÊÔÈ¥£¡");
-                return 1;
+
+    if (type == "finger") {
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 1
+            && me->query("combat_exp") < 10000000) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
+        }
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 2
+            && me->query("combat_exp") < 20000000) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
+        }
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 3) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
         }
 
-        return 0;
-}
-
-int do_show(string arg)
-{
-        object money;
-        object ob;
-        object me;
-	string type;
-
-        if (! arg)
-                return notify_fail("ÄãÒªÁÁ³öÊ²Ã´¶«Î÷£¿\n");
-
-        me = this_player();
-        if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
-
-        if (ob->query("equipped"))
-                return notify_fail("ÄãÏÈ½â³ı" + ob->name() + "µÄ×°±¸ÔÙËµ£¡\n");
-
-        message_vision("$nÄÃ³öÒ»" + ob->query("unit") + ob->name() +
-                       "¶Ô$NËµ£º¡°°İÍĞ°İÍĞ...¡±\n",
-                       this_object(), me);
-
-        if (ob->query("money_id"))
-        {
-                command("say ÄãÁÁ³öÇ®¸ÉÊ²Ã´£¿ÏëÏ×¸ø¹ÛÀï£¿ÄÇ¾Í¸øÎÒºÃÁË¡£");
-                return 1;
+    }
+    if (type == "weapon") {
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 3
+            && me->query("combat_exp") < 10000000) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
+        }
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 4
+            && me->query("combat_exp") < 20000000) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
+        }
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 5) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
         }
 
-        if (! me->query_temp("paid/ÕÅÌìÊ¦", 1))
-        {
-                command("heihei");
-                command("say Õâ...ÔõÃ´Ò²µÄÓĞµãÒâË¼ÒâË¼°É£¿Äã"
-                        "ËµÒ»Ç§Á½»Æ½ğÔõÃ´Ñù£¿µ±È»¶àĞ©ÎÒÒ²²»·´¶Ô¡£");
-                return 1;
+    }
+    if (type == "cloth") {
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 3
+            && me->query("combat_exp") < 10000000) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
+        }
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 4
+            && me->query("combat_exp") < 20000000) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
+        }
+        if (me->query("diablo/" + type + "/sockets/max", 1) >= 5) {
+            command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
+            return 1;
         }
 
-        if (!ob->query("max_sockets"))
-        {
-                command("say Å¶£¡ÎÒ¿´Ëü²»ÄÜ¿ª¹â£¡");
-                return 1;
-        }
-	if (mapp(ob->query("weapon_prop")))
-		type = "weapon";
-	else if (mapp(ob->query("armor_prop")))
-		type = ob->query("armor_type");
-
-
-if (type=="finger")
-{
-if (me->query("diablo/" + type + "/sockets/max",1) >= 1
-&& me->query("combat_exp") < 10000000 )
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-if (me->query("diablo/" + type + "/sockets/max",1) >= 2
-&& me->query("combat_exp") < 20000000 )
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-if (me->query("diablo/" + type + "/sockets/max",1) >= 3)
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-
-}
-if (type=="weapon")
-{
-if (me->query("diablo/" + type + "/sockets/max",1) >= 3
-&& me->query("combat_exp") < 10000000 )
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-if (me->query("diablo/" + type + "/sockets/max",1) >= 4
-&& me->query("combat_exp") < 20000000 )
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-if (me->query("diablo/" + type + "/sockets/max",1) >= 5)
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-
-}
-if (type=="cloth")
-{
-if (me->query("diablo/" + type + "/sockets/max",1) >= 3
-&& me->query("combat_exp") < 10000000 )
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-if (me->query("diablo/" + type + "/sockets/max",1) >= 4
-&& me->query("combat_exp") < 20000000 )
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-if (me->query("diablo/" + type + "/sockets/max",1) >= 5)
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-
-}
+    }
 //        if (ob->query("sockets/max") >= ob->query("max_sockets"))
 //        {
-//                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
+//                command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
 //                return 1;
 //        }
 
-        if (ob->query("sockets/max",1) >= 5)
-        {
-                command("say Å¶£¡ÎÒ¿´ËüÏÖÔÚÒÑ¾­²»ĞèÒªÔÚ¿ª¹âÁË£¡");
-                return 1;
-        }
-
-        message("vision", HIM + name() + "´Ó¿Ú´üÖĞÃş³öÒ»ÕÅ»ÆÉ«"
-                                "µÄ·ûÖ½£¬³é³ö±³ºóµÄÌÒÄ¾½££¬"
-                                "½«ÄÇ·ûÖ½µãÈ¼ÁË£¬É¨¹ı" + ob->name() + HIM "£¬È»"
-                                "ºóÓÃÌÒÄ¾½£´©ÁË£¬ÊÖÎè×ãµ¸£¬¿ÚÖĞÄîÄîÓĞ´Ê£º"
-                                "¡°Ì«ÉÏÀÏ¾ı¼±¼±ÈçÂÉ´ÍÁî£¡¡±Ëµ°ÕÒ»¶¶ÕÆÖĞ½££¬"
-                                "ºÈµÀ£º¡°¼²¡±£¡\n" NOR, environment());
-        message_vision("Ñæ¹â»®³öÒ»µÀ¹â»ª£¬$N·¢ÁË·¢´ô£¬Ò²²»ÖªµÀËãÊÇÔõÃ´»ØÊÂ¡£\n",
-                       me);
-        command("say ĞĞÁË£¬ĞĞÁË£¡Äã¿ÉÒÔ×ßÁË¡£");
-        me->delete_temp("paid/ÕÅÌìÊ¦");
-	if (mapp(ob->query("weapon_prop")))
-		type = "weapon";
-	else if (mapp(ob->query("armor_prop")))
-		type = ob->query("armor_type");
-	me->set("diablo/" + type + "/id", ob->query("id"));
-	me->add("diablo/" + type + "/sockets/max", 1);
-	seteuid(ROOT_UID);
-	reload_object(ob);
-        seteuid(getuid());
+    if (ob->query("sockets/max", 1) >= 5) {
+        command("say å“¦ï¼æˆ‘çœ‹å®ƒç°åœ¨å·²ç»ä¸éœ€è¦åœ¨å¼€å…‰äº†ï¼");
         return 1;
+    }
+
+    message("vision", HIM + name() + "ä»å£è¢‹ä¸­æ‘¸å‡ºä¸€å¼ é»„è‰²"
+                                     "çš„ç¬¦çº¸ï¼ŒæŠ½å‡ºèƒŒåçš„æ¡ƒæœ¨å‰‘ï¼Œ"
+                                     "å°†é‚£ç¬¦çº¸ç‚¹ç‡ƒäº†ï¼Œæ‰«è¿‡" + ob->name() + HIM
+    "ï¼Œç„¶"
+    "åç”¨æ¡ƒæœ¨å‰‘ç©¿äº†ï¼Œæ‰‹èˆè¶³è¹ˆï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼š"
+    "â€œå¤ªä¸Šè€å›æ€¥æ€¥å¦‚å¾‹èµä»¤ï¼â€è¯´ç½¢ä¸€æŠ–æŒä¸­å‰‘ï¼Œ"
+    "å–é“ï¼šâ€œç–¾â€ï¼\n"
+    NOR, environment());
+    message_vision("ç„°å…‰åˆ’å‡ºä¸€é“å…‰åï¼Œ$Nå‘äº†å‘å‘†ï¼Œä¹Ÿä¸çŸ¥é“ç®—æ˜¯æ€ä¹ˆå›äº‹ã€‚\n",
+                   me);
+    command("say è¡Œäº†ï¼Œè¡Œäº†ï¼ä½ å¯ä»¥èµ°äº†ã€‚");
+    me->delete_temp("paid/å¼ å¤©å¸ˆ");
+    if (mapp(ob->query("weapon_prop")))
+        type = "weapon";
+    else if (mapp(ob->query("armor_prop")))
+        type = ob->query("armor_type");
+    me->set("diablo/" + type + "/id", ob->query("id"));
+    me->add("diablo/" + type + "/sockets/max", 1);
+    seteuid(ROOT_UID);
+    reload_object(ob);
+    seteuid(getuid());
+    return 1;
 }
 
-int accept_object(object who, object ob)
-{
-        if (! ob->query("money_id"))
-        {
-                command("say ÕâÍæÒÕÎÒ¿ÉÃ»É¶ĞËÈ¤£¡");
-                return 0;
-        }
-
-        if (ob->value() < 10000000)
-        {
-		command("shake " + who->query("id"));
-                command("say ÄãÕâËãÊÇ¸ø¹ÛÀïµÄÏã»ğÃ´£¿");
-                return 0;
-        }
-
-        command("say °¦£¡¿´ÄãÒ²ËãÓĞµãĞÄÒâ£¬ÎÒ¾ÍÌæÄã¿ªÒ»´Î¹â°É£¡");
-        who->set_temp("paid/ÕÅÌìÊ¦", 1);
-//      destruct(ob);
-        return 1;
-}
-
-void fight_ob(object ob)
-{
-        ::fight_ob(ob);
-        message_vision("$NÀäĞ¦Ò»Éù£¬µÀ£º¡°ÕâÄêÍ·£¬Ê²Ã´ÈË¶¼ÓĞ¡£¡±ËµÍêÉìÊÖÒ»Ö¸$n¡£\n",
-                       this_object(), ob);
-        ob->unconcious();
-}
-
-int accept_fight(object who)
-{
-        command("say Ã»ĞËÈ¤¡£");
+int accept_object(object who, object ob) {
+    if (!ob->query("money_id")) {
+        command("say è¿™ç©è‰ºæˆ‘å¯æ²¡å•¥å…´è¶£ï¼");
         return 0;
+    }
+
+    if (ob->value() < 10000000) {
+        command("shake " + who->query("id"));
+        command("say ä½ è¿™ç®—æ˜¯ç»™è§‚é‡Œçš„é¦™ç«ä¹ˆï¼Ÿ");
+        return 0;
+    }
+
+    command("say å”‰ï¼çœ‹ä½ ä¹Ÿç®—æœ‰ç‚¹å¿ƒæ„ï¼Œæˆ‘å°±æ›¿ä½ å¼€ä¸€æ¬¡å…‰å§ï¼");
+    who->set_temp("paid/å¼ å¤©å¸ˆ", 1);
+//      destruct(ob);
+    return 1;
 }
 
-int accept_ansuan(object who)
-{
-        return notify_fail("Äã¸ÕÏë°µËã£¬¿ÉÊÇÑÛÇ°Ò»»¨£¬¿´²»Ì«Çå³ş¡£\n");
+void fight_ob(object ob) {
+    ::fight_ob(ob);
+    message_vision("$Nå†·ç¬‘ä¸€å£°ï¼Œé“ï¼šâ€œè¿™å¹´å¤´ï¼Œä»€ä¹ˆäººéƒ½æœ‰ã€‚â€è¯´å®Œä¼¸æ‰‹ä¸€æŒ‡$nã€‚\n",
+                   this_object(), ob);
+    ob->unconcious();
 }
 
-void receive_damage(string type, int n)
-{
-        return;
+int accept_fight(object who) {
+    command("say æ²¡å…´è¶£ã€‚");
+    return 0;
 }
 
-void receive_wound(string type, int n)
-{
-        return;
+int accept_ansuan(object who) {
+    return notify_fail("ä½ åˆšæƒ³æš—ç®—ï¼Œå¯æ˜¯çœ¼å‰ä¸€èŠ±ï¼Œçœ‹ä¸å¤ªæ¸…æ¥šã€‚\n");
+}
+
+void receive_damage(string type, int n) {
+    return;
+}
+
+void receive_wound(string type, int n) {
+    return;
 }

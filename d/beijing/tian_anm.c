@@ -5,33 +5,36 @@
 inherit ROOM;
 
 
-void create()
-{
-	set("short", "Ìì°²ÃÅ");
-	set("long", @LONG
-ÕâÀï¾ÍÊÇÌì°²ÃÅ¹ã³¡£¬»ÒÉ«µÄ³ÇÇ½¸øÈËÒÔ×¯ÑÏËàÄÂÖ®¸Ğ£¬ÔÙÍù±±¾Í
-ÊÇ»Ê¹¬ÁË¡£»Ê¹¬ÕıÃÅÇ°ÓĞ×ùĞ¡ÇÅ£¬Ò»Ìõ»¤³ÇºÓÈÆ³Ç¶ø¹ı¡£Ô½¹ıĞ¡ÇÅÏò±±
-ÍûÈ¥£¬×Ï½û³ÇµÄÂÖÀªÒæ·¢ÏÔµÃĞÛÎ°¸ß´ó¡£Ò»Ìõ±ÊÖ±µÄ´óµÀºá¹á¶«Î÷£¬¶«
-±ßÊÇ¶«³¤°²½Ö£¬Î÷±ßÊÇÎ÷³¤°²½Ö¡£ÄÏ±ßÊÇÒ»Ìõ·±»ªµÄ´óµÀ£¬´ÓÄÇÍùÏÂÓĞ
-Ò»×ùÌìÇÅ£¬¾İËµÓÎÈËºÜ¶à¡£
-LONG );
-	set("exits", ([
-		"south" : __DIR__"nandaj1",
-		"north" : __DIR__"bridge",
-		"west"  : __DIR__"xichang1",
-		"east"  : __DIR__"dongcha1",
-	]));
-	set("objects", ([
-		"/d/city/npc/bing" : 2,
-		"/d/city/npc/xunbu" : 2,
-                "/d/npc/walker": 3,
-		"/clone/gem/zhang" : 1,
-"/clone/master/master"+(random(24)+1): random(2),
-	]));
-	set("outdoors", "beijing");
-	set("coor/x", -200);
-	set("coor/y", 4040);
-	set("coor/z", 0);
-	setup();
-	replace_program(ROOM);
+void create() {
+    set("short", "å¤©å®‰é—¨");
+    set("long", @LONG
+è¿™é‡Œå°±æ˜¯å¤©å®‰é—¨å¹¿åœºï¼Œç°è‰²çš„åŸå¢™ç»™äººä»¥åº„ä¸¥è‚ƒç©†ä¹‹æ„Ÿï¼Œå†å¾€åŒ—å°±
+æ˜¯çš‡å®«äº†ã€‚çš‡å®«æ­£é—¨å‰æœ‰åº§å°æ¡¥ï¼Œä¸€æ¡æŠ¤åŸæ²³ç»•åŸè€Œè¿‡ã€‚è¶Šè¿‡å°æ¡¥å‘åŒ—
+æœ›å»ï¼Œç´«ç¦åŸçš„è½®å»“ç›Šå‘æ˜¾å¾—é›„ä¼Ÿé«˜å¤§ã€‚ä¸€æ¡ç¬”ç›´çš„å¤§é“æ¨ªè´¯ä¸œè¥¿ï¼Œä¸œ
+è¾¹æ˜¯ä¸œé•¿å®‰è¡—ï¼Œè¥¿è¾¹æ˜¯è¥¿é•¿å®‰è¡—ã€‚å—è¾¹æ˜¯ä¸€æ¡ç¹åçš„å¤§é“ï¼Œä»é‚£å¾€ä¸‹æœ‰
+ä¸€åº§å¤©æ¡¥ï¼Œæ®è¯´æ¸¸äººå¾ˆå¤šã€‚
+    LONG );
+    set("exits",([
+    "south" : __DIR__
+    "nandaj1",
+            "north" : __DIR__
+    "bridge",
+            "west"  : __DIR__
+    "xichang1",
+            "east"  : __DIR__
+    "dongcha1",
+    ]));
+    set("objects",([
+    "/d/city/npc/bing" : 2,
+            "/d/city/npc/xunbu" : 2,
+            "/d/npc/walker": 3,
+            "/clone/gem/zhang" : 1,
+            "/clone/master/master" + (random(24) + 1): random(2),
+    ]));
+    set("outdoors", "beijing");
+    set("coor/x", -200);
+    set("coor/y", 4040);
+    set("coor/z", 0);
+    setup();
+    replace_program(ROOM);
 }

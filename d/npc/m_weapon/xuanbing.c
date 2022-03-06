@@ -3,18 +3,18 @@
 
 inherit ROOM;
 
-void create()
-{
-	set("short", "Ðþ±ø¹Å¶´");
-	set("long",
-	     "ÕâÀïÊÇÐþ±ø¹Å¶´¶´¿Ú£¬ÀïÃæ´«À´ÕóÕóµÄ´·´òÉù¡£ËÆºõÔÚ¶ÍÔì×ÅÊ²Ã´¡£ÒþÒþ\n"
-	     "µÄÍ¸×ÅÒ»¹ÉÏôÉ±µÄÆøÏ¢¡£\n"
+void create() {
+    set("short", "çŽ„å…µå¤æ´ž");
+    set("long",
+        "è¿™é‡Œæ˜¯çŽ„å…µå¤æ´žæ´žå£ï¼Œé‡Œé¢ä¼ æ¥é˜µé˜µçš„æ¶æ‰“å£°ã€‚ä¼¼ä¹Žåœ¨é”»é€ ç€ä»€ä¹ˆã€‚éšéš\n"
+        "çš„é€ç€ä¸€è‚¡è§æ€çš„æ°”æ¯ã€‚\n"
 
-	);
-	set("exits", ([
-		"east" : "/d/xingxiu/nanjiang2",
-		"enter" : __DIR__"xuanbing1",
-	]));
-	setup();
-	replace_program(ROOM);
+    );
+    set("exits",([
+    "east" : "/d/xingxiu/nanjiang2",
+            "enter" : __DIR__
+    "xuanbing1",
+    ]));
+    setup();
+    replace_program(ROOM);
 }

@@ -2,114 +2,112 @@
 // This software can not be used, copied, or modified in any form without
 // the written permission from authors.
 #include <ansi.h>
+
 inherit SKILL;
 mapping *action = ({
-	([	"action":		"$NÊÖÖĞµÄ$wÓ­·çÒ»»Î£¬µ¶·æ´ø³öÁÑ½õ°ãµÄÉùÒô£¬ÍòÂí±¼ÌÚ°ãµØ¿³Ïò$nµÄ$l",
-		"force":		400,
-                "damage":               200,
-                "dodge" : 10,
-                "lvl" : 0,
-                "skill_name" : "ÈÕ±¾ÎŞµĞ",
-    		"damage_type":	"¸îÉË"
-	]),
-	([	"action":		"$NÊÖÖĞµÄ$wÓ­·ç¿ñÎè£¬Ïó±©·çÖĞµÄ¹öÉ³£¬¹üÏò$nµÄ$l",
-                "damage":               200,
-		"force":		300,
-                "dodge" : 30,
-                "lvl" : 20,
-                "skill_name" : "¶«ÑÇ¹²ÈÙ",
-		"damage_type":	"¸îÉË"
-	]),
-	([	"action":		"$NÊÖÖĞµÄ$wÏó¿ñ·çÖĞµÄÁ÷ÔÆ£¬ºö¾ÛºöÉ¢µØ¿³Ïò$nµÄ$l",
-		"force":		100,
-                "damage":               200,
-                "dodge" : 50,
-                "lvl" : 40,
-                "skill_name" : "ÖĞÈÕÇ×ÉÆ",
-                "damage_type":	"¸îÉË"
-	]),
-	([	"action":		"$N»Î¶¯ÊÖÖĞµÄ$w£¬µ¶¹âºöÒşºöÏÖ£¬ÏóÇï·çÖĞµÄÂäÒ¶£¬Ò»µ¶Á¬Ò»µ¶µØÉ¢Ïò$nµÄ$l",
-		"force":		100,
-                "damage":               200,
-                "dodge" : 60,
-                "lvl" : 80,
-                "skill_name" : "Ìì»ÊÍòËê",
-                "damage_type":	"¸îÉË"
-	]),
-	([	"action":		"$N¾ÛÆğÈ«ÉíµÄ¹¦Á¦£¬ÊÖÖĞµÄ$wÏó´Ì¹Çº®·ç°ã¸îÏò$n",
-		"force":		200,
-		"damage":		200,
-                "dodge" : 70,
-                "lvl" : 100,
-                "skill_name" : "ÎäÊ¿²»°Ü",
-                "damage_type":	"¸îÉË"
-	]),
+    ([    "action":        "$Næ‰‹ä¸­çš„$wè¿é£ä¸€æ™ƒï¼Œåˆ€é”‹å¸¦å‡ºè£‚é”¦èˆ¬çš„å£°éŸ³ï¼Œä¸‡é©¬å¥”è…¾èˆ¬åœ°ç å‘$nçš„$l",
+            "force":        400,
+            "damage":               200,
+            "dodge" : 10,
+            "lvl" : 0,
+            "skill_name" : "æ—¥æœ¬æ— æ•Œ",
+            "damage_type":    "å‰²ä¼¤"
+    ]),
+    ([    "action":        "$Næ‰‹ä¸­çš„$wè¿é£ç‹‚èˆï¼Œè±¡æš´é£ä¸­çš„æ»šæ²™ï¼Œè£¹å‘$nçš„$l",
+            "damage":               200,
+            "force":        300,
+            "dodge" : 30,
+            "lvl" : 20,
+            "skill_name" : "ä¸œäºšå…±è£",
+            "damage_type":    "å‰²ä¼¤"
+    ]),
+    ([    "action":        "$Næ‰‹ä¸­çš„$wè±¡ç‹‚é£ä¸­çš„æµäº‘ï¼Œå¿½èšå¿½æ•£åœ°ç å‘$nçš„$l",
+            "force":        100,
+            "damage":               200,
+            "dodge" : 50,
+            "lvl" : 40,
+            "skill_name" : "ä¸­æ—¥äº²å–„",
+            "damage_type":    "å‰²ä¼¤"
+    ]),
+    ([    "action":        "$Næ™ƒåŠ¨æ‰‹ä¸­çš„$wï¼Œåˆ€å…‰å¿½éšå¿½ç°ï¼Œè±¡ç§‹é£ä¸­çš„è½å¶ï¼Œä¸€åˆ€è¿ä¸€åˆ€åœ°æ•£å‘$nçš„$l",
+            "force":        100,
+            "damage":               200,
+            "dodge" : 60,
+            "lvl" : 80,
+            "skill_name" : "å¤©çš‡ä¸‡å²",
+            "damage_type":    "å‰²ä¼¤"
+    ]),
+    ([    "action":        "$Nèšèµ·å…¨èº«çš„åŠŸåŠ›ï¼Œæ‰‹ä¸­çš„$wè±¡åˆºéª¨å¯’é£èˆ¬å‰²å‘$n",
+            "force":        200,
+            "damage":        200,
+            "dodge" : 70,
+            "lvl" : 100,
+            "skill_name" : "æ­¦å£«ä¸è´¥",
+            "damage_type":    "å‰²ä¼¤"
+    ]),
 });
 
-int valid_enable(string usage) { return usage == "blade" || usage == "parry"; } 
+int valid_enable(string usage) { return usage == "blade" || usage == "parry"; }
 
-int valid_learn(object me)
-{
-    if ((int)me->query("max_neili") < 300)
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
-    if ((int)me->query_skill("force", 1) < 60)
-    return notify_fail("ÄãµÄÄÚ¹¦ĞÄ·¨»ğºòÌ«Ç³¡£\n");
-    if ((int)me->query_skill("dodge", 1) < 60)
-    return notify_fail("ÄãµÄÇá¹¦»ğºòÌ«Ç³¡£\n");
-    if ((int)me->query_dex() < 25)
-    return notify_fail("ÄãµÄÉí·¨»¹²»¹»Áé»î¡£\n");
+int valid_learn(object me) {
+    if ((int) me->query("max_neili") < 300)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
+    if ((int) me->query_skill("force", 1) < 60)
+        return notify_fail("ä½ çš„å†…åŠŸå¿ƒæ³•ç«å€™å¤ªæµ…ã€‚\n");
+    if ((int) me->query_skill("dodge", 1) < 60)
+        return notify_fail("ä½ çš„è½»åŠŸç«å€™å¤ªæµ…ã€‚\n");
+    if ((int) me->query_dex() < 25)
+        return notify_fail("ä½ çš„èº«æ³•è¿˜ä¸å¤Ÿçµæ´»ã€‚\n");
     return 1;
 }
 
-string query_skill_name(int level)
-{
+string query_skill_name(int level) {
     int i;
-    for(i = sizeof(action)-1; i >= 0; i--)
-   if(level >= action[i]["lvl"])
-      return action[i]["skill_name"];
+    for (i = sizeof(action) - 1; i >= 0; i--)
+        if (level >= action[i]["lvl"])
+            return action[i]["skill_name"];
 }
 
-mapping query_action(object me, object weapon)
-{
+mapping query_action(object me, object weapon) {
     int i, level;
-    level   = (int) me->query_skill("wind-blade",1);
-    for(i = sizeof(action); i > 0; i--)
-   if(level > action[i-1]["lvl"])
-      return action[NewRandom(i, 20, level/5)];
+    level = (int) me->query_skill("wind-blade", 1);
+    for (i = sizeof(action); i > 0; i--)
+        if (level > action[i - 1]["lvl"])
+            return action[NewRandom(i, 20, level / 5)];
 }
 
-int practice_skill(object me)
-{
+int practice_skill(object me) {
     object weapon;
 
     if (!objectp(weapon = me->query_temp("weapon"))
-    || (string)weapon->query("skill_type") != "blade")
-    return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
-    if ((int)me->query("qi") < 30)
-    return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·µ¶·¨¡£\n");
+        || (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
+    if ((int) me->query("qi") < 30)
+        return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒåˆ€æ³•ã€‚\n");
     me->receive_damage("qi", 25);
     return 1;
 }
 
-string perform_action_file(string action)
-{
-    return __DIR__"wind-blade/" + action;
+string perform_action_file(string action) {
+    return __DIR__
+    "wind-blade/" + action;
 }
-mixed hit_ob(object me, object victim, int damage_bonus, int factor, string limb)
-{
-	int level, jiali, time,level2;
-	object weapon;
-	int damage;
-	weapon = me->query_temp("weapon");
-        level = (int) me->query_skill("wind-blade",1);
-        level2= (int) me->query_skill("wind-blade",1);
 
-level2= (int) me->query_skill("wind-blade",1);             
-	if (random(3)==1 && me->query_skill("wind-blade",1)>300)
-	{
-	if( damage_bonus > 20 && random(level2)>100) {
-	victim->receive_wound("qi", (random(damage_bonus)));
-	return HIM"$Nµ¶Æø×İºá! Ò»µÀµ¶Æø»®¹ıÁË$nµÄ$l¡£½á¹ûÏÊÑª¿ñ±¼!\n"NOR;
+mixed hit_ob(object me, object victim, int damage_bonus, int factor, string limb) {
+    int level, jiali, time, level2;
+    object weapon;
+    int damage;
+    weapon = me->query_temp("weapon");
+    level = (int) me->query_skill("wind-blade", 1);
+    level2 = (int) me->query_skill("wind-blade", 1);
+
+    level2 = (int) me->query_skill("wind-blade", 1);
+    if (random(3) == 1 && me->query_skill("wind-blade", 1) > 300) {
+        if (damage_bonus > 20 && random(level2) > 100) {
+            victim->receive_wound("qi", (random(damage_bonus)));
+            return HIM
+            "$Nåˆ€æ°”çºµæ¨ª! ä¸€é“åˆ€æ°”åˆ’è¿‡äº†$nçš„$lã€‚ç»“æœé²œè¡€ç‹‚å¥”!\n"
+            NOR;
         }
-}
+    }
 }

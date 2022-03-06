@@ -1,6 +1,6 @@
-// magic.c 基本法术
+// magic.c 鍩烘湰娉曟湳
 // Modified by venus Oct.1997
 
 inherit SKILL;
 
-string type() {return "knowledge"; }
+string type() { return "knowledge"; }

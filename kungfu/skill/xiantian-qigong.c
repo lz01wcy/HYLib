@@ -1,207 +1,216 @@
 #include <ansi.h>
-// xiantian-qigong.c ÏÈÌìÆø¹¦
+
+// xiantian-qigong.c å…ˆå¤©æ°”åŠŸ
 inherit FORCE;
 
 mapping *action = ({
-([      "action" : "$Nµ¥ÕÆÒ»¶¶£¬ÔË¾ÛÏÈÌì¹¦¹¦Á¦£¬ºôĞ¥×ÅÏò$nµÄ$l´¦ÅÄÈ¥",
-        "dodge"  : 87,
-        "force"  : 430,
-        "attack" : 163,
-        "parry"  : 81,
-        "damage" : 383,
-        "damage_type": "ÄÚÉË" 
-]), 
-([      "action" : "$NÓÒÕÆÆ½Éì£¬×óÕÆÔËÆğÏÈÌì¹¦µÄ¾¢Á¦£¬ÃÍµØÅÄÏò$nµÄ$l",
-        "dodge"  : 85,
-        "force"  : 440,
-        "attack" : 147,
-        "parry"  : 77,
-        "damage" : 281,
-        "damage_type": "ÄÚÉË"
-]), 
-([      "action" : "$NÉíĞÎÒ»Õ¹£¬ÓÒÕÆ»¤×¡ĞÄÂö£¬×óÕÆÖĞ¹¥Ö±½ø£¬¹áÏò$n$l",
-        "dodge"  : 75,
-        "force"  : 450,
-        "attack" : 182,
-        "parry"  : 67,
-        "damage" : 293,
-        "damage_type": "ÄÚÉË"
-]),
-([      "action" : "$NÔË×ªÏÈÌìÕæÆø£¬Ë«ÕÆ»ØÈ¦£¬¶ÙÊ±Ò»²¨ÅìÅÈµÄÆø¾¢Ö±Ï®$n",
-        "dodge"  : 87,
-        "force"  : 480,
-        "attack" : 183,
-        "parry"  : 85,
-        "damage" : 305,
-        "damage_type": "ÄÚÉË"
-]), 
+    ([      "action" : "$Nå•æŒä¸€æŠ–ï¼Œè¿èšå…ˆå¤©åŠŸåŠŸåŠ›ï¼Œå‘¼å•¸ç€å‘$nçš„$lå¤„æ‹å»",
+            "dodge"  : 87,
+            "force"  : 430,
+            "attack" : 163,
+            "parry"  : 81,
+            "damage" : 383,
+            "damage_type": "å†…ä¼¤"
+    ]),
+    ([      "action" : "$Nå³æŒå¹³ä¼¸ï¼Œå·¦æŒè¿èµ·å…ˆå¤©åŠŸçš„åŠ²åŠ›ï¼ŒçŒ›åœ°æ‹å‘$nçš„$l",
+            "dodge"  : 85,
+            "force"  : 440,
+            "attack" : 147,
+            "parry"  : 77,
+            "damage" : 281,
+            "damage_type": "å†…ä¼¤"
+    ]),
+    ([      "action" : "$Nèº«å½¢ä¸€å±•ï¼Œå³æŒæŠ¤ä½å¿ƒè„‰ï¼Œå·¦æŒä¸­æ”»ç›´è¿›ï¼Œè´¯å‘$n$l",
+            "dodge"  : 75,
+            "force"  : 450,
+            "attack" : 182,
+            "parry"  : 67,
+            "damage" : 293,
+            "damage_type": "å†…ä¼¤"
+    ]),
+    ([      "action" : "$Nè¿è½¬å…ˆå¤©çœŸæ°”ï¼ŒåŒæŒå›åœˆï¼Œé¡¿æ—¶ä¸€æ³¢æ¾æ¹ƒçš„æ°”åŠ²ç›´è¢­$n",
+            "dodge"  : 87,
+            "force"  : 480,
+            "attack" : 183,
+            "parry"  : 85,
+            "damage" : 305,
+            "damage_type": "å†…ä¼¤"
+    ]),
 });
 
-int valid_enable(string usage)
-{ 
-        int lvl;
-        lvl = (int)this_player()->query_skill("xiantian-qigong", 1);
+int valid_enable(string usage) {
+    int lvl;
+    lvl = (int) this_player()->query_skill("xiantian-qigong", 1);
 
-        if (lvl >= 180)    
-                return usage == "force" || usage == "unarmed" || usage == "parry";
-        else
-                return usage == "force";
-       
+    if (lvl >= 180)
+        return usage == "force" || usage == "unarmed" || usage == "parry";
+    else
+        return usage == "force";
+
 }
 
 
-mapping query_action(object me, object weapon)
-{
-        return action[random(sizeof(action))];
+mapping query_action(object me, object weapon) {
+    return action[random(sizeof(action))];
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus)
-{
-        int lvl;
+mixed hit_ob(object me, object victim, int damage_bonus) {
+    int lvl;
 
-        lvl = me->query_skill("xiantian-qigong", 1);
+    lvl = me->query_skill("xiantian-qigong", 1);
 
-        if (damage_bonus < 50
-           || lvl < 180
-           || random(5)==0)
-                return 0;
+    if (damage_bonus < 50
+        || lvl < 180
+        || random(5) == 0)
+        return 0;
 
-        if (damage_bonus > victim->query_con() || random(8)==0)
-        {
-                me->add("neili", -30);
-                victim->receive_damage("qi", (damage_bonus - 50) / 2+10, me);
-                victim->receive_wound("qi", (damage_bonus - 50) / 2+10, me);
-                return HIR"Ëæ×Å""$N""µÄ¹¥»÷,Ò»¹ÉÏÈÌì´¿ÑôÕæÁ¦Ë²¼ä±¬·¢ÁË³öÀ´£¬$n"  //return HIW "$N" HIW "ÏÈÌì¹¦µÄÇ±Á¦·¢»ÓÁË³öÀ´£¬Í»È»¼ä$n"
-                       HIR "Ö»¸ĞÎåÄÚ¾ã·Ù£¬ºíÁüÉ³ÑÆÎŞ±È£¬²»½û¿ÈÒ»¿ÚÏÊÑª£¡\n" NOR;// HIW "Ö»¸ĞºíÁüÒ»Ìğ£¬Åç³öÒ»¿ÚÏÊÑª£¡\n" NOR;
-        }
+    if (damage_bonus > victim->query_con() || random(8) == 0) {
+        me->add("neili", -30);
+        victim->receive_damage("qi", (damage_bonus - 50) / 2 + 10, me);
+        victim->receive_wound("qi", (damage_bonus - 50) / 2 + 10, me);
+        return HIR
+        "éšç€""$N""çš„æ”»å‡»,ä¸€è‚¡å…ˆå¤©çº¯é˜³çœŸåŠ›ç¬é—´çˆ†å‘äº†å‡ºæ¥ï¼Œ$n"  //return HIW "$N" HIW "å…ˆå¤©åŠŸçš„æ½œåŠ›å‘æŒ¥äº†å‡ºæ¥ï¼Œçªç„¶é—´$n"
+        HIR
+        "åªæ„Ÿäº”å†…ä¿±ç„šï¼Œå–‰å’™æ²™å“‘æ— æ¯”ï¼Œä¸ç¦å’³ä¸€å£é²œè¡€ï¼\n"
+        NOR;// HIW "åªæ„Ÿå–‰å’™ä¸€ç”œï¼Œå–·å‡ºä¸€å£é²œè¡€ï¼\n" NOR;
+    }
 }
 
 
-int difficult_level()
-{
-        return 500;
+int difficult_level() {
+    return 500;
 }
 
-int valid_learn(object me)
-{
-        int lvl = (int)me->query_skill("xiantian-qigong", 1);
-        int t = 1, j;
-        if (lvl<=100)
-                for (j = 1; j < lvl / 10; j++)
-                     t*=2;
+int valid_learn(object me) {
+    int lvl = (int) me->query_skill("xiantian-qigong", 1);
+    int t = 1, j;
+    if (lvl <= 100)
+        for (j = 1; j < lvl / 10; j++)
+            t *= 2;
 
-        if ( me->query("gender") == "ÎŞĞÔ")
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔĞŞĞĞĞşÃÅÕı×ÚµÄÏÈÌìÆø¹¦¡£\n");
+    if (me->query("gender") == "æ— æ€§")
+        return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥ä¿®è¡Œç„é—¨æ­£å®—çš„å…ˆå¤©æ°”åŠŸã€‚\n");
 
-        if ( me->query("class") == "bonze" )
-                return notify_fail(RANK_D->query_respect(me)+"ÓûĞŞÎÒµÀ¼ÒĞşÃÅÆø¹¦£¬ÔõÓÖÈ¥ÈëÁË·ğÃÅ£¿\n");
+    if (me->query("class") == "bonze")
+        return notify_fail(RANK_D->query_respect(me) + "æ¬²ä¿®æˆ‘é“å®¶ç„é—¨æ°”åŠŸï¼Œæ€åˆå»å…¥äº†ä½›é—¨ï¼Ÿ\n");
 
-        if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+    if ((int) me->query_skill("force", 1) < 10)
+        return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
-        if(lvl<=100)
-        {
-                if (lvl > 10 && (int)me->query("shen") < t * 100)
-                        return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
-        }
-        else
-        {
-                if ((int)me->query("shen") < (51200 + (lvl - 100) * 1000))
-                        return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
-        }
-	if (
-	me->query_skill("bahuang-gong",1)
-	|| me->query_skill("beiming-shengong",1)
-	|| me->query_skill("bibo-shengong",1)
-	|| me->query_skill("hamagong",1)
-	|| me->query_skill("huagong-dafa",1)
-	|| me->query_skill("huntian-qigong",1)
-	|| me->query_skill("hunyuan-yiqi",1)
-	|| me->query_skill("jiuyang-shengong",1)
-	|| me->query_skill("kuihua-xinfa",1)
-	|| me->query_skill("kurong-changong",1)
-	|| me->query_skill("linji-zhuang",1)
-	|| me->query_skill("longxiang",1)
- 	|| me->query_skill("shenlong-xinfa",1)
-	|| me->query_skill("taiji-shengong",1)
-	||  me->query_skill("xiaowuxiang",1)
-	|| me->query_skill("yijinjing",1)
-	|| me->query_skill("yunv-xinfa",1)
-	|| me->query_skill("yunlong-shengong",1)   ||
-me->query_skill("bingxue-xinfa",1)||
-me->query_skill("wudu-shengong",1)||
-me->query_skill("shenghuo-shengong",1)    ||
-me->query_skill("shenyuan-gong",1)   ||
-me->query_skill("huashan-neigong",1)   ||
-me->query_skill("zixia-shengong",1) ||
-me->query_skill("shayi-xinfa",1)||
-me->query_skill("biyun-xinfa",1)||
-me->query_skill("xuantian-wuji",1)  ||
-me->query_skill("guiyuan-tunafa",1) )
-                return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§Ï°ÏÈÌìÆø¹¦£¿£¡\n");
+    if (lvl <= 100) {
+        if (lvl > 10 && (int) me->query("shen") < t * 100)
+            return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
+    } else {
+        if ((int) me->query("shen") < (51200 + (lvl - 100) * 1000))
+            return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
+    }
+    if (
+            me->query_skill("bahuang-gong", 1)
+            || me->query_skill("beiming-shengong", 1)
+            || me->query_skill("bibo-shengong", 1)
+            || me->query_skill("hamagong", 1)
+            || me->query_skill("huagong-dafa", 1)
+            || me->query_skill("huntian-qigong", 1)
+            || me->query_skill("hunyuan-yiqi", 1)
+            || me->query_skill("jiuyang-shengong", 1)
+            || me->query_skill("kuihua-xinfa", 1)
+            || me->query_skill("kurong-changong", 1)
+            || me->query_skill("linji-zhuang", 1)
+            || me->query_skill("longxiang", 1)
+            || me->query_skill("shenlong-xinfa", 1)
+            || me->query_skill("taiji-shengong", 1)
+            || me->query_skill("xiaowuxiang", 1)
+            || me->query_skill("yijinjing", 1)
+            || me->query_skill("yunv-xinfa", 1)
+            || me->query_skill("yunlong-shengong", 1) ||
+            me->query_skill("bingxue-xinfa", 1) ||
+            me->query_skill("wudu-shengong", 1) ||
+            me->query_skill("shenghuo-shengong", 1) ||
+            me->query_skill("shenyuan-gong", 1) ||
+            me->query_skill("huashan-neigong", 1) ||
+            me->query_skill("zixia-shengong", 1) ||
+            me->query_skill("shayi-xinfa", 1) ||
+            me->query_skill("biyun-xinfa", 1) ||
+            me->query_skill("xuantian-wuji", 1) ||
+            me->query_skill("guiyuan-tunafa", 1))
+        return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦ä¹ å…ˆå¤©æ°”åŠŸï¼Ÿï¼\n");
 
+    return 1;
+}
+
+int practice_skill(object me) {
+    return notify_fail("å…ˆå¤©æ°”åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
+}
+
+string exert_function_file(string func) {
+    return __DIR__
+    "xiantian-qigong/" + func;
+}
+
+string perform_action_file(string action) {
+
+    return __DIR__
+    "xiantian-qigong/perform/" + action;
+}
+
+mixed ob_hit(object ob, object me, int damage) {
+    int ap, dp, cost;
+    mapping result;
+    string msg;
+    if (me->query_skill("xiantian-qigong", 1) < 200 ||
+        me->query_skill_mapped("force") != "xiantian-qigong" ||
+        me->query("neili") < 1000 ||
+        !living(me))
         return 1;
-}
 
-int practice_skill(object me)
-{
-        return notify_fail("ÏÈÌìÆø¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
-}
+    cost = damage / 2;
+    if (cost > 100) cost = 100;
 
-string exert_function_file(string func)
-{
-        return __DIR__"xiantian-qigong/" + func;
-}
+    ap = ob->query_skill("force") * 12 + ob->query("max_neili");
+    dp = me->query_skill("force") * 12 + me->query("neili");
 
-string perform_action_file(string action)
-{
+    if (ap / 2 + random(ap) < dp) {
+        me->add("neili", -100);
+        result = ([ "damage": -damage ]);
 
-        return __DIR__"xiantian-qigong/perform/" + action;
-}
-
-mixed ob_hit(object ob, object me, int damage)
-{
-	int ap, dp, cost;
-	mapping result;
-string msg;
-	if (me->query_skill("xiantian-qigong", 1) < 200 ||
-            me->query_skill_mapped("force") != "xiantian-qigong" ||
-	    me->query("neili") < 1000 ||
-            ! living(me)) 
-	        return 1;
-
-        cost = damage / 2;
-        if (cost > 100) cost = 100;
-
-        ap = ob->query_skill("force") * 12 + ob->query("max_neili");
-        dp = me->query_skill("force") * 12 + me->query("neili");
-
-        if (ap / 2 + random(ap) < dp )
-        {
-                me->add("neili", -100);
-                result = ([ "damage": -damage ]);
-
-                switch (random(2))
-                {
-                case 0:
-                        msg=HIR "Ö»¼û$N" HIR "ÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶ø"
-                                            "È»·¢¶¯£¬½«$n" HIR "µÄÁ¦µÀ¾¡Êı·´Õğ»Ø"
-                                            "È¥¡£\n" NOR;
-                        ob->start_busy(3);
-                        break;
-                case 1:
-                        msg=HIR "Ö»¼û$N" HIR "ÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶ø"
-                                            "È»·¢¶¯£¬½«$n" HIR "µÄ¹¥»÷»¯ÎªÎŞĞÎ¡£\n" NOR;
-                        break;
-                default:
-                        msg=HIR "Ö»¼û$N" HIR "ÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶ø"
-                                            "È»·¢¶¯£¬µÖ¿¹$n" HIR "µÄ¹¥»÷¡£\n" NOR;
-                        break;
-                }
-//msg += damage_msg(damage, "ğöÉË");
-damage=damage/3;
-message_vision(msg, me, ob);
-                
+        switch (random(2)) {
+            case 0:
+                msg = HIR
+                "åªè§$N"
+                HIR
+                "å…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œ"
+                "ç„¶å‘åŠ¨ï¼Œå°†$n"
+                HIR
+                "çš„åŠ›é“å°½æ•°åéœ‡å›"
+                "å»ã€‚\n"
+                NOR;
+                ob->start_busy(3);
+                break;
+            case 1:
+                msg = HIR
+                "åªè§$N"
+                HIR
+                "å…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œ"
+                "ç„¶å‘åŠ¨ï¼Œå°†$n"
+                HIR
+                "çš„æ”»å‡»åŒ–ä¸ºæ— å½¢ã€‚\n"
+                NOR;
+                break;
+            default:
+                msg = HIR
+                "åªè§$N"
+                HIR
+                "å…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œ"
+                "ç„¶å‘åŠ¨ï¼ŒæŠµæŠ—$n"
+                HIR
+                "çš„æ”»å‡»ã€‚\n"
+                NOR;
+                break;
         }
-return damage;
+//msg += damage_msg(damage, "ç˜€ä¼¤");
+        damage = damage / 3;
+        message_vision(msg, me, ob);
+
+    }
+    return damage;
 }

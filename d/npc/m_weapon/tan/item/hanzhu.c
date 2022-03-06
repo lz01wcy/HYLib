@@ -1,20 +1,23 @@
 //yuzhu.c
 inherit ITEM;
+
 #include <ansi.h>
-void create()
-{
-        set_name(HIG"º®Ë¿ÓğÖñ"NOR, ({ "han zhu","zhu"}));
-        set_weight(3000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("unit", "¸ù");
-                set("long","ÕâÊÇÒ»¸ùº®Ë¿ÓğÖñ£¬Í¨Ìå¾§Ó¨Î¢Î¢·º×ÅÂÌ¹â¾§Ó¨ÌŞÍ¸¾¹ËÆÓÃË®¾§\nµñ³ÉµÄ£¬ÄÃÔÚÊÖÖĞÇáÈôÎŞÎï£¬ËÆºõÊÇÖÆÔì±øÆ÷µÄ¾øºÃ²ÄÁÏ¡£\n");
-                set("value", 0);
-                set("material", "bamboo");
-              }
+
+void create() {
+    set_name(HIG
+    "å¯’ä¸ç¾½ç«¹"
+    NOR, ({ "han zhu", "zhu" }));
+    set_weight(3000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "æ ¹");
+        set("long", "è¿™æ˜¯ä¸€æ ¹å¯’ä¸ç¾½ç«¹ï¼Œé€šä½“æ™¶è¹å¾®å¾®æ³›ç€ç»¿å…‰æ™¶è¹å‰”é€ç«Ÿä¼¼ç”¨æ°´æ™¶\né›•æˆçš„ï¼Œæ‹¿åœ¨æ‰‹ä¸­è½»è‹¥æ— ç‰©ï¼Œä¼¼ä¹æ˜¯åˆ¶é€ å…µå™¨çš„ç»å¥½ææ–™ã€‚\n");
+        set("value", 0);
+        set("material", "bamboo");
+    }
 }
-void owner_is_killed()
-{
-        destruct(this_object());
+
+void owner_is_killed() {
+    destruct(this_object());
 }

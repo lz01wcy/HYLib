@@ -4,178 +4,229 @@
 inherit FINGER;
 inherit F_GEMS;
 
-void init_sockets(object me)
-{
-	set("max_sockets", 1);
-	if (me->query("combat_exp") > 10000000)
-		add("max_sockets", 1);
-	if (me->query("combat_exp") > 10000000)
-		add("max_sockets", 1);
+void init_sockets(object me) {
+    set("max_sockets", 1);
+    if (me->query("combat_exp") > 10000000)
+        add("max_sockets", 1);
+    if (me->query("combat_exp") > 10000000)
+        add("max_sockets", 1);
 
-        if (me->query("combat_exp") < 10000000 && (int)query("sockets/max",1)>=2)
-        set("sockets/max",2);
+    if (me->query("combat_exp") < 10000000 && (int) query("sockets/max", 1) >= 2)
+        set("sockets/max", 2);
 
-        if ((int)query("sockets/max",1)>3)
-        set("sockets/max",3);
+    if ((int) query("sockets/max", 1) > 3)
+        set("sockets/max", 3);
 
-	if (me->query("diablo/" + TYPE_FINGER + "/id") != query("id")) return;
+    if (me->query("diablo/" + TYPE_FINGER + "/id") != query("id")) return;
 
-	set("sockets", me->query("diablo/" + TYPE_FINGER + "/sockets"));
-	set_ring_desc();
+    set("sockets", me->query("diablo/" + TYPE_FINGER + "/sockets"));
+    set_ring_desc();
 }
 
-void setup()
-{
-	init_sockets(this_player());
-	::setup();
+void setup() {
+    init_sockets(this_player());
+    ::setup();
 }
 
-void spec_prop(object me, string socket, int socket_level, int mode)
-{
-int i;
-	if (!valid_gem(socket, socket_level)) return;
-if (me->query("diablo/" + TYPE_FINGER + "/id") != query("id")) return;
-if (me->query("max_neili") < 100)  return;
-	switch (socket) {
-	case "ruby":
-		if (mode == 1)
-			message_vision(HIR + query("name") + HIR"Éä³öÒ»µÀÒ«ÑÛµÄºì¹â£¬$NÔÚÉñ¹âµÄãåÔ¡ÏÂ¸Ðµ½ÌåÁ¦Òì³£µÄ³äÅæ£¡\n"NOR, me);
-		else
-			message_vision(HIR"Ëæ×ÅÉñ¹â½¥½¥µÄÒþÈ¥£¬$NµÄÌåÁ¦ÓÖ»Ö¸´Õý³£ÁË¡£\n"NOR, me);
-		me->add("max_qi", me->query("max_neili") * socket_level * mode / 15);
-		me->add("eff_qi", me->query("max_neili") * socket_level * mode / 15);
-		me->add("qi", me->query("max_neili") * socket_level * mode / 15);
-		break;
-	case "topaz":
-		if (mode == 1)
-			message_vision(HIY + query("name") + HIY"Éä³öÒ»µÀ¶áÄ¿µÄ»Æ¹â£¬$NÔÚÉñ¹âµÄãåÔ¡ÏÂ¸Ðµ½¾«Á¦Òì³£µÄ³äÅæ£¡\n"NOR, me);
-		else
-			message_vision(HIY"Ëæ×ÅÉñ¹â½¥½¥µÄÒþÈ¥£¬$NµÄ¾«Á¦ÓÖ»Ö¸´Õý³£ÁË¡£\n"NOR, me);
-		me->add("max_jing", me->query("max_neili") * socket_level * mode / 40);
-		me->add("eff_jing", me->query("max_neili") * socket_level * mode / 40);
-		me->add("jing", me->query("max_neili") * socket_level * mode / 40);
-		break;
-	case "sapphire":
-		if (mode == 1)
-			message_vision(HIB + query("name") + HIB"Éä³öÒ»µÀÈáºÍµÄÀ¶¹â£¬$NÔÚÉñ¹âµÄãåÔ¡ÏÂ¸Ðµ½ÄÚÁ¦Òì³£µÄ³äÅæ£¡\n"NOR, me);
-		else
-			message_vision(HIB"Ëæ×ÅÉñ¹â½¥½¥µÄÒþÈ¥£¬$NµÄÄÚÁ¦ÓÖ»Ö¸´Õý³£ÁË¡£\n"NOR, me);
-		me->add("neili", me->query("max_neili") * socket_level * mode / 8);
-		me->add("qi", me->query("max_qi") * socket_level * mode / 50);
-		me->add("eff_qi", me->query("max_qi") * socket_level * mode / 50);
-		me->add("jing", me->query("max_jing") * socket_level * mode / 50);
-		me->add("eff_jing", me->query("max_jing") * socket_level * mode / 50);
-		break;
-	case "emerald":
-		if (mode == 1)
-			message_vision(HIG"ºöÈ»´Ó" + query("name") + HIG"Àï»Ã»¯³öÒ»¸öÉíÅûÂÌÉ´µÄÐÒÔËÅ®ÉñÎ§ÈÆ×Å$NµÄÉí±ß£¡\n"NOR, me);
-		else
-			message_vision(HIG"ÂÌ¹âÒ»ÉÁ£¬$NµÄÐÒÔËÅ®Éñ¾Í²»¼ûÁË¡£\n"NOR, me);
-		me->add("neili", me->query("max_neili") * socket_level * mode / 10);
-		me->add_temp("apply/karey", 6 * socket_level * mode);
-		break;
-	case "amethyst":
-		if (mode == 1)
-			message_vision(MAG"Ò»Æ¬×ÏÉ«ÔÆÎíÑ¸ËÙ´Ó" + query("name") + MAG"ÖÐÓ¿³ö£¬×ªÑÛ¼ä¾ÍÒÑ¾­°Ñ$NÍÐÁËÆðÀ´£¡\n"NOR, me);
-		else
-			message_vision(MAG"×ÏÉ«ÔÆÎí±»·ç´µÉ¢ÁË£¬$NµÄÉíÐÎÓÖÏÔÏÖÁË³öÀ´¡£\n"NOR, me);
-		me->add_temp("apply/dexerity", 6 * socket_level * mode);
-		break;
-	case "diamond":
-		if (mode == 1)
-			message_vision(HIW"¡¸»©¡¹£¬" + query("name") + HIW"»®³öÒ»µÀÉÁµçÖ±³åÌì¼Ê£¬$NÉ²Ê±¸Ðµ½ÌåÄÚ³äÂúÁËÁ¦Á¿£¡\n"NOR, me);
-		else
-			message_vision(HIW"½¥½¥µÄ$NµÄÉñÉ«ÓÖ»Ö¸´ÁËÕý³£¡£\n"NOR, me);
-		me->add_temp("apply/strength", 6 * socket_level * mode);
-		break;
-	case "skull":
-		if (mode == 1)
-			message_vision(WHT"$NºöÈ»¸Ðµ½Ò»¹ÉÆæÒìµÄÁ¦Á¿Î§ÈÆ×Å$P£¬ÒþÒþÖ®¼äÖ»¾õµÃ³ä³â×ÅÄªÃ÷µÄÄ§Á¦£¡\n"NOR, me);
-		else
-			message_vision(WHT"$N" + query("name") + WHT"ÖÐµÄÖäÓï½¥½¥Ê§È¥ÁËÐ§ÓÃ£¡\n"NOR, me);
-		me->add_temp("apply/magic", 6 * socket_level * mode);
-		break;
-	case "windjade":
-		if (mode == 1)
-			message_vision(GRN"$NºöÈ»¸Ðµ½Ò»ÕóºôÐ¥Ðý×ªµÄ·çÎ§ÈÆ×Å$P£¬$NÉíÌåÖÜÎ§ÐÎ³ÉÐý·ç£¡\n"NOR, me);
-		else
-			message_vision(GRN"$N" + query("name") + GRN"ÖÐµÄÖäÓï½¥½¥Ê§È¥ÁËÐ§ÓÃ£¡\n"NOR, me);
-		me->add("neili", me->query("max_neili") * socket_level * mode / 10);
-		me->add_temp("apply/dodge", 7 * socket_level * mode);
-		break;
+void spec_prop(object me, string socket, int socket_level, int mode) {
+    int i;
+    if (!valid_gem(socket, socket_level)) return;
+    if (me->query("diablo/" + TYPE_FINGER + "/id") != query("id")) return;
+    if (me->query("max_neili") < 100) return;
+    switch (socket) {
+        case "ruby":
+            if (mode == 1)
+                message_vision(HIR + query("name") + HIR
+            "å°„å‡ºä¸€é“è€€çœ¼çš„çº¢å…‰ï¼Œ$Nåœ¨ç¥žå…‰çš„æ²æµ´ä¸‹æ„Ÿåˆ°ä½“åŠ›å¼‚å¸¸çš„å……æ²›ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIR
+            "éšç€ç¥žå…‰æ¸æ¸çš„éšåŽ»ï¼Œ$Nçš„ä½“åŠ›åˆæ¢å¤æ­£å¸¸äº†ã€‚\n"
+            NOR, me);
+            me->add("max_qi", me->query("max_neili") * socket_level * mode / 15);
+            me->add("eff_qi", me->query("max_neili") * socket_level * mode / 15);
+            me->add("qi", me->query("max_neili") * socket_level * mode / 15);
+            break;
+        case "topaz":
+            if (mode == 1)
+                message_vision(HIY + query("name") + HIY
+            "å°„å‡ºä¸€é“å¤ºç›®çš„é»„å…‰ï¼Œ$Nåœ¨ç¥žå…‰çš„æ²æµ´ä¸‹æ„Ÿåˆ°ç²¾åŠ›å¼‚å¸¸çš„å……æ²›ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIY
+            "éšç€ç¥žå…‰æ¸æ¸çš„éšåŽ»ï¼Œ$Nçš„ç²¾åŠ›åˆæ¢å¤æ­£å¸¸äº†ã€‚\n"
+            NOR, me);
+            me->add("max_jing", me->query("max_neili") * socket_level * mode / 40);
+            me->add("eff_jing", me->query("max_neili") * socket_level * mode / 40);
+            me->add("jing", me->query("max_neili") * socket_level * mode / 40);
+            break;
+        case "sapphire":
+            if (mode == 1)
+                message_vision(HIB + query("name") + HIB
+            "å°„å‡ºä¸€é“æŸ”å’Œçš„è“å…‰ï¼Œ$Nåœ¨ç¥žå…‰çš„æ²æµ´ä¸‹æ„Ÿåˆ°å†…åŠ›å¼‚å¸¸çš„å……æ²›ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIB
+            "éšç€ç¥žå…‰æ¸æ¸çš„éšåŽ»ï¼Œ$Nçš„å†…åŠ›åˆæ¢å¤æ­£å¸¸äº†ã€‚\n"
+            NOR, me);
+            me->add("neili", me->query("max_neili") * socket_level * mode / 8);
+            me->add("qi", me->query("max_qi") * socket_level * mode / 50);
+            me->add("eff_qi", me->query("max_qi") * socket_level * mode / 50);
+            me->add("jing", me->query("max_jing") * socket_level * mode / 50);
+            me->add("eff_jing", me->query("max_jing") * socket_level * mode / 50);
+            break;
+        case "emerald":
+            if (mode == 1)
+                message_vision(HIG
+            "å¿½ç„¶ä»Ž" + query("name") + HIG
+            "é‡Œå¹»åŒ–å‡ºä¸€ä¸ªèº«æŠ«ç»¿çº±çš„å¹¸è¿å¥³ç¥žå›´ç»•ç€$Nçš„èº«è¾¹ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIG
+            "ç»¿å…‰ä¸€é—ªï¼Œ$Nçš„å¹¸è¿å¥³ç¥žå°±ä¸è§äº†ã€‚\n"
+            NOR, me);
+            me->add("neili", me->query("max_neili") * socket_level * mode / 10);
+            me->add_temp("apply/karey", 6 * socket_level * mode);
+            break;
+        case "amethyst":
+            if (mode == 1)
+                message_vision(MAG
+            "ä¸€ç‰‡ç´«è‰²äº‘é›¾è¿…é€Ÿä»Ž" + query("name") + MAG
+            "ä¸­æ¶Œå‡ºï¼Œè½¬çœ¼é—´å°±å·²ç»æŠŠ$Næ‰˜äº†èµ·æ¥ï¼\n"
+            NOR, me);
+            else
+            message_vision(MAG
+            "ç´«è‰²äº‘é›¾è¢«é£Žå¹æ•£äº†ï¼Œ$Nçš„èº«å½¢åˆæ˜¾çŽ°äº†å‡ºæ¥ã€‚\n"
+            NOR, me);
+            me->add_temp("apply/dexerity", 6 * socket_level * mode);
+            break;
+        case "diamond":
+            if (mode == 1)
+                message_vision(HIW
+            "ã€Œå“—ã€ï¼Œ" + query("name") + HIW
+            "åˆ’å‡ºä¸€é“é—ªç”µç›´å†²å¤©é™…ï¼Œ$Nåˆ¹æ—¶æ„Ÿåˆ°ä½“å†…å……æ»¡äº†åŠ›é‡ï¼\n"
+            NOR, me);
+            else
+            message_vision(HIW
+            "æ¸æ¸çš„$Nçš„ç¥žè‰²åˆæ¢å¤äº†æ­£å¸¸ã€‚\n"
+            NOR, me);
+            me->add_temp("apply/strength", 6 * socket_level * mode);
+            break;
+        case "skull":
+            if (mode == 1)
+                message_vision(WHT
+            "$Nå¿½ç„¶æ„Ÿåˆ°ä¸€è‚¡å¥‡å¼‚çš„åŠ›é‡å›´ç»•ç€$Pï¼Œéšéšä¹‹é—´åªè§‰å¾—å……æ–¥ç€èŽ«æ˜Žçš„é­”åŠ›ï¼\n"
+            NOR, me);
+            else
+            message_vision(WHT
+            "$N" + query("name") + WHT
+            "ä¸­çš„å’’è¯­æ¸æ¸å¤±åŽ»äº†æ•ˆç”¨ï¼\n"
+            NOR, me);
+            me->add_temp("apply/magic", 6 * socket_level * mode);
+            break;
+        case "windjade":
+            if (mode == 1)
+                message_vision(GRN
+            "$Nå¿½ç„¶æ„Ÿåˆ°ä¸€é˜µå‘¼å•¸æ—‹è½¬çš„é£Žå›´ç»•ç€$Pï¼Œ$Nèº«ä½“å‘¨å›´å½¢æˆæ—‹é£Žï¼\n"
+            NOR, me);
+            else
+            message_vision(GRN
+            "$N" + query("name") + GRN
+            "ä¸­çš„å’’è¯­æ¸æ¸å¤±åŽ»äº†æ•ˆç”¨ï¼\n"
+            NOR, me);
+            me->add("neili", me->query("max_neili") * socket_level * mode / 10);
+            me->add_temp("apply/dodge", 7 * socket_level * mode);
+            break;
 
-	case "firejade":
-		if (mode == 1)
-			message_vision(WHT"$NºöÈ»¸Ðµ½ÖËÈÈµÄÎÞÐÎÖ®»ðÈÆ×Å$P£¬$NÔÊÂúÁËÎÞ¾¡µÄÁ¦Á¿£¡\n"NOR, me);
-		else
-			message_vision(WHT"$N" + query("name") + WHT"ÖÐµÄÖäÓï½¥½¥Ê§È¥ÁËÐ§ÓÃ£¡\n"NOR, me);
-		me->add("neili", me->query("max_neili") * socket_level * mode / 10);
-		me->add("eff_qi", me->query("max_qi") * socket_level * mode / 8);
-		me->add("eff_jing", me->query("max_jing") * socket_level * mode / 8);
-		break;
+        case "firejade":
+            if (mode == 1)
+                message_vision(WHT
+            "$Nå¿½ç„¶æ„Ÿåˆ°ç‚™çƒ­çš„æ— å½¢ä¹‹ç«ç»•ç€$Pï¼Œ$Nå…æ»¡äº†æ— å°½çš„åŠ›é‡ï¼\n"
+            NOR, me);
+            else
+            message_vision(WHT
+            "$N" + query("name") + WHT
+            "ä¸­çš„å’’è¯­æ¸æ¸å¤±åŽ»äº†æ•ˆç”¨ï¼\n"
+            NOR, me);
+            me->add("neili", me->query("max_neili") * socket_level * mode / 10);
+            me->add("eff_qi", me->query("max_qi") * socket_level * mode / 8);
+            me->add("eff_jing", me->query("max_jing") * socket_level * mode / 8);
+            break;
 
-	case "icejade":
-		if (mode == 1)
-			message_vision(CYN"$NºöÈ»¸Ðµ½Ò»Õó±ùÑ©µÄº®ÆøÎ§ÈÆ×Å$P£¬$NµÄÉíÐÎÈçÎíÈç»Ã£¡\n"NOR, me);
-		else
-			message_vision(CYN"$N" + query("name") + CYN"ÖÐµÄÖäÓï½¥½¥Ê§È¥ÁËÐ§ÓÃ£¡\n"NOR, me);
-		me->add("neili", me->query("max_neili") * socket_level * mode / 10);
-		me->add_temp("apply/karey", 5 * socket_level * mode);
-		me->add_temp("apply/percao", 5 * socket_level * mode);
-		break;
+        case "icejade":
+            if (mode == 1)
+                message_vision(CYN
+            "$Nå¿½ç„¶æ„Ÿåˆ°ä¸€é˜µå†°é›ªçš„å¯’æ°”å›´ç»•ç€$Pï¼Œ$Nçš„èº«å½¢å¦‚é›¾å¦‚å¹»ï¼\n"
+            NOR, me);
+            else
+            message_vision(CYN
+            "$N" + query("name") + CYN
+            "ä¸­çš„å’’è¯­æ¸æ¸å¤±åŽ»äº†æ•ˆç”¨ï¼\n"
+            NOR, me);
+            me->add("neili", me->query("max_neili") * socket_level * mode / 10);
+            me->add_temp("apply/karey", 5 * socket_level * mode);
+            me->add_temp("apply/percao", 5 * socket_level * mode);
+            break;
 
-	case "thunderjade":
-		if (mode == 1)
-			message_vision(MAG"$NºöÈ»¸Ðµ½À¶É«µÄ»ð£¬°×É«µÄÀ×µçÎ§ÈÆ×Å$P£¬$NÈçÌìÉñ½µÁÙ£¡\n"NOR, me);
-		else
-			message_vision(MAG"$N" + query("name") + MAG"ÖÐµÄÖäÓï½¥½¥Ê§È¥ÁËÐ§ÓÃ£¡\n"NOR, me);
-		me->add("neili", me->query("max_neili") * socket_level * mode / 10);
-		me->add_temp("apply/intelligence", 3 * socket_level * mode);
-		break;
+        case "thunderjade":
+            if (mode == 1)
+                message_vision(MAG
+            "$Nå¿½ç„¶æ„Ÿåˆ°è“è‰²çš„ç«ï¼Œç™½è‰²çš„é›·ç”µå›´ç»•ç€$Pï¼Œ$Nå¦‚å¤©ç¥žé™ä¸´ï¼\n"
+            NOR, me);
+            else
+            message_vision(MAG
+            "$N" + query("name") + MAG
+            "ä¸­çš„å’’è¯­æ¸æ¸å¤±åŽ»äº†æ•ˆç”¨ï¼\n"
+            NOR, me);
+            me->add("neili", me->query("max_neili") * socket_level * mode / 10);
+            me->add_temp("apply/intelligence", 3 * socket_level * mode);
+            break;
 
-	case "earthjade":
-		if (mode == 1)
-			message_vision(YEL"$NºöÈ»¸Ðµ½´óµØÎÞ¾¡µÄÉúÃüÁ¦Î§ÈÆ×Å$P£¬$N¸Ðµ½ÔÊÂú»îÁ¦£¡\n"NOR, me);
-		else
-			message_vision(YEL"$N" + query("name") + YEL"ÖÐµÄÖäÓï½¥½¥Ê§È¥ÁËÐ§ÓÃ£¡\n"NOR, me);
-		if ((int)me->query_temp("foodgem") < (socket_level*3))
-		{
-                me->add_temp("foodgem",1);
-		if( me->query("food") < me->max_food_capacity() )
-		me->set("food", me->max_water_capacity());
-		if( (int)me->query("water") < me->max_water_capacity() )
-		me->set("water", me->max_water_capacity());
-		}
-		me->add("neili", me->query("max_neili") * socket_level * mode / 10);
-		me->add("max_jing", me->query("max_jing") * socket_level * mode / 8);
-		break;
-	}
-	return;
+        case "earthjade":
+            if (mode == 1)
+                message_vision(YEL
+            "$Nå¿½ç„¶æ„Ÿåˆ°å¤§åœ°æ— å°½çš„ç”Ÿå‘½åŠ›å›´ç»•ç€$Pï¼Œ$Næ„Ÿåˆ°å…æ»¡æ´»åŠ›ï¼\n"
+            NOR, me);
+            else
+            message_vision(YEL
+            "$N" + query("name") + YEL
+            "ä¸­çš„å’’è¯­æ¸æ¸å¤±åŽ»äº†æ•ˆç”¨ï¼\n"
+            NOR, me);
+            if ((int) me->query_temp("foodgem") < (socket_level * 3)) {
+                me->add_temp("foodgem", 1);
+                if (me->query("food") < me->max_food_capacity())
+                    me->set("food", me->max_water_capacity());
+                if ((int) me->query("water") < me->max_water_capacity())
+                    me->set("water", me->max_water_capacity());
+            }
+            me->add("neili", me->query("max_neili") * socket_level * mode / 10);
+            me->add("max_jing", me->query("max_jing") * socket_level * mode / 8);
+            break;
+    }
+    return;
 }
 
-int wear()
-{
-	int i, sockets, ret;
-	object me = environment();
+int wear() {
+    int i, sockets, ret;
+    object me = environment();
 
-	if (!(ret = ::wear())) return 0;
+    if (!(ret = ::wear())) return 0;
 
 
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), 1);
-	return ret;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), 1);
+    return ret;
 }
 
-int unequip()
-{
-	int i, sockets, ret;
-	object me = environment();
+int unequip() {
+    int i, sockets, ret;
+    object me = environment();
 
-	if (!(ret = ::unequip())) return 0;
+    if (!(ret = ::unequip())) return 0;
 
-	sockets = query("sockets/max");
-	for (i = 1; i <= sockets; i++)
-		spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), -1);
-	return ret;
+    sockets = query("sockets/max");
+    for (i = 1; i <= sockets; i++)
+        spec_prop(me, query(sprintf("sockets/socket%d", i)), query(sprintf("sockets/socket%d_level", i)), -1);
+    return ret;
 }

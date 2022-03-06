@@ -1,59 +1,60 @@
-// roar.c ·ğÃÅÊ¨×Óºğ
+// roar.c ä½›é—¨ç‹®å­å¼
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-int exert(object me, object target)
-{
-	object *ob;
-	int i, skill, damage;
+int exert(object me, object target) {
+    object *ob;
+    int i, skill, damage;
 
-	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+    if (environment(me)->query("no_fight"))
+        return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
-	if ( !wizardp(this_player()) && (me->query("family/family_name") != "Ã÷½Ì"))
-		return notify_fail("Äã²»ÊÇÃ÷½Ì½ÌÖÚ²»ÄÜÊ¹ÓÃ¾ÅÑôÉñ¹¦¡£\n");
+    if (!wizardp(this_player()) && (me->query("family/family_name") != "æ˜æ•™"))
+        return notify_fail("ä½ ä¸æ˜¯æ˜æ•™æ•™ä¼—ä¸èƒ½ä½¿ç”¨ä¹é˜³ç¥åŠŸã€‚\n");
 
-	if( ((int)me->query("neili") < 600 ) || ( (int)me->query_skill("jiuyang-shengong") < 20) )
-		return notify_fail("Äã¹Ä×ãÕæÆø\"ß÷\"µÄºğÁËÒ»Éù, ½á¹ûÏÅ×ßÁË¼¸Ö»ÀÏÊó¡£\n");
+    if (((int) me->query("neili") < 600) || ((int) me->query_skill("jiuyang-shengong") < 20))
+        return notify_fail("ä½ é¼“è¶³çœŸæ°”\"å–µ\"çš„å¼äº†ä¸€å£°, ç»“æœå“èµ°äº†å‡ åªè€é¼ ã€‚\n");
 
-	if( !me->is_fighting())
-		return notify_fail("Äã²»ÔÚ´ò¼Ü£¬ÓÃÕâ¸ö×öÊ²Ã´?\n");
+    if (!me->is_fighting())
+        return notify_fail("ä½ ä¸åœ¨æ‰“æ¶ï¼Œç”¨è¿™ä¸ªåšä»€ä¹ˆ?\n");
 
-	skill = me->query_skill("force");
+    skill = me->query_skill("force");
 
-	me->add("neili", -150);
-	me->receive_damage("qi", 10);
+    me->add("neili", -150);
+    me->receive_damage("qi", 10);
 
-	me->start_busy(1);
-	message_combatd(
-		HIY "$NÉîÉîµØÎüÒ»àíÆø£¬ÕæÁ¦±Å·¢£¬·¢³öÒ»Éù¾ªÌì¶¯µØµÄ¾Şºğ¡£\n" NOR, me);
+    me->start_busy(1);
+    message_combatd(
+            HIY
+    "$Næ·±æ·±åœ°å¸ä¸€å›—æ°”ï¼ŒçœŸåŠ›è¿¸å‘ï¼Œå‘å‡ºä¸€å£°æƒŠå¤©åŠ¨åœ°çš„å·¨å¼ã€‚\n"
+    NOR, me);
 
-	ob = all_inventory(environment(me));
-	for(i=0; i<sizeof(ob); i++) {
-		if( !living(ob[i]) || ob[i]==me ) continue;
-                if( !ob[i]->is_fighting(me) ) continue;
-                if( ob[i]==me ) continue;
-	        if( !ob[i]->is_character() || ob[i]->is_corpse() ) continue;
+    ob = all_inventory(environment(me));
+    for (i = 0; i < sizeof(ob); i++) {
+        if (!living(ob[i]) || ob[i] == me) continue;
+        if (!ob[i]->is_fighting(me)) continue;
+        if (ob[i] == me) continue;
+        if (!ob[i]->is_character() || ob[i]->is_corpse()) continue;
 
-		if( skill/2 + random(skill/2) < (int)ob[i]->query("con") * 2 ) continue;
+        if (skill / 2 + random(skill / 2) < (int) ob[i]->query("con") * 2) continue;
 
-		damage = skill - ((int)ob[i]->query("max_neili") / 10);
-		if( damage > 0 ) {
-			ob[i]->receive_damage("jing", damage/2  );
-			if( (int)ob[i]->query("neili") < skill * 2 )
-				ob[i]->receive_wound("jing", damage/2);
-			tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¬¶ú¶äÍ´µÃÏñÊÇÒªÁÑ¿ªÒ»Ñù¡£\n");
-		if( !me->is_killing(ob[i]) )
-			me->fight_ob(ob[i]);
+        damage = skill - ((int) ob[i]->query("max_neili") / 10);
+        if (damage > 0) {
+            ob[i]->receive_damage("jing", damage / 2);
+            if ((int) ob[i]->query("neili") < skill * 2)
+                ob[i]->receive_wound("jing", damage / 2);
+            tell_object(ob[i], "ä½ è§‰å¾—çœ¼å‰ä¸€é˜µé‡‘æ˜Ÿä¹±å†’ï¼Œè€³æœµç—›å¾—åƒæ˜¯è¦è£‚å¼€ä¸€æ ·ã€‚\n");
+            if (!me->is_killing(ob[i]))
+                me->fight_ob(ob[i]);
 
-		if( !ob[i]->is_killing(me) )
-			ob[i]->fight_ob(me);
+            if (!ob[i]->is_killing(me))
+                ob[i]->fight_ob(me);
 
-		}
-	}
+        }
+    }
 
-	return 1;
+    return 1;
 }
 
