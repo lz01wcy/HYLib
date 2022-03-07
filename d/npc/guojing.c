@@ -1,82 +1,82 @@
-// guojing.c ¹ù¾¸
+// guojing.c éƒ­é–
 
 #include <ansi.h>
 
 inherit NPC;
+
 int ask_rong();
-void create()
-{
-	set_name("¹ù¾¸", ({"guo jing", "guo", "jing"}));
-	set("nickname", HIY"±±ÏÀ"NOR);
-	set("gender", "ÄĞĞÔ");
-	set("age", 25);
-	set("long", 
-		"Ëû¾ÍÊÇÈË³Æ±±ÏÀµÄ¹ù¾¸£¬¼ÈÊÇÃÉ¹Å³É¼ªË¼º¹µÄ½ğµ¶æâÂí£¬ÓÖÊÇ\n"
-		"½­ÄÏÆß¹Ö¡¢È«ÕæÅÉÂíîÚµÀ³¤¡¢¡¸±±Ø¤¡¹ºéÆß¹«ºÍ¡¸ÀÏÍçÍ¯¡¹ÖÜ\n"
-		"²®Í¨µÈÈËµÄÍ½µÜ£¬Éí¼æÊıÃÅÎä¹¦¡£\n"
-		"ËûÉí×ÅÒ»¼ş»ÒÉ«³¤ÅÛ£¬ÌåÌ¬¿ıÎà£¬¶ØºñµÄÃæÄ¿ÖĞÍ¸³öÒ»¹ÉÍşÑÏ\n"
-		"ÁîÈË²»ÓÉµÃ²úÉúÒ»¹ÉÇÕÅåÖ®Çé¡£\n");
- 	set("attitude", "peaceful");
-	
-	set("str", 40);
-	set("int", 20);
-	set("con", 30);
-	set("dex", 25);
 
-	set("chat_chance", 1);
-	set("chat_msg", ({
-		"¹ù¾¸Ì¾ÁË¿ÚÆøµÀ£º¡°ÃÉ¹Å±ø¾Ã¹¥ÏåÑô²»ÏÂ£¬Ò»¶¨»áÔÙ³ö¹î¼Æ£¬ÈØ¶ùÓÖ²»ÔÚÉí±ß£¬Õâ....\n",
-		"¹ù¾¸ËµµÀ£º¡°»ªóİ¹«Ö÷½üÀ´²»Öª¿ÉºÃ£¬³é¿ÕÒ»¶¨Òª»Ø´óÄ®È¥¿´¿´Ëı¡£\n",
+void create() {
+    set_name("éƒ­é–", ({ "guo jing", "guo", "jing" }));
+    set("nickname", HIY
+    "åŒ—ä¾ "
+    NOR);
+    set("gender", "ç”·æ€§");
+    set("age", 25);
+    set("long",
+        "ä»–å°±æ˜¯äººç§°åŒ—ä¾ çš„éƒ­é–ï¼Œæ—¢æ˜¯è’™å¤æˆå‰æ€æ±—çš„é‡‘åˆ€é©¸é©¬ï¼Œåˆæ˜¯\n"
+        "æ±Ÿå—ä¸ƒæ€ªã€å…¨çœŸæ´¾é©¬é’°é“é•¿ã€ã€ŒåŒ—ä¸ã€æ´ªä¸ƒå…¬å’Œã€Œè€é¡½ç«¥ã€å‘¨\n"
+        "ä¼¯é€šç­‰äººçš„å¾’å¼Ÿï¼Œèº«å…¼æ•°é—¨æ­¦åŠŸã€‚\n"
+        "ä»–èº«ç€ä¸€ä»¶ç°è‰²é•¿è¢ï¼Œä½“æ€é­æ¢§ï¼Œæ•¦åšçš„é¢ç›®ä¸­é€å‡ºä¸€è‚¡å¨ä¸¥\n"
+        "ä»¤äººä¸ç”±å¾—äº§ç”Ÿä¸€è‚¡é’¦ä½©ä¹‹æƒ…ã€‚\n");
+    set("attitude", "peaceful");
+
+    set("str", 40);
+    set("int", 20);
+    set("con", 30);
+    set("dex", 25);
+
+    set("chat_chance", 1);
+    set("chat_msg", ({
+        "éƒ­é–å¹äº†å£æ°”é“ï¼šâ€œè’™å¤å…µä¹…æ”»è¥„é˜³ä¸ä¸‹ï¼Œä¸€å®šä¼šå†å‡ºè¯¡è®¡ï¼Œè“‰å„¿åˆä¸åœ¨èº«è¾¹ï¼Œè¿™....\n",
+                "éƒ­é–è¯´é“ï¼šâ€œåç­å…¬ä¸»è¿‘æ¥ä¸çŸ¥å¯å¥½ï¼ŒæŠ½ç©ºä¸€å®šè¦å›å¤§æ¼ å»çœ‹çœ‹å¥¹ã€‚\n",
 //		(: random_move :),
-	}));
+    }));
 
-	set("inquiry", ([
-		"»ÆÈØ" : "ÈØ¶ùÊÇÎÒµÄ°®ÆŞ£¬ÄãÎÊËı×öÉõ£¿\n",
-		"ÈØ¶ù" : (:ask_rong:),
-		"Ø¤°ï" : "¶«±±Î÷±±¶«Î÷±±¡£\n",
-		"°İÊ¦" : "ÏÖÔÚÃÉ¹ÅÈËÎ§¹¥ÏåÑô£¬ÎÒÄÄÓĞĞÄÇéÊÕÍ½°¡£¡\n",
-	]));
+    set("inquiry",([
+    "é»„è“‰" : "è“‰å„¿æ˜¯æˆ‘çš„çˆ±å¦»ï¼Œä½ é—®å¥¹åšç”šï¼Ÿ\n",
+            "è“‰å„¿" : (:ask_rong:),
+    "ä¸å¸®" : "ä¸œåŒ—è¥¿åŒ—ä¸œè¥¿åŒ—ã€‚\n",
+            "æ‹œå¸ˆ" : "ç°åœ¨è’™å¤äººå›´æ”»è¥„é˜³ï¼Œæˆ‘å“ªæœ‰å¿ƒæƒ…æ”¶å¾’å•Šï¼\n",
+    ]));
 
-	set("qi", 4000);
-	set("max_qi", 4000);
-	set("jing", 500);
-	set("max_jing", 500);
-	set("neili", 4000);
-	set("max_neili", 4000);
-	set("jiali", 100);
-	
-	set("combat_exp", 800000);
-	set("score", 200000);
-	 
-	set_skill("force", 150);		// »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 130);	// »ìÌìÆø¹¦
-	set_skill("unarmed", 220);		// »ù±¾È­½Å
-	set_skill("xianglong-zhang", 200);	// ½µÁúÊ®°ËÕÆ
-	set_skill("dodge", 100);		// »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 80);		// åĞÒ£ÓÎ
-	set_skill("parry", 120);		// »ù±¾ÕĞ¼Ü
-	
-	map_skill("force", "huntian-qigong");
-	map_skill("unarmed", "xianglong-zhang");
-	map_skill("dodge", "xiaoyaoyou");
-	map_skill("parry", "xianglong-zhang");
-	
-	setup();
-	
-	carry_object("/clone/misc/cloth")->wear();
+    set("qi", 4000);
+    set("max_qi", 4000);
+    set("jing", 500);
+    set("max_jing", 500);
+    set("neili", 4000);
+    set("max_neili", 4000);
+    set("jiali", 100);
+
+    set("combat_exp", 800000);
+    set("score", 200000);
+
+    set_skill("force", 150);        // åŸºæœ¬å†…åŠŸ
+    set_skill("huntian-qigong", 130);    // æ··å¤©æ°”åŠŸ
+    set_skill("unarmed", 220);        // åŸºæœ¬æ‹³è„š
+    set_skill("xianglong-zhang", 200);    // é™é¾™åå…«æŒ
+    set_skill("dodge", 100);        // åŸºæœ¬èº²é—ª
+    set_skill("xiaoyaoyou", 80);        // é€é¥æ¸¸
+    set_skill("parry", 120);        // åŸºæœ¬æ‹›æ¶
+
+    map_skill("force", "huntian-qigong");
+    map_skill("unarmed", "xianglong-zhang");
+    map_skill("dodge", "xiaoyaoyou");
+    map_skill("parry", "xianglong-zhang");
+
+    setup();
+
+    carry_object("/clone/misc/cloth")->wear();
 }
-int ask_rong()
-{
+
+int ask_rong() {
     object ob;
     ob = this_player();
-    if (ob->query_int()>=30)
-    {
-        ob->set_temp("marks/ÈØ¶ù",1);
-        command("say " + ob->query("name") + "£¬Äã°ïÎÒ´ø¸ö¿ÚĞÅÈ¥ÌÒ»¨µº°É£¡\n");
-    }
-    else
-    {
-        command("say " + ob->query("name") + "£¬Äã´òÌıÕâ¸ÉÂï£¿\n");
+    if (ob->query_int() >= 30) {
+        ob->set_temp("marks/è“‰å„¿", 1);
+        command("say " + ob->query("name") + "ï¼Œä½ å¸®æˆ‘å¸¦ä¸ªå£ä¿¡å»æ¡ƒèŠ±å²›å§ï¼\n");
+    } else {
+        command("say " + ob->query("name") + "ï¼Œä½ æ‰“å¬è¿™å¹²å˜›ï¼Ÿ\n");
     }
     return 1;
 }

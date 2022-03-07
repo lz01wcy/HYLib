@@ -1,19 +1,20 @@
-// arnzh.c ÎÂ»ğ
+// arnzh.c æ¸©ç«
 
 #include <ansi.h>
 
 inherit NPC;
 
-void create()
-{
-	set_name("ÎÂ»ğ",({"arnzh"}));
-	set("nickname", HIY"¹ÛÈÕ½£"NOR);
-	set("gender", "ÄĞĞÔ");
-	set("age", 20);
-	set("long", 
-		"Ëû¾ÍÊÇÎäµ±Ê×ÏÀ¡¸ÎÂ»ğ¡¹¡£\n");
+void create() {
+    set_name("æ¸©ç«", ({ "arnzh" }));
+    set("nickname", HIY
+    "è§‚æ—¥å‰‘"
+    NOR);
+    set("gender", "ç”·æ€§");
+    set("age", 20);
+    set("long",
+        "ä»–å°±æ˜¯æ­¦å½“é¦–ä¾ ã€Œæ¸©ç«ã€ã€‚\n");
 
-	setup();
-	
-	carry_object("/d/city2/obj/jinduan")->wear();
+    setup();
+
+    carry_object("/d/city2/obj/jinduan")->wear();
 }

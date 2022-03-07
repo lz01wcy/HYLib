@@ -1,65 +1,66 @@
-// duanyu.c ¶ÎÓş
+// duanyu.c æ®µèª‰
 
 #include <ansi.h>
 
 inherit NPC;
 
-void create()
-{
-	set_name("¶ÎÓş", ({"duan yu", "duan", "yu"}));
-	set("nickname", GRN"´óÀíÍõ×Ó"NOR);
-	set("gender", "ÄĞĞÔ");
-	set("age", 20);
-	set("long", 
-		"ËûÊÇÒ»¸öÉí´©ÇàÉÀµÄÄêÇáÄĞ×Ó¡£Á³¿×ÂÔ¼â£¬×ÔÓĞÒ»¹ÉÊéÉúµÄ´ôÆø¡£\n");
-	set("attitude", "peaceful");
-	
-	set("str", 12);
-	set("int", 30);
-	set("con", 30);
-	set("dex", 30);
+void create() {
+    set_name("æ®µèª‰", ({ "duan yu", "duan", "yu" }));
+    set("nickname", GRN
+    "å¤§ç†ç‹å­"
+    NOR);
+    set("gender", "ç”·æ€§");
+    set("age", 20);
+    set("long",
+        "ä»–æ˜¯ä¸€ä¸ªèº«ç©¿é’è¡«çš„å¹´è½»ç”·å­ã€‚è„¸å­”ç•¥å°–ï¼Œè‡ªæœ‰ä¸€è‚¡ä¹¦ç”Ÿçš„å‘†æ°”ã€‚\n");
+    set("attitude", "peaceful");
 
-	set("chat_chance", 1);
-	set("chat_msg", ({
-		"¶ÎÓşÌ¾ÁË¿ÚÆøµÀ£º¡°°¦¡­¡­ºÎÊ±ÄÜÔÙ¼ûµ½ÓïæÌ°¡¡­¡­¡±\n",
-		(: random_move :),
-	}));
+    set("str", 12);
+    set("int", 30);
+    set("con", 30);
+    set("dex", 30);
 
-	set("inquiry", ([
-		"´óÀí" : "´óÀíÊÇ¸öºÃµØ·½£¬É½ÇåË®Ğã£¬·ç¾°ÒËÈË¡£\n",
-		"ÍõÓïæÌ" : "°¦£¬ËıĞÄÀïÖ»ÓĞËı±í¸ç£¬´ÓÀ´¾ÍÃ»°ÑÎÒ·ÅÔÚÑÛÀï¡£\n",
-		"°İÊ¦" : "àÅ....£¬ÎÒµÄÊ¦¸µÊÇÀÏ×Ó¡¢¿××ÓºÍ×¯×Ó£¬ËûÃÇµÄÑ§ÎÊÎÒ»¹Ã»Ñ§È«ÄØ¡£\n",
-	]));
+    set("chat_chance", 1);
+    set("chat_msg", ({
+        "æ®µèª‰å¹äº†å£æ°”é“ï¼šâ€œå”‰â€¦â€¦ä½•æ—¶èƒ½å†è§åˆ°è¯­å«£å•Šâ€¦â€¦â€\n",
+        (: random_move :),
+    }));
 
-	set("jing", 2000);
-	set("max_jing", 2000);
-	set("jingli", 2000);
-	set("max_jingli", 2000);
-	set("qi", 2000);
-	set("max_qi", 2000);
-	set("neili", 4000);
-	set("max_neili", 4000);
-	set("jiali",200);
-	
-	set("combat_exp", 500000);
-	set("score", 20000);
-	 
-	set_skill("force", 100);		// »ù±¾ÄÚ¹¦
-	set_skill("beiming-shengong", 100);	// ±±Ú¤Éñ¹¦
-	set_skill("finger", 120);		// »ù±¾Ö¸·¨
-	set_skill("six-finger", 120);		// ÁùÂöÉñ½£
-	set_skill("dodge", 150);		// »ù±¾¶ãÉÁ
-	set_skill("lingboweibu", 150);		// Áè²¨Î¢²½
-	set_skill("parry", 80);			// »ù±¾ÕĞ¼Ü
-	
-	map_skill("force", "beiming-shengong");
-	map_skill("dodge", "lingboweibu");
-	map_skill("parry", "six-finger");
-	map_skill("finger", "six-finger");
-	prepare_skill("finger","six-finger");
-	
-	setup();
-	
-	carry_object("/d/city/obj/gangjian");
-	carry_object("/clone/misc/cloth")->wear();
+    set("inquiry",([
+    "å¤§ç†" : "å¤§ç†æ˜¯ä¸ªå¥½åœ°æ–¹ï¼Œå±±æ¸…æ°´ç§€ï¼Œé£æ™¯å®œäººã€‚\n",
+            "ç‹è¯­å«£" : "å”‰ï¼Œå¥¹å¿ƒé‡Œåªæœ‰å¥¹è¡¨å“¥ï¼Œä»æ¥å°±æ²¡æŠŠæˆ‘æ”¾åœ¨çœ¼é‡Œã€‚\n",
+            "æ‹œå¸ˆ" : "å—¯....ï¼Œæˆ‘çš„å¸ˆå‚…æ˜¯è€å­ã€å­”å­å’Œåº„å­ï¼Œä»–ä»¬çš„å­¦é—®æˆ‘è¿˜æ²¡å­¦å…¨å‘¢ã€‚\n",
+    ]));
+
+    set("jing", 2000);
+    set("max_jing", 2000);
+    set("jingli", 2000);
+    set("max_jingli", 2000);
+    set("qi", 2000);
+    set("max_qi", 2000);
+    set("neili", 4000);
+    set("max_neili", 4000);
+    set("jiali", 200);
+
+    set("combat_exp", 500000);
+    set("score", 20000);
+
+    set_skill("force", 100);        // åŸºæœ¬å†…åŠŸ
+    set_skill("beiming-shengong", 100);    // åŒ—å†¥ç¥åŠŸ
+    set_skill("finger", 120);        // åŸºæœ¬æŒ‡æ³•
+    set_skill("six-finger", 120);        // å…­è„‰ç¥å‰‘
+    set_skill("dodge", 150);        // åŸºæœ¬èº²é—ª
+    set_skill("lingboweibu", 150);        // å‡Œæ³¢å¾®æ­¥
+    set_skill("parry", 80);            // åŸºæœ¬æ‹›æ¶
+
+    map_skill("force", "beiming-shengong");
+    map_skill("dodge", "lingboweibu");
+    map_skill("parry", "six-finger");
+    map_skill("finger", "six-finger");
+    prepare_skill("finger", "six-finger");
+
+    setup();
+
+    carry_object("/d/city/obj/gangjian");
+    carry_object("/clone/misc/cloth")->wear();
 }

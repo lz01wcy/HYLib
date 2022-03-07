@@ -9,34 +9,35 @@ static int weight = 0;
 static int encumb = 0, max_encumb = 0;
 
 nomask int query_encumbrance() { return encumb; }
+
 nomask int over_encumbranced() { return encumb > max_encumb; }
 
 nomask int query_max_encumbrance() { return max_encumb; }
+
 nomask void set_max_encumbrance(int e) { max_encumb = e; }
-nomask void add_encumbrance(int w)
-{
-	encumb += w;
-	if( encumb < 0 )
-		log_file("move.bug", sprintf("%O encumbrance underflow.\n", this_object()));
-	if( encumb > max_encumb ) this_object()->over_encumbrance();
-	if( environment() ) environment()->add_encumbrance(w);
+
+nomask void add_encumbrance(int w) {
+    encumb += w;
+    if (encumb < 0)
+        log_file("move.bug", sprintf("%O encumbrance underflow.\n", this_object()));
+    if (encumb > max_encumb) this_object()->over_encumbrance();
+    if (environment()) environment()->add_encumbrance(w);
 }
 
-void over_encumbrance()
-{
-	if( !interactive(this_object()) ) return;
-	tell_object(this_object(), "ÄãµÄ¸ººÉ¹ıÖØÁË£¡\n");
+void over_encumbrance() {
+    if (!interactive(this_object())) return;
+    tell_object(this_object(), "ä½ çš„è´Ÿè·è¿‡é‡äº†ï¼\n");
 }
 
 nomask int query_weight() { return weight; }
-nomask void set_weight(int w)
-{
-	if( !environment() ) {
-		weight = w;
-		return;
-	}
-	if( w!=weight ) environment()->add_encumbrance( w - weight );
-	weight = w;
+
+nomask void set_weight(int w) {
+    if (!environment()) {
+        weight = w;
+        return;
+    }
+    if (w != weight) environment()->add_encumbrance(w - weight);
+    weight = w;
 }
 
 
@@ -44,118 +45,115 @@ nomask void set_weight(int w)
 // checking in move().
 nomask int weight() { return weight + encumb; }
 
-varargs int move(mixed dest, int silently)
-{
-	object ob, env;
-	object *inv;
-	string str;
-	int i;
+varargs int move(mixed dest, int silently) {
+    object ob, env;
+    object *inv;
+    string str;
+    int i;
     mapping exits;
-	string *dirs;
-	// If we are equipped, unequip first.
-	if( query("equipped") && !this_object()->unequip() )
-		return notify_fail("ÄãÃ»ÓĞ°ì·¨È¡ÏÂÕâÑù¶«Î÷¡£\n");
+    string *dirs;
+    // If we are equipped, unequip first.
+    if (query("equipped") && !this_object()->unequip())
+        return notify_fail("ä½ æ²¡æœ‰åŠæ³•å–ä¸‹è¿™æ ·ä¸œè¥¿ã€‚\n");
 
-	// Find the destination ob for moving.
-	if( objectp(dest) )
-		ob = dest;
-	else if( stringp(dest) ) {
-		call_other(dest, "???");
-		ob = find_object(dest);
-		if(!ob) return notify_fail("move: destination unavailable.\n");
-	} else
-		return notify_fail(sprintf("move: invalid destination %O.\n", dest));
+    // Find the destination ob for moving.
+    if (objectp(dest))
+        ob = dest;
+    else if (stringp(dest)) {
+        call_other(dest, "???");
+        ob = find_object(dest);
+        if (!ob) return notify_fail("move: destination unavailable.\n");
+    } else
+        return notify_fail(sprintf("move: invalid destination %O.\n", dest));
 
-	// Check if the destination ob can hold this object.
-	// Beforce checking it, we check if the destination is environment of
-	// this_object() (or environment of its environment). If it is, then
-	// this could be like get something from a bag carried by the player.
-	// Since the player can carry the bag, we assume he can carry the this
-	// object in the bag and encumbrance checking is unessessary.
-	env = this_object();
-	while(env = environment(env)) if( env==ob ) break;
-	if( !env && (int)ob->query_encumbrance() + weight()
-		> (int)ob->query_max_encumbrance() ) {
-		if( ob==this_player() )
-			return notify_fail( this_object()->name() + "¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
-		else
-			return notify_fail( this_object()->name() + "¶Ô" + ob->name() + "¶øÑÔÌ«ÖØÁË¡£\n");
-	}
+    // Check if the destination ob can hold this object.
+    // Beforce checking it, we check if the destination is environment of
+    // this_object() (or environment of its environment). If it is, then
+    // this could be like get something from a bag carried by the player.
+    // Since the player can carry the bag, we assume he can carry the this
+    // object in the bag and encumbrance checking is unessessary.
+    env = this_object();
+    while (env = environment(env)) if (env == ob) break;
+    if (!env && (int) ob->query_encumbrance() + weight()
+                > (int) ob->query_max_encumbrance()) {
+        if (ob == this_player())
+            return notify_fail(this_object()->name() + "å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
+        else
+            return notify_fail(this_object()->name() + "å¯¹" + ob->name() + "è€Œè¨€å¤ªé‡äº†ã€‚\n");
+    }
 
-	// Move the object and update encumbrance
-	if( environment() ) environment()->add_encumbrance( - weight());
-	move_object(ob);
-	ob->add_encumbrance(weight());
+    // Move the object and update encumbrance
+    if (environment()) environment()->add_encumbrance(-weight());
+    move_object(ob);
+    ob->add_encumbrance(weight());
 
-	// If we are players, try look where we are.
-	if( interactive(this_object())		// are we linkdead?
-	&&	living(this_object())			// are we still concious?
-	&&	!silently ) {
-		if( query("env/brief") )
-		{
+    // If we are players, try look where we are.
+    if (interactive(this_object())        // are we linkdead?
+        && living(this_object())            // are we still concious?
+        && !silently) {
+        if (query("env/brief")) {
             env = environment();
-			str = env->query("short");
+            str = env->query("short");
             if (!stringp(str)) str = "";
-			if( mapp(exits = env->query("exits")) ) {
-				dirs = sort_array(keys(exits), 1);
-				for(i=0; i<sizeof(dirs); i++)
-			if( (int)env->query_door(dirs[i], "status") & DOOR_CLOSED )
-				dirs[i] = 0;
-				dirs -= ({ 0 });
-				if (sizeof(dirs)) str += " - " + implode(dirs, "¡¢");
-			}
-			str += "\n";			
+            if (mapp(exits = env->query("exits"))) {
+                dirs = sort_array(keys(exits), 1);
+                for (i = 0; i < sizeof(dirs); i++)
+                    if ((int) env->query_door(dirs[i], "status") & DOOR_CLOSED)
+                        dirs[i] = 0;
+                dirs -= ({ 0 });
+                if (sizeof(dirs)) str += " - " + implode(dirs, "ã€");
+            }
+            str += "\n";
 
-			inv = all_inventory(environment());
-			for(i=0; i<sizeof(inv); i++) {
-				if( inv[i]==this_object() ) continue;
-				if( !this_object()->visible(inv[i]) ) continue;
-				str += "  " + inv[i]->short() + "\n";
-			}
+            inv = all_inventory(environment());
+            for (i = 0; i < sizeof(inv); i++) {
+                if (inv[i] == this_object()) continue;
+                if (!this_object()->visible(inv[i])) continue;
+                str += "  " + inv[i]->
+                short()
+                +"\n";
+            }
 
-			tell_object(this_object(), str);
-		}
-		else
-			command("look");
-	}
+            tell_object(this_object(), str);
+        } else
+            command("look");
+    }
 
-	return 1;
+    return 1;
 }
 
-void remove(string euid)
-{
-	object default_ob;
-        object me= this_player();
+void remove(string euid) {
+    object default_ob;
+    object me = this_player();
 
 //	if( !previous_object()
 //	||	base_name(previous_object()) != SIMUL_EFUN_OB )
 //		error("move: remove() can only be called by destruct() simul efun.\n");
 
-	if( userp(this_object()) && euid!=ROOT_UID ) {
-        me->set_temp("netdead",1);
+    if (userp(this_object()) && euid != ROOT_UID) {
+        me->set_temp("netdead", 1);
         "/cmds/usr/bugquit"->main(me);
-        this_object()->set_temp("netdead",1);
+        this_object()->set_temp("netdead", 1);
         "/cmds/usr/bugquit"->main(this_object());
-	log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
-	euid, this_object()->query("id"), ctime(time())));
-	error("Äã(" + euid + ")²»ÄÜ´İ»ÙÆäËûµÄÊ¹ÓÃÕß¡£\n");
-	} else if( this_object()->query("equipped")) {
-		if(	!this_object()->unequip() )
-			log_file("destruct", sprintf("Failed to unequip %s when destructed.\n",file_name(this_object())));
-	}
+        log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
+                                     euid, this_object()->query("id"), ctime(time())));
+        error("ä½ (" + euid + ")ä¸èƒ½æ‘§æ¯å…¶ä»–çš„ä½¿ç”¨è€…ã€‚\n");
+    } else if (this_object()->query("equipped")) {
+        if (!this_object()->unequip())
+            log_file("destruct", sprintf("Failed to unequip %s when destructed.\n", file_name(this_object())));
+    }
 
-	// We only care about our own weight here, since remove() is called once
-	// on each destruct(), so our inventory (encumbrance) will be counted as
-	// well.
-	if( environment() )	environment()->add_encumbrance( - weight );
-	if( default_ob = this_object()->query_default_object() )
-		default_ob->add("no_clean_up", -1);
+    // We only care about our own weight here, since remove() is called once
+    // on each destruct(), so our inventory (encumbrance) will be counted as
+    // well.
+    if (environment()) environment()->add_encumbrance(-weight);
+    if (default_ob = this_object()->query_default_object())
+        default_ob->add("no_clean_up", -1);
 }
 
-int move_or_destruct( object dest )
-{
-	if( userp(this_object()) ) {
-		tell_object(this_object(), "Ò»ÕóÊ±¿ÕµÄÅ¤Çú½«Äã´«ËÍµ½ÁíÒ»¸öµØ·½....\n");
-		move(VOID_OB);
-	}
+int move_or_destruct(object dest) {
+    if (userp(this_object())) {
+        tell_object(this_object(), "ä¸€é˜µæ—¶ç©ºçš„æ‰­æ›²å°†ä½ ä¼ é€åˆ°å¦ä¸€ä¸ªåœ°æ–¹....\n");
+        move(VOID_OB);
+    }
 }

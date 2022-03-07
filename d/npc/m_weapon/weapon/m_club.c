@@ -7,187 +7,187 @@
 inherit S_WEAPON;
 
 int duanlian(object weapon);
+
 int do_hui(object weapon);
 
 
-string query_autoload() { return 1 + ""; }	//autoload weapon
+string query_autoload() { return 1 + ""; }    //autoload weapon
 
-void init()
-{
-        add_action("do_duanlian","duanlian");
-	add_action("do_hui","hui");
+void init() {
+    add_action("do_duanlian", "duanlian");
+    add_action("do_hui", "hui");
 }
 
 
-void create()
-{	
-	object me;
-	string w_name,w_id,w_or;
-	int w_lv;
-	me = this_player();
-//¶ÁÈëÊý¾Ý
-	w_name=me->query("weapon/name");
-	w_id = "my "+me->query("weapon/id");
-	w_or = me->query("weapon/or");
-	w_lv = me->query("weapon/lv");
-        if (!me->query("weapon/name"))
-        {
-	w_name="×ÔÖÆµÄ¸Ö¹÷";
-        }	
-        if (!me->query("weapon/id"))
-        {
-	w_id="club";
-        }	
-        if (!me->query("weapon/or"))
-        {
-	w_or="Ç§ÄêÉñÄ¾";
-        }	
-        if (!me->query("weapon/lv"))
-        {
-	w_lv=5;
-        }	
-        if (me->query("weapon/lv",1) > 150)
-        {
-	w_lv=150;
-        }
-	set_name(w_name, ({w_id}));
-	set("unit", "±ú");   
-	set("value",0);
-	set("no_put",1);
-	set("no_get",1);
-	set("no_drop",1);
-	set("no_beg",1);
-	set("no_steal",1);
-	set("ownmake",1);
-	set_desc(w_lv,w_or,w_name);
-	switch(w_or)
-		{
-		case "Ç§ÄêÉñÄ¾" :
-			set_weight(500);
-			set("material", "iron");
-			break;
-		case "º£µ×½ðÄ¸" :
-			set_weight(1000);
-			set("material", "steel");
-			break;
-		case "º®Ë¿ÓðÖñ" :
-			set_weight(30);
-			set("material", "bamboo");
-			break;
-		default :
-		} 
-	if( me->query("weapon/wield_msg"))
-		set("wield_msg", me->query("weapon/wield_msg")+"\n");
-	else
-		set("wield_msg", "$NÍùÑüÖÐÒ»Ãþ£¬ÄÃ³öÁËÒ»°Ñ"+w_name+"£¬¶ËÔÚÊÖÖÐ¡£\n");
-	if( me->query("weapon/unwield_msg"))
-		set("unwield_msg", me->query("weapon/unwield_msg")+"\n");
-	else
-		set("unwield_msg", "$NÊÖÖÐ"+w_name+"¶¶³öÒ»¸ö¹÷»¨£¬Õ£ÑÛ¼äÒÑÈ»²»¼ûÓ°×Ù¡£\n");
-	init_club(w_lv * 10);
-	setup();
-}	
-
-
-
-int do_duanlian(object weapon)
-{
-	object me;
-	int w_zhi, w_level;
-	string w_or;
-
-	me=this_player();
-	if( !weapon )
-		return notify_fail("ÄãÒª¶ÍÁ¶Ê²Ã´?\n");
-if (me->is_fighting())
-return notify_fail("Äã´ò×ÅÄØ?\n");
-
-if (me->is_busy())
-return notify_fail("ÄãÃ¦×ÅÄØ?\n");
-	if( (int)me->query("max_neili") < 10 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-
-	if( (int)me->query("max_neili") < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-if (userp(me) && !me->query_skill_mapped("force"))
-return notify_fail("ÄãÃ»ÓÐÄÚ¹¦£¬ÔÚÊ¹ÓÃÖÐ°¡!\n");
-
-	if( me->query_skill("shenzhao-jing", 1) > 100          )
-		return notify_fail("ÉñÕÕ¾­µÄÄÚÁ¦£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-
-	if( me->query_skill("shenzhao-jing", 1) > 100
-            && (int)me->query("max_neili") < 5000 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-
-	if( (int)me->query("qi") < 150 )
-		return notify_fail("ÄãµÄÆø²»¹»£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-
-	if( (int)me->query("eff_qi") < 30 )
-		return notify_fail("ÄãÏÖÔÚµÄÌåÁ¦Ì«Èõ£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-
-	if( (int)me->query("eff_jing") < 10 )
-		return notify_fail("ÄãÏÖÔÚµÄ¾«Á¦ÎÞ·¨¼¯ÖÐ£¬²»ÄÜ¶ÍÁ¶±øÆ÷£¡\n");
-
-	if( ((int)me->query("potential") - (int)me->query("learned_points"))< 2 )
-		return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬ÎÞ·¨¶ÍÁ¶±øÆ÷£¡\n");
-
-	message_vision(HIR "$NÊÖÖ¸¹÷¼¹£¬Ò»¹ÉÄÚÁ¦Ë¿Ë¿µÄ´«ÁË½øÈ¥¡£\n" NOR, me);
-
-	me->add("max_neili",-10);
-	me->set("neili", (int)me->query("max_neili"));
-	me->add("qi",-150);
-	me->add("eff_qi",-30);
-	me->add("jing",-30);
-	me->add("eff_jing",-30);
-	me->add("learned_points", 2);
-
-	w_zhi = (int)me->query("weapon/value");
-	w_zhi++;
-	me->set("weapon/value", w_zhi);
-	w_or = (string)me->query("weapon/or");
-	w_level = (int)me->query("weapon/lv");
-	if( w_zhi >= ((w_level + 1) * (w_level + 1)))
-	{
-		w_level++;
-		me->set("weapon/lv", w_level);
-		message_vision(HIY "¹÷ÉíºöµÄÒ»ÁÁ£¬ËÆºõÒ»ÖÖÐÂÉúµÄÁ¦Á¿ÔÚ¹÷ÖÐÓ¿¶¯ÆðÀ´£¡\n" NOR,me);
-		message_vision(HIG "$NµÄ¹÷µÄµÈ¼¶Ìá¸ßÁË£¡\n" NOR, me);
-		weapon=this_object();
-		if(weapon->query("equipped") ) 
-			weapon->unequip();
-		reload_object( weapon );
-		me->set("weapon/value",0);
-		return 1;
-	}
-	message_vision(RED "$NµÄ¹÷µÄÖÊµØ¸ÄÉÆÁË!\n" NOR, me);
-	return 1;
+void create() {
+    object me;
+    string w_name, w_id, w_or;
+    int w_lv;
+    me = this_player();
+//è¯»å…¥æ•°æ®
+    w_name = me->query("weapon/name");
+    w_id = "my " + me->query("weapon/id");
+    w_or = me->query("weapon/or");
+    w_lv = me->query("weapon/lv");
+    if (!me->query("weapon/name")) {
+        w_name = "è‡ªåˆ¶çš„é’¢æ£";
+    }
+    if (!me->query("weapon/id")) {
+        w_id = "club";
+    }
+    if (!me->query("weapon/or")) {
+        w_or = "åƒå¹´ç¥žæœ¨";
+    }
+    if (!me->query("weapon/lv")) {
+        w_lv = 5;
+    }
+    if (me->query("weapon/lv", 1) > 150) {
+        w_lv = 150;
+    }
+    set_name(w_name, ({ w_id }));
+    set("unit", "æŸ„");
+    set("value", 0);
+    set("no_put", 1);
+    set("no_get", 1);
+    set("no_drop", 1);
+    set("no_beg", 1);
+    set("no_steal", 1);
+    set("ownmake", 1);
+    set_desc(w_lv, w_or, w_name);
+    switch (w_or) {
+        case "åƒå¹´ç¥žæœ¨" :
+            set_weight(500);
+            set("material", "iron");
+            break;
+        case "æµ·åº•é‡‘æ¯" :
+            set_weight(1000);
+            set("material", "steel");
+            break;
+        case "å¯’ä¸ç¾½ç«¹" :
+            set_weight(30);
+            set("material", "bamboo");
+            break;
+        default :
+    }
+    if (me->query("weapon/wield_msg"))
+        set("wield_msg", me->query("weapon/wield_msg") + "\n");
+    else
+        set("wield_msg", "$Nå¾€è…°ä¸­ä¸€æ‘¸ï¼Œæ‹¿å‡ºäº†ä¸€æŠŠ" + w_name + "ï¼Œç«¯åœ¨æ‰‹ä¸­ã€‚\n");
+    if (me->query("weapon/unwield_msg"))
+        set("unwield_msg", me->query("weapon/unwield_msg") + "\n");
+    else
+        set("unwield_msg", "$Næ‰‹ä¸­" + w_name + "æŠ–å‡ºä¸€ä¸ªæ£èŠ±ï¼Œçœ¨çœ¼é—´å·²ç„¶ä¸è§å½±è¸ªã€‚\n");
+    init_club(w_lv * 10);
+    setup();
 }
 
 
-int do_hui(object weapon)
-{	
-	string w_name;
-	object me,ob;
-	me=this_player();
-	w_name=me->query("weapon/name");
-	if( !weapon )
-		return notify_fail("ÄãÒª´Ý»ÙÊ²Ã´?\n");
-	message_vision(HIR "$N´óºÈÒ»Éù£¬Ò»ÕÆÇæ¹÷£¬Ò»ÕÆÃÍÁ¦»÷ÏÂ¡£½á¹ûºäÂ¡Ò»Éù¾ÞÏì"
-			+w_name+HIR"¶ÏÎªÁ½½Ø!\n" NOR,me);
-	me->set("weapon/make",0);
-	destruct( this_object() );
-	me->delete("weapon");
-	
-	me->save();
+int do_duanlian(object weapon) {
+    object me;
+    int w_zhi, w_level;
+    string w_or;
 
-	return 1;
+    me = this_player();
+    if (!weapon)
+        return notify_fail("ä½ è¦é”»ç‚¼ä»€ä¹ˆ?\n");
+    if (me->is_fighting())
+        return notify_fail("ä½ æ‰“ç€å‘¢?\n");
+
+    if (me->is_busy())
+        return notify_fail("ä½ å¿™ç€å‘¢?\n");
+    if ((int) me->query("max_neili") < 10)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+
+    if ((int) me->query("max_neili") < 500)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+    if (userp(me) && !me->query_skill_mapped("force"))
+        return notify_fail("ä½ æ²¡æœ‰å†…åŠŸï¼Œåœ¨ä½¿ç”¨ä¸­å•Š!\n");
+
+    if (me->query_skill("shenzhao-jing", 1) > 100)
+        return notify_fail("ç¥žç…§ç»çš„å†…åŠ›ï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+
+    if (me->query_skill("shenzhao-jing", 1) > 100
+        && (int) me->query("max_neili") < 5000)
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+
+    if ((int) me->query("qi") < 150)
+        return notify_fail("ä½ çš„æ°”ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+
+    if ((int) me->query("eff_qi") < 30)
+        return notify_fail("ä½ çŽ°åœ¨çš„ä½“åŠ›å¤ªå¼±ï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+
+    if ((int) me->query("eff_jing") < 10)
+        return notify_fail("ä½ çŽ°åœ¨çš„ç²¾åŠ›æ— æ³•é›†ä¸­ï¼Œä¸èƒ½é”»ç‚¼å…µå™¨ï¼\n");
+
+    if (((int) me->query("potential") - (int) me->query("learned_points")) < 2)
+        return notify_fail("ä½ çš„æ½œèƒ½ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
+
+    message_vision(HIR
+    "$Næ‰‹æŒ‡æ£è„Šï¼Œä¸€è‚¡å†…åŠ›ä¸ä¸çš„ä¼ äº†è¿›åŽ»ã€‚\n"
+    NOR, me);
+
+    me->add("max_neili", -10);
+    me->set("neili", (int) me->query("max_neili"));
+    me->add("qi", -150);
+    me->add("eff_qi", -30);
+    me->add("jing", -30);
+    me->add("eff_jing", -30);
+    me->add("learned_points", 2);
+
+    w_zhi = (int) me->query("weapon/value");
+    w_zhi++;
+    me->set("weapon/value", w_zhi);
+    w_or = (string) me->query("weapon/or");
+    w_level = (int) me->query("weapon/lv");
+    if (w_zhi >= ((w_level + 1) * (w_level + 1))) {
+        w_level++;
+        me->set("weapon/lv", w_level);
+        message_vision(HIY
+        "æ£èº«å¿½çš„ä¸€äº®ï¼Œä¼¼ä¹Žä¸€ç§æ–°ç”Ÿçš„åŠ›é‡åœ¨æ£ä¸­æ¶ŒåŠ¨èµ·æ¥ï¼\n"
+        NOR, me);
+        message_vision(HIG
+        "$Nçš„æ£çš„ç­‰çº§æé«˜äº†ï¼\n"
+        NOR, me);
+        weapon = this_object();
+        if (weapon->query("equipped"))
+            weapon->unequip();
+        reload_object(weapon);
+        me->set("weapon/value", 0);
+        return 1;
+    }
+    message_vision(RED
+    "$Nçš„æ£çš„è´¨åœ°æ”¹å–„äº†!\n"
+    NOR, me);
+    return 1;
+}
+
+
+int do_hui(object weapon) {
+    string w_name;
+    object me, ob;
+    me = this_player();
+    w_name = me->query("weapon/name");
+    if (!weapon)
+        return notify_fail("ä½ è¦æ‘§æ¯ä»€ä¹ˆ?\n");
+    message_vision(HIR
+    "$Nå¤§å–ä¸€å£°ï¼Œä¸€æŽŒæ“Žæ£ï¼Œä¸€æŽŒçŒ›åŠ›å‡»ä¸‹ã€‚ç»“æžœè½°éš†ä¸€å£°å·¨å“"
+    + w_name + HIR
+    "æ–­ä¸ºä¸¤æˆª!\n"
+    NOR, me);
+    me->set("weapon/make", 0);
+    destruct(this_object());
+    me->delete("weapon");
+
+    me->save();
+
+    return 1;
 }
 /*void owner_is_killed()
 {
-        write(HIY"Ö»¼ûÒ»ÉùÇå´àµÄÏìÉù£¬"+query("name")+HIY"ÂäÔÚµØÉÏ£¬¶Ï³ÉÊý½Ø¡£\n"NOR);
+        write(HIY"åªè§ä¸€å£°æ¸…è„†çš„å“å£°ï¼Œ"+query("name")+HIY"è½åœ¨åœ°ä¸Šï¼Œæ–­æˆæ•°æˆªã€‚\n"NOR);
         this_object()->unequip();
         this_object()->reset_action();
-        this_object()->set("name", query("name") + "µÄËéÆ¬");
+        this_object()->set("name", query("name") + "çš„ç¢Žç‰‡");
         this_object()->set("value", 0);
         this_object()->set("weapon_prop", 0);
 }

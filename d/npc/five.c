@@ -1,18 +1,19 @@
-// five.c ÎåÒ¶
+// five.c äº”å¶
 
 #include <ansi.h>
 
 inherit NPC;
 
-void create()
-{
-	set_name("ÎåÒ¶", ({"five"}));
-	set("nickname", GRN"°×ÍÕÉ½¿ªÉ½×æÊ¦"NOR);
-	set("gender", "ÄĞĞÔ");
-	set("age", 20);
-	set("long", 
-		"Ëû¾ÍÊÇ°×ÍÔÉ½µÄ´´Ê¼ÈË¡¸ÎåÒ¶¡¹¡£\n");
-	setup();
-	
-	carry_object("/d/city2/obj/jinduan")->wear();
+void create() {
+    set_name("äº”å¶", ({ "five" }));
+    set("nickname", GRN
+    "ç™½é©¼å±±å¼€å±±ç¥–å¸ˆ"
+    NOR);
+    set("gender", "ç”·æ€§");
+    set("age", 20);
+    set("long",
+        "ä»–å°±æ˜¯ç™½é©®å±±çš„åˆ›å§‹äººã€Œäº”å¶ã€ã€‚\n");
+    setup();
+
+    carry_object("/d/city2/obj/jinduan")->wear();
 }

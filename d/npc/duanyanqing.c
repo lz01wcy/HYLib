@@ -1,203 +1,188 @@
-// duanyanqing.c ¶ÎÑÓÇì
+// duanyanqing.c æ®µå»¶åº†
 
 #include <ansi.h>
 
 inherit NPC;
 
 int check_skills(object ob);
+
 int waiting(object me, object dest);
+
 int checking(object me, object dest);
+
 int do_back(object me);
+
 int do_kill(object me, object dest);
 
-void create()
-{
-	set_name("¶ÎÑÓÇì", ({"duan yanqing", "yanqing", "qing"}));
-	set("gender", "ÄÐÐÔ");
-	set("nickname",HIR"¶ñ¹áÂúÓ¯"NOR);
-	set("age", 45);
-	set("long", 
-		"Ëû¾ÍÊÇËÄ´ó¶ñÈËÖ®Ê×£¬ÈË³Æ¶ñ¹áÂúÓ¯µÄ¶ÎÑÓÇì¡£\n"
-		"Ëû±¾ÊÇ´óÀí¶ÎÊÏ»Ê×Ó£¬ÓÉÓÚ´ó³¼·´ÅÑ×÷ÂÒ¶øË«ÍÈ²Ð·Ï¡¢î¾\n"
-		"¶¾ÉõÉî¡£Á÷Âä½­ºþºóÓëÒ¶¶þÄï¡¢ÄÏº£öùÉñ¡¢ÔÆÖÐº×ºÍ³ÆËÄ\n"
-		"´ó¶ñÈË¡£ÔÚ½­ºþÉÏ¶ËµÄÊÇÎÞ¶ñ²»×÷¡£\n"
-		"ËûÉí´©Ò»¼þÇà²¼³¤ÅÛ£¬Éí¸ßÎå³ßÓÐÓà£¬Á³ÉÏ³£Äê´÷Ò»ÕÅÈË\n"
-		"Æ¤Ãæ¾ß£¬Ï²Å­°§ÀÖÒ»Ë¿²»Â¶¡£Ìå¸ñÊÝ³¤£¬Ë«ÍÈÆëÏ¥¶ø¶Ï£¬\n"
-		"Ö»ÄÜÓÃÒ¸ÏÂµÄÁ½¸ùïÙÌú¹ÕÕÈ´ú²½£¬µ«ÐÐ×ßÈç·É£¬·´±È³£ÈË\n"
-		"¸ü¿ì£¡\n");
-	set("attitude", "peaceful");
-	
-	set("str", 30);
-	set("int", 35);
-	set("con", 35);
-	set("dex", 35);
+void create() {
+    set_name("æ®µå»¶åº†", ({ "duan yanqing", "yanqing", "qing" }));
+    set("gender", "ç”·æ€§");
+    set("nickname", HIR
+    "æ¶è´¯æ»¡ç›ˆ"
+    NOR);
+    set("age", 45);
+    set("long",
+        "ä»–å°±æ˜¯å››å¤§æ¶äººä¹‹é¦–ï¼Œäººç§°æ¶è´¯æ»¡ç›ˆçš„æ®µå»¶åº†ã€‚\n"
+        "ä»–æœ¬æ˜¯å¤§ç†æ®µæ°çš‡å­ï¼Œç”±äºŽå¤§è‡£åå›ä½œä¹±è€ŒåŒè…¿æ®‹åºŸã€ç½¹\n"
+        "æ¯’ç”šæ·±ã€‚æµè½æ±Ÿæ¹–åŽä¸Žå¶äºŒå¨˜ã€å—æµ·é³„ç¥žã€äº‘ä¸­é¹¤å’Œç§°å››\n"
+        "å¤§æ¶äººã€‚åœ¨æ±Ÿæ¹–ä¸Šç«¯çš„æ˜¯æ— æ¶ä¸ä½œã€‚\n"
+        "ä»–èº«ç©¿ä¸€ä»¶é’å¸ƒé•¿è¢ï¼Œèº«é«˜äº”å°ºæœ‰ä½™ï¼Œè„¸ä¸Šå¸¸å¹´æˆ´ä¸€å¼ äºº\n"
+        "çš®é¢å…·ï¼Œå–œæ€’å“€ä¹ä¸€ä¸ä¸éœ²ã€‚ä½“æ ¼ç˜¦é•¿ï¼ŒåŒè…¿é½è†è€Œæ–­ï¼Œ\n"
+        "åªèƒ½ç”¨è…‹ä¸‹çš„ä¸¤æ ¹é•”é“æ‹æ–ä»£æ­¥ï¼Œä½†è¡Œèµ°å¦‚é£žï¼Œåæ¯”å¸¸äºº\n"
+        "æ›´å¿«ï¼\n");
+    set("attitude", "peaceful");
 
-        set("chat_chance_combat", 3);
-        set("chat_msg_combat", ({
-                (: exert_function, "recover" :),
-        }) );
-	set("chat_chance", 1);
-	set("chat_msg", ({
-		"¶ÎÑÓÇìÌ¾ÁË¿ÚÆøµÀ£º¡°°¦¡­¡­²»ÖªºÎÊ±²ÅÄÜÖØµÇ´óÀí±¦×ù£¡¡±\n",
-		"¶ÎÑÓÇìà«à«µÀ£º¡°¶ÎÕýµÂÄÇØËÈôÖªÎÒ»ØÀ´£¬¶¨»á½«»ÊÎ»¹°ÊÖÏàÈÃ£¬¹þ¹þ¹þ£¡±\n",
-		(: random_move :),
-	}));
+    set("str", 30);
+    set("int", 35);
+    set("con", 35);
+    set("dex", 35);
 
-	set("qi", 4000);
-	set("max_qi", 4000);
-	set("jing", 1500);
-	set("max_jing", 1500);
-	set("neili", 4000);
-	set("max_neili", 4000);
-	set("jiali", 100);
-	
-	set("combat_exp", 180000);
-	set("score", -18000);
-	 
-	set_skill("force", 120);
-	set_skill("hunyuan-yiqi", 120);
-	set_skill("hand", 120);              // »ù±¾ÊÖ·¨
-	set_skill("shexing-diaoshou", 120);
-	set_skill("dodge", 130);
-	set_skill("xiaoyaoyou", 120);        // åÐÒ£ÓÎ
-	set_skill("parry", 120);
-	set_skill("staff", 120);
-	set_skill("tianshan-zhang", 120);
-	
-	map_skill("force", "hunyuan-yiqi");
-	map_skill("hand", "shexing-diaoshou");
-	map_skill("dodge", "xiaoyaoyou");
-	map_skill("parry", "tianshan-zhang");
-	map_skill("staff", "tianshan-zhang");
-	
-	setup();
-	
-        carry_object("/clone/weapon/gangzhang")->wield();
-	carry_object("/clone/misc/cloth")->wear();
+    set("chat_chance_combat", 3);
+    set("chat_msg_combat", ({
+        (: exert_function, "recover" :),
+    }));
+    set("chat_chance", 1);
+    set("chat_msg", ({
+        "æ®µå»¶åº†å¹äº†å£æ°”é“ï¼šâ€œå”‰â€¦â€¦ä¸çŸ¥ä½•æ—¶æ‰èƒ½é‡ç™»å¤§ç†å®åº§ï¼â€\n",
+                "æ®µå»¶åº†å–ƒå–ƒé“ï¼šâ€œæ®µæ­£å¾·é‚£åŽ®è‹¥çŸ¥æˆ‘å›žæ¥ï¼Œå®šä¼šå°†çš‡ä½æ‹±æ‰‹ç›¸è®©ï¼Œå“ˆå“ˆå“ˆï¼ç›¶n",
+        (: random_move :),
+    }));
+
+    set("qi", 4000);
+    set("max_qi", 4000);
+    set("jing", 1500);
+    set("max_jing", 1500);
+    set("neili", 4000);
+    set("max_neili", 4000);
+    set("jiali", 100);
+
+    set("combat_exp", 180000);
+    set("score", -18000);
+
+    set_skill("force", 120);
+    set_skill("hunyuan-yiqi", 120);
+    set_skill("hand", 120);              // åŸºæœ¬æ‰‹æ³•
+    set_skill("shexing-diaoshou", 120);
+    set_skill("dodge", 130);
+    set_skill("xiaoyaoyou", 120);        // é€é¥æ¸¸
+    set_skill("parry", 120);
+    set_skill("staff", 120);
+    set_skill("tianshan-zhang", 120);
+
+    map_skill("force", "hunyuan-yiqi");
+    map_skill("hand", "shexing-diaoshou");
+    map_skill("dodge", "xiaoyaoyou");
+    map_skill("parry", "tianshan-zhang");
+    map_skill("staff", "tianshan-zhang");
+
+    setup();
+
+    carry_object("/clone/weapon/gangzhang")->wield();
+    carry_object("/clone/misc/cloth")->wear();
 }
 
-void init()
-{
-        object ob;
+void init() {
+    object ob;
 
-        ::init();
-        if (interactive(ob = this_player()) )
-	{
-                remove_call_out("check_skills");
-                call_out("check_skills", 2, ob);
+    ::init();
+    if (interactive(ob = this_player())) {
+        remove_call_out("check_skills");
+        call_out("check_skills", 2, ob);
+    }
+}
+
+void check_skills(object ob) {
+    mapping skl;
+    object me;
+    string *sname;
+    int i, counter, ob_shen;
+
+    me = this_object();
+    skl = ob->query_skills();
+    sname = sort_array(keys(skl),(: strcmp :));
+    ob_shen = (int) ob->query("shen");
+
+    counter = 0;
+    for (i = 0; i < sizeof(skl); i++) {
+        if (skl[sname[i]] >= 100)
+            counter++;
+    }
+
+    if ((counter >= 3) && (ob_shen > 0)) {
+        me->set_leader(ob);
+
+        if (!environment(me)->query("no_fight")) {
+            call_out("do_kill", 1, me, ob);
+            return;
+        } else {
+            call_out("waiting", 0, me, ob);
+            return;
         }
+    }
+    return;
 }
 
-void check_skills(object ob)
-{
-	mapping skl; 
-	object  me;
-	string *sname;
-	int i, counter, ob_shen;
+int do_kill(object me, object dest) {
+    if (objectp(dest) && present(dest, environment(me))
+        && !environment(me)->query("no_fight")) {
+        message_vision(HIR
+        "$Nå¯¹$nè¯´é“ï¼šè€å­ä¸€è§æ­£æ´¾é«˜æ‰‹å°±ç”Ÿæ°”ã€‚"
+        + RANK_D->query_rude(dest) + "ï¼Œçº³å‘½æ¥ï¼\n"
+        NOR, me, dest);
+        me->set_leader(dest);
+        me->kill_ob(dest);
+        dest->fight_ob(me);
 
-	me = this_object();
-	skl = ob->query_skills();
-	sname  = sort_array( keys(skl), (: strcmp :) );
-	ob_shen = (int)ob->query("shen");
+        call_out("checking", 0, me, dest);
+    } else
+        call_out("waiting", 1, me, dest);
 
-	counter = 0;
-	for(i=0; i<sizeof(skl); i++)
-	{
-		if (skl[sname[i]] >= 100)
-			counter++;
-	}
-
-	if((counter >= 3) && (ob_shen > 0))
-	{
-		me->set_leader(ob);
-	
-		if ( !environment(me)->query("no_fight"))
-		{
-			call_out("do_kill", 1, me, ob);
-			return ;
-		}
-		else
-		{
-			call_out("waiting", 0, me, ob);
-			return ;
-		}
-	}
-	return ;
-}
-
-int do_kill(object me, object dest)
-{
-	if( objectp(dest) && present(dest, environment(me))
-		 && !environment(me)->query("no_fight"))
-	{
-		message_vision(HIR "$N¶Ô$nËµµÀ£ºÀÏ×ÓÒ»¼ûÕýÅÉ¸ßÊÖ¾ÍÉúÆø¡£"
-			+RANK_D->query_rude(dest)+"£¬ÄÉÃüÀ´£¡\n" NOR, me, dest);
-		me->set_leader(dest);
-		me->kill_ob(dest);
-		dest->fight_ob(me);
-
-		call_out("checking", 0,  me, dest);
-	}
-	else  
-		call_out("waiting", 1, me, dest);
-	
-	return 1;
-}
-
-int waiting(object me, object dest)
-{
-	if ( objectp(dest) )
-	{
-		if (dest->is_ghost())
-		{
-			call_out("do_back", 1, me);
-			return 1;
-		}
-		else if (me->is_fighting() && present(dest, environment(me)))
-		{
-			call_out("checking", 0, me);
-			return 1;
-		}
-		else if (living(me) && !environment(dest)->query("no_fight"))
-		{
-			call_out("do_chase", 0, me);
-			return 1;
-		}
-	}		
-	
-	remove_call_out("waiting");
-	call_out("waiting", 60, me);
     return 1;
 }
 
-int checking(object me, object dest)
-{
-	object ob;
+int waiting(object me, object dest) {
+    if (objectp(dest)) {
+        if (dest->is_ghost()) {
+            call_out("do_back", 1, me);
+            return 1;
+        } else if (me->is_fighting() && present(dest, environment(me))) {
+            call_out("checking", 0, me);
+            return 1;
+        } else if (living(me) && !environment(dest)->query("no_fight")) {
+            call_out("do_chase", 0, me);
+            return 1;
+        }
+    }
 
-	if (me->is_fighting()) 
-	{
-		call_out("checking", 1, me);
-	        return 1;
-	}
-
-	if( objectp(ob = present("corpse", environment(me)))
-		 && ob->query("victim_name") ==	dest->query("name") )
-	{
-		call_out("do_back", 1, me);
-        return 1;
-	}
-	
-	call_out("waiting", 0, me, dest);
-	return 1;
+    remove_call_out("waiting");
+    call_out("waiting", 60, me);
+    return 1;
 }
 
-int do_back(object me)
-{
+int checking(object me, object dest) {
+    object ob;
 
-	me->move("/d/city/xidajie2");
-	message("vision", "¶ÎÑÓÇì×ßÁË¹ýÀ´£¬àÍµØÒ»ÉùÀäÐ¦£¬ËµµÀ£ºÓÖ³ýÁËÒ»¸öµÀÃ²°¶È»µÄÎ±¾ý×Ó¡£\n", 
-		environment(), me );
+    if (me->is_fighting()) {
+        call_out("checking", 1, me);
+        return 1;
+    }
 
-	me->set_leader(0);
-	return 1;
+    if (objectp(ob = present("corpse", environment(me)))
+        && ob->query("victim_name") == dest->query("name")) {
+        call_out("do_back", 1, me);
+        return 1;
+    }
+
+    call_out("waiting", 0, me, dest);
+    return 1;
+}
+
+int do_back(object me) {
+
+    me->move("/d/city/xidajie2");
+    message("vision", "æ®µå»¶åº†èµ°äº†è¿‡æ¥ï¼Œå—¤åœ°ä¸€å£°å†·ç¬‘ï¼Œè¯´é“ï¼šåˆé™¤äº†ä¸€ä¸ªé“è²Œå²¸ç„¶çš„ä¼ªå›å­ã€‚\n",
+            environment(), me);
+
+    me->set_leader(0);
+    return 1;
 }

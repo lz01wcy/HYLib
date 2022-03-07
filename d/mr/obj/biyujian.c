@@ -1,26 +1,31 @@
-// biyujian ±ÌÓñ½£
+// biyujian ç¢§ç‰å‰‘
 
 #include <weapon.h>
 #include <ansi.h>
 
 inherit SWORD;
 
-void create()
-{
-        set_name("±ÌÓñ½£",({ "biyu jian", "biyu", "sword", "jian" }) );
-        set_weight(10000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("unit", "°Ñ");
-                set("value", 100000);
-                set("treasure",1);
-                set("material", "steel");
-                set("long", "ÕâÊÇ°ÑÇáÇÉµÄ±¦½££¬½£ÉíÉÏÒşÒşµÄÍ¸³ö±ÌÓñÖ®¹â£¬µ±Õæ·æÀûÎŞ±È¡£\n");
-                set("wield_msg", HIC "Ö»Ìı¼û¡¸ÎË¡¹µØÒ»Éù£¬±Ú¹âÉÁÏÖ£¬$N½«Ñü¼ä½âÏÂµÄ$n¶¶µÃ±ÊÖ±¡£\n" NOR);
-                set("unwield_msg", HIC "±ÌÓñ½£»Ã×÷Ò»µÀ±ÌÓñÖ®¹â£¬¡¸à§¡¹µØ·ÉÈë½£ÇÊ¡£\n" NOR);
-                set("unequip_msg", HIC "±ÌÓñ½£»Ã×÷Ò»µÀ±ÌÓñÖ®¹â£¬¡¸à§¡¹µØ·ÉÈë½£ÇÊ¡£\n" NOR);
-        }
-init_sword(200);
-        setup();
+void create() {
+    set_name("ç¢§ç‰å‰‘", ({ "biyu jian", "biyu", "sword", "jian" }));
+    set_weight(10000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "æŠŠ");
+        set("value", 100000);
+        set("treasure", 1);
+        set("material", "steel");
+        set("long", "è¿™æ˜¯æŠŠè½»å·§çš„å®å‰‘ï¼Œå‰‘èº«ä¸Šéšéšçš„é€å‡ºç¢§ç‰ä¹‹å…‰ï¼Œå½“çœŸé”‹åˆ©æ— æ¯”ã€‚\n");
+        set("wield_msg", HIC
+        "åªå¬è§ã€Œå—¡ã€åœ°ä¸€å£°ï¼Œå£å…‰é—ªç°ï¼Œ$Nå°†è…°é—´è§£ä¸‹çš„$næŠ–å¾—ç¬”ç›´ã€‚\n"
+        NOR);
+        set("unwield_msg", HIC
+        "ç¢§ç‰å‰‘å¹»ä½œä¸€é“ç¢§ç‰ä¹‹å…‰ï¼Œã€Œå”°ã€åœ°é£å…¥å‰‘é˜ã€‚\n"
+        NOR);
+        set("unequip_msg", HIC
+        "ç¢§ç‰å‰‘å¹»ä½œä¸€é“ç¢§ç‰ä¹‹å…‰ï¼Œã€Œå”°ã€åœ°é£å…¥å‰‘é˜ã€‚\n"
+        NOR);
+    }
+    init_sword(200);
+    setup();
 }

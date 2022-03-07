@@ -1,4 +1,4 @@
-// doll.c °¢¸Ê
+// doll.c é˜¿ç”˜
 
 #include <ansi.h>
 
@@ -6,16 +6,17 @@ inherit NPC;
 
 string ask_me();
 
-void create()
-{
-	set_name("°¢¸Ê", ({"doll"}));
-	set("nickname", GRN"ÖÐ³¡¶ÓÔ±"NOR);
-	set("gender", "ÄÐÐÔ");
-	set("age", 20);
-	set("long", 
-		"Ëû¾ÍÊÇÖøÃûµÄ¡¸°¢¸Ê¡¹¡£½ðÓ¹ÈºÏÀ´«µÄ×Ô¶¯Æô¶¯³ÌÐò¾Í³ö×ÔÓÚËûÖ®ÊÖ\n"
-		"Ëû»¹ÊÇÒ»Î»¿ñÈÈµÄÇòÃÔ£¬ÔøÈÎTMN BBS×ãÇò°åµÄ°åÖ÷¡£\n");
-	setup();
+void create() {
+    set_name("é˜¿ç”˜", ({ "doll" }));
+    set("nickname", GRN
+    "ä¸­åœºé˜Ÿå‘˜"
+    NOR);
+    set("gender", "ç”·æ€§");
+    set("age", 20);
+    set("long",
+        "ä»–å°±æ˜¯è‘—åçš„ã€Œé˜¿ç”˜ã€ã€‚é‡‘åº¸ç¾¤ä¾ ä¼ çš„è‡ªåŠ¨å¯åŠ¨ç¨‹åºå°±å‡ºè‡ªäºŽä»–ä¹‹æ‰‹\n"
+        "ä»–è¿˜æ˜¯ä¸€ä½ç‹‚çƒ­çš„çƒè¿·ï¼Œæ›¾ä»»TMN BBSè¶³çƒæ¿çš„æ¿ä¸»ã€‚\n");
+    setup();
 
-	carry_object("/d/city2/obj/jinduan")->wear();
+    carry_object("/d/city2/obj/jinduan")->wear();
 }

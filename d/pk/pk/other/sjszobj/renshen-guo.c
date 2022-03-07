@@ -1,62 +1,66 @@
 //Cracked by Kafei
-// renshen-guo.c ÈË²Î¹û
+// renshen-guo.c äººå‚æœ
 
 #include <ansi.h>
 
 inherit ITEM;
 
 int do_eat(string);
+
 void init();
 
-void init()
-{
-        if (!wizardp(this_player())) {
-	}
+void init() {
+    if (!wizardp(this_player())) {
+    }
 
-	add_action("do_eat", "eat");
+    add_action("do_eat", "eat");
 }
 
-void create()
-{
-	set_name(HIG "ÈË²Î¹û" NOR, ({"renshen guo", "guo"}));
-	set_weight(20);
-	if (clonep())
-		set_default_object(__FILE__);
-	else {
-		set("unit", "Ã¶");
-		set("long", "ÕâÊÇÒ»Ã¶ÈË²Î¹û£¬¿´ÉÏÈ¥¾ÍÏñÒ»¸ö°×°×ÅÖÅÖµÄĞ¡ÍŞÍŞ¡£\n");
-		set("value", 100000);
-	}
+void create() {
+    set_name(HIG
+    "äººå‚æœ"
+    NOR, ({ "renshen guo", "guo" }));
+    set_weight(20);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("unit", "æš");
+        set("long", "è¿™æ˜¯ä¸€æšäººå‚æœï¼Œçœ‹ä¸Šå»å°±åƒä¸€ä¸ªç™½ç™½èƒ–èƒ–çš„å°å¨ƒå¨ƒã€‚\n");
+        set("value", 100000);
+    }
 
-	set("bwdhpk",1);setup();
+    set("bwdhpk", 1);
+    setup();
 }
 
-int do_eat(string arg)
-{
-	object me = this_player();
+int do_eat(string arg) {
+    object me = this_player();
 
-	if (!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    if (!id(arg))
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-        if( !environment(me)->query("bwdhpk"))
-{
-       message_vision(HIR "\n$N´ËÒ© Îª±ÈÈü×¨ÓÃ£¬Ò©±»Ã»ÊÕÁË£¡\n\n" NOR,
-                       me);
-	destruct(this_object());   
-       return 1;       
-}
+    if (!environment(me)->query("bwdhpk")) {
+        message_vision(HIR
+        "\n$Næ­¤è¯ ä¸ºæ¯”èµ›ä¸“ç”¨ï¼Œè¯è¢«æ²¡æ”¶äº†ï¼\n\n"
+        NOR,
+                me);
+        destruct(this_object());
+        return 1;
+    }
 
-	me->set("eff_jing", (int)me->query("max_jing"));
-	me->set("jing", (int)me->query("max_jing"));
-	me->set("eff_qi", (int)me->query("max_qi"));
-	me->set("qi", (int)me->query("max_qi"));
-	me->set("jingli", (int)me->query("max_jingli"));
-	me->set("neili", (int)me->query("max_neili"));
-	me->set("food", (int)me->max_food_capacity());
-        me->set("water", (int)me->max_water_capacity());
-        
-	message_vision(HIG "$N³ÔÏÂÒ»Ã¶ÈË²Î¹û£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÆøÑª³äÓ¯£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÉõÖÁ²»ÔÙ¸Ğµ½¼¢¶ö¸É¿Ê! \n" NOR, me);
+    me->set("eff_jing", (int) me->query("max_jing"));
+    me->set("jing", (int) me->query("max_jing"));
+    me->set("eff_qi", (int) me->query("max_qi"));
+    me->set("qi", (int) me->query("max_qi"));
+    me->set("jingli", (int) me->query("max_jingli"));
+    me->set("neili", (int) me->query("max_neili"));
+    me->set("food", (int) me->max_food_capacity());
+    me->set("water", (int) me->max_water_capacity());
 
-	destruct(this_object());
-	return 1;
+    message_vision(HIG
+    "$Nåƒä¸‹ä¸€æšäººå‚æœï¼Œåªè§‰å¾—ç²¾ç¥å¥æ—ºï¼Œæ°”è¡€å……ç›ˆï¼Œä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œç”šè‡³ä¸å†æ„Ÿåˆ°é¥¥é¥¿å¹²æ¸´! \n"
+    NOR, me);
+
+    destruct(this_object());
+    return 1;
 }

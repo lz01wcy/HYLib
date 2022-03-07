@@ -3,16 +3,17 @@
 
 inherit NPC;
 
-void create()
-{
-	set_name("ÎÂÀÖ",({"goose"}));
-	set("nickname", HIB "ÀÏ½Ğ»¯"NOR);
-	set("gender", "ÄĞĞÔ");
-	set("age", 20);
-	set("long", 
-		"Ëû¾ÍÊÇØ¤°ï´óÏÀÎÂÀÖ¡£\n");
+void create() {
+    set_name("æ¸©ä¹", ({ "goose" }));
+    set("nickname", HIB
+    "è€å«åŒ–"
+    NOR);
+    set("gender", "ç”·æ€§");
+    set("age", 20);
+    set("long",
+        "ä»–å°±æ˜¯ä¸å¸®å¤§ä¾ æ¸©ä¹ã€‚\n");
 
-	setup();
-	
-	carry_object("/d/city2/obj/jinduan")->wear();
+    setup();
+
+    carry_object("/d/city2/obj/jinduan")->wear();
 }
