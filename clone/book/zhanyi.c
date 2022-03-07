@@ -1,27 +1,29 @@
 // zhanyi.c
 #include <armor.h>
+
 inherit CLOTH;
-void create()
-{
-        set_name("ÑªÆåÒÂ", ({ "xue yi","yi","cloth" }));
-        set_weight(600);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("treasure",1);set("unit", "¼ş");
-                set("long",
-                        "Ò»¼şÉÏÃæĞåÓĞÑªÉ«Æå¾ÖµÄÒÂ·ş¡£\n");
-                set("value", 7000);
-                set("material", "cloth");
-                set("skill", ([
-                        "name":        "xuantian-zhi",
-                        "exp_required": 0,
-                        "jing_cost":     20,
-                        "difficulty":   20,
-                        "max_skill":    100
-                ]) );
-                set("armor_prop/armor",20);
-        }
-        setup();
+
+void create() {
+    set_name("è¡€æ£‹è¡£", ({ "xue yi", "yi", "cloth" }));
+    set_weight(600);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "ä»¶");
+        set("long",
+            "ä¸€ä»¶ä¸Šé¢ç»£æœ‰è¡€è‰²æ£‹å±€çš„è¡£æœã€‚\n");
+        set("value", 7000);
+        set("material", "cloth");
+        set("skill",([
+        "name":        "xuantian-zhi",
+                "exp_required": 0,
+                "jing_cost":     20,
+                "difficulty":   20,
+                "max_skill":    100
+        ]));
+        set("armor_prop/armor", 20);
+    }
+    setup();
 }
 

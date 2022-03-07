@@ -5,52 +5,49 @@
 //inherit ITEM;
 inherit HANDS;
 
-void create()
-{
-	set_name("ÌúÊÖÕÆ", ({ "iron hand", "hand", "shu", "book" }));
-	set_weight(2000);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "¿é");
-		set("long",
-			"Ò×½î¾­¹¥·ÀÆª\n"
-			"ÕâÊÇÒ»¿éÌúÊÖÕÆ£¬ÉÏÃæ°¼°¼Í¹Í¹¿ÌÂúÁËÈËĞÎ²«»÷µÄ³¡Ãæ¡£\n");
-		set("value", 500);
-		set("material", "steel");
-		set("armor_prop/armor", 3 );
-		set("skill", ([
-			"name":	"parry",	// name of the skill
-			"exp_required":	0,	// minimum combat experience required
-			"jing_cost":	10,	// jing cost every time study this
-			"difficulty":	20,	// the base int to learn this skill
-			"max_skill":	29	// the maximum level you can learn
-		]) );
-	}
+void create() {
+    set_name("é“æ‰‹æŒ", ({ "iron hand", "hand", "shu", "book" }));
+    set_weight(2000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "å—");
+        set("long",
+            "æ˜“ç­‹ç»æ”»é˜²ç¯‡\n"
+            "è¿™æ˜¯ä¸€å—é“æ‰‹æŒï¼Œä¸Šé¢å‡¹å‡¹å‡¸å‡¸åˆ»æ»¡äº†äººå½¢æå‡»çš„åœºé¢ã€‚\n");
+        set("value", 500);
+        set("material", "steel");
+        set("armor_prop/armor", 3);
+        set("skill",([
+        "name":    "parry",    // name of the skill
+                "exp_required":    0,    // minimum combat experience required
+                "jing_cost":    10,    // jing cost every time study this
+                "difficulty":    20,    // the base int to learn this skill
+                "max_skill":    29    // the maximum level you can learn
+        ]));
+    }
 }
 
-void init()
-{
-	if( this_player() == environment() )
-		add_action("do_study", "study");
+void init() {
+    if (this_player() == environment())
+        add_action("do_study", "study");
 }
 
-int do_study(string arg)
-{
-	object me = this_player();
+int do_study(string arg) {
+    object me = this_player();
 
-	if ( arg != "iron hand" && arg != "hand" )
-	return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+    if (arg != "iron hand" && arg != "hand")
+        return notify_fail("ä½ è¦å­¦ä»€ä¹ˆï¼Ÿ\n");
 
-	if ( me->is_fighting() 
-	&& (int)me->query_skill("parry", 1) >= 30 
-	&& (int)me->query_skill("parry", 1) <= 100 )
-	{
-		me->receive_damage("jing", 20);
-		me->improve_skill("parry", me->query("int"));
-		message_vision("$NÒ»±ßÕ½¶·£¬Ò»±ß³é¿Õ¼±¼±Ã¦Ã¦µØÄÃ³öÌúÊÖÕÆ×ĞÏ¸ÑĞ¾¿¡£\n", me);
-		return 1;
-	}
+    if (me->is_fighting()
+        && (int) me->query_skill("parry", 1) >= 30
+        && (int) me->query_skill("parry", 1) <= 100) {
+        me->receive_damage("jing", 20);
+        me->improve_skill("parry", me->query("int"));
+        message_vision("$Nä¸€è¾¹æˆ˜æ–—ï¼Œä¸€è¾¹æŠ½ç©ºæ€¥æ€¥å¿™å¿™åœ°æ‹¿å‡ºé“æ‰‹æŒä»”ç»†ç ”ç©¶ã€‚\n", me);
+        return 1;
+    }
 
-	return 0;
+    return 0;
 }

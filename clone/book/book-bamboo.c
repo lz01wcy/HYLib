@@ -2,25 +2,25 @@
 
 inherit ITEM;
 
-void create()
-{
-	set_name("¾ÉÖñÆ¬", ({ "bamboo", "shu", "book" }));
-	set_weight(100);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "Æ¬");
-		set("long",
-			"Ò×½î¾­Çá¹¦Æª\n"
-			"ÕâÊÇÒ»Æ¬Á½±ßÈ¥Æ¤µÄ¾ÉÖñÆ¬£¬ÕıÃæºÍ±³Ãæ¶¼»­ÁËÎŞÊı¸ö·ÉÏè×İÔ¾µÄĞ¡Í¼ĞÎ¡£\n");
-		set("value", 500);
-		set("material", "bamboo");
-		set("skill", ([
-			"name":	"dodge",	// name of the skill
-			"exp_required":	0,	// minimum combat experience required
-			"jing_cost":	10,	// jing cost every time study this
-			"difficulty":	20,	// the base int to learn this skill
-			"max_skill":	29	// the maximum level you can learn
-		]) );
-	}
+void create() {
+    set_name("æ—§ç«¹ç‰‡", ({ "bamboo", "shu", "book" }));
+    set_weight(100);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "ç‰‡");
+        set("long",
+            "æ˜“ç­‹ç»è½»åŠŸç¯‡\n"
+            "è¿™æ˜¯ä¸€ç‰‡ä¸¤è¾¹å»çš®çš„æ—§ç«¹ç‰‡ï¼Œæ­£é¢å’ŒèƒŒé¢éƒ½ç”»äº†æ— æ•°ä¸ªé£ç¿”çºµè·ƒçš„å°å›¾å½¢ã€‚\n");
+        set("value", 500);
+        set("material", "bamboo");
+        set("skill",([
+        "name":    "dodge",    // name of the skill
+                "exp_required":    0,    // minimum combat experience required
+                "jing_cost":    10,    // jing cost every time study this
+                "difficulty":    20,    // the base int to learn this skill
+                "max_skill":    29    // the maximum level you can learn
+        ]));
+    }
 }

@@ -1,29 +1,32 @@
-// zhangfapu.c ê»ÌìÕÆ·¨Æ×
+// zhangfapu.c æ˜Šå¤©æŒæ³•è°±
 // By Lgg,1998.9
 
 #include <ansi.h>
+
 inherit ITEM;
 inherit F_UNIQUE;
 
-void create()
-{
-        set_name(HIY"ê»ÌìÕÆ·¨Æ×" NOR, ({ "zhangfa pu","pu", }));
-        set_weight(1000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-             set("treasure",1);set("unit", "±¾");
-             set("long",
-        "ÕâÊÇÒ»±¾ºÜÆÆ¾ÉµÄÊé£¬ÊéÀïÃæºÃÏó»¹ÓĞÒ»Ğ©Ğ¡ÈË»ÓÎèÈ­½ÅµÄÍ¼ĞÎ¡£\n",
-         );
-         set("value", 0);
-         set("material", "paper");
-         set("skill", ([
-                        "name":       "haotian-zhang",
-                        "exp_required" : 10000,
-                        "jing_cost":  30,
-                        "difficulty": 20,
-                        "max_skill":  80
-                ]) );
-        }
+void create() {
+    set_name(HIY
+    "æ˜Šå¤©æŒæ³•è°±"
+    NOR, ({ "zhangfa pu", "pu", }));
+    set_weight(1000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long",
+            "è¿™æ˜¯ä¸€æœ¬å¾ˆç ´æ—§çš„ä¹¦ï¼Œä¹¦é‡Œé¢å¥½è±¡è¿˜æœ‰ä¸€äº›å°äººæŒ¥èˆæ‹³è„šçš„å›¾å½¢ã€‚\n",
+        );
+        set("value", 0);
+        set("material", "paper");
+        set("skill",([
+        "name":       "haotian-zhang",
+                "exp_required" : 10000,
+                "jing_cost":  30,
+                "difficulty": 20,
+                "max_skill":  80
+        ]));
+    }
 }

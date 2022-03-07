@@ -1,102 +1,109 @@
 // xiangjiaopi.c
 #include <ansi.h>
+
 inherit F_UNIQUE;
 inherit ITEM;
-string *pass_id = ({ });
+string *pass_id = ({});
 string *room = ({
-	"/d/city/guangchang",
-        "/d/city/dangpu",
-        "/d/city/qianzhuang",
-	"/d/city/dongmen",
-	"/d/city/ximen",
-	"/d/city/dongmen",
-	"/d/city/beimen",
-	"/d/city/nanmen",
+    "/d/city/guangchang",
+            "/d/city/dangpu",
+            "/d/city/qianzhuang",
+            "/d/city/dongmen",
+            "/d/city/ximen",
+            "/d/city/dongmen",
+            "/d/city/beimen",
+            "/d/city/nanmen",
 });
 
 int move_pi();
+
 int move2();
+
 int des();
 
-void create()
-{
-	set("channel_id","Ïã½¹Æ¤¾«Áé(Pi)");
-	set_name(HIY"Ïã½¹Æ¤"NOR,({
-		"xiangjiao pi",
-		"pi",
-	}));
-	set_weight(20000);
-	if( clonep() )
-                set_default_object(__FILE__);
-        else {
-	set("long","²»ÖªµÀÊÇË­³ÔµÄÏã½¹£¬³ÔÍêºó°ÑÆ¤ÈÓµ½ÁËµØÉÏ£®\n");
-	set("unique",5);
-	set("unit", "¸ö");
-	set("no_get",1);
-	set("value", 1);
-	set("count",0);
-	}
-	remove_call_out("des");
-	call_out("des",2000);
-	setup();
+void create() {
+    set("channel_id", "é¦™ç„¦çš®ç²¾çµ(Pi)");
+    set_name(HIY
+    "é¦™ç„¦çš®"
+    NOR, ({
+        "xiangjiao pi",
+                "pi",
+    }));
+    set_weight(20000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("long", "ä¸çŸ¥é“æ˜¯è°åƒçš„é¦™ç„¦ï¼Œåƒå®ŒåæŠŠçš®æ‰”åˆ°äº†åœ°ä¸Šï¼\n");
+        set("unique", 5);
+        set("unit", "ä¸ª");
+        set("no_get", 1);
+        set("value", 1);
+        set("count", 0);
+    }
+    remove_call_out("des");
+    call_out("des", 2000);
+    setup();
 }
-int des()
-{
-	destruct(this_object());
-	return 1;
+
+int des() {
+    destruct(this_object());
+    return 1;
 }
-void init()
-{
-	object ob;
-	ob = this_player();
-	if( !ob ) return;
-	if( wizardp(ob) ) return;
-	if( !userp(ob) ) return;
-	if( member_array( ob->query("id") , pass_id ) != -1 ) return;
-	message_vision(HIY"$N±»$n°èÁËÒ»õÓ£¬ÆğÀ´ºóÂîµ½£º¡°ÄÄ¸ö£Ø£ØÈÓµÄ£¿¡±\n"NOR,ob,this_object());
+
+void init() {
+    object ob;
+    ob = this_player();
+    if (!ob) return;
+    if (wizardp(ob)) return;
+    if (!userp(ob)) return;
+    if (member_array(ob->query("id"), pass_id) != -1) return;
+    message_vision(HIY
+    "$Nè¢«$næ‹Œäº†ä¸€è·¤ï¼Œèµ·æ¥åéª‚åˆ°ï¼šâ€œå“ªä¸ªï¼¸ï¼¸æ‰”çš„ï¼Ÿâ€\n"
+    NOR, ob, this_object());
 //	add("count",1);
 //	if( query("count") > 10 ) {
-//	message_vision("$NÒ»½Å°Ñ$nÌß·ÉÁË£¡\n",ob,this_object());
-	pass_id += ({ ob->query("id") });
-	ob->start_busy(3);
-	if( random(2) ) {		
-		remove_call_out("move_pi");
-		call_out("move_pi",1);
-	} 
-	else {
-		remove_call_out("move2");
-		call_out("move2",1);	
-	}
-	}
-//}
-int move_pi()
-{
-	object ob,room1;
-	ob = new("/clone/xiangjiaopi");
-	if( !ob || !objectp(ob) ) return 0;
-	room1 = load_object(room[random(sizeof(room))]);
-	this_object()->move(room1);
-	tell_room(room1,HIY"Ò»¸öÏã½¹Æ¤·ÉÁË¹ıÀ´£¡\n"NOR);
-	remove_call_out("move2");
-	call_out("move2",3);
-	return 1;
+//	message_vision("$Nä¸€è„šæŠŠ$nè¸¢é£äº†ï¼\n",ob,this_object());
+    pass_id += ({ ob->query("id") });
+    ob->start_busy(3);
+    if (random(2)) {
+        remove_call_out("move_pi");
+        call_out("move_pi", 1);
+    } else {
+        remove_call_out("move2");
+        call_out("move2", 1);
+    }
 }
-int move2()
-{
-	string *dir_name,dir_temp,temp;
-	object room1;
-	int i,T;
-	pass_id = ({ });
-        room1 = load_object(room[random(sizeof(room))]);
-	say("Ïã½¹Æ¤·É×ßÁË£®\n");
-	if( !room1 || !objectp(room1) ) {
-		CHANNEL_D->do_channel(this_object(),"sys","Ã»ÓĞ" + sprintf("%O",room) + "Õâ¸ö·¿¼ä");
-		return 1;
-	}
-	
-	this_object()->move(room1);
-	tell_room(environment(this_object()),"Ïã½¹Æ¤·ÉÁË¹ıÀ´£®\n");
-	return 1;
+
+//}
+int move_pi() {
+    object ob, room1;
+    ob = new("/clone/xiangjiaopi");
+    if (!ob || !objectp(ob)) return 0;
+    room1 = load_object(room[random(sizeof(room))]);
+    this_object()->move(room1);
+    tell_room(room1, HIY
+    "ä¸€ä¸ªé¦™ç„¦çš®é£äº†è¿‡æ¥ï¼\n"
+    NOR);
+    remove_call_out("move2");
+    call_out("move2", 3);
+    return 1;
+}
+
+int move2() {
+    string *dir_name, dir_temp, temp;
+    object room1;
+    int i, T;
+    pass_id = ({});
+    room1 = load_object(room[random(sizeof(room))]);
+    say("é¦™ç„¦çš®é£èµ°äº†ï¼\n");
+    if (!room1 || !objectp(room1)) {
+        CHANNEL_D->do_channel(this_object(), "sys", "æ²¡æœ‰" + sprintf("%O", room) + "è¿™ä¸ªæˆ¿é—´");
+        return 1;
+    }
+
+    this_object()->move(room1);
+    tell_room(environment(this_object()), "é¦™ç„¦çš®é£äº†è¿‡æ¥ï¼\n");
+    return 1;
 }
 
 		

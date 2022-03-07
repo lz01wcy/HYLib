@@ -1,24 +1,24 @@
 inherit ITEM;
 
-void create()
-{
-	set_name( "ÁùÂöÉñ½£Æ×", ({ "pu", "jian pu" }));
-	set_weight(200);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "±¾");
-		set("long", "\nÕâÊÇÓÃÀ´Ñ§Ï°ÁùÂöÉñ½£µÄÍ¼Æ×¡£\n");
-		set("value", 1000);
-		set("material", "paper");
-		set("skill", ([
-			"name":	"liumai-shenjian",	// name of the skill
-			"exp_required":	0,	// minimum combat experience required
-			"jing_cost": 20+random(20), 	// jing cost every time study this
-			"difficulty":	40,	// the base int to learn this skill
-			"max_skill":	100,	// the maximum level you can learn
-		]) );
-		set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_give", "ÕâÑù¶«Î÷²»ÄÜ¸øÈË¡£\n");
-	}
+void create() {
+    set_name("å…­è„‰ç¥å‰‘è°±", ({ "pu", "jian pu" }));
+    set_weight(200);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long", "\nè¿™æ˜¯ç”¨æ¥å­¦ä¹ å…­è„‰ç¥å‰‘çš„å›¾è°±ã€‚\n");
+        set("value", 1000);
+        set("material", "paper");
+        set("skill",([
+        "name":    "liumai-shenjian",    // name of the skill
+                "exp_required":    0,    // minimum combat experience required
+                "jing_cost": 20 + random(20),    // jing cost every time study this
+                "difficulty":    40,    // the base int to learn this skill
+                "max_skill":    100,    // the maximum level you can learn
+        ]));
+        set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+        set("no_give", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç»™äººã€‚\n");
+    }
 }

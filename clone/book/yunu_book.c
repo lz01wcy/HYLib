@@ -2,27 +2,27 @@
 
 inherit ITEM;
 
-void create()
-{
-	set_name("ÓñÅ®½£Æ×", ({ "yunu book", "book" }));
-	set_weight(600);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "±¾");
-		set("long",
-"·âÃæÉÏĞ´Öø¡¸ÓñÅ®½£·¨ ¡¹\n");
-		set("value", 100);
-		set("material", "paper");
-		set("skill", ([
-			"name":		"yunu-sword",		// name of the skill
-			"exp_required":	1000,			// minimum combat experience required
-								// to learn this skill.
-			"jing_cost":	30,			// jing cost every time study this
-			"difficulty":	30,			// the base int to learn this skill
-								// modify is jing_cost's (difficulty - int)*5%
-			"max_skill":	40			// the maximum level you can learn
-								// from this object.
-		]) );
-	}
+void create() {
+    set_name("ç‰å¥³å‰‘è°±", ({ "yunu book", "book" }));
+    set_weight(600);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long",
+            "å°é¢ä¸Šå†™è‘—ã€Œç‰å¥³å‰‘æ³• ã€\n");
+        set("value", 100);
+        set("material", "paper");
+        set("skill",([
+        "name":        "yunu-sword",        // name of the skill
+                "exp_required":    1000,            // minimum combat experience required
+                // to learn this skill.
+                "jing_cost":    30,            // jing cost every time study this
+                "difficulty":    30,            // the base int to learn this skill
+                // modify is jing_cost's (difficulty - int)*5%
+                "max_skill":    40            // the maximum level you can learn
+        // from this object.
+        ]));
+    }
 }

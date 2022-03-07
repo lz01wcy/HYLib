@@ -1,27 +1,27 @@
 inherit ITEM;
 inherit F_UNIQUE;
- 
-void create()
-{
-        set_name("¡¸¾ÅÒõÕæ¾­¡¹²Ğ±¾ÏÂ²á", ({ "jiuyin zhenjing2","zhenjing2", }));
-        set_weight(500);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("treasure",1);set("unit", "±¾");
-             set("long",
-        "ÕâÊÇÒ»±¾ÓÃ±¡¾îĞ´³ÉµÄÊé¡£ÉÏÊé£º¾ÅÒõÕæ¾­(ÏÂ)¡±¡£\n"
-        "±Ê·¨ÇåĞãÍÑË×£¬¿´À´³öÓÚÅ®×ÓÊÖ±Ê¡£µ±ÖĞËÆºõĞŞ¸Ä²¢ÉÙÁËºÜ¶à¡£\n",
+
+void create() {
+    set_name("ã€Œä¹é˜´çœŸç»ã€æ®‹æœ¬ä¸‹å†Œ", ({ "jiuyin zhenjing2", "zhenjing2", }));
+    set_weight(500);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long",
+            "è¿™æ˜¯ä¸€æœ¬ç”¨è–„ç»¢å†™æˆçš„ä¹¦ã€‚ä¸Šä¹¦ï¼šä¹é˜´çœŸç»(ä¸‹)â€ã€‚\n"
+            "ç¬”æ³•æ¸…ç§€è„±ä¿—ï¼Œçœ‹æ¥å‡ºäºå¥³å­æ‰‹ç¬”ã€‚å½“ä¸­ä¼¼ä¹ä¿®æ”¹å¹¶å°‘äº†å¾ˆå¤šã€‚\n",
         );
-                set("value", 0);
-                set("material", "silk");
-                set("skill", ([
-                        "name":       "jiuyin-baiguzhao",
-                        "exp_required": 10000,
-                        "jing_cost":  30,
-                        "difficulty": 20,
-                        "max_skill":  99,
-                        "min_skill":  0
-                ]) );
-        }
+        set("value", 0);
+        set("material", "silk");
+        set("skill",([
+        "name":       "jiuyin-baiguzhao",
+                "exp_required": 10000,
+                "jing_cost":  30,
+                "difficulty": 20,
+                "max_skill":  99,
+                "min_skill":  0
+        ]));
+    }
 }

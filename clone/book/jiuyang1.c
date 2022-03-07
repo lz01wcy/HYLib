@@ -1,29 +1,27 @@
 // jiuyang1.c
 inherit ITEM;
 inherit F_UNIQUE;
- 
-void create()
-{
-        set_name("¡¸¾ÅÑôÕæ¾­¡¹µÚÒ»¾í", ({ "jiuyang zhenjing1","jiuyang1","zhenjing1" }));
-        set_weight(500);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("treasure",1);set("unit", "±¾");
-                set("long",
-"ÕâÊÇÒ»±¾±¡±¡µÄ¾­Êé£¬Ö»ÒòÓÍ²¼°üµÃ½ôÃÜ£¬Ëä³¤ÆÚ²ØÔÚÔ³¸¹Ö®ÖĞ£¬ÊéÒ³ÈÔÈ»ÍêºÃÎŞËğ¡£
-ÊéÃæÉÏĞ´Öø¼¸¸öÍäÍäÇúÇúµÄÎÄ×Ö£¬ËûÒ»¸öÒ²²»Ê¶µÃ£¬·­¿ªÀ´Ò»¿´£¬ËÄ±¾ÊéÖĞ¾¡ÊÇÕâĞ©¹Ö
-ÎÄ£¬µ«Ã¿Ò»ĞĞÖ®¼ä£¬È´ÒÔÓ¬Í·Ğ¡¿¬Ğ´ÂúÁËÖĞ¹úÎÄ×Ö¡£\n",
+
+void create() {
+    set_name("ã€Œä¹é˜³çœŸç»ã€ç¬¬ä¸€å·", ({ "jiuyang zhenjing1", "jiuyang1", "zhenjing1" }));
+    set_weight(500);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long",
+            "è¿™æ˜¯ä¸€æœ¬è–„è–„çš„ç»ä¹¦ï¼Œåªå› æ²¹å¸ƒåŒ…å¾—ç´§å¯†ï¼Œè™½é•¿æœŸè—åœ¨çŒ¿è…¹ä¹‹ä¸­ï¼Œä¹¦é¡µä»ç„¶å®Œå¥½æ— æŸã€‚ä¹¦é¢ä¸Šå†™è‘—å‡ ä¸ªå¼¯å¼¯æ›²æ›²çš„æ–‡å­—ï¼Œä»–ä¸€ä¸ªä¹Ÿä¸è¯†å¾—ï¼Œç¿»å¼€æ¥ä¸€çœ‹ï¼Œå››æœ¬ä¹¦ä¸­å°½æ˜¯è¿™äº›æ€ªæ–‡ï¼Œä½†æ¯ä¸€è¡Œä¹‹é—´ï¼Œå´ä»¥è‡å¤´å°æ¥·å†™æ»¡äº†ä¸­å›½æ–‡å­—ã€‚\n",
         );
-                set("value", 0);
-                set("material", "paper");
-                set("skill", ([
-                        "name"        : "jiuyang-shengong",
-                        "exp_required":  500,
-                        "jing_cost"   :  40,
-                        "difficulty"  :  30,
-                        "max_skill"   :  25,
-                        "min_skill"   :  0
-                ]) );
-        }
+        set("value", 0);
+        set("material", "paper");
+        set("skill",([
+        "name"        : "jiuyang-shengong",
+                "exp_required":  500,
+                "jing_cost"   :  40,
+                "difficulty"  :  30,
+                "max_skill"   :  25,
+                "min_skill"   :  0
+        ]));
+    }
 }

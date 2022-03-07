@@ -1,25 +1,25 @@
-// ÃÜ×ÚĞÄ¾­
+// å¯†å®—å¿ƒç»
 
 inherit ITEM;
 
-void create()
-{
-        set_name( "ÃÜ×ÚĞÄ¾­", ({ "jing" , "shu", "book" }));
-	set_weight(200);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»²áÃÜ×ÚĞÄ¾­,¼ÇÔØ×Å·ğÑ§µÄÒªÖ¼¡£\n");
-		set("value", 0);
-		set("material", "paper");
-		set("skill", ([
-			"name": "lamaism",        // name of the skill
-			"exp_required":	0,	// minimum combat experience required
-			"jing_cost": 30+random(20),// jing cost every time study this
-			"difficulty":   20,     // the base int to learn this skill
-			"max_skill":    99,     // the maximum level you can learn
-		]) );
-	}
+void create() {
+    set_name("å¯†å®—å¿ƒç»", ({ "jing", "shu", "book" }));
+    set_weight(200);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long", "è¿™æ˜¯ä¸€å†Œå¯†å®—å¿ƒç»,è®°è½½ç€ä½›å­¦çš„è¦æ—¨ã€‚\n");
+        set("value", 0);
+        set("material", "paper");
+        set("skill",([
+        "name": "lamaism",        // name of the skill
+                "exp_required":    0,    // minimum combat experience required
+                "jing_cost": 30 + random(20),// jing cost every time study this
+                "difficulty":   20,     // the base int to learn this skill
+                "max_skill":    99,     // the maximum level you can learn
+        ]));
+    }
 }
 

@@ -2,28 +2,28 @@
 
 inherit ITEM;
 
-void create()
-{
-	set_name("²¯¾í", ({ "bo juan", "bo", "juan" }));
-	set_weight(50);
-//	set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "¾í");
-		set("long",
-			"ÕâÊÇÒ»¾í²¯¾í£¬ÀïÃæĞ´×Å £º\n"
-			"×¯×Ó¡°åĞÒ£ÓÎ¡±ÓĞÔÆ£ºÇî·¢Ö®±±ÓĞÚ¤º£Õß£¬Ìì³ØÒ²¡£ÓĞÓãÑÉ£¬Æä¹ãÊıÇ§Àï¡£¡£¡£¡£\n");
-		set("value", 500);
-		set("material", "silk");
-		set("skill", ([
-			"name":	"beiming-shengong",	// name of the skill
-			"exp_required":	0,	// minimum combat experience required
-			"jing_cost":	50,	// jing cost every time study this
-			"difficulty":	20,	// the base int to learn this skill
-			"max_skill":	100,	// the maximum level you can learn
-			"min_skill":	20	// the maximum level you can learn
-		]) );
-	}
+void create() {
+    set_name("å¸›å·", ({ "bo juan", "bo", "juan" }));
+    set_weight(50);
+//	set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "å·");
+        set("long",
+            "è¿™æ˜¯ä¸€å·å¸›å·ï¼Œé‡Œé¢å†™ç€ ï¼š\n"
+            "åº„å­â€œé€é¥æ¸¸â€æœ‰äº‘ï¼šç©·å‘ä¹‹åŒ—æœ‰å†¥æµ·è€…ï¼Œå¤©æ± ä¹Ÿã€‚æœ‰é±¼ç„‰ï¼Œå…¶å¹¿æ•°åƒé‡Œã€‚ã€‚ã€‚ã€‚\n");
+        set("value", 500);
+        set("material", "silk");
+        set("skill",([
+        "name":    "beiming-shengong",    // name of the skill
+                "exp_required":    0,    // minimum combat experience required
+                "jing_cost":    50,    // jing cost every time study this
+                "difficulty":    20,    // the base int to learn this skill
+                "max_skill":    100,    // the maximum level you can learn
+                "min_skill":    20    // the maximum level you can learn
+        ]));
+    }
 }
 

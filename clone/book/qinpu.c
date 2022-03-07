@@ -1,26 +1,25 @@
 // qinpu.c
 inherit ITEM;
 
-void create()
-{
-        set_name("»ÆÊ¯Æ×", ({ "huangshi pu" ,"pu" ,"book"}));
-        set_weight(600);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-                set("treasure",1);set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾ÇÙÆ×£¬Äã¶Á×Å¶Á×Å£¬ËÆ
-ºõ¿ÉÒÔ´ÓÀïÃæ·¢ÏÖÒ»Ğ©ÆäËûµÄ¶«Î÷¡£\n"
-                        "Ô­À´ÕâÊÇÒ»±¾²Ø×Å½£·¨µÄÇÙÆ×¡£\n");
-                set("value", 1000);
-                set("material", "paper");
-                set("skill", ([
-                        "name": "wuyun-jianfa",        // name of the skill
-                "exp_required": 100, 
-                   "jing_cost": 10,
-                  "difficulty": 20,                    // the base int to learn this skill
-                   "max_skill": 80
-                             ]) );
-        }
+void create() {
+    set_name("é»„çŸ³è°±", ({ "huangshi pu", "pu", "book" }));
+    set_weight(600);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long", "è¿™æ˜¯ä¸€æœ¬ç´è°±ï¼Œä½ è¯»ç€è¯»ç€ï¼Œä¼¼ä¹å¯ä»¥ä»é‡Œé¢å‘ç°ä¸€äº›å…¶ä»–çš„ä¸œè¥¿ã€‚\n"
+                    "åŸæ¥è¿™æ˜¯ä¸€æœ¬è—ç€å‰‘æ³•çš„ç´è°±ã€‚\n");
+        set("value", 1000);
+        set("material", "paper");
+        set("skill",([
+        "name": "wuyun-jianfa",        // name of the skill
+                "exp_required": 100,
+                "jing_cost": 10,
+                "difficulty": 20,                    // the base int to learn this skill
+                "max_skill": 80
+        ]));
+    }
 }
 

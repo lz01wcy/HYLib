@@ -1,26 +1,29 @@
 // lbook1.c
 #include <ansi.h>
+
 inherit ITEM;
-void create()
-{
-        set_name(YEL"Èı×Ö¾­"NOR, ({ "literateb1", "shu1", "book1" }));
-        set_weight(500);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else
-        {
-                set("treasure",1);set("unit", "±¾");
-                set("long","¶ÁÊéÈË±Ø¶ÁµÄÈı×Ö¾­¡£\n");
-                set("value", 50000);
-                set("material", "paper");
-                set("skill",
+
+void create() {
+    set_name(YEL
+    "ä¸‰å­—ç»"
+    NOR, ({ "literateb1", "shu1", "book1" }));
+    set_weight(500);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long", "è¯»ä¹¦äººå¿…è¯»çš„ä¸‰å­—ç»ã€‚\n");
+        set("value", 50000);
+        set("material", "paper");
+        set("skill",
                 ([
-                        "name": "literate",      // name of the skill
-                        "exp_required": 10,      // minimum combat experience required
-                        "jing_cost":    10,      // jing cost every time study this
-                        "difficulty":   15,      // the base int to learn this skill
-                        "max_skill":    49,      // the maximum level you can learn
-                        "min_skill":    20,      // minimun level required
-                ]) );
-        }
+        "name": "literate",      // name of the skill
+                "exp_required": 10,      // minimum combat experience required
+                "jing_cost":    10,      // jing cost every time study this
+                "difficulty":   15,      // the base int to learn this skill
+                "max_skill":    49,      // the maximum level you can learn
+                "min_skill":    20,      // minimun level required
+        ]));
+    }
 }

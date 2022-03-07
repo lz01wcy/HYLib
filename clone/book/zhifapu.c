@@ -1,31 +1,34 @@
-// zhifapu.c Ò»ÑôÖ¸·¨Æ×
+// zhifapu.c ä¸€é˜³æŒ‡æ³•è°±
 // By Lgg,1998.9
 
 #include <ansi.h>
+
 inherit ITEM;
 inherit F_UNIQUE;
 
-void create()
-{
-        set_name(YEL"Ò»ÑôÖ¸·¨Æ×" NOR, ({ "zhifapu","pu", }));
-        set_weight(1000);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else {
-             set("treasure",1);set("unit", "±¾");
-             set("long",
-        "ÕâÊÇÒ»±¾Ğ´ÔÚË¿ÉÏµÄÊé£¬·âÃæÉÏÓĞÒ»Î»ÖĞÄêĞãÊ¿ÓÒÊÖÖĞÖ¸Ö¸ÏòÌì¿ÕµÄ±³Ó°¡£\n",
-         );
-         set("value", 0);
-         set("material", "silk");
-         set("skill", ([
-                        "name":       "liumai-shenjian",
-                        "exp_required" : 150000,
-                        "jing_cost":  35,
-                        "difficulty": 25,
-                        "max_skill":  150
-                ]) );
-        }
-//        set("no_drop", "Îä¹¦ÃØ¼®¿É²»ÄÜËæ±ã¶ªÆú£¡\n");
-        set("no_give", "ÕâÑù¶«Î÷²»ÄÜËæ±ã¸øÈË¡£\n");
+void create() {
+    set_name(YEL
+    "ä¸€é˜³æŒ‡æ³•è°±"
+    NOR, ({ "zhifapu", "pu", }));
+    set_weight(1000);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long",
+            "è¿™æ˜¯ä¸€æœ¬å†™åœ¨ä¸ä¸Šçš„ä¹¦ï¼Œå°é¢ä¸Šæœ‰ä¸€ä½ä¸­å¹´ç§€å£«å³æ‰‹ä¸­æŒ‡æŒ‡å‘å¤©ç©ºçš„èƒŒå½±ã€‚\n",
+        );
+        set("value", 0);
+        set("material", "silk");
+        set("skill",([
+        "name":       "liumai-shenjian",
+                "exp_required" : 150000,
+                "jing_cost":  35,
+                "difficulty": 25,
+                "max_skill":  150
+        ]));
+    }
+//        set("no_drop", "æ­¦åŠŸç§˜ç±å¯ä¸èƒ½éšä¾¿ä¸¢å¼ƒï¼\n");
+    set("no_give", "è¿™æ ·ä¸œè¥¿ä¸èƒ½éšä¾¿ç»™äººã€‚\n");
 }

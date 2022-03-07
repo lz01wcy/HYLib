@@ -2,24 +2,24 @@
 
 inherit ITEM;
 
-void create()
-{
-	set_name("Ò×½î¾­ÎÄÑ§Æª", ({ "shu", "book" }));
-	set_weight(50);
-	if( clonep() )
-		set_default_object(__FILE__);
-	else {
-		set("treasure",1);set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»±¾±¡±¡µÄĞ¡²á£¬ÉÏÃæÃÜÃÜÂéÂéµÄĞ´ÂúÁËÓ¬Í·Ğ¡¿¬£¬°Ë¹ÉÎÄÕÂ¡£\n");
-		set("value", 500);
-		set("material", "silk");
-		set("skill", ([
-			"name":	"literate",	// name of the skill
-			"exp_required":	0,	// minimum combat experience required
-			"jing_cost":	20,	// jing cost every time study this
-			"difficulty":	20,	// the base int to learn this skill
-			"max_skill":	19,	// the maximum level you can learn
-			"min_skill":	10	// the minimum level you can learn
-		]) );
-	}
+void create() {
+    set_name("æ˜“ç­‹ç»æ–‡å­¦ç¯‡", ({ "shu", "book" }));
+    set_weight(50);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("long", "è¿™æ˜¯ä¸€æœ¬è–„è–„çš„å°å†Œï¼Œä¸Šé¢å¯†å¯†éº»éº»çš„å†™æ»¡äº†è‡å¤´å°æ¥·ï¼Œå…«è‚¡æ–‡ç« ã€‚\n");
+        set("value", 500);
+        set("material", "silk");
+        set("skill",([
+        "name":    "literate",    // name of the skill
+                "exp_required":    0,    // minimum combat experience required
+                "jing_cost":    20,    // jing cost every time study this
+                "difficulty":    20,    // the base int to learn this skill
+                "max_skill":    19,    // the maximum level you can learn
+                "min_skill":    10    // the minimum level you can learn
+        ]));
+    }
 }

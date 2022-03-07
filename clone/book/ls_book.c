@@ -1,101 +1,98 @@
-//¶À¹Â¾Å½£½£Æ×(Lonely_sword_book)
+//ç‹¬å­¤ä¹å‰‘å‰‘è°±(Lonely_sword_book)
 // ls_book.c
 // Date: Oct.6 1997 by That
 
 #include <ansi.h>
+
 inherit ITEM;
 inherit F_AUTOLOAD;
+
 int do_study(string);
-int study(object me, string arg)
-{
+
+int study(object me, string arg) {
     object where = environment(me);
     object ob;
     int myskill, cost;
 
-    cost=20;                                            //Ã¿¶ÁÒ»´ÎºÄ20¾«
-    myskill=me->query_skill("lonely-sword", 1);
+    cost = 20;                                            //æ¯è¯»ä¸€æ¬¡è€—20ç²¾
+    myskill = me->query_skill("lonely-sword", 1);
     if (!arg || !objectp(ob = present(arg, me)))
-        return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
-    if (!me->query_skill("literate", 1)||me->query_skill("literate",1) < 100)
-        return notify_fail("¶ÔÕÕ½£Æ×£¬ÄãÊ²Ã´¶¼¶Á²»¶®¡£\n");
+        return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
+    if (!me->query_skill("literate", 1) || me->query_skill("literate", 1) < 100)
+        return notify_fail("å¯¹ç…§å‰‘è°±ï¼Œä½ ä»€ä¹ˆéƒ½è¯»ä¸æ‡‚ã€‚\n");
     if (me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
-    if (me->is_fighting() )
-        return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
-    if ((int)me->query("combat_exp") < 50000)
-        return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»×ã£¬²»ÄÜÑ§¶À¹Â¾Å½£¡£\n");
-    if (myskill>299)
-        return notify_fail("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË¡£\n");
-    if (myskill<75)
-        return notify_fail("Äã¶ÁÁËÒ»»áÊé,¿ÉÊÇÈ´ºÁÎŞÊÕ»ñ¡£\n");
-    if ((int)me->query("jing")>cost )
-    {
-       if (myskill*myskill*myskill/10>(int)me->query("combat_exp") )
-       {
-          printf("Ò²ĞíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬Äã¶Ô¶À¹Â¾Å½£½£Æ×ÃæËùËµµÄ¶«Î÷×ÜÊÇÎŞ·¨Áì»á¡£\n");
-       }
-       else
-       {
-          printf("ÄãÑĞ¶ÁÓĞ¹Ø¶À¹Â¾Å½£½£Æ×ÉÏµÄ¼¼ÇÉ£¬ËÆºõÓĞµãĞÄµÃ¡£\n");
-          me->improve_skill("lonely-sword", (int)me->query_skill("literate", 1)+(int)me->query("int"));
-       }
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
+    if (me->is_fighting())
+        return notify_fail("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ï¼\n");
+    if ((int) me->query("combat_exp") < 50000)
+        return notify_fail("ä½ çš„å®æˆ˜ç»éªŒä¸è¶³ï¼Œä¸èƒ½å­¦ç‹¬å­¤ä¹å‰‘ã€‚\n");
+    if (myskill > 299)
+        return notify_fail("ä½ ç ”è¯»äº†ä¸€ä¼šå„¿ï¼Œå‘ç°ä¸Šé¢æ‰€è¯´çš„å¯¹ä½ è€Œè¨€éƒ½å¤ªæµ…äº†ã€‚\n");
+    if (myskill < 75)
+        return notify_fail("ä½ è¯»äº†ä¸€ä¼šä¹¦,å¯æ˜¯å´æ¯«æ— æ”¶è·ã€‚\n");
+    if ((int) me->query("jing") > cost) {
+        if (myskill * myskill * myskill / 10 > (int) me->query("combat_exp")) {
+            printf("ä¹Ÿè®¸æ˜¯ç¼ºä¹å®æˆ˜ç»éªŒï¼Œä½ å¯¹ç‹¬å­¤ä¹å‰‘å‰‘è°±é¢æ‰€è¯´çš„ä¸œè¥¿æ€»æ˜¯æ— æ³•é¢†ä¼šã€‚\n");
+        } else {
+            printf("ä½ ç ”è¯»æœ‰å…³ç‹¬å­¤ä¹å‰‘å‰‘è°±ä¸Šçš„æŠ€å·§ï¼Œä¼¼ä¹æœ‰ç‚¹å¿ƒå¾—ã€‚\n");
+            me->improve_skill("lonely-sword", (int) me->query_skill("literate", 1) + (int) me->query("int"));
+        }
+    } else {
+        cost = me->query("jing");
+        write("ä½ ç°åœ¨è¿‡äºç–²å€¦ï¼Œæ— æ³•ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ã€‚\n");
     }
-    else
-    {
-       cost=me->query("jing");
-       write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
-    }
-    me->receive_damage("jing", cost );
+    me->receive_damage("jing", cost);
     return 1;
 }
-void create()
-{
-        set_name(HIG"¶À¹Â¾Å½£½£Æ×"NOR, ({ "lonely_sword_book","ls_book" }));
-        set_weight(100);
-        if( clonep() )
-                set_default_object(__FILE__);
-        else
-        {
-                set("treasure",1);set("unit", "±¾");
-                set("no_drop","ÕâÊÇµ±ÊÀ¹Â±¾°¡¡£ÈçºÎÄÜ¶ªÊ§£¿");
-                set("no_put","ÕâÊÇµ±ÊÀ¹Â±¾°¡¡£ÈçºÎÄÜ¶ªÊ§£¿");
-                set("no_get",1);
-                set("no_steal",1);
-                set("long","¶À¹Â¾Å½£½£·¨¡£ÄãÖ»ÄÜÑĞÏ°(yanxi)¡£\n");
-                set("value", 1000);
-                set("material", "paper");
-                set("master_id","npc");
-        }
+
+void create() {
+    set_name(HIG
+    "ç‹¬å­¤ä¹å‰‘å‰‘è°±"
+    NOR, ({ "lonely_sword_book", "ls_book" }));
+    set_weight(100);
+    if (clonep())
+        set_default_object(__FILE__);
+    else {
+        set("treasure", 1);
+        set("unit", "æœ¬");
+        set("no_drop", "è¿™æ˜¯å½“ä¸–å­¤æœ¬å•Šã€‚å¦‚ä½•èƒ½ä¸¢å¤±ï¼Ÿ");
+        set("no_put", "è¿™æ˜¯å½“ä¸–å­¤æœ¬å•Šã€‚å¦‚ä½•èƒ½ä¸¢å¤±ï¼Ÿ");
+        set("no_get", 1);
+        set("no_steal", 1);
+        set("long", "ç‹¬å­¤ä¹å‰‘å‰‘æ³•ã€‚ä½ åªèƒ½ç ”ä¹ (yanxi)ã€‚\n");
+        set("value", 1000);
+        set("material", "paper");
+        set("master_id", "npc");
+    }
 }
 
-void init()
-{
-        add_action("do_study","yanxi");
+void init() {
+    add_action("do_study", "yanxi");
 }
 
-int do_study(string arg)
-{
-        object me,ob;
-        me=this_player();
-        ob=this_object();
+int do_study(string arg) {
+    object me, ob;
+    me = this_player();
+    ob = this_object();
 
-        write("ÍÛ£¬ÕæÊÇÇ§¹Å¶À²½µÄ½£·¨£¡");
-        study(me,arg);
-        return 1;
+    write("å“‡ï¼ŒçœŸæ˜¯åƒå¤ç‹¬æ­¥çš„å‰‘æ³•ï¼");
+    study(me, arg);
+    return 1;
 }
 
-string query_autoload()
-{
-        object me;
-        me = this_object();
-        return me->query("master_id");
+string query_autoload() {
+    object me;
+    me = this_object();
+    return me->query("master_id");
 }
-void autoload(string arg)
-{
-        set("master_id",arg);
+
+void autoload(string arg) {
+    set("master_id", arg);
 }
-void owner_is_killed()
-{
-        write(HIY"Ö»¼ûÑÛÇ°½ğ¹âÒ»ÉÁ...ºÃÏóÊÇ.....\n"NOR);
-        destruct(this_object());
+
+void owner_is_killed() {
+    write(HIY
+    "åªè§çœ¼å‰é‡‘å…‰ä¸€é—ª...å¥½è±¡æ˜¯.....\n"
+    NOR);
+    destruct(this_object());
 }
