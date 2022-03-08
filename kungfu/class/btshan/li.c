@@ -4,103 +4,98 @@ inherit F_MASTER;
 inherit F_UNIQUE;
 
 void greeting(object);
+
 void init();
-void create()
-{
-	set_name("Àî½ÌÍ·", ({ "li"}) );
-	set("gender", "ÄÐÐÔ" );
-	set("age", 25);
-	set("long", "ÕâÊÇ¸öºÍ°ª¿ÉÇ×µÄ½ÌÍ·¡£\n");
-	set("attitude", "friendly");
-	set("shen_type", -1);
-	set("class", "fighter");
 
-	set("str", 23);
-	set("int", 23);
-	set("con", 22);
-	set("dex", 20);
+void create() {
+    set_name("æŽæ•™å¤´", ({ "li" }));
+    set("gender", "ç”·æ€§");
+    set("age", 25);
+    set("long", "è¿™æ˜¯ä¸ªå’Œè”¼å¯äº²çš„æ•™å¤´ã€‚\n");
+    set("attitude", "friendly");
+    set("shen_type", -1);
+    set("class", "fighter");
 
-	set("max_qi", 600);
-	set("qi",600);
-	set("max_jing", 500);
-	set("jing",500);
-	set("neili", 1000);
-	set("max_neili", 1000);
-	set("jiali",30);
+    set("str", 23);
+    set("int", 23);
+    set("con", 22);
+    set("dex", 20);
 
-	set("combat_exp", 850000);
-	set("score", 20000);
+    set("max_qi", 600);
+    set("qi", 600);
+    set("max_jing", 500);
+    set("jing", 500);
+    set("neili", 1000);
+    set("max_neili", 1000);
+    set("jiali", 30);
 
-	set_skill("force", 80);
-	set_skill("dodge", 120);
-	set_skill("unarmed", 110);
-	set_skill("parry", 100);
-	set_skill("staff",180);
-	set_skill("hamagong",180);
-	set_skill("chanchu-bufa", 180);
-	set_skill("lingshe-zhangfa", 180);
-	set_skill("shexing-diaoshou", 180);
+    set("combat_exp", 850000);
+    set("score", 20000);
 
-	map_skill("force", "hamagong");
-	map_skill("dodge", "chanchu-bufa");
-	map_skill("parry", "lingshe-zhangfa");
-	map_skill("unarmed", "shexing-diaoshou");
-	map_skill("staff", "lingshe-zhangfa");
+    set_skill("force", 80);
+    set_skill("dodge", 120);
+    set_skill("unarmed", 110);
+    set_skill("parry", 100);
+    set_skill("staff", 180);
+    set_skill("hamagong", 180);
+    set_skill("chanchu-bufa", 180);
+    set_skill("lingshe-zhangfa", 180);
+    set_skill("shexing-diaoshou", 180);
 
-	create_family("°×ÍÕÉ½ÅÉ",2,"µÜ×Ó");
+    map_skill("force", "hamagong");
+    map_skill("dodge", "chanchu-bufa");
+    map_skill("parry", "lingshe-zhangfa");
+    map_skill("unarmed", "shexing-diaoshou");
+    map_skill("staff", "lingshe-zhangfa");
 
-	set("chat_chance", 2);
-	set("chat_msg", ({
-		"Àî½ÌÍ·ËµµÀ: ÇÚÑ§¿àÁ··½¿É³öÉñ¹¦..\n",
-		"Àî½ÌÍ·¹ÄÀøÐ¡µÜ×ÓÃÇ²»Î·¼è¿à£¬ºÃºÃÁ·¹¦¡£\n",
-		"Àî½ÌÍ·ÅÄÅÄÑ§Í½µÄÍ·Ëµ£ººÃÑùµÄ£¡\n",
-	}) );
-	setup();
-	carry_object("/clone/misc/cloth")->wear();
+    create_family("ç™½é©¼å±±æ´¾", 2, "å¼Ÿå­");
+
+    set("chat_chance", 2);
+    set("chat_msg", ({
+        "æŽæ•™å¤´è¯´é“: å‹¤å­¦è‹¦ç»ƒæ–¹å¯å‡ºç¥žåŠŸ..\n",
+                "æŽæ•™å¤´é¼“åŠ±å°å¼Ÿå­ä»¬ä¸ç•è‰°è‹¦ï¼Œå¥½å¥½ç»ƒåŠŸã€‚\n",
+                "æŽæ•™å¤´æ‹æ‹å­¦å¾’çš„å¤´è¯´ï¼šå¥½æ ·çš„ï¼\n",
+    }));
+    setup();
+    carry_object("/clone/misc/cloth")->wear();
 }
 
-void init()
-{
-	object ob;
+void init() {
+    object ob;
 
-	::init();
+    ::init();
 
-	if( interactive(ob = this_player()) && !is_fighting() ) {
-		remove_call_out("greeting");
-		call_out("greeting", 1, ob);
-	}
-}
-void greeting(object ob)
-{
-	if( !ob || environment(ob) != environment() ) return;
-	if ((string)ob->query("family/family_name") == "°×ÍÕÉ½ÅÉ")
-	     {
-	       message_vision("Àî½ÌÍ·³å×Å$NµãµãÍ·£¬Î¢Î¢Ð¦ÁËÐ¦¡£\n",ob);
-	       return;
-	      }
-	if (!(string)ob->query("family/family_name"))
-	     {
-	       message_vision("Àî½ÌÍ·³å×Å$NÎ¢Ð¦Ëµ£ºÄãÊÇÀ´°ÝÊ¦µÄ°É£¬°ÝÎÒ°É¡£\n",ob);
-	       return;
-	      }
-	  message_vision("Àî½ÌÍ·¶Ô$NÈÂµÀ:Ð¡¼Ò»ï,ÄãÏ¹¹äÊ²Ã´ÄØ?\n",ob);
+    if (interactive(ob = this_player()) && !is_fighting()) {
+        remove_call_out("greeting");
+        call_out("greeting", 1, ob);
+    }
 }
 
-void attempt_apprentice(object ob)
-{
-     command("say ºÃ°É£¬ÎÒÊÕÏÂÄã¡£\n");
-     command("recruit "+ob->query("id"));
-     if((int)ob->query("combat_exp")<10000)
-       command("say ÄãÏÈµ½¶«±ßÁ·¹¦ÊÒÕÒÅãÁ·Í¯×Ó±È»®¼¸ÕÐ°É¡£\n");
-     return;
+void greeting(object ob) {
+    if (!ob || environment(ob) != environment()) return;
+    if ((string) ob->query("family/family_name") == "ç™½é©¼å±±æ´¾") {
+        message_vision("æŽæ•™å¤´å†²ç€$Nç‚¹ç‚¹å¤´ï¼Œå¾®å¾®ç¬‘äº†ç¬‘ã€‚\n", ob);
+        return;
+    }
+    if (!(string) ob->query("family/family_name")) {
+        message_vision("æŽæ•™å¤´å†²ç€$Nå¾®ç¬‘è¯´ï¼šä½ æ˜¯æ¥æ‹œå¸ˆçš„å§ï¼Œæ‹œæˆ‘å§ã€‚\n", ob);
+        return;
+    }
+    message_vision("æŽæ•™å¤´å¯¹$Nåš·é“:å°å®¶ä¼™,ä½ çžŽé€›ä»€ä¹ˆå‘¢?\n", ob);
 }
 
-int accept_fight(object ob)
-{
-      if ((string)ob->query("family/family_name") == "°×ÍÕÉ½ÅÉ")
-	 {
-	  if((int)ob->query("combat_exp")<1000)
-	    return notify_fail("Àî½ÌÍ·Ð¦µÀ£ºÄãµÄ¾­ÑéÌ«µÍÁË£¬»¹ÊÇÏÈÕÒÅãÁ·Í¯×Ó±È»®¼¸ÕÐ°É¡££¡\n");
-	  }
+void attempt_apprentice(object ob) {
+    command("say å¥½å§ï¼Œæˆ‘æ”¶ä¸‹ä½ ã€‚\n");
+    command("recruit " + ob->query("id"));
+    if ((int) ob->query("combat_exp") < 10000)
+        command("say ä½ å…ˆåˆ°ä¸œè¾¹ç»ƒåŠŸå®¤æ‰¾é™ªç»ƒç«¥å­æ¯”åˆ’å‡ æ‹›å§ã€‚\n");
+    return;
+}
+
+int accept_fight(object ob) {
+    if ((string) ob->query("family/family_name") == "ç™½é©¼å±±æ´¾") {
+        if ((int) ob->query("combat_exp") < 1000)
+            return notify_fail("æŽæ•™å¤´ç¬‘é“ï¼šä½ çš„ç»éªŒå¤ªä½Žäº†ï¼Œè¿˜æ˜¯å…ˆæ‰¾é™ªç»ƒç«¥å­æ¯”åˆ’å‡ æ‹›å§ã€‚ï¼\n");
+    }
     return 1;
 }

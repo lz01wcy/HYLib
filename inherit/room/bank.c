@@ -2,58 +2,55 @@
 
 inherit ROOM;
 
-void init()
-{
-	add_action("do_convert", "convert");
-	add_action("do_deposit", "deposit");
+void init() {
+    add_action("do_convert", "convert");
+    add_action("do_deposit", "deposit");
 }
 
-int do_convert(string arg)
-{
-	string from, to;
-	int amount, bv1, bv2;
-	object from_ob, to_ob;
+int do_convert(string arg) {
+    string from, to;
+    int amount, bv1, bv2;
+    object from_ob, to_ob;
 
-	if( !arg || sscanf(arg, "%d %s to %s", amount, from, to)!=3 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºconvert <ÊıÁ¿> <»õ±ÒÖÖÀà> to <»õ±ÒÖÖÀà>\n");
+    if (!arg || sscanf(arg, "%d %s to %s", amount, from, to) != 3)
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconvert <æ•°é‡> <è´§å¸ç§ç±»> to <è´§å¸ç§ç±»>\n");
 
-	from_ob = present(from + "_money", this_player());
-	to_ob = present(to + "_money", this_player());
-	if( !to_ob && file_size("/clone/money/" + to + ".c") < 0 )
-		return notify_fail("ÄãÏë¶Ò»»ÄÄÒ»ÖÖÇ®£¿\n");
+    from_ob = present(from + "_money", this_player());
+    to_ob = present(to + "_money", this_player());
+    if (!to_ob && file_size("/clone/money/" + to + ".c") < 0)
+        return notify_fail("ä½ æƒ³å…‘æ¢å“ªä¸€ç§é’±ï¼Ÿ\n");
 
-	if( !from_ob )		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
-	if( amount < 1 )	return notify_fail("¶Ò»»»õ±ÒÒ»´ÎÖÁÉÙÒª¶Ò»»Ò»¸ö¡£\n");
-		
-	if( (int)from_ob->query_amount() < amount )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÄÇÃ´¶à" + from_ob->query("name") + "¡£\n");
+    if (!from_ob) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
+    if (amount < 1) return notify_fail("å…‘æ¢è´§å¸ä¸€æ¬¡è‡³å°‘è¦å…‘æ¢ä¸€ä¸ªã€‚\n");
 
-	bv1 = from_ob->query("base_value");
-	if( !bv1 ) return notify_fail("ÕâÖÖ¶«Î÷²»ÖµÇ®¡£\n");
+    if ((int) from_ob->query_amount() < amount)
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‚£ä¹ˆå¤š" + from_ob->query("name") + "ã€‚\n");
 
-	bv2 = to_ob ? to_ob->query("base_value") : call_other("/clone/money/" + to, "query", "base_value" );
+    bv1 = from_ob->query("base_value");
+    if (!bv1) return notify_fail("è¿™ç§ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
 
-	if( bv1 < bv2 ) amount -= amount % (bv2 / bv1);
-	if( amount==0 )	return notify_fail("ÕâĞ©" + from_ob->query("name") + "µÄ¼ÛÖµÌ«µÍÁË£¬»»²»Æğ¡£\n");
+    bv2 = to_ob ? to_ob->query("base_value") : call_other("/clone/money/" + to, "query", "base_value");
 
-	if( !to_ob ) {
-		to_ob = new("/clone/money/" + to);
-		to_ob->move(this_player());
-		to_ob->set_amount(amount * bv1 / bv2);
-	} else
-		to_ob->add_amount(amount * bv1 / bv2);
+    if (bv1 < bv2) amount -= amount % (bv2 / bv1);
+    if (amount == 0) return notify_fail("è¿™äº›" + from_ob->query("name") + "çš„ä»·å€¼å¤ªä½äº†ï¼Œæ¢ä¸èµ·ã€‚\n");
 
-	message_vision( sprintf("$N´ÓÉíÉÏÈ¡³ö%s%s%s£¬»»³É%s%s%s¡£\n",
-		chinese_number(amount), from_ob->query("base_unit"), from_ob->query("name"),
-		chinese_number(amount * bv1 / bv2), to_ob->query("base_unit"), to_ob->query("name")),
-		this_player() );
+    if (!to_ob) {
+        to_ob = new("/clone/money/" + to);
+        to_ob->move(this_player());
+        to_ob->set_amount(amount * bv1 / bv2);
+    } else
+        to_ob->add_amount(amount * bv1 / bv2);
 
-	from_ob->add_amount(-amount);
+    message_vision(sprintf("$Nä»èº«ä¸Šå–å‡º%s%s%sï¼Œæ¢æˆ%s%s%sã€‚\n",
+                           chinese_number(amount), from_ob->query("base_unit"), from_ob->query("name"),
+                           chinese_number(amount * bv1 / bv2), to_ob->query("base_unit"), to_ob->query("name")),
+                   this_player());
 
-	return 1;
+    from_ob->add_amount(-amount);
+
+    return 1;
 }
 
 
-int do_deposit(string arg)
-{
+int do_deposit(string arg) {
 }

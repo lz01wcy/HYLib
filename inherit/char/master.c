@@ -2,115 +2,109 @@
 #include <login.h>
 
 
-int prevent_learn(object me, string skill)
-{
-	int betrayer,shen;
+int prevent_learn(object me, string skill) {
+    int betrayer, shen;
 
-	if( betrayer = me->query("betrayer") ) {
-	if (0) {
-		if( me->query_skill(skill, 1) >= this_object()->query_skill(skill, 1) - betrayer * 20 ) {
-			message_vision("$NÉñÉ«¼äËÆºõ¶Ô$n²»ÊÇÊ®·ÖĞÅÈÎ£¬Ò²ĞíÊÇÏëÆğ$p´ÓÇ°±³ÅÑÊ¦ÃÅµÄÊÂÇé ...¡£\n",
-				this_object(), me );
-			//command("say àÅ .... Ê¦¸¸ÄÜ½ÌÄãµÄ¶¼½ÌÁË£¬ÆäËûµÄÄã×Ô¼ºÁ·°É¡£");
-			return 1;
-		}
-	}
-	}
-shen=this_object()->query("shen");
+    if (betrayer = me->query("betrayer")) {
+        if (0) {
+            if (me->query_skill(skill, 1) >= this_object()->query_skill(skill, 1) - betrayer * 20) {
+                message_vision("$Nç¥è‰²é—´ä¼¼ä¹å¯¹$nä¸æ˜¯ååˆ†ä¿¡ä»»ï¼Œä¹Ÿè®¸æ˜¯æƒ³èµ·$pä»å‰èƒŒå›å¸ˆé—¨çš„äº‹æƒ… ...ã€‚\n",
+                               this_object(), me);
+                //command("say å—¯ .... å¸ˆçˆ¶èƒ½æ•™ä½ çš„éƒ½æ•™äº†ï¼Œå…¶ä»–çš„ä½ è‡ªå·±ç»ƒå§ã€‚");
+                return 1;
+            }
+        }
+    }
+    shen = this_object()->query("shen");
 
-if (shen > 800000) shen=800000;
-if (shen < -800000) shen=-800000;
+    if (shen > 800000) shen = 800000;
+    if (shen < -800000) shen = -800000;
 
-                if (shen < 0 && me->query("shen") > shen)
-{
-			message_vision("$NËµµ½,ºß£¡ÏñÄãÕâÑùµÄĞÄ´ÈÊÖÈíÖ®±²£¬¾Í"
-                               "ËãÄÃ×ÅÑ§ÁËÎä¹¦Ò²"
-                               "ÊÇÎŞÓÃ¡£",
-				this_object(), me );
+    if (shen < 0 && me->query("shen") > shen) {
+        message_vision("$Nè¯´åˆ°,å“¼ï¼åƒä½ è¿™æ ·çš„å¿ƒæ…ˆæ‰‹è½¯ä¹‹è¾ˆï¼Œå°±"
+                       "ç®—æ‹¿ç€å­¦äº†æ­¦åŠŸä¹Ÿ"
+                       "æ˜¯æ— ç”¨ã€‚",
+                       this_object(), me);
 
-//command("say ºß£¡ÏñÄãÕâÑùµÄĞÄ´ÈÊÖÈíÖ®±²£¬¾ÍËãÄÃ×ÅÑ§ÁËÎä¹¦Ò²ÊÇÎŞÓÃ¡£");
-return 1;
-}
+//command("say å“¼ï¼åƒä½ è¿™æ ·çš„å¿ƒæ…ˆæ‰‹è½¯ä¹‹è¾ˆï¼Œå°±ç®—æ‹¿ç€å­¦äº†æ­¦åŠŸä¹Ÿæ˜¯æ— ç”¨ã€‚");
+        return 1;
+    }
 
-                if (shen > 0 && me->query("shen") < shen)
-{
-			message_vision("$NËµµ½ºß£¡ÄãÄ¿Ç°Ëù×öµÄÏÀÒåÕıÊÂ²»¹»£¬ÕâºóÃæµÄÎä¹¦ÔİÊ±»¹²»ÄÜ½ÌÊÚ"
-                               "¸øÄã¡£",
-				this_object(), me );
-//command("say ºß£¡ÄãÄ¿Ç°Ëù×öµÄÏÀÒåÕıÊÂ²»¹»£¬ÕâºóÃæµÄÎä¹¦ÔİÊ±»¹²»ÄÜ½ÌÊÚ¸øÄã¡£");
-return 1;
-}
+    if (shen > 0 && me->query("shen") < shen) {
+        message_vision("$Nè¯´åˆ°å“¼ï¼ä½ ç›®å‰æ‰€åšçš„ä¾ ä¹‰æ­£äº‹ä¸å¤Ÿï¼Œè¿™åé¢çš„æ­¦åŠŸæš‚æ—¶è¿˜ä¸èƒ½æ•™æˆ"
+                       "ç»™ä½ ã€‚",
+                       this_object(), me);
+//command("say å“¼ï¼ä½ ç›®å‰æ‰€åšçš„ä¾ ä¹‰æ­£äº‹ä¸å¤Ÿï¼Œè¿™åé¢çš„æ­¦åŠŸæš‚æ—¶è¿˜ä¸èƒ½æ•™æˆç»™ä½ ã€‚");
+        return 1;
+    }
 
-		if( me->query_skill(skill, 1) >= 200 && (int)me->query("mpgx")+200<= me->query_skill(skill, 1) ) {
-			message_vision("$NËµµ½,ÄãÎª" + this_object()->query("family/family_name") +
-                       "×÷³öµÄ¹±Ï×²»¹»£¬ÕâºóÃæµÄÎä¹¦ÔİÊ±»¹²»ÄÜ´«Äã¡£\n",
-				this_object(), me );
-//command("say ºß£¡ÄãÎª±¾ÃÅ×÷³öµÄ¹±Ï×²»¹»£¬ÕâºóÃæµÄÎä¹¦ÔİÊ±»¹²»ÄÜ´«Äã¡£¡£");
-			return 1;
-		}
+    if (me->query_skill(skill, 1) >= 200 && (int) me->query("mpgx") + 200 <= me->query_skill(skill, 1)) {
+        message_vision("$Nè¯´åˆ°,ä½ ä¸º" + this_object()->query("family/family_name") +
+                       "ä½œå‡ºçš„è´¡çŒ®ä¸å¤Ÿï¼Œè¿™åé¢çš„æ­¦åŠŸæš‚æ—¶è¿˜ä¸èƒ½ä¼ ä½ ã€‚\n",
+                       this_object(), me);
+//command("say å“¼ï¼ä½ ä¸ºæœ¬é—¨ä½œå‡ºçš„è´¡çŒ®ä¸å¤Ÿï¼Œè¿™åé¢çš„æ­¦åŠŸæš‚æ—¶è¿˜ä¸èƒ½ä¼ ä½ ã€‚ã€‚");
+        return 1;
+    }
 
-	if( !me->is_apprentice_of(this_object())
-	&&	(int)this_object()->query_skill(skill, 1) <= (int)me->query_skill(skill, 1) * 3 
-&& !query("pubmaster")	) {
+    if (!me->is_apprentice_of(this_object())
+        && (int) this_object()->query_skill(skill, 1) <= (int) me->query_skill(skill, 1) * 3
+        && !query("pubmaster")) {
 
 //		command("hmm");
 //		command("pat " + me->query("id"));
-		command("say ËäÈ»ÄãÊÇÎÒÃÅÏÂµÄµÜ×Ó£¬¿ÉÊÇ²¢·ÇÎÒµÄµÕ´«µÜ×Ó ....");
-		command("say ÎÒÖ»ÄÜ½ÌÄãÕâĞ©´ÖÇ³µÄ±¾ÃÅ¹¦·ò£¬ÆäËûµÄ»¹ÊÇÈ¥ÕÒÄãÊ¦¸¸Ñ§°É¡£");
-		return 1;
-	}
+        command("say è™½ç„¶ä½ æ˜¯æˆ‘é—¨ä¸‹çš„å¼Ÿå­ï¼Œå¯æ˜¯å¹¶éæˆ‘çš„å«¡ä¼ å¼Ÿå­ ....");
+        command("say æˆ‘åªèƒ½æ•™ä½ è¿™äº›ç²—æµ…çš„æœ¬é—¨åŠŸå¤«ï¼Œå…¶ä»–çš„è¿˜æ˜¯å»æ‰¾ä½ å¸ˆçˆ¶å­¦å§ã€‚");
+        return 1;
+    }
 
-	return 0;
+    return 0;
 }
-void attempt_detach(object me)
-{
-        if (! me->is_apprentice_of(this_object()))
-        {
-                command("say ±ßÈ¥£¬ÕÒÄãÊ¦¸µ¡£");
-                return;
-        }
 
-        command("sigh");
-        
-        if (! me->query("zhuanshi"))
-        {
-                command("say ×ß°É×ß°É£¡Äã×ß°É£¡°ÑÄãÑ§µ½µÄÎä¹¦ÁôÏÂ£¡");
-
-                me->skill_expell_penalty();
-                me->unconcious();
-
-                message_vision("$N½«ÊÖÕÆÕ³ÔÚ$nµÄ±³ºó£¬à«à«×ÔÓï£¬"
-                               "²»ÖªµÀÔÚËµĞ©Ê²Ã´¡£\n", this_object(), me);
-                //me->add("detach/" + me->query("family/family_name"), 1);
-        }
-        command("say ×ß°É×ß°É£¡ÄãÏÖÔÚ¿ÉÒÔ×ß°É£¡");
-        me->delete("family");
-        me->delete("quest");
-        me->delete("quest_count");
-        me->set("title", "ÆÕÍ¨°ÙĞÕ");
-}
-nomask void master_accept_kill(object me)
-{
-        object *inv;
-
-        inv = all_inventory(environment());
-        for(int i = 0; i < sizeof(inv); i++) 
-        {
-                if (! inv[i]->is_character()
-                || inv[i] == this_object()
-                || inv[i] == me
-                || userp(inv[i])
-                || inv[i]->query("family/family_name") != this_object()->query("family/family_name"))
-                        continue;
-                else 
-                {
-                        message_vision(sprintf("$N³¯$n×Åº°µÀ£º¡°Äã%s£¬ÕæÊÇ»îµÄ²»ÄÍ·³ÁË£¡£¡¡±\n\n",
-                                (me->is_apprentice_of(this_object()))?
-                                "µ¨¸ÒÆÛÊ¦Ãğ×æ":((me->query("family/family_name") == this_object()->query("family/family_name"))?
-                                "Á¬Í¬ÃÅÊ¦¸µ¶¼ÒªÉ±":"¸Ò¶¯±¾ÃÅÊ¦¸µ" )),inv[i],me );
-                        inv[i]->kill_ob(me);
-                        me->kill_ob(inv[i]);
-                }
-        }
+void attempt_detach(object me) {
+    if (!me->is_apprentice_of(this_object())) {
+        command("say è¾¹å»ï¼Œæ‰¾ä½ å¸ˆå‚…ã€‚");
         return;
+    }
+
+    command("sigh");
+
+    if (!me->query("zhuanshi")) {
+        command("say èµ°å§èµ°å§ï¼ä½ èµ°å§ï¼æŠŠä½ å­¦åˆ°çš„æ­¦åŠŸç•™ä¸‹ï¼");
+
+        me->skill_expell_penalty();
+        me->unconcious();
+
+        message_vision("$Nå°†æ‰‹æŒç²˜åœ¨$nçš„èƒŒåï¼Œå–ƒå–ƒè‡ªè¯­ï¼Œ"
+                       "ä¸çŸ¥é“åœ¨è¯´äº›ä»€ä¹ˆã€‚\n", this_object(), me);
+        //me->add("detach/" + me->query("family/family_name"), 1);
+    }
+    command("say èµ°å§èµ°å§ï¼ä½ ç°åœ¨å¯ä»¥èµ°å§ï¼");
+    me->delete("family");
+    me->delete("quest");
+    me->delete("quest_count");
+    me->set("title", "æ™®é€šç™¾å§“");
+}
+
+nomask void master_accept_kill(object me) {
+    object *inv;
+
+    inv = all_inventory(environment());
+    for (int i = 0; i < sizeof(inv); i++) {
+        if (!inv[i]->is_character()
+            || inv[i] == this_object()
+            || inv[i] == me
+            || userp(inv[i])
+            || inv[i]->query("family/family_name") != this_object()->query("family/family_name"))
+            continue;
+        else {
+            message_vision(sprintf("$Næœ$nç€å–Šé“ï¼šâ€œä½ %sï¼ŒçœŸæ˜¯æ´»çš„ä¸è€çƒ¦äº†ï¼ï¼â€\n\n",
+                                   (me->is_apprentice_of(this_object())) ?
+                                   "èƒ†æ•¢æ¬ºå¸ˆç­ç¥–" : ((me->query("family/family_name") ==
+                                                this_object()->query("family/family_name")) ?
+                                               "è¿åŒé—¨å¸ˆå‚…éƒ½è¦æ€" : "æ•¢åŠ¨æœ¬é—¨å¸ˆå‚…")), inv[i], me);
+            inv[i]->kill_ob(me);
+            me->kill_ob(inv[i]);
+        }
+    }
+    return;
 }

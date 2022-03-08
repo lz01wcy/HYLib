@@ -1,4 +1,4 @@
-// pigroom.c ¹°Öí·¿
+// pigroom.c æ‹±çŒªæˆ¿
 // Written by Xiang Tu <tu@uwalpha.uwinnipeg.ca>
 
 #include <pig.h>
@@ -7,12 +7,13 @@
 //inherit F_CLEAN_UP;
 inherit ROOM;
 
-string 	*seat = ({ "north", "west", "south", "east" });
-mapping chinese_seat = ([ 
-	"north": "±±±ß",
-	"west" : "Î÷±ß",
-	"south": "ÄÏ±ß",
-	"east" : "¶«±ß",
+string *seat = ({ "north", "west", "south", "east" });
+mapping chinese_seat =
+([
+"north": "åŒ—è¾¹",
+"west" : "è¥¿è¾¹",
+"south": "å—è¾¹",
+"east" : "ä¸œè¾¹",
 ]);
 
 int pig_stage;
@@ -22,633 +23,629 @@ int bid_flag;
 string bidcard_str = "";
 object server;
 string claimer;
-mapping	pl = allocate_mapping(4),
- 	cards = allocate_mapping(4),
-	card_count = allocate_mapping(4),
-	roundcards = allocate_mapping(4),
-	picks = allocate_mapping(4),
-	pick_count = allocate_mapping(4),
-	passed = allocate_mapping(4),
-	agreed = allocate_mapping(4),
-	hscore = allocate_mapping(4),
-	tscore = allocate_mapping(4);
-	
-string	dealer;
-int	*allow_playbid = allocate(4);
-int 	*oldcards = allocate(52), 
-	*newcards = allocate(52);
+mapping pl = allocate_mapping(4),
+        cards = allocate_mapping(4),
+        card_count = allocate_mapping(4),
+        roundcards = allocate_mapping(4),
+        picks = allocate_mapping(4),
+        pick_count = allocate_mapping(4),
+        passed = allocate_mapping(4),
+        agreed = allocate_mapping(4),
+        hscore = allocate_mapping(4),
+        tscore = allocate_mapping(4);
+
+string dealer;
+int *allow_playbid = allocate(4);
+int *oldcards = allocate(52),
+        *newcards = allocate(52);
 
 int pl_count();
+
 void pig_init();
+
 void deal_init();
+
 void bid_init();
+
 void after_bid();
+
 void round_init(string w);
+
 void after_round();
+
 void play_init();
+
 void after_claim();
+
 void after_play();
+
 void after_round();
+
 void after_winner(string rw);
+
 void after_hand();
+
 void auto_play();
 
 string refresh_str(string dir);
+
 string picks_str();
+
 string table_str(string dir);
+
 string scoreboard_str();
 
-void reset()	// set this room to no_reset
+void reset()    // set this room to no_reset
 {}
 
-int pl_count()
-{
-	int i, r;
-	for (i = r = 0; i < 4; i++)
-		if (objectp(pl[seat[i]]))
-			r++;
-		else
-			map_delete(pl, seat[i]);
-	return r;
-}
-void pig_init()
-{
-	int i;
-	pig_stage = PIG_INITTING;
-	for (i = 0; i < 4; i++) {
-		tscore[seat[i]] = hscore[seat[i]] = 0;
-		cards[seat[i]] = allocate(13);
-		picks[seat[i]] = allocate(16);
-	}
-	for (i = 0; i < 52; i++)
-		oldcards[i] = i;
-}
-void deal_init()
-{
-	pig_stage = PIG_DEALING;
-	tell_room(this_object(), scoreboard_str());
-	tell_room(this_object(),"×À³¤Çë deal £¡\n");
-}
-void bid_init()
-{
-	int i;
-	pig_stage = PIG_BIDDING;
-	bidcard_str = "";
-	bid_flag = 0;
-	for (i = 0; i < 4; i++) {
-		allow_playbid[i] = 1;
-		passed[seat[i]] = 0;
-	}
+int pl_count() {
+    int i, r;
+    for (i = r = 0; i < 4; i++)
+        if (objectp(pl[seat[i]]))
+            r++;
+        else
+            map_delete(pl, seat[i]);
+    return r;
 }
 
-void play_init()
-{
-	int i, j;
-	pig_stage = PIG_PLAYING;
-	round_no = 1;
-	for (i = 0; i < 4; i++) {
-		pick_count[seat[i]] = 0;
-		card_count[seat[i]] = 13;
-		for (j = 0; j < 16; j++)
-			picks[seat[i]][j] = 53;
-		claimer = "";
-		agreed[seat[i]] = 0;
-	}
-	round_init(dealer);
-}
-void round_init(string rw)
-{
-	int i;
-	for (i = 0; i < 4; i++) 
-		roundcards[seat[i]] = -1;
-	roundcard_count = 0;
-	round_order = PIG_D->order_turn(rw);
-	if (pig_stage == PIG_PLAYING)
-		tell_object(pl[rw], refresh_str(rw) + "ÏÖÔÚÂÖµ½Äã³öÅÆ£¡\n");
-}
-	
-void init()
-{
-	add_action("do_sit", "sit");
-	add_action("do_leave", "leave");
-	add_action("do_deal", "deal");
-	add_action("do_bid", "bid");
-	add_action("do_bid", "sell");
-	add_action("do_pass", "pass");
-	add_action("do_play", "play");
-	add_action("do_refresh", "refresh");
-	add_action("do_skip", "skip");
-	add_action("do_claim", "claim");
+void pig_init() {
+    int i;
+    pig_stage = PIG_INITTING;
+    for (i = 0; i < 4; i++) {
+        tscore[seat[i]] = hscore[seat[i]] = 0;
+        cards[seat[i]] = allocate(13);
+        picks[seat[i]] = allocate(16);
+    }
+    for (i = 0; i < 52; i++)
+        oldcards[i] = i;
 }
 
-string picks_str()
-{
-	int i;
-        string r = "", t; 
-        for (i = 0; i < 4; i++) {
-		t = "";
-		if (objectp(pl[seat[i]]))
-                	t = pl[seat[i]]->query("name");
-		else 
-			t = chinese_seat[seat[i]];
-                if (pick_count[seat[i]] > 0) {
-                        t += "¼ñÁËÏÂÃæÕâĞ©ÅÆ£º\n";
-                        t += PIG_D->refresh(picks[seat[i]], 0, pick_count[seat[i]] - 1);
-                }
-                else
-                       	t = "";
-		r += t;
-        }
-	return r;
+void deal_init() {
+    pig_stage = PIG_DEALING;
+    tell_room(this_object(), scoreboard_str());
+    tell_room(this_object(), "æ¡Œé•¿è¯· deal ï¼\n");
 }
 
-string refresh_str(string dir)
-{
+void bid_init() {
+    int i;
+    pig_stage = PIG_BIDDING;
+    bidcard_str = "";
+    bid_flag = 0;
+    for (i = 0; i < 4; i++) {
+        allow_playbid[i] = 1;
+        passed[seat[i]] = 0;
+    }
+}
+
+void play_init() {
+    int i, j;
+    pig_stage = PIG_PLAYING;
+    round_no = 1;
+    for (i = 0; i < 4; i++) {
+        pick_count[seat[i]] = 0;
+        card_count[seat[i]] = 13;
+        for (j = 0; j < 16; j++)
+            picks[seat[i]][j] = 53;
+        claimer = "";
+        agreed[seat[i]] = 0;
+    }
+    round_init(dealer);
+}
+
+void round_init(string rw) {
+    int i;
+    for (i = 0; i < 4; i++)
+        roundcards[seat[i]] = -1;
+    roundcard_count = 0;
+    round_order = PIG_D->order_turn(rw);
+    if (pig_stage == PIG_PLAYING)
+        tell_object(pl[rw], refresh_str(rw) + "ç°åœ¨è½®åˆ°ä½ å‡ºç‰Œï¼\n");
+}
+
+void init() {
+    add_action("do_sit", "sit");
+    add_action("do_leave", "leave");
+    add_action("do_deal", "deal");
+    add_action("do_bid", "bid");
+    add_action("do_bid", "sell");
+    add_action("do_pass", "pass");
+    add_action("do_play", "play");
+    add_action("do_refresh", "refresh");
+    add_action("do_skip", "skip");
+    add_action("do_claim", "claim");
+}
+
+string picks_str() {
+    int i;
+    string r = "", t;
+    for (i = 0; i < 4; i++) {
+        t = "";
+        if (objectp(pl[seat[i]]))
+            t = pl[seat[i]]->query("name");
+        else
+            t = chinese_seat[seat[i]];
+        if (pick_count[seat[i]] > 0) {
+            t += "æ¡äº†ä¸‹é¢è¿™äº›ç‰Œï¼š\n";
+            t += PIG_D->refresh(picks[seat[i]], 0, pick_count[seat[i]] - 1);
+        } else
+            t = "";
+        r += t;
+    }
+    return r;
+}
+
+string refresh_str(string dir) {
 //	if (dir != "north" && dir != "west" && dir != "south" && dir != "east")
-		return PIG_D->refresh(cards[dir], 0, card_count[dir] - 1);
+    return PIG_D->refresh(cards[dir], 0, card_count[dir] - 1);
 //	return "";
 }
-	
 
-string table_str(string dir)	// what's going on in table ?
+
+string table_str(string dir)    // what's going on in table ?
 {
-	int i;
-	mapping rseat = ([]);
-	string r = "", z = "";
+    int i;
+    mapping
+    rseat = ([]);
+    string r = "", z = "";
 
-	if (pig_stage == PIG_PLAYING && pl_count() == 4) { // if in playing mode
-		if (dir != "north" && dir != "west" && dir != "south" 
-			&& dir != "east")
-			rseat = PIG_D->order_turn("north");
-		else
-			rseat = PIG_D->order_turn(dir);
-//		r = "×ÀÉÏÃæÕıÔÚ¼¤ÁÒµÄ¹°×Å£¡£¡\n";
-	
-		if (roundcard_count < 4)
-			r = sprintf("ÏÖÔÚÊÇµÚ%sÂÖ£¬¸ÃÓÉ%s³öÅÆ¡£\n", 
-			chinese_number(round_no), 
-			pl[round_order[roundcard_count]]->query("name"));
-		if (bidcard_str != "")
-			r += "ÂôÁËµÄÅÆ£º" + bidcard_str + "\n\n";
-		else
-			r += "Ã»ÓĞÈËÂôÅÆ¡£\n";
-		r = sprintf("%s%24s£¨%s£©\n", r, "", pl[rseat[2]]->query("name"));	// writes north name
-		r = sprintf("%s%26s%s\n", r, "", 
-			PIG_D->card_str(roundcards[rseat[2]]));
-		r = sprintf("%s%4s%16s%6s%6s%6s%s\n", r, "", "£¨" + 
-			pl[rseat[3]]->query("name") + "£©", 
-			PIG_D->card_str(roundcards[rseat[3]]), "", 
-			PIG_D->card_str(roundcards[rseat[1]]), "£¨" +
-			pl[rseat[1]]->query("name") + "£©");
-		r = sprintf("%s%26s%s\n", r, "",
-			PIG_D->card_str(roundcards[rseat[0]]));
-		r = sprintf("%s%24s£¨%s£©\n", r, "", pl[rseat[0]]->query("name"));
-		if (card_count[dir] > 0)
-			r += refresh_str(dir);
-		r += picks_str();
-	}
-	else {
-	        r = "ÕâÊÇÒ»ÕÅ×¨ÃÅÓÃÓÚ¹°ÖíµÄËÄ·½×À¡£\n\n";
-               	if (bidcard_str != "")
-                        r += "ÂôÁËµÄÅÆ£º" + bidcard_str + "\n\n";
-                else
-                        r += "Ã»ÓĞÈËÂôÅÆ¡£\n";
-		for (i = 0; i < 4; i++) 
-			if (objectp(pl[seat[i]])) {
-				if (pl[seat[i]] == server) z = "@"; else z = "";
-				r = sprintf("%s%sµÄÒÎ×ÓÉÏ×øµÄÊÇ£º%s(%s)%s¡£\n", r,
-				chinese_seat[seat[i]], pl[seat[i]]->query("name"),
-				pl[seat[i]]->query("id"), z);
-			}
-			else
-				r = sprintf("%s%4sµÄÒÎ×ÓÊÇ¿ÕµÄ¡£Èç¹ûÄãÏëÍæ£¬¿ÉÒÔÓÃ sit %-5s ×øÉÏÈ¥¡£\n",
-				r, chinese_seat[seat[i]], seat[i]);
-	}
-	return r;
+    if (pig_stage == PIG_PLAYING && pl_count() == 4) { // if in playing mode
+        if (dir != "north" && dir != "west" && dir != "south"
+            && dir != "east")
+            rseat = PIG_D->order_turn("north");
+        else
+            rseat = PIG_D->order_turn(dir);
+//		r = "æ¡Œä¸Šé¢æ­£åœ¨æ¿€çƒˆçš„æ‹±ç€ï¼ï¼\n";
+
+        if (roundcard_count < 4)
+            r = sprintf("ç°åœ¨æ˜¯ç¬¬%sè½®ï¼Œè¯¥ç”±%så‡ºç‰Œã€‚\n",
+                        chinese_number(round_no),
+                        pl[round_order[roundcard_count]]->query("name"));
+        if (bidcard_str != "")
+            r += "å–äº†çš„ç‰Œï¼š" + bidcard_str + "\n\n";
+        else
+            r += "æ²¡æœ‰äººå–ç‰Œã€‚\n";
+        r = sprintf("%s%24sï¼ˆ%sï¼‰\n", r, "", pl[rseat[2]]->query("name"));    // writes north name
+        r = sprintf("%s%26s%s\n", r, "",
+                    PIG_D->card_str(roundcards[rseat[2]]));
+        r = sprintf("%s%4s%16s%6s%6s%6s%s\n", r, "", "ï¼ˆ" +
+                                                     pl[rseat[3]]->query("name") + "ï¼‰",
+                    PIG_D->card_str(roundcards[rseat[3]]), "",
+                    PIG_D->card_str(roundcards[rseat[1]]), "ï¼ˆ" +
+                                                           pl[rseat[1]]->query("name") + "ï¼‰");
+        r = sprintf("%s%26s%s\n", r, "",
+                    PIG_D->card_str(roundcards[rseat[0]]));
+        r = sprintf("%s%24sï¼ˆ%sï¼‰\n", r, "", pl[rseat[0]]->query("name"));
+        if (card_count[dir] > 0)
+            r += refresh_str(dir);
+        r += picks_str();
+    } else {
+        r = "è¿™æ˜¯ä¸€å¼ ä¸“é—¨ç”¨äºæ‹±çŒªçš„å››æ–¹æ¡Œã€‚\n\n";
+        if (bidcard_str != "")
+            r += "å–äº†çš„ç‰Œï¼š" + bidcard_str + "\n\n";
+        else
+            r += "æ²¡æœ‰äººå–ç‰Œã€‚\n";
+        for (i = 0; i < 4; i++)
+            if (objectp(pl[seat[i]])) {
+                if (pl[seat[i]] == server) z = "@"; else z = "";
+                r = sprintf("%s%sçš„æ¤…å­ä¸Šåçš„æ˜¯ï¼š%s(%s)%sã€‚\n", r,
+                            chinese_seat[seat[i]], pl[seat[i]]->query("name"),
+                            pl[seat[i]]->query("id"), z);
+            } else
+                r = sprintf("%s%4sçš„æ¤…å­æ˜¯ç©ºçš„ã€‚å¦‚æœä½ æƒ³ç©ï¼Œå¯ä»¥ç”¨ sit %-5s åä¸Šå»ã€‚\n",
+                            r, chinese_seat[seat[i]], seat[i]);
+    }
+    return r;
 }
 
-string scoreboard_str()
-{
-	int i;
-	string r;
-	r = "¹°Öí³É¼¨±í(Scoreboard)\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\nĞÕÃû¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÅÌ·Ö¡¡¡¡¡¡×Ü·Ö\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
-	for (i = 0; i < 4; i++)
-		if (objectp(pl[seat[i]]))
-			r = sprintf("%s%-14s%10d%10d\n", r,
-			(string)pl[seat[i]]->query("name"),
-			(int)hscore[seat[i]], (int)tscore[seat[i]]);
-	return r + "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
+string scoreboard_str() {
+    int i;
+    string r;
+    r = "æ‹±çŒªæˆç»©è¡¨(Scoreboard)\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\nå§“åã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ç›˜åˆ†ã€€ã€€ã€€æ€»åˆ†\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
+    for (i = 0; i < 4; i++)
+        if (objectp(pl[seat[i]]))
+            r = sprintf("%s%-14s%10d%10d\n", r,
+                        (string) pl[seat[i]]->query("name"),
+                        (int) hscore[seat[i]], (int) tscore[seat[i]]);
+    return r + "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
 }
 
-void score_reset()
-{
-	int i;
-	for (i = 0; i < 4; i++)
-		tscore[seat[i]] = 0;
+void score_reset() {
+    int i;
+    for (i = 0; i < 4; i++)
+        tscore[seat[i]] = 0;
 }
 
-int do_skip(string arg)
-{
-	if (!this_player()->query_temp("pigging_seat"))
-		return notify_fail("ÄãÃ»ÓĞÔÚ¹°Öí£¡\n");
-	if (this_player() != server)
-		return notify_fail("Ö»ÓĞ×À³¤²ÅÄÜÌø¹ıÕâ¸±ÅÆ£¡\n");
-	if (pig_stage < PIG_BIDDING)
-		return notify_fail("ÅÆ¶¼Ã»ÓĞ£¬ÌøÊ²Ã´£¿\n");
-	message_vision("×À³¤$N¾ö¶¨Ìø¹ıÕâ¸±ÅÆ£¡£¡\n", server);
-	if (pl_count() == 4)
-		deal_init();
-	return 1;
+int do_skip(string arg) {
+    if (!this_player()->query_temp("pigging_seat"))
+        return notify_fail("ä½ æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    if (this_player() != server)
+        return notify_fail("åªæœ‰æ¡Œé•¿æ‰èƒ½è·³è¿‡è¿™å‰¯ç‰Œï¼\n");
+    if (pig_stage < PIG_BIDDING)
+        return notify_fail("ç‰Œéƒ½æ²¡æœ‰ï¼Œè·³ä»€ä¹ˆï¼Ÿ\n");
+    message_vision("æ¡Œé•¿$Nå†³å®šè·³è¿‡è¿™å‰¯ç‰Œï¼ï¼\n", server);
+    if (pl_count() == 4)
+        deal_init();
+    return 1;
 }
 
-void after_claim()
-{
-	int i, j, k;
-	for (i = 0; i < roundcard_count; i++) 
-		if (PIG_D->is_special(roundcards[i]))
-			picks[claimer][pick_count[claimer]++] = roundcards[j];
-	for (i = 0; i < 4; i++)
-		for (j = 0; j < card_count[seat[i]]; j++)
-			if (PIG_D->is_special(cards[seat[i]][j]))
-				picks[claimer][pick_count[claimer]++] = cards[seat[i]][j];
-	after_hand();
-}
-int do_claim(string arg)
-{
-	int i;
-	object me = this_player();
-	if (!me->query_temp("pigging_seat"))
-		return notify_fail("ÄãÃ»ÓĞÔÚ¹°Öí£¡\n");
-	if (pl_count() != 4)
-		return notify_fail("ÏÖÔÚ×À×ÓÉÏÃ»×øÂú£¡\n");
-	if (pig_stage != PIG_PLAYING)
-		return notify_fail("ÄãÏë¸ÉÊ²Ã´£¿\n");
-	if (claimer == me->query_temp("pigging_seat"))
-		return notify_fail("Ò»´Î¾Í¹»ÁË£¡\n");
-	if (!arg) {
-		if (claimer != "")
-			return notify_fail("claim yes|no £¿\n");
-		agreed[claimer = me->query_temp("pigging_seat")] = 1;
-		write("Äã·¢³öÈ«ÊÕµÄÒªÇó£¡µÈ´ı»ØÒô¡­¡­\n");
-		for (i = 0; i < 4; i++)
-			if (seat[i] != claimer)
-				tell_object(pl[seat[i]], me->query("name") + 
-					"ÈÏÎªËûÊÖÖĞµÄÅÆ¶¼ÊÇ´óµÄÁË£¡\n" +
-					refresh_str(me->query_temp("pigging_seat")) +
-					"ÇëÓÃ claim yes Í¨¹ı£¬»òÕß claim no ·ñ¾ö¡£\n");
-		return 1;
-	}
-	if (arg == "yes") {
-		if (claimer == "")
-			return notify_fail("Ã»ÓĞÈËÏëÈ«ÊÕ£¡\n");
-		if (!agreed[me->query_temp("pigging_seat")]) {
-			agreed[me->query_temp("pigging_seat")] = 1;
-			message_vision("$NÍ¬Òâ$nµÄÅÆ¶¼ÊÇ´óµÄÁË£¡\n", me, pl[claimer]);
-			for (i = 0; i < 4; i++)
-				if (agreed[seat[i]] != 1)
-					return 1;
-			message_vision("$NµÄÒªÇó±»Í¨¹ıÁË£¡£¡\n", pl[claimer]);
-			after_claim();
-			return 1;
-		}
-	}
-	if (arg == "no") {
-		if (claimer == "")
-			return notify_fail("Ã»ÓĞÈËÏëÈ«ÊÕ£¡\n");
-		message_vision("$N·ñ¾öÁË$nµÄÒªÇó£¡£¡\n¼ÌĞø³öÅÆ£¡\n", me, pl[claimer]);
-		claimer = "";
-		for (i = 0; i < 4; i++)
-			agreed[seat[i]] = 0;
-		return 1;
-	}
-	else
-		return notify_fail("claim Ê²Ã´£¿\n");
-}
-	
-
-int do_sit(string arg)
-{
-	object me = this_player();
-
-	if (!arg || (arg != "north" && arg != "west" && arg != "south" && arg != "east"))
-		return notify_fail("ÄãÏë×øÔÚÄÄÀï£¿\n");
-
-	if (server == me)
-		return notify_fail("×À³¤²»ÄÜ»»×øÎ»£¡\n");
-
-	map_delete(pl, (string)me->query_temp("pigging_seat"));
-		
-	if (!objectp(pl[arg])) {
-		if (!pl_count()) {
-			pig_init();
-			server = me;
-			write("ÄãÏÖÔÚÊÇ×À³¤£¡\n");
-			round_order = PIG_D->order_turn(dealer = arg);
-		}
-		pl[arg] = me;
-		me->set_temp("pigging_seat", arg);
-		message_vision("$N×øÉÏÁË" + chinese_seat[arg] + "µÄÎ»×Ó¡£\n", me);
-		if (pl_count() == 3)
-			tell_room(this_object(), "ÏÖÔÚÊÇÈıÈ±Ò»£¬ÄãÃÇÖ»ÔÙĞèÒªÒ»¸öÍæ¼Ò¾Í¿ÉÒÔ¿ª¹°ÁË£¡\n");
-		if (pl_count() == 4) {
-			tell_room(this_object(), "ºÃ£¬ÈË´ÕÆëÁË£¡\n");
-			deal_init();
-		}
-		return 1;
-	}
-	else
-		return notify_fail("Õâ¸öÎ»×ÓÉÏÒÑ¾­ÓĞÈËÁË£¡\n");
+void after_claim() {
+    int i, j, k;
+    for (i = 0; i < roundcard_count; i++)
+        if (PIG_D->is_special(roundcards[i]))
+            picks[claimer][pick_count[claimer]++] = roundcards[j];
+    for (i = 0; i < 4; i++)
+        for (j = 0; j < card_count[seat[i]]; j++)
+            if (PIG_D->is_special(cards[seat[i]][j]))
+                picks[claimer][pick_count[claimer]++] = cards[seat[i]][j];
+    after_hand();
 }
 
-int do_leave(string arg)
-{
-	int i;
-	object me = this_player();
-
-	if (!me->query_temp("pigging_seat", arg))
-		return notify_fail("ÄãÏÖÔÚÃ»ÓĞÔÚ¹°Öí£¡\n");
-	else if (server == me) {
-		message_vision("×À³¤$N²»ÏëÔÙ¹°ÏÂÈ¥ÁË£¡\n", me);
-		server = 0;
-		for (i = 0; i < 4; i++) 
-			if (objectp(pl[seat[i]])) {
-				message_vision("$NÕ¾ÁËÆğÀ´¡£\n", pl[seat[i]]);
-				pl[seat[i]]->delete_temp("pigging_seat");
-				map_delete(pl, seat[i]);
-			}
-		pig_stage = PIG_INITTING;
-		return 1;
-	}
-	else {
-		map_delete(pl, (string)me->query_temp("pigging_seat"));
-		me->delete_temp("pigging_seat");
-		message_vision("$N²»ÏëÔÙ¹°ÁË£¬Õ¾ÁËÆğÀ´£¡\n", me);
-		return 1;
-	}
-}
-
-void do_assign_cards()	// assign cards to players
-{
-	int i, j, k = 0;
-
-	for (i = 0; i < 13; i++)
-		for (j = 0; j < 4; j++) 
-			cards[seat[j]][i] = newcards[k++];
-	for (i = 0; i < 4; i++) {
-		cards[seat[i]] = sort_array(cards[seat[i]], 1);
-		tell_object(pl[seat[i]], PIG_D->refresh(cards[seat[i]], 0, 12));
-		card_count[seat[i]] = 13;
-	}
-}
-
-int do_deal(string arg)
-{
-	int i, j, k;
-	object me = this_player();
-	if (me != server)
-		return notify_fail("Äã²»ÊÇ×À³¤£¡\n");
-	if (pig_stage != PIG_DEALING || pl_count() != 4)
-		return notify_fail("ÏÖÔÚ²»ÄÜ·¢ÅÆ£¡\n");
-	PIG_D->shuffle(oldcards, newcards, 2);
-
-	for (i = 0; i < 13; i++)
-		for (j = 0; j < 4; j++) 
-			cards[seat[j]][i] = newcards[k++];
-	for (i = 0; i < 4; i++) {
-		cards[seat[i]] = sort_array(cards[seat[i]], 1);
-		tell_object(pl[seat[i]], "ÄãµÃµ½µÄÅÆÎª£º\n" +
-			PIG_D->refresh(cards[seat[i]], 0, 12));
-		card_count[seat[i]] = 13;
+int do_claim(string arg) {
+    int i;
+    object me = this_player();
+    if (!me->query_temp("pigging_seat"))
+        return notify_fail("ä½ æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    if (pl_count() != 4)
+        return notify_fail("ç°åœ¨æ¡Œå­ä¸Šæ²¡åæ»¡ï¼\n");
+    if (pig_stage != PIG_PLAYING)
+        return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆï¼Ÿ\n");
+    if (claimer == me->query_temp("pigging_seat"))
+        return notify_fail("ä¸€æ¬¡å°±å¤Ÿäº†ï¼\n");
+    if (!arg) {
+        if (claimer != "")
+            return notify_fail("claim yes|no ï¼Ÿ\n");
+        agreed[claimer = me->query_temp("pigging_seat")] = 1;
+        write("ä½ å‘å‡ºå…¨æ”¶çš„è¦æ±‚ï¼ç­‰å¾…å›éŸ³â€¦â€¦\n");
+        for (i = 0; i < 4; i++)
+            if (seat[i] != claimer)
+                tell_object(pl[seat[i]], me->query("name") +
+                                         "è®¤ä¸ºä»–æ‰‹ä¸­çš„ç‰Œéƒ½æ˜¯å¤§çš„äº†ï¼\n" +
+                                         refresh_str(me->query_temp("pigging_seat")) +
+                                         "è¯·ç”¨ claim yes é€šè¿‡ï¼Œæˆ–è€… claim no å¦å†³ã€‚\n");
+        return 1;
+    }
+    if (arg == "yes") {
+        if (claimer == "")
+            return notify_fail("æ²¡æœ‰äººæƒ³å…¨æ”¶ï¼\n");
+        if (!agreed[me->query_temp("pigging_seat")]) {
+            agreed[me->query_temp("pigging_seat")] = 1;
+            message_vision("$NåŒæ„$nçš„ç‰Œéƒ½æ˜¯å¤§çš„äº†ï¼\n", me, pl[claimer]);
+            for (i = 0; i < 4; i++)
+                if (agreed[seat[i]] != 1)
+                    return 1;
+            message_vision("$Nçš„è¦æ±‚è¢«é€šè¿‡äº†ï¼ï¼\n", pl[claimer]);
+            after_claim();
+            return 1;
         }
-	tell_room(this_object(), "·¢ÍêÅÆÁË£¬ÓĞË­ÒªÂôÅÆµÄÃ»ÓĞ£¿\n");
-	tell_room(this_object(), "Èç¹ûÄãÂôÍêÁËÅÆ£¬´òÒ»ÏÂ pass ¡£\n");
-	bid_init();
-	return 1;
+    }
+    if (arg == "no") {
+        if (claimer == "")
+            return notify_fail("æ²¡æœ‰äººæƒ³å…¨æ”¶ï¼\n");
+        message_vision("$Nå¦å†³äº†$nçš„è¦æ±‚ï¼ï¼\nç»§ç»­å‡ºç‰Œï¼\n", me, pl[claimer]);
+        claimer = "";
+        for (i = 0; i < 4; i++)
+            agreed[seat[i]] = 0;
+        return 1;
+    } else
+        return notify_fail("claim ä»€ä¹ˆï¼Ÿ\n");
 }
 
-int do_refresh(string arg)
-{
-	object me = this_player();
-	if (!me->query_temp("pigging_seat"))
-		return notify_fail("ÄãÃ»ÓĞÔÚ¹°Öí£¡\n");
-	if (pig_stage < PIG_BIDDING || 
-		card_count[me->query_temp("pigging_seat")] < 1)
-		return notify_fail("ÄãÊÖÉÏÃ»ÓĞÅÆ£¡\n");
-	tell_object(pl[(string)me->query_temp("pigging_seat")], 
-		"ÄãÊÖÉÏÓĞÕâĞ©ÅÆ£º\n" + refresh_str(me->query_temp("pigging_seat")));
-	return 1;
+
+int do_sit(string arg) {
+    object me = this_player();
+
+    if (!arg || (arg != "north" && arg != "west" && arg != "south" && arg != "east"))
+        return notify_fail("ä½ æƒ³ååœ¨å“ªé‡Œï¼Ÿ\n");
+
+    if (server == me)
+        return notify_fail("æ¡Œé•¿ä¸èƒ½æ¢åä½ï¼\n");
+
+    map_delete(pl, (string) me->query_temp("pigging_seat"));
+
+    if (!objectp(pl[arg])) {
+        if (!pl_count()) {
+            pig_init();
+            server = me;
+            write("ä½ ç°åœ¨æ˜¯æ¡Œé•¿ï¼\n");
+            round_order = PIG_D->order_turn(dealer = arg);
+        }
+        pl[arg] = me;
+        me->set_temp("pigging_seat", arg);
+        message_vision("$Nåä¸Šäº†" + chinese_seat[arg] + "çš„ä½å­ã€‚\n", me);
+        if (pl_count() == 3)
+            tell_room(this_object(), "ç°åœ¨æ˜¯ä¸‰ç¼ºä¸€ï¼Œä½ ä»¬åªå†éœ€è¦ä¸€ä¸ªç©å®¶å°±å¯ä»¥å¼€æ‹±äº†ï¼\n");
+        if (pl_count() == 4) {
+            tell_room(this_object(), "å¥½ï¼Œäººå‡‘é½äº†ï¼\n");
+            deal_init();
+        }
+        return 1;
+    } else
+        return notify_fail("è¿™ä¸ªä½å­ä¸Šå·²ç»æœ‰äººäº†ï¼\n");
 }
 
-int do_bid(string arg)
-{
-	object me = this_player();
-	int c, b;
-	string ts;
+int do_leave(string arg) {
+    int i;
+    object me = this_player();
 
-	if (!me->query_temp("pigging_seat"))
-		return notify_fail("ÄãÃ»ÓĞÔÚ¹°Öí£¡\n");
-	if (pig_stage != PIG_BIDDING)
-		return notify_fail("ÏÖÔÚ²»ÊÇÂôÅÆµÄÊ±ºò£¡\n");
-	if (!arg)
-		return notify_fail("ÄãÏëÂôÊ²Ã´£¿\n");
-	if ((c = PIG_D->is_validcard(arg)) == -1 ||
-		!PIG_D->has_card(cards[me->query_temp("pigging_seat")], 0, 12, c))
-		return notify_fail("ÄãÊÖÉÏÃ»ÓĞÕâÕÅÅÆ£¡\n");
-	if (!(b = PIG_D->is_validbid(c)))
-		return notify_fail("ÕâÕÅÅÆ²»ÄÜ±»Âô£¡\n");
-	if (bid_flag & b)
-		return notify_fail("ÕâÕÅÅÆÒÑ¾­±»Âô¹ıÁË£¡\n");
-	bid_flag |= b;
-	switch (b) {
-	case BID_SPIG :
-		allow_playbid[0] = 0; break;
-	case BID_HACE :
-		allow_playbid[1] = 0; break;
-	case BID_DSHEEP :
-		allow_playbid[2] = 0; break;
-	case BID_CTRANS :
-		allow_playbid[3] = 0; break;
-	}
-	message_vision("$NËµµÀ£ºÎÒÂô" + PIG_D->card_str(c) + "£¡\n", me);
-	ts = "";
-	if (bidcard_str != "") ts = "£¬";
-	bidcard_str = PIG_D->card_str(c) + "£¨" + me->query("name") + "£©" +
-		ts + bidcard_str;
-
-	return 1;
+    if (!me->query_temp("pigging_seat", arg))
+        return notify_fail("ä½ ç°åœ¨æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    else if (server == me) {
+        message_vision("æ¡Œé•¿$Nä¸æƒ³å†æ‹±ä¸‹å»äº†ï¼\n", me);
+        server = 0;
+        for (i = 0; i < 4; i++)
+            if (objectp(pl[seat[i]])) {
+                message_vision("$Nç«™äº†èµ·æ¥ã€‚\n", pl[seat[i]]);
+                pl[seat[i]]->delete_temp("pigging_seat");
+                map_delete(pl, seat[i]);
+            }
+        pig_stage = PIG_INITTING;
+        return 1;
+    } else {
+        map_delete(pl, (string) me->query_temp("pigging_seat"));
+        me->delete_temp("pigging_seat");
+        message_vision("$Nä¸æƒ³å†æ‹±äº†ï¼Œç«™äº†èµ·æ¥ï¼\n", me);
+        return 1;
+    }
 }
 
-int do_pass(string arg)
+void do_assign_cards()    // assign cards to players
 {
-	object me = this_player();
-	int i;
+    int i, j, k = 0;
 
-	if (!me->query_temp("pigging_seat"))
-		return notify_fail("ÄãÃ»ÓĞÔÚ¹°Öí£¡\n");
-	if (pig_stage != PIG_BIDDING)
-		return notify_fail("ÄãÏë¸ÉÊ²Ã´£¿\n");
-	if (passed[me->query_temp("pigging_seat")] == 1)
-		return notify_fail("ÄãÒÑ¾­Í£ÂôÁË£¡\n");
-	passed[me->query_temp("pigging_seat")] = 1;
-	message_vision("$NËµµÀ£ºÎÒÍ£Âô£¡\n", me);
-	for (i = 0; i < 4; i++) 
-		if ((int)passed[seat[i]] == 0)
-			return 1;
-
-	for (i = 0; i < 4; i++)
-		passed[seat[i]] = 0;
-	tell_room(this_object(), "È«²¿Í£Âô£¬¿ª¹°£¡£¡\n");
-	tell_room(this_object(), "Õâ°ÑÓÉ" + pl[dealer]->query("name") + "ÏÈ³ö¡£\n");
-
-	play_init();
-	return 1;
+    for (i = 0; i < 13; i++)
+        for (j = 0; j < 4; j++)
+            cards[seat[j]][i] = newcards[k++];
+    for (i = 0; i < 4; i++) {
+        cards[seat[i]] = sort_array(cards[seat[i]], 1);
+        tell_object(pl[seat[i]], PIG_D->refresh(cards[seat[i]], 0, 12));
+        card_count[seat[i]] = 13;
+    }
 }
 
-void after_play()
-{
-	int i;
-	roundcard_count++;
-	for (i = 0; i < 4; i++) 
-		if (card_count[seat[i]] > 0)
-			tell_object(pl[seat[i]], table_str(seat[i])); 
-	if (roundcard_count > 3)
-		after_round();
-}
-	
-void after_winner(string rw)
-{
-	int i;
-	message_vision("$NµÄ" + PIG_D->card_str(roundcards[rw]) + "×î´ó£¡\n", pl[rw]);
-	for (i = 0; i < 4; i++)
-                if (PIG_D->is_special(roundcards[seat[i]])) {
-                        picks[rw][pick_count[rw]++] = 
-                                roundcards[seat[i]];
-                        if (roundcards[seat[i]] == SPIG) {
-				message_vision("$NµÃµ½ÁËÖíÍ·£¡£¡\n", pl[rw]);
-                                dealer = rw;
-			}
-                }
-        picks[rw] = sort_array(picks[rw], 1);
+int do_deal(string arg) {
+    int i, j, k;
+    object me = this_player();
+    if (me != server)
+        return notify_fail("ä½ ä¸æ˜¯æ¡Œé•¿ï¼\n");
+    if (pig_stage != PIG_DEALING || pl_count() != 4)
+        return notify_fail("ç°åœ¨ä¸èƒ½å‘ç‰Œï¼\n");
+    PIG_D->shuffle(oldcards, newcards, 2);
+
+    for (i = 0; i < 13; i++)
+        for (j = 0; j < 4; j++)
+            cards[seat[j]][i] = newcards[k++];
+    for (i = 0; i < 4; i++) {
+        cards[seat[i]] = sort_array(cards[seat[i]], 1);
+        tell_object(pl[seat[i]], "ä½ å¾—åˆ°çš„ç‰Œä¸ºï¼š\n" +
+                                 PIG_D->refresh(cards[seat[i]], 0, 12));
+        card_count[seat[i]] = 13;
+    }
+    tell_room(this_object(), "å‘å®Œç‰Œäº†ï¼Œæœ‰è°è¦å–ç‰Œçš„æ²¡æœ‰ï¼Ÿ\n");
+    tell_room(this_object(), "å¦‚æœä½ å–å®Œäº†ç‰Œï¼Œæ‰“ä¸€ä¸‹ pass ã€‚\n");
+    bid_init();
+    return 1;
 }
 
-void after_round()
-{
-	int i;
-	string rw;
-
-	allow_playbid[SUIT(roundcards[round_order[0]])] = 1;
-	after_winner(rw = PIG_D->card_cmp4(roundcards, SUIT(roundcards[round_order[0]])));
-	round_init(rw);
-	
-	if (round_no++ == 12) 
-		auto_play();  // starts auto_play
+int do_refresh(string arg) {
+    object me = this_player();
+    if (!me->query_temp("pigging_seat"))
+        return notify_fail("ä½ æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    if (pig_stage < PIG_BIDDING ||
+        card_count[me->query_temp("pigging_seat")] < 1)
+        return notify_fail("ä½ æ‰‹ä¸Šæ²¡æœ‰ç‰Œï¼\n");
+    tell_object(pl[(string) me->query_temp("pigging_seat")],
+                "ä½ æ‰‹ä¸Šæœ‰è¿™äº›ç‰Œï¼š\n" + refresh_str(me->query_temp("pigging_seat")));
+    return 1;
 }
-void auto_play()
-{
-	int i;
-	for (i = 0; i < 4; i++)
-		roundcards[seat[i]] = cards[seat[i]][0];
-	roundcard_count = 4;
+
+int do_bid(string arg) {
+    object me = this_player();
+    int c, b;
+    string ts;
+
+    if (!me->query_temp("pigging_seat"))
+        return notify_fail("ä½ æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    if (pig_stage != PIG_BIDDING)
+        return notify_fail("ç°åœ¨ä¸æ˜¯å–ç‰Œçš„æ—¶å€™ï¼\n");
+    if (!arg)
+        return notify_fail("ä½ æƒ³å–ä»€ä¹ˆï¼Ÿ\n");
+    if ((c = PIG_D->is_validcard(arg)) == -1 ||
+        !PIG_D->has_card(cards[me->query_temp("pigging_seat")], 0, 12, c))
+        return notify_fail("ä½ æ‰‹ä¸Šæ²¡æœ‰è¿™å¼ ç‰Œï¼\n");
+    if (!(b = PIG_D->is_validbid(c)))
+        return notify_fail("è¿™å¼ ç‰Œä¸èƒ½è¢«å–ï¼\n");
+    if (bid_flag & b)
+        return notify_fail("è¿™å¼ ç‰Œå·²ç»è¢«å–è¿‡äº†ï¼\n");
+    bid_flag |= b;
+    switch (b) {
+        case BID_SPIG :
+            allow_playbid[0] = 0;
+            break;
+        case BID_HACE :
+            allow_playbid[1] = 0;
+            break;
+        case BID_DSHEEP :
+            allow_playbid[2] = 0;
+            break;
+        case BID_CTRANS :
+            allow_playbid[3] = 0;
+            break;
+    }
+    message_vision("$Nè¯´é“ï¼šæˆ‘å–" + PIG_D->card_str(c) + "ï¼\n", me);
+    ts = "";
+    if (bidcard_str != "") ts = "ï¼Œ";
+    bidcard_str = PIG_D->card_str(c) + "ï¼ˆ" + me->query("name") + "ï¼‰" +
+                  ts + bidcard_str;
+
+    return 1;
+}
+
+int do_pass(string arg) {
+    object me = this_player();
+    int i;
+
+    if (!me->query_temp("pigging_seat"))
+        return notify_fail("ä½ æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    if (pig_stage != PIG_BIDDING)
+        return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆï¼Ÿ\n");
+    if (passed[me->query_temp("pigging_seat")] == 1)
+        return notify_fail("ä½ å·²ç»åœå–äº†ï¼\n");
+    passed[me->query_temp("pigging_seat")] = 1;
+    message_vision("$Nè¯´é“ï¼šæˆ‘åœå–ï¼\n", me);
+    for (i = 0; i < 4; i++)
+        if ((int) passed[seat[i]] == 0)
+            return 1;
+
+    for (i = 0; i < 4; i++)
+        passed[seat[i]] = 0;
+    tell_room(this_object(), "å…¨éƒ¨åœå–ï¼Œå¼€æ‹±ï¼ï¼\n");
+    tell_room(this_object(), "è¿™æŠŠç”±" + pl[dealer]->query("name") + "å…ˆå‡ºã€‚\n");
+
+    play_init();
+    return 1;
+}
+
+void after_play() {
+    int i;
+    roundcard_count++;
+    for (i = 0; i < 4; i++)
+        if (card_count[seat[i]] > 0)
+            tell_object(pl[seat[i]], table_str(seat[i]));
+    if (roundcard_count > 3)
+        after_round();
+}
+
+void after_winner(string rw) {
+    int i;
+    message_vision("$Nçš„" + PIG_D->card_str(roundcards[rw]) + "æœ€å¤§ï¼\n", pl[rw]);
+    for (i = 0; i < 4; i++)
+        if (PIG_D->is_special(roundcards[seat[i]])) {
+            picks[rw][pick_count[rw]++] =
+                    roundcards[seat[i]];
+            if (roundcards[seat[i]] == SPIG) {
+                message_vision("$Nå¾—åˆ°äº†çŒªå¤´ï¼ï¼\n", pl[rw]);
+                dealer = rw;
+            }
+        }
+    picks[rw] = sort_array(picks[rw], 1);
+}
+
+void after_round() {
+    int i;
+    string rw;
+
+    allow_playbid[SUIT(roundcards[round_order[0]])] = 1;
+    after_winner(rw = PIG_D->card_cmp4(roundcards, SUIT(roundcards[round_order[0]])));
+    round_init(rw);
+
+    if (round_no++ == 12)
+        auto_play();  // starts auto_play
+}
+
+void auto_play() {
+    int i;
+    for (i = 0; i < 4; i++)
+        roundcards[seat[i]] = cards[seat[i]][0];
+    roundcard_count = 4;
+    for (i = 0; i < 4; i++) {
+        card_count[seat[i]] = 0;
+        tell_object(pl[seat[i]], table_str(seat[i]));
+    }
+    after_winner(PIG_D->card_cmp4(roundcards, SUIT(roundcards[round_order[0]])));
+    after_hand();
+}
+
+void after_hand() {
+    // doing the scoring here
+    int i;
+    string collect_all = "";
+
+    for (i = 0; i < 4; i++) {
+        hscore[seat[i]] = PIG_D->count_score(picks[seat[i]], bid_flag);
+        if (hscore[seat[i]] == 1000)
+            collect_all = seat[i];
+        pl[seat[i]]->add("pig_played", 1);
+        pl[seat[i]]->add("pig_score", hscore[seat[i]]);
+    }
+    if (collect_all == "")
         for (i = 0; i < 4; i++) {
-		card_count[seat[i]] = 0;
-		tell_object(pl[seat[i]], table_str(seat[i])); 
-	}
-	after_winner(PIG_D->card_cmp4(roundcards, SUIT(roundcards[round_order[0]])));
-	after_hand();
+            tscore[seat[i]] += hscore[seat[i]];
+            if (tscore[seat[i]] <= -1000)
+                pl[seat[i]]->add("pig_head", 1);
+        }
+    else {
+        for (i = 0; i < 4; i++)
+            if (seat[i] != collect_all)
+                pl[seat[i]]->add("pig_head", 1);
+    }
+    for (i = 0; i < 4; i++)
+        if (tscore[seat[i]] <= -1000)
+            message_vision("$Næ˜¯ä¸€å¤´çŒªï¼\n", pl[seat[i]]);
+    for (i = 0; i < 4; i++)
+        if (tscore[seat[i]] <= -1000) {
+            score_reset();
+            break;
+        }
+    deal_init();
 }
 
-void after_hand()
-{
-	// doing the scoring here
-	int i;
-	string collect_all = "";
+int do_play(string arg) {
+    object me = this_player();
+    int i, c, sc, nbc = 0, cpos = -1;
+    string ms;
 
-	for (i = 0; i < 4; i++) {
-		hscore[seat[i]] = PIG_D->count_score(picks[seat[i]], bid_flag);
-		if (hscore[seat[i]] == 1000)
-			collect_all = seat[i];
-		pl[seat[i]]->add("pig_played", 1);
-		pl[seat[i]]->add("pig_score", hscore[seat[i]]);
-	}
-	if (collect_all == "")
-		for (i = 0; i < 4; i++) {
-			tscore[seat[i]] += hscore[seat[i]];
-			if (tscore[seat[i]] <= -1000) 
-				pl[seat[i]]->add("pig_head", 1);
-		}
-	else {
-		for (i = 0; i < 4; i++)
-			if (seat[i] != collect_all) 
-				pl[seat[i]]->add("pig_head", 1);
-	}
-	for (i = 0; i < 4; i++) 
-		if (tscore[seat[i]] <= -1000)
-			message_vision("$NÊÇÒ»Í·Öí£¡\n", pl[seat[i]]);
-	for (i = 0; i < 4; i++)
-		if (tscore[seat[i]] <= -1000) {
-			score_reset();
-			break;
-		}
-	deal_init();
-}
-	
-int do_play(string arg)
-{
-	object me = this_player();
-	int i, c, sc, nbc = 0, cpos = -1;
-	string ms;
+    if (!(ms = me->query_temp("pigging_seat")))
+        return notify_fail("ä½ æ²¡æœ‰åœ¨æ‹±çŒªï¼\n");
+    if (pig_stage != PIG_PLAYING)
+        return notify_fail("ç°åœ¨ä¸æ˜¯å‡ºç‰Œé˜¶æ®µï¼\n");
+    if (ms != round_order[roundcard_count])
+        return notify_fail("è¿˜æ²¡è½®åˆ°ä½ å‡ºç‰Œï¼\n");
+    if (!arg || (c = PIG_D->is_validcard(arg)) == -1)
+        return notify_fail("ä½ è¦å‡ºå“ªå¼ ç‰Œï¼Ÿ\n");
+    for (i = 0; i < card_count[ms]; i++)
+        if (cards[ms][i] == c) {
+            cpos = i;
+            break;
+        }
+    if (cpos == -1)
+        return notify_fail("ä½ æ‰‹é‡Œæ²¡æœ‰è¿™å¼ ç‰Œï¼\n");
 
-	if (!(ms = me->query_temp("pigging_seat")))
-		return notify_fail("ÄãÃ»ÓĞÔÚ¹°Öí£¡\n");
-	if (pig_stage != PIG_PLAYING)
-		return notify_fail("ÏÖÔÚ²»ÊÇ³öÅÆ½×¶Î£¡\n");
-	if (ms != round_order[roundcard_count])
-		return notify_fail("»¹Ã»ÂÖµ½Äã³öÅÆ£¡\n");
-	if (!arg || (c = PIG_D->is_validcard(arg)) == -1)
-		return notify_fail("ÄãÒª³öÄÄÕÅÅÆ£¿\n");
-	for (i = 0; i < card_count[ms]; i++) 
-		if (cards[ms][i] == c) {
-			cpos = i; break;
-		}
-	if (cpos == -1)
-		return notify_fail("ÄãÊÖÀïÃ»ÓĞÕâÕÅÅÆ£¡\n");
+    if (roundcard_count > 0 && (sc = PIG_D->has_suit(cards[ms], 0,
+                                                     card_count[ms] - 1, SUIT(roundcards[round_order[0]]))) > 0 &&
+        SUIT(c) != SUIT(roundcards[round_order[0]]))
+        return notify_fail("ä½ ä¸èƒ½å‡ºè¿™å¼ ç‰Œï¼\n");
 
-	if (roundcard_count > 0 && (sc = PIG_D->has_suit(cards[ms], 0, 
-		card_count[ms] - 1, SUIT(roundcards[round_order[0]]))) > 0 && 
-		SUIT(c) != SUIT(roundcards[round_order[0]]))
-		return notify_fail("Äã²»ÄÜ³öÕâÕÅÅÆ£¡\n");
-
-	if (roundcard_count == 0 || sc > 1) {
-		switch (c) {
-		case SPIG :
-			if (!allow_playbid[SPADE])
-				nbc = 1;
-			break;
-		case HACE :
-			if (!allow_playbid[HEART])
-				nbc = 1;
-			break;
-		case DSHEEP : 
-			if (!allow_playbid[DIAMOND])
-				nbc = 1;
-			break;
-		case CTRANS :
-			if (!allow_playbid[CLUB])
-				nbc = 1;
-			break;
-		}
-		if (nbc)
-			return notify_fail("Âô¹ıµÄÅÆ²»ÄÜÔÚµÚÒ»ÂÖ³ö£¡\n");
-	}
-	for (i = cpos; i < card_count[ms] - 1; i++)
-		cards[ms][i] = cards[ms][i+1];
-	cards[ms][13 - round_no] = 53;
-	roundcards[ms] = c;
-	card_count[ms]--;
-	if (roundcard_count > 0 && SUIT(c) != SUIT(roundcards[round_order[0]]))
-		message_vision("$NµæÁËÒ»ÕÅ" + PIG_D->card_str(c) + "£¡\n", me);
-	else
-		message_vision("$N³öÁËÒ»ÕÅ" + PIG_D->card_str(c) + "£¡\n", me);
-	after_play();
-	return 1;
+    if (roundcard_count == 0 || sc > 1) {
+        switch (c) {
+            case SPIG :
+                if (!allow_playbid[SPADE])
+                    nbc = 1;
+                break;
+            case HACE :
+                if (!allow_playbid[HEART])
+                    nbc = 1;
+                break;
+            case DSHEEP :
+                if (!allow_playbid[DIAMOND])
+                    nbc = 1;
+                break;
+            case CTRANS :
+                if (!allow_playbid[CLUB])
+                    nbc = 1;
+                break;
+        }
+        if (nbc)
+            return notify_fail("å–è¿‡çš„ç‰Œä¸èƒ½åœ¨ç¬¬ä¸€è½®å‡ºï¼\n");
+    }
+    for (i = cpos; i < card_count[ms] - 1; i++)
+        cards[ms][i] = cards[ms][i + 1];
+    cards[ms][13 - round_no] = 53;
+    roundcards[ms] = c;
+    card_count[ms]--;
+    if (roundcard_count > 0 && SUIT(c) != SUIT(roundcards[round_order[0]]))
+        message_vision("$Nå«äº†ä¸€å¼ " + PIG_D->card_str(c) + "ï¼\n", me);
+    else
+        message_vision("$Nå‡ºäº†ä¸€å¼ " + PIG_D->card_str(c) + "ï¼\n", me);
+    after_play();
+    return 1;
 }

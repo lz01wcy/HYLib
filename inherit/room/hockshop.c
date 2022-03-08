@@ -2,103 +2,97 @@
 
 inherit ROOM;
 
-void init()
-{
-	add_action("do_value", "value");
-	add_action("do_pawn", "pawn");
-	add_action("do_sell", "sell");
+void init() {
+    add_action("do_value", "value");
+    add_action("do_pawn", "pawn");
+    add_action("do_sell", "sell");
 }
 
-string value_string(int value)
-{
-	if( value < 1 ) value = 1;
-	else if( value < 100 )
-		return chinese_number(value) + "Œƒ«Æ";
-	else
-		return chinese_number(value/100) + "¡Ω"
-			+ (value%100? "”÷" + chinese_number(value%100) + "Œƒ«Æ": "");
+string value_string(int value) {
+    if (value < 1) value = 1;
+    else if (value < 100)
+        return chinese_number(value) + "ÊñáÈí±";
+    else
+        return chinese_number(value / 100) + "‰∏§"
+               + (value % 100 ? "Âèà" + chinese_number(value % 100) + "ÊñáÈí±" : "");
 }
 
-void pay_player(object who, int amount)
-{
-	object ob;
+void pay_player(object who, int amount) {
+    object ob;
 
-	if( amount < 1 ) amount = 1;
-	if( amount/100 ) {
-		ob = new(SILVER_OB);
-		ob->set_amount(amount/100);
-		ob->move(who);
-		amount %= 100;
-	}
-	if( amount ) {
-		ob = new(COIN_OB);
-		ob->set_amount(amount);
-		ob->move(who);
-	}
+    if (amount < 1) amount = 1;
+    if (amount / 100) {
+        ob = new(SILVER_OB);
+        ob->set_amount(amount / 100);
+        ob->move(who);
+        amount %= 100;
+    }
+    if (amount) {
+        ob = new(COIN_OB);
+        ob->set_amount(amount);
+        ob->move(who);
+    }
 }
 
-int do_value(string arg)
-{
-	object ob;
-	int value;
+int do_value(string arg) {
+    object ob;
+    int value;
 
-	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ƒ„“™ƒ√ ≤√¥ŒÔ∆∑∏¯µ±∆Ãπ¿º€£ø\n");
+    if (!arg || !(ob = present(arg, this_player())))
+        return notify_fail("‰Ω†Ë¶ÅÊãø‰ªÄ‰πàÁâ©ÂìÅÁªôÂΩìÈì∫‰º∞‰ª∑Ôºü\n");
 
-	if( ob->query("money_id") )
-		return notify_fail("’‚ «°∏«Æ°π£¨ƒ„√ªº˚π˝¬£ø\n");
+    if (ob->query("money_id"))
+        return notify_fail("ËøôÊòØ„ÄåÈí±„ÄçÔºå‰Ω†Ê≤°ËßÅËøáÂêóÔºü\n");
 
-	value = ob->query("value");
-	if( !value ) printf("%s“ªŒƒ≤ª÷µ°£\n", ob->query("name"));
-	else 
-		printf("%sº€÷µ%s°£\n»Áπ˚ƒ„“™µ‰µ±(pawn)£¨ø…“‘ƒ√µΩ%sº∞“ª’≈µ±∆±°£\n»Áπ˚¬Ù∂œ(sell)£¨ø…“‘ƒ√µΩ%s°£\n",
-			ob->query("name"), value_string(value),
-			value_string(value * 60 / 100), value_string(value * 80 / 100));
+    value = ob->query("value");
+    if (!value) printf("%s‰∏ÄÊñá‰∏çÂÄº„ÄÇ\n", ob->query("name"));
+    else
+        printf("%s‰ª∑ÂÄº%s„ÄÇ\nÂ¶ÇÊûú‰Ω†Ë¶ÅÂÖ∏ÂΩì(pawn)ÔºåÂèØ‰ª•ÊãøÂà∞%sÂèä‰∏ÄÂº†ÂΩìÁ•®„ÄÇ\nÂ¶ÇÊûúÂçñÊñ≠(sell)ÔºåÂèØ‰ª•ÊãøÂà∞%s„ÄÇ\n",
+               ob->query("name"), value_string(value),
+               value_string(value * 60 / 100), value_string(value * 80 / 100));
 
-	return 1;
+    return 1;
 }
 
-int do_pawn(string arg)
-{
-	object ob;
-	int value;
+int do_pawn(string arg) {
+    object ob;
+    int value;
 
-	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ƒ„“™µ‰µ± ≤√¥ŒÔ∆∑£ø\n");
+    if (!arg || !(ob = present(arg, this_player())))
+        return notify_fail("‰Ω†Ë¶ÅÂÖ∏ÂΩì‰ªÄ‰πàÁâ©ÂìÅÔºü\n");
 
-	if( ob->query("money_id") )	return notify_fail("ƒ„“™µ±°∏«Æ°π£ø\n");
+    if (ob->query("money_id")) return notify_fail("‰Ω†Ë¶ÅÂΩì„ÄåÈí±„ÄçÔºü\n");
 
-	value = ob->query("value");
-	if( !value ) return notify_fail("’‚—˘∂´Œ˜≤ª÷µ«Æ°£\n");
+    value = ob->query("value");
+    if (!value) return notify_fail("ËøôÊ†∑‰∏úË•ø‰∏çÂÄºÈí±„ÄÇ\n");
 
-	message_vision("$N∞—…Ì…œµƒ" + ob->query("name") + "ƒ√≥ˆ¿¥µ‰µ±¡À"
-		+ value_string(value * 60 / 100) + "°£\n", this_player());
+    message_vision("$NÊääË∫´‰∏äÁöÑ" + ob->query("name") + "ÊãøÂá∫Êù•ÂÖ∏ÂΩì‰∫Ü"
+                   + value_string(value * 60 / 100) + "„ÄÇ\n", this_player());
 
-	pay_player(this_player(), value * 60 / 100);
-	destruct(ob);
+    pay_player(this_player(), value * 60 / 100);
+    destruct(ob);
 
-	return 1;
+    return 1;
 }
 
-int do_sell(string arg)
-{
-	object ob;
-	int value;
+int do_sell(string arg) {
+    object ob;
+    int value;
 
-	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ƒ„“™¬Ù∂œ ≤√¥ŒÔ∆∑£ø\n");
+    if (!arg || !(ob = present(arg, this_player())))
+        return notify_fail("‰Ω†Ë¶ÅÂçñÊñ≠‰ªÄ‰πàÁâ©ÂìÅÔºü\n");
 
-	if( ob->query("money_id") )	return notify_fail("ƒ„“™¬Ù°∏«Æ°π£ø\n");
-	value = ob->query("value");
-	if( !value ) return notify_fail("’‚—˘∂´Œ˜≤ª÷µ«Æ°£\n");
+    if (ob->query("money_id")) return notify_fail("‰Ω†Ë¶ÅÂçñ„ÄåÈí±„ÄçÔºü\n");
+    value = ob->query("value");
+    if (!value) return notify_fail("ËøôÊ†∑‰∏úË•ø‰∏çÂÄºÈí±„ÄÇ\n");
 
 
-	message_vision("$N∞—…Ì…œµƒ" + ob->query("name") + "¬ÙµÙ°£\n",
-		this_player());
+    message_vision("$NÊääË∫´‰∏äÁöÑ" + ob->query("name") + "ÂçñÊéâ„ÄÇ\n",
+                   this_player());
 
-	pay_player(this_player(), value * 80 / 100);
-	destruct(ob);
+    pay_player(this_player(), value * 80 / 100);
+    destruct(ob);
 
-	return 1;
+    return 1;
 }
 
