@@ -7,70 +7,71 @@ inherit F_CLEAN_UP;
 
 string check_ip(object ob, object *user);
 
-int main(object me, string arg)
-{
-        int i, num;
-        string msg, result;
-	string wiz_status;
-        object *user;
+int main(object me, string arg) {
+    int i, num;
+    string msg, result;
+    string wiz_status;
+    object *user;
 
-	if( me != this_player(1) ) return 0;
-	wiz_status = SECURITY_D->get_status(me);
-        user = users();
+    if (me != this_player(1)) return 0;
+    wiz_status = SECURITY_D->get_status(me);
+    user = users();
 
-	if( wiz_status != "(admin)" && wiz_status != "(wizard)" && wiz_status != "(arch)" )
-		return notify_fail("Ö»ÓĞ (arch) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+    if (wiz_status != "(admin)" && wiz_status != "(wizard)" && wiz_status != "(arch)")
+        return notify_fail("åªæœ‰ (arch) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
-        for(i = 0;i < sizeof(user);i++)
-                user[i]->set_temp("pending/ipcheck", 0);
+    for (i = 0; i < sizeof(user); i++)
+        user[i]->set_temp("pending/ipcheck", 0);
 
-        msg = "\n¼ì²éÔÚÏßÍæ¼ÒIP£º\n\n";
-        num = 0;
-        for(i = 0;i < sizeof(user);i++) {
-                if(user[i]->query_temp("pending/ipcheck") )     continue;
+    msg = "\næ£€æŸ¥åœ¨çº¿ç©å®¶IPï¼š\n\n";
+    num = 0;
+    for (i = 0; i < sizeof(user); i++) {
+        if (user[i]->query_temp("pending/ipcheck")) continue;
 
-                if( result = check_ip(user[i], user) ) {
-msg += HIW + result + NOR"Ä¿Ç°Õı´Ó"HIY + query_ip_name(user[i]) + NOR"Á¬ÏßÖĞ¡£\n";
-                        num++;
-                }
+        if (result = check_ip(user[i], user)) {
+            msg += HIW + result + NOR
+            "ç›®å‰æ­£ä»"
+            HIY + query_ip_name(user[i]) + NOR
+            "è¿çº¿ä¸­ã€‚\n";
+            num++;
         }
-        if(num == 0)    msg += "\n¼ì²é½á¹û£ºÄ¿Ç°ÏßÉÏÍæ¼ÒµÄ IP ¸÷²»ÏàÍ¬¡£\n";
+    }
+    if (num == 0) msg += "\næ£€æŸ¥ç»“æœï¼šç›®å‰çº¿ä¸Šç©å®¶çš„ IP å„ä¸ç›¸åŒã€‚\n";
 
-        if(num > 0)     msg += sprintf("\n¼ì²é½á¹û£ºÓĞ 2 Íæ¼Ò»òÒÔÉÏÏàÍ¬ IP ÊıÁ¿%d ¡£\n",num);
-        write(msg);
-        return 1;
+    if (num > 0) msg += sprintf("\næ£€æŸ¥ç»“æœï¼šæœ‰ 2 ç©å®¶æˆ–ä»¥ä¸Šç›¸åŒ IP æ•°é‡%d ã€‚\n", num);
+    write(msg);
+    return 1;
 }
 
-string check_ip(object ob, object *user)
-{
-        int i, find = 0;
-        string result, ip, id;
+string check_ip(object ob, object *user) {
+    int i, find = 0;
+    string result, ip, id;
 
-        id = ob->query("id");
-        ip = query_ip_name(ob);
-        result = ob->query("name") + "(" + ob->query("id") + ")  ";
-        for(i = 0;i < sizeof(user);i++) {
-                if(user[i]->query("id") != id && query_ip_name(user[i]) == ip) {
-                        result += user[i]->query("name") + "(" + user[i]->query("id") + ")  ";
-                        user[i]->set_temp("pending/ipcheck", 1);
-                        if(id && user[i]->query("id") )
-                                find++;
-                }
+    id = ob->query("id");
+    ip = query_ip_name(ob);
+    result = ob->query("name") + "(" + ob->query("id") + ")  ";
+    for (i = 0; i < sizeof(user); i++) {
+        if (user[i]->query("id") != id && query_ip_name(user[i]) == ip) {
+            result += user[i]->query("name") + "(" + user[i]->query("id") + ")  ";
+            user[i]->set_temp("pending/ipcheck", 1);
+            if (id && user[i]->query("id"))
+                find++;
         }
+    }
 
-        if( find )      return result;
+    if (find) return result;
 
-        return 0;
+    return 0;
 }
 
-int help(object me)
-{
-        write(@HELP
-Ö¸Áî¸ñÊ½: checkip
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼:
+    checkip
 
-¼ì²éÏßÉÏÏàÍ¬IPµÄÍæ¼Ò¡£
+    æ£€æŸ¥çº¿ä¸Šç›¸åŒIPçš„ç©å®¶ã€‚
 
-HELP
-        );
-        return 1;
+    HELP
+    );
+    return 1;
 }

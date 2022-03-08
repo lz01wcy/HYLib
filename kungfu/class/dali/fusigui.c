@@ -1,64 +1,68 @@
-// fusigui.c ¸µË¼¹é
+// fusigui.c å‚…æ€å½’
 
 #include <ansi.h>
+
 inherit NPC;
 inherit F_MASTER;
 
-void upgrade_title(object me,string arg);
+void upgrade_title(object me, string arg);
+
 string clear_title(string arg);
+
 int ask_me();
-void create()
-{
-	set_name("¸µË¼¹é", ({ "fu sigui", "fu" }));
-	set("title",  "´óÀí»¤ÎÀ" );
-	set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»¡£\n");
-	set("gender", "ÄĞĞÔ");
-	set("age", 40);
-	set("class", "officer");
-	set("attitude", "friendly");
-	set("shen_type", 1);
-	set("str", 25);
-	set("int", 25);
-	set("con", 25);
-	set("dex", 25);
-	
-	set("max_qi", 1000);
-	set("max_jing", 500);
-	set("neili", 1000);
-	set("max_neili", 1000);
-	set("jiali", 50);
-	set("combat_exp", 350000);
-	set("score", 105000);
 
-        set_skill("force", 55);
-        set_skill("dodge", 55);
-        set_skill("parry", 50);
-        set_skill("cuff", 55);
-        set_skill("sword", 50);
-        set_skill("finger", 50);
-        set_skill("staff", 50);
-	set_skill("kurong-changong", 50);
-        set_skill("tiannan-step", 55);
-        set_skill("jinyu-quan", 55);
-        set_skill("duanjia-sword", 50);
-	set_skill("literate", 40);
+void create() {
+    set_name("å‚…æ€å½’", ({ "fu sigui", "fu" }));
+    set("title", "å¤§ç†æŠ¤å«");
+    set("long", "ä»–æ˜¯å¤§ç†å›½å››å¤§æŠ¤å«ä¹‹ä¸€ã€‚\n");
+    set("gender", "ç”·æ€§");
+    set("age", 40);
+    set("class", "officer");
+    set("attitude", "friendly");
+    set("shen_type", 1);
+    set("str", 25);
+    set("int", 25);
+    set("con", 25);
+    set("dex", 25);
 
-	map_skill("force", "kurong-changong");
-	map_skill("dodge", "tiannan-step");
-	map_skill("cuff", "jinyu-quan");
-	map_skill("sword", "duanjia-sword");
-	map_skill("staff", "duanjia-sword");
-	map_skill("parry", "duanjia-sword");
-	prepare_skill("cuff", "jinyu-quan");
+    set("max_qi", 1000);
+    set("max_jing", 500);
+    set("neili", 1000);
+    set("max_neili", 1000);
+    set("jiali", 50);
+    set("combat_exp", 350000);
+    set("score", 105000);
 
-	set("inquiry", ([
-		"Ö¸µãÎä¹¦" : (: ask_me :),
-	]));
-	setup();
-	carry_object("/clone/misc/cloth")->wear();
-	carry_object("/clone/weapon/changjian")->wield();
-	add_money("silver", 10);
+    set_skill("force", 55);
+    set_skill("dodge", 55);
+    set_skill("parry", 50);
+    set_skill("cuff", 55);
+    set_skill("sword", 50);
+    set_skill("finger", 50);
+    set_skill("staff", 50);
+    set_skill("kurong-changong", 50);
+    set_skill("tiannan-step", 55);
+    set_skill("jinyu-quan", 55);
+    set_skill("duanjia-sword", 50);
+    set_skill("literate", 40);
 
-	create_family("´óÀí¶Î¼Ò",19,"»¤ÎÀ");
+    map_skill("force", "kurong-changong");
+    map_skill("dodge", "tiannan-step");
+    map_skill("cuff", "jinyu-quan");
+    map_skill("sword", "duanjia-sword");
+    map_skill("staff", "duanjia-sword");
+    map_skill("parry", "duanjia-sword");
+    prepare_skill("cuff", "jinyu-quan");
+
+    set("inquiry",([
+    "æŒ‡ç‚¹æ­¦åŠŸ" : (: ask_me :),
+    ]));
+    setup();
+    carry_object("/clone/misc/cloth")->wear();
+    carry_object("/clone/weapon/changjian")->wield();
+    add_money("silver", 10);
+
+    create_family("å¤§ç†æ®µå®¶", 19, "æŠ¤å«");
 }
-#include "/kungfu/class/dali/weishi.h"; 
+
+#include "/kungfu/class/dali/weishi.h";

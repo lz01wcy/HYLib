@@ -1,78 +1,87 @@
 // rtime.c
 #include <localtime.h>
+
 inherit F_CLEAN_UP;
 
-string chinese_time(int type,string get_time)
-{
-        string e_time, week, month, year;
-        string c_week, c_year, c_month, c_time;
-        int day, hour, minute, second;
-        string *month_name = ({"Jan","Feb","Mar","Apr","May","Jun","Jul",
-		"Aug","Sep","Oct","Nov","Dec"});
-        string *week_name = ({"Mon","Tue","Wed","Thu","Fri","Sat","Sun"});
+string chinese_time(int type, string get_time) {
+    string e_time, week, month, year;
+    string c_week, c_year, c_month, c_time;
+    int day, hour, minute, second;
+    string *month_name = ({
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+                "Aug", "Sep", "Oct", "Nov", "Dec"
+    });
+    string *week_name = ({ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" });
 
-        if ( stringp(get_time) )
-                e_time = get_time;
-        else e_time = ctime(time());
+    if (stringp(get_time))
+        e_time = get_time;
+    else e_time = ctime(time());
 
-        // e_time must is ctime(time string) like "Sun May  3 00:52:12 1998"
-        sscanf(e_time,"%s %s %d %d:%d:%d %s", week, month, day, hour, minute, second, year);
+    // e_time must is ctime(time string) like "Sun May  3 00:52:12 1998"
+    sscanf(e_time, "%s %s %d %d:%d:%d %s", week, month, day, hour, minute, second, year);
 
-        c_week  = chinese_number(member_array(week, week_name) + 1);
-        c_month = chinese_number(member_array(month, month_name) + 1);
+    c_week = chinese_number(member_array(week, week_name) + 1);
+    c_month = chinese_number(member_array(month, month_name) + 1);
 
-        c_year  = sprintf("%s%s%s%s",
-                         chinese_number(year[0]-48),
-                         chinese_number(year[1]-48),
-                         chinese_number(year[2]-48),
-                         chinese_number(year[3]-48));
+    c_year = sprintf("%s%s%s%s",
+                     chinese_number(year[0] - 48),
+                     chinese_number(year[1] - 48),
+                     chinese_number(year[2] - 48),
+                     chinese_number(year[3] - 48));
 
-        c_year = c_year + "Äê";
-        c_month  = c_month + "ÔÂ";
-        c_week = " ĞÇÆÚ"+c_week;
+    c_year = c_year + "å¹´";
+    c_month = c_month + "æœˆ";
+    c_week = " æ˜ŸæœŸ" + c_week;
 
-        c_time = chinese_number(day) + "ÈÕ";
-        c_time += chinese_number(hour) + "µã";
-        c_time += chinese_number(minute) + "·Ö";
-        // maybe not need srcond to show
-        // c_time += chinese_number(second) + "Ãë";
+    c_time = chinese_number(day) + "æ—¥";
+    c_time += chinese_number(hour) + "ç‚¹";
+    c_time += chinese_number(minute) + "åˆ†";
+    // maybe not need srcond to show
+    // c_time += chinese_number(second) + "ç§’";
 
-        if (type) {
-                switch( type ) {
-                        case 1: return c_year+c_month+c_time+c_week;
-                        case 2: return c_year+c_month+c_time;
-                        case 3: return c_month+c_time+c_week;
-                        case 4: return c_month+c_time;
-                        case 5: return year+"Äê"+(member_array(month, month_name) + 1)+
-				"ÔÂ"+day+"ÈÕ"+hour+"µã"+minute+"·Ö";
-                        case 6: return (member_array(month, month_name) + 1)+
-				"ÔÂ"+day+"ÈÕ"+hour+"µã"+minute+"·Ö";
-                        default: return c_year+c_month+c_time+c_week;
-                        }
-                }
-        return c_year+c_month+c_time+c_week;
+    if (type) {
+        switch (type) {
+            case 1:
+                return c_year + c_month + c_time + c_week;
+            case 2:
+                return c_year + c_month + c_time;
+            case 3:
+                return c_month + c_time + c_week;
+            case 4:
+                return c_month + c_time;
+            case 5:
+                return year + "å¹´" + (member_array(month, month_name) + 1) +
+                       "æœˆ" + day + "æ—¥" + hour + "ç‚¹" + minute + "åˆ†";
+            case 6:
+                return (member_array(month, month_name) + 1) +
+                       "æœˆ" + day + "æ—¥" + hour + "ç‚¹" + minute + "åˆ†";
+            default:
+                return c_year + c_month + c_time + c_week;
+        }
+    }
+    return c_year + c_month + c_time + c_week;
 }
 
-int main(object me, string arg)
-{
-	int i;
+int main(object me, string arg) {
+    int i;
 
-	if(!arg||sscanf(arg,"%d",i)!=1)
-		write("ÏÖÔÚÊÇ" + chinese_time(1,(string)localtime(time())) + "¡£\n");
-	else
-		write("ÏÖÔÚÊÇ" + chinese_time(i,(string)localtime(time())) + "¡£\n");
-	return 1;
+    if (!arg || sscanf(arg, "%d", i) != 1)
+        write("ç°åœ¨æ˜¯" + chinese_time(1, (string) localtime(time())) + "ã€‚\n");
+    else
+        write("ç°åœ¨æ˜¯" + chinese_time(i, (string) localtime(time())) + "ã€‚\n");
+    return 1;
 }
 
-int help(object me)
-{
-     write(@HELP
-Ö¸Áî¸ñÊ½: rtime
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼:
+    rtime
 
-Õâ¸öÖ¸ÁîÈÃÄã(Äã)ÖªµÀÏÖÔÚµÄÊµ¼ÊÊ±¼ä¡£
-¿ÉÒÔ´ø²ÎÊı1-6ÒÔ²»Í¬µÄ¸ñÊ½ÏÔÊ¾¡£
+    è¿™ä¸ªæŒ‡ä»¤è®©ä½ (ä½ )
+    çŸ¥é“ç°åœ¨çš„å®é™…æ—¶é—´ã€‚
+    å¯ä»¥å¸¦å‚æ•°1 - 6ä»¥ä¸åŒçš„æ ¼å¼æ˜¾ç¤ºã€‚
 
-HELP
+    HELP
     );
     return 1;
 }

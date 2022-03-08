@@ -6,133 +6,127 @@
 inherit F_DBASE;
 inherit F_CLEAN_UP;
 
-void create() 
-{
-	seteuid(getuid());
-	set("name", "ÀëÏßÖ¸Áî");
-	set("id", "quit");
-	set("channel_id", "ÀëÏß¾«Áé");
+void create() {
+    seteuid(getuid());
+    set("name", "ç¦»çº¿æŒ‡ä»¤");
+    set("id", "quit");
+    set("channel_id", "ç¦»çº¿ç²¾çµ");
 }
 
-int main(object me, string arg)
-{
-	int i;
-	object *inv, link_ob, ob;
-string name;
-	if( LOGIN_D->get_madlock()) 
-		return notify_fail("Ê±¿ÕÒÑ¾­·â±Õ£¬Ã»ÓĞÈËÄÜ¹»ÍË³öÕâ¸öÊ±¿ÕÁË¡£\n");
-//	if( me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å×öÆäËûÊÂ£¬²»ÄÜÍË³öÓÎÏ·£¡\n");
-	if (me->query_temp("sleeped")) me->set("marks/insleeping",1);
-        if( !me->query_temp("netdead") && !interactive(me)) 
-           return notify_fail("Õâ¸öÖ¸ÁîÖ»ÄÜÓÉÏµÍ³Ö´ĞĞ¡£\n");
-	if( interactive(me) && query_idle( me ) < 120 )
-           return notify_fail("Õâ¸öÖ¸ÁîÖ»ÄÜÓÉÏµÍ³Ö´ĞĞ¡£\n");
-	
-	if( me->over_encumbranced() )
-		return notify_fail("ÉíÉÏ´øµÄ¶«Î÷Ì«¶àÁË£¬Àë²»¿ªÓÎÏ·ÁË¡£\n");
-if (present("xin",me))
-{
-                   me->apply_condition("menpai_busy",8);
-                   me->apply_condition("hxsd_busy",8);
-}
+int main(object me, string arg) {
+    int i;
+    object *inv, link_ob, ob;
+    string name;
+    if (LOGIN_D->get_madlock())
+        return notify_fail("æ—¶ç©ºå·²ç»å°é—­ï¼Œæ²¡æœ‰äººèƒ½å¤Ÿé€€å‡ºè¿™ä¸ªæ—¶ç©ºäº†ã€‚\n");
+//	if( me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€åšå…¶ä»–äº‹ï¼Œä¸èƒ½é€€å‡ºæ¸¸æˆï¼\n");
+    if (me->query_temp("sleeped")) me->set("marks/insleeping", 1);
+    if (!me->query_temp("netdead") && !interactive(me))
+        return notify_fail("è¿™ä¸ªæŒ‡ä»¤åªèƒ½ç”±ç³»ç»Ÿæ‰§è¡Œã€‚\n");
+    if (interactive(me) && query_idle(me) < 120)
+        return notify_fail("è¿™ä¸ªæŒ‡ä»¤åªèƒ½ç”±ç³»ç»Ÿæ‰§è¡Œã€‚\n");
 
-	if( !wizardp(me) ) {
-		inv = all_inventory(me);
-		for(i=0; i<sizeof(inv); i++)
-			if( !inv[i]->query_autoload() )
-				DROP_CMD->do_drop(me, inv[i]);
-	}
+    if (me->over_encumbranced())
+        return notify_fail("èº«ä¸Šå¸¦çš„ä¸œè¥¿å¤ªå¤šäº†ï¼Œç¦»ä¸å¼€æ¸¸æˆäº†ã€‚\n");
+    if (present("xin", me)) {
+        me->apply_condition("menpai_busy", 8);
+        me->apply_condition("hxsd_busy", 8);
+    }
 
-	link_ob = me->query_temp("link_ob");
+    if (!wizardp(me)) {
+        inv = all_inventory(me);
+        for (i = 0; i < sizeof(inv); i++)
+            if (!inv[i]->query_autoload())
+                DROP_CMD->do_drop(me, inv[i]);
+    }
 
-	// We might be called on a link_dead player, so check this.
-	if( link_ob ) {
-		link_ob->set("last_on", time());
-		link_ob->set("last_from", query_ip_name(me));
-		link_ob->save();
+    link_ob = me->query_temp("link_ob");
 
-  	if( link_ob->is_character() ) {
-			write("ÄãµÄ»êÆÇ»Øµ½" + link_ob->name(1) + "µÄÉíÉÏ¡£\n");
-			exec(link_ob, me);
-			link_ob->setup();
-			return 1;
-		}
-		
+    // We might be called on a link_dead player, so check this.
+    if (link_ob) {
+        link_ob->set("last_on", time());
+        link_ob->set("last_from", query_ip_name(me));
+        link_ob->save();
 
-		link_ob->set("last_on", time());
-		link_ob->set("last_from", query_ip_name(me));
-		link_ob->save();
-		if( environment(me)->query("valid_startroom") )
-		{
-			me->set("startroom", base_name(environment(me)));
-			write("µ±ÄãÏÂ´ÎÁ¬Ïß½øÀ´Ê±£¬»á´ÓÕâÀï¿ªÊ¼¡£\n");
-		}
+        if (link_ob->is_character()) {
+            write("ä½ çš„é­‚é­„å›åˆ°" + link_ob->name(1) + "çš„èº«ä¸Šã€‚\n");
+            exec(link_ob, me);
+            link_ob->setup();
+            return 1;
+        }
 
-		destruct(link_ob);
-	}
 
-	write("»¶Ó­ÏÂ´ÎÔÙÀ´£¡\n");
+        link_ob->set("last_on", time());
+        link_ob->set("last_from", query_ip_name(me));
+        link_ob->save();
+        if (environment(me)->query("valid_startroom")) {
+            me->set("startroom", base_name(environment(me)));
+            write("å½“ä½ ä¸‹æ¬¡è¿çº¿è¿›æ¥æ—¶ï¼Œä¼šä»è¿™é‡Œå¼€å§‹ã€‚\n");
+        }
+
+        destruct(link_ob);
+    }
+
+    write("æ¬¢è¿ä¸‹æ¬¡å†æ¥ï¼\n");
 
 //        if ( wiz_level( me->query("id") ) < 2 ){
-//             message("channel:chat",HIW"¡¾½­ºşÍ¨¸æ¡¿£º"
-//             +me->query("name")+"("+me->query("id")+")ÔİÊ±Àë¿ªÁË½­ºş£¡\n"NOR,users());
+//             message("channel:chat",HIW"ã€æ±Ÿæ¹–é€šå‘Šã€‘ï¼š"
+//             +me->query("name")+"("+me->query("id")+")æš‚æ—¶ç¦»å¼€äº†æ±Ÿæ¹–ï¼\n"NOR,users());
 //             }
 
-//        message("system", me->name() + "Àë¿ªÓÎÏ·¡£\n", environment(me), me);
-        
+//        message("system", me->name() + "ç¦»å¼€æ¸¸æˆã€‚\n", environment(me), me);
+
 //	i=me->query("combat_exp")-me->query_temp("temp_exp");
 //	if (i < 0 ) i=0;
-if (me->query("combat_exp") - me->query_temp("temp_exp") > 100)
-{
-	if (!wizardp(me)
-	&& (i = (me->query("combat_exp") - me->query_temp("temp_exp")) * 60
-		/ (me->query("mud_age") - me->query_temp("mud_age"))) > 100)
-		log_file("static/EXP",
-			sprintf("%s ÉÏ´Î¾­Ñé£º%d£¬±¾´Î¾­Ñé£º%d£¬Æ½¾ù£º%d/min\n",
-				geteuid(me), me->query_temp("temp_exp"),
-				me->query("combat_exp"), i));
-}
-	CHANNEL_D->do_channel(this_object(), "sys",
-		me->name() + "(" + me->query("id") + ")Àë¿ªÓÎÏ·ÁË¡£±¾´ÎÁ¬Ïß¾­ÑéÔö³¤"+i+"¡£\n");
+    if (me->query("combat_exp") - me->query_temp("temp_exp") > 100) {
+        if (!wizardp(me)
+            && (i = (me->query("combat_exp") - me->query_temp("temp_exp")) * 60
+                    / (me->query("mud_age") - me->query_temp("mud_age"))) > 100)
+            log_file("static/EXP",
+                     sprintf("%s ä¸Šæ¬¡ç»éªŒï¼š%dï¼Œæœ¬æ¬¡ç»éªŒï¼š%dï¼Œå¹³å‡ï¼š%d/min\n",
+                             geteuid(me), me->query_temp("temp_exp"),
+                             me->query("combat_exp"), i));
+    }
+    CHANNEL_D->do_channel(this_object(), "sys",
+                          me->name() + "(" + me->query("id") + ")ç¦»å¼€æ¸¸æˆäº†ã€‚æœ¬æ¬¡è¿çº¿ç»éªŒå¢é•¿" + i + "ã€‚\n");
 //	CHANNEL_D->do_channel(this_object(), "sys",
-//		me->name() + "(" + me->query("id") + ")Àë¿ªÓÎÏ·ÁË¡£¹²Çå³ı " + reclaim_objects() + " ¸ö±äÊı¡£\n");
-	
+//		me->name() + "(" + me->query("id") + ")ç¦»å¼€æ¸¸æˆäº†ã€‚å…±æ¸…é™¤ " + reclaim_objects() + " ä¸ªå˜æ•°ã€‚\n");
+
 //if (present("xin",me))
 //me->apply_condition("menpai_busy",6);
-	me->save();
+    me->save();
 
 //************* Puff added these for update topten ***********
-        if( userp(me) )
-                if( !wizardp(me) )
-                {
-                        ob=new("/clone/topten/magic-rice");
-                        ob->movein(me);
-                        ob->savetopten(me);
-                        destruct( ob );
-                }
+    if (userp(me))
+        if (!wizardp(me)) {
+            ob = new("/clone/topten/magic-rice");
+            ob->movein(me);
+            ob->savetopten(me);
+            destruct(ob);
+        }
 
 //************* End of Puff added ******************
-if (me->query("combat_exp") <30
-&& strlen(me->query("id"))==8)
-{
-name=me->query("id");
-	rm(DATA_DIR + "login/" + name[0..0] + "/" + name + SAVE_EXTENSION);
-	rm(DATA_DIR + "user/" + name[0..0] + "/" + name + SAVE_EXTENSION);
-	rm(DATA_DIR + "mail/" + name[0..0] + "/" + name + SAVE_EXTENSION);
-	rm( me->query_save_file() + __SAVE_EXTENSION__ );
+    if (me->query("combat_exp") < 30
+        && strlen(me->query("id")) == 8) {
+        name = me->query("id");
+        rm(DATA_DIR + "login/" + name[0..0] + "/" + name + SAVE_EXTENSION);
+        rm(DATA_DIR + "user/" + name[0..0] + "/" + name + SAVE_EXTENSION);
+        rm(DATA_DIR + "mail/" + name[0..0] + "/" + name + SAVE_EXTENSION);
+        rm(me->query_save_file() + __SAVE_EXTENSION__);
+    }
+    destruct(me);
+
+    return 1;
 }
-	destruct(me);
 
-	return 1;
-}
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ :
+    quit | exit
 
-int help(object me)
-{
-	write(@HELP
-Ö¸Áî¸ñÊ½ : quit | exit
-
-µ±Äã(Äã)ÏëÔİÊ±Àë¿ªÊ±, ¿ÉÀûÓÃ´ËÒ»Ö¸Áî¡£
-HELP
+    å½“ä½ (ä½ )
+    æƒ³æš‚æ—¶ç¦»å¼€æ—¶, å¯åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤ã€‚
+    HELP
     );
     return 1;
 }

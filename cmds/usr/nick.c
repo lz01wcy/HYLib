@@ -3,130 +3,142 @@
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
-string replace_color(string,int);
+
+string replace_color(string, int);
+
 int help(object);
-int wiz_set(string,string,string,int);
 
-int main(object me, string arg)
-{
-	string dest;
-	if( !arg ) return help(me);	
-	if(sscanf(arg,"-title %s,%s",dest,arg)==2)
-	{
-		if(!wizardp(me))
-			return notify_fail("Õâ¸ö¹¦ÄÜÖ»ÄÜÓÉÎ×Ê¦Ê¹ÓÃ¡£\n");
-		if(wiz_level(me)<wiz_level("(hufa)")&&(dest!="me"&&dest!=me->query("id")))
-			return notify_fail("ÄãµÄÈ¨ÏŞ²»¹»½øĞĞÕâ¸ö²Ù×÷¡£\n");
-		return wiz_set(dest,arg,"title",1)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
-	}
-	if(sscanf(arg,"-name %s,%s",dest,arg)==2)
-	{
-		if(!wizardp(me))
-			return notify_fail("Õâ¸ö¹¦ÄÜÖ»ÄÜÓÉÎ×Ê¦Ê¹ÓÃ¡£\n");
-		if(wiz_level(me)<wiz_level("(hufa)")&&(dest!="me"&&dest!=me->query("id")))
-			return notify_fail("ÄãµÄÈ¨ÏŞ²»¹»½øĞĞÕâ¸ö²Ù×÷¡£\n");
-		return wiz_set(dest,arg,"name",0)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
-	}
-	if(sscanf(arg,"-id %s,%s",dest,arg)==2)
-	{
-		if(wiz_level(me)<wiz_level("(hufa)"))
-			return notify_fail("Õâ¸ö²Ù×÷Ö»ÄÜÓÉ»¤·¨»òÌìÉñÖ´ĞĞ¡£\n");
-		return wiz_set(dest,arg,"id",0)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
-	}
-	if(sscanf(arg,"-nick %*s")==1)
-		sscanf(arg,"-nick %s",arg);
-	if(sscanf(arg,"%s,%s",dest,arg)==2)
-	{
-		if(wiz_level(me)<wiz_level("(apprentice)"))
-			return notify_fail("Õâ¸ö²Ù×÷Ö»ÄÜÓÉĞ¡Î×ÒÔÉÏ¼¶±ğµÄÎ×Ê¦Ö´ĞĞ¡£\n");
-		return wiz_set(dest,arg,"nickname",1)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
-	}
-	if( strlen(replace_color(arg,0)) > 30 )
-		return notify_fail("´ÂºÅÌ«³¤ÁË£¬ÇëÄãÏëÒ»¸ö¶ÌÒ»µãµÄ¡¢ÏìÁÁÒ»µãµÄ¡£\n");
-	return wiz_set("me",arg,"nickname",1)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
-	write("Ok.\n");
-	return 1;
-}
-int wiz_set(string str1,string str2,string prop,int color_flag)
-{
-	object ob,me;
-	me=this_player(1);
-	if(str1=="me")
-		ob=this_player(1);
-	else
-		if(!objectp(ob=present(str1,environment(me))))
-			if(!objectp(ob=find_player(str1)))
-				if(!objectp(ob=find_living(str1)))
-				{
-					tell_object(me,"²»ÄÜ·¢ÏÖ²Ù×÷¶ÔÏó("+str1+")£¡\n");
-					return 0;
-				}
-	if(wiz_level(me)<wiz_level(ob))
-	{
-		tell_object(me,"ÄãµÄÈ¨ÏŞ²»¹»£¡\n");
-		return 0;
-	}
-	if((prop=="title"&&wizardp(me))||prop=="nickname")
-		if(str2=="cancel")
-		{
-			ob->delete(prop);
-			message_vision("$NµÄ"+prop+"±»Çå³ıÁË¡£\n",ob);
-			return 1;
-		}
-	str2=replace_color(str2,color_flag);
-	message_vision("$NµÄ"+prop+"±»Éè¶¨Îª:"+str2+"\n",ob);
-	ob->set(prop,str2);
-	return 1;
+int wiz_set(string, string, string, int);
+
+int main(object me, string arg) {
+    string dest;
+    if (!arg) return help(me);
+    if (sscanf(arg, "-title %s,%s", dest, arg) == 2) {
+        if (!wizardp(me))
+            return notify_fail("è¿™ä¸ªåŠŸèƒ½åªèƒ½ç”±å·«å¸ˆä½¿ç”¨ã€‚\n");
+        if (wiz_level(me) < wiz_level("(hufa)") && (dest != "me" && dest != me->query("id")))
+            return notify_fail("ä½ çš„æƒé™ä¸å¤Ÿè¿›è¡Œè¿™ä¸ªæ“ä½œã€‚\n");
+        return wiz_set(dest, arg, "title", 1) ? 1 : notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
+    }
+    if (sscanf(arg, "-name %s,%s", dest, arg) == 2) {
+        if (!wizardp(me))
+            return notify_fail("è¿™ä¸ªåŠŸèƒ½åªèƒ½ç”±å·«å¸ˆä½¿ç”¨ã€‚\n");
+        if (wiz_level(me) < wiz_level("(hufa)") && (dest != "me" && dest != me->query("id")))
+            return notify_fail("ä½ çš„æƒé™ä¸å¤Ÿè¿›è¡Œè¿™ä¸ªæ“ä½œã€‚\n");
+        return wiz_set(dest, arg, "name", 0) ? 1 : notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
+    }
+    if (sscanf(arg, "-id %s,%s", dest, arg) == 2) {
+        if (wiz_level(me) < wiz_level("(hufa)"))
+            return notify_fail("è¿™ä¸ªæ“ä½œåªèƒ½ç”±æŠ¤æ³•æˆ–å¤©ç¥æ‰§è¡Œã€‚\n");
+        return wiz_set(dest, arg, "id", 0) ? 1 : notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
+    }
+    if (sscanf(arg, "-nick %*s") == 1)
+        sscanf(arg, "-nick %s", arg);
+    if (sscanf(arg, "%s,%s", dest, arg) == 2) {
+        if (wiz_level(me) < wiz_level("(apprentice)"))
+            return notify_fail("è¿™ä¸ªæ“ä½œåªèƒ½ç”±å°å·«ä»¥ä¸Šçº§åˆ«çš„å·«å¸ˆæ‰§è¡Œã€‚\n");
+        return wiz_set(dest, arg, "nickname", 1) ? 1 : notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
+    }
+    if (strlen(replace_color(arg, 0)) > 30)
+        return notify_fail("ç»°å·å¤ªé•¿äº†ï¼Œè¯·ä½ æƒ³ä¸€ä¸ªçŸ­ä¸€ç‚¹çš„ã€å“äº®ä¸€ç‚¹çš„ã€‚\n");
+    return wiz_set("me", arg, "nickname", 1) ? 1 : notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
+    write("Ok.\n");
+    return 1;
 }
 
-string replace_color(string arg,int flag)
-{
-	arg = replace_string(arg, "$BLK$", flag?BLK:"");
-	arg = replace_string(arg, "$RED$", flag?RED:"");
-	arg = replace_string(arg, "$GRN$", flag?GRN:"");
-	arg = replace_string(arg, "$YEL$", flag?YEL:"");
-	arg = replace_string(arg, "$BLU$", flag?BLU:"");
-	arg = replace_string(arg, "$MAG$", flag?MAG:"");
-	arg = replace_string(arg, "$CYN$", flag?CYN:"");
-	arg = replace_string(arg, "$WHT$", flag?WHT:"");
-	arg = replace_string(arg, "$HIR$", flag?HIR:"");
-	arg = replace_string(arg, "$HIG$", flag?HIG:"");
-	arg = replace_string(arg, "$HIY$", flag?HIY:"");
-	arg = replace_string(arg, "$HIB$", flag?HIB:"");
-	arg = replace_string(arg, "$HIM$", flag?HIM:"");
-	arg = replace_string(arg, "$HIC$", flag?HIC:"");
-	arg = replace_string(arg, "$HIW$", flag?HIW:"");
-	arg = replace_string(arg, "$NOR$", flag?NOR:"");
-	arg = replace_string(arg, "$BLINK$", flag?BLINK:"");
-	if(flag) arg+=NOR;
-	return arg;
+int wiz_set(string str1, string str2, string prop, int color_flag) {
+    object ob, me;
+    me = this_player(1);
+    if (str1 == "me")
+        ob = this_player(1);
+    else if (!objectp(ob = present(str1, environment(me))))
+        if (!objectp(ob = find_player(str1)))
+            if (!objectp(ob = find_living(str1))) {
+                tell_object(me, "ä¸èƒ½å‘ç°æ“ä½œå¯¹è±¡(" + str1 + ")ï¼\n");
+                return 0;
+            }
+    if (wiz_level(me) < wiz_level(ob)) {
+        tell_object(me, "ä½ çš„æƒé™ä¸å¤Ÿï¼\n");
+        return 0;
+    }
+    if ((prop == "title" && wizardp(me)) || prop == "nickname")
+        if (str2 == "cancel") {
+            ob->delete(prop);
+            message_vision("$Nçš„" + prop + "è¢«æ¸…é™¤äº†ã€‚\n", ob);
+            return 1;
+        }
+    str2 = replace_color(str2, color_flag);
+    message_vision("$Nçš„" + prop + "è¢«è®¾å®šä¸º:" + str2 + "\n", ob);
+    ob->set(prop, str2);
+    return 1;
 }
 
-int help(object me)
-{
-	write(@HELP
-Ö¸Áî¸ñÊ½ : 
-nick <´ÂºÅ> (ÊÊÓÃÓÚÆÕÍ¨Íæ¼Ò)
-nick -title <id>,<×Ö´®>	¸øidÎª<id>µÄÍæ¼Ò¡¢NPC»òOBJECTÉè¶¨titleÊôĞÔ (ÊÊÓÃÓÚwiz)
-nick -name  <id>,<×Ö´®>	¸øidÎª<id>µÄÍæ¼Ò¡¢NPC»òOBJECTÉè¶¨nameÊôĞÔ (ÊÊÓÃÓÚwiz)
-nick -id    <id>,<×Ö´®>	¸øidÎª<id>µÄÍæ¼Ò¡¢NPC»òOBJECTÉè¶¨idÊôĞÔ (ÊÊÓÃÓÚwiz)
-nick <id>,<´ÂºÅ>,	¸øidÎª<id>µÄÍæ¼Ò¡¢NPC»òOBJECTÉè¶¨idÊôĞÔ (ÊÊÓÃÓÚwiz)
-ÆäÖĞhufaÒÔÏÂ¼¶±ğÎ×Ê¦Ö»ÄÜÉèÖÃ×Ô¼ºµÄtilteºÍname¡£
-ÈÎºÎÒ»¸öÃüÁî¶¼²»ÄÜ¶Ô¸ü¸ß¼¶±ğµÄÎ×Ê¦½øĞĞĞŞ¸Ä¡£
-Èç¹ûÄãÏ£ÍûÊ¹ÓÃ ANSI µÄ¿ØÖÆ×ÖÔª¸Ä±äÑÕÉ«£¬¿ÉÒÔÓÃÒÔÏÂµÄ¿ØÖÆ×Ö´®£º
-$BLK$ - ºÚÉ«		$NOR$ - »Ö¸´Õı³£ÑÕÉ«
-$RED$ - ºìÉ«		$HIR$ - ÁÁºìÉ«
-$GRN$ - ÂÌÉ«		$HIG$ - ÁÁÂÌÉ«
-$YEL$ - ÍÁ»ÆÉ«		$HIY$ - »ÆÉ«
-$BLU$ - ÉîÀ¶É«		$HIB$ - À¶É«
-$MAG$ - Ç³×ÏÉ«		$HIM$ - ·ÛºìÉ«
-$CYN$ - À¶ÂÌÉ«		$HIC$ - ÌìÇàÉ«
-$WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
-$BLINK$ - ×Ö·ûÉÁË¸
-ÆäÖĞÏµÍ³×Ô¶¯»áÔÚ×Ö´®Î²¶Ë¼ÓÒ»¸ö $NOR$¡£
-×Ö´®»ò´ÂºÅÎªcancelÊ±½«È¡Ïû¸ÃÏîÊôĞÔ£¬Íæ¼ÒÖ»ÄÜÈ¡Ïû<´ÂºÅ>¡£
-By JackyBoy @ CCTX 98/12/12
-HELP
-	);
-	return 1;
+string replace_color(string arg, int flag) {
+    arg = replace_string(arg, "$BLK$", flag ? BLK : "");
+    arg = replace_string(arg, "$RED$", flag ? RED : "");
+    arg = replace_string(arg, "$GRN$", flag ? GRN : "");
+    arg = replace_string(arg, "$YEL$", flag ? YEL : "");
+    arg = replace_string(arg, "$BLU$", flag ? BLU : "");
+    arg = replace_string(arg, "$MAG$", flag ? MAG : "");
+    arg = replace_string(arg, "$CYN$", flag ? CYN : "");
+    arg = replace_string(arg, "$WHT$", flag ? WHT : "");
+    arg = replace_string(arg, "$HIR$", flag ? HIR : "");
+    arg = replace_string(arg, "$HIG$", flag ? HIG : "");
+    arg = replace_string(arg, "$HIY$", flag ? HIY : "");
+    arg = replace_string(arg, "$HIB$", flag ? HIB : "");
+    arg = replace_string(arg, "$HIM$", flag ? HIM : "");
+    arg = replace_string(arg, "$HIC$", flag ? HIC : "");
+    arg = replace_string(arg, "$HIW$", flag ? HIW : "");
+    arg = replace_string(arg, "$NOR$", flag ? NOR : "");
+    arg = replace_string(arg, "$BLINK$", flag ? BLINK : "");
+    if (flag) arg += NOR;
+    return arg;
+}
+
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ :
+    nick<ç»°å·>(é€‚ç”¨äºæ™®é€šç©å®¶)
+    nick - title < id > ,
+    <å­—ä¸²> ç»™idä¸º<id>
+    çš„ç©å®¶ã€NPCæˆ–OBJECTè®¾å®štitleå±æ€§(é€‚ç”¨äºwiz)
+    nick - name < id > ,
+    <å­—ä¸²> ç»™idä¸º<id>
+    çš„ç©å®¶ã€NPCæˆ–OBJECTè®¾å®šnameå±æ€§(é€‚ç”¨äºwiz)
+    nick - id < id > ,
+    <å­—ä¸²> ç»™idä¸º<id>
+    çš„ç©å®¶ã€NPCæˆ–OBJECTè®¾å®šidå±æ€§(é€‚ç”¨äºwiz)
+    nick < id > ,
+    <ç»°å·>,    ç»™idä¸º < id > çš„ç©å®¶ã€NPCæˆ–OBJECTè®¾å®šidå±æ€§(é€‚ç”¨äºwiz)
+    å…¶ä¸­hufaä»¥ä¸‹çº§åˆ«å·«å¸ˆåªèƒ½è®¾ç½®è‡ªå·±çš„tilteå’Œnameã€‚
+    ä»»ä½•ä¸€ä¸ªå‘½ä»¤éƒ½ä¸èƒ½å¯¹æ›´é«˜çº§åˆ«çš„å·«å¸ˆè¿›è¡Œä¿®æ”¹ã€‚
+    å¦‚æœä½ å¸Œæœ›ä½¿ç”¨
+    ANSI
+    çš„æ§åˆ¶å­—å…ƒæ”¹å˜é¢œè‰²ï¼Œå¯ä»¥ç”¨ä»¥ä¸‹çš„æ§åˆ¶å­—ä¸²ï¼š
+    $BLK$ - é»‘è‰²
+    $NOR$ - æ¢å¤æ­£å¸¸é¢œè‰²
+    $RED$ - çº¢è‰²
+    $HIR$ - äº®çº¢è‰²
+    $GRN$ - ç»¿è‰²
+    $HIG$ - äº®ç»¿è‰²
+    $YEL$ - åœŸé»„è‰²
+    $HIY$ - é»„è‰²
+    $BLU$ - æ·±è“è‰²
+    $HIB$ - è“è‰²
+    $MAG$ - æµ…ç´«è‰²
+    $HIM$ - ç²‰çº¢è‰²
+    $CYN$ - è“ç»¿è‰²
+    $HIC$ - å¤©é’è‰²
+    $WHT$ - æµ…ç°è‰²
+    $HIW$ - ç™½è‰²
+    $BLINK$ - å­—ç¬¦é—ªçƒ
+    å…¶ä¸­ç³»ç»Ÿè‡ªåŠ¨ä¼šåœ¨å­—ä¸²å°¾ç«¯åŠ ä¸€ä¸ª
+    $NOR$ã€‚
+    å­—ä¸²æˆ–ç»°å·ä¸ºcancelæ—¶å°†å–æ¶ˆè¯¥é¡¹å±æ€§ï¼Œç©å®¶åªèƒ½å–æ¶ˆ < ç»°å· >ã€‚
+    By
+    JackyBoy @ CCTX
+    98 / 12 / 12
+    HELP
+    );
+    return 1;
 }

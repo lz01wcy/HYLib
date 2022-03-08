@@ -1,239 +1,588 @@
 // score.c
 #include <ansi.h>
 #include <combat.h>
+
 inherit F_CLEAN_UP;
 
-string bar_string = "¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö";
-string blank_string = "¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ";
+string bar_string = "â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ";
+string blank_string = "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡";
+
 string display_attr(int gift, int value);
+
 string status_color(int current, int max);
+
 string date_string(int date);
+
 string tribar_graph(int val, int eff, int max, string color);
 
 void create() { seteuid(ROOT_UID); }
 
-int main(object me, string arg)
-{
-        object ob, obt;
-	mapping my;
-	string line, str, skill_type,zs,zs1,zs2;
-	object weapon;
-        int attack_points, dodge_points, parry_points, btmp, t, d, r,money,i,zs3,zs4;
-        int a,b,c;
-	seteuid(getuid(me));
-        btmp=1;
-	if(!arg)
-		ob = me;
-	else if (wizardp(me)) {
-		ob = present(arg, environment(me));
-                obt = find_player(arg);
-                if ( !obt ) btmp=0;
-                if (!ob) ob = obt;
-                if (!ob) ob = find_living(arg);
-                if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
-	} else
-		return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
-        my = ob->query_entire_dbase();
+int main(object me, string arg) {
+    object ob, obt;
+    mapping my;
+    string line, str, skill_type, zs, zs1, zs2;
+    object weapon;
+    int attack_points, dodge_points, parry_points, btmp, t, d, r, money, i, zs3, zs4;
+    int a, b, c;
+    seteuid(getuid(me));
+    btmp = 1;
+    if (!arg)
+        ob = me;
+    else if (wizardp(me)) {
+        ob = present(arg, environment(me));
+        obt = find_player(arg);
+        if (!obt) btmp = 0;
+        if (!ob) ob = obt;
+        if (!ob) ob = find_living(arg);
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
+    } else
+        return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹åˆ«äººçš„çŠ¶æ€ã€‚\n");
+    my = ob->query_entire_dbase();
 
-	if( objectp(weapon = ob->query_temp("weapon")) )
-		skill_type = weapon->query("skill_type");
-	else
-		skill_type = "unarmed";
+    if (objectp(weapon = ob->query_temp("weapon")))
+        skill_type = weapon->query("skill_type");
+    else
+        skill_type = "unarmed";
 
-	attack_points = COMBAT_D->skill_power(ob, skill_type, SKILL_USAGE_ATTACK);
-	parry_points = COMBAT_D->skill_power(ob, skill_type, SKILL_USAGE_DEFENSE);
-	dodge_points = COMBAT_D->skill_power(ob, "dodge", SKILL_USAGE_DEFENSE);
-	if( ob->query("mud_age") > 86400){
-	t = ob->query("t");
-	d = ob->query("d");
-	r = ob->query("r");
-	}
-write(HIC"¡Ô"+HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR);
-write(NOR+RANK_D->query_rank(ob)+""+ob->short(1)+"\n");
-write(HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
-write(HIW"¡¾"HIM"ÄêËê"HIW"¡¿"HIY+chinese_number(ob->query("age"))+"Ëê"+chinese_number((ob->query("mud_age")-(ob->query("age")-14)*86400)/7200 + 1 )+"ÔÂ"+"\n");
-write(HIW"¡¾"HIM"ÉúÈÕ"HIW"¡¿"HIY+CHINESE_D->chinese_date((ob->query("birthday") - 14*365*24*60) * 60-890000000)+"\n");
-write(HIW"¡¾"HIM"ĞÔ±ğ"HIW"¡¿"HIY+ob->query("gender")+"\n");
- if( ob->query("couple/couple_name") ){
-write(HIW"¡¾"HIM"°éÂÂ"HIW"¡¿"HIY+ob->query("couple/couple_name")+"\n");
-	}
-else write(HIW"¡¾"HIM"°éÂÂ"HIW"¡¿"HIY+"ÎŞ\n");
-	if( mapp(my["family"]) ) {
-		if( my["family"]["master_name"] ){
-write(HIW"¡¾"HIM"Ê¦¸µ"HIW"¡¿"HIY+my["family"]["master_name"]+"\n");
-		}
-else write(HIW"¡¾"HIM"Ê¦¸µ"HIW"¡¿"HIY+"ÎŞ\n");
-	}
-if( mapp(my["family"]) ) {
-		if( my["family"]["family_name"] ){
-write(HIW"¡¾"HIM"Ê¦ÃÅ"HIW"¡¿"HIY+my["family"]["family_name"]+"");
-write(HIW"¡¾"HIM"Ê¦ÃÅ¹±Ï×"HIW"¡¿"HIY+chinese_number(my["mpgx"])+"\n");
-		}
-else write(HIW"¡¾"HIM"Ê¦ÃÅ"HIW"¡¿"HIY+"ÎŞ\n");
+    attack_points = COMBAT_D->skill_power(ob, skill_type, SKILL_USAGE_ATTACK);
+    parry_points = COMBAT_D->skill_power(ob, skill_type, SKILL_USAGE_DEFENSE);
+    dodge_points = COMBAT_D->skill_power(ob, "dodge", SKILL_USAGE_DEFENSE);
+    if (ob->query("mud_age") > 86400) {
+        t = ob->query("t");
+        d = ob->query("d");
+        r = ob->query("r");
+    }
+    write(HIC
+    "â‰¡" + HIY
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+    HIC
+    "â‰¡\n"
+    NOR);
+    write(NOR + RANK_D->query_rank(ob) + "" + ob->
+    short(
+    1)+"\n");
+    write(HIY
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "å¹´å²"
+    HIW
+    "ã€‘"
+    HIY + chinese_number(ob->query("age")) + "å²" +
+    chinese_number((ob->query("mud_age") - (ob->query("age") - 14) * 86400) / 7200 + 1) + "æœˆ" + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "ç”Ÿæ—¥"
+    HIW
+    "ã€‘"
+    HIY + CHINESE_D->chinese_date((ob->query("birthday") - 14 * 365 * 24 * 60) * 60 - 890000000) + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "æ€§åˆ«"
+    HIW
+    "ã€‘"
+    HIY + ob->query("gender") + "\n");
+    if (ob->query("couple/couple_name")) {
+        write(HIW
+        "ã€"
+        HIM
+        "ä¼´ä¾£"
+        HIW
+        "ã€‘"
+        HIY + ob->query("couple/couple_name") + "\n");
+    } else write(HIW
+    "ã€"
+    HIM
+    "ä¼´ä¾£"
+    HIW
+    "ã€‘"
+    HIY + "æ— \n");
+    if (mapp(my["family"])) {
+        if (my["family"]["master_name"]) {
+            write(HIW
+            "ã€"
+            HIM
+            "å¸ˆå‚…"
+            HIW
+            "ã€‘"
+            HIY + my["family"]["master_name"] + "\n");
+        } else write(HIW
+        "ã€"
+        HIM
+        "å¸ˆå‚…"
+        HIW
+        "ã€‘"
+        HIY + "æ— \n");
+    }
+    if (mapp(my["family"])) {
+        if (my["family"]["family_name"]) {
+            write(HIW
+            "ã€"
+            HIM
+            "å¸ˆé—¨"
+            HIW
+            "ã€‘"
+            HIY + my["family"]["family_name"] + "");
+            write(HIW
+            "ã€"
+            HIM
+            "å¸ˆé—¨è´¡çŒ®"
+            HIW
+            "ã€‘"
+            HIY + chinese_number(my["mpgx"]) + "\n");
+        } else write(HIW
+        "ã€"
+        HIM
+        "å¸ˆé—¨"
+        HIW
+        "ã€‘"
+        HIY + "æ— \n");
+    }
+
+    zs = "æ— ";
+    zs1 = "æ— ";
+    zs2 = "";
+    if (ob->query("zhuanshen"))
+        zs = "ä¸€è½¬";
+    if (ob->query("guard/flag"))
+        zs = "äºŒè½¬";
+    if (ob->query("zhuanbest"))
+        zs = "ä¸‰è½¬";
+    if (ob->query("4zhuan"))
+        zs = "å››è½¬";
+    if (ob->query("5zhuan"))
+        zs = "äº”è½¬";
+    if (ob->query("zhuanfinal/7"))
+        zs1 = "ã€é˜´é˜³åäºŒé‡å¤©ã€‘";
+    if (ob->query("zhuanfinal/8"))
+        zs1 = zs1 + " ã€ä¸è´¥ç¥åŠŸã€‘";
+    if (ob->query("zhuanfinal/1"))
+        zs2 = "ã€å…ƒæ°”æ— ç©·ã€‘";
+    if (ob->query("zhuanfinal/2"))
+        zs2 = zs2 + " ã€éå½±æ“’è¸ªã€‘";
+    if (ob->query("zhuanfinal/3"))
+        zs2 = zs2 + " ã€ç¥é­”é‡‘èº«ã€‘";
+    if (ob->query("zhuanfinal/4"))
+        zs2 = zs2 + " ã€ç¼šéª¨ç¼ èº«ã€‘";
+    if (ob->query("zhuanfinal/5"))
+        zs2 = zs2 + " ã€ç ´å…ƒå¤§æ³•ã€‘";
+    if (ob->query("zhuanfinal/6"))
+        zs2 = zs2 + " ã€å›½å£«æ— åŒã€‘";
+    zs3 = 6000000 + (ob->query("expmax", 1) * 500000);
+    zs4 = ob->query_temp("menpaijob", 1);
+    write(HIW
+    "ã€"
+    HIM
+    "è½¬èº«"
+    HIW
+    "ã€‘"
+    HIY + zs + "");
+    if (!ob->query("4zhuan")) {
+        write("\n");
+
+
+    }
+    if (ob->query("4zhuan")) {
+        write(HIW
+        "ã€"
+        HIM
+        "è¿ç»­ä»»åŠ¡"
+        HIW
+        "ã€‘"
+        HIY + zs4 + "");
+        write(HIW
+        "ã€"
+        HIM
+        "æ­¦åŠŸä¸Šé™"
+        HIW
+        "ã€‘"
+        HIY + zs3 + "\n");
+        write(HIW
+        "ã€"
+        HIM
+        "è½¬èº«æ­¦åŠŸ"
+        HIW
+        "ã€‘"
+        HIY + zs1 + "\n");
+        write(HIW
+        "ã€"
+        HIM
+        "è½¬èº«æŠ€èƒ½"
+        HIW
+        "ã€‘"
+        HIY + zs2 + "\n");
+
+
+    }
+    write(HIY
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "è‡‚åŠ›"
+    HIW
+    "ã€‘"
+    HIY + display_attr(my["str"], ob->query_str()) + HIW
+    "ã€"
+    HIM
+    "æ­¦å™¨æ”»å‡»"
+    HIW
+    "ã€‘"
+    NOR + HIC + "(+" + ob->query_temp("apply/damage") + ")\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "æ‚Ÿæ€§"
+    HIW
+    "ã€‘"
+    HIY + display_attr(my["int"], ob->query_int()) + HIW
+    "ã€"
+    HIM
+    "é˜²å…·é˜²å¾¡"
+    HIW
+    "ã€‘"
+    NOR + HIC + "(+" + ob->query_temp("apply/armor") + ")\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "æ ¹éª¨"
+    HIW
+    "ã€‘"
+    HIY + display_attr(my["con"], ob->query_con()) + HIW
+    "ã€"
+    HIM
+    "æ€æ­»äººæ•°"
+    HIW
+    "ã€‘"
+    NOR + HIR + chinese_number(my["MKS"] + my["PKS"]) + NOR + "\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "èº«æ³•"
+    HIW
+    "ã€‘"
+    HIY + display_attr(my["dex"], ob->query_dex()) + HIW
+    "ã€"
+    HIM
+    "æ€ç©å®¶æ•°"
+    HIW
+    "ã€‘"
+    NOR + HIR + chinese_number(my["PKS"]) + NOR + "\n"
+    NOR);
+    if (wizardp(me)) {
+        write(HIW
+        "ã€"
+        HIM
+        "ç¦ç¼˜"
+        HIW
+        "ã€‘"
+        HIY + display_attr(my["kar"], ob->query_kar()) + HIW
+        "ã€"
+        HIM
+        "æ­»äº¡æ¬¡æ•°"
+        HIW
+        "ã€‘"
+        NOR + HIR + chinese_number(my["dietimes"]) + "\n"
+        NOR);
+    } else write(HIW
+    "ã€"
+    HIM
+    "ç¦ç¼˜"
+    HIW
+    "ã€‘"
+    HIY + "???" + HIW
+    "ã€"
+    HIM
+    "æ­»äº¡æ¬¡æ•°"
+    HIW
+    "ã€‘"
+    NOR + HIR + chinese_number(my["dietimes"]) + "\n"
+    NOR);
+    if (wizardp(me)) {
+        write(HIW
+        "ã€"
+        HIM
+        "å®¹è²Œ"
+        HIW
+        "ã€‘"
+        HIY + display_attr(my["per"], ob->query_per()) + HIW
+        "ã€"
+        HIM
+        "ç¦»å¥‡æ­»äº¡"
+        HIW
+        "ã€‘"
+        NOR + HIR + chinese_number(my["dietimes"] - my["normal_die"]) + "\n"
+        NOR);
+    } else write(HIW
+    "ã€"
+    HIM
+    "å®¹è²Œ"
+    HIW
+    "ã€‘"
+    HIY + "???" + HIW
+    "ã€"
+    HIM
+    "ç¦»å¥‡æ­»äº¡"
+    HIW
+    "ã€‘"
+    NOR + HIR + chinese_number(my["dietimes"] - my["normal_die"]) + "\n"
+    NOR);
+    write(HIY
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "ç²¾ç¥"
+    HIW
+    "ã€‘"
+    HIY + tribar_graph(my["jing"], my["eff_jing"], my["max_jing"], HIC) + HIW
+    "ã€"
+    HIM
+    "åˆ¤å¸ˆæ¬¡æ•°"
+    HIW
+    "ã€‘"
+    NOR + HIB + chinese_number(ob->query("betrayer")) + NOR + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "æ°”è¡€"
+    HIW
+    "ã€‘"
+    HIY + tribar_graph(my["qi"], my["eff_qi"], my["max_qi"], HIR) + HIW
+    "ã€"
+    HIM
+    "é£åº¦é­…åŠ›"
+    HIW
+    "ã€‘"
+    HIC + chinese_number(ob->query("meili")) + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "é¥®æ°´"
+    HIW
+    "ã€‘"
+    HIY + tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), CYN) + HIW
+    "ã€"
+    HIM
+    "æ±Ÿæ¹–å¨æœ›"
+    HIW
+    "ã€‘"
+    HIC + chinese_number(ob->query("weiwang")) + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "é£Ÿç‰©"
+    HIW
+    "ã€‘"
+    HIY + tribar_graph(my["food"], ob->max_food_capacity(), ob->max_food_capacity(), YEL) + HIW
+    "ã€"
+    HIM
+    "æ±Ÿæ¹–é˜…å†"
+    HIW
+    "ã€‘"
+    HIC + ob->query("score") + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "æ”»å‡»"
+    HIW
+    "ã€‘"
+    NOR + HIY + "/cmds/std/looksj.c"->getatt(ob, 1) + NOR + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "é˜²å¾¡"
+    HIW
+    "ã€‘"
+    NOR + HIY + "/cmds/std/looksj.c"->getdef(ob, 1) + NOR + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "èº²é—ª"
+    HIW
+    "ã€‘"
+    NOR + HIY + "/cmds/std/looksj.c"->getdog(ob, 1) + NOR + "\n");
+    if (wizardp(me))write(HIW
+    "ã€"
+    HIM
+    "æ”»å‡»åŠ›"
+    HIW
+    "ã€‘"
+    NOR + HIC + attack_points / 100 + 1 + "(+" + ob->query_temp("apply/damage") + ")\n"
+    NOR);
+    if (wizardp(me))write(HIW
+    "ã€"
+    HIM
+    "é˜²å¾¡åŠ›"
+    HIW
+    "ã€‘"
+    NOR + HIC + (dodge_points + (weapon ? parry_points : (parry_points / 10))) / 100 + 1 + "(+" +
+    ob->query_temp("apply/armor") + ")\n"
+    NOR);
+    write(HIY
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+    NOR);
+    write(HIW
+    "ã€"
+    HIM
+    "ä¾ ä¹‰æ­£æ°”"
+    HIW
+    "ã€‘"
+    NOR + RED + ob->query("shen") + NOR
+    "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "å­¦ä¹ æ½œåŠ›"
+    HIW
+    "ã€‘"
+    NOR + HIY + (ob->query("potential") - ob->query("learned_points")) + NOR + "\n");
+    write(HIW
+    "ã€"
+    HIM
+    "å®æˆ˜ç»éªŒ"
+    HIW
+    "ã€‘"
+    NOR + HIY + ob->query("combat_exp") + NOR + "\n");
+    if (ob->query("killbyname") && ob->query("killbyname") != "æ­»å› ä¸æ˜") {
+        write(HIW
+        "ã€"
+        HIM
+        "ä¸Šæ¬¡æ­»å› "
+        HIW
+        "ã€‘"
+        HIY + "è¢«" + ob->query("killbyname") + "æ€æ­»\n");
+    }
+    if (ob->query("killbyname") && ob->query("killbyname") == "æ­»å› ä¸æ˜") {
+        write(HIW
+        "ã€"
+        HIM
+        "ä¸Šæ¬¡æ­»å› "
+        HIW
+        "ã€‘"
+        HIY + "æ­»å› ä¸æ˜\n");
+    }
+    if (me->query("age") == 14) money = 100;
+    if (me->query("age") > 14) money = 100 + (me->query("age") - 15) * 20;
+    if (me->query("age") > 20) money = 200 + (me->query("age") - 20) * 20;
+    if (me->query("age") > 30) money = 400 + (me->query("age") - 30) * 30;
+    if (me->query("age") > 40) money = 800 + (me->query("age") - 40) * 40;
+    write(HIW
+    "ã€"
+    HIM
+    "å­˜æ¬¾ä¸Šé™"
+    HIW
+    "ã€‘"
+    NOR + HIY + money + HIY + "ä¸¤é»„é‡‘" + "\n"
+    NOR);
+    if (!ob->query("killbyname")) {
+        write(HIW
+        "ã€"
+        HIM
+        "ä¸Šæ¬¡æ­»å› "
+        HIW
+        "ã€‘"
+        HIY + "æ— \n");
+    }
+    if (ob->query_temp("temp_exp")) {
+        if (ob->query("mud_age") - ob->query_temp("mud_age") > 1) {
+            if (ob->query("combat_exp") > ob->query_temp("temp_exp")) {
+                if ((i = (ob->query("combat_exp") - ob->query_temp("temp_exp")) * 60
+                         / (ob->query("mud_age") - ob->query_temp("mud_age"))) > 100)
+                    i = i * 60;
+                write(HIW
+                "ã€"
+                HIM
+                "æˆé•¿é€Ÿåº¦"
+                HIW
+                "ã€‘"
+                HIY + i + "/å°æ—¶\n");
+            }
+        }
+    }
+    if (me->query_temp("apply/strength") > 800)
+        me->set_temp("apply/strength", 800);
+    if (me->query_temp("apply/intelligence") > 800)
+        me->set_temp("apply/intelligence", 800);
+    if (me->query_temp("apply/constitution") > 800)
+        me->set_temp("apply/constitution", 800);
+    if (me->query_temp("apply/dexerity") > 800)
+        me->set_temp("apply/dexerity", 800);
+    if (me->query_temp("apply/attack") > 800)
+        me->set_temp("apply/attack", 800);
+    if (me->query_temp("apply/defense") > 800)
+        me->set("apply/defense", 800);
+    if (me->query_temp("apply/damage") > 4000)
+        me->set_temp("apply/damage", 4000);
+    if (me->query_temp("apply/armor") > 4000)
+        me->set_temp("apply/armor", 4000);
+    if (me->query_temp("apply/dodge") > 800)
+        me->set_temp("apply/dodge", 800);
+
+    write(HIC
+    "â‰¡" + HIY
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€æµ· æ´‹ IIâ”€â”€â”€â”€â”€"
+    HIC
+    "â‰¡\n"
+    NOR);
+    return 1;
+
 }
-       
-zs="ÎŞ";
-zs1="ÎŞ";
-zs2="";
-if (ob->query("zhuanshen"))
-zs="Ò»×ª";
-if (ob->query("guard/flag"))
-zs="¶ş×ª";
-if (ob->query("zhuanbest"))
-zs="Èı×ª";
-if (ob->query("4zhuan"))
-zs="ËÄ×ª";
-if (ob->query("5zhuan"))
-zs="Îå×ª";
-if (ob->query("zhuanfinal/7"))
-zs1="¡¾ÒõÑôÊ®¶şÖØÌì¡¿";
-if (ob->query("zhuanfinal/8"))
-zs1=zs1+" ¡¾²»°ÜÉñ¹¦¡¿";
-if (ob->query("zhuanfinal/1"))
-zs2="¡¾ÔªÆøÎŞÇî¡¿";
-if (ob->query("zhuanfinal/2"))
-zs2=zs2+" ¡¾¶İÓ°ÇÜ×Ù¡¿";
-if (ob->query("zhuanfinal/3"))
-zs2=zs2+" ¡¾ÉñÄ§½ğÉí¡¿";
-if (ob->query("zhuanfinal/4"))
-zs2=zs2+" ¡¾¸¿¹Ç²øÉí¡¿";
-if (ob->query("zhuanfinal/5"))
-zs2=zs2+" ¡¾ÆÆÔª´ó·¨¡¿";
-if (ob->query("zhuanfinal/6"))
-zs2=zs2+" ¡¾¹úÊ¿ÎŞË«¡¿";
-zs3=6000000+(ob->query("expmax",1)*500000);
-zs4=ob->query_temp("menpaijob",1);
-write(HIW"¡¾"HIM"×ªÉí"HIW"¡¿"HIY+zs+"");
-if (!ob->query("4zhuan"))
-{
-write("\n");
 
-
-}
-if (ob->query("4zhuan"))
-{
-write(HIW"¡¾"HIM"Á¬ĞøÈÎÎñ"HIW"¡¿"HIY+zs4+"");write(HIW"¡¾"HIM"Îä¹¦ÉÏÏŞ"HIW"¡¿"HIY+zs3+"\n");
-write(HIW"¡¾"HIM"×ªÉíÎä¹¦"HIW"¡¿"HIY+zs1+"\n");
-write(HIW"¡¾"HIM"×ªÉí¼¼ÄÜ"HIW"¡¿"HIY+zs2+"\n");
-
-
-}
-write(HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
-write(HIW"¡¾"HIM"±ÛÁ¦"HIW"¡¿"HIY+display_attr(my["str"], ob->query_str())+HIW"¡¾"HIM"ÎäÆ÷¹¥»÷"HIW"¡¿"NOR+HIC+"(+"+ob->query_temp("apply/damage")+")\n"NOR);
-write(HIW"¡¾"HIM"ÎòĞÔ"HIW"¡¿"HIY+display_attr(my["int"], ob->query_int())+HIW"¡¾"HIM"·À¾ß·ÀÓù"HIW"¡¿"NOR+HIC+"(+"+ob->query_temp("apply/armor")+")\n"NOR);
-write(HIW"¡¾"HIM"¸ù¹Ç"HIW"¡¿"HIY+display_attr(my["con"], ob->query_con())+HIW"¡¾"HIM"É±ËÀÈËÊı"HIW"¡¿"NOR+HIR+chinese_number(my["MKS"] + my["PKS"])+NOR+"\n"NOR);
-write(HIW"¡¾"HIM"Éí·¨"HIW"¡¿"HIY+display_attr(my["dex"], ob->query_dex())+HIW"¡¾"HIM"É±Íæ¼ÒÊı"HIW"¡¿"NOR+HIR+chinese_number(my["PKS"])+NOR+"\n"NOR);
-if (wizardp(me))
-{
-write(HIW"¡¾"HIM"¸£Ôµ"HIW"¡¿"HIY+display_attr(my["kar"], ob->query_kar())+HIW"¡¾"HIM"ËÀÍö´ÎÊı"HIW"¡¿"NOR+HIR+chinese_number(my["dietimes"])+"\n"NOR);
-}
-else write(HIW"¡¾"HIM"¸£Ôµ"HIW"¡¿"HIY+"???"+HIW"¡¾"HIM"ËÀÍö´ÎÊı"HIW"¡¿"NOR+HIR+chinese_number(my["dietimes"])+"\n"NOR);
-if (wizardp(me))
-{
-write(HIW"¡¾"HIM"ÈİÃ²"HIW"¡¿"HIY+display_attr(my["per"], ob->query_per())+HIW"¡¾"HIM"ÀëÆæËÀÍö"HIW"¡¿"NOR+HIR+chinese_number(my["dietimes"] - my["normal_die"])+"\n"NOR);
-} else write(HIW"¡¾"HIM"ÈİÃ²"HIW"¡¿"HIY+"???"+HIW"¡¾"HIM"ÀëÆæËÀÍö"HIW"¡¿"NOR+HIR+chinese_number(my["dietimes"] - my["normal_die"])+"\n"NOR);
-write(HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
-write(HIW"¡¾"HIM"¾«Éñ"HIW"¡¿"HIY+tribar_graph(my["jing"], my["eff_jing"], my["max_jing"], HIC) + HIW"¡¾"HIM"ÅĞÊ¦´ÎÊı"HIW"¡¿"NOR+HIB+chinese_number(ob->query("betrayer"))+NOR+"\n");
-write(HIW"¡¾"HIM"ÆøÑª"HIW"¡¿"HIY+tribar_graph(my["qi"], my["eff_qi"], my["max_qi"], HIR) + HIW"¡¾"HIM"·ç¶È÷ÈÁ¦"HIW"¡¿"HIC+chinese_number(ob->query("meili"))+"\n");
-write(HIW"¡¾"HIM"ÒûË®"HIW"¡¿"HIY+tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), CYN) + HIW"¡¾"HIM"½­ºşÍşÍû"HIW"¡¿"HIC+chinese_number(ob->query("weiwang"))+"\n");
-write(HIW"¡¾"HIM"Ê³Îï"HIW"¡¿"HIY+tribar_graph(my["food"], ob->max_food_capacity(), ob->max_food_capacity(), YEL) + HIW"¡¾"HIM"½­ºşÔÄÀú"HIW"¡¿"HIC+ob->query("score")+"\n");
-write(HIW"¡¾"HIM"¹¥»÷"HIW"¡¿"NOR+HIY+"/cmds/std/looksj.c"->getatt(ob,1)+NOR+"\n");
-write(HIW"¡¾"HIM"·ÀÓù"HIW"¡¿"NOR+HIY+"/cmds/std/looksj.c"->getdef(ob,1)+NOR+"\n");
-write(HIW"¡¾"HIM"¶ãÉÁ"HIW"¡¿"NOR+HIY+"/cmds/std/looksj.c"->getdog(ob,1)+NOR+"\n");
-if (wizardp(me))write(HIW"¡¾"HIM"¹¥»÷Á¦"HIW"¡¿"NOR+HIC+attack_points/100 + 1+"(+"+ob->query_temp("apply/damage")+")\n"NOR);
-if (wizardp(me))write(HIW"¡¾"HIM"·ÀÓùÁ¦"HIW"¡¿"NOR+HIC+(dodge_points + (weapon? parry_points: (parry_points/10)))/100 + 1+"(+"+ob->query_temp("apply/armor")+")\n"NOR);
-write(HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
-write(HIW"¡¾"HIM"ÏÀÒåÕıÆø"HIW"¡¿"NOR+RED+ob->query("shen")+NOR"\n");
-write(HIW"¡¾"HIM"Ñ§Ï°Ç±Á¦"HIW"¡¿"NOR+HIY+(ob->query("potential") - ob->query("learned_points"))+NOR+"\n");
-write(HIW"¡¾"HIM"ÊµÕ½¾­Ñé"HIW"¡¿"NOR+HIY+ob->query("combat_exp")+NOR+"\n");
-        if( ob->query("killbyname") && ob->query("killbyname")!="ËÀÒò²»Ã÷"){
-write(HIW"¡¾"HIM"ÉÏ´ÎËÀÒò"HIW"¡¿"HIY+"±»"+ob->query("killbyname")+"É±ËÀ\n");
-	}
-        if( ob->query("killbyname") && ob->query("killbyname")=="ËÀÒò²»Ã÷"){
-write(HIW"¡¾"HIM"ÉÏ´ÎËÀÒò"HIW"¡¿"HIY+"ËÀÒò²»Ã÷\n");
-	}
-	if (me->query("age")==14) money = 100;
-	if (me->query("age")>14) money = 100 + (me->query("age")-15) * 20;
-	if (me->query("age")>20) money = 200 + (me->query("age")-20) * 20;
-	if (me->query("age")>30) money = 400 + (me->query("age")-30) * 30;
-	if (me->query("age")>40) money = 800 + (me->query("age")-40) * 40;
-write(HIW"¡¾"HIM"´æ¿îÉÏÏŞ"HIW"¡¿"NOR+HIY+money+HIY+"Á½»Æ½ğ"+"\n"NOR);
-        if( !ob->query("killbyname")){
-write(HIW"¡¾"HIM"ÉÏ´ÎËÀÒò"HIW"¡¿"HIY+"ÎŞ\n");
-	}
-if (ob->query_temp("temp_exp"))
-{
-if (ob->query("mud_age") - ob->query_temp("mud_age") > 1)
-{
-if (ob->query("combat_exp") > ob->query_temp("temp_exp"))
-{
-if ((i = (ob->query("combat_exp") - ob->query_temp("temp_exp")) * 60
-/ (ob->query("mud_age") - ob->query_temp("mud_age"))) > 100)
-i = i*60;
-write(HIW"¡¾"HIM"³É³¤ËÙ¶È"HIW"¡¿"HIY+i+"/Ğ¡Ê±\n");
-}
-}
-}
-if (me->query_temp("apply/strength") > 800)
-me->set_temp("apply/strength",800);
-if (me->query_temp("apply/intelligence") > 800)
-me->set_temp("apply/intelligence",800);
-if (me->query_temp("apply/constitution") > 800)
-me->set_temp("apply/constitution",800);
-if (me->query_temp("apply/dexerity") > 800)
-me->set_temp("apply/dexerity",800);
-if (me->query_temp("apply/attack") > 800)
-me->set_temp("apply/attack",800);
-if (me->query_temp("apply/defense") > 800)
-me->set("apply/defense",800);
-if (me->query_temp("apply/damage") > 4000)
-me->set_temp("apply/damage",4000);
-if (me->query_temp("apply/armor") > 4000)
-me->set_temp("apply/armor",4000);
-if (me->query_temp("apply/dodge") > 800)
-me->set_temp("apply/dodge",800);
-
-write(HIC"¡Ô"+HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤º£ Ñó II©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR);
-	return 1;
-        
-}
-string display_attr(int gift, int value)
-{
-	if( value > gift ) return sprintf( HIY "%3d" NOR, value );
-	else if( value < gift ) return sprintf( CYN "%3d" NOR, value );
-	else return sprintf("%3d", value);
+string display_attr(int gift, int value) {
+    if (value > gift) return sprintf(HIY
+    "%3d"
+    NOR, value );
+    else if (value < gift) return sprintf(CYN
+    "%3d"
+    NOR, value );
+    else return sprintf("%3d", value);
 }
 
-string status_color(int current, int max)
-{
-	int percent;
+string status_color(int current, int max) {
+    int percent;
 
-	if( max ) percent = current * 100 / max;
-	else percent = 100;
+    if (max) percent = current * 100 / max;
+    else percent = 100;
 
-	if( percent > 100 ) return HIC;
-	if( percent >= 90 ) return HIG;
-	if( percent >= 60 ) return HIY;
-	if( percent >= 30 ) return YEL;
-	if( percent >= 10 ) return HIR;
-	return RED;
+    if (percent > 100) return HIC;
+    if (percent >= 90) return HIG;
+    if (percent >= 60) return HIY;
+    if (percent >= 30) return YEL;
+    if (percent >= 10) return HIR;
+    return RED;
 }
-string tribar_graph(int val, int eff, int max, string color)
-{
-	return color + bar_string[0..(val*10/max)*2-1]
-		+ ((eff > val) ? blank_string[(val*10/max)*2..(eff*10/max)*2-1] : "") + NOR;
+
+string tribar_graph(int val, int eff, int max, string color) {
+    return color + bar_string[0..(val * 10 / max) * 2 - 1]
+           + ((eff > val) ? blank_string[(val * 10 / max) * 2..(eff * 10 / max) * 2 - 1] : "") + NOR;
 }
-int help(object me)
-{
-	write(@HELP
-Ö¸Áî¸ñÊ½ : score
-           score <¶ÔÏóÃû³Æ>                   (Î×Ê¦×¨ÓÃ)
 
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã(Äã)»òÖ¸¶¨¶ÔÏó(º¬¹ÖÎï)µÄ»ù±¾×ÊÁÏ¡£
-»ù±¾×ÊÁÏµÄÉè¶¨Çë²ÎÔÄ 'help setup'¡£
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ :
+    score
+    score<å¯¹è±¡åç§°>(å·«å¸ˆä¸“ç”¨)
 
-see also : hp
-HELP
+    è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºä½ (ä½ )
+    æˆ–æŒ‡å®šå¯¹è±¡(å«æ€ªç‰©)
+    çš„åŸºæœ¬èµ„æ–™ã€‚
+    åŸºæœ¬èµ„æ–™çš„è®¾å®šè¯·å‚é˜…
+    'help setup'ã€‚
+
+    see
+    also :
+    hp
+    HELP
     );
     return 1;
 }

@@ -1,216 +1,417 @@
 #include <ansi.h>
-int main()
-{
-	string info,name,id,file,infoa,infob;
-		info = read_file("/data/npc/champion.o");
-infoa = read_file("/data/npc/menpai.o");
-infob = read_file("/data/npc/menpai1.o");
-	printf(HIY"\n\n    ¦¸¦¸= "HIM" º£Ñó¸÷ÅÉÖªÃûÈËÊ¿ÁĞ±í"HIY"  =¦¸¦¸\n"HIW"----------------------------------------------\n"NOR);
-printf(HIM"	¡¼½­ºşºÆ½Ù¡½"+RED" %s"+HIC"¡ø¶ÔÕ½¡ø"NOR+RED" %s\n"NOR,infoa,infob);
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIC"	ÕıÅÉÃËÖ÷        "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIC"	ÕıÅÉÃËÖ÷        "+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion1.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIR"	Ğ°ÅÉÃËÖ÷        "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIR"	Ğ°ÅÉÃËÖ÷        "+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_sl.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÉÙÁÖËÂÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÉÙÁÖËÂÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_gm.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	¹ÅÄ¹ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	¹ÅÄ¹ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_gb.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Ø¤°ïÕÆÃÅ´óµÜ×Ó  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"   	Ø¤°ïÕÆÃÅ´óµÜ×Ó  "+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_hs.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	»ªÉ½ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	»ªÉ½ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_yl.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÔÆÁúÃÅÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÔÆÁúÃÅÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_lj.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÁéğÕ¹¬ÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÁéğÕ¹¬ÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_xx.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ĞÇËŞÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ĞÇËŞÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_wd.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Îäµ±ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Îäµ±ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_em.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	¶ëÃ¼ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	¶ëÃ¼ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_xs.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Ñ©É½ËÂÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Ñ©É½ËÂÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_dl.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	´óÀí¶Î¼Ò´óµÜ×Ó  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	´óÀí¶Î¼Ò´óµÜ×Ó  "+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_bt.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	°×ÍÕÉ½ÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	°×ÍÕÉ½ÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_mj.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Ã÷½ÌÕÆÃÅ´óµÜ×Ó  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Ã÷½ÌÕÆÃÅ´óµÜ×Ó  "+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_qz.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	È«ÕæÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	È«ÕæÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_ry.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÈÕÔÂ½ÌÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÈÕÔÂ½ÌÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_mr.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Ä½ÈİÊÀ¼Ò´óµÜ×Ó  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Ä½ÈİÊÀ¼Ò´óµÜ×Ó  "+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_slj.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÉñÁú½ÌÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÉñÁú½ÌÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-info = read_file("/data/npc/champion_th.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÌÒ»¨µºÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÌÒ»¨µºÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_tz.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÌúÕÆ°ïÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÌúÕÆ°ïÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_xy.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	åĞÒ£ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	åĞÒ£ÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_kl.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	À¥ÂØÅÉÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	À¥ÂØÅÉÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_wdj.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Îå¶¾½ÌÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Îå¶¾½ÌÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_lx.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÁèÏö³ÇÕÆÃÅ´óµÜ×Ó"+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÁèÏö³ÇÕÆÃÅ´óµÜ×Ó"+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_tm.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÌÆÃÅÕÆÃÅ¸±ÃÅÖ÷  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÌÆÃÅÕÆÃÅ¸±ÃÅÖ÷  "+HIB" ¿ÕÈ±\n"NOR);
-	info = read_file("/data/npc/champion_feitian.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	·ÉÌìÓù½£Á÷×ÚÖ÷  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	·ÉÌìÓù½£Á÷×ÚÖ÷  "+HIB" ¿ÕÈ±\n"NOR);
+
+int main() {
+    string info, name, id, file, infoa, infob;
+    info = read_file("/data/npc/champion.o");
+    infoa = read_file("/data/npc/menpai.o");
+    infob = read_file("/data/npc/menpai1.o");
+    printf(HIY
+    "\n\n    Î©Î©= "
+    HIM
+    " æµ·æ´‹å„æ´¾çŸ¥åäººå£«åˆ—è¡¨"
+    HIY
+    "  =Î©Î©\n"
+    HIW
+    "----------------------------------------------\n"
+    NOR);
+    printf(HIM
+    "	ã€–æ±Ÿæ¹–æµ©åŠ«ã€—" + RED
+    " %s" + HIC
+    "â–²å¯¹æˆ˜â–²"
+    NOR + RED
+    " %s\n"
+    NOR, infoa, infob);
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIC
+        "	æ­£æ´¾ç›Ÿä¸»        " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIC
+    "	æ­£æ´¾ç›Ÿä¸»        " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion1.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIR
+        "	é‚ªæ´¾ç›Ÿä¸»        " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIR
+    "	é‚ªæ´¾ç›Ÿä¸»        " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_sl.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å°‘æ—å¯ºæŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å°‘æ—å¯ºæŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_gm.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å¤å¢“æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å¤å¢“æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_gb.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	ä¸å¸®æŒé—¨å¤§å¼Ÿå­  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "   	ä¸å¸®æŒé—¨å¤§å¼Ÿå­  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_hs.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	åå±±æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	åå±±æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_yl.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	äº‘é¾™é—¨æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	äº‘é¾™é—¨æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_lj.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	çµé¹«å®«æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	çµé¹«å®«æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_xx.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ˜Ÿå®¿æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ˜Ÿå®¿æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_wd.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ­¦å½“æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ­¦å½“æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_em.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å³¨çœ‰æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å³¨çœ‰æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_xs.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	é›ªå±±å¯ºæŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	é›ªå±±å¯ºæŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_dl.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å¤§ç†æ®µå®¶å¤§å¼Ÿå­  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å¤§ç†æ®µå®¶å¤§å¼Ÿå­  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_bt.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	ç™½é©¼å±±æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	ç™½é©¼å±±æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_mj.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ˜æ•™æŒé—¨å¤§å¼Ÿå­  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ˜æ•™æŒé—¨å¤§å¼Ÿå­  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_qz.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å…¨çœŸæ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å…¨çœŸæ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_ry.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ—¥æœˆæ•™æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ—¥æœˆæ•™æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_mr.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ…•å®¹ä¸–å®¶å¤§å¼Ÿå­  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ…•å®¹ä¸–å®¶å¤§å¼Ÿå­  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_slj.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	ç¥é¾™æ•™æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	ç¥é¾™æ•™æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_th.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ¡ƒèŠ±å²›æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ¡ƒèŠ±å²›æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_tz.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	é“æŒå¸®æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	é“æŒå¸®æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_xy.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	é€é¥æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	é€é¥æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_kl.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ˜†ä»‘æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ˜†ä»‘æ´¾æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_wdj.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	äº”æ¯’æ•™æŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	äº”æ¯’æ•™æŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_lx.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å‡Œéœ„åŸæŒé—¨å¤§å¼Ÿå­" + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å‡Œéœ„åŸæŒé—¨å¤§å¼Ÿå­" + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_tm.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å”é—¨æŒé—¨å‰¯é—¨ä¸»  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å”é—¨æŒé—¨å‰¯é—¨ä¸»  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+    info = read_file("/data/npc/champion_feitian.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	é£å¤©å¾¡å‰‘æµå®—ä¸»  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	é£å¤©å¾¡å‰‘æµå®—ä¸»  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
 
-	info = read_file("/data/npc/champion_nsl.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ÄÏÉÙÁÖÅÉ¸±Ö÷³Ö  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ÄÏÉÙÁÖÅÉ¸±Ö÷³Ö  "+HIB" ¿ÕÈ±\n"NOR);
+    info = read_file("/data/npc/champion_nsl.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å—å°‘æ—æ´¾å‰¯ä¸»æŒ  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å—å°‘æ—æ´¾å‰¯ä¸»æŒ  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
 
-	info = read_file("/data/npc/champion_hua.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ºì»¨»á¸±×Ü¶æÖ÷  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ºì»¨»á¸±×Ü¶æÖ÷  "+HIB" ¿ÕÈ±\n"NOR);
+    info = read_file("/data/npc/champion_hua.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	çº¢èŠ±ä¼šå‰¯æ€»èˆµä¸»  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	çº¢èŠ±ä¼šå‰¯æ€»èˆµä¸»  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
 
-	info = read_file("/data/npc/champion_ss.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	áÔ É½ ÅÉ¸±ÕÆÃÅ  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	áÔ É½ ÅÉ¸±ÕÆÃÅ  "+HIB" ¿ÕÈ±\n"NOR);
+    info = read_file("/data/npc/champion_ss.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	åµ© å±± æ´¾å‰¯æŒé—¨  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	åµ© å±± æ´¾å‰¯æŒé—¨  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
 
-	info = read_file("/data/npc/champion_ts.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Ì© É½ ÅÉ¸±ÕÆÃÅ  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Ì© É½ ÅÉ¸±ÕÆÃÅ  "+HIB" ¿ÕÈ±\n"NOR);
-		
-	info = read_file("/data/npc/champion_qc.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Çà ³Ç ÅÉ¸±ÕÆÃÅ  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Çà ³Ç ÅÉ¸±ÕÆÃÅ  "+HIB" ¿ÕÈ±\n"NOR);		
+    info = read_file("/data/npc/champion_ts.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ³° å±± æ´¾å‰¯æŒé—¨  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ³° å±± æ´¾å‰¯æŒé—¨  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
-	info = read_file("/data/npc/champion_henshan.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ºâ É½ ÅÉ¸±ÕÆÃÅ  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ºâ É½ ÅÉ¸±ÕÆÃÅ  "+HIB" ¿ÕÈ±\n"NOR);		
-		
+    info = read_file("/data/npc/champion_qc.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	é’ åŸ æ´¾å‰¯æŒé—¨  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	é’ åŸ æ´¾å‰¯æŒé—¨  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
-	info = read_file("/data/npc/champion_hengshan.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	ºã É½ ÅÉ¸±ÕÆÃÅ  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	ºã É½ ÅÉ¸±ÕÆÃÅ  "+HIB" ¿ÕÈ±\n"NOR);				
+    info = read_file("/data/npc/champion_henshan.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	è¡¡ å±± æ´¾å‰¯æŒé—¨  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	è¡¡ å±± æ´¾å‰¯æŒé—¨  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
-	info = read_file("/data/npc/champion_hj.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	¹ØÍâºú¼Ò¸±×Ü¹Ü  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	¹ØÍâºú¼Ò¸±×Ü¹Ü  "+HIB" ¿ÕÈ±\n"NOR);			
-		
 
-	info = read_file("/data/npc/champion_mz.o");
-	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
-	{
-	printf(HIG"	Ã·  ×¯  ¸±×¯Ö÷  "+HIB" %s\n"NOR,name+"("+id+")");
-	}else printf(HIG"	Ã·  ×¯  ¸±×¯Ö÷  "+HIB" ¿ÕÈ±\n"NOR);					
+    info = read_file("/data/npc/champion_hengshan.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ’ å±± æ´¾å‰¯æŒé—¨  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ’ å±± æ´¾å‰¯æŒé—¨  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
-	printf(HIW"------------------------------"HIM" ¡î º£ÑóII ¡î "HIW"---\n"NOR);
+    info = read_file("/data/npc/champion_hj.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	å…³å¤–èƒ¡å®¶å‰¯æ€»ç®¡  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	å…³å¤–èƒ¡å®¶å‰¯æ€»ç®¡  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
 
-return 1;
+
+    info = read_file("/data/npc/champion_mz.o");
+    if (info && sscanf(info, "%s %s %s", file, id, name) == 3) {
+        printf(HIG
+        "	æ¢…  åº„  å‰¯åº„ä¸»  " + HIB
+        " %s\n"
+        NOR, name + "(" + id + ")");
+    } else printf(HIG
+    "	æ¢…  åº„  å‰¯åº„ä¸»  " + HIB
+    " ç©ºç¼º\n"
+    NOR);
+
+    printf(HIW
+    "------------------------------"
+    HIM
+    " â˜† æµ·æ´‹II â˜† "
+    HIW
+    "---\n"
+    NOR);
+
+    return 1;
 }
-int help(object me)
-{  
-write(@HELP
-Ö¸Áî¸ñÊ½: toppÈÃÄã²ì¿´º£ÑóÖĞ¸÷´óÎäÁÖÈËÊ¿¡£
-HELP
-   );   
-return 1;
+
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼:
+    toppè®©ä½ å¯Ÿçœ‹æµ·æ´‹ä¸­å„å¤§æ­¦æ—äººå£«ã€‚
+    HELP
+    );
+    return 1;
 }

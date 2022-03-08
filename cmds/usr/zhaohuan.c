@@ -1,260 +1,276 @@
-// ÕÙ»½Ëæ´Ó (by xbd)
+// å¬å”¤éšä» (by xbd)
 
 #include <ansi.h>
 
 inherit SKILL;
 
-string *ns = ({	"force",
-		"dodge",
-		"parry",
-		"unarmed",
-		"strike",
-		"cuff",
-		"finger",
-		"claw",
-		"hand",
-		"leg",
-		"sword",
-		"blade",
-		"whip",
-		"hammer",
-		"staff",
-		"axe",
-		"throwing",	
-		"literate",
-		"shenzhao-jing",
+string *ns = ({
+    "force",
+            "dodge",
+            "parry",
+            "unarmed",
+            "strike",
+            "cuff",
+            "finger",
+            "claw",
+            "hand",
+            "leg",
+            "sword",
+            "blade",
+            "whip",
+            "hammer",
+            "staff",
+            "axe",
+            "throwing",
+            "literate",
+            "shenzhao-jing",
 });
 
 object clone_guard(object me);
 
 void create() { seteuid(getuid()); }
 
-int main(object me, string arg)
-{
-	object ob;
-	int load = 0;
+int main(object me, string arg) {
+    object ob;
+    int load = 0;
 
 
-	if (!me->query("guard/flag"))
-		return notify_fail("Æ¾ÄãÏÖÔÚµÄÌõ¼ş£¬»¹Ã»ÓĞ×Ê¸ñÓµÓĞËæ´ÓÄØ£¡\n");
-	
-	if (!me->query("guard/active"))
-		return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞÊÕ¹ıËæ´Ó£¬Èç¹ûĞèÒªµÄ»°£¬¿ÉÒÔµ½ÎŞÃû¾ÓÊ¿ÄÇÀïÈ¥ÒªÒ»¸ö£¡\n");
+    if (!me->query("guard/flag"))
+        return notify_fail("å‡­ä½ ç°åœ¨çš„æ¡ä»¶ï¼Œè¿˜æ²¡æœ‰èµ„æ ¼æ‹¥æœ‰éšä»å‘¢ï¼\n");
 
-    if(me->query_condition("killer"))
-        return notify_fail("Í¨¼­ÖĞ£¬ÄãÎŞÈ¨Ê¹ÓÃ¡£\n");
+    if (!me->query("guard/active"))
+        return notify_fail("ä½ ç°åœ¨è¿˜æ²¡æœ‰æ”¶è¿‡éšä»ï¼Œå¦‚æœéœ€è¦çš„è¯ï¼Œå¯ä»¥åˆ°æ— åå±…å£«é‚£é‡Œå»è¦ä¸€ä¸ªï¼\n");
 
-    if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
-	if (me->query("neili") < 1000)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«µÍÁË£¬ÎŞ·¨·¢³ö³¤Ğ¥¡£\n");
+    if (me->query_condition("killer"))
+        return notify_fail("é€šè¾‘ä¸­ï¼Œä½ æ— æƒä½¿ç”¨ã€‚\n");
 
-	if (me->query("jing") < 100)
-		return notify_fail("ÄãµÄ¾«ÆøÌ«µÍÁË£¬ÎŞ·¨·¢³ö³¤Ğ¥¡£\n");
-if (me->query("last_alert") > me->query("mud_age") ) 
-{
-		me->set("last_alert", me->query("mud_age"));
+    if (me->is_busy())
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
+    if (me->query("neili") < 1000)
+        return notify_fail("ä½ çš„å†…åŠ›å¤ªä½äº†ï¼Œæ— æ³•å‘å‡ºé•¿å•¸ã€‚\n");
+
+    if (me->query("jing") < 100)
+        return notify_fail("ä½ çš„ç²¾æ°”å¤ªä½äº†ï¼Œæ— æ³•å‘å‡ºé•¿å•¸ã€‚\n");
+    if (me->query("last_alert") > me->query("mud_age")) {
+        me->set("last_alert", me->query("mud_age"));
+    }
+    if (!objectp(ob = me->query_temp("guard_ob"))) {
+        if (!wizardp(me) && me->query("last_alert")
+            && (me->query("mud_age") - me->query("last_alert")) < 900)
+            return notify_fail(sprintf("ä½ åˆšå¬å”¤è¿‡å¥¹ï¼Œå¿…é¡»å†è¿‡%dç§’æ‰èƒ½ç»§ç»­å¬å”¤ï¼\n",
+                                       900 + me->query("last_alert") - me->query("mud_age")));
+        if (!objectp(ob = clone_guard(me)))
+            return notify_fail("éšä»æ–‡ä»¶æ­£åœ¨ä¿®æ”¹ä¸­ï¼Œè¯·ç¨å€™ï¼\n");
+        load = 1;
+        me->set("last_alert", me->query("mud_age"));
+        me->set_temp("guard_ob", ob);
+    } else if (environment(me) == environment(ob))
+        return notify_fail("å¥¹ä¸æ˜¯æ­£åœ¨ä½ èº«è¾¹å—ï¼Ÿ\n");
+    else if (!living(ob))
+        return notify_fail("ä»¥å¥¹ç›®å‰çš„çŠ¶æ€ï¼Œæ€ä¹ˆå¯èƒ½å¬ä½ çš„å‘½ä»¤å‘¢ï¼Ÿ\n");
+    else if (ob->is_busy())
+        return notify_fail("å¥¹æ­£å¿™ç€ï¼Œæ— æ³•æ¥å—ä½ çš„å¬å”¤ã€‚\n");
+    else if (!environment(ob))
+        return notify_fail("ä»¥å¥¹ç›®å‰çš„çŠ¶æ€ï¼Œæ€ä¹ˆå¯èƒ½å¬ä½ çš„å‘½ä»¤å‘¢ï¼Ÿ\n");
+
+    me->add("neili", -500);
+    me->add("jing", -50);
+    me->start_busy(3);
+    message_vision(HIM
+    "$Nçºµå£°é•¿å•¸ï¼Œå•¸éŸ³å¿½é«˜å¿½ä½ï¼Œä¼¼ä¹æ˜¯åœ¨æ‰“ä»€ä¹ˆæš—å·ã€‚\n"
+    NOR, me);
+    if (!load) message("vision", HIG + ob->name() + "ä¼¼ä¹å¬åˆ°äº†" + me->name() + "çš„å‘¼å”¤ï¼ŒåŒ†åŒ†åœ°ç¦»å»äº†ã€‚\n"
+    NOR, environment(ob));
+    ob->move(environment(me));
+    ob->set_leader(me);
+    message_vision(HIG
+    "$Néšéšå¬åˆ°ä¸€é˜µå•¸å£°å’Œ$Pç›¸äº’å‘¼åº”ï¼Œåªè½¬çœ¼é—´$nå°±æ¥åˆ°$Nçš„èº«è¾¹ã€‚\n"
+    NOR, me, ob);
+    write(HIW
+    "ä½ ç°åœ¨å¯ç”¨æŒ‡ä»¤ï¼š"
+    NOR
+    "
+    "HIW"
+    set_name < åå­— > \tä¸ºå¥¹æ¢åå­—
+    set_long < æè¿° > \tä¿®æ”¹å¥¹çš„æè¿°
+    set_title < ç§°å· > \tä¿®æ”¹ä»–çš„ç§°å·
+    ticks \t\t\tæŸ¥çœ‹æˆ˜æ–—æŒ‡ä»¤é˜µåˆ—
+    [1 - 5 < æŒ‡ä»¤ > ] \tè®¾ç½®æˆ˜æ–—æŒ‡ä»¤
+    [-d
+    1 - 5 | all] \tåˆ é™¤æˆ˜æ–—æŒ‡ä»¤
+    æ³¨ï¼šä¸€æ—¦è®¾å®šäº†æŒ‡ä»¤é˜µåˆ—ï¼Œé¢„è®¾çš„æˆ˜æ–—æ¨¡å¼å°†ä¸èµ·ä½œç”¨
+    att < æŸäºº > \t\tæ”»å‡»æŸäºº
+    sha < æŸäºº > \t\tæ€æ­»æŸäºº
+    ting \t\t\tåœæ­¢æˆ˜æ–—
+    heji < æŸäºº > \t\tåˆå‡»æŸäºº
+    order[un]
+    accept
+    object
+    è®¾å®š[ä¸]
+    æ¥å—ç‰©å“
+    [un]
+    accept
+    fight \tè®¾å®š[ä¸]
+    æ¥å—æ¯”æ­¦
+    < æŒ‡ä»¤ > \t\tä¸‹è¾¾æˆ˜æ–—æŒ‡ä»¤
+    control < å‘½ä»¤ > \t\tä»¥å¤©å¿ƒé€šé¥æ§æ‰§è¡ŒæŸæŒ‡ä»¤
+    set
+    save_me < ç™¾åˆ†æ¯” > \tè®¾ç½®æ°”è¡€å°äºå¤šå°‘å¯åŠ¨è‡ªåŠ¨ä¿æŠ¤
+    hulian < æŠ€èƒ½ > \t\täº’ç»ƒæŸæ­¦åŠŸ
+    taolun < æŠ€èƒ½ > \t\tè®¨è®ºæŸæ­¦åŠŸ
+    lianxi < æŠ€èƒ½ > \t\tæŒ‡å¯¼æŸæ­¦åŠŸ
+    mache < åœ°ç‚¹ > \t\tå«é©¬è½¦å»æŸåœ°
+    shape < ID > \t\t\tçœ‹çŠ¶æ€\n
+    "NOR);
+
+    return 1;
+
 }
-	if (!objectp(ob = me->query_temp("guard_ob"))) {
-		if (!wizardp(me) && me->query("last_alert")
-&& (me->query("mud_age") - me->query("last_alert")) < 900)
-			return notify_fail(sprintf("Äã¸ÕÕÙ»½¹ıËı£¬±ØĞëÔÙ¹ı%dÃë²ÅÄÜ¼ÌĞøÕÙ»½£¡\n",
-900 + me->query("last_alert") - me->query("mud_age")));
-		if (!objectp(ob = clone_guard(me)))
-			return notify_fail("Ëæ´ÓÎÄ¼şÕıÔÚĞŞ¸ÄÖĞ£¬ÇëÉÔºò£¡\n");
-		load = 1;
-		me->set("last_alert", me->query("mud_age"));
-		me->set_temp("guard_ob", ob);
-	}
-	else if (environment(me) == environment(ob))
-		return notify_fail("Ëı²»ÊÇÕıÔÚÄãÉí±ßÂğ£¿\n");
-	else if (!living(ob))
-		return notify_fail("ÒÔËıÄ¿Ç°µÄ×´Ì¬£¬ÔõÃ´¿ÉÄÜÌıÄãµÄÃüÁîÄØ£¿\n");
-	else if (ob->is_busy())
-		return notify_fail("ËıÕıÃ¦×Å£¬ÎŞ·¨½ÓÊÜÄãµÄÕÙ»½¡£\n");
-        else if (!environment(ob))
-		return notify_fail("ÒÔËıÄ¿Ç°µÄ×´Ì¬£¬ÔõÃ´¿ÉÄÜÌıÄãµÄÃüÁîÄØ£¿\n");
 
-	me->add("neili", -500);
-	me->add("jing", -50);
-me->start_busy(3);	
-	message_vision(HIM"$N×İÉù³¤Ğ¥£¬Ğ¥Òôºö¸ßºöµÍ£¬ËÆºõÊÇÔÚ´òÊ²Ã´°µºÅ¡£\n"NOR, me);
-	if (!load) message("vision", HIG + ob->name() + "ËÆºõÌıµ½ÁË" + me->name() + "µÄºô»½£¬´Ò´ÒµØÀëÈ¥ÁË¡£\n"NOR, environment(ob));
-	ob->move(environment(me));
-	ob->set_leader(me);
-	message_vision(HIG"$NÒşÒşÌıµ½Ò»ÕóĞ¥ÉùºÍ$PÏà»¥ºôÓ¦£¬Ö»×ªÑÛ¼ä$n¾ÍÀ´µ½$NµÄÉí±ß¡£\n"NOR, me, ob);
-	write(HIW"ÄãÏÖÔÚ¿ÉÓÃÖ¸Áî£º"NOR"
-"HIW"set_name <Ãû×Ö> \tÎªËı»»Ãû×Ö
-set_long <ÃèÊö> \tĞŞ¸ÄËıµÄÃèÊö
-set_title <³ÆºÅ> \tĞŞ¸ÄËûµÄ³ÆºÅ
-ticks \t\t\t²é¿´Õ½¶·Ö¸ÁîÕóÁĞ
-      [1-5 <Ö¸Áî>] \tÉèÖÃÕ½¶·Ö¸Áî
-      [-d 1-5|all] \tÉ¾³ıÕ½¶·Ö¸Áî
-×¢£ºÒ»µ©Éè¶¨ÁËÖ¸ÁîÕóÁĞ£¬Ô¤ÉèµÄÕ½¶·Ä£Ê½½«²»Æğ×÷ÓÃ
-att <Ä³ÈË> \t\t¹¥»÷Ä³ÈË
-sha <Ä³ÈË> \t\tÉ±ËÀÄ³ÈË
-ting \t\t\tÍ£Ö¹Õ½¶·
-heji <Ä³ÈË> \t\tºÏ»÷Ä³ÈË
-order [un]accept object Éè¶¨[²»]½ÓÊÜÎïÆ·
-      [un]accept fight \tÉè¶¨[²»]½ÓÊÜ±ÈÎä
-      <Ö¸Áî> \t\tÏÂ´ïÕ½¶·Ö¸Áî
-control <ÃüÁî> \t\tÒÔÌìĞÄÍ¨Ò£¿ØÖ´ĞĞÄ³Ö¸Áî
-set save_me <°Ù·Ö±È> \tÉèÖÃÆøÑªĞ¡ÓÚ¶àÉÙÆô¶¯×Ô¶¯±£»¤
-hulian <¼¼ÄÜ> \t\t»¥Á·Ä³Îä¹¦
-taolun <¼¼ÄÜ> \t\tÌÖÂÛÄ³Îä¹¦
-lianxi <¼¼ÄÜ> \t\tÖ¸µ¼Ä³Îä¹¦
-mache <µØµã> \t\t½ĞÂí³µÈ¥Ä³µØ
-shape <ID> \t\t\t¿´×´Ì¬\n"NOR);
-		
-	return 1;
+object clone_guard(object me) {
+    object ob, weapon;
+    mapping status;
+    string *ks;
+    int i, n;
 
-}
+    if (me->query("guard/gender") == "girl")
+        ob = new("/clone/guard/long2");
+    else
+        ob = new("/clone/guard/baoer");
+    if (!ob) return ob;
 
-object clone_guard(object me)
-{
-	object ob, weapon;
-	mapping status;
-	string *ks;
-	int i, n;
+    status = me->query("guard/status");
+    if (mapp(status)) {
+        ks = keys(status);
+        for (i = 0; i < sizeof(status); i++)
+            ob->set(ks[i], status[ks[i]]);
+    }
+    if (me->query("guard/gender") == "girl") {
+        ob->set("id", me->query("id") + "'s shinu");
+        if (!(stringp(me->query("guard/name"))))
+            ob->set_name(me->name() + "çš„ä¾å¥³", ({ me->query("id") + "'s shinu", "shi nu" }));
+        else
+            ob->set_name(me->query("guard/name"), ({ me->query("id") + "'s shinu", "shi nu" }));
+    } else {
+        ob->set("id", me->query("id") + "'s shitong");
+        if (!(stringp(me->query("guard/name"))))
+            ob->set_name(me->name() + "çš„ä¾ç«¥", ({ me->query("id") + "'s shitong", "shi tong" }));
+        else
+            ob->set_name(me->query("guard/name"), ({ me->query("id") + "'s shitong", "shi tong" }));
+    }
+    if (stringp(me->query("guard/long")))
+        ob->set("long", me->query("guard/long"));
+    if (stringp(me->query("guard/title")))
+        ob->set("title", me->query("guard/title"));
+    ob->set("possessed", me);
+    ob->set("host_id", me->query("id"));
+    ob->set("marry", me->query("id"));
+    ob->set("couple/have_couple", 1);
+    ob->set("couple/couple_name", me->name());
+    ob->set("baohu", me->query("id"));
 
-	if (me->query("guard/gender") == "girl")
-		ob = new("/clone/guard/long2");
-	else
-		ob = new("/clone/guard/baoer");
-	if (!ob) return ob;
+    ob->set("double_attack", me->query("double_attack"));
+    ob->set("szj", me->query("szj"));
 
-	status = me->query("guard/status");
-	if (mapp(status)) {
-		ks = keys(status);
-		for (i = 0; i < sizeof(status); i++)
-			ob->set(ks[i], status[ks[i]]);
-	}
-	if (me->query("guard/gender") == "girl") {
-		ob->set("id", me->query("id") + "'s shinu");
-		if (!(stringp(me->query("guard/name"))))
-			ob->set_name(me->name() + "µÄÊÌÅ®", ({me->query("id") + "'s shinu","shi nu"}) );
-		else
-			ob->set_name(me->query("guard/name"), ({me->query("id") + "'s shinu","shi nu"}) );
-	} else {
-		ob->set("id", me->query("id") + "'s shitong");
-		if (!(stringp(me->query("guard/name"))))
-			ob->set_name(me->name() + "µÄÊÌÍ¯", ({me->query("id") + "'s shitong", "shi tong"}) );
-		else
-			ob->set_name(me->query("guard/name"), ({me->query("id") + "'s shitong", "shi tong"}) );
-	}
-	if (stringp(me->query("guard/long")))
-		ob->set("long", me->query("guard/long"));
-	if (stringp(me->query("guard/title")))
-		ob->set("title", me->query("guard/title"));
-	ob->set("possessed", me);
-	ob->set("host_id", me->query("id"));
-	ob->set("marry", me->query("id"));
-	ob->set("couple/have_couple", 1);
-	ob->set("couple/couple_name", me->name());
-	ob->set("baohu", me->query("id"));
-
-	ob->set("double_attack", me->query("double_attack"));
-	ob->set("szj", me->query("szj"));
-
-	ob->set("str", (me->query("str") > 50 ? 50 : me->query("str")));
-	ob->set("int", (me->query("int") > 50 ? 50 : me->query("int")));
-	ob->set("con", (me->query("con") > 50 ? 50 : me->query("con")));
-	ob->set("dex", (me->query("dex") > 50 ? 50 : me->query("dex")));
-	ob->set("kar", (me->query("kar") > 50 ? 50 : me->query("kar")));
+    ob->set("str", (me->query("str") > 50 ? 50 : me->query("str")));
+    ob->set("int", (me->query("int") > 50 ? 50 : me->query("int")));
+    ob->set("con", (me->query("con") > 50 ? 50 : me->query("con")));
+    ob->set("dex", (me->query("dex") > 50 ? 50 : me->query("dex")));
+    ob->set("kar", (me->query("kar") > 50 ? 50 : me->query("kar")));
 //	ob->set("per", (me->query("per") > 50 ? 50 : me->query("per")));
 
-	ob->set("combat_exp", (int)me->query("combat_exp") * 3 / 4);
+    ob->set("combat_exp", (int) me->query("combat_exp") * 3 / 4);
 
-	for (n = 0; n < 1000; n++)
-		if (n*n*n/10 >= ob->query("combat_exp"))
-			break;
-	ob->set_skills(me->query("guard/skills"));
-if (n <10) n=10;
-	for (i = 0; i < sizeof(ns); i++)
-		ob->set_skill(ns[i], n);
-	if (!me->query_skill("literate", 1))
-		ob->delete_skill("literate");
-	else
-		ob->set_skill("literate", me->query_skill("literate", 1));
-	if (!me->query_skill("shenzhao-jing", 1))
-		ob->delete_skill("shenzhao-jing");
+    for (n = 0; n < 1000; n++)
+        if (n * n * n / 10 >= ob->query("combat_exp"))
+            break;
+    ob->set_skills(me->query("guard/skills"));
+    if (n < 10) n = 10;
+    for (i = 0; i < sizeof(ns); i++)
+        ob->set_skill(ns[i], n);
+    if (!me->query_skill("literate", 1))
+        ob->delete_skill("literate");
+    else
+        ob->set_skill("literate", me->query_skill("literate", 1));
+    if (!me->query_skill("shenzhao-jing", 1))
+        ob->delete_skill("shenzhao-jing");
 
-	ob->set_learned(me->query("guard/learned"));
-	ob->set_skill_map(me->query("guard/skill_map"));
-	ob->set_skill_prepare(me->query("guard/skill_prepare"));
+    ob->set_learned(me->query("guard/learned"));
+    ob->set_skill_map(me->query("guard/skill_map"));
+    ob->set_skill_prepare(me->query("guard/skill_prepare"));
 
-	ob->set("max_neili", (int)ob->query_skill("force") * 15);
-	ob->set("neili", ob->query("max_neili"));
-	ob->set("max_qi", (int)ob->query_skill("force") * 20);
-	ob->set("eff_qi", ob->query("max_qi"));
-	ob->set("qi", ob->query("max_qi"));
-	ob->set("max_jing", (int)ob->query_skill("force") * 5);
-	ob->set("eff_jing", ob->query("max_jing"));
-	ob->set("jing", ob->query("max_jing"));
-	ob->set("food", (ob->query("str") + 10) * 10);
-	ob->set("water", (ob->query("str") + 10) * 10);
-	
-	if ((i = ob->query("combat_exp")) > 2000000)
-		i = 200 + (i - 2000000) / 15000;
-	else
-		i = 200;
-	ob->add_temp("apply/damage", i);
-	ob->add_temp("apply/armor", i);
-	
-	if (ob->query("no_weapon"))
-		i = 1;
-	else
-		i = 0;
-	if (stringp(ob->query_skill_mapped("sword"))) {
-		weapon = new("/clone/weapon/gangjian");
-		weapon->move(ob);
-		if (!i) weapon->wield();
-		i = 1;
-	}
-	if (stringp(ob->query_skill_mapped("blade"))) {
-		weapon = new("/clone/weapon/gangdao");
-		weapon->move(ob);
-		if (!i) weapon->wield();
-		i = 1;
-	}
-	if (stringp(ob->query_skill_mapped("whip"))) {
-		weapon = new("/clone/weapon/changbian");
-		weapon->move(ob);
-		if (!i) weapon->wield();
-		i = 1;
-	}
-	if (stringp(ob->query_skill_mapped("hammer"))) {
-		weapon = new("/clone/weapon/hammer");
-		weapon->move(ob);
-		if (!i) weapon->wield();
-		i = 1;
-	}
-	if (stringp(ob->query_skill_mapped("staff"))) {
-		weapon = new("/clone/weapon/gangzhang");
-		weapon->move(ob);
-		if (!i) weapon->wield();
-		i = 1;
-	}
-	if (stringp(ob->query_skill_mapped("axe"))) {
-		weapon = new("/clone/weapon/axe");
-		weapon->move(ob);
-		if (!i) weapon->wield();
-		i = 1;
-	}
+    ob->set("max_neili", (int) ob->query_skill("force") * 15);
+    ob->set("neili", ob->query("max_neili"));
+    ob->set("max_qi", (int) ob->query_skill("force") * 20);
+    ob->set("eff_qi", ob->query("max_qi"));
+    ob->set("qi", ob->query("max_qi"));
+    ob->set("max_jing", (int) ob->query_skill("force") * 5);
+    ob->set("eff_jing", ob->query("max_jing"));
+    ob->set("jing", ob->query("max_jing"));
+    ob->set("food", (ob->query("str") + 10) * 10);
+    ob->set("water", (ob->query("str") + 10) * 10);
 
-	ob->change_combat_mode(me, ob->query("combat_mode"));
+    if ((i = ob->query("combat_exp")) > 2000000)
+        i = 200 + (i - 2000000) / 15000;
+    else
+        i = 200;
+    ob->add_temp("apply/damage", i);
+    ob->add_temp("apply/armor", i);
 
-	return ob;
+    if (ob->query("no_weapon"))
+        i = 1;
+    else
+        i = 0;
+    if (stringp(ob->query_skill_mapped("sword"))) {
+        weapon = new("/clone/weapon/gangjian");
+        weapon->move(ob);
+        if (!i) weapon->wield();
+        i = 1;
+    }
+    if (stringp(ob->query_skill_mapped("blade"))) {
+        weapon = new("/clone/weapon/gangdao");
+        weapon->move(ob);
+        if (!i) weapon->wield();
+        i = 1;
+    }
+    if (stringp(ob->query_skill_mapped("whip"))) {
+        weapon = new("/clone/weapon/changbian");
+        weapon->move(ob);
+        if (!i) weapon->wield();
+        i = 1;
+    }
+    if (stringp(ob->query_skill_mapped("hammer"))) {
+        weapon = new("/clone/weapon/hammer");
+        weapon->move(ob);
+        if (!i) weapon->wield();
+        i = 1;
+    }
+    if (stringp(ob->query_skill_mapped("staff"))) {
+        weapon = new("/clone/weapon/gangzhang");
+        weapon->move(ob);
+        if (!i) weapon->wield();
+        i = 1;
+    }
+    if (stringp(ob->query_skill_mapped("axe"))) {
+        weapon = new("/clone/weapon/axe");
+        weapon->move(ob);
+        if (!i) weapon->wield();
+        i = 1;
+    }
+
+    ob->change_combat_mode(me, ob->query("combat_mode"));
+
+    return ob;
 }
 
-int help(object me)
-{
-	write(@HELP
-Ö¸Áî¸ñÊ½ : zhaohuan
- 
-Õâ¸öÖ¸Áî¿ÉÒÔÓÃÀ´ÕÙ»½ÄãµÄËæ´Ó¡£
- 
-HELP
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ :
+    zhaohuan
+
+    è¿™ä¸ªæŒ‡ä»¤å¯ä»¥ç”¨æ¥å¬å”¤ä½ çš„éšä»ã€‚
+
+    HELP
     );
     return 1;
 }

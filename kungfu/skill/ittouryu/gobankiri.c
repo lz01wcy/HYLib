@@ -1,66 +1,61 @@
- // mimicat@fy4
+// mimicat@fy4
 #include <ansi.h>
 #include <combat.h>
+
 inherit F_SSERVER;
-int perform(object me, object target)
-{
-        string msg,weapon_name;
-        int extra, myexp, hisexp;
-        object weapon,myweapon;
-        if(me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦£¡£¡\n"); 
-        extra = me->query_skill("ittouryu",1) ;
-        if ( extra < 100) return notify_fail("ÄãµÄ£ÛÒ»µ¶Á÷½£Êõ£Ý»¹²»¹»´¿Êì£¡\n");
-	if (!objectp(weapon = me->query_temp("weapon"))
-		|| (string)weapon->query("skill_type") != "blade")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
-	if( (int)me->query("neili") < 600 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");                
-        if( !target ) target = offensive_target(me);
-        if( !target
-        ||      !target->is_character()
-        ||      !me->is_fighting(target) )
-                return notify_fail("£ÛÆåÅÌÇÐ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
-        
-        weapon = target->query_temp("weapon");
-        myexp = (int)me->query("combat_exp");
-        hisexp= (int)target->query("combat_exp");
-        myweapon = me->query_temp("weapon");
-        weapon_name= myweapon->query("name");
-        
-        if(random(hisexp*5) < (extra*extra*extra/4+myexp+hisexp)/3  && weapon)  
-        {
+
+int perform(object me, object target) {
+    string msg, weapon_name;
+    int extra, myexp, hisexp;
+    object weapon, myweapon;
+    if (me->is_busy())
+        return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ï¼ï¼\n");
+    extra = me->query_skill("ittouryu", 1);
+    if (extra < 100) return notify_fail("ä½ çš„ï¼»ä¸€åˆ€æµå‰‘æœ¯ï¼½è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
+    if (!objectp(weapon = me->query_temp("weapon"))
+        || (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
+    if ((int) me->query("neili") < 600)
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
+    if (!target) target = offensive_target(me);
+    if (!target
+        || !target->is_character()
+        || !me->is_fighting(target))
+        return notify_fail("ï¼»æ£‹ç›˜åˆ‡ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
+
+    weapon = target->query_temp("weapon");
+    myexp = (int) me->query("combat_exp");
+    hisexp = (int) target->query("combat_exp");
+    myweapon = me->query_temp("weapon");
+    weapon_name = myweapon->query("name");
+
+    if (random(hisexp * 5) < (extra * extra * extra / 4 + myexp + hisexp) / 3 && weapon) {
         message_vision(
-HIG "$N¸ù±¾ÎÞÊÓ$nµÄ¹¥»÷£¬´óºðÒ»Éù¡¸ÆåÅÌÇÐ¡¹£¡½«"+weapon_name+"¸ß¾Ù¹ý¼ç£¬
-×ÔÓÒÉÏ·½Ö±Ïò$nÅüÀ´¡£
-Ãæ¶Ô$NµÄÀ×öªÒ»°ãµÄÒ»»÷£¬$nÓÃÊÖÖÐµÄ±øÆ÷ÏÂÒâÊ¶µØÒ»µ²¡£
-"+ HIW"
-$nÖ»¾õµÃ»¢¿ÚÒ»ÈÈ£¬ÊÖÖÐµÄ"+weapon->name()+"ÔÙÒ²ÄÃ²»×¡ÁË£¬¡°µ±¡±µØÒ»ÉùµôÔÚµØÉÏ¡£\n\n" NOR, me,target);
-        if(weapon->unequip()) weapon->move(environment(target));
+                HIG
+        "$Næ ¹æœ¬æ— è§†$nçš„æ”»å‡»ï¼Œå¤§å¼ä¸€å£°ã€Œæ£‹ç›˜åˆ‡ã€ï¼å°†" + weapon_name + "é«˜ä¸¾è¿‡è‚©ï¼Œè‡ªå³ä¸Šæ–¹ç›´å‘$nåŠˆæ¥ã€‚é¢å¯¹$Nçš„é›·éœ†ä¸€èˆ¬çš„ä¸€å‡»ï¼Œ$nç”¨æ‰‹ä¸­çš„å…µå™¨ä¸‹æ„è¯†åœ°ä¸€æŒ¡ã€‚" + HIW
+        "$nåªè§‰å¾—è™Žå£ä¸€çƒ­ï¼Œæ‰‹ä¸­çš„" + weapon->name() + "å†ä¹Ÿæ‹¿ä¸ä½äº†ï¼Œâ€œå½“â€åœ°ä¸€å£°æŽ‰åœ¨åœ°ä¸Šã€‚\n\n"
+        NOR, me, target);
+        if (weapon->unequip()) weapon->move(environment(target));
         me->start_busy(1);
-        }
-        else if(random(hisexp*3) < (extra*extra*extra/4+myexp+hisexp)/3  && weapon)
-        { 
-        msg = HIG "$N¸ù±¾ÎÞÊÓ$nµÄ¹¥»÷£¬´óºðÒ»Éù¡¸ÆåÅÌÇÐ¡¹£¡½«"+weapon_name+"¸ß¾Ù¹ý¼ç£¬
-×ÔÓÒÉÏ·½Ö±Ïò$nÅüÀ´¡£
-Ãæ¶Ô$NµÄÀ×öªÒ»°ãµÄÒ»»÷£¬$nÓÃÊÖÖÐµÄ±øÆ÷ÏÂÒâÊ¶µØÒ»µ²¡£"+
-HIC"\nÖ»ÌýµÃ¡°µ±¡±µØÒ»Éù´óÏì£¬Á½ÈËÊÖÖÐµÄ±øÆ÷Ò»Õð£¬¸÷×ÔºóÍËÁËÒ»²½¡£\n\n"+ NOR;
-        message_vision(msg,me,target);
+    } else if (random(hisexp * 3) < (extra * extra * extra / 4 + myexp + hisexp) / 3 && weapon) {
+        msg = HIG
+        "$Næ ¹æœ¬æ— è§†$nçš„æ”»å‡»ï¼Œå¤§å¼ä¸€å£°ã€Œæ£‹ç›˜åˆ‡ã€ï¼å°†" + weapon_name + "é«˜ä¸¾è¿‡è‚©ï¼Œè‡ªå³ä¸Šæ–¹ç›´å‘$nåŠˆæ¥ã€‚é¢å¯¹$Nçš„é›·éœ†ä¸€èˆ¬çš„ä¸€å‡»ï¼Œ$nç”¨æ‰‹ä¸­çš„å…µå™¨ä¸‹æ„è¯†åœ°ä¸€æŒ¡ã€‚" + HIC
+        "\nåªå¬å¾—â€œå½“â€åœ°ä¸€å£°å¤§å“ï¼Œä¸¤äººæ‰‹ä¸­çš„å…µå™¨ä¸€éœ‡ï¼Œå„è‡ªåŽé€€äº†ä¸€æ­¥ã€‚\n\n" + NOR;
+        message_vision(msg, me, target);
         me->start_busy(2);
         target->start_busy(2);
-        }
-        else
-        {
-        msg = HIG "$N¸ù±¾ÎÞÊÓ$nµÄ¹¥»÷£¬´óºðÒ»Éù¡¸ÆåÅÌÇÐ¡¹£¡½«$w¸ß¾Ù¹ý¼ç£¬
-×ÔÓÒÉÏ·½Ö±Ïò$nÅüÀ´¡£"NOR;
-        	if (extra >= 300) extra=300;
-        me->add_temp("apply/attack",extra);
-        me->add_temp("apply/damage",extra*2);
-        	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        me->add_temp("apply/attack",-extra);
-        me->add_temp("apply/damage",-extra*2);
+    } else {
+        msg = HIG
+        "$Næ ¹æœ¬æ— è§†$nçš„æ”»å‡»ï¼Œå¤§å¼ä¸€å£°ã€Œæ£‹ç›˜åˆ‡ã€ï¼å°†$wé«˜ä¸¾è¿‡è‚©ï¼Œè‡ªå³ä¸Šæ–¹ç›´å‘$nåŠˆæ¥ã€‚"
+        NOR;
+        if (extra >= 300) extra = 300;
+        me->add_temp("apply/attack", extra);
+        me->add_temp("apply/damage", extra * 2);
+        COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+        me->add_temp("apply/attack", -extra);
+        me->add_temp("apply/damage", -extra * 2);
         me->start_busy(2);
-        me->add("neili",-300);
-        }  
-        return 1;
+        me->add("neili", -300);
+    }
+    return 1;
 }    

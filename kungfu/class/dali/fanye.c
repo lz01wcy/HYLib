@@ -1,59 +1,59 @@
-// fanye.c ·¶æè
+// fanye.c èŒƒéª…
 
 #include <ansi.h>
+
 inherit NPC;
 inherit F_MASTER;
 
-void create()
-{
-	set_name("·¶æè", ({ "fan ye", "fan" }));
-	set("title",  "´óÀíË¾Âí" );
-	set("long", "ËûÊÇ´óÀí¹úÈı¹«Ö®Ò»¡£\n");
-	set("gender", "ÄĞĞÔ");
-	set("age", 40);
-	set("class", "officer");
-	set("attitude", "friendly");
-	set("shen_type", 1);
-	set("str", 25);
-	set("int", 30);
-	set("con", 30);
-	set("dex", 25);
-	
-	set("max_qi", 1500);
-	set("max_jing", 500);
-	set("neili", 1000);
-	set("max_neili", 1000);
-	set("jiali", 100);
-	set("combat_exp", 600000);
-	set("score", 200000);
+void create() {
+    set_name("èŒƒéª…", ({ "fan ye", "fan" }));
+    set("title", "å¤§ç†å¸é©¬");
+    set("long", "ä»–æ˜¯å¤§ç†å›½ä¸‰å…¬ä¹‹ä¸€ã€‚\n");
+    set("gender", "ç”·æ€§");
+    set("age", 40);
+    set("class", "officer");
+    set("attitude", "friendly");
+    set("shen_type", 1);
+    set("str", 25);
+    set("int", 30);
+    set("con", 30);
+    set("dex", 25);
 
-        set_skill("force", 80);
-        set_skill("finger", 80);
-        set_skill("yiyang-zhi", 50);
-        set_skill("dodge", 80);
-        set_skill("parry", 80);
-        set_skill("cuff", 80);
-        set_skill("sword", 80);
-        set_skill("staff", 80);
-	set_skill("kurong-changong", 80);
-        set_skill("tiannan-step", 80);
-        set_skill("jinyu-quan", 80);
-        set_skill("duanjia-sword", 80);
-	set_skill("literate", 80);
+    set("max_qi", 1500);
+    set("max_jing", 500);
+    set("neili", 1000);
+    set("max_neili", 1000);
+    set("jiali", 100);
+    set("combat_exp", 600000);
+    set("score", 200000);
 
-	map_skill("force", "kurong-changong");
-	map_skill("dodge", "tiannan-step");
-	map_skill("cuff", "jinyu-quan");
-	map_skill("sword", "duanjia-sword");
-	map_skill("staff", "duanjia-sword");
-	map_skill("parry", "duanjia-sword");
-	prepare_skill("cuff", "jinyu-quan");
+    set_skill("force", 80);
+    set_skill("finger", 80);
+    set_skill("yiyang-zhi", 50);
+    set_skill("dodge", 80);
+    set_skill("parry", 80);
+    set_skill("cuff", 80);
+    set_skill("sword", 80);
+    set_skill("staff", 80);
+    set_skill("kurong-changong", 80);
+    set_skill("tiannan-step", 80);
+    set_skill("jinyu-quan", 80);
+    set_skill("duanjia-sword", 80);
+    set_skill("literate", 80);
 
-	setup();
-	carry_object("/clone/misc/cloth")->wear();
-	carry_object("/clone/weapon/changjian")->wield();
-	add_money("silver", 20);
+    map_skill("force", "kurong-changong");
+    map_skill("dodge", "tiannan-step");
+    map_skill("cuff", "jinyu-quan");
+    map_skill("sword", "duanjia-sword");
+    map_skill("staff", "duanjia-sword");
+    map_skill("parry", "duanjia-sword");
+    prepare_skill("cuff", "jinyu-quan");
 
-	create_family("´óÀí¶Î¼Ò",19,"Îä½«");
+    setup();
+    carry_object("/clone/misc/cloth")->wear();
+    carry_object("/clone/weapon/changjian")->wield();
+    add_money("silver", 20);
+
+    create_family("å¤§ç†æ®µå®¶", 19, "æ­¦å°†");
 }
 

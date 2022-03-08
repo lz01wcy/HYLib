@@ -1,118 +1,129 @@
 #include <ansi.h>
 #include <mudlib.h>
+
 inherit F_CLEAN_UP;
 
-int top_list(object ob1,object ob2);
+int top_list(object ob1, object ob2);
+
 int get_score(object ob);
-int main(object me, string arg)
-{
-        object *list,*ob;
-        int i;
-        string msg;
 
-        ob = filter_array(children(USER_OB),(: userp($1) && !wizardp($1) :));
-        list = sort_array(ob, (: top_list :));
+int main(object me, string arg) {
+    object *list, *ob;
+    int i;
+    string msg;
 
-    
-      msg =  "\n            ©³ "+BCYN HIR+MUD_NAME+"ÔÚÏß¸ßÊÖÅÅĞĞ°ñ"NOR" ©·\n"+HIG;
-      msg += "©³©¥©¥©¥©Ó©¥©ß©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ó©¥©¥©ß©¥©Ó©¥©¥©¥©¥©¥©¥©·\n";
-      msg += "©§ Ãû´Î ©¦    ¸ß     ÊÖ      ©¦ ÃÅ  ÅÉ ©¦ µÃ  ·Ö    ©§\n";
-      msg += "©Ä©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©¥©¤©Ø©¤©¤©¤©¤©Ø©¤©¤©¥©¥©¤©¤©¦\n";
-        for (i = 0 ;i < 250 ; i++) {
-        if( i >= sizeof(list)) msg += HIG+"©§ÔİÊ±¿ÕÈ±¡£ \n";
-                else {
-                if(list[i] == me) 
-              {
-                msg +=BCYN HIR;
-              }
-              else
-              { 
-                msg +=HIG;
-              }
- if (list[i]->query("4zhuan",1)==1 || list[i]->query("5zhuan",1)==1 )
-{
+    ob = filter_array(children(USER_OB),(: userp($1) && !wizardp($1) :));
+    list = sort_array(ob,(: top_list :));
+
+
+    msg = "\n            â” " + BCYN
+    HIR + MUD_NAME + "åœ¨çº¿é«˜æ‰‹æ’è¡Œæ¦œ"
+    NOR
+    " â”“\n" + HIG;
+    msg += "â”â”â”â”â”¯â”â”»â”â”â”â”â”â”â”â”â”â”¯â”â”â”»â”â”¯â”â”â”â”â”â”â”“\n";
+    msg += "â”ƒ åæ¬¡ â”‚    é«˜     æ‰‹      â”‚ é—¨  æ´¾ â”‚ å¾—  åˆ†    â”ƒ\n";
+    msg += "â” â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”â”€â”´â”€â”€â”€â”€â”´â”€â”€â”â”â”€â”€â”‚\n";
+    for (i = 0; i < 250; i++) {
+        if (i >= sizeof(list)) msg += HIG + "â”ƒæš‚æ—¶ç©ºç¼ºã€‚ \n";
+        else {
+            if (list[i] == me) {
+                msg += BCYN
+                HIR;
+            } else {
+                msg += HIG;
+            }
+            if (list[i]->query("4zhuan", 1) == 1 || list[i]->query("5zhuan", 1) == 1) {
 /*if (!wizardp(me))
 {
-  msg += sprintf("©§  %-5s %-22s%-10s %5s   ©§"NOR"\n"NOR,chinese_number(i+1),list[i]->query("name")+"("+
-        capitalize(list[i]->query("id"))+")", list[i]->query("family")?  list[i]->query("family/family_name"):"ÆÕÍ¨°ÙĞÕ",
+  msg += sprintf("â”ƒ  %-5s %-22s%-10s %5s   â”ƒ"NOR"\n"NOR,chinese_number(i+1),list[i]->query("name")+"("+
+        capitalize(list[i]->query("id"))+")", list[i]->query("family")?  list[i]->query("family/family_name"):"æ™®é€šç™¾å§“",
         "????");
 }
 else
 {*/
-  msg += sprintf("©§  %-5s %-22s%-10s %5d   ©§"NOR"\n"NOR,chinese_number(i+1),list[i]->query("name")+"("+
-        capitalize(list[i]->query("id"))+")", list[i]->query("family")?  list[i]->query("family/family_name"):"ÆÕÍ¨°ÙĞÕ",
-        get_score(list[i]));
+                msg += sprintf("â”ƒ  %-5s %-22s%-10s %5d   â”ƒ"
+                NOR
+                "\n"
+                NOR, chinese_number(i + 1), list[i]->query("name") + "(" +
+                                            capitalize(list[i]->query("id")) + ")", list[i]->query("family")
+                                                                                    ? list[i]->query(
+                                "family/family_name") : "æ™®é€šç™¾å§“",
+                        get_score(list[i]));
 //}
 
+            }
+        }
+    }
+    msg += HIG + "â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›\n";
+
+    write(msg);
+    msg = "\n            â” " + BCYN
+    HIC + MUD_NAME + ":ä½ ç°åœ¨çš„è¯„ä»·å¦‚ä¸‹ï¼š"
+    NOR
+    " â”“\n" + HIC;
+    msg += "â”â”â”â”â”¯â”â”»â”â”â”â”â”â”â”â”â”â”¯â”â”â”»â”â”¯â”â”â”â”â”â”â”“\n";
+    msg += "â”ƒ åæ¬¡ â”‚    é«˜     æ‰‹      â”‚ é—¨  æ´¾ â”‚ å¾—  åˆ†    â”ƒ\n";
+    msg += "â” â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”â”€â”´â”€â”€â”€â”€â”´â”€â”€â”â”â”€â”€â”‚\n";
+    for (i = 0; i < 1; i++) {
+        if (i >= sizeof(list)) msg += HIC + "â”ƒæš‚æ—¶ç©ºç¼ºã€‚ \n";
+        else {
+            if (list[i] == me) {
+                msg += HIR;
+            } else {
+                msg += HIC;
+            }
+            msg += sprintf("â”ƒ  %-5s %-22s%-10s %5d   â”ƒ"
+            NOR
+            "\n"
+            NOR, chinese_number(i + 1), me->query("name") + "(" +
+                                        capitalize(me->query("id")) + ")", me->query("family") ? me->query(
+                    "family/family_name") : "æ™®é€šç™¾å§“",
+                    get_score(me));
+        }
+    }
+    msg += HIC + "â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›\n";
+    msg += HIG + "  " + NATURE_D->game_time() + "è®°ã€‚\n" + NOR;
+
+
+    write(msg);
+    return 1;
+
 }
-                }
-                         }
-        msg += HIG+"©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n";
 
-        write(msg);
-      msg =  "\n            ©³ "+BCYN HIC+MUD_NAME+":ÄãÏÖÔÚµÄÆÀ¼ÛÈçÏÂ£º"NOR" ©·\n"+HIC;
-      msg += "©³©¥©¥©¥©Ó©¥©ß©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ó©¥©¥©ß©¥©Ó©¥©¥©¥©¥©¥©¥©·\n";
-      msg += "©§ Ãû´Î ©¦    ¸ß     ÊÖ      ©¦ ÃÅ  ÅÉ ©¦ µÃ  ·Ö    ©§\n";
-      msg += "©Ä©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©¥©¤©Ø©¤©¤©¤©¤©Ø©¤©¤©¥©¥©¤©¤©¦\n";
-        for (i = 0 ;i < 1 ; i++) {
-        if( i >= sizeof(list)) msg += HIC+"©§ÔİÊ±¿ÕÈ±¡£ \n";
-                else {
-                if(list[i] == me) 
-              {
-                msg +=HIR;
-              }
-              else
-              { 
-                msg +=HIC;
-              }
-  msg += sprintf("©§  %-5s %-22s%-10s %5d   ©§"NOR"\n"NOR,chinese_number(i+1),me->query("name")+"("+
-        capitalize(me->query("id"))+")", me->query("family")?  me->query("family/family_name"):"ÆÕÍ¨°ÙĞÕ",
-        get_score(me));
-                }
-                         }
-        msg += HIC+"©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n";
-        msg += HIG+"  " + NATURE_D->game_time() + "¼Ç¡£\n"+NOR;
+int top_list(object ob1, object ob2) {
+    int score1, score2;
 
+    score1 = get_score(ob1);
+    score2 = get_score(ob2);
 
-
-        write(msg);
-        return 1;
-
+    return score2 - score1;
 }
-int top_list(object ob1, object ob2)
-{
-      int score1,score2;
 
-        score1 = get_score(ob1);
-        score2 = get_score(ob2);
+int get_score(object ob) {
+    int tlvl, i, score;
+    string *ski;
+    mapping skills;
+    object me = this_player();
+    reset_eval_cost();
+    skills = ob->query_skills();
+    if (!sizeof(skills)) return 1;
+    ski = keys(skills);
+    for (i = 0; i < sizeof(ski); i++) {
+        tlvl += skills[ski[i]];
+    }
+    score = tlvl / 10;
+    score += ob->query("max_neili") / 10;
+    score += ob->query_str() + ob->query_int() + ob->query_dex() + ob->query_con();
+    score += (int) ob->query("combat_exp") / 2500;
+    return score;
+}
 
-      return score2 - score1;
-}
-int get_score(object ob)
-{
-        int tlvl,i,score;
-        string *ski;
-        mapping skills;
-        object me=this_player();
-      reset_eval_cost();
-        skills = ob->query_skills();
-        if (!sizeof(skills)) return 1; 
-        ski  = keys(skills);
-        for(i = 0; i<sizeof(ski); i++) {
-                        tlvl += skills[ski[i]];
-                        }  
-        score = tlvl/10;
-        score += ob->query("max_neili")/10;
-        score += ob->query_str() + ob->query_int() + ob->query_dex() + ob->query_con();
-        score += (int)ob->query("combat_exp")/2500;
-        return score;
-}
-int help(object me)
-{
-write(@HELP
-Ö¸Áî¸ñÊ½ : top 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÖªµÀÔÚÏß¶şÊ®´ó¸ßÊÖÊÇÄÄĞ©£¬±ğÈ¥ÈÇËûÃÇ¡£ 
-HELP
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ :
+    top
+    è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ çŸ¥é“åœ¨çº¿äºŒåå¤§é«˜æ‰‹æ˜¯å“ªäº›ï¼Œåˆ«å»æƒ¹ä»–ä»¬ã€‚
+    HELP
     );
     return 1;
 }

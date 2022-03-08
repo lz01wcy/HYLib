@@ -2,43 +2,41 @@
 
 inherit F_CLEAN_UP;
 
-int main(object me, string arg)
-{
-	object link_ob;
+int main(object me, string arg) {
+    object link_ob;
 
-	seteuid(getuid());
+    seteuid(getuid());
 
-           if (!me)
-                 return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
-        if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
-        if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+    if (!me)
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
+    if (me->is_busy())
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
+    if (me->is_fighting())
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
-	if( !objectp(link_ob = me->query_temp("link_ob")) )
-		return notify_fail("Äã²»ÊÇ¾­ÓÉÕı³£Á¬Ïß½øÈë£¬²»ÄÜ´¢´æ¡£\n");
+    if (!objectp(link_ob = me->query_temp("link_ob")))
+        return notify_fail("ä½ ä¸æ˜¯ç»ç”±æ­£å¸¸è¿çº¿è¿›å…¥ï¼Œä¸èƒ½å‚¨å­˜ã€‚\n");
 
-	if( environment(me)->query("valid_startroom") ) {
-		me->set("startroom", base_name(environment(me)));
-		write("µ±ÄãÏÂ´ÎÁ¬Ïß½øÀ´Ê±£¬»á´ÓÕâÀï¿ªÊ¼¡£\n");
-	}
-        me->start_busy(4);
-	if( (int)link_ob->save() && (int)me->save() ) {
-        write("µµ°¸´¢´æÍê±Ï¡£\n");
-		return 1;
-	} else {
-		write("´¢´æÊ§°Ü¡£\n");
-		return 0;
-	}
+    if (environment(me)->query("valid_startroom")) {
+        me->set("startroom", base_name(environment(me)));
+        write("å½“ä½ ä¸‹æ¬¡è¿çº¿è¿›æ¥æ—¶ï¼Œä¼šä»è¿™é‡Œå¼€å§‹ã€‚\n");
+    }
+    me->start_busy(4);
+    if ((int) link_ob->save() && (int) me->save()) {
+        write("æ¡£æ¡ˆå‚¨å­˜å®Œæ¯•ã€‚\n");
+        return 1;
+    } else {
+        write("å‚¨å­˜å¤±è´¥ã€‚\n");
+        return 0;
+    }
 }
 
-int help(object me)
-{
-	write(@HELP
-Ö¸Áî¸ñÊ½£ºsave
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ï¼šsave
 
-°ÑÄãĞÁ¿à·Ü¶·µÄ½á¹û´æÆğÀ´¡£
-HELP
-	);
-	return 1;
+    æŠŠä½ è¾›è‹¦å¥‹æ–—çš„ç»“æœå­˜èµ·æ¥ã€‚
+    HELP
+    );
+    return 1;
 }

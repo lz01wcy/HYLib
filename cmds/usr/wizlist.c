@@ -1,98 +1,190 @@
 //modify by sword@fw.2000.07.19
 #include <ansi.h>
+
 inherit F_CLEAN_UP;
-mapping wizhood=([
-        "(root)":       HIY" ´´ÊÀÕß "HIB,    
-        "(admin)":      HIW" Ìì  Éñ "HIB,
-        "(arch)":       HIM" ´ó  Éñ "HIB,
-        "(wizard)":     HIY" ´óÎ×Ê¦ "HIB,
-        "(apprentice)": HIC" Ìì  Ê¹ "HIB,
-        "(immortal)":   HIB" ¾«  Áé "HIB,
-        "(elder)":      HIB" ÈÙÓşÍæ¼Ò "HIB,
+mapping wizhood =
+([
+"(root)":       HIY" åˆ›ä¸–è€… "HIB,
+"(admin)":      HIW" å¤©  ç¥ "HIB,
+"(arch)":       HIM" å¤§  ç¥ "HIB,
+"(wizard)":     HIY" å¤§å·«å¸ˆ "HIB,
+"(apprentice)": HIC" å¤©  ä½¿ "HIB,
+"(immortal)":   HIB" ç²¾  çµ "HIB,
+"(elder)":      HIB" è£èª‰ç©å®¶ "HIB,
 
 ]);
 
-mapping wizlevel=([
-        0:      "(root)",
-        1:      "(admin)",
-        2:      "(arch)",
-        3:      "(wizard)",
-        4:      "(apprentice)",
-        5:      "(immortal)",
-        6:      "(elder)",
+mapping wizlevel =
+([
+0:      "(root)",
+1:      "(admin)",
+2:      "(arch)",
+3:      "(wizard)",
+4:      "(apprentice)",
+5:      "(immortal)",
+6:      "(elder)",
 ]);
 
-int main(object me, string arg)
-{
+int main(object me, string arg) {
 
-        string *list, ch,job,area;
-        int my_level,b, i, j, number,a,mark,lev;
-        object ob;
+    string *list, ch, job, area;
+    int my_level, b, i, j, number, a, mark, lev;
+    object ob;
 
-        number = 0;
-        job="";
-        list = sort_array(SECURITY_D->query_wizlist(), 1);
-        write(HIR"¡ï"+HIY+""+MUD_NAME +""HIR"¡ï"HIG"Î×Ê¦ÁĞ±í£º\n"NOR);
+    number = 0;
+    job = "";
+    list = sort_array(SECURITY_D->query_wizlist(), 1);
+    write(HIR
+    "â˜…" + HIY + "" + MUD_NAME + ""
+    HIR
+    "â˜…"
+    HIG
+    "å·«å¸ˆåˆ—è¡¨ï¼š\n"
+    NOR);
 
-        write(HIR"¡ï"HIW"¡Ô"HIB"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIW"¡Ô"HIR"¡ï\n"NOR);
-        write(HIB"  ¡¾"HIW"Î×Ê¦µÈ¼¶"HIB"¡¿   ¡¾"HIW"Î×Ê¦ID"HIB"¡¿¡¾"HIW"×´Ì¬"HIB"¡¿¡¾"HIW"¸ºÔğÇøÓò"HIB"¡¿¡¾"HIW"  Ä¿ Ç° ÈÎ Îñ  "HIB"¡¿\n"NOR);
+    write(HIR
+    "â˜…"
+    HIW
+    "â‰¡"
+    HIB
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+    HIW
+    "â‰¡"
+    HIR
+    "â˜…\n"
+    NOR);
+    write(HIB
+    "  ã€"
+    HIW
+    "å·«å¸ˆç­‰çº§"
+    HIB
+    "ã€‘   ã€"
+    HIW
+    "å·«å¸ˆID"
+    HIB
+    "ã€‘ã€"
+    HIW
+    "çŠ¶æ€"
+    HIB
+    "ã€‘ã€"
+    HIW
+    "è´Ÿè´£åŒºåŸŸ"
+    HIB
+    "ã€‘ã€"
+    HIW
+    "  ç›® å‰ ä»» åŠ¡  "
+    HIB
+    "ã€‘\n"
+    NOR);
 
-        write(HIR"¡ï"HIW"¡Ô"HIB"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIW"¡Ô"HIR"¡ï"NOR);
-        my_level=wiz_level(me);
-if (wizardp(me)) {
-lev=7;
-}
-else {
-lev=5;
-}
-        for (b=0;b<lev;b++)
-        {
-        mark=0;
-        for(i=0, j=0; i<sizeof(list); i++)
-        if(SECURITY_D->get_status(list[i])==wizlevel[b]) mark=1;
-        if(mark){
-        printf(HIB"\n  ¡¾"+wizhood[wizlevel[b]]+"¡¿  "NOR);
-        for(i=0, j=0; i<sizeof(list); i++)
-        if(SECURITY_D->get_status(list[i])==wizlevel[b])
-        {
+    write(HIR
+    "â˜…"
+    HIW
+    "â‰¡"
+    HIB
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+    HIW
+    "â‰¡"
+    HIR
+    "â˜…"
+    NOR);
+    my_level = wiz_level(me);
+    if (wizardp(me)) {
+        lev = 7;
+    } else {
+        lev = 5;
+    }
+    for (b = 0; b < lev; b++) {
+        mark = 0;
+        for (i = 0, j = 0; i < sizeof(list); i++)
+            if (SECURITY_D->get_status(list[i]) == wizlevel[b]) mark = 1;
+        if (mark) {
+            printf(HIB
+            "\n  ã€" + wizhood[wizlevel[b]] + "ã€‘  "
+            NOR);
+            for (i = 0, j = 0; i < sizeof(list); i++)
+                if (SECURITY_D->get_status(list[i]) == wizlevel[b]) {
 
-                ch = HIR"ÀëÏß"NOR;
-                a = 0;
+                    ch = HIR
+                    "ç¦»çº¿"
+                    NOR;
+                    a = 0;
 //                 area=JOB_D->job_query(list[i]+"/area");
 //                job=JOB_D->job_query(list[i]+"/job");
-                if(!area) area="Î´ÖªÇøÓò";
-                if(!job) job="¶¯Ïò²»Ã÷";
-                if(ob=find_player(list[i])&&!find_player(list[i])->query("env/invisibility"))
+                    if (!area) area = "æœªçŸ¥åŒºåŸŸ";
+                    if (!job) job = "åŠ¨å‘ä¸æ˜";
+                    if (ob = find_player(list[i]) && !find_player(list[i])->query("env/invisibility"))
 
 //     if (!find_player(list[i])->query("env/invisibility")||( find_player(list[i])->query("env/invisibility") && wiz_level(find_player(list)
-                {
-                ch = HIG"ÔÚÏß"NOR ;
-//                ch = HIR"ÀëÏß"NOR;
-                a = 1;
-                number = number + 1;
-                };
-                printf(HIY"  %-10s"" %s    "HIC"%-10s"HIW"  %s\n                ",list[i],ch,area,job," " ? "\n  " : " ");
+                    {
+                        ch = HIG
+                        "åœ¨çº¿"
+                        NOR;
+//                ch = HIR"ç¦»çº¿"NOR;
+                        a = 1;
+                        number = number + 1;
+                    };
+                    printf(HIY
+                    "  %-10s"" %s    "
+                    HIC
+                    "%-10s"
+                    HIW
+                    "  %s\n                ", list[i], ch, area, job, " " ? "\n  " : " ");
 
+                }
         }
-        }
-        }
-        write(HIR"\n¡ï"HIW"¡Ô"HIB"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIG"HY2"HIB"©¤©¤"HIW"¡Ô"HIR"¡ï\n"NOR);
-if (wizardp(me)) {
-        printf(HIR"¡ï"+HIY+MUD_NAME+HIG"Ä¿Ç°Ò»¹²ÓĞ:"BLINK HIR" %s"NOR HIG"¸öÎ×Ê¦¡£\n"NOR,chinese_number(sizeof(list)) );
-}
-        printf(HIR"¡ï"+HIY+MUD_NAME+HIG"µÄÎ×Ê¦ÉêÇëÇë¿´:"+HIY"help wiz_new "+NOR+"¡£\n");
-        printf(HIR"¡ï"+HIY+MUD_NAME+HIG"Ä¿Ç°¹²ÓĞ£º"BLINK HIR"%s"NOR HIG"Î»Î×Ê¦ÔÚÏßÉÏ¡£"NOR,chinese_number(number));
-        write("\n");
-        return 1;
+    }
+    write(HIR
+    "\nâ˜…"
+    HIW
+    "â‰¡"
+    HIB
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+    HIG
+    "HY2"
+    HIB
+    "â”€â”€"
+    HIW
+    "â‰¡"
+    HIR
+    "â˜…\n"
+    NOR);
+    if (wizardp(me)) {
+        printf(HIR
+        "â˜…" + HIY + MUD_NAME + HIG
+        "ç›®å‰ä¸€å…±æœ‰:"
+        BLINK
+        HIR
+        " %s"
+        NOR
+        HIG
+        "ä¸ªå·«å¸ˆã€‚\n"
+        NOR, chinese_number(sizeof(list)));
+    }
+    printf(HIR
+    "â˜…" + HIY + MUD_NAME + HIG
+    "çš„å·«å¸ˆç”³è¯·è¯·çœ‹:" + HIY
+    "help wiz_new " + NOR + "ã€‚\n");
+    printf(HIR
+    "â˜…" + HIY + MUD_NAME + HIG
+    "ç›®å‰å…±æœ‰ï¼š"
+    BLINK
+    HIR
+    "%s"
+    NOR
+    HIG
+    "ä½å·«å¸ˆåœ¨çº¿ä¸Šã€‚"
+    NOR, chinese_number(number));
+    write("\n");
+    return 1;
 }
 
-int help(object me)
-{
-  write(@HELP
-Ö¸Áî¸ñÊ½£ºwizlist
-Ö¸ÁîËµÃ÷£º
-           ±¾Ö¸ÁîÓÃÀ´²é¿´Ä¿Ç°×Ü¹²ÓĞ¶àÉÙ¸öÎ×Ê¦¡£
-HELP
+int help(object me) {
+    write(@HELP
+    æŒ‡ä»¤æ ¼å¼ï¼šwizlist
+    æŒ‡ä»¤è¯´æ˜ï¼š
+    æœ¬æŒ‡ä»¤ç”¨æ¥æŸ¥çœ‹ç›®å‰æ€»å…±æœ‰å¤šå°‘ä¸ªå·«å¸ˆã€‚
+    HELP
     );
     return 1;
 }

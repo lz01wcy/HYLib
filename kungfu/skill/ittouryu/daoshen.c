@@ -1,42 +1,46 @@
 
 #include <ansi.h>
 #include <combat.h>
-inherit F_SSERVER;
-int perform(object me, object target)
-{
-	string msg;
-	int extra;
-	int i;
-	object weapon;
-	if( !target ) target = offensive_target(me);
 
-	if( !target
-	||	!target->is_character()
-	||	!me->is_fighting(target) )
-		return notify_fail("£Ûµ¶Éñ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
-	weapon = me->query_temp("weapon");
-	        extra = me->query_skill("ittouryu",1) ;
-        if ( extra < 100) return notify_fail("ÄãµÄ£ÛÒ»µ¶Á÷½£Êõ£Ý»¹²»¹»´¿Êì£¡\n");
-		if (!objectp(weapon = me->query_temp("weapon"))
-		|| (string)weapon->query("skill_type") != "blade")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
-	if( (int)me->query("neili") < 600 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
-	
-	extra = (int)me->query_skill("ittouryu",1) / 10;
-	if (extra >= 80) extra=80;
-	me->add_temp("apply/attack", extra*2);	
-	me->add_temp("apply/damage", extra*2);
-	msg = HIR  "$NÊ¹³ö£ÛÔ²ÔÂÉñµ¶Õ¶£ÝÖÐµÄÎÞÉÏ¾ø¼¼£­£­µ¶Éñ£¡"+ weapon->name() +"»®×ÅÆæÒìµÄ»¡Ïß£¬¼±Õ¶$n£¡" NOR;
-	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-	for(i=0;i<extra/5;i++)
-	{
-	msg = CYN "$NÓù¼¼ÈçÉñ£¬µ¶Æø×Ýºá£¡\n" NOR;
-	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-	me->add("neili",-30);
-	}
-	me->add_temp("apply/attack", -extra*2);
-	me->add_temp("apply/damage", -extra*2);
-	me->start_busy(3);
-	return 1;
+inherit F_SSERVER;
+
+int perform(object me, object target) {
+    string msg;
+    int extra;
+    int i;
+    object weapon;
+    if (!target) target = offensive_target(me);
+
+    if (!target
+        || !target->is_character()
+        || !me->is_fighting(target))
+        return notify_fail("ï¼»åˆ€ç¥žï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
+    weapon = me->query_temp("weapon");
+    extra = me->query_skill("ittouryu", 1);
+    if (extra < 100) return notify_fail("ä½ çš„ï¼»ä¸€åˆ€æµå‰‘æœ¯ï¼½è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
+    if (!objectp(weapon = me->query_temp("weapon"))
+        || (string) weapon->query("skill_type") != "blade")
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
+    if ((int) me->query("neili") < 600)
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
+
+    extra = (int) me->query_skill("ittouryu", 1) / 10;
+    if (extra >= 80) extra = 80;
+    me->add_temp("apply/attack", extra * 2);
+    me->add_temp("apply/damage", extra * 2);
+    msg = HIR
+    "$Nä½¿å‡ºï¼»åœ†æœˆç¥žåˆ€æ–©ï¼½ä¸­çš„æ— ä¸Šç»æŠ€ï¼ï¼åˆ€ç¥žï¼" + weapon->name() + "åˆ’ç€å¥‡å¼‚çš„å¼§çº¿ï¼Œæ€¥æ–©$nï¼"
+    NOR;
+    COMBAT_D->do_attack(me, target, weapon, TYPE_REGULAR, msg);
+    for (i = 0; i < extra / 5; i++) {
+        msg = CYN
+        "$Nå¾¡æŠ€å¦‚ç¥žï¼Œåˆ€æ°”çºµæ¨ªï¼\n"
+        NOR;
+        COMBAT_D->do_attack(me, target, weapon, TYPE_REGULAR, msg);
+        me->add("neili", -30);
+    }
+    me->add_temp("apply/attack", -extra * 2);
+    me->add_temp("apply/damage", -extra * 2);
+    me->start_busy(3);
+    return 1;
 }
