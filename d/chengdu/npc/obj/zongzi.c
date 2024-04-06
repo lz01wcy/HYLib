@@ -1,4 +1,4 @@
-// zongzi.c ôÕ×Ó
+// zongzi.c ç²½å­
 // Last Modifyed by Winder on Dec. 24 2001
 
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("ôÕ×Ó", ({"zongzi", "zong", "zi" }));
+	set_name("ç²½å­", ({"zongzi", "zong", "zi" }));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÏãÅçÅçµÄôÕ×Ó¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªé¦™å–·å–·çš„ç²½å­ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 30);
 		set("food_remaining", 3);
 		set("food_supply", 20);

@@ -8,16 +8,16 @@ inherit HANDS;
 
 void create()
 {
-	set_name("Í­ÊÖÌ×",({"tong shoutao","tongshoutao","shoutao"}));
+	set_name("é“œæ‰‹å¥—",({"tong shoutao","tongshoutao","shoutao"}));
 	set_weight(800);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit","Ë«");
+		set("unit","åŒ");
 		set("material","tong");
 		set("oldsix/max_damage",20);
 		set("oldsix/protect",3);
-		set("long", "ÕâÊÇÒ»Ë«ÇàÍ­ÖÆ³ÉµÄÊÖÌ×£¬ÓÃÀ´±£»¤Ë«ÊÖ¡£\n");
+		set("long", "è¿™æ˜¯ä¸€åŒé’é“œåˆ¶æˆçš„æ‰‹å¥—ï¼Œç”¨æ¥ä¿æŠ¤åŒæ‰‹ã€‚\n");
 		set("armor_prop/armor",8);
 		set("value",1000);
 	}

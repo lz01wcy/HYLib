@@ -1,4 +1,4 @@
-// tang.c ÌÆÀÏ°å 
+// tang.c å”è€æ¿ 
 
 #include <ansi.h>
 
@@ -9,16 +9,16 @@ int redeem(string arg);
 
 void create()
 {
-	set_name("ÌÆéª", ({ "tang nan", "tang" }));
-	set("title", "µ±ÆÌÀÏ°å");
+	set_name("å”æ¥ ", ({ "tang nan", "tang" }));
+	set("title", "å½“é“ºè€æ¿");
 	set("shen_type", 0);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set_max_encumbrance(100000000);
 	set("age", 35);
 	set("str", 100);
 	set("long",
-		"¾İËµÌÆéªÊÇËÄ´¨ÌÆ¼ÒµÄºó´ú¡£\n");
+		"æ®è¯´å”æ¥ æ˜¯å››å·å”å®¶çš„åä»£ã€‚\n");
 	set("no_get_from", 1);
 
 	set_skill("unarmed", 60);
@@ -45,7 +45,7 @@ void init()
 
 void die()
 {
-	message_vision("\n$NËÀÁË¡£\n", this_object());
+	message_vision("\n$Næ­»äº†ã€‚\n", this_object());
 	destruct(this_object());
 }
 int do_redeem(string target)
@@ -56,7 +56,7 @@ int do_redeem(string target)
 	all = users();
 
 	if (!target)
-		return notify_fail("ÄãÏëÊêË­£¿ 1\n");
+		return notify_fail("ä½ æƒ³èµè°ï¼Ÿ 1\n");
 
 	for(i=0; i<sizeof(all); i++) 
 	{
@@ -65,30 +65,30 @@ int do_redeem(string target)
 			dest = all[i];
 	}
 	if( !dest )
-		return notify_fail("ÌÆéªËµµ½£ºËûÏÖÔÚ²»ÔÚÓÎÏ·ÖĞ£¬¹ı»áÔÙÀ´°É¡£\n");
+		return notify_fail("å”æ¥ è¯´åˆ°ï¼šä»–ç°åœ¨ä¸åœ¨æ¸¸æˆä¸­ï¼Œè¿‡ä¼šå†æ¥å§ã€‚\n");
 	else if( !dest->query_temp("selled"))
-		return notify_fail("ÌÆéª¼±µÀ£ºÄã¿É±ğÎÜÏİºÃÈË£¬ÎÒÔõÃ´»á·Ç·¨¿ÛÑºÍæ¼ÒÄØ£¡\n");
+		return notify_fail("å”æ¥ æ€¥é“ï¼šä½ å¯åˆ«è¯¬é™·å¥½äººï¼Œæˆ‘æ€ä¹ˆä¼šéæ³•æ‰£æŠ¼ç©å®¶å‘¢ï¼\n");
 
         if (query_temp("busy"))
-                return notify_fail("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+                return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 
 	switch (MONEY_D->player_pay(this_player(), dest->query("per") * 700))
 	{
 	case 0:
-		return notify_fail("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+		return notify_fail("ç©·å…‰è›‹ï¼Œä¸€è¾¹å‘†ç€å»ï¼\n");
 	case 2:
-		return notify_fail("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+		return notify_fail("æ‚¨çš„é›¶é’±ä¸å¤Ÿäº†ï¼Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
 	default:
         	set_temp("busy", 1);
-		message_vision("$N´Ó$nÄÇÀïÊê»ØÁËÒ»" + dest->query("unit") + 
-			dest->query("name") + "¡£\n", this_player(), this_object());
+		message_vision("$Nä»$né‚£é‡Œèµå›äº†ä¸€" + dest->query("unit") + 
+			dest->query("name") + "ã€‚\n", this_player(), this_object());
 		dest->move("/d/city/kedian");
 		dest->set("startroom","/d/city/kedian");
 		dest->delete_temp("selled");
 		message("vision",
-			HIY "Ö»Ìı¼ûà²µÄÒ»Éù£¬Ò»¸ö±éÌåÁÛÉËµÄ¼Ò»ï´ÓÌì»¨°åÉÏµôÁËÏÂÀ´£¡\n" NOR,
+			HIY "åªå¬è§å—–çš„ä¸€å£°ï¼Œä¸€ä¸ªéä½“é³ä¼¤çš„å®¶ä¼™ä»å¤©èŠ±æ¿ä¸Šæ‰äº†ä¸‹æ¥ï¼\n" NOR,
 			environment(dest), dest);
-		tell_object(dest, "Äã±»" + this_player()->query("name") + "ÊêÁË³öÀ´¡£\n");
+		tell_object(dest, "ä½ è¢«" + this_player()->query("name") + "èµäº†å‡ºæ¥ã€‚\n");
 	}
         remove_call_out("enough_rest");
         call_out("enough_rest", 1);

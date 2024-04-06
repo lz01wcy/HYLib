@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", WHT"·É´¬Ö®ÒÅ¼£µÄ¿ØÖÆÊÒ"NOR);
+	set("short", WHT"é£èˆ¹ä¹‹é—è¿¹çš„æ§åˆ¶å®¤"NOR);
 	set("long", CYN @LONG
-   ´«ËµÕâÊÇÒ»ËÒ½Ğ×öÌìÂíºÅµÄ·É´¬£¬ÊÇÄ§·¨Íõ¹úµÄÒÅÎï£¬¾İËµÒÔÇ°ÊÇ
-Ò»×ù·ÉÔÚÌì¿ÕµÄ³ÇÊĞ£¬²»ÖªÊ²Ã´Ê±ºòµôµ½ÁËÕâÀï¡£ÄãËµÔÚµÄµØ·½ÒÀÏ¡»¹
-¿´µÄµ½ÊÇ¼×°åµÄÑù×Ó£¬¸½½üÎíÆøÖØÖØ£¬ÎíÖĞµÄÉ±ÆøÔ½À´Ô½Å¨ÁË¡£
+   ä¼ è¯´è¿™æ˜¯ä¸€è‰˜å«åšå¤©é©¬å·çš„é£èˆ¹ï¼Œæ˜¯é­”æ³•ç‹å›½çš„é—ç‰©ï¼Œæ®è¯´ä»¥å‰æ˜¯
+ä¸€åº§é£åœ¨å¤©ç©ºçš„åŸå¸‚ï¼Œä¸çŸ¥ä»€ä¹ˆæ—¶å€™æ‰åˆ°äº†è¿™é‡Œã€‚ä½ è¯´åœ¨çš„åœ°æ–¹ä¾ç¨€è¿˜
+çœ‹çš„åˆ°æ˜¯ç”²æ¿çš„æ ·å­ï¼Œé™„è¿‘é›¾æ°”é‡é‡ï¼Œé›¾ä¸­çš„æ€æ°”è¶Šæ¥è¶Šæµ“äº†ã€‚
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);
@@ -55,43 +55,43 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
     if (me->is_fighting() && dir == "up") 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
     if (me->is_fighting() && dir == "down") 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
     if(me->is_busy() && dir == "up")
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
     if(me->is_busy() && dir == "down")
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
        if ( !present("air boot", me) && dir == "down" )
-        return notify_fail("Ò»¹ÉÉñÆæµÄÁ¦Á¿µ²×¡ÁËÄã!!\n");
+        return notify_fail("ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡æŒ¡ä½äº†ä½ !!\n");
        if ( !present("air boot", me) && dir == "up" )
-        return notify_fail("Ò»¹ÉÉñÆæµÄÁ¦Á¿µ²×¡ÁËÄã!!\n");
+        return notify_fail("ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡æŒ¡ä½äº†ä½ !!\n");
 
        if ( me->query("shen") > -800000 && dir == "down" )
-        return notify_fail("ÄãµÄËù×öËùÎª²»ÊÊºÏÈ¥°µºÚÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„æ‰€åšæ‰€ä¸ºä¸é€‚åˆå»æš—é»‘ä¸–ç•Œ!!\n");
 
        if ( me->query_skill("magic-fire",1) < 600 && dir == "down" )
-        return notify_fail("ÄãµÄ»ğÏµÄ§·¨²»ÊÊºÏÈ¥°µºÚÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„ç«ç³»é­”æ³•ä¸é€‚åˆå»æš—é»‘ä¸–ç•Œ!!\n");
        if ( me->query_skill("magic-water",1) < 600 && dir == "down" )
-        return notify_fail("ÄãµÄË®ÏµÄ§·¨²»ÊÊºÏÈ¥°µºÚÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„æ°´ç³»é­”æ³•ä¸é€‚åˆå»æš—é»‘ä¸–ç•Œ!!\n");
        if ( me->query_skill("magic-ice",1) < 600 && dir == "down" )
-        return notify_fail("ÄãµÄÆøÏµÄ§·¨²»ÊÊºÏÈ¥°µºÚÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„æ°”ç³»é­”æ³•ä¸é€‚åˆå»æš—é»‘ä¸–ç•Œ!!\n");
        if ( me->query_skill("magic-earth",1) < 600 && dir == "down" )
-        return notify_fail("ÄãµÄÍÁÏµÄ§·¨²»ÊÊºÏÈ¥°µºÚÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„åœŸç³»é­”æ³•ä¸é€‚åˆå»æš—é»‘ä¸–ç•Œ!!\n");
 
        if ( me->query("shen") < 800000 && dir == "up" )
-        return notify_fail("ÄãµÄËù×öËùÎª²»ÊÊºÏÈ¥¹âÃ÷ÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„æ‰€åšæ‰€ä¸ºä¸é€‚åˆå»å…‰æ˜ä¸–ç•Œ!!\n");
 
        if ( me->query_skill("magic-fire",1) < 600 && dir == "up" )
-        return notify_fail("ÄãµÄ»ğÏµÄ§·¨²»ÊÊºÏÈ¥¹âÃ÷ÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„ç«ç³»é­”æ³•ä¸é€‚åˆå»å…‰æ˜ä¸–ç•Œ!!\n");
        if ( me->query_skill("magic-water",1) < 600 && dir == "up" )
-        return notify_fail("ÄãµÄË®ÏµÄ§·¨²»ÊÊºÏÈ¥¹âÃ÷ÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„æ°´ç³»é­”æ³•ä¸é€‚åˆå»å…‰æ˜ä¸–ç•Œ!!\n");
        if ( me->query_skill("magic-ice",1) < 600 && dir == "up" )
-        return notify_fail("ÄãµÄÆøÏµÄ§·¨²»ÊÊºÏÈ¥¹âÃ÷ÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„æ°”ç³»é­”æ³•ä¸é€‚åˆå»å…‰æ˜ä¸–ç•Œ!!\n");
        if ( me->query_skill("magic-earth",1) < 600 && dir == "up" )
-        return notify_fail("ÄãµÄÍÁÏµÄ§·¨²»ÊÊºÏÈ¥¹âÃ÷ÊÀ½ç!!\n");
+        return notify_fail("ä½ çš„åœŸç³»é­”æ³•ä¸é€‚åˆå»å…‰æ˜ä¸–ç•Œ!!\n");
 
 	if (dir =="down")
 	{
@@ -102,7 +102,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		
@@ -116,7 +116,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

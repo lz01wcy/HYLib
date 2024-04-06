@@ -8,19 +8,19 @@ inherit HEAD;
 void create()
 {
    
-  set_name(HIW "°ÙºÏ" NOR, ({ "lily","flower" }) );
+  set_name(HIW "ç™¾åˆ" NOR, ({ "lily","flower" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ö§ÃÀÀöÕÀ·ÅµÄ°ÙºÏ,ÏóÕ÷×Å°ÙÄêºÃºÍ¡£\n");
-                set("unit", "Ö§");
+                set("long", "ä¸€æ”¯ç¾ä¸½ç»½æ”¾çš„ç™¾åˆ,è±¡å¾ç€ç™¾å¹´å¥½å’Œã€‚\n");
+                set("unit", "æ”¯");
                 set("value", 6);
                 set("material", "plant");
                 set("armor_prop/armor", 0);
                 set("armor_prop/personality", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
                 set("female_only", 1);
 
         }

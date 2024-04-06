@@ -2,14 +2,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ê¯µñÏñ", ({ "shidiao" , "xiang"}) );
+	set_name("çŸ³é›•åƒ", ({ "shidiao" , "xiang"}) );
 	set_weight(500000);
 	set("no_get",1);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "×ğ");
-		set("long", "Ò»×ğÊ¯µñ·ğÏñ,²»¹ıÄÔ´ü²»Öª¸øË­°áÁËÈ¥.\n");
+		set("unit", "å°Š");
+		set("long", "ä¸€å°ŠçŸ³é›•ä½›åƒ,ä¸è¿‡è„‘è¢‹ä¸çŸ¥ç»™è°æ¬äº†å».\n");
 		set("value", 1);
              set("no_drop",1);
 		set("material", "stone");

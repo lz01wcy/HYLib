@@ -1,4 +1,4 @@
-// Âí·ò
+// é©¬å¤«
 
 inherit NPC;
 
@@ -6,10 +6,10 @@ int do_out();
 
 void create()
 {
-        set_name("Âí·ò", ({ "ma fu", "ma", "fu" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("é©¬å¤«", ({ "ma fu", "ma", "fu" }));
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "Ëû¾ÍÊÇºìÄï×¯×¨ÃÅ´ø±ö¿ÍÀë¿ª»éÀñµÄÂí·ò¡£\n");
+        set("long", "ä»–å°±æ˜¯çº¢å¨˜åº„ä¸“é—¨å¸¦å®¾å®¢ç¦»å¼€å©šç¤¼çš„é©¬å¤«ã€‚\n");
         
         set("combat_exp", 7000);
         set("shen_type", 1);
@@ -21,7 +21,7 @@ void create()
         set_temp("apply/defense", 20);
         setup();
         set("inquiry", ([
-                "Àë¿ª"     : (: do_out :),
+                "ç¦»å¼€"     : (: do_out :),
         ])); 
         carry_object("/clone/misc/cloth")->wear();
         add_money("silver", 2);
@@ -34,9 +34,9 @@ int do_out()
 
   ob= this_object();
 
-  say("Âí·òÒ»¹þÑü¶Ô"+(string)me->query("name")+"Ëµ£º¡°ÄãÀÏÇëÉÏ³µ¡£¡±\n");
+  say("é©¬å¤«ä¸€å“ˆè…°å¯¹"+(string)me->query("name")+"è¯´ï¼šâ€œä½ è€è¯·ä¸Šè½¦ã€‚â€\n");
 
-  say((string)me->query("name")+"±»´ø³öÁËºìÄï×¯¡£\n");
+  say((string)me->query("name")+"è¢«å¸¦å‡ºäº†çº¢å¨˜åº„ã€‚\n");
 
   me->move("/d/city/guangchang");
 

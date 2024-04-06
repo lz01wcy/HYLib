@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¿µ¸®´óÃÅ");
+	set("short", "åº·åºœå¤§é—¨");
 	set("long", @LONG
-Ò»×ù¸»ÀöÌÃ»ÊµÄ´óÕ¬Ôº³öÏÖÔÚÄãµÄÑÛÇ°£¬Á½Í·¸ß´óµÄÊ¯Ê¨×Ó
-Õò×¡ÁË´óÃÅÁ½²à¡£ÃÅÍâÓĞ´øµ¶ÊÌÎÀ°ÑÊØ£¬½ä±¸É­ÑÏ¡£ÃÅÉÏ¹Ò×ÅÁ½
-¸öµÆÁı£¬ºÕÈ»Ğ´×Å´ó´óµÄ¡°¿µ¡±×Ö¡£
+ä¸€åº§å¯Œä¸½å ‚çš‡çš„å¤§å®…é™¢å‡ºç°åœ¨ä½ çš„çœ¼å‰ï¼Œä¸¤å¤´é«˜å¤§çš„çŸ³ç‹®å­
+é•‡ä½äº†å¤§é—¨ä¸¤ä¾§ã€‚é—¨å¤–æœ‰å¸¦åˆ€ä¾å«æŠŠå®ˆï¼Œæˆ’å¤‡æ£®ä¸¥ã€‚é—¨ä¸ŠæŒ‚ç€ä¸¤
+ä¸ªç¯ç¬¼ï¼Œèµ«ç„¶å†™ç€å¤§å¤§çš„â€œåº·â€å­—ã€‚
 LONG );
 	set("exits", ([
 		"south" : __DIR__"wangfu3",
@@ -33,15 +33,15 @@ int valid_leave(object me, string dir)
         for(i=sizeof(inv)-1; i>=0; i--)
             if(inv[i]->query("weapon_prop")&& (inv[i]->query("equipped")))
 		if(objectp(present("shi", environment(me)))&&living(present("shi", environment(me))))
-                    return notify_fail("ÊÌÎÀÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»" +
-                        RANK_D->query_respect(me) + "Çë·ÅÏÂ±øÈĞ¡£\n"
-                        "Äã¿ÉÒÔ½ø¸®£¬µ«²»µÃÊÖ³Ö±øÈĞ¡£\n");
+                    return notify_fail("ä¾å«ä¸Šå‰æŒ¡ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šè¿™ä½" +
+                        RANK_D->query_respect(me) + "è¯·æ”¾ä¸‹å…µåˆƒã€‚\n"
+                        "ä½ å¯ä»¥è¿›åºœï¼Œä½†ä¸å¾—æ‰‹æŒå…µåˆƒã€‚\n");
         return ::valid_leave(me, dir);
      }
      else
      {
          if(objectp(present("shi", environment(me)))&&living(present("shi", environment(me))))
-            return notify_fail("ÊÌÎÀÀ¹×¡ÄãÂîµÀ£º¡°ÄãÒÔÎªÄãÊÇË­°¡£¿Ò»¸öÑ°³£°ÙĞÕ£¬ÄÑµÀ»¹Ïë½ø¸®¼û¿µ´óÈË£¿£¡\nÄãÕâ" + RANK_D->query_rude(me) +"¿ì¸øÎÒ¹öÔ¶µã¶ù£¬²»È»±ğ¹ÖÎÒ²»¿ÍÆø£¡¡±\n");
+            return notify_fail("ä¾å«æ‹¦ä½ä½ éª‚é“ï¼šâ€œä½ ä»¥ä¸ºä½ æ˜¯è°å•Šï¼Ÿä¸€ä¸ªå¯»å¸¸ç™¾å§“ï¼Œéš¾é“è¿˜æƒ³è¿›åºœè§åº·å¤§äººï¼Ÿï¼\nä½ è¿™" + RANK_D->query_rude(me) +"å¿«ç»™æˆ‘æ»šè¿œç‚¹å„¿ï¼Œä¸ç„¶åˆ«æ€ªæˆ‘ä¸å®¢æ°”ï¼â€\n");
      }
     }	
     return ::valid_leave(me, dir);

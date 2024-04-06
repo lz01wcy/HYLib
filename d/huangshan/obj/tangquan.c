@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÌÀÈª", ({ "tang quan", "tang", "quan" }) );
+	set_name("æ±¤æ³‰", ({ "tang quan", "tang", "quan" }) );
 	set_weight(500);
 	set_max_encumbrance(8000);
 	set("no_get", 1);
@@ -12,8 +12,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "Ò»¸öÒÑ¾­¸ÉºÔÁËµÄÈª¿×¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "ä¸€ä¸ªå·²ç»å¹²æ¶¸äº†çš„æ³‰å­”ã€‚\n");
 		set("value", 1);
 	}
 }

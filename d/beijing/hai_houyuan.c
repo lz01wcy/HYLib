@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short","���ι�����Ժ");
+	set("short","海澄公府后院");
 	set("long", @LONG
-�����Ǻ��ι�����������һ��С��԰�����ҵ����Ÿ��ֻ��ݣ���
-�����˴������Ӳ��Ѿ����úܸ��ˡ�һЩ�ʻ������ڲݴ��У�������
-���ϵ�Ʈ����
+这里是海澄公府大厅后侧的一个小花园，杂乱地种着各种花草，看
+来无人打理，杂草已经长得很高了。一些鲜花夹杂在草丛中，阵阵花香
+不断地飘过。
 LONG );
 	set("exits", ([
 		"north" : __DIR__"hai_dating",

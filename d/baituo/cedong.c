@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "侧洞");
+	set("short", "渚ф礊");
 	set("long",
-	     "这里是一个小小的侧洞，里面有张梳妆台，上边摆放着一些女人的用品。\n"
+	     "杩欓噷鏄竴涓皬灏忕殑渚ф礊锛岄噷闈㈡湁寮犳⒊濡嗗彴锛屼笂杈规憜鏀剧潃涓�浜涘コ浜虹殑鐢ㄥ搧銆俓n"
 	);
 	set("exits", ([
 		"east" : __DIR__"dongnei",

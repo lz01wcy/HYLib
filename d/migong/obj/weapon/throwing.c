@@ -4,15 +4,15 @@ inherit THROWING;
 
 void create()
 {
-	set_name("×ÓÄ¸·ÉÕë", ({"zimuzhen", "zhen" }));
+	set_name("å­æ¯é£é’ˆ", ({"zimuzhen", "zhen" }));
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("long", "ÕâÊÇÒ»¸ùÏ¸ÈôÈáË¿µÄÒøÕë¡£\n");
-		set("unit", "Ğ©");
+                set("long", "è¿™æ˜¯ä¸€æ ¹ç»†è‹¥æŸ”ä¸çš„é“¶é’ˆã€‚\n");
+		set("unit", "äº›");
                 set("base_value", 1);
 		set("material", "steel");
-                set("base_unit", "¸ù");
+                set("base_unit", "æ ¹");
 		set("base_weight", 10); 
 	}	
         set_amount(999);
@@ -36,20 +36,20 @@ int do_wield(string arg)
 	int i, count;
 
 // 40
-        if (!id(arg))   return notify_fail("ÄãÒª×°±¸Ê²Ã´£¿\n");
+        if (!id(arg))   return notify_fail("ä½ è¦è£…å¤‡ä»€ä¹ˆï¼Ÿ\n");
 
 
 	if( !objectp(ob = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( ob->query("equipped") )
-		return notify_fail("ÄãÒÑ¾­×°±¸ÖøÁË¡£\n");
+		return notify_fail("ä½ å·²ç»è£…å¤‡è‘—äº†ã€‚\n");
 
 // 50
 	if( ob->wield() ) {
               if( !stringp(str = ob->query("wield_msg")) )
-			str = "$N×°±¸$n×÷ÎäÆ÷¡£\n";
-              message_vision(str, me, ob);me->set_temp("marks/×ÓÄ¸Õë",1);
+			str = "$Nè£…å¤‡$nä½œæ­¦å™¨ã€‚\n";
+              message_vision(str, me, ob);me->set_temp("marks/å­æ¯é’ˆ",1);
  
 //	}
 
@@ -69,20 +69,20 @@ int do_unwield(string arg)
 	int i, count;
 
 // 40
-        if (!id(arg))   return notify_fail("ÄãÒª·ÅÏÂÊ²Ã´£¿\n");
+        if (!id(arg))   return notify_fail("ä½ è¦æ”¾ä¸‹ä»€ä¹ˆï¼Ÿ\n");
 
 
 	if( !objectp(ob = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( ob->query("equipped") )
-		return notify_fail("ÄãÒÑ¾­·ÅÏÂÁË¡£\n");
+		return notify_fail("ä½ å·²ç»æ”¾ä¸‹äº†ã€‚\n");
 
 // 50
 	if( ob->unwield() ) {
               if( !stringp(str = ob->query("unwield_msg")) )
-			str = "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n";
-              message_vision(str, me, ob);me->delete_temp("marks/×ÓÄ¸Õë");
+			str = "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n";
+              message_vision(str, me, ob);me->delete_temp("marks/å­æ¯é’ˆ");
 
 //	}
 

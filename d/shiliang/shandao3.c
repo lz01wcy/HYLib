@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ɽ����");
+        set("short", "山洞口");
 	set("long", @LONG
-������һ����ɽ������ǰ������ں����ģ������˵ģ���
-�ǲ�Ҫ��ȥ�ĺá�
+你来到一个大山洞的面前，里面黑乎乎的，怪吓人的，还
+是不要进去的好。
 LONG
 	);
         set("outdoors", "shiliang");

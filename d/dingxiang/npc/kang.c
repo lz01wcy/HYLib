@@ -3,11 +3,11 @@
 inherit NPC;
 void create()
 {
-   set_name("¿µÇÊÀû",({ "kang qiaoli","kang" }) );
-        set("gender", "ÄÐÐÔ" );
+   set_name("åº·éž˜åˆ©",({ "kang qiaoli","kang" }) );
+        set("gender", "ç”·æ€§" );
 		
         set("age", 26);
-   set("long", "Ëû¾ÍÊÇÍ»ØÊÔÚÖÐÔ­µÄ¶úÄ¿¡£\n");
+   set("long", "ä»–å°±æ˜¯çªåŽ¥åœ¨ä¸­åŽŸçš„è€³ç›®ã€‚\n");
        
    set("combat_exp",300000);
    set("str", 25);
@@ -33,7 +33,7 @@ void create()
    set("max_sen",1000);
    set("neili",1500);
    set("max_neili",1500);
-   create_family("Í»ØÊ",5,"ÎäÊ¿");
+   create_family("çªåŽ¥",5,"æ­¦å£«");
     setup();
    carry_object(__DIR__"obj/cloth")->wear();
    carry_object(__DIR__"obj/blade")->wield();

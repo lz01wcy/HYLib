@@ -2,15 +2,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name("º£Âİ", ({ "hailuo" }) );
+	set_name("æµ·èº", ({ "hailuo" }) );
 	set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 100);
 		set("long", 
-"º£ÖĞµÄÒ»ÖĞ±´Àà¶¯Îï,ÔÚº£Ì²ÉÏ³£ÄÜ¼ûµ½£¡\n");
+"æµ·ä¸­çš„ä¸€ä¸­è´ç±»åŠ¨ç‰©,åœ¨æµ·æ»©ä¸Šå¸¸èƒ½è§åˆ°ï¼\n");
 	}
 	setup();
 }

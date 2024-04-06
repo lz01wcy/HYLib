@@ -1,11 +1,11 @@
  inherit NPC;
 void create()
 {
-        set_name("ÄÁÑòÈ®", ({ "shepherd dog", "dog" }) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set_name("ç‰§ç¾ŠçŠ¬", ({ "shepherd dog", "dog" }) );
+        set("race", "é‡å…½");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»Î÷²Ø²úµÄÄÁÑòÈ®£¬ÕıÖÒÊµµØ¿´»¤×ÅÑòÈº¡£\n");
+        set("long", "è¿™æ˜¯ä¸€åªè¥¿è—äº§çš„ç‰§ç¾ŠçŠ¬ï¼Œæ­£å¿ å®åœ°çœ‹æŠ¤ç€ç¾Šç¾¤ã€‚\n");
         
         set("str", 50);
         set("cor", 52);
@@ -19,11 +19,11 @@ void create()
         set("max_jing", 3000);
         
         set("attitude", "friendly");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) ); 
         set("chat_chance_combat", 1);
         set("chat_msg_combat", ({
-                "ÄÁÑòÈ®ÍôÍôµØ½ĞÁË¼¸Éù£¬¾¯ÌèµØÏòËÄÖÜ¿´ÁË¼¸ÑÛ¡£\n"
+                "ç‰§ç¾ŠçŠ¬æ±ªæ±ªåœ°å«äº†å‡ å£°ï¼Œè­¦æƒ•åœ°å‘å››å‘¨çœ‹äº†å‡ çœ¼ã€‚\n"
         }) );
         set("combat_exp", 2000000);
                 

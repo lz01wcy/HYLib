@@ -1,4 +1,4 @@
-// qqren.c ôÃÇ§Øð
+// qqren.c è£˜åƒä»ž
 
 inherit NPC;
 int ask_qiubai();
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-    set_name("ôÃÇ§Øð", ({ "qiu qianren", "qiu", "qianren", "ren"}));
-    set("nickname", "ÌúÕÆË®ÉÏÆ¯");
+    set_name("è£˜åƒä»ž", ({ "qiu qianren", "qiu", "qianren", "ren"}));
+    set("nickname", "é“æŽŒæ°´ä¸Šæ¼‚");
 	set("long", 
-        "Ëû¾ÍÊÇÍþÕð´¨ÏæµÄÌúÕÆ°ïµÄ°ïÖ÷-ÌúÕÆË®ÉÏÆ¯ôÃÇ§Øð¡£\n"
-        "ËûÊÇÒ»¸ö°×ÐëÀÏÍ·£¬Éí´©»Æ¸ð¶ÌÉÀ£¬ÓÒÊÖ»Ó×ÅÒ»°Ñ´óÆÑÉÈ¡£\n");
-	set("gender", "ÄÐÐÔ");
+        "ä»–å°±æ˜¯å¨éœ‡å·æ¹˜çš„é“æŽŒå¸®çš„å¸®ä¸»-é“æŽŒæ°´ä¸Šæ¼‚è£˜åƒä»žã€‚\n"
+        "ä»–æ˜¯ä¸€ä¸ªç™½é¡»è€å¤´ï¼Œèº«ç©¿é»„è‘›çŸ­è¡«ï¼Œå³æ‰‹æŒ¥ç€ä¸€æŠŠå¤§è’²æ‰‡ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 60);
     set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -58,16 +58,16 @@ void create()
         }) );
 
 
-    create_family("ÌúÕÆ°ï", 14, "°ïÖ÷");
+    create_family("é“æŽŒå¸®", 14, "å¸®ä¸»");
 
     set("inquiry", ([
-"name" : "ÀÏ·ò±ãÊÇ¡°ÌúÕÆË®ÉÏÆ¯¡±ôÃÇ§Øð£¬ÄãÎÊÀÏ·òÐÕÃûÓÐÊ²Ã´ÊÂÃ´£¿\n",
-"here" : "ÕâÀï¾ÍÊÇÌúÕÆ°ïµÄ×ÜÌ³ËùÔÚ£¬ÄãÈçÃ»ÊÂ£¬²»ÒªËÄ´¦ÂÒ×ß£¬ÃâÕÐÉ±ÉíÖ®»ö£¡£¡£¡\n",
-"ÉÏ¹Ù½£ÄÏ" : (: ask_qiubai :),
-                       "¹¤×÷" : (: ask_job1 :),
-                       "¹¤¾ß" : "ÄãÈ¥¹¤¾ß·¿ÕÒÒª°É£¡", 
+"name" : "è€å¤«ä¾¿æ˜¯â€œé“æŽŒæ°´ä¸Šæ¼‚â€è£˜åƒä»žï¼Œä½ é—®è€å¤«å§“åæœ‰ä»€ä¹ˆäº‹ä¹ˆï¼Ÿ\n",
+"here" : "è¿™é‡Œå°±æ˜¯é“æŽŒå¸®çš„æ€»å›æ‰€åœ¨ï¼Œä½ å¦‚æ²¡äº‹ï¼Œä¸è¦å››å¤„ä¹±èµ°ï¼Œå…æ‹›æ€èº«ä¹‹ç¥¸ï¼ï¼ï¼\n",
+"ä¸Šå®˜å‰‘å—" : (: ask_qiubai :),
+                       "å·¥ä½œ" : (: ask_job1 :),
+                       "å·¥å…·" : "ä½ åŽ»å·¥å…·æˆ¿æ‰¾è¦å§ï¼", 
                        "work" : (: ask_job1 :),
-                       "tools" : "ÄãÈ¥¹¤¾ß·¿ÕÒÒª°É£¡", 
+                       "tools" : "ä½ åŽ»å·¥å…·æˆ¿æ‰¾è¦å§ï¼", 
 
     ]));
 
@@ -88,10 +88,10 @@ void attempt_apprentice(object me)
 {
         if ((int)me->query("shen") > -10000) {
                 command("hehe");
-                command("say ÎÒôÃÇ§Øð¿É²»ÊÕÐÄ´ÈÊÖÈíµÄÈË×öÍ½µÜ¡£");
+                command("say æˆ‘è£˜åƒä»žå¯ä¸æ”¶å¿ƒæ…ˆæ‰‹è½¯çš„äººåšå¾’å¼Ÿã€‚");
                 return;
         }
-                command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£Ï£ÍûÄã¿àÁ·ÌúÕÆÉñ¹¦£¬½«Ö®·¢Ñï¹â´ó¡£");
+                command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚å¸Œæœ›ä½ è‹¦ç»ƒé“æŽŒç¥žåŠŸï¼Œå°†ä¹‹å‘æ‰¬å…‰å¤§ã€‚");
                 command("recruit " + me->query("id"));
 }
 
@@ -102,7 +102,7 @@ int recruit_apprentice(object ob)
 }
 int ask_qiubai()
 {
-say("ËûÊÇÎÒÊ¦¸¸¡£ÎÒÔÚÊ®ÈýËêÄÇÄêÔø¾È¹ýËû£¬Ö®ºóËû¸Ð¶÷Í¼±¨£¬½«È«\n"
-    "ÉíÎä¹¦ÇãÄÒÏàÊÜ¡£¿ÉÏ§Ê®ÄêÇ°£¬ËûÔÚºþ±±ÔâÈËÎ§¹¥¶øËÀ£¡°¦£¡\n");
+say("ä»–æ˜¯æˆ‘å¸ˆçˆ¶ã€‚æˆ‘åœ¨åä¸‰å²é‚£å¹´æ›¾æ•‘è¿‡ä»–ï¼Œä¹‹åŽä»–æ„Ÿæ©å›¾æŠ¥ï¼Œå°†å…¨\n"
+    "èº«æ­¦åŠŸå€¾å›Šç›¸å—ã€‚å¯æƒœåå¹´å‰ï¼Œä»–åœ¨æ¹–åŒ—é­äººå›´æ”»è€Œæ­»ï¼å”‰ï¼\n");
 return 1;
 }

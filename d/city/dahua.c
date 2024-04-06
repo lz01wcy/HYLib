@@ -6,12 +6,12 @@ string look_ban();
 
 void create ()
 {
-	set ("short", "´ó»°÷»×ÓÎÝ");
+	set ("short", "å¤§è¯éª°å­å±‹");
 	set ("long", @LONG
-ÕâÀïÊÇ´ó»°÷»×ÓÎÝ£¬ÎÝ×ÓÖÐ¼ä°Ú×ÅÒ»¸ö´ó°¸Ì¨£¬°¸Ì¨ÃæÉÏ£¬ÓÃ²Ý×Ö
-¿Ì×Å¡°´µÅ£²»Òª±¾Ç®¡±×ÖÑù¡£°¸Ì¨ÉÏÓÐÁ½¸öÖñÍ²£¬¸²Í²ÏÂÃæ¸÷ÓÐÎå¸ö÷»
-×Ó£¬¾Æº¨¶úÈÈÖ®ºó£¬¾¡¿É¡°´ó»°¡±Ò»·¬¡£Ç½ÉÏ¶¤ÁËÒ»¿éÐ¡Ä¾°æ (ban)£¬
-ÃÜÃÜÂéÂé´óÖÂÐ´ÁË»ù±¾Íæ·¨¡£
+è¿™é‡Œæ˜¯å¤§è¯éª°å­å±‹ï¼Œå±‹å­ä¸­é—´æ‘†ç€ä¸€ä¸ªå¤§æ¡ˆå°ï¼Œæ¡ˆå°é¢ä¸Šï¼Œç”¨è‰å­—
+åˆ»ç€â€œå¹ç‰›ä¸è¦æœ¬é’±â€å­—æ ·ã€‚æ¡ˆå°ä¸Šæœ‰ä¸¤ä¸ªç«¹ç­’ï¼Œè¦†ç­’ä¸‹é¢å„æœ‰äº”ä¸ªéª°
+å­ï¼Œé…’é…£è€³çƒ­ä¹‹åŽï¼Œå°½å¯â€œå¤§è¯â€ä¸€ç•ªã€‚å¢™ä¸Šé’‰äº†ä¸€å—å°æœ¨ç‰ˆ (ban)ï¼Œ
+å¯†å¯†éº»éº»å¤§è‡´å†™äº†åŸºæœ¬çŽ©æ³•ã€‚
 LONG);
 
 	set("no_fight",  1);
@@ -33,24 +33,24 @@ LONG);
 string look_ban()
 {
         return
-"			´ó»°÷»×Ó
+"			å¤§è¯éª°å­
 
-¡ª¡ª[¿ªÊ¼ÓÎÏ·]¡ª¡ª¡ª¡ª¡ª
-¼ÓÈëÓÎÏ·£ºjoin	¿ªÊ¼ÓÎÏ·£ºstart	ÖØÖÃÓÎÏ·£ºreset se
-¡ª¡ª[ÓÎÏ·ÃüÁî]¡ª¡ª¡ª¡ª¡ª
-Ò¡÷»×Ó£ºtoss	²é¿´÷»×Ó£ºview [Íæ¼ÒID]
-×¼±¸½áÊø£ºfinish/deal
-²ð´©´ó»°£ºdahua [Íæ¼ÒID]
-²Â²â÷»×Ó£ºguess ÷»×ÓÊýÁ¿ ÷»×ÓµãÊý
-¡¡¡¡¡¡¡¡¡¡»òÕß g ÷»×ÓÊýÁ¿ ÷»×ÓµãÊý
-´ß´ÙÍæ¼Ò£ºnext
-¡ª¡ª[ÆäËüÃüÁî]¡ª¡ª¡ª¡ª¡ª
-¼ÆÊýÆ÷£ºshowc	²Â²âÈÕÖ¾£ºhistory
-¡ª¡ª[ÅÔ¹ÛÃüÁî]¡ª¡ª¡ª¡ª¡ª
-¹ÛÕ½ÃüÁî£ºvisit [-d] Íæ¼ÒID
-                ÑûÇëÆäËüÍæ¼Ò¹Û¿´ÄãµÄÓÎÏ·¡£
-                ¼Ó²ÎÊý -d ±íÊ¾É¾³ý¸ÃÍæ¼ÒµÄ¹Û¿´×Ê¸ñ¡£
-¡ª¡ª[ÓÎÏ·¹æÔò]¡ª¡ª¡ª¡ª¡ª
-    Õâ¸öÓÎÏ·£¬·²ÊÇÉÏ¹ý¾Æ°É¡¢¸èÌüµÄ£¬¶¼Ó¦¸ÃÍæ¹ý¡£²»¶àËµÀ²£¬
-ºÜ¿¼ÑéÖÇ»ÛµÄ¡£\n";
+â€•â€•[å¼€å§‹æ¸¸æˆ]â€•â€•â€•â€•â€•
+åŠ å…¥æ¸¸æˆï¼šjoin	å¼€å§‹æ¸¸æˆï¼šstart	é‡ç½®æ¸¸æˆï¼šreset se
+â€•â€•[æ¸¸æˆå‘½ä»¤]â€•â€•â€•â€•â€•
+æ‘‡éª°å­ï¼štoss	æŸ¥çœ‹éª°å­ï¼šview [çŽ©å®¶ID]
+å‡†å¤‡ç»“æŸï¼šfinish/deal
+æ‹†ç©¿å¤§è¯ï¼šdahua [çŽ©å®¶ID]
+çŒœæµ‹éª°å­ï¼šguess éª°å­æ•°é‡ éª°å­ç‚¹æ•°
+ã€€ã€€ã€€ã€€ã€€æˆ–è€… g éª°å­æ•°é‡ éª°å­ç‚¹æ•°
+å‚¬ä¿ƒçŽ©å®¶ï¼šnext
+â€•â€•[å…¶å®ƒå‘½ä»¤]â€•â€•â€•â€•â€•
+è®¡æ•°å™¨ï¼šshowc	çŒœæµ‹æ—¥å¿—ï¼šhistory
+â€•â€•[æ—è§‚å‘½ä»¤]â€•â€•â€•â€•â€•
+è§‚æˆ˜å‘½ä»¤ï¼švisit [-d] çŽ©å®¶ID
+                é‚€è¯·å…¶å®ƒçŽ©å®¶è§‚çœ‹ä½ çš„æ¸¸æˆã€‚
+                åŠ å‚æ•° -d è¡¨ç¤ºåˆ é™¤è¯¥çŽ©å®¶çš„è§‚çœ‹èµ„æ ¼ã€‚
+â€•â€•[æ¸¸æˆè§„åˆ™]â€•â€•â€•â€•â€•
+    è¿™ä¸ªæ¸¸æˆï¼Œå‡¡æ˜¯ä¸Šè¿‡é…’å§ã€æ­ŒåŽ…çš„ï¼Œéƒ½åº”è¯¥çŽ©è¿‡ã€‚ä¸å¤šè¯´å•¦ï¼Œ
+å¾ˆè€ƒéªŒæ™ºæ…§çš„ã€‚\n";
 }

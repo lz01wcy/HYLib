@@ -1,17 +1,17 @@
-// ÏÀ¿ÍĞĞ100º£Ñó°æII
-// panzi.c Ï´ºÃµÄÅÌ×Ó
-// ĞÇĞÇlywin 2000/6/1 ¶ùÍ¯½Ú
+// ä¾ å®¢è¡Œ100æµ·æ´‹ç‰ˆII
+// panzi.c æ´—å¥½çš„ç›˜å­
+// æ˜Ÿæ˜Ÿlywin 2000/6/1 å„¿ç«¥èŠ‚
 #include <ansi.h>
 inherit ITEM;
 void create()
 {
-        set_name( "ÔàÅÌ×Ó" , ({"zhangpanzi"}));
+        set_name( "è„ç›˜å­" , ({"zhangpanzi"}));
         set_weight(3);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "µş");
-                set("long", "Ò»µş¸Õ¸ÕÓÃ¹ıµÄÔàÅÌ×Ó¡£\n");
+                set("unit", "å ");
+                set("long", "ä¸€å åˆšåˆšç”¨è¿‡çš„è„ç›˜å­ã€‚\n");
                 set("value", 0);
         }
         setup();

@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÚ¹ê", ({ "wu gui", "gui" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("ä¹Œé¾Ÿ", ({ "wu gui", "gui" }) );
+        set("race", "é‡Žå…½");
         set("age", 10);
-        set("long", "Ò»Ö»´óÎÚ¹ê£¬¿´À´ËêÊý²»Ð¡ÁË¡£\n");
+        set("long", "ä¸€åªå¤§ä¹Œé¾Ÿï¼Œçœ‹æ¥å²æ•°ä¸å°äº†ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
         set("cor", 30);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åŽè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 1000);
@@ -28,7 +28,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$N·­×ªÉí£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nç¿»è½¬èº«ï¼Œæ­»äº†ï¼\n", this_object());
         ob = new(__DIR__"obj/guijia");
         ob->move(environment(this_object()));
         destruct(this_object());

@@ -8,11 +8,11 @@ string ask_job();
 
 void create()
 {
-	set_name("·½Ñá", ({ "fang yan", "fang", "yan"}));
-	set("long", "ËûÊÇÒ»Î»Éí´©»Æ²¼ôÂôÄµÄÇàÄêÉ®ÈË¡£Á³ÉÏÖÉÆøÎ´ÍÑ£¬ÉíÊÖÈ´ÒÑÏà\n"
-		"µ±½Ã½İ£¬¿´À´ËÆºõÑ§¹ıÒ»µãÎä¹¦¡£\n");
-	set("nickname", "²ŞÍ·");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–¹åŒ", ({ "fang yan", "fang", "yan"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«ç©¿é»„å¸ƒè¢ˆè£Ÿçš„é’å¹´åƒ§äººã€‚è„¸ä¸Šç¨šæ°”æœªè„±ï¼Œèº«æ‰‹å´å·²ç›¸\n"
+		"å½“çŸ«æ·ï¼Œçœ‹æ¥ä¼¼ä¹å­¦è¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("nickname", "å•å¤´");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -65,7 +65,7 @@ void create()
 	prepare_skill("hand", "qianye-shou");
 	prepare_skill("strike", "sanhua-zhang");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 21, "å¼Ÿå­");
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
 	carry_object(__DIR__"qimeigun")->wield();
@@ -84,7 +84,7 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	command("say " +RANK_D->query_rude(ob)+"£¬Äã»¹Ç××ÔÀ´ÉÏ²ŞËù°¡¡£");
+	command("say " +RANK_D->query_rude(ob)+"ï¼Œä½ è¿˜äº²è‡ªæ¥ä¸Šå•æ‰€å•Šã€‚");
 	command("laugh ");
 }
 #include "fang.h";

@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-       set_name("ľ������", ({ "mufang guanshi", "guanshi" }) );
-       set("gender", "����" );
+       set_name("木房管事", ({ "mufang guanshi", "guanshi" }) );
+       set("gender", "男性" );
        set("age", 50);
        set("long",
-               "����������ݵ�һ��С�ܼң�ר��ľ����\n");
+               "他是襄阳武馆的一个小管家，专管木房！\n");
        set("combat_exp", 2500);
        set("attitude", "friendly");
               set("inquiry", ([
-             "��ľͷ" : "�����������ʵʵ���Ҿ�ľͷ��û���ҵ����⣬������ȥ������",
+             "锯木头" : "你就在这老老实实给我锯木头，没有我的满意，你别想回去覆命！",
 	       
        ]) );
        setup();
@@ -32,19 +32,19 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
          
-       if(ob->query_temp("job_name")!="��ľͷ") return; 
+       if(ob->query_temp("job_name")!="锯木头") return; 
 
         if (!( present("juzi", ob)))
        {
         command("hmm "+ob->query("id"));
-        command("say �㻹û�칤�߰ɣ�ȥ����Ʒ��������Ҫ�� \n");
+        command("say 你还没领工具吧，去东物品房找老李要。 \n");
         return;
         }
 
-        if(!(ob->query_temp("job_name")!="��ľͷ"))   
+        if(!(ob->query_temp("job_name")!="锯木头"))   
        {
         command("nod "+ob->query("id"));
        command("say " + RANK_D->query_respect(ob)
-				+ "����������ľͷ"HIR"(ju ľͷ)"NOR"�ɡ�\n");
+				+ "，你就在这锯木头"HIR"(ju 木头)"NOR"吧。\n");
             }
 }

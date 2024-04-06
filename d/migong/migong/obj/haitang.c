@@ -3,9 +3,9 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIC"Æß"HIR"ĞÄ"HIG"º£"HIY"ÌÄ"NOR, ({"qixin haitang", "haitang"}));
-	set("unit", "¶ä");
-	set("long", "ÕâÊÇÒ»¶äº±¼ûµÄÆßĞÄº£ÌÄ¡£\n");
+	set_name(HIC"ä¸ƒ"HIR"å¿ƒ"HIG"æµ·"HIY"æ£ "NOR, ({"qixin haitang", "haitang"}));
+	set("unit", "æœµ");
+	set("long", "è¿™æ˜¯ä¸€æœµç½•è§çš„ä¸ƒå¿ƒæµ·æ£ ã€‚\n");
 	setup();
 }
 

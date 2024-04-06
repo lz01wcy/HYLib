@@ -5,19 +5,19 @@ inherit SWORD;
 
 void create()
 {
-    set_name("ÒĞÌì½£", ({ "yitian jian", "yitian","jian" }) );
+    set_name("å€šå¤©å‰‘", ({ "yitian jian", "yitian","jian" }) );
     set_weight(20000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
                 set("treasure",1);
-        	set("unit", "±ú");
+        	set("unit", "æŸ„");
         	set("value", 50000);
 //        	set("no_drop", "1");
         	set("material", "iron");
-        	set("long", "ÕâÊÇÌìÏÂµÚÒ»ÀûÆ÷£¬ÓĞ¡°ÒĞÌì²»³ö£¬Ë­ÓëÕù·æ¡±Ö®Ëµ¡£\n");
-        	set("wield_msg","Ö±Èç½ÃÁúÍÌË®£¬³¤ºç¹ÚÈÕÒ»°ã£¬$nÒÑÔÚ$NÊÖÖĞ£¬ÌìµØÎªÖ®±äÉ«¡£\n");
-        	set("unwield_msg", "$N½«$n²å»ØÑü¼ä£¬»ª¹â¶ÙÁ²£¬ÌìµØ¼äÖ»ÎÅÁúÃù¡£\n");
+        	set("long", "è¿™æ˜¯å¤©ä¸‹ç¬¬ä¸€åˆ©å™¨ï¼Œæœ‰â€œå€šå¤©ä¸å‡ºï¼Œè°ä¸äº‰é”‹â€ä¹‹è¯´ã€‚\n");
+        	set("wield_msg","ç›´å¦‚çŸ«é¾™åæ°´ï¼Œé•¿è™¹å† æ—¥ä¸€èˆ¬ï¼Œ$nå·²åœ¨$Næ‰‹ä¸­ï¼Œå¤©åœ°ä¸ºä¹‹å˜è‰²ã€‚\n");
+        	set("unwield_msg", "$Nå°†$næ’å›è…°é—´ï¼Œåå…‰é¡¿æ•›ï¼Œå¤©åœ°é—´åªé—»é¾™é¸£ã€‚\n");
 	}
     	init_sword(500);
 	setup();

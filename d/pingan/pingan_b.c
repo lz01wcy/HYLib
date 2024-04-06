@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("Æ½°²´ó¼ªÁôÑÔ°å", ({ "board" }) );
+	set_name("å¹³å®‰å¤§å‰ç•™è¨€æ¿", ({ "board" }) );
 	set("location", "/d/pingan/guangchang");
 	set("board_id", "pingan_b");
-	set("long", "ÕâÊÇÒ»¸ö¹©ĞÂÊÖ½»Á÷µÄÁôÑÔ°å¡£\n" );
+	set("long", "è¿™æ˜¯ä¸€ä¸ªä¾›æ–°æ‰‹äº¤æµçš„ç•™è¨€æ¿ã€‚\n" );
 	setup();
 	set("capacity", 100);
 	replace_program(BULLETIN_BOARD);

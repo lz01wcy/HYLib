@@ -1,15 +1,15 @@
 // "suiye"/shuaifu
-// Room in ËéÒ¶
+// Room in ç¢Žå¶
 // laowuwu 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "Ë§¸®");
+	set("short", "å¸…åºœ");
 	set("long", @LONG
-ÕâÊÇËéÒ¶µÄË§¸®£¬ÊÇÖÐ¹úÔÚÎ÷ÓòµÄ×î¸ßÈ¨ÀûÖÐÐÄ£¬¼¸¸ö½«ÁìÕýÔÚÌÖ
-ÂÛ×ÅÎ÷ÓòµÄÕ½¾Ö¡£Ã¿Ìì´ÓÕâÀï·¢³öÏòÎ÷Óò×÷Õ½µÄÖ¸Áî£¬²¢·¢³ö¿ì±¾×à¸ø
-»ÊÉÏ¡£ÄÏÃæÊÇºó»¨Ô°£¬´ÓÎ÷ÃæµÄ¿ÍÌü²»Ê±×ß³ö¼¸¸öÑ¾÷ß£¬Ïò¶«ÃæÔªË§ÐÝ
-Ï¢µÄÊé·¿×ßÈ¥¡£
+è¿™æ˜¯ç¢Žå¶çš„å¸…åºœï¼Œæ˜¯ä¸­å›½åœ¨è¥¿åŸŸçš„æœ€é«˜æƒåˆ©ä¸­å¿ƒï¼Œå‡ ä¸ªå°†é¢†æ­£åœ¨è®¨
+è®ºç€è¥¿åŸŸçš„æˆ˜å±€ã€‚æ¯å¤©ä»Žè¿™é‡Œå‘å‡ºå‘è¥¿åŸŸä½œæˆ˜çš„æŒ‡ä»¤ï¼Œå¹¶å‘å‡ºå¿«æœ¬å¥ç»™
+çš‡ä¸Šã€‚å—é¢æ˜¯åŽèŠ±å›­ï¼Œä»Žè¥¿é¢çš„å®¢åŽ…ä¸æ—¶èµ°å‡ºå‡ ä¸ªä¸«é¬Ÿï¼Œå‘ä¸œé¢å…ƒå¸…ä¼‘
+æ¯çš„ä¹¦æˆ¿èµ°åŽ»ã€‚
 LONG
 	);
 set("exits", ([

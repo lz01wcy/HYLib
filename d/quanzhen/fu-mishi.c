@@ -1,15 +1,15 @@
-// fu-mishi.c ÃÜÊÒ
+// fu-mishi.c å¯†å®¤
 // By Lgg,1998.10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜÊÒ");
+        set("short", "å¯†å®¤");
         set("long", @LONG
-ÕâÀïÊÇÒ»¼äÃÜÊÒ£¬ËÄÖÜÉ¢²¼×Å¼¸Ìõ´øÑªµÄ±Þ×Ó£¬»¹ÓÐÒ»Ð©¸÷
-ÖÖ¸÷ÑùµÄÐÌ¾ß¡£¿´À´´«Ëµ¹ûÈ»²»Ðé£¬ÕâºîÔ±Íâ¹ûÕæÊÇ¸öÓãÈâÏçÀï
-µÄ¶ñ°Ô¡£
+è¿™é‡Œæ˜¯ä¸€é—´å¯†å®¤ï¼Œå››å‘¨æ•£å¸ƒç€å‡ æ¡å¸¦è¡€çš„éž­å­ï¼Œè¿˜æœ‰ä¸€äº›å„
+ç§å„æ ·çš„åˆ‘å…·ã€‚çœ‹æ¥ä¼ è¯´æžœç„¶ä¸è™šï¼Œè¿™ä¾¯å‘˜å¤–æžœçœŸæ˜¯ä¸ªé±¼è‚‰ä¹¡é‡Œ
+çš„æ¶éœ¸ã€‚
 LONG
         );
         set("exits", ([

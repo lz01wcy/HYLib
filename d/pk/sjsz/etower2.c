@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ʯ��");
+        set("short","石阶");
 
         set("long",@LONG
-����ɽʯ��������Խ�ɽׯ�У�Ҳ��֪ͨ���δ���ֻ��Ũ����죬Խ
-��Խ����ɭ����ʱ����Ұ�޺����������������з�ë��
+这後山石阶蜿蜒於试剑山庄中，也不知通往何处。只见浓荫蔽天，越
+走越是阴森，不时还有野兽吼声传来，令人心中发毛。
 LONG);
 
           set("exits",([ "up" : __DIR__"etower3",

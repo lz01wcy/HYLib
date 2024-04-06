@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "����");
+	set("short", "曲廊");
 	set("long", @LONG
-	���������Ļ��ȣ����¾���ź���ˮ���������Ǵ��̵ĺ�Ҷ���м��׺�Ŷ�
-���ɫ�ɻ���ż�����Կ�����������ںɼ���߮���ղŵ����������������������ǰ
-�治Զ����
+	弯弯曲曲的回廊，廊下就是藕香湖水，湖面满是翠绿的荷叶，中间点缀着朵
+朵粉色荷花，偶尔可以看到几条鱼儿在荷间游弋。刚才的琴音渐渐清晰，好象就在前
+面不远处。
 LONG
 	);
         set("outdoors", "tangmen");

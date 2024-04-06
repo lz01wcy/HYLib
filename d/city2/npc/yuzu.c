@@ -4,16 +4,16 @@
 inherit NPC;
 void create()
 {
-        set_name("�̲�����", ({ "yu zu","zu" }) );
-        set("title", HIR"��Ʒ"HIB"��������"NOR);
-        set("gender", "����" );
+        set_name("刑部狱卒", ({ "yu zu","zu" }) );
+        set("title", HIR"八品"HIB"带刀侍卫"NOR);
+        set("gender", "男性" );
         set("age", 32);
         set("str", 22);
         set("con", 25);
         set("dex", 20);
         set("int", 30);
         set("long",
-"���ӽ��±����ǵ��̲��춥���䣬�������⣬��ݿ������㿴��ҪС���ˡ�\n");
+"天子脚下北京城的刑部红顶狱卒，满脸横肉，刁狠苛毒。你看来要小心了。\n");
         set("combat_exp", 2000000);
         set("attitude", "heroism");
 
@@ -29,7 +29,7 @@ void create()
         set_skill("blade", 200);
 
         set("inquiry", ([
-        "����"   : "�ٺٺٺ٣����������ûʥ�ϵ�ּ�⣬����ûָ��ඡ�\n",
+        "出狱"   : "嘿嘿嘿嘿！想出狱啊？没圣上的旨意，今生没指望喽。\n",
         ]) );
         setup();
 
@@ -75,8 +75,8 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        command("rumor ������" + ob->query("name")
-                + "�ѱ��̲����������ù鰸��\n");
+        command("rumor 江洋大盗" + ob->query("name")
+                + "已被刑部锦衣卫籍拿归案！\n");
         ob->set("startroom","/d/city2/jail");
 }
 
@@ -86,15 +86,15 @@ int do_chat(string arg)
         switch(random(3))
         {
             case 1:
-        command("say "+ob->query("name")+"������ٶ�һ�����ٶ��͸���һͰ����\n");
+        command("say "+ob->query("name")+"！你敢再动一动！再动就给你一桶马尿！\n");
                   break;
             case 2:
-        command("say "+ob->query("name")+"������Ƥ���������ﲻˬ��\n");
-        message_vision(HIR"�̲�������ͷ���Ծ���һ��Ƥ�ޣ����$NƤ���������ò���ˬ��\n"NOR,ob);
+        command("say "+ob->query("name")+"！你是皮痒还是哪里不爽？\n");
+        message_vision(HIR"刑部狱卒劈头盖脑就是一阵皮鞭，抽得$N皮开肉绽，好不清爽！\n"NOR,ob);
                   ob -> receive_damage("qi",10);
                   break;
             default:
-        command("say "+this_player()->query("name")+"�����ǲ��Ǿ�������������࿪�ļ��죿\n");
+        command("say "+this_player()->query("name")+"！你是不是觉得这里很舒服想多开心几天？\n");
                   break;
         }
         return 0;

@@ -3,7 +3,7 @@
 inherit NPC;
 inherit F_DEALER;
 
-string ask_me(); //¶¨Òåask_me
+string ask_me(); //å®šä¹‰ask_me
 int do_gu(string arg); 
 int do_dapi(string arg); 
 int do_cuihuo(string arg); 
@@ -11,17 +11,17 @@ void reward(object me);
 
 void create()
 {
-set_name("Ìú½³", ({ "tiejiang", "smith" }));//ÒÔÏÂÎªÈËÎïÉèÖÃ
-set("title", "Ìú½³ÆÌÀÏ°å");
+set_name("é“åŒ ", ({ "tiejiang", "smith" }));//ä»¥ä¸‹ä¸ºäººç‰©è®¾ç½®
+set("title", "é“åŒ é“ºè€æ¿");
 set("shen_type", 1);
 
-set("gender", "ÄÐÐÔ" );
+set("gender", "ç”·æ€§" );
 set("age", 33);
-set("long", "Ìú½³ÕýÓÃÌúÇ¯¼Ð×¡Ò»¿éºìÈÈµÄÌú¿é·Å½øÂ¯ÖÐ¡£\n");
+set("long", "é“åŒ æ­£ç”¨é“é’³å¤¹ä½ä¸€å—çº¢çƒ­çš„é“å—æ”¾è¿›ç‚‰ä¸­ã€‚\n");
 
 set("combat_exp", 800000);
 set("attitude", "friendly");
-set("vendor_goods",({//×¢ÊÍÁË£¬Ìá¸ß¼æÈÝÐÔ
+set("vendor_goods",({//æ³¨é‡Šäº†ï¼Œæé«˜å…¼å®¹æ€§
 	    "/clone/weapon/gangdao",
 	    "/clone/weapon/changjian",
 	    "/clone/weapon/qimeigun",
@@ -32,16 +32,16 @@ set("vendor_goods",({//×¢ÊÍÁË£¬Ìá¸ß¼æÈÝÐÔ
 }));
 
 set("inquiry", ([ 
-"¹¤×÷" : (: ask_me :), 
+"å·¥ä½œ" : (: ask_me :), 
 "job" : (: ask_me :), 
 ]));
 
 setup();
 
-//carry_object("/clone/misc/cloth")->wear();//Ò²ÊÇÎªÁË¼æÈÝÐÔ
+//carry_object("/clone/misc/cloth")->wear();//ä¹Ÿæ˜¯ä¸ºäº†å…¼å®¹æ€§
 }
 
-void init()//¶¨Òå¶¯×÷
+void init()//å®šä¹‰åŠ¨ä½œ
 {
 add_action("do_list", "list");
 add_action("do_buy", "buy");
@@ -54,32 +54,32 @@ string ask_me()
 { 
 object me = this_player(); 
 
-if (me->query("combat_exp") > 50000) //¼ì²éEXPÊÇ·ñ´óÓÚ500
-return "ÈÃÄúÀÏ¸ÉÕâ¸öÎ´ÃâÇü×ðÁË°É£¿"; 
+if (me->query("combat_exp") > 50000) //æ£€æŸ¥EXPæ˜¯å¦å¤§äºŽ500
+return "è®©æ‚¨è€å¹²è¿™ä¸ªæœªå…å±ˆå°Šäº†å§ï¼Ÿ"; 
 
-if (me->query("qi") < 50) //¼ì²éÆø
-return "Äã»¹ÊÇÐª»á¶ù°É£¡ÒªÊÇ³öÁËÈËÃüÎÒ¿É³Ðµ£²»Æð¡£"; 
+if (me->query("qi") < 50) //æ£€æŸ¥æ°”
+return "ä½ è¿˜æ˜¯æ­‡ä¼šå„¿å§ï¼è¦æ˜¯å‡ºäº†äººå‘½æˆ‘å¯æ‰¿æ‹…ä¸èµ·ã€‚"; 
 
-if (me->query_temp("smith/gu")) //¼ì²é±ê¼Ç
-return "ÈÃÄã¹Ä·çÏä£¬ÄãÔõÃ´»¹Ä¥²ä(gu)£¿"; 
+if (me->query_temp("smith/gu")) //æ£€æŸ¥æ ‡è®°
+return "è®©ä½ é¼“é£Žç®±ï¼Œä½ æ€Žä¹ˆè¿˜ç£¨è¹­(gu)ï¼Ÿ"; 
 
 if (me->query_temp("smith/dapi")) 
-return "½ÐÄã´òµÄÅ÷Äã´òÁËÃ»ÓÐ(dapi)£¿"; 
+return "å«ä½ æ‰“çš„å¯ä½ æ‰“äº†æ²¡æœ‰(dapi)ï¼Ÿ"; 
 
 
-switch(random(3))//Ëæ»ú·ÖÅäÈý¸ö¹¤×÷
+switch(random(3))//éšæœºåˆ†é…ä¸‰ä¸ªå·¥ä½œ
 { 
 case 0: 
 me->set_temp("smith/gu", 1); 
-return "ºÃ£¡Äã°ïÎÒ¹ÄÒ»»á¶ù·çÏä(gu)¡£"; 
+return "å¥½ï¼ä½ å¸®æˆ‘é¼“ä¸€ä¼šå„¿é£Žç®±(gu)ã€‚"; 
 
 case 1: 
 me->set_temp("smith/dapi", 1); 
-return "ÕâÑù°É£¬Äã°ïÎÒ´òÒ»ÏÂÅ÷°É(dapi)£¡"; 
+return "è¿™æ ·å§ï¼Œä½ å¸®æˆ‘æ‰“ä¸€ä¸‹å¯å§(dapi)ï¼"; 
 
 case 2:
 me->set_temp("smith/cuihuo", 1); 
-return "È¥°ïÎÒ°ÑÕâÐ©¸Õ³öÂ¯µÄ´ãÒ»ÏÂ»ð(cuihuo)¡£"; 
+return "åŽ»å¸®æˆ‘æŠŠè¿™äº›åˆšå‡ºç‚‰çš„æ·¬ä¸€ä¸‹ç«(cuihuo)ã€‚"; 
 } 
 } 
 
@@ -88,17 +88,17 @@ int do_gu(string arg)
 object me = this_player(); 
 
 if (me->is_busy()) 
-return notify_fail("ÄãÏÖÔÚÕýÃ¦¡£\n"); 
+return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ã€‚\n"); 
 
 if (! me->query_temp("smith/gu")) 
 { 
-message_vision("$n¸ÕÍµÍµµÄÀ­Æð¹Ä·ç»ú£¬¹ÄÁË¼¸Õó·ç¡£" 
-"¾ÍÌý¼û$N¶Ô$n´óºÈµÀ£º¹ö¿ª£¬ÂÒ¸ãÊ²Ã´¡£\n", 
+message_vision("$nåˆšå·å·çš„æ‹‰èµ·é¼“é£Žæœºï¼Œé¼“äº†å‡ é˜µé£Žã€‚" 
+"å°±å¬è§$Nå¯¹$nå¤§å–é“ï¼šæ»šå¼€ï¼Œä¹±æžä»€ä¹ˆã€‚\n", 
 this_object(), me); 
 return 1; 
 } 
 
-message_vision("$nÀ­Æð¹Ä·ç»úÆ´Ãü¹ÄÁËÆðÀ´£¬$N¿´ÁËµãÁËµãÍ·¡£\n", 
+message_vision("$næ‹‰èµ·é¼“é£Žæœºæ‹¼å‘½é¼“äº†èµ·æ¥ï¼Œ$Nçœ‹äº†ç‚¹äº†ç‚¹å¤´ã€‚\n", 
 this_object(), me); 
 reward(me); 
 return 1; 
@@ -109,18 +109,18 @@ int do_dapi(string arg)
 object me = this_player(); 
 
 if (me->is_busy()) 
-return notify_fail("ÄãÏÖÔÚÕýÃ¦¡£\n"); 
+return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ã€‚\n"); 
 
 if (! me->query_temp("smith/dapi")) 
 { 
-message_vision("$nÄÃÆð¼¸¿éÉúÌú£¬ÔÚÊÖÀïµàÁËµà¡£" 
-"¾ÍÌý¼û$N¶Ô$n´óºÈµÀ£º·ÅÏÂ£¬ÂÒ¸ãÊ²Ã´¡£\n", 
+message_vision("$næ‹¿èµ·å‡ å—ç”Ÿé“ï¼Œåœ¨æ‰‹é‡ŒæŽ‚äº†æŽ‚ã€‚" 
+"å°±å¬è§$Nå¯¹$nå¤§å–é“ï¼šæ”¾ä¸‹ï¼Œä¹±æžä»€ä¹ˆã€‚\n", 
 this_object(), me); 
 return 1; 
 } 
 
-message_vision("$nÄÃ×Å´¸×Ó¶Ô¸Õ³öÂ¯µÄ»ðÈÈµÄÉúÌúÓÃÁ¦ÇÃ´ò×Å£¬" 
-"$N¡°àÅ¡±ÁËÒ»Éù£¬¿´ÉÏÈ¥ÓÐÐ©ÂúÒâ¡£\n", 
+message_vision("$næ‹¿ç€é”¤å­å¯¹åˆšå‡ºç‚‰çš„ç«çƒ­çš„ç”Ÿé“ç”¨åŠ›æ•²æ‰“ç€ï¼Œ" 
+"$Nâ€œå—¯â€äº†ä¸€å£°ï¼Œçœ‹ä¸ŠåŽ»æœ‰äº›æ»¡æ„ã€‚\n", 
 this_object(), me); 
 reward(me); 
 return 1; 
@@ -131,24 +131,24 @@ int do_cuihuo(string arg)
 object me = this_player(); 
 
 if (me->is_busy()) 
-return notify_fail("ÄãÏÖÔÚÕýÃ¦¡£\n"); 
+return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ã€‚\n"); 
 
 if (! me->query_temp("smith/cuihuo")) 
 { 
-message_vision("$n¸Õ³­ÆðÒ»¸ö´òÔìºÃµÄÅ÷×Ó£¬" 
-"¾ÍÌý¼û$N¶Ô$n´óºÈµÀ£º·ÅÏÂ£¬±ð¸øÎÒ¸ã»µÁË¡£\n", 
+message_vision("$nåˆšæŠ„èµ·ä¸€ä¸ªæ‰“é€ å¥½çš„å¯å­ï¼Œ" 
+"å°±å¬è§$Nå¯¹$nå¤§å–é“ï¼šæ”¾ä¸‹ï¼Œåˆ«ç»™æˆ‘æžåäº†ã€‚\n", 
 this_object(),me);
 return 1; 
 } 
 
-message_vision("$NÓÃÌúÇ¯³­ÆðÒ»¿é»ðºìµÄÅ÷×Ó£¬Éì½øÁËË®" 
-"³Ø£¬¡°ßê¡±µÄÒ»ÉùÇáÑÌËÄÃ°¡£\n", 
+message_vision("$Nç”¨é“é’³æŠ„èµ·ä¸€å—ç«çº¢çš„å¯å­ï¼Œä¼¸è¿›äº†æ°´" 
+"æ± ï¼Œâ€œå“§â€çš„ä¸€å£°è½»çƒŸå››å†’ã€‚\n", 
 me); 
 reward(me); 
 return 1; 
 } 
 
-void reward(object me) //¹¤×÷½áÊø£¬·ÖÅä½±ÉÍ£¬ÒÆ³ý±ê¼Ç
+void reward(object me) //å·¥ä½œç»“æŸï¼Œåˆ†é…å¥–èµï¼Œç§»é™¤æ ‡è®°
 { 
 object coin; 
 
@@ -159,7 +159,7 @@ me->delete_temp("smith/cuihuo");
 coin = new("/clone/money/coin"); 
 coin->set_amount(20 + random(50)); 
 coin->move(this_player()); 
-message_vision("$N¶Ô$nµÀ£ºÕâÊÇ¸øÄãµÄ¹¤Ç®¡£\n", 
+message_vision("$Nå¯¹$né“ï¼šè¿™æ˜¯ç»™ä½ çš„å·¥é’±ã€‚\n", 
 this_object(), me); 
 if (me->query("combat_exp") < 1000) 
 {

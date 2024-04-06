@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ؾ���һ¥");
+	set("short", "藏经阁一楼");
 	set("long", @LONG
-������������ֲؾ��󡣴˴��ؾ�֮����������ɽ��Ժ�����º���
-��ƥ�����ﶼ���������飬�߼��������ܣ���ܼ��������һ��ͨ��
-�Ŀ�϶�����Ŵ�����м䣬����ط������ɳ���������Ŀ�⼰�����㿴
-�����Ϸ��˼����𾭡�
+这里就是南少林藏经阁。此处藏经之富，不下嵩山本院，天下罕有
+其匹。这里都是密密麻麻，高及顶棚的书架，书架间仅有容身一人通行
+的空隙。几排大书架中间，间隔地放着数丈长的书桌。目光及处，你看
+到桌上放了几本佛经。
 LONG );
 	set("exits", ([
 		"out" : __DIR__"xiaoxi1",
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
 	{
 		if (dir == "up" )
 		{
-			return notify_fail("��մ�ʦ˵��: ��δ�����ɣ������϶�¥��\n");
+			return notify_fail("大痴大师说道: 你未经许可，不能上二楼。\n");
 		}
 	}
 	return ::valid_leave(me, dir);

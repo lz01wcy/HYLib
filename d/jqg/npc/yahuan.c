@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ѿ��", ({ "ya huan", "ya", "huan" }));
+	set_name("丫鬟", ({ "ya huan", "ya", "huan" }));
 	set("long",
-		"һλʮ�߰����СѾ�ߡ�\n");
-	set("gender", "Ů��");
+		"一位十七八岁的小丫鬟。\n");
+	set("gender", "女性");
 	set("age", 18);
 	set("attitude", "friendly");
 	set("shen", 1);

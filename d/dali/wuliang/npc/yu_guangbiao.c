@@ -1,11 +1,11 @@
-// NPC :yu_guangbiao.c Óô¹â±ê
+// NPC :yu_guangbiao.c éƒå…‰æ ‡
 // By River 98/12
 inherit NPC;
 void create()
 {
-        set_name("Óô¹â±ê", ({ "yu guangbiao", "yu", "guangbiao"}));
-        set("title","ÎŞÁ¿½£¶«×ÚµÜ×Ó");              
-        set("gender", "ÄĞĞÔ" );
+        set_name("éƒå…‰æ ‡", ({ "yu guangbiao", "yu", "guangbiao"}));
+        set("title","æ— é‡å‰‘ä¸œå®—å¼Ÿå­");              
+        set("gender", "ç”·æ€§" );
         set("age", 36);
         set("str", 27);
         set("con", 23);
@@ -22,7 +22,7 @@ void create()
         set("max_neili", 1000);      
         set("unique", 1);
         
-        set("long","ËûÊÇÎŞÁ¿½£¶«×ÚµÄµÜ×Ó¡£\n");
+        set("long","ä»–æ˜¯æ— é‡å‰‘ä¸œå®—çš„å¼Ÿå­ã€‚\n");
         set("combat_exp", 200000);
         set("shen", 800); 
 

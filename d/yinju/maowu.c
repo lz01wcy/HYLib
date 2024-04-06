@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short","é��");
+  set("short","茅屋");
   set("long",@LONG
-����һ��Сé��,���ϵ�������.����ֻ��һ��һ��,
-�����,ȴʮ�ָɾ�.�������ű���.
+这是一个小茅屋,桌上点着蜡烛.屋中只有一桌一床,
+陈设简单,却十分干净.床上铺着被褥.
 LONG);
   set("outdoors","yinju");
 set("objects", ([

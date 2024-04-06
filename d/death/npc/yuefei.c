@@ -6,15 +6,15 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("³£Ê¤½«¾ü", ({ "master yue", "master" }) );
-        set("nickname", HIY"½ð¿ø"HIW"Òø¼×"NOR);
-        set("gender", "ÄÐÐÔ" );
+        set_name("å¸¸èƒœå°†å†›", ({ "master yue", "master" }) );
+        set("nickname", HIY"é‡‘ç›”"HIW"é“¶ç”²"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 44);
         set("str", 50);
         set("cor", 30);
         set("cps", 30);
         set("int", 30);
-	create_family("Ú¤¸®",2,"ÒåË¾");
+	create_family("å†¥åºœ",2,"ä¹‰å¸");
             set("per", 30);
 	set("attitude","friendly");
         set("max_force", 15000);
@@ -22,7 +22,7 @@ void create()
         set("force_factor", 20);
         set("long",
 "
-Äã¿´×Å¿´×Å£¬¾õµÃÕâÎ»½«¾ü¾ÍÏóÊÇµ±ÄêÍ³±øÊ®Íò£¬Ö±µ·»ÆÁú£¬×³Ö¾Î´³êµÄÔÀ·É£¡
+ä½ çœ‹ç€çœ‹ç€ï¼Œè§‰å¾—è¿™ä½å°†å†›å°±è±¡æ˜¯å½“å¹´ç»Ÿå…µåä¸‡ï¼Œç›´æ£é»„é¾™ï¼Œå£®å¿—æœªé…¬çš„å²³é£žï¼
 \n"
 	);
         set("combat_exp", 1000000);
@@ -47,20 +47,20 @@ int is_ghost() { return 1; }
 
 int recognize_apprentice(object ob)
 {
-        if( ob->query("marks/²»ÖÒ") )
+        if( ob->query("marks/ä¸å¿ ") )
 	{
-		say("½«¾üºÈµÀ£ºÎÒ×îºÞµÄ¾ÍÊÇÄãÕâÖÖ²»ÖÒÖ®ÈË£¡\n");
+		say("å°†å†›å–é“ï¼šæˆ‘æœ€æ¨çš„å°±æ˜¯ä½ è¿™ç§ä¸å¿ ä¹‹äººï¼\n");
 		kill_ob(ob);
 		ob->kill_ob(this_object());
 		return 0;
 	}
-        if( ob->query("marks/ÖÒ") )
+        if( ob->query("marks/å¿ ") )
                 return 1;
         return 0;
 }
 void attempt_apprentice(object ob)
 {
-     command("say ºÃ°É£¬ÎÒÊÕÏÂÄã¡£\n");
+     command("say å¥½å§ï¼Œæˆ‘æ”¶ä¸‹ä½ ã€‚\n");
      command("recruit "+ob->query("id"));
      return;
 }

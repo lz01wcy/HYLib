@@ -1,22 +1,22 @@
-// jinshechui.c ½ğÉß´¸
+// jinshechui.c é‡‘è›‡é”¤
 
 #include <weapon.h>
 inherit HAMMER;
 
 void create()
 {
-	set_name("½ğÉß´¸", ({ "jinshe chui", "chui","hammer" }));
+	set_name("é‡‘è›‡é”¤", ({ "jinshe chui", "chui","hammer" }));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»±ú½ğ¹âÉÁÉÁµÄ´¸±ú³ÊÉßĞÎµÄ´óÌú´¸£¬ºóÃæ´ø×Å³¤³¤µÄÌúÁ´¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€æŸ„é‡‘å…‰é—ªé—ªçš„é”¤æŸ„å‘ˆè›‡å½¢çš„å¤§é“é”¤ï¼Œåé¢å¸¦ç€é•¿é•¿çš„é“é“¾ã€‚\n");
 set("treasure",1);
 		set("value", 3000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸»©à¥¡¹µÄÒ»Éù,È¡³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¹Ò»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Nã€Œå“—å•·ã€çš„ä¸€å£°,å–å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næŒ‚å›è…°é—´ã€‚\n");
 	}
 	init_hammer(600);
 	setup();

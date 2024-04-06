@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ƽɽ����");
+	set("short","平山堂坞");
 	set("long",@LONG
-������ƽɽ���롣�������ߣ��������²�����ͷ��ˮ������Ҳ����
-���ˡ�����Ǭ¡����ѲҲȡ�˵����ɴ����ɽ��ʰ�׶��ϣ����þ�ʮ��
-�����㵽���ɽ�з�Ĵ������ˡ�
+这里是平山堂坞。游西湖者，从天宁寺侧御码头下水，到此也得下
+船了。当年乾隆，南巡也取此道。由此坞后山道拾阶而上，共得九十九
+级，便到蜀冈山中峰的大明寺了。
 LONG );
 	set("outdoors", "shouxihu");
 	set("exits", ([

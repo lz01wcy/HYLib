@@ -1,11 +1,11 @@
 inherit NPC;
 void create()
 {
-   set_name("Áº×ÓÎÌ",({"liang ziweng"}));
-   set("gender","ÄĞĞÔ");
+   set_name("æ¢å­ç¿",({"liang ziweng"}));
+   set("gender","ç”·æ€§");
    set("mingwang",-5000);
    set("combat_exp",260000);
-   set("title","³¤°×²Î¿Í");
+   set("title","é•¿ç™½å‚å®¢");
    
    set("age",64);
    set("qi",880);

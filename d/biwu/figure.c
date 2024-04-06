@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÎŞ³£", ({ "figure", "wuchang" }));
-	set("title", "ºÚÒÂÈË");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ— å¸¸", ({ "figure", "wuchang" }));
+	set("title", "é»‘è¡£äºº");
+	set("gender", "ç”·æ€§");
 	set("age", 43);
 	set("str", 20);
 	set("dex", 20);
-	set("long", "Ò»¸öÈ«Éí´©ºÚÒÂµÄ¼Ò»ï¡£\n");
+	set("long", "ä¸€ä¸ªå…¨èº«ç©¿é»‘è¡£çš„å®¶ä¼™ã€‚\n");
 	set("combat_exp", 2000000);
 	set("shen_type", 0);
 	set("attitude", "heroism");

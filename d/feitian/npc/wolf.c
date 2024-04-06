@@ -6,16 +6,16 @@ inherit NPC;
 
 void create()
 {
-	set_name("¶öÀÇ", ({ "wolf" }) );
-	set("race", "Ò°ÊÞ");
+	set_name("é¥¿ç‹¼", ({ "wolf" }) );
+	set("race", "é‡Žå…½");
 	set("age", 4);
-	set("long", "Ò»Ö»Á½ÑÛÃ°×ÅÂÌ¹âµÄ¶ñÀÇ¡£\n");
+	set("long", "ä¸€åªä¸¤çœ¼å†’ç€ç»¿å…‰çš„æ¶ç‹¼ã€‚\n");
 	set("attitude", "peaceful");
 
 	set("str", 30);
 	set("cor", 30);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åŽè„š", "å°¾å·´" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set("combat_exp", 1000);
@@ -23,8 +23,8 @@ void create()
 	set("chat_chance", 6);
 	set("chat_msg_combat", ({
 		(: this_object(), "random_move" :),
-               "¶ñÀÇÏòÌì¿ñº¿¼¸Éù£®\n",
-                "¶ñÀÇÑÛÀïµÄÂÌ¹âÊ¹Äã²»º®¶ø²ü£®\n"
+               "æ¶ç‹¼å‘å¤©ç‹‚åšŽå‡ å£°ï¼Ž\n",
+                "æ¶ç‹¼çœ¼é‡Œçš„ç»¿å…‰ä½¿ä½ ä¸å¯’è€Œé¢¤ï¼Ž\n"
 	}) );
 
 	set_temp("apply/attack", 15);
@@ -49,7 +49,7 @@ void init()
 void die()
 {
 	object ob;
-	message_vision("$NÑöÌì³¤º¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+	message_vision("$Nä»°å¤©é•¿åšŽä¸€å£°ï¼Œæ­»äº†ï¼\n", this_object());
 	ob = new(__DIR__"obj/langpi");
 	ob->move(environment(this_object()));
 	destruct(this_object());

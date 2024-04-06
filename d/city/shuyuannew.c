@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ͥԺ");
+	set("short","庭院");
 	set("long",@LONG
-�������׶���Ϊ��Ժ���ã���������ֹ����������տ�����⡣԰��
-������ľ�����һ�����ɻ��񣬼��Ի��ܣ�����ʯ��ɽ����˳����Ȼ��
-����Ժ�ڡ���ĿѰ��������Զ����
+北向升阶而上为书院讲堂，堂名「至止」，是增城湛公所题。园内
+遍种树木，或桃或李，或松或竹，间以花卉，而湖石假山，则顺其自然，
+砌于院内。游目寻芳，无需远步。
 LONG );
 	set("outdoors", "yangzhouw");
 

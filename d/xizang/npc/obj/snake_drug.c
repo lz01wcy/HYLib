@@ -1,13 +1,13 @@
  inherit COMBINED_ITEM;
 void create()
 {
-  set_name("ÉßÒ©",({"drug","snake drug"}));
+  set_name("è›‡è¯",({"drug","snake drug"}));
   set("long",
-      "ÕâÊÇÒ»°üÓÃÀ´½âÉß¶¾µÄÒ©\n"
-      "¿ÉÒÔÓÃ(cure)À´½âÉß¶¾!\n");
+      "è¿™æ˜¯ä¸€åŒ…ç”¨æ¥è§£è›‡æ¯’çš„è¯\n"
+      "å¯ä»¥ç”¨(cure)æ¥è§£è›‡æ¯’!\n");
         set("base_value", 1000);
-  set("unit","°ü");
-  set("base_unit","·İ");
+  set("unit","åŒ…");
+  set("base_unit","ä»½");
   set("base_weiht",100);
   set_amount(1);
 } 
@@ -21,14 +21,14 @@ int do_cure()
         object me;
         me = this_player();
   if  (((int) me->query_condition("snake_poison")) <= 0)
-        return notify_fail("ÄãÃ»ÓĞÖĞÉß¶¾¡£\n");
-  message_vision("$N·şÏÂÉßÒ©£¬¶ÙÊ±¸Ğ¾õºÃ¶àÁË¡£",me);
+        return notify_fail("ä½ æ²¡æœ‰ä¸­è›‡æ¯’ã€‚\n");
+  message_vision("$Næœä¸‹è›‡è¯ï¼Œé¡¿æ—¶æ„Ÿè§‰å¥½å¤šäº†ã€‚",me);
         me->apply_condition("snake_poison",
                 (int)me->query_condition("snake_poison") - 1);
   if((int) (me->query_condition("snake_poison")))
-        message_vision("µ«ÊÇ$NÖĞµÄÉß¶¾²¢Ã»ÓĞÍêÈ«Çå³ı¡£\n",me);
+        message_vision("ä½†æ˜¯$Nä¸­çš„è›‡æ¯’å¹¶æ²¡æœ‰å®Œå…¨æ¸…é™¤ã€‚\n",me);
         else
-        message_vision("$NÖÕÓÚÇå³ıÁËÌåÄÚËùÓĞµÄÉß¶¾£¡\n",me);
+        message_vision("$Nç»ˆäºæ¸…é™¤äº†ä½“å†…æ‰€æœ‰çš„è›‡æ¯’ï¼\n",me);
   add_amount(-1); 
   return 1;
 }       

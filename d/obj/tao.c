@@ -7,23 +7,23 @@ void init()
 	}
 void create()
 {
-	set_name(HIR"ÏÉÌÒ"NOR, ({"xian tao", "tao"}));
-	set("unit", "Ö»");
-	set("long", "ÕâÊÇÀ¥ÂØ¾ø¶¥³ö²úµÄÏÉÌÒ£¬¼«ÎªÕä¹ó¡£\n");
+	set_name(HIR"ä»™æ¡ƒ"NOR, ({"xian tao", "tao"}));
+	set("unit", "åª");
+	set("long", "è¿™æ˜¯æ˜†ä»‘ç»é¡¶å‡ºäº§çš„ä»™æ¡ƒï¼Œæä¸ºçè´µã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="tao")
 	{
 		me->add("max_neili",5);
 		me->set("neili",me->query("max_neili"));
 		me->set("eff_qi",me->query("max_qi"));
 		me->set("qi",me->query("eff_qi"));
-                message_vision("$N³ÔÏÂÒ»¿ÅÏÉÌÒ£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÆøÑª³äÓ¯£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú!\n",me);
+                message_vision("$Nåƒä¸‹ä¸€é¢—ä»™æ¡ƒï¼Œåªè§‰å¾—ç²¾ç¥å¥æ—ºï¼Œæ°”è¡€å……ç›ˆï¼Œä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿ!\n",me);
 
 		destruct(this_object());
 	}

@@ -1,17 +1,17 @@
 // /d/zhuojun/road3.c
-// Room in äÃ¿¤
+// Room in æ¶¿éƒ¡
 // modify by yang
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "´óæäµÀ");
+	set("short", "å¤§é©¿é“");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ´óæäµÀÉÏ¡£ËäÈ»ÏÖ½ñÌìÏÂ´óÂÒ£¬µ«ÊÇËÄÖÜ»¹
-ÊÇÈËÀ´ÈËÍù¡£Ìôµ£×ÓµÄ¡¢ÐÐÉÌµÄ¡¢¸Ï×Å´ó³µµÄÂí·ò£¬ÎõÎõÈÁÈÁ£¬·Ç³£ÈÈ
-ÄÖ¡£²»Ê±»¹ÓÐÁ½ÈýÆï¿ìÂí´ÓÉí±ß·É³Û¶ø¹ý£¬ÑïÆðÒ»Â·³¾°£¡£µÀÂ·Á½ÅÔÊÇ
-ÕûÕûÆëÆëµÄÑîÊ÷ÁÖ¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£žæ‰¬çš„å¤§é©¿é“ä¸Šã€‚è™½ç„¶çŽ°ä»Šå¤©ä¸‹å¤§ä¹±ï¼Œä½†æ˜¯å››å‘¨è¿˜
+æ˜¯äººæ¥äººå¾€ã€‚æŒ‘æ‹…å­çš„ã€è¡Œå•†çš„ã€èµ¶ç€å¤§è½¦çš„é©¬å¤«ï¼Œç†™ç†™æ”˜æ”˜ï¼Œéžå¸¸çƒ­
+é—¹ã€‚ä¸æ—¶è¿˜æœ‰ä¸¤ä¸‰éª‘å¿«é©¬ä»Žèº«è¾¹é£žé©°è€Œè¿‡ï¼Œæ‰¬èµ·ä¸€è·¯å°˜åŸƒã€‚é“è·¯ä¸¤æ—æ˜¯
+æ•´æ•´é½é½çš„æ¨æ ‘æž—ã€‚
 LONG );
 	set("exits", ([
 		"west" : __DIR__"road4",

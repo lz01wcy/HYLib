@@ -3,9 +3,9 @@
 inherit NPC; 
 void create()
 {
-        set_name("Ğ¡ÑÃÒÛ", ({ "yayi", "ya" }) );
+        set_name("å°è¡™å½¹", ({ "yayi", "ya" }) );
         set("long",
-                "ÕıÔÚÉÏÌÃµÄÑÃÒÛ£¬Ç§Íò²»ÒªÈÇËûÃÇ\n"); 
+                "æ­£åœ¨ä¸Šå ‚çš„è¡™å½¹ï¼Œåƒä¸‡ä¸è¦æƒ¹ä»–ä»¬\n"); 
         set("attitude", "heroism");
         set("vendetta_mark", "authority"); 
         set("cor", 40);
@@ -19,7 +19,7 @@ void create()
         
         set("chat_chance", 1);
         set("chat_msg", ({
-"ÑÃÒÛµÍÉùĞûµÀ£ºÍş¡«¡«¡«¡«Îä¡«¡«¡«¡«\n"
+"è¡™å½¹ä½å£°å®£é“ï¼šå¨ï½ï½ï½ï½æ­¦ï½ï½ï½ï½\n"
         }) ); 
         setup(); 
         carry_object(__DIR__"obj/yafu")->wear();

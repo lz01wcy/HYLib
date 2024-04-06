@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-   set_name("Ìú¿é", ({ "tie kuai","tie","kuai"}) );
+   set_name("é“å—", ({ "tie kuai","tie","kuai"}) );
    set_weight(6000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
      set("material", "iron");
-	 set("long","ÕâÊÇÒ»¸öÌú¿é£¬Ìú½³¿ÉÒÔÓÃÀ´´òÔì±øÆ÷¡£\n");
-     set("unit", "¿é");
+	 set("long","è¿™æ˜¯ä¸€ä¸ªé“å—ï¼Œé“åŒ å¯ä»¥ç”¨æ¥æ‰“é€ å…µå™¨ã€‚\n");
+     set("unit", "å—");
      set("value", 1000);
 	 set("weapon",([
 		 "damage":30,

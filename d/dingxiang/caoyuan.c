@@ -1,12 +1,12 @@
-// caoyuan.c ²ÝÔ­
+// caoyuan.c è‰åŽŸ
 inherit ROOM;
 void create()
 {
-        set("short", "²ÝÔ­±ßÔµ");
+        set("short", "è‰åŽŸè¾¹ç¼˜");
         set("long", @LONG
-ÕâÀïÊÇ´ó²ÝÔ­ºÍÉ³Ä®½ÓÈÀÖ®µØ£¬Çà²ÝÓÉÏ¡ÖÁÃÜ£¬ÏòÎ÷ÃàÃàÑÓÉì¶øÈ¥¡£
-µØÉÏÓÐ¼¸ÐÐÂæÍÕÌ¤¹ýµÄÌãÓ¡£¬¿´Ñù×ÓÕâÀï³£³£ÓÐÉÌ¶ÓÀ´Íù¡£Î÷ÄÏ·½ºÃÏóÓÐ
-Ð©´¶ÑÌ¡£
+è¿™é‡Œæ˜¯å¤§è‰åŽŸå’Œæ²™æ¼ æŽ¥å£¤ä¹‹åœ°ï¼Œé’è‰ç”±ç¨€è‡³å¯†ï¼Œå‘è¥¿ç»µç»µå»¶ä¼¸è€ŒåŽ»ã€‚
+åœ°ä¸Šæœ‰å‡ è¡Œéª†é©¼è¸è¿‡çš„è¹„å°ï¼Œçœ‹æ ·å­è¿™é‡Œå¸¸å¸¸æœ‰å•†é˜Ÿæ¥å¾€ã€‚è¥¿å—æ–¹å¥½è±¡æœ‰
+äº›ç‚ŠçƒŸã€‚
 LONG);
         set("exits", ([
            "southwest" : __DIR__"caoyuan1",
@@ -32,13 +32,13 @@ int valid_leave(object me, string dir)
        	  me->add("water",-10-random(10));
        	  if(me->query("water")<=0)
        	   me->set("water",0);
-       	  return notify_fail("Äã·Ç³£¿Ú¿Ê£¬¼¸ºõ×ß²»¶¯Â·ÁË£¡\n");
+       	  return notify_fail("ä½ éžå¸¸å£æ¸´ï¼Œå‡ ä¹Žèµ°ä¸åŠ¨è·¯äº†ï¼\n");
        }
        if (dir=="south"&&me->query_temp("mark/steps")>-4){
        	  me->add("water",-10-random(10));
        	  if(me->query("water")<=0)
        	   me->set("water",0);
-       	  return notify_fail("Äã·Ç³£¿Ú¿Ê£¬¼¸ºõ×ß²»¶¯Â·ÁË£¡\n");
+       	  return notify_fail("ä½ éžå¸¸å£æ¸´ï¼Œå‡ ä¹Žèµ°ä¸åŠ¨è·¯äº†ï¼\n");
        }
         me->delete_temp("mark/steps");
         return ::valid_leave(me, dir);

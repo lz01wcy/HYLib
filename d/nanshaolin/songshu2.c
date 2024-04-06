@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "松树林");
 	set("long", @LONG
-����һƬ�����֡��߸ߵĴ���������һ�飬��ʵ��֦Ҷ��һ�����
-ɡ��������գ��������ڵ�˿��Ҳ�ޡ�һ���ྻ����ʯС���������С�
+这是一片松树林。高高的大松树簇在一块，密实的枝叶象一蓬蓬巨
+伞般伸向天空，把阳光遮得丝毫也无。一条洁净的青石小径蜿蜒林中。
 LONG );
 	set("outdoors","nanshaolin");
 	set("exits", ([

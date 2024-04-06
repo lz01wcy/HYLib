@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-	set_name(HIB"¶¾Ö©Öë"NOR, ({ "du zhizhu", "zhizhu" }) );
-	set("race", "Ò°ÊŞ");
-	set("subrace", "ÅÀ³æ");
+	set_name(HIB"æ¯’èœ˜è››"NOR, ({ "du zhizhu", "zhizhu" }) );
+	set("race", "é‡å…½");
+	set("subrace", "çˆ¬è™«");
 	set("age", random(10));
-	set("long", "Ò»Ö»Éú»îÔÚ´óÄ®±ßÔµµÄ¶¾Ö©Öë¡£\n");
+	set("long", "ä¸€åªç”Ÿæ´»åœ¨å¤§æ¼ è¾¹ç¼˜çš„æ¯’èœ˜è››ã€‚\n");
         set("attitude", "aggressive");
-	    set("limbs", ({ "×ì","´¥½Ç", "ÉíÌå", "Î²´Ì"}));
+	    set("limbs", ({ "å˜´","è§¦è§’", "èº«ä½“", "å°¾åˆº"}));
     set("verbs", ({ "bite" }) );
 	set("str", 20);
 	set("cor", 20);

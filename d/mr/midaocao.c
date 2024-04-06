@@ -3,8 +3,8 @@ inherit ROOM;
 
 void create()
 {
-  set("short","密道");
-  set("long","这里是漆黑的密道，当年幕容弟子为了有事直达中原而挖凿的。\n"); 
+  set("short","瀵嗛亾");
+  set("long","杩欓噷鏄紗榛戠殑瀵嗛亾锛屽綋骞村箷瀹瑰紵瀛愪负浜嗘湁浜嬬洿杈句腑鍘熻�屾寲鍑跨殑銆俓n"); 
   set("exits" , ([
     "north" : "/d/city/kedian",
     "south" : "/d/mr/yanziwu",

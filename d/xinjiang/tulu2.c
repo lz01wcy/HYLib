@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��·");
+        set("short", "土路");
         set("long", @LONG
-��ԭ�ϵ�һ���������۵���·������һ��ĬĬ��Ϫ�����ңɣ֣ţң���
-�峺��Ϫˮ��ʹ�˸е�һ��������Ϣ����ΧȺɽ�������ˮ���ѣ����������
+荒原上的一段蜿蜒曲折的土路，伴随一条默默的溪流（ＲＩＶＥＲ），
+清澈的溪水，使人感到一股清新气息。周围群山起伏，碧水蜿蜒，风光秀丽。
 LONG
         );
         set("exits", ([ 
@@ -21,16 +21,16 @@ LONG
                         ]) );
 */
         set("item_desc", ([
-                "river": "���峺��Ϫ�������滹��С�㣨������裩Ү����\n",
-                "Ϫ��": "���峺��Ϫ�������滹��С�㣨������裩Ү����\n" 
+                "river": "好清澈的溪流，里面还有小鱼（ｃａｔｃｈ）耶！！\n",
+                "溪流": "好清澈的溪流，里面还有小鱼（ｃａｔｃｈ）耶！！\n" 
         ]) );
         //set("no_pk",1);
         
         
         set("outdoors", "xinjiang");
         set("resource/water",1);
-        set("liquid/name","�峺��Ϫˮ");
-        set("liquid/container", "Ϫ��");
+        set("liquid/name","清澈的溪水");
+        set("liquid/container", "溪流");
         set("coor/x",-1110);
         set("coor/y",2050);
         set("coor/z",0);
@@ -49,12 +49,12 @@ int do_catch(string arg)
         if(me->max_food_capacity()>(int)me->query("food"))
         {
                 me->add("food",15);
-                return notify_fail("��һ���֣�ץסһ��С����������У�������
-��������ζ��������������е������Ⱦͺ�ඣ�����\n");
+                return notify_fail("你一伸手，抓住一条小活鱼抛入口中．．．．
+啊－－－味道不错，如果再有点瓦萨比就好喽．．．\n");
         }
         else
-        return notify_fail("�����������ץ��ץ�����ʲôҲûץ����\n");
+        return notify_fail("你伸出手试着抓了抓，结果什么也没抓到！\n");
         }
         else
-        return notify_fail("�����������ץ��ץ�����ʲôҲûץ����\n");
+        return notify_fail("你伸出手试着抓了抓，结果什么也没抓到！\n");
 }       

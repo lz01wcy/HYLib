@@ -8,20 +8,20 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("³ÂÂéÆÅ", ({ "chen mapo", "chen" }));
-	set("title", "ÂéÆÅ¶¹¸¯´´Ê¼ÈË");
-	set("nickname",HIW "¶¹¸¯Î÷Ê©" NOR);
+	set_name("é™ˆéº»å©†", ({ "chen mapo", "chen" }));
+	set("title", "éº»å©†è±†è…åˆ›å§‹äºº");
+	set("nickname",HIW "è±†è…è¥¿æ–½" NOR);
 	set("shen_type", 1);
 
 	set("str", 30);
-	set("gender", "Å®ÐÔ");
+	set("gender", "å¥³æ€§");
 	set("age", 25);
 	set("long",
-		"³ÂÂéÆÅ¿ÉÊÇ³É¶¼³Ç³öÃûµÄÈËÎï£¬ËäÈ»Äê¹ýÈýÊ®£¬ÒÀÈ»·çÔÏÓÌ´æ¡£\n");
+		"é™ˆéº»å©†å¯æ˜¯æˆéƒ½åŸŽå‡ºåçš„äººç‰©ï¼Œè™½ç„¶å¹´è¿‡ä¸‰åï¼Œä¾ç„¶é£ŽéŸµçŠ¹å­˜ã€‚\n");
 	set("combat_exp", 500);
 	set("attitude", "friendly");
 	set("inquiry", ([
-		"ÂéÆÅ¶¹¸¯" : "ÕâÊÇÎÒÃÇ³É¶¼µÄÌØ²ú£¬°²ÒÝµÃºÜÅ¶¡£\n",
+		"éº»å©†è±†è…" : "è¿™æ˜¯æˆ‘ä»¬æˆéƒ½çš„ç‰¹äº§ï¼Œå®‰é€¸å¾—å¾ˆå“¦ã€‚\n",
 	]));
 	set("vendor_goods", ({
 		__DIR__"obj/doufu",
@@ -49,12 +49,12 @@ void greeting(object ob)
 		return;
 	switch(random(2)) {
 	case 0 :
-		say("³ÂÂéÆÅÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-			"£¬¿ìÇë½ø¡£\n");
+		say("é™ˆéº»å©†ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) +
+			"ï¼Œå¿«è¯·è¿›ã€‚\n");
 		break;
 	case 1 :
-		say("³ÂÂéÆÅËµµÀ£ºÓ´£¡ÕâÎ»" + RANK_D->query_respect(ob) + 
-			"ÄúÀ´ÁË°¡£¡±¾µêµÄÂéÆÅ¶¹¸¯Ó²ÊÇ°²ÒÝµÃºÜ£¡\n");
+		say("é™ˆéº»å©†è¯´é“ï¼šå“Ÿï¼è¿™ä½" + RANK_D->query_respect(ob) + 
+			"æ‚¨æ¥äº†å•Šï¼æœ¬åº—çš„éº»å©†è±†è…ç¡¬æ˜¯å®‰é€¸å¾—å¾ˆï¼\n");
 		break;
 	}
 }

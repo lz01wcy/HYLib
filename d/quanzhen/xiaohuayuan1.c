@@ -1,4 +1,4 @@
-// xiaohuayuan1.c С��԰
+// xiaohuayuan1.c 小花园
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��԰");
+        set("short", "小花园");
         set("long", @LONG
-���������������С��԰��������Ʈ��һ���ʻ�����ζ������
-��ȥ�����ǽ�����ˡ������԰����ȴ��ȫ�����������϶�
-������ĵط���԰�м�����һ���Ӳݣ�Ҳ��ר�����˸���������
+这里是重阳观里的小花园，空气中飘着一股鲜花的香味。再往
+北去，就是金鱼池了。这个花园不大，却是全真弟子练功间隙最爱
+来游玩的地方。园中见不到一根杂草，也许专门有人负责管理这里。
 LONG
         );
         set("outdoors", "quanzhen");

@@ -1,11 +1,11 @@
  inherit NPC;
 void create()
 {
-        set_name("��ţ", ({ "bull" }) );
-        set("race", "Ұ��");
+        set_name("牦牛", ({ "bull" }) );
+        set("race", "野兽");
         set("age", 10);
-        set("long", "һֻ���ų�����ë��������ţ��\n"); 
-        set("limbs", ({ "ͷ��", "����", "β��" }) );
+        set("long", "一只长着长长黑毛的西藏牦牛。\n"); 
+        set("limbs", ({ "头部", "身体", "尾巴" }) );
         set("verbs", ({ "bite" }) );
         set("combat_exp", 300000);
         set("chat_chance", 1);

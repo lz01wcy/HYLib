@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("山羊", ({"shan yang", "yang"}));
-        set("race", "野兽");
+        set_name("灞辩緤", ({"shan yang", "yang"}));
+        set("race", "閲庡吔");
         set("age", 5);
-        set("long", "一只温顺可爱的山羊。\n");
+        set("long", "涓�鍙俯椤哄彲鐖辩殑灞辩緤銆俓n");
 
-        set("limbs", ({ "头部", "身体", "前爪", "后爪", "尾巴" }) );
+        set("limbs", ({ "澶撮儴", "韬綋", "鍓嶇埅", "鍚庣埅", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 100);

@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ժ���");
+        set("short", "书院书库");
         set("long", @LONG
-��������Ժ��ͼ��ݣ�����������һ����Ⱦ�����ϵ����(shelf)��
-�������е������ǵ���ѡ����¼�������еķ���������������ġ�ң
-Զĥ��ȥ�Ĵ�˵��������Ķ�(read)����Щ���ϵĹ��¡�
+这里是书院的图书馆，窗明几净，一尘不染。壁上的书架(shelf)堆
+满侠客行的先贤们的文选，记录了侠客行的风风雨雨和无数凄婉的、遥
+远磨灭不去的传说。你可以阅读(read)到这些古老的故事。
 LONG);
         set("item_desc", ([
             "shelf" : (: look_shelf :),
@@ -39,7 +39,7 @@ int do_read(string arg)
 {
         object me=this_player();
         if (arg == "" || file_size(STOY_DIR + arg) <= 0)
-                return notify_fail("����û���Ȿ�顣\n");
+                return notify_fail("我们没有这本书。\n");
 
         log_file("LIBRARY", sprintf("%s read %s.\n", me->query("name"), arg));
         me->start_more(read_file(STOY_DIR + arg));

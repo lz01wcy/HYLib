@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-  set_name("¶àÂ¡",({"duo long"}));
-  set("gender","ÄĞĞÔ");
+  set_name("å¤šéš†",({"duo long"}));
+  set("gender","ç”·æ€§");
   set("age",43);
-  set("nickname","ÊÌÎÀ×Ü¹Ü");
+  set("nickname","ä¾å«æ€»ç®¡");
   set("combat_exp",5000000);
   set("force",700);
   set("max_force",700);

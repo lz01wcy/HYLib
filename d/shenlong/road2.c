@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山道");
 	set("long", @LONG
-����һ����խ��ɽ��,���ű���һ��ɽ����ȥ.ת���˼���ɽ��,̧ͷ
-ң���嶥���ż���������.
+这是一条狭窄的山道,向着北方一座山峰行去.转过了几个山坡,抬头
+遥见峰顶建着几座大竹屋.
 LONG );
 	set("exits", ([
 		"north" : __DIR__"damen",

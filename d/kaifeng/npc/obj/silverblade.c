@@ -6,17 +6,17 @@ inherit BLADE;
 
 void create()
 {
-set_name("Òøµ¶", ({ "silverblade", "blade", "dao" }) );
+set_name("é“¶åˆ€", ({ "silverblade", "blade", "dao" }) );
 	set_weight(4000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 8000);
 		set("material", "silver");
-		set("long", "ÕâÊÇÒ»°Ñ°ë³ß¶à³¤µÄÒøµ¶,ÄãÄÃÔÚÊÖÀïÒ»µà,ÕıºÏÊÖ\n");
-		set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄµ¶ÇÊ¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠåŠå°ºå¤šé•¿çš„é“¶åˆ€,ä½ æ‹¿åœ¨æ‰‹é‡Œä¸€æ‚,æ­£åˆæ‰‹\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„åˆ€é˜ã€‚\n");
 		set("shaolin",1);
 	}
 	init_blade(575);

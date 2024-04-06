@@ -3,15 +3,15 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("ÑòÈâ", ({ "meat" }) );
+	set_name("ç¾Šè‚‰", ({ "meat" }) );
 	set_weight(100);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿é·¢³öÇ¿ÁÒëşÎ¶µÄÑòÈâ.\n");
-		set("unit", "¿é");
+		set("long", "ä¸€å—å‘å‡ºå¼ºçƒˆè†»å‘³çš„ç¾Šè‚‰.\n");
+		set("unit", "å—");
 		set("value", 1000);
-                set("eat_msg","$NÒ§ÁËÒ»¿Ú$n,Í»È»¼ûĞí¶à²ÔÓ¬¾ÛÂ£µ½×ì±ßÀ´.\n");
+                set("eat_msg","$Nå’¬äº†ä¸€å£$n,çªç„¶è§è®¸å¤šè‹è‡èšæ‹¢åˆ°å˜´è¾¹æ¥.\n");
 		set("food_remaining",8);
 		set("food_supply", 60);
 	}

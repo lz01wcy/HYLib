@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW"ÏÉº×"NOR, ({ "xian he", "he" }) );
-        set("race", "Ò°ÊÞ");
+        set_name(HIW"ä»™é¹¤"NOR, ({ "xian he", "he" }) );
+        set("race", "é‡Žå…½");
         set("age", 100);
-        set("long", "Ò»Ö»Äê¹ý°ÙËêµÄÏÉº×£¬Äã¿ÉÒÔÊÔ×ÅÆï(qi)ÉÏÈ¥.\n");
+        set("long", "ä¸€åªå¹´è¿‡ç™¾å²çš„ä»™é¹¤ï¼Œä½ å¯ä»¥è¯•ç€éª‘(qi)ä¸ŠåŽ».\n");
         set("attitude", "peaceful");
         set("str",100);
         set("int",100);
         set("per",100);
         set("con",100);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 50000000);
@@ -28,7 +28,7 @@ void die()
 {
         object ob,me;
 me = this_player();
-        message_vision("$NË»ÑÆµÄ½ÐÁË¼¸Éù£¬µ¹ÔÚµØÉÏËÀÁË¡£¡£¡£\n Ò»µÀ°×¹âÉÁ¹ý£¬Ò»´éÃÀÀöµÄÓðÃ«Æ®ÂäÔÚ$NµÄÉíÉÏ¡£¡£\n\n", this_object(),me);
+        message_vision("$Nå˜¶å“‘çš„å«äº†å‡ å£°ï¼Œå€’åœ¨åœ°ä¸Šæ­»äº†ã€‚ã€‚ã€‚\n ä¸€é“ç™½å…‰é—ªè¿‡ï¼Œä¸€æ’®ç¾Žä¸½çš„ç¾½æ¯›é£˜è½åœ¨$Nçš„èº«ä¸Šã€‚ã€‚\n\n", this_object(),me);
         ob = new("/d/hainan/obj/yumao");
         ob->move(me);
         destruct(this_object());

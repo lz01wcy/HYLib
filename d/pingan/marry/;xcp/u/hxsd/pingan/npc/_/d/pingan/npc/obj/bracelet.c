@@ -7,13 +7,13 @@ inherit WRISTS;
 
 void create()
 {
-    set_name( HIG "ôä´äÊÖïí" NOR, ({ "bracelet" }) );
+    set_name( HIG "ç¿¡ç¿ æ‰‹é•¯" NOR, ({ "bracelet" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("long", "Ò»Ö»¾«ÖÂµÄôä´äµñ»¨ÊÖïí\n");
-        set("unit", "Ö»");
+        set("long", "ä¸€åªç²¾è‡´çš„ç¿¡ç¿ é›•èŠ±æ‰‹é•¯\n");
+        set("unit", "åª");
 
         set("value", 100000);
 
@@ -21,8 +21,8 @@ void create()
         set("material", "jade");
                 set("armor_prop/armor", 0);
         set("armor_prop/personality", 10);
-        set("wear_msg", "$NÇáÇáµØ½«Ò»Ö»$nÌ×ÔÚÁËÊÖÍóÉÏ¡£\n");
-        set("remove_msg", "$NÇáÇáµØ°ÑÒ»°Ñ$n´ÓÍóÉÏ³ıÁËÏÂÀ´¡£\n");
+        set("wear_msg", "$Nè½»è½»åœ°å°†ä¸€åª$nå¥—åœ¨äº†æ‰‹è…•ä¸Šã€‚\n");
+        set("remove_msg", "$Nè½»è½»åœ°æŠŠä¸€æŠŠ$nä»è…•ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
         set("no_sell",1);
         set("female_only", 1);
 

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����·");
+        set("short", "黄土路");
 	set("long", @LONG
-������һ������·�ϡ�������һ��С�߸ڣ������ն񣬿���
-�Ͼ��������������Կ���ƽ���ݳǡ�
+你走在一条黄土路上。西南是一个小高岗，地势险恶，客旅
+断绝。东面隐隐可以看到平定州城。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([

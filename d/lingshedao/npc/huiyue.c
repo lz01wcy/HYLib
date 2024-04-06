@@ -5,12 +5,12 @@ inherit NPC;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("»ÔÔÂÊ¹", ({"hui yue", "hui",}));
+        set_name("è¾‰æœˆä½¿", ({"hui yue", "hui",}));
         set("long",
-        "ÕâÅ®×ÓÒ»Í·ºÚ·¢£¬ºÍ»ªÈËÎŞÒì£¬µ«íø×Ó¼«µ­£¬¼¸ºõÎŞÉ«.\n"
+        "è¿™å¥³å­ä¸€å¤´é»‘å‘ï¼Œå’Œåäººæ— å¼‚ï¼Œä½†çœ¸å­ææ·¡ï¼Œå‡ ä¹æ— è‰².\n"
         );
-        set("nickname",MAG"²¨Ë¹Ã÷½Ì×Ü½Ì»¤½ÌÊ¹Õß" NOR);
-        set("gender", "Å®ĞÔ");
+        set("nickname",MAG"æ³¢æ–¯æ˜æ•™æ€»æ•™æŠ¤æ•™ä½¿è€…" NOR);
+        set("gender", "å¥³æ€§");
         set("attitude", "peaceful");
         set("age", 30);
         set("shen_type",-1);
@@ -51,8 +51,8 @@ void init()
 {
         object ob=this_player();
         ::init();
-        if(interactive(ob) && ob->query("party/party_name")== HIG "Ã÷½Ì" NOR)
-        message_vision(HIR"»ÔÔÂÊ¹Ö±¶¢¶¢µÄ¿´×Å$N.\n"NOR,ob);
+        if(interactive(ob) && ob->query("party/party_name")== HIG "æ˜æ•™" NOR)
+        message_vision(HIR"è¾‰æœˆä½¿ç›´ç›¯ç›¯çš„çœ‹ç€$N.\n"NOR,ob);
 }
 
 

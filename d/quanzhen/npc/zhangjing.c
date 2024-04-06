@@ -1,4 +1,4 @@
-// zhangjing.c �ƾ�����
+// zhangjing.c 掌经道长
 // By Lgg,1998.10
 
 inherit NPC;
@@ -7,15 +7,15 @@ string ask_zhipu();
 
 void create()
 {
-        set_name("�ƾ�����", ({"zhangjing"}));
-        set("gender", "����");
+        set_name("掌经道长", ({"zhangjing"}));
+        set("gender", "男性");
         set("age", 36);
         set("class", "taoist");
         set("long",
-                "��λ��ȫ������ƹܾ���ĵ���������ǰ�ǳ�������һ��˽��\n"
-                "�ķ��ӣ���Ϊ��Ľ������Űݵ���ȫ�����¡������Ͼ���Ϊ��\n"
-                "����ˣ�����ĸ������ò��Σ���Ҳ�������⣬���԰�������\n"
-                "���ж������ˡ�\n");
+                "这位是全真教里掌管经书的道长。他以前是长安镇上一个私塾\n"
+                "的夫子，因为仰慕大道，才拜到了全真门下。不过毕竟因为年\n"
+                "岁大了，功夫的根基扎得不牢，这也正合他意，可以安安心心\n"
+                "地研读经书了。\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 18);
@@ -35,15 +35,15 @@ void create()
         set("score", 15000);
 
         set_skill("force", 40);
-        set_skill("xiantian-qigong", 40);    //��������
+        set_skill("xiantian-qigong", 40);    //先天气功
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",40);  //ȫ�潣
+        set_skill("quanzhen-jian",40);  //全真剑
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 40);   //���㹦
+        set_skill("jinyan-gong", 40);   //金雁功
         set_skill("parry", 50);
         set_skill("unarmed",50);
         set_skill("strike",50);
-        set_skill("haotian-zhang", 50);    //�����
+        set_skill("haotian-zhang", 50);    //昊天掌
         set_skill("literate",100);
         set_skill("taoism",80);
 
@@ -54,13 +54,13 @@ void create()
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("ȫ���", 4, "����");
+        create_family("全真教", 4, "弟子");
 
         set("book_count",1);
         set("inquiry", ([
-                "ȫ���" :  "��ȫ��������µ����������ڡ�\n",
-                "���¾�" : (: ask_me :),
-                "һ��ָ" : (: ask_zhipu :),
+                "全真教" :  "我全真教是天下道家玄门正宗。\n",
+                "道德经" : (: ask_me :),
+                "一阳指" : (: ask_zhipu :),
         ]) );
 
         setup();
@@ -72,7 +72,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say �ðɣ��Ҿ����������ͽ���ˡ�");
+        command("say 好吧，我就收下你这个徒弟了。");
         command("recruit " + ob->query("id"));
 }
 
@@ -81,29 +81,29 @@ string ask_me()
         mapping fam;
         object ob;
 
-        if (!(fam = this_player()->query("family")) || fam["family_name"] != "ȫ���")
+        if (!(fam = this_player()->query("family")) || fam["family_name"] != "全真教")
                 return RANK_D->query_respect(this_player()) +
-                "�뱾�̺��޹ϸ����⻰�ɽ���Ū�������ˡ�";
+                "与本教毫无瓜葛，你这话可叫我弄不明白了。";
         if (query("book_count") < 1)
-                return "�������ˣ����¾��Ѿ�����ȡ���ˡ�";
+                return "你来晚了，道德经已经被人取走了。";
         add("book_count", -1);
         ob = new(__DIR__"obj/daodejing-i");
         ob->move(this_player());
-        return "�ðɣ��Ȿ�����¾������û�ȥ�ú��ж����п������ĵط������ҡ�";
+        return "好吧，这本「道德经」你拿回去好好研读，有看不懂的地方来问我。";
 
 }
 
 string ask_zhipu()
 {
         object me=this_player();
-        if(me->query_temp("tmark/ָ")==2) {
-                me->add_temp("tmark/ָ",1);
-                return("һ��ָ��ָ�������������ɱ�����ʦ�����մ棬�Ӳ��⴫��\n")
+        if(me->query_temp("tmark/指")==2) {
+                me->add_temp("tmark/指",1);
+                return("一阳指的指法谱向来就是由本教祖师亲自收存，从不外传。\n")
 ;
         }
         else {
-                me->set_temp("tmark/ָ",0);
-                return("��˵һ��ָ��������������ָ������Ҳû�м�����\n");
+                me->set_temp("tmark/指",0);
+                return("听说一阳指是天下最王道的指法，我也没有见过。\n");
         }
 }
 

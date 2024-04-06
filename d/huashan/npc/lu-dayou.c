@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Â½´óÓĞ", ({ "lu dayou", "lu", "dayou" }) );
+        set_name("é™†å¤§æœ‰", ({ "lu dayou", "lu", "dayou" }) );
 
-        set("nickname", "Áùºï¶ù");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", "å…­çŒ´å„¿");
+        set("gender", "ç”·æ€§");
         set("age", 21);
         set("long",
-                "Â½´óÓĞÊÇÔÀ²»ÈºµÄµÚÁùÎ»µÜ×Ó£¬ºÍÁîºü³å×îÊÇ½»ºÃ¡£\n");
+                "é™†å¤§æœ‰æ˜¯å²³ä¸ç¾¤çš„ç¬¬å…­ä½å¼Ÿå­ï¼Œå’Œä»¤ç‹å†²æœ€æ˜¯äº¤å¥½ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -50,7 +50,7 @@ void create()
         map_skill("dodge", "feiyan-huixiang");
 
 
-        create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("åå±±æ´¾", 14, "å¼Ÿå­");
 
         setup();
 

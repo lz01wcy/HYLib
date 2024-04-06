@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������ͬ");
+	set("short", "杨柳胡同");
 	set("long", @LONG
-����һ��ʮ��Ƨ����С��ͬ����������һ�ҿ͵꣬����ԼԼ������
-��֮����������Щ��ԥ��Ҫ��Ҫ��ȥ��һ���أ�������ʲôΣ�հɣ���
-���߿��Գ���ͬ��
+这是一条十分僻静的小胡同，东南面有一家客店，隐隐约约传来打
+斗之声。你颇有些犹豫：要不要过去看一看呢，不会有什么危险吧？东
+北边可以出胡同。
 LONG );
 	set("outdoors", "beijing");
 	set("exits", ([

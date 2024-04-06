@@ -1,15 +1,15 @@
 // /d/gaoli/dafujia2
-// Room in ����
+// Room in 高丽
 // rich 99/03/28
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-        set("short",HIC"��֮��"NOR);
+        set("short",HIC"大富之家"NOR);
         set("long", @LONG
-���Ų��߽���ҵĴ����������������õļ�������ݳޣ�һ����֪
-��������ͨ������ס�ĵط������а���һ��ɼľԲ���ͼ������ӣ�����
-��һ�׾��µ����˴�����
+你信步走进这家的大厅。整个大厅布置的极其豪华奢侈，一看就知
+道不是普通百姓所住的地方。厅中摆着一张杉木圆桌和几张椅子，桌上
+是一套精致的宜兴瓷器。
 LONG
 );
         set("exits", ([ 

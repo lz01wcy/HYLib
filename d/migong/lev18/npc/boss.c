@@ -8,13 +8,13 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"É³À­Ë¹"NOR, ({ "saras"}));
+   set_name(order[random(13)]+"æ²™æ‹‰æ–¯"NOR, ({ "saras"}));
 	set("magicgift",3);
 	set("magicset",1);
-       set("title",HIC"ÌìÄ§Éñ"NOR);
+       set("title",HIC"å¤©é­”ç¥ž"NOR);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄÌìÖ®Ä§Éñ¡£\n");
+"ä¸€ä½å¯æ€•çš„å¤©ä¹‹é­”ç¥žã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	set("combat_exp",40000000+random(8000000));
@@ -121,9 +121,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(HIC"$N,µ¹µØ¶øÍö£¬»¯ÎªÁËÒ»ÍÅÔÆÎí¡£\n"NOR,ob,me);
+        message_vision(HIC"$N,å€’åœ°è€Œäº¡ï¼ŒåŒ–ä¸ºäº†ä¸€å›¢äº‘é›¾ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃð"+ob->query("title")+HIG",Íê³ÉÁËÍÁÖ®ÊÀ½çµÄÈÎÎñ¡£\n"NOR, users());
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("title")+HIG",å®Œæˆäº†åœŸä¹‹ä¸–ç•Œçš„ä»»åŠ¡ã€‚\n"NOR, users());
         me->add("combat_exp",600);
         me->add("potential",300);
         me->add("score",1);
@@ -135,7 +135,7 @@ if (!present("earth shield", me)
 {
 corpse=new("/clone/magic/obj/earthshield");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 }
 
         destruct(ob);
@@ -146,7 +146,7 @@ if (!present("earth shield", me)
 {
 corpse=new("/clone/magic/obj/earthshield");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 }
                destruct(ob);
         return;

@@ -3,18 +3,18 @@
 inherit NPC;
 inherit F_VENDOR;
 
-string query_save_file() { return DATA_DIR + "npc/ÎÂ·½º£"; }
+string query_save_file() { return DATA_DIR + "npc/æ¸©æ–¹æµ·"; }
 void create()
 {
 string OBJ_DIR;
 
 
         OBJ_DIR="/d/jindezheng/obj";
-	set_name("ÎÂ·½º£", ({ "wenfanghai", "wenfanghai", "wenfanghai" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("æ¸©æ–¹æµ·", ({ "wenfanghai", "wenfanghai", "wenfanghai" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»ÎÂ·½º£ÕıĞ¦ßäßäµØÃ¦Öø¡£\n");
+		"è¿™ä½æ¸©æ–¹æµ·æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
@@ -27,9 +27,9 @@ OBJ_DIR+"/haierzheng",
 OBJ_DIR+"/qiankunhu",
 	
 	}));
-	set("area_name","¾°µÂÕòÎÂ¼ÇÀÏµê");
+	set("area_name","æ™¯å¾·é•‡æ¸©è®°è€åº—");
 	set("area_file","/d/jindezheng/china-shop.c");
-	set("ziyuan","´ÉÆ÷");
+	set("ziyuan","ç“·å™¨");
 	set("jizhi",80);
 	set("kaifa",20);
 
@@ -55,13 +55,13 @@ void greeting(object ob)
   if (!ob||environment(ob)!=environment()) return;
   switch(random(3))    {
    case 0:
-       command("say »¶µÀ¹âÁÙ±¾µê¡£");
+       command("say æ¬¢é“å…‰ä¸´æœ¬åº—ã€‚");
        break;
    case 1:
-       command("say ÕâÎ»"+RANK_D->query_respect(ob)+",±¾µêµÄ´ÉÆ÷ÔÚ¾°µÂÕòÊ×ÇúÒ»Ö¸.\n");
+       command("say è¿™ä½"+RANK_D->query_respect(ob)+",æœ¬åº—çš„ç“·å™¨åœ¨æ™¯å¾·é•‡é¦–æ›²ä¸€æŒ‡.\n");
        break;
    case 2:
-       command("say Õâ¼¸ÌìÂò´ÉÆ÷µÄÈËÕæ¶à,¸ÃÈÃ´ÉÒ¤¶àÕĞĞ©ÈËÁË!\n");
+       command("say è¿™å‡ å¤©ä¹°ç“·å™¨çš„äººçœŸå¤š,è¯¥è®©ç“·çª‘å¤šæ‹›äº›äººäº†!\n");
        break;
        }
   return;

@@ -2,11 +2,11 @@ inherit ROOM;
 void create()
 {
 	object con, item;
-        set("short", "²ÝÌÃ");
+        set("short", "è‰å ‚");
         set("long", @LONG
-·¿Ëä²Ý¸²£¬È´¸ßË¬¿í³¨£¬´°Ì¨Ã÷ÁÁ¡£ÌÃÖÐ¹ÒÒ»·ùÎÞÃûÐ¡»­£¬ÉèÒ»ÕÅ°×Ä¾ÎÔé½¡£×ÀµÊ
-Ö®Àà£¬É«É«½à¾»¡£´òÉ¨µÃµØÏÂÎÞÏËºÁ³¾¹¸¡£ÌÃÖÐ»¨»ÜÎÞËù²»ÓÐ£¬Ê®·Ö·±Ã¯¡£Õæ¸öËÄÊ±²»
-Ð»£¬°Ë½Ú³¤´º¡£ÔÙÍùÁ½²àÐÐ£¬ÔòÊÇºþÉÏ°Ë½¿µÄ×¡´¦¡£
+æˆ¿è™½è‰è¦†ï¼Œå´é«˜çˆ½å®½æ•žï¼Œçª—å°æ˜Žäº®ã€‚å ‚ä¸­æŒ‚ä¸€å¹…æ— åå°ç”»ï¼Œè®¾ä¸€å¼ ç™½æœ¨å§æ¦»ã€‚æ¡Œå‡³
+ä¹‹ç±»ï¼Œè‰²è‰²æ´å‡€ã€‚æ‰“æ‰«å¾—åœ°ä¸‹æ— çº¤æ¯«å°˜åž¢ã€‚å ‚ä¸­èŠ±å‰æ— æ‰€ä¸æœ‰ï¼Œååˆ†ç¹èŒ‚ã€‚çœŸä¸ªå››æ—¶ä¸
+è°¢ï¼Œå…«èŠ‚é•¿æ˜¥ã€‚å†å¾€ä¸¤ä¾§è¡Œï¼Œåˆ™æ˜¯æ¹–ä¸Šå…«å¨‡çš„ä½å¤„ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -39,6 +39,6 @@ if(!random(1000)) call_out("lucky", 1, this_player());
 int lucky(object me)
 {
 
-message_vision("$NºÃÏó¿´µ½ÌÃÖÐ»¨»ÜÀïÓÐ¶«Î÷ÉÁÁËÉÁ£®\n", me);
+message_vision("$Nå¥½è±¡çœ‹åˆ°å ‚ä¸­èŠ±å‰é‡Œæœ‰ä¸œè¥¿é—ªäº†é—ªï¼Ž\n", me);
 return 1;
 }

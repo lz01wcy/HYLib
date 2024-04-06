@@ -2,9 +2,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Öì·òÈË", ({ "zhu furen", "zhu", "furen" }));
-        set("long", "ÕâÊÇÒ»¸öÖĞÄêÅ®ÈË£¬ÈİÑÕÇÎÀö£¬Ãæº¬Î¢Ğ¦¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("æœ±å¤«äºº", ({ "zhu furen", "zhu", "furen" }));
+        set("long", "è¿™æ˜¯ä¸€ä¸ªä¸­å¹´å¥³äººï¼Œå®¹é¢œä¿ä¸½ï¼Œé¢å«å¾®ç¬‘ã€‚\n");
+        set("gender", "å¥³æ€§");
          set("age", 40);
         set("attitude","friendly");
         set("str", 30);

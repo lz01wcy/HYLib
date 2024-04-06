@@ -1,9 +1,9 @@
 inherit NPC;
 void create()
 {
-   set_name("Íõ¸®Ç×±ø",({"qin bing"}));
-   set("gender","ÄĞĞÔ");
-   set("long","ÊØÎÀÍõ¸®µÄÊ¿±ø!\n");
+   set_name("ç‹åºœäº²å…µ",({"qin bing"}));
+   set("gender","ç”·æ€§");
+   set("long","å®ˆå«ç‹åºœçš„å£«å…µ!\n");
         set("shen_type",-1);
    set("combat_exp",50000);
    

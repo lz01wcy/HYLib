@@ -5,9 +5,9 @@
 inherit ROOM;
 void create()
 {
-         set("short",BLU"ÃØµÀ"NOR);
+         set("short",BLU"ç§˜é“"NOR);
          set("long",@long
-ÕâÀïÍÁµØ³±Êª£¬Ç½ÉÏÓÐÒ»Êø»ð°Ñ¡£µ±ÄêÉñÁúµÜ×ÓÎªÁËÓÐÊÂÖ±´ïÖÐÔ­¶øÍÚÔäµÄ¡£
+è¿™é‡ŒåœŸåœ°æ½®æ¹¿ï¼Œå¢™ä¸Šæœ‰ä¸€æŸç«æŠŠã€‚å½“å¹´ç¥žé¾™å¼Ÿå­ä¸ºäº†æœ‰äº‹ç›´è¾¾ä¸­åŽŸè€ŒæŒ–å‡¿çš„ã€‚
 long);
          set("exits",([
     "south" : "/d/shenlong/houting",

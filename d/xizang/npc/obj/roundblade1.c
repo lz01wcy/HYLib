@@ -2,17 +2,17 @@
 inherit BLADE; 
 void create()
 {
-        set_name("Ô²ÔÂÍäµ¶", ({ "moonblade" }) );
+        set_name("åœ†æœˆå¼¯åˆ€", ({ "moonblade" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÍäÈçÔÂÑÀ¶ùŞ¬µ¶");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠå¼¯å¦‚æœˆç‰™å„¿è•ƒåˆ€");
                 set("value", 200);
                 set("material", "steel"); 
-        set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»°ÑÁÁÉÁÉÁµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æŠ½å‡ºä¸€æŠŠäº®é—ªé—ªçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nåˆ«åœ¨è…°é—´ã€‚\n");
         }
         ::init_blade(50);
 }        

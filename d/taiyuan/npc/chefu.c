@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-   set_name("³µ·ò",({ "che fu","che","fu" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("è½¦å¤«",({ "che fu","che","fu" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇÒ»ÃûÆÕÍ¨µÄ³µ·ò¡£\n");
+   set("long", "è¿™æ˜¯ä¸€åæ™®é€šçš„è½¦å¤«ã€‚\n");
    set("combat_exp", 20000);
    set("attitude", "friendly");
    set_temp("apply/damage",30);
@@ -12,7 +12,7 @@ void create()
    set_temp("apply/armor",30);
    set("chat_chance",20);
    set("chat_msg",({
-   	"³µ·ò¸ßÉùº°µÀ£ºÎ¹£¬½è¸öµÀ£¬Ğ»Ğ»ÁË£¡\n",
+   	"è½¦å¤«é«˜å£°å–Šé“ï¼šå–‚ï¼Œå€Ÿä¸ªé“ï¼Œè°¢è°¢äº†ï¼\n",
    	(:random_move:),
    	}));
    setup();

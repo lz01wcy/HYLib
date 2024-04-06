@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Êé·¿´óÃÅ");
+	set("short", "ä¹¦æˆ¿å¤§é—¨");
         set("long",@LONG
-ÕâÊÇÊé·¿ÃÅ¿Ú£¬Ö»¿´¼û´óÃÅÁ½ÅÔÌù×ÅÒ»¸±¶ÔÁª(duilian)£¬Ì§Í·ÉÏÍû¡£
-ÃÅé¹ÉÏÒ»¿é´óØÒ(bian)ÉÏĞ´×Å¼¸¸ö´ó×Ö¡£
+è¿™æ˜¯ä¹¦æˆ¿é—¨å£ï¼Œåªçœ‹è§å¤§é—¨ä¸¤æ—è´´ç€ä¸€å‰¯å¯¹è”(duilian)ï¼ŒæŠ¬å¤´ä¸Šæœ›ã€‚
+é—¨æ¥£ä¸Šä¸€å—å¤§åŒ¾(bian)ä¸Šå†™ç€å‡ ä¸ªå¤§å­—ã€‚
 LONG );
         set("outdoors", "lingjiu");
         set("exits", ([
@@ -19,8 +19,8 @@ LONG );
 		__DIR__"npc/zhujian" : 1,
 	]));
 	set("item_desc", ([
-	    "duilian" : "ĞĞµ½Ë®Çî´¦£¬×ø¿´ÔÆÆğÊ±.\n",
-	    "bian" : HIC "ÈÎÎÒåĞÒ£\n" NOR,
+	    "duilian" : "è¡Œåˆ°æ°´ç©·å¤„ï¼Œåçœ‹äº‘èµ·æ—¶.\n",
+	    "bian" : HIC "ä»»æˆ‘é€é¥\n" NOR,
         ]));
 //        set("no_clean_up", 0);
 	setup();
@@ -29,9 +29,9 @@ LONG );
 int valid_leave(object me, string dir)
 {
 	if (  (dir == "east")
-	   && ((string)me->query("family/family_name") != "ÁéğÕ¹¬")
+	   && ((string)me->query("family/family_name") != "çµé¹«å®«")
 	   && objectp(present("zhu jian", environment(me))) )
 	 return notify_fail
-		("Öñ½£ÉìÊÖÀ¹×¡Äã£¬ËµµÀ£º¡°¶Ô²»Æğ£¬±¾ÃÅÖØµØ£¬Çë»Ø£¡¡±\n");
+		("ç«¹å‰‘ä¼¸æ‰‹æ‹¦ä½ä½ ï¼Œè¯´é“ï¼šâ€œå¯¹ä¸èµ·ï¼Œæœ¬é—¨é‡åœ°ï¼Œè¯·å›ï¼â€\n");
 	return ::valid_leave(me, dir);
 }

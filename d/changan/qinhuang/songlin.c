@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-    set("short", "����");
+    set("short", "松林");
     set("long", @LONG
-������һ���޼ʵ����֣���������У���������գ�ʬ�Ǳ�ء�
-�κ��˿�����㾰�󶼻�ë���Ȼ��������֡�
+这里是一望无际的松林，听不见鸟叫，看不到天空，尸骨遍地。
+任何人看到这般景象都会毛骨悚然，惊劾万分。
 LONG
 );
     setup();

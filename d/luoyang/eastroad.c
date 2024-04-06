@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "��Ƚ�");
+	set("short",  "金谷街");
 	set("long",  @LONG
-���������ս�ң�������ȽֵĲ��������Ѿ��ķϵ���ֻʣ������
-��һ����ĵ�����ĵ��̡�����ʯ��ͨ��ͭ��İ�������ǹ�¥����������
-�����ǵĶ��š�
+由于连年的战乱，整条金谷街的不少铺子已经荒废掉了只剩下南面
+的一家卖牡丹花的店铺。北面石街通往铜驼陌，西面是鼓楼，东面则是
+洛阳城的东门。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"east"  :  __DIR__"eastgate",

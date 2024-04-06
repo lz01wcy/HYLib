@@ -1,4 +1,4 @@
-// zhike.c Öª¿ÍµÀ³¤
+// zhike.c çŸ¥å®¢é“é•¿
 // By Lgg,1998.10
 
 inherit NPC;
@@ -7,15 +7,15 @@ string ask_me();
 
 void create()
 {
-        set_name("Öª¿ÍµÀ³¤", ({"zhike daozhang","zhike"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("çŸ¥å®¢é“é•¿", ({"zhike daozhang","zhike"}));
+        set("gender", "ç”·æ€§");
         set("age", 42);
         set("class", "taoist");
         set("long",
-                "ËûÊÇÈ«Õæ½ÌµÚËÄ´úµÜ×ÓÖÐÄê¼Í×î´óµÄÒ»Î»£¬ÒÔÇ°×ö¹ýÐ¡ÂòÂô£¬\n"
-                "×ßÄÏ´³±±£¬¼û¶àÊ¶¹ã£¬ºóÀ´°Ýµ½È«ÕæÃÅÏÂ¡£ÕÆ½Ì¼ûËûËêÊý±Ï¾¹\n"
-                "´óÁË£¬²»ÊÊÒËÔÙÐÞÁ·ÉÏ³Ë¹¦·ò¡£ÇÒÏ²ËûÄÜÑÔÉÆµÀ£¬ÊìÊ¶Àñ½Ú£¬\n"
-                "¾Í°²ÅÅÔÚÉ½ÃÅ´¦×¨ÊÂ½Ó´ý·Ã¿Í¡£\n");
+                "ä»–æ˜¯å…¨çœŸæ•™ç¬¬å››ä»£å¼Ÿå­ä¸­å¹´çºªæœ€å¤§çš„ä¸€ä½ï¼Œä»¥å‰åšè¿‡å°ä¹°å–ï¼Œ\n"
+                "èµ°å—é—¯åŒ—ï¼Œè§å¤šè¯†å¹¿ï¼ŒåŽæ¥æ‹œåˆ°å…¨çœŸé—¨ä¸‹ã€‚æŽŒæ•™è§ä»–å²æ•°æ¯•ç«Ÿ\n"
+                "å¤§äº†ï¼Œä¸é€‚å®œå†ä¿®ç»ƒä¸Šä¹˜åŠŸå¤«ã€‚ä¸”å–œä»–èƒ½è¨€å–„é“ï¼Œç†Ÿè¯†ç¤¼èŠ‚ï¼Œ\n"
+                "å°±å®‰æŽ’åœ¨å±±é—¨å¤„ä¸“äº‹æŽ¥å¾…è®¿å®¢ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 18);
@@ -35,14 +35,14 @@ void create()
         set("score", 15000);
 
         set_skill("force", 40);
-        set_skill("xiantian-qigong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 40);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",40);  //È«Õæ½£
+        set_skill("quanzhen-jian",40);  //å…¨çœŸå‰‘
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 40);   //½ðÑã¹¦
+        set_skill("jinyan-gong", 40);   //é‡‘é›åŠŸ
         set_skill("parry", 50);
         set_skill("strike",50);
-        set_skill("haotian-zhang", 50);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 50);    //æ˜Šå¤©æŽŒ
         set_skill("literate",60);
         set_skill("taoism",50);
 
@@ -53,13 +53,13 @@ void create()
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒÐþÃÅÕý×Ú¡£\n",
-                "Î÷¶¾" : (: ask_me :),
-                "Å·Ñô·æ" : (: ask_me :),
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶çŽ„é—¨æ­£å®—ã€‚\n",
+                "è¥¿æ¯’" : (: ask_me :),
+                "æ¬§é˜³é”‹" : (: ask_me :),
         ]) );
 
         setup();
@@ -71,15 +71,15 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 
 string ask_me()
 {
         object me=this_player();
-        me->set_temp("tmark/Ö¸",1);
-        return("È¥Äê×æÊ¦¼ÙËÀÒÔÓÕÎ÷¶¾À´ÇÀ¶á¾ÅÒõÕæ¾­£¬½á¹ûÎ÷¶¾±»×æÊ¦ÒÔÒ»ÑôÖ¸ÆÆÁËÐÞ
-Á¶¶àÄêµÄ¸òó¡¹¦¡£\n");
+        me->set_temp("tmark/æŒ‡",1);
+        return("åŽ»å¹´ç¥–å¸ˆå‡æ­»ä»¥è¯±è¥¿æ¯’æ¥æŠ¢å¤ºä¹é˜´çœŸç»ï¼Œç»“æžœè¥¿æ¯’è¢«ç¥–å¸ˆä»¥ä¸€é˜³æŒ‡ç ´äº†ä¿®
+ç‚¼å¤šå¹´çš„è›¤èŸ†åŠŸã€‚\n");
 }
 

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�﹡");
+	set("short", "田埂");
 	set("long", @LONG
-�﹡���߳���������ɫ�����,���໹�����������Ļ���.һ����ȥ,��
-ǰ�ǽ�Ӳӵ�һƬ����,�쵽���ո��ʱ����.
+田埂两边长满各类绿色的青草,许多还开出了美丽的花朵.一眼望去,眼
+前是金灿灿的一片稻田,快到该收割的时候了.
 LONG
 	);
 	set("no_clean_up", 0);

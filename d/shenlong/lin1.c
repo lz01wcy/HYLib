@@ -9,16 +9,16 @@ string* npcs = ({
  
 void create()
 {
-        set("short", "¹àÄ¾ÁÖ");
+        set("short", "çŒæœ¨æž—");
         set("long",@LONG
-ÕâÊÇÒ»Æ¬¹àÄ¾ÁÖ¡£Äã¶ÔÕâÑùÒ»¸ö¹ÂµºÉÏ¾¹ÓÐÕâÑù´óÒ»Æ¬¹àÄ¾ÁÖ(bush)
-¸Ðµ½·Ç³£³Ô¾ª.Ç°Ãæ¸ù±¾Ã»ÓÐÂ·,ËÄÖÜµÄÃÜÁÖÖÐ³¤ÂúÁËÔÓ²Ý¡£
+è¿™æ˜¯ä¸€ç‰‡çŒæœ¨æž—ã€‚ä½ å¯¹è¿™æ ·ä¸€ä¸ªå­¤å²›ä¸Šç«Ÿæœ‰è¿™æ ·å¤§ä¸€ç‰‡çŒæœ¨æž—(bush)
+æ„Ÿåˆ°éžå¸¸åƒæƒŠ.å‰é¢æ ¹æœ¬æ²¡æœ‰è·¯,å››å‘¨çš„å¯†æž—ä¸­é•¿æ»¡äº†æ‚è‰ã€‚
 LONG);
 	set("exits", ([
 	    "south" : __DIR__"haitan",
 	]));
 	set("item_desc", ([
-	    "bush" : "ÕâÆ¬¹àÄ¾ÁÖÌ«ÉîÁË,ÒªÏë¹ýÈ¥¿ÖÅÂÖ»ÓÐ¿³³öÒ»ÌõÂ·ÁË(kan)¡£\n",
+	    "bush" : "è¿™ç‰‡çŒæœ¨æž—å¤ªæ·±äº†,è¦æƒ³è¿‡åŽ»ææ€•åªæœ‰ç å‡ºä¸€æ¡è·¯äº†(kan)ã€‚\n",
 	]));
 	set("objects", ([
 		__DIR__"npc/dushe" : 1+random(2),
@@ -41,18 +41,18 @@ int do_kan ( string arg )
     object ob, weapon;
     string dir;
     if( !arg || arg !="bush" ) 
-         return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n" ) ;
+         return notify_fail("ä½ è¦ç ä»€ä¹ˆï¼Ÿ\n" ) ;
 	if (!objectp(weapon = this_player()->query_temp("weapon")))
-		return notify_fail("²»ÓÃÎäÆ÷¿ÖÅÂ²»ÐÐ°É£¡\n");
+		return notify_fail("ä¸ç”¨æ­¦å™¨ææ€•ä¸è¡Œå§ï¼\n");
 
 	    message_vision(
-        "$N³é³ö±øÈÐ,¶Ô×Å¹àÄ¾´ÔÒ»ÕóÂÒ¿³¡£\n", this_player());
+        "$NæŠ½å‡ºå…µåˆƒ,å¯¹ç€çŒæœ¨ä¸›ä¸€é˜µä¹±ç ã€‚\n", this_player());
 
         if(this_player()->query("neili")>100)
 	{
         set("exits/north", __DIR__"lin2");
         message_vision(
-        "$NÀÛµÃÆø´­ÓõÓõ,ÖÕÓÚ¿³³öÒ»ÌõÐ¡Â·¡£\n", this_player());
+        "$Nç´¯å¾—æ°”å–˜åå,ç»ˆäºŽç å‡ºä¸€æ¡å°è·¯ã€‚\n", this_player());
         this_player()->add("neili",-50);
         remove_call_out("close");
         call_out("close", 20, this_object());
@@ -60,7 +60,7 @@ int do_kan ( string arg )
         else	
 	{
         message_vision(
-        "$NÀÛµÃÆø´­ÓõÓõ,Ò²Ã»¿³¿ªÒ»ÌõÂ·À´¡£\n", this_player());
+        "$Nç´¯å¾—æ°”å–˜åå,ä¹Ÿæ²¡ç å¼€ä¸€æ¡è·¯æ¥ã€‚\n", this_player());
 	this_player()->set("neili",0);
 	}
 return 1;
@@ -68,6 +68,6 @@ return 1;
 
 void close(object room)
 {
-    message("vision","¹àÄ¾´Ô½¥½¥ºÏÂ£ÆðÀ´,ÖÕÓÚÓÖ»Ö¸´ÁËÔ­×´¡£\n", room);
+    message("vision","çŒæœ¨ä¸›æ¸æ¸åˆæ‹¢èµ·æ¥,ç»ˆäºŽåˆæ¢å¤äº†åŽŸçŠ¶ã€‚\n", room);
     room->delete("exits/north");
 }

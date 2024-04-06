@@ -6,15 +6,15 @@ inherit F_DEALER;
 
 void create()
 {
-         set_name("Áú±¾´óÊå",({"longben dashu","longben","dashu"}));
-        set("gender", "ÄĞĞÔ" );
+         set_name("é¾™æœ¬å¤§å”",({"longben dashu","longben","dashu"}));
+        set("gender", "ç”·æ€§" );
         set("age",42);
-        set("title","Éñ»§º£ÏÊµê");
+        set("title","ç¥æˆ·æµ·é²œåº—");
         set("long",
-                 "º£ÏÊµêµÄÁú±¾´óÊå¿ÉÊÇÀÏÊµºñµÀ£¬ËûÕı³åÄãÎ¢Ğ¦×Å¡£\n");
+                 "æµ·é²œåº—çš„é¾™æœ¬å¤§å”å¯æ˜¯è€å®åšé“ï¼Œä»–æ­£å†²ä½ å¾®ç¬‘ç€ã€‚\n");
         set("combat_exp",150);
         set("attitude", "friendly");
-        set("rank_info/respect","´óÊå");
+        set("rank_info/respect","å¤§å”");
 
 
 set("vendor_goods", ({
@@ -47,11 +47,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
          switch( random(5) ) {
                 case 0:
-               message_vision("$N¿ì²½ÉÏÇ°µÀ£ºÕâÎ»"+
-               RANK_D->query_respect(ob)+"ÏëµãĞ©Ê²Ã´£¿\n",this_object(), ob);
+               message_vision("$Nå¿«æ­¥ä¸Šå‰é“ï¼šè¿™ä½"+
+               RANK_D->query_respect(ob)+"æƒ³ç‚¹äº›ä»€ä¹ˆï¼Ÿ\n",this_object(), ob);
                         break;
                 case 1:
-             message_vision("$nÕı¿´×Å$N£¬µÈ×Å$Nµã²Ë¡£\n",ob,this_object());
+             message_vision("$næ­£çœ‹ç€$Nï¼Œç­‰ç€$Nç‚¹èœã€‚\n",ob,this_object());
                         break;
                            }
 }

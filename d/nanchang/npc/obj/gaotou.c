@@ -5,17 +5,17 @@ inherit CLUB;
 
 void create()
 {
-        set_name("¸äÍ·", ({"gao tou", "tou","gao"}));
+        set_name("é•å¤´", ({"gao tou", "tou","gao"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ¸ä£¬ÊÇÓÃÀ´¿ª²É¿óÊ¯µÄ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠé•ï¼Œæ˜¯ç”¨æ¥å¼€é‡‡çŸ¿çŸ³çš„ã€‚\n");
                 set("value", 500);
                 set("material", "iron");
-                set("wield_msg","$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg","$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_club(500);

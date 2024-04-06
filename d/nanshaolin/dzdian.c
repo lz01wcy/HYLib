@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�زص�");
+	set("short", "地藏殿");
 	set("long", @LONG
-���ǵزص����ز����������ز����������䣬������Ȼ�в���
-�������䣬������ǰ������ü��ɷ�����ֶ�����������һ��֮�£��پ�
-�ľ���ս���ֲ̿��ѡ�
+这是地藏殿。供奉地藏王菩萨。地藏王主宰阴间，手下自然有不少
+鬼兵鬼卒，罗列帐前。菩萨眉横煞气，手断阴阳。令人一见之下，顿觉
+心惊胆战，惶恐不已。
 LONG );
 	set("exits", ([
 		"east" : __DIR__"kchang",

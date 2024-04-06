@@ -1,20 +1,20 @@
  inherit NPC;
 void create()
 {
-        set_name("Ğ¡ÔÆÈ¸", ({ "skylark" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("å°äº‘é›€", ({ "skylark" }) );
+        set("race", "é‡å…½");
         set("age", 2);
-        set("gender", "´ÆĞÔ");
-        set("long", "ÓğÃ«ÊáÀíµÃ½à¾»ÕûÆë£¬ß´ß´ÔûÔûºÜ¿É°®µÄĞ¡ÔÆÈ¸£¬×¥×¡£¨catch£©Ëü°É¡£¡£¡£ \n");
+        set("gender", "é›Œæ€§");
+        set("long", "ç¾½æ¯›æ¢³ç†å¾—æ´å‡€æ•´é½ï¼Œå½å½å–³å–³å¾ˆå¯çˆ±çš„å°äº‘é›€ï¼ŒæŠ“ä½ï¼ˆcatchï¼‰å®ƒå§ã€‚ã€‚ã€‚ \n");
         set("combat_exp", 10000);
         set("attitude","peaceful");
-        set("limbs", ({ "Í·²¿", "ÉíÌå","³á°ò" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“","ç¿…è†€" }) );
         set("verbs", ({ "bite","claw" }) );
         set_temp("apply/dodge", 100);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "Ğ¡ÔÆÈ¸ß´ß´ÔûÔû»¶¿ìµÄ½Ğ×Å£¡ \n",
-                "Ğ¡ÔÆÈ¸ÓÃ×ìÕûÀíÓğÃ«¡£ \n"
+                "å°äº‘é›€å½å½å–³å–³æ¬¢å¿«çš„å«ç€ï¼ \n",
+                "å°äº‘é›€ç”¨å˜´æ•´ç†ç¾½æ¯›ã€‚ \n"
         }) );
         setup();
 } 
@@ -34,11 +34,11 @@ int do_catch(string arg)
         inv = all_inventory(me);
         
         if( !arg || arg != "skylark" )
-                return notify_fail("ÄãÒª×¥Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æŠ“ä»€ä¹ˆï¼Ÿ\n");
         
         if( random(40) > me->query("kar") )
         {
-           message_vision("$NÆËÀãÆËÀã³á°ò·ÉÈëÔÆáÛ£¬Ò»ÏÂ×ÓÏûÊ§µÃÎŞÓ°ÎŞ×Û¡£\n" , bird);
+           message_vision("$Næ‰‘æ¥æ‰‘æ¥ç¿…è†€é£å…¥äº‘å·…ï¼Œä¸€ä¸‹å­æ¶ˆå¤±å¾—æ— å½±æ— ç»¼ã€‚\n" , bird);
                 destruct(bird);
         }
         else
@@ -54,14 +54,14 @@ int do_catch(string arg)
         {
                 birdcase->set("contains",0);
                 birdcase->set("skylark",1);
-                message_vision("$NÒ»°Ñ×¥×¡$n£¬È»ºóĞ¡ĞÄÒíÒíµØ°Ñ$n·ÅÈëÄñÁıÀï¡£\n" , me,bird);
-                birdcase->set("long", "Ò»¸ö¾«ÖÂµÄĞ¡ÄñÁı£¬³Ê·½ĞÎ£¬Ò»¶ËÓĞÏòÉÏ³éµÄÃÅ¡£\nÀï±ßÓĞÖ»»îÆÃµÄĞ¡ÔÆÈ¸¡£\n");
+                message_vision("$Nä¸€æŠŠæŠ“ä½$nï¼Œç„¶åå°å¿ƒç¿¼ç¿¼åœ°æŠŠ$næ”¾å…¥é¸Ÿç¬¼é‡Œã€‚\n" , me,bird);
+                birdcase->set("long", "ä¸€ä¸ªç²¾è‡´çš„å°é¸Ÿç¬¼ï¼Œå‘ˆæ–¹å½¢ï¼Œä¸€ç«¯æœ‰å‘ä¸ŠæŠ½çš„é—¨ã€‚\né‡Œè¾¹æœ‰åªæ´»æ³¼çš„å°äº‘é›€ã€‚\n");
                 destruct(bird);
                 me->start_busy(3);
         }
         else
         {
-                message_vision("$N¸ÕÏë°Ñ$n×¥ÀÎ£¬Ã»ÓĞÁÏµ½Ò»¸öõÔõÄ£¬$nÆËßêÒ»ÏÂ´Ó$NÊÖÖĞ·É×ßÁË£®\n" , me,bird);
+                message_vision("$Nåˆšæƒ³æŠŠ$næŠ“ç‰¢ï¼Œæ²¡æœ‰æ–™åˆ°ä¸€ä¸ªè¸‰è·„ï¼Œ$næ‰‘å“§ä¸€ä¸‹ä»$Næ‰‹ä¸­é£èµ°äº†ï¼\n" , me,bird);
                 destruct(bird);
         }
         return 1;

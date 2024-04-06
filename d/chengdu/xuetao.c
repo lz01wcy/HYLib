@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ѧ�ξ�");
+	set("short", "薛涛井");
 	set("long", @LONG
-������һ��Ůʫ��Ѧ������֮�����������ֻ��ƣ������ĵ����Լ�
-�ĽŲ��������õ��������ǰ�пڹž������泤������̦���������Ѿ�
-�ܾ�û�������ˡ�
+这里是一代女诗人薛涛埋香之所，四周竹林环绕，静悄悄的连自己
+的脚步声都听得到，你的面前有口古井，上面长满了青苔，看起来已经
+很久没人来过了。
 LONG	);
 	set("outdoors", "chengdu");
 	set("exits", ([

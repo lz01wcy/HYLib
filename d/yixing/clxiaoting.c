@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С��");
+	set("short", "小厅");
 	set("long", @LONG
-���ǰ������ܹ����ֻ��ܴ��µ����ڣ�������һ��̫ʦ�Σ����ϵ�
-�Ű�ɵĺ��������ǽ�ϸ�ӹ���ŵع��ż���ɽˮ�ֻ���һ����֪����
-����֮������ǰ����ջ�����ʮ�ַ�ï��
+这是帮主及总管商讨机密大事的所在，正中是一张太师椅，门上吊
+着半旧的红绸软帘。墙上附庸风雅地挂着几张山水字画，一望可知均是
+俗手之作。窗前几盆菊花倒是十分繁茂。
 LONG );
 	set("exits", ([
 		"south" : __DIR__"clzoulang2",

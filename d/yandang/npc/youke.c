@@ -2,8 +2,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÓÎ¿Í", ({"youke" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¸¸å®¢", ({"youke" }));
+	set("gender", "ç”·æ€§");
 	set("age", 20+random(20));
    
 	set("combat_exp", 2000); 
@@ -34,7 +34,7 @@ void greeting(object ob)
 	command("ah");
 			break;
 		case 1:
-	say("ĞĞ±éÌìÏÂ,´Ë´¦·ç¾°¶ÀÆæ,ÕæÊÇÌì¹¤ÔìÎï.\n");
+	say("è¡Œéå¤©ä¸‹,æ­¤å¤„é£æ™¯ç‹¬å¥‡,çœŸæ˜¯å¤©å·¥é€ ç‰©.\n");
 			break;
                            }
 }

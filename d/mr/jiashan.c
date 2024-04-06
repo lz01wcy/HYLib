@@ -6,13 +6,13 @@
 inherit ROOM;
 void create()
 {
-         set("short",BLU"¼ÙÉ½"NOR);
+         set("short",BLU"å‡å±±"NOR);
          set ("long",@long
-ÕâÊÇÒ»¼ÙÉ½¡£¼ÙÉ½ÉÏ¶´Ñ¨ºÜ¶à£¬Ò»ÕóÎ¢·ç´µ¹ı£¬¶´Ñ¨·¢³ö¡°ì¬ì¬¡±µÄÏì
-Éù£¬ÁîÈËÓĞĞ©Ã«¹Çã¤È»¡£ÅÔ±ßÓĞÒ»¿éÑÒÊ¯(shi)¡£
+è¿™æ˜¯ä¸€å‡å±±ã€‚å‡å±±ä¸Šæ´ç©´å¾ˆå¤šï¼Œä¸€é˜µå¾®é£å¹è¿‡ï¼Œæ´ç©´å‘å‡ºâ€œé£•é£•â€çš„å“
+å£°ï¼Œä»¤äººæœ‰äº›æ¯›éª¨æ‚šç„¶ã€‚æ—è¾¹æœ‰ä¸€å—å²©çŸ³(shi)ã€‚
 long);
          set("item_desc", ([
-             "shi" : "Õâ¿éÑÒÊ¯ÒÑ¾­ºÜËÉ¶¯ÁË£¬²»ÖªÄÜ²»ÄÜ(break)Ëü¡£\n",
+             "shi" : "è¿™å—å²©çŸ³å·²ç»å¾ˆæ¾åŠ¨äº†ï¼Œä¸çŸ¥èƒ½ä¸èƒ½(break)å®ƒã€‚\n",
 ]));
 
 setup();
@@ -28,16 +28,16 @@ int do_break(string arg)
         int n;
         n = this_player()->query("neili");
         if( !arg || arg!="shi" ) {
-                write("ÄãÒª´òËéÊ²Ã´µÄ¶«Î÷£¡\n");
+                write("ä½ è¦æ‰“ç¢ä»€ä¹ˆçš„ä¸œè¥¿ï¼\n");
                 return 1;
         }
 
   message_vision(
-   "$NÉîÎüÒ»¿ÚÆø£¬Ë«ÕÆÍ¬Ê±ÅÄ³ö¡£\n", this_player());
+   "$Næ·±å¸ä¸€å£æ°”ï¼ŒåŒæŒåŒæ—¶æ‹å‡ºã€‚\n", this_player());
 
   if (n>=200) {
         message_vision(
- "$NÖ»ÌıÒ»Éù¡°ºä¡±µÄÒ»Éù£¬$N°ÑÑÒÊ¯Õğ¿ªÁË£¡·¢ÏÖÓĞÒ»¸ö¶´¿Ú¡£\n", this_player());
+ "$Nåªå¬ä¸€å£°â€œè½°â€çš„ä¸€å£°ï¼Œ$NæŠŠå²©çŸ³éœ‡å¼€äº†ï¼å‘ç°æœ‰ä¸€ä¸ªæ´å£ã€‚\n", this_player());
         set("exits/down", __DIR__"shandong");
         this_player()->set("neili",n-200);
         remove_call_out("close");
@@ -45,7 +45,7 @@ int do_break(string arg)
         }
         else {
         message_vision(
-        "$N´óºğÒ»Éù¡°¿ª£¡¡±£¬½á¹ûÊ²Ã´Ò²Ã»·¢Éú¡£¿´À´$NµÄÄÚÁ¦²»¹»Ç¿¡£\n", this_player());
+        "$Nå¤§å¼ä¸€å£°â€œå¼€ï¼â€ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿã€‚çœ‹æ¥$Nçš„å†…åŠ›ä¸å¤Ÿå¼ºã€‚\n", this_player());
         this_player()->set("neili",0);
            }
 
@@ -54,7 +54,7 @@ int do_break(string arg)
 
      void close(object room)
     {
-message("vision","ÑÒÊ¯¹ö»ØÁËÔ­Î»£¬ÓÖµ²×¡ÁË¶´¿Ú¡£\n", room);
+message("vision","å²©çŸ³æ»šå›äº†åŸä½ï¼ŒåˆæŒ¡ä½äº†æ´å£ã€‚\n", room);
          room->delete("exits/down");
    }
 int do_jump(string arg)
@@ -63,17 +63,17 @@ int do_jump(string arg)
 me = this_player();
 
         if (arg !="shuichi") 
-return notify_fail("ÄãÒªµ½ÄÇÈ¥£¿\n");
+return notify_fail("ä½ è¦åˆ°é‚£å»ï¼Ÿ\n");
 if( arg=="shuichi")
         {
             
-                    write("Äã×İÉíÔ¾ÆğÌø»ØÁËË®³Ø±ß¡£\n");
+                    write("ä½ çºµèº«è·ƒèµ·è·³å›äº†æ°´æ± è¾¹ã€‚\n");
                     message("vision",
-                             me->name() + "Ò»×İÉíÌøÁË¹ıÈ¥¡£\n",
+                             me->name() + "ä¸€çºµèº«è·³äº†è¿‡å»ã€‚\n",
                              environment(me), ({me}) );
                     me->move(__DIR__"shuichi");
                     message("vision",
-                    me->name() + "´ÓË®³ØÖĞÌøÁË¹ıÀ´¡£\n",
+                    me->name() + "ä»æ°´æ± ä¸­è·³äº†è¿‡æ¥ã€‚\n",
                                 environment(me), ({me}) );
                 }
                 return 1;

@@ -6,12 +6,12 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Âí´óÔª", ({"ma dayuan", "ma", "dayuan"}));
-	set("gender", "ÄÐÐÔ");
+	set_name("é©¬å¤§å…ƒ", ({"ma dayuan", "ma", "dayuan"}));
+	set("gender", "ç”·æ€§");
 	set("age", 29);
 	set("long", 
-"Ëû¾ÍÊÇØ¤°ïµÚÊ®ÈÎ¸±°ïÖ÷£¬°ìÊÂ½÷É÷×ÐÏ¸£¬ÊÇ°ïÖÐÒ»°ÑºÃÊÖ¡£
-Ò»ÊÖËøºíÇÜÄÃÊÖÍþÕðÎäÁÖ¡£\n");
+"ä»–å°±æ˜¯ä¸å¸®ç¬¬åä»»å‰¯å¸®ä¸»ï¼ŒåŠžäº‹è°¨æ…Žä»”ç»†ï¼Œæ˜¯å¸®ä¸­ä¸€æŠŠå¥½æ‰‹ã€‚
+ä¸€æ‰‹é”å–‰æ“’æ‹¿æ‰‹å¨éœ‡æ­¦æž—ã€‚\n");
 	set("attitude", "peaceful");
 	set("class", "beggar");
  	set("beggarlvl", 10);
@@ -37,19 +37,19 @@ void create()
 set_skill("dagou-bang",80);
 	set_skill("strike",190);
 	set_skill("force", 250);             // 
-	set_skill("force", 180);             // »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 330);    // »ìÌìÆø¹¦
-	set_skill("dodge", 150);      	     // »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 320);        // åÐÒ£ÓÎ
-	set_skill("parry", 150);             // »ù±¾ÕÐ¼Ü
-	set_skill("hand", 200);              // »ù±¾ÊÖ·¨
+	set_skill("force", 180);             // åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 330);    // æ··å¤©æ°”åŠŸ
+	set_skill("dodge", 150);      	     // åŸºæœ¬èº²é—ª
+	set_skill("xiaoyaoyou", 320);        // é€é¥æ¸¸
+	set_skill("parry", 150);             // åŸºæœ¬æ‹›æž¶
+	set_skill("hand", 200);              // åŸºæœ¬æ‰‹æ³•
 
-	set_skill("blade", 180);             // »ù±¾µ¶·¨
-	set_skill("liuhe-dao", 280);       // ËÄÏóÁùºÏµ¶
-	set_skill("begging", 200);           // ½Ð»¯¾ø»î
-	set_skill("checking", 200);          // µÀÌýÍ¾Ëµ
-	set_skill("training", 200);          // Ô¦ÊÞÊõ
-	set_skill("strike",285);  // »ù±¾ÕÆ·¨
+	set_skill("blade", 180);             // åŸºæœ¬åˆ€æ³•
+	set_skill("liuhe-dao", 280);       // å››è±¡å…­åˆåˆ€
+	set_skill("begging", 200);           // å«åŒ–ç»æ´»
+	set_skill("checking", 200);          // é“å¬é€”è¯´
+	set_skill("training", 200);          // é©­å…½æœ¯
+	set_skill("strike",285);  // åŸºæœ¬æŽŒæ³•
 
 	set_skill("xianglong-zhang",285);
 
@@ -63,12 +63,12 @@ set_skill("dagou-bang",80);
 	map_skill("blade", "liuhe-blade");
 	map_skill("parry", "yuejia-qiang");
 
-	set_skill("yuejia-qiang", 380);        // ´ò¹·°ô·¨
-	set_skill("suohou-gong", 380);        // ´ò¹·°ô·¨
-set_skill("chansi-shou", 380);        // ´ò¹·°ô·¨
-set_skill("claw", 380);        // ´ò¹·°ô·¨
-set_skill("hand", 380);        // ´ò¹·°ô·¨	
-set_skill("club", 380);        // ´ò¹·°ô·¨		
+	set_skill("yuejia-qiang", 380);        // æ‰“ç‹—æ£’æ³•
+	set_skill("suohou-gong", 380);        // æ‰“ç‹—æ£’æ³•
+set_skill("chansi-shou", 380);        // æ‰“ç‹—æ£’æ³•
+set_skill("claw", 380);        // æ‰“ç‹—æ£’æ³•
+set_skill("hand", 380);        // æ‰“ç‹—æ£’æ³•	
+set_skill("club", 380);        // æ‰“ç‹—æ£’æ³•		
 map_skill("parry", "yuejia-qiang");
 map_skill("club", "yuejia-qiang");
 map_skill("claw", "suohou-gong");
@@ -77,10 +77,10 @@ map_skill("hand", "chansi-shou");
 	prepare_skill("hand",  "chansi-shou");
 prepare_skill("claw",  "suohou-gong");
 
-	set("party/party_name", HIC"Ø¤°ï"NOR);
-	set("party/rank", RED"¸±°ïÖ÷"NOR);
+	set("party/party_name", HIC"ä¸å¸®"NOR);
+	set("party/rank", RED"å‰¯å¸®ä¸»"NOR);
 	set("party/level", 10);
-	create_family("Ø¤°ï", 10, "µÜ×Ó");
+	create_family("ä¸å¸®", 10, "å¼Ÿå­");
        set("chat_chance_combat", 90);
         set("chat_msg_combat", ({
                 (: perform_action, "club.gong" :),
@@ -105,30 +105,30 @@ void attempt_apprentice(object ob)
 {
 	if ((int)ob->query_str() < 20 || (int)ob->query_con() < 20)
 	{
-		command("say µ±½Ð»¯×ÓÐèÒªÄÜ³Ô¿àÄÍÀÍ£¬ÒÀÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ×ÊÖÊËÆºõ²»ÊÊºÏµ±½Ð»¯×Ó£¿");
+		command("say å½“å«åŒ–å­éœ€è¦èƒ½åƒè‹¦è€åŠ³ï¼Œä¾æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„èµ„è´¨ä¼¼ä¹Žä¸é€‚åˆå½“å«åŒ–å­ï¼Ÿ");
 		return;
 	}
 	if ((string)ob->query("family/family_name") != "" &&
-	    (string)ob->query("family/family_name") != "Ø¤°ï")
+	    (string)ob->query("family/family_name") != "ä¸å¸®")
 	{
-		command("say " + RANK_D->query_respect(ob) + "¼ÈÈ»ÒÑÓÐÃûÊ¦Ö¸µã£¬ºÎ±ØÓÖÀ´°ÝÀÏ½Ð»¯ÄØ£¿");
+		command("say " + RANK_D->query_respect(ob) + "æ—¢ç„¶å·²æœ‰åå¸ˆæŒ‡ç‚¹ï¼Œä½•å¿…åˆæ¥æ‹œè€å«åŒ–å‘¢ï¼Ÿ");
 		return;
 	}
 	if ((int)ob->query_skill("huntian-qigong",1) < 80)
 	{
-		command("say ÄãµÄ»ìÌìÆø¹¦ÐÞÎª²»¹»¡£\n");
+		command("say ä½ çš„æ··å¤©æ°”åŠŸä¿®ä¸ºä¸å¤Ÿã€‚\n");
 		return;
 	}
 
 	if ((int)ob->query_skill("xianglong-zhang",1) < 80)
 	{
-		command("say ÄãµÄ½µÁúÊ®°ËÕÆÐÞÎª²»¹»¡£\n");
+		command("say ä½ çš„é™é¾™åå…«æŽŒä¿®ä¸ºä¸å¤Ÿã€‚\n");
 		return;
 	}
 
 	if ((int)ob->query_skill("dagou-bang",1) < 80)
 	{
-		command("say ÄãµÄ´ò¹·°ôÐÞÎª²»¹»¡£\n");
+		command("say ä½ çš„æ‰“ç‹—æ£’ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 		return;
 	}
 	command("recruit "+ob->query("id"));

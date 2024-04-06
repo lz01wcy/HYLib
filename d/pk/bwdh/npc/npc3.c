@@ -1,7 +1,7 @@
 // yue-buqun.c lasted updated by cocacola on 2.19 for adding chushi
-// ÔÀ²»Èº
-// ´ËnpcÉÏµÄxunshanÉèÖÃ²»µ±£¡
-// ÐÇÐÇlywin¸ÄÓÚ2000/6/11
+// å²³ä¸ç¾¤
+// æ­¤npcä¸Šçš„xunshanè®¾ç½®ä¸å½“ï¼
+// æ˜Ÿæ˜Ÿlywinæ”¹äºŽ2000/6/11
 
 inherit NPC;
 inherit F_MASTER;
@@ -12,14 +12,14 @@ string ask_feng();
 
 void create()
 {
-        set_name("Ð¡ÔÀ²»Èº", ({ "yue buqun", "yue" }) );
-        set("title", "»ªÉ½ÅÉÕÆÃÅ");
-        set("nickname", "¾ý×Ó½£");
-        set("gender", "ÄÐÐÔ");
+        set_name("å°å²³ä¸ç¾¤", ({ "yue buqun", "yue" }) );
+        set("title", "åŽå±±æ´¾æŽŒé—¨");
+        set("nickname", "å›å­å‰‘");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 55);
         set("long",
-                "ÔÀ²»Èº×ÔÓ×Ö´ÕÆ»ªÉ½ÅÉ£¬ÄËµ±½ñÎäÁÖÖÐÒ»µÈÒ»µÄ¸ßÊÖ¡£\n");
+                "å²³ä¸ç¾¤è‡ªå¹¼æ‰§æŽŒåŽå±±æ´¾ï¼Œä¹ƒå½“ä»Šæ­¦æž—ä¸­ä¸€ç­‰ä¸€çš„é«˜æ‰‹ã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -47,11 +47,11 @@ void create()
                 (: exert_function, "powerup" :),
         }) );
         set("inquiry", ([
-	    "ÄþÖÐÔò" : "ËýÊÇÎÒ·òÈË¡£\n",
-	    "ÔÀÁéæ©" : "ËýÊÇÎÒÅ®¶ù¡£\n",
-	    "×ÏÏ¼¹¦" : "ÄÇÊÇ±¾ÃÅÖÁ¸ßÎÞÉÏµÄÄÚ¹¦ÐÄ·¨¡£\n",
-	    "×ÏÏ¼Éñ¹¦" : "ÄÇÊÇ±¾ÃÅÖÁ¸ßÎÞÉÏµÄÄÚ¹¦ÐÄ·¨¡£\n",          
-	    "Ë¼¹ýÑÂ" : "ÄÇÊÇ±¾ÅÉµÜ×ÓÐÞÐÐË¼¹ýÖ®´¦¡£\n", 
+	    "å®ä¸­åˆ™" : "å¥¹æ˜¯æˆ‘å¤«äººã€‚\n",
+	    "å²³çµå§—" : "å¥¹æ˜¯æˆ‘å¥³å„¿ã€‚\n",
+	    "ç´«éœžåŠŸ" : "é‚£æ˜¯æœ¬é—¨è‡³é«˜æ— ä¸Šçš„å†…åŠŸå¿ƒæ³•ã€‚\n",
+	    "ç´«éœžç¥žåŠŸ" : "é‚£æ˜¯æœ¬é—¨è‡³é«˜æ— ä¸Šçš„å†…åŠŸå¿ƒæ³•ã€‚\n",          
+	    "æ€è¿‡å´–" : "é‚£æ˜¯æœ¬æ´¾å¼Ÿå­ä¿®è¡Œæ€è¿‡ä¹‹å¤„ã€‚\n", 
         ]) );
 
         set_skill("unarmed", 80);
@@ -73,7 +73,7 @@ void create()
         map_skill("unarmed", "huashan-ken");
         map_skill("dodge", "feiyan-huixiang");
 
-        create_family("»ªÉ½ÅÉ", 13, "ÕÆÃÅ");
+        create_family("åŽå±±æ´¾", 13, "æŽŒé—¨");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();

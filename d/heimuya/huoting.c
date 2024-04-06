@@ -4,10 +4,10 @@ void init();
 int do_move(string);
 void create()
 {
-        set("short", "³ÉµÂµîºóÌü");
+        set("short", "æˆå¾·æ®¿åå…");
         set("long", @LONG
-ÕâÀïÊÇÈÕÔÂÉñ½ÌµÄºóÌü¡£¿´ÉÏÈ¥ÂúÊÇ»Ò³¾£¬µ«ÖĞ¼äÓĞÒ»¸ö´É
-Íë (wan)£¬ËÆºõÓĞ¹Å¹Ö¡£
+è¿™é‡Œæ˜¯æ—¥æœˆç¥æ•™çš„åå…ã€‚çœ‹ä¸Šå»æ»¡æ˜¯ç°å°˜ï¼Œä½†ä¸­é—´æœ‰ä¸€ä¸ªç“·
+ç¢— (wan)ï¼Œä¼¼ä¹æœ‰å¤æ€ªã€‚
 LONG    );
         set("exits", ([
                 "east" : __DIR__"house1",
@@ -19,7 +19,7 @@ LONG    );
              __DIR__"npc/chushi" : 1,
                      ]));
         set("item_desc", ([
-            "wan" : "ÕâÊÇÒ»¸ö×Ôºº´úÁ÷´«ÏÂµÄ¹Å¶­£¬ºÜ±ğÖÂ¡£\n",
+            "wan" : "è¿™æ˜¯ä¸€ä¸ªè‡ªæ±‰ä»£æµä¼ ä¸‹çš„å¤è‘£ï¼Œå¾ˆåˆ«è‡´ã€‚\n",
         ]));
 //        set("no_clean_up", 0);
         setup();
@@ -36,18 +36,18 @@ int do_circle(string arg)
         object room;
 
         if ((arg != "wan") || !arg)
-          return notify_fail("ÄãÒªĞıÊ²Ã´£¿\n");
+          return notify_fail("ä½ è¦æ—‹ä»€ä¹ˆï¼Ÿ\n");
         if((int)me->query("str") < 12)
-          return notify_fail("Äã±ÛÁ¦Á¬Ğı²»¿ªÊ²Ã´£¡\n");
+          return notify_fail("ä½ è‡‚åŠ›è¿æ—‹ä¸å¼€ä»€ä¹ˆï¼\n");
         if(!( room = find_object(__DIR__"didao1")) )
            room = load_object(__DIR__"didao1");
         if(!objectp(room))  return notify_fail("ERROR:not found 'didao1.c' \n");
         if (!query("exits/down"))
           {
           set("exits/down", __DIR__"didao1");
-          message_vision("$N½«ÍëĞı¿ª£¬¼û²àÇ½´ò¿ªÂ¶£¬³öÒ»¸öºÚÓÄÓÄµÄ¶´¿Ú.\n",me);                    
+          message_vision("$Nå°†ç¢—æ—‹å¼€ï¼Œè§ä¾§å¢™æ‰“å¼€éœ²ï¼Œå‡ºä¸€ä¸ªé»‘å¹½å¹½çš„æ´å£.\n",me);                    
          room->set("exits/out", __DIR__"huoting");
-         return notify_fail("Ò»¶¨Òª×¥½ôÊ±¼ä£¬×ßºó½«Ëü¹ØÉÏ¡£\n");
+         return notify_fail("ä¸€å®šè¦æŠ“ç´§æ—¶é—´ï¼Œèµ°åå°†å®ƒå…³ä¸Šã€‚\n");
         }
         if(!( room = find_object(__DIR__"didao1")) )
            room = load_object(__DIR__"didao1");
@@ -55,18 +55,18 @@ int do_circle(string arg)
         if (!query("exits/down"))
           {
           set("exits/down", __DIR__"didao1");
-          message_vision("$NĞı¶¯ÁËÍë£¬Ö»¼û²àÇ½´ò¿ª£¬Â¶³öÒ»¸öºÚÓÄÓÄ
-              µÄ¶´¿Ú¡£\n",me);
+          message_vision("$Næ—‹åŠ¨äº†ç¢—ï¼Œåªè§ä¾§å¢™æ‰“å¼€ï¼Œéœ²å‡ºä¸€ä¸ªé»‘å¹½å¹½
+              çš„æ´å£ã€‚\n",me);
           room->set("exits/out", __DIR__"huoting");
-          message("vision", "ÍâÃæ´«À´Ò»Õó°á¶¯ÍëµÄÉùÒô£¬Ò»Êø¹âÏßÉäÁË½øÀ´¡£
+          message("vision", "å¤–é¢ä¼ æ¥ä¸€é˜µæ¬åŠ¨ç¢—çš„å£°éŸ³ï¼Œä¸€æŸå…‰çº¿å°„äº†è¿›æ¥ã€‚
           \n", room);
           }
          else
           {
           delete("exits/down");
-          message_vision("ºÜ¿ìÍëÓÖ°á»ØÁËÔ­Î»¡£²àÇ½ÉÏµÄ¶´¿ÚÓÖ±»·â×¡ÁË¡£\n",me);
+          message_vision("å¾ˆå¿«ç¢—åˆæ¬å›äº†åŸä½ã€‚ä¾§å¢™ä¸Šçš„æ´å£åˆè¢«å°ä½äº†ã€‚\n",me);
           room->delete("exits/out");
-          message("vision", "ÍâÃæ´«À´Ò»Õó°á¶¯ÍëµÄÉùÒô£¬¶´¿Ú±»·â×¡ÁË¡£\n", room);
+          message("vision", "å¤–é¢ä¼ æ¥ä¸€é˜µæ¬åŠ¨ç¢—çš„å£°éŸ³ï¼Œæ´å£è¢«å°ä½äº†ã€‚\n", room);
           }
        return 1;
 }

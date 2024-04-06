@@ -3,11 +3,11 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-   set_name("ÎäÔª¼×",({ "wu yuanjia","yuanjia"}) );
-        set("gender", "ÄÐÐÔ" );
+   set_name("æ­¦å…ƒç”²",({ "wu yuanjia","yuanjia"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇÎäÔª¼×,°²ÄÏ´ó½«¾ü¡£\n");
-    set("guard","°²ÄÏÍþÎä´ó½«¾ü");   
+   set("long", "è¿™æ˜¯æ­¦å…ƒç”²,å®‰å—å¤§å°†å†›ã€‚\n");
+    set("guard","å®‰å—å¨æ­¦å¤§å°†å†›");   
    set("combat_exp",800000);
    set("attitude", "peaceful");
    set_skill("unarmed",100);
@@ -70,7 +70,7 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 //	me->apply_condition("killer", 500);
 	kill_ob(me);
 	return 1;

@@ -4,12 +4,12 @@ inherit NPC;
 #include <ansi.h> 
 void create()
 {
-        set_name("Ð¡ÁúÅ®", ({ "xiao longnv", "longnv" }));
-        set("nickname", "ÉñµñÏÀÂÂ");
+        set_name("å°é¾™å¥³", ({ "xiao longnv", "longnv" }));
+        set("nickname", "ç¥žé›•ä¾ ä¾£");
         set("long", 
-                "Ó¯Ó¯¶øÕ¾×ÅÒ»Î»ÐãÃÀ¾øË×µÄÅ®×Ó£¬¼¡·ô¼äÉÙÁËÒ»²ãÑªÉ«£¬ÏÔµÃ²Ô°×Òì³£¡£\n"
-                "ÅûÖøÒ»Ï®ÇáÉ´°ãµÄ°×ÒÂ£¬ÓÌËÆÉíÔÚÑÌÖÐÎíÀï¡£\n");
-        set("gender", "Å®ÐÔ");
+                "ç›ˆç›ˆè€Œç«™ç€ä¸€ä½ç§€ç¾Žç»ä¿—çš„å¥³å­ï¼Œè‚Œè‚¤é—´å°‘äº†ä¸€å±‚è¡€è‰²ï¼Œæ˜¾å¾—è‹ç™½å¼‚å¸¸ã€‚\n"
+                "æŠ«è‘—ä¸€è¢­è½»çº±èˆ¬çš„ç™½è¡£ï¼ŒçŠ¹ä¼¼èº«åœ¨çƒŸä¸­é›¾é‡Œã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 17);
         set("attitude", "friendly");
         set("str", 30);
@@ -48,7 +48,7 @@ void create()
         map_skill("parry", "yunv-jian");
         map_skill("sword", "yunv-jian");
   
-        create_family("¹ÅÄ¹ÅÉ", 2, "ÉñµñÏÀÂÂ");
+        create_family("å¤å¢“æ´¾", 2, "ç¥žé›•ä¾ ä¾£");
         setup();
 //	carry_object("/clone/weapon/changjian")->wield();
       carry_object("d/gumu/npc/obj/baipao")->wear();

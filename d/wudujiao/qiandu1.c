@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ç§¶¾¿ßÍâ");
+	set("short", "åƒæ¯’çªŸå¤–");
 	set("long", @LONG
-ÕâÀïÊÇÎå¶¾½ÌËÇÑø¶¾ÎïµÄµØ·½£¬É½±ÚÅÔÓÐÒ»¸öÌìÈ»µÄÊ¯¶´£¬Àï
-ÃæºÚÆáÆáµÄ¿´²»Çå³þ¡£Ò»ÕóÉ½·ç´µÀ´£¬ÄãÎÅµ½Ò»¹ÉÐÈÎ¶¡£¶´¿ÚÕ¾×Å
-¼¸¸öÎå¶¾½ÌµÜ×Ó¡£ 
+è¿™é‡Œæ˜¯äº”æ¯’æ•™é¥²å…»æ¯’ç‰©çš„åœ°æ–¹ï¼Œå±±å£æ—æœ‰ä¸€ä¸ªå¤©ç„¶çš„çŸ³æ´žï¼Œé‡Œ
+é¢é»‘æ¼†æ¼†çš„çœ‹ä¸æ¸…æ¥šã€‚ä¸€é˜µå±±é£Žå¹æ¥ï¼Œä½ é—»åˆ°ä¸€è‚¡è…¥å‘³ã€‚æ´žå£ç«™ç€
+å‡ ä¸ªäº”æ¯’æ•™å¼Ÿå­ã€‚ 
 LONG
 	);
         set("outdoors", "wudujiao");
@@ -32,10 +32,10 @@ int valid_leave(object me, string dir)
     me=this_player();
    if(dir=="north")
       {
-  if ((string)me->query("family/family_name")!="Îå¶¾½Ì"
+  if ((string)me->query("family/family_name")!="äº”æ¯’æ•™"
         & objectp(present("di zi", environment(me))))
-          return notify_fail("Îå¶¾½ÌµÜ×ÓºöÈ»µ²×¡Äã£¬À÷ÉùºÈµÀ£ºÕâÎ»" +
-           RANK_D->query_respect(me) + "¹íÍ·¹íÄÔµÄÏë¸ÉÊ²Ã´£¿\n");
+          return notify_fail("äº”æ¯’æ•™å¼Ÿå­å¿½ç„¶æŒ¡ä½ä½ ï¼ŒåŽ‰å£°å–é“ï¼šè¿™ä½" +
+           RANK_D->query_respect(me) + "é¬¼å¤´é¬¼è„‘çš„æƒ³å¹²ä»€ä¹ˆï¼Ÿ\n");
       }
   return ::valid_leave(me, dir);
 }

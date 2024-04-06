@@ -1,15 +1,15 @@
 // /d/yazhang/guandao3.c
-// Room in ÑÀÕÊ
+// Room in ç‰™å¸
 // modify by yang
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "¹ÙµÀ");
+	set("short", "å®˜é“");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ¹ÙµÀÉÏ£¬¼¸Ã×¿íµÄ´óµÀ¿É²¢ÐÐÈýËÄÁ¾Âí³µ¶ø²»ÏÔÓµ¼·¡£
-Â·ÉÏÈýÁ©³ÉÈºµÄÐÐÈË¶¼ÊÇÍùÀ´··ÑÎµÄÉúÒâÈË¡£
+ä½ èµ°åœ¨ä¸€æ¡å®˜é“ä¸Šï¼Œå‡ ç±³å®½çš„å¤§é“å¯å¹¶è¡Œä¸‰å››è¾†é©¬è½¦è€Œä¸æ˜¾æ‹¥æŒ¤ã€‚
+è·¯ä¸Šä¸‰ä¿©æˆç¾¤çš„è¡Œäººéƒ½æ˜¯å¾€æ¥è´©ç›çš„ç”Ÿæ„äººã€‚
 LONG 
         );
 	set("exits", ([

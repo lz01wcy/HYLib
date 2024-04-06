@@ -1,14 +1,14 @@
 // /d/gaoli/dafujia1
-// Room in ����
+// Room in 高丽
 // rich 99/03/28
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-        set("short",HIC"��֮��"NOR);
+        set("short",HIC"大富之家"NOR);
         set("long", @LONG
-����һ�Ҹ������ڵĸ����˼ң�������˾���һ���ӣ����˲���Ǯ��
-�ڸ������ڸ�����ô����լ�ӣ��ſ�����������ʯʨ�ӣ�վ�������Ҷ���
+这是一家高丽城内的富贵人家，这家主人经商一辈子，攒了不少钱，
+在高丽城内盖了这么个大宅子，门口立着两个大石狮子，站着两个家丁。
 LONG
 );
         set("exits", ([ 

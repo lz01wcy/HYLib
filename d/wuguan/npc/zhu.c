@@ -4,14 +4,14 @@ inherit NPC;
 int study_book();
 void create()
 {
-	set_name("ÖìÓî", ({ "zhu yu","zhu","yu", "guanzhu" }));
-	set("title", "ÏåÑôÎä¹İ¹İÖ÷");
-       set("nick", "ÌúÕÆÁúÍş");
-	set("gender", "ÄĞĞÔ");
+	set_name("æœ±å®‡", ({ "zhu yu","zhu","yu", "guanzhu" }));
+	set("title", "è¥„é˜³æ­¦é¦†é¦†ä¸»");
+       set("nick", "é“æŒé¾™å¨");
+	set("gender", "ç”·æ€§");
 	set("age", 50);
 	set("str", 30);
 	set("dex", 26);
-	set("long", "ÕâÈË×Ï½ğÁ³ÅÓ£¬Ãæ´øÍşÑÏ£¬ÍşÎäÓĞÁ¦£¬Õ¾ÔÚÄÇÀï¾ÍÏóÊÇÒ»×ùÌúËş¡£\n");
+	set("long", "è¿™äººç´«é‡‘è„¸åºï¼Œé¢å¸¦å¨ä¸¥ï¼Œå¨æ­¦æœ‰åŠ›ï¼Œç«™åœ¨é‚£é‡Œå°±è±¡æ˜¯ä¸€åº§é“å¡”ã€‚\n");
 	set("combat_exp", 800000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");
@@ -35,9 +35,9 @@ void create()
 	set("max_neili", 2500);
 	set("jiali", 150);
         set("inquiry",  ([
-            "¹¤×÷" : "ºÇºÇ£¬ÄãÈ¥ÕÒÕÅ×Ü¹Ü°É£¬Ëû»á°²ÅÅÄãµÄ¡£",
-            "Á·¹¦" : "¶«Î÷Á·Îä³¡¶¼¿ÉÒÔÁ·µÄ£¬ÄãÈ¥ÄÇÁ·°É¡£",
-            "Ñ§Ï°" : (: study_book :),
+            "å·¥ä½œ" : "å‘µå‘µï¼Œä½ å»æ‰¾å¼ æ€»ç®¡å§ï¼Œä»–ä¼šå®‰æ’ä½ çš„ã€‚",
+            "ç»ƒåŠŸ" : "ä¸œè¥¿ç»ƒæ­¦åœºéƒ½å¯ä»¥ç»ƒçš„ï¼Œä½ å»é‚£ç»ƒå§ã€‚",
+            "å­¦ä¹ " : (: study_book :),
         ]));
 	setup();
         carry_object("clone/cloth/cloth")->wear();
@@ -50,14 +50,14 @@ void init()
 
      if (interactive(ob = this_player()) && !is_fighting() && !wizardp(ob)){
         if((int)ob->query("combat_exp") > 50000){ 
-            command("say ß×£¿ÄãÊÇÔõÃ´ÅÜÕâÀïÀ´µÄ£¿»ØÈ¥»ØÈ¥¡£ \n");
-            message_vision("$NÒ»°ÍÕÆ´òÔÚ$nÁ³ÉÏ£¬Ö»Ìı$p¡°Å¾~~¡±µØÒ»Éù£¬´ø×ÅÒ»¸ö¶·´óµÄÕÆÓ¡Ö±·ÉÁË³öÈ¥£¡\n", this_object(), ob);
+            command("say å’¦ï¼Ÿä½ æ˜¯æ€ä¹ˆè·‘è¿™é‡Œæ¥çš„ï¼Ÿå›å»å›å»ã€‚ \n");
+            message_vision("$Nä¸€å·´æŒæ‰“åœ¨$nè„¸ä¸Šï¼Œåªå¬$pâ€œå•ª~~â€åœ°ä¸€å£°ï¼Œå¸¦ç€ä¸€ä¸ªæ–—å¤§çš„æŒå°ç›´é£äº†å‡ºå»ï¼\n", this_object(), ob);
             ob->move("/d/wuguan/dayuan2");
-            command("say ÕâÒ»ÕĞÓĞ¸öÃûÌÃ£¬½Ğ×÷£ºÄÔ´üÏòÏÂ£¬´óÑãÄÏ·ÉÊ½¡£");
-            tell_room(environment(ob), "Ö»Ìı¡°ÍÛ~~¡±Ò»Éù´ó½Ğ£¬Ò»¸ö"+ob->name()+"´ÓÎä¹İ´óÌü·ÉÁË¹ıÀ´£¬Á³ÉÏ´ø×Å¸öºìºìµÄ°ÍÕÆÓ¡£¡\n", ({ ob }));
+            command("say è¿™ä¸€æ‹›æœ‰ä¸ªåå ‚ï¼Œå«ä½œï¼šè„‘è¢‹å‘ä¸‹ï¼Œå¤§é›å—é£å¼ã€‚");
+            tell_room(environment(ob), "åªå¬â€œå“‡~~â€ä¸€å£°å¤§å«ï¼Œä¸€ä¸ª"+ob->name()+"ä»æ­¦é¦†å¤§å…é£äº†è¿‡æ¥ï¼Œè„¸ä¸Šå¸¦ç€ä¸ªçº¢çº¢çš„å·´æŒå°ï¼\n", ({ ob }));
             }
          if((int)ob->query_condition("killer")){        
-            command("say Äã¾¹¸ÒÔÚÎä¹İÉ±ÈË£¡\n");
+            command("say ä½ ç«Ÿæ•¢åœ¨æ­¦é¦†æ€äººï¼\n");
             command("club "+ob->query("id"));
             ob->unconcious();
             } 
@@ -73,10 +73,10 @@ int study_book()
        ob = this_player();
        if (!me->query_temp("book_get")) {
        command("pat" +ob->query("id"));
-       command("say Êé·¿ÀïÓĞĞ©ÎÒ³£¿´µÄÊé£¬ÄãÈ¥·­·­¿´£¬ÓĞÃ»ÓĞ×Ô¼ºĞèÒªµÄ¡£");
+       command("say ä¹¦æˆ¿é‡Œæœ‰äº›æˆ‘å¸¸çœ‹çš„ä¹¦ï¼Œä½ å»ç¿»ç¿»çœ‹ï¼Œæœ‰æ²¡æœ‰è‡ªå·±éœ€è¦çš„ã€‚");
        ob->set_temp("wg_study",1);
        }
-       else message_vision("$N²»ÊÇ¸ÕÄÃ¹ıÒ»±¾ÊéÂğ£¿ÏÈÂıÂı¿´ÄÇ±¾°É£¡\n", this_player());
+       else message_vision("$Nä¸æ˜¯åˆšæ‹¿è¿‡ä¸€æœ¬ä¹¦å—ï¼Ÿå…ˆæ…¢æ…¢çœ‹é‚£æœ¬å§ï¼\n", this_player());
 
        return 1;
 }

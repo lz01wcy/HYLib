@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ñ©É½¹ÖÉß", ({ "snake", "she" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("é›ªå±±æ€ªè›‡", ({ "snake", "she" }) );
+        set("race", "é‡Žå…½");
         set("age", 20);
-        set("long", HIW"Ò»Ö»Ñ©É½¹ÖÉß,ËüÍ¨ÌåÑ©°×,ÑÛÈç"HIR"ÁÒÑ×"HIW",¿´À´Õâ¸ö±ù¶´ÊÇËüµÄ³²Ñ¨¡£\n"NOR);
+        set("long", HIW"ä¸€åªé›ªå±±æ€ªè›‡,å®ƒé€šä½“é›ªç™½,çœ¼å¦‚"HIR"çƒˆç‚Ž"HIW",çœ‹æ¥è¿™ä¸ªå†°æ´žæ˜¯å®ƒçš„å·¢ç©´ã€‚\n"NOR);
         set("attitude", "aggressive");
         set("qi", 8000);
         set("max_qi", 8000);
@@ -19,7 +19,7 @@ void create()
         set("con",50);
         set("dex",50);
         set("int",5);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 3000000);
@@ -43,14 +43,14 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage) > (int)ob->query_temp("apply/armor")
         &&      (int)ob->query_condition("snake_poison") < 10 ) {
                 ob->apply_condition("snake_poison", 40);
-        tell_object(ob, HIG"Äã¾õµÃ±»Ò§ÖÐµÄµØ·½Ò»ÕóÂéÄ¾,¿´À´ÖÐ¶¾ÁË£¡\n" NOR );
+        tell_object(ob, HIG"ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨,çœ‹æ¥ä¸­æ¯’äº†ï¼\n" NOR );
         }
 }
 
 void die()
 {
         object ob, corpse;
-        message_vision(RED"$NË¶´óÒ»¸öÉßÍ·¸ß¸ßÌ§Æð,È»ºóÂýÂýÎ¯¶ÙÏÂÀ´£¬ËÀÁË£¡\n"NOR, this_object());
+        message_vision(RED"$Nç¡•å¤§ä¸€ä¸ªè›‡å¤´é«˜é«˜æŠ¬èµ·,ç„¶åŽæ…¢æ…¢å§”é¡¿ä¸‹æ¥ï¼Œæ­»äº†ï¼\n"NOR, this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         ob = new("/d/lingxiao/obj/blood");
         ob->move(corpse);

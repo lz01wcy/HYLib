@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name("Ğ¡¶É¶ò", ({ "du e", "e" }) );
-        set("title", "ÉÙÁÖ³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set_name("å°æ¸¡å„", ({ "du e", "e" }) );
+        set("title", "å°‘æ—é•¿è€");
+        set("gender", "ç”·æ€§");
         set("class", "bonze");
         set("age", 90);
-        set("long", "ÕâÊÇÒ»¸öÃæ¼ÕÉîÏİ£¬Êİ¹ÇÁã¶¡µÄÀÏÉ®£¬ËûÁ³É«¿İ»Æ£¬ÈçÍ¬Ò»¶Î¿İÄ¾¡£\n");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªé¢é¢Šæ·±é™·ï¼Œç˜¦éª¨é›¶ä¸çš„è€åƒ§ï¼Œä»–è„¸è‰²æ¯é»„ï¼Œå¦‚åŒä¸€æ®µæ¯æœ¨ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 30);
@@ -30,8 +30,8 @@ void create()
 	set("max_neili", 2000);
 	set("jiali", 90);
 
-	create_family("ÉÙÁÖÅÉ", 35, "µÜ×Ó");
-	assign_apprentice("µÜ×Ó", 0);
+	create_family("å°‘æ—æ´¾", 35, "å¼Ÿå­");
+	assign_apprentice("å¼Ÿå­", 0);
 
 	set_skill("force", 150);
 	set_skill("whip", 300);

@@ -5,17 +5,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name( HIR "°ó×ÅÒ»¿éÄ¾Í·µÄĞâÌúÆ¬" NOR, ({ "rustysword" }) );
+	set_name( HIR "ç»‘ç€ä¸€å—æœ¨å¤´çš„é”ˆé“ç‰‡" NOR, ({ "rustysword" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñ°ó×ÅÒ»¿éÄ¾Í·µÄĞâÌúÆ¬£¬¿´ÆğÀ´ÏóÍæ¾ß£®\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠç»‘ç€ä¸€å—æœ¨å¤´çš„é”ˆé“ç‰‡ï¼Œçœ‹èµ·æ¥è±¡ç©å…·ï¼\n");
 		set("value", 400);
 		set("material", "steel");
-		set("wield_msg", "$N°Ñ±ğÔÚÑü¼ä$n°Î³öÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä¡£\n");
+		set("wield_msg", "$NæŠŠåˆ«åœ¨è…°é—´$næ‹”å‡ºæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ã€‚\n");
 	}
 	init_sword(85);
 	setup();

@@ -2,8 +2,8 @@ inherit NPC;
 string ask_me(int i);
 void create()
 {
-	set_name("ÌÆÃÅµÜ×Ó", ({ "di zi","zi"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("å”é—¨å¼Ÿå­", ({ "di zi","zi"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 21);
 	set("shen_type", 1);
 	set("str", 20);
@@ -36,7 +36,7 @@ void create()
         map_skill("strike", "biye-wu");
         map_skill("parry", "wuzhan-mei");
         map_skill("sword", "wuzhan-mei");
-	create_family("ÌÆÃÅ", 10, "µÜ×Ó");
+	create_family("å”é—¨", 10, "å¼Ÿå­");
         set("class", "tangmen");
         setup();
         carry_object("/d/tangmen/obj/changjian")->wield();

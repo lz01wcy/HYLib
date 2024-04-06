@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "北门岭");
 	set("long", @LONG
-��ƽ������ǽ����ɽ�¾���֮�䣬��������ڱ�����䡣�������
-�ߴ���ʵ�ã��ɽ�ˣ��Ӵ����½���ϪԴʮ�ﻭ�ȣ�ֱ��ã�����Ϫ
-Դ��
+延平府北城墙建与山崖绝壁之间，蜿蜒起伏于北门岭间。背后就是
+高达天际的茫荡山了，从此西下进入溪源十里画廊，直达茫荡深处的溪
+源。
 LONG );
 	set("exits", ([
 		"northwest" : __DIR__"youlang",

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÅÍ¥");
+	set("short", "é—¨åº­");
 	set("long", @LONG
-ÃÅÍ¥±±Ïò£¬ÊÇÒ»×ù¸ß´óµÄÄ¥×©ÃÅÂ¥£¬ÃÅé¹ÉÏ·½Ç¶ÓĞ¡¸Ğ¡ÁáççÉ½¹İ¡¹
-ËÄ×Ö×©¶î¡£ÃÅÄÚÓë´©ÀÈÏà½Ó£¬ÓÎÀÈåÔåÆ±±È¥£¬ÀÈ¾¡¶øÃÅ¡£
+é—¨åº­åŒ—å‘ï¼Œæ˜¯ä¸€åº§é«˜å¤§çš„ç£¨ç –é—¨æ¥¼ï¼Œé—¨æ¥£ä¸Šæ–¹åµŒæœ‰ã€Œå°ç²ç‘å±±é¦†ã€
+å››å­—ç –é¢ã€‚é—¨å†…ä¸ç©¿å»Šç›¸æ¥ï¼Œæ¸¸å»Šé€¶è¿¤åŒ—å»ï¼Œå»Šå°½è€Œé—¨ã€‚
 LONG );
 	set("outdoors", "yangzhouw");
 //	set("no_fight", 1);
@@ -32,8 +32,8 @@ int valid_leave(object me, string dir)
 		&& objectp( ob = present ( "jia ding", environment( me )  ) )
 		&& living(ob) )
 	{
-		message_vision("¼Ò¶¡¶Ô$NËµµÀ£ºÎ´¾­ÀÏÒ¯ÑûÇë£¬Äã²»ÄÜ½øÈ¥¡£\n",me);
-		return notify_fail("Äã±»¼Ò¶¡À¹×¡ÁËÈ¥Â·¡£\n");
+		message_vision("å®¶ä¸å¯¹$Nè¯´é“ï¼šæœªç»è€çˆ·é‚€è¯·ï¼Œä½ ä¸èƒ½è¿›å»ã€‚\n",me);
+		return notify_fail("ä½ è¢«å®¶ä¸æ‹¦ä½äº†å»è·¯ã€‚\n");
 	}
 	return ::valid_leave(me, dir);
 }

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "é�Ҳ�");
+        set("short", "茅家埠");
         set("long", @LONG
-·���Ը��ż���С���������ſ�һλ�ϴ�������ι��������С��
-����׷����Ϸ���������ϻ����롣�����Ƕ���ɽ��
+路两旁盖着几座小土房。房门口一位老大娘正在喂鸡，几个小孩
+正在追逐嬉戏。北边是上黄泥岭。南面是丁家山。
 LONG);
         set("exits", ([
             "southwest"   : __DIR__"tulu1",

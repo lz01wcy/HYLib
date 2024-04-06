@@ -10,11 +10,11 @@ string ask_me();
 
 void create()
 {
-	set_name("Ììºç´óÊ¦", ({ "tianhong dashi", "tianhong", "dashi"}));
+	set_name("å¤©è™¹å¤§å¸ˆ", ({ "tianhong dashi", "tianhong", "dashi"}));
 	set("long",
-		"ËûÊÇÒ»Î»°×Ğë°×Ã¼µÄÀÏÉ®£¬Éí´©Ò»Ï®½ğË¿ĞåºìôÂôÄ¡£\n"
-		"ËûÉí²ÄÂÔÏÔØşÙÍ£¬µ«È´ÂúÃæºì¹â£¬Ä¿ÔÌ´ÈĞ¦£¬ÏÔµÃÉñÍêÆø×ã¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–æ˜¯ä¸€ä½ç™½é¡»ç™½çœ‰çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¢­é‡‘ä¸ç»£çº¢è¢ˆè£Ÿã€‚\n"
+		"ä»–èº«æç•¥æ˜¾ä½å»ï¼Œä½†å´æ»¡é¢çº¢å…‰ï¼Œç›®è•´æ…ˆç¬‘ï¼Œæ˜¾å¾—ç¥å®Œæ°”è¶³ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -110,7 +110,7 @@ void create()
 	set_temp("apply/damage", 660);
 	set_temp("apply/armor", 660);
 
-	create_family("ÄÏÉÙÁÖÅÉ", 18, "·½ÕÉ");
+	create_family("å—å°‘æ—æ´¾", 18, "æ–¹ä¸ˆ");
 	setup();
 	//carry_object(__DIR__"wtgun")->wield();
 	carry_object("/d/shaolin/obj/xuan-cloth")->wear();
@@ -132,10 +132,10 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 
-	if(ob->query_temp("job_name") == "·şÊÌ·½ÕÉ")
+	if(ob->query_temp("job_name") == "æœä¾æ–¹ä¸ˆ")
 	{
 		command("pat "+ob->query("id"));
-		command("say " + RANK_D->query_respect(ob) + "Äã¾Í¸øÎÒ°´Ä¦Ò»ÏÂ°É(massage ·½ÕÉ)ºÇºÇºÇ¡£\n");
+		command("say " + RANK_D->query_respect(ob) + "ä½ å°±ç»™æˆ‘æŒ‰æ‘©ä¸€ä¸‹å§(massage æ–¹ä¸ˆ)å‘µå‘µå‘µã€‚\n");
 	}
 	return;
 }

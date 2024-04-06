@@ -12,11 +12,11 @@ string* npcs = ({
 
 void create()
 {
-	set("short", "Ç§¶¾¿ß");
+	set("short", "åƒæ¯’çªŸ");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¸öÌìÈ»ÐÎ³ÉµÄÊ¯¶´£¬ÀïÃæÉîåä¹ã´ó¡£¶´¶¥Ðü¹Ò×ÅÐí¶à
-ÖÓÈéÊ¯£¬²»Ê±´«À´¼¸ÉùµÎ´ðµÄË®Éù¡£×ßÔÚ¶´ÖÐ£¬¶´ÄÚÒõ°µ³±Êª£¬Éí
-ÅÔºöÈ»´«À´Ò»Õó¡°ßÐßÐ¡±µÄÉùÒô¡£
+è¿™é‡Œæ˜¯ä¸€ä¸ªå¤©ç„¶å½¢æˆçš„çŸ³æ´žï¼Œé‡Œé¢æ·±é‚ƒå¹¿å¤§ã€‚æ´žé¡¶æ‚¬æŒ‚ç€è®¸å¤š
+é’Ÿä¹³çŸ³ï¼Œä¸æ—¶ä¼ æ¥å‡ å£°æ»´ç­”çš„æ°´å£°ã€‚èµ°åœ¨æ´žä¸­ï¼Œæ´žå†…é˜´æš—æ½®æ¹¿ï¼Œèº«
+æ—å¿½ç„¶ä¼ æ¥ä¸€é˜µâ€œå’å’â€çš„å£°éŸ³ã€‚
 LONG
 	);
 //        set("outdoors", "wudujiao");

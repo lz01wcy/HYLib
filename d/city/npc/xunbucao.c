@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-     string *surname=({"Ä½Èİ","Î÷ÃÅ","¹«Ëï","ÉÏ¹Ù","ÄÏ¹¬","Å·Ñô","Ë¾Í½","×ÏÔÆ","Á÷ĞÇ",});
-     set_name(surname[random(sizeof(surname))]+"Ñ²²¶", ({ "xun bu","police"}) );
-     set("gender", "ÄĞĞÔ" );
+     string *surname=({"æ…•å®¹","è¥¿é—¨","å…¬å­™","ä¸Šå®˜","å—å®«","æ¬§é˜³","å¸å¾’","ç´«äº‘","æµæ˜Ÿ",});
+     set_name(surname[random(sizeof(surname))]+"å·¡æ•", ({ "xun bu","police"}) );
+     set("gender", "ç”·æ€§" );
      set("no_get",1);
      set("no_put",1);
      set("age", 25);
@@ -18,7 +18,7 @@ void create()
      set("per", 60);
      set("kar", 65);
      set("long",@LONG
-Ñ²²¶¸ö¸öÉíÊÖ½Ã½¡£¬Ç¿µÁ¡¢É½ÔôÎŞ²»ÎÅ·çÉ¥µ¨¡£
+å·¡æ•ä¸ªä¸ªèº«æ‰‹çŸ«å¥ï¼Œå¼ºç›—ã€å±±è´¼æ— ä¸é—»é£ä¸§èƒ†ã€‚
 LONG
 );
      set("status","patrol");
@@ -27,12 +27,12 @@ LONG
      set("attitude", "heroism");
      set ("inquiry",([
                 "bribery":
-"ËµÄÄÀï»°À´£¬ÏØÌ«Ò¯ÇåÆ¶Á®Õı£¬ÎÒÃÇ×÷ÊÖÏÂµÄÆñÄÜÈèÃ»ËûµÄÃûÉù£¿\n"+
-"ÊÕÆğÄãµÄÇ®°É£¡\n",
+"è¯´å“ªé‡Œè¯æ¥ï¼Œå¿å¤ªçˆ·æ¸…è´«å»‰æ­£ï¼Œæˆ‘ä»¬ä½œæ‰‹ä¸‹çš„å²‚èƒ½è¾±æ²¡ä»–çš„åå£°ï¼Ÿ\n"+
+"æ”¶èµ·ä½ çš„é’±å§ï¼\n",
                 "salary":
-"°¥£¬ÀÏÒ¯ÙºÒøÎ¢±¡£¬ÎÒÃÇµÄÄêâÃ×ÔÈ»¸üÉÙÁË......\n",
+"å“ï¼Œè€çˆ·ä¿¸é“¶å¾®è–„ï¼Œæˆ‘ä»¬çš„å¹´é¥·è‡ªç„¶æ›´å°‘äº†......\n",
                 "money":
-"ËµÊµÔÚµÄ£¬ÎÒÒ²ÏëÒªÇ®¡£µ«ÒªÊÇÈÃÀÏÒ¯ÖªµÀÁËÎÒÊÕÊÜ»ßÂ¸(give)£¬\n²»ËÀÒ²µÃ°Ç²ãÆ¤\n
+"è¯´å®åœ¨çš„ï¼Œæˆ‘ä¹Ÿæƒ³è¦é’±ã€‚ä½†è¦æ˜¯è®©è€çˆ·çŸ¥é“äº†æˆ‘æ”¶å—è´¿èµ‚(give)ï¼Œ\nä¸æ­»ä¹Ÿå¾—æ‰’å±‚çš®\n
 ",
                         ]));
 	set("chat_chance_combat", 90);
@@ -145,7 +145,7 @@ ob->start_busy(5);
         ob->apply_condition("xiezi_poison", 40);
         ob->apply_condition("snake_poison", 40);
         ob->apply_condition("zhizhu_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»¿³ÖĞµÄµØ·½Ò»ÕóÂéÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«ç ä¸­çš„åœ°æ–¹ä¸€é˜µéº»ç—’ï¼\n" NOR );
 }
 }
 int accept_object(object who, object ob)
@@ -158,24 +158,24 @@ int accept_object(object who, object ob)
 p=0;
         if (! ob->query("money_id"))
         {
-               command("say ÕâÍæÒÕÎÒ¿ÉÃ»É¶ĞËÈ¤£¡");
+               command("say è¿™ç©è‰ºæˆ‘å¯æ²¡å•¥å…´è¶£ï¼");
                return 0;
         }
 
         if (ob->value() < 20000000)
         {
 		command("shake " + who->query("id"));
-                command("say ËµÄÄÀï»°À´£¬ÏØÌ«Ò¯ÇåÆ¶Á®Õı£¬ÎÒÃÇ×÷ÊÖÏÂµÄÆñÄÜÈèÃ»ËûµÄÃûÉù£¿");
+                command("say è¯´å“ªé‡Œè¯æ¥ï¼Œå¿å¤ªçˆ·æ¸…è´«å»‰æ­£ï¼Œæˆ‘ä»¬ä½œæ‰‹ä¸‹çš„å²‚èƒ½è¾±æ²¡ä»–çš„åå£°ï¼Ÿ");
                 return 0;
         }
 
-        command("say °¦£¡°¥£¬ÀÏÒ¯ÙºÒøÎ¢±¡£¬ÎÒÃÇµÄÄêâÃ×ÔÈ»¸üÉÙÁË......ÎÒ¾ÍÍ¨Ò»´ÎÈËÇé°É£¡");
+        command("say å”‰ï¼å“ï¼Œè€çˆ·ä¿¸é“¶å¾®è–„ï¼Œæˆ‘ä»¬çš„å¹´é¥·è‡ªç„¶æ›´å°‘äº†......æˆ‘å°±é€šä¸€æ¬¡äººæƒ…å§ï¼");
 //command("give silver to hxsd");
 		inv = all_inventory(obj);
 		for(i=0; i<sizeof(inv); i++) {
 if(inv[i]->query("dynamic_quest"))
 {
-message("channel:chat", HIC"¡¾ÉñÊéĞÅÏ¢¡¿"GRN + who->query("name")+"µÃµ½"+HIR"ÉñÊé:" + inv[i]->query("name")+HIG"À²£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€ç¥ä¹¦ä¿¡æ¯ã€‘"GRN + who->query("name")+"å¾—åˆ°"+HIR"ç¥ä¹¦:" + inv[i]->query("name")+HIG"å•¦ï¼\n"NOR,users() );
 inv[i]->move(who);
 p=1;
 }
@@ -184,13 +184,13 @@ p=1;
         if (p ==0 && !ob->query_condition("killer"))
         {
 		command("shake " + who->query("id"));
-                command("say ÎÒÃ»Ê²Ã´¿ÉÒÔ°ïÄãµÄ! ");
+                command("say æˆ‘æ²¡ä»€ä¹ˆå¯ä»¥å¸®ä½ çš„! ");
                 return 0;
         }
 
         if (ob->value() >= 50000000)
 {
-    command("say °¦£¡×ß°É£¬²»ÒªÔÙÈÃÎÒ¿´µ½......");
+    command("say å”‰ï¼èµ°å§ï¼Œä¸è¦å†è®©æˆ‘çœ‹åˆ°......");
         	 who->clear_condition("killer");
 }
 //      destruct(ob);

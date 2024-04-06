@@ -1,5 +1,5 @@
 // Room: /d/city/jiaowai8.c
-//ÐÇÐÇlywin4/29
+//æ˜Ÿæ˜Ÿlywin4/29
 
 #include <ansi.h>
 #include <room.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Ð¡Ê÷ÁÖ");
+    set("short", "å°æ ‘æž—");
     set("long", @LONG
-ÕâÊÇÑïÖÝ½¼ÍâµÄÒ»Æ¬Ð¡Ê÷ÁÖ£¬ÂäÓ¢çÍ·×£¬·ä¸èµûÎè£¬³¯Â¶Ï¦¹â£¬ÇßÈË
-ÐÄÆ¢¡£ºôÅó»½ÓÑ¿ª»³»¶ÀÖÕýÆäÊ±¡£ÖÜÎ§Ð¡Ê÷¿Å¿Å½¡ÃÀ£¬ÉÏÓÐÎÞÊýµÄÐ¡ÄñÐ¡
-È¸ÔÚÊ÷ÉÒÉÏ»¶¸è£¬Ò»µãÒ²²»ÅÂÈË¡£ÕâÕýÊÇ¸ö´òÄñ£¨da£©µÄºÃ»ú»á¡£
+è¿™æ˜¯æ‰¬å·žéƒŠå¤–çš„ä¸€ç‰‡å°æ ‘æž—ï¼Œè½è‹±ç¼¤çº·ï¼Œèœ‚æ­Œè¶èˆžï¼Œæœéœ²å¤•å…‰ï¼Œæ²äºº
+å¿ƒè„¾ã€‚å‘¼æœ‹å”¤å‹å¼€æ€€æ¬¢ä¹æ­£å…¶æ—¶ã€‚å‘¨å›´å°æ ‘é¢—é¢—å¥ç¾Žï¼Œä¸Šæœ‰æ— æ•°çš„å°é¸Ÿå°
+é›€åœ¨æ ‘æ¢¢ä¸Šæ¬¢æ­Œï¼Œä¸€ç‚¹ä¹Ÿä¸æ€•äººã€‚è¿™æ­£æ˜¯ä¸ªæ‰“é¸Ÿï¼ˆdaï¼‰çš„å¥½æœºä¼šã€‚
 LONG );
     set("exits", ([
         "east" : __DIR__"nanmen",
@@ -36,54 +36,54 @@ int do_da()
         me = this_player();
 
         if(me->is_busy())
-             return notify_fail("Äã»¹ÊÇµÈ¹­×°ºÃÁË¼ýÔÙ´òÄñ°É£¡\n");
+             return notify_fail("ä½ è¿˜æ˜¯ç­‰å¼“è£…å¥½äº†ç®­å†æ‰“é¸Ÿå§ï¼\n");
 
         if(me->query("qi")<10)
-             return notify_fail(HIR"Äã»¹ÊÇÏÈÐÝÏ¢Ò»ÏÂ°É£¬Éä¼ýÒ²ÒªÓÃÁ¦ÆøÓ´¡£¡£\n"NOR);
+             return notify_fail(HIR"ä½ è¿˜æ˜¯å…ˆä¼‘æ¯ä¸€ä¸‹å§ï¼Œå°„ç®­ä¹Ÿè¦ç”¨åŠ›æ°”å“Ÿã€‚ã€‚\n"NOR);
 
                            me->start_busy(3);
-        message_vision("$NÄÃÆð¶ùÊ±ÍæË£ÓÃµÄÐ¡¹­Ð¡¼ý£¬Ãé×¼Ê÷ÉÏµÄÐ¡È¸ÉäÈ¥......\n", me);
+        message_vision("$Næ‹¿èµ·å„¿æ—¶çŽ©è€ç”¨çš„å°å¼“å°ç®­ï¼Œçž„å‡†æ ‘ä¸Šçš„å°é›€å°„åŽ»......\n", me);
 
-               message_vision("$NÖ»ÌýÊ÷ÉÏÒ»ÕóÄñ¶ù¼±Ãù¡­\n",me);
+               message_vision("$Nåªå¬æ ‘ä¸Šä¸€é˜µé¸Ÿå„¿æ€¥é¸£â€¦\n",me);
         kar = me->query("kar");
         
         if (random(kar)>15) {
-                message_vision("$N´òµ½Ò»Ö»"HIW"°ÙÁéÄñ¡£\n"NOR, me);
+                message_vision("$Næ‰“åˆ°ä¸€åª"HIW"ç™¾çµé¸Ÿã€‚\n"NOR, me);
                     if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                 else {
                         bb=(int)me->query("combat_exp");
                         me->set("combat_exp",10+bb);
-                        tell_object(me,"ÄãµÃµ½ÁË10µã¾­Ñé\n");
+                        tell_object(me,"ä½ å¾—åˆ°äº†10ç‚¹ç»éªŒ\n");
                 }
        me->receive_damage("qi", 10);
                 bb=(int)me->query("potential");
                     if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                 else {
                         me->set("potential",4+bb);
-                        tell_object(me,"ÄãµÃµ½ÁË4µãÇ±ÄÜ\n");
+                        tell_object(me,"ä½ å¾—åˆ°äº†4ç‚¹æ½œèƒ½\n");
                 }
 
                 return 1;
         }
         
         if (random(kar)>10) {
-                message_vision("$N´òµ½Ò»Ö»"HIY"½ðË¿È¸¡£\n"NOR, me);
+                message_vision("$Næ‰“åˆ°ä¸€åª"HIY"é‡‘ä¸é›€ã€‚\n"NOR, me);
                     if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                 else {
                         bb=(int)me->query("combat_exp");
                         me->set("combat_exp",8+bb);
-                        tell_object(me,"ÄãµÃµ½ÁË8µã¾­Ñé\n");
+                        tell_object(me,"ä½ å¾—åˆ°äº†8ç‚¹ç»éªŒ\n");
                 }
        me->receive_damage("qi", 10);
                 bb=(int)me->query("potential");
                     if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                 else {
                         me->set("potential",bb+3);
-                        tell_object(me,"ÄãµÃµ½ÁË3µãÇ±ÄÜ\n");
+                        tell_object(me,"ä½ å¾—åˆ°äº†3ç‚¹æ½œèƒ½\n");
                 }
 
                 return 1;
@@ -91,22 +91,22 @@ int do_da()
         
         if (random(kar)>8) 
             {
-               message_vision("$N´òµ½Ò»Ö»"HIG"ðÐðÄ¡£\n"NOR, me);
+               message_vision("$Næ‰“åˆ°ä¸€åª"HIG"é¹¦é¹‰ã€‚\n"NOR, me);
                 bb=(int)me->query("combat_exp");
                   if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                         else {
-                        tell_object(me,"ÄãµÃµ½ÁË5µã¾­Ñé\n");
+                        tell_object(me,"ä½ å¾—åˆ°äº†5ç‚¹ç»éªŒ\n");
                         me->set("combat_exp",5+bb);
                 }
             me->receive_damage("qi", 10);  
                 
                 bb=(int)me->query("potential");
                     if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                 else {
                         me->set("potential",bb+2);
-                       tell_object(me,"ÄãµÃµ½ÁË2µãÇ±ÄÜ\n");
+                       tell_object(me,"ä½ å¾—åˆ°äº†2ç‚¹æ½œèƒ½\n");
                }
 
                return 1;
@@ -114,22 +114,22 @@ int do_da()
 
         if (random(kar)>5) 
             {
-               message_vision("$N´òµ½Ò»Ö»"YEL"ÂéÈ¸¡£\n"NOR, me);
+               message_vision("$Næ‰“åˆ°ä¸€åª"YEL"éº»é›€ã€‚\n"NOR, me);
                 bb=(int)me->query("combat_exp");
                   if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                         else {
-                        tell_object(me,"ÄãµÃµ½ÁË1µã¾­Ñé\n");
+                        tell_object(me,"ä½ å¾—åˆ°äº†1ç‚¹ç»éªŒ\n");
                         me->set("combat_exp",2+bb);
                 }
             me->receive_damage("qi", 10);  
                 
                 bb=(int)me->query("potential");
                     if (me->query("combat_exp")>=1000)
-                        tell_object(me,"ÄãÒÑ¾­²»ÄÜÓÃ´òÄñÀ´¶ÍÁ¶ÁË¡£\n");
+                        tell_object(me,"ä½ å·²ç»ä¸èƒ½ç”¨æ‰“é¸Ÿæ¥é”»ç‚¼äº†ã€‚\n");
                 else {
                         me->set("potential",bb+1);
-                       tell_object(me,"ÄãµÃµ½ÁË2µãÇ±ÄÜ\n");
+                       tell_object(me,"ä½ å¾—åˆ°äº†2ç‚¹æ½œèƒ½\n");
                }
 
                return 1;
@@ -137,7 +137,7 @@ int do_da()
         else 
            {
                 me->receive_damage("qi", 10);  
-                message_vision("$NÊ²Ã´Ò²Ã»´òµ½¡£\n",me );
+                message_vision("$Nä»€ä¹ˆä¹Ÿæ²¡æ‰“åˆ°ã€‚\n",me );
      }
 
         return 1;

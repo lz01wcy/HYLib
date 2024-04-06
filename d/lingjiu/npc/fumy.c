@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("·ûÃôÒÇ", ({ "fu mingyi", "fu"}));
+	set_name("ç¬¦æ•ä»ª", ({ "fu mingyi", "fu"}));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞÑôÌì²¿µÄÊ×Áì.\n"+
-	    "ËıºÅ³Æ¡¸ÕëÉñ¡¹.\n");
-	set("title", "ÑôÌì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
-	set("nickname", HIR "ÕëÉñ" NOR);
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­é˜³å¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹å·ç§°ã€Œé’ˆç¥ã€.\n");
+	set("title", "é˜³å¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
+	set("nickname", HIR "é’ˆç¥" NOR);
 	set("age", 20);
 	set("shen_type",1);
 	set("attitude", "peaceful");
@@ -51,7 +51,7 @@ void create()
 	map_skill("hand", "zhemei-shou");
 	map_skill("parry", "liuyang-zhang");
 
-	create_family("ÁéğÕ¹¬",3,"µÜ×Ó");
+	create_family("çµé¹«å®«",3,"å¼Ÿå­");
 	setup();
 
         carry_object("/d/lingjiu/obj/qingyi")->wear();

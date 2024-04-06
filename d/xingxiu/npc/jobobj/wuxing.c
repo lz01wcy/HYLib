@@ -5,12 +5,12 @@ inherit ITEM;
 int throw_ob(string arg);
 void create()
 {
-   set_name(HIW"ÎÞÐÎÉ¢"NOR, ({"wuxing san", "san", "wuxing"}));
+   set_name(HIW"æ— å½¢æ•£"NOR, ({"wuxing san", "san", "wuxing"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("long", HIG"Ò»°ü¿ÉÒÔµ¯(tanshe)µÄ¶¾Ò©¡£\n" NOR);
-      set("unit", "°ü");
+      set("long", HIG"ä¸€åŒ…å¯ä»¥å¼¹(tanshe)çš„æ¯’è¯ã€‚\n" NOR);
+      set("unit", "åŒ…");
       set("value", 0);
       set("skill", "feixing-shu");
    }
@@ -28,43 +28,43 @@ int throw_ob(string arg)
    object me,victim;   
 
 me=this_player();
-   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "ÐÇËÞÅÉ"))
-                  return notify_fail("Ö»ÓÐÐÇËÞµÜ×ÓÀûÓÃ±¾ÃÅÃØ´«ÄÚ¹¦·½ÄÜÊ¹ÓÃÎÞÐÎÉ¢¶¾¡£\n"); 
+   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "æ˜Ÿå®¿æ´¾"))
+                  return notify_fail("åªæœ‰æ˜Ÿå®¿å¼Ÿå­åˆ©ç”¨æœ¬é—¨ç§˜ä¼ å†…åŠŸæ–¹èƒ½ä½¿ç”¨æ— å½¢æ•£æ¯’ã€‚\n"); 
 
-        if( !arg ) return notify_fail("ÄãÏë¶ÔË­Ê¹ÓÃÎÞÐÎÉ¢¶¾£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³å¯¹è°ä½¿ç”¨æ— å½¢æ•£æ¯’ï¼Ÿ\n");
 
         if( !objectp(victim = present(arg, environment(me))) )
-                return notify_fail("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
         if( victim->query("id")==me->query("id"))
-                return notify_fail("ÄãÏëÉ±×Ô¼ºÂð£¿\n");
+                return notify_fail("ä½ æƒ³æ€è‡ªå·±å—ï¼Ÿ\n");
 	if( !victim
 	||	!victim->is_character()
 	||	!me->is_fighting(victim) )
-		return notify_fail("ÎÞÐÎÉ¢¶¾,Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æ— å½¢æ•£æ¯’,åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
    if( me->query("neili") <= 1000 ){
-        write("ÄãµÄÄÚÁ¦²»¹»´ÝÆÈÎÞÐÎÉ¢¶¾£¡\n");
+        write("ä½ çš„å†…åŠ›ä¸å¤Ÿæ‘§è¿«æ— å½¢æ•£æ¯’ï¼\n");
         return 1;
    }
 
    if (me->query_skill("poison", 1) < 120){
-        write("µ±ÐÄ¶¾ËÀÄã×Ô¼º£¡\n");
+        write("å½“å¿ƒæ¯’æ­»ä½ è‡ªå·±ï¼\n");
         return 1;
    }
 
-   if( environment(me)->query("no_fight") ) return notify_fail("²»ÐÐ!\n");
+   if( environment(me)->query("no_fight") ) return notify_fail("ä¸è¡Œ!\n");
 	
-   if( me->is_busy() ) return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÊ©ÓÃÍâ¹¦¡£)\n");
+   if( me->is_busy() ) return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½ç”¨å¤–åŠŸã€‚)\n");
 	
 
 
    if (me->query_condition("killer") > 10 && userp(victim)){
-        write("Äã¸Ðµ½Ò»Ë¿ÄÚ¾Î£¬ÊÖÍ»È»ÈíÁËÏÂÀ´¡£\n");
+        write("ä½ æ„Ÿåˆ°ä¸€ä¸å†…ç–šï¼Œæ‰‹çªç„¶è½¯äº†ä¸‹æ¥ã€‚\n");
         return 1;
    }
    
-   message_vision(HIW"$NÎ¢Î¢Ò»Ð¦£¬Éñ³öÐ¡Ö¸Ïò$nÇáÇáÒ»µ¯£¬$n¾õµÃÑÛÇ°Ò»»¨£¬ËÆºõÓÐÒ»²ã°×ÎíÏò×Ô¼ºÆ®À´¡£\n"NOR, me, victim);
+   message_vision(HIW"$Nå¾®å¾®ä¸€ç¬‘ï¼Œç¥žå‡ºå°æŒ‡å‘$nè½»è½»ä¸€å¼¹ï¼Œ$nè§‰å¾—çœ¼å‰ä¸€èŠ±ï¼Œä¼¼ä¹Žæœ‰ä¸€å±‚ç™½é›¾å‘è‡ªå·±é£˜æ¥ã€‚\n"NOR, me, victim);
 
    if (me->query_skill("poison", 1) < victim->query_skill("poison", 1) + 30){
            victim->apply_condition("insect_poison", 100);
@@ -97,7 +97,7 @@ me=this_player();
                 
         this_object()->set_temp("used", 1);
         this_object()->set("value", 10);
-        message_vision(HIR"$nÒ»²»Ð¡ÐÄ±»$Nµ¯³öµÄÎÞÐÎÉ¢É¢´òÖÐÁËÉíÉÏ!\n" NOR, me, victim);
+        message_vision(HIR"$nä¸€ä¸å°å¿ƒè¢«$Nå¼¹å‡ºçš„æ— å½¢æ•£æ•£æ‰“ä¸­äº†èº«ä¸Š!\n" NOR, me, victim);
         victim->apply_condition("sanpoison",me->query_skill("poison",1));      
         destruct(this_object());
       
@@ -106,7 +106,7 @@ me=this_player();
         
         return 1;
    } else {
-        message_vision(HIR"$nÅÛÐäÒ»·÷£¬Ò»¹ÉÄÚ¾¢·¢³ö£¬½«ÄÇÎÞÐÎÉ¢¾¡Êý³¯$N·÷½«»ØÈ¥¡£\n" NOR, me, victim);
+        message_vision(HIR"$nè¢è¢–ä¸€æ‹‚ï¼Œä¸€è‚¡å†…åŠ²å‘å‡ºï¼Œå°†é‚£æ— å½¢æ•£å°½æ•°æœ$Næ‹‚å°†å›žåŽ»ã€‚\n" NOR, me, victim);
         this_object()->set_temp("used", 1);
         this_object()->set("value", 10);
         victim->apply_condition("sanpoison",me->query_skill("poison",1));      

@@ -8,16 +8,16 @@ inherit STAFF;
 
 void create()
 {
-	set_name(HIW"¸ÖèÆ"NOR,({"gang chu","chu"}));
+	set_name(HIW"é’¢æµ"NOR,({"gang chu","chu"}));
 	set_weight(100000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else{
-		set("unit","¸ù");
+		set("unit","æ ¹");
 		set("value",100);
 		set("material","black_steel");
-		set("long", HIW"ÕâÊÇÒ»¸ù¾«¸ÖËùÖıµÄ½µÄ§èÆ£¬Ç§´¸°ÙÁ¶£¬·´Éä³öÉÁÉÁµÄº®¹â¡£\n"NOR);
-	       set("unwield_msg","$NÒ»Éù³¤Ğ¥£¬½«¸ÖèÆ·Å»Ø±³ºó¡£\n");
+		set("long", HIW"è¿™æ˜¯ä¸€æ ¹ç²¾é’¢æ‰€é“¸çš„é™é­”æµï¼Œåƒé”¤ç™¾ç‚¼ï¼Œåå°„å‡ºé—ªé—ªçš„å¯’å…‰ã€‚\n"NOR);
+	       set("unwield_msg","$Nä¸€å£°é•¿å•¸ï¼Œå°†é’¢æµæ”¾å›èƒŒåã€‚\n");
 	}
 	init_staff(30);
 
@@ -36,11 +36,11 @@ int do_wield(string arg)
 	{ 
 		if((int)me->query_str() < 30)
 		{
-			tell_object(me,"ÄãÏë¾ÙÆğ¸ÖèÆ£¬ÄÎºÎ¹ıÓÚ³ÁÖØ£¬ÄÃ²»¶¯¡£\n");
+			tell_object(me,"ä½ æƒ³ä¸¾èµ·é’¢æµï¼Œå¥ˆä½•è¿‡äºæ²‰é‡ï¼Œæ‹¿ä¸åŠ¨ã€‚\n");
 			return 1;
 		}     
 		ob->wield();
-		message_vision( HIW"$NË«ÊÖÓÃÁ¦Ò»¾Ù£¬½«Ò»¸ù³ÁÖØµÄ¸ÖèÆ¸ß¸ß¾ÙÁËÆğÀ´¡£\n"NOR, me);
+		message_vision( HIW"$NåŒæ‰‹ç”¨åŠ›ä¸€ä¸¾ï¼Œå°†ä¸€æ ¹æ²‰é‡çš„é’¢æµé«˜é«˜ä¸¾äº†èµ·æ¥ã€‚\n"NOR, me);
 		return 1; 
 	}
 	return 0;

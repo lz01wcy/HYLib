@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-   set_name("´óÊ÷", ({ "tree" }) );
+   set_name("å¤§æ ‘", ({ "tree" }) );
    set_weight(4000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¿Ã");
-     set("long","ÕâÊÇÒ»¿Ã´óÊ÷£¬ÉÏÃæºÃÏóÓÐ¸öÓ¥³²¡£\n");
+     set("unit", "æ£µ");
+     set("long","è¿™æ˜¯ä¸€æ£µå¤§æ ‘ï¼Œä¸Šé¢å¥½è±¡æœ‰ä¸ªé¹°å·¢ã€‚\n");
    }
    
    setup();
@@ -17,7 +17,7 @@ void create()
 
 int is_get_of(object ob,object obj)
 {
-   return notify_fail("Çë°®»¤Ê÷Ä¾£¡\n");
+   return notify_fail("è¯·çˆ±æŠ¤æ ‘æœ¨ï¼\n");
 }
 
 void init()
@@ -40,7 +40,7 @@ void hawk_come(object ob)
 {
   if(!ob) return;
   
-  tell_object(environment(this_object()),"Ö»ÌýÒ»ÉùÇåÐ¥£¬Ò»Ö»Ó¥´ÓÊ÷ÉÏ·ÉÏÂ£¬½«"+ob->name()+"µð×ß·ÉÁË£¡\n");
+  tell_object(environment(this_object()),"åªå¬ä¸€å£°æ¸…å•¸ï¼Œä¸€åªé¹°ä»Žæ ‘ä¸Šé£žä¸‹ï¼Œå°†"+ob->name()+"å¼èµ°é£žäº†ï¼\n");
   destruct(ob);
   set("hawk_fly",1);
 }
@@ -52,9 +52,9 @@ int do_claw()
    ob=this_player();
    
    if(!query("hawk_fly"))
-   return notify_fail("Ê÷ÉÏÓÐÖ»Ó¥£¬ÄãÅÀÉÏÈ¥»á×ÄÄãµÄ£¡\n");
+   return notify_fail("æ ‘ä¸Šæœ‰åªé¹°ï¼Œä½ çˆ¬ä¸ŠåŽ»ä¼šå•„ä½ çš„ï¼\n");
    
-   message_vision("$N³¯Ê÷ÉÏÅÀÈ¥£¡\n",ob);
+   message_vision("$Næœæ ‘ä¸Šçˆ¬åŽ»ï¼\n",ob);
    
    ob->move(__DIR__"shuding");
    return 1;

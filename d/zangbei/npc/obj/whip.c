@@ -3,17 +3,17 @@
 inherit WHIP; 
 void create()
 {
-        set_name( "ÄÁÅ£±Ş", ({ "whip" }) );
+        set_name( "ç‰§ç‰›é­", ({ "whip" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long","²Ø×åÄÁÃñ¸ÏÅ£ÂíÓÃµÄ³¤±Ş£¬·Ç³£½áÊµ¡£\n");
+                set("unit", "æ¡");
+                set("long","è—æ—ç‰§æ°‘èµ¶ç‰›é©¬ç”¨çš„é•¿é­ï¼Œéå¸¸ç»“å®ã€‚\n");
                 set("value", 500);
                 set("material", "skin"); 
-        set("wield_msg", "$N´ÓÑü¼äÃş³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊøÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æ‘¸å‡ºä¸€æ¡$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næŸåœ¨è…°é—´ã€‚\n");
         }
         ::init_whip(45);
 }  

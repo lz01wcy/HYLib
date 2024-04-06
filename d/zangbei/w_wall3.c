@@ -2,12 +2,12 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "Î÷Õ¯Ç½");
+        set("short", "è¥¿å¯¨å¢™");
         set("long", @LONG
-Õ¯Ç½ÊÇÕÕ¼ýÂ¥µÄ¸ñÊ½ÐÞÖþµÄ£¬Ò»¡¢¶þÁ½²ã¶¼ÓÐ¼ýÑÛ£¬Èý²ãÖ»ÓÐÒ»°ëÇ½±Ú£¬´ÓÉÏ
-°ë¶ÎÒ²¿ÉÂ¶³öÍ·À´ÏòÍâÉä¼ý¡£ÈôÊÇÓÐÈËÀ´¹¥£¬Õ¯ÀïµÄÈËÕ¾ÔÚÇ½ÉÏÏòÏÂÉä¼ý¡£¾Ó¸ßÁÙ
-ÏÂ£¬Ê®·ÖµÃÊÖ¡£Õ¯Ç½ÍâÃæÊÇÃ¯ÃÜµÄÉ­ÁÖ£¬Õ¯Ç½ÀïÃæ¿ÉÒÔ¿´µ½Ò»¸ö´óÔº£¬Ôº×ÓµÄËÄÖÜ
-ÓÐ¼¸¼äÍß·¿£¬Êú×Å°ëÈË¸ßµÄÑÌ´Ñ¡£
+å¯¨å¢™æ˜¯ç…§ç®­æ¥¼çš„æ ¼å¼ä¿®ç­‘çš„ï¼Œä¸€ã€äºŒä¸¤å±‚éƒ½æœ‰ç®­çœ¼ï¼Œä¸‰å±‚åªæœ‰ä¸€åŠå¢™å£ï¼Œä»Žä¸Š
+åŠæ®µä¹Ÿå¯éœ²å‡ºå¤´æ¥å‘å¤–å°„ç®­ã€‚è‹¥æ˜¯æœ‰äººæ¥æ”»ï¼Œå¯¨é‡Œçš„äººç«™åœ¨å¢™ä¸Šå‘ä¸‹å°„ç®­ã€‚å±…é«˜ä¸´
+ä¸‹ï¼Œååˆ†å¾—æ‰‹ã€‚å¯¨å¢™å¤–é¢æ˜¯èŒ‚å¯†çš„æ£®æž—ï¼Œå¯¨å¢™é‡Œé¢å¯ä»¥çœ‹åˆ°ä¸€ä¸ªå¤§é™¢ï¼Œé™¢å­çš„å››å‘¨
+æœ‰å‡ é—´ç“¦æˆ¿ï¼Œç«–ç€åŠäººé«˜çš„çƒŸå›±ã€‚
 LONG
         );
         set("exits", ([ 
@@ -15,8 +15,8 @@ LONG
                 
         ]));
         set("item_desc", ([
-                "chimney": "ÕâÑÌ´ÑÏÔÈ»ÒÑ¾­·ÏÆú¶àÊ±ÁË£¬¿´ÉÏÈ¥ÃãÇ¿¿ÉÒÔ×ê½øÒ»¸öÈË£¨squeeze through£©¡£\n",
-                "ÑÌ´Ñ":  "ÕâÑÌ´ÑÏÔÈ»ÒÑ¾­·ÏÆú¶àÊ±ÁË£¬¿´ÉÏÈ¥ÃãÇ¿¿ÉÒÔ×ê½øÒ»¸öÈË£¨squeeze through£©¡£\n",
+                "chimney": "è¿™çƒŸå›±æ˜¾ç„¶å·²ç»åºŸå¼ƒå¤šæ—¶äº†ï¼Œçœ‹ä¸ŠåŽ»å‹‰å¼ºå¯ä»¥é’»è¿›ä¸€ä¸ªäººï¼ˆsqueeze throughï¼‰ã€‚\n",
+                "çƒŸå›±":  "è¿™çƒŸå›±æ˜¾ç„¶å·²ç»åºŸå¼ƒå¤šæ—¶äº†ï¼Œçœ‹ä¸ŠåŽ»å‹‰å¼ºå¯ä»¥é’»è¿›ä¸€ä¸ªäººï¼ˆsqueeze throughï¼‰ã€‚\n",
         ]));
         set("objects", ([
                 __DIR__"npc/archer":    2,
@@ -35,16 +35,16 @@ int do_squeeze(string arg) {
         object me;
         
         me=this_player();
-        if (arg=="through" || arg == "ÑÌ´Ñ" || arg== "chimney" || arg =="through chimney") {
+        if (arg=="through" || arg == "çƒŸå›±" || arg== "chimney" || arg =="through chimney") {
                 if (me->query_temp("zangbei/chimney_1"))
-                        return notify_fail("ÄãÒÑ¾­ÔÚÑÌ´ÑÀïÁË¡£\n");
-           message_vision("$NÒ»Ã¨Ñü¼·½øÑÌ´Ñ£¬Ð¡ÐÄÒíÒíµØÏòÏÂÅÀÈ¥¡£\n\n",me);
+                        return notify_fail("ä½ å·²ç»åœ¨çƒŸå›±é‡Œäº†ã€‚\n");
+           message_vision("$Nä¸€çŒ«è…°æŒ¤è¿›çƒŸå›±ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘ä¸‹çˆ¬åŽ»ã€‚\n\n",me);
                 call_out("pass_river",6,me);
                 me->start_busy(3);
                 me->set_temp("zangbei/chimney_1",1);
                 return 1;
         }
-        tell_object(me,"ÄãÒªÅÀÊ²Ã´£¿\n");
+        tell_object(me,"ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
         return 1;
 }  
 int pass_river(object me) {
@@ -52,8 +52,8 @@ int pass_river(object me) {
         if (!objectp(me) || me->is_ghost()) return 0;
         room=find_object(__DIR__"v_barn");
         if (!objectp(room)) room=load_object(__DIR__"v_barn");
-        tell_object(me,"ÄãÇáÇÉµØÏÂµ½ÎÝ×ÓÀï¡£\n");
-        message("vision",me->name()+"´ÓÎÝ¶¥ÉÏµôÁËÏÂÀ´¡£\n",room);
+        tell_object(me,"ä½ è½»å·§åœ°ä¸‹åˆ°å±‹å­é‡Œã€‚\n");
+        message("vision",me->name()+"ä»Žå±‹é¡¶ä¸ŠæŽ‰äº†ä¸‹æ¥ã€‚\n",room);
         me->move(room);
         me->delete_temp("zangbei/chimney_1");
         return 1;

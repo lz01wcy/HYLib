@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW "ʯ��" NOR );
+        set("short", HIW "石阶" NOR );
         set("long", @LONG
-һ��Сʯ�ף��е��������ã���ݴ�ʯͷ�ķ�϶�г��˳�������Щ�ط���
-ʯ�����������Զ���Ѿ�ĥ�Ĺ⻬�羵�����Ͽ�ȥ��ֻ���������м������ӡ�
+一条小石阶，有点破破烂烂，青草从石头的缝隙中长了出来，有些地方的
+石阶由于年代久远，已经磨的光滑如镜。向上看去，只见云雾中有几座房子。
 LONG
         );
         set("exits", ([

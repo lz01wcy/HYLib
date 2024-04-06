@@ -9,13 +9,13 @@ inherit ROOM;
 
 mapping *paizi=({
 ([  
-	"name":"ÇÙÔÏĞ¡Öş",
+	"name":"ç´éŸµå°ç­‘",
 	"id":"xiaozhu",
         "file":__DIR__"zhou6",                    
         "value":500
 ]),
 ([  
-	"name":"Ñà×ÓÎë",
+	"name":"ç‡•å­å",
         "id":"yanziwu",
         "file":__DIR__"zhou",
 	"value":500
@@ -27,13 +27,13 @@ int do_go(string);
 
 void create()
 {
-	set("short",HIY"°¶±ß"NOR);
+	set("short",HIY"å²¸è¾¹"NOR);
 	set("long", @LONG
-ÕâÊÇÂüÙ¢ÂŞÉ½×¯µÄÒ»¸öĞ¡ÂëÍ·£¬´ÓÕâÀïÉÏ´¬¿ÉÒÔµ½´ïÄ½ÈİÊÀ¼ÒµÄÁìµØ£¬
-ÎäÁÖÖĞµÄÓ¢ĞÛºÀ½ÜÃÇ¶¼Ê®·ÖÑöÄ½ÎÅÃûÌìÏÂµÄÑà×ÓÎë£¬ÒòÎªÄÇÀïÊÇÎŞÈË²»ÖªÎŞ
-ÈË²»ÏşµÄ¡°ÒÔ±ËÖ®µÀ£¬»¹Ê©±ËÉí¡±µÄ·¢Ô´µØ£¬¶øÄ½ÈİÊÀ¼ÒÒ»´ú¾ÍÊÇ×¡ÔÚÄÇÀï¡£
-°¶±ßÓĞÒ»Î»ÀÏ´¬·ò£¬×¨ÃÅÔØ×ÅÈ¥Ñà×ÓÎëµÄÎäÁÖÈËÊ¿£¬ËûÒ»¼ûÄã×ß¹ıÀ´£¬²»¸Ò
-µ¡Âı£¬´ø×ÅĞ¦Á³Á¬Ã¦Ó­ÉÏÇ°È¥¡£ÔÚ°¶±ßÓĞÒ»¿éÅÆ×Ó(paizi)¡£
+è¿™æ˜¯æ›¼ä½—ç½—å±±åº„çš„ä¸€ä¸ªå°ç å¤´ï¼Œä»è¿™é‡Œä¸Šèˆ¹å¯ä»¥åˆ°è¾¾æ…•å®¹ä¸–å®¶çš„é¢†åœ°ï¼Œ
+æ­¦æ—ä¸­çš„è‹±é›„è±ªæ°ä»¬éƒ½ååˆ†ä»°æ…•é—»åå¤©ä¸‹çš„ç‡•å­åï¼Œå› ä¸ºé‚£é‡Œæ˜¯æ— äººä¸çŸ¥æ— 
+äººä¸æ™“çš„â€œä»¥å½¼ä¹‹é“ï¼Œè¿˜æ–½å½¼èº«â€çš„å‘æºåœ°ï¼Œè€Œæ…•å®¹ä¸–å®¶ä¸€ä»£å°±æ˜¯ä½åœ¨é‚£é‡Œã€‚
+å²¸è¾¹æœ‰ä¸€ä½è€èˆ¹å¤«ï¼Œä¸“é—¨è½½ç€å»ç‡•å­åçš„æ­¦æ—äººå£«ï¼Œä»–ä¸€è§ä½ èµ°è¿‡æ¥ï¼Œä¸æ•¢
+æ€ æ…¢ï¼Œå¸¦ç€ç¬‘è„¸è¿å¿™è¿ä¸Šå‰å»ã€‚åœ¨å²¸è¾¹æœ‰ä¸€å—ç‰Œå­(paizi)ã€‚
 LONG
 );
 	set("outdoors","mr");
@@ -56,13 +56,13 @@ string look_paizi()
 	string str="";
 	int i=sizeof(paizi);
 
-//	if (ob->query("family/family_name") != "¹ÃËÕÄ½Èİ") i--;
+//	if (ob->query("family/family_name") != "å§‘è‹æ…•å®¹") i--;
 
 	while (i--) {
 		str += paizi[i]["name"];
 		str += "(" + paizi[i]["id"] + ") ";
-	        if (ob->query("family/family_name") == "¹ÃËÕÄ½Èİ")
-			str += "Ä½ÈİµÜ×ÓÃâ·Ñ\n";
+	        if (ob->query("family/family_name") == "å§‘è‹æ…•å®¹")
+			str += "æ…•å®¹å¼Ÿå­å…è´¹\n";
 		else
 			str += MONEY_D->price_str(paizi[i]["value"]) + "\n";
 	}
@@ -72,10 +72,10 @@ string look_paizi()
 
 void do_move(object ob, int i)
 {
-        if (ob->query("family/family_name") == "¹ÃËÕÄ½Èİ")
-		message_vision(YEL"\n$NËæ×Å´¬¼ÒÉÏÁËÒ»ÌõĞ¡ÖÛ¡£\n\n"NOR,ob);
+        if (ob->query("family/family_name") == "å§‘è‹æ…•å®¹")
+		message_vision(YEL"\n$Néšç€èˆ¹å®¶ä¸Šäº†ä¸€æ¡å°èˆŸã€‚\n\n"NOR,ob);
 	else
-		message_vision(YEL"\n$N°ÑÇ®½»¸ø´¬¼Ò£¬´¬¼ÒÁì$NÉÏÁËÒ»ÌõĞ¡ÖÛ¡£\n\n"NOR,ob);
+		message_vision(YEL"\n$NæŠŠé’±äº¤ç»™èˆ¹å®¶ï¼Œèˆ¹å®¶é¢†$Nä¸Šäº†ä¸€æ¡å°èˆŸã€‚\n\n"NOR,ob);
 	ob->move(paizi[i]["file"]);
 }
 
@@ -85,39 +85,39 @@ int do_go(string arg)
 	int level1, level2, i=sizeof(paizi);
 	string skill;
 
-	if (!arg) return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");
+	if (!arg) return notify_fail("ä½ è¦å»å“ªé‡Œï¼Ÿ\n");
 	if (ob->is_busy() || ob->is_fighting())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
-//	if (ob->query("family/family_name") != "¹ÃËÕÄ½Èİ") i--;
+//	if (ob->query("family/family_name") != "å§‘è‹æ…•å®¹") i--;
 
 	while(i--) {
 		if (arg == paizi[i]["id"]) {
-		        if (ob->query("family/family_name") == "¹ÃËÕÄ½Èİ") {
+		        if (ob->query("family/family_name") == "å§‘è‹æ…•å®¹") {
 				level1 = ob->query_skill("xingyi-zhang", 1);
 				level2 = ob->query_skill("canhe-zhi", 1);
-				if (!level1 && !level2) skill = "Ñà×Ó³ö³²";
+				if (!level1 && !level2) skill = "ç‡•å­å‡ºå·¢";
 				else if (level1 > level2) skill = SKILL_D("xingyi-zhang")->query_skill_name(random(level1));
 				else skill = SKILL_D("canhe-zhi")->query_skill_name(random(level2));
-				message_vision("$NÏò´¬¼Ò´òÁË¸öÒ¾µÀ£º¡°ÕâÎ»´¬¼Ò£¬ÎÒÄËÄ½ÈİµÜ×Ó£¬ÏëÈ¥" + paizi[i]["name"] + "¡£¡±\n",ob);
-				message_vision("´¬¼Ò¿´ÁË¿´$N£¬Â¶³ö»³ÒÉµÄÉñÉ«¡£\n",ob);
-				message_vision("$NÃæÂ¶Î¢Ğ¦£¬Ê¹ÁËÒ»ÕĞ¡°" + skill + "¡±£¬µÀ£º¡°ÈçºÎ£¿¡±\n´¬¼ÒµãÁËµãÍ·µÀ£º¡°ËæÎÒÀ´¡£¡±\n",ob);
+				message_vision("$Nå‘èˆ¹å®¶æ‰“äº†ä¸ªæ–é“ï¼šâ€œè¿™ä½èˆ¹å®¶ï¼Œæˆ‘ä¹ƒæ…•å®¹å¼Ÿå­ï¼Œæƒ³å»" + paizi[i]["name"] + "ã€‚â€\n",ob);
+				message_vision("èˆ¹å®¶çœ‹äº†çœ‹$Nï¼Œéœ²å‡ºæ€€ç–‘çš„ç¥è‰²ã€‚\n",ob);
+				message_vision("$Né¢éœ²å¾®ç¬‘ï¼Œä½¿äº†ä¸€æ‹›â€œ" + skill + "â€ï¼Œé“ï¼šâ€œå¦‚ä½•ï¼Ÿâ€\nèˆ¹å®¶ç‚¹äº†ç‚¹å¤´é“ï¼šâ€œéšæˆ‘æ¥ã€‚â€\n",ob);
 				ob->start_busy(1);
 				call_out("do_move", 1, ob, i);
 			}
 			else {
 				switch (MONEY_D->player_pay(ob, paizi[i]["value"])) {
 					case 0:
-						return notify_fail("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+						return notify_fail("ç©·å…‰è›‹ï¼Œä¸€è¾¹å‘†ç€å»ï¼\n");
 					case 2:
-						return notify_fail("ÓĞÁãÇ®Âğ£¿\n");
+						return notify_fail("æœ‰é›¶é’±å—ï¼Ÿ\n");
 				}
-				message_vision("$NÔÚ¿Ú´üÀï·­À´¸²È¥µØÕÒ´¬Ç®¡£\n", ob);
+				message_vision("$Nåœ¨å£è¢‹é‡Œç¿»æ¥è¦†å»åœ°æ‰¾èˆ¹é’±ã€‚\n", ob);
 				ob->start_busy(3);
 				call_out("do_move", 3, ob, i);
 			}
 			return 1;
 		}
 	}
-	return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");
+	return notify_fail("ä½ è¦å»å“ªé‡Œï¼Ÿ\n");
 }

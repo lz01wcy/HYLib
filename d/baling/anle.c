@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ᶼ��");
+	set("short", "丰都县");
 	set("long", @LONG
-   �ᶼ��λ���Ĵ���ض��ϱ�Ե���ش��������Σ�
-�ᶼ��һ����ɽ��ˮ�Ĺųǣ�����ʱ�ơ����ӱ�
+   丰都县位于四川盆地东南边缘，地处长江上游，
+丰都是一座依山面水的古城，春秋时称“巴子别都
 LONG);
 	
 	set("exits", ([

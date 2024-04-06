@@ -4,18 +4,18 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÎäÁÖÖÐÈË", ({ "man" }) );
+	set_name("æ­¦æž—ä¸­äºº", ({ "man" }) );
        set("str", 59);
 	set("per", 26);
 	set("age", 30);
 
 	set("long",
-		"Ò»¸öÖÐÄêÈË£¬¿´ÆðÀ´ºÃÏó»áµãÎä¹¦¡£\n");
+		"ä¸€ä¸ªä¸­å¹´äººï¼Œçœ‹èµ·æ¥å¥½è±¡ä¼šç‚¹æ­¦åŠŸã€‚\n");
 
 	set("chat_chance", 3);
 	set("chat_msg", ({
-		"ÎäÁÖÖÐÈËËµµÀ£ºÕâ´ÎÀ´ÕâÀï......\n",
-		"ÎäÁÖÖÐÈË×¢ÊÓ×ÅËÄÖÜµÄÒ»ÇÐ¡£\n",
+		"æ­¦æž—ä¸­äººè¯´é“ï¼šè¿™æ¬¡æ¥è¿™é‡Œ......\n",
+		"æ­¦æž—ä¸­äººæ³¨è§†ç€å››å‘¨çš„ä¸€åˆ‡ã€‚\n",
 	}));
 	setup();
 	carry_object(__DIR__"obj/silk-cloth")->wear();

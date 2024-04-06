@@ -5,13 +5,13 @@ inherit HANDS;
 
 void create()
 {
-	set_name("Óñïí",({"yuzhuo","zhuozi"}));
+	set_name("ç‰é•¯",({"yuzhuo","zhuozi"}));
 	set_weight(900);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-	set("unit","Ö»");
-	set("long","ÕâÊÇÒ»Ö»ºÍãÙÃÀÓñµñ¿Ì³ÉµÄÓñïí¡£\n");
+	set("unit","åª");
+	set("long","è¿™æ˜¯ä¸€åªå’Œé˜—ç¾ç‰é›•åˆ»æˆçš„ç‰é•¯ã€‚\n");
 	set("value",5000);
 	set("material","glass");
 	set("armor_prop/personality",2);
@@ -19,8 +19,8 @@ void create()
 	set("armor_prop/armor",14);
 	set("armor_prop/dodge",3);
 	}
-	set("wear_msg",HIC"$NĞ¡ĞÄÒíÒíµÄ´÷ÉÏÁË$n¡£\n"NOR);
-	set("unequip_msg",HIC"$NÂıÂıµÄ°Ñ$nÕªÁËÏÂÀ´¡£\n"NOR);
+	set("wear_msg",HIC"$Nå°å¿ƒç¿¼ç¿¼çš„æˆ´ä¸Šäº†$nã€‚\n"NOR);
+	set("unequip_msg",HIC"$Næ…¢æ…¢çš„æŠŠ$næ‘˜äº†ä¸‹æ¥ã€‚\n"NOR);
 	setup();
 }
 

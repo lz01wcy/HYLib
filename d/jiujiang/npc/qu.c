@@ -3,19 +3,19 @@ inherit NPC;
 #include <ansi.h>
 int do_cha(string arg);
 mapping *name=({
-(["name":"ÕÔ","id":"zhao",]),(["name":"Ç®","id":"qian",]),(["name":"Ëï","id":"sun",]),
-(["name":"ÖÜ","id":"zhou",]),(["name":"Îâ","id":"wu",]),(["name":"Ö£","id":"zheng",]),
-(["name":"Àî","id":"li",]),(["name":"Íõ","id":"wang",]),(["name":"Áõ","id":"liu",]),
-(["name":"Öî¸ğ","id":"zhuge",]),(["name":"¶¡","id":"ding",]),(["name":"½ğ","id":"jin",]),
+(["name":"èµµ","id":"zhao",]),(["name":"é’±","id":"qian",]),(["name":"å­™","id":"sun",]),
+(["name":"å‘¨","id":"zhou",]),(["name":"å´","id":"wu",]),(["name":"éƒ‘","id":"zheng",]),
+(["name":"æ","id":"li",]),(["name":"ç‹","id":"wang",]),(["name":"åˆ˜","id":"liu",]),
+(["name":"è¯¸è‘›","id":"zhuge",]),(["name":"ä¸","id":"ding",]),(["name":"é‡‘","id":"jin",]),
 });
 void create()
 {
    mapping newname;
    newname=name[random(sizeof(name))];
-      set_name(newname["name"]+"ÀÏ°å",({ newname["id"]}) );
-        set("gender", "ÄĞĞÔ" );
+      set_name(newname["name"]+"è€æ¿",({ newname["id"]}) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-   set("long", "ÕâÊÇ[·ïÒÇ¾ÆÂ¥]µÄÀÏ°å¡£\n");
+   set("long", "è¿™æ˜¯[å‡¤ä»ªé…’æ¥¼]çš„è€æ¿ã€‚\n");
        
    set("combat_exp",300000);
    set("str",26);
@@ -45,9 +45,9 @@ int do_cha(string arg)
 	object me,ob,money;int exp,pot,sil;
 	me=this_player();
 	if(!arg||!present(arg,environment(me)))
-		return notify_fail("ÄãÒªÏòË­²éÕÊ£¿\n");
+		return notify_fail("ä½ è¦å‘è°æŸ¥å¸ï¼Ÿ\n");
 	if(!me->query_temp("chazhang_job/4"))
-		return notify_fail("ÄãÃ»ÓĞÀ´²éÕÊµÄÈ¨Àû£¡\n");
+		return notify_fail("ä½ æ²¡æœ‰æ¥æŸ¥å¸çš„æƒåˆ©ï¼\n");
 	me->set_temp("busy_time",time());
 	exp=me->query("max_pot")/3+random(10);
         pot=me->query("max_pot")/4;
@@ -61,9 +61,9 @@ int do_cha(string arg)
 	money->move(me);
 	me->delete_temp("chazhang_job");
 	me->delete_temp("dtsl_job");
-	tell_object(me,"ÔÚÕâ´ÎĞĞ¶¯ÖĞ£¬ÄãµÃµ½ÁË£º"
-               +""HIW""+chinese_number(exp)+""NOR""+"µã¾­ÑéÖµ"
-               +""HIW""+chinese_number(pot)+""NOR""+"µãÇ±ÄÜ"
-               +""HIW""+chinese_number(sil)+""NOR""+"Á½°×Òø\n");
+	tell_object(me,"åœ¨è¿™æ¬¡è¡ŒåŠ¨ä¸­ï¼Œä½ å¾—åˆ°äº†ï¼š"
+               +""HIW""+chinese_number(exp)+""NOR""+"ç‚¹ç»éªŒå€¼"
+               +""HIW""+chinese_number(pot)+""NOR""+"ç‚¹æ½œèƒ½"
+               +""HIW""+chinese_number(sil)+""NOR""+"ä¸¤ç™½é“¶\n");
 	return 1;
 }

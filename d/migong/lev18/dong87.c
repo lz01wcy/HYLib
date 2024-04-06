@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIM"������Թ�"NOR);
+	set("short", HIM"不归的迷宫"NOR);
 	set("long", HIM @LONG
-   ��������һ���ƾɵķ��棬����ɢ�������ܵ�ʯ����ʯ�顣���д����
-���ﱻ�����Ѹ������ˡ���Ƭ���������ľ���ͳ��Ÿ�����ΰ�����Ľ���
-���Ǹ���Ϊ���̵ĶԱȣ����ֱ�������㻹�������߲����ҵ���·��
+   你来到了一个破旧的废墟，到处散落著颓圮的石柱和石块。城市大道在
+这里被瓦砾堆给堵死了。这片残破萧条的景像和城门附近雄伟瑰丽的建筑
+真是个极为讽刺的对比，你的直觉告诉你还是往回走才能找到出路。
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);

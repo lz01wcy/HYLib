@@ -3,13 +3,13 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("ÈË²Î", ({ "ren shen","shen" }) );
+        set_name("äººå‚", ({ "ren shen","shen" }) );
        if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
-                set("base_unit","¿Ã");
-				set("long","ÕâÊÇÒ»¿Ã³¤°×É½ÈË²Î,¿ÉÒÔÓÃÀ´Á¶Ò©¡£\n");
+                set("unit", "æ£µ");
+                set("base_unit","æ£µ");
+				set("long","è¿™æ˜¯ä¸€æ£µé•¿ç™½å±±äººå‚,å¯ä»¥ç”¨æ¥ç‚¼è¯ã€‚\n");
                 set("value", 3000);
 
                 

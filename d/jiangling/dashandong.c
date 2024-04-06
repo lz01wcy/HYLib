@@ -3,16 +3,16 @@
 inherit ROOM;
 void create()
 {
-	set("short", "´óÉ½¶´");
+	set("short", "å¤§å±±æ´");
 	set("long", @LONG
-ÕâÊÇÎ÷É½ÉÏÒ»¸ö´óÉ½¶´£¬ÀïÃæºÚºõºõµÄ£¬Ê²Ã´Ò²Ã»ÓĞ¡£ÄãÕöÑÛ×ĞÏ¸
-¹Û²ì£¬·¢ÏÖ¶´ÖĞÓĞÒ»´Ô´ÔÆë¼çµÄ³¤²İ(cao)¡£
+è¿™æ˜¯è¥¿å±±ä¸Šä¸€ä¸ªå¤§å±±æ´ï¼Œé‡Œé¢é»‘ä¹ä¹çš„ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚ä½ ççœ¼ä»”ç»†
+è§‚å¯Ÿï¼Œå‘ç°æ´ä¸­æœ‰ä¸€ä¸›ä¸›é½è‚©çš„é•¿è‰(cao)ã€‚
 LONG );
 	set("exits", ([
 		"out"  : __DIR__"tulu4",
 	]));
 	set("item_desc", ([
-	    "cao" : "³¤²İÃÜ¼¯ºñÊµ£¬ºÃÏóÕÚ¸Ç×¡ÁËÊ²Ã´£¬ÄãÊµÔÚ¿´²»Çå³ş¡£\n",
+	    "cao" : "é•¿è‰å¯†é›†åšå®ï¼Œå¥½è±¡é®ç›–ä½äº†ä»€ä¹ˆï¼Œä½ å®åœ¨çœ‹ä¸æ¸…æ¥šã€‚\n",
 	]));
 	set("no_clean_up", 0);
 	set("coor/x", -1630);
@@ -34,7 +34,7 @@ int do_use(string arg)
 	if (!present("fire", me))  return 0;
 	if( arg=="fire" )
 	{
-		write("ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖ²İºóÃæºÃÏó»¹ÓĞ¸ö¶´£¬ËÆºõ¿ÉÒÔ×ê(zuan)½øÈ¥¡£\n");
+		write("ä½ ç‚¹ç‡ƒäº†ç«æŠ˜ï¼Œå‘ç°è‰åé¢å¥½è±¡è¿˜æœ‰ä¸ªæ´ï¼Œä¼¼ä¹å¯ä»¥é’»(zuan)è¿›å»ã€‚\n");
 		me->set_temp("marks/dashandong", 1);
 		return 1;
 	}
@@ -45,14 +45,14 @@ int do_zuan(string arg)
 	object me = this_player();
 
 	if (me->query_temp("marks/dashandong") ) {
-		message("vision", me->name() + "Íù²İ´ÔÖĞ×ÌÁïÒ»×ê¾Í²»¼ûÁË¡£\n", environment(me), ({me}) );
+		message("vision", me->name() + "å¾€è‰ä¸›ä¸­æ»‹æºœä¸€é’»å°±ä¸è§äº†ã€‚\n", environment(me), ({me}) );
 		me->move(__DIR__"shandong");
-		message("vision", me->name() + "´Ó²İ´ÔÖĞ×êÁË¹ıÀ´¡£\n", environment(me), ({me}) );
+		message("vision", me->name() + "ä»è‰ä¸›ä¸­é’»äº†è¿‡æ¥ã€‚\n", environment(me), ({me}) );
 		me->delete_temp("marks/dashandong");
 		return 1;
 	}
         else {
-		write("ÄãÏëÍùÄÄ¶ù×ê£¿£¡\n");
+		write("ä½ æƒ³å¾€å“ªå„¿é’»ï¼Ÿï¼\n");
 		return 1;
         }
 }

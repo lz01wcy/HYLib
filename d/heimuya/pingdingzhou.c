@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Æ½¶¨Öİ");
+    set("short", "å¹³å®šå·");
     set("long", @LONG
-Æ½¶¨ÖİÔÚºÓ±±¾³ÄÚ£¬Öİ¸®²»´ó£¬µ«µØ´¦Òª³å£¬Ê®·ÖÖØÒª¡£
-ÍùÀ´¾©³ÇµÄ¿ÍÉÌ´©ËóÆµ·±¡£µ«´ó½ÖÉÏÈÕÔÂ½ÌÍ½ºá³åÖ±×²£¬³öÊÖ
-×¥ÈË£¬Ëä½üÔÚ¾©çÜ£¬È´Ë¿ºÁÃ»½«¹Ù¸®·ÅÔÚÑÛÀï¡£
+å¹³å®šå·åœ¨æ²³åŒ—å¢ƒå†…ï¼Œå·åºœä¸å¤§ï¼Œä½†åœ°å¤„è¦å†²ï¼Œååˆ†é‡è¦ã€‚
+å¾€æ¥äº¬åŸçš„å®¢å•†ç©¿æ¢­é¢‘ç¹ã€‚ä½†å¤§è¡—ä¸Šæ—¥æœˆæ•™å¾’æ¨ªå†²ç›´æ’ï¼Œå‡ºæ‰‹
+æŠ“äººï¼Œè™½è¿‘åœ¨äº¬ç•¿ï¼Œå´ä¸æ¯«æ²¡å°†å®˜åºœæ”¾åœ¨çœ¼é‡Œã€‚
 LONG );
 
     set("exits", ([
@@ -51,13 +51,13 @@ void init()
 int valid_leave(object me, string dir)
 {
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
         if (me->is_busy()) 
-        return notify_fail("ÄãÕıÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£çƒ­é—¹ç€å‘¢!\n");
 
         if (me->query_temp("in_guard") &&
                 objectp(present("riyue hufa", environment(me))))
-           return notify_fail("ÈÕÔÂ»¤·¨À¹×¡ÄãËµ£ºÖµÊØÊ±³½Î´µ½£¬²»ÄÜÉÃÀëÖ°ÊØ¡£\n");
+           return notify_fail("æ—¥æœˆæŠ¤æ³•æ‹¦ä½ä½ è¯´ï¼šå€¼å®ˆæ—¶è¾°æœªåˆ°ï¼Œä¸èƒ½æ“…ç¦»èŒå®ˆã€‚\n");
 
         me->delete_temp("in_guard"); 
         me->delete("guardry");
@@ -68,6 +68,6 @@ int valid_leave(object me, string dir)
 
 int do_quit(string arg)
 {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄÊØ»¤£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„å®ˆæŠ¤ï¼\n");
         return 1;
 }

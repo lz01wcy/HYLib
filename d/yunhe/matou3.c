@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", HIW "»ªÉ½´åÂëÍ·" NOR);
+    set("short", HIW "åŽå±±æ‘ç å¤´" NOR);
     set("long", @LONG
-ÕâÀïÊÇ»ªÉ½´å¸ÛµÄÐ¡ÂëÍ·£¬½­ÃæÉÏÍ£ÓÐÐí¶à´¬(chuan)£¬Ðí¶à´¬¼Ò
-ÔÚ´ËÉÔ×öÍ£Áô£¬ÐÝÏ¢ÐÝÏ¢£¬ÒÔ±ãÔÚ¸ÏÂ·£¬´ÓÕâÀï³öÈ¥£¬¿ÉÒÔµ½ÌìÏÂÎä
-ÁÖÈËÊ¿½ÔÖªµÄ»ªÉ½¡£
+è¿™é‡Œæ˜¯åŽå±±æ‘æ¸¯çš„å°ç å¤´ï¼Œæ±Ÿé¢ä¸Šåœæœ‰è®¸å¤šèˆ¹(chuan)ï¼Œè®¸å¤šèˆ¹å®¶
+åœ¨æ­¤ç¨åšåœç•™ï¼Œä¼‘æ¯ä¼‘æ¯ï¼Œä»¥ä¾¿åœ¨èµ¶è·¯ï¼Œä»Žè¿™é‡Œå‡ºåŽ»ï¼Œå¯ä»¥åˆ°å¤©ä¸‹æ­¦
+æž—äººå£«çš†çŸ¥çš„åŽå±±ã€‚
 LONG
     );
 	set("no_fight",1);
@@ -21,7 +21,7 @@ LONG
 
     set("item_desc", ([
          
-       "chuan" :"½­ÉÏÓÐºÜ¶à´¬£¬Èç¹ûÒª×ø´¬µÄ»°£¬²»·ÁÕÒ´¬¼Ò×âÒ»Ìõ¡£\n",    ]));
+       "chuan" :"æ±Ÿä¸Šæœ‰å¾ˆå¤šèˆ¹ï¼Œå¦‚æžœè¦åèˆ¹çš„è¯ï¼Œä¸å¦¨æ‰¾èˆ¹å®¶ç§Ÿä¸€æ¡ã€‚\n",    ]));
     set("objects", ([
 		__DIR__"npc/shaogong2" : 1,
 	]));
@@ -44,19 +44,19 @@ int do_enter(string arg)
        if (arg=="chuan")
                 {
                 if ( !(int)me->query_temp("ok"))
-                        return notify_fail("Äã»¹Ã»ÓÐ×âµ½´¬£¬ÉÏÄÇÃÅ×ÓµÄ´¬£¿£¡\n");
+                        return notify_fail("ä½ è¿˜æ²¡æœ‰ç§Ÿåˆ°èˆ¹ï¼Œä¸Šé‚£é—¨å­çš„èˆ¹ï¼Ÿï¼\n");
 			else
 			 if (!(int)me->query_temp("ok1")) 
-			  return notify_fail("´¬¼ÒËµµÀ£º¿Í¹ÙÇëÏÈËµºÃµ½ÄÄÀï£¬Ð¡µÄ²ÅºÃ×¼±¸¡£\n");
+			  return notify_fail("èˆ¹å®¶è¯´é“ï¼šå®¢å®˜è¯·å…ˆè¯´å¥½åˆ°å“ªé‡Œï¼Œå°çš„æ‰å¥½å‡†å¤‡ã€‚\n");
 			 if( !(room = find_object(__DIR__"xiaozhou2")) )
             			room = load_object(__DIR__"xiaozhou2");
         		if( room = find_object(__DIR__"xiaozhou2") ) 
             			if((int)room->query("yell_trigger")==1 ) 
-				 return notify_fail("´¬¼ÒËµµÀ£º¿Í¹Ù²»Òª¼±£¬´¬»¹Ã»¿¿°¶£¬ÇëÉÔºî¡£\n");
+				 return notify_fail("èˆ¹å®¶è¯´é“ï¼šå®¢å®˜ä¸è¦æ€¥ï¼Œèˆ¹è¿˜æ²¡é å²¸ï¼Œè¯·ç¨ä¾¯ã€‚\n");
 			else {room->set("yell_trigger", 1);
-                        message("vision", me->name() + "×ßÉÏÐ¡´¬¡£\n", environment(me), ({me}) );
-                        message("vinson","ÄãÌ¤ÉÏÄ¾°å£¬Ò¡Ò¡»Î»ÎµÄ×ßÉÏÐ¡ÖÛ \n"+
-					  "ô¹¹«½«¸ÝÒ»³Å£¬´¬Àë¿ªÂëÍ·£¬»º»ºÊ»È¥\n" ,me);
+                        message("vision", me->name() + "èµ°ä¸Šå°èˆ¹ã€‚\n", environment(me), ({me}) );
+                        message("vinson","ä½ è¸ä¸Šæœ¨æ¿ï¼Œæ‘‡æ‘‡æ™ƒæ™ƒçš„èµ°ä¸Šå°èˆŸ \n"+
+					  "è‰„å…¬å°†ç¯™ä¸€æ’‘ï¼Œèˆ¹ç¦»å¼€ç å¤´ï¼Œç¼“ç¼“é©¶åŽ»\n" ,me);
                         me->move(__DIR__"xiaozhou2");}
                 }
         return 1;

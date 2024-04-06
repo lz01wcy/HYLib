@@ -1,4 +1,4 @@
-// laojundian.c ÀÏ¾ıµî
+// laojundian.c è€å›æ®¿
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÀÏ¾ıµî");
+        set("short", "è€å›æ®¿");
         set("long", @LONG
-ÕâÀïÊÇ¹©·îÌ«ÉÏÀÏ¾ıµÄ´óµî¡£µîµÄÕıÖĞËÜ×ÅÀÏ¾ıµÄËÜÏñ£¬ÀÏ¾ıÆï
-ÔÚÇàÅ£ÉÏ£¬ÕıÁÙÔÆ¶øÈ¥¡£Á½ÅÔËÜ×ÅÁ½¸öÍ¯×Ó£¬¶¼èòèòÈçÉú¡£µîÖĞµÄµØ
-¶¼ÊÇÒÔÇà×©Ò»¿é¿éµÄÆÌ³É£¬´òÉ¨µÃÒ»³¾²»È¾¡£
+è¿™é‡Œæ˜¯ä¾›å¥‰å¤ªä¸Šè€å›çš„å¤§æ®¿ã€‚æ®¿çš„æ­£ä¸­å¡‘ç€è€å›çš„å¡‘åƒï¼Œè€å›éª‘
+åœ¨é’ç‰›ä¸Šï¼Œæ­£ä¸´äº‘è€Œå»ã€‚ä¸¤æ—å¡‘ç€ä¸¤ä¸ªç«¥å­ï¼Œéƒ½æ ©æ ©å¦‚ç”Ÿã€‚æ®¿ä¸­çš„åœ°
+éƒ½æ˜¯ä»¥é’ç –ä¸€å—å—çš„é“ºæˆï¼Œæ‰“æ‰«å¾—ä¸€å°˜ä¸æŸ“ã€‚
 LONG
         );
         set("exits", ([
@@ -32,11 +32,11 @@ int valid_leave(object me, string dir)
 
         if (dir == "east" )
         {
-                if(!(fam = me->query("family")) || fam["family_name"] != "È«Õæ½Ì") {
+                if(!(fam = me->query("family")) || fam["family_name"] != "å…¨çœŸæ•™") {
                         if(present("dao tong", environment(me)) && living(present("dao tong", environment(me))))
                         {
                                 return notify_fail(
-"µÀÍ¯ËµµÀ£ººóÃæÊÇ±¾½ÌÖØµØ£¬ÕâÎ»" + RANK_D->query_respect(me) + "ÇëÖ¹²½¡£\n");
+"é“ç«¥è¯´é“ï¼šåé¢æ˜¯æœ¬æ•™é‡åœ°ï¼Œè¿™ä½" + RANK_D->query_respect(me) + "è¯·æ­¢æ­¥ã€‚\n");
                         }
                         else
                                 return ::valid_leave(me, dir);

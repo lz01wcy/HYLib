@@ -9,15 +9,15 @@ void create()
 
 {
     
-   set_name(WHT"´ÌÁú"NOR, ({ "ci long" , "long" , "dragon" }));
-                set("race", "Ò°ÊÞ");
+   set_name(WHT"åˆºé¾™"NOR, ({ "ci long" , "long" , "dragon" }));
+                set("race", "é‡Žå…½");
        set("long",
-"Ò»ÌõÉíÅûºñ¼×£¬»ëÉíÊÇ´ÌµÄ¾ÞÁú
-¡£\n");
+"ä¸€æ¡èº«æŠ«åŽšç”²ï¼Œæµ‘èº«æ˜¯åˆºçš„å·¨é¾™
+ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" , "claw"}) );
 	       set("max_qi",20000+random(15000));
   set("max_jing",20000+random(15000));
@@ -99,11 +99,11 @@ void die()
         me = query_temp("last_damage_from");
         if (!me) return;    
               me->add("score",1);
-        message_vision(WHT"$NÒ»ÉùÅ­ºð£¬»ëÉíÏÊÑªÖ±Á÷£¬»º»ºÌÉµ¹ÔÚµØ¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nä¸€å£°æ€’å¼ï¼Œæµ‘èº«é²œè¡€ç›´æµï¼Œç¼“ç¼“èººå€’åœ¨åœ°ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));me->add("combat_exp",random(12));me->add("potential",random(8));
         if((int)me->query("combat_exp") < 10000000)   {
-        message("vision", me->name() + "³É¹¦´òËÀÁÔÎïÔö¼ÓÁË300¾­ÑéºÍ150Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»çŒŽç‰©å¢žåŠ äº†300ç»éªŒå’Œ150æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",300);
         me->add("potential",150);
         destruct(ob);

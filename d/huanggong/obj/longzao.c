@@ -4,13 +4,13 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-	set_name(HIR"ÁúÔæ"NOR, ({"long zao"}));
+	set_name(HIR"é¾™æ£"NOR, ({"long zao"}));
 	set_weight(700000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÖê»Ê¹¬ÖĞµÄÕä¹óÊ÷Ä¾¡£\n");
-		set("unit", "Öê");
+		set("long", "ä¸€ä¸ªæ ªçš‡å®«ä¸­çš„çè´µæ ‘æœ¨ã€‚\n");
+		set("unit", "æ ª");
 		set("no_get", 1);
 	}
 }

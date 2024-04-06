@@ -3,8 +3,8 @@ inherit ROOM;
 
 void create()
 {
-  set("short","山路");
-  set("long","这里是山上的泥路。\n");
+  set("short","灞辫矾");
+  set("long","杩欓噷鏄北涓婄殑娉ヨ矾銆俓n");
   set("exits",([
       "north" : __DIR__"shulin",
       "southeast" : __DIR__"shanlu",

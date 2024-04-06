@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-    set("short", "������");
+    set("short", "柏树林");
     set("long",@LONG
-������һƬ֦��Ҷï�İ����֣����ݳ��ñ�ض��ǣ�������ԭʼ
-�����֣����ƺ���ʧ�˷���
+这里是一片枝繁叶茂的柏树林，花草长得便地都是，看着这原始
+的密林，你似乎迷失了方向。
 LONG
 );
     set("exits", ([

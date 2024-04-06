@@ -2,9 +2,9 @@
 inherit ROOM;
 void create()
 {
-  set("short","Á·¹¦ÊÒ");
+  set("short","ç»ƒåŠŸå®¤");
   set("long",
-      "ÕâÀïÊÇ°×ÍÕÉ½µÜ×ÓµÄÁ·¹¦ÊÒ¡£ÓÐÅãÁ·Í¯×ÓÅãÄãÁ·¹¦¡£\n"
+      "è¿™é‡Œæ˜¯ç™½é©¼å±±å¼Ÿå­çš„ç»ƒåŠŸå®¤ã€‚æœ‰é™ªç»ƒç«¥å­é™ªä½ ç»ƒåŠŸã€‚\n"
     );
   set("exits",([
       "out" : __DIR__"liangong",
@@ -23,7 +23,7 @@ void init()
 { object ob=this_player();
   if((int)query_temp("full")==2)
    {
-    message_vision("$NÒ»¼û·¿¼äÀïÒÑ¾­ÓÐÈËÁË£¬Ö»ºÃÍËÁË³öÈ¥¡£\n",ob);
+    message_vision("$Nä¸€è§æˆ¿é—´é‡Œå·²ç»æœ‰äººäº†ï¼Œåªå¥½é€€äº†å‡ºåŽ»ã€‚\n",ob);
     ob->move(__DIR__"liangong");
     return;
    }

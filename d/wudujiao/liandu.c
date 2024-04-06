@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¶¾ÊÒ");
+	set("short", "ç»ƒæ¯’å®¤");
 	set("long", @LONG
-ÕâÀïÊÇÎå¶¾½ÌµÜ×Ó×¨ÃÅµÄÁ·¶¾ÊÒ£¬¿ÉÒÔÔÚÕâÀïÁ·ÖÆ¸÷ÖÖ¶¾Ò©£¬°¸ÉÏ°Ú
-×Å¸÷Ê½¸÷ÑùµÄÆ÷¾ß¡£ÎİÄÚÕıÖĞ·Å×ÅÒ»¸öÒ»ÈË¶à¸ßµÄµ¤Â¯£¬Â¯»ğÕıÍú£¬ÓĞÒ»
-¸öºÚÊİµÄµÀÈËÕıÊÖ³ÖÌÒÄ¾½£ÈÆÂ¯¼²×ß£¬×ìÀïÄÅÄÅ×ÔÓï²»ÖªÔÚÄîĞ©Ê²Ã´£¿
+è¿™é‡Œæ˜¯äº”æ¯’æ•™å¼Ÿå­ä¸“é—¨çš„ç»ƒæ¯’å®¤ï¼Œå¯ä»¥åœ¨è¿™é‡Œç»ƒåˆ¶å„ç§æ¯’è¯ï¼Œæ¡ˆä¸Šæ‘†
+ç€å„å¼å„æ ·çš„å™¨å…·ã€‚å±‹å†…æ­£ä¸­æ”¾ç€ä¸€ä¸ªä¸€äººå¤šé«˜çš„ä¸¹ç‚‰ï¼Œç‚‰ç«æ­£æ—ºï¼Œæœ‰ä¸€
+ä¸ªé»‘ç˜¦çš„é“äººæ­£æ‰‹æŒæ¡ƒæœ¨å‰‘ç»•ç‚‰ç–¾èµ°ï¼Œå˜´é‡Œå‘å‘è‡ªè¯­ä¸çŸ¥åœ¨å¿µäº›ä»€ä¹ˆï¼Ÿ
 LONG
 	);
 //      set("outdoors", "wudujiao");
@@ -40,63 +40,63 @@ int do_lianzhi (string arg)
     return 0;
     if (arg == "red yao"){
          if (!present("she dunang",me)||!present("shexin zi",me))
-              return notify_fail("ÄãÉíÉÏÒ©Æ·²»È«£¬ÎŞ·¨Á·ÖÆ¡£\n");
+              return notify_fail("ä½ èº«ä¸Šè¯å“ä¸å…¨ï¼Œæ— æ³•ç»ƒåˆ¶ã€‚\n");
          destruct(present("she dunang",me));
          destruct(present("shexin zi",me));
          ob = new(__DIR__"obj/redyao");
          ob->move(me);
-         message_vision ("$N½«ÉíÉÏµÄÒ©Æ·Í¶Èëµ¤Â¯£¬°´ÃØ·¨Ğ¡ĞÄÁ·ÖÆÆğÀ´£¡\n",me);
-	  tell_object(me, "Ò©Æ·Á·ÖÆ³É¹¦£¡\n");
+         message_vision ("$Nå°†èº«ä¸Šçš„è¯å“æŠ•å…¥ä¸¹ç‚‰ï¼ŒæŒ‰ç§˜æ³•å°å¿ƒç»ƒåˆ¶èµ·æ¥ï¼\n",me);
+	  tell_object(me, "è¯å“ç»ƒåˆ¶æˆåŠŸï¼\n");
      }
     if (arg == "yellow yao"){
          if (!present("wugong dunang",me)||!present("chuanxin lian",me))
-              return notify_fail("ÄãÉíÉÏÒ©Æ·²»È«£¬ÎŞ·¨Á·ÖÆ¡£\n");
+              return notify_fail("ä½ èº«ä¸Šè¯å“ä¸å…¨ï¼Œæ— æ³•ç»ƒåˆ¶ã€‚\n");
          destruct(present("wugong dunang",me));
          destruct(present("chuanxin lian",me));
          ob = new(__DIR__"obj/yellowyao");
          ob->move(me);
-         message_vision ("$N½«ÉíÉÏµÄÒ©Æ·Í¶Èëµ¤Â¯£¬°´ÃØ·¨Ğ¡ĞÄÁ·ÖÆÆğÀ´£¡\n",me);
-	  tell_object(me, "Ò©Æ·Á·ÖÆ³É¹¦£¡\n");
+         message_vision ("$Nå°†èº«ä¸Šçš„è¯å“æŠ•å…¥ä¸¹ç‚‰ï¼ŒæŒ‰ç§˜æ³•å°å¿ƒç»ƒåˆ¶èµ·æ¥ï¼\n",me);
+	  tell_object(me, "è¯å“ç»ƒåˆ¶æˆåŠŸï¼\n");
      }
     if (arg == "green yao"){
          if (!present("zhizhu dunang",me)||!present("fugu cao",me))
-              return notify_fail("ÄãÉíÉÏÒ©Æ·²»È«£¬ÎŞ·¨Á·ÖÆ¡£\n");
+              return notify_fail("ä½ èº«ä¸Šè¯å“ä¸å…¨ï¼Œæ— æ³•ç»ƒåˆ¶ã€‚\n");
          destruct(present("zhizhu dunang",me));
          destruct(present("fugu cao",me));
          ob = new(__DIR__"obj/greenyao");
          ob->move(me);
-         message_vision ("$N½«ÉíÉÏµÄÒ©Æ·Í¶Èëµ¤Â¯£¬°´ÃØ·¨Ğ¡ĞÄÁ·ÖÆÆğÀ´£¡\n",me);
-	  tell_object(me, "Ò©Æ·Á·ÖÆ³É¹¦£¡\n");
+         message_vision ("$Nå°†èº«ä¸Šçš„è¯å“æŠ•å…¥ä¸¹ç‚‰ï¼ŒæŒ‰ç§˜æ³•å°å¿ƒç»ƒåˆ¶èµ·æ¥ï¼\n",me);
+	  tell_object(me, "è¯å“ç»ƒåˆ¶æˆåŠŸï¼\n");
      }
     if (arg == "white yao"){
          if (!present("xiezi dunang",me)||!present("heding hong",me))
-              return notify_fail("ÄãÉíÉÏÒ©Æ·²»È«£¬ÎŞ·¨Á·ÖÆ¡£\n");
+              return notify_fail("ä½ èº«ä¸Šè¯å“ä¸å…¨ï¼Œæ— æ³•ç»ƒåˆ¶ã€‚\n");
          destruct(present("xiezi dunang",me));
          destruct(present("heding hong",me));
          ob = new(__DIR__"obj/whiteyao");
          ob->move(me);
-         message_vision ("$N½«ÉíÉÏµÄÒ©Æ·Í¶Èëµ¤Â¯£¬°´ÃØ·¨Ğ¡ĞÄÁ·ÖÆÆğÀ´£¡\n",me);
-	  tell_object(me, "Ò©Æ·Á·ÖÆ³É¹¦£¡\n");
+         message_vision ("$Nå°†èº«ä¸Šçš„è¯å“æŠ•å…¥ä¸¹ç‚‰ï¼ŒæŒ‰ç§˜æ³•å°å¿ƒç»ƒåˆ¶èµ·æ¥ï¼\n",me);
+	  tell_object(me, "è¯å“ç»ƒåˆ¶æˆåŠŸï¼\n");
      }
     if (arg == "black yao"){
          if (!present("chanchu dunang",me)||!present("duanchang cao",me))
-              return notify_fail("ÄãÉíÉÏÒ©Æ·²»È«£¬ÎŞ·¨Á·ÖÆ¡£\n");
+              return notify_fail("ä½ èº«ä¸Šè¯å“ä¸å…¨ï¼Œæ— æ³•ç»ƒåˆ¶ã€‚\n");
          destruct(present("chanchu dunang",me));
          destruct(present("duanchang cao",me));
          ob = new(__DIR__"obj/blackyao");
          ob->move(me);
-         message_vision ("$N½«ÉíÉÏµÄÒ©Æ·Í¶Èëµ¤Â¯£¬°´ÃØ·¨Ğ¡ĞÄÁ·ÖÆÆğÀ´£¡\n",me);
-	  tell_object(me, "Ò©Æ·Á·ÖÆ³É¹¦£¡\n");
+         message_vision ("$Nå°†èº«ä¸Šçš„è¯å“æŠ•å…¥ä¸¹ç‚‰ï¼ŒæŒ‰ç§˜æ³•å°å¿ƒç»ƒåˆ¶èµ·æ¥ï¼\n",me);
+	  tell_object(me, "è¯å“ç»ƒåˆ¶æˆåŠŸï¼\n");
      }
     if (arg == "shenxiandao"){
          if (!present("jinshe duye",me)||!present("qianri zui",me))
-              return notify_fail("ÄãÉíÉÏÒ©Æ·²»È«£¬ÎŞ·¨Á·ÖÆ¡£\n");
+              return notify_fail("ä½ èº«ä¸Šè¯å“ä¸å…¨ï¼Œæ— æ³•ç»ƒåˆ¶ã€‚\n");
          destruct(present("jinshe duye",me));
          destruct(present("qianri zui",me));
          ob = new(__DIR__"obj/shenxiandao");
          ob->move(me);
-         message_vision ("$N½«ÉíÉÏµÄÒ©Æ·Í¶Èëµ¤Â¯£¬°´ÃØ·¨Ğ¡ĞÄÁ·ÖÆÆğÀ´£¡\n",me);
-	  tell_object(me, "Ò©Æ·Á·ÖÆ³É¹¦£¡\n");
+         message_vision ("$Nå°†èº«ä¸Šçš„è¯å“æŠ•å…¥ä¸¹ç‚‰ï¼ŒæŒ‰ç§˜æ³•å°å¿ƒç»ƒåˆ¶èµ·æ¥ï¼\n",me);
+	  tell_object(me, "è¯å“ç»ƒåˆ¶æˆåŠŸï¼\n");
      }
  return 1;
 }

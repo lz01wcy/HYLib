@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�򱱷�");
+	set("short", "镇北坊");
 	set("long", @LONG
-֣����̨ʱ����̨�帮�Գ�Ƕһ��Ϊ���ģ����нֻ���Ϊ�ķ���̨
-�������Ա���֣������֮�ķ����򱱷��˳�Ƕ�Ǳ���һ����
+郑经治台时，在台湾府以赤嵌一带为中心，将市街划分为四坊，台
+湾归清后，仍保留郑氏设置之四坊，镇北坊乃赤嵌城北部一坊。
 LONG );
 	set("exits", ([
 		"northwest" : __DIR__"anping",

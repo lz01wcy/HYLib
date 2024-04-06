@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¼ª±ÓÏï");
+	set("short", "å‰åº‡å··");
 	set("long", @LONG
-Ë×ºô¡°¼±±ÜÏï¡±¡£ËÎÖ£ÐÔÖ®ÖÐ×´ÔªÒÂ½õ»¹ÏçÊ±£¬ÔøÒòÒÔÇ°ËûÂäÆÇ¶ø
-ÁèÈè¹ýËûµÄÈË£¬×Ô¸Ð¿÷ÐÄ¶ø¼±±Ü£¬Ëì³Æ¡°¼±±ÜÏï¡±¡£Ã÷´úÒÔÐ³Òô¸ÄÏïÃû
-Îª¡°¼ª±ÓÏï¡±£¬È¡¼ªÏéÈçÒâ¡¢±Ó¾³°²ÄþÖ®Òâ¡£
+ä¿—å‘¼â€œæ€¥é¿å··â€ã€‚å®‹éƒ‘æ€§ä¹‹ä¸­çŠ¶å…ƒè¡£é”¦è¿˜ä¹¡æ—¶ï¼Œæ›¾å› ä»¥å‰ä»–è½é­„è€Œ
+å‡Œè¾±è¿‡ä»–çš„äººï¼Œè‡ªæ„Ÿäºå¿ƒè€Œæ€¥é¿ï¼Œé‚ç§°â€œæ€¥é¿å··â€ã€‚æ˜Žä»£ä»¥è°éŸ³æ”¹å··å
+ä¸ºâ€œå‰åº‡å··â€ï¼Œå–å‰ç¥¥å¦‚æ„ã€åº‡å¢ƒå®‰å®ä¹‹æ„ã€‚
 LONG );
 	set("exits", ([
 		"west" : __DIR__"nanhoujie7",

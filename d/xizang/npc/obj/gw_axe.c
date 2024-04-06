@@ -6,16 +6,16 @@
 #include <weapon.h>
 inherit AXE; 
 void create() {
-    set_name("³¤±ú¸«", ({ "axe" }) );
+    set_name("é•¿æŸ„æ–§", ({ "axe" }) );
     set_weight(70000);
         if( clonep() )
             set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
         set("value", 7000);
                 set("material", "iron");
-        set("wield_msg", "$N³é³ö$nÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+        set("wield_msg", "$NæŠ½å‡º$nè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
     ::init_axe(80);
 }    

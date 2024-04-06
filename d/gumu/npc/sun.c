@@ -1,4 +1,4 @@
-// sun.c ËïÆÅÆÅ
+// sun.c å­™å©†å©†
 
 // 1998.9 by Lgg
 
@@ -8,11 +8,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ËïÆÅÆÅ", ({"sun popo", "sun"}));
-        set("gender", "Å®ĞÔ");
+        set_name("å­™å©†å©†", ({"sun popo", "sun"}));
+        set("gender", "å¥³æ€§");
         set("age", 55);
         set("long",
-                "ÕâÊÇÒ»Î»´ÈÏéµÄÀÏÆÅÆÅ£¬Õı¿´×ÅÄãÎ¢Î¢Ò»Ğ¦¡£\n"
+                "è¿™æ˜¯ä¸€ä½æ…ˆç¥¥çš„è€å©†å©†ï¼Œæ­£çœ‹ç€ä½ å¾®å¾®ä¸€ç¬‘ã€‚\n"
         );
         set("attitude", "friendly");
 
@@ -28,14 +28,14 @@ void create()
         set("score", 0);
 
         set_skill("force", 80);
-        set_skill("yunv-xinfa", 60);    //ÓñÅ®ĞÄ·¨
+        set_skill("yunv-xinfa", 60);    //ç‰å¥³å¿ƒæ³•
         set_skill("sword", 90);
-        set_skill("yunv-jian", 80);     //ÓñÅ®½£
+        set_skill("yunv-jian", 80);     //ç‰å¥³å‰‘
         set_skill("dodge", 70);
-        set_skill("yunv-shenfa", 70);   //ÓñÅ®Éí·¨
+        set_skill("yunv-shenfa", 70);   //ç‰å¥³èº«æ³•
         set_skill("parry", 60);
         set_skill("unarmed",80);
-        set_skill("meinv-quan", 60);    //ÃÀÅ®È­·¨
+        set_skill("meinv-quan", 60);    //ç¾å¥³æ‹³æ³•
         set_skill("literate",40);
 
         map_skill("force", "yunv-xinfa");
@@ -45,7 +45,7 @@ void create()
         map_skill("unarmed", "meinv-quan");
 
         set("inquiry", ([
-                "Ğ¡ÁúÅ®" :  "Áú¹ÃÄïÊÇÎÒÒ»ÊÖ´ø´óµÄ£¬Ëı´ÓĞ¡Ã»ÁË¸¸Ä¸£¬ÏÖÔÚÓÖ¶À¸ö¶ù×¡ÔÚÕâ¹ÅÄ¹Àï£¬°¦..\n",
+                "å°é¾™å¥³" :  "é¾™å§‘å¨˜æ˜¯æˆ‘ä¸€æ‰‹å¸¦å¤§çš„ï¼Œå¥¹ä»å°æ²¡äº†çˆ¶æ¯ï¼Œç°åœ¨åˆç‹¬ä¸ªå„¿ä½åœ¨è¿™å¤å¢“é‡Œï¼Œå”‰..\n",
         ]) );
 
         set("env/wimpy", 50);

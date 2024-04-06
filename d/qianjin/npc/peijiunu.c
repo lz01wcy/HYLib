@@ -3,19 +3,19 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("Åã¾ÆÅ®", ({ "peijiunu" }) );
-	set("gender", "Å®ĞÔ" );
-	set("title", HIG "ÂúÁ³ÃÄĞ¦" NOR);
+	set_name("é™ªé…’å¥³", ({ "peijiunu" }) );
+	set("gender", "å¥³æ€§" );
+	set("title", HIG "æ»¡è„¸åªšç¬‘" NOR);
 	set("age", 18);
 	set("long",
-		"Ò»¸öÂúÁ³ÃÄĞ¦µÄÅã¾ÆÅ®\n");
+		"ä¸€ä¸ªæ»¡è„¸åªšç¬‘çš„é™ªé…’å¥³\n");
 	set("combat_exp", 1500000);
 	set("attitude", "friendly");
 	set("per",30);
         set("chat_chance", 1);
         set("chat_msg", ({
-"Åã¾ÆÅ®²äµ½ÄãÉíÅÔ£¬£¢ºÈÂğ£¬ºÈ£¢\n",
-"Åã¾ÆÅ®½«±­ÖĞµÄ±Ì¾Æµ½ÔÚÄãÉíÉÏ£¬È»ºóÓÃÉàÍ·ÇáÇáµÄ°ïÄãÌò¸É£®£®\n",
+"é™ªé…’å¥³è¹­åˆ°ä½ èº«æ—ï¼Œï¼‚å–å—ï¼Œå–ï¼‚\n",
+"é™ªé…’å¥³å°†æ¯ä¸­çš„ç¢§é…’åˆ°åœ¨ä½ èº«ä¸Šï¼Œç„¶åç”¨èˆŒå¤´è½»è½»çš„å¸®ä½ èˆ”å¹²ï¼ï¼\n",
         }) );
 	set_skill("unarmed",5);
 	set_skill("dodge",5);

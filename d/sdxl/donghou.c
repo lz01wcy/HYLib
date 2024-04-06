@@ -1,4 +1,4 @@
-// Room: /u/poq/sdxl/donghou.c ����
+// Room: /u/poq/sdxl/donghou.c 洞后
 // by poq 97/7
 //   alter dubei
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", BLU "����"NOR);
+    set("short", BLU "洞后"NOR);
     set("long", @LONG
-���Ų��ߵ�����ֻ����ľ�Դ䣬ɽ����ѡ������Ƕ��͵�ʯ�ڣ�
-��������һ��С·��֪ͨ������ȥ��
+你信步走到洞后，只见树木苍翠，山气清佳。北面是陡峭的石壁，
+东北面有一条小路不知通到哪里去。
 LONG
     );
 

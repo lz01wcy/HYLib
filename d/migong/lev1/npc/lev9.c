@@ -9,11 +9,11 @@ void create()
 
 {
     
-    set_name("Ð¡Ôô", ({ "xiao zei", "zei" }));
+    set_name("å°è´¼", ({ "xiao zei", "zei" }));
     
-     set("gender", "ÄÐÐÔ" );
+     set("gender", "ç”·æ€§" );
       set("long",
-"Ò»¸öÊÖ½ÅÁé¿ì£¬×¨¸ÉÍµ¼¦Ãþ¹·¹´µ±µÄÐ¡»ì»ì¡£\n");
+"ä¸€ä¸ªæ‰‹è„šçµå¿«ï¼Œä¸“å¹²å·é¸¡æ‘¸ç‹—å‹¾å½“çš„å°æ··æ··ã€‚\n");
         set("attitude", "aggressive");
       
   set("vendetta/authority",1);
@@ -50,7 +50,7 @@ void create()
     
     set("chat_msg", ({
          
-       "Ð¡ÔôºÈµÀ£º¾¹È»×·µ½ÕâÀïÀ´ÁË£¡£¡\n",
+       "å°è´¼å–é“ï¼šç«Ÿç„¶è¿½åˆ°è¿™é‡Œæ¥äº†ï¼ï¼\n",
               
               (: random_move :),
         }) );
@@ -119,11 +119,11 @@ void die()
         
 if (!me) return;
               me->add("score",1);
-        message_vision(WHT"$NÒ»Éù±¯Ãù,ÌÉµ¹ÔÚµØ¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nä¸€å£°æ‚²é¸£,èººå€’åœ¨åœ°ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));me->add("combat_exp",random(12));me->add("potential",random(8));
         if((int)me->query("combat_exp") < 200000)   {
-        message("vision", me->name() + "³É¹¦´òËÀÁÔÎïÔö¼ÓÁË40¾­ÑéºÍ20Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»çŒŽç‰©å¢žåŠ äº†40ç»éªŒå’Œ20æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",100);
         me->add("potential",50);
         destruct(ob);

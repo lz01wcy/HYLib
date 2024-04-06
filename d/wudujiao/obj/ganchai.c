@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-	       set_name("¸É²ñ", ({"ganchai" ,"chai"}));
+	       set_name("å¹²æŸ´", ({"ganchai" ,"chai"}));
 	
-		set("unit", "À¦");
-		set("long", "ÕâÊÇÒ»Ğ¡À¦ÉÕ»ğÓÃµÄ¸É²ñ¡£\n");
+		set("unit", "æ†");
+		set("long", "è¿™æ˜¯ä¸€å°æ†çƒ§ç«ç”¨çš„å¹²æŸ´ã€‚\n");
 		set("value", 0);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(500);
 
 	
@@ -29,22 +29,22 @@ int do_make(string arg)
 {
     object me = this_player();
     object ob = this_object();
-    if ((ob->query("name"))=="»ğ°Ñ")
+    if ((ob->query("name"))=="ç«æŠŠ")
     return 0;
-    if (arg != "»ğ°Ñ"&& arg !="huoba")
+    if (arg != "ç«æŠŠ"&& arg !="huoba")
     return 0;
-    message_vision ("$NÄÃÆğÒ»À¦¸É²ñ£¬ÈıÏÂÁ½ÏÂ¾ÍÔú³ÉÁËÒ»Ö§»ğ°Ñ¡£\n\n",me);
+    message_vision ("$Næ‹¿èµ·ä¸€æ†å¹²æŸ´ï¼Œä¸‰ä¸‹ä¸¤ä¸‹å°±æ‰æˆäº†ä¸€æ”¯ç«æŠŠã€‚\n\n",me);
     this_object()->recreate();
     return 1;
 }
 void recreate ()
 {
-	       set_name("»ğ°Ñ", ({"huo ba","ba"}));
+	       set_name("ç«æŠŠ", ({"huo ba","ba"}));
 	
-		set("unit", "Ö§");
-		set("long", "ÕâÊÇÒ»Ö§ÕÕÃ÷ÓÃµÄ»ğ°Ñ¡£\n");
+		set("unit", "æ”¯");
+		set("long", "è¿™æ˜¯ä¸€æ”¯ç…§æ˜ç”¨çš„ç«æŠŠã€‚\n");
 		set("value", 0);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(300);
 	setup();
 }

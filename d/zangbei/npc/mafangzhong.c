@@ -5,15 +5,15 @@ inherit NPC;
 int estate();
 void create()
 {
-        set_name("Âí·½ÖÐ",({"ma fangzhong","ma"}));
-        set("title","ÓëÊÀÎÞÕù");
+        set_name("é©¬æ–¹ä¸­",({"ma fangzhong","ma"}));
+        set("title","ä¸Žä¸–æ— äº‰");
         set("long","
-Âí·½ÖÐÕâ¸öÈË¾ÍÏóËûµÄÃû×ÖÒ»Ñù£¬·½·½ÕýÕý£¬¹æ¹æ¾Ø¾Ø£¬´Ó³öÉúµ½ÏÖÔÚ£¬
-´ÓÀ´Ã»ÓÐ×ö¹ýÈÎºÎÒ»¼þÁîÈË¾õµÃ¾ªÆæÒâÍâµÄÊÂ¡£±ðÈË¾õµÃÓ¦¸Ã³ÉÇ×µÄÊ±ºò£¬
-Ëû¾Í³ÉÁËÇ×£¬±ðÈË¾õµÃÓ¦¸ÃÉú¶ùÓýÅ®µÄÊ±ºò£¬Ëû¾Í²»¶à²»ÉÙÉúÁËÁ½¸ö¡£ÖÖ
-»¨ÊÇËû×î´óµÄÊÈºÃ¡£\n");
+é©¬æ–¹ä¸­è¿™ä¸ªäººå°±è±¡ä»–çš„åå­—ä¸€æ ·ï¼Œæ–¹æ–¹æ­£æ­£ï¼Œè§„è§„çŸ©çŸ©ï¼Œä»Žå‡ºç”Ÿåˆ°çŽ°åœ¨ï¼Œ
+ä»Žæ¥æ²¡æœ‰åšè¿‡ä»»ä½•ä¸€ä»¶ä»¤äººè§‰å¾—æƒŠå¥‡æ„å¤–çš„äº‹ã€‚åˆ«äººè§‰å¾—åº”è¯¥æˆäº²çš„æ—¶å€™ï¼Œ
+ä»–å°±æˆäº†äº²ï¼Œåˆ«äººè§‰å¾—åº”è¯¥ç”Ÿå„¿è‚²å¥³çš„æ—¶å€™ï¼Œä»–å°±ä¸å¤šä¸å°‘ç”Ÿäº†ä¸¤ä¸ªã€‚ç§
+èŠ±æ˜¯ä»–æœ€å¤§çš„å—œå¥½ã€‚\n");
         
-        set("gender","ÄÐÐÔ");
+        set("gender","ç”·æ€§");
         set("group","ma");
         
         set("age",32);          
@@ -21,7 +21,7 @@ void create()
         set("cor",30);
         set("cps",20);
         set("str",40);
-        set("marry","ÂíÔÂÔÆ");
+        set("marry","é©¬æœˆäº‘");
         set("marry_name","ma yueyun");
         
         set("neili",1500);
@@ -45,10 +45,10 @@ void create()
         set("resistance/sen",30);
         
         set("inquiry", ([
-           "ÀÏ²®": "ÀÏ²®ÊÇÎÒµÄÐÖµÜ£¬ÎÒµÄÅóÓÑ£¬Ò²ÊÇÎÒµÄ¸¸Ä¸£¬ÈôÃ»ÓÐËû£¬ÎÒÔÚÊ®ÁùËê
-µÄÊ±ºòÒÑ¾­±»ÈËÉ±ËÀÁË¡£",
-                "ËïÓñ²®":       "ÀÏ²®ÊÇÎÒµÄÐÖµÜ£¬ÎÒµÄÅóÓÑ£¬Ò²ÊÇÎÒµÄ¸¸Ä¸£¬ÈôÃ»ÓÐËû£¬ÎÒÔÚÊ®ÁùËê
-µÄÊ±ºòÒÑ¾­±»ÈËÉ±ËÀÁË¡£",
+           "è€ä¼¯": "è€ä¼¯æ˜¯æˆ‘çš„å…„å¼Ÿï¼Œæˆ‘çš„æœ‹å‹ï¼Œä¹Ÿæ˜¯æˆ‘çš„çˆ¶æ¯ï¼Œè‹¥æ²¡æœ‰ä»–ï¼Œæˆ‘åœ¨åå…­å²
+çš„æ—¶å€™å·²ç»è¢«äººæ€æ­»äº†ã€‚",
+                "å­™çŽ‰ä¼¯":       "è€ä¼¯æ˜¯æˆ‘çš„å…„å¼Ÿï¼Œæˆ‘çš„æœ‹å‹ï¼Œä¹Ÿæ˜¯æˆ‘çš„çˆ¶æ¯ï¼Œè‹¥æ²¡æœ‰ä»–ï¼Œæˆ‘åœ¨åå…­å²
+çš„æ—¶å€™å·²ç»è¢«äººæ€æ­»äº†ã€‚",
         ]));
         
         set("nb_chat_chance", 100);
@@ -60,8 +60,8 @@ void create()
         }) );*/
         set("chat_chance",1);
         set("chat_msg",({
-                "\nÌì¸ßÆøË¬£¬·ç´µÔÚÉíÉÏ£¬²»ÀäÒ²²»ÈÈ¡£Âí·½ÖÐ»¹ÔÚÔº×ÓÀïÁ÷Á¬×Å£¬Éá²»µÃ»Ø
-·¿Ë¯¾õ¡£\n",
+                "\nå¤©é«˜æ°”çˆ½ï¼Œé£Žå¹åœ¨èº«ä¸Šï¼Œä¸å†·ä¹Ÿä¸çƒ­ã€‚é©¬æ–¹ä¸­è¿˜åœ¨é™¢å­é‡Œæµè¿žç€ï¼Œèˆä¸å¾—å›ž
+æˆ¿ç¡è§‰ã€‚\n",
         }) );                   
         
 //        auto_npc_setup();("wang",300,200,0,"/obj/weapon/","fighter_u","nine-moon-claw",1);

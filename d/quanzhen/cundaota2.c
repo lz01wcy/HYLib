@@ -1,4 +1,4 @@
-// cundaota2.c ´æµÀËþ¶þ²ã
+// cundaota2.c å­˜é“å¡”äºŒå±‚
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´æµÀËþ¶þ²ã");
+        set("short", "å­˜é“å¡”äºŒå±‚");
         set("long", @LONG
-ÕâÀïÊÇ´æµÀËþµÄ¶þ²ã£¬ËþÌÝÈÆ×ÅËþÄÚÏòËþ¶¥ÑÓÉì¡£ÕâÀï¿Õ¿ÕÈç
-Ò²£¬¾­ÊéÒ²ÐíÈ«±»È«ÕæµÜ×ÓÃÇ½èÈ¥ÔÄ¶ÁÁË¡£
+è¿™é‡Œæ˜¯å­˜é“å¡”çš„äºŒå±‚ï¼Œå¡”æ¢¯ç»•ç€å¡”å†…å‘å¡”é¡¶å»¶ä¼¸ã€‚è¿™é‡Œç©ºç©ºå¦‚
+ä¹Ÿï¼Œç»ä¹¦ä¹Ÿè®¸å…¨è¢«å…¨çœŸå¼Ÿå­ä»¬å€ŸåŽ»é˜…è¯»äº†ã€‚
 LONG
         );
         set("exits", ([

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "���᷿");
+	set ("short", "东厢房");
 	set ("long", @LONG
-����֪�����˺ͼҾ���ӵĴ���������һ�ŵ񻨴�ľ�������϶ѵ�
-�Ž������廨��ͷ��������һ�����ȣ�������һ�����ԣ���Լ��������
-�������㡣
+这是知府大人和家眷起居的处所。左首一张雕花大木床，床上堆叠
+着锦被和绣花枕头。北边是一条走廊，西边是一个花圃，隐约传来阵阵
+花的迷香。
 LONG);
 	set("exits", ([
 		"north" : __DIR__"zoulang",

@@ -11,7 +11,7 @@ void create()
   set("age",person["age"]);
   if (person["combat_exp"]) set("combat_exp",person["combat_exp"]);
   if (!person["gender"])
-  set("gender","ÄĞĞÔ");
+  set("gender","ç”·æ€§");
   else set("gender",person["gender"]);
 set("chat_chance",2);
 set("chat_msg",({ (:random_move:)}));

@@ -4,13 +4,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name( HIW"ÓðÃ«"NOR, ({ "yu mao", "mao" }) );
+        set_name( HIW"ç¾½æ¯›"NOR, ({ "yu mao", "mao" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "´é");
-        set("long","Ò»´éÃÀÀöµÄÓðÃ«.\n");
+                set("unit", "æ’®");
+        set("long","ä¸€æ’®ç¾Žä¸½çš„ç¾½æ¯›.\n");
                 set("value", 500);
         set("combat_exp", 5000000);
                 set("material", "leather");

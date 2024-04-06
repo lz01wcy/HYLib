@@ -4,10 +4,10 @@ inherit NPC;
 void create()
 {
    //reload("yy_yaodian_wang");
-   set_name("ÍõÒ©Ê¦",({ "wang yaoshi","wang","yaoshi"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("ç‹è¯å¸ˆ",({ "wang yaoshi","wang","yaoshi"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-   set("long", "ÕâÊÇ°ÍÁêµÄÍõÒ©Ê¦£¬ËûÕâÀïÓĞºÜ¶àĞÂÆæµÄÒ©Îï¡£\n");
+   set("long", "è¿™æ˜¯å·´é™µçš„ç‹è¯å¸ˆï¼Œä»–è¿™é‡Œæœ‰å¾ˆå¤šæ–°å¥‡çš„è¯ç‰©ã€‚\n");
     set("shop_id",({ "wang yaoshi","wang","yaoshi"}) );
    set("combat_exp",300000);
    set("str",26);

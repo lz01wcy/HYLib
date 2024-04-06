@@ -4,15 +4,15 @@ inherit BOOTS;
 
 void create()
 {
-        set_name("²İĞ¬", ({"caoxie","boots"}));
+        set_name("è‰é‹", ({"caoxie","boots"}));
 	set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "leather");
-                set("unit", "Ë«");
+                set("unit", "åŒ");
                 set("value",100);
-                set("long","ÓÃÆÑ²İÃÜÃÜ±àÖÆ¶ø³ÉµÄ²İĞ¬.\n");
+                set("long","ç”¨è’²è‰å¯†å¯†ç¼–åˆ¶è€Œæˆçš„è‰é‹.\n");
 		set("armor_prop/armor", 11);
         }
         setup();

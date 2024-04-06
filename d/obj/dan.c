@@ -8,12 +8,12 @@ void init()
 }
 void create()
 {
-        set_name(HIG"°Ù²Ýµ¤"NOR, ({"baicao dan", "dan"}));
+        set_name(HIG"ç™¾è‰ä¸¹"NOR, ({"baicao dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÓÃÊý°ÙÖÖÒ©Îï¾«ÖÆ¶ø³ÉµÄµ¤Ò©£¬ÓÐÉñÆæÒ©Ð§¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯ä¸€é¢—ç”¨æ•°ç™¾ç§è¯ç‰©ç²¾åˆ¶è€Œæˆçš„ä¸¹è¯ï¼Œæœ‰ç¥žå¥‡è¯æ•ˆã€‚\n");
                 set("value", 500000);
         }
         setup();
@@ -24,9 +24,9 @@ int do_eat(string arg)
         int fw;
         object me = this_player();
 
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
           if (me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
 	
 	if(arg=="dan") 
 	{
@@ -35,7 +35,7 @@ int do_eat(string arg)
                 fw = (int)me->max_water_capacity();
                 me->set("water", fw);
 	 	me->set("neili",me->query("max_neili")*2);
-message_vision(HIG"$N³ÔÏÂÒ»¿Å°Ù²Ý£¬¶ÙÊ±Ö»¾õµ¤Ìï³äÂúÁËÄÚÁ¦£¡\n"NOR,me);
+message_vision(HIG"$Nåƒä¸‹ä¸€é¢—ç™¾è‰ï¼Œé¡¿æ—¶åªè§‰ä¸¹ç”°å……æ»¡äº†å†…åŠ›ï¼\n"NOR,me);
 		me->start_busy(1);
         	destruct(this_object());
 	}

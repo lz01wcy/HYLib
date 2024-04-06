@@ -2,18 +2,18 @@
 inherit NECK; 
 void create()
 {
-        set_name("°×Óñ×¹¶ù", ({ "jade", "white jade"}) );
+        set_name("ç™½ç‰å å„¿", ({ "jade", "white jade"}) );
         set_weight(5);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö¾§Ó¨ÌŞÍ¸µÄ°×Óñ×¹¶ù£¬¾İËµ´÷×ÅËü¿ÉÒÔ±ÜĞ°¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªæ™¶è¹å‰”é€çš„ç™½ç‰å å„¿ï¼Œæ®è¯´æˆ´ç€å®ƒå¯ä»¥é¿é‚ªã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 500);
                 set("armor_prop/armor", 10);
                 set("armor_prop/karma", 5);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¸ö$n¹ÒÔÚ²±×ÓÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´Ó²±×ÓÉÏ³ıÁËÏÂÀ´¡£\n");  
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€ä¸ª$næŒ‚åœ¨è„–å­ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»è„–å­ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");  
         }
 	setup();
 }   

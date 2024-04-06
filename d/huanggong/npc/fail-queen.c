@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "»ÊÌ«ºó" NOR, ({ "empress","queen"}));
+        set_name(HIY "çš‡å¤ªå" NOR, ({ "empress","queen"}));
         set("shen_type", 0);
         set("age",43);
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("per",24);
         set("long",
-                "ËıÉúµÃ°«°«ÅÖÅÖ£¬Ò²ĞíÊÇÖÕÄê²»¼ûÑô¹â£¬ËùÒÔËıµÄÁ³É«ÏÔµÃºÜ²Ô°×¡£\n");
+                "å¥¹ç”Ÿå¾—çŸ®çŸ®èƒ–èƒ–ï¼Œä¹Ÿè®¸æ˜¯ç»ˆå¹´ä¸è§é˜³å…‰ï¼Œæ‰€ä»¥å¥¹çš„è„¸è‰²æ˜¾å¾—å¾ˆè‹ç™½ã€‚\n");
         set("max_neili",5000);
         set("max_jingli",4000);
         set("jingli",4000);
@@ -22,13 +22,13 @@ void create()
         set_skill("literate",200);
         set("chat_chance", 5);
         set("chat_msg", ({
-"»ÊÌ«ºóËµµÀ£ºĞ¡¹ğ×ÓÖªµÀµÄÊÂÌ«¶àÁË£¬²»¶Â×¡ËûµÄ×ì£¬ÎÒË¯Ò²Ë¯²»×Å£®\n",
+"çš‡å¤ªåè¯´é“ï¼šå°æ¡‚å­çŸ¥é“çš„äº‹å¤ªå¤šäº†ï¼Œä¸å µä½ä»–çš„å˜´ï¼Œæˆ‘ç¡ä¹Ÿç¡ä¸ç€ï¼\n",
         }) );
 
         set("combat_exp", 800000);
         set("attitude", "friendly");
         set("inquiry", ([
-                "Ïİº¦" : "ÄãÊ²Ã´ÒâË¼......¡£\n",
+                "é™·å®³" : "ä½ ä»€ä¹ˆæ„æ€......ã€‚\n",
         ]));
       
   setup();
@@ -38,17 +38,17 @@ void create()
 int accept_object(object me, object obj)
 {
 	object pai;
-        if( (string) obj->query("name") == "Ğ¡¹ğ×Ó"
+        if( (string) obj->query("name") == "å°æ¡‚å­"
         || obj->query("id") =="xiao guizi")
 	{
-        message_vision("$NÏò$nµãÁËµãÍ·£º\n",this_object(),me);
+        message_vision("$Nå‘$nç‚¹äº†ç‚¹å¤´ï¼š\n",this_object(),me);
         command("heihei");
-	command("say ×öµÃºÃ£¬³ıÈ¥ÎÒµÄĞÄ²¡£¡\n");
-	command("say Õâ±¾42ÕÂ¾­£¬¾Í½»¸øÄã±£¹ÜÁË£¡\n");
+	command("say åšå¾—å¥½ï¼Œé™¤å»æˆ‘çš„å¿ƒç—…ï¼\n");
+	command("say è¿™æœ¬42ç« ç»ï¼Œå°±äº¤ç»™ä½ ä¿ç®¡äº†ï¼\n");
 	pai = new("/d/city2/obj/book14_2");
 	if(pai)
 	pai->move(me);
-        message_vision("$NÄÃ³öÒ»±¾42ÕÂ¾­¸øÁË$n¡£\n",this_object(),me);
+        message_vision("$Næ‹¿å‡ºä¸€æœ¬42ç« ç»ç»™äº†$nã€‚\n",this_object(),me);
         call_out("destroying", 0, obj,me);                       
 	return 1;	
 	}

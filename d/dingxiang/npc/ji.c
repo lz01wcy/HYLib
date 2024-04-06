@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-     set_name("Ä¸¼¦",({ "mu ji","mu","ji"}) );
-     set("race", "Ò°ÊŞ" );
-     set("long", "ÕâÊÇÒ»Ö»Ä¸¼¦¡£\n");
+     set_name("æ¯é¸¡",({ "mu ji","mu","ji"}) );
+     set("race", "é‡å…½" );
+     set("long", "è¿™æ˜¯ä¸€åªæ¯é¸¡ã€‚\n");
      set("verbs",({"bite"}));
-     set("limbs",({"Í·","¸¹²¿"}));
+     set("limbs",({"å¤´","è…¹éƒ¨"}));
      set("bai_dun_quest_obj",1);
      setup();
 

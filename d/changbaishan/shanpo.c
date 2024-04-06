@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","ɽ��");
+  set ("short","山坡");
   set ("long", @LONG
-������һ��ɽ�£����������£�Ҫ��һ��С�Ļ�����ȥ��׼�Ƿ���
-��ǡ����ڱ�ѩ�ܶ࣬�㲻��С��������
+这里是一个山坡，下面是深崖，要是一不小心滑了下去，准是粉身
+碎骨。现在冰雪很多，你不禁小心起来。
 LONG);
 
   set("exits", ([ 

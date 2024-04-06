@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set  ("short",  "��ܰ���");
+	set  ("short",  "清馨茶馆");
 	set  ("long",  @LONG
-��һ�߽��������ŵ�һ�ɲ���������Ƣ������Ϊ֮һˬ�����Ű���
-��һ���ſ��������˿��ˡ�һλ����������ǰ���࣬���������������衣
-��ȷ�Ǹ���Ȼȥ����
+你一走进来，就闻到一股茶香沁入心脾，精神为之一爽。几张八仙
+桌一字排开，坐满了客人。一位老者正在堂前弹奏，几个儒生击几而歌。
+的确是个悠然去处。
 LONG);
 	set("exits",  ([  //sizeof()  ==  4
 		"northeast" :  __DIR__"zaoxiang",

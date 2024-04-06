@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	       set_name("òÚò¼¶¾ÄÒ", ({"wugong dunang" ,"dunang"}));
+	       set_name("èœˆèš£æ¯’å›Š", ({"wugong dunang" ,"dunang"}));
 	
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸öòÚò¼µÄ¶¾ÄÒ¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªèœˆèš£çš„æ¯’å›Šã€‚\n");
 		set("value", 100);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(100);
 
 	
@@ -29,6 +29,6 @@ int do_eat(string arg)
     object me = this_player();
     if (arg != "wugong dunang"&& arg !="dunang")
     return 0;
-    tell_object(me,  "ÄãÏëËÀ°¡£¬ÓÃsuicide±È½Ï¿ìÒ»µã¡£\n" );
+    tell_object(me,  "ä½ æƒ³æ­»å•Šï¼Œç”¨suicideæ¯”è¾ƒå¿«ä¸€ç‚¹ã€‚\n" );
     return 1;
 }

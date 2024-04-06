@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "������");
+  set ("short", "市中心");
   set ("long", @LONG
-�������񻧵�����.�������ֵ��Ӵ˷ֱ�ͨ���ĸ�����.��һ����ȥ.
-�ֵ����ߵ��̵����Ƹߵ����.�����һ�����صķ羰.
+这里是神户的中心.有四条街道从此分别通向四个方向.你一眼望去.
+街道两边的商店招牌高低起伏.组成了一道奇特的风景.
 LONG);
 
   set("outdoors", "japan");

@@ -7,13 +7,13 @@ inherit CLOTH;
 #include <ansi.h>
 void create()
 {
-	set_name("Ê¯ÁñÈ¹", ({ "skirt" }) );
+	set_name("çŸ³æ¦´è£™", ({ "skirt" }) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼þ");
-		set("long", "Ò»¼þÎå²Ê°ßÀ»µÄÊ¯ÁñÈ¹\n");
+		set("unit", "ä»¶");
+		set("long", "ä¸€ä»¶äº”å½©æ–‘é˜‘çš„çŸ³æ¦´è£™\n");
 		set("material", "cloth");
 		set("value", 1000);
 		set("armor_prop/armor", 3);

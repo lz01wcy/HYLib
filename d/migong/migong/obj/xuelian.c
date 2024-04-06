@@ -8,23 +8,23 @@ void init()
 
 void create()
 {
-	set_name(HIW "Ñ©Á«" NOR, ({"xue lian", "lian"}));
-        set("unit", "¶ä");
+	set_name(HIW "é›ªè²" NOR, ({"xue lian", "lian"}));
+        set("unit", "æœµ");
         set("value", 250000);
-	set("long", "ÕâÊÇÒ»¶äÇ§ÄêÄÑµÃÒ»¼ûµÄÑ©Á«£¬¾İËµÄÜ½â°Ù¶¾¡£\n");
+	set("long", "è¿™æ˜¯ä¸€æœµåƒå¹´éš¾å¾—ä¸€è§çš„é›ªè²ï¼Œæ®è¯´èƒ½è§£ç™¾æ¯’ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="lian") 
 	{
 		this_player()->set_temp("nopoison", 1);
 		this_player()->set("eff_jing",this_player()->query("max_jing"));
 		this_player()->set("jing",this_player()->query("max_jing"));
 		
-		tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëĞÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+		tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜,ç¥æ„æ¸…çˆ½ï¼\n" NOR );
 		destruct(this_object());
 	}
 	return 1;

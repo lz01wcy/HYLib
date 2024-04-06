@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����С·");
+	set("short", "林中小路");
 	set("long", @LONG
-����һƬ���ܵ����֡������˼�������Ω�����ߵ��·�棬��ɮ��
-ľ������΢�紵����Ҷ�������������������˳���Ϊ֮һ�ӣ����Ǿ���
-���������ڡ�
+这是一片密密的竹林。这里人迹罕至，惟闻足底叩击路面，有僧敲
+木鱼声；微风吹拂竹叶，又如簌簌禅唱。令人尘心为之一涤，真是绝佳
+的禅修所在。
 LONG );
 	set("exits", ([
 		"southeast" : __DIR__"xiaolu4",

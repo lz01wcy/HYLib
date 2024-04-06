@@ -3,13 +3,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIB BLINK "ÁúÖé" NOR, ({ "long zhu" ,"zhu", }) );
+        set_name(HIB BLINK "é¾™ç " NOR, ({ "long zhu" ,"zhu", }) );
         set_weight(100000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long","ÕâÊÇ¿ÅÁúÑÛ£¬¿´À´»¹Öµ¼¸¸öÇ®¡£\n");
+                set("unit", "é¢—");
+                set("long","è¿™æ˜¯é¢—é¾™çœ¼ï¼Œçœ‹æ¥è¿˜å€¼å‡ ä¸ªé’±ã€‚\n");
                 set("value", 100000);
                 set("material", "dainomd");
               }
@@ -24,7 +24,7 @@ int do_pushin(string arg)
         object me=this_player();
         object room=environment(me);
         if(base_name(room) != "/d/changan/qinhuang/dadian3") return 0;
-        message_vision("$NÅõÆðÒ»¿Å"+query("name")+"Èû½øÁËÊ¯ÃÅµÄ¶´ÄÚ¡£\n",me);
+        message_vision("$Næ§èµ·ä¸€é¢—"+query("name")+"å¡žè¿›äº†çŸ³é—¨çš„æ´žå†…ã€‚\n",me);
         room->add("in_zhu",1);
         if (room && me){
                 room->open_door(me,1);

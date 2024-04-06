@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-set("short", "��ʯ��");
+set("short", "大石桥");
 set("long", @LONG
-������Ǵ�ʯ�ţ�������ʱ���½��ģ��ɸֽ�������Ƴɣ�ϰ������
-�ǻ��ǰ�����Ϊ��ʯ�ţ�����ܿ�������ʮ��ʮ�����С�
+这里就是大石桥，是明治时期新建的，由钢筋混凝土制成，习惯上人
+们还是把它称为大石桥，桥面很宽可以容十马十车并行。
 LONG );
 set("exits",  ([
         "south"  : __DIR__"shangyuan5",

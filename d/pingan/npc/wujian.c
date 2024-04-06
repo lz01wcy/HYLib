@@ -1,22 +1,22 @@
 // yue-buqun.c lasted updated by cocacola on 2.19 for adding chushi
-// ÔÀ²»Èº
-// ´ËnpcÉÏµÄxunchenÉèÖÃ²»µ±£¡
-// ĞÇĞÇlywin¸ÄÓÚ2000/6/11
-//  hxsd·¢ÏÖ¶à´Îxunchen»áÓĞBUG¡£ºó»»Ò»ÖÖ·½·¨¡£
+// å²³ä¸ç¾¤
+// æ­¤npcä¸Šçš„xunchenè®¾ç½®ä¸å½“ï¼
+// æ˜Ÿæ˜Ÿlywinæ”¹äº2000/6/11
+//  hxsdå‘ç°å¤šæ¬¡xunchenä¼šæœ‰BUGã€‚åæ¢ä¸€ç§æ–¹æ³•ã€‚
 inherit NPC;
 #include <ansi.h>;
 int do_xunchen();
 
 void create()
 {
-        set_name("Íõ´óÈË", ({ "wang daren", "wang" }) );
-        set("title", "Æ½°²³ÇÊØ½«");
-        set("nickname", "ÎŞµĞ½«¾ü");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‹å¤§äºº", ({ "wang daren", "wang" }) );
+        set("title", "å¹³å®‰åŸå®ˆå°†");
+        set("nickname", "æ— æ•Œå°†å†›");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 55);
         set("long",
-                "Íõ´óÈËÄËÊÇÆ½°²³ÇµÄÊØ³Ç´ó½«¡£\n");
+                "ç‹å¤§äººä¹ƒæ˜¯å¹³å®‰åŸçš„å®ˆåŸå¤§å°†ã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -39,7 +39,7 @@ void create()
                 (: exert_function, "powerup" :),
         }) );
         set("inquiry", ([
-            "Ñ²³Ç": (: do_xunchen :),
+            "å·¡åŸ": (: do_xunchen :),
             "job" : (: do_xunchen :),
         ]) );
 
@@ -81,7 +81,7 @@ int do_xunchen()
         {
         if (present("xunchen1", me)  && present("xunchen2", me)&& present("xunchen3", me)&& present("xunchen4", me))  
          {
-               message_vision("$N¶Ô×Å$nËµ£º²»´í£¬ĞÁ¿àÁË¡£ÄãÕâ¾ÍÈ¥ĞİÏ¢È¥°É¡£ÄãµÄ¾­ÑéºÍÇ±ÄÜÔö¼ÓÁË!!\n", this_object(), me);
+               message_vision("$Nå¯¹ç€$nè¯´ï¼šä¸é”™ï¼Œè¾›è‹¦äº†ã€‚ä½ è¿™å°±å»ä¼‘æ¯å»å§ã€‚ä½ çš„ç»éªŒå’Œæ½œèƒ½å¢åŠ äº†!!\n", this_object(), me);
                me->delete_temp("xunchen");                      
                  destruct(present("xunchen1",me));
                  destruct(present("xunchen2",me));
@@ -92,30 +92,30 @@ int do_xunchen()
                return 1;
          }
         else
-        command("say ÄãµÄÑ²³Ç±¨¸æ£¬»¹Ã»È«ÄØ!");
+        command("say ä½ çš„å·¡åŸæŠ¥å‘Šï¼Œè¿˜æ²¡å…¨å‘¢!");
         return 1;
         }
         else
         {
                if ( query_temp("xunchen") < 1)
                {
-                      message_vision("$N¶Ô×Å$nËµ£º½ñÌìÒÑ¾­ÓĞ²»ÉÙÈËÑ²³ÇÈ¥ÁË¡£ÄãÃ÷ÌìÔÙÀ´°É¡£\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä»Šå¤©å·²ç»æœ‰ä¸å°‘äººå·¡åŸå»äº†ã€‚ä½ æ˜å¤©å†æ¥å§ã€‚\n", this_object(), me);
                       return 1;
                }
                if( me->query("combat_exp") <30000)
                {
-                      message_vision("$N¶Ô×Å$nÀäĞ¦Ò»Éù£º¾ÍÄãÕâµãµÀĞĞÒ²ÏëÑ²³Ç£¡\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nå†·ç¬‘ä¸€å£°ï¼šå°±ä½ è¿™ç‚¹é“è¡Œä¹Ÿæƒ³å·¡åŸï¼\n", this_object(), me);
                       return 1;
                }
                if( me->query("combat_exp") >300000)
                {
-                      message_vision("$N¶Ô×Å$nËµµ½£¬ÕâÃ´µãĞ¡ÊÂ£¬²»¸ÒÀÍÄú´ó¼İ£¡\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´åˆ°ï¼Œè¿™ä¹ˆç‚¹å°äº‹ï¼Œä¸æ•¢åŠ³æ‚¨å¤§é©¾ï¼\n", this_object(), me);
                       return 1;
                }
                else
                {
                       add_temp("xunchen", -1);
-                      message_vision("$N¶Ô×Å$nËµ£ººÃÄĞ¶ùÀıµ±Ñ²³Ç¡£Äã£¬ºÜºÃ£¬ºÜºÃ£¡Õâ¾ÍÈ¥°É¡£\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šå¥½ç”·å„¿ä¾‹å½“å·¡åŸã€‚ä½ ï¼Œå¾ˆå¥½ï¼Œå¾ˆå¥½ï¼è¿™å°±å»å§ã€‚\n", this_object(), me);
 //                      me->set_temp("xunchen/start", 1);
 //                      me->set_temp("xunchen/time", time());
                       me->set_temp("xunchen", 1);

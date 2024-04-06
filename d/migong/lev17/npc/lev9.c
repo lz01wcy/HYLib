@@ -8,12 +8,12 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"Ğ«Î²·ÉÊ¨"NOR, ({ "scorpicore"}));
+   set_name(order[random(13)]+"èå°¾é£ç‹®"NOR, ({ "scorpicore"}));
 	set("magicgift",1);
 	set("magicset",1);
        set("zhuanbest",1);
        set("long",
-"Ò»Ö»¿ÉÅÂµÄ¹ÖÎï¡£\n");
+"ä¸€åªå¯æ€•çš„æ€ªç‰©ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	 	       set("max_qi",15000+random(500));
@@ -119,9 +119,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(RED"$N,µ¹µØ¶øÍö£¬²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$N,å€’åœ°è€Œäº¡ï¼Œä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃğ"+ob->query("name")+",Ôö¼ÓÁË200¾­ÑéºÍ100Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("name")+",å¢åŠ äº†200ç»éªŒå’Œ100æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",200);
         me->add("potential",100);
               me->add("score",1);
@@ -145,7 +145,7 @@ string msg;
         ob->apply_condition("xx_poison", 40);
         ob->apply_condition("cold_poison", 40);
         ob->apply_condition("flower_poison", 40);
-           msg = HIR"$N"HIR"Í»È»ÓÃ¶¾Î²¶Ô×Å$n"HIR"ºİºİÒ»Ôú$n"HIR"±»ÔúµÄÍ·ÆÆÑªÁ÷!!\n"NOR;
+           msg = HIR"$N"HIR"çªç„¶ç”¨æ¯’å°¾å¯¹ç€$n"HIR"ç‹ ç‹ ä¸€æ‰$n"HIR"è¢«æ‰çš„å¤´ç ´è¡€æµ!!\n"NOR;
             message_vision(msg, me, ob);
 }
 }

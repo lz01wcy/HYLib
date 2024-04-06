@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("·½ÏÈÉú", ({ "fang xiansheng", "fang", "xiansheng"}));
-	set("long", "ÕâÎ»ÏÈÉúÄê¼Í²»´ó£¬ÕıÔÚÈÏÕæµØ¶ÁÊé¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–¹å…ˆç”Ÿ", ({ "fang xiansheng", "fang", "xiansheng"}));
+	set("long", "è¿™ä½å…ˆç”Ÿå¹´çºªä¸å¤§ï¼Œæ­£åœ¨è®¤çœŸåœ°è¯»ä¹¦ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set_skill("literate", 60);
 	set_temp("apply/attack", 100);
@@ -38,7 +38,7 @@ int recognize_apprentice(object ob)
 //	switch(MONEY_D->player_pay(ob, money)) {
 //		case 0:
 //		case 2:
-//			write("ÄãÏÖÔÚµÄÑ§·ÑÊÇÃ¿´Î" + MONEY_D->money_str(money) + "£¬Çë±¸ºÃÁãÇ®¡£\n");
+//			write("ä½ ç°åœ¨çš„å­¦è´¹æ˜¯æ¯æ¬¡" + MONEY_D->money_str(money) + "ï¼Œè¯·å¤‡å¥½é›¶é’±ã€‚\n");
 //			return 1;
 //	}
 	ob->set_temp("mark/literate", 1);
@@ -51,8 +51,8 @@ void greeting(object ob)
        if ( ob->query_skill("literate") > 60 ) return;
 
        command("pat "+ob->query("id"));
-       command("say ÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬µ½ÎÒÕâÑ§Ğ©ÖªÊ¶"HIR"(xue fang literate)"NOR"°É¡£\n");
+       command("say è¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œåˆ°æˆ‘è¿™å­¦äº›çŸ¥è¯†"HIR"(xue fang literate)"NOR"å§ã€‚\n");
 
 }
 

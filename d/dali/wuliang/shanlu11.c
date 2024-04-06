@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½Â·");
+        set("short", "å±±è·¯");
         set("long", @LONG
-ÄãĞÅ²½¶øĞĞ£¬¾Ù²½Ì¤µ½µÄ¾¡ÊÇ°«Ê÷³¤²İ£¬ÕâÀïÃ»ÓĞÂ·,Ã¿×ßÒ»²½£¬¾£¼¬¶¼
-¹³´Ìµ½Ğ¡ÍÈ,»®ÆÆÄãµÄÉíÌå¡£
+ä½ ä¿¡æ­¥è€Œè¡Œï¼Œä¸¾æ­¥è¸åˆ°çš„å°½æ˜¯çŸ®æ ‘é•¿è‰ï¼Œè¿™é‡Œæ²¡æœ‰è·¯,æ¯èµ°ä¸€æ­¥ï¼Œè†æ£˜éƒ½
+é’©åˆºåˆ°å°è…¿,åˆ’ç ´ä½ çš„èº«ä½“ã€‚
 LONG
         );
         set("outdoors", "dali");
@@ -28,7 +28,7 @@ void init()
   object me = this_player();
      if (random(me->query("kar")) <10 && me->query_con() < 30)
             {
-     me->set_temp("last_damage_from", "ÔÚÉ­ÁÖÀï½îÆ£Á¦¾¡ÀÛ");
+     me->set_temp("last_damage_from", "åœ¨æ£®æ—é‡Œç­‹ç–²åŠ›å°½ç´¯");
              me->add("qi", -30);
              me->add("jing", -10);
              me->receive_wound("jing", 20);
@@ -44,8 +44,8 @@ int do_look()
         mixed *local;
         local = localtime(time() * 60);
         if((local[2] < 3 || local[2] >= 21)&&random(6)<2) {
-        message("vision",BLU"ÌìºÚÁË,ÕâÀïºÚ÷î÷îÒ»Æ¬£¬ÉìÊÖ²»¼ûÎåÖ¸,ÄãËÄ´¦ÂÒ×ß×Å,ĞÄÀï³äÂú¿Ö¾å.\n"
-                           "Í»È»´«À´¼¸ÉùÒ°ÊŞµÄº¿½Ğ,ÄãÏÅµÄ¿ŞÁËÆğÀ´.\n"NOR, me);
+        message("vision",BLU"å¤©é»‘äº†,è¿™é‡Œé»‘é»é»ä¸€ç‰‡ï¼Œä¼¸æ‰‹ä¸è§äº”æŒ‡,ä½ å››å¤„ä¹±èµ°ç€,å¿ƒé‡Œå……æ»¡ææƒ§.\n"
+                           "çªç„¶ä¼ æ¥å‡ å£°é‡å…½çš„åšå«,ä½ å“çš„å“­äº†èµ·æ¥.\n"NOR, me);
         }
 }
 
@@ -62,7 +62,7 @@ int valid_leave(object me, string dir)
         if (dir == "north")
           me->add_temp("mark/step",1);
 
-/**for Óª¾È¶ÎÓş ***/
+/**for è¥æ•‘æ®µèª‰ ***/
          if (me->query_temp("duanyu/steps") 
            && me->query_temp("duanyu/step")  
            && random(me->query("kar")) > 20
@@ -73,9 +73,9 @@ int valid_leave(object me, string dir)
             me->set("dali/pass", 1);
             me->delete_temp("mark/steps");
             me->delete_temp("mark/step");
-              return notify_fail("Äã×ßµ½ÁËÒ»¸ö¸ßÉ½ÉÏ¡£\n");
+              return notify_fail("ä½ èµ°åˆ°äº†ä¸€ä¸ªé«˜å±±ä¸Šã€‚\n");
          }
-// Modify By River ¹ØÓÚ²»ÄÜÌ«¼òµ¥»ñµÃ lbwb £¬Ö»¸øËÄ´Î»ú»á 
+// Modify By River å…³äºä¸èƒ½å¤ªç®€å•è·å¾— lbwb ï¼Œåªç»™å››æ¬¡æœºä¼š 
          if (me->query_temp("mark/steps") < -8 || me->query_temp("mark/step") < -8 ){
            if(me->query_temp("duanyu/find2")){
              if(!me->query("dali/fail"))
@@ -92,10 +92,10 @@ int valid_leave(object me, string dir)
            me->delete_temp("mark/step");
            if(me->query_temp("duanyu/find2") && me->query("dali/fail") > 3){
 //           me->delete_temp("duanyu/find2");
-              return notify_fail(HIW"\nÄã½îÆ£Á¦¾¡µØ×ß³öÕâ¶ÎÉ½Â·£¬¾ÚÉ¥µØ·¢ÏÖ×Ô¼ºÔõÃ´Ò²ÕÒ²»µ½ËÄ´ó¶ñÈËµÄĞĞ×Ù¡£\n"NOR);
+              return notify_fail(HIW"\nä½ ç­‹ç–²åŠ›å°½åœ°èµ°å‡ºè¿™æ®µå±±è·¯ï¼Œæ²®ä¸§åœ°å‘ç°è‡ªå·±æ€ä¹ˆä¹Ÿæ‰¾ä¸åˆ°å››å¤§æ¶äººçš„è¡Œè¸ªã€‚\n"NOR);
            }
            else 
-              return notify_fail("Äã½îÆ£Á¦¾¡£¬ÖÕÓÚ×ß³öÁËÕâ¶ÎÉ½Â·¡£\n");
+              return notify_fail("ä½ ç­‹ç–²åŠ›å°½ï¼Œç»ˆäºèµ°å‡ºäº†è¿™æ®µå±±è·¯ã€‚\n");
         }           
         return ::valid_leave(me, dir);
 }

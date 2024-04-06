@@ -7,22 +7,22 @@ void init()
 }
 void create()
 {
-	set_name(HIG"ÇåÐÄÍè"NOR, ({"wan"}));
-	set("unit", "¿Å");
+	set_name(HIG"æ¸…å¿ƒä¸¸"NOR, ({"wan"}));
+	set("unit", "é¢—");
 	set("value", 200000);
-	set("long", "ÕâÊÇº£ÑóÌì½¾×¨ÎªÃßÁú¶´ÃØÖÆµÄ½â¶¾µ¤¡£\n");
+	set("long", "è¿™æ˜¯æµ·æ´‹å¤©éª„ä¸“ä¸ºçœ é¾™æ´žç§˜åˆ¶çš„è§£æ¯’ä¸¹ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
 	if(arg=="wan") 
 	{
-message_vision(HIG"$N·þÏÂÒ»¿ÅÇåÐÄÍè£¬Ö»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î£¬¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷£¬ÉñÒâÇåË¬£¡\n" NOR, me);
+message_vision(HIG"$Næœä¸‹ä¸€é¢—æ¸…å¿ƒä¸¸ï¼Œåªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚ºï¼Œé¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Žï¼Œç¥žæ„æ¸…çˆ½ï¼\n" NOR, me);
 		if (me->query_condition("xiezi"))
 		me->apply_condition("xiezi",0);
 		if (me->query_condition("flower_poison"))

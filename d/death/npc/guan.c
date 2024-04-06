@@ -6,8 +6,8 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("¹Ø¶þÒ¯", ({ "master guan", "master" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("å…³äºŒçˆ·", ({ "master guan", "master" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 44);
         set("str", 50);
         set("cor", 30);
@@ -16,12 +16,12 @@ void create()
 	set("per", 30);
 	set("attitude","friendly");
         set("max_force", 15000);
- 	create_family("Ú¤¸®",2,"ÒåË¾");
+ 	create_family("å†¥åºœ",2,"ä¹‰å¸");
        set("force", 15000);
         set("force_factor", 20);
         set("long",
 "
-ÉÏÂí½ð£¬ÏÂÂíÒø£¬²»ÄÜ¸ÄÆäÒå£¬Ç§ÀïËÍÉ©£¬¹ýÎå¹ØÕ¶Áù½«µÄ¹Ø¶þÒ¯\n"
+ä¸Šé©¬é‡‘ï¼Œä¸‹é©¬é“¶ï¼Œä¸èƒ½æ”¹å…¶ä¹‰ï¼Œåƒé‡Œé€å«‚ï¼Œè¿‡äº”å…³æ–©å…­å°†çš„å…³äºŒçˆ·\n"
 	);
         set("combat_exp", 1000000);
         set("agi",25);
@@ -39,7 +39,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-     command("say ºÃ°É£¬ÎÒÊÕÏÂÄã¡£\n");
+     command("say å¥½å§ï¼Œæˆ‘æ”¶ä¸‹ä½ ã€‚\n");
      command("recruit "+ob->query("id"));
      return;
 }

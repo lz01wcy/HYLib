@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ͤ");
+	set("short", "阴阳亭");
 	set("long", @LONG
-����ͤһ��һС��һ��һ�͡�һ��һ���������������Ů��������
-���Ա�����ͥ��ɽ��ɫ��
+阴阳亭一大一小、一高一低、一阴一阳，象征柳毅和龙女。在这里
+可以饱览洞庭湖山景色。
 LONG );
 	set("outdoors", "dongting");
 	set("no_clean_up", 0);

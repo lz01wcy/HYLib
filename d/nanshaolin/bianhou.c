@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ØÒºó");
+    set("short", "åŒ¾åŽ");
     set("long", @LONG
-ÕâÀï¾ÍÊÇÂÞººÌÃØÒ¶îÖ®ºó£¬ºÚÆáÆáµÄÊ²Ã´¶¼¿´²»Çå³þ¡£
+è¿™é‡Œå°±æ˜¯ç½—æ±‰å ‚åŒ¾é¢ä¹‹åŽï¼Œé»‘æ¼†æ¼†çš„ä»€ä¹ˆéƒ½çœ‹ä¸æ¸…æ¥šã€‚
 LONG );
 	set("objects",([
 		__DIR__"yijinjing" : 1,   
@@ -27,9 +27,9 @@ int do_jump(string arg)
 	object me,room;
 	me=this_player();  
 	if (arg!="down") return 0;
-		message("vision",me->name()+"Ò»×ÝÉí£¬ÌøÁËÏÂÈ¥¡£\n",this_object());
+		message("vision",me->name()+"ä¸€çºµèº«ï¼Œè·³äº†ä¸‹åŽ»ã€‚\n",this_object());
 	if(room=find_object(__DIR__"lhtang"))
-		message("vision",me->name()+"´ÓØÒ¶îÉÏÌøÁË¹ýÀ´¡£\n",room);
+		message("vision",me->name()+"ä»ŽåŒ¾é¢ä¸Šè·³äº†è¿‡æ¥ã€‚\n",room);
 	me->move(__DIR__"lhtang");
 	return 1;
 }

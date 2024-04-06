@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	set_name("ÈË²Î", ({"renshen", "shen"}));
+	set_name("äººå‚", ({"renshen", "shen"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ã");
-		set("long", "ÕâÊÇÒ»¿Ã³õ¾ßÈËĞÎµÄÀÏÉ½²Î¡£\n");
+		set("unit", "æ£µ");
+		set("long", "è¿™æ˜¯ä¸€æ£µåˆå…·äººå½¢çš„è€å±±å‚ã€‚\n");
 		set("value", 10000);
 	}
 	setup();
@@ -26,10 +26,10 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("max_neili", 3);
-	message_vision("$N³ÔÏÂÒ»¿ÃÀÏÉ½²Î£¬¶ÙÊ±¼ä¾õµÃÈ«Éí³äÂúÁË»îÁ¦ !\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€æ£µè€å±±å‚ï¼Œé¡¿æ—¶é—´è§‰å¾—å…¨èº«å……æ»¡äº†æ´»åŠ› !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

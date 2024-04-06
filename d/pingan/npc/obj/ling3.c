@@ -2,15 +2,15 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIW"³àÀÇÁî"NOR, ({ "chilangling" }) );
+    set_name(HIW"èµ¤ç‹¼ä»¤"NOR, ({ "chilangling" }) );
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
   	     set("value", 300000);
-            set("unit", "¸ö");
+            set("unit", "ä¸ª");
             set("material", "paper");
-            set("long", "ÁúÃÅïÚ¾ÖµÄÁîÅÆ¡£Äã¿ÉÒÔÓÃhuweiÀ´ÒªÇó»¤ÎÀ.\n");
+            set("long", "é¾™é—¨é•–å±€çš„ä»¤ç‰Œã€‚ä½ å¯ä»¥ç”¨huweiæ¥è¦æ±‚æŠ¤å«.\n");
           }
 
     setup();
@@ -27,14 +27,14 @@ int do_alert()
        object man;
 	int strategy,leadership;
        if( !me->is_fighting() )
-       return notify_fail("ºÃÏóÃ»ÓĞÈËÒªÉ±Äã£¡\n");
+       return notify_fail("å¥½è±¡æ²¡æœ‰äººè¦æ€ä½ ï¼\n");
        man=new("/d/pingan/npc/chilang");
        man->move(environment(me));
        man->set("possessed", me);
        man->invocation(me, (leadership+strategy));
 //       me->remove_all_killer();
        destruct(this_object());
-//	message_vision(HIB "\n$N·¢³öÒ»Éù³¤ÇóÔ®£¡\n" NOR, me);	
-//	message_vision(HIB "\n$NÓ¦Éù¶øÀ´£¡\n" NOR, soldier);
+//	message_vision(HIB "\n$Nå‘å‡ºä¸€å£°é•¿æ±‚æ´ï¼\n" NOR, me);	
+//	message_vision(HIB "\n$Nåº”å£°è€Œæ¥ï¼\n" NOR, soldier);
        return 1;
 }

@@ -3,13 +3,13 @@
 inherit ROOM;
 void create()
 {
-  set("short","����");
+  set("short","问礼碑");
   set("long",@LONG
-�������һƷ�ղ�����˱��ؼ��Ϻ������޽������񱮡�    
-    ��������ԣ����������ÿ���ʡ����˾ݴ�������������񱮡�
-�˴������ưܲ������������ˡ������������˺󣬵�����³�ӵܴ���ķ�����
-һ�ղ���һ�գ���ϧ��ŭ֮�࣬������ڴ��������񱮣������������˱صù�
-�����У�һ�ɲ���������С����ϲ�Զ�����½������Ÿ�ۡ��
+这里便是一品钦差殷大人贬谪济南后，重新修建的问礼碑。    
+    《论语》有言：子入大庙，每事问。后人据此在这儿建了问礼碑。
+此处本已破败不堪，鲜有游人。而殷正廉来此后，但觉齐鲁子弟淳厚的风气已
+一日不如一日，惋惜恼怒之余，便差人在此重修问礼碑，凡是行人至此必得恭
+敬而行，一律不得佩带兵刃。往南不远便是新建的衙门府邸。
 LONG
   );
   set("exits",([
@@ -40,7 +40,7 @@ int valid_leave(object me, string dir)
                     for(i=0; i<sizeof(inv); i++) 
                {
                                 if((inv[i]->query("weapon_prop")) && (inv[i]->query("equipped")))
-                              return notify_fail(ob->name()+"��ȭ��������������н�����\n");
+                              return notify_fail(ob->name()+"抱拳道：不可佩带兵刃进府！\n");
                         }
                 }
     }

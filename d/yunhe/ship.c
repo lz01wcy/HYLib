@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short","´¬Í·" );
+    set("short","èˆ¹å¤´" );
     set("long",  @LONG
-ÕâÊÇÒ»Ö»´ó´¬µÄ´¬Í·£¬Á½¸öÑ¾»·Ä£ÑùµÄÈËÕıÔÚÕâÀï¿´·ç¾°£¬Àï
-ÃæÊÇ´¬²Ö¡£µØÉÏ¶Ñ·Å×Å¼¸¿éÄ¾°å¡£ºÃÏñ¿ÉÒÔÒÆ¶¯ ´¬Í·²¢²»¸ßºÃÏñ
-¿ÉÒÔÌø³öÈ¥¡£
+è¿™æ˜¯ä¸€åªå¤§èˆ¹çš„èˆ¹å¤´ï¼Œä¸¤ä¸ªä¸«ç¯æ¨¡æ ·çš„äººæ­£åœ¨è¿™é‡Œçœ‹é£æ™¯ï¼Œé‡Œ
+é¢æ˜¯èˆ¹ä»“ã€‚åœ°ä¸Šå †æ”¾ç€å‡ å—æœ¨æ¿ã€‚å¥½åƒå¯ä»¥ç§»åŠ¨ èˆ¹å¤´å¹¶ä¸é«˜å¥½åƒ
+å¯ä»¥è·³å‡ºå»ã€‚
 LONG 
     );
 	set("exits", ([
@@ -35,7 +35,7 @@ int do_move( string arg)
 	object me=this_player();
 	if (!arg || arg=="") return 0;
 	if (arg=="board" || arg=="muban")
-	{message("vision","Äã½«Ä¾°åÒÆ¿ª£¬Â¶³öÒ»¸öĞ¡¶´\n",me);
+	{message("vision","ä½ å°†æœ¨æ¿ç§»å¼€ï¼Œéœ²å‡ºä¸€ä¸ªå°æ´\n",me);
 	 set("exits/down", __DIR__"chuandi");
 	call_out("close",5);
 	return 1;
@@ -47,18 +47,18 @@ int do_jump(string arg)
 	object me=this_player();
 	if (!arg || arg=="") return 0;
 	if (arg=="down")
-	{message("vision", HIR"\nÄã·Ü²»¹ËÉíµÄÌø½ø½­ÖĞ£¬ËÄÃæ°Ë·½µÄË®ÏòÄãÓ¿À´¡£\n"+
-				"ÄãÆËÌÚÁËÁ½ÏÂÃ»ÓĞÊ²Ã´×÷ÓÃ£¬½¥½¥Ïò½­µ×³ÁÁËÏÂÈ¥...\n"+
-				"Ğí¶àĞ¡ÓãÓÎÀ´ÓÎÈ¥......\n\n"NOR,me); 
+	{message("vision", HIR"\nä½ å¥‹ä¸é¡¾èº«çš„è·³è¿›æ±Ÿä¸­ï¼Œå››é¢å…«æ–¹çš„æ°´å‘ä½ æ¶Œæ¥ã€‚\n"+
+				"ä½ æ‰‘è…¾äº†ä¸¤ä¸‹æ²¡æœ‰ä»€ä¹ˆä½œç”¨ï¼Œæ¸æ¸å‘æ±Ÿåº•æ²‰äº†ä¸‹å»...\n"+
+				"è®¸å¤šå°é±¼æ¸¸æ¥æ¸¸å»......\n\n"NOR,me); 
 	me->move(__DIR__"jiang");
 		
 	        me->die();
 		return 1;
 	}
-	if (arg=="riverside" || arg=="hean"  || arg=="ºÓ°¶")
-	message("vision","ÄãÒ»×İÉíÌøµ½ÁËºÓ°¶ÉÏ\n",me);
+	if (arg=="riverside" || arg=="hean"  || arg=="æ²³å²¸")
+	message("vision","ä½ ä¸€çºµèº«è·³åˆ°äº†æ²³å²¸ä¸Š\n",me);
 	me->move("/d/hangzhou/duanqiao");
-	message("vision", me->name()+"´ÓºÓÀïÌøÁËÉÏÀ´\n",environment(me), ({me}) );
+	message("vision", me->name()+"ä»æ²³é‡Œè·³äº†ä¸Šæ¥\n",environment(me), ({me}) );
 	return 1;
 }
 

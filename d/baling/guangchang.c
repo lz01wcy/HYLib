@@ -1,17 +1,17 @@
 // baling/zhongxinguanchang
-// Room in ¹ê×È 
+// Room in é¾Ÿå…¹ 
 // laowuwu 99/04/11
 inherit ROOM;
 
 void create()
 {
-	set("short", "°ÍÁê¹ã³¡");
+	set("short", "å·´é™µå¹¿åœº");
 	set("long", @LONG
-ÕâÀïÊÇ³ÇÊÐµÄÕýÖÐÐÄ£¬Ò»¸öºÜ¿íÀ«µÄ¹ã³¡£¬ÆÌ×ÅÇàÊ¯µØÃæ¡£Ò»Ð©ÓÎ
-ÊÖºÃÏÐµÄÈËÔÚÕâÀïÁïÁï´ï´ï£¬¾­³£ÓÐÒÕÈËÔÚÕâÀï±íÑÝ¡£ÖÐÑëÓÐÒ»¿Ã´óéÅ
-Ê÷£¬ÅÌ¸ù´í½Ú£¬¾Ý´«ÒÑÓÐÇ§ÄêµÄÊ÷Áä£¬ÊÇÕâ×ù³ÇÊÐµÄÀúÊ·¼ûÖ¤¡£ÄÏÃæÈË
-Éù¶¦·Ð£¬Ò»ÅÉ·±»ª¾°Ïó£¬¶«±ß²»Ê±µØ´«À´ÀÊÀÊµÄ¶ÁÊéÉù£¬Î÷±ßÔò¼û²»µ½
-¼¸¸öÐÐÈË£¬Ò»Æ¬Ëà¾²¡£
+è¿™é‡Œæ˜¯åŸŽå¸‚çš„æ­£ä¸­å¿ƒï¼Œä¸€ä¸ªå¾ˆå®½é˜”çš„å¹¿åœºï¼Œé“ºç€é’çŸ³åœ°é¢ã€‚ä¸€äº›æ¸¸
+æ‰‹å¥½é—²çš„äººåœ¨è¿™é‡Œæºœæºœè¾¾è¾¾ï¼Œç»å¸¸æœ‰è‰ºäººåœ¨è¿™é‡Œè¡¨æ¼”ã€‚ä¸­å¤®æœ‰ä¸€æ£µå¤§æ¦•
+æ ‘ï¼Œç›˜æ ¹é”™èŠ‚ï¼Œæ®ä¼ å·²æœ‰åƒå¹´çš„æ ‘é¾„ï¼Œæ˜¯è¿™åº§åŸŽå¸‚çš„åŽ†å²è§è¯ã€‚å—é¢äºº
+å£°é¼Žæ²¸ï¼Œä¸€æ´¾ç¹åŽæ™¯è±¡ï¼Œä¸œè¾¹ä¸æ—¶åœ°ä¼ æ¥æœ—æœ—çš„è¯»ä¹¦å£°ï¼Œè¥¿è¾¹åˆ™è§ä¸åˆ°
+å‡ ä¸ªè¡Œäººï¼Œä¸€ç‰‡è‚ƒé™ã€‚
 LONG
 	);
         set("outdoors", "baling");

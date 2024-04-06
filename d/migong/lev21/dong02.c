@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIM"������Թ�"NOR);
+	set("short", HIM"混沌的迷宫"NOR);
 	set("long", RED @LONG
-�����ǻ�����Թ�,�ƺ����������ѵĵط���Ȼ����
-�ϵ�����һ�ѶѵĹǺ���Ǭ����Ѫ���������˾�������
-�Ե�ʮ�ֵĹ��졣�������������Ϣһ��(save)��
-��˯��(sleep)��
+这里是混沌的迷宫,似乎是用来避难的地方。然而地
+上到处是一堆堆的骨骸与乾掉的血迹。更让人觉得气氛
+显得十分的诡异。你可以在这里休息一下(save)。
+和睡觉(sleep)。
 LONG NOR);
 
 set("magicroom",1);set("outdoors","migong");

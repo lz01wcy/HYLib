@@ -1,11 +1,11 @@
 inherit NPC;
 #include <ansi.h>
 inherit F_DEALER;
-//string query_save_file() { return DATA_DIR + "npc/¾Æ¾®Ì«ÀÉ"; }
+//string query_save_file() { return DATA_DIR + "npc/é…’äº•å¤ªéƒ"; }
 void create()
 {
-   set_name("¾Æ¾®Ì«ÀÉ",({"jiujing tailang","jiujing","tailang"}));
-  set("title","Éñ»§Ìú½³ÆÌ");
+   set_name("é…’äº•å¤ªéƒ",({"jiujing tailang","jiujing","tailang"}));
+  set("title","ç¥æˆ·é“åŒ é“º");
 // set("area_file","/d/japan/tiejiangpu");
 //  this_object()->init_bhnpc();
 
@@ -41,6 +41,6 @@ void greeting(object ob)
          if( !ob || environment(ob) != environment() ) 
 		return;
          if(random(10)>5)
-        say(name()+"ÉÏÇ°µÀ£º"+ ob->query("name") +
-      "ÄãµÄÒªÂòĞ©Ê²Ã´µÄ£¿\n");
+        say(name()+"ä¸Šå‰é“ï¼š"+ ob->query("name") +
+      "ä½ çš„è¦ä¹°äº›ä»€ä¹ˆçš„ï¼Ÿ\n");
  }

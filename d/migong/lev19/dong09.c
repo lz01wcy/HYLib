@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIG"����֮ɭ"NOR);
+	set("short", HIG"吵杂之森"NOR);
 	set("long", HIY @LONG
-    ������һ�����ϵ�ԭʼɭ�֣������������ľ���������ǹ��϶�
-��ɣ���ݷ������������µ�ĥ��������������ɭ�ֲ����ϣ�������ݺ
-�������в����ܷҶྫ��޹�ա�
+    这里是一座古老的原始森林，这里的所有树木看起来都是古老而
+沧桑，彷佛历经无数岁月的磨练，但当你走在森林步道上，耳听黄莺
+清脆的鸣叫并享受芬多精的薰陶。
 LONG NOR);
 
 

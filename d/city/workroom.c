@@ -1,14 +1,14 @@
 // Room: /d/city/workroom.c
-//ÐÇÐÇlywin4/29
+//æ˜Ÿæ˜Ÿlywin4/29
 
 #include <room.h>
 inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÕÒÇ®Ð¡ÎÝ");
+  set ("short", "æ‰¾é’±å°å±‹");
   set ("long", @LONG
-ÕâÊÇÒ»¼äÓÃÀ´ÕÒÇ®µÄÐ¡ÎÝ×Ó£¡ÄãÏëÕÒÇ®Âð£¿ÏëµÄ»°¾Ízhaoqian°É¡£
+è¿™æ˜¯ä¸€é—´ç”¨æ¥æ‰¾é’±çš„å°å±‹å­ï¼ä½ æƒ³æ‰¾é’±å—ï¼Ÿæƒ³çš„è¯å°±zhaoqianå§ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -31,13 +31,13 @@ int do_zhaoqian()
         me = this_player();
 
         if(me->is_busy())
-             return notify_fail("²»ÒªÌ«ÐÄ¼±£¡ÕÒÇ®Ò²ÂýµãÀ´°É£¡\n");
+             return notify_fail("ä¸è¦å¤ªå¿ƒæ€¥ï¼æ‰¾é’±ä¹Ÿæ…¢ç‚¹æ¥å§ï¼\n");
 
         if(me->query("qi")<10)
-             return notify_fail("Äã»¹ÊÇÏÈÐÝÏ¢Ò»ÏÂ°É£¬ÕÒÇ®²»ÈÝÒ×£¬ÀÛ»µÁË²»ºÃ¡£¡£\n");
+             return notify_fail("ä½ è¿˜æ˜¯å…ˆä¼‘æ¯ä¸€ä¸‹å§ï¼Œæ‰¾é’±ä¸å®¹æ˜“ï¼Œç´¯åäº†ä¸å¥½ã€‚ã€‚\n");
              me->start_busy(3);
-        message_vision("$NÂñÍ·ÔÚÕÒÇ®......\n", me);
-        message_vision("$NÄªÃûÆäÃî¾ÍÕÒµ½Ç®ÁË¡£\n", me);
+        message_vision("$NåŸ‹å¤´åœ¨æ‰¾é’±......\n", me);
+        message_vision("$NèŽ«åå…¶å¦™å°±æ‰¾åˆ°é’±äº†ã€‚\n", me);
                 me->receive_damage("qi", 10);
                 ob=new("/clone/money/silver");
                 ob->set_amount(5+random(10));

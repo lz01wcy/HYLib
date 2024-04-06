@@ -1,14 +1,14 @@
-//Room: dxdian.c ´óĞÛµî
+//Room: dxdian.c å¤§é›„æ®¿
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","´óĞÛµî");
+      set("short","å¤§é›„æ®¿");
       set("long",@LONG
-ÕâÀïÊÇ±¨¹úËÂ´óĞÛµî¡£±¨¹úËÂÊÇ¶ëáÒÉ½×î´óËÂÔºÖ®Ò»¡£´óĞÛµîÄÚ¹©×Å½ğ¹â
-²Ó²ÓµÄ·ğÏñ£¬ÆøÓîĞù°º¡£
+è¿™é‡Œæ˜¯æŠ¥å›½å¯ºå¤§é›„æ®¿ã€‚æŠ¥å›½å¯ºæ˜¯å³¨åµ‹å±±æœ€å¤§å¯ºé™¢ä¹‹ä¸€ã€‚å¤§é›„æ®¿å†…ä¾›ç€é‡‘å…‰
+ç¿ç¿çš„ä½›åƒï¼Œæ°”å®‡è½©æ˜‚ã€‚
 LONG);
       set("objects", ([
                __DIR__+"npc/guest": 2,
@@ -26,7 +26,7 @@ int valid_leave(object me, string dir)
     mapping myfam;
     me = this_player();
     myfam = (mapping)me->query("family");
-    if ((!myfam || (myfam["family_name"] != "¶ëáÒÅÉ")) && (dir == "west"))
-      return notify_fail("±£¹úËÂìø·¿Ö»½Ó´ı¶ëáÒµÜ×Ó£¬ÄãÒªÊÇ³ÏĞÄÀñ·ğ£¬ÔÚ´Ë¶à½ø¼¸×¢Ïã°É¡£\n");
+    if ((!myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾")) && (dir == "west"))
+      return notify_fail("ä¿å›½å¯ºç¦…æˆ¿åªæ¥å¾…å³¨åµ‹å¼Ÿå­ï¼Œä½ è¦æ˜¯è¯šå¿ƒç¤¼ä½›ï¼Œåœ¨æ­¤å¤šè¿›å‡ æ³¨é¦™å§ã€‚\n");
     else  return 1;
 }

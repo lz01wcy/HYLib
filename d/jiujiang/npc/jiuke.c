@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("¾Æ¿Í",({ "jiu ke","jiu","ke" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("é…’å®¢",({ "jiu ke","jiu","ke" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇÒ»¸ö¾­³£ÔÚ´ºÔÚÂ¥ºÈ¾ÆµÄÈË£¬¿´ÆğÀ´ÓĞĞ©±¥¾­²×É£µÄÑù×Ó¡£\n");
+   set("long", "è¿™æ˜¯ä¸€ä¸ªç»å¸¸åœ¨æ˜¥åœ¨æ¥¼å–é…’çš„äººï¼Œçœ‹èµ·æ¥æœ‰äº›é¥±ç»æ²§æ¡‘çš„æ ·å­ã€‚\n");
        
    set("combat_exp",30000);
    set("attitude", "peaceful");
@@ -31,13 +31,13 @@ void welcome(object ob)
   ||!living(ob))
   return;
   if(ob->query_temp("dtsl_job_cisha/step2"))
-   message_vision("$N³¯$n¿´ÁË¼¸ÑÛ£¬È»ºóµÍÉùÌ¾µÀ£ºÓÖÀ´ÁË¸ö²»ÅÂËÀµÄ¡£\n",this_object(),ob);
+   message_vision("$Næœ$nçœ‹äº†å‡ çœ¼ï¼Œç„¶åä½å£°å¹é“ï¼šåˆæ¥äº†ä¸ªä¸æ€•æ­»çš„ã€‚\n",this_object(),ob);
   else
    if(ob->query("class")=="bonze")
-    message_vision("$NºáÁË$nÒ»ÑÛ£º¾¹È»Åöµ½³ö¼ÒµÄ£¬½ñÌìÕæÊÇµ¹Ã¹Í¸¶¥£¡£¡\n",
+    message_vision("$Næ¨ªäº†$nä¸€çœ¼ï¼šç«Ÿç„¶ç¢°åˆ°å‡ºå®¶çš„ï¼Œä»Šå¤©çœŸæ˜¯å€’éœ‰é€é¡¶ï¼ï¼\n",
      this_object(),ob);
    else
-   message_vision("$N³¯$n°Ú°ÚÊÖ:À´À´£¬"+RANK_D->query_respect(ob)+",Ò»ÆğÀ´ºÈÒ»±­°É£¡\n",
+   message_vision("$Næœ$næ‘†æ‘†æ‰‹:æ¥æ¥ï¼Œ"+RANK_D->query_respect(ob)+",ä¸€èµ·æ¥å–ä¸€æ¯å§ï¼\n",
    this_object(),ob);
    return;
 }

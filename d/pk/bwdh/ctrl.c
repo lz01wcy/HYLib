@@ -1,15 +1,15 @@
-// ¿ØÖÆÊÒ ctrl.c
+// æ§åˆ¶å®¤ ctrl.c
 // By River 99/04/15
 #include <ansi.h>
 #include <room.h>
 inherit ROOM;
 void create()
 {
-        set("short",HIW"¿ØÖÆÌ¨"NOR);
+        set("short",HIW"æ§åˆ¶å°"NOR);
         set("long", @LONG
-ÕâÀïÊÇÊé½£×é¶Ó±ÈÈüµÄÎ×Ê¦¿ØÖÆÊÒ£¬ÄãÄÜ¿´¼ûÖÚ¶àÎ×Ê¦¼±¼±Ã¦Ã¦µØÔÚ¸ÉĞ©
-Ê²Ã´¡£ÕıÖĞÑë·Å×ÅÒ»ÕÅºÜ´óµÄ¿ØÖÆÌ¨£¬ÉÏÃæ±êÊ¾×ÅÒ»ÅÅ°´Å¥£¬×îÎªÃ÷ÏÔµÄÊÇÒ»
-¸öºìÉ«µÄ°´Å¥£¨anniu)£¬²»ÖªµÀ°´ÏÂÈ¥ÊÇÊ²Ã´½á¹û¡£
+è¿™é‡Œæ˜¯ä¹¦å‰‘ç»„é˜Ÿæ¯”èµ›çš„å·«å¸ˆæ§åˆ¶å®¤ï¼Œä½ èƒ½çœ‹è§ä¼—å¤šå·«å¸ˆæ€¥æ€¥å¿™å¿™åœ°åœ¨å¹²äº›
+ä»€ä¹ˆã€‚æ­£ä¸­å¤®æ”¾ç€ä¸€å¼ å¾ˆå¤§çš„æ§åˆ¶å°ï¼Œä¸Šé¢æ ‡ç¤ºç€ä¸€æ’æŒ‰é’®ï¼Œæœ€ä¸ºæ˜æ˜¾çš„æ˜¯ä¸€
+ä¸ªçº¢è‰²çš„æŒ‰é’®ï¼ˆanniu)ï¼Œä¸çŸ¥é“æŒ‰ä¸‹å»æ˜¯ä»€ä¹ˆç»“æœã€‚
 LONG
         );
 
@@ -35,12 +35,12 @@ void check_trigger()
        if( room = find_object(__DIR__"xiuxishi2")){
          if( !room->query("exits/enter")){
                  room->set("exits/enter", __DIR__"gate");                 
-                 message("vision", HIR"Ö»Ìı¼ûºäÈ»Ò»Éù£¬ÊÔ½£É½×¯ÄÏĞİÏ¢ÊÒµÄ´óÃÅ±»´ò¿ªÁË¡£\n"NOR, thisroom);
-                 message("vision", HIW"Ö»Ìı¼û¿©Ö¨Ò»Éù£¬ĞİÏ¢ÊÒµÄ´óÃÅ±»´ò¿ªÁË£¬ÍâÃæ¾ÍÍ¨ÏòÊÔ½£É½×¯ÁË¡£\n"NOR, room);
+                 message("vision", HIR"åªå¬è§è½°ç„¶ä¸€å£°ï¼Œè¯•å‰‘å±±åº„å—ä¼‘æ¯å®¤çš„å¤§é—¨è¢«æ‰“å¼€äº†ã€‚\n"NOR, thisroom);
+                 message("vision", HIW"åªå¬è§å’¯å±ä¸€å£°ï¼Œä¼‘æ¯å®¤çš„å¤§é—¨è¢«æ‰“å¼€äº†ï¼Œå¤–é¢å°±é€šå‘è¯•å‰‘å±±åº„äº†ã€‚\n"NOR, room);
                  remove_call_out("close");
                  call_out("close", 100); 
                  }
-                else message("vision", HIW"ÊÔ½£É½×¯ÄÏĞİÏ¢ÊÒµÄ´óÃÅÒÑ¾­±»´ò¿ªÁË£¬ÔÙ°´Ò²Ã»ÓĞÓÃÁË¡£\n"NOR, thisroom);
+                else message("vision", HIW"è¯•å‰‘å±±åº„å—ä¼‘æ¯å®¤çš„å¤§é—¨å·²ç»è¢«æ‰“å¼€äº†ï¼Œå†æŒ‰ä¹Ÿæ²¡æœ‰ç”¨äº†ã€‚\n"NOR, thisroom);
            } 
           else message("vision", "ERROR: Room 2 not found\n", thisroom);          
 }
@@ -54,12 +54,12 @@ void check_trigger1()
        if( room1 = find_object(__DIR__"xiuxishi1")){
          if( !room1->query("exits/enter")){                 
                  room1->set("exits/enter",__DIR__"houting");
-                 message("vision", HIR"Ö»Ìı¼ûºäÈ»Ò»Éù£¬ÊÔ½£É½×¯±±ĞİÏ¢ÊÒµÄ´óÃÅ±»´ò¿ªÁË¡£\n"NOR, thisroom);
-                 message("vision", HIW"Ö»Ìı¼û¿©Ö¨Ò»Éù£¬ĞİÏ¢ÊÒµÄ´óÃÅ±»´ò¿ªÁË£¬ÍâÃæ¾ÍÍ¨ÏòÊÔ½£É½×¯ÁË¡£\n"NOR, room1);
+                 message("vision", HIR"åªå¬è§è½°ç„¶ä¸€å£°ï¼Œè¯•å‰‘å±±åº„åŒ—ä¼‘æ¯å®¤çš„å¤§é—¨è¢«æ‰“å¼€äº†ã€‚\n"NOR, thisroom);
+                 message("vision", HIW"åªå¬è§å’¯å±ä¸€å£°ï¼Œä¼‘æ¯å®¤çš„å¤§é—¨è¢«æ‰“å¼€äº†ï¼Œå¤–é¢å°±é€šå‘è¯•å‰‘å±±åº„äº†ã€‚\n"NOR, room1);
                  remove_call_out("close1");
                  call_out("close1", 100); 
                  }
-                else message("vision", HIW"ÊÔ½£É½×¯±±ĞİÏ¢ÊÒµÄ´óÃÅÒÑ¾­±»´ò¿ªÁË£¬ÔÙ°´Ò²Ã»ÓĞÓÃÁË¡£\n"NOR, thisroom);
+                else message("vision", HIW"è¯•å‰‘å±±åº„åŒ—ä¼‘æ¯å®¤çš„å¤§é—¨å·²ç»è¢«æ‰“å¼€äº†ï¼Œå†æŒ‰ä¹Ÿæ²¡æœ‰ç”¨äº†ã€‚\n"NOR, thisroom);
            } 
           else message("vision", "ERROR: Room 1 not found\n", thisroom);          
 }
@@ -69,7 +69,7 @@ void close()
         object room;
         if( room = find_object(__DIR__"xiuxishi2"))
         room->delete("exits/enter");        
-        message("vision", HIW"Ö»Ìı¼û¿©Ö¨Ò»Éù£¬ĞİÏ¢ÊÒµÄ´óÃÅÓÖ±»¹ØÉÏÁË¡£\n"NOR, room);
+        message("vision", HIW"åªå¬è§å’¯å±ä¸€å£°ï¼Œä¼‘æ¯å®¤çš„å¤§é—¨åˆè¢«å…³ä¸Šäº†ã€‚\n"NOR, room);
 }
 
 void close1()
@@ -77,7 +77,7 @@ void close1()
         object room1;
         if( room1 = find_object(__DIR__"xiuxishi1"))
         room1->delete("exits/enter");
-        message("vision", HIW"Ö»Ìı¼û¿©Ö¨Ò»Éù£¬ĞİÏ¢ÊÒµÄ´óÃÅÓÖ±»¹ØÉÏÁË¡£\n"NOR, room1);
+        message("vision", HIW"åªå¬è§å’¯å±ä¸€å£°ï¼Œä¼‘æ¯å®¤çš„å¤§é—¨åˆè¢«å…³ä¸Šäº†ã€‚\n"NOR, room1);
 }
 
 int do_push(string arg)
@@ -85,14 +85,14 @@ int do_push(string arg)
        object me;
        me = this_player();       
        if (userp(me) && !wiz_level(me))
-          return notify_fail("Äã²»ÊÇÎ×Ê¦£¬²»ÒªËæ±ãÂÒ¶¯£¬»µÁËÄã¿ÉÅâ²»ÆğÅ¶£¡\n");
+          return notify_fail("ä½ ä¸æ˜¯å·«å¸ˆï¼Œä¸è¦éšä¾¿ä¹±åŠ¨ï¼Œåäº†ä½ å¯èµ”ä¸èµ·å“¦ï¼\n");
        if (!arg || arg !="anniu")
-          return notify_fail("ÄãÒª°´Ê²Ã´£¿\n");
+          return notify_fail("ä½ è¦æŒ‰ä»€ä¹ˆï¼Ÿ\n");
        if (arg == "anniu"){
-           message_vision(HIR"$NÇáÇáĞêÁË¿ÚÆø£¬ÌáÆğÊ³Ö¸ÂıÂıµØ°´¶¯ÁË°´Å¥¡£\n"NOR, me);
+           message_vision(HIR"$Nè½»è½»å˜˜äº†å£æ°”ï¼Œæèµ·é£ŸæŒ‡æ…¢æ…¢åœ°æŒ‰åŠ¨äº†æŒ‰é’®ã€‚\n"NOR, me);
            check_trigger();
            check_trigger1();
            return 1;
            } 
-          return notify_fail("ÄãÒª°´Ê²Ã´£¿\n");
+          return notify_fail("ä½ è¦æŒ‰ä»€ä¹ˆï¼Ÿ\n");
 }

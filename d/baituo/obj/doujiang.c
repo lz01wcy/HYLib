@@ -1,4 +1,4 @@
-// DOUJIANG.C ¶¹½¬
+// DOUJIANG.C è±†æµ†
 // By Marz 03/29/96
 
 inherit ITEM;
@@ -8,13 +8,13 @@ void do_eat();
 
 void create()
 {
-	set_name("¶¹½¬",({ "jiang"}));
+	set_name("è±†æµ†",({ "jiang"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»±­ÈÈÆøÌÚÌÚµÄ¶¹½¬¡«¡«¡«\n");
-		set("unit", "±­");
+		set("long", "ä¸€æ¯çƒ­æ°”è…¾è…¾çš„è±†æµ†ï½ï½ï½\n");
+		set("unit", "æ¯");
 		set("value", 500);
         set("remaining", 2);
         set("drink_supply", 30);
@@ -33,10 +33,10 @@ int do_drink(string arg)
 {
     if( !this_object()->id(arg) ) return 0;
     if( this_player()->is_busy() )
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
     if(   (int)this_player()->query("water")
        >= (int)this_player()->max_water_capacity() )
-     return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+     return notify_fail("ä½ å·²ç»å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
 	set("value", 0);
     this_player()->add("water", (int)query("drink_supply"));

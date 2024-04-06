@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-   set_name("´ó¹·ĞÜ",({ "da gouxiong","gouxiong","bear"}) );
-        set("race", "Ò°ÊŞ" );
+   set_name("å¤§ç‹—ç†Š",({ "da gouxiong","gouxiong","bear"}) );
+        set("race", "é‡å…½" );
         set("combat_exp",800000);
         set("max_qi",4000);
         set("max_jing",4000);
         set("max_sen",4000);
-     set("long", "ÕâÊÇÒ»Ö»µ½´¦ÓÎµ´µÄ´ó¹·ĞÜ£¬ÕıĞ×ºİµØ¿´×ÅÄã¡£\n");
+     set("long", "è¿™æ˜¯ä¸€åªåˆ°å¤„æ¸¸è¡çš„å¤§ç‹—ç†Šï¼Œæ­£å‡¶ç‹ åœ°çœ‹ç€ä½ ã€‚\n");
 	 set("verbs",({"bite","claw","hoof"}));
-    set("limbs",({"Í·","Î²°Í","¸¹²¿","Ñü²¿"}));
+    set("limbs",({"å¤´","å°¾å·´","è…¹éƒ¨","è…°éƒ¨"}));
     set("attitude","aggressive");
   setup();
 
@@ -22,7 +22,7 @@ void die()
    object ob;
    ob=new(__DIR__"obj/xiongpi");
    ob->move(environment(this_object()));
-   message_vision("$NÑöÍ·½ĞÁËÒ»Éù£¬ÌÚµØÒ»ÏÂµ¹ÔÚÁËµØÉÏ¡£\n",this_object());
+   message_vision("$Nä»°å¤´å«äº†ä¸€å£°ï¼Œè…¾åœ°ä¸€ä¸‹å€’åœ¨äº†åœ°ä¸Šã€‚\n",this_object());
    destruct(this_object());
    return;
 }

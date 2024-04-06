@@ -1,13 +1,13 @@
 // treee1.c
-// Ê÷ÁÖ¶«1
+// æ ‘æž—ä¸œ1
 inherit ROOM;
 void create()
 {
-	set("short","Ê÷ÁÖ");
+	set("short","æ ‘æž—");
 	set("long",@long
-ÕâÀïµÄÊ÷³¤µÃ¶¼ÓÖ¸ßÓÐ´ó£¬´Ö´óµÄÊ÷Ö¦Éì³öÀ´»¥Ïà½»²æÔÚÒ»Æð£¬ÕÚ×¡ÁËÑô
-¹â£¬µØÉÏÊÇÃ¯ÃÜµÄÔÓ²Ý£¬¼äÔÓ×ÅÐí¶à²»ÖªÃûµÄÒ°»¨£¬É¢·¢³öÁËÕóÕóºÜºÃÎÅµÄÏã
-Æø£¬ÔÚÊ÷ÉÏºÍÔÓ²ÝÀïÓÐÐí¶àÉßÔÚ·¢³öË»Ë»µÄÉùÒô¡£
+è¿™é‡Œçš„æ ‘é•¿å¾—éƒ½åˆé«˜æœ‰å¤§ï¼Œç²—å¤§çš„æ ‘æžä¼¸å‡ºæ¥äº’ç›¸äº¤å‰åœ¨ä¸€èµ·ï¼Œé®ä½äº†é˜³
+å…‰ï¼Œåœ°ä¸Šæ˜¯èŒ‚å¯†çš„æ‚è‰ï¼Œé—´æ‚ç€è®¸å¤šä¸çŸ¥åçš„é‡ŽèŠ±ï¼Œæ•£å‘å‡ºäº†é˜µé˜µå¾ˆå¥½é—»çš„é¦™
+æ°”ï¼Œåœ¨æ ‘ä¸Šå’Œæ‚è‰é‡Œæœ‰è®¸å¤šè›‡åœ¨å‘å‡ºå˜¶å˜¶çš„å£°éŸ³ã€‚
 long);
 	set("exits",([
 	    "northwest" : __DIR__"treen2",
@@ -17,7 +17,7 @@ long);
 set("objects",([
 __DIR__"npc/dushe" : 2,
 ]));
-	set("outdoors", "ÉñÁúµº");
+	set("outdoors", "ç¥žé¾™å²›");
        set("canfindsnake",1);
         setup();
 	replace_program(ROOM);

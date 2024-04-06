@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","���Ƿ�");
+  set ("short","华盖峰");
   set ("long", @LONG
-���Ƿ�嶥�ɻ�ɫ��ʯ��ɣ�״���������֮���Ƕ���������ƻ�
-�ҷ塣������ϼ�壬�����������ӥ��塣
+华盖峰峰顶由黄色浮石组成，状如帝王车辇之华盖而得名，亦称黄
+岩峰。南连紫霞峰，西北方向就是鹰嘴峰。
 LONG);
 
   set("exits", ([ 

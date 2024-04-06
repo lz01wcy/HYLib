@@ -1,16 +1,16 @@
-// gangzhang.c ¸ÖÕÈ
+// gangzhang.c é’¢æ–
 #include <armor.h>
 #include <ansi.h>
 inherit HANDS;
 void create()
 {
-	set_name(HIM"·ÉÌìÓù½£Á÷ÁîÆì"NOR, ({ "ftling" }));
+	set_name(HIM"é£å¤©å¾¡å‰‘æµä»¤æ——"NOR, ({ "ftling" }));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "ÕâÊÇÒ»¿é·ÉÌìÓù½£Á÷µÄÁîÆì¡£Äã¿ÉÒÔÕÙ»½(zhao)»¤ÎÀÀ´±£»¤×Ô¼º¡£\n");
+		set("unit", "å—");
+		set("long", "è¿™æ˜¯ä¸€å—é£å¤©å¾¡å‰‘æµçš„ä»¤æ——ã€‚ä½ å¯ä»¥å¬å”¤(zhao)æŠ¤å«æ¥ä¿æŠ¤è‡ªå·±ã€‚\n");
 		set("no_put",1);
 		set("armor_prop/intelligence",2);
 		set("armor_prop/strength",2);
@@ -43,12 +43,12 @@ object dizi,me;
 int exp;
 me = this_player();
         if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("Äã¸ÕÓÃ¹ıÕâ¸öĞÅÎï.\n");
+        return notify_fail("ä½ åˆšç”¨è¿‡è¿™ä¸ªä¿¡ç‰©.\n");
 
    if (me->query("jing")<100) 
-	return notify_fail("Äã¾«²»¹»¡£\n");
+	return notify_fail("ä½ ç²¾ä¸å¤Ÿã€‚\n");
 //if ( me->is_busy() )
-//        return notify_fail("ÄãÏÖÔÚÕıÃ¦µÃ²»µÃÁË£¿\n");
+//        return notify_fail("ä½ ç°åœ¨æ­£å¿™å¾—ä¸å¾—äº†ï¼Ÿ\n");
 
 	me->set("jing",me->query("max_jing"));
 	me->set("qi",me->query("max_qi"));
@@ -56,7 +56,7 @@ me = this_player();
 	me->set("neili",me->query("max_neili"));
   me->start_busy(0);
 	me->apply_condition("zdizi_busy",3);
-	message_vision(GRN "\n$NµÄÆøÑªºÍ¾«Á¦£¬Ë³¼äµÃµ½ÁË»Ö¸´£¡\n" NOR, me);	
+	message_vision(GRN "\n$Nçš„æ°”è¡€å’Œç²¾åŠ›ï¼Œé¡ºé—´å¾—åˆ°äº†æ¢å¤ï¼\n" NOR, me);	
 
 	return 1;
 }
@@ -66,25 +66,25 @@ object dizi,me;
 int exp;
 me = this_player();
         if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("Äã¸ÕÕĞ¹ıËæÉíµÜ×Ó.\n");
+        return notify_fail("ä½ åˆšæ‹›è¿‡éšèº«å¼Ÿå­.\n");
    if( (int)me-> query_temp("number") > 0 )
-     return notify_fail("Äã×î¶àÖ»ÄÜÕÙ»½Ò»ÃûËæÉíµÜ×Ó¡£\n");
+     return notify_fail("ä½ æœ€å¤šåªèƒ½å¬å”¤ä¸€åéšèº«å¼Ÿå­ã€‚\n");
    if (me->query("jing")<100) 
-	return notify_fail("Äã¾«²»¹»¡£\n");
+	return notify_fail("ä½ ç²¾ä¸å¤Ÿã€‚\n");
  if( !me->is_fighting() )
-        return notify_fail("ºÃÏóÃ»ÓĞÈËÒªÉ±Äã£¡\n");
+        return notify_fail("å¥½è±¡æ²¡æœ‰äººè¦æ€ä½ ï¼\n");
 if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦µÃ²»µÃÁË£¬»¹ÓĞĞÄË¼ÕÙ»½ÄãµÄµÜ×Ó£¿\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™å¾—ä¸å¾—äº†ï¼Œè¿˜æœ‰å¿ƒæ€å¬å”¤ä½ çš„å¼Ÿå­ï¼Ÿ\n");
 	exp = (int)me->query("combat_exp");
 	me->receive_damage("jing",100);
 	dizi = load_object("/d/biwu/dizi.c");
 	dizi->move(environment(me));
         dizi->invocation(me, (exp));
         dizi->set("possessed", me);
-	 dizi->set_name(this_player()->query("name")+"µÄËæÉíµÜ×Ó",({"dizi"}));
+	 dizi->set_name(this_player()->query("name")+"çš„éšèº«å¼Ÿå­",({"dizi"}));
         me->add_temp("number",1);
 //        me->remove_all_killer();
-	message_vision(CYN "\n$N·¢³öºÅÁî£¬ÕÙ»½Éí±ßµÄµÜ×ÓÀ´±£»¤×Ô¼º£¡\n" NOR, me);	
-	message_vision(CYN "\n$NµÄµÜ×ÓËæ×ÅºÅÁîÉù¶øÀ´£¡\n" NOR, me);
+	message_vision(CYN "\n$Nå‘å‡ºå·ä»¤ï¼Œå¬å”¤èº«è¾¹çš„å¼Ÿå­æ¥ä¿æŠ¤è‡ªå·±ï¼\n" NOR, me);	
+	message_vision(CYN "\n$Nçš„å¼Ÿå­éšç€å·ä»¤å£°è€Œæ¥ï¼\n" NOR, me);
 	return 1;
 }

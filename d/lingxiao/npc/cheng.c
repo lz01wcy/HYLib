@@ -6,11 +6,11 @@ inherit NPC;
 string ask_pai();
 void create()
 {
-        set_name("³É×ÔÑ§",({"cheng zixue","cheng"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æˆè‡ªå­¦",({"cheng zixue","cheng"}));
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("long", 
-               "³É×ÔÑ§ÊÇÑ©É½ÅÉÕÆÃÅÈËÍşµÂÏÈÉú°××ÔÔÚµÄÊ¦µÜ.\n");
+               "æˆè‡ªå­¦æ˜¯é›ªå±±æ´¾æŒé—¨äººå¨å¾·å…ˆç”Ÿç™½è‡ªåœ¨çš„å¸ˆå¼Ÿ.\n");
         set("attitude", "peaceful");
 
         set("str", 30);
@@ -27,10 +27,10 @@ void create()
 
         set("combat_exp", 1000000);
         set("inquiry", ([
-             "ÓñÅÆ":(:ask_pai:),
-             "°××ÔÔÚ"   : "Òª¼ûÀÏÒ¯×Ó£¬¾Í±ØĞëÒªÓĞÓñÅÆ²Å½øµÃÈ¥¡£ÓñÅÆ¾ÍÔÚÎÒÕâ¡£",
-             "º®ÓñÅÆ":(:ask_pai:),
-             "ÀÏÒ¯×Ó"   : "Òª¼ûÀÏÒ¯×Ó£¬¾Í±ØĞëÒªÓĞÓñÅÆ²Å½øµÃÈ¥¡£ÓñÅÆ¾ÍÔÚÎÒÕâ¡£",
+             "ç‰ç‰Œ":(:ask_pai:),
+             "ç™½è‡ªåœ¨"   : "è¦è§è€çˆ·å­ï¼Œå°±å¿…é¡»è¦æœ‰ç‰ç‰Œæ‰è¿›å¾—å»ã€‚ç‰ç‰Œå°±åœ¨æˆ‘è¿™ã€‚",
+             "å¯’ç‰ç‰Œ":(:ask_pai:),
+             "è€çˆ·å­"   : "è¦è§è€çˆ·å­ï¼Œå°±å¿…é¡»è¦æœ‰ç‰ç‰Œæ‰è¿›å¾—å»ã€‚ç‰ç‰Œå°±åœ¨æˆ‘è¿™ã€‚",
         ]) );
         set("shen_type", 0);
         set("score", 50000);
@@ -59,7 +59,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("ÁèÏö³Ç", 5, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸ", 5, "å¼Ÿå­");
         setup();
 
         
@@ -76,27 +76,27 @@ string ask_pai()
 
         if(me->query("family/master_id")=="bai zizai")
         {
-                command("say ³ÇÖ÷ÓĞÃü£¬ÀÏ·òÆñ¸Ò²»´Ó¡£\n");
-                message_vision(HIY"³É×ÔÑ§ÄÃ³öÒ»¿éÓñÅÆ,½»¸ø$N \n\n"NOR,me);
+                command("say åŸä¸»æœ‰å‘½ï¼Œè€å¤«å²‚æ•¢ä¸ä»ã€‚\n");
+                message_vision(HIY"æˆè‡ªå­¦æ‹¿å‡ºä¸€å—ç‰ç‰Œ,äº¤ç»™$N \n\n"NOR,me);
                 ob=new("/d/lingxiao/obj/yupai");
                 ob->move(me);
-                return "³ÇÖ÷Âı×ß¡£\n";
+                return "åŸä¸»æ…¢èµ°ã€‚\n";
         }
         if(me->query("family/master_id")=="bai wanjian")
         {
-                command("say Äã¼ÈÈ»ÊÇ°×Íò½£µÄµÜ×Ó,ÄÃÈ¥Ò²ÎŞ·Á¡£");
-                message_vision(HIY"³É×ÔÑ§ÄÃ³öÒ»¿éÓñÅÆ,½»¸ø$N \n\n"NOR,me);
+                command("say ä½ æ—¢ç„¶æ˜¯ç™½ä¸‡å‰‘çš„å¼Ÿå­,æ‹¿å»ä¹Ÿæ— å¦¨ã€‚");
+                message_vision(HIY"æˆè‡ªå­¦æ‹¿å‡ºä¸€å—ç‰ç‰Œ,äº¤ç»™$N \n\n"NOR,me);
                 ob=new("/d/lingxiao/obj/yupai");
                 ob->move(me);
-                return "´ËÅÆÄË±¾ÅÉÖØ±¦£¬²»¿ÉÓĞÊ§¡£\n";
+                return "æ­¤ç‰Œä¹ƒæœ¬æ´¾é‡å®ï¼Œä¸å¯æœ‰å¤±ã€‚\n";
         }
-        command("say ÄãÊÇÊ²Ã´Éí·İ£¬Ò²ÏëÈ¥¼ûÀÏÒ¯×Ó£¿");
-        message_vision(HIY"³É×ÔÑ§×ª¹ıÁ³È¥£¬Àí¶¼²»Àí$N \n\n"NOR,me);
+        command("say ä½ æ˜¯ä»€ä¹ˆèº«ä»½ï¼Œä¹Ÿæƒ³å»è§è€çˆ·å­ï¼Ÿ");
+        message_vision(HIY"æˆè‡ªå­¦è½¬è¿‡è„¸å»ï¼Œç†éƒ½ä¸ç†$N \n\n"NOR,me);
 
-        return "Äã»¹ÊÇÏÈÈ¥Å¬Á¦Á·Á·°É¡£\n";
+        return "ä½ è¿˜æ˜¯å…ˆå»åŠªåŠ›ç»ƒç»ƒå§ã€‚\n";
 }
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒÊÇ²»ÊÕÍ½µÄ£¬ÄãÈ¥ÕÒÎÒÄÇĞ©Í½µÜ°É¡£");
+        command("say æˆ‘æ˜¯ä¸æ”¶å¾’çš„ï¼Œä½ å»æ‰¾æˆ‘é‚£äº›å¾’å¼Ÿå§ã€‚");
 }
 

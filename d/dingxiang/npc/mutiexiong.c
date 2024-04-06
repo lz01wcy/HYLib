@@ -8,11 +8,11 @@ int do_action1();
 
 void create()
 {
-   set_name("Ä½ÌúĞÛ",({ "mu tiexiong","mu","tiexiong" }) );
-   set("gender", "ÄĞĞÔ" );		
+   set_name("æ…•é“é›„",({ "mu tiexiong","mu","tiexiong" }) );
+   set("gender", "ç”·æ€§" );		
    set("age",30);
-   set("nickname","º·Ê¨");
-   set("long", "Ëû¾ÍÊÇÍ»ØÊÈË³Æ¡¸º·Ê¨¡¹µÄÄ½ÌúĞÛ¡£\n");       
+   set("nickname","æ‚ç‹®");
+   set("long", "ä»–å°±æ˜¯çªå¥äººç§°ã€Œæ‚ç‹®ã€çš„æ…•é“é›„ã€‚\n");       
    set("combat_exp",100000);
    set_skill("dodge",100);
    set_skill("parry",100);

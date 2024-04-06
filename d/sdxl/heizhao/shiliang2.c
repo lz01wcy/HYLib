@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "Ê¯Áº");
+	set("short", "çŸ³æ¢");
 	set("long", @LONG
-¿íÔ¼³ßĞíµÄÊ¯Áº£¬ºá¼ÜÔÚÁ½×ùÉ½·åÖ®¼ä£¬ÔÆÎíÁıÕÖ£¬Íû²»¼û¾¡
-´¦¡£ÕâÊ¯ÁºÏÂÁÙÉî¹È£¬±ğËµĞĞ×ß£¬Ö»ÍûÒ»ÑÛÒ²²»Ãâµ¨Õ½ĞÄ¾ª¡£¿ÕÖĞ
-Ê±ÓĞº®Ñ»°§Ãù£¬´«ÔÚ¶úÀï£¬ÈÃÈËĞÄÖÏÍÈÈí²»ÏëÇ°ĞĞ¡£
+å®½çº¦å°ºè®¸çš„çŸ³æ¢ï¼Œæ¨ªæ¶åœ¨ä¸¤åº§å±±å³°ä¹‹é—´ï¼Œäº‘é›¾ç¬¼ç½©ï¼Œæœ›ä¸è§å°½
+å¤„ã€‚è¿™çŸ³æ¢ä¸‹ä¸´æ·±è°·ï¼Œåˆ«è¯´è¡Œèµ°ï¼Œåªæœ›ä¸€çœ¼ä¹Ÿä¸å…èƒ†æˆ˜å¿ƒæƒŠã€‚ç©ºä¸­
+æ—¶æœ‰å¯’é¸¦å“€é¸£ï¼Œä¼ åœ¨è€³é‡Œï¼Œè®©äººå¿ƒçª’è…¿è½¯ä¸æƒ³å‰è¡Œã€‚
 LONG );
 	set("outdoors", "taoyuan");
 	set("exits", ([
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
 	inv = all_inventory(me);
 	if( !sizeof(inv) )
 	{
-		message_vision(HIW "$NÔÚÊ¯ÁºÉÏ»ÎÁËÒ»ÏÂ£¬²îµã¶ùµôÈëÍòÕÉÉîÔ¨£¡\n" NOR,me);
+		message_vision(HIW "$Nåœ¨çŸ³æ¢ä¸Šæ™ƒäº†ä¸€ä¸‹ï¼Œå·®ç‚¹å„¿æ‰å…¥ä¸‡ä¸ˆæ·±æ¸Šï¼\n" NOR,me);
 		return notify_fail("");
 	} else
 	{
@@ -43,19 +43,19 @@ int valid_leave(object me, string dir)
 				{
 				if(inv[i]->query("id")=="huangbu xiaonan")
 					{
-message_vision(HIM "$NÔÚÊ¯ÁºÉÏÒ»»Î£¬ÉíÉÏµÄ"+inv[i]->name()+"µôÈëÁËÍòÕÉÉîÔ¨Ö®ÖĞ£¡\n" NOR,me);
+message_vision(HIM "$Nåœ¨çŸ³æ¢ä¸Šä¸€æ™ƒï¼Œèº«ä¸Šçš„"+inv[i]->name()+"æ‰å…¥äº†ä¸‡ä¸ˆæ·±æ¸Šä¹‹ä¸­ï¼\n" NOR,me);
 						destruct(inv[i]);
 					}
 				}
 				break;
 			case 1: 
-message_vision(HIR "$NÔÚÊ¯ÁºÉÏ»ÎÁËÁ½ÏÂ£¬Ò»¹ÇÂµ¹öÏÂÉîÔ¨£¡\n" NOR,me);
+message_vision(HIR "$Nåœ¨çŸ³æ¢ä¸Šæ™ƒäº†ä¸¤ä¸‹ï¼Œä¸€éª¨ç¢Œæ»šä¸‹æ·±æ¸Šï¼\n" NOR,me);
 				me->move(__DIR__"shanlu6");
-message("vision", HIR"Ö»¼û" + me->query("name") + "´ÓÉ½ÉÏ¹ÇÂµÂµµØ¹öÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ°ëÌìÅÀ²»ÆğÀ´£¡\n"NOR, environment(me), me);
-				return notify_fail(HIR"Äã´ÓÊ¯ÁºÉÏ¹öÏÂÀ´£¬Ö»¾õµÃ»ëÉíÉËÍ´¡£\n"NOR);
+message("vision", HIR"åªè§" + me->query("name") + "ä»å±±ä¸Šéª¨ç¢Œç¢Œåœ°æ»šäº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸ŠåŠå¤©çˆ¬ä¸èµ·æ¥ï¼\n"NOR, environment(me), me);
+				return notify_fail(HIR"ä½ ä»çŸ³æ¢ä¸Šæ»šä¸‹æ¥ï¼Œåªè§‰å¾—æµ‘èº«ä¼¤ç—›ã€‚\n"NOR);
 				break;
 			default: 
-message_vision(HIW "$NÔÚÊ¯ÁºÉÏ»ÎÁËÒ»ÏÂ£¬²îµã¶ùµôÈëÍòÕÉÉîÔ¨£¡\n" NOR,me);
+message_vision(HIW "$Nåœ¨çŸ³æ¢ä¸Šæ™ƒäº†ä¸€ä¸‹ï¼Œå·®ç‚¹å„¿æ‰å…¥ä¸‡ä¸ˆæ·±æ¸Šï¼\n" NOR,me);
 				break;
 		}
         }

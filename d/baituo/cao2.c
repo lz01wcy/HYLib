@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short","草丛");
+  set("short","鑽変笡");
   set("long",
-      "这里是乱草丛。北边是青竹林。其余三面都是齐腰高的蒿草，\n"
-  "常有蛇出没。\n"
+      "杩欓噷鏄贡鑽変笡銆傚寳杈规槸闈掔鏋椼�傚叾浣欎笁闈㈤兘鏄綈鑵伴珮鐨勮捒鑽夛紝\n"
+  "甯告湁铔囧嚭娌°�俓n"
      );
   set("exits",([
       "west" : __FILE__,

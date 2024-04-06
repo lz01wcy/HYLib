@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¿Í·¿");
+  set ("short", "å®¢æˆ¿");
   set ("long", @LONG
-Õâ¶ùÊÇÆ½°²¿ÍÕ»µÄ¿Í·¿£¬ÊÇÓÃÀ´ÕÐ´ý¿ÍÈËÃÇÐÝÏ¢µÄµØ·½£¬Ææ¹ÖµÄÊÇÕâ¶ù
-²»ÊÕÈ¡ÐÝÏ¢·Ñ£¬ÍùÀ´µÄÈËÃÇ¿ÉÒÔËæÒâµ½Õâ¶ùÀ´Ë¯¾õ¡£
+è¿™å„¿æ˜¯å¹³å®‰å®¢æ ˆçš„å®¢æˆ¿ï¼Œæ˜¯ç”¨æ¥æ‹›å¾…å®¢äººä»¬ä¼‘æ¯çš„åœ°æ–¹ï¼Œå¥‡æ€ªçš„æ˜¯è¿™å„¿
+ä¸æ”¶å–ä¼‘æ¯è´¹ï¼Œå¾€æ¥çš„äººä»¬å¯ä»¥éšæ„åˆ°è¿™å„¿æ¥ç¡è§‰ã€‚
 LONG);
 
   set("no_dazuo",1);set("no_kill",1);set("no_fight",1);

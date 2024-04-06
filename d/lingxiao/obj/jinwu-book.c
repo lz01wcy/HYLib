@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"½ðÎÚµ¶Æ×"NOR, ({ "jinwu-book" }));
+        set_name(HIR"é‡‘ä¹Œåˆ€è°±"NOR, ({ "jinwu-book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
 //                set("no_drop",1);
                 set("long",
-                        "ÕâÊÇÒ»±¾Ñ§Ï°½ðÎÚµ¶·¨µÄÊé¡£\n");
+                        "è¿™æ˜¯ä¸€æœ¬å­¦ä¹ é‡‘ä¹Œåˆ€æ³•çš„ä¹¦ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

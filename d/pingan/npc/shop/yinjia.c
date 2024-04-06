@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•Œãƒ»è¥¿æ¸¸è®°ãƒ»ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // ironarmor.c
@@ -7,13 +7,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("ÁÁÒø¼×", ({"silver armor", "jia", "armor"}));
+        set_name("äº®é“¶ç”²", ({"silver armor", "jia", "armor"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-           set("long", "Ò»¼şÒø¹â²Ó²ÓµÄ¿ø¼×£®\n");
+                set("unit", "ä»¶");
+           set("long", "ä¸€ä»¶é“¶å…‰ç¿ç¿çš„ç›”ç”²ï¼\n");
                 set("value", 2500);
                 set("material", "iron");
                 set("armor_prop/armor", 35);

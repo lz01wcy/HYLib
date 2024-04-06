@@ -8,15 +8,15 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"Ã··ÆË¹ÌØ.·ÑÀ×Ë¹"NOR, ({ "Mephisto"}));
+   set_name(order[random(13)]+"æ¢…è²æ–¯ç‰¹.è´¹é›·æ–¯"NOR, ({ "Mephisto"}));
 if (random(2)==0)
 	set("magicgift",5);
 else 	set("magicgift",6);
 	set("magicset",1);
-       set("title",HIB"½¾°ÁÖ®×¹ÌìÊ¹"NOR);
+       set("title",HIB"éª„å‚²ä¹‹å å¤©ä½¿"NOR);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄ½¾°ÁÖ®×¹ÌìÊ¹¡£\n");
+"ä¸€ä½å¯æ€•çš„éª„å‚²ä¹‹å å¤©ä½¿ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	set("combat_exp",60000000+random(8000000));
@@ -132,9 +132,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(HIB"$N,µ¹µØ¶øÍö£¬»¯ÎªÁËÎÞÊýµÄºÚÉ«¹âÃ¢¡£\n"NOR,ob,me);
+        message_vision(HIB"$N,å€’åœ°è€Œäº¡ï¼ŒåŒ–ä¸ºäº†æ— æ•°çš„é»‘è‰²å…‰èŠ’ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃð"+ob->query("title")+HIG",Íê³ÉÁË¹âÖ®ÊÀ½çµÄÈÎÎñ¡£\n"NOR, users());
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("title")+HIG",å®Œæˆäº†å…‰ä¹‹ä¸–ç•Œçš„ä»»åŠ¡ã€‚\n"NOR, users());
         me->add("combat_exp",600);
         me->add("potential",300);
         me->add("score",1);
@@ -146,7 +146,7 @@ if (!present("dark jian", me)
 {
 corpse=new("/clone/magic/obj/darksword");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 
 }
 
@@ -158,7 +158,7 @@ if (!present("dark jian", me)
 {
 corpse=new("/clone/magic/obj/darksword");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 }
                destruct(ob);
         return;

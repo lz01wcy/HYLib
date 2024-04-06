@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "´¨ºÅÇ®×¯");
+	set("short", "å·å·é’±åº„");
 	set("long", @LONG
-ÕâÀïÊÇ³ÇÀï×îÓÐÃûµÄÇ®×¯£º´¨ºÅÇ®×¯£¬ÀûÏ¢ËäµÍµ«¾ö²»ÍÏÇ·¡£ÌýËµ
-Ö÷ÈËÊÇÇà³ÇË×¼ÒµÜ×Ó£¬Ôø¾­ÔÚ´¨ÖÐºáÐÐÊýÊÀ£¬Á÷Ã¥ÍÁ·ËÒ»°ã¶¼²»À´ÕâÕÒ
-Âé·³¡£ËùÒÔÕâÀïÒ»ÏòÊÇÉúÒâºÜºÃ¡£
+è¿™é‡Œæ˜¯åŸŽé‡Œæœ€æœ‰åçš„é’±åº„ï¼šå·å·é’±åº„ï¼Œåˆ©æ¯è™½ä½Žä½†å†³ä¸æ‹–æ¬ ã€‚å¬è¯´
+ä¸»äººæ˜¯é’åŸŽä¿—å®¶å¼Ÿå­ï¼Œæ›¾ç»åœ¨å·ä¸­æ¨ªè¡Œæ•°ä¸–ï¼Œæµæ°“åœŸåŒªä¸€èˆ¬éƒ½ä¸æ¥è¿™æ‰¾
+éº»çƒ¦ã€‚æ‰€ä»¥è¿™é‡Œä¸€å‘æ˜¯ç”Ÿæ„å¾ˆå¥½ã€‚
 LONG	);
 	set("exits", ([ 
 		"east" : __DIR__"chunxilu2",
@@ -27,6 +27,6 @@ LONG	);
 
 int valid_leave(object me, string dir)
 {
-	tell_object(this_player(),WHT "ÄãÅÄÁËÅÄ¿Ú´ü£¬Ì¾ÁË¿ÚÆø£¬×ß³öÁËÇ®×¯¡£\n"NOR,this_player());
+	tell_object(this_player(),WHT "ä½ æ‹äº†æ‹å£è¢‹ï¼Œå¹äº†å£æ°”ï¼Œèµ°å‡ºäº†é’±åº„ã€‚\n"NOR,this_player());
 	return 1;
 }

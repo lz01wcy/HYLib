@@ -40,10 +40,10 @@ string turn;			// either "black" or "white"
 mapping pl = allocate_mapping(2); // black player and white player
 int *h_list = ({ 3*19+3, 15*19+15, 15*19+3, 3*19+15, 3*19+9,
 		15*19+9, 9*19+3, 9*19+15 }); // for use of handicap
-string *xindex = ({ "£Á","£Â","£Ã","£Ä","£Å","£Æ","£Ç","£È","£É",
-		"£Ê","£Ë","£Ì","£Í","£Î","£Ï","£Ğ","£Ñ","£Ò","£Ó" });
-string *yindex = ({ "¢Å","¢Æ","¢Ç","¢È","¢É","¢Ê","¢Ë","¢Ì","¢Í",
-		"¢Î","¢Ï","¢Ğ","¢Ñ","¢Ò","¢Ó","¢Ô","¢Õ","¢Ö","¢×" }); 
+string *xindex = ({ "ï¼¡","ï¼¢","ï¼£","ï¼¤","ï¼¥","ï¼¦","ï¼§","ï¼¨","ï¼©",
+		"ï¼ª","ï¼«","ï¼¬","ï¼­","ï¼®","ï¼¯","ï¼°","ï¼±","ï¼²","ï¼³" });
+string *yindex = ({ "â‘´","â‘µ","â‘¶","â‘·","â‘¸","â‘¹","â‘º","â‘»","â‘¼",
+		"â‘½","â‘¾","â‘¿","â’€","â’","â’‚","â’ƒ","â’„","â’…","â’†" }); 
 string *Ucase = ({ "A","B","C","D","E","F","G","H","I","J","K",
 	"L","M","N","O","P","Q","R","S" });
 string *lcase = ({ "a","b","c","d","e","f","g","h","i","j","k",
@@ -54,16 +54,16 @@ string *nindex = ({ "1","2","3","4","5","6","7","8","9","10",
 string lookbook();
 void create ()
 {
-	set ("short", "Î§ÆåÊÒ");
+	set ("short", "å›´æ£‹å®¤");
 	set ("long", @LONG
-ÔÚÈëÉñ×øÕÕÊÒÖĞ£¬³ıÁËÒ»ÕÅÊ¯×À¡¢Á½Ö»Ê¯µÊÖ®Íâ£¬¿Õµ´µ´µÄÒ»ÎŞËù
-ÓĞ£¬Ê¯×ÀÉÏ¿Ì×Å×İºáÊ®¾ÅµÀÆåÂ·£¬¶Ô·Å×ÅÒ»ºĞºÚ×Ó¡¢Ò»ºĞ°××Ó¡£¿¿´°´¦
-²è¼¸ÉÏ·Å×ÅÒ»±¾ÆåÊé(book)ºÍÁõÖÙ¸¦µÄ¡¶Æå¾÷¡·(jue) £¬ÓĞ¿Õ¿ÉÒÔ¶Á¶Á
-(read)¿´¡£ÕâÆåÊÒÖĞ³ıÁË¼¸ÒÎÆå×ÓÖ®Íâ²»ÉèÒ»Îï£¬µ±ÊÇÃâµÃ¶Ô¾ÖÕß·ÖĞÄ¡£
-Î§ÆåÊ®¾÷ÔÆ£º¡°Ì°²»µÃÊ¤  ·êÎ£ĞëÆú  Èë½çÒË»º  É÷ÎğÇáËÙ  ¹¥±Ë¹ËÎÒ
-¶¯ĞëÏàÓ¦  Æú×ÓÕùÏÈ  ±ËÇ¿×Ô±£  ÉáĞ¡¾Í´ó  ÊÆ¹ÂÈ¡ºÍ¡±£¬Äã¿ÉµÃĞ¡ĞÄ
-ÁË¡£ 
-    Ç½ÉÏÌùÁËÒ»ÕÅĞ¡Ìû×Ó(tie)¡£
+åœ¨å…¥ç¥åç…§å®¤ä¸­ï¼Œé™¤äº†ä¸€å¼ çŸ³æ¡Œã€ä¸¤åªçŸ³å‡³ä¹‹å¤–ï¼Œç©ºè¡è¡çš„ä¸€æ— æ‰€
+æœ‰ï¼ŒçŸ³æ¡Œä¸Šåˆ»ç€çºµæ¨ªåä¹é“æ£‹è·¯ï¼Œå¯¹æ”¾ç€ä¸€ç›’é»‘å­ã€ä¸€ç›’ç™½å­ã€‚é çª—å¤„
+èŒ¶å‡ ä¸Šæ”¾ç€ä¸€æœ¬æ£‹ä¹¦(book)å’Œåˆ˜ä»²ç”«çš„ã€Šæ£‹è¯€ã€‹(jue) ï¼Œæœ‰ç©ºå¯ä»¥è¯»è¯»
+(read)çœ‹ã€‚è¿™æ£‹å®¤ä¸­é™¤äº†å‡ æ¤…æ£‹å­ä¹‹å¤–ä¸è®¾ä¸€ç‰©ï¼Œå½“æ˜¯å…å¾—å¯¹å±€è€…åˆ†å¿ƒã€‚
+å›´æ£‹åè¯€äº‘ï¼šâ€œè´ªä¸å¾—èƒœ  é€¢å±é¡»å¼ƒ  å…¥ç•Œå®œç¼“  æ…å‹¿è½»é€Ÿ  æ”»å½¼é¡¾æˆ‘
+åŠ¨é¡»ç›¸åº”  å¼ƒå­äº‰å…ˆ  å½¼å¼ºè‡ªä¿  èˆå°å°±å¤§  åŠ¿å­¤å–å’Œâ€ï¼Œä½ å¯å¾—å°å¿ƒ
+äº†ã€‚ 
+    å¢™ä¸Šè´´äº†ä¸€å¼ å°å¸–å­(tie)ã€‚
 LONG);
 
 	set("objects", ([ /* sizeof() == 4 */
@@ -71,24 +71,24 @@ LONG);
 		__DIR__"obj/seat" : 2,
 	]));
 	set("item_desc", ([ 
-		"jue":	HIG"\n	Æå¾÷\n\n"NOR,
+		"jue":	HIG"\n	æ£‹è¯€\n\n"NOR,
 		"book": (: lookbook :),
 		"tie" :
 "
-ÔÚÕâÀïÄú¿ÉÒÔÏÂÎ§Æå»òÎå×ÓÆå£¬ÒÔÏÂ¸æËßÄúÏÂÆåµÄ²½Öè£º
-Ò»¡¢ÏÈÕÒºÃ¶ÔÊÖ£¬È»ºó·Ö±ğÓÃ sit black ºÍ sit white Èë×ù£»
-¶ş¡¢Ê¹ÓÃ new ¿ªÊ¼Ò»ÅÌĞÂµÄÆå¾Ö£ºnew [-5] [-b(numbers)] [-h(numbers)]
-    ÆäÖĞ -5 ´ú±íÏÂÎå×ÓÆå£¬²»Ñ¡¼´ÎªÏÂÎ§Æå£»
-         -b Ö¸¶¨ËùÓÃÆåÅÌµÄ´óĞ¡£»
-         -h Ö¸¶¨ÈÃ×ÓµÄÊıÄ¿£»
-    ÀıÈç£º
-    Î§Æå£ºnew
-    Ê®Îå³ËÊ®ÎåµÄÎå×ÓÆå£ºnew -5 -b15
-    ÈÃ¾Å×ÓÎ§Æå£ºnew -h9
-Èı¡¢Ê¹ÓÃ play ÂÖÁ÷×ßÆå£ºÀıÈç play d4 µÈµÈ¡£
-ËÄ¡¢Ê¹ÓÃ refresh¹Û¿´ÆåÅÌ¡£
-Îå¡¢Ê¹ÓÃ undo »ÚÆå¡£(Ä¿Ç°Ö»Ìá¹©Îå×ÓÆåµÄ»ÚÆå¹¦ÄÜ¡£)
-Áù¡¢Ê¹ÓÃ leave Õ¾ÆğÀ´¿ªÂ·¡£
+åœ¨è¿™é‡Œæ‚¨å¯ä»¥ä¸‹å›´æ£‹æˆ–äº”å­æ£‹ï¼Œä»¥ä¸‹å‘Šè¯‰æ‚¨ä¸‹æ£‹çš„æ­¥éª¤ï¼š
+ä¸€ã€å…ˆæ‰¾å¥½å¯¹æ‰‹ï¼Œç„¶ååˆ†åˆ«ç”¨ sit black å’Œ sit white å…¥åº§ï¼›
+äºŒã€ä½¿ç”¨ new å¼€å§‹ä¸€ç›˜æ–°çš„æ£‹å±€ï¼šnew [-5] [-b(numbers)] [-h(numbers)]
+    å…¶ä¸­ -5 ä»£è¡¨ä¸‹äº”å­æ£‹ï¼Œä¸é€‰å³ä¸ºä¸‹å›´æ£‹ï¼›
+         -b æŒ‡å®šæ‰€ç”¨æ£‹ç›˜çš„å¤§å°ï¼›
+         -h æŒ‡å®šè®©å­çš„æ•°ç›®ï¼›
+    ä¾‹å¦‚ï¼š
+    å›´æ£‹ï¼šnew
+    åäº”ä¹˜åäº”çš„äº”å­æ£‹ï¼šnew -5 -b15
+    è®©ä¹å­å›´æ£‹ï¼šnew -h9
+ä¸‰ã€ä½¿ç”¨ play è½®æµèµ°æ£‹ï¼šä¾‹å¦‚ play d4 ç­‰ç­‰ã€‚
+å››ã€ä½¿ç”¨ refreshè§‚çœ‹æ£‹ç›˜ã€‚
+äº”ã€ä½¿ç”¨ undo æ‚”æ£‹ã€‚(ç›®å‰åªæä¾›äº”å­æ£‹çš„æ‚”æ£‹åŠŸèƒ½ã€‚)
+å…­ã€ä½¿ç”¨ leave ç«™èµ·æ¥å¼€è·¯ã€‚
 "
 	]));
 	set("exits", ([ /* sizeof() == 1 */
@@ -115,7 +115,7 @@ void init()
 }
 string lookbook()
 {
-	return HIR"\n  Æå¾­Ê®ÈıÆª\n\n"NOR;
+	return HIR"\n  æ£‹ç»åä¸‰ç¯‡\n\n"NOR;
 }
 int do_read(string arg)
 {
@@ -124,7 +124,7 @@ int do_read(string arg)
 	if (arg=="jue")
 		this_player()->start_more(read_file("/d/changan/obj/go_jue"));
 	else
-		return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
 }
 
@@ -158,18 +158,18 @@ int do_sit(string arg)
 	object me = this_player();
 
 	if(me->query_temp("weiqi_seat"))
-		return notify_fail("ÄãÒÑ¾­×ø×ÅÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åç€äº†ã€‚\n");
 
 	if(!arg || (arg != "black" && arg != "white"))
-		return notify_fail("ÄãÏëÍæºÚÆå»¹ÊÇ°×Æå£¿\n");	
+		return notify_fail("ä½ æƒ³ç©é»‘æ£‹è¿˜æ˜¯ç™½æ£‹ï¼Ÿ\n");	
 
 	if (objectp(pl[arg]))
-		return notify_fail("Õâ¸öÎ»×ÓÉÏÒÑ¾­ÓĞÈËÁË£¡\n");
+		return notify_fail("è¿™ä¸ªä½å­ä¸Šå·²ç»æœ‰äººäº†ï¼\n");
 
 	pl[arg] = me;
 	me->set_temp("weiqi_seat",arg);
-	if(arg == "black") message_vision("$N×øÉÏÁËÉîÉ«µÄÊ¯µÊ¡£\n",me);
-	else message_vision("$N×øÉÏÁËÇ³É«µÄÊ¯µÊ¡£\n",me);
+	if(arg == "black") message_vision("$Nåä¸Šäº†æ·±è‰²çš„çŸ³å‡³ã€‚\n",me);
+	else message_vision("$Nåä¸Šäº†æµ…è‰²çš„çŸ³å‡³ã€‚\n",me);
 	return(1);
 }
 
@@ -178,9 +178,9 @@ int do_leave(string arg)
 	string s;
 	object me = this_player();
 	if(!me->query_temp("weiqi_seat"))
-		return notify_fail("ÄãÃ»ÓĞÔÚÏÂÆå¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰åœ¨ä¸‹æ£‹ã€‚\n");
 	s = (string)me->query_temp("weiqi_seat");
-	message_vision("$N²»ÏëÔÙÏÂÁË£¬Õ¾ÁËÆğÀ´¡£\n",me);
+	message_vision("$Nä¸æƒ³å†ä¸‹äº†ï¼Œç«™äº†èµ·æ¥ã€‚\n",me);
 	map_delete(pl,s);
 	me->delete_temp("weiqi_seat");
 	status=WQ_NOT_PLAYING;	
@@ -195,24 +195,24 @@ string show_game()
 	for(i=0;i<bsize;i++)
 	{
 		s += xindex[i];
-		s += "¡¡";
+		s += "ã€€";
 		for(j=0;j<bsize;j++)
 		{
-			if(game[i*bsize+j]==WQ_BLACK) s += "¡ñ";
-			else if(game[i*bsize+j]==WQ_WHITE) s+="¡ğ";
-			else if(i==0 && j==0) s += "©°";
-			else if(i==0 && j==bsize-1) s += "©´";
-			else if(i==bsize-1 && j==0) s += "©¸";
-			else if(i==bsize-1 && j==bsize-1) s +="©¼";
-			else if(i==0) s += "©Ğ";
-			else if(j==0) s += "©À";
-			else if(j==bsize-1) s += "©È";
-			else if(i==bsize-1) s += "©Ø";
-			else s += "©à";
+			if(game[i*bsize+j]==WQ_BLACK) s += "â—";
+			else if(game[i*bsize+j]==WQ_WHITE) s+="â—‹";
+			else if(i==0 && j==0) s += "â”Œ";
+			else if(i==0 && j==bsize-1) s += "â”";
+			else if(i==bsize-1 && j==0) s += "â””";
+			else if(i==bsize-1 && j==bsize-1) s +="â”˜";
+			else if(i==0) s += "â”¬";
+			else if(j==0) s += "â”œ";
+			else if(j==bsize-1) s += "â”¤";
+			else if(i==bsize-1) s += "â”´";
+			else s += "â”¼";
 		}
 		s += "\n";
 	}
-	s += "\n¡¡¡¡";
+	s += "\nã€€ã€€";
 	for(i=0;i<bsize;i++) s += yindex[i];
 	s += "\n\n";
 	return(s);
@@ -238,9 +238,9 @@ int do_new(string arg)
 	string s;
 
 	if(!me->query_temp("weiqi_seat"))
-		return notify_fail("Äã»¹Ã»×øºÃÄÅ¡£\n");
+		return notify_fail("ä½ è¿˜æ²¡åå¥½å‘ã€‚\n");
 	if(!objectp(pl["black"]) || !objectp(pl["white"]) )
-		return notify_fail("»¹Ã»ÓĞ¶ÔÊÖÄÅ¡£\n");
+		return notify_fail("è¿˜æ²¡æœ‰å¯¹æ‰‹å‘ã€‚\n");
 
 	status = WQ_PLAYING;
 	jie_flag = WQ_NO_JIE;
@@ -287,8 +287,8 @@ int do_new(string arg)
 	lastlastmove="";
 	tell_room(rm,show_game());
 	player = pl[turn];
-	if(turn=="black") message_vision("ÏÖÔÚÂÖµ½ºÚ·½$N×ßÆå¡£\n",player);
-	else message_vision("ÏÖÔÚÂÖµ½°×·½$N×ßÆå¡£\n",player);
+	if(turn=="black") message_vision("ç°åœ¨è½®åˆ°é»‘æ–¹$Nèµ°æ£‹ã€‚\n",player);
+	else message_vision("ç°åœ¨è½®åˆ°ç™½æ–¹$Nèµ°æ£‹ã€‚\n",player);
 	return(1);
 }
 
@@ -298,22 +298,22 @@ int do_refresh(string arg)
 	object rm = environment(me);
 	object player;
 
-	if(status==WQ_NOT_PLAYING) return notify_fail("ÆåÅÌÉÏÊÇ¿ÕµÄ¡£\n");
+	if(status==WQ_NOT_PLAYING) return notify_fail("æ£‹ç›˜ä¸Šæ˜¯ç©ºçš„ã€‚\n");
 	if (WQ_Started)
 	{		
 		if (turn=="black")
 		{
-			tell_object(me,"\n°×ÆåÉÏÒ»²½×ßÔÚÁË"+lastmove+"\n");
+			tell_object(me,"\nç™½æ£‹ä¸Šä¸€æ­¥èµ°åœ¨äº†"+lastmove+"\n");
 		}
 		else
-			tell_object(me,"\nºÚÆåÉÏÒ»²½×ßÔÚÁË"+lastmove+"\n");
+			tell_object(me,"\né»‘æ£‹ä¸Šä¸€æ­¥èµ°åœ¨äº†"+lastmove+"\n");
 	}
 	tell_object(me,show_game());
 //	if(pl["black"] || pl["white"]) return 1;
 	player = pl[turn];
 	if(turn=="black")
-		tell_object(me,"ÏÖÔÚÂÖµ½ºÚ·½"+player->name()+"×ßÆå¡£\n");
-	else tell_object(me,"ÏÖÔÚÂÖµ½°×·½"+player->name()+"×ßÆå¡£\n");
+		tell_object(me,"ç°åœ¨è½®åˆ°é»‘æ–¹"+player->name()+"èµ°æ£‹ã€‚\n");
+	else tell_object(me,"ç°åœ¨è½®åˆ°ç™½æ–¹"+player->name()+"èµ°æ£‹ã€‚\n");
 	return 1;
 }
 /* Function 'no_qi' checks if the qi of stone (x,y) is 0.
@@ -613,17 +613,17 @@ int do_undo()
 	object rm = environment(me);
 	object player;
 	if(!me->query_temp("weiqi_seat"))
-		return notify_fail("ÄãÊÇÅÔ¹ÛÕß£¬ÔõÃ´ºÃÒâË¼Ï¹Ö¸»Ó£¿\n");
+		return notify_fail("ä½ æ˜¯æ—è§‚è€…ï¼Œæ€ä¹ˆå¥½æ„æ€çæŒ‡æŒ¥ï¼Ÿ\n");
 	if(status==WQ_NOT_PLAYING) 
-		return notify_fail("»¹Ã»ĞÂ¿ªÒ»¾ÖÆåÄÅ¡£\n");
+		return notify_fail("è¿˜æ²¡æ–°å¼€ä¸€å±€æ£‹å‘ã€‚\n");
 	if (status!=WQ_PLAYING_WUZI)
-		return notify_fail("Ä¿Ç°Ö»Ìá¹©Îå×ÓÆåµÄ»ÚÆå¹¦ÄÜ¡£\n");
+		return notify_fail("ç›®å‰åªæä¾›äº”å­æ£‹çš„æ‚”æ£‹åŠŸèƒ½ã€‚\n");
 	if(!WQ_Started)
-		return notify_fail("Ò»²½¶¼Ã»×ß£¬»ÚÊ²Ã´Æå¡£\n");
+		return notify_fail("ä¸€æ­¥éƒ½æ²¡èµ°ï¼Œæ‚”ä»€ä¹ˆæ£‹ã€‚\n");
 	if (me->query_temp("weiqi_seat")!= turn)
-		return notify_fail("Òª»ÚÆåÒ²µÃ¸úÈË¼ÒÉÌÁ¿Ò»ÏÂÑ½¡£\n");
+		return notify_fail("è¦æ‚”æ£‹ä¹Ÿå¾—è·Ÿäººå®¶å•†é‡ä¸€ä¸‹å‘€ã€‚\n");
 	if (WQ_Undoed)
-		return notify_fail("Ò»´ÎÖ»ÄÜ»ÚÒ»²½Æå¡£\n");
+		return notify_fail("ä¸€æ¬¡åªèƒ½æ‚”ä¸€æ­¥æ£‹ã€‚\n");
 
 	WQ_Undoed=1;
 	translate_position(lastmove,x_ptr,y_ptr);
@@ -647,19 +647,19 @@ int do_undo()
 	{
 		turn="white";
 		if (lastmove!="")
-			 tell_room(rm,"\nºÚÆåÉÏÒ»²½×ßÔÚÁË"+lastmove+"\n");
+			 tell_room(rm,"\né»‘æ£‹ä¸Šä¸€æ­¥èµ°åœ¨äº†"+lastmove+"\n");
 	}
 	else
 	{ 
 		turn="black";
 		if (lastmove!="")
-			tell_room(rm,"\n°×ÆåÉÏÒ»²½×ßÔÚÁË"+lastmove+"\n");
+			tell_room(rm,"\nç™½æ£‹ä¸Šä¸€æ­¥èµ°åœ¨äº†"+lastmove+"\n");
 	}
 	tell_room(rm,show_game());
 	player = pl[turn];
 	if(turn=="black")
-		tell_room(rm,"ÏÖÔÚÂÖµ½ºÚ·½"+player->name()+"×ßÆå¡£\n");
-	else tell_room(rm,"ÏÖÔÚÂÖµ½°×·½"+player->name()+"×ßÆå¡£\n");
+		tell_room(rm,"ç°åœ¨è½®åˆ°é»‘æ–¹"+player->name()+"èµ°æ£‹ã€‚\n");
+	else tell_room(rm,"ç°åœ¨è½®åˆ°ç™½æ–¹"+player->name()+"èµ°æ£‹ã€‚\n");
 	return 1;
 }
 			
@@ -674,42 +674,42 @@ int do_play(string arg)
 	int wf=0; // winning flag
 
 	if(!me->query_temp("weiqi_seat"))
-		return notify_fail("ÄãÊÇÅÔ¹ÛÕß£¬ÔõÃ´ºÃÒâË¼Ï¹Ö¸»Ó£¿\n");
+		return notify_fail("ä½ æ˜¯æ—è§‚è€…ï¼Œæ€ä¹ˆå¥½æ„æ€çæŒ‡æŒ¥ï¼Ÿ\n");
 	if(status==WQ_NOT_PLAYING) 
-		return notify_fail("»¹Ã»ĞÂ¿ªÒ»¾ÖÆåÄÅ¡£\n");
+		return notify_fail("è¿˜æ²¡æ–°å¼€ä¸€å±€æ£‹å‘ã€‚\n");
 	if(me->query_temp("weiqi_seat") != turn)
-		return notify_fail("»¹Ã»ÂÖµ½Äã×ßÆå¡£\n");
+		return notify_fail("è¿˜æ²¡è½®åˆ°ä½ èµ°æ£‹ã€‚\n");
 	if(!translate_position(arg,x_ptr,y_ptr))
-		return notify_fail("ÄãÒªÏÂÔÚÄÄÀï£¿\n");
+		return notify_fail("ä½ è¦ä¸‹åœ¨å“ªé‡Œï¼Ÿ\n");
 
 	if(status==WQ_PLAYING_WUZI)
 	{
 		rv = wuzi_rule(x_ptr[0],y_ptr[0]);
 		if(rv==WQ_POS_OCCUPIED)
-			return notify_fail("Õâ¸öÎ»ÖÃÉÏÒÑ¾­ÓĞ×ÓÁË£¡\n");
+			return notify_fail("è¿™ä¸ªä½ç½®ä¸Šå·²ç»æœ‰å­äº†ï¼\n");
 		if(rv==WQ_WINNING) wf=1;
 	}
 	else
 	{
 		rv=weiqi_rule(x_ptr[0],y_ptr[0]);
 		if(rv==WQ_POS_OCCUPIED)
-			return notify_fail("Õâ¸öÎ»ÖÃÉÏÒÑ¾­ÓĞ×ÓÁË£¡\n");
+			return notify_fail("è¿™ä¸ªä½ç½®ä¸Šå·²ç»æœ‰å­äº†ï¼\n");
 		if(rv==WQ_JIE_BANNED)
-			return notify_fail("ÏÖÔÚ»¹Ã»ÂÖµ½ÄãÌá½Ù£¡\n");
+			return notify_fail("ç°åœ¨è¿˜æ²¡è½®åˆ°ä½ æåŠ«ï¼\n");
 		if(rv==WQ_NO_QI_BANNED)
-			return notify_fail("Õâ¸öÎ»ÖÃÊÇ½ûÈëµã£¡\n");
+			return notify_fail("è¿™ä¸ªä½ç½®æ˜¯ç¦å…¥ç‚¹ï¼\n");
 	}
 	WQ_Started=1;
 	WQ_Undoed=0;
 	lastlastmove=lastmove;
 	lastmove=arg;
-	if (turn=="black") tell_room(rm, "\nºÚÆåÉÏÒ»²½×ßÔÚÁË"+arg+"\n");
-	else tell_room(rm, "\n°×ÆåÉÏÒ»²½×ßÔÚÁË"+arg+"\n");
+	if (turn=="black") tell_room(rm, "\né»‘æ£‹ä¸Šä¸€æ­¥èµ°åœ¨äº†"+arg+"\n");
+	else tell_room(rm, "\nç™½æ£‹ä¸Šä¸€æ­¥èµ°åœ¨äº†"+arg+"\n");
 	if(wf)
 	{
 		tell_room(rm,show_game());
-		if(turn=="black") message_vision("ºÚ·½$NÊ¤¡£\n",me);
-		else message_vision("°×·½$NÊ¤¡£\n",me);
+		if(turn=="black") message_vision("é»‘æ–¹$Nèƒœã€‚\n",me);
+		else message_vision("ç™½æ–¹$Nèƒœã€‚\n",me);
 		status=WQ_NOT_PLAYING;
 		return 1;
 	}
@@ -722,7 +722,7 @@ int do_play(string arg)
 		turn = "black"; op = pl["black"];
 	}
 	tell_room(rm,show_game());
-	if(turn=="black") message_vision("ÏÖÔÚÂÖµ½ºÚ·½$N×ßÆå¡£\n",op);
-	else message_vision("ÏÖÔÚÂÖµ½°×·½$N×ßÆå¡£\n",op);
+	if(turn=="black") message_vision("ç°åœ¨è½®åˆ°é»‘æ–¹$Nèµ°æ£‹ã€‚\n",op);
+	else message_vision("ç°åœ¨è½®åˆ°ç™½æ–¹$Nèµ°æ£‹ã€‚\n",op);
 	return 1;
 }

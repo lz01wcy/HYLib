@@ -7,10 +7,10 @@ string ask_for_join();
 
 void create()
 {
-	set_name("·½Çî", ({ "fang qiong", "fang", "qiong"}));
-	set("long", "ËûÊÇÒ»Î»Éí´©»Æ²¼ôÂôÄµÄÇàÄêÉ®ÈË¡£Á³ÉÏÖÉÆøÎ´ÍÑ£¬ÉíÊÖÈ´ÒÑÏà\n"
-		"µ±½Ã½İ£¬¿´À´ËÆºõÑ§¹ıÒ»µãÎä¹¦¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–¹ç©·", ({ "fang qiong", "fang", "qiong"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«ç©¿é»„å¸ƒè¢ˆè£Ÿçš„é’å¹´åƒ§äººã€‚è„¸ä¸Šç¨šæ°”æœªè„±ï¼Œèº«æ‰‹å´å·²ç›¸\n"
+		"å½“çŸ«æ·ï¼Œçœ‹æ¥ä¼¼ä¹å­¦è¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -59,10 +59,10 @@ void create()
 	prepare_skill("hand", "fengyun-shou");
 
 	set("inquiry",([
-		"Ìê¶È" : (: ask_for_join :),
-		"³ö¼Ò" : (: ask_for_join :),
+		"å‰ƒåº¦" : (: ask_for_join :),
+		"å‡ºå®¶" : (: ask_for_join :),
 	]));
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 21, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
@@ -79,27 +79,27 @@ string ask_for_join()
 	object me = this_player();
 
 	if( (string)me->query("class")=="bonze" )
-		return "°¢ÃÖÍÓ·ğ£¡ÄãÎÒÍ¬ÊÇ³ö¼ÒÈË£¬ºÎ¹Ê¸úÆ¶É®¿ªÕâµÈÍæĞ¦£¿\n";
-	if( (string)me->query("gender") != "ÄĞĞÔ" )
-		return "°¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Å®Ê©Ö÷ÈôÕæĞÄÑöÄ½ÄÏÉÙÁÖ£¬¿ÉÒÔ×ö±¾ÔºË×¼ÒµÜ×Ó¡£\n";
+		return "é˜¿å¼¥é™€ä½›ï¼ä½ æˆ‘åŒæ˜¯å‡ºå®¶äººï¼Œä½•æ•…è·Ÿè´«åƒ§å¼€è¿™ç­‰ç©ç¬‘ï¼Ÿ\n";
+	if( (string)me->query("gender") != "ç”·æ€§" )
+		return "é˜¿å¼¥é™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼å¥³æ–½ä¸»è‹¥çœŸå¿ƒä»°æ…•å—å°‘æ—ï¼Œå¯ä»¥åšæœ¬é™¢ä¿—å®¶å¼Ÿå­ã€‚\n";
 	me->set_temp("pending/join_bonze", 1);
-	return "°¢ÃÖÍÓ·ğ£¡Ê©Ö÷ÈôÕæĞÄğ§ÒÀÎÒ·ğ£¬Çë¹òÏÂ(kneel)ÊÜ½ä¡£\n";
+	return "é˜¿å¼¥é™€ä½›ï¼æ–½ä¸»è‹¥çœŸå¿ƒçšˆä¾æˆ‘ä½›ï¼Œè¯·è·ªä¸‹(kneel)å—æˆ’ã€‚\n";
 }
 int do_kneel()
 {
 	object me = this_player();
-	string *prename = ({ "Õı", "·½", "Ôª", "´ó" });
+	string *prename = ({ "æ­£", "æ–¹", "å…ƒ", "å¤§" });
 	string name, new_name;
 	int gen;
 
 	if( !me->query_temp("pending/join_bonze") ) return 0;
-	message_vision("$NË«ÊÖºÏÊ®£¬¹§¹§¾´¾´µØ¹òÁËÏÂÀ´¡£\n\n$nÉì³öÊÖÕÆ£¬ÔÚ$NÍ·¶¥ÇáÇáµØÄ¦êıÁË¼¸ÏÂ£¬½«$NµÄÍ··¢¾¡ÊıÌêÈ¥¡£\n\n", me, this_object() );
+	message_vision("$NåŒæ‰‹åˆåï¼Œæ­æ­æ•¬æ•¬åœ°è·ªäº†ä¸‹æ¥ã€‚\n\n$nä¼¸å‡ºæ‰‹æŒï¼Œåœ¨$Nå¤´é¡¶è½»è½»åœ°æ‘©æŒ²äº†å‡ ä¸‹ï¼Œå°†$Nçš„å¤´å‘å°½æ•°å‰ƒå»ã€‚\n\n", me, this_object() );
 	name = me->query("name");
-	if (me->query("family/family_name") == "ÄÏÉÙÁÖÅÉ")
+	if (me->query("family/family_name") == "å—å°‘æ—æ´¾")
 		gen = me->query("family/generation");
 	else gen = 22;
 	new_name = prename[22-gen] + name[0..1];
-	command("say ´Ó½ñÒÔºóÄãµÄ·¨Ãû½Ğ×ö" + new_name + "¡£");
+	command("say ä»ä»Šä»¥åä½ çš„æ³•åå«åš" + new_name + "ã€‚");
 	command("smile");
 	me->delete_temp("pending/join_bonze");
 	me->set("name", new_name);
@@ -107,8 +107,8 @@ int do_kneel()
 	me->set("K_record", me->query("PKS") + me->query("MKS"));
 	me->set("shen_record", me->query("shen"));
 	me->set("shen", 0);
-	if (me->query("family/family_name") == "ÄÏÉÙÁÖÅÉ")
-		me->set("title", "ÄÏÉÙÁÖÅÉµÚ"+chinese_number(gen)+"´úµÜ×Ó");
+	if (me->query("family/family_name") == "å—å°‘æ—æ´¾")
+		me->set("title", "å—å°‘æ—æ´¾ç¬¬"+chinese_number(gen)+"ä»£å¼Ÿå­");
 	return 1;
 }
 #include "fang.h";

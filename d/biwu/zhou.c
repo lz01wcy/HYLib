@@ -1,4 +1,4 @@
-// zhou.c ÖÜÜÆÈô
+// zhou.c å‘¨èŠ·è‹¥
 
 #include <command.h>
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("ÖÜÜÆÈô", ({ "zhou-zhiruo","zhiruo","zhou"}));
+        set_name("å‘¨èŠ·è‹¥", ({ "zhou-zhiruo","zhiruo","zhou"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úÕÆÃÅµÜ×Ó¡£\n"
-                "Ò»ÕÅÁ³ĞãÀö¾øË×¡£Éí×ÅÒ»Éíµ­»ÆÒÂÉÑ¡£\n"
-                "ÂÔÏÔÇå¼õµÄÇÉĞ¦ÖĞ´øÁËĞ©ĞíÎŞÄÎ¡£\n"
-                "ËıºÜ¼ÅÄ¯¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£æŒé—¨å¼Ÿå­ã€‚\n"
+                "ä¸€å¼ è„¸ç§€ä¸½ç»ä¿—ã€‚èº«ç€ä¸€èº«æ·¡é»„è¡£è£³ã€‚\n"
+                "ç•¥æ˜¾æ¸…å‡çš„å·§ç¬‘ä¸­å¸¦äº†äº›è®¸æ— å¥ˆã€‚\n"
+                "å¥¹å¾ˆå¯‚å¯ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -62,7 +62,7 @@ void create()
         set_temp("apply/defense", 200);
         set_temp("apply/armor", 500);
         set_temp("apply/damage", 550);
-        create_family("¶ëáÒÅÉ", 4, "ÕÆÃÅµÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "æŒé—¨å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian");

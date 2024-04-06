@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW"ѩ��"NOR, ({ "wolf", "lang" }) );
-        set("race", "Ұ��");
+        set_name(HIW"雪狼"NOR, ({ "wolf", "lang" }) );
+        set("race", "野兽");
         set("age", 5);
-        set("long", "һֻ���е��ǣ������ŵĴ�����¶�ż��������\n");
+        set("long", "一只独行的狼，半张着的大嘴里露着几颗獠牙。\n");
 //        set("attitude", "aggressive");
         set("attitude", "peace");
         set("shen_type", -1);
 
-        set("limbs", ({ "��ͷ", "����", "ǰצ", "��ץ", "β��" }) );
+        set("limbs", ({ "狼头", "狼身", "前爪", "后抓", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 200000);
@@ -25,8 +25,8 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ѩ��������β�ͣ�ͻȻ̧ͷ�����㷢��һ�������ĳ�����\n",
-                "ѩ������"+HIG" �����ĵ��۹�"+NOR"���������飬Ѫ��޿�������Ź����ӡ�\n",
+                "雪狼耷邋着尾巴，突然抬头，冲你发出一声凄厉的长嚎。\n",
+                "雪狼闪着"+HIG" 绿幽幽的眼光"+NOR"冲你瞄了瞄，血盆巨口里答答滴着哈喇子。\n",
         }) );
 }
 

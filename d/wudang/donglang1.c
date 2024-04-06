@@ -1,4 +1,4 @@
-// donglang1.c ¶«Ïá×ßÀÈ
+// donglang1.c ä¸œå¢èµ°å»Š
 // by Xiang
 
 #include <room.h>
@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶«Ïá×ßÀÈ");
+        set("short", "ä¸œå¢èµ°å»Š");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ×ßÀÈÉÏ£¬¶«±ßÓĞ¼¸¼äÑÅÊÒ£¬ÈËÀ´ÈËÍùºÜÈÈÄÖ¡£Î÷±ßÊÇ´óµî¡£
+ä½ èµ°åœ¨ä¸€æ¡èµ°å»Šä¸Šï¼Œä¸œè¾¹æœ‰å‡ é—´é›…å®¤ï¼Œäººæ¥äººå¾€å¾ˆçƒ­é—¹ã€‚è¥¿è¾¹æ˜¯å¤§æ®¿ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"donglang2",
@@ -26,9 +26,9 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ((!myfam || myfam["family_name"] != "Îäµ±ÅÉ") && dir == "east" &&
+        if ((!myfam || myfam["family_name"] != "æ­¦å½“æ´¾") && dir == "east" &&
                 objectp(present("zhang songxi", environment(me))))
-           return notify_fail("ÕÅËÉÏªºÈµÀ£ºÄã²»ÊÇÎäµ±µÜ×Ó£¬²»µÃÈëÄÚ¡£\n");
+           return notify_fail("å¼ æ¾æºªå–é“ï¼šä½ ä¸æ˜¯æ­¦å½“å¼Ÿå­ï¼Œä¸å¾—å…¥å†…ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

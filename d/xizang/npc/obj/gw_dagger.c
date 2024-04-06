@@ -6,17 +6,17 @@
 #include <weapon.h>
 inherit DAGGER; 
 void create() {
-        set_name("¾ªÕİ", ({ "dagger" }) );
+        set_name("æƒŠè›°", ({ "dagger" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÉÁÉÁ·¢¹âµÄ±¦Ø°¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠé—ªé—ªå‘å…‰çš„å®åŒ•ã€‚\n");
         set("value", 5000);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");
+                set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nè—å…¥æ€€ä¸­ã€‚\n");
         }
         ::init_dagger(65);
 }      

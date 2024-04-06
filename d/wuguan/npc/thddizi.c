@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÌÒ»¨µºµÜ×Ó", ({ "taohuadao dizi", "dizi" }) );
-       set("gender", "ÄÐÐÔ" );
+       set_name("æ¡ƒèŠ±å²›å¼Ÿå­", ({ "taohuadao dizi", "dizi" }) );
+       set("gender", "ç”·æ€§" );
        set("age", 26);
        set("long",
-               "ËûÊÇÒ»¸öÇåÐãµÄÌÒ»¨µºµÜ×Ó¡£\n");
+               "ä»–æ˜¯ä¸€ä¸ªæ¸…ç§€çš„æ¡ƒèŠ±å²›å¼Ÿå­ã€‚\n");
        set("combat_exp", 12500);
        set("attitude", "friendly");
  
@@ -32,12 +32,12 @@ void greeting(object ob)
 	if (!ob || !present(ob, environment())) return;
 	switch( random(2) ) {
 		case 0:
-			say( "ÌÒ»¨µºµÜ×ÓËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-            + "¼ÓÈëÌÒ»¨µº¿É²»ÈÝÒ×£¬¿ÉÒÔ¿´¿´"BRED"(help taohuadao)"NOR"»á¶ÔÄãÓÐ°ïÖúµÄ¡£\n");
+			say( "æ¡ƒèŠ±å²›å¼Ÿå­è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+            + "åŠ å…¥æ¡ƒèŠ±å²›å¯ä¸å®¹æ˜“ï¼Œå¯ä»¥çœ‹çœ‹"BRED"(help taohuadao)"NOR"ä¼šå¯¹ä½ æœ‰å¸®åŠ©çš„ã€‚\n");
 			break;
 		case 1:
-			say( "ÌÒ»¨µºµÜ×ÓËµµÀ£ºÎÒÃÇµºÖ÷»ÆÒ©Ê¦ÇÙÆåÊé»­ÎÞËù²»¾«£¬ËûÀÏÈË¼ÒµÄ¹¦·ò
- ÄãÈçÄÜÑ§µÃÒ»¶þ£¬¾ÍÄÜ³öÈËÍ·µØÁË¡£\n");
+			say( "æ¡ƒèŠ±å²›å¼Ÿå­è¯´é“ï¼šæˆ‘ä»¬å²›ä¸»é»„è¯å¸ˆç´æ£‹ä¹¦ç”»æ— æ‰€ä¸ç²¾ï¼Œä»–è€äººå®¶çš„åŠŸå¤«
+ ä½ å¦‚èƒ½å­¦å¾—ä¸€äºŒï¼Œå°±èƒ½å‡ºäººå¤´åœ°äº†ã€‚\n");
 			break;
 	}
 

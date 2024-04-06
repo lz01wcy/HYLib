@@ -5,12 +5,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name(HIY "»ÆæôÂí" NOR, ({ "huangbiaoma"}));
-	set("race", "Ò°ÊŞ");
-	set("gender", "ĞÛĞÔ");
+	set_name(HIY "é»„éª é©¬" NOR, ({ "huangbiaoma"}));
+	set("race", "é‡å…½");
+	set("gender", "é›„æ€§");
 	set("age", 2+random(3));
-	set("long", "ÕâÊÇÒ»Æ¥»Ææô¿¥Âí£¬È«Éí½ğ»Æ£¬Ã»ÓĞÒ»Ë¿ÔÓÃ«¡£\n"+
-		"Íæ¼Ò¿ÉÒÔÆïÉÏËüÈ¥Ö¸¶¨µÄµØ·½(ride)¡£\n");
+	set("long", "è¿™æ˜¯ä¸€åŒ¹é»„éª éªé©¬ï¼Œå…¨èº«é‡‘é»„ï¼Œæ²¡æœ‰ä¸€ä¸æ‚æ¯›ã€‚\n"+
+		"ç©å®¶å¯ä»¥éª‘ä¸Šå®ƒå»æŒ‡å®šçš„åœ°æ–¹(ride)ã€‚\n");
 	set("ridable", 1);
 	set("int", 30);
 	set("qi", 300);
@@ -21,7 +21,7 @@ void create()
 	set("combat_exp",50000);
 	set("attitude", "peaceful");
 
-	set("limbs", ({ "Í·²¿", "¸¹²¿", "Î²°Í","ºóÍÈ","Ç°ÍÈ" }) );
+	set("limbs", ({ "å¤´éƒ¨", "è…¹éƒ¨", "å°¾å·´","åè…¿","å‰è…¿" }) );
 	set("verbs", ({ "bite","hoof" }) );
 	set_temp("apply/attack", 50);
 	set_temp("apply/armor", 15);
@@ -29,8 +29,8 @@ void create()
 
 	set("chat_chance", 4);
         set("chat_msg", ({
-		HIY"»ÆæôÂí"NOR"µÍÏÂÍ·À´£¬¡¸ŞÉŞÉàÂàÂ¡¹µØ½À×Å¸É²İ¡£\n",
-                HIY"»ÆæôÂí"NOR"Ì§Í·¿´ÁË¿´Äã£¬¼ÌĞøÂñÏÂÍ·³ÔËüµÄÒ¹²İ¡£\n",
+		HIY"é»„éª é©¬"NOR"ä½ä¸‹å¤´æ¥ï¼Œã€Œå¥šå¥šå—¦å—¦ã€åœ°åš¼ç€å¹²è‰ã€‚\n",
+                HIY"é»„éª é©¬"NOR"æŠ¬å¤´çœ‹äº†çœ‹ä½ ï¼Œç»§ç»­åŸ‹ä¸‹å¤´åƒå®ƒçš„å¤œè‰ã€‚\n",
         }) );
 
 	setup();

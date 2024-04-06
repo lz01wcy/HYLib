@@ -5,22 +5,22 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "В║╟щнт╥©");
+	set("short", "ИЁ▄Ф▀°Е█╖Ф┬©");
 	set("long", @LONG
-уБйгВ║╟щ╣днт╥©║ёВ║╟щлитз╢╡иок╞веакё╛╢жиЫ╢жфЬ╣ь╢Рве╨ТЮЮ║ё
-╠╠╠ъспр╩ихце(door)║ё
+Х©≥Ф≤╞ИЁ▄Ф▀°Г └Е█╖Ф┬©Ц─┌ИЁ▄Ф▀°Х╨╨Е°╗Е╨┼Д╦┼Г²║Г²─Д╨├О╪▄Г╡≈Её╟Г╡≈Ф╟■Е°╟Ф┴⌠Г²─Е▒╪Е≥°Ц─┌
+Е▄≈Х╬╧Ф°┴Д╦─Ф┴┤И≈╗(door)Ц─┌
 LONG );
 	set("exits", ([
 		"east" : __DIR__"aobai4",
 		"north" : __DIR__"aobai10",
 	]));
 	set("item_desc", ([
-		"door" : "уБйгр╩их╪╚╨Я╣дд╬це║ё\n",
+		"door" : "Х©≥Ф≤╞Д╦─Ф┴┤Ф·│Е▌ Г └Ф°╗И≈╗Ц─┌\n",
 	]));
 	set("objects", ([
 		__DIR__"npc/aobai" : 1,
 	]));
-	create_door("north", "д╬це", "south", DOOR_CLOSED);
+	create_door("north", "Ф°╗И≈╗", "south", DOOR_CLOSED);
 	set("coor/x", -203);
 	set("coor/y", 4050);
 	set("coor/z", 0);

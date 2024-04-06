@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 { 
-	set("short","ʯ��");
+	set("short","石廊");
 	set("long", @LONG
-һ����ʯ���ɵ����ȣ���Χ���ް�������ʯɫ���࣬ʯ��������
-̤��ʯ��֮�ϣ��չ�����������Ͼ�벻�ѡ������ˬ�������������㣬
-����ʹ�˳��׽�����
+一条青石砌成的走廊，周围并无半分饰物，但石色天青，石壁清凉。
+踏在石面之上，空谷足音，令人暇想不已。清风送爽，传来阵阵幽香，
+不由使人尘俗皆忘。
 LONG );
 	set("exits", ([
 		"east"      : __DIR__"xctang",

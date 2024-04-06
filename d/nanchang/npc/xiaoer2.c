@@ -4,11 +4,11 @@ inherit F_DEALER;
 void create()
 {
    //reload("hz_xiaoer2");
-   set_name("µêĞ¡¶ş",({ "xiao er","xiao","er" }) );
+   set_name("åº—å°äºŒ",({ "xiao er","xiao","er" }) );
     set("shop_id",({ "xiao er","xiao","er" }) );
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇ[Û¶ÑôºşÂ¥]¾ÆµêµÄµêĞ¡¶ş¡£\n");
+   set("long", "è¿™æ˜¯[é„±é˜³æ¹–æ¥¼]é…’åº—çš„åº—å°äºŒã€‚\n");
        
    set("combat_exp", 50000);
    set("str", 18);

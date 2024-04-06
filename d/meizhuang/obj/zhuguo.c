@@ -9,8 +9,8 @@ void init();
 void init()
 {
         if (!wizardp(this_player())) {
-                set("no_get", "ºÙºÙ£¬×öÃÎ°É! \n");
-                set("no_drop","Öì¹ûÄã¶¼ÏëÈÓ£¿\n");
+                set("no_get", "å˜¿å˜¿ï¼Œåšæ¢¦å§! \n");
+                set("no_drop","æœ±æœä½ éƒ½æƒ³æ‰”ï¼Ÿ\n");
         }
 
         add_action("do_eat", "eat");
@@ -18,14 +18,14 @@ void init()
 
 void create()
 {
-        set_name(HIR "Öì¹û" NOR, ({"zhu guo", "guo"}));
+        set_name(HIR "æœ±æœ" NOR, ({"zhu guo", "guo"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¢—");
                 set("long",
-"ÕâÊÇÒ»¿ÅÖì¹û£¬Í¨ÌåÏÊºì£¬Ò»Íû¶øÖªÊÇ²»¿É¶àµÃµÄÕäÆ·¡£\n");
+"è¿™æ˜¯ä¸€é¢—æœ±æœï¼Œé€šä½“é²œçº¢ï¼Œä¸€æœ›è€ŒçŸ¥æ˜¯ä¸å¯å¤šå¾—çš„çå“ã€‚\n");
                 set("value", 100000);
         }
 
@@ -37,7 +37,7 @@ int do_eat(string arg)
         object me = this_player();
 
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 //        me->set("eff_jing", (int)me->query("max_jing"));
 //        me->set("jing", (int)me->query("max_jing"));
 //        me->set("eff_qi", (int)me->query("max_qi"));
@@ -48,7 +48,7 @@ int do_eat(string arg)
 //        me->set("food", (int)me->max_food_capacity());
 //        me->set("water", (int)me->max_water_capacity());
           message_vision(HIR
- "$N³ÔÏÂÒ»¿ÅÖì¹û£¬Ö»¾õ¼¢¿ÊÈ«Ïû£¬Ò»¹ÉÅ¯Á÷´Óµ¤ÌïÖ±³åÉÏÀ´¡£\n"NOR,me);
+ "$Nåƒä¸‹ä¸€é¢—æœ±æœï¼Œåªè§‰é¥¥æ¸´å…¨æ¶ˆï¼Œä¸€è‚¡æš–æµä»ä¸¹ç”°ç›´å†²ä¸Šæ¥ã€‚\n"NOR,me);
 
         destruct(this_object());
         return 1;

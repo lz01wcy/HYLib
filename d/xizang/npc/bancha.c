@@ -3,13 +3,13 @@ inherit NPC;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("°à²ì°ÍÄÇ", ({ "bancha bana","bancha" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("ç­å¯Ÿå·´é‚£", ({ "bancha bana","bancha" }) );
+        set("gender", "ç”·æ€§" );
         set("long",
-                "ËûµÄÒÂ×ÅÒÀ¾ÉÏÊÃ÷»ªÀö£¬¿´À´ÈçÍ¬ÌìÉñ°ãÓ¢¿¡ÍþÎä¡£\n"
+                "ä»–çš„è¡£ç€ä¾æ—§é²œæ˜ŽåŽä¸½ï¼Œçœ‹æ¥å¦‚åŒå¤©ç¥žèˆ¬è‹±ä¿Šå¨æ­¦ã€‚\n"
                 );
-        set("title", "Ê¥Ä¸·åÏÂ µÚÒ»ÓÂÊ¿");
-        set("nickname", HIY "Îå»¨¼ýÉñ"NOR);
+        set("title", "åœ£æ¯å³°ä¸‹ ç¬¬ä¸€å‹‡å£«");
+        set("nickname", HIY "äº”èŠ±ç®­ç¥ž"NOR);
         set("attitude", "peaceful");
 
         set("age", 38);
@@ -79,21 +79,21 @@ int accept_fight(object me)
 {
         if(me->query("combat_exp") > 500000)
         {
-            command("say ºÃ,¿´ÄãËÆºõÓÐµãÄÜÄÍ,À´,ºÍÎÒ¹ý¼¸ÕÐ!\n");
+            command("say å¥½,çœ‹ä½ ä¼¼ä¹Žæœ‰ç‚¹èƒ½è€,æ¥,å’Œæˆ‘è¿‡å‡ æ‹›!\n");
                 return 1;
         }
         else
         {
-            command("say ¾ÍÄã?ÎÞ¶ËÅªÔàÁËÎÒµÄÎå»¨Éñ¼ý!\n");
+            command("say å°±ä½ ?æ— ç«¯å¼„è„äº†æˆ‘çš„äº”èŠ±ç¥žç®­!\n");
                 return 0;
         }
 } 
 void win_enemy(object loser)
 {
-        command("say Ïë¸úÎÒ¶·£¬Äã»¹²îµÄÔ¶ÄØ£¡\n");
+        command("say æƒ³è·Ÿæˆ‘æ–—ï¼Œä½ è¿˜å·®çš„è¿œå‘¢ï¼\n");
 }
 void lose_enemy(object winner)
 {
-        command("say Äã±¾ÊÂ²»´í£¬ÎÒ¿Ú·þÐÄ·þ¡£\n");
+        command("say ä½ æœ¬äº‹ä¸é”™ï¼Œæˆ‘å£æœå¿ƒæœã€‚\n");
         winner->set_temp("marks/won_bancha",1);
 }  

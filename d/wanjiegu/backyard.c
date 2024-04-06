@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÔº");
+        set("short", "åé™¢");
         set("long", @LONG
-ºóÔºÊÇÒ»´óÆ¬¿ªÀ«µÄ²İµØ£¬ÂÌ²İÈçÒñ£¬¼¸¶äÒ°»¨µã×ºÆä¼ä£¬²İ
-µØÖĞ¼ä·Å×ÅÒ»¿é´óÊ¯¿Ì³ÉµÄÆåÅÌ£¬Ò»¸ö»ÆÃ¼ÀÏÉ®ºÍÒ»¸öÇàÅÛ¿ÍÕıÔÚ
-ÏÂÆå¡£±±±ßÓĞÒ»¼äÊ¯Îİ£¬ÃÅ¿Ú±»Ò»¿é´óÊ¯Í·µ²×¡ÁË¡£
+åé™¢æ˜¯ä¸€å¤§ç‰‡å¼€é˜”çš„è‰åœ°ï¼Œç»¿è‰å¦‚è«ï¼Œå‡ æœµé‡èŠ±ç‚¹ç¼€å…¶é—´ï¼Œè‰
+åœ°ä¸­é—´æ”¾ç€ä¸€å—å¤§çŸ³åˆ»æˆçš„æ£‹ç›˜ï¼Œä¸€ä¸ªé»„çœ‰è€åƒ§å’Œä¸€ä¸ªé’è¢å®¢æ­£åœ¨
+ä¸‹æ£‹ã€‚åŒ—è¾¹æœ‰ä¸€é—´çŸ³å±‹ï¼Œé—¨å£è¢«ä¸€å—å¤§çŸ³å¤´æŒ¡ä½äº†ã€‚
 LONG
         );
         set("outdoors", "wanjiegu");
@@ -22,8 +22,8 @@ LONG
         ]));
         set("no_clean_up", 0);
         set("item_desc", ([ /* sizeof() == 2 */
-            "´óÊ¯Í·" : "Ò»¿éºÜ´óµÄÊ¯Í·£¬µ²×¡ÁËÊ¯ÎİµÄÈë¿Ú¡£\n",
-            "rock" : "Ò»¿éºÜ´óµÄÊ¯Í·£¬µ²×¡ÁËÊ¯ÎİµÄÈë¿Ú¡£\n",
+            "å¤§çŸ³å¤´" : "ä¸€å—å¾ˆå¤§çš„çŸ³å¤´ï¼ŒæŒ¡ä½äº†çŸ³å±‹çš„å…¥å£ã€‚\n",
+            "rock" : "ä¸€å—å¾ˆå¤§çš„çŸ³å¤´ï¼ŒæŒ¡ä½äº†çŸ³å±‹çš„å…¥å£ã€‚\n",
         ]));
 
         setup();
@@ -40,7 +40,7 @@ void check_trigger()
         if( (int)query("trigger")==9
         &&      !query("exits/north") ) {
                 message("vision",
-HIW "´óÊ¯ÖÕÓÚ±»ÍÆ¿ªÁË£¬Â¶³öÍ¨ÏòÊ¯ÎİµÄÍ¨µÀ¡£\n" NOR,
+HIW "å¤§çŸ³ç»ˆäºè¢«æ¨å¼€äº†ï¼Œéœ²å‡ºé€šå‘çŸ³å±‹çš„é€šé“ã€‚\n" NOR,
                         this_object() );
                 set("exits/north", __DIR__"stone_room");
 
@@ -54,23 +54,23 @@ int do_push(string arg)
         object me = this_player();
 
         if( me->is_busy() ) {
-             message_vision("ÄãµÄÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n", me);
+             message_vision("ä½ çš„ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n", me);
              return 1;
         }
 
         if( !arg || arg=="" )
         {
-             write("ÄãÒª¸ÉÊ²Ã´£¿\n");
+             write("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
              return 1;
         }
 
-        if( arg=="rock" || arg == "´óÊ¯Í·" ) {
+        if( arg=="rock" || arg == "å¤§çŸ³å¤´" ) {
              if ( me->query("str") + me->query("neili_factor") < 15 ) {
-                tell_object(me,"ÄãµÄÁ¦ÆøÌ«Ğ¡ÁË£¬ÓÃµãÄÚÁ¦ÊÔÊÔ¿´£¡\n");
+                tell_object(me,"ä½ çš„åŠ›æ°”å¤ªå°äº†ï¼Œç”¨ç‚¹å†…åŠ›è¯•è¯•çœ‹ï¼\n");
                 return 1;
              }
              me->start_busy(2);
-             message_vision(HIW "$NÆøÔËµ¤Ìï£¬·¢ÄÚÁ¦ÍÆ¶¯´óÊ¯Í·¡£\n" NOR,me);
+             message_vision(HIW "$Næ°”è¿ä¸¹ç”°ï¼Œå‘å†…åŠ›æ¨åŠ¨å¤§çŸ³å¤´ã€‚\n" NOR,me);
              call_out("pushstone",2,me);
              me->stop_busy();
              check_trigger();
@@ -81,12 +81,12 @@ int do_push(string arg)
 int pushstone(object me)
 {
         if(me->query("neili") >= me->query("neili_factor") ) {
-                message_vision(HIW "´óÊ¯Í·¶¯ÁËÒ»ÏÂ¡£\n" NOR,me);
+                message_vision(HIW "å¤§çŸ³å¤´åŠ¨äº†ä¸€ä¸‹ã€‚\n" NOR,me);
                 me->add("neili",- me->query("neili_factor") );
                 add("trigger", 1);
                 return 1;
         } else {
-                tell_object(me, "ÄãµÄÄÚÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»»áÔÙÍÆ°É£¡\n");
+                tell_object(me, "ä½ çš„å†…åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¼šå†æ¨å§ï¼\n");
                 return 1;
         }
 }

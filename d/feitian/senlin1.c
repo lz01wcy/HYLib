@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-       set("short","Ô­Ê¼É­ÁÖ");
+       set("short","åŸå§‹æ£®æ—");
        set("long", @LONG
-ÕâÊÇ¾©¶¼Í¨Íù¶«¾©µÄÒ»¿ìÉ­ÁÖ£¬É­ÁÖÖĞµØÏÂ²¼ÂúÁËÒ»²ãºñºñµÄÊ÷Ò¶²ÈÉÏÈ¥
-¿¨¿¨×öÏì£¬Í¸¹ıÉ­ÁÖµÄÒ»Ğ©Ñô¹âÈ÷ÂäÏÂ£¬ºÜÊÇÃÀÀö¡£²»¹ıÄã·¢ÏÖ×Ô¼ºÒÑ¾­
-ÃÔÊ§ÁË·½Ïò£¬Äã¿ªÊ¼ÓĞµãºó»Ú×ß½øÀ´ÁË¡£
+è¿™æ˜¯äº¬éƒ½é€šå¾€ä¸œäº¬çš„ä¸€å¿«æ£®æ—ï¼Œæ£®æ—ä¸­åœ°ä¸‹å¸ƒæ»¡äº†ä¸€å±‚åšåšçš„æ ‘å¶è¸©ä¸Šå»
+å¡å¡åšå“ï¼Œé€è¿‡æ£®æ—çš„ä¸€äº›é˜³å…‰æ´’è½ä¸‹ï¼Œå¾ˆæ˜¯ç¾ä¸½ã€‚ä¸è¿‡ä½ å‘ç°è‡ªå·±å·²ç»
+è¿·å¤±äº†æ–¹å‘ï¼Œä½ å¼€å§‹æœ‰ç‚¹åæ‚”èµ°è¿›æ¥äº†ã€‚
 LONG);
         set("exits", ([
              "east"  : __DIR__"senlin"+(1+random(4)),
@@ -30,7 +30,7 @@ void init()
             case 0 : me->move(__DIR__"zhongxiandao"); break;
             case 1 : me->move(__DIR__"linzi"); break;
             }
-           message_vision("$N¾ª»ÅÊ§´ëµØ×ßÁË¹ıÀ´¡£\n",me);
+           message_vision("$NæƒŠæ…Œå¤±æªåœ°èµ°äº†è¿‡æ¥ã€‚\n",me);
            me->unconcious();
            }
         if(!me->query_temp("corredt_dir") && userp(me))
@@ -47,7 +47,7 @@ int valid_leave(object me, string dir)
                 me->move(__DIR__"senlin");
                 me->delete_temp("ft_sl");
                 me->delete_temp("correct_dir");
-                return notify_fail("Äãºì×ÅË«ÑÛÂÒ×ßÒ»Í¨£¬ÖÕÓÚÕÒµ½ÁË·½Ïò¡£\n");
+                return notify_fail("ä½ çº¢ç€åŒçœ¼ä¹±èµ°ä¸€é€šï¼Œç»ˆäºæ‰¾åˆ°äº†æ–¹å‘ã€‚\n");
         }
         return ::valid_leave(me,dir);
 }

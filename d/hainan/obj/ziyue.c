@@ -5,18 +5,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name( MAG "×ÏÔÂ½£" NOR, ({ "ziyue sword", "sword" }) );
+        set_name( MAG "ç´«æœˆå‰‘" NOR, ({ "ziyue sword", "sword" }) );
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("long",
                         "\n");
                 set("value", 38000);
                 set("material", "sapphire");
-                set("wield_msg", "$N¡¸Ë¢¡¹µØÒ»Éù³é³öÒ»±úÉÁÖøº®¹âµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œåˆ·ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŸ„é—ªè‘—å¯’å…‰çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");
                 set("weapon_prop/courage", 15);
                 set("weapon_prop/intelligence", 20);
                 set("weapon_prop/personality", 10);

@@ -3,10 +3,10 @@
 inherit ROOM;
 void create ()
 {
-	set ("short", "��");
+	set ("short", "甬道");
 	set ("long", @LONG
-һ��������ʪ���������߾�ͷ��һ���η�����֪������������Ѻ
-��͢�ط��ĵط���
+一条阴暗潮湿的甬道，东边尽头是一间牢房，是知府衙门用来关押
+朝廷重犯的地方。
 LONG);
 	set("exits", ([ 
 		"east" : __DIR__"laofang",

@@ -1,4 +1,4 @@
-// mafu.c Âí·ò
+// mafu.c é©¬å¤«
 
 inherit NPC;
 #include <ansi.h>
@@ -6,11 +6,11 @@ int do_ride();
 
 void create()
 {
-        set_name("Âí·ò", ({ "ma fu","ma fu"}));
+        set_name("é©¬å¤«", ({ "ma fu","ma fu"}));
         set("age", 32);
-        set("gender", "ÄÐÐÔ");
-        set("long","Ñ±ÂíºÍ×âÂíµÄÐ¡··£¬¸øËû×â½ð¾Í¿ÉÒÔ¹Íµ½Âí¡£
-        ¿ÍÈËÃÇÖ»Òª¸øÂí·òÒ»Á½°×ÒøµÄ×â½ð¾Í¿ÉÒÔ¹Íµ½Ò»Æ¥ÂíÁË¡£
+        set("gender", "ç”·æ€§");
+        set("long","é©¯é©¬å’Œç§Ÿé©¬çš„å°è´©ï¼Œç»™ä»–ç§Ÿé‡‘å°±å¯ä»¥é›‡åˆ°é©¬ã€‚
+        å®¢äººä»¬åªè¦ç»™é©¬å¤«ä¸€ä¸¤ç™½é“¶çš„ç§Ÿé‡‘å°±å¯ä»¥é›‡åˆ°ä¸€åŒ¹é©¬äº†ã€‚
         \n");
         set("attitude", "peaceful");
         set("str", 24);
@@ -46,7 +46,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say( "Âí·òµãÍ·¹þÑüµØËµµÀ£ºÕâÎ»¿Í¹Ù£¬ÊÇÏëµ½ÕâÀïÌôÒ»Æ¥ºÃÂí°É£¿\n");
+        say( "é©¬å¤«ç‚¹å¤´å“ˆè…°åœ°è¯´é“ï¼šè¿™ä½å®¢å®˜ï¼Œæ˜¯æƒ³åˆ°è¿™é‡ŒæŒ‘ä¸€åŒ¹å¥½é©¬å§ï¼Ÿ\n");
 }
 
 int accept_object(object who, object ob)
@@ -54,13 +54,13 @@ int accept_object(object who, object ob)
 	object myenv ;
 	if (ob->query("money_id") && ob->value() >= 100)
 	{
-	message_vision("Âí·ò¶Ô$NËµ£ººÃ£¡ÕâÎ»"+RANK_D->query_respect(who) +
-		"ÏÖÔÚ¾Í³ö·¢Âí? ÄÇ¾ÍÉÏÂí°É¡£\n", who);
+	message_vision("é©¬å¤«å¯¹$Nè¯´ï¼šå¥½ï¼è¿™ä½"+RANK_D->query_respect(who) +
+		"çŽ°åœ¨å°±å‡ºå‘é©¬? é‚£å°±ä¸Šé©¬å§ã€‚\n", who);
 		this_player()->set_temp("marks/horserent",1);
  	      	return 1;
 	}
 	else  
-		message_vision("Âí·òÖåÃ¼¶Ô$NËµ£ºÄú¸øµÄÒ²Ì«ÉÙÁË°É£¿\n", who);
+		message_vision("é©¬å¤«çš±çœ‰å¯¹$Nè¯´ï¼šæ‚¨ç»™çš„ä¹Ÿå¤ªå°‘äº†å§ï¼Ÿ\n", who);
 	return 1;
 }
 
@@ -70,26 +70,26 @@ int do_rideydx()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -98,8 +98,8 @@ int do_rideydx()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/huanghe/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÓÀµÇÏØ¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾æ°¸ç™»åŽ¿ã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -111,26 +111,26 @@ int do_rideyp()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -139,8 +139,8 @@ int do_rideyp()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/yanping/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÑÓÆ½³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾å»¶å¹³åŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -151,26 +151,26 @@ int do_ridejl()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -179,8 +179,8 @@ int do_ridejl()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/jiangling/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ï½ðÁê³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾é‡‘é™µåŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -192,26 +192,26 @@ int do_ridewx()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -220,8 +220,8 @@ int do_ridewx()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/wuxi/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÎÞÎý³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾æ— é”¡åŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -232,26 +232,26 @@ int do_ridecd()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -260,8 +260,8 @@ int do_ridecd()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/chengdu/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ï³É¶¼³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾æˆéƒ½åŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -274,26 +274,26 @@ int do_ridelz()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -302,8 +302,8 @@ int do_ridelz()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/lingzhou/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÁéÖÝ³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾çµå·žåŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -315,26 +315,26 @@ int do_rideht()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("chat À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("chat æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -344,8 +344,8 @@ int do_rideht()
         ob->receive_damage("jing", 30);
 
 	ob->move("/d/guanwai/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïºÕÍ¼°¢À­¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾èµ«å›¾é˜¿æ‹‰ã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -357,26 +357,26 @@ int do_ridejingzhou()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -385,8 +385,8 @@ int do_ridejingzhou()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/jingzhou/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ï¾£ÖÝ³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾è†å·žåŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -399,26 +399,26 @@ int do_ridekm()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -427,8 +427,8 @@ int do_ridekm()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/kunming/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÀ¥Ã÷³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾æ˜†æ˜ŽåŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }
@@ -439,26 +439,26 @@ int do_ridelanzhou()
 	object ob = this_player();
 	if (ob->query_temp("marks/horserent")!=1 && ob->query("age")>14)
 	{
-		command("say À´ÈËÀ²£¡"+ob->query("name")+
-		"Õâ¸ö"+RANK_D->query_rude(ob)+"ÏëÍµÂí£¡\n");
+		command("say æ¥äººå•¦ï¼"+ob->query("name")+
+		"è¿™ä¸ª"+RANK_D->query_rude(ob)+"æƒ³å·é©¬ï¼\n");
 		return 1;
 	}
 	switch (random(3))
 	{
 		case 1:
-			hname=MAG"×ÏæòÂí"NOR;
+			hname=MAG"ç´«éªé©¬"NOR;
 			break;
 		case 2:
-			hname=RED"ÔæºìÂí"NOR;
+			hname=RED"æž£çº¢é©¬"NOR;
 			break;
 		default:
-			hname=HIY"»ÆæôÂí"NOR;
+			hname=HIY"é»„éª é©¬"NOR;
 			break;
 	}
 	message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßÐÐÈËÒ»Õó
-Æðºå: à¸àÞà¸àÞ¡£\n"NOR , ob );
-	message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ð£¬"+hname+"´©¹ý¿Íµê¶øÈ¥¡£\n",ob);
+"é©¬å¤«éšæ‰‹ç»™$Nç‰µæ¥ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«è·ƒä¸Šé©¬èƒŒã€‚åŠ¨ä½œæ½‡æ´’åˆ©ç´¢ã€‚è·¯è¾¹è¡Œäººä¸€é˜µ
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+	message_vision("\nåªè§$Néª‘ä¸¤è…¿ä¸€å¤¹ï¼Œ"+hname+"ç©¿è¿‡å®¢åº—è€ŒåŽ»ã€‚\n",ob);
         if (ob->query("jing") > 1000) {
             ob->receive_damage("jing", 100);
         }
@@ -467,8 +467,8 @@ int do_ridelanzhou()
         }
         ob->receive_damage("jing", 30);
 	ob->move("/d/lanzhou/majiu");
-	tell_room(environment(ob),ob->query("name")+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÀ¼ÖÝ³Ç¡£\n");
-	message_vision("\n$NÉíÐÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏÐÈËÒ²¸ø$NÒ»´óºå !\n" ,ob);
+	tell_room(environment(ob),ob->query("name")+"éª‘ç€"+hname+"ä¸€è·¯é¡ºåˆ©åˆ°è¾¾å…°å·žåŸŽã€‚\n");
+	message_vision("\n$Nèº«å½¢ä¸€è½¬ï¼Œè·ƒä¸‹é©¬æ¥ï¼Œå§¿æ€ååˆ†ä¼˜ç¾Žã€‚é—²äººä¹Ÿç»™$Nä¸€å¤§å“„ !\n" ,ob);
 	ob->delete_temp("marks/horserent");
 	return 1;
 }

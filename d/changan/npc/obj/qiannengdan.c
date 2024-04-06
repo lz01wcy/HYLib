@@ -2,11 +2,11 @@
 inherit ITEM;
 void create()
 {
-   set_name("ÄªÃûµ¤", ({"moming dan", "dan"}));
+   set_name("è«åä¸¹", ({"moming dan", "dan"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "Á£");
+      set("unit", "ç²’");
       set("value", 10000000);
    }
    setup();
@@ -19,13 +19,13 @@ int do_eat(string arg)
 {
    object me = this_player();
    if(!id(arg))
-       return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-   message_vision(HIY + "$N³ÔÏÂÒ»Á£" + name() + NOR + "¡£\n", me);
+       return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+   message_vision(HIY + "$Nåƒä¸‹ä¸€ç²’" + name() + NOR + "ã€‚\n", me);
    if ((int)me->query("potential") <= 2000) {
          me->add("potential",10);
       }
-     message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
-      tell_object(me,"ÄãºÃÏó¸Ğµ½ÉíÌå·¢ÉúÁËÏ¸Î¢µÄ±ä»¯¡£\n");
+     message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
+      tell_object(me,"ä½ å¥½è±¡æ„Ÿåˆ°èº«ä½“å‘ç”Ÿäº†ç»†å¾®çš„å˜åŒ–ã€‚\n");
    destruct(this_object());
    return 1;
 }

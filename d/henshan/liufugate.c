@@ -8,18 +8,18 @@ int do_knock(string arg);
 
 void create()
 {
-	set("short", "Áõ¸®´óÃÅ");
+	set("short", "åˆ˜åºœå¤§é—¨");
 	set("long", @LONG
-ÕâÀïÊÇÁõ¸®´óÃÅ¡£Áõ¸®µÄÖ÷ÈË£¬¾ÍÊÇºâÉ½ÅÉÖĞµÄ½ö´ÎÓÚÕÆÃÅÈËÄª´ó
-ÏÈÉúµÄµÚ¶şºÅÈËÎïÁõÕı·çÁõÀÏÒ¯×Ó¡£½ñÌìĞËĞíÁõ¸®ÓĞÊÂ°É£¬´óÃÅ(gate)
-½ô±Õ£¬¹Ü¼Ò¼Ò¶¡Ò²ÒìÑù½ôÕÅ¡£Ö»ÓĞéÜÏÂµÄĞ´×Å "Áõ¸®" ¶ş×ÖµÄ´óºìµÆÁı
-ÖĞµÄÖò»ğºöÉÁ»Î¶¯²ÅÏÔ³öµã»îÈËÆø¡£
+è¿™é‡Œæ˜¯åˆ˜åºœå¤§é—¨ã€‚åˆ˜åºœçš„ä¸»äººï¼Œå°±æ˜¯è¡¡å±±æ´¾ä¸­çš„ä»…æ¬¡äºæŒé—¨äººè«å¤§
+å…ˆç”Ÿçš„ç¬¬äºŒå·äººç‰©åˆ˜æ­£é£åˆ˜è€çˆ·å­ã€‚ä»Šå¤©å…´è®¸åˆ˜åºœæœ‰äº‹å§ï¼Œå¤§é—¨(gate)
+ç´§é—­ï¼Œç®¡å®¶å®¶ä¸ä¹Ÿå¼‚æ ·ç´§å¼ ã€‚åªæœ‰æªä¸‹çš„å†™ç€ "åˆ˜åºœ" äºŒå­—çš„å¤§çº¢ç¯ç¬¼
+ä¸­çš„çƒ›ç«å¿½é—ªæ™ƒåŠ¨æ‰æ˜¾å‡ºç‚¹æ´»äººæ°”ã€‚
 LONG);
 	set("exits", ([
 	    "south"  : __DIR__"hengyang1",
 	]));
 	set("item_desc", ([
-	   "gate" : "ÖìºìµÄ´óÃÅ½ô±Õ×Å£¬ÇÃÇÃ(knock)¿´°É¡£\n"
+	   "gate" : "æœ±çº¢çš„å¤§é—¨ç´§é—­ç€ï¼Œæ•²æ•²(knock)çœ‹å§ã€‚\n"
 	]));
 	set("objects", ([
 	        CLASS_D("henshan")+"/mi":1,
@@ -43,7 +43,7 @@ int do_knock(string arg)
 	object me;
 
 	me = this_player();
-message_vision("$N¡°ßË£¬ßË£¬ßË£¬¡£¡£¡£¡±µØÇÃ×ÅÃÅ£¬¿ÉÀïÃæÈ´Ò»µã¶¯¾²¶¼Ã»ÓĞ¡£\n", me);
+message_vision("$Nâ€œå’šï¼Œå’šï¼Œå’šï¼Œã€‚ã€‚ã€‚â€åœ°æ•²ç€é—¨ï¼Œå¯é‡Œé¢å´ä¸€ç‚¹åŠ¨é™éƒ½æ²¡æœ‰ã€‚\n", me);
 	me->set_temp("marks/liufu",1);
 	return 1;
 }
@@ -53,9 +53,9 @@ int do_push(string arg)
     object weapon,me=this_player();
     mapping fam;
 
-    if (!me->query_temp("marks")) return notify_fail("ÃÅ¹ØµÃÀÎÀÎµÄ£¬¼±ÇĞ´ò²»¿ª£¡\n");
-    if ( !arg || arg!="gate" ) return notify_fail("ÕâÊÇ¸ÉÂï£¿\n");
-    message_vision(HIY "$N×ßµ½ÃÅÇ°£¬°ÑÃÅËæ±ãÒ»ÍÆ£¬¾ÓÈ»¾ÍÍÆ¿ªÁË´óÃÅ£¡\n"NOR,me);
+    if (!me->query_temp("marks")) return notify_fail("é—¨å…³å¾—ç‰¢ç‰¢çš„ï¼Œæ€¥åˆ‡æ‰“ä¸å¼€ï¼\n");
+    if ( !arg || arg!="gate" ) return notify_fail("è¿™æ˜¯å¹²å˜›ï¼Ÿ\n");
+    message_vision(HIY "$Nèµ°åˆ°é—¨å‰ï¼ŒæŠŠé—¨éšä¾¿ä¸€æ¨ï¼Œå±…ç„¶å°±æ¨å¼€äº†å¤§é—¨ï¼\n"NOR,me);
     set("exits/enter",__DIR__"liufudayuan");
     remove_call_out("close");
     call_out("close", 5, this_object());
@@ -68,6 +68,6 @@ void close_out()
 
 void close(object room)
 {
-    message("vision","Ò»ÕóßŞßŞÑ½Ñ½ÃÅÏì£¬ÀïÃæÓĞÈË°Ñ´óÃÅ¸ø¹ØÉÏÁË¡£\n", room);
+    message("vision","ä¸€é˜µå’¿å’¿å‘€å‘€é—¨å“ï¼Œé‡Œé¢æœ‰äººæŠŠå¤§é—¨ç»™å…³ä¸Šäº†ã€‚\n", room);
     room->delete("exits/enter");
 }

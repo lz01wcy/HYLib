@@ -7,10 +7,10 @@ void init();
 int che(string);
 void create()
 {
-        set("short", "É½ÆÂ");
+        set("short", "å±±å¡");
         set("long", @LONG
-Ð¡É½ÆÂÉÏ¹àÄ¾´ÔÉú(teng),Å¼ÓÐÐ¡¶¯Îï,´ÜÀ´´ÜÈ¥.
-²»ÖªÃûµÄÐ¡»¨,×ºÉúÆäÖÐ.
+å°å±±å¡ä¸ŠçŒæœ¨ä¸›ç”Ÿ(teng),å¶æœ‰å°åŠ¨ç‰©,çªœæ¥çªœåŽ».
+ä¸çŸ¥åçš„å°èŠ±,ç¼€ç”Ÿå…¶ä¸­.
 LONG );
 set("exits", ([
                 //  "south" : __DIR__"aroad3",
@@ -34,16 +34,16 @@ int do_che(string arg)
 object ob,me=this_player();
 if(!arg||!arg="teng")
 {
-write("³¶Ê²Ã´!\n");
+write("æ‰¯ä»€ä¹ˆ!\n");
 return 1;
 }
 if (present("chang teng",me))
  {
- message_vision("ÄãÉíÉÏ²»ÊÇÓÐÁËÂð£¿\n",me);
+ message_vision("ä½ èº«ä¸Šä¸æ˜¯æœ‰äº†å—ï¼Ÿ\n",me);
 return 1;
 }
 
-write("Äã³¶ÏÂÒ»¶ÎÌÙ,±à³Ì³¤ëø.\n");
+write("ä½ æ‰¯ä¸‹ä¸€æ®µè—¤,ç¼–ç¨‹é•¿æ»•.\n");
 ob=new(__DIR__"obj/teng");
 ob->move(me);
 return 1;

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Լ�ɽ");
+	set("short", "大霸尖山");
 	set("long", @LONG
-�񶫿����������紦��һ��ͻ������Ϊ��Լ�ɽ��ɽ��ǧ�ɣ���
-���������Ĵθ�ɽ���ɽ�������С�������塹֮�ƵĴ�Լ�ɽ������
-ͻأ��̩�������Ϊ����ɽ����
+竹东郡与大湖郡交界处，一峰突立，即为大霸尖山，山高千丈，和
+东侧连互的次高山组成山脉，素有「世纪奇峰」之称的大霸尖山，巨岩
+突兀，泰雅族尊奉为「祖山」。
 LONG );
 	set("exits", ([
 		"westdown" : __DIR__"maolishe",

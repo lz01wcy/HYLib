@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "��Ժ");
+	set("short", "禅院");
 	set("long", @LONG
-�㲽����ڣ�ֻ������Ϸ�ǰ����һյ�͵ƣ�ӳ���ŷ�����
-ׯ�ϡ�һ��Сɳ�������������ϰ�����ף���������������Ĵ���
-�����񣬾ٽ�ִ�ߣ����������鶯��
+你步入殿内，只见大殿上佛前供着一盏油灯，映照着佛像宝相
+庄严。一个小沙弥正跪倒在蒲团上暗暗祷祝。左右两壁立着四大天
+王塑像，举剑执蛇，神情甚是灵动。
 LONG );
 	set("no_clean_up", 0);
 	set("valid_startroom", 1);

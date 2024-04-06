@@ -1,13 +1,13 @@
-//Room: ssyb.c ÉáÉíÑÂ±Ú
+//Room: ssyb.c èˆèº«å´–å£
 //Date: Oct. 21 1997 by That
 
 inherit ROOM;
 void create()
 {
-      set("short","ÉáÉíÑÂ±Ú");
+      set("short","èˆèº«å´–å£");
       set("long",@LONG
-ÄãÖÕÓÚÓÎµ½ÑÂ±Ú¡£Ì§Í·ÉÏÍû£¬Î¢¼ûÌì¹â¡£±ÚÃæ³±Êª£¬ÁÑ·ìÖÐÎ¢ÓÐË®Éø
-³ö¡£½ÅÏÂÊÇÎÛ×ÇµÄ³ôË®£¬ËÄÖÜµÄ¾°Îï¶¼¿´²»Çå¡£Ïò¶«¾ÍÊÇÄãÀ´Ê±µÄË®Ì¶¡£
+ä½ ç»ˆäºŽæ¸¸åˆ°å´–å£ã€‚æŠ¬å¤´ä¸Šæœ›ï¼Œå¾®è§å¤©å…‰ã€‚å£é¢æ½®æ¹¿ï¼Œè£‚ç¼ä¸­å¾®æœ‰æ°´æ¸—
+å‡ºã€‚è„šä¸‹æ˜¯æ±¡æµŠçš„è‡­æ°´ï¼Œå››å‘¨çš„æ™¯ç‰©éƒ½çœ‹ä¸æ¸…ã€‚å‘ä¸œå°±æ˜¯ä½ æ¥æ—¶çš„æ°´æ½­ã€‚
 LONG);
       set("outdoors","emei");
       set("objects", ([
@@ -29,9 +29,9 @@ int do_climb()
 {
     object me;
     me = this_player();
-    message("vision", me->name()+"Ê¹¾¢ÅÀÉÏÈ¥£¬»¨ÁË¾ÅÅ£¶þ»¢Ö®Á¦¡£\n", environment(me), ({me}) );
+    message("vision", me->name()+"ä½¿åŠ²çˆ¬ä¸ŠåŽ»ï¼ŒèŠ±äº†ä¹ç‰›äºŒè™Žä¹‹åŠ›ã€‚\n", environment(me), ({me}) );
     me->move(__DIR__"gudelin1");
-    message("vision", me->name()+"»¨ÁË¾ÅÅ£¶þ»¢Ö®Á¦£¬µ½ÁËÕâ¸öµØ·½£¬È´²»ÖªµÀÔÚÄÄÀï£¿\n", environment(me), ({me}) );
+    message("vision", me->name()+"èŠ±äº†ä¹ç‰›äºŒè™Žä¹‹åŠ›ï¼Œåˆ°äº†è¿™ä¸ªåœ°æ–¹ï¼Œå´ä¸çŸ¥é“åœ¨å“ªé‡Œï¼Ÿ\n", environment(me), ({me}) );
     return 1;
 }
 int do_dig()
@@ -40,36 +40,36 @@ int do_dig()
     me = this_player();
     if (query("nosword")>3)
     {
-       message_vision("ÒÐÌì½£ÒÑ¾­¸øÈËÄÃ×ßÁË£¬$NÉîÉîÌ¾ÁË¿ÚÆø¡£\n",me);
+       message_vision("å€šå¤©å‰‘å·²ç»ç»™äººæ‹¿èµ°äº†ï¼Œ$Næ·±æ·±å¹äº†å£æ°”ã€‚\n",me);
        return 1;
     }
 if (present("sky sword", me))
     {
-       message_vision("ÄãÉíÉÏ²»ÊÇÓÐ×ÅÂð£¿\n",me);
+       message_vision("ä½ èº«ä¸Šä¸æ˜¯æœ‰ç€å—ï¼Ÿ\n",me);
        return 1;
     }
 
     if (me->query_temp("skyswordf") || me->query("max_neili")<500)
     {
-       message_vision("ÕâÀïÊ²Ã´Ò²Ã»ÓÐÁË£¬$NÉîÉîÌ¾ÁË¿ÚÆø¡£\n",me);
+       message_vision("è¿™é‡Œä»€ä¹ˆä¹Ÿæ²¡æœ‰äº†ï¼Œ$Næ·±æ·±å¹äº†å£æ°”ã€‚\n",me);
        return 1;
     }
     if (me->query("marks/skysword") )
     {
        if ((random(5))==1)
        {
-          message_vision("$NºöÈ»ÍÚµ½¸öÓ²µÄ¶«Î÷¡£¼ñÆðÀ´Ä¨ÁËÍÁ¿´¿´£¬¸ßÐËµÄ´óÐ¦ÆðÀ´¡£\n", me);
-          write("ÃÎÃÂÒÔÇóµÄÒÐÌì½£°¡£¡\n");
-          me->set("marks/ÒÐÌì½£",1);
+          message_vision("$Nå¿½ç„¶æŒ–åˆ°ä¸ªç¡¬çš„ä¸œè¥¿ã€‚æ¡èµ·æ¥æŠ¹äº†åœŸçœ‹çœ‹ï¼Œé«˜å…´çš„å¤§ç¬‘èµ·æ¥ã€‚\n", me);
+          write("æ¢¦å¯ä»¥æ±‚çš„å€šå¤©å‰‘å•Šï¼\n");
+          me->set("marks/å€šå¤©å‰‘",1);
           ob = new(__DIR__"obj/skysword");
           ob->move(me);
 add("nosword",1);
        }
        else
        {
-         message_vision("$NºöÈ»ÍÚµ½¸öÓ²µÄ¶«Î÷¡£¼ñÆðÀ´Ä¨ÁËÍÁ¿´¿´£¬¸ßÐËµÄ´óÐ¦ÆðÀ´¡£\n", me);
-          write("ÃÎÃÂÒÔÇóµÄÒÐÌì½£°¡£¡\n");
-          me->set("marks/ÒÐÌì½£",1);
+         message_vision("$Nå¿½ç„¶æŒ–åˆ°ä¸ªç¡¬çš„ä¸œè¥¿ã€‚æ¡èµ·æ¥æŠ¹äº†åœŸçœ‹çœ‹ï¼Œé«˜å…´çš„å¤§ç¬‘èµ·æ¥ã€‚\n", me);
+          write("æ¢¦å¯ä»¥æ±‚çš„å€šå¤©å‰‘å•Šï¼\n");
+          me->set("marks/å€šå¤©å‰‘",1);
           ob = new(__DIR__"obj/skysword");
           ob->move(me);
 //add("nosword",1); 

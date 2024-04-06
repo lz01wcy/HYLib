@@ -1,13 +1,13 @@
 // /d/yazhang/dongmen.c
-// Room in ����
+// Room in 牙帐
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "����");
+	set("short", "东门");
 	set("long", @LONG
-��ͻ���ǲ�ԭ�İ������ʶ���ǽ��ķ�ͬһ�㣬��ǽ�������ɸߣ�
-���Ž����ָ��ִ�����������С�һ�����ͨ��ɽ���ء�
+东突厥是草原的霸主，故定襄城建的非同一般，城墙足有三丈高，
+城门建的又高又大，足可让马并行。一条大道通向山海关。
 LONG
 	);
 set("outdoors", "dingxiang");

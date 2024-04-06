@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name("Ð¡ºéÆß¹«", ({"hong qigong", "hong", "qigong"}));
-        set("nickname", "¾ÅÖ¸ÉñØ¤");
-        set("gender", "ÄÐÐÔ");
+        set_name("å°æ´ªä¸ƒå…¬", ({"hong qigong", "hong", "qigong"}));
+        set("nickname", "ä¹æŒ‡ç¥žä¸");
+        set("gender", "ç”·æ€§");
         set("age", 75);
         set("long", 
-                "Ëû¾ÍÊÇØ¤°ïµÚÊ®ÆßÈÎ°ïÖ÷£¬ºÅ³Æ¡°±±Ø¤¡±µÄºéÆß¹«ÀÏÒ¯×Ó¡£\n");
+                "ä»–å°±æ˜¯ä¸å¸®ç¬¬åä¸ƒä»»å¸®ä¸»ï¼Œå·ç§°â€œåŒ—ä¸â€çš„æ´ªä¸ƒå…¬è€çˆ·å­ã€‚\n");
         set("attitude", "friendly");
         set("str", 40);
         set("int", 24);
@@ -26,18 +26,18 @@ void create()
 	set("score", 200000);
 	set("shen", 100000);
 	 
-	set_skill("force", 200);             // »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 300);    // »ìÌìÆø¹¦
-	set_skill("unarmed", 200);           // »ù±¾È­½Å
-	set_skill("xianglong-zhang", 300);   // ½µÁúÊ®°ËÕÆ
-	set_skill("dodge", 200);      	     // »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 250);        // åÐÒ£ÓÎ
-	set_skill("parry", 200);             // »ù±¾ÕÐ¼Ü
-	set_skill("staff", 200);             // »ù±¾¹÷ÕÈ
-	set_skill("dagou-bang", 300);        // ´ò¹·°ô·¨
-	set_skill("begging", 200);           // ½Ð»¯¾ø»î
-	set_skill("checking", 250);          // µÀÌýÍ¾Ëµ
-	set_skill("training", 250);         // Ô¦ÊÞÊõ
+	set_skill("force", 200);             // åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 300);    // æ··å¤©æ°”åŠŸ
+	set_skill("unarmed", 200);           // åŸºæœ¬æ‹³è„š
+	set_skill("xianglong-zhang", 300);   // é™é¾™åå…«æŽŒ
+	set_skill("dodge", 200);      	     // åŸºæœ¬èº²é—ª
+	set_skill("xiaoyaoyou", 250);        // é€é¥æ¸¸
+	set_skill("parry", 200);             // åŸºæœ¬æ‹›æž¶
+	set_skill("staff", 200);             // åŸºæœ¬æ£æ–
+	set_skill("dagou-bang", 300);        // æ‰“ç‹—æ£’æ³•
+	set_skill("begging", 200);           // å«åŒ–ç»æ´»
+	set_skill("checking", 250);          // é“å¬é€”è¯´
+	set_skill("training", 250);         // é©­å…½æœ¯
 	
 	map_skill("force", "huntian-qigong");
 	map_skill("unarmed", "xianglong-zhang");
@@ -61,7 +61,7 @@ void create()
                 (: perform_action, "dodge.canghaiyixiao" :),                                
         }) );
 
-        create_family("Ø¤°ï", 17, "°ïÖ÷");
+        create_family("ä¸å¸®", 17, "å¸®ä¸»");
         setup();
 
         carry_object(__DIR__"obj/yzb")->wield();

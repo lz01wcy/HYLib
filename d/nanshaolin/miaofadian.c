@@ -5,10 +5,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", HIR"���"NOR);
+	set("short", HIR"妙法殿"NOR);
 	set("long", @LONG
-�����������µ��������������ƣ�᣽Ƕ��ˡ����ʮ�ֵ���
-ʢ��������輫Ϊ���ӡ������Ϊ��ӿգ����Բ������������
+这里是少林寺的妙法殿。殿内香烟燎绕，幔角叮咚。香火十分的旺
+盛。殿里陈设极为简朴。大抵认为妙法从空，所以不宜排设物件。
 LONG );
 	set("exits", ([
 		"south" : __DIR__"stoneroad2",

@@ -2,17 +2,17 @@
 #include <weapon.h>
 inherit STAFF; 
 void create() {
-    set_name("¹³Á¬Ç¹", ({ "spear" }) );
+    set_name("é’©è¿æª", ({ "spear" }) );
     set_weight(50000);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-        set("unit", "±ú");
-        set("long", "ÕâÊÇÒ»¸Ë²Ø±ßÄÁÑòÈË±ãÓÚ²¶ÁÔ¶ø´òÔìµÄÌúÇ¹¡£\n");
+        set("unit", "æŸ„");
+        set("long", "è¿™æ˜¯ä¸€æ†è—è¾¹ç‰§ç¾Šäººä¾¿äºæ•çŒè€Œæ‰“é€ çš„é“æªã€‚\n");
         set("value", 6000);
                 set("material", "steel");
-        set("wield_msg", "$N°Ñ$nÀÎÀÎµØÎÕÔÚÊÖÖĞ£¬Ë£ÁË¸öÇ¹»¨¡£\n");
-        set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+        set("wield_msg", "$NæŠŠ$nç‰¢ç‰¢åœ°æ¡åœ¨æ‰‹ä¸­ï¼Œè€äº†ä¸ªæªèŠ±ã€‚\n");
+        set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
     ::init_staff(175);
 }    

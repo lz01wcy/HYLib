@@ -9,9 +9,9 @@ void create()
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
 //	npc=data[random(sizeof(data))];
-   set_name(order[random(13)]+"ĞÇ  ÔÂ"NOR, ({ "lywin"}));
+   set_name(order[random(13)]+"æ˜Ÿ  æœˆ"NOR, ({ "lywin"}));
 set("magicgift",1+random(6));
-       set("title",HIW"¹âÖ®´´ÔìÉñ"NOR);
+       set("title",HIW"å…‰ä¹‹åˆ›é€ ç¥"NOR);
 	set("magicgift",1+random(6));
 	set("zhuanbest",1);
         set("szj/passed",1);
@@ -23,7 +23,7 @@ set("magicgift",1+random(6));
         set("jiuyin/xia", 1);
 	set("magicset",1);
        set("long",
-"Õâ¸öÊÀ½çµÄ´´ÔìÉñÖ®Ò»¡£\n");
+"è¿™ä¸ªä¸–ç•Œçš„åˆ›é€ ç¥ä¹‹ä¸€ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -169,10 +169,10 @@ void die()
         ob = this_object();
         me = query_temp("last_damage_from");
 if (!me) return;        
-me->set("title",HIW"¹âÖ®ÊØ»¤Éñ"NOR);
+me->set("title",HIW"å…‰ä¹‹å®ˆæŠ¤ç¥"NOR);
               me->add("score",1000);
-        message_vision(HIB"$N,»¯ÎªÁËÎŞÊıµÄ¹âÃ¢£¬ÏûÊ§ÔÚ¿ÕÖĞ¡£\n"NOR,ob,me);
-message("vision", me->name() + HIG"ÔÚ×îÖÕÈÎÎñÖĞ!!´ò°ÜÁË"+ob->query("title")+HIG":"+ob->query("name")+HIG"("+ob->query("id")+HIG")¡£\n"NOR, users());
+        message_vision(HIB"$N,åŒ–ä¸ºäº†æ— æ•°çš„å…‰èŠ’ï¼Œæ¶ˆå¤±åœ¨ç©ºä¸­ã€‚\n"NOR,ob,me);
+message("vision", me->name() + HIG"åœ¨æœ€ç»ˆä»»åŠ¡ä¸­!!æ‰“è´¥äº†"+ob->query("title")+HIG":"+ob->query("name")+HIG"("+ob->query("id")+HIG")ã€‚\n"NOR, users());
         destruct(ob);
         return;
 }
@@ -208,7 +208,7 @@ void check()
      
 if (ob->is_busy() && ob->is_fighting())
 {
-        message_vision(HIW"$N"HIW"ÉíÉÏÊ¥¹âÒ»ÉÁ£¬ÓÖ»Ö¸´ÁËĞĞ¶¯£¡\n",ob,me);
+        message_vision(HIW"$N"HIW"èº«ä¸Šåœ£å…‰ä¸€é—ªï¼Œåˆæ¢å¤äº†è¡ŒåŠ¨ï¼\n",ob,me);
         ob->interrupt_me();
         ob->start_busy(1);
         ob->start_busy(0);

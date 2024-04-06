@@ -7,11 +7,11 @@ inherit ROOM;
 string look_gaoshi();
 void create()
 {
-	set("short", "»Ê¹¬ÕıÃÅ");
+	set("short", "çš‡å®«æ­£é—¨");
 	set("long", @LONG
-Ìì°²ÃÅ±ãÊÇ»Ê¹¬ÕıÃÅ¡£Î¡¶ëĞÛÎ°µÄ³ÇÇ½ÉÏ£¬·ÉéÜµĞÂ¥¶ÔÃ¿¸ö»ªÏÄ×Ó
-Ãñ¶¼ÊÇÊ®·ÖÊìÏ¤µÄĞÎ×´£¬ÆøÊÆÊ®·Ö»Ô»Í£¬²»À¢Ò»¸öãóãóÖĞÑë´ó¹úµÄÆøÅÉ¡£
-Ò»ÕÅÏâ½ğ±ßµÄ¸æÊ¾(gaoshi)ÌùÔÚÇ½ÉÏ£¬Ğí¶à¹Ù±øÁ¢ÔÚÁ½ÅÔ¡£
+å¤©å®‰é—¨ä¾¿æ˜¯çš‡å®«æ­£é—¨ã€‚å·å³¨é›„ä¼Ÿçš„åŸå¢™ä¸Šï¼Œé£æªæ•Œæ¥¼å¯¹æ¯ä¸ªåå¤å­
+æ°‘éƒ½æ˜¯ååˆ†ç†Ÿæ‚‰çš„å½¢çŠ¶ï¼Œæ°”åŠ¿ååˆ†è¾‰ç…Œï¼Œä¸æ„§ä¸€ä¸ªæ³±æ³±ä¸­å¤®å¤§å›½çš„æ°”æ´¾ã€‚
+ä¸€å¼ é•¶é‡‘è¾¹çš„å‘Šç¤º(gaoshi)è´´åœ¨å¢™ä¸Šï¼Œè®¸å¤šå®˜å…µç«‹åœ¨ä¸¤æ—ã€‚
 LONG );
 	set("item_desc", ([
 		"gaoshi" : (:look_gaoshi:),
@@ -35,8 +35,8 @@ LONG );
 
 string look_gaoshi()
 {
-	return "\n¼­ÄÃÌìµØ»áÒ»ÖÚ·´Ôô£¡\n¾Ù±¨Ò»ÈË£¬ÉÍ½ğÊ®Á½¡£\n"
-		"×½ÄÃÒ»ÈË£¬ÉÍ½ğ°ÙÁ½¡£\nÖªÇé²»±¨Õß£¬Á¢Õ¶£¡\n÷¡°İ·¢\n";
+	return "\nè¾‘æ‹¿å¤©åœ°ä¼šä¸€ä¼—åè´¼ï¼\nä¸¾æŠ¥ä¸€äººï¼Œèµé‡‘åä¸¤ã€‚\n"
+		"æ‰æ‹¿ä¸€äººï¼Œèµé‡‘ç™¾ä¸¤ã€‚\nçŸ¥æƒ…ä¸æŠ¥è€…ï¼Œç«‹æ–©ï¼\né³Œæ‹œå‘\n";
 }
 
 int valid_leave(object me, string dir)
@@ -52,33 +52,33 @@ int valid_leave(object me, string dir)
 				if(inv[i]->query("weapon_prop") &&
 					(inv[i]->query("equipped")))
 						if(objectp(present("wu jiang", environment(me)))&&living(present("wu", environment(me))))
-							return notify_fail("Îä½«ÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»"+RANK_D->query_respect(me)+"Çë·ÅÏÂ±øÈĞ¡£\n²»µÃ³Ö±øÈĞÈë¹¬¡£\n");
+							return notify_fail("æ­¦å°†ä¸Šå‰æŒ¡ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(me)+"è¯·æ”¾ä¸‹å…µåˆƒã€‚\nä¸å¾—æŒå…µåˆƒå…¥å®«ã€‚\n");
 						else if(objectp(present("guan bing", environment(me))) && living(present("bing", environment(me))))
-							return notify_fail("¹Ù±øÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me) + "Çë·ÅÏÂ±øÈĞ¡£\n²»µÃ³Ö±øÈĞÈë¹¬¡£\n");
+							return notify_fail("å®˜å…µä¸Šå‰æŒ¡ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(me) + "è¯·æ”¾ä¸‹å…µåˆƒã€‚\nä¸å¾—æŒå…µåˆƒå…¥å®«ã€‚\n");
 			return ::valid_leave(me, dir);
 		}
 		else
 		{
-			if (me->query("gender") == "Å®ĞÔ")
+			if (me->query("gender") == "å¥³æ€§")
 			{
 				if(objectp(present("wu jiang",environment(me))) && living(present("wu", environment(me))))
-					return notify_fail("Îä½«ÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£º»Ê¹¬ÖØµØ£¬ÆñÈİÑ°³£ÑÌ»¨Å®×Ó×ÔÓÉ³öÈë£¬\n"+RANK_D->query_respect(me)+"Çë»Ø£¬ÃâµÃ×ÔÈ¡ÆäÈè¡£\n");
+					return notify_fail("æ­¦å°†ä¸Šå‰æŒ¡ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šçš‡å®«é‡åœ°ï¼Œå²‚å®¹å¯»å¸¸çƒŸèŠ±å¥³å­è‡ªç”±å‡ºå…¥ï¼Œ\n"+RANK_D->query_respect(me)+"è¯·å›ï¼Œå…å¾—è‡ªå–å…¶è¾±ã€‚\n");
 				else if(objectp(present("guan bing", environment(me))) && living(present("bing", environment(me))))
-					return notify_fail("¹Ù±øÉÏÇ°À¹×¡Äã£¬ÀÊÉùËµµÀ£º»Ê¹¬ÖØµØ£¬ÆñÈİÑ°³£ÑÌ»¨Å®×Ó×ÔÓÉ³öÈë£¬\n" + RANK_D->query_respect(me) +"Çë»Ø£¬ÃâµÃ×ÔÈ¡ÆäÈè¡£\n");
+					return notify_fail("å®˜å…µä¸Šå‰æ‹¦ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šçš‡å®«é‡åœ°ï¼Œå²‚å®¹å¯»å¸¸çƒŸèŠ±å¥³å­è‡ªç”±å‡ºå…¥ï¼Œ\n" + RANK_D->query_respect(me) +"è¯·å›ï¼Œå…å¾—è‡ªå–å…¶è¾±ã€‚\n");
 			}
-			if (me->query("gender") == "ÎŞĞÔ")
+			if (me->query("gender") == "æ— æ€§")
 			{
 				if(objectp(present("wu jiang",environment(me))) && living(present("wu", environment(me))))
-					say("Îä½«Ğ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»¹«¹«ÄúĞÁ¿àÁË£¬¿ìÇë½ø°É¡£\n");
+					say("æ­¦å°†ç¬‘åŸåŸåœ°è¯´é“ï¼šè¿™ä½å…¬å…¬æ‚¨è¾›è‹¦äº†ï¼Œå¿«è¯·è¿›å§ã€‚\n");
 				else if(objectp(present("guan bing", environment(me))) && living(present("bing", environment(me))))
-					say("¹Ù±øĞ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»¹«¹«ÄúĞÁ¿àÁË£¬¿ìÇë½ø°É¡£\n");
+					say("å®˜å…µç¬‘åŸåŸåœ°è¯´é“ï¼šè¿™ä½å…¬å…¬æ‚¨è¾›è‹¦äº†ï¼Œå¿«è¯·è¿›å§ã€‚\n");
 			}
-			if (me->query("gender") == "ÄĞĞÔ")
+			if (me->query("gender") == "ç”·æ€§")
 			{
 				if(objectp(present("wu jiang",environment(me))) && living(present("wu", environment(me))))
-					return notify_fail("Îä½«ÉìÊÖÀ¹×¡ÄãÀÊÉùËµµÀ£º»Ê¹¬ÖØµØ£¬ÆñÈİÑ°³£Ïç´åÒ°·ò×ÔÓÉ³öÈë£¬\n"+RANK_D->query_respect(me)+"Çë»Ø£¬ÃâµÃ×ÔÈ¡ÆäÈè¡£\n");
+					return notify_fail("æ­¦å°†ä¼¸æ‰‹æ‹¦ä½ä½ æœ—å£°è¯´é“ï¼šçš‡å®«é‡åœ°ï¼Œå²‚å®¹å¯»å¸¸ä¹¡æ‘é‡å¤«è‡ªç”±å‡ºå…¥ï¼Œ\n"+RANK_D->query_respect(me)+"è¯·å›ï¼Œå…å¾—è‡ªå–å…¶è¾±ã€‚\n");
 				else if(objectp(present("guan bing", environment(me))) && living(present("bing", environment(me))))
-					return notify_fail("¹Ù±øÉìÊÖÀ¹×¡ÄãÀÊÉùËµµÀ£º»Ê¹¬ÖØµØ£¬ÆñÈİÑ°³£Ïç´åÒ°·ò×ÔÓÉ³öÈë\n" + RANK_D->query_respect(me) +"Çë»Ø£¬ÃâµÃ×ÔÈ¡ÆäÈè¡£\n");
+					return notify_fail("å®˜å…µä¼¸æ‰‹æ‹¦ä½ä½ æœ—å£°è¯´é“ï¼šçš‡å®«é‡åœ°ï¼Œå²‚å®¹å¯»å¸¸ä¹¡æ‘é‡å¤«è‡ªç”±å‡ºå…¥\n" + RANK_D->query_respect(me) +"è¯·å›ï¼Œå…å¾—è‡ªå–å…¶è¾±ã€‚\n");
 			}
 		}
 	}

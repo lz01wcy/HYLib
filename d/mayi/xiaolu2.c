@@ -1,24 +1,48 @@
-
-#include <ansi.h>
-inherit ROOM;
-
-
-void create ()
-{
-  set ("short","Ğ¡Â·");
-  set ("long", @LONG
-ÕâÀïÌõĞ¡Â·¡£Ò»Õó·ç´µÀ´£¬¾íÆğÕóÕó³¾ÍÁ¡£²»Ê±ÓĞÈËÆï×ÅÂí´ÓÄãµÄ
-ÉíÅÔ³Û¹ı¡£ÏòÄÏÍûÈ¥£¬¿ÉÒÔÒşÔ¼¿´¼ûÒ»Ìõ¿íÀ«µÄ´óæäµÀ¡£
-LONG);
-
-  set("exits", ([
- "northwest":__DIR__"xiaolu1",
- "south":"/d/taiyuan/road6",
-        ]));
-  set("outdoors","mayi");
-
-  set("valid_startroom", 1);
-  setup();
-
-}
-
+
+
+#include <ansi.h>
+
+inherit ROOM;
+
+
+
+
+
+void create ()
+
+{
+
+  set ("short","å°è·¯");
+
+  set ("long", @LONG
+
+è¿™é‡Œæ¡å°è·¯ã€‚ä¸€é˜µé£å¹æ¥ï¼Œå·èµ·é˜µé˜µå°˜åœŸã€‚ä¸æ—¶æœ‰äººéª‘ç€é©¬ä»ä½ çš„
+
+èº«æ—é©°è¿‡ã€‚å‘å—æœ›å»ï¼Œå¯ä»¥éšçº¦çœ‹è§ä¸€æ¡å®½é˜”çš„å¤§é©¿é“ã€‚
+
+LONG);
+
+
+
+  set("exits", ([
+
+ "northwest":__DIR__"xiaolu1",
+
+ "south":"/d/taiyuan/road6",
+
+        ]));
+
+  set("outdoors","mayi");
+
+
+
+  set("valid_startroom", 1);
+
+  setup();
+
+
+
+}
+
+
+

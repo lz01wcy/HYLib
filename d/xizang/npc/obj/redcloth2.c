@@ -2,12 +2,12 @@
 inherit CLOTH; 
 void create()
 {
-        set_name("¥Û∫Ïƒ·≈€", ({ "cloth" }) );
+        set_name("Â§ßÁ∫¢Â∞ºË¢ç", ({ "cloth" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "º˛");
+                set("unit", "‰ª∂");
                 set("material", "cloth");
                 set("armor_prop/armor", 3);
         }

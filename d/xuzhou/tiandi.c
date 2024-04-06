@@ -1,24 +1,48 @@
-
-#include <ansi.h>
-inherit ROOM;
-
-
-void create ()
-{
-  set ("short","ÌïµØ");
-  set ("long", @LONG
-ÕâÀïÊÇÒ»Æ¬µ¾ÌïµØ¡£µ«ÊÇÒÑ¾­»ÄÎßÁË£¬ÕÇÂúÁËÒ°²İ¡£Ò»Õó·ç´µ¹ı£¬
-Äã²»ÓÉµÄ´òÁË¸öº®Õ½£¡ÅÔ±ßÓĞ¼¸¿Ã´óÊ÷£¬Ê÷Ö¦ÒÑ¾­µòÁã£¬ÉÏÃæÁãÉ¢µØÂä
-×Å¼¸Ö»ÎÚÑ»£¬³¯×ÅÌì¿ÕÑÆÑÆµØ½Ğ×Å¡£
-LONG);
-
-  set("exits",([
-	  "north":__DIR__"cunzhong",
-	  "east":__DIR__"dadao3",
-	  ]));
-  set("outdoors","xucheng");
-  set("valid_startroom", 1);
-  setup();
- 
-}
-
+
+
+#include <ansi.h>
+
+inherit ROOM;
+
+
+
+
+
+void create ()
+
+{
+
+  set ("short","ç”°åœ°");
+
+  set ("long", @LONG
+
+è¿™é‡Œæ˜¯ä¸€ç‰‡ç¨»ç”°åœ°ã€‚ä½†æ˜¯å·²ç»è’èŠœäº†ï¼Œæ¶¨æ»¡äº†é‡è‰ã€‚ä¸€é˜µé£å¹è¿‡ï¼Œ
+
+ä½ ä¸ç”±çš„æ‰“äº†ä¸ªå¯’æˆ˜ï¼æ—è¾¹æœ‰å‡ æ£µå¤§æ ‘ï¼Œæ ‘æå·²ç»å‡‹é›¶ï¼Œä¸Šé¢é›¶æ•£åœ°è½
+
+ç€å‡ åªä¹Œé¸¦ï¼Œæœç€å¤©ç©ºå“‘å“‘åœ°å«ç€ã€‚
+
+LONG);
+
+
+
+  set("exits",([
+
+	  "north":__DIR__"cunzhong",
+
+	  "east":__DIR__"dadao3",
+
+	  ]));
+
+  set("outdoors","xucheng");
+
+  set("valid_startroom", 1);
+
+  setup();
+
+ 
+
+}
+
+
+

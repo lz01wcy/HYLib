@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ϷԺ");
+	set("short", "戏院");
 	set("long", @LONG
-�������Ϸ�Ϸ�����ģ�����˷���Ϸ��ÿ�춼ӿ��˵�һ��Ϊ�졣
-ϷԺ��Ϸ�ַ��࣬��Ŀ���ʡ�������������԰Ϸ������ľż���߼�Ϸ��
-�����ķ������������
+这里是南方戏曲中心，四面八方的戏迷每天都涌入此地一睹为快。
+戏院里戏种繁多，曲目精彩。计有南音，梨园戏，提线木偶，高甲戏等
+饮誉四方的珍贵艺术。
 LONG );
 	set("no_clean_up", 0);
 	set("exits", ([

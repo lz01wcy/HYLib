@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÜÊÒ");
+	set("short", "å¯†å®¤");
 	set("long", @LONG
-ÕâÊÇÒ»¼äÒõ°µµÄÐ¡ÎÝ£¬ºÜ³±Êª¡£
+è¿™æ˜¯ä¸€é—´é˜´æš—çš„å°å±‹ï¼Œå¾ˆæ½®æ¹¿ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
@@ -25,10 +25,10 @@ int do_tui(string arg)
 {
         object me;
         me = this_player();
-        if (arg != "´°»§")return 0;
+        if (arg != "çª—æˆ·")return 0;
         if (me->query("str") < 25 || me->query("force") < 200)
-                return notify_fail("ÄãÊ¹¾¢ÍÆÁËÍÆ´°»§£¬½á¹ûÃ»ÍÆ¶¯¡£\n");
-        message_vision("$NÍÆ¿ªÁË´°»§£¬ÑÛÇ°¶ÙÊ±Ò»ÁÁ£¬Ô­À´ÃÜÊÒÍâ±ß±ðÓÐÒ»·¬ÌìµØ¡£\n",me);
+                return notify_fail("ä½ ä½¿åŠ²æŽ¨äº†æŽ¨çª—æˆ·ï¼Œç»“æžœæ²¡æŽ¨åŠ¨ã€‚\n");
+        message_vision("$NæŽ¨å¼€äº†çª—æˆ·ï¼Œçœ¼å‰é¡¿æ—¶ä¸€äº®ï¼ŒåŽŸæ¥å¯†å®¤å¤–è¾¹åˆ«æœ‰ä¸€ç•ªå¤©åœ°ã€‚\n",me);
         set("exits/out", __DIR__"taoyuan");
         me->add("force",-200);
         return 1;

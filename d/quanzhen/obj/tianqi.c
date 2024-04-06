@@ -1,4 +1,4 @@
-// tianqi.c ÌïÆß
+// tianqi.c ç”°ä¸ƒ
 // By Lgg,1998.10
 
 inherit ITEM;
@@ -11,19 +11,19 @@ void init()
 
 void create()
 {
-        set_name(HIY"ÌïÆß"NOR, ({"tianqi"}));
+        set_name(HIY"ç”°ä¸ƒ"NOR, ({"tianqi"}));
         set_weight(800);
-        set("unit", "¸ù");
-        set("long", "ÕâÊÇÒ»¸ùÌïÆß£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "æ ¹");
+        set("long", "è¿™æ˜¯ä¸€æ ¹ç”°ä¸ƒï¼Œçœ‹æ¥å¯ä»¥å…¥è¯ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-        if (!(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="tianqi")
         {
-                write("ÄãÈı¿ÚÁ½¿Ú°ÑÌïÆß³ÔÁËÏÂÈ¥¡£\n");
+                write("ä½ ä¸‰å£ä¸¤å£æŠŠç”°ä¸ƒåƒäº†ä¸‹å»ã€‚\n");
                 destruct(this_object());
         }
         return 1;

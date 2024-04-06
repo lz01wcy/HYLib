@@ -2,12 +2,12 @@
 inherit ITEM;
 void create()
 {
-        set_name( "ÇéÊé", ({ "qing shu"}));
+        set_name( "æƒ…ä¹¦", ({ "qing shu"}));
         set_weight(300);
         if( clonep() )
             set_default_object(__FILE__);
         else {
-            set("unit", "·â");
-            set("long","ÕâÊÇ°¢ÍÁËÍ¸ø°¢·ïµÄÇéÊé£¬Äã¿É²»ÒªË½×Ô´ò¿ªÀ´¿´Å¶¡£\n");
+            set("unit", "å°");
+            set("long","è¿™æ˜¯é˜¿åœŸé€ç»™é˜¿å‡¤çš„æƒ…ä¹¦ï¼Œä½ å¯ä¸è¦ç§è‡ªæ‰“å¼€æ¥çœ‹å“¦ã€‚\n");
              }
 }

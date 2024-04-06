@@ -7,10 +7,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "É³Ä®");
+	set("short", "æ²™æ¼ ");
 	set("long", @LONG
-ÕâÊÇÒ»Æ¬Ã»±ß¼ÊµÄÉ³Ä®£¬µ½´¦ÊÇ½ü°ÙÃ×¸ßµÄ¾Ş´óÉ³Çğ¡£ÄãÒ»×ß½øÀ´
-¾Í·Â·ğÃÔÁËÂ·¡£
+è¿™æ˜¯ä¸€ç‰‡æ²¡è¾¹é™…çš„æ²™æ¼ ï¼Œåˆ°å¤„æ˜¯è¿‘ç™¾ç±³é«˜çš„å·¨å¤§æ²™ä¸˜ã€‚ä½ ä¸€èµ°è¿›æ¥
+å°±ä»¿ä½›è¿·äº†è·¯ã€‚
 LONG );
 	set("exits", ([
 		"north" : __FILE__,
@@ -29,7 +29,7 @@ void init()
 		ob->set("water", ob->query("water") -10 );
 	else
 		ob->set("water", 0 );
-	message_vision(HIY"ÂúÌì»ÆÉ³£¬$N¸Ğµ½ºíÁüÃ°ÑÌ£¬¸É¿ÊÄÑ°¾£¡\n"NOR, ob);
+	message_vision(HIY"æ»¡å¤©é»„æ²™ï¼Œ$Næ„Ÿåˆ°å–‰å’™å†’çƒŸï¼Œå¹²æ¸´éš¾ç†¬ï¼\n"NOR, ob);
 }
 
 int valid_leave(object me, string dir)
@@ -43,13 +43,13 @@ int valid_leave(object me, string dir)
 	{
 		me->move(__DIR__"jingyuan");
 		me->delete_temp("shamo/steps");
-		return notify_fail("Äã×ßÁË°ëÌì£¬ÖÕÓÚ×ß³öÁËÎ÷ÏÄÉ³Ä®¡£\n");
+		return notify_fail("ä½ èµ°äº†åŠå¤©ï¼Œç»ˆäºèµ°å‡ºäº†è¥¿å¤æ²™æ¼ ã€‚\n");
 	}
 	if (me->query_temp("shamo/steps") == - total_steps )
 	{
 		me->move(__DIR__"qingcheng");
 		me->delete_temp("shamo/steps");
-		return notify_fail("Äã×ßÁË°ëÌì£¬ÖÕÓÚ×ß³öÁËÎ÷ÏÄÉ³Ä®¡£\n");
+		return notify_fail("ä½ èµ°äº†åŠå¤©ï¼Œç»ˆäºèµ°å‡ºäº†è¥¿å¤æ²™æ¼ ã€‚\n");
      	}
 	return ::valid_leave(me,dir);
 }

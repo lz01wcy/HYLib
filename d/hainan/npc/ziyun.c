@@ -4,15 +4,15 @@
 inherit NPC;
 void create()
 {
-        set_name("×ÏÔÆ", ({"zi yun"}));
-        set("gender", "Å®ĞÔ" );
+        set_name("ç´«äº‘", ({"zi yun"}));
+        set("gender", "å¥³æ€§" );
         set("age", 18);
-        set("long", "Ò»¸öÆ¯ÁÁµÄĞ¡¹ÃÄï£®");
-	set("title", "°×ÔÆâÖ´«ÈË");
+        set("long", "ä¸€ä¸ªæ¼‚äº®çš„å°å§‘å¨˜ï¼");
+	set("title", "ç™½äº‘åºµä¼ äºº");
 	set("class", "taoist");
         set("combat_exp", 45000);
         set("attitude", "peaceful");
-        create_family("º£ÄÏ°×ÔÆâÖ", 4, "µÜ×Ó");
+        create_family("æµ·å—ç™½äº‘åºµ", 4, "å¼Ÿå­");
         set_skill("unarmed", 50);
         set_skill("dodge", 250);
         set_skill("parry", 250);
@@ -51,20 +51,20 @@ void init()
 void greeting(object ob)
 {
 if( !ob || environment(ob) != environment() ) return;
-tell_object(ob,HIC"ÄãÌıµ½Ò»ÕóÆÃË®µÄÉùÒô,°éËæ×ÅÄêÇáÅ®×ÓµÄÎûĞ¦Éù!\n"+NOR);
-  if (ob->query("gender")=="ÄĞĞÔ")
+tell_object(ob,HIC"ä½ å¬åˆ°ä¸€é˜µæ³¼æ°´çš„å£°éŸ³,ä¼´éšç€å¹´è½»å¥³å­çš„å˜»ç¬‘å£°!\n"+NOR);
+  if (ob->query("gender")=="ç”·æ€§")
    {
-tell_object(ob,HIC+"Ëæ×Å¼¸Éù¾ª½Ğ,ÄãÑÛÇ°Ò»ºÚ,ÄÔºó°¤ÁËÒ»°ô!\n
-ÑÛÇ°µÄÒ»ÇĞ±äµÃÄ£Ä£ºıºı,È»ºó¾ÍÊ²Ã´¶¼²»ÖªµÀÁË!\n
+tell_object(ob,HIC+"éšç€å‡ å£°æƒŠå«,ä½ çœ¼å‰ä¸€é»‘,è„‘åæŒ¨äº†ä¸€æ£’!\n
+çœ¼å‰çš„ä¸€åˆ‡å˜å¾—æ¨¡æ¨¡ç³Šç³Š,ç„¶åå°±ä»€ä¹ˆéƒ½ä¸çŸ¥é“äº†!\n
 ..........    ..........\n"+NOR);
 ob->unconcious();
-message_vision(HIR"-------°¡------,×ÏÔÆ¼â½ĞÒ»Éù,$NÍµ¿´Å®º¢×ÓÏ´Ôè------ ------!\n
-$NÄÔºóËæ¼´°¤ÁËÒ»¹÷×Ó,ÌÒ»¨ÁÖÖĞ³å³ö¼¸¸öÒÂÉÀ²»ÕûµÄÅ®×Ó,°Ñ$NÍÏËÀ¹·°ãÍÏ×ßÁË!\n"+NOR,ob);
-tell_room("/d/hainan/dilao.c",RED"µØÀÎÃÅÍ»È»´ò¿ª,"+ob->query("name")+"±»ÈÓÁË½øÀ´!\n"+NOR);
+message_vision(HIR"-------å•Š------,ç´«äº‘å°–å«ä¸€å£°,$Nå·çœ‹å¥³å­©å­æ´—æ¾¡------ ------!\n
+$Nè„‘åéšå³æŒ¨äº†ä¸€æ£å­,æ¡ƒèŠ±æ—ä¸­å†²å‡ºå‡ ä¸ªè¡£è¡«ä¸æ•´çš„å¥³å­,æŠŠ$Næ‹–æ­»ç‹—èˆ¬æ‹–èµ°äº†!\n"+NOR,ob);
+tell_room("/d/hainan/dilao.c",RED"åœ°ç‰¢é—¨çªç„¶æ‰“å¼€,"+ob->query("name")+"è¢«æ‰”äº†è¿›æ¥!\n"+NOR);
 ob->move("/d/hainan/dilao.c");
     }
 else 
-  message_vision(HIC"×ÏÔÆĞ¦ÎûÎûµØ¶Ô$NËµµÀ:ÕâÎ»"+RANK_D->query_respect(ob)+"Ò²ÊÇÀ´Ï´ÔèµÄÃ´?\n"+NOR,ob);
+  message_vision(HIC"ç´«äº‘ç¬‘å˜»å˜»åœ°å¯¹$Nè¯´é“:è¿™ä½"+RANK_D->query_respect(ob)+"ä¹Ÿæ˜¯æ¥æ´—æ¾¡çš„ä¹ˆ?\n"+NOR,ob);
 }
 
 

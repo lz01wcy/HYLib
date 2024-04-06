@@ -7,16 +7,16 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(HIR "´³ÍõÕ½¼×" NOR, ({ "cw_armor","armor"}) );
+	set_name(HIR "é—¯ç‹æˆ˜ç”²" NOR, ({ "cw_armor","armor"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "\nÕâÊÇÀî´³ÍõµÄ¿ø¼×¡£´¿½ğ´òÖÎ,¶ËµÄÊÇÆøÅÉ·Ç·²!\n");
-		set("unit", "¼ş");
+		set("long", "\nè¿™æ˜¯æé—¯ç‹çš„ç›”ç”²ã€‚çº¯é‡‘æ‰“æ²»,ç«¯çš„æ˜¯æ°”æ´¾éå‡¡!\n");
+		set("unit", "ä»¶");
 		set("no_put", 1);
 //		//set("value", 100000);
-		set("material", "½ğ×Ó");
+		set("material", "é‡‘å­");
 		set("armor_prop/armor", 200);
 		set("armor_prop/personality", 10);
 		set("armor_prop/defense", 20);	

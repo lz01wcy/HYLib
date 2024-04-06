@@ -1,12 +1,12 @@
 // /d/gaoli/xingguan
-// Room in ����
+// Room in 高丽
 inherit ROOM;
 void create()	
 {
-	set("short", "��ʿ�й�");
+	set("short", "武士行馆");
 	set("long", @LONG
-�������йݵĴ��������а���һ��ɼľԲ���ͼ������ӣ�������һ
-�׾��µ����˴�������������һ����ʯ���磬��˵�Ǹ����ʵ����͡�
+这里是行馆的大厅，厅中摆着一张杉木圆桌和几张椅子，桌上是一
+套精致的宜兴瓷器。对门立着一座玉石屏风，据说是高丽皇帝所赐。
 LONG
 	);
 set("exits", ([

@@ -1,17 +1,17 @@
-// dumpling.c °ü×Ó
+// dumpling.c åŒ…å­
 #include <ansi.h>
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name(HIY"Ãæ°ü"NOR, ({"mian bao", "mianbao"}));
+	set_name(HIY"é¢åŒ…"NOR, ({"mian bao", "mianbao"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿éÃæ°ü¡£\n");
-		set("unit", "¿é");
+		set("long", "ä¸€å—é¢åŒ…ã€‚\n");
+		set("unit", "å—");
 		set("value", 500);
 		set("food_remaining", 6);
 		set("food_supply", 60);

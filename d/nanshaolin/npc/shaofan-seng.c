@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÉÕ·¹É®", ({ "shaofan seng", "shaofan", "seng" }));
-	set("long","ÕâÊÇÎ»ÅÖÅÖµÄÖĞÄêÉ®ÈË£¬´ó¸ÅÊÇÒòÎª³¤ÄêÉÕ·¹×÷²ËµÄÔµ¹Ê£¬²ÅÈç´Ë·¢¸£µÄ°É¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("çƒ§é¥­åƒ§", ({ "shaofan seng", "shaofan", "seng" }));
+	set("long","è¿™æ˜¯ä½èƒ–èƒ–çš„ä¸­å¹´åƒ§äººï¼Œå¤§æ¦‚æ˜¯å› ä¸ºé•¿å¹´çƒ§é¥­ä½œèœçš„ç¼˜æ•…ï¼Œæ‰å¦‚æ­¤å‘ç¦çš„å§ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 	set("age", 44);
@@ -28,7 +28,7 @@ void create()
 	set_skill("dodge", 12);
 	set_skill("unarmed", 12);
 	set_skill("parry", 12);
-        create_family("ÄÏÉÙÁÖÅÉ", 22, "µÜ×Ó");
+        create_family("å—å°‘æ—æ´¾", 22, "å¼Ÿå­");
 	setup();
 }
 

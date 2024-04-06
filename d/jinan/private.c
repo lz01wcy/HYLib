@@ -6,11 +6,11 @@ inherit ROOM;
 void create()
 {
         object con, item; 
-  set("short","ؤ��˽��");
+  set("short","丐帮私房");
   set("long",@LONG
-������ؤ���˽��������ǽ�Ϲҵ���һ������Ļ��һ���Ϻ��
-��������һ������ͼ���ݳƶ�����Ʒ�����˾��Ѿ���ֵ���ǡ�����
-��˵�ⷿ��İ����ˡ�
+这是所丐帮的私房，东面墙上挂的是一个姓齐的画家画的虾米
+西面则是一幅奔马图，据称都属孤品。仅此就已经价值连城。更不
+用说这房间的摆设了。
 LONG
   );
   set("exits",([
@@ -22,5 +22,5 @@ LONG
         set("coor/y",1960);
         set("coor/z",0);
         setup();
-    create_door("south", "�ϵ���", "north", DOOR_CLOSED); 
+    create_door("south", "紫雕门", "north", DOOR_CLOSED); 
 }  

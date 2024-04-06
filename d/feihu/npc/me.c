@@ -6,10 +6,10 @@ int accept_object(object who, object ob);
 void create()
 {
 	seteuid(getuid());
-        set_name("³ÂÏôÈ»", ({ "chen xiaoran", "chen", "yafeng" }));
-	set("long", "ËûÒ»ÉíÆ®ÒİµÄ°×É«³¤ÉÀ£¬Ë«ÑÛÖĞËÆºõÔÌº¬ÁËÎŞÇîÖÇ»Û¡£\n");
-	set("nickname", HIM "½£µ¨ÇÙĞÄ" NOR);
-	set("gender", "ÄĞĞÔ");
+        set_name("é™ˆè§ç„¶", ({ "chen xiaoran", "chen", "yafeng" }));
+	set("long", "ä»–ä¸€èº«é£˜é€¸çš„ç™½è‰²é•¿è¡«ï¼ŒåŒçœ¼ä¸­ä¼¼ä¹è•´å«äº†æ— ç©·æ™ºæ…§ã€‚\n");
+	set("nickname", HIM "å‰‘èƒ†ç´å¿ƒ" NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 22);
 	set("attitude", "friendly");
 	
@@ -38,8 +38,8 @@ void create()
 	set_skill("force", 100);
 	set("chat_chance", 10);
 	set("chat_msg", ({
-		"³ÂÏôÈ»Ò÷µÀ: ÍíÀ´ÌìÓûÑ©£¬ÄÜÒûÒ»±­ÎŞ£¿"+RANK_D->query_respect(this_player())+"ºÈÒ»±­°É¡£\n",
-		"Ç°¼¸Ìì¼ñµ½Ò»°Ñ"+HIW"ÆÆ±ù¸«"NOR+"Ë­¶ªµÄÄØ£¿\n"
+		"é™ˆè§ç„¶åŸé“: æ™šæ¥å¤©æ¬²é›ªï¼Œèƒ½é¥®ä¸€æ¯æ— ï¼Ÿ"+RANK_D->query_respect(this_player())+"å–ä¸€æ¯å§ã€‚\n",
+		"å‰å‡ å¤©æ¡åˆ°ä¸€æŠŠ"+HIW"ç ´å†°æ–§"NOR+"è°ä¸¢çš„å‘¢ï¼Ÿ\n"
 		}) );
          setup();
 	carry_object("/d/baituo/obj/baipao")->wear();
@@ -61,8 +61,8 @@ void init()
 void greeting(object ob)
 {
 	
-           say(HIY"³ÂÏôÈ»Ğ¦ÁËĞ¦£¬Ëµ£ºÕâÎ»"+RANK_D->query_respect(ob)+
-               ",»¶Ó­µ½ÎÒÕâÀïÀ´¡£\n"NOR);
+           say(HIY"é™ˆè§ç„¶ç¬‘äº†ç¬‘ï¼Œè¯´ï¼šè¿™ä½"+RANK_D->query_respect(ob)+
+               ",æ¬¢è¿åˆ°æˆ‘è¿™é‡Œæ¥ã€‚\n"NOR);
 	return;
 }
 
@@ -71,11 +71,11 @@ int accept_object(object who, object ob)
 	object axe;
 	if (ob->query("money_id") && ob->value() >= 1000000) 
 	{
-		tell_object(who, "³ÂÏôÈ»Ì¾ÁË¿ÚÆø£¬Ëµ£ºÓÖÄÃÈËÇ®²Æ£¬°¦....\n");
+		tell_object(who, "é™ˆè§ç„¶å¹äº†å£æ°”ï¼Œè¯´ï¼šåˆæ‹¿äººé’±è´¢ï¼Œå”‰....\n");
                 axe=new("/d/feihu/obj/snow_axe");
                 axe->set_amount(1);
                 axe->move(this_player());
-                tell_object(who, HIW"\n³ÂÏôÈ»¸øÄãÒ»°ÑÆÆ±ù¸«¡£\n"NOR);
+                tell_object(who, HIW"\né™ˆè§ç„¶ç»™ä½ ä¸€æŠŠç ´å†°æ–§ã€‚\n"NOR);
 		return 1;
 	}
        return 0;

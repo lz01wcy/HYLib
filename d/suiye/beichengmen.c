@@ -1,14 +1,14 @@
 // "suiye"/beichengmen
-// Room in ��Ҷ
+// Room in 碎叶
 // laowuwu 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "������");
+	set("short", "北城门");
 	set("long", @LONG
-��������Ҷ�ı����š��Ͼ͵��˳��У�Զ��ϡϡ����û�����ˡ���
-������һЩִ�ڵı�ʿ����ʮ��ͻ����ʿӢ�˲������ϸ�ļ�������
-���ˡ�
+这里是碎叶的北城门。南就到了城中，远望稀稀落落没几个人。城
+门下有一些执勤的兵士。数十名突厥武士英姿勃勃，严格的检查带武器
+的人。
 LONG
 	);
 set("outdoors", "suiye");

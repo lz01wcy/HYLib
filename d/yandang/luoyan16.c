@@ -4,11 +4,11 @@ int jian=5,dao=5,fu=5,tongjia=5,gangjia=5;
 
 void create()
 {
-  set ("short", "±øÆ÷¿â");
+  set ("short", "å…µå™¨åº“");
   set ("long", @LONG
-ÓÉÓÚ×¯Ö÷Ï²»¶ËÑÑ°ÌìÏÂ¸÷ÖÖÎäÆ÷,ËùÒÔÂäÑãÉ½×¯µÄÎä¿âÔÚ½­ºşÉÏÒ»Ö±
-ÊÇÒÔÆ·ÖÖÆëÈ«¶øÃûµÄ,ÔÚÎä¿âÖĞ,°Ú×ÅÒ»ÅÅÅÅµÄ¼Ü×Ó,ÉÏÃæ°ÚÂúÁË¸÷ÖÖ¸÷ÑùµÄ
-ÎäÆ÷,ÓĞĞí¶àÄãÁ¬Ãû¶¼Ëµ²»ÉÏÀ´.Äã¿ÉÒÔÏÈÓÃ(list)²é¿´Ò»ÏÂ,È»ºóÄÃÈ¡(naqu).
+ç”±äºåº„ä¸»å–œæ¬¢æœå¯»å¤©ä¸‹å„ç§æ­¦å™¨,æ‰€ä»¥è½é›å±±åº„çš„æ­¦åº“åœ¨æ±Ÿæ¹–ä¸Šä¸€ç›´
+æ˜¯ä»¥å“ç§é½å…¨è€Œåçš„,åœ¨æ­¦åº“ä¸­,æ‘†ç€ä¸€æ’æ’çš„æ¶å­,ä¸Šé¢æ‘†æ»¡äº†å„ç§å„æ ·çš„
+æ­¦å™¨,æœ‰è®¸å¤šä½ è¿åéƒ½è¯´ä¸ä¸Šæ¥.ä½ å¯ä»¥å…ˆç”¨(list)æŸ¥çœ‹ä¸€ä¸‹,ç„¶åæ‹¿å–(naqu).
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -28,18 +28,18 @@ int do_list()
 	object me;
 	me=this_player();
 	if(! living(me))	return 0;
-	msg="Ä¿Ç°¿â·¿ÄÚÓĞÏÂÁĞÎïÆ·¿ÉÒÔÄÃÈ¡(naqu)\n";
+	msg="ç›®å‰åº“æˆ¿å†…æœ‰ä¸‹åˆ—ç‰©å“å¯ä»¥æ‹¿å–(naqu)\n";
 	msg +="----------------------------------\n";
 	if( jian)
-	msg +="  ³¤½£(jian)             "+chinese_number(jian)+"°Ñ\n";
+	msg +="  é•¿å‰‘(jian)             "+chinese_number(jian)+"æŠŠ\n";
 	if( dao)
-	msg +="  µ¥µ¶(dao)              "+chinese_number(dao)+"°Ñ\n";
+	msg +="  å•åˆ€(dao)              "+chinese_number(dao)+"æŠŠ\n";
 	if(fu)
-	msg +="  °å¸«(fu)               "+chinese_number(fu)+"°Ñ\n";
+	msg +="  æ¿æ–§(fu)               "+chinese_number(fu)+"æŠŠ\n";
 	if(tongjia)
-	msg +="  Í­¼×(tongjia)          "+chinese_number(tongjia)+"¼ş\n";
+	msg +="  é“œç”²(tongjia)          "+chinese_number(tongjia)+"ä»¶\n";
 	if(gangjia)
-	msg +="  ¸Ö¼×(gangjia)          "+chinese_number(gangjia)+"¼ş\n";
+	msg +="  é’¢ç”²(gangjia)          "+chinese_number(gangjia)+"ä»¶\n";
 	msg +="----------------------------------\n";
 	write(msg);
 	return 1;
@@ -51,52 +51,52 @@ int do_naqu(string arg)
 	mapping data;
 	me=this_player();
 	if(! living(me))	return 0;
-	if(! arg)	return notify_fail("ÄãÒªÄÃÈ¡Ê²Ã´£¿\n");
-	if(me->query("family/family_name")!="Ñãµ´ÅÉ")
-		return notify_fail("Ëæ±ãÄÃÈË¼ÒµÄ¶«Î÷²»ºÃ°É¡£\n");
+	if(! arg)	return notify_fail("ä½ è¦æ‹¿å–ä»€ä¹ˆï¼Ÿ\n");
+	if(me->query("family/family_name")!="é›è¡æ´¾")
+		return notify_fail("éšä¾¿æ‹¿äººå®¶çš„ä¸œè¥¿ä¸å¥½å§ã€‚\n");
 	if( me->query_temp("have_naqu"))
-		return notify_fail("ÄãÒÑ¾­ÄÃ¹ıÁËÑ½,µÈÒ»»áÔÙÀ´°É¡£\n");
+		return notify_fail("ä½ å·²ç»æ‹¿è¿‡äº†å‘€,ç­‰ä¸€ä¼šå†æ¥å§ã€‚\n");
 	if(arg=="jian" && jian)	{
 		sth=new("/obj/weapon/sword");
 		if( me->query_encumbrance() + sth->query_weight()
 			> me->query_max_encumbrance())
-		return notify_fail("Õâ°Ñ½£¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+		return notify_fail("è¿™æŠŠå‰‘å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
 		jian --;
 		sth->move(me);
-		message_vision("$N´Ó¼Ü×ÓÉÏÄÃÁË°Ñ³¤½£¡£\n",me);
+		message_vision("$Nä»æ¶å­ä¸Šæ‹¿äº†æŠŠé•¿å‰‘ã€‚\n",me);
 	}	else if(arg=="dao" && dao)	{
 		sth=new("/obj/weapon/blade");
                 if( me->query_encumbrance() + sth->query_weight()
                         > me->query_max_encumbrance())
-		return notify_fail("Õâ°Ñµ¶¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+		return notify_fail("è¿™æŠŠåˆ€å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 dao --;
 		sth->move(me);
-		message_vision("$N´Ó¼Ü×ÓÉÏÄÃÁË°Ñµ¥µ¶¡£\n",me);
+		message_vision("$Nä»æ¶å­ä¸Šæ‹¿äº†æŠŠå•åˆ€ã€‚\n",me);
 	}	else if(arg=="fu" && fu)	{
 		sth=new("/obj/weapon/banfu");
                 if( me->query_encumbrance() + sth->query_weight()
                         > me->query_max_encumbrance())
-		return notify_fail("Õâ°Ñ¸«¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+		return notify_fail("è¿™æŠŠæ–§å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 fu --;
 		sth->move(me);
-		message_vision("$N´Ó¼Ü×ÓÉÏÄÃÁË°Ñ°å¸«¡£\n",me);
+		message_vision("$Nä»æ¶å­ä¸Šæ‹¿äº†æŠŠæ¿æ–§ã€‚\n",me);
 	}	else if(arg=="tongjia" && tongjia) {
 sth=new("/obj/std/armor/tongjia");
                 if( me->query_encumbrance() + sth->query_weight()
                         > me->query_max_encumbrance())
-		return notify_fail("Õâ¼şÍ­¼×¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+		return notify_fail("è¿™ä»¶é“œç”²å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 tongjia --;
 		sth->move(me);
-		message_vision("$N´Ó¼Ü×ÓÉÏÄÃÁË¼şÍ­¼×¡£\n",me);
+		message_vision("$Nä»æ¶å­ä¸Šæ‹¿äº†ä»¶é“œç”²ã€‚\n",me);
 	}	else if(arg=="gangjia" && gangjia) {
 sth=new("/d/yeyangzai/npc/obj/gangjia");
                 if( me->query_encumbrance() + sth->query_weight()
                         > me->query_max_encumbrance())
-		return notify_fail("Õâ¼ş¸Ö¼×¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+		return notify_fail("è¿™ä»¶é’¢ç”²å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 gangjia--;
 		sth->move(me);
-		message_vision("$N´Ó¼Ü×ÓÉÏÄÃÁË¼ş¸Ö¼×¡£\n",me);
-	}	else	return notify_fail("Õâ¶ùÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		message_vision("$Nä»æ¶å­ä¸Šæ‹¿äº†ä»¶é’¢ç”²ã€‚\n",me);
+	}	else	return notify_fail("è¿™å„¿æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	sth->set("no_sell",1);
 	me->set_temp("have_naqu",1);
 	return 1;

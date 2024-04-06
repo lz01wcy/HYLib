@@ -1,5 +1,5 @@
-// zhujian2.c Öñ½£
-// ¿ÉÒÔÂôµÄÖñ½££¬2Á½Òø×Ó
+// zhujian2.c ç«¹å‰‘
+// å¯ä»¥å–çš„ç«¹å‰‘ï¼Œ2ä¸¤é“¶å­
 
 #include <weapon.h>
 
@@ -7,18 +7,18 @@ inherit SWORD;
 
 void create()
 {
-	set_name("Öñ½£", ({ "zhu jian", "jian", "sword"}) );
+	set_name("ç«¹å‰‘", ({ "zhu jian", "jian", "sword"}) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 2000);
 		set("material", "bamboo");
 		set("long", 
-"ÕâÊÇÒ»°Ñ×ö¹¤¾«ÖÂµÄÖñ½££¬½£±úÓÃÏ¸·«²¼°ü¹ü£¬½£ÉíÉÔÕ­£¬½£¼â´¦ÓÃ²¼°üÁËÆğÀ´ÒÔÃâÎóÉËÍ¬°é¡£\n");
-		set("wield_msg", "$NÄÃ³öÒ»°ÑÁ·½£ÓÃµÄ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+"è¿™æ˜¯ä¸€æŠŠåšå·¥ç²¾è‡´çš„ç«¹å‰‘ï¼Œå‰‘æŸ„ç”¨ç»†å¸†å¸ƒåŒ…è£¹ï¼Œå‰‘èº«ç¨çª„ï¼Œå‰‘å°–å¤„ç”¨å¸ƒåŒ…äº†èµ·æ¥ä»¥å…è¯¯ä¼¤åŒä¼´ã€‚\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠç»ƒå‰‘ç”¨çš„$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 	init_sword(1);
 	setup();

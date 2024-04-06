@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("ÃàÑò", ({ "sheep","yang" }) );
-   set("race", "Ò°ÊÞ");
+   set_name("ç»µç¾Š", ({ "sheep","yang" }) );
+   set("race", "é‡Žå…½");
    set("age", 22);
-   set("long", "°×É«µÄÑòÃ«¾íÇú,ÎÂÈáµÄÑÛ²¨,Ç§Íò²»Òª±»Íâ±íÃÔºý¡£\n");
+   set("long", "ç™½è‰²çš„ç¾Šæ¯›å·æ›²,æ¸©æŸ”çš„çœ¼æ³¢,åƒä¸‡ä¸è¦è¢«å¤–è¡¨è¿·ç³Šã€‚\n");
    
    set("str", 13);
    set("cor", 24);
@@ -13,7 +13,7 @@ void create()
    set("kee",600);
    set("max_kee",600);
 
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Ç°Ìã","ºóÌã" "Ñò½Ç"}) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´", "å‰è¹„","åŽè¹„" "ç¾Šè§’"}) );
    set("verbs", ({ "bite", "claw" }) );
 
    set_temp("apply/attack", 15);
@@ -21,8 +21,8 @@ void create()
    
    set("chat_chance",5);
    set("chat_msg",({
-     "ÃàÑò³ÔÁËÒ»»á²Ý,Ì§Í·´ô´ôµÄ¿´×ÅÍ·¶¥Æ®¹ýµÄ°×ÔÆ.\n",
-     "ÃàÑò°Ú°ÚÌã×Ó,¶¯¶¯ÍÈ,µÍÍ·ÏòÄã×²À´.\n",
+     "ç»µç¾Šåƒäº†ä¸€ä¼šè‰,æŠ¬å¤´å‘†å‘†çš„çœ‹ç€å¤´é¡¶é£˜è¿‡çš„ç™½äº‘.\n",
+     "ç»µç¾Šæ‘†æ‘†è¹„å­,åŠ¨åŠ¨è…¿,ä½Žå¤´å‘ä½ æ’žæ¥.\n",
      }));
 
    setup();
@@ -33,7 +33,7 @@ void die()
      object corpse;
          if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-  message_vision("$N²àÉíµ¹ÏÂ,ËÄÖ«³é´¤Ò»Õó,ËÀÁË.\n",this_object());
+  message_vision("$Nä¾§èº«å€’ä¸‹,å››è‚¢æŠ½æä¸€é˜µ,æ­»äº†.\n",this_object());
   new(__DIR__"obj/yangrou.c")->move(environment(this_object()));
   destruct(this_object());
   return;

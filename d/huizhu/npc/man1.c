@@ -3,20 +3,20 @@
 inherit NPC;
 
 mapping *data=({
-(["name":"ĞĞÈË",	"id":"xing ren",	"mw":1,	]),
-(["name":"ÉÌÈË",	"id":"shang ren",	"mw":-1,	]),
-(["name":"ÂÃ¿Í",	"id":"lv ke",		"mw":1,	]),
-(["name":"ÃÅÈË",	"id":"men ren",	"mw":1,	]),
-(["name":"Ñ§Í½",	"id":"xue tu",	"mw":1,	]),
-(["name":"ÎŞÀµºº",	"id":"wu lai",	"mw":-1,	]),
-(["name":"ÀËÈË",	"id":"lang ren",	"mw":-1,	]),
-(["name":"ĞĞÕß",	"id":"xing she",	"mw":1,	]),
-(["name":"ÍöÃüÍ½",	"id":"tu",		"mw":-1,	]),
-(["name":"¿ÍÉÌ",	"id":"ke shang",	"mw":-1,	]),
-(["name":"Ğ¡ÊÌ",	"id":"xiao shi",	"mw":1,	]),
-(["name":"ÀÏÉ«¹í",	"id":"se gui",	"mw":-1,	]),
-(["name":"ÇàÄê",	"id":"qing nian",	"mw":1,	]),
-(["name":"ÄêÇáÈË",	"id":"nian qing",	"mw":1,	]),
+(["name":"è¡Œäºº",	"id":"xing ren",	"mw":1,	]),
+(["name":"å•†äºº",	"id":"shang ren",	"mw":-1,	]),
+(["name":"æ—…å®¢",	"id":"lv ke",		"mw":1,	]),
+(["name":"é—¨äºº",	"id":"men ren",	"mw":1,	]),
+(["name":"å­¦å¾’",	"id":"xue tu",	"mw":1,	]),
+(["name":"æ— èµ–æ±‰",	"id":"wu lai",	"mw":-1,	]),
+(["name":"æµªäºº",	"id":"lang ren",	"mw":-1,	]),
+(["name":"è¡Œè€…",	"id":"xing she",	"mw":1,	]),
+(["name":"äº¡å‘½å¾’",	"id":"tu",		"mw":-1,	]),
+(["name":"å®¢å•†",	"id":"ke shang",	"mw":-1,	]),
+(["name":"å°ä¾",	"id":"xiao shi",	"mw":1,	]),
+(["name":"è€è‰²é¬¼",	"id":"se gui",	"mw":-1,	]),
+(["name":"é’å¹´",	"id":"qing nian",	"mw":1,	]),
+(["name":"å¹´è½»äºº",	"id":"nian qing",	"mw":1,	]),
 });
 
 
@@ -25,8 +25,8 @@ void create()
 	mapping npc;
 	npc=data[random(sizeof(data))];
 	set_name(HIC+npc["name"]+NOR,({ npc["id"] }));
-	if( random(10)<5)	set("gender","ÄĞĞÔ");
-	else set("gender","Å®ĞÔ");
+	if( random(10)<5)	set("gender","ç”·æ€§");
+	else set("gender","å¥³æ€§");
 	set("age",20+random(30));
 	set("combat_exp",5000+random(5000));
 	set_temp("apply/attack",20);

@@ -7,12 +7,12 @@ void consider();
 
 void create()
 {
-	set_name("ºéÆß¹«", ({"hong-qigong", "hong", "qigong"}));
-	set("nickname", CYN"±±Ø¤"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("æ´ªä¸ƒå…¬", ({"hong-qigong", "hong", "qigong"}));
+	set("nickname", CYN"åŒ—ä¸"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 75);
 	set("long", 
-		"Ëû¾ÍÊÇØ¤°ïµÚÊ®ÆßÈÎ°ïÖ÷£¬ºÅ³Æ¡°±±Ø¤¡±µÄºéÆß¹«ÀÏÒ¯×Ó¡£\n");
+		"ä»–å°±æ˜¯ä¸å¸®ç¬¬åä¸ƒä»»å¸®ä¸»ï¼Œå·ç§°â€œåŒ—ä¸â€çš„æ´ªä¸ƒå…¬è€çˆ·å­ã€‚\n");
 	set("attitude", "peaceful");
         set("class", "beggar");
 	
@@ -23,15 +23,15 @@ void create()
 
 	set("chat_chance", 1);
 	set("chat_msg", ({
-		"ºéÆß¹«Ì¾ÁË¿ÚÆøµÀ£º¡°°¦¡­¡­ºÎÊ±ÄÜÔÙ³Ôµ½ÈØ¶ù×öµÄ¡¸½Ğ»¯¼¦¡¹°¡¡­¡­¡±\n",
-		"ºéÆß¹«ËµµÀ£º¡°Ë×»°Ëµ¡¸³ÔÔÚ½­ÄÏ¡¹£¬ËùÒÔÀÏ½Ğ»¯ÌØµØÅÜÀ´ÑïÖİ¿´¿´¡£¡±\n",
-		"ºéÆß¹«à«à«µÀ£º¡°ÎÒÃÇØ¤°ïµÄ¡¸½µÁúÊ®°ËÕÆ¡¹ÊÇÌìÏÂ×î°ÔµÀµÄÕÆ·¨¡£¡±\n",
+		"æ´ªä¸ƒå…¬å¹äº†å£æ°”é“ï¼šâ€œå”‰â€¦â€¦ä½•æ—¶èƒ½å†åƒåˆ°è“‰å„¿åšçš„ã€Œå«åŒ–é¸¡ã€å•Šâ€¦â€¦â€\n",
+		"æ´ªä¸ƒå…¬è¯´é“ï¼šâ€œä¿—è¯è¯´ã€Œåƒåœ¨æ±Ÿå—ã€ï¼Œæ‰€ä»¥è€å«åŒ–ç‰¹åœ°è·‘æ¥æ‰¬å·çœ‹çœ‹ã€‚â€\n",
+		"æ´ªä¸ƒå…¬å–ƒå–ƒé“ï¼šâ€œæˆ‘ä»¬ä¸å¸®çš„ã€Œé™é¾™åå…«æŒã€æ˜¯å¤©ä¸‹æœ€éœ¸é“çš„æŒæ³•ã€‚â€\n",
 //		(: random_move :),
 	}));
 //	set("inquiry", ([
-//		"ÇàÖñÁÖ" : "¶«±±Î÷±±¶«Î÷±±¡£\n",
-//		"Ø¤°ï" : "¶«±±Î÷±±¶«Î÷±±¡£\n",
-//		"°İÊ¦" : "Äã¿ÉÒÔÈ¥¶«³ÇÃÅµÄÎÒ°ï×Ü¶æ°İÂ³ÓĞ½Å¡£\n",
+//		"é’ç«¹æ—" : "ä¸œåŒ—è¥¿åŒ—ä¸œè¥¿åŒ—ã€‚\n",
+//		"ä¸å¸®" : "ä¸œåŒ—è¥¿åŒ—ä¸œè¥¿åŒ—ã€‚\n",
+//		"æ‹œå¸ˆ" : "ä½ å¯ä»¥å»ä¸œåŸé—¨çš„æˆ‘å¸®æ€»èˆµæ‹œé²æœ‰è„šã€‚\n",
 //	]));
 
 	set("qi", 1000);
@@ -46,17 +46,17 @@ void create()
 	set("score", 200000);
 	set("shen", 100000);
 	 
-	set_skill("force", 150);             // »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 150);    // »ìÌìÆø¹¦
-	set_skill("unarmed", 180);           // »ù±¾È­½Å
-	set_skill("xianglong-zhang", 180);   // ½µÁúÊ®°ËÕÆ
-	set_skill("dodge", 150);      	     // »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 150);        // åĞÒ£ÓÎ
-	set_skill("parry", 150);             // »ù±¾ÕĞ¼Ü
-	set_skill("staff", 150);             // »ù±¾¹÷ÕÈ
-	set_skill("dagou-bang", 150);        // ´ò¹·°ô·¨
-	set_skill("begging", 100);           // ½Ğ»¯¾ø»î
-	set_skill("checking", 100);          // µÀÌıÍ¾Ëµ
+	set_skill("force", 150);             // åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 150);    // æ··å¤©æ°”åŠŸ
+	set_skill("unarmed", 180);           // åŸºæœ¬æ‹³è„š
+	set_skill("xianglong-zhang", 180);   // é™é¾™åå…«æŒ
+	set_skill("dodge", 150);      	     // åŸºæœ¬èº²é—ª
+	set_skill("xiaoyaoyou", 150);        // é€é¥æ¸¸
+	set_skill("parry", 150);             // åŸºæœ¬æ‹›æ¶
+	set_skill("staff", 150);             // åŸºæœ¬æ£æ–
+	set_skill("dagou-bang", 150);        // æ‰“ç‹—æ£’æ³•
+	set_skill("begging", 100);           // å«åŒ–ç»æ´»
+	set_skill("checking", 100);          // é“å¬é€”è¯´
 	
 	map_skill("force", "huntian-qigong");
 	map_skill("unarmed", "xianglong-zhang");
@@ -64,7 +64,7 @@ void create()
 	map_skill("parry", "dagou-bang");
 	map_skill("staff", "dagou-bang");
 	
-	create_family("Ø¤°ï", 17, "°ïÖ÷");
+	create_family("ä¸å¸®", 17, "å¸®ä¸»");
 	setup();
 	
 	carry_object("/kungfu/class/gaibang/obj/yuzhu_zhang");

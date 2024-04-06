@@ -3,20 +3,20 @@
 inherit HEAD; 
 void create()
 {
-        string *flower_name=({ "ÌÒ½ğÄï","·çĞÅ×Ó","°×Í·ÎÌ","Ë®ÏÉ»¨"}) ;
+        string *flower_name=({ "æ¡ƒé‡‘å¨˜","é£ä¿¡å­","ç™½å¤´ç¿","æ°´ä»™èŠ±"}) ;
         set_name(flower_name[random(sizeof(flower_name))], ({"flower"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ñ¤ÀÃ¿ª·ÅµÄÏÊ»¨¡£\n");
-                set("unit", "¶ä");
+                set("long", "ç»šçƒ‚å¼€æ”¾çš„é²œèŠ±ã€‚\n");
+                set("unit", "æœµ");
                 set("value", 10);
                 set("material", "plant");
                 set("armor_prop/armor", 0);
                 set("armor_prop/personality", 1);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
                 set("female_only", 1);
                 
         }

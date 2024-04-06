@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С��");
+	set("short", "小村");
 	set("long", @LONG
-����С���ʯ��·�ϣ����Զ�������ʯ���ɵķ��ݡ������ﾲ���ĵģ�
-���������ˣ�ż������һ�������С� 
+走在小村的石板路上，两旁都是用青石砌成的房屋。村子里静悄悄的，
+看不到行人，偶尔传来一两声狗叫。 
 LONG
 	);
        set("outdoors", "wudujiao");

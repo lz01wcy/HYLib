@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ÅºÏãÇÅ");
+	set("short","è—•é¦™æ¡¥");
 	set("long",@LONG
-ÅºÏãÇÅ¾ÉÃû·¨º£ÇÅ£¬Î»ÓÚÁ«ÐÔËÂ¶«ÄÏ²à£¬¶«Î÷¿çÊÝÎ÷ºþ£¬Ö§Á÷ºþµÀ
-ÔÔÖÖºÉ»¨¡£¿ªÁ«»¨¹¡ÐÂºÓ£¬½¨Á«»¨ÇÅºó£¬ºþÉÏ»­ô³½Ô¹ýÁ«»¨ÇÅ£¬²»¸´¹ý
-·¨º£ÇÅ¡£
+è—•é¦™æ¡¥æ—§åæ³•æµ·æ¡¥ï¼Œä½äºŽèŽ²æ€§å¯ºä¸œå—ä¾§ï¼Œä¸œè¥¿è·¨ç˜¦è¥¿æ¹–ï¼Œæ”¯æµæ¹–é“
+æ ½ç§è·èŠ±ã€‚å¼€èŽ²èŠ±åŸ‚æ–°æ²³ï¼Œå»ºèŽ²èŠ±æ¡¥åŽï¼Œæ¹–ä¸Šç”»èˆ«çš†è¿‡èŽ²èŠ±æ¡¥ï¼Œä¸å¤è¿‡
+æ³•æµ·æ¡¥ã€‚
 LONG );
 	set("outdoors", "shouxihu");
 

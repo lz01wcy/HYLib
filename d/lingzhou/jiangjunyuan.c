@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "½«¾ü¸®´óÔº");
+	set("short", "å°†å†›åºœå¤§é™¢");
 	set("long", @LONG
-ÕâÀïÊÇ½«¾ü¸®µÄ´óÔº£¬µ±ÃæÒ»¶Â¿íÀ«µÄ°×ÓñÕÕ±Ú£¬ÉÏÊé¡°ÖÒĞÄ±¨¹ú¡±
-ËÄ¸ö´ó×Ö£¬Âä¿îÊÇµ±½ñÎ÷ÏÄ»ÊµÛÀîÔªê»¡£Ò»É«µÄÇà×©ÆÌµØ£¬ÓĞ¼¸¸öÆÍÒÛ
-ÕıÔÚÔºÖĞÈ÷É¨£¬ÄÏÃæÊÇÄÚÕ¬£¬Î÷ÃæÊÇÕÊ·¿£¬¶«ÃæÊÇ¸öĞ¡Ôº¡£
+è¿™é‡Œæ˜¯å°†å†›åºœçš„å¤§é™¢ï¼Œå½“é¢ä¸€å µå®½é˜”çš„ç™½ç‰ç…§å£ï¼Œä¸Šä¹¦â€œå¿ å¿ƒæŠ¥å›½â€
+å››ä¸ªå¤§å­—ï¼Œè½æ¬¾æ˜¯å½“ä»Šè¥¿å¤çš‡å¸æå…ƒæ˜Šã€‚ä¸€è‰²çš„é’ç –é“ºåœ°ï¼Œæœ‰å‡ ä¸ªä»†å½¹
+æ­£åœ¨é™¢ä¸­æ´’æ‰«ï¼Œå—é¢æ˜¯å†…å®…ï¼Œè¥¿é¢æ˜¯å¸æˆ¿ï¼Œä¸œé¢æ˜¯ä¸ªå°é™¢ã€‚
 LONG );
 	set("exits", ([
 		"east"  : __DIR__"xiaoyuan",
@@ -23,15 +23,15 @@ LONG );
 		"/d/city/npc/jiading" : 2,
 	]));
 	setup();
-	create_door("north" , "ÓÍÄ¾´óÃÅ", "south" , DOOR_CLOSED);
-//	create_door("south" , "¾íÁ±ÃÅ", "north" , DOOR_CLOSED);
+	create_door("north" , "æ²¹æœ¨å¤§é—¨", "south" , DOOR_CLOSED);
+//	create_door("south" , "å·å¸˜é—¨", "north" , DOOR_CLOSED);
 }
 
 int valid_leave(object me, string dir)
 {
         if (dir == "south" && 
             objectp(present("xiao wei", environment(me))))
-           return notify_fail("Ğ£Î¾µ²×¡ÁËÄãµÄÈ¥Â·£º´ó½«¾ü²»ÔÚ¸®ÉÏ£¡\n");
+           return notify_fail("æ ¡å°‰æŒ¡ä½äº†ä½ çš„å»è·¯ï¼šå¤§å°†å†›ä¸åœ¨åºœä¸Šï¼\n");
 
         return ::valid_leave(me, dir);
 }

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","��ѩɽɽ��");
+        set("short","大雪山山谷");
         set("long",@LONG
-ɽ�����ػ�ѩ�����ܶ����ͱڡ�ֻ������һ�����ڣ������ƺ���
-��ɽ����
+山谷里遍地积雪，四周都是峭壁。只北面有一个出口，东面似乎有
+个山洞。
 LONG );
         set("exits",([
                 "northdown" : __DIR__"wangyougu",

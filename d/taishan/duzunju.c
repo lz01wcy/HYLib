@@ -1,23 +1,23 @@
 // Room: /d/taishan/duzunju.c
 // Last Modified by Winder on Aug. 25 2001
-// Modified by Zeratul Jan 11 2001 ½­ºþÔÄÀúµÍÓÚ10000²»ÄÜ¼ûÃËÖ÷
+// Modified by Zeratul Jan 11 2001 æ±Ÿæ¹–é˜…åŽ†ä½ŽäºŽ10000ä¸èƒ½è§ç›Ÿä¸»
 
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-	set("short", "¶À×ð¾Ó");
+	set("short", "ç‹¬å°Šå±…");
 	set("long", @LONG
-ÕâÀïÊÇ´¦ÓÚá·¶¥ºóÉ½µÄÌìÏÂ´ó×ÚÊ¦¾ÓËù¡£ÇàÖñÔú¾ÍµÄ¾ÓËù£¬¶«Î÷Á½
-Ãæ¿ª×Å´°»§£¬´°Íâ»¹ÊÇÇàÂÌµÄÖñÁÖºÍÁÖ¼äÍ¸½øµÄ°×ÔÆ¡£±±ÃæÇ½ÉÏÊÇÒ»·ù
-ÖÐÌÃ£¬Í´¿ìÁÜÀìµØÈý¸ö´ó×Ö²ÝÊé£º[31;1m
-                            ´ó
-                            ×Ú
-                            Ê¦[0m
-    ´ó×ÚÊ¦ÔÚÕâÀï»á¼ûÌìÏÂµÄÓ¢ºÀ£¬Æ·ÆÀËûÃÇµÄÎä¹¦¡£Èç¹ûÄãÔ¸Òâ½ÓÊÜ
-Æ·ÆÀ£¬¾ÍÎÊÎÊ´ó×ÚÊ¦£¬¿´ËûÊÇ·ñÔ¸Òâ³öÊÖ°É¡£²»¹ýÒªÐ¡ÐÄ£¬ÉúËÀÓëÌìÉñ
-Î×Ê¦²»Ïà¸ÉµÄÅ¶¡£
+è¿™é‡Œæ˜¯å¤„äºŽå²±é¡¶åŽå±±çš„å¤©ä¸‹å¤§å®—å¸ˆå±…æ‰€ã€‚é’ç«¹æ‰Žå°±çš„å±…æ‰€ï¼Œä¸œè¥¿ä¸¤
+é¢å¼€ç€çª—æˆ·ï¼Œçª—å¤–è¿˜æ˜¯é’ç»¿çš„ç«¹æž—å’Œæž—é—´é€è¿›çš„ç™½äº‘ã€‚åŒ—é¢å¢™ä¸Šæ˜¯ä¸€å¹…
+ä¸­å ‚ï¼Œç—›å¿«æ·‹æ¼“åœ°ä¸‰ä¸ªå¤§å­—è‰ä¹¦ï¼š[31;1m
+                            å¤§
+                            å®—
+                            å¸ˆ[0m
+    å¤§å®—å¸ˆåœ¨è¿™é‡Œä¼šè§å¤©ä¸‹çš„è‹±è±ªï¼Œå“è¯„ä»–ä»¬çš„æ­¦åŠŸã€‚å¦‚æžœä½ æ„¿æ„æŽ¥å—
+å“è¯„ï¼Œå°±é—®é—®å¤§å®—å¸ˆï¼Œçœ‹ä»–æ˜¯å¦æ„¿æ„å‡ºæ‰‹å§ã€‚ä¸è¿‡è¦å°å¿ƒï¼Œç”Ÿæ­»ä¸Žå¤©ç¥ž
+å·«å¸ˆä¸ç›¸å¹²çš„å“¦ã€‚
 LONG );
 	set("exits", ([
 		"out" : __DIR__"fengchan",

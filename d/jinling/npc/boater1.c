@@ -6,8 +6,8 @@ void do_hua();
 
 void create()
 {
-	set_name("ÉÒ¹«", ({ "boater" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¢¢å…¬", ({ "boater" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 41);
 	set("chat_chance",15);
         set("chat_msg", ({

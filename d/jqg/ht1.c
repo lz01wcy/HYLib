@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ì¶ÖĞ");
+	set("short", "æ½­ä¸­");
 	set("long", @LONG
-ËÄÖÜÀ¶É­É­µÄ¶¼ÊÇĞş±ù£¬±ùÀäµÄÌ¶Ë®£¬ÈÃÈË¸Ğµ½Í¸¹ÇµÄº®Àä¡£
-Ô¶´¦ÓĞÒ»Ë¿µÄÁÁ¹â¡£
+å››å‘¨è“æ£®æ£®çš„éƒ½æ˜¯ç„å†°ï¼Œå†°å†·çš„æ½­æ°´ï¼Œè®©äººæ„Ÿåˆ°é€éª¨çš„å¯’å†·ã€‚
+è¿œå¤„æœ‰ä¸€ä¸çš„äº®å…‰ã€‚
 LONG
 	);
         setup();
@@ -26,9 +26,9 @@ int do_fu(string arg)
 
        if( !arg || arg == "" || arg !=  "up") return 0;
   
-        message_vision("$NÒ»¸ö¹·ÅÙ£¬¸¡ÁËÉÏÈ¥¡£\n", me);
+        message_vision("$Nä¸€ä¸ªç‹—åˆ¨ï¼Œæµ®äº†ä¸Šå»ã€‚\n", me);
        me->move(__DIR__"gd1");
-       tell_room(environment(me), me->name() + "ÊªÁÜÁÜµÄ´ÓÌ¶ÖĞ×êÁË³öÀ´¡£\n", ({ me }));
+       tell_room(environment(me), me->name() + "æ¹¿æ·‹æ·‹çš„ä»æ½­ä¸­é’»äº†å‡ºæ¥ã€‚\n", ({ me }));
        return 1;
        
 }
@@ -39,8 +39,8 @@ int do_qian(string arg)
        if (arg != "liang guang" ) return 0;
        if ( !arg ) return 0;
        if (!living(me)) return 0;
-       message_vision("$NÏò×ÅÁÁ¹âÓÎÁË¹ıÈ¥£¬Ô½Ç±Ô½Éî£¬¹ı²»¶àÊ±£¬¡°²¨¡±µÄÒ»Ïì£¬³å³öÁËË®Ãæ¡£\n", me);
+       message_vision("$Nå‘ç€äº®å…‰æ¸¸äº†è¿‡å»ï¼Œè¶Šæ½œè¶Šæ·±ï¼Œè¿‡ä¸å¤šæ—¶ï¼Œâ€œæ³¢â€çš„ä¸€å“ï¼Œå†²å‡ºäº†æ°´é¢ã€‚\n", me);
        me->move(__DIR__"gd2");
-       tell_room(environment(me), me->name() + "´ÓÌ¶Ë®ÖĞÃ°ÁË³öÀ´¡£\n", ({ me }));
+       tell_room(environment(me), me->name() + "ä»æ½­æ°´ä¸­å†’äº†å‡ºæ¥ã€‚\n", ({ me }));
        return 1;
 }

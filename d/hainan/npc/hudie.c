@@ -4,21 +4,21 @@ int *names = ({YEL,RED,GRN,CYN,HIB,WHT,HIG,});
 
 void create()
 {      
-        set_name(names[random(sizeof(names))]+"ºûµû"+NOR, ({ "hudie", "huahudie" }) );
-        set("race", "Ò°ÊŞ");
-	set("gender", "´ÆĞÔ");
+        set_name(names[random(sizeof(names))]+"è´è¶"+NOR, ({ "hudie", "huahudie" }) );
+        set("race", "é‡å…½");
+	set("gender", "é›Œæ€§");
         set("age", 5);
-	set("long", "Ò»Ö»Îå²ÊÃÀÀöµÄºûµû¡£\n");
+	set("long", "ä¸€åªäº”å½©ç¾ä¸½çš„è´è¶ã€‚\n");
         set("attitude", "friendly");
 	set("chat_chance", 30);
 	set("chat_msg", ({
 		(: this_object(), "random_move" :),
-		"ºûµûÔÚ»¨´ÔÖĞôæôæÆğÎè¡£\n",
+		"è´è¶åœ¨èŠ±ä¸›ä¸­ç¿©ç¿©èµ·èˆã€‚\n",
                          }));		
 
 	set("str", 5);
 	set("con", 20);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€" }) );
         set("verbs", ({ "bite"}) );
 
 	set_skill("dodge", 20);

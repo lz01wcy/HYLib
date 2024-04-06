@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name("°µÃÅÔ¿³×", ({"anmenkey"}));
+	set_name("æš—é—¨é’¥åŒ™", ({"anmenkey"}));
 	set("long",
-		"ÕâÊÇÒ»°Ñ½ğÔ¿³×¡£\n");
-	set("unit", "°Ñ");
+		"è¿™æ˜¯ä¸€æŠŠé‡‘é’¥åŒ™ã€‚\n");
+	set("unit", "æŠŠ");
 	set("weight", 10);
 	set("value", 10000);
-        set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+        set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 }
 

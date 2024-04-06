@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	       set_name("½ğÉß¶¾Òº", ({"jinshe duye" ,"jd"}));
+	       set_name("é‡‘è›‡æ¯’æ¶²", ({"jinshe duye" ,"jd"}));
 	
-		set("unit", "Æ¿");
-		set("long", "ÕâÊÇÒ»Æ¿¾ç¶¾µÄ½ğÉß¶¾Òº¡£\n");
+		set("unit", "ç“¶");
+		set("long", "è¿™æ˜¯ä¸€ç“¶å‰§æ¯’çš„é‡‘è›‡æ¯’æ¶²ã€‚\n");
 		set("value", 100);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(100);
 
 	
@@ -29,6 +29,6 @@ int do_eat(string arg)
     object me = this_player();
     if (arg != "jinshe duye"&& arg !="jd")
     return 0;
-    tell_object(me,  "ÄãÏëËÀ°¡£¬ÓÃsuicide±È½Ï¿ìÒ»µã¡£\n" );
+    tell_object(me,  "ä½ æƒ³æ­»å•Šï¼Œç”¨suicideæ¯”è¾ƒå¿«ä¸€ç‚¹ã€‚\n" );
     return 1;
 }

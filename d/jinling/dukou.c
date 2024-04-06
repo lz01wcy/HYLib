@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¤½­¶É¿Ú");
+        set("short", "é•¿æ±Ÿæ¸¡å£");
         set("long", @LONG
-ÕâÀïÊÇ³¤½­¶É¿Ú£¬ÁªÏµ×ÅÁ½´ó³ÇÊĞµÄ½»Í¨¡£À´ÍùÉÌ··ÂçÒï²»¾ø£¬ºÃÒ»¸ö
-·±»ªËùÔÚ¡£ÔÚÕâÀïÄã¿ÉÒÔ×ø´¬È¥xxx¡£¸½½üµÄÅ©·ò¾­³£°ÑËûÃÇÖÖµÄÊß²ËÔËµ½
-ÄÇÀïÂô£¬½­ÉÏÓĞ¼¸Ö»Ğ¡ÖÛ£¬Ö»ÒªÄãº°(yell)Ò»Éù¡°¹ı½­¡±£¬ËûÃÇ¾Í»á°Ñ´¬
-Ê»½ü¡£
+è¿™é‡Œæ˜¯é•¿æ±Ÿæ¸¡å£ï¼Œè”ç³»ç€ä¸¤å¤§åŸå¸‚çš„äº¤é€šã€‚æ¥å¾€å•†è´©ç»œç»ä¸ç»ï¼Œå¥½ä¸€ä¸ª
+ç¹åæ‰€åœ¨ã€‚åœ¨è¿™é‡Œä½ å¯ä»¥åèˆ¹å»xxxã€‚é™„è¿‘çš„å†œå¤«ç»å¸¸æŠŠä»–ä»¬ç§çš„è”¬èœè¿åˆ°
+é‚£é‡Œå–ï¼Œæ±Ÿä¸Šæœ‰å‡ åªå°èˆŸï¼Œåªè¦ä½ å–Š(yell)ä¸€å£°â€œè¿‡æ±Ÿâ€ï¼Œä»–ä»¬å°±ä¼šæŠŠèˆ¹
+é©¶è¿‘ã€‚
 LONG
         );
         set("exits", ([/* sizeof() == 4 */
@@ -30,17 +30,17 @@ void init()
 int do_jiaochuan(string arg)
 {
 	object ob,ob1;
-	if(!arg || (arg!="¹ı½­" && arg!="boat" )) {
+	if(!arg || (arg!="è¿‡æ±Ÿ" && arg!="boat" )) {
 	     if(!arg) arg = " ? ? ? ";	
-	     message_vision("$N¶Ô×Å½­Ãæº°µÀ: " + arg + "......\n", this_player());
+	     message_vision("$Nå¯¹ç€æ±Ÿé¢å–Šé“: " + arg + "......\n", this_player());
 	     return 1;	
 	}
-	message_vision("$N¶Ô×Å½­Ãæº°µÀ: ´¬..¼Ò...¶ÉÎÒ¹ı½­...\n", this_player());
+	message_vision("$Nå¯¹ç€æ±Ÿé¢å–Šé“: èˆ¹..å®¶...æ¸¡æˆ‘è¿‡æ±Ÿ...\n", this_player());
 	if( query("exits/enter") )
-		return notify_fail("´¬ÒÑ¾­ÔÚÕâ¶ùÁË, Äã¿ÉÒÔÉÏ´¬(enter).\n");
+		return notify_fail("èˆ¹å·²ç»åœ¨è¿™å„¿äº†, ä½ å¯ä»¥ä¸Šèˆ¹(enter).\n");
        set("exits/enter",__DIR__"boat");
-	message_vision("´¬¼Ò¶Ô$NÓ¦µÀ£ºÀ´...À².....\n", this_player());
-	write("´¬À´ÁË£¬Äã¿ÉÒÔÉÏ´¬(enter).\n");
+	message_vision("èˆ¹å®¶å¯¹$Nåº”é“ï¼šæ¥...å•¦.....\n", this_player());
+	write("èˆ¹æ¥äº†ï¼Œä½ å¯ä»¥ä¸Šèˆ¹(enter).\n");
 	if( ob = find_object(__DIR__"boat")) ob->set("exits/out",__DIR__"jiangbei");
 	call_out("kaichuan_nn",10);
 	call_out("daoan_nn",20);
@@ -51,9 +51,9 @@ void kaichuan_nn()
 	object ob;
 	if( ob = find_object(__DIR__"boat")) {
                 ob->delete("exits/out");
-                message("vision", "´¬·òÊÕÆğÁËÌø°å£¬°Ñ´¬»º»ºÊ»³ö½­ĞÄ¡£\n",ob );
+                message("vision", "èˆ¹å¤«æ”¶èµ·äº†è·³æ¿ï¼ŒæŠŠèˆ¹ç¼“ç¼“é©¶å‡ºæ±Ÿå¿ƒã€‚\n",ob );
 	}
-       message("vision", "´¬·òÊÕÆğÁËÌø°å£¬°Ñ´¬»º»ºÊ»³ö½­ĞÄ¡£\n",this_object());
+       message("vision", "èˆ¹å¤«æ”¶èµ·äº†è·³æ¿ï¼ŒæŠŠèˆ¹ç¼“ç¼“é©¶å‡ºæ±Ÿå¿ƒã€‚\n",this_object());
 	delete("exits/enter");
 	return;	
 }
@@ -62,7 +62,7 @@ void daoan_nn()
 	object ob;
 	if( ob = find_object(__DIR__"boat")) {
                 ob->set("exits/out",__DIR__"jiangbei");
-                message("vision", "´¬·ò·ÅÏÂÌø°å£¬´óÉù½ĞµÀ£º¡°´¬µ½°¶À²£¡¿Í¹ÙÇëÉÏ°¶¡£\n",ob );
+                message("vision", "èˆ¹å¤«æ”¾ä¸‹è·³æ¿ï¼Œå¤§å£°å«é“ï¼šâ€œèˆ¹åˆ°å²¸å•¦ï¼å®¢å®˜è¯·ä¸Šå²¸ã€‚\n",ob );
 	}
 	return;	
 }

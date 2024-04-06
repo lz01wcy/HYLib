@@ -4,20 +4,20 @@ inherit STAFF;
 
 void create()
 {
-	set_name("Ë®»ğ°ô", ({ "shuihuo bang","bang","staff" }) );
+	set_name("æ°´ç«æ£’", ({ "shuihuo bang","bang","staff" }) );
 	set_weight(6000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long","ÕâÊÇÒ»°ÑÑÃÒÛÓÃµÄË®»ğ°ô¡£\n");
+		set("unit", "æŠŠ");
+		set("long","è¿™æ˜¯ä¸€æŠŠè¡™å½¹ç”¨çš„æ°´ç«æ£’ã€‚\n");
 		set("value",60);
-		set("material", "Ä¾Í·");
+		set("material", "æœ¨å¤´");
 	}
 	init_staff(120);
 
-	set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-	set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·Åµ½µØÉÏ¡£\n");
+	set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+	set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾åˆ°åœ°ä¸Šã€‚\n");
 
 	setup();
 }

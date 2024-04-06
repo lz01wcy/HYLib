@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ƺ");
+        set("short", "青草坪");
         set("long", @LONG
-�����������е�һƬ�Ƚϴ�Ŀյأ���Ի�����ƺ����Ϊ��������֮��
-��������ƽʱ���������������ǲ�֪��Ϊʲô������ȴ�������˼����֡���
-������һ�����ˡ�
+这里是树林中的一片比较大的空地，名曰：青草坪。因为处于密林之中
+所以这里平时很少有人来，但是不知道为什么，这里却经常有人迹出现。你
+看，又一个来了。
 LONG );
 	set("exits", ([
 		"north" : __DIR__"xiaodao3",

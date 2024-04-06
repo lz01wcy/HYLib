@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌÚòÔÍ¤");
+        set("short", "è…¾è›Ÿäº­");
         set("long", @LONG
-ÕâÀïÊÇÒ»¸ö»¨Ô°ÖĞµÄĞ¡Í¤×Ó£¬µñÁº»­¶°£¬¹ÅÉ«¹ÅÏã¡£±ÚÉÏ¹Ò×ÅÒ»·ù¡¶ÉÙÅ®
-ÔÂÏÂÎè½£Í¼¡·(picture)¡£
+è¿™é‡Œæ˜¯ä¸€ä¸ªèŠ±å›­ä¸­çš„å°äº­å­ï¼Œé›•æ¢ç”»æ ‹ï¼Œå¤è‰²å¤é¦™ã€‚å£ä¸ŠæŒ‚ç€ä¸€å¹…ã€Šå°‘å¥³
+æœˆä¸‹èˆå‰‘å›¾ã€‹(picture)ã€‚
 LONG
         );
 //     set("outdoors", "wudujiao");
@@ -22,7 +22,7 @@ LONG
 //                "/d/npc/guojing": 1,
         ]));
        set("item_desc",([
-         "picture":"Ö»¼û»­ÖĞÉÙÅ®ÊÖ³Ö¸Ö¹³£¬º¬Ğ¦¶øÁ¢¡£»Ğã±¼äÄãËÆºõ¾õµÃÓĞÎŞÊıµÀ½£ÆøÆËÃæ¶øÀ´¡£\nÕâÀïÃæËÆºõÒşº¬×ÅÄ³ÖÖ°ÂÃØ£¬Äã¿ÉÒÔÕÕ×Å»­ÖĞµÄ×ËÊÆ±È»®(bihua)Ò»ÏÂ¿´¿´\n\n",
+         "picture":"åªè§ç”»ä¸­å°‘å¥³æ‰‹æŒé’¢é’©ï¼Œå«ç¬‘è€Œç«‹ã€‚ææƒšé—´ä½ ä¼¼ä¹è§‰å¾—æœ‰æ— æ•°é“å‰‘æ°”æ‰‘é¢è€Œæ¥ã€‚\nè¿™é‡Œé¢ä¼¼ä¹éšå«ç€æŸç§å¥¥ç§˜ï¼Œä½ å¯ä»¥ç…§ç€ç”»ä¸­çš„å§¿åŠ¿æ¯”åˆ’(bihua)ä¸€ä¸‹çœ‹çœ‹\n\n",
 ]));
         setup();
 //      replace_program(ROOM);
@@ -41,33 +41,33 @@ int do_bihua(string arg)
         int exp=(int)me->query("combat_exp");
  
   if( !arg || arg != "picture")
-    return notify_fail("ÄãÂÒ±È»®Ê²Ã´£¿\n");
+    return notify_fail("ä½ ä¹±æ¯”åˆ’ä»€ä¹ˆï¼Ÿ\n");
   if( me->query("qi") < (int)(me->query("max_qi")/5))
-    return notify_fail("ÔÙÁ·ÏÂÈ¥Äã»áÀÛËÀµÄ£¡\n");
+    return notify_fail("å†ç»ƒä¸‹å»ä½ ä¼šç´¯æ­»çš„ï¼\n");
   if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("²»ÄÃ¹³½£ÄãÂÒ±È»®Ê²Ã´£¿\n");
-  if (!((string)me->query("family/family_name")=="Îå¶¾½Ì"))
+                return notify_fail("ä¸æ‹¿é’©å‰‘ä½ ä¹±æ¯”åˆ’ä»€ä¹ˆï¼Ÿ\n");
+  if (!((string)me->query("family/family_name")=="äº”æ¯’æ•™"))
     {
-      message_vision("$NÕÕ×Å±ÚÉÏµÄ»­Á·ÁË¼¸´Î£¬ÀÛÁËÒ»Éí³ôº¹¡£\n", me);
+      message_vision("$Nç…§ç€å£ä¸Šçš„ç”»ç»ƒäº†å‡ æ¬¡ï¼Œç´¯äº†ä¸€èº«è‡­æ±—ã€‚\n", me);
     }
   else
     {
-      message_vision("$NÊÖÄí½£¾÷£¬ÒÀÕÕ»­ÉÏÉÙÅ®µÄ×ËÊÆÁ·ÁËÒ»ÌË¡£\n", me);
+      message_vision("$Næ‰‹æ»å‰‘è¯€ï¼Œä¾ç…§ç”»ä¸Šå°‘å¥³çš„å§¿åŠ¿ç»ƒäº†ä¸€è¶Ÿã€‚\n", me);
       if (exp*10 <= (swordskill*swordskill*swordskill))
         {
           me->receive_damage("qi", 30);
-          return notify_fail("ÄãµÄ¾­Ñé²»¹»£¬ÒÑ¾­²»ÄÜ´Ó»­ÖĞÁìÎòµ½Ê²Ã´ÁË¡£\n");
+          return notify_fail("ä½ çš„ç»éªŒä¸å¤Ÿï¼Œå·²ç»ä¸èƒ½ä»ç”»ä¸­é¢†æ‚Ÿåˆ°ä»€ä¹ˆäº†ã€‚\n");
         }
       if (swordskill<(int)me->query_skill("literate",1))
         {
           me->improve_skill("sword", (random((int)(me->query("int")
                           +me->query_skill("literate"))))*2);
-          tell_object(me, "Äã´ÓÖĞÁìÎò³öÒ»Ğ©»ù±¾½£·¨·½ÃæµÄÇÏÃÅ¡£\n");
+          tell_object(me, "ä½ ä»ä¸­é¢†æ‚Ÿå‡ºä¸€äº›åŸºæœ¬å‰‘æ³•æ–¹é¢çš„çªé—¨ã€‚\n");
         }
       else
         {
-          tell_object(me, "Äã·ÑÁË°ëÌì¾¢£¬¿ÉÊÇÊ²Ã´Ò²Ã»ÓĞÑ§µ½¡£\n");
+          tell_object(me, "ä½ è´¹äº†åŠå¤©åŠ²ï¼Œå¯æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æœ‰å­¦åˆ°ã€‚\n");
         }
     }
   me->receive_damage("qi", 30);

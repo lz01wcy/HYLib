@@ -1,4 +1,4 @@
-// xuelian.c Ñ©Á«
+// xuelian.c é›ªè²
 
 inherit ITEM;
 
@@ -10,12 +10,12 @@ void init()
 
 void create()
 {
-        set_name("Ñ©Á«", ({"xue lian", "lian"}));
+        set_name("é›ªè²", ({"xue lian", "lian"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Öê");
-        set("long","ÕâÊÇÒ»Öê±ùÉ½Ñ©Á«\n");
+		set("unit", "æ ª");
+        set("long","è¿™æ˜¯ä¸€æ ªå†°å±±é›ªè²\n");
 		set("value", 10000);
 	}
 	setup();
@@ -24,12 +24,12 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("eff_qi", 200);
 //	this_player()->add("max_qi", 100);
 
-        message_vision("$N·şÏÂÒ»ÖêÑ©Á«,¶Ù¾õ¾«Á¦°Ù±¶!\n", this_player());
+        message_vision("$Næœä¸‹ä¸€æ ªé›ªè²,é¡¿è§‰ç²¾åŠ›ç™¾å€!\n", this_player());
 	destruct(this_object());
 	return 1;
 }

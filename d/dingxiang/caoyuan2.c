@@ -1,12 +1,12 @@
-// caoyuan1.c ��ԭ
+// caoyuan1.c 草原
 inherit ROOM;
 void create()
 {
-        set("short", "��ԭ");
+        set("short", "草原");
         set("long", @LONG
-���߽���������಻���Ĵ��ԭ�������Ǵ�����ݣ�������Ļ�
-�治���ߣ�������ƥ�����������ǵĺ����⡣���ߺ����߶��кö�����
-�������Կ���ɳĮ�ı�Ե��
+你走进了这遍绵绵不绝的大草原，脚下是寸厚的青草，软绵绵的还
+真不好走，看来买匹马来代步到是的好主意。北边和西边都有好多帐篷，
+往东可以看见沙漠的边缘。
 LONG);
         set("exits", ([
             "southeast" : __DIR__"caoyuan",

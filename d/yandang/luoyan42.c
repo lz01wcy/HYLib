@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "入门室");
 	set("long", @LONG
-��������ׯ�е����书���г���ʱ�����д�ĵط�,�������ӵĵ�
-��Ҳ��Ը�һЩ.
+入门室是庄中弟子武功稍有长进时炼功切措的地方,陪练弟子的等
+级也相对高一些.
 LONG
 	);
 	set("no_clean_up", 0);

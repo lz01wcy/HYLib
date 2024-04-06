@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ËÕÍ¯",({"oscar"}));
-	set("nickname", HIY"¹Ôº¢×Ó"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("è‹ç«¥",({"oscar"}));
+	set("nickname", HIY"ä¹–å­©å­"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("long", 
-		"Ëû¾ÍÊÇ¹Ôº¢×Óoscar¡£\n");
+		"ä»–å°±æ˜¯ä¹–å­©å­oscarã€‚\n");
 
 	setup();
 	

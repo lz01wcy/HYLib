@@ -1,4 +1,4 @@
-// shouwu.c ºÎÊ×ÎÚ
+// shouwu.c ä½•é¦–ä¹Œ
 // By Lgg,1998.10
 
 inherit ITEM;
@@ -11,10 +11,10 @@ void init()
 
 void create()
 {
-        set_name(WHT"ºÎÊ×ÎÚ"NOR, ({"shouwu"}));
+        set_name(WHT"ä½•é¦–ä¹Œ"NOR, ({"shouwu"}));
         set_weight(800);
-        set("unit", "Ö§");
-        set("long", "ÕâÊÇÒ»Ö§ÒÑ³ÉÈËÐÎµÄºÎÊ×ÎÚ£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "æ”¯");
+        set("long", "è¿™æ˜¯ä¸€æ”¯å·²æˆäººå½¢çš„ä½•é¦–ä¹Œï¼Œçœ‹æ¥å¯ä»¥å…¥è¯ã€‚\n");
         setup();
 }
 
@@ -22,16 +22,16 @@ int do_eat(string arg)
 {
         object me=this_player();
 
-        if (!(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="shouwu")
         {
                 if ((int)me->query("max_jingli")<=200) {
-                        write("Äã³ÔÏÂÁËÒ»Ö§ºÎÊ×ÎÚ£¬Ö»¾õµÃ¾«Éñ½¡ÍúÖ®¼«¡£\n");
+                        write("ä½ åƒä¸‹äº†ä¸€æ”¯ä½•é¦–ä¹Œï¼Œåªè§‰å¾—ç²¾ç¥žå¥æ—ºä¹‹æžã€‚\n");
                         me->add("max_jingli",2);
                         me->add("jingli",2);
                 }
                 else {
-                        write("Äã³ÔÏÂÁËÒ»Ö§ºÎÊ×ÎÚ£¬µ«ÊÇºÃÏóÃ»Ê²Ã´ÓÃ¡£\n");
+                        write("ä½ åƒä¸‹äº†ä¸€æ”¯ä½•é¦–ä¹Œï¼Œä½†æ˜¯å¥½è±¡æ²¡ä»€ä¹ˆç”¨ã€‚\n");
                 }
                 destruct(this_object());
                 me->unconcious();

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������ǰ");
+	set("short", "禅智寺门前");
 	set("long", @LONG
-��������������ǰ��һ��յأ��������������ֵ���ҩ�ԣ�������
-ֵ��ҩ����֮ʱ��ԶԶ���ܿ�������һƬ�������´���һ������ҩ��
-����򱱿��Կ��������߸ߵĵ��ţ����ϱ��ǲݺ��Ͻ֡�
+这里是禅智寺门前的一块空地，两边是寺庙里种的芍药圃，现在正
+值芍药开放之时，远远就能看到火红的一片，东边新搭起一座赏芍药的
+花棚。向北可以看到寺庙高高的殿门，东南边是草河南街。
 LONG );
 	set("outdoors", "yangzhouw");
 	set("no_clean_up", 0);

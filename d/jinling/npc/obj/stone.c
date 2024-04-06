@@ -6,13 +6,13 @@
 inherit SHIELD;
 
 string* titles = ({
-	HIY "�껨ʯ" NOR,
-	HIR "�껨ʯ" NOR,
-	HIG "�껨ʯ" NOR,
-	HIB "�껨ʯ" NOR,
-	HIM "�껨ʯ" NOR,
-	HIC "�껨ʯ" NOR,
-	HIW "�껨ʯ" NOR,
+	HIY "雨花石" NOR,
+	HIR "雨花石" NOR,
+	HIG "雨花石" NOR,
+	HIB "雨花石" NOR,
+	HIM "雨花石" NOR,
+	HIC "雨花石" NOR,
+	HIW "雨花石" NOR,
 });
 
 void create()
@@ -24,8 +24,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "����һ���������껨ʯ��\n");
-		set("unit", "��");
+		set("long", "这是一块美丽的雨花石。\n");
+		set("unit", "块");
 		set("value", 1000);
 		set("material", "stone");
 		set("armor_prop/armor", 1);

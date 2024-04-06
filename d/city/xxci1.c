@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����������Ҳ�");
+	set("short", "先贤祠－玩家部");
 	set("long", @LONG
-�����Ǽ���ܳ���ҵĵط�����������������������ͻ���ħͷ��
-������߳��һʱ��̧ͷһ�ź��ң������߸���������Ľ��֣�
-����˭�˲�ʶ��
-ע�����������Ⱥ󡣰���ĸ˳��
+这里是纪念杰出玩家的地方。供奉在这里的无论是侠客还是魔头，
+都曾经叱诧一时。抬头一张横匾，上书七个闪闪发光的金字：
+天下谁人不识君
+注：排名不分先后。按字母顺序。
 LONG );
 	set("exits", ([ /* sizeof() == 2 */
 		"up" : __DIR__"xxci2",
@@ -31,7 +31,7 @@ LONG );
 		"/d/npc/icom" : 1,
 	]));
 
-	create_door("south","ľ��","north",DOOR_CLOSED); 	
+	create_door("south","木门","north",DOOR_CLOSED); 	
 	setup();
 	replace_program(ROOM);
 }

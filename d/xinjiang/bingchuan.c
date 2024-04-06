@@ -2,21 +2,21 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����");
+        set("short", "冰川");
         set("long", @LONG
-��һ�ε��������һ����������������ģ������������������Ҳ
-�����⡣�޴��ޱȵı������滷ɽ����Ϊ��֧����Ϊ��������Χ��ɽѩ
-ӳ�������͸��˵�����Ĺ��졣
+第一次到这里的人一定不敢相信这是真的，就连当今的武林盟主也
+不例外。巨大无比的冰川三面环山，分为两支，形为冰斗，周围的山雪
+映入冰川，透着说不出的怪异。
 LONG
         );
         set("exits", ([ 
   "north" : __DIR__"baiyang",
 ]));
         set("item_desc", ([
-                "����": "
-��Χ�ű��������ֿ������ֱ������ƺ����ŹŹ֣����������룩������\n",
+                "冰川": "
+你围着冰川看了又看，发现冰川里似乎有着古怪！击（ｂｒｅａｋ）开它！\n",
                 "ice": "
-��Χ�ű��������ֿ������ֱ������ƺ����ŹŹ֣����������룩������\n",
+你围着冰川看了又看，发现冰川里似乎有着古怪！击（ｂｒｅａｋ）开它！\n",
         ]) );
         set("frozen",10);
         //set("no_pk",1);
@@ -44,20 +44,20 @@ int do_pour(string arg)
         if(!con->query("liquid"))
         return 0;
         if(!con->query("liquid/remaining"))
-        return notify_fail( con->name() + "�ǿյġ�\n");
+        return notify_fail( con->name() + "是空的。\n");
         con->add("liquid/remaining", -1);
-        message_vision("$N����" + con->name() + "����һЩ" +
-        con->query("liquid/name")  + "�ں����ϡ�\n",me);
-        if(con->query("liquid/name") == "��ˮ")
-        tell_object(me,"�����ոջ�����һ������ֶ����ˣ���\n");
-        if(con->query("liquid/name") == "��ˮ")
+        message_vision("$N拿起" + con->name() + "倒了一些" +
+        con->query("liquid/name")  + "在寒冰上。\n",me);
+        if(con->query("liquid/name") == "热水")
+        tell_object(me,"寒冰刚刚化开了一点儿就又冻上了！！\n");
+        if(con->query("liquid/name") == "盐水")
         {
-        tell_object(me,"��ֵúܣ�����һ����ˮ�Ϳ�ʼ�ⶳ�ˣ���\n");
+        tell_object(me,"奇怪得很，寒冰一遇盐水就开始解冻了！！\n");
         add("frozen",-1);
         }
         if( query("frozen") <= 0 )
         {
-        tell_object(me,"�������ڻ�����һ��С��������\n");
+        tell_object(me,"寒冰终于化开了一个小洞．．．\n");
         if(!query("exits/southwest"))
                 set("exits/southwest",__DIR__"gela");
         call_out("close_path",10);
@@ -68,7 +68,7 @@ void close_path()
 {
         if( !query("exits/southwest") ) return;
         message("vision",
-"Ʈ������ˮ��գ�ۼ䶳�ɱ��飬�����ط�ס�˶��ڣ���\n",
+"飘过来的水气眨眼间冻成冰珠，渐渐地封住了洞口．．\n",
                 this_object() );
                 delete("exits/southwest");
                 set("frozen",30+random(5));
@@ -78,7 +78,7 @@ int do_break()
         object me;
         me = this_player();
         if(me->query("force") < 50)
-   return notify_fail("������������ˣ�\n");
+   return notify_fail("你的内力不够了！\n");
         me->add("force",-50);
-        return notify_fail("�����һ�ƣ����صػ��ڱ����ϣ�ɲ�Ǽ��м��ɣ������ϵ��Ѻ۸����ˣ�\n"); 
+        return notify_fail("你飞起一掌，重重地击在冰川上！刹那间冰屑横飞，冰川上的裂痕更深了！\n"); 
 }     

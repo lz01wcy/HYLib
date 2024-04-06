@@ -1,4 +1,4 @@
-//ÃÜ¶´ÄÚ 
+//å¯†æ´å†… 
 // by steel 
 // change by wind
 #include "ansi.h"
@@ -7,10 +7,10 @@ inherit ROOM;
 void create()
 {
         object gold;
-        set("short", "ÄÚ¶´");
+        set("short", "å†…æ´");
         set("long", @LONG
-        ÕâÀï¾ÍÊÇ¶Ñ·ÅÌìÏÂÃÜ±¦µÄÃÜ¶´ÁË!!¿ìÄÃ°É!    
-¶´¶¥¿ÌµÄÓĞ×Ö.(zi)
+        è¿™é‡Œå°±æ˜¯å †æ”¾å¤©ä¸‹å¯†å®çš„å¯†æ´äº†!!å¿«æ‹¿å§!    
+æ´é¡¶åˆ»çš„æœ‰å­—.(zi)
 LONG
         );
 set("valid_startroom", 1);
@@ -21,10 +21,10 @@ set("no_quit",1);
                 ]));
     set("item_desc",([
                 "zi" : HIR "
-                   ÈË     Äñ
-                   Îª     Îª 
-                   ²Æ     Ê³
-                   ËÀ     Íö 
+                   äºº     é¸Ÿ
+                   ä¸º     ä¸º 
+                   è´¢     é£Ÿ
+                   æ­»     äº¡ 
                    \n\n"NOR,
         ]));   
 

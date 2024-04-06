@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "Áù×æµî");
+	set("short", "å…­ç¥–æ®¿");
 	set("long", @LONG
-ÕâÀïÊÇ¹©·îÉÙÁÖÁù×æµÄµØ·½¡£ÕýÃæÊÇ¹ÛÒô£¬ÎÄÊâ£¬ÆÐÏÍ£¬µØ²Ø£¬´ó
-ÊÆÖÁµÈÆÐÈøµÄÓñµñÏñ¡£Á½É½°²·Å×Å³õ×æ´ïÄ¦£¬¶þ×æ»Ý¿É£¬Èý×æÉ®è²£¬ËÄ
-×æµÀÐÅ£¬Îå×æºëÈÌ£¬Áù×æ»ÛÄÜµÄËÜÏñ¡£ 
+è¿™é‡Œæ˜¯ä¾›å¥‰å°‘æž—å…­ç¥–çš„åœ°æ–¹ã€‚æ­£é¢æ˜¯è§‚éŸ³ï¼Œæ–‡æ®Šï¼Œè©è´¤ï¼Œåœ°è—ï¼Œå¤§
+åŠ¿è‡³ç­‰è©è¨çš„çŽ‰é›•åƒã€‚ä¸¤å±±å®‰æ”¾ç€åˆç¥–è¾¾æ‘©ï¼ŒäºŒç¥–æƒ å¯ï¼Œä¸‰ç¥–åƒ§ç’¨ï¼Œå››
+ç¥–é“ä¿¡ï¼Œäº”ç¥–å¼˜å¿ï¼Œå…­ç¥–æ…§èƒ½çš„å¡‘åƒã€‚ 
 LONG );
 	set("exits", ([
 		"east" : __DIR__"pingtai",

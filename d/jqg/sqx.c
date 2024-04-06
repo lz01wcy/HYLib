@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÈıÇåĞù");
+	set("short", "ä¸‰æ¸…è½©");
 	set("long", @LONG
-ÕâÀïÊÇ¾øÇé¹È¹ÈÖ÷»á¿ÍµÄµØ·½£¬ĞùÄÚÇ½±ÚÉÏ¹ÒÁËĞí¶àÊé·¨
-Í¼»­£¬ÃÅ´°½Ô¸¡µñÎÆÊÎ£¬ËÄÖÜÊÇ»ØÀÈ¡£
+è¿™é‡Œæ˜¯ç»æƒ…è°·è°·ä¸»ä¼šå®¢çš„åœ°æ–¹ï¼Œè½©å†…å¢™å£ä¸ŠæŒ‚äº†è®¸å¤šä¹¦æ³•
+å›¾ç”»ï¼Œé—¨çª—çš†æµ®é›•çº¹é¥°ï¼Œå››å‘¨æ˜¯å›å»Šã€‚
 LONG
 	);
 
@@ -31,6 +31,6 @@ int valid_leave(object me, string dir)
           if (!me->query("jqg_pass")&&
           present("gongsun zhi", environment(me)) &&
 	  (dir =="south" || dir =="north" || dir=="southeast"))
-          return notify_fail("¹«ËïÖ¹Å­³âµ½£¬ÄãÒÔÎªÄãÊÇĞ¡ÁúÅ®°¡£¬ÔÚÎÒ¾øÇé¹ÈÀïÂÒÅÜ£¿£¡\n");
+          return notify_fail("å…¬å­™æ­¢æ€’æ–¥åˆ°ï¼Œä½ ä»¥ä¸ºä½ æ˜¯å°é¾™å¥³å•Šï¼Œåœ¨æˆ‘ç»æƒ…è°·é‡Œä¹±è·‘ï¼Ÿï¼\n");
           return ::valid_leave(me, dir);
 }

@@ -1,14 +1,14 @@
 // baling/edao1
-// Room in ����
+// Room in 巴陵
 inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "渝中县");
 	set("long", @LONG
-  �������꽭���㴦�������أ����滷ˮ��һ��ͨ½�����ư뵺����
-�����س�����֮�ף���Ϊ�������¾���ó�׵����ģ��������λ��Ҳ
-�Ǳ��ұ���֮�ء�
+  长江嘉陵江交汇处的渝中县，三面环水，一面通陆，形似半岛，故
+渝中县成五县之首，成为该区军事经济贸易的中心，因其地理位置也
+是兵家必争之地。
 LONG
 	);
 

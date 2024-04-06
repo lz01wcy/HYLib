@@ -1,18 +1,18 @@
-// lan.c ÀñÀº
+// lan.c ç¤¼ç¯®
 
 inherit ITEM;
 #include <ansi.h> 
 
 void create()
 {
-        set_name(HIY"ÀñÀº" NOR, ({ "li lan", "lan" }));
+        set_name(HIY"ç¤¼ç¯®" NOR, ({ "li lan", "lan" }));
         set_weight(500);
         set_max_encumbrance(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»Ö»×°ÀñÎïµÄÖñÀº×Ó£¬Ï¸Ãï¾«ÖÆ¶ø³É£¬ÊÖÒÕ¿ÉÕæ²»´í¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "ä¸€åªè£…ç¤¼ç‰©çš„ç«¹ç¯®å­ï¼Œç»†è”‘ç²¾åˆ¶è€Œæˆï¼Œæ‰‹è‰ºå¯çœŸä¸é”™ã€‚\n");
                 set("value", 1000);
         }
 }

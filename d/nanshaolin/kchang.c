@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ճ�");
+	set("short", "空场");
 	set("long", @LONG
-���Ƿ��ú����һƬ�ճ������������µ���󲿷֡���Ϊ����ش�
-ƫƧ�����������صأ�����ƽ��������ɮ�������������ǧ����
-���ǰ��µ�����ǵزص
+这是法堂后面的一片空场，亦是少林寺的最后部分。因为这里地处
+偏僻，亦是寺中重地，所以平常很少有僧人来这里。北面是千佛殿，东
+面是白衣殿，西面是地藏殿。
 LONG );
 	set("exits", ([
 		"west"  : __DIR__"dzdian",

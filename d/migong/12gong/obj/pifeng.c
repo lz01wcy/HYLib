@@ -6,18 +6,18 @@ inherit SURCOAT;
 
 void create()
 {
-  set_name(HIM"Ê¥ÓğÅû·ç"NOR, ({"shengyu pifeng", "pifeng", "cloth" }));
+  set_name(HIM"åœ£ç¾½æŠ«é£"NOR, ({"shengyu pifeng", "pifeng", "cloth" }));
   set_weight(4500);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»¼ş¼¯ÌìµØÖ®ÁéÆøËùÔì¾ÍµÄÅû·ç¡£\n");
+    set("long", "ä¸€ä»¶é›†å¤©åœ°ä¹‹çµæ°”æ‰€é€ å°±çš„æŠ«é£ã€‚\n");
     set("no_sell", 1);
     set("no_drop", 1);
     set("no_put", 1);
     set("material", "crimsonsteel");
-    set("unit", "¼ş");
+    set("unit", "ä»¶");
     set("value", 1000);
     set("armor_prop/armor", 100);
     set("armor_prop/dodge", 50);

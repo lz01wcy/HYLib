@@ -1,13 +1,13 @@
-// music   yangzhou's µêĞ¡¶ş
+// music   yangzhou's åº—å°äºŒ
 
 inherit NPC;
 void create()
 {
-	set_name("Ğ¡É³ÃÖ",({"xiao shami","xiao","shami"}));
-	set("gender", "ÄĞĞÔ" );
+	set_name("å°æ²™å¼¥",({"xiao shami","xiao","shami"}));
+	set("gender", "ç”·æ€§" );
 	set("age",10);
 	set("long",
-	"Í·Ã°ÁÁ¹âµÄ´òÔÓĞ¡ºÍÉĞ¡£\n");
+	"å¤´å†’äº®å…‰çš„æ‰“æ‚å°å’Œå°šã€‚\n");
 	set("mingwang",1);
 	set("combat_exp",150);
 	set("attitude", "friendly");
@@ -32,10 +32,10 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-	say("Ğ¡É³ÃÖºÏÕÆ:°¢~ÃÜ~¶¹~¸¯¡£\n");
+	say("å°æ²™å¼¥åˆæŒ:é˜¿~å¯†~è±†~è…ã€‚\n");
 			break;
 		case 1:
-	say("Ğ¡É³ÃÖÒ»Æ¨¹É×øµ½µØÉÏ:ÀÛËÀÁË.....¡£\n");
+	say("å°æ²™å¼¥ä¸€å±è‚¡ååˆ°åœ°ä¸Š:ç´¯æ­»äº†.....ã€‚\n");
 			break;
                            }
 }

@@ -4,16 +4,16 @@ inherit SWORD;
 
 void create()
 {
-	set_name("ÌÒÊ÷Ö¦", ({ "tao shuzhi","tao","zhi","jian", "sword" }) );
+	set_name("æ¡ƒæ ‘æ", ({ "tao shuzhi","tao","zhi","jian", "sword" }) );
 	set_weight(400);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
+		set("unit", "æ ¹");
 		set("material", "wood");
-		set("long", "ÕâÊÇÒ»¸ùÏ¸³¤µÄÌÒÊ÷Ö¦¡£\n");
-		set("wield_msg", "$N³é³öÒ»¸ùÏ¸³¤µÄÌÒÊ÷Ö¦£¬ÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æ ¹ç»†é•¿çš„æ¡ƒæ ‘æã€‚\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹ç»†é•¿çš„æ¡ƒæ ‘æï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 		set("weapon_prop/courage", -4);
 	}
 	init_sword(6);

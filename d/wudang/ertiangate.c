@@ -1,13 +1,13 @@
-//Room: ertiangate.c ¶şÌìÃÅ
+//Room: ertiangate.c äºŒå¤©é—¨
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","¶şÌìÃÅ");
+      set("short","äºŒå¤©é—¨");
       set("long",@LONG
-ÕâÀïÊÇ¡°¶şÌìÃÅ¡±£¬½ğ¹â²Ó²ÓµÄ½ğ¶¥¾ÍÔÚÑÛÇ°ÁË¡£
+è¿™é‡Œæ˜¯â€œäºŒå¤©é—¨â€ï¼Œé‡‘å…‰ç¿ç¿çš„é‡‘é¡¶å°±åœ¨çœ¼å‰äº†ã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "northdown": __DIR__"toutiangate",

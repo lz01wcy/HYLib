@@ -3,10 +3,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short","´¢²ØÊÒ");
+	set("short","å‚¨è—å®¤");
 	set("long",@LONG
-ÕâÀïÊÇ»îÐÄÁ÷µÄ´¢²ØÊÒ£¬ÀïÃæÂÒÆß°ËÔãµÄ·Å×ÅÔÓÎï¡£Ö©ÖëÍøµ½
-´¦¶¼ÊÇ£¬ÄãÈÌ²»×¡Ïë°ïÃ¦ÕûÀíÒ»ÏÂ¡£
+è¿™é‡Œæ˜¯æ´»å¿ƒæµçš„å‚¨è—å®¤ï¼Œé‡Œé¢ä¹±ä¸ƒå…«ç³Ÿçš„æ”¾ç€æ‚ç‰©ã€‚èœ˜è››ç½‘åˆ°
+å¤„éƒ½æ˜¯ï¼Œä½ å¿ä¸ä½æƒ³å¸®å¿™æ•´ç†ä¸€ä¸‹ã€‚
 LONG);
 	set("exits",([
 		"south" : __DIR__"houting",
@@ -33,32 +33,32 @@ int do_zhengli()
 	if ((query("book_count") > 0) && (random(10) == 1))
 	{
 		message_vision(
-HIY"$NÈÏÕæµÄÂñÍ·¹¤×÷£¬ÎÞÒâÖÐÔÚÔÓÎïÖÐ·­µ½ÁËÒ»±¾Êé¡£\n"NOR,me);
+HIY"$Nè®¤çœŸçš„åŸ‹å¤´å·¥ä½œï¼Œæ— æ„ä¸­åœ¨æ‚ç‰©ä¸­ç¿»åˆ°äº†ä¸€æœ¬ä¹¦ã€‚\n"NOR,me);
                 ob=new("/d/feitian/obj/ftyj-book.c");
 		ob->move(me);
-message("channel:rumor", HIW"¡¾ÆæÓö¡¿Ä³ÈË£º"+this_player()->query("name")+"ÕÒµ½ÁË·ÉÌìÓù½£Á÷µÄÓù½£Á÷±¦µäÏÂ²á¡£\n"NOR, users());
+message("channel:rumor", HIW"ã€å¥‡é‡ã€‘æŸäººï¼š"+this_player()->query("name")+"æ‰¾åˆ°äº†é£žå¤©å¾¡å‰‘æµçš„å¾¡å‰‘æµå®å…¸ä¸‹å†Œã€‚\n"NOR, users());
 		add("book_count", -1);
 	}
 	else if ((query("book_count") > 0) && (random(10) == 2))
 	{
 		message_vision(
-HIY"$NÈÏÕæµÄÂñÍ·¹¤×÷£¬ÎÞÒâÖÐÔÚÔÓÎïÖÐ·­µ½ÁËÒ»±¾Êé¡£\n"NOR,me);
+HIY"$Nè®¤çœŸçš„åŸ‹å¤´å·¥ä½œï¼Œæ— æ„ä¸­åœ¨æ‚ç‰©ä¸­ç¿»åˆ°äº†ä¸€æœ¬ä¹¦ã€‚\n"NOR,me);
                 ob=new("/d/feitian/obj/ftyj-book2.c");
 		ob->move(me);
-message("channel:rumor", HIC"¡¾ÆæÓö¡¿Ä³ÈË£º"+this_player()->query("name")+"ÕÒµ½ÁË·ÉÌìÓù½£Á÷µÄÓù½£Á÷±¦µäÉÏ²á¡£\n"NOR, users());
+message("channel:rumor", HIC"ã€å¥‡é‡ã€‘æŸäººï¼š"+this_player()->query("name")+"æ‰¾åˆ°äº†é£žå¤©å¾¡å‰‘æµçš„å¾¡å‰‘æµå®å…¸ä¸Šå†Œã€‚\n"NOR, users());
 		add("book_count", -1);
 	}
 
 	else if ((query("book_count") > 0) && (random(5) == 3))
 	{
 		message_vision(
-HIY"$NÈÏÕæµÄÂñÍ·¹¤×÷£¬ÎÞÒâÖÐÔÚÔÓÎïÖÐ·­µ½ÁËÒ»±¾Êé¡£\n"NOR,me);
+HIY"$Nè®¤çœŸçš„åŸ‹å¤´å·¥ä½œï¼Œæ— æ„ä¸­åœ¨æ‚ç‰©ä¸­ç¿»åˆ°äº†ä¸€æœ¬ä¹¦ã€‚\n"NOR,me);
                 ob=new("/d/feitian/obj/ft-book.c");
 		ob->move(me);
-message("channel:rumor", MAG"¡¾ÆæÓö¡¿Ä³ÈË£º"+this_player()->query("name")+"·¢ÏÖÁË·ÉÌìÓù½£Á÷Àú´úÏà´«µÄÓù½£Á÷±¦µä¡£\n"NOR, users());
+message("channel:rumor", MAG"ã€å¥‡é‡ã€‘æŸäººï¼š"+this_player()->query("name")+"å‘çŽ°äº†é£žå¤©å¾¡å‰‘æµåŽ†ä»£ç›¸ä¼ çš„å¾¡å‰‘æµå®å…¸ã€‚\n"NOR, users());
 		add("book_count", -1);
 	}
 	else message_vision(
-HIY"$NÐÁÐÁ¿à¿àÕûÀíÁËºÃ°ëÌì£¬ÅªµÄ»ÒÍ·ÍÁÁ³µÄ£¬µ«»¹ÊÇÒ»ÑùµÄÂÒ¡£\n"NOR,me);
+HIY"$Nè¾›è¾›è‹¦è‹¦æ•´ç†äº†å¥½åŠå¤©ï¼Œå¼„çš„ç°å¤´åœŸè„¸çš„ï¼Œä½†è¿˜æ˜¯ä¸€æ ·çš„ä¹±ã€‚\n"NOR,me);
 	return 1;
 }

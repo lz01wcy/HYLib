@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","Ǯׯ");
+  set ("short","钱庄");
   set ("long", @LONG
-������һ��Ǯׯ�����Ǯׯ������������ܺã�����Ǯ���˺ܶࡣ
-Ǯׯ�ϰ������������ˣ�����Ļ�������к�����Ǯ�Ŀ��ˡ�
+这里是一家钱庄。这家钱庄在这里的信誉很好，来存钱的人很多。
+钱庄老板正在那里算账，店里的伙计正在招呼来存钱的客人。
 LONG);
 
   set("exits", ([ 

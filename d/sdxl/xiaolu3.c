@@ -8,9 +8,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", BLU "С��"NOR);
+    set("short", BLU "小径"NOR);
     set("long", @LONG
-�������ٲ������һ��С������ϥ��Ұ�ݼ�����·���ڸ��ˡ�
+这里是瀑布西面的一条小径，齐膝的野草几乎把路给掩盖了。
 LONG
     );
 

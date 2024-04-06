@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("����", ({ "fang cheng", "fang", "cheng"}));
-	set("long", "����һλ�����Ʋ����ĵ�����ɮ�ˡ���������δ�ѣ�����ȴ����\n"
-		"���ýݣ������ƺ�ѧ��һ���书��\n");
-	set("nickname", "��ͷ");
-	set("gender", "����");
+	set_name("方成", ({ "fang cheng", "fang", "cheng"}));
+	set("long", "他是一位身穿黄布袈裟的青年僧人。脸上稚气未脱，身手却已相\n"
+		"当矫捷，看来似乎学过一点武功。\n");
+	set("nickname", "狱头");
+	set("gender", "男性");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -62,7 +62,7 @@ void create()
 	prepare_skill("strike", "sanhua-zhang");
 	prepare_skill("finger", "yizhi-chan");
 
-	create_family("��������", 21, "����");
+	create_family("南少林派", 21, "弟子");
 
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
@@ -86,13 +86,13 @@ void speaking(object ob)
 		switch( random(3) )
 		{
 			case 0:
-				command( "say ����ǰ��һ��������������¾ͳ�����κͱ���\n����¥û���֡���������\n");
+				command( "say 百年前的一场大火，整个少林寺就除这监牢和北边\n的钟楼没遭灾。唉。。。\n");
 				break;
 			case 1:
-				command( "say ��������ȫ�ø�֭����Ļ����Ҹ���������������\n���Ǳ�ɲ�ӬҲ�ɲ���ȥ��\n");
+				command( "say 这里四周全用钢汁浇缝的花岗岩给封了起来，你们\n就是变成苍蝇也飞不出去！\n");
 				break;
 			case 2:
-				command( "say �úô��ű𶯣��Ȼ����Ȼ������ǳ�ȥ��������\n���Լ�Ҫ����ҿɲ��ܣ�\n");
+				command( "say 好好呆着别动，等会儿自然会放你们出去，不过你\n们自己要打架我可不管！\n");
 				break;
 		}
 	}

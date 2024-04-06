@@ -9,15 +9,15 @@ void create()
 
 {
     
-   set_name(RED"¶¾Î²Ğ«"NOR, ({ "xie"}));
+   set_name(RED"æ¯’å°¾è"NOR, ({ "xie"}));
       
-          set("race", "Ò°ÊŞ");
+          set("race", "é‡å…½");
        set("long",
-"Ò»Ö»ºìºÖÉ«£¬ÂúÉí°ßµãµÄĞ«×Ó¡£\n");
+"ä¸€åªçº¢è¤è‰²ï¼Œæ»¡èº«æ–‘ç‚¹çš„èå­ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 	       set("max_qi",1000+random(800));
   set("max_jing",3000+random(800));
@@ -82,11 +82,11 @@ void die()
         me = query_temp("last_damage_from");
         if (!me) return;   
               me->add("score",1);
-        message_vision(WHT"$NÅ¾µÄÒ»ÉùÌ±µ¹ÔÚµØÉÏ¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå•ªçš„ä¸€å£°ç˜«å€’åœ¨åœ°ä¸Šã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));me->add("combat_exp",random(12));me->add("potential",random(8));
         if((int)me->query("combat_exp") < 800000)   {
-        message("vision", me->name() + "³É¹¦´òËÀÁÔÎïÔö¼ÓÁË50¾­ÑéºÍ25Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»çŒç‰©å¢åŠ äº†50ç»éªŒå’Œ25æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",50);
         me->add("potential",25);
         destruct(ob);
@@ -102,7 +102,7 @@ int hit_ob(object me, object ob, int damage)
    if( random(damage) > (int)ob->query_temp("apply/armor")
 	&&	(int)ob->query_condition("xiezi_poison") < 10 ) {
 		ob->apply_condition("xiezi_poison", 20);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÆæÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µå¥‡ç—’ï¼\n" NOR );
 	}
 }
 

@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Çú·ÇÑÌ",({ "qu feiyan", "qu" }) );
-        set("gender", "Å®ĞÔ" );
+	set_name("æ›²éçƒŸ",({ "qu feiyan", "qu" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 12);
         set("long", 
-"ËıÊÇÇú³¤ÀÏµÄ±¦±´ËïÅ®¶ù£¬ÓĞÊ®¶ş¡¢ÈıËêÁË°É¡£\n");
+"å¥¹æ˜¯æ›²é•¿è€çš„å®è´å­™å¥³å„¿ï¼Œæœ‰åäºŒã€ä¸‰å²äº†å§ã€‚\n");
         set_temp("apply/defense", 5);
 	set("combat_exp", 70);
 //        set("shen", 100);

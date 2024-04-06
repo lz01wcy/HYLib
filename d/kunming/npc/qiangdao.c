@@ -1,15 +1,15 @@
-// qiangdao.c Ç¿µÁ
+// qiangdao.c å¼ºç›—
 // netkill /98/8/15/
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ç¿µÁ", ({ "qiang dao", "qiang" }));
-	set("nickname", "½Ö·ËÂ·°Ô");
+	set_name("å¼ºç›—", ({ "qiang dao", "qiang" }));
+	set("nickname", "è¡—åŒªè·¯éœ¸");
 	set("long", 
-		"Ò»¸öÂúÁ³ºú×ÓµÄÇ¿µÁ£¬Äã×îºÃ±ğÈôËû¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä¸€ä¸ªæ»¡è„¸èƒ¡å­çš„å¼ºç›—ï¼Œä½ æœ€å¥½åˆ«è‹¥ä»–ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 38);
 	set("attitude", "peaceful");
 	set("shen_type", 0);
@@ -75,7 +75,7 @@ int accept_object(object who, object ob)
 	
 	if (ob->query("money_id") && ob->value() >= 1000) 
 	{
-		tell_object(who, "Ç¿µÁÒ»²àÉí£¬°ÑÂ·ÈÃ¿ª£¬ËµµÀ£ºÇëÕâ±ß×ß¡£\n");
+		tell_object(who, "å¼ºç›—ä¸€ä¾§èº«ï¼ŒæŠŠè·¯è®©å¼€ï¼Œè¯´é“ï¼šè¯·è¿™è¾¹èµ°ã€‚\n");
 
 		who->set_temp("dirs",1);
 

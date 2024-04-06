@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-    set("short", "²ÝµØ");
+    set("short", "è‰åœ°");
     set("long",@LONG
-ÕâÊÇÒ»Æ¬¿Õ¿õµÄ²ÝµØ£¬ËÄÖÜ³¤ÂúÁËÔÓ²Ý£¬ËÆºõÕâÀïÒÑ¾­ºÜ¾ÃÃ»ÓÐ
-ÈËÀ´¹ýÁË£¬Ãæ¶ÔÕâ¿õÒ°µÄµØ·½£¬ÄãµÄÐÄÖÐ²»ÓÉµÃÉýÆðÒ»Ë¿º®Òâ¡£ÔÙÍù
-¶«×ß¾ÍÊÇÒ»¸öÉî²»¼ûµ×µÄ¾øÑÂÁË¡£
+è¿™æ˜¯ä¸€ç‰‡ç©ºæ—·çš„è‰åœ°ï¼Œå››å‘¨é•¿æ»¡äº†æ‚è‰ï¼Œä¼¼ä¹Žè¿™é‡Œå·²ç»å¾ˆä¹…æ²¡æœ‰
+äººæ¥è¿‡äº†ï¼Œé¢å¯¹è¿™æ—·é‡Žçš„åœ°æ–¹ï¼Œä½ çš„å¿ƒä¸­ä¸ç”±å¾—å‡èµ·ä¸€ä¸å¯’æ„ã€‚å†å¾€
+ä¸œèµ°å°±æ˜¯ä¸€ä¸ªæ·±ä¸è§åº•çš„ç»å´–äº†ã€‚
 LONG
 );
         set("outdoors","changan");
@@ -16,7 +16,7 @@ LONG
         "east" :__DIR__"jueya",
 ]));
     set("item_desc", ([
-"²ÝµØ" : "ÔÚÕâÆ¬²ÝµØµÄÖÐ¼ä£¬ÄãËÆºõ¸Ðµ½Ò»Ð©ÒìÑù¡£\n",
+"è‰åœ°" : "åœ¨è¿™ç‰‡è‰åœ°çš„ä¸­é—´ï¼Œä½ ä¼¼ä¹Žæ„Ÿåˆ°ä¸€äº›å¼‚æ ·ã€‚\n",
 ]));
     setup();
 }
@@ -38,12 +38,12 @@ void check(object me,object ob)
         || ob->query("max_neili")<600)
         return;
     if (ob->query("max_neili") < me->query("max_neili")){
-        message_vision(HIR"$n±»$NÄÚÁ¦Ò»Õð£¬ÍùÑÂ±ßµ¹·ÉÏÂÈ¥¡£\n"NOR,me,ob);
+        message_vision(HIR"$nè¢«$Nå†…åŠ›ä¸€éœ‡ï¼Œå¾€å´–è¾¹å€’é£žä¸‹åŽ»ã€‚\n"NOR,me,ob);
       ob->move("/d/changan/qinhuang/gudi");
         ob->set_temp("killer",1);
         ob->unconcious();
     }else{
-        message_vision(HIR"$N±»$nÄÚÁ¦Ò»Õð£¬ÍùÑÂ±ßµ¹·ÉÏÂÈ¥¡£\n"NOR,me,ob);
+        message_vision(HIR"$Nè¢«$nå†…åŠ›ä¸€éœ‡ï¼Œå¾€å´–è¾¹å€’é£žä¸‹åŽ»ã€‚\n"NOR,me,ob);
       me->set_temp("killer",1);
       me->move("/d/changan/qinhuang/gudi");
         me->unconcious();
@@ -56,7 +56,7 @@ int do_kill(string arg)
     
     if (!arg || arg=="")   return 0;
     if (ob=present(arg,this_object())){
-message_vision( HIY "$NºÍ$nÒ»¼ûÃæ£¬Á¢¼´ØËÉ±ÁËÆðÀ´¡£\n" NOR ,me,ob);
+message_vision( HIY "$Nå’Œ$nä¸€è§é¢ï¼Œç«‹å³åŽ®æ€äº†èµ·æ¥ã€‚\n" NOR ,me,ob);
         ob->kill_ob(me); me->fight_ob(ob);
         if (userp(ob))
             if ( ob->query("jiali") > 50

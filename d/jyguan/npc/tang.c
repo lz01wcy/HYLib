@@ -1,4 +1,4 @@
-// tang.c µ±ÆÌÀÏ°å 
+// tang.c å½“é“ºè€æ¿ 
 
 #include <ansi.h>
 
@@ -9,15 +9,15 @@ int redeem(string arg);
 
 void create()
 {
-	set_name("ÌÆÄ³", ({ "tang" }));
-	set("title", "µ±ÆÌÀÏ°å");
+	set_name("å”æŸ", ({ "tang" }));
+	set("title", "å½“é“ºè€æ¿");
 	set("shen_type", 0);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set_max_encumbrance(100000000);
 	set("age", 35);
 	set("long",
-		"¾İËµºÍÖĞÍÁ¾­Óªµ±ÆÌÉúÒâµÄÌÆÊÏÊÇÍ¬×Ú¡£\n");
+		"æ®è¯´å’Œä¸­åœŸç»è¥å½“é“ºç”Ÿæ„çš„å”æ°æ˜¯åŒå®—ã€‚\n");
 	set("no_get_from", 1);
 	set("no_get",1);
 	set_skill("unarmed", 80);
@@ -44,6 +44,6 @@ void init()
 
 void die()
 {
-	message_vision("\n$NËÀÁË¡£\n", this_object());
+	message_vision("\n$Næ­»äº†ã€‚\n", this_object());
 	destruct(this_object());
 }

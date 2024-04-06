@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ºóÃÅ");
+	set("short","åŽé—¨");
 	set("long",
-       "ÕâÊÇ¸öÉ½×¯µÄºóÃÅ¡£ÕâÀïÓÐ½Ý¾¶¿ÉÒÔÍ¨ÏòÐÇËÞº£¡£\n"
+       "è¿™æ˜¯ä¸ªå±±åº„çš„åŽé—¨ã€‚è¿™é‡Œæœ‰æ·å¾„å¯ä»¥é€šå‘æ˜Ÿå®¿æµ·ã€‚\n"
 	);
 	set("exits",([
 		"north" : "/d/xingxiu/xxh1",
@@ -27,6 +27,6 @@ int valid_leave(object me, string dir)
 	   && ((int)me->query("shen") > 300)
 	   && objectp(present("men wei", environment(me)))) 
 	 return notify_fail
-		("ÃÅÎÀ°ÑÊÖÒ»À¹£ºÄãÕâÖÖÕýÅÉÈËÎï£¬ÀÏ×ÓÒ»¿´¾Í¶ñÐÄ£¬¿ì¹ö£¡\n");
+		("é—¨å«æŠŠæ‰‹ä¸€æ‹¦ï¼šä½ è¿™ç§æ­£æ´¾äººç‰©ï¼Œè€å­ä¸€çœ‹å°±æ¶å¿ƒï¼Œå¿«æ»šï¼\n");
 	return ::valid_leave(me, dir);
 }

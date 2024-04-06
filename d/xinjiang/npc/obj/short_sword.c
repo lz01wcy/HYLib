@@ -3,16 +3,16 @@
 inherit SWORD; 
 void create()
 {
-        set_name("¶Ì½£", ({ "short sword", "sword" }) );
+        set_name("çŸ­å‰‘", ({ "short sword", "sword" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 300);
                 set("material", "iron");
                 set("long",
-                        "Ò»°Ñ´ÖÖÆÀÄÔìµÄ¶Ì½££¬°ÑÊÖ²¿·ÝÓÃ²¼²øÈÆÁËºÃ¼¸È¦ÒÔ·ÀÖ¹ÎäÆ÷ÍÑÊÖ¡£\n");
+                        "ä¸€æŠŠç²—åˆ¶æ»¥é€ çš„çŸ­å‰‘ï¼ŒæŠŠæ‰‹éƒ¨ä»½ç”¨å¸ƒç¼ ç»•äº†å¥½å‡ åœˆä»¥é˜²æ­¢æ­¦å™¨è„±æ‰‹ã€‚\n");
         }
         init_sword(35);
 }     

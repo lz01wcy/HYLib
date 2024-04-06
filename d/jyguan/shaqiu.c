@@ -1,4 +1,4 @@
-// shaqiu.c ɳ��
+// shaqiu.c 沙丘
 // shamo can to shaqiu
 // Ver 0.1 08/14/1998 by Freeze
 
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "ɳ ��");
+	set("short",HIG "沙 州");
 	set("long",  @LONG
-����������ɳ����Ե��ɳ����������Կ�����ϡ��Ĺ�ľ��һ������Ϳ��ܴ���ɳĮ�ش���
-������ͨ����ɽ���ִ�����ص�Ψһ·����
+这里四面是沙海边缘，沙丘起伏，可以看到有稀疏的灌木，一不溜神就可能错入沙漠地带。
+这里是通向天山、抵达嘉峪关的唯一路径。
 LONG
 	);	
         set("outdoors", "jyguan");

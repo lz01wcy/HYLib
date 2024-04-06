@@ -1,14 +1,14 @@
 // /d/zhuojun/xidajie1.c
-// Room in äÃ¿¤
+// Room in æ¶¿éƒ¡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "Î÷´ó½Ö");
+	set("short", "è¥¿å¤§è¡—");
 	set("long", @LONG
-½ÅÏÂÓÉÇàÊ¯ÆÌ³ÉµÄÂíÂ·×ãÓÐÁ½Á¾Âí³µ²¢ÐÐÄÇÃ´¿í£¬Î÷Ãæ¾ÍÊÇ³¤É³µÄ
-Î÷³ÇÃÅ£¬Ïò¶«ÍûÈ¥ÈËÀ´ÈËÍù£¬³µË®ÂíÁúºÃ²»ÈÈÄÖ¡£±±ÃæÊÇ¾ÉËå³¯µÄÒ»¸ö
-æäÕ¾£¬ÄÏÃæÊÇÒ»¼Ò¾ÆÂ¥¡£
+è„šä¸‹ç”±é’çŸ³é“ºæˆçš„é©¬è·¯è¶³æœ‰ä¸¤è¾†é©¬è½¦å¹¶è¡Œé‚£ä¹ˆå®½ï¼Œè¥¿é¢å°±æ˜¯é•¿æ²™çš„
+è¥¿åŸŽé—¨ï¼Œå‘ä¸œæœ›åŽ»äººæ¥äººå¾€ï¼Œè½¦æ°´é©¬é¾™å¥½ä¸çƒ­é—¹ã€‚åŒ—é¢æ˜¯æ—§éš‹æœçš„ä¸€ä¸ª
+é©¿ç«™ï¼Œå—é¢æ˜¯ä¸€å®¶é…’æ¥¼ã€‚
 LONG
 	);
 set("outdoors", "changsha");

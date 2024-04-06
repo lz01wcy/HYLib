@@ -2,7 +2,7 @@
 inherit ROOM;
 void create()
 {
-        set("short", "山间小道");
+        set("short", "灞遍棿灏忛亾");
         set("long", @LONG
 LONG );        
         set("exits", ([

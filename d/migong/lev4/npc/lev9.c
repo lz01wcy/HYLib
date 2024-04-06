@@ -9,10 +9,10 @@ void create()
 
 {
     
-    set_name(HIG"½©Ê¬"NOR, ({ "jiangshi" , "shi" }));
+    set_name(HIG"åƒµå°¸"NOR, ({ "jiangshi" , "shi" }));
     
-     set("gender", "ÄÐÐÔ" );
-      set("long", "»ëÉí¶¼ÊÇÂÌÉ«µÄÒºÌå£¬ÁîÈË¶ñÐÄ¡£\n");
+     set("gender", "ç”·æ€§" );
+      set("long", "æµ‘èº«éƒ½æ˜¯ç»¿è‰²çš„æ¶²ä½“ï¼Œä»¤äººæ¶å¿ƒã€‚\n");
         set("attitude", "aggressive");
       
   set("vendetta/authority",1);
@@ -105,11 +105,11 @@ void die()
         me = query_temp("last_damage_from");
         if (!me) return;   
               me->add("score",1);
-        message_vision(WHT"$NÅ¾µÄÒ»ÉùÌ±µ¹ÔÚµØÉÏ¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå•ªçš„ä¸€å£°ç˜«å€’åœ¨åœ°ä¸Šã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));me->add("combat_exp",random(12));me->add("potential",random(8));
         if((int)me->query("combat_exp") < 2000000)   {
-        message("vision", me->name() + "³É¹¦´òËÀÁÔÎïÔö¼ÓÁË50¾­ÑéºÍ25Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»çŒŽç‰©å¢žåŠ äº†50ç»éªŒå’Œ25æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",50);
         me->add("potential",25);
         destruct(ob);

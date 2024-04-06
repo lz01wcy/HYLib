@@ -6,19 +6,19 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIY"½ğµ¨"NOR, ({ "jin dan", "dan" }) );
+        set_name(HIY"é‡‘èƒ†"NOR, ({ "jin dan", "dan" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "´ü");
+                set("unit", "è¢‹");
                 set("value", 0);
-                set("base_unit", "¿Å");
+                set("base_unit", "é¢—");
                 set("base_weight", 300);
                 set("base_value", 0);
                 set("material", "gold");
-                set("long", HIW"»Æ³Î³ÎµÄ½ğµ¨£¬±ÈÖ®Ìúµ¨¹ÌÖØÁËÒ»±¶ÓĞÓà£¬¶øÇÒ´óÏÔ»ª¹óÖ®Æø¡£\n"NOR);
-                set("wield_msg", HIC"$NÑ¸ËÙµØ´Ó°µÆ÷´üÖĞÌÍ³öÒ»Ğ©½ğµ¨£¬ÄóÔÚÊÖÖĞ¾Í´ı·¢³ö£¡\n"NOR);
-                set("unwield_msg",HIC"$N½«ÊÖÀïÊ£ÏÂµÄ½ğµ¨¾¡Êı·Å»Ø°µÆ÷´üÖĞ¡£\n"NOR);
+                set("long", HIW"é»„æ¾„æ¾„çš„é‡‘èƒ†ï¼Œæ¯”ä¹‹é“èƒ†å›ºé‡äº†ä¸€å€æœ‰ä½™ï¼Œè€Œä¸”å¤§æ˜¾åè´µä¹‹æ°”ã€‚\n"NOR);
+                set("wield_msg", HIC"$Nè¿…é€Ÿåœ°ä»æš—å™¨è¢‹ä¸­æå‡ºä¸€äº›é‡‘èƒ†ï¼Œæåœ¨æ‰‹ä¸­å°±å¾…å‘å‡ºï¼\n"NOR);
+                set("unwield_msg",HIC"$Nå°†æ‰‹é‡Œå‰©ä¸‹çš„é‡‘èƒ†å°½æ•°æ”¾å›æš—å™¨è¢‹ä¸­ã€‚\n"NOR);
         }
         set_amount(50);
         init_throwing(25);

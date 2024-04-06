@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-     set_name("Ğ¡Ó¥",({ "xiao ying","xiao","ying"}) );
-     set("race", "Ò°ÊŞ" );
-     set("long", "ÕâÊÇÒ»Ö»Ó×Ğ¡µÄ³ûÓ¥¡£\n");
+     set_name("å°é¹°",({ "xiao ying","xiao","ying"}) );
+     set("race", "é‡å…½" );
+     set("long", "è¿™æ˜¯ä¸€åªå¹¼å°çš„é›é¹°ã€‚\n");
      set("verbs",({"bite"}));
-     set("limbs",({"Í·","¸¹²¿"}));
+     set("limbs",({"å¤´","è…¹éƒ¨"}));
      set("bai_dun_quest_obj2",1);
      setup();
 

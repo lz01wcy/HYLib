@@ -3,20 +3,20 @@
 int closedoor(); 
 void create() 
 {
-        set("short", "��Ժ");
+        set("short", "后院");
         set("long", @LONG
-���ҵĿ��˾��������١������ǳԹ���̫̫�������ĺ���ʨ��ͷ������������
-����������߳�Ժ��ʱ���������˶�������Ժ�����ֵĻ��������䡣����������
-������Ц�ţ�Ҳ����������ȷ���ֻ����������Ⱥã�ÿ���＾�ջ�ʢ������С��
-����С���ͻ��ڻ�����׷����ˣ��
+马家的客人经常都不少。客人们吃过马太太亲手做的红烧狮子头，陪马方中下
+过几盘棋后．走出院子时，都忘不了对马方中院子里种的花赞美几句。马方中总是
+嘻嘻地笑着，也不客气。的确，种花是他最大的嗜好，每当秋季菊花盛开，马小宝
+和马小贝就会在花从中追逐玩耍。
 LONG
         );
         set("exits", ([ 
                 "west":         __DIR__"mroom",
         ]));
         set("item_desc", ([
-                "�ջ�": "�����＾��Ժ����ľջ��а��˶�ߣ�Ѥ�ö�ʡ�\n",
-                "flower": "�����＾��Ժ����ľջ��а��˶�ߣ�Ѥ�ö�ʡ�\n",
+                "菊花": "正当秋季，院子里的菊花有半人多高，绚烂多彩。\n",
+                "flower": "正当秋季，院子里的菊花有半人多高，绚烂多彩。\n",
         ]));
         set("objects", ([
                 __DIR__"npc/mafangzhong":       1,
@@ -34,19 +34,19 @@ int do_pull(string arg) {
         object me=this_player();
         object ma;
         
-        if (arg== "flower" || arg == "�ջ�") {
+        if (arg== "flower" || arg == "菊花") {
                 if (ma=present("ma fangzhong",this_object())) {
-                        tell_object(me,"���������ֵ�ס�㣬Ц������˵�������ִݻ���̫ɷ�羰�˰ɡ���\n");
+                        tell_object(me,"马方中伸手挡住你，笑嘻嘻地说：“辣手摧花，太煞风景了吧。”\n");
                         return 1;
            }
                 message_vision(YEL"
-$N�������䣬ץס������ïʢ���Ǵؾջ�ʹ������һק���ջ�����������
-������һ�������������֮�£���Ȼ������һ��������Ĵ󶴣�\n"NOR,me);
+$N卷起衣袖，抓住开的最茂盛的那簇菊花使劲往上一拽，菊花被连根拔起，
+带起了一大块泥土，泥土之下，竟然出现了一个黑漆漆的大洞！\n"NOR,me);
                 set("exits/down",__DIR__"tunnel1");
                 call_out("closedoor", 15);
                 return 1;
         }
-        return notify_fail("�����/��ʲô��\n");
+        return notify_fail("你想拔/拉什么？\n");
 }    
 int closedoor () {
         if (query("exits/down")) delete("exits/down");

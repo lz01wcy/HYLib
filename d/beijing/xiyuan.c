@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "³¤°²Ï·Ôº");
+	set("short", "é•¿å®‰æˆé™¢");
 	set("long", @LONG
-ÕâÀï¾ÍÊÇÖøÃûµÄ³¤°²Ï·Ôº£¬¼¸¸öÏ·×ÓÔÚÌ¨ÉÏ (stage)³ªÏ·¡£Ì¨ÏÂºÚ
-Ñ¹Ñ¹µÄÒ»Æ¬¶¼ÊÇÈË¡£³ªµ½Ãî´¦£¬¹ÛÖÚÃÇ½û²»×¡´óÉùºÈ²É¡£¶«±ßÊÇºóÌ¨¡£
+è¿™é‡Œå°±æ˜¯è‘—åçš„é•¿å®‰æˆé™¢ï¼Œå‡ ä¸ªæˆå­åœ¨å°ä¸Š (stage)å”±æˆã€‚å°ä¸‹é»‘
+å‹å‹çš„ä¸€ç‰‡éƒ½æ˜¯äººã€‚å”±åˆ°å¦™å¤„ï¼Œè§‚ä¼—ä»¬ç¦ä¸ä½å¤§å£°å–é‡‡ã€‚ä¸œè¾¹æ˜¯åå°ã€‚
 LONG );
 	set("exits", ([
 		"up"    : __DIR__"stage",
@@ -13,7 +13,7 @@ LONG );
 		"south" : __DIR__"xichang1",
 	]));
 	set("item_desc", ([
-		"stage" : "\n¿´µ½Ï·Ì¨£¬ÄãÍ»È»ÓĞÖÖÏëµÇÌ¨±íÑİµÄ³å¶¯¡£\n" ,
+		"stage" : "\nçœ‹åˆ°æˆå°ï¼Œä½ çªç„¶æœ‰ç§æƒ³ç™»å°è¡¨æ¼”çš„å†²åŠ¨ã€‚\n" ,
 	]));
 	set("objects", ([
 		__DIR__"npc/guanzhong":  5,
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
 			me->set_temp("hastryup",1);
 			if((int)me->query("meili")>=40)
 			{
-				message_vision("Ö»Ìı»©À²À²Ò»Æ¬ÕÆÉù£¬¹ÛÖÚÃÇÒ»Æğ¹ÄÕÆ¡£ÓĞÈË´óÉùËµµÀ£º\n¾²Ò»¾²£¬Çë¿´ÕâÎ»"+RANK_D->query_respect(me)+ "±íÑİ¡£\n",me);
+				message_vision("åªå¬å“—å•¦å•¦ä¸€ç‰‡æŒå£°ï¼Œè§‚ä¼—ä»¬ä¸€èµ·é¼“æŒã€‚æœ‰äººå¤§å£°è¯´é“ï¼š\né™ä¸€é™ï¼Œè¯·çœ‹è¿™ä½"+RANK_D->query_respect(me)+ "è¡¨æ¼”ã€‚\n",me);
 				return ::valid_leave(me, dir);
 			}
 			else
@@ -44,7 +44,7 @@ int valid_leave(object me, string dir)
 				if(query("guanzhong") > 0)
 				{
 					add("guanzhong", -1);
-					message_vision("\nÍ»È»¹ÛÖÚÒ»Óµ¶øÉÏ£¬¶Ô$N´ó½ĞµÀ£ºÆ¾ÄãÒ²¸ÒÉÏÌ¨ÄÖÊÂ£¿ÀÏ×ÓÔ×ÁËÄãÕâ"+RANK_D->query_rude(me) + "£¡\n",me);
+					message_vision("\nçªç„¶è§‚ä¼—ä¸€æ‹¥è€Œä¸Šï¼Œå¯¹$Nå¤§å«é“ï¼šå‡­ä½ ä¹Ÿæ•¢ä¸Šå°é—¹äº‹ï¼Ÿè€å­å®°äº†ä½ è¿™"+RANK_D->query_rude(me) + "ï¼\n",me);
 					if(!present("jia", environment(me)))
 					{
 						man=new(__DIR__"npc/guanzhong1");
@@ -81,11 +81,11 @@ int valid_leave(object me, string dir)
 						}
 					}
 				}
-				return notify_fail("¹ÛÖÚÃÇÒ»Õóµ¹²Ê¡£\n");
+				return notify_fail("è§‚ä¼—ä»¬ä¸€é˜µå€’å½©ã€‚\n");
 			}
-			return notify_fail("¹ÛÖÚÃÇÆ´ËÀÒ²²»ÈÃÄãÉÏÌ¨¡£\n");
+			return notify_fail("è§‚ä¼—ä»¬æ‹¼æ­»ä¹Ÿä¸è®©ä½ ä¸Šå°ã€‚\n");
 		}
-		message_vision("$NÆ´ËÀ³åÉÏÌ¨È¥¡£\n",this_player());
+		message_vision("$Næ‹¼æ­»å†²ä¸Šå°å»ã€‚\n",this_player());
 		return ::valid_leave(me, dir);
 		} 
 	return ::valid_leave(me, dir);

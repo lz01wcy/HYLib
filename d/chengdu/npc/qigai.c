@@ -1,14 +1,14 @@
-// Room: /d/chengdu/npc/qigai.c ÆòØ¤
+// Room: /d/chengdu/npc/qigai.c ä¹ä¸
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÆòØ¤", ({ "qigai", "qi" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("ä¹ä¸", ({ "qigai", "qi" }));
+	set("gender", "ç”·æ€§");
 	set("age", 21);
-	set("long", "ËûÊÇÒ»¸ö³ÉÌì¶«ÓÎÎ÷¹äµÄÆòØ¤£¬ºÃÏóÊÇØ¤°ïµÄÈË¡£\n");
+	set("long", "ä»–æ˜¯ä¸€ä¸ªæˆå¤©ä¸œæ¸¸è¥¿é€›çš„ä¹ä¸ï¼Œå¥½è±¡æ˜¯ä¸å¸®çš„äººã€‚\n");
 	
 	set("combat_exp", 2000);
 	set("shen_type", -1);

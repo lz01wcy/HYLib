@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("Ğ¡ºÉ",({ "xiao he","he" }) );
-        set("gender", "Å®ĞÔ" );
+   set_name("å°è·",({ "xiao he","he" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇ[´ºÔÚÂ¥]µÄ¹ÃÄïĞ¡ºÉ¡£¡£\n");
+   set("long", "è¿™æ˜¯[æ˜¥åœ¨æ¥¼]çš„å§‘å¨˜å°è·ã€‚ã€‚\n");
    set("jinv",1);
    set("combat_exp", 1000);
    set("str", 10);
@@ -33,8 +33,8 @@ void welcome(object ob,object ob2)
    if(!ob||!present(ob,environment())||ob2->is_fighting()) return;
 	switch(random(2))
 	{
-	case 0: message_vision("$NĞ¦µÀ:ßÏ£¬ÕâÎ»¿Í¹Ù£¬À´×ø×øÂï!\n",ob2);break;
-	case 1: message_vision("$N³å$nĞ¦µÀ£ºÎÒÃÇ[´ºÔÚÂ¥]µÄ¹ÃÄï¿É¶¼ÊÇÆ¯ÁÁµÄ£¬°üÄúÂúÒâ£¡\n",ob2,ob);
+	case 0: message_vision("$Nç¬‘é“:å‘¦ï¼Œè¿™ä½å®¢å®˜ï¼Œæ¥ååå˜›!\n",ob2);break;
+	case 1: message_vision("$Nå†²$nç¬‘é“ï¼šæˆ‘ä»¬[æ˜¥åœ¨æ¥¼]çš„å§‘å¨˜å¯éƒ½æ˜¯æ¼‚äº®çš„ï¼ŒåŒ…æ‚¨æ»¡æ„ï¼\n",ob2,ob);
 	}
 	remove_call_out("welcome");
 	return;

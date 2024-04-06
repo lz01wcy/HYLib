@@ -1,15 +1,15 @@
-// music yangzhou's Ñ©Á«
+// music yangzhou's é›ªè²
 #include <ansi.h>
 
 inherit ITEM;
 int count=20;
 void create()
 {
-        set_name(HIC"ÇàÁú±ÌÑªÓñ"NOR, ({ "yu","biyu","qinglong" }) );
-        set("long", "Ò»¿é±ÌÓñ,ÉÏÃæÌìÈ»ĞÎ³ÉÒ»ÌõÑ©ºìµÄ·ÉÁú¡£
-Äã¿ÉÒÔÓÃ(use yu)À´»Ö¸´Äã¸÷ÏîÖµ,²»¹ıÖ»ÄÜÊ¹ÓÃ20´Î.
-³¬¹ı´ËÏŞ,ºó¹û×Ô¸º.\n");
-        set("unit", "¿é");
+        set_name(HIC"é’é¾™ç¢§è¡€ç‰"NOR, ({ "yu","biyu","qinglong" }) );
+        set("long", "ä¸€å—ç¢§ç‰,ä¸Šé¢å¤©ç„¶å½¢æˆä¸€æ¡é›ªçº¢çš„é£é¾™ã€‚
+ä½ å¯ä»¥ç”¨(use yu)æ¥æ¢å¤ä½ å„é¡¹å€¼,ä¸è¿‡åªèƒ½ä½¿ç”¨20æ¬¡.
+è¶…è¿‡æ­¤é™,åæœè‡ªè´Ÿ.\n");
+        set("unit", "å—");
         set("weight", 100);
         set("money_id",1);
 }
@@ -22,11 +22,11 @@ void init()
 int do_use(string arg)
 {
         object ob;
-        if( !id(arg) ) return notify_fail("ÄãÒªÊ¹ÓÃÊ²÷á£¿\n");
+        if( !id(arg) ) return notify_fail("ä½ è¦ä½¿ç”¨ä»€éº½ï¼Ÿ\n");
 if( living(this_player()) ==0 ) return 0;
         ob=this_player();
         if (count==0) {
- message_vision("$NÊÖÖĞµÄ$nÍ»È»±©ÆğÒ»Éù¾ŞÏì,±¬Õ¨ÁË.\n",ob,this_object());
+ message_vision("$Næ‰‹ä¸­çš„$nçªç„¶æš´èµ·ä¸€å£°å·¨å“,çˆ†ç‚¸äº†.\n",ob,this_object());
  ob->die();
  destruct(this_object());
  return 1;
@@ -38,9 +38,9 @@ if( living(this_player()) ==0 ) return 0;
          ob->set("food",((int)ob->query("str")-10)*10+200);
         ob->set("water",((int)ob->query("str")-10)*10+200);
         ob->set_temp("windnod",1);
-        write("[1;33mÄãÊÖÖĞµÄ±ÌÓñ·¢³öÑ©ºìµÄ¹âÃ££¡\n[0;37m");
+        write("[1;33mä½ æ‰‹ä¸­çš„ç¢§ç‰å‘å‡ºé›ªçº¢çš„å…‰èŒ«ï¼\n[0;37m");
         message("vision", HIY + ob->name() + 
-"ÊÖÖĞµÄ±ÌÓñ·¢³öÑ©ºìµÄ¹â,Ò»ÉÁ²»¼û£¡\n"+NOR,
+"æ‰‹ä¸­çš„ç¢§ç‰å‘å‡ºé›ªçº¢çš„å…‰,ä¸€é—ªä¸è§ï¼\n"+NOR,
                 environment(ob), ob);
      count--;
         return 1;

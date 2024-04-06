@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC"¿ìÑ©Ê±ÇçÌû"NOR, ({ "kuaixueshiqing tie", "tie"})); 
+        set_name(HIC"å¿«é›ªæ—¶æ™´å¸–"NOR, ({ "kuaixueshiqing tie", "tie"})); 
        
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
                 set("weight", 300);
-		set("long", "ÕâÊÇ½úÍõôËÖ®ËùĞ´Ö®Ìû£¬Ö½²á±¾£¬×İ¶şÈı´ç£¬ºáÒ»ËÄ´ç¡£\n");
+		set("long", "è¿™æ˜¯æ™‹ç‹ç¾²ä¹‹æ‰€å†™ä¹‹å¸–ï¼Œçº¸å†Œæœ¬ï¼ŒçºµäºŒä¸‰å¯¸ï¼Œæ¨ªä¸€å››å¯¸ã€‚\n");
 		set("material", "paper");
 		}
 	setup();

@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/jiumozhi.c ğ¯Ä¦ÖÇ
+// /kungfu/class/xueshan/jiumozhi.c é¸ æ‘©æ™º
 // by secret
 
 #include <ansi.h>
@@ -8,15 +8,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ğ¯Ä¦ÖÇ", ({ "jiumo-zhi", "zhi" ,"ming wang"}));
-        set("nickname", HIG "´óÂÖÃ÷Íõ" NOR);
+        set_name("é¸ æ‘©æ™º", ({ "jiumo-zhi", "zhi" ,"ming wang"}));
+        set("nickname", HIG "å¤§è½®æ˜ç‹" NOR);
         set("long",@LONG
-Ëû¾ÍÊÇÑ©É½ËÂµÄÕÆÃÅ£¬ÈË³Æ´óÂÖÃ÷ÍõµÄğ¯Ä¦ÖÇ¡£Ëû¶Ô·ğ·¨ÓĞ¾«ÉîµÄÑĞ¾¿¡£
-Éí´©Ò»¼ş´óºìôÂôÄ£¬Í·´øÉ®Ã±¡£
+ä»–å°±æ˜¯é›ªå±±å¯ºçš„æŒé—¨ï¼Œäººç§°å¤§è½®æ˜ç‹çš„é¸ æ‘©æ™ºã€‚ä»–å¯¹ä½›æ³•æœ‰ç²¾æ·±çš„ç ”ç©¶ã€‚
+èº«ç©¿ä¸€ä»¶å¤§çº¢è¢ˆè£Ÿï¼Œå¤´å¸¦åƒ§å¸½ã€‚
 LONG
         );
-        set("title","Ñ©É½ËÂÕÆÃÅ");
-        set("gender", "ÄĞĞÔ");
+        set("title","é›ªå±±å¯ºæŒé—¨");
+        set("gender", "ç”·æ€§");
         set("age", 60);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -58,7 +58,7 @@ LONG
 
         prepare_skill("strike","huoyan-dao");
 
-        create_family("Ñ©É½ËÂ", 1, "ÕÆÃÅ");
+        create_family("é›ªå±±å¯º", 1, "æŒé—¨");
         set("class", "bonze");
 
         setup();
@@ -84,7 +84,7 @@ void greeting(object ob)
 	int i;
 
 	obj = all_inventory(environment(me));
-        command("say ÕÔ¿ÍçÏºúÓ§£¬ºúÓ§µÄÑù×ÓÓ¦¸ÃÊÇÕâÑùµÄ£¬ÕâÊÇ·ñ°µÖ¸ĞĞÕÆÖ®ÊÆ£¿\n");
+        command("say èµµå®¢ç¼¦èƒ¡ç¼¨ï¼Œèƒ¡ç¼¨çš„æ ·å­åº”è¯¥æ˜¯è¿™æ ·çš„ï¼Œè¿™æ˜¯å¦æš—æŒ‡è¡ŒæŒä¹‹åŠ¿ï¼Ÿ\n");
         command("consider");
 	for(i=0; i<sizeof(obj); i++)
 	{

@@ -1,4 +1,4 @@
-// duanzc.c ¶ÎÕı´¾
+// duanzc.c æ®µæ­£æ·³
 
 #include <ansi.h>
 inherit NPC;
@@ -6,10 +6,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("¶ÎÕı´¾", ({ "duan zhengchun", "duan" }));
-	set("title",  "´óÀíÕòÄÏÍõ" );
-	set("long", "Ëû¾ÍÊÇ´óÀí¹úµÄÕòÄÏÍõ£¬µ±½ñ»ÊÌ«µÜ£¬ÊÇÓĞÃûµÄ°®ÇéÊ¥ÊÖ¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ®µæ­£æ·³", ({ "duan zhengchun", "duan" }));
+	set("title",  "å¤§ç†é•‡å—ç‹" );
+	set("long", "ä»–å°±æ˜¯å¤§ç†å›½çš„é•‡å—ç‹ï¼Œå½“ä»Šçš‡å¤ªå¼Ÿï¼Œæ˜¯æœ‰åçš„çˆ±æƒ…åœ£æ‰‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("class", "officer");
 	set("attitude", "friendly");
@@ -80,7 +80,7 @@ void create()
 	carry_object("/clone/misc/cloth")->wear();
 	add_money("silver", 50);
 
-	create_family("´óÀí¶Î¼Ò",18,"ÕòÄÏÍõ");
+	create_family("å¤§ç†æ®µå®¶",18,"é•‡å—ç‹");
 }
 
 void attempt_apprentice(object ob)
@@ -89,23 +89,23 @@ void attempt_apprentice(object ob)
 	oldtitle = ob->query("title");
 	if ((int)ob->query_skill("kurong-changong",1) < 100 )
 	{
-		command("say ÄãµÄ±¾ÃÅÄÚ¹¦ĞÄ·¨Ì«µÍÁË£¬»¹ÊÇÅ¬Å¬Á¦ÏÈÌá¸ßÒ»ÏÂ°É¡£");
+		command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•å¤ªä½äº†ï¼Œè¿˜æ˜¯åŠªåŠªåŠ›å…ˆæé«˜ä¸€ä¸‹å§ã€‚");
 		return;
 	}
 	if ((int)ob->query("shen") < 10000  ) {
-		command("say ÎÒ´óÀí¶ÎÊÏÏòÀ´ĞĞÏÀÕÌÒå£¬ÄúÇë»Ø°É£¡");
+		command("say æˆ‘å¤§ç†æ®µæ°å‘æ¥è¡Œä¾ ä»—ä¹‰ï¼Œæ‚¨è¯·å›å§ï¼");
 		return;
 	}
 	oldtitle = ob->query("title");
-	if (strsrch(oldtitle, "´óÀíÕòÄÏÍõ¸®") >= 0) 
+	if (strsrch(oldtitle, "å¤§ç†é•‡å—ç‹åºœ") >= 0) 
 	{
-		command("say ºÜºÃ£¬¼ÈÈ»ÈëÎÒÃÅÀ´¾ÍµÃÖÒĞÄÎªÖ÷¡£");
+		command("say å¾ˆå¥½ï¼Œæ—¢ç„¶å…¥æˆ‘é—¨æ¥å°±å¾—å¿ å¿ƒä¸ºä¸»ã€‚");
 		command("recruit " + ob->query("id"));
 		ob ->set("title", oldtitle);
 	}
 	else
 	{
-		command("say ÄãÊÇºÎÈË£¬Èç´Ë´óµ¨£¬¼ÙÃ°ÎÒ¸®ÖĞØËÆÍ£¡");
+		command("say ä½ æ˜¯ä½•äººï¼Œå¦‚æ­¤å¤§èƒ†ï¼Œå‡å†’æˆ‘åºœä¸­å®ä»†ï¼");
 		return;
 	}
 }

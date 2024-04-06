@@ -1,25 +1,25 @@
-// yangzhou 's ÀÏÊó
+// yangzhou 's è€é¼ 
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÀÏÊó", ({ "laoshu","hao zi","mouse" }) );
-	set("race", "Ò°ÊÞ");
+	set_name("è€é¼ ", ({ "laoshu","hao zi","mouse" }) );
+	set("race", "é‡Žå…½");
 	set("age", 3);
-	set("long", "Ò»Ö»»ÒÀÏÊó¡£\n");
+	set("long", "ä¸€åªç°è€é¼ ã€‚\n");
 	
 	set("str", 20);
 	set("con", 10);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set("chat_chance", 30);
 	set("chat_msg", ({
 		(: this_object(), "random_move" :),
-		"ÀÏÊó¡°Ö§¡±¡°Ö§¡±½ÐÁË¼¸Éù¡£\n",
-		"ÀÏÊó¾¯ÌèµÄÍû×ÅÄã¡£\n",
+		"è€é¼ â€œæ”¯â€â€œæ”¯â€å«äº†å‡ å£°ã€‚\n",
+		"è€é¼ è­¦æƒ•çš„æœ›ç€ä½ ã€‚\n",
                          }));		
 	set_temp("apply/attack", 10);
 	set_temp("apply/armor", 100);
@@ -36,8 +36,8 @@ int accept_object(object who, object ob)
 {
 	if( ob->id("huashenmi") ) {
 		set_leader(who);
-                this_object()->set("title",who->query("name")+"ÑøµÄ");
-		message("vision", name() + "ÔÚÄã½ÅÏÂ×ªÁËÒ»È¦¡£\n", environment());
+                this_object()->set("title",who->query("name")+"å…»çš„");
+		message("vision", name() + "åœ¨ä½ è„šä¸‹è½¬äº†ä¸€åœˆã€‚\n", environment());
 		return 1;
 	}
 

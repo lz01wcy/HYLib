@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("×¿Âê", ({ "zhuoma" }));
+        set_name("å“çŽ›", ({ "zhuoma" }));
         set("long",
-                "ËýÊÇÒ»Î»²Ø×åÅ®Í¬°û¡£\n");
-        set("gender", "Å®ÐÔ");
+                "å¥¹æ˜¯ä¸€ä½è—æ—å¥³åŒèƒžã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -50,6 +50,6 @@ void init()
 void greeting(object ob)
 {
 
-        say ("×¿ÂêºÏÊ²ÎªÀñ£¬ËµµÀ£º°¢åôÙ¢·ð£¡"+RANK_D->query_respect(ob) + "£¬Æ¶ÄáÕâÏáÓÐÀñÁË¡£\n");
+        say ("å“çŽ›åˆä»€ä¸ºç¤¼ï¼Œè¯´é“ï¼šé˜¿å¼­ä½—ä½›ï¼"+RANK_D->query_respect(ob) + "ï¼Œè´«å°¼è¿™åŽ¢æœ‰ç¤¼äº†ã€‚\n");
         return;
 }

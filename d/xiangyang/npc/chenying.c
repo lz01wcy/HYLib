@@ -4,10 +4,10 @@ inherit F_MASTER;
 
 void create()
 {
-    set_name("³ÌÓ¢", ({"chen ying", "chen", "ying"}));
-    set("gender", "Å®ĞÔ");
+    set_name("ç¨‹è‹±", ({"chen ying", "chen", "ying"}));
+    set("gender", "å¥³æ€§");
     set("age", 19);
-    set("long", "ËıÊÇÊÇ»ÆÒ©Ê¦µÄĞ¡Í½µÜ£¬³¤µÄ¶ËÖØÃÀÀö¡£\n");
+    set("long", "å¥¹æ˜¯æ˜¯é»„è¯å¸ˆçš„å°å¾’å¼Ÿï¼Œé•¿çš„ç«¯é‡ç¾ä¸½ã€‚\n");
 
     set("attitude", "peaceful");
        

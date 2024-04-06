@@ -6,14 +6,14 @@ inherit BOOTS;
  
 void create()
 {
-	set_name("Í­Ñ¥", ({ "tong xue", "tongxue","xue" }) );
+	set_name("é“œé´", ({ "tong xue", "tongxue","xue" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "tong");
-		set("unit", "Ë«");
-		set("long", "ÕâÊÇÒ»Ë«ÇàÍ­ÖÆ×÷µÄÑ¥×Ó£¬ÓÃÒÔ±£»¤Ë«½Å¡£\n");
+		set("unit", "åŒ");
+		set("long", "è¿™æ˜¯ä¸€åŒé’é“œåˆ¶ä½œçš„é´å­ï¼Œç”¨ä»¥ä¿æŠ¤åŒè„šã€‚\n");
 		set("value", 2000);
 		set("oldsix/max_damage",20);
 		set("oldsix/protect",3);

@@ -3,29 +3,29 @@
 inherit ITEM;
 
 string* titles = ({
-	"¿ÚÄ¥·Ê¼¦",
-	"ÈıÏÊÑ¼×Ó",
-	"Îåç¸¼¦Ë¿",
-	"ìÀÈâ",
-	"ìÀ¶Ç·Î",
-	"ÈâÆ¬ìÀ°×²Ë",
-	"»ÆìËÅ£Èâ",
-	"ÑòÈâìÀ²¤²Ë¶¹¸¯",
-	"Ó£ÌÒÈâÉ½Ò©",
-	"Â¿ÈâìÀ°×²Ë",
-	"ÑòÈâÆ¬´¨Ğ¡ÂÜ²·",
-	"Ñ¼ÌõÁïº£²Î",
-	"Ñ¼¶¡Áï¸ğÏÉÃ×",
-	"ÉÕ´Ä¹½",
-	"ÈâÆ¬ìÀÓñÀ¼Æ¬",
-	"ÑòÈâË¿ìÀÅÜ¶ÇË¿",
-	"»Æ¾Â²Ë³´Èâ",
-	"Ñ¬Öâ»¨Ğ¡¶Ç",
-	"Ñ¬¸ÉË¿",
-	"ÅëÆş²Ë",
-	"»¨½·ÓÍ³´°×²ËË¿",
-	"°×ÖóÈûÀÕ",
-	"Åë°×Èâ",
+	"å£ç£¨è‚¥é¸¡",
+	"ä¸‰é²œé¸­å­",
+	"äº”ç»ºé¸¡ä¸",
+	"ç‚–è‚‰",
+	"ç‚–è‚šè‚º",
+	"è‚‰ç‰‡ç‚–ç™½èœ",
+	"é»„ç„–ç‰›è‚‰",
+	"ç¾Šè‚‰ç‚–è èœè±†è…",
+	"æ¨±æ¡ƒè‚‰å±±è¯",
+	"é©´è‚‰ç‚–ç™½èœ",
+	"ç¾Šè‚‰ç‰‡å·å°èåœ",
+	"é¸­æ¡æºœæµ·å‚",
+	"é¸­ä¸æºœè‘›ä»™ç±³",
+	"çƒ§èŒ¨è‡",
+	"è‚‰ç‰‡ç‚–ç‰å…°ç‰‡",
+	"ç¾Šè‚‰ä¸ç‚–è·‘è‚šä¸",
+	"é»„éŸ­èœç‚’è‚‰",
+	"ç†è‚˜èŠ±å°è‚š",
+	"ç†å¹²ä¸",
+	"çƒ¹æèœ",
+	"èŠ±æ¤’æ²¹ç‚’ç™½èœä¸",
+	"ç™½ç…®å¡å‹’",
+	"çƒ¹ç™½è‚‰",
 });
 
 
@@ -38,8 +38,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»ÅèÊ®·Ö¿É¿ÚµÄĞ¡²Ë¡£\n");
-		set("unit", "Åè");
+		set("long", "è¿™æ˜¯ä¸€ç›†ååˆ†å¯å£çš„å°èœã€‚\n");
+		set("unit", "ç›†");
 		set("value", 3000);
 		set("remaining", 4);
 		set("food_supply", 25);
@@ -58,10 +58,10 @@ int do_eat(string arg)
 
     if( !this_object()->id(arg) ) return 0;
     if( this_player()->is_busy() )
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
     if(   (int)this_player()->query("food")
        >= (int)this_player()->max_food_capacity() )
-     return notify_fail("ÄãÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²³Ô²»ÏÂÁË¡£\n");
+     return notify_fail("ä½ å·²ç»åƒå¤ªé¥±äº†ï¼Œå†ä¹Ÿåƒä¸ä¸‹äº†ã€‚\n");
 
     set("value", 0);
     this_player()->add("food", (int)query("food_supply"));
@@ -70,20 +70,20 @@ int do_eat(string arg)
 
     add("remaining", -1);
 	if ( query("remaining") ){
-		if ((string)this_player()->query("gender") == "ÄĞĞÔ")	{
-   		 message_vision("$N´ÓÅèÀï¼ĞÆğÁËÒ»Ğ©²ËËÍÈë¿ÚÖĞ£¬ÀÇÍÌ»¢ÑÊµØ³ÔÆğÀ´¡£\n", this_player());
+		if ((string)this_player()->query("gender") == "ç”·æ€§")	{
+   		 message_vision("$Nä»ç›†é‡Œå¤¹èµ·äº†ä¸€äº›èœé€å…¥å£ä¸­ï¼Œç‹¼åè™å’½åœ°åƒèµ·æ¥ã€‚\n", this_player());
 		} 
-		else if ((string)this_player()->query("gender") == "Å®ĞÔ") {
-		message_vision("$NÊ®·ÖÓÅÑÅµØ´ÓÅèÀï¼ĞÆğÁËÒ»Ğ©²ËËÍÈë¿ÚÖĞ¡£\n", this_player());
+		else if ((string)this_player()->query("gender") == "å¥³æ€§") {
+		message_vision("$Nååˆ†ä¼˜é›…åœ°ä»ç›†é‡Œå¤¹èµ·äº†ä¸€äº›èœé€å…¥å£ä¸­ã€‚\n", this_player());
 		}
 	}
 	else 	{ 
-		if ((string)this_player()->query("gender") == "ÄĞĞÔ")	{
-   		 message_vision("$N½«ÅèÀïµÄ²Ë³ÔÁË¾«¹â£¬ÔÙ°ÑÅè×ÓÌíÁË¸ö¸É¸É¾»¾»¡£\n",this_player());
+		if ((string)this_player()->query("gender") == "ç”·æ€§")	{
+   		 message_vision("$Nå°†ç›†é‡Œçš„èœåƒäº†ç²¾å…‰ï¼Œå†æŠŠç›†å­æ·»äº†ä¸ªå¹²å¹²å‡€å‡€ã€‚\n",this_player());
 		destruct(this_object());
 		}
-		else if ((string)this_player()->query("gender") == "Å®ĞÔ") {
-		 message_vision("$N³Ô¹âÁËÅèÀïµÄ²Ë£¬ÓÖÄÃ³öÒ»·½Ë¿ÅÁ£¬ÇáÇáµØ²ÁÁË²Á×ì¡£\n",this_player());
+		else if ((string)this_player()->query("gender") == "å¥³æ€§") {
+		 message_vision("$Nåƒå…‰äº†ç›†é‡Œçš„èœï¼Œåˆæ‹¿å‡ºä¸€æ–¹ä¸å¸•ï¼Œè½»è½»åœ°æ“¦äº†æ“¦å˜´ã€‚\n",this_player());
 		destruct(this_object());
 		}
 	}

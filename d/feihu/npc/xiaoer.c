@@ -1,4 +1,4 @@
-// xiaoer.c ¾ÆµêĞ¡¶ş
+// xiaoer.c é…’åº—å°äºŒ
 //by steel
 #include "ansi.h"
 inherit NPC;
@@ -6,11 +6,11 @@ inherit F_DEALER;
 int ask_chuangwang();
 void create()
 {
-        set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÎ»µêĞ¡¶şÂúÁ³ºÍÆø,ÕıÔÚ¸ß¸ßĞËĞËµÄÕĞºô¿ÍÈË¡£\n");
+                "è¿™ä½åº—å°äºŒæ»¡è„¸å’Œæ°”,æ­£åœ¨é«˜é«˜å…´å…´çš„æ‹›å‘¼å®¢äººã€‚\n");
         set("combat_exp", 1000);
         set("attitude", "friendly");
         set("vendor_goods", ({
@@ -20,12 +20,12 @@ void create()
         set("chat_msg_chance",10);
         set("chat_msg",
         ({
-        "°¦,Ä¸Ç×µÄĞÄ²¡Ê²÷áÊ±ºò²Å»áºÃÑ½,³îËÀÎÒÁË¡£ÄÇÎ»´óÏº°ï°ïÎÒ¡£\n",
+        "å”‰,æ¯äº²çš„å¿ƒç—…ä»€éº½æ—¶å€™æ‰ä¼šå¥½å‘€,æ„æ­»æˆ‘äº†ã€‚é‚£ä½å¤§è™¾å¸®å¸®æˆ‘ã€‚\n",
         (:command("sigh"):),
         }) );
          set("inquiry",([
-        "´³Íõ" :(:ask_chuangwang:),
-        "±¦²Ø" :(:ask_chuangwang:),
+        "é—¯ç‹" :(:ask_chuangwang:),
+        "å®è—" :(:ask_chuangwang:),
          ]) );  
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -50,18 +50,18 @@ int ask_chuangwang()
     
    if(!ob->query_temp("given"))
     {
-    command("tell "+ob->query("id")+" Ğê...,ÄãÎÊÕâĞ©¸ÉÊ²Ã´,ÎÒ²»ÖªµÀ¡£");
-    say(YEL"µêĞ¡¶şÆÄ²»ĞÅÈÎµÄ¿´×ÅÄã\n"NOR); 
+    command("tell "+ob->query("id")+" å˜˜...,ä½ é—®è¿™äº›å¹²ä»€ä¹ˆ,æˆ‘ä¸çŸ¥é“ã€‚");
+    say(YEL"åº—å°äºŒé¢‡ä¸ä¿¡ä»»çš„çœ‹ç€ä½ \n"NOR); 
     return 1;
     }
     else
     {
-     command("tell "+ob->query("id")+" "+"ÕâÎ»"+RANK_D->query_respect(ob)+"\n"+
-      "Äã¾ÈÁË¼ÒÄ¸µÄÃü£¬ÕâË«±ùÉ½Ñ¥ÄãÄÃÈ¥°É£¬È¥´³Íõ±¦²ØÓÃµÃ×Å¡£\n");
+     command("tell "+ob->query("id")+" "+"è¿™ä½"+RANK_D->query_respect(ob)+"\n"+
+      "ä½ æ•‘äº†å®¶æ¯çš„å‘½ï¼Œè¿™åŒå†°å±±é´ä½ æ‹¿å»å§ï¼Œå»é—¯ç‹å®è—ç”¨å¾—ç€ã€‚\n");
      boots=new("/d/feihu/obj/snow_boots");
      boots->set_amount(1);
      boots->move(ob);
-     command("say ÄãµÃµ½ÁË±ùÉ½Ñ¥£¡\n");
+     command("say ä½ å¾—åˆ°äº†å†°å±±é´ï¼\n");
      ob->set_temp("given",0);
      return 1;  
     } 
@@ -72,12 +72,12 @@ void greeting(object ob)
         this_player()->set_temp("given",0);
         switch( random(2) ) {
                 case 0:
-                        say( "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ºÈ±­ÉÕ¾Æ£¬ĞªĞªÍÈ°É¡£\n");
+                        say( "åº—å°äºŒç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè¿›æ¥å–æ¯çƒ§é…’ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
                         break;
                 case 1:
-                        say( "µêĞ¡¶ş´êÁË´êÊÖ£¬ËµµÀ£ºÌìÀä,ÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬¿ìÇë½ø¡£\n");
+                        say( "åº—å°äºŒæ“äº†æ“æ‰‹ï¼Œè¯´é“ï¼šå¤©å†·,è¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œå¿«è¯·è¿›ã€‚\n");
                         break;
         }
 }
@@ -90,7 +90,7 @@ int accept_object(object ob, object obj)
    
        if( !present(obj,ob) )
         { 
-         say("ÄãÓĞÂğ£¿£¿\n");
+         say("ä½ æœ‰å—ï¼Ÿï¼Ÿ\n");
          return 1;
         }  
         if(obj->query("id")=="bearheart")

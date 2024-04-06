@@ -7,18 +7,18 @@ inherit STAFF;
 
 void create()
 {
-	set_name("À×Õğµ²", ({"leizhen dang", "staff"}));
+	set_name("é›·éœ‡æŒ¡", ({"leizhen dang", "staff"}));
 	set_weight(8000);
 
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸Ë");
-		set("long", "Ò»¸ËÊ®·Ö³ÁÖØµÄÀ×Õğµ²¡£\n");
+		set("unit", "æ†");
+		set("long", "ä¸€æ†ååˆ†æ²‰é‡çš„é›·éœ‡æŒ¡ã€‚\n");
 		set("value", 10000);
 		set("material", "bamboo");
-		set("wield_msg", "$N»ØÊÖ´ÓÉíºó³é³öÒ»¸ËÀ×Õğµ²¡£\n");
-		set("unwield_msg", "$NÊÖÍùºóÒ»¿Û£¬°ÑÀ×Õğµ²·ÅÔÚÉíºó¡£\n");
+		set("wield_msg", "$Nå›æ‰‹ä»èº«åæŠ½å‡ºä¸€æ†é›·éœ‡æŒ¡ã€‚\n");
+		set("unwield_msg", "$Næ‰‹å¾€åä¸€æ‰£ï¼ŒæŠŠé›·éœ‡æŒ¡æ”¾åœ¨èº«åã€‚\n");
 	}
 	init_staff(50);
 	setup();

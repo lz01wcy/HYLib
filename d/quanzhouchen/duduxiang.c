@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "都督巷");
 	set("long", @LONG
-����Ȫ�ݵ�һ��С��徻���ࡣԶԶ�ɼ���׺�ǽ����������ɭ
-�ϣ���Ȼ������ͨ��ס�ҡ�
+这是泉州的一条小巷，清净整洁。远远可见巷底红墙高砌，把守森
+严，显然不是普通的住家。
 LONG );
 	set("outdoors", "quanzhou");
 	set("exits", ([

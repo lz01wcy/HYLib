@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short",  "�᷿" );
+        set("short",  "厢房" );
         set("long", @LONG
-һ�䲻����᷿����ʰ��ʮ�ָɾ��������Ǽ���ƽ�����֮�ã�
-һ��С����͸��Щ�����ˣ��Ե�ʮ�ֵ����ġ�
+一间不大的厢房，收拾的十分干净，看来是家人平是起居之用，
+一扇小窗户透进些光线了，显的十分的舒心。
 LONG
         );
           

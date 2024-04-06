@@ -3,12 +3,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "������");
+        set("short", "大松林");
 	set("long", @LONG
-����ǰ��Ȼһ�ڣ������У�ֻ������ǰ�󣬵�����������ǵص������֡�
-��ʮ�ɸߵĴ���������һ�飬��ʵ��֦Ҷ��һ�����ɡ��������գ���������
-��˿��Ҳ�ޡ��߰Ѻ��������ڵ��ϣ�һ�Ų���ȥ������β����������ƺ���
-ʧ�˷�����ûͷ��Ӭ�㵽���Ҵ���
+你眼前骤然一黑，朦胧中，只见左右前后，到处都是铺天盖地的松树林。
+几十丈高的大松树簇在一块，密实的枝叶象一蓬蓬巨伞般伸向天空，把阳光遮
+得丝毫也无。尺把厚的松针积在地上，一脚踩下去，半天拔不出来。你似乎迷
+失了方向，象没头苍蝇般到处乱闯。
 LONG
 	);
 	set("exits", ([ 
@@ -17,7 +17,7 @@ LONG
             "east" : __DIR__"pubu",
             "west" : __DIR__"songlin"+(1+random(6)),
         ]));
-        set("outdoors", "����");
+        set("outdoors", "大理");
 	setup();
         replace_program(ROOM);
 }

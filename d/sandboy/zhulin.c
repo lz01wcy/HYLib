@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "竹林");
 	set("long", @LONG
-һƬ��������֣�������Ҷ��϶���µ���ɫ���⡣�Ų�̤����Ҷ��
-����ϤϤ������������
+一片深邃的竹林，清翠的绿叶间隙洒下点点金色阳光。脚步踏在竹叶上
+发出悉悉索索的声音。
 LONG
 	);
 	set("no_clean_up", 0);

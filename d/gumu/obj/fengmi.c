@@ -1,4 +1,4 @@
-// fengmi.c Óñ·äÃÛ
+// fengmi.c ç‰èœ‚èœœ
 // By Lgg,1998.9
 
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("Óñ·äÃÛ", ({"mi", "fengmi", "feng mi"}));
+        set_name("ç‰èœ‚èœœ", ({"mi", "fengmi", "feng mi"}));
         set_weight(750);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¹ŞÓñ·äÄğ³ÉµÄÃÛ¡£\n");
-                set("unit", "¹Ş");
+                set("long", "ä¸€ç½ç‰èœ‚é…¿æˆçš„èœœã€‚\n");
+                set("unit", "ç½");
                 set("value", 20);
                 set("max_liquid", 12);
         }
@@ -21,7 +21,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "fengmi",
-                "name": "·äÃÛ",
+                "name": "èœ‚èœœ",
                 "remaining": 12,
                 "drunk_supply": 9,
         ]));

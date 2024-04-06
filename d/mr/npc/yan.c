@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÑÏÂèÂè", ({ "yan mama", "mam", "yan" }));
-        set("gender", "Å®ÐÔ");
+        set_name("ä¸¥å¦ˆå¦ˆ", ({ "yan mama", "mam", "yan" }));
+        set("gender", "å¥³æ€§");
         set("age", 50);      
-	set("title",BLU	"»¨·Ê·¿¹ÜÊÂ"NOR);
+	set("title",BLU	"èŠ±è‚¥æˆ¿ç®¡äº‹"NOR);
 	set("str", 25);
         set("int", 26);
         set("con", 26);
@@ -20,7 +20,7 @@ void create()
         set("attitude", "peaceful");
 	set("max_qi",1000);
         set("max_jing",1000);
-set("no_get","ÄãÃ»°ì·¨ÄÃÆðÕâ¸öÈË");
+set("no_get","ä½ æ²¡åŠžæ³•æ‹¿èµ·è¿™ä¸ªäºº");
         set("neili",1000);
         set("max_neili",1000);
 	set("jiali",30);
@@ -42,10 +42,10 @@ set("no_get","ÄãÃ»°ì·¨ÄÃÆðÕâ¸öÈË");
         setup();
         carry_object(__DIR__"obj/blade")->wield();
         set("inquiry", ([
-            "name" : "ÎÒÊÇÂüÙ¢ÂÞÉ½×¯µÄ»¨·¿¹ÜÊÂ¡£\n",
-            "here" : "ÕâÀïÊÇ»¨·Ê·¿£¬×¨ÃÅ°Ñ·òÈËÈÃ´¦ËÀµÄÈË×ö»¨·Ê¡£\n",
-            "rumors" : "×î½üÒ»¸öÐÕ¶ÎµÄÐ¡×Ó´ÓÎÒÊÖÀïÅÜÁË¡£\n",
-                         "¹¤¾ß" : (: give_tools :),
+            "name" : "æˆ‘æ˜¯æ›¼ä½—ç½—å±±åº„çš„èŠ±æˆ¿ç®¡äº‹ã€‚\n",
+            "here" : "è¿™é‡Œæ˜¯èŠ±è‚¥æˆ¿ï¼Œä¸“é—¨æŠŠå¤«äººè®©å¤„æ­»çš„äººåšèŠ±è‚¥ã€‚\n",
+            "rumors" : "æœ€è¿‘ä¸€ä¸ªå§“æ®µçš„å°å­ä»Žæˆ‘æ‰‹é‡Œè·‘äº†ã€‚\n",
+                         "å·¥å…·" : (: give_tools :),
                          "tools" : (: give_tools :),
  ]));           
 }
@@ -61,9 +61,9 @@ void init()
 
         if (interactive(ob) 
         && !environment(ob)->query("no_fight")
-        && ( (fam = ob->query("family")) && fam["family_name"] != "¹ÃËÕÄ½ÈÝ" ) )
+        && ( (fam = ob->query("family")) && fam["family_name"] != "å§‘è‹æ…•å®¹" ) )
         {
-                        command("say ½üÀ´»¨·Ê²»Ì«¹»£¬ÈÃÀÏÆÅ×ÓÎÒÄÃÄã×ö»¨·Ê°É£¡£¡£¡\n");
+                        command("say è¿‘æ¥èŠ±è‚¥ä¸å¤ªå¤Ÿï¼Œè®©è€å©†å­æˆ‘æ‹¿ä½ åšèŠ±è‚¥å§ï¼ï¼ï¼\n");
                         me->set_leader(ob);
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -75,25 +75,25 @@ int give_tools()
        me = this_object();
        ob = this_player();
        if( !ob->query_temp("mr_job")){
-          say (CYN"ÑÏÂèÂèËµµÀ£ºÄãÃ»¸úÍõ·òÈËËµ¹ý£¬ÅÜÀ´ÒªÊ²Ã´¹¤¾ß¡£\n"NOR);
+          say (CYN"ä¸¥å¦ˆå¦ˆè¯´é“ï¼šä½ æ²¡è·ŸçŽ‹å¤«äººè¯´è¿‡ï¼Œè·‘æ¥è¦ä»€ä¹ˆå·¥å…·ã€‚\n"NOR);
           return 1;
           } 
-       if(ob->query_temp("mark/¹¤¾ß")){
-          say (CYN"ÑÏÂèÂèËµµÀ£ºÄãÏÈ°Ñ¹¤¾ß»¹ÁË£¬ÔÙÁì¹¤¾ß°É¡£\n"NOR);
+       if(ob->query_temp("mark/å·¥å…·")){
+          say (CYN"ä¸¥å¦ˆå¦ˆè¯´é“ï¼šä½ å…ˆæŠŠå·¥å…·è¿˜äº†ï¼Œå†é¢†å·¥å…·å§ã€‚\n"NOR);
           return 1;
           } 
-       if(ob->query_temp("mark/»¹ÁË")){
-          say (CYN"ÑÏÂèÂèËµµÀ£ºÄã»¹Ã»¸²Ãü(task ok)ÁìÐÂ»î°É£¬ÅÜÀ´ÒªÊ²Ã´¹¤¾ß¡£\n"NOR);             
+       if(ob->query_temp("mark/è¿˜äº†")){
+          say (CYN"ä¸¥å¦ˆå¦ˆè¯´é“ï¼šä½ è¿˜æ²¡è¦†å‘½(task ok)é¢†æ–°æ´»å§ï¼Œè·‘æ¥è¦ä»€ä¹ˆå·¥å…·ã€‚\n"NOR);             
           return 1;
           }  
-          say(CYN"ÑÏÂèÂèËµµÀ£º¼ÈÈ»ÄãÒÑ¾­ÁìÁË»î£¬ÎÒ¾Í¸øÄãÕâ°Ñ¹¤¾ß£¬Ð¡ÐÄ±£¹Ü£¬±ðÅª¶ªÁË¡£\n"NOR);
-          message_vision("$N½»¸ø$nÒ»°Ñ¹¤¾ß¡£\n", me, ob);
-       if(ob->query_temp("mr_job")=="½½»¨"){
+          say(CYN"ä¸¥å¦ˆå¦ˆè¯´é“ï¼šæ—¢ç„¶ä½ å·²ç»é¢†äº†æ´»ï¼Œæˆ‘å°±ç»™ä½ è¿™æŠŠå·¥å…·ï¼Œå°å¿ƒä¿ç®¡ï¼Œåˆ«å¼„ä¸¢äº†ã€‚\n"NOR);
+          message_vision("$Näº¤ç»™$nä¸€æŠŠå·¥å…·ã€‚\n", me, ob);
+       if(ob->query_temp("mr_job")=="æµ‡èŠ±"){
          tools = new(__DIR__"obj/shuihu");
          tools->move(this_player());
-         say(CYN"ÑÏÂèÂèËµµÀ£ºÎÒÃÇÕâÓÐºÜ¶à»¨£¬ÄãÈ¥»¨´ÔÖÐÖÐ½½½½»¨°É(jiaoshui hua)¡£\n"NOR);
-          say(CYN"ÑÏÂèÂèËµµÀ£º¸ÉÍê»îºó£¬ÏÈÀ´ÎÒÕâ»¹¹¤¾ß£¬ÔÙÈ¥¸æËßÍõ·òÈË(task ok)¡£\n"NOR);
-        ob->set_temp("mark/¹¤¾ß",1);
+         say(CYN"ä¸¥å¦ˆå¦ˆè¯´é“ï¼šæˆ‘ä»¬è¿™æœ‰å¾ˆå¤šèŠ±ï¼Œä½ åŽ»èŠ±ä¸›ä¸­ä¸­æµ‡æµ‡èŠ±å§(jiaoshui hua)ã€‚\n"NOR);
+          say(CYN"ä¸¥å¦ˆå¦ˆè¯´é“ï¼šå¹²å®Œæ´»åŽï¼Œå…ˆæ¥æˆ‘è¿™è¿˜å·¥å…·ï¼Œå†åŽ»å‘Šè¯‰çŽ‹å¤«äºº(task ok)ã€‚\n"NOR);
+        ob->set_temp("mark/å·¥å…·",1);
         return 1;
 }
 }
@@ -103,19 +103,19 @@ int accept_object(object me, object obj)
       object ob;
       me=this_object();
       ob=this_player();
-     if(!(ob->query_temp("mark/½½Íê")))
+     if(!(ob->query_temp("mark/æµ‡å®Œ")))
         {
-        say(CYN"ÑÏÂèÂèËµ£ºÄã»¹Ã»Íê³É¹¤×÷£¬ÔõÃ´¾Í»ØÀ´»¹¹¤¾ßÁË£¬ÍµÀÁÂð£¿\n"NOR);
+        say(CYN"ä¸¥å¦ˆå¦ˆè¯´ï¼šä½ è¿˜æ²¡å®Œæˆå·¥ä½œï¼Œæ€Žä¹ˆå°±å›žæ¥è¿˜å·¥å…·äº†ï¼Œå·æ‡’å—ï¼Ÿ\n"NOR);
                  return 1;
               } 
      if (obj->query("id")!="shui hu")            
         {  
-        command("say Äã»¹´í¶«Î÷ÁË°É£¬ÎÒ´ÓÃ»ÓÐ·¢¹ýÕâÑù¹¤¾ß¡£\n");
+        command("say ä½ è¿˜é”™ä¸œè¥¿äº†å§ï¼Œæˆ‘ä»Žæ²¡æœ‰å‘è¿‡è¿™æ ·å·¥å…·ã€‚\n");
                  return 1;
               }
                command("nod");
-               command("say ¸ÉµÃ²»´í£¬Íõ·òÈË»á¸ßÐËµÄ!");
-               ob->set_temp("mark/»¹ÁË",1); 
+               command("say å¹²å¾—ä¸é”™ï¼ŒçŽ‹å¤«äººä¼šé«˜å…´çš„!");
+               ob->set_temp("mark/è¿˜äº†",1); 
                call_out("destroying", 1, me, obj);           
                return 1;
 }

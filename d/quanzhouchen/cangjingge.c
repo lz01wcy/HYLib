@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ؾ���");
+	set("short", "藏经阁");
 	set("long", @LONG
-�ؾ����ǿ�Ԫ�µ���ߴ�������һ��Сɽ���ϡ�������㣬������
-һС�Ž��ա��Ǹ�ƾ������˫����գ���̳���أ��ĸ�ʫ�⡣���ϲؾ�
-�������
+藏经阁是开元寺的最高处，建在一个小山坡上。阁分两层，阁下有
+一小门紧闭。登阁凭栏，看双塔凌空，点坛俯地，饶富诗意。阁上藏经
+近万卷。
 LONG );
 	set("exits", ([
 		"southdown" : __DIR__"jietang",

@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("½ğ»·Éß", ({ "jin she", "she" }) );
-	set("race", "Ò°ÊŞ");
+	set_name("é‡‘ç¯è›‡", ({ "jin she", "she" }) );
+	set("race", "é‡å…½");
 	set("age", 2);
-	set("long", "Ò»Ö»ÈÃÈË¿´ÁËÆğÃ«¹Çã¤È»µÄ½ğ»·Éß¡£\n");
+	set("long", "ä¸€åªè®©äººçœ‹äº†èµ·æ¯›éª¨æ‚šç„¶çš„é‡‘ç¯è›‡ã€‚\n");
 	set("attitude", "peaceful");
 	set("str", 20);
 	set("cor", 20);
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 
 	set("combat_exp", 1500+random(200));
@@ -45,7 +45,7 @@ void init()
 void die()
 {
 	object ob;
-	message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+	message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
 	ob = new("/d/baituo/obj/jindan");
 	ob->move(environment(this_object()));
 	destruct(this_object());
@@ -57,6 +57,6 @@ int hit_ob(object me, object ob, int damage)
 	if( random(damage) > (int)ob->query_temp("apply/armor")
 	&&	(int)ob->query_condition("snake_poison") < 10 ) {
 		ob->apply_condition("snake_poison", 20);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨ï¼\n" NOR );
 	}
 }

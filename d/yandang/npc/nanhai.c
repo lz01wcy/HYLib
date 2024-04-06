@@ -1,14 +1,14 @@
-// musix yangzhou's ÄĞº¢
+// musix yangzhou's ç”·å­©
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÄĞº¢",({ "nanhai","hai","boy" }) );
-        set("gender", "ÄĞĞÔ" );
+	set_name("ç”·å­©",({ "nanhai","hai","boy" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 13);
         set("long", 
-"²»ÖªË­¼ÒµÄĞ¡ÄĞº¢¡£\n");
+"ä¸çŸ¥è°å®¶çš„å°ç”·å­©ã€‚\n");
 
         set("str", 17);
         set("cpi", 16);

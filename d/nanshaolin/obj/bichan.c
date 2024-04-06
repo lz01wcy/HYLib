@@ -4,10 +4,10 @@
 inherit NPC;
 void create()
 {
-	set_name("±ÌìøÊ¯ÈË", ({ "bichan shiren", "bichan", "shiren" }));
-	set("long", "Äê´ú¾ÃÔ¶ÒÑÎŞ·¨¿´ÇåËûµ±ÄêÖ®ÏàÃ²£¬\n"
-		"ËûÉí²Ä¸ß´óÍ¨ÉíÂÌÍ¸£¬±ãÈçÒ»Öê·±Ã¯¹Å»±¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("ç¢§ç¦…çŸ³äºº", ({ "bichan shiren", "bichan", "shiren" }));
+	set("long", "å¹´ä»£ä¹…è¿œå·²æ— æ³•çœ‹æ¸…ä»–å½“å¹´ä¹‹ç›¸è²Œï¼Œ\n"
+		"ä»–èº«æé«˜å¤§é€šèº«ç»¿é€ï¼Œä¾¿å¦‚ä¸€æ ªç¹èŒ‚å¤æ§ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 	set("age", 100);

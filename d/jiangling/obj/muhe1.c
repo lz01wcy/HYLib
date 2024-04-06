@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(YEL"Ä¾ºĞ"NOR, ({"mu he", "box"}));
+	set_name(YEL"æœ¨ç›’"NOR, ({"mu he", "box"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", YEL"ÕâÄ¾ºĞ¹ÅÆÓµäÑÅ£¬³ÁµéµéµÄ£¬ÀïÃæÒ²ĞíÓĞÊ²Ã´±¦¹óµÄÎïÊÂ¡£\n"NOR);
-		set("unit", "¸ö");
+		set("long", YEL"è¿™æœ¨ç›’å¤æœ´å…¸é›…ï¼Œæ²‰ç”¸ç”¸çš„ï¼Œé‡Œé¢ä¹Ÿè®¸æœ‰ä»€ä¹ˆå®è´µçš„ç‰©äº‹ã€‚\n"NOR);
+		set("unit", "ä¸ª");
 		set("open_count", 0);
 		set("weight", 20000);
 	}
@@ -22,5 +22,5 @@ void init()
 
 int do_open()
 {
-	return notify_fail("Ä¾ºĞÒÑ¾­±»±ğÈË´ò¿ª¹ıÁË¡£\n");
+	return notify_fail("æœ¨ç›’å·²ç»è¢«åˆ«äººæ‰“å¼€è¿‡äº†ã€‚\n");
 }

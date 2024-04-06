@@ -1,15 +1,15 @@
-//Room: fushouan.c ¸£ÊÙâÖ
+//Room: fushouan.c ç¦å¯¿åºµ
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","¸£ÊÙâÖ");
+      set("short","ç¦å¯¿åºµ");
       set("long",@LONG
-¸£ÊÙâÖÔÚÉñË®âÖÄÏ£¬ÊÇÒ»¸öÃû½ÐÌìÐÔµÄÉ®ÈË½¨ÔìµÄ¡£âÖÇ°ÓÐ¾ÅÇúÇþ¡¢Á÷±­
-³Ø£¬¹ÅÈËÔø¾ÝÔÚ´ËÒû¾ÆÁ÷±­£¬¹Û¾°¸³Ê«£¬¸èÓ½ÐËÌ¾£¬²»ÖªÏ¦ÈÕ¡£âÖÅÔÓÐÖê´óº£
-ÌÄÊ÷£¬Êý°Ù²ÔÁä£¬¸ß´ïÊ®ÓàÕÉ¡£
+ç¦å¯¿åºµåœ¨ç¥žæ°´åºµå—ï¼Œæ˜¯ä¸€ä¸ªåå«å¤©æ€§çš„åƒ§äººå»ºé€ çš„ã€‚åºµå‰æœ‰ä¹æ›²æ¸ ã€æµæ¯
+æ± ï¼Œå¤äººæ›¾æ®åœ¨æ­¤é¥®é…’æµæ¯ï¼Œè§‚æ™¯èµ‹è¯—ï¼Œæ­Œå’å…´å¹ï¼Œä¸çŸ¥å¤•æ—¥ã€‚åºµæ—æœ‰æ ªå¤§æµ·
+æ£ æ ‘ï¼Œæ•°ç™¾è‹é¾„ï¼Œé«˜è¾¾åä½™ä¸ˆã€‚
 LONG);
       set("objects", ([
            CLASS_D("emei") + "/zhen" : 1,

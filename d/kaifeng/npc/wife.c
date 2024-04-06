@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("¼§·ïÒÇ", ({
+	set_name("å§¬å‡¤ä»ª", ({
 		"ji fengyi",
 		"ji",
 		"fengyi",
 		}));
 	set("long",
-		"Ëı¾ÍÊÇ°ü´óÈËµÄ·òÈË¼æÎÀÊ¿,ËıÔøÔÚÁéğÕ¹¬Ï°Îä.\n");
-	set("gender", "Óù´ÍÒ»Æ·Ú¾Ãü·òÈË");
+		"å¥¹å°±æ˜¯åŒ…å¤§äººçš„å¤«äººå…¼å«å£«,å¥¹æ›¾åœ¨çµé¹«å®«ä¹ æ­¦.\n");
+	set("gender", "å¾¡èµä¸€å“è¯°å‘½å¤«äºº");
 	set("age", 45);
 	set("shen_type",1);
 	set("attitude", "peaceful");

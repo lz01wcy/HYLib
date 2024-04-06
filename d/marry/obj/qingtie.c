@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(BOLD HIR"ÇëÌû"NOR, ({ "qing tie","tie" }) );
+        set_name(BOLD HIR"è¯·å¸–"NOR, ({ "qing tie","tie" }) );
         set_weight(3);
         set("value", 0);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÕÅ²Î¼Ó»éÀñÓÃµÄÇëÌù¡£\n
-ÉÏÃæĞ´×Å£ºÇë¸óÏÂÓÚÈıÈÕÄÚÔÚÑïÖİÎäÃí×ùÂí³µ²Î¼Ó»éÀñ¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "è¿™æ˜¯ä¸€å¼ å‚åŠ å©šç¤¼ç”¨çš„è¯·è´´ã€‚\n
+ä¸Šé¢å†™ç€ï¼šè¯·é˜ä¸‹äºä¸‰æ—¥å†…åœ¨æ‰¬å·æ­¦åº™åº§é©¬è½¦å‚åŠ å©šç¤¼ã€‚\n");
+                set("unit", "å¼ ");
         }
 }

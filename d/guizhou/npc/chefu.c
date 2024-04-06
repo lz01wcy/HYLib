@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-   set_name("³µ·ò",({ "che fu","che","fu" }) );
-        set("gender", "ÄÐÐÔ" );
+   set_name("è½¦å¤«",({ "che fu","che","fu" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇÒ»ÃûÆÕÍ¨µÄ³µ·ò¡£\n");
+   set("long", "è¿™æ˜¯ä¸€åæ™®é€šçš„è½¦å¤«ã€‚\n");
    set("combat_exp", 20000);
    set("attitude", "friendly");
    set_temp("apply/damage",30);
@@ -12,8 +12,8 @@ void create()
    set_temp("apply/armor",30);
    set("chat_chance",20);
    set("chat_msg",({
-   	"³µ·ò¸ßÉùº°µÀ£ºÎ¹£¬½è¸öµÀ£¬Ð»Ð»ÁË£¡\n",
-   	"³µ·òÒ»ÖåÃ¼£º¾ÝËµÈç¹ûÉ±ÁËÎÒ£¬¾ÍÓÐ»ú»á»ñµÃÊ²Ã´³ÆºÅ£¬ÕæÊÇºú³¶£¡\n",
+   	"è½¦å¤«é«˜å£°å–Šé“ï¼šå–‚ï¼Œå€Ÿä¸ªé“ï¼Œè°¢è°¢äº†ï¼\n",
+   	"è½¦å¤«ä¸€çš±çœ‰ï¼šæ®è¯´å¦‚æžœæ€äº†æˆ‘ï¼Œå°±æœ‰æœºä¼šèŽ·å¾—ä»€ä¹ˆç§°å·ï¼ŒçœŸæ˜¯èƒ¡æ‰¯ï¼\n",
    	(:random_move:),
    	}));
    setup();
@@ -30,9 +30,9 @@ void die()
    if(!userp(ob)) return ::die();
    
    if(random(100)>95){
-     CHANNEL_D->do_channel(this_object(),"rumor",ob->name()+"É±ËÀ³µ·ò£¬»ñµÃÁË"+
-      "¡¸ÆÛÈíÅÂÓ²¡¹µÄ³ÆºÅ£¡\n");
-     ob->set_temp("rank/class","ÆÛÈíÅÂÓ²");
+     CHANNEL_D->do_channel(this_object(),"rumor",ob->name()+"æ€æ­»è½¦å¤«ï¼ŒèŽ·å¾—äº†"+
+      "ã€Œæ¬ºè½¯æ€•ç¡¬ã€çš„ç§°å·ï¼\n");
+     ob->set_temp("rank/class","æ¬ºè½¯æ€•ç¡¬");
    }
    
    return ::die();

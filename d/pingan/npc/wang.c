@@ -2,10 +2,10 @@
 inherit NPC;
 void create()
 {
-        set_name("Íõ²¶Í·", ({ "wang xunbu", "wang" , "xunbu"}) );
+        set_name("çŽ‹æ•å¤´", ({ "wang xunbu", "wang" , "xunbu"}) );
         set("long",
-"Íõ²¶Í·ÊÇ¸ö¾©³ÇµÄ²¶Í·£¡ÀÖÓÚÖúÈË£¬Äã¿ÉÒÔÏòËû´òÌý[È¡ÏûÍ¨¼©]µÄÇé¿ö¡£\n");
-        set("title", BLU"³¬¼¶Ãû²¶"NOR);
+"çŽ‹æ•å¤´æ˜¯ä¸ªäº¬åŸŽçš„æ•å¤´ï¼ä¹äºŽåŠ©äººï¼Œä½ å¯ä»¥å‘ä»–æ‰“å¬[å–æ¶ˆé€šç¼‰]çš„æƒ…å†µã€‚\n");
+        set("title", BLU"è¶…çº§åæ•"NOR);
         set("attitude", "peaceful");
         set("combat_exp",4000000);
         set("str",60);
@@ -31,11 +31,11 @@ void create()
         map_skill("staff", "lingshe-zhangfa");
         
 //        set("inquiry", ([
-//                "¼õÅÑÊ¦¼ÇÂ¼"          :"ÄãÕÒ¶ÔÈËÁË£¬¾ÍÊÇÎÒÄÜ¸øÄã¼õÅÐÊ¦¼ÇÂ¼(jian ÅÐÊ¦¼ÇÂ¼)¡£\n",
-//                "ÅÑÊ¦"          :"°¦£¬ºó»Ú±³ÅÑÊ¦ÃÅÁË°É¡£\n",
-//                "ÅÑÊ¦¼ÇÂ¼"          :"ÒªÊÇÄãÒÔÇ°Ôø¾­ÓÐ¹ýÒ»´ÎÅÑÊ¦Ê¦ÃÅµÄ»°£¬ÄãµÄÊ¦¸µ¿É²»Ô¸Òâ½ÌÄã¸ü¸ßÉîµÄ¹¦·ò£¡\n",
-//                "¼õÅÑÊ¦"          :"ÄãÕÒ¶ÔÈËÁË£¬¾ÍÊÇÎÒÄÜ¸øÄã¼õÅÐÊ¦¼ÇÂ¼(jian ÅÐÊ¦¼ÇÂ¼)¡£\n",
-//                "¼õ¼ÇÂ¼"          :"ÄãÕÒ¶ÔÈËÁË£¬¾ÍÊÇÎÒÄÜ¸øÄã¼õÅÐÊ¦¼ÇÂ¼(jian ÅÐÊ¦¼ÇÂ¼)¡£\n",
+//                "å‡å›å¸ˆè®°å½•"          :"ä½ æ‰¾å¯¹äººäº†ï¼Œå°±æ˜¯æˆ‘èƒ½ç»™ä½ å‡åˆ¤å¸ˆè®°å½•(jian åˆ¤å¸ˆè®°å½•)ã€‚\n",
+//                "å›å¸ˆ"          :"å”‰ï¼ŒåŽæ‚”èƒŒå›å¸ˆé—¨äº†å§ã€‚\n",
+//                "å›å¸ˆè®°å½•"          :"è¦æ˜¯ä½ ä»¥å‰æ›¾ç»æœ‰è¿‡ä¸€æ¬¡å›å¸ˆå¸ˆé—¨çš„è¯ï¼Œä½ çš„å¸ˆå‚…å¯ä¸æ„¿æ„æ•™ä½ æ›´é«˜æ·±çš„åŠŸå¤«ï¼\n",
+//                "å‡å›å¸ˆ"          :"ä½ æ‰¾å¯¹äººäº†ï¼Œå°±æ˜¯æˆ‘èƒ½ç»™ä½ å‡åˆ¤å¸ˆè®°å½•(jian åˆ¤å¸ˆè®°å½•)ã€‚\n",
+//                "å‡è®°å½•"          :"ä½ æ‰¾å¯¹äººäº†ï¼Œå°±æ˜¯æˆ‘èƒ½ç»™ä½ å‡åˆ¤å¸ˆè®°å½•(jian åˆ¤å¸ˆè®°å½•)ã€‚\n",
 //        ]) );
         setup();
 
@@ -43,7 +43,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say Íõ²¶Í·Ëµ£ºÄã»¹²»ÅäºÍÎÒ¹ýÕÐ¡£");
+        command("say çŽ‹æ•å¤´è¯´ï¼šä½ è¿˜ä¸é…å’Œæˆ‘è¿‡æ‹›ã€‚");
         return 0;
 }
 void init()
@@ -58,11 +58,11 @@ int do_jian(string arg)
         string *skl_name;
         int i,*level;
         me= this_player();
-        if (arg != "Í¨¼©¼ÇÂ¼") 
-                return notify_fail("ÄãÒª¼õÊ²Ã´£¿\n");
+        if (arg != "é€šç¼‰è®°å½•") 
+                return notify_fail("ä½ è¦å‡ä»€ä¹ˆï¼Ÿ\n");
 //      call snowfly->apply_condition("killer",0);
         if (me->apply_condition("killer") < 1) 
-                return notify_fail("ÄãÕýÔÚÍ¨¼©ÖÐÂð£¿\n");
+                return notify_fail("ä½ æ­£åœ¨é€šç¼‰ä¸­å—ï¼Ÿ\n");
         my_skl=me->query_skills();
         if(mapp(my_skl)) {
         		skl_name = keys(my_skl);
@@ -73,11 +73,11 @@ if (level[i]>2)
         		me->set_skill(skl_name[i],level[i]-1);
 }
                   }
-        message_vision(MAG"$N¹òÔÚÁËµØÉÏ£¬¿ªÊ¼âã»ÚÍùÊÂ£¬ºó»ÚÑ½¡£¡£¡£ºó»Ú¡£¡£¡£\n\n"NOR,me);
+        message_vision(MAG"$Nè·ªåœ¨äº†åœ°ä¸Šï¼Œå¼€å§‹å¿æ‚”å¾€äº‹ï¼ŒåŽæ‚”å‘€ã€‚ã€‚ã€‚åŽæ‚”ã€‚ã€‚ã€‚\n\n"NOR,me);
         me->set("combat_exp", me->query("combat_exp") - me->query("combat_exp") /10);
         me->apply_condition("killer",0);
 //        me->add("betrayer",-1);
-//        me->set("title","ÆÕÍ¨°ÙÐÕ");
+//        me->set("title","æ™®é€šç™¾å§“");
 //        me->set("class","0");
 //        me->delete("family");
 //        me->delete("party");

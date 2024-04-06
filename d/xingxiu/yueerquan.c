@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÔÂ¶ùÈª");
+        set("short", "æœˆå„¿æ³‰");
         set("long", @LONG
-³öºõÄãµÄÒâÁÏÖ®Íâ£¬ÔÚÉ³Ä®ÖĞ¾¹È»ÓĞÈªË®¡£Ò»ãüÇå³ºµÄÈªË®ĞÎ³ÉÒ»¸öÔÂÑÀµÄ
-ĞÎ×´£¬Òò¶øµÃÃûÔÂ¶ùÈª¡£ÄÏÃæÊÇÒ»Æ¬ÇÍ±Ú(cliff)£¬¶«±ß´«À´ÎËÎËµÄÉùÏì¡£
+å‡ºä¹ä½ çš„æ„æ–™ä¹‹å¤–ï¼Œåœ¨æ²™æ¼ ä¸­ç«Ÿç„¶æœ‰æ³‰æ°´ã€‚ä¸€æ³“æ¸…æ¾ˆçš„æ³‰æ°´å½¢æˆä¸€ä¸ªæœˆç‰™çš„
+å½¢çŠ¶ï¼Œå› è€Œå¾—åæœˆå„¿æ³‰ã€‚å—é¢æ˜¯ä¸€ç‰‡å³­å£(cliff)ï¼Œä¸œè¾¹ä¼ æ¥å—¡å—¡çš„å£°å“ã€‚
 LONG );
         set("resource/water", 1);
         set("exits", ([
@@ -16,7 +16,7 @@ LONG );
 "east" : "/d/qilian/loulan",                	
         ]));
         set("item_desc", ([
-                "cliff" : "ÇÍ±ÚÉÏËÆºõÓĞÒ»¸ö¶´(hole)¡£\n"
+                "cliff" : "å³­å£ä¸Šä¼¼ä¹æœ‰ä¸€ä¸ªæ´(hole)ã€‚\n"
         ]) );
         set("no_clean_up", 0);
         setup();
@@ -34,15 +34,15 @@ int do_enter(string arg)
         if( !arg || arg=="" ) return 0;
         if( arg=="hole" ) {
                 if ( me->query_encumbrance() * 100 / me->query_max_encumbrance() < 20) {
-                     message("vision", me->name() + "Ò»×İÉíÔ¾½øÁË¶´Àï¡£\n",
+                     message("vision", me->name() + "ä¸€çºµèº«è·ƒè¿›äº†æ´é‡Œã€‚\n",
                         environment(me), ({me}) );
                      me->move("/d/xingxiu/mogaoku");
-                     message("vision", me->name() + "´Ó¶´ÍâÌøÁË½øÀ´¡£\n",
+                     message("vision", me->name() + "ä»æ´å¤–è·³äº†è¿›æ¥ã€‚\n",
                         environment(me), ({me}) );
                      return 1;
                 }
                 else {
-                     write("ÄãÉíÉÏ±³µÄ¶«Î÷Ì«ÖØ£¬¶´¿ÚÓÖÌ«¸ß£¬Äã¹»²»×Å¡£\n");
+                     write("ä½ èº«ä¸ŠèƒŒçš„ä¸œè¥¿å¤ªé‡ï¼Œæ´å£åˆå¤ªé«˜ï¼Œä½ å¤Ÿä¸ç€ã€‚\n");
                      return 1;
                 }
         }

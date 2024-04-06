@@ -5,9 +5,9 @@ inherit NPC;
 int ask_jiaobiao();
 void create()
 {
-	set_name("Ò×ïÚÍ·", ({ "yi biaotou", "yi" }));
-	set("title", HIR"¸£"HIC"Íş"YEL"ïÚ¾Ö"HIY"´óïÚÍ·"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("æ˜“é•–å¤´", ({ "yi biaotou", "yi" }));
+	set("title", HIR"ç¦"HIC"å¨"YEL"é•–å±€"HIY"å¤§é•–å¤´"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 
 	set("combat_exp", 50000);
@@ -18,7 +18,7 @@ void create()
 	set_skill("parry", 50);
 	set_skill("dodge", 50);
 	set("inquiry", ([
-		"½»ïÚ"   : (: ask_jiaobiao :),
+		"äº¤é•–"   : (: ask_jiaobiao :),
 		"finish" : (: ask_jiaobiao :),
 	]));
 	set_temp("apply/attack", 25);

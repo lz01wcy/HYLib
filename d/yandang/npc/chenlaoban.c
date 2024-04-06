@@ -1,15 +1,15 @@
 inherit NPC;
 inherit F_VENDOR;
 
-string query_save_file() { return DATA_DIR + "npc/³ÂÀÏ°å"; }
+string query_save_file() { return DATA_DIR + "npc/é™ˆè€æ¿"; }
 void create()
 {
 
-	set_name("³ÂÀÏ°å", ({ "lao ban", "chen", "laoban" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é™ˆè€æ¿", ({ "lao ban", "chen", "laoban" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»³ÂÀÏ°åÕıĞ¦ßäßäµØÃ¦Öø¡£\n");
+		"è¿™ä½é™ˆè€æ¿æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
@@ -44,12 +44,12 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			message_vision("³ÂÀÏ°å´òÁ¿ÁË$NÒ»»á£¬Ğ¦µÀ£ºÕâÎ»"+
-			RANK_D->query_respect(ob)+"£¬ÄúÏëÒªµãÊ²Ã´£¿\n",ob);
+			message_vision("é™ˆè€æ¿æ‰“é‡äº†$Nä¸€ä¼šï¼Œç¬‘é“ï¼šè¿™ä½"+
+			RANK_D->query_respect(ob)+"ï¼Œæ‚¨æƒ³è¦ç‚¹ä»€ä¹ˆï¼Ÿ\n",ob);
 			break;
 		case 1:
-			say( "³ÂÀÏ°åËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬ÄãÒ²ÊÇÉÏÑãµ´°İÊ¦µÄ°É¡£\n");
+			say( "é™ˆè€æ¿è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œä½ ä¹Ÿæ˜¯ä¸Šé›è¡æ‹œå¸ˆçš„å§ã€‚\n");
 			break;
                            }
 }

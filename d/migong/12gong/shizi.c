@@ -4,7 +4,7 @@ inherit ROOM;
 int block_cmd(string);
 void create ()
 {
-        set ("short", "µÚÎå¹¬Ê¨×Ó×ù");
+        set ("short", "ç¬¬äº”å®«ç‹®å­åº§");
         set ("long", @LONG
                 ::::
            :uW$$$$$$$$Wx:
@@ -12,9 +12,9 @@ void create ()
         X$?          "$$$$X
        X$?             #$$$:
        $$!              M$$
-       R$8:             !$$     ´«ËµÖĞºÍÕâĞÇ×ùÓĞ¹ØµÄ±íáçÊÇÎ»ì¶Ï£À°Ö®ÄáÃ×°²
-       ~$$$W:           !$?  (Nimean)¹ÈµØµÄÒ»Í·Ê¨×Ó£¬ÔÚÒ»´Î²«¶·ÖĞ±»º£¿Ë
-      :X$$$$$W:         MM   ÀûË¼É±ËÀ¡£
+       R$8:             !$$     ä¼ è¯´ä¸­å’Œè¿™æ˜Ÿåº§æœ‰å…³çš„è¡¨å¾µæ˜¯ä½æ–¼å¸Œè…Šä¹‹å°¼ç±³å®‰
+       ~$$$W:           !$?  (Nimean)è°·åœ°çš„ä¸€å¤´ç‹®å­ï¼Œåœ¨ä¸€æ¬¡ææ–—ä¸­è¢«æµ·å…‹
+      :X$$$$$W:         MM   åˆ©æ€æ€æ­»ã€‚
     :H$$###R$$$X:      :$!
    :$$"      ?$$W      HM
    $$!        ?$$:     $$
@@ -41,7 +41,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
         if ( present("shi zi") && dir == "northup" )
-        return notify_fail("°¢²¨ÂŞÀäĞ¦£ºÏÈ¹ıÎÒÕâ¹ØÔÙËµ£¡\n");
+        return notify_fail("é˜¿æ³¢ç½—å†·ç¬‘ï¼šå…ˆè¿‡æˆ‘è¿™å…³å†è¯´ï¼\n");
         return ::valid_leave(me, dir);
 }
 void init()

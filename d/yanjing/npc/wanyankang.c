@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-   set_name("ÍêÑÕ¿µ",({"wanyan kang"}));
-   set("gender","ÄĞĞÔ");
-set("title","Ğ¡ÍõÒ¯");
-   set("long","Íõ¸®Ğ¡ÍõÒ¯!\n");
+   set_name("å®Œé¢œåº·",({"wanyan kang"}));
+   set("gender","ç”·æ€§");
+set("title","å°ç‹çˆ·");
+   set("long","ç‹åºœå°ç‹çˆ·!\n");
 set("mingwang",-4000);
    set("combat_exp",160000);
    

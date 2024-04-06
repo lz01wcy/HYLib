@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "²èÊÒ");
+	set("short", "èŒ¶å®¤");
 	set("long", @LONG
-ÕâÀïÊÇ·½ÕÉ´ý¿ÍµÄµØ·½£¬¿¿Ç½×óÓÒÁ½²à°Ú×ÅÒ»ÁïÌ«Ê¦ÒÎ¡£±±ÃæÇ½ÉÏ
-¹ÒÁËÒ»¸¶¶ÔÁª¡£Ç½½ÇÒ»¼¸£¬·Å×Å¼¸¸ö²èºø¡£ÓÐ¸ö²èºøºøÉíÉÏÌâÁË¡°±ÌÂÝ
-´º¡±Èý¸ö×­×Ö£¬ºø×ìÈÈÆøÌÚÌÚ£¬ËÆºõÊÇ¸ÕÆãµÄÐÂ²è¡£Íù±±ÊÇ·½ÕÉÊÒ¡£
+è¿™é‡Œæ˜¯æ–¹ä¸ˆå¾…å®¢çš„åœ°æ–¹ï¼Œé å¢™å·¦å³ä¸¤ä¾§æ‘†ç€ä¸€æºœå¤ªå¸ˆæ¤…ã€‚åŒ—é¢å¢™ä¸Š
+æŒ‚äº†ä¸€ä»˜å¯¹è”ã€‚å¢™è§’ä¸€å‡ ï¼Œæ”¾ç€å‡ ä¸ªèŒ¶å£¶ã€‚æœ‰ä¸ªèŒ¶å£¶å£¶èº«ä¸Šé¢˜äº†â€œç¢§èžº
+æ˜¥â€ä¸‰ä¸ªç¯†å­—ï¼Œå£¶å˜´çƒ­æ°”è…¾è…¾ï¼Œä¼¼ä¹Žæ˜¯åˆšæ²çš„æ–°èŒ¶ã€‚å¾€åŒ—æ˜¯æ–¹ä¸ˆå®¤ã€‚
 LONG );
 	set("exits", ([
 		"north" : __DIR__"fzjs2",
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
 	{
 		if (dir == "north" )
 		{
-			return notify_fail("Äã×Ê¸ñ²»¹»£¬²»ÄÜ½øÈë·½ÕÉÊÒ¡£\n");
+			return notify_fail("ä½ èµ„æ ¼ä¸å¤Ÿï¼Œä¸èƒ½è¿›å…¥æ–¹ä¸ˆå®¤ã€‚\n");
 		}
 	}
 	return ::valid_leave(me, dir);

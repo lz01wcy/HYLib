@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ǰͥ");
+	set("short", "前庭");
 	set("long", @LONG
-�����Ǿ�����Ժɽ����ǰͥ��ͥԺ����ʯ�̵ء��Ű�ɭɭ��������
-�����˼��ᡣ��������Ժ��������һЩ�Ͱ�С����
+这里是峻极禅院山门内前庭。庭院中青石铺地、古柏森森，可容纳
+数百人集会。内里是禅院大殿，两厢是一些低矮小房。
 LONG );
 	set("exits", ([
 		"north"     : __DIR__"chanyuan",

@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-   set_name("Íõ¸®¿´ÊØ",({"kan shou"}));
-   set("gender","ÄĞĞÔ");
+   set_name("ç‹åºœçœ‹å®ˆ",({"kan shou"}));
+   set("gender","ç”·æ€§");
         set("shen_type",-1);
 	set("combat_exp",50000);
    

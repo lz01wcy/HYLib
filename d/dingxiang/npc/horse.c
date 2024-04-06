@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-     set_name("º¹Ñª±¦Âí",({ "hanxue baoma","ma","baoma","horse"}) );
-     set("race", "Ò°ÊŞ" );
-     set("long", "ÕâÊÇÒ»Ö»º¹Ñª±¦Âí¡£\n");
+     set_name("æ±—è¡€å®é©¬",({ "hanxue baoma","ma","baoma","horse"}) );
+     set("race", "é‡å…½" );
+     set("long", "è¿™æ˜¯ä¸€åªæ±—è¡€å®é©¬ã€‚\n");
      set("verbs",({"hoof"}));
-     set("limbs",({"Í·","¸¹²¿"}));
+     set("limbs",({"å¤´","è…¹éƒ¨"}));
      set("perform_quest_kun_obj",1);
      setup();
 
@@ -21,6 +21,6 @@ void die()
 int set_status(object ob)
 {
   set("owner_ob",ob);
-  set("long","ÕâÊÇÒ»Ö»º¹Ñª±¦Âí£¬¾İËµò¡Àû´óº¹ÒÑ¾­ÅÉ"+ob->name()+"À´×½ÄÃËü¡£\n");
+  set("long","è¿™æ˜¯ä¸€åªæ±—è¡€å®é©¬ï¼Œæ®è¯´é¢‰åˆ©å¤§æ±—å·²ç»æ´¾"+ob->name()+"æ¥æ‰æ‹¿å®ƒã€‚\n");
   return 1;
 }

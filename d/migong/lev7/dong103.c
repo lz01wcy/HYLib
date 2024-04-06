@@ -5,10 +5,10 @@ inherit ROOM;
 int do_climb(string arg);
 void create()
 {
-		set("short", WHT"ÖÓÈéÊ¯¶´"NOR);
+		set("short", WHT"é’Ÿä¹³çŸ³æ´"NOR);
 	set("long", WHT @LONG
- ¶´¶¥¶¼ÊÇ¼â¼âµÄÖÓÈéÊ¯£¬ËÄÖÜ²»Í£µÄÓĞË®ÖéµÎÏÂ¡£ ¶´¶¥ÓĞ¸öĞ¡¶´
-ÅÀ(climb)ÉÏÈ¥ËÆºõ¿ÉÒÔÖ±´ïµØÃæ ¡£
+ æ´é¡¶éƒ½æ˜¯å°–å°–çš„é’Ÿä¹³çŸ³ï¼Œå››å‘¨ä¸åœçš„æœ‰æ°´ç æ»´ä¸‹ã€‚ æ´é¡¶æœ‰ä¸ªå°æ´
+çˆ¬(climb)ä¸Šå»ä¼¼ä¹å¯ä»¥ç›´è¾¾åœ°é¢ ã€‚
 LONG NOR);
 	set("exits", ([
 		"east" : __DIR__"dong100",
@@ -24,5 +24,5 @@ int do_climb(object me)
 {
     me= this_player();
     me->move("/d/migong/migong3");
- message_vision(   "$NÊÖ½Å²¢ÓÃ£¬Ò»»á¶ù¹¦·ò¾ÍÅÀ³öÁË¶´¡£\n", this_player());
+ message_vision(   "$Næ‰‹è„šå¹¶ç”¨ï¼Œä¸€ä¼šå„¿åŠŸå¤«å°±çˆ¬å‡ºäº†æ´ã€‚\n", this_player());
 }

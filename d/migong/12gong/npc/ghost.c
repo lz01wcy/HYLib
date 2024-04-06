@@ -3,8 +3,8 @@
 inherit NPC;
 //inherit F_CLEAN_UP;
 
-string *first_name = ({ "´óÍ·", "ÇàÃæ", "¶À½Ç", "ºì·¢"});
-string *name_words = ({ "¹í"});
+string *first_name = ({ "å¤§å¤´", "é’é¢", "ç‹¬è§’", "çº¢å‘"});
+string *name_words = ({ "é¬¼"});
 int random_go(object me, string* dirs);
 
 void create()
@@ -13,11 +13,11 @@ void create()
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))];
         set_name(name, ({"ghost"}));
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
 	set("age", 30+random(20));
 	set("class", "youling");
 	set("env/invisibility", 1);
-	set("title", RED "(¹íÆø)" NOR);
+	set("title", RED "(é¬¼æ°”)" NOR);
         set("combat_exp", 3000);
 	set("daoxing", 5000);
 	set("attitude", "heroism");
@@ -155,8 +155,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		HIY + name() + "ËµµÀ£ºÏÖÔÚÎÒÒÑ¾­Íê³É»¤ÎÀÈÎÎñ£¬¾Í´Ë¸æ´Ç£¡\n\n"
-		+ name() + "»¯ÎªÒ»µÀ½ğ¹â£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+		HIY + name() + "è¯´é“ï¼šç°åœ¨æˆ‘å·²ç»å®ŒæˆæŠ¤å«ä»»åŠ¡ï¼Œå°±æ­¤å‘Šè¾ï¼\n\n"
+		+ name() + "åŒ–ä¸ºä¸€é“é‡‘å…‰ï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

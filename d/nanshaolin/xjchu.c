@@ -6,11 +6,11 @@ inherit ROOM;
 int do_pi(string arg);
 void create()
 {
-	set("short", "Ïã»ý³ø");
+	set("short", "é¦™ç§¯åŽ¨");
 	set("long", @LONG
-Ò»¼ä²»´óµÄÐ¡ÎÝ£¬ÕýÖÐ°Ú×ÅÒ»¿Ú´óÌú¹ø£¬ÕýÃ°×ÅÌÚÌÚµÄÈÈÆø£¬Ò»¹É
-ÖàÏãÃÖÂþÔÚÊÒÄÚ¡£¼¸¸ö»ð¹¤ÕýÔÚÃ¦×Å¼Ó²ñ£¬É¿»ð£¬È«ËÂµÜ×Ó×öÍêÔç¿Î¶¼
-ÒªºÈÖà¡£Ò»Î»ÊÌÖàÉ®»ÓÎè×Å³ÁÖØµÄ´óÌúÉ×£¬ÕýÔÚ³ÔÁ¦µÄ½Á¶¯×ÅÖàÌÀ¡£
+ä¸€é—´ä¸å¤§çš„å°å±‹ï¼Œæ­£ä¸­æ‘†ç€ä¸€å£å¤§é“é”…ï¼Œæ­£å†’ç€è…¾è…¾çš„çƒ­æ°”ï¼Œä¸€è‚¡
+ç²¥é¦™å¼¥æ¼«åœ¨å®¤å†…ã€‚å‡ ä¸ªç«å·¥æ­£åœ¨å¿™ç€åŠ æŸ´ï¼Œç…½ç«ï¼Œå…¨å¯ºå¼Ÿå­åšå®Œæ—©è¯¾éƒ½
+è¦å–ç²¥ã€‚ä¸€ä½ä¾ç²¥åƒ§æŒ¥èˆžç€æ²‰é‡çš„å¤§é“å‹ºï¼Œæ­£åœ¨åƒåŠ›çš„æ…åŠ¨ç€ç²¥æ±¤ã€‚
 LONG );
 	set("exits", ([
 		"south"  : __DIR__"zhaitang",
@@ -26,7 +26,7 @@ LONG );
 void init()
 {
 	add_action("do_ao", "ao");
-	add_action("do_ao", "°¾");
+	add_action("do_ao", "ç†¬");
 }
 int do_ao(string arg)
 {
@@ -37,21 +37,21 @@ int do_ao(string arg)
 	exp = me->query("combat_exp");
 	lvl1 = me->query_skill("hand",1);
 	lvl2 = me->query_skill("finger",1);
-	if(me->query_temp("job_name")!="°¾Öà") 
-		return notify_fail("³ø·¿¿É²»ÊÇÄÖ×ÅÍæµÄµØ·½£¬Äã»¹ÊÇ×ß¿ª°É£¡\n");
+	if(me->query_temp("job_name")!="ç†¬ç²¥") 
+		return notify_fail("åŽ¨æˆ¿å¯ä¸æ˜¯é—¹ç€çŽ©çš„åœ°æ–¹ï¼Œä½ è¿˜æ˜¯èµ°å¼€å§ï¼\n");
 	if (me->is_busy())
 	{
-		write("ÄãÏÖÔÚÕýÃ¦×ÅÄØ£¡\n");
+		write("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ï¼\n");
 		return 1;
 	}
 	if (me->is_fighting())
 	{
-		write("ÄãÕýÔÚÕ½¶·ÖÐ,ÎÞ·¨×¨ÐÄ¸É»î£¡\n");
+		write("ä½ æ­£åœ¨æˆ˜æ–—ä¸­,æ— æ³•ä¸“å¿ƒå¹²æ´»ï¼\n");
 		return 1;
 	}
-	if ( !arg || arg != "Öà" )
+	if ( !arg || arg != "ç²¥" )
 	{   
-		message_vision("$NÒª×öÊ²Ã´£¿\n",me);
+		message_vision("$Nè¦åšä»€ä¹ˆï¼Ÿ\n",me);
 		return 1;
 	}
 	costj = random((int)me->query("con")/3);
@@ -59,13 +59,13 @@ int do_ao(string arg)
 	times=20+random(10);
 	if ((int)me->query("jing") < costj || (int)me->query("qi") < costq)
 	{
-		message_vision("$NÊÖÒ»ËÉ£¬µô½ø¹øÀï¡£\n",me);
+		message_vision("$Næ‰‹ä¸€æ¾ï¼ŒæŽ‰è¿›é”…é‡Œã€‚\n",me);
 		me->unconcious();
 		return 1;
 	}
 	me->receive_damage("jing", costj);
 	me->receive_damage("qi", costq);	
-	if (((int)me->query_temp("mark/×ö")>times) &&
+	if (((int)me->query_temp("mark/åš")>times) &&
 		(present("shizhou seng", environment(me))))
 	{
 		i1=(int)(me->query_skill("buddhism",1)/12);
@@ -76,21 +76,21 @@ int do_ao(string arg)
 		me->add("combat_exp",i2+50);
 		me->delete_temp("job_name");
 		me->delete_temp("mark");
-		return notify_fail(RED "ÊÌÖàÉ®ËµµÀ£º¶àÐ»ÄãÀ´°ïÎÒµÄÃ¦£¬»¹ÊÇ¿ì»ØÈ¥°É£¡£¡£¡\n"NOR);
+		return notify_fail(RED "ä¾ç²¥åƒ§è¯´é“ï¼šå¤šè°¢ä½ æ¥å¸®æˆ‘çš„å¿™ï¼Œè¿˜æ˜¯å¿«å›žåŽ»å§ï¼ï¼ï¼\n"NOR);
 	}
 	me->start_busy(1);
-	message_vision("$NÉíÐÎÒ»¶¶£¬Ë«½Å¹´×¡·¿Áº£¬µ¹ÐüÔÚ¿ÕÖÐ£¬½Ó¹ýÌúÉ×ÓÃÁ¦½Á°èÖà¹ø¡£\n", me);
-	me->add_temp("mark/×ö",1);
+	message_vision("$Nèº«å½¢ä¸€æŠ–ï¼ŒåŒè„šå‹¾ä½æˆ¿æ¢ï¼Œå€’æ‚¬åœ¨ç©ºä¸­ï¼ŒæŽ¥è¿‡é“å‹ºç”¨åŠ›æ…æ‹Œç²¥é”…ã€‚\n", me);
+	me->add_temp("mark/åš",1);
 	if ( (int)me->query_skill("hand", 1) < 20 && random(10)>6 )
 	{
 		if(lvl1 * lvl1 * lvl1 / 10 < exp)
 		{
-			write(HIM"ÄãÔÚ»ÓÎèÌúÉ×ÖÐ£¬¶ÔÊÖÉÏ¹¦·òÓÐÐ©ÁìÎò£¡\n"NOR);
+			write(HIM"ä½ åœ¨æŒ¥èˆžé“å‹ºä¸­ï¼Œå¯¹æ‰‹ä¸ŠåŠŸå¤«æœ‰äº›é¢†æ‚Ÿï¼\n"NOR);
 			me->improve_skill("hand", (int)(me->query_skill("buddhism",1) / 5));
 		}
 		if(lvl2 * lvl2 * lvl2 / 10 < exp)
 		{
-			write(HIM"ÄãÔÚ»ÓÎèÌúÉ×ÖÐ£¬¶ÔÖ¸ÉÏ¹¦·òÓÐÐ©ÁìÎò£¡\n"NOR);
+			write(HIM"ä½ åœ¨æŒ¥èˆžé“å‹ºä¸­ï¼Œå¯¹æŒ‡ä¸ŠåŠŸå¤«æœ‰äº›é¢†æ‚Ÿï¼\n"NOR);
 			me->improve_skill("finger", (int)(me->query_skill("buddhism",1) / 5));
 		}
 	}

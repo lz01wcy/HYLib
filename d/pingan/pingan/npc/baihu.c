@@ -5,10 +5,10 @@ inherit NPC;
 void backattack();
 void create()
 {
-        set_name(WHT"°×»¢ïÚÊ¦"NOR, ({ "baihu biaoshi","baihu","biaoshi"}) );
-        set("gender", "ÄÐÐÔ" );
+        set_name(WHT"ç™½è™Žé•–å¸ˆ"NOR, ({ "baihu biaoshi","baihu","biaoshi"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 26);
-        set("long", "ÁúÃÅïÚ¾ÖµÄïÚÊ¦¡£\n");
+        set("long", "é¾™é—¨é•–å±€çš„é•–å¸ˆã€‚\n");
         set("combat_exp", 400000);
         set("shen_type", 1);
 	set_skill("unarmed",90);
@@ -51,8 +51,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		HIY + name() + "ËµµÀ£ºÏÖÔÚÎÒÒÑ¾­Íê³É»¤ÎÀÈÎÎñ£¬¾Í´Ë¸æ´Ç£¡\n\n"
-		+ name() + "ÍùÈËÈºÀïÒ»×ê£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+		HIY + name() + "è¯´é“ï¼šçŽ°åœ¨æˆ‘å·²ç»å®ŒæˆæŠ¤å«ä»»åŠ¡ï¼Œå°±æ­¤å‘Šè¾žï¼\n\n"
+		+ name() + "å¾€äººç¾¤é‡Œä¸€é’»ï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -62,8 +62,8 @@ void invocation(object who, int level)
 	int i;
 	object *enemy;
 	message("vision",
-		HIY "´Ó¸½½üµÄ½ÖµÀÀï,³å³öÒ»¸öÈ«Éí¾¢×°ïÚÊ¦¡£\n\n"
-		+ name() + "ËµµÀ£ºÎÒ·î°×»¢ÁîµÄÕÙ»½£¬ÌØÀ´»¤ÎÀ£¡\n" NOR,
+		HIY "ä»Žé™„è¿‘çš„è¡—é“é‡Œ,å†²å‡ºä¸€ä¸ªå…¨èº«åŠ²è£…é•–å¸ˆã€‚\n\n"
+		+ name() + "è¯´é“ï¼šæˆ‘å¥‰ç™½è™Žä»¤çš„å¬å”¤ï¼Œç‰¹æ¥æŠ¤å«ï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

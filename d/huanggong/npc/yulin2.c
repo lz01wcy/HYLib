@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-	set_name(HIC"���־�"NOR, ({"yulin jun", "jun"}));
-	set("gender", "����");
+	set_name(HIC"御林军"NOR, ({"yulin jun", "jun"}));
+	set("gender", "男性");
 	set("age", random(10) + 30);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "��վ�������ȷ��˵���������硣\n");
+	set("long", "他站在那里，的确有说不出的威风。\n");
 	set("combat_exp", 100000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");
@@ -52,8 +52,8 @@ void init()
 	}
 	if(interactive(ob =this_player())&&(int)ob->query_class("officer"))
 	{
-	message_vision("���־������㶼���ڵ���˵: ū�Ÿ������밲��\n"+
-"       ����Ҫ��ʥ�뵽�����鷿�����,С��ְ������,�����չ��ˡ�\n",this_player())
+	message_vision("御林军见到你都跪在地上说: 奴才给大人请安了\n"+
+"       大人要面圣请到「御书房」侯驾,小的职责在身,不便照顾了。\n",this_player())
 ;
 }
 }

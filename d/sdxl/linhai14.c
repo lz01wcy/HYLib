@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÁÖº£");
+	set("short", "æž—æµ·");
 	set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬Ò»ÍûÎÞÛóÁÖº££¬Ã¿¿ÃÊ÷Ä¾¶¼ÓÐÊ®À´ÕÉ¸ß£¬ÖÜÎ§ÚäÄ°
-½»´í£¬Äã½øÀ´¸Ð¾õµ½×Ô¼ºÃÔÂ·ÁË
+è¿™é‡Œæ˜¯ä¸€ç‰‡ä¸€æœ›æ— åž æž—æµ·ï¼Œæ¯æ£µæ ‘æœ¨éƒ½æœ‰åæ¥ä¸ˆé«˜ï¼Œå‘¨å›´é˜¡é™Œ
+äº¤é”™ï¼Œä½ è¿›æ¥æ„Ÿè§‰åˆ°è‡ªå·±è¿·è·¯äº†
 LONG
 	);
 	set("exits", ([
@@ -35,10 +35,10 @@ int valid_leave(object me, string dir)
 {
 //           if(dir == "northeast") return ::valid_leave(me, dir);
            if (dir == me->query_temp("xtj_fx")){
-           message_vision(RED"$N¸Ð¾õ¾¢Æ£Á¦¾¡£¬ºöÈ»Ìý¼ûÔ¶´¦ÓÐÂ¡Â¡µÄË®Éù£¬ÓÚÊÇË³Éù¶øÈ¥¡£\n"NOR, me);
+           message_vision(RED"$Næ„Ÿè§‰åŠ²ç–²åŠ›å°½ï¼Œå¿½ç„¶å¬è§è¿œå¤„æœ‰éš†éš†çš„æ°´å£°ï¼ŒäºŽæ˜¯é¡ºå£°è€ŒåŽ»ã€‚\n"NOR, me);
            me->move(__DIR__"pubu");
            me->delete_temp("xtj_fx");      
-            message("vision", me->name() + "´ÓÁÖº£ÀïÒ»Í·×êÁË³öÀ´¡£\n", environment(me), ({me}) );
+            message("vision", me->name() + "ä»Žæž—æµ·é‡Œä¸€å¤´é’»äº†å‡ºæ¥ã€‚\n", environment(me), ({me}) );
           }
           else{
           me->move(__DIR__"linhai"+(random(13)+1));

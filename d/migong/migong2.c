@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "眠龙谷");
 	set("long", @LONG
- ����һ���˼�������ɽ�ȣ�Զ����Լ�ܿ������͵�ɽ�£�һ��
-��ȥ���ܶ���ãã���������ұ���һ������С��ֱ���ֺ�֮�С�
+ 这是一个人迹罕至的山谷，远方隐约能看见陡峭的山崖，一眼
+望去四周都是茫茫的树海，右边有一条蜿蜒小径直入林海之中。
 LONG );
 	set("exits", ([
 		"west" : __DIR__"migong1",

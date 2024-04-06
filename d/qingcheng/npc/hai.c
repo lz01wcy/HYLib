@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Óà²×º£", ({ "yu canghai", "yu", "canghai" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("ä½™æ²§æµ·", ({ "yu canghai", "yu", "canghai" }));
+        set("gender", "ç”·æ€§");
         set("age", 52);
-        set("long", "ËûÉíĞÎ°«Ğ¡£¬¿ÉÊÇÉñÇéÄıÖØ£¬Ù²È»Ò»ÅÉ´ó×ÚÊ¦Æø¡£\n");
+        set("long", "ä»–èº«å½¢çŸ®å°ï¼Œå¯æ˜¯ç¥æƒ…å‡é‡ï¼Œä¿¨ç„¶ä¸€æ´¾å¤§å®—å¸ˆæ°”ã€‚\n");
         set("class", "taoist");
 
         set("combat_exp", 6800000);
@@ -53,7 +53,7 @@ set("pubmaster",1);
     (: perform_action, "blade.lianhuan" :),
  }) );
 
-        create_family("Çà³ÇÅÉ", 7, "ÕÆÃÅ");
+        create_family("é’åŸæ´¾", 7, "æŒé—¨");
         setup();
         carry_object("/clone/weapon/gangdao")->wield();
         carry_object("/d/wudang/obj/bluecloth")->wear();
@@ -87,7 +87,7 @@ int accept_object(object who, object ob)
 	}
 	who->add_temp("learn_timeb",i);
 
-      message_vision("Óà²×º£¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
+      message_vision("ä½™æ²§æµ·å¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
 
 	return 1;
 }

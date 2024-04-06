@@ -4,17 +4,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name("°×Óñóï",({"baiyu xiao","xiao"}));
+	set_name("ç™½ç‰ç®«",({"baiyu xiao","xiao"}));
         set_weight(2300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Í¨Ìå½à°×,Ö»ÔÚ´µ¿Ú´¦ÓĞ¼¸µãÖìºì£®\n");
+                set("unit", "æ ¹");
+                set("long", "é€šä½“æ´ç™½,åªåœ¨å¹å£å¤„æœ‰å‡ ç‚¹æœ±çº¢ï¼\n");
                 set("value", 5000);
                 set("material", "stone");
-set("wield_msg","$NÈ¡³ö$n,ÔÚ×ì±ß´µÁËÁ½Éù!\n");;
-                set("unwield_msg", "$N´µ°ÕÒ»Çú,ã°âêµÃ·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+set("wield_msg","$Nå–å‡º$n,åœ¨å˜´è¾¹å¹äº†ä¸¤å£°!\n");;
+                set("unwield_msg", "$Nå¹ç½¢ä¸€æ›²,æƒ†æ€…å¾—æ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
 init_sword(20);

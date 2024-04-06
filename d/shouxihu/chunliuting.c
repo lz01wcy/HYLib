@@ -5,21 +5,21 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "´ºÁøÍ¤");
+	set("short", "æ˜¥æŸ³äº­");
 	set("long", @LONG
-³¤µÌÖÐ¶ÎÁÙºþÖþÒ»¸ö°ë°¶°ëË®¡¢ÖÃÃÀÈË¿¿µÄÄ¾¹¹¼þ·½Í¤¡£Í¤ÄÚÐü¡°
-³¤µÌ´ºÁø¡±ØÒ£¬ÈÔÎªÇå¹âÐ÷µÀÔ±³ÂÖØÇìÊÖ±Ê¡£ÍâÐü¡°ÖÐÁ÷×ÔÔÚ¡±ØÒ£¬Á½
-ÖùÐü¹ÒÍõ°åÔÕÊÖÊééºÁª(lian)£¬ÄË¼¯ÕÔÃÏÕ×Ò³¡¢ÔªºÃÎÊ¾ä¶ø³É¡£
+é•¿å ¤ä¸­æ®µä¸´æ¹–ç­‘ä¸€ä¸ªåŠå²¸åŠæ°´ã€ç½®ç¾Žäººé çš„æœ¨æž„ä»¶æ–¹äº­ã€‚äº­å†…æ‚¬â€œ
+é•¿å ¤æ˜¥æŸ³â€åŒ¾ï¼Œä»ä¸ºæ¸…å…‰ç»ªé“å‘˜é™ˆé‡åº†æ‰‹ç¬”ã€‚å¤–æ‚¬â€œä¸­æµè‡ªåœ¨â€åŒ¾ï¼Œä¸¤
+æŸ±æ‚¬æŒ‚çŽ‹æ¿å“‰æ‰‹ä¹¦æ¥¹è”(lian)ï¼Œä¹ƒé›†èµµå­Ÿå…†é¡µã€å…ƒå¥½é—®å¥è€Œæˆã€‚
 LONG );
 	set("outdoors", "shouxihu");
 	set("no_clean_up", 0);
 	set("item_desc", ([
 		"lian" : "
-        ¼Ñ        ËÞ
-        Æø        ÔÆ
-        Òç        å£
-        ·¼        Ò°
-        µé        ´¨\n",
+        ä½³        å®¿
+        æ°”        äº‘
+        æº¢        æ¾¹
+        èŠ³        é‡Ž
+        ç”¸        å·\n",
 	]));
 
 	set("exits", ([

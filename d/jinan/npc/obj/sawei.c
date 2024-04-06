@@ -3,17 +3,17 @@
 inherit STAFF; 
 void create()
 {
-        set_name("É±Íş°ô" , ({ "shawei", "bang" }) );
+        set_name("æ€å¨æ£’" , ({ "shawei", "bang" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "Ò»ÌõÓÖ´ÖÓÖ³¤µÄÄ¾ÖÆÉ±Íş°ô£¬Á½Í·ºìÉ«¡£\n");
+                set("unit", "æ¡");
+                set("long", "ä¸€æ¡åˆç²—åˆé•¿çš„æœ¨åˆ¶æ€å¨æ£’ï¼Œä¸¤å¤´çº¢è‰²ã€‚\n");
                 set("value", 620);
                 set("material", "wood");
-                set("wield_msg", "$NÄÃ³öÒ»¸ùÁ½Í·ºìÉ«µÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹ä¸¤å¤´çº¢è‰²çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         } 
     ::init_staff(35);
 }      

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÏİÚå");
+	set("short", "é™·é˜±");
 	set("long", @LONG
-Éî¿Óµ×Õ­¿Ú¹ã£¬Éî´ïÎåÕÉ£¬¿Óµ×ÖÜÎ§²åÉÏÏ÷¼âµÄÄ¾°ô¡£¸üÔÚ¿Ó±ß
-¶ÑÁË²»ÉÙ´óÊ¯£¬Ö»´ıÈËÂäÈë¿ÓÖĞ£¬±ã¿ÉÍ¶Ê¯ÔÒ´ò¡£
+æ·±å‘åº•çª„å£å¹¿ï¼Œæ·±è¾¾äº”ä¸ˆï¼Œå‘åº•å‘¨å›´æ’ä¸Šå‰Šå°–çš„æœ¨æ£’ã€‚æ›´åœ¨å‘è¾¹
+å †äº†ä¸å°‘å¤§çŸ³ï¼Œåªå¾…äººè½å…¥å‘ä¸­ï¼Œä¾¿å¯æŠ•çŸ³ç ¸æ‰“ã€‚
 LONG );
 	set("no_clean_up", 0);
 	set("exits", ([
@@ -22,17 +22,17 @@ int valid_leave(object me, string dir)
 	if (random((int)me->query_skill("dodge")) <= 20)
 	{
 		me->receive_wound("qi",30);
-		return notify_fail("ÄãÊ¹¾¢¶ùÒ»±Ä£¬Àë¶¥»¹ÓĞÊıÕÉÔ¶¾ÍµôÁËÏÂÀ´£¬Ë¤µÄ±ÇÇàÁ³Ö×¡£\n");
+		return notify_fail("ä½ ä½¿åŠ²å„¿ä¸€è¹¦ï¼Œç¦»é¡¶è¿˜æœ‰æ•°ä¸ˆè¿œå°±æ‰äº†ä¸‹æ¥ï¼Œæ‘”çš„é¼»é’è„¸è‚¿ã€‚\n");
 	}
 	if (random((int)me->query_skill("dodge")) <= 35) 
 	{
 		me->receive_wound("qi",20);
-		return notify_fail("Äã·ÜÁ¦Ò»Ô¾£¬È´Àë¶¥»¹ÓĞÒ»ÕÉ¶àÔ¶£¬¿´À´ÊÇ°×·ÑÁ¦Æø¡£\n");
+		return notify_fail("ä½ å¥‹åŠ›ä¸€è·ƒï¼Œå´ç¦»é¡¶è¿˜æœ‰ä¸€ä¸ˆå¤šè¿œï¼Œçœ‹æ¥æ˜¯ç™½è´¹åŠ›æ°”ã€‚\n");
 	}
 	if (random((int)me->query_skill("dodge")) <= 60)
 	{
 		me->receive_wound("qi",10);
-		return notify_fail("Äã×İÉí¶øÆğ£¬Àë¶¥Ö»²îÒ»µãµãÁË£¬ÔÙ¼Ó°Ñ¾¢¡£\n");
+		return notify_fail("ä½ çºµèº«è€Œèµ·ï¼Œç¦»é¡¶åªå·®ä¸€ç‚¹ç‚¹äº†ï¼Œå†åŠ æŠŠåŠ²ã€‚\n");
 	}
 
 	return ::valid_leave(me, dir);

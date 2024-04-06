@@ -1,4 +1,4 @@
-//jinsi-shoutao.c ½ğË¿ÊÖÌ×
+//jinsi-shoutao.c é‡‘ä¸æ‰‹å¥—
 //By Kayin @ CuteRabbit Studio 1999/3/21 new
 
 #include <armor.h>
@@ -7,22 +7,22 @@ inherit HANDS;
 
 void create()
 {
-	set_name( HIC"½ğË¿ÊÖÌ×"NOR, ({ "jinsi shoutao", "shoutao" ,"gloves"}) );
+	set_name( HIC"é‡‘ä¸æ‰‹å¥—"NOR, ({ "jinsi shoutao", "shoutao" ,"gloves"}) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ë«");
+		set("unit", "åŒ");
                 set("treasure",1);
-		set("long", "ÕâÊÇÒ»Ë«ÓĞ½ğË¿ÖÆ³ÉµÄÊÖÌ×£¬¼áÈÍÎŞ±È£¬µ¶½£²»ÄÜÉË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€åŒæœ‰é‡‘ä¸åˆ¶æˆçš„æ‰‹å¥—ï¼ŒåšéŸ§æ— æ¯”ï¼Œåˆ€å‰‘ä¸èƒ½ä¼¤ã€‚\n");
 		set("value", 1000000);
 		set("material", "gold");
-                 set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_give", "ÕâÑù¶«Î÷²»ÄÜ¸øÈË¡£\n");
+                 set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+                set("no_give", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç»™äººã€‚\n");
              set("nopawn",1);
              set("no_get",1);
-                set("wield_msg", HIY"$N´Ó»³ÖĞÌÍ³öÒ»Ë«$n´÷ÔÚÊÖÉÏ¡£\n"NOR);
-                set("unwield_msg", HIY"$NÈ¡ÏÂ$n·ÅÈë»³ÖĞ¡£\n"NOR);
+                set("wield_msg", HIY"$Nä»æ€€ä¸­æå‡ºä¸€åŒ$næˆ´åœ¨æ‰‹ä¸Šã€‚\n"NOR);
+                set("unwield_msg", HIY"$Nå–ä¸‹$næ”¾å…¥æ€€ä¸­ã€‚\n"NOR);
 		set("armor_prop/armor", 300);
 		set("armor_prop/damage",200);
 	}

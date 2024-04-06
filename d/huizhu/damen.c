@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "×Ü¶æ´óÃÅ");
+	set("short", "æ€»èˆµå¤§é—¨");
 	set("long",@LONG
-ÄãÕ¾ÔÚÁ½ÉÈºìÆá´óÃÅÇ°£¬ÃÅÉÏ¶¤ÂúµÄÍë¿Ú´óĞ¡µÄÍ­¶¤£¬ÃÅ¿ÚµÄÌ¨½×
-ÉÏ²æÑüÕ¾×ÅÁ½¸ö°òÀ«ÑüÔ²µÄ´óºº£¬ÍùÀï¿´È¥¿ÉÒÔ¿´¼ûÒ»ÌõòêÑÓÇúÕÛµÄ×ß
-ÀÈÍ¨Ïò·¿ÎİÉî´¦¡£
+ä½ ç«™åœ¨ä¸¤æ‰‡çº¢æ¼†å¤§é—¨å‰ï¼Œé—¨ä¸Šé’‰æ»¡çš„ç¢—å£å¤§å°çš„é“œé’‰ï¼Œé—¨å£çš„å°é˜¶
+ä¸Šå‰è…°ç«™ç€ä¸¤ä¸ªè†€é˜”è…°åœ†çš„å¤§æ±‰ï¼Œå¾€é‡Œçœ‹å»å¯ä»¥çœ‹è§ä¸€æ¡èœ¿å»¶æ›²æŠ˜çš„èµ°
+å»Šé€šå‘æˆ¿å±‹æ·±å¤„ã€‚
 LONG );
 	set("outdoors", "huijiang");
 	set("exits", ([
@@ -32,21 +32,21 @@ void init()
 {
 	object me = this_player();
 	if ( interactive( this_player()) &&
-		((string)me->query("family/family_name") != "ºì»¨»á") &&
+		((string)me->query("family/family_name") != "çº¢èŠ±ä¼š") &&
 		(!present("honghua ling", me)))
-		message_vision(HIG"Á½¸ö´óººÏò$NµÉÁËÒ»ÑÛ£¬±Ç×ÓÀïÖØÖØµÄºßÁËÒ»Éù£¡\n"NOR,me);
+		message_vision(HIG"ä¸¤ä¸ªå¤§æ±‰å‘$Nçªäº†ä¸€çœ¼ï¼Œé¼»å­é‡Œé‡é‡çš„å“¼äº†ä¸€å£°ï¼\n"NOR,me);
 	else
 		if ( present("honghua ling",me) &&
 			!(present("honghua ling",me))->query("zizhi")) 
-			message_vision(HIG"Á½¸ö´óºº¹ªÉíÏòÄãĞĞÁË¸öÀñ,ËµµÀ£ºÁîÖ÷ºÃ£¡\n"NOR,me);
+			message_vision(HIG"ä¸¤ä¸ªå¤§æ±‰èº¬èº«å‘ä½ è¡Œäº†ä¸ªç¤¼,è¯´é“ï¼šä»¤ä¸»å¥½ï¼\n"NOR,me);
 }
 
 int valid_leave(object me, string dir)
 {
 	if ( (dir == "enter") &&
-		((string)me->query("family/family_name") != "ºì»¨»á") &&
+		((string)me->query("family/family_name") != "çº¢èŠ±ä¼š") &&
 		objectp(present("wen tailai", environment(me))) &&
 		(!present("honghua ling", me)))
-		return notify_fail("ÎÄÌ©À´À¹×¡ÄãËµ£º·Ç±¾»áµÜĞÖ£¬²»ÄÜ½øÈ¥£¡\n");
+		return notify_fail("æ–‡æ³°æ¥æ‹¦ä½ä½ è¯´ï¼šéæœ¬ä¼šå¼Ÿå…„ï¼Œä¸èƒ½è¿›å»ï¼\n");
 	return ::valid_leave(me, dir);
 }

@@ -1,18 +1,18 @@
-// xiaoer2.c ¾ÆµêĞ¡¶ş
+// xiaoer2.c é…’åº—å°äºŒ
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»µêĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ğ¡¶ş¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
 		__DIR__"obj/jitui",
 		__DIR__"obj/jiudai",
@@ -32,7 +32,7 @@ void init()
 	::init();
 	if( interactive(ob) && !is_fighting() ) {
 		if ( (myfam = ob->query("family")) 
-		&& myfam["family_name"] == "Ø¤°ï" 
+		&& myfam["family_name"] == "ä¸å¸®" 
 		&& ob->query_skill("begging",1) > 10 )
 		{
 			remove_call_out("saying");
@@ -54,12 +54,12 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			say( "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬½øÀ´ºÈ±­²è£¬ĞªĞªÍÈ°É¡£\n");
+			say( "åº—å°äºŒç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¿›æ¥å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
 			break;
 		case 1:
-			say( "µêĞ¡¶şÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬Çë½øÇë½ø¡£\n");
+			say( "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¯·è¿›è¯·è¿›ã€‚\n");
 			break;
 	}
 }
@@ -68,6 +68,6 @@ void saying(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
 
-	say("\nµêĞ¡¶ş´óºÈÒ»Éù£ºÄãÕâ³ôÒª·¹µÄ½øÀ´¸ÉÊ²÷á£¿ ¸øÎÒ¹ö³öÈ¥£¡\n\n");
+	say("\nåº—å°äºŒå¤§å–ä¸€å£°ï¼šä½ è¿™è‡­è¦é¥­çš„è¿›æ¥å¹²ä»€éº½ï¼Ÿ ç»™æˆ‘æ»šå‡ºå»ï¼\n\n");
 	
 }

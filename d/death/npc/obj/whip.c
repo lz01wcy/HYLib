@@ -4,19 +4,19 @@
 inherit WHIP;
 void create()
 {
-        set_name( HIR "ÌúË÷" NOR, ({ "tiesuo" }) );
+        set_name( HIR "é“ç´¢" NOR, ({ "tiesuo" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
                 set("value", 500);
 		set("rigidity",1000);
                 set("material", "skin");
         }
         init_whip(45);
-        set("wield_msg", "$N´ÓÑü¼äÃş³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊøÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æ‘¸å‡ºä¸€æ¡$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næŸåœ¨è…°é—´ã€‚\n");
         setup();
 }
 

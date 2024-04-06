@@ -1,20 +1,20 @@
 inherit NPC;
 void create()
 {
-   set_name("ÆëÂåÅµ·ò",({"qiluo nuofu"}));
-   set("gender","ÄĞĞÔ");
+   set_name("é½æ´›è¯ºå¤«",({"qiluo nuofu"}));
+   set("gender","ç”·æ€§");
    set("age",45);
    set("combat_exp",5000);
    set("mingwang",200);
-   set("long","ÕâÎ»ÊÇ¶íÂŞË¹Ê¹Õß.\n");
+   set("long","è¿™ä½æ˜¯ä¿„ç½—æ–¯ä½¿è€….\n");
    set_skill("unarmed",10);
    set_skill("parry",10);
    set_skill("dodge",10);
    set_skill("literate",10);
    set("chat_chance",4);
    set("chat_msg",({
-  "ÆëÂåÅµ·òµÀ:ÎÒÃÇÕıÔÚµÈºò¿µÎõ´óµÛµÄ½Ó¼û.\n",
-  "ÆëÂåÅµ·òµÀ:ÎÒÃÇ´øÁËĞí¶àÃÀÅ®,Öé±¦À´ÇóºÍ.\n",
+  "é½æ´›è¯ºå¤«é“:æˆ‘ä»¬æ­£åœ¨ç­‰å€™åº·ç†™å¤§å¸çš„æ¥è§.\n",
+  "é½æ´›è¯ºå¤«é“:æˆ‘ä»¬å¸¦äº†è®¸å¤šç¾å¥³,ç å®æ¥æ±‚å’Œ.\n",
   }));
    
    setup();

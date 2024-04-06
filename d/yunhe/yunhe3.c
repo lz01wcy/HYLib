@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", HIY "ÔËºÓÉÏÓÎ" NOR);
+    set("short", HIY "è¿æ²³ä¸Šæ¸¸" NOR);
     set("long", HIY @LONG
-´¬Ò»Â·ĞĞÀ´£¬Á½°¶µÄÉ½½¥½¥¶àÁËÆğÀ´£¬·ÅÑÛ¿´È¥¡£ÇàÉ½ÂÌ
-Ë®£¬ºÓÉÏµÄ´¬Ò²ÉÙÁËĞí¶à£¬Å¼¶ûÓĞÒ»Á½Ö»¿ì´¬ÑïÂú·«£¬·É¿ìµÄ
-Ê»¹ı¡£¿´Ñù×Ó£¬ÄÇÊÇÎª¾©³ÇÀïµÄ´óÒ¯ÃÇËÍ¶«Î÷µÄ¡£
+èˆ¹ä¸€è·¯è¡Œæ¥ï¼Œä¸¤å²¸çš„å±±æ¸æ¸å¤šäº†èµ·æ¥ï¼Œæ”¾çœ¼çœ‹å»ã€‚é’å±±ç»¿
+æ°´ï¼Œæ²³ä¸Šçš„èˆ¹ä¹Ÿå°‘äº†è®¸å¤šï¼Œå¶å°”æœ‰ä¸€ä¸¤åªå¿«èˆ¹æ‰¬æ»¡å¸†ï¼Œé£å¿«çš„
+é©¶è¿‡ã€‚çœ‹æ ·å­ï¼Œé‚£æ˜¯ä¸ºäº¬åŸé‡Œçš„å¤§çˆ·ä»¬é€ä¸œè¥¿çš„ã€‚
 LONG NOR
     );
 
@@ -23,7 +23,7 @@ LONG NOR
 void init()
 
 {	object me=this_player();
-	tell_object(me, CYN "\n\n\n´¬ÔÚ´óºÓÉÏÒ»Â·»º»º¶øĞĞ¡£Á½°¶µÄ·ç¾°¾¡ÊÕÑÛµ×...\n\n\n" NOR ) ;
+	tell_object(me, CYN "\n\n\nèˆ¹åœ¨å¤§æ²³ä¸Šä¸€è·¯ç¼“ç¼“è€Œè¡Œã€‚ä¸¤å²¸çš„é£æ™¯å°½æ”¶çœ¼åº•...\n\n\n" NOR ) ;
 	call_out("goto",6, me);
 }
 void goto(object me)
@@ -34,15 +34,15 @@ void goto(object me)
 	{
 	if (i>20 && i<30) {
 		me->move (__DIR__"yunhe4");
-		message("vision","Ò»Ö»Ğ¡´¬Ê»ÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision","ä¸€åªå°èˆ¹é©¶äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 		}
 	if (i>30) {
 		me->move (__DIR__"yunhe5");
-		message("vision","Ò»Ö»Ğ¡´¬Ê»ÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision","ä¸€åªå°èˆ¹é©¶äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 		}
 	if (i<20) {
 		me->move (__DIR__"yunhe2");
-		message("vision","Ò»Ö»Ğ¡´¬Ê»ÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision","ä¸€åªå°èˆ¹é©¶äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 		}
 	}
 }

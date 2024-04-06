@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIW"ѩ��"NOR);
+	set("short", HIW"雪地"NOR);
 	set("long", @LONG
-����ɽ����Ƨ��������ɽ�Ͼ��������ѩ������ĵ��ϰ�ѩ����������ֱ
-�����˫Ŀ��ѩ����һ�н�ӡͨ�򱱱ߣ������Ǳ�Ӧ������ɽ·�ġ�
+昆仑山由于僻处北疆，山上经常终年积雪。这里的地上白雪皑皑，反光直
+刺你的双目。雪地里一行脚印通向北边，看来那边应该有条山路的。
 LONG	);
 	set("exits", ([
 		"north" : __DIR__"shanlu1",

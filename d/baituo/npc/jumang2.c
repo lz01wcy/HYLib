@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-    set_name("¾ÞòþÍõ", ({ "ju mang", "mang" }) );
-	set("race", "Ò°ÊÞ");
+    set_name("å·¨èŸ’çŽ‹", ({ "ju mang", "mang" }) );
+	set("race", "é‡Žå…½");
 	set("age", 70);
-    set("long", "Ò»ÌõÎåÕÉÀ´³¤µÄòþ£¡£¡£¡\n");
+    set("long", "ä¸€æ¡äº”ä¸ˆæ¥é•¿çš„èŸ’ï¼ï¼ï¼\n");
     set("attitude", "aggressive");
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Çû¸É" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´", "èº¯å¹²" }) );
 	set("verbs", ({ "sweep", "twist", "bite" }) );
         set("str", 190);
         set("con", 190);
@@ -25,7 +25,7 @@ void create()
 void die()
 {
 	object ob;
-    message_vision("$N´¹ËÀÕõÔúÁË¼¸ÏÂ¾Í²»¶¯ÁË¡£\n", this_object());
+    message_vision("$Nåž‚æ­»æŒ£æ‰Žäº†å‡ ä¸‹å°±ä¸åŠ¨äº†ã€‚\n", this_object());
 if (random(10) > 6)
 {
 	ob = new("/d/baituo/obj/shenshezhang");

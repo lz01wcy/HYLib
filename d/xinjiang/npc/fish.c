@@ -1,12 +1,12 @@
  inherit NPC;
 void create()
 {
-        set_name("Óã", ({ "fish" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("é±¼", ({ "fish" }) );
+        set("race", "é‡å…½");
         set("age", 5);
-        set("long", "Ò»ÌõÓãÍ·ÓãÄÔµÄÒ°Óã\n");
+        set("long", "ä¸€æ¡é±¼å¤´é±¼è„‘çš„é‡é±¼\n");
         set("max_kee", 1);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) ); 
         set_skill("dodge", 80); 
         setup();

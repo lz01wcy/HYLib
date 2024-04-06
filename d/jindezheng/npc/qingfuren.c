@@ -1,9 +1,9 @@
 inherit NPC;
 void create()
 {
-	set_name("ÇàÒÂ¸¾ÈË",({"woman","furen","qingyi"}));
+	set_name("é’è¡£å¦‡äºº",({"woman","furen","qingyi"}));
      set("shen_type",-1);
-     set("gender","Å®ĞÔ");
+     set("gender","å¥³æ€§");
      set("age",20+random(30));
      set("str",10+random(20));
      set("max_qi",1700);

@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ë®ÎŞºÛ",({"swh"}));
-set("nickname",HIM"³éµ¶¶ÏË®Ë®¸üÁ÷" NOR);
+	set_name("æ°´æ— ç—•",({"swh"}));
+set("nickname",HIM"æŠ½åˆ€æ–­æ°´æ°´æ›´æµ" NOR);
  
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("long", 
-		"Ëû¾ÍÊÇĞÇËŞÊ×Ä§¡¸Ë®ÎŞºÛ¡¹¡£\n");
+		"ä»–å°±æ˜¯æ˜Ÿå®¿é¦–é­”ã€Œæ°´æ— ç—•ã€ã€‚\n");
 	setup();
 	
 	carry_object("/d/city2/obj/jinduan")->wear();

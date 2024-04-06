@@ -3,18 +3,18 @@
 inherit NPC;
 
 mapping *data=({
-(["name":"Ã÷½Ì°ïÖÚ",	"id":"bang",		"mw":1,	]),
-(["name":"ÈÕÔÂĞ°½ÌÍ½",	"id":"tu",		"mw":-1,	]),
-(["name":"ÌìµØ»á°ïÖÚ",	"id":"bang",		"mw":1,	"weapon":"blade",	]),
-(["name":"Ø¤°ïµÜ×Ó",	"id":"dizi",		"mw":1,	"weapon":"club",	]),
-(["name":"ÌìÏÂ»á°ïÖÚ",	"id":"bang",		"mw":1,	"weapon":"blade",	]),
-(["name":"ĞÇËŞµÜ×Ó",	"id":"dizi",		"mw":-1,	"weapon":"blade",	]),
-(["name":"ÓùÇ°ÊÌÎÀ",	"id":"shiwei",	"mw":1,	"weapon":"sword",	]),
-(["name":"Îäµ±ÅÉÆúÍ½",	"id":"dizi",		"mw":-1,	"weapon":"sword",]),
-(["name":"»ªÉ½ÅÉÆúÍ½",	"id":"dizi",		"mw":-1,	"weapon":"sword",	]),
-(["name":"ÁéğÕ¹¬Ê¹Õß",	"id":"shizhe",	"mw":-1,	"weapon":"whip",]),
-(["name":"ÁéÉßµºÊ¹Õß",	"id":"shizhe",	"mw":-1,	"weapon":"blade",	]),
-(["name":"Ã÷½Ì½ÓÒıÊ¹",	"id":"shi",		"mw":1,	"weapon":"hammer",]),
+(["name":"æ˜æ•™å¸®ä¼—",	"id":"bang",		"mw":1,	]),
+(["name":"æ—¥æœˆé‚ªæ•™å¾’",	"id":"tu",		"mw":-1,	]),
+(["name":"å¤©åœ°ä¼šå¸®ä¼—",	"id":"bang",		"mw":1,	"weapon":"blade",	]),
+(["name":"ä¸å¸®å¼Ÿå­",	"id":"dizi",		"mw":1,	"weapon":"club",	]),
+(["name":"å¤©ä¸‹ä¼šå¸®ä¼—",	"id":"bang",		"mw":1,	"weapon":"blade",	]),
+(["name":"æ˜Ÿå®¿å¼Ÿå­",	"id":"dizi",		"mw":-1,	"weapon":"blade",	]),
+(["name":"å¾¡å‰ä¾å«",	"id":"shiwei",	"mw":1,	"weapon":"sword",	]),
+(["name":"æ­¦å½“æ´¾å¼ƒå¾’",	"id":"dizi",		"mw":-1,	"weapon":"sword",]),
+(["name":"åå±±æ´¾å¼ƒå¾’",	"id":"dizi",		"mw":-1,	"weapon":"sword",	]),
+(["name":"çµé¹«å®«ä½¿è€…",	"id":"shizhe",	"mw":-1,	"weapon":"whip",]),
+(["name":"çµè›‡å²›ä½¿è€…",	"id":"shizhe",	"mw":-1,	"weapon":"blade",	]),
+(["name":"æ˜æ•™æ¥å¼•ä½¿",	"id":"shi",		"mw":1,	"weapon":"hammer",]),
 });
 
 

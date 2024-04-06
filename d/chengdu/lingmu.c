@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ĺ");
+	set("short", "陵墓");
 	set("long", @LONG
-������һ���ܴ����Ĺ�����ߵ�����о��ֵֹģ���֪����ʲô
-�ط����ԣ�Ҳ�������������ʹ����Щѹ�ְɣ��и�ɨĹ�������ﲻͣ
-�ذ���̾����
+这里有一座很大的陵墓，你走到这里，感觉怪怪的，不知道有什么
+地方不对，也许是这里的气氛使人有些压抑吧，有个扫墓人在那里不停
+地唉声叹气。
 LONG	);
 	set("exits", ([
 		"east" : __DIR__"wuhouci",

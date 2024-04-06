@@ -4,16 +4,16 @@ inherit STAFF;
 
 void create()
 {
-	set_name("¹Õ¹÷", ({ "guai gun","gun"}));
+	set_name("æ‹æ£", ({ "guai gun","gun"}));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ùÀÏÈËÓÃµÄ¹Õ¹÷¡£\n");	
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹è€äººç”¨çš„æ‹æ£ã€‚\n");	
 		set("material", "steel");
-		set("wield_msg", "$NÌáÆğÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¿¸µ½ÁË¼çÉÏ¡£\n");
+		set("wield_msg", "$Næèµ·ä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ‰›åˆ°äº†è‚©ä¸Šã€‚\n");
 	}
 	init_staff(50);
 	setup();

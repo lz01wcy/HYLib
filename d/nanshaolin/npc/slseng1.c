@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÊØÂÉÉ®", ({ "shoulu seng", "seng", "shoulu" }));
+	set_name("å®ˆå¾‹åƒ§", ({ "shoulu seng", "seng", "shoulu" }));
 	set("long",
-		"ËûÊÇÒ»Î»Éí²Ä¸ß´óµÄÖĞÄêÉ®ÈË£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²¡£ËûÊÖ³Ö±ø\n"
-		"ÈĞ£¬Éí´©Ò»Ï®»Ò²¼Ïâ±ßôÂôÄ£¬ËÆºõÓĞÒ»ÉíÎäÒÕ¡£\n"
+		"ä»–æ˜¯ä¸€ä½èº«æé«˜å¤§çš„ä¸­å¹´åƒ§äººï¼Œä¸¤è‡‚ç²—å£®ï¼Œè†€é˜”è…°åœ†ã€‚ä»–æ‰‹æŒå…µ\n"
+		"åˆƒï¼Œèº«ç©¿ä¸€è¢­ç°å¸ƒé•¶è¾¹è¢ˆè£Ÿï¼Œä¼¼ä¹æœ‰ä¸€èº«æ­¦è‰ºã€‚\n"
 	);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
@@ -56,7 +56,7 @@ void create()
 	prepare_skill("strike", "banruo-zhang");
 	prepare_skill("claw", "longzhua-gong");
 
-        create_family("ÄÏÉÙÁÖÅÉ", 22, "µÜ×Ó");
+        create_family("å—å°‘æ—æ´¾", 22, "å¼Ÿå­");
 	setup();
 
 	carry_object(__DIR__"jiedao")->wield();
@@ -76,7 +76,7 @@ void init()
 		if ( ob->query("guilty") == 1 )
 		{
 			if ( random(2) ==1 )
-			command("say ÄãÕâ·ğÃÅ°ÜÀà£¬ÄÄÀïÌÓ£¡ »¹²»ËÙµ½½äÂÉÔºÁì×ï£¡\n");
+			command("say ä½ è¿™ä½›é—¨è´¥ç±»ï¼Œå“ªé‡Œé€ƒï¼ è¿˜ä¸é€Ÿåˆ°æˆ’å¾‹é™¢é¢†ç½ªï¼\n");
 			me->set_leader(ob);
 			remove_call_out("fight_ob");
 			call_out("fight_ob", 1, ob); 
@@ -84,7 +84,7 @@ void init()
 		if ( ob->query("guilty") >= 2 )
 		{
 			if ( random(2) ==1 )
-			command("say ½äÂÉÔº´óñ²´óÊ¦ÇëÄãÈ¥³ÂÊö´Ë´ÎÏÂÉ½¾­¹ı £¡\n");
+			command("say æˆ’å¾‹é™¢å¤§ç™«å¤§å¸ˆè¯·ä½ å»é™ˆè¿°æ­¤æ¬¡ä¸‹å±±ç»è¿‡ ï¼\n");
 			me->set_leader(ob);
 		}       
 	}

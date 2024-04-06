@@ -4,13 +4,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR"¶ì"HIY"ÂÑ"HIW"Ê¯"NOR, ({"e luanshi", "e", "luanshi", "stone"}));
+        set_name(HIR"é¹…"HIY"åµ"HIW"çŸ³"NOR, ({"e luanshi", "e", "luanshi", "stone"}));
         set_weight(40000);
         if (clonep())
                set_default_object(__FILE__);
         else {
-               set("long", "ÕâÊÇÒ»¿éÉ«²Ê°ßìµµÄ¶ìÂÑÊ¯¡£\n");
-               set("unit", "¿é");
+               set("long", "è¿™æ˜¯ä¸€å—è‰²å½©æ–‘æ–“çš„é¹…åµçŸ³ã€‚\n");
+               set("unit", "å—");
         }
         setup();
 }

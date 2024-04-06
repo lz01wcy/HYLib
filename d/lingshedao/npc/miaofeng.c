@@ -5,12 +5,12 @@ inherit NPC;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("Ãî·çÊ¹", ({"miao feng", "miao",}));
+        set_name("å¦™é£ä½¿", ({"miao feng", "miao",}));
         set("long",
-        "ÕâÈË»ÆĞëÓ¥±Ç,Á³ÉÏÒõ³Á³ÁµÄ.\n"
+        "è¿™äººé»„é¡»é¹°é¼»,è„¸ä¸Šé˜´æ²‰æ²‰çš„.\n"
         );
-        set("nickname",MAG"²¨Ë¹Ã÷½Ì×Ü½Ì»¤½ÌÊ¹Õß" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("nickname",MAG"æ³¢æ–¯æ˜æ•™æ€»æ•™æŠ¤æ•™ä½¿è€…" NOR);
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("age", 30);
         set("shen_type",-1);
@@ -51,7 +51,7 @@ set_temp("no_kill",1);
 void init()
 {
   object ob=this_player();
-  if(interactive(ob) && ob->query("party/party_name")== HIG "Ã÷½Ì" NOR)
-  message_vision(HIC"Ãî·çÊ¹ÀäÀäµÄ¿´×Å$N.\n"NOR,ob);
+  if(interactive(ob) && ob->query("party/party_name")== HIG "æ˜æ•™" NOR)
+  message_vision(HIC"å¦™é£ä½¿å†·å†·çš„çœ‹ç€$N.\n"NOR,ob);
 }
 

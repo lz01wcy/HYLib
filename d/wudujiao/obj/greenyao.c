@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÂÌÉ«Ò©·Û", ({ "green yao","yao"}) );
+        set_name("ç»¿è‰²è¯ç²‰", ({ "green yao","yao"}) );
         if( clonep() )                       
                 set_default_object(__FILE__);
         else {
-                set("long","ÕâÊÇÒ»°üÎå¶¾½Ì¾«Á¶µÄ¶¾Ò©¡£\n" );
-                set("unit", "°ü");
+                set("long","è¿™æ˜¯ä¸€åŒ…äº”æ¯’æ•™ç²¾ç‚¼çš„æ¯’è¯ã€‚\n" );
+                set("unit", "åŒ…");
                 set("value", 200);
                 set("poison_type", "zhizhu_poison");
                 set("can_pour", 1);
@@ -19,7 +19,7 @@ void create()
                 set("poison", ([
                         "level" : 250,
                         "id"    : "wudu jiao",
-                        "name"  : "Ö©Öë¶¾",
+                        "name"  : "èœ˜è››æ¯’",
                         "duration": 20,
                 ]));
                 set("no_sell", 1);                
@@ -36,10 +36,10 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if( !id(arg) ) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        message_vision("$NÒ»Ñö²±£¬°Ñ¶¾Ò©È«²¿µ¹ÈëÁË×ìÖĞ¡£\n",
+        if( !id(arg) ) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+        message_vision("$Nä¸€ä»°è„–ï¼ŒæŠŠæ¯’è¯å…¨éƒ¨å€’å…¥äº†å˜´ä¸­ã€‚\n",
                        me);
-        me->set_temp("die_reason", "³ÔÁËÖ©Öë¶¾±©±ĞÉíÍöÁË");
+        me->set_temp("die_reason", "åƒäº†èœ˜è››æ¯’æš´æ¯™èº«äº¡äº†");
         me->die();
         destruct(this_object());
         return 1;

@@ -4,13 +4,13 @@ void kuser();
 
 void create()
 {
-    set_name("Îå²ÊÉñÁú", ({ "shenlong" }) );
-    set("race", "Ò°ÊÞ");
+    set_name("äº”å½©ç¥žé¾™", ({ "shenlong" }) );
+    set("race", "é‡Žå…½");
     set("age", 20);
-    set("long", "Ò»Ìõ´ÖÈçË®Í°µÄ¾ÞÉß£¬Éí³¤¼¸Ê®ÕÉ£¬¿ÚÖÐ²»¶ÏµØÅç×Å¶¾Îí\n");
+    set("long", "ä¸€æ¡ç²—å¦‚æ°´æ¡¶çš„å·¨è›‡ï¼Œèº«é•¿å‡ åä¸ˆï¼Œå£ä¸­ä¸æ–­åœ°å–·ç€æ¯’é›¾\n");
     set("attitude", "peaceful");
 	
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 
 	set("combat_exp", 300000);
@@ -50,7 +50,7 @@ void kuser()
 void die()
 {
 	object ob1,ob2,who;
-    message_vision("$N²Ò½ÐÁËÊýÉù£¬ÕõÔúÁË¼¸ÏÂ¾Í²»¶¯ÁË¡£\n", this_object());
+    message_vision("$Næƒ¨å«äº†æ•°å£°ï¼ŒæŒ£æ‰Žäº†å‡ ä¸‹å°±ä¸åŠ¨äº†ã€‚\n", this_object());
 	ob1 = new(__DIR__"obj/sl_dan");
 	ob1->move(environment(this_object()));
        who=this_object()->query_temp("last_damage_from");

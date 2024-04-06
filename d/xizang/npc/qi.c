@@ -2,15 +2,15 @@
 inherit NPC;
 void create()
 {
-        set_name("ÆëĞ¡Ñà", ({ "qi xiaoyan", "qi" }) );
+        set_name("é½å°ç‡•", ({ "qi xiaoyan", "qi" }) );
         set("long",
-                "Ò»¸ö´©µÄåååİ°¹Ôà£¬±ÇÌéÖ±Á÷µÄ¡°Ğ¡ÄĞº¢¡±¡£\n");
-        set("gender", "Å®ĞÔ" );
+                "ä¸€ä¸ªç©¿çš„é‚‹é¢è‚®è„ï¼Œé¼»æ¶•ç›´æµçš„â€œå°ç”·å­©â€ã€‚\n");
+        set("gender", "å¥³æ€§" );
         set("age", 19);
-        set("title", HIR"º¢×ÓÍõ"NOR);
+        set("title", HIR"å­©å­ç‹"NOR);
         set("chat_chance",1);
         set("chat_msg", ({
-                        "ÆëĞ¡Ñà½¹¼±µØµÀ£ºÎÒ×îĞÄ°®µÄĞ¡ÔÆÈ¸·ÉÅÜÁË£¬ÄãÄÜ°ïÎÒ´ş»ØÀ´Ã´£¿\n",
+                        "é½å°ç‡•ç„¦æ€¥åœ°é“ï¼šæˆ‘æœ€å¿ƒçˆ±çš„å°äº‘é›€é£è·‘äº†ï¼Œä½ èƒ½å¸®æˆ‘é€®å›æ¥ä¹ˆï¼Ÿ\n",
         })  );
         set("per", 30);
         set("str", 20);
@@ -32,20 +32,20 @@ int accept_object(object who, object ob)
 {       
         object sheepskin;
         
-        if ( ob->query("name")=="¾«ÖÂÄñÁı" && ob->query("skylark") )
+        if ( ob->query("name")=="ç²¾è‡´é¸Ÿç¬¼" && ob->query("skylark") )
         { 
-                write("ÆëĞ¡Ñà¡°°¡¡±Ò»Éù¸ßĞËµØÌøÁËÆğÀ´£¬Ã¦ÏòÄãµÀĞ»£ººÃĞÄÈË£¬ËÍÄã±¾ÎÒ\n×î½ü¼ñµ½µÄÑòÆ¤Ê«¾í¡£¡±\n");
+                write("é½å°ç‡•â€œå•Šâ€ä¸€å£°é«˜å…´åœ°è·³äº†èµ·æ¥ï¼Œå¿™å‘ä½ é“è°¢ï¼šå¥½å¿ƒäººï¼Œé€ä½ æœ¬æˆ‘\næœ€è¿‘æ¡åˆ°çš„ç¾Šçš®è¯—å·ã€‚â€\n");
                 sheepskin = new(__DIR__"obj/sheepskin");
                 sheepskin->move(who);
                 call_out("tell_secret", 3, who);
            return 1;
         }
-        if ( ob->query("name")=="¾«ÖÂÄñÁı" && !ob->query("skylark") )
+        if ( ob->query("name")=="ç²¾è‡´é¸Ÿç¬¼" && !ob->query("skylark") )
         {
-                write("ÆëĞ¡ÑàÁ³ÆøµÃÍ¨ºì£¬Ê¹¾¢µÉÁËÄãÒ»ÑÛ£ºÕÒ²»µ½ÎÒµÄÄñ¾Í°ÕÁË£¬»¹ÓÃ¿Õ\nÁı×ÓÆ­ÎÒ£¬´ó»µµ°£¡\n");
+                write("é½å°ç‡•è„¸æ°”å¾—é€šçº¢ï¼Œä½¿åŠ²çªäº†ä½ ä¸€çœ¼ï¼šæ‰¾ä¸åˆ°æˆ‘çš„é¸Ÿå°±ç½¢äº†ï¼Œè¿˜ç”¨ç©º\nç¬¼å­éª—æˆ‘ï¼Œå¤§åè›‹ï¼\n");
                 return 1;
         }
-        message_vision("$N¿´ÁË¿´$n£¬ÀÁÀÁµÄËµ£¬¡°³ıÁËÎÒµÄĞ¡ÔÆÈ¸£¬Ê²Ã´¶¼²»Òª¡£¡±\n",this_object(),who);
+        message_vision("$Nçœ‹äº†çœ‹$nï¼Œæ‡’æ‡’çš„è¯´ï¼Œâ€œé™¤äº†æˆ‘çš„å°äº‘é›€ï¼Œä»€ä¹ˆéƒ½ä¸è¦ã€‚â€\n",this_object(),who);
         return 0;
 } 
 void tell_secret(object me)
@@ -53,6 +53,6 @@ void tell_secret(object me)
         object obj;
         obj = this_object();
         me->set_temp("marks/guanwai_knowsecret",1);
-        message_vision("$NÓÖ½Æ÷ïµØÕ£ÁËÕ£ÑÛ£º¡°Äã¶Ô×ÅÇ½ÉÏÕâ¸öÂŞÉ²¹íÅ®Á¢¸ö¶¾ÊÄ£¨swear£©£¬\nÎÒ¾ÍÔÙ¸æËßÄãÒ»¸öÃØÃÜ¡£¡±\n",obj);
+        message_vision("$Nåˆç‹¡é» åœ°çœ¨äº†çœ¨çœ¼ï¼šâ€œä½ å¯¹ç€å¢™ä¸Šè¿™ä¸ªç½—åˆ¹é¬¼å¥³ç«‹ä¸ªæ¯’èª“ï¼ˆswearï¼‰ï¼Œ\næˆ‘å°±å†å‘Šè¯‰ä½ ä¸€ä¸ªç§˜å¯†ã€‚â€\n",obj);
         return ;
 }     

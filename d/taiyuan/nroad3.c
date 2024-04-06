@@ -1,14 +1,14 @@
 // /d/taiyuan/nroad3.c
-// Room in Ì«Ô­
+// Room in å¤ªåŸ
 // modify by yang
 
 inherit ROOM;
 void create()	
 {
-	set("short", "´ó¹ÙµÀ");
+	set("short", "å¤§å®˜é“");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ´ó¹ÙµÀÉÏ¡£´Ë´¦ÒÔÈËÈºÏ¡ÉÙ¡£±±Ãæ¿ìµ½´ó²İ
-Ô­ÁË¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£æ‰¬çš„å¤§å®˜é“ä¸Šã€‚æ­¤å¤„ä»¥äººç¾¤ç¨€å°‘ã€‚åŒ—é¢å¿«åˆ°å¤§è‰
+åŸäº†ã€‚
 LONG
         );
 set("outdoors", "taiyuan");

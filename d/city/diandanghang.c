@@ -7,13 +7,13 @@ inherit ROOM;
 int do_quit();
 void create()
 {
-	set("short", "�䵱��");
+	set("short", "典当行");
 	set("long", @LONG
-����һ�ҿ̱������ĵ䵱�С�һ�������о���һ����ī���ã�����
-��������������£�����˴����˿Ͷ���Ϊ֮�ᡣ�߸ߵĹ�̨���濪��
-һ��С���ڣ�������Ʒ���ͺ͵�������֮�á�̧������ȥ����̨�ϰ���
-һ������ (paizi)����̨����ȴ��һ������ˬˬ��Ů���������ʱȫ��
-ѪҺ�ϳ壺������������������ֵ��ֻҪ�����࿴��һ�ۡ���
+这是一家刻薄出名的典当行。一进门正中就是一幅泼墨中堂，“典
+当”二字淋漓而下，出入此处的人客都气为之夺。高高的柜台上面开了
+一个小窗口，仅容物品递送和当银交接之用。抬眼望进去，柜台上摆着
+一个牌子 (paizi)，柜台后面却是一个清清爽爽的女孩儿。你顿时全身
+血液上冲：“东西当多少银两都值，只要能来多看她一眼”。
 LONG
 	);
 	set("no_fight", 1);
@@ -22,11 +22,11 @@ LONG
 //	set("no_clean_up", 0);
 	set("item_desc", ([
 		"paizi" : "
-pawn        �� 
-redeem      ��
-value       ����
+pawn        当 
+redeem      赎
+value       估价
 
-����������ī��δ�ɵĲ�����    "HIR"ͣ��\n"NOR,
+下面有两个墨迹未干的草体字    "HIR"停当\n"NOR,
 	]));
 	set("objects", ([
 //		__DIR__"npc/ake" : 1,

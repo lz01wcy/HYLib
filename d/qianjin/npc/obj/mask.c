@@ -1,14 +1,14 @@
 inherit EQUIP;
 void create()
 {
-        set_name("»¨Âú³ÇµÄÈËÆ¤Ãæ¾ß", ({ "skinmask" }) );
+        set_name("èŠ±æ»¡åŸçš„äººçš®é¢å…·", ({ "skinmask" }) );
         set_weight(600);
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 0);
                 set("material", "cloth");
                 set("armor_type", "mask");
-		     set("fakegender", "ÄĞĞÔ");
+		     set("fakegender", "ç”·æ€§");
                 set("armor_prop/id", ({"maskman"}) );
-                set("armor_prop/name", ({"»¨Âú³Ç"}) );
-                set("armor_prop/short", ({"»¨Âú³Ç(maskman)"}) );
+                set("armor_prop/name", ({"èŠ±æ»¡åŸ"}) );
+                set("armor_prop/short", ({"èŠ±æ»¡åŸ(maskman)"}) );
 }

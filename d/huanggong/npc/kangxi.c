@@ -3,8 +3,8 @@ inherit NPC;
 int ask_fail();
 void create()
 {
-    set_name(HIY"¿µÎõ»ÊµÛ"NOR,({"kang xi"}));
-    set("gender","ÄĞĞÔ");
+    set_name(HIY"åº·ç†™çš‡å¸"NOR,({"kang xi"}));
+    set("gender","ç”·æ€§");
     set_temp("no_kill",1);
     set("qi",1000000);
     set("eff_qi",1000000);
@@ -12,8 +12,8 @@ void create()
 set("jing",1000000);
     set("eff_jing",1000000);
        set("inquiry", ([
-                "´óÇå¹ú±¦²Ø" : (: ask_fail() :),
-                "ËÄÊ®¶şÕÂ¾­" : (: ask_fail() :),
+                "å¤§æ¸…å›½å®è—" : (: ask_fail() :),
+                "å››åäºŒç« ç»" : (: ask_fail() :),
        ]) );
 
     setup();
@@ -23,7 +23,7 @@ void kill_ob(object ob)
 {
 	ob->remove_killer(this_object());
 	remove_killer(ob);
-	message_vision("$N¾ÚÉ¥µØ·¢ÏÖ¿µÎõ»ÊµÛ¸ù±¾²»Àí»á×÷Õ½ÇëÇó¡£\n", ob);
+	message_vision("$Næ²®ä¸§åœ°å‘ç°åº·ç†™çš‡å¸æ ¹æœ¬ä¸ç†ä¼šä½œæˆ˜è¯·æ±‚ã€‚\n", ob);
 }
 
 void unconcious()
@@ -34,7 +34,7 @@ void unconcious()
 	set("eff_jing", query("max_jing"));
 	set("jing", query("max_jing"));
 	set("jingli", query("eff_jingli"));
-	say( "¿µÎõ»ÊµÛĞ¦×ÅËµ£º¶¯Îä¶ÔÎÒÃ»ÓĞÓÃ£¡\n");
+	say( "åº·ç†™çš‡å¸ç¬‘ç€è¯´ï¼šåŠ¨æ­¦å¯¹æˆ‘æ²¡æœ‰ç”¨ï¼\n");
 	command("hehe");
 }
 
@@ -52,46 +52,46 @@ this_object()->set("alr",1);
         
 if (this_object()->query("alr"))
 {
-                command("say ÒÑ¾­ÓĞÈËÕÒµ½±¦²ØÁË£¡");
+                command("say å·²ç»æœ‰äººæ‰¾åˆ°å®è—äº†ï¼");
                 return 1;
                 }
         if (me->query("huanggong/haspi1") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­Ò»£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»ä¸€ï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi2") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­¶ş£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»äºŒï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi3") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­Èı£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»ä¸‰ï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi4") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­ËÄ£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»å››ï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi5") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­Îå£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»äº”ï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi6") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­Áù£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»å…­ï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi7") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­Æß£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»ä¸ƒï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
         if (me->query("huanggong/haspi8") != 1) {
-                command("say ËÄÊ®¶şÕÂ¾­°Ë£¬ÄãÕÒµ½ÁËÂğ");
+                command("say å››åäºŒç« ç»å…«ï¼Œä½ æ‰¾åˆ°äº†å—");
                 return 1;
                 }
 obn = new(__DIR__"obj/baotu");
 obn->move(me);
-command("say ¼ÈÈ»ÄãÖªµÀÁË±¦²ØµÄÎ»ÖÃ,ÄãÒªºÃºÃ±£´æÕâ·İ´óÇå¹ú±¦²ØÍ¼!");
-command("say ÄãÒªÓÃÕâ·İ±¦²Ø£¬À´Ôì¸£ÎÒ´óÇå×ÓÃñ!");
-command("chat ½ñÊÚÓÚ" + me->query("name") + "´óÇå¹ú±¦²ØÍ¼£¬ÍûÆäÄÜÎª°ÙĞÕÔì±Æ!");
+command("say æ—¢ç„¶ä½ çŸ¥é“äº†å®è—çš„ä½ç½®,ä½ è¦å¥½å¥½ä¿å­˜è¿™ä»½å¤§æ¸…å›½å®è—å›¾!");
+command("say ä½ è¦ç”¨è¿™ä»½å®è—ï¼Œæ¥é€ ç¦æˆ‘å¤§æ¸…å­æ°‘!");
+command("chat ä»Šæˆäº" + me->query("name") + "å¤§æ¸…å›½å®è—å›¾ï¼Œæœ›å…¶èƒ½ä¸ºç™¾å§“é€ é€¼!");
 this_object()->set("alr",1);
 return 1;
 }

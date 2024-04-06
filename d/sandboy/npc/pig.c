@@ -2,18 +2,18 @@ inherit NPC;
 
 void create()
 {
-        set_name("´ó·ÊÖí", ({ "pig", "zhu" }) );
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+        set_name("å¤§è‚¥çŒª", ({ "pig", "zhu" }) );
+        set("race", "é‡Žå…½");
+        set("gender", "é›„æ€§");
         set("age", 30);
-        set("long", "Ò»Ö»³ÔµÃ·ÊÍ·´ó¶úµÄÖí,»ë²»ÖªÉ±½Ù½«ÁÙ¡£\n");
+        set("long", "ä¸€åªåƒå¾—è‚¥å¤´å¤§è€³çš„çŒª,æµ‘ä¸çŸ¥æ€åŠ«å°†ä¸´ã€‚\n");
         set("attitude", "friendly");
-   set("looking", "·Ê·ÊÅÖÅÖ£¬¿´ÆðÀ´×ãÓÐ¶þ°ÙÀ´½ï¡£");
+   set("looking", "è‚¥è‚¥èƒ–èƒ–ï¼Œçœ‹èµ·æ¥è¶³æœ‰äºŒç™¾æ¥æ–¤ã€‚");
         set("str", 20);
         set("dex", 40);
    set("qi", 300);
    set("jing", 300);
-        set("limbs", ({ "Í·²¿", "ÉíÌå" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“" }) );
         set("verbs", ({ "bite"}) );
    set("combat_exp", 2000);
         set_skill("dodge", 20);
@@ -24,7 +24,7 @@ void create()
 void die()
 {
            message("vision",
-               name() + "ºßºßß´ß´µØ½ÐÁË¼¸Éù£¬×ì½ÇÍÂ³öÒ»¹ÉÑªË®,ËÀÁË¡£\n", environment(),
+               name() + "å“¼å“¼å½å½åœ°å«äº†å‡ å£°ï¼Œå˜´è§’åå‡ºä¸€è‚¡è¡€æ°´,æ­»äº†ã€‚\n", environment(),
                 this_object() );
   new("/d/sandboy/obj/meat.c")->move(environment(this_object()));
         destruct(this_object());

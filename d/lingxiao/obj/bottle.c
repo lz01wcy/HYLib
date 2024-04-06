@@ -1,18 +1,18 @@
 //LUCAS 2000-6-18
-// huaping.c »¨Æ¿
+// huaping.c èŠ±ç“¶
 
 inherit ITEM;
 
 void create()
 {
-        set_name("»¨Æ¿", ({ "bottle", "hua ping", "bag" }));
+        set_name("èŠ±ç“¶", ({ "bottle", "hua ping", "bag" }));
         set_weight(500);
         set_max_encumbrance(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ğ");
-                set("long", "Ò»×ğÓÃÍòÄêº®ÓñËùÖÆµÄ»¨Æ¿,¾§Ó¨ÌŞÍ¸,¹â½àÎŞ±È,¼¸Ö¦Ã·»¨²åÔÚÀïÃæ,·¼ÏãËÄÒç¡£\n");
+                set("unit", "å°Š");
+                set("long", "ä¸€å°Šç”¨ä¸‡å¹´å¯’ç‰æ‰€åˆ¶çš„èŠ±ç“¶,æ™¶è¹å‰”é€,å…‰æ´æ— æ¯”,å‡ ææ¢…èŠ±æ’åœ¨é‡Œé¢,èŠ³é¦™å››æº¢ã€‚\n");
                 set("value", 0);
         }
 }

@@ -1,4 +1,4 @@
-// bear_cloth.c ºÚĞÜÆ¤ by ksusan 10/06/97
+// bear_cloth.c é»‘ç†Šçš® by ksusan 10/06/97
 #include <ansi.h>
 
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(YEL"»¢Æ¤¶ÌÈ¹"NOR, ({ "skirt","cloth"}) );
+	set_name(YEL"è™çš®çŸ­è£™"NOR, ({ "skirt","cloth"}) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÓÃÀÏ»¢Æ¤×÷³ÉµÄ¶ÌÈ¹,ÉÏÃæÓĞºÚ»Æ½»Ö¯µÄ»¢ÎÆ£¡\n");
-		set("unit", "¼ş");
+		set("long", "ç”¨è€è™çš®ä½œæˆçš„çŸ­è£™,ä¸Šé¢æœ‰é»‘é»„äº¤ç»‡çš„è™çº¹ï¼\n");
+		set("unit", "ä»¶");
 		set("value", 1200);
 		set("material", "leather");
 		set("armor_prop/armor", 40);

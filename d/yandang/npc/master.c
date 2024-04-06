@@ -3,12 +3,12 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("ÂäÑãÀÏÈË", ({ "luoyan master", "master", "luoyan" }) );
+        set_name("è½é›è€äºº", ({ "luoyan master", "master", "luoyan" }) );
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 74);
         set("class", "xiake");
-        set("title","×¯Ö÷");
+        set("title","åº„ä¸»");
 	set("max_qi", 6000);
 	set("max_jing", 6000);
 	set("max_jingli", 6000);
@@ -87,7 +87,7 @@ void create()
              
 	
 	}) );
-        create_family("Ñãµ´ÅÉ", 1, "ÕÆÃÅ");
+        create_family("é›è¡æ´¾", 1, "æŽŒé—¨");
         setup();
         carry_object(__DIR__"obj/zizhuzhang")->wield();
 	carry_object("/clone/misc/cloth")->wear();
@@ -108,7 +108,7 @@ void greeting(object ob)
 {
   if (ob&&environment(ob)!=environment()) return;
 if (ob->query("mingwang")>0)
-message_vision("ÂäÑãÀÏÈËÔÞÉÍµÄ¿´ÁË$NÒ»ÑÛ,Ãþ×Åºú×ÓµãÁËµãÍ·!\n",ob);
+message_vision("è½é›è€äººèµžèµçš„çœ‹äº†$Nä¸€çœ¼,æ‘¸ç€èƒ¡å­ç‚¹äº†ç‚¹å¤´!\n",ob);
   else 
- message_vision("ÂäÑãÀÏÈËÊ§ÍûµÄ¿´×Å$N,ÉîÉîÌ¾ÁË¿ÚÆø,×ì±ßµÄºú×Ó¶¼·ÉÁËÆðÀ´!\n",ob);
+ message_vision("è½é›è€äººå¤±æœ›çš„çœ‹ç€$N,æ·±æ·±å¹äº†å£æ°”,å˜´è¾¹çš„èƒ¡å­éƒ½é£žäº†èµ·æ¥!\n",ob);
 }

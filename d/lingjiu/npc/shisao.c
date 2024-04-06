@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ê¯É©", ({ "shi sao", "shi", "sao" }));
+	set_name("çŸ³å«‚", ({ "shi sao", "shi", "sao" }));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞÖìÌì²¿µÄÊ×Áì.\n"+
-	    "Ëı¸úËæÍ¯ÀÑ¶àÄê, ³öÉúÈëËÀ,±¥¾­·çËª.\n");
-	set("title", "ÖìÌì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­æœ±å¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹è·Ÿéšç«¥å§¥å¤šå¹´, å‡ºç”Ÿå…¥æ­»,é¥±ç»é£éœœ.\n");
+	set("title", "æœ±å¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
 	set("age", 30);
 	set("shen_type",1);
 	set("attitude", "peaceful");
@@ -50,7 +50,7 @@ void create()
 	map_skill("hand", "zhemei-shou");
 	map_skill("parry", "liuyang-zhang");
 
-	create_family("ÁéğÕ¹¬",3,"µÜ×Ó");
+	create_family("çµé¹«å®«",3,"å¼Ÿå­");
 	setup();
 	carry_object("/d/lingjiu/obj/qingyi")->wear();
             carry_object("/d/lingjiu/obj/doupeng")->wear();

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ƽԭС·");
+	set("short", "平原小路");
 	set("long", @LONG
-�������齭�����޵�ƽԭС·�ϡ��˴��������֮�磬�л���֮
-��������������ģ���紾�ӡ�
+你走在珠江三角洲的平原小路上。此处向称鱼米之乡，有花果之
+都美誉，物产丰饶，民风淳朴。
 LONG );
         set("outdoors", "xiakedao");
 	set("exits", ([

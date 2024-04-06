@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ô²¾õìøÊ¦", ({ "Yuan chanshi", "yuan", "chanshi" }));
-	set("title","ÕÑ¾õËÂÖ÷³Ö");
-	set("long", "ÕÑ¾õËÂµÚ¾Å´úÖ÷³Ö£¬´ÈÃ¼ÉÆÄ¿£¬Ñ©°×µÄ³¤Ğë¹ÒÔÚĞØÇ°¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("åœ†è§‰ç¦…å¸ˆ", ({ "Yuan chanshi", "yuan", "chanshi" }));
+	set("title","æ˜­è§‰å¯ºä¸»æŒ");
+	set("long", "æ˜­è§‰å¯ºç¬¬ä¹ä»£ä¸»æŒï¼Œæ…ˆçœ‰å–„ç›®ï¼Œé›ªç™½çš„é•¿é¡»æŒ‚åœ¨èƒ¸å‰ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 

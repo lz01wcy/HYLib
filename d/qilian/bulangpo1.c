@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "不狼坡");
 	set("long", @LONG
-����������ɽ���Ŀ�ʼ�����Ƹ��ӡ�ɽ�ж�Ϊ�˼�����֮�������
-�ķᣬ��ɽ�����ڶ�Ұ�������Ѳ�ԡ��ñ��ĺ�ȥ����
+这里是祁连山脉的开始，地势复杂。山中多为人迹罕至之处，矿藏
+颇丰，且山中有众多野生动物，是巡猎、访宝的好去处。
 LONG );
 	set("outdoors", "qilian");
 	set("exits", ([

@@ -9,14 +9,14 @@ void init()
 }
 void create()
 {
-        set_name(HIC "Ğş±ù±Ì»ğ¾Æ" NOR, ({"xuanbingbihuo jiu", "jiu"}));
-        set("unit", "ºø");
-        set("long", "ÕâÊÇÒ»ºøÕä¹óÖ®¼«µÄĞş±ù±Ì»ğ¾Æ, ¾İËµÄÜ½â°Ù¶¾¡£\n");
+        set_name(HIC "ç„å†°ç¢§ç«é…’" NOR, ({"xuanbingbihuo jiu", "jiu"}));
+        set("unit", "å£¶");
+        set("long", "è¿™æ˜¯ä¸€å£¶çè´µä¹‹æçš„ç„å†°ç¢§ç«é…’, æ®è¯´èƒ½è§£ç™¾æ¯’ã€‚\n");
         setup();
 }
 int do_drink(string arg)
 {
-        if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="jiu")
         {
              this_player()->set_temp("nopoison", 1);
@@ -24,7 +24,7 @@ int do_drink(string arg)
              this_player()->set("jing",this_player()->query("max_jing"));
              this_player()->set("eff_qi",this_player()->query("max_qi"));
              this_player()->set("qi",this_player()->query("max_qi"));
-             tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëĞÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+             tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜,ç¥æ„æ¸…çˆ½ï¼\n" NOR );
              destruct(this_object());
         }
         return 1;

@@ -8,15 +8,15 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"Ï£ –Ü½"NOR, ({ "sylph"}));
+   set_name(order[random(13)]+"å¸ŒèŠ™"NOR, ({ "sylph"}));
 if (random(2)==0)
 	set("magicgift",3);
 else 	set("magicgift",4);
 	set("magicset",1);
-       set("title",HIC"·çÖ®¾«ÁéÍõ"NOR);
+       set("title",HIC"é£Žä¹‹ç²¾çµçŽ‹"NOR);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄ·çÖ®¾«ÁéÍõ¡£\n");
+"ä¸€ä½å¯æ€•çš„é£Žä¹‹ç²¾çµçŽ‹ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -125,9 +125,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(HIC"$N,µ¹µØ¶øÍö£¬»¯Îª¿ÕÆø¡£\n"NOR,ob,me);
+        message_vision(HIC"$N,å€’åœ°è€Œäº¡ï¼ŒåŒ–ä¸ºç©ºæ°”ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃð"+ob->query("title")+HIG",Íê³ÉÁËÈÎÎñ¡£\n"NOR, users());
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("title")+HIG",å®Œæˆäº†ä»»åŠ¡ã€‚\n"NOR, users());
         me->add("combat_exp",600);
         me->add("potential",300);
         me->add("score",1);
@@ -137,7 +137,7 @@ if (!present("ice helmet", me)
 {
         jla=new("/clone/magic/obj/armor14");
         jla->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÎäÆ÷:"+jla->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£æ­¦å™¨:"+jla->query("name")+HIG"ã€‚\n"NOR, users());
 }
         destruct(ob);
         }
@@ -147,7 +147,7 @@ if (!present("ice helmet", me)
 {
         jla=new("/clone/magic/obj/armor14");
         jla->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÎäÆ÷:"+jla->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£æ­¦å™¨:"+jla->query("name")+HIG"ã€‚\n"NOR, users());
 }
 
                destruct(ob);

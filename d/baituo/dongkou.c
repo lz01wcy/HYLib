@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "洞口");
+	set("short", "娲炲彛");
 	set("long",
-	     "这里是山贼的老窝的洞口，守备森严。\n"
+	     "杩欓噷鏄北璐肩殑鑰佺獫鐨勬礊鍙ｏ紝瀹堝妫弗銆俓n"
 	);
 	set("outdoors", "baituo");
 	set("exits", ([

@@ -1,14 +1,14 @@
-//Room: slxl1.c ����С·
+//Room: slxl1.c 松林小路
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","����С·");
+      set("short","松林小路");
       set("long",@LONG
-����ɽ�������е�С·�����߳�������ĺ�������ֻ�ܿ���һ����ա�
-·���е�ʿ�ڷ�������������ͨ���䵱ɽ�ţ����߿�ͨ���⽣�ҡ�
+这是山脚松林中的小路，两边长满参天的红松树，只能看见一线天空。
+路旁有道士在奋力砍树。西边通向武当山门，东边可通往解剑岩。
 LONG);
       set("outdoors", "wudang");
       set("objects", ([

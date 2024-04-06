@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-		set("short", WHT"ÖÓÈéÊ¯¶´"NOR);
+		set("short", WHT"é’Ÿä¹³çŸ³æ´"NOR);
 	set("long", WHT @LONG
- ¶´¶¥¶¼ÊÇ¼â¼âµÄÖÓÈéÊ¯£¬ËÄÖÜ²»Í£µÄÓĞË®ÖéµÎÏÂ¡£ 
+ æ´é¡¶éƒ½æ˜¯å°–å°–çš„é’Ÿä¹³çŸ³ï¼Œå››å‘¨ä¸åœçš„æœ‰æ°´ç æ»´ä¸‹ã€‚ 
 LONG NOR);
 	set("exits", ([
 		"north" : __DIR__"dong102",
@@ -25,9 +25,9 @@ int valid_leave(object me, string dir)
 {
         me = this_player();
         if ( dir == "north" && objectp(present("baidu shenjun", environment(me))))
-                return notify_fail(BLU"°Ù¶¾Éñ¾ı"NOR"ËµµÀ£º¡°¸øÎÒ¹Ô¹ÔµÄÁôÏÂ×öÒ©ÈË°É¡£¡±\n");
+                return notify_fail(BLU"ç™¾æ¯’ç¥å›"NOR"è¯´é“ï¼šâ€œç»™æˆ‘ä¹–ä¹–çš„ç•™ä¸‹åšè¯äººå§ã€‚â€\n");
         if ( dir == "west" && objectp(present("baidu shenjun", environment(me))))
-                return notify_fail(BLU"°Ù¶¾Éñ¾ı"NOR"ËµµÀ£º¡°¸øÎÒ¹Ô¹ÔµÄÁôÏÂ×öÒ©ÈË°É¡£¡±\n");
+                return notify_fail(BLU"ç™¾æ¯’ç¥å›"NOR"è¯´é“ï¼šâ€œç»™æˆ‘ä¹–ä¹–çš„ç•™ä¸‹åšè¯äººå§ã€‚â€\n");
 
         return ::valid_leave(me, dir);
 }

@@ -7,19 +7,19 @@ inherit HEAD;
 
 void create()
 {
-    set_name(HIM "²¢µÙÁ«" NOR, ({ "lotus","flower" }) );
+    set_name(HIM "å¹¶è’‚è²" NOR, ({ "lotus","flower" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¶ÔµÙ¿ª·ÅµÄÁ«»¨¡£\n");
-                set("unit", "¶Ô");
+                set("long", "ä¸€å¯¹è’‚å¼€æ”¾çš„è²èŠ±ã€‚\n");
+                set("unit", "å¯¹");
                 set("value", 6);
                 set("material", "plant");
                 set("armor_prop/armor", 0);
                 set("armor_prop/personality", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
                 set("female_only", 1);
 
         }

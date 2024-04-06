@@ -2,14 +2,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("°ëÍ¸Ã÷µÄ´óÊ¯Í·", ({ "dashi" , "stone"}) );
+        set_name("åŠé€æ˜çš„å¤§çŸ³å¤´", ({ "dashi" , "stone"}) );
 	set_weight(500000);
 	set("no_get",1);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "Ò»¿éÁáççµÄÊ¯Í·,ÒşÒşÏ¼¹âÁ÷×ª.\n");
+		set("unit", "å—");
+		set("long", "ä¸€å—ç²ç‘çš„çŸ³å¤´,éšéšéœå…‰æµè½¬.\n");
 		set("value", 1);
              set("no_drop",1);
 		set("material", "stone");

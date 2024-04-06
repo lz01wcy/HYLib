@@ -1,17 +1,17 @@
-// yunhaodebu.c ìÙºÃµÄ²¼
+// yunhaodebu.c ç†¨å¥½çš„å¸ƒ
 // 19:34 99-1-17
 #include <ansi.h>
 inherit ITEM;
 void create()
 {
-        set_name( "ìÙºÃµÄ²¼" , ({"bu"}));
+        set_name( "ç†¨å¥½çš„å¸ƒ" , ({"bu"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Æ¥");
+                set("unit", "åŒ¹");
                 set("long", 
-"ÕâÊÇÒ»Æ¥ìÙºÃµÄ²¼£¬ËüÒÑ¾­¿ÉÒÔÖ±½Ó±»ËÍÈ¥¼Ó¹¤ÁË¡£\n");
+"è¿™æ˜¯ä¸€åŒ¹ç†¨å¥½çš„å¸ƒï¼Œå®ƒå·²ç»å¯ä»¥ç›´æ¥è¢«é€å»åŠ å·¥äº†ã€‚\n");
                 set("value", 1);
         }
         setup();

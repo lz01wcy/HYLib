@@ -1,4 +1,4 @@
-//dragon blade ÍÀÁúµ¶
+//dragon blade å± é¾™åˆ€
 #include <ansi.h>
 #include <weapon.h>
 
@@ -6,21 +6,21 @@ inherit BLADE;
 
 void create()
 {
-        set_name(CYN "ÍÀÁúµ¶" NOR,({"dragon blade","dao"}));
+        set_name(CYN "å± é¾™åˆ€" NOR,({"dragon blade","dao"}));
         set_weight(50000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "´Ë½£ÓĞ¹ù¾¸»ÆÈØ·ò¸¾´òÔì£¬ÊÇÌìÏÂÉñ±ø¡£\n");
+                set("unit", "æŸ„");
+                set("long", "æ­¤å‰‘æœ‰éƒ­é–é»„è“‰å¤«å¦‡æ‰“é€ ï¼Œæ˜¯å¤©ä¸‹ç¥å…µã€‚\n");
                 set("material", "steel");
-                set("no_drop", "Èç´Ë±¦¹óµÄÎäÆ÷ÔÙÊÀÄÑÇó°¡¡£\n");
-                set("no_get", "ËÍÈË£¿¿÷ÄãÏëµÄ³öÀ´£¡\n");
-                set("no_put", "ÕäÏ§Ëü°É¡£\n");
+                set("no_drop", "å¦‚æ­¤å®è´µçš„æ­¦å™¨å†ä¸–éš¾æ±‚å•Šã€‚\n");
+                set("no_get", "é€äººï¼Ÿäºä½ æƒ³çš„å‡ºæ¥ï¼\n");
+                set("no_put", "çæƒœå®ƒå§ã€‚\n");
                 set("no_steal", 1);
                 set("value",100);
-                set("wield_msg", CYN "ÍÀÁúµ¶Ô¾³öµ¶ÇÊ £¬·ÅÉä³öè­è²µÄºÁ¹â£¬ÌìµØÎªÖ®±äÉ«¡£\n" NOR);
-                set("unwield_msg", CYN "$NÊÖÖĞ½£¹â½¥½¥°µµ­£¬ÌìÄ»½¥½¥»À³ö¹âÃ¢¡£\n" NOR);
+                set("wield_msg", CYN "å± é¾™åˆ€è·ƒå‡ºåˆ€é˜ ï¼Œæ”¾å°„å‡ºç’€ç’¨çš„æ¯«å…‰ï¼Œå¤©åœ°ä¸ºä¹‹å˜è‰²ã€‚\n" NOR);
+                set("unwield_msg", CYN "$Næ‰‹ä¸­å‰‘å…‰æ¸æ¸æš—æ·¡ï¼Œå¤©å¹•æ¸æ¸ç„•å‡ºå…‰èŠ’ã€‚\n" NOR);
        }
        init_blade(600);
        setup();

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "闽江");
 	set("long", @LONG
-���Ӹ��ŷŽ����£�������ɽ�д䣬���㷺����С�۴�����
-̲֮�У����ϻ���ˮ�죬�Ի��ҵ�����һ����ʮ��ˮ·������Ϧ
-����
+自延福门放江而下，两岸青山夹翠，游鱼泛波，小舟穿行险
+滩之中，耳畔哗哗水响，自黄岩到福州一百六十里水路，朝发夕
+至。
 LONG );
 	set("exits", ([
 		"northwest" : __DIR__"yanping",

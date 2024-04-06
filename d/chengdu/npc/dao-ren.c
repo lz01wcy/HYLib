@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("µÀÊ¿", ({"dao shi", "shi"}));
-	set("long", "ËûÊÇÒ»Î»ÖĞÄêµÀÈË£¬ÊÇÇàÑò¹¬ÖĞÇåĞŞÖ®Ê¿¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("é“å£«", ({"dao shi", "shi"}));
+	set("long", "ä»–æ˜¯ä¸€ä½ä¸­å¹´é“äººï¼Œæ˜¯é’ç¾Šå®«ä¸­æ¸…ä¿®ä¹‹å£«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "taoist");
 

@@ -1,14 +1,14 @@
-//É½¶´
+//å±±æ´ž
 // by steel 
 #include "ansi.h"
 inherit ROOM;
 
 void create()
 {
-	set("short", "Ñ©¶´");
+	set("short", "é›ªæ´ž");
 	set("long", @LONG
-	ÕâÊÇÑ©É½ÖÐµÄÒ»¸ö¶´,¶´ÄÚ·çÑ©ËäÈ»Ð¡ÁËµã,µ«ÊÇÆæº®ÎÞ±È,¿´À´Ã»
-ÓÐÊ²Ã´ÉúÃü¿ÉÒÔÔÚÕâÀïÉú´æ¡£¶´µÄÎ÷ÄÏÊÇÒ»¿é¾Þ´óµÄ±ù±Ú¡£  
+	è¿™æ˜¯é›ªå±±ä¸­çš„ä¸€ä¸ªæ´ž,æ´žå†…é£Žé›ªè™½ç„¶å°äº†ç‚¹,ä½†æ˜¯å¥‡å¯’æ— æ¯”,çœ‹æ¥æ²¡
+æœ‰ä»€ä¹ˆç”Ÿå‘½å¯ä»¥åœ¨è¿™é‡Œç”Ÿå­˜ã€‚æ´žçš„è¥¿å—æ˜¯ä¸€å—å·¨å¤§çš„å†°å£ã€‚  
 LONG
 	);
 	
@@ -19,7 +19,7 @@ LONG
                 "northeast":__DIR__"hole"+(random(10)+1),
                   ]));
         set("item_desc",([
-             "wall":"´Ó±ÚºóÒþÒþ¿´µ½ÓÐÐ©Í¸Ã÷£¬¸ú±ðµÄµØ·½²»Ò»Ñù¡£\n"
+             "wall":"ä»Žå£åŽéšéšçœ‹åˆ°æœ‰äº›é€æ˜Žï¼Œè·Ÿåˆ«çš„åœ°æ–¹ä¸ä¸€æ ·ã€‚\n"
              ]) );
 	setup();
 }
@@ -34,28 +34,28 @@ int do_break(string arg)
       ob=this_player();
      if(arg!="bingbi")
       {
-       write("²»ÒªËæ±ãÔÒ¶«Î÷£¬ÍòÒ»ÔÒµ½ÈËÔõÃ´°ì£¬¾ÍÊÇÔÒ²»µ½ÈË\n"+
-"ÔÒµ½»¨»¨²Ý²ÝµÄÒ²²»ºÃÂï£¡\n");
+       write("ä¸è¦éšä¾¿ç ¸ä¸œè¥¿ï¼Œä¸‡ä¸€ç ¸åˆ°äººæ€Žä¹ˆåŠžï¼Œå°±æ˜¯ç ¸ä¸åˆ°äºº\n"+
+"ç ¸åˆ°èŠ±èŠ±è‰è‰çš„ä¹Ÿä¸å¥½å˜›ï¼\n");
        return 1;        
       }
       
       if( !ob->query_temp("weapon")) 
      {
-      write("Ã»ÓÐ¹¤¾ßÔõÃ´µÄ¸É»î£¿\n");
+      write("æ²¡æœ‰å·¥å…·æ€Žä¹ˆçš„å¹²æ´»ï¼Ÿ\n");
       return 1;
      }
      axe=ob->query_temp("weapon");
      if(axe->query("id")!="snow axe")
      {
-     write("Ã»ÓÐºÏÊÊµÄ¹¤¾ßÔõÃ´µÄ¸É»î£¿\n");
+     write("æ²¡æœ‰åˆé€‚çš„å·¥å…·æ€Žä¹ˆçš„å¹²æ´»ï¼Ÿ\n");
      return 1;
       }
-    message_vision(YEL"$N×ßµ½±ù±ÚÇ°£¬¾ÙÆðÆÆ±ù¸«£¬ÔË×ãÄÚÁ¦ÔÒÁË¹ýÈ¥£¡\n"NOR,ob);
+    message_vision(YEL"$Nèµ°åˆ°å†°å£å‰ï¼Œä¸¾èµ·ç ´å†°æ–§ï¼Œè¿è¶³å†…åŠ›ç ¸äº†è¿‡åŽ»ï¼\n"NOR,ob);
     n=(int)ob->query("neili");
     if (n >= 1000)
 	{
         message_vision(
-        "$NÖ»ÌýÒ»ÉùºäÏì£¬±ù±Ú±»ÄãµÄÉñÁ¦ÔÒÁË¸ö´ó¶´¡££¡\n", this_player());
+        "$Nåªå¬ä¸€å£°è½°å“ï¼Œå†°å£è¢«ä½ çš„ç¥žåŠ›ç ¸äº†ä¸ªå¤§æ´žã€‚ï¼\n", this_player());
         set("exits/southwest", "/d/feihu/bearhole");
         this_player()->set("neili",n-1000);
         remove_call_out("close");
@@ -64,7 +64,7 @@ int do_break(string arg)
      else
 	{
 		message_vision(
-		RED"½á¹ûÖ»ÌýÒ»ÉùÃÆºß£¬$N±»±ù±ÚµÄ·´µ¯Á¦ÕðµÃÑÛÇ°Ò»ºÚ....\n"NOR, this_player());
+		RED"ç»“æžœåªå¬ä¸€å£°é—·å“¼ï¼Œ$Nè¢«å†°å£çš„åå¼¹åŠ›éœ‡å¾—çœ¼å‰ä¸€é»‘....\n"NOR, this_player());
 		this_player()->set("neili",0);
 		this_player()->unconcious();
     }
@@ -73,6 +73,6 @@ int do_break(string arg)
 }
 void close(object room)
 {
-    message("vision",HIR"¶´¶¥ºöÈ»µôÏÂÀ´Ò»¿é´ó±ù¿é£¬½«¶´¿Ú·âÁË¸öÑÏÑÏÊµÊµ¡£\n"NOR, room);
+    message("vision",HIR"æ´žé¡¶å¿½ç„¶æŽ‰ä¸‹æ¥ä¸€å—å¤§å†°å—ï¼Œå°†æ´žå£å°äº†ä¸ªä¸¥ä¸¥å®žå®žã€‚\n"NOR, room);
     room->delete("exits/southwest");
 }

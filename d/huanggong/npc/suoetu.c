@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-   set_name("Ë÷¶îÍ¼",({"suo etu"}));
-   set("gender","ÄĞĞÔ");
+   set_name("ç´¢é¢å›¾",({"suo etu"}));
+   set("gender","ç”·æ€§");
    set("age",45);
    set("combat_exp",2000);
    set("mingwang",4000);
@@ -13,11 +13,11 @@ void create()
    set_skill("literate",50);
    set("chat_chance",4);
    set("chat_msg",({
-  "Ë÷¶îÍ¼µÀ:Ã÷Öé´óÈË,ÄãÔõÃ´¿´Æ½Î÷Íõ´ËÈË?\n",
-  "Ë÷¶îÍ¼µÀ:Ã÷Öé´óÈË»ÛÑÛÊ¶Öé,ºÃÉúÁîÈËÅå·ş.\n",
-  "Ë÷¶îÍ¼µÀ:»ÊÉÏ¶ÔÎ÷²ØºÍÃÉ¹ÅµÄÊÂÇéºÃÉúµ£ÓÇÄÄ.\n",
-  "Ë÷¶îÍ¼µÀ:Ç®ÊÇºÃ¶«Î÷°¡!\n",
-  "Ë÷¶îÍ¼µÀ:ÔÚÕâ¹¬Àï×öÊ²Ã´ÊÂ¶¼ÉÙ²»ÁËÇ®!\n",
+  "ç´¢é¢å›¾é“:æ˜ç å¤§äºº,ä½ æ€ä¹ˆçœ‹å¹³è¥¿ç‹æ­¤äºº?\n",
+  "ç´¢é¢å›¾é“:æ˜ç å¤§äººæ…§çœ¼è¯†ç ,å¥½ç”Ÿä»¤äººä½©æœ.\n",
+  "ç´¢é¢å›¾é“:çš‡ä¸Šå¯¹è¥¿è—å’Œè’™å¤çš„äº‹æƒ…å¥½ç”Ÿæ‹…å¿§å“ª.\n",
+  "ç´¢é¢å›¾é“:é’±æ˜¯å¥½ä¸œè¥¿å•Š!\n",
+  "ç´¢é¢å›¾é“:åœ¨è¿™å®«é‡Œåšä»€ä¹ˆäº‹éƒ½å°‘ä¸äº†é’±!\n",
   }));
    
    setup();
@@ -28,13 +28,13 @@ int accept_object(object me, object obj)
 	object pai;
         if( obj->query("money_id") && (int) obj->value() >= (10+ random(50)) * 10000)
 	{
-        message_vision("$N¶Ô$nÍÛµÄÒ»Éù!£º\n",this_object(),me);
+        message_vision("$Nå¯¹$nå“‡çš„ä¸€å£°!ï¼š\n",this_object(),me);
         command("wa");
-	command("say ºÃ¶«Î÷£¬ÎÒ×îÏ²»¶½ğ×ÓÁË£¡Ì«Ğ»Ğ»ÄãÁË£¡Õâ¸ö¸øÄã£¡\n");
+	command("say å¥½ä¸œè¥¿ï¼Œæˆ‘æœ€å–œæ¬¢é‡‘å­äº†ï¼å¤ªè°¢è°¢ä½ äº†ï¼è¿™ä¸ªç»™ä½ ï¼\n");
 	pai = new("/d/city2/obj/book14_3");
 	if(pai)
 	pai->move(me);
-        message_vision("$NÄÃ³öÒ»±¾42ÕÂ¾­¸ø$n¡£\n",this_object(),me);
+        message_vision("$Næ‹¿å‡ºä¸€æœ¬42ç« ç»ç»™$nã€‚\n",this_object(),me);
 	return 1;	
 	}
 else return 0;

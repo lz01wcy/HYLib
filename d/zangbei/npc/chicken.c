@@ -4,12 +4,12 @@ inherit NPC;
 int escape();
 void create()
 {
-        set_name("²ØÂí¼¦", ({ "crossoptilon","bird","chicken" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("è—é©¬é¸¡", ({ "crossoptilon","bird","chicken" }) );
+        set("race", "é‡å…½");
         set("age", 5);
-        set("long", "Ò»Ö»°×É«µÄ²ØÂí¼¦£¬Í·²¿Á½²àºìÉ«£¬Í·¶¥ÉÏÉúÓĞÃÜÃÜµÄºÚÉ«¶ÌµÄÈŞ×´ÓğÃ«¡£¶ú
-Óğ³Ê´Ø×´£¬°×É«£¬ÏñÁ½¸ö¶Ì½ÇÏòºóÑÓÉì×Å¡£ËüÕıÔÚµØÉÏ±Ä±ÄÌøÌøµØÑ°ÕÒÊ³Îï¡£\n");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("long", "ä¸€åªç™½è‰²çš„è—é©¬é¸¡ï¼Œå¤´éƒ¨ä¸¤ä¾§çº¢è‰²ï¼Œå¤´é¡¶ä¸Šç”Ÿæœ‰å¯†å¯†çš„é»‘è‰²çŸ­çš„ç»’çŠ¶ç¾½æ¯›ã€‚è€³
+ç¾½å‘ˆç°‡çŠ¶ï¼Œç™½è‰²ï¼Œåƒä¸¤ä¸ªçŸ­è§’å‘åå»¶ä¼¸ç€ã€‚å®ƒæ­£åœ¨åœ°ä¸Šè¹¦è¹¦è·³è·³åœ°å¯»æ‰¾é£Ÿç‰©ã€‚\n");
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
         set_skill("move",3000);
         set("chaser",1);
@@ -26,8 +26,8 @@ void create()
         
         set("chat_chance",1);
         set("chat_msg",({
-                CYN"¿©¿©£¬¿©¿©£¬²ØÂí¼¦»¶¿ìµØ½ĞÁËÆğÀ´¡£\n"NOR,
-                "²ØÂí¼¦ÆËÉÁ×Å³á°ò·ÉÁËÆğÀ´£¬Âäµ½¿ÕµØµÄÁíÒ»±ß¡£\n",
+                CYN"å’¯å’¯ï¼Œå’¯å’¯ï¼Œè—é©¬é¸¡æ¬¢å¿«åœ°å«äº†èµ·æ¥ã€‚\n"NOR,
+                "è—é©¬é¸¡æ‰‘é—ªç€ç¿…è†€é£äº†èµ·æ¥ï¼Œè½åˆ°ç©ºåœ°çš„å¦ä¸€è¾¹ã€‚\n",
         }) );   
         setup();
 }  
@@ -37,10 +37,10 @@ void create()
         
         if (environment(this_object())->query("in_tree")) return 1;
         
-        message_vision(CYN"\n"+name()+"¿©¿©¿©µØ¾ª½Ğ×Å£¬ÅÄ´ò×Å³á°ò·ÉÉÏÁËÅÔ±ßµÄ´óËÉÊ÷£¬°¦£¬¿´À´°×Ã¦ºõÁË¡£\n"NOR,this_object());
+        message_vision(CYN"\n"+name()+"å’¯å’¯å’¯åœ°æƒŠå«ç€ï¼Œæ‹æ‰“ç€ç¿…è†€é£ä¸Šäº†æ—è¾¹çš„å¤§æ¾æ ‘ï¼Œå”‰ï¼Œçœ‹æ¥ç™½å¿™ä¹äº†ã€‚\n"NOR,this_object());
         env=all_inventory(environment(this_object()));
    for (i=0;i<sizeof(env);i++)
-                if(userp(env[i])) env[i]->set_temp("zangbei/Âí¼¦ÉÏÊ÷",1);
+                if(userp(env[i])) env[i]->set_temp("zangbei/é©¬é¸¡ä¸Šæ ‘",1);
         room=find_object(AREA_ZANGBEI"pine2");
         if (!objectp(room)) room=load_object(AREA_ZANGBEI"pine2");
         this_object()->move(room);

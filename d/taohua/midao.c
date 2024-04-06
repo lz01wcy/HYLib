@@ -5,9 +5,9 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIM"ÃØµÀ"NOR);
+         set("short",HIM"ç§˜é“"NOR);
          set("long",@long
-ÕâÀïÍÁµØ³±Êª£¬Ç½ÉÏÓÐÒ»Êø»ð°Ñ¡£µ±ÄêÌÒ»¨µÜ×ÓÎªÁËÓÐÊÂÖ±´ïÖÐÔ­¶øÍÚÔäµÄ¡£
+è¿™é‡ŒåœŸåœ°æ½®æ¹¿ï¼Œå¢™ä¸Šæœ‰ä¸€æŸç«æŠŠã€‚å½“å¹´æ¡ƒèŠ±å¼Ÿå­ä¸ºäº†æœ‰äº‹ç›´è¾¾ä¸­åŽŸè€ŒæŒ–å‡¿çš„ã€‚
 long);
          set("exits",([
     "north" : "/d/taohua/houyuan",

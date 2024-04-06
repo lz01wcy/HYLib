@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "衡阳西街");
 	set("long", @LONG
-��������ʯ�̾͵���С�ֵ��ϡ�����ʱ�����˳ֽ����У��ƺ�����
-����ɶ���ˡ��ϱ���һ��С�꣬����һ������Ρ�룬���ܵ��ߣ��ſڲ�
-�Ƹ������ܼҼҶ��������������ˡ�
+你走在碎石铺就的狭小街道上。街上时常有人持剑疾行，似乎这里
+出了啥事了。南边是一家小店，北面一座大宇巍峨，重檐叠瓦，门口彩
+灯高悬，管家家丁好象都是武林中人。
 LONG );
 	set("outdoors", "hengyang");
 	set("exits", ([

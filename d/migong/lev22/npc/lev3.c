@@ -1,21 +1,21 @@
 #include <ansi.h>
 inherit NPC;
 mapping *data=({
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"É½ÂöÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"Ö²ÎïÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"½¡¿µÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"É­ÁÖÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"ÒÅÍüÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"Ê³ÎïÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"¼ÆËãÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"±¦Æ¿¹¬ÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"ÉòÄ¬ÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"Êß²ËÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"Á·½ðÊõÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"¼ÇÒäÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"»éÒöÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"Æ½ºâÌìÊ¹",]),
-(["id":"chaos angel","title":"»ìãçÌìÊ¹¾üÍÅ","name":"Ë®Á÷ÌìÊ¹",])
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"å±±è„‰å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"æ¤ç‰©å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"å¥åº·å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"æ£®æž—å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"é—å¿˜å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"é£Ÿç‰©å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"è®¡ç®—å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"å®ç“¶å®«å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"æ²ˆé»˜å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"è”¬èœå¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"ç»ƒé‡‘æœ¯å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"è®°å¿†å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"å©šå§»å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"å¹³è¡¡å¤©ä½¿",]),
+(["id":"chaos angel","title":"æ··æ²Œå¤©ä½¿å†›å›¢","name":"æ°´æµå¤©ä½¿",])
 });
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
@@ -32,7 +32,7 @@ set("nickname",(HIY+npc["title"])+NOR);
 	set("zhuanbest",1);
 	set("magicset",1);
        set("long",
-"Ò»Î»»ìãçÌìÊ¹¡£\n");
+"ä¸€ä½æ··æ²Œå¤©ä½¿ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -197,9 +197,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(RED"$N,µ¹µØ¶øÍö£¬²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$N,å€’åœ°è€Œäº¡ï¼Œä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦´òËÀ"+ob->query("name")+",Ôö¼ÓÁË80¾­ÑéºÍ40Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ‰“æ­»"+ob->query("name")+",å¢žåŠ äº†80ç»éªŒå’Œ40æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",80);
         me->add("potential",40);
         destruct(ob);

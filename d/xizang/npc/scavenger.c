@@ -2,10 +2,10 @@
 inherit NPC; 
 void create()
 {
-        set_name("ÊÕÆÆÀÃµÄ", ({ "scavenger" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ”¶ç ´çƒ‚çš„", ({ "scavenger" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 47);
-        set("long", "Õâ¸öÈË²»µ«×Ô¼ºÊÕÆÆÀÃ£¬ÉíÉÏÒ²´©µÃÆÆÀÃ²»¿°¡£\n");
+        set("long", "è¿™ä¸ªäººä¸ä½†è‡ªå·±æ”¶ç ´çƒ‚ï¼Œèº«ä¸Šä¹Ÿç©¿å¾—ç ´çƒ‚ä¸å ªã€‚\n");
         set("combat_exp", 10);
         set("str", 27);
         set("neili", 30);
@@ -14,9 +14,9 @@ void create()
         setup();
         set("chat_chance", 20);
         set("chat_msg", ({
-                "ÊÕÆÆÀÃµÄßººÈµÀ£ºÊÕ¡«ÆÆ¡«ÀÃ¡«ÄÄ¡«\n",
-                "ÊÕÆÆÀÃµÄ×ìÀïà½ßæÖø£¬²»ÖªµÀËµĞ©Ê²÷á¡£\n",
-                "ÊÕÆÆÀÃµÄÉìÊÖ×½×¡ÁËÉíÉÏµÄ¡õ×Ó£¬Ò»½Å²ÈµÃ±â±âµÄ¡£ \n",
+                "æ”¶ç ´çƒ‚çš„å†å–é“ï¼šæ”¶ï½ç ´ï½çƒ‚ï½å“ªï½\n",
+                "æ”¶ç ´çƒ‚çš„å˜´é‡Œå˜Ÿå“è‘—ï¼Œä¸çŸ¥é“è¯´äº›ä»€éº½ã€‚\n",
+                "æ”¶ç ´çƒ‚çš„ä¼¸æ‰‹æ‰ä½äº†èº«ä¸Šçš„â–¡å­ï¼Œä¸€è„šè¸©å¾—æ‰æ‰çš„ã€‚ \n",
                 (: random_move :)
         }) );
         carry_object(__DIR__"obj/old_book");
@@ -25,11 +25,11 @@ void create()
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + "£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) + "ï¼");
         return 1;
 } 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "ÈÄÃü£¡Ğ¡µÄÕâ¾ÍÀë¿ª£¡\n");
+        command("say " + RANK_D->query_respect(me) + "é¥¶å‘½ï¼å°çš„è¿™å°±ç¦»å¼€ï¼\n");
         return 0;
 } 

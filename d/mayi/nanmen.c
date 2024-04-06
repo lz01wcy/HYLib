@@ -1,24 +1,47 @@
-// rich 99/04/05
-inherit ROOM;
-void create()
-{
-	set("short", "ÄÏÃÅ");
-	set("long", @LONG
-ÂíÒØÊÇÎ÷±±µÄÖØÕò£¬ºÍÍ»ØÊ½ÓÈÀ£¬ºÍÁéÎäÊÇµÖ¿¹Í»ØÊµÄµÚÒ»µÀ·ÀÏß£¬
-Ëå³¯ÃğÍöºó£¬Àî·§Õ¼¾ã¹ØÖĞ£¬Í»ØÊ³ËÊ½¿ØÖÆÁËÂíÒØ£¬ÂíÒØ·´¶øÊÇÍ»ØÊ½ø¹¥
-ÖĞÔ­µÄÇÅÍ·±¤£¬ÊØÃÅµÄ¹Ù±ø×ĞÏ¸µÄÅÌ²ìÀ´ÍùµÄ¿ÍÉÌ£¬Ò»Ë¿²»¸Ò´óÒâ¡£
-LONG
-	);
+// rich 99/04/05
+
+inherit ROOM;
+
+void create()
+
+{
+
+	set("short", "å—é—¨");
+
+	set("long", @LONG
+
+é©¬é‚‘æ˜¯è¥¿åŒ—çš„é‡é•‡ï¼Œå’Œçªå¥æ¥å£¤ï¼Œå’Œçµæ­¦æ˜¯æŠµæŠ—çªå¥çš„ç¬¬ä¸€é“é˜²çº¿ï¼Œ
+
+éš‹æœç­äº¡åï¼Œæé˜€å ä¿±å…³ä¸­ï¼Œçªå¥ä¹˜å¼æ§åˆ¶äº†é©¬é‚‘ï¼Œé©¬é‚‘åè€Œæ˜¯çªå¥è¿›æ”»
+
+ä¸­åŸçš„æ¡¥å¤´å ¡ï¼Œå®ˆé—¨çš„å®˜å…µä»”ç»†çš„ç›˜å¯Ÿæ¥å¾€çš„å®¢å•†ï¼Œä¸€ä¸ä¸æ•¢å¤§æ„ã€‚
+
+LONG
+
+	);
+
 set("outdoors", "mayi");
-set("valid_startroom", 1);
-set("exits", ([
-                "north" : __DIR__"nanjie",
-                 "south" : __DIR__"s-road",
-	]));
-set("objects",([
-  __DIR__"npc/bing":2,
-  __DIR__"npc/wujiang":1,
-  ]));
-       setup();
-	replace_program(ROOM);
-}
+set("valid_startroom", 1);
+
+set("exits", ([
+
+                "north" : __DIR__"nanjie",
+
+                 "south" : __DIR__"s-road",
+
+	]));
+
+set("objects",([
+
+  __DIR__"npc/bing":2,
+
+  __DIR__"npc/wujiang":1,
+
+  ]));
+
+       setup();
+
+	replace_program(ROOM);
+
+}
+

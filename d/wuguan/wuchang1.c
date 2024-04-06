@@ -6,19 +6,19 @@ int do_da(string arg);
 
 void create()
 {
-	set("short", "Î÷Á·Îä³¡");
+	set("short", "è¥¿ç»ƒæ­¦åœº");
 	set("long", @LONG
-ÕâÊÇ¼ä´ó´óµÄ·¿×Ó£¬Ê®·Ö¿íÀ«£¬²»ÉÙÈËÔÚÕâÀïº¹Á÷ä¤±³µÄ¿àÁ·×Å¹¦·ò£¬
-µØÉÏÓÐÒ»Ð©Á·ÎäÓÃµÄ¹¤¾ß£¬Ç½±ß°ÚÕßÒ»ÅÅÄ¾ÈË×®(muren zhuang)¡£
+è¿™æ˜¯é—´å¤§å¤§çš„æˆ¿å­ï¼Œååˆ†å®½é˜”ï¼Œä¸å°‘äººåœ¨è¿™é‡Œæ±—æµæµƒèƒŒçš„è‹¦ç»ƒç€åŠŸå¤«ï¼Œ
+åœ°ä¸Šæœ‰ä¸€äº›ç»ƒæ­¦ç”¨çš„å·¥å…·ï¼Œå¢™è¾¹æ‘†è€…ä¸€æŽ’æœ¨äººæ¡©(muren zhuang)ã€‚
 LONG);
 	set("exits", ([
 	       "north" : __DIR__"wuchang3",
 	       "east" : __DIR__"lang1",
         ]));
         set("item_desc", ([
-	  "muren zhuang" : "Ò»¸öÄ¾×®£¬×ö³ÉÄ¾ÈËµÄÑù×Ó¹Ì¶¨ÔÚµØÉÏ£¬¹©ÈË»÷´ò(da)Á·¹¦¡£\n",
+	  "muren zhuang" : "ä¸€ä¸ªæœ¨æ¡©ï¼Œåšæˆæœ¨äººçš„æ ·å­å›ºå®šåœ¨åœ°ä¸Šï¼Œä¾›äººå‡»æ‰“(da)ç»ƒåŠŸã€‚\n",
 	]));
-        set("outdoors", "Îä¹Ý");
+        set("outdoors", "æ­¦é¦†");
         set("objects", ([
            __DIR__"npc/xxdizi" : 1,
         ]));
@@ -36,24 +36,24 @@ int do_da(string arg)
         int costj, costq;
 
         me = this_player();
-        if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ£¡\n");
-        if (me->is_fighting()) return notify_fail("ÄãÕýÔÚÕ½¶·ÖÐ£¬ÎÞ·¨×¨ÐÄÁ·¹¦£¡\n");
-        if ( !living(me)) return notify_fail("Äã·¢·èÁË£¿\n");
-        if( objectp( me->query_temp("weapon")) ) return notify_fail("Ö»ÓÐ¿ÕÊÖ²ÅÄÜ´òÄ¾ÈË×®¡£\n");
-        if (!arg || arg != "muren zhuang") return notify_fail("ÄãÒª´òÊ²Ã´£¿´òÈËÂð£¿\n");
+        if (me->is_busy()) return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ï¼\n");
+        if (me->is_fighting()) return notify_fail("ä½ æ­£åœ¨æˆ˜æ–—ä¸­ï¼Œæ— æ³•ä¸“å¿ƒç»ƒåŠŸï¼\n");
+        if ( !living(me)) return notify_fail("ä½ å‘ç–¯äº†ï¼Ÿ\n");
+        if( objectp( me->query_temp("weapon")) ) return notify_fail("åªæœ‰ç©ºæ‰‹æ‰èƒ½æ‰“æœ¨äººæ¡©ã€‚\n");
+        if (!arg || arg != "muren zhuang") return notify_fail("ä½ è¦æ‰“ä»€ä¹ˆï¼Ÿæ‰“äººå—ï¼Ÿ\n");
         costj = random((int)me->query("con"))+1;
         costq = random((int)me->query("str"))+1;
 
         if ((int)me->query("jing") < costj || (int)me->query("qi") < costq){
-              message_vision("$NÂí²½Ò»ËÉ£¬Ò»²»Ð¡ÐÄÄÔ´ü×²ÔÚÁËÄ¾ÈË×®ÉÏ£¡\n",me);
+              message_vision("$Né©¬æ­¥ä¸€æ¾ï¼Œä¸€ä¸å°å¿ƒè„‘è¢‹æ’žåœ¨äº†æœ¨äººæ¡©ä¸Šï¼\n",me);
               me->unconcious();
               return 1;
               }
         me->receive_damage("jing", costj);
         me->receive_damage("qi", costq);       
-        message_vision("$NÕ¾ºÃÂí²½£¬ÔËÆøÓÚÈ­£¬¿ªÊ¼ºÍÄ¾ÈË×®¶Ô´òÆðÀ´¡£\n", me);
+        message_vision("$Nç«™å¥½é©¬æ­¥ï¼Œè¿æ°”äºŽæ‹³ï¼Œå¼€å§‹å’Œæœ¨äººæ¡©å¯¹æ‰“èµ·æ¥ã€‚\n", me);
         if ( (int)me->query_skill("cuff", 1) < 30 && random(10)>6 ){  
-              write(HIM"ÄãÔÚºÍÄ¾ÈË×®µÄ¶Ô´òÖÐÁìÎòÁË²»ÉÙ»ù±¾È­·¨£¡\n"NOR);
+              write(HIM"ä½ åœ¨å’Œæœ¨äººæ¡©çš„å¯¹æ‰“ä¸­é¢†æ‚Ÿäº†ä¸å°‘åŸºæœ¬æ‹³æ³•ï¼\n"NOR);
               me->improve_skill("cuff", (int)(me->query("int") / 5));
               }
         if ( (int)me->query("combat_exp") < 30000) {

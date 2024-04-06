@@ -1,13 +1,13 @@
 // /d/gaoli/zhubaodian
-// Room in ����
+// Room in 高丽
 // rich 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "�鱦��");
+	set("short", "珠宝店");
 	set("long", @LONG
-����һ��ר�ų��۹��ر�����鱦�ꡣ�����鱦����ƵĹ����ɫ��
-�����ɫ���㿴����������챦�����ۻ����ң�����������
+这是一家专门出售贵重宝物的珠宝店。整个珠宝店设计的古香古色，
+别具特色。你看这各种奇珍异宝不禁眼花缭乱，流连忘反。
 LONG
 	);
 set("exits", ([

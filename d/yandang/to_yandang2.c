@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��·");
+	set("short", "大路");
 	set("long", @LONG
-·�濪ʼ��ò���ôƽ��,�ӿ����ݵ�,���ߵ�ũ���Ϊ�������
-����,Ũ�ܵ�������ס���˵���Ұ,ֻ�ܸо�����������.
+路面开始变得不那么平整,坑坑洼洼的,两边的农田变为连绵的杂
+树林,浓密的树荫遮住了人的视野,只能感觉你在向上走.
 LONG
 	);
 	set("no_clean_up", 0);

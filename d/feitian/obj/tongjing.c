@@ -1,4 +1,4 @@
-// miyao.c      Í­¾µ
+// miyao.c      é“œé•œ
 
 inherit ITEM;
 #include <ansi.h>
@@ -9,74 +9,74 @@ void init()
 }
 
 string *per_msg_male1 = ({
-        CYN "³¤µÃÎ°°¶Ó¢Í¦£¬¹ËÅÎÖ®¼ä£¬Éñ²É·ÉÑï¡£\n" NOR,
-        CYN "·á×ËÓ¢Î°£¬ÆøÓîĞù°º£¬È·ÊµÊÇÈËÖĞÁú·ï¡£\n" NOR,
+        CYN "é•¿å¾—ä¼Ÿå²¸è‹±æŒºï¼Œé¡¾ç›¼ä¹‹é—´ï¼Œç¥é‡‡é£æ‰¬ã€‚\n" NOR,
+        CYN "ä¸°å§¿è‹±ä¼Ÿï¼Œæ°”å®‡è½©æ˜‚ï¼Œç¡®å®æ˜¯äººä¸­é¾™å‡¤ã€‚\n" NOR,
 });
 
 string *per_msg_male2 = ({
-        CYN "Ó¢¿¡äìÈ÷£¬·ç¶Èôæôæ¡£\n" NOR,
-        CYN "ÏàÃ²³öÖÚ£¬ÃæÄ¿¿¡ÀÊ¡£\n" NOR,
-        CYN "ÃæÃ²ÇåÆæ£¬·á×Ë·ÇË×¡£\n" NOR,
+        CYN "è‹±ä¿Šæ½‡æ´’ï¼Œé£åº¦ç¿©ç¿©ã€‚\n" NOR,
+        CYN "ç›¸è²Œå‡ºä¼—ï¼Œé¢ç›®ä¿Šæœ—ã€‚\n" NOR,
+        CYN "é¢è²Œæ¸…å¥‡ï¼Œä¸°å§¿éä¿—ã€‚\n" NOR,
 });
 string *per_msg_male3 = ({
-        CYN "ÏàÃ²Æ½Æ½£¬Ã»Ê²Ã´ºÃ¿´µÄ¡£\n" NOR,
-        CYN "ÏàÃ²Ğ×¶ñ£¬ÂúÁ³ºáÈâ¡£\n" NOR,
-        CYN "±©¾¦»·ÑÛ£¬×ìÁ³Ğ×Íç¡£\n" NOR,
+        CYN "ç›¸è²Œå¹³å¹³ï¼Œæ²¡ä»€ä¹ˆå¥½çœ‹çš„ã€‚\n" NOR,
+        CYN "ç›¸è²Œå‡¶æ¶ï¼Œæ»¡è„¸æ¨ªè‚‰ã€‚\n" NOR,
+        CYN "æš´ç›ç¯çœ¼ï¼Œå˜´è„¸å‡¶é¡½ã€‚\n" NOR,
 });
 string *per_msg_male4 = ({
-        CYN "³¤µÃÒ»¸±ÀÑÀÑ²»ÌÛ£¬¾Ë¾Ë²»°®µÄÄ£Ñù¡£\n" NOR,
-        CYN "³¤µÃÄèÄèµÄ£¬Ò»¸±ÎŞ¾«´ò²ÉµÄÄ£Ñù¡£ \n" NOR, 
-        CYN "Îå¶ÌÈı´Ö£¬·ÊÍ·´ó¶ú£¬´ó¸ÅÊÇÖí°Ë½äµÄ±¾¼Ò¡£ \n" NOR, 
+        CYN "é•¿å¾—ä¸€å‰¯å§¥å§¥ä¸ç–¼ï¼Œèˆ…èˆ…ä¸çˆ±çš„æ¨¡æ ·ã€‚\n" NOR,
+        CYN "é•¿å¾—è”«è”«çš„ï¼Œä¸€å‰¯æ— ç²¾æ‰“é‡‡çš„æ¨¡æ ·ã€‚ \n" NOR, 
+        CYN "äº”çŸ­ä¸‰ç²—ï¼Œè‚¥å¤´å¤§è€³ï¼Œå¤§æ¦‚æ˜¯çŒªå…«æˆ’çš„æœ¬å®¶ã€‚ \n" NOR, 
 });
 string *per_msg_female1 = ({
-        CYN "³¤·¢ÈçÔÆ£¬¼¡·ôÊ¤Ñ©£¬²»ÖªÇãµ¹ÁË¶àÉÙÓ¢ĞÛºÀ½Ü¡£ \n" NOR,
-        CYN "ÇÎÁ³Éú´º£¬ÃîÄ¿º¬Çé£¬ÇáÇáÒ»Ğ¦£¬²»¾õÈÃÈËâñÈ»ĞÄ¶¯¡£ \n" NOR,
-        CYN "·çÇéÍòÖÖ£¬³ş³ş¶¯ÈË£¬µ±ÕæÊÇÎÒ¼ûÓÌÁ¯¡£ \n" NOR, 
+        CYN "é•¿å‘å¦‚äº‘ï¼Œè‚Œè‚¤èƒœé›ªï¼Œä¸çŸ¥å€¾å€’äº†å¤šå°‘è‹±é›„è±ªæ°ã€‚ \n" NOR,
+        CYN "ä¿è„¸ç”Ÿæ˜¥ï¼Œå¦™ç›®å«æƒ…ï¼Œè½»è½»ä¸€ç¬‘ï¼Œä¸è§‰è®©äººæ€¦ç„¶å¿ƒåŠ¨ã€‚ \n" NOR,
+        CYN "é£æƒ…ä¸‡ç§ï¼Œæ¥šæ¥šåŠ¨äººï¼Œå½“çœŸæ˜¯æˆ‘è§çŠ¹æ€œã€‚ \n" NOR, 
 });
 string *per_msg_female2 = ({
-        CYN "æÃæÃÓñÁ¢£¬ÈİÉ«ĞãÀö£¬·ç×Ë¶¯ÈË¡£ \n" NOR,
-        CYN "ÓñÃæ½¿Èİ»¨º¬Â¶£¬ÏË×ãÏ¸ÑüÁø´øÑÌ¡£ \n" NOR,
-        CYN "Ãæ´øÔÎºì£¬ÑÛº¬Çï²¨¡£¾ÙÊÖÍ¶×ãÖ®¼ä£¬È·ÓĞÒ»·¬·çÔÏ¡£ \n" NOR,
+        CYN "å©·å©·ç‰ç«‹ï¼Œå®¹è‰²ç§€ä¸½ï¼Œé£å§¿åŠ¨äººã€‚ \n" NOR,
+        CYN "ç‰é¢å¨‡å®¹èŠ±å«éœ²ï¼Œçº¤è¶³ç»†è…°æŸ³å¸¦çƒŸã€‚ \n" NOR,
+        CYN "é¢å¸¦æ™•çº¢ï¼Œçœ¼å«ç§‹æ³¢ã€‚ä¸¾æ‰‹æŠ•è¶³ä¹‹é—´ï¼Œç¡®æœ‰ä¸€ç•ªé£éŸµã€‚ \n" NOR,
 });
 string *per_msg_female3 = ({
-        CYN "ËäËã²»ÉÏ¾øÊÀ¼ÑÈË£¬Ò²ÆÄÓĞ¼¸·İ×ËÉ«¡£ \n" NOR,
-        CYN "³¤µÃ»¹²»´í£¬ÆÄÓĞ¼¸·İ×ËÉ«¡£  \n" NOR,
+        CYN "è™½ç®—ä¸ä¸Šç»ä¸–ä½³äººï¼Œä¹Ÿé¢‡æœ‰å‡ ä»½å§¿è‰²ã€‚ \n" NOR,
+        CYN "é•¿å¾—è¿˜ä¸é”™ï¼Œé¢‡æœ‰å‡ ä»½å§¿è‰²ã€‚  \n" NOR,
 });
 string *per_msg_female4 = ({
-        CYN "³¤µÃ±È½ÏÄÑ¿´¡£ \n" NOR,
-        CYN "³¤µÃ¡­¡­¡­°¦£¡  \n" NOR,
+        CYN "é•¿å¾—æ¯”è¾ƒéš¾çœ‹ã€‚ \n" NOR,
+        CYN "é•¿å¾—â€¦â€¦â€¦å”‰ï¼  \n" NOR,
 });
 
 string *per_msg_kid1 = ({
-        CYN "ÔÂÃ¼ĞÇÑÛ£¬ÁéÆøÊ®×ã¡£\n" NOR,
-        CYN "»úÁé»îÆÃ£¬ÉñÌ¬·Ç·²¡£\n" NOR,
-        CYN "ÃæÈôÇïÔÂ£¬É«ÈçÏş»¨¡£\n" NOR,
+        CYN "æœˆçœ‰æ˜Ÿçœ¼ï¼Œçµæ°”åè¶³ã€‚\n" NOR,
+        CYN "æœºçµæ´»æ³¼ï¼Œç¥æ€éå‡¡ã€‚\n" NOR,
+        CYN "é¢è‹¥ç§‹æœˆï¼Œè‰²å¦‚æ™“èŠ±ã€‚\n" NOR,
 });
 
 string *per_msg_kid2 = ({
-        CYN "Â¡¶î´óÑÛ£¬Á³É«ºìÈó¡£\n" NOR,
-        CYN "ÅÖÅÖà½à½£¬¶ºÈËÏ²»¶¡£\n" NOR,
-        CYN "Ï¸Æ¤ÄÛÈâ£¬¿Ú³İÁæÀş¡£\n" NOR,
+        CYN "éš†é¢å¤§çœ¼ï¼Œè„¸è‰²çº¢æ¶¦ã€‚\n" NOR,
+        CYN "èƒ–èƒ–å˜Ÿå˜Ÿï¼Œé€—äººå–œæ¬¢ã€‚\n" NOR,
+        CYN "ç»†çš®å«©è‚‰ï¼Œå£é½¿ä¼¶ä¿ã€‚\n" NOR,
 });
 
 string *per_msg_kid3 = ({
-        CYN "Éí²Äïó°«£¬ÉµÀïÉµÆø¡£\n" NOR,
-        CYN "·Ê·ÊÅÖÅÖ£¬Ğ¡±ÇĞ¡ÑÛ¡£\n" NOR,
-        CYN "´ôÍ·´ôÄÔ£¬±¿ÊÖ±¿½Å¡£\n" NOR,
+        CYN "èº«æçŸ¬çŸ®ï¼Œå‚»é‡Œå‚»æ°”ã€‚\n" NOR,
+        CYN "è‚¥è‚¥èƒ–èƒ–ï¼Œå°é¼»å°çœ¼ã€‚\n" NOR,
+        CYN "å‘†å¤´å‘†è„‘ï¼Œç¬¨æ‰‹ç¬¨è„šã€‚\n" NOR,
 });
 
 string *per_msg_kid4 = ({
-        CYN "ÅîÍ·¹¸½Å£¬Á³»Æ¼¡Êİ¡£\n" NOR,
-        CYN "ÉñÈçÄ¾¼¦£¬ÃæÓĞ²¡É«¡£\n" NOR,
-        CYN "Îå¹Ù²»Õû£¬ËÄÖ«²»½à¡£\n" NOR,
+        CYN "è“¬å¤´å¢è„šï¼Œè„¸é»„è‚Œç˜¦ã€‚\n" NOR,
+        CYN "ç¥å¦‚æœ¨é¸¡ï¼Œé¢æœ‰ç—…è‰²ã€‚\n" NOR,
+        CYN "äº”å®˜ä¸æ•´ï¼Œå››è‚¢ä¸æ´ã€‚\n" NOR,
 });
 
 void create()
 {
-	set_name(HIY "Í­¾µ" NOR, ({"tong jing", "tong", "jing"}));
-        set("unit", "Ãæ");
+	set_name(HIY "é“œé•œ" NOR, ({"tong jing", "tong", "jing"}));
+        set("unit", "é¢");
         set_weight(500);
-	set("long", "ÕâÊÇÒ»Ãæ¿ÉÒÔÕÕ(zhao jing)³öÈËÈİÃ²µÄÍ­¾µ¡£\n");
+	set("long", "è¿™æ˜¯ä¸€é¢å¯ä»¥ç…§(zhao jing)å‡ºäººå®¹è²Œçš„é“œé•œã€‚\n");
 	set("value", 500);
         setup();
 }
@@ -94,7 +94,7 @@ string per_status_msg(int age, int per, string gender)
 		else 	return ( per_msg_kid4[random(sizeof(per_msg_kid4))]);
 		}
 		
-	if ( gender == "ÄĞĞÔ" ) {
+	if ( gender == "ç”·æ€§" ) {
 		if ( per>=25 )
 			return ( per_msg_male1[random(sizeof(per_msg_male1))]);
 		else if ( per>=20 )
@@ -104,7 +104,7 @@ string per_status_msg(int age, int per, string gender)
 		else 	return ( per_msg_male4[random(sizeof(per_msg_male4))]);
 		}
 		
-	if ( gender == "Å®ĞÔ" ) {
+	if ( gender == "å¥³æ€§" ) {
 		if ( per>=25 )
                         return ( per_msg_female1[random(sizeof(per_msg_female1))]);
                 else if ( per>=20 )
@@ -113,7 +113,7 @@ string per_status_msg(int age, int per, string gender)
                         return ( per_msg_female3[random(sizeof(per_msg_female3))]);
 	    	else	return ( per_msg_female4[random(sizeof(per_msg_female4))]);
                 }
-	else return "³¤µÃÔõÑùÄãÃ»Ê²Ã´¸ÅÄî¡£\n";
+	else return "é•¿å¾—æ€æ ·ä½ æ²¡ä»€ä¹ˆæ¦‚å¿µã€‚\n";
 }
 
 int do_zhao(string arg)
@@ -125,13 +125,13 @@ int do_zhao(string arg)
 
 	ogender = me->query("gender");
 
-	if (!arg || (arg != "tong jing" && arg != "jing")) return notify_fail("ÄãÏëÕÕÊ²Ã´£¿\n");
+	if (!arg || (arg != "tong jing" && arg != "jing")) return notify_fail("ä½ æƒ³ç…§ä»€ä¹ˆï¼Ÿ\n");
 
 	beauty = per_status_msg((int)me->query("age"), (int)me->query_per(), ogender);
 
-	message_vision("$N¶ËÆğÍ­¾µ×ĞÏ¸µÄ¶ËÏê×Å¡£\n", me);
+	message_vision("$Nç«¯èµ·é“œé•œä»”ç»†çš„ç«¯è¯¦ç€ã€‚\n", me);
 
-	tell_object(me, "Í­¾µÒÀÏ¡Ó³³öÄãµÄÈİÃ²£ºÄã"+beauty);
+	tell_object(me, "é“œé•œä¾ç¨€æ˜ å‡ºä½ çš„å®¹è²Œï¼šä½ "+beauty);
 	
 	return 1;
 }

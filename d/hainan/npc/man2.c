@@ -3,18 +3,18 @@
 inherit NPC;
 
 mapping *data=({
-(["name":"×³ºº",	"id":"han",		"mw":1,	]),
-(["name":"ÀÏÁ÷Ã¥",	"id":"liumang",	"mw":-1,	]),
-(["name":"²¶¿ì",	"id":"bu kuai",	"mw":1,	"weapon":"blade",	]),
-(["name":"Á÷´®·¸",	"id":"fan",		"mw":-1,	"weapon":"blade",	]),
-(["name":"ÎäÉ®",	"id":"seng",		"mw":1,	"weapon":"club",	]),
-(["name":"¶ñÍ·ÍÓ",	"id":"toutuo",	"mw":-1,	"weapon":"blade",	]),
-(["name":"ÏÀ¿Í",	"id":"xiake",		"mw":1,	"weapon":"sword",	]),
-(["name":"Ç¿µÁ",	"id":"qiang dao",	"mw":-1,	"weapon":"throwing",]),
-(["name":"×³Ê¿",	"id":"shi",		"mw":1,	]),
-(["name":"¶ñºº",	"id":"ehan",		"mw":-1,	]),
-(["name":"×³¶¡",	"id":"ding",		"mw":1,	]),
-(["name":"Ğ×ºº",	"id":"han",		"mw":-1,	]),
+(["name":"å£®æ±‰",	"id":"han",		"mw":1,	]),
+(["name":"è€æµæ°“",	"id":"liumang",	"mw":-1,	]),
+(["name":"æ•å¿«",	"id":"bu kuai",	"mw":1,	"weapon":"blade",	]),
+(["name":"æµä¸²çŠ¯",	"id":"fan",		"mw":-1,	"weapon":"blade",	]),
+(["name":"æ­¦åƒ§",	"id":"seng",		"mw":1,	"weapon":"club",	]),
+(["name":"æ¶å¤´é™€",	"id":"toutuo",	"mw":-1,	"weapon":"blade",	]),
+(["name":"ä¾ å®¢",	"id":"xiake",		"mw":1,	"weapon":"sword",	]),
+(["name":"å¼ºç›—",	"id":"qiang dao",	"mw":-1,	"weapon":"throwing",]),
+(["name":"å£®å£«",	"id":"shi",		"mw":1,	]),
+(["name":"æ¶æ±‰",	"id":"ehan",		"mw":-1,	]),
+(["name":"å£®ä¸",	"id":"ding",		"mw":1,	]),
+(["name":"å‡¶æ±‰",	"id":"han",		"mw":-1,	]),
 });
 
 

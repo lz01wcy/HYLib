@@ -1,17 +1,17 @@
 #include <weapon.h>
 inherit BLADE; 
 void create() {
-        set_name("¹íÍ·´óµ¶", ({ "blade" }) );
+        set_name("é¬¼å¤´å¤§åˆ€", ({ "blade" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 1000);
                 set("material", "iron");
-                set("long", "ÕâÊÇÒ»°ÑÇ¿µÁ³£ÓÃµÄ¹íÍ·´óµ¶£¬ºÚ÷î÷îµÄºÜÊÇ³ÁÖØ¡£\n");
-                set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n·ÅÈëµ¶ÇÊ¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æŠŠå¼ºç›—å¸¸ç”¨çš„é¬¼å¤´å¤§åˆ€ï¼Œé»‘é»é»çš„å¾ˆæ˜¯æ²‰é‡ã€‚\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾å…¥åˆ€é˜ã€‚\n");
         }
         ::init_blade(50);
 }       

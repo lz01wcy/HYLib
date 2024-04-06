@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIY "����Ͽ" NOR );
+        set("short", HIY "瞿塘峡" NOR );
         set("long", @LONG
-�����ǳ�����Ͽ������Ͽ����ˮ�ɶ�����������Ͽ�ȣ��ӵ���
-խ��ˮ���伱�������ĸ�ɽ�м����һ���������ͺ���һ��˿��һ
-�㣬���Ѷ��С�
+这里是长江三峡的瞿塘峡，河水由东流来，进入峡谷，河道变
+窄，水流变急，两岸的高山中间夹着一条河流，就好象一条丝带一
+般，蜿蜒而行。
 LONG
         );
         set("exits", ([

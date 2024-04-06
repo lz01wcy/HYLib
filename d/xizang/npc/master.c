@@ -5,8 +5,8 @@ inherit F_MASTER;
 int leave(); 
 void create()
 {
-        set_name("É£½á", ({ "sang jie", "master","sangjie" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ¡‘ç»“", ({ "sang jie", "master","sangjie" }) );
+        set("gender", "ç”·æ€§" );
         set("class","lama");
         set("age", 99);
         set("int", 30);
@@ -14,15 +14,15 @@ void create()
         set("int",30);
         set("fle",50);
         set("apprentice_available", 20);
-        create_family("´óÕÑËÂ", 20, "Ö÷³Ö");
+        create_family("å¤§æ˜­å¯º", 20, "ä¸»æŒ");
     set("rank_nogen",1);
-    set("ranks",({"µÜ×Ó","ÂŞºº","¸ßÉ®","´óÊ¦","Ê¥É®",YEL"·¨Íõ"NOR,YEL"»î·ğ"NOR,HIY"Ö÷³Ö"NOR}));
+    set("ranks",({"å¼Ÿå­","ç½—æ±‰","é«˜åƒ§","å¤§å¸ˆ","åœ£åƒ§",YEL"æ³•ç‹"NOR,YEL"æ´»ä½›"NOR,HIY"ä¸»æŒ"NOR}));
         set("long",
-                "É£½á¸ßÉ®ÒÑÔÚ´óÕÑËÂÖ÷³Ö¶àÄê¡£ÄĞÅ®µÜ×Ó±é²¼¹ØÍâ¡£\n"
+                "æ¡‘ç»“é«˜åƒ§å·²åœ¨å¤§æ˜­å¯ºä¸»æŒå¤šå¹´ã€‚ç”·å¥³å¼Ÿå­éå¸ƒå…³å¤–ã€‚\n"
                 );
         set("inquiry", ([
-                "ÉáÀû×Ó": "àÅ....ÉáÀû×Ó.....ÔÚÉáÀûËşÀï¡£\n",
-                "ÆÕËÉ": "ÆÕËÉÔÚ´óÕÑËÂµÄÄ¾ÎİÀï¡£",
+                "èˆåˆ©å­": "å—¯....èˆåˆ©å­.....åœ¨èˆåˆ©å¡”é‡Œã€‚\n",
+                "æ™®æ¾": "æ™®æ¾åœ¨å¤§æ˜­å¯ºçš„æœ¨å±‹é‡Œã€‚",
                 "leave": (: leave:),
         ]) );
         set("combat_exp", 3000000+random(1500000));

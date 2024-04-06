@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��΢ͤ");
+	set("short", "翠微亭");
 	set("long", @LONG
-����һ��С�ɵ���ͤ����ȫ�ø�����Ȼ�����Ӵ���ɣ������׳
-���������֧��ͤ�ӵ�������ͤ��һ�����İ����ϻ����˼�֦�ʻ���
+这是一座小巧的竹亭，完全用附近天然的竹子搭建而成，几株粗壮
+的紫竹就是支撑亭子的主力，亭中一张竹编的矮几上还摆了几枝鲜花。
 LONG
 	);
 	set("no_clean_up", 0);

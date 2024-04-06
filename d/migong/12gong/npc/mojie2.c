@@ -3,10 +3,10 @@ inherit NPC;
  
 void create()
 {
-        set_name("¿ÉÂåÅµË¹", ({"kelowooz two", "kelowooz two"}));
-        set("long", "´«ËµÖĞµÄ×÷ÎïÖ®Éñ£¬ÊØ»¤×ÅÄ¦ôÉ×ù.\n");
-        set("gender","ÄĞĞÔ");
-        set("title", "¡¾×÷ÎïÖ®Éñ¡¿");
+        set_name("å¯æ´›è¯ºæ–¯", ({"kelowooz two", "kelowooz two"}));
+        set("long", "ä¼ è¯´ä¸­çš„ä½œç‰©ä¹‹ç¥ï¼Œå®ˆæŠ¤ç€æ‘©ç¾¯åº§.\n");
+        set("gender","ç”·æ€§");
+        set("title", "ã€ä½œç‰©ä¹‹ç¥ã€‘");
         set("attitude", "friendly");
         set("no_get",1);
         set("age",37);
@@ -18,7 +18,7 @@ void create()
         set("daoxing",3000000);
         set("chat_chance",20);
         set("chat_msg", ({
-                "¿ÉÂåÅµË¹ËµµÀ£º²»ÖªºÎÊ±ÄÜÔÙ¼ûµ½ÑÅµäÄÈ£¡\n"   
+                "å¯æ´›è¯ºæ–¯è¯´é“ï¼šä¸çŸ¥ä½•æ—¶èƒ½å†è§åˆ°é›…å…¸å¨œï¼\n"   
         }));
         set_skill("dodge", 250);
         set("attitude", "friendly");
@@ -58,7 +58,7 @@ void init()
 int do_none()
 {
         object me = this_object();
-        message_vision("$NÀäĞ¦Ò»Éù£ºÎÒÄË$N£¬ÄãÏëË£Ê²Ã´»¨Ñù£¿\n",me);
+        message_vision("$Nå†·ç¬‘ä¸€å£°ï¼šæˆ‘ä¹ƒ$Nï¼Œä½ æƒ³è€ä»€ä¹ˆèŠ±æ ·ï¼Ÿ\n",me);
         return 1;
 } 
 
@@ -75,8 +75,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		HIY + name() + "ËµµÀ£ºÏÖÔÚÎÒÒÑ¾­Íê³É»¤ÎÀÈÎÎñ£¬¾Í´Ë¸æ´Ç£¡\n\n"
-		+ name() + "»¯ÎªÒ»µÀ½ğ¹â£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+		HIY + name() + "è¯´é“ï¼šç°åœ¨æˆ‘å·²ç»å®ŒæˆæŠ¤å«ä»»åŠ¡ï¼Œå°±æ­¤å‘Šè¾ï¼\n\n"
+		+ name() + "åŒ–ä¸ºä¸€é“é‡‘å…‰ï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

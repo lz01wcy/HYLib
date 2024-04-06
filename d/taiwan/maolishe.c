@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "è����");
+	set("short", "猫里社");
 	set("long", @LONG
-è����λ����ǵ���ϡ��峯���꣬�˵صĺ��˻����٣���ס������
-����Ҫ��̩�����ˣ�����������Ϊ����
+猫里社位于竹堑西南。清朝初年，此地的汉人还很少，居住在这里
+的主要是泰雅族人，他们以渔猎为生。
 LONG );
 	set("exits", ([
 		"eastup"    : __DIR__"dabajianshan",

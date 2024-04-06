@@ -4,16 +4,16 @@
 inherit ROOM;
 void create()
 {
-	set("short", "Ã÷½ÌÃÜ¶´");
+	set("short", "æ˜Žæ•™å¯†æ´ž");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¸öÐ¡Ð¡ÍÁ¶´£¬ÖÜÎ§ºÚºõºõµÄºÜÄÑ¿´Çå³þ¡£ÒþÒþÔ¼Ô¼£¬¿É
-ÒÔ¿´µ½Ò»ÉÈ´óÊ¯ÃÅ(men)¡£
+è¿™é‡Œæ˜¯ä¸€ä¸ªå°å°åœŸæ´žï¼Œå‘¨å›´é»‘ä¹Žä¹Žçš„å¾ˆéš¾çœ‹æ¸…æ¥šã€‚éšéšçº¦çº¦ï¼Œå¯
+ä»¥çœ‹åˆ°ä¸€æ‰‡å¤§çŸ³é—¨(men)ã€‚
 LONG );
 	set("exits", ([
 		"out"  : __DIR__"huangtulu2",
 	]));
 	set("item_desc", ([
-		"men"  : "Ò»ÉÈ´óÊ¯ÃÅ£¬¿´À´×ÜÓÐÁ½Íò½ïÖØ°É¡£\n",
+		"men"  : "ä¸€æ‰‡å¤§çŸ³é—¨ï¼Œçœ‹æ¥æ€»æœ‰ä¸¤ä¸‡æ–¤é‡å§ã€‚\n",
 	]));
 	set("no_clean_up", 0);
 	set("outdoors", "mingjiao");
@@ -29,21 +29,21 @@ int do_break(string arg)
         object *ob, me = this_player();
         int i;
 
-        if (arg != "men") return notify_fail("ÄãÔÚ¸ÉÂð? \n");
+        if (arg != "men") return notify_fail("ä½ åœ¨å¹²å—? \n");
         if ( objectp(present("xiao zhao", environment(me))))
         {
             if ((me->query_skill("jiuyang-shengong",1)<50) || me->query("neili") < 500)
             {
-                    message_vision(CYN"Ð¡ÕÑ³å×Å$Nµ­µ­Ð¦µÀ£ºÄãµÄ¾ÅÑôÉñ¹¦»¹Ôç×ÅÄØ¡£\n"NOR,me);
+                    message_vision(CYN"å°æ˜­å†²ç€$Næ·¡æ·¡ç¬‘é“ï¼šä½ çš„ä¹é˜³ç¥žåŠŸè¿˜æ—©ç€å‘¢ã€‚\n"NOR,me);
                     return 1;
             }
-            message_vision(CYN"Ð¡ÕÑÒ»Éù¾ªºô£¬Ê¯ÃÅÔÚ$NÒ»»÷Ö®ÏÂÔþÔþÉùÏì£¬»º»ºÒÆ¿ª¡£\n"NOR,me);
+            message_vision(CYN"å°æ˜­ä¸€å£°æƒŠå‘¼ï¼ŒçŸ³é—¨åœ¨$Nä¸€å‡»ä¹‹ä¸‹è½§è½§å£°å“ï¼Œç¼“ç¼“ç§»å¼€ã€‚\n"NOR,me);
 
             ob = all_inventory(environment(me));
             for(i=0; i<sizeof(ob); i++)
             {
                 if( !living(ob[i]) || ob[i]==me || ob[i]->query("id")=="xiao zhao") continue;
-                message_vision(CYN"¾Þ´óµÄÆøÀË°Ñ$NÕð³öÁËÃÜ¶´¡£\n"NOR,ob[i]);
+                message_vision(CYN"å·¨å¤§çš„æ°”æµªæŠŠ$Néœ‡å‡ºäº†å¯†æ´žã€‚\n"NOR,ob[i]);
                 ob[i]->move(__DIR__"huangtulu2");
             }
             set("exits/enter",__DIR__"midao0");
@@ -53,7 +53,7 @@ int do_break(string arg)
         }
         else
         {
-            message_vision(CYN"Ê¯ÃÅÔÚ$NÒ»»÷Ö®ÏÂ£¬ÂäÏÂÒ»Ð©·Û³¾¡£\n"NOR,me);
+            message_vision(CYN"çŸ³é—¨åœ¨$Nä¸€å‡»ä¹‹ä¸‹ï¼Œè½ä¸‹ä¸€äº›ç²‰å°˜ã€‚\n"NOR,me);
             me->add("neili", -100);
         }
         return 1;
@@ -61,6 +61,6 @@ int do_break(string arg)
 
 void close(object room)
 {
-        message("vision","Ê¯ÃÅÓÖÔÚÔþÔþÉùÏì£¬»º»º±ÕÉÏ¡£\n"NOR,room);
+        message("vision","çŸ³é—¨åˆåœ¨è½§è½§å£°å“ï¼Œç¼“ç¼“é—­ä¸Šã€‚\n"NOR,room);
         room->delete("exits/enter");
 }

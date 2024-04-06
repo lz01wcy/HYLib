@@ -9,8 +9,8 @@ int do_action1();
 
 void create()
 {
-   set_name("ò¡Àû´óº¹",({ "da han","da","han" }) );
-   set("gender", "ÄÐÐÔ" );	
+   set_name("é¢‰åˆ©å¤§æ±—",({ "da han","da","han" }) );
+   set("gender", "ç”·æ€§" );	
    set("age", 50);
    set("combat_exp",6000000);
    set("str", 25);
@@ -29,9 +29,9 @@ void create()
    set("neili",30000);
    set("max_neili",30000);
    set("inquiry",([
-    "·ÉÎÎ±Þ·¨":(:do_action1:),
+    "é£žæŒéž­æ³•":(:do_action1:),
     ]));
-   create_family("Í»ØÊ",2,"´óº¹");
+   create_family("çªåŽ¥",2,"å¤§æ±—");
    setup();
    carry_object(__DIR__"obj/cloth")->wear();
    carry_object(__DIR__"obj/whip")->wield();

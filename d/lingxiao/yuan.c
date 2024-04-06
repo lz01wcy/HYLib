@@ -1,4 +1,4 @@
-// yuan.c Ô¨²à 
+// yuan.c æ¸Šä¾§ 
 
 inherit ROOM;
 #include <ansi.h> 
@@ -6,11 +6,11 @@ inherit ROOM;
 void init();
 void create()
 {
-        set("short", "·ÖÌìÔ¨²à");
+        set("short", "åˆ†å¤©æ¸Šä¾§");
         set("long", @LONG
-¹ýÁË·ÖÌìÑÂ£¬»ØÍ·ÍûÍû£¬°×ÔÆÁÈÁÈ£¬ÔÆÆøÃÖÂþ£¬ÏëÏë»¹ÓÐµã
-ºóÅÂ£¬µ«±Ï¾¹¹ýÀ´ÁË¡£ÍùÇ°¿´£¬¾ÍÊÇÁèÏö³ÇÁË£¬Õâ×ùÎäÁÖÖÐ´«Ëµ
-µÄÃû³Ç£¬ÖÕÓÚ³öÏÖÔÚÄãÃæÇ°ÁË£¬¸Ï¿ì½øÈ¥¿´¿´°É¡£  
+è¿‡äº†åˆ†å¤©å´–ï¼Œå›žå¤´æœ›æœ›ï¼Œç™½äº‘å¯¥å¯¥ï¼Œäº‘æ°”å¼¥æ¼«ï¼Œæƒ³æƒ³è¿˜æœ‰ç‚¹
+åŽæ€•ï¼Œä½†æ¯•ç«Ÿè¿‡æ¥äº†ã€‚å¾€å‰çœ‹ï¼Œå°±æ˜¯å‡Œéœ„åŸŽäº†ï¼Œè¿™åº§æ­¦æž—ä¸­ä¼ è¯´
+çš„ååŸŽï¼Œç»ˆäºŽå‡ºçŽ°åœ¨ä½ é¢å‰äº†ï¼Œèµ¶å¿«è¿›åŽ»çœ‹çœ‹å§ã€‚  
 LONG);
         set("outdoors", "lingxiao");
         set("exits", ([
@@ -18,7 +18,7 @@ LONG);
             "south" : __DIR__"bingqiao",
         ]));
         set("item_desc", ([
-      "bridge" : "ÕâÊÇÒ»×ù½à°×¾§Ó¨µÄ±ùÇÅ¡£\n",
+      "bridge" : "è¿™æ˜¯ä¸€åº§æ´ç™½æ™¶èŽ¹çš„å†°æ¡¥ã€‚\n",
         ]) );
         setup();
 }

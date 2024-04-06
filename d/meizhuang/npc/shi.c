@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ê©ÁîÍþ", ({ "shi lingwei", "shi" }));
+        set_name("æ–½ä»¤å¨", ({ "shi lingwei", "shi" }));
         set("long",
-                "Ëû¾ÍÊÇÒþ¾Ó½­ºþÊýÄêµÄÎåÂ·ÉñÊ©ÁîÍþ£¬ÏÖÔÚÔÚÃ·×¯µ±¹Ü¼Ò¡£\n"
+                "ä»–å°±æ˜¯éšå±…æ±Ÿæ¹–æ•°å¹´çš„äº”è·¯ç¥žæ–½ä»¤å¨ï¼ŒçŽ°åœ¨åœ¨æ¢…åº„å½“ç®¡å®¶ã€‚\n"
         );
 
-        set("gender", "ÄÐÐÔ");
-        set("nickname", HIR"ÎåÂ·Éñ"NOR);
+        set("gender", "ç”·æ€§");
+        set("nickname", HIR"äº”è·¯ç¥ž"NOR);
         set("attitude", "friendly");
 
         set("age", 30);
@@ -33,11 +33,11 @@ void create()
         set_skill("parry", 100);
 
 
-        create_family("Ã·×¯", 3, "µÜ×Ó");
+        create_family("æ¢…åº„", 3, "å¼Ÿå­");
         setup();
         set("chat_chance", 10);
         set("chat_msg", ({
-        "Ê©ÁîÍþÉñÇé»ÅÕÅµÄ³¯×À×ÓºóÃæÇÆÁËÒ»ÑÛ¡£\n",
+        "æ–½ä»¤å¨ç¥žæƒ…æ…Œå¼ çš„æœæ¡Œå­åŽé¢çž§äº†ä¸€çœ¼ã€‚\n",
         }) );
         carry_object("/d/city/npc/obj/cloth")->wear();
         carry_object("/d/city/npc/obj/changjian")->wield();

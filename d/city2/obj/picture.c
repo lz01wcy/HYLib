@@ -10,15 +10,15 @@ void init()
 
 void create()
 {
-        set_name("»­", ({"picture",}));
+        set_name("ç”»", ({"picture",}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "\nÒ»·ùºÜÆÕÍ¨µÄË®Ä«»­¡£\n");
-                set("unit", "·ù");
+                set("long", "\nä¸€å¹…å¾ˆæ™®é€šçš„æ°´å¢¨ç”»ã€‚\n");
+                set("unit", "å¹…");
                 set("material", "paper");
-                set("no_get", "\nÄãÊÔ×ÅÄÃÏÂËü£¬µ«Ã»ÓĞ³É¹¦¡£\n");
+                set("no_get", "\nä½ è¯•ç€æ‹¿ä¸‹å®ƒï¼Œä½†æ²¡æœ‰æˆåŠŸã€‚\n");
         }
         setup();
 }
@@ -32,18 +32,18 @@ int do_move(string arg)
         if (!arg||arg=="") return 0;
 	if( arg=="picture" ) {
 		if(!me->query_temp("doorisok"))
-                message_vision("\n$NÊÔÖøÒÆ¶¯»­¾í£¬·¢ÏÖËü¿ÉÒÔ×óÓÒÍÆ¶¯...\n", this_player());
+                message_vision("\n$Nè¯•è‘—ç§»åŠ¨ç”»å·ï¼Œå‘ç°å®ƒå¯ä»¥å·¦å³æ¨åŠ¨...\n", this_player());
 		if(!objectp(present("door", environment(me))))
                 {
 		message_vision(
-		"$NÇáÇáµØÅ²¶¯»­Ò³£¬Í»È»Ò»ÉÈ°µÃÅ³öÏÖÔÚ$NÑÛÇ°¡£\n", this_player());
+		"$Nè½»è½»åœ°æŒªåŠ¨ç”»é¡µï¼Œçªç„¶ä¸€æ‰‡æš—é—¨å‡ºç°åœ¨$Nçœ¼å‰ã€‚\n", this_player());
                 door = new("/d/city2/obj/door");
                 door->move("/d/city2/aobai7");
 		}
 	}
 	if( sscanf(arg, "picture %s", dir)==1 ) {
 		if( dir=="left" ) {
-		message_vision("$N½«»­¾íÍù×óÒÆ£¬Ö»ÌıÔşÔş¼¸Éù£¬»­¾íÓÖÒÆ»ØÔ­Î»¡£\n", this_player());
+		message_vision("$Nå°†ç”»å·å¾€å·¦ç§»ï¼Œåªå¬è½§è½§å‡ å£°ï¼Œç”»å·åˆç§»å›åŸä½ã€‚\n", this_player());
 	        if(!me->query_temp("pushdoor"))
 	        me->set_temp("pushdoor", 1);
 	        else 
@@ -51,7 +51,7 @@ int do_move(string arg)
 		return 1;
         	}
 		if( dir=="right" ) {
-			message_vision("$N½«»­¾íÍùÓÒÒÆ£¬Ö»ÌıÔşÔş¼¸Éù£¬»­¾íÓÖÒÆ»ØÔ­Î»¡£\n", this_player());
+			message_vision("$Nå°†ç”»å·å¾€å³ç§»ï¼Œåªå¬è½§è½§å‡ å£°ï¼Œç”»å·åˆç§»å›åŸä½ã€‚\n", this_player());
 		if (me->query_temp("pushdoor") )        
         	 	{
 			me->set_temp("doorisok", 1); 
@@ -60,7 +60,7 @@ int do_move(string arg)
                 return 1;
 		}
 		else {
-			write("ÄãÒª½«»­¾íÒÆÏòÄÇ¸ö·½Ïò£¿\n");
+			write("ä½ è¦å°†ç”»å·ç§»å‘é‚£ä¸ªæ–¹å‘ï¼Ÿ\n");
 			return 1;
 		      }
 	}

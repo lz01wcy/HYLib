@@ -5,10 +5,10 @@ void do_drink();
 void create()
 {
         seteuid(getuid());
-        set_name("´ò¸üµÄ", ({"guard", "boat guard", "boater"}));
+        set_name("æ‰“æ›´çš„", ({"guard", "boat guard", "boater"}));
         set("long",
-                "Ò»¸ö×íÑ¬Ñ¬µÄ´ò¸üµÄ\n");
-        set("gender","ÄĞĞÔ");
+                "ä¸€ä¸ªé†‰ç†ç†çš„æ‰“æ›´çš„\n");
+        set("gender","ç”·æ€§");
         set("combat_exp", 999999);
         set_skill("unarmed", 100);
 
@@ -18,8 +18,8 @@ void create()
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬ÄúÒ»¶¨»áÔÚÕâ¶ùÍæµÄ¿ªĞÄµÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œæ‚¨ä¸€å®šä¼šåœ¨è¿™å„¿ç©çš„å¼€å¿ƒçš„ï¼");
         return 1;
 }
 

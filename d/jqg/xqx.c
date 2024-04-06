@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIG"ÏìÇÙé¿"NOR);
+        set("short", HIG"å“ç´æ¦­"NOR);
         set("long", @LONG
-é¿ÎªÈý¼ä£¬¶«ÄÏ±±ÈýÃæÎª³¨Ñ¡£¬ÖÐÎªÃ÷¼ä£¬¶¥²¿Æ½Ö±£¬½á¹¹ÁéÇÉ¡£é¿ÏÂÊÇ
-¾ÍÊÇÒýÈªÈë³ØµÄÇþµÀ£¬ÉÏÓÐÏìÇÙÇÅ£¬µ±Á÷Ë®»÷Ê¯Ê±£¬ÉùÈôÇÙÉª¡£ÆøË¬·çÇå£¬µ½
-ÊÇ¸ö¶ÁÊé×ö»­µÄºÃÈ¥´¦¡£
+æ¦­ä¸ºä¸‰é—´ï¼Œä¸œå—åŒ—ä¸‰é¢ä¸ºæ•žé€‰ï¼Œä¸­ä¸ºæ˜Žé—´ï¼Œé¡¶éƒ¨å¹³ç›´ï¼Œç»“æž„çµå·§ã€‚æ¦­ä¸‹æ˜¯
+å°±æ˜¯å¼•æ³‰å…¥æ± çš„æ¸ é“ï¼Œä¸Šæœ‰å“ç´æ¡¥ï¼Œå½“æµæ°´å‡»çŸ³æ—¶ï¼Œå£°è‹¥ç´ç‘Ÿã€‚æ°”çˆ½é£Žæ¸…ï¼Œåˆ°
+æ˜¯ä¸ªè¯»ä¹¦åšç”»çš„å¥½åŽ»å¤„ã€‚
 LONG
         );
 
@@ -19,7 +19,7 @@ LONG
                 "west" : __DIR__"glt",
         ]));
 
-        set("outdoors", "¾øÇé¹È");
+        set("outdoors", "ç»æƒ…è°·");
         setup();
         replace_program(ROOM);
 }

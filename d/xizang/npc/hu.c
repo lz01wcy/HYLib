@@ -7,9 +7,9 @@ inherit F_VENDOR;
 string ask_me(object who); 
 void create()
 {
-        set_name("ºú´óÕÆ¹ñ", ({ "hu", "hu boss" }) );
-        set("title", "Ó¥¼ÇĞÂÀÏ°å");
-        set("gender", "ÄĞĞÔ" );
+        set_name("èƒ¡å¤§æŒæŸœ", ({ "hu", "hu boss" }) );
+        set("title", "é¹°è®°æ–°è€æ¿");
+        set("gender", "ç”·æ€§" );
         set("age", 56);
         set("richness",1000000);
         set("no_kill",1);
@@ -24,11 +24,11 @@ void create()
         set("spi", 30);
         set("kar", 25);
         set("long",
-"Ô­ÏÈµÄÓ¥¼ÇÀÏ°å²·Ó¥ÉñÃØÊ§×ÙÒÔºó£¬¸»¼×¹ØÍâµÄÂÀÈıÒ¯ÊÖÏÂµÄºú´óÕÆ\n¹ñ±ãÀ´¹ÜÕâ¼ÒÉÌºÅ¡£\n"
+"åŸå…ˆçš„é¹°è®°è€æ¿åœé¹°ç¥ç§˜å¤±è¸ªä»¥åï¼Œå¯Œç”²å…³å¤–çš„å•ä¸‰çˆ·æ‰‹ä¸‹çš„èƒ¡å¤§æŒ\næŸœä¾¿æ¥ç®¡è¿™å®¶å•†å·ã€‚\n"
                 );
         set("chat_chance", 2);
         set("chat_msg", ({
-                "ºú´óÕÆ¹ñßÖ×Å×ì³å×ÅÄãºÙºÙÒ»Ğ¦¡£\n",
+                "èƒ¡å¤§æŒæŸœå’§ç€å˜´å†²ç€ä½ å˜¿å˜¿ä¸€ç¬‘ã€‚\n",
                 }) );
         set("combat_exp", 600000);
         set("fly_target",1);
@@ -63,14 +63,14 @@ string value_string(int value)
 {
 	if( value < 1 ) value = 1;
 	else if( value < 100 )
-		return chinese_number(value) + "ÎÄÇ®";
+		return chinese_number(value) + "æ–‡é’±";
 	else
-		return chinese_number(value/100) + "Á½"
-			+ (value%100? "ÓÖ" + chinese_number(value%100) + "ÎÄÇ®": "");
+		return chinese_number(value/100) + "ä¸¤"
+			+ (value%100? "åˆ" + chinese_number(value%100) + "æ–‡é’±": "");
 }
 int accept_fight(object me)
 {
-        command("say ß×... Òª´ò¾ÍÕæ´ò°É£¬¹âÊÇ½ÏÁ¿¶àÃ»ÒâË¼£¿");
+        command("say å’¦... è¦æ‰“å°±çœŸæ‰“å§ï¼Œå…‰æ˜¯è¾ƒé‡å¤šæ²¡æ„æ€ï¼Ÿ");
         command("grin");
         kill_ob(me);
         return 1;
@@ -106,27 +106,27 @@ int do_value(string arg)
 	int value;
 
 	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ÄãÒªÄÃÊ²÷áÎïÆ·¸øµ±ÆÌ¹À¼Û£¿\n");
+		return notify_fail("ä½ è¦æ‹¿ä»€éº½ç‰©å“ç»™å½“é“ºä¼°ä»·ï¼Ÿ\n");
 
 	if( ob->query("money_id") )
-		return notify_fail("ÕâÊÇ¡¸Ç®¡¹£¬ÄãÃ»¼û¹ıÂğ£¿\n");
+		return notify_fail("è¿™æ˜¯ã€Œé’±ã€ï¼Œä½ æ²¡è§è¿‡å—ï¼Ÿ\n");
 
         if (ob->query("ownmake"))
-                return notify_fail("ÕâÑùµÄ±¦ÎïÎÒ¿ÉÂò²»Æğ¡£\n");
+                return notify_fail("è¿™æ ·çš„å®ç‰©æˆ‘å¯ä¹°ä¸èµ·ã€‚\n");
 
 	if (ob->query("food_supply"))
-		return notify_fail("Ê£²ËÊ£·¹Áô¸øÄú×Ô¼ºÓÃ°É¡£\n");
+		return notify_fail("å‰©èœå‰©é¥­ç•™ç»™æ‚¨è‡ªå·±ç”¨å§ã€‚\n");
 
 	if (ob->query("liquid/remaining"))
-		return notify_fail("Ê£²ËÊ£·¹Áô¸øÄú×Ô¼ºÓÃ°É¡£\n");
+		return notify_fail("å‰©èœå‰©é¥­ç•™ç»™æ‚¨è‡ªå·±ç”¨å§ã€‚\n");
 
 	value = ob->query("value");
 	if( !value )
-        return notify_fail("ÕâÑù¶«Î÷²¢²»ÖµºÜ¶àÇ®¡£\n");
+        return notify_fail("è¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼å¾ˆå¤šé’±ã€‚\n");
 
-	if( !value || value < 30) printf("%sÒ»ÎÄ²»Öµ¡£\n", ob->query("name"));
+	if( !value || value < 30) printf("%sä¸€æ–‡ä¸å€¼ã€‚\n", ob->query("name"));
 	else 
-		printf("%s¼ÛÖµ%s¡£\nÈç¹ûÄãÒªµäµ±(pawn)£¬¿ÉÒÔÄÃµ½%s¡£\nÈç¹ûÂô¶Ï(sell)£¬¿ÉÒÔÄÃµ½%s¡£\n",
+		printf("%sä»·å€¼%sã€‚\nå¦‚æœä½ è¦å…¸å½“(pawn)ï¼Œå¯ä»¥æ‹¿åˆ°%sã€‚\nå¦‚æœå–æ–­(sell)ï¼Œå¯ä»¥æ‹¿åˆ°%sã€‚\n",
 			ob->query("name"), value_string(value),
 			value_string(value * 25 / 100), value_string(value * 80 / 100));
 
@@ -146,41 +146,41 @@ int do_pawn(string arg)
 	pawn = me->query("pawn");
 	if( !arg || !(ob = present(arg, this_player())) )
 	{
-	write("ÄãÄ¿Ç°µäµ±µÄÎïÆ·ÓĞ£º\n");
+	write("ä½ ç›®å‰å…¸å½“çš„ç‰©å“æœ‰ï¼š\n");
 	if( !mapp(pawn) ||   !sizeof(pawn) )
-		write("\tÃ»ÓĞÈÎºÎµäµ±µÄÎïÆ·¡£\n");
+		write("\tæ²¡æœ‰ä»»ä½•å…¸å½“çš„ç‰©å“ã€‚\n");
 	else {
                         terms = keys(pawn);
                         for(i=0; i<sizeof(terms); i++)
-                                printf("%-3s£º  %-15s  ÊêÒø£º%s\n", terms[i], pawn[terms[i]],
+                                printf("%-3sï¼š  %-15s  èµé“¶ï¼š%s\n", terms[i], pawn[terms[i]],
 			value_string(((int)me->query("vpawn/"+terms[i]))* 3/4));
               }
 	return 1;
 	}
-	if( ob->query("money_id") )	return notify_fail("ÄãÒªµ±¡¸Ç®¡¹£¿\n");
-        if( ob->query("equipped") || ob->query("no_drop") )     return notify_fail("ÕâÑù¿Éµ±²»ÁË£¡\n");
-        if( ob->query("no_pawn") )     return notify_fail("Õâ¸ö¶«Î÷µ±²»ÁË£¡\n");
+	if( ob->query("money_id") )	return notify_fail("ä½ è¦å½“ã€Œé’±ã€ï¼Ÿ\n");
+        if( ob->query("equipped") || ob->query("no_drop") )     return notify_fail("è¿™æ ·å¯å½“ä¸äº†ï¼\n");
+        if( ob->query("no_pawn") )     return notify_fail("è¿™ä¸ªä¸œè¥¿å½“ä¸äº†ï¼\n");
 	if (ob->query("food_supply"))
-		return notify_fail("Ê£²ËÊ£·¹Áô¸øÄú×Ô¼ºÓÃ°É¡£\n");
+		return notify_fail("å‰©èœå‰©é¥­ç•™ç»™æ‚¨è‡ªå·±ç”¨å§ã€‚\n");
 	if (ob->query("liquid/remaining"))
-		return notify_fail("Ê£²ËÊ£·¹Áô¸øÄú×Ô¼ºÓÃ°É¡£\n");
+		return notify_fail("å‰©èœå‰©é¥­ç•™ç»™æ‚¨è‡ªå·±ç”¨å§ã€‚\n");
         if (ob->query("ownmake"))
-                return notify_fail("ÕâÑùµÄ±¦ÎïÎÒ¿ÉÂò²»Æğ¡£\n");
+                return notify_fail("è¿™æ ·çš„å®ç‰©æˆ‘å¯ä¹°ä¸èµ·ã€‚\n");
 
 
 	value = ob->query("value");
 	if( !value )
-        return notify_fail("ÕâÑù¶«Î÷²¢²»ÖµºÜ¶àÇ®¡£\n");
+        return notify_fail("è¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼å¾ˆå¤šé’±ã€‚\n");
 
 	if( !value || value < 30)
-        return notify_fail("ÕâÑù¶«Î÷²¢²»ÖµºÜ¶àÇ®¡£\n");
+        return notify_fail("è¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼å¾ˆå¤šé’±ã€‚\n");
 
-	if( !(value/4) ) return notify_fail("ÕâÑù¶«Î÷²¢²»ÖµºÜ¶àÇ®¡£\n");
+	if( !(value/4) ) return notify_fail("è¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼å¾ˆå¤šé’±ã€‚\n");
         if( mapp(pawn) && sizeof(pawn))
                 {
                         terms = keys(pawn);
                         if(sizeof(terms) > MAX_PAWN)
-                        return notify_fail("ÄãÒÑµäµ±Ì«¶àÎïÆ·ÁË¡£\n");
+                        return notify_fail("ä½ å·²å…¸å½“å¤ªå¤šç‰©å“äº†ã€‚\n");
 			for(i=0; i<sizeof(terms); i++)	
 			{
 			pawn_count = i;
@@ -196,8 +196,8 @@ int do_pawn(string arg)
 	me->set("vpawn/"+sprintf("%d",pawn_count), ob->query("value"));
 	me->set("fpawn/"+sprintf("%d",pawn_count), data);
 	me->save();
-	message_vision("$N°ÑÉíÉÏµÄ" + ob->query("name") + "ÄÃ³öÀ´µäµ±ÁË"
-		+ value_string(value * 25 / 100) + "¡£\n", this_player());
+	message_vision("$NæŠŠèº«ä¸Šçš„" + ob->query("name") + "æ‹¿å‡ºæ¥å…¸å½“äº†"
+		+ value_string(value * 25 / 100) + "ã€‚\n", this_player());
 
 	pay_player(this_player(), value * 25 / 100 );
 	destruct(ob);
@@ -211,14 +211,14 @@ int do_sell(string arg)
 	int value;
 
 	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ÄãÒªÂô¶ÏÊ²÷áÎïÆ·£¿\n");
+		return notify_fail("ä½ è¦å–æ–­ä»€éº½ç‰©å“ï¼Ÿ\n");
 
-	if( ob->query("money_id") )	return notify_fail("ÄãÒªÂô¡¸Ç®¡¹£¿\n");
+	if( ob->query("money_id") )	return notify_fail("ä½ è¦å–ã€Œé’±ã€ï¼Ÿ\n");
 	value = ob->query("value");
-	if( !value ) return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
-if( ob->query("no_pawn") )     return notify_fail("Õâ¸ö¶«Î÷µ±²»ÁË£¡\n");
+	if( !value ) return notify_fail("è¿™æ ·ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
+if( ob->query("no_pawn") )     return notify_fail("è¿™ä¸ªä¸œè¥¿å½“ä¸äº†ï¼\n");
 
-	message_vision("$N°ÑÉíÉÏµÄ" + ob->query("name") + "Âôµô¡£\n",
+	message_vision("$NæŠŠèº«ä¸Šçš„" + ob->query("name") + "å–æ‰ã€‚\n",
 		this_player());
 
 	pay_player(this_player(), value  * 80 / 100);
@@ -294,11 +294,11 @@ int do_redeem(string arg)
         object me;
         int afford;
         if( !arg || sscanf(arg, "%d", num)!=1 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºredeem <ÎïÆ·±êºÅ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šredeem <ç‰©å“æ ‡å·>\n");
         me = this_player();
         amount = (int) me->query("vpawn/" + sprintf("%d", num));
         if( !amount )
-                return notify_fail("ÓĞÕâ¸öÎïÆ·±êºÅÂğ£¿\n");
+                return notify_fail("æœ‰è¿™ä¸ªç‰©å“æ ‡å·å—ï¼Ÿ\n");
         amount = amount * 3 /4;
         if( afford = affordable(me, amount) ) {
                 pay_him(me, afford-amount);
@@ -309,10 +309,10 @@ int do_redeem(string arg)
                 me->delete("vpawn/"+sprintf("%d",num));
                 me->delete("fpawn/"+sprintf("%d",num));
 		me->save();
-                message_vision("$NÊê»ØÁË$n¡£\n", me, ob);
+                message_vision("$Nèµå›äº†$nã€‚\n", me, ob);
                 return 1;
         } else
-                return notify_fail("ÄãµÄÇ®²»¹»¡£\n");
+                return notify_fail("ä½ çš„é’±ä¸å¤Ÿã€‚\n");
 
 }
 

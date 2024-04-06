@@ -1,17 +1,17 @@
-// shourou2.c Ò°ÖíÍÈ
+// shourou2.c é‡çŒªè…¿
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Ò°ÖíÍÈ", ({"yezhu leg", "leg"}));
+	set_name("é‡çŒªè…¿", ({"yezhu leg", "leg"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿é·ç¸ÉµÄÀ°Èâ¡£\n");
-		set("unit", "Ìõ");
+		set("long", "ä¸€å—é£å¹²çš„è…Šè‚‰ã€‚\n");
+		set("unit", "æ¡");
 		set("value", 20);
 		set("food_remaining", 15);
 		set("food_supply", 100);

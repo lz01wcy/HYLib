@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", GRN "ԭʼɭ��" NOR);
+        set("short", GRN "原始森林" NOR);
         set("long", @LONG
-�߽�ԭʼɭ�֣�ֻ������ããȫ�ǲ��������������գ����ܹ���
-�ܰ����ֲ��嶫������������˭�����������ڳ�ȥ�ˡ��Һõ��������
-���ʱ��������һ��·���������Ͼ��߳�ɭ���ˣ���������������ˮ
-����
+走进原始森林，只见迷迷茫茫全是参天大树，遮天闭日，四周光线
+很暗，分不清东南西北，任是谁进来都别想在出去了。幸好当年诸葛亮
+入滇时曾开出了一条路。这里向南就走出森林了，西边则传来阵阵流水
+声。
 LONG
         );
         set("outdoors", "kunming");

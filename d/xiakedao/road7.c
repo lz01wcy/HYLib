@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�б�ʯ");
+        set("short", "夹鳖石");
         set("long", @LONG
-������Ǽб�ʯ���˴�ɽ�ƶ��ͣ����˵����޲��ľ���������
-�Ҵ���˵����ֻ��ƽ����ȥ����ɽ����һ����С�ģ������ױ���
-�鵽�¹�֮�С�
+这里便是夹鳖石。此处山势陡峭，行人到此无不心惊胆颤，不
+敢大声说话，只求平安过去。登山的人一个不小心，很容易便会跌
+堕到崖谷之中。
 LONG );
         set("outdoors", "xiakedao");
         set("exits", ([
@@ -30,9 +30,9 @@ void init()
         {
                 me->receive_damage("qi", 50);
                 me->receive_wound("qi",  50);
-                message_vision(HIR"$Nһ��С�Ľ���̤�˸��գ�... ��...!\n"NOR, me);
+                message_vision(HIR"$N一不小心脚下踏了个空，... 啊...!\n"NOR, me);
                 me->move(__DIR__"road3");
-                tell_object(me, HIR"���ɽ�Ϲ���������ֻ���û����޴����ۣ������˼����ˡ�\n"NOR);
-                message("vision", HIR"ֻ��" + me->query("name") + "��ɽ�Ϲ�µµ�ع������������ڵ��ϰ�����������!\n"NOR, environment(me), me);
+                tell_object(me, HIR"你从山上滚了下来，只觉得浑身无处不疼，还受了几处伤。\n"NOR);
+                message("vision", HIR"只见" + me->query("name") + "从山上骨碌碌地滚了下来，躺在地上半天爬不起来!\n"NOR, environment(me), me);
         }
 }

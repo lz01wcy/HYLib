@@ -2,8 +2,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÅãÁ·µÜ×Ó", ({"dizi" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("é™ªç»ƒå¼Ÿå­", ({"dizi" }));
+	set("gender", "ç”·æ€§");
 	set("age", 16+random(30));
 	set("combat_exp", 6000+random(2000)); 
 	set_skill("parry", 70);

@@ -1,14 +1,14 @@
-//xln.c Ğ¡ÁúÅ®
+//xln.c å°é¾™å¥³
 #include <ansi.h>
 inherit NPC;
  
 void create()
 {
-        set_name("Ğ¡Ğ¡ÁúÅ®", ({ "xiao longnu", "xiao", "longnu" }));
-        set("title","¹ÅÄ¹ÏÀÂÂ");
-        set("nickname",HIC"ÓñÅ®ËØĞÄ"NOR);
-        set("long", "ËıÇåÀöÒì³££¬µ«Ò²ĞíÊÇ³¤¾Ó¹ÅÄ¹Ö®¹Ê£¬ÃæÉ«ÂÔ°×¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("å°å°é¾™å¥³", ({ "xiao longnu", "xiao", "longnu" }));
+        set("title","å¤å¢“ä¾ ä¾£");
+        set("nickname",HIC"ç‰å¥³ç´ å¿ƒ"NOR);
+        set("long", "å¥¹æ¸…ä¸½å¼‚å¸¸ï¼Œä½†ä¹Ÿè®¸æ˜¯é•¿å±…å¤å¢“ä¹‹æ•…ï¼Œé¢è‰²ç•¥ç™½ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 39);
         set("attitude", "friendly");
         set("per", 40);
@@ -31,9 +31,9 @@ void create()
         }) );
         set("chat_chance", 5);
         set("chat_msg", ({
-                "Ğ¡ÁúÅ®ÓÄÓÄµØµÀ£º¡°²»Öª¹ı¶ùÏÖÔÚÔÚÄÄÀï£¿¿ÉÓĞ¿´µ½ÎÒ´ÌÔÚÓñ·ä³áÉÏµÄ×Ö£¿¡±\n", 
-                "Ğ¡ÁúÅ®à«à«µÀ£º¡°ÓñÅ®½£ÓëÈ«Õæ½£ºÏ±Ú£¬ÊÇ¿ÉÌìÏÂÎŞµĞ¡£¿ÉÊÇ...ÄÄÀïÈ¥ÕÒÕâÒ»¸öÈËÄØ£¿¡±\n",
-                "Ğ¡ÁúÅ®ÉîÉîµØÌ¾ÁË¿ÚÆø£¬×ª¹ıÍ·È¥¡£\n",
+                "å°é¾™å¥³å¹½å¹½åœ°é“ï¼šâ€œä¸çŸ¥è¿‡å„¿ç°åœ¨åœ¨å“ªé‡Œï¼Ÿå¯æœ‰çœ‹åˆ°æˆ‘åˆºåœ¨ç‰èœ‚ç¿…ä¸Šçš„å­—ï¼Ÿâ€\n", 
+                "å°é¾™å¥³å–ƒå–ƒé“ï¼šâ€œç‰å¥³å‰‘ä¸å…¨çœŸå‰‘åˆå£ï¼Œæ˜¯å¯å¤©ä¸‹æ— æ•Œã€‚å¯æ˜¯...å“ªé‡Œå»æ‰¾è¿™ä¸€ä¸ªäººå‘¢ï¼Ÿâ€\n",
+                "å°é¾™å¥³æ·±æ·±åœ°å¹äº†å£æ°”ï¼Œè½¬è¿‡å¤´å»ã€‚\n",
                 (: perform_action, "sword.he" :),
                 (: perform_action, "sword.he" :),
                 (: perform_action, "sword.hubo" :),
@@ -59,21 +59,21 @@ void create()
         set_skill("whip", 260);
         set_skill("yinsuo-jinling", 260);
         set_skill("yangyanshu", 300);
-        set_skill("yunv-xinfa", 250);    //ÓñÅ®ĞÄ·¨
+        set_skill("yunv-xinfa", 250);    //ç‰å¥³å¿ƒæ³•
         set_skill("sword", 150);
-        set_skill("yunv-jian", 250);     //ÓñÅ®½£
-        set_skill("quanzhen-jian",130);  //È«Õæ½£
+        set_skill("yunv-jian", 250);     //ç‰å¥³å‰‘
+        set_skill("quanzhen-jian",130);  //å…¨çœŸå‰‘
         set_skill("dodge", 160);
-        set_skill("yunv-shenfa", 260);   //ÓñÅ®Éí·¨
+        set_skill("yunv-shenfa", 260);   //ç‰å¥³èº«æ³•
         set_skill("parry", 150);
-        set_skill("hubo", 120);          //Ë«ÊÖ»¥²«
+        set_skill("hubo", 120);          //åŒæ‰‹äº’æ
         set_skill("unarmed",150);
-        set_skill("meinv-quan", 260);    //ÃÀÅ®È­·¨
+        set_skill("meinv-quan", 260);    //ç¾å¥³æ‹³æ³•
         set_skill("literate",120);
-        set_skill("qufeng",250);         //Çı·äÖ®Êõ
+        set_skill("qufeng",250);         //é©±èœ‚ä¹‹æœ¯
         set_skill("wuzhan-mei",150);
         set_skill("strike",200);
-        set_skill("tianluo-diwang",300);         //Çı·äÖ®Êõ
+        set_skill("tianluo-diwang",300);         //é©±èœ‚ä¹‹æœ¯
 
         map_skill("force", "yunv-xinfa");
         map_skill("sword", "yunv-jian");

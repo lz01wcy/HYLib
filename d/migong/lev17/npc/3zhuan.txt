@@ -4,133 +4,133 @@ d/pingan/marry/mafu.c
 d/pingan/marry/mafu1.c
 d/tiezhang/npc/sgjn.c
 d/wudujiao/npc/daoshi
-   3×ªÉè¶¨
-   Íæ¼ÒÍê³É2×ªºó£¬¾­Ñé´ïµ½20M,¿ÉÒÔÏò´óÉñÒÔÉÏÎ×Ê¦Ìá³ö3×ªÒªÇó£¬
-3×ªºó,Ö»±£ÁôÊôĞÔ£¬ºÍµÀ¾ß¡£µ«¿ÉÒÔ½øÈëÃÔ¹¬16²ãÒÔºóµÄ6¸öÊÀ½ç£¬
-²¢¿ÉÒÔÑ§Ï°ÆäÖĞµÄÄ§·¨£¡£¬ĞÂÊÀ½çÓĞÉÏ°ÙÖÖµĞÈË£¬ÉÏ°ÙÖÖµÀ¾ß£¬µÈ×Å
-ÄãÀ´·¢ÏÖ!!                        
-¸½£ºÄ§·¨ÁĞ±í:
-1.magic-fire »ğÏµÄ§·¨(ÓëË®Ïµ»¥ÏàÏà¿Ë)
+   3è½¬è®¾å®š
+   ç©å®¶å®Œæˆ2è½¬åï¼Œç»éªŒè¾¾åˆ°20M,å¯ä»¥å‘å¤§ç¥ä»¥ä¸Šå·«å¸ˆæå‡º3è½¬è¦æ±‚ï¼Œ
+3è½¬å,åªä¿ç•™å±æ€§ï¼Œå’Œé“å…·ã€‚ä½†å¯ä»¥è¿›å…¥è¿·å®«16å±‚ä»¥åçš„6ä¸ªä¸–ç•Œï¼Œ
+å¹¶å¯ä»¥å­¦ä¹ å…¶ä¸­çš„é­”æ³•ï¼ï¼Œæ–°ä¸–ç•Œæœ‰ä¸Šç™¾ç§æ•Œäººï¼Œä¸Šç™¾ç§é“å…·ï¼Œç­‰ç€
+ä½ æ¥å‘ç°!!                        
+é™„ï¼šé­”æ³•åˆ—è¡¨:
+1.magic-fire ç«ç³»é­”æ³•(ä¸æ°´ç³»äº’ç›¸ç›¸å…‹)
 
-   lev1.light »ğ¾æÖ®¹â
+   lev1.light ç«ç‚¬ä¹‹å…‰
 
-   lev2.fireball »ğÑ×Çò
+   lev2.fireball ç«ç‚çƒ
 
-   lev3.resistance Óù»ğÆæÊõ
+   lev3.resistance å¾¡ç«å¥‡æœ¯
 
-   lev4.immolation ÉñÊ¥Ö®»ğ
+   lev4.immolation ç¥åœ£ä¹‹ç«
 
-   lev5.firebolt»ğÖ®Ê¸
+   lev5.fireboltç«ä¹‹çŸ¢
 
-   lev6.meteor Á÷ĞÇ·ç±©
+   lev6.meteor æµæ˜Ÿé£æš´
 
-   lev7.summon ÕÙ»½»ğÁúÎªÄã×öÕ½
+   lev7.summon å¬å”¤ç«é¾™ä¸ºä½ åšæˆ˜
 
-   lev8.incinerate ³àÄ§½¹ÈÈµØÓü
+   lev8.incinerate èµ¤é­”ç„¦çƒ­åœ°ç‹±
 
-Ê¥Îï:»ğÑ×Ö®¿ø
+åœ£ç‰©:ç«ç‚ä¹‹ç›”
 
-2.magic-water Ë®ÏµÄ§·¨(Óë»ğÏµ»¥ÏàÏà¿Ë)
+2.magic-water æ°´ç³»é­”æ³•(ä¸ç«ç³»äº’ç›¸ç›¸å…‹)
 
-   lev1.door Ê±¼äÖ®ÃÅ
+   lev1.door æ—¶é—´ä¹‹é—¨
 
-   lev2.iceball º®±ùµ¯
+   lev2.iceball å¯’å†°å¼¹
 
-   lev3.resistance Óùº®ÆæÊõ
+   lev3.resistance å¾¡å¯’å¥‡æœ¯
    
-   lev4.crystal ±ù¾§Êõ
+   lev4.crystal å†°æ™¶æœ¯
 
-   lev5.icebolt ±ùÖ®Ê¸
+   lev5.icebolt å†°ä¹‹çŸ¢
    
-   lev6.storm ±ùÑ©·ç±©
+   lev6.storm å†°é›ªé£æš´
 
-   lev7.summon ÕÙ»½±ùÑ©Å®Éñ
+   lev7.summon å¬å”¤å†°é›ªå¥³ç¥
    
-   lev8.zeroring ¾ø¶ÔÁã±ù¶³
+   lev8.zeroring ç»å¯¹é›¶å†°å†»
 
 
-Ê¥Îï:Ë®Éñâı¼×
+åœ£ç‰©:æ°´ç¥æºç”²
 
-3.magic-ice ¿ÕÆøÄ§·¨(ÓëÍÁÏµ»¥ÏàÏà¿Ë)
+3.magic-ice ç©ºæ°”é­”æ³•(ä¸åœŸç³»äº’ç›¸ç›¸å…‹)
 
-   lev1.invisibilityÒşÉíÊõ
+   lev1.invisibilityéšèº«æœ¯
    
-   lev2.lightningball ÕÙÀ×Êõ
+   lev2.lightningball å¬é›·æœ¯
 
-   lev3.resistance ÓùÆøÆæÊõ
+   lev3.resistance å¾¡æ°”å¥‡æœ¯
    
-   lev4.implosion Åùö¨ÉÁµç
+   lev4.implosion éœ¹é›³é—ªç”µ
 
-   lev5.lightningbolt Á¬»·ÉÁµç
+   lev5.lightningbolt è¿ç¯é—ªç”µ
    
-   lev6.stun ¿ñÀ×Êõ
+   lev6.stun ç‹‚é›·æœ¯
 
-   lev7.summon ÕÙ»½ÌìÄ§Éñ
+   lev7.summon å¬å”¤å¤©é­”ç¥
    
-   lev8.holylightning ÉóÅĞÖ®Ê¥À×
+   lev8.holylightning å®¡åˆ¤ä¹‹åœ£é›·
 
 
-Ê¥Îï:Ìì¿ÕÕ½Ñ¥
+åœ£ç‰©:å¤©ç©ºæˆ˜é´
 
-4.magic-earth ÍÁÏµÄ§·¨(ÓëÆøÏµ»¥ÏàÏà¿Ë)
+4.magic-earth åœŸç³»é­”æ³•(ä¸æ°”ç³»äº’ç›¸ç›¸å…‹)
 
-   lev1.portal »Ø³ÇÊõ
+   lev1.portal å›åŸæœ¯
    
-   lev2.stab µØÃ¬´Ì
+   lev2.stab åœ°çŸ›åˆº
 
-   lev3.resistance ÓùÍÁÆæÊõ
+   lev3.resistance å¾¡åœŸå¥‡æœ¯
    
-   lev4.Attach µØ¾«¸½Éí
+   lev4.Attach åœ°ç²¾é™„èº«
 
-   lev5.missile Ä§·¨µ¯
+   lev5.missile é­”æ³•å¼¹
    
-   lev6.quake  µØÁÑÕğ
+   lev6.quake  åœ°è£‚éœ‡
 
-   lev7.summon ÕÙ»½¾ŞÈË
+   lev7.summon å¬å”¤å·¨äºº
    
-   lev8.Dintfield µØÓüÁ¦³¡
+   lev8.Dintfield åœ°ç‹±åŠ›åœº
 
 
-Ê¥Îï:´óµØÖ®¶Ü
+åœ£ç‰©:å¤§åœ°ä¹‹ç›¾
 
-5.magic-dark °µºÚÄ§·¨
+5.magic-dark æš—é»‘é­”æ³•
 
-   lev1.nuclea°µºÚºËÈÚÊõ
+   lev1.nucleaæš—é»‘æ ¸èæœ¯
    
-   lev2.darkstorm°µºÚ±©·çÑ©
+   lev2.darkstormæš—é»‘æš´é£é›ª
 
-   lev3.darkwind°µºÚÁú¾í·ç
+   lev3.darkwindæš—é»‘é¾™å·é£
    
-   lev4.darkmetor°µºÚÁ÷ĞÇ±¬
+   lev4.darkmetoræš—é»‘æµæ˜Ÿçˆ†
 
-   lev5.darkforce»ìãçÁ¦³¡
+   lev5.darkforceæ··æ²ŒåŠ›åœº
    
-   lev6.dragon ÁúÆÆÕ¶ 
+   lev6.dragon é¾™ç ´æ–© 
 
-   lev7.summon ÕÙ»½¶ñÄ§
+   lev7.summon å¬å”¤æ¶é­”
    
-   lev8.castigateÖØÆÆÕ¶ 
+   lev8.castigateé‡ç ´æ–© 
 
 
-Ê¥Îï:°µºÚÖ®½£
+åœ£ç‰©:æš—é»‘ä¹‹å‰‘
 
-6.magic-light ¹âÃ÷Ä§·¨
+6.magic-light å…‰æ˜é­”æ³•
 
-   lev1.delete ÊôĞÔÌ½²â
+   lev1.delete å±æ€§æ¢æµ‹
    
-   lev2.moonlight ÔÂ¹âÊõ
+   lev2.moonlight æœˆå…‰æœ¯
 
-   lev3.cure ÁÆ¶¾Êõ
+   lev3.cure ç–—æ¯’æœ¯
    
-   lev4.sunfieldÊ¥¹â±Ú 
+   lev4.sunfieldåœ£å…‰å£ 
 
-   lev5.sunboltÁ÷ĞÇ¹âÊ¸
+   lev5.sunboltæµæ˜Ÿå…‰çŸ¢
    
-   lev6.holywordÆÆÄ§Ê¥ÑÔ 
+   lev6.holywordç ´é­”åœ£è¨€ 
 
-   lev7.summon ÕÙ»½ÌìÊ¹
+   lev7.summon å¬å”¤å¤©ä½¿
    
-   lev8.sunarrow ´óÑôÖ®¼ı 
+   lev8.sunarrow å¤§é˜³ä¹‹ç®­ 
 
-Ê¥Îï:¹âÖ®½£
+åœ£ç‰©:å…‰ä¹‹å‰‘
 

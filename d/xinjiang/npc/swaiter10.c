@@ -4,11 +4,11 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("ÂôµØÌºµÄ", ({ "ditan seller" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å–åœ°æ¯¯çš„", ({ "ditan seller" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
         set("long",
-                "Ò»¸öÆÕÆÕÍ¨Í¨µÄ±¾µØÈË£¬Ã»ÓĞÒ»µãÆğÑÛµÄµØ·½¡£\n");
+                "ä¸€ä¸ªæ™®æ™®é€šé€šçš„æœ¬åœ°äººï¼Œæ²¡æœ‰ä¸€ç‚¹èµ·çœ¼çš„åœ°æ–¹ã€‚\n");
         set("combat_exp", 2000);
         set("attitude", "friendly");
         set("vendor_goods", ({

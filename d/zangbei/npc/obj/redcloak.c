@@ -2,16 +2,16 @@
 #include <armor.h>
 inherit ARMOR; 
 void create() {
-        set_name(HIR"´óºì¶·Åñ"NOR, ({ "red cloak", "cloak" }) );
+        set_name(HIR"å¤§çº¢æ–—ç¯·"NOR, ({ "red cloak", "cloak" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "leather");
                 set("value", 400);
                 set("armor_prop/armor", 10);
-                set("long","Ò»¼şÏÊºìµÄ£¬Å®º¢×Ó´©µÄ¶·Åñ¡£\n");
+                set("long","ä¸€ä»¶é²œçº¢çš„ï¼Œå¥³å­©å­ç©¿çš„æ–—ç¯·ã€‚\n");
         }
         
 } 

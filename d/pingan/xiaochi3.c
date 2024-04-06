@@ -6,10 +6,10 @@ int do_zuo(string arg);
 
 void create ()
 {
-  set ("short", "³ø·¿");
+  set ("short", "åŽ¨æˆ¿");
   set ("long", @LONG
-Õâ¶ùÊÇÐ¡³ÔµêµÄ³ø·¿£¬¸É¾»ÕûÆë£¬Ç½±ßµÄ¹ñ×ÓÀï·Å×ÅÕûÕûÆëÆëµÄ²Í¾ß¡£
-³ø·¿ÓÐºÜ¶àµÄ³ø¾ßÄã¿ÉÒÔÔÚÕâÀï£¨zuocai£©Ð©Ê²Ã´¡£
+è¿™å„¿æ˜¯å°åƒåº—çš„åŽ¨æˆ¿ï¼Œå¹²å‡€æ•´é½ï¼Œå¢™è¾¹çš„æŸœå­é‡Œæ”¾ç€æ•´æ•´é½é½çš„é¤å…·ã€‚
+åŽ¨æˆ¿æœ‰å¾ˆå¤šçš„åŽ¨å…·ä½ å¯ä»¥åœ¨è¿™é‡Œï¼ˆzuocaiï¼‰äº›ä»€ä¹ˆã€‚
 LONG);
 
   set("no_dazuo",1);set("no_kill",1);set("no_fight",1);
@@ -31,28 +31,28 @@ int do_zuo(string arg)
         object me=this_player(); 
         object ob,ob1;
         if (!me->query_temp("gongzuo/zuocai"))
-           return notify_fail("Äã»¹ÊÇÏÈÈ¥¸ø´óÊ¦¸µ´ò¸öÕÐºô°É¡£\n");
+           return notify_fail("ä½ è¿˜æ˜¯å…ˆåŽ»ç»™å¤§å¸ˆå‚…æ‰“ä¸ªæ‹›å‘¼å§ã€‚\n");
 
-        if (!arg || arg != "¸÷ÖÖ¸÷ÑùµÄ²Ë")
-           return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+        if (!arg || arg != "å„ç§å„æ ·çš„èœ")
+           return notify_fail("ä½ è¦åšä»€ä¹ˆï¼Ÿ\n");
 
         if (!(ob = present("cai", this_player())))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐ²Ë£¬ÔõÃ´ÄÜ×öÄØ£¿¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰èœï¼Œæ€Žä¹ˆèƒ½åšå‘¢ï¼Ÿã€‚\n");
 
         if ( (int)me->query("jing")<20)
-           return notify_fail("ÄãÌ«ÀÛÁË£¬ÐªÏ¢ÏÂ°É¡£\n");
+           return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ­‡æ¯ä¸‹å§ã€‚\n");
 
         if (me->query_temp("gongzuo/zuocai")==6)
-           return notify_fail("²Ë×öºÃÁË£¡ËÍ»Ø¹ÜÊÂÄÇ¶ù°É¡£\n");
+           return notify_fail("èœåšå¥½äº†ï¼é€å›žç®¡äº‹é‚£å„¿å§ã€‚\n");
    
-  message_vision("$NÄÃÆð³ø¾ß£¬¿ªÊ¼×öÆð²ËÀ´¡£\n",me);
+  message_vision("$Næ‹¿èµ·åŽ¨å…·ï¼Œå¼€å§‹åšèµ·èœæ¥ã€‚\n",me);
       me->add("jing",-(10+random(10)));
       me->add_temp("gongzuo/zuocai",1);
   if ( (int)me->query_temp("gongzuo/zuocai")==6)
  {
-  message_vision(CYN"$N×öÁËÁ¼¾Ã£¬ÖÕÓÚ½«×ö³öÁËÒ»ÅÌºÃ²Ë¡£\n"NOR,me);
-        ob->set_name( "×öºÃµÄ²Ë" , ({"goodcai"}));
-        ob->set("long","Ò»ÅÌ¸Õ×öºÃµÄ²Ë¡£\n");
+  message_vision(CYN"$Nåšäº†è‰¯ä¹…ï¼Œç»ˆäºŽå°†åšå‡ºäº†ä¸€ç›˜å¥½èœã€‚\n"NOR,me);
+        ob->set_name( "åšå¥½çš„èœ" , ({"goodcai"}));
+        ob->set("long","ä¸€ç›˜åˆšåšå¥½çš„èœã€‚\n");
 //      destruct(ob);
 //      ob1=new("/d/pingan/npc/obj/panzi");
 //      ob1->move(me);

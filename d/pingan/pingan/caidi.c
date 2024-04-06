@@ -6,10 +6,11 @@ int do_shou(string arg);
 
 void create ()
 {
-  set ("short", "²ËµØ");
+  set ("short", "èœåœ°");
   set ("long", @LONG
-Õâ¶ùÊÇÆ½°²³ÇµÄ²ËÔ°,ÊÇÐ¡³ÔµêµÄ³Ð°üµÄ¡£Äã¿ÉÒÔ
-ÔÚÕâÀïÂò²Ë,Äã»¹¿ÉÒÔÔÚÕâÀï£¨shoucai£©ÊÕ²Ë¡£
+è¿™å„¿æ˜¯å¹³å®‰åŸŽçš„èœå›­,æ˜¯å°åƒåº—çš„æ‰¿åŒ…çš„ã€‚
+ä½ å¯ä»¥
+åœ¨è¿™é‡Œä¹°èœ,ä½ è¿˜å¯ä»¥åœ¨è¿™é‡Œï¼ˆshoucaiï¼‰æ”¶èœã€‚
 LONG);
 
 set("outdoors","pingan");
@@ -36,23 +37,24 @@ int do_shou(string arg)
         object ob,ob1;
 
         if (!me->query_temp("gongzuo/zuocai"))
-           return notify_fail("Âô²ËµÄËµµÀ,Äã»¹ÊÇÏÈµ½Ð¡³Ôµê´ò¸öÕÐºô°É¡£\n");
+           return notify_fail("å–èœçš„è¯´é“,ä½ è¿˜æ˜¯å…ˆåˆ°å°åƒåº—æ‰“ä¸ªæ‹›å‘¼å§ã€‚\n");
 
         if ( (int)me->query("jing")<20)
-           return notify_fail("ÄãÌ«ÀÛÁË£¬ÐªÏ¢ÏÂ°É¡£\n");
+           return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ­‡æ¯ä¸‹å§ã€‚\n");
 
         if (me->query_temp("gongzuo/zuocai")==6)
-           return notify_fail("²ËÊÕºÃÁË£¡\n");
+           return notify_fail("èœæ”¶å¥½äº†ï¼\n");
    
-  message_vision("$NÄÃÆðÅ©¾ß£¬¿ªÊ¼ÊÕ¸îÆð²ËÀ´¡£\n",me);
+  message_vision("$Næ‹¿èµ·å†œå…·ï¼Œå¼€å§‹æ”¶å‰²èµ·èœæ¥ã€‚\n",me);
       me->add("jing",-(10+random(10)));
       me->add_temp("gongzuo/shoucai",1);
   if ( (int)me->query_temp("gongzuo/shoucai")==6)
  {
-  message_vision(CYN"$N¸ÉÁËÁ¼¾Ã£¬ÖÕÓÚ½«ÊÕ¸î³öÁËÒ»¿ðºÃ²Ë¡£\n"NOR,me);
+  message_vision(CYN"$Nå¹²äº†è‰¯ä¹…ï¼Œç»ˆäºŽå°†æ”¶å‰²å‡ºäº†ä¸€ç­å¥½èœã€‚\n"NOR,me);
       ob1=new("/d/pingan/npc/obj/cai2");
       ob1->move(me);
       me->delete_temp("gongzuo/shoucai");
-       }
+      
+ }
       return 1;
 } 

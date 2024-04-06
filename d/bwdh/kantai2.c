@@ -1,6 +1,6 @@
 //Cracked by Kafei
 // /d/bwdh/kantai2.c
-// ¿´Ì¨
+// çœ‹å°
 // by sdong 09/25/98
 
 

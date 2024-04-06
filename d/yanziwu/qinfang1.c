@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�߷���");
+        set("short", "沁芳阁");
         set("long",@LONG
-�����ǹ�Ľ�����ҵ�����С���ĵط���������ˮ��΢�����������
-���Ƶĺɻ�Ҷ�㣬������Ƣ���߷�����˶�����һ��ī��ɫ������ͨ��
-¥�ϵ���Ϣ�ҡ�
+这里是供慕容世家的仆人小憩的地方，三面临水。微风拂过，送来
+缕缕的荷花叶香，沁人心脾，沁芳阁因此而名。一架墨绿色的竹梯通向
+楼上的休息室。
 LONG );
         set("exits", ([
             "east"  : __DIR__"yimen",

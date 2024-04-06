@@ -5,12 +5,12 @@
 inherit ROOM;
 void create()
 {
-set("short", "��ʳ��");
+set("short", "面食店");
 set("long", @LONG
-���Ǿ�����������ʳ�㣬������۸�����Ů����ϲ������˾����㡣
-���������ʳƷ��ζ���ɿڣ������ڳ���������һ������;���е����Ƕ�
-�����������Ϻܶ�ķ��ţ����֮�ࡣ�ű߷���һ���Ŀ�ƣ�paizi����
-�����ۡ�
+这是京都闻名的面食点，里面出售各种男女老少喜欢的寿司，糕点。
+而且这里的食品以味道可口，保质期长而闻名，一般做长途旅行的人们都
+会来这里买上很多的饭团，糕点之类。门边放着一块价目牌（paizi），
+明码标价。
 LONG );
 set("exits",  ([
         "north"  : __DIR__"qianbending4",

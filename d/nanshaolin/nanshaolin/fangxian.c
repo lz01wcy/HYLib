@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("·½ÏÖ", ({ "fang xian", "fang", "xian"}));
-	set("long", "ËûÊÇÒ»Î»Éí´©»Æ²¼ôÂôÄµÄÇàÄêÉ®ÈË¡£Á³ÉÏÖÉÆøÎ´ÍÑ£¬ÉíÊÖÈ´ÒÑÏà\n"
-		"µ±½Ã½İ£¬¿´À´ËÆºõÑ§¹ıÒ»µãÎä¹¦¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–¹ç°", ({ "fang xian", "fang", "xian"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«ç©¿é»„å¸ƒè¢ˆè£Ÿçš„é’å¹´åƒ§äººã€‚è„¸ä¸Šç¨šæ°”æœªè„±ï¼Œèº«æ‰‹å´å·²ç›¸\n"
+		"å½“çŸ«æ·ï¼Œçœ‹æ¥ä¼¼ä¹å­¦è¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -54,7 +54,7 @@ void create()
 	map_skill("parry", "damo-jian");
 	prepare_skill("hand", "fengyun-shou");
 	prepare_skill("cuff", "luohan-quan");
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 21, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();

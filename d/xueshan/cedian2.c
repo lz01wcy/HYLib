@@ -1,15 +1,15 @@
-//      cedian2.c ²àµî
-//      Designed by secret (ÃØÃÜ)
+//      cedian2.c ä¾§æ®¿
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","²àµî");
+        set("short","ä¾§æ®¿");
         set("long",@LONG
-ÕâÀïÊÇÑ©É½ËÂµÄÎ÷²àµî¡£Ç½±ÚÉÏÃè»æ×Å·ğ×æ´«µÀµÄ¹Ê
-ÊÂ£¬·ğ×æÊÖÄé½ğ»¨±¦Ïà×¯ÑÏ¡£
+è¿™é‡Œæ˜¯é›ªå±±å¯ºçš„è¥¿ä¾§æ®¿ã€‚å¢™å£ä¸Šæç»˜ç€ä½›ç¥–ä¼ é“çš„æ•…
+äº‹ï¼Œä½›ç¥–æ‰‹æ‹ˆé‡‘èŠ±å®ç›¸åº„ä¸¥ã€‚
 LONG );
         set("exits",([
                 "up" : __DIR__"zoulang2",
@@ -27,8 +27,8 @@ int valid_leave(object me, string dir)
 {
         mapping myfam;
         myfam=(mapping)me->query("family");
-        if( (!myfam || myfam["family_name"] !="Ñ©É½ËÂ") && dir=="up"
+        if( (!myfam || myfam["family_name"] !="é›ªå±±å¯º") && dir=="up"
         && objectp(present ("samu huofo" ,environment(me) ))) 
-                return notify_fail("ÈøÄ¾»î·ğËµµÀ : Äã·ÇÑ©É½ËÂµÜ×Ó ,²»µÃÈëÄÚ!! \n");
+                return notify_fail("è¨æœ¨æ´»ä½›è¯´é“ : ä½ éé›ªå±±å¯ºå¼Ÿå­ ,ä¸å¾—å…¥å†…!! \n");
         return ::valid_leave(me,dir);
 }

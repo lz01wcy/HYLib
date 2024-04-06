@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","���շ�");
+  set ("short","观日峰");
   set ("long", @LONG
-���շ�λ����ض��ϡ����������塣�����嶥�ж�ֱͨ��أ���
-���кܶ���ɫʯ�����޹������˰������֣�
+观日峰位于天池东南。西连孤隼峰。三奇峰峰顶有洞直通天池，峰
+下有很多五色石，鲜艳光润，令人爱不释手，
 LONG);
 
   set("exits", ([ 

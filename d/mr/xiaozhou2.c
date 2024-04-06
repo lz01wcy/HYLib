@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "�ɴ�");
+	set("short", "渡船");
 	set("long", @LONG
-һҶС�ۣ����Ҳ�������ߡ��˸��ˡ�һ����ʮ�����������
-�ֳֳ���ݣ����ڴ�β�����س��Ŵ���
+一叶小舟，最多也就能载七、八个人。一名六十多岁的老艄公
+手持长竹篙，正在船尾吃力地撑着船。
 LONG
 	);
         set("no_fight",1);
@@ -17,7 +17,7 @@ void run(object ob)
 {
        	if (environment(ob) == this_object())
        	ob->move(__DIR__"xiaozhou3");
-	write("\nС���ںɻ����л�������,��һ����俴����٢��ɽׯ�������ˡ�\n\n");
+	write("\n小船在荷花溏中缓缓而行,不一会你变看到曼佗罗山庄的轮廓了。\n\n");
 }
 
 void init()

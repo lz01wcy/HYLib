@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","�ݵ�");
+  set ("short","草地");
   set ("long", @LONG
-������Ƭ�ݵء�����������ص������Ѿ���Զ�ˡ����߾��Ǻ�����
-���յĽ����ˡ�
+这里是片草地。这里离军事重地襄阳已经不远了。东边就是湖北和
+安徽的交界了。
 LONG);
 
   set("exits", ([ 

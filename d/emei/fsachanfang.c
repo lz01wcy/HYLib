@@ -1,14 +1,14 @@
-//Room: fsachanfang.c ìø·¿
+//Room: fsachanfang.c ç¦…æˆ¿
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","ìø·¿");
+      set("short","ç¦…æˆ¿");
       set("long",@LONG
-ÕâÀïÊÇÒ»¼ä°²¾²¿í³¨µÄìø·¿£¬ÄËÊÇ¸£ÊÙâÖÖÐµÜ×Ó´ò×øÐÞÐÐÖ®Ëù¡£µØÏÂÕûÕû
-ÆëÆëµØ·Å×ÅÐí¶àÆÑÍÅ¡£¼¸Î»ÄêÇáÊ¦Ì«ºÍË×¼ÒÅ®µÜ×ÓÕýËàÈÝÈë¶¨¡£
+è¿™é‡Œæ˜¯ä¸€é—´å®‰é™å®½æ•žçš„ç¦…æˆ¿ï¼Œä¹ƒæ˜¯ç¦å¯¿åºµä¸­å¼Ÿå­æ‰“åä¿®è¡Œä¹‹æ‰€ã€‚åœ°ä¸‹æ•´æ•´
+é½é½åœ°æ”¾ç€è®¸å¤šè’²å›¢ã€‚å‡ ä½å¹´è½»å¸ˆå¤ªå’Œä¿—å®¶å¥³å¼Ÿå­æ­£è‚ƒå®¹å…¥å®šã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "west"    : __DIR__"lingwenge",

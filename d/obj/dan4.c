@@ -7,22 +7,22 @@ void init()
 	}
 void create()
 {
-	set_name(HIR"Ç§Äê»ğÁúµ¤"NOR, ({"huolong dan", "dan"}));
-	set("unit", "¿Å");
-	set("long", "ÕâÊÇÒ»¿ÅÇ§Äê»ğÁúµÄÄÚµ¤¡£\n");
+	set_name(HIR"åƒå¹´ç«é¾™ä¸¹"NOR, ({"huolong dan", "dan"}));
+	set("unit", "é¢—");
+	set("long", "è¿™æ˜¯ä¸€é¢—åƒå¹´ç«é¾™çš„å†…ä¸¹ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="dan")
 	{
 		me->add("max_neili",100);
                 me->add("max_jingli",50);
 		
-                message_vision(HIR"$N³ÔÏÂÒ»¿ÅÇ§Äê»ğÁúµ¤£¬Ö»¾õÒ»¹É»ğÈÈÖ®ÆøÖ±³åµ¤Ìï£¬ËÄÖ«°Ùº¡Ëµ²»³öµÄÊæ·ş!\n"NOR,me);
+                message_vision(HIR"$Nåƒä¸‹ä¸€é¢—åƒå¹´ç«é¾™ä¸¹ï¼Œåªè§‰ä¸€è‚¡ç«çƒ­ä¹‹æ°”ç›´å†²ä¸¹ç”°ï¼Œå››è‚¢ç™¾éª¸è¯´ä¸å‡ºçš„èˆ’æœ!\n"NOR,me);
 
 		destruct(this_object());
 	}

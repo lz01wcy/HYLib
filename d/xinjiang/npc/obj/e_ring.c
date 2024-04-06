@@ -3,18 +3,18 @@
 inherit FINGER;
 void create()
 {
-        set_name("Òø½äÖ¸", ({ "engagement ring","ring"}) );
+        set_name("é“¶æˆ’æŒ‡", ({ "engagement ring","ring"}) );
         set_weight(5);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÏâ×Å¸öÉÁÉÁ·¢¹âÒø½äÖ¸£¬Äã»¹¿ÉÒÔÔÚÉÏÃæ¿Ì×Ö£¨carve£©\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªé•¶ç€ä¸ªé—ªé—ªå‘å…‰é“¶æˆ’æŒ‡ï¼Œä½ è¿˜å¯ä»¥åœ¨ä¸Šé¢åˆ»å­—ï¼ˆcarveï¼‰\n");
+                set("unit", "ä¸ª");
                 set("value", 6000);
                 set("armor_prop/armor", 0);
                 set("armor_prop/personality", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¸ö$n´÷ÔÚÊÖÖ¸ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÊÖÖ¸ÉÏ³ıÁËÏÂÀ´¡£\n");  
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€ä¸ª$næˆ´åœ¨æ‰‹æŒ‡ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»æ‰‹æŒ‡ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");  
         }
         setup();
 }
@@ -25,9 +25,9 @@ void init()
 }
 int do_carve(string arg)
 {
-set("long","Ò»¸öÉÁÉÁ·¢¹âµÄ¶¨»éÒø½ä£¬ÉÏÃæ¿Ì×Å£º\n"+
+set("long","ä¸€ä¸ªé—ªé—ªå‘å…‰çš„å®šå©šé“¶æˆ’ï¼Œä¸Šé¢åˆ»ç€ï¼š\n"+
 arg+"\n");
 set("carved",1);
-tell_object(this_player(),"£Ï£Ë\n");
+tell_object(this_player(),"ï¼¯ï¼«\n");
 return 1;
 } 

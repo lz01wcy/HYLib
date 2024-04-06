@@ -1,17 +1,17 @@
-//      shanmen.c Ñ©É½ËÂÉ½ÃÅ
-//      Designed by secret (ÃØÃÜ)
+//      shanmen.c é›ªå±±å¯ºå±±é—¨
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","Ñ©É½ËÂÉ½ÃÅ");
+        set("short","é›ªå±±å¯ºå±±é—¨");
         set("long",@LONG
-ÕâÀïÊÇ´óÂÖËÂµÄÉ½ÃÅ£¬ÃÅÇ°ÊÇÂçÒï²»¾øµÄ½øÏã³¯Ê¥µÄ
-ĞÅÍ½£¬ÓĞµÄÉõÖÁÀ´×ÔÎÚË¿²ØÎ÷ÄÏµÄ²¨Ë¿¡£É½ÃÅ(gate)Ç°Õ¾
-ÁË¸öÊÖ³Ö·¨Æ÷µÄ¸ğÂ×²¼ÔÚÎ¬³ÖÖÈĞò£¬¶«·½ÊÇÒ»ÌõÇàÊ¯°åÆÌ
-³ÉµÄÉ½Â·¡£
+è¿™é‡Œæ˜¯å¤§è½®å¯ºçš„å±±é—¨ï¼Œé—¨å‰æ˜¯ç»œç»ä¸ç»çš„è¿›é¦™æœåœ£çš„
+ä¿¡å¾’ï¼Œæœ‰çš„ç”šè‡³æ¥è‡ªä¹Œä¸è—è¥¿å—çš„æ³¢ä¸ã€‚å±±é—¨(gate)å‰ç«™
+äº†ä¸ªæ‰‹æŒæ³•å™¨çš„è‘›ä¼¦å¸ƒåœ¨ç»´æŒç§©åºï¼Œä¸œæ–¹æ˜¯ä¸€æ¡é’çŸ³æ¿é“º
+æˆçš„å±±è·¯ã€‚
 LONG );
         set("outdoors","xueshan");
         set("exits",([
@@ -20,7 +20,7 @@ LONG );
                 "eastdown" : "/d/xuedao/nroad4",
         ]));
         set("item_desc",([
-                "gate" : "Á½ÉÈºñºñµÄÍ­É«´óÃÅ£¬·ÇºÏÊıÈËÖ®Á¦£¬ÊÇÄÑÒÔÍÆ¶¯µÄ¡£\n",
+                "gate" : "ä¸¤æ‰‡åšåšçš„é“œè‰²å¤§é—¨ï¼Œéåˆæ•°äººä¹‹åŠ›ï¼Œæ˜¯éš¾ä»¥æ¨åŠ¨çš„ã€‚\n",
         ]));
         set("objects",([
                 "/clone/misc/dache" : 1 ,
@@ -37,9 +37,9 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ((!myfam || myfam["family_name"] != "Ñ©É½ËÂ") && dir == "north" &&
+        if ((!myfam || myfam["family_name"] != "é›ªå±±å¯º") && dir == "north" &&
                 objectp(present("seng bing", environment(me))))
-           return notify_fail("ÊØËÂÉ®±ø²¼µ²×¡ÄãËµ£ºÄã×¼±¸ÓÃÊ²÷á¹©·îÎÒÃÇ·ğÒ¯Ñ½£¿\n");
+           return notify_fail("å®ˆå¯ºåƒ§å…µå¸ƒæŒ¡ä½ä½ è¯´ï¼šä½ å‡†å¤‡ç”¨ä»€éº½ä¾›å¥‰æˆ‘ä»¬ä½›çˆ·å‘€ï¼Ÿ\n");
 
         return ::valid_leave(me, dir);
 }

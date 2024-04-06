@@ -3,11 +3,11 @@ void do_drink();
 void create()
 {
         seteuid(getuid());
-        set_name("½­ÖØÍþ", ({"jiang", "jiang chongwei"}));
+        set_name("æ±Ÿé‡å¨", ({"jiang", "jiang chongwei"}));
         set("long",
-"½­ÖØÍþ±¾ÊÇ³¯Í¢ÖØ³¼£¬µ«×Ô´Ó»¤ËÍ¹§Æ·±»Ðå»¨´óµÁËù½Ù£¬Ë«Ä¿ÓÖ±»Æä\n´ÌÏ¹ºó£¬±ãÖÕÈÕ½Ó¾ÆÏú³î£¬Ò»õê²»Õñ¡£ÒóÕýÁ®Ê§Òâ¹Ù³¡£¬ÓëÖ®Í¬²¡ÏàÁ¯£¬\nÒò´Ë°²ÅÅËû×öÊÖÏÂµÄÊ¦Ò¯£¬Æ½ÈÕÒ²Ã»Ê²Ã´ÊÂ¡£\n");
-        set("title", "ÑÃÃÅÊ¦Ò¯");
-        set("gender","ÄÐÐÔ");
+"æ±Ÿé‡å¨æœ¬æ˜¯æœå»·é‡è‡£ï¼Œä½†è‡ªä»ŽæŠ¤é€æ­å“è¢«ç»£èŠ±å¤§ç›—æ‰€åŠ«ï¼ŒåŒç›®åˆè¢«å…¶\nåˆºçžŽåŽï¼Œä¾¿ç»ˆæ—¥æŽ¥é…’é”€æ„ï¼Œä¸€è¹¶ä¸æŒ¯ã€‚æ®·æ­£å»‰å¤±æ„å®˜åœºï¼Œä¸Žä¹‹åŒç—…ç›¸æ€œï¼Œ\nå› æ­¤å®‰æŽ’ä»–åšæ‰‹ä¸‹çš„å¸ˆçˆ·ï¼Œå¹³æ—¥ä¹Ÿæ²¡ä»€ä¹ˆäº‹ã€‚\n");
+        set("title", "è¡™é—¨å¸ˆçˆ·");
+        set("gender","ç”·æ€§");
         set("age", 50);
         set("max_atman", 1000);
         set("atman", 1000);
@@ -28,7 +28,7 @@ void create()
         map_skill("dodge", "fall-steps");  
         set("chat_chance",3);
         set("chat_msg", ({
-                "½­ÖØÍþÏ¹ÁËµÄÑÛ¾¦¿Õ¶´ÎÞ¹â£¬à«à«×ÔÓï£º¾Æ¡£¡£¾Æ¡£¡£¡£ÎÒÒªºÈ¾Æ¡£¡£ \n½­ÖØÍþÒ»°Ñ×¥×¡¿ìºÈ¹âµÄ¾ÆÆ¿£¬ËÆºõÒªÌò¾¡×îºóÒ»µÎ¾Æ¡£\n",
+                "æ±Ÿé‡å¨çžŽäº†çš„çœ¼ç›ç©ºæ´žæ— å…‰ï¼Œå–ƒå–ƒè‡ªè¯­ï¼šé…’ã€‚ã€‚é…’ã€‚ã€‚ã€‚æˆ‘è¦å–é…’ã€‚ã€‚ \næ±Ÿé‡å¨ä¸€æŠŠæŠ“ä½å¿«å–å…‰çš„é…’ç“¶ï¼Œä¼¼ä¹Žè¦èˆ”å°½æœ€åŽä¸€æ»´é…’ã€‚\n",
                 (: do_drink :), 
         }) );
         setup();
@@ -54,7 +54,7 @@ void do_drink()
             command("drop wineskin");
     }
     else
-message_vision("$NÓÃÁ¦ÎüÁËÎüÄÇÒòÎªÐï¾Æ¶ø·¢ºìµÄ±Ç×Ó£®\n", this_object());
+message_vision("$Nç”¨åŠ›å¸äº†å¸é‚£å› ä¸ºé…—é…’è€Œå‘çº¢çš„é¼»å­ï¼Ž\n", this_object());
     return;
 } 
 int accept_object(object who, object ob)
@@ -65,22 +65,22 @@ int accept_object(object who, object ob)
         if ((int)ob->query("liquid/remaining") == 0) 
         {
             command("shake");
-            command("say ¿ÕµÄÎÒ²»Òª...");
+            command("say ç©ºçš„æˆ‘ä¸è¦...");
             return 0;
         }
         else if ((int)ob->query("value")<100)
         {
-                message_vision("$NÉ¨ÁËÒ»ÑÛ$nÊÖÖÐµÄ"+ob->query("name")+"£¬\nÂîÁË¾ä£ºÎÒºÃ´õÒ²ÊÇÌÃÌÃÖª¸®Ê¦Ò¯£¬ÓÖÆñÄÜºÈÕâÖÖ¶«Î÷¡£¡£¡£\n",this_object(),who);
+                message_vision("$Næ‰«äº†ä¸€çœ¼$næ‰‹ä¸­çš„"+ob->query("name")+"ï¼Œ\néª‚äº†å¥ï¼šæˆ‘å¥½æ­¹ä¹Ÿæ˜¯å ‚å ‚çŸ¥åºœå¸ˆçˆ·ï¼Œåˆå²‚èƒ½å–è¿™ç§ä¸œè¥¿ã€‚ã€‚ã€‚\n",this_object(),who);
                 return 0;
         }
         else 
         {
-                message_vision("$NÒ»°Ñ×¥¹ý$nÊÖÖÐµÄ"+ob->query("name")+"£¬Ò»Òû¶ø¾¡£¬´ó×ÅÉàÍ·µÀ£º²»¹ýñ«£¬²»¹ýñ«£¬ÔÙÀ´£¬ÔÙÀ´¡£¡£¡£\n",this_object(),who);
+                message_vision("$Nä¸€æŠŠæŠ“è¿‡$næ‰‹ä¸­çš„"+ob->query("name")+"ï¼Œä¸€é¥®è€Œå°½ï¼Œå¤§ç€èˆŒå¤´é“ï¼šä¸è¿‡ç˜¾ï¼Œä¸è¿‡ç˜¾ï¼Œå†æ¥ï¼Œå†æ¥ã€‚ã€‚ã€‚\n",this_object(),who);
                    this_object()->add("drink_wine",1);
                 if (this_object()->query("drink_wine")==10)
                 {
-                        message_vision("$N×íÑÛëüëÊ£¬»¹ÏëÄÃÆð¾Æ´üÍù×ìÀï¹à£¬È´Ò»¸öõÔõÄ£¬Ë¤µ¹ÔÚµØ¡£ \n",this_object());
-                        message_vision("Ò»ÕÅÎÄµý´Ó$NÒÂÐäÀïµôÁËÏÂÀ´¡£ \n",this_object());
+                        message_vision("$Né†‰çœ¼æœ¦èƒ§ï¼Œè¿˜æƒ³æ‹¿èµ·é…’è¢‹å¾€å˜´é‡ŒçŒï¼Œå´ä¸€ä¸ªè¸‰è·„ï¼Œæ‘”å€’åœ¨åœ°ã€‚ \n",this_object());
+                        message_vision("ä¸€å¼ æ–‡è°ä»Ž$Nè¡£è¢–é‡ŒæŽ‰äº†ä¸‹æ¥ã€‚ \n",this_object());
                         obj = new(__DIR__"obj/miling");
                         obj->move(environment(this_object()));
                 }

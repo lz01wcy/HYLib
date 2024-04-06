@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("½©Ê¬", ({ "flash corpse","corpse leader","corpse" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("åƒµå°¸", ({ "flash corpse","corpse leader","corpse" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 45+random(10));
    //         set("str",999);
             set("per", 10);
 	set("long",
-		"Õâ¼Ò»ïÕû¸öÁ³¶¼ÀÃÁË£¬Ì«¿ÉÅÂÁË£¬ÁîÈËÍû¶øÉúÎ·¡£\n");
+		"è¿™å®¶ä¼™æ•´ä¸ªè„¸éƒ½çƒ‚äº†ï¼Œå¤ªå¯æ€•äº†ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚\n");
 	set("combat_exp", 280000+random(900000));
 
         set("shen_type", -1);
@@ -29,7 +29,7 @@ void create()
 
 	set("chat_chance", 5);
 	set("chat_msg", ({
-		"½©Ê¬ºÙºÙµØ¹Ö½Ğ×Å: ·ÅÏÂ±¦²Ø!\n",
+		"åƒµå°¸å˜¿å˜¿åœ°æ€ªå«ç€: æ”¾ä¸‹å®è—!\n",
 	}) );
 
 	set_skill("strike", 180+random(50));

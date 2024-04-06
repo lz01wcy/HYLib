@@ -3,14 +3,14 @@ inherit ITEM;
 inherit F_FOOD; 
 void create()
 {
-        set_name("¹şÃÜ¹Ï", ({ "hami gua" }) );
+        set_name("å“ˆå¯†ç“œ", ({ "hami gua" }) );
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÓÖÏãÓÖ´àµÄ¹şÃÜ¹Ï£¬ÎÅÆğÀ´¶¼ÊÇÄÇÃ´Ïã£¡\n");
-                set("unit", "Ğ©");
-                set("base_unit", "¸ö");
+                set("long", "ä¸€ä¸ªåˆé¦™åˆè„†çš„å“ˆå¯†ç“œï¼Œé—»èµ·æ¥éƒ½æ˜¯é‚£ä¹ˆé¦™ï¼\n");
+                set("unit", "äº›");
+                set("base_unit", "ä¸ª");
                 set("base_weight", 40);
                 set("value", 10);
                 set("food_remaining", 3);

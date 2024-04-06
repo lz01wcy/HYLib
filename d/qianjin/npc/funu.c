@@ -3,12 +3,12 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("Á¼¼Ò¸¾Å®", ({ "funu" }) );
-	set("gender", "Å®ĞÔ" );
-	set("title", HIR "±¥ÊÜ´İ²Ğ" NOR);
+	set_name("è‰¯å®¶å¦‡å¥³", ({ "funu" }) );
+	set("gender", "å¥³æ€§" );
+	set("title", HIR "é¥±å—æ‘§æ®‹" NOR);
 	set("age", 18);
 	set("long",
-		"Ò»¸ö±¥ÊÜ´İ²ĞµÄÁ¼¼Ò¸¾Å®\n");
+		"ä¸€ä¸ªé¥±å—æ‘§æ®‹çš„è‰¯å®¶å¦‡å¥³\n");
 	set("attitude", "friendly");
 	set("per",30);
 	setup();

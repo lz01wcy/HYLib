@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("µêĞ¡¶ş",({ "xiao er","xiao","er" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("åº—å°äºŒ",({ "xiao er","xiao","er" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇÕâ¼ÒĞ¡¿ÍÕ»µÄµêĞ¡¶ş£¬Ã¿ÌìÃ¦À´Ã¦È¥¡£\n");
+   set("long", "è¿™æ˜¯è¿™å®¶å°å®¢æ ˆçš„åº—å°äºŒï¼Œæ¯å¤©å¿™æ¥å¿™å»ã€‚\n");
        
    set("combat_exp", 200);
    set("str", 18);
@@ -33,8 +33,8 @@ void welcome(object ob,object ob2)
    if(!ob||!present(ob,environment())||ob2->is_fighting()) return;
 	switch(random(2))
 	{
-	case 0: message_vision("$NĞ¦µÀ:±ğ¿´±¾¿ÍÕ»Ğ¡£¬°üÄúÂúÒâ!\n",ob2);break;
-	case 1: message_vision("$N³¯$nĞ¦µÀ£ºÕâÎ»¿Í¹ÙÇëÁË!\n",ob2,ob);
+	case 0: message_vision("$Nç¬‘é“:åˆ«çœ‹æœ¬å®¢æ ˆå°ï¼ŒåŒ…æ‚¨æ»¡æ„!\n",ob2);break;
+	case 1: message_vision("$Næœ$nç¬‘é“ï¼šè¿™ä½å®¢å®˜è¯·äº†!\n",ob2,ob);
 	}
 	remove_call_out("welcome");
 	return;
@@ -43,9 +43,9 @@ void welcome(object ob,object ob2)
 int accept_object(object who,object ob)
 {
 	if(ob->query("money_id") && ob->value() >= 500)
-	{tell_object(who,"µêĞ¡¶şÎ¢Ğ¦µÀ£ºÕâÎ»¿Í¹Ù£¬ÄúÇë½øÈ¥ĞİÏ¢°É!\n");
+	{tell_object(who,"åº—å°äºŒå¾®ç¬‘é“ï¼šè¿™ä½å®¢å®˜ï¼Œæ‚¨è¯·è¿›å»ä¼‘æ¯å§!\n");
 	 who->set_temp("gived_money",1);
 	}
-    else tell_object(who,"µêĞ¡¶şĞ¦µÀ£º±¾µê×¡ËŞ£¬Ò»Íí5Á½°×Òø.\n");
+    else tell_object(who,"åº—å°äºŒç¬‘é“ï¼šæœ¬åº—ä½å®¿ï¼Œä¸€æ™š5ä¸¤ç™½é“¶.\n");
     return 1;
 }

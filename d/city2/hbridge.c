@@ -4,10 +4,10 @@ int do_out(string arg);
 
 void create()
 {
-        set("short", "小桥");
+        set("short", "灏忔ˉ");
         set("long",
-        "这是一座破旧的石桥，桥下是护城河缓缓的流水。水看上去很清，\n"+
-	"这里是进皇宫后门的必经之路。\n");
+        "杩欐槸涓�搴х牬鏃х殑鐭虫ˉ锛屾ˉ涓嬫槸鎶ゅ煄娌崇紦缂撶殑娴佹按銆傛按鐪嬩笂鍘诲緢娓咃紝\n"+
+	"杩欓噷鏄繘鐨囧鍚庨棬鐨勫繀缁忎箣璺�俓n");
         set("outdoors", "city2");
         set("exits", ([
                 "north" : __DIR__"di_anmen",

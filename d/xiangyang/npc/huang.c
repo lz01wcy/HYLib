@@ -4,10 +4,10 @@ inherit F_MASTER;
 
 void create()
 {
-    set_name("»ÆÈØ", ({"huang rong", "huang", "rong"}));
-    set("gender", "Å®ĞÔ");
+    set_name("é»„è“‰", ({"huang rong", "huang", "rong"}));
+    set("gender", "å¥³æ€§");
     set("age", 36);
-    set("long", "ËıÊÇ±±ÏÀ¹ù¾¸µÄ·òÈË£¬¶«Ğ°»ÆÒ©Ê¦µÄ°®Å®£¬Ç°ÈÎØ¤°ï°ïÖ÷¡£\n");
+    set("long", "å¥¹æ˜¯åŒ—ä¾ éƒ­é–çš„å¤«äººï¼Œä¸œé‚ªé»„è¯å¸ˆçš„çˆ±å¥³ï¼Œå‰ä»»ä¸å¸®å¸®ä¸»ã€‚\n");
 
     set("attitude", "peaceful");
        
@@ -44,7 +44,7 @@ void create()
     map_skill("dodge"  , "anying-fuxiang");
     map_skill("sword"  , "luoying-shenjian") ;
        
-    create_family("ÌÒ»¨µº", 2, "µÜ×Ó");
+    create_family("æ¡ƒèŠ±å²›", 2, "å¼Ÿå­");
     setup();
     carry_object("/kungfu/class/taohua/obj/ruanwei")->wear();
     carry_object("/kungfu/class/taohua/obj/shudai")->wear();

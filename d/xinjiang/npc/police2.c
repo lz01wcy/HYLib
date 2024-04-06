@@ -3,9 +3,9 @@
 inherit NPC;
 void create()
 {
-        set_name("¹ÅÀöÄÈ", ({ "eagle gulina", "gulina" }) );
+        set_name("å¤ä¸½å¨œ", ({ "eagle gulina", "gulina" }) );
         set("long", "tt");
-        set("nickname",HIY "¶Ï³á½ğÓ¥"NOR);
+        set("nickname",HIY "æ–­ç¿…é‡‘é¹°"NOR);
         set("attitude", "heroism");
         set("vendetta_mark", "authority");
         set("vendetta_mark","pker");
@@ -13,7 +13,7 @@ void create()
         set("difficulty", 35);
         set("str", 60);
         set("dex", 60);
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("cor", 26);
         set("max_qi",100000);
         set("max_jing",100000);
@@ -33,7 +33,7 @@ void create()
         set("chat_msg_combat", ({
                 (: perform_action, "sword.tianwaifeixian" :),
                 (: perform_action, "dodge.tianwaifeixian" :),
-                "ÄãÍ»È»¸Ğ¾õµ½ÁËËÀµÄ×ÌÎ¶£®£®£®\n",
+                "ä½ çªç„¶æ„Ÿè§‰åˆ°äº†æ­»çš„æ»‹å‘³ï¼ï¼ï¼\n",
         }) );
         set_skill("unarmed", 370+random(100));
         set_skill("parry", 370+random(100));
@@ -68,8 +68,8 @@ void init()
         ::init();
         if(userp(ob = this_player()) && ob->query("vendetta/pker") && !ob->query("disable_type"))
         {
-                message_vision( HIW "$NË«ÊÖÒ»¾Û£¬ĞÎ³ÉÒ»ÍÅÆæÀäµÄº®Æø£¬Ïò$nÉäÀ´£¡\n
-ÆæÀäµÄº®Æø°üÎ§ÁË$nµÄÈ«Éí£¬½«$nÄı¾Û³É±ù¿é£¡\n"NOR, this_object(), ob);
+                message_vision( HIW "$NåŒæ‰‹ä¸€èšï¼Œå½¢æˆä¸€å›¢å¥‡å†·çš„å¯’æ°”ï¼Œå‘$nå°„æ¥ï¼\n
+å¥‡å†·çš„å¯’æ°”åŒ…å›´äº†$nçš„å…¨èº«ï¼Œå°†$nå‡èšæˆå†°å—ï¼\n"NOR, this_object(), ob);
 ob->set("qi",100);
 ob->set("eff_qi",100);
 ob->set("neili",100);
@@ -77,7 +77,7 @@ ob->set("jing",100);
 ob->start_busy(10);
 //              ob->delete("max_force");
                 //ob->set_temp("disable_inputs",1);
-                //ob->set("disable_type",HIW "<¶³½©ÖĞ>"NOR);
+                //ob->set("disable_type",HIW "<å†»åƒµä¸­>"NOR);
                 //ob->set_temp("is_unconcious",1);
                 //seteuid(ROOT_UID);
                 //ob->start_call_out( (: call_other, __FILE__, "remove_frozen",ob:), 
@@ -94,5 +94,5 @@ void remove_frozen(object me)
    me->delete_temp("disable_inputs");
    me->delete_temp("is_unconcious");
    if(!me->is_ghost())
-   message_vision(HIR "\n\n$N·¢³öÒ»ÉùÅ­ºğ£¬Ë«±ÛÒ»Õñ£¬½«ÖÜÉíÄı¾ÛµÄ±ù¿éÕğµÃ·ÛËé£¡£¡\n\n"NOR, me);
+   message_vision(HIR "\n\n$Nå‘å‡ºä¸€å£°æ€’å¼ï¼ŒåŒè‡‚ä¸€æŒ¯ï¼Œå°†å‘¨èº«å‡èšçš„å†°å—éœ‡å¾—ç²‰ç¢ï¼ï¼\n\n"NOR, me);
 }        

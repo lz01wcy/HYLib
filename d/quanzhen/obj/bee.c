@@ -5,23 +5,23 @@ inherit NPC;
 
 void create()
 {
-	set_name("�۷�", ({"bee"}) );
-	set("race", "Ұ��");
+	set_name("蜜蜂", ({"bee"}) );
+	set("race", "野兽");
 	set("age", 5);
-	set("long", "����һֻ�۷䣬��æ�Ų��ۡ�\n");
+	set("long", "这是一只蜜蜂，正忙着采蜜。\n");
 	
 	set("str", 40);
 	set("dex", 50);
 
-	set("limbs", ({ "ͷ��", "����", "���", "β��" }) );
+	set("limbs", ({ "头部", "身体", "翅膀", "尾巴" }) );
 	set("verbs", ({ "bite", "claw" }) );
 	set_temp("apply/attack", 33);
 	set_temp("apply/armor", 5);
 	
 	set("chat_chance", 2);
 	set("chat_msg", ({
-		"�۷������˷ɹ���������ͷ��ת��һȦ���ַ����ˡ�\n",
-		"�۷�ɵ�·�ߵ�һ�����޵�Ұ���ϣ�ææµµ�ز����ۡ�\n",
+		"蜜蜂嗡嗡嗡飞过来，在你头上转了一圈，又飞走了。\n",
+		"蜜蜂飞到路边的一朵鲜艳的野花上，忙忙碌碌地采着蜜。\n",
 	 }) );
 
 	setup();

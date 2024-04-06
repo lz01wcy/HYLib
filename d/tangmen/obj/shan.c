@@ -1,17 +1,17 @@
-// shan.c ºììËÇà÷­
+// shan.c çº¢ç„–é’é³
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("ºììËÇà÷­", ({"qingshan", "shan"}));
+	set_name("çº¢ç„–é’é³", ({"qingshan", "shan"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÅÌÏãÆøÆË±ÇµÄºììËÇà÷­¡£\n");
-		set("unit", "ÅÌ");
+		set("long", "ä¸€ç›˜é¦™æ°”æ‰‘é¼»çš„çº¢ç„–é’é³ã€‚\n");
+		set("unit", "ç›˜");
 		set("value", 150);
 		set("food_remaining", 3);
 		set("food_supply", 60);

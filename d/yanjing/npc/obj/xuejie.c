@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(RED"Ñª½ß"NOR,({"xuejie"}));
+	set_name(RED"è¡€ç«­"NOR,({"xuejie"}));
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á½");
-                set("long", "ÖĞÒ©²ÄÖ®Ò».\n");
+                set("unit", "ä¸¤");
+                set("long", "ä¸­è¯æä¹‹ä¸€.\n");
                 set("value", 100);
         }
 }
@@ -21,10 +21,10 @@ void init()
 }
 int do_eat(string arg)
 {
- if (!arg||arg!="xuejie") return notify_fail("ÄãÏë³ÔÊ²Ã´?\n");
+ if (!arg||arg!="xuejie") return notify_fail("ä½ æƒ³åƒä»€ä¹ˆ?\n");
 if (!living(this_player())) return 0;
 this_player()->apply_condition("youming",0);
-message_vision("$NÃ¦²»µüµÄ³ÔÏÂÒ»¶Î"+this_object()->name()+",È«ÉíÁ÷³öĞ©ºìÉ«Ö­ÒºÀ´.\n",this_player());
+message_vision("$Nå¿™ä¸è¿­çš„åƒä¸‹ä¸€æ®µ"+this_object()->name()+",å…¨èº«æµå‡ºäº›çº¢è‰²æ±æ¶²æ¥.\n",this_player());
 destruct(this_object());
 return 1;
 }

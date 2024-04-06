@@ -5,10 +5,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "��·");
+	set("short",  "土路");
 	set("long",  @LONG
-���������ǽ���һ��é����·����������֮�أ�ƽԭԶ����ʼ䣬
-�����ɼ�Ⱥɽ���ơ�
+这是洛阳城郊的一条茅草土路。洛阳四塞之地，平原远处天际间，
+隐隐可见群山逶迤。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"north" : __DIR__"road2",

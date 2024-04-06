@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���䳡");
+	set("short", "练武场");
 	set("long",@LONG
-��Ѭ������ϰ�����ĵط������ܵ�ľ�˳�Ʒ���ΰڷ��ţ��������
-����ϰ�Թѵ����õİɡ�
+阿熏常来练习剑术的地方。四周的木人成品字形摆放着，大概是用
+来练习以寡敌众用的吧。
 LONG
 );
 	set("outdoors", "feitian");

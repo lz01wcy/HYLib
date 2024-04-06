@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","����");
+  set ("short","衙门");
   set ("long", @LONG
-�����ǾŽ������š�����ս�ֻ��ң���·Ӣ�۾���ƺ�����������
-��ͬ���衣�м��������޾���ɵ�վ��������м�������������
+这里是九江的衙门。现在战局混乱，各路英雄竟相称豪，所以衙门
+形同虚设。有几个衙役无精打采地站在那里，还有几个在那里打着盹。
 LONG);
 
   set("exits", ([ 

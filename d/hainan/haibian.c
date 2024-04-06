@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "º£±ß");
+	set("short", "æµ·è¾¹");
 	set("long", @LONG
-ÑÛÇ°¾ÍÊÇÒ»ÍûÎÞ¼ÊµÄ´óº£,ÉíºóÊÇ¶¸ÇÍ±ÚÁ¢µÄÊ¯±Ú.²»Ô¶´¦µÄº£Ë®
-ÖÐ,Ò»¿é¾ÞÊ¯ÌØ±ðÒýÈË×¢Ä¿,ÉÏÃæ¿ÌÁË'ÌìÑÄº£½Ç'ËÄ×Ö.
-ÓÐ´¬(chuan) ¿ÉÒÔÈ¥°²ÄÏ¡£
+çœ¼å‰å°±æ˜¯ä¸€æœ›æ— é™…çš„å¤§æµ·,èº«åŽæ˜¯é™¡å³­å£ç«‹çš„çŸ³å£.ä¸è¿œå¤„çš„æµ·æ°´
+ä¸­,ä¸€å—å·¨çŸ³ç‰¹åˆ«å¼•äººæ³¨ç›®,ä¸Šé¢åˆ»äº†'å¤©æ¶¯æµ·è§’'å››å­—.
+æœ‰èˆ¹(chuan) å¯ä»¥åŽ»å®‰å—ã€‚
 LONG
 	);
 	set("no_clean_up", 0);
@@ -17,7 +17,7 @@ LONG
   "south" : __DIR__"shatan",
 ]));
 	set("item_desc", ([
-                "chuan" : "Ò»Ìõ´óº£´¬¡£(enteran)¿ÉÒÔµ½°²ÄÏ.³öÔ¶º£Ã»ÕâÑùµÄ´¬¿É²»ÐÐ¡£\n",
+                "chuan" : "ä¸€æ¡å¤§æµ·èˆ¹ã€‚(enteran)å¯ä»¥åˆ°å®‰å—.å‡ºè¿œæµ·æ²¡è¿™æ ·çš„èˆ¹å¯ä¸è¡Œã€‚\n",
 	]));
   set("valid_startroom", 1);
 	set("objects", ([ /* sizeof() == 1 */
@@ -40,21 +40,21 @@ int do_enter (string arg)
     string dir;
     if( !arg || arg !="chuan" ) 
        {
-         tell_object(this_player() , "ÄãÒª enter ÄÄ¶ù£¿\n" ) ;
+         tell_object(this_player() , "ä½ è¦ enter å“ªå„¿ï¼Ÿ\n" ) ;
          return 1 ;
        }
-//    tell_object(this_player() , "¿ª´¬ÁË£¿\n" ) ;
+//    tell_object(this_player() , "å¼€èˆ¹äº†ï¼Ÿ\n" ) ;
     ob = this_player();
-    message_vision("´¬·òÒ»¼ûÓÐÈËÉÏ´¬£¬Ã¦½ÐÁËÒ»Éù£º¿ª´¬à¶£¡\n", ob);
-    message_vision("´¬·òÉýÆð·«£¬´¬¾ÍÏòÎ÷ÄÏ·½º½ÐÐ¡£\n", ob);
+    message_vision("èˆ¹å¤«ä¸€è§æœ‰äººä¸Šèˆ¹ï¼Œå¿™å«äº†ä¸€å£°ï¼šå¼€èˆ¹å–½ï¼\n", ob);
+    message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘è¥¿å—æ–¹èˆªè¡Œã€‚\n", ob);
     ob ->move("/d/quanzhou/dahai") ;
-    tell_object(ob, BLU "ÄãÔÚº£ÉÏº½ÐÐÁËºÜ¾ÃºÜ¾Ã.......\n" NOR ) ;
+    tell_object(ob, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†å¾ˆä¹…å¾ˆä¹….......\n" NOR ) ;
     call_out("tpenghu", 10 , ob );
     return 1 ;
 }
 void tpenghu(object ob )
 {
-    tell_object(ob , "´ó´¬ÖÕÓÚµÖ´ïÁË°²ÄÏ¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+    tell_object(ob , "å¤§èˆ¹ç»ˆäºŽæŠµè¾¾äº†å®‰å—ã€‚ä½ èµ°ä¸‹èˆ¹æ¥ã€‚\n" ) ;
     ob->move ("/d/annan/matou") ;
 }
 

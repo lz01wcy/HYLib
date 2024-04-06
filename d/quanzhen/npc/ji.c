@@ -1,16 +1,16 @@
-// ji.c ¼§ÇåĞé
+// ji.c å§¬æ¸…è™š
 // By Lgg,1998.10
 
 inherit NPC;
 
 void create()
 {
-        set_name("¼§ÇåĞé", ({"ji qingxu", "ji"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å§¬æ¸…è™š", ({"ji qingxu", "ji"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄÇàÄêµÀÊ¿£¬ËÆºõÉí»³ÎäÒÕ¡£\n");
+                "ä»–æ˜¯ä¸€ä½ä½“æ ¼å¼ºå¥çš„é’å¹´é“å£«ï¼Œä¼¼ä¹èº«æ€€æ­¦è‰ºã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -42,15 +42,15 @@ void create()
         set("score", 10000);
 
         set_skill("force", 40);
-        set_skill("xiantian-qigong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 40);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",40);  //È«Õæ½£
+        set_skill("quanzhen-jian",40);  //å…¨çœŸå‰‘
         set_skill("dodge", 40);
-        set_skill("jinyan-gong", 40);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 40);   //é‡‘é›åŠŸ
         set_skill("parry", 40);
         set_skill("strike",40);
         set_skill("unarmed",40);
-        set_skill("haotian-zhang", 40);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 40);    //æ˜Šå¤©æŒ
         set_skill("literate",40);
         set_skill("taoism",40);
 
@@ -61,10 +61,10 @@ void create()
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é—¨æ­£å®—ã€‚\n",
         ]) );
 
         setup();

@@ -2,12 +2,12 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-  set_name(HIG "Íü»ê¹û" NOR,({"wangguo","DEADLY poison"}));
+  set_name(HIG "å¿˜é­‚æžœ" NOR,({"wangguo","DEADLY poison"}));
   set("long", HIG
-      "ÕâÊÇÒ»¿ÅÈËÃÇÔÚÇóÉúÎÞÍû£¬ÎªÁË¼õÇáËÀÇ°µÄÍ´¿à\n"
-      "ÓÃÀ´½âÍÑ£¨£ä£é£å£©µÄ¶¾¹û£®Èç¹ûÄãÖÐÁË¾ç¶¾£¬Õâ¹û×Ó¸ÕºÃ£®\n" NOR);
+      "è¿™æ˜¯ä¸€é¢—äººä»¬åœ¨æ±‚ç”Ÿæ— æœ›ï¼Œä¸ºäº†å‡è½»æ­»å‰çš„ç—›è‹¦\n"
+      "ç”¨æ¥è§£è„±ï¼ˆï½„ï½‰ï½…ï¼‰çš„æ¯’æžœï¼Žå¦‚æžœä½ ä¸­äº†å‰§æ¯’ï¼Œè¿™æžœå­åˆšå¥½ï¼Ž\n" NOR);
   set("value",20000);
-  set("unit","¿Ã");
+  set("unit","æ£µ");
 }
 
 void init()
@@ -21,7 +21,7 @@ int do_cure()
 	object me;
 	me = this_player();
 	if( !living(me))	return 0;
-	message_vision("$N°ÑÍü»ê¹ûÒ»¿ÚÍÌÁËÏÂÈ¥£¡\n",me);
+	message_vision("$NæŠŠå¿˜é­‚æžœä¸€å£åžäº†ä¸‹åŽ»ï¼\n",me);
 	me->clear_condition();
 	me->unconcious();
 	destruct(this_object());

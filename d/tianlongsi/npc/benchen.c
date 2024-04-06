@@ -4,11 +4,11 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("±¾³¾", ({ "ben chen","chen"}) );
-	set("gender", "ÄĞĞÔ" );
-	set("long", "Ëû¾ÍÊÇÌìÄÏÎªµÛµÄ´óÀí±£¶¨µÛ¶ÎÕıÃ÷¡£´óÀíÀú´ú¹úÖ÷¾ùÑ·Î»
-ÌìÁúËÂ³ö¼ÒÎªÉ®£¬±£¶¨µÛÒà²»ÀıÍâ¡£\n" );
-	set("title", "ÌìÁúËÂµÚÊ®Æß´úÉ®ÈË");
+	set_name("æœ¬å°˜", ({ "ben chen","chen"}) );
+	set("gender", "ç”·æ€§" );
+	set("long", "ä»–å°±æ˜¯å¤©å—ä¸ºå¸çš„å¤§ç†ä¿å®šå¸æ®µæ­£æ˜ã€‚å¤§ç†å†ä»£å›½ä¸»å‡é€Šä½
+å¤©é¾™å¯ºå‡ºå®¶ä¸ºåƒ§ï¼Œä¿å®šå¸äº¦ä¸ä¾‹å¤–ã€‚\n" );
+	set("title", "å¤©é¾™å¯ºç¬¬åä¸ƒä»£åƒ§äºº");
 	set("class", "bonze");
 	set("age", 45);
 	set("shen_type", 1);
@@ -63,7 +63,7 @@ void create()
                 (: exert_function, "ku" :),
                 (: exert_function, "rong" :),
         }) );	
-	create_family("´óÀí¶Î¼Ò",17,"¸ßÉ®");
+	create_family("å¤§ç†æ®µå®¶",17,"é«˜åƒ§");
         set_temp("apply/attack", 80);
         set_temp("apply/defense", 80);
         set_temp("apply/armor", 200);

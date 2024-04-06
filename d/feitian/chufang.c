@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "厨房");
 	set("long", @LONG
-�������Ż������ĳ�������Ȼ��Ż������涨�˿���ʱ�䣬�����ٵ��ӻ�
-�ǳ��ų�ʦ������֮����͵͵��Щ�����Ա�����֮ԥ��
+这儿是神古活心流的厨房。虽然神古活心流规定了开饭时间，但不少弟子还
+是趁着厨师们闲聊之机，偷偷找些东西以备断粮之豫。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

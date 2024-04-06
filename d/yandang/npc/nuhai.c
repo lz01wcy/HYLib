@@ -1,14 +1,14 @@
 
-// musix yangzhou's Å®º¢
+// musix yangzhou's å¥³å­©
 inherit NPC;
 
 void create()
 {
-	set_name("Å®º¢",({ "nuhai","nvhai","girl" }) );
-        set("gender", "Å®ĞÔ" );
+	set_name("å¥³å­©",({ "nuhai","nvhai","girl" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 12);
         set("long", 
-"²»ÖªË­¼ÒµÄĞ¡Å®º¢¡£\n");
+"ä¸çŸ¥è°å®¶çš„å°å¥³å­©ã€‚\n");
         set_temp("apply/defense", 10);
 	set("combat_exp", 100);
 	set("mingwang", 1);

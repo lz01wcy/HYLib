@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("·½Í¨", ({ "fang tong", "fang", "tong"}));
-	set("long", "ËûÊÇÒ»Î»Éí´©»Æ²¼ôÂôÄµÄÇàÄêÉ®ÈË¡£Á³ÉÏÖÉÆøÎ´ÍÑ£¬ÉíÊÖÈ´ÒÑÏà\n"
-		"µ±½Ã½Ý£¬¿´À´ËÆºõÑ§¹ýÒ»µãÎä¹¦¡£\n");
-	set("nickname", "Öª¿ÍÉ®");
-	set("gender", "ÄÐÐÔ");
+	set_name("æ–¹é€š", ({ "fang tong", "fang", "tong"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«ç©¿é»„å¸ƒè¢ˆè£Ÿçš„é’å¹´åƒ§äººã€‚è„¸ä¸Šç¨šæ°”æœªè„±ï¼Œèº«æ‰‹å´å·²ç›¸\n"
+		"å½“çŸ«æ·ï¼Œçœ‹æ¥ä¼¼ä¹Žå­¦è¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("nickname", "çŸ¥å®¢åƒ§");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -53,7 +53,7 @@ void create()
 	prepare_skill("cuff", "hunyuan-yiqi");
 	prepare_skill("leg", "zui-gun");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æž—æ´¾", 21, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
@@ -64,20 +64,20 @@ int accept_object(object who, object ob,object me)
 	mapping fam; 
 	me=this_object();
 	if (!(fam = this_player()->query("family")) ||
-		fam["family_name"] != "ÄÏÉÙÁÖÅÉ")
+		fam["family_name"] != "å—å°‘æž—æ´¾")
 	{
 		command("hehe "+who->query("id"));
-		command("say Äã¸øÎÒ¶«Î÷ÓÐÊ²Ã´ÆóÍ¼£¿£¡");
+		command("say ä½ ç»™æˆ‘ä¸œè¥¿æœ‰ä»€ä¹ˆä¼å›¾ï¼Ÿï¼");
 		return 0;
 	}
 	if(!who->query_temp("lunzhi"))
 	{
-		command("say ÄãµÄÁîÅÆÊÇÄÇÀ´µÄ£¬ÂÖÖµ±ØÐëµÃµ½´ó¿à´óÊ¦µÄÔÊÐí£¡");
+		command("say ä½ çš„ä»¤ç‰Œæ˜¯é‚£æ¥çš„ï¼Œè½®å€¼å¿…é¡»å¾—åˆ°å¤§è‹¦å¤§å¸ˆçš„å…è®¸ï¼");
 		return 0;
 	}
-	if(ob->query("name")=="ÂÖÖµÁî")
+	if(ob->query("name")=="è½®å€¼ä»¤")
 	{
-		command( "say ºÃ°É£¬Äã¼ÈÈ»ÓÐ´ó¿à´óÊ¦µÄÁîÅÆ£¬Äã¾ÍÔÚÕâºÍÎÒÔÚÕâÀïÒ»ÆðÊØÎÀ°É¡£");
+		command( "say å¥½å§ï¼Œä½ æ—¢ç„¶æœ‰å¤§è‹¦å¤§å¸ˆçš„ä»¤ç‰Œï¼Œä½ å°±åœ¨è¿™å’Œæˆ‘åœ¨è¿™é‡Œä¸€èµ·å®ˆå«å§ã€‚");
 //		who->apply_condition("sl_lunzhi",random(5)+15);
 		who->apply_condition("sl_lunzhi", 3);
 		who->set_temp("lunzhied",1);

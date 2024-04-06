@@ -2,16 +2,16 @@
 #include <armor.h>
 inherit ARMOR; 
 void create() {
-        set_name("²¼Â³", ({ "tibetan skirt","skirt" }) );
+        set_name("å¸ƒé²", ({ "tibetan skirt","skirt" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("value", 400);
                 set("armor_prop/armor", 10);
-                set("long","Ò»ÖÖ²ØÓï½Ğ¡°°ïµä¡±µÄÎ§È¹£¬ÊÇ²Ø×å¸¾Å®Ï²°®µÄÒÂÎï£¬Ò²ÊÇ²Ø×å¸¾Å®µÄ±êÖ¾¡£\n");
+                set("long","ä¸€ç§è—è¯­å«â€œå¸®å…¸â€çš„å›´è£™ï¼Œæ˜¯è—æ—å¦‡å¥³å–œçˆ±çš„è¡£ç‰©ï¼Œä¹Ÿæ˜¯è—æ—å¦‡å¥³çš„æ ‡å¿—ã€‚\n");
         }
 
 }  

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ԭ");
+	set("short", "草原");
 	set("long", @LONG
-��������˼������Ĵ��ԭ��һ���޼ʵĲݵ���粨������ؽ���
-���м����ڵ㣬���ܷǳ��İ�����ֻ�ǲ�ʱ����Ů�����ĸ�����֪����
-��Ʈ��Ĵ�����
+这里就是人迹罕至的大草原，一望无际的草地随风波动，天地交接
+处有几个黑点，四周非常的安静，只是不时有牧女清亮的歌声不知从哪
+儿飘渺的传来。
 LONG );
 	set("exits", ([
 		"north" : __DIR__"caoyuan5",

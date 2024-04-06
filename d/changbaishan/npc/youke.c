@@ -1,13 +1,13 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
 
 
 inherit NPC;
 
 void create()
 {
-  set_name("ÓÎ¿Í", ({"you ke","ke"}));
-  set("long","ÕâÊÇÒ»Î»ÓÎ¿Í¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("æ¸¸å®¢", ({"you ke","ke"}));
+  set("long","è¿™æ˜¯ä¸€ä½æ¸¸å®¢ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("combat_exp",80000);
 
   set_skill("unarmed", 10);
@@ -39,10 +39,10 @@ void welcome(object ob)
    
    switch(random(2)){
     case 0:
-     command("say ³¤°×É½µÄ¾°É«Õæ²»´í£¬Ã»°×À´Ò»´Î£¡");
+     command("say é•¿ç™½å±±çš„æ™¯è‰²çœŸä¸é”™ï¼Œæ²¡ç™½æ¥ä¸€æ¬¡ï¼");
      break;
     case 1:
-     command("say ¿´£¬¿´ÄÇµÄ·ç¾°£¬ÕæÊÇÌ«ÃÀÁË¡£");
+     command("say çœ‹ï¼Œçœ‹é‚£çš„é£æ™¯ï¼ŒçœŸæ˜¯å¤ªç¾äº†ã€‚");
    }
    
 }

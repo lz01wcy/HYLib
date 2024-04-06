@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("´Ó²»Æú",({"cong buqi", "cong", "buqi" }));
-        set("title","»ªÉ½ÅÉµÚÊ®Èý´ú½£×ÚÐ¡µÜ×Ó");
-        set("nickname","¶ñ½£¿Í");
-        set("long", "Ò»¸öÁ÷ÀïÁ÷ÆøµÄÊÐ¾®Ð¡ÈË£¬Ò»Ë«ÊÖ¸ñÍâ´Ö´ó¡£\n");
+        set_name("ä»Žä¸å¼ƒ",({"cong buqi", "cong", "buqi" }));
+        set("title","åŽå±±æ´¾ç¬¬åä¸‰ä»£å‰‘å®—å°å¼Ÿå­");
+        set("nickname","æ¶å‰‘å®¢");
+        set("long", "ä¸€ä¸ªæµé‡Œæµæ°”çš„å¸‚äº•å°äººï¼Œä¸€åŒæ‰‹æ ¼å¤–ç²—å¤§ã€‚\n");
         set("age", 40);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -50,7 +50,7 @@ set_skill("huashan-neigong",  200);
         map_skill("parry","huashan-jianfa");
         map_skill("strike","hunyuan-zhang");
         prepare_skill("strike","hunyuan-zhang");
-        create_family("»ªÉ½ÅÉ",13,"µÜ×Ó");
+        create_family("åŽå±±æ´¾",13,"å¼Ÿå­");
 
         setup();
 	 carry_object("clone/weapon/gangjian")->wield();
@@ -67,7 +67,7 @@ void init()
 
         if (interactive(ob) && !environment(ob)->query("no_fight"))
         {
-                       command("say ¸Ò½øÈëÎÒ½£×Ú½ûµØ,Ö»ÓÐËÀ£¡£¡£¡\n");
+                       command("say æ•¢è¿›å…¥æˆ‘å‰‘å®—ç¦åœ°,åªæœ‰æ­»ï¼ï¼ï¼\n");
                        me->set_leader(ob);
                        remove_call_out("kill_ob");
                        call_out("kill_ob", 1, ob); 

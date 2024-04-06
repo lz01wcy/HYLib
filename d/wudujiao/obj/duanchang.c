@@ -7,12 +7,12 @@ void setup()
 
 void create()
 {
-	       set_name("¶Ï³¦²İ", ({"duanchang cao","cao" }));
+	       set_name("æ–­è‚ è‰", ({"duanchang cao","cao" }));
 	
-		set("unit", "Öê");
-		set("long", "ÕâÊÇÒ»ÖêÉÁË¸×ÅÁ×¹âµÄĞ¡²İ¡£\n");
+		set("unit", "æ ª");
+		set("long", "è¿™æ˜¯ä¸€æ ªé—ªçƒç€ç£·å…‰çš„å°è‰ã€‚\n");
 		set("value", 100);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(50);
 
 	

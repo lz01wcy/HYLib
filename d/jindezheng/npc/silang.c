@@ -1,14 +1,14 @@
 inherit NPC;
 inherit F_VENDOR;
 
-string query_save_file() {return DATA_DIR+"npc/ÎâËÄÀÉ";}
+string query_save_file() {return DATA_DIR+"npc/å´å››éƒ";}
 void create()
 {
-	set_name("ÎâËÄÀÉ", ({ "wusi", "wusi", "wusi" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å´å››éƒ", ({ "wusi", "wusi", "wusi" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»ÎâËÄÀÉÕıĞ¦ßäßäµØÃ¦Öø¡£\n");
+		"è¿™ä½å´å››éƒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
@@ -19,8 +19,8 @@ void create()
 	}));
 set("chat_chance",5);
 set("chat_msg",({
-"ÎâËÄÀÉ½Ğº°:²İĞ¬,ĞÂ´òµÄ²İĞ¬,Ë­ÒªÂò²İĞ¬?\n",
-"ÎâËÄÀÉà«à«×ÔÓï:¿´À´½ñÌìµÄ²İĞ¬ÓÖÂô²»³öÈ¥ÁË.\n",
+"å´å››éƒå«å–Š:è‰é‹,æ–°æ‰“çš„è‰é‹,è°è¦ä¹°è‰é‹?\n",
+"å´å››éƒå–ƒå–ƒè‡ªè¯­:çœ‹æ¥ä»Šå¤©çš„è‰é‹åˆå–ä¸å‡ºå»äº†.\n",
 (:random_move:),
 }));
 

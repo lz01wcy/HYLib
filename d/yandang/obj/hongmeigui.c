@@ -5,13 +5,13 @@ inherit SWORD;
 
 void create()
 {
-	set_name(HIR"ºìÃµ¹å"NOR, ({ "meigui","flower"}) );
+	set_name(HIR"çº¢ç«ç‘°"NOR, ({ "meigui","flower"}) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö¦");
-		set("long", "Ò»Ö¦"+HIR"ºìÃµ¹å"+NOR+",ËÍ¸øÇéÈËµÄ×î¼ÑÀñÎï¡£\n");
+		set("unit", "æ");
+		set("long", "ä¸€æ"+HIR"çº¢ç«ç‘°"+NOR+",é€ç»™æƒ…äººçš„æœ€ä½³ç¤¼ç‰©ã€‚\n");
 		set("value", 1000);
 		set("material", "wood");
 	}
@@ -19,7 +19,7 @@ void create()
 
 
       set("wield_msg",
-"$NÇáĞ¦Ò»Éù,ÊÖÍó×ªÁË¼¸ÏÂ,ÊÖÖĞ³öÏÖÒ»¶ä²ÓÀÃµÄ"+HIR+"ºìÃµ¹å.\n"NOR);
-	set("unwield_msg","$NÊÖÍóÒ»Õñ,ÊÖÖĞµÄ"+HIR+"ºìÃµ¹å"+NOR+"»¯ÎªÒ»ÅîºìÓêÈ÷ÏÂ.\n");
+"$Nè½»ç¬‘ä¸€å£°,æ‰‹è…•è½¬äº†å‡ ä¸‹,æ‰‹ä¸­å‡ºç°ä¸€æœµç¿çƒ‚çš„"+HIR+"çº¢ç«ç‘°.\n"NOR);
+	set("unwield_msg","$Næ‰‹è…•ä¸€æŒ¯,æ‰‹ä¸­çš„"+HIR+"çº¢ç«ç‘°"+NOR+"åŒ–ä¸ºä¸€è“¬çº¢é›¨æ´’ä¸‹.\n");
        setup();
 }

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ѩԭС��");
+	set("short", "雪原小店");
 	set("long", @LONG
-        ����һ�Һ�С�ľƵ�,�����⻹����,�ڷ�ѩ�б������˵���
-����,��Ҫͣ������һ���������Ҿ�,ůһů���ӡ�	   
+        这是一家很小的酒店,但生意还不错,在风雪中奔波的人到了
+这里,都要停下来喝一杯北方的烈酒,暖一暖身子。	   
 LONG
 	);
     set("exits", ([

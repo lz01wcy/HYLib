@@ -20,7 +20,7 @@ void init()
 	add_action("do_yell","yell");
 	
 	here = load_object(FROM);
-	if(strsrch(here->query("short"),"½­")!=-1)
+	if(strsrch(here->query("short"),"æ±Ÿ")!=-1)
 		add_action("do_du","dujiang");
 	else
 		add_action("do_du","duhe");
@@ -37,30 +37,30 @@ int do_yell(string arg)
 	here=environment(me);
 	force=me->query("neili");
 	
-	if(!arg||arg!="boat") return notify_fail("ÄãÒªº°½ĞÊ²Ã´?\n");
-	if(force<=500) message_vision("\n$NÊ¹×ãÁËÁ¦Æøº°µÀ£º¡¸´¬¼Ò¡«¡«¡«!¡¹\n",me);
-	else if(force<=1000) message_vision("\n$NÓÃÁ¦º°µÀ£º¡¸´¬¼Ò¡«¡«¡«!¡¹ÉùÒôÔ¶Ô¶´«ÁË³öÈ¥¡£\n",me);
-	else if(force<=2000) message_vision("\n$N¹Ä×ãÖĞÆøÓÃÁ¦º°µÀ£º¡¸´¬¼Ò¡«¡«¡«!¡¹ÉùÒôÔ¶Ô¶´«ÁË³öÈ¥¡£\n",me);
-	else message_vision("\n$N¸ßÉùº°µÀ£º¡¸´¬¼Ò¡«¡«¡«!¡¹ÉùÒôÓÆÑï,¾­¾Ã²»Ï¢¡£\n",me);
+	if(!arg||arg!="boat") return notify_fail("ä½ è¦å–Šå«ä»€ä¹ˆ?\n");
+	if(force<=500) message_vision("\n$Nä½¿è¶³äº†åŠ›æ°”å–Šé“ï¼šã€Œèˆ¹å®¶ï½ï½ï½!ã€\n",me);
+	else if(force<=1000) message_vision("\n$Nç”¨åŠ›å–Šé“ï¼šã€Œèˆ¹å®¶ï½ï½ï½!ã€å£°éŸ³è¿œè¿œä¼ äº†å‡ºå»ã€‚\n",me);
+	else if(force<=2000) message_vision("\n$Né¼“è¶³ä¸­æ°”ç”¨åŠ›å–Šé“ï¼šã€Œèˆ¹å®¶ï½ï½ï½!ã€å£°éŸ³è¿œè¿œä¼ äº†å‡ºå»ã€‚\n",me);
+	else message_vision("\n$Né«˜å£°å–Šé“ï¼šã€Œèˆ¹å®¶ï½ï½ï½!ã€å£°éŸ³æ‚ æ‰¬,ç»ä¹…ä¸æ¯ã€‚\n",me);
 	if(!ship)
-		return notify_fail("Äã·¢ÏÖ´¬²»¼ûÁË£¬¿ì±¨¸æÎ×Ê¦°É£¡\n");
+		return notify_fail("ä½ å‘ç°èˆ¹ä¸è§äº†ï¼Œå¿«æŠ¥å‘Šå·«å¸ˆå§ï¼\n");
 	if(ship->query("yell"))
 		if(ship->query("exits/out")==FROM)
-			return notify_fail("¿ìÉÏÀ´°É,´¬ÂíÉÏ¾Í¿ªÁË!\n");
-	else return notify_fail("\nô¹¹«º°µÀ£º¡¸µÈµÈ°¡¡«¡«¡«Ò»»á¾ÍÀ´ÁË¡«¡«¡«¡«¡¹\n\n");
+			return notify_fail("å¿«ä¸Šæ¥å§,èˆ¹é©¬ä¸Šå°±å¼€äº†!\n");
+	else return notify_fail("\nè‰„å…¬å–Šé“ï¼šã€Œç­‰ç­‰å•Šï½ï½ï½ä¸€ä¼šå°±æ¥äº†ï½ï½ï½ï½ã€\n\n");
 	ship->set("yell",1);
 	ship->set("exits/out",FROM);
 	here->set("exits/enter",SHIPDIR);
-	tell_object(here,"\nô¹¹«ËµµÀ£º¡¸¿Í¹Ù,ÈÃÄú¾ÃµÈÁË,¿ìÇëÉÏ´¬°É!¡¹\n");
-	tell_object(here,"ô¹¹«·ÅÏÂô®°å£¬´îÔÚÁË°¶±ß£¨enter£©¡£\n\n");
+	tell_object(here,"\nè‰„å…¬è¯´é“ï¼šã€Œå®¢å®˜,è®©æ‚¨ä¹…ç­‰äº†,å¿«è¯·ä¸Šèˆ¹å§!ã€\n");
+	tell_object(here,"è‰„å…¬æ”¾ä¸‹èˆ¢æ¿ï¼Œæ­åœ¨äº†å²¸è¾¹ï¼ˆenterï¼‰ã€‚\n\n");
 	call_out("on_board",10,me,ship,here);
 	return 1;
 }
 
 void on_board(object me,object ship,object here)
 {
-   tell_object(ship,"ô¹¹«º°µÀ£º¡¸¸÷Î»¿Í¹Ù×øºÃ,¿ª´¬ÁË¡«¡«¡«¡«¡¹\n");
-   tell_object(here,"ô¹¹«º°µÀ£º¡¸¸÷Î»¿Í¹Ù×øºÃ,¿ª´¬ÁË¡«¡«¡«¡«¡¹\n");
+   tell_object(ship,"è‰„å…¬å–Šé“ï¼šã€Œå„ä½å®¢å®˜åå¥½,å¼€èˆ¹äº†ï½ï½ï½ï½ã€\n");
+   tell_object(here,"è‰„å…¬å–Šé“ï¼šã€Œå„ä½å®¢å®˜åå¥½,å¼€èˆ¹äº†ï½ï½ï½ï½ã€\n");
    ship->delete("exits");
    here->delete("exits/enter");
    call_out("leave_ship",30,me,ship);
@@ -73,7 +73,7 @@ void leave_ship(object me,object ship)
 	
 	ship->set("exits/out",TO);
     here=load_object(TO);
-	tell_object(ship,"ô¹¹«ËµµÀ£º¡¸¿Í¹Ù,µ½°¶ÁË,ÏÂ´¬°É!¡¹\n");
+	tell_object(ship,"è‰„å…¬è¯´é“ï¼šã€Œå®¢å®˜,åˆ°å²¸äº†,ä¸‹èˆ¹å§!ã€\n");
 	
 	call_out("no_ship",1,ship,here);
 	remove_call_out("leave_ship");
@@ -86,14 +86,14 @@ void no_ship(object ship,object here)
    for(i=0;i<sizeof(ob);i++)
    {
 	   if(living(ob[i])){
-	   	   message_vision("\n$NÌıÁËô¹¹«µÄ»°£¬×ßÏÂÁË´¬¡£\n",ob[i]);
-	   	   tell_object(here,ob[i]->name()+"´Ó´¬ÉÏ×ßÁËÏÂÀ´¡£\n");
+	   	   message_vision("\n$Nå¬äº†è‰„å…¬çš„è¯ï¼Œèµ°ä¸‹äº†èˆ¹ã€‚\n",ob[i]);
+	   	   tell_object(here,ob[i]->name()+"ä»èˆ¹ä¸Šèµ°äº†ä¸‹æ¥ã€‚\n");
 		   ob[i]->move(here);
 	   }
 	   else
 	   {
-		   tell_object(ship,"ô¹¹«Ò»½Å°Ñ"+ob[i]->name()+"õßÏÂ´¬!\n");
-		   tell_object(here,"ô¹¹«Ò»½Å°Ñ"+ob[i]->name()+"õßÏÂ´¬!\n");
+		   tell_object(ship,"è‰„å…¬ä¸€è„šæŠŠ"+ob[i]->name()+"è¸¹ä¸‹èˆ¹!\n");
+		   tell_object(here,"è‰„å…¬ä¸€è„šæŠŠ"+ob[i]->name()+"è¸¹ä¸‹èˆ¹!\n");
 		   ob[i]->move(here);
 	   }
    }
@@ -112,29 +112,29 @@ int do_du()
   		return 0;
   
   	if(ob->is_busy())
-  		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬µÈ»á°É£¡\n");
+  		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œç­‰ä¼šå§ï¼\n");
  	if(ob->query_temp("track"))
- 		return notify_fail("ÄãÕı¸Ï×ÅÑÎ³µ£¬ÏÖÔÚÎŞ·¨¶É½­¡£\n");
+ 		return notify_fail("ä½ æ­£èµ¶ç€ç›è½¦ï¼Œç°åœ¨æ— æ³•æ¸¡æ±Ÿã€‚\n");
   	if(ob->query("max_neili")<2000)
-  		return notify_fail("ÄãµÄÄÚÁ¦²»×ãÒÔÊ¹ÓÃÕâÖÖÇá¹¦£¡\n");
+  		return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ä»¥ä½¿ç”¨è¿™ç§è½»åŠŸï¼\n");
   	if(ob->query("neili")<200)
-  		return notify_fail("ÄãµÄÄÚÁ¦²»×ãÒÔÊ¹ÓÃÕâÖÖÇá¹¦£¡\n");
+  		return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ä»¥ä½¿ç”¨è¿™ç§è½»åŠŸï¼\n");
   	if(environment(ob)->query("exits/enter"))
-  		return notify_fail("ÓĞ´¬²»×ö£¬°çÊ²Ã´COOL°¡£¡\n");
+  		return notify_fail("æœ‰èˆ¹ä¸åšï¼Œæ‰®ä»€ä¹ˆCOOLå•Šï¼\n");
   	if(ob->query("neili")<210)
-  		message_vision(HIW"$N"+HIW+"ÉíĞÎÇáÇáÒ»»Î£¬Ïò¶Ô°¶×İÈ¥£¡\n"NOR,ob);
+  		message_vision(HIW"$N"+HIW+"èº«å½¢è½»è½»ä¸€æ™ƒï¼Œå‘å¯¹å²¸çºµå»ï¼\n"NOR,ob);
   	else 
   	if(ob->query("neili")<250)
-  		message_vision(HIG"$N"+HIW+"ÉíĞÎÍğÈçĞĞÔÆÁ÷Ë®£¬Ïò¶Ô°¶ÇáÆ®¹ıÈ¥£¡\n"NOR,ob);
+  		message_vision(HIG"$N"+HIW+"èº«å½¢å®›å¦‚è¡Œäº‘æµæ°´ï¼Œå‘å¯¹å²¸è½»é£˜è¿‡å»ï¼\n"NOR,ob);
   	else 
-  		message_vision(HIC"$N"+HIC+"ÉíĞÎÎ¢Î¢Ò»»Î£¬ÇåÑÌ°ãµØ³¯¶Ô°¶Æ®ÁË¹ıÈ¥£¡\n"NOR,ob);
+  		message_vision(HIC"$N"+HIC+"èº«å½¢å¾®å¾®ä¸€æ™ƒï¼Œæ¸…çƒŸèˆ¬åœ°æœå¯¹å²¸é£˜äº†è¿‡å»ï¼\n"NOR,ob);
   	ob->add("neili",-200);
   	where=load_object(SHIPDIR);
   	ob->move(where);
-  	message_vision(HIG"$N"+HIG+"½ÅÇáÇáÒ»Ì¤´¬Í·£¬½èÁ¦ÓÖÏòÇ°×İÈ¥£¡\n"NOR,ob);
+  	message_vision(HIG"$N"+HIG+"è„šè½»è½»ä¸€è¸èˆ¹å¤´ï¼Œå€ŸåŠ›åˆå‘å‰çºµå»ï¼\n"NOR,ob);
   	where=load_object(TO);
   	ob->move(TO);
-  	message_vision(HIG"$N"+HIG+"Æ®È»ÂäµØ£¬ÇáÇáµØĞê³öÁËÒ»¿ÚÕæÆø¡£\n"NOR,ob);
+  	message_vision(HIG"$N"+HIG+"é£˜ç„¶è½åœ°ï¼Œè½»è½»åœ°å˜˜å‡ºäº†ä¸€å£çœŸæ°”ã€‚\n"NOR,ob);
   	ob->start_busy(1);
   	return 1;
 }

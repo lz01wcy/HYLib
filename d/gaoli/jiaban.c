@@ -1,11 +1,11 @@
-// Room in ����
+// Room in 高丽
 inherit ROOM;
 void create()	
 {
-	set("short", "�װ�");
+	set("short", "甲板");
 	set("long", @LONG	
-������ս���ļװ塣�м���ˮ�ֲ�ʱ���������߹�����������æµ��
-������ȥ���󺣱̲����㣬һ���޼ʣ��������ʻ����ս����������һ����
+这里是战船的甲板。有几名水手不时从你身旁走过，看来都很忙碌。
+放眼望去，大海碧波万倾，一望无际，不禁想驾驶这艘战船，来闯荡一番。
 LONG
 	);
 set("outdoors", "/d/gaoli");

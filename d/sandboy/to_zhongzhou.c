@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��·");
+	set("short", "大路");
 	set("long", @LONG
-��һ���޼ʵ�ƽҰ֮��,���������ͬ���һ��,������ɫ��ũ��,
-�������Ͻ�ɽ.�����Ƽ���¶����ɽ��Ӱ��.
+在一望无际的平野之中,这条大道如同玉带一般,穿过绿色的农田,
+向西是紫金山.东面云际中露出高山的影子.
 LONG
 	);
 	set("no_clean_up", 0);

@@ -5,9 +5,9 @@ inherit F_BANKER;
 #include <ansi.h>
 void create()
 {
-        set_name("·¶ÀÏ°å", ({"fan laoban", "wu"}));
-        set("title", "Ç®×¯ÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+        set_name("èŒƒè€æ¿", ({"fan laoban", "wu"}));
+        set("title", "é’±åº„æŒæŸœ");
+        set("gender", "ç”·æ€§");
         set("age", 34);
 
         set("str", 22);

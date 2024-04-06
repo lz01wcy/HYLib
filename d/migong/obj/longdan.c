@@ -7,14 +7,14 @@ inherit ITEM;
 void create()
 
 {
-	set_name(HIG "Áúµ¤" NOR, ({ "dan", "long dan", "longdan" }) );
+	set_name(HIG "é¾™ä¸¹" NOR, ({ "dan", "long dan", "longdan" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¿ÅÀÏÁúµÄÄÚµ¤¡£\n");
+                set("long", "ä¸€é¢—è€é¾™çš„å†…ä¸¹ã€‚\n");
                 set("value", 10000);
-		set("unit", "¿Å");
+		set("unit", "é¢—");
 	}
 }
 
@@ -29,26 +29,26 @@ int do_eat(string arg)
 	object me;
 
         if (! id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         
 me = this_player();
-        message_vision("$N·þÏÂÒ»¿ÅÁúµ¤" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Næœä¸‹ä¸€é¢—é¾™ä¸¹" + this_object()->name() +
+                       "ã€‚\n", me);
         if (random(20) > 11)
         {
-                message_vision("$NÖ»¾õÄÚÁ¦ËÆºõÔöÇ¿ÁË¡£\n", me);
+                message_vision("$Nåªè§‰å†…åŠ›ä¼¼ä¹Žå¢žå¼ºäº†ã€‚\n", me);
                 me->add("max_neili", 1);
  
         } else
         if (random(20) < 9)
         {
-               message_vision("$NÖ»¾õ¾«Á¦ÍúÊ¢¡£\n", me);
+               message_vision("$Nåªè§‰ç²¾åŠ›æ—ºç››ã€‚\n", me);
 
       me->add("max_jingli", 1);
    } else
         {
-                      message_vision("$NÊ²Ã´¸Ð¾õÒ²Ã»ÓÐ¡£\n", me);                }
+                      message_vision("$Nä»€ä¹ˆæ„Ÿè§‰ä¹Ÿæ²¡æœ‰ã€‚\n", me);                }
 
               destruct(this_object());
 	return 1;

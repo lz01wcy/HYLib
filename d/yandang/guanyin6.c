@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "µÚÆß²ã");
+  set ("short", "ç¬¬ä¸ƒå±‚");
   set ("long", @LONG
-¹ÛÒôµÄµÚÆß²ã»¹ÊÇÒ»¼äÕ«ÌÃ,Ã¿ÌìÔçÍí¹©Ó¦ËØÕ«,´Ó´Ë´¦ÏòÍâÃæµÄÑÒ
-±Ú¿´,×óÃæ¿É¼ûÒ»Ö¸¹ÛÒô,µ±ÖĞ¿É¼û²àÃæ¹ÛÒôÏñ,ÓÒÃæ¿É¼ûµØ²ØÍõÏñ.ÔÙÏò
-Íâ¹Û,¿É¼ûÆæÁÖÁÖÁ¢.
+è§‚éŸ³çš„ç¬¬ä¸ƒå±‚è¿˜æ˜¯ä¸€é—´æ–‹å ‚,æ¯å¤©æ—©æ™šä¾›åº”ç´ æ–‹,ä»æ­¤å¤„å‘å¤–é¢çš„å²©
+å£çœ‹,å·¦é¢å¯è§ä¸€æŒ‡è§‚éŸ³,å½“ä¸­å¯è§ä¾§é¢è§‚éŸ³åƒ,å³é¢å¯è§åœ°è—ç‹åƒ.å†å‘
+å¤–è§‚,å¯è§å¥‡æ—æ—ç«‹.
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -27,7 +27,7 @@ int valid_leave(object me,string dir)
   ob=present("jue fei",this_object());
  if (objectp(ob)&&dir=="up")   {
    if (ob->query("banghui")!=me->query("banghui"))
-  return notify_fail("¾õ·ÇÉìÊÖÀ¹×¡Äã.\n");
+  return notify_fail("è§‰éä¼¸æ‰‹æ‹¦ä½ä½ .\n");
            }
 return ::valid_leave(me,dir);
 }

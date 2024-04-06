@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "小路");
+	set("short", "灏忚矾");
 	set("long", @LONG
-你走在一条小路上。前面道路崎岖，行人很少。前方隐约有房屋可见.
+浣犺蛋鍦ㄤ竴鏉″皬璺笂銆傚墠闈㈤亾璺磶宀栵紝琛屼汉寰堝皯銆傚墠鏂归殣绾︽湁鎴垮眿鍙.
 LONG );
 	set("exits", ([
 		"south" : __DIR__"zhuang1",

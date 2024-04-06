@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "����");
+  set ("short", "玄关");
   set ("long", @LONG
-������ȥ�Ϳ쵽�˻������ĵ����ˡ����������Ҫ����Ь�Ӳ���
-��ȥ�ˣ��ձ���ͨ��������Ϊ���ء���ߵ�ǽ�߷���һЩľ�졣
+在往里去就快到了活心流的道场了。到了这里就要脱下鞋子才能
+进去了，日本人通常叫这里为玄关。左边的墙边放着一些木屐。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

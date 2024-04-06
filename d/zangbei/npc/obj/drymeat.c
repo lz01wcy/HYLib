@@ -2,13 +2,13 @@
 inherit F_FOOD; 
 void create()
 {
-        set_name("¸ÉÅ£Èâ", ({" dry meat","meat" }) );
+        set_name("å¹²ç‰›è‚‰", ({" dry meat","meat" }) );
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿é·ç¸ÉµÄêóÅ£ÍÈÈâ¡£\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å—é£å¹²çš„ç‰¦ç‰›è…¿è‚‰ã€‚\n");
+                set("unit", "å—");
                 set("value", 15);
                 set("food_remaining", 3);
                 set("food_supply", 60);

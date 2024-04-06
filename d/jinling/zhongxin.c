@@ -1,12 +1,12 @@
-//jinling  zhongxin¡£c
+//jinling  zhongxinã€‚c
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÖÐÐÄ¹ã³¡");
+        set("short", "ä¸­å¿ƒå¹¿åœº");
         set("long", @LONG
-ÕâÀïÊÇ½ðÁêÊÐµÄÊÐÖÐÐÄ,Á¬½Ó×Å½ðÁê³ÇµÄÖ÷Òª½ÖµÀ¡£¹Å¶¼½ðÁêÀúÀ´ÊÇÀúÊ·Ãû
-³Ç¡£ÇØ»´·ç¹â¸üÊÇÌìÏÂÎÅÃû¡£ÒýµÃ²»ÉÙ·çÁ÷ÈËÊÂ²»Ô¶Ç§ÀïÀ´´ËÒ»ÓÎ¡£
+è¿™é‡Œæ˜¯é‡‘é™µå¸‚çš„å¸‚ä¸­å¿ƒ,è¿žæŽ¥ç€é‡‘é™µåŸŽçš„ä¸»è¦è¡—é“ã€‚å¤éƒ½é‡‘é™µåŽ†æ¥æ˜¯åŽ†å²å
+åŸŽã€‚ç§¦æ·®é£Žå…‰æ›´æ˜¯å¤©ä¸‹é—»åã€‚å¼•å¾—ä¸å°‘é£Žæµäººäº‹ä¸è¿œåƒé‡Œæ¥æ­¤ä¸€æ¸¸ã€‚
 LONG
         );
         set("exits", ([/* sizeof() == 4 */

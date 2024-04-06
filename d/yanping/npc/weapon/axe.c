@@ -1,21 +1,21 @@
-// zhubang.c Öñ°ô
+// zhubang.c ç«¹æ£’
 
 #include <weapon.h>
 inherit AXE;
 
 void create()
 {
-        set_name("ÅüÉ½¸«", ({ "pishanfu" }));
+        set_name("åŠˆå±±æ–§", ({ "pishanfu" }));
         set_weight(8000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÅüÉ½¸«£¬ËÆºõÏàµ±½áÊµ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠåŠˆå±±æ–§ï¼Œä¼¼ä¹ç›¸å½“ç»“å®ã€‚\n");
                 set("value", 2);
                 set("material", "steel");
-                set("wield_msg", "$N³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
         }
         init_axe(300);
         setup();

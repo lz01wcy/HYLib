@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create()
 {
-     set("short", HIG"¹ûÔ°"NOR);
+     set("short", HIG"æžœå›­"NOR);
      set("long", @LONG
-×ª¹ýÉ½Ñü£¬³öÏÖÒ»´óÆ¬¹ûÁÖ¡£Ò»¿Ã¿Ã¹ûÊ÷³¤µÃ¸ß´óÃ¯Ê¢£¬Ö¦Ò¶·±ÃÜ£¬ÀÛÀÛ
-ÏÊ¹û£¨guo)£¬ÏÊÄÛÓÕÈË¡£Çå·ç·÷Ò¶£¬É³É³×÷Ïì£¬¸üÁîÕâÈº¹ûËæ·çÕÐÒ¡ÆðÎè£¬ËÍ
-À´ÕóÕó¹ûÏã£¬¿´À´Äã¿ÉÒÔ´ó´óµÄ±¥²ÍÒ»¶ÙÁË¡£µ«Ìý¼ûÃÜÁÖÉî´¦£¬¶Å¾éÄñ¼ä»òÇá
-Ìä¡£ÁÖ×Ó±ßÉÏ´ÓµØµ×ÏÂÓ¿³öÒ»ÍôÇåÈª£¨quan£©¡£
+è½¬è¿‡å±±è…°ï¼Œå‡ºçŽ°ä¸€å¤§ç‰‡æžœæž—ã€‚ä¸€æ£µæ£µæžœæ ‘é•¿å¾—é«˜å¤§èŒ‚ç››ï¼Œæžå¶ç¹å¯†ï¼Œç´¯ç´¯
+é²œæžœï¼ˆguo)ï¼Œé²œå«©è¯±äººã€‚æ¸…é£Žæ‹‚å¶ï¼Œæ²™æ²™ä½œå“ï¼Œæ›´ä»¤è¿™ç¾¤æžœéšé£Žæ‹›æ‘‡èµ·èˆžï¼Œé€
+æ¥é˜µé˜µæžœé¦™ï¼Œçœ‹æ¥ä½ å¯ä»¥å¤§å¤§çš„é¥±é¤ä¸€é¡¿äº†ã€‚ä½†å¬è§å¯†æž—æ·±å¤„ï¼Œæœé¹ƒé¸Ÿé—´æˆ–è½»
+å•¼ã€‚æž—å­è¾¹ä¸Šä»Žåœ°åº•ä¸‹æ¶Œå‡ºä¸€æ±ªæ¸…æ³‰ï¼ˆquanï¼‰ã€‚
 LONG        );
      
-     set("outdoors","¹ÅÄ¹");
+     set("outdoors","å¤å¢“");
      
      set("exits", ([
          "east" : __DIR__"caodi",
@@ -21,8 +21,8 @@ LONG        );
      ]));
 
      set("item_desc", ([
-          "guo" : "ÀÛÀÛÏÊ¹û¹ÒÔÚÖ¦Í·£¬ºÃÏó¿ÉÒÔ²É£¨cai£©ÏÂÀ´¡£\n",
-          "quan" : "Ò»ä£ÇåÈªÇå³º¼ûµ×£¬ÄãÈÌ²»×¡ÏëÈ¥ºÈ£¨he£©¼¸¿Ú¡£\n",
+          "guo" : "ç´¯ç´¯é²œæžœæŒ‚åœ¨æžå¤´ï¼Œå¥½è±¡å¯ä»¥é‡‡ï¼ˆcaiï¼‰ä¸‹æ¥ã€‚\n",
+          "quan" : "ä¸€æ´Œæ¸…æ³‰æ¸…æ¾ˆè§åº•ï¼Œä½ å¿ä¸ä½æƒ³åŽ»å–ï¼ˆheï¼‰å‡ å£ã€‚\n",
      ]));
     
      setup();
@@ -40,12 +40,12 @@ int do_cai(string arg)
        object ob,me = this_player();
       if (arg == "guo") {
        if(objectp(ob = present("ye guo", me))) 
-           return notify_fail("Äã²»ÊÇÒÑ¾­ÓÐÁË£¿³ÔÍêÁËÔÙ²É°É¡£\n");   
-       message_vision(YEL"$NÉìÊÖ´ÓÊ÷ÉÏÕªÏÂÒ»¸öÒ°¹û¡£\n"NOR, me);
+           return notify_fail("ä½ ä¸æ˜¯å·²ç»æœ‰äº†ï¼Ÿåƒå®Œäº†å†é‡‡å§ã€‚\n");   
+       message_vision(YEL"$Nä¼¸æ‰‹ä»Žæ ‘ä¸Šæ‘˜ä¸‹ä¸€ä¸ªé‡Žæžœã€‚\n"NOR, me);
        new(__DIR__"obj/guo")->move(me);
        return 1;
        }
-     return notify_fail("ÄãÒª²ÉÊ²Ã´? \n");
+     return notify_fail("ä½ è¦é‡‡ä»€ä¹ˆ? \n");
 }
 
 int do_he(string arg)
@@ -53,31 +53,31 @@ int do_he(string arg)
     object me = this_player();
        if (arg == "quan") {
           if (me->query("water") < me->query("str")*10+100) {
-            message_vision(HIC"$NÅõÆðÒ»ÍôÇåÈª£¬ÃÀÃÀµØºÈÁËÒ»¿Ú¡£\n"NOR, me);
+            message_vision(HIC"$Næ§èµ·ä¸€æ±ªæ¸…æ³‰ï¼Œç¾Žç¾Žåœ°å–äº†ä¸€å£ã€‚\n"NOR, me);
             me->add("water", 50, me);
             return 1;
            }
-       return notify_fail("ÄãºÈÌ«¶àÁË£¬²»ÅÂ³ÅËÀ£¿\n");  
+       return notify_fail("ä½ å–å¤ªå¤šäº†ï¼Œä¸æ€•æ’‘æ­»ï¼Ÿ\n");  
        } 
-      return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+      return notify_fail("ä½ è¦å–ä»€ä¹ˆï¼Ÿ\n");
 }
 
 int do_zhao(string arg)
 {
           mapping fam;
           object me = this_player();
-          if (!(fam = me->query("family")) || fam["family_name"] != "¹ÅÄ¹ÅÉ")
-           return notify_fail("Äã²»ÊÇ¹ÅÄ¹´«ÈË£¬ÈçºÎÄÜÁìÎò¹ÅÄ¹Îä¹¦£¿\n");
+          if (!(fam = me->query("family")) || fam["family_name"] != "å¤å¢“æ´¾")
+           return notify_fail("ä½ ä¸æ˜¯å¤å¢“ä¼ äººï¼Œå¦‚ä½•èƒ½é¢†æ‚Ÿå¤å¢“æ­¦åŠŸï¼Ÿ\n");
           if (me->is_busy() || me->is_fighting())
-               return notify_fail("ÄãÕýÃ¦×ÅÄÄ£¡\n");                      
+               return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");                      
           if (arg == "quan"){   
-          if (me->query("gender") == "ÄÐÐÔ")
-             return notify_fail("´óÄÐÈË¶Ô×Å×Ô¼ºµÄµ¹Ó°ÓÐÊ²Ã´¶à¿´µÄ¡£\n");       
+          if (me->query("gender") == "ç”·æ€§")
+             return notify_fail("å¤§ç”·äººå¯¹ç€è‡ªå·±çš„å€’å½±æœ‰ä»€ä¹ˆå¤šçœ‹çš„ã€‚\n");       
           if ((int)me->query_skill("cuff", 1) < 20)
-            return notify_fail("Äã¶Ô×ÅÈªË®ÕÐÊ×Åª×ËµØ¿´ÁË°ëÌì£¬ÓÐµã¹Â·¼×ÔÉÍµÄ¸Ð¾õ¡£\n"); 
+            return notify_fail("ä½ å¯¹ç€æ³‰æ°´æ‹›é¦–å¼„å§¿åœ°çœ‹äº†åŠå¤©ï¼Œæœ‰ç‚¹å­¤èŠ³è‡ªèµçš„æ„Ÿè§‰ã€‚\n"); 
           if (me->query_skill("meinv-quan", 1) >= 10)
-             return notify_fail("ÄãÒÑ¾­Ñ§»áÃÀÅ®È­·¨£¬×Ô¼ººÃºÃÁ·°É¡£\n");      
-          write("ÄãÄ¡·Â×Ô¼ºË®ÖÐµÄµ¹Ó°£¬ÐÄÖÐÓÐËùÌå»á¡£\n");
+             return notify_fail("ä½ å·²ç»å­¦ä¼šç¾Žå¥³æ‹³æ³•ï¼Œè‡ªå·±å¥½å¥½ç»ƒå§ã€‚\n");      
+          write("ä½ æ‘¹ä»¿è‡ªå·±æ°´ä¸­çš„å€’å½±ï¼Œå¿ƒä¸­æœ‰æ‰€ä½“ä¼šã€‚\n");
           me->receive_damage("jing", 15);
           me->improve_skill("meinv-quan", 2);
           return 1;

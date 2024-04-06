@@ -1,14 +1,14 @@
-// wdroad10.c »ÆÍÁÂ·
+// wdroad10.c é»„åœŸè·¯
 // Date: Feb.12 1998 By Java
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "»ÆÍÁÂ·");
+        set("short", "é»„åœŸè·¯");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ»ÆÍÁÂ·ÉÏ£¬Á½ÅÔÊÇÒõÉ­É­µÄÊ÷ÁÖ¡£ÕâÀïÊÇºþ±±¾³½ç£¬
-¾ÝËµ¾­³£ÓÐÍÁ·Ë³öÃ»£¬²»¿É¾ÃÁô¡£ÄÏ±ßÒ»ÌõÐ¡µÀ£¬Í¨ÏòÃÜÁÖÉî´¦¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£žæ‰¬çš„é»„åœŸè·¯ä¸Šï¼Œä¸¤æ—æ˜¯é˜´æ£®æ£®çš„æ ‘æž—ã€‚è¿™é‡Œæ˜¯æ¹–åŒ—å¢ƒç•Œï¼Œ
+æ®è¯´ç»å¸¸æœ‰åœŸåŒªå‡ºæ²¡ï¼Œä¸å¯ä¹…ç•™ã€‚å—è¾¹ä¸€æ¡å°é“ï¼Œé€šå‘å¯†æž—æ·±å¤„ã€‚
 LONG );
         set("outdoors", "wudang");
         set("exits", ([

@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("ÀÏÕß",({ "old" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("è€è€…",({ "old" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 60);
-   set("long", "ÕâÊÇÒ»¸ö¾Ã¾­ÊÂ¹ÊµÄÀÏÕß¡£\n");
+   set("long", "è¿™æ˜¯ä¸€ä¸ªä¹…ç»äº‹æ•…çš„è€è€…ã€‚\n");
        
    set("combat_exp", 150);
    set("str", 18);
@@ -33,8 +33,8 @@ void welcome(object ob,object ob2)
    if(!ob||!present(ob,environment())||ob2->is_fighting()) return;
 	switch(random(2))
 	{
-	case 0: message_vision("$NÌ¾µÀ£º»ÊÍÁÖ®Õù£¬°ÙĞÕ°§Õß!\n",ob2);break;
-	case 1: message_vision("$N¿´ÁË¿´$n£¬ËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+",Ò²ÊÇÀ´´ÕÈÈÄÖµÄÂğ?\n",ob2,ob);
+	case 0: message_vision("$Nå¹é“ï¼šçš‡åœŸä¹‹äº‰ï¼Œç™¾å§“å“€è€…!\n",ob2);break;
+	case 1: message_vision("$Nçœ‹äº†çœ‹$nï¼Œè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(ob)+",ä¹Ÿæ˜¯æ¥å‡‘çƒ­é—¹çš„å—?\n",ob2,ob);
 	}
 	remove_call_out("welcome");
 	return;

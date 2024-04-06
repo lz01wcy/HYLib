@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", GRN "����С·" NOR );
+        set("short", GRN "江边小路" NOR );
         set("long", @LONG
-�����ڳ������ϵ�һ��С·�ϣ������Ž�ˮ��������������
-Ҳ���ú�Щ������������ȥ��ֻ��Ⱥɽ���࣬��֪�δ��ǹ�;��
+你走在长江边上的一条小路上，耳听着江水哗哗的流，心情
+也觉得好些，放眼向西看去，只见群山连绵，不知何处是归途。
 LONG
         );
         set("exits", ([

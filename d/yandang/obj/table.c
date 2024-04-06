@@ -2,7 +2,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("×À×Ó", ({ "table", "×À×Ó", "×À"}) );
+        set_name("æ¡Œå­", ({ "table", "æ¡Œå­", "æ¡Œ"}) );
         set_weight(500);
         set_max_encumbrance(8000);
         set("no_get", 1);
@@ -11,8 +11,8 @@ void create()
                 set_default_object(__FILE__);
         else {
 		set("prep", "on");
-                set("unit", "ÕÅ");
-                set("long", "Ò»ÕÅËÄ·½µÄ×À×Ó,ÓÃ°×ÒøÏâ±ß¡£\n");
+                set("unit", "å¼ ");
+                set("long", "ä¸€å¼ å››æ–¹çš„æ¡Œå­,ç”¨ç™½é“¶é•¶è¾¹ã€‚\n");
                 set("value", 1);
         }
 }

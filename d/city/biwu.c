@@ -2,17 +2,17 @@
 inherit ROOM;
 void create()
 {
-        set("short", "º£ÌìÒ»Ïß");
+        set("short", "æµ·å¤©ä¸€çº¿");
         set("long", @LONG
-º£ÑóÖĞµÄÒ»¿éÊ¥µØ¡£ÎäÁÖÈËÊ¿Í¨³£¶¼À´´Ë´¦½øĞĞÇĞ´è±ÈÎä£¬Ñ°ÕÒÖª¼º¡£
-Ö»¼ûÉÏÊ×ÓĞĞ©Ê«¾ä£¬Ò²²»ÖªÊÇÄÄÎ»ÈËÎïÁôÏÂµÄÊÖ±Ê¡£ÔÚ°ø±ßÓĞÒ»¿éÊ¯
-Í·£¬ÉÏ¿Ì£º
+æµ·æ´‹ä¸­çš„ä¸€å—åœ£åœ°ã€‚æ­¦æ—äººå£«é€šå¸¸éƒ½æ¥æ­¤å¤„è¿›è¡Œåˆ‡ç£‹æ¯”æ­¦ï¼Œå¯»æ‰¾çŸ¥å·±ã€‚
+åªè§ä¸Šé¦–æœ‰äº›è¯—å¥ï¼Œä¹Ÿä¸çŸ¥æ˜¯å“ªä½äººç‰©ç•™ä¸‹çš„æ‰‹ç¬”ã€‚åœ¨å‚è¾¹æœ‰ä¸€å—çŸ³
+å¤´ï¼Œä¸Šåˆ»ï¼š
 [34m
-                       Ğ¦ÎÊÒ¶Âä¿´·çÔÆ£¬
-                       »ØÊ×»¯ÔÂÍûÇïË®¡£
+                       ç¬‘é—®å¶è½çœ‹é£äº‘ï¼Œ
+                       å›é¦–åŒ–æœˆæœ›ç§‹æ°´ã€‚
                                        
 [37m
-Äã¿ÉÒÔÊÔÊÔÔÚÕâ¸öÓĞÁéÆøµÄµØ·½ÌáÉı(levelup)ÎäÆ÷µÄµÈ¼¶¡£
+ä½ å¯ä»¥è¯•è¯•åœ¨è¿™ä¸ªæœ‰çµæ°”çš„åœ°æ–¹æå‡(levelup)æ­¦å™¨çš„ç­‰çº§ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -61,33 +61,33 @@ int  do_levelup(string arg)
 	string file,newfile,filestring;
 	me = this_player();
 	id = me->query("id");
-        if( !arg ) return notify_fail("ÄãÒªÌáÉıÊ²÷áÎäÆ÷£¿\n");
+        if( !arg ) return notify_fail("ä½ è¦æå‡ä»€éº½æ­¦å™¨ï¼Ÿ\n");
         gold = present("gold_money", this_player());
-        if( !gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if( !gold) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚\n");
         if( !objectp(ob = present(arg, me)) )
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
         if( ob->query("equipped") )
-        return notify_fail("Äã²»¿É¼À×°±¸ÖøÁËµÄÎäÆ÷¡£\n");
+        return notify_fail("ä½ ä¸å¯ç¥­è£…å¤‡è‘—äº†çš„æ­¦å™¨ã€‚\n");
         if( !ob->query("ownmake") )
-        return notify_fail("ÄãÖ»¿É¼À×Ô¼º´òÔìµÄÎäÆ÷¡£\n");
+        return notify_fail("ä½ åªå¯ç¥­è‡ªå·±æ‰“é€ çš„æ­¦å™¨ã€‚\n");
         if( ob->query("armor_type"))
-        return notify_fail("ÌáÉı¿ø¼×ÇëÈ¥±ğµÄµØ·½ÓÃjijiaÀ´×ö¡£\n");
+        return notify_fail("æå‡ç›”ç”²è¯·å»åˆ«çš„åœ°æ–¹ç”¨jijiaæ¥åšã€‚\n");
 
 	if( (int)me->query("qi") < 150 )
-		return notify_fail("ÄãµÄÆø²»¹»£¬ÎŞ·¨¶ÍÁ¶±øÆ÷£¡\n");
+		return notify_fail("ä½ çš„æ°”ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
 
 	if( (int)me->query("eff_qi") < 30 )
-		return notify_fail("ÄãÏÖÔÚµÄÌåÁ¦Ì«Èõ£¬ÎŞ·¨¶ÍÁ¶±øÆ÷£¡\n");
+		return notify_fail("ä½ ç°åœ¨çš„ä½“åŠ›å¤ªå¼±ï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
 
 	if( (int)me->query("eff_jing") < 10 )
-		return notify_fail("ÄãÏÖÔÚµÄ¾«Á¦ÎŞ·¨¼¯ÖĞ£¬²»ÄÜ¶ÍÁ¶±øÆ÷£¡\n");
+		return notify_fail("ä½ ç°åœ¨çš„ç²¾åŠ›æ— æ³•é›†ä¸­ï¼Œä¸èƒ½é”»ç‚¼å…µå™¨ï¼\n");
 	if( (int)me->query("score") < 100 )
-		return notify_fail("ÄãÏÖÔÚµÄ½­ºşÔÄÀú²»¹»£¬²»ÄÜ¶ÍÁ¶±øÆ÷£¡\n");
+		return notify_fail("ä½ ç°åœ¨çš„æ±Ÿæ¹–é˜…å†ä¸å¤Ÿï¼Œä¸èƒ½é”»ç‚¼å…µå™¨ï¼\n");
 
 	if( ((int)me->query("potential") - (int)me->query("learned_points"))< 20 )
-		return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬ÎŞ·¨¶ÍÁ¶±øÆ÷£¡\n");
+		return notify_fail("ä½ çš„æ½œèƒ½ä¸å¤Ÿï¼Œæ— æ³•é”»ç‚¼å…µå™¨ï¼\n");
 	j = (int)me->query("weapon/lv");
 
 	if(j<6) cost = 20*j;
@@ -96,10 +96,10 @@ int  do_levelup(string arg)
 	else if(j>500) cost = 200*j;
 	else cost = 60*j;
         if((int) gold->query_amount() < 100)
-        return notify_fail("ÄãÉíÉÏÃ»´ø¹»100Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡å¸¦å¤Ÿ100ä¸¤é‡‘å­ã€‚\n");
 
         if((int) gold->query_amount() < cost)
-        return notify_fail("ÄãÉíÉÏÃ»´ø¹»" + sprintf("%d",cost)+ "Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡å¸¦å¤Ÿ" + sprintf("%d",cost)+ "ä¸¤é‡‘å­ã€‚\n");
         gold->add_amount(-cost);
         me->start_busy(2);
 	me->add("bellicosity",cost);
@@ -113,8 +113,8 @@ int  do_levelup(string arg)
 	me->set("weapon/lv", j+1);
 	me->save();
 	reload_object(ob);
-	message_vision(HIY "±ŞÉíºöµÄÒ»ÁÁ£¬Ò»µÀ½ğ¹âÒşÈë$NµÄ"+ob->name()+HIY"£¬²»¼ûÁË£¡\n" NOR,me);
-	message_vision(HIG "$NµÄ"+ob->name()+HIG"µÄµÈ¼¶Ìá¸ßÁË£¡\n" NOR, me);
+	message_vision(HIY "é­èº«å¿½çš„ä¸€äº®ï¼Œä¸€é“é‡‘å…‰éšå…¥$Nçš„"+ob->name()+HIY"ï¼Œä¸è§äº†ï¼\n" NOR,me);
+	message_vision(HIG "$Nçš„"+ob->name()+HIG"çš„ç­‰çº§æé«˜äº†ï¼\n" NOR, me);
         seteuid(getuid());
 	return 1;
 }
@@ -122,16 +122,16 @@ int  do_levelup(string arg)
 int do_quit(string arg)
 {
 	if(arg=="all") {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄ±ÈÎä°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„æ¯”æ­¦å§ï¼\n");
         return 1;
 	}
 	if(arg=="corpse") {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄ±ÈÎä°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„æ¯”æ­¦å§ï¼\n");
         return 1;
 }  
 }
 int do_quit2(string arg)
 {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄ±ÈÎä°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„æ¯”æ­¦å§ï¼\n");
         return 1;
 }

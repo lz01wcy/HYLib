@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÇàÊ¯Ì¨½×");
+        set("short", "é’çŸ³å°é˜¶");
 	set("long", @LONG
-ÕâÊÇÓÉÇàÊ¯Æö³ÉµÄÌ¨½×£¬·½·½ÕýÕý£¬¿´ÆðÀ´ÆÄÎª¿¼¾¿£¬´óÇàÊ¯Ò»¿éÒ»¿éÖ±
-ÆÌµ½´óÌü£¬Ì¨½×Á½±ß»¹×öÁËÀ¸¸Ë¡£Ì¨½×ËÄÖÜ³¤×ÅÒ»Ð©Ò°²Ý£¬Í·¶¥ÓÐÒ»Ð©²»ÖªÃû
-µÄÐ¡ÄñÔÚÌøÀ´ÌøÈ¥¡£
+è¿™æ˜¯ç”±é’çŸ³ç Œæˆçš„å°é˜¶ï¼Œæ–¹æ–¹æ­£æ­£ï¼Œçœ‹èµ·æ¥é¢‡ä¸ºè€ƒç©¶ï¼Œå¤§é’çŸ³ä¸€å—ä¸€å—ç›´
+é“ºåˆ°å¤§åŽ…ï¼Œå°é˜¶ä¸¤è¾¹è¿˜åšäº†æ æ†ã€‚å°é˜¶å››å‘¨é•¿ç€ä¸€äº›é‡Žè‰ï¼Œå¤´é¡¶æœ‰ä¸€äº›ä¸çŸ¥å
+çš„å°é¸Ÿåœ¨è·³æ¥è·³åŽ»ã€‚
 LONG
 	);
 	set("exits", ([ 
@@ -15,7 +15,7 @@ LONG
 	    "westup" : __DIR__"xiaolu5",
         ]));
 
-        set("outdoors", "´óÀí");
+        set("outdoors", "å¤§ç†");
 
 	setup();
         replace_program(ROOM);

@@ -8,12 +8,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÊÞÆ¤ÒÂ", ({ "skincloth" }) );
+        set_name("å…½çš®è¡£", ({ "skincloth" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("material", "skin");
                 set("armor_prop/armor", 3);
         }

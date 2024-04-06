@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "不狼坡");
 	set("long", @LONG
-ɽ��Խ��Խ���գ����������Ӳݣ���ɽ��Ҳ�����ж���Ψ��ɽҰ��
-�ͼ�ֻ��ӥ����춿ա���������ʮ�����ң��һ�룬�������������
-���۴��̣�����ͨ�롣
+山势越来越凶险，遍是齐腰杂草，连山狼也不便行动，唯见山野兔
+和几只苍鹰翱翔於空。往西北四十余里，可遥见一岭，蜿蜒连绵数百里，
+满眼翠绿，名大通岭。
 LONG );
 	set("outdoors", "qilian");
 	set("exits", ([

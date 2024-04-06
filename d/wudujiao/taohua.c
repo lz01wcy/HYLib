@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÌÒ»¨Óø");
+	set("short", "æ¡ƒèŠ±å³ª");
 	set("long", @LONG
-Äã×ßÔÚÁ½É½Ïà¼ÐµÄÏ¿¹ÈÖÐ£¬É½ÉÏÉ½ÏÂÈ«ÊÇÎÞ±ßµÄÒ°ÌÒÊ÷£¬Ò»Õó
-É½·ç´µÀ´£¬ÂäÓ¢çÍ·×¡£Êý°ÙÄêÂäÏÂµÄÌÒ»¨£¬ÌÒÖ¦¶¼¶Ñ»ýÔÚµØÉÏ£¬ÈË
-×ßÔÚÉÏÃæÈíÈíµÄ¡£ÈÕ½üÕýÎçÁË£¬Ô¶´¦É½ÁÖ¼äËÆºõÆ®µ´×ÅÒ»¹ÉÇáÎí£¬
-Ô½À´Ô½Å¨¡£
+ä½ èµ°åœ¨ä¸¤å±±ç›¸å¤¹çš„å³¡è°·ä¸­ï¼Œå±±ä¸Šå±±ä¸‹å…¨æ˜¯æ— è¾¹çš„é‡Žæ¡ƒæ ‘ï¼Œä¸€é˜µ
+å±±é£Žå¹æ¥ï¼Œè½è‹±ç¼¤çº·ã€‚æ•°ç™¾å¹´è½ä¸‹çš„æ¡ƒèŠ±ï¼Œæ¡ƒæžéƒ½å †ç§¯åœ¨åœ°ä¸Šï¼Œäºº
+èµ°åœ¨ä¸Šé¢è½¯è½¯çš„ã€‚æ—¥è¿‘æ­£åˆäº†ï¼Œè¿œå¤„å±±æž—é—´ä¼¼ä¹Žé£˜è¡ç€ä¸€è‚¡è½»é›¾ï¼Œ
+è¶Šæ¥è¶Šæµ“ã€‚
 LONG
 	);
         set("outdoors", "wudujiao");
@@ -36,15 +36,15 @@ int valid_leave (object who, string dir)
      return ::valid_leave(who, dir);
     }
 else{
-if ((string)who->query("family/family_name")!="Îå¶¾½Ì")
+if ((string)who->query("family/family_name")!="äº”æ¯’æ•™")
    {
     if(!(present("xingjun san", who))){
-      message_vision ("Ò»ÕóÅ¨ÏãÏ®À´£¬$N¶ÙÊ±¾õµÃÍ·ÖØ½ÅÇá¡£\n",who);
+      message_vision ("ä¸€é˜µæµ“é¦™è¢­æ¥ï¼Œ$Né¡¿æ—¶è§‰å¾—å¤´é‡è„šè½»ã€‚\n",who);
       who->receive_damage("qi", 50);
       remove_call_out ("fall_down");
       call_out ("fall_down",1,who,environment(who));
       who->start_busy(1,1);
-      return notify_fail("Äã½û²»×¡õÔõÄÁË¼¸ÏÂ£¬Á½ÍÈÍ»È»Ò»Èí¡£\n");
+      return notify_fail("ä½ ç¦ä¸ä½è¸‰è·„äº†å‡ ä¸‹ï¼Œä¸¤è…¿çªç„¶ä¸€è½¯ã€‚\n");
 //    who->unconcious();
      } 
    }

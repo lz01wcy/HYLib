@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "³ø·¿");
+	set("short", "å¨æˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇ¹éÔÆ×¯µÄ³ø·¿£¬Ò»¸öÏçÏÂ¸¾ÈËÕıÔÚÔî±ßÃ¦À´Ã¦È¥£¬¿´À´
-Ëı¾ÍÊÇÕâÀïµÄ³øÄïÁË¡£Èç¹û¶Ç×Ó¶öÁË£¬¾Í¸Ï¿ìÕÒ³øÄïÒª (serve)Ğ©
-³ÔµÄ°É¡£
+è¿™é‡Œæ˜¯å½’äº‘åº„çš„å¨æˆ¿ï¼Œä¸€ä¸ªä¹¡ä¸‹å¦‡äººæ­£åœ¨ç¶è¾¹å¿™æ¥å¿™å»ï¼Œçœ‹æ¥
+å¥¹å°±æ˜¯è¿™é‡Œçš„å¨å¨˜äº†ã€‚å¦‚æœè‚šå­é¥¿äº†ï¼Œå°±èµ¶å¿«æ‰¾å¨å¨˜è¦ (serve)äº›
+åƒçš„å§ã€‚
 LONG );
 	set("no_clean_up", 0);
 	set("exits", ([
@@ -30,15 +30,15 @@ int do_serve()
 	object food;
 	object water;
 	me=this_player();
-	if (me->query("family/family_name") != "ÌÒ»¨µº")
-		return notify_fail("³øÄïµÀ£ºÄã²»ÊÇÌÒ»¨µºµÜ×Ó£¬²»ÄÜÄÃÈ¡Ê³Îï¡£\n");
+	if (me->query("family/family_name") != "æ¡ƒèŠ±å²›")
+		return notify_fail("å¨å¨˜é“ï¼šä½ ä¸æ˜¯æ¡ƒèŠ±å²›å¼Ÿå­ï¼Œä¸èƒ½æ‹¿å–é£Ÿç‰©ã€‚\n");
         if(present("zongzi",this_player()) || present("tea",this_player())) 
-		return notify_fail("³øÄïµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+		return notify_fail("å¨å¨˜é“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ«æµªè´¹é£Ÿç‰©ã€‚\n");
         if(present("zongzi",this_object()) || present("tea",this_object())) 
-		return notify_fail("³øÄïµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+		return notify_fail("å¨å¨˜é“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ«æµªè´¹é£Ÿç‰©ã€‚\n");
 	if (query("ricewater")>0)
 	{
-		message_vision("³øÄïÁ¬Éù´ğÓ¦£¬¸ø$NÒ»±­Ïã²èºÍÒ»¸öôÕ×Ó¡£\n",me);
+		message_vision("å¨å¨˜è¿å£°ç­”åº”ï¼Œç»™$Nä¸€æ¯é¦™èŒ¶å’Œä¸€ä¸ªç²½å­ã€‚\n",me);
 		food=new(__DIR__"obj/zongzi");
 		water=new("/d/wudang/obj/xiangcha");
 		food->move(me);
@@ -46,13 +46,13 @@ int do_serve()
 		add("ricewater",-1);
 	}
 	else 
-		message_vision("³øÄï¶Ô$NÇ¸ÉùµÀ: àË£¬³ÔµÄºÈµÄ¶¼Ã»ÁË¡£\n",me);
+		message_vision("å¨å¨˜å¯¹$Næ­‰å£°é“: å—¨ï¼Œåƒçš„å–çš„éƒ½æ²¡äº†ã€‚\n",me);
 	return 1; 
 }
 int valid_leave(object me,string dir)
 {
 	me=this_player();
         if(dir=="south" && (present("zongzi",this_player()) || present("tea",this_player()))) 
-             return notify_fail("³øÄïËµµÀ£º³ÔÁË¾Í±ğ´ø×ß¡£\n");
+             return notify_fail("å¨å¨˜è¯´é“ï¼šåƒäº†å°±åˆ«å¸¦èµ°ã€‚\n");
         return ::valid_leave(me,dir);
 }

@@ -5,15 +5,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"±ùÑ©ÐÄ·¨"NOR, ({ "bingxue-book" }));
+        set_name(HIW"å†°é›ªå¿ƒæ³•"NOR, ({ "bingxue-book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
 //                set("no_drop",1);
                 set("long",
-                        "ÕâÊÇÒ»±¾Ñ§±ùÑ©ÐÄ·¨µÄÊé¡£\n");
+                        "è¿™æ˜¯ä¸€æœ¬å­¦å†°é›ªå¿ƒæ³•çš„ä¹¦ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

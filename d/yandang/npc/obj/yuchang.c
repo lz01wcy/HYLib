@@ -4,21 +4,21 @@ inherit SWORD;
 
 void create()
 {
-	set_name(HIC"Óã³¦½£"NOR, ({ "yuchang","sword"}) );
+	set_name(HIC"é±¼è‚ å‰‘"NOR, ({ "yuchang","sword"}) );
 	set_weight(6000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "¶ÌĞ¡µÄ½£Éí¾«Ã£ËÄÉä,°ÑÊÖºóµñ¿ÌÁËÒ»Ìõ·ÉÁú.\n
-ºÏÂ£(close)ºóÄÜ³ÉÎªÒ»Ö»Óñïí.\n");
+		set("unit", "æŠŠ");
+		set("long", "çŸ­å°çš„å‰‘èº«ç²¾èŒ«å››å°„,æŠŠæ‰‹åé›•åˆ»äº†ä¸€æ¡é£é¾™.\n
+åˆæ‹¢(close)åèƒ½æˆä¸ºä¸€åªç‰é•¯.\n");
 		set("value", 80000);
 		set("material", "steel");
 	}
 	init_sword(880);
       set("wield_msg",
-"Óã---³¦----½£----------$NÑöÌì³¤Ğ¥,Ò»°Ñ¶ÌĞ¡µÄ"+HIC+"½£"+NOR+"³öÏÖÔÚÊÖÖĞ!\n");
-	set("unwield_msg","$N°Ñ"+HIC+"¶Ì½£"+NOR+"Ğ¡ĞÄµØÊÕºÃ.\n");
+"é±¼---è‚ ----å‰‘----------$Nä»°å¤©é•¿å•¸,ä¸€æŠŠçŸ­å°çš„"+HIC+"å‰‘"+NOR+"å‡ºç°åœ¨æ‰‹ä¸­!\n");
+	set("unwield_msg","$NæŠŠ"+HIC+"çŸ­å‰‘"+NOR+"å°å¿ƒåœ°æ”¶å¥½.\n");
        setup();
 }
 void init()
@@ -33,7 +33,7 @@ me = this_player();
 	if( !living(me))	return 0;
 	jade = new(__DIR__"cuiyuzhu.c");
 	jade->move(me);
-message_vision("$N°Ñ"+HIC+"Óã³¦½£"+NOR+"ºÏ³ÉÒ»Ö»Ğ¡ÇÉµÄ"+HIC+"´äÓñïí.\n"NOR,this_player());
+message_vision("$NæŠŠ"+HIC+"é±¼è‚ å‰‘"+NOR+"åˆæˆä¸€åªå°å·§çš„"+HIC+"ç¿ ç‰é•¯.\n"NOR,this_player());
 	destruct(this_object());
 
 return 1;

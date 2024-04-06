@@ -2,13 +2,13 @@
 inherit THROWING; 
 void create()
 {
-        set_name("¶á»êÕë", ({ "needle" }) );
+        set_name("å¤ºé­‚é’ˆ", ({ "needle" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long",     "Ô´×ÔÌÆÃÅµÄ°µÆ÷¡£\n");
-                set("unit", "°Ñ");
-                set("base_unit", "Êø");
+                set("long",     "æºè‡ªå”é—¨çš„æš—å™¨ã€‚\n");
+                set("unit", "æŠŠ");
+                set("base_unit", "æŸ");
                 set("base_weight", 10);
         set("base_value", 250);
         }

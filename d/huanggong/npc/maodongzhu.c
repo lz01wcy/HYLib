@@ -5,16 +5,16 @@ inherit NPC;
 
 void create()
 {
-	set_name("ë����", ({"mao dongzhu", "mao", "dongzhu"}));
-	set("title",HIY"������"HIR"����ʹ"NOR"���µ���");
-	set("nickname",HIY"��̫��"NOR);
+	set_name("毛东珠", ({"mao dongzhu", "mao", "dongzhu"}));
+	set("title",HIY"神龙教"HIR"赤龙使"NOR"座下弟子");
+	set("nickname",HIY"假太后"NOR);
 	set("long",
-"һ����ʮ�����ҵĹ󸾣�����ɫ���ף�Ŀ�⾼������üͷ΢������
-�����г�ɫ���ֺ�������ʲô���£��㲻��Ѱ˼��������Ϊ��̫��
-����ʲô�����ĵģ��������ˣ��������Ϲ��������ǻ�̫������
-�Ϲ����ܲ��Ὺ�ġ���\n");
+"一个三十岁左右的贵妇，她脸色极白，目光炯炯，但眉头微蹙，似
+乎颇有愁色，又好象在想什么心事，你不禁寻思：“她身为皇太后，
+还有什么不开心的？啊，是了，她死了老公。就算是皇太后，死了
+老公，总不会开心。”\n");
 
-	set("gender", "Ů��");
+	set("gender", "女性");
 	set("attitude", "peaceful"); 
 	set("age", 40);
 	set("per", 21);

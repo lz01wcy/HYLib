@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÀÏÆòØ¤", ({ "qi gai","beggar","gai" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("è€ä¹ä¸", ({ "qi gai","beggar","gai" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 53);
-	set("long", "Ò»¸öÂúÁ³·çËªÖ®É«µÄÀÏÆòØ¤¡£\n");
+	set("long", "ä¸€ä¸ªæ»¡è„¸é£éœœä¹‹è‰²çš„è€ä¹ä¸ã€‚\n");
 
 	set("str", 25);
 	set("con", 25);
@@ -100,12 +100,12 @@ int accept_object(object me, object obj)
 {
 	if (obj->query("money_id") && obj->value() >= 1) {
         	 command("smile");
-	         command("say ¶àĞ»À² ! ÆäÊµÎÒ»¹ÊÇÓĞµãÇ®µÄ£¬Õâ´ÎÖ»²»¹ıÊÔÊÔÄã°ÕÁË !");
+	         command("say å¤šè°¢å•¦ ! å…¶å®æˆ‘è¿˜æ˜¯æœ‰ç‚¹é’±çš„ï¼Œè¿™æ¬¡åªä¸è¿‡è¯•è¯•ä½ ç½¢äº† !");
         	 command("give 10 silver to " + me->query("id"));
 	}
         else {
         	 command("shake");
-	         command("say ÕâÖÖ¶«Î÷¹í²ÅÒª ! ¹öÒ»±ßÈ¥ !");
+	         command("say è¿™ç§ä¸œè¥¿é¬¼æ‰è¦ ! æ»šä¸€è¾¹å» !");
 	         command("give " + obj->query("id") + " to " + me->query("id"));
 //               obj->move(this_player());
         }
@@ -115,6 +115,6 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-	command("say " + RANK_D->query_respect(me) + "ÈÄÃü¢¦Ğ¡µÄÕâ¾ÍÀë¿ª¢¦\n");
+	command("say " + RANK_D->query_respect(me) + "é¥¶å‘½Ï€ã€‰æ¼é¥©å± è‚Ÿ\n");
 	return 0;
 }

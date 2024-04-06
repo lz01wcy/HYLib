@@ -1,4 +1,4 @@
-// shulin.c Ê÷ÁÖ
+// shulin.c æ ‘æ—
 // zly 99.7.28
 
 #include <room.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-       set("short","Ê÷ÁÖ");
+       set("short","æ ‘æ—");
        set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬Ã¯Ê¢µÄÊ÷ÁÖ£¬µ½´¦¹ÅÄ¾²ÎÌì£¬Äãµ½ÁËÕâÀï£¬ÔõÃ´Ò²¿´
-²»Çå³şÖÜÎ§µÄ¾°ÏóÁË¡£
+è¿™é‡Œæ˜¯ä¸€ç‰‡èŒ‚ç››çš„æ ‘æ—ï¼Œåˆ°å¤„å¤æœ¨å‚å¤©ï¼Œä½ åˆ°äº†è¿™é‡Œï¼Œæ€ä¹ˆä¹Ÿçœ‹
+ä¸æ¸…æ¥šå‘¨å›´çš„æ™¯è±¡äº†ã€‚
 LONG
      );
 
@@ -51,14 +51,14 @@ int valid_leave(object me, string dir)
         {
                 me->move(__DIR__"houshan");
                 me->delete_temp("mark/steps");
-             return notify_fail("Äãµ½´¦ÂÒ×ß£¬ºöÈ»ÑÛÇ°Ò»ÁÁ£¬²»Öª²»¾õÀ´µ½ÁËºóÉ½¡£\n");
+             return notify_fail("ä½ åˆ°å¤„ä¹±èµ°ï¼Œå¿½ç„¶çœ¼å‰ä¸€äº®ï¼Œä¸çŸ¥ä¸è§‰æ¥åˆ°äº†åå±±ã€‚\n");
         }  
 
         if (me->query_temp("mark/steps") == -5)
         {
                 me->move(__DIR__"houyuan");
                 me->delete_temp("mark/steps");
-                return notify_fail("Äã×ßÀ´×ßÈ¥£¬²»Öª²»¾õÓÖ»Øµ½ÁËºóÔº¡£\n");
+                return notify_fail("ä½ èµ°æ¥èµ°å»ï¼Œä¸çŸ¥ä¸è§‰åˆå›åˆ°äº†åé™¢ã€‚\n");
         }
            
         return ::valid_leave(me, dir);

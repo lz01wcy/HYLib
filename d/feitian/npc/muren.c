@@ -1,14 +1,14 @@
-// muren.c Ä¾ÈË
+// muren.c æœ¨äºº
 
 inherit NPC;
 //  inherit F_CLEAN_UP
 
 void create()
 {
-        set_name("Ä¾ÈË", ({ "mu ren", "ren" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("æœ¨äºº", ({ "mu ren", "ren" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
-        set("long", "Éñ¹Å»îÐÄÁ÷µÄÄ¾ÈË£¬¶ÔÁ·¹¦´óÓÐºÃ´¦¡£\n");
+        set("long", "ç¥žå¤æ´»å¿ƒæµçš„æœ¨äººï¼Œå¯¹ç»ƒåŠŸå¤§æœ‰å¥½å¤„ã€‚\n");
         set("attitude", "heroism");
 
         set("str", 25);
@@ -52,15 +52,15 @@ int accept_fight(object ob)
         if (is_fighting()) return 0;
 
         if (me->query("damaged"))
-                return notify_fail("Õâ¸öÄ¾ÈËÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("è¿™ä¸ªæœ¨äººå·²ç»è¢«æ‰“åäº†ï¼\n");
 
         if (random(me->query("fight_times")) >= 10) {
                 me->set("damaged", 1);
-                return notify_fail("Õâ¸öÄ¾ÈËÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("è¿™ä¸ªæœ¨äººå·²ç»è¢«æ‰“åäº†ï¼\n");
         }
 
         if (me->query("last_fighter") == ob->query("id"))
-                return notify_fail("Äã¸Õ¸úÕâ¸öÄ¾ÈËÁ·¹ý¹¦£¡\n");
+                return notify_fail("ä½ åˆšè·Ÿè¿™ä¸ªæœ¨äººç»ƒè¿‡åŠŸï¼\n");
 
         me->set("last_fighter", ob->query("id"));
         me->add("fight_times", 1);

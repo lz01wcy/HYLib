@@ -1,4 +1,4 @@
-// jungu.c Ë®Áé¶ù
+// jungu.c æ°´çµå„¿
 
 #include <ansi.h>
 
@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ë®Áé¶ù", ({"jungu"}));
-	set("nickname", GRN"ÌÒ»¨µº¿ªÉ½×æÊ¦"NOR);
-	set("gender", "Å®ĞÔ");
+	set_name("æ°´çµå„¿", ({"jungu"}));
+	set("nickname", GRN"æ¡ƒèŠ±å²›å¼€å±±ç¥–å¸ˆ"NOR);
+	set("gender", "å¥³æ€§");
 	set("age", 20);
 	set("long", 
-		"Ëû¾ÍÊÇÌÒ»¨µºµÄ´´Ê¼ÈË¡¸Ë®Áé¶ù¡¹¡£\n");
+		"ä»–å°±æ˜¯æ¡ƒèŠ±å²›çš„åˆ›å§‹äººã€Œæ°´çµå„¿ã€ã€‚\n");
 
 	setup();
 	

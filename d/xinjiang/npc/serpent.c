@@ -2,9 +2,9 @@
 inherit NPC; 
 void create()
 {
-        set_name("ºÚ¹Ú¾Şòş", ({ "serpent" }) );
-        set("long", "Ò»Ö»ÎÚºÚÓÍÁÁµÄ¾Şòş£¬Í·ÉÏÉúÖøÒ»¸ö´óÈâÁö¡£\n"); 
-        set("race", "Ò°ÊŞ");
+        set_name("é»‘å† å·¨èŸ’", ({ "serpent" }) );
+        set("long", "ä¸€åªä¹Œé»‘æ²¹äº®çš„å·¨èŸ’ï¼Œå¤´ä¸Šç”Ÿè‘—ä¸€ä¸ªå¤§è‚‰ç˜¤ã€‚\n"); 
+        set("race", "é‡å…½");
         set("age", 400);
         set("attitude", "aggressive"); 
         set("max_gin", 900);
@@ -14,7 +14,7 @@ void create()
         set("cor", 70);
         set("spi", 20);
         set("int", 10); 
-        set("limbs", ({ "Í·²¿", "Çû¸É", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº¯å¹²", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) ); 
         set_temp("apply/attack", 60);
         set_temp("apply/damage", 40);

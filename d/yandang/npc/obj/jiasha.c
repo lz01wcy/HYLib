@@ -5,13 +5,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name( HIC "ÌìÂŞåÈôÄ" NOR, ({ "tianluo-jiasha", "cloth" }) );
-      set("long","ÕâÊÇÓÃ´óÑ©É½ÖĞ±ù²ÏµÄË¿ËùÖ¯³ÉµÄ,µ¶½£ÎŞÉË,Ë®»ğ²»ÇÖ.\n");
+	set_name( HIC "å¤©ç½—è¿¦è£Ÿ" NOR, ({ "tianluo-jiasha", "cloth" }) );
+      set("long","è¿™æ˜¯ç”¨å¤§é›ªå±±ä¸­å†°èš•çš„ä¸æ‰€ç»‡æˆçš„,åˆ€å‰‘æ— ä¼¤,æ°´ç«ä¸ä¾µ.\n");
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("value", 40000);
 		set("material", "cloth");
 		set("armor_prop/armor", 510);

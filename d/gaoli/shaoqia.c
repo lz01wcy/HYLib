@@ -1,12 +1,12 @@
-// Room in ����
+// Room in 高丽
 inherit ROOM;
 void create()	
 {
-	set("short", "�ڿ�");
+	set("short", "哨卡");
 	set("long", @LONG
 	
-��������ʯ���������һ���ڿ����㻹û�п��������˴󺰽���ͣ
-�����㿴��ʿ�����ϵļ�����Ͻ�ת������ߡ�
+你走在青石大道，来到一个哨卡，你还没有靠近，有人大喊叫你停
+步，你看见士兵弓上的箭，你赶紧转身向后走。
 LONG
 	);
 set("outdoors", "/d/gaoli");

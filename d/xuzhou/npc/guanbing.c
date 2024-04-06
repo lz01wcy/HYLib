@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("ÊÌÎÀ",({ "shi wei","shiwei","wei" }) );
-   set("gender", "ÄÐÐÔ" );
+   set_name("ä¾å«",({ "shi wei","shiwei","wei" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 32);
-   set("long", "ÕâÊÇÊØÎÀ»Ê¹¬µÄÊÌÎÀ¡£\n");
+   set("long", "è¿™æ˜¯å®ˆå«çš‡å®«çš„ä¾å«ã€‚\n");
        
    set("combat_exp",800000);
    set("attitude", "peaceful");
@@ -52,8 +52,8 @@ void create()
 
         set("chat_chance_combat", 10);
 	set("chat_msg_combat", ({
-		"Í»ØÊ±øºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÔì·´²»³É£¿\n",
-		"Í»ØÊ±øºÈµÀ£ºÅÜµÃÁËºÍÉÐÅÜ²»ÁËÃí£¬Äã»¹ÊÇ¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+		"çªåŽ¥å…µå–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
+		"çªåŽ¥å…µå–é“ï¼šè·‘å¾—äº†å’Œå°šè·‘ä¸äº†åº™ï¼Œä½ è¿˜æ˜¯å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
                 (: perform_action, "blade.leitingpili" :),
                 (: perform_action, "blade.kuang" :),
 	}));
@@ -76,7 +76,7 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 //	me->apply_condition("killer", 500);
 	kill_ob(me);
 	return 1;

@@ -1,6 +1,6 @@
 // /d/welcome/welcome.c
-// º£ÑóII
-// ÐÇÐÇ(lywin) 2000/6/4
+// æµ·æ´‹II
+// æ˜Ÿæ˜Ÿ(lywin) 2000/6/4
 
 #include <room.h>
 #include <ansi.h>
@@ -8,16 +8,16 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "»¶Ó­¹âÁÙÏÀ¿ÍÐÐº£ÑóII");
+  set ("short", "æ¬¢è¿Žå…‰ä¸´ä¾ å®¢è¡Œæµ·æ´‹II");
   set ("long", @LONG
-Äã»ì»ìãçãçµÄÀ´µ½ÁËÒ»¸öÄ°ÉúµÄÊÀ½ç£¬ÄãÏë¿´¿´ÄãÔÚÄÄÀï(l, look),
-ÄãÏëÖªµÀÕâ¸öÊÀ½çÀï¶¼ÓÐË­(who),»òÐíÄãÒªËÄ´¦×ß×ß£¬(w,s,n,e,nw,ne,
-,sw,se,d,u,sd,nd,wd,ed,wu,nu,eu,su)£¬²»¹ýÄãµÃÏÈ¿´¿´ÓÐÄÇÐ©³ö¿Ú¡£
-ÐÂÊÖÇëÓÃchat¼Ó¿Õ¸ñ£¬È»ºóÔÙ¼ÓÉÏÒªËµµÄ»°À´ÁÄÌì¡£
-¶«±ß(east)ÊÇÐÂÊÖÅàÑµÊÒ¡£ ÁíÍâÕâÀïÓÐ8ÌõÂ··Ö±ðÍ¨Ïò
-yz ÑïÖÝ bj ±±¾© xy ÏåÑô dl ´óÀí lz À¼ÖÝ xz À­Èø
-qz ÈªÖÝ wg Îä¹Ý pa Æ½°² cd ³É¶¼ km À¥Ã÷ xj ÐÂ½®
-[1;31m½ðÓ¹´óÏÀ¿´À´»á¸øÄãÒ»Ð©°ïÖúµÄ(ask jin yong about liwu)
+ä½ æ··æ··æ²Œæ²Œçš„æ¥åˆ°äº†ä¸€ä¸ªé™Œç”Ÿçš„ä¸–ç•Œï¼Œä½ æƒ³çœ‹çœ‹ä½ åœ¨å“ªé‡Œ(l, look),
+ä½ æƒ³çŸ¥é“è¿™ä¸ªä¸–ç•Œé‡Œéƒ½æœ‰è°(who),æˆ–è®¸ä½ è¦å››å¤„èµ°èµ°ï¼Œ(w,s,n,e,nw,ne,
+,sw,se,d,u,sd,nd,wd,ed,wu,nu,eu,su)ï¼Œä¸è¿‡ä½ å¾—å…ˆçœ‹çœ‹æœ‰é‚£äº›å‡ºå£ã€‚
+æ–°æ‰‹è¯·ç”¨chatåŠ ç©ºæ ¼ï¼Œç„¶åŽå†åŠ ä¸Šè¦è¯´çš„è¯æ¥èŠå¤©ã€‚
+ä¸œè¾¹(east)æ˜¯æ–°æ‰‹åŸ¹è®­å®¤ã€‚ å¦å¤–è¿™é‡Œæœ‰8æ¡è·¯åˆ†åˆ«é€šå‘
+yz æ‰¬å·ž bj åŒ—äº¬ xy è¥„é˜³ dl å¤§ç† lz å…°å·ž xz æ‹‰è¨
+qz æ³‰å·ž wg æ­¦é¦† pa å¹³å®‰ cd æˆéƒ½ km æ˜†æ˜Ž xj æ–°ç–†
+[1;31mé‡‘åº¸å¤§ä¾ çœ‹æ¥ä¼šç»™ä½ ä¸€äº›å¸®åŠ©çš„(ask jin yong about liwu)
 
 LONG);
 

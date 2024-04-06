@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "西长安街");
 	set("long", @LONG
-�����ڽ��ϣ��е�����Ľ���Ҫ�ȱ𴦵ĸɾ������ࡣ����������
-�����ţ�ֱͨ�����⡣�����ǿյ����Ľֵ����ϱ���һ������ϡ�ٵ�С
-�����ͨ��������
+你走在街上，感到这里的街面要比别处的干净、整洁。再往西就是
+西城门，直通往郊外。东边是空荡荡的街道。南边是一条行人稀少的小
+巷，北边通往西单。
 LONG );
         set("outdoors", "city2");
 	set("no_clean_up", 0);

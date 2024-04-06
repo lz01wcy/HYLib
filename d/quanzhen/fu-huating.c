@@ -1,15 +1,15 @@
-// fu-huating »¨Ìü
+// fu-huating èŠ±åŽ…
 // By Lgg,1998.10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "»¨Ìü");
+        set("short", "èŠ±åŽ…");
         set("long", @LONG
-ÕâÀïÊÇÕâ»§ÈË¼ÒºÈ¾ÆÉÍÔÂµÄËùÔÚ£¬Ò»¸öÐ¡Í¤×Ó½¨ÔìÔÚÌüµÄÖÐÑë£¬
-ËÄÖÜÎ§ÈÆ×ÅÒ»Ð©ÆÏÌÑÌÙ(teng)¡£Ò»ÕóÎ¢·ç´µ¹ý£¬¿ÕÆøÖÐËÆºõÓÐÒþÒþ
-µÄ»¨ÏãÆ®À´£¬ÖÐÈËÓû×í¡£
+è¿™é‡Œæ˜¯è¿™æˆ·äººå®¶å–é…’èµæœˆçš„æ‰€åœ¨ï¼Œä¸€ä¸ªå°äº­å­å»ºé€ åœ¨åŽ…çš„ä¸­å¤®ï¼Œ
+å››å‘¨å›´ç»•ç€ä¸€äº›è‘¡è„è—¤(teng)ã€‚ä¸€é˜µå¾®é£Žå¹è¿‡ï¼Œç©ºæ°”ä¸­ä¼¼ä¹Žæœ‰éšéš
+çš„èŠ±é¦™é£˜æ¥ï¼Œä¸­äººæ¬²é†‰ã€‚
 LONG
         );
         set("outdoors", "quanzhen");
@@ -19,7 +19,7 @@ LONG
         ]));
         set("no_clean_up", 0);
         set("item_desc", ([
-            "teng": "ÕâÐ©ÌÙºÃÏó³¤µÃÓÐÐ©ÈÕ×ÓÁË£¬ÃÜ²»Í¸·ç£¬ÏÄÌì´ôÔÚÌÙÏÂ¿Ï¶¨ÒõÁ¹¼«ÁË¡£\n"
+            "teng": "è¿™äº›è—¤å¥½è±¡é•¿å¾—æœ‰äº›æ—¥å­äº†ï¼Œå¯†ä¸é€é£Žï¼Œå¤å¤©å‘†åœ¨è—¤ä¸‹è‚¯å®šé˜´å‡‰æžäº†ã€‚\n"
         ]) );
         setup();
         replace_program(ROOM);

@@ -1,4 +1,4 @@
-// Room: /d/huijiang/obj/box.c ±¦Ïä
+// Room: /d/huijiang/obj/box.c å®ç®±
 // Last Modified by winder on Sep. 12 2001
 
 #include <ansi.h>
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(YEL"±¦Ïä"NOR, ({ "gold xiang", "xiang", "box" }) );
+	set_name(YEL"å®ç®±"NOR, ({ "gold xiang", "xiang", "box" }) );
 	set_weight(3000);
 	set_max_encumbrance(500000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-                set("long","Ò»¸ö×°Ç®µÄÏä×Ó£¬ºì»¨»á´Ó¸÷µØ½ÙÀ´µÄ²»ÒåÖ®²ÆÈ«·ÅÔÚÕâÀï¡£\n");
+		set("unit", "ä¸ª");
+                set("long","ä¸€ä¸ªè£…é’±çš„ç®±å­ï¼Œçº¢èŠ±ä¼šä»å„åœ°åŠ«æ¥çš„ä¸ä¹‰ä¹‹è´¢å…¨æ”¾åœ¨è¿™é‡Œã€‚\n");
 		set("value", 1000);
 		set("material", "wood");
 		set("no_get",1);

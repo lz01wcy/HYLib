@@ -4,16 +4,16 @@ inherit WHIP;
 
 void create()
 {
-   set_name("³¤±Ş", ({ "whip" }) );
+   set_name("é•¿é­", ({ "whip" }) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "Ìõ");   
-     set("material", "ÊŞÆ¤");
-     set("long", "ÕâÊÇÒ»ÌõÊŞÆ¤×öµÄ³¤±Ş¡£\n");
-     set("wield_msg","$N³é³ö$nÎÕÔÚÊÖÀï£¬Å¾µØ´ò¸öÏì¡£\n");
-     set("unequip_msg", "$N½«$nÅÌÔÚÑü¼ä¡£\n");
+     set("unit", "æ¡");   
+     set("material", "å…½çš®");
+     set("long", "è¿™æ˜¯ä¸€æ¡å…½çš®åšçš„é•¿é­ã€‚\n");
+     set("wield_msg","$NæŠ½å‡º$næ¡åœ¨æ‰‹é‡Œï¼Œå•ªåœ°æ‰“ä¸ªå“ã€‚\n");
+     set("unequip_msg", "$Nå°†$nç›˜åœ¨è…°é—´ã€‚\n");
    }
    init_whip(25);
    setup();

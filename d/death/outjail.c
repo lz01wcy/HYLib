@@ -1,5 +1,5 @@
 //outjail.c
-//²ì¿´Çô½ûµÄplayer
+//å¯Ÿçœ‹å›šç¦çš„player
 // idea@yqyl
 
 inherit ROOM;
@@ -9,12 +9,12 @@ string atime(int t);
 
 void create()
 {
-        set("short","ÇôÊÒÍâ");
+        set("short","å›šå®¤å¤–");
         set("long", @LONG
-ÕâÀïÊÇÇôÊÒÍâµÄ·¿¼ä£¬Í¨³£¶¼ÊÇÎ×Ê¦ÔÚÕâÀï²ì¿´·¸×ï¼ÍÂ¼µÄµØ·½£¬ÖÁ
-ÓÚÇô·¸£¬ËûÃÇ³öÓüµÄ·½Ê½ÊÇÖ±½Ó±»ËÍµ½ÎäÃí¡£Î×Ê¦ÃÇÔÚÕâÀï¿ÉÒÔ²ì¿´ÔÚÏß
-Íæ¼ÒµÄ·¸×ï¼ÍÂ¼(consult)£¬¸Ä±äÇô·¸Çô½ûÊ±¼ä(changetime id newtime)
-ÊÍ·Å±»ÇôµÄÈË(shifang£¬ÇëÉ÷ÓÃ)¡£
+è¿™é‡Œæ˜¯å›šå®¤å¤–çš„æˆ¿é—´ï¼Œé€šå¸¸éƒ½æ˜¯å·«å¸ˆåœ¨è¿™é‡Œå¯Ÿçœ‹çŠ¯ç½ªçºªå½•çš„åœ°æ–¹ï¼Œè‡³
+äºå›šçŠ¯ï¼Œä»–ä»¬å‡ºç‹±çš„æ–¹å¼æ˜¯ç›´æ¥è¢«é€åˆ°æ­¦åº™ã€‚å·«å¸ˆä»¬åœ¨è¿™é‡Œå¯ä»¥å¯Ÿçœ‹åœ¨çº¿
+ç©å®¶çš„çŠ¯ç½ªçºªå½•(consult)ï¼Œæ”¹å˜å›šçŠ¯å›šç¦æ—¶é—´(changetime id newtime)
+é‡Šæ”¾è¢«å›šçš„äºº(shifangï¼Œè¯·æ…ç”¨)ã€‚
 LONG );
 	set("exits",([
 		"enter" : __DIR__"qiushi",
@@ -39,20 +39,20 @@ int do_consult(string arg)
 	string rep,str,s;
 	
 	who = this_player();
-	if(!wizardp(this_player())) return notify_fail("Ö»ÓĞÎ×Ê¦¿ÉÒÔ²ì¿´¼ÍÂ¼\n");
+	if(!wizardp(this_player())) return notify_fail("åªæœ‰å·«å¸ˆå¯ä»¥å¯Ÿçœ‹çºªå½•\n");
 	
 	if (!arg) return notify_fail("consult <id>\n");
 	who = find_player(arg);
-	if (!who) return notify_fail("Ã»ÓĞÕâ¸öÈË»ò²»ÔÚÏß¡£\n");
+	if (!who) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººæˆ–ä¸åœ¨çº¿ã€‚\n");
 	rep = "\n";
-	rep+= "©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ğ©¤©¤©¤©¤©¤©¤©¤©¤©¤©´\n";
+	rep+= "â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n";
 	str = sprintf("%s %s(%s)",who->query("title"),who->query("name"),who->query("id"));
-	rep+= sprintf("©¦%-44s©¦ĞÔ±ğ£º%-12s©¦\n",str,who->query("gender"));
-	rep+= "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
+	rep+= sprintf("â”‚%-44sâ”‚æ€§åˆ«ï¼š%-12sâ”‚\n",str,who->query("gender"));
+	rep+= "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
 	if (!who->query("qiushi"))
 	{
-		rep+= "©¦"+HIW"´ËÈËÎŞÇô½û¼ÍÂ¼"NOR+"¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦\n";
-		rep+= "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n\n";
+		rep+= "â”‚"+HIW"æ­¤äººæ— å›šç¦çºªå½•"NOR+"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚\n";
+		rep+= "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n\n";
 	} else
 	{
 		inage = who->query("qiushi/inage");
@@ -61,22 +61,22 @@ int do_consult(string arg)
 		
 		if (file_name(environment(who))!="/d/death/qiushi")
 		{
-		rep+= "©¦"+HIW"´ËÈËÏÖ·ÇÇô·¸Ò²"NOR+"¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦\n";
-		rep+= "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ğ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
+		rep+= "â”‚"+HIW"æ­¤äººç°éå›šçŠ¯ä¹Ÿ"NOR+"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚\n";
+		rep+= "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
 		}
 		else
 		{
-		rep+= "©¦"+HIW"´ËÈËÕıÔÚ±»Çô½û"NOR+"¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦\n";
-		rep+= "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ğ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
-		rep+= sprintf("©¦ÒÑ±»Çô½ûÊ±¼ä£º%-18s©¦»¹Ğè±»Çô£º%-20s©¦\n",atime(mudage-inage),
+		rep+= "â”‚"+HIW"æ­¤äººæ­£åœ¨è¢«å›šç¦"NOR+"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚\n";
+		rep+= "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
+		rep+= sprintf("â”‚å·²è¢«å›šç¦æ—¶é—´ï¼š%-18sâ”‚è¿˜éœ€è¢«å›šï¼š%-20sâ”‚\n",atime(mudage-inage),
 		atime(inage+howlong*60-mudage));
-		rep+= "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©à©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
+		rep+= "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
 		}
-		rep+= sprintf("©¦×Ü±»Çô½û´ÎÊı£º%-16s´Î©¦×Ü¶¨Ê±¼ä£º%-18s·Ö©¦\n",chinese_number(who->query("qiushi/times")),
+		rep+= sprintf("â”‚æ€»è¢«å›šç¦æ¬¡æ•°ï¼š%-16sæ¬¡â”‚æ€»å®šæ—¶é—´ï¼š%-18såˆ†â”‚\n",chinese_number(who->query("qiushi/times")),
 		chinese_number(who->query("qiushi/totaltime")));
-		rep+= "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
-		rep+= "©¦¡ò×î½üÇô½û¼ÇÂ¼¡ò                                                ©¦\n";
-		rep+= "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
+		rep+= "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
+		rep+= "â”‚â—æœ€è¿‘å›šç¦è®°å½•â—                                                â”‚\n";
+		rep+= "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
 		
 		str = who->query("qiushi/note");
 		while ((i = strlen(str)) > 0)
@@ -85,13 +85,13 @@ int do_consult(string arg)
     			if (j < 0)
     			{
       				s = str;
-      				rep+= sprintf("©¦%s",s);
+      				rep+= sprintf("â”‚%s",s);
     			}  
     			s = str[0..j];
-    			rep+= sprintf("©¦%s",s);
+    			rep+= sprintf("â”‚%s",s);
     			str = str[j+1..i];
   		}
-		rep+= "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n\n";
+		rep+= "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n\n";
 		}
 	write(rep);
 	return 1;
@@ -102,19 +102,19 @@ string atime(int t)
 	int d, h, m, s;
 	string time;
 	
-	if (t<=0) return "¡ª¡ª";
+	if (t<=0) return "â€•â€•";
 	s = t % 60;
 	m = t /60;
 
 /*
-	if(d) time = chinese_number(d) + "Ìì";
+	if(d) time = chinese_number(d) + "å¤©";
 	else time = "";
 
-	if(h) time += chinese_number(h) + "Ğ¡Ê±";
+	if(h) time += chinese_number(h) + "å°æ—¶";
 */	
-	if(m) time = chinese_number(m) + "·Ö";
+	if(m) time = chinese_number(m) + "åˆ†";
 	else time = "";
-	time += chinese_number(s) + "Ãë";
+	time += chinese_number(s) + "ç§’";
 
 	return time;
 }                                        
@@ -126,15 +126,15 @@ int do_release(string arg)
 	object me= this_player();
 	object criminal;
 	
-	if(!wizardp(me)) return notify_fail("Ö»ÓĞÎ×Ê¦¿ÉÒÔ·ÅÈË£¡\n");
+	if(!wizardp(me)) return notify_fail("åªæœ‰å·«å¸ˆå¯ä»¥æ”¾äººï¼\n");
 	if(!arg || !objectp(criminal = present(arg, qiushi)))
-		return notify_fail("ÄãÏë·ÅË­£¿\n");
+		return notify_fail("ä½ æƒ³æ”¾è°ï¼Ÿ\n");
 	
 	wizname = me->query("name") + "("+me->query("id")+")";
 	criname = criminal->query("name") + "("+criminal->query("id")+")";
 	
 	ttime=ctime(time())[8..strlen(ctime(time()))];
-	result = sprintf("%s  %s½«%s´ÓÀÎ·¿Àï·Å³ö\n",ttime,wizname,criname);
+	result = sprintf("%s  %så°†%sä»ç‰¢æˆ¿é‡Œæ”¾å‡º\n",ttime,wizname,criname);
 	
 	criminal->set("qiushi/note",criminal->query("qiushi/note")+result);
 	
@@ -156,12 +156,12 @@ int do_change(string arg)
 	
 	int otime,newtime;
 	
-	if(!wizardp(me)) return notify_fail("Ö»ÓĞÎ×Ê¦¿ÉÒÔ£¡\n");
+	if(!wizardp(me)) return notify_fail("åªæœ‰å·«å¸ˆå¯ä»¥ï¼\n");
 	
 	if(!arg || arg=="" || sscanf(arg, "%s %d", id, newtime)!=2)
-		return notify_fail("Ö¸Áî¸ñÊ½ : changetime <Ä³ÈË> <ĞÂµÄÊ±¼ä>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ : changetime <æŸäºº> <æ–°çš„æ—¶é—´>\n");
 	if(!objectp(criminal = present(id, qiushi)))
-		return notify_fail("ÄãÏë¸ÄË­£¿\n");
+		return notify_fail("ä½ æƒ³æ”¹è°ï¼Ÿ\n");
 	
 	wizname = me->query("name") + "("+me->query("id")+")";
 	criname = criminal->query("name") + "("+criminal->query("id")+")";
@@ -171,7 +171,7 @@ int do_change(string arg)
 	otime = criminal->query("qiushi/howlong");
 	criminal->set("qiushi/howlong",newtime);
 	
-	result = sprintf("%s  %s½«%sÔ­Çô½ûÊ±¼ä%d·Ö¸ÄÎª%d·Ö\n",ttime,wizname,criname,otime,
+	result = sprintf("%s  %så°†%såŸå›šç¦æ—¶é—´%dåˆ†æ”¹ä¸º%dåˆ†\n",ttime,wizname,criname,otime,
 	newtime);
 	
 	criminal->set("qiushi/note",criminal->query("qiushi/note")+result);

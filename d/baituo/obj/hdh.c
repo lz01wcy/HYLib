@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(RED"º×¶¥ºì"NOR, ({"heding hong", "hong", "heding"}));
+        set_name(RED"é¹¤é¡¶çº¢"NOR, ({"heding hong", "hong", "heding"}));
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "¸ö");
-        set("long", RED"ÕâÊÇÒ»¸öÐÂÏÊµÄº×¶¥ºì£¬»¹É¢·¢×ÅÕóÕóÈÈÆø¡£\n"NOR);
+        set("unit", "ä¸ª");
+        set("long", RED"è¿™æ˜¯ä¸€ä¸ªæ–°é²œçš„é¹¤é¡¶çº¢ï¼Œè¿˜æ•£å‘ç€é˜µé˜µçƒ­æ°”ã€‚\n"NOR);
         set("value", 50000);
         }
         setup();
@@ -28,10 +28,10 @@ int do_eat(string arg)
    int damage;
 
    if(!id(arg))
-       return notify_fail("ÄãÒª·þÊ²Ã´£¿\n");
+       return notify_fail("ä½ è¦æœä»€ä¹ˆï¼Ÿ\n");
 
-   message_vision("$N·þÏÂÒ»¸ö" + name() + "¡£\n", me);  
-   tell_object(me, MAG "Äã¸Ð¾õ¸¹ÖÐÒ»¹É¾ÞÌÛ´«À´£¬Ë²¼äÈ«Éí»ðÈÈ¹öÌÌ£¡\n" NOR);
+   message_vision("$Næœä¸‹ä¸€ä¸ª" + name() + "ã€‚\n", me);  
+   tell_object(me, MAG "ä½ æ„Ÿè§‰è…¹ä¸­ä¸€è‚¡å·¨ç–¼ä¼ æ¥ï¼Œçž¬é—´å…¨èº«ç«çƒ­æ»šçƒ«ï¼\n" NOR);
 
     damage = (int)me->query("max_jing");
                 damage = damage/15;
@@ -48,7 +48,7 @@ void dest()
 {
         object me = this_player();
         if (present(this_object(), me))
-        tell_object(me, HIR "º×¶¥ºìµÄÈÈÆøÉ¢¾¡£¬ÂýÂý¸É¿ÝÁË¡£\n" NOR);
+        tell_object(me, HIR "é¹¤é¡¶çº¢çš„çƒ­æ°”æ•£å°½ï¼Œæ…¢æ…¢å¹²æž¯äº†ã€‚\n" NOR);
 
         destruct(this_object());
 }

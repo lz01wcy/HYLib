@@ -8,16 +8,16 @@ int do_xia(object me);
 	
 void create()
 {
-        set("short","Ğş±ùÊÒ");
+        set("short","ç„å†°å®¤");
 	set("long",@LONG
-ÕâÊÇĞŞÁ·ÄÚ¹¦µÄµØ·½¡£ Îİ×ÓÕıÖĞÓĞÒ»¿éÇ§ÄêĞş±ù(ice)£¬±ùÉÏÃ°³öË¿
-Ë¿º®Æø£¬ ÎİÀïÒò´Ëº®Æø±ÆÈË£¬Äã²»ÓÉµÃ´òÁËÒ»¸öº®²ü¡£
+è¿™æ˜¯ä¿®ç»ƒå†…åŠŸçš„åœ°æ–¹ã€‚ å±‹å­æ­£ä¸­æœ‰ä¸€å—åƒå¹´ç„å†°(ice)ï¼Œå†°ä¸Šå†’å‡ºä¸
+ä¸å¯’æ°”ï¼Œ å±‹é‡Œå› æ­¤å¯’æ°”é€¼äººï¼Œä½ ä¸ç”±å¾—æ‰“äº†ä¸€ä¸ªå¯’é¢¤ã€‚
 LONG );
         set("exits", ([
 		"east" : __DIR__"changl13",
         ]));
 	set("item_desc", ([
-	    "ice" : "ÕâÊÇÒ»¿é²É×ÔÌìÉ½Ö®áÛµÄÇ§ÄêĞş±ù,¾İËµÔÚÄÇÉÏÃæ´ò×øÊÂ°ë¹¦±¶.\nÄã¿ÉÒÔÊÔ×ÅÅÀ(climb)ÉÏÈ¥.\n",
+	    "ice" : "è¿™æ˜¯ä¸€å—é‡‡è‡ªå¤©å±±ä¹‹å·…çš„åƒå¹´ç„å†°,æ®è¯´åœ¨é‚£ä¸Šé¢æ‰“åäº‹åŠåŠŸå€.\nä½ å¯ä»¥è¯•ç€çˆ¬(climb)ä¸Šå».\n",
 	]));
 	set("no_clean_up", 0);
 	setup();
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
 	me=this_player();
         where=environment(me);
 	if (dir == "east" && where->query("xuanbing"))
-	 return notify_fail("Äã»¹Ã»ÏÂµØ(xia)ÄØ£¬¾ÍÏëÂÒÅÜ¡£\n");
+	 return notify_fail("ä½ è¿˜æ²¡ä¸‹åœ°(xia)å‘¢ï¼Œå°±æƒ³ä¹±è·‘ã€‚\n");
 	return ::valid_leave(me, dir);
 }
 
@@ -44,11 +44,11 @@ int do_climb(object me)
         me=this_player();
 	if(!me->query_skill("bahuang-gong", 1)||(int)me->query_skill("bahuang-gong", 1) < 10)
 	   {
-		write("ÄãµÄ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦ĞŞÎª²»¹»£¬µÖÓù²»ÁËÆæº®£¡\n");                   
-		message_vision("$N·Ñ¾¢µØÅÀÉÏÁËĞş±ù,½á¹û¸ø¶³µÃ²Ò²ÒµÄ£¬¸Ï½ôÅÀÁËÏÂÀ´¡£\n",me);
+		write("ä½ çš„å…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠåŠŸä¿®ä¸ºä¸å¤Ÿï¼ŒæŠµå¾¡ä¸äº†å¥‡å¯’ï¼\n");                   
+		message_vision("$Nè´¹åŠ²åœ°çˆ¬ä¸Šäº†ç„å†°,ç»“æœç»™å†»å¾—æƒ¨æƒ¨çš„ï¼Œèµ¶ç´§çˆ¬äº†ä¸‹æ¥ã€‚\n",me);
 		return 1; 
  	  }	
-	message_vision("$N·Ñ¾¢µØÅÀÉÏÁËĞş±ù,ÏÖÔÚ´ò×ø¿ÉÒÔÁ·¹¦ÁË¡£\n",me);
+	message_vision("$Nè´¹åŠ²åœ°çˆ¬ä¸Šäº†ç„å†°,ç°åœ¨æ‰“åå¯ä»¥ç»ƒåŠŸäº†ã€‚\n",me);
 	set("xuanbing",1);
 	return 1;	
 }
@@ -59,8 +59,8 @@ int do_xia(object me)
 	me=this_player();
 	where=environment(me);	
 	if (!where->query("xuanbing"))
-	 return notify_fail("ÄãÓÖÃ»ÅÀÉÏĞş±ù£¬ÏÂµ½ÄÄÈ¥Ñ½£¿¡£\n");
+	 return notify_fail("ä½ åˆæ²¡çˆ¬ä¸Šç„å†°ï¼Œä¸‹åˆ°å“ªå»å‘€ï¼Ÿã€‚\n");
 	set("xuanbing",0);
-	message_vision("$NÁ·Íê¹¦£¬¾«Éñ»À·¢µØÌøÏÂµØÀ´¡£\n",me);
+	message_vision("$Nç»ƒå®ŒåŠŸï¼Œç²¾ç¥ç„•å‘åœ°è·³ä¸‹åœ°æ¥ã€‚\n",me);
 	return 1;
 }

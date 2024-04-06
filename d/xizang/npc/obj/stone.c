@@ -2,11 +2,11 @@
 inherit COMBINED_ITEM; 
 void create()
 {
-        set_name("Ğ¡Ê¯Í·", ({"stone"}));
+        set_name("å°çŸ³å¤´", ({"stone"}));
         set("long",
-                "ÕâÊÇµÀÊ¿ÃÇÓÃÀ´»­·ûµÄ·ûÖ½£¬¾ßÓĞ·â´æ·¨Á¦µÄ¹¦ÓÃ¡£\n");
-        set("unit", "¶Ñ");
-        set("base_unit", "¿Å");
+                "è¿™æ˜¯é“å£«ä»¬ç”¨æ¥ç”»ç¬¦çš„ç¬¦çº¸ï¼Œå…·æœ‰å°å­˜æ³•åŠ›çš„åŠŸç”¨ã€‚\n");
+        set("unit", "å †");
+        set("base_unit", "é¢—");
         set("base_weight", 50);
         set("stone",1);
         set_amount(1);

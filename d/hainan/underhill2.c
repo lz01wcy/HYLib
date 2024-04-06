@@ -3,11 +3,11 @@ inherit ROOM;
 #include <ansi.h>
 void create ()
 {
-  set ("short", "ÇíÑÂÏÂ");
+  set ("short", "ç¼å´–ä¸‹");
   set ("long", @LONG
-¶¸ÇÍµÄÉ½ÑÂµ½ÕâÀïÍ»È»¹ÕÁË¸öÍä,ĞÎ³ÉÒ»¸öÍ»³öµÄÍ¹½Ç,ÔÚÀëÄãÍ·¶¥ 
-²»Ô¶µÄµØ·½,ÓĞ¿ÃÍá²±×ÓĞ¡Ê÷´ÓÉ½±ÚÉÏÉì³öÀ´.¿´À´ÓĞÏ£Íû.Í·¶¥ÉÏ°×ÔÆÓÆ 
-ÓÆÆ®¹ı,ÄãµÄĞÄÇéºÃÁËÆğÀ´. 
+é™¡å³­çš„å±±å´–åˆ°è¿™é‡Œçªç„¶æ‹äº†ä¸ªå¼¯,å½¢æˆä¸€ä¸ªçªå‡ºçš„å‡¸è§’,åœ¨ç¦»ä½ å¤´é¡¶ 
+ä¸è¿œçš„åœ°æ–¹,æœ‰æ£µæ­ªè„–å­å°æ ‘ä»å±±å£ä¸Šä¼¸å‡ºæ¥.çœ‹æ¥æœ‰å¸Œæœ›.å¤´é¡¶ä¸Šç™½äº‘æ‚  
+æ‚ é£˜è¿‡,ä½ çš„å¿ƒæƒ…å¥½äº†èµ·æ¥. 
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -15,7 +15,7 @@ LONG);
 ]));
   set("outdoors", "/d/hainan");
   set("item_desc", ([ /* sizeof() == 1 */
-  "Ğ¡Ê÷" : "Ò»¿ÃÍá²±×ÓÊ÷,Ğ±ÉúÔÚÇÍ±ÚÉÏ.¿´À´ÄÜ´ÓÕâÅÀ(climb)ÉÏÈ¥.",
+  "å°æ ‘" : "ä¸€æ£µæ­ªè„–å­æ ‘,æ–œç”Ÿåœ¨å³­å£ä¸Š.çœ‹æ¥èƒ½ä»è¿™çˆ¬(climb)ä¸Šå».",
 ]));
   set("exits", ([ /* sizeof() == 2 */
   "north" : __DIR__"underhill",
@@ -35,17 +35,17 @@ add_action("do_climb","climb");
 void greeting(object ob)
 {
   if (!ob||environment(ob)!=this_object()) return;
-  tell_object(ob,HIC"Ò»¸ùÊ÷Ö¦´ÓÉ½±ÚÉÏµôÏÂÀ´,´òÁËÄãÒ»ÏÂ.\n"NOR);
+  tell_object(ob,HIC"ä¸€æ ¹æ ‘æä»å±±å£ä¸Šæ‰ä¸‹æ¥,æ‰“äº†ä½ ä¸€ä¸‹.\n"NOR);
   return;
 }
 int do_climb()
 {object ob;
 ob=this_player();
 if( living(ob) ==0 ) return 1;
-message_vision("$NĞ¡ĞÄÒíÒíµØÏòÊ÷ÉÏÅÀÈ¥!\n",ob);
+message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°å‘æ ‘ä¸Šçˆ¬å»!\n",ob);
 if (random(ob->query("dex"))>15)
 this_player()->move(__DIR__"ontree.c");
-else message_vision("Ö»ÌıàÛÍ¨Ò»Éù,$NËÄ½Å³¯Ììµøµ¹ÔÚµØÉÏ!\n",this_player());
+else message_vision("åªå¬å™—é€šä¸€å£°,$Nå››è„šæœå¤©è·Œå€’åœ¨åœ°ä¸Š!\n",this_player());
 return 1;
 
 }

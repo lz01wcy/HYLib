@@ -4,16 +4,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ñ©¿Ó");
+        set("short", "é›ªå‘");
         set("long", @LONG
-ÕâÊÇ´óÑ©É½½ÅÏÂµÄÒ»¸öÑ©¿Ó¡£¶ªÂúÁË¸÷ÖÖÔÓÎï£¬ »¹ÓĞØ¤°ïµÜ
-×ÓÊÕ¼¯µÄÆÆÍ­ÀÃÌúµÈ¡£¿Ó±ßÉÏÓĞÒ»¸öĞ¡¶´(dong)¡£
+è¿™æ˜¯å¤§é›ªå±±è„šä¸‹çš„ä¸€ä¸ªé›ªå‘ã€‚ä¸¢æ»¡äº†å„ç§æ‚ç‰©ï¼Œ è¿˜æœ‰ä¸å¸®å¼Ÿ
+å­æ”¶é›†çš„ç ´é“œçƒ‚é“ç­‰ã€‚å‘è¾¹ä¸Šæœ‰ä¸€ä¸ªå°æ´(dong)ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "up"   : __DIR__"sroad3",
         ]));
         set("item_desc", ([
-            "dong"   : "Ò»¸öÉîåäÓÄ°µµÄ¶´Ñ¨¡£\n",
+            "dong"   : "ä¸€ä¸ªæ·±é‚ƒå¹½æš—çš„æ´ç©´ã€‚\n",
         ]));
         set("objects",([
                 __DIR__"npc/zhizhu" : 1,
@@ -36,17 +36,17 @@ int do_enter(string arg)
         if( !arg || arg=="" ) return 0;
         if( arg=="dong" )
         {
-           if( (fam = me->query("family")) && fam["family_name"] == "Ø¤°ï")
+           if( (fam = me->query("family")) && fam["family_name"] == "ä¸å¸®")
            {
                message("vision",
-                        me->name() + "ÔËÆğØ¤°ïËõ¹Ç¹¦£¬Ò»ÍäÑüÍù¶´Àï×êÁË½øÈ¥¡£\n",
+                        me->name() + "è¿èµ·ä¸å¸®ç¼©éª¨åŠŸï¼Œä¸€å¼¯è…°å¾€æ´é‡Œé’»äº†è¿›å»ã€‚\n",
                         environment(me), ({me}) );
                me->move("/d/gaibang/underxs");
                message("vision",
-                        me->name() + "´Ó¶´Àï×ßÁË½øÀ´¡£\n",
+                        me->name() + "ä»æ´é‡Œèµ°äº†è¿›æ¥ã€‚\n",
                         environment(me), ({me}) );
                         return 1;
            }
-           else  return notify_fail("ÕâÃ´Ğ¡µÄ¶´£¬Äã×êµÃ½øÈ¥Âğ£¿\n");
+           else  return notify_fail("è¿™ä¹ˆå°çš„æ´ï¼Œä½ é’»å¾—è¿›å»å—ï¼Ÿ\n");
        }
 }

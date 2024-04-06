@@ -1,13 +1,13 @@
-// lingqing.c ÁéÇå¾ÓÊ¿
+// lingqing.c çµæ¸…å±…å£«
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("ÁéÇå¾ÓÊ¿", ({ "lingqing jushi", "jushi", "lingqing" }) );
-	set("gender", "ÄĞĞÔ");
-	set("title", "À¥ÂØÅÉ");
+	set_name("çµæ¸…å±…å£«", ({ "lingqing jushi", "jushi", "lingqing" }) );
+	set("gender", "ç”·æ€§");
+	set("title", "æ˜†ä»‘æ´¾");
 	set("class", "taoist");
 	set("age", 43);
 	set("attitude", "friendly");

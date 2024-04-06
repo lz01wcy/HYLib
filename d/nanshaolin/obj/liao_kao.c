@@ -7,12 +7,12 @@
 inherit WRISTS;
 void create()
 {
-	set_name( "ÁÍîí", ({ "liao kao", "kao" }) );
+	set_name( "é•£é“", ({ "liao kao", "kao" }) );
 	set_weight(10000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸¶");
+		set("unit", "ä»˜");
 		set("value", 1000);
 		set("material", "steel");
 		set("armor_prop/armor",0);
@@ -47,7 +47,7 @@ void init()
 
 int unequip()
 {
-	return notify_fail("Äã²»ÄÜ×ÔÒÑ´ò¿ªÁÍîí¡£\n");
+	return notify_fail("ä½ ä¸èƒ½è‡ªå·²æ‰“å¼€é•£é“ã€‚\n");
 }
 
 int do_fight()
@@ -56,7 +56,7 @@ int do_fight()
 
 	if ((objectp(ob = present("liao kao", ob)) ) )
 	{
-		write("ÄãÏÖÔÚÊÖ½Å´÷×ÅÁÍîí£¬²»ÄÜ¸úÈË¶¯Îä¡£\n");
+		write("ä½ ç°åœ¨æ‰‹è„šæˆ´ç€é•£é“ï¼Œä¸èƒ½è·ŸäººåŠ¨æ­¦ã€‚\n");
 		return 1;
 	}
 	return 0;
@@ -67,7 +67,7 @@ int do_dazuo()
 	object ob = this_player();
 	if ((objectp(ob = present("liao kao", ob)) ) )
 	{
-		write("ÄãÏÖÔÚÊÖ½Å´÷×ÅÁÍîí£¬²»ÄÜ×ö³öÕıÈ·µÄ×ËÊÆÀ´´ò×ø¡£\n");
+		write("ä½ ç°åœ¨æ‰‹è„šæˆ´ç€é•£é“ï¼Œä¸èƒ½åšå‡ºæ­£ç¡®çš„å§¿åŠ¿æ¥æ‰“åã€‚\n");
 		return 1;
 	}
 	return 0;
@@ -78,7 +78,7 @@ int do_tuna()
 	object ob = this_player();
 	if ((objectp(ob = present("liao kao", ob)) ) )
 	{
-		write("ÄãÏÖÔÚÊÖ½Å´÷×ÅÁÍîí£¬²»ÄÜ×ö³öÕıÈ·µÄ×ËÊÆÀ´ÍÂÄÉ¡£\n");
+		write("ä½ ç°åœ¨æ‰‹è„šæˆ´ç€é•£é“ï¼Œä¸èƒ½åšå‡ºæ­£ç¡®çš„å§¿åŠ¿æ¥åçº³ã€‚\n");
 		return 1;
 	}
 	return 0;
@@ -90,7 +90,7 @@ int do_remove(string arg)
 
 	if(arg=="all")
 	{
-		write("ÄãÉíÉÏÓĞÁÍîí£¬ÊÖ½Å²»±ãÀû£¬»¹ÊÇÒ»¼ş¼şµÄ³ı°É¡£\n");
+		write("ä½ èº«ä¸Šæœ‰é•£é“ï¼Œæ‰‹è„šä¸ä¾¿åˆ©ï¼Œè¿˜æ˜¯ä¸€ä»¶ä»¶çš„é™¤å§ã€‚\n");
 		return 1;
 	}
 	return 0;

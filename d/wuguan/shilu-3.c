@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ê¯°åÂ·");
+	set("short", "çŸ³æ¿è·¯");
 	set("long", @LONG
-Äã×ßÔÚÒ»ÌõÊ¯°åÂ·ÉÏ£¬Ò»Ö±Í¨ÏòºóÔº£¬Â·Á½ÅÔÊÇĞ©ÆÕÍ¨µÄ»¨²İ£¬Ê÷ÉÏ
-µÄĞ¡Äñ£¬²»Í£µÄ½Ğ×Å¡£
+ä½ èµ°åœ¨ä¸€æ¡çŸ³æ¿è·¯ä¸Šï¼Œä¸€ç›´é€šå‘åé™¢ï¼Œè·¯ä¸¤æ—æ˜¯äº›æ™®é€šçš„èŠ±è‰ï¼Œæ ‘ä¸Š
+çš„å°é¸Ÿï¼Œä¸åœçš„å«ç€ã€‚
 LONG);
 	set("exits", ([
 	       "north" : __DIR__"houyuan",
@@ -16,7 +16,7 @@ LONG);
         set("objects", ([
            __DIR__"npc/puren1" : 1,
         ]));
-	set("outdoors", "Îä¹İ");
+	set("outdoors", "æ­¦é¦†");
 	setup();
         replace_program(ROOM);
 }

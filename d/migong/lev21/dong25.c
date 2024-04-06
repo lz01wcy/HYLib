@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", BLU"���³�ħ���̵�"NOR);
+	set("short", BLU"背德城魔法商店"NOR);
 	set("long", BLU @LONG
-������ĳ��У����������ŵĶ���ħ���һЩ���
-ħ�壬����������壬�ڼ�ǧ��������£���Ȼ��ǿ��
-�����š��ɴ˿��Կ����κ����嶼������ڵ����ɺͷ�
-ʽ���������̵ꡣ������Щʲô��??(list)
+背叛神的城市，这里生活着的都是魔族和一些妖物，
+魔族，背弃神的种族，在几千年的流放下，依然顽强的
+生存着。由此可以看出任何种族都有其存在的理由和方
+式。这里是商店。你想买些什么呢??(list)
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);

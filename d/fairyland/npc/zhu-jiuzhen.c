@@ -1,14 +1,14 @@
-// zhu-jiuzhen.c Öì¾ÅÕæ
+// zhu-jiuzhen.c æœ±ä¹çœŸ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("Öì¾ÅÕæ", ({"zhu jiuzhen", "zhu"}));
-	set("long", "Ëı³¤µÃ¼«ÃÀ£¬ÈİÃ²½¿ÃÄ£¬ÓÖ°×ÓÖÄå¡£\n");
-	set("title", HIW"Ñ©ÁëË«æ­"NOR);
-	set("gender", "Å®ĞÔ");
+	set_name("æœ±ä¹çœŸ", ({"zhu jiuzhen", "zhu"}));
+	set("long", "å¥¹é•¿å¾—æç¾ï¼Œå®¹è²Œå¨‡åªšï¼Œåˆç™½åˆè…»ã€‚\n");
+	set("title", HIW"é›ªå²­åŒå§"NOR);
+	set("gender", "å¥³æ€§");
 	set("age", 17);
 	set("per", 30);
 

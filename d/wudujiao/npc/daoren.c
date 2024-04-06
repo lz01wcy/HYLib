@@ -5,11 +5,11 @@ int ask_me();
 #include <ansi.h>
 void create()
 {
-        set_name("¶¾ÀÉÖĞ", ({ "dao ren","dao" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ¯’éƒä¸­", ({ "dao ren","dao" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 35);
 	 set("per", 20);
-        set("long", "Ò»Î»Éí´©µÀ·ş£¬¸É±ñºÚÊİµÄÖĞÄêµÀÈË£®\n");
+        set("long", "ä¸€ä½èº«ç©¿é“æœï¼Œå¹²ç˜ªé»‘ç˜¦çš„ä¸­å¹´é“äººï¼\n");
         set("combat_exp", 200000);
         set("attitude", "friendly");
 //      set("env/wimpy", 50);
@@ -20,19 +20,19 @@ void create()
 
 	set("chat_chance",12);
   	set("chat_msg",({
-	"¶¾ÀÉÖĞÀäĞ¦µÀ£º½­ºşÖĞÈËË­¸ÒºÍÎÒÃÇÎå¶¾½Ì×÷¶Ô£¬¹Ü½ĞËûËÀµÄ²»Ã÷²»°×¡£\n",
-	"¶¾ÀÉÖĞ¸ÉĞ¦Ò»ÉùµÀ£ºÆ¶µÀ×¨¹ÜÁ·ÖÆ¸÷ÖÖ¶¾Ò©£¬±£Ö¤Ò©µ½Ãü³ı¡£\n",
+	"æ¯’éƒä¸­å†·ç¬‘é“ï¼šæ±Ÿæ¹–ä¸­äººè°æ•¢å’Œæˆ‘ä»¬äº”æ¯’æ•™ä½œå¯¹ï¼Œç®¡å«ä»–æ­»çš„ä¸æ˜ä¸ç™½ã€‚\n",
+	"æ¯’éƒä¸­å¹²ç¬‘ä¸€å£°é“ï¼šè´«é“ä¸“ç®¡ç»ƒåˆ¶å„ç§æ¯’è¯ï¼Œä¿è¯è¯åˆ°å‘½é™¤ã€‚\n",
 //        (:random_move:)
     	}));
         setup();
         add_money("silver", 20);
 set("inquiry", ([
-"name": "ÔÚÏÂ¾ÍÊÇ¶¾ÀÉÖĞ£®\n",
-"here": "´ËÄËÁ¶µ¤·¿£¬¿ÉÒÔÔÚÕâÀïÁ·ÖÆ(lianzhi)¸÷ÖÖ¶¾Ò©¡£\n",
-"¶¾Ò©": "¸óÏÂ¿ÉÒÔÊ¹ÓÃ(lianzhi)ÃüÁîÁ·ÖÆ¸÷ÖÖ¶¾Ò©¡£\n",
-"¶¾¾­": (: ask_me :),
-"Åä·½": (: ask_me :),
-"¶¾Ò©Åä·½": (: ask_me :),
+"name": "åœ¨ä¸‹å°±æ˜¯æ¯’éƒä¸­ï¼\n",
+"here": "æ­¤ä¹ƒç‚¼ä¸¹æˆ¿ï¼Œå¯ä»¥åœ¨è¿™é‡Œç»ƒåˆ¶(lianzhi)å„ç§æ¯’è¯ã€‚\n",
+"æ¯’è¯": "é˜ä¸‹å¯ä»¥ä½¿ç”¨(lianzhi)å‘½ä»¤ç»ƒåˆ¶å„ç§æ¯’è¯ã€‚\n",
+"æ¯’ç»": (: ask_me :),
+"é…æ–¹": (: ask_me :),
+"æ¯’è¯é…æ–¹": (: ask_me :),
 ]) );
         carry_object("/d/wudang/obj/greenrobe")->wear();
 }
@@ -40,14 +40,14 @@ int ask_me()
 {
         object ob,me,book;
         me = this_player();
-        if ((string)me->query("family/family_name") != "Îå¶¾½Ì")    
-              return notify_fail("¸óÏÂÓë±¾ÅÉ²¢ÎŞÔ¨Ô´£¬ÕâÊÇ´ÓÄÇÀï»°À´£¿\n");
+        if ((string)me->query("family/family_name") != "äº”æ¯’æ•™")    
+              return notify_fail("é˜ä¸‹ä¸æœ¬æ´¾å¹¶æ— æ¸Šæºï¼Œè¿™æ˜¯ä»é‚£é‡Œè¯æ¥ï¼Ÿ\n");
         book=present("jing",me);
-        if(objectp(book) && (string)book->query("name")=="¶¾¾­ÉÏÆª")
-              return notify_fail("Äã²»ÊÇÓĞÒ»±¾ÁËÂğ£¬ÔõÃ´»¹À´Òª£¿\n");
-        command("say ´ËÄËÎÒÎå¶¾½ÌÖ®¡¶¶¾¾­¡·£¬Ç§Íò²»¿ÉÒÅÊ§ÁË°¡¡£\n");
+        if(objectp(book) && (string)book->query("name")=="æ¯’ç»ä¸Šç¯‡")
+              return notify_fail("ä½ ä¸æ˜¯æœ‰ä¸€æœ¬äº†å—ï¼Œæ€ä¹ˆè¿˜æ¥è¦ï¼Ÿ\n");
+        command("say æ­¤ä¹ƒæˆ‘äº”æ¯’æ•™ä¹‹ã€Šæ¯’ç»ã€‹ï¼Œåƒä¸‡ä¸å¯é—å¤±äº†å•Šã€‚\n");
         ob = new(__DIR__"obj/dujing1");
         ob->move(this_player());
- //       return "ÄÃÈ¥°É¡£";
+ //       return "æ‹¿å»å§ã€‚";
          return 1;
 }

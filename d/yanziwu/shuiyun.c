@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ˮ����");
+        set("short", "水云轩");
         set("long",@LONG
-���ĵ�һ��СС��̨ͤ�����滷ˮ��ֻ��������һ�������밶����
-�������������棬ˮ��΢�һȺȺ���������ɼ�������һ��ʫ�黭
-�⡣
+湖心的一座小小的亭台，四面环水，只有西侧有一条曲桥与岸上相
+连。轩中清风拂面，水波微扬，一群群游鱼清晰可见，别有一番诗情画
+意。
 LONG );
         set("outdoors", "yanziwu");
         set("exits", ([

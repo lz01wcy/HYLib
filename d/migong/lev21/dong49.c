@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIM"���ڽ̻�"NOR);
+	set("short", HIM"暗黑教会"NOR);
 	set("long", HIM @LONG
-�����ǿյ����İ��ڽ̻������,���ܵ�ǽ�ھ�Ȼ��
-���˹����ɣ���Щ�˹���С���ģ���Ů�ġ����һ��ڲ�
-ͣ�Ĳ����������������˹�����µ�������
+这里是空荡荡的暗黑教会的走廊,四周的墙壁尽然是
+用人骨做成，在些人骨有小孩的，妇女的。而且还在不
+停的颤抖。处处都允满了鬼异可怕的声音。
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("no_npc",1);

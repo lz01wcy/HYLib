@@ -4,13 +4,13 @@ inherit F_BANKER;
 #include <ansi.h>;
 void create()
 {
-        set_name("»ÆÕæ", ({"huang zhen", "zhen", "huang"}));
-        set("nickname", HIY"Í­±ÊÌúËãÅÌ"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é»„çœŸ", ({"huang zhen", "zhen", "huang"}));
+        set("nickname", HIY"é“œç¬”é“ç®—ç›˜"NOR);
+        set("gender", "ç”·æ€§");
 
         set("age", 59);
         set("long",
-                "»ÆÕæÊÇÉñ½£ÏÉÔ³ÄÂÈËÇåµÄ¿ªÃÅ´óµÜ×Ó£¬Ò²ÊÇÕâ¸öÇ®×¯µÄÀÏ°å£¬¹ÜÀíÏåÑô¾üâÃ¡£\n");
+                "é»„çœŸæ˜¯ç¥å‰‘ä»™çŒ¿ç©†äººæ¸…çš„å¼€é—¨å¤§å¼Ÿå­ï¼Œä¹Ÿæ˜¯è¿™ä¸ªé’±åº„çš„è€æ¿ï¼Œç®¡ç†è¥„é˜³å†›é¥·ã€‚\n");
         set("attitude", "peaceful");
         set("per", 21);
         set("str", 26);
@@ -56,7 +56,7 @@ void create()
         prepare_skill("cuff", "poyu-quan");
         prepare_skill("strike", "huntian-zhang");
 
-        create_family("»ªÉ½ÅÉ", 21, "µÜ×Ó");
+        create_family("åå±±æ´¾", 21, "å¼Ÿå­");
 
         setup();
 

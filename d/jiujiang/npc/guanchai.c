@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("¹Ù²î", ({"guan chai", "guan","chai"}));
-        set("title", "ÑÎ¾Ö¹Ù²î");
-        set("gender", "ÄĞĞÔ");
+        set_name("å®˜å·®", ({"guan chai", "guan","chai"}));
+        set("title", "ç›å±€å®˜å·®");
+        set("gender", "ç”·æ€§");
         set("age", 34);
 
         set("str", 22);

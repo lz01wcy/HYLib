@@ -1,14 +1,14 @@
-// ³ø·¿ chufang.c
+// åŽ¨æˆ¿ chufang.c
 // zly 1999.06.10
  
 inherit ROOM; 
  
 void create() 
 { 
-        set("short", "³ø·¿");
+        set("short", "åŽ¨æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÏô¸®µÄ³ø·¿£¬¸ÕÒ»½øÃÅ£¬Ò»¹ÉÏãÆøÆË±Ç¶øÀ´£¬Ñ¬µÃÄãÖ±Á÷¿Ú
-Ë®¡£ÔîÌ¨ÉÏÂúÊÇÓÍÑÌ£¬ºÃÏó½ñÌì¿ÍÈËÀ´µÄ²»ÉÙ£¬³øÊ¦ÃÇÕýÃ¦Âµ×Å¡£
+è¿™é‡Œæ˜¯è§åºœçš„åŽ¨æˆ¿ï¼Œåˆšä¸€è¿›é—¨ï¼Œä¸€è‚¡é¦™æ°”æ‰‘é¼»è€Œæ¥ï¼Œç†å¾—ä½ ç›´æµå£
+æ°´ã€‚ç¶å°ä¸Šæ»¡æ˜¯æ²¹çƒŸï¼Œå¥½è±¡ä»Šå¤©å®¢äººæ¥çš„ä¸å°‘ï¼ŒåŽ¨å¸ˆä»¬æ­£å¿™ç¢Œç€ã€‚
 LONG
         );
 

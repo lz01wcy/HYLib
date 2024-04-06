@@ -3,17 +3,17 @@
 inherit RING;
 void create()
 {
-        set_name(HIR"º®Ìú°åÖ¸"NOR, ({ "banzi" }) );
+        set_name(HIR"å¯’é“æ¿æŒ‡"NOR, ({ "banzi" }) );
 	set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÓÃº®ÌúÖı³ÉµÄ°åÖ¸¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ç”¨å¯’é“é“¸æˆçš„æ¿æŒ‡ã€‚\n");
                 	set("value", 1000000);
                              set("rigidity",50);
-	        set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»¸ö$n´÷ÔÚÊÖÉÏ¡£\n");
-        	set("unwield_msg", "$N½«ÊÖÉÏµÄ$n²ØÈë»³ÖĞ¡£\n");
+	        set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€ä¸ª$næˆ´åœ¨æ‰‹ä¸Šã€‚\n");
+        	set("unwield_msg", "$Nå°†æ‰‹ä¸Šçš„$nè—å…¥æ€€ä¸­ã€‚\n");
 	}
 	init_ring(200);
 	setup();

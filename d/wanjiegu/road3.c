@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��·");
+        set("short", "大路");
         set("long", @LONG
-����һ�����ϵĹٵ�����ͨ�����ǣ�������ԭ���ء��������
-�����������ַǷ����иϵ��ģ��о��̵ģ�Ҳ���������������ֺ�
-�ܡ�
+这是一条云南的官道，南通大理城，北连中原腹地。大道上人
+来人往，热闹非凡。有赶道的，有经商的，也有腰悬利器的武林豪
+杰。
 LONG
         );
         set("exits", ([ /* sizeof() == 3 */

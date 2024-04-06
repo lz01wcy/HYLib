@@ -5,10 +5,10 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("Îä¹ÝµÜ×Ó", ({ "wuguan dizi", "dizi"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("æ­¦é¦†å¼Ÿå­", ({ "wuguan dizi", "dizi"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 16);
-	set("long", "ÕâÊÇ¸öÅãÈËÁ·¹¦µÄÎä¹ÝµÜ×Ó¡£\n");
+	set("long", "è¿™æ˜¯ä¸ªé™ªäººç»ƒåŠŸçš„æ­¦é¦†å¼Ÿå­ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", 0);
 
@@ -41,22 +41,22 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 	if (ob->query("combat_exp")<10000)
-	message_vision("Îä¹ÝµÜ×Ó³å×Å$N½ÐµÀ£º¿ìÀ´¸úÎÒ±È»®¼¸ÕÐ¡£(bi dizi)\n",ob);
+	message_vision("æ­¦é¦†å¼Ÿå­å†²ç€$Nå«é“ï¼šå¿«æ¥è·Ÿæˆ‘æ¯”åˆ’å‡ æ‹›ã€‚(bi dizi)\n",ob);
 }
 
 int do_bi(string arg)
 {
 	object ob=this_player();
-	if(!arg||arg!="dizi") return  notify_fail("ÄãÒªºÍË­±È»®£¿\n");
+	if(!arg||arg!="dizi") return  notify_fail("ä½ è¦å’Œè°æ¯”åˆ’ï¼Ÿ\n");
 	if ((int)ob->query("combat_exp")>10000)
-		return notify_fail("Îä¹ÝµÜ×ÓÒ¡Í·µÀ£ºÒÔÄãµÄÎä¹¦£¬ÎÒ²»ÄÜ×öÄãµÄÅãÁ·¡£\n");
-	say("Îä¹ÝµÜ×ÓÍ¬Òâ×÷ÄãµÄÅãÁ·¡£\n");
+		return notify_fail("æ­¦é¦†å¼Ÿå­æ‘‡å¤´é“ï¼šä»¥ä½ çš„æ­¦åŠŸï¼Œæˆ‘ä¸èƒ½åšä½ çš„é™ªç»ƒã€‚\n");
+	say("æ­¦é¦†å¼Ÿå­åŒæ„ä½œä½ çš„é™ªç»ƒã€‚\n");
 	set("combat_exp",ob->query("combat_exp"));
 	command("hit "+(string)ob->query("id"));
 	if(query("qi")<40)
-		message_vision("Îä¹ÝµÜ×Ó¶Ô$N´ó¼ÓÔÞÉÍ!\n",ob);
+		message_vision("æ­¦é¦†å¼Ÿå­å¯¹$Nå¤§åŠ èµžèµ!\n",ob);
 	else
-		message_vision("Îä¹ÝµÜ×Ó¶Ô$NÐ¦Ð¦µÀ£ºÅ¬Á¦°É¡£\n",ob);
+		message_vision("æ­¦é¦†å¼Ÿå­å¯¹$Nç¬‘ç¬‘é“ï¼šåŠªåŠ›å§ã€‚\n",ob);
 
 	set("eff_qi",200);
 	set("qi",200);
@@ -66,7 +66,7 @@ int do_bi(string arg)
 
 int accept_fight(object ob)
 {
-	message_vision("Îä¹ÝµÜ×Ó¶Ô$N½ÐµÀ£ºÄÇÎÒ¾Í²»ÈÃÄãÁË£¡\n",ob);
+	message_vision("æ­¦é¦†å¼Ÿå­å¯¹$Nå«é“ï¼šé‚£æˆ‘å°±ä¸è®©ä½ äº†ï¼\n",ob);
 	return 1;
 }
 

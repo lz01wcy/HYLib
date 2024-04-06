@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "丹房");
 	set("long", @LONG
-�����Ǿ�������Ƶ�ҩ�ĵط�������������һ�ɴ̱�
-��ҩζ��
+这里是绝情谷炼制丹药的地方，屋里弥漫着一股刺鼻
+的药味。
 LONG
 	);
 

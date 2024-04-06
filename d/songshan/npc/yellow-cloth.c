@@ -1,6 +1,6 @@
 
 // yellow-cloth.c
-// ·‘…Ω∫’ª∆≈€
+// Âµ©Â±±Ëµ´ÈªÑË¢ç
 
 #include <ansi.h>
 #include <armor.h>
@@ -8,12 +8,12 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(YEL"∫’ª∆≈€"NOR, ({ "yellow cloth", "cloth" }) );
+	set_name(YEL"Ëµ´ÈªÑË¢ç"NOR, ({ "yellow cloth", "cloth" }) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "º˛");
+		set("unit", "‰ª∂");
 		set("material", "cloth");
 		set("value", 100);
 		set("armor_prop/armor", 5);

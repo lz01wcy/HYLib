@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("¶¾Éß", ({ "snake", "she" }) );
-	set("race", "Ò°ÊÞ");
+	set_name("æ¯’è›‡", ({ "snake", "she" }) );
+	set("race", "é‡Žå…½");
 	set("age", 4);
-	set("long", "Ò»Ö»ÓÐ×ÅÈý½ÇÐÎÄÔ´üµÄÉß£¬Î²°ÍÉ³É³×öÏì¡£\n");
+	set("long", "ä¸€åªæœ‰ç€ä¸‰è§’å½¢è„‘è¢‹çš„è›‡ï¼Œå°¾å·´æ²™æ²™åšå“ã€‚\n");
 	set("attitude", "peaceful");
 
 	set("str", 26);
@@ -37,7 +37,7 @@ void die()
 {
 	object me = this_object();;
 
-	message_vision("$NÅ¾µÄÒ»Éù¶Ï³ÉÁ½½Ø£¡$NËÀÁË¡£\n", me);
+	message_vision("$Nå•ªçš„ä¸€å£°æ–­æˆä¸¤æˆªï¼$Næ­»äº†ã€‚\n", me);
 	new("/d/guiyun/obj/shedan")->move(environment(me));
 	destruct(me);
 }

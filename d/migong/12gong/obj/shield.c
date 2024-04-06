@@ -5,14 +5,14 @@
 inherit SHIELD;
 void create()
 {
-  set_name(HIY"Õ½ÉñÖ®¹â"NOR, ({"zhanshen zhiguang","shield", "dun"}));
+  set_name(HIY"æˆ˜ç¥ä¹‹å…‰"NOR, ({"zhanshen zhiguang","shield", "dun"}));
   set_weight(4000);
   if ( clonep() )
      set_default_object(__FILE__);
   else {
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 1000);
-   set("long", "ÕâÊÇ´«ËµÖĞµÄÕ½Éñ°¢À×Ë¹Ëù»¯³ÉµÄ¶Ü¡£\n");
+   set("long", "è¿™æ˜¯ä¼ è¯´ä¸­çš„æˆ˜ç¥é˜¿é›·æ–¯æ‰€åŒ–æˆçš„ç›¾ã€‚\n");
    set("material", "crimsonsteel");
    set("no_sell", 1);
    set("no_drop", 1);

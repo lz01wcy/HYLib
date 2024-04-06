@@ -6,11 +6,11 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ŞÉ³¤ÀÏ", ({"xi zhanglao", "xi", "zhanglao"}));
-	set("nickname", "Ø¤°ïÁùÀÏ");
-	set("gender", "ÄĞĞÔ");
+	set_name("å¥šé•¿è€", ({"xi zhanglao", "xi", "zhanglao"}));
+	set("nickname", "ä¸å¸®å…­è€");
+	set("gender", "ç”·æ€§");
 	set("age", 50);
-	set("long", "ËûÊÇÒ»¸öÉí²Ä°«ÅÖµÄÀÏÕß£¬ÊÖ³ÖÒ»Ìõ¸ÖÕÈ£¬ĞÔ×ÓÖ±ÂÊ£¬ÊÇ±¾°ïÍâ¼Ò¸ßÊÖ¡£\n");
+	set("long", "ä»–æ˜¯ä¸€ä¸ªèº«æçŸ®èƒ–çš„è€è€…ï¼Œæ‰‹æŒä¸€æ¡é’¢æ–ï¼Œæ€§å­ç›´ç‡ï¼Œæ˜¯æœ¬å¸®å¤–å®¶é«˜æ‰‹ã€‚\n");
 	set("attitude", "peaceful");
 	set("class", "beggar");
  	set("beggarlvl", 9);
@@ -31,17 +31,17 @@ void create()
 	set("combat_exp", 100000);
 	set("score", 20000);
 	
-	set_skill("force", 90); // »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 90); // »ìÌìÆø¹¦
-	set_skill("staff", 200); // »ù±¾ÕÈ·¨
-	set_skill("fengmo-zhang", 200); // ·èÄ§ÕÈ
-	set_skill("hand", 85); // »ù±¾ÊÖ·¨
+	set_skill("force", 90); // åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 90); // æ··å¤©æ°”åŠŸ
+	set_skill("staff", 200); // åŸºæœ¬æ–æ³•
+	set_skill("fengmo-zhang", 200); // ç–¯é­”æ–
+	set_skill("hand", 85); // åŸºæœ¬æ‰‹æ³•
 
-	set_skill("dodge", 95); // »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 85); // åĞÒ£ÓÎ
-	set_skill("parry", 90); // »ù±¾ÕĞ¼Ü
+	set_skill("dodge", 95); // åŸºæœ¬èº²é—ª
+	set_skill("xiaoyaoyou", 85); // é€é¥æ¸¸
+	set_skill("parry", 90); // åŸºæœ¬æ‹›æ¶
 
-	set_skill("strike",85);  // »ù±¾ÕÆ·¨
+	set_skill("strike",85);  // åŸºæœ¬æŒæ³•
 	set_skill("xianglong-zhang",85);
 
 	map_skill("strike","lianhua-zhang");
@@ -52,10 +52,10 @@ void create()
 	map_skill("dodge", "xiaoyaoyou");
 	prepare_skill("hand", "suohou-hand");
 
-	set("party/party_name", HIC"Ø¤°ï"NOR);
-	set("party/rank", RED"¾Å´ü³¤ÀÏ"NOR);
+	set("party/party_name", HIC"ä¸å¸®"NOR);
+	set("party/rank", RED"ä¹è¢‹é•¿è€"NOR);
 	set("party/level", 9);
-	create_family("Ø¤°ï", 10, "µÜ×Ó");
+	create_family("ä¸å¸®", 10, "å¼Ÿå­");
 
 	setup();
 
@@ -65,6 +65,6 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	command("say ÀÏ·ò²»ÊÕÍ½µÜ£¬" + RANK_D->query_respect(ob) + "»¹ÊÇÇë»Ø°É¡£");
+	command("say è€å¤«ä¸æ”¶å¾’å¼Ÿï¼Œ" + RANK_D->query_respect(ob) + "è¿˜æ˜¯è¯·å›å§ã€‚");
 }
 #include "/kungfu/class/gaibang/gaibang.h"

@@ -7,12 +7,12 @@ inherit CLOTH;
 
 void create()
 {
-   set_name("»Æ½ðÊ¥ÒÂ", ({ "huangjin shengyi" }) );
+   set_name("é»„é‡‘åœ£è¡£", ({ "huangjin shengyi" }) );
    set_weight(10000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¼þ");
+     set("unit", "ä»¶");
      set("no_give",1);
      set("value",2000000);
      set("material", "steel");

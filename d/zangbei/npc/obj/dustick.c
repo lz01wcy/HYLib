@@ -3,19 +3,19 @@
 inherit STAFF;
 void create()
 {
-        set_name(WHT"ÓñÕÈ"NOR , ({ "jade stick", "stick" }) );
+        set_name(WHT"ç‰æ–"NOR , ({ "jade stick", "stick" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "¸ù");
-        set("long", "Ò»¸ù½à°×£¬¾§Ó¨ÌŞÍ¸µÄ±¦ÕÈ£¬²»ÏóÊÇ±øÆ÷£¬¸üÏñÒ»¼şÊÎÎï¡£\n"NOR);
+        set("unit", "æ ¹");
+        set("long", "ä¸€æ ¹æ´ç™½ï¼Œæ™¶è¹å‰”é€çš„å®æ–ï¼Œä¸è±¡æ˜¯å…µå™¨ï¼Œæ›´åƒä¸€ä»¶é¥°ç‰©ã€‚\n"NOR);
         set("value", 4000);
                 set("class","beggar");
                 set("agility",24);
                 set("material", "jade");
-                set("wield_msg", "$N³é³öÒ»¸ù$n½ô½ôÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$nç´§ç´§æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         ::init_staff(165);
 }     

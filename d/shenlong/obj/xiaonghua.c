@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	set_name("ĞÛ»Æ", ({"xionghuang" }));
+	set_name("é›„é»„", ({"xionghuang" }));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°ü");
-		set("long", "ÕâÊÇÒ»°üĞÛ»Æ,¾İËµ¿ÉÇı°Ù¶¾¡£\n");
+		set("unit", "åŒ…");
+		set("long", "è¿™æ˜¯ä¸€åŒ…é›„é»„,æ®è¯´å¯é©±ç™¾æ¯’ã€‚\n");
 		set("value", 1000);
 	}
 	setup();
@@ -25,6 +25,6 @@ void create()
 
 int do_eat(string arg)
 {
-	return notify_fail("ÏëËÀ°¡£¿ĞÛ»Æ²»ÄÜ³Ô.\n");
+	return notify_fail("æƒ³æ­»å•Šï¼Ÿé›„é»„ä¸èƒ½åƒ.\n");
 }
 

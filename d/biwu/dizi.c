@@ -7,8 +7,8 @@ void backattack();
 void create()
 {
 
-	set_name(HIG"»¤·¨µÜ×Ó"NOR, ({ "dizi", "guard" }) );
-	set("long", "ÕâÊÇÒ»Î»×¨ÃÅµ£ÈÎ±£»¤Ö®ÔðµÄµÜ×Ó¡£\n");
+	set_name(HIG"æŠ¤æ³•å¼Ÿå­"NOR, ({ "dizi", "guard" }) );
+	set("long", "è¿™æ˜¯ä¸€ä½ä¸“é—¨æ‹…ä»»ä¿æŠ¤ä¹‹è´£çš„å¼Ÿå­ã€‚\n");
 	set("attitude", "friendly");
 
 
@@ -80,8 +80,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		 name() + "ËµµÀ£ºÊôÏÂËæÊ±½÷ÌýÕÙ»½£¡\n\n"
-		+ name() + "ÉÁÁËÉÁ¾ÍÏûÊ§²»¼ûÁË¡£\n" , environment(),
+		 name() + "è¯´é“ï¼šå±žä¸‹éšæ—¶è°¨å¬å¬å”¤ï¼\n\n"
+		+ name() + "é—ªäº†é—ªå°±æ¶ˆå¤±ä¸è§äº†ã€‚\n" , environment(),
 		this_object() );
         if(objectp(owner=this_object()->query("possessed")))
 		owner->add_temp("number",-1);
@@ -94,17 +94,17 @@ void invocation(object who, int level)
 	object *enemy;
         who=this_player();
 //        if (who->query("combat_exp") < 200000 || who->query("age") <= 18)
-//        return notify_fail("ÄãµÄÄÜÁ¦²»×ãÒÔÖ¸»Ó±ðÈË.\n");
+//        return notify_fail("ä½ çš„èƒ½åŠ›ä¸è¶³ä»¥æŒ‡æŒ¥åˆ«äºº.\n");
 //        if (who->query("jing") < 100 )
-//        return notify_fail("ÄãµÄ¾«²»×ãÒÔÖ¸»Ó±ðÈË.\n");
+//        return notify_fail("ä½ çš„ç²¾ä¸è¶³ä»¥æŒ‡æŒ¥åˆ«äºº.\n");
 //        if (who->query("neili") < 100 )
-//        return notify_fail("ÄãµÄÄÚÁ¦²»×ãÒÔÖ¸»Ó±ðÈË.\n");
+//        return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ä»¥æŒ‡æŒ¥åˆ«äºº.\n");
 //        if (who->query("qi") < 100 )
-//        return notify_fail("ÄãµÄÆø²»×ãÒÔÖ¸»Ó±ðÈË.\n");
+//        return notify_fail("ä½ çš„æ°”ä¸è¶³ä»¥æŒ‡æŒ¥åˆ«äºº.\n");
 //        if (who->query("qi") < 100 )
-//        return notify_fail("ÄãµÄÆø²»×ãÒÔÖ¸»Ó±ðÈË.\n");
+//        return notify_fail("ä½ çš„æ°”ä¸è¶³ä»¥æŒ‡æŒ¥åˆ«äºº.\n");
 //        if ((int)who->query_condition("zdizi_busy"))  
-//        return notify_fail("Äã¸ÕÕÐ¹ýËæÉíµÜ×Ó.\n");
+//        return notify_fail("ä½ åˆšæ‹›è¿‡éšèº«å¼Ÿå­.\n");
         
         who->apply_condition("zdizi_busy",8);
         level=who->query("combat_exp");
@@ -148,7 +148,7 @@ void invocation(object who, int level)
 	
 	set("combat_exp", 200000 + level/4);
 	message("vision",
-		 name() + "ºÈµÀ£ºµ¨×Óµ¹²»Ð¡£¬¸ÒÔÚÌ«ËêÍ·ÉÏ¶¯ÍÁ£¡\n" NOR,
+		 name() + "å–é“ï¼šèƒ†å­å€’ä¸å°ï¼Œæ•¢åœ¨å¤ªå²å¤´ä¸ŠåŠ¨åœŸï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

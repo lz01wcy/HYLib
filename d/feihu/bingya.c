@@ -1,14 +1,14 @@
-// ±ùÑÂ
+// å†°å´–
 // by steel 
 #include "ansi.h"
 inherit ROOM;
 
 void create()
 {
-	set("short", "±ùÑÂ");
+	set("short", "å†°å´–");
 	set("long", @LONG
-	±ùÑÂÖ®ÉÏ,Ë··çÈçµ¶,´µµÃÄãÁ³ÉÏÉúÌÛ¡£ÑÂÉÏ¹âÍºÍºµÄ£¬ËÆºõÊ²Ã´
-¶¼Ã»ÓÐ¡£×ÐÏ¸Ò»¿´£¬±ùÑÂµÄÖÐÑëÓÐÒ»¿é´óÊ¯£¬ºÃÏó²»ÊÇÌìÈ»Éú³ÉµÄ¡£    
+	å†°å´–ä¹‹ä¸Š,æœ”é£Žå¦‚åˆ€,å¹å¾—ä½ è„¸ä¸Šç”Ÿç–¼ã€‚å´–ä¸Šå…‰ç§ƒç§ƒçš„ï¼Œä¼¼ä¹Žä»€ä¹ˆ
+éƒ½æ²¡æœ‰ã€‚ä»”ç»†ä¸€çœ‹ï¼Œå†°å´–çš„ä¸­å¤®æœ‰ä¸€å—å¤§çŸ³ï¼Œå¥½è±¡ä¸æ˜¯å¤©ç„¶ç”Ÿæˆçš„ã€‚    
 LONG
 	);
         set("objects",([
@@ -34,8 +34,8 @@ int do_climb(string arg)
     me=this_player();
     if(!arg) return 0;
      if(arg!="down")
-         return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
-    message_vision(HIB"$N×¥½ô±ùÑÂ¼äµÄÊ¯·ì,¼èÄÑµÄÅÀÁËÏÂÈ¥¡£\n"NOR,me);
+         return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
+    message_vision(HIB"$NæŠ“ç´§å†°å´–é—´çš„çŸ³ç¼,è‰°éš¾çš„çˆ¬äº†ä¸‹åŽ»ã€‚\n"NOR,me);
     dodge=me->query_skill("dodge",1);
     if(obj=me->query_temp("armor/boots"))
     {
@@ -44,7 +44,7 @@ int do_climb(string arg)
         if(dodge>80){
             me->add("jing",-80);
             me->add("qi",-80);
-            tell_room(__DIR__"hill2",me->name()+"Æ½°²µÄ´ÓÉÏÃæÅÀÏÂÀ´\n");
+            tell_room(__DIR__"hill2",me->name()+"å¹³å®‰çš„ä»Žä¸Šé¢çˆ¬ä¸‹æ¥\n");
             me->move(__DIR__"hill2");
             return 1;  
           }
@@ -79,12 +79,12 @@ int do_climb(string arg)
 
 void to_die()
 {
-     message_vision(HIR"²»ºÃ!$NÊÖÉÏÒ»»¬,´Ó°ë¿ÕÖÐË¤ÁËÏÂÀ´¡£\n"NOR,this_player());  
+     message_vision(HIR"ä¸å¥½!$Næ‰‹ä¸Šä¸€æ»‘,ä»ŽåŠç©ºä¸­æ‘”äº†ä¸‹æ¥ã€‚\n"NOR,this_player());  
      this_player()->die();
 }
 void to_yun()
 {
-     message_vision(HIR"²»ºÃ!$NÊÖÉÏÒ»»¬,´Ó°ë¿ÕÖÐË¤ÁËÏÂÀ´¡£\n"NOR,this_player());     
+     message_vision(HIR"ä¸å¥½!$Næ‰‹ä¸Šä¸€æ»‘,ä»ŽåŠç©ºä¸­æ‘”äº†ä¸‹æ¥ã€‚\n"NOR,this_player());     
      this_player()->unconcious();
      this_player()->move(__DIR__"hill2");
 }    

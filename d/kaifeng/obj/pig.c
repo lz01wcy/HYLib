@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("小猪", ({"xiao zhu", "pig"}));
-	set("race", "野兽");
+	set_name("灏忕尓", ({"xiao zhu", "pig"}));
+	set("race", "閲庡吔");
 	set("age", 5);
-	set("long", "一头臭气熏天的小猪。\n");
+	set("long", "涓�澶磋嚟姘旂啅澶╃殑灏忕尓銆俓n");
 	set("attitude", "peaceful");
 	set("verbs", ({ "bite" }) );
 	set("combat_exp", 100);

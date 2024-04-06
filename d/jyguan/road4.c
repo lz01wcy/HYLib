@@ -1,4 +1,4 @@
-// road4.c ¹ÙµÀ
+// road4.c å®˜é“
 // west to jiayuguan,est to lanzhou
 // Ver 0.1 08/14/1998 by Freeze
 
@@ -6,13 +6,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹Ù µÀ");
+	set("short", "å®˜ é“");
 	set("long", @LONG
-ÕâÊÇÒ»Ìõ¿íÀ«µÄ´óÂ·£¬ÉÌ¶ÓÍùÀ´¡£Õâ±ãÊÇË¿³ñÖ®Â·£¬¸÷¹úÉÌ
-ÈË´ó¶àÓÉ´Ë½øÈë¾ÅÖÝ£¬ÊÇÖØÒªµÄÍ¨ÉÌÇþµÀ¡£
-    ÓÉ´ËµØÍûÎ÷¿´È¥£¬·çÉ³ÖÐÒþÏÖ×Å³ÇÂ¥ÎÝÓî¡£Ò»ÈºÃñ¹¤ÔÚ
-¼¸¸ö¾üººµÄ¼à¿´ÏÂÍùÎ÷±±°áÔË×©Ê¯£¬²»Ê±´«À´´òÂîÉù£¬¾­Äê
-ÀÛÔÂµÄáæÒÛÒÑÊ¹ÕâÀïµÄ°ÙÐÕ¿à²»¿°ÑÔ¡£
+è¿™æ˜¯ä¸€æ¡å®½é˜”çš„å¤§è·¯ï¼Œå•†é˜Ÿå¾€æ¥ã€‚è¿™ä¾¿æ˜¯ä¸ç»¸ä¹‹è·¯ï¼Œå„å›½å•†
+äººå¤§å¤šç”±æ­¤è¿›å…¥ä¹å·žï¼Œæ˜¯é‡è¦çš„é€šå•†æ¸ é“ã€‚
+    ç”±æ­¤åœ°æœ›è¥¿çœ‹åŽ»ï¼Œé£Žæ²™ä¸­éšçŽ°ç€åŸŽæ¥¼å±‹å®‡ã€‚ä¸€ç¾¤æ°‘å·¥åœ¨
+å‡ ä¸ªå†›æ±‰çš„ç›‘çœ‹ä¸‹å¾€è¥¿åŒ—æ¬è¿ç –çŸ³ï¼Œä¸æ—¶ä¼ æ¥æ‰“éª‚å£°ï¼Œç»å¹´
+ç´¯æœˆçš„å¾­å½¹å·²ä½¿è¿™é‡Œçš„ç™¾å§“è‹¦ä¸å ªè¨€ã€‚
 LONG
 	);	
         set("outdoors", "jyguan");

@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 { 
-        set_name("Ѧ��",({"xuebin"}));
-        set("title",YEL"�ú�ׯ��ׯ��"NOR);
-        set("long", "Ѧ��̧������ס�죬����ؿ����ţ��������������ϣ���Ȼ��ֻ�����Ǹ���������
-���⣬�������о��У�ȴ������Ϧ�������Լ�ȴ��Ϧ�����޺õ�ʱ�ⶼ�ѹ�ȥ����
-�������ѵ�����ҹ����\n");
+        set_name("薛斌",({"xuebin"}));
+        set("title",YEL"好汉庄老庄主"NOR);
+        set("long", "薛斌抬起手掩住嘴，轻轻地咳嗽着，阳光照在他身上，虽然还只不过是刚升起来的
+阳光，但在他感觉中，却好像是夕阳。他自己却连夕阳无限好的时光都已过去，他
+的生命已到了深夜。。\n");
         set("age",59);
         set("ill_boss",5);
         set("combat_exp", 5500000);

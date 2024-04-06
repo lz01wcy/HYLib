@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIG"�ջ�Ĺ���"NOR);
+	set("short", HIG"诱惑的宫殿"NOR);
 	set("long",RED @LONG
-����������һ�����У���Ϊ��ʱ��һ�����Ѱ�������
-�е��˶��������ˡ���ͻȻ���֣���Χ��ǽ�����ô���
-���ɵġ�һ���ޱȵ��ջ�ʹ�����ǰ���� 
+本来这里是一座城市，因为当时的一场灾难把这座城
+市的人都给毁灭了。你突然发现，周围的墙壁是用纯金
+砌成的。一种无比的诱惑使你继续前进。 
 LONG NOR);
 
 set("magicroom",1);set("outdoors","migong");

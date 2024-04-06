@@ -1,17 +1,17 @@
-// langjiu.c ÀÉ¾ÆÆ¿
+// langjiu.c éƒŽé…’ç“¶
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-	set_name("ÀÉ¾Æ", ({"lang jiu", "langjiu", "jiu"}));
+	set_name("éƒŽé…’", ({"lang jiu", "langjiu", "jiu"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Æ¿ÀÉ¾Æ£¬´ó¸Å×°µÃÁ½½ïµÄ¾Æ¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ç“¶éƒŽé…’ï¼Œå¤§æ¦‚è£…å¾—ä¸¤æ–¤çš„é…’ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 200);
 		set("max_liquid", 15);
 	}
@@ -20,7 +20,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "ÀÉ¾Æ",
+		"name": "éƒŽé…’",
 		"remaining": 5,
 		"drunk_apply": 3,
 	]));

@@ -4,12 +4,12 @@ inherit NPC;
 inherit F_BANKER;
 void create()
 {
-        set_name("ÏÂÒ°µÂ¿µ",({"xiaye dekang","xiaye","dekang"}));
+        set_name("ä¸‹é‡å¾·åº·",({"xiaye dekang","xiaye","dekang"}));
 //this_object()->init_bhnpc();
-//set("area_name","Éñ»§Ç®×¯");
+//set("area_name","ç¥æˆ·é’±åº„");
 //set("area_file","/d/japan/qianzhuang.c");
-        set("gender","ÄĞĞÔ");
-         set("title","Éñ»§Ç®×¯");
+        set("gender","ç”·æ€§");
+         set("title","ç¥æˆ·é’±åº„");
         set("combat_exp",300000);
         set_skill("unarmed",50);
         set_skill("parry",50);
@@ -18,8 +18,8 @@ void create()
 	set("attitude", "friendly");
 
         set("inquiry", ([
-            "ÀûÏ¢":   "ÎÒÃÇ×¯µÄ¹æ¾ØÊÇÌáÈ¡Á½³É±£¹Ü·Ñ¡£\n",
-            "lixi":   "ÎÒÃÇ×¯µÄ¹æ¾ØÊÇÌáÈ¡Á½³É±£¹Ü·Ñ¡£\n",
+            "åˆ©æ¯":   "æˆ‘ä»¬åº„çš„è§„çŸ©æ˜¯æå–ä¸¤æˆä¿ç®¡è´¹ã€‚\n",
+            "lixi":   "æˆ‘ä»¬åº„çš„è§„çŸ©æ˜¯æå–ä¸¤æˆä¿ç®¡è´¹ã€‚\n",
                        ]) );
 
 	setup();

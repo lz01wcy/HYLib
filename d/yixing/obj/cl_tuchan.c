@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("¹Ø¶«ÍÁ²ú", ({ "tuchan" }));
+	set_name("å…³ä¸œåœŸäº§", ({ "tuchan" }));
 	set("weight", 200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»°ü¹Ø¶«ÍÁ²ú¡£\n");
-		set("unit", "°ü");
+		set("long", "è¿™æ˜¯ä¸€åŒ…å…³ä¸œåœŸäº§ã€‚\n");
+		set("unit", "åŒ…");
 		set("material", "wood");
 		set("value", 300);
 	}

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 { 
-       set("short","´ó²İÔ­");
+       set("short","å¤§è‰åŸ");
        set("long", @LONG
-Äã×ß½øÁËÕâ±éÃàÃà²»¾øµÄ´ó²İÔ­£¬½ÅÏÂÊÇ´çºñµÄÇà²İ£¬ÈíÃàÃàµÄ»¹
-Õæ²»ºÃ×ß£¬¿´À´ÂòÆ¥ÂíÀ´´ú²½µ½ÊÇµÄºÃÖ÷Òâ¡£
+ä½ èµ°è¿›äº†è¿™éç»µç»µä¸ç»çš„å¤§è‰åŸï¼Œè„šä¸‹æ˜¯å¯¸åšçš„é’è‰ï¼Œè½¯ç»µç»µçš„è¿˜
+çœŸä¸å¥½èµ°ï¼Œçœ‹æ¥ä¹°åŒ¹é©¬æ¥ä»£æ­¥åˆ°æ˜¯çš„å¥½ä¸»æ„ã€‚
 LONG);
         set("outdoors", "shamo");
         set("exits", ([
@@ -27,14 +27,14 @@ int valid_leave(object me, string dir)
      if (me->query_temp("mark/steps") == 8){
          me->move(__DIR__"dongchengmen");
          me->delete_temp("mark/steps");
-         tell_room(environment(me), me->name()+"´Ó¶«±ßµÄ´ó²İÔ­×ßÁË¹ıÀ´¡£\n", ({ me }));
-         return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁË´ó²İÔ­¡£\n");
+         tell_room(environment(me), me->name()+"ä»ä¸œè¾¹çš„å¤§è‰åŸèµ°äº†è¿‡æ¥ã€‚\n", ({ me }));
+         return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œç»ˆæ–¼èµ°å‡ºäº†å¤§è‰åŸã€‚\n");
          }  
      if (me->query_temp("mark/steps") == -8){  
          me->move("/d/dingxiang/caoyuan");
          me->delete_temp("mark/steps");
-         tell_room(environment(me), me->name()+"´ÓÎ÷±ßµÄ´ó²İÔ­×ßÁË¹ıÀ´¡£\n", ({ me }));
-         return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁË´ó²İÔ­¡£\n");
+         tell_room(environment(me), me->name()+"ä»è¥¿è¾¹çš„å¤§è‰åŸèµ°äº†è¿‡æ¥ã€‚\n", ({ me }));
+         return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œç»ˆæ–¼èµ°å‡ºäº†å¤§è‰åŸã€‚\n");
          }
         return ::valid_leave(me,dir);
 }

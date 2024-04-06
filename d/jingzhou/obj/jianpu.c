@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Á¬³Ç½£Æ×", ({ "liancheng jianpu", "jianpu" }));
+        set_name("è¿åŸå‰‘è°±", ({ "liancheng jianpu", "jianpu" }));
         set_weight(600); 
         set("unique", 1); 
 	if( clonep() )
 		set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾±¡±¡µÄ»ÆÖ½Êé£¬ÊéÒ³µÄ×óÉÏ½Ç±»ËºÈ¥ÁËĞ¡Ğ¡µÄÒ»½Ç¡£\n");
+                set("unit", "æœ¬");
+                set("long", "è¿™æ˜¯ä¸€æœ¬è–„è–„çš„é»„çº¸ä¹¦ï¼Œä¹¦é¡µçš„å·¦ä¸Šè§’è¢«æ’•å»äº†å°å°çš„ä¸€è§’ã€‚\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([

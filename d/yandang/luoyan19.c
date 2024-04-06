@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Å®µÜ×Ó¾ÓÊÒ");
+  set ("short", "å¥³å¼Ÿå­å±…å®¤");
   set ("long", @LONG
-Å®µÜ×Ó¾ÓÊÒÖÐ±È½Ï¸É¾»,±Ï¾¹Å®º¢×Ó»¹ÊÇºÜ°®Õû½àµÄ,´²Ç°µÄÊá×±Ì¨
-ÉÏ³ýÁËµñ»¨Áâ½Ç¾µÍâ,»¹ÓÐÐí¶à½Ð²»ÉÏÃûµÄÖ¬·Û,Ò»¸öÓêºóÌìÇàµÄ»¨Æ¿Àï
-°Ú×Å¼¸Ö§ÏÊ»¨.
+å¥³å¼Ÿå­å±…å®¤ä¸­æ¯”è¾ƒå¹²å‡€,æ¯•ç«Ÿå¥³å­©å­è¿˜æ˜¯å¾ˆçˆ±æ•´æ´çš„,åºŠå‰çš„æ¢³å¦†å°
+ä¸Šé™¤äº†é›•èŠ±è±è§’é•œå¤–,è¿˜æœ‰è®¸å¤šå«ä¸ä¸Šåçš„è„‚ç²‰,ä¸€ä¸ªé›¨åŽå¤©é’çš„èŠ±ç“¶é‡Œ
+æ‘†ç€å‡ æ”¯é²œèŠ±.
 LONG);
 
-  set("sleep_equipment", "Ä¾´²");
+  set("sleep_equipment", "æœ¨åºŠ");
   set("sleep_room", "1");
   set("no_fight", "1");
   set("exits", ([ /* sizeof() == 2 */
@@ -31,9 +31,9 @@ int do_qu(string arg)
     object me,ob1;
     me=this_player();
 
-    if ( (arg!="flower")&&(arg!="»¨")) return 0;
+    if ( (arg!="flower")&&(arg!="èŠ±")) return 0;
     message_vision(
-"$N´Ó»¨Æ¿ÖÐÈ¡³öÒ»Ö¦»¨£¡\n", me);
+"$Nä»ŽèŠ±ç“¶ä¸­å–å‡ºä¸€æžèŠ±ï¼\n", me);
       		 ob1=clone_object(__DIR__"obj/hongmeigui.c");
 			 ob1->move(me);
         return 1;

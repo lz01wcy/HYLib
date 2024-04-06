@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�㳡");
+        set("short", "广场");
         set("long",
-             "������һ�鲻С�Ĺ㳡���������ũ��ɹ�Ĺ��������\n"
-         "������ɽׯ���������м�Сũ�ᣬ�����п�˵أ����Ϸ���һ\n"
-         "��С�š�\n"
+             "这里是一块不小的广场，上面堆着农家晒的谷物。北上是\n"
+         "『白驼山庄』。东面有间小农舍，西边有块菜地，东南方是一\n"
+         "座小桥。\n"
         );
         set("outdoors", "baituo");
 //        set("no_clean_up", 0);

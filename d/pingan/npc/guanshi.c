@@ -1,6 +1,6 @@
-//ÏÀ¿ÍĞĞ100º£Ñó°æII
-// guanshi.c Æ½°²³Ç¿ÍÕ»¹ÜÊÂ
-//ĞÇĞÇlywin 2000/6/1 ¶ùÍ¯½Ú
+//ä¾ å®¢è¡Œ100æµ·æ´‹ç‰ˆII
+// guanshi.c å¹³å®‰åŸå®¢æ ˆç®¡äº‹
+//æ˜Ÿæ˜Ÿlywin 2000/6/1 å„¿ç«¥èŠ‚
 #include <ansi.h>
 #include <command.h>
 inherit NPC;
@@ -8,11 +8,11 @@ inherit NPC;
 string ask_gongzuo();
 void create()
 {
-        set_name("¹ÜÊÂ", ({"guan shi", "guan"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç®¡äº‹", ({"guan shi", "guan"}));
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long", 
-                "ËûÊÇÆ½°²¿ÍÕ»µÄ¹ÜÊÂ£¬ËäÈ»ºÜÃ¦£¬µ«È´ºÜ¿ªĞÄ¡£\n");
+                "ä»–æ˜¯å¹³å®‰å®¢æ ˆçš„ç®¡äº‹ï¼Œè™½ç„¶å¾ˆå¿™ï¼Œä½†å´å¾ˆå¼€å¿ƒã€‚\n");
         set("qi", 100);
         set("max_qi", 100);
         set("jing", 100);
@@ -23,7 +23,7 @@ void create()
         set("score", 200);
         
         set("inquiry", ([
-                "ÅÌ×Ó" : (: ask_gongzuo :),
+                "ç›˜å­" : (: ask_gongzuo :),
                 "panzi": (: ask_gongzuo :),
         ]) );
 
@@ -37,13 +37,13 @@ string ask_gongzuo()
         me = this_player(); 
 
         if( me->query_temp("gongzuo/xipanzi")< 1)
-                return "Äã»¹ÊÇÏÈÈ¥¸øµêĞ¡¶ş´ò¸öÕĞºô°É¡£\n";
+                return "ä½ è¿˜æ˜¯å…ˆå»ç»™åº—å°äºŒæ‰“ä¸ªæ‹›å‘¼å§ã€‚\n";
         if( me->query_temp("gongzuo/gepanzi")> 0)
-                return "ÎÒ²»ÊÇ¸ø¹ıÄãÅÌ×ÓÁËÂğ£¿ÄÑµÀÄã¶ªÁËËü£¿";
+                return "æˆ‘ä¸æ˜¯ç»™è¿‡ä½ ç›˜å­äº†å—ï¼Ÿéš¾é“ä½ ä¸¢äº†å®ƒï¼Ÿ";
         ob = new(__DIR__"obj/zhangpanzi");
         ob->move(me);
         me->set_temp("gongzuo/gepanzi", 1);
-        message_vision("¹ÜÊÂ¸øÁË$NÒ»µşÔàÅÌ×Ó¡£\n",me);
-        return "ºÃ°É£¬Äã¿ìÈ¥³ø·¿Ï´¸Ï¸É¾»ÕâĞ©ÅÌ×Ó°É¡£";
+        message_vision("ç®¡äº‹ç»™äº†$Nä¸€å è„ç›˜å­ã€‚\n",me);
+        return "å¥½å§ï¼Œä½ å¿«å»å¨æˆ¿æ´—èµ¶å¹²å‡€è¿™äº›ç›˜å­å§ã€‚";
 
 }

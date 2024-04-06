@@ -1,4 +1,4 @@
-//bing1.c Ò»Ðã±ý
+//bing1.c ä¸€ç§€é¥¼
 inherit ITEM;
 #include <ansi.h>
 
@@ -9,8 +9,8 @@ void init()
 
 void create()
 {
-	set_name(HIG "Ò»Ðã±ý" NOR, ({"bing1", "yixiubing"}));
-	set("unit", "¿é");
+	set_name(HIG "ä¸€ç§€é¥¼" NOR, ({"bing1", "yixiubing"}));
+	set("unit", "å—");
 /*
 	set("no_get", 1);
 	set("no_drop", 1);
@@ -18,17 +18,17 @@ void create()
 	set("no_beg", 1);
 	set("no_steal", 1);
 */
-	set("long", "ÕâÊÇÒ»¿é´àÏãµÄÒ»Ðã±ý¡£\n");
+	set("long", "è¿™æ˜¯ä¸€å—è„†é¦™çš„ä¸€ç§€é¥¼ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="bing1"||arg=="yixiubing")
 	{
-		message_vision(HIY "$NÈý¿ÚÁ½¿Ú³ÔÏÂÒ»¿é$n¡£\n" NOR, this_player(), this_object());
+		message_vision(HIY "$Nä¸‰å£ä¸¤å£åƒä¸‹ä¸€å—$nã€‚\n" NOR, this_player(), this_object());
 		me->add("combat_exp",68);
 		destruct(this_object());
 	}

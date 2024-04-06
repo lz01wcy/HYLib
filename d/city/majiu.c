@@ -1,16 +1,16 @@
-//Room: majiu1.c Âí¾Ç
+//Room: majiu1.c é©¬å©
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","Âí¾Ç");
+      set("short","é©¬å©");
       set("long",@LONG
-ÕâÊÇ¿ÍµêºóµÄÂí¾Ç£¬³£Äê¹©Ó¦ĞÂÏÊ²İÁÏ¡£ÑïÖİÃñ·ç´¾ÆÓ£¬Âí·òÃÇ»á°Ñ
-ÂíÇ£µ½Âí¾ÇºÃÉúÕÕ¿´£¬½«ËüÃÇÎ¹±¥Òû×ã£¬ÔÙÏ´Ë¢µÃ¸ÉÇ¬¾»¾»£¬Ò»Ö±ËÅºòµ½
-¿ÍÈËÉÏÂ·¡£Âí¾ÇÓêéÜÏÂµÄÀÃÄ¾ÖùÉÏ¶¤×ÅÒ»¿éÆÆÄ¾ÅÆ(paizi)¡£
-    Âí¾ÇÖĞ¶Ñ·ÅÖø¼¸¶Ñ²İÁÏ£¬ÕıÖĞÓĞÒ»¿Úãï²Û¡£
+è¿™æ˜¯å®¢åº—åçš„é©¬å©ï¼Œå¸¸å¹´ä¾›åº”æ–°é²œè‰æ–™ã€‚æ‰¬å·æ°‘é£æ·³æœ´ï¼Œé©¬å¤«ä»¬ä¼šæŠŠ
+é©¬ç‰µåˆ°é©¬å©å¥½ç”Ÿç…§çœ‹ï¼Œå°†å®ƒä»¬å–‚é¥±é¥®è¶³ï¼Œå†æ´—åˆ·å¾—å¹²ä¹¾å‡€å‡€ï¼Œä¸€ç›´ä¼ºå€™åˆ°
+å®¢äººä¸Šè·¯ã€‚é©¬å©é›¨æªä¸‹çš„çƒ‚æœ¨æŸ±ä¸Šé’‰ç€ä¸€å—ç ´æœ¨ç‰Œ(paizi)ã€‚
+    é©¬å©ä¸­å †æ”¾è‘—å‡ å †è‰æ–™ï¼Œæ­£ä¸­æœ‰ä¸€å£æ³”æ§½ã€‚
 LONG);
       set("outdoors", "city");
       set("no_fight", "1");
@@ -24,29 +24,29 @@ LONG);
       ]));
       set("item_desc", ([
           "paizi": @TEXT
-¿ÍÈËÃÇÖ»Òª¸øÂí·òÒ»Á½°×ÒøµÄ×â½ğ¾Í¿ÉÒÔ¹Íµ½Ò»Æ¥ÂíÁË¡£
+å®¢äººä»¬åªè¦ç»™é©¬å¤«ä¸€ä¸¤ç™½é“¶çš„ç§Ÿé‡‘å°±å¯ä»¥é›‡åˆ°ä¸€åŒ¹é©¬äº†ã€‚
 
-Ç°Íù      ±±¾©³Ç:  ridebj
-          ËÕÖİ³Ç:  ridesz
-          º¼Öİ³Ç:  ridehz
-          ¸£Öİ³Ç:  ridefz
-          ´óÀí³Ç:  ridedl
-          ÏåÑô³Ç:  ridexy
-          ÓÀµÇ³Ç:  rideyd
-          ÒÁÀçÕò:  rideyl
-          ·ğÉ½Õò:  ridefs
-          ¶ëáÒÉ½:  rideem
-          ÑïÖİ³Ç:  rideyz
-          ÑÓÆ½³Ç:  rideyp
-          ½­Áê³Ç:  ridejl
-          ³¤°²³Ç:  rideca
-          ³É¶¼³Ç:  ridecd                                               
-          ÎŞÎı³Ç:  ridewx                                               
-          ÁéÖİ³Ç:  ridelz                                               
-          ÑïÖİ³Ç:  rideyz                                                      
-          ºÕÍ¼°¢À­³Ç:  rideht
-          ¾£Öİ³Ç:  ridejingzhou
-          À¥Ã÷³Ç:  ridekm
+å‰å¾€      åŒ—äº¬åŸ:  ridebj
+          è‹å·åŸ:  ridesz
+          æ­å·åŸ:  ridehz
+          ç¦å·åŸ:  ridefz
+          å¤§ç†åŸ:  ridedl
+          è¥„é˜³åŸ:  ridexy
+          æ°¸ç™»åŸ:  rideyd
+          ä¼ŠçŠé•‡:  rideyl
+          ä½›å±±é•‡:  ridefs
+          å³¨åµ‹å±±:  rideem
+          æ‰¬å·åŸ:  rideyz
+          å»¶å¹³åŸ:  rideyp
+          æ±Ÿé™µåŸ:  ridejl
+          é•¿å®‰åŸ:  rideca
+          æˆéƒ½åŸ:  ridecd                                               
+          æ— é”¡åŸ:  ridewx                                               
+          çµå·åŸ:  ridelz                                               
+          æ‰¬å·åŸ:  rideyz                                                      
+          èµ«å›¾é˜¿æ‹‰åŸ:  rideht
+          è†å·åŸ:  ridejingzhou
+          æ˜†æ˜åŸ:  ridekm
 TEXT]));
       set("exits",([ /* sizeof() == 1 */
           "west"      : __DIR__"kedian",
@@ -65,22 +65,22 @@ int do_yao()
 object me;
 me = this_player();
 if(!me->query("marks/mengzhu"))
-		return notify_fail("ÄãÃ»ÓĞ³ËÂí³µµÄÈ¨ÏŞ¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰ä¹˜é©¬è½¦çš„æƒé™ã€‚\n");
    if (me->query_temp("che"))
-		return notify_fail("ÄãÒÑ¾­Òª¹ıÂí³µÁË¡£\n");
+		return notify_fail("ä½ å·²ç»è¦è¿‡é©¬è½¦äº†ã€‚\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 	me->set_temp("che",1);
-message_vision("$N³ËÉÏÁËÒ»Á¾Âí³µ´Ò´ÒÃ¦Ã¦µØÀëÈ¥ÁË¡£\n",me);
+message_vision("$Nä¹˜ä¸Šäº†ä¸€è¾†é©¬è½¦åŒ†åŒ†å¿™å¿™åœ°ç¦»å»äº†ã€‚\n",me);
 if (me->query("shen")<0)  me->move("/d/biwu/a11");
 else me->move("/d/biwu/b11");
-message_vision("$NÍ»È»³öÏÖÔÚÖÚÈËÑÛÇ°¡£\n",me);
+message_vision("$Nçªç„¶å‡ºç°åœ¨ä¼—äººçœ¼å‰ã€‚\n",me);
 return 1;
 }

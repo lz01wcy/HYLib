@@ -1,12 +1,12 @@
-// Ñ©Â·
+// é›ªè·¯
 // by steel 
 
 inherit ROOM;
 void create()
 {
-	set("short", "Ñ©¶´Ç°");
+	set("short", "é›ªæ´žå‰");
 	set("long", @LONG
-	Â·µ½ÁËÕâÀï¾ÍÏûÊ§ÁË,Î÷±±ÊÇÒ»¸öÐ¡É½Çð,ÒþÔ¼ÍûÈ¥,ËÆºõÓÐ¸öÉ½¶´¡£   
+	è·¯åˆ°äº†è¿™é‡Œå°±æ¶ˆå¤±äº†,è¥¿åŒ—æ˜¯ä¸€ä¸ªå°å±±ä¸˜,éšçº¦æœ›åŽ»,ä¼¼ä¹Žæœ‰ä¸ªå±±æ´žã€‚   
 LONG
 	);
 	
@@ -26,7 +26,7 @@ int valid_leave(object me, string dir)
       {	
        if( (int)me->query("combat_exp")<50000)
          {
-         tell_object(me,"Äã»¹ÊÇ±ðÈ¥ËÍËÀ°É!\n");
+         tell_object(me,"ä½ è¿˜æ˜¯åˆ«åŽ»é€æ­»å§!\n");
          return 0;
           }
        }

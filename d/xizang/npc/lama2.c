@@ -1,17 +1,17 @@
  inherit NPC;
 void create()
 {
-        set_name("»¤ËÂ²ØÄá", ({ "zang ni", "ni"}) );
-        set("gender", "Å®ĞÔ" );
+        set_name("æŠ¤å¯ºè—å°¼", ({ "zang ni", "ni"}) );
+        set("gender", "å¥³æ€§" );
         set("age", 25);
         set("str", 20);
         set("long", @LONG
-Ò»¸ö´óÕÑËÂµÄ²ØÄá¡£
+ä¸€ä¸ªå¤§æ˜­å¯ºçš„è—å°¼ã€‚
 LONG
 );
         set("attitude", "peaceful"); 
         set("combat_exp", 6000);
-        create_family("´óÕÑËÂ", random(4)+24, "µÜ×Ó");
+        create_family("å¤§æ˜­å¯º", random(4)+24, "å¼Ÿå­");
         set_skill("unarmed", 50);
         set_skill("bloodystrike", random(20)+10);
         set_skill("force", 40);

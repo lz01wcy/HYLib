@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ͷ�");
+	set("short", "客房");
 	set("long", @LONG
-����ס��һ����������Ͽ�����δ�ܸ��У�һֱס���⣬׼����
-�´��ٽ����ƿ���
+这里住着一个书生，因赶考多年未能高中，一直住在这，准备下
+下次再进京科考。
 LONG
 );
 	set("exits", ([ /* sizeof() == 1 */

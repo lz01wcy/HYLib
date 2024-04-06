@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIR"ºìÁ«µÄÃÔ¹¬µÄ¾¡Í·"NOR);
+	set("short", HIR"çº¢è²çš„è¿·å®«çš„å°½å¤´"NOR);
 	set("long", HIR @LONG
-  ´Ë´¦ÊÇÒ»¸ö»ğÉ½ÈÛ¶´£¬ËÄÖÜ¶¼ÊÇÆæ¹ÖµÄ»ğºìÉ«ÑÒÊ¯£¬²¢ÇÒÓĞÊ±ÓĞÒ»Ğ©Ææ¹ÖµÄ
-ÑÒÊ¯½á¾§£¬µ±Æä±»»ğ¹âÓ³ÕÕÖ®Ê±£¬»á·´Éä³öÑ¤ÀöµÄ¹âÏß£¬¼ÓÉÏÔ­ÓĞµÄ»ğºì¹¹³ÉÒ»¸±
-ÓÅÃÀµÄ¾°É«£¬
+  æ­¤å¤„æ˜¯ä¸€ä¸ªç«å±±ç†”æ´ï¼Œå››å‘¨éƒ½æ˜¯å¥‡æ€ªçš„ç«çº¢è‰²å²©çŸ³ï¼Œå¹¶ä¸”æœ‰æ—¶æœ‰ä¸€äº›å¥‡æ€ªçš„
+å²©çŸ³ç»“æ™¶ï¼Œå½“å…¶è¢«ç«å…‰æ˜ ç…§ä¹‹æ—¶ï¼Œä¼šåå°„å‡ºç»šä¸½çš„å…‰çº¿ï¼ŒåŠ ä¸ŠåŸæœ‰çš„ç«çº¢æ„æˆä¸€å‰¯
+ä¼˜ç¾çš„æ™¯è‰²ï¼Œ
 LONG NOR);
 set("magicroom",1);
 set("magicset",1);
@@ -41,13 +41,13 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
     if (me->is_fighting() && dir == "west") 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
     if(me->is_busy() && dir == "west")
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
        if ( !present("fire hat", me) && dir == "west" )
-        return notify_fail("Ò»¹ÉÉñÆæµÄÁ¦Á¿µ²×¡ÁËÄã!!\n");
+        return notify_fail("ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡æŒ¡ä½äº†ä½ !!\n");
 
 	if (dir =="west")
 	{
@@ -58,7 +58,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

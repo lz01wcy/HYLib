@@ -1,15 +1,15 @@
 //Room: /d/dali/wangfugate.c
 //Date: June. 29 1998 by Java
-//ÐÇÐÇ(lywin)ÐÞ¶©ÓÚ2000Äê8ÔÂ13ÈÕ
+//æ˜Ÿæ˜Ÿ(lywin)ä¿®è®¢äºŽ2000å¹´8æœˆ13æ—¥
 
 inherit ROOM;
 void create()
 {
-	set("short","Íõ¸®´óÃÅ");
+	set("short","çŽ‹åºœå¤§é—¨");
 	set("long",@LONG
-ÄãÕýÕ¾ÔÚÒ»×ùºÀ»ªµÄ¸®ÃÅÇ°£¬ÃÅÇ°ÓÐÁ½Ö»¼«´óµÄÊ¯Ê¨×Ó£¬ÃÅÉÏ¸ß
-ÐüÒ»¿éºáØÒ£¬ÉÏÊé¡¸ÕòÄÏÍõ¸®¡¹ËÄ¸ö½ð×Ö¡£ÃÅ¿ÚÕ¾×ÅÁ½ÅÅÊÌÎÀ£¬Éí×Å
-½õÒÂ£¬ÊÖÖ´¸Öµ¶£¬ÆøÓîÐù°º¡£
+ä½ æ­£ç«™åœ¨ä¸€åº§è±ªåŽçš„åºœé—¨å‰ï¼Œé—¨å‰æœ‰ä¸¤åªæžå¤§çš„çŸ³ç‹®å­ï¼Œé—¨ä¸Šé«˜
+æ‚¬ä¸€å—æ¨ªåŒ¾ï¼Œä¸Šä¹¦ã€Œé•‡å—çŽ‹åºœã€å››ä¸ªé‡‘å­—ã€‚é—¨å£ç«™ç€ä¸¤æŽ’ä¾å«ï¼Œèº«ç€
+é”¦è¡£ï¼Œæ‰‹æ‰§é’¢åˆ€ï¼Œæ°”å®‡è½©æ˜‚ã€‚
 LONG);
 	set("objects", ([
 	   CLASS_D("dali")+"/zhuwanli": 1,

@@ -4,13 +4,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name(HIR"Ãµ¹åºìÇ¬À¤ºø"NOR, ({"qiankun hu", "hu"}));
+	set_name(HIR"ç«ç‘°çº¢ä¹¾å¤å£¶"NOR, ({"qiankun hu", "hu"}));
 	set_weight(800);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "¾°µÂÕò¹ÙÒ¤ÉÕÖÆµÄÌÕ´É¾«Æ·¡£\n");
-		set("unit", "¸ö");
+		set("long", "æ™¯å¾·é•‡å®˜çª‘çƒ§åˆ¶çš„é™¶ç“·ç²¾å“ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 10000);
 		set("max_liquid", 80);
 	}

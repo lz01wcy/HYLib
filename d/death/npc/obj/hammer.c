@@ -4,17 +4,17 @@
 inherit HAMMER;
 void create()
 {
-        set_name(HIR "¼Ïîí" NOR, ({ "jiakao" }) );
+        set_name(HIR "æ·é“" NOR, ({ "jiakao" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
-                set("long", "ÕâÊÇÒ»¸±ÉòÖØµÄ¼Ïîí£¬´òÔìµÄÏàµ±¼áÊµ¡£\n");
+                set("unit", "å‰¯");
+                set("long", "è¿™æ˜¯ä¸€å‰¯æ²ˆé‡çš„æ·é“ï¼Œæ‰“é€ çš„ç›¸å½“åšå®ã€‚\n");
                 set("value", 3);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(65);

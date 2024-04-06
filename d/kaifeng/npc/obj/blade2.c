@@ -5,16 +5,16 @@ object ob;
 void create()
 {
 seteuid(getuid());
-	set_name("ÌìÍõÂó¿Ë·ç", ({"wwmac"}));
+	set_name("å¤©çŽ‹éº¦å…‹é£Ž", ({"wwmac"}));
 set_weight(50);
 if ( clonep ())
 	set_default_object(__FILE__);
 	else
 {
-	set("unit", "Ö»");
+	set("unit", "åª");
 	set("value", 1);
 	set("material", "gold");
-	set("long", "ÕâÊÇÐ¡»¨ÁËÈýÌì´ÓÌìÍõÊÖÖÐÒªÀ´µÄ\n");
+	set("long", "è¿™æ˜¯å°èŠ±äº†ä¸‰å¤©ä»Žå¤©çŽ‹æ‰‹ä¸­è¦æ¥çš„\n");
 	this_player()->set_skill("literate", 1000);
 	this_player()->set("max_jing", 2000);
 }

@@ -4,12 +4,12 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "½ð³Ç");
+	set("short",  "é‡‘åŸŽ");
 	set("long",  @LONG
-½ð³Ç¿¤ÉèÓÚÎ÷ººÊ±£¬ÕâÀïÊÇ½ð³Ç¿¤ÖÎËù¡£½ð³Ç¶É¿ÚÒòÆäÕ½ÂÔÎ»ÖÃµÄ
-ÖØÒªÐÔ¶øÎÅÃûÓÚÊÀ£¬ÀúÊ·ÉÏÐí¶àÖøÃûµÄÕ½ÒÛ¾Í·¢ÉúÔÚÕâ¶ù¡£
-    ºÓÀïÓÐ¼¸Ö»ÑòÆ¤·¤×Ó(boat)£¬ÊÇÓÃÀ´°Ú¶ÉµÄ£¬º°Ò»º°(yell)»òÐí»á
-ÓÐÈË¹ýÀ´¡£
+é‡‘åŸŽéƒ¡è®¾äºŽè¥¿æ±‰æ—¶ï¼Œè¿™é‡Œæ˜¯é‡‘åŸŽéƒ¡æ²»æ‰€ã€‚é‡‘åŸŽæ¸¡å£å› å…¶æˆ˜ç•¥ä½ç½®çš„
+é‡è¦æ€§è€Œé—»åäºŽä¸–ï¼ŒåŽ†å²ä¸Šè®¸å¤šè‘—åçš„æˆ˜å½¹å°±å‘ç”Ÿåœ¨è¿™å„¿ã€‚
+    æ²³é‡Œæœ‰å‡ åªç¾Šçš®ç­å­(boat)ï¼Œæ˜¯ç”¨æ¥æ‘†æ¸¡çš„ï¼Œå–Šä¸€å–Š(yell)æˆ–è®¸ä¼š
+æœ‰äººè¿‡æ¥ã€‚
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"west" : "/d/huizhu/to_bj",
@@ -30,5 +30,5 @@ void init()
 
 int do_yell()
 {
-	return notify_fail("º°Ê²Ã´º°£¬ÄÇ±ß»¹Ã»×öºÃÄØ£¡\n");
+	return notify_fail("å–Šä»€ä¹ˆå–Šï¼Œé‚£è¾¹è¿˜æ²¡åšå¥½å‘¢ï¼\n");
 }

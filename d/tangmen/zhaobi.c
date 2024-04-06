@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "�ձ�");
+	set("short", "照壁");
 	set("long", @LONG
-	����һ��������ձڣ���������������룬������֣��·�Ҫ�Ʊڶ���������
-����һͨ�����ƹ��ձڣ��Ϳ��Խ��롰�����á���
+	这是一面宽阔的照壁，上面雕有瑞兽麒麟，活灵活现，仿佛要破壁而出。两旁
+各有一通道。绕过照壁，就可以进入“留剑堂”。
 LONG
 	);
         set("outdoors", "tangmen");

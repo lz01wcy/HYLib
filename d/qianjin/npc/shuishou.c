@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ë®ÊÖ", ({ "shuishou" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ°´æ‰‹", ({ "shuishou" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 23);
-        set("long", "Ò»¸öÕıÔÚ°Ú°ÚÑù×Ó£¬ÒÔ²«Çéµ÷µÄÇ§½ğÂ¥¼ÒÅ«\n");
+        set("long", "ä¸€ä¸ªæ­£åœ¨æ‘†æ‘†æ ·å­ï¼Œä»¥ææƒ…è°ƒçš„åƒé‡‘æ¥¼å®¶å¥´\n");
         set("combat_exp", 100);
         set("str", 27);
         set("force", 200);
@@ -17,10 +17,10 @@ void create()
         setup();
         set("chat_chance", 5);
         set("chat_msg", ({
-"Ë®ÊÖÏòÄãĞ¦ÁËĞ¦£¬ÓÖÉì³öÊÖ£¬ÏóĞĞÀñ£¬ÓÖÏóÒªÉÍÇ®£®\n",
+"æ°´æ‰‹å‘ä½ ç¬‘äº†ç¬‘ï¼Œåˆä¼¸å‡ºæ‰‹ï¼Œè±¡è¡Œç¤¼ï¼Œåˆè±¡è¦èµé’±ï¼\n",
         }) );
         set("inquiry", ([
-                "ºşÉÏ°Ë½¿" : "Å¶£¬ËıÃÇ¶¼×¡ÔÚºÉ»¨µ´ÉÏ\n",
+                "æ¹–ä¸Šå…«å¨‡" : "å“¦ï¼Œå¥¹ä»¬éƒ½ä½åœ¨è·èŠ±è¡ä¸Š\n",
         ]) );
         carry_object("clone/cloth/cloth")->wear();
 }
@@ -28,7 +28,7 @@ void create()
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + 
-"£¬ÄúÒ»¶¨»áÔÚÕâ¶ùÍæµÄ¿ªĞÄµÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) + 
+"ï¼Œæ‚¨ä¸€å®šä¼šåœ¨è¿™å„¿ç©çš„å¼€å¿ƒçš„ï¼");
         return 1;
 }

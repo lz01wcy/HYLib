@@ -1,18 +1,18 @@
-// maimaiti.c ÂòÂôÌá 
+// maimaiti.c ä¹°å–æ 
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("ÂòÂôÌá", ({ "mai mai ti", "mai","ti"}));
-	set("title", "ÔÓ»õÆÌÀÏ°å");
+	set_name("ä¹°å–æ", ({ "mai mai ti", "mai","ti"}));
+	set("title", "æ‚è´§é“ºè€æ¿");
 	set("shen_type", 1);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"ÂòÂôÌáÀÏ°åÊÇÍÁÉúÍÁ³¤µÄÎ÷ÓòÈË£¬ÔÚÕâ¶ù×öÁË¼¸Ê®ÄêµÄĞ¡ÂòÂô¡£\n");
+		"ä¹°å–æè€æ¿æ˜¯åœŸç”ŸåœŸé•¿çš„è¥¿åŸŸäººï¼Œåœ¨è¿™å„¿åšäº†å‡ åå¹´çš„å°ä¹°å–ã€‚\n");
 	set_skill("unarmed", 50);
 	set_skill("dodge", 50);
 	set_temp("apply/damage", 15);

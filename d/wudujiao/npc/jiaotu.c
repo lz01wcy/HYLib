@@ -1,14 +1,14 @@
-// jiaotu.c Îå¶¾½ÌÍ½
+// jiaotu.c äº”æ¯’æ•™å¾’
 // by victori
 inherit NPC;
 
 void create()
 {
-	set_name("Îå¶¾½ÌÍ½", ({"jiao tu","tu"}));
+	set_name("äº”æ¯’æ•™å¾’", ({"jiao tu","tu"}));
 	set("long",
-		"Ò»¸öÎå¶¾µÄ»ù²ã½ÌÍ½£¬¿´À´¸ÕÈë½Ì²»¾Ã¡£\n"	);
+		"ä¸€ä¸ªäº”æ¯’çš„åŸºå±‚æ•™å¾’ï¼Œçœ‹æ¥åˆšå…¥æ•™ä¸ä¹…ã€‚\n"	);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 
 	set("age", 25);

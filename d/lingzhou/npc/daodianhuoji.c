@@ -5,9 +5,9 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Ğ¡»ï¼Æ", ({ "xiao huoji", "huoji" }));
+        set_name("å°ä¼™è®¡", ({ "xiao huoji", "huoji" }));
         set("shen_type", 1);
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 33);
 
         set("combat_exp", 400);
@@ -46,8 +46,8 @@ void compelete_trade(object who, string what)
         if( what=="changjian" )  ob = new(__DIR__"changjian");
         ob->move(who);
         if( what=="hammer" )
-message_vision("$N½»¸ø$nÒ»°ÑÉòµéµéµÄ´òÌúÓÃÌú´¸¡£\n", this_object(), who);
+message_vision("$Näº¤ç»™$nä¸€æŠŠæ²ˆç”¸ç”¸çš„æ‰“é“ç”¨é“é”¤ã€‚\n", this_object(), who);
         if( what=="changjian" )
-message_vision("$N½»¸ø$nÒ»°ÑÇà¹âÉÁÉÁµÄ³¤½£¡£\n", this_object(), who);
+message_vision("$Näº¤ç»™$nä¸€æŠŠé’å…‰é—ªé—ªçš„é•¿å‰‘ã€‚\n", this_object(), who);
 }
 */ 

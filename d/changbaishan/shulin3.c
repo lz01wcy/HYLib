@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","������");
+  set ("short","松树林");
   set ("long", @LONG
-������һƬ�����֡���ľ��ס�˺�Х�ı��磬������΢ů��һЩ��
-��˵�������˲ε�ʢ���أ�Ҳ��֪���ǲ�����ġ�
+这里是一片松树林。树木挡住了呼啸的北风，这里稍微暖和一些。
+据说这里是人参的盛产地，也不知道是不是真的。
 LONG);
 
   set("exits", ([ 

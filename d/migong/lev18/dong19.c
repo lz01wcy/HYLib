@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"¹Å´úÒÅ¼£"NOR);
+	set("short", GRN"å¤ä»£é—è¿¹"NOR);
 	set("long", GRN @LONG
-   ÕâÀïÊÇ¸öÎ£ÏÕµÄÇøÓò£¬ºÜ´óÇÒºÜÈİÒ×ÃÔÂ·£¬´Ó²»ÉÙËÀÀïÌÓÉúµÄ¾ÓÃñ¿ÚÖĞ
-»ñÖªÕâÇøÓòÄÚ³ıÁËÒ»Ğ©¶¾ÎïÖ®Íâ»¹×¡Öø×¨ÃÅÁÔÈËÍ·µÄ°«Áé×å£¬ÒÑ¾­ÓĞ²»ÉÙ
-¾ÓÃñ½øÈ¥Ö®áá¾ÍÃ»ÓĞ»ØÀ´¹ı¡£
+   è¿™é‡Œæ˜¯ä¸ªå±é™©çš„åŒºåŸŸï¼Œå¾ˆå¤§ä¸”å¾ˆå®¹æ˜“è¿·è·¯ï¼Œä»ä¸å°‘æ­»é‡Œé€ƒç”Ÿçš„å±…æ°‘å£ä¸­
+è·çŸ¥è¿™åŒºåŸŸå†…é™¤äº†ä¸€äº›æ¯’ç‰©ä¹‹å¤–è¿˜ä½è‘—ä¸“é—¨çŒäººå¤´çš„çŸ®çµæ—ï¼Œå·²ç»æœ‰ä¸å°‘
+å±…æ°‘è¿›å»ä¹‹å¾Œå°±æ²¡æœ‰å›æ¥è¿‡ã€‚
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);
@@ -46,9 +46,9 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
        if ( !present("earth meteor", me) && dir == "north" )
-        return notify_fail("Ò»¸öÊ¿±øÀ¹×¡ÁËÄã£ºÄãÍ¨¹ı´óµØÖ®Á¦Á¿Ê¹µÄ¿¼ÑéÁËÂğ??\n");
+        return notify_fail("ä¸€ä¸ªå£«å…µæ‹¦ä½äº†ä½ ï¼šä½ é€šè¿‡å¤§åœ°ä¹‹åŠ›é‡ä½¿çš„è€ƒéªŒäº†å—??\n");
        if ( !present("earth badge", me) && dir == "north" )
-        return notify_fail("Ò»¸öÊ¿±øÀ¹×¡ÁËÄã£ºÄãÍ¨¹ı´óµØÖ®¾«ÁéÍõµÄ¿¼ÑéÁËÂğ??\n");
+        return notify_fail("ä¸€ä¸ªå£«å…µæ‹¦ä½äº†ä½ ï¼šä½ é€šè¿‡å¤§åœ°ä¹‹ç²¾çµç‹çš„è€ƒéªŒäº†å—??\n");
 
 	if (dir =="north")
 	{
@@ -59,7 +59,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

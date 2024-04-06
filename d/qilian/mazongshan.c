@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ɽ");
+	set("short", "马鬃山");
 	set("long", @LONG
-����ɽ״��������ɽ���೤��ɽ��᯲�룬����Ұ��֮�ס�����
-���ǽ������ĳ϶�����ɽ�ߣ��ɵñ��ض��飬����Ϊ�����ʽ�ɽ�ߣ���
-��������
+马鬃山状如其名，山脉绵长，山峰岑差不齐，挽似野马之鬃。听老
+人们讲，凡心诚而善入山者，可得宝藏而归，但凡为富不仁进山者，必
+难生还。
 LONG );
 	set("outdoors", "qilian");
 	set("exits", ([

@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name(YEL"Ó¥Íõ"NOR, ({ "hawkking" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name(YEL"é¹°ç‹"NOR, ({ "hawkking" }) );
+        set("gender", "ç”·æ€§" );
         set("no_get",1);
-	 set("title",HIY"°ÙÓ¥Ö®Íõ"NOR);
+	 set("title",HIY"ç™¾é¹°ä¹‹ç‹"NOR);
         set("age", 62);
-        set("long","Ò»¸öÉíĞÎ¸ß´óµÄ¸ßÕß,ÊìÏ¤ÈÃÒ°ÊŞ(up)±äÉí³É³¤µÄÄÜÁ¦¡£\n");
+        set("long","ä¸€ä¸ªèº«å½¢é«˜å¤§çš„é«˜è€…,ç†Ÿæ‚‰è®©é‡å…½(up)å˜èº«æˆé•¿çš„èƒ½åŠ›ã€‚\n");
         set("combat_exp", 1500000);
         set("attitude", "friendly");
         set("chat_chance", 5);
@@ -36,12 +36,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "Ó¥ÍõËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÎÒ¿ÉÒÔ°ïÄãÉı¼¶Ò°ÊŞ£¨up£©£¬Äã¸¶½ğ×Ó£¿\n");
+                        say( "é¹°ç‹è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæˆ‘å¯ä»¥å¸®ä½ å‡çº§é‡å…½ï¼ˆupï¼‰ï¼Œä½ ä»˜é‡‘å­ï¼Ÿ\n");
                         break;
                 case 1:
-                        say( "Ó¥ÍõĞ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬·ÅĞÄ£¡´ò²»ÉËµÄ£¡\n");
+                        say( "é¹°ç‹ç¬‘é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæ”¾å¿ƒï¼æ‰“ä¸ä¼¤çš„ï¼\n");
 
                         break;
         }
@@ -53,32 +53,32 @@ int do_train(string arg)
 	int cost;
         me = this_player();
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
-	if(!arg) return notify_fail("Ó¥ÍõµÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
+	if(!arg) return notify_fail("é¹°ç‹é“ï¼šï¼‚ä½ è¦ä»€ä¹ˆå‘€ï¼Ÿï¼‚\n");
 	pet = present(arg,environment());
-	if(!objectp(pet)) return notify_fail("Ó¥ÍõµÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+	if(!objectp(pet)) return notify_fail("é¹°ç‹é“ï¼šï¼‚ä½ è¦ä»€ä¹ˆå‘€ï¼Ÿï¼‚\n");
 	if(pet->query("possessed") != me )
-	return notify_fail("Ó¥ÍõµÀ£º£¢ÄÇºÃÏó²»ÊÇÄãµÄ°É£¿£¢\n");
+	return notify_fail("é¹°ç‹é“ï¼šï¼‚é‚£å¥½è±¡ä¸æ˜¯ä½ çš„å§ï¼Ÿï¼‚\n");
 
 //okey we identified the target, now the cost:
 	cost = to_int(sqrt(to_float((int)pet->query("combat_exp"))))/3;
 	gold = present("gold_money", me);
-        if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if(!gold) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < cost/2)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ"+chinese_number(cost)+"Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰"+chinese_number(cost)+"ä¸¤é‡‘å­ã€‚\n");
 	if((int)me->query("score") < cost/4)
-	return notify_fail("ÄãµÄ½­ºşÔÄÀú²»¹»"+chinese_number(cost/4)+"µã¡£\n");
+	return notify_fail("ä½ çš„æ±Ÿæ¹–é˜…å†ä¸å¤Ÿ"+chinese_number(cost/4)+"ç‚¹ã€‚\n");
 
 //to_int(sqrt(to_float((int)pet->query("combat_exp"))))/5;
 	pet = present(arg,environment());
         if( pet->query("up1") >= 1 )
-                return notify_fail("ÄãµÄºêÎïÒÑ¾­Éı¹ı¼¶ÁË.\n");
+                return notify_fail("ä½ çš„å®ç‰©å·²ç»å‡è¿‡çº§äº†.\n");
 
 	pet = present(arg,environment());
 //	if(pet->query_skill("puyaogedou") < 150)
-//	return notify_fail("ÄãµÄµÄºêÎïµÄÆËÒ§¸ñ¶·µÈ¼¶²»¹»¡£\n");
+//	return notify_fail("ä½ çš„çš„å®ç‰©çš„æ‰‘å’¬æ ¼æ–—ç­‰çº§ä¸å¤Ÿã€‚\n");
 	if(pet->query("combat_exp") < 200000)
-	return notify_fail("ÄãµÄµÄºêÎïµÄ¾­ÑéµÈ¼¶²»¹»¡£\n");
+	return notify_fail("ä½ çš„çš„å®ç‰©çš„ç»éªŒç­‰çº§ä¸å¤Ÿã€‚\n");
 
         if (random(6) == 0)
         {
@@ -92,7 +92,7 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIY"¶¾Áú"NOR);
+	pet->set("title",HIY"æ¯’é¾™"NOR);
 	}
        else
         if (random(6) == 1)
@@ -107,7 +107,7 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIY"´ó½ÅÁú"NOR);
+	pet->set("title",HIY"å¤§è„šé¾™"NOR);
 	}
        else
         if (random(6) == 2)
@@ -122,7 +122,7 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",RED"±©±©Áú"NOR);
+	pet->set("title",RED"æš´æš´é¾™"NOR);
 	}
        else
         if (random(6) == 3)
@@ -137,7 +137,7 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIC"½£³İÁú"NOR);
+	pet->set("title",HIC"å‰‘é½¿é¾™"NOR);
 	}
        else
         if (random(6) == 4)
@@ -152,7 +152,7 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIB"¿ñÁú"NOR);
+	pet->set("title",HIB"ç‹‚é¾™"NOR);
 	}
        else
         if (random(6) == 5)
@@ -167,7 +167,7 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIW"ÍÁÁú"NOR);
+	pet->set("title",HIW"åœŸé¾™"NOR);
 	}
        else
 {
@@ -181,14 +181,14 @@ int do_train(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIY"´ó½ÅÁú"NOR);
+	pet->set("title",HIY"å¤§è„šé¾™"NOR);
 }
 	pet = present(arg,environment());
 	pet->set("ridable",1);
 	pet->save();
 	gold->add_amount(-cost/2);
 	me->add("score",-cost/4);
-	command("say ºÃÁË£¡ÄãµÄºêÎïÒÑ¾­³É³¤ÎªµÚ¶ş¼¶ºêÎïÁË\n");
+	command("say å¥½äº†ï¼ä½ çš„å®ç‰©å·²ç»æˆé•¿ä¸ºç¬¬äºŒçº§å®ç‰©äº†\n");
 	return 1;
 }
 
@@ -198,37 +198,37 @@ int do_train2(string arg)
 	int cost;
         me = this_player();
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
-	if(!arg) return notify_fail("Ó¥ÍõµÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
+	if(!arg) return notify_fail("é¹°ç‹é“ï¼šï¼‚ä½ è¦ä»€ä¹ˆå‘€ï¼Ÿï¼‚\n");
 	pet = present(arg,environment());
-	if(!objectp(pet)) return notify_fail("Ó¥ÍõµÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+	if(!objectp(pet)) return notify_fail("é¹°ç‹é“ï¼šï¼‚ä½ è¦ä»€ä¹ˆå‘€ï¼Ÿï¼‚\n");
 	if(pet->query("possessed") != me )
-	return notify_fail("Ó¥ÍõµÀ£º£¢ÄÇºÃÏó²»ÊÇÄãµÄ°É£¿£¢\n");
+	return notify_fail("é¹°ç‹é“ï¼šï¼‚é‚£å¥½è±¡ä¸æ˜¯ä½ çš„å§ï¼Ÿï¼‚\n");
 
 //okey we identified the target, now the cost:
 	cost = to_int(sqrt(to_float((int)pet->query("combat_exp"))))/3;
 	gold = present("gold_money", me);
-        if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if(!gold) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < cost/2)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ"+chinese_number(cost)+"Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰"+chinese_number(cost)+"ä¸¤é‡‘å­ã€‚\n");
 	if((int)me->query("score") < cost/4)
-	return notify_fail("ÄãµÄ½­ºşÔÄÀú²»¹»"+chinese_number(cost)+"µã¡£\n");
+	return notify_fail("ä½ çš„æ±Ÿæ¹–é˜…å†ä¸å¤Ÿ"+chinese_number(cost)+"ç‚¹ã€‚\n");
 
 //to_int(sqrt(to_float((int)pet->query("combat_exp"))))/5;
 	pet = present(arg,environment());
         if( pet->query("up1") < 1 )
-                return notify_fail("ÄãµÄºêÎï»¹Ã»ÓĞµ½µÚ¶ş¼¶.\n");
+                return notify_fail("ä½ çš„å®ç‰©è¿˜æ²¡æœ‰åˆ°ç¬¬äºŒçº§.\n");
 
         if( pet->query("up1") >= 2 )
-                return notify_fail("ÄãµÄºêÎïÒÑ¾­Éı¹ı¼¶ÁË.\n");
+                return notify_fail("ä½ çš„å®ç‰©å·²ç»å‡è¿‡çº§äº†.\n");
 
 	pet = present(arg,environment());
 //	if((int)pet->query_skill("puyaogedou") < 200)
-//	return notify_fail("ÄãµÄµÄºêÎïµÄÆËÒ§¸ñ¶·µÈ¼¶²»¹»¡£\n");
+//	return notify_fail("ä½ çš„çš„å®ç‰©çš„æ‰‘å’¬æ ¼æ–—ç­‰çº§ä¸å¤Ÿã€‚\n");
 	if((int)pet->query("combat_exp") < 500000)
-	return notify_fail("ÄãµÄµÄºêÎïµÄ¾­ÑéµÈ¼¶²»¹»¡£\n");
+	return notify_fail("ä½ çš„çš„å®ç‰©çš„ç»éªŒç­‰çº§ä¸å¤Ÿã€‚\n");
 
-        if (pet->query("title")==HIY"¶¾Áú"NOR)
+        if (pet->query("title")==HIY"æ¯’é¾™"NOR)
         {
 	pet = present(arg,environment());
 	pet->add("combat_exp",cost*50);
@@ -240,10 +240,10 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIY"¶¾ÁúÍõ"NOR);
+	pet->set("title",HIY"æ¯’é¾™ç‹"NOR);
 	}
        else
-        if (pet->query("title")==HIY"´ó½ÅÁú"NOR)
+        if (pet->query("title")==HIY"å¤§è„šé¾™"NOR)
         {
 	pet = present(arg,environment());
 	pet->add("combat_exp",cost*50);
@@ -255,10 +255,10 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIY"´ó½ÅÁúÍõ"NOR);
+	pet->set("title",HIY"å¤§è„šé¾™ç‹"NOR);
 	}
        else
-        if (pet->query("title")==RED"±©±©Áú"NOR)
+        if (pet->query("title")==RED"æš´æš´é¾™"NOR)
         {
 	pet = present(arg,environment());
 	pet->add("combat_exp",cost*50);
@@ -270,10 +270,10 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",RED"±©±©ÁúÍõ"NOR);
+	pet->set("title",RED"æš´æš´é¾™ç‹"NOR);
 	}
        else
-        if (pet->query("title")==HIC"½£³İÁú"NOR)
+        if (pet->query("title")==HIC"å‰‘é½¿é¾™"NOR)
         {
 	pet = present(arg,environment());
 	pet->add("combat_exp",cost*50);
@@ -285,10 +285,10 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIC"½£³İÁúÍõ"NOR);
+	pet->set("title",HIC"å‰‘é½¿é¾™ç‹"NOR);
 	}
        else
-        if (pet->query("title")==HIB"¿ñÁú"NOR)
+        if (pet->query("title")==HIB"ç‹‚é¾™"NOR)
         {
 	pet = present(arg,environment());
 	pet->add("combat_exp",cost*50);
@@ -300,10 +300,10 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIB"¿ñÁúÍõ"NOR);
+	pet->set("title",HIB"ç‹‚é¾™ç‹"NOR);
 	}
        else
-        if (pet->query("title")==HIW"ÍÁÁú"NOR)
+        if (pet->query("title")==HIW"åœŸé¾™"NOR)
         {
 	pet = present(arg,environment());
 	pet->add("combat_exp",cost*50);
@@ -315,7 +315,7 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIW"ÍÁÁúÍõ"NOR);
+	pet->set("title",HIW"åœŸé¾™ç‹"NOR);
 	}
        else
 {
@@ -329,14 +329,14 @@ int do_train2(string arg)
         pet->add("max_neili",200);	
         pet->add("neili",200);	
 
-	pet->set("title",HIY"´ó½ÅÁúÍõ"NOR);
+	pet->set("title",HIY"å¤§è„šé¾™ç‹"NOR);
 }
 	pet = present(arg,environment());
 	pet->set("ridable",1);
 	pet->save();
 	gold->add_amount(-cost/2);
 	me->add("score",-cost/4);
-	command("say ºÃÁË£¡ÄãµÄºêÎïÒÑ¾­³É³¤ÎªÖÕ¼¶ºêÎïÁË\n");
+	command("say å¥½äº†ï¼ä½ çš„å®ç‰©å·²ç»æˆé•¿ä¸ºç»ˆçº§å®ç‰©äº†\n");
 	return 1;
 }
 void unconcious()

@@ -1,14 +1,14 @@
-// gsz.c ¹«ËïÖ¹
+// gsz.c å…¬å­™æ­¢
 // By River 99.5.25
 #include <ansi.h>
 inherit NPC;
 string ask_gu();
 void create()
 {
-	set_name("¹«ËïÖ¹", ({ "gongsun zhi", "gongsun", "zhi" }));
-	set("long","ÃæÄ¿Ó¢¿¡£¬Í¸³öĞùĞù¸ß¾ÙÖ®¸Å£¬Ö»ÊÇÃæÉ«À¯»Æ£¬ÈİÑÕ¿İéÂ¡£\n");
-        set("title",HIW"¾øÇé¹È¹ÈÖ÷"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("å…¬å­™æ­¢", ({ "gongsun zhi", "gongsun", "zhi" }));
+	set("long","é¢ç›®è‹±ä¿Šï¼Œé€å‡ºè½©è½©é«˜ä¸¾ä¹‹æ¦‚ï¼Œåªæ˜¯é¢è‰²èœ¡é»„ï¼Œå®¹é¢œæ¯æ§ã€‚\n");
+        set("title",HIW"ç»æƒ…è°·è°·ä¸»"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "friendly");
 	set("shen", -3000);
@@ -66,8 +66,8 @@ set("pubmaster",1);
                       (: random_move :)
                       }) );
         set("inquiry", ([
-            "¾øÇéµ¤": "µ¤Ò©ÎŞ¶à£¬¶øÇÒÒ²ºÜÄÑÁ¶ÖÆ£¬·ÇÍò²»µÃÒÑ¡£¡£¡£",
-            "¾øÇé¹È": (: ask_gu :),
+            "ç»æƒ…ä¸¹": "ä¸¹è¯æ— å¤šï¼Œè€Œä¸”ä¹Ÿå¾ˆéš¾ç‚¼åˆ¶ï¼Œéä¸‡ä¸å¾—å·²ã€‚ã€‚ã€‚",
+            "ç»æƒ…è°·": (: ask_gu :),
         ]) );
         set_temp("apply/dodge", 100);
         set_temp("apply/attack", 100);
@@ -86,9 +86,9 @@ string ask_gu()
        me=this_object();
        ob=this_player();
        if(ob->query("combat_exp") < 200000)
-         return RANK_D->query_respect(ob)+"¹¦·ò»¹Ì«Èõ£¬¾øÇé¹ÈÖĞÉõÎªÎ£ÏÕ£¬»¹ÊÇ²»ÒªÔÚ´Ë¾ÃÁôÁË¡£";      
+         return RANK_D->query_respect(ob)+"åŠŸå¤«è¿˜å¤ªå¼±ï¼Œç»æƒ…è°·ä¸­ç”šä¸ºå±é™©ï¼Œè¿˜æ˜¯ä¸è¦åœ¨æ­¤ä¹…ç•™äº†ã€‚";      
          ob->set_temp("gsz_agree", 1);
-         return RANK_D->query_respect(ob)+"¼ÈÈ»¶Ô¾øÇé¹ÈÉõÓĞĞËÈ¤£¬¾ÍÇëËæ±ã¿´¿´°É¡£";
+         return RANK_D->query_respect(ob)+"æ—¢ç„¶å¯¹ç»æƒ…è°·ç”šæœ‰å…´è¶£ï¼Œå°±è¯·éšä¾¿çœ‹çœ‹å§ã€‚";
 }
 
 
@@ -122,9 +122,9 @@ if (random(3)==0)
 if (i < 1) i=0;
 	who->add_temp("learn_timeh",i);
 
-      message_vision("¹«ËïÖ¹¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
+      message_vision("å…¬å­™æ­¢å¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
 }
-      message_vision("¹«ËïÖ¹¶Ô$NËµµÀ£ºĞ»Ğ»ÁË£¬ÕıºÃ±¾¹ÈÈ±Ç®ÓÃ¡£\n",who);
+      message_vision("å…¬å­™æ­¢å¯¹$Nè¯´é“ï¼šè°¢è°¢äº†ï¼Œæ­£å¥½æœ¬è°·ç¼ºé’±ç”¨ã€‚\n",who);
 	return 1;
 }
 

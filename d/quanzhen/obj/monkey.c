@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("猴子", ({ "monkey" }) );
-	set("race", "野兽");
-	set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+	set_name("鐚村瓙", ({ "monkey" }) );
+	set("race", "閲庡吔");
+	set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈剼", "鍚庤剼", "灏惧反" }) );
 	set("verbs", ({ "bite", "claw" }) );
 	set("age", 25);
 	set("long",
-		"这只猴子在在桃树间跳上跳下，还不时津津有味地啃几口着蜜桃。\n");
+		"杩欏彧鐚村瓙鍦ㄥ湪妗冩爲闂磋烦涓婅烦涓嬶紝杩樹笉鏃舵触娲ユ湁鍛冲湴鍟冨嚑鍙ｇ潃铚滄銆俓n");
 	set("combat_exp", 5000);
         set("shen_type", -1);
 	set("attitude", "peaceful");

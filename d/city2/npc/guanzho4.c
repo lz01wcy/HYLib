@@ -3,9 +3,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("¹ÛÖÚ¶¡", ({ "ding" }));
-	set("long", "´ËÈËÉí²ÄÊİĞ¡£¬È´ÊÇÆøÓîêÑ°º, ËÆºõÉí»³¾ªÈËÒÕÒµ¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("è§‚ä¼—ä¸", ({ "ding" }));
+	set("long", "æ­¤äººèº«æç˜¦å°ï¼Œå´æ˜¯æ°”å®‡æš„æ˜‚, ä¼¼ä¹èº«æ€€æƒŠäººè‰ºä¸šã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -57,12 +57,12 @@ void init()
 	&& !environment(ob)->query("no_fight"))
 	{
 		if( !ob->query_temp("warned") ) {
-			command("say ÄãÒ²²»¿´¿´³¤×Ô¼ºÊ²Ã´Ñù£¬¾ÓÈ»µ½Õâ¶ùÀ´ÈöÒ°£¡");
+			command("say ä½ ä¹Ÿä¸çœ‹çœ‹é•¿è‡ªå·±ä»€ä¹ˆæ ·ï¼Œå±…ç„¶åˆ°è¿™å„¿æ¥æ’’é‡ï¼");
 		}
 		else if( ob->query_temp("stay") < 10 ) ob->add_temp("stay", 1);
 		else {
 //			me->set_leader(ob);
-			command("say Äã»¹ÏëÅÜ£¬ÎÒ·ÇÔ×ÁËÄã²»¿É£¡");
+			command("say ä½ è¿˜æƒ³è·‘ï¼Œæˆ‘éå®°äº†ä½ ä¸å¯ï¼");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}
@@ -77,7 +77,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "¹ÛÖÚ×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "è§‚ä¼—é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

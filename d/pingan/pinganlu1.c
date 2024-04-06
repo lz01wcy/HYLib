@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ƽ�����һ");
+  set ("short", "平安大道一");
   set ("long", @LONG
-�����Ĵ�֣������ľ��񣬴�����һƬ��ƽ����ƽ���ǵĴ���ͺ���
-������һ��������ƽʵ�ĸо���
+宽阔的大街，和气的居民，处处是一片升平景象，平安城的大道就和它
+的名字一样，给人平实的感觉。
 LONG);
 
   set("outdoors", "pingan");

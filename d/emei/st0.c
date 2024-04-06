@@ -1,15 +1,15 @@
-//Room: st0.c ÉîÌ¶
+//Room: st0.c æ·±æ½­
 //Date: Oct. 21 1997 by That
 #include <ansi.h>
 
 inherit ROOM;
 void create()
 {
-    set("short","ÉîÌ¶");
+    set("short","æ·±æ½­");
     set("long",@LONG
-ÄãÃü´ó£¬ÕıºÃµøÔÚÉáÉíÑÂÏÂÉîÌ¶ÖĞ¡£»èÃÔÖĞĞÑÀ´£¬ËÄÖÜºÚÃÉÃÉ£¬Ê²Ã´¶¼¿´
-²»Çå¡£Ì¶Ë®·¢×Å¶ñ³ô£¬Å¼¶û»¹´¥¼°Ò»Á½¸ù²»ÖªÊÇÈËÊÇÊŞµÄ¿İ¹Ç£¬ÈÃÄãÈ«ÉíÖ±Æğ
-¼¦Æ¤¸í´ñ¡£ÄãÆ¯¸¡ÔÚË®ÖĞ£¬ÎŞÖúÖÁ¼«¡£Çé¼±Ö®ÏÂ£¬ËÄ´¦ÕÅÍû(wang)¡£
+ä½ å‘½å¤§ï¼Œæ­£å¥½è·Œåœ¨èˆèº«å´–ä¸‹æ·±æ½­ä¸­ã€‚æ˜è¿·ä¸­é†’æ¥ï¼Œå››å‘¨é»‘è’™è’™ï¼Œä»€ä¹ˆéƒ½çœ‹
+ä¸æ¸…ã€‚æ½­æ°´å‘ç€æ¶è‡­ï¼Œå¶å°”è¿˜è§¦åŠä¸€ä¸¤æ ¹ä¸çŸ¥æ˜¯äººæ˜¯å…½çš„æ¯éª¨ï¼Œè®©ä½ å…¨èº«ç›´èµ·
+é¸¡çš®ç–™ç˜©ã€‚ä½ æ¼‚æµ®åœ¨æ°´ä¸­ï¼Œæ— åŠ©è‡³æã€‚æƒ…æ€¥ä¹‹ä¸‹ï¼Œå››å¤„å¼ æœ›(wang)ã€‚
 LONG);
     set("no_fight",1);
     set("no_sleep_room",1);
@@ -27,7 +27,7 @@ int do_wang()
 {
     object ob;
     ob = this_player();
-    message_vision(HIC"$N¼«Ä¿ËÄÍû£¬»¹ÊÇ·¢ÏÖÓĞ³öÂ·µÄ£¬ÓÚÊÇÇóÉúÊÔÌ½Ö®ĞÄ´ó¶¯¡£\n"NOR, ob);
+    message_vision(HIC"$Næç›®å››æœ›ï¼Œè¿˜æ˜¯å‘ç°æœ‰å‡ºè·¯çš„ï¼Œäºæ˜¯æ±‚ç”Ÿè¯•æ¢ä¹‹å¿ƒå¤§åŠ¨ã€‚\n"NOR, ob);
     switch (random(4))
     {
        case 0 : set("exits/east", __DIR__"st1");break;
@@ -65,7 +65,7 @@ void close_out()
 {
 //  object ob;
 //  ob = this_player();
-//  message_vision(HIY"ÕÎÆøÆ®¶¯£¬$NÑÛÇ°Ò»Æ¬Ä£ºı£¬³öÂ·ÔÚÄÄÀï£¿\n"NOR, ob);
+//  message_vision(HIY"ç˜´æ°”é£˜åŠ¨ï¼Œ$Nçœ¼å‰ä¸€ç‰‡æ¨¡ç³Šï¼Œå‡ºè·¯åœ¨å“ªé‡Œï¼Ÿ\n"NOR, ob);
     if (query("exits/east"))  delete("exits/east");
     if (query("exits/west"))  delete("exits/west");
     if (query("exits/south")) delete("exits/south");

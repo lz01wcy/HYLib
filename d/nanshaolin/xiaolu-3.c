@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ʯС·");
+	set("short", "碎石小路");
 	set("long", @LONG
-������һ����ʯ�̳ɵ�С·�ϣ������������ɽ�������������мд�
-�������ķ��㣬���������������һƬ�ܴ�Ĳ�԰�ӡ�
+你走在一条碎石铺成的小路上，两侧青草茵茵，山花烂漫。空气中夹带
+着泥土的芳香，扑面而来。南面有一片很大的菜园子。
 LONG );
 	set("outdoors", "nanshaolin");
 	set("no_clean_up", 0);

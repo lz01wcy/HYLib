@@ -3,11 +3,11 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("ÂôÑòÈâ´®µÄ", ({ "meat seller" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å–ç¾Šè‚‰ä¸²çš„", ({ "meat seller" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
         set("long",
-                "»ëÉí¶¼ÊÇÑòÈâÎ¶µÀµÄÈË\n");
+                "æµ‘èº«éƒ½æ˜¯ç¾Šè‚‰å‘³é“çš„äºº\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         	set("vendor_goods", ({
@@ -30,6 +30,6 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-                        say( "ÂôÑòÈâ´®µÄ¸ß½ĞµÀ£ºÓÖÏãÓÖÈÈµÄ¿¾ÑòÈâ´®Ñ½£¡£¡\n");
+                        say( "å–ç¾Šè‚‰ä¸²çš„é«˜å«é“ï¼šåˆé¦™åˆçƒ­çš„çƒ¤ç¾Šè‚‰ä¸²å‘€ï¼ï¼\n");
 } 
      

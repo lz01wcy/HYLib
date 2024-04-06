@@ -3,13 +3,13 @@
 inherit NPC;
 void create()
 {
-        set_name("»ª»Ô", ({ "hua hui", "hua", "hui"}));
-        set("gender", "ÄĞĞÔ");
-        set("nickname", "Ò»Ö¸Õğ½­ÄÏ");
+        set_name("åè¾‰", ({ "hua hui", "hua", "hui"}));
+        set("gender", "ç”·æ€§");
+        set("nickname", "ä¸€æŒ‡éœ‡æ±Ÿå—");
         set("age", 60);
         set("long", "
-ÕâÈËÊÇ¸öÀÏÎÌ£¬ÉíĞÎÊİÈõ£¬ĞÎÈİ¿İéÂ£¬³îÃ¼¿àÁ³£¬ÉíÉÏ´©µÄÊÇ
-ººÈË×°Êø£¬ÒÂÃ±¶¼ÒÑÆÆÀÃ²»¿°¡£µ«ËûÍ··¢¾íÇú£¬È´ÓÖ²»´óÏñººÈË¡£\n");
+è¿™äººæ˜¯ä¸ªè€ç¿ï¼Œèº«å½¢ç˜¦å¼±ï¼Œå½¢å®¹æ¯æ§ï¼Œæ„çœ‰è‹¦è„¸ï¼Œèº«ä¸Šç©¿çš„æ˜¯
+æ±‰äººè£…æŸï¼Œè¡£å¸½éƒ½å·²ç ´çƒ‚ä¸å ªã€‚ä½†ä»–å¤´å‘å·æ›²ï¼Œå´åˆä¸å¤§åƒæ±‰äººã€‚\n");
         set("attitude", "friendly");
         set("combat_exp", 700000);
         set("shen", -7000);
@@ -46,7 +46,7 @@ void init()
         object *ob, me;
         me = this_object();
         ob = all_inventory(environment(me));
-        message_vision(HIY"Ö»¼ûÒ»Ö»°×Ó°ÉÁÉíÀ¹ÔÚÁËÄãµÄÃæÇ°£¡\n"NOR,me); 
+        message_vision(HIY"åªè§ä¸€åªç™½å½±é—ªèº«æ‹¦åœ¨äº†ä½ çš„é¢å‰ï¼\n"NOR,me); 
         for(i=0; i<sizeof(ob); i++) {
                 if( !living(ob[i]) || ob[i]==me ) continue; 
                 if( !me->is_killing(ob[i]) ) me->kill_ob(ob[i]);
@@ -61,7 +61,7 @@ int checking(object me)
 	object ob;
         if(objectp(ob = present("corpse", environment(me)))){
 	   destruct(ob);       
-           tell_room(environment(me), me->query("name")+"ºÙºÙÒ»Ğ¦£¬½«Ê¬ÌåÒ»½ÅÌß¿ª¡£\n", ({me}));
+           tell_room(environment(me), me->query("name")+"å˜¿å˜¿ä¸€ç¬‘ï¼Œå°†å°¸ä½“ä¸€è„šè¸¢å¼€ã€‚\n", ({me}));
            call_out("checking", 2, me);
            return 1;
            }
@@ -81,7 +81,7 @@ void do_back(object me)
   room->set("exits", ([
               "north" : "/d/hj/mg-room1",          
          ]));  
-  tell_room(environment(me), me->query("name")+"¼¸¸öÆğÂä£¬ÉÁÉí²»¼ûÁË¡£\n", ({me}));	
+  tell_room(environment(me), me->query("name")+"å‡ ä¸ªèµ·è½ï¼Œé—ªèº«ä¸è§äº†ã€‚\n", ({me}));	
   destruct(me); 
   return;
 }

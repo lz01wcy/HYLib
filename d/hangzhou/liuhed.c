@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÁùºÍËþ");
+        set("short", "å…­å’Œå¡”");
         set("long", @LONG
-ÕâÀïÊÇÁùºÍËþµÄÊ®Èý²ã¡£´°(window)ÍâÊÇÅ¨×±µ­Ä¨µÄÎ÷×Óºþ£¬Ëþ
-ÖÐÁáçç°Ë½Ç£¬Çà×©ÆöµØ£¬µñÀ¸·ÉéÜ¼äÕ³Á¬ÁËÐ©ÐíÖëÍø¡£ÕâÀïÊÇËþµÄ×î
-¸ß´¦£¬ÍùÍâÍûÈ¥£¬Î÷ºþÃÀ¾°¾¡ÊÕÑÛµ×¡£
+è¿™é‡Œæ˜¯å…­å’Œå¡”çš„åä¸‰å±‚ã€‚çª—(window)å¤–æ˜¯æµ“å¦†æ·¡æŠ¹çš„è¥¿å­æ¹–ï¼Œå¡”
+ä¸­çŽ²ç‘å…«è§’ï¼Œé’ç –ç Œåœ°ï¼Œé›•æ é£žæªé—´ç²˜è¿žäº†äº›è®¸è››ç½‘ã€‚è¿™é‡Œæ˜¯å¡”çš„æœ€
+é«˜å¤„ï¼Œå¾€å¤–æœ›åŽ»ï¼Œè¥¿æ¹–ç¾Žæ™¯å°½æ”¶çœ¼åº•ã€‚
 LONG);
         set("exits", ([
             "down"  : __DIR__"liuhec",
@@ -18,7 +18,7 @@ LONG);
             __DIR__"npc/qianlong" :1,
         ]));
         set("item_desc", ([
-            "window": "´Ó´°¿ÚÍû³öÈ¥£¬Ç®½­¶«È¥¡£½ü´¦Å©ÌïÖÐ£¬ÓÐÒ»Å©·òÕýºÉ³ú¸ûÔÅ¡£\n",
+            "window": "ä»Žçª—å£æœ›å‡ºåŽ»ï¼Œé’±æ±Ÿä¸œåŽ»ã€‚è¿‘å¤„å†œç”°ä¸­ï¼Œæœ‰ä¸€å†œå¤«æ­£è·é”„è€•è€˜ã€‚\n",
         ]));
         set("no_clean_up", 0);
         setup();

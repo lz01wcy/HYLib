@@ -4,10 +4,10 @@ inherit ROOM;
 int valid_leave();
 void create()
 {
-	set("short", WHT"ÒÆ¶¯Ä§·¨Õó"NOR);
+	set("short", WHT"ç§»åŠ¨é­”æ³•é˜µ"NOR);
 	set("long", HIW @LONG
-ÕâÊÇÒ»´¦±»ÒÅÍüµÄÔ¶¹ÅµÄÄ§·¨Éñµî£¬µØÉÏ»®×ÅÒ»¸ö¾Þ´óµÄÄ§·¨Õó£¬
-ÉÏÃæÓÐÒ»¸öÉÁ¹âµã£¬ÄãºÃÏñÍ¨¹ýÕâÀïÒÆµ½(yidong)Ê²Ã´µØ·½È¥¡£ 
+è¿™æ˜¯ä¸€å¤„è¢«é—å¿˜çš„è¿œå¤çš„é­”æ³•ç¥žæ®¿ï¼Œåœ°ä¸Šåˆ’ç€ä¸€ä¸ªå·¨å¤§çš„é­”æ³•é˜µï¼Œ
+ä¸Šé¢æœ‰ä¸€ä¸ªé—ªå…‰ç‚¹ï¼Œä½ å¥½åƒé€šè¿‡è¿™é‡Œç§»åˆ°(yidong)ä»€ä¹ˆåœ°æ–¹åŽ»ã€‚ 
 LONG HIW );
 	set("exits", ([
 //		"west" : __DIR__"migong2",
@@ -32,14 +32,14 @@ int i;
         object room;
 object me=this_player();
  	if (!arg)
-	return notify_fail("ÄãÒªÈ¥µÚ¼¸²ãÃÔ¹¬£¿(lev16-22)\n");
+	return notify_fail("ä½ è¦åŽ»ç¬¬å‡ å±‚è¿·å®«ï¼Ÿ(lev16-22)\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã±³×ÅÈËÏë¸øÀïÃæµÄ¹ÖÎïËÍµãÐÄÈ¥£¿\n");
+     				return notify_fail("ä½ èƒŒç€äººæƒ³ç»™é‡Œé¢çš„æ€ªç‰©é€ç‚¹å¿ƒåŽ»ï¼Ÿ\n");
        		
 		}
 
@@ -47,12 +47,12 @@ object me=this_player();
 
 	if(arg!="lev16" && arg!="lev17" && arg!="lev18" && arg!="lev19"
 	&& arg!="lev20"&& arg!="lev21"&& arg!="lev22")
-	 	return notify_fail("ÄãÒªÈ¥µÚ¼¸²ãÃÔ¹¬£¿(lev16-22)\n");
+	 	return notify_fail("ä½ è¦åŽ»ç¬¬å‡ å±‚è¿·å®«ï¼Ÿ(lev16-22)\n");
     if (me->query("neili")<1000)
-	return notify_fail("ÄãµÄÄÚÁ¦²»×ã!\n");
+	return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³!\n");
 
     if (me->query_condition("migongmove"))
-	return notify_fail("Äã¸Õ¸ÕÓÃ¹ýÒÆ¶¯µã£¬µÈ»áÔÙÀ´°É!\n");
+	return notify_fail("ä½ åˆšåˆšç”¨è¿‡ç§»åŠ¨ç‚¹ï¼Œç­‰ä¼šå†æ¥å§!\n");
 
 me->apply_condition("migongmove",18);
 me->delete("vendetta/authority");
@@ -60,59 +60,59 @@ me->delete("vendetta/authority");
 	if(arg=="lev16") {
         if (present("fire hat", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev16/dong22");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev17") {
         if (present("water armor", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev17/dong22");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev18") {
         if (present("earth shield", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev18/dong22");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev19") {
         if (present("air boot", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev19/dong22");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev20") {
         if (present("light jian", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev20/dong22");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev21") {
         if (present("dark jian", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev21/dong22");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev22") {
         if (present("dark jian", me) ||
         present("light jian", me)) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev22/dong01");
 }
-else message_vision(HIR "$NÄãÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Nä½ æ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 
 return 1;

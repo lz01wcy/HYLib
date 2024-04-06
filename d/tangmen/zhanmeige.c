@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "չ÷��");
+	set("short", "展梅阁");
 	set("long", @LONG
-	������չ÷�����ڸ�������һ��Ƭ÷Բ��ÿÿ÷�����������ţ�����
-�����Ʈ�����У��������㣬������⡣
+	这里是展梅阁，由于附近便是一大片梅圆，每每梅花吐蕊，朵朵绽放，淡淡
+幽香就飘至阁中，满屋生香，甚是惬意。
 LONG
 	);
 	

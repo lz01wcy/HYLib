@@ -6,9 +6,9 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name("²ì¶ûÖé", ({"chaer zhu", "chaer", "zhu"}));
-	set("title", HIY"æçÆïÓªÕı»ÆÆì¶¼Í³"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("å¯Ÿå°”ç ", ({"chaer zhu", "chaer", "zhu"}));
+	set("title", HIY"éªéª‘è¥æ­£é»„æ——éƒ½ç»Ÿ"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 36);
 	set("per", 20);
 	set("str", 25);

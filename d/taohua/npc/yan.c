@@ -5,13 +5,13 @@ void create()
 {
         object ob;
 
-        set_name("³ÌÓ¢", ({ "cheng ying","cheng" }) );
-//        set_name("ÑÕ³ÌÓ¢", ({ "yan ruofeng","yan","ruofeng" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ç¨‹è‹±", ({ "cheng ying","cheng" }) );
+//        set_name("é¢œç¨‹è‹±", ({ "yan ruofeng","yan","ruofeng" }) );
+        set("gender", "å¥³æ€§" );
         set("age",18);
         set("long", @TEXT
-³ÌÓ¢ÊÇ»ÆÒ©Ê¦´ÓĞ¡ÊÕÑøµÄ¹ÂÅ®¡£ÓÉ»ÆÒ©Ê¦Ç×ÊÖ½ÌµÃÁËÒ»ÊÖÈËÈË³Æ¾øµÄ
-Åëµ÷ÊÖ·¨£¬Òò´ËÌÒ»¨µºµÄÉÅÊ³¾ÍÓÉËı¸ºÔğ¡£
+ç¨‹è‹±æ˜¯é»„è¯å¸ˆä»å°æ”¶å…»çš„å­¤å¥³ã€‚ç”±é»„è¯å¸ˆäº²æ‰‹æ•™å¾—äº†ä¸€æ‰‹äººäººç§°ç»çš„
+çƒ¹è°ƒæ‰‹æ³•ï¼Œå› æ­¤æ¡ƒèŠ±å²›çš„è†³é£Ÿå°±ç”±å¥¹è´Ÿè´£ã€‚
 TEXT );
         set("per", 30);
         set("class", "scholar");
@@ -31,11 +31,11 @@ TEXT );
 
         set("chat_chance", 7);
         set("chat_msg", ({
-        "³ÌÓ¢Î¢Ğ¦ÖøËµµÀ£ºÎÒÃÇÌÒ»¨µº¾°É«ÓÅÃÀ£¬»¶Ó­À´×÷¿Í£¡\n",
-        "³ÌÓ¢¸ßĞËµÄËµ£ºÓĞĞÒ¼ûµ½ÄúÕæ¸ßĞË£¡\n",
-        "³ÌÓ¢Î¢Ğ¦ÖøËµµÀ£ºÄú¶ö²»¶ö£¿ÎÒÌÒ»¨µºµÄÅëµ÷¹¦·ò¿ÉËãÌìÏÂµÚÒ»Ñ½¡£\n",
+        "ç¨‹è‹±å¾®ç¬‘è‘—è¯´é“ï¼šæˆ‘ä»¬æ¡ƒèŠ±å²›æ™¯è‰²ä¼˜ç¾ï¼Œæ¬¢è¿æ¥ä½œå®¢ï¼\n",
+        "ç¨‹è‹±é«˜å…´çš„è¯´ï¼šæœ‰å¹¸è§åˆ°æ‚¨çœŸé«˜å…´ï¼\n",
+        "ç¨‹è‹±å¾®ç¬‘è‘—è¯´é“ï¼šæ‚¨é¥¿ä¸é¥¿ï¼Ÿæˆ‘æ¡ƒèŠ±å²›çš„çƒ¹è°ƒåŠŸå¤«å¯ç®—å¤©ä¸‹ç¬¬ä¸€å‘€ã€‚\n",
         }) );
-        create_family("ÌÒ»¨µº", 3, "µÜ×Ó");
+        create_family("æ¡ƒèŠ±å²›", 3, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -57,20 +57,20 @@ void greeting(object ob)
         object teatp,foodtp;
         if( !ob || environment(ob)!=environment() )
                 return;
-        if ( ob->query_temp("taohua/²è·¹") )
-                say("³ÌÓ¢Î¢Ğ¦×ÅËµ£º ÕâÎ»"
-                    +RANK_D->query_respect(ob)+"£¬ÄãºÃ£¡»¶Ó­À´µ½ÌÒ»¨µº£¡\n");
+        if ( ob->query_temp("taohua/èŒ¶é¥­") )
+                say("ç¨‹è‹±å¾®ç¬‘ç€è¯´ï¼š è¿™ä½"
+                    +RANK_D->query_respect(ob)+"ï¼Œä½ å¥½ï¼æ¬¢è¿æ¥åˆ°æ¡ƒèŠ±å²›ï¼\n");
         else
         {
                 tell_room(environment(this_object()),
-                        "³ÌÓ¢·îÉÏ²è·¹£¬Î¢Ğ¦×ÅËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                        + "£¬ÄãºÃ£¡»¶Ó­À´µ½ÌÒ»¨µº¡£ÇëÓÃ·¹£¡\n");
+                        "ç¨‹è‹±å¥‰ä¸ŠèŒ¶é¥­ï¼Œå¾®ç¬‘ç€è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                        + "ï¼Œä½ å¥½ï¼æ¬¢è¿æ¥åˆ°æ¡ƒèŠ±å²›ã€‚è¯·ç”¨é¥­ï¼\n");
                 teatp = new("/d/taohua/obj/cha");
                 teatp ->move(ob);
                 foodtp= new("/d/taohua/obj/gao");
                 foodtp->move(ob);
 
-                command ("say ÕâÊÇÎÒÇ×ÊÖ×öµÄ£¬ÇëÄúÆ·³¢£¡\n");
-                ob->set_temp("taohua/²è·¹", 1);
+                command ("say è¿™æ˜¯æˆ‘äº²æ‰‹åšçš„ï¼Œè¯·æ‚¨å“å°ï¼\n");
+                ob->set_temp("taohua/èŒ¶é¥­", 1);
         }
 }

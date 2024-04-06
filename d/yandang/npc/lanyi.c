@@ -1,11 +1,11 @@
-// biaotou.c ²ÆÖ÷¹Ü¼Ò
+// biaotou.c è´¢ä¸»ç®¡å®¶
 
 inherit NPC;
 
 void create()
 {
-	set_name("À¶ÒÂÉÙÄê", ({ "shaonian", "lanyishaonian" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è“è¡£å°‘å¹´", ({ "shaonian", "lanyishaonian" }));
+	set("gender", "ç”·æ€§");
 	set("age", 18);
 
 	set("combat_exp", 10000);

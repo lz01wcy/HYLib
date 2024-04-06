@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ٵ�");
+	set("short", "官道");
 	set("long", @LONG
-���������ӿ��⸮�����ݸ��Ĺٵ�����������·�ΰ��Ϻ�����Ҳ��
-�١�����ͨ�򿪷⣬����ͨ��������
+这是条连接开封府与中州府的官道，由于这条路治安较好行人也不
+少。西面通向开封，东面通向南阳。
 LONG);
 	set("exits", ([
   		"east"      : __DIR__"tokaifeng",

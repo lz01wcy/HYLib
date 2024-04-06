@@ -5,10 +5,10 @@ inherit ROOM;
 void create ()
 {
 
-	set ("short", "������");
+	set ("short", "城陵矶");
 	set ("long", @LONG
-�����Ƕ�ͥ���볤����ϴ���ˮ�������ãã��������ֻŸ���Ĵ�
-�ų��ʱ��ˮ����Ӷ�����
+这里是洞庭湖与长江汇合处，水天浩淼，茫茫荡荡。几只鸥鸟拍打
+着翅膀不时从水面横掠而过。
 LONG);
 	set("outdoors", "jiangling");
 	set("exits", ([

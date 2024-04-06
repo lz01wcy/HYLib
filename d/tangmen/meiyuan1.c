@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "÷԰");
+	set("short", "梅园");
 	set("long", @LONG
-	���������е�һ��Ƭ÷�֣�ÿ����԰÷�����ţ�����Ϯ�ˣ����˾���������
-ˬ����������һ��������
+	这是唐门中的一大片梅林，每逢满园梅花绽放，幽香袭人，令人觉得神清气
+爽。堪称唐门一大美景。
 LONG
 	);
 	

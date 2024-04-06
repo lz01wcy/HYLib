@@ -6,19 +6,19 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("ĞÅÑôÃ«¼â", ({ "xinyang maojian","cha" }));
+        set_name("ä¿¡é˜³æ¯›å°–", ({ "xinyang maojian","cha" }));
         set_weight(1000);
         if( clonep() )
             set_default_object(__FILE__);
         else {
         set("long",
-"ÕâÊÇÒ»±­ĞÅÑôÃ«¼â£¬²èÑ¿Ò¶Ï¸ÄÛÓĞ·åÉÒ£¬¾«ÖÆºó½ôÏ¸ÓĞ¼â£¬²¢ÓĞ°×ºÁ£¬²èÏãÇßÈËÈç·Î¡£\n");
-                set("unit", "±­");
+"è¿™æ˜¯ä¸€æ¯ä¿¡é˜³æ¯›å°–ï¼ŒèŒ¶èŠ½å¶ç»†å«©æœ‰å³°æ¢¢ï¼Œç²¾åˆ¶åç´§ç»†æœ‰å°–ï¼Œå¹¶æœ‰ç™½æ¯«ï¼ŒèŒ¶é¦™æ²äººå¦‚è‚ºã€‚\n");
+                set("unit", "æ¯");
                 set("value", 30);
                 set("max_liquid", 10);
         }
         set("liquid", ([
-            "name" : "ĞÅÑôÃ«¼â",
+            "name" : "ä¿¡é˜³æ¯›å°–",
             "remaining" : 8,
                 "type" : "water"
         ]) );

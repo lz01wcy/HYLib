@@ -1,18 +1,18 @@
-// bee.c ¶¾·ä
+// bee.c æ¯’èœ‚
 // Date: Sep.22 1997
 
 inherit NPC;
 
 void create()
 {
-        set_name("¶¾·ä", ({ "dufeng", "bee" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("æ¯’èœ‚", ({ "dufeng", "bee" }) );
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»É«²Ê°ßìµ´ó¸öÒ°·ä£¬³ÉÈº½á¶ÓµÄ¡£\n");
+        set("long", "ä¸€åªè‰²å½©æ–‘æ–“å¤§ä¸ªé‡èœ‚ï¼Œæˆç¾¤ç»“é˜Ÿçš„ã€‚\n");
         set("attitude", "aggressive");
         set("shen_type", -1);
 
-        set("limbs", ({ "·ä×ì","·äÑü","·ä³á","Î²´Ì" }) );
+        set("limbs", ({ "èœ‚å˜´","èœ‚è…°","èœ‚ç¿…","å°¾åˆº" }) );
         set("verbs", ({ "bite", "sting" }) );
 
         set("combat_exp", 500);

@@ -1,4 +1,4 @@
-//hapagou.c ¹ş°Í¹·
+//hapagou.c å“ˆå·´ç‹—
 #include <ansi.h>
 #include <command.h>
 string ask_me();
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¹ş°Í¹·", ({ "dog" }) );
-        set("title", "²©±ıÎİ³èÎï");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ" );
+        set_name("å“ˆå·´ç‹—", ({ "dog" }) );
+        set("title", "åšé¥¼å±‹å® ç‰©");
+        set("race", "é‡å…½");
+        set("gender", "é›„æ€§" );
         set("age", 15);
         set("str", 22);
         set("int", 30);
@@ -17,16 +17,16 @@ void create()
         set("con", 30);
 
         set("long",
-"Äã¿´µ½µÄÊÇ²©±ıÎİÀïµÄĞ¡¹ş°Í¹·¡£\n");
+"ä½ çœ‹åˆ°çš„æ˜¯åšé¥¼å±‹é‡Œçš„å°å“ˆå·´ç‹—ã€‚\n");
         set("combat_exp", 2000000);
         set("attitude", "friendly");
 
         set("max_qi", 10000);
         set("max_jing", 10000);
         set("inquiry", ([
-        "²©±ıÎİ" : "Õâ¶ù¾ÍÊÇ£¬ÄãÒªÍæÂğ£¿\n",
-        "²©±ı»á" :  (: ask_me :),
-        "²©±ı"   : "Äã£¨help bobing£©¾ÍÖªµÀÁË¡£\n",
+        "åšé¥¼å±‹" : "è¿™å„¿å°±æ˜¯ï¼Œä½ è¦ç©å—ï¼Ÿ\n",
+        "åšé¥¼ä¼š" :  (: ask_me :),
+        "åšé¥¼"   : "ä½ ï¼ˆhelp bobingï¼‰å°±çŸ¥é“äº†ã€‚\n",
         ]) );
 setup();
 }
@@ -37,13 +37,13 @@ string ask_me()
         int i;
         ob = users();
 
-        if ( !wizardp(this_player()) ) return "ÄãÎŞÈ¨ÕÙ¿ª²©±ı»á£¡\n";
+        if ( !wizardp(this_player()) ) return "ä½ æ— æƒå¬å¼€åšé¥¼ä¼šï¼\n";
 
         for ( i=sizeof(ob); i>0; i-- ) {
                 ob[i-1]->move("/d/city/bobing");
         }
-        command("chat ²©±ıÎİÒª¾Û»áÁË£¡´ó¼Ò¿ìÀ´£¡\n");
-        return "ºÃ£¬ÏÖÔÚ²©±ı»áÕıÊ½¿ªÊ¼£¬È«Ìå¼¯ºÏ£¡\n";
+        command("chat åšé¥¼å±‹è¦èšä¼šäº†ï¼å¤§å®¶å¿«æ¥ï¼\n");
+        return "å¥½ï¼Œç°åœ¨åšé¥¼ä¼šæ­£å¼å¼€å§‹ï¼Œå…¨ä½“é›†åˆï¼\n";
 }
 void init()
 {
@@ -64,16 +64,16 @@ add_action("do_exert","du");
 
 int do_save(string arg)
 {
-        command("say "+this_player()->query("name")+"£¬Õâ¶ù²»Ğí´æÅÌµÄ¡£\n");
+        command("say "+this_player()->query("name")+"ï¼Œè¿™å„¿ä¸è®¸å­˜ç›˜çš„ã€‚\n");
         return 1;
 }
 int do_smash(string arg)
 {
-        command("say "+this_player()->query("name")+"£¬Î×Ê¦ÔÚÕâ¶ùÒ²²»ĞíÉ±ÈËµÄ¡£\n");
+        command("say "+this_player()->query("name")+"ï¼Œå·«å¸ˆåœ¨è¿™å„¿ä¹Ÿä¸è®¸æ€äººçš„ã€‚\n");
         return 1;
 }
 int do_exert(string arg)
 {
-        command("say "+this_player()->query("name")+"£¬×¨ĞÄ²©±ı°É£¡\n");
+        command("say "+this_player()->query("name")+"ï¼Œä¸“å¿ƒåšé¥¼å§ï¼\n");
         return 1;
 }

@@ -6,10 +6,10 @@ inherit F_BANKER;
 
 void create()
 {
-	set_name("ÂíÓĞ²Æ", ({"ma youcai", "ma", "youcai"}));
-	set("title", "Ç®×¯ÀÏ°å");
-	set("nickname", "ÈıÖ»ÑÛ");
-	set("gender", "ÄĞĞÔ");
+	set_name("é©¬æœ‰è´¢", ({"ma youcai", "ma", "youcai"}));
+	set("title", "é’±åº„è€æ¿");
+	set("nickname", "ä¸‰åªçœ¼");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("str", 22);
 	set("int", 24);

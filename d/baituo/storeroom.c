@@ -6,8 +6,8 @@ int do_open(string);
 
 void create()
 {
-        set("short", "´¢²ØÊÒ");
-        set("long", "ÕâÊÇÒ»¸ö´¢²ØÊÒ£¬ËÄÖÜÃÜ²»Í¸·ç¡£Ö»ÓÐ¹Ø±Õ×ÅµÄ´óÃÅ(door)¡£\n");
+        set("short", "å‚¨è—å®¤");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªå‚¨è—å®¤ï¼Œå››å‘¨å¯†ä¸é€é£Žã€‚åªæœ‰å…³é—­ç€çš„å¤§é—¨(door)ã€‚\n");
 //      case(random(6))
 //        { case 0 :
 //          case 1:
@@ -16,7 +16,7 @@ void create()
 //                   ]));
 //                  break;
         set("item_desc" , ([
-         "door" : "Ò»ÉÈÄ¾ÃÅ£¬Ò²ÐíÄÜ´ò¿ª¡£\n",
+         "door" : "ä¸€æ‰‡æœ¨é—¨ï¼Œä¹Ÿè®¸èƒ½æ‰“å¼€ã€‚\n",
          ]) );
         set("no_clean_up", 0);
         setup();
@@ -33,14 +33,14 @@ int do_open(string arg)
   object me=this_player();
   object room;
  if( !arg|| arg!="door")
-  return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+  return notify_fail("ä½ è¦å¼€ä»€ä¹ˆï¼Ÿ\n");
  if(!( room = find_object(__DIR__"yuanzi")) )
     room = load_object(__DIR__"yuanzi");
  if(!objectp(room))  return notify_fail("ERROR:not found 'yuanzi.c' \n");
  if(room->query_temp("lock")==1)
-   return notify_fail("ÃÅÒÑ¾­´ÓÍâÃæËø×¡ÁË¡£\n");
- message_vision("$NÇáÇáÍÆ¿ªÃÅ£¬×ßÁË³öÈ¥£¬ËæÊÖ°ÑÃÅÑÚÁËÆðÀ´¡£\n",me);
- message("vision", "ÓÐÈË×ßÁË³öÀ´£¬ËæÊÖ°ÑÃÅÑÚÉÏÁË¡£\n",room);
+   return notify_fail("é—¨å·²ç»ä»Žå¤–é¢é”ä½äº†ã€‚\n");
+ message_vision("$Nè½»è½»æŽ¨å¼€é—¨ï¼Œèµ°äº†å‡ºåŽ»ï¼Œéšæ‰‹æŠŠé—¨æŽ©äº†èµ·æ¥ã€‚\n",me);
+ message("vision", "æœ‰äººèµ°äº†å‡ºæ¥ï¼Œéšæ‰‹æŠŠé—¨æŽ©ä¸Šäº†ã€‚\n",room);
  me->move(room);
  return 1;
 }

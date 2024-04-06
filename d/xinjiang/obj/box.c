@@ -2,14 +2,14 @@
 inherit ITEM; 
 void create()
 {
-        set_name("ÌúºĞ", ({ "box", "iron box"}) );
+        set_name("é“ç›’", ({ "box", "iron box"}) );
         set_weight(300);
         set_max_encumbrance(800);
         if (clonep())
            set_default_object(__FILE__);
         else {
-        set("unit", "¸ö");
-        set("long", "Ò»¸öÉúÂúÌúĞâµÄÌúºĞ¡£Äã¿ÉÒÔÊÔ×Å°ÑËü´ò¿ª(open)\n");
+        set("unit", "ä¸ª");
+        set("long", "ä¸€ä¸ªç”Ÿæ»¡é“é”ˆçš„é“ç›’ã€‚ä½ å¯ä»¥è¯•ç€æŠŠå®ƒæ‰“å¼€(open)\n");
         set("value", 1);
         set("prep", "in");
         }
@@ -28,18 +28,18 @@ int do_open(string arg)
         me = this_player();
         ob = this_object();
         if( !arg || arg != "box" )
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
         if(ob->query_temp("marks/opened")) return 0;
-        message_vision("$NĞ¡ĞÄµØÏëÒª°Ñ$n´ò¿ª£®£®£®¡£\n", me, ob);
+        message_vision("$Nå°å¿ƒåœ°æƒ³è¦æŠŠ$næ‰“å¼€ï¼ï¼ï¼ã€‚\n", me, ob);
         kar = me->query_kar();
         if( random(30) < kar ) { 
-                message_vision(HIR "Ö»Ìıµ½£¢¿©£¢µÄÒ»Éù£¬½Ó×Å´Ó$nÀïÉä³ö¼¸Ö»ºÚÉ«µÄÒøÕë£¬Õı´òÔÚ$NµÄÁ³ÉÏ£¡\n"NOR, me, ob);
+                message_vision(HIR "åªå¬åˆ°ï¼‚å’¯ï¼‚çš„ä¸€å£°ï¼Œæ¥ç€ä»$né‡Œå°„å‡ºå‡ åªé»‘è‰²çš„é“¶é’ˆï¼Œæ­£æ‰“åœ¨$Nçš„è„¸ä¸Šï¼\n"NOR, me, ob);
                 me->unconcious();
-                message_vision(HIR "$NÖĞÁËÕëÉÏµÄ¶¾£¡\n"NOR, me);
+                message_vision(HIR "$Nä¸­äº†é’ˆä¸Šçš„æ¯’ï¼\n"NOR, me);
         }
         else {
-           message_vision("$NÖÕÓÚ°Ñ$n´ò¿ªÁË¡£\n", me, ob);
-                set("long", "Ò»¸öĞâ¼£°ß°ßµÄÌúºĞ£¬ºĞ¸ÇÒÑ¾­±»´ò¿ªÁË¡£\n");
+           message_vision("$Nç»ˆäºæŠŠ$næ‰“å¼€äº†ã€‚\n", me, ob);
+                set("long", "ä¸€ä¸ªé”ˆè¿¹æ–‘æ–‘çš„é“ç›’ï¼Œç›’ç›–å·²ç»è¢«æ‰“å¼€äº†ã€‚\n");
                 switch (random(2)) {
                    case 0:
                       item = new(__DIR__"jade");

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", WHT"Ë®ÁÑÉ½¹ÈµÄ¾¡Í·"NOR);
+        set("short", WHT"æ°´è£‚å±±è°·çš„å°½å¤´"NOR);
 	set("long", WHT @LONG
-    ÄãÒ»¸öÉñÃØµÄµØ·½£¬´Ë´¦ÊÇÒ»¸öËÄÖÜ¶¼Î§ÈÆÖø¸ßÉ½¾şÁëµÄÉ½¹È
-É½¹ÈµÄµÄÖĞÑëÓĞÒ»¸öÆ¯ÁÁµÄºş£¬ºşµÄËÄÖÜÓĞĞí¶àµÄ´¹Ñî£¬²¢ÇÒ±éµØ
-ÏÊ»¨ÂÌ²İ£¬²¢ÇÒ´Ó´ËÍûÈ¥Ìì¿ÕÃ÷Îú¿É¼û£¬ÕâÀïÕæÊÇ¸öÊÀÍâÌÒÔ´¡£
+    ä½ ä¸€ä¸ªç¥ç§˜çš„åœ°æ–¹ï¼Œæ­¤å¤„æ˜¯ä¸€ä¸ªå››å‘¨éƒ½å›´ç»•è‘—é«˜å±±å³»å²­çš„å±±è°·
+å±±è°·çš„çš„ä¸­å¤®æœ‰ä¸€ä¸ªæ¼‚äº®çš„æ¹–ï¼Œæ¹–çš„å››å‘¨æœ‰è®¸å¤šçš„å‚æ¨ï¼Œå¹¶ä¸”éåœ°
+é²œèŠ±ç»¿è‰ï¼Œå¹¶ä¸”ä»æ­¤æœ›å»å¤©ç©ºæ˜æ™°å¯è§ï¼Œè¿™é‡ŒçœŸæ˜¯ä¸ªä¸–å¤–æ¡ƒæºã€‚
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);
@@ -43,13 +43,13 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
     if (me->is_fighting() && dir == "west") 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
     if(me->is_busy() && dir == "west")
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
        if ( !present("water armor", me) && dir == "west" )
-        return notify_fail("Ò»¹ÉÉñÆæµÄÁ¦Á¿µ²×¡ÁËÄã!!\n");
+        return notify_fail("ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡æŒ¡ä½äº†ä½ !!\n");
 
 	if (dir =="west")
 	{
@@ -60,7 +60,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

@@ -1,14 +1,14 @@
 // /d/zhuojun/ximen.c
-// Room in �ÿ�
+// Room in 涿郡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "����");
+	set("short", "西门");
 	set("long", @LONG
-�����ǳ�ɳ�������ţ������ߣ��ͽ����˽����ؽ磬�����߾ͽ���
-����������Ϊ�������´������԰��ŵ�ʿ����������·�����̲�÷ǳ�
-�ϸ�
+这里是长沙的西城门，再向东走，就进入了江西地界，向西走就进入
+湖北，人因为现在天下大乱所以把门的士兵对来往过路的人盘查得非常
+严格。
 LONG
 );
 

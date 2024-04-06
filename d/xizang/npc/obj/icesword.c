@@ -3,17 +3,17 @@
 inherit SWORD; 
 void create()
 {
-        set_name(HIW"±ùÆÇº®Ëª½£"NOR, ({ "ice sword"}) );
+        set_name(HIW"å†°é­„å¯’éœœå‰‘"NOR, ({ "ice sword"}) );
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ¾§Ó¨õ®Í¸µÄ±¦½££¬Í¨Ìå½à°×£¬¾¹ÊÇÓÉÍòÄêĞş±ùÖÆ³É¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠæ™¶è¹é†é€çš„å®å‰‘ï¼Œé€šä½“æ´ç™½ï¼Œç«Ÿæ˜¯ç”±ä¸‡å¹´ç„å†°åˆ¶æˆã€‚\n");
                 set("material", "ice");
-        set("wield_msg", "º®¹âÒ»ÉÁ£¬Ò»°Ñ$nºÕÈ»ÇæÔÚ$NÊÖÖĞ£¬ËÄÏÂ¶ÙÊ±ÈçÈë±ù¿ß¡£¡£\n");
-        set("unwield_msg", "$NÊÖÒ»Ñï£¬$nÒÑ²åÔÚ±³ºó¡£\n");
+        set("wield_msg", "å¯’å…‰ä¸€é—ªï¼Œä¸€æŠŠ$nèµ«ç„¶æ“åœ¨$Næ‰‹ä¸­ï¼Œå››ä¸‹é¡¿æ—¶å¦‚å…¥å†°çªŸã€‚ã€‚\n");
+        set("unwield_msg", "$Næ‰‹ä¸€æ‰¬ï¼Œ$nå·²æ’åœ¨èƒŒåã€‚\n");
         
         }
         ::init_sword(880);
@@ -42,9 +42,9 @@ mixed hit_ob(object me,object victim)
 {       string msg; 
     if(!random(5)&&(!victim->query_temp("is_unconcious")))
         {
-                msg=HIW"$nºöÈ»¾õµÃÈ«ÉíÈç×¹Èë±ù¿ß£¬¾¹Ò»¶¯¶¼²»ÄÜ¶¯ÁË£¡£¡\n"NOR;
+                msg=HIW"$nå¿½ç„¶è§‰å¾—å…¨èº«å¦‚å å…¥å†°çªŸï¼Œç«Ÿä¸€åŠ¨éƒ½ä¸èƒ½åŠ¨äº†ï¼ï¼\n"NOR;
                 victim->set_temp("disable_inputs",1);
-                victim->set("disable_type",HIW "<¶³½©ÖĞ>"NOR);
+                victim->set("disable_type",HIW "<å†»åƒµä¸­>"NOR);
                 victim->set_temp("is_unconcious",1);
                 call_out("remove_frozen",10,victim);
                 return msg;
@@ -62,7 +62,7 @@ int dissolve()
         if(userp(holder))
                 room=environment(holder);
         else room=holder;
-        message("vision",this_object()->query("name")+"½¥½¥µÄ»¯³ÉÁËÒ»Ì²±ùË®¡£\n",room);
+        message("vision",this_object()->query("name")+"æ¸æ¸çš„åŒ–æˆäº†ä¸€æ»©å†°æ°´ã€‚\n",room);
         destruct(this_object());
         return 1;
 }
@@ -73,7 +73,7 @@ void remove_frozen(object me)
     me->delete_temp("disable_inputs");
     me->delete_temp("is_unconcious");
     if(!me->is_ghost())
-        message_vision(HIR "\n\n$N·¢³öÒ»ÉùÅ­ºğ£¬Ë«±ÛÒ»Õñ£¬½«ÖÜÉíÄı¾ÛµÄ±ù¿éÕğµÃ·ÛËé£¡£¡\n\n"NOR, me);
+        message_vision(HIR "\n\n$Nå‘å‡ºä¸€å£°æ€’å¼ï¼ŒåŒè‡‚ä¸€æŒ¯ï¼Œå°†å‘¨èº«å‡èšçš„å†°å—éœ‡å¾—ç²‰ç¢ï¼ï¼\n\n"NOR, me);
 } 
 int do_wield(string arg) {
         call_out("check_status", 2);

@@ -1,17 +1,17 @@
-// wangerniang.c Íõ¶şÄï 
+// wangerniang.c ç‹äºŒå¨˜ 
 // Last Modifyed by Winder on Dec. 24 2001
 
 inherit NPC;
 
 void create()
 {
-	set_name("Íõ¶şÄï", ({ "wang erniang", "wang", "erniang" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("ç‹äºŒå¨˜", ({ "wang erniang", "wang", "erniang" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 53);
-	set("long", "Ëı¿´À´ÓĞ50¶àËêÁË£¬µ«ÊÇĞìÄï°ëÀÏ£¬·çÔÏÓÈ´æ¡£\n");
+	set("long", "å¥¹çœ‹æ¥æœ‰50å¤šå²äº†ï¼Œä½†æ˜¯å¾å¨˜åŠè€ï¼Œé£éŸµå°¤å­˜ã€‚\n");
 	set("combat_exp", 7000);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Íõ¶şÄï");	
+	set("rank_info/respect", "ç‹äºŒå¨˜");	
 	setup();
 	carry_object(__DIR__"obj/cloth/female-cloth")->wear();
 	carry_object(__DIR__"obj/cloth/female-shoe")->wear();

@@ -7,17 +7,17 @@ inherit HEAD;
 
 void create()
 {
-    set_name(HIR "999¶äºìÃµ¹å" NOR, ({ "red flower", "rose","flower" }) );
+    set_name(HIR "999æœµçº¢ç«ç‘°" NOR, ({ "red flower", "rose","flower" }) );
        set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-               set("long", HIR "999¶ä½¿ÑŞÓûµÎµÄºìÃµ¹å¡£\n" NOR);
-                set("unit", "À¦");
+               set("long", HIR "999æœµå¨‡è‰³æ¬²æ»´çš„çº¢ç«ç‘°ã€‚\n" NOR);
+                set("unit", "æ†");
                set("value", 1000);
                 set("material", "plant");
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
                 set("female_only", 1);
 
         }

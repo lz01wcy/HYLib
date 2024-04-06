@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±øÆ÷¿â");
+	set("short", "å…µå™¨åº“");
 	set("long",@LONG
-ÕâÀïÊÇºì»¨»áµÄ±øÆ÷¿â£¬Ò»À¦À¦µÄ±øÆ÷¶ÑµÃº£ÁË¡£Çå±øÂÅ´Î½ø·¸»Ø
-½®£¬½»Õ½ÆµÈÔ£¬ÕâÀïºÜ¶à±øÆ÷¶¼ÊÇÍòÀïÌöÌöÍâµÄÖÐÔ­Âé·³Çå±ø´øÀ´µÄ¡£
+è¿™é‡Œæ˜¯çº¢èŠ±ä¼šçš„å…µå™¨åº“ï¼Œä¸€æ†æ†çš„å…µå™¨å †å¾—æµ·äº†ã€‚æ¸…å…µå±¡æ¬¡è¿›çŠ¯å›ž
+ç–†ï¼Œäº¤æˆ˜é¢‘ä»ï¼Œè¿™é‡Œå¾ˆå¤šå…µå™¨éƒ½æ˜¯ä¸‡é‡Œè¿¢è¿¢å¤–çš„ä¸­åŽŸéº»çƒ¦æ¸…å…µå¸¦æ¥çš„ã€‚
 LONG );
         set("objects", ([
 		"/clone/weapon/gangjian"     : random(2)+1,

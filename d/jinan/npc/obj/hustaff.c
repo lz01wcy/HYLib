@@ -3,17 +3,17 @@
 inherit STAFF; 
 void create()
 {
-    set_name("»¢Î²Èı½Ø¹÷" , ({ "tiger staff", "staff" }) );
+    set_name("è™å°¾ä¸‰æˆªæ£" , ({ "tiger staff", "staff" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "¸ù");
-       set("long", "ÕâÊÇÒ»°ÑÓÉÈı½Ø¹÷Á¬³ÉµÄ±øÈĞ£¬ÉÏµñ·É»¢¾ÅÍ·ÒÔÊ¾ÍşÑÏ¡£\n");
+        set("unit", "æ ¹");
+       set("long", "è¿™æ˜¯ä¸€æŠŠç”±ä¸‰æˆªæ£è¿æˆçš„å…µåˆƒï¼Œä¸Šé›•é£è™ä¹å¤´ä»¥ç¤ºå¨ä¸¥ã€‚\n");
         set("value", 5000);
                 set("material", "wood");
-        set("wield_msg", "$N³é³öÒ»¸ùµÄ$n½ô½ôÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+        set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹çš„$nç´§ç´§æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         } 
     ::init_staff(50);
 }       

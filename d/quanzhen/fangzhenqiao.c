@@ -1,15 +1,15 @@
-// fangzhenqiao.c ·ÃÕæÇÅ
+// fangzhenqiao.c è®¿çœŸæ¡¥
 // By Lgg,1998.10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "·ÃÕæÇÅ");
+        set("short", "è®¿çœŸæ¡¥");
         set("long", @LONG
-¿ç¹ýÊ¯½×£¬ÑÛÇ°ÊÇÒ»×ùÊ¯Í·Æö³ÉµÄÐ¡Ð¡¹°ÇÅ¡£ÇÅÉÏÀ¸¸ËÉÏµñÁúÃè
-·ï£¬èòèòÈçÉú¡£ÕâÀïµÄÉ½ÊÆ·Ç³£¶¸¾þ£¬ÍùÏÂÒ»¿´£¬ÐüÑÂ±ÚÁ¢£¬½ÅÏÂ°×
-ÔÆÆ®¹ý£¬Õæ²»ÖªÉíÔÚºÎ¾³¡£
+è·¨è¿‡çŸ³é˜¶ï¼Œçœ¼å‰æ˜¯ä¸€åº§çŸ³å¤´ç Œæˆçš„å°å°æ‹±æ¡¥ã€‚æ¡¥ä¸Šæ æ†ä¸Šé›•é¾™æ
+å‡¤ï¼Œæ ©æ ©å¦‚ç”Ÿã€‚è¿™é‡Œçš„å±±åŠ¿éžå¸¸é™¡å³»ï¼Œå¾€ä¸‹ä¸€çœ‹ï¼Œæ‚¬å´–å£ç«‹ï¼Œè„šä¸‹ç™½
+äº‘é£˜è¿‡ï¼ŒçœŸä¸çŸ¥èº«åœ¨ä½•å¢ƒã€‚
 LONG
         );
         set("outdoors", "quanzhen");

@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-set("short", "С��");
+set("short", "小巷");
 set("long", @LONG
-����һ��С���ϣ���谵���ģ�һ������ԭ��������һ����ʳ�㣬��
-�۸�����˾����㡣�Ӱ߲���ǽ����Կ�������С����ʷ�ľ�Զ��
+走在一条小巷上，昏昏暗暗的，一边是上原，北面是一间面食点，出
+售各类寿司，糕点。从斑驳的墙面可以看出这条小巷历史的久远。
 LONG );
 set("exits",  ([
         "west"  : __DIR__"shangyuan4",

@@ -1,17 +1,17 @@
-//      guangchang.c �㳡
-//      Designed by secret (����)
+//      guangchang.c 广场
+//      Designed by secret (秘密)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","�㳡");
+        set("short","广场");
         set("long",@LONG
-������ѩɽ���ڵĹ㳡���㳡ʯ���̾ͣ�����������
-ƽ������ʵ���㳡�ı��������ɽ������ѩɽ�´���
-���ǿ����䳡��������ɽ�š�������һЩ�ֳ�ɮ����ɮ��
-��Ѳ�ߡ�
+这里是雪山寺内的广场。广场石埕铺就，黄土垫砌，
+平整而坚实。广场的北面就是依山而建的雪山寺大殿。往
+西是块练武场，南面是山门。寺内有一些手持僧棍的僧兵
+在巡逻。
 LONG );
         set("outdoors","xueshan");
         set("exits",([

@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short","Í¨ãôÇÅ");
+	set("short","é€šæ³—æ¡¥");
 	set("long",@LONG
-Í¨ãôÇÅÁ¬½ÓÑïÖÝ¾É³ÇµÄÖÐÐÄÊ®Àï½ÖºÍ¹ÙÑÃ£¬¿í³¨Æ½Õû£¬ÊýÁ¾´ó³µ¿É
-ÒÔ²¢ÐÐ¡£ÇÅµÄÎ÷Í·Î§³öÒ»´ó»¨Ì³£¬ÖÖ×ÅÑïÖÝµÄÃû»¨¡¸ÉÖÒ©¡¹(shaoyao)£¬
-¸üÓÐÒ»ÖêÀÏÐÓ£¬ºáÎÔË®ÉÏ£¬Ø²½ÃÇüÇú¡£ÇÅµÄ¶«Í·£¬Á¢Ò»¾ÞÊ¯£¬ÉÏÊé¡¸Í¨
-ãôÇÅ¡¹¡£ÇÅÉÏ³£ÓÐÐÐÈËÒÐÀ¸Ð¦¿´´¬¶ùÇÅÏÂ¹ý¡£
+é€šæ³—æ¡¥è¿žæŽ¥æ‰¬å·žæ—§åŸŽçš„ä¸­å¿ƒåé‡Œè¡—å’Œå®˜è¡™ï¼Œå®½æ•žå¹³æ•´ï¼Œæ•°è¾†å¤§è½¦å¯
+ä»¥å¹¶è¡Œã€‚æ¡¥çš„è¥¿å¤´å›´å‡ºä¸€å¤§èŠ±å›ï¼Œç§ç€æ‰¬å·žçš„åèŠ±ã€ŒèŠè¯ã€(shaoyao)ï¼Œ
+æ›´æœ‰ä¸€æ ªè€æï¼Œæ¨ªå§æ°´ä¸Šï¼Œå¤­çŸ«å±ˆæ›²ã€‚æ¡¥çš„ä¸œå¤´ï¼Œç«‹ä¸€å·¨çŸ³ï¼Œä¸Šä¹¦ã€Œé€š
+æ³—æ¡¥ã€ã€‚æ¡¥ä¸Šå¸¸æœ‰è¡Œäººå€šæ ç¬‘çœ‹èˆ¹å„¿æ¡¥ä¸‹è¿‡ã€‚
 LONG );
 	set("outdoors", "yangzhouw");
 
@@ -19,7 +19,7 @@ LONG );
 		"east"  : __DIR__"guangchang",
 	]));
 	set("item_desc", ([
-		"saoyao" : "ÑïÖÝÒÔÊ¢²úÉÖÒ©¶øÃûÎÅÌìÏÂ£¬ÆäÖÐÓÖÒÔ¡¸½ð´øÎ§¡¹×îÎªÃû¹ó¡£\n",
+		"saoyao" : "æ‰¬å·žä»¥ç››äº§èŠè¯è€Œåé—»å¤©ä¸‹ï¼Œå…¶ä¸­åˆä»¥ã€Œé‡‘å¸¦å›´ã€æœ€ä¸ºåè´µã€‚\n",
 	]));
 	set("objects", ([
 		__DIR__"npc/liuyan" : 1,

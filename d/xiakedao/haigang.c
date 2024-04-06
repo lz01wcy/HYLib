@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���");
+	set("short", "渔港");
 	set("long", @LONG
-�����Ǹ�СС��ۡ����溣��Ư���ż���С����̧������������
-�����ޱ��޼ʡ���Ÿ�ӹ��˼⣬������Ȼ��
+这里是个小小渔港。南面海面漂浮着几艘小船，抬眼望，海天相
+连，无边无际。海鸥掠过浪尖，悠悠翩然。
 LONG );
         set("outdoors", "xiakedao");
 	set("exits", ([

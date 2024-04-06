@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "大厅");
 	set("long", @LONG
-�������������������ػ���ľ�ô�����ֻ��һ�Ű����Ϲ�������
-���ƣ��м�һ��д�š���������֮λ�������һ��д�š�������ƽ����
-֣֮λ����������һ���ľ (baimu)��������������ȫ��Ѫ�֡�������
-һ������(duilian)�������ǲ������ϱ����ǰ�����
+这里就是天下闻名的天地会青木堂大厅，只见一张板桌上供着两个
+灵牌，中间一个写着“大明天子之位”，侧边一个写着“大明延平郡王
+郑之位”。此外有一块白木 (baimu)，上面密密麻麻全是血字。厅侧有
+一副对联(duilian)。东边是侧厅，南北都是暗道。
 LONG );
 	set("valid_startroom", 1);
 	set("exits", ([
@@ -20,13 +20,13 @@ LONG );
 	]));
 	set("item_desc", ([
 "baimu" : 
-HIR "\n  ֻ����ľ��д����������У��ظ����������˵�ͬ��������\n"
-"����԰���£�ԼΪ�ֵܣ��պ�����������Ϊһ�ҡ�����Ϊ����\n"
-"�ݵ�Ϊĸ, ��Ϊ�֣���Ϊ��ã��������ģ�һѩǰ�ܣ�˳��\n"
-"�е����ָ��������ѪΪ�ˣ�����������\n" NOR,
+HIR "\n  只见白木上写道：天地万有，回复大明。吾人当同生共死，\n"
+"仿桃园故事，约为兄弟，姓洪名金兰，合为一家。拜天为父，\n"
+"拜地为母, 日为兄，月为姊妹，焚香设誓，一雪前耻，顺天\n"
+"行道，恢复明朝。歃血为盟，神明降鉴。\n" NOR,
 "duilian":
-HIC "\n����߸ԣ�һ��Ϫɽǧ����\n" NOR +
-HIG "�ų��󺣣����Ӻ�ˮ������\n" NOR,
+HIC "\n地振高冈，一派溪山千古秀\n" NOR +
+HIG "门朝大海，三河合水万年流\n" NOR,
 	]));
 	set("objects", ([
 		"quest/menpaijob/yunlong/chen" : 1,
@@ -40,6 +40,6 @@ HIG "�ų��󺣣����Ӻ�ˮ������\n" NOR,
 int valid_leave(object me, string dir)
 {
 	if (dir== "north")
-	message("vision","գ�ۼ䣬���׳���ͻȻ����һ���ˡ�\n","/d/city2/tuzai");
+	message("vision","眨眼间，屠宰场里突然多了一个人。\n","/d/city2/tuzai");
 	return ::valid_leave(me, dir);
 }

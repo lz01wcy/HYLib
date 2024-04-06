@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "柳岸长堤");
 	set("long", @LONG
-���̱�ֲ�����������һ����̲���ӯӯ����ˮ���ݳ�ݺ��ʱ�ڣ���
-����Ů����Լ��䣬������˿��ˮ���������֡���ȥ��ƽɽ�룬�ϱ���
-����¥��
+长堤遍植杨柳，间以桃花。堤侧是盈盈西湖水，草长莺飞时节，红
+男绿女，相约其间，长堤柳丝拂水，风情万种。北去是平山坞，南边是
+望春楼。
 LONG );
 	set("outdoors", "shouxihu");
 	set("objects", ([

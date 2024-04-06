@@ -4,12 +4,12 @@
 inherit NPC;
 void create()
 {
-set_name("ÏÄÌì", ({ "xia tian","xia","boss" }) );
-	set("gender", "ÄĞĞÔ" );
+set_name("å¤å¤©", ({ "xia tian","xia","boss" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 39);
-set("nickname", "ÌìÂíµ±ÆÌÀÏ°å");
+set("nickname", "å¤©é©¬å½“é“ºè€æ¿");
 	set("long",
-       "ËûÊÇ½ğÁê×î´óµÄµ±ÆÌµÄÀÏ°å£¬Ê®·Ö¾«Ã÷¡£\n");
+       "ä»–æ˜¯é‡‘é™µæœ€å¤§çš„å½“é“ºçš„è€æ¿ï¼Œååˆ†ç²¾æ˜ã€‚\n");
 	set("combat_exp", 50000);
 	set("attitude", "friendly");
 	set("per",30);
@@ -22,7 +22,7 @@ set("nickname", "ÌìÂíµ±ÆÌÀÏ°å");
 
 int accept_object(object who, object ob)
 {
-	message_vision("$N¶Ô$nËµµ½£ºĞ»ÉÍ£¡£¡\n",this_object(),who);
+	message_vision("$Nå¯¹$nè¯´åˆ°ï¼šè°¢èµï¼ï¼\n",this_object(),who);
 		return 1;
 }
 	

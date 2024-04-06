@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name(HIG+"´äÖñ"+NOR, ({ "cuizhu" }));
+  set_name(HIG+"ç¿ ç«¹"+NOR, ({ "cuizhu" }));
   set_weight(8000);
-  set("long","Ò»¸ùÑÕÉ«"+HIG+"±ÌÂÌ"+NOR+"µÄ´äÖñ.\n");
+  set("long","ä¸€æ ¹é¢œè‰²"+HIG+"ç¢§ç»¿"+NOR+"çš„ç¿ ç«¹.\n");
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
+    set("unit", "æ ¹");
     set("material", "bamboo");
     set("no_get",1);
        set("no_drop",1);
@@ -26,7 +26,7 @@ void init ()
        ob=load_object("/d/sandboy/zhushao");
 	inv=all_inventory(ob);
 	if(!sizeof(inv))	return;
-str="Ò»¸ùÑÕÉ«"+HIG+"±ÌÂÌ"+NOR+"µÄ´äÖñ.ÉÏÃæĞü¹Ò×Å\n";
+str="ä¸€æ ¹é¢œè‰²"+HIG+"ç¢§ç»¿"+NOR+"çš„ç¿ ç«¹.ä¸Šé¢æ‚¬æŒ‚ç€\n";
 str+=
 "----------------------------------------------------------------------------------------\n";
 	for(i=0;i<sizeof(inv);i++)	{

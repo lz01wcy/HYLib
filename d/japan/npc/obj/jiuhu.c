@@ -5,13 +5,13 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(CYN"Ã×¾Æ"NOR, ({ "mi jiu", "jiu" }) );
+        set_name(CYN"ç±³é…’"NOR, ({ "mi jiu", "jiu" }) );
         set_weight(400);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-              set("long", YEL"ÕâÊÇÒ»°ÑÌÕ´É¾Æºø£¬ÀïÃæ×°×Å"+name()+"¡£\n"NOR);
-                set("unit", "ºø");
+              set("long", YEL"è¿™æ˜¯ä¸€æŠŠé™¶ç“·é…’å£¶ï¼Œé‡Œé¢è£…ç€"+name()+"ã€‚\n"NOR);
+                set("unit", "å£¶");
              set("value", 1000);
                 set("max_liquid", 50);
         }
@@ -20,7 +20,7 @@ void create()
         // in each cloned copy.
         set("liquid", ([
                 "type": "water",
-                 "name": "Ã×¾Æ",
+                 "name": "ç±³é…’",
                 "remaining": 30,
         ]) );
 }

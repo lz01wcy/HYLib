@@ -4,11 +4,11 @@ int have_book=1;
 
 void create()
 {
-	set_name("°×ÒÂÈË", ({ "baiyi ren", "baiyi", "man" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç™½è¡£äºº", ({ "baiyi ren", "baiyi", "man" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 54);
 	set("long",
-		"Ò»ÉíÑ©°×µÄ³¤ÉÀ,ÔÚ·çÖĞÆ®·÷,ÉñÇé¼ä°µ´øÒõÓô¡£\n");
+		"ä¸€èº«é›ªç™½çš„é•¿è¡«,åœ¨é£ä¸­é£˜æ‹‚,ç¥æƒ…é—´æš—å¸¦é˜´éƒã€‚\n");
 	set("combat_exp", 100000);
         set("str", 34);
         set("dex", 30);
@@ -16,9 +16,9 @@ void create()
         set("int", 30);
 	set("attitude", "peaceful");
       set("inquiry",([
-       "Ğ¡Ã·":(:kill_sb():),
+       "å°æ¢…":(:kill_sb():),
        "xiaomei":(:kill_sb():),
-       "ÂäÑãÉ½×¯":"´Ó´ËÏò¶«,ÔÙÏò±±,±ğÔÙÀ´·³ÎÒÁË!\n",
+       "è½é›å±±åº„":"ä»æ­¤å‘ä¸œ,å†å‘åŒ—,åˆ«å†æ¥çƒ¦æˆ‘äº†!\n",
         ]));	
 
         set_skill("dodge",120);
@@ -37,16 +37,16 @@ int kill_sb()
   object me,ob;
   me=this_player();
   if( me->query("cps")>24)
-{  if (have_book==0) command("say ÄãÀ´ÍíÁË,À´ÍíÁË,µÈÏÂ´Î°É,°¢ÃÅ,Ô¸Ö÷´Í¸£ÓÚÄã!\n");
+{  if (have_book==0) command("say ä½ æ¥æ™šäº†,æ¥æ™šäº†,ç­‰ä¸‹æ¬¡å§,é˜¿é—¨,æ„¿ä¸»èµç¦äºä½ !\n");
    else
  {  clone_object("/d/yandang/obj/book1")->move(me);
-    command("say ÇéÌìºŞº£,´Ó´ËÏà¼ûÎŞÆÚ,ÄãÎÒÏàÓöÒ²ÊÇÓĞÔµ,Õâ±¾Êé¾ÍËÍ¸øÄã°É¡£\n");  
-    message_vision("°×ÒÂÈËËÍ¸ø$NÒ»±¾ÆÆÀÃµÄÊé.\n",me);
+    command("say æƒ…å¤©æ¨æµ·,ä»æ­¤ç›¸è§æ— æœŸ,ä½ æˆ‘ç›¸é‡ä¹Ÿæ˜¯æœ‰ç¼˜,è¿™æœ¬ä¹¦å°±é€ç»™ä½ å§ã€‚\n");  
+    message_vision("ç™½è¡£äººé€ç»™$Nä¸€æœ¬ç ´çƒ‚çš„ä¹¦.\n",me);
     have_book=0;   
   return 1;}
   return 1;
  }
-  else command("say ÉËĞÄÈË±ğÓĞ»³±§,Äã¾Í²»ÒªÀ´¾À²øÎÒÁË!\n");
+  else command("say ä¼¤å¿ƒäººåˆ«æœ‰æ€€æŠ±,ä½ å°±ä¸è¦æ¥çº ç¼ æˆ‘äº†!\n");
   return 0;
 }
 

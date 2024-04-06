@@ -4,15 +4,15 @@
 inherit ITEM;
 void create()
 {
-        set_name("Ğ¡ºÍÉĞµñËÜ", ({ "statue", "little monk", "monk statue"}));
+        set_name("å°å’Œå°šé›•å¡‘", ({ "statue", "little monk", "monk statue"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("long",
-                        "Ò»¸ö²»ÖªÓÃÊ²Ã´²ÄÁÏ×ö³ÉµÄĞ¡ºÍÉĞ£¬ÊÖ½Å¶¼ÄÜ»î¶¯£¬Ö»ÒªÄãÒ»°´
-Ëû±³ºóµÄ»ú¹Ø£¬Ëû¾Í»á×ß³öÒ»Ì×²½·¨¡£\n");
+                        "ä¸€ä¸ªä¸çŸ¥ç”¨ä»€ä¹ˆææ–™åšæˆçš„å°å’Œå°šï¼Œæ‰‹è„šéƒ½èƒ½æ´»åŠ¨ï¼Œåªè¦ä½ ä¸€æŒ‰
+ä»–èƒŒåçš„æœºå…³ï¼Œä»–å°±ä¼šèµ°å‡ºä¸€å¥—æ­¥æ³•ã€‚\n");
                 set("value", 5000);
                 set("material", "steel");
                 set("skill", ([

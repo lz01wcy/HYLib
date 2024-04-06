@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short", "��ˮ�ɿ�");
+	set("short", "洛水渡口");
 	set("long",  @LONG
-���������ǽ�����ˮ�ɿڣ���������ˮ�ɴ��򶫣���������ƺӡ�
-��ͷ��������һ�����񴬡�
+这是洛阳城郊的洛水渡口，静静的洛水由此向东，汇入滚滚黄河。
+码头上正泊着一艘乌篷船。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"east"      : __DIR__"gongshu",

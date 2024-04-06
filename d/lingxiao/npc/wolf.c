@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("雪狼", ({ "xue lang","wolf", "lang" }) );
-        set("race", "野兽");
+        set_name("闆嫾", ({ "xue lang","wolf", "lang" }) );
+        set("race", "閲庡吔");
         set("age", 5);
-        set("long", "一头雪白的雪狼，昂首直立，两眼放着绿光，是大雪山上凶猛的野兽。\n");
+        set("long", "涓�澶撮洩鐧界殑闆嫾锛屾槀棣栫洿绔嬶紝涓ょ溂鏀剧潃缁垮厜锛屾槸澶ч洩灞变笂鍑剁寷鐨勯噹鍏姐�俓n");
         set("attitude", "aggressive");
 
         set("str", 26);
         set("cor", 30);
-        set("limbs", ({ "头部", "身体", "腿部", "尾巴",}) );
+        set("limbs", ({ "澶撮儴", "韬綋", "鑵块儴", "灏惧反",}) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 5000);

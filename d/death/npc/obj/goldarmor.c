@@ -4,12 +4,12 @@
 inherit HEAD;
 void create()
 {
-	set_name(HIY"½ð¿ø"NOR, ({ "jinkui", "kui" }) );
+	set_name(HIY"é‡‘ç›”"NOR, ({ "jinkui", "kui" }) );
 	set_weight(50000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶¥");
+		set("unit", "é¡¶");
 		set("material", "gold");
 		set("value", 9000);
 		set("armor_prop/armor", 50);

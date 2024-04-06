@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�����");
+  set ("short", "黄泥道");
   set ("long", @LONG
-����һ�������,�Ѿ����˲ȵĸߵ����,�����������˻���ͦ��,
-��Ϊ�Ӵ��򶫿��Ե������к���.
+乡间的一条黄泥道,已经给人踩的高低起伏,不过来往的人还是挺多,
+因为从此向东可以到达大城市杭州.
 LONG);
 
   set("outdoors", "/d/sandboy");

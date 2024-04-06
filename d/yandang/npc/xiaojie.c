@@ -4,13 +4,13 @@ int have_yuzhuo=1;
 
 void create()
 {
-	set_name("±ÌÁ°", ({ "bilian","girl", "xiaojie" }));
+	set_name("ç¢§æ¶Ÿ", ({ "bilian","girl", "xiaojie" }));
 	set("age", 16);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "peaceful");
 	set("str", 34);
 	set("dex", 36);
-       set("title","Ğ¡½ã");
+       set("title","å°å§");
 	set("combat_exp", 100000);
 	set_skill("unarmed", 80);
 	set_skill("dodge", 80);
@@ -21,12 +21,12 @@ void create()
 
     set("chat_chance", 7);
 	set("chat_msg", ({
-		"°¦,ÒÂ´ø½¥¿íÖÚ²»»Ú,ÎªÒÁÏúµÃÈËã¾ã²!\n",
-		"±ÌÁ°Ì§Í·¿´×Å´°Íâ,Ò»¶¯²»¶¯,ËÆºõÔÚÏë×ÅÊ²Ã´.\n",
+		"å”‰,è¡£å¸¦æ¸å®½ä¼—ä¸æ‚”,ä¸ºä¼Šé”€å¾—äººæ†”æ‚´!\n",
+		"ç¢§æ¶ŸæŠ¬å¤´çœ‹ç€çª—å¤–,ä¸€åŠ¨ä¸åŠ¨,ä¼¼ä¹åœ¨æƒ³ç€ä»€ä¹ˆ.\n",
 	}));
 	set("inquiry", ([
-		"Óñô¢" : "àÅ,×òÌì²»ÖªµÀµôÄÄ¶ùÁË£¿",
-		"Óã³¦½£" : "ÎûÎû,Õâ¼¸ÌìÎÊÕâÎÊÌâµÄÈËÕæ¶à!",
+		"ç‰ç°ª" : "å—¯,æ˜¨å¤©ä¸çŸ¥é“æ‰å“ªå„¿äº†ï¼Ÿ",
+		"é±¼è‚ å‰‘" : "å˜»å˜»,è¿™å‡ å¤©é—®è¿™é—®é¢˜çš„äººçœŸå¤š!",
 		]) );	
 	setup();
 add_money("gold",1);
@@ -37,14 +37,14 @@ int accept_object(object who,object item)
 {	
 	if(item->query("id")=="biyuzan")
 	{if (have_yuzhuo==1)
-	   {  command("say °¡,ÊÇÎÒµÄÓñô¢.....ÕæĞ»Ğ»Äã,Õâ¼şĞ¡¶«Î÷ËÍ¸øÄã¡£\n");
-message_vision("Ğ¡½ã¸ø$NÒ»Ö»"+HIC+"´äÓñïí.\n"NOR,who);
+	   {  command("say å•Š,æ˜¯æˆ‘çš„ç‰ç°ª.....çœŸè°¢è°¢ä½ ,è¿™ä»¶å°ä¸œè¥¿é€ç»™ä½ ã€‚\n");
+message_vision("å°å§ç»™$Nä¸€åª"+HIC+"ç¿ ç‰é•¯.\n"NOR,who);
 clone_object(__DIR__"obj/cuiyuzhu.c")->move(who);
 have_yuzhuo=0;		
 return 1; }
-       else command("say °¦,ÄãÀ´ÍíÁË,¶«Î÷ÒÑ¾­¸ø±ğÈËÄÃ×ßÁË!\n");
+       else command("say å”‰,ä½ æ¥æ™šäº†,ä¸œè¥¿å·²ç»ç»™åˆ«äººæ‹¿èµ°äº†!\n");
        return 0;
 	}
-	command("say ÕâÓÖ²»ÊÇÎÒµÄ¶«Î÷,¸øÎÒ¸ÉÊ²Ã´¡£\n");
+	command("say è¿™åˆä¸æ˜¯æˆ‘çš„ä¸œè¥¿,ç»™æˆ‘å¹²ä»€ä¹ˆã€‚\n");
 	return 0;
 }

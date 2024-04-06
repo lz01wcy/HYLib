@@ -1,11 +1,11 @@
-// luguanji.c Ů�ܼ�
+// luguanji.c 女管家
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ů�ܼ�", ({ "guan jia", "guan" }));
-	set("gender", "Ů��");
+	set_name("女管家", ({ "guan jia", "guan" }));
+	set("gender", "女性");
 	set("age", 45);
 
 	set("combat_exp", 7500);

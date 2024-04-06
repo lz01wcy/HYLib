@@ -1,17 +1,17 @@
-// zhusun.c ôä´äÖñİ¥
+// zhusun.c ç¿¡ç¿ ç«¹èª
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("ôä´äÖñİ¥", ({"zhusun", "zhu"}));
+	set_name("ç¿¡ç¿ ç«¹èª", ({"zhusun", "zhu"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÅÌË¬¿ÚµÄÖñº£ÌØ²ú-Öñİ¥¡£\n");
-		set("unit", "ÅÌ");
+		set("long", "ä¸€ç›˜çˆ½å£çš„ç«¹æµ·ç‰¹äº§-ç«¹èªã€‚\n");
+		set("unit", "ç›˜");
 		set("value", 150);
 		set("food_remaining", 3);
 		set("food_supply", 50);

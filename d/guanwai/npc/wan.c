@@ -5,10 +5,10 @@ inherit F_DEALER;
 int ask_wu();
 void create()
 {
-	set_name("ÍòÕğÉ½", ({ "wan zhenshan", "wan" }));
-	set("title", "½­Î÷´óÏÀ");
-	set("gender", "ÄĞĞÔ");
-	set("long", "ËûÊÇÒ»¸öÎäÊ¦¡£×Ô´ÓµÃÁËÁ¬³Ç½£·¨¼¸Ò³²ĞÆªºó£¬Îä¹¦´ó½ø¡£\n");
+	set_name("ä¸‡éœ‡å±±", ({ "wan zhenshan", "wan" }));
+	set("title", "æ±Ÿè¥¿å¤§ä¾ ");
+	set("gender", "ç”·æ€§");
+	set("long", "ä»–æ˜¯ä¸€ä¸ªæ­¦å¸ˆã€‚è‡ªä»å¾—äº†è¿åŸå‰‘æ³•å‡ é¡µæ®‹ç¯‡åï¼Œæ­¦åŠŸå¤§è¿›ã€‚\n");
 	set("age", 45);
 
 	set("int", 20);

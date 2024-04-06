@@ -1,16 +1,16 @@
-// wangzhi.c ÍõÖ¾Ì¹
+// wangzhi.c çŽ‹å¿—å¦
 // By Lgg,1998.10
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÍõÖ¾Ì¹", ({"wang zhitan", "wang"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("çŽ‹å¿—å¦", ({"wang zhitan", "wang"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÚÈý´úµÜ×ÓÖÐµÄºÃÊÖ£¬Áõ´¦ÐþµÄµÜ×Ó¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„å¥½æ‰‹ï¼Œåˆ˜å¤„çŽ„çš„å¼Ÿå­ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -42,15 +42,15 @@ void create()
         set("score", 100000);
 
         set_skill("force", 80);
-        set_skill("xiantian-qigong", 80);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 80);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 80);
-        set_skill("quanzhen-jian",70);  //È«Õæ½£
+        set_skill("quanzhen-jian",70);  //å…¨çœŸå‰‘
         set_skill("dodge", 70);
-        set_skill("jinyan-gong", 70);   //½ðÑã¹¦
+        set_skill("jinyan-gong", 70);   //é‡‘é›åŠŸ
         set_skill("parry", 80);
         set_skill("strike",80);
         set_skill("unarmed",80);
-        set_skill("haotian-zhang", 70);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 70);    //æ˜Šå¤©æŽŒ
         set_skill("literate",60);
         set_skill("taoism",60);
 
@@ -61,10 +61,10 @@ void create()
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒÐþÃÅÕý×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶çŽ„é—¨æ­£å®—ã€‚\n",
         ]) );
 
         setup();
@@ -76,7 +76,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

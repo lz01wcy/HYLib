@@ -3,20 +3,20 @@
 inherit STAFF; 
 void create()
 {
-        set_name(HIG"´ò¹·¹÷"NOR , ({ "doggie stick", "stick" }) );
+        set_name(HIG"æ‰“ç‹—æ£"NOR , ({ "doggie stick", "stick" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "¸ù");
-        set("long", GRN"Ò»¸ùÂÌÓÍÓÍ£¬¾§Ó¨ÌÞÍ¸µÄÖñ°ô¡£\n"NOR);
+        set("unit", "æ ¹");
+        set("long", GRN"ä¸€æ ¹ç»¿æ²¹æ²¹ï¼Œæ™¶èŽ¹å‰”é€çš„ç«¹æ£’ã€‚\n"NOR);
         set("value", 6000);
                 set("no_give", 1);
                 set("class","beggar");
                 set("experience",300000);
                 set("material", "wood");
-                set("wield_msg", "$N³é³öÒ»¸ù$n½ô½ôÎÕÔÚÊÖÖÐ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖÐµÄ$n¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$nç´§ç´§æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 //      ITEM_D->setup_unique(this_object());  
     ::init_staff(395);

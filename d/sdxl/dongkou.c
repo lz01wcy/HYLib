@@ -1,4 +1,4 @@
-// Room: /u/poq/sdxl/dongkou.c ¶´¿Ú
+// Room: /u/poq/sdxl/dongkou.c æ´å£
 // by poq@jyqx 97/7
 // alter dubei
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", BLU "¶´¿Ú"NOR);
+    set("short", BLU "æ´å£"NOR);
     set("long", @LONG
-ËÄÏÂ³¤²İÆëÏ¥£¬Ò»Æ¬¼Å¾²¡£ÄãÃæÇ°ÊÇÒ»¸ö´óÉ½¶´¡£¶«ÄÏ·½ÊÇÓÄ°µµÄ
-Éî¹È¡£
+å››ä¸‹é•¿è‰é½è†ï¼Œä¸€ç‰‡å¯‚é™ã€‚ä½ é¢å‰æ˜¯ä¸€ä¸ªå¤§å±±æ´ã€‚ä¸œå—æ–¹æ˜¯å¹½æš—çš„
+æ·±è°·ã€‚
 LONG
     );
 
@@ -23,7 +23,7 @@ LONG
     set("outdoors", "xiangyang");
 
     set("item_desc", ([
-        "dong" : "É½¶´ÀïÃæºÚ÷î÷îµÄ£¬Äã¿´²»µ½ÈÎºÎ¶«Î÷¡£\n",
+        "dong" : "å±±æ´é‡Œé¢é»‘é»é»çš„ï¼Œä½ çœ‹ä¸åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n",
 	]));
 
     setup();

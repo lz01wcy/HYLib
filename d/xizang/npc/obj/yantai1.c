@@ -1,16 +1,16 @@
  inherit ITEM;
 void create()
 {
-        set_name("ÑâÌ¨", ({ "yan tai", "×ÏºìÑâÌ¨", }) );
+        set_name("ç šå°", ({ "yan tai", "ç´«çº¢ç šå°", }) );
         set_weight(1300);
         set_max_encumbrance(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "×ÏºìÉ«µÄÑâÌ¨ÎÂÈóÓ¨½à£¬ÑâÌ¨µÄ±ßÉÏ°´ÕÕÊ¯Í·µÄÎÆÀíÉ«Ôóµñ¿ÌÁËÒ»¿ÃºìÃ·Ê÷¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "ç´«çº¢è‰²çš„ç šå°æ¸©æ¶¦è¹æ´ï¼Œç šå°çš„è¾¹ä¸ŠæŒ‰ç…§çŸ³å¤´çš„çº¹ç†è‰²æ³½é›•åˆ»äº†ä¸€æ£µçº¢æ¢…æ ‘ã€‚\n");
                 set("value", 1000);
-                set("color", "×Ïºì");
+                set("color", "ç´«çº¢");
         }
         
 }       

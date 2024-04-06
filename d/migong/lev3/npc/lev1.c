@@ -9,16 +9,16 @@ void create()
 
 {
     
-   set_name(HIG"öùÓã"NOR, ({ "eyu" }));
+   set_name(HIG"é³„é±¼"NOR, ({ "eyu" }));
       
-          set("race", "Ò°ÊÞ");
+          set("race", "é‡Žå…½");
        set("long",
-"Ò»Ö»ÕÅ×Å´ó¿Ú£¬ÐÐ¶¯³Ù»ºµÄöùÓã
-¡£\n");
+"ä¸€åªå¼ ç€å¤§å£ï¼Œè¡ŒåŠ¨è¿Ÿç¼“çš„é³„é±¼
+ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 	       set("max_qi",1500+random(1000));
   set("max_jing",3500+random(1000));
@@ -83,11 +83,11 @@ void die()
         me = query_temp("last_damage_from");
         if (!me) return;   
               me->add("score",1);
-        message_vision(WHT"$N¶Ç×Ó³¯ÌìÒ»·­£¬³é´¤ÁË¼¸ÏÂ¾Í²»¶¯ÁË¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nè‚šå­æœå¤©ä¸€ç¿»ï¼ŒæŠ½æäº†å‡ ä¸‹å°±ä¸åŠ¨äº†ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));me->add("combat_exp",random(12));me->add("potential",random(8));
         if((int)me->query("combat_exp") < 800000)   {
-        message("vision", me->name() + "³É¹¦´òËÀÁÔÎïÔö¼ÓÁË50¾­ÑéºÍ25Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»çŒŽç‰©å¢žåŠ äº†50ç»éªŒå’Œ25æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",50);
         me->add("potential",25);
         destruct(ob);

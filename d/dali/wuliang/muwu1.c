@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¿ÕµØ");
+	set("short", "ç©ºåœ°");
 	set("long", @LONG
-Äã¶¨ÁË¶¨Éñ£¬¿´¼ûÑÛÇ°ÊÇÒ»¿é´ó¿ÕµØ£¬¹âÍºÍºµÄÊ²Ã´¶¼Ã»³¤£¬¿ÕµØ±±ÃæºÃ
-ÏóÓÐÒ»¼äÎÝ×Ó,ÄÏÃæÊÇÄãÌø¹ýÀ´µÄÊ÷Ç½¡£
+ä½ å®šäº†å®šç¥žï¼Œçœ‹è§çœ¼å‰æ˜¯ä¸€å—å¤§ç©ºåœ°ï¼Œå…‰ç§ƒç§ƒçš„ä»€ä¹ˆéƒ½æ²¡é•¿ï¼Œç©ºåœ°åŒ—é¢å¥½
+è±¡æœ‰ä¸€é—´å±‹å­,å—é¢æ˜¯ä½ è·³è¿‡æ¥çš„æ ‘å¢™ã€‚
 LONG
 	);
-        set("outdoors", "´óÀí");
+        set("outdoors", "å¤§ç†");
 
 	set("exits", ([
                "north" : __DIR__"muwu2",
@@ -42,21 +42,21 @@ int do_jump(string arg)
          object me;
          me = this_player();
          if (!arg || arg !="wall") 
-            return notify_fail("ÄãÒªÌøµ½ÄÇÈ¥£¿\n");
+            return notify_fail("ä½ è¦è·³åˆ°é‚£åŽ»ï¼Ÿ\n");
          if (random(me->query_skill("dodge",1)) < 60){ 
-           write("ÄãÎüÆø·ÜÁ¦Ò»Ìø£¬ÎÞÄÎÔËÆø²»ºÃ£¬Ã»Ìø¹ýÊ÷Ç½£¬Ë¤ÁËÏÂÀ´¡£\n");
-           write("ÄãÊÜÁËµãÉË!\n");
+           write("ä½ å¸æ°”å¥‹åŠ›ä¸€è·³ï¼Œæ— å¥ˆè¿æ°”ä¸å¥½ï¼Œæ²¡è·³è¿‡æ ‘å¢™ï¼Œæ‘”äº†ä¸‹æ¥ã€‚\n");
+           write("ä½ å—äº†ç‚¹ä¼¤!\n");
 	   me->add("qi", -100);
            me->add("jingli", -80);
            me->receive_wound("qi", 50);
 	   return 1;
            }
          else {
-           write("ÄãÒ»ÎüÆø£¬ÇáÇáÇÉÇÉµÄÌø¹ýÁË´óÊ÷Ç½¡£\n");
-           message("vision",me->name() + "Ò»×ÝÉíÌø¹ýÁËÊ÷Ç½¡£\n",environment(me), ({me}) );
+           write("ä½ ä¸€å¸æ°”ï¼Œè½»è½»å·§å·§çš„è·³è¿‡äº†å¤§æ ‘å¢™ã€‚\n");
+           message("vision",me->name() + "ä¸€çºµèº«è·³è¿‡äº†æ ‘å¢™ã€‚\n",environment(me), ({me}) );
            me->start_busy(1);
            me->move(__DIR__"shanlin-6");
-           message("vision",me->name() + "´ÓÊ÷Ç½ºóÃæÌøÁË¹ýÀ´¡£\n",environment(me), ({me}) );
+           message("vision",me->name() + "ä»Žæ ‘å¢™åŽé¢è·³äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
            return 1;
            }
 }
@@ -65,7 +65,7 @@ int valid_leave(object me,string dir)
 {
          if( dir == "north" 
           && objectp(present("duan yanqing", environment(me))))
-	     return notify_fail("¶ÎÑÓÇìµ²×¡ÁËÂ·£¬ÄãÎÞ·¨¹ýÈ¥!\n");     
+	     return notify_fail("æ®µå»¶åº†æŒ¡ä½äº†è·¯ï¼Œä½ æ— æ³•è¿‡åŽ»!\n");     
          if ( interactive(me = this_player()) 
           && this_player()->query_temp("kill")
           && (dir =="north")){

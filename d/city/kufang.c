@@ -1,4 +1,4 @@
-// kufang1.c ¿â·¿£¨ÕÔ¿¡ÈÝ£©
+// kufang1.c åº“æˆ¿ï¼ˆèµµä¿Šå®¹ï¼‰
 // 11:55 99-1-16
 #include <ansi.h>
 inherit ROOM;
@@ -6,11 +6,11 @@ int do_yuntang(string arg);
 
 void create ()
 {
-  set ("short", "¿â·¿");
+  set ("short", "åº“æˆ¿");
   set ("long", @LONG
-Äã×ß¹ýÒ»ÌõÏÁÕ­µÄÐ¡ÏïÖ®ºóÀ´µ½Ò»¼ä²Ö¿âÖÐ¡£ÕâÀïÕûÆëµÄ¶ÑÂë×ÅÎ´¾­
-ìÙÌÌµÄ²¼Æ¥ºÍÒ»Ð©³ÉÒÂ¡£¿¿Ç½°Ú·Å×Å¼¸ÕÅ´ó×À×Ó£¬×À×ÓÉÏ·Å×Å¼¸Æ¥´òÊªµÄ
-²¼ÁÏºÍÒ»¸öÊú×ÅÒ»¸öÒÑ¾­ÉÕµÃ·¢ÌÌµÄìÙ¶·¡£Äã¿ÉÒÔÔÚÕâ¶ùìÙÌÌ(yuntang)¡£
+ä½ èµ°è¿‡ä¸€æ¡ç‹­çª„çš„å°å··ä¹‹åŽæ¥åˆ°ä¸€é—´ä»“åº“ä¸­ã€‚è¿™é‡Œæ•´é½çš„å †ç ç€æœªç»
+ç†¨çƒ«çš„å¸ƒåŒ¹å’Œä¸€äº›æˆè¡£ã€‚é å¢™æ‘†æ”¾ç€å‡ å¼ å¤§æ¡Œå­ï¼Œæ¡Œå­ä¸Šæ”¾ç€å‡ åŒ¹æ‰“æ¹¿çš„
+å¸ƒæ–™å’Œä¸€ä¸ªç«–ç€ä¸€ä¸ªå·²ç»çƒ§å¾—å‘çƒ«çš„ç†¨æ–—ã€‚ä½ å¯ä»¥åœ¨è¿™å„¿ç†¨çƒ«(yuntang)ã€‚
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -29,30 +29,30 @@ int do_yuntang(string arg)
         object me=this_player(); 
         object ob;
         if (!me->query_temp("gongzuo/yunbu"))
-           return notify_fail("ÄãÏÖÔÚÃ»ÓÐìÙ²¼µÄ¹¤×÷¡£\n");
+           return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰ç†¨å¸ƒçš„å·¥ä½œã€‚\n");
 
 /*        if (query_temp("bu")==0)
-           return notify_fail("ÕâÀïµÄ²¼ÁÏ¶¼ÒÑ¾­ìÙºÃÁË¡£\n");
+           return notify_fail("è¿™é‡Œçš„å¸ƒæ–™éƒ½å·²ç»ç†¨å¥½äº†ã€‚\n");
 */
-        if (!arg || arg != "²¼ÁÏ")
-           return notify_fail("ÄãÒªìÙÌÌÊ²Ã´£¿\n");
+        if (!arg || arg != "å¸ƒæ–™")
+           return notify_fail("ä½ è¦ç†¨çƒ«ä»€ä¹ˆï¼Ÿ\n");
 
         if ( me->is_busy())
-           return notify_fail("ÄãÕýÔÚìÙ²¼ÄØ¡£\n");
+           return notify_fail("ä½ æ­£åœ¨ç†¨å¸ƒå‘¢ã€‚\n");
 
         if ( (int)me->query("jing")<20)
-           return notify_fail("ÄãÌ«ÀÛÁË£¬ÐÝÏ¢Ò»ÏÂ°É¡£\n");
+           return notify_fail("ä½ å¤ªç´¯äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å§ã€‚\n");
 
         if (me->query_temp("gongzuo/yunbu")==6)
-           return notify_fail("²¼ÁÏÒÑ¾­ìÙºÃÁË£¬¿ì°ÑìÙºÃµÄ²¼½»»ØÈ¥°É£¡\n");
+           return notify_fail("å¸ƒæ–™å·²ç»ç†¨å¥½äº†ï¼Œå¿«æŠŠç†¨å¥½çš„å¸ƒäº¤å›žåŽ»å§ï¼\n");
    
-  message_vision("$NÄÃÆðìÙ¶·ÂýÂýµØÔÚ²¼ÁÏÉÏÀ´»ØÒÆ¶¯£¬Ö»¼û²¼ÁÏÉÏÁ¢¿ÌÃ°³ö°×É«µÄÕôÆø¡£\n",me);
+  message_vision("$Næ‹¿èµ·ç†¨æ–—æ…¢æ…¢åœ°åœ¨å¸ƒæ–™ä¸Šæ¥å›žç§»åŠ¨ï¼Œåªè§å¸ƒæ–™ä¸Šç«‹åˆ»å†’å‡ºç™½è‰²çš„è’¸æ°”ã€‚\n",me);
       me->add("jing",-(10+random(10)));
       me->add_temp("gongzuo/yunbu",1);
 
   if ( (int)me->query_temp("gongzuo/yunbu")==6)
  {
-  message_vision(CYN"²¼Æ¥ÔÚìÙÌÌÏÂÖð½¥Æ½Õû£¬$N½«²¼Æ¥µþºÃºó·ÅÔÚÒ»±ß¡£\n"NOR,me);
+  message_vision(CYN"å¸ƒåŒ¹åœ¨ç†¨çƒ«ä¸‹é€æ¸å¹³æ•´ï¼Œ$Nå°†å¸ƒåŒ¹å å¥½åŽæ”¾åœ¨ä¸€è¾¹ã€‚\n"NOR,me);
       ob=new("/d/city/obj/bu.c");
       ob->move(me);
       add_temp("bu",-1);      return 1;
@@ -60,7 +60,7 @@ int do_yuntang(string arg)
    me->start_busy(5);
   if (random(10)>7)
  {
-  message_vision(RED"$NÔÚÕôÆøçÔÈÆÖ®ÖÐÖð½¥¿ªÊ¼Âþ²»¾­ÐÄ£¬Ö»ÌýµÃ¡°ßê¡±µÄÒ»Éù$NµÄÊÖ±»ìÙ¶·ÅöÁËÒ»ÏÂ¡£\n"NOR,me);     
+  message_vision(RED"$Nåœ¨è’¸æ°”ç¼­ç»•ä¹‹ä¸­é€æ¸å¼€å§‹æ¼«ä¸ç»å¿ƒï¼Œåªå¬å¾—â€œå“§â€çš„ä¸€å£°$Nçš„æ‰‹è¢«ç†¨æ–—ç¢°äº†ä¸€ä¸‹ã€‚\n"NOR,me);     
        me->receive_damage("qi", (int)me->query("max_qi")/5);
  
  }             

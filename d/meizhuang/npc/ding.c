@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¶¡¼á", ({"ding jian","ding",}));
+        set_name("ä¸åš", ({"ding jian","ding",}));
         set("long",
-                "Ëû¾ÍÊÇÒþ¾Ó½­ºþÊýÄêµÄÒ»×Öµç½£¶¡¼á£¬ÏÖÔÚÔÚÃ·×¯µ±¹Ü¼Ò¡£\n"
+                "ä»–å°±æ˜¯éšå±…æ±Ÿæ¹–æ•°å¹´çš„ä¸€å­—ç”µå‰‘ä¸åšï¼ŒçŽ°åœ¨åœ¨æ¢…åº„å½“ç®¡å®¶ã€‚\n"
         );
-        set("gender", "ÄÐÐÔ");
-        set("nickname", HIC"Ò»×Öµç½£"NOR);
+        set("gender", "ç”·æ€§");
+        set("nickname", HIC"ä¸€å­—ç”µå‰‘"NOR);
         set("attitude", "friendly");
 
         set("age", 30);
@@ -48,7 +48,7 @@ void create()
         map_skill("force", "pomopima-jian");
         map_skill("sword", "pomopima-jian");
         map_skill("parry", "pomopima-jian");
-        create_family("Ã·×¯", 2, "µÜ×Ó");
+        create_family("æ¢…åº„", 2, "å¼Ÿå­");
 
         setup();
         carry_object("/d/city/npc/obj/cloth")->wear();
@@ -60,11 +60,11 @@ void create()
 void attempt_apprentice(object ob)
 {
         if ((int)ob->query("shen") < 0) {
-                command("say ÎÒÃ·×¯ËäÈ»²»ÊÇÊ²Ã´ÃûÃÅÕýÅÉ, µ«ÔñÍ½Ò²¼«ÎªÑÏ¸ñ¡£");
-                command("say ÔÚÆ·ÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ¢…åº„è™½ç„¶ä¸æ˜¯ä»€ä¹ˆåé—¨æ­£æ´¾, ä½†æ‹©å¾’ä¹Ÿæžä¸ºä¸¥æ ¼ã€‚");
+                command("say åœ¨å“è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬ÔÚÏÂ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œåœ¨ä¸‹å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }

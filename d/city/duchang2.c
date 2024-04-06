@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¶Ä³¡");
+	set("short", "èµŒåœº");
 	set("long", @LONG
-ÕâÀïÓĞËÄÌõ×ßÀÈÍ¨Ïò²»Í¬µÄ·¿¼ä¡£ËÄÖÜÊÇ¹°ÖíĞ¡Îİ¡£
+è¿™é‡Œæœ‰å››æ¡èµ°å»Šé€šå‘ä¸åŒçš„æˆ¿é—´ã€‚å››å‘¨æ˜¯æ‹±çŒªå°å±‹ã€‚
 LONG );
 	set("exits", ([
 		"east"  : "/inherit/room/eproom",

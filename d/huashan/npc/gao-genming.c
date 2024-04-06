@@ -3,12 +3,12 @@
 inherit NPC;
 void create()
 {
-        set_name("¸ß¸ùÃ÷", ({ "gao genming","gao","genming" }) );
-        set("nickname", "ÊÐ¾®ºÀ½Ü");
-        set("gender", "ÄÐÐÔ");
+        set_name("é«˜æ ¹æ˜Ž", ({ "gao genming","gao","genming" }) );
+        set("nickname", "å¸‚äº•è±ªæ°");
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("long",
-                "¸ß¸ùÃ÷ÊÇÔÀ²»ÈºµÄµÚÎåÎ»µÜ×Ó¡£\n");
+                "é«˜æ ¹æ˜Žæ˜¯å²³ä¸ç¾¤çš„ç¬¬äº”ä½å¼Ÿå­ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -47,7 +47,7 @@ void create()
         map_skill("unarmed", "huashan-ken");
         map_skill("dodge", "feiyan-huixiang");
 
-        create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("åŽå±±æ´¾", 14, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ͤ");
+	set("short", "万春亭");
 	set("long", @LONG
-��ͤ, ʼ���ڼξ�ʮ����. ͤ��Բ�·�, �����ĳ�, �ϲ�ɡ״Բ
-�����²��ڶ�������ܽ�, ��֯�ü�������. 
+万春亭, 始建于嘉靖十二年. 亭上圆下方, 抱厦四出, 上层伞状圆
+顶与下层众多进出的檐角, 组织得极其巧妙. 
 LONG
 );
 	set("outdoors", "huanggong");

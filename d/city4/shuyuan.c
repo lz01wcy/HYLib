@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set  ("short",  "¹ØÖÐÊéÔº");
+	set  ("short",  "å…³ä¸­ä¹¦é™¢");
 	set  ("long",  @LONG
-¹ØÖÐÊéÔºÊÇ¸ÊÉÂµØÇø×î¸ßÑ§¸®£¬½¨ÓÚÃ÷ÍòÀúÄê¼ä¡£Ò»Î»×¯ÖØÑÏËàµÄ
-ÀÏÕß×øÔÚÌ«Ê¦ÒÎÉÏ½²Ñ§£¬ÄÇ¾ÍÊÇµ±½ñ´óÈå·ëÏÈÉúÁË¡£ÔÚËûµÄÁ½²à×øÂúÁË
-ÇóÑ§µÄÑ§Éú¡£
+å…³ä¸­ä¹¦é™¢æ˜¯ç”˜é™•åœ°åŒºæœ€é«˜å­¦åºœï¼Œå»ºäºŽæ˜Žä¸‡åŽ†å¹´é—´ã€‚ä¸€ä½åº„é‡ä¸¥è‚ƒçš„
+è€è€…ååœ¨å¤ªå¸ˆæ¤…ä¸Šè®²å­¦ï¼Œé‚£å°±æ˜¯å½“ä»Šå¤§å„’å†¯å…ˆç”Ÿäº†ã€‚åœ¨ä»–çš„ä¸¤ä¾§åæ»¡äº†
+æ±‚å­¦çš„å­¦ç”Ÿã€‚
 LONG);
 	set("exits",  ([  //sizeof()  ==  4
 		"north"  :  __DIR__"eastroad2",

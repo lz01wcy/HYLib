@@ -10,13 +10,13 @@ void init()
 
 void create()
 {
-	set_name(HIW "ÈéÀÒ" NOR, ({"cheese"}));
+	set_name(HIW "ä¹³é…ª" NOR, ({"cheese"}));
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÍëÏãÌðµÄÏÊÄÌÀÒ£¬²»³Ô(chi)ÄÌÀÒ¾Í²»ËãÀ´¹ý´ó²ÝÔ­¡£\n");
-		set("unit", "Íë");
+		set("long", "ä¸€ç¢—é¦™ç”œçš„é²œå¥¶é…ªï¼Œä¸åƒ(chi)å¥¶é…ªå°±ä¸ç®—æ¥è¿‡å¤§è‰åŽŸã€‚\n");
+		set("unit", "ç¢—");
                set("value", 50000);
              }
 }
@@ -24,11 +24,11 @@ void create()
 int do_drink(string arg)
 {	
 	object me = this_player();
-	if (!living(me)) return notify_fail("Ïëµ±»úÂð£¿\n");
+	if (!living(me)) return notify_fail("æƒ³å½“æœºå—ï¼Ÿ\n");
 	if (!id(arg)) return 0;
         if (!me) return 0;
         if(me->query("water") < me->max_water_capacity()){
-	message_vision(HIG "$N¹ÇÂµ¹ÇÂµµØºÈÍêÒ»Íë" + this_object()->query("name")+ HIG "£¬Ä¨ÁËÄ¨×ì¡£\n"NOR,me);
+	message_vision(HIG "$Néª¨ç¢Œéª¨ç¢Œåœ°å–å®Œä¸€ç¢—" + this_object()->query("name")+ HIG "ï¼ŒæŠ¹äº†æŠ¹å˜´ã€‚\n"NOR,me);
         if(me->query("food") < me->max_food_capacity())
         me->add("food", 100);
         me->add("water", 100);

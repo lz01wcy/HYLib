@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "岳阳西门");
 	set("long", @LONG
-������������¥�����ţ�����Ҳû�йٱ����أ����������ؤ���
-���£��������ǵ��ΰ�Ҳ��ʵ���ϸ�ؤ��ӹ��ˡ��ٸ�Ҳ����������
-��εģ�����ֻҪؤ���������Ҳ·��ʰ�š�ҹ���ջ��ġ�
+这里是岳阳城楼的西门，门内也没有官兵看守，大概这里是丐帮的
+天下，岳阳府城的治安也就实质上给丐帮接管了。官府也不大关心如何
+如何的，反正只要丐帮合作，倒也路不拾遗、夜不闭户的。
 LONG );
 	set("outdoors", "yueyang");
 	set("no_clean_up", 0);

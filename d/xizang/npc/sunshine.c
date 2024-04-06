@@ -3,18 +3,18 @@ inherit F_DEALER;
 #include <ansi.h>
 void create()
 {
-    set_name("À¶Ñô¹â", ({ "sunshine" }) );
-    set("gender", "Å®ÐÔ" );
+    set_name("è“é˜³å…‰", ({ "sunshine" }) );
+    set("gender", "å¥³æ€§" );
     set("age", 17);
-    set("title", HIY "½ðÉ«µÄ"NOR);
+    set("title", HIY "é‡‘è‰²çš„"NOR);
         set("long",
-        "Ò»¸öÄêÇáµÄÅ®º¢×Ó£¬ÉíÉÏ´©µÄÒÂ·þ£¬±ÈÀ¶Ìì¸üÀ¶£¬±Èº£Ë®¸üÀ¶¡£\nÄãÒ²´ÓÎ´¼û¹ýÈç´ËÃ÷ÀÊ£¬Èç´ËÁîÈËÓä¿ìµÄÅ®º¢×Ó¡£\n");
+        "ä¸€ä¸ªå¹´è½»çš„å¥³å­©å­ï¼Œèº«ä¸Šç©¿çš„è¡£æœï¼Œæ¯”è“å¤©æ›´è“ï¼Œæ¯”æµ·æ°´æ›´è“ã€‚\nä½ ä¹Ÿä»Žæœªè§è¿‡å¦‚æ­¤æ˜Žæœ—ï¼Œå¦‚æ­¤ä»¤äººæ„‰å¿«çš„å¥³å­©å­ã€‚\n");
         set("attitude", "friendly");
         set("class","legend");
         set("chat_chance", 1);
         set("chat_msg", ({
-"À¶Ñô¹âÍ»È»ÊÕÁ²ÁËÐ¦ÈÝ£¬ËàÈ»µÀ£ºÊ¥Ä¸Ç¡Ä¸×ðµÄ×ÓËïÃÇÖ»Á÷Ñª£¬²»Á÷Àá£¬\nÄÐÈËÈ¥Ç°·½Á÷Ñª£¬¾ÍÓÉÎÒÃÇÅ®ÈËÀ´´òÔì±øÆ÷¡£\n",
-"À¶Ñô¹âàÛßêÒ»Ð¦µÀ£ºÄÇ¸öÐ¡·½¿´ÉÏÈ¥Ð×°Í°ÍµÄ£¬ÐÄ±ÈÎÒÃÇÅ®ÈË»¹ÒªÈí¡£¡£\n",
+"è“é˜³å…‰çªç„¶æ”¶æ•›äº†ç¬‘å®¹ï¼Œè‚ƒç„¶é“ï¼šåœ£æ¯æ°æ¯å°Šçš„å­å­™ä»¬åªæµè¡€ï¼Œä¸æµæ³ªï¼Œ\nç”·äººåŽ»å‰æ–¹æµè¡€ï¼Œå°±ç”±æˆ‘ä»¬å¥³äººæ¥æ‰“é€ å…µå™¨ã€‚\n",
+"è“é˜³å…‰å™—å“§ä¸€ç¬‘é“ï¼šé‚£ä¸ªå°æ–¹çœ‹ä¸ŠåŽ»å‡¶å·´å·´çš„ï¼Œå¿ƒæ¯”æˆ‘ä»¬å¥³äººè¿˜è¦è½¯ã€‚ã€‚\n",
                 }) );
         set("per",30);
         set("combat_exp",3000000);

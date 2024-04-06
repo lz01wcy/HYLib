@@ -1,18 +1,18 @@
-//bat.c òùòð
+//bat.c è™è 
 
 inherit NPC;
 
 void create()
 {
-        set_name("òùòð", ({"bianfu","bat"}) );
-        set("race", "Ò°ÊÞ");
+        set_name("è™è ", ({"bianfu","bat"}) );
+        set("race", "é‡Žå…½");
         set("age", 8);
-        set("long", "ÕâÊÇÒ»Ö»òùòð£¬Õýµ¹¹ÒÔÚ¶´¶¥¡£\n");
+        set("long", "è¿™æ˜¯ä¸€åªè™è ï¼Œæ­£å€’æŒ‚åœ¨æ´žé¡¶ã€‚\n");
 
         set("str", 40);
         set("dex", 50);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€", "å°¾å·´" }) );
         set("verbs", ({ "bite", "poke" }) );
 
         set_temp("apply/attack", 33);
@@ -21,7 +21,7 @@ void create()
         set("chat_chance", 2);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-        "òùòðÆËÆËµØ·É¹ýÀ´£¬ÔÚÄãÍ·ÉÏ×ªÁËÒ»È¦£¬ÓÖ·É×ßÁË¡£\n",
+        "è™è æ‰‘æ‰‘åœ°é£žè¿‡æ¥ï¼Œåœ¨ä½ å¤´ä¸Šè½¬äº†ä¸€åœˆï¼Œåˆé£žèµ°äº†ã€‚\n",
          }) );
 
         setup();

@@ -1,4 +1,4 @@
-// Room: nanyan1.c ÄÏÑÒ¹¬ÃÔ¹¬
+// Room: nanyan1.c å—å²©å®«è¿·å®«
 // Oct. 6 1997
 
 #include <ansi.h>
@@ -8,11 +8,11 @@ inherit ROOM;
 void create()
 {
         object ob1,ob2;
-        set("short", "ÄÏÑÒÃÔ¹¬");
+        set("short", "å—å²©è¿·å®«");
         set("long", @LONG
-ÄãÏÖÔÚÄÏÑÒ¹¬µØÏÂÃÜÊÒÖÐ£¬¸ß¹ÒµÄÍó´ÖµÄÓÍÖòÕÕµÃÂúÌÃÍ¸ÁÁ¡£µ«ÖÜÎ§¾²
-Ú×ÈçÒ¹£¬³ýÁËÖò»ðÉÁË¸µÄ·çÉùÍâ£¬ÄãÊ²Ã´Ò²Ìý²»¼û¡£ÕâÀïÖ»ÓÐÄãÒ»¸öÈË¡£Äã
-½ÅÏÂ»º»º¶ø¶¯£¬È«Éñ½ä±¸£¬Ã»ÓÐÈËÄÜ°ïÖúÄã¡£
+ä½ çŽ°åœ¨å—å²©å®«åœ°ä¸‹å¯†å®¤ä¸­ï¼Œé«˜æŒ‚çš„è…•ç²—çš„æ²¹çƒ›ç…§å¾—æ»¡å ‚é€äº®ã€‚ä½†å‘¨å›´é™
+è°§å¦‚å¤œï¼Œé™¤äº†çƒ›ç«é—ªçƒçš„é£Žå£°å¤–ï¼Œä½ ä»€ä¹ˆä¹Ÿå¬ä¸è§ã€‚è¿™é‡Œåªæœ‰ä½ ä¸€ä¸ªäººã€‚ä½ 
+è„šä¸‹ç¼“ç¼“è€ŒåŠ¨ï¼Œå…¨ç¥žæˆ’å¤‡ï¼Œæ²¡æœ‰äººèƒ½å¸®åŠ©ä½ ã€‚
 LONG );
         set("exits", ([
             "east"      : __DIR__"nanyan1",

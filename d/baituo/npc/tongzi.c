@@ -5,10 +5,10 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("ÅãÁ·Í¯×Ó", ({ "tongzi"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("é™ªç»ƒç«¥å­", ({ "tongzi"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 16);
-	set("long", "ÕâÊÇ¸öÅãÈËÁ·¹¦µÄÅãÁ·Í¯×Ó¡£\n");
+	set("long", "è¿™æ˜¯ä¸ªé™ªäººç»ƒåŠŸçš„é™ªç»ƒç«¥å­ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", -1);
 
@@ -24,7 +24,7 @@ void create()
 	set_skill("dodge", 20);
 	set_skill("unarmed", 20);
 	set_skill("parry",20);
-	create_family("°×ÍÕÉ½ÅÉ",10,"µÜ×Ó");
+	create_family("ç™½é©¼å±±æ´¾",10,"å¼Ÿå­");
 	setup();
 }
 
@@ -43,30 +43,30 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	if (((string)ob->query("family/family_name") == "°×ÍÕÉ½ÅÉ")
+	if (((string)ob->query("family/family_name") == "ç™½é©¼å±±æ´¾")
 	    &&ob->query("combat_exp")<10000)
-	 message_vision("ÅãÁ·Í¯×Ó³å×Å$N½ÐµÀ£º¿ìÀ´¸úÎÒ±È»®¼¸ÕÐ¡£(bi tongzi)\n",ob);
+	 message_vision("é™ªç»ƒç«¥å­å†²ç€$Nå«é“ï¼šå¿«æ¥è·Ÿæˆ‘æ¯”åˆ’å‡ æ‹›ã€‚(bi tongzi)\n",ob);
 }
 
 void attempt_apprentice(object ob)
 {
-     command("say ÎÒ²»ÄÜÊÕÍ½¡£Äã»¹ÊÇ°ÝÀî½ÌÍ·°É¡£\n");
+     command("say æˆ‘ä¸èƒ½æ”¶å¾’ã€‚ä½ è¿˜æ˜¯æ‹œæŽæ•™å¤´å§ã€‚\n");
      return;
 }
 
 int do_bi(string arg)
 {
   object ob=this_player();
-  if(!arg||arg!="tongzi") return  notify_fail("ÄãÒªºÍË­±È»®?\n");
+  if(!arg||arg!="tongzi") return  notify_fail("ä½ è¦å’Œè°æ¯”åˆ’?\n");
   if ((int)ob->query("combat_exp")>10000)
-   return notify_fail("ÅãÁ·Í¯×ÓÒ¡Í·µÀ£ºÒÔÄãµÄÎä¹¦,ÎÒ²»ÄÜ×öÄãµÄÅãÁ·ÁË¡£\n");
-  say("ÅãÁ·Í¯×ÓÍ¬Òâ×÷ÄãµÄÅãÁ·¡£\n");
+   return notify_fail("é™ªç»ƒç«¥å­æ‘‡å¤´é“ï¼šä»¥ä½ çš„æ­¦åŠŸ,æˆ‘ä¸èƒ½åšä½ çš„é™ªç»ƒäº†ã€‚\n");
+  say("é™ªç»ƒç«¥å­åŒæ„ä½œä½ çš„é™ªç»ƒã€‚\n");
   set("combat_exp",ob->query("combat_exp"));
   command("hit "+(string)ob->query("id"));
   if(query("qi")<40)
-    message_vision("ÅãÁ·Í¯×Ó¶Ô$N´ó¼ÓÔÞÉÍ!\n",ob);
+    message_vision("é™ªç»ƒç«¥å­å¯¹$Nå¤§åŠ èµžèµ!\n",ob);
   else
-    message_vision("ÅãÁ·Í¯×Ó¶Ô$NÐ¦Ð¦µÀ£ºÅ¬Á¦°É¡£\n",ob);
+    message_vision("é™ªç»ƒç«¥å­å¯¹$Nç¬‘ç¬‘é“ï¼šåŠªåŠ›å§ã€‚\n",ob);
 
   set("eff_qi",200);
   set("qi",200);
@@ -76,12 +76,12 @@ int do_bi(string arg)
 
 int accept_fight(object ob)
 {
-      if ((string)ob->query("family/family_name") == "°×ÍÕÉ½ÅÉ")
+      if ((string)ob->query("family/family_name") == "ç™½é©¼å±±æ´¾")
 	 {
 	  if((int)ob->query("combat_exp")<5000)
-	    return notify_fail("ÅãÁ·Í¯×ÓÐ¦µÀ£ºÄãµÄ¾­ÑéÌ«µÍÁË£¬»¹ÊÇÏÈµ½±È»®°É£¡(bi tongzi)\n");
+	    return notify_fail("é™ªç»ƒç«¥å­ç¬‘é“ï¼šä½ çš„ç»éªŒå¤ªä½Žäº†ï¼Œè¿˜æ˜¯å…ˆåˆ°æ¯”åˆ’å§ï¼(bi tongzi)\n");
 	  }
-    message_vision("ÅãÁ·Í¯×Ó¶Ô$N½ÐµÀ£ºÄÇÎÒ¾Í²»ÈÃÄãÁË£¡\n",ob);
+    message_vision("é™ªç»ƒç«¥å­å¯¹$Nå«é“ï¼šé‚£æˆ‘å°±ä¸è®©ä½ äº†ï¼\n",ob);
     return 1;
 }
 

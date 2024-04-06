@@ -1,4 +1,4 @@
-//jiaowei qin ½¹Î²ÇÙ
+//jiaowei qin ç„¦å°¾ç´
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,18 +7,18 @@ inherit SWORD;
 
 void create()
 {
-set_name(HIM"½¹Î²ÇÙ"NOR,({"jiaowei qin","qin"}));
+set_name(HIM"ç„¦å°¾ç´"NOR,({"jiaowei qin","qin"}));
   set_weight(500);
 	if(clonep())
 		 set_default_object(__FILE__);
 	else{
-			set("unit","ÕÅ");
+			set("unit","å¼ ");
 			set("value",40000);
 			set("material","steel");
-set("long","Ïà´«Õâ±ãÊÇµ±Äê²ÌÎÄ¼§´Ó»ğÖĞËù¾È³öµÄ½¹Ä¾×ö³ÉµÄÃÀÇÙ£¬ÇÙµÄÎ²¶ËÈÔ¿É¼û½¹ºÚÉ«¡£\n");
-set("wield_msg",HIY"$NÉìÊÖÇáÇáÒ»»Ó,Ò»ÕÅ½¹Î²ÇÙ±ãÒÑ³öÏÖÔÚ$NÊÖÖĞ.\n"NOR);
-set("unwield_msg",HIY"$NÊ®Ö¸Ò»·÷£¬ÇÙÉùÒ·È»¶øÖ¹¡£$NÊÕÆğ½¹Î²ÇÙ£¬·Å½ø±³×ÅµÄ°ü¸¤Àï¡£\n"NOR);
-set("unequip_msg",HIY"ÄãÊ®Ö¸Ò»·÷£¬ÇÙÉùÒ·È»¶øÖ¹¡£ÄãÊÕÆğ½¹Î²ÇÙ£¬·Å½ø±³×ÅµÄ°ü¸¤Àï¡£.\n"NOR);
+set("long","ç›¸ä¼ è¿™ä¾¿æ˜¯å½“å¹´è”¡æ–‡å§¬ä»ç«ä¸­æ‰€æ•‘å‡ºçš„ç„¦æœ¨åšæˆçš„ç¾ç´ï¼Œç´çš„å°¾ç«¯ä»å¯è§ç„¦é»‘è‰²ã€‚\n");
+set("wield_msg",HIY"$Nä¼¸æ‰‹è½»è½»ä¸€æŒ¥,ä¸€å¼ ç„¦å°¾ç´ä¾¿å·²å‡ºç°åœ¨$Næ‰‹ä¸­.\n"NOR);
+set("unwield_msg",HIY"$NåæŒ‡ä¸€æ‹‚ï¼Œç´å£°æ›³ç„¶è€Œæ­¢ã€‚$Næ”¶èµ·ç„¦å°¾ç´ï¼Œæ”¾è¿›èƒŒç€çš„åŒ…è¢±é‡Œã€‚\n"NOR);
+set("unequip_msg",HIY"ä½ åæŒ‡ä¸€æ‹‚ï¼Œç´å£°æ›³ç„¶è€Œæ­¢ã€‚ä½ æ”¶èµ·ç„¦å°¾ç´ï¼Œæ”¾è¿›èƒŒç€çš„åŒ…è¢±é‡Œã€‚.\n"NOR);
 			}
     init_sword(500);
 	setup();

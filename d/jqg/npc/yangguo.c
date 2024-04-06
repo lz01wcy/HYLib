@@ -6,12 +6,12 @@ inherit F_MASTER;
 string ask_me();
 void create()
 {
-        set_name("Ñî¹ý", ({ "yang guo", "yang" }));
-        set("nickname", "ÉñµñÏÀ");
+        set_name("æ¨è¿‡", ({ "yang guo", "yang" }));
+        set("nickname", "ç¥žé›•ä¾ ");
         set("long", 
-                "Ëû¾ÍÊÇÉñµñ´óÏÀÑî¹ý£¬Ò»ÕÅÇåñ³¿¡ÐãµÄÁ³¿×£¬½£Ã¼Èë÷Þ£¬·ïÑÛÉúÍþ¡£\n"
-                "ËäÈ»ËûÖ»ÓÐÒ»Ö»¸ì²²£¬µ«ÊÇ¿ýÎ°µÄÉí²ÄÈÔÈÃÈË¸Ð¾õÓ¢Æø±ÆÈË¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯ç¥žé›•å¤§ä¾ æ¨è¿‡ï¼Œä¸€å¼ æ¸…ç™¯ä¿Šç§€çš„è„¸å­”ï¼Œå‰‘çœ‰å…¥é¬“ï¼Œå‡¤çœ¼ç”Ÿå¨ã€‚\n"
+                "è™½ç„¶ä»–åªæœ‰ä¸€åªèƒ³è†Šï¼Œä½†æ˜¯é­ä¼Ÿçš„èº«æä»è®©äººæ„Ÿè§‰è‹±æ°”é€¼äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 32);
         set("attitude", "friendly");
         set("str", 30);
@@ -54,9 +54,9 @@ void create()
         prepare_skill("strike", "anranxiaohun-zhang");
              set("inquiry", 
                 ([
-                           "ÔËÆøÖ®µÀ" : (: ask_me :),
+                           "è¿æ°”ä¹‹é“" : (: ask_me :),
               ]));
-        create_family("¹ÅÄ¹ÅÉ", 2, "ÉñµñÏÀÂÂ");
+        create_family("å¤å¢“æ´¾", 2, "ç¥žé›•ä¾ ä¾£");
         setup();
 	carry_object("/clone/misc/cloth")->wear();
         carry_object(__DIR__"jzj")->wield();
@@ -67,16 +67,16 @@ string ask_me()
        mapping fam; 
        object ob;
        ob = this_player();
-//       if (!(fam = this_player()->query("family")) || fam["family_name"] != "¹ÅÄ¹ÅÉ")
+//       if (!(fam = this_player()->query("family")) || fam["family_name"] != "å¤å¢“æ´¾")
 //               return RANK_D->query_respect(this_player()) + 
-//               "·ÇÎÒ¹ÅÄ¹´«ÈË,²»ÖªµÀ´Ë»°Ôõ½²?";
+//               "éžæˆ‘å¤å¢“ä¼ äºº,ä¸çŸ¥é“æ­¤è¯æ€Žè®²?";
             if (!ob->query_temp("xth_hm"))
             return RANK_D->query_respect(this_player()) + 
-               "ÏëÖªµÀÊ²÷áÔËÆøÖ®µÀÄØ?";
+               "æƒ³çŸ¥é“ä»€éº½è¿æ°”ä¹‹é“å‘¢?";
                       ob->delete_temp("xth_hm");
                ob->set_temp("make/xtj_look1",1);
             ob->set_temp("yg_pbask",1);
-       return "ÆÁÆø¾ßÏ¢,ÄýÆøÊØÖÐ,Ë«¼ç·ÅËÉ,ÒâÊØµ¤Ìï,ÕâÊÇÔÚºéË®ÖÐÔËÆøµÄ¾÷ÇÏ,ÄãºÃºÃÈ¥ÁìÎòÒ»ÏÂ.";
+       return "å±æ°”å…·æ¯,å‡æ°”å®ˆä¸­,åŒè‚©æ”¾æ¾,æ„å®ˆä¸¹ç”°,è¿™æ˜¯åœ¨æ´ªæ°´ä¸­è¿æ°”çš„è¯€çª,ä½ å¥½å¥½åŽ»é¢†æ‚Ÿä¸€ä¸‹.";
 }
 
 void kill_ob(object me)

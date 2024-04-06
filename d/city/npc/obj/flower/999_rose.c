@@ -8,15 +8,15 @@ int value() { return query_amount() * (int)query("base_value"); }
 
 void create()
 {
-	set_name(HIY "999¶ä"HIR"ºìÃµ¹å" NOR, ({"meigui 999", "rose999"}));
+	set_name(HIY "999æœµ"HIR"çº¢ç«ç‘°" NOR, ({"meigui 999", "rose999"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇ999¶äº¬°úÓû·ÅµÄÉîºìÃµ¹å£¬ÏóÕ÷×ÅÃÀ£¬°®£¬Áµ¡£\n");
-		set("unit", "¶ä");
+		set("long", "è¿™æ˜¯999æœµå«è‹æ¬²æ”¾çš„æ·±çº¢ç«ç‘°ï¼Œè±¡å¾ç€ç¾ï¼Œçˆ±ï¼Œæ‹ã€‚\n");
+		set("unit", "æœµ");
 
 		set("value", 9990000);
-		set("base_unit", "¶ä");
+		set("base_unit", "æœµ");
         set("base_weight", 100);
 	set("flower_w",1);
 			}

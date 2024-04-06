@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-   set_name("ÑÃÒÛÃ±", ({ "mao"}) );
+   set_name("è¡™å½¹å¸½", ({ "mao"}) );
    set_weight(300);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÑÃÃÅÑÃÒÛËù´÷µÄÃ±×Ó¡£\n");
-     set("material", "´Ö²¼");
-     set("unit", "¶¥");
+     set("long","è¿™æ˜¯è¡™é—¨è¡™å½¹æ‰€æˆ´çš„å¸½å­ã€‚\n");
+     set("material", "ç²—å¸ƒ");
+     set("unit", "é¡¶");
      set("value",10);
      set("armor_prop/armor",1);
      

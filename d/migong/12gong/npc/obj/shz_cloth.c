@@ -6,12 +6,12 @@ inherit CLOTH;
 
 void create()
 {
-   set_name("Ê¨×ÓÊ¥ÒÂ", ({ "shizi shengyi" }) );
+   set_name("ç‹®å­åœ£è¡£", ({ "shizi shengyi" }) );
    set_weight(3000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "¼ş");
+     set("unit", "ä»¶");
      set("material", "steel");
      set("armor_prop/armor",450);
    }

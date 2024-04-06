@@ -5,12 +5,12 @@ string ask_book();
 string ask_yideng();
 void create()
 {
-        set_name("Ó¢¹Ã", ({ "ying gu", "gu" }));
-        set("nickname", HIR"ÉñËã×Ó" NOR );
-        set("gender", "Å®ĞÔ");
+        set_name("è‹±å§‘", ({ "ying gu", "gu" }));
+        set("nickname", HIR"ç¥ç®—å­" NOR );
+        set("gender", "å¥³æ€§");
         set("age", 41);
         set("long", 
-        "ËıÈİÉ«ĞãÀö£¬²»¹ıËÄÊ®×óÓÒÄê»ª£¬ÏëÊÇË¼ÂÇ¹ı¶È£¬ÊÇÒÔ÷Ş±ßÔç¼û»ª·¢¡£\n");
+        "å¥¹å®¹è‰²ç§€ä¸½ï¼Œä¸è¿‡å››åå·¦å³å¹´åï¼Œæƒ³æ˜¯æ€è™‘è¿‡åº¦ï¼Œæ˜¯ä»¥é¬“è¾¹æ—©è§åå‘ã€‚\n");
         set("combat_exp", 1000000);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -50,12 +50,12 @@ void create()
  
              
         set("inquiry", ([
-		"Ò»µÆ" : (:ask_me:),
-              "ÄÏµÛ" : (:ask_me:),
-                   "ÖÜ²®Í¨"     : "Ëû¡¢Ëû¡¢¡¢ËûÔÚÄÄÀï£¡",
-                "¶ÎÖÇĞË"     : "Õâ¸öÀÏºÍÉĞ£¬Í÷³Æ´È±¯£¡\n",
-                "Ò»µÆ´óÊ¦"   : (: ask_yideng :),
-                "¾ÅÕÂËãÊõ"   : (: ask_book :),
+		"ä¸€ç¯" : (:ask_me:),
+              "å—å¸" : (:ask_me:),
+                   "å‘¨ä¼¯é€š"     : "ä»–ã€ä»–ã€ã€ä»–åœ¨å“ªé‡Œï¼",
+                "æ®µæ™ºå…´"     : "è¿™ä¸ªè€å’Œå°šï¼Œæ‰ç§°æ…ˆæ‚²ï¼\n",
+                "ä¸€ç¯å¤§å¸ˆ"   : (: ask_yideng :),
+                "ä¹ç« ç®—æœ¯"   : (: ask_book :),
 	  ]) );
 
         setup();
@@ -75,7 +75,7 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-        command("say ½ñÓĞÎŞ²»ÖªÆäÊı£¬ÈıÈıÊıÖ®Ê£¶ş£¬ÎåÎåÊıÖ®Ê£Èı£¬ÆßÆßÊıÖ®Ê£¶ş£¬ÎÊÎï¼¸ºÎ£¿");
+        command("say ä»Šæœ‰æ— ä¸çŸ¥å…¶æ•°ï¼Œä¸‰ä¸‰æ•°ä¹‹å‰©äºŒï¼Œäº”äº”æ•°ä¹‹å‰©ä¸‰ï¼Œä¸ƒä¸ƒæ•°ä¹‹å‰©äºŒï¼Œé—®ç‰©å‡ ä½•ï¼Ÿ");
 	return;
 }
 int do_answer(string arg)
@@ -86,17 +86,17 @@ int do_answer(string arg)
         { 
           if (query("book_count") < 1)
           {
-	   command("say ÄãÀ´ÍíÁËÎÒÒÑ°ÑÃØ¼®ËÍ¸ø±ğÈËÀ´²»ÔÚ´Ë´¦¡£");
+	   command("say ä½ æ¥æ™šäº†æˆ‘å·²æŠŠç§˜ç±é€ç»™åˆ«äººæ¥ä¸åœ¨æ­¤å¤„ã€‚");
             return 1;
           }
 	   add("book_count", -1);
           ob=new("/d/yinju/npc/obj/book");
                  ob->move(me);
-          command("say Ã»Ïëµ½£¬Äã¾¹È»´ğ¶ÔÁË¡£¼ÈÈ»Èç´ËÄãÎÒÒ²ËãÓĞÔµËÍÄãÒ»±¾²½·¨Êé¡£\n");
+          command("say æ²¡æƒ³åˆ°ï¼Œä½ ç«Ÿç„¶ç­”å¯¹äº†ã€‚æ—¢ç„¶å¦‚æ­¤ä½ æˆ‘ä¹Ÿç®—æœ‰ç¼˜é€ä½ ä¸€æœ¬æ­¥æ³•ä¹¦ã€‚\n");
 
          }
          else 
-             command("say ´íÁË£¬Äã´ğ´íÁË¡£\n");
+             command("say é”™äº†ï¼Œä½ ç­”é”™äº†ã€‚\n");
         return 1;
 }
 string ask_me()
@@ -105,7 +105,7 @@ string ask_me()
 	 me=this_player();
         ob=new("/d/yinju/npc/obj/bunan");
         ob->move(me);
-     return "Ó¢¹ÃÖåÃ¼¶Ô$NËµ£º¶şÊ®ÄêÁË£¬Äã´øÎÒ°Ñ²¼ÄÒ¸ø¶ÎÖÇĞË°É¡£\n";     
+     return "è‹±å§‘çš±çœ‰å¯¹$Nè¯´ï¼šäºŒåå¹´äº†ï¼Œä½ å¸¦æˆ‘æŠŠå¸ƒå›Šç»™æ®µæ™ºå…´å§ã€‚\n";     
        
 }
 string ask_book()
@@ -114,19 +114,19 @@ string ask_book()
 	object ob;
 
 	if ( (!(fam = this_player()->query("family")) ||
-		fam["family_name"] != "´óÀí¶Î¼Ò") ||
+		fam["family_name"] != "å¤§ç†æ®µå®¶") ||
 		(query("book_count") < 1) ) 
 		return RANK_D->query_respect(this_player()) + 
-		"ËµÊ²Ã´£¿ÎÒÊµÔÚ²»Ã÷°×¡£";
+		"è¯´ä»€ä¹ˆï¼Ÿæˆ‘å®åœ¨ä¸æ˜ç™½ã€‚";
 
 	if (this_player()->query_skill("literate",1) < 100)
 		return RANK_D->query_respect(this_player()) + 
-		"ÏëÒªÕâÊé£¿Äã»¹¶Á²»¶®ËüÄØ¡£";
+		"æƒ³è¦è¿™ä¹¦ï¼Ÿä½ è¿˜è¯»ä¸æ‡‚å®ƒå‘¢ã€‚";
 	add("book_count", -1);
 	ob = new("/d/sdxl/heizhao/npc/lbook4");
 	ob->move(this_player());
-	command("rumor "+this_player()->query("name")+"ÄÃµ½¾ÅÕÂËãÊõÀ²¡£\n");
-	return "ºÃ°É£¬Õâ±¾¡¸¾ÅÕÂËãÊõ¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£\n";
+	command("rumor "+this_player()->query("name")+"æ‹¿åˆ°ä¹ç« ç®—æœ¯å•¦ã€‚\n");
+	return "å¥½å§ï¼Œè¿™æœ¬ã€Œä¹ç« ç®—æœ¯ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚\n";
 }
 
 string ask_yideng()
@@ -136,7 +136,7 @@ string ask_yideng()
 	
 	if (query("yideng_count") < 1)
 		return RANK_D->query_respect(this_player()) + 
-		"ÏëËµÊ²Ã´£¿ÕÒÒ»µÆ´óÊ¦£¬ÄÇ¿É±ğÕÒÎÒ¡£";
+		"æƒ³è¯´ä»€ä¹ˆï¼Ÿæ‰¾ä¸€ç¯å¤§å¸ˆï¼Œé‚£å¯åˆ«æ‰¾æˆ‘ã€‚";
 	add("yideng_count", -1);
 	ob = new("/d/sdxl/heizhao/npc/obj/whiteobj");
 	ob->move(this_player());
@@ -144,7 +144,7 @@ string ask_yideng()
 	ob->move(this_player());
 	ob = new("/d/sdxl/heizhao/npc/obj/redobj");
 	ob->move(this_player());
-	return "ÄãÏë¼ûËû£¿ºÃ°É£¬ÕâÈı¸öÄÒ¶ù¸øÄã£¬ÓĞÔµÄã¾ÍÈ¥ÕÒËû°É¡£\n";
+	return "ä½ æƒ³è§ä»–ï¼Ÿå¥½å§ï¼Œè¿™ä¸‰ä¸ªå›Šå„¿ç»™ä½ ï¼Œæœ‰ç¼˜ä½ å°±å»æ‰¾ä»–å§ã€‚\n";
 }
 
       

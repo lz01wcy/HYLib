@@ -1,15 +1,15 @@
 // /d/taiyuan/nroad1.c
-// Room in ̫ԭ
+// Room in 太原
 // modify by yang
 
 inherit ROOM;
 void create()	
 {
-	set("short", "��ٵ�");
+	set("short", "大官道");
 	set("long", @LONG
-����һ������ʯ�̳ɵ��������Ϊ����̫ƽ�Ĺ�ϵ�����������˿�
-�̻��Ƚ϶࣬�����߾�Ҫ������ϵĵؽ��ˣ���������Կ���̫ԭ�ĳ�
-ǽ��
+这是一条由青石铺成的驿道，因为还算太平的关系，来往的行人客
+商还比较多，向下走就要进入河南的地界了，北面你可以看见太原的城
+墙。
 LONG
         );
 set("outdoors", "taiyuan");

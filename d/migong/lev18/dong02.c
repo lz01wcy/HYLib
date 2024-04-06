@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"�Ŵ��ż�"NOR);
+	set("short", GRN"古代遗迹"NOR);
 	set("long", RED @LONG
-   �����Ǹ�Σ�յ����򣬺ܴ��Һ�������·�������Ұ�о�Ȼ��
-һ��Сľ�ݣ��������������Ϣһ��(save)��
-��˯��(sleep)��
+   这里是个危险的区域，很大且很容易迷路，在这荒野中尽然有
+一座小木屋，你可以在这里休息一下(save)。
+和睡觉(sleep)。
 LONG NOR);
 
 set("magicroom",1);set("outdoors","migong");

@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡ºï",({ "little monkey", "monkey"}) );
-	set("gender", "ĞÛĞÔ");
-	set("race", "Ò°ÊŞ");
+	set_name("å°çŒ´",({ "little monkey", "monkey"}) );
+	set("gender", "é›„æ€§");
+	set("race", "é‡å…½");
 	set("age", 1);
-	set("long", "ÕâÊÇÒ»Ö»µ÷Æ¤µÄĞ¡ºï×Ó£¬ËäÊÇĞóÉü£¬È´Ï²»¶Ä£·ÂÈËÑù¡£\n");
+	set("long", "è¿™æ˜¯ä¸€åªè°ƒçš®çš„å°çŒ´å­ï¼Œè™½æ˜¯ç•œç‰²ï¼Œå´å–œæ¬¢æ¨¡ä»¿äººæ ·ã€‚\n");
 	set("combat_exp", 500);
-       set("limbs", ({ "ºïÍ·", "ºïÉí", "ºï×¦", "ºïÍÈ", "Î²°Í" }) );
+       set("limbs", ({ "çŒ´å¤´", "çŒ´èº«", "çŒ´çˆª", "çŒ´è…¿", "å°¾å·´" }) );
         set("verbs", ({ "hoof","sting", "claw" }) );
 set("shen_type", -1);
 	set("str", 11);

@@ -4,10 +4,10 @@ inherit F_DEALER;
 void create()
 {
    //reload("ls_li");
-   set_name("ÀîÀÏ°å",({ "li laoban","li","laoban"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("æè€æ¿",({ "li laoban","li","laoban"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
-   set("long", "ÕâÊÇÔÓ»õÆÌµÄÀîÀÏ°å¡£\n");
+   set("long", "è¿™æ˜¯æ‚è´§é“ºçš„æè€æ¿ã€‚\n");
     set("shop_id",({ "li laoban","li","laoban"}) );
    set("combat_exp",300000+random(3000));
    set_skill("dodge",80);

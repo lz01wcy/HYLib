@@ -1,17 +1,17 @@
 #include <weapon.h>
 inherit HAMMER; 
 void create() {
-        set_name("Ï´ÒÂ´¸", ({ "laundry hammer","hammer" }) );
+        set_name("æ´—è¡£é”¤", ({ "laundry hammer","hammer" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÓÃºìÉ½Ä¾´òÔìµÄÓÃÀ´Ï´ÒÂ·şµÄ´¸×Ó¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠç”¨çº¢å±±æœ¨æ‰“é€ çš„ç”¨æ¥æ´—è¡£æœçš„é”¤å­ã€‚\n");
                 set("value", 3);
                 set("material", "wood");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         ::init_hammer(10);
 }  

@@ -7,10 +7,10 @@ void init();
 int kan(string);
 void create()
 {
-        set("short", "É½ÆÂ");
+        set("short", "å±±å¡");
         set("long", @LONG
-±±È¥É½ÊÆÒæ·¢¶¸,Ê÷Ä¾(wood)´ÔÉú.
-È¥Â·,±»×è.
+åŒ—å»å±±åŠ¿ç›Šå‘é™¡,æ ‘æœ¨(wood)ä¸›ç”Ÿ.
+å»è·¯,è¢«é˜».
 LONG );
 set("exits", ([
                   "southdown" : __DIR__"aroad4",
@@ -24,8 +24,8 @@ set("objects", ([
         set("outdoors", "binghuodao");
 //      set("no_clean_up", 0);
  set("item_desc", ([
-      "pai" : "±£»¤Ê÷ÁÖ  ÊÊÁ¿¿³·¥\n",
-      "wood" :"Ò»Æ¬¿É¿³·¥µÄÊ÷ÁÖ¡£\n",
+      "pai" : "ä¿æŠ¤æ ‘æ—  é€‚é‡ç ä¼\n",
+      "wood" :"ä¸€ç‰‡å¯ç ä¼çš„æ ‘æ—ã€‚\n",
       ]) );
         setup();
 //        replace_program(ROOM);
@@ -41,35 +41,35 @@ int do_kan(string arg)
  object ob;
  if (!arg||arg!="wood")
  {
-tell_object(me,"ÄãÒª¿³Ê²Ã´£¿\n");
+tell_object(me,"ä½ è¦ç ä»€ä¹ˆï¼Ÿ\n");
 return 1;}
 
 
  if (!present("cai dao",me))
  {
- message_vision("Ã»ÓĞµ¶ÔõÃ´¿³£¿\n",me);
+ message_vision("æ²¡æœ‰åˆ€æ€ä¹ˆç ï¼Ÿ\n",me);
 return 1;
 }
 
 if (present("mu chai",me))
  {
- message_vision("ÄãÉíÉÏ²»ÊÇÓĞÁËÂğ£¿\n",me);
+ message_vision("ä½ èº«ä¸Šä¸æ˜¯æœ‰äº†å—ï¼Ÿ\n",me);
 return 1;
 }
 
 // if (query_temp("times")==0)
 // {
-// message_vision("ÇëÊÊÁ¿¿³·¥£¡\n",me);
+// message_vision("è¯·é€‚é‡ç ä¼ï¼\n",me);
 //return 1;}
  if(me->query("qi")<20)
   {
-message_vision("ÄãµÄÆøÌ«ĞéÈõ£¬²»ÄÜ¿³£¡\n",me);
+message_vision("ä½ çš„æ°”å¤ªè™šå¼±ï¼Œä¸èƒ½ç ï¼\n",me);
 return 1;}
 
  ob=new(__DIR__"obj/chai");
  ob->move(me);
  me->add("qi",-20);
  add_temp("times",-1);
- message_vision("$N¿³ÁËÒ»À¦£¬ÀÛµÃ¹»Çº¡£\n" , me);
+ message_vision("$Nç äº†ä¸€æ†ï¼Œç´¯å¾—å¤Ÿå‘›ã€‚\n" , me);
  return 1;
 }

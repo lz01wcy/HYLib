@@ -1,13 +1,13 @@
 // "suiye"/beidajie2
-// Room in ËéÒ¶
+// Room in ç¢Žå¶
 // laowuwu 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "±±´ó½Ö");
+	set("short", "åŒ—å¤§è¡—");
 	set("long", @LONG
-Â·»¹ÊÇÄÇÃ´Õ­£¬µ«ÈË½¥½¥¶àÁËÆðÀ´£¬Ò»¸öÂôÒÕµÄÈËÔÚÅ¬Á¦ßºßººÈ×Å¡£
-¶«ÃæÊÇ´òÌúÆÌ¡£Î÷ÃæÊÇÒ»¼ÒÔÓ»õÆÌ¡£
+è·¯è¿˜æ˜¯é‚£ä¹ˆçª„ï¼Œä½†äººæ¸æ¸å¤šäº†èµ·æ¥ï¼Œä¸€ä¸ªå–è‰ºçš„äººåœ¨åŠªåŠ›å†å†å–ç€ã€‚
+ä¸œé¢æ˜¯æ‰“é“é“ºã€‚è¥¿é¢æ˜¯ä¸€å®¶æ‚è´§é“ºã€‚
 LONG
 	);
 set("outdoors", "suiye");

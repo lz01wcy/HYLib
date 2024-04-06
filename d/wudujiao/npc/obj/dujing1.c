@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("������ƪ", ({ "jing", "book" }));
+        set_name("毒经上篇", ({ "jing", "book" }));
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
-                set("long", "����һ��������С�ᣬ�������������д���˸����ö��Ļ��������Ͷ�ҩ���䷽��\n�������(see)��һ����\n");
+                set("unit", "本");
+                set("long", "这是一本薄薄的小册，上面密密麻麻的写满了各种用毒的基本方法和毒药的配方。\n你可以用(see)看一看。\n");
                 set("value", 0);
                 set("material", "silk");
                 set("skill", ([
@@ -38,13 +38,13 @@ void init()
 int do_read(string arg)
 {
   if(arg=="jing"||arg=="book")
-        return notify_fail("\n  �嶾����ҩ�䷽����Ч��\n
-       ������+�߶���------>��ɫҩ��(red yao)----->�߶�\n
-       ������+��򼶾��---->��ɫҩ��(yellow yao)----->��򼶾\n
-       ���ǲ�+֩�붾��---->��ɫҩ��(green yao)----->֩�붾\n
-       �׶���+Ы�Ӷ���---->��ɫҩ��(white yao)----->Ы�Ӷ�\n
-       �ϳ���+��ܶ���---->��ɫҩ��(black yao)----->��ܶ�\n
-       ǧ����+���߶�Һ---->���ɵ�(shenxiandao)------->�Ի�ҩ\n
+        return notify_fail("\n  五毒教灵药配方及功效：\n
+       蛇信子+蛇毒囊------>红色药粉(red yao)----->蛇毒\n
+       穿心莲+蜈蚣毒囊---->黄色药粉(yellow yao)----->蜈蚣毒\n
+       腐骨草+蜘蛛毒囊---->绿色药粉(green yao)----->蜘蛛毒\n
+       鹤顶红+蝎子毒囊---->白色药粉(white yao)----->蝎子毒\n
+       断肠草+蟾蜍毒囊---->黑色药粉(black yao)----->蟾蜍毒\n
+       千日醉+金蛇毒液---->神仙倒(shenxiandao)------->迷魂药\n
 ");
 }
 

@@ -10,16 +10,16 @@ int do_strike(string arg);
 
 void create()
 {
-         set("short",HIW"Á·Îä³¡"NOR);
+         set("short",HIW"ç»ƒæ­¦åœº"NOR);
          set ("long",@long
-ÕâÀïÊÇÁ·Îä³¡£¬Ä½ÈÝ¼ÒµÄµÜ×Ó¡¢¼Ò¶¡ÔÚÕâÀïÁ·Ï°Îä¹¦£¬ÔÚÁ·Îä³¡µÄÒ»½Ç£¬
-ÓÐÒ»¸ö×¨ÃÅÓÃÀ´Á·ÎäµÄÄ¾×®(zhuang)£¬Ðí¶àµÜ×Ó¶¼Î§ÔÚÕâÀïÁ·¹¦¡£
+è¿™é‡Œæ˜¯ç»ƒæ­¦åœºï¼Œæ…•å®¹å®¶çš„å¼Ÿå­ã€å®¶ä¸åœ¨è¿™é‡Œç»ƒä¹ æ­¦åŠŸï¼Œåœ¨ç»ƒæ­¦åœºçš„ä¸€è§’ï¼Œ
+æœ‰ä¸€ä¸ªä¸“é—¨ç”¨æ¥ç»ƒæ­¦çš„æœ¨æ¡©(zhuang)ï¼Œè®¸å¤šå¼Ÿå­éƒ½å›´åœ¨è¿™é‡Œç»ƒåŠŸã€‚
 long);
         set("exits",([
                 "west" : __DIR__"yanziwu",
         ]));
         set("item_desc", ([
-                "zhuang" : "ÕâÊÇÒ»¸öÄ¾×®£¬ÄÜ¹»µÖÓù¸÷ÖÖ¹¥»÷£¬Ðí¶àµÜ×ÓÕýÔÚ×óÓÒ»÷´òËü¡£\n",
+                "zhuang" : "è¿™æ˜¯ä¸€ä¸ªæœ¨æ¡©ï¼Œèƒ½å¤ŸæŠµå¾¡å„ç§æ”»å‡»ï¼Œè®¸å¤šå¼Ÿå­æ­£åœ¨å·¦å³å‡»æ‰“å®ƒã€‚\n",
         ]));
         set("objects",([
                 __DIR__"npc/jiading" : 2,
@@ -45,21 +45,21 @@ int do_strike(string arg)
         if ( !living(this_player()) || arg != "zhuang" )
                 return 0;
         if ( (level = me->query_skill("parry", 1)) < 30 )
-                return notify_fail("Æ¾ÄãÏÖÔÚµÄÕÐ¼Ü¹¦·ò£¬ÎÞ·¨´ò»÷Ä¾×®À´Ôö³¤¡£\n");
+                return notify_fail("å‡­ä½ çŽ°åœ¨çš„æ‹›æž¶åŠŸå¤«ï¼Œæ— æ³•æ‰“å‡»æœ¨æ¡©æ¥å¢žé•¿ã€‚\n");
         maxlevel = 120;
-        if (me->query("family/family_name")!="¹ÃËÕÄ½ÈÝ")
+        if (me->query("family/family_name")!="å§‘è‹æ…•å®¹")
                 maxlevel = 50;
         if (level >= maxlevel)
-                return notify_fail("Äã¶Ô×ÅÄ¾×®À´»ØµØ´ò»÷£¬µ«ÊÇ´ò»÷Ä¾×®ÒÑ¾­ÎÞ·¨Ê¹ÄãµÄ»ù±¾ÕÐ¼ÜÌá¸ßÁË¡£\n");
+                return notify_fail("ä½ å¯¹ç€æœ¨æ¡©æ¥å›žåœ°æ‰“å‡»ï¼Œä½†æ˜¯æ‰“å‡»æœ¨æ¡©å·²ç»æ— æ³•ä½¿ä½ çš„åŸºæœ¬æ‹›æž¶æé«˜äº†ã€‚\n");
         jinglicost = level / 4 + random(level / 4);
         if (me->query("jing") <= jinglicost) {
-                write("Äã¾«²»¹»£¬ÒÑ¾­Ã»ÓÐÁ¦Æø»÷´òÄ¾×®ÁË£¡\n");
+                write("ä½ ç²¾ä¸å¤Ÿï¼Œå·²ç»æ²¡æœ‰åŠ›æ°”å‡»æ‰“æœ¨æ¡©äº†ï¼\n");
                 return 1;
         }
         me->receive_damage("jing", jinglicost);
-        write("Äã¶Ô×ÅÄ¾×®À´»ØµØ´ò»÷£¬¾õµÃ¶ÔÄãµÄ»ù±¾ÕÐ¼ÜÓÐËù´Ù½ø¡£\n");
+        write("ä½ å¯¹ç€æœ¨æ¡©æ¥å›žåœ°æ‰“å‡»ï¼Œè§‰å¾—å¯¹ä½ çš„åŸºæœ¬æ‹›æž¶æœ‰æ‰€ä¿ƒè¿›ã€‚\n");
         if (!random(5)) tell_room(this_object(),
-                me->name() + "ÕýÔÚÀ´»ØµØ»÷´òÄ¾×®¡£\n", ({ me }));
+                me->name() + "æ­£åœ¨æ¥å›žåœ°å‡»æ‰“æœ¨æ¡©ã€‚\n", ({ me }));
         me->improve_skill("parry", me->query("int"));       
         return 1;
 }

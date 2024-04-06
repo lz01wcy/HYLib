@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ê¯°åÂ·");
+	set("short", "çŸ³æ¿è·¯");
 	set("long", @LONG
-Äã×ßÔÚÒ»ÌõÊ¯°åÂ·ÉÏ£¬±±Ãæ¹ýÈ¥¾ÍÊÇºóÔºÁË£¬ÄÏÃæÊÇÎ÷Á·¹¦³¡£¬
-Î÷Ãæ´«À´ÕóÕó·¹²ËµÄÏãÆø£¬ÄÇÀïÊÇÎä¹ÝµÄ·¹Ìü¡£¶«Ãæ¹ýÈ¥ÊÇÎä¹Ý´óÌü¡£
+ä½ èµ°åœ¨ä¸€æ¡çŸ³æ¿è·¯ä¸Šï¼ŒåŒ—é¢è¿‡åŽ»å°±æ˜¯åŽé™¢äº†ï¼Œå—é¢æ˜¯è¥¿ç»ƒåŠŸåœºï¼Œ
+è¥¿é¢ä¼ æ¥é˜µé˜µé¥­èœçš„é¦™æ°”ï¼Œé‚£é‡Œæ˜¯æ­¦é¦†çš„é¥­åŽ…ã€‚ä¸œé¢è¿‡åŽ»æ˜¯æ­¦é¦†å¤§åŽ…ã€‚
 LONG);
 	set("exits", ([
           "east" : __DIR__"shilu-2",
@@ -15,7 +15,7 @@ LONG);
           "north" : __DIR__"shilu-3",
           "west" : __DIR__"fanting",
         ]));
-        set("outdoors", "Îä¹Ý");
+        set("outdoors", "æ­¦é¦†");
 	setup();
         replace_program(ROOM);
 }

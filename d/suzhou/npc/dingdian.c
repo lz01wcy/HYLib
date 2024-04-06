@@ -6,9 +6,9 @@ void destroying(object, object);
 
 void create()
 {
-        set_name("¶¡µä", ({ "ding dian", "ding" }));
-        set("long", "ÕâÈËÂúÁ³ò°÷×£¬Í··¢³¤³¤µÄÖ±´¹ÖÁ¾±£¬ÒÂÉÀÆÆÀÃ²»¿°£¬¼òÖ±ÈçÍ¬»ÄÉ½ÖÐµÄÒ°ÈË¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¸å…¸", ({ "ding dian", "ding" }));
+        set("long", "è¿™äººæ»¡è„¸è™¬é«¯ï¼Œå¤´å‘é•¿é•¿çš„ç›´åž‚è‡³é¢ˆï¼Œè¡£è¡«ç ´çƒ‚ä¸å ªï¼Œç®€ç›´å¦‚åŒè’å±±ä¸­çš„é‡Žäººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("unique", 1);
 set("no_get",1);
@@ -56,35 +56,35 @@ set("no_get",1);
 int accept_object(object me, object obj)
 {
         if ((string)obj->query("id")=="lu juhua") {
-        message("vision",me->name()+"¸ø¶¡µäÒ»ÅèÂÌ¾Õ»¨¡£\n",environment(me),
+        message("vision",me->name()+"ç»™ä¸å…¸ä¸€ç›†ç»¿èŠèŠ±ã€‚\n",environment(me),
             ({me}));
         if(!this_object()->query("book_count")) {
-		command("say ÎÒÒÑ¾­ÍÐÈË¸øËª»ªÉÓ»°ÁË£¬²»ÀÍÄú´ó¼ÝÁË¡£");
+		command("say æˆ‘å·²ç»æ‰˜äººç»™éœœåŽæŽè¯äº†ï¼Œä¸åŠ³æ‚¨å¤§é©¾äº†ã€‚");
 		return 0;
 	}
 	if (present("shenzhao jing", me)) {
-		command("say ÄãÉíÉÏ²»ÊÇÓÐ×ÅÉñÕÕ¾­Âð£¿");
+		command("say ä½ èº«ä¸Šä¸æ˜¯æœ‰ç€ç¥žç…§ç»å—ï¼Ÿ");
 		return 0;
 	}
         command("touch "+me->query("id"));
-        command("say ÕâÎ»"+RANK_D->query_respect(me)+"ÊÇËª»ªÅÉÄãÀ´ÉÓ»°µÄ°É,àË£¡ÎÒÃÇ¿ÉÊÇ¿àÃüµÄÔ§Ñì¡£");
+        command("say è¿™ä½"+RANK_D->query_respect(me)+"æ˜¯éœœåŽæ´¾ä½ æ¥æŽè¯çš„å§,å—¨ï¼æˆ‘ä»¬å¯æ˜¯è‹¦å‘½çš„é¸³é¸¯ã€‚");
 
 	if (!present("shenzhao jing", me)) {
 		if (me->query("szj/passed")) {
 		        new("/clone/book/shenzhao-jing")->move(me);
-	        	message_vision("$nµÝ¸ø$NÒ»±¾ÉñÕÕ¾­¡£\n", me, this_object() );
-		        command("say ÕâÎ»"+RANK_D->query_respect(me)+"ÕæÊÇÌ«¸ÐÐ»ÄãÁË,Õâ±¾ÄÚ¹¦ÐÄ·¨Ï£ÍûÄãÄÜºÃºÃÕäÏ§¡£");
+	        	message_vision("$né€’ç»™$Nä¸€æœ¬ç¥žç…§ç»ã€‚\n", me, this_object() );
+		        command("say è¿™ä½"+RANK_D->query_respect(me)+"çœŸæ˜¯å¤ªæ„Ÿè°¢ä½ äº†,è¿™æœ¬å†…åŠŸå¿ƒæ³•å¸Œæœ›ä½ èƒ½å¥½å¥½çæƒœã€‚");
 			this_object()->set("book_count", 0);
 		} else if ((int)me->query("szj/failed") < 4 && me->query("kar") > 40 && !random(30)) {
 		        new("/clone/book/shenzhao-jing")->move(me);
-	        	message_vision("$nµÝ¸ø$NÒ»±¾ÉñÕÕ¾­¡£\n", me, this_object() );
-		        command("say ÕâÎ»"+RANK_D->query_respect(me)+"ÕæÊÇÌ«¸ÐÐ»ÄãÁË,Õâ±¾ÄÚ¹¦ÐÄ·¨Ï£ÍûÄãÄÜºÃºÃÕäÏ§¡£");
+	        	message_vision("$né€’ç»™$Nä¸€æœ¬ç¥žç…§ç»ã€‚\n", me, this_object() );
+		        command("say è¿™ä½"+RANK_D->query_respect(me)+"çœŸæ˜¯å¤ªæ„Ÿè°¢ä½ äº†,è¿™æœ¬å†…åŠŸå¿ƒæ³•å¸Œæœ›ä½ èƒ½å¥½å¥½çæƒœã€‚");
 			this_object()->set("book_count", 0);
 			me->delete("szj/failed");
 			me->set("szj/passed", 1);
 		} else {
 			command("sigh "+me->query("id"));
-			command("say ÎÒÉíÎÞ³¤Îï£¬ÊµÔÚÃ»Ê²Ã´¿ÉÒÔ¸øÄãµÄÁË¡£");
+			command("say æˆ‘èº«æ— é•¿ç‰©ï¼Œå®žåœ¨æ²¡ä»€ä¹ˆå¯ä»¥ç»™ä½ çš„äº†ã€‚");
 			if (me->query("szj/failed") < 5)
 				me->add("szj/failed", 1);
 		}

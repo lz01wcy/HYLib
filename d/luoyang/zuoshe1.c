@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "����");
+	set("short",  "左舍");
 	set("long",  @LONG
-�߽�С�ᣬ�����μ�齣���һ�������ƣ�һֻ��֦�����񴰣�����
-���룬���ɷ����á��������ڽ���һ��ϸ������������һ����ɴ��
-��ֻ����ԼԼ�ļ����и���Ӱ�������òȴһ��Ҳ�޷�������
+走进小舍，见桌椅几榻，无一而非竹制，一只竹枝撑起竹窗，凉风
+灌入，如仙风入堂。西边是内进，一层细竹窗帘后，又障了一层轻纱，
+你只隐隐约约的见到有个人影，五官面貌却一点也无法见到。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"southeast"  :  __DIR__"lvzhuxiaoyuan",

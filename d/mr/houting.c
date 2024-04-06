@@ -7,18 +7,18 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIW"ºóÌü"NOR);
+         set("short",HIW"åå…"NOR);
          set("long", @LONG
-ÕâÀïÊÇÄ½Èİ¼ÒÀïÉÌÒéÊÂÇéµÄµØ·½£¬²»ÊÇÄ½ÈİµÜ×Ó×îºÃ²»Òªµ½ÕâÀïÀ´¡£ÔÚ
-ºóÌÃÕıÖĞ°Ú·Å×ÅÒ»¸öÏã°¸£¬ÉÏÃæ°Ú·Å×ÅÒ»¸öÁéÎ»ÅÆ×Ó(paizi)£¬ÔÚÕıÖĞÇ½ÉÏ¹Ò
-×ÅÒ»·ù°ÙÄñ³¯·îÍ¼£¬±ßÇ½ÉÏ¹Ò×ÅÒ»¿Ú±¦½£¡£¶«Î÷Á½Ãæ¸÷ÊÇÒ»¼äÏá·¿£¬ÄÏÃæÊÇ
-ÄÚÌÃ¡£
+è¿™é‡Œæ˜¯æ…•å®¹å®¶é‡Œå•†è®®äº‹æƒ…çš„åœ°æ–¹ï¼Œä¸æ˜¯æ…•å®¹å¼Ÿå­æœ€å¥½ä¸è¦åˆ°è¿™é‡Œæ¥ã€‚åœ¨
+åå ‚æ­£ä¸­æ‘†æ”¾ç€ä¸€ä¸ªé¦™æ¡ˆï¼Œä¸Šé¢æ‘†æ”¾ç€ä¸€ä¸ªçµä½ç‰Œå­(paizi)ï¼Œåœ¨æ­£ä¸­å¢™ä¸ŠæŒ‚
+ç€ä¸€å¹…ç™¾é¸Ÿæœå¥‰å›¾ï¼Œè¾¹å¢™ä¸ŠæŒ‚ç€ä¸€å£å®å‰‘ã€‚ä¸œè¥¿ä¸¤é¢å„æ˜¯ä¸€é—´å¢æˆ¿ï¼Œå—é¢æ˜¯
+å†…å ‚ã€‚
 LONG
     );
          set("item_desc",([
-             "paizi" : "Ä½ÈİÊÀ´ú×æÏÈÁéÎ»\n",  
-             "sword" : "ÄÇÊÇÒ»¿ÚÁáçç°ãµÄ±¦½££¬Í¸×Å±ÌÓñÉ«¡£\n",
-             "baojian" : "ÄÇÊÇÒ»¿ÚÁáçç°ãµÄ±¦½££¬Í¸×Å±ÌÓñÉ«¡£\n",
+             "paizi" : "æ…•å®¹ä¸–ä»£ç¥–å…ˆçµä½\n",  
+             "sword" : "é‚£æ˜¯ä¸€å£ç²ç‘èˆ¬çš„å®å‰‘ï¼Œé€ç€ç¢§ç‰è‰²ã€‚\n",
+             "baojian" : "é‚£æ˜¯ä¸€å£ç²ç‘èˆ¬çš„å®å‰‘ï¼Œé€ç€ç¢§ç‰è‰²ã€‚\n",
 ]));
          set("exits",([
              "east" : __DIR__"xiangfang2",
@@ -34,7 +34,7 @@ LONG
 void init()
 {
         add_action("do_ketou", "ketou");
-        add_action("do_ketou", "°İ¼À");
+        add_action("do_ketou", "æ‹œç¥­");
 }             
 
 int do_ketou()
@@ -46,32 +46,32 @@ int do_ketou()
     ob = this_object();    
         if ( !present("douzhuan xingyi",me) || 
              !(fam = me->query("family")) || 
-             fam["family_name"] != "¹ÃËÕÄ½Èİ" ||
+             fam["family_name"] != "å§‘è‹æ…•å®¹" ||
              me->query("combat_exp") < 100000 )
              return 0;
            
-        if ( me->query_temp("Ä½Èİ/ketou") == 20 ) {    
+        if ( me->query_temp("æ…•å®¹/ketou") == 20 ) {    
              sword = new("/d/mr/obj/biyu-jian");                          
                 if(!clonep(sword)) {
-                        message("vision","Äã²»¾­ÒâÍû¼ûÁéÅÆËÆºõÒÑ±»´ò¿ª¹ı¡£\n", me);
-                        me->delete_temp("Ä½Èİ/ketou");
+                        message("vision","ä½ ä¸ç»æ„æœ›è§çµç‰Œä¼¼ä¹å·²è¢«æ‰“å¼€è¿‡ã€‚\n", me);
+                        me->delete_temp("æ…•å®¹/ketou");
                         return 1;
                         }
                 if (clonep(sword) && sword->violate_unique()){ 
                         destruct(sword);   
-                        message("vision","Äã²»¾­ÒâÍû¼ûÁéÅÆËÆºõÒÑ±»´ò¿ª¹ıÁË¡£\n", me);
-                        me->delete_temp("Ä½Èİ/ketou");
+                        message("vision","ä½ ä¸ç»æ„æœ›è§çµç‰Œä¼¼ä¹å·²è¢«æ‰“å¼€è¿‡äº†ã€‚\n", me);
+                        me->delete_temp("æ…•å®¹/ketou");
                         return 1;
                         }  
-                message("vision","Ö»Ìı¼ûîõµÄÒ»Éù£¬ÁéÅÆÀïµôÏÂÒ»°Ñº®¹âÉÁÉÁµÄ±¦½£¡£\n",me);
+                message("vision","åªå¬è§é“›çš„ä¸€å£°ï¼Œçµç‰Œé‡Œæ‰ä¸‹ä¸€æŠŠå¯’å…‰é—ªé—ªçš„å®å‰‘ã€‚\n",me);
                         sword->move(ob);
                         destruct(present("douzhuan xingyi",me));
-                        me->delete_temp("Ä½Èİ/ketou");
+                        me->delete_temp("æ…•å®¹/ketou");
                         return 1;
          }
         else {
-                me->add_temp("Ä½Èİ/ketou", random(2));
-                message_vision("$N¹§¹§¾´¾´µØÔÚÁéÅÆÇ°¿ÄÁË¸öÏìÍ·¡£\n", me);
+                me->add_temp("æ…•å®¹/ketou", random(2));
+                message_vision("$Næ­æ­æ•¬æ•¬åœ°åœ¨çµç‰Œå‰ç£•äº†ä¸ªå“å¤´ã€‚\n", me);
                 return 1;
                 }
 }       

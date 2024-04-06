@@ -4,10 +4,10 @@
 #define MAX_EXP 5000
 inherit NPC;
 string *death_msg = ({
-	HIW "�й���������Ŀ����ѵ�һ����������ɨ��ɨȥ��\n\n" NOR,
-	HIW "�йٷ��˷����겾��̾������һ��ز�۵Ķ�������\n\n" NOR,
-	HIW "�йٺ��ϲ���˵��������δ�������˰��ˣ����߰ɡ�\n\n" NOR,
-	HIW "һ�������Ũ��ͻȻ���֣��ܿ�ذ�Χ���㡣\n\n" NOR,
+	HIW "判官那锐利的目光象把刀一样在你身上扫来扫去。\n\n" NOR,
+	HIW "判官翻了翻勾魂簿，叹道：又一个夭折的短命鬼。\n\n" NOR,
+	HIW "判官合上簿子说道：阳寿未尽？罢了罢了，你走吧。\n\n" NOR,
+	HIW "一股阴冷的浓雾突然出现，很快地包围了你。\n\n" NOR,
 });
 string *revive_loc= ({
         "/d/city/wumiao",
@@ -16,14 +16,14 @@ string *revive_loc= ({
 
 void create()
 {
-	set_name("����й�", ({ "panguan", "ghost judge" }) );
+	set_name("朱笔判官", ({ "panguan", "ghost judge" }) );
 	set("long",
-		"�������ߵ�����й٣�ר���������˵�������\n");
+		"阎王身边的朱笔判官，专勾画天下人的生死。\n");
 	set("attitude", "peaceful");
 	set("chat_chance", 5);
 	set("chat_msg", ({
 		(: random_move :),
-		"�йٺȵ���ţͷ��������ڣ�\n"
+		"判官喝道：牛头，马面何在？\n"
 	}) );
 	set("age", 217);
 	set("combat_exp", 20000);
@@ -63,8 +63,8 @@ void death_stage(object ob, int stage)
 	ob->move(revive_loc[random(sizeof(revive_loc))]);
 	ob->set("startroom", base_name(environment(ob)));
 	message("vision",
-		"���Ȼ����ǰ�����һ����Ӱ����������Ӱ�ֺ����Ѿ�������\n"
-		"�ܾ��ˣ�ֻ����һֱû������\n", environment(ob), ob);
+		"你忽然发现前面多了一个人影，不过那人影又好像已经在那里\n"
+		"很久了，只是你一直没发觉。\n", environment(ob), ob);
 }
 
 

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "²İµØ");
+    set("short", "è‰åœ°");
     set("long", @LONG
-ÕâÊÇÑïÖİ½¼ÍâµÄÒ»Æ¬·¼²İµØ£¬ÂäÓ¢çÍ·×£¬·ä¸èµûÎè£¬³¯Â¶
-Ï¦¹â£¬ÇßÈËĞÄÆ¢¡£ÕæÊÇºÃÊ±¹â¡£Å¼ÓĞ¼¸¶ÔĞ¡ÄĞÅ®½á°éÌ¤Çà£¬İº
-ÉùÀöÓ°£¬æÒÄÖ¶¯ÈË¡£
+è¿™æ˜¯æ‰¬å·éƒŠå¤–çš„ä¸€ç‰‡èŠ³è‰åœ°ï¼Œè½è‹±ç¼¤çº·ï¼Œèœ‚æ­Œè¶èˆï¼Œæœéœ²
+å¤•å…‰ï¼Œæ²äººå¿ƒè„¾ã€‚çœŸæ˜¯å¥½æ—¶å…‰ã€‚å¶æœ‰å‡ å¯¹å°ç”·å¥³ç»“ä¼´è¸é’ï¼Œèº
+å£°ä¸½å½±ï¼Œå¬‰é—¹åŠ¨äººã€‚
 LONG );
 
     set("exits", ([
@@ -24,19 +24,19 @@ LONG );
     set_temp("wayao1",1);
     set("outdoors", "yangzhou");
     setup();
-    create_door("east", "´¹»¨Ğ¡ÃÅ", "west", DOOR_CLOSED);
-    create_door("west", "´¹»¨Ğ¡ÃÅ", "east", DOOR_CLOSED);
+    create_door("east", "å‚èŠ±å°é—¨", "west", DOOR_CLOSED);
+    create_door("west", "å‚èŠ±å°é—¨", "east", DOOR_CLOSED);
 }
 int valid_leave(object me, string dir)
 {
     me = this_player();
     if ((me->query("id")!="course" && me->query("id")!="qixia") && dir == "west")
     {
-       return notify_fail(RED"ÄÇÊÇÈË¼ÒµÄË½Õ¬£¬±ğÈ¥ÌÖÏÓÁË£¡\n"NOR);
+       return notify_fail(RED"é‚£æ˜¯äººå®¶çš„ç§å®…ï¼Œåˆ«å»è®¨å«Œäº†ï¼\n"NOR);
     }
     if ((me->query("id")!="bite" && me->query("id")!="princess") && dir == "east")
     {
-       return notify_fail(RED"ÄÇÊÇÈË¼ÒµÄË½Õ¬£¬±ğÈ¥ÌÖÏÓÁË£¡\n"NOR);
+       return notify_fail(RED"é‚£æ˜¯äººå®¶çš„ç§å®…ï¼Œåˆ«å»è®¨å«Œäº†ï¼\n"NOR);
     }
     return ::valid_leave(me, dir);
 }

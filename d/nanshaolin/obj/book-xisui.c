@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ï´Ëè¾­", ({ "xisui", "shu", "book" }));
+	set_name("æ´—é«“ç»", ({ "xisui", "shu", "book" }));
 	set_weight(50);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¾í");
-		set("long","ÕâÊÇÒ»¾í°µºìÉ«µÄÆÆ²¼£¬ÀïÃæÃÜÃÜÂéÂéµÄ»­ÁË²»ÉÙ´ò×øÍÂÄÅµÄ×ËÊÆ¡£\n");
+		set("unit", "å·");
+		set("long","è¿™æ˜¯ä¸€å·æš—çº¢è‰²çš„ç ´å¸ƒï¼Œé‡Œé¢å¯†å¯†éº»éº»çš„ç”»äº†ä¸å°‘æ‰“ååå‘çš„å§¿åŠ¿ã€‚\n");
                 set("treasure", 1);
 		set("value", 500);
 		set("material", "cloth");

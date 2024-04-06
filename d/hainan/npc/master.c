@@ -8,21 +8,21 @@ int give_weapon();
 
 void create()
 {
-        set_name(HIY"èóÒôÉñÄá"NOR,({"fan yin", "shenni", "nigu","master"}));
+        set_name(HIY"æ¢µéŸ³ç¥å°¼"NOR,({"fan yin", "shenni", "nigu","master"}));
        set("long",
-"ÉñÄáÃû¶¯ÎäÁÖ,ÊÇµ±ÊÀÁ½´óÉñÄáÖ®Ò»,¾İËµËıµÄÎä¹¦ÒÑ¾­µ½ÁËÉñ¶øÃûÖ®µÄµØ²½.\n");
-       set("title", YEL"°×ÔÆâÖÖ÷³Ö"NOR);
-       set("gender", "Å®ĞÔ");
+"ç¥å°¼ååŠ¨æ­¦æ—,æ˜¯å½“ä¸–ä¸¤å¤§ç¥å°¼ä¹‹ä¸€,æ®è¯´å¥¹çš„æ­¦åŠŸå·²ç»åˆ°äº†ç¥è€Œåä¹‹çš„åœ°æ­¥.\n");
+       set("title", YEL"ç™½äº‘åºµä¸»æŒ"NOR);
+       set("gender", "å¥³æ€§");
        set("age", 76);
        set("attitude", "friendly");
        set("class","nigu");
-       set("rank_info/respect", "ÉñÄá");
+       set("rank_info/respect", "ç¥å°¼");
        set("per", 30);
         set("int", 30);
         set("inquiry", ([
-                        "±øÆ÷" : (: give_weapon :),
-                    "±¦ÈĞ":(:give_weapon:),
-                                    "±¦µ¶":(:give_weapon:),
+                        "å…µå™¨" : (: give_weapon :),
+                    "å®åˆƒ":(:give_weapon:),
+                                    "å®åˆ€":(:give_weapon:),
 
                 ]) );   
 
@@ -87,7 +87,7 @@ void create()
 		set("max_qi",3500+random(5550));	
 
 
-create_family("°×ÔÆâÖ", 3, "´«ÈË");
+create_family("ç™½äº‘åºµ", 3, "ä¼ äºº");
 setup();
 
         carry_object("/d/hainan/obj/bai_cloth")->wear();
@@ -107,18 +107,18 @@ int give_weapon()
   object me,ob;
 
   me=this_player();
-if ((me->query("family/master_id")=="zhongling")&&(me->query("family/family_name")=="°×ÔÆâÖ"))
+if ((me->query("family/master_id")=="zhongling")&&(me->query("family/family_name")=="ç™½äº‘åºµ"))
  {
-  if( me->over_encumbranced() ) return notify_fail("ÄãÒÑ¾­¸ººÉ¹ıÖØÁË£¡\n");
+  if( me->over_encumbranced() ) return notify_fail("ä½ å·²ç»è´Ÿè·è¿‡é‡äº†ï¼\n");
 
   if(HAVE_WEAPON==0)
-    command("say ÄãÀ´ÍíÁË£¬Õâ¶«Î÷ÒÑ¾­¸øÈËÈ¡×ßÁË¡£");  
+    command("say ä½ æ¥æ™šäº†ï¼Œè¿™ä¸œè¥¿å·²ç»ç»™äººå–èµ°äº†ã€‚");  
   else  
   {
   clone_object("/d/hainan/obj/hanyue.c")->move(me);
 
-    command("say ÖÓÁéÕâĞ¡Ñ¾Í·ÕæÊÇºúÄÖ,Õâ¼ş¶«Î÷Äã¾ÍÄÃÈ¥°É¡£");  
-    message_vision("èóÒôÉñÄá¸ø$nÒ»°Ñº®ÔÂÕ¶¡£\n",this_object(),me);   
+    command("say é’Ÿçµè¿™å°ä¸«å¤´çœŸæ˜¯èƒ¡é—¹,è¿™ä»¶ä¸œè¥¿ä½ å°±æ‹¿å»å§ã€‚");  
+    message_vision("æ¢µéŸ³ç¥å°¼ç»™$nä¸€æŠŠå¯’æœˆæ–©ã€‚\n",this_object(),me);   
     
     HAVE_WEAPON=0;   
   }
@@ -126,7 +126,7 @@ if ((me->query("family/master_id")=="zhongling")&&(me->query("family/family_name
   return 1;
  }
 else
- command("say ÀÏÄáÄÄÀ´µÄÊ²Ã´Éñ±øÀûÈĞÑ½,Äã±ğÌıÄÇĞ©Ğ¡Ñ¾Í·ÂÒËµ!\n");
+ command("say è€å°¼å“ªæ¥çš„ä»€ä¹ˆç¥å…µåˆ©åˆƒå‘€,ä½ åˆ«å¬é‚£äº›å°ä¸«å¤´ä¹±è¯´!\n");
 return 1;
 }
 

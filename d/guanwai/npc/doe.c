@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-        set_name(YEL"Ã·»¨´ÆÂ¹"NOR, ({ "meihua cilu", "doe", "lu" }) );
-        set("race", "Ò°ÊŞ");
+        set_name(YEL"æ¢…èŠ±é›Œé¹¿"NOR, ({ "meihua cilu", "doe", "lu" }) );
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»ÎÂÑ±µÄÃ·»¨´ÆÂ¹£¬ÕıÔÚµÍÍ·³Ô²İ¡£\n");
+        set("long", "ä¸€åªæ¸©é©¯çš„æ¢…èŠ±é›Œé¹¿ï¼Œæ­£åœ¨ä½å¤´åƒè‰ã€‚\n");
         set("attitude", "peace");
         set("shen_type", -1);
 
-        set("limbs", ({ "Â¹Í·", "Â¹Éí", "Ç°ÍÈ", "ºóÍÈ", "ÍÎ²¿" }) );
+        set("limbs", ({ "é¹¿å¤´", "é¹¿èº«", "å‰è…¿", "åè…¿", "è‡€éƒ¨" }) );
         set("verbs", ({ "hoof" }) );
 
         set("combat_exp", 2000);

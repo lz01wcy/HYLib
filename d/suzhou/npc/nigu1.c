@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Äá¹Ã", ({ "ni gu", "ni", "gu" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("å°¼å§‘", ({ "ni gu", "ni", "gu" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 22);
-	set("long","ÕâÎ»Äá¹ÃÕı×øÔÚÆÌµæÉÏ£¬Ë«ÊÖÄí×ÅÖéÁ´£¬×ìÖĞÄîÄîÓĞ´Ê¡£ \n");
+	set("long","è¿™ä½å°¼å§‘æ­£ååœ¨é“ºå«ä¸Šï¼ŒåŒæ‰‹æ»ç€ç é“¾ï¼Œå˜´ä¸­å¿µå¿µæœ‰è¯ã€‚ \n");
 	set("combat_exp", 1000);
 	set("attitude", "friendly");
 	setup();
@@ -28,7 +28,7 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say( "Äá¹ÃËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬¶àĞ»¾èÔù£¬Ô¸·ğ×æ±£ÓÓ¡£\n");
+	say( "å°¼å§‘è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) + "ï¼Œå¤šè°¢æèµ ï¼Œæ„¿ä½›ç¥–ä¿ä½‘ã€‚\n");
 	return;
 }
 

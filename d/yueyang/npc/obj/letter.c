@@ -1,21 +1,21 @@
 // letter.c
 // Last Modified by sir
-// ×ö³É3Íòexp¾­ÑéÒÔÏÂµÄĞÂÊÖÈëÃÅÈÎÎñ,Ôö¼Óexp ,pot½±Àø,»Ö¸´silver½±Àø
+// åšæˆ3ä¸‡expç»éªŒä»¥ä¸‹çš„æ–°æ‰‹å…¥é—¨ä»»åŠ¡,å¢åŠ exp ,potå¥–åŠ±,æ¢å¤silverå¥–åŠ±
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(RED"ĞÅ¼ş"NOR, ({ "letter","xin","secret letter" }));
+	set_name(RED"ä¿¡ä»¶"NOR, ({ "letter","xin","secret letter" }));
 	set_weight(10);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else
 	{
-		set("unit", "·â");
+		set("unit", "å°");
 		set("long",
-			"ÕâÊÇÒ»·âĞÅ¼ş£¬ĞÅ·âµÄºÜÑÏÊµ£¬·â¿Ú¸Ç×ÅºìÆáÓ¡´Á¡£\n");
+			"è¿™æ˜¯ä¸€å°ä¿¡ä»¶ï¼Œä¿¡å°çš„å¾ˆä¸¥å®ï¼Œå°å£ç›–ç€çº¢æ¼†å°æˆ³ã€‚\n");
 		set("value", 0);
 		set("material", "paper");
 		set("no_drop",1);
@@ -38,7 +38,7 @@ int do_getxin(string arg)
 	me = this_player();
 	
 	if( (arg=="letter"||arg=="xin"||arg=="all")&&!me->query_temp("gb_songxin")) 
-		return notify_fail("Äã²»ÄÜÄÃ±ğÈËµÄ¶«Î÷¡£\n");
+		return notify_fail("ä½ ä¸èƒ½æ‹¿åˆ«äººçš„ä¸œè¥¿ã€‚\n");
 }
 */
 int do_look(string arg)
@@ -53,22 +53,22 @@ int do_look(string arg)
 	if(!arg) return 0;
 	if( (arg=="letter"||arg=="xin")&&me->query_temp("gb_songxin"))
 	{
-		write("\nÕâÊÇÒ»·âÓÉØ¤°ï¾Å´ü³¤ÀÏÂ³ÓĞ½Å·¢³öµÄĞÅ¼ş£¬ÉÏÃæĞ´×Å"
-			HIR" ¡¸"+me->query_temp("songxin_target_name")+"¡¹ Ç×Æô¡£\n"NOR);
-		if(now_time > time*3/4) write("ÄãÏÖÔÚÓĞ³ä×ãµÄÊ±¼äÈ¥ËÍĞÅ¡£\n");
+		write("\nè¿™æ˜¯ä¸€å°ç”±ä¸å¸®ä¹è¢‹é•¿è€é²æœ‰è„šå‘å‡ºçš„ä¿¡ä»¶ï¼Œä¸Šé¢å†™ç€"
+			HIR" ã€Œ"+me->query_temp("songxin_target_name")+"ã€ äº²å¯ã€‚\n"NOR);
+		if(now_time > time*3/4) write("ä½ ç°åœ¨æœ‰å……è¶³çš„æ—¶é—´å»é€ä¿¡ã€‚\n");
 		if(now_time > time/2 && now_time <= time*3/4)
-			write("ÒÑ¾­¹ıÈ¥Ò»Ğ¡°ëÊ±¼äÁË¡£\n");
+			write("å·²ç»è¿‡å»ä¸€å°åŠæ—¶é—´äº†ã€‚\n");
 		if(now_time > time/4 && now_time <= time/2)
-			write("Äã»¹ÓĞÒ»°ëµÄÊ±¼äÈ¥ËÍĞÅ¡£\n");
+			write("ä½ è¿˜æœ‰ä¸€åŠçš„æ—¶é—´å»é€ä¿¡ã€‚\n");
 		if(now_time > time/8 && now_time <= time/4)
-			write("ÄãµÄÊ±¼äÒÑ¾­²»¶àÁË¡£\n");
+			write("ä½ çš„æ—¶é—´å·²ç»ä¸å¤šäº†ã€‚\n");
 		if(now_time > 0 && now_time <= time/8)
-			write("Ê±¼ä½«ÖÁ£¬ÈÎÎñ¼´½«Ê§°Ü¡£\n");
+			write("æ—¶é—´å°†è‡³ï¼Œä»»åŠ¡å³å°†å¤±è´¥ã€‚\n");
 	}
 	else
 	{
 		if( (arg=="letter"||arg=="xin")&&!me->query_temp("gb_songxin")) 
-			write("ÕâÊÇÒ»·âÃÜº¯£¬ĞÅ·âµÄºÜÑÏÊµ£¬·â¿Ú¸Ç×ÅºìÆáÓ¡´Á¡£\n");
+			write("è¿™æ˜¯ä¸€å°å¯†å‡½ï¼Œä¿¡å°çš„å¾ˆä¸¥å®ï¼Œå°å£ç›–ç€çº¢æ¼†å°æˆ³ã€‚\n");
 	}
 	return 1;
 }
@@ -83,35 +83,35 @@ int do_send(string arg)
 
         paytimes = 0;
 	me=this_player();
-	if(!arg) return notify_fail("ÄãÒªËÍ¸øË­£¿\n");
+	if(!arg) return notify_fail("ä½ è¦é€ç»™è°ï¼Ÿ\n");
 	if(!objectp(target = present(arg, environment(me))))
-		return notify_fail("¿´Çå³şµã£¬ÄãÒªËÍĞÅµÄÈË²»ÔÚÕâÀï£¡\n");
+		return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œä½ è¦é€ä¿¡çš„äººä¸åœ¨è¿™é‡Œï¼\n");
 	t_name = target->query("name");
 	job_time = me->query_temp("songxin_time");
 	i = random((int)(target->query_skill("force",1)/5));
 
-       	if(!target) return notify_fail("¿´Çå³şµã£¬ÄãÒªËÍĞÅµÄÈË²»ÔÚÕâÀï£¡\n");
-	if(userp(target)) return notify_fail("ºÙºÙ£¬Ïë×÷±×£¿£¡\n");
+       	if(!target) return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œä½ è¦é€ä¿¡çš„äººä¸åœ¨è¿™é‡Œï¼\n");
+	if(userp(target)) return notify_fail("å˜¿å˜¿ï¼Œæƒ³ä½œå¼Šï¼Ÿï¼\n");
 	if(me->query_temp("gb_songxin_late"))
-		return notify_fail("ÄãÈÎÎñÒÑ¾­Ê§°ÜÁË£¬ÖØĞÂÔÙÁìÒ»¸ö°É¡£\n");
+		return notify_fail("ä½ ä»»åŠ¡å·²ç»å¤±è´¥äº†ï¼Œé‡æ–°å†é¢†ä¸€ä¸ªå§ã€‚\n");
 	if (!present("secret letter", this_player()) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞĞ¯´øĞÅ¼ş¡£\n"); 
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰æºå¸¦ä¿¡ä»¶ã€‚\n"); 
 /*
-	if (!(fam = me->query("family")) || fam["family_name"] != "Ø¤°ï")
-		return notify_fail(RANK_D->query_respect(me) + "ÓëØ¤°ïËØÎŞÀ´Íù£¬ÔõÃ´»áËÍĞÅ¸øÎÒ£¿");
+	if (!(fam = me->query("family")) || fam["family_name"] != "ä¸å¸®")
+		return notify_fail(RANK_D->query_respect(me) + "ä¸ä¸å¸®ç´ æ— æ¥å¾€ï¼Œæ€ä¹ˆä¼šé€ä¿¡ç»™æˆ‘ï¼Ÿ");
 */
 	if (!me->query_temp("gb_songxin"))
-		return notify_fail(t_name+"µÀ£ºÕâÊÇØ¤°ïÇ××Ô½»¸øÄã£¬ÒªÄãËÍµÄ£¿ÄãÊÇ²»ÊÇ´Ó±ğÈËÄÇÀïÇÀÀ´µÄ£¿");
+		return notify_fail(t_name+"é“ï¼šè¿™æ˜¯ä¸å¸®äº²è‡ªäº¤ç»™ä½ ï¼Œè¦ä½ é€çš„ï¼Ÿä½ æ˜¯ä¸æ˜¯ä»åˆ«äººé‚£é‡ŒæŠ¢æ¥çš„ï¼Ÿ");
 	if(me->query_temp("songxin_target_name") != t_name) 
-		return notify_fail(t_name+"µÀ£ºÕâ·âĞÅ²»ÊÇ¸øÎÒµÄ£¬ÄãÊÇ²»ÊÇËÍ´íÁË£¿");
+		return notify_fail(t_name+"é“ï¼šè¿™å°ä¿¡ä¸æ˜¯ç»™æˆ‘çš„ï¼Œä½ æ˜¯ä¸æ˜¯é€é”™äº†ï¼Ÿ");
 
-	message_vision(HIY"$N²ÁÁËÒ»°Ñ¶îÍ·µÄº¹£¬´Ó»³ÖĞÌÍ³öĞÅ½»¸ø$nËµµÀ£¬ÕâÊÇØ¤°ïÂ³³¤ÀÏÈÃÔÚÏÂËÍ¸øÄúµÄĞÅ£¬ÇëÄúÊÕºÃ¡£\n"NOR, me, target);
-	message_vision("$N½»¸øÁË$nÒ»·âĞÅ¡£\n",me, target);
-	message_vision(t_name+"µãÁËµãÍ·ËµµÀ£ºĞÁ¿àÄãÁË,ÕâĞÁ¿à·ÑÄã¾ÍÊÕÏÂ°É! \n",me);
+	message_vision(HIY"$Næ“¦äº†ä¸€æŠŠé¢å¤´çš„æ±—ï¼Œä»æ€€ä¸­æå‡ºä¿¡äº¤ç»™$nè¯´é“ï¼Œè¿™æ˜¯ä¸å¸®é²é•¿è€è®©åœ¨ä¸‹é€ç»™æ‚¨çš„ä¿¡ï¼Œè¯·æ‚¨æ”¶å¥½ã€‚\n"NOR, me, target);
+	message_vision("$Näº¤ç»™äº†$nä¸€å°ä¿¡ã€‚\n",me, target);
+	message_vision(t_name+"ç‚¹äº†ç‚¹å¤´è¯´é“ï¼šè¾›è‹¦ä½ äº†,è¿™è¾›è‹¦è´¹ä½ å°±æ”¶ä¸‹å§! \n",me);
 	target->add_money("silver",(int)(target->query_skill("force",1)/5)+1);
 	command("give "+me->query("id")+" "+((int)(target->query_skill("force",1)/5)+1)+" silver");
 
-	message_vision(HIY "$N½Ó¹ıĞÅ¿´ÁË¿´£¬µãÁËµãÍ·ËµµÀ£ºÕâÎ»"+RANK_D->query_respect(me)+"ĞÁ¿àÄãÁË¡£\n"NOR, target, me);
+	message_vision(HIY "$Næ¥è¿‡ä¿¡çœ‹äº†çœ‹ï¼Œç‚¹äº†ç‚¹å¤´è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(me)+"è¾›è‹¦ä½ äº†ã€‚\n"NOR, target, me);
  
 
 	if ((int)me->query("combat_exp")<=5000)
@@ -162,7 +162,7 @@ int do_send(string arg)
         if (num<4) times=num;
          else times=4;
         
-        if (!(fam = me->query("family")) || fam["family_name"] != "Ø¤°ï")  score = 0;
+        if (!(fam = me->query("family")) || fam["family_name"] != "ä¸å¸®")  score = 0;
          else score=random(10)+ 10 * times;
 	
 	s_bonus=50+random(50);
@@ -180,15 +180,15 @@ int do_send(string arg)
             me->add("paytimes",1);
         }
 */
-//      silver½±Àø
+//      silverå¥–åŠ±
 
-	tell_object(me,HIW"ºÃ£¡ÈÎÎñÍê³É,Äã±»½±ÀøÁË£º\n" + 
-		chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-		chinese_number(pot) + "µãÇ±ÄÜ\n"+
-		chinese_number(score) + "µãÖÒ³Ï¶È\n"+
-		chinese_number(s_bonus) + "µã½­ºşÔÄÀú\n" +
-		chinese_number(i)+"Á½°×Òø\n"+
-		"ÄãÎªØ¤°ï×öÁË"+me->query("gb_job")+"´Î¹¤×÷¡£\n"NOR);
+	tell_object(me,HIW"å¥½ï¼ä»»åŠ¡å®Œæˆ,ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+		chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+		chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
+		chinese_number(score) + "ç‚¹å¿ è¯šåº¦\n"+
+		chinese_number(s_bonus) + "ç‚¹æ±Ÿæ¹–é˜…å†\n" +
+		chinese_number(i)+"ä¸¤ç™½é“¶\n"+
+		"ä½ ä¸ºä¸å¸®åšäº†"+me->query("gb_job")+"æ¬¡å·¥ä½œã€‚\n"NOR);
 		me->apply_condition("gb_songxin", me->query_condition("gb_songxin")/2);
 		me->delete_temp("gb_songxin");
 		me->delete_temp("songxin_time");

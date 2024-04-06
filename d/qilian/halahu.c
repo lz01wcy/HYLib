@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "哈拉湖");
 	set("long", @LONG
-��ˮ�����Ź��򶫣���ȥ�������֮Ϊ������������˵�ж���
-�������棬ÿ�괺���������Է�ţ��ʮͷ�������ƽ������Ȼ��������
-������ࡣ�����Ƿ�Բ�˰���Ψһ��ˮԴ��
+郁水过玉门关向东，北去二百里，汇之为泽，名哈拉。传说有恶蛟
+藏在里面，每年春秋两季，以肥牛羊十头祭典才能平安，不然会淫雨连
+绵达月余。这里是方圆八百里唯一的水源。
 LONG );
 	set("outdoors", "qilian");
 	set("no_clean_up", 0);

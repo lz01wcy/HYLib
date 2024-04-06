@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-		set("short", BLU"ɽ������"NOR);
+		set("short", BLU"山洞出口"NOR);
 	set("long", BLU @LONG
- ��Խ��Խ���Χ��ǽ���ƺ���Щ������,�м�һ�������
-С���������졣 
+ 你越走越深，周围的墙壁似乎有些松软了,中间一条弯弯的
+小道往上延伸。 
 LONG NOR);
 	set("exits", ([
 		"east" : __DIR__"dong1",

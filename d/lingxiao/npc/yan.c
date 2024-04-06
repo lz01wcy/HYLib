@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÑàÍòÅô",({"yan wanpeng","yan"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("ç‡•ä¸‡é¹",({"yan wanpeng","yan"}));
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long", 
-               "ËûÊÇÁèÏö³ÇµÚÁù´úµÜ×ÓÑàÍòÅô,µÚÁù´úµÜ×ÓÖÐ,ÎªÈËÊýËû×î\n"
-                "Îª¹£Ö±,ËØÓÐÌúÃæÖ®³Æ,ËùÒÔÔÚ´ËÕòÓü¡£\n");
+               "ä»–æ˜¯å‡Œéœ„åŸŽç¬¬å…­ä»£å¼Ÿå­ç‡•ä¸‡é¹,ç¬¬å…­ä»£å¼Ÿå­ä¸­,ä¸ºäººæ•°ä»–æœ€\n"
+                "ä¸ºæ¢—ç›´,ç´ æœ‰é“é¢ä¹‹ç§°,æ‰€ä»¥åœ¨æ­¤é•‡ç‹±ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -53,7 +53,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸŽ", 6, "å¼Ÿå­");
         setup();
 
         
@@ -65,12 +65,12 @@ int accept_object(object me, object ob)
 {
    object nowords;
 
-     if ((string)ob->query("name")!=HIW"º®ÓñÅÆ"NOR) {
-            command("say Äã¸øÎÒÕâ¸ö¸ÉÊ²Ã´£¡ÄãÏë»ßÂ¸ÎÒÂð£¿");
+     if ((string)ob->query("name")!=HIW"å¯’çŽ‰ç‰Œ"NOR) {
+            command("say ä½ ç»™æˆ‘è¿™ä¸ªå¹²ä»€ä¹ˆï¼ä½ æƒ³è´¿èµ‚æˆ‘å—ï¼Ÿ");
             return 1;
         }
         else {
-            command("say Ê¦µÜÇëÏÂÈ¥°É£¬ÀÏÒ¯×ÓÔÚÏÂÃæ¡£\n");
+            command("say å¸ˆå¼Ÿè¯·ä¸‹åŽ»å§ï¼Œè€çˆ·å­åœ¨ä¸‹é¢ã€‚\n");
                 me->move("/d/lingxiao/laolang");
             return 1;
         }

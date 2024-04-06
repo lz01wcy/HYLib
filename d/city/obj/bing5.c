@@ -1,4 +1,4 @@
-//bing5.c ¶ÔÌÃ±ı
+//bing5.c å¯¹å ‚é¥¼
 inherit ITEM;
 #include <ansi.h>
 
@@ -9,8 +9,8 @@ void init()
 
 void create()
 {
-	set_name(YEL "¶ÔÌÃ±ı" NOR, ({"bing5", "duitangbing"}));
-	set("unit", "¸ö");
+	set_name(YEL "å¯¹å ‚é¥¼" NOR, ({"bing5", "duitangbing"}));
+	set("unit", "ä¸ª");
 	set("no_get", 1);
 /*
 	set("no_drop", 1);
@@ -18,21 +18,21 @@ void create()
 	set("no_beg", 1);
 	set("no_steal", 1);
 */
-	set("long", "ÕâÊÇÒ»¸öÄÑ³öµÄ¶ÔÌÃ±ı¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªéš¾å‡ºçš„å¯¹å ‚é¥¼ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="bing5"||arg=="duitangbing")
 	{
 		me->add("combat_exp",868);
 		me->add("potential",68);
 		me->add("con",1);
 		me->add("dex",1);
-		message_vision(HIY "$NÈı¿ÚÁ½¿Ú³ÔÏÂÒ»¿é$n¡£\n" NOR, this_player(), this_object());
+		message_vision(HIY "$Nä¸‰å£ä¸¤å£åƒä¸‹ä¸€å—$nã€‚\n" NOR, this_player(), this_object());
 		destruct(this_object());
 	}
 	return 1;

@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name("ÂèÂèÉ£",({"mama sang","laobao"}));
-	set("gender","Å®ĞÔ");
+        set_name("å¦ˆå¦ˆæ¡‘",({"mama sang","laobao"}));
+	set("gender","å¥³æ€§");
 	set("age",40);
-       set("title","Éñ»§¼Ë¹İ");
+       set("title","ç¥æˆ·å¦“é¦†");
 	set("long",
-                 "´ò°çµÃºÜÊÇÑıÑŞµÄÖĞÄêÅ®×Ó£¬Éí´©ºÍ·ş£¬ÕıÂúÁ³ÃÄĞ¦µÄ¿´×ÅÄã¡£\n");
+                 "æ‰“æ‰®å¾—å¾ˆæ˜¯å¦–è‰³çš„ä¸­å¹´å¥³å­ï¼Œèº«ç©¿å’Œæœï¼Œæ­£æ»¡è„¸åªšç¬‘çš„çœ‹ç€ä½ ã€‚\n");
 	set("combat_exp",2000);
 	set_temp("apply/attack",15);
 	set_temp("apply/defense",15);
@@ -34,18 +34,18 @@ void greeting(object ob)
 {
 
 	if( !ob || environment(ob) != environment() ) return;
-	if(ob->query("gender")=="Å®ĞÔ")	{
-               message_vision("$n³å×Å$NÒ¡Í·µÀ£ºÕâ¿É²»ÊÇ"+
-             RANK_D->query_respect(ob)+"À´µÄµØ·½°¡¡£\n",ob,this_object());
+	if(ob->query("gender")=="å¥³æ€§")	{
+               message_vision("$nå†²ç€$Næ‘‡å¤´é“ï¼šè¿™å¯ä¸æ˜¯"+
+             RANK_D->query_respect(ob)+"æ¥çš„åœ°æ–¹å•Šã€‚\n",ob,this_object());
 		return ;
 	}
 	switch( random(2) ) {
 		case 0:
-                message_vision("$nÃÄÉù¶Ô$NµÀ£ºÕâÎ»"+
-             RANK_D->query_respect(ob)+"¿ÉÊÇ¿´ÖĞÎÒ¼ÒÄÄÎ»¹ÃÄïÁË°É¡£\n",ob,this_object());
+                message_vision("$nåªšå£°å¯¹$Né“ï¼šè¿™ä½"+
+             RANK_D->query_respect(ob)+"å¯æ˜¯çœ‹ä¸­æˆ‘å®¶å“ªä½å§‘å¨˜äº†å§ã€‚\n",ob,this_object());
 			break;
 		case 1:
-          message_vision("$nÉÏÇ°¼¸²½£¬À­×¡$NµÄÊÖ½ĞµÀ£º¹ÃÄïÃÇ£¬½Ó¿ÍÀ²£¡\n",ob,this_object());
+          message_vision("$nä¸Šå‰å‡ æ­¥ï¼Œæ‹‰ä½$Nçš„æ‰‹å«é“ï¼šå§‘å¨˜ä»¬ï¼Œæ¥å®¢å•¦ï¼\n",ob,this_object());
 			break;
                            }
 }
@@ -55,8 +55,8 @@ int accept_fight(object who)
 	object npc,env,*inv;
 	npc=new(__DIR__"dashou");
 	env=environment(this_object());
-         message_vision("$n¶Ô×Å$NÀäĞ¦×ÅºÈµÀ£º¸Òµ½ÕâÀ´ÈöÒ°£¡£¿\n"+
-        "À´ÈËÄÄ£¡£¡\nÎÅÉù¶øÀ´µÄ´òÊÖÁ¢¿Ì½«$N°üÎ§ÁËÆğÀ´¡£\n",who,this_object());
+         message_vision("$nå¯¹ç€$Nå†·ç¬‘ç€å–é“ï¼šæ•¢åˆ°è¿™æ¥æ’’é‡ï¼ï¼Ÿ\n"+
+        "æ¥äººå“ªï¼ï¼\né—»å£°è€Œæ¥çš„æ‰“æ‰‹ç«‹åˆ»å°†$NåŒ…å›´äº†èµ·æ¥ã€‚\n",who,this_object());
         if(sizeof(children(base_name(npc)))<=4 && (int)query("have_ds")<=4)
         {
                 add("have_ds",1);

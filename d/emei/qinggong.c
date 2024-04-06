@@ -1,12 +1,12 @@
-//Room: qinggong.c ¶ëáÒÇŞ¹¬
+//Room: qinggong.c å³¨åµ‹å¯å®«
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 void create()
 {
-      set("short","¶ëáÒÇŞ¹¬");
+      set("short","å³¨åµ‹å¯å®«");
       set("long",@LONG
-ÕâÊÇ¶ëáÒÉ½½ğ¶¥»ª²ØâÖÍâµÄÒ»Æ¬Ğ¡Ê÷ÁÖ¶ëáÒÇŞ¹¬¡£
+è¿™æ˜¯å³¨åµ‹å±±é‡‘é¡¶åè—åºµå¤–çš„ä¸€ç‰‡å°æ ‘æ—å³¨åµ‹å¯å®«ã€‚
 LONG);
       set("objects", ([
            CLASS_D("emei") + "/zhou" : 1,

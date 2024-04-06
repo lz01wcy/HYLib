@@ -1,18 +1,18 @@
-// zhao.c ÕÔÖ¾¾´
+// zhao.c èµµå¿—æ•¬
 // By Lgg,1998.10
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÕÔÖ¾¾´", ({"zhao zhijing", "zhao"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("èµµå¿—æ•¬", ({"zhao zhijing", "zhao"}));
+        set("gender", "ç”·æ€§");
         set("age", 26);
         set("class", "taoist");
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÚÈý´úµÜ×ÓÖÐµÄºÃÊÖ£¬Íõ´¦Ò»µÄ´óµÜ×ÓÕÔÖ¾¾´¡£ \n"
-                "ËûÏàÃ²¶ËÕý£¬µ«Ã¼Óî¼äËÆºõÒþ²Ø×ÅÒ»Ë¿½Æ»«µÄÉñÉ«¡£\n"
-		"ËûÊÇÒ»¸ö³¤ÐëµÀÈË£¬¿´ÆðÀ´È´ÓÐÐ©É·Æø¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„å¥½æ‰‹ï¼ŒçŽ‹å¤„ä¸€çš„å¤§å¼Ÿå­èµµå¿—æ•¬ã€‚ \n"
+                "ä»–ç›¸è²Œç«¯æ­£ï¼Œä½†çœ‰å®‡é—´ä¼¼ä¹Žéšè—ç€ä¸€ä¸ç‹¡çŒ¾çš„ç¥žè‰²ã€‚\n"
+		"ä»–æ˜¯ä¸€ä¸ªé•¿é¡»é“äººï¼Œçœ‹èµ·æ¥å´æœ‰äº›ç…žæ°”ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",-1);
         set("str", 25);
@@ -47,15 +47,15 @@ set_skill("qixing-shou",150);
 set_skill("qixing-array",50);
 set_skill("hand", 150);
         set_skill("force", 80);
-        set_skill("xiantian-qigong", 80);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 80);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 80);
-        set_skill("quanzhen-jian",80);  //È«Õæ½£
+        set_skill("quanzhen-jian",80);  //å…¨çœŸå‰‘
         set_skill("dodge", 70);
-        set_skill("jinyan-gong", 70);   //½ðÑã¹¦
+        set_skill("jinyan-gong", 70);   //é‡‘é›åŠŸ
         set_skill("parry", 80);
         set_skill("unarmed",80);
         set_skill("strike",80);
-        set_skill("haotian-zhang", 80);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 80);    //æ˜Šå¤©æŽŒ
         set_skill("literate",60);
         set_skill("taoism",60);
 
@@ -66,10 +66,10 @@ set_skill("hand", 150);
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒÐþÃÅÕý×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶çŽ„é—¨æ­£å®—ã€‚\n",
         ]) );
 
         setup();
@@ -81,7 +81,7 @@ set_skill("hand", 150);
 
 void attempt_apprentice(object ob)
 {
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

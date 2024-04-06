@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-  set_name("Ç°·æÓª¾üÊ¿",({"junshi"}));
-  set("gender","ÄĞĞÔ");
+  set_name("å‰é”‹è¥å†›å£«",({"junshi"}));
+  set("gender","ç”·æ€§");
   set("age",20+random(30));
   set("combat_exp",90000);
   set("force",700);

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ïá·¿");
+	set("short", "åŽ¢æˆ¿");
 	set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÏá·¿£¬Ã÷¾»Í¸ÁÁµÄ´°»§ÓÃºñºñµÄ´°É´ÕÚÁË´ó°ë£¬¹âÏß
-ºÜ»è°µ¡£·¿Àï±ðÎÞËûÎï£¬Ö»ÓÐÖÐ¼ä·Å×ÅÒ»ÕÅÊÕÊ°µÃÊæÊæ·þ·þµÄ´ó´²£¬¿´
-×Å¾ÍÈÃÈËÏëË¯¾õ¡£¿´À´ÕâÀïÊÇÇà³ÇÐÝÏ¢µÄµØ·½¡£
+è¿™æ˜¯é—´æ•´æ´çš„åŽ¢æˆ¿ï¼Œæ˜Žå‡€é€äº®çš„çª—æˆ·ç”¨åŽšåŽšçš„çª—çº±é®äº†å¤§åŠï¼Œå…‰çº¿
+å¾ˆæ˜æš—ã€‚æˆ¿é‡Œåˆ«æ— ä»–ç‰©ï¼Œåªæœ‰ä¸­é—´æ”¾ç€ä¸€å¼ æ”¶æ‹¾å¾—èˆ’èˆ’æœæœçš„å¤§åºŠï¼Œçœ‹
+ç€å°±è®©äººæƒ³ç¡è§‰ã€‚çœ‹æ¥è¿™é‡Œæ˜¯é’åŸŽä¼‘æ¯çš„åœ°æ–¹ã€‚
 LONG );
 	set("exits", ([
 		"east"  : __DIR__"zoulang3",
@@ -19,9 +19,9 @@ LONG );
 	set("coor/x", -8091);
 	set("coor/y", -840);
 	set("coor/z", 90);
-  set("door_name","´óÃÅ");
+  set("door_name","å¤§é—¨");
 	set("door_dir","east");
-	set("force_name","·½ÈËÖÇ");
+	set("force_name","æ–¹äººæ™º");
   //set("outroom",__DIR__"zoulang3");
   setup();
 }

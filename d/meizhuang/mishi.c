@@ -7,11 +7,11 @@ int valid_leave();
 
 void create()
 {
-       set("short","ÃÜÊÒ");
+       set("short","å¯†å®¤");
        set("long", @LONG
-ÕâÊÇÒ»¼ä²»´óµÄ·¿¼ä£¬·¿¼äÀï°Ú×ÅÒ»ÅÅÅÅµÄÊé¼Ü(shu jia)
-ºÍºÜ¶àÊé(book)£¬ÔÚÊé¼ÜµÄÁ½ÅÔ¿¿×Å¼¸¾ßËÀÈËµÄº¡¹Ç£¬ÓÐÒ»¾ß
-µÄÐØ¹ÇÖ®ÖÐ»¹²å×ÅÒ»±ú½£¡£
+è¿™æ˜¯ä¸€é—´ä¸å¤§çš„æˆ¿é—´ï¼Œæˆ¿é—´é‡Œæ‘†ç€ä¸€æŽ’æŽ’çš„ä¹¦æž¶(shu jia)
+å’Œå¾ˆå¤šä¹¦(book)ï¼Œåœ¨ä¹¦æž¶çš„ä¸¤æ—é ç€å‡ å…·æ­»äººçš„éª¸éª¨ï¼Œæœ‰ä¸€å…·
+çš„èƒ¸éª¨ä¹‹ä¸­è¿˜æ’ç€ä¸€æŸ„å‰‘ã€‚
 LONG
      );
         set("exits", ([
@@ -19,9 +19,9 @@ LONG
         ]));
         set("item_desc", ([
                 "shu jia" :
-        "Êé¼ÜÉÏ°Ú×Å¸÷ÖÖ¸÷ÑùµÄÊé¡£\n",
+        "ä¹¦æž¶ä¸Šæ‘†ç€å„ç§å„æ ·çš„ä¹¦ã€‚\n",
                 "book" :
-        "¶¼ÊÇÒ»Ð©ºÜÆ½³£µÄÊé£¬µ½´¦¶¼¿ÉÒÔ¼ûµ½¡£\n",
+        "éƒ½æ˜¯ä¸€äº›å¾ˆå¹³å¸¸çš„ä¹¦ï¼Œåˆ°å¤„éƒ½å¯ä»¥è§åˆ°ã€‚\n",
         ]) );
         set("objects", ([
                 __DIR__"obj/tizi" : 1,
@@ -46,17 +46,17 @@ int do_jump(string arg)
                 return 0;
         if( arg=="shu jia")
         {
-            if (me->query_temp("marks/Ìø1") ) {
+            if (me->query_temp("marks/è·³1") ) {
                 if (me->query_skill("dodge",1)<100)
-                    write("ÄãÊÔÍ¼ÌøÉÏÊé¼ÜµÄ¶¥¶Ë£¬µ«ÀÏÊÇÌø²»ÉÏÈ¥¡£\n");
+                    write("ä½ è¯•å›¾è·³ä¸Šä¹¦æž¶çš„é¡¶ç«¯ï¼Œä½†è€æ˜¯è·³ä¸ä¸ŠåŽ»ã€‚\n");
                 else {
-                    write("Äã×ÝÉíÔ¾ÉÏÁËÊé¼Ü¶¥¶Ë¡£\n");
+                    write("ä½ çºµèº«è·ƒä¸Šäº†ä¹¦æž¶é¡¶ç«¯ã€‚\n");
                     message("vision",
-                             me->name() + "Ò»×ÝÉíÔ¾ÉÏÁËÊé¼Ü¶¥¶Ë¡£\n",
+                             me->name() + "ä¸€çºµèº«è·ƒä¸Šäº†ä¹¦æž¶é¡¶ç«¯ã€‚\n",
                              environment(me), ({me}) );
                     me->move(__DIR__"dingduan");
                     message("vision",
-                             me->name() + "´ÓÏÂÃæÔ¾ÁËÉÏÀ´¡£\n",
+                             me->name() + "ä»Žä¸‹é¢è·ƒäº†ä¸Šæ¥ã€‚\n",
                              environment(me), ({me}) );
                 }
                 return 1;
@@ -66,7 +66,7 @@ int do_jump(string arg)
 
 int valid_leave(object me, string dir)
 {
-        me->delete_temp("marks/Ìø1");
+        me->delete_temp("marks/è·³1");
         return ::valid_leave(me, dir);
 }
 

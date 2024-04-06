@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("´óÌúÍ°", ({"tie tong", "tong"}));
+	set_name("å¤§é“æ¡¶", ({"tie tong", "tong"}));
 	set_weight(50000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long","Ò»¶Ô´óÌúÍ°£¬±ÈÖ®Ñ°³£Ë®Í°´óÁËÁ½±¶ÓĞÓà£¬Ö»ÅÂÓĞ¶ş°Ù¶à½ïÖØ¡£\n");
-		set("unit", "¶Ô");
+		set("long","ä¸€å¯¹å¤§é“æ¡¶ï¼Œæ¯”ä¹‹å¯»å¸¸æ°´æ¡¶å¤§äº†ä¸¤å€æœ‰ä½™ï¼Œåªæ€•æœ‰äºŒç™¾å¤šæ–¤é‡ã€‚\n");
+		set("unit", "å¯¹");
 		set("value", 100);
 		set("max_liquid", 10);
 		set("shaolin", 1);
@@ -22,7 +22,7 @@ void create()
 	// we set it to contain water at the beginning
 	set("liquid", ([
 		"type": "water",
-		"name": "ÇåË®",
+		"name": "æ¸…æ°´",
 		"drunk_supply": 10,
 	]));
 }
@@ -41,10 +41,10 @@ int do_fill(string arg)
 	if (!arg || !id(arg)) return 0;
 	if (base_name(environment(me)) != "/d/nanshaolin/fxjing")
 	{
-		write("Ö»ÓĞÔÚÉ½Íâ·ğĞÄ¾®²ÅÄÜ¹àË®¡£\n");
+		write("åªæœ‰åœ¨å±±å¤–ä½›å¿ƒäº•æ‰èƒ½çŒæ°´ã€‚\n");
 		return 1;
 	}
-	message_vision("$N½«$n×°ÂúÇåË®¡£\n", me, this_object());
+	message_vision("$Nå°†$nè£…æ»¡æ¸…æ°´ã€‚\n", me, this_object());
 	set("liquid/remaining", query("max_liquid"));
 	return 1;
 }
@@ -55,20 +55,20 @@ int do_pour(string arg)
 	if (!arg || arg != "gang") return 0;
 	if (base_name(environment(me)) != "/d/nanshaolin/houdian")
 	{
-		write("Òªµ½ºóµî²ÅÓĞË®¸×ÈÃÄãµ¹Ë®¡£\n");
+		write("è¦åˆ°åæ®¿æ‰æœ‰æ°´ç¼¸è®©ä½ å€’æ°´ã€‚\n");
 		return 1;
 	}
 	if (!query("liquid/remaining"))
 	{
-		message_vision("$NÄÃ×ÅÁ½Ö»¿ÕÌúÍ°¶Ô×Å´óË®¸×±È»®×Å¡£\n", me);
+		message_vision("$Næ‹¿ç€ä¸¤åªç©ºé“æ¡¶å¯¹ç€å¤§æ°´ç¼¸æ¯”åˆ’ç€ã€‚\n", me);
 		return 1;
 	}
 	if (query("liquid/remaining") < query("max_liquid"))
 	{
-		message_vision("$NÄÃ×ÅÁ½Ö»Ã»×°ÂúË®µÄÌúÍ°¶Ô×Å´óË®¸×±È»®×Å¡£\n", me);
+		message_vision("$Næ‹¿ç€ä¸¤åªæ²¡è£…æ»¡æ°´çš„é“æ¡¶å¯¹ç€å¤§æ°´ç¼¸æ¯”åˆ’ç€ã€‚\n", me);
 		return 1;
 	}
-	message_vision("$N½«ÇåË®µ¹Èë´óË®¸×ÖĞ¡£\n", me, this_object());
+	message_vision("$Nå°†æ¸…æ°´å€’å…¥å¤§æ°´ç¼¸ä¸­ã€‚\n", me, this_object());
 	me->receive_damage("qi", 100);
 	if(me->query_skill("shaolin-shenfa", 1) < 150)
 	{
@@ -78,7 +78,7 @@ int do_pour(string arg)
 	if (me->add("carry_count", -1) < 1)
 	{
 		me->delete("carry_count");
-		message_vision("$N¸ÉÍê»î£¬¶ªÏÂÁÍîíºÍÌúÍ°£¬ÉìÁË¸öÀÁÑü¡£\n", me);
+		message_vision("$Nå¹²å®Œæ´»ï¼Œä¸¢ä¸‹é•£é“å’Œé“æ¡¶ï¼Œä¼¸äº†ä¸ªæ‡’è…°ã€‚\n", me);
 		if (present("liao kao", me)) destruct(present("liao kao", me));
 		destruct(this_object());
 	}

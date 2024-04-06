@@ -1,16 +1,16 @@
-// gaohehui.c ¸ßºÍ»İ
+// gaohehui.c é«˜å’Œæƒ 
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("Ğ¡Ñà", ({ "xiao yan", "xiaoyan" }));
+	set_name("å°ç‡•", ({ "xiao yan", "xiaoyan" }));
 	set("str", 20);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("age", 22);
-            set("title", "Å£Èâ¹İĞ¡ÀÏ°å");
-	set("long", "ËıÊÇÅ£Èâ¹İĞ¡ÀÏ°å¡£\n");
+            set("title", "ç‰›è‚‰é¦†å°è€æ¿");
+	set("long", "å¥¹æ˜¯ç‰›è‚‰é¦†å°è€æ¿ã€‚\n");
 	set("combat_exp", 250);
 	set("attitude", "friendly");
 	set("vendor_goods", ({

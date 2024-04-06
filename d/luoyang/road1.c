@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "��ٵ�");
+	set("short",  "大官道");
 	set("long",  @LONG
-����һ��������ֱ�Ĺٵ�������ݵ���ʮ�����ۡ�����ԶԶ���Կ���
-���ݵĳ�ԫ�ˣ���������ͨ����ԭ�Ĵ����
+这是一条宽阔笔直的官道，足可容得下十马并驰。东边远远可以看到
+扬州的城垣了，西面则是通往中原的大道。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"east" : "/d/city/ximenroad",

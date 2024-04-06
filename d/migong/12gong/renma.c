@@ -4,19 +4,19 @@ inherit ROOM;
 int block_cmd(string);
 void create ()
 {
-        set ("short", "µÚ¾Å¹¬ÈËÂí×ù");
+        set ("short", "ç¬¬ä¹å®«äººé©¬åº§");
         set ("long",
              @LONG
                          :$?
                           :X$$?
                        :uW$$$M
-                    :!M$#$$$$~ ÉäÊÖ×ù³ÊÏÖµÄÊÇ°ëÈË°ëÂíµÄÐÍÌ¬£¬¾ßÓÐ¶¯ÎïºÍÈËÀà
-                       :W$M$? Ë«ÖØÃæÄ¿£¬ÊÇ¸ö×ÅÃûµÄÏÈÖª¡¢  Ò½ÉúºÍÑ§Õß¡£ËûÊÇÏ£
-                     :X$# ~R~ À°×ÅÃû´óÓ¢ÐÛ½ÜÉú (Jason)¡¢ÑÇÆëÀïË¹ (Achilles)ºÍ
-                    :W$"   ~ ÑÇÄáË¹   (Aeneas)µÄ¸§ÑøÕß¡£´«ËµËûÊÇ¿¨ÂÞÀ­Ë¹(Cron
-                   x$M  us)ºÍì³À³À­ (Philyra)Ö®×Ó ,Ò²ÊÇÖæË¹µÄ¸¸Ç×¡£ËûÊÇÔÚÊÜ¾ª
-                 :H$"  ÏÅáá£¬°Ñ×Ô¼º±äÎªÂíÉí£¬ÆäÄ¸ì³À³À­ÊÜ²»ÁË¶ù×Ó°ëÈË°ëÂíµÄ
-                x$$~   ¹ÖÄ£Ñù£¬±ã±ä³ÉÁËÒ»¿ÃÆÐÌáÊ÷¡£
+                    :!M$#$$$$~ å°„æ‰‹åº§å‘ˆçŽ°çš„æ˜¯åŠäººåŠé©¬çš„åž‹æ€ï¼Œå…·æœ‰åŠ¨ç‰©å’Œäººç±»
+                       :W$M$? åŒé‡é¢ç›®ï¼Œæ˜¯ä¸ªç€åçš„å…ˆçŸ¥ã€  åŒ»ç”Ÿå’Œå­¦è€…ã€‚ä»–æ˜¯å¸Œ
+                     :X$# ~R~ è…Šç€åå¤§è‹±é›„æ°ç”Ÿ (Jason)ã€äºšé½é‡Œæ–¯ (Achilles)å’Œ
+                    :W$"   ~ äºšå°¼æ–¯   (Aeneas)çš„æŠšå…»è€…ã€‚ä¼ è¯´ä»–æ˜¯å¡ç½—æ‹‰æ–¯(Cron
+                   x$M  us)å’Œæ–èŽ±æ‹‰ (Philyra)ä¹‹å­ ,ä¹Ÿæ˜¯å®™æ–¯çš„çˆ¶äº²ã€‚ä»–æ˜¯åœ¨å—æƒŠ
+                 :H$"  å“å¾Œï¼ŒæŠŠè‡ªå·±å˜ä¸ºé©¬èº«ï¼Œå…¶æ¯æ–èŽ±æ‹‰å—ä¸äº†å„¿å­åŠäººåŠé©¬çš„
+                x$$~   æ€ªæ¨¡æ ·ï¼Œä¾¿å˜æˆäº†ä¸€æ£µè©ææ ‘ã€‚
     :::: :: : :W$?:: : :
     $$$$$$$$$$$$$$$$$$$$?
     M$$$$$$$$$$$$$$$$$$$?~
@@ -41,7 +41,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
         if ( present("ren ma") && dir == "northup" )
-        return notify_fail("ÖæË¹Ð¦µÀ:ÏÈ¹ýÎÒÕâ¹ØÔÙËµ£¡\n");
+        return notify_fail("å®™æ–¯ç¬‘é“:å…ˆè¿‡æˆ‘è¿™å…³å†è¯´ï¼\n");
         return ::valid_leave(me, dir);
 }
 void init()

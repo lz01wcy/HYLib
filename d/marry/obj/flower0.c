@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-    set_name(HIR "ÏÊ»¨" NOR, ({ "flower" }) );
+    set_name(HIR "é²œèŠ±" NOR, ({ "flower" }) );
     set_weight(3);
     if( clonep() )
         set_default_object(__FILE__);
         else {
-        set("long", "Ò»¶äÏÊ»¨¡£\n");
-                set("unit", "¶ä");
+        set("long", "ä¸€æœµé²œèŠ±ã€‚\n");
+                set("unit", "æœµ");
                 set("value", 0);
          }
     setup();

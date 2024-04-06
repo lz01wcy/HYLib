@@ -12,13 +12,13 @@ void init()
 }
 void create()
 {
-	set_name("Å£Æ¤¾Æ´ü", ({ "jiudai", "dai" }) );
+	set_name("ç‰›çš®é…’è¢‹", ({ "jiudai", "dai" }) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÅ£Æ¤·ìµÄ´ó¾Æ´ü£¬´ó¸Å×°µÃ°Ë¡¢¾ÅÉıµÄ¾Æ¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç‰›çš®ç¼çš„å¤§é…’è¢‹ï¼Œå¤§æ¦‚è£…å¾—å…«ã€ä¹å‡çš„é…’ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 20);
 		set("max_liquid", 15);
 	}
@@ -27,7 +27,7 @@ void create()
 	// in each cloned copy.
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "»¹Ñô¾Æ",
+		"name": "è¿˜é˜³é…’",
 		"remaining": 5,
 		"drunk_apply": 6,
 	]) );
@@ -38,7 +38,7 @@ int do_eat(string arg)
    int foo;
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
    if(this_player()->is_ghost())
    {
 	this_player()->reincarnate();
@@ -46,8 +46,8 @@ int do_eat(string arg)
 	this_player()->move(revive_loc[random(sizeof(revive_loc))]);
 	this_player()->set("startroom", base_name(environment(this_player())));
 	message("vision",
-                "ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°£¬²»¹ıÄÇÈËÓ°ÓÖºÃÏñÒÑ¾­ÔÚÄÇÀï\n"
-                "ºÜ¾ÃÁË£¬Ö»ÊÇÄãÒ»Ö±Ã»·¢¾õ¡£\n", environment(this_player()), this_player());
+                "ä½ å¿½ç„¶å‘ç°å‰é¢å¤šäº†ä¸€ä¸ªäººå½±ï¼Œä¸è¿‡é‚£äººå½±åˆå¥½åƒå·²ç»åœ¨é‚£é‡Œ\n"
+                "å¾ˆä¹…äº†ï¼Œåªæ˜¯ä½ ä¸€ç›´æ²¡å‘è§‰ã€‚\n", environment(this_player()), this_player());
    }	
   return 1;
 }

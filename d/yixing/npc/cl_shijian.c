@@ -1,4 +1,4 @@
-// /d/yixing/npc/shijian.c ÊÌ½£
+// /d/yixing/npc/shijian.c ä¾å‰‘
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>;
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÊÌ½£", ({ "shijian" }));
-	set("long","ËıÊÇ³¤ÀÖ°ïÖ÷µÄĞ¡Ñ¾÷ß£¬Á³ÅÓÂÔ×÷Ô²ĞÎ£¬µ¹Ò²åüÃÄ¿ÉÏ²¡£\nËıÍ··¢ÂÔ¼ûÅîËÉ£¬Ñ©°×µÄ³à×ãÌ¤ÔÚÒ»Ë«Ğå»¨ÍÏĞ¬ÖĞ¡£\n");
-	set("gender", "Å®ĞÔ");
+	set_name("ä¾å‰‘", ({ "shijian" }));
+	set("long","å¥¹æ˜¯é•¿ä¹å¸®ä¸»çš„å°ä¸«é¬Ÿï¼Œè„¸åºç•¥ä½œåœ†å½¢ï¼Œå€’ä¹Ÿå¦©åªšå¯å–œã€‚\nå¥¹å¤´å‘ç•¥è§è“¬æ¾ï¼Œé›ªç™½çš„èµ¤è¶³è¸åœ¨ä¸€åŒç»£èŠ±æ‹–é‹ä¸­ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 16);
 	set("attitude", "friendly");
 	set("shen_type", 1);

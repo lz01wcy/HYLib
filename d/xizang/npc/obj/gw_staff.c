@@ -3,18 +3,18 @@
 inherit STAFF; 
 void create()
 {
-        set_name("·ÉÁú°ô" , ({ "staff" }) );
+        set_name("é£é¾™æ£’" , ({ "staff" }) );
         set_weight(80000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "Ò»ÌõÓÖ´ÖÓÖ³¤µÄ¾«¸ÖÕÈ£¬ÉÏÃæÏâÖø¼¸ÌõÁú¡£\n");
+                set("unit", "æ¡");
+                set("long", "ä¸€æ¡åˆç²—åˆé•¿çš„ç²¾é’¢æ–ï¼Œä¸Šé¢é•¶è‘—å‡ æ¡é¾™ã€‚\n");
         set("value", 6000);
                 set("rigidity", 50);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»¸ùÉÁÁÁµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹é—ªäº®çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         } 
         ::init_staff(75);
 }   

@@ -5,11 +5,11 @@ inherit ROOM;
 string look_gaoshi();
 void create()
 {
-	set("short", "Ϫ��С·");
+	set("short", "溪岸小路");
 	set("long", @LONG
-ϪԴת��������ˮ���������������ǰ��վ�ڲ����ձ�ǰ������
-佻�Ϫ���������Ư׹����Ů���佻�ʱ�ڣ�����һ����ζ��������
-���ǡ���������լ���ٻ�̶��ׯ���ĶŸ������ˡ�
+溪源转北，阵阵水响带着你来到草堂前。站在草堂照壁前，回首
+浣花溪，想象万红漂坠，少女清歌浣花时节，别是一般滋味。西北边
+就是“万里桥西宅，百花潭北庄”的杜甫草堂了。
 LONG );
 	set("outdoors", "chengdu");
 	set("exits", ([

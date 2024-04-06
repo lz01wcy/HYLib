@@ -1,4 +1,4 @@
-// bamboo_stick.c ÓñÖñ°ô
+// bamboo_stick.c ç‰ç«¹æ£’
 #include <ansi.h>
 #include <weapon.h>
 inherit STAFF;
@@ -6,13 +6,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(GRN"ÓñÖñ°ô"NOR, ({"yuzhu bang", "bang", "stick"}));
+        set_name(GRN"ç‰ç«¹æ£’"NOR, ({"yuzhu bang", "bang", "stick"}));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Ò»¸ù·º×Åµ­µ­Çà¹âµÄÖñÕÈ¡£\n");
+                set("unit", "æ ¹");
+                set("long", "ä¸€æ ¹æ³›ç€æ·¡æ·¡é’å…‰çš„ç«¹æ–ã€‚\n");
                 set("value", 1000);
                 set("rigidity", 7);
                 set("material", "bamboo");
@@ -26,8 +26,8 @@ void create()
                         "difficulty": 25,
                              "max_skill": 1,              
                 ]) );
-                set("wield_msg", "$N³é³öÒ»¸ùÇà¹âÉÁÉÁµÄÓñÖñÕÈ×¥ÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N°ÑÊÖÖĞµÄÓñÖñÕÈ²å»ØÑüÖĞ¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹é’å…‰é—ªé—ªçš„ç‰ç«¹æ–æŠ“åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$NæŠŠæ‰‹ä¸­çš„ç‰ç«¹æ–æ’å›è…°ä¸­ã€‚\n");
                set("treasure",1);
         }
         init_staff(80);

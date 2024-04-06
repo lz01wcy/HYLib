@@ -2,20 +2,20 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIW "±øÆ÷¼Ü" NOR, ({ "bingqi jia", "jia" }) );         
+        set_name(HIW "å…µå™¨æ¶" NOR, ({ "bingqi jia", "jia" }) );         
         set_weight(30000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else{
-        set("unit", "¸ö");
-        set("long", "ÕâÊÇÒ»¸ö×¨ÃÅÓÃÀ´·Å±øÆ÷µÄ¼Ü×Ó¡£
-ÀïÃæÓĞ£º\n\n"
-                   HIY"½ğÁú¶á"NOR"(duo) \n\n" 
-                   HIM"Àë»ê×ÓÄ¸»·"NOR"(huan)\n\n" 
-                   HIW"Íò×ÖÃ·»¨¶á"NOR"(huan2)
+        set("unit", "ä¸ª");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªä¸“é—¨ç”¨æ¥æ”¾å…µå™¨çš„æ¶å­ã€‚
+é‡Œé¢æœ‰ï¼š\n\n"
+                   HIY"é‡‘é¾™å¤º"NOR"(duo) \n\n" 
+                   HIM"ç¦»é­‚å­æ¯ç¯"NOR"(huan)\n\n" 
+                   HIW"ä¸‡å­—æ¢…èŠ±å¤º"NOR"(huan2)
 \n");
-//                   HIY"Àë»ê×ÓÄ¸»·"NOR(huan)\n\n" 
-//                   HIY"Íò×ÖÃ·»¨¶á"NOR(huan2)
+//                   HIY"ç¦»é­‚å­æ¯ç¯"NOR(huan)\n\n" 
+//                   HIY"ä¸‡å­—æ¢…èŠ±å¤º"NOR(huan2)
 
         set("material","wood");
         set("weapon",3);
@@ -35,26 +35,26 @@ int do_get(string arg)
   string arg1,arg2;
   me=this_player();
   if(!arg || sscanf(arg, "%s from %s", arg1, arg2)!=2)
-   return notify_fail("ÃüÁî¸ñÊ½: na <±øÆ÷Ãû³Æ> from jia¡£\n");
+   return notify_fail("å‘½ä»¤æ ¼å¼: na <å…µå™¨åç§°> from jiaã€‚\n");
   if (arg2!="jia")
-     return notify_fail("ÃüÁî¸ñÊ½: na <±øÆ÷Ãû³Æ> from jia¡£\n");
-  if(me->query_temp("tz_marks/ÄÃ2"))
-       return notify_fail("ÄãÒÑ¾­ÄÃ¹ıÁË¡£\n");
+     return notify_fail("å‘½ä»¤æ ¼å¼: na <å…µå™¨åç§°> from jiaã€‚\n");
+  if(me->query_temp("tz_marks/æ‹¿2"))
+       return notify_fail("ä½ å·²ç»æ‹¿è¿‡äº†ã€‚\n");
     switch (arg1){
           case "duo":      ob=new(__DIR__"jinlong-duo"); break;             
           case "huan":       ob=new(__DIR__"zimu-huan"); break;
           case "huan2":       ob=new(__DIR__"wanzi-duo"); break;
           default :
-                 return notify_fail("Ã»ÓĞÕâÖÖ±øÆ÷¡£\n");
+                 return notify_fail("æ²¡æœ‰è¿™ç§å…µå™¨ã€‚\n");
           }
 if (this_object()->query("weapon") <1)
-return notify_fail("±¦ÎïÒÑ¾­±»ÈËÄÃ×ßÁË¡£\n");
+return notify_fail("å®ç‰©å·²ç»è¢«äººæ‹¿èµ°äº†ã€‚\n");
      if(!ob)
-       return notify_fail("±¦ÎïÒÑ¾­±»ÈËÄÃ×ßÁË¡£\n");
+       return notify_fail("å®ç‰©å·²ç»è¢«äººæ‹¿èµ°äº†ã€‚\n");
      if(ob) ob->move(me);
-       message_vision("$N´Ó±øÆ÷¼ÜÉÏÄÃ³öÒ»¼ş$n¡£\n",me, ob); 
+       message_vision("$Nä»å…µå™¨æ¶ä¸Šæ‹¿å‡ºä¸€ä»¶$nã€‚\n",me, ob); 
        this_object()->add("weapon",-1);
-       me->set_temp("tz_marks/ÄÃ2",1);
+       me->set_temp("tz_marks/æ‹¿2",1);
        return 1;
 
 

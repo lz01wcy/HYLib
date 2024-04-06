@@ -7,11 +7,11 @@ inherit ROOM;
 #include "shiproom.c"
 void create()
 {
-  	set ("short", "ÑïÖÝ½­¶É");
+  	set ("short", "æ‰¬å·žæ±Ÿæ¸¡");
   	set ("long", @LONG
-ÕâÀïÊÇÍ¨ÍùÖÐÖÝ³ÇµÄ¶É¿Ú£¬ÄãÇ°ÃæµÄ¹ö¹ö³¤½­ (river)×Ç
-Á÷¹ö¹ö£¬ÍòÖÛ¾º·¢¡£Á½°¶¶É´¬À´À´ÍùÍù¡£ÏòÄÏ¾ÍÊÇÖÐÖÝ¸®¡£½­
-±ßÍ£×ÅÐ©Ð¡´¬¡£±±±ßÒ»ÌõÐ¡Â·Í¨ÍùÑïÖÝµÄÎ÷ÃÅ¡£
+è¿™é‡Œæ˜¯é€šå¾€ä¸­å·žåŸŽçš„æ¸¡å£ï¼Œä½ å‰é¢çš„æ»šæ»šé•¿æ±Ÿ (river)æµŠ
+æµæ»šæ»šï¼Œä¸‡èˆŸç«žå‘ã€‚ä¸¤å²¸æ¸¡èˆ¹æ¥æ¥å¾€å¾€ã€‚å‘å—å°±æ˜¯ä¸­å·žåºœã€‚æ±Ÿ
+è¾¹åœç€äº›å°èˆ¹ã€‚åŒ—è¾¹ä¸€æ¡å°è·¯é€šå¾€æ‰¬å·žçš„è¥¿é—¨ã€‚
 LONG);
 
         set("arrive_room", "/d/zhongzhou/zhongzhoudu");

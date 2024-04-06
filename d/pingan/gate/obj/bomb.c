@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name("»ğÅÚÍè", ({ "bomb" , "»ğÅÚÍè"}) );
+	set_name("ç«ç‚®ä¸¸", ({ "bomb" , "ç«ç‚®ä¸¸"}) );
 	set_weight(5000);
 	set("explosive",1);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "Ò»¸öÓĞÇ¿´ó±¬Õ¨Á¦µÄ»ğÅÚÍè\n");
+		set("unit", "ä¸ª");
+		set("long", "ä¸€ä¸ªæœ‰å¼ºå¤§çˆ†ç‚¸åŠ›çš„ç«ç‚®ä¸¸\n");
 		set("value", 1000);
 	}
 }

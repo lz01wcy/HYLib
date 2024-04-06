@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-		set("short", YEL"ÑÒ¶´"NOR);
+		set("short", YEL"å²©æ´"NOR);
 	set("long", YEL @LONG
-    ÖÜÎ§¶¼ÊÇ»ÆºÖÉ«µÄÑÒÊ¯£¬¸Ğ¾õÉÏÒÑ¾­ÔÚµØÏÂºÜÉîµÄµØ·½ÁË¡£ 
+    å‘¨å›´éƒ½æ˜¯é»„è¤è‰²çš„å²©çŸ³ï¼Œæ„Ÿè§‰ä¸Šå·²ç»åœ¨åœ°ä¸‹å¾ˆæ·±çš„åœ°æ–¹äº†ã€‚ 
 LONG NOR);
 	set("exits", ([
 		"north" : __DIR__"dong102",
@@ -26,9 +26,9 @@ int valid_leave(object me, string dir)
 {
         me = this_player();
         if ( dir == "north" && objectp(present("sha shou", environment(me))))
-                return notify_fail(HIR"É±ÊÖÖ®Íõ"NOR"ÒõĞ¦µÀ£º¡°¼ÈÈ»Äã·¢ÏÖÁËÕâÀï£¬»¹Ïë»î×Å³öÈ¥?\n");
+                return notify_fail(HIR"æ€æ‰‹ä¹‹ç‹"NOR"é˜´ç¬‘é“ï¼šâ€œæ—¢ç„¶ä½ å‘ç°äº†è¿™é‡Œï¼Œè¿˜æƒ³æ´»ç€å‡ºå»?\n");
        if ( dir == "west" && objectp(present("sha shou", environment(me))))
-                return notify_fail(HIR"É±ÊÖÖ®Íõ"NOR"ÒõĞ¦µÀ£º¡°¼ÈÈ»Äã·¢ÏÖÁËÕâÀï£¬»¹Ïë»î×Å³öÈ¥?¡±\n");
+                return notify_fail(HIR"æ€æ‰‹ä¹‹ç‹"NOR"é˜´ç¬‘é“ï¼šâ€œæ—¢ç„¶ä½ å‘ç°äº†è¿™é‡Œï¼Œè¿˜æƒ³æ´»ç€å‡ºå»?â€\n");
 
         return ::valid_leave(me, dir);
 }

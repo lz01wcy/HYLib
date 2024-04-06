@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÏòÑôÏï");
+	set("short", "å‘é˜³å··");
 	set("long", @LONG
-ÕâÀïÊÇ¸£Öİ³ÇÎ÷ÏòÑôÏï¡£±±ÃæÓĞÒ»ËùÆÆ°ÜµÄÕ¬×Ó¡£Î÷
-ÃæÓĞÒ»¼ÒÔÓ»õÆÌ£¬×¨ÂôÅ®ÈË¼ÒÓÃµÄ¶«Î÷£¬ÄĞÈË²»¿ÉÒÔ½øÈ¥¡£
+è¿™é‡Œæ˜¯ç¦å·åŸè¥¿å‘é˜³å··ã€‚åŒ—é¢æœ‰ä¸€æ‰€ç ´è´¥çš„å®…å­ã€‚è¥¿
+é¢æœ‰ä¸€å®¶æ‚è´§é“ºï¼Œä¸“å–å¥³äººå®¶ç”¨çš„ä¸œè¥¿ï¼Œç”·äººä¸å¯ä»¥è¿›å»ã€‚
 LONG );
 
 	set("exits", ([
@@ -23,8 +23,8 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        if (dir == "west" && ((string)me->query("gender") =="ÄĞĞÔ") && !wizardp(me))
-                return notify_fail("Äã¸ö´óÀÏÒ¯ÃÇ¶ùÈ¥ÄÇ¸ÉÂï£¡£¡\n");
+        if (dir == "west" && ((string)me->query("gender") =="ç”·æ€§") && !wizardp(me))
+                return notify_fail("ä½ ä¸ªå¤§è€çˆ·ä»¬å„¿å»é‚£å¹²å˜›ï¼ï¼\n");
         return 1;
 }
 

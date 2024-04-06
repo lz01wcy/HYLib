@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ó©»ğ³æ", ({ "cong" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("è¤ç«è™«", ({ "cong" }) );
+        set("race", "é‡å…½");
         set("age", 1);
-        set("long", "Ò»Ö»ÁÁ¾§¾§µÄÓ©»ğ³æ\n");
+        set("long", "ä¸€åªäº®æ™¶æ™¶çš„è¤ç«è™«\n");
         set("max_kee", 1);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set_skill("dodge", 200);

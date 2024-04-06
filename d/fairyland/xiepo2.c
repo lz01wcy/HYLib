@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "Ñ©É½Ğ±ÆÂ");
+      set("short", "é›ªå±±æ–œå¡");
 	set("long", @LONG
-ÄãÊÖ½Å×ÅµØ£¬ÑØ×ÅÑ©É½Ğ±ÆÂ£¬Ò»²½Ò»²½Ïò×ÅÓĞÑô¹âÖ®´¦ÅÀÈ¥£¬µ«´ËÇÍ±Ú±¾
-¾Í¼«¶¸£¬¼ÓÉÏ¶³½á±ùÑ©£¬¸üÊÇ»¬ÁïÎŞ±È£¬Ò»²»Ğ¡ĞÄ¾Í»á»¬µø¡£
+ä½ æ‰‹è„šç€åœ°ï¼Œæ²¿ç€é›ªå±±æ–œå¡ï¼Œä¸€æ­¥ä¸€æ­¥å‘ç€æœ‰é˜³å…‰ä¹‹å¤„çˆ¬å»ï¼Œä½†æ­¤å³­å£æœ¬
+å°±æé™¡ï¼ŒåŠ ä¸Šå†»ç»“å†°é›ªï¼Œæ›´æ˜¯æ»‘æºœæ— æ¯”ï¼Œä¸€ä¸å°å¿ƒå°±ä¼šæ»‘è·Œã€‚
 LONG);
 	set("exits",([
 		"east" :  __DIR__"dashibi",
@@ -28,9 +28,9 @@ int do_climb(string arg)
 	object me = this_player();
 
 	if (arg == "west") {
-		message_vision("$NÏòÎ÷±ßÅÀÈ¥¡£\n", me);
+		message_vision("$Nå‘è¥¿è¾¹çˆ¬å»ã€‚\n", me);
 		me->move(__DIR__"xiepo1");
-		message("vision",me->name() + "ÅÀÁË¹ıÀ´¡£\n", environment(me), me);
+		message("vision",me->name() + "çˆ¬äº†è¿‡æ¥ã€‚\n", environment(me), me);
 		return 1;
 	}
 	return 0;

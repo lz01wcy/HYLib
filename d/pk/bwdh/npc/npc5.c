@@ -8,13 +8,13 @@ int ask_zhou();
 
 void create()
 {
-    set_name("Ð¡»ÆÒ©Ê¦", ({"huang yaoshi", "huang", "yaoshi"}));
-    set("title", "ÌÒ»¨µºÖ÷");
-    set("nickname", HIY "¶«Ð°" NOR );
-    set("gender", "ÄÐÐÔ");
+    set_name("å°é»„è¯å¸ˆ", ({"huang yaoshi", "huang", "yaoshi"}));
+    set("title", "æ¡ƒèŠ±å²›ä¸»");
+    set("nickname", HIY "ä¸œé‚ª" NOR );
+    set("gender", "ç”·æ€§");
     set("age", 42);
     set("long", 
-        "Ëû¾ÍÊÇÌÒ»¨µºÖ÷¡£ÐÐÊÂºÃ¶ñÈ«ÓÉ¼ºÐÄ£¬Òò´Ë±»ÈË³Æ×÷¡¸¶«Ð°¡¹¡£\n");
+        "ä»–å°±æ˜¯æ¡ƒèŠ±å²›ä¸»ã€‚è¡Œäº‹å¥½æ¶å…¨ç”±å·±å¿ƒï¼Œå› æ­¤è¢«äººç§°ä½œã€Œä¸œé‚ªã€ã€‚\n");
     set("attitude", "peaceful");
     set("class", "scholar");
 	
@@ -25,12 +25,12 @@ void create()
 
     set("chat_chance", 1);
     set("chat_msg", ({
-        "»ÆÒ©Ê¦Ì¾ÁË¿ÚÆøµÀ£º¡°°¦ ¡­¡­ ÈØ¶ùÕâ¿àÃüµÄº¢×Ó£¬´ÓÐ¡¾ÍÃ»ÁËÄï ¡­¡­¡±\n",
-        "»ÆÒ©Ê¦µÍÍ·³ÁË¼£¬ÓÆÈ»²»Óï¡£\n",
+        "é»„è¯å¸ˆå¹äº†å£æ°”é“ï¼šâ€œå”‰ â€¦â€¦ è“‰å„¿è¿™è‹¦å‘½çš„å­©å­ï¼Œä»Žå°å°±æ²¡äº†å¨˜ â€¦â€¦â€\n",
+        "é»„è¯å¸ˆä½Žå¤´æ²‰æ€ï¼Œæ‚ ç„¶ä¸è¯­ã€‚\n",
     }));
     set("inquiry", ([
-        "»ÆÈØ"     : "Äã¸ÒÖ±³ÆÎÒÅ®¶ùµÄ¹ëÃû£¿ \n",
-        "¾ÅÒõÕæ¾­" : "Èç¹ûÄãÄÜ°ïÎÒÈ¡µÃÕæ¾­ÉÏ²á£¬ÎÒÒ»¶¨ÖØÖØÐ»Äã¡£\n",
+        "é»„è“‰"     : "ä½ æ•¢ç›´ç§°æˆ‘å¥³å„¿çš„é—ºåï¼Ÿ \n",
+        "ä¹é˜´çœŸç»" : "å¦‚æžœä½ èƒ½å¸®æˆ‘å–å¾—çœŸç»ä¸Šå†Œï¼Œæˆ‘ä¸€å®šé‡é‡è°¢ä½ ã€‚\n",
     ]));
 
     set("qi", 5000);
@@ -45,27 +45,27 @@ void create()
     set("combat_exp", 1500000);
     set("score", 0);
 	 
-    set_skill("leg", 300);             // »ù±¾ÄÚ¹¦
-    set_skill("force", 200);             // »ù±¾ÄÚ¹¦
-    set_skill("bibo-shengong", 300);     // ±Ì²¨Éñ¹¦
-    set_skill("claw", 200);              // »ù±¾×¦·¨
-    set_skill("hand", 200);              // »ù±¾ÊÖ·¨
-    set_skill("finger", 200);            // »ù±¾Ö¸·¨
-    set_skill("tanzhi-shentong", 300);   // µ¯Ö¸ÉñÍ¨
-    set_skill("unarmed", 200);           // »ù±¾È­½Å
-    set_skill("strike", 200);            // »ù±¾È­½Å
-    set_skill("luoying-zhang", 300);     // ÂäÓ¢Éñ½£ÕÆ
-    set_skill("xuanfeng-leg", 300);      // Ðý·çÉ¨Ò¶ÍÈ
-    set_skill("dodge", 200);             // »ù±¾¶ãÉÁ
-    set_skill("anying-fuxiang", 300);    // °µÓ°¸¡Ïã
-    set_skill("parry", 200);             // »ù±¾ÕÐ¼Ü
-    set_skill("sword", 200);             // »ù±¾½£·¨
-    set_skill("luoying-shenjian", 300);  // ÂäÓ¢Éñ½£
-    set_skill("yuxiao-jian", 300);       // Óñóï½£·¨
-    set_skill("lanhua-shou", 300);       // À¼»¨·÷Ñ¨ÊÖ
-    set_skill("qimen-wuxing",350);       // ÆæÃÅÎåÐÐ
-    set_skill("count",300);              // ÒõÑô°ËØÔ
-    set_skill("literate",300);           // ¶ÁÊéÊ¶×Ö
+    set_skill("leg", 300);             // åŸºæœ¬å†…åŠŸ
+    set_skill("force", 200);             // åŸºæœ¬å†…åŠŸ
+    set_skill("bibo-shengong", 300);     // ç¢§æ³¢ç¥žåŠŸ
+    set_skill("claw", 200);              // åŸºæœ¬çˆªæ³•
+    set_skill("hand", 200);              // åŸºæœ¬æ‰‹æ³•
+    set_skill("finger", 200);            // åŸºæœ¬æŒ‡æ³•
+    set_skill("tanzhi-shentong", 300);   // å¼¹æŒ‡ç¥žé€š
+    set_skill("unarmed", 200);           // åŸºæœ¬æ‹³è„š
+    set_skill("strike", 200);            // åŸºæœ¬æ‹³è„š
+    set_skill("luoying-zhang", 300);     // è½è‹±ç¥žå‰‘æŽŒ
+    set_skill("xuanfeng-leg", 300);      // æ—‹é£Žæ‰«å¶è…¿
+    set_skill("dodge", 200);             // åŸºæœ¬èº²é—ª
+    set_skill("anying-fuxiang", 300);    // æš—å½±æµ®é¦™
+    set_skill("parry", 200);             // åŸºæœ¬æ‹›æž¶
+    set_skill("sword", 200);             // åŸºæœ¬å‰‘æ³•
+    set_skill("luoying-shenjian", 300);  // è½è‹±ç¥žå‰‘
+    set_skill("yuxiao-jian", 300);       // çŽ‰ç®«å‰‘æ³•
+    set_skill("lanhua-shou", 300);       // å…°èŠ±æ‹‚ç©´æ‰‹
+    set_skill("qimen-wuxing",350);       // å¥‡é—¨äº”è¡Œ
+    set_skill("count",300);              // é˜´é˜³å…«å¦
+    set_skill("literate",300);           // è¯»ä¹¦è¯†å­—
 	
     map_skill("force"  , "bibo-shengong");
     map_skill("finger" , "tanzhi-shentong");
@@ -94,13 +94,13 @@ void create()
                 (: perform_action, "finger.lingxi" :),                
         }));
     set("inquiry", ([
-        "ÃØ¼®" : (: ask_me :),
-        "Ðý·çÉ¨Ò¶ÍÈ·¨" : (: ask_me :),
-      	"ÖÜ²®Í¨": (: ask_zhou :),
+        "ç§˜ç±" : (: ask_me :),
+        "æ—‹é£Žæ‰«å¶è…¿æ³•" : (: ask_me :),
+      	"å‘¨ä¼¯é€š": (: ask_zhou :),
     ]));
 
 
-    create_family("ÌÒ»¨µº", 1, "µºÖ÷");
+    create_family("æ¡ƒèŠ±å²›", 1, "å²›ä¸»");
     setup();
 	
     carry_object("kungfu/class/taohua/obj/yuxiao")->wield();

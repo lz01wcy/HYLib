@@ -6,23 +6,23 @@ inherit ITEM;
 
 void create()
 {
-	string *pname = ({"½õÃæ", "Ë¿Ðå", "¶ÐÃæ","¶ìÈÞ" });
-	string *mname = ({"", "´ó", "¿¿±³", "°²ÀÖ", "·öÊÖ", "ÕÛµþ" });
-	string *lname = ({"³¤ÒÎ", "ÌÉÒÎ" });
+	string *pname = ({"é”¦é¢", "ä¸ç»£", "ç¼Žé¢","é¹…ç»’" });
+	string *mname = ({"", "å¤§", "é èƒŒ", "å®‰ä¹", "æ‰¶æ‰‹", "æŠ˜å " });
+	string *lname = ({"é•¿æ¤…", "èººæ¤…" });
 	string name;
 	string zname = lname[random(2)];
 	name = sprintf("%s%s%s",pname[random(4)],mname[random(6)],zname);
 	set_name( name, ({ "chair" }));
 	set("class", zname);
 	set_weight(30000);
-	set("long", "ÕâÊÇÒ»ÕÅÒÎ×Ó¡£\n" );
-	set("no_sell", "ÕâÑù¶«Î÷²»ÄÜËæ±ãÂòÂô");
-	set("no_get","¹«×ÓËµÁË,ÌÉÒÎÊÇ¹«¼ÒµÄ²Æ²ú,ÈÎºÎÈË¶¼²»ÄÜÄÃ×ß");
+	set("long", "è¿™æ˜¯ä¸€å¼ æ¤…å­ã€‚\n" );
+	set("no_sell", "è¿™æ ·ä¸œè¥¿ä¸èƒ½éšä¾¿ä¹°å–");
+	set("no_get","å…¬å­è¯´äº†,èººæ¤…æ˜¯å…¬å®¶çš„è´¢äº§,ä»»ä½•äººéƒ½ä¸èƒ½æ‹¿èµ°");
 	if( clonep() )
 		set_default_object(__FILE__);
 	else
 	{
-		set("unit", "ÕÅ");
+		set("unit", "å¼ ");
 		set("material", "wood");
 		set("value", 2000);
 //		set("amount",30);
@@ -42,23 +42,23 @@ int do_sit(string arg)
 	string str;
 
 	if( !arg || arg == "" ) 
-		return notify_fail("ÄãÒª×øÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åä»€ä¹ˆï¼Ÿ\n");
 	ob = this_object();
 	who = this_player();
-	if( arg != "chair" && arg != "ÒÎ×Ó" && arg != ob->name() )
-		return notify_fail("ÕâÀïÃ»ÓÐ" + arg + "\n");
+	if( arg != "chair" && arg != "æ¤…å­" && arg != ob->name() )
+		return notify_fail("è¿™é‡Œæ²¡æœ‰" + arg + "\n");
 	if( who->query_temp("rode") )
-		return notify_fail("ÄãÏÖÔÚ²»ÔÚµØÉÏ£¬ÔõÃ´×ø£¿\n");
+		return notify_fail("ä½ çŽ°åœ¨ä¸åœ¨åœ°ä¸Šï¼Œæ€Žä¹ˆåï¼Ÿ\n");
 	if( (int)ob->query("rode") >= 3 ) 
-		return notify_fail( ob->name() + "ÒÑ¾­×øÂúÁË£¡\n");
-	if( ob->query("class") == "ÌÉÒÎ" && ob->query("tang") ) 
-		return notify_fail( ob->name() + "ÒÑ¾­ÓÐÈËÌÉÔÚÉÏÃæÁË£¡\n"); 
+		return notify_fail( ob->name() + "å·²ç»åæ»¡äº†ï¼\n");
+	if( ob->query("class") == "èººæ¤…" && ob->query("tang") ) 
+		return notify_fail( ob->name() + "å·²ç»æœ‰äººèººåœ¨ä¸Šé¢äº†ï¼\n"); 
 
 	who->set_temp("rode/type", "sit");
-	who->set_temp("rode/desc", "×øÔÚ" + ob->name() + "ÉÏ");
+	who->set_temp("rode/desc", "ååœ¨" + ob->name() + "ä¸Š");
 	ob->add("rode",1);
-	ob->set("no_get", "ÓÐÈË×øÔÚÉÏÃæÄÄ£¡\n");
-	message_vision("$NÒ»Æ¨¹É×øÔÚÁË" + ob->name() + "ÉÏ¡£\n", who);
+	ob->set("no_get", "æœ‰äººååœ¨ä¸Šé¢å“ªï¼\n");
+	message_vision("$Nä¸€å±è‚¡ååœ¨äº†" + ob->name() + "ä¸Šã€‚\n", who);
 	return 1;
 }
 
@@ -70,7 +70,7 @@ int do_stand()
 	ob = this_object();
 	who = this_player();
 	if( who->query_temp("rode/type") != "sit")   
-		return notify_fail("Äã±¾À´¾ÍÃ»ÓÐ×ø×Å£¡\n");
+		return notify_fail("ä½ æœ¬æ¥å°±æ²¡æœ‰åç€ï¼\n");
 	who->delete_temp("rode");
 	if( ob->query("tang") ) ob->delete("tang");
 	else if( ob->query("rode") ) ob->add("rode", -1);
@@ -78,11 +78,11 @@ int do_stand()
 	max_qi = (int)who->query("max_qi");
 	if( (int)who->query("qi") > ( max_qi - max_qi/4) )                 
 		if( random(1) == 1) 
-			message_vision("$NÒ»¸öÀðÓã´òÍ¦´Ó" + ob->name() + "ÉÏµ¯ÁËÆðÀ´¡£\n", who);
+			message_vision("$Nä¸€ä¸ªé²¤é±¼æ‰“æŒºä»Ž" + ob->name() + "ä¸Šå¼¹äº†èµ·æ¥ã€‚\n", who);
 		else
-			message_vision("$N¡°à²¡±µÄÒ»Éù£¬´Ó" + ob->name() + "ÉÏÕ¾ÁËÆðÀ´¡£\n", who);
+			message_vision("$Nâ€œå—–â€çš„ä¸€å£°ï¼Œä»Ž" + ob->name() + "ä¸Šç«™äº†èµ·æ¥ã€‚\n", who);
 	else
-		message_vision("$NÀÁÑóÑóµØÉìÁËÉìÊÖ£¬´Ó" + ob->name() + "ÉÏ»º»ºµØÕ¾ÁËÆðÀ´¡£\n", who);
+		message_vision("$Næ‡’æ´‹æ´‹åœ°ä¼¸äº†ä¼¸æ‰‹ï¼Œä»Ž" + ob->name() + "ä¸Šç¼“ç¼“åœ°ç«™äº†èµ·æ¥ã€‚\n", who);
 	return 1;
 }
 int do_tang(string arg)
@@ -91,22 +91,22 @@ int do_tang(string arg)
 	string str;
 
 	if( !arg || arg == "" ) 
-		return notify_fail("ÄãÒªÌÉÔÚÊ²Ã´ÉÏ£¿\n");
+		return notify_fail("ä½ è¦èººåœ¨ä»€ä¹ˆä¸Šï¼Ÿ\n");
 	ob = this_object();
 	who = this_player();
-	if( arg != "chair" && arg != "ÒÎ×Ó" && arg != ob->name() )
-		return notify_fail("ÕâÀïÃ»ÓÐ" + arg + "\n");
+	if( arg != "chair" && arg != "æ¤…å­" && arg != ob->name() )
+		return notify_fail("è¿™é‡Œæ²¡æœ‰" + arg + "\n");
 	if( who->query_temp("rode") )
-		return notify_fail("ÄãÏÖÔÚÃ»Õ¾×Å£¬²»ÄÜÌÉÏÂ¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡ç«™ç€ï¼Œä¸èƒ½èººä¸‹ã€‚\n");
 	if( ob->query("tang") )                 
-		return notify_fail( ob->name() + "ÒÑ¾­ÓÐÈËÌÉÁË£¡\n");
+		return notify_fail( ob->name() + "å·²ç»æœ‰äººèººäº†ï¼\n");
 	if( ob->query("rode") )
-		return notify_fail( ob->name() + "ÒÑ¾­ÓÐÈË×øÁË£¡\n");        
+		return notify_fail( ob->name() + "å·²ç»æœ‰äººåäº†ï¼\n");        
 	who->set_temp("rode/type", "sit");
-	who->set_temp("rode/desc", "ÌÉÔÚ" + ob->name() + "ÉÏ");
+	who->set_temp("rode/desc", "èººåœ¨" + ob->name() + "ä¸Š");
 	ob->set("tang",1);
-	ob->set("no_get", "ÓÐÈË×øÔÚÉÏÃæÄÄ£¡\n");
-	message_vision("$NÏóÒ»Ì²ÀÃÄàÑùÌÉÔÚÁË" + ob->name() + "ÉÏ¡£\n", who);
+	ob->set("no_get", "æœ‰äººååœ¨ä¸Šé¢å“ªï¼\n");
+	message_vision("$Nè±¡ä¸€æ»©çƒ‚æ³¥æ ·èººåœ¨äº†" + ob->name() + "ä¸Šã€‚\n", who);
 	return 1;
 }
 

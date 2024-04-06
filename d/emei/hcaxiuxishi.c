@@ -1,14 +1,14 @@
-//Room: hcaxiuxishi.c »ª²ØâÖĞİÏ¢ÊÒ
+//Room: hcaxiuxishi.c åè—åºµä¼‘æ¯å®¤
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 void create()
 {
-      set("short","»ª²ØâÖĞİÏ¢ÊÒ");
+      set("short","åè—åºµä¼‘æ¯å®¤");
       set("long",@LONG
-ÕâÀïÊÇ¶ëáÒ»ª²ØâÖµÄĞİÏ¢ÊÒ¡£´°Á±À­ÏÂÀ´£¬·¿ÀïÕûÕûÆëÆë·ÅÁËºÜ¶àÄ¾´²¡£
-ÓĞ¼¸¸öÒ¹ÍíÊØâÖµÄĞ¡Ê¦Ì«ÕıÔÚË¯¾õ¡£
-¡¡¡¡ĞİÏ¢ÊÒÍâ¾ÍÊÇìø·¿¡£
+è¿™é‡Œæ˜¯å³¨åµ‹åè—åºµçš„ä¼‘æ¯å®¤ã€‚çª—å¸˜æ‹‰ä¸‹æ¥ï¼Œæˆ¿é‡Œæ•´æ•´é½é½æ”¾äº†å¾ˆå¤šæœ¨åºŠã€‚
+æœ‰å‡ ä¸ªå¤œæ™šå®ˆåºµçš„å°å¸ˆå¤ªæ­£åœ¨ç¡è§‰ã€‚
+ã€€ã€€ä¼‘æ¯å®¤å¤–å°±æ˜¯ç¦…æˆ¿ã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "north" : __DIR__"hcachanfang", 
@@ -34,7 +34,7 @@ int do_jingzuo()
       skillslvl = (int) me->query_skill("mahayana",1);
 
       if (me->is_busy()) return 0;
-      if ((skillslvl<10) || !myfam || (myfam["family_name"] != "¶ëáÒÅÉ"))
+      if ((skillslvl<10) || !myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾"))
          return 0;
       jing_cost = 600 / (int)me->query("int");
       qi_cost = 500 / (int)me->query("int");
@@ -46,7 +46,7 @@ int do_jingzuo()
            me->add("potential",1);
            me->add("combat_exp",1);
       }
-      write("¾²×øÍê£¬Äã¾õµÃÌØÆ£ÀÍ¡£ĞİÏ¢Ò»ÏÂ°É£¡\n");
+      write("é™åå®Œï¼Œä½ è§‰å¾—ç‰¹ç–²åŠ³ã€‚ä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
       me->start_busy(3);
       return 1;
 }

@@ -8,11 +8,11 @@ int do_press(string arg);
 
 void create()
 { 
-       set("short", "ÃÜµÀ");
+       set("short", "å¯†é“");
        set("long", @TEXT
-ÕâÊÇË®¾®ÀïµÄÒ»¸öÃÜµÀ¡£ÖÜÎ§¶¼ÊÇĞ©»ú¹Ø£¬Ö»ÓĞ³ö¿ÚºÜÃ÷ÏÔÔÚÄÄÀï¡£
-ÊªäõäõµÄÇ½±ÚÉÏÓĞËÄ¿éÊ¯°å£¬·Ö±ğ¿Ì×Å£±¡¢£²¡¢£³¡¢£´¡£ÅÔ±ß»¹ÓĞÒ»¸ö
-Ìú°å(tieban)ÈÓÔÚµØÉÏ¡£
+è¿™æ˜¯æ°´äº•é‡Œçš„ä¸€ä¸ªå¯†é“ã€‚å‘¨å›´éƒ½æ˜¯äº›æœºå…³ï¼Œåªæœ‰å‡ºå£å¾ˆæ˜æ˜¾åœ¨å“ªé‡Œã€‚
+æ¹¿æ¼‰æ¼‰çš„å¢™å£ä¸Šæœ‰å››å—çŸ³æ¿ï¼Œåˆ†åˆ«åˆ»ç€ï¼‘ã€ï¼’ã€ï¼“ã€ï¼”ã€‚æ—è¾¹è¿˜æœ‰ä¸€ä¸ª
+é“æ¿(tieban)æ‰”åœ¨åœ°ä¸Šã€‚
 TEXT );
         set("exits", ([
             "out" : __DIR__"well",
@@ -20,7 +20,7 @@ TEXT );
 
         set("item_desc", ([
             "tieban" :      
-            "Ìú°åÍáÍáĞ±Ğ±µØĞ´×Å£º·½ÈËÖÇµ½´ËÒ»ÓÎ£¬¿ÕÊÖã¬ã¬¶ø¹é¡£\n",
+            "é“æ¿æ­ªæ­ªæ–œæ–œåœ°å†™ç€ï¼šæ–¹äººæ™ºåˆ°æ­¤ä¸€æ¸¸ï¼Œç©ºæ‰‹æ‚»æ‚»è€Œå½’ã€‚\n",
         ]) );
         set("no_clean_up", 0);
         setup();
@@ -38,15 +38,15 @@ int do_press(string arg)
 	p = sprintf("%d", this_player()->query("passwd"));
 	if( !arg || arg == "" )
 	{
-		write("±ğÏ¹°´£¡\n");
+		write("åˆ«çæŒ‰ï¼\n");
 		return 1;
 	}
 	if( arg == p )
 	{
-		message_vision("Ö»ÌıµÃÒ»ÕóÂ¡Â¡µÄÏìÉùÓÉÔ¶¼°½ü¡£\n", this_player());
-		message_vision("Ê¯°å»º»ºÒÆÁË¿ªÀ´£¬Â¶³öÒ»¸ö¶´¡£\n", this_player());
+		message_vision("åªå¬å¾—ä¸€é˜µéš†éš†çš„å“å£°ç”±è¿œåŠè¿‘ã€‚\n", this_player());
+		message_vision("çŸ³æ¿ç¼“ç¼“ç§»äº†å¼€æ¥ï¼Œéœ²å‡ºä¸€ä¸ªæ´ã€‚\n", this_player());
 		set("exits/enter", __DIR__"mishi");
-		write("\n\nÒ»¸öÉùÒôÌáĞÑÄã£º¼Ç×¡ÄãµÄÃÜÂë£¬ÒÔºóÄã¾Í¿¿ËüÀ´½ø³öÕâÀïÁË£¡\n\n");
+		write("\n\nä¸€ä¸ªå£°éŸ³æé†’ä½ ï¼šè®°ä½ä½ çš„å¯†ç ï¼Œä»¥åä½ å°±é å®ƒæ¥è¿›å‡ºè¿™é‡Œäº†ï¼\n\n");
 
 		remove_call_out("close");
 		call_out("close", 5, this_object());
@@ -55,15 +55,15 @@ int do_press(string arg)
 	}
 	else
 	{
-		write("ÄãĞÄÏë£ºÀÏÌì±£ÓÓÕâ´ÎÄÜÃÉ×Å£¡\n");
+		write("ä½ å¿ƒæƒ³ï¼šè€å¤©ä¿ä½‘è¿™æ¬¡èƒ½è’™ç€ï¼\n");
 		if (random(10) != 8)
 		{
-			message_vision("$NÒ»ÕóÂÒ°´£¬Ê²Ã´·´Ó¦Ò²Ã»ÓĞ¡£\n", this_player());
+			message_vision("$Nä¸€é˜µä¹±æŒ‰ï¼Œä»€ä¹ˆååº”ä¹Ÿæ²¡æœ‰ã€‚\n", this_player());
 			return 1;
 		}
 		else
 		{
-			message_vision("$NÒ»ÕóÂÒ°´£¬Í»È»Ê¯°åµÄ·ìÏ¶¼äÉä³öÒ»Ö§¶¾¼ı£¡¡£\n", this_player());
+			message_vision("$Nä¸€é˜µä¹±æŒ‰ï¼Œçªç„¶çŸ³æ¿çš„ç¼éš™é—´å°„å‡ºä¸€æ”¯æ¯’ç®­ï¼ã€‚\n", this_player());
 			this_player()->die();
 			return 1;
 		}
@@ -72,6 +72,6 @@ int do_press(string arg)
 
 void close(object room)
 {
-        message("vision","ºäÂ¡Â¡µÄÏìÉùÏì¹ıÖ®ºó£¬Ê¯°åÓÖºÏÉÏÁË¡£\n", room);
+        message("vision","è½°éš†éš†çš„å“å£°å“è¿‡ä¹‹åï¼ŒçŸ³æ¿åˆåˆä¸Šäº†ã€‚\n", room);
         room->delete("exits/enter");
 }

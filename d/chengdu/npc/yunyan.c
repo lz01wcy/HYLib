@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ»ÔÆÑÌ", ({ "xie yunyan", "xie", "yunyan" }));
-	set("long", "ËıÃæÈİ½¿ÃÄ£¬Æ¤·ô¹â»¬°×ÄÛ£¬Ò»Ë«ºÚíø¹ËÅÎÁôÇé£¬Ã÷Ä¿ÉÆíù¡£\n");
-	set("title", "Ç§½¿°ÙÃÄ");
-	set("gender", "Å®ĞÔ");
+	set_name("è°¢äº‘çƒŸ", ({ "xie yunyan", "xie", "yunyan" }));
+	set("long", "å¥¹é¢å®¹å¨‡åªšï¼Œçš®è‚¤å…‰æ»‘ç™½å«©ï¼Œä¸€åŒé»‘çœ¸é¡¾ç›¼ç•™æƒ…ï¼Œæ˜ç›®å–„çã€‚\n");
+	set("title", "åƒå¨‡ç™¾åªš");
+	set("gender", "å¥³æ€§");
 	set("age", 17);
 
 	set_skill("unarmed", 40);

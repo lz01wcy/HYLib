@@ -14,11 +14,11 @@ void reset();
 
 void create()
 {
-        set("short", HIW "ÌÆ¼Ò±¤" NOR);
+        set("short", HIW "å”å®¶å ¡" NOR);
         set("long", 
-    "ÏÂÁË»­ô³£¬Ì§Í·Ò»Íû£¬ºÕÈ»¼ûµ½"+ HIY"¡°ÌÆ¼Ò±¤¡±"NOR + "Èı¸ö´ó×Ö¡£ÄãÒÑ¾­À´µ½ÁËÉñÃØ¶øÉùÃûÏÔºÕ\n"+
-"ÉùÃûÏÔºÕµÄÌÆÃÅ¡£¸ß´óµÄÃÅÈÃÄã²»ÓÉµÃ²»ÑöÊÓ£¬´óÃÅ¿ÚÊÇÁ½¸öÍşÎäĞÛ×³µÄÍ­Ê¨£¬Á½ÅÔÊÇ±Ê\n"+
-"Á¦åÙ¾¢µÄ¶ÔÁª(distich)¡£\n"
+    "ä¸‹äº†ç”»èˆ«ï¼ŒæŠ¬å¤´ä¸€æœ›ï¼Œèµ«ç„¶è§åˆ°"+ HIY"â€œå”å®¶å ¡â€"NOR + "ä¸‰ä¸ªå¤§å­—ã€‚ä½ å·²ç»æ¥åˆ°äº†ç¥ç§˜è€Œå£°åæ˜¾èµ«\n"+
+"å£°åæ˜¾èµ«çš„å”é—¨ã€‚é«˜å¤§çš„é—¨è®©ä½ ä¸ç”±å¾—ä¸ä»°è§†ï¼Œå¤§é—¨å£æ˜¯ä¸¤ä¸ªå¨æ­¦é›„å£®çš„é“œç‹®ï¼Œä¸¤æ—æ˜¯ç¬”\n"+
+"åŠ›é’åŠ²çš„å¯¹è”(distich)ã€‚\n"
     );
     set("no_steal", "1");
     set("exits", ([
@@ -29,15 +29,15 @@ void create()
                 __DIR__"npc/dizi" : 2,
     ]));
      set("item_desc", ([
-		"distich" : HIY "\n°Ù			Ò»\n" 
-                                "\nÄê			Ç»\n"		
-                                "\nÊÀ			ÈÈ\n"
-				"\n¼Ò			Ñª\n"
-				"\n´«			¿É\n"
-				"\nÇ§			¿ì\n"
-				"\n¹Å			Òâ\n"
-				"\n·ç			¶÷\n"
-				"\nÁ÷			³ğ\n" NOR,  
+		"distich" : HIY "\nç™¾			ä¸€\n" 
+                                "\nå¹´			è…”\n"		
+                                "\nä¸–			çƒ­\n"
+				"\nå®¶			è¡€\n"
+				"\nä¼ 			å¯\n"
+				"\nåƒ			å¿«\n"
+				"\nå¤			æ„\n"
+				"\né£			æ©\n"
+				"\næµ			ä»‡\n" NOR,  
     ]));
 
     set("outdoors", "tangmen");
@@ -61,22 +61,22 @@ void check_trigger()
                 room->set("yell_trigger", 1);
                 set("exits/enter", __DIR__"huafang");
                 room->set("exits/out", __FILE__);
-                message("vision", "Ò»×ù»­ô³»º»ºµØÊ»ÁË¹ıÀ´£¬ÌÆÁâ½«Ò»¿éÌ¤½Å"
-                    "°å´îÉÏµÌ°¶£¬ÒÔ±ã³Ë¿Í\nÉÏÏÂ¡£\n", this_object() );
-                message("vision", "ÌÆÁâ½«Ò»¿éÌ¤½Å°å´îÉÏµÌ°¶£¬ĞÎ³ÉÒ»¸öÏòÉÏ"
-                    "µÄ½×Ìİ¡£\n", room);
+                message("vision", "ä¸€åº§ç”»èˆ«ç¼“ç¼“åœ°é©¶äº†è¿‡æ¥ï¼Œå”è±å°†ä¸€å—è¸è„š"
+                    "æ¿æ­ä¸Šå ¤å²¸ï¼Œä»¥ä¾¿ä¹˜å®¢\nä¸Šä¸‹ã€‚\n", this_object() );
+                message("vision", "å”è±å°†ä¸€å—è¸è„šæ¿æ­ä¸Šå ¤å²¸ï¼Œå½¢æˆä¸€ä¸ªå‘ä¸Š"
+                    "çš„é˜¶æ¢¯ã€‚\n", room);
                 remove_call_out("on_board");
                 call_out("on_board", 15);
             }
             else
-                message("vision", "Ö»ÌıµÃ½­ÃæÉÏÒşÒş´«À´£º¡°±ğ¼±Âï£¬"
-                    "Õâ¶ùÕıÃ¦×ÅÄÅ¡­¡­¡±\n",this_object() );
+                message("vision", "åªå¬å¾—æ±Ÿé¢ä¸Šéšéšä¼ æ¥ï¼šâ€œåˆ«æ€¥å˜›ï¼Œ"
+                    "è¿™å„¿æ­£å¿™ç€å‘â€¦â€¦â€\n",this_object() );
         }
         else
             message("vision", "ERROR: boat not found\n", this_object() );
     }
     else 
-        message("vision", "»­ô³ÉÏÌÆÁâÎûÎûÒ»Ğ¦£ºµÈ×ÅÄãÄØ£¬¿ìÉÏ´¬°É¡£\n",
+        message("vision", "ç”»èˆ«ä¸Šå”è±å˜»å˜»ä¸€ç¬‘ï¼šç­‰ç€ä½ å‘¢ï¼Œå¿«ä¸Šèˆ¹å§ã€‚\n",
             this_object() );
 }
 
@@ -87,14 +87,14 @@ void on_board()
 
     if( !query("exits/enter") ) return;
 
-    message("vision", "ÌÆÁâ°ÑÌ¤½Å°åÊÕÁËÆğÀ´£¬Öñ¸İÒ»µã£¬±âÖÛÏòºşĞÄÊ»È¥¡£\n",
+    message("vision", "å”è±æŠŠè¸è„šæ¿æ”¶äº†èµ·æ¥ï¼Œç«¹ç¯™ä¸€ç‚¹ï¼Œæ‰èˆŸå‘æ¹–å¿ƒé©¶å»ã€‚\n",
         this_object() );
 
     if( room = find_object(__DIR__"huafang") )
     {
         room->delete("exits/out");
-        message("vision", "ÌÆÁâ°ÑÌ¤½Å°åÊÕÆğÀ´£¬ËµÁËÒ»Éù¡°×øÎÈà¶¡±£¬"
-            "Öñ¸İÒ»µã£¬±âÖÛÏò\nºşĞÄÊ»È¥¡£\n", room );
+        message("vision", "å”è±æŠŠè¸è„šæ¿æ”¶èµ·æ¥ï¼Œè¯´äº†ä¸€å£°â€œåç¨³å–½â€ï¼Œ"
+            "ç«¹ç¯™ä¸€ç‚¹ï¼Œæ‰èˆŸå‘\næ¹–å¿ƒé©¶å»ã€‚\n", room );
     }
     delete("exits/enter");
 
@@ -108,8 +108,8 @@ void arrive()
     if( room = find_object(__DIR__"huafang") )
     {
         room->set("exits/out", __DIR__"fufeng");
-        message("vision", "ÌÆÁâËµµÀ¡°µ½À²£¬ÉÏ°¶°É¡±£¬Ëæ¼´°ÑÒ»¿éÌ¤½Å°å"
-            "´îÉÏµÌ°¶¡£\n",room );
+        message("vision", "å”è±è¯´é“â€œåˆ°å•¦ï¼Œä¸Šå²¸å§â€ï¼Œéšå³æŠŠä¸€å—è¸è„šæ¿"
+            "æ­ä¸Šå ¤å²¸ã€‚\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 10);
@@ -123,18 +123,18 @@ void close_passage()
         if( room = find_object(__DIR__"huafang") ) {
                 room->delete("exits/out");
 
-                tell_room(room, "ÌÆÁâÇáÉùËµµÀ£º¡°¶¼ÏÂ´¬°É£¬ÎÒÒ²Òª»ØÈ¥ÁË¡£¡±\n", ({}));
+                tell_room(room, "å”è±è½»å£°è¯´é“ï¼šâ€œéƒ½ä¸‹èˆ¹å§ï¼Œæˆ‘ä¹Ÿè¦å›å»äº†ã€‚â€\n", ({}));
                 ob = all_inventory(room);
                 for(i = 0; i < sizeof(ob); i++) {
                         if (userp(ob[i])) {
-                                if (!living(ob[i])) tell_room(room, "ÌÆÁâ°Ñ$NÌ§ÏÂÁË´¬¡£\n", ob[i]);
-                                else tell_room(room, "ÌıÁËÌÆÁâµÄ»°£¬¹Ô¹ÔµØÏÂÁË´¬¡£\n", ob[i]);
+                                if (!living(ob[i])) tell_room(room, "å”è±æŠŠ$NæŠ¬ä¸‹äº†èˆ¹ã€‚\n", ob[i]);
+                                else tell_room(room, "å¬äº†å”è±çš„è¯ï¼Œä¹–ä¹–åœ°ä¸‹äº†èˆ¹ã€‚\n", ob[i]);
                                 ob[i]->move(SHIP_TO);
-                                if (!living(ob[i])) tell_room(SHIP_TO, ob[i]->name() + "±»Ì§ÏÂÁË´¬¡£\n", ({ob[i]}));
-                                else tell_room(SHIP_TO, ob[i]->name() + "×ßÏÂÁË´¬¡£\n", ({ob[i]}));
+                                if (!living(ob[i])) tell_room(SHIP_TO, ob[i]->name() + "è¢«æŠ¬ä¸‹äº†èˆ¹ã€‚\n", ({ob[i]}));
+                                else tell_room(SHIP_TO, ob[i]->name() + "èµ°ä¸‹äº†èˆ¹ã€‚\n", ({ob[i]}));
                         }
                 }
-                message("vision", "ÌÆÁâ°ÑÌ¤½Å°åÊÕÆğÀ´£¬°Ñ±âÖÛÊ»Ïò½­ĞÄ¡£\n", room);
+                message("vision", "å”è±æŠŠè¸è„šæ¿æ”¶èµ·æ¥ï¼ŒæŠŠæ‰èˆŸé©¶å‘æ±Ÿå¿ƒã€‚\n", room);
                 room->delete("yell_trigger"); 
         }
 }
@@ -144,24 +144,24 @@ int do_yell(string arg)
 
     if( !arg || arg=="" ) return 0;
 
-    if( arg=="boat" ) arg = "´¬¼Ò";
+    if( arg=="boat" ) arg = "èˆ¹å®¶";
     if( (int)this_player()->query("neili") < 300 )
-        message_vision("$NÊ¹³ö³ÔÄÌµÄÁ¦Æøº°ÁËÒ»Éù£º¡°" + arg + "¡±\n",
+        message_vision("$Nä½¿å‡ºåƒå¥¶çš„åŠ›æ°”å–Šäº†ä¸€å£°ï¼šâ€œ" + arg + "â€\n",
             this_player());
     else if( (int)this_player()->query("neili") > 600 )
-        message_vision("$NÎüÁË¿ÚÆø£¬Ò»Éù¡°" + arg + "¡±£¬ÉùÒôÖĞÕıÆ½ºÍµØÔ¶Ô¶´«"
-            "ÁË³öÈ¥¡£\n", this_player());
+        message_vision("$Nå¸äº†å£æ°”ï¼Œä¸€å£°â€œ" + arg + "â€ï¼Œå£°éŸ³ä¸­æ­£å¹³å’Œåœ°è¿œè¿œä¼ "
+            "äº†å‡ºå»ã€‚\n", this_player());
     else
-        message_vision("$N¹Ä×ãÖĞÆø£¬³¤Ğ¥Ò»Éù£º¡°" + arg + "£¡¡±\n",
+        message_vision("$Né¼“è¶³ä¸­æ°”ï¼Œé•¿å•¸ä¸€å£°ï¼šâ€œ" + arg + "ï¼â€\n",
             this_player());
-    if( arg=="´¬¼Ò")
+    if( arg=="èˆ¹å®¶")
     {
         check_trigger();
         return 1;
     }
     else
-        message_vision("½­ÃæÉÏÔ¶Ô¶´«À´Ò»Õó»ØÉù£º¡°" + arg +
-            "¡«¡«¡«¡±\n", this_player());
+        message_vision("æ±Ÿé¢ä¸Šè¿œè¿œä¼ æ¥ä¸€é˜µå›å£°ï¼šâ€œ" + arg +
+            "ï½ï½ï½â€\n", this_player());
     return 1;
 }
 
@@ -178,9 +178,9 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ((!myfam || myfam["family_name"] != "ÌÆÃÅ") && dir == "south" &&
+        if ((!myfam || myfam["family_name"] != "å”é—¨") && dir == "south" &&
                 objectp(present("tang buping", environment(me))))
-           return notify_fail("ÌÆ²»Æ½ºÈµÀ£ºÄã²»ÊÇÌÆÃÅµÜ×Ó£¬²»µÃÈëÄÚ¡£\n");
+           return notify_fail("å”ä¸å¹³å–é“ï¼šä½ ä¸æ˜¯å”é—¨å¼Ÿå­ï¼Œä¸å¾—å…¥å†…ã€‚\n");
                 
         return ::valid_leave(me, dir);
 }

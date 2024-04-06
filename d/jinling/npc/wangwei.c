@@ -3,12 +3,12 @@
 inherit NPC;
 void create()
 {
-       set_name("ÍõÎ¬", ({"wang wei", "wan"}));
+       set_name("ç‹ç»´", ({"wang wei", "wan"}));
 
-set("long","ÍõÎ¬ÊÇ½ğÁêÖøÃûµÄÊ«ÈË£¬¾İËµÊÇ¸öÒş¾Ó½­ºşµÄ¸ßÈË¡£\n");
-       set("gender", "ÄĞĞÔ");
+set("long","ç‹ç»´æ˜¯é‡‘é™µè‘—åçš„è¯—äººï¼Œæ®è¯´æ˜¯ä¸ªéšå±…æ±Ÿæ¹–çš„é«˜äººã€‚\n");
+       set("gender", "ç”·æ€§");
        set("age", 52);
-       set("title", "Ê«ÈË");
+       set("title", "è¯—äºº");
        set("attitude", "peaceful");
        set("shen_type", 1);
 	set("combat_exp", 85000);
@@ -17,8 +17,8 @@ set("long","ÍõÎ¬ÊÇ½ğÁêÖøÃûµÄÊ«ÈË£¬¾İËµÊÇ¸öÒş¾Ó½­ºşµÄ¸ßÈË¡£\n");
 	set_skill("dagger", 35);
 	set_skill("parry", 45);
 set("inquiry", ([
-"name": "ÀÏ·òĞÕÍõ,ÄãÓĞÊ²Ã´ÊÂÂğ£¿\n",
-"here": "ÕâÀïÊÇÑàÌÃ.\n",
+"name": "è€å¤«å§“ç‹,ä½ æœ‰ä»€ä¹ˆäº‹å—ï¼Ÿ\n",
+"here": "è¿™é‡Œæ˜¯ç‡•å ‚.\n",
 ]) );
 
 	setup();

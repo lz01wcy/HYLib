@@ -4,16 +4,16 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ش���ҩ��");
+	set("short", "回春堂药店");
 	set("long", @LONG
-����һ��ҩ�̣�һ��ŨŨ��ҩζ���㼸����Ϣ�����Ǵ�ҩ���ϵ�
-���ٸ�С������ɢ�������ġ�һλ�����ڹ�̨��վ�š���̨������һ
-�ŷ��ƵĹ��(guanggao)����̨����������һ������(neishi)��
+这是一家药铺，一股浓浓的药味让你几欲窒息，那是从药柜上的
+几百个小抽屉里散发出来的。一位老者在柜台后站着。柜台上贴着一
+张发黄的广告(guanggao)。柜台后面往西是一间内室(neishi)。
 LONG );
 	set("item_desc", ([
-		"guanggao" : "�����������ҩƷ��
-��ҩ��\t��ʮ������
-������ҩ���ϰ����顣\n",
+		"guanggao" : "本店出售以下药品：
+金创药：\t五十两白银
+其他神药与老板面议。\n",
 	]));
 	set("objects", ([
 		"/d/city2/npc/huoji2" : 1,

@@ -11,8 +11,8 @@ void create()
    int i;
    object *ob;
    
-   set_name("¿É´ïÖ¾",({ "ke dazhi","ke" }) );
-   set("gender", "ÄĞĞÔ" );		
+   set_name("å¯è¾¾å¿—",({ "ke dazhi","ke" }) );
+   set("gender", "ç”·æ€§" );		
    set("age", 30);
    set("combat_exp",6500000);
 
@@ -30,10 +30,10 @@ void create()
    set("max_neili",8000);
    
    set("inquiry",([
-     "¿¼Ñé":(:do_action1:),
+     "è€ƒéªŒ":(:do_action1:),
      ]));
    
-   create_family("Í»ØÊ",3,"ÎäÊ¿");
+   create_family("çªå¥",3,"æ­¦å£«");
 
     set("apply_points",200);
    

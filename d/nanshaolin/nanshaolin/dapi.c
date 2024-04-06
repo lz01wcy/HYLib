@@ -9,8 +9,8 @@ string ask_me();
 
 void create()
 {
-	set_name("´óÆ£´óÊ¦", ({ "dapi dashi", "dapi", "dashi"}));
-	set("gender", "ÄĞĞÔ");
+	set_name("å¤§ç–²å¤§å¸ˆ", ({ "dapi dashi", "dapi", "dashi"}));
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -52,7 +52,7 @@ void create()
 	set_skill("nianhua-zhi", 220);
 	set_skill("banruo-zhang", 220);
 // basic skill end
-// ¹÷ºÍÍÈ
+// æ£å’Œè…¿
 	set_skill("leg", 150);
 	set_skill("zui-gun", 220);
 	set_skill("nianhua-zhi", 220);
@@ -75,7 +75,7 @@ void create()
 		(: exert_function, "recover" :),
 	}) );
 
-	create_family("ÄÏÉÙÁÖÅÉ", 19, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 19, "å¼Ÿå­");
 	setup();
 	carry_object(__DIR__"qimeigun")->wield();
 	carry_object("/d/shaolin/obj/hui-cloth")->wear();

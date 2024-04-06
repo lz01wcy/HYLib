@@ -1,13 +1,13 @@
 // /d/taiyuan/guobingguan.c
-// Room in Ì«Ô­
+// Room in å¤ªåŸ
 // rich 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "¹ú±ö¹İ");
+	set("short", "å›½å®¾é¦†");
 	set("long", @LONG
-ÕâÊÇÀîÔ¨Æğ±øºó£¬½¨Á¢µÄ¹ú±ö¹İ£¬ÕĞ´ı¸÷¹úÊ¹Õß£¬µ«´ÓÀîÔ¨Ç¨¶¼³¤
-°²ºó£¬ÕâÀïÒ²¾Í¶ÔÆÕÍ¨°ÙĞÕ¿ª·Å£¬³ÉÁËÒ»¼Ò´ó¿ÍÕ»¡£
+è¿™æ˜¯ææ¸Šèµ·å…µåï¼Œå»ºç«‹çš„å›½å®¾é¦†ï¼Œæ‹›å¾…å„å›½ä½¿è€…ï¼Œä½†ä»ææ¸Šè¿éƒ½é•¿
+å®‰åï¼Œè¿™é‡Œä¹Ÿå°±å¯¹æ™®é€šç™¾å§“å¼€æ”¾ï¼Œæˆäº†ä¸€å®¶å¤§å®¢æ ˆã€‚
 LONG
 	);
 set("exits", ([
@@ -23,6 +23,6 @@ set("exits", ([
 int valid_leave(object ob,string dir)
 {
    if(!ob->query_temp("gived_money")&&dir=="south")
-   return notify_fail("ÔõÃ´£¬Ïë°××¡°¡£¿\n");
+   return notify_fail("æ€ä¹ˆï¼Œæƒ³ç™½ä½å•Šï¼Ÿ\n");
    return ::valid_leave(ob,dir);
 }

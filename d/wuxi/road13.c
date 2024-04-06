@@ -5,10 +5,10 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "����С��");
+	set("short", "湖边小径");
 	set("long", @LONG
-����̫�����ϵ�һ��С�������ѱ�ȥ��һ·ǰ�У����ݽ����
-����һ���޼ʵ�̫�����̲����꣬�̲����죬��֮�����泩��
+这是太湖边上的一条小径，蜿蜒北去。一路前行，花草渐深。东
+面是一望无际的太湖，碧波万顷，烟波浩渺，眺之身心舒畅。
 LONG );
 	set("outdoors", "wuxi");
 	set("no_clean_up", 0);

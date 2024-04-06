@@ -4,10 +4,10 @@ inherit F_MASTER;
 
 void create()
 {
-    set_name("¹ùÏå", ({"guo xiang", "guo", "xiang"}));
-    set("gender", "Å®ĞÔ");
+    set_name("éƒ­è¥„", ({"guo xiang", "guo", "xiang"}));
+    set("gender", "å¥³æ€§");
     set("age", 15);
-    set("long", "ËıÊÇ¹ù¾¸»ÆÈØµÄĞ¡Å®¶ù£¬¶«Ğ°»ÆÒ©Ê¦µÄĞ¡ÍâËïÅ®£¬³¤µÃÊ²Ã´¿É°®¡£\n");
+    set("long", "å¥¹æ˜¯éƒ­é–é»„è“‰çš„å°å¥³å„¿ï¼Œä¸œé‚ªé»„è¯å¸ˆçš„å°å¤–å­™å¥³ï¼Œé•¿å¾—ä»€ä¹ˆå¯çˆ±ã€‚\n");
 
     set("attitude", "peaceful");
        

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Êé·¿");
+        set("short", "ä¹¦æˆ¿");
         set("long", @LONG
-ÕâÊÇÎä¹İ¹İÖ÷µÄÊé·¿£¬·¿ÄÚºÜ¾²£¬¼¸ÂÆÑô¹â´Ó´°ÍâµÄÂÌÒñÖĞÖ±Éä½øÀ´,
-ÎİÄÚ¿¿´°·Å×ÅÒ»¸ö´óÊé¼Ü£¬ÏÔÈ»¶¼ÊÇĞ©Ö÷ÈË³£¿´µÄÊé¡£Ç½ÉÏ¸ßĞü×Å¼¸¸ö´ó
-×Ö¡°ÉÙ×³²»Å¬Á¦£¬ÀÏ´óÍ½ÉË±¯¡±¡£
+è¿™æ˜¯æ­¦é¦†é¦†ä¸»çš„ä¹¦æˆ¿ï¼Œæˆ¿å†…å¾ˆé™ï¼Œå‡ ç¼•é˜³å…‰ä»çª—å¤–çš„ç»¿è«ä¸­ç›´å°„è¿›æ¥,
+å±‹å†…é çª—æ”¾ç€ä¸€ä¸ªå¤§ä¹¦æ¶ï¼Œæ˜¾ç„¶éƒ½æ˜¯äº›ä¸»äººå¸¸çœ‹çš„ä¹¦ã€‚å¢™ä¸Šé«˜æ‚¬ç€å‡ ä¸ªå¤§
+å­—â€œå°‘å£®ä¸åŠªåŠ›ï¼Œè€å¤§å¾’ä¼¤æ‚²â€ã€‚
 LONG);
         set("exits", ([
                 "west" : __DIR__"lang5",
@@ -17,7 +17,7 @@ LONG);
 }
 void init()
 {
-        add_action("do_clean", ({"fan","·­","find"}));
+        add_action("do_clean", ({"fan","ç¿»","find"}));
 }
 
 int do_clean(string arg)
@@ -27,19 +27,19 @@ int do_clean(string arg)
      i = random(50);
      me=this_player();
      
-     if(!arg || arg != "Êé¼Ü" ) return 0;
+     if(!arg || arg != "ä¹¦æ¶" ) return 0;
 
      if (me->query_temp("book_get")){
-           message_vision("$NÍ»È»¾õµÃ×Ô¼ºÔõÃ´ÕâÃ´Ì°£¬ÄÃÁËÒ»±¾»¹ÒªÄÃ¡£\n", me); 
+           message_vision("$Nçªç„¶è§‰å¾—è‡ªå·±æ€ä¹ˆè¿™ä¹ˆè´ªï¼Œæ‹¿äº†ä¸€æœ¬è¿˜è¦æ‹¿ã€‚\n", me); 
            return 1;
            }
      if(!me->query_temp("wg_study")){
-          message_vision("$NËæÊÖ·­ÁË·­¡£\n", me);
+          message_vision("$Néšæ‰‹ç¿»äº†ç¿»ã€‚\n", me);
           return 1;
           }
    
      if(i < 6){
-          message_vision("$N¸ßĞËµÄÌøÁËÆğÀ´£¬·¢ÏÖÁËÒ»±¾×Ô¼ºÏëÒªµÄÊé¡£\n", me);
+          message_vision("$Né«˜å…´çš„è·³äº†èµ·æ¥ï¼Œå‘ç°äº†ä¸€æœ¬è‡ªå·±æƒ³è¦çš„ä¹¦ã€‚\n", me);
           switch(random(3)) {
               case 0:  ob=new("/clone/book/parry_book"); break;
               case 1:  ob=new("/clone/book/daodejing-i"); break;
@@ -49,7 +49,7 @@ int do_clean(string arg)
           me->delete_temp("wg_study");
           me->set_temp("book_get",1);
           }
-     else message_vision("$N·­ÁË°ëÌìÃ»·¢ÏÖ×Ô¼ºÏëÒªµÄ¡£\n", me);
+     else message_vision("$Nç¿»äº†åŠå¤©æ²¡å‘ç°è‡ªå·±æƒ³è¦çš„ã€‚\n", me);
      me->receive_damage("jing", random(5));
      return 1;
 }

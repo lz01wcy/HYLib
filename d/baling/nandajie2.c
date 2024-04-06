@@ -1,15 +1,15 @@
 // baling/nandajie2
-// Room in ¹ê×È 
+// Room in é¾Ÿå…¹ 
 // laowuwu 99/04/11
 inherit ROOM;
 
 void create()
 {
-	set("short", "ÄÏ´ó½Ö");
+	set("short", "å—å¤§è¡—");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ·±»ªµÄ½ÖµÀÉÏ£¬ÏòÄÏ±±Á½Í·ÑÓÉì¡£ÄÏ±ßÊÇÄÏ³ÇÃÅ£¬±±±ß
-Í¨ÍùÊÐÖÐÐÄ£¬¶«±ßÒ»×ùÁ½²ãµÄÂ¥·¿´«À´ÕóÕóÀËÐ¦£¬ÄÇ¾ÍÊÇÌìÏÂÎÅÃûµÄÃÙ
-´ºÔº¡£ÄÏÃæ¾ÍÊÇ¼ý´óÊ¦µÄ¸®Û¡¡£
+ä½ èµ°åœ¨ä¸€æ¡ç¹åŽçš„è¡—é“ä¸Šï¼Œå‘å—åŒ—ä¸¤å¤´å»¶ä¼¸ã€‚å—è¾¹æ˜¯å—åŸŽé—¨ï¼ŒåŒ—è¾¹
+é€šå¾€å¸‚ä¸­å¿ƒï¼Œä¸œè¾¹ä¸€åº§ä¸¤å±‚çš„æ¥¼æˆ¿ä¼ æ¥é˜µé˜µæµªç¬‘ï¼Œé‚£å°±æ˜¯å¤©ä¸‹é—»åçš„è§…
+æ˜¥é™¢ã€‚å—é¢å°±æ˜¯ç®­å¤§å¸ˆçš„åºœé‚¸ã€‚
 LONG
 	);
         set("outdoors", "baling");

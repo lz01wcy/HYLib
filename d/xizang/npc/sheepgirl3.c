@@ -2,10 +2,10 @@
 inherit NPC; 
 void create()
 {
-        set_name("ÄÁÑòÅ®", ({ "sheep girl", "girl" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ç‰§ç¾Šå¥³", ({ "sheep girl", "girl" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 17);
-        set("long", "Ò»¸öÌìÕæ»îÆÃ£¬ÃÀÀö´ó·½µÄÉÙÅ®¡£ \n");
+        set("long", "ä¸€ä¸ªå¤©çœŸæ´»æ³¼ï¼Œç¾ä¸½å¤§æ–¹çš„å°‘å¥³ã€‚ \n");
         set("combat_exp", 7000);
         set("per", 30);
         set("attitude", "friendly");

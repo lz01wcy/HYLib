@@ -1,12 +1,12 @@
-// Room: /d/chengdu/npc/chike.c ³Ô¿Í
+// Room: /d/chengdu/npc/chike.c åƒå®¢
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
 
 void create()
 {
-	set_name("³Ô¿Í", ({ "chike" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("åƒå®¢", ({ "chike" }));
+	set("gender", "ç”·æ€§");
 	set("age", 20 + random(30));
 
 	set_skill("unarmed", 20);

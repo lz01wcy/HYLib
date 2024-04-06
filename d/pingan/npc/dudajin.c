@@ -1,17 +1,17 @@
-//music yangzhou' ÊéÉú
+//music yangzhou' ä¹¦ç”Ÿ
 #include <ansi.h>
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("¶¼´ó½õ", ({ "du dajin","du"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("éƒ½å¤§é”¦", ({ "du dajin","du"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 36);
-	set("nickname",YEL"¶à±ÛĞÜ"NOR);
+	set("nickname",YEL"å¤šè‡‚ç†Š"NOR);
 	set("combat_exp",200000);
 	set("long",
-		"ÁúÃÅïÚ¾ÖµÄ×ÜïÚÍ·£¬ÌıËµÊÇÉÙÁÖËÂË×¼ÒµÜ×Ó¡£\n");
+		"é¾™é—¨é•–å±€çš„æ€»é•–å¤´ï¼Œå¬è¯´æ˜¯å°‘æ—å¯ºä¿—å®¶å¼Ÿå­ã€‚\n");
 	set("score",2000);
 	set("attitude", "peaceful");
 	set_skill("unarmed",150);
@@ -72,10 +72,10 @@ void greeting(object ob)
 		return;
 	switch(random(2)) {
 	case 0 :
-		say("¶¼´ó½õËµµÀ£ºÈË¿ÍÀ´×ø¡£\n");
+		say("éƒ½å¤§é”¦è¯´é“ï¼šäººå®¢æ¥åã€‚\n");
 		break;
 	case 1 :
-		say("¶¼´ó½õËµµÀ£ºÕâÎ»ĞÖµÜ£¬ÄãÒª±£»¤Ã´£¿\n");
+		say("éƒ½å¤§é”¦è¯´é“ï¼šè¿™ä½å…„å¼Ÿï¼Œä½ è¦ä¿æŠ¤ä¹ˆï¼Ÿ\n");
 		break;
 	}
 }

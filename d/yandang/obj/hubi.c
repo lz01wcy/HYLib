@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ºþ±Ê", ({ "hubi" , "ºþ±Ê"}) );
+	set_name("æ¹–ç¬”", ({ "hubi" , "æ¹–ç¬”"}) );
 	set_weight(800);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö§");
-		set("long", "Ò»Ö§Õ´ÂúÁËºÚÄ«µÄ±Ê\n");
+		set("unit", "æ”¯");
+		set("long", "ä¸€æ”¯æ²¾æ»¡äº†é»‘å¢¨çš„ç¬”\n");
 	}
 }
 

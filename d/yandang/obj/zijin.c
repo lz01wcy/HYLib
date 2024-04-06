@@ -1,9 +1,9 @@
 inherit ITEM;
 void create()
 {
-        set_name("×Ï½ğ»îÂçµ¤", ({ "zijindan","zijin","dan" }) );
-        set("long", "º£ÄÏÑøÉúÌÃ³öÆ·µÄµ¤Ò©,ÓĞ»îÑªÍ¨ÆøÖ®Ğ§.\n");
-        set("unit", "Á£");
+        set_name("ç´«é‡‘æ´»ç»œä¸¹", ({ "zijindan","zijin","dan" }) );
+        set("long", "æµ·å—å…»ç”Ÿå ‚å‡ºå“çš„ä¸¹è¯,æœ‰æ´»è¡€é€šæ°”ä¹‹æ•ˆ.\n");
+        set("unit", "ç²’");
         set("weight", 100);
         set("value", 1000);
 }
@@ -16,13 +16,13 @@ void init()
 int do_eat(string arg)
 {
         object ob;
-        if( !id(arg) ) return notify_fail("ÄãÒª³ÔÊ²÷á£¿\n");
+        if( !id(arg) ) return notify_fail("ä½ è¦åƒä»€éº½ï¼Ÿ\n");
 if( living(this_player()) ==0 ) return 0;
         ob=this_player();
         ob->set("qi",(int)ob->query("max_qi"));
         ob->set("eff_qi",(int)ob->query("max_qi"));
         ob->set("neili", (int)ob->query("max_neili"));
-tell_object(ob,"ÄãÍÌÏÂÒ»¿Å×Ï½ğ»îÂçµ¤,¾õµÃÆøÁ¦³äÅæ.\n");
+tell_object(ob,"ä½ åä¸‹ä¸€é¢—ç´«é‡‘æ´»ç»œä¸¹,è§‰å¾—æ°”åŠ›å……æ²›.\n");
         destruct(this_object());
 return 1;
 }

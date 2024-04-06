@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÖìÏÈÉú", ({"zhu xiansheng", "zhu","xiansheng"}));
-        set("title", "ÊéÔºÏÈÉú");
-        set("gender", "ÄĞĞÔ");
+        set_name("æœ±å…ˆç”Ÿ", ({"zhu xiansheng", "zhu","xiansheng"}));
+        set("title", "ä¹¦é™¢å…ˆç”Ÿ");
+        set("gender", "ç”·æ€§");
         set("age", 64);
-        set("long","ÕâÊÇÊéÔºµÄÏÈÉú,ËûÊÇÄÏ³¯µÄ´óÈå.\n");
+        set("long","è¿™æ˜¯ä¹¦é™¢çš„å…ˆç”Ÿ,ä»–æ˜¯å—æœçš„å¤§å„’.\n");
          set("qi", 500); 
         set("max_qi", 500);
         set("jing", 100);
@@ -46,7 +46,7 @@ int recognize_apprentice(object ob)
 	switch (MONEY_D->player_pay(ob, money)) {
 		case 0:
 		case 2:
-			write("ÄãÏÖÔÚµÄÑ§·ÑÊÇÃ¿´Î" + MONEY_D->money_str(money) + "£¬Çë±¸ºÃÁãÇ®¡£\n");
+			write("ä½ ç°åœ¨çš„å­¦è´¹æ˜¯æ¯æ¬¡" + MONEY_D->money_str(money) + "ï¼Œè¯·å¤‡å¥½é›¶é’±ã€‚\n");
 			return 0;
 	}
         ob->set_temp("mark/literate", 1);

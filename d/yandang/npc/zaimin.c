@@ -2,8 +2,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÔÖÃñ", ({"zaiming" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("ç¾æ°‘", ({"zaiming" }));
+	set("gender", "ç”·æ€§");
 	set("age", 16+random(30));
    
 	set("combat_exp", 5000); 

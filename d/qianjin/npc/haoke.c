@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("´óºú×ÓºÀ¿Í", ({ "haoke", "ke"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¤§èƒ¡å­è±ªå®¢", ({ "haoke", "ke"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-        set("long", "ÕâÊÇÒ»Î»ÂúÁ³ºú×ÓµÄ´óºÀ¿Í\n");
+        set("long", "è¿™æ˜¯ä¸€ä½æ»¡è„¸èƒ¡å­çš„å¤§è±ªå®¢\n");
         set("combat_exp", 50000);
 	set_skill("dodge", 100);
 	set_skill("unarmed", 220);
         set("chat_chance", 1);
         set("chat_msg", ({
-"´óºú×ÓºÀ¿ÍµÀ£ººÃ£¡¹»¾¢¶ù£¡\n",
+"å¤§èƒ¡å­è±ªå®¢é“ï¼šå¥½ï¼å¤ŸåŠ²å„¿ï¼\n",
         }) );
 	
 	setup();

@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /clone/beast/bigbear.c
-// ´ó¹·ĞÜ
+// å¤§ç‹—ç†Š
 // sdong 08/98
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ inherit NPC;
 
 void create()
 {
-		  set_name("´ó¹·ĞÜ", ({ "da gouxiong", "gouxiong" ,"bear"}) );
-	set("race", "Ò°ÊŞ");
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+		  set_name("å¤§ç‹—ç†Š", ({ "da gouxiong", "gouxiong" ,"bear"}) );
+	set("race", "é‡å…½");
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åè„š", "å°¾å·´" }) );
 	set("verbs", ({ "bite", "claw" }) );
 set("no_get",1);
 		  set("age", 1);
-		  set("long", "Ò»Ö»ÓÖ¸ßÓÖ´óµÄ´ó¹·ĞÜ£¬ËüÕıÆøÊÆĞÚĞÚµØµÉ×ÅÑÛ¾¦¿´×ÅÄã¡£\n");
+		  set("long", "ä¸€åªåˆé«˜åˆå¤§çš„å¤§ç‹—ç†Šï¼Œå®ƒæ­£æ°”åŠ¿æ±¹æ±¹åœ°çªç€çœ¼ç›çœ‹ç€ä½ ã€‚\n");
         set("attitude", "peaceful");
 		  set_weight(200000);
 		  set("max_qi", 100);

@@ -1,17 +1,17 @@
-// zhangyuan.c ÕÆÔ°µÀ³¤
+// zhangyuan.c æŽŒå›­é“é•¿
 // By Lgg,1998.10
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÕÆÔ°µÀ³¤", ({"zhangyuan"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("æŽŒå›­é“é•¿", ({"zhangyuan"}));
+        set("gender", "ç”·æ€§");
         set("age", 52);
         set("class", "taoist");
         set("long",
-                "Ëû±¾ÊÇ·þÊÌÖØÑô×æÊ¦µÄÍ¯×Ó£¬ÏÖÔÚÄê¼Í´óÁË¡£ÖØÑô×æÊ¦¼ûËûÖÒ\n"
-                "ÐÄ¹¢¹¢£¬¾Í·ÖÅäËûÒ»¸öÏÐ²î£¬µ½Ð¡»¨Ô°À´´òÀí»¨Ä¾¡£\n");
+                "ä»–æœ¬æ˜¯æœä¾é‡é˜³ç¥–å¸ˆçš„ç«¥å­ï¼ŒçŽ°åœ¨å¹´çºªå¤§äº†ã€‚é‡é˜³ç¥–å¸ˆè§ä»–å¿ \n"
+                "å¿ƒè€¿è€¿ï¼Œå°±åˆ†é…ä»–ä¸€ä¸ªé—²å·®ï¼Œåˆ°å°èŠ±å›­æ¥æ‰“ç†èŠ±æœ¨ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 18);
@@ -31,15 +31,15 @@ void create()
         set("score", 15000);
 
         set_skill("force", 40);
-        set_skill("xiantian-qigong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 40);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",40);  //È«Õæ½£
+        set_skill("quanzhen-jian",40);  //å…¨çœŸå‰‘
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 40);   //½ðÑã¹¦
+        set_skill("jinyan-gong", 40);   //é‡‘é›åŠŸ
         set_skill("parry", 50);
         set_skill("unarmed",50);
         set_skill("strike",50);
-        set_skill("haotian-zhang", 50);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 50);    //æ˜Šå¤©æŽŒ
         set_skill("literate",40);
         set_skill("taoism",30);
 
@@ -50,11 +50,11 @@ void create()
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒÐþÃÅÕý×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶çŽ„é—¨æ­£å®—ã€‚\n",
         ]) );
 
         setup();
@@ -66,7 +66,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

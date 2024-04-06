@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "饭馆");
 	set("long", @LONG
-����һ������С���ݣ����ü��ף��˿Ͷ��ǴҴҵ����ˣ������ӡ����ȡ��׾ƾ�
-��·ȥ�ˡ�
+这是一家湘西小饭馆，布置简易，顾客多是匆匆的行人，买点包子、鸡腿、米酒就
+赶路去了。
 LONG
 	);
 

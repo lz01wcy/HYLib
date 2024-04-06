@@ -1,17 +1,17 @@
 // Room: /d/nanshaolin/bamboo1.c
 // Last Modified by winder on May. 29 2001
-// ����Ҳ��ȥ��Ħ���ĵط���������Ҳ��Ҫ��
+// 这里也是去达摩洞的地方。南少林也不要。
 
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "竹林");
 	set("long", @LONG
-����һƬ���ܵ����֡������˼�������Ω�����ߵ��·�棬��ɮ��ľ��
-����΢�紵����Ҷ�������������������˳���Ϊ֮һ�ӣ����Ǿ��ѵ�������
-�ڡ�
+这是一片密密的竹林。这里人迹罕至，惟闻足底叩击路面，有僧敲木鱼
+声；微风吹拂竹叶，又如簌簌禅唱。令人尘心为之一涤，真是绝佳的禅修所
+在。
 LONG );
 
 	set("exits", ([

@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", RED"���ȵ���Ԩ"NOR);
+	set("short", RED"灼热的深渊"NOR);
 	set("long", RED @LONG
-  ��������ǣ�����һƬ���Ĵ�أ����ȵĵ�����
-����һ��һ��Ķ���!�޼ʵĴ�ɳĮ�������µĹ���
-���Ƕ��㻢��������ʱ�����˹�����ҧ������ʺ�
-��˺�����������
+  毒气，硫磺！这是一片火红的大地，灼热的地面上
+升起一阵一阵的毒烟!无际的大沙漠。而四下的怪物
+更是对你虎视眈眈，随时都会扑过来，咬断你的咽喉
+，撕裂你的身躯。
 LONG NOR);
 set("magicroom",1);
 set("magicset",1);

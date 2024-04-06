@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¶«ìø·¿²àÀÈ");
+	set("short", "ä¸œç¦…æˆ¿ä¾§å»Š");
 	set("long", @LONG
-ÕâÀïÊÇìø·¿²àÀÈ¡£²ÊÁº»­¶°£¬Á¬¶¥ÅïÒ²ÓÃ²ÊÆá»æÂúÁË¸÷ÖÖ·ÉÌìµÄÍ¼
-ÐÎ£¬³ö×ÔÃû¼ÒÊÖ±Ê£¬¶ËµÄ×³Àö²»·²¡£±±ÍûÊÇÒ»Æ¬»±Ê÷ÁÖ£¬ÄñÓï»¨ÏãÒþÒþ
-´«À´ÁîÈËÐÄ¿õÉñâù¡£¶«ÃæÊÇÉ®ÈËÃÇÐÝÏ¢ÓÃµÄÉ®Éá¡£   
+è¿™é‡Œæ˜¯ç¦…æˆ¿ä¾§å»Šã€‚å½©æ¢ç”»æ ‹ï¼Œè¿žé¡¶æ£šä¹Ÿç”¨å½©æ¼†ç»˜æ»¡äº†å„ç§é£žå¤©çš„å›¾
+å½¢ï¼Œå‡ºè‡ªåå®¶æ‰‹ç¬”ï¼Œç«¯çš„å£®ä¸½ä¸å‡¡ã€‚åŒ—æœ›æ˜¯ä¸€ç‰‡æ§æ ‘æž—ï¼Œé¸Ÿè¯­èŠ±é¦™éšéš
+ä¼ æ¥ä»¤äººå¿ƒæ—·ç¥žæ€¡ã€‚ä¸œé¢æ˜¯åƒ§äººä»¬ä¼‘æ¯ç”¨çš„åƒ§èˆã€‚   
 LONG );
 	set("exits", ([
 		"northeast" : __DIR__"songshu3",

@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("½ğÓ¹",({"jinyong","jin"}));
-       set("title",HIY"´óÏÀ"NOR);
+	set_name("é‡‘åº¸",({"jinyong","jin"}));
+       set("title",HIY"å¤§ä¾ "NOR);
 	set("long", 
-              "Ëû¾ÍÊÇ´«ËµÖĞµÄ´óÏÀ½ğÓ¹¡£\n"
-              "Èç¹ûÄãÓĞËùÓĞµÄÉñÊé¡£Äã¿ÉÒÔÓÃfindbook¸øËû.\n");
+              "ä»–å°±æ˜¯ä¼ è¯´ä¸­çš„å¤§ä¾ é‡‘åº¸ã€‚\n"
+              "å¦‚æœä½ æœ‰æ‰€æœ‰çš„ç¥ä¹¦ã€‚ä½ å¯ä»¥ç”¨findbookç»™ä»–.\n");
         set("age", 57);
 	set("attitude", "friendly");
 	set("shen_type", 1);
@@ -34,7 +34,7 @@ void create()
         set_skill("blade",200);
 
        
-        create_family("½ğÓ¹Ñ§»á",1,"ÔªÀÏ");
+        create_family("é‡‘åº¸å­¦ä¼š",1,"å…ƒè€");
 
        	setup();
 	
@@ -66,8 +66,8 @@ int do_findbook(object ob)
                  destruct(present("shenbook12",me));
                  destruct(present("shenbook13",me));
                  destruct(present("shenbook14",me));
-           command("say ºÃ°É£¬¼ÈÈ»Äã°ïÎÒÕÒµ½ÁËËùÓĞµÄÉñÊé£¬ÄÑÎªÄã" +
-             "Èç´ËĞÁ¿àÅÜÀ´£¬ÎÒ²»»á¿÷´ıÄãµÄ¡£");
+           command("say å¥½å§ï¼Œæ—¢ç„¶ä½ å¸®æˆ‘æ‰¾åˆ°äº†æ‰€æœ‰çš„ç¥ä¹¦ï¼Œéš¾ä¸ºä½ " +
+             "å¦‚æ­¤è¾›è‹¦è·‘æ¥ï¼Œæˆ‘ä¸ä¼šäºå¾…ä½ çš„ã€‚");
              exp =1000+random(4000);
              pot = exp/5;
              score = random(5000);
@@ -80,20 +80,20 @@ int do_findbook(object ob)
              me->add("con",1);
              me->add("dex",1);
              me->add("kar",1);
-     	      tell_object(me,"Äã±»½±ÀøÁË£º\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã×ÛºÏÆÀ¼Û\n");
-                     tell_object(me,HIR"ÄãµÄ±ÛÁ¦Ìá¸ßÁË!\n"NOR);
-                     tell_object(me,HIG"ÄãµÄÎòĞÔÌá¸ßÁË!\n"NOR);
-                     tell_object(me,HIY"ÄãµÄ¸ù¹ÇÌá¸ßÁË!\n"NOR);
-                     tell_object(me,HIB"ÄãµÄÉí·¨Ìá¸ßÁË!\n"NOR);
-                     tell_object(me,HIM"ÄãµÄ¸£ÔµÌá¸ßÁË!\n"NOR);
-                     tell_object(me,HIC"ÄãµÄÈİÃ²Ìá¸ßÁË!\n"NOR);
+     	      tell_object(me,"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+             chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+            chinese_number(score)+"ç‚¹ç»¼åˆè¯„ä»·\n");
+                     tell_object(me,HIR"ä½ çš„è‡‚åŠ›æé«˜äº†!\n"NOR);
+                     tell_object(me,HIG"ä½ çš„æ‚Ÿæ€§æé«˜äº†!\n"NOR);
+                     tell_object(me,HIY"ä½ çš„æ ¹éª¨æé«˜äº†!\n"NOR);
+                     tell_object(me,HIB"ä½ çš„èº«æ³•æé«˜äº†!\n"NOR);
+                     tell_object(me,HIM"ä½ çš„ç¦ç¼˜æé«˜äº†!\n"NOR);
+                     tell_object(me,HIC"ä½ çš„å®¹è²Œæé«˜äº†!\n"NOR);
               command("chat* haha"); 
          }
         else
-          command("say ÄãÉíÉÏÄÄÀïÓĞËùÓĞµÄÉñÊé!");
+          command("say ä½ èº«ä¸Šå“ªé‡Œæœ‰æ‰€æœ‰çš„ç¥ä¹¦!");
         return 1;
 }
  

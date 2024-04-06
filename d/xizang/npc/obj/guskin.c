@@ -3,13 +3,13 @@ inherit ITEM;
 inherit F_LIQUID; 
 void create()
 {
-    set_name("¹Å³ÇÉÕ", ({ "old skin", "skin" }) );
+    set_name("å¤åŸçƒ§", ({ "old skin", "skin" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("long", "Ò»¸öÆ¤ÖÆ¾Æ´ü£¬´ó¸Å×°µÃ°Ë¡¢¾ÅÉıµÄ¹ØÍâºº×Ó³£ºÈµÄ¹Å³ÇÉÕ¾Æ¡£\n");
-                set("unit", "¸ö");
+        set("long", "ä¸€ä¸ªçš®åˆ¶é…’è¢‹ï¼Œå¤§æ¦‚è£…å¾—å…«ã€ä¹å‡çš„å…³å¤–æ±‰å­å¸¸å–çš„å¤åŸçƒ§é…’ã€‚\n");
+                set("unit", "ä¸ª");
         set("value", 5000);
                 set("max_liquid", 450);
         } 
@@ -17,7 +17,7 @@ void create()
         // in each cloned copy.
         set("liquid", ([
                 "type": "alcohol",
-        "name": "¹Å³ÇÉÕ",
+        "name": "å¤åŸçƒ§",
         "remaining": 450,
         "drunk_apply": 100,
         ]) );

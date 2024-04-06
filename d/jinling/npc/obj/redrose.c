@@ -7,13 +7,13 @@ inherit HEAD;
 
 void create()
 {
-	set_name( HIR "ºìÃµ¹å" NOR , ({ "red rose" }) );
+	set_name( HIR "çº¢ç«ç‘°" NOR , ({ "red rose" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¶äÃÀÀöÎŞ±ÈµÄºìÃµ¹å¡£\n");
-		set("unit", "¶ä");
+		set("long", "è¿™æ˜¯ä¸€æœµç¾ä¸½æ— æ¯”çš„çº¢ç«ç‘°ã€‚\n");
+		set("unit", "æœµ");
 		set("value", 2000);
 		set("material", "rose");
 		set("armor_prop/armor", 11);

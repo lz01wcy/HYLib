@@ -1,4 +1,4 @@
-// Room: /d/chengdu/npc/obj/qingcai.c Çà²Ë
+// Room: /d/chengdu/npc/obj/qingcai.c é’èœ
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("Çà²Ë", ({"Qingcai", "cai"}));
+	set_name("é’èœ", ({"Qingcai", "cai"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿ÃÂÌÓÍÓÍµÄÇà²Ë¡£\n");
-		set("unit", "¿Ã");
+		set("long", "ä¸€æ£µç»¿æ²¹æ²¹çš„é’èœã€‚\n");
+		set("unit", "æ£µ");
 		set("value", 30);
 		set("food_remaining", 2);
 		set("food_supply", 20);

@@ -1,14 +1,14 @@
-//Room: shierpan4.c Ê®¶şÅÌ
+//Room: shierpan4.c åäºŒç›˜
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","Ê®¶şÅÌ");
+      set("short","åäºŒç›˜");
       set("long",@LONG
-ÕâÀïÊ¯½×¶¸ÕÛ¶àÍä£¬ºÅ³Æ¡¸Ê®¶şÅÌ¡¹¡£ÓÉ´ËÎ÷ÉÏ¿É´ï»ªÑÏ¶¥£¬¶«ÏÂÔòµ½Íò
-ÄêâÖ¡£
+è¿™é‡ŒçŸ³é˜¶é™¡æŠ˜å¤šå¼¯ï¼Œå·ç§°ã€ŒåäºŒç›˜ã€ã€‚ç”±æ­¤è¥¿ä¸Šå¯è¾¾åä¸¥é¡¶ï¼Œä¸œä¸‹åˆ™åˆ°ä¸‡
+å¹´åºµã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
          me->add("qi",-10);
          if (((c_skill*c_skill*c_skill/10)< c_exp) && (c_skill<101))
              me->improve_skill("dodge", (int)me->query_skill("dodge", 1));
-         tell_object(me,"ÄãÑØÊ®¶şÅÌÓÖÍùÉÏÅÀÁËÒ»Õó£¬ÖÕÓÚµ½ÁË»ªÑÏ¶¥£¬ºÃÀÛÈË¡£\n");
+         tell_object(me,"ä½ æ²¿åäºŒç›˜åˆå¾€ä¸Šçˆ¬äº†ä¸€é˜µï¼Œç»ˆäºåˆ°äº†åä¸¥é¡¶ï¼Œå¥½ç´¯äººã€‚\n");
       }
       return 1;
 }

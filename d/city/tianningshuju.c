@@ -5,13 +5,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short","�������");
+	set("short","天宁书局");
 	set("long",@LONG
-����ר���з��и����ֻ����鼮�̱������л��в������ѵ�һ����
-�䱾���������ϰ岻�ƾ�Ӫ�����ϵط�����ƫƧ������ÿ�����飬����
-����û�ж��٣����ڹ�����Щ���㣬ֻ���ϰ�������һ���޾���ɵ���
-�ţ��������(shelf) ���߰������һЩ���ᣬ�߶���������һ������
-���µĸо���
+这里专卖市坊中各种字画和书籍刻本，其中还有不少是难得一见的
+珍本，但由于老板不善经营，加上地方过于偏僻，所以每天买书，看书
+的人没有多少，店内光线有些不足，只有老板辛友清一人无精打采地守
+着，四周书架(shelf) 乱七八糟堆着一些卷轴，线订本，给人一种杂乱
+无章的感觉。
 LONG );
 	set("exits", ([
 		"southeast"  : __DIR__"tianningxiang",
@@ -20,7 +20,7 @@ LONG );
 		__DIR__"npc/bookboss" : 1,
 	]));
 	set("item_desc", ([
-		"shelf"  : "����϶������飬��Щ�Ѿ������������á�\n",
+		"shelf"  : "书架上堆满了书，有些已经翻得破破烂烂。\n",
 	]));
 	set("coor/x", 30);
 	set("coor/y", 50);

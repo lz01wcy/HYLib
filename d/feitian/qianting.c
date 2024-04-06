@@ -12,16 +12,16 @@ int do_da(string);
 int do_ci(string);
 
 void create() {
-    set("short", "Ç°Í¥");
+    set("short", "å‰åº­");
     set("long", @LONG
-ÕâÊÇÒ»¸ö¿í³¨µÄÇ°Í¥£¬²»¹ı²¢²»ÏñÆäËû¾ÓÊÒÖÖÁËĞ©»¨»¨²İ²İ£¬µ½´¦¶¼ÊÇÁ·
-ÎäµÄÆ÷¾ß£¬Ò»¸öÉíĞÎ°«Ğ¡µÄÈËÕıÔÚÄÃÖñ½£ÅüÄ¾ÈË¡£Äã¿ÉÒÔÄÃ°Ñ½£¸úËûÒ»Æğ
-(ci) Ä¾ÈË×öÁ·Ï°¡£ÓÒ±ßÓĞ¸ö´óÉ³°ü£¬ÄãºÜÏëÓÃÁ¦Ò»È­´ò(da)
-¹ıÈ¥¡£ÏòÇ°ÊÇ
-Ò»¸ö×ßÀÈ¡£
+è¿™æ˜¯ä¸€ä¸ªå®½æ•çš„å‰åº­ï¼Œä¸è¿‡å¹¶ä¸åƒå…¶ä»–å±…å®¤ç§äº†äº›èŠ±èŠ±è‰è‰ï¼Œåˆ°å¤„éƒ½æ˜¯ç»ƒ
+æ­¦çš„å™¨å…·ï¼Œä¸€ä¸ªèº«å½¢çŸ®å°çš„äººæ­£åœ¨æ‹¿ç«¹å‰‘åŠˆæœ¨äººã€‚ä½ å¯ä»¥æ‹¿æŠŠå‰‘è·Ÿä»–ä¸€èµ·
+(ci) æœ¨äººåšç»ƒä¹ ã€‚å³è¾¹æœ‰ä¸ªå¤§æ²™åŒ…ï¼Œä½ å¾ˆæƒ³ç”¨åŠ›ä¸€æ‹³æ‰“(da)
+è¿‡å»ã€‚å‘å‰æ˜¯
+ä¸€ä¸ªèµ°å»Šã€‚
     LONG);
 
-    set("area", "·ÉÌìÓù½£Á÷");
+    set("area", "é£å¤©å¾¡å‰‘æµ");
     set("exits",([ /* sizeof() == 4 */
     "south" : __DIR__
     "damen",
@@ -42,13 +42,13 @@ void create() {
 }
 
 int valid_leave(object me, string dir) {
-    if ((!(string) me->query("family") || (string) me->query("family/family_name") != "·ÉÌìÓù½£Á÷")
+    if ((!(string) me->query("family") || (string) me->query("family/family_name") != "é£å¤©å¾¡å‰‘æµ")
         && (dir == "north")
         && (objectp(present("mi yan", environment(me)))
             || objectp(present("mi yan", environment(me))))) {
         if (objectp(present("mi yan", environment(me))))
 
-            return notify_fail("ÃÖÑåËµµÀ£ºÄã²»ÊÇµÀ³¡µÜ×Ó£¬Çë»Ø°É¡£\n");
+            return notify_fail("å¼¥å½¦è¯´é“ï¼šä½ ä¸æ˜¯é“åœºå¼Ÿå­ï¼Œè¯·å›å§ã€‚\n");
     }
 
     return ::valid_leave(me, dir);
@@ -67,21 +67,21 @@ int do_da(string arg) {
     me = this_player();
 
     if (!arg || (arg != "shabao"))
-        return notify_fail("ÄãÏë¸ÉÊ²Ã´£¿\n");
+        return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆï¼Ÿ\n");
     me->add("qi", -10);
 
     if (me->query("qi") <= (10))
-        return notify_fail("ÄãÌ«Æ£ÀÍÁË£¬Ã»ÓĞ¾«Á¦È¥Á·¹¦ÁË¡£\n");
+        return notify_fail("ä½ å¤ªç–²åŠ³äº†ï¼Œæ²¡æœ‰ç²¾åŠ›å»ç»ƒåŠŸäº†ã€‚\n");
 
-    message_vision("$N°ÚºÃ¼ÜÊÆ£¬Ò»È­ÏòÉ³°ü´òÈ¥¡£\n", me);
+    message_vision("$Næ‘†å¥½æ¶åŠ¿ï¼Œä¸€æ‹³å‘æ²™åŒ…æ‰“å»ã€‚\n", me);
 
     if (me->query_skill("parry", 1) < 5) {
-        message_vision("$N¸ù±¾²»»á¸ñ¶·£¬´òµÃÊÖ¶¼ÂéÁË¡£\n", me);
+        message_vision("$Næ ¹æœ¬ä¸ä¼šæ ¼æ–—ï¼Œæ‰“å¾—æ‰‹éƒ½éº»äº†ã€‚\n", me);
 
     } else if (me->query_skill("parry", 1) < 20) {
-        message_vision("$N°ÑÉ³°ü´òµÃ»ÎÀ´»ÎÈ¥¡£\n", me);
+        message_vision("$NæŠŠæ²™åŒ…æ‰“å¾—æ™ƒæ¥æ™ƒå»ã€‚\n", me);
     } else {
-        message_vision("àÔµÄÒ»Éù£¬É³°ü±»$N´òµÃ·ÉÁËÆğÀ´¡£\n", me);
+        message_vision("å˜£çš„ä¸€å£°ï¼Œæ²™åŒ…è¢«$Næ‰“å¾—é£äº†èµ·æ¥ã€‚\n", me);
     }
 
     if (me->query_skill("parry", 1) < 30) {
@@ -89,7 +89,7 @@ int do_da(string arg) {
         me->set_temp("hitted", 1);
     }
     if (me->query_skill("parry", 1) >= 30) {
-        write("ÄãÒ»ÏÂ¾Í°ÑÉ³°ü´ò´©ÁË£¬É³×ÓÂäµÄÄãÂúÉí¶¼ÊÇ£¡\n");
+        write("ä½ ä¸€ä¸‹å°±æŠŠæ²™åŒ…æ‰“ç©¿äº†ï¼Œæ²™å­è½çš„ä½ æ»¡èº«éƒ½æ˜¯ï¼\n");
     }
     return 1;
 }
@@ -102,22 +102,22 @@ int do_ci(string arg) {
     me = this_player();
 
     if (!arg || (arg != "muren"))
-        return notify_fail("ÄãÏë¸ÉÊ²Ã´£¿\n");
+        return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆï¼Ÿ\n");
 
     me->add("qi", -10);
 
     if (me->query("qi") <= (10))
-        return notify_fail("ÄãÌ«Æ£ÀÍÁË£¬Ã»ÓĞ¾«Á¦È¥Á·¹¦ÁË¡£\n");
+        return notify_fail("ä½ å¤ªç–²åŠ³äº†ï¼Œæ²¡æœ‰ç²¾åŠ›å»ç»ƒåŠŸäº†ã€‚\n");
 
-    message_vision("$NÄó¸ö½£¾÷£¬Ò»½£ÏòÄ¾ÈË´ÌÈ¥¡£\n", me);
+    message_vision("$Næä¸ªå‰‘è¯€ï¼Œä¸€å‰‘å‘æœ¨äººåˆºå»ã€‚\n", me);
 
     if (me->query_skill("sword", 1) < 5) {
-        message_vision("$N¸ù±¾²»»á½£·¨£¬½£ºÍÄ¾ÈËÖ»ÊÇÇáÅöÁËÒ»ÏÂ¡£\n", me);
+        message_vision("$Næ ¹æœ¬ä¸ä¼šå‰‘æ³•ï¼Œå‰‘å’Œæœ¨äººåªæ˜¯è½»ç¢°äº†ä¸€ä¸‹ã€‚\n", me);
 
     } else if (me->query_skill("sword", 1) < 20) {
-        message_vision("$N¿´×¼Ä¾ÈËµÄÒÆ¶¯£¬Ò»½£´ÌÔÚÄ¾ÈËµÄÒªÑ¨ÉÏ¡£\n", me);
+        message_vision("$Nçœ‹å‡†æœ¨äººçš„ç§»åŠ¨ï¼Œä¸€å‰‘åˆºåœ¨æœ¨äººçš„è¦ç©´ä¸Šã€‚\n", me);
     } else {
-        message_vision("$NËæÊÖÒ»½££¬ÒÑ¾­´ÌÖĞÄ¾ÈËµÄÒªº¦ÁË¡£\n", me);
+        message_vision("$Néšæ‰‹ä¸€å‰‘ï¼Œå·²ç»åˆºä¸­æœ¨äººçš„è¦å®³äº†ã€‚\n", me);
     }
 
     if (me->query_skill("sword", 1) < 30) {
@@ -125,7 +125,7 @@ int do_ci(string arg) {
         me->set_temp("hitted", 1);
     }
     if (me->query_skill("sword", 1) >= 30) {
-        write("ÄãÒ»ÏÂ¾Í°ÑÄ¾ÈË´Ìµ¹ÁË£¬¿´À´´ÌÄ¾ÈË¶ÔÄãÃ»Ê²Ã´×÷ÓÃÁË£¡\n");
+        write("ä½ ä¸€ä¸‹å°±æŠŠæœ¨äººåˆºå€’äº†ï¼Œçœ‹æ¥åˆºæœ¨äººå¯¹ä½ æ²¡ä»€ä¹ˆä½œç”¨äº†ï¼\n");
     }
     return 1;
 }

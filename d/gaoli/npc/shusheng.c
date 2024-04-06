@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
  
-//ÊéÉú¡£
+//ä¹¦ç”Ÿã€‚
 
 inherit NPC;
 
 void create()
 {
-  set_name("ÊéÉú", ({"shu sheng","shu","sheng"}));
-  set("long","ÕâÊÇ¸ßÀöµÄÒ»¸öÊéÉú£¬ÕûÌì¿à¶ÁÊ«Êé¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("ä¹¦ç”Ÿ", ({"shu sheng","shu","sheng"}));
+  set("long","è¿™æ˜¯é«˜ä¸½çš„ä¸€ä¸ªä¹¦ç”Ÿï¼Œæ•´å¤©è‹¦è¯»è¯—ä¹¦ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 3000);
   set("age", 20);
   set("attitude", "peaceful");

@@ -7,19 +7,19 @@ inherit HEAD;
 
 void create()
 {
-	string *surname=({"º£ÔÆºì","ĞåÜ½ÈØ","½õÀóÖ¦","ÃÀÈËºì"});
+	string *surname=({"æµ·äº‘çº¢","ç»£èŠ™è“‰","é”¦è”æ","ç¾äººçº¢"});
 	set_name(HIR+surname[random(sizeof(surname))]+NOR, ({"hong ju","flower" }));
 	set_weight(300);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¶ä½¿ÑŞµÄºì¾Õ¡£\n");
-		set("material", "»¨°ê");
-		set("unit", "¶ä");
+		set("long", "è¿™æ˜¯ä¸€æœµå¨‡è‰³çš„çº¢èŠã€‚\n");
+		set("material", "èŠ±ç“£");
+		set("unit", "æœµ");
 		set("unique", 1);
 		set("value", 1000);
-		set("wear_msg", "$NÄéÆğÒ»¶äºì¾Õ£¬´÷ÔÚÍ·ÉÏ¡£$N¿´ÆğÀ´¸üÔö½¿ÑŞ¡£\n");
-		set("unequip_msg", "$N½«ºì¾Õ´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+		set("wear_msg", "$Næ‹ˆèµ·ä¸€æœµçº¢èŠï¼Œæˆ´åœ¨å¤´ä¸Šã€‚$Nçœ‹èµ·æ¥æ›´å¢å¨‡è‰³ã€‚\n");
+		set("unequip_msg", "$Nå°†çº¢èŠä»å¤´ä¸Šæ‘˜äº†ä¸‹æ¥ã€‚\n");
 		set("armor_prop/personality", 2);
 		set("female_only", 1);
 	}

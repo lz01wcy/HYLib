@@ -1,4 +1,4 @@
-// road8.c Çà²Ø¸ßÔ­-É½Â·µ½³É¶¼
+// road8.c é’è—é«˜åŽŸ-å±±è·¯åˆ°æˆéƒ½
 // west to jiayuguan,est to lanzhou
 // Ver 0.1 08/15/1998 by Freeze
 
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "É½Â·");
+	set("short",HIG "å±±è·¯");
 	set("long", @LONG
-ÕâÀïÎ÷ÍùÇà²Ø¸ßÔ­£¬¶«µ½ÊñµØ¡£ÐÐÕâÒ»Â·¿ÉÎ½¼èÄÑÏÕ×èÒ»Ñù¾ßÈ«£¬ÈôÎÞ
-Ê®·ÖÖ®ÀíÓÉ¶ø²»µÃÒÔÎªÖ®£¬Í¨³£ÎÞÈË¹ýÍù¡£
+è¿™é‡Œè¥¿å¾€é’è—é«˜åŽŸï¼Œä¸œåˆ°èœ€åœ°ã€‚è¡Œè¿™ä¸€è·¯å¯è°“è‰°éš¾é™©é˜»ä¸€æ ·å…·å…¨ï¼Œè‹¥æ— 
+ååˆ†ä¹‹ç†ç”±è€Œä¸å¾—ä»¥ä¸ºä¹‹ï¼Œé€šå¸¸æ— äººè¿‡å¾€ã€‚
 LONG
 	);	
         set("outdoors", "qingzh");
@@ -37,7 +37,7 @@ void init()
 	ob = this_player();
 	ioqi = 500 / (int)ob->query("int") + 2;
         if((int)ob->query("qi") < 50) 
-                 message("vinson",HIR"ÄãºöÈ»¸Ðµ½ºôÎü³ÔÁ¦£¬ÉíÌå·¢Èí£¬ÏóÊÇ¸ßÔ­·´Ó¦£¬ÐªÏ¢Ò»»á¶ùÔÙ×ß°É£¡\n"NOR, ob);
+                 message("vinson",HIR"ä½ å¿½ç„¶æ„Ÿåˆ°å‘¼å¸åƒåŠ›ï¼Œèº«ä½“å‘è½¯ï¼Œè±¡æ˜¯é«˜åŽŸååº”ï¼Œæ­‡æ¯ä¸€ä¼šå„¿å†èµ°å§ï¼\n"NOR, ob);
 	ob->improve_skill("dodge", 0.1 * (int)ob->query_skill("dodge", 1));
         ob->receive_damage("qi", ioqi );
 }

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ҩ��");
+	set("short", "药房");
 	set("long", @LONG
-�����Ǽ�������ҩ��ҩ�ĵط����������з���һֻ��ҩ�õ�ҩ�ʣ�
-һ��С������ͣ�ļ�ҩ���Ļ���ˮ��¯�в�ͣ��ð������ˮ������ɢ
-����ŨŨ��ҩ����
+这里是济世堂配药炼药的地方，屋子正中放了一只炼药用的药臼，
+一个小厮正不停的加药、鼓火、添水，炉中不停的冒出腾腾水雾，并散
+发着浓浓的药气。
 LONG );
 	set("exits", ([
 		"west" : __DIR__"jishitang",

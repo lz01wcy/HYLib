@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","С·");
+  set ("short","小路");
   set ("long", @LONG
-�����ǽ��ߵ�С·���Ա߾��ǹ����ĳ���������羰������ɽˮ��
-�����������¡�һ��紵������ˮ�ĳ�ʪ��Ϣ�˱Ƕ�����
+这里是江边的小路。旁边就是滚滚的长江。这里风景秀丽，山水如
+画，空气清新。一阵风吹过，江水的潮湿气息扑鼻而来。
 LONG);
 
   set("exits", ([ 

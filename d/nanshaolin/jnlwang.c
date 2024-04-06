@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "½ôÄÇÂÞÍõµî");
+	set("short", "ç´§é‚£ç½—çŽ‹æ®¿");
 	set("long", @LONG
-´óµîÕýÖÐ¹©·î×Å½ôÄÇÂÞÍõµÄÈý×ùËÜÏñ¡£ËÄÖÜµÄÇ½±ÚÉÏ»æÂúÁËÎ÷·½Ê¤
-¾³£¬ËÄÊ®°ËÔ¸£¬¶þÊ®ËÄ×ðÌìµÄ±Ú»­£¬¹¹Í¼ºêÎ°£¬É«²ÊÑ¤Àö£¬ÏßÌõÁ÷³©£¬
-»­¹¤¾«Ï¸¡£µîÖÐÓÐ¼¸ÃûÏã¿ÍÕýÔÚ¶¥ÀñÄ¤°Ý¡£
+å¤§æ®¿æ­£ä¸­ä¾›å¥‰ç€ç´§é‚£ç½—çŽ‹çš„ä¸‰åº§å¡‘åƒã€‚å››å‘¨çš„å¢™å£ä¸Šç»˜æ»¡äº†è¥¿æ–¹èƒœ
+å¢ƒï¼Œå››åå…«æ„¿ï¼ŒäºŒåå››å°Šå¤©çš„å£ç”»ï¼Œæž„å›¾å®ä¼Ÿï¼Œè‰²å½©ç»šä¸½ï¼Œçº¿æ¡æµç•…ï¼Œ
+ç”»å·¥ç²¾ç»†ã€‚æ®¿ä¸­æœ‰å‡ åé¦™å®¢æ­£åœ¨é¡¶ç¤¼è†œæ‹œã€‚
 LONG );
 
 	set("exits", ([

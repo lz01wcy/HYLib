@@ -1,4 +1,4 @@
-// xiaosong.c ËÎÇàÊé
+// xiaosong.c å®‹é’ä¹¦
 
 inherit NPC;
 string ask_for_song();
@@ -6,11 +6,11 @@ string ask_for_zhou();
 string ask_for_emei();
 void create()
 {
-        set_name("ËÎÇàÊé", ({ "song qingshu", "song" }));
+        set_name("å®‹é’ä¹¦", ({ "song qingshu", "song" }));
         set("long",
-                "Ëû¾ÍÊÇËÎÔ¶ÇÅµÄ¶ù×ÓËÎÇàÊé¡£\n"
-                "Ëû½ñÄê¶şÊ®Ëê£¬ÄËÊÇÎäµ±µÚÈı´úÖĞ³öÀà°ÎİÍµÄÈËÎï¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯å®‹è¿œæ¡¥çš„å„¿å­å®‹é’ä¹¦ã€‚\n"
+                "ä»–ä»Šå¹´äºŒåå²ï¼Œä¹ƒæ˜¯æ­¦å½“ç¬¬ä¸‰ä»£ä¸­å‡ºç±»æ‹”èƒçš„äººç‰©ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("attitude", "aggressive");
         set("shen_type", 0);
@@ -20,10 +20,10 @@ void create()
         set("con", 25);
         set("dex", 25);
         set("inquiry",([
-                "ËÎ·òÈË"  : (: ask_for_song :),
-                "ÖÜÜÆÈô"  : (: ask_for_zhou :),
-                "ÕÆÃÅÈË"  : (: ask_for_emei :),
-                "ËÎÔ¶ÇÅ"  : "ÎÒµù×ö²»³ÉÎäµ±ÕÆÃÅÁË£¬¹ş¹ş¡£ÎÒÈ´¿ÉÒÔ×ö¶ëáÒÕÆÃÅµÄÀÏ¹«£¬¹ş¹ş¹ş£¡",
+                "å®‹å¤«äºº"  : (: ask_for_song :),
+                "å‘¨èŠ·è‹¥"  : (: ask_for_zhou :),
+                "æŒé—¨äºº"  : (: ask_for_emei :),
+                "å®‹è¿œæ¡¥"  : "æˆ‘çˆ¹åšä¸æˆæ­¦å½“æŒé—¨äº†ï¼Œå“ˆå“ˆã€‚æˆ‘å´å¯ä»¥åšå³¨åµ‹æŒé—¨çš„è€å…¬ï¼Œå“ˆå“ˆå“ˆï¼",
         ]));
         set("max_qi", 1000);
         set("max_jing", 500);
@@ -52,7 +52,7 @@ void create()
         map_skill("parry", "taiji-jian");
         map_skill("sword", "liangyi-jian");
 
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -64,10 +64,10 @@ string ask_for_zhou()
     object ob;
     ob = this_player();
     command("heng");
-    command("say " + ob->query("name") + "£¡ÄãÊÇÊ²Ã´¶«Î÷£¿¸ÒÖ±ºôÜÆÈôµÄÃû×Ö£¿ÄãÕÒËÀ£¡\n");
+    command("say " + ob->query("name") + "ï¼ä½ æ˜¯ä»€ä¹ˆä¸œè¥¿ï¼Ÿæ•¢ç›´å‘¼èŠ·è‹¥çš„åå­—ï¼Ÿä½ æ‰¾æ­»ï¼\n");
     command("kkkil " + ob->query("id"));
     kill_ob(this_player());
-    return "ÄãÈ¥ËÀ°É£¡\n";
+    return "ä½ å»æ­»å§ï¼\n";
 }
 
 string ask_for_song()
@@ -75,19 +75,19 @@ string ask_for_song()
     object ob;
     ob = this_player();
     command("xixi");
-    command("say " + ob->query("name") + "£¬ÄÚ×ÓÕıÔÚÀïÃæ£¬ÄãÕÒËıÈ¥°É£¡\n");
-    message_vision("ËÎÇàÊéËáÁïÁïµØ¿´×Å$N×ß½øÇŞ¹¬¡£\n\n",ob);
+    command("say " + ob->query("name") + "ï¼Œå†…å­æ­£åœ¨é‡Œé¢ï¼Œä½ æ‰¾å¥¹å»å§ï¼\n");
+    message_vision("å®‹é’ä¹¦é…¸æºœæºœåœ°çœ‹ç€$Nèµ°è¿›å¯å®«ã€‚\n\n",ob);
     ob->move("/d/emei/qinggong");
-    return "ÓÖÒ»¸öñ®¸òó¡£¬ºÙºÙ¡£\n";
+    return "åˆä¸€ä¸ªç™è›¤èŸ†ï¼Œå˜¿å˜¿ã€‚\n";
 }
 
 string ask_for_emei()
 {
     object ob;
     ob = this_player();
-    ob->set_temp("marks/ËÎ·òÈË",1);
-    command("say " + ob->query("name") + "£¬ÄÚ×ÓÆ¢Æø²»ºÃ£¬Äã×Ô¼º±£ÖØ°É£¡\n");
-    message_vision("ËÎÇàÊé²»»³ºÃÒâµØ¿´×Å$N×ß½øÇŞ¹¬¡£\n\n",ob);
+    ob->set_temp("marks/å®‹å¤«äºº",1);
+    command("say " + ob->query("name") + "ï¼Œå†…å­è„¾æ°”ä¸å¥½ï¼Œä½ è‡ªå·±ä¿é‡å§ï¼\n");
+    message_vision("å®‹é’ä¹¦ä¸æ€€å¥½æ„åœ°çœ‹ç€$Nèµ°è¿›å¯å®«ã€‚\n\n",ob);
     ob->move("/d/emei/qinggong");
-    return "½øÈ¥¾ÍÍêÁË¡£\n";
+    return "è¿›å»å°±å®Œäº†ã€‚\n";
 }

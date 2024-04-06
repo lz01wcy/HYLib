@@ -1,13 +1,13 @@
-// jiang.c ½¯ÀÏÈ­Ê¦
+// jiang.c è’‹è€æ‹³å¸ˆ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("½¯ÀÏÈ­Ê¦", ({ "jiang" }) );
-	set("gender", "ÄĞĞÔ");
-	set("title", "ºÓÄÏÎŞ¼«ÃÅµÜ×Ó");
+	set_name("è’‹è€æ‹³å¸ˆ", ({ "jiang" }) );
+	set("gender", "ç”·æ€§");
+	set("title", "æ²³å—æ— æé—¨å¼Ÿå­");
 	set("age", 63);
 	set("attitude", "friendly");
 	set("str", 20);

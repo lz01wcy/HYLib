@@ -1,4 +1,4 @@
-// box.c ¹¦µÂÏä
+// box.c åŠŸå¾·ç®±
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit ITEM;
 void create()
 {
 	object money;
-	set_name("ÉÆÔµÏä", ({ "shanyuan xiang", "xiang"}));
+	set_name("å–„ç¼˜ç®±", ({ "shanyuan xiang", "xiang"}));
 	set_weight(3000);
 	set_max_encumbrance(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÃíÀï³£¼ûµÄ¹¦µÂÏä£¬×¨ÃÅÓÃÀ´½ÓÊÜÉÆÄĞĞÅÅ®ÃÇµÄ¾è¿î¡£\n");
+		set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªåº™é‡Œå¸¸è§çš„åŠŸå¾·ç®±ï¼Œä¸“é—¨ç”¨æ¥æ¥å—å–„ç”·ä¿¡å¥³ä»¬çš„ææ¬¾ã€‚\n");
 		set("material", "wood");
 		set("no_get",1);
 		set("no_drop",1);
@@ -40,25 +40,25 @@ int do_put(string arg)
 
 	me = this_player();
 
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
 	if( sscanf(arg, "%s in %s", item, target)!=2) return 0;
 	if( target!="xiang"&&target!="gongde xiang") return 0;
 	if (sscanf(item,"%d %s",amount,item)!=2)	{
 		if(!objectp(obj=present(item,me)))	return 0;
 		if(!obj->query("money_id"))	{
-			tell_object(me,"±¾ËÂ²»ÊÕÕâĞ©¶«Î÷£¡\n");
+			tell_object(me,"æœ¬å¯ºä¸æ”¶è¿™äº›ä¸œè¥¿ï¼\n");
 			return 1;
 		}
 		else	{
-			tell_object(me,"ÇëÎÊÄúÒª¾è¶àÉÙ°¡£¿\n");
+			tell_object(me,"è¯·é—®æ‚¨è¦æå¤šå°‘å•Šï¼Ÿ\n");
 			return 1;
 			}
 	}
 	if (!objectp(obj = present(item, me)) ) return 0;
 
 	if(!obj->query("money_id"))	{
-		tell_object(me,"±¾ËÂ²»ÊÕÕâÖÖ¶«Î÷£¡\n");
+		tell_object(me,"æœ¬å¯ºä¸æ”¶è¿™ç§ä¸œè¥¿ï¼\n");
 		return 1;
 	}
 	if(amount>obj->query_amount())	return 0;
@@ -69,8 +69,8 @@ int do_put(string arg)
 		}
 	if(amount*obj->query("base_value")<1000)
 	{
-		tell_object(me,"ÄúµÄ³ÏÒâ²»¹»£¡\n");
-		message_vision(HIY"$N±»ÉÆÔµÏäÆøµÄ»èÁË¹ıÈ¥£¡\n"NOR,me);
+		tell_object(me,"æ‚¨çš„è¯šæ„ä¸å¤Ÿï¼\n");
+		message_vision(HIY"$Nè¢«å–„ç¼˜ç®±æ°”çš„æ˜äº†è¿‡å»ï¼\n"NOR,me);
 		return 1;
 	}
 	return 1;

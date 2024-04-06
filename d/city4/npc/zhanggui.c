@@ -5,13 +5,13 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÄÏ±±ĞĞÕÆ¹ñ", ({ "zhanggui" }));
+	set_name("å—åŒ—è¡ŒæŒæŸœ", ({ "zhanggui" }));
 	set("shen_type", 1);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-	"Ëû×öÁË¼¸Ê®ÄêµÄĞ¡ÂòÂô£¬ÕæÃû·´¶øÃ»ÈËÖªµÀ£¬´ó¼Ò¶¼½ĞËûÕÆ¹ñ¡£\n");
+	"ä»–åšäº†å‡ åå¹´çš„å°ä¹°å–ï¼ŒçœŸååè€Œæ²¡äººçŸ¥é“ï¼Œå¤§å®¶éƒ½å«ä»–æŒæŸœã€‚\n");
 	set_skill("unarmed", 50);
 	set_skill("dodge", 50);
 	set_temp("apply/damage", 15);

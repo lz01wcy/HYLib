@@ -9,13 +9,13 @@ void create()
 {
         string file = "/data/npc/bingqipu.o";
 
-        set_name(HIR "½­ºþ±øÆ÷Æ×" NOR, ({ "bingqi pu" }) );
+        set_name(HIR "æ±Ÿæ¹–å…µå™¨è°±" NOR, ({ "bingqi pu" }) );
         
-        set("unit", "±¾");
-        set("long", HIW"ÕâÊÇÒ»±¾Á÷´«¾ÃÔ¶µÄ½­ºþ±øÆ÷Æ×£¬ÀïÃæ¼ÇÏÂÁË½­ºþÉÏµÄ³ÉÃû±øÆ÷¡£
+        set("unit", "æœ¬");
+        set("long", HIW"è¿™æ˜¯ä¸€æœ¬æµä¼ ä¹…è¿œçš„æ±Ÿæ¹–å…µå™¨è°±ï¼Œé‡Œé¢è®°ä¸‹äº†æ±Ÿæ¹–ä¸Šçš„æˆåå…µå™¨ã€‚
 
-¿ÉÒÔÓÃ(reading bingqi pu)À´·­¿´¼ÇÔØ£¬
-¿ÉÒÔÓÃ(checking bingqi pu)À´ÆÀ¶¨×Ô¼º±øÆ÷µÄÅÅÃû¡£
+å¯ä»¥ç”¨(reading bingqi pu)æ¥ç¿»çœ‹è®°è½½ï¼Œ
+å¯ä»¥ç”¨(checking bingqi pu)æ¥è¯„å®šè‡ªå·±å…µå™¨çš„æŽ’åã€‚
 \n"NOR);
         set("material","paper");
 
@@ -41,20 +41,20 @@ int do_read(string arg)
         object obj = this_object();
 
         if ( !arg || arg != "bingqi pu" )
-                return notify_fail("Ê²÷á£¿\n");
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
 
-        write(HIR"                      ½­ºþ±øÆ÷Æ×(Bingqi pu)                   \n"
+        write(HIR"                      æ±Ÿæ¹–å…µå™¨è°±(Bingqi pu)                   \n"
            +HIG"====================================================================\n"
-           +HIR"  µÚÒ»Ãû  " + obj->query("data/1/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/1/player") + obj->query("data/1/id") + "\n"
-           +HIG"  µÚ¶þÃû  " + obj->query("data/2/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/2/player") + obj->query("data/2/id") + "\n"
-           +HIY"  µÚÈýÃû  " + obj->query("data/3/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/3/player") + obj->query("data/3/id") + "\n"
-           +HIW"  µÚËÄÃû  " + obj->query("data/4/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/4/player") + obj->query("data/4/id") + "\n"
-           +HIM"  µÚÎåÃû  " + obj->query("data/5/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/5/player") + obj->query("data/5/id") + "\n"
-           +HIC"  µÚÁùÃû  " + obj->query("data/6/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/6/player") + obj->query("data/6/id") + "\n"
-           +HIC"  µÚÆßÃû  " + obj->query("data/7/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/7/player") + obj->query("data/7/id") + "\n"
-           +HIC"  µÚ°ËÃû  " + obj->query("data/8/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/8/player") + obj->query("data/8/id") + "\n"
-           +HIC"  µÚ¾ÅÃû  " + obj->query("data/9/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/9/player") + obj->query("data/9/id") + "\n"
-           +HIC"  µÚÊ®Ãû  " + obj->query("data/10/w_name") + NOR"\n         Ê¹ÓÃÕß£º" + obj->query("data/10/player") + obj->query("data/10/id") + "\n"
+           +HIR"  ç¬¬ä¸€å  " + obj->query("data/1/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/1/player") + obj->query("data/1/id") + "\n"
+           +HIG"  ç¬¬äºŒå  " + obj->query("data/2/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/2/player") + obj->query("data/2/id") + "\n"
+           +HIY"  ç¬¬ä¸‰å  " + obj->query("data/3/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/3/player") + obj->query("data/3/id") + "\n"
+           +HIW"  ç¬¬å››å  " + obj->query("data/4/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/4/player") + obj->query("data/4/id") + "\n"
+           +HIM"  ç¬¬äº”å  " + obj->query("data/5/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/5/player") + obj->query("data/5/id") + "\n"
+           +HIC"  ç¬¬å…­å  " + obj->query("data/6/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/6/player") + obj->query("data/6/id") + "\n"
+           +HIC"  ç¬¬ä¸ƒå  " + obj->query("data/7/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/7/player") + obj->query("data/7/id") + "\n"
+           +HIC"  ç¬¬å…«å  " + obj->query("data/8/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/8/player") + obj->query("data/8/id") + "\n"
+           +HIC"  ç¬¬ä¹å  " + obj->query("data/9/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/9/player") + obj->query("data/9/id") + "\n"
+           +HIC"  ç¬¬åå  " + obj->query("data/10/w_name") + NOR"\n         ä½¿ç”¨è€…ï¼š" + obj->query("data/10/player") + obj->query("data/10/id") + "\n"
            +HIG"====================================================================\n\n"NOR);
 
         return 1;
@@ -71,27 +71,27 @@ int do_check(string arg)
         obj = this_object();
 
         if ( !arg || arg != "bingqi pu" )
-                return notify_fail("Ê²÷á£¿\n");
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
 
         if ( wizardp(me) )
-                return notify_fail("ÄãÊÇÎ×Ê¦£¬Õâ¸ö...¾ÍÃâÁË°É£¡\n");
+                return notify_fail("ä½ æ˜¯å·«å¸ˆï¼Œè¿™ä¸ª...å°±å…äº†å§ï¼\n");
 
         if ( me->query("weapon") ) {
                 switch((string)me->query("weapon/type"))
                 {
-                        case "½£":
+                        case "å‰‘":
                         basic_skill = "sword";
                         break;
-                        case "µ¶":
+                        case "åˆ€":
                         basic_skill = "blade";
                         break;
-                        case "±Þ":
+                        case "éž­":
                         basic_skill = "whip";
                         break;
-                        case "ÕÈ":
+                        case "æ–":
                         basic_skill = "staff";
                         break;
-                        case "¹÷":
+                        case "æ£":
                         basic_skill = "club";
                         break;
                         default:
@@ -127,13 +127,13 @@ int do_check(string arg)
         if ( level > obj->query("data/10/level") ) {
                 if ( !me->query("weapon/name") ) {
                         if ( basic_skill == "unarmed" || basic_skill == "cuff" )
-                                obj->set("data/10/w_name", "È­Í·");
+                                obj->set("data/10/w_name", "æ‹³å¤´");
                         else if ( basic_skill == "claw" )
-                                obj->set("data/10/w_name", "Àû×¦");
+                                obj->set("data/10/w_name", "åˆ©çˆª");
                         else if ( basic_skill == "strike" )
-                                obj->set("data/10/w_name", "ÌúÕÆ");
+                                obj->set("data/10/w_name", "é“æŽŒ");
                         else if ( basic_skill == "finger" )
-                                obj->set("data/10/w_name", "ÊÖÖ¸");
+                                obj->set("data/10/w_name", "æ‰‹æŒ‡");
                 }
                 else
                         obj->set("data/10/w_name", me->query("weapon/name"));
@@ -143,7 +143,7 @@ int do_check(string arg)
                 
                 playerd = RANK_D->query_rank(me) + " " + me->query("title");
                 if ( me->query("nickname") )
-                        playerd += "¡¸" + me->query("nickname") + "¡¹";
+                        playerd += "ã€Œ" + me->query("nickname") + "ã€";
                 playerd += " " + me->name();
 
                 obj->set("data/10/player", playerd);
@@ -162,14 +162,14 @@ int do_check(string arg)
                 while( obj->query("data/"+(string)i+"/id") != "(" + me->query("id") + ")" ) {
                         i++;
                 }
-                message("vision", HIG"Ò»µÀÏé¹âºöÈ»ÕÖ×¡" + me->name() + "£¬¹â»·ÔÚ" + me->name() + "ÉíÉÏÍ£ÁôÆ¬¿ÌºóÏûÊ§ÁË¡£\n
-Ëæ×Å£¬¿ÕÖÐ»Øµ´ÆðÒ»¸öÉùÒô¶Ô" + me->name() + "Ëµµ½£º"NOR + HIY"¹§Ï²£¬ÄãµÄ±øÆ÷ÏÖÔÚ½­ºþÅÅÃûµÚ"+chinese_number(i)+"£¡\n"NOR, environment(me), me);
+                message("vision", HIG"ä¸€é“ç¥¥å…‰å¿½ç„¶ç½©ä½" + me->name() + "ï¼Œå…‰çŽ¯åœ¨" + me->name() + "èº«ä¸Šåœç•™ç‰‡åˆ»åŽæ¶ˆå¤±äº†ã€‚\n
+éšç€ï¼Œç©ºä¸­å›žè¡èµ·ä¸€ä¸ªå£°éŸ³å¯¹" + me->name() + "è¯´åˆ°ï¼š"NOR + HIY"æ­å–œï¼Œä½ çš„å…µå™¨çŽ°åœ¨æ±Ÿæ¹–æŽ’åç¬¬"+chinese_number(i)+"ï¼\n"NOR, environment(me), me);
 
-                tell_object(me, HIG"Ò»µÀÏé¹âºöÈ»ÕÖ×¡Äã£¬¹â»·ÔÚÄãÉíÉÏÍ£ÁôÆ¬¿ÌºóÏûÊ§ÁË¡£\n
-Ëæ×Å£¬¶ú±ßÏìÆðÒ»¸öÉùÒôËµµ½£º"NOR + HIY"¹§Ï²£¬ÄãµÄ±øÆ÷ÏÖÔÚ½­ºþÅÅÃûµÚ"+chinese_number(i)+"£¡\n"NOR);
+                tell_object(me, HIG"ä¸€é“ç¥¥å…‰å¿½ç„¶ç½©ä½ä½ ï¼Œå…‰çŽ¯åœ¨ä½ èº«ä¸Šåœç•™ç‰‡åˆ»åŽæ¶ˆå¤±äº†ã€‚\n
+éšç€ï¼Œè€³è¾¹å“èµ·ä¸€ä¸ªå£°éŸ³è¯´åˆ°ï¼š"NOR + HIY"æ­å–œï¼Œä½ çš„å…µå™¨çŽ°åœ¨æ±Ÿæ¹–æŽ’åç¬¬"+chinese_number(i)+"ï¼\n"NOR);
         }
         else {
-                return notify_fail(HIW"Æ¾ÄãÏÖÔÚµÄÊµÁ¦»¹²»ÄÜ¹»½øÈë±øÆ÷Æ×¡£\n"NOR);
+                return notify_fail(HIW"å‡­ä½ çŽ°åœ¨çš„å®žåŠ›è¿˜ä¸èƒ½å¤Ÿè¿›å…¥å…µå™¨è°±ã€‚\n"NOR);
         }
         
         save_object("/d/city/obj/bingqipu");

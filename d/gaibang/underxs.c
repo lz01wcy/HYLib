@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ñ©¿ÓÐ¡¶´");
+	set("short", "é›ªå‘å°æ´ž");
 	set("long", @LONG
-ÕâÀïÊÇ´óÑ©É½Ñ©¿ÓÏÂµÄÒ»¸öÃÜ¶´¡£ÀïÃæÆÆÆÆÀÃÀÃµÄ£¬¶ªÂú¸÷ÖÖ
-ÔÓÎï£¬»¹ÓÐØ¤°ïµÜ×ÓÊÕ¼¯µÄÆÆÍ­ÀÃÌúµÈ¡£´ÓÕâÀïÍ¨ÍùØ¤°ïµÄÃØÃÜÍ¨
-µÀ¡£
+è¿™é‡Œæ˜¯å¤§é›ªå±±é›ªå‘ä¸‹çš„ä¸€ä¸ªå¯†æ´žã€‚é‡Œé¢ç ´ç ´çƒ‚çƒ‚çš„ï¼Œä¸¢æ»¡å„ç§
+æ‚ç‰©ï¼Œè¿˜æœ‰ä¸å¸®å¼Ÿå­æ”¶é›†çš„ç ´é“œçƒ‚é“ç­‰ã€‚ä»Žè¿™é‡Œé€šå¾€ä¸å¸®çš„ç§˜å¯†é€š
+é“ã€‚
 LONG );
 	set("exits", ([
 		"out"  : "d/xuedao/hollow",

@@ -6,19 +6,19 @@ inherit ITEM;
 
 void create()
 {
-	set_name("¾ÆÏ¯", ({ "jiuxi" }));
+	set_name("é…’å¸­", ({ "jiuxi" }));
    if( clonep() )
        set_default_object(__FILE__);
    else
    {
-		set("long", "ÕâÊÇÒ»×ÀÎåÉ«ÆëÈ«¡¢ÏãÎ¶ËÄÒç¡¢·áÊ¢µÄ¾ÆÏ¯¡£\n"
-   HIG"°ËÎ¶Æ´ÅÌ(pingpan)  ÕäÆ·ê½¸ş(guogeng)  ºìÉÕÌã°ò(tipang)\n"
-      "ËÉ×Ó¹ğÓã(guiyu)    Ïã¹½²ËĞÄ(caixing)  ÇåìÀ¼×Óã(jiayu)\n"
-      "ÈË²Î¼¦ÌÀ(jitang)   ´äÓñ¶¹¸¯(doufu)    º£²ÎÇàĞ·(qingxie)\n"NOR);
-		set("unit", "×À");
+		set("long", "è¿™æ˜¯ä¸€æ¡Œäº”è‰²é½å…¨ã€é¦™å‘³å››æº¢ã€ä¸°ç››çš„é…’å¸­ã€‚\n"
+   HIG"å…«å‘³æ‹¼ç›˜(pingpan)  çå“æ²ç¾¹(guogeng)  çº¢çƒ§è¹„è†€(tipang)\n"
+      "æ¾å­æ¡‚é±¼(guiyu)    é¦™è‡èœå¿ƒ(caixing)  æ¸…ç‚–ç”²é±¼(jiayu)\n"
+      "äººå‚é¸¡æ±¤(jitang)   ç¿ ç‰è±†è…(doufu)    æµ·å‚é’èŸ¹(qingxie)\n"NOR);
+		set("unit", "æ¡Œ");
 		set("value",1000);
 set("no_drop",1);
-      set("no_get","ÄãÒ²Ì«ºÚĞÄÁË°É£¿¾¹Ïë¿¸×ßÕâÒ»×ÀµÄ¾ÆÏ¯£¿ÅªµÃ¶¯Âğ£¿\n");
+      set("no_get","ä½ ä¹Ÿå¤ªé»‘å¿ƒäº†å§ï¼Ÿç«Ÿæƒ³æ‰›èµ°è¿™ä¸€æ¡Œçš„é…’å¸­ï¼Ÿå¼„å¾—åŠ¨å—ï¼Ÿ\n");
    }
    setup();
 }
@@ -32,67 +32,67 @@ int do_eat(string arg)
 {
 	object me=this_player();
    if( me->is_busy() )
-      return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+      return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
    if((int)me->query("food")>=(int)me->max_food_capacity() )
-	   return notify_fail("ÄãÒÑ¾­³ÔÌ«±¥ÁË£¬»¹Ïë³ÔÊ²Ã´£¿\n");
+	   return notify_fail("ä½ å·²ç»åƒå¤ªé¥±äº†ï¼Œè¿˜æƒ³åƒä»€ä¹ˆï¼Ÿ\n");
 	switch(arg)
    {
    	case "pingpan":
-         message_vision("$NÇáÇáÌô³öÒ»¿éÆ´ÅÌÀä²Ë£¬¼Ğ½ø×ìÀï½ò½òÓĞÎ¶µØ½ÀÆğÀ´¡£\n",me);
+         message_vision("$Nè½»è½»æŒ‘å‡ºä¸€å—æ‹¼ç›˜å†·èœï¼Œå¤¹è¿›å˜´é‡Œæ´¥æ´¥æœ‰å‘³åœ°åš¼èµ·æ¥ã€‚\n",me);
 	   	me->add("food",8);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water",1);
          break;
       case "guogeng":
-      	message_vision("$NÒ¨ÁËÒ»É×ÕäÆ·¹û¸ş£¬¡°°¡£¡¡±ÕæÊÇÓÖÏãÓÖÌğ¡£\n",me);
+      	message_vision("$Nèˆ€äº†ä¸€å‹ºçå“æœç¾¹ï¼Œâ€œå•Šï¼â€çœŸæ˜¯åˆé¦™åˆç”œã€‚\n",me);
 	   	me->add("food",2);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 8);
          break;
       case "tipang":
-      	message_vision("$N²æÁËÒ»´ó¿éµÄºìÉÕÌã°ò£¬ÀÇÍÌ»¢ÑÊµØ³ÔÁËÏÂÈ¥¡£\n",me);
+      	message_vision("$Nå‰äº†ä¸€å¤§å—çš„çº¢çƒ§è¹„è†€ï¼Œç‹¼åè™å’½åœ°åƒäº†ä¸‹å»ã€‚\n",me);
 	   	me->add("food",20);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 2);
          break;
       case "guiyu":
-      	message_vision("$N¼Ğ³öÒ»¿éËÉ×Ó¹ğÓã£¬Ö»¾õÈë×ì»¬ÄÛ£¬ÏÊÃÀÎŞ±È¡£\n",me);
+      	message_vision("$Nå¤¹å‡ºä¸€å—æ¾å­æ¡‚é±¼ï¼Œåªè§‰å…¥å˜´æ»‘å«©ï¼Œé²œç¾æ— æ¯”ã€‚\n",me);
 	   	me->add("food",10);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 2);
          break;
       case "caixing":
-      	message_vision("$NÏ¸ĞÄµØÌôÁËÒ»Ğ©É«Ïã¾ãÈ«µÄÏã¹½²ËĞÄ£¬ÂıÂıµØÆ·Î¶×Å£¬ÕæÏã¡£\n",me);
+      	message_vision("$Nç»†å¿ƒåœ°æŒ‘äº†ä¸€äº›è‰²é¦™ä¿±å…¨çš„é¦™è‡èœå¿ƒï¼Œæ…¢æ…¢åœ°å“å‘³ç€ï¼ŒçœŸé¦™ã€‚\n",me);
 	   	me->add("food",10);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 2);
          break;
       case "jiayu":
-      	message_vision("$NÒ»ÏÂ×ÓÍÚ³öÒ»¿é¼×Óã£¬¼±²»¿ÉÄÍµØÈû½ø×ìÀï¡£\n",me);
+      	message_vision("$Nä¸€ä¸‹å­æŒ–å‡ºä¸€å—ç”²é±¼ï¼Œæ€¥ä¸å¯è€åœ°å¡è¿›å˜´é‡Œã€‚\n",me);
 	   	me->add("food",20);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 4);
          break;
       case "jitang":
-      	message_vision("$N´Õ×ÅÏãÎ¶´ó´óµØ³¢ÁËÒ»¿ÚÈË²Î¼¦ÌÀ£¬¹ûÕæÊÇÏÊÃÀÎŞ±È¡£\n",me);
+      	message_vision("$Nå‡‘ç€é¦™å‘³å¤§å¤§åœ°å°äº†ä¸€å£äººå‚é¸¡æ±¤ï¼ŒæœçœŸæ˜¯é²œç¾æ— æ¯”ã€‚\n",me);
 	   	me->add("food",2);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water",15);
          break;
       case "doufu":
-      	message_vision("$N¼ĞÆğÒ»¿ê´äÓñ¶¹¸¯º¬ÔÚ×ìÀï£¬Ò»Á³µÄĞÒ¸£Âú×ãµÄÉñÇé¡£\n",me);
+      	message_vision("$Nå¤¹èµ·ä¸€ç­·ç¿ ç‰è±†è…å«åœ¨å˜´é‡Œï¼Œä¸€è„¸çš„å¹¸ç¦æ»¡è¶³çš„ç¥æƒ…ã€‚\n",me);
 	   	me->add("food",8);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 1);
          break;
       case "qingxie":
-      	message_vision("$NÃÆ×ÅÍ·£¬°ş¿ªÇàĞ·¿Ç£¬Ò»¿ÚÒ»¿ÚµØË±ÎüÀïÃæÏÊÃÀµÄÖ­Èâ¡£\n",me);
+      	message_vision("$Né—·ç€å¤´ï¼Œå‰¥å¼€é’èŸ¹å£³ï¼Œä¸€å£ä¸€å£åœ°å®å¸é‡Œé¢é²œç¾çš„æ±è‚‰ã€‚\n",me);
 	   	me->add("food",10);
          if((int)me->query("water")< (int)me->max_water_capacity())
 		   	me->add("water", 1);
          break;
       default:
-      	write("ÄãÏë³ÔÊ²Ã´£¿²ËÉÏÄÇÃ´¶à²Ë¶¼²»³Ô£¿\n");
+      	write("ä½ æƒ³åƒä»€ä¹ˆï¼Ÿèœä¸Šé‚£ä¹ˆå¤šèœéƒ½ä¸åƒï¼Ÿ\n");
          break;
    }
 	return 1;

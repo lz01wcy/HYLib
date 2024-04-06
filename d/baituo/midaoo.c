@@ -3,8 +3,8 @@ inherit ROOM;
 
 void create()
 {
-  set("short","ÃÜµÀ");
-  set("long","ÕâÀïÊÇÆáºÚµÄÃÜµÀ£¬µ±Äê°×ÍÕÉ½µÜ×ÓÎªÁËÖ±´ïÖĞÔ­¶øÍÚÔäµÄ¡£\n"); 
+  set("short","å¯†é“");
+  set("long","è¿™é‡Œæ˜¯æ¼†é»‘çš„å¯†é“ï¼Œå½“å¹´ç™½é©¼å±±å¼Ÿå­ä¸ºäº†ç›´è¾¾ä¸­åŸè€ŒæŒ–å‡¿çš„ã€‚\n"); 
   set("exits" , ([
     "east" : "/d/city/beidajie1",
       ]));
@@ -25,13 +25,13 @@ int do_get(string arg)
 	object me = this_player();
 	object ob;
 	if ((arg != "shenshe") || !arg)
-	  return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+	  return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
 	if(!objectp(ob=present("shenshe",environment(me))))
-	  return notify_fail("ÕâÀïÃ»ÓĞ¡¸ÒıÂ·ÉñÉß¡¹.\n");
-	if(me->query("family/family_name") != "°×ÍÕÉ½ÅÉ")
-	  return notify_fail("ÕâÊÇÖ»ÓĞ°×ÍÕÉ½ÅÉµÜ×Ó²ÅÄÜÊ¹»½µÄ¡¸ÒıÂ·ÉñÉß¡¹.\n");
+	  return notify_fail("è¿™é‡Œæ²¡æœ‰ã€Œå¼•è·¯ç¥è›‡ã€.\n");
+	if(me->query("family/family_name") != "ç™½é©¼å±±æ´¾")
+	  return notify_fail("è¿™æ˜¯åªæœ‰ç™½é©¼å±±æ´¾å¼Ÿå­æ‰èƒ½ä½¿å”¤çš„ã€Œå¼•è·¯ç¥è›‡ã€.\n");
 	ob->move(me);
-	message_vision("$NÄÃÆğ¡¸ÒıÂ·ÉñÉß¡¹´§ÔÚ»³Àï¡£\n",me);
+	message_vision("$Næ‹¿èµ·ã€Œå¼•è·¯ç¥è›‡ã€æ£åœ¨æ€€é‡Œã€‚\n",me);
 	return 1;
 }
 

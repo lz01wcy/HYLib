@@ -1,13 +1,13 @@
 // /d/yazhang/guoshifu.c
-// Room in ����
+// Room in 牙帐
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "��ʦ��");
+	set("short", "国师府");
 	set("long", @LONG
-�����Ƕ�ͻ�ʹ�ʦ�ĸ��أ����ϵı��ǻ������͵ģ���̧ͷ��ȥ��
-����ʦ������������ӳ��������
+这里是东突厥国师的府地，门上的扁是皇上御赐的，你抬头望去，
+“国师府”三个大字映入眼帘。
 LONG
 	);
 set("outdoors", "dingxiang");

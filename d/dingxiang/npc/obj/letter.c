@@ -2,14 +2,14 @@ inherit ITEM;
 
 void create()
 {
-   set_name("ÊéĞÅ", ({ "shuxin"}) );
+   set_name("ä¹¦ä¿¡", ({ "shuxin"}) );
    set_weight(100);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÒ»·âÍÆ¼öĞÅ¡£\n");
-     set("material", "°×Ö½");
-     set("unit", "·â");
+     set("long","è¿™æ˜¯ä¸€å°æ¨èä¿¡ã€‚\n");
+     set("material", "ç™½çº¸");
+     set("unit", "å°");
    }
    setup();
 }

@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIG"Áúºş´ä"NOR,({"long hucui", "long", "tea"}));
+	set_name(HIG"é¾™æ¹–ç¿ "NOR,({"long hucui", "long", "tea"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»±­É¢·¢×ÅÇåÏãµÄÁúºş´ä¡£\n");
-		set("unit", "±­");
+		set("long", "è¿™æ˜¯ä¸€æ¯æ•£å‘ç€æ¸…é¦™çš„é¾™æ¹–ç¿ ã€‚\n");
+		set("unit", "æ¯");
 		set("value", 1000);
 		set("remaining", 2);
 		set("drink_supply", 25);

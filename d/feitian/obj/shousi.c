@@ -1,17 +1,17 @@
-// shou si.ÊÙË¾
+// shou si.å¯¿å¸
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("ÊÙË¾", ({"shou si", "si"}));
+	set_name("å¯¿å¸", ({"shou si", "si"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇ¶«å­ÈËÊ¿×î°®³ÔµÄÊÙË¾¡£\n");
-		set("unit", "¿é");
+		set("long", "è¿™æ˜¯ä¸œç€›äººå£«æœ€çˆ±åƒçš„å¯¿å¸ã€‚\n");
+		set("unit", "å—");
 		set("value", 40);
 		set("food_remaining", 1);
 		set("food_supply", 80);

@@ -5,13 +5,13 @@ inherit HEAD;
  
 void create() 
 { 
-        set_name( HIY "Áú¹Ú" NOR, ({ "seng mao", "mao" }) ); 
+        set_name( HIY "é¾™å† " NOR, ({ "seng mao", "mao" }) ); 
         set_weight(500); 
         if( clonep() ) 
                 set_default_object(__FILE__); 
         else { 
-                set("unit", "¶¥"); 
-                set("long", "ÕâÊÇÒ»¶¥¾«ÖÂµÄÃ±×Ó¡£\n"); 
+                set("unit", "é¡¶"); 
+                set("long", "è¿™æ˜¯ä¸€é¡¶ç²¾è‡´çš„å¸½å­ã€‚\n"); 
                 set("value", 1000000); 
                 set("material", "head"); 
                 set("armor_prop/armor", 100); 

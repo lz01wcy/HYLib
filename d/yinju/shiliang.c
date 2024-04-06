@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-  set("short","石梁");
+  set("short","鐭虫");
   set("long",@LONG
-山道从此断开，有几个突出的石梁，但是有个书生
-坐在其中石梁之上，如果有人要经过，就必须书生
-的同意！
+灞遍亾浠庢鏂紑锛屾湁鍑犱釜绐佸嚭鐨勭煶姊侊紝浣嗘槸鏈変釜涔︾敓
+鍧愬湪鍏朵腑鐭虫涔嬩笂锛屽鏋滄湁浜鸿缁忚繃锛屽氨蹇呴』涔︾敓
+鐨勫悓鎰忥紒
 LONG);
   set("outdoors","yinju");
 set("objects", ([
@@ -25,7 +25,7 @@ int valid_leave(object me, string dir)
     {
        if(objectp(present("zhu ziliu", environment(me))) && 
 (me->query_temp("answer_shusheng")!=1))
-            return notify_fail("书生拦住你说：家师不见外人！\n");
+            return notify_fail("涔︾敓鎷︿綇浣犺锛氬甯堜笉瑙佸浜猴紒\n");
     }   
        return ::valid_leave(me, dir);
 }

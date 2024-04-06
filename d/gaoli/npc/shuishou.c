@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
  
-// girl.Å®×Ó¡£
+// girl.å¥³å­ã€‚
 
 inherit NPC;
 
 void create()
 {
-  set_name("Ë®ÊÖ", ({"shui shou","shui","shou"}));
-  set("long","ÕâÊÇÔÚÕ½´¬ÉÏ¹¤×÷µÄÒ»¸öË®ÊÖ¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("æ°´æ‰‹", ({"shui shou","shui","shou"}));
+  set("long","è¿™æ˜¯åœ¨æˆ˜èˆ¹ä¸Šå·¥ä½œçš„ä¸€ä¸ªæ°´æ‰‹ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("combat_exp", 20000);
   set("age", 18);
   set("attitude", "peaceful");

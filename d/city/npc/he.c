@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ºÎÔ±Íâ", ({ "he yuanwai", "he" }));
+	set_name("ä½•å‘˜å¤–", ({ "he yuanwai", "he" }));
 	set("shen_type", -1);
 
-	set("gender", "ÄĞĞÔ" );
+	set("gender", "ç”·æ€§" );
 	set("age", 53);
-	set("long", "ºÎÔ±ÍâÊÇÑïÖİ³ÇÀïµÄÊ×¸»£¬ºÍµ±µØµÄ¹ÙÉğ¶¼ÓĞºÜÉîµÄ½»Çé¡£\n");
+	set("long", "ä½•å‘˜å¤–æ˜¯æ‰¬å·åŸé‡Œçš„é¦–å¯Œï¼Œå’Œå½“åœ°çš„å®˜ç»…éƒ½æœ‰å¾ˆæ·±çš„äº¤æƒ…ã€‚\n");
 	set("combat_exp", 400);
 	set("attitude", "friendly");
 	setup();
@@ -34,5 +34,5 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say("ºÎÔ±ÍâÆæ¹ÖµØ¶ÔÄãËµµÀ£º¡°ÄãÕâÈËÔõÃ´ËæËæ±ã±ãµØ¾ÍÅÜµ½ÎÒµÄÔ°×ÓÀïÀ´£¿¡±\n");
+	say("ä½•å‘˜å¤–å¥‡æ€ªåœ°å¯¹ä½ è¯´é“ï¼šâ€œä½ è¿™äººæ€ä¹ˆéšéšä¾¿ä¾¿åœ°å°±è·‘åˆ°æˆ‘çš„å›­å­é‡Œæ¥ï¼Ÿâ€\n");
 }

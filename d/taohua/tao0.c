@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 { 
-        set("short", "ÌÒ»¨ÃÔÕó");
+        set("short", "æ¡ƒèŠ±è¿·é˜µ");
         set("long",@LONG
-ÕâÊÇÒ»Æ¬ÌÒ»¨µÄº£Ñó¡£ËÄÖÜÒ»ÍûÎŞ¼Ê£¬È«ÊÇÊ¢¿ªµÄÌÒ»¨¡£Î¢·ç·÷¹ı£¬
-ÂäÓ¢çÍ·×¡£ÖÜÎ§¾²ÇÄÇÄµÄ¡£Ô¶´¦Å¼¶û´«À´Ò»ÉùÄñ½Ğ¡£ÄãĞÄÖĞ²»½û»ÅÂÒ
-ÆğÀ´£º»¹ÊÇÔçµã³öÈ¥µÄºÃ¡£
+è¿™æ˜¯ä¸€ç‰‡æ¡ƒèŠ±çš„æµ·æ´‹ã€‚å››å‘¨ä¸€æœ›æ— é™…ï¼Œå…¨æ˜¯ç››å¼€çš„æ¡ƒèŠ±ã€‚å¾®é£æ‹‚è¿‡ï¼Œ
+è½è‹±ç¼¤çº·ã€‚å‘¨å›´é™æ‚„æ‚„çš„ã€‚è¿œå¤„å¶å°”ä¼ æ¥ä¸€å£°é¸Ÿå«ã€‚ä½ å¿ƒä¸­ä¸ç¦æ…Œä¹±
+èµ·æ¥ï¼šè¿˜æ˜¯æ—©ç‚¹å‡ºå»çš„å¥½ã€‚
 LONG );
 	set("outdoors", "taohua");
 	set("exits", ([
@@ -25,7 +25,7 @@ void init()
 {
     this_player()->receive_damage("qi", 15);
     this_player()->receive_wound("qi",  15);
-    message_vision(HIR"Í»È»Ò»ÕóÌÒ»¨°êÏóÓêµã°ã¼²Éä$N£¡\n"NOR, this_player());
+    message_vision(HIR"çªç„¶ä¸€é˜µæ¡ƒèŠ±ç“£è±¡é›¨ç‚¹èˆ¬ç–¾å°„$Nï¼\n"NOR, this_player());
 }
 
 int valid_leave(object me, string dir)
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
         int total_steps;
 //        total_steps = ( 100 - (int)this_player()->query_skill("qimen-wuxing",1) ) / 10 ;
 //        if ( total_steps <= 0 ) total_steps = 1 ;  
-        if( me->query("family/family_name") == "ÌÒ»¨µº") total_steps = 1 ; 
+        if( me->query("family/family_name") == "æ¡ƒèŠ±å²›") total_steps = 1 ; 
            else total_steps = 10;
 	if ( dir == "north")
             me->add_temp("taohua/steps",1);
@@ -44,14 +44,14 @@ int valid_leave(object me, string dir)
         {
      	    me->move(__DIR__"tao_in");
             me->delete_temp("taohua/steps");
-            return notify_fail("Äã×ßÁË°ëÌì£¬ÖÕÓÚ×ß³öÁËÌÒ»¨ÃÔÕó¡£\n");
+            return notify_fail("ä½ èµ°äº†åŠå¤©ï¼Œç»ˆäºèµ°å‡ºäº†æ¡ƒèŠ±è¿·é˜µã€‚\n");
         }  
 
         if (me->query_temp("taohua/steps") == - total_steps )
         {  
             me->move(__DIR__"tao_out");
             me->delete_temp("taohua/steps");
-            return notify_fail("Äã×ßÁË°ëÌì£¬ÖÕÓÚ×ß³öÁËÌÒ»¨ÃÔÕó¡£\n");
+            return notify_fail("ä½ èµ°äº†åŠå¤©ï¼Œç»ˆäºèµ°å‡ºäº†æ¡ƒèŠ±è¿·é˜µã€‚\n");
      	}
 
         return ::valid_leave(me,dir);

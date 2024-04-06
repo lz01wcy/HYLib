@@ -1,13 +1,13 @@
-// midao8.c ÃÜµÀ
+// midao8.c å¯†é“
 
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜµÀ");
+        set("short", "å¯†é“");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ³¤³¤µÄÃÜµÀ£¬µØÃæºÍÊ¯±ÚÂúÊÇ»Ò³¾£¬ºÃÏóºÜ¾ÃÃ»ÈËÀ´¹ıÁË¡£
+è¿™æ˜¯ä¸€æ¡é•¿é•¿çš„å¯†é“ï¼Œåœ°é¢å’ŒçŸ³å£æ»¡æ˜¯ç°å°˜ï¼Œå¥½è±¡å¾ˆä¹…æ²¡äººæ¥è¿‡äº†ã€‚
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"midao7"
@@ -23,9 +23,9 @@ void init()
         {
                 me->receive_damage("qi", 50);
                 me->receive_wound("qi",  50);
-                message_vision(HIR"$NÒ»²»Ğ¡ĞÄ²Èµ½µØÉÏµÄÒ»¸ö°µÅ¦£¬... °¡...£¡\n"NOR, me);
+                message_vision(HIR"$Nä¸€ä¸å°å¿ƒè¸©åˆ°åœ°ä¸Šçš„ä¸€ä¸ªæš—çº½ï¼Œ... å•Š...ï¼\n"NOR, me);
                 me->move(__DIR__"road3");
-                tell_object(me, HIR"Äã´ÓÉ½ÉÏ¹öÁËÏÂÀ´£¬Ö»¾õµÃ»ëÉíÎŞ´¦²»ÌÛ£¬»¹ÊÜÁË¼¸´¦ÉË¡£\n"NOR);
-                message("vision", HIR"Ö»¼û" + me->query("name") + "´ÓÉ½ÉÏ¹ÇÂµÂµµØ¹öÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ°ëÌìÅÀ²»ÆğÀ´£¡\n"NOR, environment(me), me);
+                tell_object(me, HIR"ä½ ä»å±±ä¸Šæ»šäº†ä¸‹æ¥ï¼Œåªè§‰å¾—æµ‘èº«æ— å¤„ä¸ç–¼ï¼Œè¿˜å—äº†å‡ å¤„ä¼¤ã€‚\n"NOR);
+                message("vision", HIR"åªè§" + me->query("name") + "ä»å±±ä¸Šéª¨ç¢Œç¢Œåœ°æ»šäº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸ŠåŠå¤©çˆ¬ä¸èµ·æ¥ï¼\n"NOR, environment(me), me);
         }
 }

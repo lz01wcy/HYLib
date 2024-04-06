@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", GRN "ɽ·" NOR);
+        set("short", GRN "山路" NOR);
         set("long", @LONG
-������һ����᫵�ɽ·�ϣ������ϣ��ͽ������ƹ��ԭ�ˡ�������һ��
-�����סȥ·��
+你走在一条崎岖的山路上，再往南，就进入了云贵高原了。北面是一条
+大河拦住去路。
 LONG
         );
         set("outdoors", "kunming");

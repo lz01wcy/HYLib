@@ -1,4 +1,4 @@
-// Âí·ò
+// é©¬å¤«
 
 inherit NPC;
 
@@ -6,10 +6,10 @@ int do_hunli();
 
 void create()
 {
-        set_name("Âí·ò", ({ "ma fu", "ma", "fu" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("é©¬å¤«", ({ "ma fu", "ma", "fu" }));
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "Ëû¾ÍÊÇºìÄï×¯×¨ÃÅ½ÓÈËÈ¥²Î¼Ó»éÀñµÄÂí·ò¡£\n");
+        set("long", "ä»–å°±æ˜¯çº¢å¨˜åº„ä¸“é—¨æŽ¥äººåŽ»å‚åŠ å©šç¤¼çš„é©¬å¤«ã€‚\n");
         
         set("combat_exp", 7000);
         set("shen_type", 1);
@@ -20,8 +20,8 @@ void create()
         set_temp("apply/attack", 20);
         set_temp("apply/defense", 20);
         set("inquiry", ([
-                "»éÀñ"     : (: do_hunli :),
-                "²Î¼Ó»éÀñ" : (: do_hunli :),
+                "å©šç¤¼"     : (: do_hunli :),
+                "å‚åŠ å©šç¤¼" : (: do_hunli :),
         ])); 
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -38,13 +38,13 @@ int do_hunli()
 
  if (!( present("qing tie", me)) )
         {
-             say("Âí·ò·­ÁË·­°×ÑÛËµ£º¡°ÄãÓÐÇëÌùÂð£¿¡±\n");
+             say("é©¬å¤«ç¿»äº†ç¿»ç™½çœ¼è¯´ï¼šâ€œä½ æœ‰è¯·è´´å—ï¼Ÿâ€\n");
              return 1;
         }
 
-  say("Âí·òÒ»¹þÑü¶Ô"+(string)me->query("name")+"Ëµ£º¡°ÄãÀÏÇëÉÏ³µ¡£¡±\n");
+  say("é©¬å¤«ä¸€å“ˆè…°å¯¹"+(string)me->query("name")+"è¯´ï¼šâ€œä½ è€è¯·ä¸Šè½¦ã€‚â€\n");
 
-  say((string)me->query("name")+"±»´øµ½ÁËºìÄï×¯¡£\n");
+  say((string)me->query("name")+"è¢«å¸¦åˆ°äº†çº¢å¨˜åº„ã€‚\n");
 
 me->move("/d/pingan/marry/honglou");
 

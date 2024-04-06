@@ -6,12 +6,12 @@ string *rooms = ({__DIR__"e_wall1",__DIR__"e_wall2",__DIR__"e_wall3",__DIR__"w_w
                 
 void create() 
 {
-        set("short", "Ã¯ÃÜµÄ´óÊ÷ÉÏ");
+        set("short", "èŒ‚å¯†çš„å¤§æ ‘ä¸Š");
         set("long", @LONG
-ÄãÊ¹³ö³ÔÄÌµÄ¾¢£¬ÖÕÓÚÉÏµ½ÁËÊ÷¶¥¡£ÕâÊ÷ºÜ¸ß£¬Ò²ºÜÃÜ£¬ÈË¶ãÔÚÀïÃæÕÚµÄÑÏÑÏ
-ÊµÊµ¡£´ÓÊ÷ÎÆÉÏ¿´£¬Õâ¿ÃéÅÊ÷ÆğÂëÓĞÉÏÇ§ÄêÁË£¬Ê÷¹ÚÈç»ª¸Ç£¬×ãÓĞÊıÊ®Ã×¼û·½£¬ÎŞ
-Êı¶ù±Û´ÖÏ¸µÄÆø¸ù´ÓÊ÷¸ÉÉÏ´¹µ½µØÃæ£¬ÓÖÔÙ´ÎÈëÍÁÉú¸ù£¬Õæ¿ÉÎ½¶ÀÄ¾³ÉÁÖ¡£²¦¿ªÊ÷
-Ò¶ÍùÄÏÃæ¿´È¥£¬ÒÀÏ¡¿´¼ûÓĞ¸öÕ¯×Ó£¬ÕâÀïµ¹ÊÇÕì²ì£¨£ó£ã£ï£õ£ô£©µÄºÃµØ·½¡£
+ä½ ä½¿å‡ºåƒå¥¶çš„åŠ²ï¼Œç»ˆäºä¸Šåˆ°äº†æ ‘é¡¶ã€‚è¿™æ ‘å¾ˆé«˜ï¼Œä¹Ÿå¾ˆå¯†ï¼Œäººèº²åœ¨é‡Œé¢é®çš„ä¸¥ä¸¥
+å®å®ã€‚ä»æ ‘çº¹ä¸Šçœ‹ï¼Œè¿™æ£µæ¦•æ ‘èµ·ç æœ‰ä¸Šåƒå¹´äº†ï¼Œæ ‘å† å¦‚åç›–ï¼Œè¶³æœ‰æ•°åç±³è§æ–¹ï¼Œæ— 
+æ•°å„¿è‡‚ç²—ç»†çš„æ°”æ ¹ä»æ ‘å¹²ä¸Šå‚åˆ°åœ°é¢ï¼Œåˆå†æ¬¡å…¥åœŸç”Ÿæ ¹ï¼ŒçœŸå¯è°“ç‹¬æœ¨æˆæ—ã€‚æ‹¨å¼€æ ‘
+å¶å¾€å—é¢çœ‹å»ï¼Œä¾ç¨€çœ‹è§æœ‰ä¸ªå¯¨å­ï¼Œè¿™é‡Œå€’æ˜¯ä¾¦å¯Ÿï¼ˆï½“ï½ƒï½ï½•ï½”ï¼‰çš„å¥½åœ°æ–¹ã€‚
 LONG
         );
         set("exits", ([ 
@@ -20,9 +20,9 @@ LONG
         set("objects", ([
         ]) );
         set("item_desc", ([
-                "Ê÷¸É":  "Ê÷¸ÉÁ¬×ÅÊ÷¸É£¬ÓĞµÄÉõÖÁÍ¨µ½ÁËÕ¯×ÓµÄÉÏ·½¡£\n",
-                "trunk": "Ê÷¸ÉÁ¬×ÅÊ÷¸É£¬ÓĞµÄÉõÖÁÍ¨µ½ÁËÕ¯×ÓµÄÉÏ·½¡£\n",
-                "Æø¸ù": "Ê÷¸ÉÁ¬×ÅÊ÷¸É£¬ÓĞµÄÉõÖÁÍ¨µ½ÁËÕ¯×ÓµÄÉÏ·½¡£\n",
+                "æ ‘å¹²":  "æ ‘å¹²è¿ç€æ ‘å¹²ï¼Œæœ‰çš„ç”šè‡³é€šåˆ°äº†å¯¨å­çš„ä¸Šæ–¹ã€‚\n",
+                "trunk": "æ ‘å¹²è¿ç€æ ‘å¹²ï¼Œæœ‰çš„ç”šè‡³é€šåˆ°äº†å¯¨å­çš„ä¸Šæ–¹ã€‚\n",
+                "æ°”æ ¹": "æ ‘å¹²è¿ç€æ ‘å¹²ï¼Œæœ‰çš„ç”šè‡³é€šåˆ°äº†å¯¨å­çš„ä¸Šæ–¹ã€‚\n",
         ]) );
         set("outdoors", "zangbei");
         set("coor/x",0);
@@ -39,16 +39,16 @@ int do_jump(string arg) {
         object me;
         
    me=this_player();
-        if (arg=="down" || arg == "ladder" || arg== "Õ¯×Ó") {
+        if (arg=="down" || arg == "ladder" || arg== "å¯¨å­") {
                 if (me->query_temp("zangbei/treejump_1"))
-                        return notify_fail("ÄãÕıÔÚ¿ÕÖĞÁË£¬ÎŞ´¦×ÅÁ¦¡£\n");
-                message_vision("$NË³×ÅÊ÷¸ÉÇÄÇÄµØÅÀµ½Õ¯Ç½ÉÏ·½£¬Ò»×İÉíÏòÏÂÌøÈ¥¡£\n\n",me);
+                        return notify_fail("ä½ æ­£åœ¨ç©ºä¸­äº†ï¼Œæ— å¤„ç€åŠ›ã€‚\n");
+                message_vision("$Né¡ºç€æ ‘å¹²æ‚„æ‚„åœ°çˆ¬åˆ°å¯¨å¢™ä¸Šæ–¹ï¼Œä¸€çºµèº«å‘ä¸‹è·³å»ã€‚\n\n",me);
                 call_out("pass_river",6,me);
                 me->start_busy(3);
                 me->set_temp("zangbei/treejump_1",1);
                 return 1;
         }
-        tell_object(me,"ÄãÒªÍùÄÄ¶ùÌø£¿\n");
+        tell_object(me,"ä½ è¦å¾€å“ªå„¿è·³ï¼Ÿ\n");
         return 1;
 }  
 int pass_river(object me) {
@@ -58,8 +58,8 @@ int pass_river(object me) {
         room_name=rooms[random(sizeof(rooms))];
         room=find_object(room_name);
         if (!objectp(room)) room=load_object(room_name);
-        tell_object(me,"ÄãÔÚ°ë¿ÕÖĞÒ»¸ö»ØĞı£¬ÇáÇÉµØÂäÏÂ¡£\n");
-        message("vision",me->name()+"´Ó¿ÕÖĞÌøÁËÏÂÀ´¡£\n",room);
+        tell_object(me,"ä½ åœ¨åŠç©ºä¸­ä¸€ä¸ªå›æ—‹ï¼Œè½»å·§åœ°è½ä¸‹ã€‚\n");
+        message("vision",me->name()+"ä»ç©ºä¸­è·³äº†ä¸‹æ¥ã€‚\n",room);
         me->move(room);
         me->delete_temp("zangbei/treejump_1");
         return 1;
@@ -67,7 +67,7 @@ int pass_river(object me) {
 int do_scout(){
         object me;
         me = this_player();
-        message_vision(HIG"$N²¦¿ªÊ÷Ö¦£¬Ğ¡ĞÄÒíÒíµØÏòÍâÌ÷Íû¡£\n"NOR, me);
+        message_vision(HIG"$Næ‹¨å¼€æ ‘æï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘å¤–çœºæœ›ã€‚\n"NOR, me);
         tell_object(me, view(rooms[random(sizeof(rooms))]));
         return 1;
 } 
@@ -80,7 +80,7 @@ string view(string room) {
         env = find_object(room); 
    if(!env) env=load_object(room); 
         
-        str = "Äã¿ÉÒÔÇå³şµØ¿´µ½¡£¡£¡£\n\n";
+        str = "ä½ å¯ä»¥æ¸…æ¥šåœ°çœ‹åˆ°ã€‚ã€‚ã€‚\n\n";
         
         // room descriptions.
         str += sprintf( "%s\n    %s \n    %s",

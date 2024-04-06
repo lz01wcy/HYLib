@@ -20,10 +20,10 @@ b=me->query("mufa");
 //if(a=0)
 if(!me->query_temp("marks/bing"))
 {
-return "ÎŞ¼ÉÕÒµ½ÁËÂğ?\n";}
+return "æ— å¿Œæ‰¾åˆ°äº†å—?\n";}
 //else if(!me->query_temp("marks/bing"))
 else if(!me->query("mufa"))
-{return "Ä¾·¤ÔìºÃÁËÂğ.\n";}
+{return "æœ¨ç­é€ å¥½äº†å—.\n";}
 else
 {ob=new("/d/binghuodao/npc/zhangcui");
 ob->move("/d/binghuodao/road11");
@@ -31,7 +31,7 @@ ob1=new("/d/binghuodao/npc/susu");
 ob3=new("/d/binghuodao/npc/wuji");
 ob1->move("/d/binghuodao/road11");
 ob3->move("/d/binghuodao/road11");
-write("ÄãÃÇ×ß°É.\n");
+write("ä½ ä»¬èµ°å§.\n");
 destruct(present("mufa",me));
 ob->move("/d/binghuodao/mufa");
 ob1->move("/d/binghuodao/mufa");
@@ -39,15 +39,15 @@ ob3->move("/d/binghuodao/mufa");
 me->move("/d/binghuodao/mufa");
 me->delete_temp("marks/bing");
 me->delete("mufa");
-tell_object(me, BLU "ÄãÔÚº£ÉÏº½ĞĞÁËºÜ¾ÃºÜ¾Ã.......\n" NOR ) ;
+tell_object(me, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†å¾ˆä¹…å¾ˆä¹….......\n" NOR ) ;
 call_out("goto_taohua",20,me);
 }
-return "×ß°É.\n";
+return "èµ°å§.\n";
 }
 void goto_taohua (object ob)
 {
 object ob1,ob2,ob3;   
-tell_object(ob , "´ó´¬ÖÕÓÚÍ£ÔÚÁËÒ»¸öÓæ¸Û¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+tell_object(ob , "å¤§èˆ¹ç»ˆäºåœåœ¨äº†ä¸€ä¸ªæ¸”æ¸¯ã€‚ä½ èµ°ä¸‹èˆ¹æ¥ã€‚\n" ) ;
    ob->move ("/d/tanggu/gangkou") ;
 ob2=new("/d/binghuodao/npc/zhangcui");
 ob2->move("/d/tanggu/gangkou");
@@ -58,8 +58,8 @@ ob3->move("/d/tanggu/gangkou");
 destruct(ob1);
 destruct(ob2);
 destruct(ob3);
-tell_object(ob,"Ğ»Ğ»Äã°ïÎÒÃÇ»Øµ½ÖĞÍÁ.´«ÄãĞ©½­ºşÔÄÀú.ÎÒÃÇ¾Í´Ë¸æ±ğ.\n");
-//tell_object(ob,"ÎÒÃÇ¾Í´Ë¸æ±ğ.\n");
+tell_object(ob,"è°¢è°¢ä½ å¸®æˆ‘ä»¬å›åˆ°ä¸­åœŸ.ä¼ ä½ äº›æ±Ÿæ¹–é˜…å†.æˆ‘ä»¬å°±æ­¤å‘Šåˆ«.\n");
+//tell_object(ob,"æˆ‘ä»¬å°±æ­¤å‘Šåˆ«.\n");
 if(!ob->query("send_zhang"))
 {ob->set("send_zhang",1);
 ob->add("combat_exp",500);}
@@ -74,10 +74,10 @@ object me;
 me = this_player () ;
 
 if (!present("mu chai", me) && !present("chang teng",me))
-write("ÄãÉíÉÏÃ»ÓĞ²ÄÁÏ£¡\n");
+write("ä½ èº«ä¸Šæ²¡æœ‰ææ–™ï¼\n");
 if (present("mu chai", me) && present("chang teng",me))
 {
-write("Ò»»áÄ¾·¤×÷ºÃÍ¨ÖªÄã.\n");
+write("ä¸€ä¼šæœ¨ç­ä½œå¥½é€šçŸ¥ä½ .\n");
 destruct(present("mu chai",me));
 destruct(present("chang teng",me));
 call_out("make_chuan",20,me);
@@ -86,15 +86,15 @@ call_out("make_chuan",20,me);
 
 void create()
 {
-        set_name("Ğ»Ñ·", ({"xie xun", "xie", "xun", }));
+        set_name("è°¢é€Š", ({"xie xun", "xie", "xun", }));
         set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ıÎ°Òì³£µÄµÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÂúÍ·»Æ·¢£¬Íş·çÁİÁİ£¬ÕæÈçÌìÉñÒ»°ã£¬Ö»ÊÇÁ½Ö»ÑÛ¾¦²¢²»Õö¿ª¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æé­ä¼Ÿå¼‚å¸¸çš„çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•¿è¢ã€‚\n"
+        "ä»–æ»¡å¤´é»„å‘ï¼Œå¨é£å‡›å‡›ï¼ŒçœŸå¦‚å¤©ç¥ä¸€èˆ¬ï¼Œåªæ˜¯ä¸¤åªçœ¼ç›å¹¶ä¸çå¼€ã€‚\n"
         );
 
-        set("title",HIG "Ã÷½Ì" HIY "½ğÃ«Ê¨Íõ" NOR);
+        set("title",HIG "æ˜æ•™" HIY "é‡‘æ¯›ç‹®ç‹" NOR);
         set("level",9);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 
         set("age", 63);
@@ -146,15 +146,15 @@ void create()
         set("chat_msg_combat", ({
                 (: command("perform hunpofeiyang") :),
         }) );
-        create_family("Ã÷½Ì",35, "·¨Íõ");
+        create_family("æ˜æ•™",35, "æ³•ç‹");
 set("inquiry", ([
-        "»ØÖĞÍÁ" : (:ask_huijia:) ,
-        "Ôì´¬" : (:ask_zhaochuan:) ,
+        "å›ä¸­åœŸ" : (:ask_huijia:) ,
+        "é€ èˆ¹" : (:ask_zhaochuan:) ,
          ]) );
 set("chat_chance",8);
         set("chat_msg",({
-           "Ğ»Ñ·¸§µ¶³ÁË¼µÀ:ÍÀÁúµ¶°¡ÍÀÁúµ¶,Äãµ½µ×ÓĞÊ²Ã´ÃØÃÜÄØ?\n",
-           "Ğ»Ñ·ºŞºŞµÄËµµÀ:³ÉÀ¥ÀÏÔô,Äãº¦ÎÒ¼ÒÆÆÈËÍö,ÎÒ²»Ç×ÊÖÉ±ÁËÄã,ËÀ²»î¨Ä¿.\n"
+           "è°¢é€ŠæŠšåˆ€æ²‰æ€é“:å± é¾™åˆ€å•Šå± é¾™åˆ€,ä½ åˆ°åº•æœ‰ä»€ä¹ˆç§˜å¯†å‘¢?\n",
+           "è°¢é€Šæ¨æ¨çš„è¯´é“:æˆæ˜†è€è´¼,ä½ å®³æˆ‘å®¶ç ´äººäº¡,æˆ‘ä¸äº²æ‰‹æ€äº†ä½ ,æ­»ä¸ç‘ç›®.\n"
         }) );
         setup();
          carry_object(__DIR__"obj/killdragon")->wield();
@@ -185,7 +185,7 @@ void make_chuan(object who,object me)
 {
 object ob;
 me = this_player () ;
-tell_object(who,"´¬ºÃÁË.\n");
+tell_object(who,"èˆ¹å¥½äº†.\n");
 ob=new("/d/binghuodao/npc/obj/chuan");
 ob->move(me);
 //ob->move("/d/binghuodao/road11");
@@ -206,9 +206,9 @@ if(me->query_temp("mutou"))
 {
 if(me->query_temp("teng")) 
 {
-write("Ò»»áÄ¾·¤×÷ºÃÍ¨ÖªÄã.\n");
+write("ä¸€ä¼šæœ¨ç­ä½œå¥½é€šçŸ¥ä½ .\n");
 call_out("make_chuan",20,who);
-//return "ÇëÄãµÈÒ»»á!.\n";  
+//return "è¯·ä½ ç­‰ä¸€ä¼š!.\n";  
 }
 }
 return 1;
@@ -219,7 +219,7 @@ void die()
         object ob;
         
         ob = this_object();
-        write("Ğ»Ñ·´ó½ĞÒ»Éù£¡ÌÓÏÂÁËÉ½È¥£¬²»¼ûÁËÈËÓ°¡£\n");
+        write("è°¢é€Šå¤§å«ä¸€å£°ï¼é€ƒä¸‹äº†å±±å»ï¼Œä¸è§äº†äººå½±ã€‚\n");
         destruct(ob);
         return;
 }

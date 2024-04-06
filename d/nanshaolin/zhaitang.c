@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIG"ի��"NOR);
+	set("short", HIG"斋堂"NOR);
 	set("long", @LONG
-����ǰ��һ��˶���ޱȵķ��ݣ������������ȫ����ɮ��ի��ի�á�
-����ʮ���䷿���������ɣ���������ȫ�µ�ɮ��һͬ��ի����ǰ��Ժ��
-��������������ÿ�����¶���һ���޴�����ף�����ʢ������ˮ������
-ɮ��������æµ�ţ���Ժ�ڴ�ɨ��ʮ�ָɾ���
+你面前是一座硕大无比的房屋，这里便是少林全寺寺僧用斋的斋堂。
+它由十几间房屋相连而成，可以容纳全寺的僧人一同用斋。堂前的院内
+栽着两个垂柳，每棵树下都有一个巨大的铁缸，里面盛满了清水。几个
+僧人正往来忙碌着，将院内打扫得十分干净。
 LONG );
 
 	set("exits", ([
@@ -39,10 +39,10 @@ int valid_leave(object me, string dir)
 	switch ( random(2) ) 
 	{
 		case 0: 
-			return notify_fail("���ź��а���һ�죬˵����ʳ�ﲻ�ô���ի�ã��������еĹ涨��\n");
+			return notify_fail("方逝和尚把手一伸，说道：食物不得带出斋堂，这是寺中的规定！\n");
 			break;
 		case 1:
-			message_vision("���ź��ж�$N�������˸�Ҿ�������ַ��ɷԸ�����ʳ�ﲻ�ô���ի�á�", me);
+			message_vision("方逝和尚对$N躬身作了个揖道：主持方丈吩咐过，食物不得带出斋堂。", me);
 			return notify_fail("\n");
 			break;
 	}

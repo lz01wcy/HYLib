@@ -8,16 +8,16 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("Í­¼×",({"tong jia","tongjia","jia"}));
+	set_name("é“œç”²",({"tong jia","tongjia","jia"}));
 	set_weight(2500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("oldsix/max_damage",20);
 		set("oldsix/protect",3);
 		set("material","tong");
-		set("long", "ÕâÊÇÒ»¼şÇàÍ­ÖÆ³ÉµÄ¼×ëĞ£¬ÓÃÀ´±£»¤ÉÏ°ëÉí¡£\n");
+		set("long", "è¿™æ˜¯ä¸€ä»¶é’é“œåˆ¶æˆçš„ç”²èƒ„ï¼Œç”¨æ¥ä¿æŠ¤ä¸ŠåŠèº«ã€‚\n");
 		set("armor_prop/armor",15);
 		set("value",4000);
 	}

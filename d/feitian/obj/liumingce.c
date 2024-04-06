@@ -1,4 +1,4 @@
-// ÁôÃû²á
+// ç•™åå†Œ
 // diabio 2001/3/5
 
 #include <ansi.h>
@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIW"ÁôÃû²á"NOR, ({ "ce zi"}));    
+	set_name(HIW"ç•™åå†Œ"NOR, ({ "ce zi"}));    
 	set_weight(200);       
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("value", 500);
                         set("no_get",1);
-		set("long","ÕâÊÇÉñ¹Å»îĞÄÁ÷Àú´úµÜ×ÓµÄÁôÃû²á¡£(read)\n");
+		set("long","è¿™æ˜¯ç¥å¤æ´»å¿ƒæµå†ä»£å¼Ÿå­çš„ç•™åå†Œã€‚(read)\n");
 		set("material", "paper");
 	  }
 }
@@ -26,16 +26,16 @@ void init()
 int do_look(string arg)
 {
         object me = this_player();
-        if(arg=="huaming ce"||me->query("family/family_name")=="·ÉÌìÓù½£Á÷")
+        if(arg=="huaming ce"||me->query("family/family_name")=="é£å¤©å¾¡å‰‘æµ")
         {
         	if(me->query("write_name"))
         	{
-        		tell_object(me,"ÕâÊÇÒ»±¾Éñ¹Å»îĞÄÁ÷µÄÁôÃû²á£¬¼ÇÂ¼ÁË»îĞÄÁ÷µÄµÜ×Ó£¬ÔÚÄ©ĞĞÉÏÕıĞ´×ÅÄãµÄÃû×Ö----"HIR+me->name()+NOR"¡£\n");
+        		tell_object(me,"è¿™æ˜¯ä¸€æœ¬ç¥å¤æ´»å¿ƒæµçš„ç•™åå†Œï¼Œè®°å½•äº†æ´»å¿ƒæµçš„å¼Ÿå­ï¼Œåœ¨æœ«è¡Œä¸Šæ­£å†™ç€ä½ çš„åå­—----"HIR+me->name()+NOR"ã€‚\n");
         	         return 1;
         	}
         	else 
         	{
-        		tell_object(me,"ÕâÊÇÒ»±¾Éñ¹Å»îĞÄÁ÷µÄÁôÃû²á£¬¼ÇÂ¼ÁË»îĞÄÁ÷µÄµÜ×Ó£¬\nÉÏÃæ¾ÓÈ»»¹Ã»ÓĞÄãµÄÃû×Ö£¬¿´À´Ö»ÓĞ×Ô¼ºÌíÉÏÁË(write)¡£\n");        
+        		tell_object(me,"è¿™æ˜¯ä¸€æœ¬ç¥å¤æ´»å¿ƒæµçš„ç•™åå†Œï¼Œè®°å½•äº†æ´»å¿ƒæµçš„å¼Ÿå­ï¼Œ\nä¸Šé¢å±…ç„¶è¿˜æ²¡æœ‰ä½ çš„åå­—ï¼Œçœ‹æ¥åªæœ‰è‡ªå·±æ·»ä¸Šäº†(write)ã€‚\n");        
                          return 1;
                  }        
         }
@@ -45,10 +45,10 @@ int do_write()
 {
 	object me=this_player();
 	if(me->query("write_name"))
-        return notify_fail("·ÉÌìÓù½£Á÷ÁôÃû²áÉÏÒÑ¾­ÓĞÄãµÄÃû×ÖÁË¡£\n");
-        if(me->query("family/family_name")!="·ÉÌìÓù½£Á÷")
-	return notify_fail("ÄÄÀïÀ´µÄĞ¡»ìµ°£¬»îĞÄÁ÷ÁôÃû²áÊÇÄãºúÂÒĞ´µÄÂğ?\n");
-	tell_object(me,"ÄãĞ¡ĞÄÒíÒíµÄÄÃÆğ±Ê£¬ÔÚ²áÉÏÁôÏÂÁËÄãµÄÃû×Ö¡£\n");
+        return notify_fail("é£å¤©å¾¡å‰‘æµç•™åå†Œä¸Šå·²ç»æœ‰ä½ çš„åå­—äº†ã€‚\n");
+        if(me->query("family/family_name")!="é£å¤©å¾¡å‰‘æµ")
+	return notify_fail("å“ªé‡Œæ¥çš„å°æ··è›‹ï¼Œæ´»å¿ƒæµç•™åå†Œæ˜¯ä½ èƒ¡ä¹±å†™çš„å—?\n");
+	tell_object(me,"ä½ å°å¿ƒç¿¼ç¿¼çš„æ‹¿èµ·ç¬”ï¼Œåœ¨å†Œä¸Šç•™ä¸‹äº†ä½ çš„åå­—ã€‚\n");
 	set("write_name",me->query("id"));
 	me->set("write_name",1);
 	return 1;

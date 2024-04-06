@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ϻ��ϰ�");
+	set("short", "南湖南岸");
 	set("long", @LONG
-�����ǽ����Ϻ����ڽ������Ҷ���У����ⱥʵ��һ������
-��ת�ĸ�����Ʈ����ˮ���ɵĺ����ϡ�����һ��������һ��������
-�����Ѿá�
+这里是江南南湖。节近中秋，荷叶渐残，莲肉饱实。一阵轻柔
+婉转的歌声，飘在烟水蒙蒙的湖面上。湖边一个道姑在一排柳树下
+悄立已久。
 LONG );
 	set("exits", ([
             "west"      : __DIR__"jiaxing",

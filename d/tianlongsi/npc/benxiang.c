@@ -4,10 +4,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("±¾Ïà", ({ "ben xiang","xiang"}) );
-	set("gender", "ÄĞĞÔ" );
-	set("long", "Ò»¸ö¿İ»Æ¾«ÊİµÄÉ®ÈË£¬ËûÊÇ±¾Òò·½ÕÉµÄÊ¦ĞÖ¡£\n");
-	set("title", "ÌìÁúËÂµÚÊ®Æß´úÉ®ÈË");
+	set_name("æœ¬ç›¸", ({ "ben xiang","xiang"}) );
+	set("gender", "ç”·æ€§" );
+	set("long", "ä¸€ä¸ªæ¯é»„ç²¾ç˜¦çš„åƒ§äººï¼Œä»–æ˜¯æœ¬å› æ–¹ä¸ˆçš„å¸ˆå…„ã€‚\n");
+	set("title", "å¤©é¾™å¯ºç¬¬åä¸ƒä»£åƒ§äºº");
 	set("class", "bonze");
 	set("age", 50);
 	set("shen_type", 1);
@@ -61,7 +61,7 @@ void create()
 	map_skill("finger", "six-finger");
 	map_skill("sword", "duanjia-sword");
 	prepare_skill("finger","six-finger");
-	create_family("´óÀí¶Î¼Ò",17,"¸ßÉ®");
+	create_family("å¤§ç†æ®µå®¶",17,"é«˜åƒ§");
         set_temp("apply/attack", 80);
         set_temp("apply/defense", 80);
         set_temp("apply/armor", 200);

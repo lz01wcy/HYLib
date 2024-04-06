@@ -1,4 +1,4 @@
-//Room: guangchang.c Îäµ±¹ã³¡
+//Room: guangchang.c æ­¦å½“å¹¿åœº
 //Date: Sep 22 1997
 #include <ansi.h>
 inherit ROOM;
@@ -6,11 +6,11 @@ int do_zhao(string arg);
 
 void create()
 {
-      set("short","Îäµ±¹ã³¡");
+      set("short","æ­¦å½“å¹¿åœº");
       set("long",@LONG
-ÕâÊÇÒ»¸öÓÉ´óÊ¯°åÆÌ³ÉµÄ¹ã³¡£¬ÊÇÎäµ±µÜ×ÓÑ§Ï°Îä¹¦ºÍ»¥ÏàÇĞ´èµÄµØµã¡£
-ÖÜÎ§ÖÖÂúÁËÎàÍ©Ê÷£¬Ò»µ½ÇïÌì¾ÍÊÇÂúµØµÄÂäÒ¶¡£Ò»¸öÄê¼ÍÇáÇáµÄµÀÍ¯ÕıÔÚ´òÉ¨¡£
-ÄÏ±ßÊÇÁéÏö¹¬ÈıÇåµî¡£
+è¿™æ˜¯ä¸€ä¸ªç”±å¤§çŸ³æ¿é“ºæˆçš„å¹¿åœºï¼Œæ˜¯æ­¦å½“å¼Ÿå­å­¦ä¹ æ­¦åŠŸå’Œäº’ç›¸åˆ‡ç£‹çš„åœ°ç‚¹ã€‚
+å‘¨å›´ç§æ»¡äº†æ¢§æ¡æ ‘ï¼Œä¸€åˆ°ç§‹å¤©å°±æ˜¯æ»¡åœ°çš„è½å¶ã€‚ä¸€ä¸ªå¹´çºªè½»è½»çš„é“ç«¥æ­£åœ¨æ‰“æ‰«ã€‚
+å—è¾¹æ˜¯çµéœ„å®«ä¸‰æ¸…æ®¿ã€‚
 LONG);
       set("objects", ([
            CLASS_D("wudang") +"/daotong": 2,
@@ -38,21 +38,21 @@ int do_zhao(string arg)
 	object me;
 	me=this_player();
 	if ( arg != "yao chu" )
-	    return notify_fail("ÄãÒªÕÒÊ²Ã´£¿\n");
+	    return notify_fail("ä½ è¦æ‰¾ä»€ä¹ˆï¼Ÿ\n");
 	if (present("yao chu", me))
-	   return notify_fail("ÄãÕÒÀ´ÕÒÈ¥£¬·¢ÏÖ×Ô¼ºÔ­À´ÒÑ¾­ÓĞÁË£¡\n");
+	   return notify_fail("ä½ æ‰¾æ¥æ‰¾å»ï¼Œå‘ç°è‡ªå·±åŸæ¥å·²ç»æœ‰äº†ï¼\n");
 	if (objectp(present("yao chu", environment(me))))
-	   return notify_fail("µØÉÏ¾ÍÓĞ£¬Äã»¹ÕÒÊ²Ã´£¿£¡\n");
+	   return notify_fail("åœ°ä¸Šå°±æœ‰ï¼Œä½ è¿˜æ‰¾ä»€ä¹ˆï¼Ÿï¼\n");
 
 	if (query("chu_count") > 0)
 	  {
 	   add("chu_count", -1);
 	   new(__DIR__"obj/yaochu")->move(me);
-	   message_vision("$NÔÚÇ½½ÅµÄÔÓÎï¶ÑÀï·­À´·­È¥ÕÒ³öÒ»°ÑÒ©³ú¡£\n", me);
+	   message_vision("$Nåœ¨å¢™è„šçš„æ‚ç‰©å †é‡Œç¿»æ¥ç¿»å»æ‰¾å‡ºä¸€æŠŠè¯é”„ã€‚\n", me);
 	   me->start_busy(random(2));
 
 	  }
 	else
-	   message_vision("$NÔÚÇ½½ÅµÄÔÓÎï¶ÑÀï·­À´·­È¥Ê²Ã´Ò²Ã»ÕÒ×Å¡£\n", me);
+	   message_vision("$Nåœ¨å¢™è„šçš„æ‚ç‰©å †é‡Œç¿»æ¥ç¿»å»ä»€ä¹ˆä¹Ÿæ²¡æ‰¾ç€ã€‚\n", me);
      return 1;
 }

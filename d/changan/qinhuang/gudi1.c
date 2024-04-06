@@ -7,11 +7,11 @@ int do_jump(string arg);
 int do_enter(string arg);
 void create()
 {
-        set("short", "¹Èµ×");
+        set("short", "è°·åº•");
         set("long", @LONG
-Í·¶¥¼¸µÀÑô¹âÕÕÔÚµØÉÏ£¬½ÅÏÂÊÇÒ»Æ¬ºÜºñµÄ²ÝµØ£¬×ßÔÚÉÏÃæÈíÃà
-ÃàµÄ£¬ºÜÊÇÇ¡Òâ£¬ËÄÖÜ¿´ÉÏÈ¥¸ß²»¿ÉÅÊ£¬¹ÖÊ¯á×á¾£¬ÄãÐÄÖÐ²»ÓÉÒ»¾ª
-£¬Òª²»ÊÇÕâÆ¬ºñºñµÄ²Ý¶Ñµæ×Å£¬ÔÚºÃµÄÇá¹¦Ò²»áË¤µÃ±ä³ÉÒ»¶ÑÈâÄà¡£
+å¤´é¡¶å‡ é“é˜³å…‰ç…§åœ¨åœ°ä¸Šï¼Œè„šä¸‹æ˜¯ä¸€ç‰‡å¾ˆåŽšçš„è‰åœ°ï¼Œèµ°åœ¨ä¸Šé¢è½¯ç»µ
+ç»µçš„ï¼Œå¾ˆæ˜¯æ°æ„ï¼Œå››å‘¨çœ‹ä¸ŠåŽ»é«˜ä¸å¯æ”€ï¼Œæ€ªçŸ³å¶™å³‹ï¼Œä½ å¿ƒä¸­ä¸ç”±ä¸€æƒŠ
+ï¼Œè¦ä¸æ˜¯è¿™ç‰‡åŽšåŽšçš„è‰å †åž«ç€ï¼Œåœ¨å¥½çš„è½»åŠŸä¹Ÿä¼šæ‘”å¾—å˜æˆä¸€å †è‚‰æ³¥ã€‚
 LONG
 );
         setup();
@@ -37,29 +37,29 @@ int i;
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã±³×ÅÈËÊ²Ã´Ò²×ö²»ÁË£¡\n");
+     				return notify_fail("ä½ èƒŒç€äººä»€ä¹ˆä¹Ÿåšä¸äº†ï¼\n");
       		
 		}
 
     if(!this_player()->query_temp("killer")) return 0;
     if(this_player()->query_temp("break")) return 0;
-    if( !arg || arg!="ÑÒÊ¯" )
+    if( !arg || arg!="å²©çŸ³" )
     {
-        write("ÄãÒªÕðËéÊ²Ã´£¡\n");
+        write("ä½ è¦éœ‡ç¢Žä»€ä¹ˆï¼\n");
         return 1;
     }
     n = (int)me->query("neili");
     if (n >= 3000)
     {
-        message_vision("$NÆøÔËµ¤Ìï£¬Ë«ÕÆÖ±ÏòÇ°·½´ò³öÒ»µÀ¾¢Á¦¡£\n", this_player());
-        message_vision("Ö»¼û±»$N´òËéµÄÑÒÊ¯ËÄ³ö·É½¦£¬ÖÐ¼äµÄÒ»¿é¾ÞÑÒ³ÐÊÜ²»ÁËÕð¶¯£¬\n", this_player());
-        message_vision("µôÂäÔÚ²ÝµØÉÏ£¬·¢³ö¾Þ´óµÄÏìÉù¡£Äã¾ªÏ²µÄ·¢ÏÖÔÚÑÒÊ¯ÉÏ·½³öÏÖÁËÒ»¸ö¶´¡£\n", this_player());
+        message_vision("$Næ°”è¿ä¸¹ç”°ï¼ŒåŒæŽŒç›´å‘å‰æ–¹æ‰“å‡ºä¸€é“åŠ²åŠ›ã€‚\n", this_player());
+        message_vision("åªè§è¢«$Næ‰“ç¢Žçš„å²©çŸ³å››å‡ºé£žæº…ï¼Œä¸­é—´çš„ä¸€å—å·¨å²©æ‰¿å—ä¸äº†éœ‡åŠ¨ï¼Œ\n", this_player());
+        message_vision("æŽ‰è½åœ¨è‰åœ°ä¸Šï¼Œå‘å‡ºå·¨å¤§çš„å“å£°ã€‚ä½ æƒŠå–œçš„å‘çŽ°åœ¨å²©çŸ³ä¸Šæ–¹å‡ºçŽ°äº†ä¸€ä¸ªæ´žã€‚\n", this_player());
         this_player()->set_temp("break",1);
         this_player()->set("neili",0);
         remove_call_out("close");
         call_out("close", 5, me);
     }else{
-        message_vision("½á¹ûÖ»ÌýÒ»ÉùÃÆºß£¬$N±»×Ô¼ºµÄÄÚÁ¦ÕðµÃÑÛÇ°Ò»ºÚ....\n", this_player());
+        message_vision("ç»“æžœåªå¬ä¸€å£°é—·å“¼ï¼Œ$Nè¢«è‡ªå·±çš„å†…åŠ›éœ‡å¾—çœ¼å‰ä¸€é»‘....\n", this_player());
         this_player()->set("neili",0);
         this_player()->unconcious();
     }
@@ -71,17 +71,17 @@ int do_jump(string arg)
         me = this_player();
         if(!me->query_temp("break")) return 0;
         if(me->query_temp("climb")) return 0;
-        if( !arg || arg!="ËéÑÒ" )
+        if( !arg || arg!="ç¢Žå²©" )
         {
-        write("ÄãÏëÌøµ½Ê²Ã´µØ·½È¥£¿\n");
+        write("ä½ æƒ³è·³åˆ°ä»€ä¹ˆåœ°æ–¹åŽ»ï¼Ÿ\n");
         return 1;
         }
         if ((int)me->query_skill("dodge",1) > 100 ) {
-        message_vision("$NÒ»¸ö×ÝÉí£¬ÌøÉÏÁËÑÒÊ¯¡£\n", me);
+        message_vision("$Nä¸€ä¸ªçºµèº«ï¼Œè·³ä¸Šäº†å²©çŸ³ã€‚\n", me);
         me->set_temp("climb",1);
         me->delete_temp("braek");
         }else{
-        message_vision("$NÊ©Õ¹Çá¹¦£¬ÏòÉÏÌøÈ¥£¬µ«È´ÔõÃ´Ò²Ìø²»ÉÏÈ¥¡£\n", me);
+        message_vision("$Næ–½å±•è½»åŠŸï¼Œå‘ä¸Šè·³åŽ»ï¼Œä½†å´æ€Žä¹ˆä¹Ÿè·³ä¸ä¸ŠåŽ»ã€‚\n", me);
         }
         return 1;
 }
@@ -100,25 +100,25 @@ int i;
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã±³×ÅÈËÊ²Ã´Ò²×ö²»ÁË£¡\n");
+     				return notify_fail("ä½ èƒŒç€äººä»€ä¹ˆä¹Ÿåšä¸äº†ï¼\n");
       		
 		}
         if(!me->query_temp("climb")) return 0;
-        if( !arg || arg!="ÑÒ¶´" )
+        if( !arg || arg!="å²©æ´ž" )
         {
-        write("ÄãÏëÈ¥ÄÇ°¡£¿\n");
+        write("ä½ æƒ³åŽ»é‚£å•Šï¼Ÿ\n");
         return 1;
         }
-        message_vision("$N¹§ÁË¹§ÉíÌå£¬×ê½øÁËÑÒ¶´Àï¡£\n", me);
+        message_vision("$Næ­äº†æ­èº«ä½“ï¼Œé’»è¿›äº†å²©æ´žé‡Œã€‚\n", me);
         me->move("/d/changan/mudong0");
-        message_vision("¡°Â¡Â¡¡±£¬¶´¿ÚÒÑ¾­·âËÀÁË¡£\n", me);
+        message_vision("â€œéš†éš†â€ï¼Œæ´žå£å·²ç»å°æ­»äº†ã€‚\n", me);
         return 1;
 }
 void close(object room)
 {
     object me;
     me = this_player();
-    message("vision","ËÆºõÓÐ¹ÉÉñÃØµÄÁ¦Á¿½«µôÂäµÄÑÒÊ¯ÓÖÀ­ÁËÉÏÈ¥¡£\n", room);
+    message("vision","ä¼¼ä¹Žæœ‰è‚¡ç¥žç§˜çš„åŠ›é‡å°†æŽ‰è½çš„å²©çŸ³åˆæ‹‰äº†ä¸ŠåŽ»ã€‚\n", room);
     me->delete_temp("braek");
     me->delete_temp("climb");
 }

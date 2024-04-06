@@ -1,13 +1,13 @@
 // /d/yazhang/nandajie2.c
-// Room in ����
+// Room in 牙帐
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "�ϴ��");
+	set("short", "南大街");
 	set("long", @LONG
-������ɽ�˺����㲻�ɵķ����Ų��������������У�һ�ҾƵ��ڴ�
-���϶����ż����㣬������һ�����У��������˲��ϡ�
+这里人山人海，你不由的放慢脚步，东西人声鼎沸，一家酒店在大
+街上都能闻见酒香，西面是一家商行，进出的人不断。
 LONG
 	);
 set("outdoors", "dingxiang");

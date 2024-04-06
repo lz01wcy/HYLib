@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "·¹Ìü");
+        set("short", "é¥­å…");
         set("long", @LONG
-ÕâÀïÊÇÎä¹İÄÚÓÃ²ÍµÄµØ·½¡£ÎİÀï²¼ÖÃºÜ¼òµ¥, Ö»°Ú×Å¼¸ÕÅ×ÀÒÎ
-¼¸¸öÈËÔÚÒ»Éù²»ÏìµØ³Ô×Å¡£Ò»¸ö³ø×ÓÔÚ²»Í£µÄÃ¦Âµ×Å£¬Äã¿ÉÒÔÏòËû
-ÒªÊ³ÎïºÍË®¡£
+è¿™é‡Œæ˜¯æ­¦é¦†å†…ç”¨é¤çš„åœ°æ–¹ã€‚å±‹é‡Œå¸ƒç½®å¾ˆç®€å•, åªæ‘†ç€å‡ å¼ æ¡Œæ¤…
+å‡ ä¸ªäººåœ¨ä¸€å£°ä¸å“åœ°åƒç€ã€‚ä¸€ä¸ªå¨å­åœ¨ä¸åœçš„å¿™ç¢Œç€ï¼Œä½ å¯ä»¥å‘ä»–
+è¦é£Ÿç‰©å’Œæ°´ã€‚
 LONG);
         set("exits", ([
                 "east" :"/d/wuguan/shilu-4",
@@ -29,12 +29,12 @@ int valid_leave(object me, string dir)
 	    
         if ((dir == "east") && present("wang chuzi", environment(me)) ){
            if(present("tea", environment(me)))
-              return notify_fail("Íõ³ø×ÓÀ¹×¡ÄãµÀ£ºÄã»¹ÊÇÏÈ°Ñ²èºÈÍêÔÙ×ß°É¡£\n"); 
+              return notify_fail("ç‹å¨å­æ‹¦ä½ä½ é“ï¼šä½ è¿˜æ˜¯å…ˆæŠŠèŒ¶å–å®Œå†èµ°å§ã€‚\n"); 
            while (i--) 
               if (ob[i]->query("food_remaining")) {
                   switch ( random(2) ){
-                      case 0: return notify_fail("Íõ³ø×Ó²»¸ßĞËµÄÉìÊÖÀ¹×¡ÁËÄãËµ£º»¹ÊÇÏÈ°Ñ¶«Î÷³ÔÍêÁËÔÙ×ß°É¡£\n"); break;
-                      case 1: return notify_fail("Íõ³ø×ÓÀ¹×¡ÄãµÀ£ºÒûÊ³²»µÃ´ø³ö·¹Ìü¡£\n"); break;
+                      case 0: return notify_fail("ç‹å¨å­ä¸é«˜å…´çš„ä¼¸æ‰‹æ‹¦ä½äº†ä½ è¯´ï¼šè¿˜æ˜¯å…ˆæŠŠä¸œè¥¿åƒå®Œäº†å†èµ°å§ã€‚\n"); break;
+                      case 1: return notify_fail("ç‹å¨å­æ‹¦ä½ä½ é“ï¼šé¥®é£Ÿä¸å¾—å¸¦å‡ºé¥­å…ã€‚\n"); break;
                       }
                   }
            }

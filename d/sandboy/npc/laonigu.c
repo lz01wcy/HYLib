@@ -1,14 +1,14 @@
 #include <ansi.h>
 inherit NPC;
-string *name=({"ÌìÁûÄá","µØÑÆÄá",});
+string *name=({"å¤©è‹å°¼","åœ°å“‘å°¼",});
 void create()
 {
  set_name(YEL+name[random(sizeof(name))]+NOR, ({ "nigu", "dashi" }) );
-  set("gender", "Å®ĞÔ");
+  set("gender", "å¥³æ€§");
   set("age", 40+random(40));
-  set("title",YEL"¶À±ÛÉñÄá"NOR);
-  set("long","Ò»Î»ÃæÈİ´ÈÏéµÄÀÏÄá,ÕıÄÃ×ÅÉ¨ÖãÉ¨µØ¡£\n");
-  create_family("°×ÔÆâÖ",4,"´«ÈË");
+  set("title",YEL"ç‹¬è‡‚ç¥å°¼"NOR);
+  set("long","ä¸€ä½é¢å®¹æ…ˆç¥¥çš„è€å°¼,æ­£æ‹¿ç€æ‰«å¸šæ‰«åœ°ã€‚\n");
+  create_family("ç™½äº‘åºµ",4,"ä¼ äºº");
   set("attitude", "friendly");
   set("combat_exp", 1500000);
   set("per", 15);

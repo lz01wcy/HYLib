@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short","�ּ��");
+	set("short","林间道");
 	set("long",@LONG
-������һ���ּ�С���������������ѡ����븣��ʡ���ˣ�����
-ɽ��ï�ܣ�������棬��λ��·Ҫʮ��С�ġ�
+这里是一条林间小道，在树丛中蜿蜒。进入福建省境了，闽西
+山林茂密，多产毒虫，各位行路要十分小心。
 LONG);
 	set("objects", ([
 	   __DIR__"obj/shuzhi": 1,

@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "����ջ��");
+	set("short", "悬空栈桥");
 	set("long", @LONG
-ջ�������ϱ�Σ¥֮�䣬�����������̳ɣ�ÿ������������Žڲ�
-����һ��ÿ������������ϣ�����ľ�壬����ʮ�ɣ�������Ԩ��ɽ��
-��Х�����Ķ��ǡ�
+栈道悬于南北危楼之间，由无数的掾铺成，每节掾宽尺许，九节并
+排在一起，每根掾绑在铁索上，上铺木板，长数十丈，下临深渊。山风
+呼啸，惊心动魄。
 LONG);
 	set("exits", ([ /* sizeof() == 4 */
 		"south"   : __DIR__"xuankong2",

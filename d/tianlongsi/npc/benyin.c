@@ -5,10 +5,10 @@ inherit F_MASTER;
 string ask_me();
 void create()
 {
-	set_name("±¾Òò", ({ "ben yin","yin"}) );
-	set("gender", "ÄÐÐÔ" );
-	set("title", "ÌìÁúËÂµÚÊ®Æß´ú×¡³Ö");
-	set("long", "Ò»¸öÉñÇéäìÈ÷µÄÉ®ÈË£¬ËûÊÇÌìÁúËÂ×¡³Ö·½ÕÉ¡£\n");
+	set_name("æœ¬å› ", ({ "ben yin","yin"}) );
+	set("gender", "ç”·æ€§" );
+	set("title", "å¤©é¾™å¯ºç¬¬åä¸ƒä»£ä½æŒ");
+	set("long", "ä¸€ä¸ªç¥žæƒ…æ½‡æ´’çš„åƒ§äººï¼Œä»–æ˜¯å¤©é¾™å¯ºä½æŒæ–¹ä¸ˆã€‚\n");
 	set("class", "bonze");
 	set("age", 43);
 	set("shen_type", 1);
@@ -47,12 +47,12 @@ void create()
 	map_skill("sword", "duanjia-sword");
 	prepare_skill("finger","six-finger");
 	set("inquiry" ,([
-	"ÉáÀû×Ó" : (:ask_me():),
-	"ÁùÂöÉñ½£Æ×" : "¡°Ê©Ö÷²»»áÊÇ´òÊ²Ã´Ö÷Òâ°É£¿¡±\n",
-	"ÁùÂöÉñ½£" :  "¡°Ê©Ö÷²»»áÊÇÏëºÍÎÒ½ÏÁ¿½ÏÁ¿°É£¿¡±\n",
+	"èˆåˆ©å­" : (:ask_me():),
+	"å…­è„‰ç¥žå‰‘è°±" : "â€œæ–½ä¸»ä¸ä¼šæ˜¯æ‰“ä»€ä¹ˆä¸»æ„å§ï¼Ÿâ€\n",
+	"å…­è„‰ç¥žå‰‘" :  "â€œæ–½ä¸»ä¸ä¼šæ˜¯æƒ³å’Œæˆ‘è¾ƒé‡è¾ƒé‡å§ï¼Ÿâ€\n",
 	]));
 
-	create_family("´óÀí¶Î¼Ò",17,"¸ßÉ®");
+	create_family("å¤§ç†æ®µå®¶",17,"é«˜åƒ§");
 	setup();
 	carry_object("/d/xueshan/obj/b-jiasha")->wear();
 }
@@ -63,17 +63,17 @@ string ask_me()
 	if(me->query_temp("marks/ask_temp0"))
 		{
 		me->set_temp("marks/ask_temp1",1);
-		return "¡°ÄÇÊÇ±¾ËÂµÄÕòËÂÖ®±¦£¬¶àÄêÒÔÇ°²»É÷¶ªÊ§¡£Ê©Ö÷ÈçÄÜÕÒ»Ø´ËÎï£¬\n         ÀÏñÄ±ØÓÐÖØÐ»¡£¡±\n";
+		return "â€œé‚£æ˜¯æœ¬å¯ºçš„é•‡å¯ºä¹‹å®ï¼Œå¤šå¹´ä»¥å‰ä¸æ…Žä¸¢å¤±ã€‚æ–½ä¸»å¦‚èƒ½æ‰¾å›žæ­¤ç‰©ï¼Œ\n         è€è¡²å¿…æœ‰é‡è°¢ã€‚â€\n";
 		}
 	else
-		return "¡°Ê©Ö÷²»¿ÉÍýÑÔ¡£¡±\n";
+		return "â€œæ–½ä¸»ä¸å¯å¦„è¨€ã€‚â€\n";
 }
 
 int accept_object(object who, object ob)
 {
         if (  (string)ob->query("id") == "jin he")
 	{
-		message_vision("±¾Òò´óÏ²µÀ£º¡°¶àÐ»Ê©Ö÷£¡Ê©Ö÷ÈôÊÇÓÐÔµÈË£¬Çëµ½Ä²ÄáÌÃÈ¡±¾ËÂÖ®±¦¡£\n", who);
+		message_vision("æœ¬å› å¤§å–œé“ï¼šâ€œå¤šè°¢æ–½ä¸»ï¼æ–½ä¸»è‹¥æ˜¯æœ‰ç¼˜äººï¼Œè¯·åˆ°ç‰Ÿå°¼å ‚å–æœ¬å¯ºä¹‹å®ã€‚\n", who);
 		who->set_temp("marks/find_temp",1);
 		who->move("/d/tianlongsi/banruotai");
 		return 1;

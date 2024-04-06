@@ -12,11 +12,11 @@ string tai(object);
 
 void create()
 {
-    set("short", BLU "É½¶´"NOR);
+    set("short", BLU "å±±æ´"NOR);
     set("long", @LONG
-Õâ¶´ÆäÊµÉõÇ³£¬ĞĞ²»µ½ÈıÕÉ£¬ÒÑµÖ¾¡Í·£¬¶´ÖĞ³ıÁËÒ»ÕÅÊ¯×À¡¢Ò»ÕÅ
-Ê¯µÊÖ®Íâ¸üÎŞ±ğÎï¡£¶´½ÇÓĞÒ»¶ÑÂÒÊ¯¸ßÆğ£¬¼«ËÆÒ»¸ö·ØÄ¹£¬¶´±ÚÉÏËÆºõ
-Ğ´µÃÓĞ×Ö£¬Ö»ÊÇ³¾·âÌ¦±Î£¬ºÚ°µÖĞÇÆ²»Çå³ş¡£
+è¿™æ´å…¶å®ç”šæµ…ï¼Œè¡Œä¸åˆ°ä¸‰ä¸ˆï¼Œå·²æŠµå°½å¤´ï¼Œæ´ä¸­é™¤äº†ä¸€å¼ çŸ³æ¡Œã€ä¸€å¼ 
+çŸ³å‡³ä¹‹å¤–æ›´æ— åˆ«ç‰©ã€‚æ´è§’æœ‰ä¸€å †ä¹±çŸ³é«˜èµ·ï¼Œæä¼¼ä¸€ä¸ªåŸå¢“ï¼Œæ´å£ä¸Šä¼¼ä¹
+å†™å¾—æœ‰å­—ï¼Œåªæ˜¯å°˜å°è‹”è”½ï¼Œé»‘æš—ä¸­ç§ä¸æ¸…æ¥šã€‚
 LONG
     );
 
@@ -25,9 +25,9 @@ LONG
     ]));
     set("huoshi_count", 2);
     set("item_desc", ([
-//        "huoshi" : "»¥»÷²úÉúµÄĞ¡»ğĞÇ¿ÉÒÔµãÈ¼¿İÊ÷Ö¦¡£\n",
+//        "huoshi" : "äº’å‡»äº§ç”Ÿçš„å°ç«æ˜Ÿå¯ä»¥ç‚¹ç‡ƒæ¯æ ‘æã€‚\n",
         "zhuo" : (: zhuo :),
-        "den" : "ÆÕÍ¨µÄÊ¯µÊ¡£\n",
+        "den" : "æ™®é€šçš„çŸ³å‡³ã€‚\n",
         "mu" : (: mu :),
         "tai" : (: tai :),
         "bi" : (: bi :),
@@ -40,7 +40,7 @@ string zhuo(object me)
 {
     me = this_player();
     me->set_temp("temp/looked_zhuo", 1);
-    return  "ÆÕÍ¨µÄÊ¯×À£¬×ÀÉÏ·ÅÓĞÒ»¶Ô»ğÊ¯¡£\n";
+    return  "æ™®é€šçš„çŸ³æ¡Œï¼Œæ¡Œä¸Šæ”¾æœ‰ä¸€å¯¹ç«çŸ³ã€‚\n";
 }
 
 string tai(object me)
@@ -48,16 +48,16 @@ string tai(object me)
     object where = environment(me);
 
     if((int)where->query_temp("temp/light") < 100)
-        return  "¶´ÀïÃæºÚ÷î÷îµÄ£¬ÄãÊ²Ã´Ò²¿´²»Çå³ş¡£\n";
+        return  "æ´é‡Œé¢é»‘é»é»çš„ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šã€‚\n";
 
     if((int)me->query_skill("force", 1) < 100)
-        return  "±ÚÉÏÂúÊÇÇàÌ¦ºÍ»Ò³¾¡£\n";
+        return  "å£ä¸Šæ»¡æ˜¯é’è‹”å’Œç°å°˜ã€‚\n";
 
     if((int)where->query_temp("temp/qingtai") < 1)
-        return  "±ÚÉÏÂúÊÇÇàÌ¦ºÍ»Ò³¾£¬ÇàÌ¦ÏÂÃæËÆºõ¿Ì×ÅÒ»Ğ©Ğ¡×Ö¡£\n";
+        return  "å£ä¸Šæ»¡æ˜¯é’è‹”å’Œç°å°˜ï¼Œé’è‹”ä¸‹é¢ä¼¼ä¹åˆ»ç€ä¸€äº›å°å­—ã€‚\n";
        else
 //       me->set_temp("temp/qingtai",1);
-        return  "Ä¨È¥ÇàÌ¦µÄ±ÚÉÏ¿Ì×ÅÒ»Ğ©Ğ¡×Ö¡£\n";
+        return  "æŠ¹å»é’è‹”çš„å£ä¸Šåˆ»ç€ä¸€äº›å°å­—ã€‚\n";
 }
 
 string bi(object me)
@@ -65,39 +65,39 @@ string bi(object me)
     object where = environment(me);
 
     if((int)where->query_temp("temp/light") < 100)
-        return  "¶´ÀïÃæºÚ÷î÷îµÄ£¬ÄãÊ²Ã´Ò²¿´²»Çå³ş¡£\n";
+        return  "æ´é‡Œé¢é»‘é»é»çš„ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šã€‚\n";
 
     if((int)me->query_skill("force", 1) < 100)
-        return  "±ÚÉÏÂúÊÇÇàÌ¦ºÍ»Ò³¾¡£\n";
+        return  "å£ä¸Šæ»¡æ˜¯é’è‹”å’Œç°å°˜ã€‚\n";
 
     if((int)where->query_temp("temp/qingtai") < 1)
-        return  "±ÚÉÏÂúÊÇÇàÌ¦ºÍ»Ò³¾£¬ÇàÌ¦ÏÂÃæËÆºõ¿Ì×ÅÒ»Ğ©Ğ¡×Ö¡£\n";
+        return  "å£ä¸Šæ»¡æ˜¯é’è‹”å’Œç°å°˜ï¼Œé’è‹”ä¸‹é¢ä¼¼ä¹åˆ»ç€ä¸€äº›å°å­—ã€‚\n";
 
     me->set_temp("temp/looked_bi", 1);
 
     return
-    "Ä¨È¥ÇàÌ¦µÄ±ÚÉÏÏÖ³öÈıĞĞ×ÖÀ´£¬×Ö¼£±Ê»®ÉõÏ¸£¬ÈëÊ¯È´ÊÇ¼«Éî£¬ÏÔÊÇÓÃ\n"
-    "¼«·æÀûµÄ±øÈĞ»®³É¡£  ¿´ÄÇÈıĞĞ×ÖµÀ£º                            \n\n"
-    "×İºá½­ºşÈıÊ®âÅÔØ£¬É±¾¡³ğ¿Ü£¬°Ü¾¡Ó¢ĞÛ£¬ÌìÏÂ¸üÎŞ¿¹ÊÖ£¬ÎŞ¿ÉèÍºÎ£¬\n"
-    "Î©Òş¾ÓÉî¹È£¬ÒÔµñÎªÓÑ¡£ÎØºô£¬ÉúÆ½ÇóÒ»µĞÊÖ¶ø²»¿ÉµÃ£¬³Ï¼ÅÁÈÄÑ¿°Ò²¡£\n\n"
-    "                                                ½£Ä§¶À¹ÂÇó°Ü  \n";
+    "æŠ¹å»é’è‹”çš„å£ä¸Šç°å‡ºä¸‰è¡Œå­—æ¥ï¼Œå­—è¿¹ç¬”åˆ’ç”šç»†ï¼Œå…¥çŸ³å´æ˜¯ææ·±ï¼Œæ˜¾æ˜¯ç”¨\n"
+    "æé”‹åˆ©çš„å…µåˆƒåˆ’æˆã€‚  çœ‹é‚£ä¸‰è¡Œå­—é“ï¼š                            \n\n"
+    "çºµæ¨ªæ±Ÿæ¹–ä¸‰åé¦€è½½ï¼Œæ€å°½ä»‡å¯‡ï¼Œè´¥å°½è‹±é›„ï¼Œå¤©ä¸‹æ›´æ— æŠ—æ‰‹ï¼Œæ— å¯æŸ°ä½•ï¼Œ\n"
+    "æƒŸéšå±…æ·±è°·ï¼Œä»¥é›•ä¸ºå‹ã€‚å‘œå‘¼ï¼Œç”Ÿå¹³æ±‚ä¸€æ•Œæ‰‹è€Œä¸å¯å¾—ï¼Œè¯šå¯‚å¯¥éš¾å ªä¹Ÿã€‚\n\n"
+    "                                                å‰‘é­”ç‹¬å­¤æ±‚è´¥  \n";
 }
 string mu(object me)
 {
     object where = environment(me);
 
     if((int)where->query_temp("temp/light") < 100)
-        return  "¶´ÀïÃæºÚ÷î÷îµÄ£¬ÄãÊ²Ã´Ò²¿´²»Çå³ş¡£\n";
+        return  "æ´é‡Œé¢é»‘é»é»çš„ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šã€‚\n";
 
     if((int)me->query_temp("temp/looked_bi") < 1)
-        return  "ÄãÖÕ¾¿¿´²»³öÀ´ÕâÊÇË­µÄ·ØÄ¹¡£\n";
+        return  "ä½ ç»ˆç©¶çœ‹ä¸å‡ºæ¥è¿™æ˜¯è°çš„åŸå¢“ã€‚\n";
     else
     {
         me->set_temp("temp/looked_mu", 1);
         me->delete_temp("temp/looked_bi");
         return
-        "ÄÇ¸öÊ¯¶ÑµÄ·ØÄ¹ÉÏÒ²ÎŞÆäËû±ê¼Ç£¬ÁÏÊÇÕâÎ»¶À¹ÂÇó°İËÀáá£¬ÊÇÉñµñÏÎÊ¯\n"
-        "¶ÑÔÚËûÊ¬ÉíÖ®ÉÏ¡£\n";
+        "é‚£ä¸ªçŸ³å †çš„åŸå¢“ä¸Šä¹Ÿæ— å…¶ä»–æ ‡è®°ï¼Œæ–™æ˜¯è¿™ä½ç‹¬å­¤æ±‚æ‹œæ­»å¾Œï¼Œæ˜¯ç¥é›•è¡”çŸ³\n"
+        "å †åœ¨ä»–å°¸èº«ä¹‹ä¸Šã€‚\n";
     }
 }
 
@@ -118,11 +118,11 @@ int do_use(string arg)
     object where = environment(me);
 
     if((!arg) || (arg != "huoshi"))
-        return notify_fail("ÄãÒªÊ¹ÓÃÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦ä½¿ç”¨ä»€ä¹ˆï¼Ÿ\n");
     if( !(ob=present("ku shuzhi", me)) )
-        return notify_fail("ÄãÃ»ÓĞÒı»ğÖ®Îï£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰å¼•ç«ä¹‹ç‰©ï¼\n");
 
-    message_vision("$NµãÈ¼ÁË¿İÊ÷Ö¦£¬ÖÜÎ§ÂíÉÏÁÁÁËÆğÀ´£¡\n", me);
+    message_vision("$Nç‚¹ç‡ƒäº†æ¯æ ‘æï¼Œå‘¨å›´é©¬ä¸Šäº®äº†èµ·æ¥ï¼\n", me);
     where->add_temp("temp/light", 100);
     destruct(ob);
     return 1;
@@ -133,20 +133,20 @@ int do_na(string arg)
       me = this_player();
 
     if(!me->query_temp("temp/looked_zhuo"))
-    return notify_fail("ÄãÏë×öÊ²÷á£¿\n");
+    return notify_fail("ä½ æƒ³åšä»€éº½ï¼Ÿ\n");
 
      if((!arg) || (arg != "huoshi"))
-     return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
      
      if (query("huoshi_count") > 0) 
      {
-         message_vision("$N´ÓÊ¯×ÀÉÏÄÃÆğÒ»¸ö»ğÊ¯¡£\n", me);
+         message_vision("$Nä»çŸ³æ¡Œä¸Šæ‹¿èµ·ä¸€ä¸ªç«çŸ³ã€‚\n", me);
          add("huoshi_count", -1);
          new(__DIR__"obj/fire")->move(me);
          me->delete_temp("temp/looked_zhuo");
      }
      else
-     message_vision("$NÉìÊÖÃşÁËÃş£¬Ê²÷áÒ²Ã»ÕÒµ½¡£\n", me);
+     message_vision("$Nä¼¸æ‰‹æ‘¸äº†æ‘¸ï¼Œä»€éº½ä¹Ÿæ²¡æ‰¾åˆ°ã€‚\n", me);
      me->delete_temp("temp/looked_zhuo");
      
     
@@ -158,20 +158,20 @@ int do_ca(string arg)
     object where = environment(me);
 
     if((!arg) || (arg != "qingtai"))
-        return notify_fail("ÄãÒªÄ¨È¥Ê²Ã´£¿\n");
+        return notify_fail("ä½ è¦æŠ¹å»ä»€ä¹ˆï¼Ÿ\n");
 
     if((int)where->query_temp("temp/light") < 100)
-        return notify_fail("ÄãÃşÁËÒ»ÊÖÊªºõºõµÄÇàÌ¦¡£\n");
+        return notify_fail("ä½ æ‘¸äº†ä¸€æ‰‹æ¹¿ä¹ä¹çš„é’è‹”ã€‚\n");
 
     if( ((int)me->query_skill("force", 1)<100) ||
         ((int)me->query_skill("dodge", 1)<100) )
     {
-        message_vision("$NÓÃÁ¦Ò»Ä¨ÇàÌ¦£¬ÄÄÖªÊÖÉÏ´ò»¬£¬Ò»¸öôóôò²îµãË¤µ¹ÔÚµØ£¡\n", me);
+        message_vision("$Nç”¨åŠ›ä¸€æŠ¹é’è‹”ï¼Œå“ªçŸ¥æ‰‹ä¸Šæ‰“æ»‘ï¼Œä¸€ä¸ªè¶”è¶„å·®ç‚¹æ‘”å€’åœ¨åœ°ï¼\n", me);
         return 0;
     }
 
     where->set_temp("temp/qingtai", 100);
-    message_vision("$NÄ¨È¥ÁË±ÚÉÏµÄÇàÌ¦£¬Â¶³öÁËÏÂÃæ¿ÌµÄĞ¡×Ö¡£\n", me);
+    message_vision("$NæŠ¹å»äº†å£ä¸Šçš„é’è‹”ï¼Œéœ²å‡ºäº†ä¸‹é¢åˆ»çš„å°å­—ã€‚\n", me);
 
     return 1;
 }
@@ -182,13 +182,13 @@ int do_guibai(string arg)
     object where = environment(me);
 
     if((!arg) || (arg != "mu"))
-        return notify_fail("²»ÒªËæ±ãÏÂ¹òÂï£¡\n");
+        return notify_fail("ä¸è¦éšä¾¿ä¸‹è·ªå˜›ï¼\n");
 
     if((int)me->query_temp("temp/looked_mu") < 1)
-        return notify_fail("²»ÒªËæ±ãÏÂ¹òÂï£¡\n");
+        return notify_fail("ä¸è¦éšä¾¿ä¸‹è·ªå˜›ï¼\n");
 
-    message_vision("$N³öÁËÒ»»áÉñ£¬²»×Ô½ûµÄÔÚÊ¯Ä¹Ö®Ç°¹ò°İ£¬°İÁËËÄ°İ¡£\n", me);
-    write("ÄãºöÈ»·¢ÏÖÉ½¶´±±ÃæËÆºõÓĞ¸ö³ö¿Ú£¬Ò»¿éÒ»ÈËÀ´¸ßµÄÊ¯Í·ËÆºõ°Ñ³ö¿Ú·â×¡ÁË¡£\n");
+    message_vision("$Nå‡ºäº†ä¸€ä¼šç¥ï¼Œä¸è‡ªç¦çš„åœ¨çŸ³å¢“ä¹‹å‰è·ªæ‹œï¼Œæ‹œäº†å››æ‹œã€‚\n", me);
+    write("ä½ å¿½ç„¶å‘ç°å±±æ´åŒ—é¢ä¼¼ä¹æœ‰ä¸ªå‡ºå£ï¼Œä¸€å—ä¸€äººæ¥é«˜çš„çŸ³å¤´ä¼¼ä¹æŠŠå‡ºå£å°ä½äº†ã€‚\n");
     me->set_temp("temp/kneel", 1);
     me->delete_temp("temp/looked_mu");
 
@@ -202,13 +202,13 @@ int do_move(string arg)
     return 0;
 
        if((!arg) || (arg != "stone"))
-   return notify_fail("ÄãÒª×öÊ²÷á£¿\n");
+   return notify_fail("ä½ è¦åšä»€éº½ï¼Ÿ\n");
 
     if((int)me->query_str()<30)
-   return notify_fail("ÄãÓÃÁ¦ÍÆÁËÍÆ¾ŞÊ¯£¬µ«ÈçÍ¬òßòÑº³Ê÷Ò»Ñù¡£\n");
+   return notify_fail("ä½ ç”¨åŠ›æ¨äº†æ¨å·¨çŸ³ï¼Œä½†å¦‚åŒèœ»èœ“æ’¼æ ‘ä¸€æ ·ã€‚\n");
 
 
-    message_vision("$NÁ¦¹ßË«±Ú£¬ÓÃÁ¦½«¾ŞÊ¯ÍÆ¿ªÒ»ÌõĞ¡·ì¡£\n", me);
+    message_vision("$NåŠ›æƒ¯åŒå£ï¼Œç”¨åŠ›å°†å·¨çŸ³æ¨å¼€ä¸€æ¡å°ç¼ã€‚\n", me);
     me->delete_temp("temp/kneel");
     me->set_temp("make/xmove",1);
     return 1;
@@ -221,11 +221,11 @@ int do_zuan(string arg)
     return 0;
 
     if((!arg) || (arg != "shifeng"))
-   return notify_fail("ÄãÒª×öÊ²÷á£¿\n");
+   return notify_fail("ä½ è¦åšä»€éº½ï¼Ÿ\n");
  
     me->set_delete("make/xmove");
     me->move(__DIR__"donghou");
-    message_vision("$NÉîÎü¿ÚÆø£¬´ÓÊ¯·ìÖĞ×êÁË³öÀ´¡£\n", me);
+    message_vision("$Næ·±å¸å£æ°”ï¼Œä»çŸ³ç¼ä¸­é’»äº†å‡ºæ¥ã€‚\n", me);
  
   
     return 1;

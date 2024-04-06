@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/xuedao.c  Ñªµ¶ÀÏ×æ
+// /kungfu/class/xueshan/xuedao.c  è¡€åˆ€è€ç¥–
 // by secret
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ñªµ¶ÀÏ×æ", ({ "xuedao-laozu", "xue dao", "laozu" }));
+        set_name("è¡€åˆ€è€ç¥–", ({ "xuedao-laozu", "xue dao", "laozu" }));
         set("long",@LONG
-ÕâÀ®ÂïÉí×Å»ÆÅÛ£¬Äê¼Í¼«ÀÏ£¬¼âÍ·Ï÷¶ú£¬Á³ÉÏ¶¼ÊÇÖåÎÆ¡£Ëû¾ÍÊÇÑªµ¶ÃÅµÚËÄ´úÕÆÃÅ¡£
+è¿™å–‡å˜›èº«ç€é»„è¢ï¼Œå¹´çºªæè€ï¼Œå°–å¤´å‰Šè€³ï¼Œè„¸ä¸Šéƒ½æ˜¯çš±çº¹ã€‚ä»–å°±æ˜¯è¡€åˆ€é—¨ç¬¬å››ä»£æŒé—¨ã€‚
 LONG
         );
-        set("title",HIR"Ñªµ¶ÃÅµÚËÄ´úÕÆÃÅ"NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIR"è¡€åˆ€é—¨ç¬¬å››ä»£æŒé—¨"NOR);
+        set("gender", "ç”·æ€§");
         set("class", "bonze");
         set("age", 85);
         set("attitude", "peaceful");
@@ -52,7 +52,7 @@ LONG
         map_skill("blade", "xue-dao");
         map_skill("sword", "mingwang-jian");
 
-        create_family("Ñ©É½ËÂ", 4, "µÜ×Ó");
+        create_family("é›ªå±±å¯º", 4, "å¼Ÿå­");
         set("class", "bonze");
 
         setup();
@@ -78,7 +78,7 @@ void greeting(object ob)
 	int i;
 
 	obj = all_inventory(environment(me));
-        command("say çÏºúÓ§ÊÇËµËûÍ·ÉÏËù´øÖ®Ó§²¢²»¾«ÖÂ£¬ºúÄËºúÂÒÖ®Òâ¡£");
+        command("say ç¼¦èƒ¡ç¼¨æ˜¯è¯´ä»–å¤´ä¸Šæ‰€å¸¦ä¹‹ç¼¨å¹¶ä¸ç²¾è‡´ï¼Œèƒ¡ä¹ƒèƒ¡ä¹±ä¹‹æ„ã€‚");
 	for(i=0; i<sizeof(obj); i++)
 	{
 		if( obj[i]->query("id")=="jiumo-zhi")

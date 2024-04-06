@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "���");
+	set("short", "后殿");
 	set("long", @LONG
-����ģ�������߶���ˮĥʯ�ڣ��ο��ŷ��Ÿ�λ���ʹ�µ�Ф
-�񼰻������������һ�ڴ�ˮ��(gang)���Լ�����ɮ������ڿʼ���
-������֮�衣ÿ�ն���רְɮ�´���ǰ���ľ��е�ˮ���ˡ�
+后殿规模不大。两边都是水磨石壁，镂刻着佛门各位先贤大德的肖
+像及慧心妙语，正中有一口大水缸(gang)，以济寺内僧人练武口渴及日
+常饮用之需。每日都有专职僧侣从寺前佛心井中担水来此。
 LONG 
 );
 	set("exits", ([
@@ -21,7 +21,7 @@ LONG
 		__DIR__"npc/zjseng" : 1,
 	]));
 	set("item_desc", ([
-		"gang" : "����һ��ͭ�ƵĴ�ף������ʢ�¼���Ͱˮ��\n",
+		"gang" : "这是一口铜制的大缸，足可以盛下几百桶水。\n",
 	]));
 	set("resource/water",1); 
 	set("coor/x", 1820);

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-		  set("short", "�㳡��");
+		  set("short", "广场西");
 		  set("long",@long
-������һ��ƽƽ�����Ĵ�㳡���㳡���������ɵĵ�����ϰ�䣬������
-��Ȼ�ǹ㳡�������ȥ���������ˣ���������ɽ��·��
+这里是一个平平开阔的大广场，广场上有昆仑派的弟子在习武，东面是
+仍然是广场，西面过去就是悬崖了，北面是下山的路。
 long);
 		 set("exits",([
 "northeast" : __DIR__"shanlu04",

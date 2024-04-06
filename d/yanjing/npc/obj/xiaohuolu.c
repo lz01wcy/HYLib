@@ -2,13 +2,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ºìÄàĞ¡»ğÂ¯", ({ "xiao huolu" }) );
+        set_name("çº¢æ³¥å°ç«ç‚‰", ({ "xiao huolu" }) );
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ù");
-                set("long", "ºìÉ«½ºÄàËùÖÆµÄĞ¡»ğÂ¯,ÓÃ°×Ìú·â±ß.\n");
+                set("unit", "åº§");
+                set("long", "çº¢è‰²èƒ¶æ³¥æ‰€åˆ¶çš„å°ç«ç‚‰,ç”¨ç™½é“å°è¾¹.\n");
                 set("value", 500);
         }
 }

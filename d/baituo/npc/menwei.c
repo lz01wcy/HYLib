@@ -5,11 +5,11 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("ÃÅÎÀ", ({ "men wei", "wei"}) );
-	set("nickname", "ÌúÊ¨×Ó");
-	set("gender", "ÄĞĞÔ" );
+	set_name("é—¨å«", ({ "men wei", "wei"}) );
+	set("nickname", "é“ç‹®å­");
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
-	set("long", "ÕâÊÇ¸öÄê¸»Á¦Ç¿µÄÎÀ±ø£¬Ñù×ÓÊ®·ÖÍşÑÏ¡£\n");
+	set("long", "è¿™æ˜¯ä¸ªå¹´å¯ŒåŠ›å¼ºçš„å«å…µï¼Œæ ·å­ååˆ†å¨ä¸¥ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", -1);
 
@@ -53,19 +53,19 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	if((string)ob->query("family/family_name")=="°×ÍÕÉ½ÅÉ")
-	   { say("ÃÅÎÀĞ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-	     + "ÄúĞÁ¿àÁË£¬¿ìÇë½ø°É¡¡¡£\n");
+	if((string)ob->query("family/family_name")=="ç™½é©¼å±±æ´¾")
+	   { say("é—¨å«ç¬‘åŸåŸåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+	     + "æ‚¨è¾›è‹¦äº†ï¼Œå¿«è¯·è¿›å§ã€€ã€‚\n");
 	     return;
 	    }
 	if(!ob->query("family/family_name"))
-	   { say("ÃÅÎÀÂúÁ³Ğ¦ÈİµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-	     + "ÄúÊÇÀ´°İÊ¦µÄ°É¡£\nÊ¦¸µ¾ÍÔÚÀïÃæ£¬¿ìÇë½ø°É¡£\n");
+	   { say("é—¨å«æ»¡è„¸ç¬‘å®¹åœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+	     + "æ‚¨æ˜¯æ¥æ‹œå¸ˆçš„å§ã€‚\nå¸ˆå‚…å°±åœ¨é‡Œé¢ï¼Œå¿«è¯·è¿›å§ã€‚\n");
 	     return;
 	    }
 	if((int)ob->query("shen")>200)
-	   { say("ÃÅÎÀÁ½ÑÛÒ»µÉ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-	     + "ÄãÊÇÀ´ÕÒÂé·³µÄ°É¡£\nÎÒÈ°Äã²»ÒªÇá¾ÙÍı¶¯£¡\n");
+	   { say("é—¨å«ä¸¤çœ¼ä¸€çªï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+	     + "ä½ æ˜¯æ¥æ‰¾éº»çƒ¦çš„å§ã€‚\næˆ‘åŠä½ ä¸è¦è½»ä¸¾å¦„åŠ¨ï¼\n");
 	     return;
 	    }
 }

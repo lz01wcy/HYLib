@@ -1,13 +1,13 @@
 // baling/edao1
-// Room in ����
+// Room in 巴陵
 inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山脚");
 	set("long", @LONG
-������һ����������Ĵ�����ϡ�������һ��ɽ����ǰ�棬�����
-˳ɽ���ޣ����ѵ��򱱶�ȥ��һ��С��˳ɽ�ƽ���ɽ�ϵ������С�
+你走在一条尘土飞扬的大驿道上。东面有一做山挡在前面，大驿道
+顺山而修，蜿蜒的向北而去，一条小道顺山势进入山上的密林中。
 LONG
 	);
 

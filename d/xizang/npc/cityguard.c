@@ -1,12 +1,12 @@
  inherit NPC;
 void create()
 {
-        set_name("³ÇÎÀ", ({ "city guard", "guard" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åŸå«", ({ "city guard", "guard" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 25);
         set("str", 30);
         set("long", @LONG
-Ò»¸öÄêÇàµÄ²ØÉ®¡£
+ä¸€ä¸ªå¹´é’çš„è—åƒ§ã€‚
 LONG
 );
         set("attitude", "heroism"); 

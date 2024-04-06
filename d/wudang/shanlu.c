@@ -1,15 +1,15 @@
-// /d/wudang/shanlu2.c  山路
+// /d/wudang/shanlu2.c  灞辫矾
 
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-        set("short",HIG"山路"NOR);
+        set("short",HIG"灞辫矾"NOR);
         set("long", @LONG
-你走在一条偏僻的山路上，四周灌木丛丛，遍地奇花异草，人迹
-罕至，路径几不可寻，只有采药的人才敢进入深山。你到处乱窜寻找
-出路，猛的一痛，荆棘把你给划伤了!
+浣犺蛋鍦ㄤ竴鏉″亸鍍荤殑灞辫矾涓婏紝鍥涘懆鐏屾湪涓涗笡锛岄亶鍦板鑺卞紓鑽夛紝浜鸿抗
+缃曡嚦锛岃矾寰勫嚑涓嶅彲瀵伙紝鍙湁閲囪嵂鐨勪汉鎵嶆暍杩涘叆娣卞北銆備綘鍒板涔辩獪瀵绘壘
+鍑鸿矾锛岀寷鐨勪竴鐥涳紝鑽嗘鎶婁綘缁欏垝浼や簡!
 LONG                           
         );
         set("exits", ([

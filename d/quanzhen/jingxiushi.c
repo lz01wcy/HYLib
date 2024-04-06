@@ -1,14 +1,14 @@
-// jingxiushi.c ¾²ÐÞÊÒ
+// jingxiushi.c é™ä¿®å®¤
 // By Lgg,1998.10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¾²ÐÞÊÒ");
+        set("short", "é™ä¿®å®¤");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÜ×Ó¾²ÐÞ²ÎÎòµÀÇéµÄ·¿¼ä£¬·¿¼äºÜÐ¡£¬µ«ÊÕÊ°µÄ¸É
-¸É¾»¾»£¬×ÀÒÎ¶¼°Ú·ÅµÃÕûÕûÆëÆë£¬ÈÃÈËÒ»¿´¾ÍÐÄÎÞÔÓÄî¡£
+è¿™é‡Œæ˜¯å…¨çœŸæ•™å¼Ÿå­é™ä¿®å‚æ‚Ÿé“æƒ…çš„æˆ¿é—´ï¼Œæˆ¿é—´å¾ˆå°ï¼Œä½†æ”¶æ‹¾çš„å¹²
+å¹²å‡€å‡€ï¼Œæ¡Œæ¤…éƒ½æ‘†æ”¾å¾—æ•´æ•´é½é½ï¼Œè®©äººä¸€çœ‹å°±å¿ƒæ— æ‚å¿µã€‚
 LONG
         );
         set("exits", ([
@@ -29,13 +29,13 @@ int valid_leave(object me, string dir)
 
         if (dir == "east" )
         {
-                if(!(fam = me->query("family")) || fam["family_name"]!="È«Õæ½Ì")
+                if(!(fam = me->query("family")) || fam["family_name"]!="å…¨çœŸæ•™")
                 {
                         if(present("liu chuxuan", environment(me)) && living(present("liu chuxuan", environment(me))))
                         {
                                 return notify_fail(
-"Áõ´¦Ò»ÉìÊÖÀ¹×¡ÄãµÀ£ººóÃæÊÇ±¾½Ì×æÊ¦ÇåÐÞÖ®µØ£¬" + RANK_D->query_respect(me) + "Çë
-Ö¹²½¡£\n");
+"åˆ˜å¤„ä¸€ä¼¸æ‰‹æ‹¦ä½ä½ é“ï¼šåŽé¢æ˜¯æœ¬æ•™ç¥–å¸ˆæ¸…ä¿®ä¹‹åœ°ï¼Œ" + RANK_D->query_respect(me) + "è¯·
+æ­¢æ­¥ã€‚\n");
                         }
                         else
                                 return ::valid_leave(me, dir);

@@ -6,16 +6,16 @@ inherit EQUIP;
 
 void create()
 {
-        set_name(HIM"ì¬ÔÆË¿ÅÛ"NOR, ({"souyun sipao", "sipao", "cloth"}));
+        set_name(HIM"é£•äº‘ä¸è¢"NOR, ({"souyun sipao", "sipao", "cloth"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¼ş±¡Èçæ¿¾ê£¬ÇáÈç²õË¿£¬¶ø·º³ö¾Å²ÊÔÆÉ«µÄË¿ÅÛ¡£\n");
+                set("long", "ä¸€ä»¶è–„å¦‚å©µå¨Ÿï¼Œè½»å¦‚è‰ä¸ï¼Œè€Œæ³›å‡ºä¹å½©äº‘è‰²çš„ä¸è¢ã€‚\n");
 		set("no_sell", 1);
 		set("no_drop", 1);
 		set("no_put", 1);
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 1000);
                 set("material", "crimsonsteel");
                 set("armor_prop/armor", 100);

@@ -1,14 +1,14 @@
 // /d/zhuojun/guangchang.c
-// Room in �ÿ�
+// Room in 涿郡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "��ɳ�㳡");
+	set("short", "长沙广场");
         set("long", @LONG
-������λ�ڳ�ɳ�ǵ����ĵ����Ĺ㳡��һ����¥���������Ĺ㳡��
-���룬������ǳ�ɳ�Ǻ�ɫ��������������֬��ϣ��������������
-��ͨ��ɳ�ĸ������š�
+这里是位于长沙城的中心的中心广场，一座钟楼高耸在中心广场的
+中央，西面就是长沙城好色客留恋忘返的胭脂巷，南，北，东三条大道
+各通向长沙的各个城门。
 LONG
 	);
 set("outdoors", "changsha");

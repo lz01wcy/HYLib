@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÇÙÒôĞ¡Ôº");
+        set("short", "ç´éŸ³å°é™¢");
         set("long", @LONG
-ÕâÊÇÒ»×ù¿´ÆğÀ´·Ç³£ÆÕÍ¨µÄĞ¡Ğ¡µÄÔºÂä£¬Ôº×ÓµÄÖĞ¼ä½¨×ÅÒ»¼äĞ¡
-Îİ£¬Ğ¡ÎİÒ²ºÜÆÕÍ¨£¬¾ÍÊÇÓÃÃ©²İÎª¶¥£¬×©ÍÁÎªÇ½£¬Ôº×ÓÀïÃ»ÓĞÊ²Ã´°Ú
-Éè£¬Ö»ÓĞ¼¸¶Ñ¸ÉÄ¾²ñ(wood)·ÅÔÚ½ÇÂäÀï£¬ÆäÖĞÓĞÒ»À¦ÌØ±ğÒıÈË×¢Ä¿¡£ 
+è¿™æ˜¯ä¸€åº§çœ‹èµ·æ¥éå¸¸æ™®é€šçš„å°å°çš„é™¢è½ï¼Œé™¢å­çš„ä¸­é—´å»ºç€ä¸€é—´å°
+å±‹ï¼Œå°å±‹ä¹Ÿå¾ˆæ™®é€šï¼Œå°±æ˜¯ç”¨èŒ…è‰ä¸ºé¡¶ï¼Œç –åœŸä¸ºå¢™ï¼Œé™¢å­é‡Œæ²¡æœ‰ä»€ä¹ˆæ‘†
+è®¾ï¼Œåªæœ‰å‡ å †å¹²æœ¨æŸ´(wood)æ”¾åœ¨è§’è½é‡Œï¼Œå…¶ä¸­æœ‰ä¸€æ†ç‰¹åˆ«å¼•äººæ³¨ç›®ã€‚ 
 LONG
         );
         set("weapon_count",1);
@@ -16,7 +16,7 @@ LONG
             "enter" : __DIR__"xiaowu",
         ]));
         set("item_desc",([
-                "wood" : "Ò»´ó¶Ñ¸É²ñ£¬ÆäÖĞÓĞÒ»À¦µÄÑÕÉ«±È½ÏÌØ±ğ¡£\n",
+                "wood" : "ä¸€å¤§å †å¹²æŸ´ï¼Œå…¶ä¸­æœ‰ä¸€æ†çš„é¢œè‰²æ¯”è¾ƒç‰¹åˆ«ã€‚\n",
         ]));
         set("objects", ([
                 __DIR__"npc/ding" : 1,
@@ -37,13 +37,13 @@ int do_unlock(string arg)
 {
         object ob;
         if (query("exits/east"))
-                return notify_fail("ÕâÉÈÃÅÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+                return notify_fail("è¿™æ‰‡é—¨å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
         if (!arg || (arg != "men" && arg != "east"))
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
         if (!(ob = present("tong yaoshi", this_player())))
-                return notify_fail("Äã²»»áÇËËø¡£\n");
+                return notify_fail("ä½ ä¸ä¼šæ’¬é”ã€‚\n");
         set("exits/east", __DIR__"mishi2");
-        message_vision("$N°ÑºìÓñÔ¿³×·Å½øÃÅµÄ°¼Ïİ´¦, ¶«±ßµÄÒ»ÉÈÃÅÎŞÉùµÄ´ò¿ªÁË¡£\n", this_player());
+        message_vision("$NæŠŠçº¢ç‰é’¥åŒ™æ”¾è¿›é—¨çš„å‡¹é™·å¤„, ä¸œè¾¹çš„ä¸€æ‰‡é—¨æ— å£°çš„æ‰“å¼€äº†ã€‚\n", this_player());
         destruct(ob);
         return 1;
 }
@@ -56,11 +56,11 @@ int do_pull(string arg)
                 add("weapon_count", -1);
                 ob=new(__DIR__"obj/sea-wood");
                 ob->move(__DIR__"xiaoyuan");
-                message_vision("$NÔÚÄ¾²ñ¶ÑÀï²¦Åª×Å, Ò»¸ù½£ĞÎµÄÄ¾°ôµôÁË³öÀ´.\n", me);
+                message_vision("$Nåœ¨æœ¨æŸ´å †é‡Œæ‹¨å¼„ç€, ä¸€æ ¹å‰‘å½¢çš„æœ¨æ£’æ‰äº†å‡ºæ¥.\n", me);
                 return 1;
         }
         else {
-                message_vision("$NÕÒÁË°ëÌì,Ò²Ã»ÓĞ·¢ÏÖÊ²Ã´ÌØ±ğµÄ¶«Î÷.\n", me);
+                message_vision("$Næ‰¾äº†åŠå¤©,ä¹Ÿæ²¡æœ‰å‘ç°ä»€ä¹ˆç‰¹åˆ«çš„ä¸œè¥¿.\n", me);
                 return 1;
              }
 }

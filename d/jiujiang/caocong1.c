@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","�ݴ�");
+  set ("short","草丛");
   set ("long", @LONG
-�����Ǹ��ݴԡ���������ԼԼ�����������ε�������һ��紵����
-����һ�ɳ�ʪ��Ϣ��
+这里是个草丛。这里隐隐约约可以听到波涛的声音。一阵风吹过，
+带来一股潮湿气息。
 LONG);
 
   set("exits", ([ 

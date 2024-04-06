@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIG"�ֻ���"NOR);
+	set("short", HIG"轮回所"NOR);
 	set("long", @LONG
-��һ�ŵſ��ſ�ʱ����������ԭ�������������µĴ󶫲ޡ������
-�����ˣ���������ֻ�֮�����������ֺ���ʮ���ڿ죬��ζ���أ�����
-���Ǵ�ɨ�÷ǳ��ɾ���
+你一脚蹬开门看时，发现这里原来就是南少林寺的大东厕。里面秽
+气畜人，正是五谷轮回之所。不过少林和尚十分勤快，气味虽重，地面
+倒是打扫得非常干净。
 LONG );
 	set("exits", ([
 		"west" : __DIR__ "songshu2",

@@ -3,10 +3,10 @@ inherit ROOM;
  
 void create ()
 {
-  set ("short", "��Ȧ");
+  set ("short", "猪圈");
   set ("long", @LONG
-���Сé��������һͷ�����,�Ա��ݽǶ���һ�Ѹɲ�,һ����ɧζֱ
-�˿ڱ�,һȦ������������ǽ������.
+这间小茅屋中养着一头大肥猪,旁边屋角堆着一堆干草,一股腥骚味直
+扑口鼻,一圈猪栏把猪隔在墙角落中.
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */

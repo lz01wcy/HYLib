@@ -1,11 +1,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "»ìÔªËş¶¥");
+	set("short", "æ··å…ƒå¡”é¡¶");
 	set("long", @LONG
-ÕâÀïÊÇËşµÄ×î¸ß²ã£¬ÖĞÑë·Å×Å¸ùÄ§ÕÈ£¬°µ°µµØ·Å³ö¹âÃ¢¡£Èç¹ûÄãÊÇ³ËÂí³µÀ´µÄ»°£¬
-Äã¿ÉÒÔÏòÃËÖ÷(yaoche)¡£
-    ÕâÀïÃ»ÓĞ³ö¿Ú£¬ÄãÖ»ÄÜµÈ´ıµ½Ò»¿ÌÖÓºó±»×Ô¶¯ËÍ»Ø¹ã³¡¡£
+è¿™é‡Œæ˜¯å¡”çš„æœ€é«˜å±‚ï¼Œä¸­å¤®æ”¾ç€æ ¹é­”æ–ï¼Œæš—æš—åœ°æ”¾å‡ºå…‰èŠ’ã€‚å¦‚æœä½ æ˜¯ä¹˜é©¬è½¦æ¥çš„è¯ï¼Œ
+ä½ å¯ä»¥å‘ç›Ÿä¸»(yaoche)ã€‚
+    è¿™é‡Œæ²¡æœ‰å‡ºå£ï¼Œä½ åªèƒ½ç­‰å¾…åˆ°ä¸€åˆ»é’Ÿåè¢«è‡ªåŠ¨é€å›å¹¿åœºã€‚
 LONG );
        set("no_sleep_room",1);
      set("no_clean_up", 0);
@@ -30,7 +30,7 @@ int do_dazuo()
 {
    object me;
    me = this_player();
-tell_object(me,"ÕâÀï²»ÄÜÓÃÕâ¸öÖ¸Áî¡£\n");
+tell_object(me,"è¿™é‡Œä¸èƒ½ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 return 1;
 }
 int do_yao()
@@ -42,22 +42,22 @@ object me;
 
 me = this_player();
 if(!me->query("marks/mengzhu"))
-		return notify_fail("ÄãÃ»ÓĞ³ËÂí³µµÄÈ¨ÏŞ¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰ä¹˜é©¬è½¦çš„æƒé™ã€‚\n");
    if (!me->query_temp("che"))
-		return notify_fail("Äã¸Õ²ÅÃ»ÓĞ³Ë³µÀ´ÕâÀï¡£\n");
+		return notify_fail("ä½ åˆšæ‰æ²¡æœ‰ä¹˜è½¦æ¥è¿™é‡Œã€‚\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 	me->set_temp("che",0);
- message_vision("$N×ß³ö»ìÔªËş£¬³ËÉÏÁË¸Õ²ÅÀ´Ê±µÄÄÇÁ¾Âí³µ´Ò´ÒÃ¦Ã¦µØÀëÈ¥ÁË¡£\n",me);
+ message_vision("$Nèµ°å‡ºæ··å…ƒå¡”ï¼Œä¹˜ä¸Šäº†åˆšæ‰æ¥æ—¶çš„é‚£è¾†é©¬è½¦åŒ†åŒ†å¿™å¿™åœ°ç¦»å»äº†ã€‚\n",me);
 me->move("/d/city/majiu");
-message_vision("$NÓÖ»Øµ½ÁËÔ­ÏÈÀ´Ê±µÄÄÇ¼äÂí¾Ç¡£\n",me);
+message_vision("$Nåˆå›åˆ°äº†åŸå…ˆæ¥æ—¶çš„é‚£é—´é©¬å©ã€‚\n",me);
 
 return 1;
 }/*

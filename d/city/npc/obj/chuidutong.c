@@ -1,4 +1,4 @@
-// chuidutong.c ´µ¶¾Í²
+// chuidutong.c å¹æ¯’ç­’
 #include <ansi.h>
 inherit ITEM;
 
@@ -12,16 +12,16 @@ void init()
 
 void create()
 {
-	set_name(HIW"´µ¶¾Í²"NOR, ({ "chuidu tong", "ct" }) );
+	set_name(HIW"å¹æ¯’ç­’"NOR, ({ "chuidu tong", "ct" }) );
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else
 	{
-		set("unit", "Ö§");
+		set("unit", "æ”¯");
 		set("value", 0);
 		set("material", "steel");
-		set("long", "ÕâÊÇÒ»Ö§ºÚ÷î÷îµÄÌúÍ²£¬²»ÖªµÀ×öÊ²Ã´ÓÃµÄ¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æ”¯é»‘é»é»çš„é“ç­’ï¼Œä¸çŸ¥é“åšä»€ä¹ˆç”¨çš„ã€‚\n");
 	}
 	setup();
 }
@@ -34,18 +34,18 @@ int do_shot(string arg)
 	string skill_type;
 	int tired;
 
-	if( !arg) return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+	if( !arg) return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+		return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 	if( !objectp(obj = present(arg, environment(me)) ))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººï¼\n");
 	if( !obj->is_character() || obj->is_corpse() )
-		return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
-	if (obj == me) return notify_fail("¶Ô×Ô¼ºÏÂ¶¾ÊÖ£¿±ğÏë²»¿ª°¡¡£\n");
+		return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
+	if (obj == me) return notify_fail("å¯¹è‡ªå·±ä¸‹æ¯’æ‰‹ï¼Ÿåˆ«æƒ³ä¸å¼€å•Šã€‚\n");
 
-	message_vision(HIW "$N°Ñ´µ¶¾Í²·Åµ½×ì±ß£¬¶Ô×Å$nÓÃÁ¦Ò»´µ£¬$nÖ»¾õµÃÒ»ÕóÍ·»èÑÛ»¨£¬Õ¾Á¢²»ÎÈ£¬ºÃÏóÖĞ¶¾ÁË£¡\n" NOR, me, obj);
+	message_vision(HIW "$NæŠŠå¹æ¯’ç­’æ”¾åˆ°å˜´è¾¹ï¼Œå¯¹ç€$nç”¨åŠ›ä¸€å¹ï¼Œ$nåªè§‰å¾—ä¸€é˜µå¤´æ˜çœ¼èŠ±ï¼Œç«™ç«‹ä¸ç¨³ï¼Œå¥½è±¡ä¸­æ¯’äº†ï¼\n" NOR, me, obj);
 	tired = obj->query("total_tired");
 	obj->apply_condition("xx_poison",random(max_poison) + random(least_poison * tired));
 	destruct(this_object());

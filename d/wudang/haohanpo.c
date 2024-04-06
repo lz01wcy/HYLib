@@ -1,15 +1,15 @@
-//Room: haohanpo.c ºÃººÆÂ
+//Room: haohanpo.c å¥½æ±‰å¡
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","ºÃººÆÂ");
+      set("short","å¥½æ±‰å¡");
       set("long",@LONG
-´Ë´¦Á¬ÃàÊ®¼¸ÀïÉ½ÊÆ¶¸ÇÍ£¬ÃûÎªºÃººÆÂ£¬É½Â·Á½ÅÔÖÖÂúÁËÏ¸Öñ£¬´äÉ«ºá¿Õ
-¾°ÏóâùÈË£¬²»Öª²»¾õÈÃÄãÍü¼ÇÁËÅÀÆÂµÄÆ£ÀÍ¡£ÆÂ¶¥ÓÐÒ»×ù»ØÁú¹Û£¬ÊÇÕ¹ÍûÔÀ¶¥
-µÄ×î¼ÑÈ¥´¦£¬µ«¼ûÌìÖù·åÇà×Ï²åÌì£¬ÈçÔÚÑÛÇ°£¬¶øÏàÈ¥Êµ¼ÊÉÏ»¹ÓÐÎåÊ®Àï¡£
+æ­¤å¤„è¿žç»µåå‡ é‡Œå±±åŠ¿é™¡å³­ï¼Œåä¸ºå¥½æ±‰å¡ï¼Œå±±è·¯ä¸¤æ—ç§æ»¡äº†ç»†ç«¹ï¼Œç¿ è‰²æ¨ªç©º
+æ™¯è±¡æ€¡äººï¼Œä¸çŸ¥ä¸è§‰è®©ä½ å¿˜è®°äº†çˆ¬å¡çš„ç–²åŠ³ã€‚å¡é¡¶æœ‰ä¸€åº§å›žé¾™è§‚ï¼Œæ˜¯å±•æœ›å²³é¡¶
+çš„æœ€ä½³åŽ»å¤„ï¼Œä½†è§å¤©æŸ±å³°é’ç´«æ’å¤©ï¼Œå¦‚åœ¨çœ¼å‰ï¼Œè€Œç›¸åŽ»å®žé™…ä¸Šè¿˜æœ‰äº”åé‡Œã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "northdown": __DIR__"wdbl",

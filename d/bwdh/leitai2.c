@@ -1,6 +1,6 @@
 //Cracked by Kafei
 // /d/bwdh/leitai2.c
-// ÀŞÌ¨
+// æ“‚å°
 // by sdong 09/25/98
 
 #define KANTAI "/d/bwdh/kantai2.c"

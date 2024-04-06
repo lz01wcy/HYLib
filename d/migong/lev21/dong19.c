@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIM"»ìãçµÄÃÔ¹¬"NOR);
+	set("short", HIM"æ··æ²Œçš„è¿·å®«"NOR);
 	set("long", RED @LONG
-ÕâÀïÊÇ»ìãçµÄÃÔ¹¬,ËÆºõÊÇÓÃÀ´±ÜÄÑµÄµØ·½¡£È»¶øµØ
-ÉÏµ½´¦ÊÇÒ»¶Ñ¶ÑµÄ¹Çº¡ÓëÇ¬µôµÄÑª¼£¡£¸üÈÃÈË¾õµÃÆø·Õ
-ÏÔµÃÊ®·ÖµÄ¹îÒì¡£
+è¿™é‡Œæ˜¯æ··æ²Œçš„è¿·å®«,ä¼¼ä¹æ˜¯ç”¨æ¥é¿éš¾çš„åœ°æ–¹ã€‚ç„¶è€Œåœ°
+ä¸Šåˆ°å¤„æ˜¯ä¸€å †å †çš„éª¨éª¸ä¸ä¹¾æ‰çš„è¡€è¿¹ã€‚æ›´è®©äººè§‰å¾—æ°”æ°›
+æ˜¾å¾—ååˆ†çš„è¯¡å¼‚ã€‚
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);
@@ -47,9 +47,9 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
        if ( !present("dark blade", me) && dir == "north" )
-        return notify_fail("Ò»¸öÊ¿±øÀ¹×¡ÁËÄã£ºÄãÍ¨¹ıÀÁ¶èÖ®×¹ÌìÊ¹µÄ¿¼ÑéÁËÂğ??\n");
+        return notify_fail("ä¸€ä¸ªå£«å…µæ‹¦ä½äº†ä½ ï¼šä½ é€šè¿‡æ‡’æƒ°ä¹‹å å¤©ä½¿çš„è€ƒéªŒäº†å—??\n");
        if ( !present("dark shield", me) && dir == "north" )
-        return notify_fail("Ò»¸öÊ¿±øÀ¹×¡ÁËÄã£ºÄãÍ¨¹ı¼µ¶ÊÖ®×¹ÌìÊ¹µÄ¿¼ÑéÁËÂğ??\n");
+        return notify_fail("ä¸€ä¸ªå£«å…µæ‹¦ä½äº†ä½ ï¼šä½ é€šè¿‡å«‰å¦’ä¹‹å å¤©ä½¿çš„è€ƒéªŒäº†å—??\n");
 
 	if (dir =="north")
 	{
@@ -60,7 +60,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

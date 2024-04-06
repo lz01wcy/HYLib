@@ -3,8 +3,8 @@ int ask_me();
 
 void create()
 {
-        set_name("ÌìóÃÉ®ÈË", ({ "seng ren", "seng" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¤©ç«ºåƒ§äºº", ({ "seng ren", "seng" }));
+        set("gender", "ç”·æ€§");
         set("age", 45);
 
         set("combat_exp", 550000);
@@ -20,7 +20,7 @@ void create()
         set_temp("apply/damage", 200);
         
         set("inquiry", ([
-		"ÁÆ¶¾" : (:ask_me:),
+		"ç–—æ¯’" : (:ask_me:),
 	  ]) );
 
 

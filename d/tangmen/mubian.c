@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short","匾后");
+	set("short","鍖惧悗");
 	set("long",
-        "这里匾的后面，集满了许多灰尘。你用袖子掸了掸，发现好象有什么东西。\n"
+        "杩欓噷鍖剧殑鍚庨潰锛岄泦婊′簡璁稿鐏板皹銆備綘鐢ㄨ瀛愭幐浜嗘幐锛屽彂鐜板ソ璞℃湁浠�涔堜笢瑗裤�俓n"
      );
 
 	set("exits",([

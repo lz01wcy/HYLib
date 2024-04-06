@@ -5,14 +5,14 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("Ëï¶þÄï", ({ "sun erniang", "sun", "waiter" }) );
-	set("gender", "Å®ÐÔ" );
+	set_name("å­™äºŒå¨˜", ({ "sun erniang", "sun", "waiter" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»ÀÏ°åÄïÕýÐ¦ßäßäµØ×øÔÚ¹ñÌ¨ºóÃæ£¬Ïò×ÅÃÅÍâÕÅÍû¡£\n");
+		"è¿™ä½è€æ¿å¨˜æ­£ç¬‘å’ªå’ªåœ°ååœ¨æŸœå°åŽé¢ï¼Œå‘ç€é—¨å¤–å¼ æœ›ã€‚\n");
 	set("combat_exp", 100000);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ä¸Ò¹²æ");
+	set("rank_info/respect", "æ¯å¤œå‰");
 	set_skill("dodge", 80);
 	set_skill("unarmed",80);
 	set_skill("parry", 80);
@@ -45,12 +45,12 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			say( "Ëï¶þÄïÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬½øÀ´ºÈ±­²è£¬ÐªÐªÍÈ°É¡£\n");
+			say( "å­™äºŒå¨˜ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¿›æ¥å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
 			break;
 		case 1:
-			say( "Ëï¶þÄïÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬Çë½øÇë½ø¡£\n");
+			say( "å­™äºŒå¨˜ç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¯·è¿›è¯·è¿›ã€‚\n");
 			break;
 	}
 }

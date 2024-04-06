@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short",  "������Ժ" );
+        set("short",  "王府大院" );
         set("long", @LONG
-�������ƽ�������Ĵ�Ժ��Ժ�������˸��ӻ��ݣ������۵�ȴ���м��
-һ������ɽ�裬�޴�������Ͽ�����������ɽ�軨����ɫ��ǳ��һ�������
-�죬ʮ�ֺÿ���
+这里便是平西王府的大院，院内钟满了各钟花草，最显眼的却是中间的
+一株万年山茶，巨大的树干上开满了无数的山茶花，颜色深浅不一，姹紫嫣
+红，十分好看。
 LONG
         );
           set("outdoors", "kunming");

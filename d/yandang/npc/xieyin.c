@@ -3,13 +3,13 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Ğ»è¬", ({ "xie ying","girl", "dizi" }));
+	set_name("è°¢ç’", ({ "xie ying","girl", "dizi" }));
 	set("age", 16);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "peaceful");
 	set("str", 34);
 	set("dex", 36);
-       set("title","Ñãµ´Å®µÜ×Ó");
+       set("title","é›è¡å¥³å¼Ÿå­");
 	set("combat_exp", 290000);
 	set_skill("unarmed", 120);
 	set_skill("dodge", 120);
@@ -19,7 +19,7 @@ void create()
 
         set("shen_type",1);
 
-create_family("Ñãµ´ÅÉ",2,"µÜ×Ó");
+create_family("é›è¡æ´¾",2,"å¼Ÿå­");
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
 	carry_object("/clone/misc/cloth")->wear();

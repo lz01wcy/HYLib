@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY"ÌÚÉßÍõ"NOR,({"dushe king"}));
-	set("race", "Ò°ÊŞ");
-        set("long", "Ò»ÌõÊ®ÕÉ¶à³¤Ò»ÈËÀ´´ÖµÄ´óÉß£¬¾İËµÌÚÉßÍòÄê¿ÉÒÔ»¯Áú·ÉÈ¥¡£\n");
+        set_name(HIY"è…¾è›‡ç‹"NOR,({"dushe king"}));
+	set("race", "é‡å…½");
+        set("long", "ä¸€æ¡åä¸ˆå¤šé•¿ä¸€äººæ¥ç²—çš„å¤§è›‡ï¼Œæ®è¯´è…¾è›‡ä¸‡å¹´å¯ä»¥åŒ–é¾™é£å»ã€‚\n");
 	set("age", 10000);
 	set("attitude", "peaceful");
 
@@ -23,7 +23,7 @@ void create()
 	set("str", 140);
 	set("con", 150);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 200);
@@ -58,7 +58,7 @@ void die()
 	string owner,name;
 	object owner_ob;            
        object ob;
-            message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡µ«Äã´ÓÌÚÉßµÄ¶ÇÖĞ·¢ÏÖÁËÒ»Ñù¶«Î÷¡£\n", this_object());
+            message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼ä½†ä½ ä»è…¾è›‡çš„è‚šä¸­å‘ç°äº†ä¸€æ ·ä¸œè¥¿ã€‚\n", this_object());
             ob=new(__DIR__"obj/shenbian.c");
 	      ob->move(environment(this_object()));
 	      destruct(this_object());
@@ -81,10 +81,10 @@ else if (random(5) >3)
 else 	       
 	       victim->apply_condition("chanchu_poison",
 		        (int)victim->query_condition("chanchu_poison") + 3 );
-       if ((string)victim->query("family/family_name") != "Îå¶¾½Ì") {
+       if ((string)victim->query("family/family_name") != "äº”æ¯’æ•™") {
 	     	victim->apply_condition("snake_poison", 20
               +(int)victim->query_condition("snake_poison") );
-              tell_object(victim, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+              tell_object(victim, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨ï¼\n" NOR );
 	}
 }
 

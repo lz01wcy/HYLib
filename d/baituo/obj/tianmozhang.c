@@ -4,18 +4,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name(BLU"ÌìÄ§ÕÈ"NOR, ({ "tianmo zhang" , "zhang"}) );
+        set_name(BLU"å¤©é­”æ–"NOR, ({ "tianmo zhang" , "zhang"}) );
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇ°×ÍÕÉ½µÄÕòÉ½Ö®±¦-ÌìÄ§ÕÈ!");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ç™½é©¼å±±çš„é•‡å±±ä¹‹å®-å¤©é­”æ–!");
                 set("value", 30000);
                 set("material", "steel");
         }
         init_staff(120);
-        set("wield_msg", HIW"Ö»Ìı¡°à§¡±µÄÒ»Éù£¬Ò»µÀºÚ¹âÉÁ¹ı£¬$NµÄÊÖÖĞ¶àÁË°ÑÌìÄ§ÕÈ¡£\n"NOR);
+        set("wield_msg", HIW"åªå¬â€œå”°â€çš„ä¸€å£°ï¼Œä¸€é“é»‘å…‰é—ªè¿‡ï¼Œ$Nçš„æ‰‹ä¸­å¤šäº†æŠŠå¤©é­”æ–ã€‚\n"NOR);
 
         setup();
 }
@@ -23,7 +23,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->apply_condition("qx_snake_poison");
 
-        return HIR "$nÃæ¿×¹ÖÒìµÄÅ¤Çú£¬ÏÔÈ»ÊÇÖĞÁË´«ËµÖĞµÄÆßĞŞÉß¶¾£¡\n\n" NOR;
+        return HIR "$né¢å­”æ€ªå¼‚çš„æ‰­æ›²ï¼Œæ˜¾ç„¶æ˜¯ä¸­äº†ä¼ è¯´ä¸­çš„ä¸ƒä¿®è›‡æ¯’ï¼\n\n" NOR;
 }
 
 

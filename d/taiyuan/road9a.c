@@ -1,14 +1,14 @@
 // /d/taiyuan/road7.c
-// Room in Ì«Ô­
+// Room in å¤ªåŸ
 // modify by yang
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ÍÁÂ·");
+	set("short", "åœŸè·¯");
 	set("long", @LONG
-ÕâÀïÊÇÒ»ÌõÍÁÂ·¡£ÕâÀï·çÉ³ºÜ´ó£¬ÄãÒ»²»Ğ¡ĞÄ¾ÍÃÔÁËÑÛ¾¦¡£
+è¿™é‡Œæ˜¯ä¸€æ¡åœŸè·¯ã€‚è¿™é‡Œé£æ²™å¾ˆå¤§ï¼Œä½ ä¸€ä¸å°å¿ƒå°±è¿·äº†çœ¼ç›ã€‚
 LONG );
 	set("exits", ([
 		"west"  : "/d/huanghe/huanghe4",

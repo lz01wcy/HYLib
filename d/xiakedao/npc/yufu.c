@@ -1,5 +1,5 @@
 // yufu.c
-// [Ğ¡µÜÃÃ 1999/11/4]
+// [å°å¼Ÿå¦¹ 1999/11/4]
 
 inherit NPC;
 void consider();
@@ -7,12 +7,12 @@ int accept_object(object me, object ob);
 
 void create()
 {
-        set_name("Óæ·ò", ({ "yu fu","yu" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ¸”å¤«", ({ "yu fu","yu" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-        create_family("ÏÀ¿Íµº", 2, "µÜ×Ó");
+        create_family("ä¾ å®¢å²›", 2, "å¼Ÿå­");
      set("inquiry", ([
-                "ÏÀ¿Íµº" : "ÔõÃ´£¬ÄãÏëÈ¥¼ûÎÒµÄÊ¦¸¸£¬ÏëÕÒµ½ÄÇµØ·½²»Ì«ÈİÒ×£¬Ö»¿ÉÏ§ÎÒµÄ´¬ÆÆÁË¡£¡£¡£°¦£¡\n",
+                "ä¾ å®¢å²›" : "æ€ä¹ˆï¼Œä½ æƒ³å»è§æˆ‘çš„å¸ˆçˆ¶ï¼Œæƒ³æ‰¾åˆ°é‚£åœ°æ–¹ä¸å¤ªå®¹æ˜“ï¼Œåªå¯æƒœæˆ‘çš„èˆ¹ç ´äº†ã€‚ã€‚ã€‚å”‰ï¼\n",
 ]));
         setup();
 }
@@ -21,10 +21,10 @@ int accept_object(object me, object ob)
         object ling1;
         object ling2;
         if (ob->query("money_id") && ob->value() >= 50000)
-     tell_object(me, "Óæ·òĞ¦×ÅËµµ½£ººÃ°É£¬¼ÈÈ»ÊÇÓĞÔµÈË£¬ÎÒ¾ÍËÍÄãÁ½¼şĞÅÎï°É¡£\n");
+     tell_object(me, "æ¸”å¤«ç¬‘ç€è¯´åˆ°ï¼šå¥½å§ï¼Œæ—¢ç„¶æ˜¯æœ‰ç¼˜äººï¼Œæˆ‘å°±é€ä½ ä¸¤ä»¶ä¿¡ç‰©å§ã€‚\n");
   else
    {
-      tell_object(me,"Óæ·òÖåÁËÖåÃ¼£¬ËµµÀ£º¡°ÎÒ²»ĞèÒªÇ®²Æ£¡¡±\n");
+      tell_object(me,"æ¸”å¤«çš±äº†çš±çœ‰ï¼Œè¯´é“ï¼šâ€œæˆ‘ä¸éœ€è¦é’±è´¢ï¼â€\n");
     return 0;
   }
 //        return 1;
@@ -32,12 +32,12 @@ int accept_object(object me, object ob)
         ling1=new("/d/xiakedao/obj/tongpai1");
         ling1->set_temp("own", (string)me->query("id"));
         ling1->move(me);
-        message_vision("Óæ·ò¸ø$NÒ»¿éÍ­ÖıÁîÅÆ¡£\n", me);
+        message_vision("æ¸”å¤«ç»™$Nä¸€å—é“œé“¸ä»¤ç‰Œã€‚\n", me);
 
         ling2=new("/d/xiakedao/obj/tongpai2");
         ling2->set_temp("own", (string)me->query("id"));
         ling2->move(me);
-        message_vision("Óæ·ò¸ø$NÒ»¿éÍ­ÖıÁîÅÆ¡£\n", me);
+        message_vision("æ¸”å¤«ç»™$Nä¸€å—é“œé“¸ä»¤ç‰Œã€‚\n", me);
 
         return 1;
 }

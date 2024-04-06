@@ -1,27 +1,27 @@
-// dating.c ´óÌü
+// dating.c å¤§å…
 // Modify By River 99.5.25
 inherit ROOM;
 #include <ansi.h>
 void create()
 {
-            set("short",HIW"´óÌü"NOR);
+            set("short",HIW"å¤§å…"NOR);
             set("long",@LONG
-ÕâÀïÊÇ¾øÇé¹ÈµÄ´óÌü£¬ÊÇ¹«Ëï¹ÈÖ÷»á¿ÍµÄµØ·½£¬´óÌüÕıÇ°´óÁºÉÏ¹Ò×ÅÒ»¿é
-´óØÒ(bian)£¬ÉÏÃæ¿Ì×ÅËÄ¸öÁú·É·ïÎèµÄ½ğ×Ö£¬Òì³£ÆøÅÉ¡£Ö÷ÈËÓÖÌØµØÔÚ´óØÒÖ®
-ÏÂ¹ÒÁËÒ»·ù¡¸°×º×ÃùÌì¡¹Ö®Í¼£¨hua)£¬»­¼¼¾«Éî£¬¿´µÃ³öÆäÖ÷ÌØÁ¢¶ÀĞĞµÄĞÔ¸ñ¡£
+è¿™é‡Œæ˜¯ç»æƒ…è°·çš„å¤§å…ï¼Œæ˜¯å…¬å­™è°·ä¸»ä¼šå®¢çš„åœ°æ–¹ï¼Œå¤§å…æ­£å‰å¤§æ¢ä¸ŠæŒ‚ç€ä¸€å—
+å¤§åŒ¾(bian)ï¼Œä¸Šé¢åˆ»ç€å››ä¸ªé¾™é£å‡¤èˆçš„é‡‘å­—ï¼Œå¼‚å¸¸æ°”æ´¾ã€‚ä¸»äººåˆç‰¹åœ°åœ¨å¤§åŒ¾ä¹‹
+ä¸‹æŒ‚äº†ä¸€å¹…ã€Œç™½é¹¤é¸£å¤©ã€ä¹‹å›¾ï¼ˆhua)ï¼Œç”»æŠ€ç²¾æ·±ï¼Œçœ‹å¾—å‡ºå…¶ä¸»ç‰¹ç«‹ç‹¬è¡Œçš„æ€§æ ¼ã€‚
 LONG
        );
             
            set("item_desc",([ "bian": HIY"    
-          ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-          ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-          ¡ù¡ù¡ù¡¡                          ¡ù¡ù¡ù
-          ¡ù¡ù¡ù   ¾ø        Çé        ¹È   ¡ù¡ù¡ù
-          ¡ù¡ù¡ù¡¡                          ¡ù¡ù¡ù    
-          ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-          ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"NOR,
-             "dao": "ÕâÊÇÒ»ÌõÃØµÀ¡£\n",   
-             "hua": "ÕâÊÇÒ»·ù¡¸°×º×ÃùÌì¡¹Í¼£¬µ«ÊÇÍ¼ºóµÄÇ½ÉÏËÆºõÓĞÌõÍ¨µÀ¡£\n",
+          â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+          â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+          â€»â€»â€»ã€€                          â€»â€»â€»
+          â€»â€»â€»   ç»        æƒ…        è°·   â€»â€»â€»
+          â€»â€»â€»ã€€                          â€»â€»â€»    
+          â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+          â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"NOR,
+             "dao": "è¿™æ˜¯ä¸€æ¡ç§˜é“ã€‚\n",   
+             "hua": "è¿™æ˜¯ä¸€å¹…ã€Œç™½é¹¤é¸£å¤©ã€å›¾ï¼Œä½†æ˜¯å›¾åçš„å¢™ä¸Šä¼¼ä¹æœ‰æ¡é€šé“ã€‚\n",
             ]));
 
             set("exits",([
@@ -45,35 +45,35 @@ int do_xian(string arg)
 {
             object me = this_player();
             if(me->is_busy() || me->is_fighting())
-                   return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                   return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
             if(!arg) return 0;
             if(arg =="hua"){
-            message("vision",me->name() +"½Ò¿ªÍ¼»­£¬·¢ÏÖÇ½ºóÓĞÒ»ÌõÃÜµÀ¡£\n", environment(me), ({me}));
-            write("Äã½ÒÆğÍ¼»­£¬·¢ÏÖÇ½ºóÓĞÒ»ÌõÃÜµÀ(dao)¡£\n");
-            me->set_temp("mark/½Ò",1);   
+            message("vision",me->name() +"æ­å¼€å›¾ç”»ï¼Œå‘ç°å¢™åæœ‰ä¸€æ¡å¯†é“ã€‚\n", environment(me), ({me}));
+            write("ä½ æ­èµ·å›¾ç”»ï¼Œå‘ç°å¢™åæœ‰ä¸€æ¡å¯†é“(dao)ã€‚\n");
+            me->set_temp("mark/æ­",1);   
             return 1;
             }
-            return notify_fail("ÄãÏë¸ÉÊ²Ã´? \n");                    
+            return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆ? \n");                    
 }
 
 int do_enter(string arg)
 {
         object me = this_player();
         if(!arg || arg !="dao")
-                return notify_fail("ÄãÍùÄÄÀï×ê£¿\n");
+                return notify_fail("ä½ å¾€å“ªé‡Œé’»ï¼Ÿ\n");
         if(me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
         if(!me->query_temp("gsz_agree"))
-                return notify_fail("ÕâÀïÊÇ¾øÇé¹ÈµÄ½ûµØ£¬Ã»ÓĞ×¯Ö÷µÄÃüÁî£¬ÍâÀ´µÜ×Ó²»ÄÜ½øÈë£¡£¡\n");
-        if((int)me->query_temp("mark/½Ò")){
-          message("vision", me->name() + "¹­Éí×ê½øÃÜµÀ¡£\n", environment(me), ({me}));
-          tell_object(me,"Äã¹­Éí×ê½øÃÜµÀ¡£\n");
+                return notify_fail("è¿™é‡Œæ˜¯ç»æƒ…è°·çš„ç¦åœ°ï¼Œæ²¡æœ‰åº„ä¸»çš„å‘½ä»¤ï¼Œå¤–æ¥å¼Ÿå­ä¸èƒ½è¿›å…¥ï¼ï¼\n");
+        if((int)me->query_temp("mark/æ­")){
+          message("vision", me->name() + "å¼“èº«é’»è¿›å¯†é“ã€‚\n", environment(me), ({me}));
+          tell_object(me,"ä½ å¼“èº«é’»è¿›å¯†é“ã€‚\n");
           me->move(__DIR__"houtang");
-          message("vision",me->name() +"¹­Éí´ÓÃÜµÀÖĞ×êÁË¹ıÀ´¡£\n", environment(me), ({me}));
-          me->delete_temp("mark/½Ò");
+          message("vision",me->name() +"å¼“èº«ä»å¯†é“ä¸­é’»äº†è¿‡æ¥ã€‚\n", environment(me), ({me}));
+          me->delete_temp("mark/æ­");
           return 1;
           }
-      return notify_fail("Ã»ÊÂÄãÂÒ×êÊ²Ã´£¿ \n");
+      return notify_fail("æ²¡äº‹ä½ ä¹±é’»ä»€ä¹ˆï¼Ÿ \n");
 }
 
 int do_wa(string arg,object ob)
@@ -81,25 +81,25 @@ int do_wa(string arg,object ob)
         object weapon,me=this_player();
         if(!me->query_temp("jqg/chi")) return 0;
         if( !arg || arg !="zhuan")
-               return notify_fail("ÄãÂÒ½ÒÊ²Ã´°¡£¿\n");
+               return notify_fail("ä½ ä¹±æ­ä»€ä¹ˆå•Šï¼Ÿ\n");
         if(!weapon=(me->query_temp("weapon")))
-               return notify_fail("Äã×¼±¸ÓÃÊÖ½Ò½Ó¿ªÇà×©Ã´£¿\n");        
+               return notify_fail("ä½ å‡†å¤‡ç”¨æ‰‹æ­æ¥å¼€é’ç –ä¹ˆï¼Ÿ\n");        
         if(me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
         ob=new(__DIR__"obj/jqdan");
         if(!clonep(ob))
-           return notify_fail("ÄãÀ´ÍíÁË£¬¾øÇéµ¤ÒÑ¸ø±ğÈËÄÃ×ßÁË¡£\n");  
+           return notify_fail("ä½ æ¥æ™šäº†ï¼Œç»æƒ…ä¸¹å·²ç»™åˆ«äººæ‹¿èµ°äº†ã€‚\n");  
 if (this_object()->query("aget")>2)
 {
            destruct(ob);
-           return notify_fail("ÄãÀ´ÍíÁË£¬¾øÇéµ¤ÒÑ¸ø±ğÈËÈ¡×ßÁË¡£\n");
+           return notify_fail("ä½ æ¥æ™šäº†ï¼Œç»æƒ…ä¸¹å·²ç»™åˆ«äººå–èµ°äº†ã€‚\n");
            }
         if(clonep(ob) && ob->violate_unique()){
            destruct(ob);
-           return notify_fail("ÄãÀ´ÍíÁË£¬¾øÇéµ¤ÒÑ¸ø±ğÈËÈ¡×ßÁË¡£\n");
+           return notify_fail("ä½ æ¥æ™šäº†ï¼Œç»æƒ…ä¸¹å·²ç»™åˆ«äººå–èµ°äº†ã€‚\n");
            }
-        tell_object(me,"ÄãÊıµ½µÚÎå¿éÇà×©£¬°Î³öÑü¼ä"+weapon->name()+"£¬´Ó×©·ìÖĞ²åÈë£¬½ÒÆğ×©¿é£¬·¢ÏÖÏÂÃæµÄ¾øÇéµ¤¡£\n");
-        message("vision", me->name() + "°Î³öÑü¼ä"+weapon->name()+"£¬´Ó×©·ìÖĞ²åÈë£¬½ÒÆğ×©¿é¡£\n", environment(me), ({me}));
+        tell_object(me,"ä½ æ•°åˆ°ç¬¬äº”å—é’ç –ï¼Œæ‹”å‡ºè…°é—´"+weapon->name()+"ï¼Œä»ç –ç¼ä¸­æ’å…¥ï¼Œæ­èµ·ç –å—ï¼Œå‘ç°ä¸‹é¢çš„ç»æƒ…ä¸¹ã€‚\n");
+        message("vision", me->name() + "æ‹”å‡ºè…°é—´"+weapon->name()+"ï¼Œä»ç –ç¼ä¸­æ’å…¥ï¼Œæ­èµ·ç –å—ã€‚\n", environment(me), ({me}));
         me->delete_temp("jqg/chi");
         this_object()->add("aget",1);
         ob->move(me);

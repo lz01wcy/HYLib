@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name(HIR"ÐøÃü°Ëµ¤"NOR, ({"xuming badan", "dan"}));
+        set_name(HIR"ç»­å‘½å…«ä¸¹"NOR, ({"xuming badan", "dan"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¢—");
                 set("value", 1500);
                 set("medicine", "drug");
 		set("make/drug", 1);
@@ -29,19 +29,19 @@ int do_eat(string arg)
 {
        
         object me = this_player();
-        if (!living(me)) return notify_fail("Ïëµ±»úÂð£¿\n");
+        if (!living(me)) return notify_fail("æƒ³å½“æœºå—ï¼Ÿ\n");
         if (!id(arg)) return 0;
         if( !environment(me)->query("bwdhpk"))
 {
-       message_vision(HIR "\n$N´ËÒ© Îª±ÈÈü×¨ÓÃ£¬Ò©±»Ã»ÊÕÁË£¡\n\n" NOR,
+       message_vision(HIR "\n$Næ­¤è¯ ä¸ºæ¯”èµ›ä¸“ç”¨ï¼Œè¯è¢«æ²¡æ”¶äº†ï¼\n\n" NOR,
                        me);
 	destruct(this_object());   
        return 1;       
 }
 
-        message_vision("$NÆø´­ÐêÐêµÄ³ÔÏÂÒ»¿Å"
+        message_vision("$Næ°”å–˜å˜˜å˜˜çš„åƒä¸‹ä¸€é¢—"
         +this_object()->query("name")+
-        "£¬ÖÕÓÚ°ÑÃüµõÁË»ØÀ´¡£\n"
+        "ï¼Œç»ˆäºŽæŠŠå‘½åŠäº†å›žæ¥ã€‚\n"
         ,me);
         me->reincarnate();
         me->set("qi", me->query("max_qi"));

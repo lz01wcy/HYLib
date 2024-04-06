@@ -6,21 +6,21 @@ inherit STAFF;
 
 void create()
 {
-	set_name( HIR "Ê¤ÀûÅ®Éñ" NOR, ({ "shengli nvshen", "staff" }) );
+	set_name( HIR "èƒœåˆ©å¥³ç¥" NOR, ({ "shengli nvshen", "staff" }) );
     set_weight(10000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
+		set("unit", "æ¡");
 		set("no_sell",1);
                 set("no_drop", 1);
                 set("no_give", 1);
                 set("no_put", 1);
-		set("long", HIY "´ËÄËÊ¤ÀûÅ®ÉñËù»¯³ÉµÄ¡£\n" NOR);
+		set("long", HIY "æ­¤ä¹ƒèƒœåˆ©å¥³ç¥æ‰€åŒ–æˆçš„ã€‚\n" NOR);
 		set("value", 1000);
 		set("material", "brass");
-		set("wield_msg", HIY "\n$NÄÃ³öÒ»ÌõÊ¤ÀûÅ®ÉñÎÕÔÚÊÖÖĞ£¬É²ÄÇ¼äËÄÖÜÒ»Æ¬ËàÄÂ£¬Á¬ÌìµØ¹íÉñÒ²ÎªÖ®Õğ¶¯¡£\n\n" NOR);
-		set("unwield_msg", HIY "\n$N·ÅÏÂÊÖÖĞµÄÊ¤ÀûÅ®Éñ£¬ÖÜÎ§µÄÈË²Å´­¹ıÒ»¿ÚÆøÀ´¡£\n\n" NOR);
+		set("wield_msg", HIY "\n$Næ‹¿å‡ºä¸€æ¡èƒœåˆ©å¥³ç¥æ¡åœ¨æ‰‹ä¸­ï¼Œåˆ¹é‚£é—´å››å‘¨ä¸€ç‰‡è‚ƒç©†ï¼Œè¿å¤©åœ°é¬¼ç¥ä¹Ÿä¸ºä¹‹éœ‡åŠ¨ã€‚\n\n" NOR);
+		set("unwield_msg", HIY "\n$Næ”¾ä¸‹æ‰‹ä¸­çš„èƒœåˆ©å¥³ç¥ï¼Œå‘¨å›´çš„äººæ‰å–˜è¿‡ä¸€å£æ°”æ¥ã€‚\n\n" NOR);
 	}
 
     init_staff(200);

@@ -1,13 +1,13 @@
 inherit NPC;
-string *name=({"ÊéÉú","ÊÌÅ®","Ô±Íâ","·òÈË","¹«×Ó","Ğ¡½ã","Ç¿µÁ"});
-string *gender=({"ÄĞ","Å®","ÄĞ","Å®","ÄĞ","Å®","ÄĞ"});
+string *name=({"ä¹¦ç”Ÿ","ä¾å¥³","å‘˜å¤–","å¤«äºº","å…¬å­","å°å§","å¼ºç›—"});
+string *gender=({"ç”·","å¥³","ç”·","å¥³","ç”·","å¥³","ç”·"});
 string *id=({"shusheng","shinu","yuanwai","furen","gongzi","xiaojie","qiangdao"});
 void create()
 {
     int i;
     i=random(sizeof(name));
     set_name(name[i],({id[i]}));
-    set("gender",gender[i]+"ĞÔ");
+    set("gender",gender[i]+"æ€§");
     set("attitude","friendly");
     set_skill("unarmed",10);
     set("chat_chance",1);

@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("À®Âï", ({"lama"}));
-	set("long", "ÕâÊÇÒ»¸ö¸ß´óÀ®Âï£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²£¬ËÆºõ²»ÊÇÖÐÍÁÈËÊ¿¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("å–‡å˜›", ({"lama"}));
+	set("long", "è¿™æ˜¯ä¸€ä¸ªé«˜å¤§å–‡å˜›ï¼Œä¸¤è‡‚ç²—å£®ï¼Œè†€é˜”è…°åœ†ï¼Œä¼¼ä¹Žä¸æ˜¯ä¸­åœŸäººå£«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "aggressive");
 	set("class", "bonze");
 
@@ -52,17 +52,17 @@ void greeting(object ob)
 		if( !ob->query_temp("warned2") )
 		{
 			if(ob->query_temp("hastrystab")) 
-				command("say ÆøËÀÎÒÁË£¬Äã¾ÓÈ»°µËãÎÒÐÖµÜ£¡");
+				command("say æ°”æ­»æˆ‘äº†ï¼Œä½ å±…ç„¶æš—ç®—æˆ‘å…„å¼Ÿï¼");
 			else
-				command( "say ÄãÊÇË­£¬¾ÓÈ»¸ÒÆÆ»µ´óÒ¯µÄºÃÊÂ£¬²»Ïë»îÁËÊÇ²»ÊÇ£¿£¡");
+				command( "say ä½ æ˜¯è°ï¼Œå±…ç„¶æ•¢ç ´åå¤§çˆ·çš„å¥½äº‹ï¼Œä¸æƒ³æ´»äº†æ˜¯ä¸æ˜¯ï¼Ÿï¼");
 			ob->set_temp("warned2", 1);
 		}
 		else
 		{
 			if(ob->query_temp("hastrystab")) 
-				command(" say ÎÒ...ÎÒ...Ò»¶¨ÒªÉ±ÁËÄãÕâ±³ºóÍ±ÈËµÄ½­ºþ°ÜÀà£¡");
+				command(" say æˆ‘...æˆ‘...ä¸€å®šè¦æ€äº†ä½ è¿™èƒŒåŽæ…äººçš„æ±Ÿæ¹–è´¥ç±»ï¼");
 			else
-				command(" say ÄãÕâ¼Ò»ï²»ÒªÅÜ£¬ÈÃ·ðÒ¯ÎÒÔ×ÁËÄã£¡£¡£¡\n");
+				command(" say ä½ è¿™å®¶ä¼™ä¸è¦è·‘ï¼Œè®©ä½›çˆ·æˆ‘å®°äº†ä½ ï¼ï¼ï¼\n");
 			me->set_leader(ob);
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 

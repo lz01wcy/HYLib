@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��԰");
+	set("short", "花园");
 	set("long", @LONG
-�����Ǹ���԰��һ���ļ��������Ÿ�������Ļ��ݣ��������·����߲�
-���޵Ĺ�ԡ���԰��һƬ���ţ���������һֻ�۷��������衣��һ��ʯ��
-С·ͨ��ǰ��һ��������
+这里是个花园，一年四季都生长着各种奇异的花草，在阳光下发出七彩
+妖艳的光辉。花园里一片沉寂，竟看不到一只蜜蜂或蝴蝶飞舞。有一条石子
+小路通向前面一座花厅。
 LONG
 	);
         set("outdoors", "wudujiao");

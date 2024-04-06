@@ -7,10 +7,10 @@ void quarter_pass();
 
 void create()
 {
-	set("short", "����С·");
+	set("short", "湖滨小路");
 	set("long", @LONG
-һ��������С·�������濴Զ���ƺ�����һ��С�ӡ������濴��һ
-����֪�ж೤��С·�����߿����Ǹ����ֵ���ͷ��������һ��С�ƹݡ�
+一条湖滨的小路，往东面看远处似乎横着一条小河。往北面看是一
+条不知有多长的小路。西边靠湖是个热闹的码头，南面是一家小酒馆。
 LONG );
 	set("no_clean_up", 0);
 	set("outdoors", "guiyun");
@@ -36,25 +36,25 @@ void quarter_pass()
 	local = localtime(time() * 60);
 	if (local[2] < 6 || local[2] >= 21)
 */
-	if( strsrch(time, "��ʱ") >= 0 ||
-		strsrch(time, "��ʱ") >= 0 ||
-		strsrch(time, "��ʱ") >= 0 ||
-		strsrch(time, "��ʱ") >= 0 ||
-		strsrch(time, "��ʱ") >= 0)
+	if( strsrch(time, "子时") >= 0 ||
+		strsrch(time, "丑时") >= 0 ||
+		strsrch(time, "寅时") >= 0 ||
+		strsrch(time, "戌时") >= 0 ||
+		strsrch(time, "亥时") >= 0)
 	{
 		set("long", @LONG
-һ��������С·�������濴Զ���ƺ�����һ��С�ӡ������濴��һ
-����֪����֪�ж೤��С·�����߿����Ǹ����ֵ���ͷ��������һ�Ҵ�
-���˵�С�ƹݡ�
+一条湖滨的小路，往东面看远处似乎横着一条小河。往北面看是一
+条不知条不知有多长的小路。西边靠湖是个热闹的码头，南面是一家打
+烊了的小酒馆。
 LONG
 		);
 		delete("exits/south");
 	}
 	else {
 		set("long", @LONG
-һ��������С·�������濴Զ���ƺ�����һ��С�ӡ������濴��һ
-����֪����֪�ж೤��С·�����߿����Ǹ����ֵ���ͷ��������һ�ҿ�
-�ŵ�С�ƹݡ�
+一条湖滨的小路，往东面看远处似乎横着一条小河。往北面看是一
+条不知条不知有多长的小路。西边靠湖是个热闹的码头，南面是一家开
+着的小酒馆。
 LONG
 		);
 		set("exits/south", __DIR__"jiuguan");

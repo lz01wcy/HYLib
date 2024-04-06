@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("À¥ÂØÅÉµÜ×Ó", ({ "dizi"}));
+	set_name("æ˜†ä»‘æ´¾å¼Ÿå­", ({ "dizi"}));
 	set("long",
-		"Ëû¿´ÆğÀ´°òÀ«ÑüÔ²£¬ËÆºõÁ·¹ıÒ»µãÎä¹¦¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–çœ‹èµ·æ¥è†€é˜”è…°åœ†ï¼Œä¼¼ä¹ç»ƒè¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("attitude", "heroism");
 	set("shen_type", 1);
@@ -32,7 +32,7 @@ void create()
 
 	map_skill("dodge", "taxue-wuhen");
 
-	create_family("À¥ÂØÅÉ", 6, "µÜ×Ó");
+	create_family("æ˜†ä»‘æ´¾", 6, "å¼Ÿå­");
 	setup();
 	carry_object("/d/kunlun/obj/sword")->wield();
 	carry_object("/d/kunlun/obj/pao4")->wear();

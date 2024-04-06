@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","֯Ů��");
+  set ("short","织女峰");
   set ("long", @LONG
-������ǳ���ʮ�����еĵġ�֯Ů�塱��ɽ������ï�ܣ�����һ��
-С·����������ɽ�£���֪��ͨ�����  
+这里就是长白十六峰中的的“织女峰”，山上松林茂密，还有一条
+小路穿过松林向山下，不知道通向那里。  
 LONG);
 
   set("exits", ([ 

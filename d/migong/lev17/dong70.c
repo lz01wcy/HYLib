@@ -4,11 +4,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"º£Ö®½¸µº½"NOR);
+	set("short", GRN"æµ·ä¹‹ç¤å²›"NOR);
 	set("long",GRN @LONG
-     Ò»¸ö´óÀË´òÔÚÑÒ½¸ÉÏ£¬½¦Æð¡õÌìµÄË®»¨£¬ÄãÉÁ±Ü²»¼°±»ÁÜ¸öÕýÖø
-º£·ç´µÀ´£¬Ô¶Ô¶Ì÷Íû£¬¼¸ËÒÓæ´¬ÕýËæ²¨ÔØ¸¡ÔØÉò£»»Þ°µ²»Ã÷µÄÌì¿Õ£¬ÎÚ
-ÔÆÍÅ´ØºÃËÆÒ»Ö»Ö»ÕýÔÚÕÅÑÀÎè×¦µÄÒ°ÊÞ¡££
+     ä¸€ä¸ªå¤§æµªæ‰“åœ¨å²©ç¤ä¸Šï¼Œæº…èµ·â–¡å¤©çš„æ°´èŠ±ï¼Œä½ é—ªé¿ä¸åŠè¢«æ·‹ä¸ªæ­£è‘—
+æµ·é£Žå¹æ¥ï¼Œè¿œè¿œçœºæœ›ï¼Œå‡ è‰˜æ¸”èˆ¹æ­£éšæ³¢è½½æµ®è½½æ²ˆï¼›æ™¦æš—ä¸æ˜Žçš„å¤©ç©ºï¼Œä¹Œ
+äº‘å›¢ç°‡å¥½ä¼¼ä¸€åªåªæ­£åœ¨å¼ ç‰™èˆžçˆªçš„é‡Žå…½ã€‚
+
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);

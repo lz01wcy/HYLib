@@ -5,12 +5,12 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "Ð¡Ê¯ÇÅ");
+	set("short", "å°çŸ³æ¡¥");
 	set("long", @LONG
-ÕâÊÇÒ»×ùÇàÊ¯ÆÌÆöµÄÐ¡Ê¯ÇÅ£¬³¤ºçÎÔ²¨°ãÁ¬Í¨ºÉÌÁÁ½°¶¡£Õ¾ÔÚ
-ÇÅÉÏ¸©ÊÓ£¬ºÉÌÁË®ÃæËæ·çÖåÃ¼¡£Å¼ÓÐ¼¸Ö»ÇàÍÜ´ÓÌïÌïÁ«Ò¶ÉÏ×êÈëË®
-µ×£¬´ø¶¯×ÅÒ»ÕóÕóÁ°äô¡£ÄÏÃæÍûÈ¥£¬ºÉÌÁÍâÈºÉ½ÏÂ·ü£¬²ãÎíçÔÈÆ£¬
-ÔÆÔ¶ÌìÇå¡£
+è¿™æ˜¯ä¸€åº§é’çŸ³é“ºç Œçš„å°çŸ³æ¡¥ï¼Œé•¿è™¹å§æ³¢èˆ¬è¿žé€šè·å¡˜ä¸¤å²¸ã€‚ç«™åœ¨
+æ¡¥ä¸Šä¿¯è§†ï¼Œè·å¡˜æ°´é¢éšé£Žçš±çœ‰ã€‚å¶æœ‰å‡ åªé’è›™ä»Žç”°ç”°èŽ²å¶ä¸Šé’»å…¥æ°´
+åº•ï¼Œå¸¦åŠ¨ç€ä¸€é˜µé˜µæ¶Ÿæ¼ªã€‚å—é¢æœ›åŽ»ï¼Œè·å¡˜å¤–ç¾¤å±±ä¸‹ä¼ï¼Œå±‚é›¾ç¼­ç»•ï¼Œ
+äº‘è¿œå¤©æ¸…ã€‚
 LONG );
 	set("outdoors", "taoyuan");
 	set("no_clean_up", 0);

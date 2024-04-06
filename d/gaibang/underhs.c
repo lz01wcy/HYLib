@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÉáÉíÑÂÏÂ");
+	set("short", "èˆèº«å´–ä¸‹");
 	set("long", @LONG
-ÕâÊÇ»ªÉ½ÉáÉíÑÂÏÂµÄÐ¡É½¶´£¬ÀïÃæÆÆÆÆÀÃÀÃµÄ£¬¶ªÂúÁË¸÷ÖÖÔÓ
-Îï£¬»¹ÓÐØ¤°ïµÜ×ÓÊÕ¼¯µÄÆÆÍ­ÀÃÌúµÈ¡£´ÓÕâÀïÍ¨ÍùØ¤°ïµÄÃØÃÜÍ¨µÀ¡£
+è¿™æ˜¯åŽå±±èˆèº«å´–ä¸‹çš„å°å±±æ´žï¼Œé‡Œé¢ç ´ç ´çƒ‚çƒ‚çš„ï¼Œä¸¢æ»¡äº†å„ç§æ‚
+ç‰©ï¼Œè¿˜æœ‰ä¸å¸®å¼Ÿå­æ”¶é›†çš„ç ´é“œçƒ‚é“ç­‰ã€‚ä»Žè¿™é‡Œé€šå¾€ä¸å¸®çš„ç§˜å¯†é€šé“ã€‚
 LONG );
 	set("exits", ([
 		"out"       : "/d/huashan/sheshen",

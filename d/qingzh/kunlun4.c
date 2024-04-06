@@ -1,4 +1,4 @@
-// kunlun4.c À¥ÂØÉ½
+// kunlun4.c æ˜†ä»‘å±±
 // west to jiayuguan,est to lanzhou
 // Ver 0.1 08/15/1998 by Freeze
 
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "À¥ÂØÉ½ ÄÏÂ´");
+	set("short",HIG "æ˜†ä»‘å±± å—éº“");
 	set("long", @LONG
-ÄãÀ´µ½ÁËÀ¥ÂØÉ½ÄÏÂ´£¬ÕâÀïÆøºòÒËÈË¡¢É½ÇåË®Ðã£¬Ê±µ±É½»¨ÀÃÂþ£¬Ò»ÅÉ
-²ÓÀÃ¾°Ïó¡£
+ä½ æ¥åˆ°äº†æ˜†ä»‘å±±å—éº“ï¼Œè¿™é‡Œæ°”å€™å®œäººã€å±±æ¸…æ°´ç§€ï¼Œæ—¶å½“å±±èŠ±çƒ‚æ¼«ï¼Œä¸€æ´¾
+ç¿çƒ‚æ™¯è±¡ã€‚
 LONG
 	);	
         set("outdoors", "qingzh");
@@ -36,7 +36,7 @@ void init()
 	ob = this_player();
 	ioqi = 300 / (int)ob->query("int") + 3;
         if((int)ob->query("qi") < 50) 
-                 message("vinson",HIR"ÄãºöÈ»¸Ðµ½ºôÎü³ÔÁ¦£¬ÉíÌå·¢Èí£¬ÏóÊÇ¸ßÔ­·´Ó¦£¬ÐªÏ¢Ò»»á¶ùÔÙ×ß°É£¡\n"NOR, ob);
+                 message("vinson",HIR"ä½ å¿½ç„¶æ„Ÿåˆ°å‘¼å¸åƒåŠ›ï¼Œèº«ä½“å‘è½¯ï¼Œè±¡æ˜¯é«˜åŽŸååº”ï¼Œæ­‡æ¯ä¸€ä¼šå„¿å†èµ°å§ï¼\n"NOR, ob);
 	ob->improve_skill("dodge", 0.1 * (int)ob->query_skill("dodge", 1));
         ob->receive_damage("qi", ioqi );
 }

@@ -1,6 +1,6 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
 
-//ÏÀ¿Í¡£
+//ä¾ å®¢ã€‚
 
 #include <ansi.h>
 
@@ -8,10 +8,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÏÀ¿Í", ({ "xia ke", "xia", "ke" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ä¾ å®¢", ({ "xia ke", "xia", "ke" }) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long","ÕâÊÇÒ»¸ö¸ßÀöµÄÏÀ¿Í£¬×¼±¸µ½ÖĞÔ­È¥´³Ò»·¬ÌìÏÂ¡£\n");
+        set("long","è¿™æ˜¯ä¸€ä¸ªé«˜ä¸½çš„ä¾ å®¢ï¼Œå‡†å¤‡åˆ°ä¸­åŸå»é—¯ä¸€ç•ªå¤©ä¸‹ã€‚\n");
         set("combat_exp", 300000+random(40000));
         set("attitude", "heroism");
         set("str", 30);

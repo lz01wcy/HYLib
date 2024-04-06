@@ -5,14 +5,14 @@ void on_board();
 
 void create()
 {
-        set("short", "Ïª¿Ú");
+        set("short", "æºªå£");
         set("long", @LONG
-ÄãÓ­×ÅÕóÕóº£·çÀ´µ½ÁËÏª¿Ú£¬ÕâÀïÊÇ×Ô¹Å´úÒÔÀ´±ø¼Ò±ØÕõÖ®µØ£¬ÕâÀïÁ¬
-½Ó×ÅÓëº£ÍâµÄÃ³Ò×£¬°¶±ßÍ£²´×ÅµÄ¼¸ËÒ´ó·«´¬ÔÚÏ¦ÑôµÄÕÕÉäÏÂ£¬´¬·«ÏÔµÃ·Ö
-ÍâÃÀÀö¡£°¶±ßÓÐ¼¸¸öÀÏô¹¹«ÕýµÈ×ÅÀ­¿ÍÈË£¬Ò²ÐíÄãÉÏÇ°Ñ¯ÎÊÒ»ÏÂ¾ÍÄÜ¹Í´¬³ö
-º£¡£
+ä½ è¿Žç€é˜µé˜µæµ·é£Žæ¥åˆ°äº†æºªå£ï¼Œè¿™é‡Œæ˜¯è‡ªå¤ä»£ä»¥æ¥å…µå®¶å¿…æŒ£ä¹‹åœ°ï¼Œè¿™é‡Œè¿ž
+æŽ¥ç€ä¸Žæµ·å¤–çš„è´¸æ˜“ï¼Œå²¸è¾¹åœæ³Šç€çš„å‡ è‰˜å¤§å¸†èˆ¹åœ¨å¤•é˜³çš„ç…§å°„ä¸‹ï¼Œèˆ¹å¸†æ˜¾å¾—åˆ†
+å¤–ç¾Žä¸½ã€‚å²¸è¾¹æœ‰å‡ ä¸ªè€è‰„å…¬æ­£ç­‰ç€æ‹‰å®¢äººï¼Œä¹Ÿè®¸ä½ ä¸Šå‰è¯¢é—®ä¸€ä¸‹å°±èƒ½é›‡èˆ¹å‡º
+æµ·ã€‚
 LONG);
-        set("outdoors", "Äþ²¨");
+        set("outdoors", "å®æ³¢");
         set("exits",([
         "west" : __DIR__"aywsi",
         "south" : __DIR__"dongqianhu",

@@ -1,12 +1,12 @@
-// yang.c Ñî¹ı
+// yang.c æ¨è¿‡
 #include <ansi.h>
 inherit NPC;
 void create()
 {
-        set_name("Ğ¡Ñî¹ı",({"yang guo","yang","guo"}));
-        set("title",HIW"¹ÅÄ¹ÏÀÂÂ"NOR);
-        set("nickname",HIY"Éñµñ´óÏÀ"NOR);
-        set("long", "Ëû¾ÍÊÇÃûÂúÌìÏÂµÄÑî¹ı¡£Ëä¶ÏÒ»±Ûµ«ÈÔÕÚ²»È¥Ò»Á³µÄÓ¢ĞÛºÀÆø¡£\n");
+        set_name("å°æ¨è¿‡",({"yang guo","yang","guo"}));
+        set("title",HIW"å¤å¢“ä¾ ä¾£"NOR);
+        set("nickname",HIY"ç¥é›•å¤§ä¾ "NOR);
+        set("long", "ä»–å°±æ˜¯åæ»¡å¤©ä¸‹çš„æ¨è¿‡ã€‚è™½æ–­ä¸€è‡‚ä½†ä»é®ä¸å»ä¸€è„¸çš„è‹±é›„è±ªæ°”ã€‚\n");
         set("age", 35);
         set("attitude", "friendly");
         set("shen", 0);

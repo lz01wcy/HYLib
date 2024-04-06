@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ݵ�");
+	set("short", "草地");
 	set("long", @LONG
-һƬƽ���Ĳݵ�һֱ�ذ����죬�����Щ����ʯ¶�����棬ͦ��
-��ͷ�����ܺ���ǧ���������ĳ�ˢ��һЩ�в�����Ŀ�Ĵ���С���ڲ�
-���г�û��ʮ�����ڵ����ҡ���ȥ��һƬɳ̲��
+一片平缓的草地一直沿岸延伸，间或有些许岩石露出地面，挺立
+浪头，忍受海潮千年来不尽的冲刷。一些叫不出名目的大鸟小兽在草
+丛中出没，十分自在地游嬉。西去有一片沙滩。
 LONG );
 	set("outdoors", "binghuo");
 	set("no_clean_up", 0);

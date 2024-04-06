@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿ÂÍò¾û",({"ke wanjun","ke"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æŸ¯ä¸‡é’§",({"ke wanjun","ke"}));
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long", 
-               "ËûÊÇÁèÏö³ÇµÚÁù´úµÜ×Ó¿ÂÍò¾û¡£\n");
+               "ä»–æ˜¯å‡Œéœ„åŸç¬¬å…­ä»£å¼Ÿå­æŸ¯ä¸‡é’§ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -50,7 +50,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸ", 6, "å¼Ÿå­");
         setup();
 
         
@@ -60,22 +60,22 @@ void create()
 void attempt_apprentice(object ob)
 {
     if (ob->query_int() < 20) {
-        command("say ÄãÕâÖÖ×ÊÖÊ,²»ÒËÑ§½££¡");
+        command("say ä½ è¿™ç§èµ„è´¨,ä¸å®œå­¦å‰‘ï¼");
                 return;
     }
-        if( (string)ob->query("gender") != "ÄĞĞÔ" ){
-                 command("say ÕâÎ»"+RANK_D->query_respect(ob)+
-"ÎÒ²»ÊÕÅ®Í½µÄ,Äã»¹ÊÇÈ¥ÕÒÎÒ»¨Ê¦ÃÃ°É.");
+        if( (string)ob->query("gender") != "ç”·æ€§" ){
+                 command("say è¿™ä½"+RANK_D->query_respect(ob)+
+"æˆ‘ä¸æ”¶å¥³å¾’çš„,ä½ è¿˜æ˜¯å»æ‰¾æˆ‘èŠ±å¸ˆå¦¹å§.");
                 return;
     }
 
-    command("say ºÜºÃ£¬ºÜºÃ¡£");
+    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ã€‚");
     command("recruit " + ob->query("id"));
 } 
 
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) ) 
-        ob->set("title", "ÁèÏö³ÇµÚÆß´úµÜ×Ó"); 
+        ob->set("title", "å‡Œéœ„åŸç¬¬ä¸ƒä»£å¼Ÿå­"); 
 }
 

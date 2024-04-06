@@ -1,24 +1,24 @@
-// music  yangzhou's  ¾Æºø
+// music  yangzhou's  é…’å£¶
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-set_name("°×´É¾Æºø",({"jiu hu","hu"}));
+set_name("ç™½ç“·é…’å£¶",({"jiu hu","hu"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-set("long","ÓÃºì³ñÏµ×Åºø¾±,ºøÉíÓĞ¸öÍ¹³öµÄ[¾Æ]×Ö.\n");
-		set("unit", "¸ö");
+set("long","ç”¨çº¢ç»¸ç³»ç€å£¶é¢ˆ,å£¶èº«æœ‰ä¸ªå‡¸å‡ºçš„[é…’]å­—.\n");
+		set("unit", "ä¸ª");
 set("value",300);
 		set("max_liquid", 15);
 	}
 
 	set("liquid", ([
 		"type": "alcohol",
-"name":"×íÌ«°×",
+"name":"é†‰å¤ªç™½",
 		"remaining": 15,
 		"drunk_apply": 3,
 	]));

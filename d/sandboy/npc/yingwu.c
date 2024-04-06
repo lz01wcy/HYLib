@@ -1,22 +1,22 @@
 inherit NPC;
 void create()
 {
-   set_name("ğĞğÄ", ({ "yingwu","bird" }) );
-   set("race", "Ò°ÊŞ");
+   set_name("é¹¦é¹‰", ({ "yingwu","bird" }) );
+   set("race", "é‡å…½");
    set("age", 5);
-   set("long", "ÓğÃ«Ñ¤ÀÃÎŞ±ÈµÄğĞğÄ£¬ÄÜÄ£·ÂÈËËµ»°¡£\n");
+   set("long", "ç¾½æ¯›ç»šçƒ‚æ— æ¯”çš„é¹¦é¹‰ï¼Œèƒ½æ¨¡ä»¿äººè¯´è¯ã€‚\n");
    
    set("str", 10);
    set("cor", 20);
    set("combat_exp",5000);
 
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "×ó³á", "ÓÒ³á", "×ó½Å","ÓÒ½Å" }) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å·¦ç¿…", "å³ç¿…", "å·¦è„š","å³è„š" }) );
    set("verbs", ({ "bite", "claw" }) );
 
    set("chat_chance", 5);
    set("chat_msg", ({
-  "ğĞğÄºÃÆæµØÍá×ÅÄÔ´ü¿´×ÅÄã.\n",
-  "ğĞğÄÒ¡»Î×ÅÄÔ´ü£¬×÷³öºÈ×íÁË¾ÆµÄÄ£Ñù¡£\n",
+  "é¹¦é¹‰å¥½å¥‡åœ°æ­ªç€è„‘è¢‹çœ‹ç€ä½ .\n",
+  "é¹¦é¹‰æ‘‡æ™ƒç€è„‘è¢‹ï¼Œä½œå‡ºå–é†‰äº†é…’çš„æ¨¡æ ·ã€‚\n",
  }));
    set_temp("apply/attack", 5);
    set_temp("apply/armor", 25);
@@ -26,7 +26,7 @@ void create()
 
 void die()
 {
-  message_vision("$NÌøÁË¼¸Ìø£¬ÆËÉÈÁËÁ½ÏÂ³á°ò£¬ËÀÁË.\n",this_object());
+  message_vision("$Nè·³äº†å‡ è·³ï¼Œæ‰‘æ‰‡äº†ä¸¤ä¸‹ç¿…è†€ï¼Œæ­»äº†.\n",this_object());
   destruct(this_object());
   return;
 }

@@ -4,13 +4,13 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIR"µ¤"NOR"¶¥º×", ({ "danding he", "he"}));
-        set("race", "Ò°ÊŞ");
+        set_name(HIR"ä¸¹"NOR"é¡¶é¹¤", ({ "danding he", "he"}));
+        set("race", "é‡å…½");
         set("age", 3);
-        set("long", "Ò»Ö»È«Éí½à°×µÄµ¤¶¥º×£¬¿´À´ÊÇĞŞÁË³á°ò£¬Ã»·¨¸ß·ÉÁË¡£\n");
+        set("long", "ä¸€åªå…¨èº«æ´ç™½çš„ä¸¹é¡¶é¹¤ï¼Œçœ‹æ¥æ˜¯ä¿®äº†ç¿…è†€ï¼Œæ²¡æ³•é«˜é£äº†ã€‚\n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò", "×¦×Ó", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€", "çˆªå­", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 300);

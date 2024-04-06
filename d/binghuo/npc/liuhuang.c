@@ -1,14 +1,14 @@
-// liuhuang.c Áò»Ç
+// liuhuang.c ç¡«ç£º
 inherit ITEM;
 void create()
 {
-        set_name("Áò»Ç", ({"liuhuang"}));
+        set_name("ç¡«ç£º", ({"liuhuang"}));
         set_weight(40);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿é»ÆÉ«µÄÁò»Ç¾§Ìå¡£\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å—é»„è‰²çš„ç¡«ç£ºæ™¶ä½“ã€‚\n");
+                set("unit", "å—");
                 set("value", 10);
         }
 }

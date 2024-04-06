@@ -1,26 +1,26 @@
 inherit NPC;
 inherit F_VENDOR;
-string query_save_file() { return DATA_DIR+"npc/ÖÜĞ¡ÃÃ";}
+string query_save_file() { return DATA_DIR+"npc/å‘¨å°å¦¹";}
 
 void create()
 {
 
-	set_name("ÖÜĞ¡ÃÃ", ({ "xiao mei", "xiaomei", "xiaomei" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("å‘¨å°å¦¹", ({ "xiao mei", "xiaomei", "xiaomei" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»ÖÜĞ¡ÃÃÕıĞ¦ßäßäµØÃ¦Öø¡£\n");
+		"è¿™ä½å‘¨å°å¦¹æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
-	set("rank_info/respect", "Ğ¡¶ş¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
 		__DIR__"obj/tea"
 
 	}));
 
 
-	set("area_name","¾°µÂÕò±ÌÍ©Ô°²è¹İ");
+	set("area_name","æ™¯å¾·é•‡ç¢§æ¡å›­èŒ¶é¦†");
 	set("area_file","/d/jindezheng/tea-room.c");
 
 	setup();
@@ -41,7 +41,7 @@ call_out("greeting",1,ob);
 void greeting(object ob)
 {
  if (!living(ob)||environment(ob)!=environment()) return;
-command("say ÕâÎ»¿Í¹Ù¿ÉÒªÀ´Ò»ÍëÌú¹ÛÒô,ÌıÒ»»á×ÓÊé?\n");
+command("say è¿™ä½å®¢å®˜å¯è¦æ¥ä¸€ç¢—é“è§‚éŸ³,å¬ä¸€ä¼šå­ä¹¦?\n");
 return;
 }
 

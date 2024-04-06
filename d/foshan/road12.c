@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short","�ּ��");
+	set("short","林间道");
 	set("long",@LONG
-������һ���ּ�С���������������ѡ�����ɽ��ï�ܣ������
-�棬��λ��·Ҫʮ��С�ġ�
+这里是一条林间小道，在树丛中蜿蜒。岭南山林茂密，多产毒
+虫，各位行路要十分小心。
 LONG);
 	set("objects", ([
 	   __DIR__"npc/snake": 1,

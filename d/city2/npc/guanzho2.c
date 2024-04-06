@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ÛÖÚÒÒ", ({ "yi"}) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è§‚ä¼—ä¹™", ({ "yi"}) );
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("long",
-		"Õâ¼Ò»ïÂúÁ³ºáÈâ£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬ÁîÈËÍû¶øÉúÎ·¡£\n");
+		"è¿™å®¶ä¼™æ»¡è„¸æ¨ªè‚‰ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚\n");
 	set("combat_exp", 10000);
         set("shen_type", -1);
 	set("attitude", "friendly");
@@ -42,11 +42,11 @@ void init()
 	&& !environment(ob)->query("no_fight"))
 	{
 		if( !ob->query_temp("warned") ) {
-			command("say ËûÂèµÄ£¬½ñÌìÀÏ×ÓĞÄÇé²»ºÃ£¬Ğ¡ĞÄÎÒÔ×ÁËÄã£¡");
+			command("say ä»–å¦ˆçš„ï¼Œä»Šå¤©è€å­å¿ƒæƒ…ä¸å¥½ï¼Œå°å¿ƒæˆ‘å®°äº†ä½ ï¼");
 		}
 		else if( ob->query_temp("stay") < 10 ) ob->add_temp("stay", 1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬ÊÜËÀ°É£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œå—æ­»å§ï¼\n");
 //			me->set_leader(ob);
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
@@ -61,7 +61,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "¹ÛÖÚ×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "è§‚ä¼—é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ݵ�");
+	set("short", "草地");
 	set("long", @LONG
-һƭ����ݵ�,¶��ҷ�,ʱ�а�ɫС�ô�����´ڹ�.�ʵ��׷�,΢ 
-������,��ǰ��������.ǰ�治Զ�ĵط���һ��С·. 
+一骗青青草地,露珠芬芳,时有白色小兔从你脚下蹿过.彩蝶纷飞,微 
+风轻送,眼前美景无限.前面不远的地方有一条小路. 
 LONG
 	);
 	set("no_clean_up", 0);

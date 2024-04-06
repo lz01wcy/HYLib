@@ -1,14 +1,14 @@
 // /d/yazhang/guangchang.c
-// Room in ÑÀÕÊ
+// Room in ç‰™å¸
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "¶¨Ïå¹ã³¡");
+	set("short", "å®šè¥„å¹¿åœº");
 	set("long", @LONG
-ÕâÀï±ãÊÇÑÀÕÊµÄÖÐÐÄ£¬ËÄÌõ´ó½Ö½»»ãÓÚ´Ë¡£Ò»×ùÎ¡¶ë¸ß´óµÄÖÓÂ¥ËÊ
-Á¢ÓÚÇ°£¬ºÜÊÇÓÐÐ©ÆøÊÆ¡£Ã¿µ½Çå³¿£¬ÏìÁÁµÄÖÓÉù±ã»á°é×Åµ­µ­ÎíÆø´«Ïò
-ÑÀÕÊµÄ´ó½ÖÐ¡Ïï¡£Â·¿Ú³µË®ÂíÁú£¬À´ÍùÈË³±²»¶Ï¡£
+è¿™é‡Œä¾¿æ˜¯ç‰™å¸çš„ä¸­å¿ƒï¼Œå››æ¡å¤§è¡—äº¤æ±‡äºŽæ­¤ã€‚ä¸€åº§å·å³¨é«˜å¤§çš„é’Ÿæ¥¼è€¸
+ç«‹äºŽå‰ï¼Œå¾ˆæ˜¯æœ‰äº›æ°”åŠ¿ã€‚æ¯åˆ°æ¸…æ™¨ï¼Œå“äº®çš„é’Ÿå£°ä¾¿ä¼šä¼´ç€æ·¡æ·¡é›¾æ°”ä¼ å‘
+ç‰™å¸çš„å¤§è¡—å°å··ã€‚è·¯å£è½¦æ°´é©¬é¾™ï¼Œæ¥å¾€äººæ½®ä¸æ–­ã€‚
 LONG
 	);
 set("outdoors", "dingxiang");

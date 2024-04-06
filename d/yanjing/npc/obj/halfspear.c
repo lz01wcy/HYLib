@@ -4,17 +4,17 @@ inherit CLUB;
 
 void create()
 {
-set_name("°ë½ØÌúÇ¹",({"iron spear","qiang","spear"}));
+set_name("åŠæˆªé“æª",({"iron spear","qiang","spear"}));
 set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-set("long","ÕâÌúÇ¹Ö»Ê£ÏÂ°ë½Ø,Ç¹¼â¿ÌÁË¸ö[Ñï]×Ö.\n");
+                set("unit", "æŠŠ");
+set("long","è¿™é“æªåªå‰©ä¸‹åŠæˆª,æªå°–åˆ»äº†ä¸ª[æ‰¬]å­—.\n");
 set("value",600);
                 set("material", "iron");
-set("wield_msg","$NÄÃ³öÒ»°Ñ$n,ÔÚÊÖÖĞÎèÁË¸öÇ¹»¨!\n");;
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+set("wield_msg","$Næ‹¿å‡ºä¸€æŠŠ$n,åœ¨æ‰‹ä¸­èˆäº†ä¸ªæªèŠ±!\n");;
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
 init_club(40);

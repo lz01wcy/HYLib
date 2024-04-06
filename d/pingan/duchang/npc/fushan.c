@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("¸»ÉÌ", ({ "fu shang", "shang" }));
+	set_name("å¯Œå•†", ({ "fu shang", "shang" }));
 	set("shen_type", 1);
 	set("str", 30);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"ÕâÊÇÒ»¸ö¸»ÉÌ£¬³¤µÄÓÍÍ·´ó¶ú£¬×ßÔÚÂ·ÉÏÆø´­ÓõÓõ¡£\n");
+		"è¿™æ˜¯ä¸€ä¸ªå¯Œå•†ï¼Œé•¿çš„æ²¹å¤´å¤§è€³ï¼Œèµ°åœ¨è·¯ä¸Šæ°”å–˜ååã€‚\n");
 	set("combat_exp", 5000);
 	set("attitude", "friendly");
 	set("neili", 500); 

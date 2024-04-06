@@ -1,12 +1,12 @@
  inherit ROOM;
 void create()
 {
-    set("short", "´óÀÎÄÚ");
+    set("short", "å¤§ç‰¢å†…");
         set("long", @LONG
-Ê¯Ç½Î§³ÉµÄÔºÂäºÜ´ó£¬»ÒºÚÉ«µÄÔºÇ½ÊÇÆ½³£ÔºÇ½µÄÈıËÄ±¶Ö®¸ß£¬¸øÈËÒ»ÖÖÑ¹ÒÖ
-µÄ¸Ğ¾õ¡£Ôº×ÓÀï¶ÑÂúÁË¾Ş´óµÄÊ¯ÁÏ£¬ÓĞ²»ÉÙµÄ·¸ÈËÕıÔÚÃ¦ÂµµÄ¼Ó¹¤Ê¯ÁÏ¡£Ôº×ÓÖĞÁ¢
-ÁËÒ»¿é¸æÊ¾ÅÆ£¨£ó£é£ç£î£©¡£Ôº×ÓµÄ¶«±ßÊÇÒ»×ù¾Ş´óÒõÉ­µÄÊ¯Í·½¨Öş£¬ÏòÎ÷ÔòÊÇ³ö
-ÓüµÄ´óÃÅ¡£
+çŸ³å¢™å›´æˆçš„é™¢è½å¾ˆå¤§ï¼Œç°é»‘è‰²çš„é™¢å¢™æ˜¯å¹³å¸¸é™¢å¢™çš„ä¸‰å››å€ä¹‹é«˜ï¼Œç»™äººä¸€ç§å‹æŠ‘
+çš„æ„Ÿè§‰ã€‚é™¢å­é‡Œå †æ»¡äº†å·¨å¤§çš„çŸ³æ–™ï¼Œæœ‰ä¸å°‘çš„çŠ¯äººæ­£åœ¨å¿™ç¢Œçš„åŠ å·¥çŸ³æ–™ã€‚é™¢å­ä¸­ç«‹
+äº†ä¸€å—å‘Šç¤ºç‰Œï¼ˆï½“ï½‰ï½‡ï½ï¼‰ã€‚é™¢å­çš„ä¸œè¾¹æ˜¯ä¸€åº§å·¨å¤§é˜´æ£®çš„çŸ³å¤´å»ºç­‘ï¼Œå‘è¥¿åˆ™æ˜¯å‡º
+ç‹±çš„å¤§é—¨ã€‚
 LONG
         );
     set("exits", ([ /* sizeof() == 3 */
@@ -16,8 +16,8 @@ LONG
         __DIR__"npc/yuzu" : 1,
     ]) );
         set("item_desc", ([
-            "sign": "·²À´´ËµÄ·¸ÈË±ØĞë¹¤×÷£¨£÷£ï£ò£ë£©¶şÊ®´Î·½¿É³öÈ¥¡£\n",
-            "¸æÊ¾ÅÆ" : "·²À´´ËµÄ·¸ÈË±ØĞë¹¤×÷£¨£÷£ï£ò£ë£©¶şÊ®´Î·½¿É³öÈ¥¡£\n",
+            "sign": "å‡¡æ¥æ­¤çš„çŠ¯äººå¿…é¡»å·¥ä½œï¼ˆï½—ï½ï½’ï½‹ï¼‰äºŒåæ¬¡æ–¹å¯å‡ºå»ã€‚\n",
+            "å‘Šç¤ºç‰Œ" : "å‡¡æ¥æ­¤çš„çŠ¯äººå¿…é¡»å·¥ä½œï¼ˆï½—ï½ï½’ï½‹ï¼‰äºŒåæ¬¡æ–¹å¯å‡ºå»ã€‚\n",
         ]) ); 
     set("no_magic", 1);
     set("no_fight", 1);
@@ -31,7 +31,7 @@ LONG
 } 
 void init(){
         add_action("do_work", "work");
-    if(!wizardp(this_player()) && this_player()->query("marks/ÓĞÉË·ç»¯")){
+    if(!wizardp(this_player()) && this_player()->query("marks/æœ‰ä¼¤é£åŒ–")){
             "/cmds/std/look"->look_room(this_player(),this_object());
             this_player()->set("startroom", __FILE__);
             add_action("do_quit","quit");
@@ -44,8 +44,8 @@ int do_work(){
         i = me->query_temp("jail_work");
         gin = me->query("jing");
         sen = me->query("qi");
-        if(me->is_busy()) return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜ¹¤×÷¡£\n");
-        message_vision("$NĞÁ¿àµÄ¹¤×÷ÀÛµÄÒªËÀ\n", me);
+        if(me->is_busy()) return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½å·¥ä½œã€‚\n");
+        message_vision("$Nè¾›è‹¦çš„å·¥ä½œç´¯çš„è¦æ­»\n", me);
         if(me->query("jing") > 1){
                 me->add("jing",-(gin/10));
         }
@@ -61,20 +61,20 @@ int valid_leave(object me, string dir){
         
         if(obj = present("yu zu", this_object())) {
                 if(dir == "west" ) {
-                        if(me->query("marks/ÓĞÉË·ç»¯") && me->query_temp("jail_work") < 20){
-                                return notify_fail("Óü×äºÈµÀ£º¡°Õ¾×¡£¬»¹Ã»ÓĞ×÷Íê¹¤¾ÍÏë×ß£¿¡±\n");
-                        } else if(me->query_temp("Ì½¼à")){
-                                me->delete_temp("Ì½¼à");
-                        } else if(me->query("marks/ÓĞÉË·ç»¯")){
-                                me->delete("marks/ÓĞÉË·ç»¯");
+                        if(me->query("marks/æœ‰ä¼¤é£åŒ–") && me->query_temp("jail_work") < 20){
+                                return notify_fail("ç‹±å’å–é“ï¼šâ€œç«™ä½ï¼Œè¿˜æ²¡æœ‰ä½œå®Œå·¥å°±æƒ³èµ°ï¼Ÿâ€\n");
+                        } else if(me->query_temp("æ¢ç›‘")){
+                                me->delete_temp("æ¢ç›‘");
+                        } else if(me->query("marks/æœ‰ä¼¤é£åŒ–")){
+                                me->delete("marks/æœ‰ä¼¤é£åŒ–");
                         } 
                         me->delete_temp("jail_work");
                 }
                 if(dir == "east"){
-                        if( me->query("marks/ÓĞÉË·ç»¯")){
-                                return notify_fail("Óü×äºÙºÙĞ¦µÀ£º¡°ÔõÃ´Ñù£¿Ïë×øÀÎÂğ£¿¡±\n");
-                        } else if(!me->query_temp("Ì½¼à")) {
-                                return notify_fail("Óü×äËµµÀ£º¡°ÀÎ·¿ÖØµØ£¬ÏĞÈËÄªÈç¡£¡±\n");
+                        if( me->query("marks/æœ‰ä¼¤é£åŒ–")){
+                                return notify_fail("ç‹±å’å˜¿å˜¿ç¬‘é“ï¼šâ€œæ€ä¹ˆæ ·ï¼Ÿæƒ³åç‰¢å—ï¼Ÿâ€\n");
+                        } else if(!me->query_temp("æ¢ç›‘")) {
+                                return notify_fail("ç‹±å’è¯´é“ï¼šâ€œç‰¢æˆ¿é‡åœ°ï¼Œé—²äººè«å¦‚ã€‚â€\n");
                         } 
                 }
         }

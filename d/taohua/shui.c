@@ -10,11 +10,11 @@ int do_save();
 
 void create()
 {
-	set("short", HIB"Ë®"NOR);
+	set("short", HIB"æ°´"NOR);
 	set("long", @LONG
-ÕâÀïÊÇÎåÐÐ²ãµÄË®£¬ÄãÒ»×ßÏÂÀ´£¬ÍùÉÏµÄÌúÌÝ¾Í±»³·µôÁË¡£ÎåÐÐ²ãµÄ¹¹¾Ö
-»¥ÏàÁ¬Í¨£¬½øÈëºó¾ÍÃÔÊ§ÁË·½Ïò¡£Ã¿Ò»ÐÐÓëÆäËûËÄÐÐµÄ¹ØÏµÊÇÉú¡¢±»Éú¡¢¿Ë¡¢
-±»¿Ë¡£
+è¿™é‡Œæ˜¯äº”è¡Œå±‚çš„æ°´ï¼Œä½ ä¸€èµ°ä¸‹æ¥ï¼Œå¾€ä¸Šçš„é“æ¢¯å°±è¢«æ’¤æŽ‰äº†ã€‚äº”è¡Œå±‚çš„æž„å±€
+äº’ç›¸è¿žé€šï¼Œè¿›å…¥åŽå°±è¿·å¤±äº†æ–¹å‘ã€‚æ¯ä¸€è¡Œä¸Žå…¶ä»–å››è¡Œçš„å…³ç³»æ˜¯ç”Ÿã€è¢«ç”Ÿã€å…‹ã€
+è¢«å…‹ã€‚
 LONG
 	);
 	set("exits", ([ 
@@ -49,20 +49,20 @@ void init()
 		me->set_temp("wuxing_total", 6);
 		me->set_temp("wuxing_step", 1);
 		me->set_temp("wuxing_error", 1);
-		tempstr = "ÓÉÓÚ";
-		if (me->query_temp("liangyi") < 0) tempstr += "Îó¶ÏÁ½ÒÇ";
-		if (me->query_temp("sixiang") < 0) tempstr += "ÂÒÈëËÄÏó";
-		if (me->query_temp("wuxing") < 0) tempstr += "´íÌ¤ÎåÐÐ";
-		me->set_temp("last_damage_from", tempstr + "£¬´¥·¢ÕóÖÐ»ú¹Ø¶ø±»Éä");
+		tempstr = "ç”±äºŽ";
+		if (me->query_temp("liangyi") < 0) tempstr += "è¯¯æ–­ä¸¤ä»ª";
+		if (me->query_temp("sixiang") < 0) tempstr += "ä¹±å…¥å››è±¡";
+		if (me->query_temp("wuxing") < 0) tempstr += "é”™è¸äº”è¡Œ";
+		me->set_temp("last_damage_from", tempstr + "ï¼Œè§¦å‘é˜µä¸­æœºå…³è€Œè¢«å°„");
 	}
 	if (me->query_temp("sixiang") < 0 || me->query_temp("liangyi") < 0) 
 		me->set_temp("wuxing", -1);
 	if (me->query_temp("wuxing_error") == 6) {
-		tempstr = "ÓÉÓÚÄã";
-		if (me->query_temp("liangyi") < 0) tempstr += "Îó¶ÏÁ½ÒÇ";
-		if (me->query_temp("sixiang") < 0) tempstr += "ÂÒÈëËÄÏó";
-		if (me->query_temp("wuxing") < 0) tempstr += "´íÌ¤ÎåÐÐ";
-		write(tempstr + "£¬±»Ò»¹É´óÁ¦Ë¦³öÁËÕó£¬ÕýºÃË¤µ½Ò»¿éÑÒÊ¯ÉÏ£¡\n"); 
+		tempstr = "ç”±äºŽä½ ";
+		if (me->query_temp("liangyi") < 0) tempstr += "è¯¯æ–­ä¸¤ä»ª";
+		if (me->query_temp("sixiang") < 0) tempstr += "ä¹±å…¥å››è±¡";
+		if (me->query_temp("wuxing") < 0) tempstr += "é”™è¸äº”è¡Œ";
+		write(tempstr + "ï¼Œè¢«ä¸€è‚¡å¤§åŠ›ç”©å‡ºäº†é˜µï¼Œæ­£å¥½æ‘”åˆ°ä¸€å—å²©çŸ³ä¸Šï¼\n"); 
 		me->delete_temp("wuxing");
 		me->delete_temp("liangyi");
 		me->delete_temp("sixiang");
@@ -74,7 +74,7 @@ void init()
 		return;
 	}
 	if (me->query_temp("wuxing_step") == me->query_temp("wuxing_total")) {
-		write("Äã½«ÎåÐÐÌ¤±é£¬ÖÕÓÚ´ÓÃÔÕó×ßÁË³öÀ´¡£\n"); 
+		write("ä½ å°†äº”è¡Œè¸éï¼Œç»ˆäºŽä»Žè¿·é˜µèµ°äº†å‡ºæ¥ã€‚\n"); 
 		me->delete_temp("wuxing");
 		me->delete_temp("liangyi");
 		me->delete_temp("sixiang");
@@ -88,13 +88,13 @@ void init()
 
 int do_save()
 {
-	write("ÕâÀï²»×¼´æÅÌ£¡\n");
+	write("è¿™é‡Œä¸å‡†å­˜ç›˜ï¼\n");
 	return 1;
 }
 
 int do_quit()
 {
-	write("ÕâÀï²»×¼ÍË³ö£¡\n");
+	write("è¿™é‡Œä¸å‡†é€€å‡ºï¼\n");
 	return 1;
 }
 
@@ -105,7 +105,7 @@ int valid_leave(object me, string dir)
 	if (!me->query_temp("wuxing_leave") && (dir == "tu" || dir == "huo" || dir == "mu" || dir == "jin")) {
 		me->set_temp("wuxing_leave", 1);
 		if (wuxing < 0) {
-			write("ÕóÖÐ»ú¹ØºöÈ»´ó×÷£¬ÊýµÀÇàÃ¢ºìÃ¢»÷ÖÐÁËÄã£¬ÄãÖ»¾õÈ«ÉíÍ´³þ£¬ÒâÊ¶Ò²ÓÐÐ©Ä£ºýÁË£¡\n");
+			write("é˜µä¸­æœºå…³å¿½ç„¶å¤§ä½œï¼Œæ•°é“é’èŠ’çº¢èŠ’å‡»ä¸­äº†ä½ ï¼Œä½ åªè§‰å…¨èº«ç—›æ¥šï¼Œæ„è¯†ä¹Ÿæœ‰äº›æ¨¡ç³Šäº†ï¼\n");
 			me->receive_wound("jing", 200);
 			me->receive_wound("qi", 500);
 			me->add_temp("wuxing_error", 1);
@@ -114,7 +114,7 @@ int valid_leave(object me, string dir)
 			switch (dir) {
 				case "huo":
 					if (wuxing == 1) {
-						write("ÕóÖÐ»ú¹ØºöÈ»·¢×÷£¬Ò»µÀºìÃ¢»÷ÖÐÁËÄã£¬ÄãÖ»¾õÒ»ÕóÍ´³þ£¡\n");
+						write("é˜µä¸­æœºå…³å¿½ç„¶å‘ä½œï¼Œä¸€é“çº¢èŠ’å‡»ä¸­äº†ä½ ï¼Œä½ åªè§‰ä¸€é˜µç—›æ¥šï¼\n");
 						me->receive_damage("qi", 100);
 						me->add_temp("wuxing_error", 1);
 					}
@@ -127,7 +127,7 @@ int valid_leave(object me, string dir)
 						me->add_temp("wuxing_total", 1);
 					}
 					else {
-						write("ÕóÖÐ»ú¹ØºöÈ»´ó×÷£¬ÊýµÀÇàÃ¢ºìÃ¢»÷ÖÐÁËÄã£¬ÄãÖ»¾õÈ«ÉíÍ´³þ£¬ÒâÊ¶Ò²ÓÐÐ©Ä£ºýÁË£¡\n");
+						write("é˜µä¸­æœºå…³å¿½ç„¶å¤§ä½œï¼Œæ•°é“é’èŠ’çº¢èŠ’å‡»ä¸­äº†ä½ ï¼Œä½ åªè§‰å…¨èº«ç—›æ¥šï¼Œæ„è¯†ä¹Ÿæœ‰äº›æ¨¡ç³Šäº†ï¼\n");
 						me->receive_wound("jing", 100);
 						me->receive_wound("qi", 100);
 						me->add_temp("wuxing_error", 1);
@@ -136,7 +136,7 @@ int valid_leave(object me, string dir)
 
 				case "tu":
 					if (wuxing == 1) {
-						write("ÕóÖÐ»ú¹ØºöÈ»´ó×÷£¬ÊýµÀÇàÃ¢ºìÃ¢»÷ÖÐÁËÄã£¬ÄãÖ»¾õÈ«ÉíÍ´³þ£¬ÒâÊ¶Ò²ÓÐÐ©Ä£ºýÁË£¡\n");
+						write("é˜µä¸­æœºå…³å¿½ç„¶å¤§ä½œï¼Œæ•°é“é’èŠ’çº¢èŠ’å‡»ä¸­äº†ä½ ï¼Œä½ åªè§‰å…¨èº«ç—›æ¥šï¼Œæ„è¯†ä¹Ÿæœ‰äº›æ¨¡ç³Šäº†ï¼\n");
 						me->receive_wound("jing", 100);
 						me->receive_wound("qi", 100);
 						me->add_temp("wuxing_error", 1);
@@ -150,7 +150,7 @@ int valid_leave(object me, string dir)
 					if (wuxing == 1) 
 						me->add_temp("wuxing_step", 1);
 					else {
-						write("ÕóÖÐ»ú¹ØºöÈ»·¢×÷£¬Ò»µÀÇàÃ¢»÷ÖÐÁËÄã£¬ÄãÖ»¾õÒ»ÕóÔÎÑ££¡\n");
+						write("é˜µä¸­æœºå…³å¿½ç„¶å‘ä½œï¼Œä¸€é“é’èŠ’å‡»ä¸­äº†ä½ ï¼Œä½ åªè§‰ä¸€é˜µæ™•çœ©ï¼\n");
 						me->receive_damage("jing", 100);
 						me->add_temp("wuxing_error", 1);
 					}

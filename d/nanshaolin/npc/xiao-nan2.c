@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡É³ÃÖ", ({ "xiao shami", "xiao", "shami"}));
-	set("long", "ËûÊÇÒ»Î»Î´Í¨ÊÀ¹ÊµÄÉÙÄêºÍÉĞ£¬Á³ÉÏ¹Ò×ÅÌìÕæµÄÖÉĞ¦¡£\n");
+	set_name("å°æ²™å¼¥", ({ "xiao shami", "xiao", "shami"}));
+	set("long", "ä»–æ˜¯ä¸€ä½æœªé€šä¸–æ•…çš„å°‘å¹´å’Œå°šï¼Œè„¸ä¸ŠæŒ‚ç€å¤©çœŸçš„ç¨šç¬‘ã€‚\n");
 
-	set("nickname", "ÊÌÕ«É®");
-	set("gender", "ÄĞĞÔ");
+	set("nickname", "ä¾æ–‹åƒ§");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
@@ -31,7 +31,7 @@ void create()
 	set_skill("unarmed", 9);
 	set_skill("parry", 9);
 
-        create_family("ÄÏÉÙÁÖÅÉ", 23, "µÜ×Ó");
+        create_family("å—å°‘æ—æ´¾", 23, "å¼Ÿå­");
 	setup();
 }
 
@@ -51,7 +51,7 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say("Ğ¡É³ÃÖ¹ªÉíËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+"ÇëÏÈÈë×ù¡£\n");
+	say("å°æ²™å¼¥èº¬èº«è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(ob)+"è¯·å…ˆå…¥åº§ã€‚\n");
 }
 
 void serve_food(object who)
@@ -64,7 +64,7 @@ void serve_food(object who)
 	if( !objectp(room = environment()) ) return;
  	ob = new(__DIR__"mizhi-tianou");
 	ob->move(room);
-	message_vision("Ğ¡É³ÃÖ¶ËÀ´Ò»ÅÌÃÛÖ­ÌğÅº·ÅÔÚ×ÀÉÏ£®\n", who);
+	message_vision("å°æ²™å¼¥ç«¯æ¥ä¸€ç›˜èœœæ±ç”œè—•æ”¾åœ¨æ¡Œä¸Šï¼\n", who);
 	
 	return;
 }

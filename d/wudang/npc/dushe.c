@@ -5,16 +5,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("����", ({ "snake", "she" }) );
-        set("race", "Ұ��");
+        set_name("毒蛇", ({ "snake", "she" }) );
+        set("race", "野兽");
         set("age", 4);
-        set("long", "һֻ�����������Դ����ߣ�β��ɳɳ���졣\n");
+        set("long", "一只有着三角形脑袋的蛇，尾巴沙沙做响。\n");
         set("attitude", "peaceful");
 
         set("str", 26);
         set("cor", 30);
 
-        set("limbs", ({ "ͷ��", "����", "�ߴ�", "β��" }) );
+        set("limbs", ({ "头部", "身体", "七寸", "尾巴" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 1000);
@@ -40,7 +40,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$Nž��һ���ϳ����أ�$N���ˡ�\n", this_object());
+        message_vision("$N啪的一声断成两截！$N死了。\n", this_object());
         destruct(this_object());
 }
 

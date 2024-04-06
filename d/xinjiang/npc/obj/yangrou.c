@@ -3,20 +3,20 @@ inherit THROWING;
 inherit F_FOOD;
 void create()
 {
-        set_name("¿¾ÑòÈâ´®", ({ "fried sheep meat", "sheep", "meat" }) );
+        set_name("çƒ¤ç¾Šè‚‰ä¸²", ({ "fried sheep meat", "sheep", "meat" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´®¿¾µÃÓÖÏãÓÖÈÈÓÖÀ±µÄÑòÈâ´®£¡ºÃ³Ô°¡£¡\n");
-                set("unit", "°Ñ");
-                set("base_unit", "´®");
+                set("long", "ä¸€ä¸²çƒ¤å¾—åˆé¦™åˆçƒ­åˆè¾£çš„ç¾Šè‚‰ä¸²ï¼å¥½åƒå•Šï¼\n");
+                set("unit", "æŠŠ");
+                set("base_unit", "ä¸²");
                 set("base_weight", 40);
                 set("value", 25);
                 set("value", 25);
                 set("food_remaining", 4);
                 set("food_supply", 40);
-                set("wield_msg", "$N×¥ÆğÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
                 set("material", "bamboo");
         }
         set_amount(1);
@@ -25,8 +25,8 @@ void create()
 int finish_eat()
 {
         if( !query("weapon_prop") ) return 0;
-        set_name("²åÑòÈâ´®µÄÖñÌõ", ({ "bamboo stick" }) );
+        set_name("æ’ç¾Šè‚‰ä¸²çš„ç«¹æ¡", ({ "bamboo stick" }) );
         set_weight(150);
-        set("long", "Ò»¸ùÓÃÀ´²åÑòÈâ´®µÄÖñÌõ\n");
+        set("long", "ä¸€æ ¹ç”¨æ¥æ’ç¾Šè‚‰ä¸²çš„ç«¹æ¡\n");
         return 1;
 }       

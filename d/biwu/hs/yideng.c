@@ -7,13 +7,13 @@ void consider();
 
 void create()
 {
-    set_name("Ò»µÆ´óÊ¦", ({"yideng dashi", "dashi", "yideng"}));
-    set("title", HIC "ÄÏµÛ" NOR );
-    set("gender", "ÄÐÐÔ");
+    set_name("ä¸€ç¯å¤§å¸ˆ", ({"yideng dashi", "dashi", "yideng"}));
+    set("title", HIC "å—å¸" NOR );
+    set("gender", "ç”·æ€§");
     set("age", 52);
     set("long", 
-        "Ëû¾ÍÊÇºÅ³Æ¡¸ÄÏµÛ¡¹µÄÒ»µÆ´óÊ¦£¬Ë×Ãû¶ÎÖÇÐË£¬ÏÖÒÑÑ·Î»ÎªÉ®¡£\n"
-        "´óÊ¦Ò»ÉúÐÐÉÆ£¬»ýµÂÎÞÇî¡£\n");
+        "ä»–å°±æ˜¯å·ç§°ã€Œå—å¸ã€çš„ä¸€ç¯å¤§å¸ˆï¼Œä¿—åæ®µæ™ºå…´ï¼ŒçŽ°å·²é€Šä½ä¸ºåƒ§ã€‚\n"
+        "å¤§å¸ˆä¸€ç”Ÿè¡Œå–„ï¼Œç§¯å¾·æ— ç©·ã€‚\n");
     set("attitude", "peaceful");
     set("class", "scholar");
 	
@@ -106,8 +106,8 @@ int heal_up()
 void leave()
 {
 	object owner;
-	message("vision",HIG"±ÈÎä½áÊø£¡\n\n"
-		+ name() + HIG"ÉíÐÎÒ»ÉÁ£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+	message("vision",HIG"æ¯”æ­¦ç»“æŸï¼\n\n"
+		+ name() + HIG"èº«å½¢ä¸€é—ªï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -134,7 +134,7 @@ if (!me->query_skill("jiuyin-zhengong",1)
 && me->query_temp("hsljn"))
 {
 me->set_temp("hslj/3",1);
-message("channel:chat", "¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "´ò°ÜÁË"+ob->query("title")+ob->query("name")+"!"NOR"\n", users());
+message("channel:chat", "ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "æ‰“è´¥äº†"+ob->query("title")+ob->query("name")+"!"NOR"\n", users());
         me->add("combat_exp",300);
         me->add("potential",100);
 }

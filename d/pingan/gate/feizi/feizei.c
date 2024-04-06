@@ -1,16 +1,16 @@
 // feizei.c
-//ĞÇĞÇ(lywin)2000/5/30ÎªÒ»¸öÈÎÎñÏµÍ³Ğ´´Ënpc
+//æ˜Ÿæ˜Ÿ(lywin)2000/5/30ä¸ºä¸€ä¸ªä»»åŠ¡ç³»ç»Ÿå†™æ­¤npc
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡Ã«Ôô",({ "mao zei","zei" }) );
-	set("title",HIY"·ÉÌì¶İµØ"NOR);
-        set("gender", "ÄĞĞÔ" );
+	set_name("å°æ¯›è´¼",({ "mao zei","zei" }) );
+	set("title",HIY"é£å¤©éåœ°"NOR);
+        set("gender", "ç”·æ€§" );
         set("long", 
-"ÕâÊÇÎŞ¶ñ²»×öµÄĞ¡Ã«Ôô£¬±³ÉÏÓĞÒ»¸öĞ¡Ğ¡°ü¹ü£¬¿´Ñù×ÓÊÇ²ÅÍµÁË²»ÉÙÒø×Ó¡£\n");
+"è¿™æ˜¯æ— æ¶ä¸åšçš„å°æ¯›è´¼ï¼ŒèƒŒä¸Šæœ‰ä¸€ä¸ªå°å°åŒ…è£¹ï¼Œçœ‹æ ·å­æ˜¯æ‰å·äº†ä¸å°‘é“¶å­ã€‚\n");
 
 	set("int", 20);
 	set("str", 20);
@@ -70,13 +70,13 @@ int heal_up()
 
 void leave()
 {
-        message("vision",HIB+name()+"¼±¼±Ã¦Ã¦µØ×ß¿ªÁË¡£\n" NOR, 
+        message("vision",HIB+name()+"æ€¥æ€¥å¿™å¿™åœ°èµ°å¼€äº†ã€‚\n" NOR, 
                 environment(), this_object() );
         destruct(this_object());
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃhalt£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨haltï¼\n");
         return 1;
 }

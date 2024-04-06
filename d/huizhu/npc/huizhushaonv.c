@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-   set_name("»Ø×åÉÙÅ®",({"shao nv"}));
-   set("gender","Å®ĞÔ");
+   set_name("å›æ—å°‘å¥³",({"shao nv"}));
+   set("gender","å¥³æ€§");
    set("combat_exp",4000);
-   set("area_name","»Ø×åÄÁÈº");
+   set("area_name","å›æ—ç‰§ç¾¤");
    set("score",300);
    
 set("per",25);

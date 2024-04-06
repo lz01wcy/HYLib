@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-        set_name("ÎâÅÖ×Ó", ({ "wu pangzi", "wu"}) );
-        set("title", "³øÊ¦");
-        set("gender", "ÄĞĞÔ");
+        set_name("å´èƒ–å­", ({ "wu pangzi", "wu"}) );
+        set("title", "å¨å¸ˆ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-"ÎâÅÖ×Ó³¨×ÅÒÂ·ş,Â¶³öĞØÇ°µÄÒ»´ÔºÚÃ«,ÕıÃ¦µÃÍÅÍÅ×ª\n"
+"å´èƒ–å­æ•ç€è¡£æœ,éœ²å‡ºèƒ¸å‰çš„ä¸€ä¸›é»‘æ¯›,æ­£å¿™å¾—å›¢å›¢è½¬\n"
                ); 
 
         set("attitude", "peaceful");

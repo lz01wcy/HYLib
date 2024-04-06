@@ -2,16 +2,16 @@
 #include <ansi.h>
 inherit ROOM;
 
-#define JOBNAME "¹óÑô"
+#define JOBNAME "è´µé˜³"
 
 void create ()
 {
-  set ("short","ÑôÃ÷ìô");
+  set ("short","é˜³æ˜Žç¥ ");
   set ("long", @LONG
-ÑôÃ÷ÏÈÉúÊÅÊÀºó£¬¹óÑôÈËÎª¼ÍÄîËû¶øÐÞ½¨¸Ãìô¡£ìôÄÚµîÌÃÖÐ£¬
-ÓÐÍõÑôÃ÷ÏÈÉúºº°×Óñ×øÏñ£¬Á½²àÎªÏÈÉúÊÖÊé£º¡°×³Ë¼·ç·É³åÇéÔÆÉÏ
-£¬ºÍ¹â´ºö°Ë¬ÆøÇï¸ß¡±Ä¾¿Ì¶ÔÁª¡£µîÌÃÍâ±®ÀÈÓÐÍõÑôÃ÷ÏÈÉúÊÖÊé¡¶
-½ÃÍ¤¼Ç¡·ºÍ¼ÒÊéÎÄ¸å¼°Ñà·þ»­Ïñ¡£
+é˜³æ˜Žå…ˆç”Ÿé€ä¸–åŽï¼Œè´µé˜³äººä¸ºçºªå¿µä»–è€Œä¿®å»ºè¯¥ç¥ ã€‚ç¥ å†…æ®¿å ‚ä¸­ï¼Œ
+æœ‰çŽ‹é˜³æ˜Žå…ˆç”Ÿæ±‰ç™½çŽ‰ååƒï¼Œä¸¤ä¾§ä¸ºå…ˆç”Ÿæ‰‹ä¹¦ï¼šâ€œå£®æ€é£Žé£žå†²æƒ…äº‘ä¸Š
+ï¼Œå’Œå…‰æ˜¥éœ­çˆ½æ°”ç§‹é«˜â€æœ¨åˆ»å¯¹è”ã€‚æ®¿å ‚å¤–ç¢‘å»Šæœ‰çŽ‹é˜³æ˜Žå…ˆç”Ÿæ‰‹ä¹¦ã€Š
+çŸ«äº­è®°ã€‹å’Œå®¶ä¹¦æ–‡ç¨¿åŠç‡•æœç”»åƒã€‚
 LONG);
 
   set("exits", ([ 

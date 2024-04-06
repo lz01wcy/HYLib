@@ -2,17 +2,17 @@
 inherit BLADE; 
 void create()
 {
-        set_name("ÆÆÍäµ¶", ({ "blade" }) );
+        set_name("ç ´å¼¯åˆ€", ({ "blade" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÉúÁËĞâ¡¢±ÀÁË¿Ú¶ùµÄÍäµ¶");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠç”Ÿäº†é”ˆã€å´©äº†å£å„¿çš„å¼¯åˆ€");
                 set("value", 200);
                 set("material", "steel");
-        set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»°ÑÉúÁËĞâ¡¢±ÀÁË¿Ú¶ùµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æŠ½å‡ºä¸€æŠŠç”Ÿäº†é”ˆã€å´©äº†å£å„¿çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nåˆ«åœ¨è…°é—´ã€‚\n");
         }
         ::init_blade(57);   
 }   

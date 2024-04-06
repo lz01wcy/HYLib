@@ -5,19 +5,19 @@ inherit HEAD;
 
 void create()
 {
-          set_name(HIY"½ğîÎ"NOR, ({"jin chai","jin","chai"}));
+          set_name(HIY"é‡‘é’—"NOR, ({"jin chai","jin","chai"}));
 	set_weight(100);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
         set("long",
-                "\nÕâÊÇÒ»Ö§¾«ÖÂÆ¯ÁÁµÄ½ğîÎ£¬îÎÉÏÒ»¿ÅÃ÷ÖéÓÖ´óÓÖÔ²£¬±¦¹âÓ¨È»¡£\n");
-		set("unit", "¸ö");
+                "\nè¿™æ˜¯ä¸€æ”¯ç²¾è‡´æ¼‚äº®çš„é‡‘é’—ï¼Œé’—ä¸Šä¸€é¢—æ˜ç åˆå¤§åˆåœ†ï¼Œå®å…‰è¹ç„¶ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 3000);
 		set("armor_prop/armor", 0);
 		set("armor_prop/personality", 3);
-		set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-		set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+		set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+		set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
 
 		set("female_only", 1);
 

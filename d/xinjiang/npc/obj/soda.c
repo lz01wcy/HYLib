@@ -3,19 +3,19 @@ inherit ITEM;
 inherit F_LIQUID;
 void create()
 {
-    set_name("Å£Æ¤´ü", ({ "cow skin", "skin" }) );
+    set_name("ç‰›çš®è¢‹", ({ "cow skin", "skin" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÅ£Æ¤·ìµÄ´ü£¬´ó¸Å×°µÃ°Ë¡¢¾ÅÉıµÄÒºÌå¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªç‰›çš®ç¼çš„è¢‹ï¼Œå¤§æ¦‚è£…å¾—å…«ã€ä¹å‡çš„æ¶²ä½“ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 20);
                 set("max_liquid", 15);
         } 
         set("liquid", ([
                 "type": "water",
-                "name": "É³¼¬Ö­",
+                "name": "æ²™æ£˜æ±",
                 "remaining": 15,
                 "drunk_apply": 0,
         ]) );

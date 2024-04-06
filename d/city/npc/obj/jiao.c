@@ -10,12 +10,12 @@ void init()
 }
 void create()
 {
-        set_name(CYN"À¶ÄØ¹Ù½Î"NOR, ({"jiao",}));
+        set_name(CYN"è“å‘¢å®˜è½¿"NOR, ({"jiao",}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¶¥À¼ÄØ´ó¹Ù½Î£¬ÊÇÑïÖİÖª¸®ºÍ³É¶¼Ìá¶½¹²Í¬³ö×ÊÉèÁ¢µÄ£¬Íù·µÁ½µØµÄ¿ì½Î¡£\n");
-                set("unit", "¶¥");
+                set("long", "è¿™æ˜¯ä¸€é¡¶å…°å‘¢å¤§å®˜è½¿ï¼Œæ˜¯æ‰¬å·çŸ¥åºœå’Œæˆéƒ½æç£å…±åŒå‡ºèµ„è®¾ç«‹çš„ï¼Œå¾€è¿”ä¸¤åœ°çš„å¿«è½¿ã€‚\n");
+                set("unit", "é¡¶");
                 set("no_get", 1);
                 set("no_steal", 1);
                 set("no_beg", 1);
@@ -28,12 +28,12 @@ int do_enter(string arg)
 {
 	object room, me = this_player();
         if( !arg || arg!="jiao" ) return 0;
-        message_vision("$NÒ»¹şÑüÏÆ¿ª½ÎÁ±Íù½ÎÀï×ê½øÈ¥¡£\n\n", me ) ;
+        message_vision("$Nä¸€å“ˆè…°æ€å¼€è½¿å¸˜å¾€è½¿é‡Œé’»è¿›å»ã€‚\n\n", me ) ;
         if( !(room = find_object(__DIR__"jiaonei")) )
             room = load_object(__DIR__"jiaonei");
         if( room = find_object(__DIR__"jiaonei") ) 
 	me->move(room);
-	message("vision", me->name() + "´Ó½ÎÍâ×êÁË½øÀ´¡£\n\n",
+	message("vision", me->name() + "ä»è½¿å¤–é’»äº†è¿›æ¥ã€‚\n\n",
 		environment(me), ({me}) );
         call_out("reach", 20, me);
 	return 1;
@@ -41,6 +41,6 @@ int do_enter(string arg)
 
 void reach(object me)
 {
-        tell_object(me, "Í»È»£¬½Î×Ó¶ÙÁËÒ»ÏÂÍ£ÁËÏÂÀ´£¬È»ºóÓĞÈËËµ: µ½ÁË£¬Âä½Î¡£\n");
+        tell_object(me, "çªç„¶ï¼Œè½¿å­é¡¿äº†ä¸€ä¸‹åœäº†ä¸‹æ¥ï¼Œç„¶åæœ‰äººè¯´: åˆ°äº†ï¼Œè½è½¿ã€‚\n");
         me->move("/d/city3/eastroad1");
 }

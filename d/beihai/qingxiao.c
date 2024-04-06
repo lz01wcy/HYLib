@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����¥");
+	set("short", "庆宵楼");
 	set("long", @LONG
-��������¥Ϊһ��ɽ��֮���㽨����Ъɽ�����ϲ��������ȣ��Ƕ�
-�չ۱���֮����վ�������������Ŀ������������ľ�ɫ��
+这座庆霄楼为一踞山半之二层建筑，歇山顶。上层四周挑廊，是冬
+日观冰嬉之所。站在这里可以清楚的看见琼岛以西的景色。
 LONG
 	);
 	set("exits", ([

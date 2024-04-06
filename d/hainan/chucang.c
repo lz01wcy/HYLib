@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short","°×ÔÆâÖ´¢²ØÊÒ");
+	set("short","ç™½äº‘åºµå‚¨è—å®¤");
 	set("long", @LONG
-ÓÃÇàÊ¯ÀİÆğÀ´µÄÒ»¼ä´¢²ØÊÒ.¿¿×ó±ßÇ½½ÇÓĞÕÅ´².....ÒòÎª¿ªÁËÍ¸Æø´°
-µÄÔ­Òò,ËùÒÔÒ»µã¶¼²»ÏÔµÃÆøÃÆ.
+ç”¨é’çŸ³å’èµ·æ¥çš„ä¸€é—´å‚¨è—å®¤.é å·¦è¾¹å¢™è§’æœ‰å¼ åºŠ.....å› ä¸ºå¼€äº†é€æ°”çª—
+çš„åŸå› ,æ‰€ä»¥ä¸€ç‚¹éƒ½ä¸æ˜¾å¾—æ°”é—·.
 LONG
 	);
 	set("no_clean_up", 0);
@@ -29,10 +29,10 @@ int do_fan(string arg)
 {
         object me,ob;   
         me = this_player();
-        if (arg != "´²°å") return 0;
-        if (me->query("family/family_name") != "°×ÔÆâÖ")
-                return notify_fail("ÄãÒª¸ÉÊ²Ã´£¡£¡£¡\n");
-        message_vision("$NÏÆ¿ª´²°å£¬ºöÈ»·¢ÏÖÊÇÒ»¸öµØµÀµÄÈë¿Ú£¬ÄãµôÁËÏÂÈ¥¡£¡£¡£¡£\n\n",me);
+        if (arg != "åºŠæ¿") return 0;
+        if (me->query("family/family_name") != "ç™½äº‘åºµ")
+                return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼ï¼ï¼\n");
+        message_vision("$Næ€å¼€åºŠæ¿ï¼Œå¿½ç„¶å‘ç°æ˜¯ä¸€ä¸ªåœ°é“çš„å…¥å£ï¼Œä½ æ‰äº†ä¸‹å»ã€‚ã€‚ã€‚ã€‚\n\n",me);
         me->move(__DIR__"mishi");
         me->start_busy(2);
         return 1;

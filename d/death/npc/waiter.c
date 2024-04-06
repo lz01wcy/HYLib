@@ -4,15 +4,15 @@ inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-	set_name("ÂíÀÏËÄ", ({ "max" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é©¬è€å››", ({ "max" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 62);
 	set("long",
-		"ÕâÎ»µê¼ÒÂúÁ³ºÚÆø£¬Ó¡ÌÃ·¢ºÚ£¬Ò»Éí°×ÒÂ·ş£¬¾ÍÏó¸Õ¸Õ³öéë»ØÀ´Ò»Ñù\n");
+		"è¿™ä½åº—å®¶æ»¡è„¸é»‘æ°”ï¼Œå°å ‚å‘é»‘ï¼Œä¸€èº«ç™½è¡£æœï¼Œå°±è±¡åˆšåˆšå‡ºæ®¡å›æ¥ä¸€æ ·\n");
 	set("combat_exp", 500);
 	set("attitude", "friendly");
 	set_temp("apply/astral_vision",1);
-	set("rank_info/respect", "ÀÏµê¼Ò");
+	set("rank_info/respect", "è€åº—å®¶");
 	set("vendor_goods", ([
 		__DIR__"obj/pumpkin" : 10,
 		__DIR__"obj/wineskin": 20,
@@ -35,16 +35,16 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(3) ) {
 		case 0:
-			say( "ÂíÀÏËÄµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬Í¶Ì¥£®£®£¬Å¶Å¶£®£®²»£¬²»£¬Í¶ËŞÂğ£¿\n");
+			say( "é©¬è€å››é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼ŒæŠ•èƒï¼ï¼ï¼Œå“¦å“¦ï¼ï¼ä¸ï¼Œä¸ï¼ŒæŠ•å®¿å—ï¼Ÿ\n");
 			break;
 		case 1:
-			say( "ÂíÀÏËÄµÀ£º" + RANK_D->query_respect(ob)
-				+ "£¬Çë½øÇë½ø,ÔçÍ¶ËŞ£¬ÔçÆğÀ´¡£\n");
+			say( "é©¬è€å››é“ï¼š" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¯·è¿›è¯·è¿›,æ—©æŠ•å®¿ï¼Œæ—©èµ·æ¥ã€‚\n");
 			break;
 		case 2:
-			say( "ÂíÀÏËÄ¿ÈµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬½øÀ´ºÈ¼¸ÖÑĞ¡µêµÄ»¹Ñô¾Æ°É£¡\n");
+			say( "é©¬è€å››å’³é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¿›æ¥å–å‡ ç›…å°åº—çš„è¿˜é˜³é…’å§ï¼\n");
 			break;
 	}
 }

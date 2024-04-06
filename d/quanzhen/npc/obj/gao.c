@@ -1,4 +1,4 @@
-// gao.c ¹êÜß¸à
+// gao.c é¾Ÿè‹“è†
 // By Lgg,1998.10
 
 inherit ITEM;
@@ -11,10 +11,10 @@ void init()
 
 void create()
 {
-        set_name(HIW"¹êÜß¸à"NOR, ({"guiling gao","gao"}));
+        set_name(HIW"é¾Ÿè‹“è†"NOR, ({"guiling gao","gao"}));
         set_weight(3000);
-        set("unit", "¿é");
-        set("long", "ÕâÊÇÒ»¿éÓÃÎÚ¹ê¼×ºÍÜòÜßÅäÖÃ³ÉµÄ¹êÜß¸à£¬¹¦ÄÜÑÓÄêÒæÊÙ¡£\n");
+        set("unit", "å—");
+        set("long", "è¿™æ˜¯ä¸€å—ç”¨ä¹Œé¾Ÿç”²å’ŒèŒ¯è‹“é…ç½®æˆçš„é¾Ÿè‹“è†ï¼ŒåŠŸèƒ½å»¶å¹´ç›Šå¯¿ã€‚\n");
         setup();
 }
 
@@ -22,17 +22,17 @@ int do_eat(string arg)
 {
         object me=this_player();
 
-        if (!(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="gao")
         {
                 if ((int)me->query("max_jingli")<=300) {
-                        write(YEL"Äã³ÔÏÂÁËÒ»¿é¹êÜß¸à£¬Ö»¾õµÃ¾«Éñ½¡ÍúÖ®¼«£¬¾«Á¦Ö±
-Óû±¼ÌÚ¶ø³ö¡£\n"NOR);
+                        write(YEL"ä½ åƒä¸‹äº†ä¸€å—é¾Ÿè‹“è†ï¼Œåªè§‰å¾—ç²¾ç¥žå¥æ—ºä¹‹æžï¼Œç²¾åŠ›ç›´
+æ¬²å¥”è…¾è€Œå‡ºã€‚\n"NOR);
                         me->add("max_jingli",20);
                         me->add("jingli",20);
                 }
                 else {
-                        write("Äã³ÔÏÂÁËÒ»¿é¹êÜß¸à£¬µ«ÊÇºÃÏóÃ»Ê²Ã´ÓÃ¡£\n");
+                        write("ä½ åƒä¸‹äº†ä¸€å—é¾Ÿè‹“è†ï¼Œä½†æ˜¯å¥½è±¡æ²¡ä»€ä¹ˆç”¨ã€‚\n");
                 }
                 destruct(this_object());
                 me->unconcious();

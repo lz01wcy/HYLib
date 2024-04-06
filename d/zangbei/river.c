@@ -3,12 +3,12 @@
 string look_house(); 
 void create() 
 {
-        set("short", "Ð¡ºÓÅÏ");
+        set("short", "å°æ²³ç•”");
         set("long", @LONG
-Î¢·çÖÐ´«À´ÈªË®Á÷¶¯µÄÉùÒô£¬Äã²»Öª²»¾õµÃ×ß¹ýÈ¥£¬ÔÚÁ÷Ë®ÅÔ×øÏÂÀ´¡£Á÷Ë®Ò²
-Ðí»á¸É¿Ý£¬È´ÓÀÔ¶²»»áÍ£ÏÂÀ´,·Â·ðÓÀÔ¶²»ÖªµÀÑá¾ë£¬ËüÄÇÖÖ»îÆÃµÄÉú»úÓÀºã²»±ä¡£
-Ì¸µ­µÄÑÌÎí´ÓºÓË®ÉÏÉýÆð£¬¿´À´ÊÇÄÇÃ´ÎÂÈá£¬ÄÇÃ´ÃÀÀö£¬Èç¹ûÄã×ÝÉíÒ»Ô¾Ô¾ÈëÎíÀï£¬
-ÄãµÄ·³ÄÕºÍÍ´¿àÆñ·ÇÒ²ºÜ¿ìµØ¾Í»áËæ×ÅÕâÑÌÎíÏûÊ§£¿
+å¾®é£Žä¸­ä¼ æ¥æ³‰æ°´æµåŠ¨çš„å£°éŸ³ï¼Œä½ ä¸çŸ¥ä¸è§‰å¾—èµ°è¿‡åŽ»ï¼Œåœ¨æµæ°´æ—åä¸‹æ¥ã€‚æµæ°´ä¹Ÿ
+è®¸ä¼šå¹²æž¯ï¼Œå´æ°¸è¿œä¸ä¼šåœä¸‹æ¥,ä»¿ä½›æ°¸è¿œä¸çŸ¥é“åŽŒå€¦ï¼Œå®ƒé‚£ç§æ´»æ³¼çš„ç”Ÿæœºæ°¸æ’ä¸å˜ã€‚
+è°ˆæ·¡çš„çƒŸé›¾ä»Žæ²³æ°´ä¸Šå‡èµ·ï¼Œçœ‹æ¥æ˜¯é‚£ä¹ˆæ¸©æŸ”ï¼Œé‚£ä¹ˆç¾Žä¸½ï¼Œå¦‚æžœä½ çºµèº«ä¸€è·ƒè·ƒå…¥é›¾é‡Œï¼Œ
+ä½ çš„çƒ¦æ¼å’Œç—›è‹¦å²‚éžä¹Ÿå¾ˆå¿«åœ°å°±ä¼šéšç€è¿™çƒŸé›¾æ¶ˆå¤±ï¼Ÿ
 LONG
         );
         set("exits", ([ 
@@ -17,14 +17,14 @@ LONG
         set("item_desc",([
                 "red house":    (: look_house() :),
                 "house":        (: look_house() :),
-                "Ð¡ºìÂ¥":       (: look_house() :),
-                "ºìÂ¥":         (: look_house() :),
-                "river":        "Ò»ÌõÍäÍäÇúÇúµÄÐ¡Ïª£¬Ë®ÃæÉÏÎíÆøÃÖÂþ¡£\n",
-                "Á÷Ë®":         "Ò»ÌõÍäÍäÇúÇúµÄÐ¡Ïª£¬Ë®ÃæÉÏÎíÆøÃÖÂþ¡£\n",
-                "Ð¡ºÓ":         "Ò»ÌõÍäÍäÇúÇúµÄÐ¡Ïª£¬Ë®ÃæÉÏÎíÆøÃÖÂþ¡£\n",
-                "ºÓË®":         "Ò»ÌõÍäÍäÇúÇúµÄÐ¡Ïª£¬Ë®ÃæÉÏÎíÆøÃÖÂþ¡£\n",
-                "stream":       "Ò»ÌõÍäÍäÇúÇúµÄÐ¡Ïª£¬Ë®ÃæÉÏÎíÆøÃÖÂþ¡£\n",
-                "ÈªË®":         "Ò»ÌõÍäÍäÇúÇúµÄÐ¡Ïª£¬Ë®ÃæÉÏÎíÆøÃÖÂþ¡£\n",
+                "å°çº¢æ¥¼":       (: look_house() :),
+                "çº¢æ¥¼":         (: look_house() :),
+                "river":        "ä¸€æ¡å¼¯å¼¯æ›²æ›²çš„å°æºªï¼Œæ°´é¢ä¸Šé›¾æ°”å¼¥æ¼«ã€‚\n",
+                "æµæ°´":         "ä¸€æ¡å¼¯å¼¯æ›²æ›²çš„å°æºªï¼Œæ°´é¢ä¸Šé›¾æ°”å¼¥æ¼«ã€‚\n",
+                "å°æ²³":         "ä¸€æ¡å¼¯å¼¯æ›²æ›²çš„å°æºªï¼Œæ°´é¢ä¸Šé›¾æ°”å¼¥æ¼«ã€‚\n",
+                "æ²³æ°´":         "ä¸€æ¡å¼¯å¼¯æ›²æ›²çš„å°æºªï¼Œæ°´é¢ä¸Šé›¾æ°”å¼¥æ¼«ã€‚\n",
+                "stream":       "ä¸€æ¡å¼¯å¼¯æ›²æ›²çš„å°æºªï¼Œæ°´é¢ä¸Šé›¾æ°”å¼¥æ¼«ã€‚\n",
+                "æ³‰æ°´":         "ä¸€æ¡å¼¯å¼¯æ›²æ›²çš„å°æºªï¼Œæ°´é¢ä¸Šé›¾æ°”å¼¥æ¼«ã€‚\n",
         ]) );
         set("objects", ([
                 __DIR__"npc/xiaodie2": 1,
@@ -43,9 +43,9 @@ int walkto(string arg){
         object me=this_player();
         object room;
         
-        if (!me->query("zangbei/ÐÇÐÇÂ¥")) return 0;
-        if (arg == "building" || arg == "house" || arg == "Ð¡ºìÂ¥" || arg == "ºìÂ¥") {
-                message_vision("$NÏòºÓ¶Ô°¶Ò»Ô¾£¬ÉíÓ°ÏûÊ§ÔÚÎíÆøÖÐ¡£\n",me);
+        if (!me->query("zangbei/æ˜Ÿæ˜Ÿæ¥¼")) return 0;
+        if (arg == "building" || arg == "house" || arg == "å°çº¢æ¥¼" || arg == "çº¢æ¥¼") {
+                message_vision("$Nå‘æ²³å¯¹å²¸ä¸€è·ƒï¼Œèº«å½±æ¶ˆå¤±åœ¨é›¾æ°”ä¸­ã€‚\n",me);
                 room=find_object(__DIR__"star_room2");
                 if (!objectp(room)) room=load_object(__DIR__"star_room2");
                 me->move(room);
@@ -59,6 +59,6 @@ int walkto(string arg){
 string look_house(){
         
         object me=this_player();
-        if (!me->query("zangbei/ÐÇÐÇÂ¥")) return "Ë®ÎíÃÖÂþ£¬ÄãÊ²Ã´Ò²¿´²»Çå³þ¡£\n";
-        return "Ë®ÎíÖÐ£¬¶Ô°¶ÓÐÒ»´±Ð¡ºìÂ¥ºöÒþºöÏÖ£¬Äã¿ÉÒÔÊÔ×Å×ß¹ýÈ¥(walkto house)¡£\n";
+        if (!me->query("zangbei/æ˜Ÿæ˜Ÿæ¥¼")) return "æ°´é›¾å¼¥æ¼«ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…æ¥šã€‚\n";
+        return "æ°´é›¾ä¸­ï¼Œå¯¹å²¸æœ‰ä¸€å¹¢å°çº¢æ¥¼å¿½éšå¿½çŽ°ï¼Œä½ å¯ä»¥è¯•ç€èµ°è¿‡åŽ»(walkto house)ã€‚\n";
 }   

@@ -7,15 +7,15 @@ void setup()
 
 void create()
 {
-	set_name("Ã·»¨×®", ({"meihua zhuang", "zhuang"}));
+	set_name("æ¢…èŠ±æ¡©", ({"meihua zhuang", "zhuang"}));
 	set_weight(2000000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»×éÇàÖñÖÆ³ÉµÄÄ¾×®£¬¸ßÒ»ÕÉÁ½´ç£¬×´³ÉÃ·»¨ÅÅÁÐ¡£\n");
-		set("unit", "×é");
+		set("long", "è¿™æ˜¯ä¸€ç»„é’ç«¹åˆ¶æˆçš„æœ¨æ¡©ï¼Œé«˜ä¸€ä¸ˆä¸¤å¯¸ï¼ŒçŠ¶æˆæ¢…èŠ±æŽ’åˆ—ã€‚\n");
+		set("unit", "ç»„");
 		set("material", "wood");
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 	}
 	setup();
 }
@@ -32,29 +32,29 @@ int do_jump(string arg)
 	if(!(living(this_player()) || arg=="zhuang")) return 0;
 	if (me->is_busy() || me->is_fighting())
 	{
-		write("ÄãÕýÃ¦×ÅÄØ¡£\n");
+		write("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 		return 1;
 	}
 	if((int)me->query_skill("dodge",1)>101)
 	{
-		write("ÄãÔÚÃ·»¨×®ÉÏ²»Í£µÄ´©ËóÀ´È¥£¬µ«ÒÑÎÞ·¨ÔÙÌá¸ßÇá¹¦ÁË¡£\n");
+		write("ä½ åœ¨æ¢…èŠ±æ¡©ä¸Šä¸åœçš„ç©¿æ¢­æ¥åŽ»ï¼Œä½†å·²æ— æ³•å†æé«˜è½»åŠŸäº†ã€‚\n");
 		return 1;
 	}
 	if((int)me->query("qi")<30)
 	{
 		me->receive_damage("qi",10);
-		write("Äã½ÅÏÂÒ»¸ö²»ÎÈ£¬´ÓÃ·»¨×®ÉÏÔÔÁËÏÂÈ¥¡£\n");
+		write("ä½ è„šä¸‹ä¸€ä¸ªä¸ç¨³ï¼Œä»Žæ¢…èŠ±æ¡©ä¸Šæ ½äº†ä¸‹åŽ»ã€‚\n");
 		me->unconcious();
 		return 1;
 	}
 	if(lvl * lvl * lvl / 10 > exp)
-		return notify_fail("ÕâÑùÔÙ×ßÏÂÈ¥ÒÑÎÞ·¨ÔÙÌá¸ßÁË¡£\n");
+		return notify_fail("è¿™æ ·å†èµ°ä¸‹åŽ»å·²æ— æ³•å†æé«˜äº†ã€‚\n");
 	if (me->query_skill("dodge",1)<31)
 	{
 		me->receive_damage("qi",random(30)); 
 		me->receive_damage("jing",random(30)); 
-		write("ÄãÔÚÃ·»¨×®ÉÏ²»Í£µÄ´©ËóÀ´È¥£¬¶Ô»ù±¾Çá¹¦ÓÐËùÁìÎò¡£\n");
-		message_vision("$N×ÝÉíÒ»Ô¾ÉÏÁËÃ·»¨×®£¬ÔÚ×®ÉÏ»ØÐýÀ´È¥¡£\n", me);
+		write("ä½ åœ¨æ¢…èŠ±æ¡©ä¸Šä¸åœçš„ç©¿æ¢­æ¥åŽ»ï¼Œå¯¹åŸºæœ¬è½»åŠŸæœ‰æ‰€é¢†æ‚Ÿã€‚\n");
+		message_vision("$Nçºµèº«ä¸€è·ƒä¸Šäº†æ¢…èŠ±æ¡©ï¼Œåœ¨æ¡©ä¸Šå›žæ—‹æ¥åŽ»ã€‚\n", me);
 		me->improve_skill("dodge", me->query_dex());
 		return 1;
 	}
@@ -64,8 +64,8 @@ int do_jump(string arg)
 	{
 		me->receive_damage("qi",random(30)); 
 		me->receive_damage("jing",random(30)); 
-		write("ÄãÔÚÃ·»¨×®ÉÏ²»Í£µÄ´©ËóÀ´È¥£¬¶Ô»ù±¾Çá¹¦ÓÐËùÁìÎò¡£\n");
-		message_vision("$N×ÝÉíÒ»Ô¾ÉÏÁËÃ·»¨×®£¬ÔÚ×®ÉÏ»ØÐýÀ´È¥¡£\n", me);
+		write("ä½ åœ¨æ¢…èŠ±æ¡©ä¸Šä¸åœçš„ç©¿æ¢­æ¥åŽ»ï¼Œå¯¹åŸºæœ¬è½»åŠŸæœ‰æ‰€é¢†æ‚Ÿã€‚\n");
+		message_vision("$Nçºµèº«ä¸€è·ƒä¸Šäº†æ¢…èŠ±æ¡©ï¼Œåœ¨æ¡©ä¸Šå›žæ—‹æ¥åŽ»ã€‚\n", me);
 		me->improve_skill("dodge", me->query_dex());
 		return 1;
 	}

@@ -3,12 +3,12 @@
 inherit NPC; 
 void create()
 {
-        set_name("ÎÀÌìÅô", ({ "wei tianpeng","wei" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å«å¤©é¹", ({ "wei tianpeng","wei" }) );
+        set("gender", "ç”·æ€§" );
         set("long",
-                "ºÚÅû·ç£¬ºìÑü´ø£¬°°ÅÔÓĞ¼ı£¬ÊÖÖĞÓĞ¹­£¬Ñü¼äÓĞµ¶¡£\n"
+                "é»‘æŠ«é£ï¼Œçº¢è…°å¸¦ï¼Œéæ—æœ‰ç®­ï¼Œæ‰‹ä¸­æœ‰å¼“ï¼Œè…°é—´æœ‰åˆ€ã€‚\n"
                 );
-        set("nickname", HIC"Å­¼ıÉñ¹­Õ¶¹íµ¶"NOR);
+        set("nickname", HIC"æ€’ç®­ç¥å¼“æ–©é¬¼åˆ€"NOR);
         set("attitude", "peaceful");
         set("age", 38);
 //      set("str", 20);
@@ -18,7 +18,7 @@ void create()
         set("combat_exp", 800000); 
         set("chat_chance", 5);
         set("chat_msg", ({
-                "ÎÀÌìÅôºŞÉùµÀ£ºË­¸ÒµÃ×ïÎÒÃÇÂÀÈıÒ¯£¬ÀÏ×Ó¶ş»°²»Ëµ¾Í°ÑËûÒ»µ¶¶çÁË¡£\n",
+                "å«å¤©é¹æ¨å£°é“ï¼šè°æ•¢å¾—ç½ªæˆ‘ä»¬å•ä¸‰çˆ·ï¼Œè€å­äºŒè¯ä¸è¯´å°±æŠŠä»–ä¸€åˆ€å‰äº†ã€‚\n",
                 }) ); 
         set_skill("unarmed", 100);
         set_skill("parry", 150);

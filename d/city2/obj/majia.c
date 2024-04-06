@@ -7,15 +7,15 @@ inherit WAIST;
 
 void create()
 {
-	set_name(HIM "Ğ¡Âí¼×" NOR, ({ "waist coat","waist","coat" }) );
+	set_name(HIM "å°é©¬ç”²" NOR, ({ "waist coat","waist","coat" }) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "\nÕâÊÇÁè¶ùµÄĞØ¼×¡£·ÛºìÉ«µÄĞ¡Âí¼×ÉÏĞå×Å¼¸Ö»Ô§Ñì£¬ÎÅÆğÀ´»¹ÓĞÒ»¹Éµ­Ïã¡£\n");
-		set("unit", "¼ş");
+		set("long", "\nè¿™æ˜¯å‡Œå„¿çš„èƒ¸ç”²ã€‚ç²‰çº¢è‰²çš„å°é©¬ç”²ä¸Šç»£ç€å‡ åªé¸³é¸¯ï¼Œé—»èµ·æ¥è¿˜æœ‰ä¸€è‚¡æ·¡é¦™ã€‚\n");
+		set("unit", "ä»¶");
 		set("value", 50000);
-		set("material", "Ë¿");
+		set("material", "ä¸");
 		set("armor_prop/armor", 3);
 		set("armor_prop/personality", 3);
 		set("female_only", 1);

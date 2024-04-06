@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÉÅÌü");
+	set("short", "è†³å…");
 	set("long", @LONG
-Õâ¶ùÊÇÁõ¸®µÄÉÅÌü£¬¼¸¸öÉÕ·¹Ê¦¸µÕıÔÚÃ¦µÃÓÍÍ·ºÚÃæµØÉÕ»ğ×ö·¹£¬
-¹©Ó¦£¨serve£©Áõ¸®¿ÍÈËµÄ»ïÊ³¡£
+è¿™å„¿æ˜¯åˆ˜åºœçš„è†³å…ï¼Œå‡ ä¸ªçƒ§é¥­å¸ˆå‚…æ­£åœ¨å¿™å¾—æ²¹å¤´é»‘é¢åœ°çƒ§ç«åšé¥­ï¼Œ
+ä¾›åº”ï¼ˆserveï¼‰åˆ˜åºœå®¢äººçš„ä¼™é£Ÿã€‚
 LONG );
 	set("exits", ([
 		"south" : __DIR__"liufudating",
@@ -27,7 +27,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
 	if ( present("soup", me) || present("rice", me))
-	return notify_fail("ÉÕ·¹Ê¦¸µµÉ×ÅÒ»Ë«¹ÖÑÛ£º³Ô²»ÁËÒª¶µ×Å×ß°¡£¿\n");
+	return notify_fail("çƒ§é¥­å¸ˆå‚…çªç€ä¸€åŒæ€ªçœ¼ï¼šåƒä¸äº†è¦å…œç€èµ°å•Šï¼Ÿ\n");
 	return ::valid_leave(me, dir);
 }
 
@@ -43,12 +43,12 @@ int do_serve()
 	object water;
 	me=this_player();
         if(present("rice",this_player()) ) 
-		return notify_fail("ÉÕ·¹Ê¦¸µµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+		return notify_fail("çƒ§é¥­å¸ˆå‚…é“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ«æµªè´¹é£Ÿç‰©ã€‚\n");
         if(present("rice",this_object()) ) 
-		return notify_fail("ÉÕ·¹Ê¦¸µµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+		return notify_fail("çƒ§é¥­å¸ˆå‚…é“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ«æµªè´¹é£Ÿç‰©ã€‚\n");
 	if (query("ricewater")>0)
 	{
-		message_vision("ÉÕ·¹Ê¦¸µ¸ø$NÒ»ÍëÃ×·¹ºÍÒ»ÍëÌÀ¡£\n",me);
+		message_vision("çƒ§é¥­å¸ˆå‚…ç»™$Nä¸€ç¢—ç±³é¥­å’Œä¸€ç¢—æ±¤ã€‚\n",me);
 		food=new(__DIR__"obj/rice");
 		water=new(__DIR__"obj/soup");
 		food->move(me);
@@ -56,6 +56,6 @@ int do_serve()
 		add("ricewater",-1);
 	}
 	else 
-		message_vision("ÉÕ·¹Ê¦¸µ¶Ô$NÇ¸ÉùµÀ: àË£¬³ÔµÄºÈµÄ¶¼Ã»ÁË¡£\n",me);
+		message_vision("çƒ§é¥­å¸ˆå‚…å¯¹$Næ­‰å£°é“: å—¨ï¼Œåƒçš„å–çš„éƒ½æ²¡äº†ã€‚\n",me);
 	return 1; 
 }

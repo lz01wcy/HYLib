@@ -1,4 +1,4 @@
-// jinshe-jian.c ½ðÉß½£
+// jinshe-jian.c é‡‘è›‡å‰‘
 
 #include <weapon.h>
 #include <ansi.h>
@@ -6,21 +6,21 @@ inherit SWORD;
 
 void create()
 {
-	set_name(YEL"½ðÉß½£"NOR,  ({ "jinshe jian", "sword", "jian" }));
+	set_name(YEL"é‡‘è›‡å‰‘"NOR,  ({ "jinshe jian", "sword", "jian" }));
 	set_weight(10000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
+		set("unit", "æŸ„");
 		set("long", 
-"Õâ½£½ð¹â²ÓÀÃ£¬ÎÕÔÚÊÖÖÐÉõÊÇ³ÁÖØ£¬¿´À´¾¹ÊÇ»Æ½ð»ìºÍÁËÆäËûÎå
-½ðËùÖý£¬½£ÉíÉÏÒ»µÀÑªºÛ£¬·¢³ö±ÌÓÍÓÍµÄ°µ¹â£¬¼«ÊÇ¹îÒì¡£½£µÄ
-ÐÎ×´ÉõÊÇÆæÌØ£¬Õû±ú½£¾ÍÈçÊÇÒ»ÌõÉßÅÌÇú¶ø³É£¬ÉßÎ²¹´³É½£±ú£¬
-ÉßÍ·ÔòÊÇ½£¼â£¬ÉßÉàÉì³ö·Ö²æ£¬ÊÇÒÔ½£¼â¾¹ÓÐÁ½²æ¡£\n");
+"è¿™å‰‘é‡‘å…‰ç¿çƒ‚ï¼Œæ¡åœ¨æ‰‹ä¸­ç”šæ˜¯æ²‰é‡ï¼Œçœ‹æ¥ç«Ÿæ˜¯é»„é‡‘æ··å’Œäº†å…¶ä»–äº”
+é‡‘æ‰€é“¸ï¼Œå‰‘èº«ä¸Šä¸€é“è¡€ç—•ï¼Œå‘å‡ºç¢§æ²¹æ²¹çš„æš—å…‰ï¼Œæžæ˜¯è¯¡å¼‚ã€‚å‰‘çš„
+å½¢çŠ¶ç”šæ˜¯å¥‡ç‰¹ï¼Œæ•´æŸ„å‰‘å°±å¦‚æ˜¯ä¸€æ¡è›‡ç›˜æ›²è€Œæˆï¼Œè›‡å°¾å‹¾æˆå‰‘æŸ„ï¼Œ
+è›‡å¤´åˆ™æ˜¯å‰‘å°–ï¼Œè›‡èˆŒä¼¸å‡ºåˆ†å‰ï¼Œæ˜¯ä»¥å‰‘å°–ç«Ÿæœ‰ä¸¤å‰ã€‚\n");
 		set("value", 10000);
 		set("material", "gold");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖÐ£¬¶ÙÊ±È«ÉíÁ¹ì¬ì¬µØÖ»¸Ðº®Æø±ÆÈË¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖÐµÄ$n²å»Ø½£ÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ï¼Œé¡¿æ—¶å…¨èº«å‡‰é£•é£•åœ°åªæ„Ÿå¯’æ°”é€¼äººã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›žå‰‘éž˜ã€‚\n");
 	}
 	init_sword(150);
 	setup();

@@ -1,16 +1,16 @@
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 inherit NPC;
 //inherit F_SKILL;
 
 void create()
 {
-        set_name("Îä½«", ({ "wu jiang", "wu", "jiang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ­¦å°†", ({ "wu jiang", "wu", "jiang" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long", "ËûÊÇ¼ÎÓø¹ØµÄÊØ½«¡£\n");
+        set("long", "ä»–æ˜¯å˜‰å³ªå…³çš„å®ˆå°†ã€‚\n");
         set("combat_exp", 75000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -33,7 +33,7 @@ void create()
 }
 int accept_fight(object me)
 {
-        command("say ÀÏ·ò´Ó²»Í÷É±ÎŞÃûÖ®ÈË¡£");
+        command("say è€å¤«ä»ä¸æ‰æ€æ— åä¹‹äººã€‚");
         return 0;
 }
 

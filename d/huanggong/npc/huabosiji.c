@@ -1,20 +1,20 @@
 inherit NPC;
 void create()
 {
-   set_name("»ª²®Ë¹»ù",({"huabo siji"}));
-   set("gender","ÄĞĞÔ");
+   set_name("åä¼¯æ–¯åŸº",({"huabo siji"}));
+   set("gender","ç”·æ€§");
    set("age",45);
    set("combat_exp",51000);
    set("mingwang",200);
-   set("long","ÕâÎ»ÊÇ¶íÂŞË¹Ê¹Õß.\n");
+   set("long","è¿™ä½æ˜¯ä¿„ç½—æ–¯ä½¿è€….\n");
    set_skill("unarmed",10);
    set_skill("parry",10);
    set_skill("dodge",10);
    set_skill("literate",10);
    set("chat_chance",4);
    set("chat_msg",({
-  "»ª²®Ë¹»ùµÀ:ÎÒÃÇÕıÔÚµÈºò¿µÎõ´óµÛµÄ½Ó¼û.\n",
-  "»ª²®Ë¹»ùµÀ:ÄãºÃ!ÄãºÃ!how are you?\n",
+  "åä¼¯æ–¯åŸºé“:æˆ‘ä»¬æ­£åœ¨ç­‰å€™åº·ç†™å¤§å¸çš„æ¥è§.\n",
+  "åä¼¯æ–¯åŸºé“:ä½ å¥½!ä½ å¥½!how are you?\n",
   }));
    
    setup();

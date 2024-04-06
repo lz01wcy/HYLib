@@ -1,14 +1,14 @@
-// Npc: /d/nanshaolin/obj/tong-ren.c Í­ÈË
+// Npc: /d/nanshaolin/obj/tong-ren.c é“œäºº
 // Last Modified by winder on May. 29 2001
 
 inherit NPC;
 
 void create()
 {
-	set_name("Í­ÈË", ({ "tong ren", "tong" }) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("é“œäºº", ({ "tong ren", "tong" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "Ò»¸öÁ·¹¦ÓÃµÄ±ÈÎäÍ­ÈË£¬ÖÆ×÷¾«ÇÉ£¬ÈçÍ¬ÕæÈËÒ»°ã¡£\n");
+	set("long", "ä¸€ä¸ªç»ƒåŠŸç”¨çš„æ¯”æ­¦é“œäººï¼Œåˆ¶ä½œç²¾å·§ï¼Œå¦‚åŒçœŸäººä¸€èˆ¬ã€‚\n");
 	set("attitude", "heroism");
 	set_weight(30000000);
 
@@ -50,13 +50,13 @@ int accept_fight(object ob)
 	me = this_object();
 	if (is_fighting()) return 0;
 	if ( (int)ob->query("combat_exp") < 400000)
-		return notify_fail("ÄãµÄ¹¦Á¦²»¹»£¬²»ÄÜÓÃÍ­ÈËÁ·¹¦£¡\n");
+		return notify_fail("ä½ çš„åŠŸåŠ›ä¸å¤Ÿï¼Œä¸èƒ½ç”¨é“œäººç»ƒåŠŸï¼\n");
 
 	if (random(me->query("fight_times")) >= 10)
 		me->set("damaged", 1);
 
 	if (me->query("damaged"))
-		return notify_fail("Õâ¸öÍ­ÈËÒÑ¾­±»´ò»µÁË£¡\n");	
+		return notify_fail("è¿™ä¸ªé“œäººå·²ç»è¢«æ‰“åäº†ï¼\n");	
 
 	if (me->query("last_fighter") == ob->query("id"))
 		return 1;

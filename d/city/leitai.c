@@ -10,11 +10,11 @@ string clear_title(string arg);
 void add_title(object me,string arg);
 void create()
 {
-	set("short", "ÀŞÌ¨");
+	set("short", "æ“‚å°");
 	set("long", @LONG
-ÕâÊÇÒ»¸öËÄÕÉ¼û·½µÄÀŞÌ¨¡£´Ö×³½áÊµµÄÄ¾Öù³ÅÆğÒ»Æ¬Æ½Ì¨£¬ËÄ½ÇµÄÖ§ÖùÉÏ
-¸ß¹Ò×ÅËÄ¸±¶ÔÁª£¬ËÄÃæµÄ¹ÛÖÚ¶¼ÄÜÇå³şµØ¿´µ½Ì¨ÉÏµÄÊÖÆğ½ÅÂä¡£ÀŞÌ¨½ÇÉÏÓĞ¸ö
-±øÆ÷¼Ü(shelf) £¬µ¶½£±Ş°ôÑùÑù¾ãÈ«¡£Ö÷³ÖÈËÇë¿´¹«…Ì°æ(pai)
+è¿™æ˜¯ä¸€ä¸ªå››ä¸ˆè§æ–¹çš„æ“‚å°ã€‚ç²—å£®ç»“å®çš„æœ¨æŸ±æ’‘èµ·ä¸€ç‰‡å¹³å°ï¼Œå››è§’çš„æ”¯æŸ±ä¸Š
+é«˜æŒ‚ç€å››å‰¯å¯¹è”ï¼Œå››é¢çš„è§‚ä¼—éƒ½èƒ½æ¸…æ¥šåœ°çœ‹åˆ°å°ä¸Šçš„æ‰‹èµ·è„šè½ã€‚æ“‚å°è§’ä¸Šæœ‰ä¸ª
+å…µå™¨æ¶(shelf) ï¼Œåˆ€å‰‘é­æ£’æ ·æ ·ä¿±å…¨ã€‚ä¸»æŒäººè¯·çœ‹å…¬è´ª(pai)
 LONG );
         set("outdoors", "city");
 	set("item_desc", ([
@@ -42,24 +42,24 @@ string look_pai()
 {
 	return 
 "\n
-"HIR"start                  "HIY"----  ÀŞÌ¨ÉÏÖ®Íæ¼Ò¿ªÊ¼±ÈÎä¡£
-"HIR"allow    <player id>   "HIY"----  Éè¶¨ÔÊĞíÉÏÀŞÌ¨Ö®Íæ¼Ò¡£
-"HIR"deny     <player id>   "HIY"----  È¡ÏûÍæ¼ÒÉÏÌ¨×Ê¸ñ¡£
-"HIR"load     <player id>   "HIY"----  À­Íæ¼ÒÉÏÀŞÌ¨¡£
-"HIR"kick     <player id>   "HIY"----  ÌßÍæ¼ÒÏÂÀŞÌ¨¡£
-"HIR"heal     <player id>   "HIY"----  ¸øÀŞÌ¨ÉÏÍæ¼Ò¾Å»¨ÓñÂ¶Íè¡£
-"HIR"life     <player id>   "HIY"----  ËÍ±»É±Íæ¼ÒÉÏÌìÌÃ»Ö¸´¡£
+"HIR"start                  "HIY"----  æ“‚å°ä¸Šä¹‹ç©å®¶å¼€å§‹æ¯”æ­¦ã€‚
+"HIR"allow    <player id>   "HIY"----  è®¾å®šå…è®¸ä¸Šæ“‚å°ä¹‹ç©å®¶ã€‚
+"HIR"deny     <player id>   "HIY"----  å–æ¶ˆç©å®¶ä¸Šå°èµ„æ ¼ã€‚
+"HIR"load     <player id>   "HIY"----  æ‹‰ç©å®¶ä¸Šæ“‚å°ã€‚
+"HIR"kick     <player id>   "HIY"----  è¸¢ç©å®¶ä¸‹æ“‚å°ã€‚
+"HIR"heal     <player id>   "HIY"----  ç»™æ“‚å°ä¸Šç©å®¶ä¹èŠ±ç‰éœ²ä¸¸ã€‚
+"HIR"life     <player id>   "HIY"----  é€è¢«æ€ç©å®¶ä¸Šå¤©å ‚æ¢å¤ã€‚
 
-"HIG"titles  <player id> 01 "HIY"----  ÔùÍæ¼ÒÓ×ÄêÌìÏÂµÚÒ» (15ÒÔÏÂ)¡£
-"HIG"titles  <player id> 02 "HIY"----  ÔùÍæ¼ÒÓ×ÄêÌìÏÂµÚ¶ş (15ÒÔÏÂ)¡£
-"HIG"titles  <player id> 11 "HIY"----  ÔùÍæ¼ÒÉÙÄêÌìÏÂµÚÒ» (20ÒÔÏÂ)¡£
-"HIG"titles  <player id> 12 "HIY"----  ÔùÍæ¼ÒÉÙÄêÌìÏÂµÚ¶ş (20ÒÔÏÂ)¡£
-"HIG"titles  <player id> 21 "HIY"----  ÔùÍæ¼ÒÌìÏÂµÚÒ»ÏÀÉÙ (30ÒÔÏÂ)¡£
-"HIG"titles  <player id> 22 "HIY"----  ÔùÍæ¼ÒÌìÏÂµÚ¶şÏÀÉÙ (30ÒÔÏÂ)¡£
-"HIG"titles  <player id> 31 "HIY"----  ÔùÍæ¼ÒÌìÏÂµÚÒ»ÏÀ¿Í (40ÒÔÏÂ)¡£
-"HIG"titles  <player id> 32 "HIY"----  ÔùÍæ¼ÒÌìÏÂµÚ¶şÏÀ¿Í (40ÒÔÏÂ)¡£
-"HIG"titles  <player id> 41 "HIY"----  ÔùÍæ¼ÒÌìÏÂµÚÒ»´óÏÀ (40ÒÔÉÏ)¡£
-"HIG"titles  <player id> 42 "HIY"----  ÔùÍæ¼ÒÌìÏÂµÚ¶ş´óÏÀ (40ÒÔÉÏ)¡£
+"HIG"titles  <player id> 01 "HIY"----  èµ ç©å®¶å¹¼å¹´å¤©ä¸‹ç¬¬ä¸€ (15ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 02 "HIY"----  èµ ç©å®¶å¹¼å¹´å¤©ä¸‹ç¬¬äºŒ (15ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 11 "HIY"----  èµ ç©å®¶å°‘å¹´å¤©ä¸‹ç¬¬ä¸€ (20ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 12 "HIY"----  èµ ç©å®¶å°‘å¹´å¤©ä¸‹ç¬¬äºŒ (20ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 21 "HIY"----  èµ ç©å®¶å¤©ä¸‹ç¬¬ä¸€ä¾ å°‘ (30ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 22 "HIY"----  èµ ç©å®¶å¤©ä¸‹ç¬¬äºŒä¾ å°‘ (30ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 31 "HIY"----  èµ ç©å®¶å¤©ä¸‹ç¬¬ä¸€ä¾ å®¢ (40ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 32 "HIY"----  èµ ç©å®¶å¤©ä¸‹ç¬¬äºŒä¾ å®¢ (40ä»¥ä¸‹)ã€‚
+"HIG"titles  <player id> 41 "HIY"----  èµ ç©å®¶å¤©ä¸‹ç¬¬ä¸€å¤§ä¾  (40ä»¥ä¸Š)ã€‚
+"HIG"titles  <player id> 42 "HIY"----  èµ ç©å®¶å¤©ä¸‹ç¬¬äºŒå¤§ä¾  (40ä»¥ä¸Š)ã€‚
 
 \n"NOR;
 }
@@ -67,17 +67,17 @@ string look_shelf()
 {
 	return 
 "\n
-Ò»¸öºÜÓĞÄêÍ·µÄ±øÆ÷¼Ü£¬ºìÆá¶¼°şÂäµÃ²î²»¶àÁË¡£
-¼ÜÉÏ°ÚÂúÁË: 
-                 ¸Öµ¶(blade)    ³¤½£(sword)
-                 ¸ÖÕÈ(staff)    ³¤±Ş(whip)
-                 Ìú´¸(hammer)   ³¤¹÷(club)
-                 °µÆ÷(throwing) ¶Ì±ø(dagger)
-                 ¸Ö¼×(armor)
+ä¸€ä¸ªå¾ˆæœ‰å¹´å¤´çš„å…µå™¨æ¶ï¼Œçº¢æ¼†éƒ½å‰¥è½å¾—å·®ä¸å¤šäº†ã€‚
+æ¶ä¸Šæ‘†æ»¡äº†: 
+                 é’¢åˆ€(blade)    é•¿å‰‘(sword)
+                 é’¢æ–(staff)    é•¿é­(whip)
+                 é“é”¤(hammer)   é•¿æ£(club)
+                 æš—å™¨(throwing) çŸ­å…µ(dagger)
+                 é’¢ç”²(armor)
 
-²Î¼Ó±ÈÎäÕß¿ÉÒÔ°´ĞèÒª£¬Ëæ±ãÄÃÈ¡(take)Ê¹ÓÃ¡£
+å‚åŠ æ¯”æ­¦è€…å¯ä»¥æŒ‰éœ€è¦ï¼Œéšä¾¿æ‹¿å–(take)ä½¿ç”¨ã€‚
 
-                                ÏÀ¿ÍĞĞÀŞÌ¨  ¾´Æô
+                                ä¾ å®¢è¡Œæ“‚å°  æ•¬å¯
 \n";
 }
 
@@ -116,7 +116,7 @@ void init()
 int valid_leave(object me, string dir)
 {
         if( dir=="up" && !wizardp(me) && !userp(me))
-                return notify_fail("²ÃÅĞÏ¯Ö»ÓĞ±»ÌØÑû²ÅÄÜ½øÈ¥¡£\n");
+                return notify_fail("è£åˆ¤å¸­åªæœ‰è¢«ç‰¹é‚€æ‰èƒ½è¿›å»ã€‚\n");
 	me->set_temp("view_leitai",1);
         return ::valid_leave(me, dir);
 }
@@ -124,7 +124,7 @@ int do_yun(string arg)
 {
 	if (arg=="roar")
 	{
-        write(this_player()->query("name")+"£¬×¨ĞÄ±ÈÎä°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œä¸“å¿ƒæ¯”æ­¦å§ï¼\n");
 	return 0;
 	}
 	return 1;
@@ -134,7 +134,7 @@ int do_open()
 {
 	if(wizardp(this_player()))
 	{
-		message_vision("$N°Ñ±øÆ÷¼ÜÆô·âÁË¡£\n", this_player());
+		message_vision("$NæŠŠå…µå™¨æ¶å¯å°äº†ã€‚\n", this_player());
 		this_object()->delete("no_openshelf");
 		return 1;
 	}
@@ -144,7 +144,7 @@ int do_close()
 {
 	if(wizardp(this_player()))
 	{
-		message_vision("$NÄÃÁËÌõ·âÌõ°Ñ±øÆ÷¼Ü¸ø·âÁË¡£\n", this_player());
+		message_vision("$Næ‹¿äº†æ¡å°æ¡æŠŠå…µå™¨æ¶ç»™å°äº†ã€‚\n", this_player());
 		this_object()->set("no_openshelf", 1);
 		return 1;
 	}
@@ -156,12 +156,12 @@ int do_take(string arg)
 	ob = this_player();
 	if(this_object()->query("no_openshelf"))
 	{
-		message_vision("·Ç´ó±ÈÎäµÄÊ±ºò£¬±øÆ÷¼Ü¸ø·â×¡ÁË¡£\n", ob);
+		message_vision("éå¤§æ¯”æ­¦çš„æ—¶å€™ï¼Œå…µå™¨æ¶ç»™å°ä½äº†ã€‚\n", ob);
 		return 1;
 	}
 	if( !arg || arg=="" )
 	{
-		message_vision("$NÕ¾ÔÚ±øÆ÷¼ÜÇ°£¬»¹Ã»ÏëºÃÒªÊ²Ã´±øÆ÷¡£\n", ob);
+		message_vision("$Nç«™åœ¨å…µå™¨æ¶å‰ï¼Œè¿˜æ²¡æƒ³å¥½è¦ä»€ä¹ˆå…µå™¨ã€‚\n", ob);
 		return 1;
 	}
 	switch (arg)
@@ -169,50 +169,50 @@ int do_take(string arg)
 		case "sword":
 			obj = new("/clone/weapon/changjian");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»¿Ú³¤½£¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€å£é•¿å‰‘ã€‚\n",ob);
 			break;
 		case "blade":
 			obj = new("/clone/weapon/gangdao");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»¿Ú¸Öµ¶¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€å£é’¢åˆ€ã€‚\n",ob);
 			break;
 		case "staff":
 			obj = new("/clone/weapon/gangzhang");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»¸Ë¸ÖÕÈ¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€æ†é’¢æ–ã€‚\n",ob);
 			break;
 		case "whip":
 			obj = new("/clone/weapon/changbian");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»Ìõ³¤±Ş¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€æ¡é•¿é­ã€‚\n",ob);
 			break;
 		case "club":
 			obj = new("/clone/weapon/qimeigun");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»ÌõÆëÃ¼¹÷¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€æ¡é½çœ‰æ£ã€‚\n",ob);
 			break;
 		case "hammer":
 			obj = new("/clone/weapon/hammer");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»°ÑÌú´¸¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€æŠŠé“é”¤ã€‚\n",ob);
 			break;
 		case "throwing":
 			obj = new("/clone/weapon/lianzi");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»°üÌúÁ«×Ó¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€åŒ…é“è²å­ã€‚\n",ob);
 			break;
 		case "dagger":
 			obj = new("/clone/weapon/dagger");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»°ÑØ°Ê×¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€æŠŠåŒ•é¦–ã€‚\n",ob);
 			break;
 		case "armor":
 			obj = new("/clone/weapon/tiejia");
 			obj -> move(ob);
-			message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»¸±Ìú¼×¡£\n",ob);
+			message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€å‰¯é“ç”²ã€‚\n",ob);
 			break;
 		default:
-			message_vision("$NÕ¾ÔÚ±øÆ÷¼ÜÇ°£¬»¹Ã»ÏëºÃÒªÊ²Ã´±øÆ÷¡£\n", ob);
+			message_vision("$Nç«™åœ¨å…µå™¨æ¶å‰ï¼Œè¿˜æ²¡æƒ³å¥½è¦ä»€ä¹ˆå…µå™¨ã€‚\n", ob);
 	}
 	return 1;
 }
@@ -225,10 +225,10 @@ string wiz_status;
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
         allob = users();
         me = this_object();
@@ -237,7 +237,7 @@ if (!wizardp(me))
         if (!ob) return 1;
         j = 0;
         for ( i=sizeof(allob); i>0; i-- ) {
-//             if (environment(allob[i-1])->query("short") =="ÀŞÌ¨") {
+//             if (environment(allob[i-1])->query("short") =="æ“‚å°") {
                 if (j == 0) {
                     me = allob[i-1];
                     j = 1;
@@ -255,19 +255,19 @@ string wiz_status;
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	me = this_player();
 	if (!arg) return notify_fail("<Syntax>: allow <player id>\n");
 	ob = LOGIN_D->find_body(arg);
-	if (!ob) return notify_fail("Ã»Õâ¸öÈËÒ®¡£\n");
-	message_vision(HIG"$NÉè¶¨ÈÃ"+ob->name()+"ÉÏÀŞÌ¨¡£\n"NOR, me);
+	if (!ob) return notify_fail("æ²¡è¿™ä¸ªäººè€¶ã€‚\n");
+	message_vision(HIG"$Nè®¾å®šè®©"+ob->name()+"ä¸Šæ“‚å°ã€‚\n"NOR, me);
 	ob -> set_temp("leitai_allow",1);
 	ob -> delete("env/combatd");
-	tell_object(ob,HIR"\n¸ÃÄãÉÏÀŞÌ¨ÁË¡£\n"NOR);
+	tell_object(ob,HIR"\nè¯¥ä½ ä¸Šæ“‚å°äº†ã€‚\n"NOR);
 	return 1;
 }
 int do_deny(string arg)
@@ -277,18 +277,18 @@ string wiz_status;
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	me = this_player();
 	if (!arg) return notify_fail("<Syntax>: deny <player id>\n");
 	ob = LOGIN_D->find_body(arg);
-	if (!ob) return notify_fail("Ã»Õâ¸öÈËÒ®¡£\n");
-	message_vision(HIG"$NÉè¶¨ÈÃ"+ob->name()+"ÏÈÔİÊ±±ğÉÏÀŞÌ¨¡£\n"NOR, me);
+	if (!ob) return notify_fail("æ²¡è¿™ä¸ªäººè€¶ã€‚\n");
+	message_vision(HIG"$Nè®¾å®šè®©"+ob->name()+"å…ˆæš‚æ—¶åˆ«ä¸Šæ“‚å°ã€‚\n"NOR, me);
 	ob -> delete_temp("leitai_allow");
-	tell_object(ob,HIR"\nÏÈ²»¼±ÉÏÀŞÌ¨ÁË°É¡£\n"NOR);
+	tell_object(ob,HIR"\nå…ˆä¸æ€¥ä¸Šæ“‚å°äº†å§ã€‚\n"NOR);
 	return 1;
 }
 int do_load(string arg)
@@ -298,21 +298,21 @@ string wiz_status;
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 	if (!arg) return notify_fail("<Syntax>: loadup <player id>\n");
 	ob = LOGIN_D->find_body(arg);
-	if (!ob) return notify_fail("Ã»Õâ¸öÈËÒ®¡£\n");
-	message_vision(HIG"$NÀ­"+ob->name()+"ÉÏÀŞÌ¨¡£\n"NOR, me);
-	message_vision(HIG"$NË«ÍÈÒ»µÅ£¬ÌÚ¿Õ¶øÆğ£¬ÇáÇáÂäÔÚÀŞÌ¨±ßÉÏ£¬ÒÂñÇ½ó·ç£¬Ê®·ÖäìÈ÷¡£\n"NOR, ob);
+	if (!ob) return notify_fail("æ²¡è¿™ä¸ªäººè€¶ã€‚\n");
+	message_vision(HIG"$Næ‹‰"+ob->name()+"ä¸Šæ“‚å°ã€‚\n"NOR, me);
+	message_vision(HIG"$NåŒè…¿ä¸€è¹¬ï¼Œè…¾ç©ºè€Œèµ·ï¼Œè½»è½»è½åœ¨æ“‚å°è¾¹ä¸Šï¼Œè¡£è¢‚è¥Ÿé£ï¼Œååˆ†æ½‡æ´’ã€‚\n"NOR, ob);
 	ob -> delete_temp("leitai_allow");
-	tell_object(ob,HIR"\n·¢Ê²Ã´´ôÑ½Äã£¬ÏÈÉÏÀ´°É¸øÎÒ¡£\n"NOR);
+	tell_object(ob,HIR"\nå‘ä»€ä¹ˆå‘†å‘€ä½ ï¼Œå…ˆä¸Šæ¥å§ç»™æˆ‘ã€‚\n"NOR);
 	ob -> move("/d/city/leitai");
 	ob -> delete_temp("view_leitai");
 	ob -> delete("env/combatd");
-	message_vision(HIG"$NÌÚ¿ÕÂäÔÚÀŞÌ¨±ßÉÏ£¬ÒÂñÇ½ó·ç£¬Ê®·ÖäìÈ÷¡£\n"NOR, ob);
+	message_vision(HIG"$Nè…¾ç©ºè½åœ¨æ“‚å°è¾¹ä¸Šï¼Œè¡£è¢‚è¥Ÿé£ï¼Œååˆ†æ½‡æ´’ã€‚\n"NOR, ob);
 	return 1;
 }
 int do_kick(string arg)
@@ -323,20 +323,20 @@ int do_kick(string arg)
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if (!arg) return notify_fail("<Syntax>: kickdown <player id>\n");
 	ob = LOGIN_D->find_body(arg);
-	if (!ob) return notify_fail("Ã»Õâ¸öÈËÒ®¡£\n");
-	message_vision(HIG"$N°Ñ"+ob->name()+"ÌßÏÂÀŞÌ¨¡£\n"NOR, me);
+	if (!ob) return notify_fail("æ²¡è¿™ä¸ªäººè€¶ã€‚\n");
+	message_vision(HIG"$NæŠŠ"+ob->name()+"è¸¢ä¸‹æ“‚å°ã€‚\n"NOR, me);
 	ob -> delete_temp("leitai_allow");
-	message_vision(HIG"Ö»ÌıµÃ$Nà»µÄÒ»Éù£¬·ÉÉíÌøÏÂÀŞÌ¨È¥ÁË¡£\n"NOR, ob);
-	tell_object(ob,HIR"\nÃ»Íæ¹»°¡£¬ÏÈÏÂÈ¥°ÉÄã¸øÎÒ¡£\n"NOR);
+	message_vision(HIG"åªå¬å¾—$Nå—·çš„ä¸€å£°ï¼Œé£èº«è·³ä¸‹æ“‚å°å»äº†ã€‚\n"NOR, ob);
+	tell_object(ob,HIR"\næ²¡ç©å¤Ÿå•Šï¼Œå…ˆä¸‹å»å§ä½ ç»™æˆ‘ã€‚\n"NOR);
 	ob -> move("/d/city/wudao1");
 	ob -> set_temp("view_leitai",1);
-	message_vision(HIG"Ö»¼û$N³¤ºôÉùÖĞ£¬Ò»¸ö´óÆ¨¹É¶Õ×øÔÚµØÉÏ°¦°¦²»¾ø¡£\n"NOR, ob);
+	message_vision(HIG"åªè§$Né•¿å‘¼å£°ä¸­ï¼Œä¸€ä¸ªå¤§å±è‚¡å¢©ååœ¨åœ°ä¸Šå”‰å”‰ä¸ç»ã€‚\n"NOR, ob);
 	return 1;
 }
 int do_heal(string arg)
@@ -346,18 +346,18 @@ int do_heal(string arg)
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if (!arg) return notify_fail("<Syntax>: heal <player id>\n");
 	ob = LOGIN_D->find_body(arg);
-	if (!ob) return notify_fail("Ã»Õâ¸öÈËÒ®¡£\n");
-	message_vision(HIG"$N¸ø"+ob->name()+"Ò»Á£¾Å»¨ÓñÂ¶Íè¡£\n"NOR, me);
+	if (!ob) return notify_fail("æ²¡è¿™ä¸ªäººè€¶ã€‚\n");
+	message_vision(HIG"$Nç»™"+ob->name()+"ä¸€ç²’ä¹èŠ±ç‰éœ²ä¸¸ã€‚\n"NOR, me);
 	obj = new("/clone/misc/jiuhua");
 	obj -> move(ob); 
-	tell_object(ob,HIR"\n¸øÄãÒ»Á£¾Å»¨ÓñÂ¶Íè»Ö¸´ÌåÁ¦¡£\n"NOR);
+	tell_object(ob,HIR"\nç»™ä½ ä¸€ç²’ä¹èŠ±ç‰éœ²ä¸¸æ¢å¤ä½“åŠ›ã€‚\n"NOR);
 	return 1;
 }
 int do_life(string arg)
@@ -368,17 +368,17 @@ int do_life(string arg)
 	me = this_player();
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if (!arg) return notify_fail("<Syntax>: reback <player id>\n");
 	ob = LOGIN_D->find_body(arg);
-	if (!ob) return notify_fail("Ã»Õâ¸öÈËÒ®¡£\n");
-	message_vision(HIG"$NËÍ"+ob->name()+"ÉÏÌìÌÃ»Ö¸´ËğÊ§¡£\n"NOR, me);
+	if (!ob) return notify_fail("æ²¡è¿™ä¸ªäººè€¶ã€‚\n");
+	message_vision(HIG"$Né€"+ob->name()+"ä¸Šå¤©å ‚æ¢å¤æŸå¤±ã€‚\n"NOR, me);
 	ob -> delete_temp("leitai_allow");
-	tell_object(ob,HIR"\nËÍÄãÉÏÌìÌÃ£¬ÏÂÀ´ºó¾Í»á»Ö¸´µÄ¡£\n"NOR);
+	tell_object(ob,HIR"\né€ä½ ä¸Šå¤©å ‚ï¼Œä¸‹æ¥åå°±ä¼šæ¢å¤çš„ã€‚\n"NOR);
 	ob -> move("/d/death/god2");
 	ob -> delete_temp("view_leitai");
 	return 1;
@@ -390,30 +390,30 @@ int do_titles(string arg)
 	string wiz_status;
 	wiz_status = SECURITY_D->get_status(me);
 if (!wizardp(me))
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"&& wiz_status != "(wizard)" )
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊ¹ÓÃ´ËÃüÁî" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½ä½¿ç”¨æ­¤å‘½ä»¤" + MUD_NAME + "\n");
 
 	if( !arg || sscanf(arg, "%s %s", dest, topic)!=2 )
-		return notify_fail("ÄãÒª·âË­Ê²Ã´³ÆºÅ£¿\n");
+		return notify_fail("ä½ è¦å°è°ä»€ä¹ˆç§°å·ï¼Ÿ\n");
 	obj = find_player(dest);
-	if(!obj || !me->visible(obj)) return notify_fail("Ã»ÓĞÕâ¸öÈË....¡£\n");
+	if(!obj || !me->visible(obj)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäºº....ã€‚\n");
 	switch (topic)
 	{
-		case "01": add_title(obj, "Ó×ÄêÌìÏÂµÚÒ»"); break;
-		case "02": add_title(obj, "Ó×ÄêÌìÏÂµÚ¶ş"); break;
-		case "11": add_title(obj, "ÉÙÄêÌìÏÂµÚÒ»"); break;
-		case "12": add_title(obj, "ÉÙÄêÌìÏÂµÚ¶ş"); break;
-		case "21": add_title(obj, "ÌìÏÂµÚÒ»ÏÀÉÙ"); break;
-		case "22": add_title(obj, "ÌìÏÂµÚ¶şÏÀÉÙ"); break;
-		case "31": add_title(obj, "ÌìÏÂµÚÒ»ÏÀ¿Í"); break;
-		case "32": add_title(obj, "ÌìÏÂµÚ¶şÏÀ¿Í"); break;
-		case "41": add_title(obj, "ÌìÏÂµÚÒ»´óÏÀ"); break;
-		case "42": add_title(obj, "ÌìÏÂµÚ¶ş´óÏÀ"); break;
+		case "01": add_title(obj, "å¹¼å¹´å¤©ä¸‹ç¬¬ä¸€"); break;
+		case "02": add_title(obj, "å¹¼å¹´å¤©ä¸‹ç¬¬äºŒ"); break;
+		case "11": add_title(obj, "å°‘å¹´å¤©ä¸‹ç¬¬ä¸€"); break;
+		case "12": add_title(obj, "å°‘å¹´å¤©ä¸‹ç¬¬äºŒ"); break;
+		case "21": add_title(obj, "å¤©ä¸‹ç¬¬ä¸€ä¾ å°‘"); break;
+		case "22": add_title(obj, "å¤©ä¸‹ç¬¬äºŒä¾ å°‘"); break;
+		case "31": add_title(obj, "å¤©ä¸‹ç¬¬ä¸€ä¾ å®¢"); break;
+		case "32": add_title(obj, "å¤©ä¸‹ç¬¬äºŒä¾ å®¢"); break;
+		case "41": add_title(obj, "å¤©ä¸‹ç¬¬ä¸€å¤§ä¾ "); break;
+		case "42": add_title(obj, "å¤©ä¸‹ç¬¬äºŒå¤§ä¾ "); break;
 		default: break;
 	}
-	message_vision(HIG"$NÊÚ"+obj->name()+"·âºÅ¡£\n"NOR, me);
+	message_vision(HIG"$Næˆ"+obj->name()+"å°å·ã€‚\n"NOR, me);
 	return 1;
 }
 void add_title(object me,string arg)
@@ -424,27 +424,27 @@ void add_title(object me,string arg)
 }
 string clear_title(string arg)
 {
-        if( (strsrch(arg, "Ó×ÄêÌìÏÂµÚÒ»") >= 0) ||
-            (strsrch(arg, "Ó×ÄêÌìÏÂµÚ¶ş") >= 0) ||
-            (strsrch(arg, "ÉÙÄêÌìÏÂµÚÒ»") >= 0) ||
-            (strsrch(arg, "ÉÙÄêÌìÏÂµÚ¶ş") >= 0) ||
-            (strsrch(arg, "ÌìÏÂµÚÒ»ÏÀÉÙ") >= 0) ||
-            (strsrch(arg, "ÌìÏÂµÚ¶şÏÀÉÙ") >= 0) ||
-            (strsrch(arg, "ÌìÏÂµÚÒ»ÏÀ¿Í") >= 0) ||
-            (strsrch(arg, "ÌìÏÂµÚ¶şÏÀ¿Í") >= 0) ||
-            (strsrch(arg, "ÌìÏÂµÚÒ»´óÏÀ") >= 0) ||
-            (strsrch(arg, "ÌìÏÂµÚ¶ş´óÏÀ") >= 0))
+        if( (strsrch(arg, "å¹¼å¹´å¤©ä¸‹ç¬¬ä¸€") >= 0) ||
+            (strsrch(arg, "å¹¼å¹´å¤©ä¸‹ç¬¬äºŒ") >= 0) ||
+            (strsrch(arg, "å°‘å¹´å¤©ä¸‹ç¬¬ä¸€") >= 0) ||
+            (strsrch(arg, "å°‘å¹´å¤©ä¸‹ç¬¬äºŒ") >= 0) ||
+            (strsrch(arg, "å¤©ä¸‹ç¬¬ä¸€ä¾ å°‘") >= 0) ||
+            (strsrch(arg, "å¤©ä¸‹ç¬¬äºŒä¾ å°‘") >= 0) ||
+            (strsrch(arg, "å¤©ä¸‹ç¬¬ä¸€ä¾ å®¢") >= 0) ||
+            (strsrch(arg, "å¤©ä¸‹ç¬¬äºŒä¾ å®¢") >= 0) ||
+            (strsrch(arg, "å¤©ä¸‹ç¬¬ä¸€å¤§ä¾ ") >= 0) ||
+            (strsrch(arg, "å¤©ä¸‹ç¬¬äºŒå¤§ä¾ ") >= 0))
                 {
-                arg = replace_string(arg, "Ó×ÄêÌìÏÂµÚÒ»","");
-                arg = replace_string(arg, "Ó×ÄêÌìÏÂµÚ¶ş","");
-                arg = replace_string(arg, "ÉÙÄêÌìÏÂµÚÒ»","");
-                arg = replace_string(arg, "ÉÙÄêÌìÏÂµÚ¶ş","");
-                arg = replace_string(arg, "ÌìÏÂµÚÒ»ÏÀÉÙ","");
-                arg = replace_string(arg, "ÌìÏÂµÚ¶şÏÀÉÙ","");
-                arg = replace_string(arg, "ÌìÏÂµÚÒ»ÏÀ¿Í","");
-                arg = replace_string(arg, "ÌìÏÂµÚ¶şÏÀ¿Í","");
-                arg = replace_string(arg, "ÌìÏÂµÚÒ»´óÏÀ","");
-                arg = replace_string(arg, "ÌìÏÂµÚ¶ş´óÏÀ","");
+                arg = replace_string(arg, "å¹¼å¹´å¤©ä¸‹ç¬¬ä¸€","");
+                arg = replace_string(arg, "å¹¼å¹´å¤©ä¸‹ç¬¬äºŒ","");
+                arg = replace_string(arg, "å°‘å¹´å¤©ä¸‹ç¬¬ä¸€","");
+                arg = replace_string(arg, "å°‘å¹´å¤©ä¸‹ç¬¬äºŒ","");
+                arg = replace_string(arg, "å¤©ä¸‹ç¬¬ä¸€ä¾ å°‘","");
+                arg = replace_string(arg, "å¤©ä¸‹ç¬¬äºŒä¾ å°‘","");
+                arg = replace_string(arg, "å¤©ä¸‹ç¬¬ä¸€ä¾ å®¢","");
+                arg = replace_string(arg, "å¤©ä¸‹ç¬¬äºŒä¾ å®¢","");
+                arg = replace_string(arg, "å¤©ä¸‹ç¬¬ä¸€å¤§ä¾ ","");
+                arg = replace_string(arg, "å¤©ä¸‹ç¬¬äºŒå¤§ä¾ ","");
         }
         return arg;
 }

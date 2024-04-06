@@ -5,8 +5,8 @@ string inquiry_linghuchong();
 
 void create()
 {
-        set_name("ÈÎÓ¯Ó¯", ({ "ren yingying","ren","ying"}) );
-	set("gender", "Å®ĞÔ" );
+        set_name("ä»»ç›ˆç›ˆ", ({ "ren yingying","ren","ying"}) );
+	set("gender", "å¥³æ€§" );
 	set("age", 20);
 	set("shen_type", 1);
 	set("combat_exp", 1500000);
@@ -57,17 +57,17 @@ void create()
 	set("attitude", "friendly");
 	set("chat_chance",60);
     	set("chat_msg",({
-        "ÈÎÓ¯Ó¯ËµµÀ£º²»ÖªÁîºü³åËû£¬ÔõÑùÁË£¬ÊÇ·ñÓÖºÍÄÇĞ¡¼úÈËÔÚÒ»Æğ......\n",
-        "ÈÎÓ¯Ó¯ËµµÀ£ºÄãÈôÄÜ°ÑÕâ·âĞÅÉÓ¸øËû£¬¿ÉÌ«Ğ»Ğ»ÄãÁË.............\n",
-        "ÈÎÓ¯Ó¯ËµµÀ£ºÒ²²»ÖªÀ¶·ï»Ë¼ûÃ»¼ûµ½Ëû£¬¿ÉÕæ¼±ËÀÎÒÁË.......\n",
+        "ä»»ç›ˆç›ˆè¯´é“ï¼šä¸çŸ¥ä»¤ç‹å†²ä»–ï¼Œæ€æ ·äº†ï¼Œæ˜¯å¦åˆå’Œé‚£å°è´±äººåœ¨ä¸€èµ·......\n",
+        "ä»»ç›ˆç›ˆè¯´é“ï¼šä½ è‹¥èƒ½æŠŠè¿™å°ä¿¡æç»™ä»–ï¼Œå¯å¤ªè°¢è°¢ä½ äº†.............\n",
+        "ä»»ç›ˆç›ˆè¯´é“ï¼šä¹Ÿä¸çŸ¥è“å‡¤å‡°è§æ²¡è§åˆ°ä»–ï¼Œå¯çœŸæ€¥æ­»æˆ‘äº†.......\n",
 	   }) );
          set_temp("apply/defense", 200);
         set_temp("apply/armor", 500);
         set_temp("apply/damage", 200);
         set_temp("apply/attack", 200);      
-	   create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó Ê¥¹Ã");
+	   create_family("æ—¥æœˆç¥æ•™",2,"å¼Ÿå­ åœ£å§‘");
        set("inquiry",([
-	   "Áîºü³å" : (: inquiry_linghuchong:),
+	   "ä»¤ç‹å†²" : (: inquiry_linghuchong:),
 	   ]) );
        set_temp("letter",1);
        setup();
@@ -81,17 +81,17 @@ string inquiry_linghuchong()
  object me=this_player();
  object obn;
 
- message_vision("ÈÎÓ¯Ó¯ËµµÀ£ºÈ¥ÄêÉÏ»ªÉ½Ò»È¥¾ÍÔÙÎŞÒôĞÅ£¬Ëû²»»áÍü¼ÇÎÒ°É......\n", me );
+ message_vision("ä»»ç›ˆç›ˆè¯´é“ï¼šå»å¹´ä¸Šåå±±ä¸€å»å°±å†æ— éŸ³ä¿¡ï¼Œä»–ä¸ä¼šå¿˜è®°æˆ‘å§......\n", me );
  if(query_temp("letter")==0)
- {  message_vision("ÈÎÓ¯Ó¯ÓÖËµµÀ£ºÕâÎ»"+ RANK_D->query_respect(me)+"£¬ÎÒÒÑ¾­ÅÉ
-À¶·ï»ËÈ¥Ñ°ÕÒÁË£¬Ò²²»ÖªµÀÔõÃ´ÑùÁË¡£\n",me);
+ {  message_vision("ä»»ç›ˆç›ˆåˆè¯´é“ï¼šè¿™ä½"+ RANK_D->query_respect(me)+"ï¼Œæˆ‘å·²ç»æ´¾
+è“å‡¤å‡°å»å¯»æ‰¾äº†ï¼Œä¹Ÿä¸çŸ¥é“æ€ä¹ˆæ ·äº†ã€‚\n",me);
    return "";
  }
-   message_vision("ÈÎÓ¯Ó¯ÓÖËµµÀ£ºÕâÎ»"+ RANK_D->query_respect(me)+"£¬ÎÒÕâÀïÓĞ
-ĞÅ£¬ÄãÒªÊÇÕÒµ½Áîºü³å£¬¾Í°ÑĞÅ½»¸øËû£¬Ëû»áÃ÷°×µÄ¡£\n" , me);
+   message_vision("ä»»ç›ˆç›ˆåˆè¯´é“ï¼šè¿™ä½"+ RANK_D->query_respect(me)+"ï¼Œæˆ‘è¿™é‡Œæœ‰
+ä¿¡ï¼Œä½ è¦æ˜¯æ‰¾åˆ°ä»¤ç‹å†²ï¼Œå°±æŠŠä¿¡äº¤ç»™ä»–ï¼Œä»–ä¼šæ˜ç™½çš„ã€‚\n" , me);
    obn=new("/d/heimuya/npc/obj/letter");
    obn->move(me);
    set_temp("letter",0);
    
-   return ("Õâ·âĞÅ·³Äã½»¸øÁîºü³å¡£\n");
+   return ("è¿™å°ä¿¡çƒ¦ä½ äº¤ç»™ä»¤ç‹å†²ã€‚\n");
 }

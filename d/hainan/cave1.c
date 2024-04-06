@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Сɽ��");
+	set("short", "小山洞");
 	set("long", @LONG
-�ıߵ���ʯ��ᾲ�ƽ,����Ĺ����Ѿ������������ȫ��ס��.��ǰ 
-����ڵ�һƬ.ͨ��ʮ����խ,��ֻ��С�ĵ�������ʯǰ��. 
+四边的岩石嶙峋不平,身后的光线已经给你的身形完全遮住了.眼前 
+是漆黑的一片.通道十分狭窄,你只能小心地摸着岩石前进. 
 LONG
 	);
 	set("no_clean_up", 0);

@@ -5,9 +5,9 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short", "ÃÔ¶´¿Ú");
+        set("short", "è¿·æ´å£");
         set("long", @LONG
-ÓÖÊªÓÖ³±µÄÒ»¸öÊ¯¶´,»¹É¢·¢×ÅÒ°ÊŞµÄĞÈ³ô.
+åˆæ¹¿åˆæ½®çš„ä¸€ä¸ªçŸ³æ´,è¿˜æ•£å‘ç€é‡å…½çš„è…¥è‡­.
 
 LONG );
 set("exits", ([
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
      { 
        if( environment(me)== environment(ob) )
           { ob->kill_ob(me);
-          return notify_fail("Ñ©ÀÇµ²ÕßÂ·¿Ú!\n");}
+          return notify_fail("é›ªç‹¼æŒ¡è€…è·¯å£!\n");}
 
        }
      }

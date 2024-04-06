@@ -8,12 +8,12 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("»¤ÐÄ¾µ", ({ "xinjing" }) );
+	set_name("æŠ¤å¿ƒé•œ", ({ "xinjing" }) );
 	set_weight(6000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("material", "cloth");
 		set("armor_prop/armor", 50);
 	}

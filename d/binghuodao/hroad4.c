@@ -5,9 +5,9 @@ void init();
 int throw(string);
 void create()
 {
-        set("short", "»ğÉ½¿Ú");
+        set("short", "ç«å±±å£");
         set("long", @LONG
-Ç°·½ÒÑ¾­Ã»Â·ÁË,Ô¶´¦ÊÇ»ğÉ½¿Ú.
+å‰æ–¹å·²ç»æ²¡è·¯äº†,è¿œå¤„æ˜¯ç«å±±å£.
 LONG );
 set("exits", ([
 //                 "north" : __DIR__"hroad4",        
@@ -28,21 +28,21 @@ int do_reng(string arg)
 me = this_player();
 if(!arg||arg!="teng")
 {
-write("ÈÓÊ²Ã´!\n");
+write("æ‰”ä»€ä¹ˆ!\n");
 return 1;
 }
 if(!present("chang teng",me))
 {
-write("ÄãÄÄÀ´µÄ³¤ÌÙ!\n");
+write("ä½ å“ªæ¥çš„é•¿è—¤!\n");
 return 1;
 }
 if(random(5)<2)
 {
-write("Äã·ÜÁ¦Ò»ÈÓ,½«³¤ÌÙÏò»ğÉ½¿Ú·½Ïò,
-ÓÉÓÚ»ğÉ½µÄÈÈÁ¦,³¤ÌÙ±»¿¾¸ÉÁË.\n");
+write("ä½ å¥‹åŠ›ä¸€æ‰”,å°†é•¿è—¤å‘ç«å±±å£æ–¹å‘,
+ç”±äºç«å±±çš„çƒ­åŠ›,é•¿è—¤è¢«çƒ¤å¹²äº†.\n");
 me->set_temp("kao_teng",1);
 return 1;
 }
-write("ÄãÈÔ²»ÁËÄÇÃ´Ô¶,ÔÚÀ´Ò»±é!\n");
+write("ä½ ä»ä¸äº†é‚£ä¹ˆè¿œ,åœ¨æ¥ä¸€é!\n");
 return 1;
 }

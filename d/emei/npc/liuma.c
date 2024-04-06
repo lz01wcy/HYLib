@@ -1,4 +1,4 @@
-// liuma.c æòÂí
+// liuma.c éªé©¬
 
 #include <command.h>
 #include <dbase.h>
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("æòÂí", ({ "liu ma" }));
-        set("long","Ò»Æ¥¿¥Âí¡£\n");
-        set("race", "Ò°ÊŞ");
+        set_name("éªé©¬", ({ "liu ma" }));
+        set("long","ä¸€åŒ¹éªé©¬ã€‚\n");
+        set("race", "é‡å…½");
         set("age", 5);
         set("attitude","heroism");
         set("str", 30);

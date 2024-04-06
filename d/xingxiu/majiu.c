@@ -1,17 +1,17 @@
-//Room: majiu1.c ����
+//Room: majiu1.c 马厩
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","����");
+      set("short","马厩");
       set("long",@LONG
-���Ǳ���С������ǣ����깩Ӧ���ʲ��ϡ�����ش��Ὦ���������
-���ÿͣ�������Զ�����������ֵܿ����������ǻ����ǣ�����Ǻ����տ���
-������ι�����㣬������������ˬˬ��һֱ�ź򵽿�����·�����Ǿ�ľ��
-�϶���һ����ľ��(paizi)��
-    �����жѷ������Ѳ��ϣ�������һ����ۡ�
+这是北疆小镇的马厩，常年供应新鲜草料。这里地处会疆，边民古朴
+而好客，把所有远方来宾均作兄弟看待。马夫们会把马牵到马厩好生照看，
+将它们喂饱饮足，再梳理得清清爽爽，一直伺候到客人上路。马厩旧木柱
+上钉着一块破木牌(paizi)。
+    马厩中堆放著几堆草料，正中有一口泔槽。
 LONG);
       set("outdoors", "city2");
       set("no_fight", "1");
@@ -25,9 +25,9 @@ LONG);
       ]));
       set("item_desc", ([
           "paizi": @TEXT
-������ֻҪ������һ�����������Ϳ��Թ͵�һƥ���ˡ�
+客人们只要给马夫一两白银的租金就可以雇到一匹马了。
 
-ǰ��      ���ݳ�:  rideyz
+前往      扬州城:  rideyz
 
 
 TEXT]));

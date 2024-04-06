@@ -1,13 +1,13 @@
 inherit NPC;
 void create()
 {
-    set_name("æ¾Å®",({"bi nu"}));
-    set("gender","Å®ĞÔ");
+    set_name("å©¢å¥³",({"bi nu"}));
+    set("gender","å¥³æ€§");
     set("combat_exp",1000);
     set("attitude","friendly");
        set("per",25);
     set("age",15);
-    set("long","Ò»¸öÍìË«Ñ¾÷ÙµÄÑ¾÷ß.\n");
+    set("long","ä¸€ä¸ªæŒ½åŒä¸«é«»çš„ä¸«é¬Ÿ.\n");
     set_skill("unarmed",10);
     setup();
 add_money("coin",30);

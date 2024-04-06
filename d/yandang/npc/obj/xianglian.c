@@ -5,13 +5,13 @@ inherit FINGER;
 
 void create()
 {
-	set_name("ÕäÖéÏîÁ´",({"zhenzhu","xianglian"}));
+	set_name("çç é¡¹é“¾",({"zhenzhu","xianglian"}));
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-	set("unit","´®");
-	set("long","Ò»´®ÓÉÉÏºÃÕäÖé´®³ÉµÄÏîÁ´¡£\n");
+	set("unit","ä¸²");
+	set("long","ä¸€ä¸²ç”±ä¸Šå¥½çç ä¸²æˆçš„é¡¹é“¾ã€‚\n");
 	set("value",2000);
 	set("material","glass");
 	set("armor_prop/personality",2);
@@ -19,8 +19,8 @@ void create()
 	set("armor_prop/armor",13);
 	set("armor_prop/dodge",2);
 	}
-	set("wear_msg",HIC"$NĞ¡ĞÄÒíÒíµÄ´÷ÉÏÁË$n¡£\n"NOR);
-	set("unequip_msg",HIC"$NÂıÂıµÄ°Ñ$nÕªÁËÏÂÀ´¡£\n"NOR);
+	set("wear_msg",HIC"$Nå°å¿ƒç¿¼ç¿¼çš„æˆ´ä¸Šäº†$nã€‚\n"NOR);
+	set("unequip_msg",HIC"$Næ…¢æ…¢çš„æŠŠ$næ‘˜äº†ä¸‹æ¥ã€‚\n"NOR);
 	setup();
 }
 

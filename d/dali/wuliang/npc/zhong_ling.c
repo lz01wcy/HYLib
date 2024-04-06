@@ -1,11 +1,11 @@
-// NPC :zhong_ling.c ÖÓÁé 
+// NPC :zhong_ling.c é’Ÿçµ 
 // By River 98/12
 inherit NPC;
 void create()
 {
-        set_name("ÖÓÁé", ({ "zhong ling", "zhong", "ling"}));
-        set("title","Íò½Ù¹È¹ÈÖ÷Å®¶ù");        
-        set("gender", "Å®ĞÔ" );
+        set_name("é’Ÿçµ", ({ "zhong ling", "zhong", "ling"}));
+        set("title","ä¸‡åŠ«è°·è°·ä¸»å¥³å„¿");        
+        set("gender", "å¥³æ€§" );
         set("age", 16);
         set("str", 17);
         set("con", 23);
@@ -22,7 +22,7 @@ void create()
         set("max_neili", 800);      
         set("unique", 1);
         
-        set("long","ÕâÉÙÅ®Ô¼ÄªÊ®ÁùÆßËêÄê¼Í£¬Ò»ÉíÇàÉÀ£¬Ğ¦ØÌÈç»¨¡£\n");
+        set("long","è¿™å°‘å¥³çº¦è«åå…­ä¸ƒå²å¹´çºªï¼Œä¸€èº«é’è¡«ï¼Œç¬‘é¥å¦‚èŠ±ã€‚\n");
         set("combat_exp", 100000);
         set("shen", 500); 
 
@@ -39,7 +39,7 @@ void create()
         map_skill("force", "kurong-changong");
         prepare_skill("strike","kunlun-zhang");
         set("inquiry", ([            
-//            "¶ÎÕı´¾" : (: ask_duan :),
+//            "æ®µæ­£æ·³" : (: ask_duan :),
         ]));
 
         setup();

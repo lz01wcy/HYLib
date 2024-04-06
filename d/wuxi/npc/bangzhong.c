@@ -2,13 +2,13 @@
 
 #include <ansi.h>;
 inherit NPC;
-string *duo = ({ "ÈÊ", "Òå", "Àñ", "ÖÇ", "ÐÅ", "ÓÂ" });
+string *duo = ({ "ä»", "ä¹‰", "ç¤¼", "æ™º", "ä¿¡", "å‹‡" });
 void create()
 {
 	int level;
 	level = random(7)+1;
-	set_name("Ø¤°ï°ïÖÚ", ({"gaibang bangzhong", "bangzhong"}));
-	set("gender", "ÄÐÐÔ");
+	set_name("ä¸å¸®å¸®ä¼—", ({"gaibang bangzhong", "bangzhong"}));
+	set("gender", "ç”·æ€§");
 	set("age", 15+level*5);
 	set("attitude", "peaceful");
 	set("class", "beggar");
@@ -45,10 +45,10 @@ void create()
 	map_skill("dodge", "xiaoyaoyou");
 	prepare_skill("hand", "suohou-hand");
 
-	set("party/party_name", HIC"Ø¤°ï"NOR);
-	set("party/rank", GRN+"´ó"+duo[random(6)]+"·Ö¶æ"HIY+chinese_number(level)+"´üµÜ×Ó"NOR);
+	set("party/party_name", HIC"ä¸å¸®"NOR);
+	set("party/rank", GRN+"å¤§"+duo[random(6)]+"åˆ†èˆµ"HIY+chinese_number(level)+"è¢‹å¼Ÿå­"NOR);
 	set("party/level", level);
-	create_family("Ø¤°ï", 10+random(5), "µÜ×Ó");
+	create_family("ä¸å¸®", 10+random(5), "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/cloth/cloth")->wear();

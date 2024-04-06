@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIR"·ÉÔÆÑÒ"NOR);
+        set("short",HIR"é£žäº‘å²©"NOR);
         set("long", @LONG
-ÕâÀïËÆ¶´·Ç¶´£¬¶¥ÉÏÑÂéÜ¸²³ö£¬Ê¯Èéµ¹´¹¡£¸¡ÕßÈô·ÉÏ¼£¬Ø¨ÕßÈôºçÄÞ£¬»í
-È»Â¥µîÃÅãÚ£¬ÐüÈôÍ­¹Ä±àíà£¬²¢ÓÐÊ¨ÏóòÔÁú¡¢Á«ºÉÚäÄ°¡¢·ä·¿Ë®ÎÐÖ®Êô¡£ÆäÏÂ
-³ÎÌ¶åä¹È£¬ÓÄÉîÎÞµ×£¬ËÄÃæÃ¯Ê¢¹ÅÊ÷²ÎÌì£¬Á÷Ë®äëä§¡£
+è¿™é‡Œä¼¼æ´žéžæ´žï¼Œé¡¶ä¸Šå´–æªè¦†å‡ºï¼ŒçŸ³ä¹³å€’åž‚ã€‚æµ®è€…è‹¥é£žéœžï¼Œäº˜è€…è‹¥è™¹éœ“ï¼Œè±
+ç„¶æ¥¼æ®¿é—¨é˜™ï¼Œæ‚¬è‹¥é“œé¼“ç¼–ç£¬ï¼Œå¹¶æœ‰ç‹®è±¡è›Ÿé¾™ã€èŽ²è·é˜¡é™Œã€èœ‚æˆ¿æ°´æ¶¡ä¹‹å±žã€‚å…¶ä¸‹
+æ¾„æ½­é‚ƒè°·ï¼Œå¹½æ·±æ— åº•ï¼Œå››é¢èŒ‚ç››å¤æ ‘å‚å¤©ï¼Œæµæ°´æ½†æ´„ã€‚
 LONG
         );
 
@@ -19,7 +19,7 @@ LONG
                 "northup" : __DIR__"shanjing",
         ]));
         
-        set("outdoors", "¾øÇé¹È");
+        set("outdoors", "ç»æƒ…è°·");
         setup();
         replace_program(ROOM);
 }

@@ -1,5 +1,5 @@
-//shulin.cÊ÷ÁÖ
-//diabio(ÇàÔÆ)2001.3.30
+//shulin.cæ ‘æ—
+//diabio(é’äº‘)2001.3.30
 
 #include <ansi.h>
 #include <room.h>
@@ -9,11 +9,11 @@ int consider_lv(object ob,int a);
 
 void create ()
 {
-        set ("short", "Ê÷ÁÖ");
+        set ("short", "æ ‘æ—");
         set ("long", @LONG
-ÕâÊÇÒ»Æ¬Ê÷ÁÖ£¬ÁÖ×ÓºÜÃÜ£¬Ö»ÓĞÕâÒ»ÌõĞ¡Â·´©ÁÖ¶ø¹ı£¬Ò»Ğ©Ñô¹âÍ¸
-¹ıÃÜÁÖÉäÔÚµØÉÏ£¬µ½ÁËÍíÉÏÕâÀï»ù±¾ÊÇÉìÊÖ²»¼ûÎåÖ¸µÄ¡£ÔÚÇ°ÃæÒşÔ¼
-¿ÉÒÔ¿´¼ûÒ»¸öĞ¡·¿¼ä¡£
+è¿™æ˜¯ä¸€ç‰‡æ ‘æ—ï¼Œæ—å­å¾ˆå¯†ï¼Œåªæœ‰è¿™ä¸€æ¡å°è·¯ç©¿æ—è€Œè¿‡ï¼Œä¸€äº›é˜³å…‰é€
+è¿‡å¯†æ—å°„åœ¨åœ°ä¸Šï¼Œåˆ°äº†æ™šä¸Šè¿™é‡ŒåŸºæœ¬æ˜¯ä¼¸æ‰‹ä¸è§äº”æŒ‡çš„ã€‚åœ¨å‰é¢éšçº¦
+å¯ä»¥çœ‹è§ä¸€ä¸ªå°æˆ¿é—´ã€‚
 LONG);
         set("exits", ([
              "east"  : __DIR__"shulin"+(1+random(4)),
@@ -38,11 +38,11 @@ void init()
 	me = this_player();
 	myfam = me->query("family");
 if (!myfam) return;
-	if ( myfam = me->query("family") && (myfam["family_name"] == "·ÉÌìÓù½£Á÷") && random(100) < 25 
+	if ( myfam = me->query("family") && (myfam["family_name"] == "é£å¤©å¾¡å‰‘æµ") && random(100) < 25 
 	&& !me->query_temp("shirenok"))
 	{
-		message_vision(HIW"Í»È»Ê÷ÉÏ´«À´Ò»ÕóÄüĞ¦£¬°éÒ»Õó·çÊÆ£¬Ò»¸öÃÉÃæÈËÓÌÈçÒ»µÀÀûÈĞÏòÄã´ÌÀ´.......\n"NOR, me);
-		message_vision(HIW"ÃÉÃæÈË´óºÈÒ»Éù£ºÓù½£Á÷µÄÍ¨Í¨µÄËÀ£¬½ñÌìÂäµ½ÎÒÊÖÀïËãÄãµ¹Ã¹£¬ÄÉÃüÀ´°É£¡£¡£¡\n"NOR, me);
+		message_vision(HIW"çªç„¶æ ‘ä¸Šä¼ æ¥ä¸€é˜µç‹ç¬‘ï¼Œä¼´ä¸€é˜µé£åŠ¿ï¼Œä¸€ä¸ªè’™é¢äººçŠ¹å¦‚ä¸€é“åˆ©åˆƒå‘ä½ åˆºæ¥.......\n"NOR, me);
+		message_vision(HIW"è’™é¢äººå¤§å–ä¸€å£°ï¼šå¾¡å‰‘æµçš„é€šé€šçš„æ­»ï¼Œä»Šå¤©è½åˆ°æˆ‘æ‰‹é‡Œç®—ä½ å€’éœ‰ï¼Œçº³å‘½æ¥å§ï¼ï¼ï¼\n"NOR, me);
 
 		ob = new(__DIR__"npc/shiren");
               ob->set("combat_exp",me->query("combat_exp") * 9 / 10);
@@ -105,7 +105,7 @@ int valid_leave(object me, string dir)
 	   && me->query_temp("shiren") == 1
 	   && objectp(present("bang zhong", environment(me))) )
 	{
-		message_vision("ÃÉÃæÈËÒ»ÉÁÉí½«ÄãÀ¹ÁËÏÂÀ´£ºÏë×ß£¿Ã»ÄÇÃ´ÈİÒ×£¡£¡£¡", me);
+		message_vision("è’™é¢äººä¸€é—ªèº«å°†ä½ æ‹¦äº†ä¸‹æ¥ï¼šæƒ³èµ°ï¼Ÿæ²¡é‚£ä¹ˆå®¹æ˜“ï¼ï¼ï¼", me);
 		return notify_fail("\n");
 	}
 	me->delete_temp("shiren");

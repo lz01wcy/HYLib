@@ -1,4 +1,4 @@
-// chuan.c éÏé­ºË´¬
+// chuan.c æ©„æ¦„æ ¸èˆ¹
 
 #include <ansi.h>
 #include <armor.h>
@@ -7,22 +7,22 @@ inherit WAIST;
 
 void create()
 {
-	set_name(HIC "éÏé­ºË´¬" NOR, ({"ganlanhe chuan", "chuan"}) );
+	set_name(HIC "æ©„æ¦„æ ¸èˆ¹" NOR, ({"ganlanhe chuan", "chuan"}) );
 	set_weight(100);
 	if ( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("long", @LONG
-éÏé­ºË´¬µñ¿Ì¾«ÖÂ£¬ÖĞ²Õ¿ÍËÄÈË£¬¶şÈËÔÚºó£¬Ò»Ò¡ß££¬Ò»Å¥±õ£¬´°èù½Ô¿É¿ª
-ãØ£¬Ã¼Ä¿Èç»­£¬ÍâÓÃÍË¹âÆáºĞ£¬ÈçÒ©ÖÆéÏé­ĞÎ£¬ºìË¿½áÂç£¬¿ÉÒÔÅåÉí¡£
+æ©„æ¦„æ ¸èˆ¹é›•åˆ»ç²¾è‡´ï¼Œä¸­èˆ±å®¢å››äººï¼ŒäºŒäººåœ¨åï¼Œä¸€æ‘‡æ’¸ï¼Œä¸€é’®æ»¨ï¼Œçª—æ£‚çš†å¯å¼€
+é˜–ï¼Œçœ‰ç›®å¦‚ç”»ï¼Œå¤–ç”¨é€€å…‰æ¼†ç›’ï¼Œå¦‚è¯åˆ¶æ©„æ¦„å½¢ï¼Œçº¢ä¸ç»“ç»œï¼Œå¯ä»¥ä½©èº«ã€‚
 LONG
 		);
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 5000);
 		set("armor_prop/armor",1);
 		set("armor_prop/personality", 3);
-		set("wear_msg", "$N°ÑÒ»¸ö$nÏµÔÚÑü¼ä¡£\n");
-		set("unequip_msg","$N´ÓÑü¼ä½âÏÂÒ»¸ö$n£¬ÄÃÔÚÊÖÀï°ÑÍæ¡£\n");
+		set("wear_msg", "$NæŠŠä¸€ä¸ª$nç³»åœ¨è…°é—´ã€‚\n");
+		set("unequip_msg","$Nä»è…°é—´è§£ä¸‹ä¸€ä¸ª$nï¼Œæ‹¿åœ¨æ‰‹é‡ŒæŠŠç©ã€‚\n");
 	}
 	setup();
 }

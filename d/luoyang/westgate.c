@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "����");
+	set("short",  "西门");
 	set("long",  @LONG
-���˴��ţ��Ͳ��������ǵĹ�Ͻ��Χ�����볤����Ͻ�أ����ϳ�¥
-�ѿ��������������ȹصĳ�¥�ˡ�������ͨ�������ǵĴ�ٵ���������
-����ͨ�����������ĵ���Ҫͨ����
+出了此门，就不在洛阳城的管辖范围，进入长安的辖地，登上城楼
+已可以隐隐看见函谷关的城楼了。西面是通往长安城的大官道，而东面
+则是通向洛阳城中心的主要通道。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"west"  :  "/d/city4/road1",

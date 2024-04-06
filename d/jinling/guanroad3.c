@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ�ٵ�");
+        set("short", "青石官道");
         set("long", @LONG
-����һ��������ʵ����ʯ��������ӳ����ϰ����Ͻ�ɽ��ɽ·��
+这是一条宽敞坚实的青石大道，连接长江南岸至紫金山的山路。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "º²Ä«ÊéÎÝ");
+        set("short", "ç¿°å¢¨ä¹¦å±‹");
         set("long",@LONG
-ÎÝÖÐÒ»¼Ü¼Ü×ÏÖñ´î³ÉµÄÊé¼ÜÒÐÇ½¶øÁ¢£¬Êé¼ÜÉÏ°ÚÂúÁË¾­Ê·µä¼®¡£ÎÝ
-×ÓÕýÖÐÑëÊÇÒ»ÕÅÊé×À£¬×ÀÉÏÇÙÆå¾ã±¸£¬±ÊÄ«Ö½ÑâÒ»Ó¦¾ãÈ«£¬Ç½ÉÏ¹Ò×ÅÒ»
-·ùÌõ·ù(tiaofu)¡£´óÃû¶¦¶¦µÄÄ½ÈÝ¹«×Ó³£ÔÚÕâÀï¶ÁÊéÐ´×Ö¡£
+å±‹ä¸­ä¸€æž¶æž¶ç´«ç«¹æ­æˆçš„ä¹¦æž¶å€šå¢™è€Œç«‹ï¼Œä¹¦æž¶ä¸Šæ‘†æ»¡äº†ç»å²å…¸ç±ã€‚å±‹
+å­æ­£ä¸­å¤®æ˜¯ä¸€å¼ ä¹¦æ¡Œï¼Œæ¡Œä¸Šç´æ£‹ä¿±å¤‡ï¼Œç¬”å¢¨çº¸ç šä¸€åº”ä¿±å…¨ï¼Œå¢™ä¸ŠæŒ‚ç€ä¸€
+å¹…æ¡å¹…(tiaofu)ã€‚å¤§åé¼Žé¼Žçš„æ…•å®¹å…¬å­å¸¸åœ¨è¿™é‡Œè¯»ä¹¦å†™å­—ã€‚
 LONG );
         set("exits", ([
             "east" : __DIR__"lanyue",
@@ -18,10 +18,10 @@ LONG );
 
         set("item_desc",([
                           "tiaofu" : "
-               ¹âÈ÷ÁâºþÌìÓûÍí£¬
-               ¸´¹úÎÞ¼ÆÒþº®Ì¶¡£
-               ´óÃÎÎ´¾õÉíÒÑÀÏ£¬
-               ÑàÓïÉùÖÐ¿ÕÐ¦Ì¸¡£\n\n\n ",
+               å…‰æ´’è±æ¹–å¤©æ¬²æ™šï¼Œ
+               å¤å›½æ— è®¡éšå¯’æ½­ã€‚
+               å¤§æ¢¦æœªè§‰èº«å·²è€ï¼Œ
+               ç‡•è¯­å£°ä¸­ç©ºç¬‘è°ˆã€‚\n\n\n ",
         ]));
         set("no_clean_up", 0);
         setup();

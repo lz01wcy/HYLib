@@ -4,11 +4,11 @@ int last_time=-10000;
 
 void create ()
 {
-  set ("short", "Ğ¡ÁúäĞ");
+  set ("short", "å°é¾™æ¹«");
   set ("long", @LONG
-Ğ¡ÁúäĞÆÙ²¼´ÓÒ»µÀÉ½ÑÂÉÏĞü¹ÒÏÂÀ´,ÈçÍ¬Ò»ÌõÓñ´ø´Ó¾ÅÌìÅ×ÏÂ,ÑÂ
-ÏÂ»ıË®³ÉÌ¶,Ì¶±ßÇà²İÒğÒğ,Ë®ÖĞ¾ŞÊ¯ºá¿Õ,Ê¯ÉÏÇàÌ¦µãµã,¿´À´ºÜ¾ÃÃ»
-ÈËµ½´ËÁË,ËÄÖÜ¿Õ¹ÈÄñÓï,´ËµØ½öÄãÒ»ÈË.
+å°é¾™æ¹«ç€‘å¸ƒä»ä¸€é“å±±å´–ä¸Šæ‚¬æŒ‚ä¸‹æ¥,å¦‚åŒä¸€æ¡ç‰å¸¦ä»ä¹å¤©æŠ›ä¸‹,å´–
+ä¸‹ç§¯æ°´æˆæ½­,æ½­è¾¹é’è‰èŒµèŒµ,æ°´ä¸­å·¨çŸ³æ¨ªç©º,çŸ³ä¸Šé’è‹”ç‚¹ç‚¹,çœ‹æ¥å¾ˆä¹…æ²¡
+äººåˆ°æ­¤äº†,å››å‘¨ç©ºè°·é¸Ÿè¯­,æ­¤åœ°ä»…ä½ ä¸€äºº.
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -30,10 +30,10 @@ int do_search(string arg)
     object me,ob;
     int i;
     me=this_player();
-    if (me->query("family/family_name")!="Ñãµ´ÅÉ")
+    if (me->query("family/family_name")!="é›è¡æ´¾")
 { if (!present("snake",this_object()))
 clone_object(__DIR__"npc/mangshe")->move(environment(me));
-return notify_fail("ÄãÔÚ²İ´ÔÖĞ·­À´·­È¥,½á¹û·­³öÒ»ÌõÃ§Éß\n");}
+return notify_fail("ä½ åœ¨è‰ä¸›ä¸­ç¿»æ¥ç¿»å»,ç»“æœç¿»å‡ºä¸€æ¡è½è›‡\n");}
  
     me->set_temp("search",me->query_temp("search")+1);
 
@@ -46,15 +46,15 @@ return notify_fail("ÄãÔÚ²İ´ÔÖĞ·­À´·­È¥,½á¹û·­³öÒ»ÌõÃ§Éß\n");}
       { if ((int)me->query_skill("sword",1)>60){
       clone_object(__DIR__"obj/biyuzan")->move(environment(me));
 	message_vision(
-	"$NÔÚ²İ´ÔÖĞÕÒµ½Ò»Ã¶±ÌÓñô¢¡£\n", me);
+	"$Nåœ¨è‰ä¸›ä¸­æ‰¾åˆ°ä¸€æšç¢§ç‰ç°ªã€‚\n", me);
       last_time=i;}
-    else message_vision("$NÏëÏÖÔÚ»¹ÊÇÑ§ºÃ½£·¨±È½ÏÖØÒª,²»ÄÜÀË·ÑÊ±¼äÔÚÕâÖÖÊÂÇéÉÏÁË!\n",me);
+    else message_vision("$Næƒ³ç°åœ¨è¿˜æ˜¯å­¦å¥½å‰‘æ³•æ¯”è¾ƒé‡è¦,ä¸èƒ½æµªè´¹æ—¶é—´åœ¨è¿™ç§äº‹æƒ…ä¸Šäº†!\n",me);
       }
       else          
-	message_vision("$NÔÚ²İ´ÔÖĞÕÒÀ´ÕÒÈ¥,²îµã±»ÉßÒ§ÉÏÒ»¿Ú£¡\n", me); 
+	message_vision("$Nåœ¨è‰ä¸›ä¸­æ‰¾æ¥æ‰¾å»,å·®ç‚¹è¢«è›‡å’¬ä¸Šä¸€å£ï¼\n", me); 
     }
     else
-      message_vision("$NÔÚ²İ´ÔÖĞÕÒÀ´ÕÒÈ¥,Ê²Ã´¶¼Ã»ÕÒµ½£¡\n", me);
+      message_vision("$Nåœ¨è‰ä¸›ä¸­æ‰¾æ¥æ‰¾å»,ä»€ä¹ˆéƒ½æ²¡æ‰¾åˆ°ï¼\n", me);
     return 1; 
 }
 int valid_leave(object me, string dir)

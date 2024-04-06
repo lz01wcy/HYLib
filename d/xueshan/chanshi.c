@@ -1,15 +1,15 @@
-//      chanshi.c ìøÊÒ
-//      Designed by secret (ÃØÃÜ)
+//      chanshi.c ç¦…å®¤
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","ìøÊÒ");
+        set("short","ç¦…å®¤");
         set("long",@LONG
-ÕâÀïÊÇÉ®ÈËÃÅ²Îìø´ò×øµÄµØ·½¡£²à±ÚÒ»ÁĞìø´²ÈÃÈË¿´
-ÁË¾ÍÏëµ½¸ÃÏëµÄÊÂ¡£
+è¿™é‡Œæ˜¯åƒ§äººé—¨å‚ç¦…æ‰“åçš„åœ°æ–¹ã€‚ä¾§å£ä¸€åˆ—ç¦…åºŠè®©äººçœ‹
+äº†å°±æƒ³åˆ°è¯¥æƒ³çš„äº‹ã€‚
 LONG );
         set("no_fight",1);
         set("sleep_room",1);

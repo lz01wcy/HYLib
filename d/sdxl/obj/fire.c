@@ -1,4 +1,4 @@
-// Obj: /u/poq/sdxl/obj/fire.c »ðÕÛ
+// Obj: /u/poq/sdxl/obj/fire.c ç«æŠ˜
 // bye poq@jyqx 97/7
 
 inherit ITEM;
@@ -9,13 +9,13 @@ void init();
 
 void create()
 {
-    set_name("»ðÕÛ",({"fire", "huozhe"}));
+    set_name("ç«æŠ˜",({"fire", "huozhe"}));
     set_weight(10);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-        set("long", "»ðÕÛ£¬¿ÉÒÔÓÃÀ´ÕÕÃ÷ºÍµã»ð¡£\n");
-        set("unit", "¸ö");
+        set("long", "ç«æŠ˜ï¼Œå¯ä»¥ç”¨æ¥ç…§æ˜Žå’Œç‚¹ç«ã€‚\n");
+        set("unit", "ä¸ª");
         set("value", 50);
 	 }
     setup();
@@ -34,17 +34,17 @@ int do_use(string arg)
     object where = environment(me);
 
     if (arg != "fire" && arg!="huozhe")
-        return notify_fail("ÄãÒªÊ¹ÓÃÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦ä½¿ç”¨ä»€ä¹ˆï¼Ÿ\n");
 
     if(ob->query_temp("temp/used")==1)
-        return notify_fail("»ðÕÛÒÑ¾­±»µãÈ¼ÁË£¡\n");
+        return notify_fail("ç«æŠ˜å·²ç»è¢«ç‚¹ç‡ƒäº†ï¼\n");
 
-    message_vision("$NµãÈ¼ÁË»ðÕÛ£¬ÖÜÎ§ÂíÉÏÁÁÁËÆðÀ´£¡\n", me);
+    message_vision("$Nç‚¹ç‡ƒäº†ç«æŠ˜ï¼Œå‘¨å›´é©¬ä¸Šäº®äº†èµ·æ¥ï¼\n", me);
 
     decayed = 0;
 
-    set_name("µãÈ¼µÄ»ðÕÛ", ({ "fire", "huozhe" }) );
-    set("long", "»ðÕÛÕýÈ¼×Å¡£\n");
+    set_name("ç‚¹ç‡ƒçš„ç«æŠ˜", ({ "fire", "huozhe" }) );
+    set("long", "ç«æŠ˜æ­£ç‡ƒç€ã€‚\n");
     where->add_temp("temp/light", 100);
     ob->set_temp("temp/used", 1);
 //    if( clonep(this_object()) )
@@ -61,21 +61,21 @@ void decay(int phase)
 	decayed = phase;
 	switch(phase) {
 		case 1:
-            say( "»ðÕÛÈ¼µÃÕýÍú¡£\n" );
-            set_name("µãÈ¼µÄ»ðÕÛ", ({ "fire", "huozhe" }) );
-            set("long", "»ðÕÛÕýÈ¼×Å¡£\n");
+            say( "ç«æŠ˜ç‡ƒå¾—æ­£æ—ºã€‚\n" );
+            set_name("ç‚¹ç‡ƒçš„ç«æŠ˜", ({ "fire", "huozhe" }) );
+            set("long", "ç«æŠ˜æ­£ç‡ƒç€ã€‚\n");
             where->add_temp("temp/huo", 100);
 			call_out("decay", 120, phase + 1);
 			break;
 		case 2:
-            say( "»ðÕÛÂíÉÏÒªÃðÁË¡£\n" );
-            set_name("¿ìÏ¨ÃðµÄ»ðÕÛ", ({ "fire", "huozhe" }) );
-            set("long", "»ðÕÛÂíÉÏÒªÏ¨ÃðÁË¡£\n");
+            say( "ç«æŠ˜é©¬ä¸Šè¦ç­äº†ã€‚\n" );
+            set_name("å¿«ç†„ç­çš„ç«æŠ˜", ({ "fire", "huozhe" }) );
+            set("long", "ç«æŠ˜é©¬ä¸Šè¦ç†„ç­äº†ã€‚\n");
             where->add_temp("temp/huo",  -50);
 	call_out("decay", 60, phase + 1);
 			break;
                 case 3:
-            say( "»ðÕÛÏ¨ÃðÁË¡£\n" );
+            say( "ç«æŠ˜ç†„ç­äº†ã€‚\n" );
             where->add_temp("temp/huo",  -50);
 			destruct(this_object());
 			break;

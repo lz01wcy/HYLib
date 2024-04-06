@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "海港");
 	set("long", @LONG
-������һ�����ۣ����ڰ׷���㣬��ͷ��ͣ�źö��洬������
-һ�����һ���ȴ����ҡͷ��
+这里是一个海港，港内白帆点点，码头上停着好多渔船，可是
+一提起桃花岛却个个摇头。
 LONG );
 	set("exits", ([
                 "west" : __DIR__"nanhu",

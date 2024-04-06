@@ -8,11 +8,11 @@ int do_walk();
 
 void create()
 {
-        set_name("Ê°»ÄÕß", ({ "walker" }));
-	set("gender", "ÄĞĞÔ");
+        set_name("æ‹¾è’è€…", ({ "walker" }));
+	set("gender", "ç”·æ€§");
 	set("age", 53 + random(20));
 	set("long", @LONG
-ÕâÊÇÒ»¸öÄêÂõµÄÊ°»ÄÕß£¬¿´ÉÏÈ¥ÀÏÊµ°Í½»µÄ¡£
+è¿™æ˜¯ä¸€ä¸ªå¹´è¿ˆçš„æ‹¾è’è€…ï¼Œçœ‹ä¸Šå»è€å®å·´äº¤çš„ã€‚
 LONG );
 	set("attitude", "heroism");
 
@@ -51,7 +51,7 @@ int do_walk()
                     ! mapp(obmap = room->query_temp("objects")) ||
                     member_array(this_object(), values(obmap)) == -1)
                 {
-                        message_vision("$NÌ¾ÁËÌ¾Æø£¬×ßÁË¡£\n", this_object());
+                        message_vision("$Nå¹äº†å¹æ°”ï¼Œèµ°äº†ã€‚\n", this_object());
                         destruct(this_object());
                         return 0;
                 }
@@ -73,11 +73,11 @@ int do_walk()
         }
 
         if (n == 1)
-                message_vision("$NÒ»ÍäÑü£¬´ÓµØÉÏ¼ñÆğÒ»Ñù¶«Î÷¡£\n",
+                message_vision("$Nä¸€å¼¯è…°ï¼Œä»åœ°ä¸Šæ¡èµ·ä¸€æ ·ä¸œè¥¿ã€‚\n",
                                this_object());
         else
         if (n > 1)
-                message_vision("$NÍäÑüÔÚµØÉÏÃşÃşË÷Ë÷ÕÒÁË°ëÌì£¬¼ñÆğÒ»¶Ñ¶«Î÷¡£\n",
+                message_vision("$Nå¼¯è…°åœ¨åœ°ä¸Šæ‘¸æ‘¸ç´¢ç´¢æ‰¾äº†åŠå¤©ï¼Œæ¡èµ·ä¸€å †ä¸œè¥¿ã€‚\n",
                                this_object());
                         
         random_move();

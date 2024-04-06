@@ -7,14 +7,14 @@ int ask_stop();
 
 void create()
 {
-	set_name("³¿ÒË", ({ "cheng yi", "cheng" , "yi"}) );
-	set("title", "ÎŞÎıÖª¸®" );
-	set("gender", "Å®ĞÔ" );
+	set_name("æ™¨å®œ", ({ "cheng yi", "cheng" , "yi"}) );
+	set("title", "æ— é”¡çŸ¥åºœ" );
+	set("gender", "å¥³æ€§" );
 	set("age", 25);
 	set("per", 24);
 	set("str", 20);
 	set("dex", 20);
-	set("long", "Õâ¸öÖª¸®×æ¾ÓËÕº¼£¬³¤µÃÃ¼ÇåÄ¿Ğã¡£Äã×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇ¸öÅ®µÄÒ®£¡\n");
+	set("long", "è¿™ä¸ªçŸ¥åºœç¥–å±…è‹æ­ï¼Œé•¿å¾—çœ‰æ¸…ç›®ç§€ã€‚ä½ ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯ä¸ªå¥³çš„è€¶ï¼\n");
 	set("combat_exp", 300000);
 	set("shen_type", 0);
 	set("attitude", "heroism");

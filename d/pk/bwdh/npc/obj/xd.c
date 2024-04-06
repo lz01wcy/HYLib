@@ -1,17 +1,17 @@
-// xuedao.c Ñªµ¶
+// xuedao.c è¡€åˆ€
 #include <ansi.h>
 #include <weapon.h>
 inherit BLADE;
 
 void create()
 {
-        set_name( HIR"Ñªµ¶"NOR , ({ "xue dao", "xuedao","blade","dao"}));
+        set_name( HIR"è¡€åˆ€"NOR , ({ "xue dao", "xuedao","blade","dao"}));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIR"Õâ°ÑÃåµ¶¼«Çá¼«±¡£¬ÈĞ·æÉÏÈ«ÊÇ°µºìÖ®É«£¬Ñª¹âÒşÒş£¬¼«ÊÇ¿É²À¡£\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIR"è¿™æŠŠç¼…åˆ€æè½»æè–„ï¼Œåˆƒé”‹ä¸Šå…¨æ˜¯æš—çº¢ä¹‹è‰²ï¼Œè¡€å…‰éšéšï¼Œææ˜¯å¯æ€–ã€‚\n"NOR);
                 set("value", 1000);
                 set("rigidity", 10);
                 set("sharpness", 5);
@@ -20,8 +20,8 @@ void create()
                 set("treasure",1);
                 set("material", "steel");
                 set("wield_msg", HIR
-"$NÉìÊÖÑü¼ä£¬Ò»¶¶Ö®ÏÂ£¬ÊÖÖĞÒÑ¶àÁËÒ»±úÈíÈíµÄÃåµ¶¡£µ¶Éí²»×¡²ü¶¯£¬ÍğÈ»Ò»Ìõ»îµÄÉßÒ»°ã¡£\n"NOR);
-                set("unwield_msg",HIR" $NÇáÇáµÄÃşÁËÃşÑªµ¶£¬Ğ¡ĞÄµÄ²ø»ØÁËÑü¼ä¡£\n"NOR);
+"$Nä¼¸æ‰‹è…°é—´ï¼Œä¸€æŠ–ä¹‹ä¸‹ï¼Œæ‰‹ä¸­å·²å¤šäº†ä¸€æŸ„è½¯è½¯çš„ç¼…åˆ€ã€‚åˆ€èº«ä¸ä½é¢¤åŠ¨ï¼Œå®›ç„¶ä¸€æ¡æ´»çš„è›‡ä¸€èˆ¬ã€‚\n"NOR);
+                set("unwield_msg",HIR" $Nè½»è½»çš„æ‘¸äº†æ‘¸è¡€åˆ€ï¼Œå°å¿ƒçš„ç¼ å›äº†è…°é—´ã€‚\n"NOR);
         }
         init_blade(110);
         setup();

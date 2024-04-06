@@ -1,22 +1,22 @@
 #include <ansi.h>
 inherit NPC;
 mapping *data=({
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"»È³æ",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"¶¾Ö©Öë",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"Ê·À³Ä·",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"Ğ«×Ó",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"ÑÛ¾«ÍõÉß",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"Ê³ÈË»¨",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"Ê÷¾«",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"ÎüÑªòùòğ",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"Ä§ºü",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"¹Å´úºï",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"µØÓüÖ®È®",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"Öí¹Ö",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"ÀÇ¹Ö",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"½ğÇ®±ª",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"É±ÈË·ä",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"¾Şòá",])
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"è—è™«",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"æ¯’èœ˜è››",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"å²è±å§†",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"èå­",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"çœ¼ç²¾ç‹è›‡",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"é£ŸäººèŠ±",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"æ ‘ç²¾",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"å¸è¡€è™è ",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"é­”ç‹",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"å¤ä»£çŒ´",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"åœ°ç‹±ä¹‹çŠ¬",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"çŒªæ€ª",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"ç‹¼æ€ª",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"é‡‘é’±è±¹",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"æ€äººèœ‚",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"å·¨èœ¥",])
 });
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
@@ -30,13 +30,13 @@ void create()
 set_name(order[random(13)]+npc["name"]+NOR,({ npc["id"] }));    
 	set("magicgift",4);
 	set("magicset",1);
-          set("race", "Ò°ÊŞ");
+          set("race", "é‡å…½");
        set("long",
-"Ò»Ö»¿ÉÅÂµÄÄ§·¨¹ÖÎï¡£\n");
+"ä¸€åªå¯æ€•çš„é­”æ³•æ€ªç‰©ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 
-set("limbs", ({ "Í·²¿", "ÉíÌå", "ËÄÖ«" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å››è‚¢" }) );
         set("verbs", ({ "bite", "claw" }) );
 	       set("max_qi",500+random(500));
 	set("combat_exp",45000000+random(8000000));
@@ -137,9 +137,9 @@ void die()
         ob = this_object();
         me = query_temp("last_damage_from");
 if (!me) return;        
-        message_vision(RED"$NÒ»Éù²Ò½Ğ,µ¹ÔÚµØÉÏ£¬·­ÁË¸ö¸úÍ·¾Í²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$Nä¸€å£°æƒ¨å«,å€’åœ¨åœ°ä¸Šï¼Œç¿»äº†ä¸ªè·Ÿå¤´å°±ä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦´òËÀ"+ob->query("name")+",Ôö¼ÓÁË80¾­ÑéºÍ40Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ‰“æ­»"+ob->query("name")+",å¢åŠ äº†80ç»éªŒå’Œ40æ½œèƒ½ã€‚\n"NOR, me);
         me->apply_condition("chanchu_poison", 0);
         me->apply_condition("xiezi_poison", 0);
         me->apply_condition("snake_poison", 0);
@@ -172,6 +172,6 @@ int hit_ob(object me, object ob, int damage)
         ob->apply_condition("xiezi_poison", 40);
         ob->apply_condition("snake_poison", 40);
         ob->apply_condition("zhizhu_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»ç—’ï¼\n" NOR );
 }
 }

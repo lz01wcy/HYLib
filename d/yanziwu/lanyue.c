@@ -10,18 +10,18 @@ void close(object);
 
 void create()
 {
-        set("short", "À¿ÔÂ¾Ó");
+        set("short", "æ½æœˆå±…");
         set("long",@LONG
-ÕâÊÇÄ½ÈÝ¹«×ÓµÄÎÔÊÒ£¬·¿ÖÐ³ÂÉèÆÕÍ¨£¬ÊÕÊ°µÃÆÄÎªÕû½à£¬ÎÝ½ÇÒ»¼Ü
-Ã¯À¼Åè¾°(penjing)³¤µÃºÜÊÇÍúÊ¢¡£ÍíÉÏÔÂ¹â´Ó´°»§Éä½øÀ´£¬ÂúÊÒÒø¹â£¬
-ÊÇÑà×ÓÎëµÄÒ»´óÃÀ¾°¡£
+è¿™æ˜¯æ…•å®¹å…¬å­çš„å§å®¤ï¼Œæˆ¿ä¸­é™ˆè®¾æ™®é€šï¼Œæ”¶æ‹¾å¾—é¢‡ä¸ºæ•´æ´ï¼Œå±‹è§’ä¸€æž¶
+èŒ‚å…°ç›†æ™¯(penjing)é•¿å¾—å¾ˆæ˜¯æ—ºç››ã€‚æ™šä¸Šæœˆå…‰ä»Žçª—æˆ·å°„è¿›æ¥ï¼Œæ»¡å®¤é“¶å…‰ï¼Œ
+æ˜¯ç‡•å­åžçš„ä¸€å¤§ç¾Žæ™¯ã€‚
 LONG );
         set("exits", ([
             "west": __DIR__"shuwu",
         ]));
 
         set("item_desc", ([
-            "penjing" : "ÕâÅè¾°ËÆºõºÜÆ½³££¬¶ÀÓÐÆä±ßÑØÌØ±ð¹â»¬¡£ÇÃÒ»ÇÃÊÔÊÔ£¿\n",
+            "penjing" : "è¿™ç›†æ™¯ä¼¼ä¹Žå¾ˆå¹³å¸¸ï¼Œç‹¬æœ‰å…¶è¾¹æ²¿ç‰¹åˆ«å…‰æ»‘ã€‚æ•²ä¸€æ•²è¯•è¯•ï¼Ÿ\n",
         ]));
         set("no_clean_up", 0);
         setup();
@@ -37,11 +37,11 @@ int do_knock(string arg)
         me=this_player();
 
         if (!arg || (arg!="penjing" ) )
-           return  notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+           return  notify_fail("ä½ è¦æ•²ä»€ä¹ˆï¼Ÿ\n");
 
         set_temp("marks/pen",1);
-        message_vision("$NÍ»È»ÔÚÅè¾°ÉÏÇÃÁË¼¸ÏÂ£¬$N¸ÉÂðÑ½¡£\n",me);
-        tell_object(me,"ÄãºÃÏóÌý¼û¶«ÃæÓÐËµ»°µÄÉùÒô£¬¿ÉÊÇ¶«ÃæÊ²Ã´¶¼Ã»ÓÐ°¡£¿£¡ÕâºÎ´ÓËµÆðÄØ£¿\n");
+        message_vision("$Nçªç„¶åœ¨ç›†æ™¯ä¸Šæ•²äº†å‡ ä¸‹ï¼Œ$Nå¹²å—å‘€ã€‚\n",me);
+        tell_object(me,"ä½ å¥½è±¡å¬è§ä¸œé¢æœ‰è¯´è¯çš„å£°éŸ³ï¼Œå¯æ˜¯ä¸œé¢ä»€ä¹ˆéƒ½æ²¡æœ‰å•Šï¼Ÿï¼è¿™ä½•ä»Žè¯´èµ·å‘¢ï¼Ÿ\n");
         return 1;
 }
 int do_say(string arg)
@@ -52,10 +52,10 @@ int do_say(string arg)
         if (!query_temp("marks/pen")) return 0;
         if( !arg || arg=="" ) return 0;
 
-        if (arg == "¹â¸´´óÑà")
+        if (arg == "å…‰å¤å¤§ç‡•")
         {
-                tell_object(me,"Äã¼ÈÈ»ÖªµÀ°µºÅ£¬¿´À´ÊÇ¹«×Ó½ÐÄãÀ´µÄ£¬¾Í½øÀ´°É¡£\n");
-                message("vision", "Åè¾°±ßÉÏµÄÒ»¶ÂÇ½½¥½¥ÒÆ¿ª£¬Â¶³öµÀÄ¾ÃÅ¡£\n", this_player());
+                tell_object(me,"ä½ æ—¢ç„¶çŸ¥é“æš—å·ï¼Œçœ‹æ¥æ˜¯å…¬å­å«ä½ æ¥çš„ï¼Œå°±è¿›æ¥å§ã€‚\n");
+                message("vision", "ç›†æ™¯è¾¹ä¸Šçš„ä¸€å µå¢™æ¸æ¸ç§»å¼€ï¼Œéœ²å‡ºé“æœ¨é—¨ã€‚\n", this_player());
                 set("exits/east", __DIR__"huanshi");
                 remove_call_out("close");
                 call_out("close", 5, this_object());
@@ -65,7 +65,7 @@ int do_say(string arg)
 
 void close(object room)
 {
-        message("vision","ºöÈ»Ò»µÀÈËÓ°ÉÁ¹ý£¬½«Ä¾ÃÅ¹ØÉÏÁË¡£\n", room);
+        message("vision","å¿½ç„¶ä¸€é“äººå½±é—ªè¿‡ï¼Œå°†æœ¨é—¨å…³ä¸Šäº†ã€‚\n", room);
         room->delete("exits/east");
 }
 void reset()

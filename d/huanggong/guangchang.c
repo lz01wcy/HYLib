@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��㳡");
+	set("short", "大广场");
 	set("long", @LONG
-�����㳡�ĵ����̵�ʯש��������, ��һʮ���. �ǻʵ�Ϊ����
-���ڵص��빬�ص���Ƶ�. ����ʳǵĽ䱸ɭ��֮��.
+这个大广场的地面铺的石砖横七竖八, 共一十五层. 是皇帝为防有
+人挖地道入宫特地设计的. 可想皇城的戒备森严之至.
 LONG
 	);
 	set("outdoors", "huanggong");

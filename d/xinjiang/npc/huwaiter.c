@@ -3,14 +3,14 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("ÂòÂòÌá", ({ "waiter" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä¹°ä¹°æ", ({ "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 70);
         set("long",
-                "Ò»¸öÂúÁ³ÆÓÊµ£¬É¢·¢×Å¹ÅÍ­É«¹âÃ¢µÄÀÏÈË\n");
+                "ä¸€ä¸ªæ»¡è„¸æœ´å®ï¼Œæ•£å‘ç€å¤é“œè‰²å…‰èŠ’çš„è€äºº\n");
         set("combat_exp", 5);
         set("attitude", "friendly");
-        set("rank_info/respect", "ÀÏÈË¼Ò");
+        set("rank_info/respect", "è€äººå®¶");
         set("vendor_goods", ({
                 __DIR__"obj/milk2",
                 __DIR__"obj/milk",
@@ -36,16 +36,16 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(3) ) {
                 case 0:
-                        say( "ÂòÂòÌáĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÑÇ¿ËÎ÷Ä·ÈüË¹¡£\n");
+                        say( "ä¹°ä¹°æç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œäºšå…‹è¥¿å§†èµ›æ–¯ã€‚\n");
                         break;
                 case 1:
-                        say( "ÂòÂòÌáÌ§ÆğËû¹ÅÍ­É«µÄÁ³£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬àËÀï»ôÎ÷¡£\n");
+                        say( "ä¹°ä¹°ææŠ¬èµ·ä»–å¤é“œè‰²çš„è„¸ï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œå—¨é‡Œéœè¥¿ã€‚\n");
                         break;
                 case 2:
-                        say( "ÂòÂòÌáËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬¹ı»ğÑæÉ½¿ÉÒªÓĞĞ©¾ÆË®²Å¿ÉÒÔÉÏÂ·Ó´£¡\n");
+                        say( "ä¹°ä¹°æè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè¿‡ç«ç„°å±±å¯è¦æœ‰äº›é…’æ°´æ‰å¯ä»¥ä¸Šè·¯å“Ÿï¼\n");
                         break;
         }
 } 

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "»¢Ñ¨Éî´¦");
+	set("short", "è™ç©´æ·±å¤„");
 	set("long", @LONG
-ÕâÀïÊÇÑÒ¶´µÄÉî´¦£¬¼¸Ö»¸ÕÉúÏÂ¼¸¸öÔÂµÄĞ¡»¢áÌÕıÔÚ¶´ÖĞæÒÏ·£¬¶´
-ÄÚ½ÇÂäÀïÓĞÒ»¶Ñ°×¹Ç£¬Äã×ĞÏ¸Ò»¿´£¬¾¹È»ÊÇÒ»¾ßÈËÀàµÄÒÅ¹Ç¡£
+è¿™é‡Œæ˜¯å²©æ´çš„æ·±å¤„ï¼Œå‡ åªåˆšç”Ÿä¸‹å‡ ä¸ªæœˆçš„å°è™å´½æ­£åœ¨æ´ä¸­å¬‰æˆï¼Œæ´
+å†…è§’è½é‡Œæœ‰ä¸€å †ç™½éª¨ï¼Œä½ ä»”ç»†ä¸€çœ‹ï¼Œç«Ÿç„¶æ˜¯ä¸€å…·äººç±»çš„é—éª¨ã€‚
 LONG
 	);
 //        set("outdoors", "wudujiao");
@@ -37,28 +37,28 @@ int do_search(string arg)
 {
 	object me=this_player();
 	object ob; 
-	if( (!arg) ||!((arg == "bone") || (arg == "ÒÅ¹Ç")))
-		return notify_fail("ÄãÒªËÑË÷Ê²Ã´£¿\n");
+	if( (!arg) ||!((arg == "bone") || (arg == "é—éª¨")))
+		return notify_fail("ä½ è¦æœç´¢ä»€ä¹ˆï¼Ÿ\n");
 
 	if( !(ob = me->query_temp("weapon")) || ( (string)ob->query("skill_type")!="staff" && (string)ob->query("skill_type")!="blade" && (string)ob->query("skill_type")!="sword" ) ) 
-		return notify_fail("Ã»ÓĞ¹¤¾ßÔõÃ´¸É»î£¿\n");
+		return notify_fail("æ²¡æœ‰å·¥å…·æ€ä¹ˆå¹²æ´»ï¼Ÿ\n");
 
-	     message_vision(HIR "\n$NÇáÇá²¦¶¯ÄÇ¶Ñ°×¹Ç¡£\n\n" NOR, me);
+	     message_vision(HIR "\n$Nè½»è½»æ‹¨åŠ¨é‚£å †ç™½éª¨ã€‚\n\n" NOR, me);
 	
 //    if( "/d/wudujiao/obj/tongpai"->in_mud() )  {
-//  message("vission", HIR "Ö»ÌıºôÀ²Ò»Éù£¬´ÓÀïÃæ´Ü³öÀ´Ò»Ö»´óÀÏÊó¡£\n"NOR, me);
+//  message("vission", HIR "åªå¬å‘¼å•¦ä¸€å£°ï¼Œä»é‡Œé¢çªœå‡ºæ¥ä¸€åªå¤§è€é¼ ã€‚\n"NOR, me);
 //  	   return 1;
 //    }
  
 if(query("not_tongpai")) {
-  	   message("vission", HIR "Ö»ÌıºôÀ²Ò»Éù£¬´ÓÀïÃæ´Ü³öÀ´Ò»Ö»´óÀÏÊó¡£\n"NOR, me);
+  	   message("vission", HIR "åªå¬å‘¼å•¦ä¸€å£°ï¼Œä»é‡Œé¢çªœå‡ºæ¥ä¸€åªå¤§è€é¼ ã€‚\n"NOR, me);
   	   return 1;
     }
 
 
 	ob=new(__DIR__"obj/tongpai.c");
 	ob->move(environment(me));
-	 message_vision(HIR "Ö»Ìı¡°µ±à¥..¡±Ò»Éù£¬´ÓÀïÃæ¹ö³öÀ´Ò»ÃæÍ­ÅÆ¡£\n\n\n"NOR, me);
+	 message_vision(HIR "åªå¬â€œå½“å•·..â€ä¸€å£°ï¼Œä»é‡Œé¢æ»šå‡ºæ¥ä¸€é¢é“œç‰Œã€‚\n\n\n"NOR, me);
 	set("not_tongpai", 1);
 	call_out("regenerate", 86400);
 	return 1;

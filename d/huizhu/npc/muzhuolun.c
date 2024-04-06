@@ -2,9 +2,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-   set_name("Ä¾×¿Â×",({"muzhuolun"}));
-   set("gender","ÄĞĞÔ");
-      set("long","Ä¾×¿Â×ÊÇ»Ø×å²¿ÂäµÄÓ¢ĞÛ!\n");
+   set_name("æœ¨å“ä¼¦",({"muzhuolun"}));
+   set("gender","ç”·æ€§");
+      set("long","æœ¨å“ä¼¦æ˜¯å›æ—éƒ¨è½çš„è‹±é›„!\n");
    set("shen",25000);
    set("combat_exp",500000);
      set("age",45);

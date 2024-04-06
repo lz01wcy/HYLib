@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"Éºº÷¹û"NOR, ({ "guozi" }) );
+        set_name(HIR"çŠç‘šæœ"NOR, ({ "guozi" }) );
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÖÖÉîºìÉ«µÄÒ°Éú¹û×Ó\n");
-                set("unit", "¿Å");
+                set("long", "ä¸€ç§æ·±çº¢è‰²çš„é‡ç”Ÿæœå­\n");
+                set("unit", "é¢—");
                 set("value", 0);
                 set("food_remaining", 5);
                 set("food_supply", 100);

@@ -12,12 +12,12 @@ string look_tianming();
 string look_huizhi();
 void create()
 {
-	set("short", "Ê¥É®Ëþ");
+	set("short", "åœ£åƒ§å¡”");
 	set("long", @LONG
-±¾²ã¹©·î×ÅÉÙÁÖÉÏ´ú¼¸Î»ÓÐµÂ¸ßÉ®µÄÁéÌå·¨Ì¨£¬Ëþ×öÁù½ÇÖ®ÐÎ£¬·Ö
-Áù¸ö·½Î»£¬Áù±®ÉÏ×Ö¼£ÄËÊÇÎÞÉ«Ì¨(wuse)£¬ÎÞÏàÅÆ (wuxiang)£¬ÌìÃùìø
-Ì¨(tianming), ¿àÖÇÁé±®(kuzhi)£¬¿à»ÛÆÁ(kuhui)£¬»ÞÖÇÊ¥×ù(huizhi)¡£
-   ¼¸ÂÆÌì¹âÍ¸¹ýËþ´°È÷ÔÚËþÄÚ£¬ËÆºõÎªÇ§Äê¹ÅËþÔöÌíÁËÒ»µã»îÁ¦¡£   
+æœ¬å±‚ä¾›å¥‰ç€å°‘æž—ä¸Šä»£å‡ ä½æœ‰å¾·é«˜åƒ§çš„çµä½“æ³•å°ï¼Œå¡”åšå…­è§’ä¹‹å½¢ï¼Œåˆ†
+å…­ä¸ªæ–¹ä½ï¼Œå…­ç¢‘ä¸Šå­—è¿¹ä¹ƒæ˜¯æ— è‰²å°(wuse)ï¼Œæ— ç›¸ç‰Œ (wuxiang)ï¼Œå¤©é¸£ç¦…
+å°(tianming), è‹¦æ™ºçµç¢‘(kuzhi)ï¼Œè‹¦æ…§å±(kuhui)ï¼Œæ™¦æ™ºåœ£åº§(huizhi)ã€‚
+   å‡ ç¼•å¤©å…‰é€è¿‡å¡”çª—æ´’åœ¨å¡”å†…ï¼Œä¼¼ä¹Žä¸ºåƒå¹´å¤å¡”å¢žæ·»äº†ä¸€ç‚¹æ´»åŠ›ã€‚   
 LONG );
 	set("exits", ([
 		"up"   : __DIR__"fota3", 
@@ -56,21 +56,21 @@ int do_say(string arg)
 {
 	object me = this_player();
 // string dir;
-	if (arg=="½ñÈÕ´ó»¶Ï²£¬ÉáÈ´Î£´àÉí")
+	if (arg=="ä»Šæ—¥å¤§æ¬¢å–œï¼Œèˆå´å±è„†èº«")
 	{
-		write( "ÎÞÉ«ìøÊ¦µÄÁéÌ¨Í»È»Ðý×ªÆðÀ´£¬·¢³öÂ¡Â¡ÉùÏì¡£Ò»¸öÉùÒôÖ±Í¸ÄãÐÄµ×£¬Äã¸ÊÔ¸ÎªÎÒ·ðÉáÉíÂð£¿\n");
+		write( "æ— è‰²ç¦…å¸ˆçš„çµå°çªç„¶æ—‹è½¬èµ·æ¥ï¼Œå‘å‡ºéš†éš†å£°å“ã€‚ä¸€ä¸ªå£°éŸ³ç›´é€ä½ å¿ƒåº•ï¼Œä½ ç”˜æ„¿ä¸ºæˆ‘ä½›èˆèº«å—ï¼Ÿ\n");
 		me->set_temp("poem_said",1);
 		return 1;   
 	}
-	if (arg=="ÈôµÃ²»³ÛÉ¢£¬ÉîÈëÊµÏà²»")
+	if (arg=="è‹¥å¾—ä¸é©°æ•£ï¼Œæ·±å…¥å®žç›¸ä¸")
 	{
-		write("¼ÈÓÐ´ËÐÄ£¬ºÎ²»ÊµÊ©£¿\n");
+		write("æ—¢æœ‰æ­¤å¿ƒï¼Œä½•ä¸å®žæ–½ï¼Ÿ\n");
 		me->set_temp("shen_said",1);
 		return 1;
 	}
-	if (arg=="ÆäÐÄÎÞËùÀÖ")
+	if (arg=="å…¶å¿ƒæ— æ‰€ä¹")
 	{
-		write("ÄãÐÄÖÐÄÑ¹ý£¬²»ÓÉµÃ´¹ÏÂÑÛ£¬î¨Ä¿¾²Ë¼£¬Ú¤Ú¤ÖÐÖ»ÒªÌÓÍÑ´ËµØ¡£\n");
+		write("ä½ å¿ƒä¸­éš¾è¿‡ï¼Œä¸ç”±å¾—åž‚ä¸‹çœ¼ï¼Œçž‘ç›®é™æ€ï¼Œå†¥å†¥ä¸­åªè¦é€ƒè„±æ­¤åœ°ã€‚\n");
 		me->set_temp("m_said",1);
 		return 1;
 	} 
@@ -83,27 +83,27 @@ int do_sheshen()
 		me->delete_temp("poem_said");
 		if ((int)me->query_skill("buddhism",1)<30)
 		{
-			write("ÄãËäÓÐ´ËÐÄ£¬ÄÎºÎ·ð·¨ÐÞÎªÌ«²î£¬·´¶øÉËµ½×Ô¼º¡£\n");
+			write("ä½ è™½æœ‰æ­¤å¿ƒï¼Œå¥ˆä½•ä½›æ³•ä¿®ä¸ºå¤ªå·®ï¼Œåè€Œä¼¤åˆ°è‡ªå·±ã€‚\n");
 			me->unconcious();    
 			return 1;
 		}
-		write( "Äã¿ÚÖÐËÐµ½£º¡°ÎÞàÁÒàÎÞÓÇ£¬Äþ²»µ±ÐÀÇì£¿¡±ÉíÐÎÖ±Ïò·¨Ì¨×²È¥£¬\nÖ»Ìý¡°Åé¡±µÄÒ»Éù£¬ÄãÒÑ±»ËÍ½øÁË·¨Ì¨¡£\n");
+		write( "ä½ å£ä¸­è¯µåˆ°ï¼šâ€œæ— å—”äº¦æ— å¿§ï¼Œå®ä¸å½“æ¬£åº†ï¼Ÿâ€èº«å½¢ç›´å‘æ³•å°æ’žåŽ»ï¼Œ\nåªå¬â€œç °â€çš„ä¸€å£°ï¼Œä½ å·²è¢«é€è¿›äº†æ³•å°ã€‚\n");
 		me->move(__DIR__"wusetai");
-		tell_room(environment(me),me->name()+"Ò»Í·×²ÁË½øÀ´¡£\n",({me}));
+		tell_room(environment(me),me->name()+"ä¸€å¤´æ’žäº†è¿›æ¥ã€‚\n",({me}));
 		return 1; 
 	}
 }
 int do_canchan(string arg)
 {
 	object me = this_player();
-	if (arg!="zuo" && arg!="Ê¥×ù")
-		return notify_fail("ÄãÒª¶ÔÊ²Ã´²ÎÎòìøÀí£¿\n");
-	message("vision", me->name()+"¶Ô×Å´óÊ¦µÄÊ¥×ùÚ¤Ë¼²Îìø¡£\n", environment(me), ({me}) );
-	write("ÄãÔÚÐÄÖÐÄ¬Ä¬ÄîËÐ¡°ÈÊÕßËùµÃ·¨£¬ÐÒÔ¸Ê¾ÆäÒª¡£¡±\n");
+	if (arg!="zuo" && arg!="åœ£åº§")
+		return notify_fail("ä½ è¦å¯¹ä»€ä¹ˆå‚æ‚Ÿç¦…ç†ï¼Ÿ\n");
+	message("vision", me->name()+"å¯¹ç€å¤§å¸ˆçš„åœ£åº§å†¥æ€å‚ç¦…ã€‚\n", environment(me), ({me}) );
+	write("ä½ åœ¨å¿ƒä¸­é»˜é»˜å¿µè¯µâ€œä»è€…æ‰€å¾—æ³•ï¼Œå¹¸æ„¿ç¤ºå…¶è¦ã€‚â€\n");
 	if (random(3)==1)
 	{
-		write(HIR"ÄãÔÚÐé¿ÕÖÐ£¬¸Ð¾õ´óÊ¦×ùÏÂ´ò¿ªÁËÒ»¸öÐ¡ÃÅ¡£\n" NOR);
-		me->set_temp("marks/ÃÅ",1);
+		write(HIR"ä½ åœ¨è™šç©ºä¸­ï¼Œæ„Ÿè§‰å¤§å¸ˆåº§ä¸‹æ‰“å¼€äº†ä¸€ä¸ªå°é—¨ã€‚\n" NOR);
+		me->set_temp("marks/é—¨",1);
 		return 1;
 	}
 	return 1;
@@ -112,20 +112,20 @@ int do_canchan(string arg)
 int do_enter()
 {
 	object me = this_player();
-	if ((int)this_player()->query_temp("marks/ÃÅ")) 
+	if ((int)this_player()->query_temp("marks/é—¨")) 
 	{
-		me->delete_temp("marks/ÃÅ");
-		write("ÄãÁ¬Ã¦ÓÃÊÖ·öÏòÐ¡ÃÅ¡£\n");
+		me->delete_temp("marks/é—¨");
+		write("ä½ è¿žå¿™ç”¨æ‰‹æ‰¶å‘å°é—¨ã€‚\n");
 		if ((int)me->query_skill("hand",1)<30)
 		{
-			write(HIR"ÄãÊÖ·¨Ì«Âý£¬Ð¡ÃÅÒÑ¾­ÏûÊ§£¬ÄãÍ·ÄÔÖÐÖ»¾õÒ»Æ¬»èÂÒ¡£\n"NOR);
+			write(HIR"ä½ æ‰‹æ³•å¤ªæ…¢ï¼Œå°é—¨å·²ç»æ¶ˆå¤±ï¼Œä½ å¤´è„‘ä¸­åªè§‰ä¸€ç‰‡æ˜ä¹±ã€‚\n"NOR);
 			me->unconcious(); 
 			return 1;
 		}
-		message("vision", me->name()+"Ë«ÊÖÂÒÎè£¬ÉíÐÎÆ®³ö£¬Í»È»ÏûÊ§ÔÚÊ¥×ùÏÂÁË¡£\n", environment(me), ({me}) );
-		write(HIR"Äã´ÓÐ¡ÃÅÖÐ×ßÁË½øÈ¥¡£\n"NOR);
+		message("vision", me->name()+"åŒæ‰‹ä¹±èˆžï¼Œèº«å½¢é£˜å‡ºï¼Œçªç„¶æ¶ˆå¤±åœ¨åœ£åº§ä¸‹äº†ã€‚\n", environment(me), ({me}) );
+		write(HIR"ä½ ä»Žå°é—¨ä¸­èµ°äº†è¿›åŽ»ã€‚\n"NOR);
 		me->move(__DIR__"huizhizuo");
-		tell_room(environment(me), me->name() + "ÌøÁËÏÂÀ´¡£\n", ({me}));
+		tell_room(environment(me), me->name() + "è·³äº†ä¸‹æ¥ã€‚\n", ({me}));
 		return 1;
 	}  
 	return 0;
@@ -137,20 +137,20 @@ int do_shenru()
 	if(me->query_temp("shen_said"))
 	{
 		me->delete_temp("shen_said");
-		write("ÄãÉíÐÎÒ»×Ý£¬Ê®Ö¸Èç¹³£¬ÔÚìøÌ¨±ßÉÏÒ»×¥Òª½èÁ¦Ô¾Æð¡£\n");
-		message("vision", me->name()+"ÉíÐÎÒ»×Ý£¬Ê®Ö¸Èç¹³£¬ÔÚìøÌ¨±ßÉÏÒ»×¥Òª½èÁ¦×ÝÆð¡£\n", environment(me), ({me}) );
+		write("ä½ èº«å½¢ä¸€çºµï¼ŒåæŒ‡å¦‚é’©ï¼Œåœ¨ç¦…å°è¾¹ä¸Šä¸€æŠ“è¦å€ŸåŠ›è·ƒèµ·ã€‚\n");
+		message("vision", me->name()+"èº«å½¢ä¸€çºµï¼ŒåæŒ‡å¦‚é’©ï¼Œåœ¨ç¦…å°è¾¹ä¸Šä¸€æŠ“è¦å€ŸåŠ›çºµèµ·ã€‚\n", environment(me), ({me}) );
 		if((int)me->query_skill("claw",1)<30)
 		{
-			write("ÄãÊÖÖ¸ÓëÌ¨±ß²îÁË´çÐí£¬Ã»ÓÐ×¥µ½¡£°¡.....¡£\n");
-			message("vision", me->name()+"ÊÖÖ¸ÓëÌ¨±ß»¹ÓÐÒ»¶¨¾àÀë£¬Ã»ÓÐ×¥µ½¡£\n", environment(me), ({me}) );
-			message("vision", me->name()+"Ò»Éù´ó½Ð£¬Ò»¸öµ¹ÔÔ´ÐË¤½«ÏÂÀ´¡£\n", environment(me), ({me}) );
+			write("ä½ æ‰‹æŒ‡ä¸Žå°è¾¹å·®äº†å¯¸è®¸ï¼Œæ²¡æœ‰æŠ“åˆ°ã€‚å•Š.....ã€‚\n");
+			message("vision", me->name()+"æ‰‹æŒ‡ä¸Žå°è¾¹è¿˜æœ‰ä¸€å®šè·ç¦»ï¼Œæ²¡æœ‰æŠ“åˆ°ã€‚\n", environment(me), ({me}) );
+			message("vision", me->name()+"ä¸€å£°å¤§å«ï¼Œä¸€ä¸ªå€’æ ½è‘±æ‘”å°†ä¸‹æ¥ã€‚\n", environment(me), ({me}) );
 			me->unconcious();
 			return 1;    
 		}
-		write( "ÄãÔÚÌ¨±ßÒ»½èÁ¦£¬Éí×ÓÁè¿ÕÖ±ÉÏ£¬ÂäÔÚËþÁºÉÏ£¬Äã½ÅÏÂÒ»»¬£¬Ö±Ë¤ÏòìøÌ¨¡£\n");
-		message("vision", me->name()+"Áè¿ÕÖ±ÉÏ£¬ÂäÔÚËþÁºÉÏ¡£Í»È»ÏòÏÂÒ»»Î£¬±ã×Ù¼£½ÔÎÞ¡£\n", environment(me), ({me}) );
+		write( "ä½ åœ¨å°è¾¹ä¸€å€ŸåŠ›ï¼Œèº«å­å‡Œç©ºç›´ä¸Šï¼Œè½åœ¨å¡”æ¢ä¸Šï¼Œä½ è„šä¸‹ä¸€æ»‘ï¼Œç›´æ‘”å‘ç¦…å°ã€‚\n");
+		message("vision", me->name()+"å‡Œç©ºç›´ä¸Šï¼Œè½åœ¨å¡”æ¢ä¸Šã€‚çªç„¶å‘ä¸‹ä¸€æ™ƒï¼Œä¾¿è¸ªè¿¹çš†æ— ã€‚\n", environment(me), ({me}) );
 		me->move(__DIR__"tianming");
-		tell_room(environment(me), me->name() + "Ë¤ÁËÏÂÀ´¡£\n", ({me}));
+		tell_room(environment(me), me->name() + "æ‘”äº†ä¸‹æ¥ã€‚\n", ({me}));
 		return 1;
 	}
 	return 0;   
@@ -162,16 +162,16 @@ int do_taotuo()
 	if (me->query_temp("m_said"))
 	{
 		me->delete_temp("m_said");
-		message("vision", me->name()+"Á½ÍÈÁ¬»·Ìß³ö£¬ÉíÐÎÔ¾ÏòËþ´°±ãÒªÌÓ³ö¡£\n", environment(me), ({me}) );
+		message("vision", me->name()+"ä¸¤è…¿è¿žçŽ¯è¸¢å‡ºï¼Œèº«å½¢è·ƒå‘å¡”çª—ä¾¿è¦é€ƒå‡ºã€‚\n", environment(me), ({me}) );
 		if ((int)me->query_skill("leg",1)<30)
 		{
-			write("ÄãÁ½ÍÈÒÑ¾­ÂéÄ¾ÁË£¬±»¶¨ÔÚµ±µØ¡£\n");
+			write("ä½ ä¸¤è…¿å·²ç»éº»æœ¨äº†ï¼Œè¢«å®šåœ¨å½“åœ°ã€‚\n");
 			return 1;
 		} 
-		message("vision", me->name()+"Éí×ÓÒ»ÏÂÏûÊ§ÔÚ´°±ß¡£\n", environment(me), ({me}) );
-		write(HIR "Äã¸Õµ½´°±ß£¬Ö»¾õÑÛÇ°Ò»ºÚ£¬±ãµø½«ÂäÈ¥¡£\n"NOR);
+		message("vision", me->name()+"èº«å­ä¸€ä¸‹æ¶ˆå¤±åœ¨çª—è¾¹ã€‚\n", environment(me), ({me}) );
+		write(HIR "ä½ åˆšåˆ°çª—è¾¹ï¼Œåªè§‰çœ¼å‰ä¸€é»‘ï¼Œä¾¿è·Œå°†è½åŽ»ã€‚\n"NOR);
 		me->move(__DIR__"kuhuiping");
-		tell_room(environment(me), me->name() + "ÌøÁËÏÂÀ´¡£\n", ({me}));
+		tell_room(environment(me), me->name() + "è·³äº†ä¸‹æ¥ã€‚\n", ({me}));
 		return 1;
 	}  
 	return 0;
@@ -180,13 +180,13 @@ int do_taotuo()
 int do_fushi(string arg)
 {
 	object me = this_player();
-	if (arg!="pai"&&arg!="ÅÆ") return notify_fail("ÄãÒª·÷ÊÃÊ²Ã´£¿\n");
-	message("vision", me->name()+"ÇáÇáµØÔÚÎÞÏàÅÆÉÏÊÃÈ¥³¾ÍÁ¡£\n", environment(me), ({me}) );
-	write("ÄãÇáÇáµØ·÷ÊÃÎÞÏàÅÆ¡£\n");
+	if (arg!="pai"&&arg!="ç‰Œ") return notify_fail("ä½ è¦æ‹‚æ‹­ä»€ä¹ˆï¼Ÿ\n");
+	message("vision", me->name()+"è½»è½»åœ°åœ¨æ— ç›¸ç‰Œä¸Šæ‹­åŽ»å°˜åœŸã€‚\n", environment(me), ({me}) );
+	write("ä½ è½»è½»åœ°æ‹‚æ‹­æ— ç›¸ç‰Œã€‚\n");
 	if (random(2)==1)
 	{
-		write(HIR"ÄãÍ»È»ÓÐÒ»ÖÖ³öÕÆµÄ³å¶¯£¬±ãÏëÒ»ÕÆ»÷³ö¡£\n"NOR);
-		me->set_temp("marks/ÅÄ",1); 
+		write(HIR"ä½ çªç„¶æœ‰ä¸€ç§å‡ºæŽŒçš„å†²åŠ¨ï¼Œä¾¿æƒ³ä¸€æŽŒå‡»å‡ºã€‚\n"NOR);
+		me->set_temp("marks/æ‹",1); 
 	}
 	return 1;
 }
@@ -194,21 +194,21 @@ int do_fushi(string arg)
 int do_chuzhang(string arg)      
 {
 	object me = this_player();     
-	if ((int)me->query_temp("marks/ÅÄ"))
+	if ((int)me->query_temp("marks/æ‹"))
 	{
-		if(arg!="pai" && arg!="ÅÆ")
-			return notify_fail("ÄãÒªÄÄ³öÕÆ£¿\n");
-		me->delete_temp("marks/ÅÄ");               
+		if(arg!="pai" && arg!="ç‰Œ")
+			return notify_fail("ä½ è¦å“ªå‡ºæŽŒï¼Ÿ\n");
+		me->delete_temp("marks/æ‹");               
 		if ((int)me->query("neili",1)>100)
 		{
-			write(HIR"ÄãÆøÔËµ¤Ìï£¬ºÙµÄÒ»ÉùÏòÁéÅÆÍÆ³öÒ»ÕÆ¡£Ö»ÌýÅ¾µÄÒ»Éù£¬ÁéÅÆÁÑ¿ªÒ»µÀ´ó·ì£¬Äã×ÝÉíÏò·ìÏ¶ÖÐÌøÈ¥¡£\n"NOR);
-			message("vision", me->name()+"ÆøÔËµ¤Ìï£¬ºÙµÄÒ»ÉùÏòÁéÅÆÍÆ³öÒ»ÕÆ¡£Ö»ÌýÅ¾µÄÒ»Éù£¬ÁéÅÆÁÑ¿ªÒ»µÀ´ó·ì\n", environment(me), ({me})); 
-			message("vision", me->name()+"Ïò·ìÏ¶Ö±ÔÔ½øÈ¥¡£Ò»ÉùÃÆÏì£¬ÎÞÏàÅÆÉñÆæµÄºÏºÃÈç³õ¡£\n" , environment(me), ({me}));
+			write(HIR"ä½ æ°”è¿ä¸¹ç”°ï¼Œå˜¿çš„ä¸€å£°å‘çµç‰ŒæŽ¨å‡ºä¸€æŽŒã€‚åªå¬å•ªçš„ä¸€å£°ï¼Œçµç‰Œè£‚å¼€ä¸€é“å¤§ç¼ï¼Œä½ çºµèº«å‘ç¼éš™ä¸­è·³åŽ»ã€‚\n"NOR);
+			message("vision", me->name()+"æ°”è¿ä¸¹ç”°ï¼Œå˜¿çš„ä¸€å£°å‘çµç‰ŒæŽ¨å‡ºä¸€æŽŒã€‚åªå¬å•ªçš„ä¸€å£°ï¼Œçµç‰Œè£‚å¼€ä¸€é“å¤§ç¼\n", environment(me), ({me})); 
+			message("vision", me->name()+"å‘ç¼éš™ç›´æ ½è¿›åŽ»ã€‚ä¸€å£°é—·å“ï¼Œæ— ç›¸ç‰Œç¥žå¥‡çš„åˆå¥½å¦‚åˆã€‚\n" , environment(me), ({me}));
 			me->receive_damage("neili",100);
 			me->move(__DIR__"wuxiangpai");
 			return 1;
 		}
-		message("vision", me->name()+"Å¾µÄÍÆ³öÒ»ÕÆ£¬µ«ÕæÆø²»´¿£¬·´¶øÉËµ½×Ô¼º\n", environment(me), ({me})); 
+		message("vision", me->name()+"å•ªçš„æŽ¨å‡ºä¸€æŽŒï¼Œä½†çœŸæ°”ä¸çº¯ï¼Œåè€Œä¼¤åˆ°è‡ªå·±\n", environment(me), ({me})); 
 		me->set("neili",0);
 		return 1;
 	}
@@ -218,102 +218,102 @@ int do_chuzhang(string arg)
 string look_wuse()
 {
 	return "\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÖîÌìÎÞÔÆôè£¬ËÄÃæ½ÔÇåÃ÷¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Î¢·ç´µÏãÆø£¬ÖÚÉ½¼ÅÎÞÉù¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡½ñÈÕ´ó»¶Ï²£¬ÉáÈ´Î£´àÉí¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÎÞàÁÒàÎÞÓÇ£¬Äþ²»µ±ÐÀÇì£¿¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€è¯¸å¤©æ— äº‘ç¿³ï¼Œå››é¢çš†æ¸…æ˜Žã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€å¾®é£Žå¹é¦™æ°”ï¼Œä¼—å±±å¯‚æ— å£°ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä»Šæ—¥å¤§æ¬¢å–œï¼Œèˆå´å±è„†èº«ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ— å—”äº¦æ— å¿§ï¼Œå®ä¸å½“æ¬£åº†ï¼Ÿã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 string look_wuxiang()
 {
 	return "\n"
-        "    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÉíÈôÆÐÌáÊ÷£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÐÄÈçÃ÷¾µÌ¨¡£  ¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡´Ó½ñÇÚ·÷ÊÃ£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡²»ÁîÈÇ³¾°£¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€èº«è‹¥è©ææ ‘ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€å¿ƒå¦‚æ˜Žé•œå°ã€‚  â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä»Žä»Šå‹¤æ‹‚æ‹­ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä¸ä»¤æƒ¹å°˜åŸƒã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 string look_tianming()
 {
 	return "\n"
-        "    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¼ÈÒÑÉáÈ¾ÀÖ£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÐÄµÃÉÆÉã²»£¿  ¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù  ÈôµÃ²»³ÛÉ¢£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÉîÈëÊµÏà²»£¿¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ—¢å·²èˆæŸ“ä¹ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€å¿ƒå¾—å–„æ‘„ä¸ï¼Ÿ  â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»  è‹¥å¾—ä¸é©°æ•£ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ·±å…¥å®žç›¸ä¸ï¼Ÿã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 string look_kuhui()
 { 
 	return "\n"
-        "    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù  ±Ï¾¹¿ÕÏàÖÐ£¬  ¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÆäÐÄÎÞËùÀÖ£¿  ¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù  ÈôÔÃìøÖÇ»Û£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÊÇ·¨ÐÔÎÞÕÕ¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»  æ¯•ç«Ÿç©ºç›¸ä¸­ï¼Œ  â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€å…¶å¿ƒæ— æ‰€ä¹ï¼Ÿ  â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»  è‹¥æ‚¦ç¦…æ™ºæ…§ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ˜¯æ³•æ€§æ— ç…§ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 string look_huizhi()
 {
 	return "\n"
-        "    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù  ÐéÚ¿µÈÎÞÊµ£¬  ¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Òà·ÇÍ£ÐÄ´¦¡£  ¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù  ÈÊÕßËùµÃ·¨£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÐÒÔ¸Ê¾ÆäÒª¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»  è™šè¯³ç­‰æ— å®žï¼Œ  â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€äº¦éžåœå¿ƒå¤„ã€‚  â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»  ä»è€…æ‰€å¾—æ³•ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€å¹¸æ„¿ç¤ºå…¶è¦ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 string look_kuzhi()
 {
 	return "\n"
- 	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Ò»ÇÐ¶÷°®»á£¬½ÔÓÉÒòÔµºÏ¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡»áºÏÓÐ±ðÀë£¬ÎÞ³£ÄÑµÃ¾Ã¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡½ñÎÒÎª¶ûÄ¸£¬ºã¿Ö²»×Ô±£¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÉúËÀ¶àÎ·¾å£¬ÃüÎ£ÓÚ³¿Â¶¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+ 	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä¸€åˆ‡æ©çˆ±ä¼šï¼Œçš†ç”±å› ç¼˜åˆã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä¼šåˆæœ‰åˆ«ç¦»ï¼Œæ— å¸¸éš¾å¾—ä¹…ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä»Šæˆ‘ä¸ºå°”æ¯ï¼Œæ’æä¸è‡ªä¿ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ç”Ÿæ­»å¤šç•æƒ§ï¼Œå‘½å±äºŽæ™¨éœ²ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }

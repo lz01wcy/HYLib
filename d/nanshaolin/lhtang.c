@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"ÂŞººÌÃ"NOR);
+	set("short", HIY"ç½—æ±‰å ‚"NOR);
 	set("long", @LONG
-ÄãÃæÇ°ÊÇÒ»×ùºÜ´óµÄÔºÂä£¬ÖÜÎ§ÓÃ¸ßÇ½Î§×¡£¬ÔºÃÅØÒ¶îÉÏĞ´×Å¡ºÂŞ
-ººÌÃ¡»Èı¸ö´ó×Ö¡£ÕâÀïÊÇÉÙÁÖµÜ×ÓÁ·Ï°±¾ÃÅ»ù±¾Îä¹¦µÄËùÔÚ¡£ÓĞºÜ¶àÄê
-ÇáµÄÉ®ÈË½ø½ø³ö³ö£¬ÔºÄÚ´«À´ÕóÕóºôºÈÁ·¹¦µÄÉùÒô¡£
+ä½ é¢å‰æ˜¯ä¸€åº§å¾ˆå¤§çš„é™¢è½ï¼Œå‘¨å›´ç”¨é«˜å¢™å›´ä½ï¼Œé™¢é—¨åŒ¾é¢ä¸Šå†™ç€ã€ç½—
+æ±‰å ‚ã€ä¸‰ä¸ªå¤§å­—ã€‚è¿™é‡Œæ˜¯å°‘æ—å¼Ÿå­ç»ƒä¹ æœ¬é—¨åŸºæœ¬æ­¦åŠŸçš„æ‰€åœ¨ã€‚æœ‰å¾ˆå¤šå¹´
+è½»çš„åƒ§äººè¿›è¿›å‡ºå‡ºï¼Œé™¢å†…ä¼ æ¥é˜µé˜µå‘¼å–ç»ƒåŠŸçš„å£°éŸ³ã€‚
 LONG );
 	set("exits", ([
 		"east" : __DIR__"stoneroad4",
@@ -35,8 +35,8 @@ int do_jump(string arg)
 	object me = this_player();   
 	if (arg!="bian") return 0;  
 	if(me->query_skill("dodge",1)<130)  
-		return notify_fail("Äã¹¦Á¦²»¹»£¬Ìø²»ÉÏØÒ¶î¡£\n");  
-	message("vision",me->name()+"ÄıÆøÊØÖĞ£¬Æ½¿Õ°ÎÆğÊıÕÉ£¬ÇáÇáÂäÔÚØÒ¶îÖ®ºó¡£\n",this_object());
+		return notify_fail("ä½ åŠŸåŠ›ä¸å¤Ÿï¼Œè·³ä¸ä¸ŠåŒ¾é¢ã€‚\n");  
+	message("vision",me->name()+"å‡æ°”å®ˆä¸­ï¼Œå¹³ç©ºæ‹”èµ·æ•°ä¸ˆï¼Œè½»è½»è½åœ¨åŒ¾é¢ä¹‹åã€‚\n",this_object());
 	me->move(__DIR__"bianhou");
 	me->set_temp("baitie",1);  return 1; 
 }
@@ -46,9 +46,9 @@ int valid_leave(object me, string dir)
 	mapping myfam;
 	myfam = (mapping)me->query("family");
 
-	if ((!myfam || myfam["family_name"] != "ÄÏÉÙÁÖÅÉ") && dir == "west" &&
+	if ((!myfam || myfam["family_name"] != "å—å°‘æ—æ´¾") && dir == "west" &&
 		objectp(present("xuanku dashi", environment(me))))
-		return notify_fail("´ó¼²´óÊ¦ºÈµÀ£ºÂŞººÌÃÄË±¾ÅÉµÜ×ÓÏ°ÎäÖ®´¦£¬Äã·Ç±¾ÅÉµÜ×Ó£¬²»ÄÜÈëÄÚ¡£\n");
+		return notify_fail("å¤§ç–¾å¤§å¸ˆå–é“ï¼šç½—æ±‰å ‚ä¹ƒæœ¬æ´¾å¼Ÿå­ä¹ æ­¦ä¹‹å¤„ï¼Œä½ éæœ¬æ´¾å¼Ÿå­ï¼Œä¸èƒ½å…¥å†…ã€‚\n");
 	return ::valid_leave(me, dir);
 }
  

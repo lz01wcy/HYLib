@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ʼ���");
+	set("short", "皇极门");
 	set("long", @LONG
-�ʼ���ͥԺ�Ĵ���. �ɴ�����, �ǻʵ�������̫�ϻ���������ĵ�
-��, �׳� "�ⶫ·" . ��ǰ��������������ľ�������.
+皇极殿庭院的大门. 由此往北, 是皇帝休憩和太上皇养老饴孙的地
+方, 俗称 "外东路" . 门前就是享誉海内外的九龙壁了.
 LONG
 	);
 	set("outdoors", "huanggong");

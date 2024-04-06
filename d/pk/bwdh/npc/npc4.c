@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/jiumozhi.c ğ¯Ä¦ÖÇ
+// /kungfu/class/xueshan/jiumozhi.c é¸ æ‘©æ™º
 // by secret
 
 #include <ansi.h>
@@ -8,15 +8,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ğ¡ğ¯Ä¦ÖÇ", ({ "jiumo zhi", "zhi" ,"ming wang"}));
-        set("nickname", HIG "´óÂÖÃ÷Íõ" NOR);
+        set_name("å°é¸ æ‘©æ™º", ({ "jiumo zhi", "zhi" ,"ming wang"}));
+        set("nickname", HIG "å¤§è½®æ˜ç‹" NOR);
         set("long",@LONG
-Ëû¾ÍÊÇÑ©É½ËÂµÄÕÆÃÅ£¬ÈË³Æ´óÂÖÃ÷ÍõµÄğ¯Ä¦ÖÇ¡£Ëû¶Ô·ğ·¨ÓĞ¾«ÉîµÄÑĞ¾¿¡£
-Éí´©Ò»¼ş´óºìôÂôÄ£¬Í·´øÉ®Ã±¡£
+ä»–å°±æ˜¯é›ªå±±å¯ºçš„æŒé—¨ï¼Œäººç§°å¤§è½®æ˜ç‹çš„é¸ æ‘©æ™ºã€‚ä»–å¯¹ä½›æ³•æœ‰ç²¾æ·±çš„ç ”ç©¶ã€‚
+èº«ç©¿ä¸€ä»¶å¤§çº¢è¢ˆè£Ÿï¼Œå¤´å¸¦åƒ§å¸½ã€‚
 LONG
         );
-        set("title","Ñ©É½ËÂÕÆÃÅ");
-        set("gender", "ÄĞĞÔ");
+        set("title","é›ªå±±å¯ºæŒé—¨");
+        set("gender", "ç”·æ€§");
         set("age", 60);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -74,7 +74,7 @@ LONG
                 (: perform_action, "dodge.tianmaxingkong" :),
 	}) );
 
-        create_family("Ñ©É½ËÂ", 2, "ÕÆÃÅ");
+        create_family("é›ªå±±å¯º", 2, "æŒé—¨");
         set("class", "bonze");
 
         setup();

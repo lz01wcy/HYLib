@@ -2,14 +2,14 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "Áú»¢Õ¯´óÔº");
+        set("short", "é¾™è™å¯¨å¤§é™¢");
         set("long", @LONG
-Áú»¢Õ¯¾ÍÔÚÃÜÁÖºó£¬ËÄÃæÈºÉ½»·±§£¬Ææ·å´£Á¢£¬¿´À´¾ÍÏñÊÇÒ»Ö»Ò°ÊŞ£¬ÕıÕÅ´ó
-ÁË×ìÔÚµÈ×ÅÔñÈË¶øÊÉ¡£×¡ÔÚÕâÀïµÄÈË£¬Ò²ÕıÏñÊÇÒ»ÈºÒ°ÊŞ¡£Ë­Ò²²»Ô¸Òâ±»Ò°ÊŞÍÌÏÂ
-È¥£¬ËùÒÔÕâµØ·½·Çµ«ºÜÉÙ¿´µÃ¼ûÄ°ÉúÈË£¬Á¬·ÉÄñ¶¼ÒÑ¼¸ºõ¾ø¼£¡£²»¹ı£¬Ç¿µÁÃÇÔÚÕâ
-¶ùÈ´ÊÇÈçÓãµÃË®£¬»¶ÌìÏ²µØ£¬²»´óµÄÉ½Õ¯ÀïÎ÷ÃæÊÇ¹È²Ö£¬¶«ÃæÊÇÎä¿â£¬ÖĞ¼äÒ»¸ö´ó
-ÔºÊÇÍ·ÁìÃÇÕÙ¼¯ÊÖÏÂµÄËùÔÚ¡£´óÔºµÄÒ»²à»¹ÓĞÕÅ³¤Ìİ£¬Í¨ÍùÕ¯Ç½£¬Ò»ÓĞ·ç´µ²İ¶¯£¬
-É½Õ¯ÀïµÄÈË¾Í»á³åÉÏÇ½Í··ÀÊØ¡£
+é¾™è™å¯¨å°±åœ¨å¯†æ—åï¼Œå››é¢ç¾¤å±±ç¯æŠ±ï¼Œå¥‡å³°çŸ—ç«‹ï¼Œçœ‹æ¥å°±åƒæ˜¯ä¸€åªé‡å…½ï¼Œæ­£å¼ å¤§
+äº†å˜´åœ¨ç­‰ç€æ‹©äººè€Œå™¬ã€‚ä½åœ¨è¿™é‡Œçš„äººï¼Œä¹Ÿæ­£åƒæ˜¯ä¸€ç¾¤é‡å…½ã€‚è°ä¹Ÿä¸æ„¿æ„è¢«é‡å…½åä¸‹
+å»ï¼Œæ‰€ä»¥è¿™åœ°æ–¹éä½†å¾ˆå°‘çœ‹å¾—è§é™Œç”Ÿäººï¼Œè¿é£é¸Ÿéƒ½å·²å‡ ä¹ç»è¿¹ã€‚ä¸è¿‡ï¼Œå¼ºç›—ä»¬åœ¨è¿™
+å„¿å´æ˜¯å¦‚é±¼å¾—æ°´ï¼Œæ¬¢å¤©å–œåœ°ï¼Œä¸å¤§çš„å±±å¯¨é‡Œè¥¿é¢æ˜¯è°·ä»“ï¼Œä¸œé¢æ˜¯æ­¦åº“ï¼Œä¸­é—´ä¸€ä¸ªå¤§
+é™¢æ˜¯å¤´é¢†ä»¬å¬é›†æ‰‹ä¸‹çš„æ‰€åœ¨ã€‚å¤§é™¢çš„ä¸€ä¾§è¿˜æœ‰å¼ é•¿æ¢¯ï¼Œé€šå¾€å¯¨å¢™ï¼Œä¸€æœ‰é£å¹è‰åŠ¨ï¼Œ
+å±±å¯¨é‡Œçš„äººå°±ä¼šå†²ä¸Šå¢™å¤´é˜²å®ˆã€‚
 LONG
         );
         set("exits", ([ 
@@ -24,10 +24,10 @@ LONG
                 __DIR__"npc/bandit1":   6,
         ]) );
         set("item_desc",([
-                "barn": "Ò»ÉÈÄ¾ÃÅÍ¨Ïò¹È²Ö¡£\n",
-                "¹È²Ö": "Ò»ÉÈÄ¾ÃÅÍ¨Ïò¹È²Ö¡£\n",
-                "ladder":"¶«Ç½ÏÂ£¬Ò»ÕÅ³¤Ìİ°ÑÔº×ÓºÍÕ¯Ç½Á¬½ÓÆğÀ´¡£\n",
-                "³¤Ìİ": "¶«Ç½ÏÂ£¬Ò»ÕÅ³¤Ìİ°ÑÔº×ÓºÍÕ¯Ç½Á¬½ÓÆğÀ´¡£\n",
+                "barn": "ä¸€æ‰‡æœ¨é—¨é€šå‘è°·ä»“ã€‚\n",
+                "è°·ä»“": "ä¸€æ‰‡æœ¨é—¨é€šå‘è°·ä»“ã€‚\n",
+                "ladder":"ä¸œå¢™ä¸‹ï¼Œä¸€å¼ é•¿æ¢¯æŠŠé™¢å­å’Œå¯¨å¢™è¿æ¥èµ·æ¥ã€‚\n",
+                "é•¿æ¢¯": "ä¸œå¢™ä¸‹ï¼Œä¸€å¼ é•¿æ¢¯æŠŠé™¢å­å’Œå¯¨å¢™è¿æ¥èµ·æ¥ã€‚\n",
         ]));
         
         set("outdoors", "zangbei");
@@ -47,16 +47,16 @@ int do_climb(string arg) {
         object me;
         
         me=this_player();
-        if (arg=="up" || arg == "ladder" || arg== "³¤Ìİ") {
+        if (arg=="up" || arg == "ladder" || arg== "é•¿æ¢¯") {
                 if (me->query_temp("zangbei/zaiqiang_2"))
-                        return notify_fail("ÄãÒÑ¾­ÔÚÌİ×ÓÖĞÑëÁË¡£\n");
-                message_vision("$N°Ñ×Å³¤ÌİĞ¡ĞÄÒíÒíµØÏòÉÏÅÀÈ¥¡£\n\n",me);
+                        return notify_fail("ä½ å·²ç»åœ¨æ¢¯å­ä¸­å¤®äº†ã€‚\n");
+                message_vision("$NæŠŠç€é•¿æ¢¯å°å¿ƒç¿¼ç¿¼åœ°å‘ä¸Šçˆ¬å»ã€‚\n\n",me);
                 call_out("pass_river",6,me);
                 me->start_busy(3);
                 me->set_temp("zangbei/zaiqiang_2",1);
                 return 1;
         }
-        tell_object(me,"ÄãÒªÅÀÊ²Ã´£¿\n");
+        tell_object(me,"ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
         return 1;
 }  
 int pass_river(object me) {
@@ -64,8 +64,8 @@ int pass_river(object me) {
         if (!objectp(me) || me->is_ghost()) return 0;
         room=find_object(__DIR__"e_wall3");
         if (!objectp(room)) room=load_object(__DIR__"e_wall3");
-        tell_object(me,"ÄãÇáÇÉµØÉÏµ½Õ¯Ç½ÉÏ¡£\n");
-        message("vision",me->name()+"´ÓÌİ×ÓÉÏÅÀÁËÉÏÀ´¡£\n",room);
+        tell_object(me,"ä½ è½»å·§åœ°ä¸Šåˆ°å¯¨å¢™ä¸Šã€‚\n");
+        message("vision",me->name()+"ä»æ¢¯å­ä¸Šçˆ¬äº†ä¸Šæ¥ã€‚\n",room);
         me->move(room);
         me->delete_temp("zangbei/zaiqiang_2");
         return 1;
@@ -73,16 +73,16 @@ int pass_river(object me) {
 int do_open(string arg) {
         object me=this_player();
         object out_room;
-        if (!arg || (arg!="door" && arg!="Ä¾ÃÅ" && arg !="ÃÅ"))
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+        if (!arg || (arg!="door" && arg!="æœ¨é—¨" && arg !="é—¨"))
+                return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
         if (!query("closed"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
-        message_vision("$N°Ñ¹È²ÖµÄÃÅ´ò¿ª¡£\n",me);
+                return notify_fail("é—¨å·²ç»æ˜¯å¼€ç€çš„äº†ã€‚\n");
+        message_vision("$NæŠŠè°·ä»“çš„é—¨æ‰“å¼€ã€‚\n",me);
    set("exits/west",__DIR__"v_barn");      
         set("closed",0);
         out_room=find_object(__DIR__"v_barn");
         if (!objectp(out_room)) out_room=load_object(__DIR__"v_barn");
-        message("vision","¹È²ÖµÄÃÅºöÈ»´ÓÍâÃæ±»´ò¿ªÁË¡£\n",out_room);
+        message("vision","è°·ä»“çš„é—¨å¿½ç„¶ä»å¤–é¢è¢«æ‰“å¼€äº†ã€‚\n",out_room);
         out_room->set("exits/east",__DIR__"village");
         call_out("door_close",20,out_room);
         return 1;
@@ -92,8 +92,8 @@ int door_close(object out_room){
         out_room->delete("exits/east");
         this_object()->delete("exits/west");
         this_object()->set("close",1);
-        message("vision","¹È²ÖµÄÃÅÓÖ±»¹ØÉÏÁË¡£\n",this_object());
-        message("vision","Ä¾ÃÅµ´ÁË»ØÀ´¹ØÉÏÁË¡£\n",out_room);
+        message("vision","è°·ä»“çš„é—¨åˆè¢«å…³ä¸Šäº†ã€‚\n",this_object());
+        message("vision","æœ¨é—¨è¡äº†å›æ¥å…³ä¸Šäº†ã€‚\n",out_room);
         set("closed",1);
         return 1;
 }
@@ -106,14 +106,14 @@ void reset() {
         
         inv=all_inventory();
         for (i=0;i<sizeof(inv);i++) {
-                if (inv[i]->name()=="É½Õ¯à¶ÂŞ")
+                if (inv[i]->name()=="å±±å¯¨å–½ç½—")
                         count++;
         }
         if (count<4) {
                 badguy=new(__DIR__"npc/bandit");
                 badguy->set("attitude", "friendly");
                 badguy->move(room);
-                badguy->ccommand("say ´óÍõ,Ğ¡µÄ×¼±¸ºÃÁË¡£");
+                badguy->ccommand("say å¤§ç‹,å°çš„å‡†å¤‡å¥½äº†ã€‚");
         }
 }
         
@@ -127,9 +127,9 @@ void midnight_event() {
         if(!random(10)) {
                 for(i=0; i<bandit_no; i++) {
                         if(objectp(badguy = new("/obj/npc/bandit"))) {
-                                badguy->setup_bandit("É½Î÷ÍÁ·Ë", "/obj/armor/cloth", "/obj/weapon/blade_guitou", "fy");
+                                badguy->setup_bandit("å±±è¥¿åœŸåŒª", "/obj/armor/cloth", "/obj/weapon/blade_guitou", "fy");
                                 badguy->move(room);
-                                badguy->ccommand("chat ÔÂºÚÉ±ÈË£¬·ç¸ß·Å»ğ£¡");
+                                badguy->ccommand("chat æœˆé»‘æ€äººï¼Œé£é«˜æ”¾ç«ï¼");
                         }
                 }
                 NATURE_D->add_day_event(3, 1, this_object(), (: sunrise_event :));
@@ -145,7 +145,7 @@ void sunrise_event() {
         for(i=0; i<sizeof(ob_list); i++) {
                 if(ob_list[i]->query("area_mark") == "fy") {
                         if(environment(ob_list[i])) {
-                                message_vision("$N½ĞµÀ£ºÌìÏşÒ²£¬³¶ºõ£¡\n",ob_list[i]);
+                                message_vision("$Nå«é“ï¼šå¤©æ™“ä¹Ÿï¼Œæ‰¯ä¹ï¼\n",ob_list[i]);
                         }
                         destruct(ob_list[i]);
                 }

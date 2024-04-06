@@ -5,14 +5,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ҩ��");
+	set("short", "药铺");
 	set("long", @LONG
-����һ��ҩ�̣�һ��ŨŨ��ҩζ���㼸����Ϣ�����Ǵ�ҩ���ϵļ��ٸ�С
-������ɢ�������ġ�һ��Ư����ҽʦ��æµ�ĸ����˿����ڹ�̨ǰ������
-һ�Ź��(guanggao)��
+这是一家药铺，一股浓浓的药味让你几欲窒息，那是从药柜上的几百个小
+抽屉里散发出来的。一个漂亮的医师正忙碌的给病人看病在柜台前还贴着
+一张广告(guanggao)。
 LONG );
 	set("item_desc", ([
-		"guanggao" : "�����ּ������֣���Ҫ�﹤�Ŀ����򰢻ݴ���������\n",
+		"guanggao" : "本店现急需人手，如要帮工的可以向阿惠打听工作。\n",
 	]));
 	set("objects", ([
 		__DIR__"npc/gaohehui" : 1,

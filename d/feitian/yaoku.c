@@ -4,8 +4,8 @@ inherit ITEM;
  
 void create() 
 { 
-       set_name("ÎŞÓÃÎï", ({ "obj" }) ); 
-        set("long", "ÕâÊÇÒ»¸ö²»ÖµÇ®µÄ·ÏÎï¡£\n"); 
+       set_name("æ— ç”¨ç‰©", ({ "obj" }) ); 
+        set("long", "è¿™æ˜¯ä¸€ä¸ªä¸å€¼é’±çš„åºŸç‰©ã€‚\n"); 
         setup(); 
 } 
  

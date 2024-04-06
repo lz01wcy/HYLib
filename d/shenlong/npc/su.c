@@ -1,4 +1,4 @@
-// su.c ËÕÜõ
+// su.c è‹èƒ
 
 #include <ansi.h>
 inherit NPC;
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ËÕÜõ", ({ "su quan", "su" }));
-	set("title",  "·òÈË" );
-	set("long", "Ëı¾ÍÊÇÉñÁú½Ì½ÌÖ÷ºé°²Í¨µÄ·òÈË¡£\n");
-	set("gender", "Å®ĞÔ");
+	set_name("è‹èƒ", ({ "su quan", "su" }));
+	set("title",  "å¤«äºº" );
+	set("long", "å¥¹å°±æ˜¯ç¥é¾™æ•™æ•™ä¸»æ´ªå®‰é€šçš„å¤«äººã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 23);
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -47,16 +47,16 @@ void create()
 	map_skill("parry", "meiren-sanshi");
         map_skill("staff", "shedao-qigong");
         set("inquiry", ([
-		"ÉñÁú½Ì" :  "\nÒ»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"Èë½Ì" :  "\nÒ»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"¿ÚºÅ" : "\nÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥!\n",
+		"ç¥é¾™æ•™" :  "\nä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾™æ•™çš„(join shenlongjiao).\n",
+		"å…¥æ•™" :  "\nä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾™æ•™çš„(join shenlongjiao).\n",
+		"å£å·" : "\nä¸‡å¹´ä¸è€!æ°¸äº«ä»™ç¦!å¯¿ä¸å¤©é½!æ–‡æ­¦ä»åœ£!\n",
        ]) );
 	set("chat_chance_combat", 50);  
 	set("chat_msg_combat", ({
 		(: command("smile") :),
 		(: command("haha") :),
-		(: command("chat Æ¾ÄãÕâ" + RANK_D->query_rude(this_player())+",Ò²¸ÒÔÚÌ«ËêÒ¯Í·ÉÏ¶¯ÍÁ?\n") :),
-		(: command("say Äã»îµÃ²»ÄÍ·³ÁËÕÒËÀ°¡£¿\n") :),
+		(: command("chat å‡­ä½ è¿™" + RANK_D->query_rude(this_player())+",ä¹Ÿæ•¢åœ¨å¤ªå²çˆ·å¤´ä¸ŠåŠ¨åœŸ?\n") :),
+		(: command("say ä½ æ´»å¾—ä¸è€çƒ¦äº†æ‰¾æ­»å•Šï¼Ÿ\n") :),
                 (: perform_action, "staff.chang" :),
                 (: perform_action, "staff.chang" :),
                 (: perform_action, "staff.chang" :),
@@ -103,18 +103,18 @@ void greeting(object ob)
 void attempt_apprentice(object ob)
 {
     if ((int)ob->query_skill("shenlong-xinfa",1) < 80 ) {
-        command("say ÄãµÄ±¾ÃÅÄÚ¹¦ĞÄ·¨Ì«µÍÁË,»¹ÊÇÅ¬Å¬Á¦ÏÈÌá¸ßÒ»ÏÂ°É!");
+        command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•å¤ªä½äº†,è¿˜æ˜¯åŠªåŠªåŠ›å…ˆæé«˜ä¸€ä¸‹å§!");
 		return;
     }
     if ((int)ob->query_skill("shedao-qigong",1) < 80 ) {
-        command("say ÄãµÄ±¾ÃÅÕÈ·¨Ì«µÍÁË,»¹ÊÇÅ¬Å¬Á¦ÏÈÌá¸ßÒ»ÏÂ°É!");
+        command("say ä½ çš„æœ¬é—¨æ–æ³•å¤ªä½äº†,è¿˜æ˜¯åŠªåŠªåŠ›å…ˆæé«˜ä¸€ä¸‹å§!");
 		return;
     }
     if ((int)ob->query("shen") > -10000  ) {
-        command("say ÎÒÉñÁú½ÌÓëÊÀ¸ô¾ø£¬ÏòÀ´²»ÓëÄúÕâÖÖ°×µÀÈËÎï´ò½»µÀ£¬ÄúÇë»Ø°É£¡");
+        command("say æˆ‘ç¥é¾™æ•™ä¸ä¸–éš”ç»ï¼Œå‘æ¥ä¸ä¸æ‚¨è¿™ç§ç™½é“äººç‰©æ‰“äº¤é“ï¼Œæ‚¨è¯·å›å§ï¼");
 		return;
 	}
-    command("say ºÜºÃ£¬ºÜºÃ¡£");
+    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ã€‚");
     command("recruit " + ob->query("id"));
 }
  

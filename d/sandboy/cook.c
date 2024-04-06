@@ -3,10 +3,10 @@ inherit ROOM;
  
 void create ()
 {
-  set ("short", "³ø·¿");
+  set ("short", "å¨æˆ¿");
   set ("long", @LONG
-Ã©Îİ±±ÃæµÄÒ»¿Ú´óÔîÉÏÖó×ÅÊ²Ã´¶«Î÷,ÈÈÆøÌÚÌÚµÄ,É¢·¢³öÒ»¹ÉÏãÎ¶,ÅÔ±ß
-µÄ×À×ÓÉÏ°Ú×ÅĞ©ÍëÉ×,Ò»Ö»Ğ¡·¹Í°¾Í°ÚÔÚ×À×ÓÅÔ±ß.
+èŒ…å±‹åŒ—é¢çš„ä¸€å£å¤§ç¶ä¸Šç…®ç€ä»€ä¹ˆä¸œè¥¿,çƒ­æ°”è…¾è…¾çš„,æ•£å‘å‡ºä¸€è‚¡é¦™å‘³,æ—è¾¹
+çš„æ¡Œå­ä¸Šæ‘†ç€äº›ç¢—å‹º,ä¸€åªå°é¥­æ¡¶å°±æ‘†åœ¨æ¡Œå­æ—è¾¹.
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -24,7 +24,7 @@ int valid_leave(object me,string dir)
   ob=present("mantou",me);
   npc=present("sansao",this_object());
  if (npc&&dir=="west"&&ob)    {
-   return notify_fail("ÕÅÈıÉ©¶Ô"+me->query("name")+"µÀ:ÕâÂøÍ·Äã»¹ÊÇ³ÔÍêÔÙ³öÈ¥,ÈÃÈË¿´µ½ÁË²»ºÃ.\n");
+   return notify_fail("å¼ ä¸‰å«‚å¯¹"+me->query("name")+"é“:è¿™é¦’å¤´ä½ è¿˜æ˜¯åƒå®Œå†å‡ºå»,è®©äººçœ‹åˆ°äº†ä¸å¥½.\n");
        }
 else return ::valid_leave(me,dir);
 }

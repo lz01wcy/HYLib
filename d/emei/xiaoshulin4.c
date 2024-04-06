@@ -1,4 +1,4 @@
-//Room: xiaoshulin4.c Ğ¡Ê÷ÁÖ
+//Room: xiaoshulin4.c å°æ ‘æ—
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
@@ -7,10 +7,10 @@ string look_paizi();
 
 void create()
 {
-      set("short","Ğ¡Ê÷ÁÖ");
+      set("short","å°æ ‘æ—");
       set("long",@LONG
-ÕâÊÇ¶ëáÒÉ½½ğ¶¥»ª²ØâÖÍâµÄÒ»Æ¬Ğ¡Ê÷ÁÖ¡£±±±ßÊÇ¶ëáÒÅÉÅ®µÜ×ÓÃÇµÄÇŞ¹¬µÄ
-´°»§£¬´°ÏÂºÃÏñ¶××ÅÒ»¸öÈË¡£
+è¿™æ˜¯å³¨åµ‹å±±é‡‘é¡¶åè—åºµå¤–çš„ä¸€ç‰‡å°æ ‘æ—ã€‚åŒ—è¾¹æ˜¯å³¨åµ‹æ´¾å¥³å¼Ÿå­ä»¬çš„å¯å®«çš„
+çª—æˆ·ï¼Œçª—ä¸‹å¥½åƒè¹²ç€ä¸€ä¸ªäººã€‚
 LONG);
       set("objects", ([
            __DIR__"npc/xiaosong" : 1,
@@ -28,8 +28,8 @@ int valid_leave(object me, string dir)
       mapping myfam;
       me = this_player();
       myfam = (mapping)me->query("family");
-      if ((!myfam || (myfam["family_name"] != "¶ëáÒÅÉ")) && (dir == "north")
+      if ((!myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾")) && (dir == "north")
       &&  objectp(present("song qingshu", environment(me))))
-          return notify_fail("ËÎÇàÊéËµµÀ:ÄãºÃ´óµÄµ¨×Ó£¬Ïë´³¶ëáÒÅ®µÜ×ÓµÄÇŞ¹¬£¿\n");
+          return notify_fail("å®‹é’ä¹¦è¯´é“:ä½ å¥½å¤§çš„èƒ†å­ï¼Œæƒ³é—¯å³¨åµ‹å¥³å¼Ÿå­çš„å¯å®«ï¼Ÿ\n");
       else  return 1;
 }

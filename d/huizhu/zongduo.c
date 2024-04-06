@@ -9,12 +9,12 @@ int get=1;
 void hit();
 void create()
 {
-	set("short", "ºì»¨»á×Ü¶æ");
+	set("short", "çº¢èŠ±ä¼šæ€»èˆµ");
 	set("long", @LONG
-ÕâÀïÊÇºì»¨»áµÄ×Ü¶æ£¬´óÌÃÉÏÕ¾ÂúÁËºì»¨»áµÄµÜ×Ó¡£ËûÃÇµÄÁ³ÉÏ±í
-ÇéËàÄÂ£¬Ã¿¸öÈËµÄÓÒÊÖ¶¼½ôÎÕ×Å×Ô¼ºµÄ±øÈÐ£¬ÖÐ¼äµÄÒÎ×Ó¿Õ×Å£¬¿´À´×Ü
-¶æÖ÷³Â¼ÒÂå²»ÔÚ£¬Á½ÅÔµÄÏãÂ¯(xiang lu)É¢·¢³öçÔçÔµÄÇàÑÌ£¬¸üÊÇ³ÄÍÐ
-³öÒ»¹ÉÉñÊ¥µÄ·ÕÎ§¡£
+è¿™é‡Œæ˜¯çº¢èŠ±ä¼šçš„æ€»èˆµï¼Œå¤§å ‚ä¸Šç«™æ»¡äº†çº¢èŠ±ä¼šçš„å¼Ÿå­ã€‚ä»–ä»¬çš„è„¸ä¸Šè¡¨
+æƒ…è‚ƒç©†ï¼Œæ¯ä¸ªäººçš„å³æ‰‹éƒ½ç´§æ¡ç€è‡ªå·±çš„å…µåˆƒï¼Œä¸­é—´çš„æ¤…å­ç©ºç€ï¼Œçœ‹æ¥æ€»
+èˆµä¸»é™ˆå®¶æ´›ä¸åœ¨ï¼Œä¸¤æ—çš„é¦™ç‚‰(xiang lu)æ•£å‘å‡ºç¼­ç¼­çš„é’çƒŸï¼Œæ›´æ˜¯è¡¬æ‰˜
+å‡ºä¸€è‚¡ç¥žåœ£çš„æ°›å›´ã€‚
 LONG );
 	set("valid_startroom", 1);	
 	set("exits", ([
@@ -22,7 +22,7 @@ LONG );
 		"west"      : __DIR__"goldroom",
 	]));
 	set("item_desc", ([
-		"xiang lu" : "Ò»¸ö¹ÅÉ«¹ÅÏãµÄÇàÍ­ÏãÂ¯£¬Ò»¹Éµ­µ­µÄÏãÆø´ÓÀïÃæ²»Ê±µÄÃ°³öÀ´¡£\n",
+		"xiang lu" : "ä¸€ä¸ªå¤è‰²å¤é¦™çš„é’é“œé¦™ç‚‰ï¼Œä¸€è‚¡æ·¡æ·¡çš„é¦™æ°”ä»Žé‡Œé¢ä¸æ—¶çš„å†’å‡ºæ¥ã€‚\n",
 	]));
 	set("objects", ([
 		CLASS_D("honghua")+"/wu-chen" : 1,
@@ -47,18 +47,18 @@ int do_tui(string arg)
 	object me=this_player();
 
 	if(!arg || arg!="xiang lu")
-		return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦æŽ¨ä»€ä¹ˆï¼Ÿ\n");
 	if( me->query("combat_exp") < 200000 )
-		return notify_fail("ÄãµÄ¹¦·òÌ«²î¡£ÎÞ·¨ÍÆ¶¯ÏãÂ¯¡£\n");
+		return notify_fail("ä½ çš„åŠŸå¤«å¤ªå·®ã€‚æ— æ³•æŽ¨åŠ¨é¦™ç‚‰ã€‚\n");
 	else if ( flag==0 )
 		{
 			flag=1;
-			message_vision("Ö»Ìý¡°ßÇàê¡±Ò»Ïì£¬ÏãÂ¯ÉÏÏÖ³öÒ»¸öÐ¡¶´¡£\n", me);
+			message_vision("åªå¬â€œå’”åš“â€ä¸€å“ï¼Œé¦™ç‚‰ä¸ŠçŽ°å‡ºä¸€ä¸ªå°æ´žã€‚\n", me);
 			set("item_desc", ([
-				"xiang lu" : "Ò»¸ö¹ÅÉ«¹ÅÏãµÄÇàÍ­ÏãÂ¯£¬Ò»¹Éµ­µ­µÄÏãÆø´ÓÀïÃæ²»Ê±µÄÃ°³öÀ´£¬ÉÏÃæÓÐÒ»¸öÐ¡¶´£¬ºÃÏñ¿ÉÒÔ²åÈëÊ²Ã´¶«Î÷£¡\n",
+				"xiang lu" : "ä¸€ä¸ªå¤è‰²å¤é¦™çš„é’é“œé¦™ç‚‰ï¼Œä¸€è‚¡æ·¡æ·¡çš„é¦™æ°”ä»Žé‡Œé¢ä¸æ—¶çš„å†’å‡ºæ¥ï¼Œä¸Šé¢æœ‰ä¸€ä¸ªå°æ´žï¼Œå¥½åƒå¯ä»¥æ’å…¥ä»€ä¹ˆä¸œè¥¿ï¼\n",
 	    		]));
 		}
-		else message_vision("ÏãÂ¯ÒÑ¾­ÍÆ²»¶¯ÁË£¡\n", me);
+		else message_vision("é¦™ç‚‰å·²ç»æŽ¨ä¸åŠ¨äº†ï¼\n", me);
 
 	return 1;
 }
@@ -68,26 +68,26 @@ int do_wedge(string arg)
  	object me=this_player();
 
 	if( !arg || arg!="honghua ling" )
-		return notify_fail("ÄãÒª°ÑÊ²Ã´¶«Î÷²åÈëÏãÂ¯£¿\n");
+		return notify_fail("ä½ è¦æŠŠä»€ä¹ˆä¸œè¥¿æ’å…¥é¦™ç‚‰ï¼Ÿ\n");
 
-	if( me->is_busy() ) return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+	if( me->is_busy() ) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 	else if ( get==1 && flag==1 && present("honghua ling", me) &&
 			!(present("honghua ling", me))->query("zizhi") )
 		{
-			message_vision("$NÊÔ×Å°Ñºì»¨Áî²åÈëÁËÏãÂ¯¡£\n",me);
-			message_vision( HIR"Ö»ÌýÏãÂ¯ÀïÃæßÇàêÂÒÏì£¬ºÃÏñÊÇ´¥¶¯ÁËÊ²Ã´»ú¹Ø¡£\n"NOR,me);
+			message_vision("$Nè¯•ç€æŠŠçº¢èŠ±ä»¤æ’å…¥äº†é¦™ç‚‰ã€‚\n",me);
+			message_vision( HIR"åªå¬é¦™ç‚‰é‡Œé¢å’”åš“ä¹±å“ï¼Œå¥½åƒæ˜¯è§¦åŠ¨äº†ä»€ä¹ˆæœºå…³ã€‚\n"NOR,me);
 			me->start_busy(2);
 			hit();
 		}
 		else 
 		{
 			if ( flag==0 )
-				return notify_fail("ÏãÂ¯ÉÏÁ¬¶´¶¼Ã»ÓÐ£¬Ê²Ã´¶«Î÷Ò²²å²»½øÈ¥£¡\n");
+				return notify_fail("é¦™ç‚‰ä¸Šè¿žæ´žéƒ½æ²¡æœ‰ï¼Œä»€ä¹ˆä¸œè¥¿ä¹Ÿæ’ä¸è¿›åŽ»ï¼\n");
 			if ( !present("honghua ling", me) ||
 				(present("honghua ling", me))->query("zizhi") )
-				return notify_fail("Äã²»ÄÜ²åÕâÖÖ¶«Î÷½øÈ¥£¡\n");
+				return notify_fail("ä½ ä¸èƒ½æ’è¿™ç§ä¸œè¥¿è¿›åŽ»ï¼\n");
 			if ( get==0 )
-				return notify_fail("Ñ©ÖÐÁ«ÒÑ¾­±»ÈËÄÃ×ßÁË£¡\n");
+				return notify_fail("é›ªä¸­èŽ²å·²ç»è¢«äººæ‹¿èµ°äº†ï¼\n");
 		}
 	return 1;
 }
@@ -96,17 +96,17 @@ void hit()
 {
 	object ob, me = this_player();
 
-	message_vision("Í»È»Ö»Ìý¡°à²¡±µÄÒ»Éù£¬´ÓÏãÂ¯ÖÐÉä³öÈýÖ§³öÌú¼ý£¡\n", me);
+	message_vision("çªç„¶åªå¬â€œå—–â€çš„ä¸€å£°ï¼Œä»Žé¦™ç‚‰ä¸­å°„å‡ºä¸‰æ”¯å‡ºé“ç®­ï¼\n", me);
 	if ( random( (int)me->query("kar") ) < 20 )
 	{
-		message_vision( HIR"$NÑÛÇ°Ò»»¨£¬À´²»¼°¶ãÉÁ£¬Èý¼ýÆëÆëµÄ¶¤ÔÚ$NµÄÐØ¿Ú¡£\n"NOR, me);
+		message_vision( HIR"$Nçœ¼å‰ä¸€èŠ±ï¼Œæ¥ä¸åŠèº²é—ªï¼Œä¸‰ç®­é½é½çš„é’‰åœ¨$Nçš„èƒ¸å£ã€‚\n"NOR, me);
 		me->unconcious();
 	}
 	else {
-		message_vision( HIG"$NÁ¬Ã¦Ò»¸ö²àÉí£¬ÏÕÏÕµÄ±Ü¿ªÁË¡£\n"NOR,me );
-		message_vision( HIG"ÏãÂ¯ÂýÂý×ª¶¯£¬Â¶³öÒ»¶ä"NOR,me);
-		message_vision( HIW"Ñ©ÖÐÁ«"NOR,me);
-		message_vision( HIG"£¬$N¸ÏÃ¦Ò»°ÑÇÀÔÚÊÖÖÐ¡£\n"NOR,me);
+		message_vision( HIG"$Nè¿žå¿™ä¸€ä¸ªä¾§èº«ï¼Œé™©é™©çš„é¿å¼€äº†ã€‚\n"NOR,me );
+		message_vision( HIG"é¦™ç‚‰æ…¢æ…¢è½¬åŠ¨ï¼Œéœ²å‡ºä¸€æœµ"NOR,me);
+		message_vision( HIW"é›ªä¸­èŽ²"NOR,me);
+		message_vision( HIG"ï¼Œ$Nèµ¶å¿™ä¸€æŠŠæŠ¢åœ¨æ‰‹ä¸­ã€‚\n"NOR,me);
 		ob = new(__DIR__"obj/xuezhonglian" );
 		me->start_busy(2);
  		ob->move(me);

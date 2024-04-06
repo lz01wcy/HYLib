@@ -6,13 +6,13 @@ setup()
 }
 void create()
 {
-	set_name("½ğ´´Ò©", ({ "jinchuang yao","yao","jinchuang" }) );
+	set_name("é‡‘åˆ›è¯", ({ "jinchuang yao","yao","jinchuang" }) );
 	set_weight(20);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÌùºÚÉ«µÄ¸àÒ©£¬·¢³öÒ»ÖÖ´Ì±ÇµÄÒ©Ïã£¬¿ÉÌù(tie)ÔÚÉË¿ÚÉÏ£¬µø´òµ¶ÉËÊÊÓÃ¡£\n");
-		set("unit", "Ìù");
+		set("long", "ä¸€è´´é»‘è‰²çš„è†è¯ï¼Œå‘å‡ºä¸€ç§åˆºé¼»çš„è¯é¦™ï¼Œå¯è´´(tie)åœ¨ä¼¤å£ä¸Šï¼Œè·Œæ‰“åˆ€ä¼¤é€‚ç”¨ã€‚\n");
+		set("unit", "è´´");
 		set("value", 200);
 	}
 }
@@ -24,12 +24,12 @@ void init()
 int do_use(string arg)
 {
 	
-	if( !this_object()->id(arg) ) return notify_fail("ÄãÌùÊ²Ã´£¿\n");
+	if( !this_object()->id(arg) ) return notify_fail("ä½ è´´ä»€ä¹ˆï¼Ÿ\n");
         this_player()->add("qi", 30 );
         this_player()->add("jing", 10 );
 
 
-	 message_vision("$NÄÃ³öÒ»¿é" + name() + "ÌùÔÚÉË¿ÚÉÏ£¬¸Ğ¾õºÃ¶àÁË¡£\n", this_player());
+	 message_vision("$Næ‹¿å‡ºä¸€å—" + name() + "è´´åœ¨ä¼¤å£ä¸Šï¼Œæ„Ÿè§‰å¥½å¤šäº†ã€‚\n", this_player());
 	 destruct(this_object());
 	 return 1;
 

@@ -10,13 +10,13 @@ void create()
 
 {
     
-   set_name(HIW"°×Ô³"NOR, ({ "bai yuan" , "yuan" }));
-                set("race", "Ò°ÊÞ");
+   set_name(HIW"ç™½çŒ¿"NOR, ({ "bai yuan" , "yuan" }));
+                set("race", "é‡Žå…½");
        set("long",
-"Ò»Ö»Ñ©°×µÄÔ³ºï£¬¿´ÆðÀ´ºÜÓÐÁéÐÔ¡£
-¡£\n");
+"ä¸€åªé›ªç™½çš„çŒ¿çŒ´ï¼Œçœ‹èµ·æ¥å¾ˆæœ‰çµæ€§ã€‚
+ã€‚\n");
             
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" , "claw" }) );
 	       set("max_qi",10000+random(5000));
   set("max_qi",20000+random(5000));
@@ -61,7 +61,7 @@ set("no_get",1);
 int accept_object(object who, object ob)
 {
 	   if ((string)ob->query("id")=="xian tao") {
-            say("°×Ô³¿ªÐÄµÄ½ÐÁËÒ»Éù£¬Íù±±ÃæÒ»ÉÁ¡£\n");
+            say("ç™½çŒ¿å¼€å¿ƒçš„å«äº†ä¸€å£°ï¼Œå¾€åŒ—é¢ä¸€é—ªã€‚\n");
              move("/d/migong/lev6/dong102");
             }
 		return 1;
@@ -75,7 +75,7 @@ if (ob)
         ob->apply_condition("xiezi_poison", 40);
         ob->apply_condition("snake_poison", 40);
         ob->apply_condition("zhizhu_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»´òÖÐµÄµØ·½Ò»ÕóÂéÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«æ‰“ä¸­çš„åœ°æ–¹ä¸€é˜µéº»ç—’ï¼\n" NOR );
 }
 }
 
@@ -88,7 +88,7 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;   
               me->add("score",1);
-        message_vision(WHT"$NÅ¾µÄÒ»ÉùÌ±µ¹ÔÚµØÉÏ¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå•ªçš„ä¸€å£°ç˜«å€’åœ¨åœ°ä¸Šã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));me->add("combat_exp",random(12));me->add("potential",random(8));me->add("combat_exp",random(12));me->add("potential",random(8));
 if (me->query("migong/lev6"))
@@ -101,7 +101,7 @@ maxpot=me->query_temp("maxpot")+10;
 obj->do_copy(me,maxpot,2);
 obj->set("usename",me->query("name"));
 obj->move(environment(me));
-message_vision(HIY"$N¿ñÐ¦µÀ£ºÈÃÄã¼ûÊ¶ÊÇÒ»ÏÂÎäÊõµÄÕæËè! !\n"NOR, obj);
+message_vision(HIY"$Nç‹‚ç¬‘é“ï¼šè®©ä½ è§è¯†æ˜¯ä¸€ä¸‹æ­¦æœ¯çš„çœŸé«“! !\n"NOR, obj);
 me->start_busy(3);
 me->kill_ob(obj);
 obj->kill_ob(me);
@@ -116,79 +116,79 @@ else
 if (!me->query("migong/lev6"))
 {
 me->set("migong/lev6",1);
-message("channel:chat", HIM"¡¾½­ºþÒ¥ÑÔ¡¿ÌýËµ"+me->name() + "Íê³ÉÁËÃÔ¹¬µÚÁù²ã!"NOR"¡£\n", users());
+message("channel:chat", HIM"ã€æ±Ÿæ¹–è°£è¨€ã€‘å¬è¯´"+me->name() + "å®Œæˆäº†è¿·å®«ç¬¬å…­å±‚!"NOR"ã€‚\n", users());
 exp = 260000+random(25000);
 pot = exp/2;
 score = random(300)+350;
              me->add("combat_exp",exp);
              me->add("potential",pot);
              me->add("score",score);
-tell_object(me,HIW"Äã±»½±ÀøÁË£º\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã½­ºþÔÄÀú\n"NOR);
+tell_object(me,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+             chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+            chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…åŽ†\n"NOR);
 i=random(8);
 	if (i==7) {
         if ( me->query("per")< 60)
         {
-	me->add("per",1);tell_object(me,HIM"ÒÔ¼°Ò»µãÈÝÃ²¡£\n"NOR);
+	me->add("per",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹å®¹è²Œã€‚\n"NOR);
         }
 	}
 	else if (i==6) {
         if ( me->query("kar")< 60)
         {
-	me->add("kar",1);tell_object(me,HIM"ÒÔ¼°Ò»µã¸£Ôµ¡£\n"NOR);
+	me->add("kar",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹ç¦ç¼˜ã€‚\n"NOR);
         }
 	}
 	else if (i==5) {
         if ( me->query("dex")< 60)
         {
-	me->add("dex",1);tell_object(me,HIM"ÒÔ¼°Ò»µãÉí·¨¡£\n"NOR);
+	me->add("dex",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹èº«æ³•ã€‚\n"NOR);
         }
 	}
 	else if (i==4) {
         if ( me->query("str")< 60)
         {
-	me->add("str",1);tell_object(me,HIM"ÒÔ¼°Ò»µãÁ¦Á¿¡£\n"NOR);
+	me->add("str",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹åŠ›é‡ã€‚\n"NOR);
         }
 	}
 	else if (i==3) {
         if ( me->query("per")< 60)
         {
-	me->add("per",1);tell_object(me,HIM"ÒÔ¼°Ò»µãÈÝÃ²¡£\n"NOR);
+	me->add("per",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹å®¹è²Œã€‚\n"NOR);
         }
 	}
 	else if (i==2) {
         if ( me->query("kar")< 60)
         {
-	me->add("kar",1);tell_object(me,HIM"ÒÔ¼°Ò»µã¸£Ôµ¡£\n"NOR);
+	me->add("kar",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹ç¦ç¼˜ã€‚\n"NOR);
         }
 	}
 	else if (i==1) {
         if ( me->query("con")< 60)
         {
-	me->add("con",1);tell_object(me,HIM"ÒÔ¼°Ò»µã¸ù¹Ç¡£\n"NOR);
+	me->add("con",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹æ ¹éª¨ã€‚\n"NOR);
         }
 	}
 	else if (i==0) {
         if ( me->query("int")< 60)
         {
-	me->add("int",1);tell_object(me,HIM"ÒÔ¼°Ò»µãÎòÐÔ¡£\n"NOR);
+	me->add("int",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹æ‚Ÿæ€§ã€‚\n"NOR);
         }
 	}
 	else if (me->query("per")< 100) {
-	me->add("per",1);tell_object(me,HIM"ÒÔ¼°Ò»µãÈÝÃ²¡£\n"NOR);
+	me->add("per",1);tell_object(me,HIM"ä»¥åŠä¸€ç‚¹å®¹è²Œã€‚\n"NOR);
 	}
 }
         if((int)me->query("combat_exp") < 2000000)   {
 if (random(80) < 1)
 {
              corpse=new("/clone/gem/gem");
-             message_vision("$NµÃµ½Ò»¿ÅÁÁ¾§¾§µÄ±¦Ê¯¡£\n",killer);
-             command("rumor "+killer->query("name")+"µÃµ½Ò»¿Å"+corpse->query("name")+"!"NOR"¡£\n");
+             message_vision("$Nå¾—åˆ°ä¸€é¢—äº®æ™¶æ™¶çš„å®çŸ³ã€‚\n",killer);
+             command("rumor "+killer->query("name")+"å¾—åˆ°ä¸€é¢—"+corpse->query("name")+"!"NOR"ã€‚\n");
              corpse->move(killer);
 }        
-        message("vision", me->name() + "³É¹¦´òËÀ°×Ô³Ôö¼ÓÁË400¾­ÑéºÍ200Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»ç™½çŒ¿å¢žåŠ äº†400ç»éªŒå’Œ200æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",400);
         me->add("potential",200);
         destruct(ob);

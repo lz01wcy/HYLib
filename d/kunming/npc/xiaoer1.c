@@ -1,4 +1,4 @@
-// xiaoer2.c ¾ÆµêĞ¡¶ş
+// xiaoer2.c é…’åº—å°äºŒ
 
 
 inherit NPC;
@@ -7,14 +7,14 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»µêĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ğ¡¶ş¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
 		__DIR__"obj/jitui",
 		__DIR__"obj/jiudai",

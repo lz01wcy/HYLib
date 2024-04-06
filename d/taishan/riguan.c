@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÈÕ¹Û·å");
+	set("short", "æ—¥è§‚å³°");
 	set("long", @LONG
-ÈÕ¹Û·åÎ»ÓÚÓñ»Ê¶¥¶«ÄÏ£¬¹Å³Æ½éÇðÑÒ£¬Òò¿É¹ÛÈÕ³ö¶øÃû¡£Ïà´«ÔÚ·å
-áÛÎ÷¿ÉÍûÇØ£¬ÄÏ¿ÉÍûÔ½£¬¹ÊÓÖ³ÆÇØ¹Û·å¡¢Ô½¹Û·å¡£ÕâÀï¹ÖÊ¯ÔÜ´Ø£¬×î¸ß
-µÄµØ·½Ò»Ê¯×¿Á¢£¬ÃûÎª¾ý×Ó·å¡£Íù¶«×ß±ãÊÇÍ¨ÍùÌ©É½¶«ÌìÃÅµÄÉ½Â·¡£
+æ—¥è§‚å³°ä½äºŽçŽ‰çš‡é¡¶ä¸œå—ï¼Œå¤ç§°ä»‹ä¸˜å²©ï¼Œå› å¯è§‚æ—¥å‡ºè€Œåã€‚ç›¸ä¼ åœ¨å³°
+å·…è¥¿å¯æœ›ç§¦ï¼Œå—å¯æœ›è¶Šï¼Œæ•…åˆç§°ç§¦è§‚å³°ã€è¶Šè§‚å³°ã€‚è¿™é‡Œæ€ªçŸ³æ”’ç°‡ï¼Œæœ€é«˜
+çš„åœ°æ–¹ä¸€çŸ³å“ç«‹ï¼Œåä¸ºå›å­å³°ã€‚å¾€ä¸œèµ°ä¾¿æ˜¯é€šå¾€æ³°å±±ä¸œå¤©é—¨çš„å±±è·¯ã€‚
 LONG );
 	set("exits", ([
 		"south"     : __DIR__"aishen",
@@ -34,11 +34,11 @@ LONG );
 int valid_leave(object me, string dir)
 {
 	if (dir != "northwest" &&
-		me->query("family/family_name") !="Ì©É½ÅÉ" &&
+		me->query("family/family_name") !="æ³°å±±æ´¾" &&
 		present("tianmen daoren", environment(me)) &&
 		living(present("tianmen daoren", environment(me))))
 	{
-		return notify_fail("ÌìÃÅµÀÈËºÈµÀ£ººóÃæÊÇ±¾ÅÉÖØµØ£¬ÕâÎ»" + RANK_D->query_respect(me) + "ÇëÖ¹²½¡£\n");
+		return notify_fail("å¤©é—¨é“äººå–é“ï¼šåŽé¢æ˜¯æœ¬æ´¾é‡åœ°ï¼Œè¿™ä½" + RANK_D->query_respect(me) + "è¯·æ­¢æ­¥ã€‚\n");
 	}
 	else return ::valid_leave(me, dir);
 

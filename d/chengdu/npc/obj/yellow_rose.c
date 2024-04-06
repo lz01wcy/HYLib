@@ -5,21 +5,21 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIY"»ÆÃµ¹å"NOR, ({"yellow rose", "rose"}));
+        set_name(HIY"é»„ç«ç‘°"NOR, ({"yellow rose", "rose"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
+                set("unit", "æœµ");
                 set("long", 
-"Ò»¶äº¬°ú´ı·ÅµÄ"HIY"»ÆÃµ¹å¡£\n"NOR);
+"ä¸€æœµå«è‹å¾…æ”¾çš„"HIY"é»„ç«ç‘°ã€‚\n"NOR);
                 set("value", 1000);
                 set("flower", 1);
                 set("material", "plant");
                 set_weight(10);
                 set("armor_prop/armor", 0);
                 set("armor_prop/personality", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unequip_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+                set("unequip_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šæ‘˜äº†ä¸‹æ¥ã€‚\n");
         }
         setup();
 }

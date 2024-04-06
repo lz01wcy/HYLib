@@ -7,11 +7,11 @@ inherit ROOM;
 void create()
 {
 
-        set("short",WHT "����");
+        set("short",WHT "长城");
         set("long",WHT @LONG
-���Ѿ��ƹ��˵����ĳ�ǽ���лص��˳����ϡ�վ�ڼ�ʵ�ĳ�ש�ϣ������
-�ĳ�����������ﳤ�����������������������������ڿտ���ɽ�ϴ��˺�Զ��
-��Զ��
+你已经绕过了倒塌的城墙，有回到了长城上。站在坚实的城砖上，你高兴
+的唱起歌来“万里长城永不倒。。。。。。”，歌声在空旷的山上传了很远，
+很远。
 LONG
  NOR       );
 

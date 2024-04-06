@@ -1,13 +1,13 @@
 // /d/taiyuan/shanghang.c
-// Room in Ì«Ô­
+// Room in å¤ªåŽŸ
 // rich 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "ÉÌÐÐ");
+	set("short", "å•†è¡Œ");
 	set("long", @LONG
-Õâ¼ÒÉÌÐÐÊÇÒ»¸öÎ÷ÓòÉÌÈËËù¿ª£¬×¨ÃÅ¸ºÔðÖÐÔ­ºÍÎ÷ÓòÖ®¼ä´ûÎïµÄÔË
-ËÍ£¬ÁíÍâÒ²ÊÇÎ÷ÓòÉÌ¶ÓÔÚÌ«Ô­µÄÂä½ÅÖ®´¦¡£
+è¿™å®¶å•†è¡Œæ˜¯ä¸€ä¸ªè¥¿åŸŸå•†äººæ‰€å¼€ï¼Œä¸“é—¨è´Ÿè´£ä¸­åŽŸå’Œè¥¿åŸŸä¹‹é—´è´·ç‰©çš„è¿
+é€ï¼Œå¦å¤–ä¹Ÿæ˜¯è¥¿åŸŸå•†é˜Ÿåœ¨å¤ªåŽŸçš„è½è„šä¹‹å¤„ã€‚
 LONG
 	);
 set("exits", ([

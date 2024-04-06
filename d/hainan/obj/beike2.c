@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Îå²Ê±´¿Ç", ({ "wucai beike","beike" }) );
+	set_name("äº”å½©è´å£³", ({ "wucai beike","beike" }) );
 	set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 1000);
 		set("long", 
-"ÕâÊÇ¸öÆ¯ÁÁµÄÎå²Ê±´¿Ç£¬Ó¦¸Ã¿ÉÒÔÂô²»ÉÙÇ®£¡\n");
+"è¿™æ˜¯ä¸ªæ¼‚äº®çš„äº”å½©è´å£³ï¼Œåº”è¯¥å¯ä»¥å–ä¸å°‘é’±ï¼\n");
 	}
 	setup();
 }

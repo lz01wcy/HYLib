@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����һ¥");
+	set("short", "白塔一楼");
 	set("long", @LONG
-�����Ǳ�����һ¥������������Ƹߣ������̲�סҪ�Ǹ�������
+这里是报恩塔一楼，由于这里地势高，让人忍不住要登高眺望。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

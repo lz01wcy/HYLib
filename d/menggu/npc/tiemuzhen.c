@@ -2,9 +2,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-   set_name("ÌúÄ¾Õæ",({"tiemuzhen"}));
-   set("gender","ÄĞĞÔ");
-      set("long","ÌúÄ¾ÕæÊÇÃÉ¹Å²İÔ­µÄÓ¢ĞÛ!\n");
+   set_name("é“æœ¨çœŸ",({"tiemuzhen"}));
+   set("gender","ç”·æ€§");
+      set("long","é“æœ¨çœŸæ˜¯è’™å¤è‰åŸçš„è‹±é›„!\n");
    set("shen",25000);
    set("combat_exp",500000);
      set("age",45);
@@ -60,8 +60,8 @@ int accept_object(object who, object ob)
 	}
 	who->add_temp("learn_timea",i);
 
-      message_vision("ÌúÄ¾Õæ¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
-      tell_object(who,"ÏÖÔÚÄã¿ÉÒÔÏòÌúÄ¾ÕæÑ§Ï°ÁË¡£\n");
+      message_vision("é“æœ¨çœŸå¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
+      tell_object(who,"ç°åœ¨ä½ å¯ä»¥å‘é“æœ¨çœŸå­¦ä¹ äº†ã€‚\n");
 
 	return 1;
 }

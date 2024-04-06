@@ -1,13 +1,13 @@
-//Room: xiaoshulin1.c Ğ¡Ê÷ÁÖ
+//Room: xiaoshulin1.c å°æ ‘æ—
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 void create()
 {
-      set("short","Ğ¡Ê÷ÁÖ");
+      set("short","å°æ ‘æ—");
       set("long",@LONG
-ÕâÊÇ¶ëáÒÉ½½ğ¶¥»ª²ØâÖÍâµÄÒ»Æ¬Ğ¡Ê÷ÁÖ¡£ÁÖÖĞÃ»ÓĞÂ·£¬µ«µØÉÏÒÀÏ¡ÓĞĞ©×ã
-¼££¬ËÆºõ¸ÕÓĞÈË×ß¹ı¡£±±ÃæÓĞÒ»ÉÈĞ¡´°¡£
+è¿™æ˜¯å³¨åµ‹å±±é‡‘é¡¶åè—åºµå¤–çš„ä¸€ç‰‡å°æ ‘æ—ã€‚æ—ä¸­æ²¡æœ‰è·¯ï¼Œä½†åœ°ä¸Šä¾ç¨€æœ‰äº›è¶³
+è¿¹ï¼Œä¼¼ä¹åˆšæœ‰äººèµ°è¿‡ã€‚åŒ—é¢æœ‰ä¸€æ‰‡å°çª—ã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */
@@ -27,8 +27,8 @@ int do_jump(string arg)
       object me;
       if (!arg || arg !="chuang") return 1;
       me = this_player();
-      message_vision("$N³ÃÈË²»×¢Òâ£¬Ìø½ø´°Àï¡£¡£\n",me);
+      message_vision("$Nè¶äººä¸æ³¨æ„ï¼Œè·³è¿›çª—é‡Œã€‚ã€‚\n",me);
       me->move(__DIR__"hcawest");
-      message_vision("$N´Ó»ª²ØâÖÍâÌø´°½øÀ´¡£\n",me);
+      message_vision("$Nä»åè—åºµå¤–è·³çª—è¿›æ¥ã€‚\n",me);
       return 1;
 }

@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "¼¯ÊÐ");
+	set("short",  "é›†å¸‚");
 	set("long",  @LONG
-ÈÈÄÖµÄ¼¯ÊÐÀï£¬ÈËÀ´ÈËÍù£¬Ä¦¼ç½Óõà£¬²»Ê±ÓÐÈË´ÓÄãÉí±ß²ÁÉí¶ø¹ý¡£
-Å¼¶ûÒ²ÄÜ¿´¼û¼¸¸ö½­ºþºÀ¿ÍÔÚÄÏ±ßµÄË³·ç¿ÍÕ»ÐÝÏ¢¡¢Í¶ËÞ¡£
+çƒ­é—¹çš„é›†å¸‚é‡Œï¼Œäººæ¥äººå¾€ï¼Œæ‘©è‚©æŽ¥è¸µï¼Œä¸æ—¶æœ‰äººä»Žä½ èº«è¾¹æ“¦èº«è€Œè¿‡ã€‚
+å¶å°”ä¹Ÿèƒ½çœ‹è§å‡ ä¸ªæ±Ÿæ¹–è±ªå®¢åœ¨å—è¾¹çš„é¡ºé£Žå®¢æ ˆä¼‘æ¯ã€æŠ•å®¿ã€‚
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"south" : __DIR__"kedian",

@@ -11,12 +11,12 @@ void init()
 
 void create()
 {
-	set_name("°Ù»¨¸¹Éß¸à", ({"baihua gao", "gao","baihua"}));
+	set_name("ç™¾èŠ±è…¹è›‡è†", ({"baihua gao", "gao","baihua"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ã¶");
-		set("long", "ÕâÊÇÒ»Ã¶Õä¹óµÄ°Ù»¨¸¹Éß¸à¡£\n");
+		set("unit", "æš");
+		set("long", "è¿™æ˜¯ä¸€æšçè´µçš„ç™¾èŠ±è…¹è›‡è†ã€‚\n");
 		set("value", 20000);
 	}
 	setup();
@@ -32,7 +32,7 @@ int do_eat(string arg)
 	neili_limit = me->query("max_neili");
 	
 	if (!id(arg)||(arg!="gao"&&arg!="baihua gao"))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	if ( neili_limit <= force_limit  )
 	{
@@ -40,10 +40,10 @@ int do_eat(string arg)
 		me->add("neili",25-random(50));
 		me->add("eff_jing",10);
 
-		message_vision(HIY "$N³ÔÏÂÒ»Ã¶°Ù»¨¸¹Éß¸à£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉÇåÁ¹Ö®ÆøÖ±ÇßĞÄ·Î...\n" NOR, this_player());
+		message_vision(HIY "$Nåƒä¸‹ä¸€æšç™¾èŠ±è…¹è›‡è†ï¼Œé¡¿ç„¶é—´åªè§‰ä¸€è‚¡æ¸…å‡‰ä¹‹æ°”ç›´æ²å¿ƒè‚º...\n" NOR, this_player());
 	}
 	else
-		message_vision(HIY "$N³ÔÏÂÒ»Ã¶°Ù»¨¸¹Éß¸à£¬µ«ÊÇºÃÏóÃ»Ê²Ã´ÓÃ.\n" NOR, this_player());
+		message_vision(HIY "$Nåƒä¸‹ä¸€æšç™¾èŠ±è…¹è›‡è†ï¼Œä½†æ˜¯å¥½è±¡æ²¡ä»€ä¹ˆç”¨.\n" NOR, this_player());
 
 	destruct(this_object());
 	return 1;
@@ -56,13 +56,13 @@ int do_use(string arg)
 	object me = this_player();
 	
 	if (!id(arg)||(arg!="gao"&&arg!="baihua gao"))
-		return notify_fail("ÄãÒªÓÃÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆï¼Ÿ\n");
 
 	if (!objectp(weapon = this_player()->query_temp("weapon")))
-		return notify_fail("²»ÓÃÎäÆ÷¿ÖÅÂ²»ĞĞ°É£¡\n");
+		return notify_fail("ä¸ç”¨æ­¦å™¨ææ€•ä¸è¡Œå§ï¼\n");
 
-	message_vision(HIY "$NÈ¡³öÒ»Ã¶°Ù»¨¸¹Éß¸à£¬½«ËüÄ¨ÔÚ±øÈĞ¼°ÊÖÕÆÖ®ÉÏ.\n" NOR, this_player());
-	message_vision(HIY "$NÊ¹ÓÃµÄ°Ù»¨¸¹Éß¸àÒ©Ğ§¿ªÊ¼·¢×÷.\n" NOR, this_player());
+	message_vision(HIY "$Nå–å‡ºä¸€æšç™¾èŠ±è…¹è›‡è†ï¼Œå°†å®ƒæŠ¹åœ¨å…µåˆƒåŠæ‰‹æŒä¹‹ä¸Š.\n" NOR, this_player());
+	message_vision(HIY "$Nä½¿ç”¨çš„ç™¾èŠ±è…¹è›‡è†è¯æ•ˆå¼€å§‹å‘ä½œ.\n" NOR, this_player());
 	obj=new("/d/shenlong/obj/usedgao");
 	obj->move(this_player());
 	destruct(this_object());

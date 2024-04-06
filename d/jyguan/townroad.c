@@ -1,4 +1,4 @@
-// townroad.c Ğ¡ÕòÂ·
+// townroad.c å°é•‡è·¯
 // Town of mingjiao  
 // Ver 1.0 10/8/1998 by Shark
 
@@ -7,18 +7,18 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "Ğ¡ Õò ½Ö µÀ");
+	set("short",HIG "å° é•‡ è¡— é“");
 	set("long",   @LONG
-ÄãÕı×ßÔÚĞ¡ÕòÎ¨Ò»µÄÒ»Ìõ½ÖµÀ£¬²»Ê±ÓĞ·çÉ³Ï®À´¡£Î÷ÃæÊÇÒ»¼ÒÔÓ»õÆÌ£¬
-¶«ÃæÌô³öÒ»°ÑÉ¨Öã£¬¶¨ÊÇ¼Ò¾Æ¹İ¡£
+ä½ æ­£èµ°åœ¨å°é•‡å”¯ä¸€çš„ä¸€æ¡è¡—é“ï¼Œä¸æ—¶æœ‰é£æ²™è¢­æ¥ã€‚è¥¿é¢æ˜¯ä¸€å®¶æ‚è´§é“ºï¼Œ
+ä¸œé¢æŒ‘å‡ºä¸€æŠŠæ‰«å¸šï¼Œå®šæ˜¯å®¶é…’é¦†ã€‚
 LONG
 	);	
         set("outdoors", "jyguan");
 
 
 	set("exits", ([
-                "west" : __DIR__"zahuopu",//ÔÓ»õÆÌ
-             	"east" : __DIR__"jiudian",//¾Æ¹İ
+                "west" : __DIR__"zahuopu",//æ‚è´§é“º
+             	"east" : __DIR__"jiudian",//é…’é¦†
                 "south" : __DIR__"townroad1",
                 "north" : __DIR__"town",
 //                "northwest" : __DIR__"luzhou",

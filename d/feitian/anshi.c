@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´ž");
         set("long", @LONG
-·ÉÌìÓù½£Á÷Àú´úÁìÎòÉ±ÒâµÄµØ·½£¬ÔÚÇ½½ÇÓÐ²»ÉÙº¡¹Ç£®
-Äã¿ÉÒÔÔÚÕâÀï¾²×øÁìÎòÉ±Òâ.
+é£žå¤©å¾¡å‰‘æµåŽ†ä»£é¢†æ‚Ÿæ€æ„çš„åœ°æ–¹ï¼Œåœ¨å¢™è§’æœ‰ä¸å°‘éª¸éª¨ï¼Ž
+ä½ å¯ä»¥åœ¨è¿™é‡Œé™åé¢†æ‚Ÿæ€æ„.
 LONG );
         set("exits", ([ /* sizeof() == 4 */
             "out"     : __DIR__"pingtai",
@@ -30,28 +30,28 @@ int do_jingzuo()
    c_skill=(int)ob->query_skill("shayi", 1);
    if (c_skill <50)
    {
-      message_vision("$NµÄÉ±ÒâÌ«µÍÁË£¬ÎÞ·¨Ìå»áµ½¸üÉîµÄÉ±Òâ¡£\n",ob);
+      message_vision("$Nçš„æ€æ„å¤ªä½Žäº†ï¼Œæ— æ³•ä½“ä¼šåˆ°æ›´æ·±çš„æ€æ„ã€‚\n",ob);
       return 1; 
    }
    c_exp=ob->query("combat_exp");
 
    if ((c_skill*c_skill*c_skill/10)> c_exp)
    {
-      message_vision("$NµÄÊµÕ½¾­Ñé²»×ã£¬¾²×øÁË°ëÌìÃ»ÓÐÈÎºÎÁìÎò¡£\n",ob);
+      message_vision("$Nçš„å®žæˆ˜ç»éªŒä¸è¶³ï¼Œé™åäº†åŠå¤©æ²¡æœ‰ä»»ä½•é¢†æ‚Ÿã€‚\n",ob);
       return 1; 
    }
    if (ob->query("jing")<50)
    {
-      message_vision("$NÌ«ÀÛÁË£¬ÔÚ×øÏÂÈ¥Ö»ÅÂÒªÔÎµ¹¡£\n",ob);
+      message_vision("$Nå¤ªç´¯äº†ï¼Œåœ¨åä¸‹åŽ»åªæ€•è¦æ™•å€’ã€‚\n",ob);
       return 1; 
    }
    if (c_skill>301)
    {
-      message_vision("$N¾õµÃ¾²×øÒÑ¶Ô×Ô¼ºÆð²»ÁËÊ²Ã´×÷ÓÃÁË¡£\n",ob);
+      message_vision("$Nè§‰å¾—é™åå·²å¯¹è‡ªå·±èµ·ä¸äº†ä»€ä¹ˆä½œç”¨äº†ã€‚\n",ob);
       return 1; 
    }
 
-   message_vision("$NÅÌÏ¥×øÏÂ,Æ¬¿Ì¹ýºó¶ÔÉ±ÒâÓÐÁËÐ©ÁìÎò¡£\n",ob);
+   message_vision("$Nç›˜è†åä¸‹,ç‰‡åˆ»è¿‡åŽå¯¹æ€æ„æœ‰äº†äº›é¢†æ‚Ÿã€‚\n",ob);
    ob->improve_skill("shayi", random(2*ob->query("int")));
    ob->add("jing",-ob->query("eff_jing")/20);
    return 1;

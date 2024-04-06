@@ -1,9 +1,9 @@
 inherit ROOM;
 void create()
 {
-	set("short", "»ìÔªËşµÚÁù²ã");
+	set("short", "æ··å…ƒå¡”ç¬¬å…­å±‚");
 	set("long", @LONG
-ÕâÊÇÒ»¸ö¾À¼¯ÁË½­ºşÉÏÊ®´óĞ°ÅÉ¸ßÊÖµÄËş£¬¹²ÓĞÊ®²ãÖ®¸ß¡£
+è¿™æ˜¯ä¸€ä¸ªçº é›†äº†æ±Ÿæ¹–ä¸Šåå¤§é‚ªæ´¾é«˜æ‰‹çš„å¡”ï¼Œå…±æœ‰åå±‚ä¹‹é«˜ã€‚
 LONG );
        set("no_sleep_room",1);
        set("no_clean_up", 0);
@@ -33,7 +33,7 @@ int do_dazuo()
 {
    object me;
    me = this_player();
-tell_object(me,"ÕâÀï²»ÄÜÓÃÕâ¸öÖ¸Áî¡£\n");
+tell_object(me,"è¿™é‡Œä¸èƒ½ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 return 1;
 }
 int valid_leave(object me, string dir)
@@ -42,7 +42,7 @@ int valid_leave(object me, string dir)
 if( userp(me) &&
 dir=="up" && ob=present("hong antong", this_object()))
 return notify_fail( 
-"ÄãÏëÓ²´³£¿£¡\n");
+"ä½ æƒ³ç¡¬é—¯ï¼Ÿï¼\n");
 return 1;
 }
 

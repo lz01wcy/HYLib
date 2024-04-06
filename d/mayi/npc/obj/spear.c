@@ -5,16 +5,16 @@ inherit CLUB;
 
 void create()
 {
-	set_name("¸ÖÇ¹", ({ "spear" }) );
+	set_name("é’¢æª", ({ "spear" }) );
 	set_weight(4000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
+		set("unit", "æŸ„");
 		set("value",1500);
 		set("material", "iron");
-		set("wield_msg", "$N³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n·Åµ½ÁËµØÉÏ¡£\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾åˆ°äº†åœ°ä¸Šã€‚\n");
 	}
 	init_club(100);
 	setup();

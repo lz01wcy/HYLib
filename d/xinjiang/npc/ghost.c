@@ -1,7 +1,7 @@
  inherit NPC;
 void create()
 {
-        set_name("¹Â»ê", ({ "ghost", " wandering ghost" }) );
+        set_name("å­¤é­‚", ({ "ghost", " wandering ghost" }) );
         set("age", 45);
         set("env/wimpy", 70);
         set_temp("apply/attack", 10);

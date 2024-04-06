@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIY"³ø·¿"NOR);
+         set("short",HIY"åŽ¨æˆ¿"NOR);
          set("long",@long
-ÕâÊÇÒ»¼äÐ¡³ø·¿, ËäÈ»²»´ó, µ«ÊÇ¹øÍëÆ°Åè, ÓÍÑÎ½´´×, µ½ºÜÆæÈ«¡£ÔîÌ¨
-ÉÏ¶ÑÂúÁËÐÂÏÊ¹Ï¹ûÊß²Ë, »îÓã»îÏº, ²»½ö²»Ôà²»ÂÒ, »¹Ê®·Ö¸É¾»ÕûÆë¡£
+è¿™æ˜¯ä¸€é—´å°åŽ¨æˆ¿, è™½ç„¶ä¸å¤§, ä½†æ˜¯é”…ç¢—ç“¢ç›†, æ²¹ç›é…±é†‹, åˆ°å¾ˆå¥‡å…¨ã€‚ç¶å°
+ä¸Šå †æ»¡äº†æ–°é²œç“œæžœè”¬èœ, æ´»é±¼æ´»è™¾, ä¸ä»…ä¸è„ä¸ä¹±, è¿˜ååˆ†å¹²å‡€æ•´é½ã€‚
 long);
          set("objects", ([
              __DIR__"obj/longjing-caiyeji" : 1,

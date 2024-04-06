@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("Ğ¡ÄĞº¢",({ "boy" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("å°ç”·å­©",({ "boy" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 12);
-   set("long", "ÕâÊÇÒ»¸öĞ¡ÄĞº¢£¬¿´ÆğÀ´ÖÉÆøÎ´ÍÑ£¬Í¯ĞÄÉÁÏÖ¡£\n");
+   set("long", "è¿™æ˜¯ä¸€ä¸ªå°ç”·å­©ï¼Œçœ‹èµ·æ¥ç¨šæ°”æœªè„±ï¼Œç«¥å¿ƒé—ªç°ã€‚\n");
        
    set("combat_exp", 50);
    set("str", 10);
@@ -33,8 +33,8 @@ void welcome(object ob,object ob2)
    if(!ob||!present(ob,environment())||ob2->is_fighting()) return;
 	switch(random(2))
 	{
-	case 0: message_vision("$NÎûÎûĞ¦µÀ:Õâ¼¸ÌìÈËºÃ¶à°¡£¬Ì«ºÃÍæÁË!\n",ob2);break;
-	case 1: message_vision("$NºÃÆæµØ¿´ÁË¿´$n\n",ob2,ob);
+	case 0: message_vision("$Nå˜»å˜»ç¬‘é“:è¿™å‡ å¤©äººå¥½å¤šå•Šï¼Œå¤ªå¥½ç©äº†!\n",ob2);break;
+	case 1: message_vision("$Nå¥½å¥‡åœ°çœ‹äº†çœ‹$n\n",ob2,ob);
 	}
 	remove_call_out("welcome");
 	return;

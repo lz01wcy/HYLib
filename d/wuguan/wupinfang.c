@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ʒ��");
+	set("short", "物品房");
 	set("long", @LONG
-������Ʒ����һ������ӡ�����ŵ��������룬��������Ĺܼ���
-�����渺��ģ�һЩ�����ڸ�����Ʒ���ߵĹܼ�˵��ʲô��
+这是物品房，一个大架子。上面放的整整齐齐，看来这里的管家是
+很认真负责的，一些人正在跟管物品工具的管家说着什么。
 LONG);
         set("exits", ([
 	       "south" : __DIR__"lang4",

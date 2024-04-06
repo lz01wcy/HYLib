@@ -1,14 +1,14 @@
-// dujiangsi.c ¶¾½©Ê¬
+// dujiangsi.c æ¯’åƒµå°¸
 
 inherit NPC;
 //  inherit F_CLEAN_UP
 
 void create()
 {
-        set_name("¶¾½©Ê¬", ({ "du jiangshi", "jiangshi" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("æ¯’åƒµå°¸", ({ "du jiangshi", "jiangshi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
-        set("long", "Ò»¸öÐÇËÞÅÉÁ·¹¦ÓÃµÄ¶¾½©Ê¬£¬¾­Ò©ÎïÅÝÖÆ£¬¶ÔÁ·¹¦´óÓÐºÃ´¦¡£\n");
+        set("long", "ä¸€ä¸ªæ˜Ÿå®¿æ´¾ç»ƒåŠŸç”¨çš„æ¯’åƒµå°¸ï¼Œç»è¯ç‰©æ³¡åˆ¶ï¼Œå¯¹ç»ƒåŠŸå¤§æœ‰å¥½å¤„ã€‚\n");
         set("attitude", "heroism");
 
         set("str", 25);
@@ -52,15 +52,15 @@ int accept_fight(object ob)
         if (is_fighting()) return 0;
 
         if (me->query("damaged"))
-                return notify_fail("Õâ¸ö¶¾½©Ê¬ÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("è¿™ä¸ªæ¯’åƒµå°¸å·²ç»è¢«æ‰“åäº†ï¼\n");
 
         if (random(me->query("fight_times")) >= 10) {
                 me->set("damaged", 1);
-                return notify_fail("Õâ¸ö¶¾½©Ê¬ÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("è¿™ä¸ªæ¯’åƒµå°¸å·²ç»è¢«æ‰“åäº†ï¼\n");
         }
 
         if (me->query("last_fighter") == ob->query("id"))
-                return notify_fail("Äã¸Õ¸úÕâ¸ö¶¾½©Ê¬Á·¹ý¹¦£¡\n");
+                return notify_fail("ä½ åˆšè·Ÿè¿™ä¸ªæ¯’åƒµå°¸ç»ƒè¿‡åŠŸï¼\n");
 
         me->set("last_fighter", ob->query("id"));
         me->add("fight_times", 1);

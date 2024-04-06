@@ -1,16 +1,16 @@
-// longsword.c ³¤±Ş
+// longsword.c é•¿é­
 #include <ansi.h>
 #include <weapon.h>
 inherit WHIP;
 
 void create()
 {
-set_name(BLU"ºÚË÷"NOR,({ "hei suo", "whip","bian","suo" }) );
+set_name(BLU"é»‘ç´¢"NOR,({ "hei suo", "whip","bian","suo" }) );
 	set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
+		set("unit", "æŸ„");
 		set("value", 100);
                 set("weapon_prop/dodge", 3);
                 set("weapon_prop/parry", 1);
@@ -19,9 +19,9 @@ set_name(BLU"ºÚË÷"NOR,({ "hei suo", "whip","bian","suo" }) );
                 set("wield_maxneili", 800);
                 set("wield_str", 20);
 		set("material", "leather");
-                set("long", BLU"ÕâÊÇÌõÍ¨Ìå÷îºÚÎŞ¹âµÄ³¤Ë÷£¬±ãÈçÒ»ÌõÕÅÑÀÎè×¦µÄÄ«Áú£¬Ò¹ÍíÎè¶¯Ö®Ê±ÇÆ²»¼û°ëµãÓ°×Ó¡£\n"NOR);                
-                set("unwield_msg", "$NËæÊÖÒ»¶¶£¬½«$nÅÌ»ØÑü¼ä¡£\n");
-                set("wield_msg", "$NËæÊÖÒ»¶¶£¬³é³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("long", BLU"è¿™æ˜¯æ¡é€šä½“é»é»‘æ— å…‰çš„é•¿ç´¢ï¼Œä¾¿å¦‚ä¸€æ¡å¼ ç‰™èˆçˆªçš„å¢¨é¾™ï¼Œå¤œæ™šèˆåŠ¨ä¹‹æ—¶ç§ä¸è§åŠç‚¹å½±å­ã€‚\n"NOR);                
+                set("unwield_msg", "$Néšæ‰‹ä¸€æŠ–ï¼Œå°†$nç›˜å›è…°é—´ã€‚\n");
+                set("wield_msg", "$Néšæ‰‹ä¸€æŠ–ï¼ŒæŠ½å‡ºä¸€æ¡$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
 	}
 	init_whip(280);
 	setup();

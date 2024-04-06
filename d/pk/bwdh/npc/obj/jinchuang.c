@@ -1,4 +1,4 @@
-// jinchuang.c ½ğ´´Ò©
+// jinchuang.c é‡‘åˆ›è¯
 #include <ansi.h>
 inherit COMBINED_ITEM;
 
@@ -13,7 +13,7 @@ void init()
 
 void create()
 {
-        set_name("½ğ´´Ò©", ({"jinchuang yao", "jin", "jinchuang", "yao"}));
+        set_name("é‡‘åˆ›è¯", ({"jinchuang yao", "jin", "jinchuang", "yao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
@@ -21,10 +21,10 @@ void create()
                     set("heal_up", 1);
                set("heal_up", 1);
                set("medicine", "drug");
-                set("unit", "Ğ©");
-                set("long", "ÕâÊÇÎäÁÖÈËÊ¿±Ø±¸µÄ½ğ´´Ò©¡£\n");
+                set("unit", "äº›");
+                set("long", "è¿™æ˜¯æ­¦æ—äººå£«å¿…å¤‡çš„é‡‘åˆ›è¯ã€‚\n");
                 set("base_value", 0);
-                set("base_unit", "°ü");
+                set("base_unit", "åŒ…");
                 set("base_weight", 30);
         }
         set_amount(1);
@@ -34,21 +34,21 @@ int do_eat(string arg)
 {
    object me = this_player();
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´Ò©£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆè¯ï¼Ÿ\n");
         if ((int)this_player()->query("eff_qi") == 
             (int)this_player()->query("max_qi"))
-                return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ½ğ´´Ò©¡£\n");
+                return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨é‡‘åˆ›è¯ã€‚\n");
         else {
         if( !environment(me)->query("bwdhpk"))
 {
-       message_vision(HIR "\n$N´ËÒ© Îª±ÈÈü×¨ÓÃ£¬Ò©±»Ã»ÊÕÁË£¡\n\n" NOR,
+       message_vision(HIR "\n$Næ­¤è¯ ä¸ºæ¯”èµ›ä¸“ç”¨ï¼Œè¯è¢«æ²¡æ”¶äº†ï¼\n\n" NOR,
                        me);
 	destruct(this_object());   
        return 1;       
 }
 
                 this_player()->add("eff_qi", 100);
-                message_vision("$N³ÔÏÂÒ»°ü½ğ´´Ò©£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n", this_player());
+                message_vision("$Nåƒä¸‹ä¸€åŒ…é‡‘åˆ›è¯ï¼Œæ°”è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n", this_player());
                 add_amount(-1);
                 return 1;
         }

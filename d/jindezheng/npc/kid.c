@@ -2,9 +2,9 @@ inherit NPC;
 int about_cry();
 void create()
 {
-     set_name("Ğ¡º¢×Ó",({"xiaohai","kid","xiaohaizi"}));
+     set_name("å°å­©å­",({"xiaohai","kid","xiaohaizi"}));
      set("shen_type",1);
-     set("gender","ÄĞĞÔ");
+     set("gender","ç”·æ€§");
      set("age",5);
      set("combat_exp",400);
      set("str",13);
@@ -13,12 +13,12 @@ void create()
      set_skill("dodge",10);
      set("inquiry",([
             "cry":(:about_cry:),
-            "¿Ş":(:about_cry:),
+            "å“­":(:about_cry:),
             ]));
     set("chat_chance",3);
     set("chat_msg",({
-          "Ğ¡º¢×ÓÍµÍµµØÓÃĞä¿ÚÄ¨ÁËÄ¨ÑÛÀá!\n",
-          "Ğ¡º¢×ÓÀáÑÛÓ¯Ó¯µØ¿´×ÅÄã.\n",
+          "å°å­©å­å·å·åœ°ç”¨è¢–å£æŠ¹äº†æŠ¹çœ¼æ³ª!\n",
+          "å°å­©å­æ³ªçœ¼ç›ˆç›ˆåœ°çœ‹ç€ä½ .\n",
                }));
      setup();
      carry_object("/clone/misc/cloth")->wear();
@@ -28,9 +28,9 @@ int about_cry()
 {    object ob;
       ob=this_object();
       if (present("ren fanzi",environment(ob)))
-     {message_vision("$Nµ¨ÇÓµØ¿´ÁË¿´ÈË··×Ó£¬µÍ×ÅÍ·,²»³öÉùÁË!\n",ob);
+     {message_vision("$Nèƒ†æ€¯åœ°çœ‹äº†çœ‹äººè´©å­ï¼Œä½ç€å¤´,ä¸å‡ºå£°äº†!\n",ob);
          return 1;
       }
-       command("say ÎÒÕÒ²»µ½»Ø¼ÒµÄÂ·ÁË!\n");
+       command("say æˆ‘æ‰¾ä¸åˆ°å›å®¶çš„è·¯äº†!\n");
        return 1;
 }

@@ -2,11 +2,11 @@
 inherit ROOM;
 void create()	
 {
-	set("short", "�����");
+	set("short", "东大街");
 	set("long", @LONG
-���������������򣬸տ�ʼ�������һ����Ӫ�����պ���ͻ���ַ���
-��Ǩ�Ƶ�������������γ����ڵĹ�ģ���ڽֵ��ı����Ǿ�Ӫ��������
-һ��СУ����
+马邑是西北的重镇，刚开始这里就是一个兵营，百姓害怕突厥侵犯，
+就迁移到这儿来，就逐渐形成现在的规模，在街道的北面是军营，南面是
+一个小校场。
 LONG
 	);
 set("outdoors", "mayi");

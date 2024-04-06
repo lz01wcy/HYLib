@@ -1,4 +1,4 @@
-// ±ùÆÇÒøÕë¡£/kungfu/class/gumu/obj/yinzhen.c
+// å†°é­„é“¶é’ˆã€‚/kungfu/class/gumu/obj/yinzhen.c
 // Spacenet@FXLT 1.1.2000
 
 #include <weapon.h>
@@ -13,20 +13,20 @@ void init()
 
 void create()
 {
-	set_name(HIC"±ùÆÇÒøÕë"NOR, ({ "ice_sting", "zhen" })); 
+	set_name(HIC"å†°é­„é“¶é’ˆ"NOR, ({ "ice_sting", "zhen" })); 
 	set_weight(300);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "Õâ¾ÍÊÇÎäÁÖÖÐÈËÎÅÖ®É«±äµÄ±ùÆÇÒøÕë£¬ÕëÉíÂÆ¿Ì»¨ÎÆ£¬´òÔìµÃ¼«ÊÇ¾«Ï¸£¬ÁîÈËÈÌ²»×¡Ïë°ÑÍæ(bawan)Ò»·¬¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™å°±æ˜¯æ­¦æž—ä¸­äººé—»ä¹‹è‰²å˜çš„å†°é­„é“¶é’ˆï¼Œé’ˆèº«ç¼•åˆ»èŠ±çº¹ï¼Œæ‰“é€ å¾—æžæ˜¯ç²¾ç»†ï¼Œä»¤äººå¿ä¸ä½æƒ³æŠŠçŽ©(bawan)ä¸€ç•ªã€‚\n");
 		set("value", 0);
-		set("base_unit", "¸ù");
+		set("base_unit", "æ ¹");
                 set("base_weight", 30);
                 set("base_value", 0);
                 set("meterial", "iron");
-		set("wield_msg", "$NÐ¡ÐÄÒíÒíµØÈ¡³öÒ»¸ù±ùÆÇÒøÕëµ±ÎäÆ÷¡£\n");
-		set("unwield_msg", "$N°ÑÒøÕë·Å»ØÒÂÄÒÖÐ¡£\n");
+		set("wield_msg", "$Nå°å¿ƒç¿¼ç¿¼åœ°å–å‡ºä¸€æ ¹å†°é­„é“¶é’ˆå½“æ­¦å™¨ã€‚\n");
+		set("unwield_msg", "$NæŠŠé“¶é’ˆæ”¾å›žè¡£å›Šä¸­ã€‚\n");
 	}
 	set_amount(1);
 	init_throwing(25);
@@ -36,8 +36,8 @@ void create()
 int do_bawan()
 {
 	if ((int)this_player()->query_condition("ice_sting") < 10) {
-		tell_object(this_player(), "Äã¿´×ÅÊÖÖÐµÄÒøÕë¾õµÃÓÐÈ¤£¬°ÑÕëÉíµÄ»¨ÎÆÏ¸Ï¸ÃþÁËÒ»±é¡£\n");
-		tell_object(this_player(), HIB "ÄãÍ»È»¾õµÃÊÖÕÆÂéÂéµÄÓÐÐ©²»Ì«Áé±ã£¬ÃÍÈ»¾ª¾õ£º¡°ÕëÉÏÓÐ¶¾£¬Èç´Ë°ÑÍæ£¬Æñ²»Î£ÏÕ£¿¡±Ã¦ÕÅ¿ªÊÖÕÆ\nÅ×ÏÂÒøÕë£¬Ö»¼ûÁ½ÊÖÕÆÐÄÒÑÉîºÚÈçÄ«£¬ÊÖ±ÛÂéÄ¾¸Ð½¥½¥ÉÏÉý£¬ÐÄÖÐ´óº§£¬ÈÌ²»×¡±ãÒª¿Þ³öÉùÀ´¡£\n" NOR);
+		tell_object(this_player(), "ä½ çœ‹ç€æ‰‹ä¸­çš„é“¶é’ˆè§‰å¾—æœ‰è¶£ï¼ŒæŠŠé’ˆèº«çš„èŠ±çº¹ç»†ç»†æ‘¸äº†ä¸€éã€‚\n");
+		tell_object(this_player(), HIB "ä½ çªç„¶è§‰å¾—æ‰‹æŽŒéº»éº»çš„æœ‰äº›ä¸å¤ªçµä¾¿ï¼ŒçŒ›ç„¶æƒŠè§‰ï¼šâ€œé’ˆä¸Šæœ‰æ¯’ï¼Œå¦‚æ­¤æŠŠçŽ©ï¼Œå²‚ä¸å±é™©ï¼Ÿâ€å¿™å¼ å¼€æ‰‹æŽŒ\næŠ›ä¸‹é“¶é’ˆï¼Œåªè§ä¸¤æ‰‹æŽŒå¿ƒå·²æ·±é»‘å¦‚å¢¨ï¼Œæ‰‹è‡‚éº»æœ¨æ„Ÿæ¸æ¸ä¸Šå‡ï¼Œå¿ƒä¸­å¤§éª‡ï¼Œå¿ä¸ä½ä¾¿è¦å“­å‡ºå£°æ¥ã€‚\n" NOR);
 		this_player()->apply_condition("ice_sting", 30);
 	}	
 	destruct(this_object());

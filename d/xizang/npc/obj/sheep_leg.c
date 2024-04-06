@@ -4,17 +4,17 @@ inherit HAMMER;
 inherit F_FOOD; 
 void create()
 {
-        set_name("¿¾ÑòÍÈ", ({ "fried sheep leg", "sheep", "leg" }) );
+        set_name("çƒ¤ç¾Šè…¿", ({ "fried sheep leg", "sheep", "leg" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ö¦¿¾µÃÏãÅçÅçÑòÍÈ£¬Äã»¹ÓÌÔ¥Ê²÷á£¿×¼±¸Î¸Òº°É¡£\n");
-                set("unit", "¸ù");
+                set("long", "ä¸€æçƒ¤å¾—é¦™å–·å–·ç¾Šè…¿ï¼Œä½ è¿˜çŠ¹è±«ä»€éº½ï¼Ÿå‡†å¤‡èƒƒæ¶²å§ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 30);
                 set("food_remaining", 5);
                 set("food_supply", 50);
-                set("wield_msg", "$N×¥ÆğÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“æ­¦å™¨ã€‚\n");
                 set("material", "bone");
         }
         ::init_hammer(1);
@@ -22,8 +22,8 @@ void create()
 int finish_eat()
 {
         if( !query("weapon_prop") ) return 0;
-        set_name("¿ĞµÃ¾«¹âµÄÑòÍÈ¹ÇÍ·", ({ "bone" }) );
+        set_name("å•ƒå¾—ç²¾å…‰çš„ç¾Šè…¿éª¨å¤´", ({ "bone" }) );
         set_weight(150);
-        set("long", "Ò»¸ù¿ĞµÃ¾«¹âµÄÑòÍÈ¹ÇÍ·¡£\n");
+        set("long", "ä¸€æ ¹å•ƒå¾—ç²¾å…‰çš„ç¾Šè…¿éª¨å¤´ã€‚\n");
         return 1;
 }    

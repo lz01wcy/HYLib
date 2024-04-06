@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","¹ë·¿ÃÅ¿Ú");
+  set ("short","é—ºæˆ¿é—¨å£");
   set ("long", @LONG
-ÕâÀïÊÇÀî²ÆÖ÷Å®¶þµÄ¹ë·¿µÄÃÅ¿Ú£¬ÕâÀï·Å×Å¼¸ÅèÏÊ»¨¡£×î½üÀî²ÆÖ÷
-µÄÅ®¶ù¾ÍÒª³ö¼ÞÁË£¬ËýÕýÔÚÀïÃæºÃºÃµÄ´ò°ç¡£
+è¿™é‡Œæ˜¯æŽè´¢ä¸»å¥³äºŒçš„é—ºæˆ¿çš„é—¨å£ï¼Œè¿™é‡Œæ”¾ç€å‡ ç›†é²œèŠ±ã€‚æœ€è¿‘æŽè´¢ä¸»
+çš„å¥³å„¿å°±è¦å‡ºå«äº†ï¼Œå¥¹æ­£åœ¨é‡Œé¢å¥½å¥½çš„æ‰“æ‰®ã€‚
 LONG);
 
   set("exits", ([ 
@@ -26,9 +26,9 @@ set("outdoors","nanchang");
 int valid_leave(object me,string dir)
 {
 	if(me->query_temp("defence_girl")&&dir=="enter")
-		return notify_fail("Äã»¹ÊÇÔÚÃÅÍâ±£»¤ÀîÐ¡½ã°É£¡\n");
-	if(me->query("gender")=="ÄÐÐÔ"&&dir=="enter")
-		return notify_fail("ÄÐÈË»¹ÊÇ²»Òª½øÈ¥ÁË£¡\n");
+		return notify_fail("ä½ è¿˜æ˜¯åœ¨é—¨å¤–ä¿æŠ¤æŽå°å§å§ï¼\n");
+	if(me->query("gender")=="ç”·æ€§"&&dir=="enter")
+		return notify_fail("ç”·äººè¿˜æ˜¯ä¸è¦è¿›åŽ»äº†ï¼\n");
 	return ::valid_leave(me,dir);
 }
 		
@@ -54,15 +54,15 @@ void bing_come(object me)
 	killer=new(__DIR__"npc/guanbing");
 	killer->set("combat_exp",me->query("combat_exp"));
 	killer->kill_ob(me);
-	killer->set_name("¹Ù±ø",({"bing"}));
+	killer->set_name("å®˜å…µ",({"bing"}));
 	killer->delete("family");
 	killer->delete("nickname");
 	killer->delete("title");
 	killer->delete("shili");
 	killer->move(environment(me));
-	tell_object(environment(me),"Ò»¸ö¹Ù±ø×ßÁË¹ýÀ´¡£\n");
-	message_vision("$N¸ÕÒª½øÃÅ£¬±»$nÀ¹×¡ÁË£¡\n",killer,me);
-	message_vision("$N³¯$n½ÐµÀ£ºÎÒÊÇ·îÍõÃüÐÐÊÂ£¬ÄãÊÇ»î¹»ÁË£¡\n",killer,me);
+	tell_object(environment(me),"ä¸€ä¸ªå®˜å…µèµ°äº†è¿‡æ¥ã€‚\n");
+	message_vision("$Nåˆšè¦è¿›é—¨ï¼Œè¢«$næ‹¦ä½äº†ï¼\n",killer,me);
+	message_vision("$Næœ$nå«é“ï¼šæˆ‘æ˜¯å¥‰çŽ‹å‘½è¡Œäº‹ï¼Œä½ æ˜¯æ´»å¤Ÿäº†ï¼\n",killer,me);
 	killer->kill_ob(me);
     remove_call_out("bing_come");return;
 }

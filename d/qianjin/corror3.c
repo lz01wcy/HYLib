@@ -2,11 +2,11 @@ inherit ROOM;
 #include <room.h>
 void create()
 {
-        set("short", "×ßÀÈ");
+        set("short", "èµ°å»Š");
         set("long", @LONG
-Ã¿¸ôÎå²½£¬×óÓÒ¸÷Ò»ÃÅ¡£ÃÅÉÏËÆÓÐ¼ÇºÅ£¬ÃÅºóËÆÓÐÈËÉù¡£Ã¿¸ôÊ®²½£¬ÖòµÆÒ»Õµ£¬
-ºöÃ÷ºö°µ¡£ÄýÉñÏ¸Ìý£¬ÓÖËÆºõÃ¿»§¿Õ¿Õ¡£×ßÀÈÍäÍäÇúÇú£¬ÏòÇ°ÉìÕ¹£¬Ò»ÑÛÍû²»µ½¾¡
-Í·¡£Ã¿µ±´¬ÉíËæ²¨Ò¡°Ú£¬¸øÈËÐýÔÎµÄ¸Ð¾õ¡£
+æ¯éš”äº”æ­¥ï¼Œå·¦å³å„ä¸€é—¨ã€‚é—¨ä¸Šä¼¼æœ‰è®°å·ï¼Œé—¨åŽä¼¼æœ‰äººå£°ã€‚æ¯éš”åæ­¥ï¼Œçƒ›ç¯ä¸€ç›ï¼Œ
+å¿½æ˜Žå¿½æš—ã€‚å‡ç¥žç»†å¬ï¼Œåˆä¼¼ä¹Žæ¯æˆ·ç©ºç©ºã€‚èµ°å»Šå¼¯å¼¯æ›²æ›²ï¼Œå‘å‰ä¼¸å±•ï¼Œä¸€çœ¼æœ›ä¸åˆ°å°½
+å¤´ã€‚æ¯å½“èˆ¹èº«éšæ³¢æ‘‡æ‘†ï¼Œç»™äººæ—‹æ™•çš„æ„Ÿè§‰ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -18,6 +18,6 @@ LONG
 	set("coor/y",-10);
 	set("coor/z",0);
 	setup();
-        create_door("north", "Ä¾µñÃÅ", "south", DOOR_CLOSED);
+        create_door("north", "æœ¨é›•é—¨", "south", DOOR_CLOSED);
 
 }

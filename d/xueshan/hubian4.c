@@ -1,14 +1,14 @@
-//      hubian4.c ºş±ßĞ¡Â·
-//      Designed by secret (ÃØÃÜ)
+//      hubian4.c æ¹–è¾¹å°è·¯
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","ºş±ßĞ¡Â·");
+        set("short","æ¹–è¾¹å°è·¯");
         set("long",@LONG
-ÕâÊÇÊ¥ºş±ßµÄĞ¡Â·¡£Â·²à³¤²İÃ»×ã, ÇàÂÌ¿ÉÏ²¡£
+è¿™æ˜¯åœ£æ¹–è¾¹çš„å°è·¯ã€‚è·¯ä¾§é•¿è‰æ²¡è¶³, é’ç»¿å¯å–œã€‚
 LONG );
         set("outdoors","xueshan");
         set("exits",([

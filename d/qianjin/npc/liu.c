@@ -6,20 +6,20 @@ inherit NPC;
 string	summon_more( object who);
 void create()
 {
-	set_name( "ºşÉÏÁø", ({ "liu", "girl" }) );
-	set("long", "ÕâÊÇÇ§½ğÂ¥ºşÉÏ°Ë½¿Ö®Ò»£®
-ºşÉÏÁø£¬ÑÌÀï²»Ê¤´ß¡£
-ËŞÎíÏ´¿ªÃ÷ÃÄÑÛ£¬¶«·çÒ¡ÅªºÃÑüÖ«£¬ÑÌÓê¸üÏàÒË¡£
-»·Çú°¶£¬Òõ¸²»­ÇÅµÍ¡£
-Ïß·÷ĞĞÈË´ºÍíºó£¬Ğõ·ÉÇçÑ©Å¯·çÊ±£¬ÓÄÒâ¸üÒÀÒÀ¡£
+	set_name( "æ¹–ä¸ŠæŸ³", ({ "liu", "girl" }) );
+	set("long", "è¿™æ˜¯åƒé‡‘æ¥¼æ¹–ä¸Šå…«å¨‡ä¹‹ä¸€ï¼
+æ¹–ä¸ŠæŸ³ï¼ŒçƒŸé‡Œä¸èƒœå‚¬ã€‚
+å®¿é›¾æ´—å¼€æ˜åªšçœ¼ï¼Œä¸œé£æ‘‡å¼„å¥½è…°è‚¢ï¼ŒçƒŸé›¨æ›´ç›¸å®œã€‚
+ç¯æ›²å²¸ï¼Œé˜´è¦†ç”»æ¡¥ä½ã€‚
+çº¿æ‹‚è¡Œäººæ˜¥æ™šåï¼Œçµ®é£æ™´é›ªæš–é£æ—¶ï¼Œå¹½æ„æ›´ä¾ä¾ã€‚
 \n");
 	set("attitude", "friendly");
-	set("title", HIM "ºşÉÏ°Ë½¿" NOR);
+	set("title", HIM "æ¹–ä¸Šå…«å¨‡" NOR);
 	set("max_gin", 500);
 	set("max_kee", 500);
 	set("max_sen", 500);
 	set("age", 17);
-        set("gender", "Å®ĞÔ" );
+        set("gender", "å¥³æ€§" );
 
 
 	set("str", 35);
@@ -29,9 +29,9 @@ void create()
 	set("combat_exp", 50000);
         set("chat_chance", 1);
         set("chat_msg", ({
-"ºşÉÏÁø»Ó¶¯ÎèÆ÷£¬Çá¸èÂşÎè£º
-·çÏôÏôÙâÒ×Ë®º®
-×³Ê¿Ò»È¥Ùâ²»¸´»¹\n",
+"æ¹–ä¸ŠæŸ³æŒ¥åŠ¨èˆå™¨ï¼Œè½»æ­Œæ¼«èˆï¼š
+é£è§è§å…®æ˜“æ°´å¯’
+å£®å£«ä¸€å»å…®ä¸å¤è¿˜\n",
         }) );
 
 	set("chat_chance_combat", 1);
@@ -55,7 +55,7 @@ string summon_more(object who)
 	seteuid(getuid());
 	another = new(__DIR__"jianu");
 	another->move(environment(who));
-	message_vision(another->name()+ "×ßÁË¹ıÀ´¡£\n"
+	message_vision(another->name()+ "èµ°äº†è¿‡æ¥ã€‚\n"
 		, this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);
@@ -73,21 +73,21 @@ int accept_object(object me, object obj)
 	object pai;
         if( (int) obj->value() >= (10+ random(50)) * 10000)
 	{
-        message_vision("$NÏò$nµÀÁË¸öÍò¸££º\n",this_object(),me);
+        message_vision("$Nå‘$né“äº†ä¸ªä¸‡ç¦ï¼š\n",this_object(),me);
         command("smile");
-	command("say ÍÛ£®£®ÎÒ×îÏ²»¶µÄÒ®£¡Ì«Ğ»Ğ»ÄãÁË£¡Õâ¸ö¸øÄã£¡\n");
+	command("say å“‡ï¼ï¼æˆ‘æœ€å–œæ¬¢çš„è€¶ï¼å¤ªè°¢è°¢ä½ äº†ï¼è¿™ä¸ªç»™ä½ ï¼\n");
 	pai = new(__DIR__"obj/liupai");
 	if(pai)
 	pai->move(me);
-        message_vision("$NÄÃ³öÁøÓñèµ¸ø$n¡£\n",this_object(),me);
+        message_vision("$Næ‹¿å‡ºæŸ³ç‰ç’§ç»™$nã€‚\n",this_object(),me);
 	return 1;	
 	}
 
 	if( !obj->value() &&  !obj->query("value")) return 0;
         command("smile");
-	message_vision("$NÏò$nµÀÁË¸öÍò¸££º\n",this_object(),me);
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬Í·Ò»´Î¼ûµ½ÏóÄúÕâÃ´´ó·½µÄ£¡");
+	message_vision("$Nå‘$né“äº†ä¸ªä¸‡ç¦ï¼š\n",this_object(),me);
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œå¤´ä¸€æ¬¡è§åˆ°è±¡æ‚¨è¿™ä¹ˆå¤§æ–¹çš„ï¼");
         return 1;
 }
 

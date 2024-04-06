@@ -3,12 +3,12 @@
 void create()
 {
         object armor;
-        set_name(RED"ºì½ÌÀ®Âï"NOR, ({ "red lama"}) );
-        set("gender", "ÄÐÐÔ" );
+        set_name(RED"çº¢æ•™å–‡å˜›"NOR, ({ "red lama"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 40+random(10));
         set("int", 30);
         set("long",
-                "ºì½Ì¸ßÉ®£¬ÊÜ¸ðÂ×Ö®ÍÐÌØÀ´µ÷²éÉáÀû×ÓÊ§×ÙÖ®ÊÂ¡£\n"
+                "çº¢æ•™é«˜åƒ§ï¼Œå—è‘›ä¼¦ä¹‹æ‰˜ç‰¹æ¥è°ƒæŸ¥èˆåˆ©å­å¤±è¸ªä¹‹äº‹ã€‚\n"
                 );
         set("class","lama");
         set("combat_exp", 2500000);
@@ -25,7 +25,7 @@ void create()
         set("class","lama");        
         set("chat_chance", 1);
         set("chat_msg", ({
-                "ºì½ÌÀ®ÂïËàÈ»Ëµ£ºÉáÀû×ÓÒ»ÈÕ²»¹é²¼´ïÀ­¹¬£¬ÎÒÃÇ¾ÍÒ»ÈÕ²»ÄÜ°²Ë¯£¡\n",
+                "çº¢æ•™å–‡å˜›è‚ƒç„¶è¯´ï¼šèˆåˆ©å­ä¸€æ—¥ä¸å½’å¸ƒè¾¾æ‹‰å®«ï¼Œæˆ‘ä»¬å°±ä¸€æ—¥ä¸èƒ½å®‰ç¡ï¼\n",
                 (: random_move :),
                 }) );
         
@@ -49,7 +49,7 @@ void create()
         
         setup();
         armor=new(__DIR__"obj/redclothh");
-        armor->set_name(RED"Ïâ½ð¹ö±ßºìÅÛ"NOR,({"cloth"}) );
+        armor->set_name(RED"é•¶é‡‘æ»šè¾¹çº¢è¢"NOR,({"cloth"}) );
         armor->move(this_object());
         armor->wear();
         carry_object(__DIR__"obj/7staff")->wield();

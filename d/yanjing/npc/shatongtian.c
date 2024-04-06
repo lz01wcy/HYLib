@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-   set_name("É³Í¨Ìì",({"sha tongtian"}));
-   set("gender","ÄĞĞÔ");
+   set_name("æ²™é€šå¤©",({"sha tongtian"}));
+   set("gender","ç”·æ€§");
    set("mingwang",-19000);
    set("combat_exp",153000);
-   set("title","¹íÃÅÁúÍõ");
-   set("long","ÓÍ¹â¹âµÄÍºÍ·£¬¶¥ÉÏÃ»°ë¸ùÍ··¢£¬Ë«Ä¿²¼ÂúºìË¿ÑÛÖéÍ»³ö.\n");
+   set("title","é¬¼é—¨é¾™ç‹");
+   set("long","æ²¹å…‰å…‰çš„ç§ƒå¤´ï¼Œé¡¶ä¸Šæ²¡åŠæ ¹å¤´å‘ï¼ŒåŒç›®å¸ƒæ»¡çº¢ä¸çœ¼ç çªå‡º.\n");
 
    set("age",54);
    set("qi",880);

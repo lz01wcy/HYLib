@@ -7,17 +7,17 @@
 #include <ansi.h>
 inherit DAGGER; 
 void create() {
-        set_name(HIW "È¥¹Çµ¶" NOR, ({ "dagger" }) );
+        set_name(HIW "å»éª¨åˆ€" NOR, ({ "dagger" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñµ¶·æ³¬±¡¡¢¸îÈâ²»Õ´ÑªµÄ¶ÌÈĞ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠåˆ€é”‹è¶…è–„ã€å‰²è‚‰ä¸æ²¾è¡€çš„çŸ­åˆƒã€‚\n");
                 set("value", 400);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");
+                set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nè—å…¥æ€€ä¸­ã€‚\n");
         }
         ::init_dagger(125);
 }   

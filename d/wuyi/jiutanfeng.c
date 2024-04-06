@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��̳��");
+	set("short", "酒坛峰");
 	set("long", @LONG
-��̳��λ���������ϵĸ���̨���࣬���������塣�ҷ����ͦ����
-���絹���ľ�̳���ഫ�����������ڴ�һŭ�߷��ľ�̳�����ʵ�������
-�����㲻�ϡ�������Ůʿ��ȴ���ɽ�����̳�塣
+酒坛峰位于五曲以南的更衣台西侧，又名天柱峰。岩峰峻峭挺立，
+宛如倒立的酒坛。相传这是铁拐李在此一怒踢翻的酒坛，流淌的琼浆至
+今余香不断。不过，女士们却宁可叫它醋坛峰。
 LONG );
 	set("outdoors", "wuyi");
 	set("no_clean_up", 0);

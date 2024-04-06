@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short",HIB"·Ø³¡"NOR);
+        set("short",HIB"åŸåœº"NOR);
         set("long", @LONG
-ÕâÀïÊÇÄ½ÈİÊÏµÄ·Ø³¡, Ä½ÈİÊÏËÀºó¶¼Òª±»°²ÔáÕâÀï,ÊÀÊÀ´ú´ú, 
-ÎŞÒ»ÀıÍâ¡£Ã¿µ½ÇåÃ÷Ê±·Ö, Ä½ÈİºóÒá¶¼ÒªÔÚÕâÀï¼À×æ¡£³¡ÖĞÒ»×ùĞÂ
-·Ø¸ñÍâÒıÈË×¡Ä¿, ÄÇÊÇÄ½Èİ¸´Ö®¸¸Ä½Èİ²©Ö®Ä¹¡£
+è¿™é‡Œæ˜¯æ…•å®¹æ°çš„åŸåœº, æ…•å®¹æ°æ­»åéƒ½è¦è¢«å®‰è‘¬è¿™é‡Œ,ä¸–ä¸–ä»£ä»£, 
+æ— ä¸€ä¾‹å¤–ã€‚æ¯åˆ°æ¸…æ˜æ—¶åˆ†, æ…•å®¹åè£”éƒ½è¦åœ¨è¿™é‡Œç¥­ç¥–ã€‚åœºä¸­ä¸€åº§æ–°
+åŸæ ¼å¤–å¼•äººä½ç›®, é‚£æ˜¯æ…•å®¹å¤ä¹‹çˆ¶æ…•å®¹åšä¹‹å¢“ã€‚
 LONG);
         set("exits", ([
                 "west" : __DIR__"xiaojing1-4",
@@ -36,11 +36,11 @@ int do_ketou()
         me = this_player();
                 
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
         if ( me->query_temp("ketou_times") == 0 )
         {
-                message_vision("$N¿ÄÍ·¿ÄµÃÔÎÁË¹ıÈ¥¡£\n", me);
+                message_vision("$Nç£•å¤´ç£•å¾—æ™•äº†è¿‡å»ã€‚\n", me);
                 me->set_temp("ketou_times",
 			1+random(me->query_skill("force", 1)));
                 me->unconcious();
@@ -49,7 +49,7 @@ int do_ketou()
 
         me->add_temp("ketou_times", -1);        
 
-        message_vision("$Nò¯³ÏµØ¹òÏÂÀ´£¬ÔÚÄ¹±®ÃæÇ°¿ÄÍ·¡£\n", me);
+        message_vision("$Nè™”è¯šåœ°è·ªä¸‹æ¥ï¼Œåœ¨å¢“ç¢‘é¢å‰ç£•å¤´ã€‚\n", me);
 
  if ( random (30) == 10 
         && !present("force book", me)
@@ -58,11 +58,11 @@ int do_ketou()
                 add("book_count", -1);
  ob=new(__DIR__"obj/neigong-book");
   ob->move(this_object());
-                tell_object(me, "Í»È»ÄãÃæÇ°£¬Å¾µØÒ»ÉùµôÏÂÒ»±¾ÄÚ¹¦ĞÄ·¨£¡\n");
+                tell_object(me, "çªç„¶ä½ é¢å‰ï¼Œå•ªåœ°ä¸€å£°æ‰ä¸‹ä¸€æœ¬å†…åŠŸå¿ƒæ³•ï¼\n");
         }
 
         if ( (int)me->query("jing")<0) {
-                 write("ÄãÌ«ÀÛÁË£¬Ğª»áÔÙ¿ÄÍ·°É£¡\n");              
+                 write("ä½ å¤ªç´¯äº†ï¼Œæ­‡ä¼šå†ç£•å¤´å§ï¼\n");              
        		 return 1;
 	}
         if ((int)me->query_skill("force", 1) >= 30 
@@ -72,7 +72,7 @@ int do_ketou()
                 me->receive_damage("jing", 20);
                 me->improve_skill("force", me->query("int"));
                 if ( random(5) == 0 )
-tell_object(me, "Ú¤Ú¤Ö®ÖĞ£¬ÄãËÆºõ¾õµÃ½â¾öÁËÄãÔÚÄÚ¹¦·½ÃæµÄÒÉÄÑ¡£\n");
+tell_object(me, "å†¥å†¥ä¹‹ä¸­ï¼Œä½ ä¼¼ä¹è§‰å¾—è§£å†³äº†ä½ åœ¨å†…åŠŸæ–¹é¢çš„ç–‘éš¾ã€‚\n");
         }
 
         return 1;

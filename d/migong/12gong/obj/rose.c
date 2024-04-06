@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•Œãƒ»è¥¿æ¸¸è®°ãƒ»ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // created 4/5/1997 by snowcat
@@ -11,10 +11,10 @@ inherit NECK;
 
 void create()
 {
-  set_name(HIR "ºìÃµ¹å" NOR, ({ "rose", "flower"}));
+  set_name(HIR "çº¢ç«ç‘°" NOR, ({ "rose", "flower"}));
   set_weight(100);
-  set("long","Ò»¶ä´ø´ÌµÄºìÃµ¹å£¬É¢·¢×ÅÒ»Ë¿Ë¿ÌğÏã¡£\n");
-  set("unit", "¶ä");
+  set("long","ä¸€æœµå¸¦åˆºçš„çº¢ç«ç‘°ï¼Œæ•£å‘ç€ä¸€ä¸ä¸ç”œé¦™ã€‚\n");
+  set("unit", "æœµ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 2);
   set("material", "flower");

@@ -1,15 +1,15 @@
-//Room: leidongping.c À×¶´Æº
+//Room: leidongping.c é›·æ´åª
 //Date: Oct. 2 1997 by That
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-      set("short","À×¶´Æº");
+      set("short","é›·æ´åª");
       set("long",@LONG
-À×¶´ÆºÒ»´ø£¬µÀÂ·¼èÏÕº§ÈË£¬Â·×óÊÇ±ÎÈÕÕÚÌìµÄÀäÉ¼ÁÖ£¬Â·ÓÒÊÇÉî²»¼ûµ×
-µÄ¾ø±ÚÏ¿¹È¡£ÕâÀï³¤ÄêÔÆÕÚÎíÕÖ£¬¿ÕÃÉºÚ°µ¡£ÑÒÉÏ½¨ÓĞÀ×Éñµî£¬ÅÔ±ßÊúÒ»Ìú±®¡£
-ÓÉ´ËÍùÉÏÊÇ¡¸°ËÊ®ËÄÅÌ¡¹ÖÁ½ÓÒıµî£¬±±ÏÂµ½Ï´Ïó³Ø¡£
+é›·æ´åªä¸€å¸¦ï¼Œé“è·¯è‰°é™©éª‡äººï¼Œè·¯å·¦æ˜¯è”½æ—¥é®å¤©çš„å†·æ‰æ—ï¼Œè·¯å³æ˜¯æ·±ä¸è§åº•
+çš„ç»å£å³¡è°·ã€‚è¿™é‡Œé•¿å¹´äº‘é®é›¾ç½©ï¼Œç©ºè’™é»‘æš—ã€‚å²©ä¸Šå»ºæœ‰é›·ç¥æ®¿ï¼Œæ—è¾¹ç«–ä¸€é“ç¢‘ã€‚
+ç”±æ­¤å¾€ä¸Šæ˜¯ã€Œå…«åå››ç›˜ã€è‡³æ¥å¼•æ®¿ï¼ŒåŒ—ä¸‹åˆ°æ´—è±¡æ± ã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */
@@ -36,15 +36,15 @@ int do_say()
 
       if (me->query("qi")>qi_cost) 
       {
-message_vision(CYN"$N¸ÕËµ³öÒ»¸ö×Ö£¬É²ÄÇ¼ä¾ªÀ×Ñ¸µç£¬Åùö¨¶ø×÷£¬·çÓê±©À´¡£\n"NOR, me);
+message_vision(CYN"$Nåˆšè¯´å‡ºä¸€ä¸ªå­—ï¼Œåˆ¹é‚£é—´æƒŠé›·è¿…ç”µï¼Œéœ¹é›³è€Œä½œï¼Œé£é›¨æš´æ¥ã€‚\n"NOR, me);
          if (((c_skill*c_skill*c_skill/10)< c_exp) && (c_skill<101))
               me->improve_skill("force", (int)me->query_skill("force", 1));
            me->receive_damage("qi", qi_cost );
       }
       else
       {
-       message_vision(CYN"$N¸ÕËµ³öÒ»¸ö×Ö£¬É²ÄÇ¼ä¾ªÀ×Ñ¸µç£¬Åùö¨¶ø×÷£¬·çÓê±©À´¡£
-$NÒ»ÏÂ×Ó±»´òÖĞ£¬È«Éí·¢Âé¡£\n"NOR, me);
+       message_vision(CYN"$Nåˆšè¯´å‡ºä¸€ä¸ªå­—ï¼Œåˆ¹é‚£é—´æƒŠé›·è¿…ç”µï¼Œéœ¹é›³è€Œä½œï¼Œé£é›¨æš´æ¥ã€‚
+$Nä¸€ä¸‹å­è¢«æ‰“ä¸­ï¼Œå…¨èº«å‘éº»ã€‚\n"NOR, me);
       }
       return 1;
 }
@@ -60,7 +60,7 @@ int valid_leave(object me, string dir)
          me->add("qi",-10);
          if (((c_skill*c_skill*c_skill/10)< c_exp) && (c_exp< 101))
              me->improve_skill("dodge", (int)me->query_skill("dodge", 1));
-         tell_object(me,"ÄãÅÀÉÏ°ËÊ®ËÄÅÌ£¬ÓĞĞ©ÀÛÁË¡£\n");
+         tell_object(me,"ä½ çˆ¬ä¸Šå…«åå››ç›˜ï¼Œæœ‰äº›ç´¯äº†ã€‚\n");
       }
       return 1;
 }

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�����");
+	set("short", "三义柏");
 	set("long", @LONG
-����¥λ�ں��Ź�����¥ǰ�йŰ����꣬ͦ�β��У��Դ����ƣ���
-�顰����ء�����ǰ�����⡰�µ��ɾ��������ж���������ʯ�꣬�׳�
-�궴��
+万仙楼位于红门宫北，楼前有古柏三株，挺拔并列，苍翠凌云，碣
+书“三义柏”。再前西崖题“勇登仙境”，下有洞，洞内有石龟，俗称
+龟洞。
 LONG );
 	set("exits", ([
 		"north"     : __DIR__"wanxianlou",

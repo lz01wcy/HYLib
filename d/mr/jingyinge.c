@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-         set("short",RED"������"NOR);
+         set("short",RED"静音阁"NOR);
          set("long",@long
-�������������Եĺó��������ﾲ���ĵģ�û�����˵ķԸ���˭Ҳ
-���ܹ������������ǽ�Ϲ���һ��ͼ��
+这里是修身养性的好场所，这里静悄悄的，没有主人的吩咐，谁也
+不能够随便出入这里，在墙上挂着一幅图。
 long);
        
          set("exits",([

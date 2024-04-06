@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","����");
+  set ("short","扁舟");
   set ("long", @LONG
-�������ұ��ۡ������ǹ����Ͻ�ˮ����ˮ�Ĵ��Ŵ������ҹ����ڳ���
-�ذ��Ŷ档
+这里是艘扁舟。四周是滚滚南江水，江水拍打着船身。梢公正在吃力
+地摆着舵。
 LONG);
 
 set("outdoors","luoyang");

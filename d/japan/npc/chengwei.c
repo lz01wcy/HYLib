@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("³ÇÎÀ", ({ "cheng wei", "bing", "wei" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åŸå«", ({ "cheng wei", "bing", "wei" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 25);
         set("long",
-                   "Ò»ÃûÕıÔÚÀ´»ØÑ²ÊÓµÄÊØ³ÇÎÀÊ¿¡£\n");
-     set("title","Éñ»§³Ç");
+                   "ä¸€åæ­£åœ¨æ¥å›å·¡è§†çš„å®ˆåŸå«å£«ã€‚\n");
+     set("title","ç¥æˆ·åŸ");
         set("mingwang", 1);
         set("combat_exp", 10000);
 	set_skill("blade",60);

@@ -7,13 +7,13 @@ mixed carry_water();
 
 void create()
 {
-	set_name("·½½ä", ({ "fang jie", "fang", "jie"}));
+	set_name("æ–¹æˆ’", ({ "fang jie", "fang", "jie"}));
 	set("long",
-		"ËûÊÇÒ»Î»¾«Éñ¶¶ËÓµÄÖĞÄêºÍÉĞ£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£Éí²ÄÂÔ¸ß£¬\n"
-		"Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓĞÉñ¡£\n"
+		"ä»–æ˜¯ä¸€ä½ç²¾ç¥æŠ–æ“çš„ä¸­å¹´å’Œå°šï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚èº«æç•¥é«˜ï¼Œ\n"
+		"å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥ã€‚\n"
 	);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -60,9 +60,9 @@ void create()
 	prepare_skill("leg", "zui-gun");
 
 	set("inquiry", ([
-		"ÌôË®":	(: carry_water :)
+		"æŒ‘æ°´":	(: carry_water :)
 	]));
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 21, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
@@ -78,18 +78,18 @@ mixed carry_water()
 		if (present("liao kao", me))
 		{
 			destruct(present("liao kao", me));
-			return "ÄãµÄ»îÒÑ¾­¸ÉÍêÁË£¬ÎÒ°ïÄã½â¿ªÁÍîí¡£";
+			return "ä½ çš„æ´»å·²ç»å¹²å®Œäº†ï¼Œæˆ‘å¸®ä½ è§£å¼€é•£é“ã€‚";
 		}
 		else
-			return RANK_D->query_respect(me) + "²»ÊÇ¿ªÍæĞ¦°É£¿";
+			return RANK_D->query_respect(me) + "ä¸æ˜¯å¼€ç©ç¬‘å§ï¼Ÿ";
 	if (present("tie tong", me))
-		return "Äã²»ÊÇÄÃ×ÅÌúÍ°Âğ£¿¿ìÈ¥¸É»î°É¡£";
+		return "ä½ ä¸æ˜¯æ‹¿ç€é“æ¡¶å—ï¼Ÿå¿«å»å¹²æ´»å§ã€‚";
 	if (present("tie tong", environment()))
-		return "ÌúÍ°²»ÊÇÔÚµØÉÏ·Å×ÅÂğ£¿ÄÃÈ¥¸É»î°É¡£";
+		return "é“æ¡¶ä¸æ˜¯åœ¨åœ°ä¸Šæ”¾ç€å—ï¼Ÿæ‹¿å»å¹²æ´»å§ã€‚";
 	command("buddhi");
 	new("/d/nanshaolin/obj/tie-tong")->move(environment());
-	command("say ÕâÊÇ¸É»îµÄ¼ÒÊ²£¬ÄÃÈ¥ÓÃ°É¡£");
-	message_vision("$N´ÓÉíºóÄÃ³öÒ»¶Ô´óÌúÍ°·ÅÔÚµØÉÏ¡£\n", ob);
+	command("say è¿™æ˜¯å¹²æ´»çš„å®¶ä»€ï¼Œæ‹¿å»ç”¨å§ã€‚");
+	message_vision("$Nä»èº«åæ‹¿å‡ºä¸€å¯¹å¤§é“æ¡¶æ”¾åœ¨åœ°ä¸Šã€‚\n", ob);
 	return 1;
 }
 

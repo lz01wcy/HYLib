@@ -4,10 +4,10 @@ inherit F_DEALER;
 void create()
 {
     //reload("leshou_zhubao-boss");
-   set_name("ÀîÀÏ°å",({ "li laoban","li","lao","ban" }) );
-   set("gender", "ÄĞĞÔ" );
+   set_name("æè€æ¿",({ "li laoban","li","lao","ban" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 40);
-   set("long", "ËûÊÇÖé±¦µêµÄÀÏ°å£¬¿´ÆğÀ´²Å´óÆø´Ö¡£\n");
+   set("long", "ä»–æ˜¯ç å®åº—çš„è€æ¿ï¼Œçœ‹èµ·æ¥æ‰å¤§æ°”ç²—ã€‚\n");
    set("combat_exp", 500000);   
    set("attitude", "friendly");
 	set("vendor_goods", ({

@@ -1,17 +1,17 @@
-// hongbao.c ºì°ü
+// hongbao.c çº¢åŒ…
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(HIR"ºì°ü"NOR, ({ "red bag", "hong bao", "bao" }));
+	set_name(HIR"çº¢åŒ…"NOR, ({ "red bag", "hong bao", "bao" }));
 	set_weight(500);
 	set_max_encumbrance(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "Ò»¸ö¾«ÖÆµÄºìÖ½´ü£¬±ßÉÏÓĞÌÌ½ğµÄ»¨ÎÆ£¬ÓÃÀ´×°ºØÒÇÀñ½ğÕıºÏÊÊ¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "ä¸€ä¸ªç²¾åˆ¶çš„çº¢çº¸è¢‹ï¼Œè¾¹ä¸Šæœ‰çƒ«é‡‘çš„èŠ±çº¹ï¼Œç”¨æ¥è£…è´ºä»ªç¤¼é‡‘æ­£åˆé€‚ã€‚\n");
 		set("value", 1000);
 	}
 }

@@ -8,19 +8,19 @@ string* obj = ({
 });
 void create()
 {
-        set("short", "ÂÒÊ¯¶Ñ");
+        set("short", "ä¹±çŸ³å †");
         set("long", @LONG
-ÕâÀïËÄÖÜËùÎ§È«ÊÇ¾ÞÊ¯£¬µØÉÏÆÌÂúÁËÁèÂÒµÄËéÊ¯×Ó£¬ÏóÊÇ±»ÈË»÷´ò¾Þ
-Ê¯Ëù´òÏÂÀ´µÄËé¿é¡£ÕýÖÐÒ»¿éÆ½»¬µÄÇàÊ¯°åÉÏ¶××ÅÒ»Ö»Ñ©°×µÄ¸òó¡¡£
-µØÏÂÂÒÆß°Ë¾«ÓÐÒ»´ó¶Ñ¶«Î÷£¬ÄãºÃÏñ¿ÉÒÔÕÒÕÒ(find)¿´¡£
+è¿™é‡Œå››å‘¨æ‰€å›´å…¨æ˜¯å·¨çŸ³ï¼Œåœ°ä¸Šé“ºæ»¡äº†å‡Œä¹±çš„ç¢ŽçŸ³å­ï¼Œè±¡æ˜¯è¢«äººå‡»æ‰“å·¨
+çŸ³æ‰€æ‰“ä¸‹æ¥çš„ç¢Žå—ã€‚æ­£ä¸­ä¸€å—å¹³æ»‘çš„é’çŸ³æ¿ä¸Šè¹²ç€ä¸€åªé›ªç™½çš„è›¤èŸ†ã€‚
+åœ°ä¸‹ä¹±ä¸ƒå…«ç²¾æœ‰ä¸€å¤§å †ä¸œè¥¿ï¼Œä½ å¥½åƒå¯ä»¥æ‰¾æ‰¾(find)çœ‹ã€‚
 LONG);        
         set("objects", ([
                     __DIR__"npc/chanchu" : 1,
         ]));
          set("item_desc", ([                    
-                "stone": "\nÕâÐ©¾ÞÊ¯¶¼ÓÐ°¼Ãæ£¬¿´µÃ³öÊÇ±»ÈËÄÃÀ´Á·ÕÆÁ¦ÓÃµÄ¡£\n",
+                "stone": "\nè¿™äº›å·¨çŸ³éƒ½æœ‰å‡¹é¢ï¼Œçœ‹å¾—å‡ºæ˜¯è¢«äººæ‹¿æ¥ç»ƒæŽŒåŠ›ç”¨çš„ã€‚\n",
         ]));
-        set("outdoors", "°×ÍÓÉ½");
+        set("outdoors", "ç™½é™€å±±");
         setup(); 
 }
 
@@ -30,11 +30,11 @@ void init()
        	if(!me->query_temp("baituo_yun") 
        	&& me->query("id") != "xuanbing chanchu" 
        	&& me->query("id") != "snowman"){
-             	message_vision(HIW"Ðþ±ùó¸òÜÍ»È»×ÝÆð£¬¶Ô×Å$NÒ»¿Ú¶¾ÆøÅç³ö£¡\n"NOR,this_player()); 
-             	tell_object(me, HIB "Äã¸Ðµ½ÄÔÖÐÒ»ÕóÐýÔÎ£¬Á¢Ê±»èÁË¹ýÈ¥¡£\n" NOR ); 
+             	message_vision(HIW"çŽ„å†°èŸ¾èœçªç„¶çºµèµ·ï¼Œå¯¹ç€$Nä¸€å£æ¯’æ°”å–·å‡ºï¼\n"NOR,this_player()); 
+             	tell_object(me, HIB "ä½ æ„Ÿåˆ°è„‘ä¸­ä¸€é˜µæ—‹æ™•ï¼Œç«‹æ—¶æ˜äº†è¿‡åŽ»ã€‚\n" NOR ); 
              	me->unconcious();
              	me->move(__DIR__"yuanzi5");
-             	tell_room(environment(me), me->name()+"Í»È»´Ó¾ÞÊ¯Ö®ÉÏÖ±ÂäÏÂÀ´£¬¡®°È¡¯µÄÒ»ÉùË¤ÔÚµØÉÏ£¡\n", ({ me }));
+             	tell_room(environment(me), me->name()+"çªç„¶ä»Žå·¨çŸ³ä¹‹ä¸Šç›´è½ä¸‹æ¥ï¼Œâ€˜å­â€™çš„ä¸€å£°æ‘”åœ¨åœ°ä¸Šï¼\n", ({ me }));
           	if(me->query_skill("poison", 1) < 100) 
           		me->unconcious();              
           	else me->add("max_neili", -5);
@@ -54,12 +54,12 @@ int do_climb(string arg)
         if( !arg || arg=="" ) return 0;
         
         if( (int)me->is_busy() || me->is_fighting()) 
-        	return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+        	return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
         	
         if (arg == "stone" ){   
-           	message_vision("$NÊÖ½Å²¢ÓÃ£¬ÅÀÉÏÁË¾ÞÊ¯È¥£¬·­ÉíÒ»×Ý£¬ÒÑ¾­ÌøÁË³öÈ¥¡£\n", me);                      
+           	message_vision("$Næ‰‹è„šå¹¶ç”¨ï¼Œçˆ¬ä¸Šäº†å·¨çŸ³åŽ»ï¼Œç¿»èº«ä¸€çºµï¼Œå·²ç»è·³äº†å‡ºåŽ»ã€‚\n", me);                      
                	me->move(__DIR__"yuanzi5");
-               	message("vision", me->name() + "´ÓÀïÃæÌøÁË³öÀ´¡£\n",environment(me), ({me}) );
+               	message("vision", me->name() + "ä»Žé‡Œé¢è·³äº†å‡ºæ¥ã€‚\n",environment(me), ({me}) );
                	return 1;
         }     
         return 0;
@@ -75,26 +75,26 @@ int do_strike(string arg)
         if( !arg || arg=="" ) return 0;
         
         if( (int)me->is_busy() || me->is_fighting()) 
-        	return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+        	return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
         	
         if (arg == "stone" ){             
             	if(!me->query_skill("hamagong", 1))  
-               		return notify_fail("ÄãÓÃÊÖÖ¸ÍÆÁËÍÆ¾ÞÊ¯£¬Á³ÉÏÂ¶³öÒ»Ë¿ÄÑ¿°µÄÉñÉ«¡£\n");
+               		return notify_fail("ä½ ç”¨æ‰‹æŒ‡æŽ¨äº†æŽ¨å·¨çŸ³ï¼Œè„¸ä¸Šéœ²å‡ºä¸€ä¸éš¾å ªçš„ç¥žè‰²ã€‚\n");
             	if(me->query_skill("hamagong", 1) > 64 && hmglevel < 2)  
-               		return notify_fail("ÄãÓÃÊÖÖ¸ÍÆÁËÍÆ¾ÞÊ¯£¬Á³ÉÏÂ¶³öÒ»Ë¿ÄÑ¿°µÄÉñÉ«¡£\n");
+               		return notify_fail("ä½ ç”¨æ‰‹æŒ‡æŽ¨äº†æŽ¨å·¨çŸ³ï¼Œè„¸ä¸Šéœ²å‡ºä¸€ä¸éš¾å ªçš„ç¥žè‰²ã€‚\n");
             	if(me->query_skill("hamagong", 1) > 100)  
-               		return notify_fail("ÄãÒ»ÕÆÏò¾ÞÊ¯ÍÆÈ¥£¬Ö»ÌýºäµÄÒ»Éù£¬¾ÞÊ¯±»ÄãÕÆÁ¦Õð³ÉÁ½°ë£¡\n");
+               		return notify_fail("ä½ ä¸€æŽŒå‘å·¨çŸ³æŽ¨åŽ»ï¼Œåªå¬è½°çš„ä¸€å£°ï¼Œå·¨çŸ³è¢«ä½ æŽŒåŠ›éœ‡æˆä¸¤åŠï¼\n");
                		
         	cost = 600 / (int)me->query("int");
         	cost = 600 / (int)me->query("int");
 
            	if ((int)me->query("jing") < cost || (int)me->query("jing") < cost){
-                	message_vision("$NÓÃÁ¦¹ýÃÍ, Ò»²»ÁôÉñ¾¢Á¦·´µ¯£¬ÕðµÃ$NÔÎÁË¹ýÈ¥¡£\n",me);
+                	message_vision("$Nç”¨åŠ›è¿‡çŒ›, ä¸€ä¸ç•™ç¥žåŠ²åŠ›åå¼¹ï¼Œéœ‡å¾—$Næ™•äº†è¿‡åŽ»ã€‚\n",me);
                 	me->unconcious();
                 	return 1;
                 } 
                 
-                message_vision("$NÄ¬ËÐ¸òó¡¹¦¿Ú¾÷£¬ÔËÁ¦ÓÚË«ÕÆÖ®ÉÏ£¬Ò»ÕÆÕÆÏò¾ÞÊ¯ÍÆÈ¥¡£\n"NOR, me);  
+                message_vision("$Né»˜è¯µè›¤èŸ†åŠŸå£è¯€ï¼Œè¿åŠ›äºŽåŒæŽŒä¹‹ä¸Šï¼Œä¸€æŽŒæŽŒå‘å·¨çŸ³æŽ¨åŽ»ã€‚\n"NOR, me);  
            	me->improve_skill("hamagong", improve);            
            	me->improve_skill("strike", improve/4); 
            	me->receive_damage("jing", cost);
@@ -115,7 +115,7 @@ int found(object me)
 {
         object ob = new( obj[random(sizeof(obj))] );
         ob->move(me);
-        message_vision("$N·­ÁË°ëÌì£¬ÕÒµ½ÁË" + ob->query("name") + "¡£\n", me);
+        message_vision("$Nç¿»äº†åŠå¤©ï¼Œæ‰¾åˆ°äº†" + ob->query("name") + "ã€‚\n", me);
         me->set_temp("baituo_find", 1);
         return 1;
 }
@@ -124,23 +124,23 @@ int do_find()
 {
        object me = this_player();
        if( (int)me->query_temp("baituo_find") ) 
-                return notify_fail("ÄãÒÑ¾­ÄÃÁË¶«Î÷ÁË£¬×ß°É¡£\n");
+                return notify_fail("ä½ å·²ç»æ‹¿äº†ä¸œè¥¿äº†ï¼Œèµ°å§ã€‚\n");
        if (me->query_skill("hamagong", 1) && 
            me->query_skill("poison", 1) > 30){
-                message_vision("$NÄó×Å±Ç×ÓÔÚÎïÆ·¶ÑÖÐÂÒ·­×Å¡£\n", me);
+                message_vision("$Næç€é¼»å­åœ¨ç‰©å“å †ä¸­ä¹±ç¿»ç€ã€‚\n", me);
                 found(me);    
                 }
        else if (me->query_skill("poison", 1) > 50){
-                message_vision("$NÄó×Å±Ç×ÓÔÚÎïÆ·¶ÑÖÐÂÒ·­×Å¡£\n", me);
+                message_vision("$Næç€é¼»å­åœ¨ç‰©å“å †ä¸­ä¹±ç¿»ç€ã€‚\n", me);
                 if(random((int)me->query("kar")) < 15){
-                     write("ÄãÎüÁË¿ÚÆø£¬Í»È»¾õµÃÍ·ÖÐÒ»ÕóÑ£ÔÎ¡£\n");
+                     write("ä½ å¸äº†å£æ°”ï¼Œçªç„¶è§‰å¾—å¤´ä¸­ä¸€é˜µçœ©æ™•ã€‚\n");
                      me->unconcious();
                      }
                 else found(me);    
                 }
        else { 
-                message_vision("$NÄó×Å±Ç×ÓÔÚÎïÆ·¶ÑÖÐÂÒ·­×Å¡£\n", me);
-                write("ÄãÎüÁË¿ÚÆø£¬Í»È»¾õµÃÍ·ÖÐÒ»ÕóÑ£ÔÎ¡£¡£¡£²»ºÃ£¡ÄãÖÐ¶¾ÁË£¡\n");
+                message_vision("$Næç€é¼»å­åœ¨ç‰©å“å †ä¸­ä¹±ç¿»ç€ã€‚\n", me);
+                write("ä½ å¸äº†å£æ°”ï¼Œçªç„¶è§‰å¾—å¤´ä¸­ä¸€é˜µçœ©æ™•ã€‚ã€‚ã€‚ä¸å¥½ï¼ä½ ä¸­æ¯’äº†ï¼\n");
                 me->apply_condition("snake_poison", me->query_condition("snake_poison")+22);
                 me->unconcious();
                 }

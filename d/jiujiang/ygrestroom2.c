@@ -6,10 +6,10 @@ inherit ROOM;
 void create()
 {
 
-        set("short", "��Ϣ��" );
+        set("short", "休息室" );
         set("long", @LONG
-������ǹ�������ʱ��Ϣ�ĵط������ϰڷ�������ı��죬����ȥ
-�����˸е�����˯����
+这里就是供弟子临时休息的地方，床上摆放着整齐的被褥，看上去
+就让人感到很想睡觉。
 LONG);
 
         set("sleep_room", 1);

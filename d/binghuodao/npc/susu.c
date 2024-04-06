@@ -10,12 +10,12 @@ int ask_me();
 
 void create()
 {
-    set_name("ÒóËØËØ", ({"yin susu","susu", }));
+    set_name("æ®·ç´ ç´ ", ({"yin susu","susu", }));
         set("long",
-        "ËûÊÇÒ»Î»Éí²Äñºñ»µÄÖĞÄê¸¾ÈË£¬Éí´©Ò»¼şôÃ·ş¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æçªˆçª•çš„ä¸­å¹´å¦‡äººï¼Œèº«ç©¿ä¸€ä»¶è£˜æœã€‚\n"
         );
                                                           
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("attitude", "peaceful");
 
         set("age", 27);

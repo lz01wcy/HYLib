@@ -12,12 +12,12 @@ int do_open(string arg);
 
 void create()
 {
-        set("short", "ÁèÏöÄÚÃÅ");
+        set("short", "å‡Œéœ„å†…é—¨");
         set("long", 
-"ÕâÀïÊÇÁèÏö³ÇµÄ³ÇÃÅ¡£±¾À´ÁèÏö³ÇÉÙÓÐÍâµÐÈëÇÖ£¬µ«ÓÉÓÚµØ
-´¦Î÷Óò£¬Â¡¶¬Ö®¼Ê³£ÓÐ¶öÀÇÇ°À´ÇÖÏ®£¬¹ÊÐÞÖþ´Ë´ó³ÇÒÔ×öµÖµ²¡£
-Ïò³ÇÄÚÍûÈ¥£¬Ö»¼ûÈËÍ·ÈÁÈÁ£¬ºÜÊÇ·±»ª£¬Ïë²»µ½ÔÚÕâÎ÷ÓòÑ©É½¾ø
-¶¥£¬È´ÓÐ×ÅÒ»¸öÈç´ËÈ¥´¦¡£\n"
+"è¿™é‡Œæ˜¯å‡Œéœ„åŸŽçš„åŸŽé—¨ã€‚æœ¬æ¥å‡Œéœ„åŸŽå°‘æœ‰å¤–æ•Œå…¥ä¾µï¼Œä½†ç”±äºŽåœ°
+å¤„è¥¿åŸŸï¼Œéš†å†¬ä¹‹é™…å¸¸æœ‰é¥¿ç‹¼å‰æ¥ä¾µè¢­ï¼Œæ•…ä¿®ç­‘æ­¤å¤§åŸŽä»¥åšæŠµæŒ¡ã€‚
+å‘åŸŽå†…æœ›åŽ»ï¼Œåªè§äººå¤´æ”˜æ”˜ï¼Œå¾ˆæ˜¯ç¹åŽï¼Œæƒ³ä¸åˆ°åœ¨è¿™è¥¿åŸŸé›ªå±±ç»
+é¡¶ï¼Œå´æœ‰ç€ä¸€ä¸ªå¦‚æ­¤åŽ»å¤„ã€‚\n"
  );
         set("outdoors", "lingxiao");
 
@@ -46,20 +46,20 @@ void close_bridge()
         if(objectp(room))
         {
                 delete("exits/south");
-                        message("vision", "ÁèÏöµÜ×Ó°ÑµõÇÅ¹ØÁËÆðÀ´¡£\n", this_object());
+                        message("vision", "å‡Œéœ„å¼Ÿå­æŠŠåŠæ¡¥å…³äº†èµ·æ¥ã€‚\n", this_object());
                 room->delete("exits/north");
-                message("vision", "Ö»Ìý'¸Â¸Â'¼¸Éù,µõÇÅÓÖ±»¹ØÁËÆðÀ´¡£\n", room);
+                message("vision", "åªå¬'å˜Žå˜Ž'å‡ å£°,åŠæ¡¥åˆè¢«å…³äº†èµ·æ¥ã€‚\n", room);
         }
 }
 int do_close(string arg)
 {
         if (!query("exits/south"))
-                return notify_fail("µõÇÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("åŠæ¡¥å·²ç»æ˜¯å…³ç€çš„äº†ã€‚\n");
 
         if (!arg || (arg != "bridge" && arg != "south"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å…³ä»€ä¹ˆï¼Ÿ\n");
 
-        message_vision("$N³¯ÁèÏöµÜ×ÓÕÐÁËÒ»ÏÂÊÖ,ËûÃÇµãÁËµãÍ·,°ÑµõÇÅµõÁËÉÏÈ¥¡£\n", this_player());
+        message_vision("$Næœå‡Œéœ„å¼Ÿå­æ‹›äº†ä¸€ä¸‹æ‰‹,ä»–ä»¬ç‚¹äº†ç‚¹å¤´,æŠŠåŠæ¡¥åŠäº†ä¸ŠåŽ»ã€‚\n", this_player());
 
         remove_call_out("close_bridge");
         call_out("close_bridge", 2);
@@ -72,19 +72,19 @@ int do_open(string arg)
         object room;
 
         if (query("exits/south"))
-                return notify_fail("µõÇÅÒÑ¾­·ÅÏÂÀ´ÁË¡£\n");
+                return notify_fail("åŠæ¡¥å·²ç»æ”¾ä¸‹æ¥äº†ã€‚\n");
 
         if (!arg || (arg != "bridge" && arg != "south"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¼€ä»€ä¹ˆï¼Ÿ\n");
 
         if(!( room = find_object(__DIR__"shanya")) )
                 room = load_object(__DIR__"shanya");
         if(objectp(room))
         {
                 set("exits/south", __DIR__"shanya");
-                message_vision("$NÈÃÁèÏöµÜ×Ó°ÑµõÇÅ·ÅÁËÏÂÀ´¡£\n", this_player());
+                message_vision("$Nè®©å‡Œéœ„å¼Ÿå­æŠŠåŠæ¡¥æ”¾äº†ä¸‹æ¥ã€‚\n", this_player());
                 room->set("exits/north", __FILE__);
-                message("vision", "¸Â¸Â¼¸Éù,µõÇÅ·ÅÁËÏÂÀ´¡£\n", room);
+                message("vision", "å˜Žå˜Žå‡ å£°,åŠæ¡¥æ”¾äº†ä¸‹æ¥ã€‚\n", room);
                 remove_call_out("close_bridge");
                 call_out("close_bridge", 10);
         }
@@ -94,7 +94,7 @@ int do_open(string arg)
 
 string look_bridge()
 {
-        return "Ò»ÕÅ¼«´óµÄµõÇÅ,ÊÇÁèÏö³ÇµÄÒ»µÀ·ÀÏß¡£\n";
+        return "ä¸€å¼ æžå¤§çš„åŠæ¡¥,æ˜¯å‡Œéœ„åŸŽçš„ä¸€é“é˜²çº¿ã€‚\n";
 }
 
 /*
@@ -102,14 +102,14 @@ int valid_leave(object me, string dir)
 {
         if (dir == "north" )
         {
-                if(me->query("family/family_name") !="ÁèÏö³Ç")
+                if(me->query("family/family_name") !="å‡Œéœ„åŸŽ")
                 {
                         if(me->query("combat_exp") >= 100)
                         {
                                 if(present("wen wanfu", environment(me)) && living(present("wen wanfu", environment(me))))
                                 {
                                         return notify_fail(
-"ÎÅÍò·ò°Î½£À¹µÀ£ººÎ·½¸ßÈË¼ÝÁè±Ö³Ç£¬ÀïÃæÄË±¾ÅÉÖØµØ¡£ÕâÎ»" + RANK_D->query_respect(me) + "ÇëÖ¹²½¡£\n");
+"é—»ä¸‡å¤«æ‹”å‰‘æ‹¦é“ï¼šä½•æ–¹é«˜äººé©¾å‡Œæ•åŸŽï¼Œé‡Œé¢ä¹ƒæœ¬æ´¾é‡åœ°ã€‚è¿™ä½" + RANK_D->query_respect(me) + "è¯·æ­¢æ­¥ã€‚\n");
                                 }
                                 else
                                         return ::valid_leave(me, dir);

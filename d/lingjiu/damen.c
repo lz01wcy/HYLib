@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¶À×ğÌü´óÃÅ");
+	set("short", "ç‹¬å°Šå…å¤§é—¨");
         set("long",@LONG
-Õâ¾ÍÊÇÍ¨Ïò¡ºÁéğÕ¹¬¡»¶À×ğÌüµÄ´óÃÅ¡£´óÃÅ×óÓÒ¸÷ÓĞÒ»Í·Ê¯µñµÄÃÍğÕ
-£¬¸ß´ïÈıÕÉÓĞÓà£¬¼âà¹¾Ş×¦£¬Éñ¿¥·Ç·²£¬èòèòÈçÉú£¬ËÆºõËæÊ±ÒªÌÚ¿Õ¶øÈ¥¡£
+è¿™å°±æ˜¯é€šå‘ã€çµé¹«å®«ã€ç‹¬å°Šå…çš„å¤§é—¨ã€‚å¤§é—¨å·¦å³å„æœ‰ä¸€å¤´çŸ³é›•çš„çŒ›é¹«
+ï¼Œé«˜è¾¾ä¸‰ä¸ˆæœ‰ä½™ï¼Œå°–å–™å·¨çˆªï¼Œç¥éªéå‡¡ï¼Œæ ©æ ©å¦‚ç”Ÿï¼Œä¼¼ä¹éšæ—¶è¦è…¾ç©ºè€Œå»ã€‚
 LONG );
         set("outdoors", "lingjiu");
         set("exits", ([
@@ -27,10 +27,10 @@ LONG );
 int valid_leave(object me, string dir)
 {
 	if (  (dir == "north")
-           && ((string)me->query("family/family_name") != "ÁéğÕ¹¬")
+           && ((string)me->query("family/family_name") != "çµé¹«å®«")
 	   && ( objectp(present("mei jian", environment(me)))
 	   ||   objectp(present("lan jian", environment(me))) ) )
         return notify_fail
-		("Ã·À¼Ë«æ­ÉìÊÖÀ¹×¡Äã£¬ËµµÀ£º¡°·ÇÁéğÕ¹¬µÜ×ÓÇë»Ø£¡¡±\n");
+		("æ¢…å…°åŒå§ä¼¸æ‰‹æ‹¦ä½ä½ ï¼Œè¯´é“ï¼šâ€œéçµé¹«å®«å¼Ÿå­è¯·å›ï¼â€\n");
 	return ::valid_leave(me, dir);
 }

@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-         set("short",WHT"Ñà×ÓÎë"NOR);
+         set("short",WHT"ç‡•å­åž"NOR);
          set ("long",@long
-Ñà×ÓÎëÊÇÄ»ÈÝÊÏÊÀ¾ÓÖ®µØ, Ä»ÈÝÊÏÄËÏ¦ÈÕ´óÑà¹úµÄºóÒá, ºóÀ´ÈÕ¼ûÊ½Î¢, 
-µ«ÆäµÜ×ÓÈ´Ò»ÐÄÒ»ÒâÏë¹â¸´´óÑà¡£ÆäÎä¹¦¼û³¤ÓÚÒÔ±ËÖ®µÀ, »¹Ê©±ËÉí, ¶ËµÄ
-Ê®·ÖÀ÷º¦¡£
+ç‡•å­åžæ˜¯å¹•å®¹æ°ä¸–å±…ä¹‹åœ°, å¹•å®¹æ°ä¹ƒå¤•æ—¥å¤§ç‡•å›½çš„åŽè£”, åŽæ¥æ—¥è§å¼å¾®, 
+ä½†å…¶å¼Ÿå­å´ä¸€å¿ƒä¸€æ„æƒ³å…‰å¤å¤§ç‡•ã€‚å…¶æ­¦åŠŸè§é•¿äºŽä»¥å½¼ä¹‹é“, è¿˜æ–½å½¼èº«, ç«¯çš„
+ååˆ†åŽ‰å®³ã€‚
 long);
          set("exits",([
 "north" : __DIR__"midaocao",

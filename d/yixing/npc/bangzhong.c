@@ -9,12 +9,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("°ïÖÚ", ({ "bangzhong" }));
-	set("gender", "ÄĞĞÔ");
-	set("party/party_name", HIC"³¤ÀÖ°ï"NOR);
-	set("party/rank", "±ª½İÌÃ");
+	set_name("å¸®ä¼—", ({ "bangzhong" }));
+	set("gender", "ç”·æ€§");
+	set("party/party_name", HIC"é•¿ä¹å¸®"NOR);
+	set("party/rank", "è±¹æ·å ‚");
 	set("age", 20 + random(10));
-	set("long", "Ò»ÃûÉí²Ä¸ß´óµÄ×³ºº£¬ÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù¡£\n");
+	set("long", "ä¸€åèº«æé«˜å¤§çš„å£®æ±‰ï¼Œæ»¡è„¸æ€æ°”ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", -1);
 

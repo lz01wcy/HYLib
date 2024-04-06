@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÈýµÅÑÂ");
+	set("short", "ä¸‰è¹¬å´–");
 	set("long", @LONG
-ÑØ½×¶øÉÏ£¬À´µ½ÈýµÅÑÂ£¬ÉÏÓÐ¾ÞÊ¯ÈçÎÝ£¬Ã÷ÍòÀúÄê¼ä£¬Ê¢ÏÄÓö±©·ç
-Óê£¬Ê¯×ÔÉ½áÛ×¹´Ë£¬¿ÂÉÜ¸ÞÌâ¡°·ÉÀ´Ê¯¡±¡£ÓùÕÊÆº¶«ÓÐÍû¼ÝÊ¯£¬ÈçÀÏÎÌ
-¹°Á¢¡£
+æ²¿é˜¶è€Œä¸Šï¼Œæ¥åˆ°ä¸‰è¹¬å´–ï¼Œä¸Šæœ‰å·¨çŸ³å¦‚å±‹ï¼Œæ˜Žä¸‡åŽ†å¹´é—´ï¼Œç››å¤é‡æš´é£Ž
+é›¨ï¼ŒçŸ³è‡ªå±±å·…å æ­¤ï¼ŒæŸ¯ç»çš‹é¢˜â€œé£žæ¥çŸ³â€ã€‚å¾¡å¸åªä¸œæœ‰æœ›é©¾çŸ³ï¼Œå¦‚è€ç¿
+æ‹±ç«‹ã€‚
 LONG );
 	set("exits", ([
 		"eastdown"   : __DIR__"yunbu",

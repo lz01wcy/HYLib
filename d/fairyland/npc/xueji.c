@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("雪鸡", ({"xue ji","ji"}));
-        set("race", "野兽");
+        set_name("闆浮", ({"xue ji","ji"}));
+        set("race", "閲庡吔");
         set("age", 2);
-        set("long", "一只肥肥白白的雪鸡。\n");
+        set("long", "涓�鍙偉鑲ョ櫧鐧界殑闆浮銆俓n");
 
-        set("limbs", ({ "头部", "身体", "前爪", "后爪", "尾巴" }) );
+        set("limbs", ({ "澶撮儴", "韬綋", "鍓嶇埅", "鍚庣埅", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 100);

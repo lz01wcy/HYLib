@@ -6,28 +6,28 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ÎÔÊÒ");
+	set("short","å§å®¤");
 	set("long",@LONG
-ÑØ´°ÁÐÒ»×ÏÌ´×±Ì¨£¬ÉÏÓÃÐå»¨ºìÄØÕÖ¡£Ò»é½´²£¬é½Ç°ÐüÒ»Á¢Öá£¬Ïµ
-»æ¡¶ÎÄ¾ýË½±¼Í¼¡·¡£×óÓÒéºÁª(lian)±Ê·¨ÉõÐã¡£ÖéÁ±ÒþÒþ£¬ÏãÎí³Á³Á£¬
-Æä×îÑÅÕß³¯ÍâÅÅÒ»´²£¬ÖÜÎ§½ÔÊé»­£¬É´´°ÄÚÐüÒìÊ½ÖéµÆ£¬ÍâÐüºþÉ«´²á££¬
-×óÓÒ´¹ÒøË¿¹³¡£á£Ö®ÄÚÐüÒ»Ð¡¶îÔ»¡°ÎÂÈáÏç¡±£¬Á÷ËÕÕÊ£¬Ô§Ñì±»£¬ºÏ»¶
-Õí£¬¾ãÒìÏã¿É°®¡£
+æ²¿çª—åˆ—ä¸€ç´«æª€å¦†å°ï¼Œä¸Šç”¨ç»£èŠ±çº¢å‘¢ç½©ã€‚ä¸€æ¦»åºŠï¼Œæ¦»å‰æ‚¬ä¸€ç«‹è½´ï¼Œç³»
+ç»˜ã€Šæ–‡å›ç§å¥”å›¾ã€‹ã€‚å·¦å³æ¥¹è”(lian)ç¬”æ³•ç”šç§€ã€‚ç å¸˜éšéšï¼Œé¦™é›¾æ²‰æ²‰ï¼Œ
+å…¶æœ€é›…è€…æœå¤–æŽ’ä¸€åºŠï¼Œå‘¨å›´çš†ä¹¦ç”»ï¼Œçº±çª—å†…æ‚¬å¼‚å¼ç ç¯ï¼Œå¤–æ‚¬æ¹–è‰²åºŠå¹”ï¼Œ
+å·¦å³åž‚é“¶ä¸é’©ã€‚å¹”ä¹‹å†…æ‚¬ä¸€å°é¢æ›°â€œæ¸©æŸ”ä¹¡â€ï¼Œæµè‹å¸ï¼Œé¸³é¸¯è¢«ï¼Œåˆæ¬¢
+æž•ï¼Œä¿±å¼‚é¦™å¯çˆ±ã€‚
 LONG    
 	);
 	set("exits",([ /* sizeof() == 3 */
 		"west" : __DIR__"waifang",
 	]));
 	set("item_desc" , ([
-		"lian" :"	ÏÉ       Àö\n"
-			"	²Å       ¾ä\n" 
-			"	¿¡       Ãî\n" 
-			"	ËÆ       ÓÚ\n" 
-			"	¶«       Ìì\n" 
-			"	º£       ÏÂ\n"
-			"	Çà       °×\n",
+		"lian" :"	ä»™       ä¸½\n"
+			"	æ‰       å¥\n" 
+			"	ä¿Š       å¦™\n" 
+			"	ä¼¼       äºŽ\n" 
+			"	ä¸œ       å¤©\n" 
+			"	æµ·       ä¸‹\n"
+			"	é’       ç™½\n",
 	]));
-	create_door("west", "É´³÷ÃÅ", "east" , DOOR_CLOSED); 
+	create_door("west", "çº±æ©±é—¨", "east" , DOOR_CLOSED); 
 	set("coor/x", 60);
 	set("coor/y", 30);
 	set("coor/z", 0);

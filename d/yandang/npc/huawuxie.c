@@ -3,14 +3,14 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("»¨ÎŞĞ°", ({ "hua wuxie","girl", "dizi" }));
+	set_name("èŠ±æ— é‚ª", ({ "hua wuxie","girl", "dizi" }));
 	set("age", 22);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "peaceful");
 	set("str", 34);
 	set("per", 26);
-       set("title","Ñãµ´Èı½£");
-       set("nickname","´ÈĞÄ½£");
+       set("title","é›è¡ä¸‰å‰‘");
+       set("nickname","æ…ˆå¿ƒå‰‘");
 set("combat_exp", 1000000);
 	set_skill("unarmed", 160);
 	set_skill("dodge", 160);
@@ -18,10 +18,10 @@ set("combat_exp", 1000000);
 	set_skill("sword", 160);
 	set_skill("force", 160);
 
-create_family("Ñãµ´ÅÉ",2,"µÜ×Ó");
+create_family("é›è¡æ´¾",2,"å¼Ÿå­");
     set("chat_chance", 7);
 	set("chat_msg", ({
-		"¸÷ÓĞËù³Õ,ÄÄÒ²½ĞÎŞ¿ÉÄÎºÎ!\n",
+		"å„æœ‰æ‰€ç—´,å“ªä¹Ÿå«æ— å¯å¥ˆä½•!\n",
 		(:random_move:)
 	}));
 	setup();

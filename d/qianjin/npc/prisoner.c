@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("��ħ", ({ "mo", "er mo" }) );
+        set_name("恶魔", ({ "mo", "er mo" }) );
         set("long",
-                "ר�ű���Ϊ潵Ķ�ħ\n");
+                "专门逼良为娼的恶魔\n");
 
         set("attitude", "aggrensive");
 	set("vendetta/authority", 1);

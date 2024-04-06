@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ɽ��");
+	set("short", "极顶山道");
 	set("long", @LONG
-��������ɽ����ɽ�������ɴ�أ�ɽ�������ʱ��Ʈ����Զ��ɽ��
-Ȯ�ͼ��䣬�����ɷ�֮�С����Ͼ��Ƿ���̨�ˡ�
+你走在嵩山极顶山道，青松翠柏，山风岚雾，时来飘荡。远望山下
+犬吠鸡啼，顿起仙凡之感。西上就是封禅台了。
 LONG );
 	set("exits", ([
 		"eastdown" : __DIR__"junjigate",

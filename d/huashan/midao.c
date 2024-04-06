@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ÃÜµÀ");
+	set("short","å¯†é“");
 	set("long", @LONG
-ÕâÀïÊÇÉ½¶´Èë¿Ú´¦µÄÒ»ÌõÃÜµÀ¡£É½¶´ÀïÃæÆáºÚÒ»ÍÅ£¬Äã¸ù±¾·Ö²»Çå¶«ÄÏÎ÷
-±±£¬Ö»ºÃºúÂÒÏ¹´³ÁË¡£
+è¿™é‡Œæ˜¯å±±æ´å…¥å£å¤„çš„ä¸€æ¡å¯†é“ã€‚å±±æ´é‡Œé¢æ¼†é»‘ä¸€å›¢ï¼Œä½ æ ¹æœ¬åˆ†ä¸æ¸…ä¸œå—è¥¿
+åŒ—ï¼Œåªå¥½èƒ¡ä¹±çé—¯äº†ã€‚
 LONG
 	);
 	set("exits", ([
@@ -22,7 +22,7 @@ LONG
          __DIR__"npc/cheng_by":1,
          __DIR__"npc/cong_bq":1,
        ]));
-	set("indoors", "»ªÉ½" );
+	set("indoors", "åå±±" );
 
         setup();
 	replace_program(ROOM);
@@ -33,5 +33,5 @@ int valid_leave(object me, string dir)
     if((objectp(present("feng buping", environment(me))) ||
         objectp(present("cheng buyou", environment(me))) ||
         objectp(present("cong buqi", environment(me)))))
-    return notify_fail("½£×ÚµÜ×Ó´óÉù¸ßºô£ºÄãÍµ¿úÎÒ½£×Ú½ûµØ£¬²»ÁôÏÂĞÔÃüĞİÏëÀë¿ª£¡\n");
+    return notify_fail("å‰‘å®—å¼Ÿå­å¤§å£°é«˜å‘¼ï¼šä½ å·çª¥æˆ‘å‰‘å®—ç¦åœ°ï¼Œä¸ç•™ä¸‹æ€§å‘½ä¼‘æƒ³ç¦»å¼€ï¼\n");
 }                              

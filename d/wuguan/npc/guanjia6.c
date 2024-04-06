@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-       set_name("��԰����", ({ "caiyuan guanshi", "guanshi" }) );
-       set("gender", "����" );
+       set_name("菜园管事", ({ "caiyuan guanshi", "guanshi" }) );
+       set("gender", "男性" );
        set("age", 50);
        set("long",
-               "����������ݵ�һ��С�ܼң�ר�ܲ�԰���С���£�\n");
+               "他是襄阳武馆的一个小管家，专管菜园里大小杂事！\n");
        set("combat_exp", 2500);
        set("attitude", "friendly");
               set("inquiry", ([
-             "��ˮ" : "�����������ʵʵ���ҽ�ˮ��û���ҵ����⣬������ȥ������",
+             "浇水" : "你就在这老老实实给我浇水，没有我的满意，你别想回去覆命！",
 	       ]) );
        setup();
 
@@ -31,19 +31,19 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
          
-       if(ob->query_temp("job_name")!="���˵�") return; 
+       if(ob->query_temp("job_name")!="浇菜地") return; 
 
        if (!( present("piao", ob)))
        {
         command("hmm "+ob->query("id"));
-        command("say �㻹û�칤�߰ɣ�ȥ����Ʒ��������Ҫ�� \n");
+        command("say 你还没领工具吧，去东物品房找老李要。 \n");
         return;
         }
 
-        if(!(ob->query_temp("job_name")!="���˵�"))   
+        if(!(ob->query_temp("job_name")!="浇菜地"))   
        {
         command("nod "+ob->query("id"));
        command("say " + RANK_D->query_respect(ob)
-				+ "��������⽽ˮ"HIR"(�� ˮ)"NOR"�ɡ�\n");
+				+ "，你就在这浇水"HIR"(浇 水)"NOR"吧。\n");
             }
 }

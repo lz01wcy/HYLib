@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ÒäÏãÍ¤");
+        set("short","å¿†é¦™äº­");
 	set("long",@LONG
-ÕâÊÇÒ»¸ö¾«ÇÉ±ðÖÂµÄÐ¡Í¤£¬ÉÏÊé¡°ÒäÏãÍ¤¡±Èý¸ö×Ö£¬ÇåÐãÍ¦°ÎÍðÈ»
-±ãÊÇ³Â¼ÒÂåµÄÊÖ±Ê¡£ÅÔ±ß¼¸ÐÐÐ¡×ÖÐ´µÄÊÇ£º¡°±ÌÒàÓÐÊ±Ãð£¬ÑªÒàÓÐÊ±Ãð£¬
-Ò»ÂÆÏã»êÎÞ¶Ï¾ø£¡ÊÇÒ®·ÇÒ®£¿»¯Îªºûµû¡£¡±³Â¼ÒÂåÐÄÖÐÏëÄîÏãÏã¹«Ö÷µÄ
-Ê±ºò£¬³£Ò»¸öÈËÀ´´Ë¶À×ø¡£
+è¿™æ˜¯ä¸€ä¸ªç²¾å·§åˆ«è‡´çš„å°äº­ï¼Œä¸Šä¹¦â€œå¿†é¦™äº­â€ä¸‰ä¸ªå­—ï¼Œæ¸…ç§€æŒºæ‹”å®›ç„¶
+ä¾¿æ˜¯é™ˆå®¶æ´›çš„æ‰‹ç¬”ã€‚æ—è¾¹å‡ è¡Œå°å­—å†™çš„æ˜¯ï¼šâ€œç¢§äº¦æœ‰æ—¶ç­ï¼Œè¡€äº¦æœ‰æ—¶ç­ï¼Œ
+ä¸€ç¼•é¦™é­‚æ— æ–­ç»ï¼æ˜¯è€¶éžè€¶ï¼ŸåŒ–ä¸ºè´è¶ã€‚â€é™ˆå®¶æ´›å¿ƒä¸­æƒ³å¿µé¦™é¦™å…¬ä¸»çš„
+æ—¶å€™ï¼Œå¸¸ä¸€ä¸ªäººæ¥æ­¤ç‹¬åã€‚
 LONG );
 	set("outdoors", "huijiang");
 	set("exits", ([
@@ -34,11 +34,11 @@ void init()
 {
 	object me = this_player();
 	tell_object(me,	"                         ");
-	tell_object(me,	YEL"©°©¤©¤©¤©´\n"NOR);
+	tell_object(me,	YEL"â”Œâ”€â”€â”€â”\n"NOR);
 	tell_object(me,	"                         ");
-	tell_object(me, YEL"©¦"NOR);
-	tell_object(me, HIG"ÒäÏãÍ¤"NOR);  
-	tell_object(me, YEL"©¦\n"NOR);
+	tell_object(me, YEL"â”‚"NOR);
+	tell_object(me, HIG"å¿†é¦™äº­"NOR);  
+	tell_object(me, YEL"â”‚\n"NOR);
 	tell_object(me,	"                         ");
-	tell_object(me,	YEL"©¸©¤©¤©¤©¼\n"NOR);
+	tell_object(me,	YEL"â””â”€â”€â”€â”˜\n"NOR);
 }

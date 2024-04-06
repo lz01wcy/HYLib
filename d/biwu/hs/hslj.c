@@ -2,17 +2,17 @@
 inherit ROOM;
 void create()
 {
-        set("short", HIG"»ªÉ½Ö®µß"NOR);
+        set("short", HIG"åŽå±±ä¹‹é¢ "NOR);
         set("long", @LONG
-   ÎäÁÖÖÐµÄÒ»¿éÊ¥µØ¡£µ±ÄêÖÐÔ­Îå¾øÔÚ´Ë´¦±ÈÎä¶¨Î»ÒÔ¾ö¶¨ÌìÏÂµÚÒ»,
-ÏÖÔÚÃ¿¸ôÒ»¶ÎÊ±¼ä£¬ÔÚ´Ë¾Í»á¾ÙÐÐÒ»´Î»ªÉ½ÂÛ½££¬ÒÔ¿¼Ñé½­ºþÐÂÐãµÄÄÜÁ¦
-¡£ÔÚ°ø±ßÓÐÒ»¿éÊ¯Í·£¬ÉÏÃæ¿ÌÓÐÒ»Ð©ÈËµÄÃû×Ö£º
+   æ­¦æž—ä¸­çš„ä¸€å—åœ£åœ°ã€‚å½“å¹´ä¸­åŽŸäº”ç»åœ¨æ­¤å¤„æ¯”æ­¦å®šä½ä»¥å†³å®šå¤©ä¸‹ç¬¬ä¸€,
+çŽ°åœ¨æ¯éš”ä¸€æ®µæ—¶é—´ï¼Œåœ¨æ­¤å°±ä¼šä¸¾è¡Œä¸€æ¬¡åŽå±±è®ºå‰‘ï¼Œä»¥è€ƒéªŒæ±Ÿæ¹–æ–°ç§€çš„èƒ½åŠ›
+ã€‚åœ¨å‚è¾¹æœ‰ä¸€å—çŸ³å¤´ï¼Œä¸Šé¢åˆ»æœ‰ä¸€äº›äººçš„åå­—ï¼š
 [33m
-                       ¶«Ð° Î÷¶¾£¬
-                       ÄÏµÛ ±±Ø¤¡£
-                        ÖÐÉñÍ¨              
+                       ä¸œé‚ª è¥¿æ¯’ï¼Œ
+                       å—å¸ åŒ—ä¸ã€‚
+                        ä¸­ç¥žé€š              
 [36m
-              Äã¿ÉÒÔÌôÕ½ÖÐÔ­Îå¾ø½øÐÐ»ªÉ½ÂÛ½£¡£(lunjian)
+              ä½ å¯ä»¥æŒ‘æˆ˜ä¸­åŽŸäº”ç»è¿›è¡ŒåŽå±±è®ºå‰‘ã€‚(lunjian)
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -60,26 +60,26 @@ int  do_levelup(string arg)
 	me = this_player();
 	id = me->query("id");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕýÔÚ»ªÉ½ÂÛ½£ÄØ!\n");
+        return notify_fail("ä½ æ­£åœ¨åŽå±±è®ºå‰‘å‘¢!\n");
 	if( me->is_busy() )
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ! \n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢! \n");
         if (!wizardp(me) && !me->query("guard/flag"))
-	return notify_fail("ÄãµÄ½­ºþ¾­Ñé»¹²»¹»£¬Ã»ÓÐ×Ê¸ñ»ªÉ½ÂÛ½££¡\n");
+	return notify_fail("ä½ çš„æ±Ÿæ¹–ç»éªŒè¿˜ä¸å¤Ÿï¼Œæ²¡æœ‰èµ„æ ¼åŽå±±è®ºå‰‘ï¼\n");
         if (!wizardp(me) && me->query("combat_exp")< 5000000)
-	return notify_fail("ÄãµÄÄÜÁ¦»¹²»¹»£¬Ã»ÓÐ×Ê¸ñ»ªÉ½ÂÛ½££¡\n");
+	return notify_fail("ä½ çš„èƒ½åŠ›è¿˜ä¸å¤Ÿï¼Œæ²¡æœ‰èµ„æ ¼åŽå±±è®ºå‰‘ï¼\n");
 	if(!wizardp(me) && (int)me->query_skill("jiuyin-zhengong", 1) )
-	return notify_fail("ÄãµÄÔÓÑ§Ì«¶à£¬»ªÉ½ÂÛ½£Ö»ÔÊÐíÄÜ´ú±íÒ»·½ÃÅÅÉµÄÐÂÐã²Î¼Ó£¡\n");
+	return notify_fail("ä½ çš„æ‚å­¦å¤ªå¤šï¼ŒåŽå±±è®ºå‰‘åªå…è®¸èƒ½ä»£è¡¨ä¸€æ–¹é—¨æ´¾çš„æ–°ç§€å‚åŠ ï¼\n");
 	if(!wizardp(me) && me->query("guard/ok"))
-	return notify_fail("ÄãÒÑ¾­Í¨¹ýÁË»ªÉ½ÂÛ½£ÁË£¡\n");
+	return notify_fail("ä½ å·²ç»é€šè¿‡äº†åŽå±±è®ºå‰‘äº†ï¼\n");
 
 	if(environment(me)->query("alrd")
 	 && !me->query_temp("hslj/1"))
-	return notify_fail("ÏÖÔÚ»¹²»µ½»ªÉ½ÂÛ½£µÄÊ±¼ä£¬»òÒÑ¾­¿ªÊ¼ÁË£¡\n");
+	return notify_fail("çŽ°åœ¨è¿˜ä¸åˆ°åŽå±±è®ºå‰‘çš„æ—¶é—´ï¼Œæˆ–å·²ç»å¼€å§‹äº†ï¼\n");
 environment(me)->set("alrd",1);
 if (!me->query_temp("hsljn"))
 {
 environment(me)->set("alrd",1);
-message("channel:chat", HIG"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÌôÕ½ÖÐÔ­Îå¾ø!"NOR"\n", users());
+message("channel:chat", HIG"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ æŒ‘æˆ˜ä¸­åŽŸäº”ç»!"NOR"\n", users());
 me->set_temp("hsljn",1);
 }
 me->start_busy(2);
@@ -91,7 +91,7 @@ fight->move(environment(me));
 if (fight->query("combat_exp") < me->query("combat_exp"))
 fight->set("combat_exp",me->query("combat_exp"));
 fight->kill_ob(me);
-message("channel:chat", CYN"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÌôÕ½¶«Ð°»ÆÒ©Ê¦!"NOR"\n", users());
+message("channel:chat", CYN"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ æŒ‘æˆ˜ä¸œé‚ªé»„è¯å¸ˆ!"NOR"\n", users());
 }
 else
 if (me->query_temp("hslj/1")
@@ -105,7 +105,7 @@ fight->move(environment(me));
 fight->kill_ob(me);
 if (fight->query("combat_exp") < me->query("combat_exp"))
 fight->set("combat_exp",me->query("combat_exp"));
-message("channel:chat", YEL"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÌôÕ½±±Ø¤ºéÆß¹«!"NOR"\n", users());
+message("channel:chat", YEL"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ æŒ‘æˆ˜åŒ—ä¸æ´ªä¸ƒå…¬!"NOR"\n", users());
 }
 else
 if (me->query_temp("hslj/2")
@@ -119,7 +119,7 @@ fight->move(environment(me));
 fight->kill_ob(me);
 if (fight->query("combat_exp") < me->query("combat_exp"))
 fight->set("combat_exp",me->query("combat_exp"));
-message("channel:chat", HIY"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÌôÕ½ÄÏµÛÒ»µÆ!"NOR"\n", users());
+message("channel:chat", HIY"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ æŒ‘æˆ˜å—å¸ä¸€ç¯!"NOR"\n", users());
 }
 else
 if (me->query_temp("hslj/3")
@@ -132,7 +132,7 @@ fight->move(environment(me));
 fight->kill_ob(me);
 if (fight->query("combat_exp") < me->query("combat_exp"))
 fight->set("combat_exp",me->query("combat_exp"));
-message("channel:chat", HIR"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÌôÕ½Î÷¶¾Å·Ñô·æ!"NOR"\n", users());
+message("channel:chat", HIR"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ æŒ‘æˆ˜è¥¿æ¯’æ¬§é˜³é”‹!"NOR"\n", users());
 }
 else
 if (!me->query_temp("hslj/5"))
@@ -142,13 +142,13 @@ fight->move(environment(me));
 fight->kill_ob(me);
 if (fight->query("combat_exp") < me->query("combat_exp"))
 fight->set("combat_exp",me->query("combat_exp"));
-message("channel:chat", HIB"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÌôÕ½ÖÐÉñÍ¨ÍõÖØÑô!"NOR"\n", users());
+message("channel:chat", HIB"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ æŒ‘æˆ˜ä¸­ç¥žé€šçŽ‹é‡é˜³!"NOR"\n", users());
 }
 else 
 {
 me->set("guard/ok",1);
 me->save();
-message("channel:chat", HIW"¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "ÔÚ»ªÉ½Ö®µßÍ¨¹ýÁËÖÐÔ­Îå¾øµÄ¿¼Ñé!"NOR"\n", users());
+message("channel:chat", HIW"ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "åœ¨åŽå±±ä¹‹é¢ é€šè¿‡äº†ä¸­åŽŸäº”ç»çš„è€ƒéªŒ!"NOR"\n", users());
 }
 return 1;
 }
@@ -156,22 +156,22 @@ return 1;
 int do_quit(string arg)
 {
 	if(arg=="roar") {
-        write(this_player()->query("name")+"£¬°²ÐÄµÄ»ªÉ½ÂÛ½£°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„åŽå±±è®ºå‰‘å§ï¼\n");
         return 1;
 	}
 
 	if(arg=="all") {
-        write(this_player()->query("name")+"£¬°²ÐÄµÄ»ªÉ½ÂÛ½£°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„åŽå±±è®ºå‰‘å§ï¼\n");
         return 1;
 	}
 	if(arg=="corpse") {
-        write(this_player()->query("name")+"£¬°²ÐÄµÄ»ªÉ½ÂÛ½£°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„åŽå±±è®ºå‰‘å§ï¼\n");
         return 1;
 }  
 }
 int do_quit2(string arg)
 {
-        write(this_player()->query("name")+"£¬°²ÐÄµÄ»ªÉ½ÂÛ½£°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„åŽå±±è®ºå‰‘å§ï¼\n");
         return 1;
 }
 
@@ -180,7 +180,7 @@ int valid_leave(object me, string dir)
 	object *inv,kicker;
 	int sizeinv,n,tt;
        if (  me->is_fighting() )
-        return notify_fail("Äã²»ÕýÔÚ±ÈÎäÂð£¡\n");
+        return notify_fail("ä½ ä¸æ­£åœ¨æ¯”æ­¦å—ï¼\n");
 	
         me->delete_temp("hsljn");
 	return ::valid_leave(me, dir);

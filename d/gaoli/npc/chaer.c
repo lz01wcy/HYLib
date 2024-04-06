@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
  
-// chaer.c ²è²©Ê¿
+// chaer.c èŒ¶åšå£«
 
 inherit NPC;
 
 void create()
 {
 //  reload("gaoli_cha");
-  set_name("²è²©Ê¿", ({"cha boshi", "cha", "boshi"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("èŒ¶åšå£«", ({"cha boshi", "cha", "boshi"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 3000);
   set("age", 38);
   set("per", 29);

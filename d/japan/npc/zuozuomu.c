@@ -2,8 +2,8 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-    set_name("×ó×óÄ¾",({"zuozuo mu","mu"}));
-        set("title","Éñ»§µ±ÆÌ");
+    set_name("å·¦å·¦æœ¨",({"zuozuo mu","mu"}));
+        set("title","ç¥žæˆ·å½“é“º");
    set("age",40);
    set_max_encumbrance(100000000);
    set("combat_exp",1200000);
@@ -34,6 +34,6 @@ void init()
 void unconcious()
 {
 
-        message_vision("\n$NËÀÁË¡£\n", this_object());
+        message_vision("\n$Næ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }

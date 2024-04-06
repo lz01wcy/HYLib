@@ -6,18 +6,18 @@ inherit BLADE;
 
 void create()
 {
-    set_name(HIW"ÄæÈĞµ¶"NOR, ({ "niren dao", "liren","dao" }) );
+    set_name(HIW"é€†åˆƒåˆ€"NOR, ({ "niren dao", "liren","dao" }) );
     set_weight(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-        	set("unit", "±ú");
+        	set("unit", "æŸ„");
         	set("value", 30000);
         	set("no_drop", "1");
         	set("material", "iron");
-        	set("long", "ÕâÊÇÒ»°Ñ·Çµ¶·Ç½£µÄÎäÊ¿µ¶£¬×îÆæ¹ÖµÄÊÇµ¶ÈĞÏòÀï¡£\n" );
-        	set("wield_msg", HIW "Ò»Õóº®¹âÉÁ¹ı$NÒÔ°Îµ¶Êõ½«ÄæÈĞµ¶°ÎÁË³öÀ´\n" NOR);
-        	set("unwield_msg", HIW "$N¿ìÈçÉÁµç°ã½«$nÊÕ»ØÇÊÄÚ¡£\n" NOR);
+        	set("long", "è¿™æ˜¯ä¸€æŠŠéåˆ€éå‰‘çš„æ­¦å£«åˆ€ï¼Œæœ€å¥‡æ€ªçš„æ˜¯åˆ€åˆƒå‘é‡Œã€‚\n" );
+        	set("wield_msg", HIW "ä¸€é˜µå¯’å…‰é—ªè¿‡$Nä»¥æ‹”åˆ€æœ¯å°†é€†åˆƒåˆ€æ‹”äº†å‡ºæ¥\n" NOR);
+        	set("unwield_msg", HIW "$Nå¿«å¦‚é—ªç”µèˆ¬å°†$næ”¶å›é˜å†…ã€‚\n" NOR);
 	}
     	init_blade(300);
 	setup();

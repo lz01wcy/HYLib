@@ -6,17 +6,17 @@ inherit STAFF;
 
 void create()
 {
-	set_name("ÅıÅÃ", ({ "pipa", "staff" }) );
+	set_name("çµç¶", ({ "pipa", "staff" }) );
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
-		set("long", "Ò»Ìõ×ö¹¤¾«ÃÀµÄÅıÅÃ¡£\n");
+		set("unit", "æ¡");
+		set("long", "ä¸€æ¡åšå·¥ç²¾ç¾çš„çµç¶ã€‚\n");
 		set("value", 1200);
 		set("material", "steel");
-		set("wield_msg", "$NÄÃ³öÒ»Ìõ¾«ÃÀµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€æ¡ç²¾ç¾çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 
 	init_staff(110);

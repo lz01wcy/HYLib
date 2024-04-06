@@ -3,15 +3,15 @@
 inherit ITEM;
 
 string* titles = ({
-//	"°ãÈô¾­",
-//	"Î¬Ä¦¾­",
-//	"·¨»ª¾­",
-//	"»ªÑÏ¾­",
-	"ÎŞÁ¿ÊÙ¾­",
-	"´ó°ãÄùÅÍ¾­",
-	"°¢º¬¾­",
-	"½ğ¸Õ¾­",
-	"²¨ÂŞÃÛ¶àĞÄ¾­",
+//	"èˆ¬è‹¥ç»",
+//	"ç»´æ‘©ç»",
+//	"æ³•åç»",
+//	"åä¸¥ç»",
+	"æ— é‡å¯¿ç»",
+	"å¤§èˆ¬æ¶…ç£ç»",
+	"é˜¿å«ç»",
+	"é‡‘åˆšç»",
+	"æ³¢ç½—èœœå¤šå¿ƒç»",
 });
 
 void create()
@@ -21,8 +21,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»²á·ğ¾­¡£\n");
+		set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€å†Œä½›ç»ã€‚\n");
 		set("value", 500);
 		set("material", "paper");
 		set("skill", ([
@@ -51,7 +51,7 @@ int do_tear(string arg)
 
 	if ( !arg )
 	{
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	}
 
 	me = this_player();
@@ -62,12 +62,12 @@ int do_tear(string arg)
 		where = environment(me);
 if (random(10)>8)
 {
-		message_vision("$NÇáÇáµØ°ÑÊéËºµô¡­¡­£¬Í»È»´ÓÊé·ìÖĞÆ®Âä³ö¼¸Ò³ÑòÆ¤Ö½¡£\n",
+		message_vision("$Nè½»è½»åœ°æŠŠä¹¦æ’•æ‰â€¦â€¦ï¼Œçªç„¶ä»ä¹¦ç¼ä¸­é£˜è½å‡ºå‡ é¡µç¾Šçš®çº¸ã€‚\n",
 			this_player());
 		bible->move(me);
 }
 else {
-		message_vision("$NÇáÇáµØ°ÑÊéËºµô¡­¡­£¬½á¹ûÊ²Ã´Ò²Ã»ÓĞÕÒµ½¡£\n",
+		message_vision("$Nè½»è½»åœ°æŠŠä¹¦æ’•æ‰â€¦â€¦ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡æœ‰æ‰¾åˆ°ã€‚\n",
 			this_player());
 }
 		destruct(this_object());

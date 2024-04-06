@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ÛÖÚ¼×", ({
+	set_name("è§‚ä¼—ç”²", ({
 		"jia"
 	}));
 	set("long",
-		"ËûÊÇÒ»Î»Ê®·Ö°²¾²µÄ¹ÛÖÚ£¬µ«·¢Æğ»ğÀ´È´ÓÖÈç´ËÀ÷º¦¡£\n"+
-                "ËûÁ½±Û´Ö×³£¬°òÀ«ÑüÔ²£¬ÊÖ³Ö±øÈĞ£¬ËÆºõÓĞÒ»ÉíÎäÒÕ¡£\n"
+		"ä»–æ˜¯ä¸€ä½ååˆ†å®‰é™çš„è§‚ä¼—ï¼Œä½†å‘èµ·ç«æ¥å´åˆå¦‚æ­¤å‰å®³ã€‚\n"+
+                "ä»–ä¸¤è‡‚ç²—å£®ï¼Œè†€é˜”è…°åœ†ï¼Œæ‰‹æŒå…µåˆƒï¼Œä¼¼ä¹æœ‰ä¸€èº«æ­¦è‰ºã€‚\n"
 	);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
@@ -66,12 +66,12 @@ void init()
 	&& !environment(ob)->query("no_fight"))
 	{
 		if( !ob->query_temp("warned") ) {
-			command("say ÄãÊÇË­£¬¾ÓÈ»¸ÒÀ´Õâ¶ùµ·ÂÒ£¬²»Ïë»îÁËÊÇ²»ÊÇ£¿£¡");
-			command("say ¿ì¸øÎÒ¹öÔ¶µã¶ù£¬±ğÈÃÎÒÔÙ¿´¼ûÄã£¬²»È»¼ûÄãÒ»´Î¾Í¿³ÄãÒ»´Î£¡");
+			command("say ä½ æ˜¯è°ï¼Œå±…ç„¶æ•¢æ¥è¿™å„¿æ£ä¹±ï¼Œä¸æƒ³æ´»äº†æ˜¯ä¸æ˜¯ï¼Ÿï¼");
+			command("say å¿«ç»™æˆ‘æ»šè¿œç‚¹å„¿ï¼Œåˆ«è®©æˆ‘å†çœ‹è§ä½ ï¼Œä¸ç„¶è§ä½ ä¸€æ¬¡å°±ç ä½ ä¸€æ¬¡ï¼");
 		}
 		else if( ob->query_temp("stay") < 10 ) ob->add_temp("stay", 1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬ÄÄÀïÌÓ£¿£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œå“ªé‡Œé€ƒï¼Ÿï¼\n");
 //			me->set_leader(ob);
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
@@ -86,7 +86,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "¹ÛÖÚ×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "è§‚ä¼—é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

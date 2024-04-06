@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create()
 {
-      set("short","����");
+      set("short","马厩");
       set("long",@LONG
-���ǿ͵������ǣ����깩Ӧ���ʲ��ϡ�������紾�ӣ������ǻ��
-��ǣ�����Ǻ����տ���������ι�����㣬��ϴˢ�ø�Ǭ������һֱ�ź�
-������·�����������µ���ľ���϶���һ����ľ��(paizi)��
-    �����жѷ������Ѳ��ϣ�������һ����ۡ�
+这是客店后的马厩，常年供应新鲜草料。扬州民风淳朴，马夫们会把
+马牵到马厩好生照看，将它们喂饱饮足，再洗刷得干乾净净，一直伺候到
+客人上路。马厩雨檐下的烂木柱上钉着一块破木牌(paizi)。
+    马厩中堆放著几堆草料，正中有一口泔槽。
 LONG);
       set("outdoors", "kunming");
       set("no_fight", "1");
@@ -21,9 +21,9 @@ LONG);
       ]));
       set("item_desc", ([
           "paizi": @TEXT
-������ֻҪ������ʮ�����������Ϳ��Թ͵�һƥ���ˡ�
+客人们只要给马夫十两白银的租金就可以雇到一匹马了。
 
-ǰ��      ���ݳ�:  jingzhou
+前往      荆州城:  jingzhou
 
 TEXT]));
       set("exits",([ /* sizeof() == 1 */

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¼äÆ½µØ");
+        set("short", "å±±é—´å¹³åœ°");
         set("long", @LONG
-É½¼äÆ½µØ£¬µØÉÏÊÇÄÛÂÌµÄÐ¡²Ý£¬ÖÜÎ§²¼ÁË¼¸¿ÃèëÊ÷£¬É½±ßÓÐÒ»ÑÛÇå
-Èª¡£²ÝµØÉÏÊ÷×Å¼¸¸ö¶¾½©Ê¬£¬ÏÔÊÇÐÇËÞµÜ×ÓÁ·¹¦ËùÓÃ¡£
+å±±é—´å¹³åœ°ï¼Œåœ°ä¸Šæ˜¯å«©ç»¿çš„å°è‰ï¼Œå‘¨å›´å¸ƒäº†å‡ æ£µæ¡¦æ ‘ï¼Œå±±è¾¹æœ‰ä¸€çœ¼æ¸…
+æ³‰ã€‚è‰åœ°ä¸Šæ ‘ç€å‡ ä¸ªæ¯’åƒµå°¸ï¼Œæ˜¾æ˜¯æ˜Ÿå®¿å¼Ÿå­ç»ƒåŠŸæ‰€ç”¨ã€‚
 LONG );
 
         set("resource/water", 1);

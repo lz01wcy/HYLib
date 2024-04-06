@@ -1,15 +1,15 @@
-// guchang.c ɹ�ȳ�
+// guchang.c 晒谷场
 // By Lgg,1998.10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɹ�ȳ�");
+        set("short", "晒谷场");
         set("long", @LONG
-�����Ǵ�ׯ���ĵ�ɹ�ȳ����ط����󣬲�������Ҳ���塢������
-�ң��ֵĹ���Ҳ��ɹ�ˡ����������ջ�ļ��ڣ��ȳ��ж����˹��ӣ�
-������Ůͯ�����ڳ������֣���ʱ������һ�������໥��ȥ��
+这里是村庄中心的晒谷场，地方不大，不过村里也就五、六户人
+家，种的谷子也够晒了。现在正是收获的季节，谷场中堆满了谷子，
+几个男女童子正在场中嬉闹，不时地扬起一捧谷子相互撒去。
 LONG
         );
         set("outdoors", "quanzhen");

@@ -7,8 +7,8 @@ inherit NPC;
 void create()
 {
 
-	set_name("��ū", ({ "jianu", "nu" }) );
-	set("long", "����һǧ��¥�ļ�ū��ר�ŵ��δ���֮��\n");
+	set_name("家奴", ({ "jianu", "nu" }) );
+	set("long", "这是一千金楼的家奴，专门担任打手之责。\n");
 	set("attitude", "friendly");
 
 	set("str", 40);
@@ -18,7 +18,7 @@ void create()
 	set("combat_exp", 8000);
 	set("chat_chance", 1);
 	set("chat_msg_combat", ({
-		"��ū�ȵ�����������Ұ����ò��ͷ��ˣ�\n",
+		"家奴喝道：敢在这撒野！活得不耐烦了！\n",
 		(: command("crazy") :),
 
 	}) );
@@ -43,8 +43,8 @@ int heal_up()
 void leave()
 {
 	message("vision",
-		HIW + name() + "�ݺ�����������һ�ڵ����´�û��ô���ˣ�\n\n"
-		+ name() + "�޺޵ض��˶�ţ�һ�������ˡ�\n" NOR, environment(),
+		HIW + name() + "狠狠往地下啐了一口道：下次没这么便宜！\n\n"
+		+ name() + "恨恨地跺了跺脚，一溜烟跑了。\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

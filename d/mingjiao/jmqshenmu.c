@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¾ŞÄ¾ÆìÉñÄ¾");
+	set("short", "å·¨æœ¨æ——ç¥æœ¨");
 	set("long", @LONG
 
-ÄãÑÛÇ°Ö»¼ûÒ»¿Ã´óÊ÷£¬¸ßÓĞ°ÙÕÉ£¬Ê®ÈËÒ²»·±§²»×¡¡£¾ŞÊ÷ÒĞ¾ø±Ú¶ø
-Éú£¬Ö¦Ò¶·±Ã¯£¬ÌÙÂÜ»·ÈÆ£¬¾¹È»ÎŞ·¨Ò»ÀÀÈ«Ã²¡£Ê÷ÉíÓĞÒ»´¦¹â»¬ÎŞ
-±È£¬ÊÇ³£ÓĞÈËÄ¦êı¶ø³É¡£
+ä½ çœ¼å‰åªè§ä¸€æ£µå¤§æ ‘ï¼Œé«˜æœ‰ç™¾ä¸ˆï¼Œåäººä¹Ÿç¯æŠ±ä¸ä½ã€‚å·¨æ ‘å€šç»å£è€Œ
+ç”Ÿï¼Œæå¶ç¹èŒ‚ï¼Œè—¤èç¯ç»•ï¼Œç«Ÿç„¶æ— æ³•ä¸€è§ˆå…¨è²Œã€‚æ ‘èº«æœ‰ä¸€å¤„å…‰æ»‘æ— 
+æ¯”ï¼Œæ˜¯å¸¸æœ‰äººæ‘©æŒ²è€Œæˆã€‚
 LONG );
 	set("exits", ([
 		"east" : __DIR__"jmqshulin6",
@@ -31,13 +31,13 @@ int do_climb()
 //        mapping mypar = (mapping) me->query("party");
         me->receive_damage("qi",15);
         me->receive_wound("qi",15);
-//        if(!mypar || mypar["party_name"] != HIG "Ã÷½Ì" NOR) 
-//             return notify_fail("ÄãÅ¬Á¦ÏëÅÀÉÏÈ¥, ¿ÉÊÇÊ÷ÉíÊµÔÚÌ«¹â»¬..\n"); 
+//        if(!mypar || mypar["party_name"] != HIG "æ˜æ•™" NOR) 
+//             return notify_fail("ä½ åŠªåŠ›æƒ³çˆ¬ä¸Šå», å¯æ˜¯æ ‘èº«å®åœ¨å¤ªå…‰æ»‘..\n"); 
         
-	message_vision(HIC"$NÈıÏÂÁ½ÏÂ¾ÍË³Ê÷ÉíÅÀÁËÉÏÈ¥...\n"NOR, me);
+	message_vision(HIC"$Nä¸‰ä¸‹ä¸¤ä¸‹å°±é¡ºæ ‘èº«çˆ¬äº†ä¸Šå»...\n"NOR, me);
 	call_out("kicking", 0, me);
-	tell_object(me, HIC"ÄãÅÀµ½ÁË¾ŞÄ¾Æì´óÌü¡£\n"NOR);
-	message("vision", HIC"Ö»¼û"+me->query("name")+"Ë³Ê÷ÉíÅÀÁËÉÏÀ´£¬¿¿ÔÚÇ½±ßÖ±´­Æø£¡\n"NOR, environment(me), me);
+	tell_object(me, HIC"ä½ çˆ¬åˆ°äº†å·¨æœ¨æ——å¤§å…ã€‚\n"NOR);
+	message("vision", HIC"åªè§"+me->query("name")+"é¡ºæ ‘èº«çˆ¬äº†ä¸Šæ¥ï¼Œé åœ¨å¢™è¾¹ç›´å–˜æ°”ï¼\n"NOR, environment(me), me);
 }
 void kicking(object me)
 {

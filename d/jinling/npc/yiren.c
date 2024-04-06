@@ -4,20 +4,20 @@ inherit F_VENDOR;
 
 void create()
 {
-	set_name("ÒÕÈË", ({ "yiren","yi","ren" }) );
+	set_name("è‰ºäºº", ({ "yiren","yi","ren" }) );
        set("str", 19);
 	set("per", 26);
 	set("age", 16);
 
 	set("long",
-		"Ò»¸öÖÐÄêÒÕÈË£¬ËûÔÚÂ·±ßÊÕÊ°¶«Î÷¡£\n"
-		"ËûºÃÏóÏÖÔÚ²»ÂôÒÕ¡£\n");
+		"ä¸€ä¸ªä¸­å¹´è‰ºäººï¼Œä»–åœ¨è·¯è¾¹æ”¶æ‹¾ä¸œè¥¿ã€‚\n"
+		"ä»–å¥½è±¡çŽ°åœ¨ä¸å–è‰ºã€‚\n");
 
 	set("chat_chance", 3);
 	set("chat_msg", ({
-		"ÒÕÈËËµµÀ£º×¬Ç®ÄÑÑ½¡£\n",
-		"ÒÕÈËÒ»µãµãÊý×Å°ü¸¤ÀïµÄÐÁ¿àÇ®¡£\n",
-		"ÒÕÈËËµµÀ£ºÎÒÒªÄÜ×ö¸öÉÌÈË¶àºÃÑ½¡£\n",
+		"è‰ºäººè¯´é“ï¼šèµšé’±éš¾å‘€ã€‚\n",
+		"è‰ºäººä¸€ç‚¹ç‚¹æ•°ç€åŒ…è¢±é‡Œçš„è¾›è‹¦é’±ã€‚\n",
+		"è‰ºäººè¯´é“ï¼šæˆ‘è¦èƒ½åšä¸ªå•†äººå¤šå¥½å‘€ã€‚\n",
 	}));
 	setup();
 	carry_object(__DIR__"obj/linen")->wear();

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","���");
+  set ("short","渔村");
   set ("long", @LONG
-�����Ǹ���壬���������ս�ң������Ѿ�û����ס�ˣ�һƬ������
-����ɢ�ҵط���һЩ����������辵ȶ�����������é��ԶԶ���������
+这里是个渔村，由于连年的战乱，这里已经没有人住了，一片荒凉。
+地上散乱地放着一些破鱼网、鱼杈等东西。几个破茅屋远远的立在那里。
 LONG);
 
   set("exits", ([ 

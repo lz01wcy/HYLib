@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("êóÅ£", ({ "mao niu","niu" }) );
-   set("race", "Ò°ÊÞ");
+   set_name("ç‰¦ç‰›", ({ "mao niu","niu" }) );
+   set("race", "é‡Žå…½");
    set("age", 12);
-   set("long", "Ò»Í··¢Å­µÄ¹«Å£,Á½¸ö½ÇÉÏÎ¢Î¢ÉÁ×Å½ð¹â¡£\n");
+   set("long", "ä¸€å¤´å‘æ€’çš„å…¬ç‰›,ä¸¤ä¸ªè§’ä¸Šå¾®å¾®é—ªç€é‡‘å…‰ã€‚\n");
    
    set("str", 25);
    set("cor", 24);
@@ -13,7 +13,7 @@ void create()
    set("kee",400);
    set("max_kee",400);
 
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Ç°Ìã","ºóÌã" "Å£½Ç"}) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´", "å‰è¹„","åŽè¹„" "ç‰›è§’"}) );
    set("verbs", ({ "bite", "claw" }) );
 
    set_temp("apply/attack", 15);
@@ -21,8 +21,8 @@ void create()
    
    set("chat_chance",5);
    set("chat_msg",({
-     "êóÅ£µÉ×ÅÍë´óµÄÑÛ¾¦,×ÐÏ¸ÑÐ¾¿×ÅÄã.\n",
-     "êóÅ£ÕÅ×ì¶ÔÌì½ÐÁËÁ½Éù,ÄãÈ´Ã»Ìýµ½Ò»µãÉùÒô.\n",
+     "ç‰¦ç‰›çžªç€ç¢—å¤§çš„çœ¼ç›,ä»”ç»†ç ”ç©¶ç€ä½ .\n",
+     "ç‰¦ç‰›å¼ å˜´å¯¹å¤©å«äº†ä¸¤å£°,ä½ å´æ²¡å¬åˆ°ä¸€ç‚¹å£°éŸ³.\n",
      }));
 
    setup();
@@ -33,7 +33,7 @@ void die()
       object corpse;
          if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-  message_vision("$NÅ­ºßÒ»Éù,Ò»Í·×²ÏòÉ½±Ú,²»¼ûÁË.\n",this_object());
+  message_vision("$Næ€’å“¼ä¸€å£°,ä¸€å¤´æ’žå‘å±±å£,ä¸è§äº†.\n",this_object());
   new(__DIR__"obj/niujiao.c")->move(environment(this_object()));
   destruct(this_object());
   return;

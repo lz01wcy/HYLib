@@ -5,15 +5,15 @@ inherit SHIELD;
  
 void create()
 {
-	set_name(HIR"»¢Æ¤¶Ü"NOR, ({ "hupi shield", "shield", "dun" }) );
+	set_name(HIR"è™çš®ç›¾"NOR, ({ "hupi shield", "shield", "dun" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	
 else {
 		set("material", "leather");
-		set("unit", "Ãæ");
-		set("long", "ÕâÊÇÒ»ÃæÓÃ»¢Æ¤·ìÖÆ¶ø³ÉµÄ¶Ü¡£\n");    set("value", 1000000);
+		set("unit", "é¢");
+		set("long", "è¿™æ˜¯ä¸€é¢ç”¨è™çš®ç¼åˆ¶è€Œæˆçš„ç›¾ã€‚\n");    set("value", 1000000);
 		set("armor_prop/armor", 80);
 		}
 	setup();

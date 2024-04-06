@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-	set("short",HIW"����"NOR);
+	set("short",HIW"客厅"NOR);
 	set("long",@long
-���߽����СС������, �����������һ����̴ľ�輸�ͼ�����������
-�ӣ���̴ľ�Ĳ輸�ϰڷ��Ų���ͼ�ֻ���񱭣�ר���������á����̲�ס��
-���������ϣ���ƣ�������ĵõ���ֵ���Ϣ��
+你走进这间小小的厅室, 看到里面放着一张紫檀木茶几和几张湘妃竹椅
+子，紫檀木的茶几上摆放着茶壶和几只白玉杯，专供客人饮用。你忍不住想
+坐在竹椅上，让疲惫的身心得到充分的休息。
 long);
          set("exits",([
              "east" : __DIR__"cl4-4",

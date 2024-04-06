@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Ôª·Ş", ({ "yuan fen", "fen", "yuan" }));
-	set("long","ËûÊÇÒ»Î»ÖĞµÈ¸ö×ÓµÄºÍÉĞ£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓĞÉñ¡£\n");
-	set("nickname", "ÂŞººÔº½µÁúÂŞºº");
-	set("gender", "ÄĞĞÔ");
+	set_name("å…ƒå¿¿", ({ "yuan fen", "fen", "yuan" }));
+	set("long","ä»–æ˜¯ä¸€ä½ä¸­ç­‰ä¸ªå­çš„å’Œå°šï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥ã€‚\n");
+	set("nickname", "ç½—æ±‰é™¢é™é¾™ç½—æ±‰");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -44,7 +44,7 @@ void create()
 	map_skill("parry", "fengyun-shou");
 	prepare_skill("hand", "fengyun-shou");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 20, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 20, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/shaolin/obj/hui-cloth")->wear();

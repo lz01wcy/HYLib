@@ -3,13 +3,13 @@ inherit ITEM;
 #include <ansi.h> 
 void create()
 {
-    set_name(RED"Ğ±ÑôÒĞ´äºìĞäÕĞ"NOR, ({ "food" }) );
+    set_name(RED"æ–œé˜³å€šç¿ çº¢è¢–æ‹›"NOR, ({ "food" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("long", "Ò»ÅÌ¾«ĞÄÅëÖÆµÄÃÀÎ¶¼ÑëÈ£¬ÏãÆøËÄÒç£¬ºì»¨ÂÌÒ¶°éĞ±Ñô£¬Ê®·Ö¾«ÖÂÓÕÈË¡£\n");
-                set("unit", "ÅÌ");
+        set("long", "ä¸€ç›˜ç²¾å¿ƒçƒ¹åˆ¶çš„ç¾å‘³ä½³è‚´ï¼Œé¦™æ°”å››æº¢ï¼Œçº¢èŠ±ç»¿å¶ä¼´æ–œé˜³ï¼Œååˆ†ç²¾è‡´è¯±äººã€‚\n");
+                set("unit", "ç›˜");
                 set("value", 2000);
                 set("food_remaining", 10);
                 set("food_supply", 50);
@@ -19,8 +19,8 @@ void create()
 }
 int finish_eat()
 {
-        set_name("ÅÌ×Ó", ({"panzi"}));
+        set_name("ç›˜å­", ({"panzi"}));
         set("value",200);
-        set("long", "Ò»Ö»À¶µ×¶ùµñ»¨µÄ¾°Ì©À¶´óÅÌ×Ó¡£\n");
+        set("long", "ä¸€åªè“åº•å„¿é›•èŠ±çš„æ™¯æ³°è“å¤§ç›˜å­ã€‚\n");
         return 1;
 } 

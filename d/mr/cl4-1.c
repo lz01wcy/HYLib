@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIW"����"NOR);
+         set("short",HIW"长廊"NOR);
          set("long", @long
-����һ�����ȣ����滭�Ž��������Ĺ��ʻ�����ɫ���������ɫ������
-�ߣ�ʹ���㲻�ɵöԽ������������Ĵ��쾪̾���ѡ��ڳ������棬Ѿ�ߡ��Ҷ�
-��������ȥ����æ���Լ������飬������һ�㵡����������һ��Сͤ�ӡ�
+这是一条长廊，上面画着江南秀美的工笔画。绿色的柱子朱红色的琉璃
+瓦，使得你不由得对江南艺术工匠的创造惊叹不已。在长廊里面，丫鬟、家丁
+们走来走去，都忙着自己的事情，不敢有一点怠慢。东面是一座小亭子。
 long);
          set("exits", ([
              "eastup" : __DIR__"tingzi",

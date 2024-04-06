@@ -7,13 +7,13 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIW "ÎåÁ¸Òº" NOR, ({ "wly","wine" }) );
+        set_name(HIW "äº”ç²®æ¶²" NOR, ({ "wly","wine" }) );
         set_weight(10);
         if( clonep() )
              set_default_object(__FILE__);
         else {
-        set("long", "Ò»±­ÎåÁ¸Òº¡£\n");
-                set("unit", "±­");
+        set("long", "ä¸€æ¯äº”ç²®æ¶²ã€‚\n");
+                set("unit", "æ¯");
                 set("value", 0);
                 set("max_liquid", 20);
         }
@@ -21,7 +21,7 @@ void create()
         // in each cloned copy.
         set("liquid", ([
                 "type": "alcohol",
-                "name": "ÎåÁ¸Òº",
+                "name": "äº”ç²®æ¶²",
                 "remaining": 20,
                 "drunk_apply": 5,
         ]) );

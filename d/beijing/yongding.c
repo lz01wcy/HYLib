@@ -7,12 +7,12 @@ string look_gaoshi();
 
 void create()
 {
-	set("short", "������");
+	set("short", "永定门");
 	set("long", @LONG
-�����������ţ��������Ϸ����š������š��������֣���ǽ������
-���Źٸ���ʾ (gaoshi)��ÿ�춼�������˴������ǳ��뾩�ǣ��������
-�ٱ��̲�ø�����ϸ�� һ����ֱ�Ĵ�����ϱ��������졣�ϱߵ������
-���������������������ͨ�������ġ�
+这里是永定门，城门正上方刻着“永定门”三个大字，城墙上贴着
+几张官府告示 (gaoshi)。每天都有许多人从这里是出入京城，正因如此
+官兵盘查得格外仔细。 一条笔直的大道向南北两边延伸。南边的驿道上
+人来车往，尘土飞扬。北边通往城中心。
 LONG );
         set("outdoors", "beijing");
 	set("item_desc", ([
@@ -35,6 +35,6 @@ LONG );
 
 string look_gaoshi()
 {
-	return "������ػ�һ�ڷ���! \n�ٱ�һ�ˣ��ͽ�ʮ��;\n"
-          "׽��һ�ˣ��ͽ������\n֪�鲻���ߣ���ն!\n���ݷ�\n";
+	return "辑拿天地会一众反贼! \n举报一人，赏金十两;\n"
+          "捉拿一人，赏金百两。\n知情不报者，立斩!\n鳌拜发\n";
 }

@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-         set_name("·â²»Æ½",({"feng buping", "feng", "buping" }));
-        set("title","»ªÉ½ÅÉµÚÊ®Èý´ú½£×ÚÕÆÃÅµÜ×Ó");
-        set("nickname","¿ñ·ç¿ì½£");
-        set("long", "Õâ¾ÍÊÇÔÚ½­ºþÖÐÄ¬Ä¬ÎÞÎÅ£¬µ«ÉíÊÖ×ÅÊµ²»·²µÄ»ªÉ½½£×Ú´«ÈË¡£\n");
+         set_name("å°ä¸å¹³",({"feng buping", "feng", "buping" }));
+        set("title","åŽå±±æ´¾ç¬¬åä¸‰ä»£å‰‘å®—æŽŒé—¨å¼Ÿå­");
+        set("nickname","ç‹‚é£Žå¿«å‰‘");
+        set("long", "è¿™å°±æ˜¯åœ¨æ±Ÿæ¹–ä¸­é»˜é»˜æ— é—»ï¼Œä½†èº«æ‰‹ç€å®žä¸å‡¡çš„åŽå±±å‰‘å®—ä¼ äººã€‚\n");
         set("age", 40);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -53,7 +53,7 @@ set_skill("huashan-neigong",  200);
         map_skill("parry","huashan-jianfa");
         map_skill("strike","hunyuan-zhang");
         prepare_skill("strike","hunyuan-zhang");
-        create_family("»ªÉ½ÅÉ",13,"µÜ×Ó");
+        create_family("åŽå±±æ´¾",13,"å¼Ÿå­");
 
         setup();
 	 carry_object("clone/weapon/gangjian")->wield();
@@ -70,7 +70,7 @@ void init()
 
         if (interactive(ob) && !environment(ob)->query("no_fight"))
         {
-                       command("say ¸Ò½øÈëÎÒ½£×Ú½ûµØ,Ö»ÓÐËÀ£¡£¡£¡\n");
+                       command("say æ•¢è¿›å…¥æˆ‘å‰‘å®—ç¦åœ°,åªæœ‰æ­»ï¼ï¼ï¼\n");
                        me->set_leader(ob);
                        remove_call_out("kill_ob");
                        call_out("kill_ob", 1, ob); 

@@ -1,4 +1,4 @@
-// tengjia.c ÌÙ¼×
+// tengjia.c è—¤ç”²
 //
 
 #include <armor.h>
@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÌÙ¼×", ({ "teng jia" }) );
+        set_name("è—¤ç”²", ({ "teng jia" }) );
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", "ÓÃÌÙ±àÖÆµÄ¼×£¬¿ÉÒÔÈ¡µ½Ò»Ğ©·À»¤×÷ÓÃ¡£\n");
+                set("unit", "ä»¶");
+                set("long", "ç”¨è—¤ç¼–åˆ¶çš„ç”²ï¼Œå¯ä»¥å–åˆ°ä¸€äº›é˜²æŠ¤ä½œç”¨ã€‚\n");
                 set("material", "steel");
 		set("value", 2000);
                 set("armor_prop/armor", 80);

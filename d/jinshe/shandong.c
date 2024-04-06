@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´ž");
         set("long", @LONG
-¶ÔÃæÊ¯±ÚÉÏÐ±ÒÐ×ÅÒ»¸±÷¼÷Ã¹Ç£¬ÉíÉÏÒÂ·þÒÑÀÃÁËÆß°Ë³É£¬ÄÇ÷¼÷Ã
-¹ÇÍðÈ»ÉÐ¿É¼ûµ½ÊÇ¸öÈËÐÎ¡£¼ûÊ¯ÊÒÖÐ±ðÎÞÆäËû¿É²ÀÊÂÎï¡£÷¼÷ÃÇ°Ãæºá
-ÆßÊú°ËµÄ·Å×ÅÊ®¼¸°Ñ½ðÉß×¶£¬Ê¯±ÚÉÏÓÐ¼¸°Ù·ùÓÃÀûÆ÷¿Ì³ÉµÄ¼òÂªÈËÐÎ
-(map) ¡£Í¼ÐÎ¾¡´¦£¬Ê¯±ÚÉÏ³öÏÖÁËÊ®Áù¸ö×Ö(word)£¬Ò²ÊÇÒÔÀûÆ÷Ëù¿Ì¡£
-Ê®Áù×ÖÖ®ÅÔ£¬ÓÐ¸ö½£±úÍ¹³öÔÚÊ¯±ÚÖ®ÉÏ£¬ËÆÊÇÒ»°Ñ½£²åÈëÁËÊ¯±Ú£¬Ö±
-ÖÁ½£±ú¡£
+å¯¹é¢çŸ³å£ä¸Šæ–œå€šç€ä¸€å‰¯éª·é«…éª¨ï¼Œèº«ä¸Šè¡£æœå·²çƒ‚äº†ä¸ƒå…«æˆï¼Œé‚£éª·é«…
+éª¨å®›ç„¶å°šå¯è§åˆ°æ˜¯ä¸ªäººå½¢ã€‚è§çŸ³å®¤ä¸­åˆ«æ— å…¶ä»–å¯æ€–äº‹ç‰©ã€‚éª·é«…å‰é¢æ¨ª
+ä¸ƒç«–å…«çš„æ”¾ç€åå‡ æŠŠé‡‘è›‡é”¥ï¼ŒçŸ³å£ä¸Šæœ‰å‡ ç™¾å¹…ç”¨åˆ©å™¨åˆ»æˆçš„ç®€é™‹äººå½¢
+(map) ã€‚å›¾å½¢å°½å¤„ï¼ŒçŸ³å£ä¸Šå‡ºçŽ°äº†åå…­ä¸ªå­—(word)ï¼Œä¹Ÿæ˜¯ä»¥åˆ©å™¨æ‰€åˆ»ã€‚
+åå…­å­—ä¹‹æ—ï¼Œæœ‰ä¸ªå‰‘æŸ„å‡¸å‡ºåœ¨çŸ³å£ä¹‹ä¸Šï¼Œä¼¼æ˜¯ä¸€æŠŠå‰‘æ’å…¥äº†çŸ³å£ï¼Œç›´
+è‡³å‰‘æŸ„ã€‚
 LONG );
         set("outdoors", "jinshe");
         set("sword_count", 1);
@@ -23,8 +23,8 @@ LONG );
             __DIR__"obj/skeleton" : 1,
         ]));
         set("item_desc", ([
-            "map"  : "Ê¯±ÚÃ¿¸öÈËÐÎ¾ù²»ÏàÍ¬£¬¾ÙÊÖÌß×ã£¬ËÆÔÚÁ·Îä¡£\n",
-            "word" : "¡°ÖØ±¦ÃØÊõ£¬¸¶ÓëÓÐÔµ£¬ÈëÎÒÃÅÀ´£¬Óö»öÄªÔ¹¡£¡±\n",
+            "map"  : "çŸ³å£æ¯ä¸ªäººå½¢å‡ä¸ç›¸åŒï¼Œä¸¾æ‰‹è¸¢è¶³ï¼Œä¼¼åœ¨ç»ƒæ­¦ã€‚\n",
+            "word" : "â€œé‡å®ç§˜æœ¯ï¼Œä»˜ä¸Žæœ‰ç¼˜ï¼Œå…¥æˆ‘é—¨æ¥ï¼Œé‡ç¥¸èŽ«æ€¨ã€‚â€\n",
         ]) );
         set("no_clean_up", 0);
         setup();
@@ -39,18 +39,18 @@ int do_pull(string arg)
         object ob, me= this_player();
 	if (arg != "sword") return 0;
 	if (query("sword_count") < 1)
-		return notify_fail("½£ºÃÏóÒÑ¾­±»ÈË°Î×ßÁË¡£\n");
+		return notify_fail("å‰‘å¥½è±¡å·²ç»è¢«äººæ‹”èµ°äº†ã€‚\n");
         if (this_player()->query("neili") < 1000)
         {
                 message_vision(
-"$NºÃÆæÐÄÆð£¬ÎÕ×¡½£±úÏòÍâÒ»°Î£¬È´ÊÇÎÆË¿²»¶¯£¬¾¹ËÆÖýÔÚÊ¯ÀïÒ»°ã¡£\n", me);
+"$Nå¥½å¥‡å¿ƒèµ·ï¼Œæ¡ä½å‰‘æŸ„å‘å¤–ä¸€æ‹”ï¼Œå´æ˜¯çº¹ä¸ä¸åŠ¨ï¼Œç«Ÿä¼¼é“¸åœ¨çŸ³é‡Œä¸€èˆ¬ã€‚\n", me);
                 me->set("neili", 10);
                 return 0;
         }
         ob = new(__DIR__"obj/jinshe-jian");
         ob->move(me);
                 message_vision(
-"$N½ô½ôÎÕ×¡½£±ú£¬Ç±ÔËÄÚÁ¦£¬àÍµÄÒ»ÉùÏì£¬°ÎÁË³öÀ´£¬½£±úÏÂ¹ûÈ»Á¬ÓÐ½£Éí¡£\n", me);
+"$Nç´§ç´§æ¡ä½å‰‘æŸ„ï¼Œæ½œè¿å†…åŠ›ï¼Œå—¤çš„ä¸€å£°å“ï¼Œæ‹”äº†å‡ºæ¥ï¼Œå‰‘æŸ„ä¸‹æžœç„¶è¿žæœ‰å‰‘èº«ã€‚\n", me);
         me->add("neili",-1000);
 	add("sword_count", -1);
         return 1;
@@ -67,21 +67,21 @@ int do_think(string arg)
 
         if ((c_skill*c_skill*c_skill/10)> c_exp)
         {
-                message_vision("$NµÄÊµÕ½¾­Ñé²»×ã£¬ÎÞ·¨ÁìÎòÊ¯±ÚÄÚÈÝ¡£\n",ob);
+                message_vision("$Nçš„å®žæˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†æ‚ŸçŸ³å£å†…å®¹ã€‚\n",ob);
                 return 1; 
         }
         if (ob->query("jing")<20)
         {
-                message_vision("$NÌ«ÀÛÁË£¬ÏÖÔÚÎÞ·¨ÁìÎòÊ¯±ÚÄÚÈÝ¡£\n",ob);
+                message_vision("$Nå¤ªç´¯äº†ï¼ŒçŽ°åœ¨æ— æ³•é¢†æ‚ŸçŸ³å£å†…å®¹ã€‚\n",ob);
                 return 1; 
         }
         if (c_skill> 50)
         {
-                message_vision("$N¾õµÃÊ¯±ÚÄÚÈÝÌ«·ôÇ³ÁË¡£\n",ob);
+                message_vision("$Nè§‰å¾—çŸ³å£å†…å®¹å¤ªè‚¤æµ…äº†ã€‚\n",ob);
                 return 1; 
         }
 
-        message_vision("$NÃæ¶Ô×ÅÊ¯±Ú¾²Ë¼Á¼¾Ã£¬¶Ô½ðÉß½£·¨ËÆÓÐËùÎò¡£\n",ob);
+        message_vision("$Né¢å¯¹ç€çŸ³å£é™æ€è‰¯ä¹…ï¼Œå¯¹é‡‘è›‡å‰‘æ³•ä¼¼æœ‰æ‰€æ‚Ÿã€‚\n",ob);
         ob->improve_skill("jinshe-jian", random(10*ob->query("int")));
         ob->receive_damage("jing", 5);
         return 1;

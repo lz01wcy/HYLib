@@ -4,16 +4,16 @@ int check_other(object me);
 int zero_skill(object me, string arg); 
 void create()
 {
-        set_name("Ğ¡µû",({"xiaodie","xiao die"}));
+        set_name("å°è¶",({"xiaodie","xiao die"}));
 //      set("title",HIR""NOR);
         set("long","
-Ğ¡µûÕâÅ®º¢×ÓºÜÌØ±ğ¡£Ëı³¤µÃºÜÃÀ£¬ÃÀ¼«ÁË£¬ÃÀÀöµÄÅ®º¢×ÓÍ¨³£¶¼ÖªµÀ×ÔÒÑÓĞ
-¶àÃ´ÃÀ£¬¶øÇÒËæÊ±²»»áÍü¼ÇÌáĞÑ±ğÈËÕâÒ»µã¡£Ğ¡µûÈ´²»Í¬£¬ËıºÃÏñ¶Ô×Ô¼ºÊÇÃÀ
-ÊÇ³ó¶¼ÍêÈ«²»ÔÚºõ¡£ËıÔÚÈËÈºÖĞ£¬Ò²ÔÚĞ¦£¬¿ÉÊÇËıĞ¦µÃÒ²ºÍ±ğÈËÍêÈ«²»Í¬¡£ÎŞ
-ÂÛºÍ¶àÉÙÈËÔÚÒ»Æğ£¬Ëı¶¼ºÃÏñÊÇÒ»¸öÈËÕ¾ÔÚº®Àä»ÄÁ¹µÄ¿õÒ°ÖĞ¡£¿´×ÅËı£¬ÄãÈÌ
-²»×¡ÏëÓµ±§Ëı£¬Á¯°®Ëı¡£\n");
+å°è¶è¿™å¥³å­©å­å¾ˆç‰¹åˆ«ã€‚å¥¹é•¿å¾—å¾ˆç¾ï¼Œç¾æäº†ï¼Œç¾ä¸½çš„å¥³å­©å­é€šå¸¸éƒ½çŸ¥é“è‡ªå·²æœ‰
+å¤šä¹ˆç¾ï¼Œè€Œä¸”éšæ—¶ä¸ä¼šå¿˜è®°æé†’åˆ«äººè¿™ä¸€ç‚¹ã€‚å°è¶å´ä¸åŒï¼Œå¥¹å¥½åƒå¯¹è‡ªå·±æ˜¯ç¾
+æ˜¯ä¸‘éƒ½å®Œå…¨ä¸åœ¨ä¹ã€‚å¥¹åœ¨äººç¾¤ä¸­ï¼Œä¹Ÿåœ¨ç¬‘ï¼Œå¯æ˜¯å¥¹ç¬‘å¾—ä¹Ÿå’Œåˆ«äººå®Œå…¨ä¸åŒã€‚æ— 
+è®ºå’Œå¤šå°‘äººåœ¨ä¸€èµ·ï¼Œå¥¹éƒ½å¥½åƒæ˜¯ä¸€ä¸ªäººç«™åœ¨å¯’å†·è’å‡‰çš„æ—·é‡ä¸­ã€‚çœ‹ç€å¥¹ï¼Œä½ å¿
+ä¸ä½æƒ³æ‹¥æŠ±å¥¹ï¼Œæ€œçˆ±å¥¹ã€‚\n");
         
-        set("gender","Å®ĞÔ");
+        set("gender","å¥³æ€§");
                 
         set("age",20);          
         set("int",52);
@@ -26,15 +26,15 @@ void create()
         
         set("skill_public",1); 
         set("inquiry", ([
-                "Ñ§¹¦·ò":       CYN"àÅ£¬Äã¿ÉÒÔ½ÌÎÒĞ©¹¦·ò£¨teach xiaodie ¼¼ÄÜÃû³Æ£©£¬
-ÄãÒ²¿ÉÒÔÈÃÎÒ·ÅÆúÕâĞ©¹¦·ò£¨teach xiaodie abandon£©¡£\n"NOR,
+                "å­¦åŠŸå¤«":       CYN"å—¯ï¼Œä½ å¯ä»¥æ•™æˆ‘äº›åŠŸå¤«ï¼ˆteach xiaodie æŠ€èƒ½åç§°ï¼‰ï¼Œ
+ä½ ä¹Ÿå¯ä»¥è®©æˆ‘æ”¾å¼ƒè¿™äº›åŠŸå¤«ï¼ˆteach xiaodie abandonï¼‰ã€‚\n"NOR,
         ]));
         
         set("chat_chance",1);
         set("chat_msg",({
-                "Ğ¡µûÑÛ¾¦Àï¹â²É¸üÃ÷ÁÁµÀ£º¡°ÄãÕæµÄÔÚÁ÷ĞÇÂÓ¹ıµÄÊ±ºò£¬¼°Ê±ĞíÁË¸öÔ¸£¿¡±\n",
-                "Ğ¡µûÇáÇáµÀ¡°Ò»¸öÈËÈôÁ¬»î¶¼Ã»ÓĞ»î¹ı£¬ÔõÃ´ÄÜËÀ£¿¡±\n",
-                "Ğ¡µûËµ£ºÅ®º¢×ÓÑ§¹¦·ò²»Ì«ºÃ£¬²»¹ı£¬Èç¹ûÄãÒ»¶¨Ïë½ÌÎÒµÄ»°£¬ÎÒÒ²¿ÉÒÔÑ§Ò»Ğ©¡£\n",
+                "å°è¶çœ¼ç›é‡Œå…‰é‡‡æ›´æ˜äº®é“ï¼šâ€œä½ çœŸçš„åœ¨æµæ˜Ÿæ è¿‡çš„æ—¶å€™ï¼ŒåŠæ—¶è®¸äº†ä¸ªæ„¿ï¼Ÿâ€\n",
+                "å°è¶è½»è½»é“â€œä¸€ä¸ªäººè‹¥è¿æ´»éƒ½æ²¡æœ‰æ´»è¿‡ï¼Œæ€ä¹ˆèƒ½æ­»ï¼Ÿâ€\n",
+                "å°è¶è¯´ï¼šå¥³å­©å­å­¦åŠŸå¤«ä¸å¤ªå¥½ï¼Œä¸è¿‡ï¼Œå¦‚æœä½ ä¸€å®šæƒ³æ•™æˆ‘çš„è¯ï¼Œæˆ‘ä¹Ÿå¯ä»¥å­¦ä¸€äº›ã€‚\n",
         }) );                   
         
         setup();
@@ -47,8 +47,8 @@ void init() {
 }  
 int recognize_apprentice(object ob)
 {
-        if (!this_player()->query("zangbei/ĞÇĞÇÂ¥")) {
-                message_vision("Ğ¡µû¾ªÑÈµØËµ£º¡°ÄãÊÇÔõÃ´½øÀ´µÄ£¿¿ìÀë¿ª°É¡£¡±\n",this_player());
+        if (!this_player()->query("zangbei/æ˜Ÿæ˜Ÿæ¥¼")) {
+                message_vision("å°è¶æƒŠè®¶åœ°è¯´ï¼šâ€œä½ æ˜¯æ€ä¹ˆè¿›æ¥çš„ï¼Ÿå¿«ç¦»å¼€å§ã€‚â€\n",this_player());
                 return 0;
         }
         return 0;
@@ -64,17 +64,17 @@ int do_teach(string arg){
         me=this_player();
         xiaodie=this_object();
         
-        if (!this_player()->query("zangbei/ĞÇĞÇÂ¥")) {
-                message_vision("Ğ¡µû¾ªÑÈµØËµ£º¡°ÄãÊÇÔõÃ´½øÀ´µÄ£¿¿ìÀë¿ª°É¡£¡±\n",this_player());
+        if (!this_player()->query("zangbei/æ˜Ÿæ˜Ÿæ¥¼")) {
+                message_vision("å°è¶æƒŠè®¶åœ°è¯´ï¼šâ€œä½ æ˜¯æ€ä¹ˆè¿›æ¥çš„ï¼Ÿå¿«ç¦»å¼€å§ã€‚â€\n",this_player());
                 return 1;
         }
         if (sscanf(arg,"%s %s",who,skill_name)!=2)
-                return notify_fail("¸ñÊ½£ºteach xiaodie ¼¼ÄÜÃû³Æ\n");
+                return notify_fail("æ ¼å¼ï¼šteach xiaodie æŠ€èƒ½åç§°\n");
         
         if (who!="xiaodie")
-                return notify_fail("¸ñÊ½£ºteach xiaodie ¼¼ÄÜÃû³Æ\n");
+                return notify_fail("æ ¼å¼ï¼šteach xiaodie æŠ€èƒ½åç§°\n");
                 
-        if( !skill_name || skill_name=="" ) return notify_fail("ÄãÒª½ÌĞ¡µûÄÄÒ»ÏîÎä¹¦£¿\n"); 
+        if( !skill_name || skill_name=="" ) return notify_fail("ä½ è¦æ•™å°è¶å“ªä¸€é¡¹æ­¦åŠŸï¼Ÿ\n"); 
         if (skill_name== "abandon") {
            if (xiaodie->query_skills())
                         x_skill = keys(xiaodie->query_skills());
@@ -83,34 +83,34 @@ int do_teach(string arg){
                         for (i=0;i<sizeof(x_skill);i++) {
                                 xiaodie->delete_skill(x_skill[i]);
                                 me->delete("xiaodie/"+x_skill[i]);
-                                tell_object(me,"Ğ¡µû·ÅÆúÁË"+SKILL_D(x_skill[i])->name()+"¡£\n");
+                                tell_object(me,"å°è¶æ”¾å¼ƒäº†"+SKILL_D(x_skill[i])->name()+"ã€‚\n");
                         }
                 }
-                message_vision("Ğ¡µûËµ£ºàÅ£¬ÕâĞ©¹¦·ò±¾À´¾ÍÊÇÑ§×ÅÍæµÄ£¬²»Ñ§¾Í²»Ñ§°É¡£\n",xiaodie);
+                message_vision("å°è¶è¯´ï¼šå—¯ï¼Œè¿™äº›åŠŸå¤«æœ¬æ¥å°±æ˜¯å­¦ç€ç©çš„ï¼Œä¸å­¦å°±ä¸å­¦å§ã€‚\n",xiaodie);
                 return 1;
         }
         
         
         if(!find_object(SKILL_D(skill_name)) && file_size(SKILL_D(skill_name)+".c")<0) {
-                return notify_fail("¡¸" + skill_name + "¡¹£¬ÓĞÕâÖÖ¼¼ÄÜÂğ£¿\n"); 
+                return notify_fail("ã€Œ" + skill_name + "ã€ï¼Œæœ‰è¿™ç§æŠ€èƒ½å—ï¼Ÿ\n"); 
         }
         
         seteuid(getuid());
         err = catch( call_other(SKILL_D(skill_name)+".c", "???") );
         if (err)
-                printf( "·¢Éú´íÎó£º\n%s\n", err );
+                printf( "å‘ç”Ÿé”™è¯¯ï¼š\n%s\n", err );
         
         if( !me->query_skill(skill_name,1) && !zero_skill(me,skill_name))
-                return notify_fail("Äã²¢Ã»ÓĞÑ§¹ıÕâÏîÎä¹¦¡£\n");
+                return notify_fail("ä½ å¹¶æ²¡æœ‰å­¦è¿‡è¿™é¡¹æ­¦åŠŸã€‚\n");
         
         if (sizeof(xiaodie->query_skills())>2)
-                return notify_fail("Ğ¡µû×î¶àÖ»ÄÜÑ§ÈıÃÅ¹¦·ò¡£\n");
+                return notify_fail("å°è¶æœ€å¤šåªèƒ½å­¦ä¸‰é—¨åŠŸå¤«ã€‚\n");
         
         if (check_other(me))
-                return notify_fail("Ğ¡µûµÍ×ÅÍ·Ëµ£ºÕâ¶ùÓĞÍâÈË£¬ÎÒ²»ÏëÎèµ¶ÅªÇ¹µÄ¡£\n");
+                return notify_fail("å°è¶ä½ç€å¤´è¯´ï¼šè¿™å„¿æœ‰å¤–äººï¼Œæˆ‘ä¸æƒ³èˆåˆ€å¼„æªçš„ã€‚\n");
                 
-        message_vision("$NºÍĞ¡µûĞ¯×ÅÊÖ£¬»¥ÏàÒÀÙË×Å£¬Ëµ×ÅÇÄÇÄ»°¡£\n",me);
-        tell_object(me,"Äã°Ñ"+SKILL_D(skill_name)->name()+"µÄĞÄ¾÷´«ÊÚ¸øÁËĞ¡µû¡£\n");
+        message_vision("$Nå’Œå°è¶æºç€æ‰‹ï¼Œäº’ç›¸ä¾åç€ï¼Œè¯´ç€æ‚„æ‚„è¯ã€‚\n",me);
+        tell_object(me,"ä½ æŠŠ"+SKILL_D(skill_name)->name()+"çš„å¿ƒè¯€ä¼ æˆç»™äº†å°è¶ã€‚\n");
         xiaodie->set_skill(skill_name,me->query_skill(skill_name,1));
         me->set("xiaodie/"+skill_name,me->query_skill(skill_name,1));
         return 1;
@@ -120,45 +120,45 @@ int do_hug (string arg){
         
         object xiaodie;
         
-        if (arg != "Ğ¡µû" && arg != "xiao die" && arg != "xiaodie")  return 0;
+        if (arg != "å°è¶" && arg != "xiao die" && arg != "xiaodie")  return 0;
         if (!xiaodie=present("xiao die",environment(this_object()))) return 0;
         if (check_other(this_player())) {
-                tell_object(this_player(),"ÓĞÅÔÈËÔÚ³¡£¬¹ıÒ»»á¶ù°É¡£\n");
+                tell_object(this_player(),"æœ‰æ—äººåœ¨åœºï¼Œè¿‡ä¸€ä¼šå„¿å§ã€‚\n");
                 return 1;
         }
         call_out("event1",1,this_player(),0);
         return 1;
 }   
 string *event1_msg=     ({
-        MAG"\n    ÄãÇáÇáµØÓµ±§×ÅĞ¡µû£¬Íû×ÅËıÃÀÀö¶¯ÈËµÄÃæÃ²£¬²»½ûâñÈ»ĞÄ¶¯£¡\n"NOR,
+        MAG"\n    ä½ è½»è½»åœ°æ‹¥æŠ±ç€å°è¶ï¼Œæœ›ç€å¥¹ç¾ä¸½åŠ¨äººçš„é¢è²Œï¼Œä¸ç¦æ€¦ç„¶å¿ƒåŠ¨ï¼\n"NOR,
         
-        MAG"    Ğ¡µûÒÀÙËÔÚÄãµÄ»³Àï£¬ÑÛÖĞº¬ÇéÂöÂö£¬Á³ÉÏ½¿ĞßÎŞÏŞ¡£\n"NOR, 
-        MAG"    ÄãÇáÇáµØÃş×ÅĞ¡µûÄÇ³¤³¤µÄĞã·¢£¬½«Ò»¿ÚÈÈÆø´µÔÚËıµÄ²±×ÓÀï¡£\n"NOR, 
-        MAG"    Ğ¡µûÖ»¾õµÃ»ëÉíÈíÃàÃàµÄ£¬ÏÔÈ»ÊÇĞÄÒ¡Éñ³Û£¬·¼ĞÄÈç×í¡£\n"NOR,
+        MAG"    å°è¶ä¾ååœ¨ä½ çš„æ€€é‡Œï¼Œçœ¼ä¸­å«æƒ…è„‰è„‰ï¼Œè„¸ä¸Šå¨‡ç¾æ— é™ã€‚\n"NOR, 
+        MAG"    ä½ è½»è½»åœ°æ‘¸ç€å°è¶é‚£é•¿é•¿çš„ç§€å‘ï¼Œå°†ä¸€å£çƒ­æ°”å¹åœ¨å¥¹çš„è„–å­é‡Œã€‚\n"NOR, 
+        MAG"    å°è¶åªè§‰å¾—æµ‘èº«è½¯ç»µç»µçš„ï¼Œæ˜¾ç„¶æ˜¯å¿ƒæ‘‡ç¥é©°ï¼ŒèŠ³å¿ƒå¦‚é†‰ã€‚\n"NOR,
         
-        MAG"    Ò»¸öÈíÈíµÄÉùÒô´ÓÄãµÄĞÄµ×ÀïÃ°³öÀ´£º¡°µ«Ô¸ÉúÉúÊÀÊÀ£¬ÓÀÈç½ñÈÕ£¡¡±\n"NOR, 
-        MAG"    Ğ¡µû³Õ³ÕµØ¿´×ÅÄã£¬³Õ³ÕµØÖØ¸´×Å¡°µ«Ô¸ÉúÉúÊÀÊÀ£¬ÓÀÈç½ñÈÕ£¡¡±\n"NOR, 
-        MAG"    ÄãÇáÇáĞ¶È¥ÁËĞ¡µûµÄ´óºì¶·Åñ£¬Óµ×ÅËı½à°×¹â»¬µÄ¼¡·ô¡£\n"NOR, 
-        MAG"    Ğ¡µûÔÚÄãµÄ»³ÀïÎ¢Î¢µØ²ü¶¶£¬ºÃÏñÊÇ¸ù±»´º·çÓ³¶¯ÁËµÄº¬Ğß²İ¡£\n"NOR, 
-        MAG"    ÄãÃÇ³Á½şÔÚĞÒ¸£µÄº£ÑóÀï£££À¡«£££¥£¦£¤¡«£ª£¦£¥£¤££¡«¡£\n"NOR,
+        MAG"    ä¸€ä¸ªè½¯è½¯çš„å£°éŸ³ä»ä½ çš„å¿ƒåº•é‡Œå†’å‡ºæ¥ï¼šâ€œä½†æ„¿ç”Ÿç”Ÿä¸–ä¸–ï¼Œæ°¸å¦‚ä»Šæ—¥ï¼â€\n"NOR, 
+        MAG"    å°è¶ç—´ç—´åœ°çœ‹ç€ä½ ï¼Œç—´ç—´åœ°é‡å¤ç€â€œä½†æ„¿ç”Ÿç”Ÿä¸–ä¸–ï¼Œæ°¸å¦‚ä»Šæ—¥ï¼â€\n"NOR, 
+        MAG"    ä½ è½»è½»å¸å»äº†å°è¶çš„å¤§çº¢æ–—ç¯·ï¼Œæ‹¥ç€å¥¹æ´ç™½å…‰æ»‘çš„è‚Œè‚¤ã€‚\n"NOR, 
+        MAG"    å°è¶åœ¨ä½ çš„æ€€é‡Œå¾®å¾®åœ°é¢¤æŠ–ï¼Œå¥½åƒæ˜¯æ ¹è¢«æ˜¥é£æ˜ åŠ¨äº†çš„å«ç¾è‰ã€‚\n"NOR, 
+        MAG"    ä½ ä»¬æ²‰æµ¸åœ¨å¹¸ç¦çš„æµ·æ´‹é‡Œï¼ƒï¼ ï½ï¼ƒï¼…ï¼†ï¿¥ï½ï¼Šï¼†ï¼…ï¿¥ï¼ƒï½ã€‚\n"NOR,
         
-        MAG"    ¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£\n"NOR,
+        MAG"    ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n"NOR,
         
-        MAG"    ¡£¡£¡£¡£¡£¡£¡£¡£¡£\n"NOR,
+        MAG"    ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n"NOR,
         
-        MAG"    ¡£¡£¡£¡£¡£\n"NOR, 
+        MAG"    ã€‚ã€‚ã€‚ã€‚ã€‚\n"NOR, 
 });  
 void event1(object me, int count)
 {
         if (environment(me)!=environment(this_object()) || this_object()->is_fighting()) return;
         if (check_other(this_player())) {
-                tell_object(this_player(),"ÓĞÅÔÈËÔÚ³¡£¬¹ıÒ»»á¶ù°É¡£\n");
+                tell_object(this_player(),"æœ‰æ—äººåœ¨åœºï¼Œè¿‡ä¸€ä¼šå„¿å§ã€‚\n");
                 return;
         }
         tell_object(me,event1_msg[count]+"\n");
    if(++count==sizeof(event1_msg))
         {
-                tell_object(me,MAG"    ¡£¡£¡£\n\n"NOR);
+                tell_object(me,MAG"    ã€‚ã€‚ã€‚\n\n"NOR);
                 return;
         }
         else call_out("event1",2,me,count);

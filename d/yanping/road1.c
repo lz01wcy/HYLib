@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ʯ��");
+	set("short", "青石道");
 	set("long", @LONG
-һ����ʯ�������ϱ������߱��Ǹ��õ�Χǽ����������ש���͵ĳ�
-ǽ����ƽ����ɽ���������нֵ�ֻ�ȳ�ǽ�԰�������ǽ���ٽ�һ�࣬��
-ǽ�ߺ������ǽ�������ˡ�
+一条青石道延伸南北，西边便是府衙的围墙，东边是青砖砌就的城
+墙。延平府依山而建，城中街道只比城墙稍矮，而城墙外临江一侧，城
+墙高厚，真算是金城汤池了。
 LONG );
 	set("exits", ([
 		"north"     : __DIR__"dongmen",

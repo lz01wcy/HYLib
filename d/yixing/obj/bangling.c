@@ -10,18 +10,18 @@ inherit ITEM;
 
 void create()
 {
-	set_name("°ïÁî", ({ "bang ling", "ling" }) );
+	set_name("å¸®ä»¤", ({ "bang ling", "ling" }) );
 	set_weight(10);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "ÕâÊÇÒ»¿é°ï»áÖĞ³£ÓÃµÄ°ïÁî¡£\n");
+		set("unit", "å—");
+		set("long", "è¿™æ˜¯ä¸€å—å¸®ä¼šä¸­å¸¸ç”¨çš„å¸®ä»¤ã€‚\n");
 		set("value", 0);
 		set("material", "wood");
-		set("partyname", HIC"³¤ÀÖ°ï"NOR);
-		set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+		set("partyname", HIC"é•¿ä¹å¸®"NOR);
+		set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 	}
 	setup();
 }

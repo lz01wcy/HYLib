@@ -1,13 +1,13 @@
-//Room: wulaofeng.c ÎåÀÏ·å
+//Room: wulaofeng.c äº”è€å³°
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","ÎåÀÏ·å");
+      set("short","äº”è€å³°");
       set("long",@LONG
-Ö»¼ûÎå×ùÆæ·åÍ»Ø££¬¾ªÏÕÎŞ±È£¬ĞĞÈË¶à²»¸Ò·Åµ¨ÔÚ´ËÍæÉÍ·ç¾°¡£
+åªè§äº”åº§å¥‡å³°çªå…€ï¼ŒæƒŠé™©æ— æ¯”ï¼Œè¡Œäººå¤šä¸æ•¢æ”¾èƒ†åœ¨æ­¤ç©èµé£æ™¯ã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "northdown": __DIR__"sanlaofeng",

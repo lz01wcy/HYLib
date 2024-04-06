@@ -6,13 +6,13 @@ setup()
 }
 void create()
 {
-	set_name("Íò½ğÓÍ", ({ "wanjin oil","oil","wanjin" }) );
+	set_name("ä¸‡é‡‘æ²¹", ({ "wanjin oil","oil","wanjin" }) );
 	set_weight(10);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ğ¡Æ¿ºÖÉ«µÄÒ©ÓÍ£¬·¢³öÒ»ÖÖ±¡ºÉµÄÏãÆø£¬Ê¹ÓÃ(use)ºóÓĞÌáÉñµÄ×÷ÓÃ¡£\n");
-		set("unit", "Æ¿");
+		set("long", "ä¸€å°ç“¶è¤è‰²çš„è¯æ²¹ï¼Œå‘å‡ºä¸€ç§è–„è·çš„é¦™æ°”ï¼Œä½¿ç”¨(use)åæœ‰æç¥çš„ä½œç”¨ã€‚\n");
+		set("unit", "ç“¶");
 		set("value", 150);
 		set("oil_left",5);
 	}
@@ -25,14 +25,14 @@ void init()
 int do_use(string arg)
 {
 	
-	if( !this_object()->id(arg) ) return notify_fail("ÄãÊ¹ÓÃÊ²Ã´£¿\n");
+	if( !this_object()->id(arg) ) return notify_fail("ä½ ä½¿ç”¨ä»€ä¹ˆï¼Ÿ\n");
         this_player()->add("qi",10);
                 this_player()->add("jing",10);
         add("oil_left",-1);
 
-	 message_vision("$NÄÃ³öÒ»¸öĞ¡´ÉÆ¿£¬²ëÁËÒ»Ğ©" + name() + "£¬¾«ÉñºÃÁËÒ»Ğ©¡£\n", this_player());
+	 message_vision("$Næ‹¿å‡ºä¸€ä¸ªå°ç“·ç“¶ï¼Œæ½äº†ä¸€äº›" + name() + "ï¼Œç²¾ç¥å¥½äº†ä¸€äº›ã€‚\n", this_player());
 	 if(!query("oil_left")) {
-		message_vision("$N°ÑĞ¡´ÉÆ¿Àï" + name() + "ÓÃÍêÁË¡£\n",this_player());
+		message_vision("$NæŠŠå°ç“·ç“¶é‡Œ" + name() + "ç”¨å®Œäº†ã€‚\n",this_player());
 		destruct(this_object()); }
 	 return 1;
 

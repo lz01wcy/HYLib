@@ -8,9 +8,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", BLU "С��"NOR);
+    set("short", BLU "小径"NOR);
     set("long", @LONG
-����ɽ��֮������춶��������ƺ����ٲ��ܽ��ˡ�
+轰轰的山洪之声不绝於耳，这里似乎离瀑布很近了。
 LONG
     );
 

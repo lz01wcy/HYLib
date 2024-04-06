@@ -1,13 +1,13 @@
 // /d/zhuojun/qianzhuang.c
-// Room in �ÿ�
+// Room in 涿郡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "Ǯׯ");
+	set("short", "钱庄");
 	set("long", @LONG
-�����ǳ�ɳ�ǵ�һ��Ǯׯ�����Ǯׯ�Ѿ��а������ʷ�ˣ�����׿
-���������������Ǯ����Ըе��ǳ��ķ��ġ�
+这里是长沙城的一家钱庄，这家钱庄已经有百年的历史了，信誉卓
+著，所以在这里存钱你可以感到非常的放心。
 LONG
 	);
 set("exits", ([

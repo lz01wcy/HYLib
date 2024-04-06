@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÔªÍ´", ({ "yuan tong", "tong", "yuan" }));
-	set("long","ËûÊÇÒ»Î»ÅÖ´óºÍÉĞ£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓĞÉñ¡£\n");
-	set("nickname", "´ïÄ¦ÔºÉÏ×ùÈıÉ®");
-	set("gender", "ÄĞĞÔ");
+	set_name("å…ƒç—›", ({ "yuan tong", "tong", "yuan" }));
+	set("long","ä»–æ˜¯ä¸€ä½èƒ–å¤§å’Œå°šï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥ã€‚\n");
+	set("nickname", "è¾¾æ‘©é™¢ä¸Šåº§ä¸‰åƒ§");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -49,7 +49,7 @@ void create()
 	set_skill("ranmu-daofa", 100);
 	set_skill("weituo-gun", 100);
 // basic skill end
-// ÕÆ¡¢Ö¸¡¢±Ş¡¢ÕÈ
+// æŒã€æŒ‡ã€é­ã€æ–
 	set_skill("strike", 100);
 	set_skill("finger", 100);
 	set_skill("yizhi-chan", 100);
@@ -71,7 +71,7 @@ void create()
 	prepare_skill("strike", "weituo-gun");
 	prepare_skill("finger", "yizhi-chan");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 20, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 20, "å¼Ÿå­");
 
 	setup();
 	carry_object(__DIR__"fangbianchan")->wield();
@@ -83,20 +83,20 @@ int accept_object(object who, object ob,object me)
 	mapping fam; 
 	me=this_object();
 	if (!(fam = this_player()->query("family")) ||
-		fam["family_name"] != "ÄÏÉÙÁÖÅÉ")
+		fam["family_name"] != "å—å°‘æ—æ´¾")
 	{
 		command("hehe "+who->query("id"));
-		command("say Äã¸øÎÒ¶«Î÷ÓĞÊ²Ã´ÆóÍ¼£¿£¡");
+		command("say ä½ ç»™æˆ‘ä¸œè¥¿æœ‰ä»€ä¹ˆä¼å›¾ï¼Ÿï¼");
 		return 0;
 	}
 	if(!who->query_temp("lunzhi"))
 	{
-		command("say ÄãµÄÁîÅÆÊÇÄÇÀ´µÄ£¬ÂÖÖµ±ØĞëµÃµ½´ó¿à´óÊ¦µÄÔÊĞí£¡");
+		command("say ä½ çš„ä»¤ç‰Œæ˜¯é‚£æ¥çš„ï¼Œè½®å€¼å¿…é¡»å¾—åˆ°å¤§è‹¦å¤§å¸ˆçš„å…è®¸ï¼");
 		return 0;
 	}
-	if(ob->query("name")=="ÂÖÖµÁî")
+	if(ob->query("name")=="è½®å€¼ä»¤")
 	{
-		command( "say ºÃ°É£¬Äã¼ÈÈ»ÓĞ´ó¿à´óÊ¦µÄÁîÅÆ£¬Äã¾ÍÔÚÕâºÍ·½Í¨ËûÃÇÒ»ÆğÊØÎÀ°É¡£");
+		command( "say å¥½å§ï¼Œä½ æ—¢ç„¶æœ‰å¤§è‹¦å¤§å¸ˆçš„ä»¤ç‰Œï¼Œä½ å°±åœ¨è¿™å’Œæ–¹é€šä»–ä»¬ä¸€èµ·å®ˆå«å§ã€‚");
 		who->apply_condition("sl_lunzhi",30);
 		who->set_temp("lunzhied",1);
 		return 1;

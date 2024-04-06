@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
 //cui.c 
  
 inherit NPC;
 
 void create()
 {
-        set_name("´ŞÃü¹í", ({ "cui minggui", "cui" }));
+        set_name("å´”å‘½é¬¼", ({ "cui minggui", "cui" }));
         set("age", 48);
-        set("gender", "ÄĞĞÔ");
-        set("long","ÕâÊÇ½ğ¸®ÉÌºÅµÄ´óÕÆ¹ñ,ÊÇ½ğ´óÉÆÈËµÄ×óÓÒÊÖ¡£/n");
+        set("gender", "ç”·æ€§");
+        set("long","è¿™æ˜¯é‡‘åºœå•†å·çš„å¤§æŒæŸœ,æ˜¯é‡‘å¤§å–„äººçš„å·¦å³æ‰‹ã€‚/n");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 500000);

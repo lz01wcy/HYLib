@@ -4,17 +4,17 @@ inherit STAFF;
 
 void create()
 {
-	set_name(BLU"ĞşÌúÕÈ"NOR, ({ "xuantie zhang", "zhang" }));
+	set_name(BLU"ç„é“æ–"NOR, ({ "xuantie zhang", "zhang" }));
 	set_weight(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ù²ôÓĞĞşÌúµÄ¸ÖÕÈ¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹æºæœ‰ç„é“çš„é’¢æ–ã€‚\n");
 		set("value", 1000000);
 		set("material", "leather");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»ÉùÌáÆğÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕ»Ø±³ºó¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æèµ·ä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¶å›èƒŒåã€‚\n");
 	}
 	init_staff(200);
 	setup();

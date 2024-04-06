@@ -4,7 +4,7 @@ inherit NPC;
 
 void create()
 { 
-        set("long", "Ëş¹«ËÂµÄÀÏÀ®Âï£¬ÒÂ×Å±ÈÆğ¸½½üËÂÃíÀïµÄÀ®Âï²î¶àÁË£¬³îÃ¼¿àÁ³µØÍû×ÅËşÁÖ³öÉñ¡£\n");
+        set("long", "å¡”å…¬å¯ºçš„è€å–‡å˜›ï¼Œè¡£ç€æ¯”èµ·é™„è¿‘å¯ºåº™é‡Œçš„å–‡å˜›å·®å¤šäº†ï¼Œæ„çœ‰è‹¦è„¸åœ°æœ›ç€å¡”æ—å‡ºç¥ã€‚\n");
         set("age",30+random(20));
         set("attitude", "friendly");
         set("combat_exp", 2000000);
@@ -38,7 +38,7 @@ void create()
         
         set("chat_chance", 1);
         set("chat_msg", ({
-                name()+"Ëµ£ºÊ©Ö÷£¬²¼Ê©µãÏã»ğÇ®°É¡£\n",  
+                name()+"è¯´ï¼šæ–½ä¸»ï¼Œå¸ƒæ–½ç‚¹é¦™ç«é’±å§ã€‚\n",  
         }) );
         set("chat_chance_combat", 50);
     	set("chat_msg_combat", ({
@@ -49,7 +49,7 @@ void create()
         }) ); */
          
 //        auto_npc_setup();("wang",200,160,0,"/obj/weapon/","fighter_w","lianxin-blade",2);
-       set_name("Ëş¹«ËÂµÄÀ®Âï",({"tagong lama","lama"}));
+       set_name("å¡”å…¬å¯ºçš„å–‡å˜›",({"tagong lama","lama"}));
         set("force_factor",40+random(50));
         setup();
         carry_object(__DIR__"obj/lamacloth")->wear();
@@ -58,14 +58,14 @@ void create()
 int accept_object(object who, object ob){
         
         if (ob->query("value")<100000) {
-                message_vision(CYN"ÀÏÀ®ÂïÁ³ÉÏÂ¶³öÒ»Ë¿Ê§Íû£¬¡°àÅ£¬¶àĞ»Ê©Ö÷¡£¡±\n"NOR,this_object());
+                message_vision(CYN"è€å–‡å˜›è„¸ä¸Šéœ²å‡ºä¸€ä¸å¤±æœ›ï¼Œâ€œå—¯ï¼Œå¤šè°¢æ–½ä¸»ã€‚â€\n"NOR,this_object());
         } else if (ob->query("value")<500000) {
-                message_vision(CYN"ÀÏÀ®ÂïË«ÕÆºÏÊ®£¬µÍÍ·´¹Ä¿£º¡°àÅ£¬¶àĞ»Ê©Ö÷¡£¡±\n"NOR,this_object());
+                message_vision(CYN"è€å–‡å˜›åŒæŒåˆåï¼Œä½å¤´å‚ç›®ï¼šâ€œå—¯ï¼Œå¤šè°¢æ–½ä¸»ã€‚â€\n"NOR,this_object());
         } else {
-                message_vision(CYN"ÀÏÀ®ÂïµÄÑÛÀïºöÈ»·Å³ö¹âÀ´£¬»°ÒôÒ²ÓĞĞ©²ü¶¶£º¡°·ğ×æÒ»¶¨»á±£ÓÓÊ©Ö÷µÄ¡£
-ÀÏñÄÕâ¾ÍÈ¥ÈÃÈËÖØĞŞ·ğËş£¬ÔÙËÜ½ğÉí¡£¡±\n"NOR,this_object());
-                tell_object(who,WHT"ÌıÁËÀÏÀ®ÂïµÄ»°Äã²Å×¢Òâµ½£¬Ô­À´ÕâÀïµÄËşÁÖ¾Ã¾­·çÓê£¬ÒÑ¾­Ê®·ÖÆÆ¾ÉÁË¡£\n"NOR);
-                who->set("zangbei/Ëş¹«ËÂÊ©Éá",1);
+                message_vision(CYN"è€å–‡å˜›çš„çœ¼é‡Œå¿½ç„¶æ”¾å‡ºå…‰æ¥ï¼Œè¯éŸ³ä¹Ÿæœ‰äº›é¢¤æŠ–ï¼šâ€œä½›ç¥–ä¸€å®šä¼šä¿ä½‘æ–½ä¸»çš„ã€‚
+è€è¡²è¿™å°±å»è®©äººé‡ä¿®ä½›å¡”ï¼Œå†å¡‘é‡‘èº«ã€‚â€\n"NOR,this_object());
+                tell_object(who,WHT"å¬äº†è€å–‡å˜›çš„è¯ä½ æ‰æ³¨æ„åˆ°ï¼ŒåŸæ¥è¿™é‡Œçš„å¡”æ—ä¹…ç»é£é›¨ï¼Œå·²ç»ååˆ†ç ´æ—§äº†ã€‚\n"NOR);
+                who->set("zangbei/å¡”å…¬å¯ºæ–½èˆ",1);
         }
         return 1;
 }  

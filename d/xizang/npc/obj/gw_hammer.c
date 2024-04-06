@@ -3,17 +3,17 @@
 inherit HAMMER; 
 void create()
 {
-        set_name("Î÷ÏÄÅÁ¶ú", ({ "hammer" }) );
+        set_name("è¥¿å¤å¸•è€³", ({ "hammer" }) );
         set_weight(80000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "¾İ´«±¾À´ÊÇÃÉ¹ÅÌúÆï³£ÓÃµÄÁùÀâÌú´¸£¬ºóÀ´´«Èë²Ø±ß¹ØÍâ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "æ®ä¼ æœ¬æ¥æ˜¯è’™å¤é“éª‘å¸¸ç”¨çš„å…­æ£±é“é”¤ï¼Œåæ¥ä¼ å…¥è—è¾¹å…³å¤–ã€‚\n");
                 set("value", 6000);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         } 
         ::init_hammer(80);
 }    

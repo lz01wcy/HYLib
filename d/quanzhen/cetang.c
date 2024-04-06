@@ -1,4 +1,4 @@
-// cetang.c ²àÌÃ
+// cetang.c ä¾§å ‚
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "²àÌÃ");
+        set("short", "ä¾§å ‚");
         set("long", @LONG
-ÕâÀïÊÇ´óÌÃÅÔ±ßµÄÒ»¸ö²àÌü£¬Ò²ÊÇ½Ó´ıÖØÒª¿ÍÈËµÄµØ·½¡£Ìü²»
-´ó£¬Ö»°Ú·Å×ÅÒ»ÕÅ×À×ÓºÍ¼¸°ÑÒÎ×Ó(chair)¡£×ÀÉÏ°Ú·Å×ÅÒ»ÅèÇàËÉ
-É½Ê¯µÄÅè¾°£¬Ç½±ÚÉÏ¹Ò×ÅÒ»Ğ©×Ö»­¡£Ò»¸öÊ®À´ËêµÄĞ¡µÀÊ¿ÕıÔÚÃ¦Ç°
-Ã¦ºóÕĞ´ı¿ÍÈË¡£
+è¿™é‡Œæ˜¯å¤§å ‚æ—è¾¹çš„ä¸€ä¸ªä¾§å…ï¼Œä¹Ÿæ˜¯æ¥å¾…é‡è¦å®¢äººçš„åœ°æ–¹ã€‚å…ä¸
+å¤§ï¼Œåªæ‘†æ”¾ç€ä¸€å¼ æ¡Œå­å’Œå‡ æŠŠæ¤…å­(chair)ã€‚æ¡Œä¸Šæ‘†æ”¾ç€ä¸€ç›†é’æ¾
+å±±çŸ³çš„ç›†æ™¯ï¼Œå¢™å£ä¸ŠæŒ‚ç€ä¸€äº›å­—ç”»ã€‚ä¸€ä¸ªåæ¥å²çš„å°é“å£«æ­£åœ¨å¿™å‰
+å¿™åæ‹›å¾…å®¢äººã€‚
 LONG
         );
         set("exits", ([
@@ -41,18 +41,18 @@ int do_sit(string arg)
 
         me = this_player();
         if ( !arg || (arg != "chair") )
-                return notify_fail("ÄãÏ¯µØ¶ø×ø£¬ÒıÀ´¼¸¸ö¾ªãµµÄÄ¿¹â¡£\n");
+                return notify_fail("ä½ å¸­åœ°è€Œåï¼Œå¼•æ¥å‡ ä¸ªæƒŠæ„•çš„ç›®å…‰ã€‚\n");
 
 		  if( !objectp(daotong = present("daotong", environment(me))) )
-                return notify_fail("Äã×øÏÂÀ´ĞİÏ¢£¬Ã»ÓĞÈËÀ´´ò½ÁÄã¡£\n");
+                return notify_fail("ä½ åä¸‹æ¥ä¼‘æ¯ï¼Œæ²¡æœ‰äººæ¥æ‰“æ…ä½ ã€‚\n");
 
         if( me->query_temp("marks/served") )
         {
-                message_vision("Ğ¡µÀÊ¿Ğ¦×Å¶Ô$NËµ£ºÎÒ»¹Ã¦×ÅÄÅ£¬ÄúÏÈÔÙĞİÏ¢ĞİÏ¢°É¡£\n", me);
+                message_vision("å°é“å£«ç¬‘ç€å¯¹$Nè¯´ï¼šæˆ‘è¿˜å¿™ç€å‘ï¼Œæ‚¨å…ˆå†ä¼‘æ¯ä¼‘æ¯å§ã€‚\n", me);
                 return notify_fail("");
         }
 
-        message_vision("$N×øµ½×ÀÇ°£¬Ğ¡µÀÊ¿Ğ¦×Å¹ıÀ´ÕĞ´ı¡£\n", me);
+        message_vision("$Nååˆ°æ¡Œå‰ï¼Œå°é“å£«ç¬‘ç€è¿‡æ¥æ‹›å¾…ã€‚\n", me);
         daotong->serve_tea(me) ;
         
         me->set_temp("marks/served", 1);
@@ -72,7 +72,7 @@ int valid_leave(object me, string dir)
         if (( present("xiang cha", this_player())
                 || present("dian xin", this_player()) ) 
 			  && objectp(present("daotong", environment(me))) ) {
-        message_vision("Ğ¡µÀÊ¿¼û$N»¹Ã»³ÔÍê£¬ËµµÀ£ºÕâÎ»¿ÍÈËÓÃÍê²èµãÔÙ×ß°É¡£", me);
+        message_vision("å°é“å£«è§$Nè¿˜æ²¡åƒå®Œï¼Œè¯´é“ï¼šè¿™ä½å®¢äººç”¨å®ŒèŒ¶ç‚¹å†èµ°å§ã€‚", me);
         return notify_fail("\n");
         }
 

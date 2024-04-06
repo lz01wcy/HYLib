@@ -7,17 +7,17 @@ inherit CLUB;
 
 void create()
 {
-   set_name(HIR"-Âú½­ºì-ÔÀ¼ÒÉñÇ¹"NOR, ({ "yuejia qiang","qiang","club" }) );
+   set_name(HIR"-æ»¡æ±Ÿçº¢-å²³å®¶ç¥æª"NOR, ({ "yuejia qiang","qiang","club" }) );
    set_weight(4000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 8500);
      set("material", "iron");
-     set("long", "Õâ°ÑÇ¹µÄÃû×ÖÈ¡×Ô¡°Âú½­ºì¡±Ö®Òâ¡£\n");
-     set("wield_msg", RED"$NÒ»»Î$n£¬¡°ÆËÀâ¡±Ò»Éù»Î³ö¼¸µãÇ¹»¨£¬½«$nÎÕÔÚÊÖÖĞ¡£\n"NOR);
-     set("unequip_msg", "$N½«ÊÖÖĞµÄ$n·Åµ½ÁËÉíºó¡£\n");
+     set("long", "è¿™æŠŠæªçš„åå­—å–è‡ªâ€œæ»¡æ±Ÿçº¢â€ä¹‹æ„ã€‚\n");
+     set("wield_msg", RED"$Nä¸€æ™ƒ$nï¼Œâ€œæ‰‘æ£±â€ä¸€å£°æ™ƒå‡ºå‡ ç‚¹æªèŠ±ï¼Œå°†$næ¡åœ¨æ‰‹ä¸­ã€‚\n"NOR);
+     set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾åˆ°äº†èº«åã€‚\n");
    }
    init_club(880);
    setup();

@@ -4,12 +4,12 @@ inherit NPC;
 void throw_away(object ob); 
 void create()
 { 
-        set_name(YEL"ÌìÃÀ¹«Ö÷"NOR,({"tianmei"}));
-        set("title","Î÷·½Éñ½Ì");
-        set("gender", "Å®ĞÔ" );
+        set_name(YEL"å¤©ç¾å…¬ä¸»"NOR,({"tianmei"}));
+        set("title","è¥¿æ–¹ç¥æ•™");
+        set("gender", "å¥³æ€§" );
         set("long", "
-ÌìÃÀ¹«Ö÷ÊÇÄ§½ÌÇ°½ÌÖ÷·òÈËÈõÁø·òÈËµÄÅ®¶ù£¬¶àÄêÇ°ºÍÈş´ó³¤ÀÏÌúÑà£¬ÒøÁú£¬½ğÊ¨
-Ò»ÆğÅÑ½Ì³ö×ß£¬ÁíÁ¢ĞÂÖÄ¡£Æä¼äÓÖÓëÉñ½£Ğ»Ïş·åÓĞ¹ıÒ»¶ÎÇéÔµ£¬ÉúÏÂÁËÅ®¶ùĞ»Ğ¡Óñ¡£\n"); 
+å¤©ç¾å…¬ä¸»æ˜¯é­”æ•™å‰æ•™ä¸»å¤«äººå¼±æŸ³å¤«äººçš„å¥³å„¿ï¼Œå¤šå¹´å‰å’Œåå¤§é•¿è€é“ç‡•ï¼Œé“¶é¾™ï¼Œé‡‘ç‹®
+ä¸€èµ·å›æ•™å‡ºèµ°ï¼Œå¦ç«‹æ–°å¸œã€‚å…¶é—´åˆä¸ç¥å‰‘è°¢æ™“å³°æœ‰è¿‡ä¸€æ®µæƒ…ç¼˜ï¼Œç”Ÿä¸‹äº†å¥³å„¿è°¢å°ç‰ã€‚\n"); 
         set("age",20);
         set("combat_exp", 7500000);
         //set("class","swordsman");               
@@ -53,7 +53,7 @@ void create()
         set("resistance/kee",30);
         set("resistance/sen",30);
         
-//      set("death_msg",CYN"\n$N  ¨é  æÁ    ÆÄ    ã°  Ç»£Û±İ±İ±İ£Û£Û£Û \n"NOR);         
+//      set("death_msg",CYN"\n$N  ã„©  åªª    é¢‡    æƒ†  è…”ï¼»é™›é™›é™›ï¼»ï¼»ï¼» \n"NOR);         
         set("nb_chat_chance", 100);
         set("nb_chat_msg_combat", ([ 
         ]) );           
@@ -87,13 +87,13 @@ void greeting(object ob) {
         if (ob->query("learn_tianmei"))  
         {
         command("hmm");
-        command("say Ê®Èş½£ÊÇÎ¨Ò»ÄÜ¿ËÉñ½£µÄÎä¹¦£¬µ«ÕâÉÏÃæµÄÆÆÕÀÓ¦¸ÃÔõ÷áÃÖ²¹£¿");
+        command("say ååå‰‘æ˜¯å”¯ä¸€èƒ½å…‹ç¥å‰‘çš„æ­¦åŠŸï¼Œä½†è¿™ä¸Šé¢çš„ç ´ç»½åº”è¯¥æ€éº½å¼¥è¡¥ï¼Ÿ");
         return;
         }
-        if (ob->query("m_killer/Ğ»Ïş·å")) 
+        if (ob->query("m_killer/è°¢æ™“å³°")) 
         {
         command("ack");
-        command("say ÕâÎ»Ó¢ĞÛ¾¹ÄÜÉ±ÁËĞ»Ïş·åÄÇ¸ö¸ºĞÄÈË£¬ÕæÊÇ´ó¿ìÎÒĞÄ¡£¡£¡£");
+        command("say è¿™ä½è‹±é›„ç«Ÿèƒ½æ€äº†è°¢æ™“å³°é‚£ä¸ªè´Ÿå¿ƒäººï¼ŒçœŸæ˜¯å¤§å¿«æˆ‘å¿ƒã€‚ã€‚ã€‚");
         command("sigh");
         ob->set("learn_tianmei",1);
         }
@@ -111,10 +111,10 @@ int recognize_apprentice(object ob){
         return 1;
     } else {
         if (random(2))
-        message_vision("$NÒ¡ÁËÒ¡Í·£º¡¸´ó³ğÎ´±¨¡£¡£¡£¡¹¡±\n", 
+        message_vision("$Næ‘‡äº†æ‘‡å¤´ï¼šã€Œå¤§ä»‡æœªæŠ¥ã€‚ã€‚ã€‚ã€â€\n", 
                         this_object());
         else 
-        message_vision("$NÄıÊÓÄãÆ¬¿Ì£¬µ«È´ÒÀÈ»Ä¬²»×÷Éù¡£¡±\n", 
+        message_vision("$Nå‡è§†ä½ ç‰‡åˆ»ï¼Œä½†å´ä¾ç„¶é»˜ä¸ä½œå£°ã€‚â€\n", 
                         this_object(), ob);             
                 return 0;
     }

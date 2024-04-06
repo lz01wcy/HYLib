@@ -1,13 +1,13 @@
 // /d/taiyuan/xiyuan.c
-// Room in ̫ԭ
+// Room in 太原
 // rich 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "Ϸ԰");
+	set("short", "戏园");
 	set("long", @LONG
-Ϸ԰���̨�����ڳ�Ϸ������ᣲ����������ˣ�̨�¼��������ԣ�
-���Ų��ٹ����е������㵸���е���Ʒ�裬�кá�
+戏园里的台上正在唱戏，大红的幔布被拉在两端，台下几张桌子旁，
+做着不少观众有的手舞足蹈，有的在品茶，叫好。
 LONG
 	);
 set("outdoors", "taiyuan");

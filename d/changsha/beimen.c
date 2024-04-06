@@ -1,13 +1,13 @@
 // /d/zhoujun/beimen.c
-// Room in äÃ¿¤
+// Room in æ¶¿éƒ¡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "±±³ÇÃÅ");
+	set("short", "åŒ—åŸŽé—¨");
 	set("long", @LONG
-ÕâÀïÊÇ³¤É³³ÇµÄ±±³ÇÃÅ£¬ÏòÄÏÍûÈ¥³µË®ÂíÁúÈËÀ´ÈËÍùºÃ²»ÈÈÄÖ£¬Òò
-ÎªÏÖÔÚÌìÏÂ´óÂÒËùÒÔ°ÑÃÅµÄÊ¿±ø¶ÔÀ´Íù¹ýÂ·µÄÈËÅÌ²éµÃ·Ç³£ÑÏ¸ñ¡£
+è¿™é‡Œæ˜¯é•¿æ²™åŸŽçš„åŒ—åŸŽé—¨ï¼Œå‘å—æœ›åŽ»è½¦æ°´é©¬é¾™äººæ¥äººå¾€å¥½ä¸çƒ­é—¹ï¼Œå› 
+ä¸ºçŽ°åœ¨å¤©ä¸‹å¤§ä¹±æ‰€ä»¥æŠŠé—¨çš„å£«å…µå¯¹æ¥å¾€è¿‡è·¯çš„äººç›˜æŸ¥å¾—éžå¸¸ä¸¥æ ¼ã€‚
 LONG
 	);
 set("outdoors", "changsha");

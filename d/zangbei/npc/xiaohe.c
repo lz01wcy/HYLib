@@ -2,14 +2,14 @@
 inherit NPC; 
 void create()
 {
-        set_name("Ð¡ºÎ",({"xiao he","xiaohe"}));
-        set("title",HIR"¿ì»îÁÖ É±ÊÖ"NOR);
+        set_name("å°ä½•",({"xiao he","xiaohe"}));
+        set("title",HIR"å¿«æ´»æž— æ€æ‰‹"NOR);
         set("long","
-Ð¡ºÎÆ¯ÁÁµÃ¼¸ºõÒÑ²»ÏñÊÇ¸öÄÐÈË¡£¸ßÀÏ´ó³£ËµÐ¡ºÎÈôÊÇ´©ÉÏÅ®ÈËµÄÒÂ·þ£¬½«
-Í··¢ÅûÏÂÀ´£¬´ó¶àÊýÄÐÈË¶¼±Ø¶¨»á±»Ëû¹´È¥»êÆÇ¡£ÓÈÆäÊÇËûµÄÆ¤·ô£¬¼òÖ±±È
-Å®ÈË»¹Ï¸»¹°×£¬ºÜ¶àÈË¶¼²»¶®£¬ÏñËûÕâÖÖÔÚÁÒÈÕ·çÉ³ÖÐ³¤´óµÄÈË£¬ÔõÃ´»áÓÐ
-ÕâÃ´°×µÄÆ¤·ô¡£ËûµÄÑÛ¾¦È´Ò»Ö±ÊÇÄÇÃ´ÏôË÷£¬ÄÇÃ´ÓÇÓô¡£\n"); 
-        set("gender","ÄÐÐÔ");
+å°ä½•æ¼‚äº®å¾—å‡ ä¹Žå·²ä¸åƒæ˜¯ä¸ªç”·äººã€‚é«˜è€å¤§å¸¸è¯´å°ä½•è‹¥æ˜¯ç©¿ä¸Šå¥³äººçš„è¡£æœï¼Œå°†
+å¤´å‘æŠ«ä¸‹æ¥ï¼Œå¤§å¤šæ•°ç”·äººéƒ½å¿…å®šä¼šè¢«ä»–å‹¾åŽ»é­‚é­„ã€‚å°¤å…¶æ˜¯ä»–çš„çš®è‚¤ï¼Œç®€ç›´æ¯”
+å¥³äººè¿˜ç»†è¿˜ç™½ï¼Œå¾ˆå¤šäººéƒ½ä¸æ‡‚ï¼Œåƒä»–è¿™ç§åœ¨çƒˆæ—¥é£Žæ²™ä¸­é•¿å¤§çš„äººï¼Œæ€Žä¹ˆä¼šæœ‰
+è¿™ä¹ˆç™½çš„çš®è‚¤ã€‚ä»–çš„çœ¼ç›å´ä¸€ç›´æ˜¯é‚£ä¹ˆè§ç´¢ï¼Œé‚£ä¹ˆå¿§éƒã€‚\n"); 
+        set("gender","ç”·æ€§");
         set("group","khlr");
         
         set("age",32);          
@@ -34,7 +34,7 @@ void create()
         set("resistance/sen",30);
         
         set("inquiry", ([
-                "*":    "·Ï»°ÉÙËµ£¬ÄÃÃüÀ´¡£",
+                "*":    "åºŸè¯å°‘è¯´ï¼Œæ‹¿å‘½æ¥ã€‚",
         ]));
         
         set("nb_chat_chance", 100);

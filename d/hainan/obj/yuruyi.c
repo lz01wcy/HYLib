@@ -4,16 +4,16 @@ inherit SWORD;
 
 void create()
 {
-        set_name( "ÂÌÈçÒâ", ({ "green ruyi", "ruyi", "sword" }) );
+        set_name( "ç»¿å¦‚æ„", ({ "green ruyi", "ruyi", "sword" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "Ò»±úÄ«ÂÌÉ«µÄÈçÒâ£¬Ë³ÆäÎÆÀíµñ³É²¨ÀËĞÎ×´¡£\n");
+                set("unit", "æŸ„");
+                set("long", "ä¸€æŸ„å¢¨ç»¿è‰²çš„å¦‚æ„ï¼Œé¡ºå…¶çº¹ç†é›•æˆæ³¢æµªå½¢çŠ¶ã€‚\n");
                 set("value", 3000);
                 set("no_sell",1);
-                set("wield_msg", "$NÄÃ³ö$nÅõÔÚÊÖÉÏ¡£\n");
+                set("wield_msg", "$Næ‹¿å‡º$næ§åœ¨æ‰‹ä¸Šã€‚\n");
         	set("weapon_prop/karma", 15);
                 set("material", "stone");
         }

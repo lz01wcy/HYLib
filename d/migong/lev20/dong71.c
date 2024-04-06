@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"���ҵ���Ĺ"NOR);
+	set("short", HIY"王家的灵墓"NOR);
 	set("long", HIM @LONG
-���Ǵ�˵�й���ĵ���Ĺ��ͨ·������Ʈ����һ�ſ�����
-�ĺ�ˮ�������ܵ�ǽ�ں��컨���������������ıڻ��;���
-��ʯ������ɢ�������صĹ�â��
+这是传说中光神的的灵墓，通路的中央飘浮著一颗颗闪亮
+的红水晶。四周的墙壁和天花板上满布著美丽的壁画和精致
+的石雕。四周散发著神秘的光芒。
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);

@@ -1,11 +1,11 @@
  inherit NPC;
 void create()
 {
-        set_name("÷à¹·", ({ "hyena"}) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set_name("é¬£ç‹—", ({ "hyena"}) );
+        set("race", "é‡å…½");
+        set("gender", "é›„æ€§");
         set("age", 6);
-        set("long", "ÕâÊÇÒ»Ö»Ğ×ÃÍÎŞ±ÈµÄ÷à¹·¡£\n");
+        set("long", "è¿™æ˜¯ä¸€åªå‡¶çŒ›æ— æ¯”çš„é¬£ç‹—ã€‚\n");
         
         set("str", 48);
         set("cor", 52);
@@ -21,12 +21,12 @@ void create()
         set_skill("move",200); 
         
         set("attitude", "aggressive");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) ); 
         set("chat_chance_combat", 1);
         set("chat_msg_combat", ({
-                "÷à¹·ÏòÌì¿ñº¿¼¸Éù¡£\n",
-                "÷à¹·ÑÛÀïµÄÂÌ¹âÊ¹Äã²»º®¶ø²ü¡£\n"
+                "é¬£ç‹—å‘å¤©ç‹‚åšå‡ å£°ã€‚\n",
+                "é¬£ç‹—çœ¼é‡Œçš„ç»¿å…‰ä½¿ä½ ä¸å¯’è€Œé¢¤ã€‚\n"
         }) );
         
         set("combat_exp", 200000);

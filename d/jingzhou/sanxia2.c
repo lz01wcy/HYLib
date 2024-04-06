@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIY "��Ͽ" NOR );
+        set("short", HIY "巫峡" NOR );
         set("long", @LONG
-�����ǳ�����Ͽ����Ͽ��Ҳ�����������һ��Ͽ�ȣ���Ů��
-�߸������ڽ��ߣ�ԶԶ��ȥ������һΪͤͤ��������Ů��������
-������ʤ�ա�
+这里是长江三峡的巫峡，也是最大最美的一个峡谷，神女峰
+高高耸立在江边，远远看去，由如一为亭亭玉立的少女，两岸风
+景美不胜收。
 LONG
         );
         set("exits", ([

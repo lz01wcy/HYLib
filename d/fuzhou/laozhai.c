@@ -8,12 +8,12 @@ int do_break(string arg);
 
 void create()
 {
-    set("short", "��������լ");
+    set("short", "向阳巷老宅");
     set("long", @LONG
-�����Ǹ����ھ�����ͷ�������ڸ����ľɾӡ����ڵ�
-�Ҿߺ������˵ص��ڵ��ϡ������һ�ǽ���һ��֩������
-���ﵽ���ǳ�������Ȼ���Ѿ��ܾ�û����ס�ˡ�����ľ�
-ͷ��һ����(men)�����ѱ�̮����ש�ߵ�ס�ˡ�
+这里是福威镖局总镖头林震南在福建的旧居。室内的
+家具横七竖八地倒在地上。房间的一角结着一张蜘蛛网，
+屋里到处是尘土，显然是已经很久没有人住了。房间的尽
+头有一扇门(men)，但已被坍塌的砖瓦挡住了。
 LONG );
 
     set("exits", ([
@@ -24,7 +24,7 @@ LONG );
     ]));
 
     set("item_desc", ([
-        "men" : "�������ѱ���ס�޷�ͨ�У����������(break)����\n",
+        "men" : "这扇门已被挡住无法通行，除非你打破(break)它。\n",
     ]) );
     set("no_clean_up", 0);
     setup();
@@ -46,14 +46,14 @@ int do_break(string arg)
     int n;
     n = this_player()->query("neili");
     if( !arg || arg!="men" ) {
-        write("��Ҫ��������˵Ķ�����\n");
+        write("不要随便打碎别人的东西！\n");
         return 1;
     }
     message_vision(
-"$N�ߵ�����ǰ���ݳ���������ʽ������һ������˫��ͬʱ�ĳ���\n", this_player());
+"$N走到后门前，拜出骑马蹲裆式，深吸一口气，双掌同时拍出。\n", this_player());
     if (n>=200) {
         message_vision(
-        "$Nֻ��һ�����죬$N�������ˣ�\n", this_player());
+        "$N只听一声轰响，$N把门震开了！\n", this_player());
         set("exits/north", __DIR__"houyuan");
         this_player()->set("neili",n-200);
         remove_call_out("close");
@@ -61,7 +61,7 @@ int do_break(string arg)
     }
     else {
         message_vision(
-"$N���һ���������������ʲôҲû����������$N����������ǿ��\n", this_player());
+"$N大吼一声“开！”，结果什么也没发生。看来$N的内力不够强。\n", this_player());
         this_player()->set("neili",0);
     }
     return 1;
@@ -69,25 +69,25 @@ int do_break(string arg)
 
 void close(object room)
 {
-    message("vision","���ϵ�שͷ�߿�ϡ�ﻩ��̮���������ֵ�ס�˺��š�\n", room);
+    message("vision","门上的砖头瓦块稀里哗拉坍塌下来，又挡住了后门。\n", room);
     room->delete("exits/north");
 }
 
 void buqun_rob(object me, object book)
 {
-    message_vision(HIY "��Ȼ��һ�������˴Ӻ�Ӱ�����˳�����һ�С��з����ǡ���"
-        "���г�����˸\n����������$N���ʺ���\n" NOR,  me);
+    message_vision(HIY "忽然，一个蒙面人从黑影里闪了出来，一招「有凤来仪」，"
+        "手中长剑闪烁\n不定，刺向$N的咽喉！\n" NOR,  me);
 
     if( !me->query_skill("pixie-jian", 1) ) {
-        message_vision("$Nһ�֮�䣬�ѱ������˴��У�\n", me);
+        message_vision("$N一愣之间，已被蒙面人刺中！\n", me);
         book->move(environment(me));
         destruct(book);
         me->unconcious();
     }
     else {
         message_vision(
-        "$N����Ʈ����������ȣ�ת�˼�ת���Ʋ��������˵����󣬶����"
-        "��������һ�С�\n", me);
+        "$N身形飘忽，有如鬼魅，转了几转，移步到蒙面人的身后，躲过了"
+        "蒙面人这一招。\n", me);
     }
-    write("������˫���أ�Խǽ���ߡ�\n��о������˵����������ǻ�ɽ�ɵġ�\n");
+    write("蒙面人双足点地，越墙而走。\n你感觉蒙面人的身法好像是华山派的。\n");
 }

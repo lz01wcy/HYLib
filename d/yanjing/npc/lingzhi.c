@@ -1,11 +1,11 @@
 inherit NPC;
 void create()
 {
-   set_name("ÁéÖÇÉÏÈË",({"lingzhi shangren"}));
-   set("gender","ÄĞĞÔ");
+   set_name("çµæ™ºä¸Šäºº",({"lingzhi shangren"}));
+   set("gender","ç”·æ€§");
    set("mingwang",-9000);
    set("combat_exp",123000);
-   set("title","´óÊÖÓ¡");
+   set("title","å¤§æ‰‹å°");
    set("age",54);
    set("kee",780);
    set("max_kee",780);

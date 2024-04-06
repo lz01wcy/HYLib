@@ -3,18 +3,18 @@
 inherit NPC;
 
 mapping *data=({
-(["name":"ĞÇËŞÔªÀÏ",	"id":"yuanlao",	"mw":-1,	]),
-(["name":"ÈÕÔÂ½Ì³¤ÀÏ",	"id":"zhanglao",	"mw":1,	]),
-(["name":"ÁéÉßµºµºÖ÷",	"id":"daozhu",	"mw":-1,	"weapon":"blade",	]),
-(["name":"Ø¤°ï³¤ÀÏ",	"id":"zhanglao",	"mw":1,	"weapon":"club",	]),
-(["name":"ÌìÏÂ»á»á³¤",	"id":"huizhang",	"mw":1,	"weapon":"blade",	]),
-(["name":"áÔÉ½ÅÉÒşÕß",	"id":"yinzhe",	"mw":-1,	"weapon":"sword",	]),
-(["name":"ÓùÇ°ÊÌÎÀ³¤",	"id":"zhang",		"mw":1,	"weapon":"sword",	]),
-(["name":"ÉÙÁÖìøÊ¦",	"id":"chanshi",	"mw":1,	"weapon":"blade",]),
-(["name":"ÁéğÕ¹¬³¤ÀÏ",	"id":"zhanglao",	"mw":-1,	"weapon":"whip",	]),
-(["name":"É½´óÍõ",		"id":"daiwang",	"mw":-1,	"weapon":"throwing",]),
-(["name":"ºÚÉç»áÀÏ´ó",	"id":"laoda",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÎŞÁ¿É½ÕÆÃÅ",	"id":"zhangmen",	"mw":1,	"weapon":"sword",]),
+(["name":"æ˜Ÿå®¿å…ƒè€",	"id":"yuanlao",	"mw":-1,	]),
+(["name":"æ—¥æœˆæ•™é•¿è€",	"id":"zhanglao",	"mw":1,	]),
+(["name":"çµè›‡å²›å²›ä¸»",	"id":"daozhu",	"mw":-1,	"weapon":"blade",	]),
+(["name":"ä¸å¸®é•¿è€",	"id":"zhanglao",	"mw":1,	"weapon":"club",	]),
+(["name":"å¤©ä¸‹ä¼šä¼šé•¿",	"id":"huizhang",	"mw":1,	"weapon":"blade",	]),
+(["name":"åµ©å±±æ´¾éšè€…",	"id":"yinzhe",	"mw":-1,	"weapon":"sword",	]),
+(["name":"å¾¡å‰ä¾å«é•¿",	"id":"zhang",		"mw":1,	"weapon":"sword",	]),
+(["name":"å°‘æ—ç¦…å¸ˆ",	"id":"chanshi",	"mw":1,	"weapon":"blade",]),
+(["name":"çµé¹«å®«é•¿è€",	"id":"zhanglao",	"mw":-1,	"weapon":"whip",	]),
+(["name":"å±±å¤§ç‹",		"id":"daiwang",	"mw":-1,	"weapon":"throwing",]),
+(["name":"é»‘ç¤¾ä¼šè€å¤§",	"id":"laoda",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ— é‡å±±æŒé—¨",	"id":"zhangmen",	"mw":1,	"weapon":"sword",]),
 });
 
 

@@ -1,19 +1,19 @@
-// midao4.c ÃÜµÀ
+// midao4.c å¯†é“
 
 inherit ROOM;
 
 int do_break(string arg);
 void create()
 {
-        set("short", "ÃÜµÀ");
+        set("short", "å¯†é“");
         set("long", @LONG
-ÕâÊÇÒ»ÌõºÜ³¤µÄÃØÃÜÍ¨µÀ£¬ËÄÖÜÊÇ¼áÓ²µÄÊ¯±Ú£¬ÄãÊ²Ã´Ò²¿´²»
-¼û£¬Ö»ÄÜÃþË÷Ç°½ø¡£Í»È»Äã×ßµ½ÁËÂ·µÄ¾¡Í·£¬ÕâÊÇ¸öËÀÂ·£¬Äã»¹ÊÇ
-»ØÈ¥°É¡£
+è¿™æ˜¯ä¸€æ¡å¾ˆé•¿çš„ç§˜å¯†é€šé“ï¼Œå››å‘¨æ˜¯åšç¡¬çš„çŸ³å£ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸
+è§ï¼Œåªèƒ½æ‘¸ç´¢å‰è¿›ã€‚çªç„¶ä½ èµ°åˆ°äº†è·¯çš„å°½å¤´ï¼Œè¿™æ˜¯ä¸ªæ­»è·¯ï¼Œä½ è¿˜æ˜¯
+å›žåŽ»å§ã€‚
 LONG );
         set("item_desc",([
-            "shibi" : "°¦!Ê¯±ÚÓÐÊ²Ã´¿É¿´µÄ£¬²»¹ýÕâ²àµÄÊ¯±ÚºÍÆäËûµÄ²»Í¬È´ÊÇÕæµÄ¡£
-Ñ½£¬ËüÊÇÒ»¸öÊ¯ÃÅ(men)ÍÛ!\n",
+            "shibi" : "å”‰!çŸ³å£æœ‰ä»€ä¹ˆå¯çœ‹çš„ï¼Œä¸è¿‡è¿™ä¾§çš„çŸ³å£å’Œå…¶ä»–çš„ä¸åŒå´æ˜¯çœŸçš„ã€‚
+å‘€ï¼Œå®ƒæ˜¯ä¸€ä¸ªçŸ³é—¨(men)å“‡!\n",
         ]));
         set("exits", ([
                 "east" : __DIR__"midao3",
@@ -32,13 +32,13 @@ int do_break(string arg)
         n = this_player()->query("neili");
         if( !arg || arg!="men")
         {
-            write("²»ÒªËæÒâ´òÆÆ±ðÈËµÄ¶«Î÷¡£\n");
+            write("ä¸è¦éšæ„æ‰“ç ´åˆ«äººçš„ä¸œè¥¿ã€‚\n");
             return 1;
         }
-        message_vision("$NÔÚÊ¯ÃÅÇ°Õ¾¶¨£¬ÉîÎüÒ»¿ÚÆø£¬Á½ÕÆÍ¬Ê±ÅÄ³ö¡£\n", this_player());
+        message_vision("$Nåœ¨çŸ³é—¨å‰ç«™å®šï¼Œæ·±å¸ä¸€å£æ°”ï¼Œä¸¤æŽŒåŒæ—¶æ‹å‡ºã€‚\n", this_player());
         if (n >200)
         {
-            message_vision("$Nµ¤ÌïÒ»ÔËÆø£¬ÃÍµÄÒ»ÅÄ£¬Ê¯ÃÅÂýÂýµÄ¿ªÁË¡£\n", this_player());
+            message_vision("$Nä¸¹ç”°ä¸€è¿æ°”ï¼ŒçŒ›çš„ä¸€æ‹ï¼ŒçŸ³é—¨æ…¢æ…¢çš„å¼€äº†ã€‚\n", this_player());
             set("exits/west",__DIR__"midao5");
             this_player()->set("neili",n-200);
             remove_call_out("close");
@@ -46,7 +46,7 @@ int do_break(string arg)
         }
         else
         {
-            message_vision("$Nµ¤ÌïÒ»ÔËÆø£¬ÃÍµÄÒ»ÅÄ£¬Ê¯ÃÅÈ´Ë¿ºÁÃ»¶¯¡£\n", this_player());
+            message_vision("$Nä¸¹ç”°ä¸€è¿æ°”ï¼ŒçŒ›çš„ä¸€æ‹ï¼ŒçŸ³é—¨å´ä¸æ¯«æ²¡åŠ¨ã€‚\n", this_player());
             this_player()->set("neili",0);
         }
         return 1;
@@ -54,7 +54,7 @@ int do_break(string arg)
 
 void close(object room)
 {
-        message("vision","Ê¯ÃÅ×Ô¶¯µÄºÏÉÏÁË¡£\n", room);
+        message("vision","çŸ³é—¨è‡ªåŠ¨çš„åˆä¸Šäº†ã€‚\n", room);
         room->delete("exits/west");
 }
 

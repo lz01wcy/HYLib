@@ -1,13 +1,13 @@
 // baling/edao1
-// Room in ����
+// Room in 巴陵
 inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-��С�������Ĵ�ɽ���ı������£�б�²������ɵ���ȥ������
-������ġ������Ӳݴ�����ʮ�ֻ���������ɢ�ż���Ǻ���
+你小心翼翼的从山顶的北坡走下，斜坡不算很深，可掉下去决不是
+闹着玩的。这里杂草丛生，十分荒凉，地上散着几块骨骸。
 LONG);
 
 	set("exits", ([

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","É½Â·");
+        set("short","å±±è·¯");
         set("long",@LONG
-ÕâÀïÊÇ¿¿½ü´¨Î÷µÄ³çÉ½¾şÁë£¬¹ÖÊ¯á×á¾¡£ÔÙÍù¶«È¥¾ÍÊÇ´¨Î÷±ßÔµÁË¡£
-ÍùÎ÷ÓĞÒ»×ùÑ©É½¸ßËÊÈëÔÆ¡£Â·±ßÉÏÓĞÒ»¸ö´óÑ©¿Ó(hollow)¡£
+è¿™é‡Œæ˜¯é è¿‘å·è¥¿çš„å´‡å±±å³»å²­ï¼Œæ€ªçŸ³å¶™å³‹ã€‚å†å¾€ä¸œå»å°±æ˜¯å·è¥¿è¾¹ç¼˜äº†ã€‚
+å¾€è¥¿æœ‰ä¸€åº§é›ªå±±é«˜è€¸å…¥äº‘ã€‚è·¯è¾¹ä¸Šæœ‰ä¸€ä¸ªå¤§é›ªå‘(hollow)ã€‚
 LONG );
         set("exits",([
                 "eastdown"  : __DIR__"sroad2",
@@ -19,7 +19,7 @@ LONG );
                 __DIR__"npc/liuchengfeng" : 1,
         ]));
         set("item_desc",([
-                "hollow"  : "Ò»¸öÑ©¿Ó£¬ËÆºõ¿ÉÒÔÌø(jump)ÏÂÈ¥¡£\n"
+                "hollow"  : "ä¸€ä¸ªé›ªå‘ï¼Œä¼¼ä¹å¯ä»¥è·³(jump)ä¸‹å»ã€‚\n"
         ]));
         set("outdoors", "xueshan");
         set("no_clean_up", 0);
@@ -36,12 +36,12 @@ int do_jump(string arg)
         object guo;
         if( arg=="hollow")
         {
-message_vision("$N¸ÕÏëÍùÏÂÌø£¬½ÅÔÚÑ©µØÉÏÒ»»¬£¬±åß´Ò»ÏÂË¤µ½¿Óµ×¡£\n",this_player());
+message_vision("$Nåˆšæƒ³å¾€ä¸‹è·³ï¼Œè„šåœ¨é›ªåœ°ä¸Šä¸€æ»‘ï¼Œåå½ä¸€ä¸‹æ‘”åˆ°å‘åº•ã€‚\n",this_player());
                 this_player()->move(__DIR__"hollow");
         }
         else
         {
-message_vision("$NÌøÁËÆğÀ´£¬½ÅÔÚÑ©µØÉÏÒ»»¬¾ÍÅ¿ÔÚµØÉÏÁË¡£\n",this_player());
+message_vision("$Nè·³äº†èµ·æ¥ï¼Œè„šåœ¨é›ªåœ°ä¸Šä¸€æ»‘å°±è¶´åœ¨åœ°ä¸Šäº†ã€‚\n",this_player());
         }
         return 1;
 }

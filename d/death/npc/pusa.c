@@ -5,24 +5,24 @@
 inherit NPC;
 
 string *death_msg = ({
-        HIY "µØ²ØÍõÆÐÈøÄîµÀ£º°¢ÃÖÍÓ·ð£¡\n\n" NOR,
-        HIY "µØ²ØÍõÆÐÈøÉì³öÒ»Ö»ÊÖ£¬·¢³öÎÞÏÞ¹âÃ¢£¬°´ÔÚÄãµÄ¶¥ÃÅÖ®ÉÏ¡£\n\n" NOR,
-        HIY "µØ²ØÍõÆÐÈøÇáÌ¾Ò»Éù£ºÈêËäÎª·ðÃÅµÜ×Ó£¬È´ÒªÔâÊÜÈç´Ë¿àÄÑ£¬Ö»ÒòÒò¹ûÈç´Ë£¬ÉÆÔÕ£¡ÉÆÔÕ£¡\n\n" NOR,
-        HIY "µØ²ØÍõÆÐÈøµÀ£ºÈêµ±Ò»ÐÄÏò·ð£¬ÀúÊ®¼ÍÔÖÄÑ£¬²ÅÄÜ³¬ÍÑ¿àº££¬ÖÕ³ÉÕý¹û£¡\n\n" NOR,
-        HIY "µØ²ØÍõÆÐÈøÌ¾µÀ£º·ðÔ»¡°ÎÒ²»ÈëµØÓü£¬Ë­ÈëµØÓü£¿¡±£¬Äã×ß°É£¬È¥³¥»¹ÄÇÇ°ÊÀµÄÄõÕ®¡£\n\n"
-                HIW"Äã¾õµÃ×Ô¼ºµÄÒâÊ¶Ô½À´Ô½Èõ£¬½¥½¥²»Ê¡ÈËÊÂÁË¡£¡£¡£\n\n" NOR,
+        HIY "åœ°è—çŽ‹è©è¨å¿µé“ï¼šé˜¿å¼¥é™€ä½›ï¼\n\n" NOR,
+        HIY "åœ°è—çŽ‹è©è¨ä¼¸å‡ºä¸€åªæ‰‹ï¼Œå‘å‡ºæ— é™å…‰èŠ’ï¼ŒæŒ‰åœ¨ä½ çš„é¡¶é—¨ä¹‹ä¸Šã€‚\n\n" NOR,
+        HIY "åœ°è—çŽ‹è©è¨è½»å¹ä¸€å£°ï¼šæ±è™½ä¸ºä½›é—¨å¼Ÿå­ï¼Œå´è¦é­å—å¦‚æ­¤è‹¦éš¾ï¼Œåªå› å› æžœå¦‚æ­¤ï¼Œå–„å“‰ï¼å–„å“‰ï¼\n\n" NOR,
+        HIY "åœ°è—çŽ‹è©è¨é“ï¼šæ±å½“ä¸€å¿ƒå‘ä½›ï¼ŒåŽ†åçºªç¾éš¾ï¼Œæ‰èƒ½è¶…è„±è‹¦æµ·ï¼Œç»ˆæˆæ­£æžœï¼\n\n" NOR,
+        HIY "åœ°è—çŽ‹è©è¨å¹é“ï¼šä½›æ›°â€œæˆ‘ä¸å…¥åœ°ç‹±ï¼Œè°å…¥åœ°ç‹±ï¼Ÿâ€ï¼Œä½ èµ°å§ï¼ŒåŽ»å¿è¿˜é‚£å‰ä¸–çš„å­½å€ºã€‚\n\n"
+                HIW"ä½ è§‰å¾—è‡ªå·±çš„æ„è¯†è¶Šæ¥è¶Šå¼±ï¼Œæ¸æ¸ä¸çœäººäº‹äº†ã€‚ã€‚ã€‚\n\n" NOR,
 });
 
 void create()
 {
-        set_name("µØ²ØÍõÆÐÈø", ({ "dizangwang pusa", "pusa", "budda" }) );
-        set("title",  HIY"Òõ¼äÂÖ»ØÍõ"NOR );
-        set("long", "ÄãµÍÍ·ÂñÊ×£¬ÎÞ·¨¿´ÇåËûµÄ±¦Ïó¡£\n");
+        set_name("åœ°è—çŽ‹è©è¨", ({ "dizangwang pusa", "pusa", "budda" }) );
+        set("title",  HIY"é˜´é—´è½®å›žçŽ‹"NOR );
+        set("long", "ä½ ä½Žå¤´åŸ‹é¦–ï¼Œæ— æ³•çœ‹æ¸…ä»–çš„å®è±¡ã€‚\n");
         set("attitude", "peaceful");
         set("chat_chance", 5);
         set("chat_msg", ({ 
-"´óµîÖÐÏìÆðÒ»Õó£º¡°°¢ÃÖÍÓ·ð¡±µÄÉùÒô¡£\n",
-"ÓÖ×ß½øÀ´¼¸ÃûÀ÷¹í£¬¶¼Ë«ÊÖºÏÊ®£¬¹òÔÚµØÉÏ¡£\n",
+"å¤§æ®¿ä¸­å“èµ·ä¸€é˜µï¼šâ€œé˜¿å¼¥é™€ä½›â€çš„å£°éŸ³ã€‚\n",
+"åˆèµ°è¿›æ¥å‡ ååŽ‰é¬¼ï¼Œéƒ½åŒæ‰‹åˆåï¼Œè·ªåœ¨åœ°ä¸Šã€‚\n",
         }) );
         set("age", 300000);
         set("combat_exp", 200000);
@@ -47,12 +47,12 @@ void death_stage(object ob, int stage)
         if( !ob || !present(ob) ) return;
 
         if( !ob->is_ghost() ) {
-                command("say ÂÖ»ØÎÞ³££¬Ñô¼äÖ®ÈË£¬Ó¦µ±»Øµ½Ñô¼äÈ¥²ÅÊÇ¡£");
-                message_vision("Á½ÃûÁ¦Ê¿ÉÁÁË³öÀ´£¬¼ÜÆð$N£¬Ò»»Î¾Í²»¼ûÁË£¡\n", ob);
+                command("say è½®å›žæ— å¸¸ï¼Œé˜³é—´ä¹‹äººï¼Œåº”å½“å›žåˆ°é˜³é—´åŽ»æ‰æ˜¯ã€‚");
+                message_vision("ä¸¤ååŠ›å£«é—ªäº†å‡ºæ¥ï¼Œæž¶èµ·$Nï¼Œä¸€æ™ƒå°±ä¸è§äº†ï¼\n", ob);
                 ob->reincarnate();
                 ob->move(REVIVE_ROOM);
-                tell_object(ob, HIW"ÄãÒ»ÕóÔÎÐý£¬ÐÑÀ´ºóÈ´·¢ÏÖ×Ô¼ºÒÑ¾­»Øµ½ÁËÑô¼ä£¡\n"NOR);
-                message("vision","ÄãºöÈ»·¢ÏÖÈËÓ°²»Öª´ÓÊ²Ã´µØ·½Ã°ÁË³öÀ´¡£\n", environment(ob), ob);
+                tell_object(ob, HIW"ä½ ä¸€é˜µæ™•æ—‹ï¼Œé†’æ¥åŽå´å‘çŽ°è‡ªå·±å·²ç»å›žåˆ°äº†é˜³é—´ï¼\n"NOR);
+                message("vision","ä½ å¿½ç„¶å‘çŽ°äººå½±ä¸çŸ¥ä»Žä»€ä¹ˆåœ°æ–¹å†’äº†å‡ºæ¥ã€‚\n", environment(ob), ob);
                 return;
         }
 
@@ -64,5 +64,5 @@ void death_stage(object ob, int stage)
                 ob->reincarnate();
 ob->save();
         ob->move(REVIVE_ROOM);
-        message("vision","ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°£¬²»¹ýÄÇÈËÓ°ÓÖºÃÏñÒÑ¾­ÔÚÄÇÀïºÜ¾ÃÁË£¬Ö»ÊÇÄãÒ»Ö±Ã»·¢¾õ¡£\n", environment(ob), ob);
+        message("vision","ä½ å¿½ç„¶å‘çŽ°å‰é¢å¤šäº†ä¸€ä¸ªäººå½±ï¼Œä¸è¿‡é‚£äººå½±åˆå¥½åƒå·²ç»åœ¨é‚£é‡Œå¾ˆä¹…äº†ï¼Œåªæ˜¯ä½ ä¸€ç›´æ²¡å‘è§‰ã€‚\n", environment(ob), ob);
 }

@@ -24,7 +24,7 @@ string* names = ({
         {
 if (!aa) return 1;
 if (!ob) return 1;
-        say(HIR""+aa->query("name")+"´óºÈÒ»Éù£º¿´ÕĞ£¡"NOR);
+        say(HIR""+aa->query("name")+"å¤§å–ä¸€å£°ï¼šçœ‹æ‹›ï¼"NOR);
         COMBAT_D->do_attack(aa, ob, query_temp("weapon"));
         if( (int)ob->query("qi") < 30)
              break;
@@ -33,16 +33,16 @@ if (!ob) return 1;
       }  
         if( (int)ob->query("qi") < 30)
       {
-        message_vision(HIC"Á÷ÔÆÊ¹²»Ğ¼µÄ¶Ô$NËµ:¾ÍÕâµã¹¦·ò,»¹¸Ò×ìÓ².\n\n"NOR,ob);
+        message_vision(HIC"æµäº‘ä½¿ä¸å±‘çš„å¯¹$Nè¯´:å°±è¿™ç‚¹åŠŸå¤«,è¿˜æ•¢å˜´ç¡¬.\n\n"NOR,ob);
         if(objectp(present("tulong dao",ob)) )
-        {message_vision(HIC"ËµÍêÁ÷ÔÆÊ¹½«$NÊÖÖĞµÄÍÀÁúµ¶ÄÃÁË¹ıÈ¥.\n\n",ob);
+        {message_vision(HIC"è¯´å®Œæµäº‘ä½¿å°†$Næ‰‹ä¸­çš„å± é¾™åˆ€æ‹¿äº†è¿‡å».\n\n",ob);
         tld=present("tulong dao",ob);
         tld->move(aa);}
         return 1;
       } 
         if((int)ob->query("qi")>=30&&(int)ob->query_temp("3beat")>=15)
       {
-        message_vision(HIC"Á÷ÔÆÊ¹ËµµÀ:ÖĞÍÁ¹ûÈ»ÓĞÈË²Å,ÎÒÃÇ×ß!ËµÍêÈıÈË·ÉËÙÀëÈ¥.\n\n"NOR,ob);
+        message_vision(HIC"æµäº‘ä½¿è¯´é“:ä¸­åœŸæœç„¶æœ‰äººæ‰,æˆ‘ä»¬èµ°!è¯´å®Œä¸‰äººé£é€Ÿç¦»å».\n\n"NOR,ob);
         if(!room4=find_object("/d/lingshedao/chuan"))
         room4=load_object("/d/lingshedao/chuan");
         for(k=1;k<=3;k++)
@@ -73,7 +73,7 @@ string* names = ({
         int i;
         int j;
         int k;
-        message_vision(HIC"Á÷ÔÆÊ¹ËµµÀ:¶«Î÷µ½ÊÖÁË,ÎÒÃÇ×ß!ËµÍêÈıÈË·ÉËÙÀëÈ¥.\n\n"NOR,ob);
+        message_vision(HIC"æµäº‘ä½¿è¯´é“:ä¸œè¥¿åˆ°æ‰‹äº†,æˆ‘ä»¬èµ°!è¯´å®Œä¸‰äººé£é€Ÿç¦»å».\n\n"NOR,ob);
         for(k=1;k<=3;k++)
          {
           if( objectp(aa = present(names[k-1], environment(ob)) ))

@@ -2,14 +2,14 @@
 inherit ITEM; 
 void create()
 {
-        set_name("´óÀÎÔ¿³×", ({ "key" }) );
+        set_name("å¤§ç‰¢é’¥åŒ™", ({ "key" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("material", "iron");
-        set("long", "Ò»Ã¶ÓÃÀ´´ò¿ªÌìÀÎÖĞÃÅµÄÔ¿³×¡£\n");
+        set("long", "ä¸€æšç”¨æ¥æ‰“å¼€å¤©ç‰¢ä¸­é—¨çš„é’¥åŒ™ã€‚\n");
         }
         set("prison_key",1);
         setup();

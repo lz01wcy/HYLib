@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ʯƽ̨");
+	set("short", "乱石平台");
 	set("long", @LONG
-ˮ��ʤ��ǰ��ʯƽ̨��Χ��ʯ�����������ˣ���ʯ��ͨ������ƽ̨
-���ڴ������������ں���һʮ������ƽ̨�������Գ��С�ˮ��ʤ�š���
-����Ҳ����ΪϷ���¶̨��
+水云胜概前乱石平台，围以石栏。面南两端，设石级通湖岸。平台
+低于大厅三级，高于湖岸一十六级，平台不仅用以衬托“水云胜概”大
+厅，也可作为戏班的露台。
 LONG );
 	set("outdoors", "shouxihu");
 	set("exits", ([

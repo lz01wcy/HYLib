@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-  set_name("»Ê¹¬ÊÌÎÀ",({"shi wei"}));
-  set("gender","ÄĞĞÔ");
+  set_name("çš‡å®«ä¾å«",({"shi wei"}));
+  set("gender","ç”·æ€§");
   set("age",20+random(30));
   set("combat_exp",1200000);
     set("max_neili",8500);

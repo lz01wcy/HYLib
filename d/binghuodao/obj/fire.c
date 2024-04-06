@@ -3,8 +3,8 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name(BLINK HIR "»ğ" NOR , ({ BLINK HIR "fire" NOR, "huo" }) );
-        set("long", BLINK HIR "Ò»ÍÅĞÜĞÜÈ¼ÉÕµÄ»ğ¡£\n" NOR);
+        set_name(BLINK HIR "ç«" NOR , ({ BLINK HIR "fire" NOR, "huo" }) );
+        set("long", BLINK HIR "ä¸€å›¢ç†Šç†Šç‡ƒçƒ§çš„ç«ã€‚\n" NOR);
         set("no_get",1);
         
 

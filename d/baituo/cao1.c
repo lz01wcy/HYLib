@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short","草丛");
+  set("short","鑽変笡");
   set("long",
-      "这里是乱草丛。东边是扇拱月形小敞门。\n"
-  "其余三面都是齐腰高的蒿草，常有蛇出没。\n"
+      "杩欓噷鏄贡鑽変笡銆備笢杈规槸鎵囨嫳鏈堝舰灏忔暈闂ㄣ�俓n"
+  "鍏朵綑涓夐潰閮芥槸榻愯叞楂樼殑钂胯崏锛屽父鏈夎泧鍑烘病銆俓n"
     );
   set("exits",([
       "west" : __FILE__,

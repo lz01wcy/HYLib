@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-       set_name("ÐÇËÞµÜ×Ó", ({ "xingxiu dizi", "dizi" }) );
-       set("gender", "ÄÐÐÔ" );
+       set_name("æ˜Ÿå®¿å¼Ÿå­", ({ "xingxiu dizi", "dizi" }) );
+       set("gender", "ç”·æ€§" );
        set("age", 26);
-       set("long", "ËûÊÇÒ»¸öÂúÁ³ÕÎÆøµÄÐÇËÞµÜ×Ó¡£\n");
+       set("long", "ä»–æ˜¯ä¸€ä¸ªæ»¡è„¸ç˜´æ°”çš„æ˜Ÿå®¿å¼Ÿå­ã€‚\n");
        set("combat_exp", 2500);
        set("attitude", "friendly");
        setup();
@@ -28,9 +28,9 @@ void greeting(object ob)
 	
 	if (!ob || !present(ob, environment())) return;
 	switch( random(2) ) {
-		case 0: say("ÐÇËÞµÜ×ÓºÙºÙËµµÀ£º¼ÓÈëÐÇËÞ£¬ÐÄ´ÈÊÖÈí¿É²»ÐÐ¡£ÕâÎ»"+RANK_D->query_respect(ob)+"£¬ÏëÍ¨µÄ»°£¬¿ÉÒÔ¿´"BRED"(help xingxiu)"NOR"¡£\n");
+		case 0: say("æ˜Ÿå®¿å¼Ÿå­å˜¿å˜¿è¯´é“ï¼šåŠ å…¥æ˜Ÿå®¿ï¼Œå¿ƒæ…ˆæ‰‹è½¯å¯ä¸è¡Œã€‚è¿™ä½"+RANK_D->query_respect(ob)+"ï¼Œæƒ³é€šçš„è¯ï¼Œå¯ä»¥çœ‹"BRED"(help xingxiu)"NOR"ã€‚\n");
 			break;
-		case 1: say("ÐÇËÞµÜ×Ó¼éÐ¦µÀ£ºÈç¹û±»ÎÒÃÇÐÇËÞµÄ»¯¹¦´ó·¨´òÖÐ£¬·ÇÒª°§ºÅÊýÔÂ¶øËÀ¡£\n");
+		case 1: say("æ˜Ÿå®¿å¼Ÿå­å¥¸ç¬‘é“ï¼šå¦‚æžœè¢«æˆ‘ä»¬æ˜Ÿå®¿çš„åŒ–åŠŸå¤§æ³•æ‰“ä¸­ï¼Œéžè¦å“€å·æ•°æœˆè€Œæ­»ã€‚\n");
 			break;
 	}
 

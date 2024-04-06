@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "山路");
+    set("short", "灞辫矾");
     set("long", @LONG
-这里是一条上山的小路向西分出一条岔道。北边是
+杩欓噷鏄竴鏉′笂灞辩殑灏忚矾鍚戣タ鍒嗗嚭涓�鏉″矓閬撱�傚寳杈规槸
 LONG
 );
         set("outdoors","changan");

@@ -3,12 +3,12 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-	set_name("ÎğÍüÎÒ", ({ "wu grass" , "grass"}) );
+	set_name("å‹¿å¿˜æˆ‘", ({ "wu grass" , "grass"}) );
 	set_weight(50);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Öê");
+		set("unit", "æ ª");
 		set("value", 1);
 	}
 }

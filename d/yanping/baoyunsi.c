@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "宝云寺");
 	set("long", @LONG
-������λ�ھŷ�ɽ�ϣ�ʼ�����Ƴ�����Ԫ�꣬ԭ���Ϸ��ռ�Ժ��Ԫ
-���ĳơ����¡������С��������������������ΰ��������̻Իͣ�
-���Թ�ľ���죬Ϧ���𴦣��������֡�
+宝云寺位于九峰山上，始建于唐朝龙纪元年，原名南峰普济院，元
+代改称“三寺”，遂有“三寺云深”景名。寺庙宏伟富丽，金碧辉煌，
+寺旁古木参天，夕云起处，若隐若现。
 LONG );
 	set("exits", ([
 		"northdown" : __DIR__"9fengshan",

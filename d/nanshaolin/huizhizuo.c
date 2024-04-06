@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 { 
-	set("short",HIG"»ÞÖÇÊ¥×ù"NOR);
+	set("short",HIG"æ™¦æ™ºåœ£åº§"NOR);
 	set("long", @LONG
-»ÞÖÇìøÊ¦Ê¥×ùÄÚÐÞÕæÖ®´¦Ô­ÊÇÒ»¼äÊ¯¶´£¬ÈëµÃ¶´À´Ö»¼ûÇàÊ¯ÆÌµØ¾¹
-ÊÇÆÄÎª¿í³¨£¬¼¸´¦ÖÓÈéÖéÓ§½ðÂç£¬¾§±ÚÓñÕÏ¡£²»µ«ºÏ¶´Í¨Ã÷ÁÁÈë°×Öç£»
-Óñ´²±Ì¼¸£¬²»È¾ÏË³¾¡£¶øÇÒÊ¯ÊÒÐÞÕû£¬ÃÅ»§¾®È»£¬µ½´¦¹â»ª²ÓÀÃ£¬Ä¿ÃÔ
-ÎåÉ«¡£ÏëÊÇìøÊ¦ÓÐÒâÓÚÊÀË×¸»¹óÑ£Ä¿Ö®ÆøÄÚÐÞÕæ£¬¸üÔöìøÐÄ¡£ËÄ±Ú¸÷µñ
-ÁËÒ»×ùÇ§ÊÖÈçÀ´·ðÏñ×ËÌ¬¸÷²»ÏàÍ¬£¬èòèòÈçÉú£¬ÄýÍûÖ®ÏÂÁîÈËÍüË×¡£
+æ™¦æ™ºç¦…å¸ˆåœ£åº§å†…ä¿®çœŸä¹‹å¤„åŽŸæ˜¯ä¸€é—´çŸ³æ´žï¼Œå…¥å¾—æ´žæ¥åªè§é’çŸ³é“ºåœ°ç«Ÿ
+æ˜¯é¢‡ä¸ºå®½æ•žï¼Œå‡ å¤„é’Ÿä¹³ç ç¼¨é‡‘ç»œï¼Œæ™¶å£çŽ‰éšœã€‚ä¸ä½†åˆæ´žé€šæ˜Žäº®å…¥ç™½æ˜¼ï¼›
+çŽ‰åºŠç¢§å‡ ï¼Œä¸æŸ“çº¤å°˜ã€‚è€Œä¸”çŸ³å®¤ä¿®æ•´ï¼Œé—¨æˆ·äº•ç„¶ï¼Œåˆ°å¤„å…‰åŽç¿çƒ‚ï¼Œç›®è¿·
+äº”è‰²ã€‚æƒ³æ˜¯ç¦…å¸ˆæœ‰æ„äºŽä¸–ä¿—å¯Œè´µçœ©ç›®ä¹‹æ°”å†…ä¿®çœŸï¼Œæ›´å¢žç¦…å¿ƒã€‚å››å£å„é›•
+äº†ä¸€åº§åƒæ‰‹å¦‚æ¥ä½›åƒå§¿æ€å„ä¸ç›¸åŒï¼Œæ ©æ ©å¦‚ç”Ÿï¼Œå‡æœ›ä¹‹ä¸‹ä»¤äººå¿˜ä¿—ã€‚
 LONG );
 	set("exits", ([
 		"out" : __DIR__"fota2",				
@@ -29,27 +29,27 @@ int do_ningwang(string arg)
 {
 	object me = this_player();
 	int lvl = me->query_skill("hand", 1), exp = me->query("combat_exp");
-	if (arg!="foxiang") return notify_fail("ÄãÒªÄýÍûÊ²Ã´£¿\n");
+	if (arg!="foxiang") return notify_fail("ä½ è¦å‡æœ›ä»€ä¹ˆï¼Ÿ\n");
 	if (!living(me)) return 0;
 	if (!random(5))
-	message("vision", me->name()+"ÕýÔÚ¶Ô×ÅÇ½±ÚÄýÉñ¹Û¿´·ðÏñµÄÊÖ·¨¡£\n", environment(me), ({me}) );
+	message("vision", me->name()+"æ­£åœ¨å¯¹ç€å¢™å£å‡ç¥žè§‚çœ‹ä½›åƒçš„æ‰‹æ³•ã€‚\n", environment(me), ({me}) );
 	if (lvl < 30)
 	{
-		write("ÄãÄýÍû·ðÏñ£¬µ«¾õÇ§ÊÖ·±¸´£¬ÊµÎÞ°ëµãÂöÂç¿ÉÑ°¡£\n");
+		write("ä½ å‡æœ›ä½›åƒï¼Œä½†è§‰åƒæ‰‹ç¹å¤ï¼Œå®žæ— åŠç‚¹è„‰ç»œå¯å¯»ã€‚\n");
 		return 1;
 	}
         if (lvl * lvl * lvl / 10 < exp)
         {
-                write(HIR"ÄãÄýÍû·ðÏñ£¬ÐÄÖÐËÆÓÐËùÎò£¬µ«±Ï¾¹¾­ÑéÉÐÇ³£¬Ê²Ã´Ò²Ã»ÁìÎòµ½¡£\n"NOR);
+                write(HIR"ä½ å‡æœ›ä½›åƒï¼Œå¿ƒä¸­ä¼¼æœ‰æ‰€æ‚Ÿï¼Œä½†æ¯•ç«Ÿç»éªŒå°šæµ…ï¼Œä»€ä¹ˆä¹Ÿæ²¡é¢†æ‚Ÿåˆ°ã€‚\n"NOR);
                 return 1;
         }
 	if (lvl > 100)
 	{
-		write("·ðÏñ×ËÊÆËä·±µ«ÄãÒÑ¾¡ÊýÁìÎòÓÚÐÄ¡£\n");
+		write("ä½›åƒå§¿åŠ¿è™½ç¹ä½†ä½ å·²å°½æ•°é¢†æ‚ŸäºŽå¿ƒã€‚\n");
 		return 1;
 	}
         me->receive_damage("jing", 30);
         me->improve_skill("hand", (me->query("int"))*3/2);
-        write("ÄãÍû×Å·ðÏñÇ§Ææ°Ù¹ÖÖ®ÊÖ·¨£¬ÐÄÖÐ¶Ô»ù±¾ÊÖ·¨ÓÐËùÁìÎò¡£\n");
+        write("ä½ æœ›ç€ä½›åƒåƒå¥‡ç™¾æ€ªä¹‹æ‰‹æ³•ï¼Œå¿ƒä¸­å¯¹åŸºæœ¬æ‰‹æ³•æœ‰æ‰€é¢†æ‚Ÿã€‚\n");
 	return 1;
 }

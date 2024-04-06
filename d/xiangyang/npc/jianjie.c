@@ -3,12 +3,12 @@
 inherit NPC;
 void create()
 {
-      set_name("¼ò½İ", ({ "jian jie", "jian" }));
-	set("nickname", "Ê¥ÊÖåÈÀ¶");
+      set_name("ç®€æ·", ({ "jian jie", "jian" }));
+	set("nickname", "åœ£æ‰‹è¿¦è“");
 	set("long", 
-        "ÈıÊ®À´ËêµÄÑù×Ó£¬Ò»Ë«ÑÛ¾¦Î¢Î¢ÃĞ·ì¡£\n"
-        "¾İËµÒ»Éí¹¦·òºÜÊÇÁËµÃ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸‰åæ¥å²çš„æ ·å­ï¼Œä¸€åŒçœ¼ç›å¾®å¾®çœ¯ç¼ã€‚\n"
+        "æ®è¯´ä¸€èº«åŠŸå¤«å¾ˆæ˜¯äº†å¾—ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 36);
 	set("attitude", "peaceful");
 	set("shen", -10000);
@@ -52,7 +52,7 @@ void create()
 	prepare_skill("strike", "chousui-zhang");
 	prepare_skill("claw", "sanyin-wugongzhao");
 
-//	create_family("", 2, "µÜ×Ó");
+//	create_family("", 2, "å¼Ÿå­");
 
    
 

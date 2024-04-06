@@ -1,4 +1,4 @@
-//hua.c °ÙÏã»¨
+//hua.c ç™¾é¦™èŠ±
 inherit ITEM;
 #include <ansi.h>
 
@@ -9,16 +9,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIG"°ÙÏã»¨"NOR, ({"hua", "baixiang"}));
-	set("unit", "¶ä");
-	set("long", "ÕâÊÇÒ»¶äÏÊÑŞµÄ»¨£¬»¨ÏãÅ¨ÓôÒì³£¡£\n");
+	set_name(HIG"ç™¾é¦™èŠ±"NOR, ({"hua", "baixiang"}));
+	set("unit", "æœµ");
+	set("long", "è¿™æ˜¯ä¸€æœµé²œè‰³çš„èŠ±ï¼ŒèŠ±é¦™æµ“éƒå¼‚å¸¸ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="hua")
 	{
 //		me->add("max_neili",5);

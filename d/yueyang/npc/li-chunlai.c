@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Àî´ºÀ´", ({"li chunlai", "li", "chunlai"}));
-	set("gender", "ÄÐÐÔ");
+	set_name("æŽæ˜¥æ¥", ({"li chunlai", "li", "chunlai"}));
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "ÕâÊÇÎ»ÎäÒÕ¾«Ç¿µÄØ¤°ïÎå´üµÜ×Ó¡£\n");
+	set("long", "è¿™æ˜¯ä½æ­¦è‰ºç²¾å¼ºçš„ä¸å¸®äº”è¢‹å¼Ÿå­ã€‚\n");
 	set("attitude", "peaceful");
 	set("class", "beggar");
  	set("beggarlvl", 7);
@@ -39,10 +39,10 @@ void create()
 	set_skill("strike",60);
 	
 
-	set("party/party_name", HIC"Ø¤°ï"NOR);
-	set("party/rank", GRN"´óÖÇ·Ö¶æ"HIY"Îå´üµÜ×Ó"NOR);
+	set("party/party_name", HIC"ä¸å¸®"NOR);
+	set("party/rank", GRN"å¤§æ™ºåˆ†èˆµ"HIY"äº”è¢‹å¼Ÿå­"NOR);
 	set("party/level", 5);
-	create_family("Ø¤°ï", 11, "µÜ×Ó");
+	create_family("ä¸å¸®", 11, "å¼Ÿå­");
 	setup();
 
 	carry_object("/clone/weapon/gangdao")->wield();

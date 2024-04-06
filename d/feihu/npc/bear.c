@@ -1,20 +1,20 @@
-//´ó°×ĞÜ
+//å¤§ç™½ç†Š
 //by steel
 #include "ansi.h"
 inherit NPC;
 
 void create()
 {
-  set_name("´ó°×ĞÜ",({"bear","bigbear"}));
-  set("race","Ò°ÊŞ");
+  set_name("å¤§ç™½ç†Š",({"bear","bigbear"}));
+  set("race","é‡å…½");
   set("age", 5);
-  set("long","ÕâÊÇÒ»Í·º©º©µÄ´ó°×ĞÜ¡£Ã«É«¿´À´ºÜºÃ£¡\n");
+  set("long","è¿™æ˜¯ä¸€å¤´æ†¨æ†¨çš„å¤§ç™½ç†Šã€‚æ¯›è‰²çœ‹æ¥å¾ˆå¥½ï¼\n");
   set("attitude","aggressive");
   
   set("str",60);
   set("cor",30);
  
-  set("limbs",({ "Í·²¿", "ÉíÌå", "ÍÈ²¿", "ÍÎ²¿","Ç°ĞØ",}) );
+  set("limbs",({ "å¤´éƒ¨", "èº«ä½“", "è…¿éƒ¨", "è‡€éƒ¨","å‰èƒ¸",}) );
   set("verbs",({"bite"}) );
   set("combat_exp",50000);
   set_temp("apply/attack", 50);
@@ -37,25 +37,25 @@ int do_name(string arg)
    obj=this_object();
    if(!living(obj)) 
    {
-    message_vision(HIW"$NÁ¬Ê¬Ìå¶¼²»·Å¹ı,Äã»¹ÊÇÈËÂğ?\n"NOR,me); 
+    message_vision(HIW"$Nè¿å°¸ä½“éƒ½ä¸æ”¾è¿‡,ä½ è¿˜æ˜¯äººå—?\n"NOR,me); 
     return 0;            
    }  
-   if(!arg||arg=="") return notify_fail("ÄãÏëÆÊ¿ªÉõÃ´£¿\n");
+   if(!arg||arg=="") return notify_fail("ä½ æƒ³å‰–å¼€ç”šä¹ˆï¼Ÿ\n");
    sscanf(arg,"%s",str);
-   if(str!="bear")   return notify_fail("ÕâÀïÃ»ÓĞÕâ¶«¶«!\n");
+   if(str!="bear")   return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸œä¸œ!\n");
    if(!obj->query_temp("yun"))
    {
-    message_vision(HIW"$NÃ»¿´Ëü»¹ÊÇ»î±ÄÂÒÌøµÄÂğ£¿\n"NOR,me); 
+    message_vision(HIW"$Næ²¡çœ‹å®ƒè¿˜æ˜¯æ´»è¹¦ä¹±è·³çš„å—ï¼Ÿ\n"NOR,me); 
     return 1;                                     
    }
   else
   {
    heart=new("/d/feihu/obj/bearheart");
    heart->set_amount(1);
-   message_vision(HIR"$N¿´×ÅÕâÍ·´ô´ôµÄĞÜ£¬¾ÙÆğ´óµ¶ÏòËüĞØ²¿¿³È¥...\n"NOR,
+   message_vision(HIR"$Nçœ‹ç€è¿™å¤´å‘†å‘†çš„ç†Šï¼Œä¸¾èµ·å¤§åˆ€å‘å®ƒèƒ¸éƒ¨ç å»...\n"NOR,
    me);
    heart->move(this_player());
-   message_vision(HIY"$NµÃµ½ÁËÒ»¿ÅĞÜĞÄ!!"NOR,me);
+   message_vision(HIY"$Nå¾—åˆ°äº†ä¸€é¢—ç†Šå¿ƒ!!"NOR,me);
    obj->delete_temp("yun");     
    obj->die();
    return 1;
@@ -65,9 +65,9 @@ int do_name(string arg)
 void unconcious()
 {
         this_object()->remove_all_enemy();
-        message("system", HIR "\nÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\n\n" NOR,
+        message("system", HIR "\nä½ çš„çœ¼å‰ä¸€é»‘ï¼Œæ¥è‘—ä»€ä¹ˆä¹Ÿä¸çŸ¥é“äº†....\n\n" NOR,
 		this_object());
-	write(HIR"\n´ó°×ĞÜ¿ì²»ĞĞÁË,¿ì¶¯ÊÖ!!\n"NOR);
+	write(HIR"\nå¤§ç™½ç†Šå¿«ä¸è¡Œäº†,å¿«åŠ¨æ‰‹!!\n"NOR);
 	set("jing", 0);
 	set("qi", 0);
 	

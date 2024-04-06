@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��̨");
+	set("short", "镜台");
 	set("long", @LONG
-�����������֮�ϣ���ڵ��ұ��ϴ��顰��̨�����֣����Ǿ�����
-��Ů������ԡ����ױ�ľ�̨�ˡ���̨����Ů����ԣ�ԶԶ��ȥ��������
-Ů�پ��廨����̬��
+这里紧靠二曲之南，黝黑的岩壁上大书“镜台”二字，便是九天上
+仙女来此沐浴后梳妆的镜台了。镜台与玉女峰相对，远远望去，便如玉
+女临镜插花的形态。
 LONG );
 	set("outdoors", "wuyi");
 	set("no_clean_up", 0);

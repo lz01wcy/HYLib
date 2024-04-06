@@ -1,4 +1,4 @@
-// wdroad7.c »ÆÍÁÂ·
+// wdroad7.c é»„åœŸè·¯
 // netkill
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY "»ÆÍÁÂ·" NOR);
+	set("short", HIY "é»„åœŸè·¯" NOR);
 	set("long", @LONG
-	Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ»ÆÍÁÂ·ÉÏ£¬Á½ÅÔÊÇÒõÉ­É­µÄÊ÷ÁÖ¡£ÕâÀïÊÇºþ±±¾³½ç£¬
-¾ÝËµ¾­³£ÓÐÍÁ·Ë³öÃ»£¬²»¿É¾ÃÁô¡£
+	ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£žæ‰¬çš„é»„åœŸè·¯ä¸Šï¼Œä¸¤æ—æ˜¯é˜´æ£®æ£®çš„æ ‘æž—ã€‚è¿™é‡Œæ˜¯æ¹–åŒ—å¢ƒç•Œï¼Œ
+æ®è¯´ç»å¸¸æœ‰åœŸåŒªå‡ºæ²¡ï¼Œä¸å¯ä¹…ç•™ã€‚
 LONG
 	);
         set("outdoors", "wudang");

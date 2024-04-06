@@ -1,4 +1,4 @@
-// /u/beyond/mr/obj/dongsun-tang ºÊÒ¶¶¬ËñÌÀ
+// /u/beyond/mr/obj/dongsun-tang èå¶å†¬ç¬‹æ±¤
 // this is made by beyond
 // update 1997.6.20
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(HIW"ºÊÒ¶¶¬ËñÌÀ"NOR, ({"dongsun tang", "tang"}));
+        set_name(HIW"èå¶å†¬ç¬‹æ±¤"NOR, ({"dongsun tang", "tang"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÅÌÉ«ÈôÃµ¹å£¬ÌğÄÛ¿É¿ÚµÄºÊÒ¶¶¬ËñÌÀ¡£\n");
-                set("unit", "ÅÌ");
+                set("long", "ä¸€ç›˜è‰²è‹¥ç«ç‘°ï¼Œç”œå«©å¯å£çš„èå¶å†¬ç¬‹æ±¤ã€‚\n");
+                set("unit", "ç›˜");
                 set("value", 150);
                 set("food_remaining", 4);
                 set("food_supply", 40);

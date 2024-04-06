@@ -1,4 +1,4 @@
-// wang.c ÍõÖØÑô
+// wang.c ç‹é‡é˜³
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -11,16 +11,16 @@ string ask_duan();
 
 void create()
 {
-        set_name("ÍõÖØÑô", ({"wang chongyang", "wang"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‹é‡é˜³", ({"wang chongyang", "wang"}));
+        set("gender", "ç”·æ€§");
         set("age", 66);
         set("class", "taoist");
-        set("title",HIW"ÖĞÉñÍ¨"NOR);
+        set("title",HIW"ä¸­ç¥é€š"NOR);
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÄ¿ªÉ½×æÊ¦¡¢Ê×´úÕÆ½ÌÍõÖØÑôÍõÕæÈË¡£Ëû°×ĞëÆ®\n"
-                "Æ®£¬¿íÅÛ»ºĞä£¬Ã¼Ä¿Çåñ³£¬ÆÄÓĞĞ©ÏÉ·çµÀ¹ÇµÄÎ¶µÀ¡£Ëû±¾À´Ò»\n"
-                "Ç»ÈÈÑªÓû±¨Ğ§¹ú¼ÒÁ¦¿¹½ğ±ø£¬¿ÉÏ§³¯Í¢¸¯°Ü£¬ÓÚÊÇĞÄ»ÒÒâÀä£¬\n"
-                "ÓÖ´ÓµÀµÂ¾­ÖĞÎòµÃÁËÌìµØ×ÌÉúµÄ´óµÀ£¬ÊÖ´´È«Õæ½Ì¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™çš„å¼€å±±ç¥–å¸ˆã€é¦–ä»£æŒæ•™ç‹é‡é˜³ç‹çœŸäººã€‚ä»–ç™½é¡»é£˜\n"
+                "é£˜ï¼Œå®½è¢ç¼“è¢–ï¼Œçœ‰ç›®æ¸…ç™¯ï¼Œé¢‡æœ‰äº›ä»™é£é“éª¨çš„å‘³é“ã€‚ä»–æœ¬æ¥ä¸€\n"
+                "è…”çƒ­è¡€æ¬²æŠ¥æ•ˆå›½å®¶åŠ›æŠ—é‡‘å…µï¼Œå¯æƒœæœå»·è…è´¥ï¼Œäºæ˜¯å¿ƒç°æ„å†·ï¼Œ\n"
+                "åˆä»é“å¾·ç»ä¸­æ‚Ÿå¾—äº†å¤©åœ°æ»‹ç”Ÿçš„å¤§é“ï¼Œæ‰‹åˆ›å…¨çœŸæ•™ã€‚\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 75);
@@ -81,21 +81,21 @@ void create()
         set_skill("finger", 550);
         set_skill("yiyang-zhi", 550);
         set_skill("force", 500);
-        set_skill("xiantian-qigong", 500);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 500);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 550);
-        set_skill("quanzhen-jian",500);  //È«Õæ½£
+        set_skill("quanzhen-jian",500);  //å…¨çœŸå‰‘
         set_skill("dodge", 560);
-        set_skill("jinyan-gong", 500);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 500);   //é‡‘é›åŠŸ
         set_skill("parry", 500);
         set_skill("unarmed",500);
-        set_skill("haotian-zhang", 500);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 500);    //æ˜Šå¤©æŒ
         set_skill("array",500);
         set_skill("qixing-array",500);
         set_skill("literate",520);
         set_skill("strike",550);
         set_skill("taoism",540);
         set_skill("finger",500);
-        set_skill("sun-finger",500);  //Ò»ÑôÖ¸
+        set_skill("sun-finger",500);  //ä¸€é˜³æŒ‡
         map_skill("force", "xiantian-qigong");
         map_skill("sword", "quanzhen-jian");
         map_skill("dodge", "jinyan-gong");
@@ -107,7 +107,7 @@ if (random(2)==0)	        map_skill("unarmed","xiantian-qigong");
         //prepare_skill("finger","sun-finger");
         //prepare_skill("strike","haotian-zhang");
 
-        create_family("È«Õæ½Ì", 1, "ÕÆ½Ì");
+        create_family("å…¨çœŸæ•™", 1, "æŒæ•™");
 
         setup();
 
@@ -128,8 +128,8 @@ int heal_up()
 void leave()
 {
 	object owner;
-	message("vision",HIG"±ÈÎä½áÊø£¡\n\n"
-		+ name() + HIG"ÉíĞÎÒ»ÉÁ£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+	message("vision",HIG"æ¯”æ­¦ç»“æŸï¼\n\n"
+		+ name() + HIG"èº«å½¢ä¸€é—ªï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -155,7 +155,7 @@ if (!me->query_skill("jiuyin-zhengong",1)
 && me->query_temp("hsljn"))
 {
 me->set_temp("hslj/5",1);
-message("channel:chat", "¡¾»ªÉ½ÂÛ½£¡¿ÌıËµ"+me->name() + "´ò°ÜÁË"+ob->query("title")+ob->query("name")+"!"NOR"\n", users());
+message("channel:chat", "ã€åå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "æ‰“è´¥äº†"+ob->query("title")+ob->query("name")+"!"NOR"\n", users());
         me->add("combat_exp",300);
         me->add("potential",100);
 }

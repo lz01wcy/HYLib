@@ -2,13 +2,13 @@
 inherit NPC;
 void create()
 {
-	set_name("ÂÌÖé", ({ "greenpearl" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("ç»¿ç ", ({ "greenpearl" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 22);
 	set("str", 10);
 	set("per", 50);
 	set("long", @LONG
-ÂÌÖéÕæÊÇÓÖÆ¯ÁÁÓÖÓĞÒ»ÖÖÓÕÈËµÄÅ®ÈËÎ¶¡£Äã¸ĞĞËÈ¤µÄ»°£¬Çë£¨£å£î£ê£ï£ù£©£®
+ç»¿ç çœŸæ˜¯åˆæ¼‚äº®åˆæœ‰ä¸€ç§è¯±äººçš„å¥³äººå‘³ã€‚ä½ æ„Ÿå…´è¶£çš„è¯ï¼Œè¯·ï¼ˆï½…ï½ï½Šï½ï½™ï¼‰ï¼
 LONG
 );
 	set("combat_exp", 1000000);
@@ -19,18 +19,18 @@ LONG
 
 int accept_fight(object me)
 {
-	command("say Ğ¡Å®×ÓÄÄÀïÊÇÄúµÄ¶ÔÊÖ£¿");
+	command("say å°å¥³å­å“ªé‡Œæ˜¯æ‚¨çš„å¯¹æ‰‹ï¼Ÿ");
 	return 0;
 }
 void init()
 {
 	object me;
 	me = this_player();
-	if( me->query("gender") == "ÄĞĞÔ")
+	if( me->query("gender") == "ç”·æ€§")
 	add_action("do_enjoy","enjoy");
 	else if (me->query("divorced"))
 	{
-	command("say ÄãÕâ¸ö²»´ÓÒ»¶øÖÕµÄ¶«Î÷£¡");
+	command("say ä½ è¿™ä¸ªä¸ä»ä¸€è€Œç»ˆçš„ä¸œè¥¿ï¼");
 	kill_ob(me);
 	me->kill_ob(this_object());
 
@@ -41,7 +41,7 @@ int do_enjoy()
 {
 	object me;
 	me = this_player();
-	message_vision("$NÇáÆ®Æ®µØÏò$n×ß¹ıÀ´£®£®£®£®\n",this_object(),me);
+	message_vision("$Nè½»é£˜é£˜åœ°å‘$nèµ°è¿‡æ¥ï¼ï¼ï¼ï¼\n",this_object(),me);
 	call_out("next_stage",3,me);
 	return 1;
 
@@ -51,8 +51,8 @@ int next_stage(object me)
 {
 	if(objectp(me) && environment(me) == environment())
 	{
-        message_vision("$NºİºİµØ´òÁË$n¼¸¸ö´ó¶ú¹â£¬ÂîµÀ£º¶¼×÷¹íÁË£¬»¹ÄÇÃ´â«Ëö£¬
-ÄÇÎÒ¾ÍÈÃ$nÔÚËÀ¼¸´Î£¡£¡\n", this_object(),me);
+        message_vision("$Nç‹ ç‹ åœ°æ‰“äº†$nå‡ ä¸ªå¤§è€³å…‰ï¼Œéª‚é“ï¼šéƒ½ä½œé¬¼äº†ï¼Œè¿˜é‚£ä¹ˆçŒ¥çï¼Œ
+é‚£æˆ‘å°±è®©$nåœ¨æ­»å‡ æ¬¡ï¼ï¼\n", this_object(),me);
 	add_temp("apply/attack",100);
 	add_temp("apply/damage",50);
         kill_ob(me);

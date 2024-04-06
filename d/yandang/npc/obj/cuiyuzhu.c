@@ -5,14 +5,14 @@ inherit HANDS;
 
 void create()
 {
-	set_name( HIC"´äÓñïí"NOR, ({ "cui yuzhuo", "yuzhuo" }) );
+	set_name( HIC"ç¿ ç‰é•¯"NOR, ({ "cui yuzhuo", "yuzhuo" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö»");
-                set("long", "Ò»Ö»ôä´äÓñïí,µñ¿Ì³ÉÒ»ÌõÊ×Î²ÏàÁ¬µÄ·ÉÁú,\n
-ÁúµÄÑÛÖéÈ´ÊÇÏâÇ¶µÄÌìÈ»"+HIR+"ºì±¦Ê¯"+NOR+",ËÆºõ¿ÉÒÔ°´(an)¶¯!\n");
+		set("unit", "åª");
+                set("long", "ä¸€åªç¿¡ç¿ ç‰é•¯,é›•åˆ»æˆä¸€æ¡é¦–å°¾ç›¸è¿çš„é£é¾™,\n
+é¾™çš„çœ¼ç å´æ˜¯é•¶åµŒçš„å¤©ç„¶"+HIR+"çº¢å®çŸ³"+NOR+",ä¼¼ä¹å¯ä»¥æŒ‰(an)åŠ¨!\n");
 		set("value",500);
 		set("material", "stone");
 		set("armor_prop/armor", 150);
@@ -28,11 +28,11 @@ int do_an(string arg)
 {
 object jade,me;
 	if( !living(this_player()))	return 0;
-if ((!arg)||((arg!="ºì±¦Ê¯")&&(arg!="ÑÛÖé"))) return notify_fail("ÄãÒª°´Ê²Ã´?\n");
+if ((!arg)||((arg!="çº¢å®çŸ³")&&(arg!="çœ¼ç "))) return notify_fail("ä½ è¦æŒ‰ä»€ä¹ˆ?\n");
 me = this_player();
 	jade = new(__DIR__"yuchang.c");
 	jade->move(me);
-message_vision("$N°´ÏÂÁú¾¦,Å¾µÄÒ»Éù,"+HIC+"Óñïí"+NOR+"µ¯¿ª,±ä³ÉÒ»°Ñ"+HIC+"¶Ì½£.\n"NOR,this_player());
+message_vision("$NæŒ‰ä¸‹é¾™ç›,å•ªçš„ä¸€å£°,"+HIC+"ç‰é•¯"+NOR+"å¼¹å¼€,å˜æˆä¸€æŠŠ"+HIC+"çŸ­å‰‘.\n"NOR,this_player());
 	destruct(this_object());
 
 return 1;

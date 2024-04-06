@@ -1,21 +1,21 @@
-// laofu.c ´óÏó
+// laofu.c å¤§è±¡
 // Date: Sep.22 1997
 
 inherit NPC;
 
 void create()
 {
-        set_name("´óÏó", ({ "daxiang", "xiang","xiang" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("å¤§è±¡", ({ "daxiang", "xiang","xiang" }) );
+        set("race", "é‡å…½");
         set("age", 20);
         set("long", @LONG
-Ò»Ö»´óÏó£¬ĞÛÎ°¼«ÁË¡£°²ÄÏÌØ²ú¡£´óµØÖ®Íõ¡£
+ä¸€åªå¤§è±¡ï¼Œé›„ä¼Ÿæäº†ã€‚å®‰å—ç‰¹äº§ã€‚å¤§åœ°ä¹‹ç‹ã€‚
 
 LONG);
         set("attitude", "aggressive");
         set("shen_type", -1);
 
-        set("limbs", ({ "ÏóÍ·", "ÏóÉí", "ÏóÇ°½Å", "Ïóºó½Å", "Ïó±Ç" }) );
+        set("limbs", ({ "è±¡å¤´", "è±¡èº«", "è±¡å‰è„š", "è±¡åè„š", "è±¡é¼»" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 30000);

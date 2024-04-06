@@ -1,14 +1,14 @@
-// Room: /d/chengdu/npc/yayi.c ¹Ù¸®ÑÃÒÛ
+// Room: /d/chengdu/npc/yayi.c å®˜åºœè¡™å½¹
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÑÃÒÛ", ({ "ya yi", "ya" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è¡™å½¹", ({ "ya yi", "ya" }));
+	set("gender", "ç”·æ€§");
 	set("age", 25);
-	set("long","Ò»¸ö¸ß´óÍşÃÍµÄºº×Ó£¬ÒòÎª¾ÃÔÚ¹Ù¸®×öÊÂ£¬Á³ÉÏÒÑ¾­Ä¥Á¶µÃºÁÎŞ±íÇé¡£\n");
+	set("long","ä¸€ä¸ªé«˜å¤§å¨çŒ›çš„æ±‰å­ï¼Œå› ä¸ºä¹…åœ¨å®˜åºœåšäº‹ï¼Œè„¸ä¸Šå·²ç»ç£¨ç‚¼å¾—æ¯«æ— è¡¨æƒ…ã€‚\n");
 	set("combat_exp", 7500);
 	set("shen_type", 1);
 	set_skill("unarmed", 30);

@@ -1,17 +1,17 @@
-// daotong1.c µÀÍ¯
+// daotong1.c é“ç«¥
 // By Lgg,1998.10
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡µÀÍ¯", ({"tong", "dao tong"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å°é“ç«¥", ({"tong", "dao tong"}));
+        set("gender", "ç”·æ€§");
         set("class", "taoist");
         set("age", 14);
         set("long",
-                "ÕâÊÇÒ»Î»Ğ¡µÀÍ¯£¬¿´À´Äê¼Í²»´ó£¬Á³ÉÏÖÉÆøÓÌ´æ£¬ÕûÌìĞ¦ÎûÎû\n"
-                "µÄÎŞÓÇÎŞÂÇ¡£\n");
+                "è¿™æ˜¯ä¸€ä½å°é“ç«¥ï¼Œçœ‹æ¥å¹´çºªä¸å¤§ï¼Œè„¸ä¸Šç¨šæ°”çŠ¹å­˜ï¼Œæ•´å¤©ç¬‘å˜»å˜»\n"
+                "çš„æ— å¿§æ— è™‘ã€‚\n");
         set("attitude", "friendly");
 
         set("str", 20);
@@ -30,16 +30,16 @@ void create()
         set("combat_exp", 15000);
 
         set_skill("force", 50);
-        set_skill("xiantian-qigong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 40);    //å…ˆå¤©æ°”åŠŸ
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 50);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 50);   //é‡‘é›åŠŸ
         set_skill("parry", 50);
         set_skill("unarmed",50);
 
         map_skill("force", "xiantian-qigong");
         map_skill("dodge", "jinyan-gong");
 
-        create_family("È«Õæ½Ì", 5, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 5, "å¼Ÿå­");
 
         setup();
 

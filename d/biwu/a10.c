@@ -1,9 +1,9 @@
 inherit ROOM;
 void create()
 {
-	set("short", "»ìÔªËşµÚÊ®²ã");
+	set("short", "æ··å…ƒå¡”ç¬¬åå±‚");
 	set("long", @LONG
-ÕâÊÇÒ»¸ö¾À¼¯ÁË½­ºşÉÏÊ®´óĞ°ÅÉ¸ßÊÖµÄËş£¬¹²ÓĞÊ®²ãÖ®¸ß¡£
+è¿™æ˜¯ä¸€ä¸ªçº é›†äº†æ±Ÿæ¹–ä¸Šåå¤§é‚ªæ´¾é«˜æ‰‹çš„å¡”ï¼Œå…±æœ‰åå±‚ä¹‹é«˜ã€‚
 LONG );
        set("no_sleep_room",1);
        set("no_clean_up", 0);
@@ -32,7 +32,7 @@ int do_dazuo()
 {
    object me;
    me = this_player();
-tell_object(me,"ÕâÀï²»ÄÜÓÃÕâ¸öÖ¸Áî¡£\n");
+tell_object(me,"è¿™é‡Œä¸èƒ½ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 return 1;
 }
 int valid_leave(object me, string dir)
@@ -43,14 +43,14 @@ int sizeinv;
 if( userp(me) &&
 dir=="up" && ob=present("ouyang feng", this_object()))
 return notify_fail( 
-"ÄãÏëÓ²´³£¿£¡\n");
+"ä½ æƒ³ç¡¬é—¯ï¼Ÿï¼\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 return 1;

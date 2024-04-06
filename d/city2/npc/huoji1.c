@@ -1,14 +1,14 @@
-// huoji. ÍÀÔ×³¡»ï¼Æ
+// huoji. å± å®°åœºä¼™è®¡
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÍÀÔ×³¡»ï¼Æ", ({ "huo ji", "huo","ji" }));
+	set_name("å± å®°åœºä¼™è®¡", ({ "huo ji", "huo","ji" }));
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 18);
-	set("long", "ËûÊ®·ÖÇ¿×³£¬¿´ÉÏÈ¥»á¼¸·ÖÎä¹¦¡£\n");
+	set("long", "ä»–ååˆ†å¼ºå£®ï¼Œçœ‹ä¸Šå»ä¼šå‡ åˆ†æ­¦åŠŸã€‚\n");
 	set("combat_exp", 10000);
 	set_skill("unarmed", 30);
 	set_skill("blade", 60);

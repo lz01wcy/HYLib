@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-   ����һ����᫵�ɽ·�����ܶ���ï�ܵĹ�ľ�ԣ�ʱ��ʱ����
-һ��Ұ�޵ĺ������
+   这是一条崎岖的山路，四周都是茂密的灌木丛，时不时传来
+一声野兽的吼叫声。
 LONG );
 	set("exits", ([
 		"east" : __DIR__"migong2",

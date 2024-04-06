@@ -2,19 +2,19 @@
 inherit F_LIQUID; 
 void create()
 {
-        set_name("ÆÆ¾Æºø", ({ "winepot" }) );
+        set_name("ç ´é…’å£¶", ({ "winepot" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÆÆ¾Æºø£¬´ó¸Å×°µÃ°Ë¡¢¾ÅÉıµÄ¾Æ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªç ´é…’å£¶ï¼Œå¤§æ¦‚è£…å¾—å…«ã€ä¹å‡çš„é…’ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 20);
                 set("max_liquid", 15);
         } 
         set("liquid", ([
                 "type": "alcohol",
-                "name": "ÉÕµ¶×Ó¾Æ",
+                "name": "çƒ§åˆ€å­é…’",
                 "remaining": 15,
                 "drunk_apply": 6,
         ]) );

@@ -8,11 +8,11 @@ int do_knock(string arg);
 
 void create()
 {
-	set("short", "Áõ¸®´óÔº");
+	set("short", "åˆ˜åºœå¤§é™¢");
 	set("long", @LONG
-Áõ¸®´óÔºÀïÏÖÔÚ¼·×ÅºÜ¶à½­ºþºÀ¿Í£¬Ô­À´½ñÌìÊÇÁõÕý·ç½ðÅèÏ´ÊÖµÄ
-ºÃÈÕ×Ó¡£ÁõÀÏÒ¯×ÓÔÚºâÑôÈËÔµºÜºÃ£¬À´Åõ³¡µÄ×ÔÈ»²»ÉÙ£¬´óÔºÀïÒÑ°ÚÁË
-ºÜ¶àÕÅ×À×Ó£¬±­¿êÍùÀ´£¬ºÜÊÇÈÈÄÖ¡£
+åˆ˜åºœå¤§é™¢é‡ŒçŽ°åœ¨æŒ¤ç€å¾ˆå¤šæ±Ÿæ¹–è±ªå®¢ï¼ŒåŽŸæ¥ä»Šå¤©æ˜¯åˆ˜æ­£é£Žé‡‘ç›†æ´—æ‰‹çš„
+å¥½æ—¥å­ã€‚åˆ˜è€çˆ·å­åœ¨è¡¡é˜³äººç¼˜å¾ˆå¥½ï¼Œæ¥æ§åœºçš„è‡ªç„¶ä¸å°‘ï¼Œå¤§é™¢é‡Œå·²æ‘†äº†
+å¾ˆå¤šå¼ æ¡Œå­ï¼Œæ¯ç­·å¾€æ¥ï¼Œå¾ˆæ˜¯çƒ­é—¹ã€‚
 LONG);
 	set("outdoors", "hengyang");
 	set("exits", ([

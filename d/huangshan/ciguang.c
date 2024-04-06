@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "�ȹ��");
+	set("short", "慈光阁");
 	set("long", @LONG
-�����һ��嶥�����������Ȫ����ſ����飬ǶӳȺ�壬ǰ�����
-����ţ����˵���һ�㶼Ҫ����ЪϢ�����Ǳ����������ȹ��
+已是桃花峰顶，看下面的温泉犹如颗颗明珠，嵌映群峰，前面就是
+青鸾桥，游人到此一般都要稍做歇息，于是便有了这座慈光阁。
 LONG
 	);
 	set("exits", ([ 

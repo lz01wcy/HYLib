@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "̨��");
+	set("short", "台阶");
 	set("long", @LONG
-���۱���ǰ��ʯ�ף�����ƽ�е���ʯ��չ��ǰ����������һ��ʯ��
-·������Ʈ���������̡�����Ǵ��ڴ���ϢĬ����Ȼ��һ��һ�ݵ���
-�۱���ȥ��
+大雄宝殿前的石阶，三道平行的青石阶展向前方。北面是一条石板
+路，隐隐飘来阵阵清烟。香客们大都在此屏息默祷，然后一步一拜到大
+雄宝殿去。
 LONG );
 	set("exits", ([
 		"northup" : __DIR__ "pingtai",

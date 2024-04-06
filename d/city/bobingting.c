@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "搏饼厅");
 	set("long", @LONG
-�����ǲ�������Ҳ�ǡ�������һ�١�����Ǿۻ�ĵط���ÿ�����
-�ӣ���������Ƕ�������������СϺһ����������ֵ���һ�֡�
+这里是搏饼厅，也是「侠客行一百」玩家们聚会的地方。每逢大日
+子，新老玩家们都会赶来这里，大侠小虾一块儿热热闹闹地乐一乐。
 LONG );
 	set("no_fight", "1");
 	set("no_beg", "1");

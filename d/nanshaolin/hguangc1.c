@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ºóµî¹ã³¡");
+	set("short", "åæ®¿å¹¿åœº");
 	set("long", @LONG
-ÕâÀïÊÇºóµî¹ã³¡£¬ÓÉ´óÇàÊ¯°åÆ´³ÉµÄµØÃæÉÏÓĞ¼¸´¦°¼Í¹µÄÌ¤ºÛ£¬ËÆ
-ÊÇÒÔÇ°ÓĞ¸ßÊÖÊ©Õ¹ÄÚ¹¦ËùÒÅÁôµÄÓ¡¼Ç¡£¼¸Î»Ö´ÒÛÉ®ÕıÈÏÕæµÄ½øĞĞÇåÉ¨¡£
+è¿™é‡Œæ˜¯åæ®¿å¹¿åœºï¼Œç”±å¤§é’çŸ³æ¿æ‹¼æˆçš„åœ°é¢ä¸Šæœ‰å‡ å¤„å‡¹å‡¸çš„è¸ç—•ï¼Œä¼¼
+æ˜¯ä»¥å‰æœ‰é«˜æ‰‹æ–½å±•å†…åŠŸæ‰€é—ç•™çš„å°è®°ã€‚å‡ ä½æ‰§å½¹åƒ§æ­£è®¤çœŸçš„è¿›è¡Œæ¸…æ‰«ã€‚
 LONG );
 	set("outdoors","nanshaolin");
 	set("exits", ([
@@ -35,18 +35,18 @@ int do_ta(string arg)
 	int lvl = me->query_skill("leg", 1), exp = me->query("combat_exp");
 	if ( !living(me) || arg != "sign" ) return 0;
 	if ((int)me->query_skill("leg", 1) > 31)
-		return notify_fail("ÔÙÌ¤½ÅÓ¡ÒÑ¾­ÎŞ·¨ÔÙÌá¸ßÄãµÄ»ù±¾ÍÈ·¨ÁË£¡\n");
+		return notify_fail("å†è¸è„šå°å·²ç»æ— æ³•å†æé«˜ä½ çš„åŸºæœ¬è…¿æ³•äº†ï¼\n");
 	if ( (int)me->query("jing")<30)
 	{
 		me->receive_damage("jing", 10);
-		write("ÄãÌ«ÀÛÁË£¬ÒÑ¾­Ã»ÓĞÁ¦ÆøÀ´²ÈÌ¤½ÅÓ¡ÁË£¡\n");
+		write("ä½ å¤ªç´¯äº†ï¼Œå·²ç»æ²¡æœ‰åŠ›æ°”æ¥è¸©è¸è„šå°äº†ï¼\n");
 		return 1;
 	}
 	if (lvl * lvl * lvl / 10 < exp)
 	{
 		me->receive_damage("jing", random(35));
-		message_vision("$NÕıÔÚ²ÈÌ¤µØÃæÉÏµÄ½ÅÓ¡¡£\n", me);
-		write("Äã¾õµÃ²ÈÌ¤½ÅÓ¡¶ÔÄãµÄ»ù±¾ÍÈ·¨ÓĞËù´Ù½ø¡£\n");
+		message_vision("$Næ­£åœ¨è¸©è¸åœ°é¢ä¸Šçš„è„šå°ã€‚\n", me);
+		write("ä½ è§‰å¾—è¸©è¸è„šå°å¯¹ä½ çš„åŸºæœ¬è…¿æ³•æœ‰æ‰€ä¿ƒè¿›ã€‚\n");
 		me->improve_skill("leg", me->query("int"));
 	}
 	return 1;

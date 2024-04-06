@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�¼�Ǯׯ");
+	set("short", "穆记钱庄");
 	set("long", @LONG
-����ȫ����ģ����һ��Ǯׯ����ȫ�����ض��зֵꡣ�����е���Ʊͨ
-��ȫ��Ǯׯ���ſڹ���һ��ܴ�Ľ������ƣ�����"�¼�Ǯׯ"�������Ĵ���
-�������Ĺ�̨������ɨ�ĸɸɾ�������̨�󼸸��˷�������С�������æ��
-��ͷ�ö��̨�Ϸ���һ������(sign)�������Ŵ�ҡ�
+这是全国规模最大的一家钱庄，在全国各地都有分店。它发行的银票通
+行全国钱庄的门口挂着一块很大的金字招牌，上书"穆记钱庄"。宽阔的大厅
+，长长的柜台，都打扫的干干净净。柜台后几个账房先生与小活计正在忙的
+焦头烂额。柜台上放着一个牌子(sign)，提醒着大家。
 LONG
 	);
 	set("exits", ([
@@ -18,12 +18,12 @@ LONG
 	]) );
         set("item_desc", ([
                 "sign": @TEXT
-������Ǯׯ��Ŀǰ�����ṩ�ķ����У�
+这里是钱庄，目前我们提供的服务有：
 
-convert     �һ�Ǯ�ҡ�
-withdraw    ��ȡ��
-deposit     ����Ǯ�ҡ�
-balance     ��Ѱ��
+convert     兑换钱币。
+withdraw    提取存款。
+deposit     存入钱币。
+balance     察寻存款。
 TEXT
         ]) );
 

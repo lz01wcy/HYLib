@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "հ³̨");
+	set("short", "瞻鲁台");
 	set("long", @LONG
-���������о�ʯͻأ����Լ������ʯ�Դ��顰հ³̨�����׳�ᦸ�
-ʯ�����������Ǵ�հ³��������
+爱身崖上有巨石突兀，高约丈许，石旁大书“瞻鲁台”，俗称幡杆
+石。传孔子曾登此瞻鲁都曲阜。
 LONG );
 	set("exits", ([
 		"down" : __DIR__"aishen",

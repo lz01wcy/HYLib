@@ -4,10 +4,10 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("ÊİÊİ", ({ "shou shou","shou" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç˜¦ç˜¦", ({ "shou shou","shou" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 35);
-	set("long", "Ò»¸öºÜÊİĞ¡µÄ³øÊ¦£¬Á½Ö»´óÑÛ¾¦²»Í£µØÕ£°Í×Å¡£\n");
+	set("long", "ä¸€ä¸ªå¾ˆç˜¦å°çš„å¨å¸ˆï¼Œä¸¤åªå¤§çœ¼ç›ä¸åœåœ°çœ¨å·´ç€ã€‚\n");
 	set("shen_type", -1);
 	set("combat_exp", 40000);
 	set("str", 20);
@@ -34,17 +34,17 @@ void greeting(object ob)
 {
 	object obn;
 	if( !ob || environment(ob) != environment() ) return;
-	if(((string)ob->query("family/family_name")=="ÈÕÔÂÉñ½Ì")&&(random(3)==1))
-	{say("ÊİÊİĞ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-	     + "Äú¶öÁË°É£¬ÇëÓÃ²Í¡£\n");
+	if(((string)ob->query("family/family_name")=="æ—¥æœˆç¥æ•™")&&(random(3)==1))
+	{say("ç˜¦ç˜¦ç¬‘åŸåŸåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+	     + "æ‚¨é¥¿äº†å§ï¼Œè¯·ç”¨é¤ã€‚\n");
 	if ( present("cake", ob) )
 	{
-		say("Äã²»ÒÑ¾­ÓĞ³ÔµÄÁËÂğ£¿ »¹À´¸ÉÊ²Ã´£¿\n");
+		say("ä½ ä¸å·²ç»æœ‰åƒçš„äº†å—ï¼Ÿ è¿˜æ¥å¹²ä»€ä¹ˆï¼Ÿ\n");
 		return;
 	}
 	if ( present("jiang", ob) )
 	{
-		say("Äã²»ÒÑ¾­ÓĞ³ÔµÄÁËÂğ£¿ »¹À´¸ÉÊ²Ã´£¿\n");
+		say("ä½ ä¸å·²ç»æœ‰åƒçš„äº†å—ï¼Ÿ è¿˜æ¥å¹²ä»€ä¹ˆï¼Ÿ\n");
 		return;
 	}
 	     obn=new(__DIR__"obj/cake");
@@ -55,7 +55,7 @@ void greeting(object ob)
 	     obn->move(ob);
 	     	   }
 	else 
-	     say("ÊİÊİĞ¡ÑÛÒ»Õ££¬Ğ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-	     + "£¬Òª³ÔÊ²Ã´Âğ??¡£\n");
+	     say("ç˜¦ç˜¦å°çœ¼ä¸€çœ¨ï¼Œç¬‘åŸåŸåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+	     + "ï¼Œè¦åƒä»€ä¹ˆå—??ã€‚\n");
 	   return;
 }

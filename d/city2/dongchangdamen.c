@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¶«³§´óÃÅ");
+	set("short", "ä¸œå‚å¤§é—¨");
 	set("long", @LONG
-ÕâÀï¾ÍÊÇ¶«³§´óÃÅ£¬¿ÉÒÔ¿´µ½ÀïÃæÓĞĞí¶àÌ«¼à¡£´©×ÅÖÆ·şµÄ¹Ù±ø
-ÕıÔÚ²ÙÁ·£¬²»Ê±µØ´«À´ÄÅº°Éù¡£Èç¹ûÄã²»ÏëÕÒËÀµÄ»°£¬×îºÃ»¹ÊÇ¸Ï¿ì
-Àë¿ª¡£
+è¿™é‡Œå°±æ˜¯ä¸œå‚å¤§é—¨ï¼Œå¯ä»¥çœ‹åˆ°é‡Œé¢æœ‰è®¸å¤šå¤ªç›‘ã€‚ç©¿ç€åˆ¶æœçš„å®˜å…µ
+æ­£åœ¨æ“ç»ƒï¼Œä¸æ—¶åœ°ä¼ æ¥å‘å–Šå£°ã€‚å¦‚æœä½ ä¸æƒ³æ‰¾æ­»çš„è¯ï¼Œæœ€å¥½è¿˜æ˜¯èµ¶å¿«
+ç¦»å¼€ã€‚
 LONG );
 	set("exits", ([
 		"south" : __DIR__"bingyin1",
@@ -24,7 +24,7 @@ int valid_leave(object me, string dir)
 {
 	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
 		dir == "south")
-		return notify_fail("¹Ù±øÀ¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
+		return notify_fail("å®˜å…µæ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
 	return ::valid_leave(me, dir);
 }
 

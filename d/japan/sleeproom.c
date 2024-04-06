@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "˯��");
+  set ("short", "睡房");
   set ("long", @LONG
-һ�䲻��ķ���,�м��������,��ʰ�û�ͦ�ɾ�.ǽ�ŵĻ�ƿ�л�
-����֦��.ǽ�Ϻ����Ǹɾ��İ�ֽ.
+一间不大的房间,中间摆着榻榻米,收拾得还挺干净.墙脚的花瓶中还
+插了枝花.墙上糊的是干净的白纸.
 LONG);
    set("sleep_room",1);
    set("no_fight",1);

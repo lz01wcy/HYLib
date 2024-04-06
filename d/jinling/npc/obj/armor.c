@@ -5,13 +5,13 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("×Ï½ð¼×", ({ "hunyuan jia", "jia" }) );
+	set_name("ç´«é‡‘ç”²", ({ "hunyuan jia", "jia" }) );
 	set_weight(9000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "gold");
-		set("unit", "¼þ");
+		set("unit", "ä»¶");
 		set("value", 20000);
 		set("armor_prop/armor", 80);
 		set("armor_prop/dodge", 11);

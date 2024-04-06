@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-   set_name("ÁÔÈË",({"lie ren"}));
-   set("gender","ÄĞĞÔ");
+   set_name("çŒäºº",({"lie ren"}));
+   set("gender","ç”·æ€§");
    set("age",45);
 	set("combat_exp",10000);
         set("shen_type",1);

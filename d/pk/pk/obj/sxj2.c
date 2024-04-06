@@ -11,14 +11,14 @@ void init()
 
 void create()
 {
-       set_name(HIW"×¨ÒµÉãÏñ»ú"NOR, ({"she xiangji", "xiangji"}));
+       set_name(HIW"ä¸“ä¸šæ‘„åƒæœº"NOR, ({"she xiangji", "xiangji"}));
        if (clonep())
                set_default_object(__FILE__);
        else {
-        set("long", "ÕâÊÇÒ»Ì¨×¨ÒµÉãÏñ»ú,¹¦ÄÜÆëÈ«,ÉãÏñĞ§¹ûÌØ±ğºÃ¡£\n");
+        set("long", "è¿™æ˜¯ä¸€å°ä¸“ä¸šæ‘„åƒæœº,åŠŸèƒ½é½å…¨,æ‘„åƒæ•ˆæœç‰¹åˆ«å¥½ã€‚\n");
                set("value", 1000000000);
-               set("unit", "Ì¨");
-               set("no_get", "Ğ¡ÅóÓÑ±ğÂÒ¶¯¡£\n"NOR);
+               set("unit", "å°");
+               set("no_get", "å°æœ‹å‹åˆ«ä¹±åŠ¨ã€‚\n"NOR);
        set("env/invisibility",10);
         set("invisibility",10);
         set("no_clean_up",1);
@@ -33,31 +33,31 @@ int do_start(string arg)
        me = this_player();
        
        if( wiz_level(me) < 3)
-                return notify_fail("ÕâÃ´¹óÖØµÄ¶«Î÷£¬Äã»¹ÊÇ±ğÅöÎªºÃ¡£\n"); 
+                return notify_fail("è¿™ä¹ˆè´µé‡çš„ä¸œè¥¿ï¼Œä½ è¿˜æ˜¯åˆ«ç¢°ä¸ºå¥½ã€‚\n"); 
     
        if( me->is_busy() || me->is_fighting())
-          return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+          return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
        if( !arg)
-          return notify_fail("ÄãÒª¿´Ë­ÄØ¡£\n");
+          return notify_fail("ä½ è¦çœ‹è°å‘¢ã€‚\n");
 
        if (objectp(target = LOGIN_D->find_body(arg))) 
             where = environment(target);
-       else return notify_fail("Ã»ÓĞÕâ¸öÈËÒ®¡£¡£¡£\n");
+       else return notify_fail("æ²¡æœ‰è¿™ä¸ªäººè€¶ã€‚ã€‚ã€‚\n");
        
-       if (!where) return notify_fail("Õâ¸öÈËÔÚĞéÎŞÆ®Ãê¼ä£¬ÕÒ²»µ½Ëû¡£\n");
+       if (!where) return notify_fail("è¿™ä¸ªäººåœ¨è™šæ— é£˜è—é—´ï¼Œæ‰¾ä¸åˆ°ä»–ã€‚\n");
 //        if( !environment(me)->query("bwdhpk"))
-//        return notify_fail("´ËÈË²»ÔÚ±ÈÈü¡£\n");       
+//        return notify_fail("æ­¤äººä¸åœ¨æ¯”èµ›ã€‚\n");       
 
        
-       if (wizardp(target)) return notify_fail("ÄãÏëÍµ¿ú¸ß¼¶ÁìĞä£¬²»ÒªÃüÁË£¿\n");
+       if (wizardp(target)) return notify_fail("ä½ æƒ³å·çª¥é«˜çº§é¢†è¢–ï¼Œä¸è¦å‘½äº†ï¼Ÿ\n");
 
-       if (target==me) return notify_fail("×Ô¼ºÍµ¿ú×Ô¼º£¿\n");
+       if (target==me) return notify_fail("è‡ªå·±å·çª¥è‡ªå·±ï¼Ÿ\n");
 
        if(objectp(npc = me->query_temp("jingtou2")))
-          return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃÉãÏñ»úÖĞ¡£\n");
+          return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨æ‘„åƒæœºä¸­ã€‚\n");
           
-       message_vision(HIY"\n$N´óÉùËµµÀ£º¸÷µ¥Î»×¢Òâ£¬¾µÍ·¶Ô×¼"+target->name()+HIY"£¬¿ªÅÄ£¡\n\n" NOR, me);
+       message_vision(HIY"\n$Nå¤§å£°è¯´é“ï¼šå„å•ä½æ³¨æ„ï¼Œé•œå¤´å¯¹å‡†"+target->name()+HIY"ï¼Œå¼€æ‹ï¼\n\n" NOR, me);
 
      npc = new(__DIR__"jingtou2");
        npc->do_setup(me, target);
@@ -74,12 +74,12 @@ int do_stop()
         me = this_player();
         
         if(!me->query_temp("jingtou2"))
-          return notify_fail("Äã»¹Ã»´ò¿ªÉãÏñ»úÄØ¡£\n");
+          return notify_fail("ä½ è¿˜æ²¡æ‰“å¼€æ‘„åƒæœºå‘¢ã€‚\n");
 
         npc = me->query_temp("jingtou2");
         if(objectp(npc))
            npc->do_remove();
-        message_vision(HIC"\n$N¹ØÉÏÁËÉãÏñ»ú£¬ËµµÀ£º»¹Ëã²»´í£¬ÊÕ¹¤¡£\n\n" NOR, me);
+        message_vision(HIC"\n$Nå…³ä¸Šäº†æ‘„åƒæœºï¼Œè¯´é“ï¼šè¿˜ç®—ä¸é”™ï¼Œæ”¶å·¥ã€‚\n\n" NOR, me);
         me->delete_temp("jingtou2");
         me->start_busy(1);
         return 1;

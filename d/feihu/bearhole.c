@@ -1,14 +1,14 @@
-// �ܶ�
+// 熊洞
 // by steel 
 #include "ansi.h"
 inherit ROOM;
 
 void create()
 {
-	set("short", "�ܶ�");
+	set("short", "熊洞");
 	set("long", @LONG
-        ���߽���һ��ɽ��,���������ů�Ͷ��ˡ�������һ��ŨŨ����
-ζ����̧ͷһ����һͷ˶���ޱȵİ����������������㡣    
+        你走进了一个山洞,洞里比外面暖和多了。但是有一股浓浓的腥
+味。你抬头一看，一头硕大无比的白熊正呆呆的望着你。    
 LONG
 	);
 	

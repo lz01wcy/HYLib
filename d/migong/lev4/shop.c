@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-		set("short", BLU"ɽ��"NOR);
+		set("short", BLU"山洞"NOR);
 	set("long", HIG @LONG
-       ������һ����ģ����������ȫ�����ӣ��Ӹ���ҩ�ﵽ
-������ʳ��Ӧ�о��У�����Ǯ��...�ٺ٣�����Ҫ����Ǯ��Ҫ?
+       这里是一个规模不大但种类齐全的铺子，从各种药物到
+兵器，食物应有尽有，但价钱嘛...嘿嘿，命重要还是钱重要?
 LONG NOR);
 	set("exits", ([
 		"west" : __DIR__"dong100",

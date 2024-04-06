@@ -4,10 +4,10 @@ void greeting(object);
 void init();
 void create()
 {
-       set_name("»ÅÕÅµÄÊÌÅ®", ({ "shi nu","shi","nu" }) );
-	set("gender", "Å®ĞÔ" );
+       set_name("æ…Œå¼ çš„ä¾å¥³", ({ "shi nu","shi","nu" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 20);
-	set("long", "ÉñÇé»ÅÕÅ,ËÆºõ×öÁËÊ²Ã´ÊÂÇé,×ÜÊÇÏòÌÃÌü¿´È¥¡£\n");
+	set("long", "ç¥æƒ…æ…Œå¼ ,ä¼¼ä¹åšäº†ä»€ä¹ˆäº‹æƒ…,æ€»æ˜¯å‘å ‚å…çœ‹å»ã€‚\n");
 	set("shen_type", -1);
 	set("combat_exp", 10000);
 	set("str", 20);

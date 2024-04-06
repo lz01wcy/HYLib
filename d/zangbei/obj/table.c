@@ -2,7 +2,7 @@
 #include <ansi.h>
 void create()
 {
-        set_name("Ïã°¸", ({ "ken", "Ïã°¸"}) );
+        set_name("é¦™æ¡ˆ", ({ "ken", "é¦™æ¡ˆ"}) );
         set_weight(500);
         set_max_encumbrance(8000000);
         set("no_get", 1);
@@ -10,8 +10,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÓÃÀ´¼ÀìëËÀÕß£¬»òÊÇ¹©·î×æÏÈºÍÉñÁéµÄ°¸Ì¨¡£\n");
+                set("unit", "å¼ ");
+                set("long", "ç”¨æ¥ç¥­ç¥€æ­»è€…ï¼Œæˆ–æ˜¯ä¾›å¥‰ç¥–å…ˆå’Œç¥çµçš„æ¡ˆå°ã€‚\n");
                 set("value", 1);
         }
         

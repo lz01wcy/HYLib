@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("мУ╫лм╥", ({ "wang jiaotou", "wang","jiaotou"}));
-	set("long", "р╩цШнД╧щдз╣д╫лм╥ё╛в╗це╦╨тП╫лпбйжнД╧╕║ё\n");
-	set("gender", "дппт");
+	set_name("Г▌▀Ф∙≥Е╓╢", ({ "wang jiaotou", "wang","jiaotou"}));
+	set("long", "Д╦─Е░█Ф╜╕И╕├Е├┘Г └Ф∙≥Е╓╢О╪▄Д╦⌠И≈╗Х╢÷Х╢ёФ∙≥Ф√╟Ф┴▀Ф╜╕Е┼÷Ц─┌\n");
+	set("gender", "Г■╥Ф─╖");
 	set("age", 30);
 	set("attitude", "heroism");
 	set("str", 20);
@@ -44,7 +44,7 @@ int recognize_apprentice(object ob)
 {
          if (ob->query("combat_exp",1)>10000){
        command("shake");
-       command("say дЦря╬╜спр╩╤╗╩Ы╢║акё╛©иртвт╪╨ЁЖ╫Ь╫╜╨Чак║ё \n"); 
+       command("say Д╫═Е╥╡Г╩▐Ф°┴Д╦─Е╝ Е÷╨Г║─Д╨├О╪▄Е▐╞Д╩╔Х┤╙Е╥╠Е┤╨Х©⌡Ф╠÷Ф╧√Д╨├Ц─┌ \n"); 
        return 0;
        }
     return 1;	
@@ -58,7 +58,7 @@ void greeting(object ob)
 
        command("bow "+ob->query("id"));
        command("say " + RANK_D->query_respect(ob)
-				+ "ё╛дЦ©ирт©╢нр╩А╣д╧╕╥Р"HIR"(cha wang)"NOR",©ирт╦Знря╖╧╕╥Р"HIR"ё╗xue wang xxx)"NOR"║ё\n");
+				+ "О╪▄Д╫═Е▐╞Д╩╔Г°▀Ф┬▒Д╪ Г └Е┼÷Е╓╚"HIR"(cha wang)"NOR",Е▐╞Д╩╔Х╥÷Ф┬▒Е╜╕Е┼÷Е╓╚"HIR"О╪┬xue wang xxx)"NOR"Ц─┌\n");
            
 }
 

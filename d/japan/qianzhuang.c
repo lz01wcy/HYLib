@@ -4,21 +4,21 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ǯׯ");
+	set("short", "钱庄");
 	set("long", @LONG
-Ǯׯ���ϰ��Ǹ�ͺ���Դ��ļһ�,���ڷŸ�����������,���ǮҪ�Ǵ�
-������Ǯׯ,����Ҫ�ձ��ܷ��õ�.���������ڸ���������ϵ.����ʵ��ͨ��
-ͨ��,��ȻҪ��һ��������.
-    �ڶ����ǽ�Ϲ��˿�����(paizi)��
+钱庄的老板是个秃了脑袋的家伙,对于放高利贷很在行,你的钱要是存
+到他的钱庄,还是要收保管费用的.不过这里在各处都有联系.所有实行通存
+通兑,当然要收一点手续费.
+    在对面的墙上挂了块牌子(paizi)。
 LONG
 	);
 	set("item_desc", ([
 		"paizi" : @TEXT
-     ��Ǯׯ�ṩ���·���
-      ��Ǯ        deposit����cun
-      ȡǮ        withdraw����qu
-      Ǯ�Ҷһ�    convert����duihuan
-      ����        check����chazhang
+     本钱庄提供以下服务：
+      存钱        deposit或者cun
+      取钱        withdraw或者qu
+      钱币兑换    convert或者duihuan
+      查帐        check或者chazhang
 TEXT
 	]) );
 	set("exits", ([ /* sizeof() == 1 */

@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("±£ïÚ", ({ "baobiao" }));
-	set("gender", "ÄÐÐÔ");
+	set_name("ä¿é•–", ({ "baobiao" }));
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 30);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "ÕâÊÇÒ»¸öÉí²Ä¸ß´óµÄ½­ºþÈË£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²£¬¿´ÆðÀ´ºÜ²»ºÃÈÇ¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªèº«æé«˜å¤§çš„æ±Ÿæ¹–äººï¼Œä¸¤è‡‚ç²—å£®ï¼Œè†€é˜”è…°åœ†ï¼Œçœ‹èµ·æ¥å¾ˆä¸å¥½æƒ¹ã€‚\n");
 	set("combat_exp", 80000);
 	set("shen_type", 1);
 	set("attitude", "heroism");
@@ -47,9 +47,9 @@ int do_killing(string arg)
 	if( objectp(victim = present(arg, environment(this_object()))) && living(victim))
 	{
 		name = (string)victim->name();
-		if( (string)name == "¸»ÉÌ")
+		if( (string)name == "å¯Œå•†")
 		{
-		message_vision("$NÀäÐ¦Ò»ÉùµÀ£ºÎÒ¿´Äã»îµÃÌ«³¤ÁË¡£\n", this_object());
+		message_vision("$Nå†·ç¬‘ä¸€å£°é“ï¼šæˆ‘çœ‹ä½ æ´»å¾—å¤ªé•¿äº†ã€‚\n", this_object());
 		this_object()->kill_ob(player);
 		player->kill_ob(this_object());
 		return 1;

@@ -1,5 +1,5 @@
 // cool980310
-// ¶ÎÑÓÇì
+// æ®µå»¶åº†
 // cool980724
 // Modify By River 98/12
 //COOL@SJ 991017
@@ -11,8 +11,8 @@ int checking(object me);
 int do_kill(object me, object ob);
 void create()
 {
-        set_name("ÇàÅÛ¿Í", ({ "qingpao ke", "ke"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é’è¢å®¢", ({ "qingpao ke", "ke"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 52);
         set("str", 26);
         set("con", 23);
@@ -29,7 +29,7 @@ void create()
         set("max_neili", 4000);
         set("jiali", 100);
         
-        set("long","ÕâÈËÊÇ¸öÀÏÕß£¬³¤Ğë´¹ĞØ£¬ÃæÄ¿ÆáºÚ¡£\n",);
+        set("long","è¿™äººæ˜¯ä¸ªè€è€…ï¼Œé•¿é¡»å‚èƒ¸ï¼Œé¢ç›®æ¼†é»‘ã€‚\n",);
         set("combat_exp", 1500000);
         set("shen", -20000);
 
@@ -55,9 +55,9 @@ void create()
         map_skill("force", "kurong-changong");
         prepare_skill("finger","yiyang-zhi");
         set("inquiry", ([
-            "¶ÎÓş" : (: ask_duan2 :),
+            "æ®µèª‰" : (: ask_duan2 :),
             "name" : (: ask_duan1 :),
-            "¶ÎÑÓÇì" : (: ask_duan1 :),
+            "æ®µå»¶åº†" : (: ask_duan1 :),
         ]));
 
         setup();
@@ -69,11 +69,11 @@ string ask_duan1()
         object me,ob;
         ob=this_player();
         me=this_object();
-        me->set_name("¶ÎÑÓÇì", ({ "duan yanqing", "duan","yanqing"}) );
-	me->set("title","ËÄ´ó¶ñÈË");
-        me->set("nickname","¶ñ¹áÂúÓ¯");
+        me->set_name("æ®µå»¶åº†", ({ "duan yanqing", "duan","yanqing"}) );
+	me->set("title","å››å¤§æ¶äºº");
+        me->set("nickname","æ¶è´¯æ»¡ç›ˆ");
 	ob->set_temp("duanyu/ask1",1);
-        return ("ÀÏ·ò±ãÊÇËÄ´ó¶ñÈËÖĞµÄÀÏ´ó£º¶ÎÑÓÇì!\n");
+        return ("è€å¤«ä¾¿æ˜¯å››å¤§æ¶äººä¸­çš„è€å¤§ï¼šæ®µå»¶åº†!\n");
 }
 
 string ask_duan2()
@@ -86,8 +86,8 @@ string ask_duan2()
 		   	command("hehe " + ob->query("id"));
 	    	call_out("do_kill", 0, me, ob);  
 
-           return ("Ïë¾È¶ÎÓş£¿ËÍËÀÀ´ÁË!\n");
-		   } else return ("ÄãÎÊÕâ¸ö¸ÉÊ²Ã´£¿\n");
+           return ("æƒ³æ•‘æ®µèª‰ï¼Ÿé€æ­»æ¥äº†!\n");
+		   } else return ("ä½ é—®è¿™ä¸ªå¹²ä»€ä¹ˆï¼Ÿ\n");
 		
 
 }
@@ -108,8 +108,8 @@ int checking(object me)
        if (me->query("qi")< 100 
         || me->query("eff_qi")<100){
 	 ob->set_temp("kill",1);
-	 message_vision("$n¿´¼û$NÏòºóÒ»Ìø£¬ÌÓÏòÒ»Æ¬´óÊ÷ÁÖ¡£\n", me, ob);
-	 message_vision("$n´óÉùºÈµÀ£ºÄÄÀïÅÜ£¡$n½ô½ô×·ÁË¹ıÈ¥¡£\n", me, ob);
+	 message_vision("$nçœ‹è§$Nå‘åä¸€è·³ï¼Œé€ƒå‘ä¸€ç‰‡å¤§æ ‘æ—ã€‚\n", me, ob);
+	 message_vision("$nå¤§å£°å–é“ï¼šå“ªé‡Œè·‘ï¼$nç´§ç´§è¿½äº†è¿‡å»ã€‚\n", me, ob);
 	 ob->move("/d/dali/wuliang/shanlin-1");
 	 destruct(me);
          }
@@ -121,6 +121,6 @@ int checking(object me)
 }
 void die()
 {
-	message_vision("$N²ÒĞ¦µÀ£ºÄãÉ±ÁËÎÒ£¬Õâ±²×Ó±ğÏëÕÒµ½¶ÎÓşÁË¡£\n", this_object());
+	message_vision("$Næƒ¨ç¬‘é“ï¼šä½ æ€äº†æˆ‘ï¼Œè¿™è¾ˆå­åˆ«æƒ³æ‰¾åˆ°æ®µèª‰äº†ã€‚\n", this_object());
 	destruct(this_object());
 }

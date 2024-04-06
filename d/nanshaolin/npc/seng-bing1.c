@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("»¤ÁÖÉ®±ø", ({ "seng bing", "seng", "bing"}));
-	set("long", "ËûÊÇÒ»Î»Éí²Ä¸ß´óµÄÇàÄêÉ®ÈË£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²¡£ËûÊÖ³Ö±ø\n"
-		"ÈÐ£¬Éí´©Ò»Ï®°×²¼Ïâ±ßôÂôÄ£¬ËÆºõÓÐÒ»ÉíÎäÒÕ¡£\n");
+	set_name("æŠ¤æž—åƒ§å…µ", ({ "seng bing", "seng", "bing"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«æé«˜å¤§çš„é’å¹´åƒ§äººï¼Œä¸¤è‡‚ç²—å£®ï¼Œè†€é˜”è…°åœ†ã€‚ä»–æ‰‹æŒå…µ\n"
+		"åˆƒï¼Œèº«ç©¿ä¸€è¢­ç™½å¸ƒé•¶è¾¹è¢ˆè£Ÿï¼Œä¼¼ä¹Žæœ‰ä¸€èº«æ­¦è‰ºã€‚\n");
 
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "aggressive");
 	set("class", "bonze");
 
@@ -48,7 +48,7 @@ void create()
 	prepare_skill("strike", "banruo-zhang");
 	prepare_skill("claw", "longzhua-gong");
 
-        create_family("ÄÏÉÙÁÖÅÉ", 22, "µÜ×Ó");
+        create_family("å—å°‘æž—æ´¾", 22, "å¼Ÿå­");
 	setup();
 
 	carry_object(__DIR__"jiedao")->wield();

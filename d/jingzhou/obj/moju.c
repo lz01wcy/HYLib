@@ -7,18 +7,18 @@ inherit HEAD;
 
 void create()
 {
-	set_name(HIB"Ä«¾Õ"NOR, ({ "mo ju","flower"}));
+	set_name(HIB"å¢¨èŠ"NOR, ({ "mo ju","flower"}));
 	set_weight(300);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¶ä½¿ÑŞµÄÄ«¾Õ¡£\n");
-		set("material", "»¨°ê");
-		set("unit", "¶ä");
+		set("long", "è¿™æ˜¯ä¸€æœµå¨‡è‰³çš„å¢¨èŠã€‚\n");
+		set("material", "èŠ±ç“£");
+		set("unit", "æœµ");
 		set("unique", 1);
 		set("value", 1000);
-		set("wear_msg", "$NÄéÆğÒ»¶äÄ«¾Õ£¬´÷ÔÚÍ·ÉÏ¡£$N¿´ÆğÀ´¸üÔö½¿ÑŞ¡£\n");
-		set("unequip_msg", "$N½«Ä«¾Õ´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+		set("wear_msg", "$Næ‹ˆèµ·ä¸€æœµå¢¨èŠï¼Œæˆ´åœ¨å¤´ä¸Šã€‚$Nçœ‹èµ·æ¥æ›´å¢å¨‡è‰³ã€‚\n");
+		set("unequip_msg", "$Nå°†å¢¨èŠä»å¤´ä¸Šæ‘˜äº†ä¸‹æ¥ã€‚\n");
 		set("armor_prop/personality", 2);
 		set("female_only", 1);
 	}

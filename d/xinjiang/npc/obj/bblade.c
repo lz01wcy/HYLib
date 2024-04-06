@@ -2,19 +2,19 @@
 inherit BLADE;
 void create()
 {
-        set_name("ÆáºÚµÄµ¶", ({ "black blade", "blade" }) );
+        set_name("æ¼†é»‘çš„åˆ€", ({ "black blade", "blade" }) );
         set_weight(15000);
         if( clonep() )
             set_default_object(__FILE__);
         else {
-            set("unit", "°Ñ");
+            set("unit", "æŠŠ");
             set("value", 2000);
             set("max_enchant",6);
             set("material", "steel");
             set("long", 
-                "Ò»±úÐÎ×´ºÜÆæÌØµÄµ¶£¬µ¶ÇÊÆáºÚ£¬µ¶±úÆáºÚ¡£\n");
-            set("wield_msg", "$N´ÓÆáºÚµÄµ¶ÇÊÖÐ³é³öÒ»°Ñ$n\n");
-            set("unequip_msg", "$N·ÅÏÂÊÖÖÐµÄ$n¡£\n");
+                "ä¸€æŸ„å½¢çŠ¶å¾ˆå¥‡ç‰¹çš„åˆ€ï¼Œåˆ€éž˜æ¼†é»‘ï¼Œåˆ€æŸ„æ¼†é»‘ã€‚\n");
+            set("wield_msg", "$Nä»Žæ¼†é»‘çš„åˆ€éž˜ä¸­æŠ½å‡ºä¸€æŠŠ$n\n");
+            set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         ::init_blade(140);
 }    

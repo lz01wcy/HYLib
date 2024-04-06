@@ -5,13 +5,13 @@ inherit SWORD;
 
 void create()
 {
-	set_name(HIM"ÎŞË«Éñ½£"NOR, ({ "wushuang_jian","sword"}) );
+	set_name(HIM"æ— åŒç¥å‰‘"NOR, ({ "wushuang_jian","sword"}) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "Ò»°Ñ"+HIM"ÎŞË«Éñ½£"+NOR+",µ±ÊÀÆß´óÃû½£Ö®Ò»¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "ä¸€æŠŠ"+HIM"æ— åŒç¥å‰‘"+NOR+",å½“ä¸–ä¸ƒå¤§åå‰‘ä¹‹ä¸€ã€‚\n");
 		set("value", 1000);
 		set("material", "steel");
 	}
@@ -19,7 +19,7 @@ void create()
 
 
       set("wield_msg",
-"$N´Ó½£ÇÊÖĞ°Î³ö"+HIM+"ÎŞË«Éñ½£.\n"NOR);
-	set("unwield_msg","$N°Ñ"+HIM+"ÎŞË«Éñ½£"+NOR+"²åÈëÑü¼ä½£ÇÊ.\n");
+"$Nä»å‰‘é˜ä¸­æ‹”å‡º"+HIM+"æ— åŒç¥å‰‘.\n"NOR);
+	set("unwield_msg","$NæŠŠ"+HIM+"æ— åŒç¥å‰‘"+NOR+"æ’å…¥è…°é—´å‰‘é˜.\n");
        setup();
 }

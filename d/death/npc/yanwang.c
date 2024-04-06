@@ -2,11 +2,11 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("����ү", ({ "death-god" }) );
+        set_name("阎王爷", ({ "death-god" }) );
         set("long",
-                "����ү˵��������׼�ҿ�����\n");
+                "阎王爷说道：＂不准乱看！＂\n");
         set("age", 5100);
-        set("nickname", HIR"�������"NOR);
+        set("nickname", HIR"黑面君王"NOR);
         set("cor", 37);
 	set("str",100);
         set("combat_exp", 20000000);
@@ -16,21 +16,21 @@ void create()
         set_temp("apply/parry", 80);
         set("chat_chance", 10);
         set("chat_msg", ({
-"����ү���������йٵ��˵�ͷ��\n",
-"����ү˵�������ҿ���Ҫ���ص������\n",
-"����ү���������йٵ��˵�ͷ��\n",
-"����ү���������йٵ��˵�ͷ��\n",
-"����ү���������й�˵��������������Ҫ�����ֲ�ֵһ���С�����Ϸ���������\n",
-"����ү���������й�˵�����������������ˣ�Ͷ̥����Ӭ����\n",
-"����ү���������йٵ��˵�ͷ��\n",
-"����ү���������йٵ��˵�ͷ��\n",
+"阎王爷对着生死判官点了点头。\n",
+"阎王爷说道：＂我看还要判重点儿！＂\n",
+"阎王爷对着生死判官点了点头。\n",
+"阎王爷对着生死判官点了点头。\n",
+"阎王爷对着生死判官说道：＂快点儿！不要在这种不值一提的小人物上费力气。＂\n",
+"阎王爷对着生死判官说道：＂这种人作恶多端，投胎成蚊蝇。＂\n",
+"阎王爷对着生死判官点了点头。\n",
+"阎王爷对着生死判官点了点头。\n",
         }) );
         set_temp("apply/armor", 70);
         set_temp("apply/damage", 130);
         set_temp("apply/dodge", 70);
         set("inquiry", ([
-		"Ͷ̥" : "�źöӣ���������\n",
-                "*" : "��ķϻ��湻��ģ��˶����ˣ��컹���ϱ��ϡ�\n",
+		"投胎" : "排好队，慢慢来。\n",
+                "*" : "你的废话真够多的！人都死了，嘴还不肯闭上。\n",
         ]) );
         setup();
 }

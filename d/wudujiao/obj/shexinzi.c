@@ -7,12 +7,12 @@ void setup()
 
 void create()
 {
-	       set_name("ÉßĞÅ×Ó", ({"shexin zi","zi" }));
+	       set_name("è›‡ä¿¡å­", ({"shexin zi","zi" }));
 	
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿ÅÖ²ÎïµÄ¹ûÊµ¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—æ¤ç‰©çš„æœå®ã€‚\n");
 		set("value", 100);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(50);
 
 	

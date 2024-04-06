@@ -1,4 +1,4 @@
-// zhaocaifeng.c ÕÔ¿¡Èİ-²Ã·ì
+// zhaocaifeng.c èµµä¿Šå®¹-è£ç¼
 // 20:47 99-1-17
 #include <ansi.h>
 #include <command.h>
@@ -9,11 +9,11 @@ int do_gongzuo();
 int ask_done();
 void create()
 {
-        set_name("ÕÔ¿¡ÈØ", ({"zhao junrong", "zhao"}));
-        set("gender", "Å®ĞÔ");
+        set_name("èµµä¿Šè“‰", ({"zhao junrong", "zhao"}));
+        set("gender", "å¥³æ€§");
         set("age", 30);
         set("long", 
-                "ËıÊÇÑïÖİ³ÇÄÚÓĞÃûµÄ²Ã·ì£¬½­ºşÈË³ÆÕÔÌìÒÂ¡£\n");
+                "å¥¹æ˜¯æ‰¬å·åŸå†…æœ‰åçš„è£ç¼ï¼Œæ±Ÿæ¹–äººç§°èµµå¤©è¡£ã€‚\n");
         set("attitude", "peaceful");             
         set("str", 20);
         set("int", 20);
@@ -37,7 +37,7 @@ void create()
         set_skill("parry", 10);          
 
         set("inquiry", ([
-                "¹¤×÷" : (: do_gongzuo :),
+                "å·¥ä½œ" : (: do_gongzuo :),
         ]) );
 
         setup();
@@ -49,33 +49,33 @@ int do_gongzuo()
         me = this_player(); 
         if (me->query("combat_exp")>=10000)
         {
-               command("say ÄãµÄÎä¹¦±ÈÎÒ¶÷¹«Ò¶»¶»¹Òª¸ßÁË£¬ÕâÖÖĞ¡ÊÂ²»¸ÒÄú´ó¼Ü¡£\n");
+               command("say ä½ çš„æ­¦åŠŸæ¯”æˆ‘æ©å…¬å¶æ¬¢è¿˜è¦é«˜äº†ï¼Œè¿™ç§å°äº‹ä¸æ•¢æ‚¨å¤§æ¶ã€‚\n");
                return 1;
          }
     if( me->query_temp("gongzuo/yunbu")>0)
     {
-                tell_object(me,"¿ìÈ¥°Ñ²¼Æ¥ìÙºÃºó½»¸øÎÒ°É¡£\n");
+                tell_object(me,"å¿«å»æŠŠå¸ƒåŒ¹ç†¨å¥½åäº¤ç»™æˆ‘å§ã€‚\n");
                 return 1;
     }  
-    message_vision(CYN"ÕÔ¿¡Èİ¶Ô$NËµµÀ£ºÏÖÔÚìÙºÃµÄ²¼Æ¥²»¹»ÓÃÁË£¬Äã¾Íµ½ºóÃæµÄ¿â·¿ÀïÈ¥ìÙĞ©²¼À´¡£\n"NOR,me); 
+    message_vision(CYN"èµµä¿Šå®¹å¯¹$Nè¯´é“ï¼šç°åœ¨ç†¨å¥½çš„å¸ƒåŒ¹ä¸å¤Ÿç”¨äº†ï¼Œä½ å°±åˆ°åé¢çš„åº“æˆ¿é‡Œå»ç†¨äº›å¸ƒæ¥ã€‚\n"NOR,me); 
         me->set_temp("gongzuo/yunbu", 1);
         return 1;   
 }
 int accept_object(object me, object ob)
 {
         object ob1;
-        if (strsrch(ob->query("name"), "ìÙºÃµÄ²¼") < 0) 
+        if (strsrch(ob->query("name"), "ç†¨å¥½çš„å¸ƒ") < 0) 
         {
-            command("say Äã±ğÀ´ÃÉÎÒÀ²£¬ÕâÊÇìÙºÃµÄ²¼Âğ£¿\n");
+            command("say ä½ åˆ«æ¥è’™æˆ‘å•¦ï¼Œè¿™æ˜¯ç†¨å¥½çš„å¸ƒå—ï¼Ÿ\n");
         }
         else if (me->query_temp("gongzuo/yunbu")<1)
         {
-         command("say ÎÒÃ»ÓĞ½ĞÄã°ïÎÒìÙ²¼Ñ½£¡\n");
+         command("say æˆ‘æ²¡æœ‰å«ä½ å¸®æˆ‘ç†¨å¸ƒå‘€ï¼\n");
         }
         else
         {
-    message_vision(CYN"ÕÔ¿¡Èİ¶Ô$NËµµÀ£ºĞÁ¿àÁË£¬ÕâÊÇÄãµÄ¹¤Ç®¡£\n"NOR,me);
-    message_vision(CYN"ÕÔ¿¡Èİµİ¸ø$NÒ»Ğ©Í­Ç®¡£\n"NOR,me);  
+    message_vision(CYN"èµµä¿Šå®¹å¯¹$Nè¯´é“ï¼šè¾›è‹¦äº†ï¼Œè¿™æ˜¯ä½ çš„å·¥é’±ã€‚\n"NOR,me);
+    message_vision(CYN"èµµä¿Šå®¹é€’ç»™$Nä¸€äº›é“œé’±ã€‚\n"NOR,me);  
                 me->delete_temp("gongzuo/yunbu");
                 me->add("combat_exp",20+random(20));
                 me->add("potential",10+random(10));

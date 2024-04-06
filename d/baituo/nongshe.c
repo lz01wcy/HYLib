@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "农舍");
+        set("short", "鍐滆垗");
         set("long",
-             "这里是一间小农舍，家具很新。看来主人比较富裕。\n"
+             "杩欓噷鏄竴闂村皬鍐滆垗锛屽鍏峰緢鏂般�傜湅鏉ヤ富浜烘瘮杈冨瘜瑁曘�俓n"
         );
         set("exits", ([
                 "west" : __DIR__"guangchang",

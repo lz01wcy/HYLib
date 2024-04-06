@@ -5,21 +5,21 @@ inherit STAFF;
 
 void create()
 {
-	set_name(HIR"ÉñÉßÕÈ"NOR, ({ "sheng shezhang", "shengzhang" }));
+	set_name(HIR"ç¥è›‡æ–"NOR, ({ "sheng shezhang", "shengzhang" }));
 	set_weight(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ùÉñÉßÕÈ, ÕÈÍ·¶şÌõĞ¡Éß, ºìÉàÉìËõ, Ê®·Ö¹îÒì¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹ç¥è›‡æ–, æ–å¤´äºŒæ¡å°è›‡, çº¢èˆŒä¼¸ç¼©, ååˆ†è¯¡å¼‚ã€‚\n");
 set("no_give",1);
 		set("treasure",1);
                 set("weapon_prop/dodge", 2);
                 set("weapon_prop/parry", 3);
 		set("value", 100);
 		set("material", "leather");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»ÉùÌáÆğÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕ»Ø±³ºó¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æèµ·ä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¶å›èƒŒåã€‚\n");
 	}
 	init_staff(500);
 	setup();

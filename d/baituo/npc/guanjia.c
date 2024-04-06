@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹Ü¼Ò", ({ "guan jia","guan","jia" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç®¡å®¶", ({ "guan jia","guan","jia" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "Ò»¸öÀÏÄ±ÉîËãµÄÀÏ¹Ü¼Ò¡£\n");
+	set("long", "ä¸€ä¸ªè€è°‹æ·±ç®—çš„è€ç®¡å®¶ã€‚\n");
 	set("shen_type", -1);
 	set("combat_exp", 20000);
 	set("str", 24);
@@ -29,10 +29,10 @@ void create()
 	set_temp("apply/defense", 14);
 	set_temp("apply/damage", 15);
 	set_temp("apply/armor", 10);
-	create_family("°×ÍÕÉ½ÅÉ", 4, "µÜ×Ó");
+	create_family("ç™½é©¼å±±æ´¾", 4, "å¼Ÿå­");
 
 	set("inquiry" ,([
-	"´¢²ØÊÒ" : "¹Ü¼Ò¾¯ÌèµØ¶¢×ÅÄã£¬Ëµ£ºÄãÏëÍµ¶«Î÷Âğ£¿\n",
+	"å‚¨è—å®¤" : "ç®¡å®¶è­¦æƒ•åœ°ç›¯ç€ä½ ï¼Œè¯´ï¼šä½ æƒ³å·ä¸œè¥¿å—ï¼Ÿ\n",
 	]));
 
 	setup();

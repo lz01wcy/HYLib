@@ -4,13 +4,13 @@ inherit ITEM;
 int do_eat(string arg);
 void create()
 {
-   set_name(HIW"ÑøÆø²¹Ðéµ¤"NOR, ({ "dan"}) );
+   set_name(HIW"å…»æ°”è¡¥è™šä¸¹"NOR, ({ "dan"}) );
    set_weight(100);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("material", "Ò©Îï");
-     set("unit", "Ã¶");
+     set("material", "è¯ç‰©");
+     set("unit", "æžš");
      set("value", 2000);
    }
    setup();
@@ -25,13 +25,13 @@ int do_eat(string arg)
 {
   object ob;
   ob=this_player();
-  if(!arg||(arg!="dan"&&arg!="µ¤"))
-  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+  if(!arg||(arg!="dan"&&arg!="ä¸¹"))
+  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   if(!present(arg,ob))
-  return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¸ö¶«Î÷£¡\n");
+  return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸ªä¸œè¥¿ï¼\n");
   if(ob->query("eff_qi")>=ob->query("max_qi"))
-  return notify_fail("ÄãÏÖÔÚÆøÑª³äÅæ£¬Ã»ÓÐ±ØÒª³Ôµ¤Ò©¡£\n");
-  message_vision("$N³ÔÏÂÁËÒ»Ã¶"+this_object()->name()+"\n",ob);
+  return notify_fail("ä½ çŽ°åœ¨æ°”è¡€å……æ²›ï¼Œæ²¡æœ‰å¿…è¦åƒä¸¹è¯ã€‚\n");
+  message_vision("$Nåƒä¸‹äº†ä¸€æžš"+this_object()->name()+"\n",ob);
   ob->set("eff_qi",ob->query("max_qi"));
   ob->start_busy(1);
   destruct(this_object());

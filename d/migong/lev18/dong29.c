@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", YEL"´óµØÖ®ÂÃµê"NOR);
+	set("short", YEL"å¤§åœ°ä¹‹æ—…åº—"NOR);
 	set("long", HIG @LONG
-   °«ÈË¹ú¶ÈµÄÖ÷ÒªµÀÂ·,µÀÂ·µÄÁ½ÅÔÓÐ»ð°ÑÕÕÁÁÖø,ÓÉì¶°«ÈË¸ß³¬µÄ½¨Öþ
-¼¼Êõ,ÕâµÀÂ·ÐÞÖþµÄ·Ç³£±ÊÖ± , ºÜÄÑÏàÐÅÄãÊÇ´¦ÔÚµØµ×ÏÂÊýÊ®ÀïµÄµØ·½ .
-ÕâÀïÓÐÖø·Ç³£ºÍÆ½°²ÏêµÄÆø·Õ,»Ð·ðÊÇÒ»¸öÊÀÍâÌÒÔ´.ÕâÀïÒÑ¾­¶àÄêÃ»ÓÐÕ½
-ÕùÁË¡£Äã¿ÉÒÔÔÚÕâ¸öµØ·½Ë¯¾õ??(sleep)£¬Ò²¿ÉÒÔÂòµã³ÔµÄ(list)
+   çŸ®äººå›½åº¦çš„ä¸»è¦é“è·¯,é“è·¯çš„ä¸¤æ—æœ‰ç«æŠŠç…§äº®è‘—,ç”±æ–¼çŸ®äººé«˜è¶…çš„å»ºç­‘
+æŠ€æœ¯,è¿™é“è·¯ä¿®ç­‘çš„éžå¸¸ç¬”ç›´ , å¾ˆéš¾ç›¸ä¿¡ä½ æ˜¯å¤„åœ¨åœ°åº•ä¸‹æ•°åé‡Œçš„åœ°æ–¹ .
+è¿™é‡Œæœ‰è‘—éžå¸¸å’Œå¹³å®‰è¯¦çš„æ°”æ°›,æä½›æ˜¯ä¸€ä¸ªä¸–å¤–æ¡ƒæº.è¿™é‡Œå·²ç»å¤šå¹´æ²¡æœ‰æˆ˜
+äº‰äº†ã€‚ä½ å¯ä»¥åœ¨è¿™ä¸ªåœ°æ–¹ç¡è§‰??(sleep)ï¼Œä¹Ÿå¯ä»¥ä¹°ç‚¹åƒçš„(list)
 LONG NOR);
 
 set("magicroom",1);set("outdoors","migong");

@@ -4,11 +4,11 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("Âô½äÖ¸µÄ", ({ "ring seller" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å–æˆ’æŒ‡çš„", ({ "ring seller" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
         set("long",
-                "Ò»¸öÆÕÆÕÍ¨Í¨µÄ±¾µØÈË£¬Ã»ÓĞÒ»µãÆğÑÛµÄµØ·½¡£\n");
+                "ä¸€ä¸ªæ™®æ™®é€šé€šçš„æœ¬åœ°äººï¼Œæ²¡æœ‰ä¸€ç‚¹èµ·çœ¼çš„åœ°æ–¹ã€‚\n");
         set("combat_exp", 2000);
         set("attitude", "friendly");
 // ring should be able to write something on it!!!!
@@ -18,7 +18,7 @@ void create()
         }));
         set("chat_chance", 30);
         set("chat_msg", ({
-                "Âô½äÖ¸µÄµÀ£º¿´Äú´º·çÂúÃæ£¬Äª·ÇÓĞÁËÒâÖĞÈË£¿\n",
+                "å–æˆ’æŒ‡çš„é“ï¼šçœ‹æ‚¨æ˜¥é£æ»¡é¢ï¼Œè«éæœ‰äº†æ„ä¸­äººï¼Ÿ\n",
                 (: random_move :),
                 (: random_move :),
                 (: random_move :),

@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ê÷¶¥");
+        set("short", "æ ‘é¡¶");
         set("long", @LONG
-ÕâÊÇ´óÊ÷µÄ¶¥²¿£¬ÕâÀïÓÐÒ»¸öÓ¥½Ë¡£´ÓÕâÀï¿´µ½ËÄÖÜ²ÝÔ­µÄ¾°É«¡£
-Ö»ÌýÒ»ÉùÉùµÄÇåÐ¥´ÓÔ¶´¦´«À´£¬¿´À´»¤³²µÄÀÏÓ¥Òª»ØÀ´ÁË£¬»¹ÊÇ¸Ï½ôÏÂ
-È¥µÄºÃ¡£
+è¿™æ˜¯å¤§æ ‘çš„é¡¶éƒ¨ï¼Œè¿™é‡Œæœ‰ä¸€ä¸ªé¹°å‰¿ã€‚ä»Žè¿™é‡Œçœ‹åˆ°å››å‘¨è‰åŽŸçš„æ™¯è‰²ã€‚
+åªå¬ä¸€å£°å£°çš„æ¸…å•¸ä»Žè¿œå¤„ä¼ æ¥ï¼Œçœ‹æ¥æŠ¤å·¢çš„è€é¹°è¦å›žæ¥äº†ï¼Œè¿˜æ˜¯èµ¶ç´§ä¸‹
+åŽ»çš„å¥½ã€‚
 LONG);
         set("exits", ([
             "down" : __DIR__"caoyuan1",                        
@@ -32,7 +32,7 @@ void reset()
    
    for(i=0;i<sizeof(ob);i++){
      if(userp(ob[i])){
-     	tell_object(ob[i],"ÄãÌýµ½ÀÏÓ¥»ØÀ´ÁË£¬¸Ï½ôÏÂÊ÷ÁË£¡\n");
+     	tell_object(ob[i],"ä½ å¬åˆ°è€é¹°å›žæ¥äº†ï¼Œèµ¶ç´§ä¸‹æ ‘äº†ï¼\n");
      	ob[i]->move(__DIR__"caoyuan1");
      }
    }

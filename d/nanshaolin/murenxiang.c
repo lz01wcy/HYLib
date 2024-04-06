@@ -1,4 +1,4 @@
-// Room: /d/nanshaolin/murenxiang.c Ä¾ÈËÏï
+// Room: /d/nanshaolin/murenxiang.c æœ¨äººå··
 // Last Modified by winder on May. 29 2001
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ void muren_attack(object me);
 
 void create()
 {
-	set("short", "Ä¾ÈËÏï");
+	set("short", "æœ¨äººå··");
 	set("long", @LONG
-ÕâÀïÊÇÄÏÉÙÁÖËÂµÄÄ¾ÈËÏï£¬³ö¼ÒµÄĞ¡µÜ×ÓµÚÒ»´ÎÏÂÉ½¶¼±ØĞëÍ¨¹ıÊ®
-°ËÄ¾ÈËµÄ¿¼Ñé¡£ÕâÀïÖ»ÓĞÏòÇ°µÄÂ·£¬²¢ÎŞ»ØÍ·µÄÂ·ÁË¡£
+è¿™é‡Œæ˜¯å—å°‘æ—å¯ºçš„æœ¨äººå··ï¼Œå‡ºå®¶çš„å°å¼Ÿå­ç¬¬ä¸€æ¬¡ä¸‹å±±éƒ½å¿…é¡»é€šè¿‡å
+å…«æœ¨äººçš„è€ƒéªŒã€‚è¿™é‡Œåªæœ‰å‘å‰çš„è·¯ï¼Œå¹¶æ— å›å¤´çš„è·¯äº†ã€‚
 LONG);
 	set("exits", ([ 
 		"north" : __FILE__,
@@ -34,7 +34,7 @@ void init()
 	{
 		if(interactive(me) && me->query("muren_winner") && !wizardp(me))
 		{
-			message_vision( HIR"Ò»´óÈºÉ®±øÒ»Ó¿¶øÉÏ£¬ÂÒ°ôÆëÏÂ£¬½«$N´òµÃ»èËÀ¹ıÈ¥......\n"NOR, me);
+			message_vision( HIR"ä¸€å¤§ç¾¤åƒ§å…µä¸€æ¶Œè€Œä¸Šï¼Œä¹±æ£’é½ä¸‹ï¼Œå°†$Næ‰“å¾—æ˜æ­»è¿‡å»......\n"NOR, me);
 			me->unconcious();
 			me->set("eff_qi", 1);
 			me->set("qi", 1);
@@ -62,13 +62,13 @@ void muren_attack(object me)
 
 int do_save()
 {
-	write("ÕâÀï²»×¼´æÅÌ£¡\n");
+	write("è¿™é‡Œä¸å‡†å­˜ç›˜ï¼\n");
 	return 1;
 }
 
 int do_quit()
 {
-	write("ÕâÀï²»×¼ÍË³ö£¡\n");
+	write("è¿™é‡Œä¸å‡†é€€å‡ºï¼\n");
 	return 1;
 }
 
@@ -84,8 +84,8 @@ int valid_leave(object me, string dir)
 		me->move(__DIR__"ting");
 		me->set("muren_winner", 1);
 		me->delete_temp("ask_muren");
-		message("channel:snow", HIR"¡¾·çÎÅ¡¿Àú¾¡Ç§ĞÁÍò¿à£¬"+me->query("name")+"ÖÕÓÚ´³¹ıÁËÄÏÉÙÁÖËÂÄ¾ÈËÏï£¡\n"NOR,users());		
-		return notify_fail(HIY"ÄãÖÕÓÚ´³¹ıÁËÄ¾ÈËÏï£¡ ¾­¹ı´Ë´Î´³Õó£¬Äã¾õµÃÎä¹¦´ó½ø£¡\n"NOR);
+		message("channel:snow", HIR"ã€é£é—»ã€‘å†å°½åƒè¾›ä¸‡è‹¦ï¼Œ"+me->query("name")+"ç»ˆäºé—¯è¿‡äº†å—å°‘æ—å¯ºæœ¨äººå··ï¼\n"NOR,users());		
+		return notify_fail(HIY"ä½ ç»ˆäºé—¯è¿‡äº†æœ¨äººå··ï¼ ç»è¿‡æ­¤æ¬¡é—¯é˜µï¼Œä½ è§‰å¾—æ­¦åŠŸå¤§è¿›ï¼\n"NOR);
 	}
 	return ::valid_leave(me, dir);
 }

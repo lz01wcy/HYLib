@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "西长安街");
 	set("long", @LONG
-����һ����������ʯ��ֵ���������ͷ���졣������ȥ��������
-�ֵ�������ͷ�����߾����찲�š�һ����Ȳ�����ʱ�ӱ��ߵ�ϷԺ������
-�ϱ߾��Ǿ����������ġ��ش��á�ҩ�ꡣ
+这是一条宽阔的青石板街道，向东西两头延伸。往西望去，长长的
+街道看不到头。东边就是天安门。一阵阵喝采声不时从北边的戏院传来。
+南边就是京城最著名的‘回春堂’药店。
 LONG );
         set("outdoors", "beijing");
 	set("exits", ([

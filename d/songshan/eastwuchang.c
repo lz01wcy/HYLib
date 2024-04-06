@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "���䳡");
+	set("short", "东武场");
 	set("long", @LONG
-��������ɽ�ɵ����䳡���������û���������ɰʯ��ʵ�ģ�������
-�ܽ�ʵ�����ӡ����䳡�м䰲��Щ��е�������������õġ�һЩ��ɽ��
-������ͷ�����ؿ̿�������
+这里是嵩山派的练武场。地面是用黄泥土拌杂砂石砸实的，看起来
+很结实的样子。练武场中间安着些器械，看来是练功用的。一些嵩山弟
+子正满头臭汗地刻苦练功。
 LONG );
 	set("outdoors", "songshan");
 	set("exits", ([

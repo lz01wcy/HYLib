@@ -1,12 +1,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ì«°×¾Ó");
+        set("short", "å¤ªç™½å±…");
         set("long", @LONG
-ÕâÀïÊÇÌ«°×ÏÈÉú¾ÓËù£¬´°Ã÷¼¸¾»£¬Ò»³¾²»È¾¡£ÔÚËûµÄÁ½²à×øÂúÁËÇóÑ§µÄÑ§Éú¡£
-Ò»ÕÅ¹ÅÒâ°»È»µÄÊé°¸·ÅÔÚÌ«°×ÏÈÉúµÄÇ°Ãæ£¬°¸ÉÏ°Ú×Å¼¸±¾·­¿ªÁËµÄÏß×°Êé¼®¡£Ì«°×
-ÏÈÉúµÄÉíºóÊÇÒ»¸öÊé¼Ü(shujia)½²ÌÃÄÚ¶àÀú´úéºÁªÊ¯¿Ì£¬ÕýÉÏ·½»¹ÓÐ¸öÅÆØÒ£¨pai)
-¡£  
+è¿™é‡Œæ˜¯å¤ªç™½å…ˆç”Ÿå±…æ‰€ï¼Œçª—æ˜Žå‡ å‡€ï¼Œä¸€å°˜ä¸æŸ“ã€‚åœ¨ä»–çš„ä¸¤ä¾§åæ»¡äº†æ±‚å­¦çš„å­¦ç”Ÿã€‚
+ä¸€å¼ å¤æ„ç›Žç„¶çš„ä¹¦æ¡ˆæ”¾åœ¨å¤ªç™½å…ˆç”Ÿçš„å‰é¢ï¼Œæ¡ˆä¸Šæ‘†ç€å‡ æœ¬ç¿»å¼€äº†çš„çº¿è£…ä¹¦ç±ã€‚å¤ªç™½
+å…ˆç”Ÿçš„èº«åŽæ˜¯ä¸€ä¸ªä¹¦æž¶(shujia)è®²å ‚å†…å¤šåŽ†ä»£æ¥¹è”çŸ³åˆ»ï¼Œæ­£ä¸Šæ–¹è¿˜æœ‰ä¸ªç‰ŒåŒ¾ï¼ˆpai)
+ã€‚  
 LONG
         );
         set("exits", ([
@@ -14,11 +14,11 @@ LONG
                 "northeast" : __DIR__"dongmen",
         ]));
         set("item_desc", ([
-                   "pai" : "\nÎôÔÚ³¤°²×í»¨Áø£¬ÎåºîÆßÙFÍ¬±­¾Æ¡£"
-                           "\nšâ°¶Ò£ÁÙºÀÊ¿Ç°£¬·çÁ÷¿ÏÂäËûÈËºó¡£"
-                           "\n·ò×ÓºìÑÕÎÒÉÙÄê£¬ÕÂÌ¨×ßÂíÖø½ð±Þ¡£"
-                           "\nÎÄÕÂÏ×ÄÉ÷è÷ëµî£¬¸èÎèÑÍÁôçéè£óÛ¡£\n\n",
-        "shujia":"Êé¼ÜÉÏÒ»³¾²»È¾£¬·ÅÂúÁËÌ«°×ÏÈÉúÀúÄêÀ´Ð´ÖøµÄÊ«Æª¡£\n",
+                   "pai" : "\næ˜”åœ¨é•¿å®‰é†‰èŠ±æŸ³ï¼Œäº”ä¾¯ä¸ƒFåŒæ¯é…’ã€‚"
+                           "\nçå…‘ï¼¡ä¿¸æœ—å£³åŸƒé£Žæµè‚¯è½ä»–äººåŽã€‚"
+                           "\nå¤«å­çº¢é¢œæˆ‘å°‘å¹´ï¼Œç« å°èµ°é©¬è‘—é‡‘éž­ã€‚"
+                           "\næ–‡ç« çŒ®çº³éº’éºŸæ®¿ï¼Œæ­Œèˆžæ·¹ç•™çŽ³ç‘ç­µã€‚\n\n",
+        "shujia":"ä¹¦æž¶ä¸Šä¸€å°˜ä¸æŸ“ï¼Œæ”¾æ»¡äº†å¤ªç™½å…ˆç”ŸåŽ†å¹´æ¥å†™è‘—çš„è¯—ç¯‡ã€‚\n",
         ]));
         
         set("objects", ([
@@ -29,7 +29,7 @@ LONG
 int valid_leave(object me, string dir)
 {
         if (dir == "north" && (userp(me) && !wizardp(me)))
-                return notify_fail("ÄÇÊÇÌ«°×ÏÈÉúµÄË½ÈËÇÞÊÒ£¡\n");
+                return notify_fail("é‚£æ˜¯å¤ªç™½å…ˆç”Ÿçš„ç§äººå¯å®¤ï¼\n");
         return 1;
 }
 

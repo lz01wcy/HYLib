@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ʯ·");
+  set ("short", "石路");
   set ("long", @LONG
-һ����ʯ��С·,�ϱ�ֱͨ���,����������紵��,·�߿�ʼ
-���ִ�Ƭ�ĺ�ɫ��ʯ,��ֻ���������������ӹ�.
+一条碎石子小路,南边直通向大海,阵阵波涛声随风吹来,路边开始
+出现大片的黑色岩石,几只海鸟在你视线中掠过.
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

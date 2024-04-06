@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "ɽ·");
+	set ("short", "山路");
 	set ("long", @LONG
-����һ�����������ɽ·����Ϊ����ɽ�ȼ���ɽ�����Ƚ�Զ������
-�����ǿ�����·�����������˺ܶ࣬·�������Զ���и�Сͤ�ӹ�����
-Ъ�ţ����߲�Զ������ɽ��
+这是一条黄土飞扬的山路，因为离嵩山等几处山脉还比较远，所以
+它很是宽阔，路上来往的行人很多，路边相隔不远就有个小亭子供行人
+歇脚，北边不远便是嵩山。
 LONG);
 
 	set("outdoors", "kaifeng");

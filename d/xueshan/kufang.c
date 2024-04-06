@@ -1,15 +1,15 @@
-//      kufang.c ¿â·¿
-//      Designed by secret (ÃØÃÜ)
+//      kufang.c åº“æˆ¿
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 void create()
 {
-        set("short","¿â·¿");
+        set("short","åº“æˆ¿");
         set("long",@LONG
-ÕâÀïÊÇÁ·Îä³¡ÅÔ±ßµÄĞ¡¿â·¿£¬·¿ÀïÃÜ²»Í¨·ç£¬Ö»ÓĞÒ»
-Ë¿¹âÏß´ÓÎİéÜĞ¡·ìÖĞÍ¶Éä½øÀ´¡£·¿ÖĞÓĞĞ©±¸ÓÃµÄÎäÆ÷£¬¶¼
-ÊÇÑ©É½µÜ×ÓÈÕ³£Á·¹¦ĞèÒªÓÃµ½µÄ±øÆ÷¡£
+è¿™é‡Œæ˜¯ç»ƒæ­¦åœºæ—è¾¹çš„å°åº“æˆ¿ï¼Œæˆ¿é‡Œå¯†ä¸é€šé£ï¼Œåªæœ‰ä¸€
+ä¸å…‰çº¿ä»å±‹æªå°ç¼ä¸­æŠ•å°„è¿›æ¥ã€‚æˆ¿ä¸­æœ‰äº›å¤‡ç”¨çš„æ­¦å™¨ï¼Œéƒ½
+æ˜¯é›ªå±±å¼Ÿå­æ—¥å¸¸ç»ƒåŠŸéœ€è¦ç”¨åˆ°çš„å…µå™¨ã€‚
 LONG );
         set("exits",([
                 "east" : __DIR__"chang", 
@@ -38,7 +38,7 @@ int valid_leave(object me, string dir)
                 if (inv[i]->query("id") == "blade") y++;
         }
         if (w>1 || x>1 || y>1 || z>1)
-                return notify_fail("ÕâÎ»" + RANK_D->query_respect(me) + "±ğÄÇ÷áÌ°ĞÄ£¬Ã¿Ñù´ø×ßÒ»°Ñ¾Í¹»À²¡£\n");
+                return notify_fail("è¿™ä½" + RANK_D->query_respect(me) + "åˆ«é‚£éº½è´ªå¿ƒï¼Œæ¯æ ·å¸¦èµ°ä¸€æŠŠå°±å¤Ÿå•¦ã€‚\n");
         return ::valid_leave(me, dir);
 }
  

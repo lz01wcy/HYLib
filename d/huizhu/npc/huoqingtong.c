@@ -1,13 +1,13 @@
 inherit NPC;
 void create()
 {
-   set_name("»ôÇàÍ©",({"huo qingtong"}));
-   set("gender","Å®ĞÔ");
-   set("long","Ä¾×¿Â×µÄ´óÅ®¶ù,¿¶¿®ºÀË¬,Å®ÖĞºÀ½Ü!\n");
+   set_name("éœé’æ¡",({"huo qingtong"}));
+   set("gender","å¥³æ€§");
+   set("long","æœ¨å“ä¼¦çš„å¤§å¥³å„¿,æ…·æ…¨è±ªçˆ½,å¥³ä¸­è±ªæ°!\n");
    set("score",4000);
    set("combat_exp",150000);
-   set("title","´äÓğ»ÆĞä");
-   set("area_name","»Ø×åÄÁÈº");
+   set("title","ç¿ ç¾½é»„è¢–");
+   set("area_name","å›æ—ç‰§ç¾¤");
    
 set("per",35);
 set("age",21);

@@ -1,16 +1,16 @@
-// /d/xiakedao/shihole1.c ÏÀ¿Íµº Ê¯¶´1
+// /d/xiakedao/shihole1.c ä¾ å®¢å²› çŸ³æ´1
 
 inherit ROOM;
 
 int do_learn(string arg);
 void create()
 {
-        set("short", "Ê¯¶´");
+        set("short", "çŸ³æ´");
         set("long", @LONG
-ÕâÀïÒÀ´ÎÊÇÁù¸öÊ¯¶´£¬¸÷×ÔÍ¨ÏòËÄ¾äÊ«µÄÊ¯ÊÒ¡£ºóÈËÑĞÏ°¡¸ÏÀ¿Í
-ĞĞ¡¹Îä¹¦£¬Îò³öÁù¾ä×Ü¸Ù£¬Ò²·Ö±ğ¿ÌÔÚÕâÀï¡£´Ë¶´Ò»É«Çà²¼á¡á££¬ÊÌ
-Á¢µÄµÜ×Ó¾ùÊÇÇàÒÂ³¤½£¡£ÕıÃæ±ÚÉÏ£¬´ÖÁ¥¿Ì×ÅÇ°ËÄ¾äÊ«µÄ×Ü¸Ù¡¸Ò»½£
-·Éºè¡¹¡£
+è¿™é‡Œä¾æ¬¡æ˜¯å…­ä¸ªçŸ³æ´ï¼Œå„è‡ªé€šå‘å››å¥è¯—çš„çŸ³å®¤ã€‚åäººç ”ä¹ ã€Œä¾ å®¢
+è¡Œã€æ­¦åŠŸï¼Œæ‚Ÿå‡ºå…­å¥æ€»çº²ï¼Œä¹Ÿåˆ†åˆ«åˆ»åœ¨è¿™é‡Œã€‚æ­¤æ´ä¸€è‰²é’å¸ƒå¸·å¹”ï¼Œä¾
+ç«‹çš„å¼Ÿå­å‡æ˜¯é’è¡£é•¿å‰‘ã€‚æ­£é¢å£ä¸Šï¼Œç²—éš¶åˆ»ç€å‰å››å¥è¯—çš„æ€»çº²ã€Œä¸€å‰‘
+é£é¸¿ã€ã€‚
 LONG );
         set("exits", ([
                 "out"   : __DIR__"neiting",
@@ -40,15 +40,15 @@ int valid_leave(object me, string dir)
                    if(inv[i]->query("weapon_prop") && ((string)inv[i]->query("equipped")=="wielded"))
                        if(objectp(present("wang", environment(me))) &&
                            living(present("wang", environment(me))))
-                         return notify_fail("ÍõÎåÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»" +
-                             RANK_D->query_respect(me) + "ÀïÃæÊÇ±¾µºÖØµØ£¬²»×¼±ÈÊÔÎä¹¦¡£Äã¿ÉÒÔ½øÈ¥£¬µ«²»µÃÊÖ³Ö±øÈĞ¡£\n");
+                         return notify_fail("ç‹äº”ä¸Šå‰æŒ¡ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šè¿™ä½" +
+                             RANK_D->query_respect(me) + "é‡Œé¢æ˜¯æœ¬å²›é‡åœ°ï¼Œä¸å‡†æ¯”è¯•æ­¦åŠŸã€‚ä½ å¯ä»¥è¿›å»ï¼Œä½†ä¸å¾—æ‰‹æŒå…µåˆƒã€‚\n");
                 return ::valid_leave(me, dir);
            }
            else
            {
                    if(objectp(present("wang wu", environment(me)))&&
                    living(present("wang", environment(me))))
-                     return notify_fail("ÍõÎåÀ¹×¡ÄãËµµÀ£ºÀïÃæÊÇ±¾µºÖØµØ£¬Ö»ÓĞ¸÷ÅÉÕÆÃÅ¼°ÖøÃûµÄÏÀ¿Í²ÅÄÜ½øÈ¥¡£\n" + RANK_D->query_rude(me) +"Äã»¹ÊÇ»ØÈ¥°É¡£\n");
+                     return notify_fail("ç‹äº”æ‹¦ä½ä½ è¯´é“ï¼šé‡Œé¢æ˜¯æœ¬å²›é‡åœ°ï¼Œåªæœ‰å„æ´¾æŒé—¨åŠè‘—åçš„ä¾ å®¢æ‰èƒ½è¿›å»ã€‚\n" + RANK_D->query_rude(me) +"ä½ è¿˜æ˜¯å›å»å§ã€‚\n");
            }
         }
         return ::valid_leave(me, dir);

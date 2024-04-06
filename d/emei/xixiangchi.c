@@ -1,4 +1,4 @@
-//Room: xixiangchi.c Ï´Ïó³Ø
+//Room: xixiangchi.c æ´—è±¡æ± 
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
@@ -6,12 +6,12 @@ string look_pool();
 
 void create()
 {
-      set("short","Ï´Ïó³Ø");
+      set("short","æ´—è±¡æ± ");
       set("long",@LONG
-Ï´Ïó³ØÔ­Ö»ÊÇÒ»Í¤£¬Í¤Ç°ÓÐÒ»¸öÊ¯ÆöµÄÐ¡³Ø(pool)£¬³Ø±ß²»Ô¶¾ÍÊÇÎ£ÑÒ¡£
-Ï´Ïó³ØÔ¢ÓÚÒ»Æ¬ÀäÉ¼ÁÖÖÐ£¬ÓÐÈô°×ÔÆÉî´¦µÄÏÉÉ½Çí¸ó¡£ÈôÊÇÔÆÊÕÎíÁ²¡¢±Ì¿ÕÍò
-Àï¡¢ÔÂÀÊÖÐÌìÊ±£¬±ã¾õÍòô¥¾ã¼Å£¬Çå¹âÎÞÏÞ£¬ÍðÈôÉíÔÚÌì¹¬£¬³¹ÌåÉúÁ¹¡£ÕâÕý
-ÊÇÖøÃûµÄ¡¸Ïó³Ø³ØÒ¹¡¹¡£ÓÉ´ËÏòÄÏÉÏÅÊ£¬±ãÖÁÀ×¶´Æº£¬¶«ÏÂÖÁÁ«»¨Ê¯¡£
+æ´—è±¡æ± åŽŸåªæ˜¯ä¸€äº­ï¼Œäº­å‰æœ‰ä¸€ä¸ªçŸ³ç Œçš„å°æ± (pool)ï¼Œæ± è¾¹ä¸è¿œå°±æ˜¯å±å²©ã€‚
+æ´—è±¡æ± å¯“äºŽä¸€ç‰‡å†·æ‰æž—ä¸­ï¼Œæœ‰è‹¥ç™½äº‘æ·±å¤„çš„ä»™å±±ç¼é˜ã€‚è‹¥æ˜¯äº‘æ”¶é›¾æ•›ã€ç¢§ç©ºä¸‡
+é‡Œã€æœˆæœ—ä¸­å¤©æ—¶ï¼Œä¾¿è§‰ä¸‡ç±ä¿±å¯‚ï¼Œæ¸…å…‰æ— é™ï¼Œå®›è‹¥èº«åœ¨å¤©å®«ï¼Œå½»ä½“ç”Ÿå‡‰ã€‚è¿™æ­£
+æ˜¯è‘—åçš„ã€Œè±¡æ± æ± å¤œã€ã€‚ç”±æ­¤å‘å—ä¸Šæ”€ï¼Œä¾¿è‡³é›·æ´žåªï¼Œä¸œä¸‹è‡³èŽ²èŠ±çŸ³ã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */
@@ -27,6 +27,6 @@ LONG);
 string look_pool()
 {
     return
-"ÕâÊÇÒ»¸öÊ¯ÆöµÄÁù½ÇÐ¡³Ø£¬´«ËµÆÕÏÍ³ËÏóÖÁ´Ë£¬±ØÏÈÔÚ´Ë³ØãåÔ¡ÆäÏó£¬¶øºó²Å\n"
-"ÉýÖÁ½ð¶¥£¬¹ÊÎª¡¸Ï´Ïó³Ø¡¹¡£\n";
+"è¿™æ˜¯ä¸€ä¸ªçŸ³ç Œçš„å…­è§’å°æ± ï¼Œä¼ è¯´æ™®è´¤ä¹˜è±¡è‡³æ­¤ï¼Œå¿…å…ˆåœ¨æ­¤æ± æ²æµ´å…¶è±¡ï¼Œè€ŒåŽæ‰\n"
+"å‡è‡³é‡‘é¡¶ï¼Œæ•…ä¸ºã€Œæ´—è±¡æ± ã€ã€‚\n";
 }

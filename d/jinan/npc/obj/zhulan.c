@@ -2,14 +2,14 @@
 #include <ansi.h>
 void create()
 {
-        set_name(GRN"´äÖñÀº"NOR, ({ "bamboo basket","basket"}) );
+        set_name(GRN"ç¿ ç«¹ç¯®"NOR, ({ "bamboo basket","basket"}) );
         set_weight(100);
         set_max_encumbrance(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÓÉÄÛÂÌµÄ´äÖñ±àÖÆµÄ·¹Àº¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "ä¸€ä¸ªç”±å«©ç»¿çš„ç¿ ç«¹ç¼–åˆ¶çš„é¥­ç¯®ã€‚\n");
                 set("value", 150);
         }
 } 

@@ -4,10 +4,10 @@ inherit ROOM;
 void init();
 void create()
 {
-    set("short", "����");
+    set("short", "监狱");
     set("long", @LONG
-������һ�������ļ����������г����һ�ɸ������߸ߵ�����
-͸��һ˿���⣬��ֻ�������������µ��������ߴ�����ȥ��
+这里是一间黑黝黝的监狱，空气中充斥着一股腐臭，高高的铁窗
+透进一丝阳光，几只大老鼠若无其事地在你身边穿来穿去。
 LONG
     );
     set("valid_startroom", 1);
@@ -37,13 +37,13 @@ void kick_ob()
         if (!sizeof(obj))   return;
         for (i=0;i<sizeof(obj);i++){
                 if (interactive(obj[i]) && (time()-obj[i]->query_temp("summon_time"))>3000){
-                        message_vision(HIY+"�ѵ�һ����һ����������ţ�һ�Ű�$N���˳�ȥ����������׳԰׺ȣ�û�ţ�\n"+NOR,obj[i]);
+                        message_vision(HIY+"哐当一声，一个狱卒打开牢门，一脚把$N踢了出去：想在这里白吃白喝？没门！\n"+NOR,obj[i]);
                 if (!room=find_object("/d/jyguan/guangchang") )
                                 room=load_object("/d/jyguan/guangchang");
                         obj[i]->move(room);
-                        message("vision",HIY+"һ���һ�����ŵĺ��Ÿ����˳���!\n"+NOR,room,({obj[i]}));
+                        message("vision",HIY+"一个家伙从衙门的后门给踢了出来!\n"+NOR,room,({obj[i]}));
                 obj[i]->set("qi",1);
-                        tell_object(obj[i],"���۵Ĳ����˹�ȥ��\n...�ɴ໹�ǻ��˺���Щ�����˾Ͳ����ˣ�\n");
+                        tell_object(obj[i],"你疼的差点昏了过去。\n...干脆还是昏了好受些，昏了就不疼了！\n");
             obj[i]->set("startroom","/d/jyguan/guangchang");
                     call_out("kick_ob",30);
                         return;
@@ -66,6 +66,6 @@ object do_check(string arg)
 
 int do_quit(string arg)
 {
-        write(this_player()->query("name")+"�����ﲻ��QUIT��\n");
+        write(this_player()->query("name")+"，这里不能QUIT！\n");
         return 1;
 }

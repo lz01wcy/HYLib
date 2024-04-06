@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÄÚÊÒ");
+	set("short", "å†…å®¤");
 	set("long",
-	     "\nÕâÀïÊÇÒ»¸ö¿Õµ´µ´µÄ·¿¼ä£¬³ıÁËµØ°å(floor)£¬Ê²Ã´Ò²Ã»ÓĞ¡£\n"
+	     "\nè¿™é‡Œæ˜¯ä¸€ä¸ªç©ºè¡è¡çš„æˆ¿é—´ï¼Œé™¤äº†åœ°æ¿(floor)ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n"
 	);
 	set("exits", ([
 		"east" : __DIR__"huichunt",
 	]));
 	set("item_desc", ([
-		"floor" : "\nµØ°åÈ«ÊÇÄ¾ÖÆµÄ£¬ÉÏÃæ»ıÁËĞ©»Ò³¾£¬²»¹ıÓĞÒ»¿éÄ¾°åºÜ¸É¾»¡£\n" ,
+		"floor" : "\nåœ°æ¿å…¨æ˜¯æœ¨åˆ¶çš„ï¼Œä¸Šé¢ç§¯äº†äº›ç°å°˜ï¼Œä¸è¿‡æœ‰ä¸€å—æœ¨æ¿å¾ˆå¹²å‡€ã€‚\n" ,
 	]));
 	set("no_clean_up", 0);
 	set("coor/x", -211);
@@ -34,11 +34,11 @@ int do_move(string arg)
 {
         object me;
         me = this_player();
-        if (!arg||arg!="floor") return notify_fail("ÄãÒªÒÆ¿ªÊ²Ã´£¿\n");
+        if (!arg||arg!="floor") return notify_fail("ä½ è¦ç§»å¼€ä»€ä¹ˆï¼Ÿ\n");
 	message_vision(
-		"\n$NÏÆ¿ª¹×²Ä°å£¬Ö»Ìı¡°à§¡±µÄÒ»Éù, µØµÀÀïÍ»È»°×¹âÒ»ÉÁ£¬\n"+
-		"Ò»±ú³¤½£Ù¿µÄÉì³ö,¡°àÛ¡±µÄÒ»Éù´ÌÈëÁË$NµÄĞ¡¸¹,ÓÖ¡°àÛ¡±µÄÒ»Éù°ÎÁË³öÀ´¡£\n"+
-                "Ò»¸öµÀÈË´Ó¶´ÀïÌ½³öÍ·À´£¬ÂúÁ³²»Ğ¼µØ¿´ÁË$NÒ»ÑÛ£¬ÓÖÉìÊÖ°ÑµØ°å¹ØÉÏÁË¡£\n", this_player());
+		"\n$Næ€å¼€æ£ºææ¿ï¼Œåªå¬â€œå”°â€çš„ä¸€å£°, åœ°é“é‡Œçªç„¶ç™½å…‰ä¸€é—ªï¼Œ\n"+
+		"ä¸€æŸ„é•¿å‰‘å€çš„ä¼¸å‡º,â€œå™—â€çš„ä¸€å£°åˆºå…¥äº†$Nçš„å°è…¹,åˆâ€œå™—â€çš„ä¸€å£°æ‹”äº†å‡ºæ¥ã€‚\n"+
+                "ä¸€ä¸ªé“äººä»æ´é‡Œæ¢å‡ºå¤´æ¥ï¼Œæ»¡è„¸ä¸å±‘åœ°çœ‹äº†$Nä¸€çœ¼ï¼Œåˆä¼¸æ‰‹æŠŠåœ°æ¿å…³ä¸Šäº†ã€‚\n", this_player());
         if((int)this_player()->query("qi")<250) this_player()->die();
         else this_player()->unconcious();
 	return 1;
@@ -51,19 +51,19 @@ int do_knock(string arg)
         me = this_player();
         if (!arg||arg=="") return 0;
 	if( arg=="floor" ) {
-		message_vision("\n$NÊÔÖøÇÃÁËÇÃµØ°å£¬ÉùÏìÇå´à£¬ÏÂÃæËÆºõÊÇ¿ÕĞÄµÄ¡£\n", this_player());
+		message_vision("\n$Nè¯•è‘—æ•²äº†æ•²åœ°æ¿ï¼Œå£°å“æ¸…è„†ï¼Œä¸‹é¢ä¼¼ä¹æ˜¯ç©ºå¿ƒçš„ã€‚\n", this_player());
 	}
 	if( sscanf(arg, "floor %s", dir)==1 ) 
 	{
 		if( dir=="3" || dir=="three") {
 		if(!objectp(present("hole", environment(me))))
 		{
-		message_vision("\n$NÔÚÄ¾°åÉÏßËßËßËÇÃÁËÈıÏÂ£¬Ö»ÌıÖ¨Ñ½Ò»Éù£¬\n"+"Àï±ßÉì³öÒ»Ë«ÊÖ°ÑµØ°åÏÆ¿ªÁË¡£\n", this_player());
+		message_vision("\n$Nåœ¨æœ¨æ¿ä¸Šå’šå’šå’šæ•²äº†ä¸‰ä¸‹ï¼Œåªå¬å±å‘€ä¸€å£°ï¼Œ\n"+"é‡Œè¾¹ä¼¸å‡ºä¸€åŒæ‰‹æŠŠåœ°æ¿æ€å¼€äº†ã€‚\n", this_player());
                 hole = new(__DIR__"obj/hole");
                 hole->move(__DIR__"neishi");
 		}
 	        }   
-		else return notify_fail("\nÄãºúÂÒÇÃÁËÄ¾°å¼¸ÏÂ£¬½á¹ûÊ²Ã´Ò²Ã»·¢Éú¡£\n");
+		else return notify_fail("\nä½ èƒ¡ä¹±æ•²äº†æœ¨æ¿å‡ ä¸‹ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿã€‚\n");
 	}		
 return 1;
 }
@@ -71,6 +71,6 @@ return 1;
 int do_enter(string arg)
 {
  if( !arg || arg!="floor" ) return 0;
- return notify_fail(" Ïë´©µØ°å°¡£¿Äã²»»áÆæÃÅ¶İ¼×¡£\n");
+ return notify_fail(" æƒ³ç©¿åœ°æ¿å•Šï¼Ÿä½ ä¸ä¼šå¥‡é—¨éç”²ã€‚\n");
  return 1;
 }	

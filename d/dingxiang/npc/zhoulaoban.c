@@ -8,13 +8,13 @@ inherit F_DEALER;
 void create()
 {
 //  reload("dingxiang_yaopu_zhou");
-  set_name("ÖÜ´ó·ò", ({"zhou daifu", "zhou", "daifu"}));
-        set("title", "Ò©ÆÌÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+  set_name("å‘¨å¤§å¤«", ({"zhou daifu", "zhou", "daifu"}));
+        set("title", "è¯é“ºæŒæŸœ");
+        set("gender", "ç”·æ€§");
   set("shop_id",({"zhou dafu", "zhou", "dafu"}));
   set("age", 37);
   set("combat_exp", 30000);
-   set("long","ÕâÊÇ¶¨Ïå³ÇÄÚ×îÓĞÃûÆøµÄ´ó·ò£¬Ã¿ÌìÀ´ÕÒËû¿´²¡µÄÈËºÜ¶à¡£\n");
+   set("long","è¿™æ˜¯å®šè¥„åŸå†…æœ€æœ‰åæ°”çš„å¤§å¤«ï¼Œæ¯å¤©æ¥æ‰¾ä»–çœ‹ç—…çš„äººå¾ˆå¤šã€‚\n");
   set("age", 38);
   set("attitude", "friendly");
   set_skill("unarmed", 10);

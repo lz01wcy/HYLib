@@ -2,17 +2,17 @@ inherit ROOM;
 
 void create()
 {
-  set("short","´óÆÙ²¼");
+  set("short","å¤§ç€‘å¸ƒ");
   set("long",@LONG
-ÕâÀïÊÇÒ»´¦Ï¿¹È£¬Ã¿ÄêÓê¼¾É½ºé±¬·¢Ê±¾ÍĞÎ³ÉÁËÒ»´¦ÎµÎª×³¹ÛµÄ
-ÆÙ²¼¡£´óÆÙ²¼£¨pubu£©Ò»Ğ¹Ç§Àï£¬Õğº³ÈËĞÄ¡£
+è¿™é‡Œæ˜¯ä¸€å¤„å³¡è°·ï¼Œæ¯å¹´é›¨å­£å±±æ´ªçˆ†å‘æ—¶å°±å½¢æˆäº†ä¸€å¤„è”šä¸ºå£®è§‚çš„
+ç€‘å¸ƒã€‚å¤§ç€‘å¸ƒï¼ˆpubuï¼‰ä¸€æ³„åƒé‡Œï¼Œéœ‡æ’¼äººå¿ƒã€‚
 LONG);
   set("outdoors","yinju");
   set("objects", ([
     __DIR__"npc/yuren": 1,
 ]));
 set("item_desc", ([
-                "pubu" : "´óÆÙ²¼ÀïºÃÏñÓĞÓãÔÚÓÎ¶¯¿ÉÒÔÈ¥×½£¨zhuo)¡£\n",
+                "pubu" : "å¤§ç€‘å¸ƒé‡Œå¥½åƒæœ‰é±¼åœ¨æ¸¸åŠ¨å¯ä»¥å»æ‰ï¼ˆzhuo)ã€‚\n",
 ]));
 
   set("exits",([
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
     {
        if(objectp(present("diancang yuyin", environment(me))) && 
 (me->query_temp("give_wawa")!=1))
-            return notify_fail("ÓæÈËÀ¹×¡ÄãËµ£º¼ÒÊ¦²»¼ûÍâÈË£¡\n");
+            return notify_fail("æ¸”äººæ‹¦ä½ä½ è¯´ï¼šå®¶å¸ˆä¸è§å¤–äººï¼\n");
     }   
        return ::valid_leave(me, dir);
 }void init()
@@ -45,12 +45,12 @@ int do_zhuo(string arg)
 		return 0;
 if (me->query("dex")>20)
 {
-	message_vision("$NºÃÈİÒ×´ÓÆÙ²¼ÖĞ×½µ½ÁËÒ»Ìõ½ğÍŞÍŞ¡£\n", me);
+	message_vision("$Nå¥½å®¹æ˜“ä»ç€‘å¸ƒä¸­æ‰åˆ°äº†ä¸€æ¡é‡‘å¨ƒå¨ƒã€‚\n", me);
            ob=new("/d/yinju/npc/obj/wawayu");
            ob->move(me);
            me->add("jing",-30);
 }
 else 
-message_vision("$NºÃÈİÒ×¿´µ½Ò»Ìõ½ğÍŞÍŞ,µ«ÊÇÓÉÓÚÉíÊÖ²»¹»Ãô½İ¸øËûÅÜÁË¡£\n", me);
+message_vision("$Nå¥½å®¹æ˜“çœ‹åˆ°ä¸€æ¡é‡‘å¨ƒå¨ƒ,ä½†æ˜¯ç”±äºèº«æ‰‹ä¸å¤Ÿæ•æ·ç»™ä»–è·‘äº†ã€‚\n", me);
 return 1;
 }

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","ɽ��");
+  set ("short","山冈");
   set ("long", @LONG
-�����Ǹ�ɽ�ԡ����Ｘ��û��ʲô�ˡ���˵���ﾭ����ǿ����û��
-�㲻���ӿ��˽Ų���
+这里是个山冈。这里几乎没有什么人。据说这里经常有强盗出没，
+你不禁加快了脚步。
 LONG);
 
   set("exits", ([ 

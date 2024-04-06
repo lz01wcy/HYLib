@@ -2,12 +2,12 @@
 inherit ITEM;
 void create()
 {
-        set_name( "ÊÖÅÁ", ({ "wen shoupa"}));
+        set_name( "æ‰‹å¸•", ({ "wen shoupa"}));
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long","ÕâÊÇÒ»ÕÅĞå»¨ÊÖÅÁ¡£\n");
+                set("unit", "å¼ ");
+                set("long","è¿™æ˜¯ä¸€å¼ ç»£èŠ±æ‰‹å¸•ã€‚\n");
              }
 }

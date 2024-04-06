@@ -3,8 +3,8 @@
 inherit NPC;
 void create()
 {
-        set_name(HIY"替补"NOR,({"guardian"}));
-        set("long", "这是直共寺打扫寺院的喇嘛。\n");
+        set_name(HIY"鏇胯ˉ"NOR,({"guardian"}));
+        set("long", "杩欐槸鐩村叡瀵烘墦鎵闄㈢殑鍠囧槢銆俓n");
         set("age",30+random(20));
         set("attitude", "friendly");
         set("combat_exp", 1500000);
@@ -47,7 +47,7 @@ void create()
         }) );*/
         
 //        auto_npc_setup();("wang",200,160,0,"/obj/weapon/","fighter_w","lianxin-blade",2);
-        set_name("直共寺的喇嘛",({"zhigong lama","lama"}));
+        set_name("鐩村叡瀵虹殑鍠囧槢",({"zhigong lama","lama"}));
         set("force_factor",40+random(50));
         setup();
    carry_object(__DIR__"obj/lamacloth")->wear();

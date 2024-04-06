@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ğ¡Ã©Îİ");
+        set("short", "å°èŒ…å±‹");
         set("long", @LONG
-ÎİÀï»è»è°µ°µµÄ,¾ÓÈ»Á¬ÕµÓÍµÆÒ²Ã»ÓĞ.ÎİÀïµÄ³ÂÉè
-Ò²·Ç³£¼òÂª,Ö»ÓĞÒ»×À,Ò»ÒÎ,Ò»´²¶øÒÑ.
+å±‹é‡Œæ˜æ˜æš—æš—çš„,å±…ç„¶è¿ç›æ²¹ç¯ä¹Ÿæ²¡æœ‰.å±‹é‡Œçš„é™ˆè®¾
+ä¹Ÿéå¸¸ç®€é™‹,åªæœ‰ä¸€æ¡Œ,ä¸€æ¤…,ä¸€åºŠè€Œå·².
 LONG );
         set("exits", ([
                 "out"    : __DIR__"xiaowuout",
@@ -54,12 +54,12 @@ if ( present("tulong dao", me))
        if (  present("miao feng", environment(me))
        || present("hui yue", environment(me))
        || present("liu yun", environment(me)))
-        return notify_fail("Ã÷½ÌµÄÈË¶¼¿´×ÅÄãÊÖÉÏµÄµ¶£¬Äã¾ö¶¨ÏÂ¹ò(kneel)»¹ÊÇ¾Ü¾ø(refuse)?\n");
+        return notify_fail("æ˜æ•™çš„äººéƒ½çœ‹ç€ä½ æ‰‹ä¸Šçš„åˆ€ï¼Œä½ å†³å®šä¸‹è·ª(kneel)è¿˜æ˜¯æ‹’ç»(refuse)?\n");
 }
 else	return ::valid_leave(me, dir);
 }
 int do_quit(string arg)
 {
-        write(this_player()->query("name")+"£¬ÕâÀïºÃÏñ²»ÄÜ×öÕâ¸ö£¡\n");
+        write(this_player()->query("name")+"ï¼Œè¿™é‡Œå¥½åƒä¸èƒ½åšè¿™ä¸ªï¼\n");
         return 1;
 }

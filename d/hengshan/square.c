@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "���Է�");
+	set("short", "见性峰");
 	set("long", @LONG
-�����Ǻ�ɽ������Է�嶥�Ĺ㳡�������︩�Ⱥɽ��������ú�
-�Ժ�ɽ�ǻ��ı�����ɽ֮�ڣ�����Ҳ�����𽭺��ĺ�ɽ�ɵĸ����صء�
+这里是恒山主峰见性峰峰顶的广场。在这里俯瞰群山，才理会得何
+以恒山是华夏北方万山之宗，这里也是威震江湖的恒山派的根本重地。
 LONG);
 	set("exits", ([ /* sizeof() == 4 */
 		"westdown"  : __DIR__"shandao2",

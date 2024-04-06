@@ -1,5 +1,5 @@
-// mishi.c ����
-// mlf���,lks���
+// mishi.c 密室
+// mlf设计,lks编程
 
 #include <ansi.h>
 
@@ -7,18 +7,18 @@ inherit ROOM;
 
 void create()
 {
-	set("short","����");
+	set("short","密室");
         set("long",
-"����һ�����ң�����ܰ��������м����һ�����ӣ�����һ��ҹ����
-��ɢ������͵Ĺ�â��ʹ������ϡ������Χ��һ�У�ǽ�Ϲ���һ��ɽˮ��
-��hua����ǽ����һ����ܣ���ܣ�shelf���Ϸ���һЩ�飨book����\n"
+"这是一间密室，里面很暗，房间中间放着一张桌子，桌上一颗夜明珠
+，散发着柔和的光芒，使得能依稀看到周围的一切，墙上挂着一幅山水画
+（hua），墙边是一个书架，书架（shelf）上放着一些书（book）。\n"
 	);
 	set("valid_startroom",1);
 	set("exits",([
 		"out" : __DIR__"woshi",
 	]));
          set("item_desc",([
-		"shelf" : "������һ�����Ƶ��顣\n",
+		"shelf" : "上面有一本发黄的书。\n",
           ]));
 	set("book_count",1);
 	setup();

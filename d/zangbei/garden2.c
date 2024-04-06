@@ -2,13 +2,13 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "�ջ�԰");
+        set("short", "菊花园");
         set("long", @LONG
-�ջ�԰�ܴ󣬾ջ�԰����÷��԰����ĵ����Ǿޱ����ҩ���軨������������԰��
-���еĻ�԰�������˭Ҳ��֪������ռ�˶��ٵأ�ֻ֪��һ���˾��ߵúܿ�Ҳ����
-һ����������Ƭ����һȦ����԰��ܾ���û���ˣ�û���������ϲ��Ļ�԰һ����
-�����ӵģ�����ֻҪһ�߽�ȥ��ÿ�������ﶼ�������˺�Ȼ���֣�ÿ���˶�����Ҫ
-�������
+菊花园很大，菊花园旁是梅花园还有牡丹，蔷薇．芍药，茶花，甚至还有竹园。
+所有的花园密密相接谁也不知道究竟占了多少地，只知道一个人就走得很快也难在
+一天内绕着这片地走一圈。花园里很静，没有人，没有声音。老伯的花园一向都是
+这样子的，但你只要一走进去，每个角落里都可能有人忽然出现，每个人都可能要
+你的命。
 LONG
         );
         set("exits", ([ 
@@ -18,8 +18,8 @@ LONG
         ]));
         
         set("item_desc", ([
-                "�ջ�": "�����＾��԰����ľջ��а��˶�ߣ�Ѥ�ö�ʡ�\n",
-                "flower": "�����＾��Ժ����ľջ��а��˶�ߣ�Ѥ�ö�ʡ�\n",
+                "菊花": "正当秋季，园子里的菊花有半人多高，绚烂多彩。\n",
+                "flower": "正当秋季，院子里的菊花有半人多高，绚烂多彩。\n",
         ]));
         
         set("objects", ([
@@ -37,10 +37,10 @@ int do_pull(string arg) {
         object me=this_player();
         object xiaohe;
         
-        if (arg== "flower" || arg == "�ջ�") {
+        if (arg== "flower" || arg == "菊花") {
            tell_object(me,YEL"
-�����ȥ���ְ���һ��ջ����ջ�����һ�Σ�����������\n\n"NOR);
+你蹲下去伸手拔起一株菊花。菊花被你一拔，就连根而起。\n\n"NOR);
                 return 1;
         }
-        return notify_fail("�����/��ʲô��\n");
+        return notify_fail("你想拔/拉什么？\n");
 } 

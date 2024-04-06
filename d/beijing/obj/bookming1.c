@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name("Ã÷Ê·¼­ÂÔ", ({"book ming","book","ming"}));
+        set_name("æ˜å²è¾‘ç•¥", ({"book ming","book","ming"}));
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±¾ºñºñµÄÊé¡£\n");
-                set("unit", "±¾");
+                set("long", "ä¸€æœ¬åšåšçš„ä¹¦ã€‚\n");
+                set("unit", "æœ¬");
                 set("gold", 0);
                 set("material", "paper");
         }
@@ -33,7 +33,7 @@ int do_shake(string arg)
   if( !arg || arg=="" ) return 0;
         if( arg=="book"||arg=="ming"||arg=="ming book") 
 	{
-	message("vision","²»¹ÜÔõÃ´¶¶£¬ÔÙÃ»½ğÒ¶ÁË¡£\n",environment(me));
+	message("vision","ä¸ç®¡æ€ä¹ˆæŠ–ï¼Œå†æ²¡é‡‘å¶äº†ã€‚\n",environment(me));
 	return 1;
 	}
 }	

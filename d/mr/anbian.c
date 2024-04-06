@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIY"����"NOR);
+         set("short",HIY"岸边"NOR);
          set("long",@long
-��С����������̤����С���İ��ߣ�ֻ������ȫ�ǻ������硣�����ţ�
-ʮ��ѧʿ��ʮ��̫�������ɹ������糾��������������Ĳ軨�����������
-Χ�����Ѿ����ݻ����У��������ϸ�ı���򣬺����ܹ��߳�ȥ��
+从小舟下来，你踏上了小岛的岸边，只见三面全是花的世界。落第秀才，
+十八学士，十三太保，八仙过海，风尘三侠等数种名贵的茶花萦绕在你的周
+围，你已经身陷花丛中，如果不仔细的辨别方向，很难能够走出去。
 long);
          set("outdoors","mr");
 /*       set("objects",([

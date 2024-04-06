@@ -1,4 +1,4 @@
-// yinzhencha.c ¾ıÉ½ÒøÕë²è
+// yinzhencha.c å›å±±é“¶é’ˆèŒ¶
 
 #include <ansi.h>;
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name(HIW"¾ıÉ½ÒøÕë²è"NOR, ({"junshan yinzhencha", "yinzhen", "cha"}));
+	set_name(HIW"å›å±±é“¶é’ˆèŒ¶"NOR, ({"junshan yinzhencha", "yinzhen", "cha"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long","Ò»Íë¾ıÉ½ÒøÕë²è£¬°×°×µÄÕë¼â°ãµÄ²èÒ¶ÔÚ·ĞË®ÖĞÊúÖ±¶øÁ¢£¬ÃÀÃî·Ç³£¡£\n");
-		set("unit", "Íë");
+		set("long","ä¸€ç¢—å›å±±é“¶é’ˆèŒ¶ï¼Œç™½ç™½çš„é’ˆå°–èˆ¬çš„èŒ¶å¶åœ¨æ²¸æ°´ä¸­ç«–ç›´è€Œç«‹ï¼Œç¾å¦™éå¸¸ã€‚\n");
+		set("unit", "ç¢—");
 		set("value", 200);
 		set("max_liquid", 15);
 	}
@@ -21,7 +21,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "tea",
-		"name": "¾ıÉ½ÒøÕë²è",
+		"name": "å›å±±é“¶é’ˆèŒ¶",
 		"remaining"  : 5,
 		"drunk_apply": 2,
 	]));

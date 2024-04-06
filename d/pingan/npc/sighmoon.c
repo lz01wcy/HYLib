@@ -4,12 +4,12 @@ void random_chat();
 int answer();
 void create()
 {
-   set_name("ÇåÑÅ",({"sighmoon"}));
-   set("gender","Å®ĞÔ");
+   set_name("æ¸…é›…",({"sighmoon"}));
+   set("gender","å¥³æ€§");
    set("age",18);
    set("per",40);
    set("combat_exp",20000);
-set("long","Ëı¿ÉÊÇĞ¡ÈËÎïµÄÊ¦¸¸Å¶!¾ø¶ÔµÄ¸ßÊÖ...Äã¿ÉÒÔÏòËû´òÌıÊ¹ÓÃµÄemote,
+set("long","å¥¹å¯æ˜¯å°äººç‰©çš„å¸ˆçˆ¶å“¦!ç»å¯¹çš„é«˜æ‰‹...ä½ å¯ä»¥å‘ä»–æ‰“å¬ä½¿ç”¨çš„emote,
 (ask sighmoon about this emote).\n");
    set_skill("unarmed",10);
    set_skill("dodge",10);
@@ -54,6 +54,6 @@ void random_chat()
 }
 int answer()
 {
- command("say Õâ¸öemoteÃ´,ÊÇ("+query("answer")+").\n");
+ command("say è¿™ä¸ªemoteä¹ˆ,æ˜¯("+query("answer")+").\n");
  return 1;
  }

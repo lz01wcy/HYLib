@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "��Ժ");
+    set("short", "大院");
     set("long", @LONG
-����һ���ƾɵĴ�Ժ��Ժ��ʮ�ֿ��������ݰ��ˡ�����
-һ���쾮,��������������.
+这是一个破旧的大院。院内十分宽阔，可容百人。正中
+一口天井,再往里是座大厅.
 LONG );
     set("exits", ([
 	"north" : "/d/city2/zhuang5",

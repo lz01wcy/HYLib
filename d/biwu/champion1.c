@@ -9,7 +9,7 @@ void changeshape(object winner);
 void create()
 {
 	string info,name,id,file;
-        set_name( "ÃËÖ÷" , ({ "numberone" }) );
+        set_name( "ç›Ÿä¸»" , ({ "numberone" }) );
 	setup();
 	info = read_file(CHAMPION_FILE);
 	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
@@ -23,7 +23,7 @@ void create()
         loadall(this_object());
                 this_object()->set_max_encumbrance(100000000);
         this_object()->clear_condition();
-        set("title", HIR "Ğ°ÅÉÃËÖ÷" NOR);
+        set("title", HIR "é‚ªæ´¾ç›Ÿä¸»" NOR);
 	carry_object("clone/weapon/gangjian")->wield();
 	carry_object("clone/misc/cloth")->wear();
 }
@@ -43,10 +43,10 @@ void changeshape( object winner)
 	string name,id,nick;
 	object zheng;
 	  if (!userp(winner))
-        return notify_fail("Äã²»ÊÇÍæ¼Ò£¬ÊÇ»úÆ÷ÈË.\n");
+        return notify_fail("ä½ ä¸æ˜¯ç©å®¶ï¼Œæ˜¯æœºå™¨äºº.\n");
 	winner_file = winner->query_save_file();
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s´ÓÏÖÔÚ¿ªÊ¼ÊÇÎÒÃÇĞÂµÄĞ°ÅÉÃËÖ÷ÁË£¡£¡ \n",
+        sprintf( "%sä»ç°åœ¨å¼€å§‹æ˜¯æˆ‘ä»¬æ–°çš„é‚ªæ´¾ç›Ÿä¸»äº†ï¼ï¼ \n",
         winner->name(1)));
 	write_file(CHAMPION_FILE,sprintf("%s %s %s",
 	winner_file,winner->query("id"),winner->query("name")),1);
@@ -60,15 +60,15 @@ void changeshape( object winner)
 	reset_action();
 	delete_temp("already_loaded");
 	loadall(this_object());	
-	set("title", HIR "Ğ°ÅÉÃËÖ÷" NOR);	
+	set("title", HIR "é‚ªæ´¾ç›Ÿä¸»" NOR);	
 	set("nickname",nick);
 //	delete("party");
 	zheng = new(__DIR__"gangzhang");
 	find(id);
 	zheng->move(winner);
-	message_vision("Ğ°ÅÉÃËÖ÷¸øÁË$NÒ»¸ùÄ§ÕÈ¡£\n",winner);
-//	winner->set("party/party_name",HIR+"Ğ°ÅÉ"+NOR);
-//	winner->set("party/rank",HIR+"ÃËÖ÷"+NOR);
+	message_vision("é‚ªæ´¾ç›Ÿä¸»ç»™äº†$Nä¸€æ ¹é­”æ–ã€‚\n",winner);
+//	winner->set("party/party_name",HIR+"é‚ªæ´¾"+NOR);
+//	winner->set("party/rank",HIR+"ç›Ÿä¸»"+NOR);
 	winner->set("marks/mengzhu",1);
 
 return;
@@ -135,12 +135,12 @@ void die()
 	if(ob->query("id")==me->query("id") && (!present("mostaff",me)))
 	{find(id1);
 	zhang->move(me);
-	message_vision("$N¸øÁË$nÒ»¸ùÄ§ÕÈ¡£\n",ob,me);
-	me->set("party/party_name",HIR+"Ğ°ÅÉ"+NOR);
-	me->set("party/rank",HIR+"ÃËÖ÷"+NOR);
+	message_vision("$Nç»™äº†$nä¸€æ ¹é­”æ–ã€‚\n",ob,me);
+	me->set("party/party_name",HIR+"é‚ªæ´¾"+NOR);
+	me->set("party/rank",HIR+"ç›Ÿä¸»"+NOR);
 return 1;
 	}
-tell_object(me,"ÄãÏ¹ÒªÊ²Ã´£¿\n");
+tell_object(me,"ä½ çè¦ä»€ä¹ˆï¼Ÿ\n");
 return 1;
 }*/
 void find(string id)
@@ -161,8 +161,8 @@ while (i--) {
 	if(ob->query("id")=="mostaff" && !userp(ob))
 	destruct(ob);
 	}
-message_vision(HIG"$NÉíÉÏµÄÄ§ÕÈ»¯×÷Ò»µÀÂÌÃ¢·ÉÏòÁËÔ¶·½¡£\n"NOR,ulist[i]);
-//ulist[i]->set("party/party_name",HIR"Ç°ÈÎĞ°ÅÉ"NOR);
+message_vision(HIG"$Nèº«ä¸Šçš„é­”æ–åŒ–ä½œä¸€é“ç»¿èŠ’é£å‘äº†è¿œæ–¹ã€‚\n"NOR,ulist[i]);
+//ulist[i]->set("party/party_name",HIR"å‰ä»»é‚ªæ´¾"NOR);
 //ulist[i]->set("party",0);
 
 	}

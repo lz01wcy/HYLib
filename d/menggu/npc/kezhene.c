@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-   set_name("¿ÂÕò¶ñ",({"ke zhene"}));
-   set("gender","ÄĞĞÔ");
-   set("long","½­ÄÏÆß¹ÖÖ®Ê×,¿ÉÏ§ÆßÄêÇ°±»ºÚ·çË«É··ÏÁËÕĞ×Ó!\n");
+   set_name("æŸ¯é•‡æ¶",({"ke zhene"}));
+   set("gender","ç”·æ€§");
+   set("long","æ±Ÿå—ä¸ƒæ€ªä¹‹é¦–,å¯æƒœä¸ƒå¹´å‰è¢«é»‘é£åŒç…åºŸäº†æ‹›å­!\n");
    set("mingwang",90000);
    set("combat_exp",180000);
-   set("title","·ÉÌìòùòğ");
+   set("title","é£å¤©è™è ");
    
 set("age",54);
    set("kee",1800);

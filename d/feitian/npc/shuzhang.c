@@ -6,12 +6,12 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("Êğ³¤", ({ "shu zhang", "shu","zhang" }) );
+        set_name("ç½²é•¿", ({ "shu zhang", "shu","zhang" }) );
         set("long",
-                "Éñ»§³ÇÖĞ×î¸ßµÄ¹Ù£¬ÓĞÖÁ¸ßÎŞÉÏµÄÈ¨Á¦\n");
-	set("nickname", RED"¾¯±¸Êğ"NOR);
+                "ç¥æˆ·åŸä¸­æœ€é«˜çš„å®˜ï¼Œæœ‰è‡³é«˜æ— ä¸Šçš„æƒåŠ›\n");
+	set("nickname", RED"è­¦å¤‡ç½²"NOR);
         set("attitude", "heroism");
-	set("student_title","¹ÙÔ±");
+	set("student_title","å®˜å‘˜");
 	set("vendetta_mark", "authority");
         set("str", 27);
         set("cor", 26);

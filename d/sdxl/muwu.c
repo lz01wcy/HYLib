@@ -6,11 +6,11 @@ int do_zhao(string arg);
 
 void create()
 {
-        set("short","Ä¾Îİ");
+        set("short","æœ¨å±‹");
         set("long", @LONG
-ÕâÊÇÒ»¼äÆÕÍ¨µÄĞ¡Ä¾Îİ£¬ÎİÀïÂÒÆß°ËÔã¶Ñ·Å×ÅÒ»Ğ©ÁÔÈËÃÇ
-³£ÓÃµÄÎïÆ·£¬ÎİÄÚ¹âÏß°µµ­£¬Ç½½ÇÓĞÒ»¶ÑµãÈ¼µÄóô»ğÏÔÈ»¸Õ¸Õ
-Ï¨Ãğ¡£
+è¿™æ˜¯ä¸€é—´æ™®é€šçš„å°æœ¨å±‹ï¼Œå±‹é‡Œä¹±ä¸ƒå…«ç³Ÿå †æ”¾ç€ä¸€äº›çŒäººä»¬
+å¸¸ç”¨çš„ç‰©å“ï¼Œå±‹å†…å…‰çº¿æš—æ·¡ï¼Œå¢™è§’æœ‰ä¸€å †ç‚¹ç‡ƒçš„ç¯ç«æ˜¾ç„¶åˆšåˆš
+ç†„ç­ã€‚
 LONG                           
         );
  
@@ -34,16 +34,16 @@ int do_zhao(string arg)
 {
         object me=this_player();
 
-        if ( arg != "¿İÊ÷Ö¦" )
-            return notify_fail("ÄãÒªÕÒÊ²Ã´£¿\n");
+        if ( arg != "æ¯æ ‘æ" )
+            return notify_fail("ä½ è¦æ‰¾ä»€ä¹ˆï¼Ÿ\n");
         if (query("zhi_count") > 0) 
           {
-           message_vision("$NÔÚÇ½½ÅÀï·­³öÒ»Ğ©¿İÊ÷Ö¦¡£\n", me);
+           message_vision("$Nåœ¨å¢™è„šé‡Œç¿»å‡ºä¸€äº›æ¯æ ‘æã€‚\n", me);
            add("zhi_count", -1);
  
            new(__DIR__"obj/kusz")->move(me);
           }
         else
-           message_vision("$N·­À´·­È¥Ê²Ã´Ò²Ã»ÕÒ×Å¡£\n", me);
+           message_vision("$Nç¿»æ¥ç¿»å»ä»€ä¹ˆä¹Ÿæ²¡æ‰¾ç€ã€‚\n", me);
      return 1;
 }

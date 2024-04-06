@@ -3,11 +3,11 @@
 string horsedesc();
 void create()
 {
-        set_name("»Æ¿¥Âí", ({ "yellow horse","horse" }) );
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+        set_name("é»„éªé©¬", ({ "yellow horse","horse" }) );
+        set("race", "é‡Žå…½");
+        set("gender", "é›„æ€§");
         set("age", 3);
-       //set("long", "Ò»Æ¥Æ¤Ã«ºÚÁÁµÄÒ°Âí£¬×ÔÓÉ×ÔÔÚµÄÈöÌã·É±¼×Å£¬²»ÖªÊÇ·ñ¿ÉÒÔÑ±·þ£¨£ø£õ£î£æ£õ£©¡£\n");
+       //set("long", "ä¸€åŒ¹çš®æ¯›é»‘äº®çš„é‡Žé©¬ï¼Œè‡ªç”±è‡ªåœ¨çš„æ’’è¹„é£žå¥”ç€ï¼Œä¸çŸ¥æ˜¯å¦å¯ä»¥é©¯æœï¼ˆï½˜ï½•ï½Žï½†ï½•ï¼‰ã€‚\n");
         set("long",(: horsedesc :));
         set("max_qi", 3000);
         set("max_jing", 3000);
@@ -16,11 +16,11 @@ void create()
         set("cor",80);
         set("str",50);
         set("attitude", "peaceful");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "hoof"}) ); 
         set("chat_chance", 1);
         set("chat_msg", ({
-                  "»Æ¿¥Âí£¢ßÔ¡«¡«ßÔßÔ£¢µØÑöÌì³¤Ð¥ÁË¼¸Éù¡£\n",
+                  "é»„éªé©¬ï¼‚å’´ï½žï½žå’´å’´ï¼‚åœ°ä»°å¤©é•¿å•¸äº†å‡ å£°ã€‚\n",
         }) );
         set("combat_exp", 3000000);
         set_temp("apply/attack", 300);
@@ -38,38 +38,38 @@ string horsedesc()
 {
         object me;
         me = this_player();
-   if (me ->query_temp("marks/Ñ±·þ_»Æ¿¥Âí"))
+   if (me ->query_temp("marks/é©¯æœ_é»„éªé©¬"))
         {       
-                return "ÆïÉÏ£¨£ò£é£ä£å£©ÕâÆ¥¿¥Âí£¬Äã¾ÍÄÜµ½´ïºþ²´µÄÁíÒ»±ß¡£\n";
+                return "éª‘ä¸Šï¼ˆï½’ï½‰ï½„ï½…ï¼‰è¿™åŒ¹éªé©¬ï¼Œä½ å°±èƒ½åˆ°è¾¾æ¹–æ³Šçš„å¦ä¸€è¾¹ã€‚\n";
         }
-        return "Ò»Æ¥Æ¤Ã«Ïó¶Ð×Ó°ã¹âÁÁµÄÒ°Âí£¬×ÔÓÉ×ÔÔÚµØÈöÌã·É±¼×Å£¬²»ÖªÊÇ·ñ¿ÉÒÔÑ±·þ£¨£ø£õ£î£æ£õ£©¡£\n";
+        return "ä¸€åŒ¹çš®æ¯›è±¡ç¼Žå­èˆ¬å…‰äº®çš„é‡Žé©¬ï¼Œè‡ªç”±è‡ªåœ¨åœ°æ’’è¹„é£žå¥”ç€ï¼Œä¸çŸ¥æ˜¯å¦å¯ä»¥é©¯æœï¼ˆï½˜ï½•ï½Žï½†ï½•ï¼‰ã€‚\n";
 } 
 int do_xunfu(string arg)
 {
         object me;
-        if (arg != "»Æ¿¥Âí" && arg != "yellow horse" && arg != "Ò°Âí" && arg!= "horse" )
-                return notify_fail("ÄãÒªÑ±·þÊ²Ã´£¿\n");
+        if (arg != "é»„éªé©¬" && arg != "yellow horse" && arg != "é‡Žé©¬" && arg!= "horse" )
+                return notify_fail("ä½ è¦é©¯æœä»€ä¹ˆï¼Ÿ\n");
         
         me = this_player();
-        if (me->query_temp("marks/Ñ±·þ_»Æ¿¥Âí"))
-                return notify_fail("ÕâÆ¥Ò°ÂíÒÑ¾­±»ÄãÑ±·þÁË¡£\n");
+        if (me->query_temp("marks/é©¯æœ_é»„éªé©¬"))
+                return notify_fail("è¿™åŒ¹é‡Žé©¬å·²ç»è¢«ä½ é©¯æœäº†ã€‚\n");
         
-        message_vision("$N³¤Ë»Ò»Éù£¬ÑïÎ²Ì¤×ã£¬ÂÒÌß¿ñ±¼£¬Ó²ÊÇÒª°Ñ$nÈÓÏÂÀ´¡£¡£¡£ \n",this_object(),me);
+        message_vision("$Né•¿å˜¶ä¸€å£°ï¼Œæ‰¬å°¾è¸è¶³ï¼Œä¹±è¸¢ç‹‚å¥”ï¼Œç¡¬æ˜¯è¦æŠŠ$næ‰”ä¸‹æ¥ã€‚ã€‚ã€‚ \n",this_object(),me);
         
         if (me->query_skill("dodge",1) >=100 && me->query_skill("animal-talk",1)>=150 && me->query_skill("animal-training",1)>=150)
         {
-                message_vision(HIC"$n½ô½ô×¥×¡Âí××£¬ÎÞÂÛ$NÈçºÎÁÃÌã´ò¾ï£¬ÎÈÈçÌ©É½°ã¸½ÔÚÂí±³¡£\n "NOR,this_object(),me);
-                message_vision("$NÖÕÓÚ°²¾²ÁËÏÂÀ´£¬Ñ±·þµØ´­×Å´ÖÆø¡£¡£\n$nÂúÒâµØÅÄÁËÅÄ$NµÄÍ·£¬´ÓÂíÉÏÔ¾ÁËÏÂÀ´¡£\n",this_object(),me);
-                if (!me->query("marks/Ñ±·þ_Ò°Âí"))
+                message_vision(HIC"$nç´§ç´§æŠ“ä½é©¬é¬ƒï¼Œæ— è®º$Nå¦‚ä½•æ’©è¹„æ‰“æ’…ï¼Œç¨³å¦‚æ³°å±±èˆ¬é™„åœ¨é©¬èƒŒã€‚\n "NOR,this_object(),me);
+                message_vision("$Nç»ˆäºŽå®‰é™äº†ä¸‹æ¥ï¼Œé©¯æœåœ°å–˜ç€ç²—æ°”ã€‚ã€‚\n$næ»¡æ„åœ°æ‹äº†æ‹$Nçš„å¤´ï¼Œä»Žé©¬ä¸Šè·ƒäº†ä¸‹æ¥ã€‚\n",this_object(),me);
+                if (!me->query("marks/é©¯æœ_é‡Žé©¬"))
                 {
                         me->add("potential",500);
                         me->add("score",100);
-                        tell_object(me,"Äã±»½±ÀøÁË£º\nÎå°ÙµãÇ±ÄÜ\nÒ»°Ùµã×ÛºÏÆÀ¼Û\n\n");
-                        me->set("marks/Ñ±·þ_Ò°Âí",1);
+                        tell_object(me,"ä½ è¢«å¥–åŠ±äº†ï¼š\näº”ç™¾ç‚¹æ½œèƒ½\nä¸€ç™¾ç‚¹ç»¼åˆè¯„ä»·\n\n");
+                        me->set("marks/é©¯æœ_é‡Žé©¬",1);
                 }
-                me->set_temp("marks/Ñ±·þ_»Æ¿¥Âí",1);
+                me->set_temp("marks/é©¯æœ_é»„éªé©¬",1);
         }else   {
-                message_vision("$nÖÕÓÚ²»Ö§£¬´Ó$N±³ÉÏË¤ÁËÏÂÀ´¡£\n",this_object(),me);
+                message_vision("$nç»ˆäºŽä¸æ”¯ï¼Œä»Ž$NèƒŒä¸Šæ‘”äº†ä¸‹æ¥ã€‚\n",this_object(),me);
                 me->unconcious();
         }
         return 1;

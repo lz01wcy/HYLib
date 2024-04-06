@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ºÚ¹Ú¾Şòş", ({ "snake", "she" }) );
-	set("race", "Ò°ÊŞ");
+	set_name("é»‘å† å·¨èŸ’", ({ "snake", "she" }) );
+	set("race", "é‡å…½");
 	set("age", 20);
-	set("long", "Ò»Ö»ÅÓÈ»´óÎï£¬ËüÑÛÖĞÅç»ğ,ºÃÏóÒªÒ»¿Ú°ÑÄãÍÌÏÂ¡£\n");
+	set("long", "ä¸€åªåºç„¶å¤§ç‰©ï¼Œå®ƒçœ¼ä¸­å–·ç«,å¥½è±¡è¦ä¸€å£æŠŠä½ åä¸‹ã€‚\n");
 	set("attitude", "aggressive");
         set("qi", 4000);
 	set("max_qi", 4000);
@@ -15,7 +15,7 @@ void create()
 	set("max_jing", 500);
 	set("str", 86);
 	set("cor", 80);
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 
 	set("combat_exp", 1000000);

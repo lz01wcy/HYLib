@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(YEL"Ä¾ºĞ"NOR, ({"mu he", "box"}));
+	set_name(YEL"æœ¨ç›’"NOR, ({"mu he", "box"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", YEL"ÕâÄ¾ºĞ¹ÅÆÓµäÑÅ£¬³ÁµéµéµÄ£¬ÀïÃæÒ²ĞíÓĞÊ²Ã´±¦¹óµÄÎïÊÂ¡£\n"NOR);
-		set("unit", "¸ö");
+		set("long", YEL"è¿™æœ¨ç›’å¤æœ´å…¸é›…ï¼Œæ²‰ç”¸ç”¸çš„ï¼Œé‡Œé¢ä¹Ÿè®¸æœ‰ä»€ä¹ˆå®è´µçš„ç‰©äº‹ã€‚\n"NOR);
+		set("unit", "ä¸ª");
 		set("open_count", 1);
 		set("weight", 20000);
 	}
@@ -32,10 +32,10 @@ int do_open()
   		ob = new(__DIR__"muhe1");
 	  	ob -> move(me);
 	  	destruct(this_object());
-			message_vision("Ä¾ºĞÀïÊ²Ã´Ò²Ã»ÓĞ£¬$NÉîÉîÌ¾ÁË¿ÚÆø¡£\n",me);
+			message_vision("æœ¨ç›’é‡Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ï¼Œ$Næ·±æ·±å¹äº†å£æ°”ã€‚\n",me);
 			return 1;
 		}
-		message_vision(HIR "$NÉìÊÖ´ò¿ªÄ¾ºĞ£¬Ö»¼ûº®¹âÉÁÉÁ£¬ÀïÃæ¾¹ÊÇ°Ñ¾øÊÀ±¦½££¡\n" NOR, this_player());
+		message_vision(HIR "$Nä¼¸æ‰‹æ‰“å¼€æœ¨ç›’ï¼Œåªè§å¯’å…‰é—ªé—ªï¼Œé‡Œé¢ç«Ÿæ˜¯æŠŠç»ä¸–å®å‰‘ï¼\n" NOR, this_player());
 		ob -> move(me);
 		ob = new(__DIR__"muhe1");
 		ob -> move(environment(this_object()));
@@ -45,5 +45,5 @@ int do_open()
 	ob = new(__DIR__"muhe1");
 	ob -> move(me);
 	destruct(this_object());
-	return notify_fail("Ä¾ºĞÒÑ¾­±»±ğÈË´ò¿ª¹ıÁË¡£\n");
+	return notify_fail("æœ¨ç›’å·²ç»è¢«åˆ«äººæ‰“å¼€è¿‡äº†ã€‚\n");
 }

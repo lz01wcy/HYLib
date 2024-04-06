@@ -1,14 +1,14 @@
 // by dubei
-// liumang.c Á÷Ã¥
+// liumang.c æµæ°“
 
 inherit NPC;
 #include <ansi.h>
 void create()
 {
-    set_name("Ğ¡Á÷Ã¥", ({ "xiao liumang", "xiao", "liumang" }));
-	set("gender", "ÄĞĞÔ");
+    set_name("å°æµæ°“", ({ "xiao liumang", "xiao", "liumang" }));
+	set("gender", "ç”·æ€§");
 	set("age", 19);
-	set("long", "ËûÊÇÒ»¸ö³ÉÌìÓÎÊÖºÃÏĞµÄÁ÷Ã¥£¬×¨ÃÅÆÛ¸ºÒ»Ğ©±È×Ô¼ºÈõĞ¡µÄÈË¡£\n");
+	set("long", "ä»–æ˜¯ä¸€ä¸ªæˆå¤©æ¸¸æ‰‹å¥½é—²çš„æµæ°“ï¼Œä¸“é—¨æ¬ºè´Ÿä¸€äº›æ¯”è‡ªå·±å¼±å°çš„äººã€‚\n");
 	set("combat_exp", 1000);
 	set("shen", -10);
 	set("attitude", "peaceful");
@@ -36,9 +36,9 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
               if ( ob->query("combat_exp",1)<2500)
-           message_vision(CYN "$N¶ñºİºİµØ¶Ô$nËµµÀ£ºÇ°¼¸ÌìÎÒÃÇ¼¸¸öĞÖµÜ±»ÄãÃÇÎä¹İµÄÈË´òÉËÁË£¬ÏóÊÇÄã¸ÉµÄ°É£¡
-½ñÌìÏë´ÓÕâÀï³öÈ¥¾Í¸úÎÒ"HIR"(bihua)"CYN"±È»®±È»®£¬Èç¹ûÓ®ÁË£¬ÎÒ¾ÍÉÁ¿ªÒ»ÌõÂ·£¬ÈÃÄã×ß£¬·ñÔò¾ÍÅÀ»ØÎä¹İÈ¥£¡\n", this_object(), ob);
-        else message_vision("$NÚÆÃÄµØ¶Ô$nËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+"Îä¹¦¸ßÇ¿£¬ÊµÔÚÊÇÓ¢ĞÛ³öÉÙÄê£¬ÄúÀÏÇë£¬ÄúÀÏÇë¡£\n", this_object(), ob);
+           message_vision(CYN "$Næ¶ç‹ ç‹ åœ°å¯¹$nè¯´é“ï¼šå‰å‡ å¤©æˆ‘ä»¬å‡ ä¸ªå…„å¼Ÿè¢«ä½ ä»¬æ­¦é¦†çš„äººæ‰“ä¼¤äº†ï¼Œè±¡æ˜¯ä½ å¹²çš„å§ï¼
+ä»Šå¤©æƒ³ä»è¿™é‡Œå‡ºå»å°±è·Ÿæˆ‘"HIR"(bihua)"CYN"æ¯”åˆ’æ¯”åˆ’ï¼Œå¦‚æœèµ¢äº†ï¼Œæˆ‘å°±é—ªå¼€ä¸€æ¡è·¯ï¼Œè®©ä½ èµ°ï¼Œå¦åˆ™å°±çˆ¬å›æ­¦é¦†å»ï¼\n", this_object(), ob);
+        else message_vision("$Nè°„åªšåœ°å¯¹$nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(ob)+"æ­¦åŠŸé«˜å¼ºï¼Œå®åœ¨æ˜¯è‹±é›„å‡ºå°‘å¹´ï¼Œæ‚¨è€è¯·ï¼Œæ‚¨è€è¯·ã€‚\n", this_object(), ob);
 }
 int do_bihua()
 {
@@ -49,9 +49,9 @@ int do_bihua()
 	ob = this_player();
         current_qi = (int)me->query("qi");
         exp = (int)ob->query("combat_exp");
-      if (exp >2500) return notify_fail("Äú¾ÍÈÄÁËÎÒ°É£¬ÎÒÔõ¸ÒºÍÄã±È»®ÄØ£¿\n");
-        if (me->is_fighting(ob)) return notify_fail("×ÅÊ²÷á¼°£¬´óÒ¯ÏÈ´ò·¢ÁËËû£¬Ò»»á¾ÍÀ´½ÌÑµÄã£¡\n");
-	command("say ºÃ°É£¬½ñÌì¾ÍÈÃÎÒ½ÌÑµ£¬½ÌÑµÄã¡£");
+      if (exp >2500) return notify_fail("æ‚¨å°±é¥¶äº†æˆ‘å§ï¼Œæˆ‘æ€æ•¢å’Œä½ æ¯”åˆ’å‘¢ï¼Ÿ\n");
+        if (me->is_fighting(ob)) return notify_fail("ç€ä»€éº½åŠï¼Œå¤§çˆ·å…ˆæ‰“å‘äº†ä»–ï¼Œä¸€ä¼šå°±æ¥æ•™è®­ä½ ï¼\n");
+	command("say å¥½å§ï¼Œä»Šå¤©å°±è®©æˆ‘æ•™è®­ï¼Œæ•™è®­ä½ ã€‚");
 	set("eff_qi", query("max_qi"));
 	set("qi", query("max_qi"));
 	set("eff_jing", query("max_jing"));
@@ -62,20 +62,20 @@ int do_bihua()
 		if ( !present(ob, environment()) ) return 1;
                 COMBAT_D->do_attack(ob, me, ob->query_temp("weapon"));
 		if (((int)me->query("qi")*100/current_qi)< 50) {
-                   message_vision("$N¾ÚÉ¥µÄ¶Ô$nËµµÀ£ºÄú¹ûÈ»³öÊÖ²»·²£¬µ±ÕæÊÇ×Ô¹ÅÓ¢ĞÛ³öÉÙÄê£¬½ñÌìĞ¡µÄ×ÜËã¼ûÊ¶ÁË£¬
-ÒÔºóÄúÀÏ¾­¹ıÕâÀï£¬Ğ¡µÄ¾ø²»¸ÒÔÚÉ§ÈÅÄúÀÏÁË¡£Äã´óÈË´óÁ¿£¬½ñÌì¾Í·Å¹ıĞ¡µÄ°É¡£ËµÍê
-¾Í¹§¹§¾´¾´µÄ°Ñ$nÈÃµ½ÁËÇàÁúÄÚ½Ö¡£\n",me, ob);
+                   message_vision("$Næ²®ä¸§çš„å¯¹$nè¯´é“ï¼šæ‚¨æœç„¶å‡ºæ‰‹ä¸å‡¡ï¼Œå½“çœŸæ˜¯è‡ªå¤è‹±é›„å‡ºå°‘å¹´ï¼Œä»Šå¤©å°çš„æ€»ç®—è§è¯†äº†ï¼Œ
+ä»¥åæ‚¨è€ç»è¿‡è¿™é‡Œï¼Œå°çš„ç»ä¸æ•¢åœ¨éªšæ‰°æ‚¨è€äº†ã€‚ä½ å¤§äººå¤§é‡ï¼Œä»Šå¤©å°±æ”¾è¿‡å°çš„å§ã€‚è¯´å®Œ
+å°±æ­æ­æ•¬æ•¬çš„æŠŠ$nè®©åˆ°äº†é’é¾™å†…è¡—ã€‚\n",me, ob);
 		   ob->move("/d/xiangyang/eroad1");
            ob->delete("enter_wuguan");
-                   tell_room(environment(ob), ob->name() + "ÔÚ¼¯ÊĞ´ÓÈËÈºÖĞÉñÆø»îÏÖµÄ×ßÁË¹ıÀ´¡£\n", ({ ob }));
+                   tell_room(environment(ob), ob->name() + "åœ¨é›†å¸‚ä»äººç¾¤ä¸­ç¥æ°”æ´»ç°çš„èµ°äº†è¿‡æ¥ã€‚\n", ({ ob }));
 		   return 1;
 		   }
                 COMBAT_D->do_attack(me, ob, me->query_temp("weapon"));
                 reset_eval_cost();
 		}
-		say("Ğ¡Á÷Ã¥Öº¸ßÆøÑï³å×Å" + ob->name() + "Æ²ÁËÆ²×ì£¬ËµµÀ£º¾ÍÄãÕâµã±¾ÊÂ»¹À´³äÓ¢ĞÛ£¿£¡¸øÎÒ¹Ô¹ÔµÄÅÀ»ØÈ¥°É£¡\n");
+		say("å°æµæ°“è¶¾é«˜æ°”æ‰¬å†²ç€" + ob->name() + "æ’‡äº†æ’‡å˜´ï¼Œè¯´é“ï¼šå°±ä½ è¿™ç‚¹æœ¬äº‹è¿˜æ¥å……è‹±é›„ï¼Ÿï¼ç»™æˆ‘ä¹–ä¹–çš„çˆ¬å›å»å§ï¼\n");
                 return 1;
-	say("Ğ¡Á÷Ã¥²»ÄÍ·³µÄ¶Ô" + ob->name() + "ËµµÀ£ºÄãÔõ÷á±ÈÖí»¹Âı£¬Òª´ò¾Í¶¯ÊÖ£¬ÂŞàÂÊ²Ã´£¡\n");
+	say("å°æµæ°“ä¸è€çƒ¦çš„å¯¹" + ob->name() + "è¯´é“ï¼šä½ æ€éº½æ¯”çŒªè¿˜æ…¢ï¼Œè¦æ‰“å°±åŠ¨æ‰‹ï¼Œç½—å—¦ä»€ä¹ˆï¼\n");
 	return 1;
 }
 void unconcious()

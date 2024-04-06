@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С·");
+	set("short", "小路");
 	set("long", @LONG
-����ʯ�̳ɵ�һ��С��,·�ľ�ͷ�Ǹ�СС������,����ľ�������� 
-�д���.ʹ��ط�����һƬ�������.·���и�������������ɨ��. 
+鹅卵石铺成的一条小径,路的尽头是个小小的尼庵,阵阵木鱼声从庵 
+中传来.使这地方充满一片详和气氛.路边有个老尼在慢慢地扫地. 
 LONG
 	);
 	set("no_clean_up", 0);

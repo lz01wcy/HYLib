@@ -5,9 +5,9 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIC"ººÍß"NOR, ({"han wa", "wa"}));
-	set("long", "ÕâÊÇÒ»Æ¬Õä¹óµÄººÍß¡£\n");
-	set("unit", "Æ¬");
+	set_name(HIC"æ±‰ç“¦"NOR, ({"han wa", "wa"}));
+	set("long", "è¿™æ˜¯ä¸€ç‰‡çè´µçš„æ±‰ç“¦ã€‚\n");
+	set("unit", "ç‰‡");
 	set("value", 500);
 	set("weight", 10);
 }

@@ -4,10 +4,10 @@ inherit F_DEALER;
 void create()
 {
 //   reload("hz_huang");
-   set_name("»ÆÏÈÉú",({ "huang xiansheng","huang"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("é»„å…ˆç”Ÿ",({ "huang xiansheng","huang"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇÒ©µêµÄÀÏ°å,ËûÕâÀïµÄÒ©ÖÖÀàºÜ¶àµÄ¡£\n");
+   set("long", "è¿™æ˜¯è¯åº—çš„è€æ¿,ä»–è¿™é‡Œçš„è¯ç§ç±»å¾ˆå¤šçš„ã€‚\n");
     set("shop_id",({ "huang xiansheng","huang"}) );
    set("combat_exp", 60000);
    set("str", 25);

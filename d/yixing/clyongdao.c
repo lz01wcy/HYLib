@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ð®µÀ");
+	set("short", "ç”¬é“");
 	set("long", @LONG
-³¤³¤µÄð®µÀÍ¨ÏòÒ»¸öÊ¯ÊÒ£¬ÅÔ±ß±ÚÉÏÃ¿¸ô²»Ô¶±ãÓÐÒ»ÕµÓÍµÆ£¬Í·ÉÏ
-ÊÇ¸ß¸ßµÄ¹°¶¥£¬ÏÔµÃÓÐÐ©ÒõÉ­¿É²À¡£¼¸Ãû°ïÖÚÔÚÕâÀï°ÑÊØ£¬ÏÐÔÓÈËµÈ²»
-ÄÜËæÒâÇ°½ø¡£
+é•¿é•¿çš„ç”¬é“é€šå‘ä¸€ä¸ªçŸ³å®¤ï¼Œæ—è¾¹å£ä¸Šæ¯éš”ä¸è¿œä¾¿æœ‰ä¸€ç›æ²¹ç¯ï¼Œå¤´ä¸Š
+æ˜¯é«˜é«˜çš„æ‹±é¡¶ï¼Œæ˜¾å¾—æœ‰äº›é˜´æ£®å¯æ€–ã€‚å‡ åå¸®ä¼—åœ¨è¿™é‡ŒæŠŠå®ˆï¼Œé—²æ‚äººç­‰ä¸
+èƒ½éšæ„å‰è¿›ã€‚
 LONG );
 	set("exits", ([
 		"east" : __DIR__"clshishi",
@@ -29,6 +29,6 @@ int valid_leave(object me, string dir)
 	if( !(ob = present("changle bangzhong", environment(me))) )
 		 return ::valid_leave(me, dir);
 	if( !living(ob) ) return ::valid_leave(me, dir);
-	return notify_fail(sprintf("%sÀ¹ÔÚÄãÃæÇ°£¬ËµµÀ£ºÀïÃæÊÇ¹ØÑº±¾°ïÅÑÍ½µÄµØ·½£¬ÄãÇë»Ø°É¡£\n", ob->name()));
+	return notify_fail(sprintf("%sæ‹¦åœ¨ä½ é¢å‰ï¼Œè¯´é“ï¼šé‡Œé¢æ˜¯å…³æŠ¼æœ¬å¸®å›å¾’çš„åœ°æ–¹ï¼Œä½ è¯·å›žå§ã€‚\n", ob->name()));
 }
 

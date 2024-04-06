@@ -1,20 +1,20 @@
-// Npc : /u/poq/sdxl/npc/dumang.c ¶¾òþ
+// Npc : /u/poq/sdxl/npc/dumang.c æ¯’èŸ’
 // by poq@jyqx 97/7
 
 inherit NPC;
 
 void create()
 {
-    set_name("¶¾òþ", ({ "du mang", "mang" }) );
-    set("race", "Ò°ÊÞ");
+    set_name("æ¯’èŸ’", ({ "du mang", "mang" }) );
+    set("race", "é‡Žå…½");
     set("age", 4);
-    set("long", "Ò»ÌõÍë¿Ú´ÖÏ¸µÄÈý½ÇÍ·¾Þòþ¡£\n");
+    set("long", "ä¸€æ¡ç¢—å£ç²—ç»†çš„ä¸‰è§’å¤´å·¨èŸ’ã€‚\n");
     set("attitude", "peaceful");
 
     set("str", 26);
     set("cor", 30);
 
-    set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+    set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
     set("verbs", ({ "bite" }) );
 
     set("combat_exp", 10000);
@@ -30,7 +30,7 @@ void die()
 {
     object ob,ob1;
     ob = this_object();
-    message_vision("$NÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎè£¬ÉßÍ·Ê¼ÖÕÄÑÒÔ¶¯µ¯£¬¹ýÁËÁ¼¾Ã£¬ÖÕì¶½©Ö±¶øËÀ¡£\n", this_object());
+    message_vision("$Nå…¨èº«æ‰­æ›²ï¼Œç¿»è…¾æŒ¥èˆžï¼Œè›‡å¤´å§‹ç»ˆéš¾ä»¥åŠ¨å¼¹ï¼Œè¿‡äº†è‰¯ä¹…ï¼Œç»ˆæ–¼åƒµç›´è€Œæ­»ã€‚\n", this_object());
     ob1 = new(__DIR__"dan");
     if (ob1) ob1->move(environment());
     destruct(this_object());

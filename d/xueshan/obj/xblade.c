@@ -6,18 +6,18 @@ inherit BLADE;
 
 void create()
 {
-	set_name( HIR "Ñªµ¶" NOR , ({ "blood blade"}));
+	set_name( HIR "è¡€åˆ€" NOR , ({ "blood blade"}));
 	set_weight(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
                 set("treasure",1);
-		set("unit", "°Ñ");
-		set("long", HIR "ÕâÊÇÒ»°Ñ²øÔÚÑü¼äµÄ±¦µ¶£¬µ¶·æ´ø×Åµ­µ­µÄÑªÓ°¡£\n" NOR );
+		set("unit", "æŠŠ");
+		set("long", HIR "è¿™æ˜¯ä¸€æŠŠç¼ åœ¨è…°é—´çš„å®åˆ€ï¼Œåˆ€é”‹å¸¦ç€æ·¡æ·¡çš„è¡€å½±ã€‚\n" NOR );
 		set("value", 1000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
 	}
 	init_blade(100);
 	setup();

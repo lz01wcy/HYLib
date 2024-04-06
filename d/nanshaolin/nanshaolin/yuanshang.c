@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÔªÉË", ({ "yuan shang", "shang", "yuan" }));
-	set("long","ËûÊÇÒ»Î»°«ÊÝºÍÉÐ£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓÐÉñ¡£\n");
-	set("nickname", "´ïÄ¦ÔºÉÏ×ùÈýÉ®");
-	set("gender", "ÄÐÐÔ");
+	set_name("å…ƒä¼¤", ({ "yuan shang", "shang", "yuan" }));
+	set("long","ä»–æ˜¯ä¸€ä½çŸ®ç˜¦å’Œå°šï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥žã€‚\n");
+	set("nickname", "è¾¾æ‘©é™¢ä¸Šåº§ä¸‰åƒ§");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -43,7 +43,7 @@ void create()
 	set_skill("ranmu-daofa", 100);
 	set_skill("weituo-gun", 100);
 // basic skill end
-// ÊÖ¡¢×¦¡¢¹÷¡¢ÕÈ
+// æ‰‹ã€çˆªã€æ£ã€æ–
 		set_skill("zhanzhuang-gong", 260);
 	set_skill("shaolin-cuff", 260);
 	set_skill("shaolin-leg", 260);
@@ -74,7 +74,7 @@ void create()
 	prepare_skill("hand", "ranmu-daofa");
 	prepare_skill("claw", "qianye-shou");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 20, "µÜ×Ó");
+	create_family("å—å°‘æž—æ´¾", 20, "å¼Ÿå­");
 
 	setup();
 	carry_object(__DIR__"chanzhang")->wield();

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "晓寒厅");
 	set("long", @LONG
-����һ��С��,���䲻��,���õ�Ҳ���¡������ķ��㣬������Ƣ��
-ֻ��ǽ�Ϲ��ż�������,������Ϊ����,���ڲ�ס��������֮����������
-�ܾ��ɵذ���Щ����(table)������(chair)��
+这是一间小厅,厅虽不大,布置倒也别致。满厅的芳香，沁人心脾。
+只见墙上挂着几幅条幅,笔致颇为潇洒,但掩不住几分柔弱之气。厅内四
+周精巧地摆着些桌子(table)和椅子(chair)。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */
@@ -24,9 +24,9 @@ LONG
 ]));
 	set("no_clean_up", 0);
 	set("item_desc", ([ /* sizeof() == 2 */
-  "chair" : "һֻ������ƵĿ��Σ�����ȥҡҡ�λΣ������Ү��
+  "chair" : "一只青竹打制的靠椅，躺上去摇摇晃晃，好舒服耶！
 ",
-  "table" : "һ�ŵ��ŵ���ľС�����������ˮ���̺��������ߡ�
+  "table" : "一张典雅的桃木小桌，上面放着水果盘和饮茶器具。
 ",
 ]));
 

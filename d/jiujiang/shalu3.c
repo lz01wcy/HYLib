@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","ɳ·");
+  set ("short","沙路");
   set ("long", @LONG
-������Ƭɳ·�������볤�����Ǻ�Զ�������߾����㽭�Ͱ��յĽ�
-���ˡ�
+这里是片沙路。这里离长江不是很远。往西走就是浙江和安徽的交
+界了。
 LONG);
 
   set("exits", ([ 

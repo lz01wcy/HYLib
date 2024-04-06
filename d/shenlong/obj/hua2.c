@@ -1,4 +1,4 @@
-// hua2.c ÎŞÃû»¨
+// hua2.c æ— åèŠ±
 inherit ITEM;
 
 //void init()
@@ -8,16 +8,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÎŞÃû»¨", ({"hua2", "wuming"}));
-	set("unit", "¶ä");
-	set("long", "ÕâÊÇÒ»¶äÎŞÃûĞ¡»¨£¬»¨ÈïËäĞ¡£¬È´Ê®·ÖÃÀÀö¡£\n");
+	set_name("æ— åèŠ±", ({"hua2", "wuming"}));
+	set("unit", "æœµ");
+	set("long", "è¿™æ˜¯ä¸€æœµæ— åå°èŠ±ï¼ŒèŠ±è•Šè™½å°ï¼Œå´ååˆ†ç¾ä¸½ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="hua2")
 	{
 //		me->add("max_neili",5);

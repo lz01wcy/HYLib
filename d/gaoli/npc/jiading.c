@@ -1,4 +1,4 @@
-// ´óÌÆË«Áú´«
+// å¤§å”åŒé¾™ä¼ 
  
 // jiading.c
 
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-  set_name("¼Ò¶¡", ({"jia ding", "jia","ding"}));
-  set("long","Ò»¸öÆÕÍ¨µÄ¼Ò¶¡¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("å®¶ä¸", ({"jia ding", "jia","ding"}));
+  set("long","ä¸€ä¸ªæ™®é€šçš„å®¶ä¸ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("age", 14);
   set("attitude", "friendly");
   set("shen_type", 1);

@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("Îå²½Éß", ({ "wubushe" }) );
-	set("long", "Îå²½ÉßÊÇ¸£½¨µØ·½¶¾Éß£¬Ïà´«ÖĞ¶¾ĞĞÂ·Îå²½¼´ĞĞµ¹±Ğ¡£\n");
-	set("race", "Ò°ÊŞ");
+	set_name("äº”æ­¥è›‡", ({ "wubushe" }) );
+	set("long", "äº”æ­¥è›‡æ˜¯ç¦å»ºåœ°æ–¹æ¯’è›‡ï¼Œç›¸ä¼ ä¸­æ¯’è¡Œè·¯äº”æ­¥å³è¡Œå€’æ¯™ã€‚\n");
+	set("race", "é‡å…½");
 	set("age", 3);
 	set("attitude", "peaceful");
 
@@ -46,6 +46,6 @@ int hit_ob(object me, object ob, int damage)
 		(int)ob->query_condition("snake_poison") < 10 )
 	{
 		ob->apply_condition("snake_poison", 40);
-		tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+		tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨ï¼\n" NOR );
 	}
 }

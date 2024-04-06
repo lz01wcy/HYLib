@@ -4,23 +4,23 @@ inherit NPC;
 
 void create()
 {
-        set_name("恶犬", ({ "e quan", "dog" }) );
-        set("race", "野兽");
+        set_name("鎭剁姮", ({ "e quan", "dog" }) );
+        set("race", "閲庡吔");
         set("age", 4);
-        set("long", "一只吐着长舌头的恶犬。\n");
+        set("long", "涓�鍙悙鐫�闀胯垖澶寸殑鎭剁姮銆俓n");
         set("attitude", "aggressive");
         
         set("str", 26);
         set("cor", 30);
 
-        set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+        set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈剼", "鍚庤剼", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 1000);
         set("chat_msg_combat", ({
                 (: this_object(), "random_move" :),
-                "恶犬大声吠叫：汪！汪！汪！汪！汪！汪！\n",
-                "恶犬突然跳了起来，口中乱咬，却不知道是在咬谁。\n"
+                "鎭剁姮澶у０鍚犲彨锛氭豹锛佹豹锛佹豹锛佹豹锛佹豹锛佹豹锛乗n",
+                "鎭剁姮绐佺劧璺充簡璧锋潵锛屽彛涓贡鍜紝鍗翠笉鐭ラ亾鏄湪鍜皝銆俓n"
         }) );
                 
         set_temp("apply/attack", 15);

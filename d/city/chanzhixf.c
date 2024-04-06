@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�᷿");
+	set("short", "厢房");
 	set("long", @LONG
-����һ��С�᷿��������Ļ𹤺��е�����Ϣ�ĵط������������
-������˼���ϯ�ӣ������϶����˲�͸���ֽ���᷿��Ĺ��߰��ò���
-�ˣ�����������ϵ��о������ǲ�ʱ�ش�����
+这是一间小厢房。是庙里的火工和尚等人休息的地方，里面随随便
+便地铺了几张席子，窗户上都遮了不透光的纸，厢房里的光线暗得不得
+了，不过，大殿上的诵经声倒是不时地传来。
 LONG );
 	set("exits", ([
 		"west"  : __DIR__"chanzhidadian",

@@ -1,16 +1,16 @@
 // Room: /d/nanshaolin/shulin1.c
 // Last Modified by winder on May. 29 2001
-// ����Ҳ��ȥ����ƺ�ĵط������������ֿ��Բ�Ҫ��
+// 这里也是去青云坪的地方。可是南少林可以不要。
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "松树林");
 	set("long", @LONG
-����һƬ�����֡���ʮ�ɸߵĴ���������һ�飬��ʵ��֦Ҷ��һ��
-���ɡ��������գ��������ڵ�˿��Ҳ�ޡ��߰Ѻ��������ڵ��ϣ�һ
-�Ų���ȥ������β�������
+这是一片松树林。几十丈高的大松树簇在一块，密实的枝叶象一蓬
+蓬巨伞般伸向天空，把阳光遮得丝毫也无。尺把厚的松针积在地上，一
+脚踩下去，半天拔不出来。
 LONG );
 	set("exits", ([
 		"east"  : __FILE__,

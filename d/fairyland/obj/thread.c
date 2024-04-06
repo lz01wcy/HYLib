@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ï¸Ë¿", ({ "thread", "xi si", "si" }));
+	set_name("ç»†ä¸", ({ "thread", "xi si", "si" }));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ùÓÉÊ÷Æ¤´ê³ÉµÄÏ¸Ë¿¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹ç”±æ ‘çš®æ“æˆçš„ç»†ä¸ã€‚\n");
 		set("value", 1);
 		set("material", "wood");
 	}

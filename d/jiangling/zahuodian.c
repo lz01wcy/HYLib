@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ӻ���");
+	set("short", "杂货店");
 	set("long", @LONG
-����һ��СС���ӻ��꣬����С�������һ�أ�����һЩ�ճ���Ʒ��
-�ƹ�������������һֻ�����ϣ��к��Ź������ˡ���˵˽������Ҳ��
-һЩ���صĶ�����̯������һ������(zhaopai)��
+这是一家小小的杂货店，大箱小箱堆满了一地，都是一些日常用品。
+掌柜的懒洋洋地躺在一只躺椅上，招呼着过往行人。据说私底下他也卖
+一些贵重的东西。摊上立着一块招牌(zhaopai)。
 LONG );
 	set("item_desc", ([
-		"zhaopai": "���� \"list\" �г��������\"buy\" ���ϰ幺�\n",
+		"zhaopai": "请用 \"list\" 列出货物表，\"buy\" 向老板购物。\n",
 	]));
 	set("exits", ([
 		"east" : __DIR__"hzjie5",

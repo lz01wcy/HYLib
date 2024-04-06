@@ -8,11 +8,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("°×ÂæÍÕ", ({ "camel" }));
-        set("long","Ò»Æ¥°×ÂæÍÕ¡£\n");
-        set("race", "Ò°ÊŞ");
+        set_name("ç™½éª†é©¼", ({ "camel" }));
+        set("long","ä¸€åŒ¹ç™½éª†é©¼ã€‚\n");
+        set("race", "é‡å…½");
         set("age", 5);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ìã×Ó", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è¹„å­", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
         set("attitude","heroism");
         set("str", 30);

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "诸罗");
 	set("long", @LONG
-���ޣ�λ�ڰ���ɽɽ´ԭΪƽ������¤��۾�֮�أ����������ʼ
-�𽥷�չ�ɶ��������ǰ���ɽ��ҵ��ľ�ļ�ɢ�����Ʋļӹ����ġ� 
+诸罗，位于阿里山山麓原为平埔族土陇社聚居之地，于清代初年始
+逐渐发展成都会区。是阿里山林业的木材集散地与制材加工中心。 
 LONG );
 	set("exits", ([
 		"northwest" : __DIR__"pingye",

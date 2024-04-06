@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "长城");
 	set("long", WHT@LONG
-������Ǿ��������ĩ������ǡ�վ�ڳ����ϣ�����Կ�������Ⱥɽ
-���ƣ�ɽ�ϵ������ǰ����Ĺ�ľ�ԣ���Ŀ��ȥ������µĳ���˳��ɽ��
-��һ�����������ѵ��򶫱������������ȥ��
+这里就是举世闻名的──长城。站在长城上，你可以看到四周群山
+环绕，山上到处都是矮矮的灌木丛，举目望去，你脚下的长城顺着山脊
+象一条巨龙般蜿蜒的向东北和西方延伸出去。
 LONG
 NOR );
 	set("outdoors", "changcheng");

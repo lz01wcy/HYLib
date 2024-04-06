@@ -5,10 +5,10 @@ inherit F_DEALER;
 void create()
 {
 //   reload("hf_ding");
-   set_name("¶¡ÕÆ¹ñ",({ "ding zhanggui","ding"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("ä¸æŒæŸœ",({ "ding zhanggui","ding"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 42);
-   set("long", "ÕâÊÇÒ©µêµÄÀÏ°å,ËûÕâÀïµÄÒ©ÖÖÀàºÜ¶àµÄ¡£\n");
+   set("long", "è¿™æ˜¯è¯åº—çš„è€æ¿,ä»–è¿™é‡Œçš„è¯ç§ç±»å¾ˆå¤šçš„ã€‚\n");
     set("shop_id",({ "ding zhanggui","ding"}) );
    set("combat_exp", 200000);
    set("str", 25);

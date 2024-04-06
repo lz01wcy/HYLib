@@ -1,4 +1,4 @@
-// Yanwu.c ÑÌÎíµ¯
+// Yanwu.c çƒŸé›¾å¼¹
 #include <command.h>
 #include <ansi.h>
 
@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM"ÑÌÎíµ¯"NOR, ({ "yanwu"}) );
+        set_name(HIM"çƒŸé›¾å¼¹"NOR, ({ "yanwu"}) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿ÅĞÇËŞÅÉÌØÖÆµÄÑÌÎíµ¯¡£Ëü¿ÉÒÔÓÃ(apply)¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€é¢—æ˜Ÿå®¿æ´¾ç‰¹åˆ¶çš„çƒŸé›¾å¼¹ã€‚å®ƒå¯ä»¥ç”¨(apply)ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 10000);
-                set("no_drop", RED"ÄÑµÀÄãÏëÖÆÔì»ìÂÒÂğ£¿\n"NOR);
+                set("no_drop", RED"éš¾é“ä½ æƒ³åˆ¶é€ æ··ä¹±å—ï¼Ÿ\n"NOR);
         }
 }
 
@@ -36,7 +36,7 @@ int do_apply(string arg)
         me=this_player();
         if (me->is_busy())
         {
-                notify_fail("ÄãÕıÔÚÃ¦°¡¡£\n");
+                notify_fail("ä½ æ­£åœ¨å¿™å•Šã€‚\n");
                 return 1;
         }
 
@@ -54,8 +54,8 @@ if (!ob->is_busy())
         }
         me->set_temp("no_follow",1);
 //      GO_CMD->do_flee(me);
-        tell_room(environment(me),HIM"µØÃæÍ»È»ÌÚ³öÒ»¹ÉÌÒºìÉ«µÄÑÌÎí£¬´ó¼ÒÊ²Ã´Ò²¿´
-²»¼û£¬ÏİÈë»ìÂÒÖ®ÖĞ¡£\n"NOR);
+        tell_room(environment(me),HIM"åœ°é¢çªç„¶è…¾å‡ºä¸€è‚¡æ¡ƒçº¢è‰²çš„çƒŸé›¾ï¼Œå¤§å®¶ä»€ä¹ˆä¹Ÿçœ‹
+ä¸è§ï¼Œé™·å…¥æ··ä¹±ä¹‹ä¸­ã€‚\n"NOR);
 
         GO_CMD->do_flee(me);
         destruct(this_object());
@@ -64,7 +64,7 @@ if (!ob->is_busy())
 void owner_is_killed()
 {
         object me = this_player();
-        write(HIM"Ö»¼ûÒ»ÕóÌÒºìÉ«µÄÑÌÎíÉÁ¹ı...Ê¬ÌåÉÏÊ²Ã´¶«Î÷ÏûÊ§ÁË¡£\n"NOR);
+        write(HIM"åªè§ä¸€é˜µæ¡ƒçº¢è‰²çš„çƒŸé›¾é—ªè¿‡...å°¸ä½“ä¸Šä»€ä¹ˆä¸œè¥¿æ¶ˆå¤±äº†ã€‚\n"NOR);
         destruct(this_object());
 }
 int query_autoload()

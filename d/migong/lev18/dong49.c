@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"���̵���Ŀ"NOR);
+	set("short", HIY"岩盘的裂目"NOR);
 	set("long", HIY @LONG
-    ��������һ���ڰ���ʪ�Ķ�Ѩ�������ֵ�����Ȼ��������������
-��ʪ����ǽ����ȴ��һ����̦Ҳû�С���������ɭɭ�Ķ�Ѩ��㲻��
-�ô��˸����������ս .... ����û��ǸϿ��뿪������ط��ȽϺá�
+    你现在在一个黑暗潮湿的洞穴里，不过奇怪的是虽然这里弥漫著很重
+的湿气，墙壁上却是一点青苔也没有。处於这个阴森森的洞穴里，你不由
+得打了个机伶伶的冷战 .... 你觉得还是赶快离开这个鬼地方比较好。
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("no_npc",1);

@@ -1,14 +1,14 @@
-// Room: /d/chengdu/npc/wangcheng.c Íõ³Ïc
+// Room: /d/chengdu/npc/wangcheng.c ç‹è¯šc
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
 
 void create()
 {
-	set_name("Íõ³Ï", ({ "wang cheng", "wang", "cheng" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("ç‹è¯š", ({ "wang cheng", "wang", "cheng" }));
+	set("gender", "ç”·æ€§");
 	set("age", 21);
-	set("long", "ÕÅ±¦ÁÖµÄ´óµÜ×Ó£¬ÎªÈËÀÏÊµ³Ï¿Ò£¬±»ÊÓÎªÇàÄêµÄ¿¬Ä£¡£\n");
+	set("long", "å¼ å®æ—çš„å¤§å¼Ÿå­ï¼Œä¸ºäººè€å®è¯šæ³ï¼Œè¢«è§†ä¸ºé’å¹´çš„æ¥·æ¨¡ã€‚\n");
 	set("combat_exp", 2000);
 	set("shen_type", -1);
 

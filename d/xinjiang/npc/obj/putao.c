@@ -3,14 +3,14 @@ inherit ITEM;
 inherit F_FOOD; 
 void create()
 {
-        set_name("ÎŞºË°×ÆÏÌÑ", ({ "grape" }) );
+        set_name("æ— æ ¸ç™½è‘¡è„", ({ "grape" }) );
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´®¸Õ¸Õ´ÓÆÏÌÑ¼Ü×ÓÉÏÕªÏÂÀ´µÄÎŞºË°×ÆÏÌÑ¡£\n");
-                set("unit", "°Ñ");
-                set("base_unit", "¸ö");
+                set("long", "ä¸€ä¸²åˆšåˆšä»è‘¡è„æ¶å­ä¸Šæ‘˜ä¸‹æ¥çš„æ— æ ¸ç™½è‘¡è„ã€‚\n");
+                set("unit", "æŠŠ");
+                set("base_unit", "ä¸ª");
                 set("base_weight", 40);
                 set("value", 30);
                 set("value", 50);

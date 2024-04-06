@@ -8,18 +8,18 @@ string unmarry();
 
 void create()
 {
-        set_name("Ã½ÆÅ", ({ "mei po","mei" }) );
-        set("title", "ºìÄï×¯");
-        set("gender", "Å®ĞÔ" );
+        set_name("åª’å©†", ({ "mei po","mei" }) );
+        set("title", "çº¢å¨˜åº„");
+        set("gender", "å¥³æ€§" );
         set("age", 43);
         set("long",
-                "Ò»Î»¾«Ã÷ÄÜ¸ÉµÄÀÏÃ½ÆÅ\n");
+                "ä¸€ä½ç²¾æ˜èƒ½å¹²çš„è€åª’å©†\n");
         set("max_qi",800);
         set("max_jing",800);
         set("combat_exp", 10000);
         set("attitude", "friendly");
         set("inquiry", ([
-                "»éÔ¼" : "ÊÇ°¡¡­¡­ÕâÀï¾Í¿ÉÒÔµŞ½áºÍ½â³ı»éÔ¼",
+                "å©šçº¦" : "æ˜¯å•Šâ€¦â€¦è¿™é‡Œå°±å¯ä»¥ç¼”ç»“å’Œè§£é™¤å©šçº¦",
         ]) );
         set_skill("literate", 70);
         set_skill("dodge", 200);
@@ -46,63 +46,63 @@ int do_marry(string arg) {
         list = all_inventory(me);
         i = sizeof(list);
         have_marry = 0;
-        if((string)me->query("gender")=="ÎŞĞÔ"){
-              say("¼ÈÈ»ÄãÒÑ¾­×Ô¹¬ÁË£¬¾Í²»ÄÜ½á»éÁË£¬Çë»Ø°É£¡\n");
+        if((string)me->query("gender")=="æ— æ€§"){
+              say("æ—¢ç„¶ä½ å·²ç»è‡ªå®«äº†ï¼Œå°±ä¸èƒ½ç»“å©šäº†ï¼Œè¯·å›å§ï¼\n");
               return 1;
             }
         if ( (string)me->query("class")=="bonze")
-             return notify_fail("ÄãÊÇ³ö¼ÒÈË,ÔõÃ´ÄÜ½á»é£¡àË£¡ÏÖÔÚµÄºÍÉĞ¡­¡­\n");
+             return notify_fail("ä½ æ˜¯å‡ºå®¶äºº,æ€ä¹ˆèƒ½ç»“å©šï¼å—¨ï¼ç°åœ¨çš„å’Œå°šâ€¦â€¦\n");
         if ( (int)me->query("age")<17)
-             return notify_fail("ÄãÄêÁä»¹Ğ¡,µÈµ½Ê®ÆßËêÔÙÀ´°É.\n");
+             return notify_fail("ä½ å¹´é¾„è¿˜å°,ç­‰åˆ°åä¸ƒå²å†æ¥å§.\n");
         while (i--) {
               if (((string)list[i]->query("id")) == "marrycard")
                 return notify_fail(
-                "ÄãÒÑ¾­ºÍ±ğÈËÓĞ»éÔ¼ÁË°É?ÕâÀï²»ÔÊĞíÖØ»éµÄ¡£\n");
+                "ä½ å·²ç»å’Œåˆ«äººæœ‰å©šçº¦äº†å§?è¿™é‡Œä¸å…è®¸é‡å©šçš„ã€‚\n");
         }
 
         if(!arg || !objectp(obj = present(arg, environment(me)))
                 || !find_player(arg)|| !find_living(arg))
-        return notify_fail("ÄãÏëºÍË­µŞ½áÁ¼Ôµ£¿\n");
+        return notify_fail("ä½ æƒ³å’Œè°ç¼”ç»“è‰¯ç¼˜ï¼Ÿ\n");
         if( !environment()
         ||      base_name(environment()) != query("startroom") )
              return notify_fail(
-                "ÕæÊÇ±§Ç¸£¬ÇëÄúµÈÒ»ÏÂµ½ºìÄï×¯À´ÕÒÎÒ°É¡£\n");
+                "çœŸæ˜¯æŠ±æ­‰ï¼Œè¯·æ‚¨ç­‰ä¸€ä¸‹åˆ°çº¢å¨˜åº„æ¥æ‰¾æˆ‘å§ã€‚\n");
 
         if( !living(obj) )
                 return notify_fail(obj->name() +
-                "ÒÑ¾­ÎŞ·¨ºÍÄãµŞ½áÁ¼ÔµÁË¡£\n");
+                "å·²ç»æ— æ³•å’Œä½ ç¼”ç»“è‰¯ç¼˜äº†ã€‚\n");
 
         if((string)obj->query("gender")== (string)me->query("gender"))
-                return notify_fail("ÄÑµÀÄã²»ÅÂ" + RED"AIDS"NOR + "Âğ£¿\n");
+                return notify_fail("éš¾é“ä½ ä¸æ€•" + RED"AIDS"NOR + "å—ï¼Ÿ\n");
 
-        if(obj==me)     return notify_fail("Äã²»ÄÜºÍ×Ô¼ºµŞ½á»éÔ¼¡£\n");
+        if(obj==me)     return notify_fail("ä½ ä¸èƒ½å’Œè‡ªå·±ç¼”ç»“å©šçº¦ã€‚\n");
 
         if( userp(obj) && !((object)obj->query("marks/"+me->name(1)))){
-                message_vision(MAG "\n$N¶ÔÖø$nËµµÀ£º"
+                message_vision(MAG "\n$Nå¯¹è‘—$nè¯´é“ï¼š"
                     + RANK_D->query_self(me)
-                    + me->name() + "£¬Ô¸ÒâºÍ"
+                    + me->name() + "ï¼Œæ„¿æ„å’Œ"
                + RANK_D->query_respect(obj) +
-                "½áÎª·ò¸¾\n\n"NOR, me,obj);
+                "ç»“ä¸ºå¤«å¦‡\n\n"NOR, me,obj);
                  me->set("marks/"+obj->name(1), 1);
-           tell_object(obj, MAG "Èç¹ûÄãÔ¸ÒâºÍ¶Ô·½½áÎª·ò¸¾£¬ÇëÄãÒ²¶Ô"
+           tell_object(obj, MAG "å¦‚æœä½ æ„¿æ„å’Œå¯¹æ–¹ç»“ä¸ºå¤«å¦‡ï¼Œè¯·ä½ ä¹Ÿå¯¹"
                         +me->name() + "("+(string)me->query("id")+
-                        ")"+ "ÏÂÒ»´Î marry Ö¸Áî¡£\n" NOR);
+                        ")"+ "ä¸‹ä¸€æ¬¡ marry æŒ‡ä»¤ã€‚\n" NOR);
                 write(MAG
-                        "ÏÖÔÚÄã¼±ÇĞÅÎÍû×ÅÄãµÄĞÄÉÏÈËËµÍ¬Òâ¡­¡­\n" NOR);
+                        "ç°åœ¨ä½ æ€¥åˆ‡ç›¼æœ›ç€ä½ çš„å¿ƒä¸Šäººè¯´åŒæ„â€¦â€¦\n" NOR);
                 return 1;
         }
 
 
         marry_card1 = new("/obj/marry_card");
-        marry_card1->set("name","ÄãºÍ"+obj->query("id")+"µÄ»éÔ¼");
+        marry_card1->set("name","ä½ å’Œ"+obj->query("id")+"çš„å©šçº¦");
         marry_card1->move(me);
         marry_card2 = new("/obj/marry_card");
-        marry_card2->set("name","ÄãºÍ"+me->query("id")+"µÄ»éÔ¼");
+        marry_card2->set("name","ä½ å’Œ"+me->query("id")+"çš„å©šçº¦");
         marry_card2->move(obj);
 
-     message_vision(MAG "¹§Ï² $N ºÍ $n £¬Ò»¶ÔèµÈËÖÕÓÚÏ²½áÁ¼Ôµ¡£\n" NOR,obj,me);
+     message_vision(MAG "æ­å–œ $N å’Œ $n ï¼Œä¸€å¯¹ç’§äººç»ˆäºå–œç»“è‰¯ç¼˜ã€‚\n" NOR,obj,me);
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s ºÍ %s ÏÖÔÚ¿ªÊ¼ÊÇ·ò¸¾À²! \n",
+        sprintf( "%s å’Œ %s ç°åœ¨å¼€å§‹æ˜¯å¤«å¦‡å•¦! \n",
         me->name(1), obj->name(1)));
         return 1;
 }
@@ -128,22 +128,22 @@ int do_unmarry(string arg)
         }
 
         if (have_marry == 0)
-                return notify_fail("Äã»¹Î´ÓĞ»éÔ¼°¡¡£\n");
+                return notify_fail("ä½ è¿˜æœªæœ‰å©šçº¦å•Šã€‚\n");
         if( !environment()
         ||      base_name(environment()) != query("startroom") )
-           return notify_fail("ÕæÊÇ±§Ç¸£¬ÇëÄúµÈÒ»ÏÂµ½ºìÄï×¯À´ÕÒÎÒ°É¡£\n");
-        if (sscanf(cardname,"ÄãºÍ%sµÄ»éÔ¼" ,target)!=1)
-                return notify_fail("ÄãÃ»ÓĞ°éÂÂ.\n");
+           return notify_fail("çœŸæ˜¯æŠ±æ­‰ï¼Œè¯·æ‚¨ç­‰ä¸€ä¸‹åˆ°çº¢å¨˜åº„æ¥æ‰¾æˆ‘å§ã€‚\n");
+        if (sscanf(cardname,"ä½ å’Œ%sçš„å©šçº¦" ,target)!=1)
+                return notify_fail("ä½ æ²¡æœ‰ä¼´ä¾£.\n");
          if(!objectp(couple_ob = present(target, environment(me)))
                 || !find_player(target) )
-                return notify_fail("ÄãµÄ°éÂÂÏÖÔÚ²»ÔÚ³¡.\n");
+                return notify_fail("ä½ çš„ä¼´ä¾£ç°åœ¨ä¸åœ¨åœº.\n");
 
-        if ((string)couple_ob->query("gender") != "Å®ĞÔ") {
-                tmpstr1 = "ÀÏÆÅ"; tmpstr2 = "ÀÏ¹«";
-                str1 = "Ëı"; str2 = "Ëû";
+        if ((string)couple_ob->query("gender") != "å¥³æ€§") {
+                tmpstr1 = "è€å©†"; tmpstr2 = "è€å…¬";
+                str1 = "å¥¹"; str2 = "ä»–";
         } else {
-                tmpstr1 = "ÀÏ¹«"; tmpstr2 = "ÀÏÆÅ";
-                str1 = "Ëû"; str2 = "Ëı";
+                tmpstr1 = "è€å…¬"; tmpstr2 = "è€å©†";
+                str1 = "ä»–"; str2 = "å¥¹";
         }
 
         list = all_inventory(couple_ob);
@@ -157,10 +157,10 @@ int do_unmarry(string arg)
         }
         if (have_marry = 0) {
                 destruct(marry_card1);
-        message_vision(MAG " $N ºÍ $n ´ÓÏÖÔÚ¿ªÊ¼½â³ı»éÔ¼,»¥²»Ïà¸É!\n" NOR,
+        message_vision(MAG " $N å’Œ $n ä»ç°åœ¨å¼€å§‹è§£é™¤å©šçº¦,äº’ä¸ç›¸å¹²!\n" NOR,
         couple_ob, me);
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s ºÍ %s ´ÓÏÖÔÚ¿ªÊ¼½â³ı»éÔ¼,»¥²»Ïà¸É! \n",
+        sprintf( "%s å’Œ %s ä»ç°åœ¨å¼€å§‹è§£é™¤å©šçº¦,äº’ä¸ç›¸å¹²! \n",
         me->name(1), couple_ob->name(1)));
 
                 return 1;
@@ -168,24 +168,24 @@ int do_unmarry(string arg)
 
         if( userp(couple_ob) && !((object)couple_ob->query("marks/"
                 + "unmarry" +me->name(1))) ) {
-                message_vision(MAG "\n$N¶ÔÖø$nËµµÀ£º"
+                message_vision(MAG "\n$Nå¯¹è‘—$nè¯´é“ï¼š"
                         + RANK_D->query_self(me)
-                        + me->name() + "£¬ÔÛÃÇ½â³ı»éÔ¼°É!ºÃÂğ?\n\n"
+                        + me->name() + "ï¼Œå’±ä»¬è§£é™¤å©šçº¦å§!å¥½å—?\n\n"
                         NOR, me, couple_ob);
                  me->set("marks/"+"unmarry"+couple_ob->name(1), 1);
-           tell_object(couple_ob, MAG "Èç¹ûÄãÔ¸Òâ½â³ı»éÔ¼£¬ÇëÄãÒ²"
-                + "ÏÂÒ»´Î unmarry Ö¸Áî¡£\n" NOR);
+           tell_object(couple_ob, MAG "å¦‚æœä½ æ„¿æ„è§£é™¤å©šçº¦ï¼Œè¯·ä½ ä¹Ÿ"
+                + "ä¸‹ä¸€æ¬¡ unmarry æŒ‡ä»¤ã€‚\n" NOR);
                 write(MAG
-                "ÏÖÔÚÄãÖ»ÓĞµÈ×Å" +str2 +" Í¬ÒâÀ²...\n" NOR);
+                "ç°åœ¨ä½ åªæœ‰ç­‰ç€" +str2 +" åŒæ„å•¦...\n" NOR);
                 return 1;
         }
         destruct(marry_card1);
         destruct(marry_card2);
 
-        message_vision(MAG " $N ºÍ $n ´ÓÏÖÔÚ¿ªÊ¼½â³ı»éÔ¼,»¥²»Ïà¸É!\n" NOR,
+        message_vision(MAG " $N å’Œ $n ä»ç°åœ¨å¼€å§‹è§£é™¤å©šçº¦,äº’ä¸ç›¸å¹²!\n" NOR,
         couple_ob, me);
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s ºÍ %s ´ÓÏÖÔÚ¿ªÊ¼½â³ı»éÔ¼,»¥²»Ïà¸É! \n",
+        sprintf( "%s å’Œ %s ä»ç°åœ¨å¼€å§‹è§£é™¤å©šçº¦,äº’ä¸ç›¸å¹²! \n",
         me->name(1), couple_ob->name(1)));
 
         return 1;

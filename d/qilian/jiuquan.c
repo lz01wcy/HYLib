@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ȫ");
+	set("short", "酒泉");
 	set("long", @LONG
-�ഫ������Ǻ��󽫾���ȥ������¥��������֮�أ���������ƶ�
-ʮƿ�������̶�����������ʮȪ�ڣ������������������Ծ�Ȫ֮ˮ��ƣ�
-���ɿڡ�
+相传这里就是汉大将军霍去病大破楼兰后犒军之地，武帝赠御酒二
+十瓶，霍不忍独享，尽倾于十泉内，与三军共饮。后闻以酒泉之水酿酒，
+香馥可口。
 LONG );
 	set("outdoors", "qilian");
 	set("no_clean_up", 0);

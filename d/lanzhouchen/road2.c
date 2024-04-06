@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "�����");
+	set("short",  "林荫道");
 	set("long",  @LONG
-����һ����������ʯ��ֵ���������һֱ�����졣����·������
-��ʱ�й��������߹����͸ղų�������ľ����γ������Աȡ������Ǹ�
-���ֵĹ㳡��
+这是一条宽阔的青石板街道，从南门一直向北延伸。两旁路树成荫，
+不时有过往行人走过，和刚才城外荒凉的景象形成鲜明对比。北边是个
+热闹的广场。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		//"south" : __DIR__"southgate",

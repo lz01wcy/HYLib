@@ -2,8 +2,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("´¬·ò",({"chuan fu","chuan","fu"}));
-	set("gender", "ÄĞĞÔ" );
+	set_name("èˆ¹å¤«",({"chuan fu","chuan","fu"}));
+	set("gender", "ç”·æ€§" );
 	set("age",20);
 	set("str",25);
 	set("cor", 30);
@@ -12,7 +12,7 @@ void create()
 	set("con",25);
 	set("mingwang",-1);
 	set("long",
-	"ºÀË¬µÄºº×Ó,ÂúÁ³µÄ·ç³¾,¿´À´ÊÇ´ÓÔ¶·½À´µÄ¡£\n"
+	"è±ªçˆ½çš„æ±‰å­,æ»¡è„¸çš„é£å°˜,çœ‹æ¥æ˜¯ä»è¿œæ–¹æ¥çš„ã€‚\n"
 	);
 	set("combat_exp",3000);
 	set("attitude","hero");

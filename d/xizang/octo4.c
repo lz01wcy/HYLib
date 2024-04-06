@@ -3,11 +3,11 @@ inherit ROOM;
 void midnight_event();
 void sunrise_event(); 
 void create() {
-        set("short", "°Ë½Ç½Ö");
+        set("short", "å…«è§’è¡—");
         set("long", @LONG
-´óÕÑËÂÍâ£¬Î§ÈÆ×ÅËÂÔºµÄ°Ë½Ç½ÖÊÇ²¼´ïÀ­¹¬Àï×î·±»ªÈÈÄÖµÄµØ·½¡£ËùÓĞ×î´óµÄ
-¿ÍÕ»ºÍÉÌºÅ¶¼ÔÚÕâÌõ½ÖÉÏ¡£Ô¶´¦ÖÓÉù²»Ê±µÄÆëÃù¡£Ò»ÉùÉùèó³ªËæ·çÆ®À´¡£±¦ËşµÄ¼â
-¶¥ÔÚÌ«ÑôÏÂÉÁ×Å½ğ¹â£¬³äÂúÁËÉñÊ¥×¯ÑÏËàÄÂµÄ¾°Ïó¡£
+å¤§æ˜­å¯ºå¤–ï¼Œå›´ç»•ç€å¯ºé™¢çš„å…«è§’è¡—æ˜¯å¸ƒè¾¾æ‹‰å®«é‡Œæœ€ç¹åçƒ­é—¹çš„åœ°æ–¹ã€‚æ‰€æœ‰æœ€å¤§çš„
+å®¢æ ˆå’Œå•†å·éƒ½åœ¨è¿™æ¡è¡—ä¸Šã€‚è¿œå¤„é’Ÿå£°ä¸æ—¶çš„é½é¸£ã€‚ä¸€å£°å£°æ¢µå”±éšé£é£˜æ¥ã€‚å®å¡”çš„å°–
+é¡¶åœ¨å¤ªé˜³ä¸‹é—ªç€é‡‘å…‰ï¼Œå……æ»¡äº†ç¥åœ£åº„ä¸¥è‚ƒç©†çš„æ™¯è±¡ã€‚
 LONG );
         
         set("exits", ([ 
@@ -32,9 +32,9 @@ void midnight_event() {
         if(!random(20)) {
                 for(i=0; i<bandit_no; i++) {
                         if(objectp(badguy = new("/obj/npc/bandit"))) {
-                                badguy->setup_bandit("¹ØÍâÂíÔô", "/clone/misc/cloth", "/obj/weapon/blade_guitou", "guanwai");
+                                badguy->setup_bandit("å…³å¤–é©¬è´¼", "/clone/misc/cloth", "/obj/weapon/blade_guitou", "guanwai");
                                 badguy->move(room);
-                                badguy->ccommand("chat ÔÂºÚÉ±ÈË£¬·ç¸ß·Å»ğ£¡");
+                                badguy->ccommand("chat æœˆé»‘æ€äººï¼Œé£é«˜æ”¾ç«ï¼");
                         }
                 }
                 NATURE_D->add_day_event(3, 1, this_object(), (: sunrise_event :));
@@ -50,7 +50,7 @@ void sunrise_event() {
         for(i=0; i<sizeof(ob_list); i++) {
                 if(ob_list[i]->query("area_mark") == "guanwai") {
                         if(environment(ob_list[i])) {
-                                message_vision("$N½ĞµÀ£ºÌìÏşÒ²£¬³¶ºõ£¡\n",ob_list[i]);
+                                message_vision("$Nå«é“ï¼šå¤©æ™“ä¹Ÿï¼Œæ‰¯ä¹ï¼\n",ob_list[i]);
                         }
                         destruct(ob_list[i]);
                 }

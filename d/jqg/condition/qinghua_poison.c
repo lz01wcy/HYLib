@@ -1,4 +1,4 @@
-// qinghua_poison.c Çé»¨¶¾
+// qinghua_poison.c æƒ…èŠ±æ¯’
 #include <ansi.h>
 #include <condition.h>
 
@@ -7,11 +7,11 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration)
 {
       if( me->query("couple/couple_id")){   
-      tell_object(me, HIM"ÄãµÄÊÖÖ¸ÉÏ´ÌËð´¦Í»È»¾çÍ´£¬ÉË¿ÚÎ¢Ï¸£¬Í´³þ¾¹È»À÷º¦Ö®¼«¡£\n"NOR);
-      tell_room(environment(me), MAG + me->name()+"ÍðÈçÐØ¿ÚÝëµØ¸øÈËÓÃ´óÌú´¸ÃÍ»÷Ò»ÏÂ£¬ÈÌ²»×¡¡¸°¡¡¹µÄÒ»Éù½ÐÁË³öÀ´£¬\n" NOR,({ me }));
+      tell_object(me, HIM"ä½ çš„æ‰‹æŒ‡ä¸ŠåˆºæŸå¤„çªç„¶å‰§ç—›ï¼Œä¼¤å£å¾®ç»†ï¼Œç—›æ¥šç«Ÿç„¶åŽ‰å®³ä¹‹æžã€‚\n"NOR);
+      tell_room(environment(me), MAG + me->name()+"å®›å¦‚èƒ¸å£è“¦åœ°ç»™äººç”¨å¤§é“é”¤çŒ›å‡»ä¸€ä¸‹ï¼Œå¿ä¸ä½ã€Œå•Šã€çš„ä¸€å£°å«äº†å‡ºæ¥ï¼Œ\n" NOR,({ me }));
       me->receive_damage("qi", 35);
       me->receive_wound("jing", 35);
-      me->set_temp("last_damage_from", "ÖÐÇé»¨¶¾");
+      me->set_temp("last_damage_from", "ä¸­æƒ…èŠ±æ¯’");
       me->apply_condition("qinghua_poison", duration - 1);
       }
       else me->apply_condition("qinghua_poison", duration - 1);

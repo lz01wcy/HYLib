@@ -1,13 +1,13 @@
-// Room in ¸ßÀö
+// Room in é«˜ä¸½
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-	set("short","Óæ´¬");
+	set("short","æ¸”èˆ¹");
 	set("long", @LONG
-Óæ´¬¶¼Á¬ÔÚÒ»Æë£¬¶øÇÒ¶¼¼¸ºõÊÇÒ»Ä£Ò»ÑùµÄ£¬¿´µÃÄãÍ·ÔÎÑÛ»¨¡£ºö
-È»Ò»¸ö°µÀËÓ¿À´£¬ÄãÒ»¸ö²»ÎÈ£¬¡®°¡¡£¡£¡£¡¯£¬Äã¼¸ºõµôÏÂÁËº£È¥¡£
+æ¸”èˆ¹éƒ½è¿žåœ¨ä¸€é½ï¼Œè€Œä¸”éƒ½å‡ ä¹Žæ˜¯ä¸€æ¨¡ä¸€æ ·çš„ï¼Œçœ‹å¾—ä½ å¤´æ™•çœ¼èŠ±ã€‚å¿½
+ç„¶ä¸€ä¸ªæš—æµªæ¶Œæ¥ï¼Œä½ ä¸€ä¸ªä¸ç¨³ï¼Œâ€˜å•Šã€‚ã€‚ã€‚â€™ï¼Œä½ å‡ ä¹ŽæŽ‰ä¸‹äº†æµ·åŽ»ã€‚
 LONG
 	);
 	set("exits", ([

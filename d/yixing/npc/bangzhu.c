@@ -12,10 +12,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("²İÉÏ·É", ({ "bangzhu" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è‰ä¸Šé£", ({ "bangzhu" }));
+	set("gender", "ç”·æ€§");
 	set("age", 30);
-	set("long", "Ò»¸ö¿ıÎàÖ®¼«µÄ´óºº£¬Á³ÅÓ¼«¾¡²ÔÉ££¬¾«ÉñÈ´ÉõÛÇîå¡£\n");
+	set("long", "ä¸€ä¸ªé­æ¢§ä¹‹æçš„å¤§æ±‰ï¼Œè„¸åºæå°½è‹æ¡‘ï¼Œç²¾ç¥å´ç”šçŸé“„ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", -1);
 
@@ -43,7 +43,7 @@ void create()
 	set_skill("wuxingbu", 80);
 	map_skill("dodge", "wuxingbu");
 */
-	set("no_get", "°ïÖ÷Ì«ÖØÁË");
+	set("no_get", "å¸®ä¸»å¤ªé‡äº†");
 
 	setup();
 

@@ -1,31 +1,31 @@
 #include <ansi.h>
 inherit NPC;
 mapping *data=({
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ÈâÈË",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Ã¨ÄĞ",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ÀÇÄĞ",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ÌØÂåÂ³",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"¾ŞÈË",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Ê¯ÈË",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Ä¾ÄËÒÁ",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Îä¶·¼Ò",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"÷¼÷ÃÈË",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Ä§·¨Ê¦",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Éñ¹Ù",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"·ÉÂíÆïÊ¿",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ËÀÁéÆïÊ¿",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"º¡¹Ç",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ÑÛÄ§",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"°ëÈËÂí",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ºÚ°µ¾«Áé",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"°«ÈË",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"¾«Áé",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Õ½Ê¿",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"µØ¾«",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"Ñı¾«",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"°ëÊŞÈË",]),
-(["id":"magic mob","title":"Ä§·¨¶·Ê¿","name":"ÄñÈË",]),
-(["id":"mon ster","title":"Ä§·¨¹ÖÎï","name":"¾«ÉñÌå",])
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"è‚‰äºº",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"çŒ«ç”·",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"ç‹¼ç”·",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"ç‰¹æ´›é²",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"å·¨äºº",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"çŸ³äºº",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"æœ¨ä¹ƒä¼Š",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"æ­¦æ–—å®¶",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"éª·é«…äºº",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"é­”æ³•å¸ˆ",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"ç¥å®˜",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"é£é©¬éª‘å£«",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"æ­»çµéª‘å£«",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"éª¸éª¨",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"çœ¼é­”",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"åŠäººé©¬",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"é»‘æš—ç²¾çµ",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"çŸ®äºº",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"ç²¾çµ",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"æˆ˜å£«",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"åœ°ç²¾",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"å¦–ç²¾",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"åŠå…½äºº",]),
+(["id":"magic mob","title":"é­”æ³•æ–—å£«","name":"é¸Ÿäºº",]),
+(["id":"mon ster","title":"é­”æ³•æ€ªç‰©","name":"ç²¾ç¥ä½“",])
 });
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
@@ -40,7 +40,7 @@ set_name(order[random(13)]+npc["name"]+NOR,({ npc["id"] }));
 	set("magicgift",4);
 	set("magicset",1);
        set("long",
-"Ò»Ö»¿ÉÅÂµÄÄ§·¨Õ½Ê¿¡£\n");
+"ä¸€åªå¯æ€•çš„é­”æ³•æˆ˜å£«ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -135,9 +135,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(RED"$N,µ¹µØ¶øÍö£¬²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$N,å€’åœ°è€Œäº¡ï¼Œä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦´òËÀ"+ob->query("name")+",Ôö¼ÓÁË80¾­ÑéºÍ40Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ‰“æ­»"+ob->query("name")+",å¢åŠ äº†80ç»éªŒå’Œ40æ½œèƒ½ã€‚\n"NOR, me);
 if (me->query_condition("xx_poison"))
         me->apply_condition("xx_poison", 0);
 if (me->query_condition("cold_poison"))
@@ -175,6 +175,6 @@ int hit_ob(object me, object ob, int damage)
         ob->apply_condition("xx_poison", 40);
         ob->apply_condition("cold_poison", 40);
         ob->apply_condition("flower_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»´òÖĞµÄµØ·½Ò»ÕóÂéÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«æ‰“ä¸­çš„åœ°æ–¹ä¸€é˜µéº»ç—’ï¼\n" NOR );
 }
 }

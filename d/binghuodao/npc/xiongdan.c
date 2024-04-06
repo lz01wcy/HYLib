@@ -1,4 +1,4 @@
-//ĞÜĞÄbearheart
+//ç†Šå¿ƒbearheart
 //by steel
 #include "ansi.h"
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-    set_name("ĞÜĞÄ",({"bearheart"}));
+    set_name("ç†Šå¿ƒ",({"bearheart"}));
     set_weight(10);
     if( clonep() )
 		set_default_object(__FILE__);
     else
   {
-    set("unit","¸ö");
-    set("long","ÕâÊÇÒ»¸öĞÂÏÊµÄĞÜĞÄ,ÉÏÃæ»¹´ø×ÅÑªË¿.\n");
+    set("unit","ä¸ª");
+    set("long","è¿™æ˜¯ä¸€ä¸ªæ–°é²œçš„ç†Šå¿ƒ,ä¸Šé¢è¿˜å¸¦ç€è¡€ä¸.\n");
     set("value","1000");
     set("material","fesh"); 
   }    

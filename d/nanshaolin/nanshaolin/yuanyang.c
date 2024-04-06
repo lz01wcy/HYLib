@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Ôªí¦", ({ "yuan yang", "yang", "yuan" }));
-	set("long","ËûÊÇÒ»Î»ÖÐµÈ¸ö×ÓµÄºÍÉÐ£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓÐÉñ¡£\n");
-	set("nickname", "ÂÞººÔº½ðÉíÂÞºº");
-	set("gender", "ÄÐÐÔ");
+	set_name("å…ƒæ™", ({ "yuan yang", "yang", "yuan" }));
+	set("long","ä»–æ˜¯ä¸€ä½ä¸­ç­‰ä¸ªå­çš„å’Œå°šï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥žã€‚\n");
+	set("nickname", "ç½—æ±‰é™¢é‡‘èº«ç½—æ±‰");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -53,7 +53,7 @@ void create()
 	map_skill("parry", "wuying-jian");
 	prepare_skill("cuff", "luohan-quan");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 20, "µÜ×Ó");
+	create_family("å—å°‘æž—æ´¾", 20, "å¼Ÿå­");
 
 	setup();
 	carry_object(__DIR__"changjian")->wield();

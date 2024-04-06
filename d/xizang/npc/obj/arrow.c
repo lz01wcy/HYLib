@@ -3,16 +3,16 @@ inherit THROWING;
 #include <ansi.h>
 void create()
 {
-        set_name(RED"Îå"BLU"»¨"HIG"Éñ¼ı"NOR, ({ "5flower arrow" }) );
+        set_name(RED"äº”"BLU"èŠ±"HIG"ç¥ç®­"NOR, ({ "5flower arrow" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°ÑÈı´ç³¤µÄ¶Ì¼ı£¬ÉÏ±ßïÎ×ÅÒ»Ğ©Ææ¹ÖµÄ»¨ÎÆ£®\n");
-                set("unit", "¶Ñ");
-                set("base_unit", "°Ñ");
+                set("long", "ä¸€æŠŠä¸‰å¯¸é•¿çš„çŸ­ç®­ï¼Œä¸Šè¾¹é•‚ç€ä¸€äº›å¥‡æ€ªçš„èŠ±çº¹ï¼\n");
+                set("unit", "å †");
+                set("base_unit", "æŠŠ");
                 set("base_weight", 1);
                 set("base_value", 100);
-                set("wield_msg","$N²»Öª´ÓÄÄÀïÍ»È»¼ä×§³öÒ»°Ñ$nÎÕÔÚÊÖÀï£®\n");
+                set("wield_msg","$Nä¸çŸ¥ä»å“ªé‡Œçªç„¶é—´æ‹½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹é‡Œï¼\n");
         }
         set_amount(200);
         init_throwing(325);

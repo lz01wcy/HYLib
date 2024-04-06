@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short",GRN "��ɽ" NOR);
+        set("short",GRN "青山" NOR);
         set("long", @LONG
-ɽ����ľï�ܣ�������䣬����羰������С���������У���
-�����ҳ�ķ�϶���ս������γ���ʵİ�쵣�������鲻�ɵĸ���
-����������С��ĸ�������ǰ��ȥ��
+山中树木茂密，花开万朵，这里风景秀美，小鸟在喳喳叫，阳
+光从树页的缝隙中照进来，形成五彩的斑斓，你的心情不由的高兴
+起来，跟着小鸟的歌声，向前走去。
 
 LONG
         );

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С��Ĺ");
+	set("short", "小乔墓");
 	set("long", @LONG
-С��Ĺλ������¥�����磬Ĺ��С�����ڹ�С���񣬾�����һͳ־
-���أ�����߹�����ǹ���Ů�����ɴ��ǣ�����С�ǹ���褣�������
-�ڴˡ������ڣ�ݳ������ɷ��ң����������ˡ�
+小乔墓位于岳阳楼东北隅，墓北小庙，内供小乔像，据明《一统志
+》载：宾孙策攻皖，得乔公二女，自纳大乔，而以小乔归周瑜，后卒葬
+于此。如今青冢草长，蝶飞蜂嬉，玉人如梦了。
 LONG );
 	set("outdoors", "yueyang");
 	set("no_clean_up", 0);

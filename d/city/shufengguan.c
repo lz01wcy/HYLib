@@ -6,12 +6,12 @@ int pushing();
 int halt_pushing();
 void create()
 {
-	set("short", "Êè·å¹İ");
+	set("short", "ç–å³°é¦†");
 	set("long", @LONG
-ÎİÄÚ³ÂÁĞÇ§×Ë°ÙÌ¬µÄÁáçç¹ÖÊ¯£¬Óë¹İÍâ¹ÖÊ¯Ò£ÏàºôÓ¦¡£Ä¿Á¦Ëù¼°£¬
-µ½´¦½ÔÊ¯£¬¶øÓÖ¸÷²»ÏàÍ¬¡£ÓÚ´Ë´¦Æ¾À¸£¬¿ÉÀÀ¿ÉÌ÷£¬¿É¸è¿ÉĞ¥¡£È«Ô°¾°
-Îï£¬È«ÔÚÖ¸¹Ë¼ä¡£ÔÚÄÇÃ÷ÔÂµ±¿ÕÖ®¼Ê£¬´óÓĞ¡°ÌìÏÂÈı·ÖÃ÷ÔÂÉ«£¬¶ş·ÖÎŞ
-ÄÎÔÚÑïÖİ¡±Ö®¸Ğ£¬Òò¶ø´Ë¹İÓÖÃû¡°¶ş·ÖÃ÷ÔÂÂ¥¡±¡£
+å±‹å†…é™ˆåˆ—åƒå§¿ç™¾æ€çš„ç²ç‘æ€ªçŸ³ï¼Œä¸é¦†å¤–æ€ªçŸ³é¥ç›¸å‘¼åº”ã€‚ç›®åŠ›æ‰€åŠï¼Œ
+åˆ°å¤„çš†çŸ³ï¼Œè€Œåˆå„ä¸ç›¸åŒã€‚äºæ­¤å¤„å‡­æ ï¼Œå¯è§ˆå¯çœºï¼Œå¯æ­Œå¯å•¸ã€‚å…¨å›­æ™¯
+ç‰©ï¼Œå…¨åœ¨æŒ‡é¡¾é—´ã€‚åœ¨é‚£æ˜æœˆå½“ç©ºä¹‹é™…ï¼Œå¤§æœ‰â€œå¤©ä¸‹ä¸‰åˆ†æ˜æœˆè‰²ï¼ŒäºŒåˆ†æ— 
+å¥ˆåœ¨æ‰¬å·â€ä¹‹æ„Ÿï¼Œå› è€Œæ­¤é¦†åˆåâ€œäºŒåˆ†æ˜æœˆæ¥¼â€ã€‚
 LONG );
 	set("exits", ([
 		"east"	: __DIR__"hushishanzi",
@@ -45,7 +45,7 @@ int push_stone(string arg)
 	{
 		if ( query_temp( "pushed" ) )
 		{
-			message_vision( "$NÓÃÁ¦½«ÇéÈËÊ¯ÍÆ¿ª£¬Ò»¶Ô¡°ÇéÈË¡±½¥½¥·Ö¿ª£¬»Ø¸´Ô­Î»£¬Ò»ÇĞ»Ø¸´Ô­×´¡£¡£\n", me );
+			message_vision( "$Nç”¨åŠ›å°†æƒ…äººçŸ³æ¨å¼€ï¼Œä¸€å¯¹â€œæƒ…äººâ€æ¸æ¸åˆ†å¼€ï¼Œå›å¤åŸä½ï¼Œä¸€åˆ‡å›å¤åŸçŠ¶ã€‚ã€‚\n", me );
 			delete_temp( "pushed" );
 			delete( "exits/down" );
 			if ( room = find_object( __DIR__"dixiashi" ) )
@@ -57,20 +57,20 @@ int push_stone(string arg)
 	write ( arg );
 	if ( sscanf( arg, "%s %s", target, dir ) != 2 ) return 0;
 	if ( target != "stone" && target != "shitou" && target != "shi tou" )
-	return notify_fail( "ÄãÒªÍÆÊ²Ã´£¿\n" );
+	return notify_fail( "ä½ è¦æ¨ä»€ä¹ˆï¼Ÿ\n" );
 	if ( dir != "east" && dir != "west" )
-	return notify_fail( "ÄãÏë°ÑÇéÈËÊ¯ÍùÄÇ±ßÍÆ£¿\n" );
+	return notify_fail( "ä½ æƒ³æŠŠæƒ…äººçŸ³å¾€é‚£è¾¹æ¨ï¼Ÿ\n" );
 	if ( parter = (object)query_temp( "push_" + dir ) )
-	return notify_fail( parter->name() + "ÒÑ¾­ÔÚ°ÑÇéÈËÊ¯ÍùÕâ±ßÍÆÁË¡£\n" );
+	return notify_fail( parter->name() + "å·²ç»åœ¨æŠŠæƒ…äººçŸ³å¾€è¿™è¾¹æ¨äº†ã€‚\n" );
 	if ( me->query_str() <= 30 )
-	return notify_fail( "ÄãÊÔ×ÅÍÆÁËÇéÈËÊ¯£¬µ«ÊÇ·¢ÏÖÍÆ²»¶¯¡£\n" );
+	return notify_fail( "ä½ è¯•ç€æ¨äº†æƒ…äººçŸ³ï¼Œä½†æ˜¯å‘ç°æ¨ä¸åŠ¨ã€‚\n" );
 	if ( query_temp( "pushed" ) )
-	return notify_fail( "ÇéÈËÊ¯ÒÑ¾­±»ÍÆµÃºÏÔÚÒ»ÆğÁË¡£\n" );
+	return notify_fail( "æƒ…äººçŸ³å·²ç»è¢«æ¨å¾—åˆåœ¨ä¸€èµ·äº†ã€‚\n" );
 	if ( !query_temp( "push_" + dir ) )
 	set_temp( "push_" + dir, me );
 	me->set_temp("direction", dir );
 	me->set_temp( "push_marks", 71 );
-	message_vision( "$N·¢Á¦°ÑÇéÈËÊ¯µÄÒ»¿éÍù¶ÔÃæÍÆÈ¥¡£\n", me );
+	message_vision( "$Nå‘åŠ›æŠŠæƒ…äººçŸ³çš„ä¸€å—å¾€å¯¹é¢æ¨å»ã€‚\n", me );
 	me->start_busy( (:pushing:), (:halt_pushing:) );
 	return 1;
 }
@@ -89,12 +89,12 @@ int pushing()
 	if ( dir == "west" )
 	{ 
 		dir = "east";
-		c_dir = "Î÷±ß";
+		c_dir = "è¥¿è¾¹";
 	}
 	else
 	{
 		dir = "west";
-		c_dir = "¶«±ß";
+		c_dir = "ä¸œè¾¹";
 	}
 	if ( marks > 70 )
 	{
@@ -106,10 +106,10 @@ int pushing()
 	me->add( "force", force );
 	if ( me->query( "force" ) < 0 )
 	{
-		write( "ÄãÕıÓÃÁ¦ÍÆ¶¯ÇéÈËÊ¯£¬Í»È»¸Ğµ½ÌåÄÚÕæÆø¿İ½ß¡£\n" );
+		write( "ä½ æ­£ç”¨åŠ›æ¨åŠ¨æƒ…äººçŸ³ï¼Œçªç„¶æ„Ÿåˆ°ä½“å†…çœŸæ°”æ¯ç«­ã€‚\n" );
 		me->unconcious();
 		if ( !query_temp( "push_" + dir ) )
-			message_vision( "ÇéÈËÊ¯½¥½¥ÓÖÍË»ØÔ­Î»¡£\n", me );
+			message_vision( "æƒ…äººçŸ³æ¸æ¸åˆé€€å›åŸä½ã€‚\n", me );
 		remove_call_out( "del_temp" );
 		call_out( "del_temp", 1 );
 		me->delete_temp( "push_marks" );
@@ -121,15 +121,15 @@ int pushing()
 		{
 			me->add_temp( "push_marks", -10 );
 			if ( random(5) > 2 )
-				message_vision( "$NÓÃÁ¦ÍÆ¶¯ÇéÈËÊ¯£¬ÇéÈËÊ¯·¢³ö¡°¿¦¿¦¡±µÄÉùÒô£¬Öğ½¥ÏòÁíÒ»¸ö¿¿È¥¡£\n", me );
+				message_vision( "$Nç”¨åŠ›æ¨åŠ¨æƒ…äººçŸ³ï¼Œæƒ…äººçŸ³å‘å‡ºâ€œå–€å–€â€çš„å£°éŸ³ï¼Œé€æ¸å‘å¦ä¸€ä¸ªé å»ã€‚\n", me );
 			return 1;
 		}
 		else
 		{
 			if ( !query_temp( "pushed" ) ) 
 			{
-				write("ÄãÍÆÁËºÃ¾ÃÇéÈËÊ¯£¬È´ÎŞ·¨½«ÆäºÏÔÚÒ»ÇĞ¡£");
-				message_vision("$NÍ£Ö¹ÍÆ¶¯ÇéÈËÊ¯£¬ÇéÈËÊ¯½¥½¥ÓÖÍË»ØÔ­Î»¡£\n", me );
+				write("ä½ æ¨äº†å¥½ä¹…æƒ…äººçŸ³ï¼Œå´æ— æ³•å°†å…¶åˆåœ¨ä¸€åˆ‡ã€‚");
+				message_vision("$Nåœæ­¢æ¨åŠ¨æƒ…äººçŸ³ï¼Œæƒ…äººçŸ³æ¸æ¸åˆé€€å›åŸä½ã€‚\n", me );
 			
 			}
 			remove_call_out( "del_temp" );
@@ -143,9 +143,9 @@ int pushing()
 		ob = query_temp( "push_" + dir );
 		if ( dir = "east" )
 		{
-			message_vision( "$NºÍ$n"
-			"¸÷×Ô·¢Á¦ÍÆ¶¯ÇéÈËÊ¯µÄÒ»¿é£¬ÇéÈËÊ¯·¢³ö¡°¿¦¿¦¡±µÄÉùÒô£¬½¥½¥\n" + "µÄÏà»¥½Ó½ü£¬Ò»¶Ô¡°ÇéÈË¡±ÖÕÓÚÓµÔÚÒ»Æğ£¡£¡\n", me, ob );
-			message_vision( "ÇéÈËÊ¯»º»ºµÄ¿ªÊ¼×ª¶¯£¬ÏòÒ»ÅÔÒÆÈ¥£¬ÔÚÎİÄÚµÄµØÉÏÏÖ³öÒ»¸ö´ó¶´¡£\n", me);
+			message_vision( "$Nå’Œ$n"
+			"å„è‡ªå‘åŠ›æ¨åŠ¨æƒ…äººçŸ³çš„ä¸€å—ï¼Œæƒ…äººçŸ³å‘å‡ºâ€œå–€å–€â€çš„å£°éŸ³ï¼Œæ¸æ¸\n" + "çš„ç›¸äº’æ¥è¿‘ï¼Œä¸€å¯¹â€œæƒ…äººâ€ç»ˆäºæ‹¥åœ¨ä¸€èµ·ï¼ï¼\n", me, ob );
+			message_vision( "æƒ…äººçŸ³ç¼“ç¼“çš„å¼€å§‹è½¬åŠ¨ï¼Œå‘ä¸€æ—ç§»å»ï¼Œåœ¨å±‹å†…çš„åœ°ä¸Šç°å‡ºä¸€ä¸ªå¤§æ´ã€‚\n", me);
 			set( "exits/down" , __DIR__"dixiashi" );
 			ob->set_temp( "push_marks", 1 );
 		}
@@ -166,7 +166,7 @@ int halt_pushing()
 	call_out( "del_temp", 1 );
 	me->delete_temp( "direction" );
 	me->delete_temp( "push_marks" );
-	message_vision( "$NÍ£Ö¹ÍÆ¶¯ÇéÈËÊ¯£¬ÇéÈËÊ¯½¥½¥ÓÖÍË»ØÔ­Î»¡£\n", me );
+	message_vision( "$Nåœæ­¢æ¨åŠ¨æƒ…äººçŸ³ï¼Œæƒ…äººçŸ³æ¸æ¸åˆé€€å›åŸä½ã€‚\n", me );
 	return 1;
 }
 

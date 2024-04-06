@@ -10,12 +10,12 @@ void init()
 
 void create()
 {
-	       set_name("ÖñÂ¨", ({"zhu lou" ,"zl"}));
+	       set_name("ç«¹ç¯“", ({"zhu lou" ,"zl"}));
               set_max_encumbrance(30000);
- 		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸öĞ¡¿Ú´ó¶ÇµÄÖñÂ¨¡£\n");
+ 		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªå°å£å¤§è‚šçš„ç«¹ç¯“ã€‚\n");
 		set("value", 100);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(100);
               set("no_sell",1);
 		setup();
@@ -29,20 +29,20 @@ int do_shou(string arg)
 //  ob1= this_object();
     if( !arg
 	||	sscanf(arg, "%s in %s", who, what)!=2)
-         return notify_fail("ÃüÁî¸ñÊ½: shouchong <¶¾³æ> in <ÎïÆ·>¡£\n");
+         return notify_fail("å‘½ä»¤æ ¼å¼: shouchong <æ¯’è™«> in <ç‰©å“>ã€‚\n");
     ob1= present(what,me);
     ob = present(who,environment(me));
     if (!ob )
-         return notify_fail("ÄãÒªÊÕÊ²Ã´£¿\n");
+         return notify_fail("ä½ è¦æ”¶ä»€ä¹ˆï¼Ÿ\n");
     if (!ob1 )
-         return notify_fail("ÄãÒª½«³æÊÕµ½ÄÇÀï£¿\n");
+         return notify_fail("ä½ è¦å°†è™«æ”¶åˆ°é‚£é‡Œï¼Ÿ\n");
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
     if(me->query("id")!=(ob->query("host_id"))||ob->query("age")<100)
-         return notify_fail(ob->query("name")+"Á¬Àí¶¼²»ÀíÄã£¡\n");
-    message_vision("$N´ò¿ªÖñÂ¨£¬¶Ô×Å"+ob->query("name")+"ÇáÇá´µÁËÒ»Éù¿ÚÉÚ¡£\n",me);
-    message_vision("Ö»¼û"+ob->query("name")+"Éí×ÓÖğ½¥ËõĞ¡£¬»¯×öÒ»Ö»¼¸´ç³¤µÄĞ¡³æ£¬×ê½øÁË$NµÄÖñÂ¨Àï¡£\n",me);
+         return notify_fail(ob->query("name")+"è¿ç†éƒ½ä¸ç†ä½ ï¼\n");
+    message_vision("$Næ‰“å¼€ç«¹ç¯“ï¼Œå¯¹ç€"+ob->query("name")+"è½»è½»å¹äº†ä¸€å£°å£å“¨ã€‚\n",me);
+    message_vision("åªè§"+ob->query("name")+"èº«å­é€æ¸ç¼©å°ï¼ŒåŒ–åšä¸€åªå‡ å¯¸é•¿çš„å°è™«ï¼Œé’»è¿›äº†$Nçš„ç«¹ç¯“é‡Œã€‚\n",me);
      ob->move(ob1);
 me->start_busy(1);
      return 1;
@@ -55,21 +55,21 @@ int do_fang(string arg)
 //  ob1= this_object();
     if( !arg
 	||	sscanf(arg, "%s from %s", who, what)!=2)
-         return notify_fail("ÃüÁî¸ñÊ½: fangchong <¶¾³æ> from <ÎïÆ·>¡£\n");
+         return notify_fail("å‘½ä»¤æ ¼å¼: fangchong <æ¯’è™«> from <ç‰©å“>ã€‚\n");
     ob1 = present(what,me);
     if (!ob1)
-         return notify_fail("ÄãÒª´ÓÄÇÀï·Å¶¾³æ£¿\n");
+         return notify_fail("ä½ è¦ä»é‚£é‡Œæ”¾æ¯’è™«ï¼Ÿ\n");
     ob = present(who,ob1);
     if (!ob )
-         return notify_fail("ÄãÒª·ÅÊ²Ã´£¿\n");
+         return notify_fail("ä½ è¦æ”¾ä»€ä¹ˆï¼Ÿ\n");
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
     if(me->query("id")!=(ob->query("host_id"))||ob->query("age")<100)
-         return notify_fail(ob->query("name")+"Á¬Àí¶¼²»ÀíÄã£¡\n");
-    tell_object(me,  "ÄãÇÄÇÄ´ò¿ªÖñÂ¨£¬½«ÀïÃæµÄ"+ob->query("name")+"·ÅÁË³öÀ´¡£\n" );
+         return notify_fail(ob->query("name")+"è¿ç†éƒ½ä¸ç†ä½ ï¼\n");
+    tell_object(me,  "ä½ æ‚„æ‚„æ‰“å¼€ç«¹ç¯“ï¼Œå°†é‡Œé¢çš„"+ob->query("name")+"æ”¾äº†å‡ºæ¥ã€‚\n" );
  
-    message_vision("ºöÈ»£¬Ò»Ö»"+ob->query("name")+"²»Öª´ÓÊ²Ã´µØ·½´ÜÁË³öÀ´¡£\n",me);
+    message_vision("å¿½ç„¶ï¼Œä¸€åª"+ob->query("name")+"ä¸çŸ¥ä»ä»€ä¹ˆåœ°æ–¹çªœäº†å‡ºæ¥ã€‚\n",me);
      ob->move(environment(me));
      return 1;
 }

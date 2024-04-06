@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("²·ÑÇÄĞ", ({ "girl" }) );
-	set("title", HIM "¾ÆÏÉ" NOR);
-	set("gender", "Å®ĞÔ" );
+	set_name("åœäºšç”·", ({ "girl" }) );
+	set("title", HIM "é…’ä»™" NOR);
+	set("gender", "å¥³æ€§" );
 	set("age", 22);
 	set("str", 10);
 	set("per", 30);
 	set("long", @LONG
-²·ÑÇÄĞ´ÓÀ´Ã»×í¹ı£¬¶àÉÙÓ¢ĞÛºÃºº¶¼µ¹ÔÚËıµÄÊ¯ÁñÈ¹ÏÂ£®
+åœäºšç”·ä»æ¥æ²¡é†‰è¿‡ï¼Œå¤šå°‘è‹±é›„å¥½æ±‰éƒ½å€’åœ¨å¥¹çš„çŸ³æ¦´è£™ä¸‹ï¼
 LONG
 );
 	set("combat_exp", 20000);
@@ -22,14 +22,14 @@ LONG
 }
 int accept_fight(object me)
 {
-        command("say Ğ¡Å®×ÓÄÄÀïÊÇÄúµÄ¶ÔÊÖ£¿");
+        command("say å°å¥³å­å“ªé‡Œæ˜¯æ‚¨çš„å¯¹æ‰‹ï¼Ÿ");
         return 0;
 }
 
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬ÄúÒ»¶¨»áÔÚÕâ¶ùÍæµÄ¿ªĞÄµÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œæ‚¨ä¸€å®šä¼šåœ¨è¿™å„¿ç©çš„å¼€å¿ƒçš„ï¼");
         return 1;
 }

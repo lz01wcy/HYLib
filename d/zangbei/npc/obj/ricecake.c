@@ -2,13 +2,13 @@
 inherit F_FOOD; 
 void create()
 {
-        set_name("ôØôÎ", ({ "zanba" }) );
+        set_name("ç³Œç²‘", ({ "zanba" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÏãÅçÅçµÄÓÃÊÖÄó³ÉµÄ´ó·¹ÍÅ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªé¦™å–·å–·çš„ç”¨æ‰‹ææˆçš„å¤§é¥­å›¢ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 15);
                 set("fish_bait_zanba", 1);
                 set("fish_bait", 1);

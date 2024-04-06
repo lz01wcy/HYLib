@@ -5,17 +5,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name(HIW"ÌìÊ¹³¤½£"NOR, ({ "angel sword" }));
+	set_name(HIW"å¤©ä½¿é•¿å‰‘"NOR, ({ "angel sword" }));
 	set_weight(7000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°ÑÁÁ»Î»ÎµÄÌìÊ¹³¤½£¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠäº®æ™ƒæ™ƒçš„å¤©ä½¿é•¿å‰‘ã€‚\n");
 		set("value", 1000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›é˜ã€‚\n");
 	}
 	init_sword(390);
 	setup();

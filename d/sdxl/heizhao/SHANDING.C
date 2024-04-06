@@ -5,12 +5,12 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山顶");
 	set("long", @LONG
-ɽ�嶥���ǿ�ƽ�أ����ѳɶ�ʮ��Ķɽ����ź̵���һ����
-ͷ������ߣ�һ�����������ಲ���������ۼ�ϥ�����ڰڲ�ɽ����
-һͷ��������һ����ʯ�ϣ�����������վ�����������װ����Ĵ��
-ţ��
+山峰顶上是块平地，开垦成二十来亩山田，种着禾稻，一柄锄
+头抛在田边，一个耕夫上身赤膊，腿上泥污及膝，正在摆布山坡上
+一头仰天卧在一块岩石上，四足挣扎，站不起来，昂首哀鸣的大黄
+牛。
 LONG );
 	set("outdoors", "taoyuan");
 	set("objects", ([

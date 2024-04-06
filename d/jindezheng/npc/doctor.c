@@ -1,23 +1,23 @@
 inherit NPC;
 
-string query_save_file() { return DATA_DIR +"npc/Ò¶ÌìÊ¿";}
+string query_save_file() { return DATA_DIR +"npc/å¶å¤©å£«";}
 int ask_heal();
 void create()
 {
-	set_name("Ò¶ÌìÊ¿", ({ "ye", "ye", "ye" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å¶å¤©å£«", ({ "ye", "ye", "ye" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»Ò¶ÌìÊ¿ÕıĞ¦ßäßäµØÃ¦Öø¡£\n");
+		"è¿™ä½å¶å¤©å£«æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
 
-set("long","Ò¶ÌìÊ¿ÃîÊÖ»Ø´º,ÄãÖÎ²¡¿ÉÒÔÏòËû´òÌı(ask ye tianshi about heal).\n");
+set("long","å¶å¤©å£«å¦™æ‰‹å›æ˜¥,ä½ æ²»ç—…å¯ä»¥å‘ä»–æ‰“å¬(ask ye tianshi about heal).\n");
 set("inquiry",([
 "heal":(:ask_heal:),
 ]));
-	set("area_name","¾°µÂÕòÌìÒ½¸ó");
+	set("area_name","æ™¯å¾·é•‡å¤©åŒ»é˜");
 	set("area_file","/d/jindezheng/doctor-room.c");
 	setup();
 //	carry_object("/obj/std/armor/yinjia")->wear();
@@ -26,7 +26,7 @@ set("inquiry",([
 int ask_heal()
 {
  string *gifts=({"qi","jing","jingli"}),
-        *strs=({"¾«¿÷ÉöĞé","ÆøÑªÊÜËğ","ÉñÉËĞÄ¼Â"}),
+        *strs=({"ç²¾äºè‚¾è™š","æ°”è¡€å—æŸ","ç¥ä¼¤å¿ƒæ‚¸"}),
         str;
  object ob;
  int i,num=0,max=0,count=0;
@@ -42,12 +42,12 @@ if (!living(ob)||environment(ob)!=environment()) return 0;
           count+=max-num;
          }
           if (count==0) {
-  command("say ÄãÃ»ÓĞÊ²Ã´Ã«²¡,»ØÈ¥ĞİÏ¢Ò»ÏÂ¾ÍºÃ.\n");
+  command("say ä½ æ²¡æœ‰ä»€ä¹ˆæ¯›ç—…,å›å»ä¼‘æ¯ä¸€ä¸‹å°±å¥½.\n");
   return 1;
   }
 count/=10;
 if(count<=0)	count=1;
-command("say ÄãµÄ²¡¿öÈçÏÂ:\n"+str+"ÍêÈ«ÖÎºÃĞèÒª"+count+"Á½Òø×Ó.\n");
+command("say ä½ çš„ç—…å†µå¦‚ä¸‹:\n"+str+"å®Œå…¨æ²»å¥½éœ€è¦"+count+"ä¸¤é“¶å­.\n");
 ob->set_temp("doctor/checked",count);
  return 1;
 
@@ -56,14 +56,14 @@ int accept_object(object who,object ob)
 {
   int val,wound,i;
   string *gift=({"qi","jing","jingli"}),
-         *port=({"Ó¿ÈªÑ¨","×ãÈıÀï","°Ù»áÑ¨","Ó­ÏãÑ¨","ºÏ¹ÈÑ¨","¼ç¾®Ñ¨"});
+         *port=({"æ¶Œæ³‰ç©´","è¶³ä¸‰é‡Œ","ç™¾ä¼šç©´","è¿é¦™ç©´","åˆè°·ç©´","è‚©äº•ç©´"});
   if (!ob->query("money_id")) return 0;
   if (!who->query_temp("doctor/checked")) return 0;
   val=(int)ob->value()/10;
   if ((int)ob->value()<100)  
-       return notify_fail("ÕâµãÇ®ÒªÖÎÄãµÄ²¡ºÃÏó²»¹»°É!\n");
- message_vision("$NÓÃ½ğÕëÔÚ$nµÄ"+port[random(sizeof(port))]+"´ÌÁËÏÂÈ¥,
-  $nÇáÇáµØÓõ³öÒ»¿Ú³¤Æø,¾õµÃÇáËÉ¶àÁË.\n",this_object(),who);
+       return notify_fail("è¿™ç‚¹é’±è¦æ²»ä½ çš„ç—…å¥½è±¡ä¸å¤Ÿå§!\n");
+ message_vision("$Nç”¨é‡‘é’ˆåœ¨$nçš„"+port[random(sizeof(port))]+"åˆºäº†ä¸‹å»,
+  $nè½»è½»åœ°åå‡ºä¸€å£é•¿æ°”,è§‰å¾—è½»æ¾å¤šäº†.\n",this_object(),who);
 
  for (i=0;i<sizeof(gift);i++)   {
         wound=(int)who->query_temp("doctor/"+gift[i]);

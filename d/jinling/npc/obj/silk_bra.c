@@ -6,13 +6,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name("ÕæË¿ÈéÕÖ", ({ "silk-bra", "bra" }) );
+	set_name("çœŸä¸ä¹³ç½©", ({ "silk-bra", "bra" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Õâ¸ö·ÛºìÉ«µÄÈéÕÖÉÏÃæĞåÖøÁ½¶äÃµ¹å£¬ÎÅÆğÀ´»¹ÓĞÒ»¹Éµ­Ïã¡£\n");
-		set("unit", "¸ö");
+		set("long", "è¿™ä¸ªç²‰çº¢è‰²çš„ä¹³ç½©ä¸Šé¢ç»£è‘—ä¸¤æœµç«ç‘°ï¼Œé—»èµ·æ¥è¿˜æœ‰ä¸€è‚¡æ·¡é¦™ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 1000);
 		set("material", "cloth");
 		set("armor_prop/armor", 11);

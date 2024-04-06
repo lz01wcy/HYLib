@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "天王殿");
 	set("long", @LONG
-����ɽ�ż�����������������������һ��ŭĿͦ����״����
-�͡��������һƬ�����Ĵ�ʯͥ��ͨ������Ĵ��۱��
+走入山门即是天王殿。左右塑天王坐像各一尊，怒目挺腰，状极威
+猛。殿后则是一片宽敞的大石庭，通往后面的大雄宝殿。
 LONG );
 	set("exits", ([
 		"south" : __DIR__"kaiyuansi",

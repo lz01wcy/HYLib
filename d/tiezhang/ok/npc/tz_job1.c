@@ -1,7 +1,7 @@
 //tz_job1.c
 #include <ansi.h>
 
-string *names = ({"²¹Õ¯À¸","ÍÚÏÝ¾®","·¥Ä¾",});
+string *names = ({"è¡¥å¯¨æ ","æŒ–é™·äº•","ä¼æœ¨",});
 
 
 string ask_job1()
@@ -14,18 +14,18 @@ string ask_job1()
         me=this_object();
         fam = ob->query("family");
         
-        if(!fam || fam["family_name"] != "ÌúÕÆ°ï")
-         return ("Äã²»ÊÇÎÒ°ïµÜ×Ó£¬ºÙºÙ....À´°ïÎÒÃÇ¸É»î£¿ÊÇ²»ÊÇÏë»ìÈëÌúÕÆ°ïµ±¼éÏ¸£¿\n");
+        if(!fam || fam["family_name"] != "é“æŽŒå¸®")
+         return ("ä½ ä¸æ˜¯æˆ‘å¸®å¼Ÿå­ï¼Œå˜¿å˜¿....æ¥å¸®æˆ‘ä»¬å¹²æ´»ï¼Ÿæ˜¯ä¸æ˜¯æƒ³æ··å…¥é“æŽŒå¸®å½“å¥¸ç»†ï¼Ÿ\n");
         if (ob->query_temp("job_name"))
-         return ("Äã²»ÊÇÒÑ¾­ÁìÁË¹¤×÷Âð£¿»¹²»¿ìÈ¥×ö¡£\n");
+         return ("ä½ ä¸æ˜¯å·²ç»é¢†äº†å·¥ä½œå—ï¼Ÿè¿˜ä¸å¿«åŽ»åšã€‚\n");
         if ( (int)ob->query_condition("tz_job" ) > 0 )
                 return RANK_D->query_respect(ob) + 
-                "ÏÖÔÚÃ»ÓÐÊ²Ã´ÊÂ¿É×ö£¬¹ý¶ÎÊ±¼äÔÙÀ´°É¡£";
+                "çŽ°åœ¨æ²¡æœ‰ä»€ä¹ˆäº‹å¯åšï¼Œè¿‡æ®µæ—¶é—´å†æ¥å§ã€‚";
          target = names[random(sizeof(names))];
          ob->set_temp("job_name",target);
          ob->apply_condition("tz_job", 4);
-         return "ÌúÕÆ°ï¼ÈÒª·ÀÖ¹¹Ù¸®¶ÔÎÒÃÇµÄÇå½Ë£¬»¹Òª·ÀÖ¹½­ºþÆäËüÃÅÅÉ¶ÔÎÒÃÇ°ï»áµÄÑ°³ð£¬
-ÄãÎä¹¦µÍÎ¢£¬ÏÈÈ¥" + target + "°É¡£";
+         return "é“æŽŒå¸®æ—¢è¦é˜²æ­¢å®˜åºœå¯¹æˆ‘ä»¬çš„æ¸…å‰¿ï¼Œè¿˜è¦é˜²æ­¢æ±Ÿæ¹–å…¶å®ƒé—¨æ´¾å¯¹æˆ‘ä»¬å¸®ä¼šçš„å¯»ä»‡ï¼Œ
+ä½ æ­¦åŠŸä½Žå¾®ï¼Œå…ˆåŽ»" + target + "å§ã€‚";
 }
 
 int do_task(string arg)
@@ -38,18 +38,18 @@ int do_task(string arg)
 
         if(!(arg||arg=="ok")) return 0;
         if(!ob->query_temp("job_name")) 
-            return notify_fail(MAG"ôÃÇ§ØðÖåÁËÖåÃ¼£¬ËµµÀ£ºÃ»¸øÄã¹¤×÷£¬ÄãÔõÃ´ÅÜÀ´¸²ÃüÁË£¿\n"NOR);
-        if(!ob->query_temp("mark/»¹ÁË")) 
-            return notify_fail(CYN"ôÃÇ§ØðËµµÀ£ºÄãÏÈ°Ñ¹¤¾ß»¹»Ø¹¤¾ß·¿£¬ÔÙÀ´¸²Ãü°É¡£\n"NOR);
-        if(!(ob->query_temp("mark/·¥Íê")||ob->query_temp("mark/ÍÚÍê")
-           ||ob->query_temp("mark/²¹Íê")))
-            return notify_fail(CYN"ôÃÇ§ØðËµµÀ£ºÄãÍµÀÁ°¡£¬½ÐÄã¸É»îÄã²»È¥¸É£¬ÅÜÀ´Áì¹¦! \n"NOR);
-        if( arg=="ok"&& (ob->query_temp("mark/·¥Íê") || ob->query_temp("mark/ÍÚÍê")
-           || ob->query_temp("mark/²¹Íê")))
+            return notify_fail(MAG"è£˜åƒä»žçš±äº†çš±çœ‰ï¼Œè¯´é“ï¼šæ²¡ç»™ä½ å·¥ä½œï¼Œä½ æ€Žä¹ˆè·‘æ¥è¦†å‘½äº†ï¼Ÿ\n"NOR);
+        if(!ob->query_temp("mark/è¿˜äº†")) 
+            return notify_fail(CYN"è£˜åƒä»žè¯´é“ï¼šä½ å…ˆæŠŠå·¥å…·è¿˜å›žå·¥å…·æˆ¿ï¼Œå†æ¥è¦†å‘½å§ã€‚\n"NOR);
+        if(!(ob->query_temp("mark/ä¼å®Œ")||ob->query_temp("mark/æŒ–å®Œ")
+           ||ob->query_temp("mark/è¡¥å®Œ")))
+            return notify_fail(CYN"è£˜åƒä»žè¯´é“ï¼šä½ å·æ‡’å•Šï¼Œå«ä½ å¹²æ´»ä½ ä¸åŽ»å¹²ï¼Œè·‘æ¥é¢†åŠŸ! \n"NOR);
+        if( arg=="ok"&& (ob->query_temp("mark/ä¼å®Œ") || ob->query_temp("mark/æŒ–å®Œ")
+           || ob->query_temp("mark/è¡¥å®Œ")))
         {
           command("haha "+ob->query("id"));
           command("thumb"+ob->query("id"));
-          command("say "+RANK_D->query_respect(ob)+"ÕâÊÇ¸øÄãµÄ½±ÉÍ£¡");
+          command("say "+RANK_D->query_respect(ob)+"è¿™æ˜¯ç»™ä½ çš„å¥–èµï¼");
 
         money =(int)(ob->query_skill("guiyuan-tunafa",1)/10)+random(5);
         pot =30+random(40);
@@ -60,10 +60,10 @@ int do_task(string arg)
         ob->add("potential",pot);
         ob->add("combat_exp",exp);
         ob->add("shen",-shen);
-        tell_object(ob,HIW" Äã±»½±ÀøÁË£º\n" + 
-            chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-            chinese_number(pot) + "µãÇ±ÄÜ\n"+
-            chinese_number(shen)+ "¸ºÉñ\n"NOR);
+        tell_object(ob,HIW" ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+            chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n"+
+            chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
+            chinese_number(shen)+ "è´Ÿç¥ž\n"NOR);
         ob->delete_temp("job_name");
         ob->delete_temp("mark");        
         return 1;

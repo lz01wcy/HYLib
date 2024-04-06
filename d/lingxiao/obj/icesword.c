@@ -6,16 +6,16 @@ inherit SWORD;
 
 void create()
 {
-   set_name(HIW "±ù½£" NOR, ({"ice sword", "sword", "jian"}));
+   set_name(HIW "å†°å‰‘" NOR, ({"ice sword", "sword", "jian"}));
    set_weight(5000);
-   set("unit", "°Ñ");
-   set("long", "Ò»°ÑÉ¢·¢×ÅÉ­É­º®ÆøµÄ±ù½£,ÁîÈËÍûÖ®Éúº®¡£\n");
+   set("unit", "æŠŠ");
+   set("long", "ä¸€æŠŠæ•£å‘ç€æ£®æ£®å¯’æ°”çš„å†°å‰‘,ä»¤äººæœ›ä¹‹ç”Ÿå¯’ã€‚\n");
    set("value", 8);
    set("material", "ice");
    set("wield_msg",
-"$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖÐ£¬Ö»¾õÒ»¹Éº®ÆøÆËÃæ¶øÀ´£¡\n");
+"$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œåªè§‰ä¸€è‚¡å¯’æ°”æ‰‘é¢è€Œæ¥ï¼\n");
    set("unwield_msg",
-"$N½«ÊÖÖÐµÄ$n²åÈëÑü¼ä£¬¾õµÃÅ¯ºÍ¶àÁË¡£\n");
+"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ï¼Œè§‰å¾—æš–å’Œå¤šäº†ã€‚\n");
 
    init_sword(50);
 
@@ -49,7 +49,7 @@ void melt()
      if( (int)env->query_skill("bingxue-xinfa", 1) < 20 )
      {
         if(environment(env))
-          message_vision("$N¾õµÃÉíÉÏÁ¹Á¹µÄ£¬ÊªÊªµÄ£¬Ô­À´ÊÇ±ù½£»¯ÁË¡£\n", env);
+          message_vision("$Nè§‰å¾—èº«ä¸Šå‡‰å‡‰çš„ï¼Œæ¹¿æ¹¿çš„ï¼ŒåŽŸæ¥æ˜¯å†°å‰‘åŒ–äº†ã€‚\n", env);
         destruct(this_object());
 //        this_object()->move("/d/city/empty");
         return;
@@ -60,7 +60,7 @@ void melt()
    {//a room.
      if( (string)env->query("outdoors") != "lingxiao" )
      {
-        tell_object(env,"±ù½£ÖÕÓÚ»¯³ÉÁËÒ»Ì²Ë®£¬Á÷µÃµ½´¦¶¼ÊÇ¡£\n");
+        tell_object(env,"å†°å‰‘ç»ˆäºŽåŒ–æˆäº†ä¸€æ»©æ°´ï¼Œæµå¾—åˆ°å¤„éƒ½æ˜¯ã€‚\n");
         destruct(this_object());
 //        this_player()->set("apply/damage",0);
         return;

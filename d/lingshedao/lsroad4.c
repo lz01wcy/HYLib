@@ -1,9 +1,9 @@
 //Room:/d/lingshedao/lsroad4.c
 inherit ROOM;
-void create() {          set("short", "É½¼äĞ¡µÀ");
+void create() {          set("short", "å±±é—´å°é“");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÏÂÉ½µÄÂ·,Í¸¹ıÊ÷Ö¦µÄ¼äÏ¶,¿ÉÒÔÒşÒş¿´µ½ÎµÀ¶µÄ
-´óº£.
+è¿™æ˜¯ä¸€æ¡ä¸‹å±±çš„è·¯,é€è¿‡æ ‘æçš„é—´éš™,å¯ä»¥éšéšçœ‹åˆ°è”šè“çš„
+å¤§æµ·.
 LONG );
         set("exits", ([
                 "westup"    : __DIR__"shanyao",

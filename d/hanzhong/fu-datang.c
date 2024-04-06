@@ -1,4 +1,4 @@
-// fu-datang ¸»¼Ò´óÌÃ
+// fu-datang å¯Œå®¶å¤§å ‚
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¸»¼Ò´óÌÃ");
+        set("short", "å¯Œå®¶å¤§å ‚");
         set("long", @LONG
-ÕâÀïÊÇºîÔ±Íâ¼ÒµÄ´óÌÃ£¬ÌÃÁºÉÏ¹Ò×ÅÒ»¿éØÒ(bian)¡£ÌÃÄÚ°Ú
-·Å×ÅÒ»Ð©°ËÏÉ×ÀºÍÒÎ×Ó£¬ÌÃ±ÚÉÏÃ·À¼Öñ¾ÕµÄÖñÁ±±»¹Ò³ÉÁËÀ¼Öñ¾Õ
-Ã·£¬¿´À´Õâ¼ÒÒ²²»¹ýÊÇ¸½Ó¹·çÑÅµÄ±©·¢»§¶øÒÑ¡£
+è¿™é‡Œæ˜¯ä¾¯å‘˜å¤–å®¶çš„å¤§å ‚ï¼Œå ‚æ¢ä¸ŠæŒ‚ç€ä¸€å—åŒ¾(bian)ã€‚å ‚å†…æ‘†
+æ”¾ç€ä¸€äº›å…«ä»™æ¡Œå’Œæ¤…å­ï¼Œå ‚å£ä¸Šæ¢…å…°ç«¹èŠçš„ç«¹å¸˜è¢«æŒ‚æˆäº†å…°ç«¹èŠ
+æ¢…ï¼Œçœ‹æ¥è¿™å®¶ä¹Ÿä¸è¿‡æ˜¯é™„åº¸é£Žé›…çš„æš´å‘æˆ·è€Œå·²ã€‚
 LONG
         );
         set("exits", ([
@@ -21,11 +21,11 @@ LONG
         ]));
         set("item_desc", ([
            "bian": HIR"
-££££££££££££££££££££££££££
-££££¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡££££
-££££¡¡ÖÒ¡¡Òå¡¡´«¡¡¼Ò¡¡££££
-££££¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡££££
-££££££££££££££££££££££££££
+ï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒ
+ï¼ƒï¼ƒã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ï¼ƒï¼ƒ
+ï¼ƒï¼ƒã€€å¿ ã€€ä¹‰ã€€ä¼ ã€€å®¶ã€€ï¼ƒï¼ƒ
+ï¼ƒï¼ƒã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ï¼ƒï¼ƒ
+ï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒ
 "NOR
         ]) );
         set("objects", ([

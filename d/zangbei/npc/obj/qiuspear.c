@@ -3,18 +3,18 @@
 inherit STAFF; 
 void create()
 {
-        set_name(HIW"ÒøÇ¹"NOR, ({ "silver spear","spear" }) );
+        set_name(HIW"é“¶æª"NOR, ({ "silver spear","spear" }) );
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ¹â»ª¶áÄ¿µÄÒøÇ¹¡£Ç¹¸ËÊÇ´¿ÒøµÄ£¬ÉÏÃæ¿ÌÖøÎå¸ö×Ö£º¡¸·ï³Ç£¬ÒøÇ¹£¬Çñ¡£¡¹¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠå…‰åå¤ºç›®çš„é“¶æªã€‚æªæ†æ˜¯çº¯é“¶çš„ï¼Œä¸Šé¢åˆ»è‘—äº”ä¸ªå­—ï¼šã€Œå‡¤åŸï¼Œé“¶æªï¼Œé‚±ã€‚ã€ã€‚\n");
                 set("value", 4000);
                 set("strength",32);
                 set("material", "steel");
-                set("wield_msg", "$N²»Öª´ÓÊ²Ã´µØ·½Ãş³öÒ»°Ñ$n,¡¸à§¡¹µØÒ»ÉùÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕÆğ¡£\n");
+                set("wield_msg", "$Nä¸çŸ¥ä»ä»€ä¹ˆåœ°æ–¹æ‘¸å‡ºä¸€æŠŠ$n,ã€Œå”°ã€åœ°ä¸€å£°æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¶èµ·ã€‚\n");
         }
     ::init_staff(185);
 }    

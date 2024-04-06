@@ -6,15 +6,15 @@ string summon_more(object me);
 
 void create()
 {
-	set_name("ôÃÒİ", ({ "qiu yi","qiu" }));
+	set_name("è£˜é€¸", ({ "qiu yi","qiu" }));
 	set("long",
-	    "ÕâÊÇÒ»¸öËÄÊ®ÎåÁùËêµÄÖĞÄêÈË, Å¨Ã¼´óÑÛ,\n"+
-	    "Éí´©Ò»¼ş»ª¹óÑÅÖÂµÄ³¤ÅÛ, µ¹Ê¹Ëû¸üÏÔ¼¸·Ö¾«Éñ.\n"+
-	    "ËûÉñÉ«ÁİÈ».\n");
-	set("title", HIR"ÄÏ±±Ë«Ó¥"NOR);
-	set("gender", "ÄĞĞÔ");
+	    "è¿™æ˜¯ä¸€ä¸ªå››åäº”å…­å²çš„ä¸­å¹´äºº, æµ“çœ‰å¤§çœ¼,\n"+
+	    "èº«ç©¿ä¸€ä»¶åè´µé›…è‡´çš„é•¿è¢, å€’ä½¿ä»–æ›´æ˜¾å‡ åˆ†ç²¾ç¥.\n"+
+	    "ä»–ç¥è‰²å‡›ç„¶.\n");
+	set("title", HIR"å—åŒ—åŒé¹°"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 46);
-	set("nickname", HIC "·ÉÓ¥" NOR);
+	set("nickname", HIC "é£é¹°" NOR);
 	set("shen_type",1);
 	set("attitude", "peaceful");
 

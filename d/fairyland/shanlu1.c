@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-����һ������ɽ�ϵ����ɼ���ɽ·��ֻ���������洦�ɼ�÷����÷��ʢ��
-ʱ����һƬ��죬����Ʈ�硣
+这是一条昆仑山上到处可见的山路。只是这里已随处可见梅树，梅花盛开
+时到处一片火红，花香飘溢。
 LONG	);
 	set("exits", ([
 		"west" : __DIR__"shanlu2",

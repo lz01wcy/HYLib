@@ -1,14 +1,14 @@
 // baling/edao1
-// Room in ����
+// Room in 巴陵
 inherit ROOM;
 
 void create()
 {
-	set("short", "�ȵ�");
+	set("short", "谷底");
 	set("long", @LONG
-��˳��Ͽ�ȼ��ѵ����ţ���Ȼ����ǰ��Ȼ���ʣ�������ӭ��������
-����羰������ɽˮ�续���������¡�һ�ֻع���Ȼ�ĸо���Ȼ������ʹ
-�㲻���������涯������ᡣ
+你顺着峡谷艰难的走着，忽然间眼前豁然开朗，阵阵花香迎面扑来。
+这里风景秀丽，山水如画，空气清新。一种回归自然的感觉油然而升，使
+你不禁忘记外面动荡的社会。
 LONG);
 
 	set("exits", ([

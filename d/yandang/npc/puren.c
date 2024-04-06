@@ -2,8 +2,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÆÍÈË", ({"puren" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("ä»†äºº", ({"puren" }));
+	set("gender", "ç”·æ€§");
 	set("age", 16+random(30));
    
 	set("combat_exp", 3000); 

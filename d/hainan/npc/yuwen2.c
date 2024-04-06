@@ -6,11 +6,11 @@ void create()
 {
 	int skill;
 
-	set_name("ÖĞÄêÓæÎÌ", ({ "yu weng", "fisherman", "laoyuweng" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ä¸­å¹´æ¸”ç¿", ({ "yu weng", "fisherman", "laoyuweng" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 60+random(10));
-	set("long", "ÕâÊÇÒ»Î»ÂúÁ³ºì¹âµÄÖĞÄêÈË,ÉíÅûÂÌËòÒÂ,ÓÆÈ»×ÔµÃ¡£
-ÓÉÓÚËû¾­³£³öº£,Äã¿ÉÒÔÏòËû´òÌı³öº£µÄÊÂÇé.\n");
+	set("long", "è¿™æ˜¯ä¸€ä½æ»¡è„¸çº¢å…‰çš„ä¸­å¹´äºº,èº«æŠ«ç»¿è“‘è¡£,æ‚ ç„¶è‡ªå¾—ã€‚
+ç”±äºä»–ç»å¸¸å‡ºæµ·,ä½ å¯ä»¥å‘ä»–æ‰“å¬å‡ºæµ·çš„äº‹æƒ….\n");
 
 	set("combat_exp",4000);
 
@@ -32,8 +32,8 @@ void on_board()
 	room->delete("exits/out");
       room = load_object("/d/hainan/haibian");
 	room->delete("exits/enter");
-		message("vision", "ÀÏÓæÎÌ°ÑÌ¤½Å°åÊÕÁËÆğÀ´£¬»®Æğ½°À´£¬±âÖÛÏò²¨ÌÎĞÚÓ¿µÄ´óº£ÖĞÊ»È¥¡£\n",room );	
-		message_vision("$N°ÑÌ¤½Å°åÊÕÁËÆğÀ´£¬»®Æğ½°À´£¬±âÖÛÏò²¨ÌÎĞÚÓ¿µÄ´óº£ÖĞÊ»È¥¡£\n",this_object());	
+		message("vision", "è€æ¸”ç¿æŠŠè¸è„šæ¿æ”¶äº†èµ·æ¥ï¼Œåˆ’èµ·æ¡¨æ¥ï¼Œæ‰èˆŸå‘æ³¢æ¶›æ±¹æ¶Œçš„å¤§æµ·ä¸­é©¶å»ã€‚\n",room );	
+		message_vision("$NæŠŠè¸è„šæ¿æ”¶äº†èµ·æ¥ï¼Œåˆ’èµ·æ¡¨æ¥ï¼Œæ‰èˆŸå‘æ³¢æ¶›æ±¹æ¶Œçš„å¤§æµ·ä¸­é©¶å»ã€‚\n",this_object());	
 remove_call_out("on_board");
 		if( clonep(this_object()) ) call_out("arrive", 30);
 	else
@@ -46,12 +46,12 @@ void arrive()
       ob=this_player();
    if (living(ob)&&environment(ob)==environment())  {
 	room = load_object("/d/hainan/haibian");
-      message_vision("ÀÏÓæÎÌ°ÑÒ»¿éÌ¤½Å°å´îÉÏµÌ°¶£¬µÀ:µ½À²¡£\n",this_object());
-      message("vision", "´óº£ÖĞÒ¡À´Ò»ËÒĞ¡´¬£¬Ğ¡´¬ÂıÂıµÄÍ£ÔÚÁË¸Û±ß¡£´¬·ò°ÑÒ»¿éÌ¤½Å°å´îÉÏµÌ°¶¡£\n",room);
-		message_vision("$NË³×ÅÌ¤½Å°å×ßÉÏ°¶È¥¡£\n",ob);
-		message("vision",ob->name()+"Ë³×ÅÌ¤½Å°å×ßÉÏ°¶À´¡£\n",room);
+      message_vision("è€æ¸”ç¿æŠŠä¸€å—è¸è„šæ¿æ­ä¸Šå ¤å²¸ï¼Œé“:åˆ°å•¦ã€‚\n",this_object());
+      message("vision", "å¤§æµ·ä¸­æ‘‡æ¥ä¸€è‰˜å°èˆ¹ï¼Œå°èˆ¹æ…¢æ…¢çš„åœåœ¨äº†æ¸¯è¾¹ã€‚èˆ¹å¤«æŠŠä¸€å—è¸è„šæ¿æ­ä¸Šå ¤å²¸ã€‚\n",room);
+		message_vision("$Né¡ºç€è¸è„šæ¿èµ°ä¸Šå²¸å»ã€‚\n",ob);
+		message("vision",ob->name()+"é¡ºç€è¸è„šæ¿èµ°ä¸Šå²¸æ¥ã€‚\n",room);
 		ob->move("/d/hainan/haibian");
-      message("vision", "ÀÏÓæÎÌÊÕÆğÌ¤½Å°å£¬ÂıÂıµÄ°ÑĞ¡´¬Ê»Ïò´óº£¡£\n",room);
+      message("vision", "è€æ¸”ç¿æ”¶èµ·è¸è„šæ¿ï¼Œæ…¢æ…¢çš„æŠŠå°èˆ¹é©¶å‘å¤§æµ·ã€‚\n",room);
     }
 	this_object()->move("/d/hainan/haitan");
     return;
@@ -63,8 +63,8 @@ int do_ask(string arg)
 
 	me=this_player();	
 	
-      if((arg!="yu weng about out")&&(arg!="yu weng about ³öº£")) return 0;
-	message_vision("ÀÏÓæÎÌ´Ó´óÊ¯ºóÃæÍÏ³öÒ»ÌõĞ¡´¬£¬¶Ô$NµÀ:ÕâÎ»¿Í¹Ù,ÉÏ´¬°É¡£\n",me);
+      if((arg!="yu weng about out")&&(arg!="yu weng about å‡ºæµ·")) return 0;
+	message_vision("è€æ¸”ç¿ä»å¤§çŸ³åé¢æ‹–å‡ºä¸€æ¡å°èˆ¹ï¼Œå¯¹$Né“:è¿™ä½å®¢å®˜,ä¸Šèˆ¹å§ã€‚\n",me);
 	load_object("/d/hainan/haitan")->set("exits/enter","/d/hainan/duchuan");
 	this_object()->move("/d/hainan/duchuan");
 	load_object("/d/hainan/duchuan")->set("exits/out", "/d/hainan/haitan");

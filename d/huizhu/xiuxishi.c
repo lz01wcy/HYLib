@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ĞİÏ¢ÊÒ");
+        set("short", "ä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÏá·¿£¬·¿Àï±ğÎŞËûÎï£¬Ö»ÓĞÖĞ¼ä·Å×ÅÒ»ÕÅÊÕÊ°µÃÊæÊæ
-·ş·şµÄ´ó´²£¬¿´×Å¾ÍÈÃÈËÏëË¯¾õ¡£
+è¿™æ˜¯é—´æ•´æ´çš„å¢æˆ¿ï¼Œæˆ¿é‡Œåˆ«æ— ä»–ç‰©ï¼Œåªæœ‰ä¸­é—´æ”¾ç€ä¸€å¼ æ”¶æ‹¾å¾—èˆ’èˆ’
+æœæœçš„å¤§åºŠï¼Œçœ‹ç€å°±è®©äººæƒ³ç¡è§‰ã€‚
 LONG );
         set("sleep_room", 1);
         set("no_fight", 1);
@@ -19,9 +19,9 @@ LONG );
 	set("coor/x", -50070);
 	set("coor/y", 9130);
 	set("coor/z", 10);
-  set("door_name","ÃÅ");
+  set("door_name","é—¨");
 	set("door_dir","north");
-	set("force_name","ĞÄÑâ");
+	set("force_name","å¿ƒç š");
   set("outroom",__DIR__"zoulang2");
 	setup();
 }

@@ -1,4 +1,4 @@
-// zhifa.c Ö´·¨µÜ×Ó
+// zhifa.c æ‰§æ³•å¼Ÿå­
 
 #include <ansi.h>
 
@@ -13,8 +13,8 @@ string ask_me();
 
 void create()
 {
-	set_name("Ö´·¨µÜ×Ó", ({ "zhifa dizi", "dizi", "zhifa" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("æ‰§æ³•å¼Ÿå­", ({ "zhifa dizi", "dizi", "zhifa" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 40);
 	set("str", 30);
 	set("con", 30);
@@ -87,7 +87,7 @@ int do_kill(object me, object dest)
 	if( objectp(dest) && present(dest, environment(me))
 		 && !environment(me)->query("no_fight"))
 	{
-		message_vision(HIR "$N¶Ô$nËµµÀ£º"+me->query("owner")+"Ö¸ÈÏÄã·¸ÉÏ×öÂÒ£¬"+RANK_D->query_rude(dest)+"£¬ÈÏÃü°É£¡\n" NOR, me, dest);
+		message_vision(HIR "$Nå¯¹$nè¯´é“ï¼š"+me->query("owner")+"æŒ‡è®¤ä½ çŠ¯ä¸Šåšä¹±ï¼Œ"+RANK_D->query_rude(dest)+"ï¼Œè®¤å‘½å§ï¼\n" NOR, me, dest);
 		me->set_leader(dest);
 		me->kill_ob(dest);
 		dest->fight_ob(me);

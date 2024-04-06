@@ -8,12 +8,12 @@ void init()
 
 void create()
 {
-	set_name("Éßµ¨·Û", ({ "fen"}));
+	set_name("è›‡èƒ†ç²‰", ({ "fen"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°ü");
-		set("long", "ÕâÊÇÁÆÉËµÄ¡ºÉßµ¨·Û¡»¡£\n");
+		set("unit", "åŒ…");
+		set("long", "è¿™æ˜¯ç–—ä¼¤çš„ã€è›‡èƒ†ç²‰ã€ã€‚\n");
 		set("value", 2000);
 	}
 	setup();
@@ -23,18 +23,18 @@ int do_eat(string arg)
 {
 	object me = this_player();
 	if (!arg||arg!="fen")
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if ((int)this_player()->query("eff_qi") >= 
 	    (int)this_player()->query("max_qi"))
-		return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ½ğ´´Ò©¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨é‡‘åˆ›è¯ã€‚\n");
 	if(random(2)==0)
-	 {message_vision( "$N³ÔÏÂÒ»°üÉßµ¨·Û£¬¾õµÃÏóÊÇÍÁ¶¹·Û£¬Á¬ºôÉÏµ±£ş£ş\n" , me);
+	 {message_vision( "$Nåƒä¸‹ä¸€åŒ…è›‡èƒ†ç²‰ï¼Œè§‰å¾—è±¡æ˜¯åœŸè±†ç²‰ï¼Œè¿å‘¼ä¸Šå½“ï¿£ï¿£\n" , me);
 	  destruct(this_object());
 	  return 1;
 	 }
 	 me->add("qi",30);
 	 me->add("eff_qi",20);
-	message_vision( "$N³ÔÏÂÒ»°üÉßµ¨·Û£¬¶Ù¾õÕæÆøÉÏÓ¿£¬¾«ÉñºÃÁËĞ©¡£\n" , me);
+	message_vision( "$Nåƒä¸‹ä¸€åŒ…è›‡èƒ†ç²‰ï¼Œé¡¿è§‰çœŸæ°”ä¸Šæ¶Œï¼Œç²¾ç¥å¥½äº†äº›ã€‚\n" , me);
 	destruct(this_object());
 	return 1;
 }

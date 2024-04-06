@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÂÉÏã´¨",({"lv xiangchun","lv"}));
-        set("title",WHT"ÎÄÖÊ±ò±ò"NOR);
+        set_name("å¾‹é¦™å·",({"lv xiangchun","lv"}));
+        set("title",WHT"æ–‡è´¨å½¬å½¬"NOR);
         set("long","
-ÂÉÏã´¨ÊÇ¸öÁ³É«²Ô°×£¬ÎÄÖÊ±ò±òµÄÈË¡£ËùÒÔ±ðÈËÍùÍù»áµÍ¹ÀÁËËûµÄÁ¦Á¿£¬
-ÈÏÎªËû²¢Ã»ÓÐÊ²Ã´ÁË²»Æð¡£ÕâÖÖ´íÎó²»µ«¿ÉÐ¦£¬¶øÇÒ¿ÉÅÂ¡£ÂÉÏã´¨²»µ«ÊÇËïÓñ
-²®×îµÃÁ¦µÄÖúÊÖ£¬Ò²ÊÇÎäÁÖÖÐÈý¸ö×î¾«ÓÚ°µÆ÷µÄÈËÖ®Ò»£¬ÓÈÆäÊÇÊôÓÚ»ú»ÉÒ»Àà
-µÄ°µÆ÷£¬ÌìÏÂÔÙÒ²Ã»ÓÐÈÎºÎÈËÄÜ±ÈµÃÉÏËû¡£¡£\n");
+å¾‹é¦™å·æ˜¯ä¸ªè„¸è‰²è‹ç™½ï¼Œæ–‡è´¨å½¬å½¬çš„äººã€‚æ‰€ä»¥åˆ«äººå¾€å¾€ä¼šä½Žä¼°äº†ä»–çš„åŠ›é‡ï¼Œ
+è®¤ä¸ºä»–å¹¶æ²¡æœ‰ä»€ä¹ˆäº†ä¸èµ·ã€‚è¿™ç§é”™è¯¯ä¸ä½†å¯ç¬‘ï¼Œè€Œä¸”å¯æ€•ã€‚å¾‹é¦™å·ä¸ä½†æ˜¯å­™çŽ‰
+ä¼¯æœ€å¾—åŠ›çš„åŠ©æ‰‹ï¼Œä¹Ÿæ˜¯æ­¦æž—ä¸­ä¸‰ä¸ªæœ€ç²¾äºŽæš—å™¨çš„äººä¹‹ä¸€ï¼Œå°¤å…¶æ˜¯å±žäºŽæœºç°§ä¸€ç±»
+çš„æš—å™¨ï¼Œå¤©ä¸‹å†ä¹Ÿæ²¡æœ‰ä»»ä½•äººèƒ½æ¯”å¾—ä¸Šä»–ã€‚ã€‚\n");
         
-        set("gender","ÄÐÐÔ");
+        set("gender","ç”·æ€§");
         
         set("age",32);          
         set("int",52);

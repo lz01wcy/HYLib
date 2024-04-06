@@ -1,22 +1,22 @@
-// jinfenggou.c ½ğ¹³
+// jinfenggou.c é‡‘é’©
 // by star 98.12.4
 #include <weapon.h>
 inherit SWORD;
 #include <ansi.h>
 void create()
 {
-	set_name(HIY"½ğ¹³"NOR, ({ "jinfeng gou", "gou" }));
+	set_name(HIY"é‡‘é’©"NOR, ({ "jinfeng gou", "gou" }));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
+		set("unit", "æŸ„");
 set("treasure",1);
-		set("long", "ÕâÊÇÒ»±úÎ¹ÁË¾ç¶¾µÄ½ğ¹³£¬¹³¶ËºÃËÆÒ»Ö»ÉßÍ·¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŸ„å–‚äº†å‰§æ¯’çš„é‡‘é’©ï¼Œé’©ç«¯å¥½ä¼¼ä¸€åªè›‡å¤´ã€‚\n");
 		set("value", 10000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÇÊÖĞ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›é˜ä¸­ã€‚\n");
 	}
 	init_sword(200);
 	setup();

@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("É±ÊÖ",({ "killer" }) );
-   set("gender", "ÄĞĞÔ" );		
+   set_name("æ€æ‰‹",({ "killer" }) );
+   set("gender", "ç”·æ€§" );		
    set("age",38);
-   set("long", "ÕâÊÇÒ»ÃûÖ°ÒµÉ±ÊÖ¡£\n");       
+   set("long", "è¿™æ˜¯ä¸€åèŒä¸šæ€æ‰‹ã€‚\n");       
    set("combat_exp",600000);
    set_skill("dodge",150);
    set_skill("parry",150);

@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���޺�");
+        set("short", "星宿海");
         set("long", @LONG
-���������޺��ߡ�˵�Ǻ�����ʵ��Ƭ���������󣬵���ʮ���ն�
-������������ͨ�����޺�������ϱ����������ܶ桪�����¶���
-��������һ������(paizi)��
+这里是星宿海边。说是海，其实是片湖泊和沼泽，地形十分险恶。
+这里左右两厢通向星宿海的深处，南边是星宿派总舵――日月洞。
+洞口立着一个牌子(paizi)。
 LONG );
         set("exits", ([
              "north" : __DIR__"riyuedong",
@@ -26,7 +26,7 @@ LONG );
         set("valid_startroom",1);
     set_temp("wayao2",2);
         set("item_desc", ([
-                "paizi" : "���޺����أ����¶����졣\n",
+                "paizi" : "星宿海福地，日月洞洞天。\n",
         ]));
         //set("objects", ([
         //        "/kungfu/class/xingxiu/zhaixing" : 1,
@@ -44,10 +44,10 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ((!myfam || myfam["family_name"] != "������") && dir != "north" &&
+        if ((!myfam || myfam["family_name"] != "星宿派") && dir != "north" &&
                 (present("chuchen zi", environment(me)))) {
-                say("�����Ӷ�"+me->name()+"�ȵ����㲻�������ɵ��ӣ�����Դ�ү�ҵĸ��ȾͿ������\n");
-                return notify_fail("�����Ӻȵ����㲻�������ɵ��ӣ�����Դ�ү�ҵĸ��ȾͿ������\n");
+                say("出尘子对"+me->name()+"喝道：你不是星宿派弟子，不想吃大爷我的钢杖就快滚开。\n");
+                return notify_fail("出尘子喝道：你不是星宿派弟子，不想吃大爷我的钢杖就快滚开。\n");
         }
         return ::valid_leave(me, dir);
 }

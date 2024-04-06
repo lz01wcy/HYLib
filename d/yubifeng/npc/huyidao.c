@@ -5,11 +5,11 @@ string ask_book();
 
 void create()
 {
-	set_name("ºúÒ»µ¶", ({"hu yidao", "hu", "yidao"}));
-	set("gender", "ÄĞĞÔ");
-	set("nickname", "ÁÉ¶«´óÏÀ");
+	set_name("èƒ¡ä¸€åˆ€", ({"hu yidao", "hu", "yidao"}));
+	set("gender", "ç”·æ€§");
+	set("nickname", "è¾½ä¸œå¤§ä¾ ");
 	set("age", 35);
-	set("long","ÕâÈËÉúµÃµ±ÕæĞ×¶ñ£¬Ò»ÕÅºÚÆáÁ³Æ¤£¬ÂúÈùÅ¨÷×£¬Í··¢È´ÓÖ²»½á±è×Ó£¬ÅîÅîËÉËÉµÄ¶ÑÔÚÍ·ÉÏ¡£ËûÉúÆ½Ö»ÒªÓöµ½×ö»µÊÂµÄ£¬Á¢Ê±Ò»µ¶É±ÁË£¬ËùÒÔÃû×Ö½Ğ×÷ºúÒ»µ¶¡£\n");
+	set("long","è¿™äººç”Ÿå¾—å½“çœŸå‡¶æ¶ï¼Œä¸€å¼ é»‘æ¼†è„¸çš®ï¼Œæ»¡è…®æµ“é«¯ï¼Œå¤´å‘å´åˆä¸ç»“è¾«å­ï¼Œè“¬è“¬æ¾æ¾çš„å †åœ¨å¤´ä¸Šã€‚ä»–ç”Ÿå¹³åªè¦é‡åˆ°åšåäº‹çš„ï¼Œç«‹æ—¶ä¸€åˆ€æ€äº†ï¼Œæ‰€ä»¥åå­—å«ä½œèƒ¡ä¸€åˆ€ã€‚\n");
 	set("attitude", "peaceful");
         set("no_get", "1");
 	set("str", 45);
@@ -28,13 +28,13 @@ void create()
 	set("combat_exp", 590000);
 	set("score", 20000);
 	 
-	set_skill("force", 110);             // »ù±¾ÄÚ¹¦
-	set_skill("hujia-daofa", 350);       // ºú¼Òµ¶·¨	
-	set_skill("blade", 120);             // »ù±¾µ¶·¨
-	set_skill("hunyuan-yiqi", 120);      // »ìÔªÒ»Æø¹¦
-	set_skill("dodge", 120);             // »ù±¾¶ãÉÁ
-	set_skill("shaolin-shenfa", 320);    // ºú¼ÒÉí·¨
-	set_skill("parry", 120);             // »ù±¾ÕĞ¼Ü
+	set_skill("force", 110);             // åŸºæœ¬å†…åŠŸ
+	set_skill("hujia-daofa", 350);       // èƒ¡å®¶åˆ€æ³•	
+	set_skill("blade", 120);             // åŸºæœ¬åˆ€æ³•
+	set_skill("hunyuan-yiqi", 120);      // æ··å…ƒä¸€æ°”åŠŸ
+	set_skill("dodge", 120);             // åŸºæœ¬èº²é—ª
+	set_skill("shaolin-shenfa", 320);    // èƒ¡å®¶èº«æ³•
+	set_skill("parry", 120);             // åŸºæœ¬æ‹›æ¶
 		
 	map_skill("force", "hunyuan-yiqi");
 	map_skill("blade", "hujia-daofa");

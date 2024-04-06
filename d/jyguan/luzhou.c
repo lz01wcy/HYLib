@@ -1,4 +1,4 @@
-// luzhou.c ����
+// luzhou.c 绿洲
 // go town & mingjiao & tianshan
 // Ver 0.1 08/14/1998 by Freeze
 
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "�� ��");
+	set("short",HIG "绿 洲");
 	set("long",  @LONG
-����ããɳĮ��ͻȻ��������������������˷ܲ��ѣ���·��ƣ���ƺ���̼�
-ɢȥ�����������Ϸ�����һ��С�������Ϳ��Ե���ɽ�ˡ�
+在这茫茫沙漠里突然看见这个绿洲真是令人兴奋不已，连路的疲惫似乎顷刻间
+散去。这里往东南方向是一个小镇，向西就可以到天山了。
 LONG
 	);	
         set("outdoors", "jyguan");

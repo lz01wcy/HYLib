@@ -1,13 +1,13 @@
 // /d/zhuojun/yanfulou.c
-// Room in �ÿ�
+// Room in 涿郡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "�޸�¥");
+	set("short", "艳福楼");
 	set("long", @LONG
-�޸�¥�ǳ�ɳ������һ�Ҽ�Ժ���ϱ����ؼ���Ӧ�о��У���ʩ��
-����һ���������ܹ�˵ġ��޸�¥�ﲻʱ��������Ц����
+艳福楼是长沙城最大的一家妓院，南北两地佳丽应有尽有，设施豪
+华是一般人所不能光顾的。艳福楼里不时传来阵阵笑声。
 LONG
 	);
 set("exits", ([

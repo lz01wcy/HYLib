@@ -6,19 +6,19 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¶«³§°µµÀ");
+	set("short", "ä¸œå‚æš—é“");
 	set("long", @LONG
-ÕâÊÇÒ»Ìõ°µµÀ£¬ÊÇ×¨Îª÷¡°İ´Ó÷¡¸®Ö±½Óµ½¶«³§ÓÃµÄ¡£ÄÏ±ßÊÇÒ»ÉÈÄ¾
-ÃÅ(door)¡£
+è¿™æ˜¯ä¸€æ¡æš—é“ï¼Œæ˜¯ä¸“ä¸ºé³Œæ‹œä»é³Œåºœç›´æ¥åˆ°ä¸œå‚ç”¨çš„ã€‚å—è¾¹æ˜¯ä¸€æ‰‡æœ¨
+é—¨(door)ã€‚
 LONG );
 	set("exits", ([
 		"south"     :  __DIR__"aobai6",
 		"northeast" : __DIR__"aobai11",
 	]));
 	set("item_desc", ([
-		"door" : "ÕâÊÇÒ»ÉÈ¼«ºñµÄÄ¾ÃÅ¡£\n",
+		"door" : "è¿™æ˜¯ä¸€æ‰‡æåšçš„æœ¨é—¨ã€‚\n",
 	]));
-	create_door("south", "Ä¾ÃÅ", "north", DOOR_CLOSED);
+	create_door("south", "æœ¨é—¨", "north", DOOR_CLOSED);
 	set("no_clean_up", 0);
 	set("coor/x", -220);
 	set("coor/y", 4010);

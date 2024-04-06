@@ -1,14 +1,14 @@
-//      mishi.c ÃÜÊÒ
-//      Designed by secret (ÃØÃÜ)
+//      mishi.c å¯†å®¤
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","ÃÜÊÒ");
+        set("short","å¯†å®¤");
         set("long",@LONG
-ÕâÊÇÒ»ÌõĞ¡·¿¼ä¡£Ê²Ã´¶«Î÷¶¼Ã»ÓĞ¡£
+è¿™æ˜¯ä¸€æ¡å°æˆ¿é—´ã€‚ä»€ä¹ˆä¸œè¥¿éƒ½æ²¡æœ‰ã€‚
 LONG );
         set("exits",([
                 "south" : __DIR__"midao",

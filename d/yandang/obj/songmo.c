@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ËÎÄ«", ({ "songmo" , "ËÎÄ«"}) );
+	set_name("å®‹å¢¨", ({ "songmo" , "å®‹å¢¨"}) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
-		set("long", "Õı×ÚµÄËÎÄ«,ÓÉ°ÙÄêÀÏËÉÑ¬ÖÆ¶ø³É.\n");
+		set("unit", "æ¡");
+		set("long", "æ­£å®—çš„å®‹å¢¨,ç”±ç™¾å¹´è€æ¾ç†åˆ¶è€Œæˆ.\n");
 	}
 }
 

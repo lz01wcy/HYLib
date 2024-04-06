@@ -1,18 +1,18 @@
-// zhenzhu.c ÕäÖé 
+// zhenzhu.c çç  
 #include <armor.h>
  
 inherit CLOTH;
  
 void create()
 {
-	set_name("´óÕäÖé", ({ "zhenzhu" }) );
+	set_name("å¤§çç ", ({ "zhenzhu" }) );
 	set_weight(8000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "cloth");
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸ö´óÕäÖé£¬ºÜÖµÇ®¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªå¤§çç ï¼Œå¾ˆå€¼é’±ã€‚\n");
 		set("value", 30000);
 		set("armor_prop/dodge", 5);
 	}

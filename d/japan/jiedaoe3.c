@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ֵ�");
+  set ("short", "街道");
   set ("long", @LONG
-һ�������Ľֵ�,�ڽֵ���������һ������,��������Ǯ�˼ҵ�ס��.
-�ſڵ�̨��ͦ��.
+一条宽阔的街道,在街道的南面是一栋府第,看来是有钱人家的住所.
+门口的台阶挺高.
 LONG);
 
   set("exits", ([ /* sizeof() == 3 */

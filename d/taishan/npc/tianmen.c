@@ -4,9 +4,9 @@ inherit F_MASTER;
 #include <ansi.h>;
 void create()
 {
-        set_name("ÌìÃÅµÀÈË", ({ "tianmen daoren", "daoren", "tianmen" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", HIG"Ì©É½ÅÉµÚÊ®Èı´úÕÆÃÅ"NOR);
+        set_name("å¤©é—¨é“äºº", ({ "tianmen daoren", "daoren", "tianmen" }) );
+        set("gender", "ç”·æ€§");
+        set("title", HIG"æ³°å±±æ´¾ç¬¬åä¸‰ä»£æŒé—¨"NOR);
         set("class", "taoist");
         set("age", 45);
         set("attitude", "peaceful");
@@ -56,7 +56,7 @@ set("chat_chance_combat", 40);
     (: perform_action, "blade.ruhe" :),
  }) );
 
-        create_family("Ì©É½ÅÉ", 13, "ÕÆÃÅ");
+        create_family("æ³°å±±æ´¾", 13, "æŒé—¨");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -90,7 +90,7 @@ int accept_object(object who, object ob)
 	}
 	who->add_temp("learn_timed",i);
 
-      message_vision("ÌìÃÅµÀÈË¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
+      message_vision("å¤©é—¨é“äººå¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
 
 	return 1;
 }

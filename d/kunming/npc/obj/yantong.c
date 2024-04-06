@@ -10,17 +10,17 @@ int init()
 
 void create()
 {
-	set_name("Ë®ÑÌÍ²", ({"yan tong", "tong"}));
+	set_name("æ°´çƒŸç­’", ({"yan tong", "tong"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ö§ÔÆÄÏÈËÏ²°®µÄË®ÑÌÍ²¡£Äã¿ÉÒÔ(fire)À´ÎüÑÌ¡£\n");
-		set("unit", "¸ö");
+		set("long", "è¿™æ˜¯ä¸€æ”¯äº‘å—äººå–œçˆ±çš„æ°´çƒŸç­’ã€‚ä½ å¯ä»¥(fire)æ¥å¸çƒŸã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 100);
 		set("material", "steel");
-                set("wield_msg", "$N´ÓÉíºó³é³ö$nÎÕÔÚÊÖÖĞµ±×öÎäÆ÷¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÁË»ØÈ¥¡£\n");
+                set("wield_msg", "$Nä»èº«åæŠ½å‡º$næ¡åœ¨æ‰‹ä¸­å½“åšæ­¦å™¨ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾äº†å›å»ã€‚\n");
 	}
 	init_blade(20);
         setup();
@@ -30,15 +30,15 @@ int do_fire(string arg)
 {	
 	object me=this_player(),ob;
 	ob=present("yan", me);
-	if (arg=="" || !arg) return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+	if (arg=="" || !arg) return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 	if ( (arg=="yan" || arg == "smoke") && objectp(ob) )
 	{
-	message_vision("ÄãÄÃÆğË®ÑÌÍ²¹¾¹¾µÄÎüÁË¼¸¿Ú£¬»º»ºµÄÍÂ³öÑÌÎí£¬Ö»¾õµÄ¾«ÉñºÃ¶àÁË¡£\n",me);
+	message_vision("ä½ æ‹¿èµ·æ°´çƒŸç­’å’•å’•çš„å¸äº†å‡ å£ï¼Œç¼“ç¼“çš„åå‡ºçƒŸé›¾ï¼Œåªè§‰çš„ç²¾ç¥å¥½å¤šäº†ã€‚\n",me);
 	me->add("jing",20);
 	if ((int)me->query("jing") > (int)me->query("max_jing")*2)
 	me->set("jing",(int)me->query("max_jing")*2);
 	destruct(ob);
 	}
-	else return notify_fail("ÄãÒÑ¾­Ã»ÓĞÑÌÁË\n");
+	else return notify_fail("ä½ å·²ç»æ²¡æœ‰çƒŸäº†\n");
 	return 1;
 }	

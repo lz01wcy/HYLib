@@ -17,7 +17,7 @@ if ( !me->query("12gongs/all") && !wizardp(me))
 }
 void destroy(object ob)
 {
-        write(ob->query("name")+"呼的不见了！ \n");
+        write(ob->query("name")+"鍛肩殑涓嶈浜嗭紒 \n");
         destruct(ob);
         return;
 }

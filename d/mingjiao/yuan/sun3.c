@@ -6,9 +6,9 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ËïÈı»Ù", ({ "sun sanhui", "sanhui", "sun"}));
-        set("title", HIC "Éñ¼ı°ËĞÛ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å­™ä¸‰æ¯", ({ "sun sanhui", "sanhui", "sun"}));
+        set("title", HIC "ç¥ç®­å…«é›„" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -35,7 +35,7 @@ void create()
         map_skill("throwing", "xuanyuan-arrow");
         map_skill("unarmed", "changquan");
 
-	set_temp("is_riding", HIC"Çà»¨Âí"NOR);
+	set_temp("is_riding", HIC"é’èŠ±é©¬"NOR);
         setup();
         carry_object(__DIR__"obj/arrow")->wield();
         carry_object("/clone/misc/cloth")->wear();

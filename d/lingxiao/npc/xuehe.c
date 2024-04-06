@@ -5,13 +5,13 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIW"雪鹤"NOR, ({ "xue he", "he"}));
-        set("race", "野兽");
+        set_name(HIW"闆工"NOR, ({ "xue he", "he"}));
+        set("race", "閲庡吔");
         set("age", 3);
-        set("long", "一只全身洁白的雪鹤，是大雪山的特产。\n");
+        set("long", "涓�鍙叏韬磥鐧界殑闆工锛屾槸澶ч洩灞辩殑鐗逛骇銆俓n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "头部", "身体", "翅膀", "爪子", "尾巴" }) );
+        set("limbs", ({ "澶撮儴", "韬綋", "缈呰唨", "鐖瓙", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 300);

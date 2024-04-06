@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("µ¶É®", ({"daoseng","walker",}));
-        set("title", "ÉÙÁÖµ¶É®");
+        set_name("åˆ€åƒ§", ({"daoseng","walker",}));
+        set("title", "å°‘æž—åˆ€åƒ§");
         set("long",
-                "ËûÊÇÒ»Î»ÔÆÓÎËÄ·½µÄÐÐÕß£¬·çËªÂúÃæ£¬ÐÐÉ«´Ò´Ò£¬ËÆºõÕýÔÚ°ìÒ»¼þ¼±ÊÂ¡£\n"
+                "ä»–æ˜¯ä¸€ä½äº‘æ¸¸å››æ–¹çš„è¡Œè€…ï¼Œé£Žéœœæ»¡é¢ï¼Œè¡Œè‰²åŒ†åŒ†ï¼Œä¼¼ä¹Žæ­£åœ¨åŠžä¸€ä»¶æ€¥äº‹ã€‚\n"
         );
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "heroism");
         set("class", "bonze");
 
@@ -60,10 +60,10 @@ void create()
         me = this_object();
 
         if (interactive(ob)
-        && !environment(ob)->query("no_fight") && ob->query("gender")=="ÄÐÐÔ"
-        && ( (fam = ob->query("family")) && fam["family_name"] != "ÉÙÁÖÅÉ" && ob->query("class") == "bonze") )
+        && !environment(ob)->query("no_fight") && ob->query("gender")=="ç”·æ€§"
+        && ( (fam = ob->query("family")) && fam["family_name"] != "å°‘æž—æ´¾" && ob->query("class") == "bonze") )
         {
-                command("say ÄãÕâ¸öÎÞ³ÜÉÙÁÖÅÑÍ½£¬ÄÉÃüÀ´°É£¡£¡£¡\n");
+                command("say ä½ è¿™ä¸ªæ— è€»å°‘æž—å›å¾’ï¼Œçº³å‘½æ¥å§ï¼ï¼ï¼\n");
                 me->set_leader(ob);
                 me->kill_ob(ob);
                 ob->fight_ob(me);

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÁùºÍËş");
+        set("short", "å…­å’Œå¡”");
         set("long", @LONG
-ÕâÀïÊÇÁùºÍËşµÄÊ®²ã¡£´°(window)ÍâÊÇÅ¨×±µ­Ä¨µÄÎ÷×Óºş£¬Ëş
-ÖĞÁáçç°Ë½Ç£¬Çà×©ÆöµØ£¬µñÀ¸·ÉéÜ¼äÕ³Á¬ÁËĞ©ĞíÖëÍø¡£
+è¿™é‡Œæ˜¯å…­å’Œå¡”çš„åå±‚ã€‚çª—(window)å¤–æ˜¯æµ“å¦†æ·¡æŠ¹çš„è¥¿å­æ¹–ï¼Œå¡”
+ä¸­ç²ç‘å…«è§’ï¼Œé’ç –ç Œåœ°ï¼Œé›•æ é£æªé—´ç²˜è¿äº†äº›è®¸è››ç½‘ã€‚
 LONG);
         set("exits", ([
             "down"  : __DIR__"liuhe9",
@@ -17,7 +17,7 @@ LONG);
             __DIR__"honghua/zhou" :1,
         ]));
         set("item_desc", ([
-            "window": "´Ó´°¿ÚÍû³öÈ¥£¬Ç®½­¶«È¥¡£½ü´¦Å©ÌïÖĞ£¬ÓĞÒ»Å©·òÕıºÉ³ú¸ûÔÅ¡£\n",
+            "window": "ä»çª—å£æœ›å‡ºå»ï¼Œé’±æ±Ÿä¸œå»ã€‚è¿‘å¤„å†œç”°ä¸­ï¼Œæœ‰ä¸€å†œå¤«æ­£è·é”„è€•è€˜ã€‚\n",
         ]));
         set("no_clean_up", 0);
         setup();
@@ -26,6 +26,6 @@ int valid_leave(object me, string dir)
 {
         if (dir == "up" &&
             objectp(present("zhou zhongying", environment(me))))
-            return notify_fail("ÖÜÖÙÓ¢´µ×Å°×ºú×Ó£¬µ²ÔÚÂ¥Ìİ¿Ú¡£\n");
+            return notify_fail("å‘¨ä»²è‹±å¹ç€ç™½èƒ¡å­ï¼ŒæŒ¡åœ¨æ¥¼æ¢¯å£ã€‚\n");
         return ::valid_leave(me, dir);
 }

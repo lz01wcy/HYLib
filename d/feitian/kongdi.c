@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "空地");
+  set ("short", "绌哄湴");
   set ("long", @LONG
-一小块空地，神古活心流的弟子练功累了常在这里休息冲凉．
+涓�灏忓潡绌哄湴锛岀鍙ゆ椿蹇冩祦鐨勫紵瀛愮粌鍔熺疮浜嗗父鍦ㄨ繖閲屼紤鎭啿鍑夛紟
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

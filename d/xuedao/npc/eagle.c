@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("秃鹰", ({ "eagle" }) );
-        set("race", "野兽");
+        set_name("绉冮拱", ({ "eagle" }) );
+        set("race", "閲庡吔");
         set("age", 3);
-        set("long", "一只黑色的秃鹰，秃头黑羽，好吃腐尸，看起来讨厌极了。\n");
+        set("long", "涓�鍙粦鑹茬殑绉冮拱锛岀澶撮粦缇斤紝濂藉悆鑵愬案锛岀湅璧锋潵璁ㄥ帉鏋佷簡銆俓n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "头部", "身体", "翅膀", "爪子", "尾巴" }) );
+        set("limbs", ({ "澶撮儴", "韬綋", "缈呰唨", "鐖瓙", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 3000);

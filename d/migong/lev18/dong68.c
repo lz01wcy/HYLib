@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", YEL"̿���ż�"NOR);
+	set("short", YEL"炭坑遗迹"NOR);
 	set("long",YEL @LONG
-    �����ǿ�ӵ��.���ܿ�������һ����Χ���ұڳ��������ھ�ĺۼ�
-�Լ���ľͷ�������������ݵ��Ҷ�.�ڵ���������������.ר���˿�ͨ��
-ʹ��.
+    这里是矿坑的深处.你能看到的是一个周围的岩壁充满著被挖掘的痕迹
+以及用木头架设著以免塌陷的岩洞.在地上有铁轨铺设著.专供运矿车通行
+使用.
 LONG NOR);
 
 set("magicroom",1);set("outdoors","migong");

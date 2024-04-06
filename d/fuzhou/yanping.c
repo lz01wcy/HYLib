@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "黄岩县");
 	set("long", @LONG
-������������ɽ��,ռϪɽ֮��,��ˮ½֮�ᣬ��Ϊ����֮��
-��������ɽ�Ʊ����������Ĺ��������ѹ���Ϊʡ�����ϣ��ʹط�
-���ܲ��ᵡ��
+黄岩县在武夷山边,占溪山之雄,当水陆之会，向为入闽之咽
+喉。周遭山势壁立，深湍饶郭，易守难攻，为省城屏障，故关防
+严密不轻怠。
 LONG );
 	set("exits", ([
 		"northup"   : __DIR__"fzroad3",

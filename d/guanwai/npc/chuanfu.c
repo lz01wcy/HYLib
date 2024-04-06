@@ -1,4 +1,4 @@
-// chuanfu.c ´¬·ò
+// chuanfu.c èˆ¹å¤«
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("´¬·ò", ({ "chuan fu", "fu" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("èˆ¹å¤«", ({ "chuan fu", "fu" }));
+        set("gender", "ç”·æ€§");
         set("age", 36);
         set("long",
-        "ÕâÊÇÒ»¸öËÉ»¨½­ÉÏµÄ´¬·ò¡£±¥¾­·çËªµÄÁ³ÉÏÍ¸³ö¶«±±ÈËµÄºÀË¬¡£\n"
+        "è¿™æ˜¯ä¸€ä¸ªæ¾èŠ±æ±Ÿä¸Šçš„èˆ¹å¤«ã€‚é¥±ç»é£Žéœœçš„è„¸ä¸Šé€å‡ºä¸œåŒ—äººçš„è±ªçˆ½ã€‚\n"
         );
 
         set("combat_exp", 10000);
@@ -32,18 +32,18 @@ int accept_object(object who, object ob)
     object myenv ;
     if (ob->query("money_id") && ob->value() >= 10000)
     {
-        message_vision("´¬·ò¶Ô$NËµ£ººÃ£¡¼ÈÈ»ÕâÎ»" + RANK_D->query_respect(who) +
-        "Òª¹ý½­£¬\nÄÇÎÒ¾ÍËÍÄãÉÏÕâÌõ´¬°É£¡\n" , who);
-        message_vision("´¬·òºÍ$NÉÏÁË´¬£¬Ò»Éù¡¸ÆðÃª¡¹´¬¾ÍÕÅ·«Àë°¶ÁË......\n", who);
+        message_vision("èˆ¹å¤«å¯¹$Nè¯´ï¼šå¥½ï¼æ—¢ç„¶è¿™ä½" + RANK_D->query_respect(who) +
+        "è¦è¿‡æ±Ÿï¼Œ\né‚£æˆ‘å°±é€ä½ ä¸Šè¿™æ¡èˆ¹å§ï¼\n" , who);
+        message_vision("èˆ¹å¤«å’Œ$Nä¸Šäº†èˆ¹ï¼Œä¸€å£°ã€Œèµ·é”šã€èˆ¹å°±å¼ å¸†ç¦»å²¸äº†......\n", who);
         who->move ("/d/guanwai/songhuajiang");
-        tell_object(who, BLU "ÄãÔÚ½­ÉÏÒ»Â·Æ¯Á÷.......\n" NOR ) ;
+        tell_object(who, BLU "ä½ åœ¨æ±Ÿä¸Šä¸€è·¯æ¼‚æµ.......\n" NOR ) ;
         call_out("goto_songhua",10,who) ;
  //       destruct(this_object());
        	return 1;
     }
     else  
     {
-	message_vision("´¬·òÖåÃ¼¶Ô$NËµ£º¾ÍÕâµã£¿ÄãÁíÕÒ¸ßÃ÷°É£¡ËµÍêµôÍ·¾Í×ßÁË¡£\n", who);
+	message_vision("èˆ¹å¤«çš±çœ‰å¯¹$Nè¯´ï¼šå°±è¿™ç‚¹ï¼Ÿä½ å¦æ‰¾é«˜æ˜Žå§ï¼è¯´å®ŒæŽ‰å¤´å°±èµ°äº†ã€‚\n", who);
         destruct(this_object());
 	return 0;
     }
@@ -51,6 +51,6 @@ int accept_object(object who, object ob)
 
 void goto_songhua(object ob)
 {
-   tell_object(ob , "\n´¬ºÜ¿ìÍ£¿¿±Ë°¶¡£ÄãÌ§½Å¿ç³ö´¬À´¡£\n\n" ) ;
+   tell_object(ob , "\nèˆ¹å¾ˆå¿«åœé å½¼å²¸ã€‚ä½ æŠ¬è„šè·¨å‡ºèˆ¹æ¥ã€‚\n\n" ) ;
    ob->move ("/d/guanwai/damenkan") ;
 }

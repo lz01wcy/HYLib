@@ -4,12 +4,12 @@ inherit ROOM;
 int valid_leave();
 void create()
 {
-	set("short", WHT"ÃßÁú¶´"NOR);
+	set("short", WHT"çœ é¾™æ´ž"NOR);
 	set("long", @LONG
-ËÄÖÜ¶¼ÊÇÃ¯ÃÜµÄÊ÷ÁÖ£¬Ç°·½µÄÑÂ±ÚÉÏÓÐÒ»¸öÒõÉ­É­µÄ´ó¶´Ñ¨,ÕýÊÇ
-ÎäÁÖÖÐ×îÐ×ÏÕµÄµØ·½[ÃßÁú¶´]¡£´«Ëµ¶´Àï²Ø×ÅÎÞÊý±¦Îï£¬Êý°ÙÄêÀ´ÎÞÊý
-ÎäÁÖ¸ßÊÖÔáËÍÓÚ´Ë£¬µ«»î×Å³öÀ´µÄÈËÈ´´ÓÃ»ÓÐ×ßµ½¹ý¶´µÄ¾¡Í·¡£
-µØ·½ÓÐÒ»¸öÉÁ¹âµã£¬ÄãºÃÏñÍ¨¹ýÕâÀïÒÆµ½(yidong)Ê²Ã´µØ·½È¥¡£ 
+å››å‘¨éƒ½æ˜¯èŒ‚å¯†çš„æ ‘æž—ï¼Œå‰æ–¹çš„å´–å£ä¸Šæœ‰ä¸€ä¸ªé˜´æ£®æ£®çš„å¤§æ´žç©´,æ­£æ˜¯
+æ­¦æž—ä¸­æœ€å‡¶é™©çš„åœ°æ–¹[çœ é¾™æ´ž]ã€‚ä¼ è¯´æ´žé‡Œè—ç€æ— æ•°å®ç‰©ï¼Œæ•°ç™¾å¹´æ¥æ— æ•°
+æ­¦æž—é«˜æ‰‹è‘¬é€äºŽæ­¤ï¼Œä½†æ´»ç€å‡ºæ¥çš„äººå´ä»Žæ²¡æœ‰èµ°åˆ°è¿‡æ´žçš„å°½å¤´ã€‚
+åœ°æ–¹æœ‰ä¸€ä¸ªé—ªå…‰ç‚¹ï¼Œä½ å¥½åƒé€šè¿‡è¿™é‡Œç§»åˆ°(yidong)ä»€ä¹ˆåœ°æ–¹åŽ»ã€‚ 
 LONG );
 	set("exits", ([
 		"west" : __DIR__"migong2",
@@ -26,7 +26,7 @@ int valid_leave(object me, string dir)
 	if (dir =="down")
   {    
         if ( me->query("combat_exp") < 50000)
-                return notify_fail("¾ÍÆ½ÄãÕâµãÎ¢Ä©¹¦·ò²»ÊÇÈ¥ËÍËÀÂð£¡\n");
+                return notify_fail("å°±å¹³ä½ è¿™ç‚¹å¾®æœ«åŠŸå¤«ä¸æ˜¯åŽ»é€æ­»å—ï¼\n");
 
 	
 		inv=all_inventory(me);
@@ -35,7 +35,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë¸øÀïÃæµÄ¹ÖÎïËÍµãÐÄÈ¥£¿\n");
+     				return notify_fail("ä½ æƒ³ç»™é‡Œé¢çš„æ€ªç‰©é€ç‚¹å¿ƒåŽ»ï¼Ÿ\n");
        		
 		}
 		
@@ -58,16 +58,16 @@ int i;
         object room;
 object me=this_player();
  	if (!arg)
-	return notify_fail("ÄãÒªÈ¥µÚ¼¸²ãÃÔ¹¬£¿(lev1-22)\n");
+	return notify_fail("ä½ è¦åŽ»ç¬¬å‡ å±‚è¿·å®«ï¼Ÿ(lev1-22)\n");
         if (!me->query("jobtarget"))
-	return notify_fail("ÄãÃ»ÓÐÊ¹ÓÃ¹ýÍÁÁéÖéÔÚÃÔ¹¬Àï¼ÇÂ¼ÄãËùµ½¹ýµÄ²ã´Î!\n");
+	return notify_fail("ä½ æ²¡æœ‰ä½¿ç”¨è¿‡åœŸçµç åœ¨è¿·å®«é‡Œè®°å½•ä½ æ‰€åˆ°è¿‡çš„å±‚æ¬¡!\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã±³×ÅÈËÏë¸øÀïÃæµÄ¹ÖÎïËÍµãÐÄÈ¥£¿\n");
+     				return notify_fail("ä½ èƒŒç€äººæƒ³ç»™é‡Œé¢çš„æ€ªç‰©é€ç‚¹å¿ƒåŽ»ï¼Ÿ\n");
        		
 		}
 
@@ -79,12 +79,12 @@ object me=this_player();
 	&& arg!="lev13"&& arg!="lev14"&& arg!="lev15"
 	&& arg!="lev16" && arg!="lev17" && arg!="lev18" && arg!="lev19"
 	&& arg!="lev20"&& arg!="lev21"&& arg!="lev22")
-	 	return notify_fail("ÄãÒªÈ¥µÚ¼¸²ãÃÔ¹¬£¿(lev1-22)\n");
+	 	return notify_fail("ä½ è¦åŽ»ç¬¬å‡ å±‚è¿·å®«ï¼Ÿ(lev1-22)\n");
     if (me->query("neili")<1000)
-	return notify_fail("ÄãµÄÄÚÁ¦²»×ã!\n");
+	return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³!\n");
 
     if (me->query_condition("migongmove"))
-	return notify_fail("Äã¸Õ¸ÕÓÃ¹ýÒÆ¶¯µã£¬µÈ»áÔÙÀ´°É!\n");
+	return notify_fail("ä½ åˆšåˆšç”¨è¿‡ç§»åŠ¨ç‚¹ï¼Œç­‰ä¼šå†æ¥å§!\n");
 
 me->apply_condition("migongmove",18);
 me->delete("vendetta/authority");
@@ -98,7 +98,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13") >1 ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev1/dong0"+i;
 if (random(3)==0) 
@@ -113,7 +113,7 @@ mapm="/d/migong/lev1/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev2") {
         if (
@@ -124,7 +124,7 @@ strsrch(msg,"lev11") >1 ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14") >1 ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev2/dong0"+i;
 if (random(3)==0) 
@@ -140,7 +140,7 @@ mapm="/d/migong/lev2/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev3") {
         if (
@@ -151,7 +151,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14") >1 ||strsrch(msg,"lev15") >1 
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev3/dong0"+i;
 if (random(3)==0) 
@@ -167,7 +167,7 @@ mapm="/d/migong/lev3/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev4") {
         if (
@@ -178,7 +178,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev4/dong0"+i;
 if (random(3)==0) 
@@ -193,7 +193,7 @@ mapm="/d/migong/lev4/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev5") {
         if (
@@ -203,7 +203,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev5/dong0"+i;
 if (random(3)==0) 
@@ -219,7 +219,7 @@ mapm="/d/migong/lev5/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev6") {
         if (strsrch(msg,"lev6")>1  ||strsrch(msg,"lev7")>1  ||
@@ -228,7 +228,7 @@ strsrch(msg,"lev11") >1 ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev6/dong0"+i;
 if (random(3)==0) 
@@ -243,7 +243,7 @@ mapm="/d/migong/lev6/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev7") {
         if (strsrch(msg,"lev7") >1 ||
@@ -252,7 +252,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev7/dong0"+i;
 if (random(3)==0) 
@@ -267,7 +267,7 @@ mapm="/d/migong/lev7/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev8") {
         if (
@@ -276,7 +276,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev8/dong0"+i;
 if (random(3)==0) 
@@ -291,7 +291,7 @@ mapm="/d/migong/lev8/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev9") {
         if (strsrch(msg,"lev9")>1  ||strsrch(msg,"lev10")>1  ||
@@ -299,7 +299,7 @@ strsrch(msg,"lev11")>1  ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14")>1  ||strsrch(msg,"lev15") >1 
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev9/dong0"+i;
 if (random(3)==0) 
@@ -314,7 +314,7 @@ mapm="/d/migong/lev9/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev10") {
         if (strsrch(msg,"lev10")>1 ||
@@ -322,7 +322,7 @@ strsrch(msg,"lev11") >1 ||strsrch(msg,"lev12") >1 ||strsrch(msg,"lev13")>1 ||
 strsrch(msg,"lev14") >1 ||strsrch(msg,"lev15")>1  
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev10/dong0"+i;
 if (random(3)==0) 
@@ -337,7 +337,7 @@ mapm="/d/migong/lev10/dong"+i;
 }
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev11") {
         if (
@@ -345,7 +345,7 @@ strsrch(msg,"lev11") >1 ||strsrch(msg,"lev12")>1  ||strsrch(msg,"lev13")>1  ||
 strsrch(msg,"lev14") >1 ||strsrch(msg,"lev15") >1
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev11/dong0"+i;
 if (random(3)==0) 
@@ -361,14 +361,14 @@ mapm="/d/migong/lev11/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev12") {
         if (strsrch(msg,"lev12")>1 ||strsrch(msg,"lev13")>1 ||
 strsrch(msg,"lev14")>1 ||strsrch(msg,"lev15") >1
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev12/dong0"+i;
 if (random(3)==0) 
@@ -384,14 +384,14 @@ mapm="/d/migong/lev12/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev13") {
         if (strsrch(msg,"lev13")>1 ||
 strsrch(msg,"lev14") >1||strsrch(msg,"lev15") >1
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev13/dong0"+i;
 if (random(3)==0) 
@@ -407,14 +407,14 @@ mapm="/d/migong/lev13/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev14") {
         if (
 strsrch(msg,"lev14")>1 ||strsrch(msg,"lev15")>1 
         ) 
 {
-        message_vision(HIG "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIG "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 i=(random(5)+1);
 mapm="/d/migong/lev14/dong0"+i;
 if (random(3)==0) 
@@ -430,67 +430,67 @@ mapm="/d/migong/lev14/dong"+i;
 
 me->move(mapm);
 }
-else message_vision(HIG "$NÃ»µ½¹ýÕâÒ»²ã!\n" NOR, me);
+else message_vision(HIG "$Næ²¡åˆ°è¿‡è¿™ä¸€å±‚!\n" NOR, me);
 }
 	if(arg=="lev15") {
-        message_vision(HIG "Õâ²ã²»ÄÜÖ±½Óµ½£¬Çëµ½lev14!\n" NOR, me);
+        message_vision(HIG "è¿™å±‚ä¸èƒ½ç›´æŽ¥åˆ°ï¼Œè¯·åˆ°lev14!\n" NOR, me);
 }
 	if(arg=="lev16") {
         if (present("fire hat", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev16/dong22");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev17") {
         if (present("water armor", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev17/dong22");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev18") {
         if (present("earth shield", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev18/dong22");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev19") {
         if (present("air boot", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev19/dong22");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev20") {
         if (present("light jian", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev20/dong22");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev21") {
         if (present("dark jian", me) ) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev21/dong22");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 	if(arg=="lev22") {
         if (present("dark jian", me) ||
         present("light jian", me)) 
 {
-        message_vision(HIW "Ò»Õó¹â»ÔÁýÕÖÁË$N!\n" NOR, me);
+        message_vision(HIW "ä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†$N!\n" NOR, me);
 me->move("/d/migong/lev22/dong01");
 }
-else message_vision(HIR "$NÃ»µ½È¥Õâ²ãµÄ×Ê¸ñ\n" NOR, me);
+else message_vision(HIR "$Næ²¡åˆ°åŽ»è¿™å±‚çš„èµ„æ ¼\n" NOR, me);
 }
 
 return 1;

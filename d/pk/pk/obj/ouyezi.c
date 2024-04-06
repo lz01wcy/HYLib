@@ -9,14 +9,14 @@ object creat_weapon();
 
 void create()
 {
-        set_name("Å·Ò±×Ó", ({ "ouye zi", "zi" }) );
-        set("nickname", RED "³àĞÄ½£µ¨" NOR );
-	set("gender", "ÄĞĞÔ" );
+        set_name("æ¬§å†¶å­", ({ "ouye zi", "zi" }) );
+        set("nickname", RED "èµ¤å¿ƒå‰‘èƒ†" NOR );
+	set("gender", "ç”·æ€§" );
         set("age", 60);
         set("long", 	
-            "ËûÍ·ÉÏ°ü×ÅÍ·½í£¬ÈıÂÆ³¤÷×Æ®È÷ĞØÇ°£¬ÃæÄ¿ÇåÊİµ«ºìÔÎÓĞ¹â£¬\n"
-            "¶şÄ¿¾¼¾¼ÓĞÉñ£¬Ë¸Ë¸ÉÁ×Å¾¹ËÆÊÇÁİÁİµÄ½£¹â£¬»ëÉíËÆºõ¶¼°üÎ§\n"
-	    "ÔÚÒ»¹É½£ÆøÖ®ÖĞ¡£\n");
+            "ä»–å¤´ä¸ŠåŒ…ç€å¤´å·¾ï¼Œä¸‰ç¼•é•¿é«¯é£˜æ´’èƒ¸å‰ï¼Œé¢ç›®æ¸…ç˜¦ä½†çº¢æ™•æœ‰å…‰ï¼Œ\n"
+            "äºŒç›®ç‚¯ç‚¯æœ‰ç¥ï¼Œçƒçƒé—ªç€ç«Ÿä¼¼æ˜¯å‡›å‡›çš„å‰‘å…‰ï¼Œæµ‘èº«ä¼¼ä¹éƒ½åŒ…å›´\n"
+	    "åœ¨ä¸€è‚¡å‰‘æ°”ä¹‹ä¸­ã€‚\n");
         set("str", 25);
         set("dex", 20);
         set("con", 17);
@@ -39,7 +39,7 @@ void create()
         set_temp("apply/defense", 50);
         set_temp("apply/damage",50);
 
-	create_family("ĞşÌìÅÉ",1,"µÜ×Ó");
+	create_family("ç„å¤©æ´¾",1,"å¼Ÿå­");
 
         set("combat_exp", 250000);
 	set("score",0);
@@ -54,17 +54,17 @@ void create()
 	set("attitude", "peaceful");
         
 	set("inquiry", ([
-            "Öı½£"  : "Öı½£¿ÉÊÇ¼şÊ®·Ö¼è¿àµÄÊÂ£¬ÒªÏûºÄÈËµÄ¾«ÆøºÍÄÚÁ¦£¬ÄãÓĞ¾öĞÄºÍÒãÁ¦Âğ£¿\n",
-	    "Ô­ÁÏ"  : "Öı½£¿ÉÓÃÇ§ÄêĞşÌú¡£¡£¡£ÄãÕÒµ½ÁËÎÒ²ÅÄÜ°ïÄãÖı½£¡£\n",
-	    "ĞŞÀí"  :  (: ask_met() :),
+            "é“¸å‰‘"  : "é“¸å‰‘å¯æ˜¯ä»¶ååˆ†è‰°è‹¦çš„äº‹ï¼Œè¦æ¶ˆè€—äººçš„ç²¾æ°”å’Œå†…åŠ›ï¼Œä½ æœ‰å†³å¿ƒå’Œæ¯…åŠ›å—ï¼Ÿ\n",
+	    "åŸæ–™"  : "é“¸å‰‘å¯ç”¨åƒå¹´ç„é“ã€‚ã€‚ã€‚ä½ æ‰¾åˆ°äº†æˆ‘æ‰èƒ½å¸®ä½ é“¸å‰‘ã€‚\n",
+	    "ä¿®ç†"  :  (: ask_met() :),
        ]) );
 
         setup();
         set("chat_chance", 3);
         set("chat_msg", ({
-             "Å·Ò±×Ó¸§½£¶ø¸è£º¾ŞãÚÉñ±øÙâ£¬ÈËÖı¾Í¡£¸ÇÊÀ±¦½£Ùâ£¬ÅäÓ¢ĞÛ£¡\n",
-	     "Å·Ò±×ÓµÍÍ·³ÁÒ÷£¬ËÆºõÔÚË¼¿¼Ê²Ã´¡£\n"
-	     "Å·Ò±×ÓÌ¾ÁËÒ»¿ÚÆø£ºÉñ±øÅäÓ¢ĞÛ£¬¿ÉÓ¢ĞÛ¡£¡£¡£¡£¡£¡£\n"
+             "æ¬§å†¶å­æŠšå‰‘è€Œæ­Œï¼šå·¨é˜™ç¥å…µå…®ï¼Œäººé“¸å°±ã€‚ç›–ä¸–å®å‰‘å…®ï¼Œé…è‹±é›„ï¼\n",
+	     "æ¬§å†¶å­ä½å¤´æ²‰åŸï¼Œä¼¼ä¹åœ¨æ€è€ƒä»€ä¹ˆã€‚\n"
+	     "æ¬§å†¶å­å¹äº†ä¸€å£æ°”ï¼šç¥å…µé…è‹±é›„ï¼Œå¯è‹±é›„ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n"
        }) );
         carry_object("/clone/misc/cloth")->wear();
         carry_object("/clone/weapon/changjian")->wield();
@@ -83,54 +83,54 @@ string ask_met()
 	inv = all_inventory(me);
 	for(i=0; i<sizeof(inv); i++) {
         if((int)(inv[i]->query("weapon_prop")&&inv[i]->query("ownmake")))
-        return "ÄãÉíÉÏ²»ÊÇÓĞÎäÆ÷Âğ£¿"; 
+        return "ä½ èº«ä¸Šä¸æ˜¯æœ‰æ­¦å™¨å—ï¼Ÿ"; 
 
 
         if(me->is_busy())
-        return "ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£";
+        return "ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚";
 
 //        gold = present("gold_money", this_player());
-//        if( !gold) return "ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£";
+//        if( !gold) return "ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚";
 
 //        if((int) gold->query_amount() < 101)
-//        return "ÄãÉíÉÏÃ»´ø¹»Ò»°ÙÁ½½ğ×Ó¡£";
+//        return "ä½ èº«ä¸Šæ²¡å¸¦å¤Ÿä¸€ç™¾ä¸¤é‡‘å­ã€‚";
 
 	if (me->query("weapon/type")) {
 		switch((string)me->query("weapon/type"))
 		{
-			case "½£":
+			case "å‰‘":
 			weapon = new("/d/npc/m_weapon/weapon/m_sword");
 			weapon->move(me);
 //        gold->add_amount(-100);
         me->start_busy(5);
-                        return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "µ¶":
+                        return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!"; 
+			case "åˆ€":
 			weapon = new("/d/npc/m_weapon/weapon/m_blade");
 			weapon->move(me);
 //        gold->add_amount(-100);
         me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "±Ş":
+			return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!"; 
+			case "é­":
 			weapon = new("/d/npc/m_weapon/weapon/m_whip");
 			weapon->move(me);
 //        gold->add_amount(-100);
         me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "ÕÈ":
+			return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!"; 
+			case "æ–":
 			weapon = new("/d/npc/m_weapon/weapon/m_staff");
 			weapon->move(me);
 //        gold->add_amount(-100);
         me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
-			case "¹÷":
+			return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!"; 
+			case "æ£":
 			weapon = new("/d/npc/m_weapon/weapon/m_club");
 			weapon->move(me);
 //        gold->add_amount(-100);
         me->start_busy(5);
-			return "ĞŞºÃÁË,Çëquit,ÔÙÖØĞÂµÇÂ½Ò»´Î!"; 
+			return "ä¿®å¥½äº†,è¯·quit,å†é‡æ–°ç™»é™†ä¸€æ¬¡!"; 
 		}
           }
-else return "ÄãÔì¹ıÎäÆ÷Âğ£¿"; 
+else return "ä½ é€ è¿‡æ­¦å™¨å—ï¼Ÿ"; 
 }
 
 }

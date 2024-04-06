@@ -7,12 +7,12 @@ int do_play(string arg);
 
 void create()
 {
-	set_name("Öî¸ðÀÏÌ«", ({ "zhuge" }));
-	set("gender", "Å®ÐÔ");
+	set_name("è¯¸è‘›è€å¤ª", ({ "zhuge" }));
+	set("gender", "å¥³æ€§");
 	set("age", 54);
 	set("str", 25);
 	set("dex", 20);
-	set("long", "ÕâÊÇÒ»Î»ÀÏÌ«Ì«£¬Á½ÑÛÖ±ÊÓÇ°·½£¬¾¼¾¼ÓÐÉñ¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ä½è€å¤ªå¤ªï¼Œä¸¤çœ¼ç›´è§†å‰æ–¹ï¼Œç‚¯ç‚¯æœ‰ç¥žã€‚\n");
 	set("combat_exp", 200000);
 	set("score", 10000);
 	set("shen_type", 1);
@@ -35,7 +35,7 @@ call_out("greeting", 1, this_player());
 
 void greeting(object ob)
 {
-message_vision(HIC "Öî¸ðÀÏÌ«¶Ô$NÐ¦ÁËÐ¦£¬Ëµµ½:ºÙ£¬Ð¡×Ó£¬¿É±ðÏëÓÖÍæMUD£¬×¥×¡ÁËÓÐÄãºÃ¿´µÄ¡£\n" NOR,ob);		
+message_vision(HIC "è¯¸è‘›è€å¤ªå¯¹$Nç¬‘äº†ç¬‘ï¼Œè¯´åˆ°:å˜¿ï¼Œå°å­ï¼Œå¯åˆ«æƒ³åˆçŽ©MUDï¼ŒæŠ“ä½äº†æœ‰ä½ å¥½çœ‹çš„ã€‚\n" NOR,ob);		
 command("grin");
 return;
 }
@@ -44,7 +44,7 @@ return;
 int do_play(string arg)
 {
 if(!arg||arg!="mud")
-return notify_fail("ÄãÏëÍæÊ²Ã´£¿");
+return notify_fail("ä½ æƒ³çŽ©ä»€ä¹ˆï¼Ÿ");
 this_object()->kill_ob(this_player());
 this_player()->fight_ob(this_object());
 return 1;

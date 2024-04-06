@@ -3,18 +3,18 @@
 inherit HAMMER; 
 void create()
 {
-        set_name("´óÊ÷¸ù", ({ "stump"}) );
+        set_name("å¤§æ ‘æ ¹", ({ "stump"}) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÓÖ´ÖÓÖ´óÓÖÖØµÄÀÏÊ÷¸ù¡£\n");
-                set("unit", "¸ö");
+                set("long", "åˆç²—åˆå¤§åˆé‡çš„è€æ ‘æ ¹ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 1);
                 set("weight",40000);
                 set("material", "plant");
-                set("wield_msg", "$N·ÑÁ¦µØ¾ÙÆğÒ»¸ö$n¿¹ÔÚ¼çÉÏ¡£\n");
-                set("unwield_msg", "$N°Ñ$n·ÅÁËÏÂÀ´¡£\n");
+                set("wield_msg", "$Nè´¹åŠ›åœ°ä¸¾èµ·ä¸€ä¸ª$næŠ—åœ¨è‚©ä¸Šã€‚\n");
+                set("unwield_msg", "$NæŠŠ$næ”¾äº†ä¸‹æ¥ã€‚\n");
                 
         }
                 ::init_hammer(100);

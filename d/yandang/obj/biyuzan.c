@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"±ÌÓñô¢"NOR, ({ "biyuzan", "yuzan" }) );
+        set_name(HIG"ç¢§çŽ‰ç°ª"NOR, ({ "biyuzan", "yuzan" }) );
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
+		set("unit", "æ ¹");
 		set("value", 70);
 		set("material", "stone");
 	}

@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¡¼¹ÛÒôÆÕ¶É¾­¡½", ({"jing", "book"}));
+        set_name("ã€–è§‚éŸ³æ™®æ¸¡ç»ã€—", ({"jing", "book"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-	set("long", "Ò»±¾ºÜ¾ÉµÄÊé¡£\n");
+                set("unit", "æœ¬");
+	set("long", "ä¸€æœ¬å¾ˆæ—§çš„ä¹¦ã€‚\n");
         set("material", "paper");
         set("skill", ([
                         "name": "dodge",

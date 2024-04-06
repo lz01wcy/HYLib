@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ËşÁÖ");
+	set("short", "å¡”æ—");
 	set("long", @LONG
-ÕâÀïÊÇÉÙÁÖÀú´úÉ®ÂÂµÄÄ¹µØ£¬ÉÏ°Ù×ùÄ¹ËşÊ½Ñù·±¶à£¬ÔìĞÍ¸÷Òì¡£Äã
-ÖÃÉíÆäÖĞ£¬Ö»¿´µÃÑÛ»¨çÔÂÒ£¬²»Öª¸ÃÍùÄÄ¸ö·½Ïò×ß£¬ÄãËÆºõÃÔÂ·ÁË¡£
+è¿™é‡Œæ˜¯å°‘æ—å†ä»£åƒ§ä¾£çš„å¢“åœ°ï¼Œä¸Šç™¾åº§å¢“å¡”å¼æ ·ç¹å¤šï¼Œé€ å‹å„å¼‚ã€‚ä½ 
+ç½®èº«å…¶ä¸­ï¼Œåªçœ‹å¾—çœ¼èŠ±ç¼­ä¹±ï¼Œä¸çŸ¥è¯¥å¾€å“ªä¸ªæ–¹å‘èµ°ï¼Œä½ ä¼¼ä¹è¿·è·¯äº†ã€‚
 LONG );
 	set("exits", ([
 		"northeast" : __DIR__"talin2",
@@ -22,7 +22,7 @@ LONG );
                 "north"     : __DIR__"talin"+(random(10)+1),
                 "east" : __DIR__"slyuan",
 	]));
-	create_door("east", "Ä¾ÃÅ", "west", DOOR_CLOSED);
+	create_door("east", "æœ¨é—¨", "west", DOOR_CLOSED);
 	set("outdoors", "nanshaolin");
 	set("no_clean_up", 0);
 	set("coor/x", 1780);

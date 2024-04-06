@@ -1,4 +1,4 @@
-// caolianfang.c ²ÙÁ··¿
+// caolianfang.c æ“ç»ƒæˆ¿
 // Modified by Marz 03/27/96
 
 #include <room.h>
@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "²ÙÁ··¿");
+        set("short", "æ“ç»ƒæˆ¿");
         set("long", @LONG
-ÕâÊÇ¶şÂ¥²ÙÁ··¿ÉÏ£¬ËÄÃæ°Ë·½¶¼ÊÇ´ò¶·Éù£¬Îäµ±µÜ×ÓÀ´È¥´Ò´Ò¡£
+è¿™æ˜¯äºŒæ¥¼æ“ç»ƒæˆ¿ä¸Šï¼Œå››é¢å…«æ–¹éƒ½æ˜¯æ‰“æ–—å£°ï¼Œæ­¦å½“å¼Ÿå­æ¥å»åŒ†åŒ†ã€‚
 LONG );
         set("exits", ([
                 "south"     : __DIR__"caolian1",
@@ -27,8 +27,8 @@ int valid_leave(object me, string dir)
     mapping myfam;
     me = this_player();
     myfam = (mapping)me->query("family");
-    if ((!myfam || myfam["family_name"] != "Îäµ±ÅÉ") && (dir != "eastdown"))
-           return notify_fail("Äã²»ÊÇÎäµ±µÜ×Ó£¬²»µÃÈëÄÚ¡£\n");
+    if ((!myfam || myfam["family_name"] != "æ­¦å½“æ´¾") && (dir != "eastdown"))
+           return notify_fail("ä½ ä¸æ˜¯æ­¦å½“å¼Ÿå­ï¼Œä¸å¾—å…¥å†…ã€‚\n");
 
     return ::valid_leave(me, dir);
 }

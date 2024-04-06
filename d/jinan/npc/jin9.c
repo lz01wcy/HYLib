@@ -3,12 +3,12 @@
 inherit NPC; 
 void create()
 {
-        set_name("½ð¾ÅÁä", ({ "jin" }) );
+        set_name("é‡‘ä¹é¾„", ({ "jin" }) );
         set("long",
-                "½ð¾ÅÁä±¾ÊÇÁùÉÈÃÅÏÂµÚÒ»Éñ²¶£¬¸ß¹ó¸»ÓÐ£¬µ«ÊµÎªÁ¬·¸Êý¼þ´ó°¸µÄÐå»¨´óµÁ¡£
-Â½Ð¡·ïÀú¾¡¼èÐÁ·½²Å½«ÆäÉþÖ®ÓÚ·¨£¬ÏÖ±»¹ØÑºÔÚ¼ÃÄÏÌìÀÎÖÐ¡£\n"); 
+                "é‡‘ä¹é¾„æœ¬æ˜¯å…­æ‰‡é—¨ä¸‹ç¬¬ä¸€ç¥žæ•ï¼Œé«˜è´µå¯Œæœ‰ï¼Œä½†å®žä¸ºè¿žçŠ¯æ•°ä»¶å¤§æ¡ˆçš„ç»£èŠ±å¤§ç›—ã€‚
+é™†å°å‡¤åŽ†å°½è‰°è¾›æ–¹æ‰å°†å…¶ç»³ä¹‹äºŽæ³•ï¼ŒçŽ°è¢«å…³æŠ¼åœ¨æµŽå—å¤©ç‰¢ä¸­ã€‚\n"); 
         set("attitude", "heroism");
-        set("title", "Ðå»¨´óµÁ");
+        set("title", "ç»£èŠ±å¤§ç›—");
         set("no_heal",1);
         set("cor", 26);
         set("cps", 25);
@@ -30,7 +30,7 @@ void create()
         set_temp("apply/move", 10);
         set("chat_chance", 1);
         set("chat_msg", ({
-"½ð¾ÅÁä³¤Ì¾Ò»Éù÷öÈ»µÀ£ºÎÒÊµÔÚÊÇµÍ¹ÀÁËÂ½Ð¡·ïÄÇØË¡£¡£¡£\n",
+"é‡‘ä¹é¾„é•¿å¹ä¸€å£°é»¯ç„¶é“ï¼šæˆ‘å®žåœ¨æ˜¯ä½Žä¼°äº†é™†å°å‡¤é‚£åŽ®ã€‚ã€‚ã€‚\n",
         }) ); 
         setup();
     carry_object(__DIR__"obj/xiuhuazhen")->wield();
@@ -39,7 +39,7 @@ void create()
 void greeting(object ob)
 {
    if( !ob || environment(ob) != environment() ) return;
-                say( "½ð¾ÅÁäÕõÔú×ÅÌ§ÆðÍ·¿´ÁËÄãÒ»ÑÛ£¬¶Ï¶ÏÐøÐøÉëÒ÷×Å£º¾ÈÎÒ¡£¡£¡£¾È£¨£ò£å£ó£ã£õ£å£©¡£¡£¡£ ÎÒ¡£¡£¡£\n");
+                say( "é‡‘ä¹é¾„æŒ£æ‰Žç€æŠ¬èµ·å¤´çœ‹äº†ä½ ä¸€çœ¼ï¼Œæ–­æ–­ç»­ç»­å‘»åŸç€ï¼šæ•‘æˆ‘ã€‚ã€‚ã€‚æ•‘ï¼ˆï½’ï½…ï½“ï½ƒï½•ï½…ï¼‰ã€‚ã€‚ã€‚ æˆ‘ã€‚ã€‚ã€‚\n");
 } 
 void init()
 {
@@ -53,21 +53,21 @@ void init()
 int do_rescue(){
         object ob,money;
         if (!objectp(ob=this_player()->query_temp("weapon")))
-                return notify_fail("²»ÓÃ±øÆ÷¿´À´Ã»°ì·¨ÔÒ¿ª¼ÏËø¡£\n");
+                return notify_fail("ä¸ç”¨å…µå™¨çœ‹æ¥æ²¡åŠžæ³•ç ¸å¼€æž·é”ã€‚\n");
         if (ob->query("skill_type")!="hammer")
-                return notify_fail("¿´ÆðÀ´Ö»ÓÐÓÃ´¸×Ó²ÅÄÜÔÒ¿ª¼ÏËø¡£\n");
+                return notify_fail("çœ‹èµ·æ¥åªæœ‰ç”¨é”¤å­æ‰èƒ½ç ¸å¼€æž·é”ã€‚\n");
         if (sizeof(environment(this_object())->query("exits"))==0)
-                return notify_fail("Òª¾ÈÈË£¬ÖÁÉÙÏÈ¿ª¸öÃÅ°É£¿\n");
+                return notify_fail("è¦æ•‘äººï¼Œè‡³å°‘å…ˆå¼€ä¸ªé—¨å§ï¼Ÿ\n");
         if (this_player()->query("str")<21)
-                return notify_fail("ÄãÓÃ¾¡È«Á¦ÔÒÏò¼ÏËø£¬¼ÏËøÈ´ÎÆË¿Î´Ëð¡£\n");                   
-        message_vision("$NÄÃÆð"+ob->query("name")+"£¬ÓÃ¾¡È«Á¦°Ñ¼ÏËøÔÒ¿ª¡£\n",this_player());
-        message_vision("$NÀíÁËÀíÉ¢·¢£¬ÑöÃæ´óÐ¦£º¹þ¡£¡£¹þ¡£¡£Â½Ð¡·ï£¬ÎÒ»áÕÒÄãËãÇåÕâ±ÊÕÊµÄ£¡\n",this_object());
+                return notify_fail("ä½ ç”¨å°½å…¨åŠ›ç ¸å‘æž·é”ï¼Œæž·é”å´çº¹ä¸æœªæŸã€‚\n");                   
+        message_vision("$Næ‹¿èµ·"+ob->query("name")+"ï¼Œç”¨å°½å…¨åŠ›æŠŠæž·é”ç ¸å¼€ã€‚\n",this_player());
+        message_vision("$Nç†äº†ç†æ•£å‘ï¼Œä»°é¢å¤§ç¬‘ï¼šå“ˆã€‚ã€‚å“ˆã€‚ã€‚é™†å°å‡¤ï¼Œæˆ‘ä¼šæ‰¾ä½ ç®—æ¸…è¿™ç¬”å¸çš„ï¼\n",this_object());
         if (this_player()->query_temp("marks/prison_break")|| this_player()->query("combat_exp")<1500000) {
-                message_vision("$N»ÓÁË»ÓÒÂÐä£¬´óÐ¦ÖÐ×ÙÓ°½ÔÎÞ¡£\n",this_object());
+                message_vision("$NæŒ¥äº†æŒ¥è¡£è¢–ï¼Œå¤§ç¬‘ä¸­è¸ªå½±çš†æ— ã€‚\n",this_object());
                 } else {
                 this_player()->set_temp("marks/prison_break",1);
-                message_vision("$NµÍ×ÅÑÛ¾¦É¨ÁË$nÒ»ÑÛ£ºÒ²¿÷µÃÄãÀ´¾ÈÎÒ£¬ÕâÒ»Á½»Æ½ð¸øÄãËã×ö³êÐ»¡£\n",this_object(),this_player());
-                message_vision("$N»ÓÁË»ÓÒÂÐä£¬´óÐ¦ÖÐ×ÙÓ°½ÔÎÞ¡£\n",this_object());
+                message_vision("$Nä½Žç€çœ¼ç›æ‰«äº†$nä¸€çœ¼ï¼šä¹Ÿäºå¾—ä½ æ¥æ•‘æˆ‘ï¼Œè¿™ä¸€ä¸¤é»„é‡‘ç»™ä½ ç®—åšé…¬è°¢ã€‚\n",this_object(),this_player());
+                message_vision("$NæŒ¥äº†æŒ¥è¡£è¢–ï¼Œå¤§ç¬‘ä¸­è¸ªå½±çš†æ— ã€‚\n",this_object());
                 money=new("clone/money/gold");
                 money->move(this_player());
                 }

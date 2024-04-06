@@ -8,16 +8,16 @@ void init()
 
 void create()
 {
-	set_name(HIR "¶Ï³¦»¨" NOR, ({"hua3","duanchang"}));
-        set("unit", "¶ä");
-	set("long", "ÕâÊÇÒ»¶ä¶Ï³¦»¨,Í¨ÌåÍ¨ºì,ÏÊÄÛÓûµÎ,ÃÀÀöÒì³£¡£\n");
-        set("no_get", "Äã¸ù±¾²»¸Ò½üÇ°.\n");
+	set_name(HIR "æ–­è‚ èŠ±" NOR, ({"hua3","duanchang"}));
+        set("unit", "æœµ");
+	set("long", "è¿™æ˜¯ä¸€æœµæ–­è‚ èŠ±,é€šä½“é€šçº¢,é²œå«©æ¬²æ»´,ç¾Žä¸½å¼‚å¸¸ã€‚\n");
+        set("no_get", "ä½ æ ¹æœ¬ä¸æ•¢è¿‘å‰.\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="hua3") 
 	{
 		if(random(2)==0) this_player()->unconcious();

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "松堂");
 	set("long", @LONG
-��ǰһ�����䳯���İ�ʯ���������й��ӵļ�ɽ��ʯ����
-�ܱ�ֲ��Ƥ�ɣ������Ǿ��ڣ�ֻ�����������׶���ִ������վ
-����ǰ��
+面前一座三间朝东的白石敞轩，后有古朴的假山叠石。四
+周遍植白皮松，两侧是绝壁，只见两名绿衫僮儿手执拂尘，站
+在门前。
 LONG
 	);
 
@@ -24,7 +24,7 @@ LONG
 		__DIR__"npc/boy" : 2,
 	 ]));
 
-        set("outdoors", "����");
+        set("outdoors", "襄阳");
 	setup();
 	replace_program(ROOM); 
 }

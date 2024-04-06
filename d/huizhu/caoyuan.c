@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ԭ");
+	set("short", "草原");
 	set("long", @LONG
-�����Ĳ�ԭ���������ǰ����Ⱥ��ţ��Χ���������ߣ�Զ����ؽ���
-����ʱ�д�Ƭ���̳�ӿ��ɲ�Ǽ����������أ����Ǹ����ʱ�����ֵ�
-�����硣
+美丽的草原就在你的面前，成群的牛羊围绕在你身边，远处天地交际
+处不时有大片的烟尘涌起，刹那间就塞满了天地，那是戈壁中时而出现的
+龙卷风。
 LONG
 	);
 	set("objects", ([ /* sizeof() == 1 */

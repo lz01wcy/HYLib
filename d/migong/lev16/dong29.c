@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"��֮�õ�"NOR);
+	set("short", HIY"炎之旅店"NOR);
 	set("long", HIY @LONG
-  ���ڻ�Ԫ�ص�Ӱ�죬�⸽��ȫ��ɰĮ��������֮����������
-��ɰĮ�����ϵ�һ������!!��������֮�õꡣ�����������ط�
-˯��??(sleep)��Ҳ�������Ե�(sell)
+  由于火元素的影响，这附近全是砂漠，而这炎之都市正是在
+这砂漠绿洲上的一颗明珠!!这里是炎之旅店。你可以在这个地方
+睡觉??(sleep)，也可以买点吃的(sell)
 LONG NOR);
 set("magicroom",1);
 set("magicset",1);

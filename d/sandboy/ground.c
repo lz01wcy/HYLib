@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɹ�ȳ�");
+	set("short", "晒谷场");
 	set("long", @LONG
-���ົʵ��һƬɹ�ȳ�,���߶��˼������ݶ�,�Ա�һ����µ��,������
-�ü��ٽ���.�򶫿�,��һ�Ÿߴ������,�����л��˼�.
+黄泥夯实的一片晒谷场,场边堆了几个稻草堆,旁边一个大碌砘,看来有
+好几百斤重.向东看,是一颗高大的榕树,北面有户人家.
 LONG
 	);
 set("valid_startroom",1);

@@ -7,11 +7,11 @@ int do_say(string arg);
 
 void create()
 {
-	set("short", "»ÜÔ°");
+	set("short", "å‰å›­");
 	set("long", @LONG
-ÕâÀïÊÇÒ»´¦ÓÄ¾²µÄ»·¾³ËùÔÚ£¬Å¼¶ûÌýµ½ÍâÃæÖñÁÖÖÐ´«À´¼¸ÉùÇå´àµÄÄñ
-½Ð£¬Ô°×ÓÀïÖÖ×Å¸÷Ê½¸÷ÑùµÄ»¨¡£ÓÐÂÌ¾Õ£¨lvju£©£¬À¼»¨£¨lanhua)£¬Äµµ¤
-£¨mudan£©¡£¡£¡£¡£¡£¡£¡£
+è¿™é‡Œæ˜¯ä¸€å¤„å¹½é™çš„çŽ¯å¢ƒæ‰€åœ¨ï¼Œå¶å°”å¬åˆ°å¤–é¢ç«¹æž—ä¸­ä¼ æ¥å‡ å£°æ¸…è„†çš„é¸Ÿ
+å«ï¼Œå›­å­é‡Œç§ç€å„å¼å„æ ·çš„èŠ±ã€‚æœ‰ç»¿èŠï¼ˆlvjuï¼‰ï¼Œå…°èŠ±ï¼ˆlanhua)ï¼Œç‰¡ä¸¹
+ï¼ˆmudanï¼‰ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚
 LONG 
 	);
 	set("exits", ([

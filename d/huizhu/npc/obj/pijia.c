@@ -8,14 +8,14 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("Æ¤¼×",({"pi jia","pijia","jia"}));
+	set_name("çš®ç”²",({"pi jia","pijia","jia"}));
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("material","pi");
-		set("long", "ÕâÊÇÒ»¼şÅ£Æ¤ÖÆ³ÉµÄ¼×ëĞ£¬ÓÃÀ´±£»¤ÉÏ°ëÉí¡£\n");
+		set("long", "è¿™æ˜¯ä¸€ä»¶ç‰›çš®åˆ¶æˆçš„ç”²èƒ„ï¼Œç”¨æ¥ä¿æŠ¤ä¸ŠåŠèº«ã€‚\n");
 		set("armor_prop/armor",10);
 		set("value",2000);
 	}

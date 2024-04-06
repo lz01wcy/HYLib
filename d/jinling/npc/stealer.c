@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏÆòØ¤", ({ "beggar" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("è€ä¹žä¸", ({ "beggar" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 58);
-        set("long", "Ò»¸öÂúÁ³ÄàÎÛµÄÀÏÆòØ¤¡£\n");
+        set("long", "ä¸€ä¸ªæ»¡è„¸æ³¥æ±¡çš„è€ä¹žä¸ã€‚\n");
         set("combat_exp", 10000);
         set("str", 27);
         set("force", 200);
@@ -40,15 +40,15 @@ void init()
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àÐ»ÕâÎ»" + RANK_D->query_respect(me) + 
-"£¬ÄúºÃÐÄÒ»¶¨»áÓÐºÃ±¨µÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) + 
+"ï¼Œæ‚¨å¥½å¿ƒä¸€å®šä¼šæœ‰å¥½æŠ¥çš„ï¼");
         return 1;
 }
 
 int accept_fight(object me)
 {
         command("say " + RANK_D->query_respect(me) + 
-"ÏëÍæÁ½ÊÖ£¿ÀÏÍ·ÎÒ·îÅã¾ÍÊÇ¡£\n");
+"æƒ³çŽ©ä¸¤æ‰‹ï¼Ÿè€å¤´æˆ‘å¥‰é™ªå°±æ˜¯ã€‚\n");
         return 1;
 }
  
@@ -63,23 +63,23 @@ void greeting(object ob)
 	if(objectp(silver_ob)) sc=silver_ob->query_amount();
 	if(objectp(gold_ob)) gc=gold_ob->query_amount();
 	if(wizardp(ob)) 
-        tell_object(ob, sprintf("ÀÏÆòØ¤ÇÄÇÄ¸æËßÄã£ºÄãÉíÉÏÓÐ %d coin,%d silver, %d gold.\n",cc,sc,gc));
+        tell_object(ob, sprintf("è€ä¹žä¸æ‚„æ‚„å‘Šè¯‰ä½ ï¼šä½ èº«ä¸Šæœ‰ %d coin,%d silver, %d gold.\n",cc,sc,gc));
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(5) ) {
 		case 0:
 		case 3:
 		case 4:
 			if(random((int)ob->query("combat_exp")+10000) > (int)ob->query("combat_exp")) {
-			say("ÀÏÆòØ¤¶Ô×ÅÄã·¢³öÒ»ÕóÒõÐ¦Éù¡£\n");
+			say("è€ä¹žä¸å¯¹ç€ä½ å‘å‡ºä¸€é˜µé˜´ç¬‘å£°ã€‚\n");
 			if(objectp(coin_ob)) coin_ob->move(this_object());
 			if(objectp(silver_ob)) silver_ob->move(this_object());
 			if(objectp(gold_ob)) gold_ob->move(this_object());
 			}			
 			break;
 		case 1:
-			say( "ÀÏÆòØ¤²»»³ºÃÒâµØ¿´×ÅÄã£¬µÀ£ºÕâÎ»ºÃÐÄµÄ" + RANK_D->query_respect(ob)+ "£¬ÉÍÎÒ¼¸Á½½ð×Ó°É...\n");
+			say( "è€ä¹žä¸ä¸æ€€å¥½æ„åœ°çœ‹ç€ä½ ï¼Œé“ï¼šè¿™ä½å¥½å¿ƒçš„" + RANK_D->query_respect(ob)+ "ï¼Œèµæˆ‘å‡ ä¸¤é‡‘å­å§...\n");
 			break;
 		case 2:
-			say( "ÀÏÆòØ¤¿´×ÅÄãõâÀ´õâÈ¥£¬Ò¡Ò¡Í·£¬Ì¾¿ÚÆø£¬ÓÖÒ¡ÁËÒ¡Í·¡£\n");		break;
+			say( "è€ä¹žä¸çœ‹ç€ä½ è¸±æ¥è¸±åŽ»ï¼Œæ‘‡æ‘‡å¤´ï¼Œå¹å£æ°”ï¼Œåˆæ‘‡äº†æ‘‡å¤´ã€‚\n");		break;
 	}
 }

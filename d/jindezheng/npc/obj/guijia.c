@@ -1,13 +1,13 @@
 inherit ITEM;
 void create()
 {
-     set_name("ºÚÉ«¹ê¼×",({"guijia","jia"}));
+     set_name("é»‘è‰²é¾Ÿç”²",({"guijia","jia"}));
      set_weight(3000);
      if (clonep())
        set_default_object(__FILE__);
      else {
-                 set("unit","¿é");
-                 set("long","ÎÚºÚÉ«µÄ¹ê¼×£¬ÉÏÃæÓĞĞ©½»´íµÄÍ¼ÎÄ.\n");
+                 set("unit","å—");
+                 set("long","ä¹Œé»‘è‰²çš„é¾Ÿç”²ï¼Œä¸Šé¢æœ‰äº›äº¤é”™çš„å›¾æ–‡.\n");
                  set("material","bone");
                  set("value",10000);
                  set("skill",([

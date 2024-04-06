@@ -4,13 +4,13 @@ inherit STAFF;
 
 void create()
 {
-	set_name("É¨Öã",({"saozhou","sao zhou"}));
+	set_name("æ‰«å¸š",({"saozhou","sao zhou"}));
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-	set("long","ºì×Ø±àÖÆ³ÉµÄÉ¨Öã£¬É¨µØÓÃµÄ¡£\n");
+		set("unit", "æŠŠ");
+	set("long","çº¢æ£•ç¼–åˆ¶æˆçš„æ‰«å¸šï¼Œæ‰«åœ°ç”¨çš„ã€‚\n");
 	set("material","wood");
 	}
 	init_staff(35);

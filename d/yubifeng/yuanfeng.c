@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Բ��");
+	set("short", "圆峰");
 	set("long", @LONG
-һ·ɽ���Ӷ����������ϣ���һ·ɽ���������򱱣���·ɽ�����
-֮����������������Բ�յİ��塣�帲��ѩ��ӳ�����ԡ�
+一路山脉从东北走向西南，另一路山脉自正南向北，两路山脉相会
+之处，便是这座形似圆墩的矮峰。峰覆积雪，映日生辉。
 LONG );
 	set("exits", ([
 		"north"   : __DIR__"xiaolu3",

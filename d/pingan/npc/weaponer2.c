@@ -2,11 +2,11 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-	set_name("ÍõÀÏ°å", ({ "wang" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç‹è€æ¿", ({ "wang" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 31);
 	set("long",
-		"·À¾ßµêµÄÀÏ°å,ÊÖµ×ÏÂ»¹¿ÉÒÔ£®\n");
+		"é˜²å…·åº—çš„è€æ¿,æ‰‹åº•ä¸‹è¿˜å¯ä»¥ï¼\n");
 	set("combat_exp", 500000);
 	set("attitude", "friendly");
 	set("per",30);

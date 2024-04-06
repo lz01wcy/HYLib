@@ -6,12 +6,12 @@ inherit F_UNIQUE;
 #include <ansi.h>;
 void create()
 {
-	set_name("»Æ²®Á÷", ({ "huang boliu","huang","boliu"}) );
-	set("gender", "ÄÐÐÔ" );
-	set("title", HIB"ÈÕÔÂÉñ½Ì·çÀ×ÌÃÏãÖ÷"NOR);
-	set("nickname", HIW"Òø÷×òÔ"NOR);
+	set_name("é»„ä¼¯æµ", ({ "huang boliu","huang","boliu"}) );
+	set("gender", "ç”·æ€§" );
+	set("title", HIB"æ—¥æœˆç¥žæ•™é£Žé›·å ‚é¦™ä¸»"NOR);
+	set("nickname", HIW"é“¶é«¯è›Ÿ"NOR);
 	set("age", 85);
-	set("long", "Ò»²¿°×Ðë£¬Ö±´¹ÖÁÐØ£¬Éí²Ä¿ýÎàÖ®¼«¡£\n");
+	set("long", "ä¸€éƒ¨ç™½é¡»ï¼Œç›´åž‚è‡³èƒ¸ï¼Œèº«æé­æ¢§ä¹‹æžã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", 1);
 
@@ -53,7 +53,7 @@ set_skill("changquan", 150);
         map_skill("dodge", "pmshenfa");
         map_skill("force", "tmdafa");
 
-	create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ·çÀ×ÌÃÏãÖ÷");
+	create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ é£Žé›·å ‚é¦™ä¸»");
 
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();
@@ -64,19 +64,19 @@ void attempt_apprentice(object ob)
 {
          if (ob->query_int() < 20) {
               command("say " + RANK_D->query_respect(ob) +
-                        "×ß¿ª×ß¿ª£¬ÎÒ²»ÏëºÍÉµ¹ÏËµ»°¡£");
+                        "èµ°å¼€èµ°å¼€ï¼Œæˆ‘ä¸æƒ³å’Œå‚»ç“œè¯´è¯ã€‚");
                 return;
         }
          if (ob->query_dex() < 20) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÉíÊÖ²»½Ý£¬»¹ÊÇÁíÇó¸ßÊ¦°É¡£");
+                        "èº«æ‰‹ä¸æ·ï¼Œè¿˜æ˜¯å¦æ±‚é«˜å¸ˆå§ã€‚");
                 return;
         }
         if ((int)ob->query("shen") > -10000) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "Äã»¹²»¹»ÐÄºÝÊÖÀ±£¬ÎÒ»¹²»ÄÜÊÕÄã¡£");
+                        "ä½ è¿˜ä¸å¤Ÿå¿ƒç‹ æ‰‹è¾£ï¼Œæˆ‘è¿˜ä¸èƒ½æ”¶ä½ ã€‚");
                 return;
         }
-        command("say ¹þ¹þ£¡ ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+        command("say å“ˆå“ˆï¼ é‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit " + ob->query("id"));
 }

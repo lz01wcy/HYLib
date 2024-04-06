@@ -1,13 +1,13 @@
 // /d/zhuojun/nandajie3.c
-// Room in �ÿ�
+// Room in 涿郡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "�ϴ��");
+	set("short", "南大街");
          set("long", @LONG
-��ʯ�̳ɵ���·������������������ô����������ǳ����ĵĹ㳡
-�ˣ����洫��һ��һʮ����Ǯ�������洫��һ��ҩ�㡣
+青石铺成的马路足有两辆马车并行那么宽，北面就是城中心的广场
+了，西面传来一五一十的数钱声，东面传来一股药香。
 LONG
 	);
 set("outdoors", "changsha");

@@ -2,15 +2,15 @@ inherit NPC;
 
 void create()
 {
-   set_name("²è¿Í",({ "cha ke","cha","ke" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("èŒ¶å®¢",({ "cha ke","cha","ke" }) );
+        set("gender", "ç”·æ€§" );
         set("age",30+random(10));
-   set("long", "ÕâÊÇÒ»¸öÆÕÍ¨µÄ²è¿Í¡£\n");       
+   set("long", "è¿™æ˜¯ä¸€ä¸ªæ™®é€šçš„èŒ¶å®¢ã€‚\n");       
    set("combat_exp", 50000);
    set("attitude", "peaceful");
    set("chat_chance",30);
    set("chat_msg",({
-       "²è¿ÍºÈÁË¿Ú²è£¬µÍÉùàÖ¹¾ÁË¼¸¾ä¡£\n",
+       "èŒ¶å®¢å–äº†å£èŒ¶ï¼Œä½å£°å˜€å’•äº†å‡ å¥ã€‚\n",
    }));
    set("max_jing",100);
    set("target",1);

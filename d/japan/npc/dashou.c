@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿´³¡´òÊÖ",({"dashou"}));
+        set_name("çœ‹åœºæ‰“æ‰‹",({"dashou"}));
 
-	set("gender", "ÄĞĞÔ" );
+	set("gender", "ç”·æ€§" );
 	set("age", 26);
-       set("title","Éñ»§¼Ë¹İ");
-        set("long","·çÑÅ¸ó¹ÍÓ¶µÄµØÆ¦£¬ÒÔÎ¬»¤Â¥ÄÚÖÎ°²¡£\n");
+       set("title","ç¥æˆ·å¦“é¦†");
+        set("long","é£é›…é˜é›‡ä½£çš„åœ°ç—ï¼Œä»¥ç»´æŠ¤æ¥¼å†…æ²»å®‰ã€‚\n");
         set("combat_exp", 20000);
 	set("str", 30);
 	set_temp("apply/attack",15);

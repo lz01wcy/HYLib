@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-       set_name("�䵱��ͯ", ({ "daotong", "tong" }) );
-       set("gender", "����" );
+       set_name("武当道童", ({ "daotong", "tong" }) );
+       set("gender", "男性" );
        set("age", 16);
        set("long",
-               "����һ��ʮ�߰����С��ͯ��һ����������ӡ�\n");
+               "他是一个十七八岁的小道童，一幅天真的样子。\n");
        set("combat_exp", 2500);
        set("attitude", "friendly");
  
@@ -32,12 +32,12 @@ void greeting(object ob)
 	if (!ob || !present(ob, environment())) return;
 	switch( random(2) ) {
 		case 0:
-			say( "�䵱��ͯЦ������˵������λ" + RANK_D->query_respect(ob)
-          + "��������䵱�Ļ������Կ�"BRED"(help wudang)"NOR"��\n");
+			say( "武当道童笑嘻嘻地说道：这位" + RANK_D->query_respect(ob)
+          + "，想加入武当的话，可以看"BRED"(help wudang)"NOR"。\n");
 			break;
 		case 1:
-			say( "�䵱��ͯ����������ϴο����������Ѿ���һ��ǰ�ˣ����������˼�
- �书���������ɲ��ˣ�����˭�����䵱�ɹ�Ŀ����ء�\n");
+			say( "武当道童喃喃自语道：上次看见张真人已经是一年前了，想来他老人家
+ 武功境界更加深不可测了，江湖谁不对武当派刮目向待呢。\n");
 			break;
 	}
 

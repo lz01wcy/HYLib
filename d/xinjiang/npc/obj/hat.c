@@ -3,13 +3,13 @@
 inherit HEAD;
 void create()
 {
-        set_name("Î¬Îá¶û»¨Ã±", ({ "cotton hat" }) );
+        set_name("ç»´å¾å°”èŠ±å¸½", ({ "cotton hat" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-                set("long", "Ò»¶¥ºÜÓĞÌØÉ«£¬ÓÖºÜºÃ¿´µÄÃ±×Ó¡£\n");
+                set("unit", "é¡¶");
+                set("long", "ä¸€é¡¶å¾ˆæœ‰ç‰¹è‰²ï¼Œåˆå¾ˆå¥½çœ‹çš„å¸½å­ã€‚\n");
                 set("value", 100);
                 set("material", "cloth");
                 set("armor_prop/armor", 11);

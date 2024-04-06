@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÀÏºÍÉĞ", ({"lao heshang","heshang",}));
+	set_name("è€å’Œå°š", ({"lao heshang","heshang",}));
 	set("long",
-	"ËûÊÇ±¾ËÂÀÏºÍÉĞ¡£Ëµ»°Ï¸ÉùÏ¸Æø¡£ÏëÀ´ÊÇÌ«¼à³ö¼Ò¡£\n");
-	set("gender", "ÄĞĞÔ");
+	"ä»–æ˜¯æœ¬å¯ºè€å’Œå°šã€‚è¯´è¯ç»†å£°ç»†æ°”ã€‚æƒ³æ¥æ˜¯å¤ªç›‘å‡ºå®¶ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 62);
 	set("attitude", "peaceful");
 	set("shen_type", 1);

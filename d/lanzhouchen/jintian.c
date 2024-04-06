@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "�����");
+	set("short",  "金天观");
 	set("long",  @LONG
-���߹����֣��������ֺ�һ��ɽ�ţ�����------����ۡ��ഫ����
-ʼ���ڽ��Ķ��꣬���롰���桱�����ֳ���̳��������䣬��������ۡ�
+你走过树林，发现树林后一道山门，上书------金天观。相传本观
+始建于建文二年，主祀“雷祖”，故又称雷坛。永乐年间，赐名金天观。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"south" : __DIR__"street3",

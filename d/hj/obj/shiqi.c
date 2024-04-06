@@ -5,20 +5,20 @@ inherit ITEM;
 void create()
 {
          switch(random(7)) {
-        case 0 : set_name("Å£ÎÄÃ÷Ä¹»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
-        case 1 : set_name("³µÆï¹ıÇÅ»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
-        case 2 : set_name("á÷ÁÔ»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
-        case 3 : set_name("ÇÅÍ·½»Õ½»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
-        case 4 : set_name("¶·ÊŞ»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
-        case 5 : set_name("Á½ÌÒÉ±ÈıÊ¿»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
-        case 6 : set_name("±ÈÎä»­ÏñÊ¯", ({ "xiang shi", "shi", "stone"})); break;
+        case 0 : set_name("ç‰›æ–‡æ˜å¢“ç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
+        case 1 : set_name("è½¦éª‘è¿‡æ¡¥ç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
+        case 2 : set_name("ç‹©çŒç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
+        case 3 : set_name("æ¡¥å¤´äº¤æˆ˜ç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
+        case 4 : set_name("æ–—å…½ç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
+        case 5 : set_name("ä¸¤æ¡ƒæ€ä¸‰å£«ç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
+        case 6 : set_name("æ¯”æ­¦ç”»åƒçŸ³", ({ "xiang shi", "shi", "stone"})); break;
         }
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("unit", "¿é");
+                set("unit", "å—");
                 set("weight", 1000);
-		set("long", "ÕâÊÇ¶«ººÊ¯µñÏñÖĞµÄÒ»¸ö£¬³ö×ÔÉÂÎ÷£¬É½¶«£¬ºÓÄÏÒ»´ø¡£\n");
+		set("long", "è¿™æ˜¯ä¸œæ±‰çŸ³é›•åƒä¸­çš„ä¸€ä¸ªï¼Œå‡ºè‡ªé™•è¥¿ï¼Œå±±ä¸œï¼Œæ²³å—ä¸€å¸¦ã€‚\n");
 		set("material", "stone");
 		}
 	setup();

@@ -4,13 +4,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("»ÆÖÓ¹«", ({ "huangzhong gong", "gong" }));
-        set("title", "Ã·×¯´ó×¯Ö÷");
+        set_name("é»„é’Ÿå…¬", ({ "huangzhong gong", "gong" }));
+        set("title", "æ¢…åº„å¤§åº„ä¸»");
         set("long",
-                "Ëû¾ÍÊÇÃ·×¯ËÄÎ»×¯Ö÷ÅÅÐÐµÚÒ»µÄ»ÆÖÓ¹«¡£\n"
-                "Éí´©Ò»¼þ¸É¸É¾»¾»µÄ»ÆÉ«³¤ÅÛ¡£\n"
-                "ËûÒÑÄêÓúÁùÑ®£¬Éí²ÄÖÐµÈ£¬ÃæÈÝºÍ°ª¿ÉÇ×¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯æ¢…åº„å››ä½åº„ä¸»æŽ’è¡Œç¬¬ä¸€çš„é»„é’Ÿå…¬ã€‚\n"
+                "èº«ç©¿ä¸€ä»¶å¹²å¹²å‡€å‡€çš„é»„è‰²é•¿è¢ã€‚\n"
+                "ä»–å·²å¹´æ„ˆå…­æ—¬ï¼Œèº«æä¸­ç­‰ï¼Œé¢å®¹å’Œè”¼å¯äº²ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 62);
         set("class", "scholar");
         set("attitude", "peaceful");
@@ -61,7 +61,7 @@ void create()
          
              
         }) );
-        create_family("Ã·×¯", 1, "×¯Ö÷");
+        create_family("æ¢…åº„", 1, "åº„ä¸»");
         setup();
         carry_object("clone/weapon/changjian")->wield();
 }
@@ -69,12 +69,12 @@ void create()
 void attempt_apprentice(object ob)
 {
         if ((int)ob->query_skill("wuzheng-xinfa",1) < 120) {
-                command("say ÎÒÊÇ²»ÇáÒ×ÊÕÍ½µÄ¡£");
-                command("say ÔÚÎÒÃ·×¯µÄÄÚ¹¦ÉÏ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸Ã¶àÏÂµã¹¦·ò£¿");
+                command("say æˆ‘æ˜¯ä¸è½»æ˜“æ”¶å¾’çš„ã€‚");
+                command("say åœ¨æˆ‘æ¢…åº„çš„å†…åŠŸä¸Šï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åº”è¯¥å¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬ÔÚÏÂ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œåœ¨ä¸‹å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

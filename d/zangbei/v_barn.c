@@ -2,22 +2,22 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "¹È²Ö");
+        set("short", "è°·ä»“");
         set("long", @LONG
-¸÷Ê½¸÷ÑùµÄ¹ÈÎï£¬°ÑÒ»¸öÙ¼´óµÄ¹È²Ö¼·µÃÂúÂúµÄ£¬¶«Ç½Ò»×ù±ÚÂ¯ÉÏ²¼ÂúÁË³¾»Ò£¬
-×©ÍßÆö¾ÍµÄÑÌ´ÑÍ¨Ïò·¿¶¥¡£×°×Å¹ÈÎïµÄÂé´üÉÏ´ò×Å²»Í¬µÄÉÌÐÐÓ¡¼Ç£¬ÏÔÈ»ÊÇÁú»¢Õ¯
-µÄÇ¿ÈËÃÇÏÂÉ½´ò½ÙµÄÊÕ»ñ£¬×î½ü¹Ù±ø½Ë·ËµÄ·çÉùÈÕ½ô£¬Áú»¢Õ¯Æ¾×ÅÕâµã´¢±¸£¬ÊØÉÏ
-¸ö°ëÄê°ËÔØ¾øÃ»ÓÐÎÊÌâ¡£Í¨Ïò´óÔºµÄÒ»ÉÈÄ¾ÃÅ½ô½ô¹Ø×Å¡£
+å„å¼å„æ ·çš„è°·ç‰©ï¼ŒæŠŠä¸€ä¸ªåŒå¤§çš„è°·ä»“æŒ¤å¾—æ»¡æ»¡çš„ï¼Œä¸œå¢™ä¸€åº§å£ç‚‰ä¸Šå¸ƒæ»¡äº†å°˜ç°ï¼Œ
+ç –ç“¦ç Œå°±çš„çƒŸå›±é€šå‘æˆ¿é¡¶ã€‚è£…ç€è°·ç‰©çš„éº»è¢‹ä¸Šæ‰“ç€ä¸åŒçš„å•†è¡Œå°è®°ï¼Œæ˜¾ç„¶æ˜¯é¾™è™Žå¯¨
+çš„å¼ºäººä»¬ä¸‹å±±æ‰“åŠ«çš„æ”¶èŽ·ï¼Œæœ€è¿‘å®˜å…µå‰¿åŒªçš„é£Žå£°æ—¥ç´§ï¼Œé¾™è™Žå¯¨å‡­ç€è¿™ç‚¹å‚¨å¤‡ï¼Œå®ˆä¸Š
+ä¸ªåŠå¹´å…«è½½ç»æ²¡æœ‰é—®é¢˜ã€‚é€šå‘å¤§é™¢çš„ä¸€æ‰‡æœ¨é—¨ç´§ç´§å…³ç€ã€‚
 LONG
         );
         set("exits", ([ 
 //              "east" : __DIR__"village",
         ]));
         set("item_desc", ([
-                "chimney": "ÕâÑÌ´ÑÏÔÈ»ÒÑ¾­·ÏÆú¶àÊ±ÁË£¬¿´ÉÏÈ¥ÃãÇ¿¿ÉÒÔ×ê½øÒ»¸öÈË£¨squeeze through£©¡£\n",
-                "ÑÌ´Ñ":  "ÕâÑÌ´ÑÏÔÈ»ÒÑ¾­·ÏÆú¶àÊ±ÁË£¬¿´ÉÏÈ¥ÃãÇ¿¿ÉÒÔ×ê½øÒ»¸öÈË£¨squeeze through£©¡£\n",
-                "Ä¾ÃÅ":  "ÕâÉÈÄ¾ÃÅÉÏÁËËø¹Ø×Å¡£\n",
-                "door":  "ÕâÉÈÄ¾ÃÅÉÏÁËËø¹Ø×Å¡£\n",
+                "chimney": "è¿™çƒŸå›±æ˜¾ç„¶å·²ç»åºŸå¼ƒå¤šæ—¶äº†ï¼Œçœ‹ä¸ŠåŽ»å‹‰å¼ºå¯ä»¥é’»è¿›ä¸€ä¸ªäººï¼ˆsqueeze throughï¼‰ã€‚\n",
+                "çƒŸå›±":  "è¿™çƒŸå›±æ˜¾ç„¶å·²ç»åºŸå¼ƒå¤šæ—¶äº†ï¼Œçœ‹ä¸ŠåŽ»å‹‰å¼ºå¯ä»¥é’»è¿›ä¸€ä¸ªäººï¼ˆsqueeze throughï¼‰ã€‚\n",
+                "æœ¨é—¨":  "è¿™æ‰‡æœ¨é—¨ä¸Šäº†é”å…³ç€ã€‚\n",
+                "door":  "è¿™æ‰‡æœ¨é—¨ä¸Šäº†é”å…³ç€ã€‚\n",
         ]));
         set("objects", ([
                 __DIR__"obj/bag":       1,
@@ -35,18 +35,18 @@ void init() {
 int do_open(string arg) {
         object me=this_player();
         object out_room;
-        if (!arg || (arg!="door" && arg!="Ä¾ÃÅ" && arg !="ÃÅ"))
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+        if (!arg || (arg!="door" && arg!="æœ¨é—¨" && arg !="é—¨"))
+                return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
         if (!query("closed"))
-           return notify_fail("ÃÅÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+           return notify_fail("é—¨å·²ç»æ˜¯å¼€ç€çš„äº†ã€‚\n");
         if (me->query_skill("stealing")<200)
-                return notify_fail("ÄãµÄÃîÊÖ¿Õ¿ÕÖ®¼¼Ì«²î£¬Ã»·¨´ò¿ªÕâÉÈÃÅ¡£\n");
-        message_vision("$Nµ·¹ÄÁËÒ»Õó£¬´ÓÀïÃæ°ÑÃÅ´ò¿ªÁË¡£\n",me);
+                return notify_fail("ä½ çš„å¦™æ‰‹ç©ºç©ºä¹‹æŠ€å¤ªå·®ï¼Œæ²¡æ³•æ‰“å¼€è¿™æ‰‡é—¨ã€‚\n");
+        message_vision("$Næ£é¼“äº†ä¸€é˜µï¼Œä»Žé‡Œé¢æŠŠé—¨æ‰“å¼€äº†ã€‚\n",me);
         set("exits/east",__DIR__"village");     
         set("closed",0);
         out_room=find_object(__DIR__"village");
         if (!objectp(out_room)) out_room=load_object(__DIR__"village");
-        message("vision","¹È²ÖµÄÃÅºöÈ»´ÓÀïÃæ±»´ò¿ªÁË¡£\n",out_room);
+        message("vision","è°·ä»“çš„é—¨å¿½ç„¶ä»Žé‡Œé¢è¢«æ‰“å¼€äº†ã€‚\n",out_room);
         out_room->set("exits/west",__DIR__"v_barn");
         call_out("door_close",20,out_room);
         return 1;
@@ -56,8 +56,8 @@ int door_close(object out_room){
         out_room->delete("exits/west");
         this_object()->delete("exits/east");
         this_object()->set("close",1);
-        message("vision","¹È²ÖµÄÃÅÓÖ±»¹ØÉÏÁË¡£\n",out_room);
-        message("vision","Ä¾ÃÅµ´ÁË»ØÀ´¹ØÉÏÁË¡£\n",this_object());
+        message("vision","è°·ä»“çš„é—¨åˆè¢«å…³ä¸Šäº†ã€‚\n",out_room);
+        message("vision","æœ¨é—¨è¡äº†å›žæ¥å…³ä¸Šäº†ã€‚\n",this_object());
         set("closed",1);
         return 1;
 }
@@ -67,16 +67,16 @@ int do_squeeze(string arg) {
         object me;
         
         me=this_player();
-        if (arg=="through" || arg == "ÑÌ´Ñ" || arg== "chimney" || arg =="through chimney") {
+        if (arg=="through" || arg == "çƒŸå›±" || arg== "chimney" || arg =="through chimney") {
                 if (me->query_temp("zangbei/chimney_2"))
-                        return notify_fail("ÄãÒÑ¾­ÔÚÑÌ´ÑÀïÁË¡£\n");
-                message_vision("$NÒ»Ã¨Ñü¼·½øÑÌ´Ñ£¬Ð¡ÐÄÒíÒíµØÏòÉÏÅÀÈ¥¡£\n\n",me);
+                        return notify_fail("ä½ å·²ç»åœ¨çƒŸå›±é‡Œäº†ã€‚\n");
+                message_vision("$Nä¸€çŒ«è…°æŒ¤è¿›çƒŸå›±ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘ä¸Šçˆ¬åŽ»ã€‚\n\n",me);
                 call_out("pass_river",6,me);
                 me->start_busy(3);
                 me->set_temp("zangbei/chimney_2",2);
                 return 1;
         }
-        tell_object(me,"ÄãÒªÅÀÊ²Ã´£¿\n");
+        tell_object(me,"ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
         return 1;
 }  
 int pass_river(object me) {
@@ -84,8 +84,8 @@ int pass_river(object me) {
         if (!objectp(me) || me->is_ghost()) return 0;
         room=find_object(__DIR__"w_wall3");
         if (!objectp(room)) room=load_object(__DIR__"w_wall3");
-        tell_object(me,"Äã·ÑÁ¦µØ´ÓÑÌ´ÑÀïÅÀÁË³öÈ¥¡£\n");
-        message("vision",me->name()+"´ÓÑÌ´ÑÀï×êÁË³öÀ´¡£\n",room);
+        tell_object(me,"ä½ è´¹åŠ›åœ°ä»ŽçƒŸå›±é‡Œçˆ¬äº†å‡ºåŽ»ã€‚\n");
+        message("vision",me->name()+"ä»ŽçƒŸå›±é‡Œé’»äº†å‡ºæ¥ã€‚\n",room);
         me->move(room);
         me->delete_temp("zangbei/chimney_2");
         return 1;

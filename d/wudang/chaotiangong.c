@@ -1,14 +1,14 @@
-//Room: chaotiangong.c ³¯Ìì¹¬
+//Room: chaotiangong.c æœå¤©å®«
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","³¯Ìì¹¬");
+      set("short","æœå¤©å®«");
       set("long",@LONG
-ÕâÀïÒÑ½üÎäµ±¾ø¶¥£¬Ö»¼ûÊ¯ÌİÖ±ËÊ£¬Î£µÅ¸ßĞü£¬Á½ÅÔ¸¨ÒÔË÷Á´¡¢ÌúÀ¹¹´
-Á¬¡£
+è¿™é‡Œå·²è¿‘æ­¦å½“ç»é¡¶ï¼Œåªè§çŸ³æ¢¯ç›´è€¸ï¼Œå±è¹¬é«˜æ‚¬ï¼Œä¸¤æ—è¾…ä»¥ç´¢é“¾ã€é“æ‹¦å‹¾
+è¿ã€‚
 LONG);
       set("objects", ([
            CLASS_D("wudang") +"/qingxu": 1,

@@ -4,14 +4,14 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-	set_name("Ò»Ò¶ÃØ¼®", ({ "yiye book", "book" }));
+	set_name("ä¸€å¶ç§˜ç±", ({ "yiye book", "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long",
-"·âÃæÉÏĞ´Öø:Ò»Ò¶ÃØ¼®¡£\n");
+"å°é¢ä¸Šå†™è‘—:ä¸€å¶ç§˜ç±ã€‚\n");
 		set("value", 0);
 		set("material", "paper");
 		}
@@ -29,8 +29,8 @@ int do_study(string arg)
 	object me;
 	me=this_player();
 	if (!arg="yiye book" || !arg="book")
-		return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
-	message_vision("$N±ß¿´±ßÓÃÊÖÖ¸ÕºµãÍÙÄ­£¬Ò»Ò³Ò»Ò³µØ·­¿´×ÅÒ»Ò¶ÃØ¼®¡£\n",me);
+		return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
+	message_vision("$Nè¾¹çœ‹è¾¹ç”¨æ‰‹æŒ‡è˜¸ç‚¹å”¾æ²«ï¼Œä¸€é¡µä¸€é¡µåœ°ç¿»çœ‹ç€ä¸€å¶ç§˜ç±ã€‚\n",me);
 	me->start_busy(5);
 	remove_call_out("is_poisoned");
 	call_out("is_poisoned", 10);
@@ -44,7 +44,7 @@ int is_poisoned()
 //      me->apply_condition("yangdu_poison",(int) me->query("kar")+ random(30));
 	
 	message("channel:chat",
-			HIY"¡¾ÅÔ°×¡¿"HIC"»¨¸®Í»È»´«À´Ò»ÕóĞúÄÖÉù£º¡°×¥ÔôÑ½£¡ÓĞÈËÍµÈëÃÜÊÒ£¡\n"NOR,users());
+			HIY"ã€æ—ç™½ã€‘"HIC"èŠ±åºœçªç„¶ä¼ æ¥ä¸€é˜µå–§é—¹å£°ï¼šâ€œæŠ“è´¼å‘€ï¼æœ‰äººå·å…¥å¯†å®¤ï¼\n"NOR,users());
 	remove_call_out("mi_tan");
 	call_out("mi_tan",10);
 	return 1;
@@ -53,7 +53,7 @@ int is_poisoned()
 int mi_tan()
 {
 	message("channel:chat",
-			HIY"¡¾»¨¸®¡¿"HIC"»¨¸®´óµÜ×ÓÕıÔÚºÍ»¨¿İ·¢Ù÷¸æ¾­¹ı¡£»¨¿İ·¢ÂíÉÏµ½ÃÜÊÒÈ¥²é¿´¡£\n"NOR,users());
+			HIY"ã€èŠ±åºœã€‘"HIC"èŠ±åºœå¤§å¼Ÿå­æ­£åœ¨å’ŒèŠ±æ¯å‘ç¦€å‘Šç»è¿‡ã€‚èŠ±æ¯å‘é©¬ä¸Šåˆ°å¯†å®¤å»æŸ¥çœ‹ã€‚\n"NOR,users());
 	call_out("zi_bai",10);
 	return 1;
 }
@@ -61,7 +61,7 @@ int mi_tan()
 int zi_bai()
 {
 	message("channel:chat",
-			HIY"¡¾»¨¸®¡¿"HIC"»¨¿İ·¢ĞÄÓĞÓà¼ÂµÄËµ£º¡°ĞÒºÃÖ»ÍµÈ¥ÁËÄÇ±¾¼ÙµÄ¡£²»¹ı£¬ÎÒÔÚÄÇ±¾¼ÙÊéÉÏÍ¿ÁËÎÂ¼ÒµÄ"HIR"í¦¶¾¡£\n"HIC"            ÄÇÎ»ÁºÉÏ¾ı×ÓÏÖÔÚ¿ÖÅÂ¶¾·¢ÁË£¬ÕıÃ¦×ÅÕÒ½âÒ©ÄØ¡£\n"NOR,users());
+			HIY"ã€èŠ±åºœã€‘"HIC"èŠ±æ¯å‘å¿ƒæœ‰ä½™æ‚¸çš„è¯´ï¼šâ€œå¹¸å¥½åªå·å»äº†é‚£æœ¬å‡çš„ã€‚ä¸è¿‡ï¼Œæˆ‘åœ¨é‚£æœ¬å‡ä¹¦ä¸Šæ¶‚äº†æ¸©å®¶çš„"HIR"æ™æ¯’ã€‚\n"HIC"            é‚£ä½æ¢ä¸Šå›å­ç°åœ¨ææ€•æ¯’å‘äº†ï¼Œæ­£å¿™ç€æ‰¾è§£è¯å‘¢ã€‚\n"NOR,users());
 	call_out("zi_bai2",10);
 	return 1;
 }
@@ -69,7 +69,7 @@ int zi_bai()
 int zi_bai2()
 {
 	message("channel:chat",
-			HIY"¡¾»¨¸®¡¿"HIC"»¨¿İ·¢¡°ºÙºÙ¡±µØĞ¦ÁË¼¸Éù¡£\n"NOR,users());
+			HIY"ã€èŠ±åºœã€‘"HIC"èŠ±æ¯å‘â€œå˜¿å˜¿â€åœ°ç¬‘äº†å‡ å£°ã€‚\n"NOR,users());
 	call_out("zi_bai3",10);
 	return 1;
 }
@@ -80,7 +80,7 @@ int zi_bai3()
 	object ob;
 	ob=this_object();
 	message("channel:chat",
-			HIY"¡¾ÁºÉÏ¾ı×Ó¡¿"HIB+ me->query("name") +HIC"¡°°¡¡±µØ´ó½ĞÒ»Éù£¬¿ÚÍÂ°×Ä­£¬»èÁË¹ıÈ¥¡£\n"NOR,users());
+			HIY"ã€æ¢ä¸Šå›å­ã€‘"HIB+ me->query("name") +HIC"â€œå•Šâ€åœ°å¤§å«ä¸€å£°ï¼Œå£åç™½æ²«ï¼Œæ˜äº†è¿‡å»ã€‚\n"NOR,users());
 	destruct(ob);
 	return 1;
 }

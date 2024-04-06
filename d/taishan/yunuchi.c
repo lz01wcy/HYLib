@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ů��");
+	set("short", "玉女池");
 	set("long", @LONG
-��Ů���ڱ�ϼ����ǽ�⣬ԭΪ�أ������Ϊ�����������ڶ���̩ɽ
-ʱ������Ů���ڷ�����Ůʯ���������񣬽���������Ϊ��������Ů
-��ϼԪ�������Ӵ�����ʢ��
+玉女池在碧霞祠西墙外，原为池，清代砌为井。传宋真宗东封泰山
+时，在玉女池内发现玉女石像，易以玉像，建龛奉祭，封为“天仙玉女
+碧霞元君”。从此香火大盛。
 LONG );
 	set("exits", ([
 		"east"  : __DIR__"bixia",

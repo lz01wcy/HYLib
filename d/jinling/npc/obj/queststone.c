@@ -5,17 +5,17 @@ int time_period(int timep, object me);
 
 void create()
 {
-        set_name("ÈÎÎñÊ±¼äÌ½²âÆ÷", ({ "questtime","detector", "glass", "device" }) );
+        set_name("ä»»åŠ¡æ—¶é—´æ¢æµ‹å™¨", ({ "questtime","detector", "glass", "device" }) );
         set_weight(300);
-        set("unit", "¸ö");
+        set("unit", "ä¸ª");
         set("long",
-                "ÕâÊÇÀ´×Ô¡¸ÆßÁúÖé¡¹µÄÕ½¶·Á¦Ì½²âÆ÷£¬±»ÍõÆò¶ù¸Ä×°ÁËÒ»ÏÂ£¬ÏÖÔÚÄã¿ÉÒÔÓÃËüÀ´\n"
-                "Ì½²â(questtime)ÓĞ¹ØÈÎÎñµÄÍê³É¶ÈÁË¡£\n");
+                "è¿™æ˜¯æ¥è‡ªã€Œä¸ƒé¾™ç ã€çš„æˆ˜æ–—åŠ›æ¢æµ‹å™¨ï¼Œè¢«ç‹ä¹å„¿æ”¹è£…äº†ä¸€ä¸‹ï¼Œç°åœ¨ä½ å¯ä»¥ç”¨å®ƒæ¥\n"
+                "æ¢æµ‹(questtime)æœ‰å…³ä»»åŠ¡çš„å®Œæˆåº¦äº†ã€‚\n");
         set("value", 500);
         set("no_drop",1);
         set("type", "misc");
         set("apply", ([
-                "Í·²¿": 0,
+                "å¤´éƒ¨": 0,
         ]) );
 }
 
@@ -36,35 +36,35 @@ int do_detect(string arg)
                 if( arg ){
                         me = present(arg, environment(ob));
                         if (!me) me =  find_player(arg);
-                        if (!me) return notify_fail("ÄãÒª²ì¿´Ë­µÄÈÎÎñ£¿\n");
+                        if (!me) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„ä»»åŠ¡ï¼Ÿ\n");
                 }
                 else
                         me = ob;
         }
         if(!me->query("wqrquest") && !me->query("quest"))
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞÈÎºÎÈÎÎñ£¡\n");
+                return notify_fail("ä½ ç°åœ¨æ²¡æœ‰ä»»ä½•ä»»åŠ¡ï¼\n");
         if( mapp(me->query("wqrquest")))
         {
                 mapping quest;
                 quest =  me->query("wqrquest");
-                write("ÄãÏÖÔÚÔÚÍõÆò¶ù´¦µÄÈÎÎñÊÇ" + quest["quest_type"] + "¡º" + quest["quest"] + "¡»¡£\n");
+                write("ä½ ç°åœ¨åœ¨ç‹ä¹å„¿å¤„çš„ä»»åŠ¡æ˜¯" + quest["quest_type"] + "ã€" + quest["quest"] + "ã€ã€‚\n");
                 nowtime = (int) me->query("wangqier/time") - time();
                 if( nowtime  > 0 )
                         time_period(nowtime, me);
                 else
-                        write("µ«ÊÇÄãÒÑ¾­Ã»ÓĞ×ã¹»µÄÊ±¼äÀ´Íê³ÉËüÁË¡£\n");
+                        write("ä½†æ˜¯ä½ å·²ç»æ²¡æœ‰è¶³å¤Ÿçš„æ—¶é—´æ¥å®Œæˆå®ƒäº†ã€‚\n");
         }
         if( mapp(me->query("quest")))
         {
                 mapping quest;
                 quest =  me->query("quest");
-                write("ÄãÏÖÔÚÔÚÀî×Ü¹Ü´¦µÄÈÎÎñÊÇ" + quest["quest_type"] + "¡º" + quest["quest"] + "¡»¡£\n");
+                write("ä½ ç°åœ¨åœ¨ææ€»ç®¡å¤„çš„ä»»åŠ¡æ˜¯" + quest["quest_type"] + "ã€" + quest["quest"] + "ã€ã€‚\n");
                 nowtime = (int) me->query("task_time") - time();
                 if( nowtime  > 0 )
                         time_period(nowtime, me);
                 else
-                        write("µ«ÊÇÄãÒÑ¾­Ã»ÓĞ×ã¹»µÄÊ±¼äÀ´Íê³ÉËüÁË¡£\n");
-        }else write("ÎŞ·¨¼à²âµ½ÓĞĞ§µÄÈÎÎñ¡£\n");
+                        write("ä½†æ˜¯ä½ å·²ç»æ²¡æœ‰è¶³å¤Ÿçš„æ—¶é—´æ¥å®Œæˆå®ƒäº†ã€‚\n");
+        }else write("æ— æ³•ç›‘æµ‹åˆ°æœ‰æ•ˆçš„ä»»åŠ¡ã€‚\n");
         return 1;
 }
 
@@ -79,13 +79,13 @@ int time_period(int timep, object me)
         h = t % 24;             t /= 24;
         d = t;
 
-        if(d) time = chinese_number(d) + "Ìì";
+        if(d) time = chinese_number(d) + "å¤©";
         else time = "";
 
-        if(h) time += chinese_number(h) + "Ğ¡Ê±";
-        if(m) time += chinese_number(m) + "·Ö";
-        time += chinese_number(s) + "Ãë";
-        tell_object(me,"Äã»¹ÓĞ" + time + "È¥Íê³ÉËü¡£\n");
+        if(h) time += chinese_number(h) + "å°æ—¶";
+        if(m) time += chinese_number(m) + "åˆ†";
+        time += chinese_number(s) + "ç§’";
+        tell_object(me,"ä½ è¿˜æœ‰" + time + "å»å®Œæˆå®ƒã€‚\n");
         return 1;
 }
 

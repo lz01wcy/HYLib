@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short","·ðÉ½Õò½Ö");
+	set("short","ä½›å±±é•‡è¡—");
 	set("long",@LONG
-·ðÉ½×Ô¹ÅÓëÖìÏÉ¡¢¾°µÂ¡¢ºº¿Ú²¢³ÆÌìÏÂËÄ´óÕò£¬¶ËµÄÊÇÃñ·áÎï
-¸·£¬ÊÐâÜ·±»ª¡£Ò»Ìõ´ó½ÖºáØ¨¶«Î÷¡£ÄÏ±ßÊÇÄÏÃÅ£¬Í¨ÍùÄÏº£¡£±±±ß
-³ö±±ÃÅ¿çÄÏÁë¿É´ïÖÐÔ­¡£
+ä½›å±±è‡ªå¤ä¸Žæœ±ä»™ã€æ™¯å¾·ã€æ±‰å£å¹¶ç§°å¤©ä¸‹å››å¤§é•‡ï¼Œç«¯çš„æ˜¯æ°‘ä¸°ç‰©
+é˜œï¼Œå¸‚å»›ç¹åŽã€‚ä¸€æ¡å¤§è¡—æ¨ªäº˜ä¸œè¥¿ã€‚å—è¾¹æ˜¯å—é—¨ï¼Œé€šå¾€å—æµ·ã€‚åŒ—è¾¹
+å‡ºåŒ—é—¨è·¨å—å²­å¯è¾¾ä¸­åŽŸã€‚
 LONG);
 	set("objects", ([
 	    "/d/city/npc/liumangtou": 1,

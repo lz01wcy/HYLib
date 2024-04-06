@@ -1,9 +1,9 @@
 inherit NPC;
 void create()
 {
-        set_name("Àî°×", ({ "li bai", "li" }));
-        set("long", "Ì«°×¾ÓÊ¿£¬Ëû¿´ÆğÀ´Âú¸¹¾­ÂÚ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æç™½", ({ "li bai", "li" }));
+        set("long", "å¤ªç™½å±…å£«ï¼Œä»–çœ‹èµ·æ¥æ»¡è…¹ç»çº¶ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 65);
         set_skill("literate", 300);
         set("max_jing",220);
@@ -27,9 +27,9 @@ void init()
 }
 int recognize_apprentice(object ob)
 {
-        if (!(int)ob->query_temp("mark/Öì"))
+        if (!(int)ob->query_temp("mark/æœ±"))
                 return 0;
-        ob->add_temp("mark/Öì", -1);
+        ob->add_temp("mark/æœ±", -1);
         return 1;
 }
 int accept_object(object who, object ob)
@@ -37,20 +37,20 @@ int accept_object(object who, object ob)
         int learn;
         learn=who->query_skill("literate",1);
         learn= learn?learn*10:500;
-        if( !who->query_temp("mark/Öì") ) {
+        if( !who->query_temp("mark/æœ±") ) {
                 if( ob->value() >= learn ) {
-                        say(this_object()->name()+"µãÁËµãÍ·£¬ËµµÀ£ººÜºÃ£¬´Ó½ñÌìÆğÄãËæÊ±¿ÉÒÔÀ´ÎÊÎÒÓĞ¹Ø¶ÁÊéÊ¶\n"
-                                "                      ×Ö(literate)µÄÈÎºÎÎÊÌâ¡£\n");
-                        who->add_temp("mark/Öì", ob->value()/10);
+                        say(this_object()->name()+"ç‚¹äº†ç‚¹å¤´ï¼Œè¯´é“ï¼šå¾ˆå¥½ï¼Œä»ä»Šå¤©èµ·ä½ éšæ—¶å¯ä»¥æ¥é—®æˆ‘æœ‰å…³è¯»ä¹¦è¯†\n"
+                                "                      å­—(literate)çš„ä»»ä½•é—®é¢˜ã€‚\n");
+                        who->add_temp("mark/æœ±", ob->value()/10);
                         return 1;
                 } else {
-                        say(this_object()->name()+"ËµµÀ£ºÄãµÄ³ÏÒâ²»¹»£¬ÕâÇ®»¹ÊÇÄÃ»ØÈ¥°É¡£\n");
+                        say(this_object()->name()+"è¯´é“ï¼šä½ çš„è¯šæ„ä¸å¤Ÿï¼Œè¿™é’±è¿˜æ˜¯æ‹¿å›å»å§ã€‚\n");
                         return 0;
                 }
         } else if(ob->value()){
-                say(this_object()->name()+"µãÁËµãÍ·£¬ËµµÀ£ºÅ¶£¬ÏòÄãÕâ÷áÓĞĞÄµÄÑ§Éú»¹ÕæÊÇ²»¶à¼û£¬ºÃºÃÅ¬Á¦\n"
-                        "                      ½«À´±Ø¶¨Ç°Í¾ÎŞÁ¿£¬Ğ»ÁË¡£\n");
-                        who->add_temp("mark/Öì", ob->value()/10);
+                say(this_object()->name()+"ç‚¹äº†ç‚¹å¤´ï¼Œè¯´é“ï¼šå“¦ï¼Œå‘ä½ è¿™éº½æœ‰å¿ƒçš„å­¦ç”Ÿè¿˜çœŸæ˜¯ä¸å¤šè§ï¼Œå¥½å¥½åŠªåŠ›\n"
+                        "                      å°†æ¥å¿…å®šå‰é€”æ— é‡ï¼Œè°¢äº†ã€‚\n");
+                        who->add_temp("mark/æœ±", ob->value()/10);
         }
         return 1;
 }
@@ -63,54 +63,54 @@ int do_learn(string arg)
         me=this_player();
         ob=this_object();
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
         if(!arg || arg=="?" || arg=="/?")
-                return notify_fail("Ö¸Áî¸ñÊ½£ºlearn <Ä³ÈË> <¼¼ÄÜ>\tlearn <¼¼ÄÜ> from <Ä³ÈË>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn <æŸäºº> <æŠ€èƒ½>\tlearn <æŠ€èƒ½> from <æŸäºº>\n");
         if ((sscanf(arg, "%s from %s", skill,teacher)!=2 ))
                 if ((sscanf(arg, "%s %s", teacher, skill)!=2 ))
-                        return notify_fail("Ö¸Áî¸ñÊ½£ºlearn <Ä³ÈË> <¼¼ÄÜ>\tlearn <¼¼ÄÜ> from <Ä³ÈË>\n");
+                        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn <æŸäºº> <æŠ€èƒ½>\tlearn <æŠ€èƒ½> from <æŸäºº>\n");
         if (!ob->id(teacher))   return 0;
         if( me->is_fighting() )
-                return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
+                return notify_fail("ä¸´é˜µç£¨æªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
         if (me->query_skill("literate",1)<199)
-               return notify_fail("Äã»¹ÊÇÏÈµ½ÆäËûµØ·½Ñ§°É¡£\n");
+               return notify_fail("ä½ è¿˜æ˜¯å…ˆåˆ°å…¶ä»–åœ°æ–¹å­¦å§ã€‚\n");
         if( !living(ob) )
-                return notify_fail("àÅ....ÄãµÃÏÈ°Ñ" + ob->name() + "ÅªĞÑÔÙËµ¡£\n");
+                return notify_fail("å—¯....ä½ å¾—å…ˆæŠŠ" + ob->name() + "å¼„é†’å†è¯´ã€‚\n");
         learn=me->query_skill("literate",1);
-        if( !me->query_temp("mark/Öì") || me->query_temp("mark/Öì")<learn){
-                command("say ß×£¿"+me->name()+"£¬ÎÒ²»¼ÇµÃÊÕ¹ıÄãÕâ¸öÑ§Éú°¡....\n");
+        if( !me->query_temp("mark/æœ±") || me->query_temp("mark/æœ±")<learn){
+                command("say å’¦ï¼Ÿ"+me->name()+"ï¼Œæˆ‘ä¸è®°å¾—æ”¶è¿‡ä½ è¿™ä¸ªå­¦ç”Ÿå•Š....\n");
                 return 0;
         }
         if (!learn)     learn=10;
         if (skill!="literate")
-                return notify_fail("ÕâÏî¼¼ÄÜÄã¿ÖÅÂ±ØĞëÕÒ±ğÈËÑ§ÁË¡£\n");
+                return notify_fail("è¿™é¡¹æŠ€èƒ½ä½ ææ€•å¿…é¡»æ‰¾åˆ«äººå­¦äº†ã€‚\n");
         if (! room=find_object(ob->query("startroom")))
                 room=load_object(ob->query("startroom"));
         if (room!=environment()){
-                command("say ÎÒ³öÀ´°ìµãÊÂ£¬µÈÎÒ»ØÈ¥ÔÙËµ°É£¡");
+                command("say æˆ‘å‡ºæ¥åŠç‚¹äº‹ï¼Œç­‰æˆ‘å›å»å†è¯´å§ï¼");
                 return 1;
         }
         if (ob->query("env/no_teach")){
-                command("say ÎÒ½ñÌìÀÛÁË£¬ÎÒÒªÈ¥ĞİÏ¢ÁË£¡");
+                command("say æˆ‘ä»Šå¤©ç´¯äº†ï¼Œæˆ‘è¦å»ä¼‘æ¯äº†ï¼");
                 return 1;
         }
         my_skill = me->query_skill(skill, 1);
         master_skill = ob->query_skill(skill, 1);
         if( my_skill >= master_skill )
-                return notify_fail("ÕâÏî¼¼ÄÜÄãµÄ³Ì¶ÈÒÑ¾­²»ÊäÄãÊ¦¸¸ÁË¡£\n");
+                return notify_fail("è¿™é¡¹æŠ€èƒ½ä½ çš„ç¨‹åº¦å·²ç»ä¸è¾“ä½ å¸ˆçˆ¶äº†ã€‚\n");
         gin_cost = 150 / (int)me->query_int() + 1;
         if( !my_skill ) {
                 gin_cost *= 2;
                 me->set_skill(skill,0);
         }
-        printf("ÄãÏò%sÇë½ÌÓĞ¹Ø¡¸%s¡¹µÄÒÉÎÊ¡£\n", ob->name(), to_chinese(skill));
+        printf("ä½ å‘%sè¯·æ•™æœ‰å…³ã€Œ%sã€çš„ç–‘é—®ã€‚\n", ob->name(), to_chinese(skill));
         if( (int)ob->query("jing") > gin_cost/10 + 1 )
         {
                 ob->receive_damage("jing", gin_cost/10+1);
         }
         else
         {
-                write("µ«ÊÇ" + ob->name() + "ÏÔÈ»Ì«ÀÛÁË£¬Ã»ÓĞ°ì·¨½ÌÄãÊ²÷á¡£\n");
+                write("ä½†æ˜¯" + ob->name() + "æ˜¾ç„¶å¤ªç´¯äº†ï¼Œæ²¡æœ‰åŠæ³•æ•™ä½ ä»€éº½ã€‚\n");
                 ob->set("env/no_teach",1);
                 call_out("do_sleep",1,ob);
                 return 1;
@@ -129,24 +129,24 @@ int do_learn(string arg)
                 grade = 1;
         if((int)me->query("jing") > gin_cost+20 )
         {
-                printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬ËÆºõÓĞĞ©ĞÄµÃ¡£\n", ob->name());
+                printf("ä½ å¬äº†%sçš„æŒ‡å¯¼ï¼Œä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n", ob->name());
                 me->improve_skill(skill, grade * (10 + random((int)me->query_int() - 9)));
         }
         else
         {
-                write("Äã½ñÌìÌ«ÀÛÁË£¬½á¹ûÊ²Ã´Ò²Ã»ÓĞÑ§µ½¡£\n");
+                write("ä½ ä»Šå¤©å¤ªç´¯äº†ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡æœ‰å­¦åˆ°ã€‚\n");
                 return 1;
         }
       if (gin_cost<1) gin_cost=1;
         me->receive_damage("jing", gin_cost );
-        me->add_temp("mark/Öì", -learn);
+        me->add_temp("mark/æœ±", -learn);
         return 1;
 }
 int do_sleep(object ob)
 {
         object room;
         if (!ob)        return  0;
-        message("vision",ob->name()+"´òÁË¸ö¹şÇ·£¬ÈàÈàÑÛ¾¦£¬»Ø·¿Ë¯¾õÈ¥ÁË¡£\n",environment(ob));
+        message("vision",ob->name()+"æ‰“äº†ä¸ªå“ˆæ¬ ï¼Œæ‰æ‰çœ¼ç›ï¼Œå›æˆ¿ç¡è§‰å»äº†ã€‚\n",environment(ob));
         if (!room=find_object("/d/changan/shuyan2"))
                 room=load_object("/d/changan/shuyuan2");
         ob->move(room);
@@ -167,7 +167,7 @@ int do_back(object ob)
         if (!room=find_object(ob->query("startroom")))
                 room=load_object(ob->query("startroom"));
         ob->move(room);
-        message("vision",ob->name()+"ÉìÁËÉìÀÁÑü£¬Î¢Ğ¦µØ×ßÁË¹ıÀ´¡£\n",room);
+        message("vision",ob->name()+"ä¼¸äº†ä¼¸æ‡’è…°ï¼Œå¾®ç¬‘åœ°èµ°äº†è¿‡æ¥ã€‚\n",room);
         return 1;
 }
 int return_home(object home)
@@ -183,7 +183,7 @@ int return_home(object home)
            return 1;
          }
         // Leave for home now.
-        message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+        message("vision", this_object()->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                 environment(), this_object());
         return move(home);
 }

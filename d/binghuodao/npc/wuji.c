@@ -4,7 +4,7 @@ string ask_huijia()
 {
 object me=this_player();
 set_leader(me);
-return "Ğ»Ğ»ÄãÔ¸ÒâËÍÎÒ»Ø¼Ò.\n";
+return "è°¢è°¢ä½ æ„¿æ„é€æˆ‘å›å®¶.\n";
 }
 
 string ask_daojia()
@@ -12,33 +12,33 @@ string ask_daojia()
  object ob,me;
  ob = this_object();
  me = this_player();
- if( environment(me)->query("short")=="ÕÅ¼Ò×¡µÄÉ½¶´")
+ if( environment(me)->query("short")=="å¼ å®¶ä½çš„å±±æ´")
          {
 
           set_leader(0);
 if (me)
 {
           me->set_temp("marks/bing",1);
-          write("ÖÕÓÚµ½¼ÒÁË£¬Ì«Ğ»Ğ»ÄãÁË.\n");
+          write("ç»ˆäºåˆ°å®¶äº†ï¼Œå¤ªè°¢è°¢ä½ äº†.\n");
           me->start_busy(2);
 }
        call_out("destroying", 1,  ob);                       
-           return "ÎŞ¼É¸Õµ½¼ÒÓÖ³öÈ¥ÍæÁË.....\n";  
+           return "æ— å¿Œåˆšåˆ°å®¶åˆå‡ºå»ç©äº†.....\n";  
       }
         else {
-                return "»¹Ã»µ½.\n";
+                return "è¿˜æ²¡åˆ°.\n";
         }
 }
 void greeting(object ob)
 {
-        tell_object(ob,"ÎŞ¼ÉËµ:¶´ÍâÃæÓĞÀÇ,ÎÒ²»¸Ò³öÈ¥!\n");
+        tell_object(ob,"æ— å¿Œè¯´:æ´å¤–é¢æœ‰ç‹¼,æˆ‘ä¸æ•¢å‡ºå»!\n");
 }
 void create()
 {
-        set_name("ÕÅÎŞ¼É",({ "zhang wuji" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¼ æ— å¿Œ",({ "zhang wuji" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 6);
-        set("long", "ÕâÊÇĞ»Ñ·Òå×Ó,ÕÅ´äÉ½ÓëÒóËØËØµÄ¶ù×Ó\n");
+        set("long", "è¿™æ˜¯è°¢é€Šä¹‰å­,å¼ ç¿ å±±ä¸æ®·ç´ ç´ çš„å„¿å­\n");
         set("combat_exp", 500);
         set("shen_type", 200);
         set("str", 10);
@@ -48,8 +48,8 @@ void create()
         set("attitude", "friendly");
         set("chat_chance", 6);
         set("inquiry", ([
-        "»Ø¼Ò" : (:ask_huijia:) ,
-        "µ½¼Ò" : (:ask_daojia:) ,
+        "å›å®¶" : (:ask_huijia:) ,
+        "åˆ°å®¶" : (:ask_daojia:) ,
          ]) );
 
         set("neili",200);

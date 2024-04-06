@@ -4,10 +4,10 @@ inherit F_DEALER;
 void create()
 {
    //reload("ls_yaodian_song");
-   set_name("ËÎ´ó·ò",({ "song daifu","song","daifu"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("å®‹å¤§å¤«",({ "song daifu","song","daifu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-   set("long", "ÕâÊÇÓæÑôµÄÍõÒ©Ê¦£¬ËûÕâÀïÓĞºÜ¶àĞÂÆæµÄÒ©Îï¡£\n");
+   set("long", "è¿™æ˜¯æ¸”é˜³çš„ç‹è¯å¸ˆï¼Œä»–è¿™é‡Œæœ‰å¾ˆå¤šæ–°å¥‡çš„è¯ç‰©ã€‚\n");
     set("shop_id",({ "song daifu","song","daifu"}) );
    set("combat_exp",300000);
    set("str",26);

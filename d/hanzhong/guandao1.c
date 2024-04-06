@@ -1,15 +1,15 @@
-// guandao1.c �ٵ�
+// guandao1.c 官道
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "�ٵ�");
+        set("short", "官道");
         set("long", @LONG
-����һ�����������ͨ���书�򡣵��ϵ����˺ܶ࣬����ǵ�
-��ͷ�Լ����Լ���·����Ȼ�������������õõ�����������һ��
-������ƥ�����������߷ɳ۶�����������һƬ��ɳ��
+这是一条大道，西面通往武功镇。道上的行人很多，大多是低
+着头自己赶自己的路。忽然在你的身后响起得得的马蹄声，不一会
+儿，几匹骏马从你身边飞驰而过，掠起了一片黄沙。
 LONG
         );
         set("outdoors", "hanzhong");

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"��֮ħ��ʦ����"NOR);
+	set("short", HIY"炎之魔导师公会"NOR);
 	set("long", HIY @LONG
-  ���ڻ�Ԫ�ص�Ӱ�죬�⸽��ȫ��ɰĮ��������֮����������
-��ɰĮ�����ϵ�һ������!!������ħ��ʦ���ᡣ����ѧЩʲô
-��??(skills)
+  由于火元素的影响，这附近全是砂漠，而这炎之都市正是在
+这砂漠绿洲上的一颗明珠!!这里是魔导师公会。你想学些什么
+呢??(skills)
 LONG NOR);
 set("magicroom",1);
 set("magicset",1);

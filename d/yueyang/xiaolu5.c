@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��·");
+	set("short", "山中路");
 	set("long", @LONG
-�����ھ�ɽ��ɽ��С·�ϡ���ɽ������Բ�Σ��Ը��еͣ�����ʮ��
-����ɣ��������㣬���������ġ�
+你走在君山的山中小路上。君山，岛呈圆形，旁高中低，由七十二
+峰组成，峰峰皆灵秀，处处尽清幽。
 LONG );
 	set("outdoors", "dongting");
 	set("no_clean_up", 0);

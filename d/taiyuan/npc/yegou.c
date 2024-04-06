@@ -1,20 +1,20 @@
 inherit NPC;
 void create()
 {
-   set_name("Ò°¹·",({ "dog","gou"}) );
-   set("race","Ò°ÊŞ");
-  set("long", "ÕâÊÇÒ»Ö»Ò°¹·£¬¿´À´¿ì¶öËÀÁË¡£\n");
+   set_name("é‡ç‹—",({ "dog","gou"}) );
+   set("race","é‡å…½");
+  set("long", "è¿™æ˜¯ä¸€åªé‡ç‹—ï¼Œçœ‹æ¥å¿«é¥¿æ­»äº†ã€‚\n");
    set("combat_exp", 20000);
    set_temp("apply/damage",30);
    set_temp("apply/dodge",30);
    set_temp("apply/armor",30);
    set("chat_chance",20);
    set("chat_msg",({
-   	"Ò°¹·³å×ÅÄã½ĞµÀ£ºÍô£¬Íô£¡\n",
+   	"é‡ç‹—å†²ç€ä½ å«é“ï¼šæ±ªï¼Œæ±ªï¼\n",
    	(:random_move:),
 }));
    set("verbs",({"bite"}));
-   set("limbs",({"Í·","ÍÈ","¶Ç×Ó","Î²°Í"}));
+   set("limbs",({"å¤´","è…¿","è‚šå­","å°¾å·´"}));
    setup();
   
 }

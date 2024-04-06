@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-	set ("short", "������");
+	set ("short", "汉正街");
 	set ("long", @LONG
-�����人����Ľֵ����Ӵ��ϱ����ĸ�ɫ�˵ȣ�����������Ħ
-����ࡣ������һ��С�Ե꣬�ſڵ�������д�š���ͨ�ǡ��������֡�
-������һ����ͷ������ϸ��������������ˮ�Ĵ򽭰���������
+这是武汉最繁华的街道。从大江南北来的各色人等，熙熙攘攘，摩
+肩接踵。西边是一家小吃店，门口的招帘上写着“老通城”三个大字。
+东边是一个码头。你侧耳细听，可以听到江水拍打江岸的涛声。
 LONG);
 	set("outdoors", "jiangling");
 	set("exits", ([

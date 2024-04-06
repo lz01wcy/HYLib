@@ -4,8 +4,8 @@ inherit NPC;
 int qijiao(); 
 void create()
 {
-        set_name("µ±°à²îÒÛ", ({ "chaiyi"}) );
-        set("long", "ÕıÔÚµ±°àµÄ²îÒÛ¡£\n");
+        set_name("å½“ç­å·®å½¹", ({ "chaiyi"}) );
+        set("long", "æ­£åœ¨å½“ç­çš„å·®å½¹ã€‚\n");
         set("attitude", "heroism");
         set("vendetta_mark", "authority");
         set("reward_npc", 1);

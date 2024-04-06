@@ -4,10 +4,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "ÄÏÔº");
+	set("short", "å—é™¢");
 	set("long", @LONG
-ÕâÀïÊÇÄÏ¿çÔº£¬Ôº×ÓÀïÓÐ¿ÃºÜ´óµÄéÅÊ÷£¬½«Ìì¿Õ´ó²¿ÕÚ×¡£¬Ôº×ÓÀï¾²
-ÇÄÇÄµÄ£¬Ö»ÓÐ¼¸Ö»¸ß´óµÄ²ØéáÔÚÊ÷ÏÂÀ´»Øõâ²½¡£ 
+è¿™é‡Œæ˜¯å—è·¨é™¢ï¼Œé™¢å­é‡Œæœ‰æ£µå¾ˆå¤§çš„æ¦•æ ‘ï¼Œå°†å¤©ç©ºå¤§éƒ¨é®ä½ï¼Œé™¢å­é‡Œé™
+æ‚„æ‚„çš„ï¼Œåªæœ‰å‡ åªé«˜å¤§çš„è—ç’åœ¨æ ‘ä¸‹æ¥å›žè¸±æ­¥ã€‚ 
 LONG
 	);
         set("outdoors", "wudujiao");
@@ -37,11 +37,11 @@ int do_climb(string arg)
 	object me=this_player();
 	object ob; 
 	if( (!arg) ||!((arg == "tree") || (arg == "up")))
-		return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
-		message_vision("$P´éÁË´éÊÖ£¬ÅÊ×ÅéÅÊ÷µÄÖ¦è¾ÈýÏÂÁ½ÏÂ¾ÍÅÀÁËÉÏÈ¥¡£\n\n",me);
+		return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
+		message_vision("$Pæ’®äº†æ’®æ‰‹ï¼Œæ”€ç€æ¦•æ ‘çš„æžæˆä¸‰ä¸‹ä¸¤ä¸‹å°±çˆ¬äº†ä¸ŠåŽ»ã€‚\n\n",me);
         ob = load_object(__DIR__"tree");
         ob = find_object(__DIR__"tree");
-        message("vision", me->query("name")+"´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n", ob);
+        message("vision", me->query("name")+"ä»Žä¸‹é¢çˆ¬äº†ä¸Šæ¥ã€‚\n", ob);
         me->move(__DIR__"tree");
         return 1;
 }

@@ -5,13 +5,13 @@ inherit THROWING;
 
 void create()
 {
-	set_name("Æß´ç³¤µÄ¶Ì½£", ({ "short sword", "sword" }) );
+	set_name("ä¸ƒå¯¸é•¿çš„çŸ­å‰‘", ({ "short sword", "sword" }) );
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "¾«¹âËÄÉäµÄ¶Ì½££¬½£³¤Æß´ç£¬½£±úÁ½´ç¡£\n");
-		set("unit", "°Ñ");
-		set("base_unit", "°Ñ");
+		set("long", "ç²¾å…‰å››å°„çš„çŸ­å‰‘ï¼Œå‰‘é•¿ä¸ƒå¯¸ï¼Œå‰‘æŸ„ä¸¤å¯¸ã€‚\n");
+		set("unit", "æŠŠ");
+		set("base_unit", "æŠŠ");
 		set("base_weight", 40);
 		set("value", 5);
 	}

@@ -2,14 +2,14 @@
 inherit THROWING; 
 void create()
 {
-        set_name("÷½ÅÆ", ({ "gupai" }) );
+        set_name("é¹˜ç‰Œ", ({ "gupai" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long",     "Ò»ÕÅ¾§äŞÌŞÍ¸µÄÏóÑÀ÷»ÅÆ\n");
-                set("unit", "¶Ñ");
+                set("long",     "ä¸€å¼ æ™¶æ»¢å‰”é€çš„è±¡ç‰™éª°ç‰Œ\n");
+                set("unit", "å †");
                 set("base_value", 1);
-                set("base_unit", "ÕÅ");
+                set("base_unit", "å¼ ");
                 set("base_weight", 1);
         }
         set_amount(48);

@@ -5,10 +5,10 @@ string ask_me();
 
 void create()
 {
-	set_name("¹ÛÖÚÎì", ({ "wu" }));
+	set_name("è§‚ä¼—æˆŠ", ({ "wu" }));
 	set("long", 
-		"´ËÈËÏàÃ²Ææ³ó£¬Ê¨±ÇÀ«¿Ú£¬Ò»Íû¶øÖª²»ÊÇÖĞÍÁÈËÊ¿¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"æ­¤äººç›¸è²Œå¥‡ä¸‘ï¼Œç‹®é¼»é˜”å£ï¼Œä¸€æœ›è€ŒçŸ¥ä¸æ˜¯ä¸­åœŸäººå£«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 32);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -52,13 +52,13 @@ void init()
 	&& !environment(ob)->query("no_fight"))
 	{
 		if( !ob->query_temp("warned") ) {
-			command("say ½ñÌì¿´Ï·²»³É£¬ÕæÏëÈÃÄã³¢³¢´óÒ¯ÎÒ¶¾ÕÆµÄÀ÷º¦£¡");
+			command("say ä»Šå¤©çœ‹æˆä¸æˆï¼ŒçœŸæƒ³è®©ä½ å°å°å¤§çˆ·æˆ‘æ¯’æŒçš„å‰å®³ï¼");
 			ob->set_temp("warned", 1);
 		}
 		else if( ob->query_temp("stay") < 10 ) ob->add_temp("stay", 1);
 		else {
 			me->set_leader(ob);
-			command("say ¿´ÄãÕâ´ÎÍùÄÄ¶ùÅÜ£¡");
+			command("say çœ‹ä½ è¿™æ¬¡å¾€å“ªå„¿è·‘ï¼");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}
@@ -73,7 +73,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "¹ÛÖÚ×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "è§‚ä¼—é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

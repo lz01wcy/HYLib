@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-    set_name("巨蟒", ({ "ju mang", "mang" }) );
-	set("race", "野兽");
+    set_name("宸ㄨ煉", ({ "ju mang", "mang" }) );
+	set("race", "閲庡吔");
 	set("age", 70);
-    set("long", "一条五丈来长的蟒！！！\n");
+    set("long", "涓�鏉′簲涓堟潵闀跨殑锜掞紒锛侊紒\n");
     set("attitude", "aggressive");
-	set("limbs", ({ "头部", "身体", "尾巴", "躯干" }) );
+	set("limbs", ({ "澶撮儴", "韬綋", "灏惧反", "韬共" }) );
 	set("verbs", ({ "bite" }) );
         set("str", 190);
         set("con", 190);

@@ -1,14 +1,14 @@
-//ɽ��
+//山洞
 // by steel 
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ѩ��");
+	set("short", "雪洞");
 	set("long", @LONG
-	����ѩɽ�е�һ����,���ڷ�ѩ��ȻС�˵�,�����溮�ޱ�,����û
-��ʲô������������������.  
+	这是雪山中的一个洞,洞内风雪虽然小了点,但是奇寒无比,看来没
+有什么生命可以在这里生存.  
 LONG
 	);
 	

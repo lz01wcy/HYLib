@@ -1,4 +1,4 @@
-// kang.c ¿µÇ×Íõ
+// kang.c åº·äº²ç‹
 
 #include <ansi.h>
 
@@ -8,14 +8,14 @@ int ask_meili();
 
 void create()
 {
-	set_name("½ÜÊé", ({ "jie shu", "jie", "shu"}));
-	set("gender", "ÄĞĞÔ");
-	set("title", HIY"¿µÇ×Íõ"HIR"ÏâºìÆìÆìÖ÷"NOR);
+	set_name("æ°ä¹¦", ({ "jie shu", "jie", "shu"}));
+	set("gender", "ç”·æ€§");
+	set("title", HIY"åº·äº²ç‹"HIR"é•¶çº¢æ——æ——ä¸»"NOR);
 	set("age", 42);
 	set("str", 25);
 	set("dex", 20);
-	set("long", "\nÖ»¼ûËûÒ»Éí½õÒÂ£¬Ğ¦ÈİÂúÃæ£¬ÈÎË­¼ûÁËËû¶¼Éú²»ÆğÆøÀ´¡£\n"+
-		"´ËÈËÉîÚÏÎª¹ÙÖ®µÀ£¬¼«ÉÆ²ìÑÔ¹ÛÉ«¡¢ÁïĞëÅÄÂí£¬ÆÄµÃ»ÊµÛ»¶ĞÄ¡£\n");
+	set("long", "\nåªè§ä»–ä¸€èº«é”¦è¡£ï¼Œç¬‘å®¹æ»¡é¢ï¼Œä»»è°è§äº†ä»–éƒ½ç”Ÿä¸èµ·æ°”æ¥ã€‚\n"+
+		"æ­¤äººæ·±è°™ä¸ºå®˜ä¹‹é“ï¼Œæå–„å¯Ÿè¨€è§‚è‰²ã€æºœé¡»æ‹é©¬ï¼Œé¢‡å¾—çš‡å¸æ¬¢å¿ƒã€‚\n");
 	set("combat_exp", 50000);
 	set("score", 5000);
 	set("shen_type", -1);
@@ -37,10 +37,10 @@ void create()
 	set("max_neili", 500);
 	set("jiali", 50);
 	set("inquiry", ([
-		"÷¡°İ" :  "\n÷¡°İÕâØËºáĞĞ°ÔµÀ£¬ÎÒÔç¾ÍÏë³ıÁËËû¡£\n",
-		"ÓñæõÂí" :  "\nÄãÏëÒªÎÒ¾ÍËÍÓëÄã°É£¬²»¹ıËü¿É²»Ò»¶¨»á·şÄã¡£\n",
-		"÷ÈÁ¦" :  (: ask_meili :),
-		"µ±¹Ù" : (: ask_meili :),
+		"é³Œæ‹œ" :  "\né³Œæ‹œè¿™å®æ¨ªè¡Œéœ¸é“ï¼Œæˆ‘æ—©å°±æƒ³é™¤äº†ä»–ã€‚\n",
+		"ç‰éª¢é©¬" :  "\nä½ æƒ³è¦æˆ‘å°±é€ä¸ä½ å§ï¼Œä¸è¿‡å®ƒå¯ä¸ä¸€å®šä¼šæœä½ ã€‚\n",
+		"é­…åŠ›" :  (: ask_meili :),
+		"å½“å®˜" : (: ask_meili :),
 	]) );
 
 	setup();
@@ -50,9 +50,9 @@ void create()
 
 int ask_meili()
 {
-	command("tell "+this_player()->query("id")+" ÄãÏÖÔÚµÄ÷ÈÁ¦ÖµÊÇ " +(string)(this_player()->query("meili")));
-	say("\n¿µÇ×ÍõĞ¦µÀ£ºÒªÏëµ±¹Ù÷ÈÁ¦²»¸ß¿É²»ĞĞ°¡¡£\n");
-	say("¿µÇ×ÍõÓÖËµ£º¶à¸ú´ï¹ÙÏÔ¹óÃÇ½»Íù£¬÷ÈÁ¦×ÔÈ»»áÌá¸ßµÄ¡£\n");
+	command("tell "+this_player()->query("id")+" ä½ ç°åœ¨çš„é­…åŠ›å€¼æ˜¯ " +(string)(this_player()->query("meili")));
+	say("\nåº·äº²ç‹ç¬‘é“ï¼šè¦æƒ³å½“å®˜é­…åŠ›ä¸é«˜å¯ä¸è¡Œå•Šã€‚\n");
+	say("åº·äº²ç‹åˆè¯´ï¼šå¤šè·Ÿè¾¾å®˜æ˜¾è´µä»¬äº¤å¾€ï¼Œé­…åŠ›è‡ªç„¶ä¼šæé«˜çš„ã€‚\n");
 	return 1;
 }
 
@@ -74,10 +74,10 @@ void greeting(object ob)
 	if((int)ob->query("meili")<20)
 	{
 		if(userp(ob))
-			message_vision("\n¿µÇ×ÍõÒ»¼û$N, ¶ÙÊ±²ªÈ»´óÅ­£¬½ĞµÀ£º¡°À´ÈË°¡£¡½«ÕâØË¸øÎÒÄÃÏÂ£¡¡±\n",ob);
+			message_vision("\nåº·äº²ç‹ä¸€è§$N, é¡¿æ—¶å‹ƒç„¶å¤§æ€’ï¼Œå«é“ï¼šâ€œæ¥äººå•Šï¼å°†è¿™å®ç»™æˆ‘æ‹¿ä¸‹ï¼â€\n",ob);
 			if(!present("shi wei", environment(ob)))
 			{
-				message_vision("µÇÊ±ÃÅÍâ³å½ø¼¸¸öÊÌÎÀ£¬»Óµ¶Ïò$NÖ±ÆË¹ıÀ´¡£\n",ob);
+				message_vision("ç™»æ—¶é—¨å¤–å†²è¿›å‡ ä¸ªä¾å«ï¼ŒæŒ¥åˆ€å‘$Nç›´æ‰‘è¿‡æ¥ã€‚\n",ob);
 				man=new("/d/huanggong/npc/shiwei");
 				man->move(environment(ob));
 				man=new("/d/huanggong/npc/shiwei");
@@ -90,16 +90,16 @@ void greeting(object ob)
 	switch( random(5) )
 	{
 		case 0:
-			message_vision("\n$N¸ÕÒ»½øÃÅ, ¿µÇ×Íõ±ãÇÀ×ÅÓ­ÁË³öÀ´£¬Ğ¦µÀ£º¡°ÕâÎ»"+RANK_D->query_respect(ob)+"£¬Çë½øÇë½ø¡£\n",ob);
+			message_vision("\n$Nåˆšä¸€è¿›é—¨, åº·äº²ç‹ä¾¿æŠ¢ç€è¿äº†å‡ºæ¥ï¼Œç¬‘é“ï¼šâ€œè¿™ä½"+RANK_D->query_respect(ob)+"ï¼Œè¯·è¿›è¯·è¿›ã€‚\n",ob);
 			if(ob->query("meili")<60)
 			{
 				ob->add("meili",10);
-				message_vision(HIC"$NµÄ÷ÈÁ¦ÖµÌá¸ßÁË£¡\n"NOR,ob);
-				command("tell "+ob->query("id")+" ÄãÏÖÔÚµÄ÷ÈÁ¦ÖµÊÇ " +(string)(ob->query("meili")));
+				message_vision(HIC"$Nçš„é­…åŠ›å€¼æé«˜äº†ï¼\n"NOR,ob);
+				command("tell "+ob->query("id")+" ä½ ç°åœ¨çš„é­…åŠ›å€¼æ˜¯ " +(string)(ob->query("meili")));
 			}
 			break;
 		default:
-			say("¿µÇ×ÍõĞ¦µÀ£º²»ÖªÕâÎ»" + RANK_D->query_respect(ob)+"£¬¹âÁÙº®ÉáÓĞºÎ¹ó¸É£¿\n");
+			say("åº·äº²ç‹ç¬‘é“ï¼šä¸çŸ¥è¿™ä½" + RANK_D->query_respect(ob)+"ï¼Œå…‰ä¸´å¯’èˆæœ‰ä½•è´µå¹²ï¼Ÿ\n");
 			break;
 	}
 }

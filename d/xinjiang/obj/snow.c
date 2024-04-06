@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-        set_name("»ıÑ©", ({ "snow" , "»ıÑ©"}) );
+        set_name("ç§¯é›ª", ({ "snow" , "ç§¯é›ª"}) );
         set_weight(50000);
         set_max_encumbrance(8000);
         set("no_get", 1);
@@ -10,8 +10,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "°×É«µÄ»ıÑ©£¬ÓÖºñÓÖÖØ\n");
+                set("unit", "ä¸ª");
+                set("long", "ç™½è‰²çš„ç§¯é›ªï¼Œåˆåšåˆé‡\n");
                 set("value", 1);
         }
 	setup();

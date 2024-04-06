@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","�뷿");
+  set ("short","闺房");
   set ("long", @LONG
-�����������Ů���Ĺ뷿������ܸɾ��������ո����˴�ɨ������
-ͷ����ױ̨���ż���װ��Ʒ���������ǳ�����
+这里是李财主女二的闺房。这里很干净，看来刚刚有人打扫过。床
+头的梳妆台放着几件装饰品，看起来非常名贵。
 LONG);
 
   set("exits", ([ 

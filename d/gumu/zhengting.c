@@ -1,4 +1,4 @@
-// zhengting.c ÕıÌü
+// zhengting.c æ­£å…
 // Java Oct.10 1998
 
 #include <ansi.h>
@@ -8,12 +8,12 @@ int do_sleep(string arg);
 
 void create()
 {
-        set("short", "ÕıÌü");
+        set("short", "æ­£å…");
         set("long", @LONG
-ÕâÀïÊÇ¹ÅÄ¹µÄÕıÌü£¬±¾À´Ó¦¸ÃÍ£·ÅÁéèÑ¹×Ä¾Ö®ÀàµÄ¶«Î÷£¬È´²»Öª
-µÀ±»ÈË°ãµ½ÄÄÀïÈ¥ÁË¡£ÌüÕıÖĞ¶Ë×ø×ÅÒ»Î»°×ÒÂÉÙÅ®£¬Ìü½ÇÉÏ°Ú·Å×ÅÒ»
-ÕÅÊ¯Í·×ö³ÉµÄ´ó´²(chuang)£¬ÌüÖĞºáÏµ×ÅÒ»ÌõÉş×Ó£¬²»ÖªµÀ×öÊ²Ã´ÓÃ
-µÄ£¬³ı´ËÖ®Íâ£¬±ğÎŞ°ÚÉè¡£
+è¿™é‡Œæ˜¯å¤å¢“çš„æ­£å…ï¼Œæœ¬æ¥åº”è¯¥åœæ”¾çµæŸ©æ£ºæœ¨ä¹‹ç±»çš„ä¸œè¥¿ï¼Œå´ä¸çŸ¥
+é“è¢«äººèˆ¬åˆ°å“ªé‡Œå»äº†ã€‚å…æ­£ä¸­ç«¯åç€ä¸€ä½ç™½è¡£å°‘å¥³ï¼Œå…è§’ä¸Šæ‘†æ”¾ç€ä¸€
+å¼ çŸ³å¤´åšæˆçš„å¤§åºŠ(chuang)ï¼Œå…ä¸­æ¨ªç³»ç€ä¸€æ¡ç»³å­ï¼Œä¸çŸ¥é“åšä»€ä¹ˆç”¨
+çš„ï¼Œé™¤æ­¤ä¹‹å¤–ï¼Œåˆ«æ— æ‘†è®¾ã€‚
 LONG
         );
 
@@ -31,7 +31,7 @@ LONG
         set("valid_startroom",1);
 
         set("item_desc", ([
-        "chuang": "ÕâÊÇÒ»ÕÅÓÃ"+HIB"Ç§Äêº®Óñ"NOR+"µñ³ÉµÄº®Óñ´²¡£\n"
+        "chuang": "è¿™æ˜¯ä¸€å¼ ç”¨"+HIB"åƒå¹´å¯’ç‰"NOR+"é›•æˆçš„å¯’ç‰åºŠã€‚\n"
         ]) );
         setup();
         "/clone/board/gumu_b"->foo();
@@ -49,15 +49,15 @@ int do_sleep(string arg)
         int lvl_force, c_exp, c_skill;
 
         if( !arg || arg == "" ) {
-                return notify_fail("ÄãÒªË¯ÔÚÄÄ¶ù£¿\n");
+                return notify_fail("ä½ è¦ç¡åœ¨å“ªå„¿ï¼Ÿ\n");
         }
 
         lvl_force=(int)me->query_skill("force",1);
-        if(lvl_force>150) //force ´óÓÚ 150
+        if(lvl_force>150) //force å¤§äº 150
                 {
-                message_vision("$NÌÉÉÏÁËº®Óñ´²£¬¿ªÊ¼Ç±ÔËÄÚ¹¦£¬Ê¹ÄÚÏ¢±éĞĞ´óĞ¡ÖÜÌì¡£\n",this_player());
+                message_vision("$Nèººä¸Šäº†å¯’ç‰åºŠï¼Œå¼€å§‹æ½œè¿å†…åŠŸï¼Œä½¿å†…æ¯éè¡Œå¤§å°å‘¨å¤©ã€‚\n",this_player());
                 if (random(20)>12) {
-                        message_vision("$Nµ÷Ï¢Íê±Ï£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÄÚÏ¢³äÅæÓû±¼ÌÚ¶ø³ö¡£\n", this_player());
+                        message_vision("$Nè°ƒæ¯å®Œæ¯•ï¼Œåªè§‰å¾—ç²¾ç¥å¥æ—ºï¼Œå†…æ¯å……æ²›æ¬²å¥”è…¾è€Œå‡ºã€‚\n", this_player());
                         c_exp=me->query("combat_exp");
                         c_skill=me->query_skill("force",1);
                         if (((c_skill*c_skill*c_skill/10)< c_exp) && (c_skill<250))
@@ -67,9 +67,9 @@ int do_sleep(string arg)
                         me->receive_damage("qi",random(lvl_force/3));
                 }
                 else
-                        message_vision("$Nµ÷Ï¢Íê±Ï£¬Õ¾ÆğÉíÀ´£¬ÌáÁËÌáÄÚÁ¦£¬ºÃÏóÃ»Ê²Ã´³¤½ø¡£\n", this_player());
+                        message_vision("$Nè°ƒæ¯å®Œæ¯•ï¼Œç«™èµ·èº«æ¥ï¼Œæäº†æå†…åŠ›ï¼Œå¥½è±¡æ²¡ä»€ä¹ˆé•¿è¿›ã€‚\n", this_player());
                 }
         else
-                message_vision("$NÌÉÉÏº®Óñ´²£¬Ö»¾õµÃ±ùÀä´Ì¹Ç£¬¡®°¡¡¯µÄÒ»ÉùÀÇ±·²»¿°µØÌøÁËÆğÀ´¡£\n", this_player());
+                message_vision("$Nèººä¸Šå¯’ç‰åºŠï¼Œåªè§‰å¾—å†°å†·åˆºéª¨ï¼Œâ€˜å•Šâ€™çš„ä¸€å£°ç‹¼ç‹ˆä¸å ªåœ°è·³äº†èµ·æ¥ã€‚\n", this_player());
         return 1;
 }

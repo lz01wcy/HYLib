@@ -6,20 +6,20 @@ inherit NPC;
 string	summon_more( object who);
 void create()
 {
-	set_name( "ºşÉÏË®", ({ "shui", "girl" }) );
-	set("long", "ÕâÊÇÇ§½ğÂ¥ºşÉÏ°Ë½¿Ö®Ò»£®
-ºşÉÏË®£¬Á÷ÈÆ½ûÔ°ÖĞ¡£
-Ğ±ÈÕÅ¯Ò¡Çå´ä¶¯£¬Âä»¨ÏãÅ¯ÖÚÎÆºì£¬Æ»Ä©ÆğÇå·ç¡£
-ÏĞ×İÄ¿£¬ÓãÔ¾Ğ¡Á«¶«¡£
-·º·ºÇáÒ¡À¼èşÎÈ£¬³Á³Áº®Ó°ÉÏÏÉ¹¬£¬Ô¶Òâ¸üÖØÖØ¡£
+	set_name( "æ¹–ä¸Šæ°´", ({ "shui", "girl" }) );
+	set("long", "è¿™æ˜¯åƒé‡‘æ¥¼æ¹–ä¸Šå…«å¨‡ä¹‹ä¸€ï¼
+æ¹–ä¸Šæ°´ï¼Œæµç»•ç¦å›­ä¸­ã€‚
+æ–œæ—¥æš–æ‘‡æ¸…ç¿ åŠ¨ï¼Œè½èŠ±é¦™æš–ä¼—çº¹çº¢ï¼Œè‹¹æœ«èµ·æ¸…é£ã€‚
+é—²çºµç›®ï¼Œé±¼è·ƒå°è²ä¸œã€‚
+æ³›æ³›è½»æ‘‡å…°æ£¹ç¨³ï¼Œæ²‰æ²‰å¯’å½±ä¸Šä»™å®«ï¼Œè¿œæ„æ›´é‡é‡ã€‚
 \n");
 	set("attitude", "friendly");
-	set("title", HIM "ºşÉÏ°Ë½¿" NOR);
+	set("title", HIM "æ¹–ä¸Šå…«å¨‡" NOR);
 	set("max_gin", 500);
 	set("max_kee", 500);
 	set("max_sen", 500);
 	set("age", 17);
-        set("gender", "Å®ĞÔ" );
+        set("gender", "å¥³æ€§" );
 
 
 	set("str", 35);
@@ -49,7 +49,7 @@ string summon_more(object who)
 	seteuid(getuid());
 	another = new(__DIR__"jianu");
 	another->move(environment(who));
-	message_vision(another->name()+ "×ßÁË¹ıÀ´¡£\n"
+	message_vision(another->name()+ "èµ°äº†è¿‡æ¥ã€‚\n"
 		, this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);
@@ -66,9 +66,9 @@ int accept_object(object me, object obj)
 {
 	if( !obj->value() &&  !obj->query("value")) return 0;
         command("smile");
-	message_vision("$NÏò$nµÀÁË¸öÍò¸££º\n",this_object(),me);
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬Í·Ò»´Î¼ûµ½ÏóÄúÕâÃ´´ó·½µÄ£¡");
+	message_vision("$Nå‘$né“äº†ä¸ªä¸‡ç¦ï¼š\n",this_object(),me);
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œå¤´ä¸€æ¬¡è§åˆ°è±¡æ‚¨è¿™ä¹ˆå¤§æ–¹çš„ï¼");
         return 1;
 }
 

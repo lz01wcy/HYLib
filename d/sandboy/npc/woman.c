@@ -1,11 +1,11 @@
 inherit NPC;
 void create()
 {
-   set_name("Ï¹ÑÛÀÏÆÅÆÅ",({"old woman","old","woman"}));
+   set_name("ççœ¼è€å©†å©†",({"old woman","old","woman"}));
    set("age",75);
    set("shen_type",1);
    set("combat_exp",5000);
-   set("gender","Å®ĞÔ");
+   set("gender","å¥³æ€§");
 
    set_skill("unarmed",140);
    set_skill("dodge",120);
@@ -15,8 +15,8 @@ void create()
 
    set("chat_chance",10);
    set("chat_msg",({
-     "°¦,ÕÅÉ½º¢¶ùÔõÃ´»¹²»»ØÀ´°¡.\n",
-     "¶à¿÷ÎÒ¼ÒÏ±¸¾ÏÍ»İ,ÎÒ²ÅÃ»¸ú×ÅÀÏÍ·×ÓÈ¥°¡.\n",
+     "å”‰,å¼ å±±å­©å„¿æ€ä¹ˆè¿˜ä¸å›æ¥å•Š.\n",
+     "å¤šäºæˆ‘å®¶åª³å¦‡è´¤æƒ ,æˆ‘æ‰æ²¡è·Ÿç€è€å¤´å­å»å•Š.\n",
     }));
 
    setup();

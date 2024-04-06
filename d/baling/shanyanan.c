@@ -10,12 +10,12 @@ inherit ROOM;
 int do_yell(string arg);
 void create ()
 {
-  set ("short","É½ÑÂ");
+  set ("short","å±±å´–");
   set ("long", @LONG
-ÕâÀïÊÇÒ»µÀÉ½ÑÂ£¬Î»ÓÚ»ÆºÓµÄ±±°¶¡£ÒòÎªµØÊÆÏÕÒª£¬ËùÒÔÃ»ÓÐ´¬¼Ò
-ÔÚÕâÀï°Ú¶É¹ýºÓµÄ¿ÍÈË¡£É½ÑÂÖ®¼äÆ®µ´×ÅÒ»¸ù¸ù³¤³¤µÄÌÙÌõ£¬¾ÝËµÎä¹¦
-¸ßÇ¿µÄÈË¿ÉÒÔÀ­×ÅÌÙÌõ´ÓÕâÀïÖ±½ÓÓÆµ´µ½¶ÔÃæµÄÉ½ÑÂÈ¥£¬Ò²²»ÖªµÀÊÇÕæ
-ÊÇ¼Ù£¬Äã¿ÉÒÔyell tengtiaoÊÔÊÔ¿´¡£
+è¿™é‡Œæ˜¯ä¸€é“å±±å´–ï¼Œä½äºŽé»„æ²³çš„åŒ—å²¸ã€‚å› ä¸ºåœ°åŠ¿é™©è¦ï¼Œæ‰€ä»¥æ²¡æœ‰èˆ¹å®¶
+åœ¨è¿™é‡Œæ‘†æ¸¡è¿‡æ²³çš„å®¢äººã€‚å±±å´–ä¹‹é—´é£˜è¡ç€ä¸€æ ¹æ ¹é•¿é•¿çš„è—¤æ¡ï¼Œæ®è¯´æ­¦åŠŸ
+é«˜å¼ºçš„äººå¯ä»¥æ‹‰ç€è—¤æ¡ä»Žè¿™é‡Œç›´æŽ¥æ‚ è¡åˆ°å¯¹é¢çš„å±±å´–åŽ»ï¼Œä¹Ÿä¸çŸ¥é“æ˜¯çœŸ
+æ˜¯å‡ï¼Œä½ å¯ä»¥yell tengtiaoè¯•è¯•çœ‹ã€‚
 LONG);
 
   set("exits", ([ 
@@ -47,25 +47,25 @@ int do_yell(string arg)
 	me=this_player();
 	
 	if(me->is_busy())
-	return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 	if(me->is_fighting())
-	return notify_fail("ÄãÏÈ´òÍêÕÌ°É£¡\n");
+	return notify_fail("ä½ å…ˆæ‰“å®Œä»—å§ï¼\n");
 	
 	here=environment(me);
 	force=me->query("neili");
-	if(!arg||arg!="tengtiao") return notify_fail("ÄãÒªº°½ÐÊ²Ã´?\n");
+	if(!arg||arg!="tengtiao") return notify_fail("ä½ è¦å–Šå«ä»€ä¹ˆ?\n");
 	if(force<200||me->query_skill("force",1)<20){
-	 tell_object(here,me->name()+"Ê¹×ãÁËÁ¦Æøº°µÀ£ºÓÐÈËÂð£¿°ï°ïÃ¦°ÑÌÙÌõÈÓ¹ýÀ´°¡£¡\nÔ¶´¦Ö»ÊÇ´«À´ÄãµÄ»ØÉù¡£\n");
+	 tell_object(here,me->name()+"ä½¿è¶³äº†åŠ›æ°”å–Šé“ï¼šæœ‰äººå—ï¼Ÿå¸®å¸®å¿™æŠŠè—¤æ¡æ‰”è¿‡æ¥å•Šï¼\nè¿œå¤„åªæ˜¯ä¼ æ¥ä½ çš„å›žå£°ã€‚\n");
 	 return 1;
 	}
-	if(force<=1000) tell_object(here,me->name()+"ÓÃÁ¦º°µÀ:ÓÐÈËÂð£¿°ï°ïÃ¦°ÑÌÙÌõÈÓ¹ýÀ´°¡£¡\n");
-	else if(force<=2000) tell_object(here,me->name()+"¹Ä×ãÖÐÆøÓÃÁ¦º°µÀ:ÓÐÈËÂð£¿°ï°ïÃ¦°ÑÌÙÌõÈÓ¹ýÀ´°¡£¡\n");
-	else tell_object(here,me->name()+"¸ßÉùº°µÀ:ÓÐÈËÂð£¿°ï°ïÃ¦°ÑÌÙÌõÈÓ¹ýÀ´°¡£¡ÉùÒôÓÆÑï,¾­¾Ã²»Ï¢¡£\n");
+	if(force<=1000) tell_object(here,me->name()+"ç”¨åŠ›å–Šé“:æœ‰äººå—ï¼Ÿå¸®å¸®å¿™æŠŠè—¤æ¡æ‰”è¿‡æ¥å•Šï¼\n");
+	else if(force<=2000) tell_object(here,me->name()+"é¼“è¶³ä¸­æ°”ç”¨åŠ›å–Šé“:æœ‰äººå—ï¼Ÿå¸®å¸®å¿™æŠŠè—¤æ¡æ‰”è¿‡æ¥å•Šï¼\n");
+	else tell_object(here,me->name()+"é«˜å£°å–Šé“:æœ‰äººå—ï¼Ÿå¸®å¸®å¿™æŠŠè—¤æ¡æ‰”è¿‡æ¥å•Šï¼å£°éŸ³æ‚ æ‰¬,ç»ä¹…ä¸æ¯ã€‚\n");
 	if(ship->query("yell"))
-	 return notify_fail("\nÓÐÈËÕýÔÚÊ¹ÓÃÌÚÌõ£¬µÈµÈ°É£¡\n");
+	 return notify_fail("\næœ‰äººæ­£åœ¨ä½¿ç”¨è…¾æ¡ï¼Œç­‰ç­‰å§ï¼\n");
 	
 	ship->set("yell",1);	
-	message_vision("¶ÔÃæÒþÔ¼ÓÐÈË½ÐµÀ£ººÃÁË£¬×¢Òâ½Ó×¡ÁË£¡Ò»¸ùÌÙÌõÓÆÁË¹ýÀ´£¬$NÁ¬Ã¦×¥ÔÚÊÖÀï£¡\n",me);
+	message_vision("å¯¹é¢éšçº¦æœ‰äººå«é“ï¼šå¥½äº†ï¼Œæ³¨æ„æŽ¥ä½äº†ï¼ä¸€æ ¹è—¤æ¡æ‚ äº†è¿‡æ¥ï¼Œ$Nè¿žå¿™æŠ“åœ¨æ‰‹é‡Œï¼\n",me);
 	me->move(SHIPDIR);
 	remove_call_out("do_flying");
 	call_out("do_flying",10,me,ship);
@@ -74,7 +74,7 @@ int do_yell(string arg)
 
 void do_flying(object me,object ship)
 {
-   message_vision("$N¾õµÃÉíÐÎÒ»¶Ù£¬Ë«½Å½Ó´¥µ½ÁËÊµµØ£¬ÒÑ¾­°²È«µÄµ´µ½ÁËÕâ±ßÉ½ÑÂ£¡\n",me);
+   message_vision("$Nè§‰å¾—èº«å½¢ä¸€é¡¿ï¼ŒåŒè„šæŽ¥è§¦åˆ°äº†å®žåœ°ï¼Œå·²ç»å®‰å…¨çš„è¡åˆ°äº†è¿™è¾¹å±±å´–ï¼\n",me);
    ship->delete("yell");
    me->move(TO);
    

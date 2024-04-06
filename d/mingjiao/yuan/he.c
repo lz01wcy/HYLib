@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("º×±ÊÎÌ", ({ "hebi weng", "hebi", "weng" }));
-	set("gender", "ÄÐÐÔ");
-	set("title", HIB"ÐþÚ¤¶þÀÏ"NOR);
+        set_name("é¹¤ç¬”ç¿", ({ "hebi weng", "hebi", "weng" }));
+	set("gender", "ç”·æ€§");
+	set("title", HIB"çŽ„å†¥äºŒè€"NOR);
         set("shen_type", -1);
         set("age", 50);
         set("str", 30);
@@ -58,7 +58,7 @@ set_skill("strike", 300);
         prepare_skill("claw", "dulong-shenzhua");
 
              
-        create_family("ÐþÚ¤¹È", 2, "µÜ×Ó");
+        create_family("çŽ„å†¥è°·", 2, "å¼Ÿå­");
 
 
 
@@ -73,10 +73,10 @@ set_skill("strike", 300);
         }));
 
         set("inquiry", ([
-                "ÕÅÎÞ¼É"    :   "ºß£¬³ôÐ¡×ÓÂÅ´Î»µÎÒ´óÊÂ£¡ÎÒ·ÇÉ±ÁËËû²»¿É£¡\n",
-                "ÕÔÃô"      :   "ÄÇÑ¾Í·¹î¼Æ¶à¶Ë£¬Íü¶÷¸ºÒå£¬Í÷ÎÒÐÖµÜÎªËý³öÉúÈëËÀ¡£\n",
-                "°ÙËðµÀÈË"  :   "ËûÊÇÎÒ¶÷Ê¦£¬ÄãÎÊÕâ¸ÉÊ²Ã´£¿\n",
-                "Â¹ÕÈ¿Í"    :   "ËûÊÇÎÒÊ¦ÐÖ£¬ÎÒÃÇ´ÓÐ¡¸ú×ÅÊ¦¸¸Ñ§ÒÕ£¬Ç×Í¬ÊÖ×ã¡£\n", 
+                "å¼ æ— å¿Œ"    :   "å“¼ï¼Œè‡­å°å­å±¡æ¬¡åæˆ‘å¤§äº‹ï¼æˆ‘éžæ€äº†ä»–ä¸å¯ï¼\n",
+                "èµµæ•"      :   "é‚£ä¸«å¤´è¯¡è®¡å¤šç«¯ï¼Œå¿˜æ©è´Ÿä¹‰ï¼Œæž‰æˆ‘å…„å¼Ÿä¸ºå¥¹å‡ºç”Ÿå…¥æ­»ã€‚\n",
+                "ç™¾æŸé“äºº"  :   "ä»–æ˜¯æˆ‘æ©å¸ˆï¼Œä½ é—®è¿™å¹²ä»€ä¹ˆï¼Ÿ\n",
+                "é¹¿æ–å®¢"    :   "ä»–æ˜¯æˆ‘å¸ˆå…„ï¼Œæˆ‘ä»¬ä»Žå°è·Ÿç€å¸ˆçˆ¶å­¦è‰ºï¼Œäº²åŒæ‰‹è¶³ã€‚\n", 
         ]));
 
         set_temp("apply/attack", 180);
@@ -117,9 +117,9 @@ int do_killing(string arg)
 	if( objectp(victim = present(arg, environment(this_object()))) && living(victim))
 	{
 		name = (string)victim->name();
-		if( (string)name == "ÕÔÃô" && !userp(victim))
+		if( (string)name == "èµµæ•" && !userp(victim))
 		{
-		message_vision("$NÀäÐ¦Ò»ÉùµÀ£ºÕÒËÀ¡£\n", this_object());
+		message_vision("$Nå†·ç¬‘ä¸€å£°é“ï¼šæ‰¾æ­»ã€‚\n", this_object());
 		this_object()->kill_ob(player);
 		player->kill_ob(this_object());
 		victim->kill_ob(player);

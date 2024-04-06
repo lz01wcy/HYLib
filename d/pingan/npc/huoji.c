@@ -1,4 +1,4 @@
-// huoji. Ò©ÆÌ»ï¼Æ
+// huoji. è¯é“ºä¼™è®¡
 
 inherit NPC;
 inherit F_DEALER;
@@ -6,11 +6,11 @@ int ask_yaochu();
 
 void create()
 {
-	set_name("Ò©ÆÌ»ï¼Æ", ({ "yaopu huoji", "huoji" }));
+	set_name("è¯é“ºä¼™è®¡", ({ "yaopu huoji", "huoji" }));
 	set("str", 20);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 18);
-	set("long", "ËûÊÇÉñÕëÊÀ¼ÒµÄÒ»¸öÐ¡»ï¼Æ¡£\n");
+	set("long", "ä»–æ˜¯ç¥žé’ˆä¸–å®¶çš„ä¸€ä¸ªå°ä¼™è®¡ã€‚\n");
 	set("combat_exp", 250);
 	set("attitude", "friendly");
 	set("vendor_goods", ({
@@ -22,7 +22,7 @@ void create()
 		"/d/shenlong/obj/xionghuang",
 	}));
         set("inquiry", ([
-                "Ò©³ú" : (: ask_yaochu :),
+                "è¯é”„" : (: ask_yaochu :),
                 "job"  : (: ask_yaochu :),
                 "yaochu":(: ask_yaochu :),
         ]));
@@ -41,30 +41,30 @@ int ask_yaochu()
 {
 	object ob;
 	ob = this_player ( ) ;
-        message_vision("»ï¼ÆÐ¦µÀ£¬Ò©³úÒ²ÊÇÒªÇ®µÄÄØ£¡¸øÎÒÒ»Á½Òø×ÓÎÒ¾ÍÂô¸øÄã£¡\n",ob);
-	ob->set_temp ("Ò©³ú" , 1 );
+        message_vision("ä¼™è®¡ç¬‘é“ï¼Œè¯é”„ä¹Ÿæ˜¯è¦é’±çš„å‘¢ï¼ç»™æˆ‘ä¸€ä¸¤é“¶å­æˆ‘å°±å–ç»™ä½ ï¼\n",ob);
+	ob->set_temp ("è¯é”„" , 1 );
 	return 1;
 }
 
 int accept_object(object who, object ob)
 {
 	object obj ;
-	if (!(int)who->query_temp("Ò©³ú"))
+	if (!(int)who->query_temp("è¯é”„"))
 	{
-        message_vision("»ï¼Æ¶Ô$NËµ£º¸øÎÒÇ®×öÊ²Ã´£¿\n", who);
+        message_vision("ä¼™è®¡å¯¹$Nè¯´ï¼šç»™æˆ‘é’±åšä»€ä¹ˆï¼Ÿ\n", who);
 		return 0 ;
 	}
 	else
         if (present("yao chu", this_player()))
         {
-         message_vision("»ï¼Æ¶Ô$NËµ£ºÄãÉíÉÏÒÑÓÐÒ©³úÁË£¬²»ÒªÕâÃ´Ì°ÐÄ¡£\n",who);
+         message_vision("ä¼™è®¡å¯¹$Nè¯´ï¼šä½ èº«ä¸Šå·²æœ‰è¯é”„äº†ï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒã€‚\n",who);
                 return 0;
         }
         else        	
 	if (ob->query("money_id") && ob->value() >= 100)
 	{
-		message_vision("»ï¼Æ¸øÁË$NÒ©³ú£¡\n" , who);
-		this_player()->delete_temp("Ò©³ú" );
+		message_vision("ä¼™è®¡ç»™äº†$Nè¯é”„ï¼\n" , who);
+		this_player()->delete_temp("è¯é”„" );
 		obj=new("/quest/liandan/yaochu");
 		obj->move(this_player());
 

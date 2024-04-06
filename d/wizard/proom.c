@@ -1,4 +1,4 @@
-// ·¢ÀñÎï·¿
+// å‘ç¤¼ç‰©æˆ¿
 // idea@yqyl
 inherit ROOM;
 #include <ansi.h>
@@ -8,9 +8,9 @@ string file;
 
 void create()
 {
-	set("short", "ÀñÆ··¿");
+	set("short", "ç¤¼å“æˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇÎ×Ê¦ËÍÀñÆ·¸øÍæ¼ÒµÄ·¿×Ó(song)¡£
+è¿™é‡Œæ˜¯å·«å¸ˆé€ç¤¼å“ç»™ç©å®¶çš„æˆ¿å­(song)ã€‚
 LONG
 	);
 	
@@ -32,13 +32,13 @@ int do_song()
 	object who = this_player();
 	object present;
 	if ( wiz_level(who)<wiz_level("(wizard)") && who->query("id")!="xyanhu") 
-		return notify_fail("Òªwizard¼°ÒÔÉÏÎ×Ê¦Ö´ĞĞ¡£\n");
-	if (!file) return notify_fail("ÇëÉè¶¨ËÍÉ¶(sheding <file>)\n");
+		return notify_fail("è¦wizardåŠä»¥ä¸Šå·«å¸ˆæ‰§è¡Œã€‚\n");
+	if (!file) return notify_fail("è¯·è®¾å®šé€å•¥(sheding <file>)\n");
 	
 	present = load_object(file);
-	if (!present) return notify_fail("Ã»ÓĞ"+file+"Õâ¸ö¶«Î÷¡£\n");
-	if (!present->query("liwu")) return notify_fail("ÕâÀà¶«Î÷²»ÄÜ·¢ËÍ¡£\n");	
-	write(present->query("name")+"("+present->query("id")+")¸øÃ¿¸öÈË£¬È·¶¨Âğ£¿[Y/N]\n");
+	if (!present) return notify_fail("æ²¡æœ‰"+file+"è¿™ä¸ªä¸œè¥¿ã€‚\n");
+	if (!present->query("liwu")) return notify_fail("è¿™ç±»ä¸œè¥¿ä¸èƒ½å‘é€ã€‚\n");	
+	write(present->query("name")+"("+present->query("id")+")ç»™æ¯ä¸ªäººï¼Œç¡®å®šå—ï¼Ÿ[Y/N]\n");
 	input_to ((: yyy :));
 	return 1;
 }
@@ -49,7 +49,7 @@ void yyy(string arg)
 	object present;
 	int i;
 	
-          log_file("liwu",sprintf("%s  ±¾´ÎÀñÎï%s£¬%s\n",ctime(time()),file
+          log_file("liwu",sprintf("%s  æœ¬æ¬¡ç¤¼ç‰©%sï¼Œ%s\n",ctime(time()),file
 		,this_player()->query("id") ));
 	if (arg == "y" || arg == "Y")
 	{
@@ -57,9 +57,9 @@ void yyy(string arg)
 		{
 			present = new(file);
 			present->move(allp[i]);
-                          tell_object(allp[i],HIY"¡¾½­ºşÒ¥ÑÔ¡¿Ä³ÈË£ºÄã²»Ğ¡ĞÄ²Èµ½Ò»¶Ñ¹·Êº,µ«¹·ÊºÖĞÈ´ÕÒµ½ÁË"NOR+present->query("name")+HIY"!!\n"NOR);
+                          tell_object(allp[i],HIY"ã€æ±Ÿæ¹–è°£è¨€ã€‘æŸäººï¼šä½ ä¸å°å¿ƒè¸©åˆ°ä¸€å †ç‹—å±,ä½†ç‹—å±ä¸­å´æ‰¾åˆ°äº†"NOR+present->query("name")+HIY"!!\n"NOR);
 		}
-	} else write("È¡Ïû¡£\n");
+	} else write("å–æ¶ˆã€‚\n");
 }
 
 int do_sheding(string arg)
@@ -67,13 +67,13 @@ int do_sheding(string arg)
 	object who=this_player();
 	object present;
 	if ( wiz_level(who)<wiz_level("(wizard)") && who->query("id")!="xyanhu" ) 
-		return notify_fail("Òªwizard¼°ÒÔÉÏÎ×Ê¦Ö´ĞĞ¡£\n");
+		return notify_fail("è¦wizardåŠä»¥ä¸Šå·«å¸ˆæ‰§è¡Œã€‚\n");
 		
-	if (!arg ) return notify_fail("ÇëÉè¶¨ËÍÉ¶(sheding <file>)\n");
+	if (!arg ) return notify_fail("è¯·è®¾å®šé€å•¥(sheding <file>)\n");
 	
 	present = load_object(arg);
-	if (!present) return notify_fail("Ã»ÓĞ"+arg+"Õâ¸ö¶«Î÷¡£\n");
-	if (!present->query("liwu")) return notify_fail("ÕâÀà¶«Î÷²»ÄÜ·¢ËÍ¡£\n");
+	if (!present) return notify_fail("æ²¡æœ‰"+arg+"è¿™ä¸ªä¸œè¥¿ã€‚\n");
+	if (!present->query("liwu")) return notify_fail("è¿™ç±»ä¸œè¥¿ä¸èƒ½å‘é€ã€‚\n");
 	file = arg;
 	write("ok\n");
 	return 1;

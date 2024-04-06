@@ -1,19 +1,19 @@
 //LUCAS 2000-6-18
-// º®ÓñÅÆ hanyu pai
+// å¯’ç‰ç‰Œ hanyu pai
 
 inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIW"º®ÓñÅÆ"NOR, ({"hanyu pai", "pai"}));
+        set_name(HIW"å¯’ç‰ç‰Œ"NOR, ({"hanyu pai", "pai"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å—");
 set("treasure",1);
-                set("long","ÕâÊÇÒ»¿éÑ©°×µÄÓñÅÆ£¬´¥ÊÖÉúº®£¬ÄıÈËÆøÑª¡£\n");
-//              set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("long","è¿™æ˜¯ä¸€å—é›ªç™½çš„ç‰ç‰Œï¼Œè§¦æ‰‹ç”Ÿå¯’ï¼Œå‡äººæ°”è¡€ã€‚\n");
+//              set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
                 set("material", "yu");
         }
 }

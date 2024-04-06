@@ -3,17 +3,17 @@
 inherit DAGGER;
 void create()
 {
-        set_name("Ó¢¼ªÉ³Ğ¡µ¶", ({ "small blade" }) );
+        set_name("è‹±å‰æ²™å°åˆ€", ({ "small blade" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 500);
                 set("material", "iron");
-                set("long", "ÕâÊÇÒ»¸öºÜ·æÀûµÄĞ¡µ¶£¬µ¶±úÌØ±ğµÄÆ¯ÁÁ¡£\n");
-                set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑ¥×ÓÀï¡£\n");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªå¾ˆé”‹åˆ©çš„å°åˆ€ï¼Œåˆ€æŸ„ç‰¹åˆ«çš„æ¼‚äº®ã€‚\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥é´å­é‡Œã€‚\n");
         }
         ::init_dagger(110);
 }   

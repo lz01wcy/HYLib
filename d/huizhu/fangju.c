@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���߿�");
+	set("short", "防具库");
 	set("long",@LONG
-�����Ǻ컨��ķ��߿⡣�컨��Ϊ�˷��帴�������˺ܶ������ϵ�
-׼��������������ž���������ᡣ����ֿ�ѵ���������������
-���ģ����з�������Ӧ�о��С�
+这里是红花会的防具库。红花会为了反清复明，做了很多物质上的
+准备。看看这里，你大概就能有所体会。整间仓库堆到顶，都是满满当
+当的，所有防具真是应有尽有。
 LONG );
         set("objects", ([
 		__DIR__"obj/beixin"  : random(2)+1,

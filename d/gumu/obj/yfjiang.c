@@ -1,4 +1,4 @@
-// yfjiang.c Óñ·å½¬
+// yfjiang.c çŽ‰å³°æµ†
 // By Kayin @ CuteRabbit Studio 1999/3/23 new
 #include <ansi.h>
 
@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-   set_name(HIC"Óñ·å½¬"NOR, ({"yufeng jiang", "jiang"}));
+   set_name(HIC"çŽ‰å³°æµ†"NOR, ({"yufeng jiang", "jiang"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "Æ¿");
+      set("unit", "ç“¶");
       set("value", 1000);
-      set("long","ÕâÊÇÒ»Ö»ºÜ¾«ÖÂµÄÏ¸¿ÚÐ¡Æ¿,Äã°Î¿ªÆ¿ÈûÀï±ßÆ®³öÅ¨Å¨µÄÓÄÏã.\n");
+      set("long","è¿™æ˜¯ä¸€åªå¾ˆç²¾è‡´çš„ç»†å£å°ç“¶,ä½ æ‹”å¼€ç“¶å¡žé‡Œè¾¹é£˜å‡ºæµ“æµ“çš„å¹½é¦™.\n");
    }
    setup();
 }
@@ -27,16 +27,16 @@ int do_eat(string arg)
    object me = this_player();
 
    if(!id(arg))
-       return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+       return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-   message_vision("$N³ÔÏÂÒ»Æ¿" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€ç“¶" + name() + "ã€‚\n", me);
    if ((int)me->query_condition("feng_poison") > 0) {
     if ((int)me->query_condition("feng_poison") < 11) {
       me->apply_condition("feng_poison", 0);
-      message_vision("$NÉíÉÏ±»òØµÄµØ·½ÂéÑ÷ÏûÍË,²»¹ý±»ÕÝµÄ´ó°ü»¹ÓÐÐ©ÌÛÍ´¡£\n", me); }
+      message_vision("$Nèº«ä¸Šè¢«èœ‡çš„åœ°æ–¹éº»ç—’æ¶ˆé€€,ä¸è¿‡è¢«è›°çš„å¤§åŒ…è¿˜æœ‰äº›ç–¼ç—›ã€‚\n", me); }
    else {
    me->apply_condition("feng_poison", (int)me->query_condition("feng_poison") -10);
-      message_vision("$NÉíÉÏ±»ÕÝµÄµØ·½½¥½¥²»ÔõÃ´Ñ÷ÁË¡£\n", me);
+      message_vision("$Nèº«ä¸Šè¢«è›°çš„åœ°æ–¹æ¸æ¸ä¸æ€Žä¹ˆç—’äº†ã€‚\n", me);
    }
    destruct(this_object());
    return 1;
@@ -44,16 +44,16 @@ int do_eat(string arg)
      if ((int)me->query_condition("yufeng_poison") > 0) {
     if ((int)me->query_condition("yufeng_poison") < 21) {
       me->apply_condition("yufeng_poison", 0);
-      message_vision("$NÉíÉÏµÄÓñ·åÕë¶¾½øÍË,Á³É«¿´ÉÏÈ¥ºÃ¶àÁË¡£\n", me); }
+      message_vision("$Nèº«ä¸Šçš„çŽ‰å³°é’ˆæ¯’è¿›é€€,è„¸è‰²çœ‹ä¸ŠåŽ»å¥½å¤šäº†ã€‚\n", me); }
    else {
    me->apply_condition("yufeng_poison", (int)me->query_condition("yufeng_poison") -20);
-      message_vision("$NÉíÉÏµÄÂéÑ÷½¥½¥¼õÇá¡£\n", me);
+      message_vision("$Nèº«ä¸Šçš„éº»ç—’æ¸æ¸å‡è½»ã€‚\n", me);
    }
    destruct(this_object());
    return 1;
   }
 
-    else tell_object(me, "Äã¾õµÃ»ëÉíÎÞ±ÈÇåË¬¡£\n" NOR );
+    else tell_object(me, "ä½ è§‰å¾—æµ‘èº«æ— æ¯”æ¸…çˆ½ã€‚\n" NOR );
         me->set("eff_jing",this_player()->query("max_jing"));
  	me->set("jing",this_player()->query("max_jing"));
 	me->set("eff_qi",this_player()->query("max_qi"));

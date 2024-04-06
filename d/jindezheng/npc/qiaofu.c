@@ -1,7 +1,7 @@
 inherit NPC;
 void create()
 {
-    set_name("éÔ·ò",({"qiao fu"}));
+    set_name("æ¨µå¤«",({"qiao fu"}));
     set("age",54);
     set("wimpy",50);
     set("combat_exp",200);

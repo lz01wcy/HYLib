@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ʒ���");
+	set("short", "破帆船");
 	set("long", @LONG
-�����ں�����������Ư���ţ�û�з���Ҳû�н��������εؿ���
-��ԽƯԽ��������ˮ�׽Ծ�����������֧�룬�Ҳ��̶ã�ûһ������
-�ĵط��ˡ�
+帆船在海流中无助地漂流着，没有帆，也没有桨。你无奈地看着
+它越漂越北。船上水米皆尽，船体破碎支离，惨不忍睹，没一块完整
+的地方了。
 LONG );
 	set("no_sleep_room",1);
 	set("outdoors", "binghuo");

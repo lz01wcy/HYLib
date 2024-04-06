@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 { 
-       set("short",GRN"Ê÷ÉÏ"NOR);
+       set("short",GRN"æ ‘ä¸Š"NOR);
        set("long",@long
-ÄãÌøÉÏÖ¦Í·£¬Ò»Æ¬±ÌÂÌµÄ²İµØÓ³ÈëÑÛÁ±£¬Ê÷µÄÄÇ±ßÓĞÒ»Ö¦¸ü´óµÄÊ÷Ö¦£¬
-²»ÖªÄÜ²»ÄÜÔ½¹ıÈ¥¡£
+ä½ è·³ä¸Šæå¤´ï¼Œä¸€ç‰‡ç¢§ç»¿çš„è‰åœ°æ˜ å…¥çœ¼å¸˜ï¼Œæ ‘çš„é‚£è¾¹æœ‰ä¸€ææ›´å¤§çš„æ ‘æï¼Œ
+ä¸çŸ¥èƒ½ä¸èƒ½è¶Šè¿‡å»ã€‚
 long);
        setup();
 }
@@ -26,21 +26,21 @@ int do_yue(string arg)
         me = this_player();
 	if (!living(me)) return 0;
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");
 	if ((int)me->query("jing")<30)
-		return notify_fail("ÄãÌ«ÀÛÁË£¬ÎŞ·¨¼ÌĞøÔÙÌøÁË£¡\n");
+		return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ— æ³•ç»§ç»­å†è·³äº†ï¼\n");
     if ((int)me->query_skill("dodge",1)>100)
 		return notify_fail(
-	"ÄãÔÚÊ÷Ö¦¼äÔ¾À´ÌøÈ¥£¬µ«ÊÇÔÙÌøÏÂÈ¥ºÃÏó¶ÔÄãµÄÇá¹¦Ã»¶à´óµÄ°ïÖú¡£\n");
+	"ä½ åœ¨æ ‘æé—´è·ƒæ¥è·³å»ï¼Œä½†æ˜¯å†è·³ä¸‹å»å¥½è±¡å¯¹ä½ çš„è½»åŠŸæ²¡å¤šå¤§çš„å¸®åŠ©ã€‚\n");
 
         if ((int)me->query_skill("dodge", 1) < 20 )
 		return notify_fail(
-			"ÒòÎªÓëÄÇ±ßµÄÊ÷Ö¦Ì«Ô¶£¬Ê¹ÄãÎŞ·¨Ô½¹ıÈ¥£¬²îµãË¤µ¹£¡\n");
+			"å› ä¸ºä¸é‚£è¾¹çš„æ ‘æå¤ªè¿œï¼Œä½¿ä½ æ— æ³•è¶Šè¿‡å»ï¼Œå·®ç‚¹æ‘”å€’ï¼\n");
 	
 me->receive_damage("jing", 25);
 	me->improve_skill("dodge", me->query("int"));
 
-	message_vision("$NÔÚÊ÷Ö¦¼äÀ´»ØµÄÌøÔ¾¡£\n", me);
+	message_vision("$Nåœ¨æ ‘æé—´æ¥å›çš„è·³è·ƒã€‚\n", me);
 	me->move(__DIR__"shuzhi");
 
 	return 1;	
@@ -52,17 +52,17 @@ int do_jump(string arg)
         me = this_player();
 
         if (arg !="down") 
-        return notify_fail("ÄãÒªµ½ÄÇÈ¥£¿\n");
+        return notify_fail("ä½ è¦åˆ°é‚£å»ï¼Ÿ\n");
         if( arg=="down")
                    {
             
-                    write("ÄãË³×ÅÊ÷Ö¦ÌøÁËÏÂÈ¥¡£\n");
+                    write("ä½ é¡ºç€æ ‘æè·³äº†ä¸‹å»ã€‚\n");
                     message("vision",
-me->name() +"Ë³×ÅÊ÷Ö¦ÌøÁËÏÂÈ¥¡£\n",
+me->name() +"é¡ºç€æ ‘æè·³äº†ä¸‹å»ã€‚\n",
                     environment(me), ({me}) );
                     me->move(__DIR__"liulin3");
                     message("vision",
-   me->name() +"´ÓÊ÷Ö¦ÉÏÌøÁËÏÂÈ¥¡£\n",
+   me->name() +"ä»æ ‘æä¸Šè·³äº†ä¸‹å»ã€‚\n",
                     environment(me), ({me}) );
                    }
                 return 1;

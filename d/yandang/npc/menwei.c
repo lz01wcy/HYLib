@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-	set_name(YEL"É½×¯ÃÅÎÀ"NOR, ({ "menwei","men wei"}));
-	set("gender", "ÄĞĞÔ");
+	set_name(YEL"å±±åº„é—¨å«"NOR, ({ "menwei","men wei"}));
+	set("gender", "ç”·æ€§");
 	set("age", 23);
 
 	set("combat_exp", 5000);

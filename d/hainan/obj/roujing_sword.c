@@ -4,17 +4,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Èá½ğ·æ", ({"roujing sword", "sword", "jian"}) );
+        set_name("æŸ”é‡‘é”‹", ({"roujing sword", "sword", "jian"}) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 5000);
                 set("material", "iron");
-                set("long", "Ò»±úÏ¸³¤µÄ½£,ÉÁ×Å°µºÚµÄ¹â¡£\n");
-                set("wield_msg", "$N³é³öÒ»±úÏ¸³¤µÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$NÒ»¶¶ÊÖ½«ÊÖÖĞµÄ$nÊÕÈë³¤ĞäÖ®ÖĞ¡£\n");
+                set("long", "ä¸€æŸ„ç»†é•¿çš„å‰‘,é—ªç€æš—é»‘çš„å…‰ã€‚\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„ç»†é•¿çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nä¸€æŠ–æ‰‹å°†æ‰‹ä¸­çš„$næ”¶å…¥é•¿è¢–ä¹‹ä¸­ã€‚\n");
         }
         init_sword(150);
         setup();

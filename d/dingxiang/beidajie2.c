@@ -1,14 +1,14 @@
 // /d/yazhang/beidajie2.c
-// Room in ����
+// Room in 牙帐
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "�����");
+	set("short", "北大街");
 	set("long", @LONG
-�㼷����Ⱥ��������ʯ�Ľֵ��ϣ������߾������ʵ�ʮ�ֽֿڣ�
-����һ���鱦�꣬���洫��һ��һʮ����Ǯ���������Ƿ�Բ��ʮ������
-���һ��Ǯׯ��
+你挤过人群，走在青石的街道上，在向北走就是牙帐的十字街口，
+东面一家珠宝店，西面传来一五一十的数钱声，那里是方圆几十里内最
+大的一家钱庄。
 LONG);
 set("outdoors", "dingxiang");
 set("exits", ([

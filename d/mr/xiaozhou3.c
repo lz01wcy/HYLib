@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "�ɴ�");
+	set("short", "渡船");
 	set("long", @LONG
-һҶС�ۣ����Ҳ�������ߡ��˸��ˡ�һ���������ֳֳ���ݣ����ڴ�
-β�����س��Ŵ���
+一叶小舟，最多也就能载七、八个人。一名老艄公手持长竹篙，正在船
+尾吃力地撑着船。
 LONG
 	);
 	set("exits",([
@@ -22,7 +22,7 @@ void init()
        me=this_player();
        room=this_object();
        message_vision(
-               YEL "\n���ڵ��˰��ߣ������С�ۿ��ڰ��ߣ����´��ɡ�\n\n"NOR,me);
+               YEL "\n终于到了岸边，船夫把小舟靠在岸边，快下船吧。\n\n"NOR,me);
 }
 
 

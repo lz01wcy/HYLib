@@ -1,15 +1,15 @@
-// Room: /d/chengdu/npc/shenjinyin.c Éò½ğÒô
+// Room: /d/chengdu/npc/shenjinyin.c æ²ˆé‡‘éŸ³
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
 
 void create()
 {
-	set_name("Éò½ğÒô", ({ "shen jinyin", "shen", "jinyin" }));
-	set("gender", "Å®ĞÔ");
+	set_name("æ²ˆé‡‘éŸ³", ({ "shen jinyin", "shen", "jinyin" }));
+	set("gender", "å¥³æ€§");
 	set("age", 19);
 	set("per", 30);
-	set("long", "ÕÅ±¦ÁÖµÄĞ¡µÜ×Ó£¬³¤µÄÈçÎ÷Ê©ÔÙÊÀ¡£\n");
+	set("long", "å¼ å®æ—çš„å°å¼Ÿå­ï¼Œé•¿çš„å¦‚è¥¿æ–½å†ä¸–ã€‚\n");
 	set("combat_exp", 1500);
 	set("shen_type", -1);
 

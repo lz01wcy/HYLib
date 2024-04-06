@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÑÒÊ¯", ({ "rock", "yanshi", "yan shi", "shi" }));
+	set_name("å²©çŸ³", ({ "rock", "yanshi", "yan shi", "shi" }));
 	set_weight(8000);
-	set("unit", "¿é");
-	set("long", "ÕâÊÇÒ»¿éÑÒÊ¯£¬Àâ½Ç²¢²»·ÖÃ÷¡£\n");
+	set("unit", "å—");
+	set("long", "è¿™æ˜¯ä¸€å—å²©çŸ³ï¼Œæ£±è§’å¹¶ä¸åˆ†æ˜ã€‚\n");
 	set("value", 0);
-	set("no_get", "Õâ¿éÑÒÊ¯ÓÖÖØÓÖÃ»ÓÃ£¬ÄãÄÃËü×öÉõ£¿");
+	set("no_get", "è¿™å—å²©çŸ³åˆé‡åˆæ²¡ç”¨ï¼Œä½ æ‹¿å®ƒåšç”šï¼Ÿ");
 	set("material", "rock");
 	setup();
 }
@@ -26,13 +26,13 @@ int do_break(string arg)
 	object me = this_player();
 
 	if (!id(arg))
-		return notify_fail("ÄãÏëÖÀÊ²Ã´£¿\n");
+		return notify_fail("ä½ æƒ³æ·ä»€ä¹ˆï¼Ÿ\n");
 
 	if (query("no_get")) {
-		message_vision("$N½«Ò»¿éÑÒÊ¯¶Ô×¼ÁíÒ»¿éÑÒÊ¯ÖÀÈ¥£¬ÑÒÊ¯Ëé³ÉÁËÒ»¶ÑËéÆ¬£¬ÆäÖĞÓĞÒ»Æ¬ÓĞ·æÈñÀâ½Ç¡£\n", me);
-		set_name("¼âÊ¯", ({ "sharp rock", "rock", "jian shi", "shi" }));
-		set("long", "ÕâÊÇÒ»¿éÑÒÊ¯ÉÏµÄËéÆ¬£¬ÓĞ×Å·æÀûµÄÀâ½Ç¡£\n");
-		set("unit", "Æ¬");
+		message_vision("$Nå°†ä¸€å—å²©çŸ³å¯¹å‡†å¦ä¸€å—å²©çŸ³æ·å»ï¼Œå²©çŸ³ç¢æˆäº†ä¸€å †ç¢ç‰‡ï¼Œå…¶ä¸­æœ‰ä¸€ç‰‡æœ‰é”‹é”æ£±è§’ã€‚\n", me);
+		set_name("å°–çŸ³", ({ "sharp rock", "rock", "jian shi", "shi" }));
+		set("long", "è¿™æ˜¯ä¸€å—å²©çŸ³ä¸Šçš„ç¢ç‰‡ï¼Œæœ‰ç€é”‹åˆ©çš„æ£±è§’ã€‚\n");
+		set("unit", "ç‰‡");
 		delete("no_get");
 		remove_action("do_break", "break");
 		remove_action("do_break", "throw");

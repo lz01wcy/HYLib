@@ -3,10 +3,10 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-   set_name("ÃÏÀÏ°å",({ "meng laoban","meng","lao ban" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("å­Ÿè€æ¿",({ "meng laoban","meng","lao ban" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇµ±ÆÌµÄÀÏ°å£¬ĞÄºİÊÖÀ±¡£\n");
+   set("long", "è¿™æ˜¯å½“é“ºçš„è€æ¿ï¼Œå¿ƒç‹ æ‰‹è¾£ã€‚\n");
        
    set("combat_exp", 500000);
    set("no_get",1);

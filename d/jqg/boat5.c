@@ -1,20 +1,20 @@
-// boat5.c Ğ¡ÖÛ
+// boat5.c å°èˆŸ
 // By River 99.5.25
 inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short","Ğ¡ÖÛ");
+        set("short","å°èˆŸ");
         set("long", @LONG
-ÄãÕıÉí´¦Ò»Ò¶±âÖÛÖ®ÄÚ£¬ÖÛÄÚÏÁĞ¡Òì³££¬×î¶àÒ²¾ÍÄÜÔØ¶ş¡¢Èı¸öÈË¡£ÄãË«
-ÊÖ°â½°£¬ÂıÂıµØË³Ïª¶øÏÂ¡£
+ä½ æ­£èº«å¤„ä¸€å¶æ‰èˆŸä¹‹å†…ï¼ŒèˆŸå†…ç‹­å°å¼‚å¸¸ï¼Œæœ€å¤šä¹Ÿå°±èƒ½è½½äºŒã€ä¸‰ä¸ªäººã€‚ä½ åŒ
+æ‰‹æ‰³æ¡¨ï¼Œæ…¢æ…¢åœ°é¡ºæºªè€Œä¸‹ã€‚
 LONG
         );
         set("exits", ([ 
 		"out"  : __DIR__"xibian",
         ]));
 
-        set("outdoors","¾øÇé¹È"); 
+        set("outdoors","ç»æƒ…è°·"); 
         setup();
 }
 
@@ -26,5 +26,5 @@ void init()
 void run()
 {
         if (environment(this_player())== this_object())
-        message_vision(HIW"\nÓÖ»®³öÈıËÄÀï£¬ÏªÁ÷ÇúÕÛ£¬Ğ¡ÖÛ¾­»®¹ıÁË¼¸¸öÍäºóÓÖ»Øµ½Ïª±ß¡£\n"NOR,this_player());
+        message_vision(HIW"\nåˆåˆ’å‡ºä¸‰å››é‡Œï¼Œæºªæµæ›²æŠ˜ï¼Œå°èˆŸç»åˆ’è¿‡äº†å‡ ä¸ªå¼¯ååˆå›åˆ°æºªè¾¹ã€‚\n"NOR,this_player());
 }

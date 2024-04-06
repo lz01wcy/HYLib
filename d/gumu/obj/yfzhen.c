@@ -1,4 +1,4 @@
-// yfzhen.c Óñ·åÕë
+// yfzhen.c çŽ‰å³°é’ˆ
 // By Kayin @ CuteRabbit Studio 1999.3.23 new
 #include <ansi.h>
 inherit ITEM;
@@ -9,15 +9,15 @@ void init()
 
 void create()
 {
-	set_name(HIY"Óñ·åÕë"NOR, ({ "yufeng zhen", "zhen" }) );
+	set_name(HIY"çŽ‰å³°é’ˆ"NOR, ({ "yufeng zhen", "zhen" }) );
     	set_weight(100);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-        set("unit", "Ã¶");
+        set("unit", "æžš");
 	set("value", 1000);
 	set("material", "gold");
-        set("long", "ÕâÊÇÒ»Ã¶ÓÃ¾«¸ÖÅäÒÔ»Æ½ðÖý³ÉµÄÏ¸Èç·¢Ë¿µÄ½ðÕë  Äã¿ÉÒÔÓÃÀ´(shoot).\n");
+        set("long", "è¿™æ˜¯ä¸€æžšç”¨ç²¾é’¢é…ä»¥é»„é‡‘é“¸æˆçš„ç»†å¦‚å‘ä¸çš„é‡‘é’ˆ  ä½ å¯ä»¥ç”¨æ¥(shoot).\n");
         	}
 	setup();
 }
@@ -27,35 +27,35 @@ int do_yong(string arg)
 	mapping myfam;
 	me=this_player();
 if(!me->query("family"))
-return notify_fail("²»ÅÂ×Ô¼º±»ÕâÓñ·äÕëÔúµ½Âð?\n");
+return notify_fail("ä¸æ€•è‡ªå·±è¢«è¿™çŽ‰èœ‚é’ˆæ‰Žåˆ°å—?\n");
 	myfam = (mapping)me->query("family");
    if(!arg)
-       return notify_fail("ÄãÒªÓÃÓñ·äÕëÔúË­£¿\n");
+       return notify_fail("ä½ è¦ç”¨çŽ‰èœ‚é’ˆæ‰Žè°ï¼Ÿ\n");
 	
 	if( !me->is_fighting() )
-		return notify_fail("Óñ·åÕëÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("çŽ‰å³°é’ˆåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-	if ((!myfam || myfam["family_name"] != "¹ÅÄ¹ÅÉ"))
-		return notify_fail("²»ÅÂ×Ô¼º±»ÕâÓñ·äÕëÔúµ½Âð?\n");
+	if ((!myfam || myfam["family_name"] != "å¤å¢“æ´¾"))
+		return notify_fail("ä¸æ€•è‡ªå·±è¢«è¿™çŽ‰èœ‚é’ˆæ‰Žåˆ°å—?\n");
 		
 
         if ( (int)me->query_skill("throwing",1) <= 0 )
-        return notify_fail("Äã»áÓÃ°µÆ÷Âð£¿£¡\n");
+        return notify_fail("ä½ ä¼šç”¨æš—å™¨å—ï¼Ÿï¼\n");
 
 	if(!objectp(target = present(arg, environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 	if(target == me)
-        return notify_fail("ÄãÏë×ÔÉ±£¿ :p\n");
+        return notify_fail("ä½ æƒ³è‡ªæ€ï¼Ÿ :p\n");
         
-    message_vision(HIY "\n$N´Ó»³ÀïÃþ³öÒ»Ã¶"HIY"Óñ·äÕë"HIY"¿ÛÔÚÊÖÖÐ£¬ÊÖÆðÕë³ö£¬Ò»Ã¶Ï¸Èç·¢Ë¿µÄ½ðÕëÉäÏò$n,\n"NOR,me,target);
+    message_vision(HIY "\n$Nä»Žæ€€é‡Œæ‘¸å‡ºä¸€æžš"HIY"çŽ‰èœ‚é’ˆ"HIY"æ‰£åœ¨æ‰‹ä¸­ï¼Œæ‰‹èµ·é’ˆå‡ºï¼Œä¸€æžšç»†å¦‚å‘ä¸çš„é‡‘é’ˆå°„å‘$n,\n"NOR,me,target);
     me-> start_busy (2) ;
     if (  random ( (int)me->query_skill("throwing")*2 ) < (int)target->query_skill("dodge") / 2 )
       {
-      message_vision(HIB"\nµ«$n"HIB"·´Ó³ÉñËÙ£¬ÓÐ¾ªÎÞÏÕµÄ¶ã¿ªÁË$NµÄ"HIY"Óñ·äÕë£¡\n"NOR , me, target);
+      message_vision(HIB"\nä½†$n"HIB"åæ˜ ç¥žé€Ÿï¼Œæœ‰æƒŠæ— é™©çš„èº²å¼€äº†$Nçš„"HIY"çŽ‰èœ‚é’ˆï¼\n"NOR , me, target);
       }
     else
       {
-       message_vision( HIR "\nÖ»¼û"HIC"$n"HIR"×óÊÖÒ»»Ó£¬Ò»Ã¶½ðÕëÉäÈë"HIC"$N"HIR"µÄÌåÄÚ¡£\n"NOR,target ,me);
+       message_vision( HIR "\nåªè§"HIC"$n"HIR"å·¦æ‰‹ä¸€æŒ¥ï¼Œä¸€æžšé‡‘é’ˆå°„å…¥"HIC"$N"HIR"çš„ä½“å†…ã€‚\n"NOR,target ,me);
 	target->apply_condition("yufeng_poison",(int)target->query_condition("yufeng_poison")+ 10);
       }
          destruct(this_object());

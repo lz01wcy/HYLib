@@ -1,4 +1,4 @@
-// town.c С��
+// town.c 小镇
 // Town of mingjiao  
 // Ver 1.0 10/8/1998 by Shark
 
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "С ��");
+	set("short",HIG "小 镇");
 	set("long",   @LONG
-����һ���ɱ������߽�ʿ�Ҿ�۾Ӷ��γɵ�С������ɳĮ֮������
-��������Ʒ���ڴ˽��ף�������������Ŀ�е�һ����䡣��������������
-Ҳû��ʲô�����ˡ�
+这是一个由北疆戍边将士家眷聚居而形成的小镇，在这沙漠之中人们
+的生活用品都在此交易，她宛如人们心目中的一块翡翠。从这里往北就再
+也没有什么人烟了。
 LONG
 	);	
         set("outdoors", "jyguan");

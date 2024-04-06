@@ -1,4 +1,4 @@
-// chanfang1.c ����
+// chanfang1.c 禅房
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "禅房");
         set("long", @LONG
-������ȫ��̵��Ӱڷű������������������ҵض���һЩ������
-���Ѿ����ư߰��ˣ��еĻ��Ƿ���͸����ȫ�����������ʱ�򣬾͵�
-��������ѡ���С�
+这里是全真教弟子摆放兵器的禅房，地下杂乱地堆着一些剑，有
+的已经锈纹斑斑了，有的还是锋利透亮，全真弟子练功的时候，就到
+这里来挑选兵刃。
 LONG
         );
         set("exits", ([

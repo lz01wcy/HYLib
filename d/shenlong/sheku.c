@@ -1,14 +1,14 @@
 // sheku.c
-// Éß¿ß
+// è›‡çªŸ
 inherit ROOM;
 void create()
 {
-	set("short","Éß¿ß");
+	set("short","è›‡çªŸ");
 	set("long",@long
-ÕâÀïÕûÄê¶¾ÎíÃÖÂş£¬ĞÈ³ôÆË±Ç£¬±éµØ¶¼ÊÇÓÖ´ÖÓÖ³¤µÄ¶¾ÉßºÍÒ»¶Ñ¶Ñ°×¹Ç£¬
-Ê±³£ÓĞ·ÉÄñ±»¶¾ÎíÑ¬»è£¬ÂäÏÂÀ´³ÉÎªÖÚÉßµÄÃÀÊ³£¬ÈºÉßÖ®¼äµÄ»¥ÏàÍÌÊÉÒ²ÊÇ
-¼Ò³£±ã·¹£¬Ö»ÓĞÄÇĞ©Îä¹¦¸ßÇ¿µÄÓÃ¶¾¸ßÊÖ²ÅÄÜ´ÓÕâÀïÉúÀë¡£´Ë´¦ºÃÏóÃ»ÓĞÊ²
-Ã´³öÂ·£¬Äã¿ÉÒÔµ½´¦×ß×ß(go)¿´¡£
+è¿™é‡Œæ•´å¹´æ¯’é›¾å¼¥æ¼«ï¼Œè…¥è‡­æ‰‘é¼»ï¼Œéåœ°éƒ½æ˜¯åˆç²—åˆé•¿çš„æ¯’è›‡å’Œä¸€å †å †ç™½éª¨ï¼Œ
+æ—¶å¸¸æœ‰é£é¸Ÿè¢«æ¯’é›¾ç†æ˜ï¼Œè½ä¸‹æ¥æˆä¸ºä¼—è›‡çš„ç¾é£Ÿï¼Œç¾¤è›‡ä¹‹é—´çš„äº’ç›¸åå™¬ä¹Ÿæ˜¯
+å®¶å¸¸ä¾¿é¥­ï¼Œåªæœ‰é‚£äº›æ­¦åŠŸé«˜å¼ºçš„ç”¨æ¯’é«˜æ‰‹æ‰èƒ½ä»è¿™é‡Œç”Ÿç¦»ã€‚æ­¤å¤„å¥½è±¡æ²¡æœ‰ä»€
+ä¹ˆå‡ºè·¯ï¼Œä½ å¯ä»¥åˆ°å¤„èµ°èµ°(go)çœ‹ã€‚
 long);
 	/*set("exits",([
 	    "northwest" : __DIR__"treen2",
@@ -19,7 +19,7 @@ set("objects",([
 __DIR__"npc/shenlong": 1,
 __DIR__"npc/dushe2" : 4,
 ]));
-	set("outdoors", "ÉñÁúµº");
+	set("outdoors", "ç¥é¾™å²›");
         setup();
 }
 	    	
@@ -51,14 +51,14 @@ int do_bo(string arg)
      	return 0;
 
 if (!present("shenlong", this_object()))
-return notify_fail("ÕâÀïÊ²Ã´Ò²Ã»ÓĞ°¡!\n");
-     if(!arg || arg!="°×¹Ç")
+return notify_fail("è¿™é‡Œä»€ä¹ˆä¹Ÿæ²¡æœ‰å•Š!\n");
+     if(!arg || arg!="ç™½éª¨")
 	return 0;
      if(random(10)<2)
      {
 	if(objectp(bg=new(__DIR__"npc/obj/baogou")))
 	{
-		tell_room(this_object(),"ºöÈ»ÓĞÊ²Ã´¶«Î÷´ÓÒ»¶Ñ°×¹ÇÖĞµôÁË³öÀ´¡£\n");
+		tell_room(this_object(),"å¿½ç„¶æœ‰ä»€ä¹ˆä¸œè¥¿ä»ä¸€å †ç™½éª¨ä¸­æ‰äº†å‡ºæ¥ã€‚\n");
 		bg->move(this_object());
 	}
      }
@@ -73,7 +73,7 @@ return notify_fail("ÕâÀïÊ²Ã´Ò²Ã»ÓĞ°¡!\n");
 	}
 	if(j>=5)
 		return 0;
-	tell_room(this_object(),"Í»È»´Ó°×¹ÇÏÂÃæ´Ü³öÒ»Ìõ±È¸Õ²Å¸ü¼Ó´ÖµÄ¾ŞÉß£¡\n");
+	tell_room(this_object(),"çªç„¶ä»ç™½éª¨ä¸‹é¢çªœå‡ºä¸€æ¡æ¯”åˆšæ‰æ›´åŠ ç²—çš„å·¨è›‡ï¼\n");
 	she=new(__DIR__"npc/shenlong");
 	she->set("combat_exp", 500000+random(3000001));
 	set("max_qi",26000+random(4001));
@@ -98,10 +98,10 @@ int do_go(string arg)
        
      if(!living(me) ) return 0;
      if (me->is_busy() || me->is_fighting())
-        return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+        return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");
 
      if( !arg || arg == "" || (arg != "west" && arg != "east" && arg != "north" && arg != "south" ))
-        return notify_fail("ÄãÒªÍùÄÄÀïÈ¥£¿\n");
+        return notify_fail("ä½ è¦å¾€å“ªé‡Œå»ï¼Ÿ\n");
      if(random(10)>=5)
          me->move(__DIR__"treen1");
      return 1;

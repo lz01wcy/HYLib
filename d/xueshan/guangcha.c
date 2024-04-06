@@ -1,14 +1,14 @@
-//      guangchang.c ¹ã³¡
-//      Designed by secret (ÃØÃÜ)
+//      guangchang.c å¹¿åœº
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","¹ã³¡");
+        set("short","å¹¿åœº");
         set("long",@LONG
-ÕâÀïÊÇÑ©É½ËÂÄÚµÄ¹ã³¡¡£¹ã³¡Ê¯ÛôÆÌ¾Í, »ÆÍÁµæÆö, Æ½Õû¶ø¼áÊµ¡£
+è¿™é‡Œæ˜¯é›ªå±±å¯ºå†…çš„å¹¿åœºã€‚å¹¿åœºçŸ³åŸ•é“ºå°±, é»„åœŸå«ç Œ, å¹³æ•´è€Œåšå®ã€‚
 LONG );
         set("outdoors","xueshan");
         set("exits",([

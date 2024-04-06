@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ãí×£", ({ "miao zhu", "zhu", "miaozhu" }));
+	set_name("åº™ç¥", ({ "miao zhu", "zhu", "miaozhu" }));
 	set("class", "taoist");
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
-	set("long", "ÕâÊÇÒ»Î»ÄêÀÏµÄÃí×££¬ÔÚ´ËÒÑ¼¸Ê®ÄêÁË£¬¶Ô´ËµØÒ»ÇĞ¶¼Ê®·ÖÊìÏ¤¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ä½å¹´è€çš„åº™ç¥ï¼Œåœ¨æ­¤å·²å‡ åå¹´äº†ï¼Œå¯¹æ­¤åœ°ä¸€åˆ‡éƒ½ååˆ†ç†Ÿæ‚‰ã€‚\n");
 	set("combat_exp", 800);
 	set("attitude", "friendly");
 	setup();

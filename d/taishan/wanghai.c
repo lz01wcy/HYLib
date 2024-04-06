@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ʯ");
+	set("short", "望海石");
 	set("long", @LONG
-��������������ʯ����ʯ̹��������ԣ�ʯ�����һСˮ�ۣ�ÿ��
-���ˮ˳�۶��� ������֮�����������ֹŶ���̡�˫����ע����Ԭ��
-�����顰��������
+仙人桥南是望海石，巨石坦豁如鸟伏卧，石侧各有一小水槽，每逢
+雨后，水顺槽而流 ，如鸟之两翼。明人林古度书刻“双流翼注”，袁洪
+愈大书“望海”。
 LONG );
 	set("exits", ([
 		"north"    : __DIR__"xianren",

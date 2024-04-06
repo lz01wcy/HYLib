@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÅÂ¥Èý²ã");
+	set("short", "é—¨æ¥¼ä¸‰å±‚");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¼ä´óÊ¯ÊÒ£¬ÖÐÑë°Ú·Å×ÅÊ¯×À(zhuo)Ê¯ÒÎ(chair)£¬Ê¯×À
-ÉÏ¿ÌÓÐ×Ýºá½»´íµÄÍ¼°¸£¬×ÐÏ¸¿´£¬Ô­À´ÊÇÒ»Æå¾Ö£¬ÆåÅÌÉÏÁ½ºÚ(hei
-zi)¡¢Ò»°×(bai zi)£¬Õý¸Ã°×·½Âä×ÓÁË¡£È´²»Öª¶ÔÞÄµÄÆåÊ¿ÎªºÎÃ»ÓÐ
-ÏÂÍê¡£
+è¿™é‡Œæ˜¯ä¸€é—´å¤§çŸ³å®¤ï¼Œä¸­å¤®æ‘†æ”¾ç€çŸ³æ¡Œ(zhuo)çŸ³æ¤…(chair)ï¼ŒçŸ³æ¡Œ
+ä¸Šåˆ»æœ‰çºµæ¨ªäº¤é”™çš„å›¾æ¡ˆï¼Œä»”ç»†çœ‹ï¼ŒåŽŸæ¥æ˜¯ä¸€æ£‹å±€ï¼Œæ£‹ç›˜ä¸Šä¸¤é»‘(hei
+zi)ã€ä¸€ç™½(bai zi)ï¼Œæ­£è¯¥ç™½æ–¹è½å­äº†ã€‚å´ä¸çŸ¥å¯¹å¼ˆçš„æ£‹å£«ä¸ºä½•æ²¡æœ‰
+ä¸‹å®Œã€‚
 LONG );
 	set("exits", ([
 //		"up" : __DIR__"rjqmenlou3",
@@ -31,13 +31,13 @@ int do_sit(string arg)
 {
 
 	if ( !arg || (arg != "chair") )
-		return notify_fail("ÄãÒ»ÏÂ×øÁË¸öÆ¨¹É¶Õ¡£\n");	
+		return notify_fail("ä½ ä¸€ä¸‹åäº†ä¸ªå±è‚¡å¢©ã€‚\n");	
 	
 	if (this_player()->query_temp("allsit")==1)
-		return notify_fail("ÄãÒÑ¾­×ùÏÂÁË¡£\n");	
+		return notify_fail("ä½ å·²ç»åº§ä¸‹äº†ã€‚\n");	
 			
 	this_player()->set_temp("allsit", 1);
-	return notify_fail("ÄãÕÒÁË¸ö¿ÕÒÎ×Ó×ùÏÂ£¬¿ªÊ¼Ë¼¿¼Æå¾Ö¡£\n");	
+	return notify_fail("ä½ æ‰¾äº†ä¸ªç©ºæ¤…å­åº§ä¸‹ï¼Œå¼€å§‹æ€è€ƒæ£‹å±€ã€‚\n");	
 }
 
 int do_push(string arg)
@@ -46,40 +46,40 @@ int do_push(string arg)
 	me=this_player();
 	if(me->query_temp("allsit")!=1)
 	{
-		message_vision("$NÖ»¾õµÃÒ»Õó»Ðã±£¬µ¹ÔÚÁËµØÉÏ¡£\n", me);
+		message_vision("$Nåªè§‰å¾—ä¸€é˜µææƒšï¼Œå€’åœ¨äº†åœ°ä¸Šã€‚\n", me);
                 me->set_temp("hei",0);
                 me->set_temp("allsit",0);		
 		me->unconcious();
 		return notify_fail("\n");
 	}
 	if ((arg!="hei zi")&&(arg!="bai zi"))
-		return notify_fail("ÄãÇáÇá°´ÁËÒ»ÏÂÊ¯×À£¬ÕæÊÇÒ»¿éºÃÓñÑ½£¡\n");
+		return notify_fail("ä½ è½»è½»æŒ‰äº†ä¸€ä¸‹çŸ³æ¡Œï¼ŒçœŸæ˜¯ä¸€å—å¥½çŽ‰å‘€ï¼\n");
 	if(me->query_temp("allsit")&&(arg=="hei zi"))
 	{
 		if(me->query_temp("hei")==2)
 		{
 			me->set_temp("hei", 0);
-			return notify_fail("ÄãÇáÇá°´ÁËÒ»ÏÂºÚÆå×Ó£¬Ê²Ã´·´Ó¦Ò²Ã»ÓÐ¡£\n");
+			return notify_fail("ä½ è½»è½»æŒ‰äº†ä¸€ä¸‹é»‘æ£‹å­ï¼Œä»€ä¹ˆååº”ä¹Ÿæ²¡æœ‰ã€‚\n");
 		}
 		else if(me->query_temp("hei")==1)
 		{
 			me->set_temp("hei", 2);
-			return notify_fail("ÄãÇáÇá°´ÁËÒ»ÏÂºÚÆå×Ó£¬Ê²Ã´·´Ó¦Ò²Ã»ÓÐ¡£\n");
+			return notify_fail("ä½ è½»è½»æŒ‰äº†ä¸€ä¸‹é»‘æ£‹å­ï¼Œä»€ä¹ˆååº”ä¹Ÿæ²¡æœ‰ã€‚\n");
 		}
 		else if(me->query_temp("hei")==0)
 		{
 			me->set_temp("hei", 1);		
-			return notify_fail("ÄãÇáÇá°´ÁËÒ»ÏÂºÚÆå×Ó£¬Ê²Ã´·´Ó¦Ò²Ã»ÓÐ¡£\n");
+			return notify_fail("ä½ è½»è½»æŒ‰äº†ä¸€ä¸‹é»‘æ£‹å­ï¼Œä»€ä¹ˆååº”ä¹Ÿæ²¡æœ‰ã€‚\n");
 		}
 	}
 	if(me->query_temp("allsit")&&(arg=="bai zi"))
 	{
 		if(me->query_temp("hei")!=2)
-				return notify_fail("ÄãÇáÇá°´ÁËÒ»ÏÂ°×Æå×Ó£¬Ê²Ã´·´Ó¦Ò²Ã»ÓÐ¡£\n");	
+				return notify_fail("ä½ è½»è½»æŒ‰äº†ä¸€ä¸‹ç™½æ£‹å­ï¼Œä»€ä¹ˆååº”ä¹Ÿæ²¡æœ‰ã€‚\n");	
 		if(me->query_temp("hei")==2)
 		{
-			message_vision("Ö»¼ûÊ¯ÒÎÃÍµÄÒ»³Á£¬$NÒ»Éù²Ò½Ð£¬Ö±µøµ½¶´ÖÐÈ¥ÁË¡£\n", me);
-//			message_vision("Ê¯ÒÎÓÖÑ¸ËÙµØ»Ö¸´ÁËÔ­×´\n");
+			message_vision("åªè§çŸ³æ¤…çŒ›çš„ä¸€æ²‰ï¼Œ$Nä¸€å£°æƒ¨å«ï¼Œç›´è·Œåˆ°æ´žä¸­åŽ»äº†ã€‚\n", me);
+//			message_vision("çŸ³æ¤…åˆè¿…é€Ÿåœ°æ¢å¤äº†åŽŸçŠ¶\n");
 		        me->set_temp("hei",0);
                         me->set_temp("allsit",0);		
 //			command("recruit " + me->query("id"));

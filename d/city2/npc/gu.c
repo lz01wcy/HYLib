@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ËÑ×Îä", ({ "gu yanwu", "gu" }));
-	set("long", "¹ËÏÈÉú±»³ÆÎªµ±ÊÀµÚÒ»´óÎÄÑ§¼Ò£¬¶Ç×ÓÀïµÄÄ«Ë®±Èº£»¹ÒªÉî¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("é¡¾ç‚æ­¦", ({ "gu yanwu", "gu" }));
+	set("long", "é¡¾å…ˆç”Ÿè¢«ç§°ä¸ºå½“ä¸–ç¬¬ä¸€å¤§æ–‡å­¦å®¶ï¼Œè‚šå­é‡Œçš„å¢¨æ°´æ¯”æµ·è¿˜è¦æ·±ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 
 	set_skill("literate", 300);
@@ -23,29 +23,29 @@ void create()
 
 	set("chat_chance", 3);
 	set("chat_msg", ({
-		"¹ËÑ×ÎäËµµÀ£ºÆÕÌìÖ®ÏÂ£¬Äª·ÇÍõÍÁ£»ÂÊÍÁÖ®±õ£¬Äª·ÇÍõ³¼¡£\n",
-		"¹ËÑ×ÎäËµµÀ£º³ö¼ÒÈË£¬Ğ¡¹ıËğÒæÑÉ£»ÎŞÍı´ó¹ı£¬Î´¼ÃÏÌÀ§Ö®¡£\n",
-		"¹ËÑ×ÎäËµµÀ£º´óÑ§Ö®µÀ£¬ÔÚÃ÷Ã÷µÂ¡£ÔÚÇ×Ãñ£¬ÔÚÖ¹ÓÚÖÁÉÆ¡£ \n",
-		"¹ËÑ×ÎäËµµÀ£º¸ñÎïÖÂÖª£¬³ÏÒâÕıĞÄ£¬ĞŞÉíÆë¼Ò£¬ÖÎ¹úÆ½ÌìÏÂ¡£\n",
+		"é¡¾ç‚æ­¦è¯´é“ï¼šæ™®å¤©ä¹‹ä¸‹ï¼Œè«éç‹åœŸï¼›ç‡åœŸä¹‹æ»¨ï¼Œè«éç‹è‡£ã€‚\n",
+		"é¡¾ç‚æ­¦è¯´é“ï¼šå‡ºå®¶äººï¼Œå°è¿‡æŸç›Šç„‰ï¼›æ— å¦„å¤§è¿‡ï¼Œæœªæµå’¸å›°ä¹‹ã€‚\n",
+		"é¡¾ç‚æ­¦è¯´é“ï¼šå¤§å­¦ä¹‹é“ï¼Œåœ¨æ˜æ˜å¾·ã€‚åœ¨äº²æ°‘ï¼Œåœ¨æ­¢äºè‡³å–„ã€‚ \n",
+		"é¡¾ç‚æ­¦è¯´é“ï¼šæ ¼ç‰©è‡´çŸ¥ï¼Œè¯šæ„æ­£å¿ƒï¼Œä¿®èº«é½å®¶ï¼Œæ²»å›½å¹³å¤©ä¸‹ã€‚\n",
 	}) );
 	carry_object("/clone/misc/cloth")->wear();
 }
 
 int recognize_apprentice(object ob)
 {
-	if (!(int)ob->query_temp("mark/Öì"))
+	if (!(int)ob->query_temp("mark/æœ±"))
 		return 0; 
-	ob->add_temp("mark/Öì", -1);
+	ob->add_temp("mark/æœ±", -1);
 	return 1;
 }
 
 int accept_object(object who, object ob)
 {
-	if (!(int)who->query_temp("mark/Öì"))
-		who->set_temp("mark/Öì", 0);
+	if (!(int)who->query_temp("mark/æœ±"))
+		who->set_temp("mark/æœ±", 0);
 	if (ob->query("money_id") && ob->value() >= 5000) {
-		message_vision("¹ËÑ×ÎäÍ¬ÒâÖ¸µã$NÒ»Ğ©ÎÊÌâ¡£\n", who);
-		who->add_temp("mark/Öì", ob->value() / 250);
+		message_vision("é¡¾ç‚æ­¦åŒæ„æŒ‡ç‚¹$Nä¸€äº›é—®é¢˜ã€‚\n", who);
+		who->add_temp("mark/æœ±", ob->value() / 250);
 		return 1;
 	}
 	return 0;

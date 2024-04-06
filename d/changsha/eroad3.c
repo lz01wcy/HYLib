@@ -1,16 +1,16 @@
 // /d/zhuojun/eroad3.c
-// Room in äÃ¿¤
+// Room in æ¶¿éƒ¡
 // modify by yang
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "´óæäµÀ");
+	set("short", "å¤§é©¿é“");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ´óæäµÀÉÏ¡£ËäÈ»ÏÖ½ñÌìÏÂ´óÂÒ£¬µ«ÊÇËÄÖÜ»¹
-ÊÇÈËÀ´ÈËÍù¡£Ìôµ£×ÓµÄ¡¢ÐÐÉÌµÄ¡¢¸Ï×Å´ó³µµÄÂí·ò£¬ÎõÎõÈÁÈÁ£¬·Ç³£ÈÈ
-ÄÖ¡£Ì÷ÍûÔ¶´¦£¬ÒÑ¾­ÄÜ¿´¼û³¤É³ÁË¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£žæ‰¬çš„å¤§é©¿é“ä¸Šã€‚è™½ç„¶çŽ°ä»Šå¤©ä¸‹å¤§ä¹±ï¼Œä½†æ˜¯å››å‘¨è¿˜
+æ˜¯äººæ¥äººå¾€ã€‚æŒ‘æ‹…å­çš„ã€è¡Œå•†çš„ã€èµ¶ç€å¤§è½¦çš„é©¬å¤«ï¼Œç†™ç†™æ”˜æ”˜ï¼Œéžå¸¸çƒ­
+é—¹ã€‚çœºæœ›è¿œå¤„ï¼Œå·²ç»èƒ½çœ‹è§é•¿æ²™äº†ã€‚
 LONG );
 
 	set("exits", ([

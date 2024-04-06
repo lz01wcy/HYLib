@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","ӥ���");
+  set ("short","鹰嘴峰");
   set ("long", @LONG
-������������ű�ѩ�У����ˡ��Է�Ͳ�ҩ�˵��㼣���������ӥ
-��壬��Ϊ��ɽ������ӥ�죬�ʵ���ӥ��塣
+经天池向西沿着冰雪中，猎人、樵夫和采药人的足迹，你登上了鹰
+嘴峰，因为其山峰型入鹰嘴，故得名鹰嘴峰。
 LONG);
 
   set("exits", ([ 

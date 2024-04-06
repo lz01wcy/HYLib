@@ -1,10 +1,10 @@
 inherit ROOM;
 void create()	
 {
-	set("short", "����");
+	set("short", "北门");
 	set("long", @LONG
-���������صı��š��������صľ��ö༯�еĳ����ϲ�����������
-�Ե÷ǳ����塣��ֵս�ң�������������ո��Ǳ�����
+这里是马邑的北门。由于马邑的经济多集中的城市南部，所以这里
+显得非常冷清。正值战乱，所以这里的气氛更是悲凉。
 LONG);
 set("outdoors", "mayi");
 set("exits", ([

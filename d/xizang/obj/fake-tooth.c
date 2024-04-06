@@ -2,18 +2,18 @@
 inherit HEAD;   
 void create()
 {
-        set_name("ÉáÀû×Ó", ({ "tooth" , "budda-tooth"}) );
+        set_name("èˆåˆ©å­", ({ "tooth" , "budda-tooth"}) );
         set_weight(1);
         set("nature", "fake");
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÉ®ÈËÃÇÈÏÎªÓĞÖØÒª×Ú½ÌÒâÒ»µÄÉáÀû×Ó¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯åƒ§äººä»¬è®¤ä¸ºæœ‰é‡è¦å®—æ•™æ„ä¸€çš„èˆåˆ©å­ã€‚\n");
                 set("value", 500);
                 set("armor_prop/armor", 80);
-                set("wear_msg", "$N°Ñ$n´÷ÔÚ²±×ÓÉÏ¡£\n");
-                set("unwield_msg", "$N°Ñ$n´Ó²±×ÓÉÏ³ıÁËÏÂÀ´¡£\n"); 
+                set("wear_msg", "$NæŠŠ$næˆ´åœ¨è„–å­ä¸Šã€‚\n");
+                set("unwield_msg", "$NæŠŠ$nä»è„–å­ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n"); 
         }
         
 }    

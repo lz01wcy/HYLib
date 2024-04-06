@@ -8,18 +8,18 @@ void init()
 
 void create()
 {
-	set_name(HIC "ôä´äÀ¼" NOR, ({"hua"}));
-        set("unit", "¶ä");
-	set("long", "ÕâÊÇÒ»¶äÇ§ÄêÄÑµÃÒ»¼ûµÄôä´äÀ¼,¾ÝËµÄÜ½â°Ù¶¾¡£\n");
+	set_name(HIC "ç¿¡ç¿ å…°" NOR, ({"hua"}));
+        set("unit", "æœµ");
+	set("long", "è¿™æ˜¯ä¸€æœµåƒå¹´éš¾å¾—ä¸€è§çš„ç¿¡ç¿ å…°,æ®è¯´èƒ½è§£ç™¾æ¯’ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 if(arg=="hua") 
 {
-tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Ž,ç¥žæ„æ¸…çˆ½ï¼\n" NOR );
 this_player()->set_temp("nopoison", 1);
 this_player()->set("eff_jing",this_player()->query("max_jing"));
 this_player()->set("jing",this_player()->query("max_jing"));

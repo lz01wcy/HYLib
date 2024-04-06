@@ -5,10 +5,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "±øÆ÷¿â");
+	set("short", "å…µå™¨åº“");
 	set("long", @LONG
-	ÕâÀïÊÇÌÆÃÅµÄ±øÆ÷¿â£¬ÀïÃæÕûÕûÆëÆë¶Ñ·Å×Å¸÷ÖÖ¸÷ÑùµÄ°µÆ÷¼°µ¶½££¬ÌÆÃÅµÜ×Ó
-¿ÉÒÔÔÚÕâ¶ùÈ¡ÓÃ¡£¿âÀï»¹ÓÐ»ðÂ¯ºÍÌú´¸£¬¿ÉÒÔ×Ô¼ºÉý»ð´òÔì(da)¸ÖïÚ¡£
+	è¿™é‡Œæ˜¯å”é—¨çš„å…µå™¨åº“ï¼Œé‡Œé¢æ•´æ•´é½é½å †æ”¾ç€å„ç§å„æ ·çš„æš—å™¨åŠåˆ€å‰‘ï¼Œå”é—¨å¼Ÿå­
+å¯ä»¥åœ¨è¿™å„¿å–ç”¨ã€‚åº“é‡Œè¿˜æœ‰ç«ç‚‰å’Œé“é”¤ï¼Œå¯ä»¥è‡ªå·±å‡ç«æ‰“é€ (da)é’¢é•–ã€‚
 LONG
 	);
 	
@@ -40,21 +40,21 @@ int do_da(string arg)
 	me = this_player();
 
 	if ( !arg || ( arg != "biao" ) )
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
-	if (me->query_temp("marks/ïÚ")){
-		if (me->query("qi")<10){write("ÄãÒÑ¾­Ì«ÀÛÁË£¬ÐÝÏ¢Ò»»á¶ùÔÙ´ò°É¡£\n");return 1;}
+	if (me->query_temp("marks/é•–")){
+		if (me->query("qi")<10){write("ä½ å·²ç»å¤ªç´¯äº†ï¼Œä¼‘æ¯ä¸€ä¼šå„¿å†æ‰“å§ã€‚\n");return 1;}
 	me->receive_damage("qi", 5);
 
-	message_vision("$NÂúÍ·´óº¹£¬»ÓÎè×ÅÌú´¸¡£\n", me);
+	message_vision("$Næ»¡å¤´å¤§æ±—ï¼ŒæŒ¥èˆžç€é“é”¤ã€‚\n", me);
 
 	ob=new("/d/tangmen/obj/gangbiao1");
         ob->move(this_player());
-        message_vision("$NÒÑ¾­´òºÃÁËÒ»Ã¶¸ÖïÚ¡£\n", me);
+        message_vision("$Nå·²ç»æ‰“å¥½äº†ä¸€æžšé’¢é•–ã€‚\n", me);
 		return 1;
 	}
 
-	write("»ðÒÑ¾­Ï¨ÃðÁË£¬Äã»¹ÊÇ°Ñ»ðÉúÆðÀ´ÔÙËµ°É¡£\n");
+	write("ç«å·²ç»ç†„ç­äº†ï¼Œä½ è¿˜æ˜¯æŠŠç«ç”Ÿèµ·æ¥å†è¯´å§ã€‚\n");
 
 	return 1;
 }
@@ -65,12 +65,12 @@ int do_sheng(string arg)
 	me = this_player();
 
 	if ( !arg || ( arg != "huo" ) )
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
-		if (me->query_temp("marks/ïÚ"))
-	{write("»ðÒÑ¾­Éú×ÅÁË¡£\n");return 1;}
-	message_vision("$NÍùÂ¯ÖÐÌíÁËÐ©Ä¾Ì¿£¬ÄÃÆð·çÏä¿ªÊ¼Éý»ð¡£\n", me);
-	message_vision(HIR"Â¯»ðÐÜÐÜÈ¼ÁËÆðÀ´¡£\n"NOR,me);
-	this_player()->set_temp("marks/ïÚ",1);
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
+		if (me->query_temp("marks/é•–"))
+	{write("ç«å·²ç»ç”Ÿç€äº†ã€‚\n");return 1;}
+	message_vision("$Nå¾€ç‚‰ä¸­æ·»äº†äº›æœ¨ç‚­ï¼Œæ‹¿èµ·é£Žç®±å¼€å§‹å‡ç«ã€‚\n", me);
+	message_vision(HIR"ç‚‰ç«ç†Šç†Šç‡ƒäº†èµ·æ¥ã€‚\n"NOR,me);
+	this_player()->set_temp("marks/é•–",1);
         remove_call_out("fire");
         call_out("fire", 20, this_object());
 
@@ -78,6 +78,6 @@ int do_sheng(string arg)
 }
 void fire(object room)
 {
-    message("vision",HIY"Ö»¼ûÂ¯»ðÆËÉÁÁË¼¸ÏÂ£¬Ï¨ÁË¡£\n"NOR, room);
-    this_player()->delete_temp("marks/ïÚ");
+    message("vision",HIY"åªè§ç‚‰ç«æ‰‘é—ªäº†å‡ ä¸‹ï¼Œç†„äº†ã€‚\n"NOR, room);
+    this_player()->delete_temp("marks/é•–");
 }

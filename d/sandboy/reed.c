@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "«έ��");
+	set("short", "芦苇荡");
 	set("long", @LONG
-һƬ��ɫ��«έ��,���������«έ���Ͽ����˰�ɫ��«��,΢�紵��,
-��ɫ��«���������.������һƬ�Ӳݴ�.
+一片绿色的芦苇荡,密密麻麻的芦苇顶上开出了白色的芦花,微风吹过,
+白色的芦花漫天飞舞.南面是一片杂草丛.
 LONG
 	);
 	set("no_clean_up", 0);

@@ -4,10 +4,10 @@
 inherit NPC;
 void create()
 {
-	set_name("¿ÕĞÄ²Ë", ({ "kong xincai","kong","xincai"}) );
-	set("gender", "Å®ĞÔ" );
+	set_name("ç©ºå¿ƒèœ", ({ "kong xincai","kong","xincai"}) );
+	set("gender", "å¥³æ€§" );
 	set("age", 4);
-	set("long", "Æİ·¼µÄÅ®¶ù£¬Ò»¸ö»îÆÃ¿É°®µÄĞ¡Å®º¢¡£\n");
+	set("long", "æˆšèŠ³çš„å¥³å„¿ï¼Œä¸€ä¸ªæ´»æ³¼å¯çˆ±çš„å°å¥³å­©ã€‚\n");
 	set("shen_type", 1);
 	set("combat_exp", 5000);
 	set("str", 20);
@@ -24,7 +24,7 @@ void create()
 
          set("chat_chance", 10);
          set("chat_msg", ({
-		"¿ÕĞÄ²ËµÃÒâµØµÀ£º¡°¿ÕĞÄ²ËÔÚ»¨Ô°£¡¿ÕĞÄ²Ë¿´ÂìÒÏ£¡¡±\n",
+		"ç©ºå¿ƒèœå¾—æ„åœ°é“ï¼šâ€œç©ºå¿ƒèœåœ¨èŠ±å›­ï¼ç©ºå¿ƒèœçœ‹èš‚èšï¼â€\n",
 	}));        
 	setup();
 	carry_object("/clone/misc/cloth")->wear();

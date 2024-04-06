@@ -5,12 +5,12 @@ inherit ROOM;
 #include <room.h>;
 void create()
 {
-	set("short", "Ê¯ÊÒ");
+	set("short", "çŸ³å®¤");
 	set("long", @LONG
-Õâ¼äÊ¯ÊÒ¼«´ó£¬¶¥ÉÏ´¹ÏÂÖÓÈé£¬ÏÔÊÇÌìÈ»µÄÊ¯¶´¡£×ßÁË¼¸²½£¬Í»
-¼ûµØÏÂµ¹×ÅÁ½¾ß÷¼÷Ã¡£÷¼÷ÃÉíÉÏÒÂ·şÉĞÎ´ÀÃ¾¡£¬×ÅµÃ³öÊÇÒ»ÄĞÒ»Å®¡£
-×ß½üÁ½¾ß÷¼÷Ã£¬Ö»¼ûÄÇÅ®×ÓÓÒÊÖ×¥×ÅÒ»±ú¾§¹âÉÁÁÁµÄØ°Ê×£¬²åÔÚËı×Ô
-¼ºĞØ¿Ú¡£
+è¿™é—´çŸ³å®¤æå¤§ï¼Œé¡¶ä¸Šå‚ä¸‹é’Ÿä¹³ï¼Œæ˜¾æ˜¯å¤©ç„¶çš„çŸ³æ´ã€‚èµ°äº†å‡ æ­¥ï¼Œçª
+è§åœ°ä¸‹å€’ç€ä¸¤å…·éª·é«…ã€‚éª·é«…èº«ä¸Šè¡£æœå°šæœªçƒ‚å°½ï¼Œç€å¾—å‡ºæ˜¯ä¸€ç”·ä¸€å¥³ã€‚
+èµ°è¿‘ä¸¤å…·éª·é«…ï¼Œåªè§é‚£å¥³å­å³æ‰‹æŠ“ç€ä¸€æŸ„æ™¶å…‰é—ªäº®çš„åŒ•é¦–ï¼Œæ’åœ¨å¥¹è‡ª
+å·±èƒ¸å£ã€‚
 LONG );
 	set("exits", ([
 		"south" : __DIR__"midao0",
@@ -24,7 +24,7 @@ LONG );
 	set("no_clean_up", 0);
 	set("xin_count", 1);
 	setup();
-        create_door("south", "Ê¯ÃÅ", "north", !DOOR_CLOSED);
+        create_door("south", "çŸ³é—¨", "north", !DOOR_CLOSED);
 }
 void init()
 {
@@ -40,21 +40,21 @@ int do_ketou()
 		
 	if ( me->query_temp("ketou_times") == 0 )
 	{
-		message_vision("$N¿ÄÍ·¿ÄµÃÔÎÁË¹ıÈ¥¡£\n", me);
+		message_vision("$Nç£•å¤´ç£•å¾—æ™•äº†è¿‡å»ã€‚\n", me);
 		me->set_temp("ketou_times", random(50));
 		me->unconcious();
 		return 1;
 	}
 	me->add_temp("ketou_times", -1);	
 
-	message_vision("$Nò¯³ÏµØ¹òÏÂÀ´£¬ÔÚÑô½ÌÖ÷ÒÅ¹ÇÇ°¹§¹§¾´¾´µØ¿ÄÍ·¡£\n", me);
+	message_vision("$Nè™”è¯šåœ°è·ªä¸‹æ¥ï¼Œåœ¨é˜³æ•™ä¸»é—éª¨å‰æ­æ­æ•¬æ•¬åœ°ç£•å¤´ã€‚\n", me);
 
 	if ( random(20) == 3 && query("xin_count") > 0 )
 	{
 		add("xin_count", -1);
 		ob=new("/d/mingjiao/obj/yixin");
 		ob->move(this_object());
-		tell_object(me, "Í»È»ÄãÌ§ÑÛ¿´µ½ÒÅ¹ÇÏÂÃæ£¬ÓĞ¼¸ÕÅÖ½Æ¬£¡\n");
+		tell_object(me, "çªç„¶ä½ æŠ¬çœ¼çœ‹åˆ°é—éª¨ä¸‹é¢ï¼Œæœ‰å‡ å¼ çº¸ç‰‡ï¼\n");
 	}
 	return 1;
 }

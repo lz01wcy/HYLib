@@ -1,35 +1,35 @@
 inherit SKILL;
 
 mapping *action = ({
-([  "action" : "\n$NÒ»¼Ç¹´È­£¬¹´Ïò$nµÄ$l¡£\n",
+([  "action" : "\n$Nä¸€è®°å‹¾æ‹³ï¼Œå‹¾å‘$nçš„$lã€‚\n",
         "force" : 180,
         "dodge" : 5,
         "damage": 50,
-        "damage_type" : "×¥ÉË",
+        "damage_type" : "æŠ“ä¼¤",
 ]),
-([      "action" : "$NÒ»¼ÇÖ±È­£¬Ö±µ·$nµÄ$l¡£",
+([      "action" : "$Nä¸€è®°ç›´æ‹³ï¼Œç›´æ£$nçš„$lã€‚",
         "force" : 200,
         "dodge" : 10,
         "damage": 60,
-        "damage_type" : "ðöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([      "action" : "$NÒ»¼Ç°ÚÈ­£¬Ö±°Ú$nµÄ$l¡£",
+([      "action" : "$Nä¸€è®°æ‘†æ‹³ï¼Œç›´æ‘†$nçš„$lã€‚",
         "force" : 230,
         "dodge" : 10,
         "damage": 60,
-        "damage_type" : "ðöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([      "action" : "\n$NÒ»¼ÇÖØÈ­£¬»÷Ïò$nµÄ$l¡£",
+([      "action" : "\n$Nä¸€è®°é‡æ‹³ï¼Œå‡»å‘$nçš„$lã€‚",
         "force" : 230,
         "dodge" : 25,
         "damage": 70,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å†…ä¼¤"
 ]),
-([      "action" : "$NÒ»Ì××éºÏÈ­£¬Ö±¹¥$nµÄÒªº¦²¿Î»¡£",
+([      "action" : "$Nä¸€å¥—ç»„åˆæ‹³ï¼Œç›´æ”»$nçš„è¦å®³éƒ¨ä½ã€‚",
         "force" : 220,
         "dodge" : 15,
         "damage": 90,
-        "damage_type" : "ðöÉË",
+        "damage_type" : "ç˜€ä¼¤",
 ]),
 });
 
@@ -38,9 +38,9 @@ int valid_enable(string usage) { return usage=="unarmed" ||  usage=="parry"|| us
 int valid_learn(object me)
 {
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("Á·È­»÷±ØÐë¿ÕÊÖ¡£\n");
+                return notify_fail("ç»ƒæ‹³å‡»å¿…é¡»ç©ºæ‰‹ã€‚\n");
         if ((int)me->query("max_force") < 200)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·È­»÷¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒæ‹³å‡»ã€‚\n");
         return 1;
 }
 
@@ -64,9 +64,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if ((int)me->query("kee") < 30)
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½Žäº†ã€‚\n");
         if ((int)me->query("force") < 10)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·È­»÷¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ‹³å‡»ã€‚\n");
         me->receive_damage("kee", 15);
         me->add("force", -5);
         return 1;

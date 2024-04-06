@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-	set_name("ÀÏÍõÍ·", ({ "lao wang", "laowangtou" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è€ç‹å¤´", ({ "lao wang", "laowangtou" }));
+	set("gender", "ç”·æ€§");
 	set("age", 67);
-       set("title","ÃÅ·¿");
+       set("title","é—¨æˆ¿");
 	set("combat_exp", 5000);
 	set("shen_type", 1);
 

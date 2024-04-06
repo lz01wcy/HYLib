@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ƽ�������̷��߷ֵ�");
+        set("short", "平安兵器铺防具分店");
         set("long", @LONG
-������ƽ�������ķ��ߵ꣬�����и��ָ����ķ���.
+这里是平安城最大的防具店，这里有各种各样的防具.
 LONG
         );
         set("exits", ([

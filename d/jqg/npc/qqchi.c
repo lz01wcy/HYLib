@@ -1,15 +1,15 @@
-// qqchi.c ��ǧ��
+// qqchi.c 裘千尺
 // By River 99.5.25
 #include <ansi.h>
 inherit NPC;
 string ask_dan();
 void create()
 {
-        set_name("��ǧ��", ({ "qiu qianchi", "qiu", "qianchi"}));
-        set("nickname", HIY"��������"NOR);
-        set("title",HIW"�����Ů����"NOR);
-        set("long","һ�����������ͺͷ������ϥ���ڵ��£�����ŭ�ݣ���Ȼ������\n"); 
-        set("gender", "Ů��");
+        set_name("裘千尺", ({ "qiu qianchi", "qiu", "qianchi"}));
+        set("nickname", HIY"铁掌莲花"NOR);
+        set("title",HIW"绝情谷女主人"NOR);
+        set("long","一个半身赤裸的秃头婆婆盘膝坐在地下，满脸怒容，凛然生威。\n"); 
+        set("gender", "女性");
         set("age", 55);
         set("attitude", "friendly");
 
@@ -46,8 +46,8 @@ void create()
         prepare_skill("strike", "tiezhang-zhangfa");
 
         set("inquiry", ([ 
-               "���鵤" : (: ask_dan :),
-               "����ֹ" : "�ߣ���������ҵ���˵ز�����ɱ��������ǧ���Ĳ�Ϊ�ˡ�", 
+               "绝情丹" : (: ask_dan :),
+               "公孙止" : "哼，这恶贼害我到如此地步，不杀此贼我裘千尺誓不为人。", 
         ]));
         setup();
 }
@@ -59,15 +59,15 @@ void kill_ob(object me,object weapon,object ob)
         ob=this_object();
         command("sneer " + me->query("id"));
         if( weapon ){
-          message_vision(HIW"\n$NͻȻ����һ�������зɳ�һ�� ���һ�죬����$n�������յ��Ǳ�"+weapon->name()+HIW"���ϡ�\n"NOR,ob,me);
+          message_vision(HIW"\n$N突然波的一声，口中飞出一物 ，铮的一响，打在$n手中所握的那柄"+weapon->name()+HIW"刃上。\n"NOR,ob,me);
           weapon->move(environment(ob));
           me->start_busy(2);
-          message_vision(HIR"\n$Nֻ���ֱ۾�����ָ��Ȼ����ס������һ����"+weapon->name()+HIR"���ڵ��¡�\n"NOR,me);
+          message_vision(HIR"\n$N只觉手臂剧震，五指竟然拿捏不住，当的一声，"+weapon->name()+HIR"落在地下。\n"NOR,me);
           }
         else {
-          message_vision(HIW"\n$N������˶��Ѽ���������ƿ�֮�������Х��ֱָ$nС����ȥ�Ƶ����Ǻ������ס�\n"NOR,ob,me);
+          message_vision(HIW"\n$N口中枣核钉已疾射而出，破空之声有如尖啸，直指$n小腹，去势当真是悍猛无伦。\n"NOR,ob,me);
           me->start_busy(2);
-          message_vision(HIR"\n$N��������һ���߽У�����������������ȥ��\n"NOR,me);
+          message_vision(HIR"\n$N“啊”的一声高叫，弯腰捧腹，俯下身去。\n"NOR,me);
           me->set("eff_qi", me->query("eff_qi")/2);
           me->set("qi",me->query("eff_qi"));
           }
@@ -78,7 +78,7 @@ void kill_ob(object me,object weapon,object ob)
 string ask_dan()
 {
          if(this_player()->query_temp("jqg/chi"))
-             return "��λ"+RANK_D->query_respect(this_player())+"���Ҳ����Ѿ������㣬���鵤����֮����ô��";
+             return "这位"+RANK_D->query_respect(this_player())+"，我不是已经告诉你，绝情丹所藏之处了么？";
           this_player()->set_temp("jqg/chi", 1);
-          return "�����ڴ�����������Ե�������Ψһһ�ž��鵤�Ҳ��ڴ����������ש�¡�";
+          return "你我在此相遇亦算有缘，绝情谷唯一一颗绝情丹我藏在大厅第五块青砖下。";
 }

@@ -7,18 +7,18 @@ inherit CLUB;
 
 void create()
 {
-	set_name("Ä¾¹÷",({"mu gun","club"}));
+	set_name("æœ¨æ£",({"mu gun","club"}));
 	set_weight(1500);
 
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸Ë");
-		set("long", "Ò»¸ËÊ®·ÖÁé±ãµÄÄ¾¹÷¡£\n");
+		set("unit", "æ†");
+		set("long", "ä¸€æ†ååˆ†çµä¾¿çš„æœ¨æ£ã€‚\n");
 		set("value",800);
 		set("material", "bamboo");
-		set("wield_msg", "$N»ØÊÖ´ÓÉíºó³é³öÒ»¸ËÄ¾¹÷¡£\n");
-		set("unwield_msg", "$NÊÖÍùºóÒ»¿Û£¬°ÑÄ¾¹÷·ÅÔÚÉíºó¡£\n");
+		set("wield_msg", "$Nå›æ‰‹ä»èº«åæŠ½å‡ºä¸€æ†æœ¨æ£ã€‚\n");
+		set("unwield_msg", "$Næ‰‹å¾€åä¸€æ‰£ï¼ŒæŠŠæœ¨æ£æ”¾åœ¨èº«åã€‚\n");
 	}
 	init_club(20);
 	setup();

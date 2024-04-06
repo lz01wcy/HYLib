@@ -7,13 +7,13 @@ inherit SHIELD;
 
 void create()
 {
-	set_name( HIG "Óê»¨Ê¯" NOR , ({ "green stone" }) );
+	set_name( HIG "é›¨èŠ±çŸ³" NOR , ({ "green stone" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¿éÂÌÉ«µÄÓê»¨Ê¯¡£\n");
-		set("unit", "¿é");
+		set("long", "è¿™æ˜¯ä¸€å—ç»¿è‰²çš„é›¨èŠ±çŸ³ã€‚\n");
+		set("unit", "å—");
 		set("value", 100);
 		set("material", "stone");
 		set("armor_prop/armor", 1);

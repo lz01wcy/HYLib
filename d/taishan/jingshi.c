@@ -6,12 +6,12 @@ int do_study(string arg);
 
 void create()
 {
-	set("short", "��ʯ��");
+	set("short", "经石峪");
 	set("long", @LONG
-������һ���ʯƺ��ʯ�����׭�ġ���վ�������������綷����
-ȴû�м��ؿ�ʯ�ߵ����ֺͿ�ʯ���������ʯ�����滷ɽ������İ¡�
-��Ȫ�������ڶ������������ڸ����ب��������ˮ�Զ������湵��ʯ
-����������������Ȫ��������Ϫ��
+这里是一块大石坪，石面刻有篆文「金刚经」，字体其大如斗，但
+却没有记载刻石者的名字和刻石的年代。经石峪四面环山，深谷幽奥。
+龙泉峰耸峙于东，锐若茁笋；炮高岭横亘于西；涧水自东北三叉沟乱石
+中泠泠而出，绕龙泉峰流入中溪。
 LONG );
 	set("exits", ([
 		"westdown"  : __DIR__"doumo",
@@ -41,26 +41,26 @@ int do_study(string arg)
 	me = this_player();
 
 	if ( !arg || ( arg != "stone" ) )
-		return notify_fail("ʲô��\n");
+		return notify_fail("什么？\n");
 
 	if ( (int)me->query_skill("literate", 1) < 1)
-		return notify_fail("���Ǹ���ä����ѧ���Ļ�(literate)�ɡ�\n");
+		return notify_fail("你是个文盲，先学点文化(literate)吧。\n");
 
 	if ( (int)me->query("jing")<40)
-		return notify_fail("������̫���ˣ�ʲôҲûѧ��ȥ��\n");
+		return notify_fail("你现在太累了，什么也没学进去。\n");
 
 	me->receive_damage("jing", 30);
 
-	message_vision("$N��ר���ж�ʯƺ�ϵġ���վ�����\n", me);
+	message_vision("$N正专心研读石坪上的「金刚经」。\n", me);
 
 	if ( (int)me->query_skill("buddhism", 1) < 100)
 	{
 		me->improve_skill("buddhism", me->query("int"));
-		write("�����ʯƺ�ϵġ���վ�����ĥ��һ�ض����ƺ��������ķ������ĵá�\n");
+		write("你对着石坪上的「金刚经」琢磨了一回儿，似乎对禅宗心法略有心得。\n");
 		return 1;
 	}
 
-	write("�����ʯƺ����һ�ض�������������˵�ķ���̫��ǳ�ԣ�������˵�Ѻ��������ˡ�\n");
+	write("你对着石坪瞧了一回儿，发现上面所说的佛理太过浅显，对你来说已毫无意义了。\n");
 
 	return 1;
 }

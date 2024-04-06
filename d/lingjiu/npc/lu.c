@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ã·»¨Â¹", ({ "meihua lu", "lu" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("æ¢…èŠ±é¹¿", ({ "meihua lu", "lu" }) );
+        set("race", "é‡å…½");
         set("age", 2);
-        set("long", "Ò»Ö»¿É°®µÄÃ·»¨Â¹£¬ËüµÄÑªÊÇ´ó²¹Ö®Îï¡£\n");
+        set("long", "ä¸€åªå¯çˆ±çš„æ¢…èŠ±é¹¿ï¼Œå®ƒçš„è¡€æ˜¯å¤§è¡¥ä¹‹ç‰©ã€‚\n");
         set("attitude", "peaceful");
  
         set("str", 30);
         set("cor", 26);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "×¦×Ó", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "çˆªå­", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
  
         set("combat_exp", 3000);
@@ -27,6 +27,6 @@ void create()
 
 void die()
 {
-	message_vision("$NÁ½ÍÈÒ»µÅ£¬$NËÀÁË¡£\n", this_object());
+	message_vision("$Nä¸¤è…¿ä¸€è¹¬ï¼Œ$Næ­»äº†ã€‚\n", this_object());
 	destruct(this_object());
 }

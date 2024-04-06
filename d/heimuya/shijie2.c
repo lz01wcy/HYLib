@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石阶");
         set("long", @LONG
-Խ���ϣ�ɽ��Խ���ͣ��м��ʯ��Խխ������һ�����ߣ���
-��������������Լ����һ��ʯ�š�
+越往上，山势越陡峭，中间的石阶越窄，仅能一人行走，从
+这里往上望，隐约望见一座石门。
 LONG    );
         set("outdoors", "heimuya");
         set("exits", ([

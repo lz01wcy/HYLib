@@ -8,28 +8,28 @@ int yuefei();
 int leave();
 void create()
 {
-    set_name("ÒóÕıÁ®", ({ "master yin", "master","yin" }) );
+    set_name("æ®·æ­£å»‰", ({ "master yin", "master","yin" }) );
     set("long",
-        "¼ÃÄÏ³ÇÖĞ×î¸ßµÄ¹Ù£¬ÓĞÖÁ¸ßÎŞÉÏµÄÈ¨Á¦\n");
-    set("nickname", RED"ÁúÍ¼¸ó´óÑ§Ê¿"NOR);
+        "æµå—åŸä¸­æœ€é«˜çš„å®˜ï¼Œæœ‰è‡³é«˜æ— ä¸Šçš„æƒåŠ›\n");
+    set("nickname", RED"é¾™å›¾é˜å¤§å­¦å£«"NOR);
     set("class","official");
     set("attitude", "heroism");
     set("reward_npc", 1);
         set("difficulty", 35);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "ÒóÕıÁ®µÀ£º»ÊÉÏµ±Äê´Í¸øÎÒµÄÉĞ·½±¦½£²»¼ûÁË¡£¡£¡£\n",
-                "ÒóÕıÁ®Ò¡Ò¡Í·µÀ£º±¦½£²»¼ûÁË£¬Ã»ÓĞĞÄÇé½ÌÑ§Éú¡£¡£¡£\n",
+                "æ®·æ­£å»‰é“ï¼šçš‡ä¸Šå½“å¹´èµç»™æˆ‘çš„å°šæ–¹å®å‰‘ä¸è§äº†ã€‚ã€‚ã€‚\n",
+                "æ®·æ­£å»‰æ‘‡æ‘‡å¤´é“ï¼šå®å‰‘ä¸è§äº†ï¼Œæ²¡æœ‰å¿ƒæƒ…æ•™å­¦ç”Ÿã€‚ã€‚ã€‚\n",
         }) );
     // Make this before create_family will prevent generation in title
     set("rank_nogen",1);
-    create_family("³¯Í¢Ãü¹Ù",6,"Ì«×ÓÌ«±£ ÊØ¼ÃÄÏ¸®");
-    set("student_title","¹ÙÔ±");
-    set("ranks",({ "×¼±¸½«","¸±½«","Õı½«","¸±Í³Áì","Í³Áì","ÓùÓª¸±Í³ÖÆ",
-                       "ÓùÓªÍ³ÖÆ","ÓùÓª¶¼Í³ÖÆ","ÁúÉñÎÀËÄÏá¶¼Ö¸»ÓÊ¹","ÅõÈÕÌìÎäËÄÏá¶¼Ö¸»ÓÊ¹",
-                       "ÊÌÎÀÇ×¾ü²½¾ü¶¼Óİºò","ÊÌÎÀÇ×¾üÂí¾ü¶¼Óİºò",RED"µîÇ°¶¼Óİºò"NOR,
-                       CYN"ÊÌÎÀÇ×¾ü²½¾ü¸±Ö¸»ÓÊ¹"NOR,YEL"ÊÌÎÀÇ×¾üÂí¾ü¸±Ö¸»ÓÊ¹"NOR,BLU"µîÇ°¸±Ö¸»ÓÊ¹"NOR,
-                       CYN"ÊÌÎÀÇ×¾ü²½¾ü¶¼Ö¸»ÓÊ¹"NOR,YEL"ÊÌÎÀÇ×¾üÂí¾ü¶¼Ö¸»ÓÊ¹"NOR,RED"µîÇ°¶¼Ö¸»ÓÊ¹"NOR }));
+    create_family("æœå»·å‘½å®˜",6,"å¤ªå­å¤ªä¿ å®ˆæµå—åºœ");
+    set("student_title","å®˜å‘˜");
+    set("ranks",({ "å‡†å¤‡å°†","å‰¯å°†","æ­£å°†","å‰¯ç»Ÿé¢†","ç»Ÿé¢†","å¾¡è¥å‰¯ç»Ÿåˆ¶",
+                       "å¾¡è¥ç»Ÿåˆ¶","å¾¡è¥éƒ½ç»Ÿåˆ¶","é¾™ç¥å«å››å¢éƒ½æŒ‡æŒ¥ä½¿","æ§æ—¥å¤©æ­¦å››å¢éƒ½æŒ‡æŒ¥ä½¿",
+                       "ä¾å«äº²å†›æ­¥å†›éƒ½è™å€™","ä¾å«äº²å†›é©¬å†›éƒ½è™å€™",RED"æ®¿å‰éƒ½è™å€™"NOR,
+                       CYN"ä¾å«äº²å†›æ­¥å†›å‰¯æŒ‡æŒ¥ä½¿"NOR,YEL"ä¾å«äº²å†›é©¬å†›å‰¯æŒ‡æŒ¥ä½¿"NOR,BLU"æ®¿å‰å‰¯æŒ‡æŒ¥ä½¿"NOR,
+                       CYN"ä¾å«äº²å†›æ­¥å†›éƒ½æŒ‡æŒ¥ä½¿"NOR,YEL"ä¾å«äº²å†›é©¬å†›éƒ½æŒ‡æŒ¥ä½¿"NOR,RED"æ®¿å‰éƒ½æŒ‡æŒ¥ä½¿"NOR }));
     set("rank_levels",({ 32000,64000,128000,256000,384000,
                              512000,800000,1024000,1556000,
                              2048000,3652000,5000000,
@@ -97,7 +97,7 @@ void init()
 void greeting(object ob) {
         if(!ob || environment(ob) != environment()) return;
         if (this_object()->query("env/no_teach")==1 && ob->query("family/master_id")=="master yin")
-        message_vision("$N·³ÔêµØËµ£º¡°¶ªÁËÉĞ·½±¦½££¬ÀÏ·òÕâ»á¶ùÃ»ĞÄË¼½ÌÄã¡£¡°\n",this_object());
+        message_vision("$Nçƒ¦èºåœ°è¯´ï¼šâ€œä¸¢äº†å°šæ–¹å®å‰‘ï¼Œè€å¤«è¿™ä¼šå„¿æ²¡å¿ƒæ€æ•™ä½ ã€‚â€œ\n",this_object());
 }  
 int do_killing(string arg)
 {
@@ -107,7 +107,7 @@ int do_killing(string arg)
     if(!arg || arg == "") return 0;
     victim = present(arg, environment(player));
         if(!objectp(victim))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
     if(living(victim))
     {
         id_class=victim->query("class");
@@ -115,7 +115,7 @@ int do_killing(string arg)
         if(id_class == "official"&& userp(victim)&& player!=victim)
         {
             message_vision(HIW
-"$NºÈµÀ£º´óµ¨²İÃñ£¬¾¹È»¸ÒÔÚÀÏ·òÃæÇ°ÈöÒ°£¬ÆÛ³¯Í¢ÎŞÈËÃ´£¡\n"NOR, this_object());
+"$Nå–é“ï¼šå¤§èƒ†è‰æ°‘ï¼Œç«Ÿç„¶æ•¢åœ¨è€å¤«é¢å‰æ’’é‡ï¼Œæ¬ºæœå»·æ— äººä¹ˆï¼\n"NOR, this_object());
             this_object()->kill_ob(player);
             player->kill_ob(this_object());
             if (!player->is_busy()) player->start_busy(6);

@@ -8,12 +8,12 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"ÄÇ¼ÓÅ®Íõ"NOR, ({ "naga"}));
+   set_name(order[random(13)]+"é‚£åŠ å¥³ç‹"NOR, ({ "naga"}));
 	set("magicgift",4);
 	set("magicset",1);
        set("zhuanbest",1);
        set("long",
-"Ò»Ö»¿ÉÅÂµÄÄÇ¼ÓÅ®Íõ¡£\n");
+"ä¸€åªå¯æ€•çš„é‚£åŠ å¥³ç‹ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -80,7 +80,7 @@ set("eff_qi",a);
            }) );
 if (random(8)==0)
 {
-set("nickname",HIY"Îä¹¦¸ß³¬"NOR);
+set("nickname",HIY"æ­¦åŠŸé«˜è¶…"NOR);
         set_skill("spells",650+random(300));
         set_skill("force",650+random(300));
 	set_skill("unarmed",650+random(300));
@@ -93,7 +93,7 @@ set("nickname",HIY"Îä¹¦¸ß³¬"NOR);
 else
 if (random(8)==0)
 {
-set("nickname",MAG"Ä§·¨Ç¿´ó"NOR);
+set("nickname",MAG"é­”æ³•å¼ºå¤§"NOR);
       set_skill("magic-unarmed", 650+random(300));
       set_skill("magic-sword", 650+random(300));
       set_skill("magic-ice", 650+random(200));
@@ -106,13 +106,13 @@ set("nickname",MAG"Ä§·¨Ç¿´ó"NOR);
 else
 if (random(8)==0)
 {
-set("nickname",HIB"¾­Ñé·á¸»"NOR);
+set("nickname",HIB"ç»éªŒä¸°å¯Œ"NOR);
 set("combat_exp",50000000+random(48000000));
 }
 else
 if (random(8)==0)
 {
-set("nickname",HIR"Ç¿´ó²»ËÀ"NOR);
+set("nickname",HIR"å¼ºå¤§ä¸æ­»"NOR);
 set("dex",300);
         set("jing",600000);
         set("max_jing",600000);
@@ -127,7 +127,7 @@ set("dex",300);
 else
 if (random(8)==0)
 {
-set("nickname",HIC"³¬¼¶¼ÓÇ¿"NOR);
+set("nickname",HIC"è¶…çº§åŠ å¼º"NOR);
 d=88+random(88);
 set("str",d);
 set("dex",30+d);
@@ -164,7 +164,7 @@ set("dex",300);
 	set_skill("whip",650+random(300));
 	set_skill("throwing",650+random(300));
 	set_skill("parry",650+random(300));
-set("nickname",HIC"ÍêÃÀÎŞµĞ"NOR);
+set("nickname",HIC"å®Œç¾æ— æ•Œ"NOR);
 d=88+random(88);
 set("str",d);
 set("dex",30+d);
@@ -213,9 +213,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(RED"$N,µ¹µØ¶øÍö£¬²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$N,å€’åœ°è€Œäº¡ï¼Œä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃğ"+ob->query("name")+",Ôö¼ÓÁË200¾­ÑéºÍ100Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("name")+",å¢åŠ äº†200ç»éªŒå’Œ100æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",200);
         me->add("potential",100);
               me->add("score",1);
@@ -235,7 +235,7 @@ string msg;
              ob->add("eff_qi",-ob->query("eff_qi")/30);
              ob->add("jing",-ob->query("jing")/30);
              ob->add("eff_jing",-ob->query("eff_jing")/30);
-           msg = HIC"$N"HIY"ÁùÖ§ÊÖµÄÎäÆ÷Ò»Æğ´òÏò$n"HIY"!$n"HIY"±»ÏÅ»µÁË!!\n"NOR;
+           msg = HIC"$N"HIY"å…­æ”¯æ‰‹çš„æ­¦å™¨ä¸€èµ·æ‰“å‘$n"HIY"!$n"HIY"è¢«å“åäº†!!\n"NOR;
             message_vision(msg, me, ob);
 }
 }

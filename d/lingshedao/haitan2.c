@@ -3,16 +3,16 @@
 inherit ROOM;
 void create()
 {
-        set("short", "º£Ì²");
+        set("short", "æµ·æ»©");
         set("long", @LONG
-ÕâÊÇÒ»Æ¬Æ½Ì¹µÄº£Ì²,ÑÛÇ°ÊÇÎµÀ¶µÄ´óº£.º£Ì²±ßÉÏ
-Í£ÓÐÒ»Ö»Ð¡´¬(boat),Ô¶´¦Í£ÓÐÒ»ËÒ¾Þ´óµÄÕ½½¢.
+è¿™æ˜¯ä¸€ç‰‡å¹³å¦çš„æµ·æ»©,çœ¼å‰æ˜¯è”šè“çš„å¤§æµ·.æµ·æ»©è¾¹ä¸Š
+åœæœ‰ä¸€åªå°èˆ¹(boat),è¿œå¤„åœæœ‰ä¸€è‰˜å·¨å¤§çš„æˆ˜èˆ°.
 LONG);
         set("exits", ([
                 "southwest"    : __DIR__"lsroad5",
        ]));
         set("item_desc",([
-               "boat" : "¿ÉÒÔenter½øÈëÐ¡´¬.\n",
+               "boat" : "å¯ä»¥enterè¿›å…¥å°èˆ¹.\n",
         ]) );       
                
         set("no_clean_up",0);
@@ -28,15 +28,15 @@ void init()
 int do_enter()
 {
         object ob=this_player();
-        message_vision("$N×ß½øÐ¡´¬,½«´¬Ê»ÏòÃ£Ã£´óº£....\n",ob);
+        message_vision("$Nèµ°è¿›å°èˆ¹,å°†èˆ¹é©¶å‘èŒ«èŒ«å¤§æµ·....\n",ob);
         ob->move("/d/taohua/dahai");
-        tell_object(ob,BLU"ÄãÔÚº£ÉÏº½ÐÐÁËºÜ¾ÃºÜ¾Ã.......\n" NOR );
+        tell_object(ob,BLU"ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†å¾ˆä¹…å¾ˆä¹….......\n" NOR );
         call_out("go_quanzhou",10,ob);
         return 1;
 }
 
 void go_quanzhou(object ob)
 {
-       tell_object(ob,"´¬ÖÕÓÚ¿¿ÔÚÁËÒ»¸öº£¸ÛÉÏ.Äã¼±Ã¦ÌøÏÂÁË´¬.\n");
+       tell_object(ob,"èˆ¹ç»ˆäºŽé åœ¨äº†ä¸€ä¸ªæµ·æ¸¯ä¸Š.ä½ æ€¥å¿™è·³ä¸‹äº†èˆ¹.\n");
        ob->move("/d/quanzhou/haigang");
 }

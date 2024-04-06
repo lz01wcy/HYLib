@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ØÓğ", ({ "south com"}));
+	set_name("å…³ç¾½", ({ "south com"}));
 	set("age", 40);
-	set("gender", "ÄĞĞÔ");
-	set("long", "Ëû¾ÍÊÇ¹ØÓğ£¬ËäËµ°Ü×ßÂó³Ç£¬µ«Æö³ÇµÄ±¾ÊÂÃ»¶ª¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "ä»–å°±æ˜¯å…³ç¾½ï¼Œè™½è¯´è´¥èµ°éº¦åŸï¼Œä½†ç ŒåŸçš„æœ¬äº‹æ²¡ä¸¢ã€‚\n");
 	set("attitude", "peaceful");
 //	set("vendetta_mark", "authority");
 //      set("pursuer", 1);

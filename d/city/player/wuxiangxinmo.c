@@ -6,8 +6,8 @@ int do_score();
 int do_skills();
 void create()
 {
-	set_name("ÎÞÏàÐÄÄ§", ({ "wuxiangxinmo"}));
-	set("gender", "ÄÐÐÔ");
+	set_name("æ— ç›¸å¿ƒé­”", ({ "wuxiangxinmo"}));
+	set("gender", "ç”·æ€§");
 	set("age", 14);
 	set("class", "bonze");
 	set("attitude", "friendly");
@@ -61,10 +61,10 @@ void create()
 		"hp"    : (: do_hp :),
 		"score" : (: do_score :),
 		"skill" : (: do_skills :),
-		"Îä¹¦"  : (: do_skills :),
+		"æ­¦åŠŸ"  : (: do_skills :),
 	]));
 
-	create_family("ÈÕÔÂÉñ½Ì",101, "µÜ×Ó");
+	create_family("æ—¥æœˆç¥žæ•™",101, "å¼Ÿå­");
 	setup();
 	carry_object(__DIR__"wuxiang_sword")->wield();
 	carry_object("/d/city/npc/obj/jinsijia")->wear();
@@ -72,66 +72,66 @@ void create()
 
 int do_skills()
 {
-message_vision("$NËµ£º ÎÒËùÓÐµÄ»ù±¾Îä¹¦ÈçÏÂ£º\n"+
-"  »ù±¾Õó·¨ (array)                         - ÐÂÑ§Õ§ÓÃ   1/    0\n"+
-"  ½Ð»¯¾ø»î (begging)                       - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾µ¶·¨ (blade)                         - ³õÑ§Õ§Á·   1/    0\n"+
-"  µÀÌýÍ¾Ëµ (checking)                      - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾×¦·¨ (claw)                          - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾¹÷·¨ (club)                          - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾È­·¨ (cuff)                          - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾Çá¹¦ (dodge)                         - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾Ö¸·¨ (finger)                        - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾ÄÚ¹¦ (force)                         - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾´¸·¨ (hammer)                        - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾ÊÖ·¨ (hand)                          - ³õÑ§Õ§Á·   1/    0\n"+
-"  ¶ÁÊéÐ´×Ö (literate)                      - ÐÂÑ§Õ§ÓÃ   1/    0\n"+
-"  »ù±¾ÕÐ¼Ü (parry)                         - ³õÑ§Õ§Á·   1/    0\n"+
-"  ¶ÉÊÀ¼ÃÈË (persuading)                    - ÐÂÑ§Õ§ÓÃ   1/    0\n"+
-"  »ù±¾ÕÈ·¨ (staff)                         - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾ÕÆ·¨ (strike)                        - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾½£·¨ (sword)                         - ³õÑ§Õ§Á·   1/    0\n"+
-"  µÀÑ§ÐÄ·¨ (taoism)                        - ÐÂÑ§Õ§ÓÃ   1/    0\n"+
-"  »ù±¾°µÆ÷ (throwing)                      - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾È­½Å (unarmed)                       - ³õÑ§Õ§Á·   1/    0\n"+
-"  »ù±¾±Þ·¨ (whip)                          - ³õÑ§Õ§Á·   1/    0\n", this_object());
+message_vision("$Nè¯´ï¼š æˆ‘æ‰€æœ‰çš„åŸºæœ¬æ­¦åŠŸå¦‚ä¸‹ï¼š\n"+
+"  åŸºæœ¬é˜µæ³• (array)                         - æ–°å­¦ä¹ç”¨   1/    0\n"+
+"  å«åŒ–ç»æ´» (begging)                       - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬åˆ€æ³• (blade)                         - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  é“å¬é€”è¯´ (checking)                      - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬çˆªæ³• (claw)                          - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬æ£æ³• (club)                          - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬æ‹³æ³• (cuff)                          - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬è½»åŠŸ (dodge)                         - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬æŒ‡æ³• (finger)                        - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬å†…åŠŸ (force)                         - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬é”¤æ³• (hammer)                        - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬æ‰‹æ³• (hand)                          - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  è¯»ä¹¦å†™å­— (literate)                      - æ–°å­¦ä¹ç”¨   1/    0\n"+
+"  åŸºæœ¬æ‹›æž¶ (parry)                         - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  æ¸¡ä¸–æµŽäºº (persuading)                    - æ–°å­¦ä¹ç”¨   1/    0\n"+
+"  åŸºæœ¬æ–æ³• (staff)                         - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬æŽŒæ³• (strike)                        - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬å‰‘æ³• (sword)                         - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  é“å­¦å¿ƒæ³• (taoism)                        - æ–°å­¦ä¹ç”¨   1/    0\n"+
+"  åŸºæœ¬æš—å™¨ (throwing)                      - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬æ‹³è„š (unarmed)                       - åˆå­¦ä¹ç»ƒ   1/    0\n"+
+"  åŸºæœ¬éž­æ³• (whip)                          - åˆå­¦ä¹ç»ƒ   1/    0\n", this_object());
 
 	return 1;
 }
 
 int do_hp()
 {
-message_vision("$NËµ£º ÎÒµÄ»ù±¾×´Ì¬ÈçÏÂ£º\n\n"+
-"¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô\n"+
-"¡¾ ¾« Æø ¡¿  100/  100 (100%)    ¡¾ ¾« Á¦ ¡¿    0 /    0 (+0)\n"+
-"¡¾ Æø Ñª ¡¿  100/  100 (100%)    ¡¾ ÄÚ Á¦ ¡¿    0 /    0 (+0)\n"+
-"¡¾ Ê³ Îï ¡¿    0/  350           ¡¾ Ç± ÄÜ ¡¿  0\n"+
-"¡¾ Òû Ë® ¡¿    0/  350           ¡¾ ¾­ Ñé ¡¿  0\n"+
-"¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô\n", this_object());
+message_vision("$Nè¯´ï¼š æˆ‘çš„åŸºæœ¬çŠ¶æ€å¦‚ä¸‹ï¼š\n\n"+
+"â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡\n"+
+"ã€ ç²¾ æ°” ã€‘  100/  100 (100%)    ã€ ç²¾ åŠ› ã€‘    0 /    0 (+0)\n"+
+"ã€ æ°” è¡€ ã€‘  100/  100 (100%)    ã€ å†… åŠ› ã€‘    0 /    0 (+0)\n"+
+"ã€ é£Ÿ ç‰© ã€‘    0/  350           ã€ æ½œ èƒ½ ã€‘  0\n"+
+"ã€ é¥® æ°´ ã€‘    0/  350           ã€ ç» éªŒ ã€‘  0\n"+
+"â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡\n", this_object());
 	return 1;
 }
 
 int do_score()
 {
-message_vision("$NËµ£º ÎÒµÄ»ù±¾×´¿öÈçÏÂ£º\n\n"+
-"¡¾ Ð¡ºÍÉÐ ¡¿ÈÕÔÂÉñ½ÌµÚÒ»°ÙÁãÒ»´úµÜ×Ó ÎÞÏàÐÄÄ§(Wuxiangxinmo)\n"+
+message_vision("$Nè¯´ï¼š æˆ‘çš„åŸºæœ¬çŠ¶å†µå¦‚ä¸‹ï¼š\n\n"+
+"ã€ å°å’Œå°š ã€‘æ—¥æœˆç¥žæ•™ç¬¬ä¸€ç™¾é›¶ä¸€ä»£å¼Ÿå­ æ— ç›¸å¿ƒé­”(Wuxiangxinmo)\n"+
 "\n"+
-" ÄãÊÇÒ»Î»Ê®ËÄËêµÄÄÐÐÔÈËÀà£¬¼×ÒúÄêÒ»ÔÂÒ»ÈÕ³½Ê±Èý¿ÌÉú¡£\n"+
-" ëöÁ¦£º[ 25]  ÎòÐÔ£º[ 19]  ¸ù¹Ç£º[ 21]  Éí·¨£º[ 15]\n"+
+" ä½ æ˜¯ä¸€ä½åå››å²çš„ç”·æ€§äººç±»ï¼Œç”²å¯…å¹´ä¸€æœˆä¸€æ—¥è¾°æ—¶ä¸‰åˆ»ç”Ÿã€‚\n"+
+" è†‚åŠ›ï¼š[ 25]  æ‚Ÿæ€§ï¼š[ 19]  æ ¹éª¨ï¼š[ 21]  èº«æ³•ï¼š[ 15]\n"+
 "\n"+
-" <¾«>  ¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö\n"+
-" <Æø>  ¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö\n"+
+" <ç²¾>  â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– \n"+
+" <æ°”>  â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– \n"+
 "\n"+
-" Õ½¶·¹¥»÷Á¦        1            Õ½¶··ÀÓùÁ¦        1\n"+
-" Õ½¶·ÉËº¦Á¦       30            Õ½¶·±£»¤Á¦      100\n"+
+" æˆ˜æ–—æ”»å‡»åŠ›        1            æˆ˜æ–—é˜²å¾¡åŠ›        1\n"+
+" æˆ˜æ–—ä¼¤å®³åŠ›       30            æˆ˜æ–—ä¿æŠ¤åŠ›      100\n"+
 "\n"+
-" Ê³Îï£º¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ\n"+
-" ÒûË®£º¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ\n"+
+" é£Ÿç‰©ï¼šâ–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"+
+" é¥®æ°´ï¼šâ–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"+
 "\n"+
-" Äãµ½Ä¿Ç°ÎªÖ¹×Ü¹²É±ÁË 0 ¸öÈË£¬ÆäÖÐÓÐ 0 ¸öÊÇÆäËûÍæ¼Ò¡£\n"+
+" ä½ åˆ°ç›®å‰ä¸ºæ­¢æ€»å…±æ€äº† 0 ä¸ªäººï¼Œå…¶ä¸­æœ‰ 0 ä¸ªæ˜¯å…¶ä»–çŽ©å®¶ã€‚\n"+
 "\n"+
-" Õý    Æø£º        0     Ç±    ÄÜ£º   0 (100%)   ÊµÕ½¾­Ñé£º        0\n"+
-" ÷È    Á¦£º        0     ×ÛºÏÆÀ¼Û£º        0     ½­ºþÍþÍû£º        0\n"+
+" æ­£    æ°”ï¼š        0     æ½œ    èƒ½ï¼š   0 (100%)   å®žæˆ˜ç»éªŒï¼š        0\n"+
+" é­…    åŠ›ï¼š        0     ç»¼åˆè¯„ä»·ï¼š        0     æ±Ÿæ¹–å¨æœ›ï¼š        0\n"+
 "\n", this_object());
 	return 1;
 }

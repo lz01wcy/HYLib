@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-�����ѭ�Ŷ�·���룬��·�Ѿ�ʮ����խ����Щ�ط������ϲ�
-����·�ˡ�·��ɽ����죬ɽ������������ġ�
+你继续循着陡路上岭，道路已经十分狭窄，有些地方根本认不
+出是路了。路旁山峰插天，山风翠树甚是清幽。
 LONG );
 	set("outdoors", "taoyuan");
 	set("no_clean_up", 0);

@@ -1,21 +1,21 @@
-// jianshi.c ½£ÊÒ
+// jianshi.c å‰‘å®¤
 // By River 99/05/20
 inherit ROOM;
 #include <ansi.h>
 string look_zhuo();
 void create()
 {
-            set("short", HIW"½£ÊÒ"NOR);
+            set("short", HIW"å‰‘å®¤"NOR);
             set("long",@LONG
-ÕâÀïÊÇ½£ÊÒ£¬Ö»¼ûÊÒÖĞ±ÚÉÏ¡¢×ÀÉÏ¡¢¼ÜÉÏ¡¢¹ñÖĞ¡£¼¸¼ä£¬¾¡½ÔÁĞÂú±øÈĞ£¬
-Ê½Ñù·±¶à£¬Ê®Ö®°Ë¾Å¶¼ÊÇ¹Å½££¬»ò³¤ÓâÆß³ß£¬»ò¶Ì½öÊı´ç£¬ÓĞµÄÌú¿Ú°ß²µ£¬ÓĞ
-µÄº®¹â±ÆÈË¡£È´¼ûÎİ½ÇÎ÷±Ú¼äÒ»´óÆ¬»ğÉÕµÄ½¹ºÛ£¬¼¸ÕÅ×ÀÒÎÒ²¾ùÉÕµÃ²ĞÆÆ¡£
+è¿™é‡Œæ˜¯å‰‘å®¤ï¼Œåªè§å®¤ä¸­å£ä¸Šã€æ¡Œä¸Šã€æ¶ä¸Šã€æŸœä¸­ã€‚å‡ é—´ï¼Œå°½çš†åˆ—æ»¡å…µåˆƒï¼Œ
+å¼æ ·ç¹å¤šï¼Œåä¹‹å…«ä¹éƒ½æ˜¯å¤å‰‘ï¼Œæˆ–é•¿é€¾ä¸ƒå°ºï¼Œæˆ–çŸ­ä»…æ•°å¯¸ï¼Œæœ‰çš„é“å£æ–‘é©³ï¼Œæœ‰
+çš„å¯’å…‰é€¼äººã€‚å´è§å±‹è§’è¥¿å£é—´ä¸€å¤§ç‰‡ç«çƒ§çš„ç„¦ç—•ï¼Œå‡ å¼ æ¡Œæ¤…ä¹Ÿå‡çƒ§å¾—æ®‹ç ´ã€‚
 LONG
     );
             set("item_desc", ([ 
-                 "×ÀÒÎ" : (: look_zhuo :),
+                 "æ¡Œæ¤…" : (: look_zhuo :),
                  "zhuoyi" : (: look_zhuo :),
-                 "Îİ½Ç":(: look_zhuo :),
+                 "å±‹è§’":(: look_zhuo :),
                  "wujiao":(: look_zhuo :),
             ]));
 
@@ -31,10 +31,10 @@ string look_zhuo()
 {
          this_player()->set_temp("jqg/sword",1 );
          if (this_player()->is_busy())
-          return "ÄãÕıÃ¦×ÅÄØ¡£\n";
+          return "ä½ æ­£å¿™ç€å‘¢ã€‚\n";
 
          this_player()->start_busy(2);
-          return "ÄãÖ»¼ûÎİ½ÇÀï°ë½Ø»­·ùÖ®ÏÂÂ¶³öÁ½¶Î½£ÇÊ(sword)À´¡£\n";
+          return "ä½ åªè§å±‹è§’é‡ŒåŠæˆªç”»å¹…ä¹‹ä¸‹éœ²å‡ºä¸¤æ®µå‰‘é˜(sword)æ¥ã€‚\n";
 }
 
 void init()
@@ -42,14 +42,14 @@ void init()
          object me=this_player();
          if (!me->query_temp("jqg/enter")){
          if ( me->query_skill("dodge",1) < 120){
-         tell_object(me,HIR"\nÄãÃÍÌıµÃàÍàÍÉùÏì£¬ÑÛÇ°°×¹âÉÁ¶¯£¬°Ë±úÀû½£×Ô·¿ÃÅÉÏÏÂ×óÓÒÍ¦³ö£¬×İºá½»´í£¬²¼ÂúÈë¿Ú¡£\n\n"NOR);
-         tell_object(me,RED"Äã¶ãÉÁ²»¼±£¬ÉíÖĞÊı½££¬ÊÜÉË¹ıÖØ£¬ÒÑ¾­ÓĞÈç·çÖĞ²ĞÖò¡£\n"NOR);
-         me->set_temp("last_damage_from", "ÎóÖĞ»ú¹Ø¶ø");
+         tell_object(me,HIR"\nä½ çŒ›å¬å¾—å—¤å—¤å£°å“ï¼Œçœ¼å‰ç™½å…‰é—ªåŠ¨ï¼Œå…«æŸ„åˆ©å‰‘è‡ªæˆ¿é—¨ä¸Šä¸‹å·¦å³æŒºå‡ºï¼Œçºµæ¨ªäº¤é”™ï¼Œå¸ƒæ»¡å…¥å£ã€‚\n\n"NOR);
+         tell_object(me,RED"ä½ èº²é—ªä¸æ€¥ï¼Œèº«ä¸­æ•°å‰‘ï¼Œå—ä¼¤è¿‡é‡ï¼Œå·²ç»æœ‰å¦‚é£ä¸­æ®‹çƒ›ã€‚\n"NOR);
+         me->set_temp("last_damage_from", "è¯¯ä¸­æœºå…³è€Œ");
          me->die();
          }
          else {
-         tell_object(me,HIR"\nÄãÃÍÌıµÃàÍàÍÉùÏì£¬ÑÛÇ°°×¹âÉÁ¶¯£¬°Ë±úÀû½£×Ô·¿ÃÅÉÏÏÂ×óÓÒÍ¦³ö£¬×İºá½»´í£¬²¼ÂúÈë¿Ú¡£\n\n"NOR);
-         tell_object(me,HIW"Äã²»»Å²»Ã¦£¬ÃÍÎüÒ»¿ÚÆø£¬¼±²½ÌøÆğ£¬¿°¿°È»¶ã¹ıÁËÃÅ¿ÚµÄ»ú¹Ø¡£\n\n"NOR);
+         tell_object(me,HIR"\nä½ çŒ›å¬å¾—å—¤å—¤å£°å“ï¼Œçœ¼å‰ç™½å…‰é—ªåŠ¨ï¼Œå…«æŸ„åˆ©å‰‘è‡ªæˆ¿é—¨ä¸Šä¸‹å·¦å³æŒºå‡ºï¼Œçºµæ¨ªäº¤é”™ï¼Œå¸ƒæ»¡å…¥å£ã€‚\n\n"NOR);
+         tell_object(me,HIW"ä½ ä¸æ…Œä¸å¿™ï¼ŒçŒ›å¸ä¸€å£æ°”ï¼Œæ€¥æ­¥è·³èµ·ï¼Œå ªå ªç„¶èº²è¿‡äº†é—¨å£çš„æœºå…³ã€‚\n\n"NOR);
          me->start_busy(2);
          me->set_temp("jqg/enter", 1);
          }
@@ -62,46 +62,46 @@ int do_zhai(string arg)
          object jzj,snj,me = this_player();
          if(!me->query_temp("jqg/sword")) return 0;
          if (!arg || (arg != "sword"))
-              return notify_fail("ÄãÒªÕªÊ²Ã´°¡£¿\n");
+              return notify_fail("ä½ è¦æ‘˜ä»€ä¹ˆå•Šï¼Ÿ\n");
          if (me->is_busy() || me->is_fighting())
-	      return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
-         if( me->query("gender") =="ÄĞĞÔ"
+	      return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");
+         if( me->query("gender") =="ç”·æ€§"
           && me->query("couple/couple_id")){
             jzj=new(__DIR__"npc/jzj");
           if(!clonep(jzj))
-             return notify_fail("ÄãÀ´ÍíÁË£¬¾ı×Ó½£ÒÑ¸ø±ğÈËÄÃ×ßÁË¡£\n");  
+             return notify_fail("ä½ æ¥æ™šäº†ï¼Œå›å­å‰‘å·²ç»™åˆ«äººæ‹¿èµ°äº†ã€‚\n");  
 if (this_object()->query("aget1"))
 {
              destruct(jzj);
-             return notify_fail("ÄãÀ´ÍíÁË£¬¾ı×Ó½£ÒÑ¸ø±ğÈËÈ¡×ßÁË¡£\n");
+             return notify_fail("ä½ æ¥æ™šäº†ï¼Œå›å­å‰‘å·²ç»™åˆ«äººå–èµ°äº†ã€‚\n");
              }
 
           if(clonep(jzj) && jzj->violate_unique()){
              destruct(jzj);
-             return notify_fail("ÄãÀ´ÍíÁË£¬¾ı×Ó½£ÒÑ¸ø±ğÈËÈ¡×ßÁË¡£\n");
+             return notify_fail("ä½ æ¥æ™šäº†ï¼Œå›å­å‰‘å·²ç»™åˆ«äººå–èµ°äº†ã€‚\n");
              }
-            message_vision("$NÉìÊÖµ½±ÚÉÏÕªÏÂÒ»°Ñ¾ı×Ó½£¡£\n"NOR,me);
+            message_vision("$Nä¼¸æ‰‹åˆ°å£ä¸Šæ‘˜ä¸‹ä¸€æŠŠå›å­å‰‘ã€‚\n"NOR,me);
             jzj->move(me);
             this_object()->set("aget1",1);
             me->delete_temp("jqg/sword");
             return 1;
             }
-         if( me->query("gender") =="Å®ĞÔ"
+         if( me->query("gender") =="å¥³æ€§"
           && me->query("couple/couple_id")){
             snj=new(__DIR__"npc/snj");
           if(!clonep(snj))
-             return notify_fail("ÄãÀ´ÍíÁË£¬ÊçÅ®½£ÒÑ¸ø±ğÈËÄÃ×ßÁË¡£\n");  
+             return notify_fail("ä½ æ¥æ™šäº†ï¼Œæ·‘å¥³å‰‘å·²ç»™åˆ«äººæ‹¿èµ°äº†ã€‚\n");  
 if (this_object()->query("aget2"))
 {
              destruct(snj);
-             return notify_fail("ÄãÀ´ÍíÁË£¬ÊçÅ®½£ÒÑ¸ø±ğÈËÈ¡×ßÁË¡£\n");
+             return notify_fail("ä½ æ¥æ™šäº†ï¼Œæ·‘å¥³å‰‘å·²ç»™åˆ«äººå–èµ°äº†ã€‚\n");
              }
 
           if(clonep(snj) && snj->violate_unique()){
              destruct(snj);
-             return notify_fail("ÄãÀ´ÍíÁË£¬ÊçÅ®½£ÒÑ¸ø±ğÈËÈ¡×ßÁË¡£\n");
+             return notify_fail("ä½ æ¥æ™šäº†ï¼Œæ·‘å¥³å‰‘å·²ç»™åˆ«äººå–èµ°äº†ã€‚\n");
              }
-            message_vision("$NÉìÊÖµ½±ÚÉÏÕªÏÂÒ»°ÑÊçÅ®½£¡£\n"NOR,me);
+            message_vision("$Nä¼¸æ‰‹åˆ°å£ä¸Šæ‘˜ä¸‹ä¸€æŠŠæ·‘å¥³å‰‘ã€‚\n"NOR,me);
             snj->move(me);
             this_object()->set("aget2",1);
             me->delete_temp("jqg/sword");
@@ -109,6 +109,6 @@ if (this_object()->query("aget2"))
             }
            else{
             me->delete_temp("jqg/sword");
-            return notify_fail("Äã·¢ÏÖÔ­À´Õâ°Ñ½£²¢²»ÊÊºÏ×Ô¼º£¬ÓÚÊÇ°ÑÊÖÓÖÉìÁË»ØÀ´¡£\n");
+            return notify_fail("ä½ å‘ç°åŸæ¥è¿™æŠŠå‰‘å¹¶ä¸é€‚åˆè‡ªå·±ï¼Œäºæ˜¯æŠŠæ‰‹åˆä¼¸äº†å›æ¥ã€‚\n");
             }
 }

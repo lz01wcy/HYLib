@@ -5,13 +5,13 @@ inherit F_FOOD;
 
 void create()
 {
-   set_name("»ğÍÈ", ({"huo tui","tui"}));
+   set_name("ç«è…¿", ({"huo tui","tui"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÏãÅçÅçµÄ»ğÍÈ¡£\n");
-                set("unit", "¸ö");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªé¦™å–·å–·çš„ç«è…¿ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 100);
                 set("food_remaining", 10);
                 set("food_supply", 50);

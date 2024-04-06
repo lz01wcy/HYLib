@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Сɳ��", ({ "xiao shami", "xiao", "shami"}));
-	set("long", "����һλδͨ���ʵ�������У����Ϲ����������Ц��\n");
+	set_name("小沙弥", ({ "xiao shami", "xiao", "shami"}));
+	set("long", "他是一位未通世故的少年和尚，脸上挂着天真的稚笑。\n");
 
-	set("nickname", "��իɮ");
-	set("gender", "����");
+	set("nickname", "侍斋僧");
+	set("gender", "男性");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
@@ -31,7 +31,7 @@ void create()
 	set_skill("unarmed", 9);
 	set_skill("parry", 9);
 
-        create_family("��������", 23, "����");
+        create_family("南少林派", 23, "弟子");
 	setup();
 }
 
@@ -50,7 +50,7 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say("Сɳ�ֹ���˵������λ"+RANK_D->query_respect(ob)+"����������\n");
+	say("小沙弥躬身说道：这位"+RANK_D->query_respect(ob)+"请先入座。\n");
 }
 
 void serve_food(object who)
@@ -65,7 +65,7 @@ void serve_food(object who)
 	ob->move(room);
 	ob=new(__DIR__"hulu");
 	ob->move(room); 
-	message_vision("Сɳ�ֶ���һ������������һֻ��«��ˮ�������ϣ�\n", who);
+	message_vision("小沙弥端来一盘麻辣豆腐和一只葫芦清水放在桌上．\n", who);
 	return;
 }
 

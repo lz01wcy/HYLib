@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�㵴ɽ��");
+  set ("short", "雁荡山下");
   set ("long", @LONG
-��·���˾�ͷ,��ǰ��������ɽ���಻��,���͵�ɽʯ��ʱ�������.
-������㶫һ������ɽ---�㵴ɽ��.
+大路到了尽头,眼前的这座大山连绵不断,陡峭的山石随时会掉下来.
+这就是浙东一带的奇山---雁荡山了.
 LONG);
 
   set("outdoors", "/d/yandang");

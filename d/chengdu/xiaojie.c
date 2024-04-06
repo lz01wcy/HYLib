@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С��");
+	set("short", "小街");
 	set("long", @LONG
-����һ����ʯ���̳ɵ�С�֣�·��ǳ��ɾ��������߿��������õ�
-������������Լ��������ͤ��һ�ǡ�
+这是一条青石板铺成的小街，路面非常干净。朝北边看，天气好的
+话，还可以隐约看到风雨亭的一角。
 LONG	);
 	set("outdoor","chengdu");
 	set("exits", ([

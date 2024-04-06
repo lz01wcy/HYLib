@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ʨ����");
+        set("short", "狮子岩");
         set("long", @LONG
-ʨ���Ҳ������ι�״����ʯ��ϸ�������ʨ�ӣ���Ծ���𣬸�Ф��
-�ࡣ��ʨ���ң�ף�ڷ��Ѿ������ˡ�
+狮子岩布满奇形怪状的岩石，细究则绝类狮子，腾跃伏吼，各肖其
+类。到狮子岩，祝融峰已经在望了。
 LONG);
         set("exits", ([ /* sizeof() == 4 */
            "southwest"  : __DIR__"nantian",

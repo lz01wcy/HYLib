@@ -4,18 +4,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name("½ğÎÚÕÈ", ({ "jinwu-staff" }));
+        set_name("é‡‘ä¹Œæ–", ({ "jinwu-staff" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
 set("treasure",1);
-                set("long", "ÕâÊÇÒ»¸ùÒÔÑ©É½½ğÎÚ¾«Ó¢ËùÖıµÄ³¤ÕÈ¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æ ¹ä»¥é›ªå±±é‡‘ä¹Œç²¾è‹±æ‰€é“¸çš„é•¿æ–ã€‚\n");
                 set("value", 5500);
                 set("material", "steel");
-                set("wield_msg", "$NÄÃÆğ½ğÎÚÕÈ£¬ÎèÁËÒ»È¦£¬Ö»¼ûÂşÌì½ğ¹âÉÁÒ«£¬Ñ¤ÈËÑÛÄ¿¡£\n");
-                set("unwield_msg", "$NºäµØÒ»Éù½«½ğÎÚÕÈ²åÔÚµØÉÏ£¬µØ¶¯É½Ò¡£¬ÍşÊÆ¾ªÈË¡£¡£\n");
+                set("wield_msg", "$Næ‹¿èµ·é‡‘ä¹Œæ–ï¼Œèˆäº†ä¸€åœˆï¼Œåªè§æ¼«å¤©é‡‘å…‰é—ªè€€ï¼Œç»šäººçœ¼ç›®ã€‚\n");
+                set("unwield_msg", "$Nè½°åœ°ä¸€å£°å°†é‡‘ä¹Œæ–æ’åœ¨åœ°ä¸Šï¼Œåœ°åŠ¨å±±æ‘‡ï¼Œå¨åŠ¿æƒŠäººã€‚ã€‚\n");
         }
         init_staff(400);
         setup();

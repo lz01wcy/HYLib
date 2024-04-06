@@ -2,9 +2,9 @@
 inherit ROOM;
 void create()
 {
-        set("short", "战船");
+        set("short", "鎴樿埞");
         set("long", @LONG
-这是一艘巨大的战船,船上战旗飘扬,四周都是火炮.
+杩欐槸涓�鑹樺法澶х殑鎴樿埞,鑸逛笂鎴樻棗椋樻壃,鍥涘懆閮芥槸鐏偖.
 LONG );
  //       set("exits", ([
  //               "out"    : __DIR__"xiaowuout",

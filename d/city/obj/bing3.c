@@ -1,4 +1,4 @@
-//bing3.c ËÄ½ø±ı
+//bing3.c å››è¿›é¥¼
 inherit ITEM;
 #include <ansi.h>
 
@@ -9,9 +9,9 @@ void init()
 
 void create()
 {
-	set_name(HIG "ËÄ½ø±ı" NOR, ({"bing3", "sijingbing"}));
-	set("unit", "¸ö");
-	set("long", "ÕâÊÇÒ»¸öÅ¨ÏãµÄËÄ½ø±ı¡£\n");
+	set_name(HIG "å››è¿›é¥¼" NOR, ({"bing3", "sijingbing"}));
+	set("unit", "ä¸ª");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªæµ“é¦™çš„å››è¿›é¥¼ã€‚\n");
 /*
 	set("no_get", 1);
 	set("no_drop", 1);
@@ -25,12 +25,12 @@ void create()
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="bing3"||arg=="sijingbing")
 	{
 		me->add("combat_exp",468);
 		me->add("potential",8);
-		message_vision(HIY "$NÈı¿ÚÁ½¿Ú³ÔÏÂÒ»¿é$n¡£\n" NOR, this_player(), this_object());
+		message_vision(HIY "$Nä¸‰å£ä¸¤å£åƒä¸‹ä¸€å—$nã€‚\n" NOR, this_player(), this_object());
 		destruct(this_object());
 	}
 	return 1;

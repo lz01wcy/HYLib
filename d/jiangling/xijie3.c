@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "Î÷½Ö");
+	set("short", "è¥¿è¡—");
 	set("long", @LONG
-ÕâÊÇ½­Áê³ÇÎ÷µÄÒ»ÌõÄÏ±±×ßÏòµÄ´ó½Ö¡£ËÆºõÓÐ²»ÉÙÎäÁÖÖÐÈËÀ´È¥´Ò
-´Ò¡£Î÷±ßÊÇÒ»¼ÒÊéÆÌ£¬Ðí¶àÈË½ø½ø³ö³ö£¬ÐúÈÂàÐÔÓ¡£¶«±ßÊÇÖª¸®ÑÃÃÅ¡£
+è¿™æ˜¯æ±Ÿé™µåŸŽè¥¿çš„ä¸€æ¡å—åŒ—èµ°å‘çš„å¤§è¡—ã€‚ä¼¼ä¹Žæœ‰ä¸å°‘æ­¦æž—ä¸­äººæ¥åŽ»åŒ†
+åŒ†ã€‚è¥¿è¾¹æ˜¯ä¸€å®¶ä¹¦é“ºï¼Œè®¸å¤šäººè¿›è¿›å‡ºå‡ºï¼Œå–§åš·å˜ˆæ‚ã€‚ä¸œè¾¹æ˜¯çŸ¥åºœè¡™é—¨ã€‚
 LONG
 	);
 	set("outdoors", "jiangling");

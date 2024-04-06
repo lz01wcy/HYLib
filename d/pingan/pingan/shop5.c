@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÉÐÎäÊéµê");
+	set("short", "å°šæ­¦ä¹¦åº—");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¼Ò×¨Âô¸÷ÖÖ¹ØÓÚÎä¹¦ÊéµÄÊéµê£¬ÌýËµµêÖ÷ÊÇ¸öºÃÎäµÄÈË¡£
+è¿™é‡Œæ˜¯ä¸€å®¶ä¸“å–å„ç§å…³äºŽæ­¦åŠŸä¹¦çš„ä¹¦åº—ï¼Œå¬è¯´åº—ä¸»æ˜¯ä¸ªå¥½æ­¦çš„äººã€‚
 LONG );
 	set("exits", ([
 		"north" : __DIR__"dong2",

@@ -7,13 +7,13 @@ inherit F_DEALER;
 void create()
 {
 //  reload("suiye_shendaifu");
-  set_name("Éò´ó·ò", ({"shen daifu", "shen", "daifu"}));
-        set("title", "Ò©ÆÌÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+  set_name("æ²ˆå¤§å¤«", ({"shen daifu", "shen", "daifu"}));
+        set("title", "è¯é“ºæŒæŸœ");
+        set("gender", "ç”·æ€§");
   set("shop_id",({"shen dafu", "shen", "dafu"}));
   set("age", 37);
   set("combat_exp", 30000);
-   set("long","Éò´ó·òÊÇËéÒ¶×îÓĞÃûµÄ´ó·ò,Ã¿ÌìÕÒËû¿´²¡µÄÈËÂçÒï²»¾ø.\n");
+   set("long","æ²ˆå¤§å¤«æ˜¯ç¢å¶æœ€æœ‰åçš„å¤§å¤«,æ¯å¤©æ‰¾ä»–çœ‹ç—…çš„äººç»œç»ä¸ç».\n");
   set("age", 38);
   set("attitude", "friendly");
   set("shen_type", 1);

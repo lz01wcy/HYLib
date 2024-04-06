@@ -2,14 +2,14 @@
 #include <ansi.h> 
 void create()
 {
-    set_name(HIW"±ùÊ¬"NOR, ({ "frozen corpse" , "corpse"}) );
+    set_name(HIW"å†°å°¸"NOR, ({ "frozen corpse" , "corpse"}) );
     set_weight(20000+random(30000));
         set_max_encumbrance(400000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¾ß");
-        set("long", "Ò»¾ß±»±ù·â¶³×¡µÄÊ¬¹Ç,ÃæÄ¿Èç×ò,ËÆºõÄã¶¼¿ÉÒÔ¸Ğ¾õµ½ËûËÀÊ±µÄ¿Ö¾å..\n");
+                set("unit", "å…·");
+        set("long", "ä¸€å…·è¢«å†°å°å†»ä½çš„å°¸éª¨,é¢ç›®å¦‚æ˜¨,ä¼¼ä¹ä½ éƒ½å¯ä»¥æ„Ÿè§‰åˆ°ä»–æ­»æ—¶çš„ææƒ§..\n");
                 set("value", 1);
         }
         

@@ -1,4 +1,4 @@
-// /d/yixing/obj/caili.c  ²ÊÀñ
+// /d/yixing/obj/caili.c  å½©ç¤¼
 // Last Modified by winder on Jul. 12 2002
 
 
@@ -9,17 +9,17 @@ inherit ITEM;
 
 void create()
 {
-	set_name(RED"²ÊÀñ"NOR, ({ "caili" }));
+	set_name(RED"å½©ç¤¼"NOR, ({ "caili" }));
 	set("weight", 20);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("long",
-"ÕâÊÇÒ»·İ°ü×°¾«ÖÆµÄ²ÊÀñ£¬ÀïÃæÒ»¶¨×°×Å¹óÖØµÄ¶«Î÷¡£\n");
-		set("unit", "·İ");
+"è¿™æ˜¯ä¸€ä»½åŒ…è£…ç²¾åˆ¶çš„å½©ç¤¼ï¼Œé‡Œé¢ä¸€å®šè£…ç€è´µé‡çš„ä¸œè¥¿ã€‚\n");
+		set("unit", "ä»½");
 		set("value", 30);
-		set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");	    
+		set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");	    
 	}
 
 	setup();

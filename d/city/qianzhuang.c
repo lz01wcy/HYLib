@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ç®×¯");
+	set("short", "é’±åº„");
 	set("long", @LONG
-ÕâÊÇÒ»¼ÒÀÏ×ÖºÅµÄÇ®×¯£¬ÒÑÓĞ¼¸°ÙÄêµÄÀúÊ·£¬ÔÚÈ«¹ú¸÷µØ¶¼ÓĞ·Öµê¡£Ëü·¢
-ĞĞµÄÒøÆ±ĞÅÓş·Ç³£ºÃ£¬Í¨ĞĞÈ«¹ú¡£
-    ÔÚ¶ÔÃæµÄÇ½ÉÏ¹ÒÁË¿éÅÆ×Ó(paizi)¡£
+è¿™æ˜¯ä¸€å®¶è€å­—å·çš„é’±åº„ï¼Œå·²æœ‰å‡ ç™¾å¹´çš„å†å²ï¼Œåœ¨å…¨å›½å„åœ°éƒ½æœ‰åˆ†åº—ã€‚å®ƒå‘
+è¡Œçš„é“¶ç¥¨ä¿¡èª‰éå¸¸å¥½ï¼Œé€šè¡Œå…¨å›½ã€‚
+    åœ¨å¯¹é¢çš„å¢™ä¸ŠæŒ‚äº†å—ç‰Œå­(paizi)ã€‚
 LONG );
 	set("exits", ([
 		"east" : __DIR__"beidajie1",
@@ -17,11 +17,11 @@ LONG );
 	]));
 	set("item_desc", ([
 		"paizi" : @TEXT
-     ±¾Ç®×¯Ìá¹©ÒÔÏÂ·şÎñ£º
-      ´æÇ®        deposit»òÕßcun
-      È¡Ç®        withdraw»òÕßqu
-      Ç®±Ò¶Ò»»    convert»òÕßduihuan
-      ²éÕÊ        check»òÕßchazhang
+     æœ¬é’±åº„æä¾›ä»¥ä¸‹æœåŠ¡ï¼š
+      å­˜é’±        depositæˆ–è€…cun
+      å–é’±        withdrawæˆ–è€…qu
+      é’±å¸å…‘æ¢    convertæˆ–è€…duihuan
+      æŸ¥å¸        checkæˆ–è€…chazhang
 TEXT
 	]) );
 
@@ -32,7 +32,7 @@ TEXT
 	set("no_clean_up", 0);
 	set("no_fight", 1);
 	set("no_beg", 1);
-//      set("no_drop","ÕâÀï¿É²»ÄÜÂÒÈÓ¶«Î÷\n");
+//      set("no_drop","è¿™é‡Œå¯ä¸èƒ½ä¹±æ‰”ä¸œè¥¿\n");
 	setup();
 	replace_program(ROOM);
 }

@@ -4,16 +4,16 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("¿Íµê»ï¼Æ", ({ "kedian huoji", "huoji" }));
+	set_name("å®¢åº—ä¼™è®¡", ({ "kedian huoji", "huoji" }));
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 18+random(20));
-	set("long", "ËûÊÇĞ¡¿ÍµêµÄ»ï¼Æ¡£\n");
+	set("long", "ä»–æ˜¯å°å®¢åº—çš„ä¼™è®¡ã€‚\n");
 	set("combat_exp", 2500);
 	set("attitude", "friendly");
 	set("chat_chance", 3);
 	set("chat_msg", ({
-	"»ï¼ÆËµµÀ£ºÄã...Äã...Äã¿É±ğÉ±ÎÒ°¡£¬ÎÒÊÇÁ¼...Á¼Ãñ¡£\n",
+	"ä¼™è®¡è¯´é“ï¼šä½ ...ä½ ...ä½ å¯åˆ«æ€æˆ‘å•Šï¼Œæˆ‘æ˜¯è‰¯...è‰¯æ°‘ã€‚\n",
 	}));
 	setup();
 	carry_object("/clone/misc/cloth")->wear();

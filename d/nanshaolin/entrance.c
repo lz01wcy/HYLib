@@ -1,4 +1,4 @@
-// Room: /d/nanshaolin/entrance.c Ä¾ÈËÏïÈë¿Ú
+// Room: /d/nanshaolin/entrance.c æœ¨äººå··å…¥å£
 // Last Modified by winder on May. 29 2001
 
 inherit ROOM;
@@ -8,10 +8,10 @@ int do_save();
 
 void create()
 {
-	set("short", "Ä¾ÈËÏïÈë¿Ú");
+	set("short", "æœ¨äººå··å…¥å£");
 	set("long", @LONG
-ÕâÀïÊÇÄ¾ÈËÏïµÄÈë¿Ú¡£Ò»µ©×ßµ½ÕâÀï£¬¾ÍÒÑ¾­ÎŞ·¨ÔÙ»ØÍ·ÁË£¬ËäÈ»
-Ã÷ÖªÇ°Ãæ½«»áÊÇ²½²½Ğ×ÏÕÎŞ±È£¬Ò²Ö»ÓĞÓ²×ÅÍ·Æ¤ÏòÇ°´³ÁË¡£
+è¿™é‡Œæ˜¯æœ¨äººå··çš„å…¥å£ã€‚ä¸€æ—¦èµ°åˆ°è¿™é‡Œï¼Œå°±å·²ç»æ— æ³•å†å›å¤´äº†ï¼Œè™½ç„¶
+æ˜çŸ¥å‰é¢å°†ä¼šæ˜¯æ­¥æ­¥å‡¶é™©æ— æ¯”ï¼Œä¹Ÿåªæœ‰ç¡¬ç€å¤´çš®å‘å‰é—¯äº†ã€‚
 LONG );
 	set("exits", ([ 
 		"north" : __DIR__"murenxiang",
@@ -33,13 +33,13 @@ void init()
 
 int do_save()
 {
-	write("ÕâÀï²»×¼´æÅÌ£¡\n");
+	write("è¿™é‡Œä¸å‡†å­˜ç›˜ï¼\n");
 	return 1;
 }
 
 int do_quit()
 {
-	write("ÕâÀï²»×¼ÍË³ö£¡\n");
+	write("è¿™é‡Œä¸å‡†é€€å‡ºï¼\n");
 	return 1;
 }
 
@@ -47,7 +47,7 @@ int valid_leave(object me, string dir)
 {
 	if (dir == "north" && __DIR__"murenxiang"->query("busy"))
 	{
-		return notify_fail("ÓĞÈËÕıÔÚ´³Ä¾ÈËÏï£¬ÄãÏÈµÈ»á°É£¡\n");
+		return notify_fail("æœ‰äººæ­£åœ¨é—¯æœ¨äººå··ï¼Œä½ å…ˆç­‰ä¼šå§ï¼\n");
 	}
 	return ::valid_leave(me, dir);
 }

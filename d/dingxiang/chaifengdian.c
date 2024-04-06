@@ -1,14 +1,14 @@
 // /d/yazhang/chaifengdain.c
-// Room in ÑÀÕÊ
+// Room in ç‰™å¸
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "²Ã·ìµê");
+	set("short", "è£ç¼åº—");
 	set("long", @LONG
-ÕâÀïÊÇÑÀÕÊ×î´óµÄ²Ã·ìµê£¬ÕâÀï×ö³öµÄÒÂ·þ£¬²»ÂÛÑùÊ½»¹ÊÇÊÖ¹¤¶¼
-ÊÇÊ×ÇüÒ»Ö¸µÄ£¬ÔÚÕû¸öÑÀÕÊ¶¼Ìô²»³öµÚ¶þ¼Ò¡£ÕâÀï³öÆ·µÄÒÂ·þ¼Û¸ñ°º¹ó£¬
-µ«È´¶¼ÊÇ¼«Æ·¡£
+è¿™é‡Œæ˜¯ç‰™å¸æœ€å¤§çš„è£ç¼åº—ï¼Œè¿™é‡Œåšå‡ºçš„è¡£æœï¼Œä¸è®ºæ ·å¼è¿˜æ˜¯æ‰‹å·¥éƒ½
+æ˜¯é¦–å±ˆä¸€æŒ‡çš„ï¼Œåœ¨æ•´ä¸ªç‰™å¸éƒ½æŒ‘ä¸å‡ºç¬¬äºŒå®¶ã€‚è¿™é‡Œå‡ºå“çš„è¡£æœä»·æ ¼æ˜‚è´µï¼Œ
+ä½†å´éƒ½æ˜¯æžå“ã€‚
 LONG
 	);
 set("exits", ([

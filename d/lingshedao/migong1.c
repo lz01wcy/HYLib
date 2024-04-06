@@ -3,10 +3,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 { 
-        set("short", "É½Ñü");
+        set("short", "å±±è…°");
         set("long",@LONG
-É½Â·µ½ÁËÕâÀï,ºÃÏóÃ»ÓĞÁË³ö¿Ú,ËÄ´¦¶¼ÊÇ¾£¼¬ºÍ´óÊ÷,Äã²»
-ÓÉÒ»Õó»ÅÂÒ.Ïò±±,Ïò±±.ËÆºõÖ»ÓĞÕâÑù,Äã²ÅÄÜÖØĞÂÕÒµ½³öÂ·.
+å±±è·¯åˆ°äº†è¿™é‡Œ,å¥½è±¡æ²¡æœ‰äº†å‡ºå£,å››å¤„éƒ½æ˜¯è†æ£˜å’Œå¤§æ ‘,ä½ ä¸
+ç”±ä¸€é˜µæ…Œä¹±.å‘åŒ—,å‘åŒ—.ä¼¼ä¹åªæœ‰è¿™æ ·,ä½ æ‰èƒ½é‡æ–°æ‰¾åˆ°å‡ºè·¯.
 LONG );
         set("outdoors", "lingshedao");
         set("exits", ([
@@ -25,7 +25,7 @@ void init()
     object ob=this_player();
     ob->receive_damage("qi", 25);
     ob->receive_wound("qi",  25);
-    message_vision(HIR"$N½ÅÏÂÒ»Í´,²»½û´ó½ĞÆğÀ´.Ô­À´µØÉÏ¾¹È»²¼ÂúÁËÆß°Ë´ç³¤µÄ¸ÖÕë\n"NOR,ob);
+    message_vision(HIR"$Nè„šä¸‹ä¸€ç—›,ä¸ç¦å¤§å«èµ·æ¥.åŸæ¥åœ°ä¸Šç«Ÿç„¶å¸ƒæ»¡äº†ä¸ƒå…«å¯¸é•¿çš„é’¢é’ˆ\n"NOR,ob);
 }
 
 int valid_leave(object me, string dir)
@@ -41,13 +41,13 @@ int valid_leave(object me, string dir)
         {  
             me->move(__DIR__"xiaowuout");   
             me->delete_temp("lsmigong/steps");
-            return notify_fail("ÄãÒ§½ôÑÀ¹Ø£¬ÖÕÓÚ·¢ÏÖÒ»ÌõĞ¡¾¶,×ßÁË³öÀ´¡£\n");
+            return notify_fail("ä½ å’¬ç´§ç‰™å…³ï¼Œç»ˆäºå‘ç°ä¸€æ¡å°å¾„,èµ°äº†å‡ºæ¥ã€‚\n");
              }
         if (me->query_temp("lsmigong/steps") <= 0 )
         {  
             me->move(__DIR__"shanyao");   
             me->delete_temp("lsmigong/steps");
-            return notify_fail("ÄãÒ§½ôÑÀ¹Ø£¬ÖÕÓÚ·¢ÏÖÒ»ÌõĞ¡¾¶,×ßÁË³öÀ´¡£\n");
+            return notify_fail("ä½ å’¬ç´§ç‰™å…³ï¼Œç»ˆäºå‘ç°ä¸€æ¡å°å¾„,èµ°äº†å‡ºæ¥ã€‚\n");
              }
 
         return ::valid_leave(me,dir);

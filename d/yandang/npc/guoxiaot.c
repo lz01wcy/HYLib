@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ùÐ¥Ìì", ({ "guo xiaotian","guo", "dizi" }));
+	set_name("éƒ­å•¸å¤©", ({ "guo xiaotian","guo", "dizi" }));
 	set("age", 32);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("str", 34);
-set("nickname","É½×¯¹Ü¼Ò");
+set("nickname","å±±åº„ç®¡å®¶");
 	set("combat_exp", 20000+random(10000));
 	set_skill("unarmed", 60+random(40));
 	set_skill("dodge", 60+random(40));
@@ -34,19 +34,19 @@ void init()
 void greeting(object ob)
 {
   if( !ob || environment(ob) != environment() ) return;
-     if(ob->query("family/family_name")=="Ñãµ´ÅÉ" ) 
+     if(ob->query("family/family_name")=="é›è¡æ´¾" ) 
     {  if (ob->query("combat_exp")<1000)
-      { message_vision("¹ùÐ¥Ìì×ÐÏ¸´òÁ¿ÁËÄãÒ»ÑÛµÀ£ºÕâÎ»"+
-        RANK_D->query_respect(ob)+",¿ÉÒÔÈ¥³õ¼¶ÊÒÁ¶ÎäÁË!\n",ob);
+      { message_vision("éƒ­å•¸å¤©ä»”ç»†æ‰“é‡äº†ä½ ä¸€çœ¼é“ï¼šè¿™ä½"+
+        RANK_D->query_respect(ob)+",å¯ä»¥åŽ»åˆçº§å®¤ç‚¼æ­¦äº†!\n",ob);
         ob->set_temp("agree",1);}
        else 
        { if (ob->query("combat_exp")<3000)
-            {  message_vision("¹ùÐ¥Ìì×ÐÏ¸´òÁ¿ÁËÄãÒ»ÑÛµÀ£ºÕâÎ»"+
-            RANK_D->query_respect(ob)+",¿ÉÒÔÈ¥ÈëÃÅÊÒÁ¶ÎäÁË!\n",ob);
+            {  message_vision("éƒ­å•¸å¤©ä»”ç»†æ‰“é‡äº†ä½ ä¸€çœ¼é“ï¼šè¿™ä½"+
+            RANK_D->query_respect(ob)+",å¯ä»¥åŽ»å…¥é—¨å®¤ç‚¼æ­¦äº†!\n",ob);
             ob->set_temp("agree",2);}
          else 
-        { message_vision("¹ùÐ¥Ìì×ÐÏ¸´òÁ¿ÁËÄãÒ»ÑÛµÀ£ºÕâÎ»"+
-         RANK_D->query_respect(ob)+",¿ÉÒÔÈ¥½ø½×ÊÒÁ¶ÎäÁË!\n",ob);
+        { message_vision("éƒ­å•¸å¤©ä»”ç»†æ‰“é‡äº†ä½ ä¸€çœ¼é“ï¼šè¿™ä½"+
+         RANK_D->query_respect(ob)+",å¯ä»¥åŽ»è¿›é˜¶å®¤ç‚¼æ­¦äº†!\n",ob);
          ob->set_temp("agree",3);}
        }
 return;

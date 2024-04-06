@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-       set_name("С�л�", ({ "xiao jiaohua", "xiao" }) );
-       set("gender", "����" );
+       set_name("小叫化", ({ "xiao jiaohua", "xiao" }) );
+       set("gender", "男性" );
        set("age", 16);
        set("long",
-               "����һ���ܻ����С�л��������������á�\n");
+               "他是一个很机灵的小叫化，穿的破破烂烂。\n");
        set("combat_exp", 10500);
        set("attitude", "friendly");
  
@@ -32,12 +32,12 @@ void greeting(object ob)
 	if (!ob || !present(ob, environment())) return;
 	switch( random(2) ) {
 		case 0:
-			say( "С�л�����ͷ��˵������λ" + RANK_D->query_respect(ob)
-                   + "�����������ؤ��Ļ������Կ�"BRED"(help gaibang)"NOR"��\n");
+			say( "小叫化歪着头，说道：这位" + RANK_D->query_respect(ob)
+                   + "，想加入我们丐帮的话，可以看"BRED"(help gaibang)"NOR"。\n");
 			break;
 		case 1:
-			say( "С�л�ü��ɫ���˵���� ���µ�һ��ô, ��Ȼ������ؤ���ˡ�
- ����ʮ���ƣ��򹷰�������ؤ��ľ�ѧ��\n");
+			say( "小叫化眉飞色舞的说道： 天下第一帮么, 自然是我们丐帮了。
+ 降龙十八掌，打狗棒是我们丐帮的绝学。\n");
 			break;
 	}
 

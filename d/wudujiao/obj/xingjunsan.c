@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	       set_name("Öî¸ğĞĞ¾üÉ¢", ({"xingjun san"}));
+	       set_name("è¯¸è‘›è¡Œå†›æ•£", ({"xingjun san"}));
 	
-		set("unit", "°ü");
-		set("long", "ÕâÊÇÒ»°üÔ¤·ÀÕÎÆøµÄÒ©É¢£¬´øÔÚÉíÉÏ¿ÉÒÔÔ¤·ÀÕÎÆø¡£\n");
+		set("unit", "åŒ…");
+		set("long", "è¿™æ˜¯ä¸€åŒ…é¢„é˜²ç˜´æ°”çš„è¯æ•£ï¼Œå¸¦åœ¨èº«ä¸Šå¯ä»¥é¢„é˜²ç˜´æ°”ã€‚\n");
 		set("value", 0);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(200);
 
 	
@@ -26,6 +26,6 @@ void create()
 int do_eat(string arg)
 {
    	if (arg == "xingjun san")
-   message_vision ("ÕâÖÖ¶«Î÷Ö»ÄÜ´øÔÚÉíÉÏ£¬²»ÄÜ³Ô°¡¡£\n",this_player());
+   message_vision ("è¿™ç§ä¸œè¥¿åªèƒ½å¸¦åœ¨èº«ä¸Šï¼Œä¸èƒ½åƒå•Šã€‚\n",this_player());
  return 1;
 }

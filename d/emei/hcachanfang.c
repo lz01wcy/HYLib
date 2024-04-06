@@ -1,14 +1,14 @@
-//Room: hcachanfang.c »ª²ØâÖìø·¿
+//Room: hcachanfang.c åŽè—åºµç¦…æˆ¿
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 void create()
 {
-      set("short","»ª²ØâÖìø·¿");
+      set("short","åŽè—åºµç¦…æˆ¿");
       set("long",@LONG
-ÕâÀï±ãÊÇ¶ëáÒ»ª²ØâÖµÄìø·¿¡£µØÏÂÉ¢ÂÒµØ·Å×ÅÐí¶àÆÑÍÅ£¬Ä¾ÓãµÈ£¬´Ë´¦
-ÕýÊÇ±¾ÅÉµÜ×Ó´ò×øÐÞÐÐÖ®Ëù¡£¼¸Î»ÄêÇáÊ¦Ì«ºÍË×¼ÒÅ®µÜ×ÓÕýËàÈÝÈë¶¨¡£
-¡¡¡¡ìø·¿ºóÃæÓÐÒ»µÀÃÅÍ¨Íù»ª²ØâÖÐÝÏ¢ÊÒ£¬±±±ßµÄ×ßÀÈÍ¨Ïò¹ã³¡¡£
+è¿™é‡Œä¾¿æ˜¯å³¨åµ‹åŽè—åºµçš„ç¦…æˆ¿ã€‚åœ°ä¸‹æ•£ä¹±åœ°æ”¾ç€è®¸å¤šè’²å›¢ï¼Œæœ¨é±¼ç­‰ï¼Œæ­¤å¤„
+æ­£æ˜¯æœ¬æ´¾å¼Ÿå­æ‰“åä¿®è¡Œä¹‹æ‰€ã€‚å‡ ä½å¹´è½»å¸ˆå¤ªå’Œä¿—å®¶å¥³å¼Ÿå­æ­£è‚ƒå®¹å…¥å®šã€‚
+ã€€ã€€ç¦…æˆ¿åŽé¢æœ‰ä¸€é“é—¨é€šå¾€åŽè—åºµä¼‘æ¯å®¤ï¼ŒåŒ—è¾¹çš„èµ°å»Šé€šå‘å¹¿åœºã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "north" : __DIR__"hcawest2", 

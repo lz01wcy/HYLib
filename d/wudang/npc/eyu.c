@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("öùÓã", ({"eyu","e yu"}));
-        set("race", "Ò°ÊÞ");
+        set_name("é³„é±¼", ({"eyu","e yu"}));
+        set("race", "é‡Žå…½");
         set("age", 100);
-        set("long", "Ò»ÌõÕÅ¿ªÑªÅè´ó¿ÚµÄöùÓã¡£\n");
+        set("long", "ä¸€æ¡å¼ å¼€è¡€ç›†å¤§å£çš„é³„é±¼ã€‚\n");
         set("attitude", "aggressive");
 set("qi",9000);
 set("max_qi",9000);
@@ -16,7 +16,7 @@ set("jing",9000);
         set("str", 35);
         set("cor", 35);
 set_skill("force",500);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "½Å²¿", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è„šéƒ¨", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 800000);
@@ -32,7 +32,7 @@ set_skill("force",500);
 void die()
 {
         object ob;
-        message_vision("$N³é´¤ÁË¼¸ÏÂ£¬ÉíÌåËõÔÚÒ»Æð£¬ËÀÁË¡£\n", this_object());
+        message_vision("$NæŠ½æäº†å‡ ä¸‹ï¼Œèº«ä½“ç¼©åœ¨ä¸€èµ·ï¼Œæ­»äº†ã€‚\n", this_object());
         ob = new("/d/wudang/obj/tieluohan");
         ob->move(environment(this_object()));
         destruct(this_object());

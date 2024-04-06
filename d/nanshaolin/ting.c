@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIG"Ó­¿ÍÍ¤"NOR);
+	set("short", HIG"è¿å®¢äº­"NOR);
 	set("long", @LONG
-²ÔËÉÑÚÓ³Ö®ÖĞ£¬Ò»×ùÊ¯Í¤ºÕÈ»ÑÛÖĞ¡£Ö»¼ûÍ¤ÉÏØÒ¶îÖĞÁú·É·ïÎèµÄÌâ
-×Å¡ºÓ­¿ÍÍ¤¡»Èı¸ö´ó×Ö¡£·²½­ºşÈËÊ¿£¬ÔÚ´ËĞè·ÅÏÂËæÉíËù´øµÄ±øÆ÷£¬²Å
-¿É½øÈëËÂÄÚ¡£Í¤ÄÚÓĞÁ½ÃûÖª¿ÍÉ®ÕıÔÚÃ¦ÂµµÄÕĞ´ıÀ´ÍùµÄÏã¿Í¡£
+è‹æ¾æ©æ˜ ä¹‹ä¸­ï¼Œä¸€åº§çŸ³äº­èµ«ç„¶çœ¼ä¸­ã€‚åªè§äº­ä¸ŠåŒ¾é¢ä¸­é¾™é£å‡¤èˆçš„é¢˜
+ç€ã€è¿å®¢äº­ã€ä¸‰ä¸ªå¤§å­—ã€‚å‡¡æ±Ÿæ¹–äººå£«ï¼Œåœ¨æ­¤éœ€æ”¾ä¸‹éšèº«æ‰€å¸¦çš„å…µå™¨ï¼Œæ‰
+å¯è¿›å…¥å¯ºå†…ã€‚äº­å†…æœ‰ä¸¤åçŸ¥å®¢åƒ§æ­£åœ¨å¿™ç¢Œçš„æ‹›å¾…æ¥å¾€çš„é¦™å®¢ã€‚
 LONG );
 	set("exits", ([
 		"westdown" : __DIR__"fxjing",
@@ -42,7 +42,7 @@ int do_quit()
 	object ob = this_player();
 	if (ob->query_condition("sl_lunzhi")>0)
 	{
-		write("ÄãÕıÔÚÂÖÖµ£¬²»ÄÜÍË³öÓÎÏ·¡£\n");
+		write("ä½ æ­£åœ¨è½®å€¼ï¼Œä¸èƒ½é€€å‡ºæ¸¸æˆã€‚\n");
 		return 1;
 	}
 	return 0;
@@ -57,16 +57,16 @@ if (userp(me))
 {	
 	myfam = (mapping)me->query("family");
 	if (!me->query("luohan_winner") && !present("yingxiong ling", me))
-	if (me->query("gender") == "Å®ĞÔ" && dir == "northup" )
+	if (me->query("gender") == "å¥³æ€§" && dir == "northup" )
 	{
 		if(objectp(present("fang tong", environment(me))))
-			return notify_fail("·½Í¨ÉìÊÖÀ¹×¡Äã°×ÑÛÒ»·­ËµµÀ£ºÇ§ÄêÒÔÀ´£¬ÉÙÁÖÏò²»ĞíÅ®Á÷ÉÃÈë¡£"+RANK_D->query_respect(me) +"\nÇëÏÂÉ½È¥°É£¬ÃâµÃ×ÔÌÖÃ»È¤¡£\n");
+			return notify_fail("æ–¹é€šä¼¸æ‰‹æ‹¦ä½ä½ ç™½çœ¼ä¸€ç¿»è¯´é“ï¼šåƒå¹´ä»¥æ¥ï¼Œå°‘æ—å‘ä¸è®¸å¥³æµæ“…å…¥ã€‚"+RANK_D->query_respect(me) +"\nè¯·ä¸‹å±±å»å§ï¼Œå…å¾—è‡ªè®¨æ²¡è¶£ã€‚\n");
 		if(objectp(present("fang kong", environment(me))))
-			return notify_fail("·½¿ÕÂõ²½µ²ÔÚÄãÉíÇ°£¬Ë«ÊÖºÏÊ²ËµµÀ£º°¢ÃÖÍÓ·ğ£¬ÕâÎ»" + RANK_D->query_respect(me) +"ÇëÁô²½£¬\nË¡Ğ¡ËÂ²»½Ó´ıÅ®¿Í¡£Å®Ê©Ö÷ÌÈÈôÒ»ĞÄÏò·ğ£¬ºÎ·ÁÈ¥¶ëÃ¼É½ËæÏ²£¿\n");
+			return notify_fail("æ–¹ç©ºè¿ˆæ­¥æŒ¡åœ¨ä½ èº«å‰ï¼ŒåŒæ‰‹åˆä»€è¯´é“ï¼šé˜¿å¼¥é™€ä½›ï¼Œè¿™ä½" + RANK_D->query_respect(me) +"è¯·ç•™æ­¥ï¼Œ\næ•å°å¯ºä¸æ¥å¾…å¥³å®¢ã€‚å¥³æ–½ä¸»å€˜è‹¥ä¸€å¿ƒå‘ä½›ï¼Œä½•å¦¨å»å³¨çœ‰å±±éšå–œï¼Ÿ\n");
 	}
 	if((!myfam ||
-		myfam["family_name"] != "ÉÙÁÖÅÉ" &&
-		myfam["family_name"] != "ÄÏÉÙÁÖÅÉ" ) &&
+		myfam["family_name"] != "å°‘æ—æ´¾" &&
+		myfam["family_name"] != "å—å°‘æ—æ´¾" ) &&
 		dir == "northup")
 	{
 		inv = all_inventory(me);
@@ -75,23 +75,23 @@ if (userp(me))
 				(inv[i]->query("equipped")))
 			{
 				if(objectp(present("fang tong",environment(me))))
-					return notify_fail("·½Í¨À¹×¡ÄãËµµÀ£ºÕâÎ»"+RANK_D->query_respect(me) +"Çë·ÅÏÂ±øÈĞ¡£ÉÙÁÖÇ§ÄêµÄ¹æ¾Ø£¬Íâ¿Í\n²»µÃ³Ö±øÈĞÉÏÉ½¡£\n");
+					return notify_fail("æ–¹é€šæ‹¦ä½ä½ è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(me) +"è¯·æ”¾ä¸‹å…µåˆƒã€‚å°‘æ—åƒå¹´çš„è§„çŸ©ï¼Œå¤–å®¢\nä¸å¾—æŒå…µåˆƒä¸Šå±±ã€‚\n");
 				if(objectp(present("fang kong", environment(me))))
-					return notify_fail("·½¿ÕÂõ²½µ²ÔÚÄãÉíÇ°£¬Ë«ÊÖºÏÊ²ËµµÀ£º°¢ÃÖÍÓ·ğ£¬ÕâÎ»"+RANK_D->query_respect(me) +"ÇëÊÕÆğ\n±øÈĞ¡£·ğÃÅÇå¾²Ö®µØ£¬²»±ãËæÒâÎèµ¶Åª½£¡£»¹ÇëÊ©Ö÷¼øÁÂ¡£\n");
+					return notify_fail("æ–¹ç©ºè¿ˆæ­¥æŒ¡åœ¨ä½ èº«å‰ï¼ŒåŒæ‰‹åˆä»€è¯´é“ï¼šé˜¿å¼¥é™€ä½›ï¼Œè¿™ä½"+RANK_D->query_respect(me) +"è¯·æ”¶èµ·\nå…µåˆƒã€‚ä½›é—¨æ¸…é™ä¹‹åœ°ï¼Œä¸ä¾¿éšæ„èˆåˆ€å¼„å‰‘ã€‚è¿˜è¯·æ–½ä¸»é‰´è°…ã€‚\n");
 			}
 	}
 	if (!me->query("muren_winner") && mapp(myfam) &&
-		myfam["family_name"]== "ÄÏÉÙÁÖÅÉ" && 
+		myfam["family_name"]== "å—å°‘æ—æ´¾" && 
 		dir == "east" ) 
 	{
 		if(objectp(present("fang tong", environment(me))))
-			return notify_fail("·½Í¨ÉìÊÖÀ¹×¡Äã¹ªÉíËµµÀ£ºÕâÎ»Ê¦ĞÖÎä¹¦»¹Î´Á·ºÃ£¬²»ÄÜÏÂÉ½£¬ÃâµÃÕÛÁËÔÛÃÇÄÏÉÙÁÖµÄÃûÉù£¡\n");
+			return notify_fail("æ–¹é€šä¼¸æ‰‹æ‹¦ä½ä½ èº¬èº«è¯´é“ï¼šè¿™ä½å¸ˆå…„æ­¦åŠŸè¿˜æœªç»ƒå¥½ï¼Œä¸èƒ½ä¸‹å±±ï¼Œå…å¾—æŠ˜äº†å’±ä»¬å—å°‘æ—çš„åå£°ï¼\n");
 		if(objectp(present("fang kong", environment(me))))
-			return notify_fail("·½¿ÕÉìÊÖÀ¹×¡Äã¹ªÉíËµµÀ£ºÕâÎ»Ê¦ĞÖÎä¹¦»¹Î´Á·ºÃ£¬²»ÄÜÏÂÉ½£¬ÃâµÃÕÛÁËÔÛÃÇÉÙÁÖµÄÃûÉù£¡\n");
+			return notify_fail("æ–¹ç©ºä¼¸æ‰‹æ‹¦ä½ä½ èº¬èº«è¯´é“ï¼šè¿™ä½å¸ˆå…„æ­¦åŠŸè¿˜æœªç»ƒå¥½ï¼Œä¸èƒ½ä¸‹å±±ï¼Œå…å¾—æŠ˜äº†å’±ä»¬å°‘æ—çš„åå£°ï¼\n");
 	}
 
 	if (me->query_condition("sl_lunzhi")>0)
-		return notify_fail("ÄãÕıÔÚÂÖÖµ£¬²»ÄÜÀë¿ª£¡\n");
+		return notify_fail("ä½ æ­£åœ¨è½®å€¼ï¼Œä¸èƒ½ç¦»å¼€ï¼\n");
 }
 	return ::valid_leave(me, dir);
 }

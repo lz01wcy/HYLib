@@ -3,17 +3,17 @@
 inherit STAFF; 
 void create()
 {
-        set_name("Èı»·ìøÕÈ" , ({ "3-ring staff", "staff" }) );
+        set_name("ä¸‰ç¯ç¦…æ–" , ({ "3-ring staff", "staff" }) );
         set_weight(80000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "Ò»ÌõÓÖ´ÖÓÖ³¤µÄ¾«ÌúìøÕÈ£¬ÉÏÃæÏâÖøÈı¸öÍ­»·¡£\n");
+                set("unit", "æ¡");
+                set("long", "ä¸€æ¡åˆç²—åˆé•¿çš„ç²¾é“ç¦…æ–ï¼Œä¸Šé¢é•¶è‘—ä¸‰ä¸ªé“œç¯ã€‚\n");
                 set("value", 620);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»¸ùÎÚºÚµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹ä¹Œé»‘çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         } 
         ::init_staff(43);
 }     

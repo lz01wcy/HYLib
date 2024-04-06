@@ -6,16 +6,16 @@ int do_pick(string arg);
 
 void create()
 {
-		set("short", YEL"ÑÒ¶´"NOR);
+		set("short", YEL"å²©æ´"NOR);
 	set("long", YEL @LONG
-    ÖÜÎ§¶¼ÊÇ»ÆºÖÉ«µÄÑÒÊ¯£¬¸Ğ¾õÉÏÒÑ¾­ÔÚµØÏÂºÜÉîµÄµØ·½ÁË¡£×óÃæµÄ
-ÑÒÊ¯ÉÏÓĞĞ©´ÓÃ»¼û¹ıµÄÖ²Îï(zhiwu)¡£ 
+    å‘¨å›´éƒ½æ˜¯é»„è¤è‰²çš„å²©çŸ³ï¼Œæ„Ÿè§‰ä¸Šå·²ç»åœ¨åœ°ä¸‹å¾ˆæ·±çš„åœ°æ–¹äº†ã€‚å·¦é¢çš„
+å²©çŸ³ä¸Šæœ‰äº›ä»æ²¡è§è¿‡çš„æ¤ç‰©(zhiwu)ã€‚ 
 LONG NOR);
 	set("exits", ([
 		"out" : __DIR__"dong104",
                 	]));
                 set("item_desc",([
-            "zhiwu" : "ÓĞµãÏóº£ÌÄµÄÖ²Îï£¬¿ÉÒÔÕª(pick)ÏÂÀ´¿´¿´¡£\n"
+            "zhiwu" : "æœ‰ç‚¹è±¡æµ·æ£ çš„æ¤ç‰©ï¼Œå¯ä»¥æ‘˜(pick)ä¸‹æ¥çœ‹çœ‹ã€‚\n"
         ]) );
            set("objects", ([
               __DIR__"npc/boss1" : 1,
@@ -36,19 +36,19 @@ int do_pick(string arg)
         object obn;
               if( !arg || arg != "zhiwu" )
         {
-             write("ÄãÒªÄÃÊ²Ã´Ñ½!\n");
+             write("ä½ è¦æ‹¿ä»€ä¹ˆå‘€!\n");
              return 1;
         }
-message_vision("$NÔÚÑÒÊ¯Ç°Õ¾¶¨£¬ÉîºôÒ»¿ÚÆø£¬Í»È»Ô¾Æğ¡£\n", this_player());
+message_vision("$Nåœ¨å²©çŸ³å‰ç«™å®šï¼Œæ·±å‘¼ä¸€å£æ°”ï¼Œçªç„¶è·ƒèµ·ã€‚\n", this_player());
          if(query("caocount") > 0)
              {
-message_vision("$NÉìÊÖÒ»Õª£¬ÊÖÖĞ¶àÁËÒ»Îï¡£\n", this_player());
+message_vision("$Nä¼¸æ‰‹ä¸€æ‘˜ï¼Œæ‰‹ä¸­å¤šäº†ä¸€ç‰©ã€‚\n", this_player());
                  obn = new("/d/migong/obj/haitang");
                  obn->move(me);
                  add("caocount",-1);
              }
              else
-message_vision("$N¶¨¾¦Ò»¿´£¬·¢ÏÖÖ²ÎïÒÔ±»ÈËÄÃ×ßÁË¡£\n", this_player());
+message_vision("$Nå®šç›ä¸€çœ‹ï¼Œå‘ç°æ¤ç‰©ä»¥è¢«äººæ‹¿èµ°äº†ã€‚\n", this_player());
           return 1;
         }
         
@@ -56,7 +56,7 @@ int valid_leave(object me, string dir)
 {
         me = this_player();
         if ( dir == "out" && objectp(present("bailei", environment(me))))
-                return notify_fail(HIY"È«Õæ°ÜÀà"NOR"ºÈµÀ£º¡°¸øÎÒ¹Ô¹ÔµÄÁôÏÂ°É?\n");
+                return notify_fail(HIY"å…¨çœŸè´¥ç±»"NOR"å–é“ï¼šâ€œç»™æˆ‘ä¹–ä¹–çš„ç•™ä¸‹å§?\n");
       
 
         return ::valid_leave(me, dir);

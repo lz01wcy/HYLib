@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", BLU"���׹�������"NOR);
+	set("short", BLU"海底过道出口"NOR);
 	set("long", BLU @LONG
-����һ�����׹�������ͣ����һ��һ��ĺ���������ͷ�ϴ���....
-������·�ܶ࣬��ͨ�˴��е����ֲ���ȫ�ĸо���
+这是一条海底过道，不停的有一阵一阵的海浪声从你头上传来....
+附近道路很多，四通八达，你感到有种不安全的感觉。
 LONG NOR);
 
 

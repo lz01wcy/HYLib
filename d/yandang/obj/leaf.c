@@ -2,12 +2,12 @@
 inherit THROWING;
 void create()
 {
-	set_name("¿İ»ÆµÄÒ¶", ({ "deadleaf", "leaf" }) );
+	set_name("æ¯é»„çš„å¶", ({ "deadleaf", "leaf" }) );
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("base_unit", "ÕÅ");
+		set("unit", "æŠŠ");
+		set("base_unit", "å¼ ");
 		set("base_weight", 1);
 		set("base_value", 1);
 	}

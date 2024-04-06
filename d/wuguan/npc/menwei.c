@@ -4,8 +4,8 @@ inherit NPC;
 void create()
 {
 	int age = 20 + random(20);
-	set_name("Îä¹İÃÅÎÀ", ({ "men wei", "menwei", "wei" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ­¦é¦†é—¨å«", ({ "men wei", "menwei", "wei" }));
+	set("gender", "ç”·æ€§");
 	set("age", age);
 	set_skill("unarmed", 80);
 	set_skill("dodge", 80);
@@ -33,14 +33,14 @@ void greeting(object ob)
 {
        if( !ob || environment(ob) != environment() ) return;
 //                  if ( ob->query("combat_exp") < 10000)  
-//       command("say ÕâÎ»" + RANK_D->query_respect(ob)+"£¬Îä¹¦ÕâÃ´²î£¬ÔõÃ´´³½­ºşÄØ£¿\n");
+//       command("say è¿™ä½" + RANK_D->query_respect(ob)+"ï¼Œæ­¦åŠŸè¿™ä¹ˆå·®ï¼Œæ€ä¹ˆé—¯æ±Ÿæ¹–å‘¢ï¼Ÿ\n");
        if ( ob->query("combat_exp") > 10000  && ob->query("combat_exp") < 80000 ){ 
-         command("say ÄãÎä¹¦ÒÑÓĞ¸ù»ù£¬Îä¹İÒÑ¾­ÎŞ·¨ÔÙ°ïÖúÄãÌá¸ßÁË£¬ÕâÎ»" + RANK_D->query_respect(ob)+"ÄãÎÒÒ²ËãÊÇÓĞÔµÒ»³¡¡£\n");
+         command("say ä½ æ­¦åŠŸå·²æœ‰æ ¹åŸºï¼Œæ­¦é¦†å·²ç»æ— æ³•å†å¸®åŠ©ä½ æé«˜äº†ï¼Œè¿™ä½" + RANK_D->query_respect(ob)+"ä½ æˆ‘ä¹Ÿç®—æ˜¯æœ‰ç¼˜ä¸€åœºã€‚\n");
        if (ob->query("enter_wuguan",1) ) ob->delete("enter_wuguan");
-           command("say ÎÒÌıËµ×î½ü¹ù¸®ÕıÔÚ¹ãÕĞÌìÏÂÓ¢ĞÛµÖ¿¹ÃÉ¹Å£¬ÄãÈçÇ°È¥Í¶±¼£¬Ò»¶¨¶ÔÄãÓĞËù°ïÖú¡£Èç¹ûÄã»¹²»Çå³ş¾Í¿´¿´"CYN"(help guojob)"NOR"¡£\n");
-            message_vision("$NÌı°ÕÀÊÉùÒ»Ğ¦£¬¶¶Æğ¾«Éñ£¬×¼±¸²½³öÎä¹İ¡£ĞÄÏë´Ó´Ë×İÈ»½­ºşÏÕ¶ñ£¬×Ô¼ºÒ²ÒªÁ¢Ö¾´´Ò»·¬ÌìÏÂ£¡\n", ob);
+           command("say æˆ‘å¬è¯´æœ€è¿‘éƒ­åºœæ­£åœ¨å¹¿æ‹›å¤©ä¸‹è‹±é›„æŠµæŠ—è’™å¤ï¼Œä½ å¦‚å‰å»æŠ•å¥”ï¼Œä¸€å®šå¯¹ä½ æœ‰æ‰€å¸®åŠ©ã€‚å¦‚æœä½ è¿˜ä¸æ¸…æ¥šå°±çœ‹çœ‹"CYN"(help guojob)"NOR"ã€‚\n");
+            message_vision("$Nå¬ç½¢æœ—å£°ä¸€ç¬‘ï¼ŒæŠ–èµ·ç²¾ç¥ï¼Œå‡†å¤‡æ­¥å‡ºæ­¦é¦†ã€‚å¿ƒæƒ³ä»æ­¤çºµç„¶æ±Ÿæ¹–é™©æ¶ï¼Œè‡ªå·±ä¹Ÿè¦ç«‹å¿—åˆ›ä¸€ç•ªå¤©ä¸‹ï¼\n", ob);
 }
       if ( ob->query("combat_exp") > 100000)  
-       command("say ÕâÀïÖ»ÊÕÁô½­ºşĞÂÊÖ£¬Îä¹¦¸ßÇ¿¾Í²»ÒªÔÙ»ØÀ´ÁË£¡");
+       command("say è¿™é‡Œåªæ”¶ç•™æ±Ÿæ¹–æ–°æ‰‹ï¼Œæ­¦åŠŸé«˜å¼ºå°±ä¸è¦å†å›æ¥äº†ï¼");
 }
 

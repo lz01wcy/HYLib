@@ -2,17 +2,17 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIY "´óÇå¹ú±¦²ØÍ¼" NOR, ({ "daqing baotu" }) );
+    set_name(HIY "å¤§æ¸…å›½å®è—å›¾" NOR, ({ "daqing baotu" }) );
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-            set("unit", "ÕÅ");
+            set("unit", "å¼ ");
 set("no_get",1);
 set("no_drop",1);            
 set("value",0);            
             set("material", "paper");
-            set("long", HIY"Ò»ÕÅÄã¸ù¾İËÄÊ®¶şÕÂ¾­»­µÄ±¦²ØÍ¼£¬Äã¿ÉÒÔ²é¿´£¨chakan£©£®\n"NOR);
+            set("long", HIY"ä¸€å¼ ä½ æ ¹æ®å››åäºŒç« ç»ç”»çš„å®è—å›¾ï¼Œä½ å¯ä»¥æŸ¥çœ‹ï¼ˆchakanï¼‰ï¼\n"NOR);
           }
 
     setup();
@@ -31,34 +31,34 @@ mapping exits;
 string *dirs;
 string thisdir;
 me=this_player();
-if(arg != "daqing baotu" && arg != "´óÇå¹ú±¦²ØÍ¼") return 0;
+if(arg != "daqing baotu" && arg != "å¤§æ¸…å›½å®è—å›¾") return 0;
 if(!environment(me))
 {
-tell_object(me,"ÄãÏÖÔÚÎŞ·¨¿´±¦Í¼£¡\n");
+tell_object(me,"ä½ ç°åœ¨æ— æ³•çœ‹å®å›¾ï¼\n");
  return 1;
 }
 if(!environment(me)->query("exits"))
 {
-tell_object(me,"±¦Í¼ÏÔÊ¾ÕâÀïºÍ±¦²ØÎŞ¹Ø£¡\n");
+tell_object(me,"å®å›¾æ˜¾ç¤ºè¿™é‡Œå’Œå®è—æ— å…³ï¼\n");
  return 1;
 }
 if(this_object()->query("lastck") ==environment(me)->query("short"))
 {
-tell_object(me,"±¦Í¼²»ÊÇ¸Õ¸Õ¸æËß¹ıÄã¸ÃÏòÄÄÀïÈ¥Âğ?\n");
+tell_object(me,"å®å›¾ä¸æ˜¯åˆšåˆšå‘Šè¯‰è¿‡ä½ è¯¥å‘å“ªé‡Œå»å—?\n");
  return 1;
 }
 
-if(environment(me)->query("short")!="ÁúÃÅ·å"
+if(environment(me)->query("short")!="é¾™é—¨å³°"
 && !this_object()->query("lmf"))
 {
-tell_object(me,"±¦Í¼¸æËßÄã±¦²ØÔÚ¹ØÍâÁúÃÅ·å¸½½ü£¡ÄãÏÈÈ¥ÄÇÀï°É!\n");
+tell_object(me,"å®å›¾å‘Šè¯‰ä½ å®è—åœ¨å…³å¤–é¾™é—¨å³°é™„è¿‘ï¼ä½ å…ˆå»é‚£é‡Œå§!\n");
  return 1;
 }
-if(environment(me)->query("short")=="ÁúÃÅ·å"
+if(environment(me)->query("short")=="é¾™é—¨å³°"
 && environment(me)->query("already")
 && !this_object()->query("lmf"))
 {
-tell_object(me,"ÄãÀ´ÍíÁË£¬¿´À´±ğÈËÒÑ¾­°Ñ±¦ÎïÄÃ×ßÁË!\n");
+tell_object(me,"ä½ æ¥æ™šäº†ï¼Œçœ‹æ¥åˆ«äººå·²ç»æŠŠå®ç‰©æ‹¿èµ°äº†!\n");
 return 1;
 }
 
@@ -68,14 +68,14 @@ if(find_call_out("markit")== -1)
 call_out("markit",random(60)+20,me);
 if( !mapp(exits = environment(me)->query("exits")) ) 
 {
-tell_object(me,"´óÇå¹ú±¦²ØÓ¦¸Ã¾ÍÔÚÕâ¸½½ü£¡\n");
+tell_object(me,"å¤§æ¸…å›½å®è—åº”è¯¥å°±åœ¨è¿™é™„è¿‘ï¼\n");
 return 1;
 }
         dirs = keys(exits);
         thisdir = dirs[random(sizeof(dirs))];
 	set("thisdir",thisdir);
-	tell_object(me,HIY"Í¼ÉÏÏÔÊ¾´óÇå¹ú±¦²ØÓ¦¸ÃÔÚ"+thisdir+"µÄ·½Ïò£¡\n"NOR);
-if (environment(me)->query("short")=="ÁúÃÅ·å")
+	tell_object(me,HIY"å›¾ä¸Šæ˜¾ç¤ºå¤§æ¸…å›½å®è—åº”è¯¥åœ¨"+thisdir+"çš„æ–¹å‘ï¼\n"NOR);
+if (environment(me)->query("short")=="é¾™é—¨å³°")
 {
 this_object()->set("lmf",1);
 environment(me)->set("already",1);
@@ -98,7 +98,7 @@ int i;
 if(me->query_temp("going") <= 20 || environment()!=me) return 1;
 if(!query("already"))
 {
-tell_object(me,HIY"\n\nÄãË«ÑÛÒ»ÁÁ£¬´Ó¡º´óÇå¹ú±¦²ØÍ¼¡»ËùÖ¸Ê¾µÄµØ·½ÍÚ³ö´óÁ¿µÄ»Æ½ğ£¬ºÍÈô¸É¸ö±¦Ïä£¡\n"NOR);
+tell_object(me,HIY"\n\nä½ åŒçœ¼ä¸€äº®ï¼Œä»ã€å¤§æ¸…å›½å®è—å›¾ã€æ‰€æŒ‡ç¤ºçš„åœ°æ–¹æŒ–å‡ºå¤§é‡çš„é»„é‡‘ï¼Œå’Œè‹¥å¹²ä¸ªå®ç®±ï¼\n"NOR);
 gold = new("/clone/money/gold");
 i=random(1001)+500;
 gold->set_amount(i);
@@ -106,7 +106,7 @@ gold->move(me);
 me->delete("huanggong");
 me->delete_temp("going");
 set("already",1);
-message("channel:chat", HIC"¡¾½­ºş´«ÎÅ¡¿"GRN + me->query("name")+"·¢ÏÖ"+HIY"´óÇå¹ú±¦²Ø:¼Æ»Æ½ğ" + chinese_number(i)+HIY"Á½£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€æ±Ÿæ¹–ä¼ é—»ã€‘"GRN + me->query("name")+"å‘ç°"+HIY"å¤§æ¸…å›½å®è—:è®¡é»„é‡‘" + chinese_number(i)+HIY"ä¸¤ï¼\n"NOR,users() );
 destruct(this_object());
 }
 return 1;

@@ -6,17 +6,17 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÕÔÈıÇ®", ({ "zhao sanqian", "zhao", "sanqian" }));
-	set("title", "Ñà¾©»Ø´ºÒ©ÆÌ");
+	set_name("èµµä¸‰é’±", ({ "zhao sanqian", "zhao", "sanqian" }));
+	set("title", "ç‡•äº¬å›æ˜¥è¯é“º");
 	set("shen_type", 1);
 
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("combat_exp", 5800);
 	set("attitude", "friendly");
 
-	set("rank_info/respect", "Ğ¡¶ş¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
                __DIR__"obj/xiongdan",
                 __DIR__"obj/tianqi",

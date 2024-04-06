@@ -3,9 +3,9 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("ËÕºÏÏã¾Æ", ({ "xiangjiu","jiu" }) );
-        set("long", "Ò»ÖÖÃû¹óµÄÒ©¾Æ,¾­ÈıÄê²ÅÄÜÖÆ³É.\n");
-        set("unit", "Æ¿");
+        set_name("è‹åˆé¦™é…’", ({ "xiangjiu","jiu" }) );
+        set("long", "ä¸€ç§åè´µçš„è¯é…’,ç»ä¸‰å¹´æ‰èƒ½åˆ¶æˆ.\n");
+        set("unit", "ç“¶");
         set("weight", 700);
         set("value", 10000);
 	  set("max_liquid", 15);
@@ -21,15 +21,15 @@ int do_drink(string arg)
 {
         object ob;
 	if( !living(this_player()))	return 0;
-        if( !id(arg) ) return notify_fail("ÄãÒªºÈÊ²÷á£¿\n");
+        if( !id(arg) ) return notify_fail("ä½ è¦å–ä»€éº½ï¼Ÿ\n");
 if( living(this_player()) ==0 ) return 0;
         ob=this_player();
         ob->set("jing",(int)ob->query("eff_jing"));
         ob->set("eff_jing",(int)ob->query("eff_jing"));
-        write("ÄãºÈÁË¼¸¿ÚËÕºÏÏã¾Æ.\n");
+        write("ä½ å–äº†å‡ å£è‹åˆé¦™é…’.\n");
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "ËÕºÏÏã¾Æ",
+		"name": "è‹åˆé¦™é…’",
 		"remaining": 15,
 		"drunk_apply": 4,
 	]));

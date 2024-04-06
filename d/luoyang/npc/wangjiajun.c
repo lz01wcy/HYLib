@@ -5,9 +5,9 @@
 inherit NPC;
 void create()
 {
-	set_name("Íõ¼Ò¿¡", ({ "wang jiajun", "wang", "jiajun" }) );
-	set("title", HIY"½ğµ¶ÃÅ"NOR"µÚÎå´úµÜ×Ó");
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç‹å®¶ä¿Š", ({ "wang jiajun", "wang", "jiajun" }) );
+	set("title", HIY"é‡‘åˆ€é—¨"NOR"ç¬¬äº”ä»£å¼Ÿå­");
+	set("gender", "ç”·æ€§" );
 	set("shen_type", 1);
 	set("age", 16);
 	set("per", 15);
@@ -16,8 +16,8 @@ void create()
 	set("dex", 25);
 	set("int", 25);
 	set("long",
-"ËûÊÇÍõÖÙÇ¿µÄ´ó¶ù×Ó£¬Îä¹¦²»¹ı¶û¶û¡£²»¹ıÔÚÂåÑô³ÇÖĞ£¬½ÌÑµÆğµØÆ¦Á÷Ã¥
-À´£¬ÄÇµ¹ÊÇ¹»ÁË¡£\n" );
+"ä»–æ˜¯ç‹ä»²å¼ºçš„å¤§å„¿å­ï¼Œæ­¦åŠŸä¸è¿‡å°”å°”ã€‚ä¸è¿‡åœ¨æ´›é˜³åŸä¸­ï¼Œæ•™è®­èµ·åœ°ç—æµæ°“
+æ¥ï¼Œé‚£å€’æ˜¯å¤Ÿäº†ã€‚\n" );
 	set("combat_exp", 160000);
 	set("attitude", "friendly");
 	set_skill("blade", 130);

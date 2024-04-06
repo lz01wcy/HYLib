@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÜµÀ");
+	set("short", "å¯†é“");
 	set("long", @LONG
-ÄãµÄÑÛÇ°ÊÇÒ»ÌõÓÃºº°×ÓñÆÌ³ÉµÄÌ¨½×£¬Ò»Ö±ÏòÏÂÑÓÉì£¬Á½±ßµÄÇ½±Ú¶¼
-ÊÇ»¨¸ÚÑÒ£¬Ç½ÉÏ¸ôÊ®À´²½¾ÍÓĞÒ»ÕµÓÍµÆ£¬Ê¹ÄãÄÜ¿´ÇåÖÜÎ§¡£
+ä½ çš„çœ¼å‰æ˜¯ä¸€æ¡ç”¨æ±‰ç™½ç‰é“ºæˆçš„å°é˜¶ï¼Œä¸€ç›´å‘ä¸‹å»¶ä¼¸ï¼Œä¸¤è¾¹çš„å¢™å£éƒ½
+æ˜¯èŠ±å²—å²©ï¼Œå¢™ä¸Šéš”åæ¥æ­¥å°±æœ‰ä¸€ç›æ²¹ç¯ï¼Œä½¿ä½ èƒ½çœ‹æ¸…å‘¨å›´ã€‚
 LONG );
 	set("exits", ([
 		"up" : __DIR__"huayuan",
@@ -22,9 +22,9 @@ LONG );
 int valid_leave(object me, string dir)
 {
 	if (  (dir == "northdown")
-           && ((string)me->query("family/family_name") != "ÁéğÕ¹¬")
+           && ((string)me->query("family/family_name") != "çµé¹«å®«")
 	   && objectp(present("nv lang", environment(me))) )
 	 return notify_fail
-		("ÃÉÃæÅ®ÀÉÉìÊÖÀ¹×¡Äã£¬ËµµÀ£º¡°¶Ô²»Æğ£¬±¾ÃÅÖØµØ£¬Çë»Ø£¡¡±\n");
+		("è’™é¢å¥³éƒä¼¸æ‰‹æ‹¦ä½ä½ ï¼Œè¯´é“ï¼šâ€œå¯¹ä¸èµ·ï¼Œæœ¬é—¨é‡åœ°ï¼Œè¯·å›ï¼â€\n");
 	return ::valid_leave(me, dir);
 }

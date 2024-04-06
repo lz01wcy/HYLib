@@ -13,13 +13,13 @@ void init()
 
 void create()
 {
-        set_name("°µµÀ", ({"hole",}));
+        set_name("æš—é“", ({"hole",}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öºÜĞ¡µÄ¶´¡£\n");
-                set("unit", "¸ö");
-                set("no_get", "Çî·èÀ²£¬¶´Ò²ÄÃ?\n");
+                set("long", "ä¸€ä¸ªå¾ˆå°çš„æ´ã€‚\n");
+                set("unit", "ä¸ª");
+                set("no_get", "ç©·ç–¯å•¦ï¼Œæ´ä¹Ÿæ‹¿?\n");
         }
         setup();
 }
@@ -31,11 +31,11 @@ int do_enter(string arg)
 	me = this_player();
         if( !arg || arg!="hole" ) return 0;
 		message("vision",
-			me->name() + "Ò»ÍäÑüÍù¶´Àï×ßÏÂÈ¥¡£\n",
+			me->name() + "ä¸€å¼¯è…°å¾€æ´é‡Œèµ°ä¸‹å»ã€‚\n",
 			environment(me), ({me}) );
                 me->move("/d/city2/andao1");
                 message("vision",
-			me->name() + "´ÓÉÏÃæ×ßÁËÏÂÀ´¡£\n",
+			me->name() + "ä»ä¸Šé¢èµ°äº†ä¸‹æ¥ã€‚\n",
                 	environment(me), ({me}) );
 		return 1;
 
@@ -45,8 +45,8 @@ int do_enter(string arg)
 void dest()
 {
 	destruct(this_object());
-	message("vision","\nÍ»È»´ÓÏÂÃæÉì³öÒ»Ë«ÊÖÀ´£¬ÒÆ»ØµØ°å°Ñ¶´¿Úµ²×¡ÁË¡£\n","/d/city2/neishi");
-	message("vision","\nÖ¨Ñ½Ò»Éù£¬ÉÏÃæÓĞÈË°ÑµØ°å¹ØÉÏÁË¡£\n","/d/city2/andao1");
+	message("vision","\nçªç„¶ä»ä¸‹é¢ä¼¸å‡ºä¸€åŒæ‰‹æ¥ï¼Œç§»å›åœ°æ¿æŠŠæ´å£æŒ¡ä½äº†ã€‚\n","/d/city2/neishi");
+	message("vision","\nå±å‘€ä¸€å£°ï¼Œä¸Šé¢æœ‰äººæŠŠåœ°æ¿å…³ä¸Šäº†ã€‚\n","/d/city2/andao1");
 }
 
 

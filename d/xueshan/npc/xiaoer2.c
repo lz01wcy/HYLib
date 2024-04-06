@@ -1,18 +1,18 @@
-// /d/xueshan/npc/xiaoer.c �Ƶ�С��
+// /d/xueshan/npc/xiaoer.c 酒店小二
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("��С��", ({ "xiao er", "xiao", "waiter" }) );
-	set("gender", "����" );
+	set_name("店小二", ({ "xiao er", "xiao", "waiter" }) );
+	set("gender", "男性" );
         set("age", 25);
 	set("long",
-		"��λ��С����Ц�����æ��������ʱ������ڲ����ϵ�Ĩ��������\n");
+		"这位店小二正笑咪咪地忙著，还不时拿起挂在脖子上的抹布擦脸。\n");
         set("combat_exp", 150);
 	set("attitude", "friendly");
-	set("rank_info/respect", "С����");
+	set("rank_info/respect", "小二哥");
 	set("no_get", "1");
 	set("vendor_goods", ({
                 "/d/xueshan/obj/niupidai",
@@ -32,7 +32,7 @@ void init()
 	::init();
 	if( interactive(ob) && !is_fighting() ) {
 		if ( (myfam = ob->query("family")) 
-		&& myfam["family_name"] == "ؤ��" 
+		&& myfam["family_name"] == "丐帮" 
 		&& ob->query_skill("begging",1) > 10 )
 		{
 			remove_call_out("saying");
@@ -54,12 +54,12 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			say( "��С��Ц�����˵������λ" + RANK_D->query_respect(ob)
-                                + "�������ȱ����Ͳ�ɡ�\n");
+			say( "店小二笑咪咪地说道：这位" + RANK_D->query_respect(ob)
+                                + "，进来喝杯酥油茶吧。\n");
 			break;
 		case 1:
-			say( "��С���ò����ϵ�ë��Ĩ��Ĩ�֣�˵������λ" + RANK_D->query_respect(ob)
-				+ "����������\n");
+			say( "店小二用脖子上的毛巾抹了抹手，说道：这位" + RANK_D->query_respect(ob)
+				+ "，请进请进。\n");
 			break;
 	}
 }
@@ -68,7 +68,7 @@ void saying(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
 
-	say("\n��С�����һ���������Ҫ���Ľ�����ʲ�᣿ ���ҹ���ȥ��\n\n");
+	say("\n店小二大喝一声：你这臭要饭的进来干什麽？ 给我滚出去！\n\n");
 	remove_call_out("kicking");
 	call_out("kicking", 1, ob);
 	
@@ -79,6 +79,6 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
         ob->move("/d/xueshan/tulu2");
-	message("vision","ֻ����ƹ����һ����" +  ob->query("name") +
-                "���˴ӿ͵���һ�����˳������Ǳ���״���ӿ��ˡ�\n", environment(ob), ob);
+	message("vision","只听“乒”地一声，" +  ob->query("name") +
+                "被人从客店里一脚踢了出来，狼狈万状的逃开了。\n", environment(ob), ob);
 }

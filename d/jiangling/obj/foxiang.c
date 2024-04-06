@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(YEL"´ó·ðÏñ"NOR, ({ "dafo xiang", "xiang", "dafo" }) );
+	set_name(YEL"å¤§ä½›åƒ"NOR, ({ "dafo xiang", "xiang", "dafo" }) );
 	set_weight(3000);
 	set_max_encumbrance(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "×ð");
-		set("long", "Ò»×ðÃæÄ¿´ÈÏéµÄÈçÀ´·ðÏñ¡£ºÃÏóÊÇÓÃ»Æ½ðÖý¾ÍµÄ¡£\n");
+		set("unit", "å°Š");
+		set("long", "ä¸€å°Šé¢ç›®æ…ˆç¥¥çš„å¦‚æ¥ä½›åƒã€‚å¥½è±¡æ˜¯ç”¨é»„é‡‘é“¸å°±çš„ã€‚\n");
 		set("value", 1000);
 		set("material", "gold");
 		set("no_get",1);
@@ -36,7 +36,7 @@ void init()
 		ob->set_amount(10);
 		ob->move(this_object());
 		this_object()->add("amount", -10);
-		tell_object(me, "\nÄãºöÈ»¿´µ½¹¦µÂÏäÀïÓÐÊ²÷á¶«Î÷ÔÚÉÁÉÁ·¢¹â£¡\n\n");
+		tell_object(me, "\nä½ å¿½ç„¶çœ‹åˆ°åŠŸå¾·ç®±é‡Œæœ‰ä»€éº½ä¸œè¥¿åœ¨é—ªé—ªå‘å…‰ï¼\n\n");
 		me->add("combat_exp", 1);
 	}
 	add_action("do_put", "put");
@@ -50,19 +50,19 @@ int do_put(string arg)
 
 	me = this_player();
 
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
 	if( sscanf(arg, "%s in %s", item, target)!=2 
 	||  sscanf(item, "%d %s", amount, item)!=2
 	||  !objectp(obj = present(item, me)) )
 
-	return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+	return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( obj->query("money_id") == "silver" 
 	&&  obj->query_amount() >= 5 && amount >= 5 ) 
 	{
 		if( me->query("begger") > 0) {
-			message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+			message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
 				obj->query("unit"), obj->name(), 
 				this_object()->name()),me );
 			obj->set_amount(obj->query_amount() - amount);;

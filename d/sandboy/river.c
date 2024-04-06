@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "长江边上");
 	set("long", @LONG
-��������ˮ,�����뺣,���紵��,����΢΢�Ľ�ˮ����Ϣ,�������
-�ݰѽ�����׺�÷�������,���ĶԶ˾��Ǳ��ұ���֮��---����.
+滚滚长江水,奔流入海,北风吹来,带着微微的江水的气息,青青的绿
+草把江岸点缀得分外美丽,江的对端就是兵家必争之地---竞陵.
 LONG
 	);
 	set("no_clean_up", 0);

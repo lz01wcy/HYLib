@@ -1,4 +1,4 @@
-// dubi.c ��������
+// dubi.c 独臂神尼
 
 #include <ansi.h>
 
@@ -9,15 +9,15 @@ int do_skills(string arg);
 
 void create()
 {
-	set_name("��������", ({ "dubi shenni", "dubi" }));
-	set("gender", "Ů��");
+	set_name("独臂神尼", ({ "dubi shenni", "dubi" }));
+	set("gender", "女性");
 	set("age", 44);
 	set("str", 25);
 	set("dex", 20);
 	set("no_get", 1);
-	set("long", "����һλ����Ů�ᣬ���շ�����Ŀ��ǰ����\n"+
-	"һֻ����տ���Ҳ�����Ƕ���һ�ۣ�������ˣ�\n"+
-	"��Ȼ�ڲ�ס�����˵ķ�ɡ�\n");
+	set("long", "这是一位白衣女尼，手握拂尘，目视前方。\n"+
+	"一只长袖空空如也，显是断了一臂，尽管如此，\n"+
+	"仍然掩不住她迷人的风采。\n");
 	set("combat_exp", 5000000);
 	set("score", 10000);
 	set("shen_type", 1);
@@ -42,9 +42,9 @@ void create()
 	set("max_neili", 1500);
 	set("jiali", 100);
         set("inquiry", ([
-                "����" : "����̾��һ������˵���������ҵĵ�����ӣ�\n�˳���ͦ��������ֻ��ϧ��ΤС��ƭȥ�ˡ�\n",
+                "阿珂" : "神尼叹了一口气，说道：她是我的得意弟子，\n人长得挺美，唉，只可惜被韦小宝骗去了。\n",
         ]) );
-	create_family("������", 3, "����");
+	create_family("铁剑门", 3, "弟子");
 	setup();
         carry_object(__DIR__"obj/fuchen")->wield();
 	carry_object(__DIR__"obj/ni-cloth")->wear();
@@ -66,8 +66,8 @@ int recognize_apprentice(object ob)
 {
 	if ((ob->query("weiwang")+ob->query("meili"))<60)
 	{
-		message_vision("$Nҡ��ҡͷ��\n",this_object());
-		command("tell "+ob->query("id")+"�����ز���ʶ��Ϊʲô��һ��Ҫ�����أ� \n"); 
+		message_vision("$N摇了摇头。\n",this_object());
+		command("tell "+ob->query("id")+"你我素不相识，为什么我一定要教你呢？ \n"); 
 		return 0;
 	}
 	return 1;	
@@ -81,18 +81,18 @@ int do_skills(string arg)
 	if(wizardp(ob)) return 0;
 	if (ob->query("weiwang")<60)
 	{
-		message_vision("$Nҡ��ҡͷ��\n",this_object());
-		write("����Ů��˵��������ô�ܿ��ҵ��书�أ�\n");
+		message_vision("$N摇了摇头。\n",this_object());
+		write("白衣女尼说道：你怎么能看我的武功呢？\n");
 		return 1;
 	}
-	command("tell "+ob->query("id")+" �����е��书���£�\n"+
-"  �����Ṧ (dodge)                         - ��ɲ� 150/    \n"+
-"  �����ڹ� (force)                         - һ����ʦ  90/    \n"+
-"  �����м� (parry)                         - һ����ʦ  90/    \n"+
-"  ����ȭ�� (unarmed)                       - һ����ʦ  90/    \n"+
-"  �����޷� (whip)                          - ��ɲ� 150/    \n"+
-"����糾�� (qiufeng-chenfa)                - ��ɲ� 150/    \n"+
-"�����аٱ� (shenxing-baibian)              - ��ɲ� 150/    \n");
+	command("tell "+ob->query("id")+" 我所有的武功如下：\n"+
+"  基本轻功 (dodge)                         - 深不可测 150/    \n"+
+"  基本内功 (force)                         - 一代宗师  90/    \n"+
+"  基本招架 (parry)                         - 一代宗师  90/    \n"+
+"  基本拳脚 (unarmed)                       - 一代宗师  90/    \n"+
+"  基本鞭法 (whip)                          - 深不可测 150/    \n"+
+"□秋风尘法 (qiufeng-chenfa)                - 深不可测 150/    \n"+
+"□神行百变 (shenxing-baibian)              - 深不可测 150/    \n");
 	return 1;
 }
 
@@ -104,15 +104,15 @@ void greeting(object ob)
 	object man,*obj;
 
 	man=this_object();
-	message_vision("$N̤��������ֻ������Ů���£���Ϣ��ֹ��\n",ob);		
+	message_vision("$N踏进屋来，只见地上女尼横陈，喘息不止。\n",ob);		
 	if( !ob || environment(ob) != environment()) return;
     
 	if((int)ob->query_temp("hastrystab")==6)
 	{
-		message_vision(HIC "$N̤��������ֻ������ʬ���£�һ��Ů�ᴭϢ��ֹ��\n" NOR,ob);		
+		message_vision(HIC "$N踏进屋来，只见地上尸体横陈，一个女尼喘息不止。\n" NOR,ob);		
 		ob->delete_temp("hastrystab");
 		ob->delete_temp("warned2");
-		message_vision("\n����Ů���$N˵��������л��λ"+RANK_D->query_respect(ob)+ "�ε�������ƶ��м�����������Ϊ����\n������һ�����аٱ�����������Ըѧ��ƶ�ᶨ�������ڡ���\n",ob);
+		message_vision("\n白衣女尼对$N说道：“多谢这位"+RANK_D->query_respect(ob)+ "拔刀相助，贫尼感激不尽，无以为报。\n这里有一套神行百变身法，你若愿学，贫尼定倾囊以授。”\n",ob);
 	  if (!me->query("skybook/luding/dubi"))
   	{
   	 me->set("skybook/luding/dubi",1);
@@ -121,20 +121,20 @@ void greeting(object ob)
      score=pot/2;
      me->add("combat_exp",exp);
      me->add("potential",pot);
-     	tell_object(me,HIC"��ɹ��õ��˶�����������Σ�\n�����������������"+
-     	         chinese_number(exp)+"�㾭�顢"+
-               chinese_number(pot)+"��Ǳ���Լ�"+
-               chinese_number(score)+"�㽭��������\n\n"NOR);
+     	tell_object(me,HIC"你成功得到了独臂神尼的信任！\n在这次历练中你获得了"+
+     	         chinese_number(exp)+"点经验、"+
+               chinese_number(pot)+"点潜能以及"+
+               chinese_number(score)+"点江湖阅历。\n\n"NOR);
 
   	}
 		if(ob->query("weiwang")<60)
 		{
 			ob->add("weiwang",10);
-			message_vision(HIC "$N�Ľ�����������ˣ�\n" NOR,ob);
-			command("tell "+ob->query("id")+" �����ڵĽ��������� " +(string)(ob->query("weiwang")));
+			message_vision(HIC "$N的江湖威望提高了！\n" NOR,ob);
+			command("tell "+ob->query("id")+" 你现在的江湖威望是 " +(string)(ob->query("weiwang")));
 			return ;
 		}
-		message_vision(HIC "����Ů���$N΢΢һЦ��\n" NOR,ob);		
+		message_vision(HIC "白衣女尼对$N微微一笑。\n" NOR,ob);		
 		return;
 	}
 	obj = all_inventory(environment(ob));
@@ -150,8 +150,8 @@ void greeting(object ob)
 //			man->set_leader(obj[i]);
 			man->fight_ob(obj[i]);
 			obj[i]->kill_ob(man); 
-			//ԭ���Ƕ�������ɱ���� ����ÿ�θ��¶���ɱһ������
-			//ʱ�䳤�����صĽ䵶 ���������Ҵղ���6������ ��ci wallҪ��ɱ6����
+			//原来是独臂主动杀喇嘛 所以每次更新都会杀一个喇嘛
+			//时间长了满地的戒刀 而且造成玩家凑不齐6个喇嘛 （ci wall要求杀6个）
 		}
 	}
 	return ;

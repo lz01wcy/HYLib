@@ -4,17 +4,17 @@ inherit NPC;
 
 void create()
 {
-set_name("Ğ¡À®Âï",({
+set_name("å°å–‡å˜›",({
 		"xiao lama",
 		"xiao",
 		"lama",
 	}));
 	set("long",
-"ÕâÊÇÑ©É½ËÂµÄĞ¡À®Âï,Á³ÉÏ¹Ò×ÅÌìÕæµÄĞ¦Èİ\n"
+"è¿™æ˜¯é›ªå±±å¯ºçš„å°å–‡å˜›,è„¸ä¸ŠæŒ‚ç€å¤©çœŸçš„ç¬‘å®¹\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 

@@ -2,11 +2,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "É½¶´µ×");
+	set("short", "å±±æ´åº•");
 	set("long", @LONG
-ÕâÊÇÒ»¸ö¼«ÉîµÄÉ½¶´¡£ËÄ´¦ËÀÆø³Á³ÁµÄ£¬Äã¼±µÃ¿ì¿ŞÁËÆğ
-À´¡£¶´±Ú(wall)ÉÏÂúÊÇ»¬ÁïÁïµÄÇàÌ¦¡£ºÜÆæ¹ÖµÄÊÇÕâÀïÓĞ¸ù³¤
-Éş(string)£¬Éş¶ËÏµ×ÅÒ»¸ö´óÊ¯Í·(stone)¡£
+è¿™æ˜¯ä¸€ä¸ªææ·±çš„å±±æ´ã€‚å››å¤„æ­»æ°”æ²‰æ²‰çš„ï¼Œä½ æ€¥å¾—å¿«å“­äº†èµ·
+æ¥ã€‚æ´å£(wall)ä¸Šæ»¡æ˜¯æ»‘æºœæºœçš„é’è‹”ã€‚å¾ˆå¥‡æ€ªçš„æ˜¯è¿™é‡Œæœ‰æ ¹é•¿
+ç»³(string)ï¼Œç»³ç«¯ç³»ç€ä¸€ä¸ªå¤§çŸ³å¤´(stone)ã€‚
 LONG
         );
 	set("coor/x", 1600);
@@ -29,11 +29,11 @@ int do_reach(string arg)
 	if (!arg||arg=="") return 0;
 	if( arg=="stone")
 	{
-message_vision("$NÊÔÖøÈ¥×¥Ê¯Í·£¬µ«×ÜÊÇ²îÒ»µã¹»×Å£¬ÒªÄÜÌø¸ßÒ»µã¾ÍºÃÁË¡£\n",me);
+message_vision("$Nè¯•è‘—å»æŠ“çŸ³å¤´ï¼Œä½†æ€»æ˜¯å·®ä¸€ç‚¹å¤Ÿç€ï¼Œè¦èƒ½è·³é«˜ä¸€ç‚¹å°±å¥½äº†ã€‚\n",me);
 	}
 	if( arg=="string")
 	{
-message_vision("$NÊÔÖøÈ¥×¥³¤Éş£¬µ«×ÜÊÇ²îÒ»µã¹»×Å£¬ÒªÄÜÌø¸ßÒ»µã¾ÍºÃÁË¡£\n",me);
+message_vision("$Nè¯•è‘—å»æŠ“é•¿ç»³ï¼Œä½†æ€»æ˜¯å·®ä¸€ç‚¹å¤Ÿç€ï¼Œè¦èƒ½è·³é«˜ä¸€ç‚¹å°±å¥½äº†ã€‚\n",me);
 	}
 	return 1;
 }
@@ -42,21 +42,21 @@ int do_climb(string arg)
 	object me;
 	me = this_player();
 	if (!arg && (arg != "wall")&& (arg != "string"))
-		return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
 	if( arg=="wall" )
 	{
-message_vision("$N½ÓÁ¬ÊÔÁËºÃ¼¸´Î£¬¿ÉÊÇ¶´±ÚÊµÔÚÊÇÌ«»¬£¬ÔõÃ´Ò²ÉÏ²»È¥¡£\n", me);
+message_vision("$Næ¥è¿è¯•äº†å¥½å‡ æ¬¡ï¼Œå¯æ˜¯æ´å£å®åœ¨æ˜¯å¤ªæ»‘ï¼Œæ€ä¹ˆä¹Ÿä¸Šä¸å»ã€‚\n", me);
 	}
 	if( arg=="string" )
 	{
 		if(me->query_temp("hasjump"))
 		{
 			me->delete_temp("hasjump");
-message_vision("$NË³×Å³¤ÉşÍùÉÏÅÀ£¬ÖÕÓÚÅÀ³öÁËÉ½¶´¡£\n", me);
-message_vision("$NÈàÁËÈàÑÛ¾¦£¬·Â·ğ»¹²»ÊÊÓ¦ÕâÀïµÄ¹âÏß£¬ºÃÏóÓĞ¸öÈËÔÚÃæÇ°¡£\n",me);
+message_vision("$Né¡ºç€é•¿ç»³å¾€ä¸Šçˆ¬ï¼Œç»ˆäºçˆ¬å‡ºäº†å±±æ´ã€‚\n", me);
+message_vision("$Næ‰äº†æ‰çœ¼ç›ï¼Œä»¿ä½›è¿˜ä¸é€‚åº”è¿™é‡Œçš„å…‰çº¿ï¼Œå¥½è±¡æœ‰ä¸ªäººåœ¨é¢å‰ã€‚\n",me);
 			me->move(__DIR__"jinshedong");
 		}
-	else return notify_fail("\nÄã¹»²»×Å¡£\n");
+	else return notify_fail("\nä½ å¤Ÿä¸ç€ã€‚\n");
 	} 
 	return 1;
 }
@@ -65,9 +65,9 @@ int do_jump(string arg)
         object me;
         me = this_player();
 	if (!arg && (arg != "stone") && (arg != "string"))
-		return notify_fail("ÄãÒªÍùÄÇ¶ùÌø£¿\n");
-	message_vision("$NÉîÎüÒ»¿ÚÆø£¬ÏòÉÏÃÍµÄÒ»Ìø£¬Ò»ÏÂ×¥×¡ÁËÊ¯Í·¡£\n", me);
-	message_vision("Ö»Ìı¹ÇÂµÂµÒ»ÕóÂÒÏì£¬Ê¯Í·Ò»ÏÂÀ­µ½ÁËÍ·¡£$N¸ßĞË¼«ÁË¡£\n", me);
+		return notify_fail("ä½ è¦å¾€é‚£å„¿è·³ï¼Ÿ\n");
+	message_vision("$Næ·±å¸ä¸€å£æ°”ï¼Œå‘ä¸ŠçŒ›çš„ä¸€è·³ï¼Œä¸€ä¸‹æŠ“ä½äº†çŸ³å¤´ã€‚\n", me);
+	message_vision("åªå¬éª¨ç¢Œç¢Œä¸€é˜µä¹±å“ï¼ŒçŸ³å¤´ä¸€ä¸‹æ‹‰åˆ°äº†å¤´ã€‚$Né«˜å…´æäº†ã€‚\n", me);
 	me->set_temp("hasjump",1);
 	return 1;
 }

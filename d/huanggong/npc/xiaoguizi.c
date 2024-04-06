@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-   set_name("Ğ¡¹ğ×Ó",({"xiao guizi"}));
-	set("gender", "ÄĞĞÔ");
+   set_name("å°æ¡‚å­",({"xiao guizi"}));
+	set("gender", "ç”·æ€§");
    set("age",14);
    set("combat_exp",200);
    
@@ -11,15 +11,15 @@ void create()
    set_skill("dodge",5);
    set("chat_chance",5);
    set("chat_msg",({
- "Ğ¡¹ğ×ÓµÀ:µ±ÁËÌ«¼àºÃ,³Ô´©²»ÓÃÅÜ.\n",
- "Ğ¡¹ğ×ÓµÀ:ÒªÏë¼û»ÊÉÏµÄ,×¡´óÎİ×ÓµÄ,¸úÎÒµ±Ì«¼àÀ´ÄÄ.\n",
- "Ğ¡¹ğ×ÓµÀ:µ±ÁËÌ«¼à,ÀÏÆÅ¾Í¹Ü²»×ÅÀ²,ÓĞ¶àºÃ.\n",
- "Ğ¡¹ğ×ÓµÀ:ÕæÏë³öÈ¥¶Ä¶ş°Ñ.\n",
- "Ğ¡¹ğ×ÓµÀ:ÒªÊÇÎÒÓĞÒ»°Ñ÷»×Ó¾ÍºÃÁË.\n",
+ "å°æ¡‚å­é“:å½“äº†å¤ªç›‘å¥½,åƒç©¿ä¸ç”¨è·‘.\n",
+ "å°æ¡‚å­é“:è¦æƒ³è§çš‡ä¸Šçš„,ä½å¤§å±‹å­çš„,è·Ÿæˆ‘å½“å¤ªç›‘æ¥å“ª.\n",
+ "å°æ¡‚å­é“:å½“äº†å¤ªç›‘,è€å©†å°±ç®¡ä¸ç€å•¦,æœ‰å¤šå¥½.\n",
+ "å°æ¡‚å­é“:çœŸæƒ³å‡ºå»èµŒäºŒæŠŠ.\n",
+ "å°æ¡‚å­é“:è¦æ˜¯æˆ‘æœ‰ä¸€æŠŠéª°å­å°±å¥½äº†.\n",
  }));
    set("inquiry",([
-   "½ø¹¬":"ÄãÎÊº£¹«¹«¾ÍÊÇ.\n",
-   "Ì«¼à":"ÄãÎÊº£¹«¹«¾ÍÊÇ.\n",
+   "è¿›å®«":"ä½ é—®æµ·å…¬å…¬å°±æ˜¯.\n",
+   "å¤ªç›‘":"ä½ é—®æµ·å…¬å…¬å°±æ˜¯.\n",
    ]));
  setup();
  add_money("silver",1);
@@ -28,17 +28,17 @@ void create()
  int accept_object(object me, object obj)
 {
 	object pai;
-        if( (string) obj->query("name") == "÷»×Ó"
+        if( (string) obj->query("name") == "éª°å­"
         || obj->query("id") =="shai zi")
 	{
-        message_vision("$N¶Ô$nĞ¦ÁËĞ¦£º\n",this_object(),me);
+        message_vision("$Nå¯¹$nç¬‘äº†ç¬‘ï¼š\n",this_object(),me);
         command("cool");
-	command("say ÕæÁË½âÎÒ£¬ÎÒ¾ÍÊÇÒªÕâ¸ö£¡\n");
-	command("say Õâ±¾42ÕÂ¾­£¬¾Í¸øÄãÁË£¡\n");
+	command("say çœŸäº†è§£æˆ‘ï¼Œæˆ‘å°±æ˜¯è¦è¿™ä¸ªï¼\n");
+	command("say è¿™æœ¬42ç« ç»ï¼Œå°±ç»™ä½ äº†ï¼\n");
 	pai = new("/d/city2/obj/book14_5");
 	if(pai)
 	pai->move(me);
-        message_vision("$NÄÃ³öÒ»±¾42ÕÂ¾­¸øÁË$n¡£\n",this_object(),me);
+        message_vision("$Næ‹¿å‡ºä¸€æœ¬42ç« ç»ç»™äº†$nã€‚\n",this_object(),me);
         call_out("destroying", 0, obj,me);                       
 	return 1;	
 	}

@@ -1,16 +1,16 @@
  inherit NPC;
 void create()
 {
-        set_name("ËÕÂê", ({ "xintu"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è‹ç›", ({ "xintu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 55);
         set("str", 10);
         set("long", @LONG
-Ò»¸ö×°Êø»ªÀöµ«ÒÑºÜÆÆ¾ÉµÄ²ØÈË£¬´ïÀµ»î·ğµÄò¯³ÏĞÅÍ½¡£
+ä¸€ä¸ªè£…æŸåä¸½ä½†å·²å¾ˆç ´æ—§çš„è—äººï¼Œè¾¾èµ–æ´»ä½›çš„è™”è¯šä¿¡å¾’ã€‚
 LONG
 );
         set("attitude", "peaceful");
-        set("title", "³¯Ê¥ĞÅÍ½");
+        set("title", "æœåœ£ä¿¡å¾’");
         set("combat_exp", 10000);
         set_skill("unarmed", 70);
 
@@ -20,7 +20,7 @@ LONG
         set("chat_chance", 20);
         set("chat_msg", ({
                 (: random_move :),
-                "\nËÕÂêÃæÏò²¼´ïÀ­¹¬£¬Èı²½Ò»°İ£¬Îå²½Ò»ßµ£¬Ö´×Å¶øÉñÊ¥µØÍùÇ°¹òĞĞ×Å¡£\n",
+                "\nè‹ç›é¢å‘å¸ƒè¾¾æ‹‰å®«ï¼Œä¸‰æ­¥ä¸€æ‹œï¼Œäº”æ­¥ä¸€å©ï¼Œæ‰§ç€è€Œç¥åœ£åœ°å¾€å‰è·ªè¡Œç€ã€‚\n",
         }) ); 
         setup();
         carry_object(__DIR__"obj/hada")->wear();

@@ -5,7 +5,7 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short", "лѷ��");
+        set("short", "谢逊居");
         set("long", @LONG
 LONG );
 set("exits", ([

@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-   set_name(HIR"ÃËÖ÷»¤·¨"NOR, ({ "baobiao" }) );
-   set("long", "ÕâÊÇÃËÖ÷Éí±ßµÄÒ»Î»»¤·¨¡£\n");
+   set_name(HIR"ç›Ÿä¸»æŠ¤æ³•"NOR, ({ "baobiao" }) );
+   set("long", "è¿™æ˜¯ç›Ÿä¸»èº«è¾¹çš„ä¸€ä½æŠ¤æ³•ã€‚\n");
    set("attitude", "friendly");
    set("class", "fighter");
 
@@ -65,7 +65,7 @@ void create()
 
 void leave()
 { object owner;
-   message("vision", name() + "ËÄÖÜÕÅÍûÁËÒ»ÏÂ,ËµµÀ£º¼ÈÈ»ÎŞÊÂ£¬ÊôÏÂÏÈĞĞ¸æÍË¡£\n", environment(), this_object() );
+   message("vision", name() + "å››å‘¨å¼ æœ›äº†ä¸€ä¸‹,è¯´é“ï¼šæ—¢ç„¶æ— äº‹ï¼Œå±ä¸‹å…ˆè¡Œå‘Šé€€ã€‚\n", environment(), this_object() );
         if(objectp(owner=this_object()->query("possessed")))
 		owner->add_temp("number",-1);
    destruct(this_object());
@@ -73,14 +73,14 @@ void leave()
 
 void show(object who)
 {
-   string *cname = ({"×ó»¤·¨", "ÓÒ»¤·¨"});
+   string *cname = ({"å·¦æŠ¤æ³•", "å³æŠ¤æ³•"});
    string *ename = ({"-left", "-right"});
 
 
 
    //this_object()->set_name(cname[current-1], ({ (string)who->query("id")+ename[current-1] }) );   
 
-   message_vision("Ò»ÕóºÚ·ç¹Î¹ı£¬´ÓÖĞ×ß³öÒ»¸öÈË£¬µ½$NÃæÇ°ĞĞÁË¸öÀñ£¬´óÉùËµµÀ£ºÔÚÏÂËæÊ±Ìıµ÷£¡\n", who);
+   message_vision("ä¸€é˜µé»‘é£åˆ®è¿‡ï¼Œä»ä¸­èµ°å‡ºä¸€ä¸ªäººï¼Œåˆ°$Né¢å‰è¡Œäº†ä¸ªç¤¼ï¼Œå¤§å£°è¯´é“ï¼šåœ¨ä¸‹éšæ—¶å¬è°ƒï¼\n", who);
 
     //set the leader of this bing.
    set("owner_id", (string)who->query("id")); 
@@ -92,7 +92,7 @@ void relay_whisper(object me, string msg)
    if (query("owner_id") != me->query("id"))
    {
      message_vision((string)this_object()->query("name") 
-        + "¶Ô×Å$NÀäºßÁËÒ»Éù¡£\n", me);
+        + "å¯¹ç€$Nå†·å“¼äº†ä¸€å£°ã€‚\n", me);
      return;
    }
    
@@ -104,7 +104,7 @@ void relay_whisper(object me, string msg)
        strsrch(msg, "recruit") != -1 ) 
      return;
 
-   message_vision((string)this_object()->query("name") + "¶Ô×Å$NµãÁËµãÍ·¡£\n", me);
+   message_vision((string)this_object()->query("name") + "å¯¹ç€$Nç‚¹äº†ç‚¹å¤´ã€‚\n", me);
    if (msg)
    {
      

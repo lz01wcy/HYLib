@@ -1,4 +1,4 @@
-// /u/beyond/mr/skill/shenyuan-gong.c ÉñÔª¹¦
+// /u/beyond/mr/skill/shenyuan-gong.c ç¥å…ƒåŠŸ
 // this is made by beyond
 // update 1997.6.23
 inherit FORCE;
@@ -10,15 +10,15 @@ int valid_learn(object me)
 {
 
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬ÎŞ·¨Áì»áÉñÔª¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šç¥å…ƒåŠŸã€‚\n");
         if ((int)me->query_skill("murong-xinfa", 1) <= (int)me->query_skill("shenyuan-gong", 1))
-                return notify_fail("ÄãµÄÄ½ÈİĞÄ·¨ĞŞÎª²»¹»£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÉñÔª¹¦¡£\n");
+                return notify_fail("ä½ çš„æ…•å®¹å¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šæ›´é«˜æ·±çš„ç¥å…ƒåŠŸã€‚\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-       return notify_fail("ÉñÔª¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+       return notify_fail("ç¥å…ƒåŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
               
 }
 

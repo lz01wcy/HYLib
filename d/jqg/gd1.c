@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¾øÇé¹Èµ×");
+	set("short", "ç»æƒ…è°·åº•");
 	set("long", @LONG
-Ö»¼û¿Õ¹ÈÎŞÈË£¬ËÄÖÜ»¨²İÃ¯Ê¢¡£²»Ô¶´¦ÓĞÒ»º®Ì¶£¬Ì¶Ë®Çå³º£¬Ì¶±ß
-Ï÷±Ú»·ÁĞ£¬ÍğËÆÉí´¦Ò»¿Ú´ó¾®Ö®µ× ¡£
+åªè§ç©ºè°·æ— äººï¼Œå››å‘¨èŠ±è‰èŒ‚ç››ã€‚ä¸è¿œå¤„æœ‰ä¸€å¯’æ½­ï¼Œæ½­æ°´æ¸…æ¾ˆï¼Œæ½­è¾¹
+å‰Šå£ç¯åˆ—ï¼Œå®›ä¼¼èº«å¤„ä¸€å£å¤§äº•ä¹‹åº• ã€‚
 LONG
 	);
  
@@ -29,13 +29,13 @@ int do_pa(string arg)
 
        if( !arg || arg == "" || arg !=  "up") return 0;
        if ((int)me->query_encumbrance() * 100 / (int)me->query_max_encumbrance() >= 20) 
-       return notify_fail("ÄãÉíÉÏ¸ºÖØÌ«¶à£¬ÅÀ²»ÉÏÈ¥¡£\n");
+       return notify_fail("ä½ èº«ä¸Šè´Ÿé‡å¤ªå¤šï¼Œçˆ¬ä¸ä¸Šå»ã€‚\n");
  
        if((int)me->query_skill("dodge",1) < 100 )  
-       return notify_fail("ÒÔÄãÄ¿Ç°µÄÇá¹¦ĞŞÎª£¬ºÜÄÑÅÀÉÏÈ¥¡£\n"); 
-        message_vision("$N°Ç×¡ÑÒÊ¯£¬Ğ¡ĞÄµÄÅÀÁËÉÏÈ¥¡£\n", me);
+       return notify_fail("ä»¥ä½ ç›®å‰çš„è½»åŠŸä¿®ä¸ºï¼Œå¾ˆéš¾çˆ¬ä¸Šå»ã€‚\n"); 
+        message_vision("$Næ‰’ä½å²©çŸ³ï¼Œå°å¿ƒçš„çˆ¬äº†ä¸Šå»ã€‚\n", me);
        me->move(__DIR__"qb");
-       tell_room(environment(me), me->name() + "´Ó¹Èµ×ÅÀÁËÉÏÀ´¡£\n", ({ me }));
+       tell_room(environment(me), me->name() + "ä»è°·åº•çˆ¬äº†ä¸Šæ¥ã€‚\n", ({ me }));
        return 1;
        
 }
@@ -46,8 +46,8 @@ int do_jump(string arg)
        if (arg != "tan di" ) return 0;
        if ( !arg ) return 0;
        if (!living(me)) return 0;
-       message_vision("$N×İÉíÏòº®Ì¶ÌøÁË½øÈ¥¡£\n", me);
+       message_vision("$Nçºµèº«å‘å¯’æ½­è·³äº†è¿›å»ã€‚\n", me);
        me->move(__DIR__"ht1");
-       tell_room(environment(me), me->name() + "´Ó°¶ÉÏÌøÁË½øÀ´¡£\n", ({ me }));
+       tell_room(environment(me), me->name() + "ä»å²¸ä¸Šè·³äº†è¿›æ¥ã€‚\n", ({ me }));
        return 1;
 }

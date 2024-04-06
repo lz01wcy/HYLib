@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short","É½ÆÂ");
+  set("short","å±±å¡");
   set("long",@LONG
-ÕâÀïÊÇ¶¸ÇÍµÄÉ½ÆÂ¡£´Ë´¦É½ÊÆ¶¸ÇÍ£¬µÇÉ½µÄÈËÒ»¸ö²»
-Ğ¡ĞÄºÜÈİÒ×±ã»áµø¶éµ½ÑÂ¹ÈÖ®ÖĞ¡£
+è¿™é‡Œæ˜¯é™¡å³­çš„å±±å¡ã€‚æ­¤å¤„å±±åŠ¿é™¡å³­ï¼Œç™»å±±çš„äººä¸€ä¸ªä¸
+å°å¿ƒå¾ˆå®¹æ˜“ä¾¿ä¼šè·Œå •åˆ°å´–è°·ä¹‹ä¸­ã€‚
 LONG);
   set("outdoors","yinju");
 set("objects", ([
@@ -25,7 +25,7 @@ int valid_leave(object me, string dir)
     {
        if(objectp(present("wu santong", environment(me))) && 
 (me->query_temp("help_nongfu")!=1))
-            return notify_fail("Å©·òÀ¹×¡ÄãËµ£º¼ÒÊ¦²»¼ûÍâÈË£¡\n");
+            return notify_fail("å†œå¤«æ‹¦ä½ä½ è¯´ï¼šå®¶å¸ˆä¸è§å¤–äººï¼\n");
     }   
        return ::valid_leave(me, dir);
 }

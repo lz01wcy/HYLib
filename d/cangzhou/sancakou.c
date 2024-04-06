@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Èý²íÂ·");
+        set("short", "ä¸‰å²”è·¯");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄÈý²íÂ·ÉÏ¡£ËÄÖÜÈËÀ´ÈËÍù¡£Ìôµ£×ÓµÄÐÐÉÌ£¬¸Ï×Å´ó
-³µµÄÂí·ò£¬ÉÏ¾©¸Ï¿¼µÄÊéÉú£¬ÎõÎõÈÁÈÁ£¬·Ç³£ÈÈÄÖ¡£¶«±±·½ÏòÊÇÍ¨Íù¾©³ÇµÄ±Ø
-¾­Ö®Â·£¬Íù¶«×ß¾ÍÊÇ²×ÖÝÁË£¬Î÷ÃæÊÇÒ»ÌõÍÁÂ·£¬Í¨ÏòºÚÄ¾½Ì¿ØÖÆµÄÆ½¶¨ÖÝ¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£žæ‰¬çš„ä¸‰å²”è·¯ä¸Šã€‚å››å‘¨äººæ¥äººå¾€ã€‚æŒ‘æ‹…å­çš„è¡Œå•†ï¼Œèµ¶ç€å¤§
+è½¦çš„é©¬å¤«ï¼Œä¸Šäº¬èµ¶è€ƒçš„ä¹¦ç”Ÿï¼Œç†™ç†™æ”˜æ”˜ï¼Œéžå¸¸çƒ­é—¹ã€‚ä¸œåŒ—æ–¹å‘æ˜¯é€šå¾€äº¬åŸŽçš„å¿…
+ç»ä¹‹è·¯ï¼Œå¾€ä¸œèµ°å°±æ˜¯æ²§å·žäº†ï¼Œè¥¿é¢æ˜¯ä¸€æ¡åœŸè·¯ï¼Œé€šå‘é»‘æœ¨æ•™æŽ§åˆ¶çš„å¹³å®šå·žã€‚
 LONG
         );
-        set("outdoors", "²×ÖÝ");
+        set("outdoors", "æ²§å·ž");
         set("exits", ([ 
 		"west" : "/d/heimuya/road3",
 		"southeast" : __DIR__"wroad4",

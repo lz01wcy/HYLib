@@ -7,30 +7,30 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-	set_name( YEL "�׽���" NOR, ({ "kong jinjin","kong","jinjin" }) );
-	set("gender", "����" );
-	set("title", "�׼�ͷ�����ϰ�");
+	set_name( YEL "孔进金" NOR, ({ "kong jinjin","kong","jinjin" }) );
+	set("gender", "男性" );
+	set("title", "孔家头巾铺老板");
 	set("age", 47);
 	set("long", @LONG
-�׽�����ϰ忪�����ͷ�����Ѿ��кü����ˣ����ܴ�ҵĺ���������
-����ҲԽ��Խ�󣬿�����ȴ�����帣����Ȼ����վ��̨���к����⡣��
-����ʡ�������ֿ��Լ��ӻ���ǣ�������û��͵���Ļ��ᡣ
+孔进金孔老板开了这家头巾铺已经有好几年了，颇受大家的好评，他的
+生意也越做越大，可是他却不享清福，仍然亲自站柜台，招呼生意。这
+样既省了人手又可以监视伙计们，让他们没有偷懒的机会。
 LONG
     );
 	set("attitude", "friendly");
-	set("rank_info/respect", "�ϸ�");
-	set("rank_info/rude","�����˵�");
+	set("rank_info/respect", "老哥");
+	set("rank_info/rude","老王八蛋");
 	set("combat_exp",100);
 	set("inquiry", ([
-		"ͷ��":"����һ�����������۹��������Ҫ����ô�����ۼҵ�ͷ���أ�\n",
-		"here":"��Ӵ���͹٣�����ͷ�������ݰɣ��ú�תת�ɡ�\n",
+		"头巾":"哎，一看您就是有眼光的主儿，要不怎么想买咱家的头巾呢？\n",
+		"here":"哎哟，客官，您是头回来扬州吧？好好转转吧。\n",
 	]) );
 	set("chat_chance", 40);
 	set("chat_msg", ({
-		"���ϰ����Ӵ���͹٣�һ��������������ˣ������˴�����ɫͷ������ˡ�\n",
-		"���ϰ�����͹٣�����˵û�У������Ķ���ү��Ǯ��ͨ�˵�������������\n",
-		"���ϰ���������͹٣�ѡһ��ϲ����ͷ���ɣ��Ҹ��������������ô����\n",
-		"���ϰ�����Ǻǣ��͹٣���Ҫ�ǲ������Ͷ࿴����ɫ���������æ���ء�\n",
+		"孔老板道：哟，客官，一看您就是练武的人，练武人戴块青色头巾最好了。\n",
+		"孔老板道：客官，您听说没有，大理的段王爷出钱开通了到大理的马车。\n",
+		"孔老板道：来，客官，选一块喜欢的头巾吧，我给您打个九五折怎么样？\n",
+		"孔老板道：呵呵，客官，您要是不买您就多看看货色，我这儿还忙着呢。\n",
 	}));
 	set("vendor_goods", ({
 		__DIR__"obj/damao",             
@@ -64,6 +64,6 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	message_vision( "���ϰ�����˽�������æߺ�ȣ�����һ�ƣ���һ�����ۼҵ�ͷ���治������\n",ob);
+	message_vision( "孔老板见有人进来，连忙吆喝：“瞧一瞧，看一看，咱家的头巾真不赖！”\n",ob);
 	return;
 }

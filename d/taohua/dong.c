@@ -6,15 +6,15 @@ int do_pick(string arg) ;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´");
         set("long",@LONG
-ÄãÕı´¦ÔÚÒ»¸öĞ¡É½¶´ÖĞ¡£ÕâÀï¹âÏßºÜ°µ£¬Ö»ÄÜÒşÒşÔ¼Ô¼¿´³öµØÉÏÓĞÒ»¶Ñ
-¸É²İ¡£¸É²İÉÏºÃÏó·Å×ÅÒ»¸öÊ¯Ï»(xia)¡£ ÄãÍ»È»ÎÅµ½Ò»¹ÉÄÑÎÅµÄÆøÎ¶£¬ÏÔÈ»
-ÊÇÓĞÈË³¤ÆÚ×¡ÔÚÕâÀïÈ´²»´òÉ¨µÄÔµ¹Ê¡£
+ä½ æ­£å¤„åœ¨ä¸€ä¸ªå°å±±æ´ä¸­ã€‚è¿™é‡Œå…‰çº¿å¾ˆæš—ï¼Œåªèƒ½éšéšçº¦çº¦çœ‹å‡ºåœ°ä¸Šæœ‰ä¸€å †
+å¹²è‰ã€‚å¹²è‰ä¸Šå¥½è±¡æ”¾ç€ä¸€ä¸ªçŸ³åŒ£(xia)ã€‚ ä½ çªç„¶é—»åˆ°ä¸€è‚¡éš¾é—»çš„æ°”å‘³ï¼Œæ˜¾ç„¶
+æ˜¯æœ‰äººé•¿æœŸä½åœ¨è¿™é‡Œå´ä¸æ‰“æ‰«çš„ç¼˜æ•…ã€‚
 LONG);   
         set("item_desc", ([
         "xia" : @TEXT
-Äã×ĞÏ¸¿´ÁËÒ»ÏÂÊ¯Ï»£¬·¢ÏÖÀïÃæËÆºõ·Å×ÅÒ»±¾Êé£¬ËÆºõ¿ÉÒÔÊÔ×ÅÄÃ³öÀ´(pick book)¡£
+ä½ ä»”ç»†çœ‹äº†ä¸€ä¸‹çŸ³åŒ£ï¼Œå‘ç°é‡Œé¢ä¼¼ä¹æ”¾ç€ä¸€æœ¬ä¹¦ï¼Œä¼¼ä¹å¯ä»¥è¯•ç€æ‹¿å‡ºæ¥(pick book)ã€‚
 TEXT ]) );
         set("exits", ([
             "out"  : __DIR__"dongkou",
@@ -34,14 +34,14 @@ int do_pick(string arg)
 
        me = this_player();
        if( !arg || arg!="book" )
-              return notify_fail("ÄãÒªÄÃÊ²Ã´?\n");
+              return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆ?\n");
        if ( !me->query("jiuyin/full") && me->query("jiuyin/shang") && !present("jiuyin shangjuan", me) )  {
               obj = new ("/clone/book/jiuyin-shang");
               obj->move(me);
-              message_vision("$N´ÓÊ¯Ï»ÖĞÈ¡³öÒ»±¾Êé¡£\n",me );
-message("channel:rumor", MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+this_player()->query("name")+"ÄÃµ½¾ÅÒõÕæ¾­ÉÏ¾íÀ²¡£\n"NOR, users());
+              message_vision("$Nä»çŸ³åŒ£ä¸­å–å‡ºä¸€æœ¬ä¹¦ã€‚\n",me );
+message("channel:rumor", MAG"ã€è°£è¨€ã€‘æŸäººï¼š"+this_player()->query("name")+"æ‹¿åˆ°ä¹é˜´çœŸç»ä¸Šå·å•¦ã€‚\n"NOR, users());
        }
        else
-              return notify_fail("ÄãÒªÄÃÆğÄÇ±¾Êé£¬È´·¢ÏÖÄã¿´»¨ÁËÑÛ£¬ÆäÊµÄÇÀïÊ²Ã´¶¼Ã»ÓĞ¡£\n");
+              return notify_fail("ä½ è¦æ‹¿èµ·é‚£æœ¬ä¹¦ï¼Œå´å‘ç°ä½ çœ‹èŠ±äº†çœ¼ï¼Œå…¶å®é‚£é‡Œä»€ä¹ˆéƒ½æ²¡æœ‰ã€‚\n");
        return 1;
 }

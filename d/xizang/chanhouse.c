@@ -1,10 +1,10 @@
  inherit ROOM;
 void create()
 {
-        set("short", "ìø·¿");
+        set("short", "ç¦…æˆ¿");
         set("long", @LONG
-ìø·¿Òõ°µ³±Êª£¬ÆÆ¾É²»¿°£¬ºÍÐÛÎ°¹åÀöµÄ²¼´ïÀ­¹¬ÐÐ³ÉÏÊÃ÷µÄ¶Ô±È¡£Ã¿Ò»¸ö½ø
-Èëìø·¿µÄÈË¶¼¸Ðµ½Òõ°µË¥ÀÏ£¬ÄºÆø³Á³Á£¬Á¬¸Ð¾õ¶¼ËÆºõÂéÄ¾ÁËÆðÀ´¡£
+ç¦…æˆ¿é˜´æš—æ½®æ¹¿ï¼Œç ´æ—§ä¸å ªï¼Œå’Œé›„ä¼Ÿç‘°ä¸½çš„å¸ƒè¾¾æ‹‰å®«è¡Œæˆé²œæ˜Žçš„å¯¹æ¯”ã€‚æ¯ä¸€ä¸ªè¿›
+å…¥ç¦…æˆ¿çš„äººéƒ½æ„Ÿåˆ°é˜´æš—è¡°è€ï¼Œæš®æ°”æ²‰æ²‰ï¼Œè¿žæ„Ÿè§‰éƒ½ä¼¼ä¹Žéº»æœ¨äº†èµ·æ¥ã€‚
 LONG
         ); 
         set("valid_startroom", 1);

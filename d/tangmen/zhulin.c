@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "ÖñÁÖ");
+	set("short", "ç«¹æž—");
 	set("long", @LONG
-	ÕâÊÇÒ»Æ¬ÓôÓô´Ð´ÐµÄÖñÁÖ£¬ÊñÖÐË®ÍÁºÜÊÊºÏÖñÀàµÄÉú³¤£¬ÕâÆ¬ÖñÁÖÖÐÖñ×ÓÖÖÀà
-·±¶à£¬Ï¸Ï¸¿´À´£¬ÓÐ×´ÈôÂÞºº¶ÇµÄÂÞººÖñ£¬ÓÐÒþÒþºìµãµÄÏæåúÖñ£¬ÓÐ±ÊÖ±´Ö×³µÄéªÖñ..
-ÖñÒ¶µÄÇåÏã£¬ÁîÈËÖÃÆäÖÐ£¬ÐÄ¿õÉñâù¡£ÖñÁÖ¶«ÄÏ£¬ÓÐÒ»ÌõÇàÊ¯Æö³ÉµÄÐ¡Â·¡£
+	è¿™æ˜¯ä¸€ç‰‡éƒéƒè‘±è‘±çš„ç«¹æž—ï¼Œèœ€ä¸­æ°´åœŸå¾ˆé€‚åˆç«¹ç±»çš„ç”Ÿé•¿ï¼Œè¿™ç‰‡ç«¹æž—ä¸­ç«¹å­ç§ç±»
+ç¹å¤šï¼Œç»†ç»†çœ‹æ¥ï¼Œæœ‰çŠ¶è‹¥ç½—æ±‰è‚šçš„ç½—æ±‰ç«¹ï¼Œæœ‰éšéšçº¢ç‚¹çš„æ¹˜å¦ƒç«¹ï¼Œæœ‰ç¬”ç›´ç²—å£®çš„æ¥ ç«¹..
+ç«¹å¶çš„æ¸…é¦™ï¼Œä»¤äººç½®å…¶ä¸­ï¼Œå¿ƒæ—·ç¥žæ€¡ã€‚ç«¹æž—ä¸œå—ï¼Œæœ‰ä¸€æ¡é’çŸ³ç Œæˆçš„å°è·¯ã€‚
 LONG
 	);
         set("outdoors", "tangmen");
@@ -20,7 +20,7 @@ LONG
         set("objects", ([
                 "/clone/misc/dache": 1,
 	]));	
-create_door("north", "ÖñÃÅ", "south", DOOR_CLOSED);
+create_door("north", "ç«¹é—¨", "south", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

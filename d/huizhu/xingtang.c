@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÐÌÌÃ");
+	set("short", "åˆ‘å ‚");
 	set("long",@LONG
-ÕâÀïÊÇºì»¨»áµÄÐÌÌÃ¡£ÐÌÌÃÏòÀ´ÓÉ×·ÃüÊ®¶þÀÉÖ´ÕÆ¡£»áÖÐµÜ×Ó¼ûµ½
-ËûµÄÄÇÕÅÀä±ù±ùµÄÁ³£¬ÍùÍù¶¼Òª´òÀä¾·¡£´óµÖÈôÓÐ»áÖÚÎ¥¹æÌÓÍö£¬ÎÞÂÛ
-ÌìÑÄº£½Ç£¬Ê¯Ë«Ó¢µÄÖ´·¨µ¶×ÜÄÜÇî×·¶øÖÁ£¬ÂÅÂÅ²»Ë¬¡£ÊÇ¹Ê£¬»á¹æ²ÅÉ­
-È»Ò»¹áÖÁ½ñ¡£
+è¿™é‡Œæ˜¯çº¢èŠ±ä¼šçš„åˆ‘å ‚ã€‚åˆ‘å ‚å‘æ¥ç”±è¿½å‘½åäºŒéƒŽæ‰§æŽŒã€‚ä¼šä¸­å¼Ÿå­è§åˆ°
+ä»–çš„é‚£å¼ å†·å†°å†°çš„è„¸ï¼Œå¾€å¾€éƒ½è¦æ‰“å†·ç—‰ã€‚å¤§æŠµè‹¥æœ‰ä¼šä¼—è¿è§„é€ƒäº¡ï¼Œæ— è®º
+å¤©æ¶¯æµ·è§’ï¼ŒçŸ³åŒè‹±çš„æ‰§æ³•åˆ€æ€»èƒ½ç©·è¿½è€Œè‡³ï¼Œå±¡å±¡ä¸çˆ½ã€‚æ˜¯æ•…ï¼Œä¼šè§„æ‰æ£®
+ç„¶ä¸€è´¯è‡³ä»Šã€‚
 LONG );
         set("objects", ([
 		CLASS_D("honghua")+"/shi-shuangying" : 1,

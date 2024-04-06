@@ -1,4 +1,4 @@
-// Room: caolian2 ±±¼ä²ÙÁ··¿
+// Room: caolian2 åŒ—é—´æ“ç»ƒæˆ¿
 // Date: Sep.30 1997
 #include <room.h>
 
@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "±±¼ä²ÙÁ··¿");
+      set("short", "åŒ—é—´æ“ç»ƒæˆ¿");
       set("long", @LONG
-ÕâÀï°ÚÂúÁË´óµ¶³¤½£¡¢É³´ü°óÍÈµÈ£¬ÊÇÎäµ±µÜ×ÓÈÕ³£Á·¹¦µÄµØ·½¡£
+è¿™é‡Œæ‘†æ»¡äº†å¤§åˆ€é•¿å‰‘ã€æ²™è¢‹ç»‘è…¿ç­‰ï¼Œæ˜¯æ­¦å½“å¼Ÿå­æ—¥å¸¸ç»ƒåŠŸçš„åœ°æ–¹ã€‚
 LONG );
 
       set("exits", ([ /* sizeof() == 1 */
@@ -16,7 +16,7 @@ LONG );
       ]));
 //      set("no_clean_up", 0);
       set("objects", ([
-              "/d/shaolin/npc/mu-ren" : 4,  //ËÄ¸öÄ¾ÈË
+              "/d/shaolin/npc/mu-ren" : 4,  //å››ä¸ªæœ¨äºº
       ]));
       setup();
       replace_program(ROOM);

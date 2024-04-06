@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÕòÔÀ¹¬");
+        set("short", "é•‡å²³å®«");
 	set("long", @LONG
-ÕòÔÀ¹¬ÒÐ±Ú¶ø¹¹£¬ËÄ±ßËÉÁÖ±ÎÈÕ£¬¾°É«ÓÄÃÀ¡£¹¬Ç°ÓÐÓñ¾®(jing)£¬Ïà
-´«¾®ÖÐÔøÉúÇ§Ò¶°×Á«¡£ÕâÀïµØÊÆÂÔÎªÆ½Ì¹£¬ÉÏ¡¢ÏÂÉ½µÄÓÎ¿Í¶àÔÚ´ËÉÔ×÷ÐÝ
-Ï¢ÔÙ¼ÌÐøÇ°ÐÐ¡£¸½½üÓÐ¼¸¼ä¼òÂªµÄÂÃÉç£¬ÓûµÇ¶«·å¹ÛÈÕ³öÕß£¬´ó¶¼ÓÚÍ·Íí
-ÐªÏ¢ÓÚ´Ë¡£
+é•‡å²³å®«å€šå£è€Œæž„ï¼Œå››è¾¹æ¾æž—è”½æ—¥ï¼Œæ™¯è‰²å¹½ç¾Žã€‚å®«å‰æœ‰çŽ‰äº•(jing)ï¼Œç›¸
+ä¼ äº•ä¸­æ›¾ç”Ÿåƒå¶ç™½èŽ²ã€‚è¿™é‡Œåœ°åŠ¿ç•¥ä¸ºå¹³å¦ï¼Œä¸Šã€ä¸‹å±±çš„æ¸¸å®¢å¤šåœ¨æ­¤ç¨ä½œä¼‘
+æ¯å†ç»§ç»­å‰è¡Œã€‚é™„è¿‘æœ‰å‡ é—´ç®€é™‹çš„æ—…ç¤¾ï¼Œæ¬²ç™»ä¸œå³°è§‚æ—¥å‡ºè€…ï¼Œå¤§éƒ½äºŽå¤´æ™š
+æ­‡æ¯äºŽæ­¤ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 3 */
             "northdown"  : __DIR__"jinsuo",
@@ -20,7 +20,7 @@ LONG );
             __DIR__"npc/gao-genming" : 1,
         ]));
         set("item_desc", ([
-            "jing" : "¾®ÖÐË®É«±ÌÍ¸£¬ÞäÊÖ¿ÉÒû¡£\n",
+            "jing" : "äº•ä¸­æ°´è‰²ç¢§é€ï¼ŒæŽ¬æ‰‹å¯é¥®ã€‚\n",
         ]));
 
 //        set("no_clean_up", 0);
@@ -35,14 +35,14 @@ int valid_leave(object me, string dir)
 {
 	if (dir != "northdown" )
 	{
-		if(me->query("family/family_name") !="»ªÉ½ÅÉ")
+		if(me->query("family/family_name") !="åŽå±±æ´¾")
 		{
 			if(me->query("combat_exp") >= 100)
 			{
 				if(present("gao genming", environment(me)) && living(present("gao genming", environment(me))))
 				{
 					return notify_fail(
-"¸ß¸ùÃ÷ºÈµÀ£ººóÃæÊÇ±¾ÅÉÖØµØ£¬ÕâÎ»" + RANK_D->query_respect(me) + "ÇëÖ¹²½¡£\n");
+"é«˜æ ¹æ˜Žå–é“ï¼šåŽé¢æ˜¯æœ¬æ´¾é‡åœ°ï¼Œè¿™ä½" + RANK_D->query_respect(me) + "è¯·æ­¢æ­¥ã€‚\n");
 				}
 				else
 					return ::valid_leave(me, dir);

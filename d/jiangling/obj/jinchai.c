@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-	set_name(HIY"½ğîÎ"NOR, ({"jinchai"}));
+	set_name(HIY"é‡‘é’—"NOR, ({"jinchai"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°ü");
-		set("long", "ÕâÊÇÒ»°üºş±±²úµÄÖĞÒ©²Ä¡£\n");
+		set("unit", "åŒ…");
+		set("long", "è¿™æ˜¯ä¸€åŒ…æ¹–åŒ—äº§çš„ä¸­è¯æã€‚\n");
 		set("value", 5000);
 	}
 	setup();
@@ -27,16 +27,16 @@ void create()
 int do_eat(string arg)
 {
 	object me = this_player();
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 	if ((int)me->query("eff_qi") == (int)me->query("max_qi"))
-		return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃÒ©¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨è¯ã€‚\n");
 	else {
 		me->receive_curing("qi", 50);
-		message_vision("$N³ÔÏÂÒ»°ü½ğîÎ£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n", me);
+		message_vision("$Nåƒä¸‹ä¸€åŒ…é‡‘é’—ï¼Œæ°”è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n", me);
 		me->start_busy(2);
 		destruct(this_object());
 		return 1;

@@ -5,20 +5,20 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIR"ÊÈÑª½£"NOR, ({ "shixue sword","sword" }) );
+        set_name(HIR"å—œè¡€å‰‘"NOR, ({ "shixue sword","sword" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÕ´ÂúÁËÎŞÊıÈËÏÊÑªµÄ±¦½£¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæ²¾æ»¡äº†æ— æ•°äººé²œè¡€çš„å®å‰‘ã€‚\n");
                 set("value", 400);
                 set("material", "steel");
         }
         init_sword(555);
 
-        set("wield_msg", HIR"$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ,¶ÙÊ±É±Æø±ÆÈË.\n");
-        set("unwield_msg", YEL"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ,É±Æø½¥½¥µÄÏûÊ§ÁË¡£\n");
+        set("wield_msg", HIR"$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­,é¡¿æ—¶æ€æ°”é€¼äºº.\n");
+        set("unwield_msg", YEL"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜,æ€æ°”æ¸æ¸çš„æ¶ˆå¤±äº†ã€‚\n");
 
 
         setup();

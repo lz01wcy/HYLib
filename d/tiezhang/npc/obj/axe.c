@@ -5,19 +5,19 @@ inherit AXE;
 
 void create()
 {
-	set_name(RED"ÌúÑªÆÆÉË¸«"NOR, ({ "bigaxe", "axe" }) );
+	set_name(RED"é“è¡€ç ´ä¼¤æ–§"NOR, ({ "bigaxe", "axe" }) );
 	set_weight(6000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("material", "steel");
-		set("long", "ÕâÊÇÒ»°Ñ³ÁÖØµÄÌúÑªÆÆÉË¸«£¬¿³Æğ¶«Î÷À´·Ç³£Àúº¦¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠæ²‰é‡çš„é“è¡€ç ´ä¼¤æ–§ï¼Œç èµ·ä¸œè¥¿æ¥éå¸¸å†å®³ã€‚\n");
 		set("value", 1500);
 //                set("no_put", 1);
 //                set("no_drop", 1);
- 		set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+ 		set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“ä½œæ­¦å™¨ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 	init_axe(800, TWO_HANDED);
 	setup();

@@ -4,14 +4,14 @@
 inherit ITEM;
 void create()
 {
-    set_name("ÂïÄØ¶Ñ", ({ "ÂïÄØ¶Ñ","mani picture","picture"}));
+    set_name("å˜›å‘¢å †", ({ "å˜›å‘¢å †","mani picture","picture"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "·ù");
+        set("unit", "å¹…");
                 set("long",
-            "ÃÜÃÜÂéÂé¿ÌÂúÁË¸÷ÖÖÉñ·ğºÍ×Ú½ÌóğÑÔÒÔ¼°²Ø´«·ğ¾­¡£\n");
+            "å¯†å¯†éº»éº»åˆ»æ»¡äº†å„ç§ç¥ä½›å’Œå®—æ•™ç®´è¨€ä»¥åŠè—ä¼ ä½›ç»ã€‚\n");
                 set("value", 70);
                 set("material", "stone");
                 set("no_shown",1);

@@ -6,17 +6,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("´äÓñÅıÅÃ", ({ "pipa" }) );
+        set_name("ç¿ ç‰çµç¶", ({ "pipa" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»¸ö´äÓñËùÖÆµÄÅıÅÃ\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªç¿ ç‰æ‰€åˆ¶çš„çµç¶\n");
                 set("value", 3);
                 set("material", "stone");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(15);

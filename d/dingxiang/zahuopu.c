@@ -1,13 +1,13 @@
 // /d/yazhang/zahuopu.c
-// Room in ����
+// Room in 牙帐
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "�ӻ���");
+	set("short", "杂货铺");
 	set("long", @LONG
-������˵�ط����󣬵�����ȴ���٣�����������Ϊ���֡���Ϊ���
-�ӻ��Ļ���ǳ�ȫ��������һЩϡ��ŹֵĶ������������������Ŀ��ˡ�
+这里虽说地方不大，但是人却不少，熙熙攘攘颇为热闹。因为这个
+杂货的货物非常全，而且有一些稀奇古怪的东西，所以引来大批的客人。
 LONG
 	);
 set("exits", ([

@@ -2,17 +2,17 @@
 inherit ROOM;
 void create()
 {
-  set("short","Î÷ÃÅ");
+  set("short","è¥¿é—¨");
   set("long",
-       "ÕâÊÇ¸öÉ½×¯µÄÎ÷ÃÅ¡£¹°ÔÂÐÎµÄÖñÃÅ·ÖÍâÑÅÖÂ£¬ÃÅÉÏ¹Ò×Å\n"
-   "Ò»¿éÖñÅÆ(pai)¡£Î÷ÃÅÍâÃæÔÓ²Ý´ÔÉú¡£\n"
+       "è¿™æ˜¯ä¸ªå±±åº„çš„è¥¿é—¨ã€‚æ‹±æœˆå½¢çš„ç«¹é—¨åˆ†å¤–é›…è‡´ï¼Œé—¨ä¸ŠæŒ‚ç€\n"
+   "ä¸€å—ç«¹ç‰Œ(pai)ã€‚è¥¿é—¨å¤–é¢æ‚è‰ä¸›ç”Ÿã€‚\n"
       );
   set("exits",([
       "west" : __DIR__"cao1",
       "east" : __DIR__"changlang",
      ]));
   set("item_desc",([
-  "pai" : "Î÷ÃÅÍâÃæÓÐ¶¾Éß³öÃ»£¬É÷ÐÐ¡£\n" ,
+  "pai" : "è¥¿é—¨å¤–é¢æœ‰æ¯’è›‡å‡ºæ²¡ï¼Œæ…Žè¡Œã€‚\n" ,
   ]));
   set("objects",([
     __DIR__"npc/menwei" : 1,
@@ -28,12 +28,12 @@ int valid_leave(object me, string dir)
 	   && ((int)me->query("shen")>300)
 	   && objectp(present("men wei", environment(me))) )
 	 return notify_fail
-		("ÃÅÎÀ°ÑÊÖÒ»À¹£ºÄã²»ÄÜ½øÈ¥£¡\n");
+		("é—¨å«æŠŠæ‰‹ä¸€æ‹¦ï¼šä½ ä¸èƒ½è¿›åŽ»ï¼\n");
 	if (  (dir == "west")
 	   && ((int)me->query("combat_exp") < 300)
 	   && objectp(present("men wei", environment(me))) )
 	 return notify_fail
-		("ÃÅÎÀ°ÑÊÖÒ»À¹£ºÄãµÄ¾­ÑéÌ«µÍ£¬»á±»¶¾ÉßÒ§ËÀµÄ£¡»¹ÊÇ²»ÒªÂÒ´³µÄºÃ¡£\n");
+		("é—¨å«æŠŠæ‰‹ä¸€æ‹¦ï¼šä½ çš„ç»éªŒå¤ªä½Žï¼Œä¼šè¢«æ¯’è›‡å’¬æ­»çš„ï¼è¿˜æ˜¯ä¸è¦ä¹±é—¯çš„å¥½ã€‚\n");
 	return ::valid_leave(me, dir);
 }
 

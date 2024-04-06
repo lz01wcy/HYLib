@@ -6,19 +6,19 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIC"·ïÎ²¼ı"NOR, ({ "fengwei jian", "arrow" }) );
+        set_name(HIC"å‡¤å°¾ç®­"NOR, ({ "fengwei jian", "arrow" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Êø");
+                set("unit", "æŸ");
                 set("value", 0);
-                set("base_unit", "Ö§");
+                set("base_unit", "æ”¯");
                 set("base_weight", 300);
                 set("base_value", 0);
                 set("material", "iron");
-                set("long", "·ïÎ²¼ıÁ¬Öé¼ı·¢£¬ÊÆµÀĞ×ÃÍ¡£\n");
-                set("wield_msg", HIC"$NÑ¸ËÙµØ´Ó¼ı´üÖĞ³é³öÒ»Êø·ïÎ²¼ı£¬À­ÏÒÔÚÊÖ£¬¾Í´ı·¢³ö£¡\n"NOR);
-                set("unwield_msg",HIC"$N½«ÊÖÀïÊ£ÏÂµÄ·ïÎ²¼ı·Å»Ø¼ı´üÖĞ¡£\n"NOR);
+                set("long", "å‡¤å°¾ç®­è¿ç ç®­å‘ï¼ŒåŠ¿é“å‡¶çŒ›ã€‚\n");
+                set("wield_msg", HIC"$Nè¿…é€Ÿåœ°ä»ç®­è¢‹ä¸­æŠ½å‡ºä¸€æŸå‡¤å°¾ç®­ï¼Œæ‹‰å¼¦åœ¨æ‰‹ï¼Œå°±å¾…å‘å‡ºï¼\n"NOR);
+                set("unwield_msg",HIC"$Nå°†æ‰‹é‡Œå‰©ä¸‹çš„å‡¤å°¾ç®­æ”¾å›ç®­è¢‹ä¸­ã€‚\n"NOR);
         }
         set_amount(20);
         init_throwing(25);

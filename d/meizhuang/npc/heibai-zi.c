@@ -5,13 +5,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ºÚ°××Ó", ({ "heibai zi", "zi" }));
-        set("title", "Ã·×¯¶þ×¯Ö÷");
+        set_name("é»‘ç™½å­", ({ "heibai zi", "zi" }));
+        set("title", "æ¢…åº„äºŒåº„ä¸»");
         set("long",
-                "Ëû¾ÍÊÇÃ·×¯ËÄÎ»×¯Ö÷ÅÅÐÐµÚ¶þµÄÍº±ÊÎÌ¡£\n"
-                "Éí´©Ò»¼þ¸É¸É¾»¾»µÄºÚÉ«³¤ÅÛ¡£\n"
-                "ËûÒÑÄêÓúÎåÑ®£¬Éí²Ä¸ß´ó£¬Ë«ÑÛÉñ¹âÄÚÁ², Ò»Íû±ãÖªÊÇÒ»Î»ÄÚ¼ÒµÄ¸ßÊÖ¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯æ¢…åº„å››ä½åº„ä¸»æŽ’è¡Œç¬¬äºŒçš„ç§ƒç¬”ç¿ã€‚\n"
+                "èº«ç©¿ä¸€ä»¶å¹²å¹²å‡€å‡€çš„é»‘è‰²é•¿è¢ã€‚\n"
+                "ä»–å·²å¹´æ„ˆäº”æ—¬ï¼Œèº«æé«˜å¤§ï¼ŒåŒçœ¼ç¥žå…‰å†…æ•›, ä¸€æœ›ä¾¿çŸ¥æ˜¯ä¸€ä½å†…å®¶çš„é«˜æ‰‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 52);
         set("class", "scholar");
         set("attitude", "peaceful");
@@ -52,7 +52,7 @@ set_skill("kuihua-xinfa", 200);
 	set_temp("apply/defense",150);
 	set_temp("apply/armor",500);
 	set_temp("apply/damage",400);
-        create_family("Ã·×¯", 1, "×¯Ö÷");
+        create_family("æ¢…åº„", 1, "åº„ä¸»");
 
         setup();
         carry_object("/clone/weapon/gangzhang")->wield();
@@ -63,12 +63,12 @@ set_skill("kuihua-xinfa", 200);
 void attempt_apprentice(object ob)
 {
         if ((int)ob->query_skill("wuzheng-xinfa",1) < 90) {
-                command("say ÎÒÊÇ²»ÇáÒ×ÊÕÍ½µÄ¡£");
-                command("say ÔÚÎÒÃ·×¯µÄÄÚ¹¦ÉÏ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸Ã¶àÏÂµã¹¦·ò£¿");
+                command("say æˆ‘æ˜¯ä¸è½»æ˜“æ”¶å¾’çš„ã€‚");
+                command("say åœ¨æˆ‘æ¢…åº„çš„å†…åŠŸä¸Šï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åº”è¯¥å¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬ÔÚÏÂ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œåœ¨ä¸‹å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

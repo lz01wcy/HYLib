@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-set("short",GRN"Ð¡¾¶"NOR);
+set("short",GRN"å°å¾„"NOR);
 set ("long",@long
-Ò»ÌõÇúÇúÕÛÕÛÓÃ¶ìÂÑÊ¯ÆÌ³ÉµÄÐ¡¾¶, Â·Á½ÅÔÂÌÁø³ÉÒõ, Ò»´¦´¦É½Ê¯»¨Ä¾
-µã×ºÔÚÆäÖÐ¡£Ç°Ãæ¾ÍÊÇÐ¡ÌüÁË£¬Ò»Î»ÃÀÀöµÄÉÙÅ®Õ¾ÔÚÌüÇ°£¬Äã±»ËýµÄÈÝÃ²Ëù
-ÎüÒý£¬Èç¹û²»ÊÇÇ×ÑÛËù¼û£¬²»¿ÉÏëÏóÊÀÉÏ»¹ÓÐÕâµÈÈç´ËÃÀÃ²µÄÉÙÅ®¡£
+ä¸€æ¡æ›²æ›²æŠ˜æŠ˜ç”¨é¹…åµçŸ³é“ºæˆçš„å°å¾„, è·¯ä¸¤æ—ç»¿æŸ³æˆé˜´, ä¸€å¤„å¤„å±±çŸ³èŠ±æœ¨
+ç‚¹ç¼€åœ¨å…¶ä¸­ã€‚å‰é¢å°±æ˜¯å°åŽ…äº†ï¼Œä¸€ä½ç¾Žä¸½çš„å°‘å¥³ç«™åœ¨åŽ…å‰ï¼Œä½ è¢«å¥¹çš„å®¹è²Œæ‰€
+å¸å¼•ï¼Œå¦‚æžœä¸æ˜¯äº²çœ¼æ‰€è§ï¼Œä¸å¯æƒ³è±¡ä¸–ä¸Šè¿˜æœ‰è¿™ç­‰å¦‚æ­¤ç¾Žè²Œçš„å°‘å¥³ã€‚
 long);
          set("outdoors","mr");
 /*       set("objects",([

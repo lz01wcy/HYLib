@@ -1,16 +1,16 @@
-// linghu.c Áîºü³å
+// linghu.c ä»¤ç‹å†²
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-	set_name("Áîºü³å", ({ "ling huchong", "ling", "huchong" }));
-	set("nickname", "´óÊ¦ĞÖ");
+	set_name("ä»¤ç‹å†²", ({ "ling huchong", "ling", "huchong" }));
+	set("nickname", "å¤§å¸ˆå…„");
 	set("long", 
-"Áî»¡³åÉí²Ä½ÏÊİ£¬³¤µÄÅ¨Ã¼À«ÑÛ£¬ÆøÓîêÑ°º£¬ËûÔÚ\n"
-"Í¬ÃÅÖĞÅÅĞĞÀÏ´ó£¬ÊÇ»ªÉ½ÅÉÄêÇáÒ»´úÖĞµÄ¶¥¼âºÃÊÖ¡£\n");
-	set("gender", "ÄĞĞÔ");
+"ä»¤å¼§å†²èº«æè¾ƒç˜¦ï¼Œé•¿çš„æµ“çœ‰é˜”çœ¼ï¼Œæ°”å®‡æš„æ˜‚ï¼Œä»–åœ¨\n"
+"åŒé—¨ä¸­æ’è¡Œè€å¤§ï¼Œæ˜¯åå±±æ´¾å¹´è½»ä¸€ä»£ä¸­çš„é¡¶å°–å¥½æ‰‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 28);
 	set("class", "swordsman");
 	set("attitude", "peaceful");
@@ -64,11 +64,11 @@ set_skill("chongling-jian", 380);
         }) );
 	set("card2_count",1);
 
-	create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("åå±±æ´¾", 14, "å¼Ÿå­");
 
 	set("inquiry", ([
-		"·çÇåÑï" : "°¦£¬ÒÑ¾­ºÜ¾ÃÃ»ÓĞ¼ûµ½ËûÀÏÈË¼ÒÁË¡£ÄãÎÊÕâ¸ÉÂï£¿\n",
-		"ÈÎÓ¯Ó¯" : "ÄãÕæÓĞËıµÄÏûÏ¢Âğ,Ëµ°Õ,ÒÔ¼ûËûÉñÇé¼¤¶¯,ºÃÏóÑÛ¾¦ºìºìµÄ£¡\n",
+		"é£æ¸…æ‰¬" : "å”‰ï¼Œå·²ç»å¾ˆä¹…æ²¡æœ‰è§åˆ°ä»–è€äººå®¶äº†ã€‚ä½ é—®è¿™å¹²å˜›ï¼Ÿ\n",
+		"ä»»ç›ˆç›ˆ" : "ä½ çœŸæœ‰å¥¹çš„æ¶ˆæ¯å—,è¯´ç½¢,ä»¥è§ä»–ç¥æƒ…æ¿€åŠ¨,å¥½è±¡çœ¼ç›çº¢çº¢çš„ï¼\n",
 	]));
 	setup();	 	
 	carry_object("/d/heimuya/npc/obj/cloth")->wear();
@@ -91,8 +91,8 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say("ºÎÈÕ²ÅÄÜ¼ûµÀÓ¯Ó¯°¡!" + RANK_D->query_respect(ob)
-	  +"£¬Äã¿ÉÓĞËıµÄÏûÏ¢?\n");
+	say("ä½•æ—¥æ‰èƒ½è§é“ç›ˆç›ˆå•Š!" + RANK_D->query_respect(ob)
+	  +"ï¼Œä½ å¯æœ‰å¥¹çš„æ¶ˆæ¯?\n");
 }
 
 
@@ -104,15 +104,15 @@ int accept_object(object who, object ob)
 	if ( !objectp(ob) ) return 0;
 	if (query("card2_count") == 0)
 	{ 
-		say( "Áîºü³åµÀ: ÎÒÒÑ¾­ÍĞÈËÕÒÓ¯Ó¯È¥ÁË£¬¶àĞ»ÄãÁË!\n" );
+		say( "ä»¤ç‹å†²é“: æˆ‘å·²ç»æ‰˜äººæ‰¾ç›ˆç›ˆå»äº†ï¼Œå¤šè°¢ä½ äº†!\n" );
 		return 1;
 	}
-	if ( !present(ob, who) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£\n");
+	if ( !present(ob, who) ) return notify_fail("ä½ æ²¡æœ‰è¿™ä»¶ä¸œè¥¿ã€‚\n");
 
 	if (  (string)ob->query("id") != "qing xin")
-	    return notify_fail("Áîºü³å²»ĞèÒªÕâ¼ş¶«Î÷¡£\n");
-	say( "Áîºü³åË«ÊÖÅõ×ÅÈÎÓ¯Ó¯µÄĞÅ£¬ÀáÈçÓêÏÂ, Õâ¿é°×»¢ÌÃÁîÅÆÄãÄÃÈ¥»¹¸øÓ¯Ó¯,
-¸æËßËıÎÒ¾ÍÈ¥ÕÒËı!\n" );
+	    return notify_fail("ä»¤ç‹å†²ä¸éœ€è¦è¿™ä»¶ä¸œè¥¿ã€‚\n");
+	say( "ä»¤ç‹å†²åŒæ‰‹æ§ç€ä»»ç›ˆç›ˆçš„ä¿¡ï¼Œæ³ªå¦‚é›¨ä¸‹, è¿™å—ç™½è™å ‚ä»¤ç‰Œä½ æ‹¿å»è¿˜ç»™ç›ˆç›ˆ,
+å‘Šè¯‰å¥¹æˆ‘å°±å»æ‰¾å¥¹!\n" );
 	obn = new("/d/heimuya/npc/obj/card2");
 	obn->move(who);
 	set("card2_count",0);
@@ -128,26 +128,26 @@ void attempt_apprentice(object ob)
 	temp = read_file("/data/FENG", 1, 1);
 	student_num = atoi(temp);
 
-	line = "·çÇåÑïÏÖÔÚ¹²ÓĞ" + temp + "¸öÍ½µÜ¡£\n";
+	line = "é£æ¸…æ‰¬ç°åœ¨å…±æœ‰" + temp + "ä¸ªå¾’å¼Ÿã€‚\n";
 	write(line);
 
 	if ((int)ob->query("shen") < 0) {
-		command("say ÎÒ»ªÉ½ÅÉÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-		command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+		command("say æˆ‘åå±±æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æä¸¥ã€‚");
+		command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
 		return;
 	}
 
 	if ((int)ob->query_int() < 25) {
-		command("say ÒÀÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ×ÊÖÊËÆºõ²»ÊÊºÏÑ§ÎÒ»ªÉ½ÅÉÎä¹¦£¿");
+		command("say ä¾æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„èµ„è´¨ä¼¼ä¹ä¸é€‚åˆå­¦æˆ‘åå±±æ´¾æ­¦åŠŸï¼Ÿ");
 		return;
 	}
 
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 /*
 	        myfam = (mapping)ob->query("family");
- 		if( (myfam["master_id"] == "feng qingyang") || (myfam["master_name"] == "·çÇåÑï"))
+ 		if( (myfam["master_id"] == "feng qingyang") || (myfam["master_name"] == "é£æ¸…æ‰¬"))
 		{
 			temp = read_file("/data/FENG", 1, 1);
 			student_num = atoi(temp);
@@ -158,7 +158,7 @@ void attempt_apprentice(object ob)
 			else if(student_num == 3)
 				temp = "2";
 			write_file("/data/FENG", temp, 1);
-			line = "·çÇåÑïÏÖÔÚ¹²ÓĞ" + temp + "¸öÍ½µÜ¡£\n";
+			line = "é£æ¸…æ‰¬ç°åœ¨å…±æœ‰" + temp + "ä¸ªå¾’å¼Ÿã€‚\n";
 			write(line);
 		}
 */

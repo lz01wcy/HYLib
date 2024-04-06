@@ -5,11 +5,11 @@ void init();
 int do_move(string);
 void create()
 {
-        set("short", "ÄÚÊÒ");
+        set("short", "å†…å®¤");
         set("long",
-             "ÕâÊÇ¡ºÅ·Ñô¿Ë¡»µÄÄÚÊÒ£¬ÄÚ²¿°ÚÉèºÜÓĞÇéÈ¤¡£Îİ½Ç°Ú×ÅÒ»ÅèÃû¹ó\n"
-         "À¼»¨£¬Õı½¾°ÁµØÍÂÂ¶·¼Èï¡£»¨Åè(pen) ÏÂÈöÂäÒ»Ğ©¸¡ÍÁ£¬¿ÉÄÜÊÇ±»ÈË\n"
-         "°á³öÈ¥É¹Ì«ÑôÊ±ÈöÏÂµÄ¡£\n"
+             "è¿™æ˜¯ã€æ¬§é˜³å…‹ã€çš„å†…å®¤ï¼Œå†…éƒ¨æ‘†è®¾å¾ˆæœ‰æƒ…è¶£ã€‚å±‹è§’æ‘†ç€ä¸€ç›†åè´µ\n"
+         "å…°èŠ±ï¼Œæ­£éª„å‚²åœ°åéœ²èŠ³è•Šã€‚èŠ±ç›†(pen) ä¸‹æ’’è½ä¸€äº›æµ®åœŸï¼Œå¯èƒ½æ˜¯è¢«äºº\n"
+         "æ¬å‡ºå»æ™’å¤ªé˜³æ—¶æ’’ä¸‹çš„ã€‚\n"
         );
         set("exits", ([
                 "east" : __DIR__"huayuan",
@@ -17,7 +17,7 @@ void create()
  
         set("no_clean_up", 0);
         set("item_desc", ([
-	    "pen" : "ÕâÊÇ¸ö´ó»¨Åè£¬ºÜ½áÊµ£¬×÷¹¤ºÜ¿¼¾¿¡£\n"
+	    "pen" : "è¿™æ˜¯ä¸ªå¤§èŠ±ç›†ï¼Œå¾ˆç»“å®ï¼Œä½œå·¥å¾ˆè€ƒç©¶ã€‚\n"
 	]));
 	setup();
 }
@@ -33,27 +33,27 @@ int do_move(string arg)
 	object room;
 
 	if ((arg != "pen") || !arg)
-	  return notify_fail("ÄãÒª°áÊ²Ã´£¿\n");
+	  return notify_fail("ä½ è¦æ¬ä»€ä¹ˆï¼Ÿ\n");
 	if((int)me->query("str") < 20)
-	  return notify_fail("Äã°á²»¶¯Ëü£¡\n");
+	  return notify_fail("ä½ æ¬ä¸åŠ¨å®ƒï¼\n");
 	if(!( room = find_object(__DIR__"midaoo")) )
 	   room = load_object(__DIR__"midaoo");
 	if(!objectp(room))  return notify_fail("ERROR:not found 'midao.c' \n");
 	if (!query("exits/down"))
 	  {
 	  set("exits/down", __DIR__"midaoo");
-	  message_vision("$N°á¶¯ÁË»¨Åè£¬Ö»¼û»¨ÅèÏÂÃæÂ¶³öÒ»¸öºÚÓÄÓÄ
-	      µÄ¶´¿Ú¡£\n",me);
+	  message_vision("$Næ¬åŠ¨äº†èŠ±ç›†ï¼Œåªè§èŠ±ç›†ä¸‹é¢éœ²å‡ºä¸€ä¸ªé»‘å¹½å¹½
+	      çš„æ´å£ã€‚\n",me);
 	  room->set("exits/up", __FILE__);
-	  message("vision", "ÍâÃæ´«À´Ò»Õó°á¶¯»¨ÅèµÄÉùÒô£¬Ò»Êø¹âÏßÉäÁË½øÀ´¡£
+	  message("vision", "å¤–é¢ä¼ æ¥ä¸€é˜µæ¬åŠ¨èŠ±ç›†çš„å£°éŸ³ï¼Œä¸€æŸå…‰çº¿å°„äº†è¿›æ¥ã€‚
 	  \n", room);
 	  }
 	 else
 	  {
 	  delete("exits/down");
-	  message_vision("$N°Ñ»¨Åè°á»ØÁËÔ­Î»¡£¶´¿Ú±»·â×¡ÁË¡£\n",me);
+	  message_vision("$NæŠŠèŠ±ç›†æ¬å›äº†åŸä½ã€‚æ´å£è¢«å°ä½äº†ã€‚\n",me);
 	  room->delete("exits/up");
-	  message("vision", "ÍâÃæ´«À´Ò»Õó°á¶¯»¨ÅèµÄÉùÒô£¬¶´¿Ú±»·â×¡ÁË¡£\n", room);
+	  message("vision", "å¤–é¢ä¼ æ¥ä¸€é˜µæ¬åŠ¨èŠ±ç›†çš„å£°éŸ³ï¼Œæ´å£è¢«å°ä½äº†ã€‚\n", room);
 	  }
        return 1;
 }

@@ -7,11 +7,11 @@ string look_gaoshi();
 
 void create()
 {
-    set("short", "Î÷ÃÅ´óµÀ");
+    set("short", "è¥¿é—¨å¤§é“");
 	set("long", @LONG
-ÕâÀïÊÇÑïÖÝÎ÷³ÇÃÅÍâ´óµÀ¡£Î÷Í¨³¤°²³Ç£¬Ïò¶«¾ÍÊÇÎ÷ÃÅÁË¡£ÄÏ±ß£¬ÐÂ¿ªÁË
-¸öÎäµÀ´ó»á³¡£¬Ã¿µ½±ÈÎäÖ®ÆÚ£¬ÈËÉù¶¦·Ð£¬Äã²»½ûÏëÈ¥¼ûÊ¶Ò»ÏÂµ±½ñµÄ³ÉÃûÈË
-Îï¡£
+è¿™é‡Œæ˜¯æ‰¬å·žè¥¿åŸŽé—¨å¤–å¤§é“ã€‚è¥¿é€šé•¿å®‰åŸŽï¼Œå‘ä¸œå°±æ˜¯è¥¿é—¨äº†ã€‚å—è¾¹ï¼Œæ–°å¼€äº†
+ä¸ªæ­¦é“å¤§ä¼šåœºï¼Œæ¯åˆ°æ¯”æ­¦ä¹‹æœŸï¼Œäººå£°é¼Žæ²¸ï¼Œä½ ä¸ç¦æƒ³åŽ»è§è¯†ä¸€ä¸‹å½“ä»Šçš„æˆåäºº
+ç‰©ã€‚
 LONG );
         set("outdoors", "city");
 //	set("no_clean_up", 0);

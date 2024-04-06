@@ -5,10 +5,10 @@ inherit F_UNIQUE;
 void greeting(object);
 void create()
 {
-	set_name("ÇúÑó", ({ "qu yang", "qu"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("æ›²æ´‹", ({ "qu yang", "qu"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 45);
-	set("long", "Ëû¾ÍÊÇÈÕÔÂÉñ½ÌÊ®´ó³¤ÀÏÖ®Ò»£¬ÇÙ¼¼ÌìÏÂÎÞË«¡£\n" );
+	set("long", "ä»–å°±æ˜¯æ—¥æœˆç¥žæ•™åå¤§é•¿è€ä¹‹ä¸€ï¼Œç´æŠ€å¤©ä¸‹æ— åŒã€‚\n" );
 	set("attitude", "friendly");
 	set("shen_type", 1);
 
@@ -39,7 +39,7 @@ void create()
 	map_skill("dodge", "tiyunzong");
 	map_skill("parry", "taiji-dao");
 	map_skill("blade", "taiji-dao");
-	create_family("ÈÕÔÂÉñ½Ì",2,"³¤ÀÏ");
+	create_family("æ—¥æœˆç¥žæ•™",2,"é•¿è€");
 
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();

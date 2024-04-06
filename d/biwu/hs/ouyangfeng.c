@@ -7,13 +7,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("Å·Ñô·æ", ({ "ouyang feng", "ouyang", "feng" }));
-	set("long", "ËûÊÇ°×ÍÕÉ½×¯Ö÷£¬ºÅ³Æ¡°Î÷¶¾¡±µÄÅ·Ñô·æ¡£\n"
-		   +"ÓÉÓÚÏ°Á·¡¸¾ÅÒõÕæ¾­¡¹×ß»ðÈëÄ§£¬ÒÑ±äµÃ¾«\n"
-		   +"Éñ´íÂÒ£¬ÕûÈÕÅûÍ·É¢·¢¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("æ¬§é˜³é”‹", ({ "ouyang feng", "ouyang", "feng" }));
+	set("long", "ä»–æ˜¯ç™½é©¼å±±åº„ä¸»ï¼Œå·ç§°â€œè¥¿æ¯’â€çš„æ¬§é˜³é”‹ã€‚\n"
+		   +"ç”±äºŽä¹ ç»ƒã€Œä¹é˜´çœŸç»ã€èµ°ç«å…¥é­”ï¼Œå·²å˜å¾—ç²¾\n"
+		   +"ç¥žé”™ä¹±ï¼Œæ•´æ—¥æŠ«å¤´æ•£å‘ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 53);
-	set("title", HIR "Î÷¶¾" NOR);
+	set("title", HIR "è¥¿æ¯’" NOR);
 	set("shen_type",-1);
 	set("shen", -150000);
 	set("attitude", "peaceful");
@@ -82,9 +82,9 @@ void create()
         }) );
         set("chat_chance",2);
         set("chat_msg",({
-         "Å·Ñô·æ×ÔÑÔ×ÔÓïµÀ£ººÎÈÕ°×ÍÕÉ½ÅÉ²ÅÄÜÖØ°Ô½­ºþÄØ¡­\n",
-         "Å·Ñô·æµÀ£ºÎÒ¶ùÅ·Ñô¿Ë±ØÄÜ¹»ÖØÕñ°×ÍÕÉ½ÅÉÐÛ·ç£¡\n",
-         "Å·Ñô·æµÀ£º½­ºþÏÕ¶ñ£¬À§ÄÑÖØÖØÄÄ£¡\n",
+         "æ¬§é˜³é”‹è‡ªè¨€è‡ªè¯­é“ï¼šä½•æ—¥ç™½é©¼å±±æ´¾æ‰èƒ½é‡éœ¸æ±Ÿæ¹–å‘¢â€¦\n",
+         "æ¬§é˜³é”‹é“ï¼šæˆ‘å„¿æ¬§é˜³å…‹å¿…èƒ½å¤Ÿé‡æŒ¯ç™½é©¼å±±æ´¾é›„é£Žï¼\n",
+         "æ¬§é˜³é”‹é“ï¼šæ±Ÿæ¹–é™©æ¶ï¼Œå›°éš¾é‡é‡å“ªï¼\n",
         }));
 	setup();
 	carry_object("/d/baituo/obj/shenshezhang")->wield();
@@ -104,8 +104,8 @@ int heal_up()
 void leave()
 {
 	object owner;
-	message("vision",HIG"±ÈÎä½áÊø£¡\n\n"
-		+ name() + HIG"ÉíÐÎÒ»ÉÁ£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+	message("vision",HIG"æ¯”æ­¦ç»“æŸï¼\n\n"
+		+ name() + HIG"èº«å½¢ä¸€é—ªï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }
@@ -132,7 +132,7 @@ if (!me->query_skill("jiuyin-zhengong",1)
 && me->query_temp("hsljn"))
 {
 me->set_temp("hslj/4",1);
-message("channel:chat", "¡¾»ªÉ½ÂÛ½£¡¿ÌýËµ"+me->name() + "´ò°ÜÁË"+ob->query("title")+ob->query("name")+"!"NOR"\n", users());
+message("channel:chat", "ã€åŽå±±è®ºå‰‘ã€‘å¬è¯´"+me->name() + "æ‰“è´¥äº†"+ob->query("title")+ob->query("name")+"!"NOR"\n", users());
         me->add("combat_exp",300);
         me->add("potential",100);
 }

@@ -1,15 +1,15 @@
-// xiaoer2.c Ãæ¹İĞ¡¶ş
+// xiaoer2.c é¢é¦†å°äºŒ
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("Âô²ËµÄ", ({ "caifan" }) );
-	set("gender", "ÄĞĞÔ" );
+        set_name("å–èœçš„", ({ "caifan" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
         set("long",
-                "Ò»¸öÎªÉú»î¶øÖÕÈÕ±¼²¨µÄĞ¡ÉÌÈË£®\n");
+                "ä¸€ä¸ªä¸ºç”Ÿæ´»è€Œç»ˆæ—¥å¥”æ³¢çš„å°å•†äººï¼\n");
 	set("attitude", "friendly");
 	set("vendor_goods", ({
 		__DIR__"obj/cai",

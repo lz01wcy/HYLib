@@ -4,17 +4,17 @@ inherit CLUB;
 
 void create()
 {
-        set_name(HIY"´óÁ¦½ğ¸ÖèÆ"NOR, ({ "jingang chu", "cun" }));
+        set_name(HIY"å¤§åŠ›é‡‘é’¢æµ"NOR, ({ "jingang chu", "cun" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù´óÁ¦½ğ¸ÖèÆ£¬¿É¹¥»÷´óÆ¬µĞÈË¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ä¸€æ ¹å¤§åŠ›é‡‘é’¢æµï¼Œå¯æ”»å‡»å¤§ç‰‡æ•Œäººã€‚\n");
                 set("value", 2000);
                 set("material", "steel");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
 		set("shaolin",1);
         }
         init_club(500);

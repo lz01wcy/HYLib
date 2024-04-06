@@ -7,22 +7,22 @@
 inherit NPC;
 
 string *msg_d = ({
-                      "ËûÂèµÄ","ÄãÂèµÄ","ÉµB","ÎÒ²Ù","²ÙÄã","ºÍÄãÂèË¯",
-                      "²Ù£¡","²Ù!","fuck","FUCK","Fuck","æ»×Ó",
-                      "ÄãÄÌÄÌµÄ","ºÍÄãÂè×ö°®","ËıÂèµÄ","ÄãÒ¯Ò¯µÄ",
-                      "·ÅÄãÂèµÄÆ¨","tmd","TMD","tmmd","TMMD","²ÙÄãÂè","ÈÕËÀÄã","¸ÉÄãÄï",
-                      "²ÙÄã½ã","¹·Æ¨wiz","¹·wiz","ÆÆwiz","ÈÕËÀÄã",
-                      "¸ÉÄãÂè","¸ÉÄãµÄ","£æ£õ£ã£ë","£Æ£Õ£Ã£Ë","F u c k"
-                      ,"f u c k","ËûÂèµÄ","ÄãÂèµÄ","ÉµB","ÎÒ²Ù","²ÙÄã","ºÍÄãÂèË¯",
+                      "ä»–å¦ˆçš„","ä½ å¦ˆçš„","å‚»B","æˆ‘æ“","æ“ä½ ","å’Œä½ å¦ˆç¡",
+                      "æ“ï¼","æ“!","fuck","FUCK","Fuck","å©Šå­",
+                      "ä½ å¥¶å¥¶çš„","å’Œä½ å¦ˆåšçˆ±","å¥¹å¦ˆçš„","ä½ çˆ·çˆ·çš„",
+                      "æ”¾ä½ å¦ˆçš„å±","tmd","TMD","tmmd","TMMD","æ“ä½ å¦ˆ","æ—¥æ­»ä½ ","å¹²ä½ å¨˜",
+                      "æ“ä½ å§","ç‹—å±wiz","ç‹—wiz","ç ´wiz","æ—¥æ­»ä½ ",
+                      "å¹²ä½ å¦ˆ","å¹²ä½ çš„","ï½†ï½•ï½ƒï½‹","ï¼¦ï¼µï¼£ï¼«","F u c k"
+                      ,"f u c k","ä»–å¦ˆçš„","ä½ å¦ˆçš„","å‚»B","æˆ‘æ“","æ“ä½ ","å’Œä½ å¦ˆç¡",
                       "ta nai nai de","tanainaide","tanai naide","ta nainai de","tanainai de","nnd",
-                      "²Ù£¡","²Ù!","fuck","FUCK","Fuck","æ»×Ó",
+                      "æ“ï¼","æ“!","fuck","FUCK","Fuck","å©Šå­",
                       "t nn d","tnnnnd","tnn d","t nnd","t n n d","tn nd","t.m.d"
-                      "ÄãÄÌÄÌµÄ","ºÍÄãÂè×ö°®","ËıÂèµÄ","ÄãÒ¯Ò¯µÄ","t.n.n.d","tnnd"
-                      "Ğ¡Æ¨º¢",
-                      "·ÅÄãÂèµÄÆ¨","tmd","TMD","tmmd","TMMD","²ÙÄãÂè","ÈÕËÀÄã","¸ÉÄãÄï",
-                      "²ÙÄã½ã","¹·Æ¨wiz","¹·wiz","ÆÆwiz","ÈÕËÀÄã","tnnd","TNND","ËûÄÌÄÌµÄ",
-                      "¸ÉÄã","ËÀwiz","ÂèµÄ","µõÄã","¸ÉËÀÄã","²åËÀÄã","Ç¿¼é","×ö¼¦",
-                      "ËûÂèµÄ","ÂèµØ","ÈÕÄã",
+                      "ä½ å¥¶å¥¶çš„","å’Œä½ å¦ˆåšçˆ±","å¥¹å¦ˆçš„","ä½ çˆ·çˆ·çš„","t.n.n.d","tnnd"
+                      "å°å±å­©",
+                      "æ”¾ä½ å¦ˆçš„å±","tmd","TMD","tmmd","TMMD","æ“ä½ å¦ˆ","æ—¥æ­»ä½ ","å¹²ä½ å¨˜",
+                      "æ“ä½ å§","ç‹—å±wiz","ç‹—wiz","ç ´wiz","æ—¥æ­»ä½ ","tnnd","TNND","ä»–å¥¶å¥¶çš„",
+                      "å¹²ä½ ","æ­»wiz","å¦ˆçš„","åŠä½ ","å¹²æ­»ä½ ","æ’æ­»ä½ ","å¼ºå¥¸","åšé¸¡",
+                      "ä»–å¦ˆçš„","å¦ˆåœ°","æ—¥ä½ ",
                       });
 
 string *msg_s = ({
@@ -33,12 +33,12 @@ string *msg_s = ({
 
 void create()
 {
-        set_name("Óü×ä", ({"yu zu","yuzu"}));
-        set("title", HIY"¡¸ËÄÉÈÃÅ¸ßÊÖ¡¹"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç‹±å’", ({"yu zu","yuzu"}));
+        set("title", HIY"ã€Œå››æ‰‡é—¨é«˜æ‰‹ã€"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 30);
         set("per", 5);
-        set("long", HIR"Ò»¸öÉñÃØµÄÓü×ä£¬ÄãÅöÉÏËû×¼ÊÇÄã¸ÉÁËÊ²Ã´»µÊÂ¡£\n"NOR);
+        set("long", HIR"ä¸€ä¸ªç¥ç§˜çš„ç‹±å’ï¼Œä½ ç¢°ä¸Šä»–å‡†æ˜¯ä½ å¹²äº†ä»€ä¹ˆåäº‹ã€‚\n"NOR);
         set("combat_exp", 10000000);
         set("attitude", "peaceful");
         set("dex", 50);
@@ -78,18 +78,18 @@ void relay_channel(object criminal, string channel, string msg)
         {
             if( !wizardp(criminal) && strsrch(msg, msg_d[i]) >= 0)
                    {
-                    message_vision(CYN"ËÄÉÈÃÅ¸ßÊÖºõÈ»³öÏÖ£¬ÈÓ³öË÷Ì×£¬Ò»ÏÂ¾ÍÌ××¡$NµÄ²±×Ó¡£\n$NÉì³¤ÉàÍ·¡¢·­×Å°×ÑÛµØ±»ÍÏ×ßÁË¡£\n"NOR, criminal);
+                    message_vision(CYN"å››æ‰‡é—¨é«˜æ‰‹ä¹ç„¶å‡ºç°ï¼Œæ‰”å‡ºç´¢å¥—ï¼Œä¸€ä¸‹å°±å¥—ä½$Nçš„è„–å­ã€‚\n$Nä¼¸é•¿èˆŒå¤´ã€ç¿»ç€ç™½çœ¼åœ°è¢«æ‹–èµ°äº†ã€‚\n"NOR, criminal);
                     
                     criname = criminal->query("name") + "("+criminal->query("id")+")";
                     howlong=10;
                     
-                    result = sprintf("%sÔÚ%sÆµµÀËµÔà»°(%s)±»ÉèÇô½û %d ·Ö\n",
+                    result = sprintf("%såœ¨%sé¢‘é“è¯´è„è¯(%s)è¢«è®¾å›šç¦ %d åˆ†\n",
                     criname,channel,msg,howlong);
                     criminal->start_busy(50);
                     criminal->set_temp("disable_inputs",1);
 	            call_out("recoveralias", 120);
                     
-                    message("channel:rumor",HIM"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º¾İËµ"+criname+"ÔÚ¹«ÖÚÆµµÀÊ¹ÓÃ´ÖÑÔÀÃÓï£¬±»½ûÖ¹Ê¹ÓÃÖ¸ÁîÁË¡£\n"NOR, users());
+                    message("channel:rumor",HIM"ã€è°£è¨€ã€‘æŸäººï¼šæ®è¯´"+criname+"åœ¨å…¬ä¼—é¢‘é“ä½¿ç”¨ç²—è¨€çƒ‚è¯­ï¼Œè¢«ç¦æ­¢ä½¿ç”¨æŒ‡ä»¤äº†ã€‚\n"NOR, users());
                     return;
                     }
         }
@@ -104,7 +104,7 @@ void relay_channel(object criminal, string channel, string msg)
                     criminal->start_busy(50);
                     criminal->set_temp("disable_inputs",1);
 	            call_out("recoveralias", 120);
-message_vision(CYN"ÓÃ¹«ÖÚÆµµÀ×ö¹ã¸æ,Ì«Ã»µÀµÂÁË!£¬$NµÄÖ¸Áî±»½ûÓÃÁË!¡£\n$NÉì³¤ÉàÍ·¡¢·­×Å°×ÑÛµØ±»ÍÏ×ßÁË¡£\n"NOR, criminal);
+message_vision(CYN"ç”¨å…¬ä¼—é¢‘é“åšå¹¿å‘Š,å¤ªæ²¡é“å¾·äº†!ï¼Œ$Nçš„æŒ‡ä»¤è¢«ç¦ç”¨äº†!ã€‚\n$Nä¼¸é•¿èˆŒå¤´ã€ç¿»ç€ç™½çœ¼åœ°è¢«æ‹–èµ°äº†ã€‚\n"NOR, criminal);
 }
 }
 if (strsrch(msg,"0")>=0 || strsrch(msg,"1")>=0 || strsrch(msg,"2")>=0 || strsrch(msg,"3")>=0
@@ -114,7 +114,7 @@ if (strsrch(msg,"0")>=0 || strsrch(msg,"1")>=0 || strsrch(msg,"2")>=0 || strsrch
  	if( !wizardp(criminal) && sscanf( msg, "%s.%s.%s.%s",ia,ib,ic,id) && strlen(ia)>=1  && strlen(ib)>=1
  	 && strlen(ic)>=1 && strlen(id)>=1 && strlen(msg)>=10)
 {
-                    message_vision(CYN"ÓÃ¹«ÖÚÆµµÀ×ö¹ã¸æ,Ì«Ã»µÀµÂÁË!£¬$NµÄÖ¸Áî±»½ûÓÃÁË!¡£\n$NÉì³¤ÉàÍ·¡¢·­×Å°×ÑÛµØ±»ÍÏ×ßÁË¡£\n"NOR, criminal);
+                    message_vision(CYN"ç”¨å…¬ä¼—é¢‘é“åšå¹¿å‘Š,å¤ªæ²¡é“å¾·äº†!ï¼Œ$Nçš„æŒ‡ä»¤è¢«ç¦ç”¨äº†!ã€‚\n$Nä¼¸é•¿èˆŒå¤´ã€ç¿»ç€ç™½çœ¼åœ°è¢«æ‹–èµ°äº†ã€‚\n"NOR, criminal);
                     criminal->start_busy(50);
                     criminal->set_temp("disable_inputs",1);
 	            call_out("recoveralias", 120);
@@ -128,9 +128,9 @@ void recoveralias()
 {
         this_object()->set_temp("disable_inputs",0);
         this_player()->set_temp("disable_inputs",0);
-     message("system", HIG "\nÂıÂıµØÏµÍ³»Ö¸´ÁËÄãµÄÖ¸Áî....\n\n" NOR,
+     message("system", HIG "\næ…¢æ…¢åœ°ç³»ç»Ÿæ¢å¤äº†ä½ çš„æŒ‡ä»¤....\n\n" NOR,
 		this_object());
-     message("system", HIG "\nÂıÂıµØÏµÍ³»Ö¸´ÁËÄãµÄÖ¸Áî....\n\n" NOR,
+     message("system", HIG "\næ…¢æ…¢åœ°ç³»ç»Ÿæ¢å¤äº†ä½ çš„æŒ‡ä»¤....\n\n" NOR,
 		this_player());
 
 }

@@ -3,15 +3,15 @@ inherit NPC;
 int estate();
 void create()
 {
-        set_name("ÇØ»¤»¨",({"qin huhua","qin"}));
-        set("title","Â³¶«");
+        set_name("ç§¦æŠ¤èŠ±",({"qin huhua","qin"}));
+        set("title","é²ä¸œ");
         set("long","
-ÇØ»¤»¨ÊÇÂ³¶«×î´óÊÀ¼ÒµÄÕâÒ»´úÖ÷ÈË£¬Äê¼ÍÒÑ´óµÃ×ã¹»×öËûÉíÅÔÉÙÅ®µÄ×æ
-¸¸¡£µ«ËûÉíÌå»¹ÊÇ±£ÑøµÃºÜºÃ£¬¾«Á¦»¹ÊÇºÜ³äÅæ£¬ËùÒÔÃ¿ÄêÇïÌì£¬Ëû¶¼Òª
-µ½ÕâÀïÀ´ÍùÒ»¶ÎÈÕ×Ó¡£ÇØ»¤»¨ÔÚÎäÁÖµÄµØÎ»²¢²»µÍ£¬ÒÑ¿ÉÓëµ±´úÈÎºÎÃÅÅÉ
-µÄÕÆÃÅÈË·ÖÍ¥¿¹Àñ¡£\n");
+ç§¦æŠ¤èŠ±æ˜¯é²ä¸œæœ€å¤§ä¸–å®¶çš„è¿™ä¸€ä»£ä¸»äººï¼Œå¹´çºªå·²å¤§å¾—è¶³å¤Ÿåšä»–èº«æ—å°‘å¥³çš„ç¥–
+çˆ¶ã€‚ä½†ä»–èº«ä½“è¿˜æ˜¯ä¿å…»å¾—å¾ˆå¥½ï¼Œç²¾åŠ›è¿˜æ˜¯å¾ˆå……æ²›ï¼Œæ‰€ä»¥æ¯å¹´ç§‹å¤©ï¼Œä»–éƒ½è¦
+åˆ°è¿™é‡Œæ¥å¾€ä¸€æ®µæ—¥å­ã€‚ç§¦æŠ¤èŠ±åœ¨æ­¦æž—çš„åœ°ä½å¹¶ä¸ä½Žï¼Œå·²å¯ä¸Žå½“ä»£ä»»ä½•é—¨æ´¾
+çš„æŽŒé—¨äººåˆ†åº­æŠ—ç¤¼ã€‚\n");
         
-        set("gender","ÄÐÐÔ");
+        set("gender","ç”·æ€§");
         set("group","khlr");
         
         set("age",32);          
@@ -43,7 +43,7 @@ void create()
         ]) );           
         set("chat_chance",1);
         set("chat_msg",({
-                "ÇØ»¤»¨Ð¦µÀ£º¡°ÀÏ·òÁÄ·¢ÉÙÄê¿ñ£¬×ó°Ñ¾Æ£¬ÓÒ±§¼§£¬×íÎÔ¿ì»îÁÖ¡£¡±\n",
+                "ç§¦æŠ¤èŠ±ç¬‘é“ï¼šâ€œè€å¤«èŠå‘å°‘å¹´ç‹‚ï¼Œå·¦æŠŠé…’ï¼Œå³æŠ±å§¬ï¼Œé†‰å§å¿«æ´»æž—ã€‚â€\n",
         }) );                   
         
         

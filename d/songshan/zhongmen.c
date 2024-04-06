@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "ÖÐÃÅ");
+	set("short", "ä¸­é—¨");
 	set("long", @LONG
-ÕâÀïÊÇ¾þ¼«ìøÔºÍ¨ÍùºóÍ¥µÄÖÐÃÅ£¬ÃÅºñÈý´ç£¬ºìËÉÍ­¹¿£¬ÃÅÉÏÁ½·ù
-ÃÅÉñ¾­¶àÄê·çÓê£¬¶àÓÐ°þÂä£¬ÏÖÏÂÑÕÉ«ÉÐÐÂ£¬ÏëÀ´ÊÇáÔÉ½ÅÉÐÂ½üÓÍÆáÁË
-µÄ¡£ÍâÅÉÈËÊ¿µ½´Ë¾Í¸Ã»ØÍ·ÁË¡£
+è¿™é‡Œæ˜¯å³»æžç¦…é™¢é€šå¾€åŽåº­çš„ä¸­é—¨ï¼Œé—¨åŽšä¸‰å¯¸ï¼Œçº¢æ¾é“œç®ï¼Œé—¨ä¸Šä¸¤å¹…
+é—¨ç¥žç»å¤šå¹´é£Žé›¨ï¼Œå¤šæœ‰å‰¥è½ï¼ŒçŽ°ä¸‹é¢œè‰²å°šæ–°ï¼Œæƒ³æ¥æ˜¯åµ©å±±æ´¾æ–°è¿‘æ²¹æ¼†äº†
+çš„ã€‚å¤–æ´¾äººå£«åˆ°æ­¤å°±è¯¥å›žå¤´äº†ã€‚
 LONG );
 	set("outdoors", "songshan");
 	set("exits", ([
@@ -29,10 +29,10 @@ int valid_leave(object me, string dir)
 	mapping myfam;
 	myfam = (mapping)me->query("family");
 	if ( me->query("combat_exp") < 1000 ) return 1;
-	if ( (!myfam || (myfam["family_name"] != "áÔÉ½ÅÉ")) &&
+	if ( (!myfam || (myfam["family_name"] != "åµ©å±±æ´¾")) &&
 		(dir == "north") &&
 		objectp(present("yao hou", environment(me))))
-		return notify_fail("ÀÖºñÒ»Ì§ÊÖÀ¹×¡ÁËÄã£º·ÇáÔÉ½µÜ×Ó£¬µ½´ËÖ¹²½°É¡£\n");
+		return notify_fail("ä¹åŽšä¸€æŠ¬æ‰‹æ‹¦ä½äº†ä½ ï¼šéžåµ©å±±å¼Ÿå­ï¼Œåˆ°æ­¤æ­¢æ­¥å§ã€‚\n");
 	else return 1;
 }
 

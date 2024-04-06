@@ -1,4 +1,4 @@
-// liu.c Áõ´¦Ðþ
+// liu.c åˆ˜å¤„çŽ„
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Áõ´¦Ðþ", ({"liu chuxuan", "liu"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("åˆ˜å¤„çŽ„", ({"liu chuxuan", "liu"}));
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("class", "taoist");
-        set("nickname",WHT"³¤Éú×Ó"NOR);
+        set("nickname",WHT"é•¿ç”Ÿå­"NOR);
         set("long",
-                "Ëû¾ÍÊÇÈ«ÕæÈýÍ½Áõ´¦ÐþÁõÕæÈË£¬ËûÉí²ÄÊÝÐ¡£¬µ«¹ËÅÎ¼ä×ÔÓÐÒ»\n"
-                "ÖÖÍþÑÏÆø¸Å¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸä¸‰å¾’åˆ˜å¤„çŽ„åˆ˜çœŸäººï¼Œä»–èº«æç˜¦å°ï¼Œä½†é¡¾ç›¼é—´è‡ªæœ‰ä¸€\n"
+                "ç§å¨ä¸¥æ°”æ¦‚ã€‚\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 30);
@@ -21,7 +21,7 @@ void create()
         set("con", 28);
         set("dex", 30);
 
-        set("title","È«ÕæÆß×ÓÖ®Èý");
+        set("title","å…¨çœŸä¸ƒå­ä¹‹ä¸‰");
 
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({
@@ -48,15 +48,15 @@ void create()
 
 set_skill("qixing-array",100);
         set_skill("force", 140);
-        set_skill("xiantian-qigong", 140);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 140);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 140);
-        set_skill("quanzhen-jian",140);  //È«Õæ½£
+        set_skill("quanzhen-jian",140);  //å…¨çœŸå‰‘
         set_skill("dodge", 120);
-        set_skill("jinyan-gong", 140);   //½ðÑã¹¦
+        set_skill("jinyan-gong", 140);   //é‡‘é›åŠŸ
         set_skill("unarmed",140);
         set_skill("parry", 140);
         set_skill("strike",140);
-        set_skill("haotian-zhang", 140);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 140);    //æ˜Šå¤©æŽŒ
         set_skill("literate",80);
         set_skill("strike",120);
         set_skill("taoism",100);
@@ -68,11 +68,11 @@ set_skill("qixing-array",100);
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 2, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 2, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒÐþÃÅÕý×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶çŽ„é—¨æ­£å®—ã€‚\n",
         ]) );
 
         setup();
@@ -85,15 +85,15 @@ set_skill("qixing-array",100);
 void attempt_apprentice(object ob)
 {
         if ((int)ob->query_skill("xiantian-qigong",1) < 50 ) {
-                command("say ÄãµÄ±¾ÃÅÄÚ¹¦ÐÄ·¨»ðºò²»×ã,ÄÑÒÔÁìÂÔ¸ü¸ßÉîµÄÎä¹¦¡£");
+                command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•ç«å€™ä¸è¶³,éš¾ä»¥é¢†ç•¥æ›´é«˜æ·±çš„æ­¦åŠŸã€‚");
                 return;
         }
         if ((int)ob->query("shen")<5000) {
-                command("say ÐÐÏÀÕÌÒåÊÇÎÒ±²Ñ§ÎäÈËµÄ»ù±¾Æ·ÖÊ£¬ÄãÈôÄÜ¶à×öÐ©ÏÁÒåÖ®
-ÊÂ£¬ÎÒÒ»¶¨ÊÕÄãÎªÍ½¡£\n");
+                command("say è¡Œä¾ ä»—ä¹‰æ˜¯æˆ‘è¾ˆå­¦æ­¦äººçš„åŸºæœ¬å“è´¨ï¼Œä½ è‹¥èƒ½å¤šåšäº›ç‹­ä¹‰ä¹‹
+äº‹ï¼Œæˆ‘ä¸€å®šæ”¶ä½ ä¸ºå¾’ã€‚\n");
                 return;
         }
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

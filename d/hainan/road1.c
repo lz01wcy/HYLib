@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С·");
+	set("short", "小路");
 	set("long", @LONG
-����ʯ�̳ɵ�һ��С��,�����Ǹ��ֻ���,�������㶼û����.�ʵ���
-���з���.����ʮ�ֵ�����!
+鹅卵石铺成的一条小径,两边是各种花草,有许多你都没见过.彩蝶在
+花中飞舞.空气十分的清新!
 LONG
 	);
 	set("no_clean_up", 0);

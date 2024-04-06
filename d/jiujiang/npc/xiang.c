@@ -6,10 +6,10 @@ string give_job();
 int do_ok(string arg);
 void create()
 {
-   set_name("ÏãÓñÉ½",({ "xiang yushan","xiang","yushan" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("é¦™ç‰å±±",({ "xiang yushan","xiang","yushan" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 25);
-   set("long", "ËûÊÇ[°ÍÁê°ï]µÄÏãÓñÉ½¡£\n");
+   set("long", "ä»–æ˜¯[å·´é™µå¸®]çš„é¦™ç‰å±±ã€‚\n");
        
    set("combat_exp", 80000);
    set("str", 10);
@@ -22,7 +22,7 @@ void create()
    set_skill("force",30);
    set("attitude", "peaceful");
    set("inquiry",([
-	   "··ÂôÈË¿Ú":(:give_job:),
+	   "è´©å–äººå£":(:give_job:),
 	   ]));
    setup();
    carry_object(__DIR__"obj/chouyi")->wear();
@@ -38,14 +38,14 @@ string give_job()
 {
 	object me;
 	me=this_player();
-	if(me->query("gender")=="Å®ĞÔ")
-		return "ÕâÖÖ¹¤×÷Å®ÈË×ö²»À´µÄ£¡\n";
+	if(me->query("gender")=="å¥³æ€§")
+		return "è¿™ç§å·¥ä½œå¥³äººåšä¸æ¥çš„ï¼\n";
 	if(me->query_temp("fanmai_job"))
-		return "ÕâÖÖÊÂ»¹ÊÇÒ»¼şÒ»¼ş×ö°É£¡\n";
+		return "è¿™ç§äº‹è¿˜æ˜¯ä¸€ä»¶ä¸€ä»¶åšå§ï¼\n";
 	if(time()-me->query("task_time")<=130+random(5))
-		return "ÄãÏÈĞªĞª°É£¡\n";
+		return "ä½ å…ˆæ­‡æ­‡å§ï¼\n";
 	me->set_temp("fanmai_job",1);
-	return "ºÃ°É,¼ÈÈ»"+RANK_D->query_respect(me)+"Ô¸Òâ£¬Äã¾ÍÕÒÒ»¸öÆ¯ÁÁµÄ¹ÃÄïÀ´(jiaochai)¸øÎÒ\n£¬ÎÒ²»»á¿÷´ıÄãµÄ£¡\n";
+	return "å¥½å§,æ—¢ç„¶"+RANK_D->query_respect(me)+"æ„¿æ„ï¼Œä½ å°±æ‰¾ä¸€ä¸ªæ¼‚äº®çš„å§‘å¨˜æ¥(jiaochai)ç»™æˆ‘\nï¼Œæˆ‘ä¸ä¼šäºå¾…ä½ çš„ï¼\n";
 }
 
 int do_ok(string arg)
@@ -53,19 +53,19 @@ int do_ok(string arg)
 	object me,ob,money;
 	int exp,pot,sil,famous;int i,per;
 	me=this_player();i=0;
-	if(!arg) return notify_fail("ÄãÄÃÊ²Ã´À´½»²î£¿\n");
-	if(!me->query_temp("fanmai_job")&&me->query("vocation")!="ÈË··×Ó")
-		return notify_fail("Õâ»°´ÓºÎËµÆğ£¿\n");
+	if(!arg) return notify_fail("ä½ æ‹¿ä»€ä¹ˆæ¥äº¤å·®ï¼Ÿ\n");
+	if(!me->query_temp("fanmai_job")&&me->query("vocation")!="äººè´©å­")
+		return notify_fail("è¿™è¯ä»ä½•è¯´èµ·ï¼Ÿ\n");
 	if(!objectp(ob=present(arg,environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡\n");
-	if(ob->query("gender")=="ÄĞĞÔ")
-		return notify_fail("ÄĞÈË¿É²»Òª£¡\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººï¼\n");
+	if(ob->query("gender")=="ç”·æ€§")
+		return notify_fail("ç”·äººå¯ä¸è¦ï¼\n");
 
 	if(userp(ob))
-		return notify_fail("Íæ¼Ò¿É²»Òª£¡\n");
+		return notify_fail("ç©å®¶å¯ä¸è¦ï¼\n");
 
-    if(ob->query("per")<=25&&me->query("vocation")!="ÈË··×Ó")
-		return notify_fail("Õâ¸öÈËµÄ×ËÉ«²»¹»ÎÒµÄÒªÇó£¬Äã»¹ÊÇ»»Ò»¸ö°É£¡\n");
+    if(ob->query("per")<=25&&me->query("vocation")!="äººè´©å­")
+		return notify_fail("è¿™ä¸ªäººçš„å§¿è‰²ä¸å¤Ÿæˆ‘çš„è¦æ±‚ï¼Œä½ è¿˜æ˜¯æ¢ä¸€ä¸ªå§ï¼\n");
 	per=ob->query("per");
 	i=per;
 
@@ -76,8 +76,8 @@ int do_ok(string arg)
 	pot=exp*2/3;
 	sil=exp/3;
 	per=ob->query("per");
-    tell_object(environment(me),"ÏãÓñÉ½»ØÍ·µÀ£ºÀ´ÈË£¬°ÑÕâÎ»¹ÃÄïÁì½øÈ¥£¡\n");
-	tell_object(environment(me),"Á¢¿Ì³öÀ´Ò»¸öÈË£¬°Ñ"+ob->name()+"Áì½øÈ¥ÁË¡£\n");
+    tell_object(environment(me),"é¦™ç‰å±±å›å¤´é“ï¼šæ¥äººï¼ŒæŠŠè¿™ä½å§‘å¨˜é¢†è¿›å»ï¼\n");
+	tell_object(environment(me),"ç«‹åˆ»å‡ºæ¥ä¸€ä¸ªäººï¼ŒæŠŠ"+ob->name()+"é¢†è¿›å»äº†ã€‚\n");
 	destruct(ob);
 	if(me->query_temp("fanmai_job"))
 	{
@@ -88,16 +88,16 @@ int do_ok(string arg)
 	me->start_busy(8);
 	me->delete_temp("fanmai_job");
 	me->set("task_time",time());
-	tell_object(me,"ÔÚÕâ´ÎĞĞ¶¯ÖĞÄãµÃµ½ÁË"+
-                ""HIW""+chinese_number(exp)+""NOR""+"µã¾­ÑéÖµ"+
-                ""HIW""+chinese_number(pot)+""NOR""+"µãÇ±ÄÜ"+
-                "ÏãÓñÉ½½±ÀøÁËÄã"+""HIW""+chinese_number(sil)+""NOR""+"ÎÄÍ­Ç®¡£\n");
-        tell_object(me,"ÄãÇ®×¯µÄ´æ¿îÔö¼ÓÁË£¡\n");
-	tell_object(me,"ÓÉÓÚ··ÂôÈË¿Ú£¬ÄãµÄ½­ºşÉùÍû½µµÍÁË£¡\n");
+	tell_object(me,"åœ¨è¿™æ¬¡è¡ŒåŠ¨ä¸­ä½ å¾—åˆ°äº†"+
+                ""HIW""+chinese_number(exp)+""NOR""+"ç‚¹ç»éªŒå€¼"+
+                ""HIW""+chinese_number(pot)+""NOR""+"ç‚¹æ½œèƒ½"+
+                "é¦™ç‰å±±å¥–åŠ±äº†ä½ "+""HIW""+chinese_number(sil)+""NOR""+"æ–‡é“œé’±ã€‚\n");
+        tell_object(me,"ä½ é’±åº„çš„å­˜æ¬¾å¢åŠ äº†ï¼\n");
+	tell_object(me,"ç”±äºè´©å–äººå£ï¼Œä½ çš„æ±Ÿæ¹–å£°æœ›é™ä½äº†ï¼\n");
 	}
 	else
 	{
-		tell_object(me,"ÏãÓñÉ½Ğ¦µÀ£ººÃ£¬Äã¼ÌĞøÅ¬Á¦°É£¡\n");
+		tell_object(me,"é¦™ç‰å±±ç¬‘é“ï¼šå¥½ï¼Œä½ ç»§ç»­åŠªåŠ›å§ï¼\n");
 	}
 	return 1;
 }

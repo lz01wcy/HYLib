@@ -3,9 +3,9 @@
 inherit NPC; 
 void create()
 {
-        set_name("����", ({ "yuzu", "yu zu" }) );
+        set_name("狱卒", ({ "yuzu", "yu zu" }) );
         set("long",
-                "������С����Ҳ��Ҫ�����ǵ����ǣ�����������֯��һȺ�ˡ�\n");
+                "狱卒虽小，但也不要轻易惹到他们，他们是有组织的一群人。\n");
         set("attitude", "heroism");
         set("vendetta_mark", "authority");
         set("str", 27);
@@ -25,12 +25,12 @@ void create()
         set_temp("apply/move", 100);
         set("chat_chance", 1);
         set("chat_msg", ({
-        "�������������������������������Ӵ�ƺȡ���\n",
-                "���������֣����̽�������ô��ô�ࣿ\n",
+        "狱卒低声道：“这点饷银，还不够老子打酒喝。”\n",
+                "狱卒自语：奇怪，最近探监的人怎么这么多？\n",
         }) );
         set("inquiry", ([
-                "tanjian" : "̽��ѽ����˵����˵��������Ǯʲô����˵��\n",
-                "̽��" : "̽��ѽ����˵����˵��������Ǯʲô����˵��\n",
+                "tanjian" : "探监呀？好说，好说。。。有钱什么都好说。\n",
+                "探监" : "探监呀？好说，好说。。。有钱什么都好说。\n",
         ]));    
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -52,28 +52,28 @@ int accept_object(object who, object ob)
         {
                 if(value > 10000 || 1==1) 
                 {
-                        message_vision("$N����˵��������ȥ�������\n", this_object());
+                        message_vision("$N低声说道：“快去快出。”\n", this_object());
                         environment(this_object())->add("exits/east","/d/jinan/dalao1");
-                        who->set_temp("̽��", 1);
+                        who->set_temp("探监", 1);
                         call_out("close_door", 10);
                 } 
                 else 
                 {
-                    message_vision("$N˵�����������ҹ��̽�࣬������ʲô���⣿��\n", this_object());
+                    message_vision("$N说道：“深更半夜来探监，你打的是什么主意？”\n", this_object());
                 }
         } 
         else
         {
                 if(value > 500)
                 {
-                        say("����Ǻǵ�Ц����̽��ѽ����˵����˵������\n");
+                        say("狱卒呵呵的笑道：探监呀？好说，好说。。。\n");
                         environment(this_object())->add("exits/east","/d/jinan/dalao1");
-                        who->set_temp("̽��", 1);
+                        who->set_temp("探监", 1);
                         call_out("close_door", 10);
                 } 
                 else 
                 {
-                        say("����˵�������Ǯ��������ү�ȾƵ��أ�\n");
+                        say("狱卒说道：这点钱还不够大爷喝酒的呢！\n");
                 }
         }
         return 1;
@@ -82,7 +82,7 @@ void close_door()
 {
         if(environment(this_object())->query("exits/east"))
         {
-                message_vision("$N����������ˣ���֨~ѽ~��һ�����Ѵ��Ź���������\n", this_object());
+                message_vision("$N瞅瞅四下无人，“吱~呀~”一声，把大门关了起来。\n", this_object());
                 environment(this_object())->delete("exits/east");
         }        
 }    

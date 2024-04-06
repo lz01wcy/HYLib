@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("·ëÎý·¶", ({ "feng xifan", "feng" }) );
-	set("nickname", HIR"Ò»½£ÎÞÑª"NOR);
-	set("gender", "ÄÐÐÔ");
+	set_name("å†¯é”¡èŒƒ", ({ "feng xifan", "feng" }) );
+	set("nickname", HIR"ä¸€å‰‘æ— è¡€"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		 "·ëÎý·¶ÊÇÑÓÆ½Íõ¸®ÎÀ¶Ó³¤£¬ÎäÒÄÅÉµÚÒ»¸ßÊÖ£¬Ò»ÕÅ°×Õ¿Õ¿µÄÃæÆ¤¡£\n"
-		 "Ì¨ÍåÕ½°Üºó¹é½µ³¯Í¢£¬±»·âÎªÒ»µÈÖÒ³¼²®¡£");
+		 "å†¯é”¡èŒƒæ˜¯å»¶å¹³çŽ‹åºœå«é˜Ÿé•¿ï¼Œæ­¦å¤·æ´¾ç¬¬ä¸€é«˜æ‰‹ï¼Œä¸€å¼ ç™½æ¹›æ¹›çš„é¢çš®ã€‚\n"
+		 "å°æ¹¾æˆ˜è´¥åŽå½’é™æœå»·ï¼Œè¢«å°ä¸ºä¸€ç­‰å¿ è‡£ä¼¯ã€‚");
 	set("attitude", "peaceful");
 	set("str", 26);
 	set("con", 30);
@@ -41,7 +41,7 @@ void create()
 	map_skill("hand", "sanshou");
 	prepare_skill("cuff", "changquan");
 	prepare_skill("hand", "sanshou");
-	create_family("ÎäÒÄÅÉ", 3, "µÜ×Ó");
+	create_family("æ­¦å¤·æ´¾", 3, "å¼Ÿå­");
 	setup();
 
 	carry_object("/clone/weapon/changjian")->wield();

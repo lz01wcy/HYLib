@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���");
+	set("short", "戈壁");
 	set("long", @LONG
-���ȵ�����ɹ��ãã�ĸ�ڣ�����Ļ�ɳ��ʼ�����СС����ʯ��
-���档ɰʯ֮��ĵ����Ͽ�ʼ������ݣ�ǰ�洫����������ˮ��������
-��Զ����ˮԴ�ˡ�
+焦热的阳光晒着茫茫的戈壁，软绵的黄沙开始被大大小小的砾石所
+代替。砂石之间的地面上开始出现青草，前面传来潺潺的流水声。看来
+不远就有水源了。
 LONG);
 	set("outdoors", "huijiang");
 	set("exits", ([ /* sizeof() == 2 */

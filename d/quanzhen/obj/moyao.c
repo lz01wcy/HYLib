@@ -1,4 +1,4 @@
-// moyao.c Ã»Ò©
+// moyao.c æ²¡è¯
 // By Lgg,1998.10
 
 inherit ITEM;
@@ -11,19 +11,19 @@ void init()
 
 void create()
 {
-        set_name(HIW"Ã»Ò©"NOR, ({"moyao"}));
+        set_name(HIW"æ²¡è¯"NOR, ({"moyao"}));
         set_weight(500);
-        set("unit", "¸ù");
-        set("long", "ÕâÊÇÒ»¸ùÃû¹óÒ©²Ä-Ã»Ò©£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "æ ¹");
+        set("long", "è¿™æ˜¯ä¸€æ ¹åè´µè¯æ-æ²¡è¯ï¼Œçœ‹æ¥å¯ä»¥å…¥è¯ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-        if (!(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="moyao")
         {
-                write("ÄãÈı¿ÚÁ½¿Ú°ÑÃ»Ò©³ÔÁËÏÂÈ¥¡£\n");
+                write("ä½ ä¸‰å£ä¸¤å£æŠŠæ²¡è¯åƒäº†ä¸‹å»ã€‚\n");
                 destruct(this_object());
         }
         return 1;

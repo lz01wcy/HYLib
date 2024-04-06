@@ -1,13 +1,13 @@
 // /d/taiyuan/damen.c
-// Room in ̫ԭ
+// Room in 太原
 // rich 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "�й�");
+	set("short", "行宫");
 	set("long", @LONG
-�������̫ԭ���й�����˵�����й�����������������ɵģ�����
-Ԩ���ʱ����������Ϊ��ʱ�Ĵ�Ӫ��
+这里就是太原的行宫，据说这座行宫是在三个月以内完成的，当李
+渊起兵时曾把这里作为临时的大本营。
 LONG
 	);
 set("exits", ([

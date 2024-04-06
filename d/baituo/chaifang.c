@@ -3,8 +3,8 @@ inherit ROOM;
 
 void create()
 {
-  set("short","柴房");
-  set("long","这是间不宽的柴房，木柴已经快烧光了，墙角放着几把『柴刀』。\n");
+  set("short","鏌存埧");
+  set("long","杩欐槸闂翠笉瀹界殑鏌存埧锛屾湪鏌村凡缁忓揩鐑у厜浜嗭紝澧欒鏀剧潃鍑犳妸銆庢煷鍒�銆忋�俓n");
   set("exits",([
       "west" : __DIR__"chufang",
   ]));

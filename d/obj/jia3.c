@@ -5,17 +5,17 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(HIR"Ç§Äê»ğÁú¼×"NOR, ({ "huolong jia", "jia" }));
+	set_name(HIR"åƒå¹´ç«é¾™ç”²"NOR, ({ "huolong jia", "jia" }));
 	set_weight(3000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¼şÇ§Äê»ğÁú¸¹²¿µÄÈíÁÛÖÆ³ÉµÄ±¦¼×¡£\n");
+		set("long", "è¿™æ˜¯ä¸€ä»¶åƒå¹´ç«é¾™è…¹éƒ¨çš„è½¯é³åˆ¶æˆçš„å®ç”²ã€‚\n");
 		set("material", "copper");
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
         set("value",100000);
-		set("wear_msg", HIR "$NÅûÉÏÒ»¼şÇ§Äê»ğÁú¼×£¬ÖÜÉí»·ÈÆ×Åµ­µ­µÄºì¹â¡£\n" NOR);
-		set("remove_msg", HIR "$N½«Ç§Äê»ğÁú¼×Ğ¶ÏÂ£¬Ğ¡ĞÄÒíÒíµÄÊÕÔÚ»³Àï¡£\n" NOR);
+		set("wear_msg", HIR "$NæŠ«ä¸Šä¸€ä»¶åƒå¹´ç«é¾™ç”²ï¼Œå‘¨èº«ç¯ç»•ç€æ·¡æ·¡çš„çº¢å…‰ã€‚\n" NOR);
+		set("remove_msg", HIR "$Nå°†åƒå¹´ç«é¾™ç”²å¸ä¸‹ï¼Œå°å¿ƒç¿¼ç¿¼çš„æ”¶åœ¨æ€€é‡Œã€‚\n" NOR);
 		set("armor_prop/armor", 200);
                 set("armor_prop/constitution",5);
 	

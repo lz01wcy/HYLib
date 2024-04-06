@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Éí·¨ÈëÃÅ", ({ "shenfa rumen", "shu", "book", "rumen" }));
+        set_name("èº«æ³•å…¥é—¨", ({ "shenfa rumen", "shu", "book", "rumen" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-            set("long", "ÕâÊÇÒ»±¾½²Éí·¨ÈëÃÅµÄÊé¡£\n");
+                set("unit", "æœ¬");
+            set("long", "è¿™æ˜¯ä¸€æœ¬è®²èº«æ³•å…¥é—¨çš„ä¹¦ã€‚\n");
                  set("value",2000);
                 set("material", "paper");
                 set("skill", ([

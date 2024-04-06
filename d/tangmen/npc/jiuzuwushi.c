@@ -1,14 +1,14 @@
-// jiuzuwushi.c ÌÆÃÅÎäÊ¿
+// jiuzuwushi.c å”é—¨æ­¦å£«
 
 inherit NPC;
 
 void create()
 {
-        set_name("ðÕ×éÎäÊ¿", ({ "jiuzu wushi", "wushi" }));
+        set_name("é¹«ç»„æ­¦å£«", ({ "jiuzu wushi", "wushi" }));
         set("long", 
-                "ËûÊÇÌÆÃÅ¾«ÐÄÑµÁ·µÄÎäÊ¿£¬¸ºÔðÌÆÃÅµÄÊØ»¤¡£\n"
-                "Èç¹ûÓÐÈËÉÃ´³ÌÆÃÅ£¬¸ñÉ±ÎðÂÛ£¡\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–æ˜¯å”é—¨ç²¾å¿ƒè®­ç»ƒçš„æ­¦å£«ï¼Œè´Ÿè´£å”é—¨çš„å®ˆæŠ¤ã€‚\n"
+                "å¦‚æžœæœ‰äººæ“…é—¯å”é—¨ï¼Œæ ¼æ€å‹¿è®ºï¼\n");
+        set("gender", "ç”·æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -43,7 +43,7 @@ void create()
         map_skill("parry", "wuzhan-mei");
         map_skill("sword", "wuzhan-mei");
 
-        create_family("ÌÆÃÅ", 9, "µÜ×Ó");
+        create_family("å”é—¨", 9, "å¼Ÿå­");
         set("class", "tangmen");
 
         setup();
@@ -65,16 +65,16 @@ void init()
 	if (interactive(ob) 
 	&& !environment(ob)->query("no_fight")
 
-	&& ( (fam = ob->query("family")) && fam["family_name"] != "ÌÆÃÅ" ) )
+	&& ( (fam = ob->query("family")) && fam["family_name"] != "å”é—¨" ) )
 	{
 		if( !ob->query_temp("warned") ) {
-			command("say ÎÒÌÆÃÅÇÒÊÇÍâÈËËæ±ã´³ÈëµÄ£¿£¡\n");
-			command("say ËÙËÙÀë¿ª£¬·ñÔòÉ±ÁËÄã£¡\n");
+			command("say æˆ‘å”é—¨ä¸”æ˜¯å¤–äººéšä¾¿é—¯å…¥çš„ï¼Ÿï¼\n");
+			command("say é€Ÿé€Ÿç¦»å¼€ï¼Œå¦åˆ™æ€äº†ä½ ï¼\n");
 			ob->set_temp("warned", 1);
 		}
 		else if( ob->query_temp("stay") < 10 ) ob->add_temp("stay", 1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸Ò´³µ½ÌÆÃÅÀ´ÀïÀ´µ·ÂÒ£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢é—¯åˆ°å”é—¨æ¥é‡Œæ¥æ£ä¹±ï¼ï¼ï¼\n");
 			me->set_leader(ob);
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 

@@ -4,19 +4,19 @@ inherit ROOM;
 string look_bagua();
 void create()
 {
-    set("short", "�һ�ɽׯ����");
+    set("short", "桃花山庄正厅");
     set("long", 
-"�������һ�ɽׯ����������������ʮ�ֿ��������й����˸���\n"
-"���ҵ��鷨�漣���������۵��������йҵ�һ��������\n\n"
+"这里是桃花山庄的正厅。整个大厅十分宽阔。厅中挂满了各种\n"
+"名家的书法真迹。但最显眼的则是正中挂的一幅对联：\n\n"
    
-BLU "            �һ�Ӱ�����\n"
-    "            �̺�����������\n\n"
+BLU "            桃花影落飞神剑\n"
+    "            碧海潮生按玉箫\n\n"
 NOR
 
-"�����پ�ͦ�Σ����ƺ�ΰ��\n\n"
+"字体遒劲挺拔，气势宏伟。\n\n"
 
-"�������֮�϶��Ű�Ƭ��Ƭ�� ��������(bagua)ͼ����ȴ�ֲ���Ѱ��
-�İ�����ô�ŵ����룬�������䣬��б���ƣ���Ȼ�����ܵĲ��ü���Э����\n"
+"而在门楣之上钉着八片铁片， 排作八卦(bagua)图案，却又不似寻常
+的八卦那么排的整齐，疏疏落落，歪斜不称，显然与四周的布置极不协调。\n"
 );
 	set("exits", ([
 	    "north" : __DIR__"qianyuan",
@@ -43,7 +43,7 @@ string look_bagua()
 {
 	int i, j, temp;
 	int *bagua = ({0,1,2,3,4,5,6,7});
-	string *bagua_name = ({"��","��","��","��","��","��","��","Ǭ"});
+	string *bagua_name = ({"坤","震","坎","兑","艮","离","巽","乾"});
 	string result;
 	object me = this_player();
 
@@ -58,8 +58,8 @@ string look_bagua()
 	}		
 	for (i = 1; i < 9; i++)
 		me->set_temp("bagua_" + i, bagua[i - 1]);
-	result = "һ����ֵ������ԣ����水˳ʱ��˳�������ţ�";
+	result = "一个奇怪的铁八卦，上面按顺时针顺序排列着：";
 	for (i = 0; i < 8; i++)
 		result += bagua_name[bagua[i]];
-	return result + "��\n";
+	return result + "。\n";
 }

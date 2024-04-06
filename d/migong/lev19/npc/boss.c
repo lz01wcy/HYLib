@@ -8,13 +8,13 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"µÌÂå"NOR, ({ "tero"}));
+   set_name(order[random(13)]+"å ¤æ´›"NOR, ({ "tero"}));
 	set("magicgift",4);
 	set("magicset",1);
-       set("title",YEL"´óµØ¾ÞÉñ"NOR);
+       set("title",YEL"å¤§åœ°å·¨ç¥ž"NOR);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄ´óµØ¾ÞÉñ¡£\n");
+"ä¸€ä½å¯æ€•çš„å¤§åœ°å·¨ç¥žã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	set("combat_exp",50000000+random(8000000));
@@ -121,9 +121,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(YEL"$N,µ¹µØ¶øÍö£¬»¯ÈëÁË´óµØ¡£\n"NOR,ob,me);
+        message_vision(YEL"$N,å€’åœ°è€Œäº¡ï¼ŒåŒ–å…¥äº†å¤§åœ°ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃð"+ob->query("title")+HIG",Íê³ÉÁË·çÖ®ÊÀ½çµÄÈÎÎñ¡£\n"NOR, users());
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("title")+HIG",å®Œæˆäº†é£Žä¹‹ä¸–ç•Œçš„ä»»åŠ¡ã€‚\n"NOR, users());
         me->add("combat_exp",600);
         me->add("potential",300);
         me->add("score",1);
@@ -135,7 +135,7 @@ if (!present("air boot", me)
 {
 corpse=new("/clone/magic/obj/airboot");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 }
 
         destruct(ob);
@@ -146,7 +146,7 @@ if (!present("air boot", me)
 {
 corpse=new("/clone/magic/obj/airboot");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 }
                destruct(ob);
         return;

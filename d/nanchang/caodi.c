@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","�ݵ�");
+  set ("short","草地");
   set ("long", @LONG
-������һƬ�ݵأ�ƽʱ��С�㾭�������������Ա߻���ʯͷ������
-�ӡ����ӣ����滹���˺ܶ��顣
+这里是一片草地，平时李小姐经常到这里来。旁边还有石头做的桌
+子、椅子，上面还放了很多书。
 LONG);
 
   set("exits", ([ 

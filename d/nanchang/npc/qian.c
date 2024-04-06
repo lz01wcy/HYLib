@@ -4,10 +4,10 @@ inherit F_DEALER;
 
 void create()
 {
-   set_name("Ç®ÀÏ°å",({ "qian laoban","qian","laoban" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("é’±è€æ¿",({ "qian laoban","qian","laoban" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇµ±ÆÌµÄÀÏ°å¡£\n");
+   set("long", "è¿™æ˜¯å½“é“ºçš„è€æ¿ã€‚\n");
        
    set("no_kill",1);
    set("combat_exp", 100000);

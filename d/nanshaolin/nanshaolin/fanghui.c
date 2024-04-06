@@ -8,11 +8,11 @@ string ask_job();
 
 void create()
 {
-	set_name("·½»Ø", ({ "fang hui", "fang", "hui"}));
-	set("long", "ËûÊÇÒ»Î»Éí´©»Æ²¼ôÂôÄµÄÇàÄêÉ®ÈË¡£Á³ÉÏÖÉÆøÎ´ÍÑ£¬ÉíÊÖÈ´ÒÑÏà\n"
-		"µ±½Ã½İ£¬¿´À´ËÆºõÑ§¹ıÒ»µãÎä¹¦¡£\n");
-	set("nickname", "²ËÍ·");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–¹å›", ({ "fang hui", "fang", "hui"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«ç©¿é»„å¸ƒè¢ˆè£Ÿçš„é’å¹´åƒ§äººã€‚è„¸ä¸Šç¨šæ°”æœªè„±ï¼Œèº«æ‰‹å´å·²ç›¸\n"
+		"å½“çŸ«æ·ï¼Œçœ‹æ¥ä¼¼ä¹å­¦è¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("nickname", "èœå¤´");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -65,10 +65,10 @@ void create()
 	prepare_skill("strike", "sanhua-zhang");
 
 	set("inquiry", ([
-		"ÖÖ²Ë" : "ÔÚÕâÖÖ²Ë½½·à¶¼µÃÌıÀÏ×ÓµÄ£¬´ïÄ¦ÔºÊ××ùÒ²ÊÇÈç´Ë£¡\n",
-		"½½·à" : (: ask_job :),
+		"ç§èœ" : "åœ¨è¿™ç§èœæµ‡ç²ªéƒ½å¾—å¬è€å­çš„ï¼Œè¾¾æ‘©é™¢é¦–åº§ä¹Ÿæ˜¯å¦‚æ­¤ï¼\n",
+		"æµ‡ç²ª" : (: ask_job :),
 	]) );
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 21, "å¼Ÿå­");
 	setup();
 	carry_object(__DIR__"jiedao")->wield();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
@@ -87,11 +87,11 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	if(ob->query_temp("job_name")!="²ËµØÖÖ²Ë") return; 
-	if(!(ob->query_temp("job_name")!="²ËµØÖÖ²Ë"))
+	if(ob->query_temp("job_name")!="èœåœ°ç§èœ") return; 
+	if(!(ob->query_temp("job_name")!="èœåœ°ç§èœ"))
 	{
 		command("stare "+ob->query("id"));
-		command("say " +RANK_D->query_rude(ob)+"£¬Äã»¹²»µ½ÕâÀ´½½·à(jiao ·à)»¹µÈÊ²Ã´£¿£¡\n");
+		command("say " +RANK_D->query_rude(ob)+"ï¼Œä½ è¿˜ä¸åˆ°è¿™æ¥æµ‡ç²ª(jiao ç²ª)è¿˜ç­‰ä»€ä¹ˆï¼Ÿï¼\n");
 	}
 }
 string ask_job()
@@ -99,13 +99,13 @@ string ask_job()
 	object ob = this_player();
 
 	if (ob->query("combat_exp")>=30000)
-		return ("ÄãÒÑ¾­ÓĞÁË»ù´¡ÁË£¬Ã»±ØÒªÔÙÕÒÎÒÀ´Áì»îÁË¡£\n");
-	if ((string)ob->query("family/family_name") != "ÄÏÉÙÁÖÅÉ")
-		return ("·ÇÄÏÉÙÁÖµÜ×Ó²»ÄÜÁì¹¤×÷¡£");
+		return ("ä½ å·²ç»æœ‰äº†åŸºç¡€äº†ï¼Œæ²¡å¿…è¦å†æ‰¾æˆ‘æ¥é¢†æ´»äº†ã€‚\n");
+	if ((string)ob->query("family/family_name") != "å—å°‘æ—æ´¾")
+		return ("éå—å°‘æ—å¼Ÿå­ä¸èƒ½é¢†å·¥ä½œã€‚");
 	if (ob->query_temp("job_name"))
-		return ("Äã²»ÊÇÒÑ¾­ÁìÁË¹¤×÷Âğ£¿»¹²»¿ìÈ¥×ö¡£\n");
-	ob->set_temp("job_name","²ËµØÖÖ²Ë");
-		return "À´ÕâÒªÊ²Ã´¶¼¸É£¬Äã¾Í°ïÎÒ½½·à"HIR"(jiao ·à)"HIC"°É¡£";
+		return ("ä½ ä¸æ˜¯å·²ç»é¢†äº†å·¥ä½œå—ï¼Ÿè¿˜ä¸å¿«å»åšã€‚\n");
+	ob->set_temp("job_name","èœåœ°ç§èœ");
+		return "æ¥è¿™è¦ä»€ä¹ˆéƒ½å¹²ï¼Œä½ å°±å¸®æˆ‘æµ‡ç²ª"HIR"(jiao ç²ª)"HIC"å§ã€‚";
 }
 #include "fang.h";
 

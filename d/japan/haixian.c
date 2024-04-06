@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "���ʹ�");
+  set ("short", "海鲜馆");
   set ("long", @LONG
-���Ŵֲ���������ͷ�����Ű�ë��.��ʱ�����ڴ����е���ʮ������
-֮��.�ձ��Ǹ�����,�����Ǻܱ��˵�.������Ƭ����Ҳȷʵͦ��.
+穿着粗布服的侍者头上扎着白毛巾.不时来往于大厅中的数十张桌子
+之间.日本是个岛国,海鲜是很便宜的.吃生鱼片的人也确实挺多.
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

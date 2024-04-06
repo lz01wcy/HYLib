@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("��ʨ", ({ "lion", "xiongshi", "shi" }) );
-        set("race", "Ұ��");
+        set_name("雄狮", ({ "lion", "xiongshi", "shi" }) );
+        set("race", "野兽");
         set("age", 15);
-        set("long", "һֻ�ý�����ʨ��ʮ�����硣\n");
+        set("long", "一只矫健的雄狮，十分威风。\n");
 //        set("attitude", "aggressive");
         set("attitude", "peace");
         set("shen_type", -1);
 
-        set("limbs", ({ "ʨͷ", "ʨ��", "ǰצ", "��ץ", "β��" }) );
+        set("limbs", ({ "狮头", "狮身", "前爪", "后抓", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 40000);
@@ -25,8 +25,8 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "��ʨһ���������´���������졣\n",
-                "��ʨ����һ�ţ��͵�һԾ�������ǰ��\n",
+                "雄狮一声长吼，四下传来阵阵会响。\n",
+                "雄狮后足一蹬，猛地一跃到你的面前。\n",
         }) );
 }
 

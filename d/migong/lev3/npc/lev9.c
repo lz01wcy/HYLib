@@ -9,11 +9,11 @@ void create()
 
 {
     
-    set_name("´óµÁ", ({ "dadao" }));
+    set_name("å¤§ç›—", ({ "dadao" }));
     
-     set("gender", "ÄĞĞÔ" );
+     set("gender", "ç”·æ€§" );
       set("long",
-"ÂúÁ³ºáÈâ£¬ÎŞ¶ñ²»×öµÄ½­Ñó´óµÁ¡£\n");
+"æ»¡è„¸æ¨ªè‚‰ï¼Œæ— æ¶ä¸åšçš„æ±Ÿæ´‹å¤§ç›—ã€‚\n");
         set("attitude", "aggressive");
       
   set("vendetta/authority",1);

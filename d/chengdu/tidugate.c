@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "Ìá¶½¸®ÃÅ");
+	set("short", "æç£åºœé—¨");
 	set("long", @LONG
-Õâ±ãÊÇÌá¶½¸®ÃÅ¡£Î¡¶ëĞÛÎ°µÄ³ÇÇ½ÉÏ£¬ "³É¶¼Ìá¶½¸®" Îå¸ö´ó×Ö
-Ê®·ÖÏÔÑÛ£¬ÆøÊÆ»Ô»Í¡£¼¸ÃûÇ×±øÁ¢ÔÚÁ½ÅÔ¡£
+è¿™ä¾¿æ˜¯æç£åºœé—¨ã€‚å·å³¨é›„ä¼Ÿçš„åŸå¢™ä¸Šï¼Œ "æˆéƒ½æç£åºœ" äº”ä¸ªå¤§å­—
+ååˆ†æ˜¾çœ¼ï¼Œæ°”åŠ¿è¾‰ç…Œã€‚å‡ åäº²å…µç«‹åœ¨ä¸¤æ—ã€‚
 LONG );
 	set("outdoors", "chengdu");
 	set("exits", ([
@@ -26,6 +26,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
 	if ((dir=="north") && (objectp(present("qin bing", environment(me)))))
-		return notify_fail("Ç×±øÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me) + "Çë»Ø°É¡£ÀÏÒ¯²»¼û¿Í¡£\n");
+		return notify_fail("äº²å…µä¸Šå‰æŒ¡ä½ä½ ï¼Œæœ—å£°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(me) + "è¯·å›å§ã€‚è€çˆ·ä¸è§å®¢ã€‚\n");
 	return ::valid_leave(me, dir);
 }

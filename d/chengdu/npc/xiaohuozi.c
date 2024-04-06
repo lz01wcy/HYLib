@@ -1,14 +1,14 @@
-// xiaohuozi.c Ğ¡»ï×Ó
+// xiaohuozi.c å°ä¼™å­
 // Last Modifyed by Winder on Dec. 24 2001
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡»ï×Ó", ({ "xiao huozi", "xiao" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("å°ä¼™å­", ({ "xiao huozi", "xiao" }));
+	set("gender", "ç”·æ€§");
 	set("age", 19);
-	set("long","ËûÊÇÒ»¸öÔÚÄğ¾ÆÎİ´ò¹¤µÄÄêÇáÈË£¬³¤µÄÅ£¸ßÂí´ó£¬¿´ÉÏÈ¥ÓĞĞ©Á¦Æø¡£\n");
+	set("long","ä»–æ˜¯ä¸€ä¸ªåœ¨é…¿é…’å±‹æ‰“å·¥çš„å¹´è½»äººï¼Œé•¿çš„ç‰›é«˜é©¬å¤§ï¼Œçœ‹ä¸Šå»æœ‰äº›åŠ›æ°”ã€‚\n");
 	
 	set("combat_exp", 1000);
 	set("shen_type", -1);

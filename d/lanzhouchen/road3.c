@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "�����");
+	set("short",  "林荫道");
 	set("long",  @LONG
-����һ����������ʯ��ֵ����ӱ���һֱ�������졣����·������
-��ʱ�й��������߹����͸ղų�������ľ����γ������Աȡ��ϱ��ǳ�
-�����Ĵ��------���Ӵ�֡�
+这是一条宽阔的青石板街道，从北门一直向南延伸。两旁路树成荫，
+不时有过往行人走过，和刚才城外荒凉的景象形成鲜明对比。南边是城
+内最大的大街------滨河大街。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"north" : "/d/lanzhou/beimen",

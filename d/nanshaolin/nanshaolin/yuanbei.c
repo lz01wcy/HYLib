@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Ôª±¯", ({ "yuan bei", "bei", "yuan" }));
-	set("long","ËûÊÇÒ»Î»ÖÐµÈ¸ö×ÓµÄºÍÉÐ£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓÐÉñ¡£\n");
-	set("nickname", "´ïÄ¦ÔºÉÏ×ùÈýÉ®");
-	set("gender", "ÄÐÐÔ");
+	set_name("å…ƒæ‚²", ({ "yuan bei", "bei", "yuan" }));
+	set("long","ä»–æ˜¯ä¸€ä½ä¸­ç­‰ä¸ªå­çš„å’Œå°šï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥žã€‚\n");
+	set("nickname", "è¾¾æ‘©é™¢ä¸Šåº§ä¸‰åƒ§");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -43,7 +43,7 @@ void create()
 	set_skill("ranmu-daofa", 100);
 	set_skill("weituo-gun", 100);
 // basic skill end
-// È­¡¢ÍÈ¡¢µ¶¡¢½£
+// æ‹³ã€è…¿ã€åˆ€ã€å‰‘
 	set_skill("cuff", 100);
 	set_skill("leg", 100);
 	set_skill("zui-gun", 100);
@@ -64,7 +64,7 @@ void create()
 
 	prepare_skill("cuff", "luohan-quan");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 20, "µÜ×Ó");
+	create_family("å—å°‘æž—æ´¾", 20, "å¼Ÿå­");
 
 	setup();
 	carry_object(__DIR__"jiedao")->wield();

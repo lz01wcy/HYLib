@@ -1,4 +1,4 @@
-// road3.c ¹ÙµÀ
+// road3.c å®˜é“
 // west to jiayuguan,est to lanzhou
 // Ver 0.1 08/14/1998 by Freeze
 
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹Ù µÀ");
+	set("short", "å®˜ é“");
 	set("long", @LONG
-ÕâÊÇÒ»Ìõ¿íÀ«µÄ´óÂ·£¬²»Ê±µØÓÐÉÌ¶Ó´ÓÄãµÄÉí±ß×ß¹ý¡£Õâ±ãÊÇË¿³ñÖ®Â·£¬¸÷¹úÉÌ
-ÈË´ó¶àÓÉ´Ë½øÈë¾ÅÖÝ£¬ÊÇÖØÒªµÄÍ¨ÉÌÇþµÀ¡£
-    ´ËÂ·Á¬½Ó¼ÎÓø¹ØºÍÀ¼ÖÝ¡£
+è¿™æ˜¯ä¸€æ¡å®½é˜”çš„å¤§è·¯ï¼Œä¸æ—¶åœ°æœ‰å•†é˜Ÿä»Žä½ çš„èº«è¾¹èµ°è¿‡ã€‚è¿™ä¾¿æ˜¯ä¸ç»¸ä¹‹è·¯ï¼Œå„å›½å•†
+äººå¤§å¤šç”±æ­¤è¿›å…¥ä¹å·žï¼Œæ˜¯é‡è¦çš„é€šå•†æ¸ é“ã€‚
+    æ­¤è·¯è¿žæŽ¥å˜‰å³ªå…³å’Œå…°å·žã€‚
 LONG
 	);
         set("outdoors", "jyguan");

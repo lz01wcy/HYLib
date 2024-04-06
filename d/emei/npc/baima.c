@@ -1,4 +1,4 @@
-// baima.c ����
+// baima.c 白马
 
 #include <command.h>
 #include <dbase.h>
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("����", ({ "bai ma" }));
-        set("long","һƥ������ȫ��ѩ�ף���һ����ë��\n");
-        set("race", "Ұ��");
+        set_name("白马", ({ "bai ma" }));
+        set("long","一匹骏马，全身雪白，无一根杂毛。\n");
+        set("race", "野兽");
         set("age", 5);
         set("attitude","heroism");
         set("str", 30);

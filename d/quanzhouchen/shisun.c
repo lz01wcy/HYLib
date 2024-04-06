@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ʯ��");
+	set("short", "石笋");
 	set("long", @LONG
-����Ȫ�������һ����ò��ۣ���ǧ���ʴ�γɵ�ʯ��ǧ��ٹ֣�
-�ƽ����Ƶ�����׶����̬���졣�����ݺᣬ��֪���ա������ɽ������
-һ�����֡�
+这是泉州西面的一处地貌奇观，经千年风蚀形成的石笋千奇百怪，
+似剑、似刀、似锥，形态各异。洞壑纵横，不知所终。南面的山谷中有
+一所草庵。
 LONG );
 	set("outdoors", "quanzhou");
 	set("no_clean_up", 0);

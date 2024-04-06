@@ -8,11 +8,11 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("ÉÏ¹ÙÔÆ", ({ "shangguan yun","shangguan","yun"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("ä¸Šå®˜äº‘", ({ "shangguan yun","shangguan","yun"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 40);
-	set("title" , HIR"ÈÕÔÂÉñ½Ì°×»¢ÌÃ³¤ÀÏ"NOR);
-	set("long", "Ëû³¤ÊÖ³¤½Å, Ë«Ä¿¾«¹â²ÓÈ», ÈôÓÐÍþÊÆ¡£\n");
+	set("title" , HIR"æ—¥æœˆç¥žæ•™ç™½è™Žå ‚é•¿è€"NOR);
+	set("long", "ä»–é•¿æ‰‹é•¿è„š, åŒç›®ç²¾å…‰ç¿ç„¶, è‹¥æœ‰å¨åŠ¿ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", -1);
 
@@ -83,7 +83,7 @@ prepare_skill("strike","tmzhang");
         set_temp("apply/armor", 500);
         set_temp("apply/damage", 200);
         set_temp("apply/attack", 200);
-	create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó °×»¢ÌÃ³¤ÀÏ");
+	create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ ç™½è™Žå ‚é•¿è€");
 
 	set("chat_chance", 3);
 	
@@ -100,20 +100,20 @@ void attempt_apprentice(object ob)
 {
          if (ob->query_int() < 20) {
               command("say " + RANK_D->query_respect(ob) +
-                        "×ß¿ª×ß¿ª£¬ÎÒ²»ÏëºÍÉµ¹ÏËµ»°¡£");
+                        "èµ°å¼€èµ°å¼€ï¼Œæˆ‘ä¸æƒ³å’Œå‚»ç“œè¯´è¯ã€‚");
                 return;
         }
          if (ob->query_dex() < 20) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÉíÊÖ²»½Ý£¬»¹ÊÇÁíÇó¸ßÊ¦°É¡£");
+                        "èº«æ‰‹ä¸æ·ï¼Œè¿˜æ˜¯å¦æ±‚é«˜å¸ˆå§ã€‚");
                 return;
         }
         if ((int)ob->query("shen") > -10000) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "Äã»¹²»¹»ÐÄºÝÊÖÀ±£¬ÎÒ»¹²»ÄÜÊÕÄã¡£");
+                        "ä½ è¿˜ä¸å¤Ÿå¿ƒç‹ æ‰‹è¾£ï¼Œæˆ‘è¿˜ä¸èƒ½æ”¶ä½ ã€‚");
                 return;
         }
-        command("say ¹þ¹þ£¡ ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+        command("say å“ˆå“ˆï¼ é‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit " + ob->query("id"));
 }
 

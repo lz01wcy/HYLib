@@ -12,7 +12,7 @@ void init()
 void destdan()
 {
 	object ob;
-	message_vision("$NÂýÂý±»·ç´µ×Å£¬Ò»»á¾Í²»ÔÙÐÂÏÊÁË¡£\n",this_object());
+	message_vision("$Næ…¢æ…¢è¢«é£Žå¹ç€ï¼Œä¸€ä¼šå°±ä¸å†æ–°é²œäº†ã€‚\n",this_object());
 	ob = new(__DIR__"xiongdan1");
 	ob->move(environment(this_object()));
 	destruct(this_object());
@@ -20,22 +20,22 @@ void destdan()
 
 void create()
 {
-	set_name(HIG"ÐÂÏÊÐÜµ¨"NOR, ({"dan", "xiong dan"}));
-	set("unit", "¸±");
-	set("long", "ÕâÊÇÒ»¸±ÐÂÏÊÐÜµ¨£¬ÈÈÆøÌÚÌÚµÄ£¬Ê®·ÖÓÕÈË¡£\n");
+	set_name(HIG"æ–°é²œç†Šèƒ†"NOR, ({"dan", "xiong dan"}));
+	set("unit", "å‰¯");
+	set("long", "è¿™æ˜¯ä¸€å‰¯æ–°é²œç†Šèƒ†ï¼Œçƒ­æ°”è…¾è…¾çš„ï¼Œååˆ†è¯±äººã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="dan")
 	{
 		me->add("max_neili",2);
 		me->set("neili",me->query("max_neili"));
 		me->set("qi",me->query("eff_qi"));
-                message_vision("$N³ÔÏÂÒ»¸±ÐÂÏÊÐÜµ¨£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÆøÑª³äÓ¯¡£\n",me);
+                message_vision("$Nåƒä¸‹ä¸€å‰¯æ–°é²œç†Šèƒ†ï¼Œåªè§‰å¾—ç²¾ç¥žå¥æ—ºï¼Œä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œæ°”è¡€å……ç›ˆã€‚\n",me);
 
 		destruct(this_object());
 	}

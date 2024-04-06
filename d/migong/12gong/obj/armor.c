@@ -6,13 +6,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIC"Ê¥ÓğÕ½¼×"NOR, ({"shengyu armor","zhanjia", "jia", "armor"}));
+        set_name(HIC"åœ£ç¾½æˆ˜ç”²"NOR, ({"shengyu armor","zhanjia", "jia", "armor"}));
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-		set("long", "Ò»¼şÓÃÍòÄêÌì²ÏË¿´©Á¬ÁéÉ½´äÓñÖÆ×÷¶ø³ÉµÄ»¤¼×¡£\n");
+                set("unit", "ä»¶");
+		set("long", "ä¸€ä»¶ç”¨ä¸‡å¹´å¤©èš•ä¸ç©¿è¿çµå±±ç¿ ç‰åˆ¶ä½œè€Œæˆçš„æŠ¤ç”²ã€‚\n");
 		set("no_sell", 1);
                 set("no_drop", 1);
 		set("no_put", 1);		

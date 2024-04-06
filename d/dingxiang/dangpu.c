@@ -1,13 +1,13 @@
 // /d/yazhang/dangpu.c
-// Room in ÑÀÕÊ
+// Room in ç‰™å¸
 // laowuwu 99/05/05
 inherit ROOM;
 void create()	
 {
-	set("short", "µ±ÆÌ");
+	set("short", "å½“é“º");
 	set("long", @LONG
-ÕâÊÇ¶¨Ïå³ÇÀï×î´óµÄÒ»¼Òµ±ÆÌÁË£¬ËØÀ´ÒÔÂòÂô¹«Æ½×Å³Æ£¬¾ßËµÊÇÂí
-µÁÏúÕËµÄÎÑµã£¬Äã¿ÉÒÔÕâÂòµ½²»ÉÙºÃ¶«Î÷¡£
+è¿™æ˜¯å®šè¥„åŸŽé‡Œæœ€å¤§çš„ä¸€å®¶å½“é“ºäº†ï¼Œç´ æ¥ä»¥ä¹°å–å…¬å¹³ç€ç§°ï¼Œå…·è¯´æ˜¯é©¬
+ç›—é”€è´¦çš„çªç‚¹ï¼Œä½ å¯ä»¥è¿™ä¹°åˆ°ä¸å°‘å¥½ä¸œè¥¿ã€‚
 LONG
 	);
 set("exits", ([

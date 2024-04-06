@@ -1,20 +1,20 @@
-// x_lama.c Ğ¡À®Âï
+// x_lama.c å°å–‡å˜›
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡À®Âï",({
+        set_name("å°å–‡å˜›",({
 		"xiao lama",
 		"xiao",
 		"lama",
 	}));
 	set("long",
-                "ÕâÊÇÑ©É½ËÂµÄĞ¡À®Âï£¬Ò»Á³µÄÖÉÆø£¬¿´À´¸ÕÈëÃÅ²»¾Ã¡£\n"
+                "è¿™æ˜¯é›ªå±±å¯ºçš„å°å–‡å˜›ï¼Œä¸€è„¸çš„ç¨šæ°”ï¼Œçœ‹æ¥åˆšå…¥é—¨ä¸ä¹…ã€‚\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 

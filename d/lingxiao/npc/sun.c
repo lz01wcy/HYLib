@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ËïÍòÄê",({"sun wannian","sun"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å­™ä¸‡å¹´",({"sun wannian","sun"}));
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long", 
-               "ËûÊÇÁèÏü³ÇµÚÁù´úµÜ×ÓËïÍòÄê,ÉúµÃâ¯Í·ÊóÄ¿¡£\n"
-               "ÒòÎªÆ·ĞĞ²»¶Ë,±»¹ØÔÚÕâÀïË¼¹ı¡£\n");
+               "ä»–æ˜¯å‡Œå®µåŸç¬¬å…­ä»£å¼Ÿå­å­™ä¸‡å¹´,ç”Ÿå¾—çå¤´é¼ ç›®ã€‚\n"
+               "å› ä¸ºå“è¡Œä¸ç«¯,è¢«å…³åœ¨è¿™é‡Œæ€è¿‡ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -52,7 +52,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸ", 6, "å¼Ÿå­");
         setup();
 
         

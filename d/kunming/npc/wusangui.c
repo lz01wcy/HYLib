@@ -1,13 +1,13 @@
-// wusangui.c ÎâÈı¹ğ
+// wusangui.c å´ä¸‰æ¡‚
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÎâÈı¹ğ", ({ "wu sangui", "wu" }));
+	set_name("å´ä¸‰æ¡‚", ({ "wu sangui", "wu" }));
 	set("age", 58);
-	set("gender", "ÄĞĞÔ");
-	set("long", "Õâ¾ÍÊÇ´óÃû¶¦¶¦µÄÒıÇå±øÈë¹ØµÄÆ½Î÷Íõ---ÎâÈı¹ğ\n");
+	set("gender", "ç”·æ€§");
+	set("long", "è¿™å°±æ˜¯å¤§åé¼é¼çš„å¼•æ¸…å…µå…¥å…³çš„å¹³è¥¿ç‹---å´ä¸‰æ¡‚\n");
 	set("attitude", "peaceful");
 	set("str", 30);
 	set("dex", 30);

@@ -3,13 +3,13 @@
 inherit NPC;
 void create()
 {
-        set_name("Ğ¡»ï¼Æ", ({ "huoji" }) );
-        set("title", "ÁÙÊ±°ïÃ¦µÄ");
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°ä¼™è®¡", ({ "huoji" }) );
+        set("title", "ä¸´æ—¶å¸®å¿™çš„");
+        set("gender", "ç”·æ€§" );
         set("age", 16);
         set("richness",1000000);
         set("long",
-"½üÀ´Ó¥¼ÇÉúÒâÌ«ºÃ£¬²·Ó¥ÇëÀ´×¨ÃÅ°ï¿Í¹Ù´æÒø×ÓµÄ¡£\n"
+"è¿‘æ¥é¹°è®°ç”Ÿæ„å¤ªå¥½ï¼Œåœé¹°è¯·æ¥ä¸“é—¨å¸®å®¢å®˜å­˜é“¶å­çš„ã€‚\n"
                 ); 
         set("combat_exp", 2000);
         set("attitude", "friendly");

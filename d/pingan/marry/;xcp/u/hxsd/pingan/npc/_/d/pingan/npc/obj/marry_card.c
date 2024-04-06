@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("½á»éÖ¤Êé", ({"jiehunzheng","marrycard","jiehun zheng","zheng"}) );
+        set_name("ç»“å©šè¯ä¹¦", ({"jiehunzheng","marrycard","jiehun zheng","zheng"}) );
         set_weight(10);
         set("no_get",1);
-        set("no_drop","ÄãµÄ½á»éÖ¤²»ÄÜ¶ªÆú,Ö»ÄÜÈ¥¸®ÑÃ°ìÀë»é¡£\n");
+        set("no_drop","ä½ çš„ç»“å©šè¯ä¸èƒ½ä¸¢å¼ƒ,åªèƒ½å»åºœè¡™åŠç¦»å©šã€‚\n");
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
 }
@@ -32,7 +32,7 @@ string query_autoload()
                 cardname = list[i]->query("name");
         }
 
-        sscanf(cardname,"ÄãºÍ%sµÄ½á»éÖ¤" ,target);
+        sscanf(cardname,"ä½ å’Œ%sçš„ç»“å©šè¯" ,target);
         return target;
 }
 
@@ -46,22 +46,22 @@ void autoload(string arg)
 //      me = this_player();
         couple_ob = find_player(arg);
         if (couple_ob){
-                if ((string)couple_ob->query("gender") != "Å®ĞÔ"){
-                        tmpstr1 = "ÀÏ¹«"; 
-                        tmpstr = "ÀÏÆÅ";
+                if ((string)couple_ob->query("gender") != "å¥³æ€§"){
+                        tmpstr1 = "è€å…¬"; 
+                        tmpstr = "è€å©†";
                 } else {
-                        tmpstr1 = "ÀÏÆÅ";
-                        tmpstr = "ÀÏ¹«";
+                        tmpstr1 = "è€å©†";
+                        tmpstr = "è€å…¬";
                 }
                 
-         write(sprintf( MAG "ÄãµÄ%sÒ²ÔÚÕâÀï£¬¿ìÈ¥ÕÒÀ²...\n"NOR,tmpstr1));
+         write(sprintf( MAG "ä½ çš„%sä¹Ÿåœ¨è¿™é‡Œï¼Œå¿«å»æ‰¾å•¦...\n"NOR,tmpstr1));
                 tell_object(couple_ob ,
-                sprintf( MAG "ÄãµÄ%sÀ´À²,¿ìÈ¥½Ó...\n" NOR, tmpstr));
+                sprintf( MAG "ä½ çš„%sæ¥å•¦,å¿«å»æ¥...\n" NOR, tmpstr));
 
 //me->name(1)+"("+me->query("id")+")",environment(me))->query("name") ); 
                 
                 
         }
-        set("name","ÄãºÍ"+arg+"µÄ½á»éÖ¤");
+        set("name","ä½ å’Œ"+arg+"çš„ç»“å©šè¯");
 
 }

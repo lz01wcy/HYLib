@@ -2,8 +2,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("»¤ËşÉ®", ({ "huta seng","seng"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("æŠ¤å¡”åƒ§", ({ "huta seng","seng"}) );
+	set("gender", "ç”·æ€§" );
 	set("class", "bonze");
 	set("age", 30);
 	set("shen_type", 1);
@@ -42,8 +42,8 @@ void create()
 
 	prepare_skill("staff","weituo-gun");	
 	set("inquiry" ,([
-	"ÉáÀû×Ó" : "¡°ÄÇÊÇÎÒËÂÖ®±¦£¬Ô­À´¹©·îÔÚËş¶¥£¬Ê©Ö÷ÏëÉÏÈ¥¿´¿´Âğ£¿¡±\n",
-	"ÉÏËş" : "¡°Ê©Ö÷Ò²¸ÃÖªµÀÎÒÃÇµÄÇå¿àÉú»îÀ²¡£ÄÑµÀ²»ÒâË¼ÒâË¼Ò»ÏÂ£¿¡±\n",
+	"èˆåˆ©å­" : "â€œé‚£æ˜¯æˆ‘å¯ºä¹‹å®ï¼ŒåŸæ¥ä¾›å¥‰åœ¨å¡”é¡¶ï¼Œæ–½ä¸»æƒ³ä¸Šå»çœ‹çœ‹å—ï¼Ÿâ€\n",
+	"ä¸Šå¡”" : "â€œæ–½ä¸»ä¹Ÿè¯¥çŸ¥é“æˆ‘ä»¬çš„æ¸…è‹¦ç”Ÿæ´»å•¦ã€‚éš¾é“ä¸æ„æ€æ„æ€ä¸€ä¸‹ï¼Ÿâ€\n",
 	]));
 
 	setup();
@@ -56,13 +56,13 @@ int accept_object(object who, object ob)
 	{
 	if( ob->value() >= 100000) 
 		{
-		message_vision("»¤ËşÉ®ÇÄÇÄµØ°Ñ$N´øÉÏÁËËş¶¥¡£\n", who);
+		message_vision("æŠ¤å¡”åƒ§æ‚„æ‚„åœ°æŠŠ$Nå¸¦ä¸Šäº†å¡”é¡¶ã€‚\n", who);
 		who->move("/d/tianlongsi/tading");
 		return 1;
 		}
 	else
 		{
-		message_vision("»¤ËşÉ®Ë«ÊÖºÏÊ®£¬ÀÊÉùµÀ£º¡°°¢ÃÖÍÓ·ğ£¡¡±\n");
+		message_vision("æŠ¤å¡”åƒ§åŒæ‰‹åˆåï¼Œæœ—å£°é“ï¼šâ€œé˜¿å¼¥é™€ä½›ï¼â€\n");
 		return 1;
 		}
 	}

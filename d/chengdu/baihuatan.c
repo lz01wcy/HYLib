@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ٻ�̶");
+	set("short", "百花潭");
 	set("long", @LONG
-̶��ƽ������һ�����λεľ��ӣ���ӳ�ź���������̶��ļ�Ƭ��
-Ҷ���ָ�̶ˮ�����˼�����ɫ��
+潭面平静得象一块明晃晃的镜子，倒映着红瓦绿树；潭面的几片荷
+叶，又给潭水增添了几分姿色。
 LONG	);
 	set("outdoors","chengdu");
 	set("exits", ([		

@@ -3,9 +3,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("Ã§êôÖì¸ò",({"chan chu"}));
-	set("race", "Ò°ÊŞ");
-        set("long", "Ò»Ö»È­Í·´óĞ¡£¬½ĞÉùºéÁÁµÄ¶¾¸òó¡¡£\n");
+        set_name("è½ç‰¯æœ±è›¤",({"chan chu"}));
+	set("race", "é‡å…½");
+        set("long", "ä¸€åªæ‹³å¤´å¤§å°ï¼Œå«å£°æ´ªäº®çš„æ¯’è›¤èŸ†ã€‚\n");
 	set("age", 1000);
 	set("attitude", "peaceful");
 
@@ -20,7 +20,7 @@ void create()
 	set("str", 30);
 	set("con", 50);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 200);
@@ -55,15 +55,15 @@ int do_xun(string arg)
 	me =this_object();
 	who=this_player();
 	if (!arg || (arg != "chan chu"))
-		return notify_fail("ÄãÒªÑ±·şÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦é©¯æœä»€ä¹ˆï¼Ÿ\n");
 	if(me->is_fighting())
-		return notify_fail("ÕâÖ»ó¸òÜÕıÔÚÕ½¶·¡£\n");
-	if((string)who->query("family/family_name")!="Îå¶¾½Ì")
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("è¿™åªèŸ¾èœæ­£åœ¨æˆ˜æ–—ã€‚\n");
+	if((string)who->query("family/family_name")!="äº”æ¯’æ•™")
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	
-	message_vision("$N¶Ô$nÒ»Õó¹ÖĞ¥£º´óµ¨£¬»¹²»Ñ±·ş¸ü´ıºÎÊ±£¿\n\n", who,me);
-	message_vision("$N²ªÈ»´óÅ­µÀ£ºÔÛÃÇË­Ñ±Ë­»¹²»Ò»¶¨ÄÄ¡£\n
-³åÉÏÀ´ºÍ$nÅ¤´òµ½Ò»Æğ¡£\n",me,who);
+	message_vision("$Nå¯¹$nä¸€é˜µæ€ªå•¸ï¼šå¤§èƒ†ï¼Œè¿˜ä¸é©¯æœæ›´å¾…ä½•æ—¶ï¼Ÿ\n\n", who,me);
+	message_vision("$Nå‹ƒç„¶å¤§æ€’é“ï¼šå’±ä»¬è°é©¯è°è¿˜ä¸ä¸€å®šå“ªã€‚\n
+å†²ä¸Šæ¥å’Œ$næ‰­æ‰“åˆ°ä¸€èµ·ã€‚\n",me,who);
 	me->kill_ob(who);
 	who->kill_ob(me);
         COMBAT_D->do_attack(me, who, query_temp("weapon"));
@@ -79,7 +79,7 @@ void die()
 	owner = query("owner");
 	if(owner) owner_ob= find_player(owner);
 	if(owner_ob &&  (object)query_temp("last_damage_from") == owner_ob ) {
-		message_vision("$NÅ¿ÔÚµØÉÏ£¬Ò»¶¯Ò²²»¸Ò¶¯ÁË¡£\n",this_object());
+		message_vision("$Nè¶´åœ¨åœ°ä¸Šï¼Œä¸€åŠ¨ä¹Ÿä¸æ•¢åŠ¨äº†ã€‚\n",this_object());
 	ob=new(__DIR__"chanchu2.c");
 	ob->move(environment(owner_ob));
 	ob->set_leader(owner_ob);
@@ -91,7 +91,7 @@ void die()
 	return;
 	}
        else {
-            message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+            message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
             ob=new(__DIR__"obj/chanchudu.c");
 	      ob->move(environment(this_object()));
 	      destruct(this_object());
@@ -102,10 +102,10 @@ void die()
 
 int hit_ob(object me, object ob, int damage)
 {
-       if ((string)ob->query("family/family_name") != "Îå¶¾½Ì") {
+       if ((string)ob->query("family/family_name") != "äº”æ¯’æ•™") {
 	     	ob->apply_condition("chanchu_poison", 20
               +(int)ob->query_condition("chanchu_poison") );
-              tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+              tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨ï¼\n" NOR );
 	}
 }
 

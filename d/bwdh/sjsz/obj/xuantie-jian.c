@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// xuantie-jian ĞşÌú½£
+// xuantie-jian ç„é“å‰‘
 // qfy July 5, 1996
 
 #include <weapon.h>
@@ -8,20 +8,20 @@ inherit F_UNIQUE;
 inherit SWORD;
 void create()
 {
-        set_name(HIB"ĞşÌúÖØ½£"NOR,({ "xuantie jian", "xuantie", "sword", "jian" }) );
+        set_name(HIB"ç„é“é‡å‰‘"NOR,({ "xuantie jian", "xuantie", "sword", "jian" }) );
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 8000);
                 set("material", "steel");
 		set("rigidity", 10000);
                 set("long", 
-		"´Ë½£ºÚ÷î÷îµÄºÁÎŞÒì×´£¬È´ÊÇ³ÁÖØÖ®¼«¡£Á½±ß½£·æ¶¼ÊÇ¶Û¿Ú£¬½£¼â¸üÔ²Ô²µÄËÆÊÇ¸ö°ëÇò¡£\n");
-                set("wield_msg", HIY "$N¾ÙÆğ$n£¬µ«¼ûÈÕÔÂÎŞ¹â£¬³ÁÀ×ÓôÓô£¬ËÆºõÒª½«Ò»ÇĞÉú»úÑ¹»Ù¡£\n" NOR);
-                set("unwield_msg", HIY "ĞşÌúÕ§ÊÕ£¬Éú»úÍ½ÏÖ¡£\n" NOR);
-                set("unequip_msg", HIY "ĞşÌúÕ§ÊÕ£¬Éú»úÍ½ÏÖ¡£\n" NOR);
+		"æ­¤å‰‘é»‘é»é»çš„æ¯«æ— å¼‚çŠ¶ï¼Œå´æ˜¯æ²‰é‡ä¹‹æã€‚ä¸¤è¾¹å‰‘é”‹éƒ½æ˜¯é’å£ï¼Œå‰‘å°–æ›´åœ†åœ†çš„ä¼¼æ˜¯ä¸ªåŠçƒã€‚\n");
+                set("wield_msg", HIY "$Nä¸¾èµ·$nï¼Œä½†è§æ—¥æœˆæ— å…‰ï¼Œæ²‰é›·éƒéƒï¼Œä¼¼ä¹è¦å°†ä¸€åˆ‡ç”Ÿæœºå‹æ¯ã€‚\n" NOR);
+                set("unwield_msg", HIY "ç„é“ä¹æ”¶ï¼Œç”Ÿæœºå¾’ç°ã€‚\n" NOR);
+                set("unequip_msg", HIY "ç„é“ä¹æ”¶ï¼Œç”Ÿæœºå¾’ç°ã€‚\n" NOR);
         }
 	init_sword(500);
         setup();

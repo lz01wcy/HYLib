@@ -1,15 +1,15 @@
-// laoban.c ÀÏ°å 
+// laoban.c è€æ¿ 
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("ÀÏ°å", ({ "lao ban", "boss" }));
+	set_name("è€æ¿", ({ "lao ban", "boss" }));
 	set("shen_type", 1);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
-	set("long","ÀÏ°åÊÇÍÁÉúÍÁ³¤µÄÔÀÑô£¬×öÁË¼¸Ê®ÄêµÄÐ¡ÂòÂô£¬×îÅÂµÄ¾ÍÊÇÆòØ¤½øÃÅÁË¡£¿ÉÊÇÉíÔÚÔÀÑô£¬ÓÖ²»ÏëÀëÍÁÔ¶×ß£¬ÓÖÓÐÊ²Ã´°ì·¨ÄØ£¿¡£\n");
+	set("long","è€æ¿æ˜¯åœŸç”ŸåœŸé•¿çš„å²³é˜³ï¼Œåšäº†å‡ åå¹´çš„å°ä¹°å–ï¼Œæœ€æ€•çš„å°±æ˜¯ä¹žä¸è¿›é—¨äº†ã€‚å¯æ˜¯èº«åœ¨å²³é˜³ï¼Œåˆä¸æƒ³ç¦»åœŸè¿œèµ°ï¼Œåˆæœ‰ä»€ä¹ˆåŠžæ³•å‘¢ï¼Ÿã€‚\n");
 	set_skill("unarmed", 50);
 	set_skill("dodge", 50);
 	set_temp("apply/damage", 15);
@@ -39,6 +39,6 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	say("ÀÏ°åÂúÁ³¶ÑÐ¦µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬¶à³Ð»Ý¹Ë£¬Ëæ±ã¿´¿´ÒªµãÊ²Ã´¡£\n");
+	say("è€æ¿æ»¡è„¸å †ç¬‘åœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) + "ï¼Œå¤šæ‰¿æƒ é¡¾ï¼Œéšä¾¿çœ‹çœ‹è¦ç‚¹ä»€ä¹ˆã€‚\n");
 }
 

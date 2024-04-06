@@ -6,15 +6,15 @@ void do_kill(object ob);
 
 void create()
 {
-	set_name("ºúì³", ({"hu fei", "hu", "fei"}));
-	set("gender", "ÄÐÐÔ");
-	set("nickname", "Ñ©É½·Éºü");
+	set_name("èƒ¡æ–", ({"hu fei", "hu", "fei"}));
+	set("gender", "ç”·æ€§");
+	set("nickname", "é›ªå±±é£žç‹");
 	set("age", 25);
 	set("long", 
-		"Ëû¾ÍÊÇºúÒ»µ¶Ö®×Ó£¬ÒòÆäÎä¹¦¸ßÇ¿Éñ³ö¹íÃ»¡£\n"
-		"ÔÚ½­ºþÉÏÈËËÍÍâºÅ¡¸Ñ©É½·Éºü¡¹¡£\n"
-		"ËûÉí´©Ò»¼þ°×É«³¤ÉÀ£¬Ñü¼ä±ð×ÅÒ»°Ñ¿´ÆðÀ´ºÜ¾ÉµÄµ¶¡£\n"
-		"ËûÂúÈùò°÷×£¬¸ù¸ùÈçÌú£¬Ò»Í·Å¨·¢£¬È´²»½á±è¡£\n");
+		"ä»–å°±æ˜¯èƒ¡ä¸€åˆ€ä¹‹å­ï¼Œå› å…¶æ­¦åŠŸé«˜å¼ºç¥žå‡ºé¬¼æ²¡ã€‚\n"
+		"åœ¨æ±Ÿæ¹–ä¸Šäººé€å¤–å·ã€Œé›ªå±±é£žç‹ã€ã€‚\n"
+		"ä»–èº«ç©¿ä¸€ä»¶ç™½è‰²é•¿è¡«ï¼Œè…°é—´åˆ«ç€ä¸€æŠŠçœ‹èµ·æ¥å¾ˆæ—§çš„åˆ€ã€‚\n"
+		"ä»–æ»¡è…®è™¬é«¯ï¼Œæ ¹æ ¹å¦‚é“ï¼Œä¸€å¤´æµ“å‘ï¼Œå´ä¸ç»“è¾«ã€‚\n");
 	set("attitude", "peaceful");
 	set("str", 45);
 	set("int", 30);
@@ -22,8 +22,8 @@ void create()
 	set("dex", 30);
 	set("chat_chance", 20);
 	set("chat_msg", ({
-		"ºúì³Ì¾ÁË¿ÚÆøµÀ:¡°²»ÖªÊ²Ã´Ê±ºò»¹ÄÜÔÙ¼ûµ½ÈôÀ¼¹ÃÄï¡£\n",
-		"ºúì³ºÞºÞµÀ£º¡°ÃçÈË·ïÊÇÎÒÉ±¸¸³ðÈË£¬ÎÒ±Ø±¨´Ë³ð£¡¡±\n",
+		"èƒ¡æ–å¹äº†å£æ°”é“:â€œä¸çŸ¥ä»€ä¹ˆæ—¶å€™è¿˜èƒ½å†è§åˆ°è‹¥å…°å§‘å¨˜ã€‚\n",
+		"èƒ¡æ–æ¨æ¨é“ï¼šâ€œè‹—äººå‡¤æ˜¯æˆ‘æ€çˆ¶ä»‡äººï¼Œæˆ‘å¿…æŠ¥æ­¤ä»‡ï¼â€\n",
 		(: random_move :),
 	}));
 	
@@ -37,20 +37,20 @@ void create()
 	set("combat_exp", 190000);
 	set("score", 20000);
 	 
-	set_skill("force", 110);             // »ù±¾ÄÚ¹¦
-	set_skill("hujia-daofa", 150);    // ºú¼Òµ¶·¨	
-	set_skill("blade", 120);           // »ù±¾µ¶·¨
-	set_skill("hunyuan-yiqi", 120);   // »ìÔªÒ»Æø¹¦
-	set_skill("dodge", 120);           // »ù±¾¶ãÉÁ
-	set_skill("shaolin-shenfa", 120);   // ºú¼ÒÉí·¨
-	set_skill("parry", 120);             // »ù±¾ÕÐ¼Ü
+	set_skill("force", 110);             // åŸºæœ¬å†…åŠŸ
+	set_skill("hujia-daofa", 150);    // èƒ¡å®¶åˆ€æ³•	
+	set_skill("blade", 120);           // åŸºæœ¬åˆ€æ³•
+	set_skill("hunyuan-yiqi", 120);   // æ··å…ƒä¸€æ°”åŠŸ
+	set_skill("dodge", 120);           // åŸºæœ¬èº²é—ª
+	set_skill("shaolin-shenfa", 120);   // èƒ¡å®¶èº«æ³•
+	set_skill("parry", 120);             // åŸºæœ¬æ‹›æž¶
 		
 	map_skill("force", "hunyuan-yiqi");
 	map_skill("blade", "hujia-daofa");
 	map_skill("dodge", "shaolin-shenfa");
 	map_skill("parry", "hujia-daofa");
    	set("inquiry",([
-		"±¦µ¶": (: ask_me :),
+		"å®åˆ€": (: ask_me :),
              	]));
 	set("baodao_count",1);
     setup();
@@ -72,7 +72,7 @@ string ask_me()
 		call_out("do_kill",1,this_player());
 	}
 	else if((int)(me->query("shen")<100000))
-	    return "ÒÔÄãÄ¿Ç°µÄ×÷ÎªÊÇ²»ÄÜÄÃÕâ°Ñµ¶µÄ¡£\n";
+	    return "ä»¥ä½ ç›®å‰çš„ä½œä¸ºæ˜¯ä¸èƒ½æ‹¿è¿™æŠŠåˆ€çš„ã€‚\n";
 
    	else if((int)(me->query("shen") > 100000))
 	{
@@ -81,9 +81,9 @@ string ask_me()
 			add("baodao_count", -1);
     		ob = new ("/clone/weapon/cwbdao");
     		ob->move(this_player());
-			return " ºÃ°É£¬Õâ°Ñ´³Íõ±¦µ¶¾ÍÔùÓëÄã£¬Ï£ÍûÄãºÃºÃÀûÓÃËü¡£\n";
+			return " å¥½å§ï¼Œè¿™æŠŠé—¯çŽ‹å®åˆ€å°±èµ ä¸Žä½ ï¼Œå¸Œæœ›ä½ å¥½å¥½åˆ©ç”¨å®ƒã€‚\n";
 		}
-		else return "ÄãÀ´ÍíÁË, ÏÖÔÚÕâ°Ñµ¶ÒÑ²»ÔÚ´Ë´¦¡£\n";
+		else return "ä½ æ¥æ™šäº†, çŽ°åœ¨è¿™æŠŠåˆ€å·²ä¸åœ¨æ­¤å¤„ã€‚\n";
 	}
 
 }
@@ -99,7 +99,7 @@ void do_kill(object ob)
  
     if (interactive(ob))
     {
-        command("say ÄãÕâ¶ñÔô¾¹¸Ò´òÎÒ±¦µ¶µÄÖ÷Òâ, ¸øÎÒÄÉÃüÀ´£¡\n");
+        command("say ä½ è¿™æ¶è´¼ç«Ÿæ•¢æ‰“æˆ‘å®åˆ€çš„ä¸»æ„, ç»™æˆ‘çº³å‘½æ¥ï¼\n");
         me->set_leader(ob);
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob);

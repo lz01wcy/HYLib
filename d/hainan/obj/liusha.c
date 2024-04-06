@@ -6,11 +6,11 @@ int drop_him(object me);
 void create()
 {
         object san, sna;
-        set("short", "´óÄ®·çÉ³");
+        set("short", "å¤§æ¼ é£Žæ²™");
         set("long", @LONG
-ÄãÏÖÔÚ´¦ÔÚ¿áÈÈÈçºæÂ¯µÄÉ³Ä®ÖÐ£¬ÈÈµÄÁîÈËÁ¬Æø¶¼Í¸²»³ö¡£³ýÁËÂú¶úºôºô
-µÄ·çÉù£¬ÄãÊ²Ã´Ò²Ìý²»¼û£»³ýÁËÂúÑÛ¹ö¹öµÄ·ÉÉ³£¬ÄãÊ²Ã´Ò²¿´²»¼û£»ÌìµØ¼ä
-·Â·ðÖ»Ê£ÏÂÄãÒ»¸öÈË¡£Äã½ÅÏÂ»º»º¶ø¶¯µÄÁ÷É³¸øÄãÈçÂÃ±¡±ùµÄ¸Ð¾õ¡£
+ä½ çŽ°åœ¨å¤„åœ¨é…·çƒ­å¦‚çƒ˜ç‚‰çš„æ²™æ¼ ä¸­ï¼Œçƒ­çš„ä»¤äººè¿žæ°”éƒ½é€ä¸å‡ºã€‚é™¤äº†æ»¡è€³å‘¼å‘¼
+çš„é£Žå£°ï¼Œä½ ä»€ä¹ˆä¹Ÿå¬ä¸è§ï¼›é™¤äº†æ»¡çœ¼æ»šæ»šçš„é£žæ²™ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸è§ï¼›å¤©åœ°é—´
+ä»¿ä½›åªå‰©ä¸‹ä½ ä¸€ä¸ªäººã€‚ä½ è„šä¸‹ç¼“ç¼“è€ŒåŠ¨çš„æµæ²™ç»™ä½ å¦‚æ—…è–„å†°çš„æ„Ÿè§‰ã€‚
 LONG
         );
         set("exits", ([ 
@@ -76,9 +76,9 @@ int drop_him(object me)
 }
 int dropnow(object me)
 {
-        message_vision(HIW"$NÍ»È»¸Ðµ½½Åµ×ÈíÃàÃàµÄ£¬ÎÞ´¦×ÅÁ¦£¡", me);
-        message_vision("$N´ó½ÐÒ»Éù¡°²»ºÃ£¡¡±£¬¿ÉÊÇÀ´²»¼°ÁË¡­\n", me);
-        message_vision("$NÒÑÏÝÉíÁ÷É³Ö®ÖÐ£¡£¡\n"NOR, me);
+        message_vision(HIW"$Nçªç„¶æ„Ÿåˆ°è„šåº•è½¯ç»µç»µçš„ï¼Œæ— å¤„ç€åŠ›ï¼", me);
+        message_vision("$Nå¤§å«ä¸€å£°â€œä¸å¥½ï¼â€ï¼Œå¯æ˜¯æ¥ä¸åŠäº†â€¦\n", me);
+        message_vision("$Nå·²é™·èº«æµæ²™ä¹‹ä¸­ï¼ï¼\n"NOR, me);
         me->move(__DIR__"quicksand4");
         return 1;
 }
@@ -88,11 +88,11 @@ int do_pull ( string arg)
         object me, who;
         object room;
         me = this_player();
-        if ( !arg  ) return notify_fail("ÄãÒªÀ­Ë­ÉÏÀ´£¿\n");
+        if ( !arg  ) return notify_fail("ä½ è¦æ‹‰è°ä¸Šæ¥ï¼Ÿ\n");
         room = load_object(__DIR__"quicksand4");
         if(!objectp(who = present(arg, room)) ||  !living(who))
-        return notify_fail("Á÷É³ÀïÃ»ÓÐÕâ¸öÈË¡£\n");
-         message_vision(HIW"$NÓÃ¾¡È«ÉíÁ¦Á¿£¬½«$n´ÓÁ÷É³ÖÐ¾ÈÁË³öÀ´¡£\n"NOR, me,who);
+        return notify_fail("æµæ²™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
+         message_vision(HIW"$Nç”¨å°½å…¨èº«åŠ›é‡ï¼Œå°†$nä»Žæµæ²™ä¸­æ•‘äº†å‡ºæ¥ã€‚\n"NOR, me,who);
         who->move(__FILE__);
         return 1;
 
@@ -111,11 +111,11 @@ int do_push(string arg)
         who=present(arg,room);
         if (objectp(who))
         {
-                tell_object(who,this_player()->name(1)+"ÍÆÁËÄãÒ»°Ñ\n");
+                tell_object(who,this_player()->name(1)+"æŽ¨äº†ä½ ä¸€æŠŠ\n");
                 if (random(who->query_skill("dodge"))<40)
                 {
-                        message_vision("$N´ó½ÐÒ»Éù¡°²»ºÃ£¡¡±£¬¿ÉÊÇÀ´²»¼°ÁË¡­\n", who);
-                        message_vision("$NÒÑÏÝÉíÁ÷É³Ö®ÖÐ£¡£¡\n"NOR, who); 
+                        message_vision("$Nå¤§å«ä¸€å£°â€œä¸å¥½ï¼â€ï¼Œå¯æ˜¯æ¥ä¸åŠäº†â€¦\n", who);
+                        message_vision("$Nå·²é™·èº«æµæ²™ä¹‹ä¸­ï¼ï¼\n"NOR, who); 
                         who->move(__DIR__"quicksand4");
                 } else {
                         this_player()->start_busy(5);

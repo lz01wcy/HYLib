@@ -7,10 +7,10 @@ string ask_me(string name);
 
 void create()
 {
-	set_name("·½¸ê", ({ "fang ge", "fang", "ge"}));
-	set("long", "ËûÊÇÒ»Î»Éí´©»Æ²¼ôÂôÄµÄÇàÄêÉ®ÈË¡£Á³ÉÏÖÉÆøÎ´ÍÑ£¬ÉíÊÖÈ´ÒÑÏà\n"
-		"µ±½Ã½İ£¬¿´À´ËÆºõÑ§¹ıÒ»µãÎä¹¦¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–¹æˆˆ", ({ "fang ge", "fang", "ge"}));
+	set("long", "ä»–æ˜¯ä¸€ä½èº«ç©¿é»„å¸ƒè¢ˆè£Ÿçš„é’å¹´åƒ§äººã€‚è„¸ä¸Šç¨šæ°”æœªè„±ï¼Œèº«æ‰‹å´å·²ç›¸\n"
+		"å½“çŸ«æ·ï¼Œçœ‹æ¥ä¼¼ä¹å­¦è¿‡ä¸€ç‚¹æ­¦åŠŸã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -62,7 +62,7 @@ void create()
 	prepare_skill("strike", "sanhua-zhang");
 	prepare_skill("finger", "yizhi-chan");
 
-	create_family("ÄÏÉÙÁÖÅÉ", 21, "µÜ×Ó");
+	create_family("å—å°‘æ—æ´¾", 21, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
@@ -85,10 +85,10 @@ void confirm(object me)
 	room = load_object("/d/nanshaolin/cjlou");
 
 	if( (mapp(mine = me->query("family")) &&
-		mine["family_name"] != "ÄÏÉÙÁÖÅÉ") ||
+		mine["family_name"] != "å—å°‘æ—æ´¾") ||
 		((!present("fang ge", room)) && (!present("shou yu", me))))
 	{
-		command("say ´óµ¨¿ñÍ½£¬¾¹¸Ò´³Èë²Ø¾­¸ó£¬¿´ÕĞ!");
+		command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢é—¯å…¥è—ç»é˜ï¼Œçœ‹æ‹›!");
 		command("kill " + me->query("id")); 
 		set("chat_chance_combat", 50);
 		set("chat_msg_combat", ({

@@ -1,13 +1,13 @@
-//jinling  fuzimiao��c
+//jinling  fuzimiao。c
 inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "夫子庙");
         set("long", @LONG
-Ϊ�����׳ƣ��ֳ��������ǹ���ͼ�����ӵĵط�,���䡰��שС����ͷǽ��
-���ȹ��仨�񴰡��Ľ���������һʱ������ѧ�����ﲻ�����޲���հ���¿��ӵ�
-��ò��
+为孔庙俗称，又称文庙，是供奉和祭祀孔子的地方,以其“青砖小瓦马头墙、
+回廊挂落花格窗”的建筑风格称颂一时。游人学子络绎不绝。无不想瞻仰下孔子的
+风貌。
 LONG
         );
         set("exits", ([/* sizeof() == 4 */

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�˳�");
+	set("short", "菜场");
 	set("long", @LONG
-���������������Ĳ˳�������ʪʪ�ĳ���û�иɵ�ʱ��С��С����
-������ȥ���뾡�������˻ؼҡ������������̯�Ķ�Ҫ����������Ķ��
-�������ѡ�
+这里是熙熙攘攘的菜场，地上湿湿的长年没有干的时候。小商小贩们
+走来走去都想尽快卖完了回家。常年在这里摆摊的都要给南面屋里的恶霸
+交保护费。
 LONG
 	);
 set("outdoors","pingan");

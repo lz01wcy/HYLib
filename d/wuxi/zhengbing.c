@@ -5,18 +5,18 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "Õ÷±ø³¡");
+	set("short", "å¾å…µåœº");
 	set("long", @LONG
-ÕâÀïÊÇÐÂ±øÕ÷Ä¼´¦£¬ÃÅ¿ÚÓÐ¿éÄ¾ÅÆ (mupai)£¬ÀïÃæ¼·ÂúÁËÈË£¬ÓÐÈé
-³ôÎ´¸ÉµÄÉÙÄê£¬¸ü¶àµÄÊÇÉíÇ¿Á¦×³µÄÇàÄêÈË£¬Ã¿¸öµÄÈËÁ³ÉÏ¶¼ÊÇ¶ÔÎ´À´
-µÄã¿ã½¡£Èç¹ûÄãÏë±¨Ð§¹ú¼Ò£¬Õ÷Õ½É³³¡£¬»òÊÇ³öÈËÍ·µØ£¬ÕâÊÇÄÜÊµ
-ÏÖÄãÃÎÏëµÄµØ·½¡£
+è¿™é‡Œæ˜¯æ–°å…µå¾å‹Ÿå¤„ï¼Œé—¨å£æœ‰å—æœ¨ç‰Œ (mupai)ï¼Œé‡Œé¢æŒ¤æ»¡äº†äººï¼Œæœ‰ä¹³
+è‡­æœªå¹²çš„å°‘å¹´ï¼Œæ›´å¤šçš„æ˜¯èº«å¼ºåŠ›å£®çš„é’å¹´äººï¼Œæ¯ä¸ªçš„äººè„¸ä¸Šéƒ½æ˜¯å¯¹æœªæ¥
+çš„æ†§æ†¬ã€‚å¦‚æžœä½ æƒ³æŠ¥æ•ˆå›½å®¶ï¼Œå¾æˆ˜æ²™åœºï¼Œæˆ–æ˜¯å‡ºäººå¤´åœ°ï¼Œè¿™æ˜¯èƒ½å®ž
+çŽ°ä½ æ¢¦æƒ³çš„åœ°æ–¹ã€‚
 LONG );
 	set("outdoors", "wuxi");
 	set("item_desc", ([
 		"mupai" : HIR"
 		
-         ¾« ÖÒ ±¨ ¹ú
+         ç²¾ å¿  æŠ¥ å›½
 
 \n"NOR,
 	]));

@@ -2,16 +2,16 @@ inherit NPC;
 
 void create()
 {
-	set_name("µêÐ¡¶þ",({"xiao er","xiao","er"}));
-	set("gender", "ÄÐÐÔ" );
+	set_name("åº—å°äºŒ",({"xiao er","xiao","er"}));
+	set("gender", "ç”·æ€§" );
 	set("age", 20);
 	set("long",
-		"Ã¼ÇåÄ¿ÐãµÄÐ¡»ï¼Æ£¬ÕûÌìÐ¦ÎûÎûµÄ£¬Ã¦µÃ²»ÒàÀÖºõ¡£\n");
+		"çœ‰æ¸…ç›®ç§€çš„å°ä¼™è®¡ï¼Œæ•´å¤©ç¬‘å˜»å˜»çš„ï¼Œå¿™å¾—ä¸äº¦ä¹ä¹Žã€‚\n");
 	set("combat_exp",200);
 	set_temp("apply/defense",10);
 	set_temp("apply/attack",5);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ð¡¶þ¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	setup();
 }
 
@@ -30,6 +30,6 @@ void greeting(object ob)
 {
 
 	if( !ob || environment(ob) != environment() ) return;
-			message_vision("µêÐ¡¶þ¼ûÄã¹ýÀ´,Ã¦Ó­ÉÏÀ´£¬Ð¦µÀ£ºÕâÎ»"+
-			RANK_D->query_respect(ob)+"£¬ÄúÍùÀï±ßÇë!\n",ob);
+			message_vision("åº—å°äºŒè§ä½ è¿‡æ¥,å¿™è¿Žä¸Šæ¥ï¼Œç¬‘é“ï¼šè¿™ä½"+
+			RANK_D->query_respect(ob)+"ï¼Œæ‚¨å¾€é‡Œè¾¹è¯·!\n",ob);
 }

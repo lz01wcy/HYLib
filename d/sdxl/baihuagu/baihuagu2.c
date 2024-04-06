@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", HIM"�ٻ�����"NOR);
+	set("short", HIM"百花谷内"NOR);
 	set("long", 
-HIG"ֻ������̺죬��ɽ���壬�ʵ��׷ɣ�Ⱥ�����衣�����������أ�
-������Դ��Ҳ������ˡ�ɽ����һ�й����߰˸�ľ�Ƶķ䳲��һ��ɽ
-ɽ���ϸ�������é�ݡ�\n"NOR);
+HIG"只见姹紫嫣红，满山锦绣，彩蝶纷飞，群蜂轻舞。纵是宇外琼地，
+世外桃源，也不过如此。山坡下一列挂着七八个木制的蜂巢另一面山
+山坡上盖着三间茅屋。\n"NOR);
 	set("outdoors", "baihuagu");
 	set("exits", ([
 		"north"    : __DIR__"baihuagu",

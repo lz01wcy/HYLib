@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name("ÌìÉ½Ñ©Á«", ({"xuelian", "lian", "lotus"}));
+        set_name("å¤©å±±é›ªè²", ({"xuelian", "lian", "lotus"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
-                set("long", "ÕâÊÇÒ»Ö§Ö»ÓĞÔÚº®ÀäµÄµØ·½²ÅÄÜÉú³¤µÄÑ©Á«¡£\n");
+                set("unit", "æ”¯");
+                set("long", "è¿™æ˜¯ä¸€æ”¯åªæœ‰åœ¨å¯’å†·çš„åœ°æ–¹æ‰èƒ½ç”Ÿé•¿çš„é›ªè²ã€‚\n");
                 set("value", 100);
         }
         setup();
@@ -27,14 +27,14 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 // function of this medicine needed here
        if ((int)this_player()->query("eff_qi")==
            (int)this_player()->query("max_qi"))
-                return notify_fail("ÄãÏÖÔÚ²»ÓÃ³ÔÕâ±¦±´!\n");
+                return notify_fail("ä½ ç°åœ¨ä¸ç”¨åƒè¿™å®è´!\n");
        this_player()->receive_curing("qi",200);
-       message_vision("$NĞ¡ĞÄµØ³ÔÏÂÒ»ÖêÑ©Á«,¶ÙÊ±¾õµÃÉñÇåÆøË¬ÁË²»ÉÙ!\n",
+       message_vision("$Nå°å¿ƒåœ°åƒä¸‹ä¸€æ ªé›ªè²,é¡¿æ—¶è§‰å¾—ç¥æ¸…æ°”çˆ½äº†ä¸å°‘!\n",
                       this_player());
 
        destruct(this_object());

@@ -3,16 +3,16 @@
 inherit WHIP; 
 void create()
 {
-        set_name( "ÄÁÑò±Ş", ({ "whip" }) );
+        set_name( "ç‰§ç¾Šé­", ({ "whip" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
                 set("value", 5000);
                 set("material", "skin"); 
-        set("wield_msg", "$N´ÓÑü¼äÃş³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊøÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æ‘¸å‡ºä¸€æ¡$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næŸåœ¨è…°é—´ã€‚\n");
         }
         ::init_whip(5);
 }       

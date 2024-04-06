@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-   set_name("²É²ÎÈË",({ "man" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("é‡‡å‚äºº",({ "man" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 42);
-   set("long", "ÕâÊÇÒ»¸ö³¤°×É½²É²ÎµÄÈË¡£\n");
+   set("long", "è¿™æ˜¯ä¸€ä¸ªé•¿ç™½å±±é‡‡å‚çš„äººã€‚\n");
        
    set("combat_exp", 5000);
    set("str", 10);
    set("attitude", "peaceful");
    set("inquiry",([
-      "ÈË²Î":"ÄãÒª²É²ÎÂğ£¿ÍÚ¾Í¿ÉÒÔÁË£¡\n",
+      "äººå‚":"ä½ è¦é‡‡å‚å—ï¼ŸæŒ–å°±å¯ä»¥äº†ï¼\n",
       ]));
    setup();
    carry_object(__DIR__"obj/cloth")->wear();

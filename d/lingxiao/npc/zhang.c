@@ -6,11 +6,11 @@ string ask_jiu();
 
 void create()
 {
-        set_name("ÕÅÍò·ç",({"zhang wanfeng","zhang"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¼ ä¸‡é£",({"zhang wanfeng","zhang"}));
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long", 
-               "ËûÊÇÁèÏö³ÇµÚÁù´úµÜ×ÓÕÅÍò·ç,ÕıÔÚÕâºÈ¾ÆºÈµÃ¸ßĞË¡£\n");
+               "ä»–æ˜¯å‡Œéœ„åŸç¬¬å…­ä»£å¼Ÿå­å¼ ä¸‡é£,æ­£åœ¨è¿™å–é…’å–å¾—é«˜å…´ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -25,7 +25,7 @@ void create()
         set("max_qi", 1200);
         set("inquiry", ([
             "jiu" :    (: ask_jiu :), 
-            "²ÎÑôÓñ¾Æ" :    (: ask_jiu :), 
+            "å‚é˜³ç‰é…’" :    (: ask_jiu :), 
         ]) ); 
         set("jiu_count", 5);
 
@@ -57,7 +57,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸ", 6, "å¼Ÿå­");
         setup();
 
         
@@ -69,22 +69,22 @@ string ask_jiu()
 {
         object ob;
         
-        if (this_player()->query("family/family_name") != "ÁèÏö³Ç")
+        if (this_player()->query("family/family_name") != "å‡Œéœ„åŸ")
                 return RANK_D->query_respect(this_player()) + 
-                "¸óÏÂ·ÇÎÒÁèÏöµÜ×Ó£¬ÎÒÎªÊ²Ã´Òª¸øÄã²ÎÑôÓñ¾Æ?";
+                "é˜ä¸‹éæˆ‘å‡Œéœ„å¼Ÿå­ï¼Œæˆ‘ä¸ºä»€ä¹ˆè¦ç»™ä½ å‚é˜³ç‰é…’?";
 
         if (  present("shenyang yujiu", this_player()) )
                 return RANK_D->query_respect(this_player()) + 
-                "ÄãÉíÉÏ¾ÍÓĞÒ»ºø,»¹ÏëÒª,±ğÄÇÃ´Ì°ĞÄ£¡"; 
-        if (query("jiu_count") < 1) return "°¥Ñ½Ñ½£¡×î½üºÃ¾ÆµÄÈË»¹Õæ²»ÉÙ£¡¶Ô²»Æğ,²ÎÑôÓñ¾ÆÒÑ¾­·¢ÍêÁË";
+                "ä½ èº«ä¸Šå°±æœ‰ä¸€å£¶,è¿˜æƒ³è¦,åˆ«é‚£ä¹ˆè´ªå¿ƒï¼"; 
+        if (query("jiu_count") < 1) return "å“å‘€å‘€ï¼æœ€è¿‘å¥½é…’çš„äººè¿˜çœŸä¸å°‘ï¼å¯¹ä¸èµ·,å‚é˜³ç‰é…’å·²ç»å‘å®Œäº†";
 
         ob = new("/d/lingxiao/obj/jiu");
         ob->move(this_player());
 
         add("jiu_count", -1);
 
-        message_vision("$N½Ó¹ıÒ»ºø²ÎÑôÓñ¾Æ¡£\n",this_player());
-        return "ÄÃÈ¥°É,²»Òªµ±¾ÆºÈÑ½¡£";
+        message_vision("$Næ¥è¿‡ä¸€å£¶å‚é˜³ç‰é…’ã€‚\n",this_player());
+        return "æ‹¿å»å§,ä¸è¦å½“é…’å–å‘€ã€‚";
 
 }
 

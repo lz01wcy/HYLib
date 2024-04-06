@@ -1,4 +1,4 @@
-// townroad1.c Ğ¡ÕòÂ·
+// townroad1.c å°é•‡è·¯
 // Town of mingjiao  
 // Ver 1.0 10/8/1998 by Shark
 
@@ -7,23 +7,23 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIG "Ğ¡ Õò ½Ö µÀ");
+	set("short",HIG "å° é•‡ è¡— é“");
 	set("long",   @LONG
-ÄãÕı×ßÔÚĞ¡ÕòÎ¨Ò»µÄÒ»Ìõ½ÖµÀ£¬²»Ê±ÓĞ·çÉ³Ï®À´¡£Î÷ÃæÓĞ¼ä¿ÍÕ»£¬¶«
-±ßÊÇ¼Òµ±ÆÌ£¬ÄÏ±ßÊÇ×ùÁúÍõÃí¡£ÍùÎ÷ÄÏ¾ÍÊÇÈ¥À¥ÂØÉ½µÄÂ·ÁË¡£
+ä½ æ­£èµ°åœ¨å°é•‡å”¯ä¸€çš„ä¸€æ¡è¡—é“ï¼Œä¸æ—¶æœ‰é£æ²™è¢­æ¥ã€‚è¥¿é¢æœ‰é—´å®¢æ ˆï¼Œä¸œ
+è¾¹æ˜¯å®¶å½“é“ºï¼Œå—è¾¹æ˜¯åº§é¾™ç‹åº™ã€‚å¾€è¥¿å—å°±æ˜¯å»æ˜†ä»‘å±±çš„è·¯äº†ã€‚
 LONG
 	);	
         set("outdoors", "jyguan");
 
 
 	set("exits", ([
-                "west" : __DIR__"kedian",//ÓĞ¼ä¿ÍÕ»
-             	"east" : __DIR__"dangpu",//µ±ÆÌ
-                "south" : __DIR__"longwangmiao",//ÁúÍõÃí
+                "west" : __DIR__"kedian",//æœ‰é—´å®¢æ ˆ
+             	"east" : __DIR__"dangpu",//å½“é“º
+                "south" : __DIR__"longwangmiao",//é¾™ç‹åº™
                 "north" : __DIR__"townroad",
 //                "northwest" : __DIR__"luzhou",
 //                "northeast" : __DIR__"shaqiu1",
-                "southwest" : __DIR__"huangmo",//È¥À¥ÂØÉ½
+                "southwest" : __DIR__"huangmo",//å»æ˜†ä»‘å±±
 //                "southeast" : __DIR__"town",
 	]));
 	

@@ -3,12 +3,12 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("ºµÑÌ¸Ë", ({ "hanyangan", "hanyan" }) );
+        set_name("æ—±çƒŸæ†", ({ "hanyangan", "hanyan" }) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
+		set("unit", "æ ¹");
 		set("value", 70);
 		set("material", "wood");
 	}

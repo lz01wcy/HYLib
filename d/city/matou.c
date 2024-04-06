@@ -8,13 +8,13 @@ inherit ROOM;
 int do_go(string);
 void create()
 {
-	set("short","��������ͷ");
+	set("short","宁海桥码头");
 	set("long",@LONG
-���������ݳ���������ͷ���Ϸ�����ʳ�������������ڴ�ж����
-������Ĺ�Ա��飬��ת�˻���ʱ���档������Ա���ӣ���С���ڽ�����
-�й����ڰ����������й�Ա�ֳֳ����ڼ๤���м�����Ƥ��ת��תȥ��
-��֪��Щʲô���⡣�ϱ߾��������𡣶����Ǵ�ʿ�֣��¿��˼��ҵ��̡�
-    ����ͣ����һ���ʹ���
+这里是扬州城里最大的码头，南方的粮食，两淮的盐铁在此卸下由
+漕运署的官员抽查，或转运或暂时储存。这里人员繁杂，有小贩在叫卖，
+有工人在搬运粮袋，有官员手持长鞭在监工，有几个泼皮在转来转去，
+不知打些什么主意。南边就是漕运署。东边是达士街，新开了几家店铺。
+    岸边停靠着一条客船。
 LONG );
 	set("outdoors", "yangzhoue");
 	set("worktimes", 20);
@@ -41,41 +41,41 @@ int do_work()
 {
 	object me = this_player();
 //	if ( query("worktimes") < 0)
-//		return notify_fail("��ͷ�����ڲ���Ҫ�˸ɻ�´ΰɣ�\n");
+//		return notify_fail("码头上现在不需要人干活，下次吧！\n");
 
-	if (me->query("gender") == "Ů��") 
-	return notify_fail("��ͷ�����ڲ���ҪŮ���ӼҸɻ\n");
+	if (me->query("gender") == "女性") 
+	return notify_fail("码头上现在不需要女孩子家干活！\n");
 //	if ( me->query_temp("working") )
-//		return notify_fail("���Ѿ��ڸɻ��ˣ���\n");
+//		return notify_fail("你已经在干活了！！\n");
 	if ( !objectp( present ("jian gong", environment(me) ) ) )
-		return notify_fail("��ͷ�����ڲ���Ҫ�˸ɻ�´ΰɣ�\n");
+		return notify_fail("码头上现在不需要人干活，下次吧！\n");
 	if (me->query("combat_exp")<MIN_EXP)
 	{
-		tell_object(me,"���ﶼ���ػ�����ڻ��ɲ��ˡ�\n");
+		tell_object(me,"这里都是重活，你现在还干不了。\n");
 		return 1;
 	}
 	
 
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("����æ���أ�\n");
+		return notify_fail("你正忙着呢！\n");
 	if ( (int)me->query("jing") < 10 || (int)me->query("qi") < 10 )
 	{
 		message_vision(
-"�๤����$N����һ���ӣ�$N���϶�ʱ����һ��Ѫ�ۣ�$N�������Ķ㵽һ\n"
-"��ȥ�ˡ�����ģ���С���⸱ή�Ҳ�������ӻ���ɻ�������๤��\n"
-"��������������\n", me);
+"监工冲着$N就是一鞭子，$N身上顿时起了一道血痕，$N踉踉跄跄躲到一\n"
+"边去了。“妈的，你小子这副萎靡不振的样子还想干活？！！”监工骂\n"
+"到：“滚！！”\n", me);
 		me->receive_damage("qi", 11);
 		me->receive_wound("qi", 11);
 		return 1;
 	}
 if (me->query_temp("working") >=1)
 {
-	write(""+me->query("name")+"����һ������������Ӳֿ�ᵽ����ͷ��\n");
+	write(""+me->query("name")+"搬起一个麻袋，把它从仓库搬到了码头。\n");
 }
 else
 {
-	write("�๤�ñ���ָ��ָ��˵������ȥ���������ɡ���\n");
-	write(""+me->query("name")+"����һ���������ʼ�ɻ\n");
+	write("监工拿鞭子指了指，说道：“去那里搬麻袋吧。”\n");
+	write(""+me->query("name")+"搬起一个麻袋，开始干活。\n");
 }
 	add("worktimes", -1);
 	me->start_busy(5);
@@ -92,8 +92,8 @@ int work_end(object me)
 	object ob1;
 	int add_exp,add_pot,add_score;
 	me->delete_temp("working");
-	write("��������๤�ˣ�����һ���������۸�������\n"
-"�๤����������"+me->query("name")+"�ļ��˵������С�ӣ������ģ�������Ĺ�Ǯ����\n");
+	write("终于做完苦工了，搬了一天的麻袋，累个半死。\n"
+"监工过来拍了拍"+me->query("name")+"的肩膀，说道：“小子，好样的，这是你的工钱。”\n");
 	me->receive_damage("jing",me->query("jing")/8);
 	me->receive_damage("qi",me->query("qi")/8);
 	me->receive_damage("jing",10);
@@ -107,10 +107,10 @@ int work_end(object me)
 		ob1 = new("/clone/money/silver");
 		ob1->set_amount(add_score);
 		ob1->move(me);	
-		tell_object(me,HIW"��õ���:"
-			+ chinese_number(add_exp) + "��ʵս���飬"
-			+ chinese_number(add_pot) + "��Ǳ�ܣ�"
-			+ chinese_number(add_score) + "�㽭��������\n"NOR);				
+		tell_object(me,HIW"你得到了:"
+			+ chinese_number(add_exp) + "点实战经验，"
+			+ chinese_number(add_pot) + "点潜能，"
+			+ chinese_number(add_score) + "点江湖阅历。\n"NOR);				
 	if ( me->query_temp("working") ) me->delete_temp("working");
 	return 1;
 }

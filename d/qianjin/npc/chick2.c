@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("Èíºì", ({ "girl" }) );
-	set("title", HIM "º£ÑóÃû¼Ë" NOR);
-	set("gender", "Å®ÐÔ" );
+	set_name("è½¯çº¢", ({ "girl" }) );
+	set("title", HIM "æµ·æ´‹åå¦“" NOR);
+	set("gender", "å¥³æ€§" );
 	set("age", 22);
 	set("str", 10);
 	set("per", 30);
 	set("long", @LONG
-ÈíºìÊÇ±±¾©³ÇµÄÃû¼Ë£¬Èç¹ûÄã¸ÐÐËÈ¤µÄ»°£¬Çë£¨£å£î£ê£ï£ù£©£®
+è½¯çº¢æ˜¯åŒ—äº¬åŸŽçš„åå¦“ï¼Œå¦‚æžœä½ æ„Ÿå…´è¶£çš„è¯ï¼Œè¯·ï¼ˆï½…ï½Žï½Šï½ï½™ï¼‰ï¼Ž
 LONG
 );
 	set("combat_exp", 10);
@@ -22,14 +22,14 @@ LONG
 
 int accept_fight(object me)
 {
-	command("say Ð¡Å®×ÓÄÄÀïÊÇÄúµÄ¶ÔÊÖ£¿");
+	command("say å°å¥³å­å“ªé‡Œæ˜¯æ‚¨çš„å¯¹æ‰‹ï¼Ÿ");
 	return 0;
 }
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àÐ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬ÄúÒ»¶¨»áÔÚÕâ¶ùÍæµÄ¿ªÐÄµÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œæ‚¨ä¸€å®šä¼šåœ¨è¿™å„¿çŽ©çš„å¼€å¿ƒçš„ï¼");
         return 1;
 }
 
@@ -46,7 +46,7 @@ object *inv;
 //int maxgin,maxkee, maxsen;
 int i;
 	me = this_player();
-message_vision("$NÇáÆ®Æ®µØÏò$n×ß¹ýÀ´£¬ÎÂÈáµÄ¸§Åª$nµÄºÚ·¢£®£®£®\n",this_object(),me);
+message_vision("$Nè½»é£˜é£˜åœ°å‘$nèµ°è¿‡æ¥ï¼Œæ¸©æŸ”çš„æŠšå¼„$nçš„é»‘å‘ï¼Žï¼Žï¼Ž\n",this_object(),me);
 	me->unconcious();
                 inv = all_inventory(me);
                 for(i=0; i<sizeof(inv); i++)

@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÐÝÏ¢ÊÒ");
+        set("short", "ä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÏá·¿£¬ÊÇáÔÉ½µÜ×ÓÐÝÏ¢Æð¾ÓµÄµØ·½¡£ÒòÎªÃÅ´°³£Äê±Õ
-×Å£¬·¿¼äÄÑÃâ»è°µ¡£·¿Àï¿¿´°´¦°ÚÉè×ÀÒÎ£¬Àï±ß¿¿Ç½·Å×ÅÒ»ÕÅÊÕÊ°µÃÊæ
-Êæ·þ·þµÄ´ó´²£¬¿´×Å¾ÍÈÃÈËÏëË¯¾õ¡£
+è¿™æ˜¯é—´æ•´æ´çš„åŽ¢æˆ¿ï¼Œæ˜¯åµ©å±±å¼Ÿå­ä¼‘æ¯èµ·å±…çš„åœ°æ–¹ã€‚å› ä¸ºé—¨çª—å¸¸å¹´é—­
+ç€ï¼Œæˆ¿é—´éš¾å…æ˜æš—ã€‚æˆ¿é‡Œé çª—å¤„æ‘†è®¾æ¡Œæ¤…ï¼Œé‡Œè¾¹é å¢™æ”¾ç€ä¸€å¼ æ”¶æ‹¾å¾—èˆ’
+èˆ’æœæœçš„å¤§åºŠï¼Œçœ‹ç€å°±è®©äººæƒ³ç¡è§‰ã€‚
 LONG );
 	set("exits", ([
 
@@ -21,9 +21,9 @@ LONG );
 	set("coor/x", 10);
 	set("coor/y", 910);
 	set("coor/z", 90);
-  set("door_name","ÃÅ");
+  set("door_name","é—¨");
 	set("door_dir","west");
-	set("force_name","ÌÀÓ¢ðÀ");
+	set("force_name","æ±¤è‹±é¹„");
   //set("outroom",__DIR__"eastpath2");
 	setup();
 }

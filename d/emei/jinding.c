@@ -1,16 +1,16 @@
-//Room: jinding.c ½ð¶¥
+//Room: jinding.c é‡‘é¡¶
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","½ð¶¥");
+      set("short","é‡‘é¡¶");
       set("long",@LONG
-Õâ¾ÍÊÇ¶ëáÒÉ½µÄÖ÷·å½ð¶¥ÁË¡£´Ë·åËÊÁ¢´óµØ£¬¸ßÈëÔÆ±í£¬ÐãÀö¶øÓÖ×³ÃÀ£¬
-Àî°×ÔÞËÌËü£º¡ºÇàÚ¤ÒÐÌì¿ª£¬²Ê´íÒÉ»­³ö¡£¡»µÇÉÏ½ð¶¥£¬ÊÓÒ°»íÈ»¿ªÀÊ£¬Äñ¿´
-½ÅÏÂ£¬µ«¼ûÈº·åÓ¿ÂÌµþ´ä£¬Èý½­ÈçË¿Èç´ø£»»ØÊ×Ô¶Ì÷£¬Ôò¼û´óÑ©É½ºáØ¨Ìì¼Ê£¬
-¹±¸ÂÉ½Ö±²å²Ôñ·¡£
+è¿™å°±æ˜¯å³¨åµ‹å±±çš„ä¸»å³°é‡‘é¡¶äº†ã€‚æ­¤å³°è€¸ç«‹å¤§åœ°ï¼Œé«˜å…¥äº‘è¡¨ï¼Œç§€ä¸½è€Œåˆå£®ç¾Žï¼Œ
+æŽç™½èµžé¢‚å®ƒï¼šã€Žé’å†¥å€šå¤©å¼€ï¼Œå½©é”™ç–‘ç”»å‡ºã€‚ã€ç™»ä¸Šé‡‘é¡¶ï¼Œè§†é‡Žè±ç„¶å¼€æœ—ï¼Œé¸Ÿçœ‹
+è„šä¸‹ï¼Œä½†è§ç¾¤å³°æ¶Œç»¿å ç¿ ï¼Œä¸‰æ±Ÿå¦‚ä¸å¦‚å¸¦ï¼›å›žé¦–è¿œçœºï¼Œåˆ™è§å¤§é›ªå±±æ¨ªäº˜å¤©é™…ï¼Œ
+è´¡å˜Žå±±ç›´æ’è‹ç©¹ã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */

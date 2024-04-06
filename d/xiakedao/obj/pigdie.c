@@ -10,9 +10,9 @@ void init()
 
 void create()
 {
-        set_name("ËÀÖí", ({ "pig", "pigdie" }) );
-        set("long", "ÕâÊÇÒ»Ö»ËÀÈ¥µÄÒ°Öí£¬Í·²¿(zhutou)¡¢Ç°ÍÈ(forleg)¡¢ºóÍÈ(backleg)¶¼
-³¤µÃ¼«Îª´Ö×³¡£\n");
+        set_name("æ­»çŒª", ({ "pig", "pigdie" }) );
+        set("long", "è¿™æ˜¯ä¸€åªæ­»å»çš„é‡çŒªï¼Œå¤´éƒ¨(zhutou)ã€å‰è…¿(forleg)ã€åè…¿(backleg)éƒ½
+é•¿å¾—æä¸ºç²—å£®ã€‚\n");
         set_temp("zhutou", 1);
         set_temp("forleg", 1);
         set_temp("backleg", 1);
@@ -20,7 +20,7 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("value", 300);
 
         }
@@ -33,16 +33,16 @@ int do_get(string arg)
         object ob;
         ob=this_object();
         if( !arg )
-            return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+            return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆï¼Ÿ\n");
 
         if( (string)arg=="pig")
         {
               if( me->query("str")<25 )
               {
-                     message_vision("ÕâÖ»Ò°ÖíÌ«³ÁÁË£¬ÄãÄÃ²»¶¯¡£\n", me);
+                     message_vision("è¿™åªé‡çŒªå¤ªæ²‰äº†ï¼Œä½ æ‹¿ä¸åŠ¨ã€‚\n", me);
                      return 1;
               }
-              message_vision("Äã¿¸ÆğÒ»ÕûÖ»Öí£¬Ì«³ÁÁË£¬ÕæÊÇÊÜ²»ÁË¡£\n", me);
+              message_vision("ä½ æ‰›èµ·ä¸€æ•´åªçŒªï¼Œå¤ªæ²‰äº†ï¼ŒçœŸæ˜¯å—ä¸äº†ã€‚\n", me);
               ob->move(me);
               return 0;
         }
@@ -53,19 +53,19 @@ int do_ge(string arg)
         object me=this_player();
         object ob;
         if(!arg||arg=="")
-              return notify_fail("ÄãÒªÇĞÊ²Ã´¶«Î÷£¿\n");
+              return notify_fail("ä½ è¦åˆ‡ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
         if( (string)arg=="pig")
-              return notify_fail("ÄãÒªÇĞÄÄÒ»²¿·Ö£¿\n");
+              return notify_fail("ä½ è¦åˆ‡å“ªä¸€éƒ¨åˆ†ï¼Ÿ\n");
         if( (!objectp(present("cut knife", me)) ))
         {
-              message_vision("ÄãÃ»ÓĞºÏÊÊµÄ¶«Î÷À´ÇĞ¡£ÓĞ°Ñ²Ëµ¶»ò²ñµ¶Ö®ÀàµÄ¾ÍºÃÁË¡£\n", me);
+              message_vision("ä½ æ²¡æœ‰åˆé€‚çš„ä¸œè¥¿æ¥åˆ‡ã€‚æœ‰æŠŠèœåˆ€æˆ–æŸ´åˆ€ä¹‹ç±»çš„å°±å¥½äº†ã€‚\n", me);
               return 1;
         }
 
         switch( (string)arg) {
         case "zhutou" :  if( query_temp("zhutou")==1)
                          {
-                             message_vision("Äã¿³ÏÂÒ°ÖíµÄÍ·¡£\n", me);
+                             message_vision("ä½ ç ä¸‹é‡çŒªçš„å¤´ã€‚\n", me);
                              ob=new(__DIR__"zhutou");
                              ob->move(me);
                              set_temp("zhutou" , 0);
@@ -73,12 +73,12 @@ int do_ge(string arg)
                          }
                          else
                          {
-                             message_vision("ÕâÒ°ÖíµÄÍ·ÒÑ±»ÈË¿³×ßÁË¡£\n", me);
+                             message_vision("è¿™é‡çŒªçš„å¤´å·²è¢«äººç èµ°äº†ã€‚\n", me);
                              return 1;
                          }
         case "forleg" :  if( query_temp("forleg")==1)
                          {
-                             message_vision("Äã¿³ÏÂÒ°ÖíµÄÇ°½Å¡£\n", me);
+                             message_vision("ä½ ç ä¸‹é‡çŒªçš„å‰è„šã€‚\n", me);
                              ob=new(__DIR__"forleg");
                              ob->move(me);
                              set_temp("forleg", 0);
@@ -86,12 +86,12 @@ int do_ge(string arg)
                          }
                          else
                          {
-                             message_vision("ÕâÒ°ÖíµÄÇ°ÍÈÒÑ±»ÈË¿³×ßÁË¡£\n", me);
+                             message_vision("è¿™é‡çŒªçš„å‰è…¿å·²è¢«äººç èµ°äº†ã€‚\n", me);
                              return 1;
                          }
         case "backleg" : if( query_temp("backleg")==1)
                          {
-                             message_vision("Äã¿³ÏÂÒ°ÖíµÄºó½Å¡£\n",me);
+                             message_vision("ä½ ç ä¸‹é‡çŒªçš„åè„šã€‚\n",me);
                              ob=new(__DIR__"backleg");
                              ob->move(me);
                              set_temp("backleg", 0);
@@ -99,7 +99,7 @@ int do_ge(string arg)
                          }
                          else
                          {
-                             message_vision("ÕâÒ°ÖíµÄºóÍÈÒÑ±»ÈË¿³×ßÁË¡£\n", me);
+                             message_vision("è¿™é‡çŒªçš„åè…¿å·²è¢«äººç èµ°äº†ã€‚\n", me);
                              return 1;
                          }
 

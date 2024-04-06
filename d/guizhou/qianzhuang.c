@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ĳ���");
+	set("short", "文昌阁");
 	set("long", @LONG
-����һ�����ֺŵ�Ǯׯ�����м��������ʷ����ȫ�����ض��зֵꡣ
-�����е���Ʊ�����ǳ��ã�ͨ��ȫ����
+这是一家老字号的钱庄，已有几百年的历史，在全国各地都有分店。
+它发行的银票信誉非常好，通行全国。
 LONG );
 	set("exits", ([
 		"northeast" : __DIR__"beishi",

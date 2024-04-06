@@ -1,4 +1,4 @@
-//Room: shanhongpb.c É½ºéÆÙ²¼
+//Room: shanhongpb.c å±±æ´ªç€‘å¸ƒ
 //Date: Oct. 2 1997 by Venus
 inherit ROOM;
 #include <ansi.h>
@@ -7,11 +7,11 @@ int do_lian(string arg);
 
 void create()
 {
-      set("short","É½ºéÆÙ²¼");
+      set("short","å±±æ´ªç€‘å¸ƒ");
       set("long",@LONG
-ÕâÀïÊÇÒ»´¦Ï¿¹È£¬Ã¿ÄêÓê¼¾É½ºé±¬·¢Ê±¾ÍĞÎ³ÉÁËÒ»´¦ÎµÎª×³¹ÛµÄ
-ÆÙ²¼¡£´«Ëµµ±ÄêÉñµñÏÀÑî¹ı¾ÍÊÇÔÚÕâÀïÁ·³É¾øÊÀµÄĞşÌú½£·¨µÄ¡£ÏÖÔÚ
-ÈËÈ¥¹È¿Õ£¬Ö»Ê£ÏÂ¿ÕÁÈµÄÉ½¹ÈºÍ±¼ÌÚµÄºéË®(hongshui)¡£
+è¿™é‡Œæ˜¯ä¸€å¤„å³¡è°·ï¼Œæ¯å¹´é›¨å­£å±±æ´ªçˆ†å‘æ—¶å°±å½¢æˆäº†ä¸€å¤„è”šä¸ºå£®è§‚çš„
+ç€‘å¸ƒã€‚ä¼ è¯´å½“å¹´ç¥é›•ä¾ æ¨è¿‡å°±æ˜¯åœ¨è¿™é‡Œç»ƒæˆç»ä¸–çš„ç„é“å‰‘æ³•çš„ã€‚ç°åœ¨
+äººå»è°·ç©ºï¼Œåªå‰©ä¸‹ç©ºå¯¥çš„å±±è°·å’Œå¥”è…¾çš„æ´ªæ°´(hongshui)ã€‚
 LONG);
       set("outdoors", "xx");
       set("no_clean_up", 0);
@@ -26,8 +26,8 @@ LONG);
 string look_hongshui()
 {
 	return
-"ÕâÊÇÒ»¹É±¼ÌÚ²»Ï¢µÄºéË®£¬Ë®ÖĞÒşÒşÓĞ¸ö¶«Î÷ÔÚ·¢¹â£¬µ«Äã¶¨¾¦\n"
-"×ĞÏ¸Ò»¿´£¬·¢ÏÖÄÇÖ»²»¹ıÊÇË®Ãæ·´ÉäµÄÈÕ¹â°ÕÁË¡£\n";
+"è¿™æ˜¯ä¸€è‚¡å¥”è…¾ä¸æ¯çš„æ´ªæ°´ï¼Œæ°´ä¸­éšéšæœ‰ä¸ªä¸œè¥¿åœ¨å‘å…‰ï¼Œä½†ä½ å®šç›\n"
+"ä»”ç»†ä¸€çœ‹ï¼Œå‘ç°é‚£åªä¸è¿‡æ˜¯æ°´é¢åå°„çš„æ—¥å…‰ç½¢äº†ã€‚\n";
 }
 void init()
 {
@@ -42,57 +42,57 @@ int lian(string arg)
 	object me=this_player();
 	if (!arg)
         {
-		write("ÄãÒªÁ·Ê²Ã´Îä¹¦£¿\n");
+		write("ä½ è¦ç»ƒä»€ä¹ˆæ­¦åŠŸï¼Ÿ\n");
                 return 1;
         }
 	if ( (sscanf(arg, "%s %d", arg, times)!=2 ))
-		return notify_fail("Ö¸Áî¸ñÊ½£ºpractice|lian <¼¼ÄÜÖÖÀà> <´ÎÊı>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špractice|lian <æŠ€èƒ½ç§ç±»> <æ¬¡æ•°>\n");
 	if ( times < 1 || times > 30)
-		return notify_fail("Á·Ï°´ÎÊı±ØĞë´óÓÚÒ»´Î£¬µ«²»ÄÜ³¬¹ıÈıÊ®´Î¡£\n");
+		return notify_fail("ç»ƒä¹ æ¬¡æ•°å¿…é¡»å¤§äºä¸€æ¬¡ï¼Œä½†ä¸èƒ½è¶…è¿‡ä¸‰åæ¬¡ã€‚\n");
 	if (arg!="sword")
         {
-		write("É½ºéÁ÷¼±£¬ÄãÃ»·¨Á·ÕâÖÖÎä¹¦¡£\n");
+		write("å±±æ´ªæµæ€¥ï¼Œä½ æ²¡æ³•ç»ƒè¿™ç§æ­¦åŠŸã€‚\n");
                 return 1;
         }
 	if (me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 	if( me->is_fighting() )
-		return notify_fail("ÄãÒÑ¾­ÔÚÕ½¶·ÖĞÁË£¬Ñ§Ò»µãÊµÕ½¾­Ñé°É¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨æˆ˜æ–—ä¸­äº†ï¼Œå­¦ä¸€ç‚¹å®æˆ˜ç»éªŒå§ã€‚\n");
 	if( (int)me->query("qi") < 50 )
-		return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄÆø!\n");
+		return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„æ°”!\n");
 
 	if( (int)me->query("jing") < 50 )
-		return notify_fail("ÄãÏÖÔÚ¾«²»¹»!\n");
+		return notify_fail("ä½ ç°åœ¨ç²¾ä¸å¤Ÿ!\n");
 
 	if( !stringp(skillname = me->query_skill_mapped(arg)) )
-		return notify_fail("ÄãÖ»ÄÜÁ·Ï°ÓÃ enable Ö¸¶¨µÄÌØÊâ¼¼ÄÜ¡£\n");
+		return notify_fail("ä½ åªèƒ½ç»ƒä¹ ç”¨ enable æŒ‡å®šçš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 
 	for (pertimes = 1; pertimes <=times ; pertimes ++)
 	{
 		skill_basic = me->query_skill(arg, 1);
 		skill = me->query_skill(skillname, 1);
 		if( skill < 1 )
-		return notify_fail("ÄãºÃÏñ»¹Ã»ÓĞÑ§¹ıÕâÏî¼¼ÄÜ°É£¿×îºÃÏÈÈ¥Çë½Ì±ğÈË¡£\n");
+		return notify_fail("ä½ å¥½åƒè¿˜æ²¡æœ‰å­¦è¿‡è¿™é¡¹æŠ€èƒ½å§ï¼Ÿæœ€å¥½å…ˆå»è¯·æ•™åˆ«äººã€‚\n");
 		if( skill_basic < 1 )
-		return notify_fail("Äã¶ÔÕâ·½ÃæµÄ¼¼ÄÜ»¹ÊÇÒ»ÇÏ²»Í¨£¬×îºÃ´ÓÏÈ´Ó»ù±¾Ñ§Æğ¡£\n");
+		return notify_fail("ä½ å¯¹è¿™æ–¹é¢çš„æŠ€èƒ½è¿˜æ˜¯ä¸€çªä¸é€šï¼Œæœ€å¥½ä»å…ˆä»åŸºæœ¬å­¦èµ·ã€‚\n");
 		if( skill_basic/2 <= skill/3 )
-		return notify_fail("ÄãµÄ»ù±¾¹¦»ğºòÎ´µ½£¬±ØĞëÏÈ´òºÃ»ù´¡²ÅÄÜ¼ÌĞøÌá¸ß¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬åŠŸç«å€™æœªåˆ°ï¼Œå¿…é¡»å…ˆæ‰“å¥½åŸºç¡€æ‰èƒ½ç»§ç»­æé«˜ã€‚\n");
 
-		notify_fail("ÄãÏÖÔÚ²»ÄÜÁ·Ï°ÕâÏî¼¼ÄÜ¡£\n");
+		notify_fail("ä½ ç°åœ¨ä¸èƒ½ç»ƒä¹ è¿™é¡¹æŠ€èƒ½ã€‚\n");
 		if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
-		notify_fail("ÄãÊÔ×ÅÁ·Ï°" + to_chinese(skillname) + "£¬µ«ÊÇ²¢Ã»ÓĞÈÎºÎ½ø²½¡£\n");
+		notify_fail("ä½ è¯•ç€ç»ƒä¹ " + to_chinese(skillname) + "ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰ä»»ä½•è¿›æ­¥ã€‚\n");
 		if (skill*skill*skill/10 > (int)me->query("combat_exp")) 
 		{
                         me->start_busy(1);
-			return notify_fail("Ò²ĞíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬ÄãµÄÁ·Ï°×ÜÃ»·¨½ø²½¡£\n");
+			return notify_fail("ä¹Ÿè®¸æ˜¯ç¼ºä¹å®æˆ˜ç»éªŒï¼Œä½ çš„ç»ƒä¹ æ€»æ²¡æ³•è¿›æ­¥ã€‚\n");
 	 	        return 1;
 		}
 
 		if( SKILL_D(skillname)->practice_skill(me) )
 		{
 			me->improve_skill(skillname, skill_basic/2 +1, skill_basic > skill? 0: 1);
-			write(HIY"½èÖúºéÌÎ³åË¢µÄÍşÁ¦£¬ÄãµÄ"+to_chinese(skillname)+"´óÓĞ½ø²½ÁË£¡\n"NOR);
+			write(HIY"å€ŸåŠ©æ´ªæ¶›å†²åˆ·çš„å¨åŠ›ï¼Œä½ çš„"+to_chinese(skillname)+"å¤§æœ‰è¿›æ­¥äº†ï¼\n"NOR);
 		}
 		else return 0;
 	}

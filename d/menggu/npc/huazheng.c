@@ -1,9 +1,9 @@
 inherit NPC;
 void create()
 {
-   set_name("»ªóİ¹«Ö÷",({"hua zheng"}));
-   set("gender","Å®ĞÔ");
-   set("long","ÌúÄ¾ÕæµÄĞ¡Å®¶ù,¹ù¾¸µÄÎ´»éÆŞ×Ó!\n");
+   set_name("åç­å…¬ä¸»",({"hua zheng"}));
+   set("gender","å¥³æ€§");
+   set("long","é“æœ¨çœŸçš„å°å¥³å„¿,éƒ­é–çš„æœªå©šå¦»å­!\n");
    set("score",30000);
    set("combat_exp",60000);
    

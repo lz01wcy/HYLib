@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ʯ��");
+	set("short", "石阶");
 	set("long", @LONG
-����һ����ʯ�ף�����ɽ�ϵ�����ͤ��ɽ�µĶ���Ĺ��ʯ�����߲�
-�����࣬�������ˣ����Ǹ��������ڡ�Զ����ͥ����ˮ��ӵ��ɽ������
-����ɽ����һƬ��⡣
+这是一条青石阶，连接山上的朗吟亭和山下的二妃墓。石阶两边茶
+树连绵，竹响随人，真是个清幽所在。远望洞庭，湖水簇拥君山，白浪
+抱青山，好一片风光。
 LONG );
 	set("outdoors", "dongting");
 	set("no_clean_up", 0);

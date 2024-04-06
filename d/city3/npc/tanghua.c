@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("���ƹ�", ({ "tang", "boss" }) );
+        set_name("唐掌柜", ({ "tang", "boss" }) );
         set("long",
-                "���ƹ�����Ҵ��¥�����ˣ�����ֻ��һ��СС�ľ�¥�ϰ壬�ڳ�\n"
-                "�������ᶽ��ү���⣬���¾�������ƴ��ƴ�\n" );
+                "萧掌柜是这家大酒楼的主人，别看他只是一个小小的酒楼老板，在成\n"
+                "都除了提督老爷以外，恐怕就属他最财大势大。\n" );
         set("age", 46);
         set("attitude", "peaceful");
 	set_skill("unarmed", 60);
@@ -20,10 +20,10 @@ void create()
 	set("attitude", "friendly");
 	
         set("inquiry", ([
-                "name": "�������Ƶ���һ�����֡�\n",
-                "here": "�˴������سǾ�¥��������Ҫ��ˣ��Ը������С��һ����ɡ�\n",
-                "����": "���ң����±������룬��֪�����кηԸ���\n",
-                "�سǾ�¥": "������ǣ������ǵ�һ������\n"
+                "name": "在下姓唐单名一个桦字。\n",
+                "here": "此处便是蓉城酒楼，客倌如要点菜，吩咐店里的小二一声便可。\n",
+                "唐桦": "不敢，在下便是唐桦，不知客倌有何吩咐？\n",
+                "蓉城酒楼": "这里就是，客倌是第一次来吗？\n"
         ]) );
         setup();
         add_money("silver", 15);

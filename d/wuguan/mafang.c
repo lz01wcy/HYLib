@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Âí·¿");
+    set("short", "é©¬æˆ¿");
     set("long", @LONG
-ÕâÀïÊÇÂí·¿£¬ÀïÃæ³ôºæºæµÄ£¬ÑøÁË¼¸Ê®Æ¥Âí£¬Äã¿´¹ýÈ¥£¬ÂíÉíÉÏ
-¶¼ºÜÔàÁË£¬¸ÃÏ´Ï´ÁË£¬ÅÔ±ßÓÐ¸öË®³Ø£¬ÀïÃæÓÐÐ©ÇåË®¡£
+è¿™é‡Œæ˜¯é©¬æˆ¿ï¼Œé‡Œé¢è‡­çƒ˜çƒ˜çš„ï¼Œå…»äº†å‡ ååŒ¹é©¬ï¼Œä½ çœ‹è¿‡åŽ»ï¼Œé©¬èº«ä¸Š
+éƒ½å¾ˆè„äº†ï¼Œè¯¥æ´—æ´—äº†ï¼Œæ—è¾¹æœ‰ä¸ªæ°´æ± ï¼Œé‡Œé¢æœ‰äº›æ¸…æ°´ã€‚
 LONG);
 	set("exits", ([
 	        "east" : __DIR__"houyuan2",
@@ -27,22 +27,22 @@ int do_sao(string arg)
         int costj, costq;
         me = this_player();
 
-        if(me->query_temp("job_name")!="´òÉ¨Âí·¿") 
-            return notify_fail("Äã±ØÐë¸ú¹ÝÖ÷ÁìÁËÕâ¹¤×÷²ÅÄÜÔÚÕâÀï¸É! \n");
-        if(me->query_temp("mark/É¨ÍêÁË")) 
-             return notify_fail("ÄãÒÑ¾­¸ÉÍê»îÁË£¬»ØÈ¥¸²Ãü(task ok)°É£¡\n");
-        if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ£¡\n");
-        if (me->is_fighting()) return notify_fail("ÄãÕýÔÚÕ½¶·ÖÐ£¬ÎÞ·¨×¨ÐÄ¸É»î£¡\n");
+        if(me->query_temp("job_name")!="æ‰“æ‰«é©¬æˆ¿") 
+            return notify_fail("ä½ å¿…é¡»è·Ÿé¦†ä¸»é¢†äº†è¿™å·¥ä½œæ‰èƒ½åœ¨è¿™é‡Œå¹²! \n");
+        if(me->query_temp("mark/æ‰«å®Œäº†")) 
+             return notify_fail("ä½ å·²ç»å¹²å®Œæ´»äº†ï¼Œå›žåŽ»è¦†å‘½(task ok)å§ï¼\n");
+        if (me->is_busy()) return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ï¼\n");
+        if (me->is_fighting()) return notify_fail("ä½ æ­£åœ¨æˆ˜æ–—ä¸­ï¼Œæ— æ³•ä¸“å¿ƒå¹²æ´»ï¼\n");
         if (!objectp(weapon = me->query_temp("weapon")) || weapon->query("id")!= "saozhou")
-		return notify_fail("ÄãÏëÓÃÊ²Ã´À´´òÉ¨£¬ÓÃÊÖÉ¨Âð£¿\n");
+		return notify_fail("ä½ æƒ³ç”¨ä»€ä¹ˆæ¥æ‰“æ‰«ï¼Œç”¨æ‰‹æ‰«å—ï¼Ÿ\n");
 
-        if ( !arg || arg != "Âí·¿" ) return notify_fail("ÄãÒª´òÉ¨Ê²Ã´£¿\n");
+        if ( !arg || arg != "é©¬æˆ¿" ) return notify_fail("ä½ è¦æ‰“æ‰«ä»€ä¹ˆï¼Ÿ\n");
 
         costj = random((int)me->query("con")/3)+1;
         costq = random((int)me->query("str")/3)+1;
 
         if ((int)me->query("jing") < costj || (int)me->query("qi") < costq){
-             message_vision("$N½ÅÒ»»¬£¬²»Ð¡ÐÄ»¬µ¹ÔÚ·à¶ÑÀï£¬³ÔÁËÒ»´ó¿ÚÂí·à£¡\n",me);
+             message_vision("$Nè„šä¸€æ»‘ï¼Œä¸å°å¿ƒæ»‘å€’åœ¨ç²ªå †é‡Œï¼Œåƒäº†ä¸€å¤§å£é©¬ç²ªï¼\n",me);
              me->add("food", 10);
              me->unconcious();
              return 1;
@@ -52,17 +52,17 @@ int do_sao(string arg)
         me->receive_damage("qi", costq);       
 
         if (!(int)me->query_condition("wuguan_job")
-           && (int)me->query_temp("mark/É¨") > 10 + random(10)
+           && (int)me->query_temp("mark/æ‰«") > 10 + random(10)
            && present("mafang guanshi", environment(me))){
-              me->set_temp("mark/É¨ÍêÁË",1);
-	      message_vision(RED"Âí·¿¹ÜÊÂ¶Ô$NËµ£º¸ÉµÄ²»´í£¬ºÃÁË£¬Äã¿ÉÒÔ»ØÈ¥¸²Ãü(task ok)ÁË¡£\n"NOR, me);
+              me->set_temp("mark/æ‰«å®Œäº†",1);
+	      message_vision(RED"é©¬æˆ¿ç®¡äº‹å¯¹$Nè¯´ï¼šå¹²çš„ä¸é”™ï¼Œå¥½äº†ï¼Œä½ å¯ä»¥å›žåŽ»è¦†å‘½(task ok)äº†ã€‚\n"NOR, me);
               return 1;
               }  
-        message_vision("$NÕÒÁË¸öµØ·½¿ªÊ¼É¨ÁËÆðÀ´£¬Õæ¹»³ôµÄ£¬Äã²»ÓÉ±Õ½ôÁËºôÎü¡£\n", me);
-        me->add_temp("mark/É¨",1);
+        message_vision("$Næ‰¾äº†ä¸ªåœ°æ–¹å¼€å§‹æ‰«äº†èµ·æ¥ï¼ŒçœŸå¤Ÿè‡­çš„ï¼Œä½ ä¸ç”±é—­ç´§äº†å‘¼å¸ã€‚\n", me);
+        me->add_temp("mark/æ‰«",1);
 
         if ( (int)me->query_skill("club", 1) < 20 && random(10)>5 ){  
-              write(HIM"ÄãÔÚÉ¨µØÖÐ¶ÔÓÚ¹÷µÄÓÃ·¨ÓÐÐ©Ìå»á!\n"NOR);
+              write(HIM"ä½ åœ¨æ‰«åœ°ä¸­å¯¹äºŽæ£çš„ç”¨æ³•æœ‰äº›ä½“ä¼š!\n"NOR);
               me->improve_skill("club", (int)(me->query("int") / 10));
               }
         return 1;

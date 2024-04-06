@@ -4,10 +4,10 @@ inherit HOCKSHOP;
 
 void create()
 {
-        set("short", "ÌìÂíµ±ÆÌ");
+        set("short", "å¤©é©¬å½“é“º");
         set("long", @LONG
-ÕâÀïÊÇ½ðÁê³ÇµÄÌìÂíµ±ÆÌ,ÓÉÓÚ²Æ×ÊÐÛºñ,Äã¿ÉÒÔÔÚÕâÀïµäµ±ÈÎºÎÎïÆ·¡£
-ÓÉÓÚÕâÀïÈËÀ´ÈËÍù¡£Òò´Ë²»Ê±ÕâÀïÒ²ÄÜÓÐÒ»Ð´¹óÖØµÄ±¦Îï³öÊÛ¡£
+è¿™é‡Œæ˜¯é‡‘é™µåŸŽçš„å¤©é©¬å½“é“º,ç”±äºŽè´¢èµ„é›„åŽš,ä½ å¯ä»¥åœ¨è¿™é‡Œå…¸å½“ä»»ä½•ç‰©å“ã€‚
+ç”±äºŽè¿™é‡Œäººæ¥äººå¾€ã€‚å› æ­¤ä¸æ—¶è¿™é‡Œä¹Ÿèƒ½æœ‰ä¸€å†™è´µé‡çš„å®ç‰©å‡ºå”®ã€‚
 LONG
         );
         set("exits", ([/* sizeof() == 4 */

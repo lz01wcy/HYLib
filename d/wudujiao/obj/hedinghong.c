@@ -7,12 +7,12 @@ void setup()
 
 void create()
 {
-	       set_name("º×¶¥ºì", ({"heding hong","hong" }));
+	       set_name("é¹¤é¡¶çº¢", ({"heding hong","hong" }));
 	
-		set("unit", "Æ¿");
-		set("long", "ÕâÊÇÒ»Æ¿¾ç¶¾µÄ·ÛÄ©¡£\n");
+		set("unit", "ç“¶");
+		set("long", "è¿™æ˜¯ä¸€ç“¶å‰§æ¯’çš„ç²‰æœ«ã€‚\n");
 		set("value", 100);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(50);
 
 	

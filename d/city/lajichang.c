@@ -6,11 +6,11 @@ int do_drop(object me, object obj);
 int all;
 void create()
 {
-	set("short", "À¬»ø´¦Àí³¡");
+	set("short", "åƒåœ¾å¤„ç†åœº");
 	set("long", @LONG
-ÕâÀïÊÇÑïÖİµÄµØÏÂÀ¬»ø´¦Àí³¡¡£ÓĞ¹«µÂĞÄµÄÍæ¼Ò×ÜÊÇ
-»á°ÑÀ¬»øÈÓµ½Õâ¸öµØ·½À´¡£ÅÔ±ß¾ÍÊÇÒ»¸öÀ¬»ø¶Ñ£¬ÓĞÊ²Ã´
-²»ĞèÒªµÄ¶«Î÷£¬¾ÍÈÓ(drop)°É¡£
+è¿™é‡Œæ˜¯æ‰¬å·çš„åœ°ä¸‹åƒåœ¾å¤„ç†åœºã€‚æœ‰å…¬å¾·å¿ƒçš„ç©å®¶æ€»æ˜¯
+ä¼šæŠŠåƒåœ¾æ‰”åˆ°è¿™ä¸ªåœ°æ–¹æ¥ã€‚æ—è¾¹å°±æ˜¯ä¸€ä¸ªåƒåœ¾å †ï¼Œæœ‰ä»€ä¹ˆ
+ä¸éœ€è¦çš„ä¸œè¥¿ï¼Œå°±æ‰”(drop)å§ã€‚
 LONG );
 	set("exits", ([
 		"up" : __DIR__"guangchang",
@@ -30,23 +30,23 @@ int drop(string arg)
 	int i, amount;
 	string item;
  	all=0;
- 	if(!arg) return notify_fail("ÄãÒª¶ªÏÂÊ²Ã´¶«Î÷£¿\n");
+ 	if(!arg) return notify_fail("ä½ è¦ä¸¢ä¸‹ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 
 	if(sscanf(arg, "%d %s", amount, item)==2)
 	{
 		if( !objectp(obj = present(item, me)) )
-			return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+			return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 		if( stringp(obj->query("no_drop")) )
 			return notify_fail( (string)obj->query("no_drop") );
 		if( !obj->query_amount() )
-			return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ª¶ªÆú¡£\n");
+			return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†å¼€ä¸¢å¼ƒã€‚\n");
 		if( amount < 1 )
-			return notify_fail("¶«Î÷µÄÊıÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+			return notify_fail("ä¸œè¥¿çš„æ•°é‡è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
 		if( amount > obj->query_amount() )
-			return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+			return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
 		else if( amount == (int)obj->query_amount() )
 			return do_drop(me, obj);
 		else {
@@ -66,12 +66,12 @@ int drop(string arg)
 		if (all!=1)
 		  write("Ok.\n");
     else
-      message_vision("$N°ÑÉíÉÏµÄ¶«Î÷¶¼ÈÓ½øÀ¬»ø¶Ñ¡£\n",me); 
+      message_vision("$NæŠŠèº«ä¸Šçš„ä¸œè¥¿éƒ½æ‰”è¿›åƒåœ¾å †ã€‚\n",me); 
 	return 1;
 	}
 
 	if(!objectp(obj = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	return do_drop(me, obj);
 }
 
@@ -80,19 +80,19 @@ int do_drop(object me, object obj)
 	mixed no_drop;
 
 	if( obj->query_temp("is_rided_by") == me)
-		return notify_fail( obj->name() + "²»ÊÇÕı±»ÄãÆï×Å¡£\n");
+		return notify_fail( obj->name() + "ä¸æ˜¯æ­£è¢«ä½ éª‘ç€ã€‚\n");
 	if( no_drop = obj->query("no_drop") )
-		return notify_fail( stringp(no_drop) ? no_drop : "ÕâÑù¶«Î÷²»ÄÜËæÒâ¶ªÆú¡£\n");
+		return notify_fail( stringp(no_drop) ? no_drop : "è¿™æ ·ä¸œè¥¿ä¸èƒ½éšæ„ä¸¢å¼ƒã€‚\n");
 	if (obj->move(environment(me))) {
 		if (all!=1)
 		{
 			if( obj->is_character() )
-				message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
+				message_vision("$Nå°†$nä»èƒŒä¸Šæ”¾äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
      	else if(obj->value())
-				message_vision( sprintf("$N¶ªÏÂÒ»%s$n¡£\n",	obj->query("unit")), me, obj );
+				message_vision( sprintf("$Nä¸¢ä¸‹ä¸€%s$nã€‚\n",	obj->query("unit")), me, obj );
    	 	else
    	 	{
-   	 		message_vision(sprintf("$N°ÑÒ»%s$nÈÓ½øÀ¬»ø¶Ñ¡£\n",	obj->query("unit")), me, obj );
+   	 		message_vision(sprintf("$NæŠŠä¸€%s$næ‰”è¿›åƒåœ¾å †ã€‚\n",	obj->query("unit")), me, obj );
    	 	}
     }
   }

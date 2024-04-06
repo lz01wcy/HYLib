@@ -7,17 +7,17 @@ inherit BLADE;
 
 void create()
 {
-   set_name(HIY"×ÏÁÛµ¶"NOR, ({ "zilin dao","dao","blade" }) );
+   set_name(HIY"ç´«é³åˆ€"NOR, ({ "zilin dao","dao","blade" }) );
    set_weight(4000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 1500);
      set("material", "iron");
-     set("long", "Õâ°Ñµ¶¿´ÆğÀ´½ğ¹âÉÁÉÁ£¬ÉÏ¿Ì×ÏÁÛ¶ş×Ö¡£\n");
-     set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-     set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄµ¶ÇÊ¡£\n");
+     set("long", "è¿™æŠŠåˆ€çœ‹èµ·æ¥é‡‘å…‰é—ªé—ªï¼Œä¸Šåˆ»ç´«é³äºŒå­—ã€‚\n");
+     set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„åˆ€é˜ã€‚\n");
    }
    init_blade(80);
    setup();

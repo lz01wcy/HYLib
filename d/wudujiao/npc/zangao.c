@@ -2,16 +2,16 @@
 inherit NPC;
 #include <ansi.h>
 
-string *first_name = ({"²Ø"});
-string *name_words = ({ "éá"});
+string *first_name = ({"è—"});
+string *name_words = ({ "ç’"});
 void create()
 {
         string name;
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))];
         set_name(name,({"zang ao","ao"}));
-	set("race", "Ò°ÊŞ");
-        set("long", "Ò»Ö»Ğ×ÃÍµÄ²Øéá£¬Õı¾¯¾õµÄÀ´»Øõâ²½¡£\n");
+	set("race", "é‡å…½");
+        set("long", "ä¸€åªå‡¶çŒ›çš„è—ç’ï¼Œæ­£è­¦è§‰çš„æ¥å›è¸±æ­¥ã€‚\n");
 	set("age", 5);
 	set("attitude", "peaceful");
 
@@ -21,7 +21,7 @@ void create()
 	set("str", 30);
 	set("cor", 50);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" ,"ÍÈ"}) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" ,"è…¿"}) );
 	set("verbs", ({ "bite" }) );
 
 	set_skill("unarmed", 100);
@@ -45,7 +45,7 @@ void init()
 //        ::init();
         if (interactive(me = this_player()))
         {
-	      if((string)me->query("family/family_name")!="Îå¶¾½Ì")
+	      if((string)me->query("family/family_name")!="äº”æ¯’æ•™")
               {
       	           remove_call_out("kill_ob");
                   call_out("kill_ob", 1, me);
@@ -59,13 +59,13 @@ int do_train(string arg)
 	me =this_object();
 	who=this_player();
 	if (!arg || (arg != "zang ao"))
-		return notify_fail("ÄãÒªÑ±·şÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦é©¯æœä»€ä¹ˆï¼Ÿ\n");
 	if(me->is_fighting())
-		return notify_fail("ÕâÖ»²ØéáÕıÔÚÕ½¶·¡£\n");
-	if((string)who->query("family/family_name")!="Îå¶¾½Ì")
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("è¿™åªè—ç’æ­£åœ¨æˆ˜æ–—ã€‚\n");
+	if((string)who->query("family/family_name")!="äº”æ¯’æ•™")
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	
-	message_vision("²Øéá±¾À´¾ÍÊÇÈËÑ±ÑøµÄ£¬ÄãÓĞÃ»ÓĞ¸ã´íÅ¶£¿\n\n", who,me);
+	message_vision("è—ç’æœ¬æ¥å°±æ˜¯äººé©¯å…»çš„ï¼Œä½ æœ‰æ²¡æœ‰æé”™å“¦ï¼Ÿ\n\n", who,me);
 	return 1;
 }
 

@@ -8,17 +8,17 @@ void init()
 
 void create()
 {
-	set_name("²¼ÕóÏä", ({ "buzhen xiang", "xiang" }) );
+	set_name("å¸ƒé˜µç®±", ({ "buzhen xiang", "xiang" }) );
     	set_weight(4000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-        set("unit", "¸ö");
+        set("unit", "ä¸ª");
 		set("value", 0);
         set("jian",5) ;
 		set("material", "steel");
-        set("long", "ÕâÊÇÌÒ»¨µº²¼Õó×¨ÓÃµÄµÀ¾ß£º¡¸²¼ÕóÏä¡¹¡£ÀïÃæÓĞ¸÷ÖÖ¸÷ÑùµÄ\n"
-                    "µÀ¾ß£¬¿ÉÒÔÓÃÀ´²¼Õó¡£\n") ;
+        set("long", "è¿™æ˜¯æ¡ƒèŠ±å²›å¸ƒé˜µä¸“ç”¨çš„é“å…·ï¼šã€Œå¸ƒé˜µç®±ã€ã€‚é‡Œé¢æœ‰å„ç§å„æ ·çš„\n"
+                    "é“å…·ï¼Œå¯ä»¥ç”¨æ¥å¸ƒé˜µã€‚\n") ;
 	}
 	setup();
 }
@@ -30,68 +30,68 @@ int do_array(string arg)
     int steps ;
     me = this_player();
     if( !arg )
-        return notify_fail("ÄãÏë¶ÔË­²¼Õó£¿\n");
+        return notify_fail("ä½ æƒ³å¯¹è°å¸ƒé˜µï¼Ÿ\n");
 
     if( environment(me)->query("no_fight") )
-       return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+       return notify_fail("åœ¨è¿™é‡Œä¸èƒ½æ”»å‡»ä»–äººã€‚\n");
 
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»·¨É±ÈË¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ²¡æ³•æ€äººã€‚\n");
 if( me->query_skill("bibo-shengong",1) < 80)
-                return notify_fail("ÄãµÄ±Ì²¨Éñ¹¦ĞŞÎª»ğºòÎ´µ½£¬Ê©Õ¹ÆæÃÅÎåĞĞÖ»»áÉË¼°×ÔÉí£¡\n");
+                return notify_fail("ä½ çš„ç¢§æ³¢ç¥åŠŸä¿®ä¸ºç«å€™æœªåˆ°ï¼Œæ–½å±•å¥‡é—¨äº”è¡Œåªä¼šä¼¤åŠè‡ªèº«ï¼\n");
 
     if( this_object()->query("jian") <=0)
-        return notify_fail("µÀ¾ßÒÑ¾­ÓÃ¹âÁË¡£\n");
+        return notify_fail("é“å…·å·²ç»ç”¨å…‰äº†ã€‚\n");
 
 	if(!objectp(obj = present(arg, environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 	if( !obj->is_character() || obj->is_corpse() )
-		return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+		return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
         if( obj->is_busy() )
-                return notify_fail(obj->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(obj->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
      if( obj->query("env/no_fight") )
-        return notify_fail("²»ÄÜ´ò£¬´ò²»µÃ°¡£¡\n");
+        return notify_fail("ä¸èƒ½æ‰“ï¼Œæ‰“ä¸å¾—å•Šï¼\n");
 
      if( obj->query_temp("no_kill") )
-        return notify_fail("²»ÄÜ´ò£¬´ò²»µÃ°¡£¡\n");
+        return notify_fail("ä¸èƒ½æ‰“ï¼Œæ‰“ä¸å¾—å•Šï¼\n");
 
     if( !obj->is_character() || obj->is_corpse() )
-        return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+        return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
     if(obj==me)
-        return notify_fail("ÓÃ suicide Ö¸Áî»á±È½Ï¿ì:P¡£\n");
+        return notify_fail("ç”¨ suicide æŒ‡ä»¤ä¼šæ¯”è¾ƒå¿«:Pã€‚\n");
 
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»·¨É±ÈË¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ²¡æ³•æ€äººã€‚\n");
 
     if((int)obj->query("age") <= 17 && userp(obj) && !obj->query_condition("killer"))
-        return notify_fail("ÎªÁËÊÀ½ç¸üÃÀºÃ£¬·Å¹ıĞ¡º¢×Ó°É.\n");
+        return notify_fail("ä¸ºäº†ä¸–ç•Œæ›´ç¾å¥½ï¼Œæ”¾è¿‡å°å­©å­å§.\n");
 
 	if(obj == me)
-        return notify_fail("ÄãÏë×ÔÉ±£¿ :P\n");
+        return notify_fail("ä½ æƒ³è‡ªæ€ï¼Ÿ :P\n");
     myexp =  me -> query ("combat_exp" ) ;
     objexp = obj -> query ("combat_exp" ) ;
     mylev =  me -> query_skill("qimen-wuxing" ) ;
     objlev = obj -> query_skill("qimen-wuxing" ) ;
 
     if ( mylev <= 40 )
-        return notify_fail("ÄãµÄÆæÃÅÎåĞĞÖ®ÊõÌ«²î£¬²»ÄÜ²¼Õó£¡\n");
+        return notify_fail("ä½ çš„å¥‡é—¨äº”è¡Œä¹‹æœ¯å¤ªå·®ï¼Œä¸èƒ½å¸ƒé˜µï¼\n");
 
     myexp = 30 * objexp / myexp ;
     if ( myexp < 30 ) myexp = 30 ;
 
     if ((int) me ->query("jing") < myexp )
-        return notify_fail("ÄãµÄ¾«²»¹»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿäº†ï¼\n");
 
     this_object()->add("jian", -1);
     steps = ( mylev - objlev ) / 10  ;
     if ( steps < 2 ) steps = 2 ;
     if ( steps > 8 ) steps = 8 ;
-    message_vision(HIY "\n$NÄÃÆğ²¼ÕóÏä£¬ÔÚ$nÖÜÎ§Ñ¸ËÙ°ÚÏÂÊ²Ã´¶«Î÷......£¬\n" 
-                   "µÈ$nĞÑ¹ıÉñÀ´È´·¢ÏÖ×Ô¼ºÉíÏİÕóÖĞ£¬¶¯µ¯²»µÃ£¡\n\n" NOR,
+    message_vision(HIY "\n$Næ‹¿èµ·å¸ƒé˜µç®±ï¼Œåœ¨$nå‘¨å›´è¿…é€Ÿæ‘†ä¸‹ä»€ä¹ˆä¸œè¥¿......ï¼Œ\n" 
+                   "ç­‰$né†’è¿‡ç¥æ¥å´å‘ç°è‡ªå·±èº«é™·é˜µä¸­ï¼ŒåŠ¨å¼¹ä¸å¾—ï¼\n\n" NOR,
                    me, obj);
     me -> start_busy (2) ;
     if( userp(obj) ) 
@@ -105,13 +105,13 @@ if( me->query_skill("bibo-shengong",1) < 80)
       if( random(me->query("combat_exp")) < (int)obj->query("combat_exp")/4 ) 
 {
 //    if (  random ( mylev ) < objlev / 2 )
-      message_vision("\nµ«$nºÜ¿ì¾ÍÊ¶ÆÆÁË$NµÄÕó·¨£¬Á¢¿ÌÆÆÕó¶ø³ö£¡\n" , me, obj);
+      message_vision("\nä½†$nå¾ˆå¿«å°±è¯†ç ´äº†$Nçš„é˜µæ³•ï¼Œç«‹åˆ»ç ´é˜µè€Œå‡ºï¼\n" , me, obj);
     me -> start_busy (3) ;
 }
     else
       {
-         tell_object (obj , HIR "\nÕóÖĞ²»¶Ï»Ã³ö¸÷ÖÖ¸÷ÑùµÄ¹ÖÊŞ£¬Ò»¸ö¸öÕÅÑÀÎè×¦\n"
-               "ÏòÄãÆËÀ´£¬ÄãÖ»ÄÜ¼¯ÖĞĞÄÁ¦Óë»ÃÊŞÏà²«£¡\n" NOR  ) ;
+         tell_object (obj , HIR "\né˜µä¸­ä¸æ–­å¹»å‡ºå„ç§å„æ ·çš„æ€ªå…½ï¼Œä¸€ä¸ªä¸ªå¼ ç‰™èˆçˆª\n"
+               "å‘ä½ æ‰‘æ¥ï¼Œä½ åªèƒ½é›†ä¸­å¿ƒåŠ›ä¸å¹»å…½ç›¸æï¼\n" NOR  ) ;
 	 obj -> receive_damage ("jing", steps * 10 ) ;	
          obj -> start_busy (steps) ;
 	 remove_call_out("out_zhen");
@@ -125,6 +125,6 @@ void out_zhen ( object ob )
 {
 if (ob)
 {
-  message_vision("$N³¤ÊæÁËÒ»¿ÚÆø£¬ÖÕÓÚÍÑ³öÁËÃÔÕó£¡\n"  , ob ); 
+  message_vision("$Né•¿èˆ’äº†ä¸€å£æ°”ï¼Œç»ˆäºè„±å‡ºäº†è¿·é˜µï¼\n"  , ob ); 
 }
 }

@@ -2,11 +2,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�෿");
+        set("short", "侧房");
 	set("long", @LONG
-��������¼��϶��·���ƽʱ��������ס������������
-�¼���������������ͷ�Ե��������ƽʱһ�㶼û�ڼң���
-�����������ȥ�ˡ�
+这里就是温家老二温方义平时起居生活的住处，由于他是
+温家五老中最有生意头脑的人物，所以平时一般都没在家，在
+外面打理生意去了。
 LONG
 	);
 	set("exits", ([ 

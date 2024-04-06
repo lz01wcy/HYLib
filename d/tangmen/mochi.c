@@ -4,10 +4,10 @@ inherit ROOM;
 void create()
 {
 	set("outdoors","tangmen");
-	set("short", "ī��");
+	set("short", "墨池");
 	set("long", @LONG
-	һ����ɫ�ĳ�ˮ����û�߽����ŵ�һ��ŨŨ��ī�㡣���������˳����ڴ���
-ϴ���⣬�ջ����ۣ����صı�ˮ�ͱ����һ��īˮ��
+	一汪黑色的池水，还没走进就闻到一股浓浓的墨香。看来是有人常常在此清
+洗笔砚，日积月累，整池的碧水就变成了一池墨水。
 LONG
 	);
        	set("exits", ([

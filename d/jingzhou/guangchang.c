@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��������" );
+        set("short", "荆州中心" );
         set("long", @LONG
-�����Ǿ��ݵ�����Ҫʮ��·�ڣ������������������֣��ϱ�ס��һЩ
-���ǵĸ��ˣ������ǹٸ�������һ���õط�����������Ĵ������˶��ڴ�
-��ţ���Ϣ�Ժ��ٸ�·��
+这里是荆州的中心要十字路口，人来人往，很是热闹，南边住着一些
+本城的富人，北边是官府，真是一个好地方啊。许多从四川来的人都在此
+落脚，休息以后再赶路。
 LONG
         );
         set("exits", ([
@@ -22,7 +22,7 @@ LONG
 	set("no_fight",1);
 
 //set("objects", ([
-//	"/tudi":1,//��������ϵͳʹ�� JackyBoy
+//	"/tudi":1,//测试任务系统使用 JackyBoy
 //        "/d/npc/bukuai" : 1,
 //  ]));
 

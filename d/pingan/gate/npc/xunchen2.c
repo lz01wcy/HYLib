@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(GRN"Ñ²³Ç±¨¸æ2"NOR, ({ "xunchen2" }) );
+    set_name(GRN"å·¡åŸŽæŠ¥å‘Š2"NOR, ({ "xunchen2" }) );
     set_weight(1);
     set("no_drop",1);
 set("no_get",1);
@@ -13,9 +13,9 @@ set("no_put",1);
             set_default_object(__FILE__);
     else {
 	         set("value", 100);
-           set("unit", "±¾");
+           set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾Ñ²³Ç±¨¸æ¡£\n");
+            set("long", "ä¸€æœ¬å·¡åŸŽæŠ¥å‘Šã€‚\n");
           }
 
     setup();

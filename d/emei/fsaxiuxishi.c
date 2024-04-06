@@ -1,19 +1,19 @@
-//Room: fsaxiuxishi.c ¸£ÊÙâÖĞİÏ¢ÊÒ
+//Room: fsaxiuxishi.c ç¦å¯¿åºµä¼‘æ¯å®¤
 //Date: Oct. 2 1997 by That
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-      set("short","¸£ÊÙâÖĞİÏ¢ÊÒ");
+      set("short","ç¦å¯¿åºµä¼‘æ¯å®¤");
       set("long",@LONG
-ÕâÊÇ¸£ÊÙâÖ½Ó´ı¶ëáÒÅ®ÏÀÃÇµÄĞİÏ¢ÊÒ£¬¶ëáÒÅ®µÜ×Ó»ØÉ½Ö®Ç°Í¨³£ÔÚ´Ë½èËŞ
-Ò»ËŞ£¬ºÃ±¸×ãÌåÁ¦ÉÏÉ½¡£·¿ÄÚ°ÚÓĞÒ»ÕÅ³¤×À£¬¿¿Ç½ÉèÓĞ¼¸ÕÅÄ¾´²¡£
+è¿™æ˜¯ç¦å¯¿åºµæ¥å¾…å³¨åµ‹å¥³ä¾ ä»¬çš„ä¼‘æ¯å®¤ï¼Œå³¨åµ‹å¥³å¼Ÿå­å›å±±ä¹‹å‰é€šå¸¸åœ¨æ­¤å€Ÿå®¿
+ä¸€å®¿ï¼Œå¥½å¤‡è¶³ä½“åŠ›ä¸Šå±±ã€‚æˆ¿å†…æ‘†æœ‰ä¸€å¼ é•¿æ¡Œï¼Œé å¢™è®¾æœ‰å‡ å¼ æœ¨åºŠã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "southdown" : __DIR__"fsazhaitang",
       ]));
-      create_door("southdown", "ÃÅ", "northup", DOOR_CLOSED);
+      create_door("southdown", "é—¨", "northup", DOOR_CLOSED);
       set("sleep_room", 1);
       set("no_fight", 1);
       set("no_clean_up", 0);

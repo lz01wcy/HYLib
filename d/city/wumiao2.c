@@ -10,12 +10,12 @@ string look_shu();
 
 void create()
 {
-	set("short", "ÎäÃí¶þÂ¥");
+	set("short", "æ­¦åº™äºŒæ¥¼");
 	set("long", @LONG
-ÕâÀïÊÇÔÀÍõÃíµÄ¶þÂ¥£¬ÕâÀï¹©µÄÊÇÔÀ·ÉµÄ³¤×ÓÔÀÔÆºÍÒå×ÓÕÅÏÜ£¬Á½×ðËÜÏñ
-½ð¿øÒøîø£¬Ó¢Æø²ª²ª¡£Â¥ÉÏÊÇ±¾ÄàÌÁµÄÃûÈËÌÃ¡£
-    ½øÃÅ¿ÚÓÐÒ»¸öÐ¡°¸×À£¬ÉÏÃæÀÝ×ÅÒ»¶ÑÊé (shu)£¬¼ÇÂ¼ÁËÏÀ¿ÍÐÐÒ»°ÙÀÏÍæ¼Ò
-ÃÇÐ´µÄÕâ¸öÄàÌÁ¹ýÈ¥µÄÒ»Ð©¹ÊÊÂ¡£Äã¿ÉÒÔÒÀºÅÔÄ¶Á(yuedu)¡£
+è¿™é‡Œæ˜¯å²³çŽ‹åº™çš„äºŒæ¥¼ï¼Œè¿™é‡Œä¾›çš„æ˜¯å²³é£žçš„é•¿å­å²³äº‘å’Œä¹‰å­å¼ å®ªï¼Œä¸¤å°Šå¡‘åƒ
+é‡‘ç›”é“¶é“ ï¼Œè‹±æ°”å‹ƒå‹ƒã€‚æ¥¼ä¸Šæ˜¯æœ¬æ³¥å¡˜çš„åäººå ‚ã€‚
+    è¿›é—¨å£æœ‰ä¸€ä¸ªå°æ¡ˆæ¡Œï¼Œä¸Šé¢åž’ç€ä¸€å †ä¹¦ (shu)ï¼Œè®°å½•äº†ä¾ å®¢è¡Œä¸€ç™¾è€çŽ©å®¶
+ä»¬å†™çš„è¿™ä¸ªæ³¥å¡˜è¿‡åŽ»çš„ä¸€äº›æ•…äº‹ã€‚ä½ å¯ä»¥ä¾å·é˜…è¯»(yuedu)ã€‚
 LONG );
 
 	set("no_fight", "1");
@@ -52,7 +52,7 @@ int do_read(string arg)
 {
         object me=this_player();
         if (arg == "" || file_size(BOARD_DIR + arg) <= 0)
-                return notify_fail("ºÃÏóÃ»ÓÐÕâÌõ¹«¸æÒ®¡£\n");
+                return notify_fail("å¥½è±¡æ²¡æœ‰è¿™æ¡å…¬å‘Šè€¶ã€‚\n");
 
         log_file("LIBRARY", sprintf("%s read %s.\n", me->query("name"), arg));
         me->start_more(read_file(BOARD_DIR + arg));

@@ -2,14 +2,14 @@
 inherit ITEM; 
 void create()
 {
-        set_name(HIW"ÃÜÁî"NOR, ({ "secret order" }) );
+        set_name(HIW"å¯†ä»¤"NOR, ({ "secret order" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
                 set("material", "paper");
-        set("long", "Ò»µÀÌáÑº·¸ÈËÉÏÌÃµÄÃÜÁî£¬»¹Î´¸ÇÖª¸®´óÓ¡¡£\n");
+        set("long", "ä¸€é“ææŠ¼çŠ¯äººä¸Šå ‚çš„å¯†ä»¤ï¼Œè¿˜æœªç›–çŸ¥åºœå¤§å°ã€‚\n");
         }
     setup();
 } 
@@ -28,10 +28,10 @@ int do_look (string arg)
 {
         if (arg=="secret order")
         if (this_object()->query("sealed")!=1){
-                tell_object(this_player(),"Ò»µÀÌáÑº·¸ÈËÉÏÌÃµÄÃÜÁî£¬»¹Î´¸ÇÖª¸®´óÓ¡¡£\n");
+                tell_object(this_player(),"ä¸€é“ææŠ¼çŠ¯äººä¸Šå ‚çš„å¯†ä»¤ï¼Œè¿˜æœªç›–çŸ¥åºœå¤§å°ã€‚\n");
                 return 1; 
         } else {
-                tell_object(this_player(),"Ò»µÀÌáÑº·¸ÈËÉÏÌÃµÄÃÜÁî£¬ÉÏÃæ¸ÇÁËÒ»¸öÖª¸®´óÓ¡¡£\n");
+                tell_object(this_player(),"ä¸€é“ææŠ¼çŠ¯äººä¸Šå ‚çš„å¯†ä»¤ï¼Œä¸Šé¢ç›–äº†ä¸€ä¸ªçŸ¥åºœå¤§å°ã€‚\n");
                 return 1;
                 }
         return 0;
@@ -42,19 +42,19 @@ int do_show(string arg)
         if (environment(this_object())!=this_player() || !arg)
                 return 0;
         if (!objectp(obj=present(arg,environment(this_player()))))
-                return notify_fail("ÄãÒª°ÑÃÜÁîÄÃ¸øË­¿´£¿\n");
+                return notify_fail("ä½ è¦æŠŠå¯†ä»¤æ‹¿ç»™è°çœ‹ï¼Ÿ\n");
         if (!living(obj))
-                return notify_fail("àÅ....ÄãµÃÏÈ°Ñ" + obj->query("name") +"ÅªÐÑÔÙËµ¡£\n");
+                return notify_fail("å—¯....ä½ å¾—å…ˆæŠŠ" + obj->query("name") +"å¼„é†’å†è¯´ã€‚\n");
         
-        message_vision("$N°Ñ"+this_object()->query("name")+"³öÊ¾¸ø$n¿´¡£\n",this_player(),obj); 
+        message_vision("$NæŠŠ"+this_object()->query("name")+"å‡ºç¤ºç»™$nçœ‹ã€‚\n",this_player(),obj); 
         if (obj->query("prison_guard")){
                         if (this_object()->query("sealed")==1){
                         if (this_player()->query("combat_exp")<1500000) {
-                                message_vision("$NÓÃ»³ÒÉµÄÑÛ¹â¿´ÁË¿´$nËµ£º¾ÍÆ¾ÄãÕâÁ½ÏÂ×Ó£¬Ò²ÄÜÑº½â·¸ÈË£¿\n",obj,this_player());
-                                return notify_fail("ÌìÀÎÊØÎÀ¿´À´²»ÐÅÈÎÄã¡£\n");
+                                message_vision("$Nç”¨æ€€ç–‘çš„çœ¼å…‰çœ‹äº†çœ‹$nè¯´ï¼šå°±å‡­ä½ è¿™ä¸¤ä¸‹å­ï¼Œä¹Ÿèƒ½æŠ¼è§£çŠ¯äººï¼Ÿ\n",obj,this_player());
+                                return notify_fail("å¤©ç‰¢å®ˆå«çœ‹æ¥ä¸ä¿¡ä»»ä½ ã€‚\n");
                         }
-                        message_vision("$N×Ð×ÐÏ¸Ï¸¿´ÁË¿´ÃÜÁî£¬ÉñÉ«ÄýÖØµÀ£º·¸ÈË¾ÍÔÚÀïÃæ¡£\n",obj);
-                        message_vision("$N´ò¿ªÌúÃÅÉÏµÄ´óÍ­Ëø£¬¹°ÊÖÊ¾ÒâµÀ£º´óÈË£¬ÇëÍùÀï×ß¡£\n",obj);
+                        message_vision("$Nä»”ä»”ç»†ç»†çœ‹äº†çœ‹å¯†ä»¤ï¼Œç¥žè‰²å‡é‡é“ï¼šçŠ¯äººå°±åœ¨é‡Œé¢ã€‚\n",obj);
+                        message_vision("$Næ‰“å¼€é“é—¨ä¸Šçš„å¤§é“œé”ï¼Œæ‹±æ‰‹ç¤ºæ„é“ï¼šå¤§äººï¼Œè¯·å¾€é‡Œèµ°ã€‚\n",obj);
                         environment(obj)->do_open();
                         if (obj->query("prison_guard")==1)
                                 this_player()->set_temp("show_order",1);
@@ -64,17 +64,17 @@ int do_show(string arg)
                         }
                 }
                 else{
-                        message_vision("$N×ÐÏ¸Ò»¿´£¬Á³É«¶¸³Á£º¾¹È»ÍýÍ¼ÃÉ»ì¹ý¹Ø£¡À´ÈË°¡£¡ÓÐ´õÈË½ÙÓü¡«¡«\n",obj);
+                        message_vision("$Nä»”ç»†ä¸€çœ‹ï¼Œè„¸è‰²é™¡æ²‰ï¼šç«Ÿç„¶å¦„å›¾è’™æ··è¿‡å…³ï¼æ¥äººå•Šï¼æœ‰æ­¹äººåŠ«ç‹±ï½žï½ž\n",obj);
                         obj->do_alert(this_player());
                 }
         }
         else{
                 if (!userp(obj)){
                         if (obj->query("vendetta_mark")=="authority"){
-                                message_vision("$NµÉÁË$nÒ»ÑÛ£¬ËµµÀ£º´ËÊÇ¹Ù¸®Ö®Îï£¬Äã´ÓºÎ´¦µÃÀ´£¿\n",obj,this_player());
+                                message_vision("$Nçžªäº†$nä¸€çœ¼ï¼Œè¯´é“ï¼šæ­¤æ˜¯å®˜åºœä¹‹ç‰©ï¼Œä½ ä»Žä½•å¤„å¾—æ¥ï¼Ÿ\n",obj,this_player());
                         }
                         else{
-                                message_vision("$NºÃÏñ¶Ô"+this_object()->query("name")+"Ã»Ê²Ã´ÐËÈ¤¡£\n",obj);
+                                message_vision("$Nå¥½åƒå¯¹"+this_object()->query("name")+"æ²¡ä»€ä¹ˆå…´è¶£ã€‚\n",obj);
                         }
                 }
         } 

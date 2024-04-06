@@ -4,17 +4,17 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÉáÉíÑÂ");
+        set("short", "èˆèº«å´–");
         set("long", @LONG
-ÕâÊÇÒ»¶Î¼«Õ­¼«ÏÕµÄÉ½ÑÂ£¬ËÄÖÜÔÆÎí·ÉÈÆ£¬ÏÂÃæÔ¨ÉîÎŞµ×¡£Èç²»Ğ¡ĞÄ
-£¬Ò»Ê§×ãµôÏÂÈ¥£¬Ö»ÅÂÁ¬¹ÇÍ·¶¼ÕÒ²»µ½¡£±ßÉÏÓĞ¸öĞ¡É½¶´(dong)¡£
+è¿™æ˜¯ä¸€æ®µæçª„æé™©çš„å±±å´–ï¼Œå››å‘¨äº‘é›¾é£ç»•ï¼Œä¸‹é¢æ¸Šæ·±æ— åº•ã€‚å¦‚ä¸å°å¿ƒ
+ï¼Œä¸€å¤±è¶³æ‰ä¸‹å»ï¼Œåªæ€•è¿éª¨å¤´éƒ½æ‰¾ä¸åˆ°ã€‚è¾¹ä¸Šæœ‰ä¸ªå°å±±æ´(dong)ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "eastdown" : __DIR__"canglong",
             "west"     : "/d/xiaoyao/pubu",
         ]));
         set("item_desc", ([
-            "dong" : "½ô¿¿·ÉÑÂÏÂÊ¯±ÚµÄĞ¡¶´£¬ºÚºôºôµÄ²»ÖªÓĞ¶àÉî¡£\n",
+            "dong" : "ç´§é é£å´–ä¸‹çŸ³å£çš„å°æ´ï¼Œé»‘å‘¼å‘¼çš„ä¸çŸ¥æœ‰å¤šæ·±ã€‚\n",
         ]));
         set("objects",([
                 __DIR__"npc/referee" : 1,
@@ -45,17 +45,17 @@ int do_enter(string arg)
         if( !arg || arg=="" ) return 0;
         if( arg=="dong" )
         {
-           if( (fam = me->query("family")) && fam["family_name"] == "Ø¤°ï")
+           if( (fam = me->query("family")) && fam["family_name"] == "ä¸å¸®")
            {
                message("vision",
-                        me->name() + "ÔËÆğØ¤°ïËõ¹Ç¹¦£¬Ò»ÍäÑüÍù¶´Àï×êÁË½øÈ¥¡£",
+                        me->name() + "è¿èµ·ä¸å¸®ç¼©éª¨åŠŸï¼Œä¸€å¼¯è…°å¾€æ´é‡Œé’»äº†è¿›å»ã€‚",
                         environment(me), ({me}) );
                me->move("/d/gaibang/underhs");
                message("vision",
-                        me->name() + "´Ó¶´Àï×ßÁË½øÀ´¡£\n",
+                        me->name() + "ä»æ´é‡Œèµ°äº†è¿›æ¥ã€‚\n",
                         environment(me), ({me}) );
                         return 1;
            }
-           else  return notify_fail("ÕâÃ´Ğ¡µÄ¶´£¬Äã×êµÃ½øÈ¥Âğ£¿\n");
+           else  return notify_fail("è¿™ä¹ˆå°çš„æ´ï¼Œä½ é’»å¾—è¿›å»å—ï¼Ÿ\n");
        }
 }

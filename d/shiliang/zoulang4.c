@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "���Ⱦ�ͷ");
+        set("short", "走廊尽头");
 	set("long", @LONG
-���������ȵľ�ͷ��������ȥ�Ǻô��һ��������ǰ���и�
-Сͤ�������ֵܻ�������ܡ�
+你来到走廊的尽头，往北看去是好大的一个湖泊，前面有个
+小亭，温氏兄弟还真会享受。
 LONG
 	);
 	set("no_clean_up", 0);

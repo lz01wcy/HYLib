@@ -1,17 +1,17 @@
  inherit NPC;
 void create()
 {
-        set_name("»¤ËÂÀ®Âï", ({ "lama"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æŠ¤å¯ºå–‡å˜›", ({ "lama"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 35);
         set("str", 20);
         set("long", @LONG
-Ò»¸ö´óÕÑËÂµÄ²ØÉ®¡£
+ä¸€ä¸ªå¤§æ˜­å¯ºçš„è—åƒ§ã€‚
 LONG
 );
         set("attitude", "heroism");
         set("combat_exp", 6000);
-        create_family("´óÕÑËÂ", 24, "µÜ×Ó");
+        create_family("å¤§æ˜­å¯º", 24, "å¼Ÿå­");
         set_skill("unarmed", 100);
 
         set_skill("iron-cloth", 20);

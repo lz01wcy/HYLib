@@ -1,4 +1,4 @@
-// xiongdan.c ĞÜµ¨
+// xiongdan.c ç†Šèƒ†
 // By Lgg,1998.10
 
 inherit ITEM;
@@ -11,19 +11,19 @@ void init()
 
 void create()
 {
-        set_name(HIR"ĞÜµ¨"NOR, ({"xiongdan"}));
+        set_name(HIR"ç†Šèƒ†"NOR, ({"xiongdan"}));
         set_weight(1000);
-        set("unit", "¿Å");
-        set("long", "ÕâÊÇÒ»¿ÅÏÊºìµÄĞÜµ¨£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "é¢—");
+        set("long", "è¿™æ˜¯ä¸€é¢—é²œçº¢çš„ç†Šèƒ†ï¼Œçœ‹æ¥å¯ä»¥å…¥è¯ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-        if (!(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="xiongdan")
         {
-                write("ÄãÈı¿ÚÁ½¿Ú°ÑĞÜµ¨³ÔÁËÏÂÈ¥¡£\n");
+                write("ä½ ä¸‰å£ä¸¤å£æŠŠç†Šèƒ†åƒäº†ä¸‹å»ã€‚\n");
                 destruct(this_object());
         }
         return 1;

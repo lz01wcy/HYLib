@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���С��");
+	set("short", "乡间小道");
 	set("long", @LONG
-С��ͻȻ��ÿ��������࣬���ߵ���Ҳ���ϡ���ˣ�����ֱ�ӿ���
-һ���޼ʵ���Ұ��ǰ��ճ���һ���ܴ�ĳ��ӣ�ԭ�������Ѿ���������
-���Ǿ�����ʥ��̩�������ſ��ˡ�
+小道突然变得开阔了许多，两边的树也变得稀少了，可以直接看到
+一望无际的田野。前面空出了一个很大的场子，原来，你已经来到了吴
+民们敬仰的圣庙泰伯庙的门口了。
 LONG );
 	set("outdoors", "wuxi");
 	set("no_clean_up", 0);

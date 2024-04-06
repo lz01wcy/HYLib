@@ -2,9 +2,9 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "ÆáºÚ°µµÀ");
+        set("short", "æ¼†é»‘æš—é“");
         set("long", @LONG 
-ÖÁ´ËÒÑÊÇÉìÊÖ²»¼ûÎåÖ¸£¬ÄãÊ²Ã´Ò²¿´²»³öÀ´£¬Ö»ÊÇÒşÒşÔ¼Ô¼¾õµÃÇ°ÃæÓĞ´ÖÖØµÄºôÎüÉù¡£ 
+è‡³æ­¤å·²æ˜¯ä¼¸æ‰‹ä¸è§äº”æŒ‡ï¼Œä½ ä»€ä¹ˆä¹Ÿçœ‹ä¸å‡ºæ¥ï¼Œåªæ˜¯éšéšçº¦çº¦è§‰å¾—å‰é¢æœ‰ç²—é‡çš„å‘¼å¸å£°ã€‚ 
 LONG
         );
         set("exits", ([ 
@@ -25,7 +25,7 @@ LONG
 int valid_leave(object obj, string dir){
         if (userp(obj) && dir=="south") {
                 obj->delete_temp("block_msg/all",1);
-                tell_object(obj,HIG"ÄãÖÕÓÚ×ß³öÁËÄÇÆáºÚµÄ¾¡Í·£¬¿ÉÒÔÒÀÏ¡±æÈÏ³öÖÜÎ§µÄÇé¿ö¡£\n"NOR);
+                tell_object(obj,HIG"ä½ ç»ˆäºèµ°å‡ºäº†é‚£æ¼†é»‘çš„å°½å¤´ï¼Œå¯ä»¥ä¾ç¨€è¾¨è®¤å‡ºå‘¨å›´çš„æƒ…å†µã€‚\n"NOR);
                 return 1;
                 }
         return 1;

@@ -1,4 +1,4 @@
-///u/jpei/thd/obj/biyuxiao.c ±ÌÓñóï
+///u/jpei/thd/obj/biyuxiao.c ç¢§ç‰ç®«
 #include <weapon.h>
 #include <ansi.h>
 
@@ -6,18 +6,18 @@ inherit SWORD;
 
 void create()
 {
-	set_name(HIG"±ÌÓñóï"NOR,({"biyu xiao","xiao"}));
+	set_name(HIG"ç¢§ç‰ç®«"NOR,({"biyu xiao","xiao"}));
 	set_weight(8000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else{
-		set("unit","Ö§");
+		set("unit","æ”¯");
 		set("value",20000);
                 set("treasure",1);
 		set("material","steel");
-		set("long","ÕâÊÇÒ»Ö§Í¨Ìå¾§Ó¨µÄÓÃ±ÌÓñ×öµÄóï£¬¿´ÆğÀ´Äê´úÊ®·Ö¾ÃÔ¶¡£\n");
-		set("wield_msg",HIM"$NÉìÊÖÇáÇáÒ»ÕĞ£¬Ò»Ö§$nÒÑ³öÏÖÔÚ$NÊÖÖĞ¡£\n"NOR);
-		set("unwield_msg",HIM"$NÒ»ÉùÇåĞ¥£¬½«$n²å»ØÑü¼ä¡£\n"NOR);
+		set("long","è¿™æ˜¯ä¸€æ”¯é€šä½“æ™¶è¹çš„ç”¨ç¢§ç‰åšçš„ç®«ï¼Œçœ‹èµ·æ¥å¹´ä»£ååˆ†ä¹…è¿œã€‚\n");
+		set("wield_msg",HIM"$Nä¼¸æ‰‹è½»è½»ä¸€æ‹›ï¼Œä¸€æ”¯$nå·²å‡ºç°åœ¨$Næ‰‹ä¸­ã€‚\n"NOR);
+		set("unwield_msg",HIM"$Nä¸€å£°æ¸…å•¸ï¼Œå°†$næ’å›è…°é—´ã€‚\n"NOR);
 	}
 	init_sword(100);
 	setup();

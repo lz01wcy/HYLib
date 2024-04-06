@@ -11,15 +11,15 @@ void init()
 
 void create()
 {
-        set_name("¹©×À", ({"table", "gongzhuo"}));
+        set_name("ä¾›æ¡Œ", ({"table", "gongzhuo"}));
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-               set("long", "ÕâÊÇÒ»ÕÅéªÄ¾¹©×À£¬×ÀÉÏÓÐÒ»ÕµÓÍµÆ¡£\n");
-               set("unit", "ÕÅ");
+               set("long", "è¿™æ˜¯ä¸€å¼ æ¥ æœ¨ä¾›æ¡Œï¼Œæ¡Œä¸Šæœ‰ä¸€ç›æ²¹ç¯ã€‚\n");
+               set("unit", "å¼ ");
                set("material", "wood");
-               set("no_get", "\nÄãÄÃ²»¶¯.\n");
+               set("no_get", "\nä½ æ‹¿ä¸åŠ¨.\n");
         }
         setup();
 }
@@ -29,22 +29,22 @@ int do_climb(string arg)
         object me = this_player();
         int i;
 	if (!id(arg)||arg!="table")
-                return notify_fail("ÄãÒªÍùÄÄ¶ùÅÀ£¿\n");
-        if (this_player()->query_temp("marks/ÅÀ") ) {
-                       write("ÄãÔõÃ´ÅÀ¸öÃ»ÍêÃ»ÁË£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªå„¿çˆ¬ï¼Ÿ\n");
+        if (this_player()->query_temp("marks/çˆ¬") ) {
+                       write("ä½ æ€Žä¹ˆçˆ¬ä¸ªæ²¡å®Œæ²¡äº†ï¼Ÿ\n");
                         return 1;
         }
         else {
-               message_vision("$NÅÀÉÏ¹©×À¡£\n",this_player());         
+               message_vision("$Nçˆ¬ä¸Šä¾›æ¡Œã€‚\n",this_player());         
 		if (random(5) != 0)
 		{
-                this_player()->set_temp("marks/ÅÀ", 1);
+                this_player()->set_temp("marks/çˆ¬", 1);
 		return 1;
 		}
 		else
 		{
-		message_vision("\n$N±½ÊÖ±½½ÅµØÅÀÉÏ¹©×À£¬Ò»²»Ð¡ÐÄ°ÑÓÍµÆÅªµ¹ÁË£¡¡£\n", this_player());
-		message_vision("¹©×ÀÁ¢¿Ì×ÅÁË»ð£¬$NÉíÉÏ´ø×Å»ð¾Í»Å»ÅÕÅÕÅÌøÁËÏÂÀ´¡£\n", this_player());
+		message_vision("\n$Nè‹¯æ‰‹è‹¯è„šåœ°çˆ¬ä¸Šä¾›æ¡Œï¼Œä¸€ä¸å°å¿ƒæŠŠæ²¹ç¯å¼„å€’äº†ï¼ã€‚\n", this_player());
+		message_vision("ä¾›æ¡Œç«‹åˆ»ç€äº†ç«ï¼Œ$Nèº«ä¸Šå¸¦ç€ç«å°±æ…Œæ…Œå¼ å¼ è·³äº†ä¸‹æ¥ã€‚\n", this_player());
 		i = (int)me->query_skill("dodge", 1) + random(50);
 		if(i<50) { me->die(); return 1;}
 		if(i<75) { me->unconcious(); return 1;}
@@ -60,16 +60,16 @@ int do_move(string arg)
         object ob,me = this_player();
         int i;
 	if (!id(arg)||arg!="table")
-                return notify_fail("ÄãÒªÒÆÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç§»ä»€ä¹ˆï¼Ÿ\n");
 	if (!(ob = present("jin", this_player())))
-	return notify_fail("ÄãÃ»ÊÂ¶ùÂÒÒÆÊ²Ã´£¿\n");
-	if (this_player()->query_temp("marks/ÒÆ") ) {
-        message_vision("$NÓÖ°Ñ¹©×ÀÒÆÁË»ØÈ¥¡£\n",me);
-	this_player()->delete_temp("marks/ÒÆ");
+	return notify_fail("ä½ æ²¡äº‹å„¿ä¹±ç§»ä»€ä¹ˆï¼Ÿ\n");
+	if (this_player()->query_temp("marks/ç§»") ) {
+        message_vision("$NåˆæŠŠä¾›æ¡Œç§»äº†å›žåŽ»ã€‚\n",me);
+	this_player()->delete_temp("marks/ç§»");
         }
         else {
-        message_vision("$N°Ñ¹©×ÀÒÆ¿ª¡£\n",me);
-       this_player()->set_temp("marks/ÒÆ",1);
+        message_vision("$NæŠŠä¾›æ¡Œç§»å¼€ã€‚\n",me);
+       this_player()->set_temp("marks/ç§»",1);
 	     }
 return 1;
 }

@@ -1,16 +1,16 @@
-// Room: /d/chengdu/npc/wujiang.c Îä½«
+// Room: /d/chengdu/npc/wujiang.c æ­¦å°†
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
 
 void create()
 {
-	set_name("Îä½«", ({ "wu jiang", "wu", "jiang" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ­¦å°†", ({ "wu jiang", "wu", "jiang" }));
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 30);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "ËûÕ¾ÔÚÄÇÀï£¬µÄÈ·ÓĞËµ²»³öµÄÍş·ç¡£\n");
+	set("long", "ä»–ç«™åœ¨é‚£é‡Œï¼Œçš„ç¡®æœ‰è¯´ä¸å‡ºçš„å¨é£ã€‚\n");
 	set("combat_exp", 75000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");

@@ -2,9 +2,9 @@ inherit NPC;
 inherit F_BANKER;
 void create()
 {
-        set_name("·¶ÏÈÉú", ({"fan xiansheng", "fan", "xiansheng"}));
-        set("title", "ÕÊ·¿ÏÈÉú");
-        set("gender", "ÄĞĞÔ");
+        set_name("èŒƒå…ˆç”Ÿ", ({"fan xiansheng", "fan", "xiansheng"}));
+        set("title", "å¸æˆ¿å…ˆç”Ÿ");
+        set("gender", "ç”·æ€§");
         set("age", 34);
         set("str", 22);
         set("int", 24);
@@ -17,8 +17,8 @@ void create()
 }
 void init() 
 {
-        add_action("do_check", ({"check", "chazhang", "²éÕÊ"}));
-                     add_action("do_convert", ({"convert", "duihuan", "¶Ò»»"}));
-add_action("do_deposit", ({"deposit", "cun", "´æ"}));
-       add_action("do_withdraw", ({"withdraw", "qu", "È¡"}));
+        add_action("do_check", ({"check", "chazhang", "æŸ¥å¸"}));
+                     add_action("do_convert", ({"convert", "duihuan", "å…‘æ¢"}));
+add_action("do_deposit", ({"deposit", "cun", "å­˜"}));
+       add_action("do_withdraw", ({"withdraw", "qu", "å–"}));
 }

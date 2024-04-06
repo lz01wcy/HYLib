@@ -1,15 +1,15 @@
-// shulin3.c Ê÷ÁÖ
+// shulin3.c æ ‘æž—
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ð¡Ê÷ÁÖ");
+        set("short", "å°æ ‘æž—");
         set("long", @LONG
-ÕâÀïÊÇÊ÷ÁÖµÄ±ßÔµ£¬²ÎÌì¹ÅÊ÷ÒÑ¾­ºÜÏ¡ÉÙÁË¡£¶«ÃæÓÐÒ»×ù¸ßÉ½£¬
-ÒþÔ¼¿´¼ûÉ½¼äÔÆÎíçÔÈÆÖÐ£¬ËÆºõÓÐÊ²Ã´ÀÈéÜµÄ½¨Öþ¡£É½ÊÆ»ººÍ£¬µ«
-É½ÉÏÓôÓô´Ð´ÐµØÔÔÂúÁËÊ÷Ä¾¡£
+è¿™é‡Œæ˜¯æ ‘æž—çš„è¾¹ç¼˜ï¼Œå‚å¤©å¤æ ‘å·²ç»å¾ˆç¨€å°‘äº†ã€‚ä¸œé¢æœ‰ä¸€åº§é«˜å±±ï¼Œ
+éšçº¦çœ‹è§å±±é—´äº‘é›¾ç¼­ç»•ä¸­ï¼Œä¼¼ä¹Žæœ‰ä»€ä¹ˆå»Šæªçš„å»ºç­‘ã€‚å±±åŠ¿ç¼“å’Œï¼Œä½†
+å±±ä¸Šéƒéƒè‘±è‘±åœ°æ ½æ»¡äº†æ ‘æœ¨ã€‚
 LONG
         );
         set("outdoors", "gumu");

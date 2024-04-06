@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "�ƺӶɿ�");
+	set("short", "黄河渡口");
 	set("long", @LONG
-�����ǻƺӵ�һ���ɿڣ����¾��ǹ��������Ļƺ�ˮ��������Ҫ��
-���ٸ�ʹ�á�
+这里是黄河的一个渡口，脚下就是滚滚而来的黄河水，这里主要是
+供官府使用。
 LONG
 	);
 set("outdoors", "mayi");

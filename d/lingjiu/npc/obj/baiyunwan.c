@@ -1,4 +1,4 @@
-// baiyunwan.c °×ÔÆĞÜµ¨Íè
+// baiyunwan.c ç™½äº‘ç†Šèƒ†ä¸¸
 
 inherit ITEM;
 
@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	set_name("°×ÔÆĞÜµ¨Íè", ({"baiyunxiudan wan", "wan"}));
+	set_name("ç™½äº‘ç†Šèƒ†ä¸¸", ({"baiyunxiudan wan", "wan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿ÅÎäÁÖÈËÊ¿ÃÎÃÂÒÔÇóµÄÁÆÉËÊ¥Ò©¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—æ­¦æ—äººå£«æ¢¦å¯ä»¥æ±‚çš„ç–—ä¼¤åœ£è¯ã€‚\n");
 		set("value", 50000);
 	}
 	setup();
@@ -26,10 +26,10 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	this_player()->receive_curing("qi", 100);
 	this_player()->receive_curing("jing", 100);
-	message_vision("$N³ÔÏÂÒ»¿Å°×ÔÆĞÜµ¨Íè£¬Ö»¾õ¾«ÆøÉÏÉı£¬ÆøÉ«´óºÃ¡£\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€é¢—ç™½äº‘ç†Šèƒ†ä¸¸ï¼Œåªè§‰ç²¾æ°”ä¸Šå‡ï¼Œæ°”è‰²å¤§å¥½ã€‚\n", this_player());
 	destruct(this_object());
 	return 1;
 	

@@ -8,13 +8,13 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"±´¶û·Æ¸ß¶û"NOR, ({ "ying"}));
+   set_name(order[random(13)]+"è´å°”è²é«˜å°”"NOR, ({ "ying"}));
 set("magicgift",1+random(6));
 	set("magicset",1);
-       set("title",HIB"ÓûÇéÌìÊ¹"NOR);
+       set("title",HIB"æ¬²æƒ…å¤©ä½¿"NOR);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄ×¹ÌìÊ¹¡£\n");
+"ä¸€ä½å¯æ€•çš„å å¤©ä½¿ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -141,8 +141,8 @@ if (!me) return;
         me->set("qi",me->query("max_qi"));
         me->set("jing",me->query("max_jing"));
         me->set("neili",me->query("max_neili"));
-        message_vision(HIB"$N,»¯ÎªÁËÎÞÊýµÄ¹âÃ¢£¬ÏûÊ§ÔÚ¿ÕÖÐ¡£\n"NOR,ob,me);
-        message("vision", me->name() + HIG"ÔÚ×îÖÕÈÎÎñÖÐ!!´ò°ÜÁË"+ob->query("title")+HIG":"+ob->query("name")+HIG"("+ob->query("id")+HIG")¡£\n"NOR, users());
+        message_vision(HIB"$N,åŒ–ä¸ºäº†æ— æ•°çš„å…‰èŠ’ï¼Œæ¶ˆå¤±åœ¨ç©ºä¸­ã€‚\n"NOR,ob,me);
+        message("vision", me->name() + HIG"åœ¨æœ€ç»ˆä»»åŠ¡ä¸­!!æ‰“è´¥äº†"+ob->query("title")+HIG":"+ob->query("name")+HIG"("+ob->query("id")+HIG")ã€‚\n"NOR, users());
         destruct(ob);
         return;
 }

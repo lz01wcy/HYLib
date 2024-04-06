@@ -1,18 +1,18 @@
-// guan.c Îä½«
+// guan.c æ­¦å°†
 
 inherit NPC;
 //inherit F_SKILL;
 
 void create()
 {
-	set_name("²Ì½øÒå", ({ "cai jinyi", "cai", "jinyi" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è”¡è¿›ä¹‰", ({ "cai jinyi", "cai", "jinyi" }));
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 30);
 	set("str", 25);
 	set("dex", 16);
 	set("long", "
-ËûÂúÁ³ÊÇĞ¦£¬ÕıÔÚÉùË»Á¦¼«µØÏòÖÜÎ§µÄÈËÓÎËµµ±±øµÄÖÖÖÖºÃ´¦£¬²¢²»Ê±µØ³¶
-¶¯×Ô¼ºÕ¸ĞÂµÄ¾ü·ş¡¢ÅÄÅÄÎ¢Î¢ÌóÆğµÄ¶ÇÆ¤£¬ÒªÏë²Î¾üµÄ»°¾ÍÈ¥ÕÒËû°É£¡\n");
+ä»–æ»¡è„¸æ˜¯ç¬‘ï¼Œæ­£åœ¨å£°å˜¶åŠ›æåœ°å‘å‘¨å›´çš„äººæ¸¸è¯´å½“å…µçš„ç§ç§å¥½å¤„ï¼Œå¹¶ä¸æ—¶åœ°æ‰¯
+åŠ¨è‡ªå·±å´­æ–°çš„å†›æœã€æ‹æ‹å¾®å¾®è…†èµ·çš„è‚šçš®ï¼Œè¦æƒ³å‚å†›çš„è¯å°±å»æ‰¾ä»–å§ï¼\n");
 	set("combat_exp", 75000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");
@@ -50,7 +50,7 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	tell_object(ob,"²Ì½øÒå×óÓÒ¿´ÁË¿´£¬ËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+"£¬ÒªÏëµ±±ø¾Í¸Ï¿ì±¨Ãû£¬ÎÒ¸øÄãÁô¸öÃû¶î¡£\n");
+	tell_object(ob,"è”¡è¿›ä¹‰å·¦å³çœ‹äº†çœ‹ï¼Œè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(ob)+"ï¼Œè¦æƒ³å½“å…µå°±èµ¶å¿«æŠ¥åï¼Œæˆ‘ç»™ä½ ç•™ä¸ªåé¢ã€‚\n");
 
 	return;
 }

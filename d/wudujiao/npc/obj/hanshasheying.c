@@ -1,5 +1,5 @@
-// hanshasheying.c º¬É³ÉäÓ°
-// gemini ¸ÄdujiÎªpoison 2000.4.3
+// hanshasheying.c å«æ²™å°„å½±
+// gemini æ”¹dujiä¸ºpoison 2000.4.3
 
 #include <ansi.h>
 #include <armor.h>
@@ -8,13 +8,13 @@ inherit WAIST;
 
 void create()
 {
-        set_name("º¬É³ÉäÓ°", ({ "han sha she ying", "hssy" }) );
+        set_name("å«æ²™å°„å½±", ({ "han sha she ying", "hssy" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÎå¶¾½ÌµÄÆæÃÅ°µÆ÷¡¸º¬É³ÉäÓ°¡¹£¬Ñù×ÓÏóÒ»ÌõÑü´ø£¬¿ÉÒÔÊøÔÚÑü¼ä¡£\n´øÖĞ¼äÓĞÒ»¸ö±â±âµÄĞ¡ÌúºĞ£¬Ö»ÒªÔÚÑü¼äÒ»°´(shot)¾Í¿ÉÒÔ·¢Éä³öÏ¸ÈçÅ£Ã«µÄ¶¾Õë¡£\n") ;
-                set("unit", "¸ö");
+                set("long", "è¿™æ˜¯äº”æ¯’æ•™çš„å¥‡é—¨æš—å™¨ã€Œå«æ²™å°„å½±ã€ï¼Œæ ·å­è±¡ä¸€æ¡è…°å¸¦ï¼Œå¯ä»¥æŸåœ¨è…°é—´ã€‚\nå¸¦ä¸­é—´æœ‰ä¸€ä¸ªæ‰æ‰çš„å°é“ç›’ï¼Œåªè¦åœ¨è…°é—´ä¸€æŒ‰(shot)å°±å¯ä»¥å‘å°„å‡ºç»†å¦‚ç‰›æ¯›çš„æ¯’é’ˆã€‚\n") ;
+                set("unit", "ä¸ª");
                 set("value", 0);
 set("treasure",1);
                 set("zhen", 10);
@@ -38,61 +38,61 @@ int do_shot(string arg)
         me = this_player();
 
         if( me->query_temp("armor/waist") != this_object() )
-                return notify_fail("Äã¶Ô×ÅÄãµÄÑü¼äÒ»Ãş£¬Ôã¸â£¡Äã»¹Ã»°Ñº¬É³ÉäÓ°×°ÉÏÄØ£¡\n");
+                return notify_fail("ä½ å¯¹ç€ä½ çš„è…°é—´ä¸€æ‘¸ï¼Œç³Ÿç³•ï¼ä½ è¿˜æ²¡æŠŠå«æ²™å°„å½±è£…ä¸Šå‘¢ï¼\n");
 
-        if( !arg ) return notify_fail("ÄãÏë¶ÔË­·¢Éäº¬É³ÉäÓ°£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³å¯¹è°å‘å°„å«æ²™å°„å½±ï¼Ÿ\n");
 
         if( !objectp(target = present(arg, environment(me))) )
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
         if( target->query("id")==me->query("id"))
-                return notify_fail("ÄãÏëÉ±×Ô¼ºÂğ£¿\n");
+                return notify_fail("ä½ æƒ³æ€è‡ªå·±å—ï¼Ÿ\n");
 
       if( !target || !target->is_character() || !me->is_fighting(target) )
-              return notify_fail("º¬É³ÉäÓ°Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("å«æ²™å°„å½±åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !target->is_character() || target->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
         if( this_object()->query("zhen") < 1 ) {
                 remove_call_out("destroy_box");
                 call_out ("destroy_box" , 0 ) ;
-                return notify_fail("ÌúºĞÖĞµÄ¶¾ÕëÒÑ¾­Éä¹âÁË¡£\n");
+                return notify_fail("é“ç›’ä¸­çš„æ¯’é’ˆå·²ç»å°„å…‰äº†ã€‚\n");
                 }
 
         if( !objectp(ob = present("han sha she ying", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
         myskill =  me->query_skill("poison",1) + me->query_skill("dodge",1);
         tgskill =  target->query_skill("dodge",1);
         mylev =  me->query_skill("poison");
 
-        if( (string)this_player()->query("family/family_name")!="Îå¶¾½Ì" ) {
-                message_vision("\n$N×óÊÖÔÚÑü¼äÒ»ÕóÂÒ°´£¡\n", me);
+        if( (string)this_player()->query("family/family_name")!="äº”æ¯’æ•™" ) {
+                message_vision("\n$Nå·¦æ‰‹åœ¨è…°é—´ä¸€é˜µä¹±æŒ‰ï¼\n", me);
                 return 1;
                 }
         if( ob->query("own_name")!= me->query("id") ) {
-                message_vision("\n$N×óÊÖÔÚÑü¼äÒ»ÕóÂÒ°´£¡\n", me);
+                message_vision("\n$Nå·¦æ‰‹åœ¨è…°é—´ä¸€é˜µä¹±æŒ‰ï¼\n", me);
                 remove_call_out("destroy_box");
                 call_out ("destroy_box" , 0 ) ;
                 return 1;
                 }
 
         if ( mylev <= 50 )
-                return notify_fail("ÄãµÄ¶¾¼¼»¹²»ÊìÁ·£¬ÎŞ·¨Ê¹ÓÃº¬É³ÉäÓ°£¡\n");
+                return notify_fail("ä½ çš„æ¯’æŠ€è¿˜ä¸ç†Ÿç»ƒï¼Œæ— æ³•ä½¿ç”¨å«æ²™å°„å½±ï¼\n");
 
         this_object()->add("zhen", -1);
-        message_vision(HIR"\n$NÒ»ÉùÇáĞ¦£¬×óÊÖ²»¾­ÒâµÄÔÚÑü¼äÒ»°´¡£Ö»ÌıµÃÒ»ÕóàÍàÍµÄÆÆ¿ÕÉù¡£\n"NOR,me,target);
+        message_vision(HIR"\n$Nä¸€å£°è½»ç¬‘ï¼Œå·¦æ‰‹ä¸ç»æ„çš„åœ¨è…°é—´ä¸€æŒ‰ã€‚åªå¬å¾—ä¸€é˜µå—¤å—¤çš„ç ´ç©ºå£°ã€‚\n"NOR,me,target);
         me->start_busy(2+random(2)) ;
         if( !target->is_killing(me) ) target->kill_ob(me);
         if(  random(myskill) < tgskill )
-                message_vision("\n$n´ó½ĞÒ»Éù£¬ÃÍµÄÒ»¸öºµµØ°Î´ĞÉíĞĞ³åÆğÊıÕÉÀ´¸ß£¬¿°¿°¶ã¹ıÁË$NµÄ¶¾Õë£¡\n",me,target);
+                message_vision("\n$nå¤§å«ä¸€å£°ï¼ŒçŒ›çš„ä¸€ä¸ªæ—±åœ°æ‹”è‘±èº«è¡Œå†²èµ·æ•°ä¸ˆæ¥é«˜ï¼Œå ªå ªèº²è¿‡äº†$Nçš„æ¯’é’ˆï¼\n",me,target);
         else {
-                message_vision("\n$n¶ãÉÁ²»¼°£¬±»ÎŞÊıÏ¸ÈçÅ£Ã«µÄ¶¾Õë´òÁËÒ»Éí£¬²»ÓÉµÄ·¢³öÒ»Éù²Òº¿£¡\n",me,target);
-                tell_object (target, HIR "\nÄãÖ»¾õµÃÁ³ÉÏ¡¢ĞØÇ°Ò»Í´£¬¶øºóÊÇÆæÑ÷ÄÑ°¾£¬Ò»¶¨ÊÇÖĞ¶¾ÁË¡£\n"NOR);
+                message_vision("\n$nèº²é—ªä¸åŠï¼Œè¢«æ— æ•°ç»†å¦‚ç‰›æ¯›çš„æ¯’é’ˆæ‰“äº†ä¸€èº«ï¼Œä¸ç”±çš„å‘å‡ºä¸€å£°æƒ¨åšï¼\n",me,target);
+                tell_object (target, HIR "\nä½ åªè§‰å¾—è„¸ä¸Šã€èƒ¸å‰ä¸€ç—›ï¼Œè€Œåæ˜¯å¥‡ç—’éš¾ç†¬ï¼Œä¸€å®šæ˜¯ä¸­æ¯’äº†ã€‚\n"NOR);
                 damage=(int)me->query_skill("poison",1)*4 - (target->query("max_neili")/5);
                 if( damage < 100 ) damage = 100;
                 if( damage > 8000 ) damage = 8000;
@@ -109,7 +109,7 @@ int do_shot(string arg)
 
 void destroy_box()
 {
-        message_vision("ºöÈ»" + (string)this_object()->query("name") + "µôÔÚµØÉÏ£¬Ë¤³ÉÁËÒ»¶ÑÌúÆ¬¡£\n", environment(this_object()));
+        message_vision("å¿½ç„¶" + (string)this_object()->query("name") + "æ‰åœ¨åœ°ä¸Šï¼Œæ‘”æˆäº†ä¸€å †é“ç‰‡ã€‚\n", environment(this_object()));
         destruct(this_object());
 }
 

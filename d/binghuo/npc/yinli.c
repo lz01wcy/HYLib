@@ -7,13 +7,13 @@ string ask_me();
 int ask_popo();
 void create()
 {
-        set_name(HIC"ÒóÀë"NOR, ({"yin li", "yin",}));
-        set("nickname",HIW"Ç§ÖëÍò¶¾ÊÖ"NOR);
+        set_name(HIC"æ®·ç¦»"NOR, ({"yin li", "yin",}));
+        set("nickname",HIW"åƒè››ä¸‡æ¯’æ‰‹"NOR);
         set("long",
-"ËýÁ³ÉÏ¼¡·ô¸¡Ö×£¬°¼°¼Í¹Í¹£¬ÉúµÃ¼«ÊÇ³óÂª£¬\n"
-"Ö»ÊÇÒ»¶Ôíø×ÓÆÄÓÐÉñ²É,Éí²ÄÒ²Ãçñ»ÏËÐã.\n"
+"å¥¹è„¸ä¸Šè‚Œè‚¤æµ®è‚¿ï¼Œå‡¹å‡¹å‡¸å‡¸ï¼Œç”Ÿå¾—æžæ˜¯ä¸‘é™‹ï¼Œ\n"
+"åªæ˜¯ä¸€å¯¹çœ¸å­é¢‡æœ‰ç¥žé‡‡,èº«æä¹Ÿè‹—çª•çº¤ç§€.\n"
         );
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
 	set("attitude", "friendly");
         set("age", 16);
         set("shen_type", 1);
@@ -45,12 +45,12 @@ void create()
         map_skill("force","shenghuo-shengong");
         
         set("inquiry",([
-               "ÕÅÎÞ¼É" : "ËûÉúµÃºÜÓ¢¿¡£¬¿ÉÊÇ½¾°ÁµÃºÜ¡£ÎÒÒªËû¸ú×ÅÎÒÈ¥,
-Ò»±²×Ó¸úÎÒÔÚÒ»Æð£¬Ëû²»¿Ï£¬ÄÇÒ²°ÕÁË£¬ÄÄÖª»¹ÂîÎÒ,
-´òÎÒ,½«ÎÒÒ§µÃÉíÉÏÏÊÑªÁÜÀì¡£¿ÉÎÒ¾ÍÊÇÍü²»ÁËËû!\n",
-               "¸¸Ä¸": "ÎÒÇ×Éúµùµù²»ÒªÎÒ£¬¼ûµ½ÎÒ¾Í»áÉ±ÎÒ¡£ÎÒÂèÂèÊÇÎÒº¦ËÀµÄ.\n",
-               "Öë¶ù": "ÄãÔõÃ´ÖªµÀµÄ?¿ì×ß¿ª,²»È»½ÐÄã³¢³¢ÎÒµÄÇ§ÖëÍò¶¾ÊÖµÄÀ÷º¦!\n",
-		"½õºÐ":(:ask_me:),
+               "å¼ æ— å¿Œ" : "ä»–ç”Ÿå¾—å¾ˆè‹±ä¿Šï¼Œå¯æ˜¯éª„å‚²å¾—å¾ˆã€‚æˆ‘è¦ä»–è·Ÿç€æˆ‘åŽ»,
+ä¸€è¾ˆå­è·Ÿæˆ‘åœ¨ä¸€èµ·ï¼Œä»–ä¸è‚¯ï¼Œé‚£ä¹Ÿç½¢äº†ï¼Œå“ªçŸ¥è¿˜éª‚æˆ‘,
+æ‰“æˆ‘,å°†æˆ‘å’¬å¾—èº«ä¸Šé²œè¡€æ·‹æ¼“ã€‚å¯æˆ‘å°±æ˜¯å¿˜ä¸äº†ä»–!\n",
+               "çˆ¶æ¯": "æˆ‘äº²ç”Ÿçˆ¹çˆ¹ä¸è¦æˆ‘ï¼Œè§åˆ°æˆ‘å°±ä¼šæ€æˆ‘ã€‚æˆ‘å¦ˆå¦ˆæ˜¯æˆ‘å®³æ­»çš„.\n",
+               "è››å„¿": "ä½ æ€Žä¹ˆçŸ¥é“çš„?å¿«èµ°å¼€,ä¸ç„¶å«ä½ å°å°æˆ‘çš„åƒè››ä¸‡æ¯’æ‰‹çš„åŽ‰å®³!\n",
+		"é”¦ç›’":(:ask_me:),
            ]) );
 
           setup();
@@ -74,20 +74,20 @@ string ask_me()
 	ob=this_player(); 
 
 	if (query("book_count") < 1)
-		return "ÄãÀ´ÍíÁË£¬½õºÐÎÒÒÑ¾­ÔùËÍ¸ø±ðÈëÁË¡£";   
+		return "ä½ æ¥æ™šäº†ï¼Œé”¦ç›’æˆ‘å·²ç»èµ é€ç»™åˆ«å…¥äº†ã€‚";   
 	add("book_count", -1);                  
 
-	message_vision(HIY"ÒóÀë´Ó»³ÀïÄÃ³öÒ»¸ö½õºÐ£¬½»ÁË¸ø$N \n\n"NOR,ob);
+	message_vision(HIY"æ®·ç¦»ä»Žæ€€é‡Œæ‹¿å‡ºä¸€ä¸ªé”¦ç›’ï¼Œäº¤äº†ç»™$N \n\n"NOR,ob);
 	me=new("/clone/book/jinhe");
 	me->move(ob);
 
-	return "Õâ¸ö½õºÐÄãÒªºÃºÃ±£¹Ü¡£\n";
+	return "è¿™ä¸ªé”¦ç›’ä½ è¦å¥½å¥½ä¿ç®¡ã€‚\n";
 }
 
 int do_quit(string arg)
 {
 	if(arg=="roar") {
-        write(this_player()->query("name")+"£¬ÕâÀï²»ÄÜÓÃroar°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œè¿™é‡Œä¸èƒ½ç”¨roarå§ï¼\n");
         return 1;
 	}
 }

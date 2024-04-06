@@ -9,11 +9,11 @@ int do_action1();
 
 void create()
 {
-   set_name("Í»Àû",({ "tu li","tu","li" }) );
-   set("gender", "ÄĞĞÔ" );		
+   set_name("çªåˆ©",({ "tu li","tu","li" }) );
+   set("gender", "ç”·æ€§" );		
    set("age",48);
-   set("nickname","Áú¾í·ç");
-   set("long", "Ëû¾ÍÊÇ¡°Áú¾í·ç¡±Í»Àû£¬ÄËò¡ÀûÖ®Ö¶£¬Îä¹¦¸ßÇ¿¡£\n");       
+   set("nickname","é¾™å·é£");
+   set("long", "ä»–å°±æ˜¯â€œé¾™å·é£â€çªåˆ©ï¼Œä¹ƒé¢‰åˆ©ä¹‹ä¾„ï¼Œæ­¦åŠŸé«˜å¼ºã€‚\n");       
    set("combat_exp",2500000);
    set_skill("dodge",300);
    set_skill("parry",300);
@@ -26,7 +26,7 @@ void create()
    set("max_sen",6000);
    set("neili",8000);
    set("max_neili",8000);
-   create_family("Í»ØÊ",3,"¿Éº¹");
+   create_family("çªå¥",3,"å¯æ±—");
     set("perform_quest/fengsha",1);
     set("perform_quest/fengyu",1);
    setup();

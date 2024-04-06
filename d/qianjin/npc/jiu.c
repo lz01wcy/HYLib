@@ -6,20 +6,20 @@ inherit NPC;
 string	summon_more( object who);
 void create()
 {
-	set_name( "ºşÉÏ¾Æ", ({ "jiu", "girl" }) );
-	set("long", "ÕâÊÇÇ§½ğÂ¥ºşÉÏ°Ë½¿Ö®Ò»£®
-ºşÉÏ¾Æ£¬ÖÕÈÕÖúÇå»¶¡£
-Ì´°åÇáÉùÒø¼×»º£¬õ¬¸¡ÏãÃ×ÓñÇùº®£¬×íÑÛ°µÏà¿´¡£
-´ºµîÍí£¬ÏÉÑŞ·î±­ÅÌ¡£
-ºşÉÏ·ç¹âÕæ¿É°®£¬×íÏçÌìµØ¾ÍÖĞ¿í£¬µÛÍõÕıÇå°²¡£
+	set_name( "æ¹–ä¸Šé…’", ({ "jiu", "girl" }) );
+	set("long", "è¿™æ˜¯åƒé‡‘æ¥¼æ¹–ä¸Šå…«å¨‡ä¹‹ä¸€ï¼
+æ¹–ä¸Šé…’ï¼Œç»ˆæ—¥åŠ©æ¸…æ¬¢ã€‚
+æª€æ¿è½»å£°é“¶ç”²ç¼“ï¼Œé†…æµ®é¦™ç±³ç‰è›†å¯’ï¼Œé†‰çœ¼æš—ç›¸çœ‹ã€‚
+æ˜¥æ®¿æ™šï¼Œä»™è‰³å¥‰æ¯ç›˜ã€‚
+æ¹–ä¸Šé£å…‰çœŸå¯çˆ±ï¼Œé†‰ä¹¡å¤©åœ°å°±ä¸­å®½ï¼Œå¸ç‹æ­£æ¸…å®‰ã€‚
 \n");
 	set("attitude", "friendly");
-	set("title", HIM "ºşÉÏ°Ë½¿" NOR);
+	set("title", HIM "æ¹–ä¸Šå…«å¨‡" NOR);
 	set("max_gin", 500);
 	set("max_kee", 500);
 	set("max_sen", 500);
 	set("age", 17);
-        set("gender", "Å®ĞÔ" );
+        set("gender", "å¥³æ€§" );
 
 
 	set("str", 35);
@@ -48,7 +48,7 @@ string summon_more(object who)
 	seteuid(getuid());
 	another = new(__DIR__"jianu");
 	another->move(environment(who));
-	message_vision(another->name()+ "×ßÁË¹ıÀ´¡£\n"
+	message_vision(another->name()+ "èµ°äº†è¿‡æ¥ã€‚\n"
 		, this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);
@@ -67,19 +67,19 @@ int accept_object(object me, object obj)
     if ((string)obj->query("liquid/type")=="alcohol")
         if ((int)obj->query("liquid/remaining") != 0)
 	{
-	command("say ÍÛ£®£®Ì«Ğ»Ğ»ÄãÁË£¡Õâ¸ö¸øÄã£¡\n");
+	command("say å“‡ï¼ï¼å¤ªè°¢è°¢ä½ äº†ï¼è¿™ä¸ªç»™ä½ ï¼\n");
 	pai = new(__DIR__"obj/jiupai");
 	if(pai)
 	pai->move(me);
-        message_vision("$NÄÃ³ö¾ÆÓñèµ¸ø$n¡£\n",this_object(),me);
+        message_vision("$Næ‹¿å‡ºé…’ç‰ç’§ç»™$nã€‚\n",this_object(),me);
 	return 1;	
 	}
 
 	if( !obj->value() &&  !obj->query("value")) return 0;
         command("smile");
-	message_vision("$NÏò$nµÀÁË¸öÍò¸££º\n",this_object(),me);
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬Í·Ò»´Î¼ûµ½ÏóÄúÕâÃ´´ó·½µÄ£¡");
+	message_vision("$Nå‘$né“äº†ä¸ªä¸‡ç¦ï¼š\n",this_object(),me);
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œå¤´ä¸€æ¬¡è§åˆ°è±¡æ‚¨è¿™ä¹ˆå¤§æ–¹çš„ï¼");
         return 1;
 }
 

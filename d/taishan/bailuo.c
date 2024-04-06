@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ڣ");
+	set("short", "白骡冢");
 	set("long", @LONG
-���Ź�������Ϫ�����ǰ���ڣ���������ڵ�̩ɽʱ�˰��⣬�����
-ɽ���ˣ�����������⡰���⽫��������������ʯΪڣ����ڣ�޴棬��
-��ʯ������Ϊ����ڣ����
+红门宫东出跨溪而南是白骡冢。传唐玄宗登泰山时乘白骡，礼毕下
+山至此，骡累死，遂封“白骡将军”，并备棺垒石为冢。现冢无存，仅
+留石碑，传为白骡冢碑。
 LONG );
 	set("exits", ([
 		"northwest" : __DIR__"mileyuan",

@@ -8,15 +8,15 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "¸ß²ı´óÃÅ");
+  set ("short", "é«˜æ˜Œå¤§é—¨");
   set ("long", @LONG
-    ×ª¹ıÁËÒ»ÅÅÊ÷Ä¾£¬Ö»¼ûÒ»×ùÊ¯É½ÉÏÇ¶ÖøÁ½ÉÈÌúÖıµÄ´óÃÅ,
-  ´óÃÅ¿´Ñù×ÓÖØÓâÇ§¾û£¬¾İËµÊÇ¹Å´ú¸ß²ı¹úÍõÎªÁËµÖÓùÇ¿µĞ¶øÉè¼ÆµÄ¡£
-  ÃÅÉÏÌúĞâ°ß²µ£¬ÏÔÊÇÀúÊ±ÒÑ¾ÃµÄ¾ÉÎï¡£µ«ÊÇÃÅÉÏµÄÃÅ»·(huan)
-  ËÆºõ¿ÉÒÔÅ¤(niu).ÃÅÉÏĞ´×Å£º
+    è½¬è¿‡äº†ä¸€æ’æ ‘æœ¨ï¼Œåªè§ä¸€åº§çŸ³å±±ä¸ŠåµŒè‘—ä¸¤æ‰‡é“é“¸çš„å¤§é—¨,
+  å¤§é—¨çœ‹æ ·å­é‡é€¾åƒé’§ï¼Œæ®è¯´æ˜¯å¤ä»£é«˜æ˜Œå›½ç‹ä¸ºäº†æŠµå¾¡å¼ºæ•Œè€Œè®¾è®¡çš„ã€‚
+  é—¨ä¸Šé“é”ˆæ–‘é©³ï¼Œæ˜¾æ˜¯å†æ—¶å·²ä¹…çš„æ—§ç‰©ã€‚ä½†æ˜¯é—¨ä¸Šçš„é—¨ç¯(huan)
+  ä¼¼ä¹å¯ä»¥æ‰­(niu).é—¨ä¸Šå†™ç€ï¼š
                ****************
                *              *
-               *  ¸ß ²ı ´ó µî *
+               *  é«˜ æ˜Œ å¤§ æ®¿ *
                *              *
                ****************
 
@@ -44,7 +44,7 @@ if( (int)query("left_trigger")==2
 
    &&   (int)query("right_trigger")==5
    &&   !query("exits/down") ) {
-     message("vision", "ÌúÃÅºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÏÂµÄ½×Ìİ¡£\n",
+     message("vision", "é“é—¨å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸‹çš„é˜¶æ¢¯ã€‚\n",
         this_object() );
 if( !(room = find_object(__DIR__"dadian")) )
 room = load_object(__DIR__"dadian");
@@ -53,12 +53,12 @@ room = load_object(__DIR__"dadian");
 set("exits/down", __DIR__"dadian");
         room->set("exits/up", __FILE__);
         
-        message("vision", "ÌúÃÅºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÉÏµÄ½×Ìİ¡£\n",
+        message("vision", "é“é—¨å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸Šçš„é˜¶æ¢¯ã€‚\n",
           room );
- //    addmimi(this_player(),"nw",128,"¸ß²ıÃÔ¹¬");
-if((int)this_player()->query("¸ß²ı")<1){
+ //    addmimi(this_player(),"nw",128,"é«˜æ˜Œè¿·å®«");
+if((int)this_player()->query("é«˜æ˜Œ")<1){
 this_player()->add("combat_exp",500);
-this_player()->set("¸ß²ı",1);
+this_player()->set("é«˜æ˜Œ",1);
 }
      }
      delete("left_trigger");
@@ -72,11 +72,11 @@ void close_passage()
    object room;
 
    if( !query("exits/down") ) return;
-   message("vision", "ÌúÃÅºöÈ»·¢³öÔşÔşµÄÉùÒô£¬½«ÏòÏÂµÄÍ¨µÀ¸Ç×¡ÁË¡£\n",
+   message("vision", "é“é—¨å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œå°†å‘ä¸‹çš„é€šé“ç›–ä½äº†ã€‚\n",
      this_object() );
    if( room = find_object(__DIR__"dadian") ) {
      room->delete("exits/up");
-     message("vision", "ÌúÃÅºöÈ»·¢³öÔşÔşµÄÉùÒô£¬ÏòÉÏµÄÍ¨µÀÓÖ»º»ºµØ±»¸Ç×¡ÁË¡£\n",
+     message("vision", "é“é—¨å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œå‘ä¸Šçš„é€šé“åˆç¼“ç¼“åœ°è¢«ç›–ä½äº†ã€‚\n",
         room );
    }
    delete("exits/down");
@@ -93,26 +93,26 @@ int do_niu(string arg)
    if( !arg || arg=="" ) return 0;
 
    if( arg=="huan" ) {
-     write("ÄãÊÔ×ÅÅ¤¶¯ÃÅ»·£¬ËÆºõ¿ÉÒÔ×óÓÒ»¬¶¯....\n");
+     write("ä½ è¯•ç€æ‰­åŠ¨é—¨ç¯ï¼Œä¼¼ä¹å¯ä»¥å·¦å³æ»‘åŠ¨....\n");
 delete("left_trigger");
 delete("right_trigger");
      return 1;
    }
    if( sscanf(arg, "huan %s", dir)==1 ) {
      if( dir=="right" ) {
-if(query("exits/down")) return notify_fail("ÌúÃÅÒÑ¾­±»Å¤¿ªÁË¡£\n");
-        message_vision("$N½«ÃÅ»·ÍùÓÒÅ¤...£¬ºöÈ»¡¸¿¦¡¹Ò»ÉùÌúÃÅÓÖÒÆ»ØÔ­Î»¡£\n", me);
+if(query("exits/down")) return notify_fail("é“é—¨å·²ç»è¢«æ‰­å¼€äº†ã€‚\n");
+        message_vision("$Nå°†é—¨ç¯å¾€å³æ‰­...ï¼Œå¿½ç„¶ã€Œå–€ã€ä¸€å£°é“é—¨åˆç§»å›åŸä½ã€‚\n", me);
         add("right_trigger", 1);
         check_trigger();
         return 1;
      } else if( dir=="left" ) {
-if(query("exits/down")) return notify_fail("ÌúÃÅÒÑ¾­±»Å¤¿ªÁË¡£\n");
-        message_vision("$N½«ÃÅ»·Íù×óÅ¤...£¬ºöÈ»¡¸¿¦¡¹Ò»ÉùÌúÃÅÓÖÒÆ»ØÔ­Î»¡£\n", me);
+if(query("exits/down")) return notify_fail("é“é—¨å·²ç»è¢«æ‰­å¼€äº†ã€‚\n");
+        message_vision("$Nå°†é—¨ç¯å¾€å·¦æ‰­...ï¼Œå¿½ç„¶ã€Œå–€ã€ä¸€å£°é“é—¨åˆç§»å›åŸä½ã€‚\n", me);
         add("left_trigger", 1);
         check_trigger();
         return 1;
      } else {
-        write("ÄãÒª½«ÃÅ»·ÍùÄÄ±ßÅ¤£¿\n");
+        write("ä½ è¦å°†é—¨ç¯å¾€å“ªè¾¹æ‰­ï¼Ÿ\n");
         return 1;
      }
    }
@@ -131,7 +131,7 @@ int valid_leave(object me, string dir)
 {
 if(this_player()->query("combat_exp",100000))
 {
-return notify_fail("Ò»¹ÉÄ§Á¦,µ²×¡ÁËÄã\n");
+return notify_fail("ä¸€è‚¡é­”åŠ›,æŒ¡ä½äº†ä½ \n");
  }
 
 }

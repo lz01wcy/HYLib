@@ -5,9 +5,9 @@ inherit ITEM;
 
 void create()
 {
-	set_name(CYN"ÇØ×©"NOR, ({"qin zhuan", "zhuan"}));
-	set("long", "ÕâÊÇÒ»¿éºÜ¹Å¾ÉµÄÇØ×©¡£\n");
-	set("unit", "¿é");
+	set_name(CYN"ç§¦ç –"NOR, ({"qin zhuan", "zhuan"}));
+	set("long", "è¿™æ˜¯ä¸€å—å¾ˆå¤æ—§çš„ç§¦ç –ã€‚\n");
+	set("unit", "å—");
 	set("value", 500);
 	set("weight", 100);
 }

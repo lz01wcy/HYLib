@@ -4,12 +4,12 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("·½°²", ({"fang an","seller"}));
-	set("title","³ñ¶Ğ×¯ÀÏ°å");
+	set_name("æ–¹å®‰", ({"fang an","seller"}));
+	set("title","ç»¸ç¼åº„è€æ¿");
 	set_skill("unarmed", 10);
 	set_skill("parry", 10);
 	set_skill("dodge", 50);
-	set("gender","ÄĞĞÔ");
+	set("gender","ç”·æ€§");
 
 	set("force",200);
 	set("max_force",200);
@@ -20,8 +20,8 @@ void create()
 
 	set("age", 26);
 	set("long", @LONG
-Ëû¾ÍÊÇÕâ¼Ò³ñ¶Ğ×¯µÄÀÏ°å¡£Ëû¿´ÆğÀ´¶şÊ®¶àËê£¬×¨ÃÅ¿¿ÂòÂô
-³ñ¶Ğ£¬²¼Æ¥ÎªÉú¡£ÌıËµËû×î½ü½ÓÁËÒ»±Ê´óÂòÂô¡£
+ä»–å°±æ˜¯è¿™å®¶ç»¸ç¼åº„çš„è€æ¿ã€‚ä»–çœ‹èµ·æ¥äºŒåå¤šå²ï¼Œä¸“é—¨é ä¹°å–
+ç»¸ç¼ï¼Œå¸ƒåŒ¹ä¸ºç”Ÿã€‚å¬è¯´ä»–æœ€è¿‘æ¥äº†ä¸€ç¬”å¤§ä¹°å–ã€‚
 LONG
 );
 	set("vendor_goods", ({

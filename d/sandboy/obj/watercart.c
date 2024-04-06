@@ -2,24 +2,24 @@
 inherit ITEM;
 
 string *vision=({
-"$N°ÑË®³µ²ÈµÃ·É¿ì,",
-"$NÓÐÆøÃ»Á¦µØ²È¶¯Ë®³µ,",
-"Ë®³µÔÚ$NµÄ²È¶¯ÏÂ×ªÁËÆðÀ´,",
-"$NÒ»½Å¸ß,Ò»½ÅµÍµØ²ÈÆðË®³µÀ´,",
-"$NÁ³ÕõµÃÍ¨ºì,½ÅÏÂµÄË®³µÈ´×ªµÃÔ½À´Ô½Âý,",
-"Ë®³µÔÚ$NµÄ²È¶¯ÏÂ×ªµÃ·É¿ì,",
-"$NÖ¨Ö¨Å¤Å¤µØ²È¶¯Ë®³µ,",
-"$NÄ¨ÁËÏÂÁ³ÉÏµÄº¹Ë®,²ÈÆðË®³µ,"
+"$NæŠŠæ°´è½¦è¸©å¾—é£žå¿«,",
+"$Næœ‰æ°”æ²¡åŠ›åœ°è¸©åŠ¨æ°´è½¦,",
+"æ°´è½¦åœ¨$Nçš„è¸©åŠ¨ä¸‹è½¬äº†èµ·æ¥,",
+"$Nä¸€è„šé«˜,ä¸€è„šä½Žåœ°è¸©èµ·æ°´è½¦æ¥,",
+"$Nè„¸æŒ£å¾—é€šçº¢,è„šä¸‹çš„æ°´è½¦å´è½¬å¾—è¶Šæ¥è¶Šæ…¢,",
+"æ°´è½¦åœ¨$Nçš„è¸©åŠ¨ä¸‹è½¬å¾—é£žå¿«,",
+"$Nå±å±æ‰­æ‰­åœ°è¸©åŠ¨æ°´è½¦,",
+"$NæŠ¹äº†ä¸‹è„¸ä¸Šçš„æ±—æ°´,è¸©èµ·æ°´è½¦,"
 });
 void create()
 {
-        set_name("Ë®³µ", ({"watercart"}));
+        set_name("æ°´è½¦", ({"watercart"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼Ü");
-        set("long", "³éË®¹¤¾ß,Ò»°ë½þÔÚË®ÖÐ,Ò»°ëÉìÈëÌïÖÐ
-Èç¹ûÓÐÈËÌ¤¶¯(tread watercart)µÄ»°,¾Í¿ÉÒÔ³éË®µ½ÌïÖÐ£®\n"),
+                set("unit", "æž¶");
+        set("long", "æŠ½æ°´å·¥å…·,ä¸€åŠæµ¸åœ¨æ°´ä¸­,ä¸€åŠä¼¸å…¥ç”°ä¸­
+å¦‚æžœæœ‰äººè¸åŠ¨(tread watercart)çš„è¯,å°±å¯ä»¥æŠ½æ°´åˆ°ç”°ä¸­ï¼Ž\n"),
    set("no_get", 1);
    }
    setup();
@@ -38,11 +38,11 @@ if (!arg||arg!="watercart") return 0;
 if (living(player)&&environment(player)==environment())
     {
       if (player->query_skill("dodge",1)>30)
-     {    tell_object(player,"ÄãÒÑ¾­²»ÄÜ´Ó²ÈË®³µÖÐÑ§µ½Ê²Ã´ÁË!\n");
+     {    tell_object(player,"ä½ å·²ç»ä¸èƒ½ä»Žè¸©æ°´è½¦ä¸­å­¦åˆ°ä»€ä¹ˆäº†!\n");
           return 1;
      }
        str=vision[random(sizeof(vision))];
-  message_vision(str+"ºÓË®¹àÈëµ¾Ìï.\n",player);
+  message_vision(str+"æ²³æ°´çŒå…¥ç¨»ç”°.\n",player);
       player->improve_skill("dodge",random(3));
       player->receive_damage("qi",random(20));
       player->receive_damage("jing",random(3));

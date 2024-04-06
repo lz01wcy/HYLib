@@ -6,13 +6,13 @@
 inherit ROOM;
 void create()
 {
-         set("short",MAG"ÔÆ½õÂ¥"NOR);
+         set("short",MAG"äº‘é”¦æ¥¼"NOR);
          set("long",@long
-ÔÆ½õÂ¥³ÂÉè¸»Àö, Ò»¸±ÖĞÌÃ»æµÄÊÇ¿×È¸¿ªÆÁ,Á½±ßÖù×ÓÉÏĞ´ÁËÒ»·ù¶ÔÁª
-(duilian)¡£¶«ÃæÊÇÒ»¼ä¿ÍÌü£¬Î÷ÃæÊÇÏá·¿£¬Íù±±Ãæ×ßÊÇºóÔº£¬ÄÏÃæÊÇºó»¨Ô°¡£
+äº‘é”¦æ¥¼é™ˆè®¾å¯Œä¸½, ä¸€å‰¯ä¸­å ‚ç»˜çš„æ˜¯å­”é›€å¼€å±,ä¸¤è¾¹æŸ±å­ä¸Šå†™äº†ä¸€å¹…å¯¹è”
+(duilian)ã€‚ä¸œé¢æ˜¯ä¸€é—´å®¢å…ï¼Œè¥¿é¢æ˜¯å¢æˆ¿ï¼Œå¾€åŒ—é¢èµ°æ˜¯åé™¢ï¼Œå—é¢æ˜¯åèŠ±å›­ã€‚
 long);
          set("item_desc", ([
-             "duilian" : "ÆáÒ¶ÔÆ²îÃÜ, ²è»¨Ñ©¼ÉÑŞ¡£\n"
+             "duilian" : "æ¼†å¶äº‘å·®å¯†, èŒ¶èŠ±é›ªå¿Œè‰³ã€‚\n"
 ]));
 set("valid_startroom", 1);
 set("exits",([
@@ -34,9 +34,9 @@ int valid_leave(object me, string dir)
         mapping fam;
         fam = (mapping)me->query("family");
 
-        if ((!fam || fam["family_name"] != "¹ÃËÕÄ½Èİ") && dir == "up" &&
+        if ((!fam || fam["family_name"] != "å§‘è‹æ…•å®¹") && dir == "up" &&
                 objectp(present("wang furen", environment(me))))
-                return notify_fail("Â¥ÉÏÊÇÎÒÂüÙ¢ÂŞÉ½×¯µÄ²ØÊé¸ó£¬Äã²»ÊÇÄ½ÈİµÜ×Ó£¬»¹ÊÇ²»ÒªÉÏÈ¥ÁË°É£¿\n");
+                return notify_fail("æ¥¼ä¸Šæ˜¯æˆ‘æ›¼ä½—ç½—å±±åº„çš„è—ä¹¦é˜ï¼Œä½ ä¸æ˜¯æ…•å®¹å¼Ÿå­ï¼Œè¿˜æ˜¯ä¸è¦ä¸Šå»äº†å§ï¼Ÿ\n");
 
                   return ::valid_leave(me, dir);
 } 

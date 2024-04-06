@@ -15,12 +15,12 @@ int main(object me, string arg)
 
         if( !arg ) {
                 ob = me;
-                name = "ƒ„";
+                name = "‰Ω†";
         } else if (wizardp (me)) {
                 ob = find_player(arg);
                 if(!ob) ob = find_living(arg);
                 if(!ob) ob = LOGIN_D->find_body(arg);
-                if(!ob || !me->visible(ob)) return notify_fail("√ª”–’‚∏ˆ»À°£\n");
+                if(!ob || !me->visible(ob)) return notify_fail("Ê≤°ÊúâËøô‰∏™‰∫∫„ÄÇ\n");
                 name = ob->query("name");
         } else
                 return 0;
@@ -34,10 +34,10 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-÷∏¡Ó∏Ò Ω£∫obstacles <ƒ≥»À>
+Êåá‰ª§Ê†ºÂºèÔºöobstacles <Êüê‰∫∫>
 
-œ‘ æƒ≥»À Æ∂˛π¨µƒ◊ ¡œ°£ 
-«Îº˚£∫help 12gong
+ÊòæÁ§∫Êüê‰∫∫ÂçÅ‰∫åÂÆ´ÁöÑËµÑÊñô„ÄÇ 
+ËØ∑ËßÅÔºöhelp 12gong
 TEXT
         );
         return 1;
@@ -66,11 +66,11 @@ int telling1 (object who)
   }
   if (nb == 0)
   {
-    write (name+"…–Œ¥¥≥π˝ Æ∂˛π¨°£\n");
+    write (name+"Â∞öÊú™ÈóØËøáÂçÅ‰∫åÂÆ´„ÄÇ\n");
   }
   else
   {
-    write (name+" Æ∂˛π¨“—¥≥π˝¡À"+chinese_number(nb)+"π¨£∫\n");
+    write (name+"ÂçÅ‰∫åÂÆ´Â∑≤ÈóØËøá‰∫Ü"+chinese_number(nb)+"ÂÆ´Ôºö\n");
     who->set("12gong/number",nb);
     strs = (string *)sort_array (strs, 1);
     for (i = 0; i < nb; i++)
@@ -105,11 +105,11 @@ int telling2 (object who)
 
   if (nb == 0)
   {
-    write (name+"¿˙æ°ƒ•ƒ—¥≥ÕÍ¡À Æ∂˛π¨°£\n");
+    write (name+"ÂéÜÂ∞ΩÁ£®ÈöæÈóØÂÆå‰∫ÜÂçÅ‰∫åÂÆ´„ÄÇ\n");
   }
   else
   {
-    write (name+" Æ∂˛π¨ªπ–Î¥≥"+chinese_number(nb)+"π¨£∫\n");
+    write (name+"ÂçÅ‰∫åÂÆ´ËøòÈ°ªÈóØ"+chinese_number(nb)+"ÂÆ´Ôºö\n");
     strs = (string *)sort_array (strs, 1);
     for (i = 0; i < nb; i++)
     {

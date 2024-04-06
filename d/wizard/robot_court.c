@@ -9,13 +9,13 @@ void hour_pass();
 
 void create()
 {
-	set("short", "»úÆ÷ÈË·¨Í¥");
+	set("short", "æœºå™¨äººæ³•åº­");
 	set("long", @LONG
-ÕâÀïÊÇ×îÁî»úÆ÷ÈËº¦ÅÂµÄ»úÆ÷ÈË·¨Í¥£¬³ıÁË¿¿Ç½µÄÒ»ÕÅÌÒÄ¾×ÀºÍ×Àºó×ø×Å
-µÄ»úÆ÷ÈË·¨¹ÙÍâ£¬ËÄÖÜÊ²Ã´Ò²Ã»ÓĞ¡£
-ÔÚÕâÀïÄã¿ÉÒÔÒªÇóÉóÅĞ£ºask faguan about ÉóÅĞ
-ÉóÅĞÊ±»Ø´ğ´íÎó£¬¿ÉÒÔÒªÇóÉÏËß£ºask faguan about ÉÏËß
-Èç¹ûÄãÊÇ¹ÜÀíÔ±£¬¿ÉÒÔÓÃtestr <id>À´²âÊÔÄ³¸öÍæ¼Ò
+è¿™é‡Œæ˜¯æœ€ä»¤æœºå™¨äººå®³æ€•çš„æœºå™¨äººæ³•åº­ï¼Œé™¤äº†é å¢™çš„ä¸€å¼ æ¡ƒæœ¨æ¡Œå’Œæ¡Œååç€
+çš„æœºå™¨äººæ³•å®˜å¤–ï¼Œå››å‘¨ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚
+åœ¨è¿™é‡Œä½ å¯ä»¥è¦æ±‚å®¡åˆ¤ï¼šask faguan about å®¡åˆ¤
+å®¡åˆ¤æ—¶å›ç­”é”™è¯¯ï¼Œå¯ä»¥è¦æ±‚ä¸Šè¯‰ï¼šask faguan about ä¸Šè¯‰
+å¦‚æœä½ æ˜¯ç®¡ç†å‘˜ï¼Œå¯ä»¥ç”¨testr <id>æ¥æµ‹è¯•æŸä¸ªç©å®¶
 LONG);
 
 	set("objects", ([
@@ -55,7 +55,7 @@ int do_action(string arg)
 		case "meditate":
 		case "lian":
 		case "practice":
-			write("Õâ²»ÊÇÄãÄÜÁ·¹¦µÄµØ·½¡£\n");
+			write("è¿™ä¸æ˜¯ä½ èƒ½ç»ƒåŠŸçš„åœ°æ–¹ã€‚\n");
 			return 1;
 		case "gohome":
 		case "use":
@@ -72,7 +72,7 @@ int do_action(string arg)
 		case "fight":
 		case "hit":
 		case "kill":
-			write("Õâ²»ÊÇÄãÄÜ´ò¼ÜµÄµØ·½¡£\n");
+			write("è¿™ä¸æ˜¯ä½ èƒ½æ‰“æ¶çš„åœ°æ–¹ã€‚\n");
 			return 1;
 
 
@@ -86,7 +86,7 @@ void test_robot()
 	object antirobot;
 	object *ob = users();
 
-	message("channel:chat", HIC "¡¾ÏĞÁÄ¡¿»úÆ÷ÈËÕì¼©×Ü²¿£º·´´ô×é¸÷Ì½Ô±Çë×¢Òâ£¬É¨´ôĞĞ¶¯ÕıÊ½¿ªÊ¼£¡\n" NOR, users());
+	message("channel:chat", HIC "ã€é—²èŠã€‘æœºå™¨äººä¾¦ç¼‰æ€»éƒ¨ï¼šåå‘†ç»„å„æ¢å‘˜è¯·æ³¨æ„ï¼Œæ‰«å‘†è¡ŒåŠ¨æ­£å¼å¼€å§‹ï¼\n" NOR, users());
 	for (i = 0; i < sizeof(ob); i++) {
 		antirobot = new("/clone/npc/antirobot2");
 		antirobot->test_robot(ob[i]);
@@ -97,18 +97,18 @@ void do_test(string str)
 	int i;
 	object antirobot;
 	object ob ,me=this_player();
-if (!wizardp(me)) return notify_fail("Ö»ÓĞwizÄÜÓÃ\n");
+if (!wizardp(me)) return notify_fail("åªæœ‰wizèƒ½ç”¨\n");
 if (!str) return notify_fail("<Syntax>: testr <player id>\n");
 	ob = LOGIN_D->find_body(str);
-	if (!ob) return notify_fail("ß×... ÓĞÕâ¸öÈËÂğ?\n");
-if (wizardp(ob)) return notify_fail("²»ÄÜ¶ÔwizÓÃ\n");
+	if (!ob) return notify_fail("å’¦... æœ‰è¿™ä¸ªäººå—?\n");
+if (wizardp(ob)) return notify_fail("ä¸èƒ½å¯¹wizç”¨\n");
 if (me->query("id")!="hxsd")
-	message("channel:chat", HIC "¡¾ÏĞÁÄ¡¿"+me->query("name")+"£º·´´ô×é¸÷Ì½Ô±Çë×¢Òâ£¬É¨´ôĞĞ¶¯ÕıÊ½¿ªÊ¼£¡\n" NOR, users());
+	message("channel:chat", HIC "ã€é—²èŠã€‘"+me->query("name")+"ï¼šåå‘†ç»„å„æ¢å‘˜è¯·æ³¨æ„ï¼Œæ‰«å‘†è¡ŒåŠ¨æ­£å¼å¼€å§‹ï¼\n" NOR, users());
 		antirobot = new("/clone/npc/antirobot"+(2+random(2)));
-CHANNEL_D->do_channel( antirobot, "rumor", ob->short(1)+"ÕıÔÚ½ÓÊÜ»úÆ÷ÈË³é²é¡£");
+CHANNEL_D->do_channel( antirobot, "rumor", ob->short(1)+"æ­£åœ¨æ¥å—æœºå™¨äººæŠ½æŸ¥ã€‚");
 		antirobot->test_robot(ob);
 
-//message("channel:chat", HIC "¡¾ÏĞÁÄ¡¿"+ob->query("name")+"£ºÌØ±ğÉêÇëÁËÀñÎï£¡\n" NOR, users());
+//message("channel:chat", HIC "ã€é—²èŠã€‘"+ob->query("name")+"ï¼šç‰¹åˆ«ç”³è¯·äº†ç¤¼ç‰©ï¼\n" NOR, users());
                 ob->delete("liwuopen");
 
 }

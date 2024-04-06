@@ -6,14 +6,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÍÀÈË³¡ÐÝÏ¢ÊÒ");
+	set("short", "å± äººåœºä¼‘æ¯å®¤");
 	set("long", @LONG
-ÕâÀïºÚºõºõµÄ£¬µØÉÏ»¹ÓÐÒ»Ð©Õ³ÂúÁËÑª¼£µÄ²¼Ìõ£¬Å¼È»Ò²¿´µÃµ½¶Ï
-ÁËµÄ³¤½£¡¢¸Öµ¶Ê²Ã´µÄ¡£±±ÃæµÄÃÅ½ô½ôµÄËø×Å£¬ÀïÃæÉ¢·¢³öÒ»ÕóÕóÑªÐÈ
-µÄÆøÎ¶¡£
-[1;31mÔÚÕâÀï¿ÉÒÔÓÃduihuanÀ´¶Ô»»ÄãÍÀÈË´ó»áÖÐ»ñµÃµÃ½±Àø¡£
-Èç¹ûÄãµÄ×ÔÔìÎäÆ÷»µÁË£¬¿ÉÒÔÓÃask ouye zi about ÐÞÀíÀ´Ãâ·ÑÐÞÀíÎäÆ÷
-Èç¹ûÃ»ÊÂÁË£¬Äã¾Í¿ÉÒÔÓÃoutÀ´Àë¿ª³¡µØ
+è¿™é‡Œé»‘ä¹Žä¹Žçš„ï¼Œåœ°ä¸Šè¿˜æœ‰ä¸€äº›ç²˜æ»¡äº†è¡€è¿¹çš„å¸ƒæ¡ï¼Œå¶ç„¶ä¹Ÿçœ‹å¾—åˆ°æ–­
+äº†çš„é•¿å‰‘ã€é’¢åˆ€ä»€ä¹ˆçš„ã€‚åŒ—é¢çš„é—¨ç´§ç´§çš„é”ç€ï¼Œé‡Œé¢æ•£å‘å‡ºä¸€é˜µé˜µè¡€è…¥
+çš„æ°”å‘³ã€‚
+[1;31måœ¨è¿™é‡Œå¯ä»¥ç”¨duihuanæ¥å¯¹æ¢ä½ å± äººå¤§ä¼šä¸­èŽ·å¾—å¾—å¥–åŠ±ã€‚
+å¦‚æžœä½ çš„è‡ªé€ æ­¦å™¨åäº†ï¼Œå¯ä»¥ç”¨ask ouye zi about ä¿®ç†æ¥å…è´¹ä¿®ç†æ­¦å™¨
+å¦‚æžœæ²¡äº‹äº†ï¼Œä½ å°±å¯ä»¥ç”¨outæ¥ç¦»å¼€åœºåœ°
 LONG
 	);
 	set("exits", ([
@@ -40,17 +40,17 @@ int do_start()
 int a,b,c;
        me = this_player();       
        if (!userp(me))
-          return notify_fail("·ÇÍæ¼Ò²»µÃÊ¹ÓÃ£¡\n");
+          return notify_fail("éžçŽ©å®¶ä¸å¾—ä½¿ç”¨ï¼\n");
        if (!me->query_temp("bwdhpk"))
-          return notify_fail("ÄãÒ»¸öÍæ¼ÒÒ²Ã»ÓÐÍÀµ½£¡\n");
+          return notify_fail("ä½ ä¸€ä¸ªçŽ©å®¶ä¹Ÿæ²¡æœ‰å± åˆ°ï¼\n");
 a=(int)me->query_temp("bwdhpk");
 b=a*500;
 c=a*300;
         me->add("combat_exp", b);
         me->add("potential",c);
-message_vision(HIG"Ò»Õó¹â°üÎ§ÁË$N,$NÏûÊ§²»¼ûÁË¡£\n"NOR, me);
-tell_object(me, "Äã±»½±ÀøÁË"+chinese_number(b)+"µã¾­ÑéÖµ£¡\n"+chinese_number(c)+"µãÇ±ÄÜ\n");
-message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+me->query("name")+"¹²ÍÀÈË:"+chinese_number(a)+"ÈË   "+HIG"ËùµÃ"+chinese_number(b)+"¾­ÑéºÍ"+chinese_number(c)+"µãÇ±ÄÜ\n"NOR,users() );
+message_vision(HIG"ä¸€é˜µå…‰åŒ…å›´äº†$N,$Næ¶ˆå¤±ä¸è§äº†ã€‚\n"NOR, me);
+tell_object(me, "ä½ è¢«å¥–åŠ±äº†"+chinese_number(b)+"ç‚¹ç»éªŒå€¼ï¼\n"+chinese_number(c)+"ç‚¹æ½œèƒ½\n");
+message("channel:chat", HIC"ã€å± äººæˆ˜å†µã€‘"HIR + " "+me->query("name")+"å…±å± äºº:"+chinese_number(a)+"äºº   "+HIG"æ‰€å¾—"+chinese_number(b)+"ç»éªŒå’Œ"+chinese_number(c)+"ç‚¹æ½œèƒ½\n"NOR,users() );
 me->set_temp("bwdhpk",0);
 me->delete_temp("bwdhpk");
 

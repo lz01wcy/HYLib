@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","������");
+  set ("short","孤隼峰");
   set ("long", @LONG
-������ǳ���ʮ�����еĵġ������塱����������һֻ��ӥ����
-����ɽ�ƶ��ͣ�Ҫ����ɽҪ���С�ġ�  
+这里就是长白十六峰中的的“孤隼峰”，因其型如一只隼鹰而得
+名，山势陡峭，要想上山要多加小心。  
 LONG);
 
   set("exits", ([ 

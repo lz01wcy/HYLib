@@ -2,11 +2,11 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "ÃÜÁÖ");
+        set("short", "å¯†æž—");
         set("long", @LONG
-ÃÜÁÖÀïÒ»Æ¬ÆáºÚ£¬¾øÎÞÊ÷Ò¶´¥²ÁµÄÉùÒô£¬Ò²¾øÎÞÏÄÒ¹µÄÄÇÖÖ°ëÃ÷°ëÃÁµÄÇå¹â¡£
-¸ß´óµÄÊ÷¸ÉÕøÄüÕÅÎè¡£¿ÝÎ®´ÔÔÓµÄ°«Ê÷ÔÚÁÖ±ßÏ¶µØÉÏÉªÉª×÷Éù¡£³¤´óµÄÒ°²ÝÔÚº®·ç
-ÖÐ÷©öâËÆµØÈäÈäÓÎ¶¯¡£ÝèÃ§ÇüÇúÕÐÕ¹£¬ÓÐÈçÉì³öÁË³¤±Û£¬ÕÅ×¦¾ðÈË¡£
+å¯†æž—é‡Œä¸€ç‰‡æ¼†é»‘ï¼Œç»æ— æ ‘å¶è§¦æ“¦çš„å£°éŸ³ï¼Œä¹Ÿç»æ— å¤å¤œçš„é‚£ç§åŠæ˜ŽåŠæ˜§çš„æ¸…å…‰ã€‚
+é«˜å¤§çš„æ ‘å¹²ç‹°ç‹žå¼ èˆžã€‚æž¯èŽä¸›æ‚çš„çŸ®æ ‘åœ¨æž—è¾¹éš™åœ°ä¸Šç‘Ÿç‘Ÿä½œå£°ã€‚é•¿å¤§çš„é‡Žè‰åœ¨å¯’é£Ž
+ä¸­é³—é²¡ä¼¼åœ°è •è •æ¸¸åŠ¨ã€‚è“èŽ½å±ˆæ›²æ‹›å±•ï¼Œæœ‰å¦‚ä¼¸å‡ºäº†é•¿è‡‚ï¼Œå¼ çˆªæ”«äººã€‚
 LONG
         );
         set("exits", ([ 
@@ -16,11 +16,11 @@ LONG
         set("objects", ([
         ]) );
         set("item_desc", ([
-                "tree": "¸ß´óµÄÊ÷Ä¾£¬Ã»ÓÐÒ»¶¨µÄ¹¦·ò¿´À´ºÜÄÑÅÀÉÏÈ¥¡£\n",
-                "Ê÷¸É":  "¸ß´óµÄÊ÷Ä¾£¬Ã»ÓÐÒ»¶¨µÄ¹¦·ò¿´À´ºÜÄÑÅÀÉÏÈ¥¡£\n",
-                "Ê÷":   "¸ß´óµÄÊ÷Ä¾£¬Ã»ÓÐÒ»¶¨µÄ¹¦·ò¿´À´ºÜÄÑÅÀÉÏÈ¥¡£\n",
-                "°«Ê÷": "Ã¯ÃÜµÄ°«Ê÷´ÔÔÚµØÉÏ½»Ö¯´íÉú£¬Ê¹ÈË¼¸ºõÂõ²»¿ª½Å²½¡£\n",
-                "bush": "Ã¯ÃÜµÄ°«Ê÷´ÔÔÚµØÉÏ½»Ö¯´íÉú£¬Ê¹ÈË¼¸ºõÂõ²»¿ª½Å²½¡£\n",
+                "tree": "é«˜å¤§çš„æ ‘æœ¨ï¼Œæ²¡æœ‰ä¸€å®šçš„åŠŸå¤«çœ‹æ¥å¾ˆéš¾çˆ¬ä¸ŠåŽ»ã€‚\n",
+                "æ ‘å¹²":  "é«˜å¤§çš„æ ‘æœ¨ï¼Œæ²¡æœ‰ä¸€å®šçš„åŠŸå¤«çœ‹æ¥å¾ˆéš¾çˆ¬ä¸ŠåŽ»ã€‚\n",
+                "æ ‘":   "é«˜å¤§çš„æ ‘æœ¨ï¼Œæ²¡æœ‰ä¸€å®šçš„åŠŸå¤«çœ‹æ¥å¾ˆéš¾çˆ¬ä¸ŠåŽ»ã€‚\n",
+                "çŸ®æ ‘": "èŒ‚å¯†çš„çŸ®æ ‘ä¸›åœ¨åœ°ä¸Šäº¤ç»‡é”™ç”Ÿï¼Œä½¿äººå‡ ä¹Žè¿ˆä¸å¼€è„šæ­¥ã€‚\n",
+                "bush": "èŒ‚å¯†çš„çŸ®æ ‘ä¸›åœ¨åœ°ä¸Šäº¤ç»‡é”™ç”Ÿï¼Œä½¿äººå‡ ä¹Žè¿ˆä¸å¼€è„šæ­¥ã€‚\n",
         
         ]) );
         set("outdoors", "zangbei");
@@ -46,13 +46,13 @@ void reset()
 int do_climb(string arg){ 
         object me,room;
         me=this_player();
-        if (!arg || (arg!="tree" && arg!="Ê÷")) 
+        if (!arg || (arg!="tree" && arg!="æ ‘")) 
                 return 0;
         
         room=find_object(__DIR__"tree1");
         if (!objectp(room)) room=load_object(__DIR__"tree1");
-        message_vision("$NÊÖ½Å²¢ÓÃ£¬ÂéÀûµØÏò´óÊ÷ÉÏÅÀÈ¥¡£\n",me);
-        tell_room(room, this_player()->name() + "´ÓÊ÷ÏÂÅÀÁËÉÏÀ´¡£\n");
+        message_vision("$Næ‰‹è„šå¹¶ç”¨ï¼Œéº»åˆ©åœ°å‘å¤§æ ‘ä¸Šçˆ¬åŽ»ã€‚\n",me);
+        tell_room(room, this_player()->name() + "ä»Žæ ‘ä¸‹çˆ¬äº†ä¸Šæ¥ã€‚\n");
         this_player()->move(room);
         return 1;
 }  
@@ -64,12 +64,12 @@ int valid_leave(object obj, string dir){
                 if (present("bandit", this_object()))
                 {
                         another = present("bandit", this_object());
-                        return notify_fail(another->name()+"ÉÁÉíµ²×¡ÁËÄãµÄÂ·¡£\n");
+                        return notify_fail(another->name()+"é—ªèº«æŒ¡ä½äº†ä½ çš„è·¯ã€‚\n");
                 } else if (random(10)>5) {
                         another = new(__DIR__"npc/bandit1");
                         another->move(environment(obj));
-                        message_vision(HIB"Ê÷Ò¶»©À²À²Ò»ÕóÂÒÏì£¬ÌøÏÂÒ»¸öÈËÀ´£¡\n"NOR, obj);      
-                        return notify_fail(another->name()+"ºÈµÀ£¬Ê²Ã´ÈË¸ÒË½´³ÎÒÁú»¢Õ¯£¬ÄÃÃüÀ´£¡\n");
+                        message_vision(HIB"æ ‘å¶å“—å•¦å•¦ä¸€é˜µä¹±å“ï¼Œè·³ä¸‹ä¸€ä¸ªäººæ¥ï¼\n"NOR, obj);      
+                        return notify_fail(another->name()+"å–é“ï¼Œä»€ä¹ˆäººæ•¢ç§é—¯æˆ‘é¾™è™Žå¯¨ï¼Œæ‹¿å‘½æ¥ï¼\n");
                 }
         }       
         return 1;

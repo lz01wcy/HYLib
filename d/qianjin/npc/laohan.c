@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏºº", ({ "laohan" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è€æ±‰", ({ "laohan" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 53);
-        set("long", "Ò»¸öÕıÔÚ·çÖò²ĞÄêÖĞÕõÔúµÄÀÏºº\n");
+        set("long", "ä¸€ä¸ªæ­£åœ¨é£çƒ›æ®‹å¹´ä¸­æŒ£æ‰çš„è€æ±‰\n");
         set("combat_exp", 100);
         set("str", 27);
         set("force", 200);
@@ -17,13 +17,13 @@ void create()
         setup();
         set("chat_chance", 5);
         set("chat_msg", ({
-"ÀÏººÍ£ÏÂÀ´£¬½«µØÉÏµÄÀ¬»ø¼ñÁËÆğÀ´£®\n",
+"è€æ±‰åœä¸‹æ¥ï¼Œå°†åœ°ä¸Šçš„åƒåœ¾æ¡äº†èµ·æ¥ï¼\n",
                 (: random_move :)
         }) );
         set("inquiry", ([
-                "ºşÉÏ°Ë½¿" : "Å¶£¬ËıÃÇ¶¼×¡ÔÚºÉ»¨µ´ÉÏ\n",
-		"ºşÉÏÔÂ" : "Ëı£¿Ëı×î°®³ÔÉúÉÕ°Ç³áÁË£®\n",
-		"yue" : "Ëı£¿Ëı×î°®³ÔÉúÉÕ°Ç³áÁË£®\n",
+                "æ¹–ä¸Šå…«å¨‡" : "å“¦ï¼Œå¥¹ä»¬éƒ½ä½åœ¨è·èŠ±è¡ä¸Š\n",
+		"æ¹–ä¸Šæœˆ" : "å¥¹ï¼Ÿå¥¹æœ€çˆ±åƒç”Ÿçƒ§æ‰’ç¿…äº†ï¼\n",
+		"yue" : "å¥¹ï¼Ÿå¥¹æœ€çˆ±åƒç”Ÿçƒ§æ‰’ç¿…äº†ï¼\n",
         ]) );
         carry_object("clone/cloth/cloth")->wear();
 }
@@ -31,7 +31,7 @@ void create()
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + 
-"£¬ÄúÒ»¶¨»áÔÚÕâ¶ùÍæµÄ¿ªĞÄµÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) + 
+"ï¼Œæ‚¨ä¸€å®šä¼šåœ¨è¿™å„¿ç©çš„å¼€å¿ƒçš„ï¼");
         return 1;
 }

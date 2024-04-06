@@ -1,20 +1,20 @@
 //Cracked by Roath
-// yetu.c 野兔
+// yetu.c 閲庡厰
 
 inherit NPC;
 
 void create()
 {
-	set_name("野兔", ({ "ye tu", "ye", "hare" }) );
-	set("race", "野兽");
-	set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+	set_name("閲庡厰", ({ "ye tu", "ye", "hare" }) );
+	set("race", "閲庡吔");
+	set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈剼", "鍚庤剼", "灏惧反" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set("age", 5);
-	set("long", "一只好可爱的小野兔。\n");
+	set("long", "涓�鍙ソ鍙埍鐨勫皬閲庡厰銆俓n");
 	set("attitude", "peaceful");
 	
-	set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+	set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈剼", "鍚庤剼", "灏惧反" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set("combat_exp", 50);

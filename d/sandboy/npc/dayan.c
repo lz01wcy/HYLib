@@ -2,22 +2,22 @@ inherit NPC;
 
 void create()
 {
-   set_name("´óÑã", ({ "dayan","wield goose" }) );
-   set("race", "Ò°ÊÞ");
+   set_name("å¤§é›", ({ "dayan","wield goose" }) );
+   set("race", "é‡Žå…½");
    set("age", 6);
-   set("long", "Ò»Ö»ÀëÈºµÄ´óÑã,ÔÚÂ«Î­ÖÐ¶À×ÔÉú»î¡£\n");
+   set("long", "ä¸€åªç¦»ç¾¤çš„å¤§é›,åœ¨èŠ¦è‹‡ä¸­ç‹¬è‡ªç”Ÿæ´»ã€‚\n");
    
    set("str", 19);
    set("cor", 20);
    set("combat_exp",1000);
 
-   set("limbs", ({ "Í·²¿", "ÉíÌå", "×ó³á", "ÓÒ³á", "×ó½Å","ÓÒ½Å" }) );
+   set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å·¦ç¿…", "å³ç¿…", "å·¦è„š","å³è„š" }) );
    set("verbs", ({ "bite", "claw" }) );
 
    set("chat_chance", 6);
    set("chat_msg", ({
-  "´óÑã¹Â¶ÀµØÍû×ÅÌì¿Õ,ËÆºõÔÚ»³ÄîÎôÈÕµÄ»ï°é.\n",
-  "´óÑãÌ§Í·¿´×ÅÄã,ÑÛ½ÇÁ÷ÏÂÁ½µÀÀáË®.\n",
+  "å¤§é›å­¤ç‹¬åœ°æœ›ç€å¤©ç©º,ä¼¼ä¹Žåœ¨æ€€å¿µæ˜”æ—¥çš„ä¼™ä¼´.\n",
+  "å¤§é›æŠ¬å¤´çœ‹ç€ä½ ,çœ¼è§’æµä¸‹ä¸¤é“æ³ªæ°´.\n",
  }));
    set_temp("apply/attack", 8);
    set_temp("apply/armor", 10);
@@ -26,7 +26,7 @@ void create()
 }
 void die()
 {
-  message_vision("$N±¯ÌäÒ»Éù,ÉÈÆðË«³á,·É×ßÁË.\n",this_object());
+  message_vision("$Næ‚²å•¼ä¸€å£°,æ‰‡èµ·åŒç¿…,é£žèµ°äº†.\n",this_object());
   new(__DIR__"egg.c")->move(environment(this_object()));
   destruct(this_object());
   return;

@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name( "±±¾©¿¾Ñ¼" , ({ "kaoya","duke" }) );
+	set_name( "åŒ—äº¬çƒ¤é¸­" , ({ "kaoya","duke" }) );
 	set_weight(80);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»¿¾µÃ½¹»ÆµÄÑ¼×Ó¡£\n");
-		set("unit", "Ö»");
+		set("long", "ä¸€åªçƒ¤å¾—ç„¦é»„çš„é¸­å­ã€‚\n");
+		set("unit", "åª");
 		set("value", 50000);
 		set("remaining", 1);
 		set("food_supply", 15);
@@ -32,10 +32,10 @@ int do_eat(string arg)
 
 	if( !this_object()->id(arg) ) return 0;
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	if(   (int)me->query("food") >= (int)me->max_food_capacity() )
-		return notify_fail("ÄãÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²³Ô²»ÏÂÁË¡£\n");
-	message_vision("$N³ÔÏÂÒ»Ö»±±¾©¿¾Ñ¼¡£\n",me);
+		return notify_fail("ä½ å·²ç»åƒå¤ªé¥±äº†ï¼Œå†ä¹Ÿåƒä¸ä¸‹äº†ã€‚\n");
+	message_vision("$Nåƒä¸‹ä¸€åªåŒ—äº¬çƒ¤é¸­ã€‚\n",me);
 	me->add("food", (int)query("food_supply"));
 	if( me->is_fighting() ) me->start_busy(2);
 	destruct(ob);

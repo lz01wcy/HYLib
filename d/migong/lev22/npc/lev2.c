@@ -1,18 +1,18 @@
 #include <ansi.h>
 inherit NPC;
 mapping *data=({
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"ºÓ´¨ÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"ÈÌÄÍÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"·¢Ã÷ÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"µÀµÂÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"Ï£ÍûÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"Î´À´ÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"»ú»áÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"Ñ©Ö®ÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"Õä±¦ÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"À×ÓêÖ®ÌìÊ¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"°®ÇéÊ¹Ê¹",]),
-(["id":"lightangel","title":"¹âÖ®ÌìÊ¹¾üÍÅ","name":"¹âÖ®ÌìÊ¹",])
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"æ²³å·å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"å¿è€å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"å‘æ˜Žå¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"é“å¾·å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"å¸Œæœ›å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"æœªæ¥å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"æœºä¼šå¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"é›ªä¹‹å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"çå®å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"é›·é›¨ä¹‹å¤©ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"çˆ±æƒ…ä½¿ä½¿",]),
+(["id":"lightangel","title":"å…‰ä¹‹å¤©ä½¿å†›å›¢","name":"å…‰ä¹‹å¤©ä½¿",])
 });
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
@@ -29,7 +29,7 @@ set("nickname",(HIW+npc["title"])+NOR);
 	set("zhuanbest",1);
 	set("magicset",1);
        set("long",
-"Ò»Ö»¹âÖ®ÌìÊ¹¡£\n");
+"ä¸€åªå…‰ä¹‹å¤©ä½¿ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -191,9 +191,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(RED"$N,µ¹µØ¶øÍö£¬²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$N,å€’åœ°è€Œäº¡ï¼Œä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦´òËÀ"+ob->query("name")+",Ôö¼ÓÁË80¾­ÑéºÍ40Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ‰“æ­»"+ob->query("name")+",å¢žåŠ äº†80ç»éªŒå’Œ40æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",80);
         me->add("potential",40);
         destruct(ob);

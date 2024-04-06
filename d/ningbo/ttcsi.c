@@ -1,15 +1,15 @@
-// Room: /u/beyond/ningbo/ttcsi.c ÌìÍ¯ìøËÂ
+// Room: /u/beyond/ningbo/ttcsi.c å¤©ç«¥ç¦…å¯º
 // Beyond make 1997.6.8
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-	set("short", "ÌìÍ¯ìøËÂ");
+	set("short", "å¤©ç«¥ç¦…å¯º");
 	set("long", @LONG
-ÌìÍ¯ìøËÂÓÐ¡°¶«ÄÏ·ð¹ú¡±Ö®³Æ¡£ËÂÃíÒÀµØ°øÉ½£¬¹æÄ£ºê´ó£¬ÆøÊÆ·Ç·²£¬
-ËÂÖÜÈºÉ½»·±§£¬¹ÅÄ¾²ÎÌì£¬¾°É«ÐãÀö¶à×Ë¡£ËÂÃíÎ÷ÃæµÄÁáççÑÒÆæÊ¯á×á¾£¬¹Å
-Ä¾´ÐÜ×£¬É½¾¶ÇúÕÛ£¬Á÷Ë®äÈäÈ£¬»·¾³Ê®·ÖÓÄÑÅ¡£
+å¤©ç«¥ç¦…å¯ºæœ‰â€œä¸œå—ä½›å›½â€ä¹‹ç§°ã€‚å¯ºåº™ä¾åœ°å‚å±±ï¼Œè§„æ¨¡å®å¤§ï¼Œæ°”åŠ¿éžå‡¡ï¼Œ
+å¯ºå‘¨ç¾¤å±±çŽ¯æŠ±ï¼Œå¤æœ¨å‚å¤©ï¼Œæ™¯è‰²ç§€ä¸½å¤šå§¿ã€‚å¯ºåº™è¥¿é¢çš„çŽ²ç‘å²©å¥‡çŸ³å¶™å³‹ï¼Œå¤
+æœ¨è‘±èŒï¼Œå±±å¾„æ›²æŠ˜ï¼Œæµæ°´æ·™æ·™ï¼ŒçŽ¯å¢ƒååˆ†å¹½é›…ã€‚
 LONG
 	);
 	set("exits", ([

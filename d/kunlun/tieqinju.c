@@ -1,4 +1,4 @@
-// tieqinju.c ÌúÇÙ¾Ó
+// tieqinju.c é“ç´å±…
 
 #include <ansi.h>
 #include <room.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-set("short","ÌúÇÙ¾Ó");
+set("short","é“ç´å±…");
         set("long",@long
-Õâ¶ù±ãÊÇ¡°ÌúÇÙÏÈÉú¡±ºÎÌ«³åµÄ¾Ó´¦¡£·¿¼ä³ÂÉèÆÄÎª¾«ÇÉ£¬ÎïÆ·ÓëÖĞÍÁËù
-¼û±ğÊÇ²»Í¬¡£¼¸¸öÀ¥ÂØÅÉµÜ×ÓÊØÔÚÕâÀï£¬¸ö¸öÉîÓĞÓÇÉ«¡£¶«±ßÍ¨ÍùÈıÊ¥ÌÃ£¬Î÷
-±ßÍ¨ÍùÎÔÊÒ¡£
+è¿™å„¿ä¾¿æ˜¯â€œé“ç´å…ˆç”Ÿâ€ä½•å¤ªå†²çš„å±…å¤„ã€‚æˆ¿é—´é™ˆè®¾é¢‡ä¸ºç²¾å·§ï¼Œç‰©å“ä¸ä¸­åœŸæ‰€
+è§åˆ«æ˜¯ä¸åŒã€‚å‡ ä¸ªæ˜†ä»‘æ´¾å¼Ÿå­å®ˆåœ¨è¿™é‡Œï¼Œä¸ªä¸ªæ·±æœ‰å¿§è‰²ã€‚ä¸œè¾¹é€šå¾€ä¸‰åœ£å ‚ï¼Œè¥¿
+è¾¹é€šå¾€å§å®¤ã€‚
 long);
 
 set("objects",([
@@ -27,7 +27,7 @@ set("exits", ([
 ]));
 
           set("no_clean_up", 0);
-                create_door("west", "Ğ¡ÃÅ", "east", DOOR_CLOSED);
+                create_door("west", "å°é—¨", "east", DOOR_CLOSED);
           setup();
 }
 
@@ -37,8 +37,8 @@ int valid_leave(object me, string dir)
         fam = (mapping)me->query("family");
 
         if (dir == "west" && objectp(present("he taichong", environment(me))))
-           if((!fam || fam["family_name"] != "À¥ÂØÅÉ") && !me->query_temp("kl_pass"))
-                return notify_fail("ºÎÌ«³åÀ¹×¡Äã£¬ËµµÀ£ºÀï²àÎªÄÚ¾ì¾Ó×¡£¬»¹ÊÇÇëÎğ´òÈÅÎªÊÇ¡£\n");
+           if((!fam || fam["family_name"] != "æ˜†ä»‘æ´¾") && !me->query_temp("kl_pass"))
+                return notify_fail("ä½•å¤ªå†²æ‹¦ä½ä½ ï¼Œè¯´é“ï¼šé‡Œä¾§ä¸ºå†…çœ·å±…ä½ï¼Œè¿˜æ˜¯è¯·å‹¿æ‰“æ‰°ä¸ºæ˜¯ã€‚\n");
 
                   return ::valid_leave(me, dir);
 }

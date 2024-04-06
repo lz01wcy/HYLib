@@ -4,14 +4,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÏôÖ®Óğ", ({ "xiao zhiyu", "xiao" }) );
+        set_name("è§ä¹‹ç¾½", ({ "xiao zhiyu", "xiao" }) );
         set("long",
-                "Ì«ºşË®¾üÍ³Áì£¬¸ºÔğÌ«ºşË®¾üµÄÈÕ³£µ÷¶ÈºÍÑµÁ·¡£\n");
-	set("nickname", CYN"ÎåºşÁúÍõ"NOR);
+                "å¤ªæ¹–æ°´å†›ç»Ÿé¢†ï¼Œè´Ÿè´£å¤ªæ¹–æ°´å†›çš„æ—¥å¸¸è°ƒåº¦å’Œè®­ç»ƒã€‚\n");
+	set("nickname", CYN"äº”æ¹–é¾™ç‹"NOR);
         set("attitude", "heroism");
-	set("student_title","¹ÙÔ±");
-	create_family("³¯Í¢",6,"¹ÙÔ±");
-	set("title", "Ì«ºşË®Ê¦Í³Áì");
+	set("student_title","å®˜å‘˜");
+	create_family("æœå»·",6,"å®˜å‘˜");
+	set("title", "å¤ªæ¹–æ°´å¸ˆç»Ÿé¢†");
 	set("vendetta_mark", "authority");
 	set("age", 43);
 	set("str", 50);

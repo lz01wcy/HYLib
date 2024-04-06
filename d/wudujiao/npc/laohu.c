@@ -2,16 +2,16 @@
 inherit NPC;
 #include <ansi.h>
 
-string *first_name = ({"¹«", "Ä¸"});
-string *name_words = ({ "ÀÏ»¢"});
+string *first_name = ({"å…¬", "æ¯"});
+string *name_words = ({ "è€è™"});
 void create()
 {
         string name;
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))];
         set_name(name,({"lao hu"}));
-	set("race", "Ò°ÊŞ");
-        set("long", "Ò»Ö»¸ß´óÍşÃÍµÄ´óÀÏ»¢£¬ÕıÌÉÔÚÌ«Ñôµ×ÏÂ´òíï¡£\n");
+	set("race", "é‡å…½");
+        set("long", "ä¸€åªé«˜å¤§å¨çŒ›çš„å¤§è€è™ï¼Œæ­£èººåœ¨å¤ªé˜³åº•ä¸‹æ‰“ç›¹ã€‚\n");
 	set("age", 5);
 	set("attitude", "peaceful");
 
@@ -21,7 +21,7 @@ void create()
 	set("str", 30);
 	set("con", 50);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" ,"ÍÈ"}) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" ,"è…¿"}) );
 	set("verbs", ({ "bite" }) );
 
 	set_skill("unarmed", 100);

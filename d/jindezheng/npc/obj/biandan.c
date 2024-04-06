@@ -4,14 +4,14 @@ inherit STAFF;
 
 void create()
 {
-	set_name("±âµ£",({"biandan","bian dan","dan"}));
+	set_name("æ‰æ‹…",({"biandan","bian dan","dan"}));
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 	set("value",50);
-	set("long","Öñ×ÓÖÆ³ÉµÄ±âµ££¬Ìô¶«Î÷¿ÉÓÃµÃ×ÅËü¡£\n");
+	set("long","ç«¹å­åˆ¶æˆçš„æ‰æ‹…ï¼ŒæŒ‘ä¸œè¥¿å¯ç”¨å¾—ç€å®ƒã€‚\n");
 	set("material","bamboo");
 	}
 	init_staff(5);

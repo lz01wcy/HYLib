@@ -4,7 +4,7 @@ inherit ROOM;
 int block_cmd(string);
 void create ()
 {
-        set ("short", "µÚÈý¹¬Ë«×Ó×ù");
+        set ("short", "ç¬¬ä¸‰å®«åŒå­åº§");
         set ("long", @LONG
   W$$Wu                :uW$$W
   $$ "*$i             W$#~ $$
@@ -12,12 +12,12 @@ void create ()
     ~*$W$$$:       !$$$i$*~
        !$$$$WWiWiWW$$$$~
         $$$$$~~~~~$$$$W~
-        $$$$$!   !$$$$8     Éñ»°¹ÊÊÂÖÐ¼¸ºõÕÒ²»µ½ºÍË«×ÓÐÇ×ùÓÐ¹ØµÄ´«Ëµ¡£ÔÚ°£¼°
-        $$$$$W   8$$$$8  ËüµÄÃû³ÆÎª¡¸ÂÏ×ÓÐÇ¡¹£¬ÊÇÒÔÕâÐÇ×ùÖÐ×îÃ÷ÁÁµÄÁ½¿ÅÐÇ¿¨
-        $$$$$$  ~$$$$$$  Ë¹´ï (Castor)ºÍ²¨Àû¿ËË¹ (Pollux)ÃüÃû£¬ÕâÁ½¿ÅÐÇÁíÍâ»¹
-        $$$$$$   $$$$$8  ÓÐÁ½×éÃû³Æ£¬·Ö±ðÎªº£¿ËÀûË¹ (Hecules)¡¢°¢²¨ÂÞ (Apollo)
-        $$$$$$   $$$$$8  £¬´ÞÌØÀÕÂê (Tritolemus)¡¢°¬Ñ· (Iasion)¡£°£¼°ÈË¹ÛÄîÖÐ
-        $$$$$M   $$$$$8  µÄÂÏ×Ó×ùÎªÓ×Í¯£¬¶ø·ÇÒ»°ã³£¼ûµÄ³ÉÈËÐÎÏó¡£
+        $$$$$!   !$$$$8     ç¥žè¯æ•…äº‹ä¸­å‡ ä¹Žæ‰¾ä¸åˆ°å’ŒåŒå­æ˜Ÿåº§æœ‰å…³çš„ä¼ è¯´ã€‚åœ¨åŸƒåŠ
+        $$$$$W   8$$$$8  å®ƒçš„åç§°ä¸ºã€Œå­ªå­æ˜Ÿã€ï¼Œæ˜¯ä»¥è¿™æ˜Ÿåº§ä¸­æœ€æ˜Žäº®çš„ä¸¤é¢—æ˜Ÿå¡
+        $$$$$$  ~$$$$$$  æ–¯è¾¾ (Castor)å’Œæ³¢åˆ©å…‹æ–¯ (Pollux)å‘½åï¼Œè¿™ä¸¤é¢—æ˜Ÿå¦å¤–è¿˜
+        $$$$$$   $$$$$8  æœ‰ä¸¤ç»„åç§°ï¼Œåˆ†åˆ«ä¸ºæµ·å…‹åˆ©æ–¯ (Hecules)ã€é˜¿æ³¢ç½— (Apollo)
+        $$$$$$   $$$$$8  ï¼Œå´”ç‰¹å‹’çŽ› (Tritolemus)ã€è‰¾é€Š (Iasion)ã€‚åŸƒåŠäººè§‚å¿µä¸­
+        $$$$$M   $$$$$8  çš„å­ªå­åº§ä¸ºå¹¼ç«¥ï¼Œè€Œéžä¸€èˆ¬å¸¸è§çš„æˆäººå½¢è±¡ã€‚
         $$$$$!   !$$$$8
         $$$$$xuuu:$$$$8
       :u$$$$*######$$$$u:
@@ -45,7 +45,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
         if ( present("shuang zi") && dir == "southup" )
-        return notify_fail("ºÕ¶ûÃ·Ë¹ÀäÐ¦:ÏÈ¹ýÎÒÕâ¹ØÔÙËµ£¡\n");
+        return notify_fail("èµ«å°”æ¢…æ–¯å†·ç¬‘:å…ˆè¿‡æˆ‘è¿™å…³å†è¯´ï¼\n");
         return ::valid_leave(me, dir);
 }
 

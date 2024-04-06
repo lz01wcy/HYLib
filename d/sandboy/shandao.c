@@ -4,19 +4,19 @@ inherit ROOM;
  
 void create ()
 {
-  set ("short", "ɽ��");
+  set ("short", "山道");
   set ("long", @LONG
-����һ���ľ���ɽ����̫��ů�������ͷ�ϣ�Ϫˮ�����õ��ڽű������� 
-С���������ŷɹ���Զ�����֣�ǰ��·���и������� 
+这是一条幽静的山道。太阳暖洋洋地在头上，溪水活泼泼地在脚边流过。 
+小鸟儿唧唧叫着飞过不远的树林，前面路边有个破庙。 
 LONG);
 
 set("outdoors","/d/jiangnan");
   set("item_desc", ([ /* sizeof() == 3 */
-  "����" : "һƬ�����֣���Լ�кü�ʮ�á� 
+  "树林" : "一片杂树林，大约有好几十棵。 
 ",
-  "����" : "Զ��ȥ���������ҡҡ��׹����ʱ������̣������ 
+  "破庙" : "远看去，这间破庙摇摇欲坠，随时都可能蹋下来。 
 ",
-  "Ϫˮ" : "ɽȪ�Ӹߴ����£��γɵ�СϪ���� 
+  "溪水" : "山泉从高处流下，形成的小溪流。 
 ",
 ]));
   set("exits", ([ /* sizeof() == 2 */
@@ -29,5 +29,5 @@ set("outdoors","/d/jiangnan");
 }
 void init()
 {
-   message("vision",HIC+"��Զ���������д���һ�ɿ�������ζ!\n"+NOR,this_object());
+   message("vision",HIC+"从远处的破庙中传来一股烤鸡的香味!\n"+NOR,this_object());
 }

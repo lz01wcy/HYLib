@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ԭҰ");
+	set("short", "原野");
 	set("long", @LONG
-������һƬ�տ���ԭҰ�����ض��ǲ�֪����Ұ�ݣ�ƽ�����𡣲�
-��֮�г���С�޳�û�����˲�����������һƬ�����֣�����һƬ����
-�أ�����Զ���Ļ�ɽ�ڡ�
+这里是一片空旷的原野。满地都是不知名的野草，平整如茵。草
+丛之中常有小兽出没，见人不惊。西南是一片大树林，北面一片开阔
+地，连往远处的火山口。
 LONG );
 	set("outdoors", "binghuo");
 	set("exits", ([

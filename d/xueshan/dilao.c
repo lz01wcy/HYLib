@@ -1,15 +1,15 @@
-//      dilao.c µØÀÎ
-//      Designed by secret (ÃØÃÜ)
+//      dilao.c åœ°ç‰¢
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","µØÀÎ");
+        set("short","åœ°ç‰¢");
         set("long",@LONG
-ÕâÊÇÒ»¸öÒõ°µ¡¢³±ÊªµÄÀÎ·¿¡£Äã¸Ðµ½Ææ¹ÖµÄÊÇÔõ÷á»á²»
-Ê±Ìýµ½Ò»µã¹ÖÉùÈ´ÔõÃ´Ò²ÕÒ²»µ½ÈËÄØ? 
+è¿™æ˜¯ä¸€ä¸ªé˜´æš—ã€æ½®æ¹¿çš„ç‰¢æˆ¿ã€‚ä½ æ„Ÿåˆ°å¥‡æ€ªçš„æ˜¯æ€Žéº½ä¼šä¸
+æ—¶å¬åˆ°ä¸€ç‚¹æ€ªå£°å´æ€Žä¹ˆä¹Ÿæ‰¾ä¸åˆ°äººå‘¢? 
 LONG );
         set("exits",([
                 "westup" : __DIR__"houyuan",

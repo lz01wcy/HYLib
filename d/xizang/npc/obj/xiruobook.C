@@ -1,10 +1,10 @@
 inherit ITEM;
 void create()
 {
-        set_name( "âÒ¶¡½âÅ£Í¼²á", ({ "xiruo book","book" }));
+        set_name( "åº–ä¸è§£ç‰›å›¾å†Œ", ({ "xiruo book","book" }));
         set_weight(600);
-        set("unit", "±¾");
-        set("long", "ÕâÊÇ¸ù¾İÒ»´úÍÀ·òÀÏ×æ×ÚâÒ¶¡É±Å£¶øÎò³öÀ´µÄµ¶·¨Í¼½â¡£\n");
+        set("unit", "æœ¬");
+        set("long", "è¿™æ˜¯æ ¹æ®ä¸€ä»£å± å¤«è€ç¥–å®—åº–ä¸æ€ç‰›è€Œæ‚Ÿå‡ºæ¥çš„åˆ€æ³•å›¾è§£ã€‚\n");
         set("value", 100);
         set("skill", ([
                 "name":                 "xiruo-blade",             // name of the skill

@@ -1,13 +1,13 @@
-// wulai.c ÎŞÀµ
+// wulai.c æ— èµ–
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÎŞÀµ", ({ "wu lai", "wulai" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ— èµ–", ({ "wu lai", "wulai" }));
+	set("gender", "ç”·æ€§");
 	set("age", 19);
-	set("long", "ËûÊÇÒ»¸ö³ÉÌìÓÎÊÖºÃÏĞµÄÎŞÀµ£¬¶ÄÇ®¶ÄµÃÁ½ÑÛºìÖ×¡¢Á³É«»Ò°µ¡£\n");
+	set("long", "ä»–æ˜¯ä¸€ä¸ªæˆå¤©æ¸¸æ‰‹å¥½é—²çš„æ— èµ–ï¼ŒèµŒé’±èµŒå¾—ä¸¤çœ¼çº¢è‚¿ã€è„¸è‰²ç°æš—ã€‚\n");
 	set("combat_exp", 2000);
 	set("shen_type", -1);
 

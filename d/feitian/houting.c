@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "��ͥ");
+  set ("short", "后庭");
   set ("long", @LONG
-���ǵ����ĺ�ͥ�������Ժ���з����ż���ľ�ˡ������������������书�õ�
-��Ҳ������ȥѵ��һ�¡���Զ������ԼԼ���ĵ�һ��С���ӡ�
+这是道场的后庭，宽广的院子中放置着几个木人。那是弥彦用来苦练武功用的
+你也可以上去训练一下。在远方隐隐约约看的到一个小房子。
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

@@ -1,11 +1,11 @@
  inherit NPC;
 void create()
 {
-        set_name("´óÃàÑò", ({ "sheep" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("å¤§ç»µç¾Š", ({ "sheep" }) );
+        set("race", "é‡å…½");
         set("age", 5);
-        set("long", "Ò»Ö»È«ÉíÑ©°×µÄµÄÃàÑò¡£\n"); 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("long", "ä¸€åªå…¨èº«é›ªç™½çš„çš„ç»µç¾Šã€‚\n"); 
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
         set("str",15);
         set("combat_exp", 25000); 

@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÎÂÓĞ·½", ({ "wen youfang", "wen" ,"youfang"}));
-	set("gender", "ÎŞĞÔ");
-	set("title", HIC"ÓùÊé·¿Ì«¼à"NOR);
+	set_name("æ¸©æœ‰æ–¹", ({ "wen youfang", "wen" ,"youfang"}));
+	set("gender", "æ— æ€§");
+	set("title", HIC"å¾¡ä¹¦æˆ¿å¤ªç›‘"NOR);
 	set("age", 16);
-	set("long", "Ò»¸öÎÄÈõµÄĞ¡Ì«¼à£¬ºÍËûĞÖµÜÎÂÓĞµÀ¹²Ë¾ÓùÊé·¿¡£\n");
+	set("long", "ä¸€ä¸ªæ–‡å¼±çš„å°å¤ªç›‘ï¼Œå’Œä»–å…„å¼Ÿæ¸©æœ‰é“å…±å¸å¾¡ä¹¦æˆ¿ã€‚\n");
 
 	set("combat_exp", 1000);
 	set("shen_type", 0);

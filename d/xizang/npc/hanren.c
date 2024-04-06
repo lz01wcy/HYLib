@@ -1,15 +1,15 @@
  inherit NPC;
 void create()
 {
-        set_name("ººÈË", ({ "hanren"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ±‰äºº", ({ "hanren"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 45);
         set("str", 10);
         set("long", 
-"Ò»¸öÂúÃæ·ç³¾¡¢Ô¶Àë¹ÊÏçµÄººÈË¡£\n"
+"ä¸€ä¸ªæ»¡é¢é£å°˜ã€è¿œç¦»æ•…ä¹¡çš„æ±‰äººã€‚\n"
 );
         set("attitude", "peaceful");
-        set("title", "ÒìÏç¿Í");
+        set("title", "å¼‚ä¹¡å®¢");
         set("combat_exp", 600);
         set_skill("unarmed", 50);
         set_skill("bloodystrike", random(20)+10);
@@ -19,7 +19,7 @@ void create()
         set("chat_chance", 1);
         set("chat_msg", ({
                 (: random_move :),
-                "ººÈË²Á²ÁÂúÁ³µÄ³¾ÍÁ£º¿ìÁË£¬¿ìÁË£¬×öÍêÕâÌËÉúÒâ¾Í¿ÉÒÔ»Ø½­ÄÏÁË¡­¡­\n",
+                "æ±‰äººæ“¦æ“¦æ»¡è„¸çš„å°˜åœŸï¼šå¿«äº†ï¼Œå¿«äº†ï¼Œåšå®Œè¿™è¶Ÿç”Ÿæ„å°±å¯ä»¥å›æ±Ÿå—äº†â€¦â€¦\n",
         }) ); 
         setup();
         carry_object(__DIR__"obj/magcloth")->wear();

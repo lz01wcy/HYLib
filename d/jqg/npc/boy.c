@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Í¯¶ù",({ "boy", "tonger" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç«¥å„¿",({ "boy", "tonger" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 13);
         set("long", 
-"ÕâÊÇ¸öÂúÁ³ÖÉÆøµÄĞ¡Í¯¡£\n");
+"è¿™æ˜¯ä¸ªæ»¡è„¸ç¨šæ°”çš„å°ç«¥ã€‚\n");
 
         set("str", 17);
         set("dex", 16);

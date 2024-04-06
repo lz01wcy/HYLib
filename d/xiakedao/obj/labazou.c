@@ -1,4 +1,4 @@
-// labazou.c À°°ËÖà
+// labazou.c è…Šå…«ç²¥
 
 #include <ansi.h>
 
@@ -14,13 +14,13 @@ void init()
 
 void create()
 {
-        set_name("À°°ËÖà", ({"laba", "zhou"}));
+        set_name("è…Šå…«ç²¥", ({"laba", "zhou"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Íë");
-                set("long", "ÕâÊÇÒ»ÍëÈÈÖà£¬ÆäÖĞÕôÆøÉÏÃ°£¬Ø£×ÔÓĞÒ»¸ö¸öÆøÅİ´ÓÖà
-µ×³å½«ÉÏÀ´£¬Ò»ÍëÖà¾¡×÷ÉîÂÌÖ®É«£¬¿´ÉÏÈ¥Ëµ²»³öµÄ¹îÒì¡£ÎÅ×ÅÒ©Æø´Ì±Ç£¬Æä¶¾¿ÉÖª¡£\n");
+                set("unit", "ç¢—");
+                set("long", "è¿™æ˜¯ä¸€ç¢—çƒ­ç²¥ï¼Œå…¶ä¸­è’¸æ°”ä¸Šå†’ï¼Œå…€è‡ªæœ‰ä¸€ä¸ªä¸ªæ°”æ³¡ä»ç²¥
+åº•å†²å°†ä¸Šæ¥ï¼Œä¸€ç¢—ç²¥å°½ä½œæ·±ç»¿ä¹‹è‰²ï¼Œçœ‹ä¸Šå»è¯´ä¸å‡ºçš„è¯¡å¼‚ã€‚é—»ç€è¯æ°”åˆºé¼»ï¼Œå…¶æ¯’å¯çŸ¥ã€‚\n");
                 set("value", 50000);
         }
         setup();
@@ -37,13 +37,13 @@ int do_eat(string arg)
         //force_skill = me->query_skill("force", 1);
 
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if ( (int)me->query_temp("num" ) > 0 )
         {
                 me->add_temp("num", 1);
                 me->add("max_neili", -100);
-                message_vision(HIR "$NÓÖºÈÏÂÒ»ÍëÀ°°ËÖà£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ
-£¬Ô­À´ºÈµÃÌ«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$Nåˆå–ä¸‹ä¸€ç¢—è…Šå…«ç²¥ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚
+ï¼ŒåŸæ¥å–å¾—å¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
         }
 
         else
@@ -56,8 +56,8 @@ int do_eat(string arg)
                 me->add("max_neili", 100);
                 me->add("neili", 100);
 
-                message_vision(HIY "$NºÈÏÂÒ»ÍëÀ°°ËÖà£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉºÆµ´ÎŞ±ÈµÄÕæ
-ÆøÖ±³å¶¥ÃÅ...\n" NOR, this_player());
+                message_vision(HIY "$Nå–ä¸‹ä¸€ç¢—è…Šå…«ç²¥ï¼Œé¡¿ç„¶é—´åªè§‰ä¸€è‚¡æµ©è¡æ— æ¯”çš„çœŸ
+æ°”ç›´å†²é¡¶é—¨...\n" NOR, this_player());
                 me->set_temp("num", 1);
         }
 

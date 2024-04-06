@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIY"ÌïÆß"NOR,({"tianqi"}));
+	set_name(HIY"ç”°ä¸ƒ"NOR,({"tianqi"}));
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á½");
-                set("long", "ÖĞÒ©²ÄÖ®Ò».\n");
+                set("unit", "ä¸¤");
+                set("long", "ä¸­è¯æä¹‹ä¸€.\n");
                 set("value", 100);
         }
 }

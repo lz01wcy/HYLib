@@ -5,13 +5,13 @@ inherit ARMOR;
 
 void create()
 {
-   set_name(WHT"¹·ÐÜÆ¤"NOR, ({ "xiong pi","pi"}) );
+   set_name(WHT"ç‹—ç†Šçš®"NOR, ({ "xiong pi","pi"}) );
    set_weight(4000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("material", "ÐÜÆ¤");
-     set("unit", "ÕÅ");
+     set("material", "ç†Šçš®");
+     set("unit", "å¼ ");
      set("value",500);
      set("armor_prop/armor",30);
    }

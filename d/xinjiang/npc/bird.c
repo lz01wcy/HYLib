@@ -2,21 +2,21 @@
 inherit NPC; 
 void create()
 {
-        set_name("ÂéÈ¸", ({ "bird" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("éº»é›€", ({ "bird" }) );
+        set("race", "é‡å…½");
         set("age", 1);
-        set("long", "ßÒßÒÔûÔûµÄÒ»Ö»Ğ¡ÂéÈ¸¡£\n");
+        set("long", "å’­å’­å–³å–³çš„ä¸€åªå°éº»é›€ã€‚\n");
         
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) ); 
         set("chat_chance", 10);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "ßÒßÒ¡£\n",
-                "ÔûÔû¡£\n",
+                "å’­å’­ã€‚\n",
+                "å–³å–³ã€‚\n",
         }));
-        set("arrive_msg","·ÉÁË¹ıÀ´");
-        set("leave_msg","·É¿ªÁË");
+        set("arrive_msg","é£äº†è¿‡æ¥");
+        set("leave_msg","é£å¼€äº†");
         set_temp("apply/dodge", 100);
         set_temp("apply/attack", 10);
         set_temp("apply/armor", 3); 

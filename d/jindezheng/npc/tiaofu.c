@@ -2,14 +2,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ìô·ò", ({ "tiaofu","tiao fu", "fu" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("æŒ‘å¤«", ({ "tiaofu","tiao fu", "fu" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
        set("mingwang",1);
        set("score",20); 
 	set("int", 28);
         set("combat_exp",800);
-	set("long","ÉíÇ¿Á¦×³µÄºº×Ó¡£\n");
+	set("long","èº«å¼ºåŠ›å£®çš„æ±‰å­ã€‚\n");
 	set("attitude", "peaceful");
 	set_skill("literate", 0);
         set_skill("unarmed",10);

@@ -1,17 +1,17 @@
-// roupian.c Ë®ÖóÈâÆ¬
+// roupian.c æ°´ç…®è‚‰ç‰‡
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Ë®ÖóÈâÆ¬", ({"roupian", "pian"}));
+	set_name("æ°´ç…®è‚‰ç‰‡", ({"roupian", "pian"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Åè»¹Ã°×ÅÓÍÅİµÄË®ÖóÈâÆ¬£¬¿´ÆğÀ´Õæ¹»À±¡£\n");
-		set("unit", "Åè");
+		set("long", "ä¸€ç›†è¿˜å†’ç€æ²¹æ³¡çš„æ°´ç…®è‚‰ç‰‡ï¼Œçœ‹èµ·æ¥çœŸå¤Ÿè¾£ã€‚\n");
+		set("unit", "ç›†");
 		set("value", 150);
 		set("food_remaining", 6);
 		set("food_supply", 60);

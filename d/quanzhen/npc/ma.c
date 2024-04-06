@@ -1,4 +1,4 @@
-// ma.c ÂíîÚ
+// ma.c é©¬é’°
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ string ask_me();
 
 void create()
 {
-        set_name("ÂíîÚ", ({"ma yu", "ma"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("é©¬é’°", ({"ma yu", "ma"}));
+        set("gender", "ç”·æ€§");
         set("age", 42);
         set("class", "taoist");
-        set("nickname",MAG"µ¤Ñô×Ó"NOR);
+        set("nickname",MAG"ä¸¹é˜³å­"NOR);
         set("long",
-                "Ëû¾ÍÊÇÍõÖØÑôµÄ´óµÜ×Ó£¬È«ÕæÆß×ÓÖ®Ê×£¬µ¤Ñô×ÓÂíîÚÂíÕæÈË¡£\n"
-                "Ëû´ÈÃ¼ÉÆÄ¿£¬ºÍ°ª¿ÉÇ×£¬ÕıĞ¦×Å¿´×ÅÄã¡£\n");
+                "ä»–å°±æ˜¯ç‹é‡é˜³çš„å¤§å¼Ÿå­ï¼Œå…¨çœŸä¸ƒå­ä¹‹é¦–ï¼Œä¸¹é˜³å­é©¬é’°é©¬çœŸäººã€‚\n"
+                "ä»–æ…ˆçœ‰å–„ç›®ï¼Œå’Œè”¼å¯äº²ï¼Œæ­£ç¬‘ç€çœ‹ç€ä½ ã€‚\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 28);
@@ -23,7 +23,7 @@ void create()
         set("con", 31);
         set("dex", 30);
 
-        set("title","È«ÕæÆß×ÓÖ®Ê×");
+        set("title","å…¨çœŸä¸ƒå­ä¹‹é¦–");
 
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({
@@ -52,17 +52,17 @@ set_skill("qixing-shou",250);
 set_skill("qixing-array",250);
 set_skill("hand", 300);
         set_skill("force", 150);
-        set_skill("xiantian-qigong", 150);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 150);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 140);
-        set_skill("quanzhen-jian",140);  //È«Õæ½£
+        set_skill("quanzhen-jian",140);  //å…¨çœŸå‰‘
         set_skill("dodge", 120);
-        set_skill("jinyan-gong", 140);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 140);   //é‡‘é›åŠŸ
         set_skill("parry", 150);
         set_skill("unarmed",140);
         set_skill("array",100);
         set_skill("array",200);
         set_skill("qixing-array",200);
-        set_skill("haotian-zhang", 140);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 140);    //æ˜Šå¤©æŒ
         set_skill("literate",100);
         set_skill("strike",120);
         set_skill("taoism",110);
@@ -74,13 +74,13 @@ set_skill("hand", 300);
         map_skill("strike", "haotian-zhang");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 2, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 2, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
-                "½ğÑã¹¦" : (: ask_me :),
-                "½ğÑãÍ¼Æ×" : (: ask_me :),
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é—¨æ­£å®—ã€‚\n",
+                "é‡‘é›åŠŸ" : (: ask_me :),
+                "é‡‘é›å›¾è°±" : (: ask_me :),
         ]) );
 
         setup();
@@ -93,16 +93,16 @@ set_skill("hand", 300);
 void attempt_apprentice(object ob)
 {
         if ((int)ob->query_skill("xiantian-qigong",1) < 50 ) {
-                command("say ÄãµÄ±¾ÃÅÄÚ¹¦ĞÄ·¨»ğºò²»×ã,ÄÑÒÔÁìÂÔ¸ü¸ßÉîµÄÎä¹¦¡£");
+                command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•ç«å€™ä¸è¶³,éš¾ä»¥é¢†ç•¥æ›´é«˜æ·±çš„æ­¦åŠŸã€‚");
                 return;
         }
         if ((int)ob->query("shen")<5000) {
-                command("say ĞĞÏÀÕÌÒåÊÇÎÒ±²Ñ§ÎäÈËµÄ»ù±¾Æ·ÖÊ£¬ÄãÈôÄÜ¶à×öĞ©ÏÁÒåÖ®
-ÊÂ£¬ÎÒÒ»¶¨ÊÕÄãÎªÍ½¡£\n");
+                command("say è¡Œä¾ ä»—ä¹‰æ˜¯æˆ‘è¾ˆå­¦æ­¦äººçš„åŸºæœ¬å“è´¨ï¼Œä½ è‹¥èƒ½å¤šåšäº›ç‹­ä¹‰ä¹‹
+äº‹ï¼Œæˆ‘ä¸€å®šæ”¶ä½ ä¸ºå¾’ã€‚\n");
                 return;
         }
         command("pat " + ob->query("id"));
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 
@@ -111,14 +111,14 @@ string ask_me()
         mapping fam;
         object ob;
 
-        if (!(fam = this_player()->query("family")) || fam["family_name"] != "È«Õæ½Ì")
+        if (!(fam = this_player()->query("family")) || fam["family_name"] != "å…¨çœŸæ•™")
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾½ÌºÁÎŞ¹Ï¸ğ£¬ÎÒ½ÌµÄÎä¹¦µä¼®¿É²»ÄÜ½»¸øÄã¡£";
+                "ä¸æœ¬æ•™æ¯«æ— ç“œè‘›ï¼Œæˆ‘æ•™çš„æ­¦åŠŸå…¸ç±å¯ä¸èƒ½äº¤ç»™ä½ ã€‚";
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬½ğÑãÍ¼Æ×ÒÑ¾­±»ÈËÈ¡×ßÁË¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œé‡‘é›å›¾è°±å·²ç»è¢«äººå–èµ°äº†ã€‚";
         add("book_count", -1);
         ob = new("/clone/book/jinyantu");
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾¡¸½ğÑãÍ¼Æ×¡¹ÄãÄÃ»ØÈ¥ºÃºÃÑĞ¶Á¡£";
+        return "å¥½å§ï¼Œè¿™æœ¬ã€Œé‡‘é›å›¾è°±ã€ä½ æ‹¿å›å»å¥½å¥½ç ”è¯»ã€‚";
 
 }

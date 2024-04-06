@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "��ɽС·");
+	set("short", "西山小路");
 	set("long", @LONG
-���߶��ǻ�ɽ����ʯ��ᾣ���������ͩ�����Ͳ���Ҳ�����ֵġ���
-�߻�ɽ֮�У���һ�����˴�����֪��ɽ������������ɽ�£�����һ����
-ɽ��ǰ��
+西边都是荒山，乱石嶙峋，那是连油桐树、油茶树也不能种的。那
+边荒山之中，有一个旁人从来不知的山洞。翻过两个山坡，来到一个大
+山洞前。
 LONG );
 	set("exits", ([
 		"eastdown"  : __DIR__"maxipu",

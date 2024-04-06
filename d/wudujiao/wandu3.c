@@ -12,11 +12,11 @@ string* npcs = ({
 
 void create()
 {
-	set("short", "Íò¶¾¿ß");
+	set("short", "ä¸‡æ¯’çªŸ");
 	set("long", @LONG
-ÕâÀïÊÇÉ½¶´ÄÚ²¿µÄÖ§¶´£¬ÕâÀïÒÑ¾­Ã»ÓÐÒ»Ë¿¹âÏßÁË£¬ºÚ¶´¶´µÄ
-Ê²Ã´Ò²¿´²»¼û¡£¶´ÄÚÑÒ±ÚÉÏºÃÏóÉú×Å¼¸Öê²»ÖªÃûµÄÐ¡²Ý¡£ÉíÅÔ´«À´
-Ò»Õó¡°ßÐßÐ¡±µÄÉùÒô¡£
+è¿™é‡Œæ˜¯å±±æ´žå†…éƒ¨çš„æ”¯æ´žï¼Œè¿™é‡Œå·²ç»æ²¡æœ‰ä¸€ä¸å…‰çº¿äº†ï¼Œé»‘æ´žæ´žçš„
+ä»€ä¹ˆä¹Ÿçœ‹ä¸è§ã€‚æ´žå†…å²©å£ä¸Šå¥½è±¡ç”Ÿç€å‡ æ ªä¸çŸ¥åçš„å°è‰ã€‚èº«æ—ä¼ æ¥
+ä¸€é˜µâ€œå’å’â€çš„å£°éŸ³ã€‚
 LONG
 	);
 //      set("outdoors", "wudujiao");
@@ -46,12 +46,12 @@ int do_climb(string arg)
        
 	object me=this_player();
 	object ob; 
-	if( (!arg) ||!((arg == "ÑÒ±Ú") || (arg == "¶´±Ú")))
-		return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
-		message_vision(HIC"$NÅÊ×ÅÑÒ±ÚÉÏÍ»³öµÄÊ¯Ëñ¼èÄÑµÄÅÀÁËÉÏÈ¥¡£\n\n"NOR,me);
+	if( (!arg) ||!((arg == "å²©å£") || (arg == "æ´žå£")))
+		return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
+		message_vision(HIC"$Næ”€ç€å²©å£ä¸Šçªå‡ºçš„çŸ³ç¬‹è‰°éš¾çš„çˆ¬äº†ä¸ŠåŽ»ã€‚\n\n"NOR,me);
         ob = load_object(__DIR__"dongxue");
         ob = find_object(__DIR__"dongxue");
-        message("vision", me->query("name")+"´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n", ob);
+        message("vision", me->query("name")+"ä»Žä¸‹é¢çˆ¬äº†ä¸Šæ¥ã€‚\n", ob);
         me->move(__DIR__"dongxue");
         return 1;
 }

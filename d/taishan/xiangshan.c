@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ɽ");
+	set("short", "象山");
 	set("long", @LONG
-�����Ϊ��ɽ���׳���Ƿ壬ɽ������ʯ�´�����Ƕ���������Ϊ
-���ƶ����嶫�����ƶ���
+天街南为象山，俗称象鼻峰，山南崖奇石下垂似象鼻而名。峰西为
+白云洞，峰东有青云洞。
 LONG );
 	set("exits", ([
 		"north"    : __DIR__"tianjie",

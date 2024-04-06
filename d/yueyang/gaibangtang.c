@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "大屋");
 	set("long", @LONG
-������ؤ����ھۻ᳡�������Ϻ����������Ų��ٲ����š���Ȼ��
-�����ƺ������ң���ʵȴ���ǺϺ���棺��������ְ˾��ǰ��˳��һ
-Ŀ��Ȼ��
+这里是丐帮帮众聚会场所，地上横七竖八排着不少草蒲团。虽然看
+起来似乎很凌乱，其实却甚是合乎帮规：何人做何职司，前后顺序，一
+目了然。
 LONG );
 	set("exits", ([
 		"south" : __DIR__"gaibangyuan",

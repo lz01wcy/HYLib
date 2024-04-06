@@ -4,8 +4,8 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("Ä¾À­Ìá", ({ "mulati" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æœ¨æ‹‰æ", ({ "mulati" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 69);
         set("richness",1000000);
         set("combat_exp", 50);
@@ -33,15 +33,15 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-message_vision("$NËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+
-"£¬ÑÇ¿ËÎ÷Ä·ÈüË¹£¡\n",this_object(),ob);
+message_vision("$Nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(ob)+
+"ï¼Œäºšå…‹è¥¿å§†èµ›æ–¯ï¼\n",this_object(),ob);
                         break;
                 case 1:
-message_vision("$NËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+
-"£¬ÑÇ¿ËÎ÷Ä·ÈüË¹£¡\n",this_object(),ob);
+message_vision("$Nè¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(ob)+
+"ï¼Œäºšå…‹è¥¿å§†èµ›æ–¯ï¼\n",this_object(),ob);
                         break;
                 case 2:
-message_vision("$NÌ§Í·¿´ÁËÒ»ÑÛ£®£®£®\n"
+message_vision("$NæŠ¬å¤´çœ‹äº†ä¸€çœ¼ï¼ï¼ï¼\n"
 ,this_object(),ob);
                         break;
                                 }

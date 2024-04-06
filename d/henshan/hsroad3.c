@@ -1,14 +1,14 @@
-// Room: /d/henshan/hsroad3.c »ÆÍÁÂ·
+// Room: /d/henshan/hsroad3.c é»„åœŸè·¯
 // Modified by Java on Feb.14.1998
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "»ÆÍÁÂ·");
+	set("short", "é»„åœŸè·¯");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ»ÆÍÁÂ·ÉÏ£¬Á½ÅÔÊÇÒõÉ­É­µÄÊ÷ÁÖ¡£Î÷Ãæ²»Ô¶
-¾ÍÊÇºâÑôÏØ³ÇÁË¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£æ‰¬çš„é»„åœŸè·¯ä¸Šï¼Œä¸¤æ—æ˜¯é˜´æ£®æ£®çš„æ ‘æ—ã€‚è¥¿é¢ä¸è¿œ
+å°±æ˜¯è¡¡é˜³å¿åŸäº†ã€‚
 LONG );
 	set("outdoors", "hengyang");
 

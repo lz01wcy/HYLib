@@ -4,9 +4,9 @@ inherit F_BANKER;
 
 void create()
 {
-        set_name("Öì¸»", ({"zhu fu", "zhu", "fu"}));
-        set("title", "Ç®×¯ÕÆ¹ñ");
-        set("gender", "ÄÐÐÔ");
+        set_name("æœ±å¯Œ", ({"zhu fu", "zhu", "fu"}));
+        set("title", "é’±åº„æŽŒæŸœ");
+        set("gender", "ç”·æ€§");
         set("age", 34);
 
         set("str", 22);

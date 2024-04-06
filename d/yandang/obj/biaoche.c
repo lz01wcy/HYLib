@@ -2,15 +2,15 @@ inherit ITEM;
 
 void create()
 {      object ob;
-        set_name("ïÚ³µ", ({ "biaoche", "biao", "che"}) );
+        set_name("é•–è½¦", ({ "biaoche", "biao", "che"}) );
         set_weight(80000);
         set_max_encumbrance(8000);
         set("no_get", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á¾");
-                set("long", "Ò»Á¾ÓÃÂ¿×ÓÀ­µÄïÚ³µ,ÉÏÃæ»¹²å×ÅÒ»ÃæïÚÆì¡£\n");
+                set("unit", "è¾†");
+                set("long", "ä¸€è¾†ç”¨é©´å­æ‹‰çš„é•–è½¦,ä¸Šé¢è¿˜æ’ç€ä¸€é¢é•–æ——ã€‚\n");
 		   set("material", "wood");
         }
  setup();

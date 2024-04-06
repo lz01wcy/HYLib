@@ -4,13 +4,13 @@ inherit F_LIQUID;
 #include <ansi.h>
 void create()
 {
-   set_name(HIR"Å®¶ùºì"NOR, ({"nver hong","jiu"}));
+   set_name(HIR"å¥³å„¿çº¢"NOR, ({"nver hong","jiu"}));
    set_weight(700);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "ÕâÊÇÒ»Ì³³ÂÄêµÄÅ®¶ùºì¡£\n");
-     set("unit", "Ì³");
+     set("long", "è¿™æ˜¯ä¸€å›é™ˆå¹´çš„å¥³å„¿çº¢ã€‚\n");
+     set("unit", "å›");
      set("value",200);
      set("max_liquid",30);
    }
@@ -18,7 +18,7 @@ void create()
   
    set("liquid", ([
      "type": "alcohol",
-     "name": "Å®¶ùºì",
+     "name": "å¥³å„¿çº¢",
      "remaining":30,
      "drunk_supply":15,
    ]));

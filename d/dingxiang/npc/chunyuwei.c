@@ -8,11 +8,11 @@ int do_action1();
 
 void create()
 {
-   set_name("´¾ÓÚŞ±",({ "chun yuwei","chun","yuwei" }) );
-   set("gender", "Å®ĞÔ" );		
+   set_name("æ·³äºè–‡",({ "chun yuwei","chun","yuwei" }) );
+   set("gender", "å¥³æ€§" );		
    set("age",22);
    set("per",24);
-   set("long", "Ëı¾ÍÊÇ±ÏĞşµÄÍ½µÜ¡£\n");       
+   set("long", "å¥¹å°±æ˜¯æ¯•ç„çš„å¾’å¼Ÿã€‚\n");       
    set("combat_exp",600000);
    set_skill("dodge",150);
    set_skill("parry",150);
@@ -27,9 +27,9 @@ void create()
    set("max_sen",2000);
    set("neili",2000);
    set("max_neili",2000);
-   create_family("Í»ØÊ",5,"ÎäÊ¿");
+   create_family("çªå¥",5,"æ­¦å£«");
    set("inquiry",([
-     "ÈëÎé":(:do_action1:),
+     "å…¥ä¼":(:do_action1:),
     ]));
    setup();
    carry_object(__DIR__"obj/cloth")->wear();

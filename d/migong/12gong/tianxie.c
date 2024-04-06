@@ -4,16 +4,16 @@ inherit ROOM;
 int block_cmd(string);
 void create ()
 {
-        set ("short", "µÚ°Ë¹¬ÌìÐ«×ù");
+        set ("short", "ç¬¬å…«å®«å¤©èŽåº§");
         set ("long",
              @LONG
       iWWW:  :W$WW   :xW$Wx
      W$$$$ :$$$$$$X u$$$$$$
-    W$$$$$W$#~$$$$$$$?~$$$$!       ÌìºóÖìÄÈÃüÌìÐ«´ÓÒõ°µµÄµØµ×ÅÀ³öÀ´£¬¹¥»÷Å·Á¢
-   X$?$$$$$?  M$$$$#   $$$$~ °²£¨ Orion,´÷°²ÄÈËùïñÇéµÄÁÔÈË£¬áá»¯ÎªÁÔ»§ÐÇ
-  H$! $$$$!   8$$$$    $$$$! ×ù£©¡£ÁíÍâÒ»´Î£¬ÌìÐ«Ê©·Å¶¾Æø¹¥»÷Õý¼Ý×ÅÌ«Ñô
-  ~~  $$$$    8$$$8    $$$$~ ÉñÂí³µ¾­¹ýµÄ·Æ¶Ù£¬¶øÊ¹Çð±ÈÌØÓÐ»ú»á·¢ÉäÀ×µç
-      $$$$~   8$$$8    $$$$! £¬½«±¼ÅÜÖÐµÄÌ«Ñô³µ»÷»Ù¡£
+    W$$$$$W$#~$$$$$$$?~$$$$!       å¤©åŽæœ±å¨œå‘½å¤©èŽä»Žé˜´æš—çš„åœ°åº•çˆ¬å‡ºæ¥ï¼Œæ”»å‡»æ¬§ç«‹
+   X$?$$$$$?  M$$$$#   $$$$~ å®‰ï¼ˆ Orion,æˆ´å®‰å¨œæ‰€é”ºæƒ…çš„çŒŽäººï¼Œå¾ŒåŒ–ä¸ºçŒŽæˆ·æ˜Ÿ
+  H$! $$$$!   8$$$$    $$$$! åº§ï¼‰ã€‚å¦å¤–ä¸€æ¬¡ï¼Œå¤©èŽæ–½æ”¾æ¯’æ°”æ”»å‡»æ­£é©¾ç€å¤ªé˜³
+  ~~  $$$$    8$$$8    $$$$~ ç¥žé©¬è½¦ç»è¿‡çš„è²é¡¿ï¼Œè€Œä½¿ä¸˜æ¯”ç‰¹æœ‰æœºä¼šå‘å°„é›·ç”µ
+      $$$$~   8$$$8    $$$$! ï¼Œå°†å¥”è·‘ä¸­çš„å¤ªé˜³è½¦å‡»æ¯ã€‚
       $$$$    M$$$8    $$$$!
       $$$$    8$$$8    $$$$~
       $$$$    M$$$8    $$$$!       Xi
@@ -41,7 +41,7 @@ LONG);
 int valid_leave(object me, string dir)
 {
         if ( present("tian xie") && dir == "eastup" )
-        return notify_fail("¹þµÏË¹Ð¦µÀ:ÏÈ¹ýÎÒÕâ¹ØÔÙËµ£¡\n");
+        return notify_fail("å“ˆè¿ªæ–¯ç¬‘é“:å…ˆè¿‡æˆ‘è¿™å…³å†è¯´ï¼\n");
         return ::valid_leave(me, dir);
 }
 

@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "ǰ��");
+	set("short", "前殿");
 	set("long", @LONG
-������������ǰ��һ��ǰ���ģ��С���������޺ܶ���衣ֻ��
-����Сɳ���ڽӴ�����������͡�͸�������Ĵ��ţ����Կ���ǰ���ģ
-��ΰ�������
+这里是天王殿前的一处前殿。规模很小，殿内亦无很多摆设。只有
+几个小沙祢在接待着来往的香客。透过洞开的大门，可以看到前面规模
+雄伟的天王殿。
 LONG );
 	set("exits", ([
 		"south" : __DIR__"gchang-1",

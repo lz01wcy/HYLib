@@ -2,7 +2,7 @@
 void smart_fight(); 
 void create()
 {
-        set_name("Ô©»ê", ({ "crying ghost" }) );
+        set_name("å†¤é­‚", ({ "crying ghost" }) );
         set("age", 45);
         set("env/wimpy", 50);
         set("cor", 30);

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���䳡");
+	set("short", "练武场");
 	set("long", @LONG
-�����������µ����䳡����������޴�Ļ�����ʯ���̾͡���ǧ��
-�Ĳ�̤��ʹ����Щʯ����ͬ���Ӱ�ƽ���⻬��ʮ����ɮ��������ϰ�似��
-�ϱ����������һ���䳡��
+这里是少林寺的练武场。由无数块巨大的花岗岩石板铺就。上千年
+的踩踏已使得这些石板如同镜子般平整光滑。十来个僧人正在练习武技。
+南北西三面各有一练武场。
 LONG );
 	set("exits", ([
 		"east"  : __DIR__"lhtang",

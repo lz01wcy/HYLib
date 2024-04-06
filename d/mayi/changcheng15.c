@@ -1,22 +1,43 @@
-// /d/gaoli/fenghuotai
-// Room in É½º£¹Ø
-// rich 99/04/05
-inherit ROOM;
-void create()
-{
-	set("short", "³¤³Ç");
-	set("long", @LONG
-ÕâÀï¾ÍÊÇÓÃÓÚµÖÓùÓÎÄÁÃñ×åµÄ³¤³ÇÁË£¬Õ½¹úÊ±Ñà¡¢ÕÔ¡¢ÇØ·Ö±ğĞŞ³Ç
-Ç½µÖÓùĞÙÅ«£¬ºóÇØÊ¼»Ê½«ËùÓĞµÄ³ÇÇ½Á¬½ÓÆğÀ´½Ğ×ö³¤³Ç£¬¿ÉÏ§ÏÖÔÚÌìÏÂ
-´óÂÒ£¬·éÑÌËÄÆğ£¬¶øÍ»ØÊÈÕÒæÇ¿´ó£¬³¤³ÇÊ§È¥ÁËËûµÄ×÷ÓÃ¡£
-LONG
-	);
+// /d/gaoli/fenghuotai
+
+// Room in å±±æµ·å…³
+
+// rich 99/04/05
+
+inherit ROOM;
+
+void create()
+
+{
+
+	set("short", "é•¿åŸ");
+
+	set("long", @LONG
+
+è¿™é‡Œå°±æ˜¯ç”¨äºæŠµå¾¡æ¸¸ç‰§æ°‘æ—çš„é•¿åŸäº†ï¼Œæˆ˜å›½æ—¶ç‡•ã€èµµã€ç§¦åˆ†åˆ«ä¿®åŸ
+
+å¢™æŠµå¾¡åŒˆå¥´ï¼Œåç§¦å§‹çš‡å°†æ‰€æœ‰çš„åŸå¢™è¿æ¥èµ·æ¥å«åšé•¿åŸï¼Œå¯æƒœç°åœ¨å¤©ä¸‹
+
+å¤§ä¹±ï¼Œçƒ½çƒŸå››èµ·ï¼Œè€Œçªå¥æ—¥ç›Šå¼ºå¤§ï¼Œé•¿åŸå¤±å»äº†ä»–çš„ä½œç”¨ã€‚
+
+LONG
+
+	);
+
 set("outdoors", "mayi");
-set("valid_startroom", 1);
-set("exits", ([
-	        "westup" : __DIR__"changcheng14",
-            	"northeast" : __DIR__"changcheng16",
-	]));
-       setup();
-	replace_program(ROOM);
-}
+set("valid_startroom", 1);
+
+set("exits", ([
+
+	        "westup" : __DIR__"changcheng14",
+
+            	"northeast" : __DIR__"changcheng16",
+
+	]));
+
+       setup();
+
+	replace_program(ROOM);
+
+}
+

@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "×¯¼ÚµØ");
+	set("short", "åº„ç¨¼åœ°");
         set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬×¯¼ÚµØ¡£ÌïµØ²»´ó£¬µ«ÊÇ×¯¼Ú¿´ÆðÀ´³¤µÄºÜºÃ¡£ÓÐ¼¸¸ö
-Ð¡º¢ÔÚÅÔ±ßÍæË£¡£Ô¶´¦ÓÐ¼¸¸öÅ©·òÔÚÄÇÀïÖÖÌï¡£Ò»ÕóÇå·ç´µÀ´£¬ÌïÒ°µÄ
-ÆøÏ¢²»½ûÈÃÄãÐÄ¿õÉñâù¡£ÌïµØÅÔ±ß·Å×Å¼¸¸ö²ÝÈË£¬²»ÖªµÀÌß¼¸ÏÂ»áÔõÃ´
-Ñù¡£
+è¿™é‡Œæ˜¯ä¸€ç‰‡åº„ç¨¼åœ°ã€‚ç”°åœ°ä¸å¤§ï¼Œä½†æ˜¯åº„ç¨¼çœ‹èµ·æ¥é•¿çš„å¾ˆå¥½ã€‚æœ‰å‡ ä¸ª
+å°å­©åœ¨æ—è¾¹çŽ©è€ã€‚è¿œå¤„æœ‰å‡ ä¸ªå†œå¤«åœ¨é‚£é‡Œç§ç”°ã€‚ä¸€é˜µæ¸…é£Žå¹æ¥ï¼Œç”°é‡Žçš„
+æ°”æ¯ä¸ç¦è®©ä½ å¿ƒæ—·ç¥žæ€¡ã€‚ç”°åœ°æ—è¾¹æ”¾ç€å‡ ä¸ªè‰äººï¼Œä¸çŸ¥é“è¸¢å‡ ä¸‹ä¼šæ€Žä¹ˆ
+æ ·ã€‚
 LONG
 );
         set("exits",([
@@ -30,25 +30,25 @@ int do_ci(string arg)
 {
    object me;
    me=this_player();
-   if(!arg||arg!="²ÝÈË")
-   return notify_fail("ÄãÒªÌßÊ²Ã´£¿\n");
+   if(!arg||arg!="è‰äºº")
+   return notify_fail("ä½ è¦è¸¢ä»€ä¹ˆï¼Ÿ\n");
   
    if(me->query("sen")<20)
-   return notify_fail("Äã¾«ÉñÌ«²îÁË£¡\n");
+   return notify_fail("ä½ ç²¾ç¥žå¤ªå·®äº†ï¼\n");
    if(me->query_skill("leg",1)>=101)
-   return notify_fail("Ò»¸öÅ©·òÅÜÁË¹ýÀ´£ººÙ£¬²»ÒªÂÒÅöÎÒµÄ²ÝÈË£¡\n");
+   return notify_fail("ä¸€ä¸ªå†œå¤«è·‘äº†è¿‡æ¥ï¼šå˜¿ï¼Œä¸è¦ä¹±ç¢°æˆ‘çš„è‰äººï¼\n");
    if(me->is_busy())
-   return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+   return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
    
-   message_vision(YEL"$NÒ»×ªÉí£¬È»ºóÌ§ÍÈ³¯²ÝÈËÌßÈ¥£¡\n"NOR,me);
+   message_vision(YEL"$Nä¸€è½¬èº«ï¼Œç„¶åŽæŠ¬è…¿æœè‰äººè¸¢åŽ»ï¼\n"NOR,me);
    me->improve_skill("leg",me->query_int()/2+20+random(5));
    me->add("sen",-20);
    if(me->query_skill("leg",1)<50)
-   message_vision("$NÏÂÅÌ²»ÎÈ£¬ÏÕÐ©µøµ¹£¡\n",me);
+   message_vision("$Nä¸‹ç›˜ä¸ç¨³ï¼Œé™©äº›è·Œå€’ï¼\n",me);
    else if(me->query_skill("leg",1)<100)
-   message_vision("$NÊÕÊÆÕ¾ºÃ£¬Î¢Î¢Ò»Ð¦¡£\n",me);
+   message_vision("$Næ”¶åŠ¿ç«™å¥½ï¼Œå¾®å¾®ä¸€ç¬‘ã€‚\n",me);
    else if(me->query_skill("leg",1)<150)
-   message_vision("$NäìÈ÷µÄÒ»¸ö×ªÉí£¬ÇáÇáÊÕÊÆÕ¾ºÃ£¡\n",me);
+   message_vision("$Næ½‡æ´’çš„ä¸€ä¸ªè½¬èº«ï¼Œè½»è½»æ”¶åŠ¿ç«™å¥½ï¼\n",me);
   
    return 1;
 }

@@ -4,9 +4,9 @@ inherit NPC;
 
 void create ()
 {
-	set_name("²Ë··", ({"cai fan", "fan"}));
-	set("long", "Ò»¸öÂô²ËµÄĞ¡··£¬ÌôÁËÒ»µ£ÂÌÓÍÓÍµÄ¿ÕĞÄ²Ë¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("èœè´©", ({"cai fan", "fan"}));
+	set("long", "ä¸€ä¸ªå–èœçš„å°è´©ï¼ŒæŒ‘äº†ä¸€æ‹…ç»¿æ²¹æ²¹çš„ç©ºå¿ƒèœã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 24);
 	set("combat_exp", 1000);
 	set("str", 24);

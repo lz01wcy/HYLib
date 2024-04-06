@@ -5,17 +5,17 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("³æÒ»¾ÓÊ¿"NOR, ({ "chongyi jushi", "chongyi" }));
-	set("title", "²è¹İÀÏ°å");
-	set("nickname", HIW"·çÔÂ"HIY"ÎŞ±ß"HIB"²»¼ûÌì"NOR);
+	set_name("è™«ä¸€å±…å£«"NOR, ({ "chongyi jushi", "chongyi" }));
+	set("title", "èŒ¶é¦†è€æ¿");
+	set("nickname", HIW"é£æœˆ"HIY"æ— è¾¹"HIB"ä¸è§å¤©"NOR);
 	set("shen_type", 1);
 
 	set("str", 30);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("long","
-ÕâÎ»³æÒ»ÏÈÉú¿ÉÊÇ¸ö·çÑÅÖ®ÈË£¬Ëû²»Ï²³öÃÅ£¬³ÉÌìÔÚ²è¹İÀï
-ºÍÀ´ÍùµÄ¿ÍÈËÌ¸Ê«ÂÛ»­¡£\n");
+è¿™ä½è™«ä¸€å…ˆç”Ÿå¯æ˜¯ä¸ªé£é›…ä¹‹äººï¼Œä»–ä¸å–œå‡ºé—¨ï¼Œæˆå¤©åœ¨èŒ¶é¦†é‡Œ
+å’Œæ¥å¾€çš„å®¢äººè°ˆè¯—è®ºç”»ã€‚\n");
 	set("combat_exp", 500);
 	set("attitude", "friendly");
 	

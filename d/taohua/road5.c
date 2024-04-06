@@ -2,10 +2,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "¶´¿Ú");
+        set("short", "æ´å£");
         set("long",@LONG
-ÕâÊÇÒ»ÌõºóÉ½ÉÏµÄÒ»¸öĞ¡É½¶´¡£¶´¿ÚºÜĞ¡£¬µ«ÄÜÈİÒ»¸öÈË×ê½øÈ¥¡£ÀïÃæ
-ºÚ÷î÷îµÄÊ²Ã´Ò²¿´²»¼û¡£
+è¿™æ˜¯ä¸€æ¡åå±±ä¸Šçš„ä¸€ä¸ªå°å±±æ´ã€‚æ´å£å¾ˆå°ï¼Œä½†èƒ½å®¹ä¸€ä¸ªäººé’»è¿›å»ã€‚é‡Œé¢
+é»‘é»é»çš„ä»€ä¹ˆä¹Ÿçœ‹ä¸è§ã€‚
 LONG);
         set("exits", ([
             "east"   : __DIR__"bagua1",
@@ -32,7 +32,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

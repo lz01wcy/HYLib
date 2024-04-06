@@ -1,15 +1,15 @@
-// liangong.c Á·¹¦ÊÒ
+// liangong.c ç»ƒåŠŸå®¤
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Á·¹¦ÊÒ");
+        set("short", "ç»ƒåŠŸå®¤");
         set("long", @LONG
-Õâ×ùÊ¯ÊÒÐÎ×´ÉõÊÇÆæÌØ£¬Ç°Õ­áá¿í£¬³ÉÎªÌÝÐÎ£¬¶«±ß°ëÔ²£¬Î÷±ß
-È´×÷Èý½ÇÐÎ×´£¬Ô­À´ÕâÊÇÒÔÇ°ÖØÑô×æÊ¦µÄÁ·¹¦ÊÒ£¬Ç°Õ­Á·ÕÆ£¬áá¿íÊ¹
-È­£¬¶«Ô²ÑÐ½££¬Î÷½Ç·¢ïÚ¡£
+è¿™åº§çŸ³å®¤å½¢çŠ¶ç”šæ˜¯å¥‡ç‰¹ï¼Œå‰çª„å¾Œå®½ï¼Œæˆä¸ºæ¢¯å½¢ï¼Œä¸œè¾¹åŠåœ†ï¼Œè¥¿è¾¹
+å´ä½œä¸‰è§’å½¢çŠ¶ï¼ŒåŽŸæ¥è¿™æ˜¯ä»¥å‰é‡é˜³ç¥–å¸ˆçš„ç»ƒåŠŸå®¤ï¼Œå‰çª„ç»ƒæŽŒï¼Œå¾Œå®½ä½¿
+æ‹³ï¼Œä¸œåœ†ç ”å‰‘ï¼Œè¥¿è§’å‘é•–ã€‚
 LONG
         );
 

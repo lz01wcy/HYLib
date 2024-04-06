@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºôÑÓÍòÉÆ",({"huyan wanshan","huyan","wanshan"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å‘¼å»¶ä¸‡å–„",({"huyan wanshan","huyan","wanshan"}));
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long", 
-               "ËûÊÇÁèÏö³ÇµÚÁù´úµÜ×ÓºôÑÓÍòÉÆ¡£\n");
+               "ä»–æ˜¯å‡Œéœ„åŸç¬¬å…­ä»£å¼Ÿå­å‘¼å»¶ä¸‡å–„ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -25,8 +25,8 @@ void create()
         set("combat_exp", 200000); 
         set("chat_chance", 20);
         set("chat_msg", ({
-"ºôÑÓÍòÉÆ°Î³ö½£À´,ÎèÁËÒ»¸ö°ë»¡,ºÜÊÇÉñÆø¡£\n", 
-"ºôÑÓÍòÉÆÍ¦ÁËÍ¦ĞØ,´óÉùËµ:ÎÒÃÇÁèÏö³ÇµÄ½£·¨,ÊÇÌìÏÂµÚÒ»µÄ½£·¨¡£\n", 
+"å‘¼å»¶ä¸‡å–„æ‹”å‡ºå‰‘æ¥,èˆäº†ä¸€ä¸ªåŠå¼§,å¾ˆæ˜¯ç¥æ°”ã€‚\n", 
+"å‘¼å»¶ä¸‡å–„æŒºäº†æŒºèƒ¸,å¤§å£°è¯´:æˆ‘ä»¬å‡Œéœ„åŸçš„å‰‘æ³•,æ˜¯å¤©ä¸‹ç¬¬ä¸€çš„å‰‘æ³•ã€‚\n", 
         }) ); 
         set("shen_type", 0);
         set("score", 20000);
@@ -55,7 +55,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸ", 6, "å¼Ÿå­");
         setup();
 
         

@@ -7,10 +7,10 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("Àî½ÌÍ·", ({ "li"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("æŽæ•™å¤´", ({ "li"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 25);
-	set("long", "ÕâÊÇ¸öºÍ°ª¿ÉÇ×µÄ½ÌÍ·¡£\n");
+	set("long", "è¿™æ˜¯ä¸ªå’Œè”¼å¯äº²çš„æ•™å¤´ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", -1);
 
@@ -58,13 +58,13 @@ void create()
                 (: perform_action, "hand.diaoshou" :),                
                 (: perform_action, "hand.diaoshou" :),                
         }) );
-	create_family("°×ÍÕÉ½ÅÉ",2,"µÜ×Ó");
+	create_family("ç™½é©¼å±±æ´¾",2,"å¼Ÿå­");
 
 	set("chat_chance", 2);
 	set("chat_msg", ({
-		"Àî½ÌÍ·ËµµÀ: ÇÚÑ§¿àÁ··½¿É³öÉñ¹¦..\n",
-		"Àî½ÌÍ·¹ÄÀøÐ¡µÜ×ÓÃÇ²»Î·¼è¿à£¬ºÃºÃÁ·¹¦¡£\n",
-		"Àî½ÌÍ·ÅÄÅÄÑ§Í½µÄÍ·Ëµ£ººÃÑùµÄ£¡\n",
+		"æŽæ•™å¤´è¯´é“: å‹¤å­¦è‹¦ç»ƒæ–¹å¯å‡ºç¥žåŠŸ..\n",
+		"æŽæ•™å¤´é¼“åŠ±å°å¼Ÿå­ä»¬ä¸ç•è‰°è‹¦ï¼Œå¥½å¥½ç»ƒåŠŸã€‚\n",
+		"æŽæ•™å¤´æ‹æ‹å­¦å¾’çš„å¤´è¯´ï¼šå¥½æ ·çš„ï¼\n",
 	}) );
 	setup();
 }
@@ -83,34 +83,34 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	if ((string)ob->query("family/family_name") == "°×ÍÕÉ½ÅÉ")
+	if ((string)ob->query("family/family_name") == "ç™½é©¼å±±æ´¾")
 	     {
-	       message_vision("Àî½ÌÍ·³å×Å$NµãµãÍ·£¬Î¢Î¢Ð¦ÁËÐ¦¡£\n",ob);
+	       message_vision("æŽæ•™å¤´å†²ç€$Nç‚¹ç‚¹å¤´ï¼Œå¾®å¾®ç¬‘äº†ç¬‘ã€‚\n",ob);
 	       return;
 	      }
 	if (!(string)ob->query("family/family_name"))
 	     {
-	       message_vision("Àî½ÌÍ·³å×Å$NÎ¢Ð¦Ëµ£ºÄãÊÇÀ´°ÝÊ¦µÄ°É£¬°ÝÎÒ°É¡£\n",ob);
+	       message_vision("æŽæ•™å¤´å†²ç€$Nå¾®ç¬‘è¯´ï¼šä½ æ˜¯æ¥æ‹œå¸ˆçš„å§ï¼Œæ‹œæˆ‘å§ã€‚\n",ob);
 	       return;
 	      }
-	  message_vision("Àî½ÌÍ·¶Ô$NÈÂµÀ:Ð¡¼Ò»ï,ÄãÏ¹¹äÊ²Ã´ÄØ?\n",ob);
+	  message_vision("æŽæ•™å¤´å¯¹$Nåš·é“:å°å®¶ä¼™,ä½ çžŽé€›ä»€ä¹ˆå‘¢?\n",ob);
 }
 
 void attempt_apprentice(object ob)
 {
-     command("say ºÃ°É£¬ÎÒÊÕÏÂÄã¡£\n");
+     command("say å¥½å§ï¼Œæˆ‘æ”¶ä¸‹ä½ ã€‚\n");
      command("recruit "+ob->query("id"));
      if((int)ob->query("combat_exp")<10000)
-       command("say ÄãÏÈµ½¶«±ßÁ·¹¦ÊÒÕÒÅãÁ·Í¯×Ó±È»®¼¸ÕÐ°É¡£\n");
+       command("say ä½ å…ˆåˆ°ä¸œè¾¹ç»ƒåŠŸå®¤æ‰¾é™ªç»ƒç«¥å­æ¯”åˆ’å‡ æ‹›å§ã€‚\n");
      return;
 }
 
 int accept_fight(object ob)
 {
-      if ((string)ob->query("family/family_name") == "°×ÍÕÉ½ÅÉ")
+      if ((string)ob->query("family/family_name") == "ç™½é©¼å±±æ´¾")
 	 {
 	  if((int)ob->query("combat_exp")<1000)
-	    return notify_fail("Àî½ÌÍ·Ð¦µÀ£ºÄãµÄ¾­ÑéÌ«µÍÁË£¬»¹ÊÇÏÈÕÒÅãÁ·Í¯×Ó±È»®¼¸ÕÐ°É¡££¡\n");
+	    return notify_fail("æŽæ•™å¤´ç¬‘é“ï¼šä½ çš„ç»éªŒå¤ªä½Žäº†ï¼Œè¿˜æ˜¯å…ˆæ‰¾é™ªç»ƒç«¥å­æ¯”åˆ’å‡ æ‹›å§ã€‚ï¼\n");
 	  }
     return 1;
 }

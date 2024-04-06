@@ -3,13 +3,13 @@
 inherit THROWING; 
 void create()
 {
-        set_name("¹©Ïã", ({ "incense" }) );
+        set_name("ä¾›é¦™", ({ "incense" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","²Ø¶«²úµÄ×î³©ÏúµÄ²ØÏã¡£\n");
-                set("unit", "Êø");
-                set("base_unit", "Ö§");
+                set("long","è—ä¸œäº§çš„æœ€ç•…é”€çš„è—é¦™ã€‚\n");
+                set("unit", "æŸ");
+                set("base_unit", "æ”¯");
                 set("base_weight", 3);
                 set("base_value", 200);
         }

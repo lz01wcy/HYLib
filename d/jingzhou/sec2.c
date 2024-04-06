@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ĺ�ڲ�");
+	set("short", "坟墓内部");
 	set("long", @LONG
-�����ż�����ǰ�ߣ�Զ���ƺ�������֨֨�Ľ��������в��Ǻ����С����ڹ���̫��
-��ֻ�ܿ���ģģ�����Ķ�����
+你试着继续往前走，远处似乎有老鼠吱吱的叫声，但有不是很真切。由于光线太暗
+你只能看到模模糊糊的东西。
 LONG
 	);
         

@@ -3,16 +3,16 @@
 inherit ITEM;
 void create()
 {
-    set_name("°µÆ÷±¦Ï»", ({ "anqi baoxia" }) );
+    set_name("æš—å™¨å®åŒ£", ({ "anqi baoxia" }) );
     set_weight(10000);
     if( clonep() )
             set_default_object(__FILE__);
     else {
 set("no_clone",1);
-            set("unit", "¸ö");
+            set("unit", "ä¸ª");
             set("value", 15000);
             set("material", "stone");
-            set("long", "Ò»¸ö°µÆ÷±¦Ï»£¬ÀïÃæ¿ÉÒÔ×°±¸ÓÃµÄ°µÆ÷£¬Äã¿ÉÒÔÓÃËü²¹ÔÊ(insert)°µÏù¡£\n");
+            set("long", "ä¸€ä¸ªæš—å™¨å®åŒ£ï¼Œé‡Œé¢å¯ä»¥è£…å¤‡ç”¨çš„æš—å™¨ï¼Œä½ å¯ä»¥ç”¨å®ƒè¡¥å…(insert)æš—åš£ã€‚\n");
           }
 
     setup();
@@ -32,27 +32,27 @@ int do_kao(string arg)
         int decayed;
         me = this_player();
         if( !arg || arg == "")
-                return notify_fail("Äã×°Ê²Ã´£¿\n");
+                return notify_fail("ä½ è£…ä»€ä¹ˆï¼Ÿ\n");
 
 	if( me->is_busy() )
-	return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£)\n");
+	return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚)\n");
 
         if(!objectp(tar = present(arg, me)) )
-                         return notify_fail("Äã×°Ê²Ã´£¿\n");
+                         return notify_fail("ä½ è£…ä»€ä¹ˆï¼Ÿ\n");
          if(!objectp(tar = present(arg, me)) )
-                return notify_fail("Äã×°Ê²Ã´ÉÏ°¡£¿\n");
+                return notify_fail("ä½ è£…ä»€ä¹ˆä¸Šå•Šï¼Ÿ\n");
         if(tar->is_character() && living(tar))//!tar->is_corpse())
-                return notify_fail("ÄÇ¸ö²»ÄÜ×°¶î¡£\n");
+                return notify_fail("é‚£ä¸ªä¸èƒ½è£…é¢ã€‚\n");
         if( (string)tar->query("skill_type") != "throwing")
-                return notify_fail("ÄÇ¸ö²»ÄÜ×°¶î£¬Ö»ÄÜ¸ø°µÆ÷²¹³ä£®\n");
+                return notify_fail("é‚£ä¸ªä¸èƒ½è£…é¢ï¼Œåªèƒ½ç»™æš—å™¨è¡¥å……ï¼\n");
         if( tar->query_amount() >= 100)
-                return notify_fail("ÏÖÔÚ²»ĞèÒª¸ø°µÆ÷²¹³ä£®\n");
+                return notify_fail("ç°åœ¨ä¸éœ€è¦ç»™æš—å™¨è¡¥å……ï¼\n");
 
         if( tar->query("skill_type")== "throwing")
         {
           tar->add_amount(100);
             }
-        message_vision("$N´ò¿ª°µÆ÷±¦Ï»È¡³öÁËÒ»Ğ©$nÄÃÔÚÁËÊÖÖĞ¡£\n", me, tar);
+        message_vision("$Næ‰“å¼€æš—å™¨å®åŒ£å–å‡ºäº†ä¸€äº›$næ‹¿åœ¨äº†æ‰‹ä¸­ã€‚\n", me, tar);
         me->start_busy(3);
 
         return 1;

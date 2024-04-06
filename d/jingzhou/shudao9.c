@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIY "ɽ��" NOR );
+        set("short", HIY "山顶" NOR );
         set("long", @LONG
-һ����ɽ��ɽ�����ٽ�һ���Ƕ��͵����£���ϸ������һЩʯ�ѿ�
-����ţ�����ȥ��ֻ���������к����м������ӡ�
+一座高山的山顶，临江一面是陡峭的悬崖，仔细看，有一些石窝可
+以落脚，西看去，只见云雾中有好象有几栋房子。
 LONG
         );
         set("exits", ([

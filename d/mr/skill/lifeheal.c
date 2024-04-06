@@ -1,29 +1,29 @@
-// lifeheal.c ÉñÔª¹¦
+// lifeheal.c ç¥žå…ƒåŠŸ
 
 #include <ansi.h>
 
 int exert(object me, object target)
 {
 	if( !target )
-		return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+		return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ï¼\n");
 
 	if( (int)me->query("max_neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)target->query("eff_qi") < (int)target->query("max_qi") / 5 )
 		return notify_fail( target->name() +
-			"ÒÑ¾­ÊÜÉË¹ýÖØ£¬¾­ÊÜ²»ÆðÄãµÄÕæÆøÕðµ´£¡\n");
+			"å·²ç»å—ä¼¤è¿‡é‡ï¼Œç»å—ä¸èµ·ä½ çš„çœŸæ°”éœ‡è¡ï¼\n");
 
 	message_vision(
-          HIY "$N×øÁËÏÂÀ´ÔËÆðÉñÔª¹¦£¬½«ÊÖÕÆÌùÔÚ$n±³ÐÄ£¬»º»ºµØ½«ÕæÆøÊäÈë$nÌåÄÚ......\n\n"
-		"$nÖ»¾õÒ»¹ÉÕæÆøÔ´Ô´²»¾øµÄÊäÈëÌåÄÚ£¬Ë²¼äÁ÷±éÈ«Éí¸÷´óÑ¨Î»¡£$nÍÂ³öÒ»\n\n"
-		"¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºìÈó¶àÁË£¬²¢¾õÈ«ÉíÕæÆøÎÞ±È³äÅæ£¡£¡£¡\n" NOR,
+          HIY "$Nåäº†ä¸‹æ¥è¿èµ·ç¥žå…ƒåŠŸï¼Œå°†æ‰‹æŽŒè´´åœ¨$nèƒŒå¿ƒï¼Œç¼“ç¼“åœ°å°†çœŸæ°”è¾“å…¥$nä½“å†…......\n\n"
+		"$nåªè§‰ä¸€è‚¡çœŸæ°”æºæºä¸ç»çš„è¾“å…¥ä½“å†…ï¼Œçž¬é—´æµéå…¨èº«å„å¤§ç©´ä½ã€‚$nåå‡ºä¸€\n\n"
+		"å£ç˜€è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥çº¢æ¶¦å¤šäº†ï¼Œå¹¶è§‰å…¨èº«çœŸæ°”æ— æ¯”å……æ²›ï¼ï¼ï¼\n" NOR,
 		me, target );
 
 	target->receive_curing("qi", 10 + (int)me->query_skill("force")/3 );

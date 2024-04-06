@@ -1,19 +1,19 @@
-// huoji. Ìú½³ÆÌ»ï¼Æ
+// huoji. é“åŒ é“ºä¼™è®¡
 
 inherit NPC;
 int ask_yaochu();
 
 void create()
 {
-	set_name("Ìú½³ÆÌ»ï¼Æ", ({ "tiejianpu huoji", "huoji" }));
+	set_name("é“åŒ é“ºä¼™è®¡", ({ "tiejianpu huoji", "huoji" }));
 	set("str", 20);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 18);
-	set("long", "ËûÊÇ±»¹Ù¸®Õ÷ÓÃÀ´°ïÃ¦µÄ¡£\n");
+	set("long", "ä»–æ˜¯è¢«å®˜åºœå¾ç”¨æ¥å¸®å¿™çš„ã€‚\n");
 	set("combat_exp", 250);
 	set("attitude", "friendly");
         set("inquiry", ([
-                "Ìú²ù" : (: ask_yaochu :),
+                "é“é“²" : (: ask_yaochu :),
                 "job"  : (: ask_yaochu :),
                 "tiechan":(: ask_yaochu :),
         ]));
@@ -27,30 +27,30 @@ int ask_yaochu()
 {
 	object ob;
 	ob = this_player ( ) ;
-        message_vision("»ï¼ÆÐ¦µÀ£¬Ìú²ùÒ²ÊÇÒªÇ®µÄÄØ£¡¸øÎÒ¶þÊ®Á½Òø×ÓÎÒ¾ÍÂô¸øÄã£¡\n",ob);
-	ob->set_temp ("Ìú²ù" , 1 );
+        message_vision("ä¼™è®¡ç¬‘é“ï¼Œé“é“²ä¹Ÿæ˜¯è¦é’±çš„å‘¢ï¼ç»™æˆ‘äºŒåä¸¤é“¶å­æˆ‘å°±å–ç»™ä½ ï¼\n",ob);
+	ob->set_temp ("é“é“²" , 1 );
 	return 1;
 }
 
 int accept_object(object who, object ob)
 {
 	object obj ;
-	if (!(int)who->query_temp("Ìú²ù"))
+	if (!(int)who->query_temp("é“é“²"))
 	{
-        message_vision("»ï¼Æ¶Ô$NËµ£º¸øÎÒÇ®×öÊ²Ã´£¿\n", who);
+        message_vision("ä¼™è®¡å¯¹$Nè¯´ï¼šç»™æˆ‘é’±åšä»€ä¹ˆï¼Ÿ\n", who);
 		return 0 ;
 	}
 	else
         if (present("tie chan", this_player()))
         {
-         message_vision("»ï¼Æ¶Ô$NËµ£ºÄãÉíÉÏÒÑÓÐÌú²ùÁË£¬²»ÒªÕâÃ´Ì°ÐÄ¡£\n",who);
+         message_vision("ä¼™è®¡å¯¹$Nè¯´ï¼šä½ èº«ä¸Šå·²æœ‰é“é“²äº†ï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒã€‚\n",who);
                 return 0;
         }
         else        	
 	if (ob->query("money_id") && ob->value() >= 2000)
 	{
-		message_vision("»ï¼Æ¸øÁË$NÌú²ù£¡\n" , who);
-		this_player()->delete_temp("Ìú²ù" );
+		message_vision("ä¼™è®¡ç»™äº†$Né“é“²ï¼\n" , who);
+		this_player()->delete_temp("é“é“²" );
 		obj=new("/clone/box/tiechan");
 		obj->move(this_player());
 

@@ -1,12 +1,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Î÷½Ö");
+        set("short", "è¥¿è¡—");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ¿íÀ«µÄÇàÊ¯°å½ÖµÀ£¬Ïò¶«Î÷Á½Í·ÑÓÉì¡£¶«±ßµÄ¾ÍÊÇÌÁ¹Á³Ç×î·±»ª
-µÄ³ÇÖÐÐÄÁË¡£Î÷±ßÓÐ²»ÉÙÍâÏçµÄ¹ý¿Í¡£±±±ßÊÇÌÁ¹Á´óÒ©·¿£¬°ëÔÂÐÎµÄ´óÃÅÉÏ·½
-Ð´×Å¡°ÃîÊÖ»Ø´º¡±ËÄ¸öÌÌ½ð´ó×Ö£¬ÀïÃæ³öÀ´Æ®³öÅ¨ÖØµÄÒ©Î¶¡£ÄÏ±ßÊÇ±¾³ÇÓÐÃû
-µÄÏ²·¢¿ÍÕ»¡£
+è¿™æ˜¯ä¸€æ¡å®½é˜”çš„é’çŸ³æ¿è¡—é“ï¼Œå‘ä¸œè¥¿ä¸¤å¤´å»¶ä¼¸ã€‚ä¸œè¾¹çš„å°±æ˜¯å¡˜æ²½åŸŽæœ€ç¹åŽ
+çš„åŸŽä¸­å¿ƒäº†ã€‚è¥¿è¾¹æœ‰ä¸å°‘å¤–ä¹¡çš„è¿‡å®¢ã€‚åŒ—è¾¹æ˜¯å¡˜æ²½å¤§è¯æˆ¿ï¼ŒåŠæœˆå½¢çš„å¤§é—¨ä¸Šæ–¹
+å†™ç€â€œå¦™æ‰‹å›žæ˜¥â€å››ä¸ªçƒ«é‡‘å¤§å­—ï¼Œé‡Œé¢å‡ºæ¥é£˜å‡ºæµ“é‡çš„è¯å‘³ã€‚å—è¾¹æ˜¯æœ¬åŸŽæœ‰å
+çš„å–œå‘å®¢æ ˆã€‚
 LONG );
         set("exits", ([
                 "north" : __DIR__"yaofang",
@@ -19,6 +19,6 @@ LONG );
 //                CLASS_D("gaibang/qigai") : 1,
         ]));
 
-	set("outdoors", "ÌÁ¹Á");
+	set("outdoors", "å¡˜æ²½");
 	setup();
 }

@@ -6,11 +6,11 @@ int do_xi(string arg);
 
 void create ()
 {
-  set ("short", "³ø·¿");
+  set ("short", "åŽ¨æˆ¿");
   set ("long", @LONG
-Õâ¶ùÊÇÆ½°²¿ÍÕ»µÄ³ø·¿£¬¸É¾»ÕûÆë£¬Ç½±ßµÄ¹ñ×ÓÀï·Å×ÅÕûÕûÆëÆëµÄ²Í¾ß¡£
-³ø·¿µÄÒ»½ÇÓÐÒ»¸öÐ¡Ð¡µÄË®³Ø£¬ÀïÃæÊÇÇåÇåµÄË®£¬Äã¿ÉÒÔÔÚÕâ¶ùÏ´£¨xi£©
-Ð©Ê²Ã´¡£
+è¿™å„¿æ˜¯å¹³å®‰å®¢æ ˆçš„åŽ¨æˆ¿ï¼Œå¹²å‡€æ•´é½ï¼Œå¢™è¾¹çš„æŸœå­é‡Œæ”¾ç€æ•´æ•´é½é½çš„é¤å…·ã€‚
+åŽ¨æˆ¿çš„ä¸€è§’æœ‰ä¸€ä¸ªå°å°çš„æ°´æ± ï¼Œé‡Œé¢æ˜¯æ¸…æ¸…çš„æ°´ï¼Œä½ å¯ä»¥åœ¨è¿™å„¿æ´—ï¼ˆxiï¼‰
+äº›ä»€ä¹ˆã€‚
 LONG);
 
   set("no_fight", 1);
@@ -32,28 +32,28 @@ int do_xi(string arg)
         object me=this_player(); 
         object ob,ob1;
         if (!me->query_temp("gongzuo/xipanzi"))
-           return notify_fail("Äã»¹ÊÇÏÈÈ¥¸øµêÐ¡¶þ´ò¸öÕÐºô°É¡£\n");
+           return notify_fail("ä½ è¿˜æ˜¯å…ˆåŽ»ç»™åº—å°äºŒæ‰“ä¸ªæ‹›å‘¼å§ã€‚\n");
 
-        if (!arg || arg != "ÔàÅÌ×Ó")
-           return notify_fail("ÄãÒªÏ´Ê²Ã´£¿\n");
+        if (!arg || arg != "è„ç›˜å­")
+           return notify_fail("ä½ è¦æ´—ä»€ä¹ˆï¼Ÿ\n");
 
         if (!(ob = present("zhangpanzi", this_player())))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÔàÅÌ×Ó£¬ÔõÃ´ÄÜÏ´ÄØ£¿¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è„ç›˜å­ï¼Œæ€Žä¹ˆèƒ½æ´—å‘¢ï¼Ÿã€‚\n");
 
         if ( (int)me->query("jing")<20)
-           return notify_fail("ÄãÌ«ÀÛÁË£¬ÐªÏ¢ÏÂ°É¡£\n");
+           return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ­‡æ¯ä¸‹å§ã€‚\n");
 
         if (me->query_temp("gongzuo/xipanzi")==6)
-           return notify_fail("ÅÌ×ÓÏ´ºÃÁË£¡ËÍ»ØµêÐ¡¶þÄÇ¶ù°É¡£\n");
+           return notify_fail("ç›˜å­æ´—å¥½äº†ï¼é€å›žåº—å°äºŒé‚£å„¿å§ã€‚\n");
    
-  message_vision("$N´Ó³Ø×ÓÀïÉ×ÆðË®£¬¿ªÊ¼ÂýÂýµÄÏ´ÅÌ×Ó¡£\n",me);
+  message_vision("$Nä»Žæ± å­é‡Œå‹ºèµ·æ°´ï¼Œå¼€å§‹æ…¢æ…¢çš„æ´—ç›˜å­ã€‚\n",me);
       me->add("jing",-(10+random(10)));
       me->add_temp("gongzuo/xipanzi",1);
   if ( (int)me->query_temp("gongzuo/xipanzi")==6)
  {
-  message_vision(CYN"$NÏ´ÁËÁ¼¾Ã£¬ÖÕÓÚ½«ÅÌ×ÓÈ«²¿Ï´ºÃÁË¡£\n"NOR,me);
-        ob->set_name( "ÅÌ×Ó" , ({"panzi"}));
-        ob->set("long","Ò»µþ¸ÕÏ´ºÃµÄÅÌ×Ó¡£\n");
+  message_vision(CYN"$Næ´—äº†è‰¯ä¹…ï¼Œç»ˆäºŽå°†ç›˜å­å…¨éƒ¨æ´—å¥½äº†ã€‚\n"NOR,me);
+        ob->set_name( "ç›˜å­" , ({"panzi"}));
+        ob->set("long","ä¸€å åˆšæ´—å¥½çš„ç›˜å­ã€‚\n");
 //      destruct(ob);
 //      ob1=new("/d/pingan/npc/obj/panzi");
 //      ob1->move(me);

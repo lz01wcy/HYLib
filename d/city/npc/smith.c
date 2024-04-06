@@ -5,13 +5,13 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Ìú½³", ({ "tiejiang", "smith" }));
-	set("title", "Ìú½³ÆÌÀÏ°å");
+        set_name("é“åŒ ", ({ "tiejiang", "smith" }));
+	set("title", "é“åŒ é“ºè€æ¿");
 	set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 33);
-        set("long", "Ìú½³ÕıÓÃÌúÇ¯¼Ğ×¡Ò»¿éºìÈÈµÄÌú¿é·Å½øÂ¯ÖĞ¡£\n");
+        set("long", "é“åŒ æ­£ç”¨é“é’³å¤¹ä½ä¸€å—çº¢çƒ­çš„é“å—æ”¾è¿›ç‚‰ä¸­ã€‚\n");
 
         set("combat_exp", 400);
 	set("attitude", "friendly");
@@ -51,8 +51,8 @@ void compelete_trade(object who, string what)
         if( what=="changjian" )  ob = new(__DIR__"changjian");
         ob->move(who);
         if( what=="hammer" )
-message_vision("$N½»¸ø$nÒ»°ÑÉòµéµéµÄ´òÌúÓÃÌú´¸¡£\n", this_object(), who);
+message_vision("$Näº¤ç»™$nä¸€æŠŠæ²ˆç”¸ç”¸çš„æ‰“é“ç”¨é“é”¤ã€‚\n", this_object(), who);
         if( what=="changjian" )
-message_vision("$N½»¸ø$nÒ»°ÑÇà¹âÉÁÉÁµÄ³¤½£¡£\n", this_object(), who);
+message_vision("$Näº¤ç»™$nä¸€æŠŠé’å…‰é—ªé—ªçš„é•¿å‰‘ã€‚\n", this_object(), who);
 }
 */ 

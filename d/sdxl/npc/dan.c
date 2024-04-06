@@ -1,4 +1,4 @@
-// /u/poq/sdxl/obj/gshedan.c ¹ÖÉßÉßµ¨
+// /u/poq/sdxl/obj/gshedan.c æ€ªè›‡è›‡èƒ†
 // by poq@jyqx 97/7
 // amend dubei
 
@@ -14,13 +14,13 @@ void init()
 
 void create()
 {
-    set_name("¶¾òşµ¨", ({"she dan", "dan"}));
+    set_name("æ¯’èŸ’èƒ†", ({"she dan", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-        set("unit", "Ã¶");
+        set("unit", "æš");
             set("unique", 1);
-        set("long", "ÕâÊÇÒ»Ã¶Éî×ÏÉ«µÄÔ²ÄÒ£¬ÉõÊÇĞÈ³ô¡£\n");
+        set("long", "è¿™æ˜¯ä¸€æšæ·±ç´«è‰²çš„åœ†å›Šï¼Œç”šæ˜¯è…¥è‡­ã€‚\n");
 		set("value", 10000);
 	}
 	setup();
@@ -31,12 +31,12 @@ int do_eat(string arg)
     object me = this_player();
 
     if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
        me->add("max_neili", random(10));
        me->add("neili",900);
 
-    message_vision("$N³ÔÏÂÒ»Ã¶¹ÖÉßÉßµ¨£¬Ö»¾õµÃÕâÖ­ÒºĞÈ¼«¿à¼«£¬ÄÑ³ÔÎŞ±È¡£!\n", me);
+    message_vision("$Nåƒä¸‹ä¸€æšæ€ªè›‡è›‡èƒ†ï¼Œåªè§‰å¾—è¿™æ±æ¶²è…¥æè‹¦æï¼Œéš¾åƒæ— æ¯”ã€‚!\n", me);
     destruct(this_object());
     return 1;
 }

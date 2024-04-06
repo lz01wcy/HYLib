@@ -6,11 +6,11 @@ string look_ban();
 
 void create ()
 {
-	set ("short", "·ÉÐÐÆåÊÒ");
+	set ("short", "é£žè¡Œæ£‹å®¤");
 	set ("long", @LONG
-ÕâÀïÊÇ·ÉÐÐÆåÊÒ£¬ÊÒÖÐÕýÖÐÊÇÒ»¸±µñ»¨ºìÄ¾´óÆåÅÌ£¬ÉÏÊé¡°°¿Ïè²Ô
-ñ·¡±ËÄ×Ö£¬ºáÊú°Ú×ÅÒ»Ð©Õ½»ú¡£Ç½ÉÏ¶¤ÁËÒ»¿éÐ¡Ä¾°æ (ban)£¬ÓÃºì×ÖÂÌ
-Ïß¹´»­ÁËÓÎÏ·Íæ·¨¡£
+è¿™é‡Œæ˜¯é£žè¡Œæ£‹å®¤ï¼Œå®¤ä¸­æ­£ä¸­æ˜¯ä¸€å‰¯é›•èŠ±çº¢æœ¨å¤§æ£‹ç›˜ï¼Œä¸Šä¹¦â€œç¿±ç¿”è‹
+ç©¹â€å››å­—ï¼Œæ¨ªç«–æ‘†ç€ä¸€äº›æˆ˜æœºã€‚å¢™ä¸Šé’‰äº†ä¸€å—å°æœ¨ç‰ˆ (ban)ï¼Œç”¨çº¢å­—ç»¿
+çº¿å‹¾ç”»äº†æ¸¸æˆçŽ©æ³•ã€‚
 LONG);
 
 	set("no_fight",  1);
@@ -32,20 +32,20 @@ LONG);
 string look_ban()
 {
         return
-"			·ÉÐÐÆå
+"			é£žè¡Œæ£‹
 
-¡ª¡ª[¿ªÊ¼ÓÎÏ·]¡ª¡ª¡ª¡ª¡ª
-¼ÓÈëÓÎÏ·£ºjoin¡¡¡¡¡¡¡¡¡¡
-¿ªÊ¼ÓÎÏ·£ºstart
-ÖØÖÃÓÎÏ·£ºreset qi
+â€•â€•[å¼€å§‹æ¸¸æˆ]â€•â€•â€•â€•â€•
+åŠ å…¥æ¸¸æˆï¼šjoinã€€ã€€ã€€ã€€ã€€
+å¼€å§‹æ¸¸æˆï¼šstart
+é‡ç½®æ¸¸æˆï¼šreset qi
 
-¡ª¡ª[ÓÎÏ·ÃüÁî]¡ª¡ª¡ª¡ª¡ª
-¡¡Ò¡÷»×Ó£ºtoss
-²é¿´Çé¿ö£ºview
-ÒÆ¶¯Æå×Ó£ºmove a|b|c|d
-´ß´ÙÍæ¼Ò£ºnext
+â€•â€•[æ¸¸æˆå‘½ä»¤]â€•â€•â€•â€•â€•
+ã€€æ‘‡éª°å­ï¼štoss
+æŸ¥çœ‹æƒ…å†µï¼šview
+ç§»åŠ¨æ£‹å­ï¼šmove a|b|c|d
+å‚¬ä¿ƒçŽ©å®¶ï¼šnext
 
-¡ª¡ª[ÓÎÏ·¹æÔò]¡ª¡ª¡ª¡ª¡ª
-    ·ÉÐÐÆå£¬´ó¼Ò´òÐ¡¾Í¶¼Íæ¹ý£¬¶ª÷»×Ó¾ÍÊÇ£¬¶ª³öÁùÀ´²ÅÄÜÆð·É£¬±ð
-µÄÒ²²»ÓÃ¶àËµÁË°É£¿\n";
+â€•â€•[æ¸¸æˆè§„åˆ™]â€•â€•â€•â€•â€•
+    é£žè¡Œæ£‹ï¼Œå¤§å®¶æ‰“å°å°±éƒ½çŽ©è¿‡ï¼Œä¸¢éª°å­å°±æ˜¯ï¼Œä¸¢å‡ºå…­æ¥æ‰èƒ½èµ·é£žï¼Œåˆ«
+çš„ä¹Ÿä¸ç”¨å¤šè¯´äº†å§ï¼Ÿ\n";
 }

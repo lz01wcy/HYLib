@@ -1,4 +1,4 @@
-// Room: /d/city/xiaozhou2.c »ªÉ½Ğ¡ÖÛ
+// Room: /d/city/xiaozhou2.c åå±±å°èˆŸ
 // Date: netkill /98/8/18
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ğ¡ÖÛ");
+	set("short", "å°èˆŸ");
 	set("long", @LONG
-Ò»Ò¶Ğ¡ÖÛ£¬×î¶àÒ²¾ÍÄÜÔØÁ½Èı¸öÈË¡£Ò»ÃûÄêÇáµÄô¹¹«ÊÖ³Ö
-³¤Öñ¸İ£¬»º»ºµÄ¼İ×Å´¬¡£
+ä¸€å¶å°èˆŸï¼Œæœ€å¤šä¹Ÿå°±èƒ½è½½ä¸¤ä¸‰ä¸ªäººã€‚ä¸€åå¹´è½»çš„è‰„å…¬æ‰‹æŒ
+é•¿ç«¹ç¯™ï¼Œç¼“ç¼“çš„é©¾ç€èˆ¹ã€‚
 LONG
 	);
 
@@ -20,7 +20,7 @@ void init()
 
 {	object me=this_player();
 	me->delete_temp("ok");me->delete_temp("ok1");
-	tell_object(me, CYN "\n\n\n´¬ÔÚ´óºÓÉÏÒ»Â·»º»º¶øĞĞ¡£Á½°¶µÄ·ç¾°¾¡ÊÕÑÛµ×...\n\n\n" NOR ) ;
+	tell_object(me, CYN "\n\n\nèˆ¹åœ¨å¤§æ²³ä¸Šä¸€è·¯ç¼“ç¼“è€Œè¡Œã€‚ä¸¤å²¸çš„é£æ™¯å°½æ”¶çœ¼åº•...\n\n\n" NOR ) ;
 	call_out("goto",10, me);
 }
 void goto(object me)
@@ -30,10 +30,10 @@ void goto(object me)
 	find_object(__DIR__"xiaozhou2")->delete("yell_trigger");
 	if (i<20) {
 		me->move (__DIR__"yunhe3");
-		message("vision","Ò»Ö»Ğ¡´¬Ê»ÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision","ä¸€åªå°èˆ¹é©¶äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 		}
 	if (i>30) {
 		me->move (__DIR__"yunhe5");
-		message("vision","Ò»Ö»Ğ¡´¬Ê»ÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision","ä¸€åªå°èˆ¹é©¶äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 		}
 	}

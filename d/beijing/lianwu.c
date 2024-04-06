@@ -1,14 +1,14 @@
-// lianwu.c Á·Îä·¿
+// lianwu.c ç»ƒæ­¦æˆ¿
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Á·Îä·¿");
+        set("short", "ç»ƒæ­¦æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÌìµØ»áµÄÁ·Îä·¿£¬±ÚÉÏ¹Ò×ÅÒ»Ð©ÐÜÆ¤¡¢»¢Æ¤¡¢»¨Ò¶±ªÆ¤£¬µØ
-ÏÂÇà×©µØÒÑ¾­ÆÆËðµÃºÜÁãËéÁË¡£Ç½½ÇÒÐ×ÅÒ»Ð©±øÆ÷¡£¼¸¸öÌìµØ»á»áÖÚÕý
-ÅÌÏ¥´ò×ø¡£
+è¿™é‡Œæ˜¯å¤©åœ°ä¼šçš„ç»ƒæ­¦æˆ¿ï¼Œå£ä¸ŠæŒ‚ç€ä¸€äº›ç†Šçš®ã€è™Žçš®ã€èŠ±å¶è±¹çš®ï¼Œåœ°
+ä¸‹é’ç –åœ°å·²ç»ç ´æŸå¾—å¾ˆé›¶ç¢Žäº†ã€‚å¢™è§’å€šç€ä¸€äº›å…µå™¨ã€‚å‡ ä¸ªå¤©åœ°ä¼šä¼šä¼—æ­£
+ç›˜è†æ‰“åã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"dating",

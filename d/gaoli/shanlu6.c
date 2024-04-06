@@ -1,14 +1,14 @@
 // /d/gaoli/xuanwumen
-// Room in ¸ßÀö
+// Room in é«˜ä¸½
 // rich 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "É½Â·");
+	set("short", "å±±è·¯");
 	set("long", @LONG
-Äã×ßÔÚÒ»ÌõÉ½Â·ÉÏ¡£ÄÏ±ß¾ÍÊÇ¸ßÀöµÄÓñÁúÃÅÁË¡£ÓÐºÜ¶àÐÐÈË´ÓÄãµÄ
-ÉíÅÔ×ß¹ý£¬Ëµ×ÅÄãÌý²»¶®µÄ¸ßÀöÓï¡£¿´À´¸ßÀöµÄ·±»ªÒªÂÔÊ¤¹ýÏÖÔÚÕ½ÂÒ
-µÄÖÐÔ­¡£
+ä½ èµ°åœ¨ä¸€æ¡å±±è·¯ä¸Šã€‚å—è¾¹å°±æ˜¯é«˜ä¸½çš„çŽ‰é¾™é—¨äº†ã€‚æœ‰å¾ˆå¤šè¡Œäººä»Žä½ çš„
+èº«æ—èµ°è¿‡ï¼Œè¯´ç€ä½ å¬ä¸æ‡‚çš„é«˜ä¸½è¯­ã€‚çœ‹æ¥é«˜ä¸½çš„ç¹åŽè¦ç•¥èƒœè¿‡çŽ°åœ¨æˆ˜ä¹±
+çš„ä¸­åŽŸã€‚
 LONG
 	);
 set("outdoors", "/d/gaoli");

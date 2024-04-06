@@ -1,16 +1,16 @@
-// music yangzhou' °ü×Ó
+// music yangzhou' åŒ…å­
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
-{       string *name= ({"¿¾Ñò¸á", "ºìÉÕÖâ×Ó", "ÈıÏÊ»âÈâ", "ÇåÕô·Ê¼¦", "Ñ¬Óã´®"});
+{       string *name= ({"çƒ¤ç¾Šç¾”", "çº¢çƒ§è‚˜å­", "ä¸‰é²œçƒ©è‚‰", "æ¸…è’¸è‚¥é¸¡", "ç†é±¼ä¸²"});
         set_name( name[random(5)],({"food"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Íë");
+		set("unit", "ç¢—");
 		set("value", 50);
 		set("food_remaining", 10);
 		set("food_supply", 40);

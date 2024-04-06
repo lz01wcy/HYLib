@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("»ğ¹¤Í·ÍÓ", ({ "huogong toutuo", "huogong", "toutuo" }));
-	set("long", "ÕâÊÇÒ»¸ö»ìÉí±»Ñ¬µÃÆáºÚµÄ¸ºÔğÅü²ñ£¬Éú»ğµÄ»ğ¹¤Í·ÍÓ¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("ç«å·¥å¤´é™€", ({ "huogong toutuo", "huogong", "toutuo" }));
+	set("long", "è¿™æ˜¯ä¸€ä¸ªæ··èº«è¢«ç†å¾—æ¼†é»‘çš„è´Ÿè´£åŠˆæŸ´ï¼Œç”Ÿç«çš„ç«å·¥å¤´é™€ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 	set("age", 44);
@@ -28,7 +28,7 @@ void create()
 	set_skill("dodge", 12);
 	set_skill("unarmed", 12);
 	set_skill("parry", 12);
-        create_family("ÄÏÉÙÁÖÅÉ", 22, "µÜ×Ó");
+        create_family("å—å°‘æ—æ´¾", 22, "å¼Ÿå­");
 	setup();
 }
 

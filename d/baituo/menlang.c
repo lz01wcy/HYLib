@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short","门廊");
+  set("short","闂ㄥ粖");
   set("long",
-      "这是个门廊，门廊的飞檐上挂着一串串的小铜铃，\n"
-  "在清风中发出清脆动听的铃声。\n"
+      "杩欐槸涓棬寤婏紝闂ㄥ粖鐨勯妾愪笂鎸傜潃涓�涓蹭覆鐨勫皬閾滈搩锛孿n"
+  "鍦ㄦ竻椋庝腑鍙戝嚭娓呰剢鍔ㄥ惉鐨勯搩澹般�俓n"
       );
   set("exits",([
       "north" : __DIR__"huayuan",

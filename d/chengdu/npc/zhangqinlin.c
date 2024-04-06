@@ -1,4 +1,4 @@
-// zhangqinlin.c уегщаж 
+// zhangqinlin.c Е╪═Г╕╫Ф·≈ 
 // Last Modifyed by Winder on Dec. 24 2001
 
 inherit NPC;
@@ -6,13 +6,13 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("уегщаж", ({ "zhangqinlin", "zhang", "waiter" }) );
-	set("gender", "дппт" );
+	set_name("Е╪═Г╕╫Ф·≈", ({ "zhangqinlin", "zhang", "waiter" }) );
+	set("gender", "Г■╥Ф─╖" );
 	set("age", 22);
-	set("long", "сисзиЗрБ╡╩╢С╨цё╛кЫрткШаЁиор╡ц╩й╡ц╢п╕хщ║ё\n");
+	set("long", "Г■╠Д╨▌Г■÷Ф└▐Д╦█Е╓╖Е╔╫О╪▄Ф┴─Д╩╔Д╩√Х└╦Д╦┼Д╧÷Ф╡║Д╩─Д╧┬Г╛▒Е╝╧Ц─┌\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "╟╒аж");
+	set("rank_info/respect", "И≤©Ф·≈");
 	set("vendor_goods", ({
 		__DIR__"obj/zongzi",
 	}));
@@ -31,7 +31,7 @@ void init()
 	if( interactive(ob) && !is_fighting() )
 	{
 		if ( (myfam = ob->query("family")) &&
-			myfam["family_name"] == "ь╓╟О" &&
+			myfam["family_name"] == "Д╦░Е╦╝" &&
 			ob->query_skill("begging",1) > 10 )
 		{
 			remove_call_out("saying");
@@ -53,7 +53,7 @@ void saying(object ob)
 {
 	if (!ob || environment(ob) != environment()) return;
 
-	say("\nж╩лЩ╟╒аж╢С╨хр╩иЫё╨дЦуБЁТр╙╥╧╣д╫Ью╢╦ий╡ц╢ё©╦Ьнр╧ЖЁЖх╔ё║\n\n");
+	say("\nЕ▐╙Е░╛И≤©Ф·≈Е╓╖Е√²Д╦─Её╟О╪ Д╫═Х©≥Х┤╜Х╕│И╔╜Г └Х©⌡Ф²╔Е╧╡Д╩─Д╧┬О╪÷Г╩≥Ф┬▒Ф╩ Е┤╨Е▌╩О╪│\n\n");
 	remove_call_out("kicking");
 	call_out("kicking", 1, ob);
 }
@@ -63,5 +63,5 @@ void kicking(object ob)
 	if (!ob || environment(ob) != environment()) return;
 
 	ob->move("/d/chengdu/xiaojie1");
-	message("vision", "ж╩лЩ║╟ф╧║╠╣ьр╩иЫё╛" + ob->query("name") + "╠╩хк╢сТувс╣ЙюОр╩╫елъакЁЖю╢ё╛юг╠╥мРв╢╣длс©╙ак║ё\n", environment(ob), ob);
+	message("vision", "Е▐╙Е░╛Б─°Д╧▓Б─²Е°╟Д╦─Её╟О╪▄" + ob->query("name") + "Х╒╚Д╨╨Д╩▌Г╡╫Е╜░Е╨≈И┤▄Д╦─Х└ Х╦╒Д╨├Е┤╨Ф²╔О╪▄Г▀╪Г▀┬Д╦┤Г┼╤Г └И─┐Е╪─Д╨├Ц─┌\n", environment(ob), ob);
 }

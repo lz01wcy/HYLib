@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡É³ÃÖ", ({ "xiao shami", "xiao", "shami"}));
-	set("long", "ËûÊÇÒ»Î»Î´Í¨ÊÀ¹ÊµÄÉÙÄêºÍÉĞ£¬Á³ÉÏ¹Ò×ÅÌìÕæµÄÖÉĞ¦¡£\n");
+	set_name("å°æ²™å¼¥", ({ "xiao shami", "xiao", "shami"}));
+	set("long", "ä»–æ˜¯ä¸€ä½æœªé€šä¸–æ•…çš„å°‘å¹´å’Œå°šï¼Œè„¸ä¸ŠæŒ‚ç€å¤©çœŸçš„ç¨šç¬‘ã€‚\n");
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
@@ -29,6 +29,6 @@ void create()
 	set_skill("unarmed", 9);
 	set_skill("parry", 9);
 
-        create_family("ÄÏÉÙÁÖÅÉ", 23, "µÜ×Ó");
+        create_family("å—å°‘æ—æ´¾", 23, "å¼Ÿå­");
 	setup();
 }

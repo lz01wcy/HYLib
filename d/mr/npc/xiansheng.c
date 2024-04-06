@@ -1,11 +1,11 @@
-// xiansheng.c ½ÌÊéÏÈÉú
+// xiansheng.c æ•™ä¹¦å…ˆç”Ÿ
 inherit NPC;
 
 void create()
 {
-	set_name("½ÌÊéÏÈÉú", ({ "teacher" , "xiansheng" }));
-	set("long", "Ëû¾ÍÊÇÄ½Èİ¼ÒÇëÀ´µÄ½ÌÊéÏÈÉú¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ•™ä¹¦å…ˆç”Ÿ", ({ "teacher" , "xiansheng" }));
+	set("long", "ä»–å°±æ˜¯æ…•å®¹å®¶è¯·æ¥çš„æ•™ä¹¦å…ˆç”Ÿã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 
 	set_skill("literate", 300);
@@ -30,18 +30,18 @@ int recognize_apprentice(object ob)
 	if (level>59) money=500;
 	if (level>89) money=1000;
 	if (level>119) money=5000;
-	       if (!(int)ob->query_temp("mark/ÀÏÊ¦"))
+	       if (!(int)ob->query_temp("mark/è€å¸ˆ"))
                return 0;
-        ob->add_temp("mark/ÀÏÊ¦", -1);
+        ob->add_temp("mark/è€å¸ˆ", -1);
         return 1;
-	/*ob->delete_temp("mark/Öì");
+	/*ob->delete_temp("mark/æœ±");
 	switch(MONEY_D->player_pay(ob, money)) {
 		case 0:
 		case 2:
-			write("ÄãÏÖÔÚµÄÑ§·ÑÊÇÃ¿´Î" + MONEY_D->money_str(money) + "£¬Çë±¸ºÃÁãÇ®¡£\n");
+			write("ä½ ç°åœ¨çš„å­¦è´¹æ˜¯æ¯æ¬¡" + MONEY_D->money_str(money) + "ï¼Œè¯·å¤‡å¥½é›¶é’±ã€‚\n");
 			return 1;
 	}
-	ob->set_temp("mark/Öì", 1);
+	ob->set_temp("mark/æœ±", 1);
 	return 1;*/
 }
 int accept_object(object who, object ob)
@@ -55,15 +55,15 @@ int accept_object(object who, object ob)
 
 	if (ob->query("money_id")) {
 		if (ob->value() >= money) {
-			if ((int)who->query_temp("mark/ÀÏÊ¦") < 1)
-				who->set_temp("mark/ÀÏÊ¦", 1);
-message_vision("Ë½ÛÓÏÈÉúÍ¬ÒâÖ¸µã$NÒ»Ğ©¶ÁÊéĞ´×ÖµÄÎÊÌâ¡£\n", who);
-			who->add_temp("mark/ÀÏÊ¦", ob->value() / money);
+			if ((int)who->query_temp("mark/è€å¸ˆ") < 1)
+				who->set_temp("mark/è€å¸ˆ", 1);
+message_vision("ç§å¡¾å…ˆç”ŸåŒæ„æŒ‡ç‚¹$Nä¸€äº›è¯»ä¹¦å†™å­—çš„é—®é¢˜ã€‚\n", who);
+			who->add_temp("mark/è€å¸ˆ", ob->value() / money);
 			if( who->query_skill("literate", 1) > 121){
-        tell_object(who,"ÄãÏÖÔÚÒÑÓĞÒ»¶¨µÄÎÄ»¯ÖªÊ¶,Ò²¿ÉÒÔ×Ô¼º¶ÁÊéÉîÔìÁË¡£\n");
+        tell_object(who,"ä½ ç°åœ¨å·²æœ‰ä¸€å®šçš„æ–‡åŒ–çŸ¥è¯†,ä¹Ÿå¯ä»¥è‡ªå·±è¯»ä¹¦æ·±é€ äº†ã€‚\n");
         return 1;
 		}
-		return notify_fail("ÄãÏÖÔÚµÄÑ§·ÑÊÇÃ¿´Î" + MONEY_D->money_str(money) + "¡£\n");
+		return notify_fail("ä½ ç°åœ¨çš„å­¦è´¹æ˜¯æ¯æ¬¡" + MONEY_D->money_str(money) + "ã€‚\n");
 	}
 		return 1;}
 return 1;

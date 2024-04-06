@@ -5,13 +5,13 @@ inherit CLOTH;
 #include <ansi.h>
 void create()
 {
-    set_name(HIR"½şÂúÑª×ÕµÄ½õ·ş"NOR, ({ "cloth","jin cloth" }) );
+    set_name(HIR"æµ¸æ»¡è¡€æ¸çš„é”¦æœ"NOR, ({ "cloth","jin cloth" }) );
     set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-        set("long", "ÕâÊÇ¼ş¸ß¹óµÄ½õ·şµ«Èç½ñÒÑ¾­ÂúÊÇÑª¼£¡£¡£¡£\n");
+                set("unit", "ä»¶");
+        set("long", "è¿™æ˜¯ä»¶é«˜è´µçš„é”¦æœä½†å¦‚ä»Šå·²ç»æ»¡æ˜¯è¡€è¿¹ã€‚ã€‚ã€‚\n");
                 set("value", 5000);
                 set("material", "cloth");
                 set("armor_prop/armor", 2);

@@ -4,11 +4,11 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("ÂôÆÏÌÑ¸ÉµÄ", ({ "putao seller" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("å–è‘¡è„å¹²çš„", ({ "putao seller" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 30);
         set("long",
-                "Ò»¸öÆÕÆÕÍ¨Í¨µÄ±¾µØÈË£¬Ã»ÓĞÒ»µãÆğÑÛµÄµØ·½¡£\n");
+                "ä¸€ä¸ªæ™®æ™®é€šé€šçš„æœ¬åœ°äººï¼Œæ²¡æœ‰ä¸€ç‚¹èµ·çœ¼çš„åœ°æ–¹ã€‚\n");
         set("combat_exp", 2000);
         set("attitude", "friendly");
         set("vendor_goods", ({
@@ -30,5 +30,5 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-                        say( "ÂôÆÏÌÑ¸ÉµÄ¸ß½ĞµÀ£ºÎŞºËÆÏÌÑ¸É£¬²»ºÃ³Ô²»ÒªÇ®ßÏ£®£®£®\n");
+                        say( "å–è‘¡è„å¹²çš„é«˜å«é“ï¼šæ— æ ¸è‘¡è„å¹²ï¼Œä¸å¥½åƒä¸è¦é’±å‘¦ï¼ï¼ï¼\n");
 } 

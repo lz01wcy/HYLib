@@ -3,11 +3,11 @@ inherit ROOM;
 #include <ansi.h>  
 void create()
 {
-        set("short", "ÆÙ²¼");
+        set("short", "ç€‘å¸ƒ");
         set("long", @LONG
-Äã´©¹ıÊ÷ÁÖ¾ÓÈ»À´µ½ÁËÆÙ²¼±ß£¬Õğ¶úÓûÁûµÄË®Éù´Ó¸ü¸ßµÄÉ½ÉÏÅØÏø¶øÏÂ£¬
-Ò»ÌõÌõÒøÁ·»÷´ò×ÅÑÒÊ¯£¬½¦Æğ´®´®Ë®Öé£¬ÔÚÑô¹âµÄÕÕÉäÏÂ£¬·ÖÍâÎüÒıÈË¡£
-¾İËµ½£ĞÄ³£ÔÚÕâÀïÁ·½£¡£
+ä½ ç©¿è¿‡æ ‘æ—å±…ç„¶æ¥åˆ°äº†ç€‘å¸ƒè¾¹ï¼Œéœ‡è€³æ¬²è‹çš„æ°´å£°ä»æ›´é«˜çš„å±±ä¸Šå’†å“®è€Œä¸‹ï¼Œ
+ä¸€æ¡æ¡é“¶ç»ƒå‡»æ‰“ç€å²©çŸ³ï¼Œæº…èµ·ä¸²ä¸²æ°´ç ï¼Œåœ¨é˜³å…‰çš„ç…§å°„ä¸‹ï¼Œåˆ†å¤–å¸å¼•äººã€‚
+æ®è¯´å‰‘å¿ƒå¸¸åœ¨è¿™é‡Œç»ƒå‰‘ã€‚
 LONG);
         set("exits", ([
 		"west" : __DIR__"shulin2",
@@ -29,17 +29,17 @@ int do_jump(string arg)
 
           me=this_player();
           if (!arg || arg!="pubu")
-              return notify_fail("ÄãÒªÌøµ½ÄÄÀïÈ¥£¿\n");
-          message_vision("Ö»¼û$NÊ©Õ¹ÎåĞĞ¶İÖĞµÄË®¶İ£¬ÓÌÈçÒ»µÀÒøÁ´´©ÆÙ¶ø¹ı£¡\n",me);
+              return notify_fail("ä½ è¦è·³åˆ°å“ªé‡Œå»ï¼Ÿ\n");
+          message_vision("åªè§$Næ–½å±•äº”è¡Œéä¸­çš„æ°´éï¼ŒçŠ¹å¦‚ä¸€é“é“¶é“¾ç©¿ç€‘è€Œè¿‡ï¼\n",me);
           if ((me->query_skill("dodge",1)<101) || (me->query_skill("wuxing-dun",1)<101))
              {
-          message_vision("Ö»¼û$NÊ©Õ¹Çá¹¦¿ìÒª·É¹ıÈ¥Ê±£¬±»ÆÙ²¼Ç¿´óµÄ³å»÷Á¦´òÁËÏÂÈ¥£¡\n",me);
-                 message_vision("$NÃæÉ«²Ô°×Ê§Éù¼â½ĞÆğÀ´.............................\n",me);
+          message_vision("åªè§$Næ–½å±•è½»åŠŸå¿«è¦é£è¿‡å»æ—¶ï¼Œè¢«ç€‘å¸ƒå¼ºå¤§çš„å†²å‡»åŠ›æ‰“äº†ä¸‹å»ï¼\n",me);
+                 message_vision("$Né¢è‰²è‹ç™½å¤±å£°å°–å«èµ·æ¥.............................\n",me);
           this_player()->unconcious();
           return 0;
         }
           me->move(__DIR__"pingtai");
-          message_vision("Ö»¼û$N½ÅÒ»µãµØ£¬ÌøÁË½øÀ´£¡\n",me);
+          message_vision("åªè§$Nè„šä¸€ç‚¹åœ°ï¼Œè·³äº†è¿›æ¥ï¼\n",me);
           return 1;
 }
 
@@ -49,23 +49,23 @@ int do_enter ( string arg )
     string dir;
     if( !arg || arg !="midao" ) 
        {
-         tell_object(this_player() , "ÄãÒªÈ¥ÄÄ¶ù£¿\n" ) ;
+         tell_object(this_player() , "ä½ è¦å»å“ªå„¿ï¼Ÿ\n" ) ;
          return 1 ;
        }
     ob = this_player () ;
-    if( ob->query("family/family_name") != "·ÉÌìÓù½£Á÷")
+    if( ob->query("family/family_name") != "é£å¤©å¾¡å‰‘æµ")
 {
-     message_vision("$NÕâÊÇ·ÉÌìÓù½£Á÷µÄÃÜµÀ,Äã²»ÈÏÊ¶Â·!\n",  ob);
+     message_vision("$Nè¿™æ˜¯é£å¤©å¾¡å‰‘æµçš„å¯†é“,ä½ ä¸è®¤è¯†è·¯!\n",  ob);
     return 1;
 }
 
     if(!ob->query_temp("shirenok"))
 {
-     message_vision("$NÄãÏÈÈ¥Ì½Ò»ÏÂÊ÷ÁÖÖĞµÄÇé¿ö°É!!\n",  ob);
+     message_vision("$Nä½ å…ˆå»æ¢ä¸€ä¸‹æ ‘æ—ä¸­çš„æƒ…å†µå§!!\n",  ob);
     return 1;
 }
 
     ob->move("/d/feitian/jiedao3") ;
-    tell_object(ob, BLU "Äã¿´ÇåÁËĞ¡Â·£¬Ö±½Ó×ß³öÁËÊ÷ÁÖ!\n" NOR ) ;
+    tell_object(ob, BLU "ä½ çœ‹æ¸…äº†å°è·¯ï¼Œç›´æ¥èµ°å‡ºäº†æ ‘æ—!\n" NOR ) ;
     return 1 ;
 }

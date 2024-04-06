@@ -1,15 +1,15 @@
-// Êé·¿ shufang.c
+// ä¹¦æˆ¿ shufang.c
 // zly 1999.06.10
  
 inherit ROOM; 
  
 void create() 
 { 
-        set("short", "Êé·¿");
+        set("short", "ä¹¦æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÏô¸®µÄÊé·¿£¬·¿ÖÐÊé¼ÜÉÏÕûÕûÆëÆëµØ¶Ñ·Å×ÅºÜ¶àÊé¡£Êé¼ÜÉÏ
-Ò»³¾²»È¾£¬ÏÔÈ»ÊÇÖ÷ÈË¾­³£·­ÔÄÊé¼®¡£Êé³÷Àï°Ú×Å¼¸¼þ¾«ÇÉµÄÓñÆ÷£¬ÏÔ
-µÃÁáççÌÞÍ¸£¬¹â²ÊÕÕÈË¡£
+è¿™é‡Œæ˜¯è§åºœçš„ä¹¦æˆ¿ï¼Œæˆ¿ä¸­ä¹¦æž¶ä¸Šæ•´æ•´é½é½åœ°å †æ”¾ç€å¾ˆå¤šä¹¦ã€‚ä¹¦æž¶ä¸Š
+ä¸€å°˜ä¸æŸ“ï¼Œæ˜¾ç„¶æ˜¯ä¸»äººç»å¸¸ç¿»é˜…ä¹¦ç±ã€‚ä¹¦æ©±é‡Œæ‘†ç€å‡ ä»¶ç²¾å·§çš„çŽ‰å™¨ï¼Œæ˜¾
+å¾—çŽ²ç‘å‰”é€ï¼Œå…‰å½©ç…§äººã€‚
 LONG
         );
         set("no_clean_up", 0);

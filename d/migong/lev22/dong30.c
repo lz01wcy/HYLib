@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIW"ÖÚÉñÖ®Ê§ÀÖÔ°"NOR);
+	set("short", HIW"ä¼—ç¥ä¹‹å¤±ä¹å›­"NOR);
 	set("long", HIW @LONG
- Õâ¸öÊÀ½ç£¬Æ®¸¡ÔÚÔÆÖĞ,ÎíÖĞ,µØ°åÊÇÓÉ·¢ÁÁµÄ»Æ½ğËùÆÌ³É£¬ËÄÖÜµÄÇ½±Ú
-ºÍÌì»¨°åÉÏÂú²¼ÖøÃÀÀöµÄ±Ú»­ºÍ¾«ÖÂµÄÊ¯µñ¡£¿ÕÖĞĞü¸¡µÄË®¾§É¢·¢ÖøÉñÃØ
-µÄ¹âÃ¢£¬ÎŞ¿ÉÃèÊöÆ®µ´ÔÚ¿ÕÖĞµÄÒôÀÖÊ¹ÕâÒ»ÇĞÈçÃÎÈç»Ã¡£
+ è¿™ä¸ªä¸–ç•Œï¼Œé£˜æµ®åœ¨äº‘ä¸­,é›¾ä¸­,åœ°æ¿æ˜¯ç”±å‘äº®çš„é»„é‡‘æ‰€é“ºæˆï¼Œå››å‘¨çš„å¢™å£
+å’Œå¤©èŠ±æ¿ä¸Šæ»¡å¸ƒè‘—ç¾ä¸½çš„å£ç”»å’Œç²¾è‡´çš„çŸ³é›•ã€‚ç©ºä¸­æ‚¬æµ®çš„æ°´æ™¶æ•£å‘è‘—ç¥ç§˜
+çš„å…‰èŠ’ï¼Œæ— å¯æè¿°é£˜è¡åœ¨ç©ºä¸­çš„éŸ³ä¹ä½¿è¿™ä¸€åˆ‡å¦‚æ¢¦å¦‚å¹»ã€‚
 LONG NOR);
 	set("exits", ([
 		"east" : __DIR__"dong29",
@@ -28,10 +28,10 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
     if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
 	if (1)
 	{
@@ -42,7 +42,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

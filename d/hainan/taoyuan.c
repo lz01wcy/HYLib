@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�շ���");
+	set("short", "空房间");
 	set("long", @LONG
-����ľ�ɫʵ����̫���ˣ���������Ұ��Ұ�ݣ�������
-Ʈ�����㲻���뵹�ڵ���˯һС����������Ǳ���ֻ�ɺ��ڽ�
-�ţ��������к��㡣
+这里的景色实在是太美了，到处都是野花野草，阵阵花香
+飘来。你不禁想倒在地上睡一小会儿。。。那边有只仙鹤在叫
+着，好象在招呼你。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

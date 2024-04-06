@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short","ÁÖ¼äµÀ");
+	set("short","æž—é—´é“");
 	set("long",@LONG
-ÕâÀïÊÇÒ»ÌõÁÖ¼äÐ¡µÀ£¬ÔÚÊ÷´ÔÖÐòêÑÑ¡£ÕâÀïÏò¶«ÊÇ¹ãÎ÷¡£ÏòÎ÷
-±±×ß¾ÍÊÇ´óÀí¹úµÄµØ½çÁË¡£
+è¿™é‡Œæ˜¯ä¸€æ¡æž—é—´å°é“ï¼Œåœ¨æ ‘ä¸›ä¸­èœ¿èœ’ã€‚è¿™é‡Œå‘ä¸œæ˜¯å¹¿è¥¿ã€‚å‘è¥¿
+åŒ—èµ°å°±æ˜¯å¤§ç†å›½çš„åœ°ç•Œäº†ã€‚
 LONG);
 	set("objects", ([
 	   __DIR__"obj/shikuai": 1,

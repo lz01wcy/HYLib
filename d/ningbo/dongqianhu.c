@@ -1,16 +1,16 @@
-// Room: /u/beyond/ningbo/dongqianhu.c ��ǰ��
+// Room: /u/beyond/ningbo/dongqianhu.c 东前湖
 // Beyond make 1997.6.8
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-	set("short", "��Ǯ��");
+	set("short", "东钱湖");
 	set("long", @LONG
-������һ����ʯ·�ϣ�������һƬï�ܵ������֣�ͷ��Сϲȵ��������
-�Ľи���ͣ��һ��΢�紵����ʹ��о���һ�ɳ�ʪ�Ŀ��������������ʱ��
-���ߵ��˶�Ǯ���ϣ�ֻ��ˮ�����������ɽɫ���죬����ɽɫ�������ˡ���
-��С�۷��ۺ��ϣ�ʹ����ø���ʫ�黭�⡣
+你走在一条青石路上，两旁是一片茂密的柳树林，头上小喜鹊唧唧喳喳
+的叫个不停。一阵微风吹过，使你感觉到一股潮湿的空气扑面而来，这时你
+已走到了东钱湖畔，只见水光空朦，四周山色如黛，湖光山色瑰丽多姿。几
+条小舟泛舟湖上，使你觉得更有诗情画意。
 LONG
 	);
         set("outdoors", "ningbo");

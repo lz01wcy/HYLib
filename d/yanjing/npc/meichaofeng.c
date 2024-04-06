@@ -1,11 +1,11 @@
 inherit NPC;
 void create()
 {
-   set_name("Ã·³¬·ç",({"mei chaofeng","mei"}));
-   set("gender","Å®ĞÔ");
+   set_name("æ¢…è¶…é£",({"mei chaofeng","mei"}));
+   set("gender","å¥³æ€§");
    set("mingwang",-5000);
    set("combat_exp",426000);
-   set("title","ºÚ·çË«É·Ö®[ÌúÊ¬]");
+   set("title","é»‘é£åŒç…ä¹‹[é“å°¸]");
    
    set("age",46);
    set("qi",1080);
@@ -17,8 +17,8 @@ void create()
    set("force_factor",60);
    set("chat_chance",5);
    set("chat_msg",({
- "Ã·³¬·çà«à«×ÔÓï:Ôôºº×Ó,ÄãÒ»¸öÈËÈ¥ÁË,ÁôÏÂÎÒÒ»¸öÈËÊÜ¿à.\n",
- "Ã·³¬·ç²à¶úÌıÁËÌı,ĞêÁË¿ÚÆø,°ÑÊÖÖ¸ÔÚÍ·¹ÇÉÏ±È»®ÁËÁ½ÏÂ.\n",
+ "æ¢…è¶…é£å–ƒå–ƒè‡ªè¯­:è´¼æ±‰å­,ä½ ä¸€ä¸ªäººå»äº†,ç•™ä¸‹æˆ‘ä¸€ä¸ªäººå—è‹¦.\n",
+ "æ¢…è¶…é£ä¾§è€³å¬äº†å¬,å˜˜äº†å£æ°”,æŠŠæ‰‹æŒ‡åœ¨å¤´éª¨ä¸Šæ¯”åˆ’äº†ä¸¤ä¸‹.\n",
  }));
 
    set_skill("dodge",120);
@@ -49,7 +49,7 @@ void greeting(object ob)
  object env;
  env=environment();
  if (ob->query("PKS")>40&&env->query("short")=="cave1")  {
-	message_vision("$NºßÁËÒ»ÉùµÀ£º¼´È»À´ÁË£¬¾ÍÅãÀÏÄïÁ·¹¦°É£¡\n",
+	message_vision("$Nå“¼äº†ä¸€å£°é“ï¼šå³ç„¶æ¥äº†ï¼Œå°±é™ªè€å¨˜ç»ƒåŠŸå§ï¼\n",
 		this_object());
 	command("guard south");
 	kill_ob(ob);

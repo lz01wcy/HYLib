@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-        set_name(BLK"ºÚÐÜ"NOR, ({ "hei xiong", "bear","xiong" }) );
-        set("race", "Ò°ÊÞ");
+        set_name(BLK"é»‘ç†Š"NOR, ({ "hei xiong", "bear","xiong" }) );
+        set("race", "é‡Žå…½");
         set("age", 20);
-        set("long", "Ò»Ö»Ð×ÃÍµÄºÚÐÜ£¬ÐÎÌåË¶´ó£¬ÈËÁ¢¶øÐÐ¡£\n");
+        set("long", "ä¸€åªå‡¶çŒ›çš„é»‘ç†Šï¼Œå½¢ä½“ç¡•å¤§ï¼Œäººç«‹è€Œè¡Œã€‚\n");
         set("attitude", "aggressive");
         set("shen_type", -1);
 
-        set("limbs", ({ "ÐÜÍ·", "ÐÜÉí", "Ç°×¦", "ºó×¦" }) );
+        set("limbs", ({ "ç†Šå¤´", "ç†Šèº«", "å‰çˆª", "åŽçˆª" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 30000);
@@ -25,15 +25,15 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ºÚÐÜ³å×ÅÄãÒ¡Í·°ÚÎ²µØ£¬²»ÖªµÀÊÇÊ²Ã´ÒâË¼¡£\n",
-                "ºÚÐÜ¼·ÁË¼·±Ç×Ó£¬Äã¾õµÃËüºÃÏóÔÚÐ¦£¬¶ÙÊ±Ò»Õó½ôÕÅ¡£\n",
+                "é»‘ç†Šå†²ç€ä½ æ‘‡å¤´æ‘†å°¾åœ°ï¼Œä¸çŸ¥é“æ˜¯ä»€ä¹ˆæ„æ€ã€‚\n",
+                "é»‘ç†ŠæŒ¤äº†æŒ¤é¼»å­ï¼Œä½ è§‰å¾—å®ƒå¥½è±¡åœ¨ç¬‘ï¼Œé¡¿æ—¶ä¸€é˜µç´§å¼ ã€‚\n",
         }) );
 }
 
 void die()
 {
 	object ob, corpse;
-	message_vision("$NÕðÌì¶¯µØÒ»Éù²Òº¿£¬ÂýÂýÎ¯¶ÙÔÚµØ£¬ËÀÁË£¡\n", this_object());
+	message_vision("$Néœ‡å¤©åŠ¨åœ°ä¸€å£°æƒ¨åšŽï¼Œæ…¢æ…¢å§”é¡¿åœ¨åœ°ï¼Œæ­»äº†ï¼\n", this_object());
 	if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
 	ob = new(__DIR__"xiongdan");
 	ob->move(corpse);

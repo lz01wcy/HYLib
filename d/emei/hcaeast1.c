@@ -1,12 +1,12 @@
-//Room: hcaeast1.c »ª²ØâÖ¶«ÀÈ
+//Room: hcaeast1.c åè—åºµä¸œå»Š
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 void create()
 {
-      set("short","»ª²ØâÖ¶«ÀÈ");
+      set("short","åè—åºµä¸œå»Š");
       set("long",@LONG
-ÕâÀïÊÇ¶ëáÒ»ª²ØâÖ¶«ÀÈ¡£×ßÀÈÍùÄÏÍ¨ÍùÕ«ÌÃ£¬Î÷±ßÍ¨Íù¹ã³¡¡£
+è¿™é‡Œæ˜¯å³¨åµ‹åè—åºµä¸œå»Šã€‚èµ°å»Šå¾€å—é€šå¾€æ–‹å ‚ï¼Œè¥¿è¾¹é€šå¾€å¹¿åœºã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */

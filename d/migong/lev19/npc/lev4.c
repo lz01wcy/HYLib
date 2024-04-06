@@ -8,12 +8,12 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"µÂÂ³ÒÁ"NOR, ({ "Druid"}));
+   set_name(order[random(13)]+"å¾·é²ä¼Š"NOR, ({ "Druid"}));
 	set("magicgift",4);
 	set("magicset",1);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄµÂÂ³ÒÁ¡£\n");
+"ä¸€ä½å¯æ€•çš„å¾·é²ä¼Šã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",500+random(500));
@@ -120,7 +120,7 @@ string msg;
         if(random((int)me->query("combat_exp")) > ob->query("combat_exp")/2)   
 {
            ob->start_busy(2);
-           msg = RED"$N"RED"Í»È»½Ð³öÒ»ÈºÎÚÑ»³öÀ´!£¬$n"RED"½á¹û±»´òµÄ²»ÄÜ¶¯ÁË!\n"NOR;
+           msg = RED"$N"RED"çªç„¶å«å‡ºä¸€ç¾¤ä¹Œé¸¦å‡ºæ¥!ï¼Œ$n"RED"ç»“æžœè¢«æ‰“çš„ä¸èƒ½åŠ¨äº†!\n"NOR;
             message_vision(msg, me, ob);
 }
 }
@@ -132,9 +132,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(RED"$N,µ¹µØ¶øÍö£¬²»¶¯µ¯ÁË¡£\n"NOR,ob,me);
+        message_vision(RED"$N,å€’åœ°è€Œäº¡ï¼Œä¸åŠ¨å¼¹äº†ã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃð"+ob->query("name")+",Ôö¼ÓÁË80¾­ÑéºÍ40Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("name")+",å¢žåŠ äº†80ç»éªŒå’Œ40æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",80);
         me->add("potential",40);
         destruct(ob);

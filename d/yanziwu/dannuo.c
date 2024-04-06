@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�Ŵ��");
+        set("short", "啖糯厅");
         set("long",@LONG
-����һ�����µĴ��������ϰ��ż�����̴ľ�������������Ʋ;�һ
-Ӧ��ȫ������һ���绨ľ�Ρ�ÿ��Ľ�����Һܶ��˶��ڴ��ò͡�
+这是一间雅致的大厅，厅上摆着几张紫檀木大桌。桌上银制餐具一
+应俱全，桌边一溜犁花木椅。每日慕容世家很多人都在此用餐。
 LONG );
         set("exits", ([
             "west" : __DIR__"yimen",

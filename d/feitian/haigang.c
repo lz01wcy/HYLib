@@ -7,11 +7,11 @@ int consider_lv(object ob,int a);
 
 void create()
 {
-  set ("short", "º£¸Û");
+  set ("short", "æµ·æ¸¯");
   set ("long", @LONG
-ÕâÀïÊÇ¾©¶¼Î¨Ò»Í¨ÍùÍâµØµÄº£¸Û,²»¹ýÑÛ¼ûÖ®´¦ÊÇÒ»Æ¬·ÏÐæ.
-ÕâÊÇÄ»¸®µÄ²¿¶ÓÎªÁËÄÜ°²È«³·³ö¶ø·ÅµÄ»ð.²»¹ýÄÇ±ßËÆºõÓÐ´¬
-¿ÉÒÔ×ß£¬´¬ÉÏµÄÈËÕýÔÚ´óÉùßººÈ~~~ÒªÈ¥¶«ÍÁµÄ¿ìµãÉÏ´¬°¡.
+è¿™é‡Œæ˜¯äº¬éƒ½å”¯ä¸€é€šå¾€å¤–åœ°çš„æµ·æ¸¯,ä¸è¿‡çœ¼è§ä¹‹å¤„æ˜¯ä¸€ç‰‡åºŸå¢Ÿ.
+è¿™æ˜¯å¹•åºœçš„éƒ¨é˜Ÿä¸ºäº†èƒ½å®‰å…¨æ’¤å‡ºè€Œæ”¾çš„ç«.ä¸è¿‡é‚£è¾¹ä¼¼ä¹Žæœ‰èˆ¹
+å¯ä»¥èµ°ï¼Œèˆ¹ä¸Šçš„äººæ­£åœ¨å¤§å£°å†å–~~~è¦åŽ»ä¸œåœŸçš„å¿«ç‚¹ä¸Šèˆ¹å•Š.
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */
@@ -30,20 +30,20 @@ int do_enter ( string arg )
 	int level;
     if( !arg || arg !="chuan" ) 
        {
-         tell_object(this_player() , "ÄãÒª ÉÏÄÄÀïÈ¥£¿\n" ) ;
+         tell_object(this_player() , "ä½ è¦ ä¸Šå“ªé‡ŒåŽ»ï¼Ÿ\n" ) ;
          return 1 ;
        }
     if (!room=find_object("/d/feitian/dahai"))
     room=load_object("/d/feitian/dahai");
     me = this_player () ;
-    message_vision("´¬ÀÏ´óÒ»¼ûÓÐÈËÉÏ´¬£¬Ã¦½ÐÁËÒ»Éù£º¿ª´¬à¶£¡\n", me);
-    message_vision("´¬·òÉýÆð·«£¬´¬¾ÍÏò¶«ÍÁÐÐÈ¥¡£\n", me);
+    message_vision("èˆ¹è€å¤§ä¸€è§æœ‰äººä¸Šèˆ¹ï¼Œå¿™å«äº†ä¸€å£°ï¼šå¼€èˆ¹å–½ï¼\n", me);
+    message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘ä¸œåœŸè¡ŒåŽ»ã€‚\n", me);
     me->move(room) ;
-    tell_object(me, BLU "ÄãÔÚº£ÉÏº½ÐÐÁËºÜ¾ÃºÜ¾Ã.......\n" NOR ) ;
+    tell_object(me, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†å¾ˆä¹…å¾ˆä¹….......\n" NOR ) ;
 if (random(10) > 7)
 {
-		message_vision(HIB"Í»È»º£ÃæÉÏ³öÏÖÁËÒ»°ãº£µÁ´¬£¬Ò»¸öº£µÁÅÀÉÏÁË´¬.......\n"NOR, me);
-		message_vision(HIB"º£µÁ´óºÈÒ»Éù£ºËùÓÐµÄÈËÍ¨Í¨µÄËÀÀ²£¬ËÀÀ²£¡£¡£¡\n"NOR, me);
+		message_vision(HIB"çªç„¶æµ·é¢ä¸Šå‡ºçŽ°äº†ä¸€èˆ¬æµ·ç›—èˆ¹ï¼Œä¸€ä¸ªæµ·ç›—çˆ¬ä¸Šäº†èˆ¹.......\n"NOR, me);
+		message_vision(HIB"æµ·ç›—å¤§å–ä¸€å£°ï¼šæ‰€æœ‰çš„äººé€šé€šçš„æ­»å•¦ï¼Œæ­»å•¦ï¼ï¼ï¼\n"NOR, me);
 
 		ob = new(__DIR__"npc/wokou");
               ob->set("combat_exp",me->query("combat_exp") * 8 / 10);
@@ -90,7 +90,7 @@ else    call_out("rfeitian", 20 , me );
 void rfeitian( object me )
 {
     if (!me || me->is_ghost()) return;
-  tell_object(me , "´¬º½ÐÐÁËÕâÃ´¾ÃÖÕÓÚµÖ´ïÁËÒ»¸öµ½´ïÁË¶«ÍÁÈªÖÞ¡£\n" ) ;
+  tell_object(me , "èˆ¹èˆªè¡Œäº†è¿™ä¹ˆä¹…ç»ˆäºŽæŠµè¾¾äº†ä¸€ä¸ªåˆ°è¾¾äº†ä¸œåœŸæ³‰æ´²ã€‚\n" ) ;
   me->move ("/d/quanzhou/haigang.c") ;
 }
 

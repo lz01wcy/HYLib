@@ -1,4 +1,4 @@
-// tea.c Áú¶¼ÏãÜø
+// tea.c é¾™éƒ½é¦™èŒ—
 
 
 inherit ITEM;
@@ -8,13 +8,13 @@ void do_eat();
 
 void create()
 {
-	set_name("Áú¶¼ÏãÜø",({"longdu xiang", "xiang", "tea"}));
+	set_name("é¾™éƒ½é¦™èŒ—",({"longdu xiang", "xiang", "tea"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÌÀÉ«µ­»Æ£¬ÆäÎ¶ÓÄÓÄ£¬ÕâÊÇÊñÖĞÃû²è¡¸Áú¶¼ÏãÜø¡¹£¡\n");
-		set("unit", "±­");
+		set("long", "æ±¤è‰²æ·¡é»„ï¼Œå…¶å‘³å¹½å¹½ï¼Œè¿™æ˜¯èœ€ä¸­åèŒ¶ã€Œé¾™éƒ½é¦™èŒ—ã€ï¼\n");
+		set("unit", "æ¯");
 		set("value", 800);
         set("remaining", 4);
         set("drink_supply", 30);
@@ -36,10 +36,10 @@ int do_drink(string arg)
 	
     if( !this_object()->id(arg) ) return 0;
     if( this_player()->is_busy() )
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
     if(   (int)this_player()->query("water")
        >= (int)this_player()->max_water_capacity() )
-     return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+     return notify_fail("ä½ å·²ç»å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
 	set("value", 0);
     this_player()->add("water", (int)query("drink_supply"));
@@ -79,12 +79,12 @@ int do_drink(string arg)
     add("remaining", -1);
 	if ( query("remaining") )
 	{
-   		 message_vision("$N¶ËÆğ±­Ïã²è£¬ÓĞ×ÌÓĞÎ¶µØÆ·ÁË¼¸¿Ú¡£\n"+
-      		"Ò»¹ÉÏãÆøÖ±ÈëĞÄÆ¢£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+   		 message_vision("$Nç«¯èµ·æ¯é¦™èŒ¶ï¼Œæœ‰æ»‹æœ‰å‘³åœ°å“äº†å‡ å£ã€‚\n"+
+      		"ä¸€è‚¡é¦™æ°”ç›´å…¥å¿ƒè„¾ï¼Œ$Nè§‰å¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
 	} else 
 	{ 
-   		 message_vision("$N¶ËÆğµñ»¨Ğ¡±­£¬°ÑÀïÃæµÄ¡¸Áú¶¼ÏãÜø¡¹Ò»Òû¶ø¾¡¡£\n"+
-      		"Ò»¹ÉÓÄÏãÖ±ÈëĞÄÆ¢£¬$N¶ÙÊ±¾õµÃ¾«Éñ´óÕñ¡£\n", this_player());
+   		 message_vision("$Nç«¯èµ·é›•èŠ±å°æ¯ï¼ŒæŠŠé‡Œé¢çš„ã€Œé¾™éƒ½é¦™èŒ—ã€ä¸€é¥®è€Œå°½ã€‚\n"+
+      		"ä¸€è‚¡å¹½é¦™ç›´å…¥å¿ƒè„¾ï¼Œ$Né¡¿æ—¶è§‰å¾—ç²¾ç¥å¤§æŒ¯ã€‚\n", this_player());
 		
 		destruct(this_object());
 	}

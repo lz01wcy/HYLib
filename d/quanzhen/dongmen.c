@@ -1,16 +1,16 @@
-// dongmen.c ¶«ÃÅ
+// dongmen.c ä¸œé—¨
 // By Lgg,1998.10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¶«ÃÅ");
+        set("short", "ä¸œé—¨");
         set("long", @LONG
-ÕâÀïÊÇÎä¹¦ÕòµÄ¶«ÃÅ£¬ÑÛÇ°³ÇÇ½¸ßËÊ£¬Ç½ÉÏµÄ¼ý¶âÀïºÃÏó»¹ÓÐ
-ÈË×ßÀ´×ßÈ¥¡£Ñô¹âÕÕÀ´£¬³ÇÇ½ÉÏÉÁ¹ý¼¸µÀ°×¹â£¬ËÆºõÊÇ±øÆ÷·´Éä³ö
-µÄ¹â¡£³ÇÃÅÉÏÌâ×Å¡®¶«ÃÅ¡¯Á½¸ö´ó×Ö£¬ÃÅ¿ÚÕ¾×ÅÒ»Ð©¹Ù±ø£¬ÕýÊÖ³Ö
-±øÈÐÅÌÎÊ×ÅÀ´ÍùµÄÐÐÈËÃÇ¡£
+è¿™é‡Œæ˜¯æ­¦åŠŸé•‡çš„ä¸œé—¨ï¼Œçœ¼å‰åŸŽå¢™é«˜è€¸ï¼Œå¢™ä¸Šçš„ç®­åž›é‡Œå¥½è±¡è¿˜æœ‰
+äººèµ°æ¥èµ°åŽ»ã€‚é˜³å…‰ç…§æ¥ï¼ŒåŸŽå¢™ä¸Šé—ªè¿‡å‡ é“ç™½å…‰ï¼Œä¼¼ä¹Žæ˜¯å…µå™¨åå°„å‡º
+çš„å…‰ã€‚åŸŽé—¨ä¸Šé¢˜ç€â€˜ä¸œé—¨â€™ä¸¤ä¸ªå¤§å­—ï¼Œé—¨å£ç«™ç€ä¸€äº›å®˜å…µï¼Œæ­£æ‰‹æŒ
+å…µåˆƒç›˜é—®ç€æ¥å¾€çš„è¡Œäººä»¬ã€‚
 LONG
         );
         set("outdoors", "quanzhen");

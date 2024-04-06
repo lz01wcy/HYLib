@@ -8,13 +8,13 @@ void create()
 {
 	mapping npc,mp,j;
 	int i,k,a,b,c,d,e,f,temp;
-   set_name(order[random(13)]+"ÈöÀ­Âüß_"NOR, ({ "salamander"}));
+   set_name(order[random(13)]+"æ’’æ‹‰æ›¼_"NOR, ({ "salamander"}));
 	set("magicgift",1);
 	set("magicset",1);
-       set("title",HIR"»ðÖ®ÑýÉñ"NOR);
+       set("title",HIR"ç«ä¹‹å¦–ç¥ž"NOR);
        set("zhuanbest",1);
        set("long",
-"Ò»Î»¿ÉÅÂµÄ»ðÖ®ÑýÉñ¡£\n");
+"ä¸€ä½å¯æ€•çš„ç«ä¹‹å¦–ç¥žã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 	       set("max_qi",50000+random(500));
@@ -119,9 +119,9 @@ void die()
         me = query_temp("last_damage_from");
 if (!me) return;        
               me->add("score",1);
-        message_vision(HIR"$N,µ¹µØ¶øÍö£¬»¯ÎªÁËÒ»ÍÅ»ðÑ×¡£\n"NOR,ob,me);
+        message_vision(HIR"$N,å€’åœ°è€Œäº¡ï¼ŒåŒ–ä¸ºäº†ä¸€å›¢ç«ç‚Žã€‚\n"NOR,ob,me);
         if((int)me->query("combat_exp") < ob->query("combat_exp"))   {
-        message("vision", me->name() + HIG"³É¹¦ÏûÃð"+ob->query("title")+HIG",Íê³ÉÁËË®Ö®ÊÀ½çµÄÈÎÎñ¡£\n"NOR, users());
+        message("vision", me->name() + HIG"æˆåŠŸæ¶ˆç­"+ob->query("title")+HIG",å®Œæˆäº†æ°´ä¹‹ä¸–ç•Œçš„ä»»åŠ¡ã€‚\n"NOR, users());
         me->add("combat_exp",600);
         me->add("potential",300);
         me->add("score",1);
@@ -133,7 +133,7 @@ if (!present("water armor", me)
 {
 corpse=new("/clone/magic/obj/waterarmor");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+HIG"¡£\n"NOR, users());
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+HIG"ã€‚\n"NOR, users());
 }
 
         destruct(ob);
@@ -145,7 +145,7 @@ if (!present("water armor", me)
 {
 corpse=new("/clone/magic/obj/waterarmor");
 corpse->move(me);
-message("vision", me->name() + HIG"ÕÒµ½ÁË¹Å´úÉñÆ÷:"+corpse->query("name")+"¡£\n"NOR, me);
+message("vision", me->name() + HIG"æ‰¾åˆ°äº†å¤ä»£ç¥žå™¨:"+corpse->query("name")+"ã€‚\n"NOR, me);
 }
 
 

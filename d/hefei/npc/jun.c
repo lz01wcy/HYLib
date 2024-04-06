@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("½­»´¾ü",({ "bing" }) );
-        set("gender", "ÄÐÐÔ" );
+   set_name("æ±Ÿæ·®å†›",({ "bing" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇºÏ·ÊµÄ½­»´¾ü£¬¾­³£ËÄ´¦Ñ²Âß¡£\n");
+   set("long", "è¿™æ˜¯åˆè‚¥çš„æ±Ÿæ·®å†›ï¼Œç»å¸¸å››å¤„å·¡é€»ã€‚\n");
        
    set("combat_exp",200000);
    set("str", 26);
@@ -69,7 +69,7 @@ void init()
 void kill_pantu(object ob,object ob2)
 {
 	if(!ob||!ob2) {remove_call_out("kill_pantu");return;}
-	message_vision("$N³¯$nÀäÐ¦µÀ:ÏóÄãÕâÖÖ¶à¸öÊÆÁ¦µÄÅÑÍ½£¬ÐÝÏëÌÓ×ß!\n",ob2,ob);
+	message_vision("$Næœ$nå†·ç¬‘é“:è±¡ä½ è¿™ç§å¤šä¸ªåŠ¿åŠ›çš„å›å¾’ï¼Œä¼‘æƒ³é€ƒèµ°!\n",ob2,ob);
     ob2->kill_ob(ob);
 	remove_call_out("kill_pantu");
 	return;

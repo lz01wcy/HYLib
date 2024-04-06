@@ -9,11 +9,11 @@ void do_jiangli(object player,int lv,int type);
 
 void create()
 {
-         set_name("ÁøÉúÓ¢ĞÛ", ({ "liusheng yingxiong", "liusheng", "yingxiong" }));
-      set("bh_rank","×ÚÊ¦");
-        set("title","·öÉ£µºÉñ»§³Ç");
-        set("banghui","·öÉ£½£ÃÅ");
-	set("gender", "ÄĞĞÔ");
+         set_name("æŸ³ç”Ÿè‹±é›„", ({ "liusheng yingxiong", "liusheng", "yingxiong" }));
+      set("bh_rank","å®—å¸ˆ");
+        set("title","æ‰¶æ¡‘å²›ç¥æˆ·åŸ");
+        set("banghui","æ‰¶æ¡‘å‰‘é—¨");
+	set("gender", "ç”·æ€§");
     set("age", 20);
 	set("shen_type",1);
     set("attitude", "friendly");

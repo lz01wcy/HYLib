@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-   set_name("Çë¼í", ({"qing jian","jian"}));
+   set_name("è¯·æŸ¬", ({"qing jian","jian"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»·âÇë¼í¡£\n");
-                set("unit", "·â");
+                set("long", "è¿™æ˜¯ä¸€å°è¯·æŸ¬ã€‚\n");
+                set("unit", "å°");
 				set("li_songxin_job",1);
                 
         }

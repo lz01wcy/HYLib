@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW"ÏÉº×"NOR, ({ "xian he", "he" }) );
-        set("race", "Ò°ÊŞ");
+        set_name(HIW"ä»™é¹¤"NOR, ({ "xian he", "he" }) );
+        set("race", "é‡å…½");
         set("age", 100);
-        set("long", "Ò»Ö»Äê¹ı°ÙËêµÄÏÉº×£¬Äã¿ÉÒÔÊÔ×ÅÆï(qi)ÉÏÈ¥.\n");
+        set("long", "ä¸€åªå¹´è¿‡ç™¾å²çš„ä»™é¹¤ï¼Œä½ å¯ä»¥è¯•ç€éª‘(qi)ä¸Šå».\n");
         set("attitude", "peaceful");
         set("spi",100);
         set("int",100);
         set("per",100);
         set("con",100);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 50000000);
@@ -28,7 +28,7 @@ void die()
 {
         object ob,me;
 me = this_player();
-        message_vision("$NË»ÑÆµÄ½ĞÁË¼¸Éù£¬µ¹ÔÚµØÉÏËÀÁË¡£¡£¡£\n Ò»µÀ°×¹âÉÁ¹ı£¬Ò»´éÃÀÀöµÄÓğÃ«Æ®ÂäÔÚ$NµÄÉíÉÏ¡£¡£\n\n", this_object(),me);
+        message_vision("$Nå˜¶å“‘çš„å«äº†å‡ å£°ï¼Œå€’åœ¨åœ°ä¸Šæ­»äº†ã€‚ã€‚ã€‚\n ä¸€é“ç™½å…‰é—ªè¿‡ï¼Œä¸€æ’®ç¾ä¸½çš„ç¾½æ¯›é£˜è½åœ¨$Nçš„èº«ä¸Šã€‚ã€‚\n\n", this_object(),me);
         ob = new("/d/hainan/obj/yumao");
         ob->move(me);
         destruct(this_object());
@@ -44,13 +44,13 @@ int do_qi(string arg)
         object me;
         int extra;
         me = this_player();
-        if (arg = "ÏÉº×" && arg = "xian he" && arg = "he")
+        if (arg = "ä»™é¹¤" && arg = "xian he" && arg = "he")
         {
                 extra = me->query_skill("dodge",1);
-                if (extra < 100) return notify_fail("ÄãµÄÇá¹¦»¹²»¹»ÊìÁ·¡£\n");
-                if (me->query_temp("mark/qi1")) return notify_fail("Äã»¹ÒªÆïµ½ÏÉº×ÄÔ´üÉÏÈ¥£¿\n");
-                message_vision(HIW"Ö»¼û$NÇáÇáÔ¾ÉÏÁËÏÉº×µÄºó±³£¬ÏÉº×ÔØ×Å$N·ÉÉÏÁËÌì¿Õ¡£¡£¡£\n\n\n"NOR,me);
-                set("long","Ò»Ö»Äê¹ı°ÙËêµÄÏÉº×£¬ÓĞ¸öÈËÕı×øÔÚËü±³ÉÏ.\n");
+                if (extra < 100) return notify_fail("ä½ çš„è½»åŠŸè¿˜ä¸å¤Ÿç†Ÿç»ƒã€‚\n");
+                if (me->query_temp("mark/qi1")) return notify_fail("ä½ è¿˜è¦éª‘åˆ°ä»™é¹¤è„‘è¢‹ä¸Šå»ï¼Ÿ\n");
+                message_vision(HIW"åªè§$Nè½»è½»è·ƒä¸Šäº†ä»™é¹¤çš„åèƒŒï¼Œä»™é¹¤è½½ç€$Né£ä¸Šäº†å¤©ç©ºã€‚ã€‚ã€‚\n\n\n"NOR,me);
+                set("long","ä¸€åªå¹´è¿‡ç™¾å²çš„ä»™é¹¤ï¼Œæœ‰ä¸ªäººæ­£ååœ¨å®ƒèƒŒä¸Š.\n");
                 me->set_temp("mark/qi1",1);
                 me->set_temp("mark/tiankong",1);
                 me->move("/d/hainan/kongzhong");
@@ -63,20 +63,20 @@ int do_xia(string arg)
 {
         object me;
         me = this_player();
-        if (arg != "ÏÉº×" && arg != "xian he" && arg != "he") 
-                return notify_fail("ÄãÒªÏÂÄÄÈ¥£¿\n");
-        if (!me->query_temp("mark/qi1")) return notify_fail("ÄãÒªÏÂÄÄ£¿µØÓü£¿\n");
+        if (arg != "ä»™é¹¤" && arg != "xian he" && arg != "he") 
+                return notify_fail("ä½ è¦ä¸‹å“ªå»ï¼Ÿ\n");
+        if (!me->query_temp("mark/qi1")) return notify_fail("ä½ è¦ä¸‹å“ªï¼Ÿåœ°ç‹±ï¼Ÿ\n");
         if (me->query_temp("mark/tiankong"))
         {
-                message_vision(HIR"$NÌøÏÂÁËÏÉº×£¬·­¹ö×Å´Ó¿ÕÖĞµôÁËÏÂÈ¥¡£.....\n\n\n"NOR,me);
+                message_vision(HIR"$Nè·³ä¸‹äº†ä»™é¹¤ï¼Œç¿»æ»šç€ä»ç©ºä¸­æ‰äº†ä¸‹å»ã€‚.....\n\n\n"NOR,me);
                 me->die();
-                message("channel:rumor",YEL"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º·¢Éú¿ÕÄÑ£¬ËÀÍöÒ»ÈË£¡\n"NOR,users());
+                message("channel:rumor",YEL"ã€è°£è¨€ã€‘æŸäººï¼šå‘ç”Ÿç©ºéš¾ï¼Œæ­»äº¡ä¸€äººï¼\n"NOR,users());
                 destruct(this_object());
         }
         else
         {
-                message_vision("Ö»¼û$NÇáÇáÒ»Ô¾£¬ÌøÏÂÁËÏÉº×¡£\n",me);
-                set("long","Ò»Ö»Äê¹ı°ÙËêµÄÏÉº×£¬Äã¿ÉÒÔÊÔ×ÅÆï(qi)ÉÏÈ¥.\n");
+                message_vision("åªè§$Nè½»è½»ä¸€è·ƒï¼Œè·³ä¸‹äº†ä»™é¹¤ã€‚\n",me);
+                set("long","ä¸€åªå¹´è¿‡ç™¾å²çš„ä»™é¹¤ï¼Œä½ å¯ä»¥è¯•ç€éª‘(qi)ä¸Šå».\n");
                 me->delete_temp("mark/qi1",);
         }
         return 1;

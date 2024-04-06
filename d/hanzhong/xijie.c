@@ -1,16 +1,16 @@
-// xijie.c Î÷½Ö
+// xijie.c è¥¿è¡—
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷½Ö");
+        set("short", "è¥¿è¡—");
         set("long", @LONG
-ººÖÐÕòµÄÎ÷ÃæÊÇÆ¶¿à°ÙÐÕµÄ¾Û¾ÓÇø£¬Î÷½Ö±ÈÆðÆäËû¼¸Ìõ½ÖµÀÀ´Ò²
-ÏÔµÃÆÆÐàÔÓÂÒµÃ¶à¡£½ÖÄÏÃæÊÇÒ»×ùÄê¾ÃÊ§ÐÞµÄÐ¡Ãí£¬ÒÑ¾­Ò¡Ò¡Óû×¹ÁË¡£
-±±ÃæÊÇÒ»»§µÍ°«µÄÃ©ÎÝ£¬Î÷ÃæÊÇººÖÐµÄÎ÷ÃÅ¡£´ÓÕâÀï×ª¶øÍù¶«£¬¾Í×ß
-µ½ººÖÐÕòµÄÖÐÐÄÁË¡£
+æ±‰ä¸­é•‡çš„è¥¿é¢æ˜¯è´«è‹¦ç™¾å§“çš„èšå±…åŒºï¼Œè¥¿è¡—æ¯”èµ·å…¶ä»–å‡ æ¡è¡—é“æ¥ä¹Ÿ
+æ˜¾å¾—ç ´æœ½æ‚ä¹±å¾—å¤šã€‚è¡—å—é¢æ˜¯ä¸€åº§å¹´ä¹…å¤±ä¿®çš„å°åº™ï¼Œå·²ç»æ‘‡æ‘‡æ¬²å äº†ã€‚
+åŒ—é¢æ˜¯ä¸€æˆ·ä½ŽçŸ®çš„èŒ…å±‹ï¼Œè¥¿é¢æ˜¯æ±‰ä¸­çš„è¥¿é—¨ã€‚ä»Žè¿™é‡Œè½¬è€Œå¾€ä¸œï¼Œå°±èµ°
+åˆ°æ±‰ä¸­é•‡çš„ä¸­å¿ƒäº†ã€‚
 LONG
         );
         set("outdoors", "hanzhong");

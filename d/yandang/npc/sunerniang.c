@@ -1,15 +1,15 @@
 inherit NPC;
 inherit F_SAVE;
 
-string query_save_file() { return DATA_DIR + "npc/Ëï¶şÄï"; }
+string query_save_file() { return DATA_DIR + "npc/å­™äºŒå¨˜"; }
 void create()
 {
 
-	set_name("Ëï¶şÄï", ({ "sunerniang", "sunerniang", "sunerniangr" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å­™äºŒå¨˜", ({ "sunerniang", "sunerniang", "sunerniangr" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 32);
 	set("long",
-		"ÕâÎ»Ëï¶şÄïÕıĞ¦ßäßäµØÃ¦Öø¡£\n");
+		"è¿™ä½å­™äºŒå¨˜æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
@@ -19,7 +19,7 @@ void create()
 		__DIR__"obj/jiu2",
 		__DIR__"obj/jiu3",
 	}));
-	set("area_name","Ñãµ´Ü½ÈØ¿ÍÕ»");
+	set("area_name","é›è¡èŠ™è“‰å®¢æ ˆ");
 	set("area_file","/d/yandang/yuanluo.c");
 	 setup();
 	carry_object("/clone/misc/cloth")->wear();
@@ -33,28 +33,28 @@ int accept_object(object who,object obj)
         bh=(string)who->query("banghui");
         if( !bh || bh!=(string)query("banghui"))        {
                 if (obj->query("money_id")&&obj->value()>=200)  {
-			if(who->query("gender")=="Å®ĞÔ")
-                	tell_object(who,"Ëï¶şÄïÃæ´øĞ¦ÈİµÀ:±±Ãæ¿Í·¿Çë¡£\n");
-			else tell_object(who,"Ëï¶şÄïÃæ´øĞ¦ÈİµÀ:ÄÏÃæ¿Í·¿Çë¡£\n");
+			if(who->query("gender")=="å¥³æ€§")
+                	tell_object(who,"å­™äºŒå¨˜é¢å¸¦ç¬‘å®¹é“:åŒ—é¢å®¢æˆ¿è¯·ã€‚\n");
+			else tell_object(who,"å­™äºŒå¨˜é¢å¸¦ç¬‘å®¹é“:å—é¢å®¢æˆ¿è¯·ã€‚\n");
                 who->set_temp("rent_paid",1);
 
                 return 1;
                 }
                 else    {
-                tell_object(who,"Ëï¶şÄïµÀ£º×¡µêÒª¶şÁ½ÎÆÒø¡£\n");
+                tell_object(who,"å­™äºŒå¨˜é“ï¼šä½åº—è¦äºŒä¸¤çº¹é“¶ã€‚\n");
                 return 0;
                 }
         }
         if (obj->query("money_id")&&obj->value()>=100)  {
- 		if(who->query("gender")=="Å®ĞÔ")
-             	tell_object(who,"Ëï¶şÄïÃæ´øĞ¦ÈİµÀ:ÕâÎ»½ãÃÃ£¬±±Ãæ¿Í·¿Çë¡£\n");
-		else tell_object(who,"Ëï¶şÄïÃæ´øĞ¦ÈİµÀ:ÕâÎ»µÜĞÖ£¬ÄÏÃæ¿Í·¿Çë¡£\n");
+ 		if(who->query("gender")=="å¥³æ€§")
+             	tell_object(who,"å­™äºŒå¨˜é¢å¸¦ç¬‘å®¹é“:è¿™ä½å§å¦¹ï¼ŒåŒ—é¢å®¢æˆ¿è¯·ã€‚\n");
+		else tell_object(who,"å­™äºŒå¨˜é¢å¸¦ç¬‘å®¹é“:è¿™ä½å¼Ÿå…„ï¼Œå—é¢å®¢æˆ¿è¯·ã€‚\n");
         
         who->set_temp("rent_paid",1);
         return 1;
         }
         else    {
-                tell_object(who,"Ëï¶şÄïµÀ£ºÍ¬°ïµÜĞÖÒ²µÃ¸¶¸öÒ»Á½Òø×ÓÒâË¼ÒâË¼°É¡£\n");
+                tell_object(who,"å­™äºŒå¨˜é“ï¼šåŒå¸®å¼Ÿå…„ä¹Ÿå¾—ä»˜ä¸ªä¸€ä¸¤é“¶å­æ„æ€æ„æ€å§ã€‚\n");
                 return 0;
         }
 }

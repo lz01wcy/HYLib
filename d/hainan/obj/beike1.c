@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name("±´¿Ç", ({ "beike" }) );
+	set_name("è´å£³", ({ "beike" }) );
 	set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 200);
 		set("long", 
-"ÕâÊÇ¸öÆ¯ÁÁµÄ±´¿Ç£¡\n");
+"è¿™æ˜¯ä¸ªæ¼‚äº®çš„è´å£³ï¼\n");
 	}
 	setup();
 }

@@ -8,9 +8,9 @@ int do_close(string arg);
 
 void create()
 {
-	set("short", "°µÊÒ");
+	set("short", "æš—å®¤");
 	set("long", @LONG
-ÕâÊÇ¿µÎõÓëÐÄ¸¹´ó³¼ÃÜÄ±´óÊÂµÄµØ·½, Ñ°³£ÈËÊÇ½ø²»À´µÄ.
+è¿™æ˜¯åº·ç†™ä¸Žå¿ƒè…¹å¤§è‡£å¯†è°‹å¤§äº‹çš„åœ°æ–¹, å¯»å¸¸äººæ˜¯è¿›ä¸æ¥çš„.
 LONG
 	);
 
@@ -40,11 +40,11 @@ void close_gate()
 	if(objectp(room))
 	{
 		delete("exits/south");
-		message("vision","Ö»ÌýÆ¹µØÒ»Éù£¬°µÃÅ×Ô¶¯¹ØÁËÆðÀ´¡£\n", this_object());
-		message("vision","ÄãÄÔº£ÖÐÉÁ¹ýÒ»¸öÄîÍ·£º»µÁË£¡³ö²»È¥ÁË£¡\n", this_object());
+		message("vision","åªå¬ä¹’åœ°ä¸€å£°ï¼Œæš—é—¨è‡ªåŠ¨å…³äº†èµ·æ¥ã€‚\n", this_object());
+		message("vision","ä½ è„‘æµ·ä¸­é—ªè¿‡ä¸€ä¸ªå¿µå¤´ï¼šåäº†ï¼å‡ºä¸åŽ»äº†ï¼\n", this_object());
 		room->delete("exits/north");
-		message("vision","Ö»ÌýÆ¹µØÒ»Éù£¬°µÃÅ×Ô¶¯¹ØÁËÆðÀ´¡£\n",room);
-		message("vision","ÄãÄÔº£ÖÐÉÁ¹ýÒ»¸öÄîÍ·£º°¥Ó´£¡ÓÖ½ø²»È¥ÁË£¡\n", room );
+		message("vision","åªå¬ä¹’åœ°ä¸€å£°ï¼Œæš—é—¨è‡ªåŠ¨å…³äº†èµ·æ¥ã€‚\n",room);
+		message("vision","ä½ è„‘æµ·ä¸­é—ªè¿‡ä¸€ä¸ªå¿µå¤´ï¼šå“Žå“Ÿï¼åˆè¿›ä¸åŽ»äº†ï¼\n", room );
 	}
 }
 
@@ -53,10 +53,10 @@ int do_open(string arg)
 	object room;
 
 	if (query("exits/south"))
-		return notify_fail("°µÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+		return notify_fail("æš—é—¨å·²ç»æ˜¯å¼€ç€äº†ã€‚\n");
 
 	if (!arg || (arg != "door" && arg != "south"))
-		return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¼€ä»€ä¹ˆï¼Ÿ\n");
 
 	if(!( room = find_object(__DIR__"yushufang")) )
 		room = load_object(__DIR__"yushufang");
@@ -64,9 +64,9 @@ int do_open(string arg)
 	if(objectp(room))
 	{
 		set("exits/south", __DIR__"yushufang");
-		message_vision("$NÊ¹¾¢°Ñ°µÃÅ´òÁË¿ªÀ´¡£\n",this_player());
+		message_vision("$Nä½¿åŠ²æŠŠæš—é—¨æ‰“äº†å¼€æ¥ã€‚\n",this_player());
 		room->set("exits/north", __FILE__);
-		message("vision","ÀïÃæÓÐÈË°Ñ°µÃÅ´ò¿ªÁË¡£\n",room);
+		message("vision","é‡Œé¢æœ‰äººæŠŠæš—é—¨æ‰“å¼€äº†ã€‚\n",room);
 		remove_call_out("close_gate");
 		call_out("close_gate", 10);
 	}

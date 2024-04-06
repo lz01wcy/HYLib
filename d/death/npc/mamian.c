@@ -2,10 +2,10 @@
 inherit NPC;
 void create()
 {
-        set_name(HIW "ÂíÃæ" NOR, ({ "mamian" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIW "é©¬é¢" NOR, ({ "mamian" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 25);
-	set("title", HIW "¼Ïîí" NOR);
+	set("title", HIW "æ·é“" NOR);
         set("str", 36);
         set("cor", 24);
         set("cps", 11);
@@ -23,7 +23,7 @@ void create()
         set("max_force", 3000);
         set("force", 3000);
 
-        set("long",     "ÂíÃæÈËÉí£¬È«ÉíÇà×ÏµÄ¹í¹Ö\n");
+        set("long",     "é©¬é¢äººèº«ï¼Œå…¨èº«é’ç´«çš„é¬¼æ€ª\n");
 
         set("combat_exp", 9999);
 
@@ -34,6 +34,6 @@ void create()
 }
 int accept_object(object who, object ob)
 {
-		message_vision("$N¶Ô$n¹Ö½ĞÒ»Éù£ºÔÚÑô¼ä×ö¿÷ĞÄÊÂÁË°É£¡\n",this_object(),who);
+		message_vision("$Nå¯¹$næ€ªå«ä¸€å£°ï¼šåœ¨é˜³é—´åšäºå¿ƒäº‹äº†å§ï¼\n",this_object(),who);
 		return 1;
 }

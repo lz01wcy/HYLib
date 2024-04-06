@@ -5,13 +5,13 @@ inherit HEAD;
 #include <ansi.h>
 void create()
 {
-    set_name(HIW"¹ş´ï"NOR, ({ "hada" }) );
+    set_name(HIW"å“ˆè¾¾"NOR, ({ "hada" }) );
     set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ"); 
-        set("long","Ò»¸ù½à°×ÈçÊ¥Ä¸Ö®Ñ©µÄ¹ş´ï£¬ÊÇ²ØÈËÔùËÍ¸ø×î×ğ¹óµÄ¿ÍÈËµÄÀñÎï¡£\n");
+                set("unit", "æ¡"); 
+        set("long","ä¸€æ ¹æ´ç™½å¦‚åœ£æ¯ä¹‹é›ªçš„å“ˆè¾¾ï¼Œæ˜¯è—äººèµ é€ç»™æœ€å°Šè´µçš„å®¢äººçš„ç¤¼ç‰©ã€‚\n");
                 set("material", "cloth");
                 set("value", 7000);
                 set("armor_prop/armor", 1);

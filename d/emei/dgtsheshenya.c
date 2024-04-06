@@ -1,18 +1,18 @@
-//Room: dgtsheshenya.c ¶Ã¹âÌ¨ÉáÉíÑÂ
+//Room: dgtsheshenya.c ç¹å…‰å°èˆèº«å´–
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short","¶Ã¹âÌ¨ÉáÉíÑÂ");
+      set("short","ç¹å…‰å°èˆèº«å´–");
       set("long",@LONG
-´ÓÎÔÔÆâÖ³öÀ´£¬ÕâÀïÊÇ¿´ÈÕ³ö¡¢ÔÆº£¡¢·ğ¹â¡¢ÉñµÆÖ®µØ¡£Ì¨ÏÂÉîÑÂÍòÕÉ£¬
-¶¸³¹ÎŞµ×£¬ÔÆÕÚÎíÑÚ¡£¼«Ä¿ËÄÍû£¬Êı°ÙÀïÍâµÄ´óĞ¡Ñ©É½½ÔÀúÀúÔÚÄ¿¡£ÒòÎªÕâÀï
-ÖÁ¸ßÖÁ½à£¬ÖÁÏÕÖÁÆæ£¬ÓÖÖÁÃÀÖÁ»Ã£¬³£ÓĞÈËÔÚÕâÀïÍ¶ÉíÔÆº££¬Éá´ËÈâÉí³¾ÊÀ¡£
-¡¡¡¡½ğ¶¥ÔÆº££¬ÃÔÃÔÃ£Ã££¬ÁıÕÖËÄÒ°£¬Ô¶½ÓÌì¼Ê¡£ÔÆº£Çáµ´Ê±£¬ÄãÔÚ½ğ¶¥£¬½Å
-Ì¤°×ÔÆ£¬´óÓĞÆ®Æ®ÓûÏÉÖ®¸Ğ£»µ±ÔÆÌÎÑ¸ÃÍÓ¿À´Ê±£¬Õû¸ö½ğ¶¥¶¼ËÆÔÚÏòÇ°¸¡¶¯£¬
-ÁîÈËÓĞ³ËÖÛÓû·çÖ®Òâ¡£
+ä»å§äº‘åºµå‡ºæ¥ï¼Œè¿™é‡Œæ˜¯çœ‹æ—¥å‡ºã€äº‘æµ·ã€ä½›å…‰ã€ç¥ç¯ä¹‹åœ°ã€‚å°ä¸‹æ·±å´–ä¸‡ä¸ˆï¼Œ
+é™¡å½»æ— åº•ï¼Œäº‘é®é›¾æ©ã€‚æç›®å››æœ›ï¼Œæ•°ç™¾é‡Œå¤–çš„å¤§å°é›ªå±±çš†å†å†åœ¨ç›®ã€‚å› ä¸ºè¿™é‡Œ
+è‡³é«˜è‡³æ´ï¼Œè‡³é™©è‡³å¥‡ï¼Œåˆè‡³ç¾è‡³å¹»ï¼Œå¸¸æœ‰äººåœ¨è¿™é‡ŒæŠ•èº«äº‘æµ·ï¼Œèˆæ­¤è‚‰èº«å°˜ä¸–ã€‚
+ã€€ã€€é‡‘é¡¶äº‘æµ·ï¼Œè¿·è¿·èŒ«èŒ«ï¼Œç¬¼ç½©å››é‡ï¼Œè¿œæ¥å¤©é™…ã€‚äº‘æµ·è½»è¡æ—¶ï¼Œä½ åœ¨é‡‘é¡¶ï¼Œè„š
+è¸ç™½äº‘ï¼Œå¤§æœ‰é£˜é£˜æ¬²ä»™ä¹‹æ„Ÿï¼›å½“äº‘æ¶›è¿…çŒ›æ¶Œæ¥æ—¶ï¼Œæ•´ä¸ªé‡‘é¡¶éƒ½ä¼¼åœ¨å‘å‰æµ®åŠ¨ï¼Œ
+ä»¤äººæœ‰ä¹˜èˆŸæ¬²é£ä¹‹æ„ã€‚
 LONG);
       set("outdoors", "emei");
       set("exits",([ /* sizeof() == 1 */
@@ -34,7 +34,7 @@ void clone_ji(object me)
    object *ob,obj;
    int i,j;
 
-   if (!me)  return notify_fail("ÄãÒÑ¾­¶ÏÏßÁË£¡\n");
+   if (!me)  return notify_fail("ä½ å·²ç»æ–­çº¿äº†ï¼\n");
 
    j=0;
    ob = all_inventory(environment(me));
@@ -43,12 +43,12 @@ void clone_ji(object me)
       if ( (!userp(ob[i])) && ((string)ob[i]->query("id")=="ji xiaofu"))
       j=1;
    }
-   if (!me)  return notify_fail("ÄãÒÑ¾­¶ÏÏßÁË£¡\n");
-   if (!this_object())  return notify_fail("ÄãÒÑ¾­¶ÏÏßÁË£¡\n");
+   if (!me)  return notify_fail("ä½ å·²ç»æ–­çº¿äº†ï¼\n");
+   if (!this_object())  return notify_fail("ä½ å·²ç»æ–­çº¿äº†ï¼\n");
    if ((j==0) && (me->query("marks/ji")))
    {
       if( environment(me) == this_object()) obj=new("/kungfu/class/emei/ji.c");
-if (!obj)   return notify_fail("ÄãÒÑ¾­¶ÏÏßÁË£¡\n");
+if (!obj)   return notify_fail("ä½ å·²ç»æ–­çº¿äº†ï¼\n");
 if (environment(me))
 {
       obj->move(environment(me));
@@ -61,20 +61,20 @@ int do_sheshen(object me)
 	int sizeinv,n,tt;
 
     me = this_player();
-   if (!me)  return notify_fail("ÄãÒÑ¾­¶ÏÏßÁË£¡\n");
-   if (me->query("combat_exp") < 500000)  return notify_fail("ÄãÕâµãÎä¹¦£¬ÌøÏÂÈ¥¿Ï¶¨ËÀ£¡\n");
+   if (!me)  return notify_fail("ä½ å·²ç»æ–­çº¿äº†ï¼\n");
+   if (me->query("combat_exp") < 500000)  return notify_fail("ä½ è¿™ç‚¹æ­¦åŠŸï¼Œè·³ä¸‹å»è‚¯å®šæ­»ï¼\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character()  )  
-     				return notify_fail("ÄãÏëÏÂÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³ä¸‹å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 
-    message_vision("$N¾õµÃ»î×ÅÌ«Ã»ÒâË¼ÁË£¬¾ö¶¨ÉáÉí³ÉÈÊ¡£\n", me);
-    message_vision("$NÒãÈ»Ìø³öÉáÉíÑÂ£¬³¤Éù¼â½Ğ£¬ÆàÀ÷µÄÉùÒôÏì³¹É½¹È£¬Ëæ×Å$NµÄµÄÏÂÂäÒ²¼±¾çÏòÏÂÀ­³¤¡£\n", me);
+    message_vision("$Nè§‰å¾—æ´»ç€å¤ªæ²¡æ„æ€äº†ï¼Œå†³å®šèˆèº«æˆä»ã€‚\n", me);
+    message_vision("$Næ¯…ç„¶è·³å‡ºèˆèº«å´–ï¼Œé•¿å£°å°–å«ï¼Œå‡„å‰çš„å£°éŸ³å“å½»å±±è°·ï¼Œéšç€$Nçš„çš„ä¸‹è½ä¹Ÿæ€¥å‰§å‘ä¸‹æ‹‰é•¿ã€‚\n", me);
     if (random(4)<1)
     {
         me->move(__DIR__"st0");
@@ -82,7 +82,7 @@ int do_sheshen(object me)
     }
     else
     {
-        command("chat ÓĞÈËÌøÏÂÉáÉíÑÂ×ÔÉ±ÁË¡£\n\n");
+        command("chat æœ‰äººè·³ä¸‹èˆèº«å´–è‡ªæ€äº†ã€‚\n\n");
 //        me->move(__DIR__"st0");
         me->die();
     }

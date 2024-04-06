@@ -6,10 +6,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("´ó±¯ÀÏÈË", ({"dabei laoren", "dabei" }));
-	set("long", "ËûÊÇ¸öºìÃæÀÏÕß£¬°×·¢·÷ĞØ£¬ÉõÊÇĞÛÎ°¡£\n");
-	set("title", "°×¾¨µºÖ÷");
-	set("gender", "ÄĞĞÔ");
+	set_name("å¤§æ‚²è€äºº", ({"dabei laoren", "dabei" }));
+	set("long", "ä»–æ˜¯ä¸ªçº¢é¢è€è€…ï¼Œç™½å‘æ‹‚èƒ¸ï¼Œç”šæ˜¯é›„ä¼Ÿã€‚\n");
+	set("title", "ç™½é²¸å²›ä¸»");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 
 	set("age", 70);

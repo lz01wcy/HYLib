@@ -5,14 +5,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("叶亭", ({ "ye ting", "ye" }) );
+        set_name("鍙朵涵", ({ "ye ting", "ye" }) );
         set("long",
-                "赤壁水军统领，负责赤壁水军的日常调度和训练。\n");
-	set("nickname", YEL"海底捞月"NOR);
+                "璧ゅ姘村啗缁熼锛岃礋璐ｈ丹澹佹按鍐涚殑鏃ュ父璋冨害鍜岃缁冦�俓n");
+	set("nickname", YEL"娴峰簳鎹炴湀"NOR);
         set("attitude", "heroism");
-	set("student_title","官员");
-	create_family("朝廷",6,"官员");
-	set("title", "赤壁水师统领");
+	set("student_title","瀹樺憳");
+	create_family("鏈濆环",6,"瀹樺憳");
+	set("title", "璧ゅ姘村笀缁熼");
 	set("vendetta_mark", "authority");
 	set("str", 30);
 	set("int", 30);

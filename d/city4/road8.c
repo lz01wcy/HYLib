@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "�ٵ�");
+	set("short",  "官道");
 	set("long",  @LONG
-һ����ʯ�̾͵Ĺٵ���������ͨ�����ݣ��������򵽴ﳤ������·
-������һƬï�ܵ����֡�
+一条青石铺就的官道，向西北通往兰州，往东南则到达长安。道路
+两旁是一片茂密的树林。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"northwest" :  __DIR__"road9",

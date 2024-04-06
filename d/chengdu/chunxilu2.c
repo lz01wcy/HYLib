@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIY "����·" NOR);
+	set("short",HIY "春熙路" NOR);
 	set("long", @LONG
-������һ�����ֵĴ���ϣ�������Ⱥ�����������ɵõ���С͵Ŷ��
-�����Ǹ��������ӣ������и�Ǯׯ�����Ϸ�������ʯ�
+你走在一条热闹的大道上，街上人群熙熙攘攘，可得当心小偷哦。
+东面是个打铁铺子，西面有个钱庄，西南方有条青石巷。
 LONG );
 	set("outdoors", "chengdu");
 	set("exits", ([

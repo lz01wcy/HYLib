@@ -1,5 +1,5 @@
 // /d/gaoli/xuanwumen
-// Room in ¸ßÀö
+// Room in é«˜ä¸½
 #include <ansi.h>
 inherit ROOM;
 
@@ -8,11 +8,11 @@ inherit ROOM;
 void create()
 
 {
-set("short", "Ñ¼ÂÌ½­±±°¶");
+set("short", "é¸­ç»¿æ±ŸåŒ—å²¸");
 
 	set("long", @LONG
-ÕâÀïÊÇÑ¼ÂÌ½­µÄ±±°¶¡£´ÓÕâÀï³Ë´¬ÄÏÏÂ£¬¾Í¿ÉÒÔµ½¸ßÀöÁË¡£ÕâÀïµÄ
-ÈË±È½Ï¶à£¬ÕâÀïÍ£²´×Å¼¸ËÒÐ¡´¬£¬¿´Ô¶´¦»¹ÓÐÐ¡´¬Òª¿¿½ü°¶À´¡£
+è¿™é‡Œæ˜¯é¸­ç»¿æ±Ÿçš„åŒ—å²¸ã€‚ä»Žè¿™é‡Œä¹˜èˆ¹å—ä¸‹ï¼Œå°±å¯ä»¥åˆ°é«˜ä¸½äº†ã€‚è¿™é‡Œçš„
+äººæ¯”è¾ƒå¤šï¼Œè¿™é‡Œåœæ³Šç€å‡ è‰˜å°èˆ¹ï¼Œçœ‹è¿œå¤„è¿˜æœ‰å°èˆ¹è¦é è¿‘å²¸æ¥ã€‚
 LONG
 	);
 	

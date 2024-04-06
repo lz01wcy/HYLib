@@ -235,16 +235,16 @@ string *npc1 = ({
 });
 void create()
 {
-	set("short", "���˳����");
+	set("short", "屠人场入口");
 	set("long", @LONG
-������һ�䲻����С�ݣ����а���һ�����ӣ���������һ���ˣ�
-��Ц�����Ŀ����㡣��������һ���ţ������ţ�����ں����ģ�Ҳ��֪
-��ͨ�������������ȥ�ǿ��������Ĵ�֣���������������
-[1;31m���: �����������������ʼ��������start��������䳡��
-[1;33m����:
-�����������������an anniu����ʼ�����ͽ���������
-���������������chuchang������ҳ�����
-��������updatedir /d/pk/ ���������
+这里是一间不算大的小屋，当中摆了一个桌子，后面做着一个人，
+正笑吟吟的看着你。他身后有一扇门，虚掩着，里面黑乎乎的，也不知
+道通往哪里。西面望出去是宽阔敞亮的大街，让人无限向往。
+[1;31m玩家: 如果天神宣布比赛开始，可以用start来进入比武场。
+[1;33m天神:
+如果你是天神，能先用an anniu来开始比赛和结束比赛。
+如果你是天神，能用chuchang来让玩家出场。
+出场后用updatedir /d/pk/ 来清比赛场
 LONG
 	);
 	set("exits", ([
@@ -283,7 +283,7 @@ for (i=0;i<30;i++)
 if (npc && room2)
 {
            npc->move(room2);
-//                 message("vision", HIR" "+npc->query("name")+"�ֲ���"+room2->query("short")+"�ˡ�\n"NOR, thisroom);
+//                 message("vision", HIR" "+npc->query("name")+"分布到"+room2->query("short")+"了。\n"NOR, thisroom);
 }
 }
 for (i=0;i<4;i++)
@@ -295,19 +295,19 @@ for (i=0;i<4;i++)
 if (npc && room2)
 {
            npc->move(room2);
-//                 message("vision", HIY" "+npc->query("name")+"�ֲ���"+room2->query("short")+"�ˡ�\n"NOR, thisroom);
+//                 message("vision", HIY" "+npc->query("name")+"分布到"+room2->query("short")+"了。\n"NOR, thisroom);
 }
 }
-message("channel:chat", HIC"���Խ�ɽׯ��"HIR + "���˴�Ὺʼ�ˣ�\n"NOR,users() );
-                 message("vision", HIG"ֻ������Ȼһ�����������Ͽ�ʼ��NPC�볡,�Խ�ɽׯ�Ĵ��Ź����ˡ�\n"NOR, thisroom);
+message("channel:chat", HIC"【试剑山庄】"HIR + "屠人大会开始了！\n"NOR,users() );
+                 message("vision", HIG"只听见轰然一声，比武马上开始，NPC入场,试剑山庄的大门关上了。\n"NOR, thisroom);
                  }
                 else
 {
 room->set("startpk", 0); 
 room->delete("startpk");
                  room->set("exits/out", "/d/city/wumiao"); 
-message("channel:chat", HIC"���Խ�ɽׯ��"HIR + "���˴������ˣ�\n"NOR,users() );
-                 message("vision", HIW"�Խ�ɽׯ�ĳ��ڴ��ű����ˡ�\n"NOR, thisroom);
+message("channel:chat", HIC"【试剑山庄】"HIR + "屠人大会结束了！\n"NOR,users() );
+                 message("vision", HIW"试剑山庄的出口大门被打开了。\n"NOR, thisroom);
 }
            } 
           else message("vision", "ERROR: Room 2 not found\n", thisroom);          
@@ -322,11 +322,11 @@ void check_trigger1()
        if( room1 = find_object("/d/city/wumiao")){
          if( room1->query("exits/enter")){                 
                  room1->delete("exits/enter");
-                 message("vision", HIR"ֻ������Ȼһ�����������Ͽ�ʼ���Խ�ɽׯ����ڹ����ˡ�\n"NOR, thisroom);                 }
+                 message("vision", HIR"只听见轰然一声，比武马上开始，试剑山庄的入口关上了。\n"NOR, thisroom);                 }
                 else 
 {
 room1->set("exits/enter", "/d/pk/pk/entry"); 
-                message("vision", HIW"�Խ�ɽׯ����ڱ����ˡ�\n"NOR, thisroom);
+                message("vision", HIW"试剑山庄的入口被打开了。\n"NOR, thisroom);
 }
            } 
           else message("vision", "ERROR: Room 1 not found\n", thisroom);          
@@ -337,19 +337,19 @@ int do_push(string arg)
        object me;
        me = this_player();       
        if (userp(me) && !wiz_level(me))
-          return notify_fail("�㲻����ʦ����Ҫ����Ҷ�����������ⲻ��Ŷ��\n");
+          return notify_fail("你不是巫师，不要随便乱动，坏了你可赔不起哦！\n");
        if( wiz_level(me) < 3)
-                return notify_fail("��ô���صĶ������㻹�Ǳ���Ϊ�á�\n"); 
+                return notify_fail("这么贵重的东西，你还是别碰为好。\n"); 
 
        if (!arg || arg !="anniu")
-          return notify_fail("��Ҫ��ʲô��\n");
+          return notify_fail("你要按什么？\n");
        if (arg == "anniu"){
-           message_vision(HIR"$N�������˿���������ʳָ�����ذ����˰�ť��\n"NOR, me);
+           message_vision(HIR"$N轻轻嘘了口气，提起食指慢慢地按动了按钮。\n"NOR, me);
            check_trigger();
            check_trigger1();
            return 1;
            } 
-          return notify_fail("��Ҫ��ʲô��\n");
+          return notify_fail("你要按什么？\n");
 }
 
 
@@ -360,18 +360,18 @@ int do_start()
 int a;
        me = this_player();       
        if (!userp(me))
-          return notify_fail("����Ҳ��ý��룡\n");
+          return notify_fail("非玩家不得进入！\n");
        if (!environment(me)->query("startpk"))
-          return notify_fail("��û�п�ʼ��\n");
+          return notify_fail("还没有开始！\n");
 if (me->query_condition("killer"))
-return notify_fail("ͨ�������ܽ��룡\n");
+return notify_fail("通辑犯不能进入！\n");
 if (me->query("combat_exp") <100000)
-return notify_fail("ֻ�о������100000���ܽ��룡\n");
+return notify_fail("只有经验大于100000才能进入！\n");
     if (present("mian ju", me) )
-return notify_fail("���ܴ�������ڣ�\n");
+return notify_fail("不能带面具入内！\n");
     if (present("helan huoqiang", me) )
-return notify_fail("���ܴ���ǹ���ڣ�\n");
-           message_vision(HIR"һ����Χ��$N,$N��ʧ�����ˡ�\n"NOR, me);
+return notify_fail("不能带火枪入内！\n");
+           message_vision(HIR"一阵光包围了$N,$N消失不见了。\n"NOR, me);
            a=random(sizeof(map1));
            room2=load_object(map1[a]);
 if (room2)
@@ -389,9 +389,9 @@ int do_refresh(object me,string file)
         string msg;
 me=this_player();
        if (userp(me) && !wiz_level(me))
-          return notify_fail("�㲻����ʦ����Ҫ����Ҷ�����������ⲻ��Ŷ��\n");
+          return notify_fail("你不是巫师，不要随便乱动，坏了你可赔不起哦！\n");
        if( wiz_level(me) < 3)
-                return notify_fail("��ô���صĶ������㻹�Ǳ���Ϊ�á�\n"); 
+                return notify_fail("这么贵重的东西，你还是别碰为好。\n"); 
 
         ob = filter_array(children(USER_OB),(: userp($1) && !wizardp($1) :));
 list = sort_array(ob,"sort_user");
@@ -402,7 +402,7 @@ list[i]->remove_all_killer();
 list[i]->move(__DIR__"ready");
 }
 }
-           message_vision(HIW"������ɣ����б����������������Ϣ�ҡ�\n"NOR, me);
+           message_vision(HIW"出场完成，所有比赛场中玩家移至休息室。\n"NOR, me);
         return 1;       
 } 
 

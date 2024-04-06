@@ -3,10 +3,10 @@ inherit ROOM;
  
 void create() 
 { 
-  set ("short", "´óéÅÊ÷ÏÂ");
+  set ("short", "å¤§æ¦•æ ‘ä¸‹");
   set ("long", @LONG
-¸ß´óµÄéÅÊ÷Ö¦Ò¶·±Ã¯,Ðí¶àÊ÷Ö¦´¹ÁËÏÂÀ´,ÓÖÉîÈëÄàÍÁÖ®ÖÐ,ÅÌ¸ù½»´í.
-Î÷ÃæÊÇÒ»Æ¬É¹¹È³¡,Ïò±±ÓÐ¿ÚË®¾®.
+é«˜å¤§çš„æ¦•æ ‘æžå¶ç¹èŒ‚,è®¸å¤šæ ‘æžåž‚äº†ä¸‹æ¥,åˆæ·±å…¥æ³¥åœŸä¹‹ä¸­,ç›˜æ ¹äº¤é”™.
+è¥¿é¢æ˜¯ä¸€ç‰‡æ™’è°·åœº,å‘åŒ—æœ‰å£æ°´äº•.
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */
@@ -24,11 +24,11 @@ int do_climb(string arg)
 {
   object pla;
   pla=this_player();
-if (!arg||arg!="éÅÊ÷") return 
-       notify_fail("ÄãÒªÅÀÊ²Ã´?\n");
+if (!arg||arg!="æ¦•æ ‘") return 
+       notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆ?\n");
 if (living(pla)&&environment(pla)==this_object())
-   message_vision("$NË«ÊÖÅÊ×ÅÊ÷¸É,²ä²äµØÅÀÁËÉÏÈ¥.\n",pla);
-tell_room(__DIR__"intree","ÓÐÈËÅÀÉÏÊ÷À´.\n");
+   message_vision("$NåŒæ‰‹æ”€ç€æ ‘å¹²,è¹­è¹­åœ°çˆ¬äº†ä¸ŠåŽ».\n",pla);
+tell_room(__DIR__"intree","æœ‰äººçˆ¬ä¸Šæ ‘æ¥.\n");
   pla->move(__DIR__"intree");
 return 1;
 }

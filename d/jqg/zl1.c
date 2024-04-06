@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "回廊");
 	set("long", @LONG
-һ�����ŵĻ��ȣ����滭���������˵��黭��
+一条典雅的回廊，上面画满当代名人的书画。
 LONG
 	);
 

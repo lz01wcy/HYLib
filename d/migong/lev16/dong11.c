@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"���߲�ԭ"NOR);
+	set("short", GRN"海边草原"NOR);
 	set("long", GRN @LONG
- ���������������ϳ��������̵��ʲݣ�����׺���ϵ�С�׻���ʹ��
-�����˾��þ�����죬վ��������Կ���Զ���Ĵ󺣣�������Ϊ���ﶼû
-�иߴ��ֲ�һ��紵��������������������ʷ����˱仯!
+ 这起伏不大的丘陵上长满了嫩绿的鲜草，而点缀其上的小白花，使这
+里令人觉得精神愉快，站在这儿可以看到远方的大海，这是因为这里都没
+有高大的植物。一阵风吹来你觉的身上力量的性质发身了变化!
 LONG NOR);
 set("magicroom",1);
 set("magicset",1);

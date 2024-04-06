@@ -3,15 +3,15 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-	set_name("Ë®Óñèµ", ({ "shuiyu" , "Óñèµ"}) );
+	set_name("æ°´ç‰ç’§", ({ "shuiyu" , "ç‰ç’§"}) );
 	set_weight(50);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "ÕâÊÇÒ»½ÇÓñèµ£¬ÉÏÃæ¿ÌÁË¸ö£¢Ë®£¢×Ö£¬
-»¹¿ÌÁËĞ©Ææ¹ÖµÄ»¨ÎÆ£¬µ«Ö»´ÓÕâÒ»½ÇÓñèµ£¬ÄãÒÑ¾­¸Ğµ½Ò»ÖÖÉñÆæµÄÁ¦Á¿£®
-Óñèµ²»Ê±·¢³ö°µºìÉ«µÄ¹âÃ££®ËÆºõÒªºÍÁíÍâ¼¸½ÇºÏèµ£¨£ã£ï£í£â£é£î£å£©\n");
+		set("unit", "å—");
+		set("long", "è¿™æ˜¯ä¸€è§’ç‰ç’§ï¼Œä¸Šé¢åˆ»äº†ä¸ªï¼‚æ°´ï¼‚å­—ï¼Œ
+è¿˜åˆ»äº†äº›å¥‡æ€ªçš„èŠ±çº¹ï¼Œä½†åªä»è¿™ä¸€è§’ç‰ç’§ï¼Œä½ å·²ç»æ„Ÿåˆ°ä¸€ç§ç¥å¥‡çš„åŠ›é‡ï¼
+ç‰ç’§ä¸æ—¶å‘å‡ºæš—çº¢è‰²çš„å…‰èŒ«ï¼ä¼¼ä¹è¦å’Œå¦å¤–å‡ è§’åˆç’§ï¼ˆï½ƒï½ï½ï½‚ï½‰ï½ï½…ï¼‰\n");
 		set("value", 1);
 	}
 }
@@ -32,13 +32,13 @@ me = this_player();
 inv = all_inventory(me);
                 for(i=0; i<sizeof(inv); i++)
                 {
-			if(inv[i]->query("name") == "ÔÂÓñèµ") {yue = 1; yuebi = inv[i];}
-                        if(inv[i]->query("name") == "ÁøÓñèµ") {liu = 1; liubi = inv[i];}
-                        if(inv[i]->query("name") == "Ñ©Óñèµ") {xue = 1; xuebi = inv[i];}
-                        if(inv[i]->query("name") == "Å®Óñèµ") {nu = 1;  nubi = inv[i];}
-                        if(inv[i]->query("name") == "²İÓñèµ") {cao = 1; caobi = inv[i];}
-                        if(inv[i]->query("name") == "»¨Óñèµ") {hua = 1; huabi = inv[i];}
-                        if(inv[i]->query("name") == "¾ÆÓñèµ") {jiu = 1; jiubi = inv[i];}
+			if(inv[i]->query("name") == "æœˆç‰ç’§") {yue = 1; yuebi = inv[i];}
+                        if(inv[i]->query("name") == "æŸ³ç‰ç’§") {liu = 1; liubi = inv[i];}
+                        if(inv[i]->query("name") == "é›ªç‰ç’§") {xue = 1; xuebi = inv[i];}
+                        if(inv[i]->query("name") == "å¥³ç‰ç’§") {nu = 1;  nubi = inv[i];}
+                        if(inv[i]->query("name") == "è‰ç‰ç’§") {cao = 1; caobi = inv[i];}
+                        if(inv[i]->query("name") == "èŠ±ç‰ç’§") {hua = 1; huabi = inv[i];}
+                        if(inv[i]->query("name") == "é…’ç‰ç’§") {jiu = 1; jiubi = inv[i];}
 
 		}
 if( yue && liu && xue && nu && cao && hua && jiu )
@@ -52,12 +52,12 @@ if( yue && liu && xue && nu && cao && hua && jiu )
         destruct(jiubi);
 	jade = new(__DIR__"guyupai");
 	jade->move(me);
-message_vision("$N°ÑÊÖÀïµÄ¼¸½ÇÓñèµ°ÚÅªÁË¼¸ÏÂ£®£¢¿©àê£¢Ò»Éù£¬°ËèµºÍÒ»£®\n",this_player());
+message_vision("$NæŠŠæ‰‹é‡Œçš„å‡ è§’ç‰ç’§æ‘†å¼„äº†å‡ ä¸‹ï¼ï¼‚å’¯åš“ï¼‚ä¸€å£°ï¼Œå…«ç’§å’Œä¸€ï¼\n",this_player());
 	destruct(this_object());
 
 }
 else 
-message_vision("$N°ÑÊÖÀïµÄ¼¸½ÇÓñèµ°ÚÅªÁË¼¸ÏÂ£®\n",this_player());
+message_vision("$NæŠŠæ‰‹é‡Œçš„å‡ è§’ç‰ç’§æ‘†å¼„äº†å‡ ä¸‹ï¼\n",this_player());
 
 return 1;
 }

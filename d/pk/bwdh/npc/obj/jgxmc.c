@@ -5,20 +5,20 @@ inherit STAFF;
 inherit F_UNIQUE;
 void create()
 {
-        set_name( HIY"½ğ¸Õ½µÄ§èÆ"NOR , ({ "jingang chu", "jingangchu","chu","staff"}));
+        set_name( HIY"é‡‘åˆšé™é­”æµ"NOR , ({ "jingang chu", "jingangchu","chu","staff"}));
         set_weight(80000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", HIR"Õâ¸ù·¨èÆÔ¼ÓĞÒ»ÕÉÒ»¶ş³ß³¤£¬ÈëÊÖ·Ç³£³ÁÖØ£¬ÉÏÃæ¿ÌÂúèóÎÄ£¬èÆÉíÕÖÔÚÒ»²ãÒşÒşµÄºì¹âÖ®ÖĞ¡£\n"NOR);
+                set("unit", "æ ¹");
+                set("long", HIR"è¿™æ ¹æ³•æµçº¦æœ‰ä¸€ä¸ˆä¸€äºŒå°ºé•¿ï¼Œå…¥æ‰‹éå¸¸æ²‰é‡ï¼Œä¸Šé¢åˆ»æ»¡æ¢µæ–‡ï¼Œæµèº«ç½©åœ¨ä¸€å±‚éšéšçš„çº¢å…‰ä¹‹ä¸­ã€‚\n"NOR);
                 set("value", 1000);
                 set("rigidity", 7);
                 set("treasure",1);
                 set("material", "gold");
                 set("wield_msg", HIY
-"$NÉìÊÖÔÚÅÛµ×ÄÃ³ö½ğ¸Õ½µÄ§èÆ£¬ÇáÇáÒ»Îè£¬Ó³µÃ½ğ¹âÂúµØ¡£\n"NOR);
-                set("unwield_msg",HIR" $N°Ñ½ğ¸Õ½µÄ§èÆĞ¡ĞÄµÄ·ÅÈëÅÛÖĞ¡£\n"NOR);
+"$Nä¼¸æ‰‹åœ¨è¢åº•æ‹¿å‡ºé‡‘åˆšé™é­”æµï¼Œè½»è½»ä¸€èˆï¼Œæ˜ å¾—é‡‘å…‰æ»¡åœ°ã€‚\n"NOR);
+                set("unwield_msg",HIR" $NæŠŠé‡‘åˆšé™é­”æµå°å¿ƒçš„æ”¾å…¥è¢ä¸­ã€‚\n"NOR);
         }
         init_staff(110);
         setup();

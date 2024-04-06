@@ -7,11 +7,11 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("É£ÈýÄï", ({ "shang sanniang", "shang", "sanniang"}) );
-	set("gender", "Å®ÐÔ" );
+	set_name("æ¡‘ä¸‰å¨˜", ({ "shang sanniang", "shang", "sanniang"}) );
+	set("gender", "å¥³æ€§" );
 	set("age", 45);
-	set("title", "ÈÕÔÂÉñ½ÌÌìÏãÌÃ³¤ÀÏ");
-	set("long", "ÉíÇé¹Å¹Ö£¬ÃæÎÞË¿ºÁÎ¢Ð¦£¬ÃæÈÝÈ´Ïàµ±ÇåÐã¡£ \n"
+	set("title", "æ—¥æœˆç¥žæ•™å¤©é¦™å ‚é•¿è€");
+	set("long", "èº«æƒ…å¤æ€ªï¼Œé¢æ— ä¸æ¯«å¾®ç¬‘ï¼Œé¢å®¹å´ç›¸å½“æ¸…ç§€ã€‚ \n"
                     );
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -84,7 +84,7 @@ prepare_skill("strike","tmzhang");
 
         }) );
 
-	create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ÌìÏãÌÃ³¤ÀÏ");
+	create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ å¤©é¦™å ‚é•¿è€");
 
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();
@@ -95,19 +95,19 @@ void attempt_apprentice(object ob)
 {
          if (ob->query_int() < 20) {
               command("say " + RANK_D->query_respect(ob) +
-                        "×ß¿ª×ß¿ª£¬ÎÒ²»ÏëºÍÉµ¹ÏËµ»°¡£");
+                        "èµ°å¼€èµ°å¼€ï¼Œæˆ‘ä¸æƒ³å’Œå‚»ç“œè¯´è¯ã€‚");
                 return;
         }
          if (ob->query_dex() < 20) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÉíÊÖ²»½Ý£¬»¹ÊÇÁíÇó¸ßÊ¦°É¡£");
+                        "èº«æ‰‹ä¸æ·ï¼Œè¿˜æ˜¯å¦æ±‚é«˜å¸ˆå§ã€‚");
                 return;
         }
         if ((int)ob->query("shen") > -10000) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "Äã»¹²»¹»ÐÄºÝÊÖÀ±£¬ÎÒ»¹²»ÄÜÊÕÄã¡£");
+                        "ä½ è¿˜ä¸å¤Ÿå¿ƒç‹ æ‰‹è¾£ï¼Œæˆ‘è¿˜ä¸èƒ½æ”¶ä½ ã€‚");
                 return;
         }
-        command("say ¹þ¹þ£¡ ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+        command("say å“ˆå“ˆï¼ é‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit " + ob->query("id"));
 }

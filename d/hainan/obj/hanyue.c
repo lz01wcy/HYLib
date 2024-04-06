@@ -5,19 +5,19 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIG"º®ÔÂÕ¶"NOR, ({"hanyue blade", "blade"}));
+        set_name(HIG"å¯’æœˆæ–©"NOR, ({"hanyue blade", "blade"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñµ­ÇàÉ«µÄÔ²ÔÂÍäµ¶£¬·¢×ÅÒõÉøÉøµÄÉ±Æø£®\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠæ·¡é’è‰²çš„åœ†æœˆå¼¯åˆ€ï¼Œå‘ç€é˜´æ¸—æ¸—çš„æ€æ°”ï¼\n");
                 set("value", 1500);
                 set("material", "ice");
                 set("wield_msg",
-"$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬ÑÛÖĞÉÁ¹ıÒ»µÀº®¹â£¡\n");
+"$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œçœ¼ä¸­é—ªè¿‡ä¸€é“å¯’å…‰ï¼\n");
                 set("unwield_msg",
-"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä£¬×ì½ÇÂ¶³öÒ»Ë¿Ğ¦Òâ£®\n");
+"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ï¼Œå˜´è§’éœ²å‡ºä¸€ä¸ç¬‘æ„ï¼\n");
         set("weapon_prop/courage", 10);
 
         }

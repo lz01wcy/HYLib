@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "������");
+	set("short",  "绿竹林");
 	set("long",  @LONG
-һƬ���װ�����ְ����ȵ�����Ұ֮�⣬������һƬ�������硣С
-ʯ��·�������д��������ʯ�Ӽ���ϸ�ܵ���̦��͸��һ����ˬ���Խ�
-���������ܡ������Ǹ�СԺ�ӡ������淢�ö��ˡ�
+一片绿茸般的竹林把燥热挡在视野之外，这里是一片清凉世界。小
+石子路在竹林中穿梭而过，石子间是细密的青苔，透着一股凉爽，自脚
+跟沁入胸臆。北面是个小院子。琴声益发悦耳了。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"south"  :  __DIR__"xiaoxiang",

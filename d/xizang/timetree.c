@@ -2,11 +2,11 @@
 #include <ansi.h> 
 void create()
 {
-        set("short", HIG"¹âÒõÊ÷"NOR); 
+        set("short", HIG"å…‰é˜´æ ‘"NOR); 
         set("long", @LONG
-Ò»ÖÖ²»ÖªÃûµÄ¹ÅÊ÷£¬Ê÷¸ÉÉÏ»º»ºÁ÷×ÅÈé°×µÄÖ­Òº£¬²ØÈËÃÇ³ÆÖ®Îª¹âÒõÊ÷¡£Õ¾ÔÚ
-Å¨ºñµÄÊ÷ÒõÏÂÔ¶Ì÷£¬Ô¶´¦µÄ°×ÔÆÔÚÌì£¬·çÔÚÊ÷ÉÒ£¬»ıÑ©µÄÉ½áÛÔÚÇçÀÊµÄÀ¶ÌìÏÂ£¬Æ½
-·²µÄÈËÔÚÎª×Ô¼ºµÄÉú»îÕõÔú£¬²»Æ½·²µÄÈËÔÚÎª×Ô¼ºµÄÉúÃü·Ü¶·¡£
+ä¸€ç§ä¸çŸ¥åçš„å¤æ ‘ï¼Œæ ‘å¹²ä¸Šç¼“ç¼“æµç€ä¹³ç™½çš„æ±æ¶²ï¼Œè—äººä»¬ç§°ä¹‹ä¸ºå…‰é˜´æ ‘ã€‚ç«™åœ¨
+æµ“åšçš„æ ‘é˜´ä¸‹è¿œçœºï¼Œè¿œå¤„çš„ç™½äº‘åœ¨å¤©ï¼Œé£åœ¨æ ‘æ¢¢ï¼Œç§¯é›ªçš„å±±å·…åœ¨æ™´æœ—çš„è“å¤©ä¸‹ï¼Œå¹³
+å‡¡çš„äººåœ¨ä¸ºè‡ªå·±çš„ç”Ÿæ´»æŒ£æ‰ï¼Œä¸å¹³å‡¡çš„äººåœ¨ä¸ºè‡ªå·±çš„ç”Ÿå‘½å¥‹æ–—ã€‚
 LONG); 
         set("type","street");
         set("exits",([
@@ -32,24 +32,24 @@ int do_climb (string arg)
         int dodge;
         me = this_player();
         dodge = me->query_skill("dodge",1);
-        if (!arg || (arg != "tree" && arg != "¹âÒõÊ÷" && arg != "up"))
-                return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+        if (!arg || (arg != "tree" && arg != "å…‰é˜´æ ‘" && arg != "up"))
+                return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
         else if( npc = present("bancha bana", this_object()) )
         {
-                message_vision("$NĞ±Æ³ÁË$nÒ»ÑÛ£º°à²ìµÄÎå»¨Éñ¼ıºÜ¾ÃÃ»ÓĞÒûÑªÁË£¬ÄãÄª·ÇÏëÊÔÒ»ÏÂ£¿\n",npc,me);
-                return notify_fail("¿´À´²»É±°à²ì°ÍÄÇ£¬ÊÇÉÏ²»ÁËÊ÷µÄ£®\n");
+                message_vision("$Næ–œç¥äº†$nä¸€çœ¼ï¼šç­å¯Ÿçš„äº”èŠ±ç¥ç®­å¾ˆä¹…æ²¡æœ‰é¥®è¡€äº†ï¼Œä½ è«éæƒ³è¯•ä¸€ä¸‹ï¼Ÿ\n",npc,me);
+                return notify_fail("çœ‹æ¥ä¸æ€ç­å¯Ÿå·´é‚£ï¼Œæ˜¯ä¸Šä¸äº†æ ‘çš„ï¼\n");
    }
         else if (dodge < 100)
-                return notify_fail("Ê÷Ì«¸ßÁË£¬ÄãÅÀ²»ÉÏÈ¥¡£\n");
+                return notify_fail("æ ‘å¤ªé«˜äº†ï¼Œä½ çˆ¬ä¸ä¸Šå»ã€‚\n");
         else
         {
                 room = find_object(__DIR__"birdhouse");
                 if(!room)
                         room=load_object(__DIR__"birdhouse");
-                message_vision("$NÊÖ×ã²¢ÓÃ£¬ÂıÂıµÄÅÀÉÏ¹âÒõÊ÷£®\n",me);
+                message_vision("$Næ‰‹è¶³å¹¶ç”¨ï¼Œæ…¢æ…¢çš„çˆ¬ä¸Šå…‰é˜´æ ‘ï¼\n",me);
                 me->move(room);
                 me->start_busy(2);
-                message("vision",me->name()+"´ÓÊ÷ÏÂÅÀÁËÉÏÀ´¡£\n",room,me);
+                message("vision",me->name()+"ä»æ ‘ä¸‹çˆ¬äº†ä¸Šæ¥ã€‚\n",room,me);
                 return 1;
         }
 } 
@@ -59,7 +59,7 @@ int valid_leave(object me,string dir)
         {
                 if( !me->query_temp("marks/won_bancha") )
                 {
-                        return notify_fail("°à²ì°ÍÄÇÀäĞ¦Ò»ÉùµÀ£º¶ûµÈ·²·òË××Ó£¬ÔõÅäÌ¤ÈëÎÒÊ¥Ä¸Ñ©·å°ë²½£¬³ı\n·ÇÄã´òÓ®ÎÒ£¡\n");
+                        return notify_fail("ç­å¯Ÿå·´é‚£å†·ç¬‘ä¸€å£°é“ï¼šå°”ç­‰å‡¡å¤«ä¿—å­ï¼Œæ€é…è¸å…¥æˆ‘åœ£æ¯é›ªå³°åŠæ­¥ï¼Œé™¤\néä½ æ‰“èµ¢æˆ‘ï¼\n");
                         return ::valid_leave(me,dir);
                 }
                 else

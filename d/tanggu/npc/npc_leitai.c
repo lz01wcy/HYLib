@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIR"ÀŞÌ¨¸ºÔğÈË"NOR, ({ "leitai fuzeren","leitai ren","ren"  }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIR"æ“‚å°è´Ÿè´£äºº"NOR, ({ "leitai fuzeren","leitai ren","ren"  }) );
+        set("gender", "ç”·æ€§" );
         set("age", 20);  
         set("per", 30);       
         set("str", 30);

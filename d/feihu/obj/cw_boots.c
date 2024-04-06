@@ -7,14 +7,14 @@ inherit BOOTS;
 
 void create()
 {
-	set_name(HIR "´³ÍõÕ½Ñ¥" NOR, ({ "cw_boots", "boots"}) );
-       	set("long", "ÕâÊÇÒ»Ë«Àî´³Íõ´©¹ıµÄÕ½Ñ¥,×ö¹¤¼«Æä¾«ÖÂ¡£\n");
+	set_name(HIR "é—¯ç‹æˆ˜é´" NOR, ({ "cw_boots", "boots"}) );
+       	set("long", "è¿™æ˜¯ä¸€åŒæé—¯ç‹ç©¿è¿‡çš„æˆ˜é´,åšå·¥æå…¶ç²¾è‡´ã€‚\n");
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "wood");
-		set("unit", "Ë«");
+		set("unit", "åŒ");
 		set("no_put", 1);
 //		//set("value", 100000);
 		set("armor_prop/armor",50);

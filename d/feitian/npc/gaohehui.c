@@ -1,4 +1,4 @@
-// gaohehui.c ¸ßºÍ»İ
+// gaohehui.c é«˜å’Œæƒ 
 
 inherit NPC;
 inherit F_DEALER;
@@ -11,14 +11,14 @@ void reward(object me);
 
 void create()
 {
-	set_name("¸ßºÍ»İ", ({ "gao hehui", "gao" }));
+	set_name("é«˜å’Œæƒ ", ({ "gao hehui", "gao" }));
 	set("per", 29);
 	set("no_get",1);
 	set("str", 20);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("age", 22);
-            set("title", "ÃûÒ½");
-	set("long", "ËıÊÇÉñÒ½ÊÀ¼ÒµÄ³¤Å®¡£\n");
+            set("title", "ååŒ»");
+	set("long", "å¥¹æ˜¯ç¥åŒ»ä¸–å®¶çš„é•¿å¥³ã€‚\n");
 	set("combat_exp", 250);
 	set("attitude", "friendly");
 	set("vendor_goods", ({
@@ -30,7 +30,7 @@ void create()
 		"/d/shenlong/obj/xionghuang",
 	}));
         set("inquiry", ([
-                "¹¤×÷" : (: ask_me :),
+                "å·¥ä½œ" : (: ask_me :),
                 "job"  : (: ask_me :),
         ]));
 
@@ -51,36 +51,36 @@ string ask_me()
 { 
 object me = this_player(); 
 
-if(me->query("family/family_name")!="·ÉÌìÓù½£Á÷")
-return "ÄãÊÇË­°¡£¬ÎÒ²»ÈÏÊ¶Äã!";
+if(me->query("family/family_name")!="é£å¤©å¾¡å‰‘æµ")
+return "ä½ æ˜¯è°å•Šï¼Œæˆ‘ä¸è®¤è¯†ä½ !";
 
  if (me->query("qi") < 30) 
-return "Äã»¹ÊÇĞª»á¶ù°É£¡ ÔÚ×öÏÂÈ¥ÎÒÕâÀïÓÖÒª¶àÁË¸ö²¡ÈËÁË"; 
+return "ä½ è¿˜æ˜¯æ­‡ä¼šå„¿å§ï¼ åœ¨åšä¸‹å»æˆ‘è¿™é‡Œåˆè¦å¤šäº†ä¸ªç—…äººäº†"; 
 
-if (me->query_temp("smith/mo")) //¼ì²é±ê¼Ç
-return "²»ÊÇÈÃÄãÄ¥Ò©È¥ÁËÂğ(moyao)£¿"; 
+if (me->query_temp("smith/mo")) //æ£€æŸ¥æ ‡è®°
+return "ä¸æ˜¯è®©ä½ ç£¨è¯å»äº†å—(moyao)ï¼Ÿ"; 
 
 if (me->query_temp("smith/fenyao")) 
-return "½Ğ·ÖÒ©Äã·ÖÍêÃ»ÓĞ(fenyao)£¿"; 
+return "å«åˆ†è¯ä½ åˆ†å®Œæ²¡æœ‰(fenyao)ï¼Ÿ"; 
 
 if (me->query_temp("smith/zhengli")) 
-return "½ĞÕûÀíÄãÕûÀíÃ»ÓĞ(zhengli)£¿"; 
+return "å«æ•´ç†ä½ æ•´ç†æ²¡æœ‰(zhengli)ï¼Ÿ"; 
 
-switch(random(3))//Ëæ»ú·ÖÅäÈı¸ö¹¤×÷
+switch(random(3))//éšæœºåˆ†é…ä¸‰ä¸ªå·¥ä½œ
 { 
 case 0: 
 me->set_temp("smith/mo", 6+random(11)); 
-return "ºÃ°É£¡Äã°ïÎÒÄ¥Ò»ÏÂÒ©(moyao)¡£"; 
+return "å¥½å§ï¼ä½ å¸®æˆ‘ç£¨ä¸€ä¸‹è¯(moyao)ã€‚"; 
 
 case 1: 
 me->set_temp("smith/fenyao", 6+random(11)); 
-return "ÕâÑù°É£¬Äã°ïÎÒ·ÖÒ»ÏÂÒ©(fenyao)¡£"; 
+return "è¿™æ ·å§ï¼Œä½ å¸®æˆ‘åˆ†ä¸€ä¸‹è¯(fenyao)ã€‚"; 
 
 case 2:
 me->set_temp("smith/zhengli", 6+random(11)); 
-return "ÕâÀïÒ©ÎïÌ«ÔÓÂÒÁË£¬Äã°ïÎÒÕûÀíÒ»ÏÂ(zhengli)¡£"; 
+return "è¿™é‡Œè¯ç‰©å¤ªæ‚ä¹±äº†ï¼Œä½ å¸®æˆ‘æ•´ç†ä¸€ä¸‹(zhengli)ã€‚"; 
 }
-return "¿ìÈ¥×öÊÂ°É!!"; 
+return "å¿«å»åšäº‹å§!!"; 
 }
  
 int do_mo(string arg) 
@@ -88,19 +88,19 @@ int do_mo(string arg)
 object me = this_player(); 
 
 if (me->is_busy()) 
-return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n"); 
+return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n"); 
 
 if (! me->query_temp("smith/mo")) 
 { 
-message_vision("$nÄÃÆğÒ©³úÕı×¼±¸Ä¥Ò©Ê±¡£" 
-"¾ÍÌı¼û$N¶Ô$n´óºÈµÀ£ºË­ÈÃÄãÔÚÕâÀïÂÒ¸ãµÄ¡£\n", 
+message_vision("$næ‹¿èµ·è¯é”„æ­£å‡†å¤‡ç£¨è¯æ—¶ã€‚" 
+"å°±å¬è§$Nå¯¹$nå¤§å–é“ï¼šè°è®©ä½ åœ¨è¿™é‡Œä¹±æçš„ã€‚\n", 
 this_object(), me); 
 return 1; 
 } 
 
 if ((int)me->query_temp("smith/mo") > 1) 
 {
-message_vision("$nÄÃÆğÒ©²Ä¸ú¹¤¾ßÈÏÕæµÄÄ¥ÁËÆğÀ´£¬$N¿´ÁËµãÁËµãÍ·¡£\n", 
+message_vision("$næ‹¿èµ·è¯æè·Ÿå·¥å…·è®¤çœŸçš„ç£¨äº†èµ·æ¥ï¼Œ$Nçœ‹äº†ç‚¹äº†ç‚¹å¤´ã€‚\n", 
 this_object(), me); 
 me->start_busy(1);
 me->add_temp("smith/mo",-1);
@@ -113,20 +113,20 @@ int do_fenyao(string arg)
 object me = this_player(); 
 
 if (me->is_busy()) 
-return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n"); 
+return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n"); 
 
 if (! me->query_temp("smith/fenyao")) 
 { 
-message_vision("$nºúÂÒµÄ×¥ÁË¼¸°ÑÒ©ÔÚÊÖÖĞ¡£" 
-"Ö»Ìı¼û$N¶Ô$n´óºÈµÀ£º·ÅÏÂ£¬ÔÚÕâÀïÂÒ¸ãÊ²Ã´¡£\n", 
+message_vision("$nèƒ¡ä¹±çš„æŠ“äº†å‡ æŠŠè¯åœ¨æ‰‹ä¸­ã€‚" 
+"åªå¬è§$Nå¯¹$nå¤§å–é“ï¼šæ”¾ä¸‹ï¼Œåœ¨è¿™é‡Œä¹±æä»€ä¹ˆã€‚\n", 
 this_object(), me); 
 return 1; 
 } 
 
 if ((int)me->query_temp("smith/fenyao") > 1) 
 {
-message_vision("$n×ĞÏ¸¿´×ÅÊÖÖĞµÄÒ©²Ä¿ªÊ¼·ÖÒ©£¬" 
-"$N¡°àÅ¡±ÁËÒ»Éù£¬¿´ÉÏÈ¥ÓĞĞ©ÂúÒâ¡£\n", 
+message_vision("$nä»”ç»†çœ‹ç€æ‰‹ä¸­çš„è¯æå¼€å§‹åˆ†è¯ï¼Œ" 
+"$Nâ€œå—¯â€äº†ä¸€å£°ï¼Œçœ‹ä¸Šå»æœ‰äº›æ»¡æ„ã€‚\n", 
 this_object(), me); 
 me->add_temp("smith/fenyao",-1);
 me->start_busy(1);
@@ -140,19 +140,19 @@ int do_zhengli(string arg)
 object me = this_player(); 
 
 if (me->is_busy()) 
-return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n"); 
+return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n"); 
 
 if (! me->query_temp("smith/zhengli")) 
 { 
-message_vision("$n³Ë$N²»×¢ÒâÄÃÆğÒ©Æ·¾Í´òËãÍù¹ñ×ÓÀï¶ª£¬" 
-"¾ÍÌı¼û$N¶Ô$n´óºÈµÀ£ºÄãÏëº¦ËÀÈË°¡£¬»¹²»¿ì¸øÎÒ·ÅÏÂ¡£\n", 
+message_vision("$nä¹˜$Nä¸æ³¨æ„æ‹¿èµ·è¯å“å°±æ‰“ç®—å¾€æŸœå­é‡Œä¸¢ï¼Œ" 
+"å°±å¬è§$Nå¯¹$nå¤§å–é“ï¼šä½ æƒ³å®³æ­»äººå•Šï¼Œè¿˜ä¸å¿«ç»™æˆ‘æ”¾ä¸‹ã€‚\n", 
 this_object(),me);
 return 1; 
 } 
 
 if ((int)me->query_temp("smith/zhengli") > 1) 
 {
-message_vision("$N³é¿ªÒ©¹ñ°´ÕÕÒ©Ç©°ÑÒ©Æ··ÖÀà·ÅºÃ¡£\n", 
+message_vision("$NæŠ½å¼€è¯æŸœæŒ‰ç…§è¯ç­¾æŠŠè¯å“åˆ†ç±»æ”¾å¥½ã€‚\n", 
 me); 
 me->start_busy(1);
 me->add_temp("smith/zhengli",-1);
@@ -161,7 +161,7 @@ me->add_temp("smith/zhengli",-1);
 return 1; 
 } 
 
-void reward(object me) //¹¤×÷½áÊø£¬·ÖÅä½±ÉÍ£¬ÒÆ³ı±ê¼Ç
+void reward(object me) //å·¥ä½œç»“æŸï¼Œåˆ†é…å¥–èµï¼Œç§»é™¤æ ‡è®°
 { 
 object coin; 
 int exp,pot;
@@ -174,13 +174,13 @@ me->delete_temp("smith/zhengli");
 coin = new("/clone/money/coin"); 
 coin->set_amount(20 + random(50)); 
 coin->move(this_player()); 
-message_vision("$N¶Ô$nµÀ£ºÕâÊÇ¸øÄãµÄ¹¤Ç®¡£\n", 
+message_vision("$Nå¯¹$né“ï¼šè¿™æ˜¯ç»™ä½ çš„å·¥é’±ã€‚\n", 
 this_object(), me); 
 me->add("potential", pot); 
 me->add("combat_exp", exp); 
 me->receive_damage("qi", me->query("qi")/20); 
 me->receive_damage("jing", me->query("jing")/20); 
 me->start_busy(1); 
-tell_object(me,"Äã±»½±ÀøÁË\n"+chinese_number(exp)+"µãÊµÕ½¾­Ñé\n"
-		+chinese_number(pot)+"µãÇ±ÄÜ\n");
+tell_object(me,"ä½ è¢«å¥–åŠ±äº†\n"+chinese_number(exp)+"ç‚¹å®æˆ˜ç»éªŒ\n"
+		+chinese_number(pot)+"ç‚¹æ½œèƒ½\n");
 } 

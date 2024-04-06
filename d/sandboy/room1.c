@@ -3,10 +3,10 @@ inherit ROOM;
  
 void create() 
 { 
-  set ("short", "����");
+  set ("short", "堂屋");
   set ("long", @LONG
-���汱ǽ��һ���ƾɵĳ�̨,����һֻȱ�˿ڵ������з��˼�����ͷ,��
-��һֻ����¯�л�������������,������ǽ���·��˼�������.
+正面北墙下一张破旧的长台,上面一只缺了口的破碗中放了几个馒头,旁
+边一只泥香炉中还点着三根香烟,靠东的墙脚下放了几把镰刀.
 LONG);
 
   set("exits", ([ /* sizeof() == 2 */

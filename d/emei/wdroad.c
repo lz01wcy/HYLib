@@ -1,14 +1,14 @@
-//Room: wdroad.c ´óµÀ
+//Room: wdroad.c å¤§é“
 //Date: Oct.2.1997 by That
 
 inherit ROOM;
 
 void create()
 {
-      set("short", "´óµÀ");
+      set("short", "å¤§é“");
       set("long", @LONG
-Äã×ßÔÚÒ»Ìõ»ÆÍÁ´óµÀÉÏ£¬²»Ê±µØÓĞÈË¹Ò½£¿çÂí´Ò´Ò¶ø¹ı¡£
-    ¶«±±Í¨ÏòÎäµ±¡£
+ä½ èµ°åœ¨ä¸€æ¡é»„åœŸå¤§é“ä¸Šï¼Œä¸æ—¶åœ°æœ‰äººæŒ‚å‰‘è·¨é©¬åŒ†åŒ†è€Œè¿‡ã€‚
+    ä¸œåŒ—é€šå‘æ­¦å½“ã€‚
 LONG);
       set("outdoors", "wudang");
       set("exits", ([

@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-        set_name("С��", ({ "seller" }) );
-        set("gender", "����" );
+        set_name("小贩", ({ "seller" }) );
+        set("gender", "男性" );
         set("age", 32);
         set("long",
-                "���Ǹ�С����������������ʵʵ�������������Ƕ��ͱ��ˡ�\n");
+                "这是个小贩，别看他长的老老实实，可你别想从他那儿掏便宜。\n");
         set("combat_exp", 300);
         set("str", 17);
         set("dex", 20);
@@ -25,8 +25,8 @@ void create()
                 "/d/xingxiu/obj/fire",
         }) );
         set("inquiry", ([
-                "ҩ" : (: ask_me :),
-                "ҩ��" : (: ask_me :),
+                "药" : (: ask_me :),
+                "药材" : (: ask_me :),
         ]) );
         setup();
         carry_object(__DIR__"obj/cloth")->wear();
@@ -43,13 +43,13 @@ void init()
 string ask_me()
 {
         object me=this_player();
-        if ( me->query_temp("tmark/ҩ")) {
-                return "�����ϴ�����û��������ô���µ��ˣ�\n";
+        if ( me->query_temp("tmark/药")) {
+                return "我走南闯北，没见过你这么罗嗦的人！\n";
         }
         else {
-                me->set_temp("tmark/ҩ",1);
-                return "�����ҵ�����ɭ���в�ҩ������������һЩ��ҩ�ģ�Ҫ����Ƚ�
-Ǯ��\n";
+                me->set_temp("tmark/药",1);
+                return "当年我到极北森林中采药，还真遇到了一些好药材，要买得先交
+钱。\n";
         }
 }
 
@@ -58,21 +58,21 @@ int accept_object(object who, object ob)
         object obj;
 
         if ((ob->query("money_id")) && (ob->value() >= 10000)
-         && (who->query_temp("tmark/ҩ")))
+         && (who->query_temp("tmark/药")))
         {
                 obj = new(__DIR__"obj/shouwu");
                 obj->move(who);
-                who->add_temp("tmark/ҩ",0);
-                write("С��˵��������Ȼ���������Ǯ����ζҩ�ɾ͹����ˡ���\n");
+                who->add_temp("tmark/药",0);
+                write("小贩说道：“既然您出得起价钱，这味药可就归您了。”\n");
                 return 1;
         }
         else
                 if (ob->query("money_id"))
                 {
-                        write("С����Цһ����˵�������ٺ٣�������ô��Ǯ�ġ���\n");
+                        write("小贩阴笑一声，说道：“嘿嘿，给我这么多钱哪。”\n");
                         return 1;
                 }
                 else {
-                        return notify_fail("С�������˵���������������ʲô����\n");
+                        return notify_fail("小贩诧异地说道：“给我这个干什么？”\n");
                 }
 }

@@ -1,4 +1,4 @@
-// jinling-suo.c ½ğÁåË÷
+// jinling-suo.c é‡‘é“ƒç´¢
 // By Kayin @ CuteRabbit Studio 1999/3/21 new
 #include <ansi.h> 
 #include <weapon.h>
@@ -6,22 +6,22 @@ inherit WHIP;
 
 void create()
 {
-        set_name(HIY"½ğÁå"HIW"Ë÷"NOR, ({ "jinling suo", "suo" }));
+        set_name(HIY"é‡‘é“ƒ"HIW"ç´¢"NOR, ({ "jinling suo", "suo" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»Ìõ½à°×µÄË¿´øÏµ³ÉµÄ½ğÁåË÷£¬Ë¿´øµÄÁ½¶ËÓĞÁ½¸öĞ¡½ğÁå£¬²»ÊÇ·¢³öÇå´àµÄÏìÉù¡£\n");
+                set("unit", "æ¡");
+                set("long", "è¿™æ˜¯ä¸€æ¡æ´ç™½çš„ä¸å¸¦ç³»æˆçš„é‡‘é“ƒç´¢ï¼Œä¸å¸¦çš„ä¸¤ç«¯æœ‰ä¸¤ä¸ªå°é‡‘é“ƒï¼Œä¸æ˜¯å‘å‡ºæ¸…è„†çš„å“å£°ã€‚\n");
                 set("value", 100000);
-                 set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_give", "ÕâÑù¶«Î÷²»ÄÜ¸øÈË¡£\n");
+                 set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+                set("no_give", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç»™äººã€‚\n");
                 set("treasure",1);
                 set("nopawn",1);
             set("no_get",1);
                set("material", "gold");
-                set("wield_msg", HIC"$N´Ó»³ÖĞÌÍ³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n"NOR);
-                set("unwield_msg", HIC"$N½«ÊÖÖĞµÄ$n·ÅÈë»³ÖĞ¡£\n"NOR);
+                set("wield_msg", HIC"$Nä»æ€€ä¸­æå‡ºä¸€æ¡$næ¡åœ¨æ‰‹ä¸­ã€‚\n"NOR);
+                set("unwield_msg", HIC"$Nå°†æ‰‹ä¸­çš„$næ”¾å…¥æ€€ä¸­ã€‚\n"NOR);
 	        set("armor_prop/attack", 100);
 
         }

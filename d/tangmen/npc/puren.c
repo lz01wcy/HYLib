@@ -2,8 +2,8 @@ inherit NPC;
 string ask_me(int i);
 void create()
 {
-	set_name("ÆÍÈË", ({ "pu ren","ren"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ä»†äºº", ({ "pu ren","ren"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 21);
 	set("shen_type", 1);
 	set("str", 20);

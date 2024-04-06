@@ -1,4 +1,4 @@
-// flagon.c  ¾Æºø
+// flagon.c  é…’å£¶
 
  inherit ITEM;
 inherit F_LIQUID;
@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("¾Æºø", ({"jiu hu", "hu", "flagon"}));
+	set_name("é…’å£¶", ({"jiu hu", "hu", "flagon"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÀ´×°ÉÕ¾ÆµÄ´ó¾Æºø¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨æ¥è£…çƒ§é…’çš„å¤§é…’å£¶ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 100);
 		set("max_liquid", 15);
 	}
@@ -21,7 +21,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "ÉÕ¾Æ",
+		"name": "çƒ§é…’",
 		"remaining": 15,
 		"drunk_apply": 3,
               "slumber_effect": 100,

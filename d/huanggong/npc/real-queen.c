@@ -3,17 +3,17 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "»ÊÌ«ºó" NOR, ({ "empress","queen"}));
+        set_name(HIY "çš‡å¤ªå" NOR, ({ "empress","queen"}));
         set("shen_type", 0);
         set("age",43);
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
       set("per",24);
         set("long",
-                "ËıÉúµÃ°«°«ÅÖÅÖ£¬Ò²ĞíÊÇÖÕÄê²»¼ûÑô¹â£¬ËùÒÔËıµÄÁ³É«ÏÔµÃºÜ²Ô°×¡£\n");
+                "å¥¹ç”Ÿå¾—çŸ®çŸ®èƒ–èƒ–ï¼Œä¹Ÿè®¸æ˜¯ç»ˆå¹´ä¸è§é˜³å…‰ï¼Œæ‰€ä»¥å¥¹çš„è„¸è‰²æ˜¾å¾—å¾ˆè‹ç™½ã€‚\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         set("inquiry", ([
-                "Ïİº¦" : "ÄãÊ²Ã´ÒâË¼......¡£\n",
+                "é™·å®³" : "ä½ ä»€ä¹ˆæ„æ€......ã€‚\n",
         ]));
       
   setup();

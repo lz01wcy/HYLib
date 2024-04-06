@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-        set("short",GRN"ׯ��"NOR);
+        set("short",GRN"庄门"NOR);
         set("long",
-"��ת��һ��ï�ܵĻ���, ��Ȼ��, ֻ��һ����������, С�������ׯԺ��\n"
-"���ڲ����Ļ����С�ׯ�Ŵ����Ϻ�Ȼд�š�"HIY"������ɽׯ"NOR"�������������Ĵ��֡�\n"
+"你转过一丛茂密的花丛, 猛然间, 只见一座红檐绿瓦, 小巧玲珑的庄院矗\n"
+"利在灿澜的花丛中。庄门大匾上赫然写着「"HIY"曼陀罗山庄"NOR"」五个金光闪闪的大字。\n"
 );
        set("outdoors","mr");
        set("exits",([

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"��֮�þ�"NOR);
+	set("short", HIY"光之幻境"NOR);
 	set("long", HIY @LONG
-ΰ������������ҫ�����ɭ���У�����ɭ����ҫ��
-һƬ���ɫ�Ĺ���С��ڸߴ����ָ��������������밫
-��ľ,  �㷢�����Ѿ���·�ˡ� 
+伟大的众神的力量耀在这个森林中，整个森林闪耀在
+一片金黄色的光辉中。在高大树林附近充满著荆棘与矮
+灌木,  你发觉你已经迷路了。 
 LONG NOR);
 
 

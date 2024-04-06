@@ -4,18 +4,18 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹ûºÐÑÒ");
+	set("short", "æžœç›’å²©");
 	set("long", @LONG
-ÔÚÄý±ÌÌ¶ÅÏ,ÓÐÒ»¿é¾ÞÊ¯,ÐÎ×´±âÔ²Æ½Õû,ÖÐ¼äÓÐÒ»Ìõ»·ºÛ,ÐÎËÆ¹û
-ºÐ.ÓÖÏóÄ¥ÅÌ,Ë×³Æ'ÂôÄ¥ÑÒ'.Çå·½ÉÐ»ÝÊ«ÔÆ'¹ûºÐÊ¼»ìãç,·çÀ×Åü²»¿ª,
-¿ÉÖªÌìµØÃØ,ÈÎÓëÊÀÈË²Â.',ÑÒÉÏÓÐÍ¤(ting).
+åœ¨å‡ç¢§æ½­ç•”,æœ‰ä¸€å—å·¨çŸ³,å½¢çŠ¶æ‰åœ†å¹³æ•´,ä¸­é—´æœ‰ä¸€æ¡çŽ¯ç—•,å½¢ä¼¼æžœ
+ç›’.åˆè±¡ç£¨ç›˜,ä¿—ç§°'å–ç£¨å²©'.æ¸…æ–¹å°šæƒ è¯—äº‘'æžœç›’å§‹æ··æ²Œ,é£Žé›·åŠˆä¸å¼€,
+å¯çŸ¥å¤©åœ°ç§˜,ä»»ä¸Žä¸–äººçŒœ.',å²©ä¸Šæœ‰äº­(ting).
 LONG
 	);
 	set("no_clean_up", 0);
 	set("outdoors", "/d/yandang");
 	set("item_desc", ([ /* sizeof() == 1 */
-  "ting" : "ÕâÊÇÒ»×ùÁù½ÇÐ¡Ê¯Í¤,Ãû¹ûºÐÍ¤,¾ÝËµ¹ûºÐÑÒÖÐ²ØÓÐÒ»¸öÃØÃÜ,Äã
-ÒþÒþ¾õµÃ¸úÕâ¸öÐ¡Í¤ÓÐ¹Ø.
+  "ting" : "è¿™æ˜¯ä¸€åº§å…­è§’å°çŸ³äº­,åæžœç›’äº­,æ®è¯´æžœç›’å²©ä¸­è—æœ‰ä¸€ä¸ªç§˜å¯†,ä½ 
+éšéšè§‰å¾—è·Ÿè¿™ä¸ªå°äº­æœ‰å…³.
 ",
 ]));
 	set("exits", ([ /* sizeof() == 3 */

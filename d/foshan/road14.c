@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short","ÁÖ¼äµÀ");
+	set("short","æž—é—´é“");
 	set("long",@LONG
-ÕâÀïÊÇÒ»ÌõÁÖ¼äÐ¡µÀ£¬ÔÚÊ÷´ÔÖÐòêÑÑ¡£¶«Ãæ¾ÍÊÇÈªÖÝ³ÇµÄÎ÷ÃÅ
-µõÇÅ£¬ÏòÎ÷ÄÏ¿É´ïÁëÄÏ¹ã¶«¡£
+è¿™é‡Œæ˜¯ä¸€æ¡æž—é—´å°é“ï¼Œåœ¨æ ‘ä¸›ä¸­èœ¿èœ’ã€‚ä¸œé¢å°±æ˜¯æ³‰å·žåŸŽçš„è¥¿é—¨
+åŠæ¡¥ï¼Œå‘è¥¿å—å¯è¾¾å²­å—å¹¿ä¸œã€‚
 LONG);
 	set("objects", ([
 	   __DIR__"obj/hua3": 1,

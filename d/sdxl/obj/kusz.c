@@ -7,17 +7,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name("¿İÊ÷Ö¦",({ "ku shuzhi", "shuzhi" }) );
+        set_name("æ¯æ ‘æ",({ "ku shuzhi", "shuzhi" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 0);
                 set("material", "bamboo");
-                set("long", "ÕâÊÇÒ»¸ù¸É¿İµÄÊ÷Ö¦¡£\n");
-                set("wield_msg", "$NÄÃ³öÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æ ¹å¹²æ¯çš„æ ‘æã€‚\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
            init_sword(15);
         setup();

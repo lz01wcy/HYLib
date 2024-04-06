@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ʒ�");
+	set("short", "牌坊");
 	set("long", @LONG
-����һ���ձڣ�����һ����ʯС������ǰ��Զ����һ���Ʒ���ͨ��
-�������һ�ߣ�������ԭ���ĵ�ɫ�����Ǹ��ص�ү����ɫ���񣬱�����
-��������Ϸ¥��������ǹص�����
+穿过一道照壁，走上一条青石小道，眼前不远就是一道牌坊。通用
+红漆过了一边，看不出原来的底色，倒是跟关帝爷的脸色很像，北面闹
+轰轰的是座戏楼，东面就是关帝庙。
 LONG
 	);
 	set("outdoors", "kaifeng");

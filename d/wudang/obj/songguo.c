@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ò°ËÉ¹û", ({ "song guo", "guo" }) );
+        set_name("é‡Žæ¾æžœ", ({ "song guo", "guo" }) );
         set_weight(150);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿ÅËÉ×Ó±¥ÂúµÄÒ°ËÉ¹ûÊµ¡£\n");
-                set("unit", "Ã¶");
+                set("long", "ä¸€é¢—æ¾å­é¥±æ»¡çš„é‡Žæ¾æžœå®žã€‚\n");
+                set("unit", "æžš");
                 set("value", 80);
         }
         setup();
@@ -26,10 +26,10 @@ int do_eat(string arg)
 {
 	object me = this_player();
 
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
-	message_vision(HIG"$N³ÔÏÂÒ»¿Å" + name() + "£¬Ö»¾õµÃ¾«Éñ½¡Íú¡£\n"NOR, me);
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
+	message_vision(HIG"$Nåƒä¸‹ä¸€é¢—" + name() + "ï¼Œåªè§‰å¾—ç²¾ç¥žå¥æ—ºã€‚\n"NOR, me);
 	if (me->query("eff_jing") < me->query("max_jing"))
 		me->receive_curing("jing", (int)me->query("max_jing") / 20);
 	me->start_busy(2);

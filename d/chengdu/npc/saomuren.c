@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("É¨Ä¹ÈË", ({ "saomu ren", "ren" }));
-	set("long","ÕâÊÇ¸öÑÛ´øÓÇÓôµÄÉ¨Ä¹ÈË£¬Ëû²»Í£µØÔÚÄÇÀï°¦ÉùÌ¾Æø£¬²»ÖªµÀ¸ãÊ²Ã´¹í¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ‰«å¢“äºº", ({ "saomu ren", "ren" }));
+	set("long","è¿™æ˜¯ä¸ªçœ¼å¸¦å¿§éƒçš„æ‰«å¢“äººï¼Œä»–ä¸åœåœ°åœ¨é‚£é‡Œå”‰å£°å¹æ°”ï¼Œä¸çŸ¥é“æä»€ä¹ˆé¬¼ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 

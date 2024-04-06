@@ -1,4 +1,4 @@
-// Room: xiuxishi.c ĞİÏ¢ÊÒ
+// Room: xiuxishi.c ä¼‘æ¯å®¤
 // By Marz
 
 inherit ROOM;
@@ -11,10 +11,10 @@ int valid_leave(object me, string dir);
 
 void create()
 {
-        set("short", "ĞİÏ¢ÊÒ");
+        set("short", "ä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÏá·¿£¬ÒòÃÅ´°³£±Õ×Å£¬¹âÏßºÜ»è°µ¡£·¿Àï±ğÎŞËûÎï£¬
-Ö»ÓĞÖĞ¼ä·Å×ÅÒ»ÕÅÊÕÊ°µÃÊæÊæ·ş·şµÄ´ó´²£¬¿´×Å¾ÍÈÃÈËÏëË¯¾õ¡£
+è¿™æ˜¯é—´æ•´æ´çš„å¢æˆ¿ï¼Œå› é—¨çª—å¸¸é—­ç€ï¼Œå…‰çº¿å¾ˆæ˜æš—ã€‚æˆ¿é‡Œåˆ«æ— ä»–ç‰©ï¼Œ
+åªæœ‰ä¸­é—´æ”¾ç€ä¸€å¼ æ”¶æ‹¾å¾—èˆ’èˆ’æœæœçš„å¤§åºŠï¼Œçœ‹ç€å°±è®©äººæƒ³ç¡è§‰ã€‚
 LONG );
         set("no_clean_up", 0);
         set("sleep_room", 1);
@@ -42,21 +42,21 @@ void close_men()
         if(objectp(room))
         {
                 delete("exits/south");
-                        message("vision", "ÃÅÖ¨Ö¨Ñ½Ñ½µØ×Ô¼ººÏÉÏÁË¡£\n", this_object());
+                        message("vision", "é—¨å±å±å‘€å‘€åœ°è‡ªå·±åˆä¸Šäº†ã€‚\n", this_object());
                 room->delete("exits/north");
-                message("vision", "ÃÅÖ¨Ö¨Ñ½Ñ½µØ×Ô¼ººÏÉÏÁË¡£\n", room);
+                message("vision", "é—¨å±å±å‘€å‘€åœ°è‡ªå·±åˆä¸Šäº†ã€‚\n", room);
         }
 }
 
 int do_close(string arg)
 {
         if (!query("exits/south"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("é—¨å·²ç»æ˜¯å…³ç€çš„äº†ã€‚\n");
 
         if (!arg || (arg != "men" && arg != "door"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å…³ä»€ä¹ˆï¼Ÿ\n");
 
-        message_vision("$NÏë°ÑÃÅ¹ØÉÏ¡£\n", this_player());
+        message_vision("$Næƒ³æŠŠé—¨å…³ä¸Šã€‚\n", this_player());
 
         remove_call_out("close_men");
         call_out("close_men", 2);
@@ -69,28 +69,28 @@ int do_open(string arg)
         object room;
         object me = this_player();
         if (query("exits/south"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("å¤§é—¨å·²ç»æ˜¯å¼€ç€äº†ã€‚\n");
 
         if (!arg || (arg != "men" && arg != "door" && arg != "south"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¼€ä»€ä¹ˆï¼Ÿ\n");
 
         if(!( room = find_object(__DIR__"donglang2")) )
                 room = load_object(__DIR__"donglang2");
         if(objectp(room))
         {
                 set("exits/south", __DIR__"donglang2");
-                message_vision("$NÇáÊÖÇá½ÅµØ°ÑÃÅ´ò¿ª¡£\n", this_player());
+                message_vision("$Nè½»æ‰‹è½»è„šåœ°æŠŠé—¨æ‰“å¼€ã€‚\n", this_player());
                 room->set("exits/north", __FILE__);
 
                 if (me->query_temp("sleeped"))
                 {
-                message("vision", "Ö¨µØÒ»Éù£¬"+me->query("name")+"¾«Éñ»À·¢µØ´ÓÀï
-Ãæ°ÑÃÅ´ò¿ªÁË¡£\n",
+                message("vision", "å±åœ°ä¸€å£°ï¼Œ"+me->query("name")+"ç²¾ç¥ç„•å‘åœ°ä»é‡Œ
+é¢æŠŠé—¨æ‰“å¼€äº†ã€‚\n",
                 room);
                 } else
                 {
-                message("vision", "°ğµØÒ»Éù£¬"+me->query("name")+"´ÓÀïÃæ°ÑÃÅ´ò¿ª
-£¬Ò»Á³µÄ²»ÄÍ·³¡£\n",
+                message("vision", "æ¢†åœ°ä¸€å£°ï¼Œ"+me->query("name")+"ä»é‡Œé¢æŠŠé—¨æ‰“å¼€
+ï¼Œä¸€è„¸çš„ä¸è€çƒ¦ã€‚\n",
                          room);
                 }
 
@@ -126,20 +126,20 @@ int do_zhao(string arg)
         object me;
         me=this_player();
         if ( !arg || arg != "mao tan" )
-            return notify_fail("ÄãÒªÕÒÊ²Ã´\n");
+            return notify_fail("ä½ è¦æ‰¾ä»€ä¹ˆ\n");
 	if (present("mao tan", me))
-	   return notify_fail("ÄãÕÒÀ´ÕÒÈ¥£¬·¢ÏÖ×Ô¼ºÔ­À´ÒÑ¾­ÓĞÁË£¡\n");
+	   return notify_fail("ä½ æ‰¾æ¥æ‰¾å»ï¼Œå‘ç°è‡ªå·±åŸæ¥å·²ç»æœ‰äº†ï¼\n");
 	if (objectp(present("mao tan", environment(me))))
-	   return notify_fail("µØÉÏ¾ÍÓĞ£¬Äã»¹ÕÒÊ²Ã´£¿£¡\n");
+	   return notify_fail("åœ°ä¸Šå°±æœ‰ï¼Œä½ è¿˜æ‰¾ä»€ä¹ˆï¼Ÿï¼\n");
 
         if (query("tan_count") > 0) 
           {
-           message_vision("$NÔÚ´²ÉÏ·­À´·­È¥ÕÒ³öÒ»ÌõÃ«Ìº¡£\n", me);
+           message_vision("$Nåœ¨åºŠä¸Šç¿»æ¥ç¿»å»æ‰¾å‡ºä¸€æ¡æ¯›æ¯¯ã€‚\n", me);
            add("tan_count", -1);
            tan=new(__DIR__"obj/maotan");
            tan->move(me);
           }
         else
-           message_vision("$NÔÚ´²ÉÏ·­À´·­È¥Ê²Ã´Ò²Ã»ÕÒ×Å¡£\n", me);
+           message_vision("$Nåœ¨åºŠä¸Šç¿»æ¥ç¿»å»ä»€ä¹ˆä¹Ÿæ²¡æ‰¾ç€ã€‚\n", me);
      return 1;
 }

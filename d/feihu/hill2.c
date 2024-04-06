@@ -1,4 +1,4 @@
-//Ììº®É½
+//å¤©å¯’å±±
 // by steel 
 #include "ansi.h"
 inherit ROOM;
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ììº®É½¶¥");
+	set("short", "å¤©å¯’å±±é¡¶");
 	set("long", @LONG
-        ÕâÀïÒÑÊÇÌìº®É½µÄÉ½¶¥,Ö»¼ûÑÂ·ì²Î²î,ÆÄÎªÏÕ¶ñ¡£¾ÍÔÚÕâÉ½¶¥Ö®
-ÉÏ£¬ÓÐÒ»×ù±ùÑÂ³åÌì¶øÆð£¬×ÐÏ¸¿´¿´£¬ÑÂÉÏºÃÏóÓÐ¸«ÔäµÄºÛ¼£¡£ËÆºõ¿ÉÒÔ
-Ë³×ÅÅÀÉÏÈ¥¡£    
+        è¿™é‡Œå·²æ˜¯å¤©å¯’å±±çš„å±±é¡¶,åªè§å´–ç¼å‚å·®,é¢‡ä¸ºé™©æ¶ã€‚å°±åœ¨è¿™å±±é¡¶ä¹‹
+ä¸Šï¼Œæœ‰ä¸€åº§å†°å´–å†²å¤©è€Œèµ·ï¼Œä»”ç»†çœ‹çœ‹ï¼Œå´–ä¸Šå¥½è±¡æœ‰æ–§å‡¿çš„ç—•è¿¹ã€‚ä¼¼ä¹Žå¯ä»¥
+é¡ºç€çˆ¬ä¸ŠåŽ»ã€‚    
 LONG
 	);
 	
@@ -31,18 +31,18 @@ int do_climb(string arg)
     int dodge;
     me=this_player();
     if(!arg) return 0;
-    if(arg!="bingya")return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+    if(arg!="bingya")return notify_fail("ä½ è¦çˆ¬ä»€ä¹ˆï¼Ÿ\n");
     dodge=me->query_skill("dodge",1);
     if(obj=me->query_temp("armor/boots"))
     {
-       message_vision(HIB"$NÄã×¥½ô±ùÑÂÉÏµÄÊ¯·ì£¬ÂýÂýÅÀÁËÉÏÈ¥¡£\n"NOR,me);
+       message_vision(HIB"$Nä½ æŠ“ç´§å†°å´–ä¸Šçš„çŸ³ç¼ï¼Œæ…¢æ…¢çˆ¬äº†ä¸ŠåŽ»ã€‚\n"NOR,me);
 
       if(obj->query("id")=="snow boots")
        {
         if(dodge>80){
             me->add("jing",-80);
             me->add("qi",-80);
-            tell_room(__DIR__"bingya",me->name()+"Æ½°²µÄ´ÓÏÂÃæÅÀÉÏÀ´\n");
+            tell_room(__DIR__"bingya",me->name()+"å¹³å®‰çš„ä»Žä¸‹é¢çˆ¬ä¸Šæ¥\n");
             me->move(__DIR__"bingya");
             return 1;  
              }
@@ -76,13 +76,13 @@ int do_climb(string arg)
 
 int to_si()
 {
-     message_vision(HIR"²»ºÃ!$NÊÖÉÏÒ»»¬,´Ó°ë¿ÕÖÐË¤ÁËÏÂÀ´¡£\n"NOR,this_player());  
+     message_vision(HIR"ä¸å¥½!$Næ‰‹ä¸Šä¸€æ»‘,ä»ŽåŠç©ºä¸­æ‘”äº†ä¸‹æ¥ã€‚\n"NOR,this_player());  
      this_player()->die();
      return 1;
 }
 int to_yun()
 {
-     message_vision(HIR"²»ºÃ!$NÊÖÉÏÒ»»¬,´Ó°ë¿ÕÖÐË¤ÁËÏÂÀ´¡£\n"NOR,this_player());     
+     message_vision(HIR"ä¸å¥½!$Næ‰‹ä¸Šä¸€æ»‘,ä»ŽåŠç©ºä¸­æ‘”äº†ä¸‹æ¥ã€‚\n"NOR,this_player());     
      this_player()->unconcious();
      return 1;
 }

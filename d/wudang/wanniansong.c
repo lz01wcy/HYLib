@@ -1,4 +1,4 @@
-// /d/wudang/wanniansong.c  ÍòÄêËÉ
+// /d/wudang/wanniansong.c  ä¸‡å¹´æ¾
 
 #include <ansi.h>
 inherit ROOM;
@@ -7,11 +7,11 @@ int do_jump(string arg);
 
 void create()
 {
-        set("short",HIG"ÍòÄêËÉ"NOR);
+        set("short",HIG"ä¸‡å¹´æ¾"NOR);
         set("long", @LONG
-ÕâÊÇÒ»¿ÃÍòÄêÀÏËÉ£¬Ê÷Ö¦½»´í£¬ËÉÕëÃ¯ÃÜ¡£ÀÏÊ÷ÅÌ¸ù£¬Éî×¥Ê¯±Ú¡£Ê÷ÉÏ½á
-ÂúÁË´ó´óĞ¡Ğ¡µÄËÉ¹û¡£½ÅÏÂÎíÆøÃÖÂş£¬²»ÖªÉîÇ³¡£²¦¿ªËÉÖ¦£¬Äã¿´¼ûÊ¯±ÚÉÏÓĞ
-Ò»¸öÌìÈ»Ê¯¶´¡£
+è¿™æ˜¯ä¸€æ£µä¸‡å¹´è€æ¾ï¼Œæ ‘æäº¤é”™ï¼Œæ¾é’ˆèŒ‚å¯†ã€‚è€æ ‘ç›˜æ ¹ï¼Œæ·±æŠ“çŸ³å£ã€‚æ ‘ä¸Šç»“
+æ»¡äº†å¤§å¤§å°å°çš„æ¾æœã€‚è„šä¸‹é›¾æ°”å¼¥æ¼«ï¼Œä¸çŸ¥æ·±æµ…ã€‚æ‹¨å¼€æ¾æï¼Œä½ çœ‹è§çŸ³å£ä¸Šæœ‰
+ä¸€ä¸ªå¤©ç„¶çŸ³æ´ã€‚
 LONG                           
         );
         set("exits", ([
@@ -39,31 +39,31 @@ int do_jump(string arg)
 
         me=this_player();
         if ( !arg || arg != "down" )
-            return notify_fail("ÄãÒªÍùÄÄÌø£¿\n");
-        message_vision("$NÁ½ÑÛÒ»±Õ£¬ÓÂ¸ÒµØÌøÁËÏÂÈ¥¡£\n"NOR, me);
+            return notify_fail("ä½ è¦å¾€å“ªè·³ï¼Ÿ\n");
+        message_vision("$Nä¸¤çœ¼ä¸€é—­ï¼Œå‹‡æ•¢åœ°è·³äº†ä¸‹å»ã€‚\n"NOR, me);
         if (! present("mao tan", me))
           { 
-            message_vision(RED"°¡---£¬$NÒ»Éù²Ò½Ğ£¬Ö±ÍùÍòÕÉÉî¹ÈÂäÈ¥¡£\n"NOR, me);
+            message_vision(RED"å•Š---ï¼Œ$Nä¸€å£°æƒ¨å«ï¼Œç›´å¾€ä¸‡ä¸ˆæ·±è°·è½å»ã€‚\n"NOR, me);
             me->die();
-//            me->set_temp("last_damage_from","Ë¤ÏÂÍòÕÉÉî¹Èµø");
+//            me->set_temp("last_damage_from","æ‘”ä¸‹ä¸‡ä¸ˆæ·±è°·è·Œ");
 //            me->die();
 		if (tmp = present("corpse", this_object())) {
 			ob = deep_inventory(tmp);
 			i = sizeof(ob);
 			while (i--) if (userp(ob[i])) ob[i]->move(this_object());
 			destruct(tmp);
-			if (me) tell_room(this_object(), me->name()+"µÄÊ¬¹Ç¶¼ÕÒ²»µ½ÁË¡£\n");
+			if (me) tell_room(this_object(), me->name()+"çš„å°¸éª¨éƒ½æ‰¾ä¸åˆ°äº†ã€‚\n");
 		}
 		return 1;
           }
-        message_vision(HIY"$NÈËÔÚ¿ÕÖĞ£¬Á¬Ã¦°ÑÃ«ÌºÕ¹¿ª£¬¶ÙÊ±Ïó³¤ÁË³á°ò°ãÇáÆ®Æ®µØ»Ğ»Ğã±ã±³¯ÏÂÂäÈ¥¡£\n"NOR, me);
+        message_vision(HIY"$Näººåœ¨ç©ºä¸­ï¼Œè¿å¿™æŠŠæ¯›æ¯¯å±•å¼€ï¼Œé¡¿æ—¶è±¡é•¿äº†ç¿…è†€èˆ¬è½»é£˜é£˜åœ°æææƒšæƒšæœä¸‹è½å»ã€‚\n"NOR, me);
 
         me->move(__DIR__"songlin1");
 
-	tell_room(this_object(), me->name() + "·ÉÁË¹ıÀ´¡£\n", ({ me }));
-        message_vision(HIY"Ğê--µÄÒ»Éù£¬Ã«Ìº±»Ê÷Ö¦»®ÆÆ¹ÒÔÚÊ÷ÉÏ£¬$NÁ½½ÅÒ»Õğ£¬Ò»Æ¨¹ÉµøÔÚµØÉÏ¡£\n"NOR, me);
+	tell_room(this_object(), me->name() + "é£äº†è¿‡æ¥ã€‚\n", ({ me }));
+        message_vision(HIY"å˜˜--çš„ä¸€å£°ï¼Œæ¯›æ¯¯è¢«æ ‘æåˆ’ç ´æŒ‚åœ¨æ ‘ä¸Šï¼Œ$Nä¸¤è„šä¸€éœ‡ï¼Œä¸€å±è‚¡è·Œåœ¨åœ°ä¸Šã€‚\n"NOR, me);
         destruct(present("mao tan", me));
 
-     	write(HIY"ÄãÖÕÓÚ°²È«×ÅÂ½¡£\n"NOR);
+     	write(HIY"ä½ ç»ˆäºå®‰å…¨ç€é™†ã€‚\n"NOR);
 	return 1;
 }

@@ -4,13 +4,13 @@ inherit ITEM;
 inherit F_FOOD; 
 void create()
 {
-    set_name(GRN"Á«Åî"NOR, ({ "lotus petal","petal" }) );
+    set_name(GRN"è²è“¬"NOR, ({ "lotus petal","petal" }) );
     set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("long", "Ò»¸öĞÂÏÊµÄÁ«Åî£¬ÂÌÒâ°»È»£¬ÉÏÃæ»¹ÓĞ¼¸µÎºşË®¡£\n");
-        set("unit", "¸ö");
+        set("long", "ä¸€ä¸ªæ–°é²œçš„è²è“¬ï¼Œç»¿æ„ç›ç„¶ï¼Œä¸Šé¢è¿˜æœ‰å‡ æ»´æ¹–æ°´ã€‚\n");
+        set("unit", "ä¸ª");
                 set("value", 1000);
                 set("food_remaining", 3);
                 set("food_supply", 6);

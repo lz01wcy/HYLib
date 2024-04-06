@@ -3,8 +3,8 @@
 inherit NPC;
 void create()
 {
-        set_name("冲古寺的喇嘛",({"chonggu lama","lama"}));
-        set("long", "这是直共寺打扫寺院的喇嘛。\n");
+        set_name("鍐插彜瀵虹殑鍠囧槢",({"chonggu lama","lama"}));
+        set("long", "杩欐槸鐩村叡瀵烘墦鎵闄㈢殑鍠囧槢銆俓n");
         set("age",30+random(20));
         set("attitude", "friendly");
         set("combat_exp", 1500000);
@@ -38,7 +38,7 @@ void create()
         
         set("chat_chance", 1);
         set("chat_msg", ({
-                "喇嘛把手里的糌粑捏碎，兴致勃勃地扔到河里去喂鱼。\n",  
+                "鍠囧槢鎶婃墜閲岀殑绯岀矐鎹忕锛屽叴鑷村媰鍕冨湴鎵斿埌娌抽噷鍘诲杺楸笺�俓n",  
         }) );
         set("chat_chance_combat", 100);
          set("chat_msg_combat", ({

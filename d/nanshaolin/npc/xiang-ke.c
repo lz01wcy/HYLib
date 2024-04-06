@@ -1,5 +1,5 @@
 // Last Modified by Winder on May. 29 2001
-// xiang-ke.c ½øÏã¿Í
+// xiang-ke.c è¿›é¦™å®¢
 
 inherit NPC;
 
@@ -7,8 +7,8 @@ void create()
 {
 	int value;
 	value = random(10);
-	set_name("½øÏã¿Í", ({ "jinxiang ke", "ke", "guest" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è¿›é¦™å®¢", ({ "jinxiang ke", "ke", "guest" }));
+	set("gender", "ç”·æ€§");
 	set("age", 14 + value * 3 );
 
 	set("combat_exp", 500 + 5 * value);

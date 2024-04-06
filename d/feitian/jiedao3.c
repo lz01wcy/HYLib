@@ -4,10 +4,10 @@ inherit ROOM;
 #include <ansi.h>  
 void create ()
 {
-  set ("short", "½ÖµÀ");
+  set ("short", "è¡—é“");
   set ("long", @LONG
-½ÖµÀÏÂ·½ÓĞÒ»¸öÆÆÆÆÀÃÀÃµÄ´å×¯£¬ÄÄÀïµÄÈË³ÆÕâÀïÎªÂäÈË´å£¬×Ô¼º³ÆÎªÂäÈË¡£
-ÍùÉÏ·½×ß¾Íµ½ÁËÊ÷ÁÖÁË¡£¸½½üÓĞÒ»ÌõÃÔ¹¬Ò»ÑùµÄĞ¡Â·×ßÍ¨ÈëÊ÷ÁÖ¡£
+è¡—é“ä¸‹æ–¹æœ‰ä¸€ä¸ªç ´ç ´çƒ‚çƒ‚çš„æ‘åº„ï¼Œå“ªé‡Œçš„äººç§°è¿™é‡Œä¸ºè½äººæ‘ï¼Œè‡ªå·±ç§°ä¸ºè½äººã€‚
+å¾€ä¸Šæ–¹èµ°å°±åˆ°äº†æ ‘æ—äº†ã€‚é™„è¿‘æœ‰ä¸€æ¡è¿·å®«ä¸€æ ·çš„å°è·¯èµ°é€šå…¥æ ‘æ—ã€‚
 LONG);
 
   set("outdoors", "feitian");
@@ -31,22 +31,22 @@ int do_enter ( string arg )
     string dir;
     if( !arg || arg !="midao" ) 
        {
-         tell_object(this_player() , "ÄãÒªÈ¥ÄÄ¶ù£¿\n" ) ;
+         tell_object(this_player() , "ä½ è¦å»å“ªå„¿ï¼Ÿ\n" ) ;
          return 1 ;
        }
     ob = this_player () ;
-    if( ob->query("family/family_name") != "·ÉÌìÓù½£Á÷")
+    if( ob->query("family/family_name") != "é£å¤©å¾¡å‰‘æµ")
 {
-     message_vision("$NÕâÊÇ·ÉÌìÓù½£Á÷µÄÃÜµÀ,Äã²»ÈÏÊ¶Â·!\n",  ob);
+     message_vision("$Nè¿™æ˜¯é£å¤©å¾¡å‰‘æµçš„å¯†é“,ä½ ä¸è®¤è¯†è·¯!\n",  ob);
     return 1;
 }
     if(!ob->query_temp("shirenok"))
 {
-     message_vision("$NÄãÏÈÈ¥Ì½Ò»ÏÂÊ÷ÁÖÖĞµÄÇé¿ö°É!!\n",  ob);
+     message_vision("$Nä½ å…ˆå»æ¢ä¸€ä¸‹æ ‘æ—ä¸­çš„æƒ…å†µå§!!\n",  ob);
     return 1;
 }
 
     ob->move("/d/feitian/pubu") ;
-    tell_object(ob, BLU "Äã¿´ÇåÁËĞ¡Â·£¬Ö±½Ó×ß³öÁËÊ÷ÁÖ!\n" NOR ) ;
+    tell_object(ob, BLU "ä½ çœ‹æ¸…äº†å°è·¯ï¼Œç›´æ¥èµ°å‡ºäº†æ ‘æ—!\n" NOR ) ;
     return 1 ;
 }

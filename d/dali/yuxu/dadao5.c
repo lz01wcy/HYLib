@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óµÀ");
+        set("short", "å¤§é“");
 	set("long", @LONG
-ÄãÔÚ´óµÀÉÏ£¬Á½±ß¶¼ÊÇÑîÁøÊ÷£¬ÕâÌõÂ·ÉÏÀ´ÍùµÄÈË²¢²»¶à£¬Å¼¶û¿´¼ûÓÐ¼¸
-µÀ¹Ã×ß¹ý£¬Ö»¼ûÎ÷Ê×ÂÌÁø´ÔÖÐ£¬Ð¡ºþÅÔÓÐÒ»½Ç»ÆÇ½Â¶³ö¡£
+ä½ åœ¨å¤§é“ä¸Šï¼Œä¸¤è¾¹éƒ½æ˜¯æ¨æŸ³æ ‘ï¼Œè¿™æ¡è·¯ä¸Šæ¥å¾€çš„äººå¹¶ä¸å¤šï¼Œå¶å°”çœ‹è§æœ‰å‡ 
+é“å§‘èµ°è¿‡ï¼Œåªè§è¥¿é¦–ç»¿æŸ³ä¸›ä¸­ï¼Œå°æ¹–æ—æœ‰ä¸€è§’é»„å¢™éœ²å‡ºã€‚
 LONG
 	);
-        set("outdoors", "´óÀí");
+        set("outdoors", "å¤§ç†");
 	set("exits", ([ /* sizeof() == 1 */
 	    "north" : __DIR__"dadao6",
 	    "southeast" : __DIR__"shangang",

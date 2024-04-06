@@ -1,4 +1,4 @@
-// /u/beyond/mr/npc/tang.c ÌÆ¹âĞÛ
+// /u/beyond/mr/npc/tang.c å”å…‰é›„
 // this is made by beyond
 // update 1997.6.23
 #include <ansi.h>
@@ -6,8 +6,8 @@ inherit NPC;
 string ask_1();
 void create()
 {
-        set_name("ÌÆ¹âĞÛ", ({ "tang guangxiong", "tang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å”å…‰é›„", ({ "tang guangxiong", "tang" }));
+        set("gender", "ç”·æ€§");
         set("age", 20);      
 	set("str", 25);
         set("int", 26);
@@ -37,11 +37,11 @@ void create()
         setup();
         set("inquiry", 
                 ([
-                "ÃØÃÜ" : (: ask_1 :)
+                "ç§˜å¯†" : (: ask_1 :)
                 ]));
         set("chat_chance",20);
         set("chat_msg",({
-                "ÌÆ¹âĞÛµÀ£º¡°¿ì¾ÈÎÒ³öÈ¥£¬ÎÒ¸æËßÄãÒ»¸öÃØÃÜ£¡£¡£¡\n",
+                "å”å…‰é›„é“ï¼šâ€œå¿«æ•‘æˆ‘å‡ºå»ï¼Œæˆ‘å‘Šè¯‰ä½ ä¸€ä¸ªç§˜å¯†ï¼ï¼ï¼\n",
                 
         }) );        
 	carry_object("/clone/misc/cloth")->wear();
@@ -51,8 +51,8 @@ string ask_1()
         mapping fam; 
 // object ob;
         if (!(fam = this_player()->query("family")) 
-           || fam["family_name"] != "¹ÃËÕÄ½Èİ")
+           || fam["family_name"] != "å§‘è‹æ…•å®¹")
                 return RANK_D->query_respect(this_player()) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
-		return "ºó»¨Ô°µÄÊ÷ÌÙÀïÃæÓĞ¹Å¹Ö£¡\n";
+                "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
+		return "åèŠ±å›­çš„æ ‘è—¤é‡Œé¢æœ‰å¤æ€ªï¼\n";
          }

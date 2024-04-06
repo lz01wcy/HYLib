@@ -1,5 +1,5 @@
 // /d/zhuojun/road6.c
-// Room in äÃ¿¤
+// Room in æ¶¿éƒ¡
 // modify by yang
 
 inherit ROOM;
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ïæ½­É½Â·");
+	set("short", "æ¹˜æ±Ÿå±±è·¯");
 	set("long", @LONG
-Äã×ßÔÚÒ»ÌõÇàÊ¯´óµÀÉÏ£¬±ßÉÏÊÇ¹ö¹öµÄÏæ½­,´Ë´¦ÈË
-ÈºÏ¡ÉÙ£¬ËÄÖÜÒ²¾²ÇÄÇÄµÄ¡£
+ä½ èµ°åœ¨ä¸€æ¡é’çŸ³å¤§é“ä¸Šï¼Œè¾¹ä¸Šæ˜¯æ»šæ»šçš„æ¹˜æ±Ÿ,æ­¤å¤„äºº
+ç¾¤ç¨€å°‘ï¼Œå››å‘¨ä¹Ÿé™æ‚„æ‚„çš„ã€‚
 LONG );
 	set("exits", ([
 		"north" : "/d/nanchang/nanmen",

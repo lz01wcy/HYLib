@@ -3,16 +3,16 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-	set_name("ÌìÏãĞøÃüÂ¶" , ({ "potion", "magic potion" }) );
+	set_name("å¤©é¦™ç»­å‘½éœ²" , ({ "potion", "magic potion" }) );
 	set_weight(5);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
   set("long", WHT
-      "ÕâÊÇÒ»µÎÓĞÉñÆæ¹¦Ğ§µÄÂ¶Ë®£®\n"
-      "¿ÉÒÔÓÃÀ´Ìá¸ßÉíÌåµÄ¼«ÏŞ£¡\n" NOR);
+      "è¿™æ˜¯ä¸€æ»´æœ‰ç¥å¥‡åŠŸæ•ˆçš„éœ²æ°´ï¼\n"
+      "å¯ä»¥ç”¨æ¥æé«˜èº«ä½“çš„æé™ï¼\n" NOR);
 
-		set("unit", "µÎ");
+		set("unit", "æ»´");
 		set("value", 2000);
 		set("food_remaining", 1);
 		set("food_supply", 0);
@@ -28,7 +28,7 @@ int finish_eat()
 	max_gin = (int) me->query("max_qi");
         max_kee = (int) me->query("max_jing");
         max_sen = (int) me->query("max_neili");
-	message_vision( HIR "$NµÄÈ«ÉíÓ³³öÒ»Õóºì¹â£¡£¡\n" NOR, me);
+	message_vision( HIR "$Nçš„å…¨èº«æ˜ å‡ºä¸€é˜µçº¢å…‰ï¼ï¼\n" NOR, me);
 	max_gin = max_gin * 11/10;
 	max_kee = max_kee * 11/10;
 	max_sen = max_sen * 11/10;

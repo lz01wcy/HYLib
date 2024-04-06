@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ͤ");
+	set("short", "凉亭");
 	set("long", @LONG
-����һ��ľ�Ƶ���ͤ��ͤǰ����һ��ʯ����ʯ������������д�š�
-����ͤ���������֣����������ˡ��οʹ���ڴ˴�פ��Ъ�ţ�ͤ��ֲ��
-�����Ļ�ľ��������һЩ������������Ϸ��
+这是一座木制的凉亭，亭前树着一块石碑，石碑上用隶书体写着“
+日照亭”三个大字，来往的行人、游客大多在此处驻足歇脚，亭边植着
+大量的花木，引来了一些蝶鸟在其中嬉戏。
 LONG	);
 	set("outdoors", "chengdu");
 	set("exits", ([

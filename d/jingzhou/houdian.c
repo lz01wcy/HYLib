@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���");
+	set("short", "后殿");
 	set("long", @LONG
-�����ĺ��ѷ����㡢������ǽ�ϵ�ᣲ����������µġ�
+关庙的后殿，堆放着香、烛等杂物。墙上的幔布看起来满新的。
 
 LONG
 	);

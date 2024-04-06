@@ -12,10 +12,10 @@ string* sheobj = ({
 
 void create()
 {
-        set_name(HIW"Ñ©É½¹ÖÉß"NOR, ({ "snake", "she" }) );
-        set("race", "Ò°ÊŞ");
+        set_name(HIW"é›ªå±±æ€ªè›‡"NOR, ({ "snake", "she" }) );
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»Ñ©É½¹ÖÉß,ËüÍ¨ÌåÑ©°×,ÑÛÈçÁÒÑ×,¿´À´Õâ¸ö±ù¶´ÊÇËüµÄ³²Ñ¨¡£\n");
+        set("long", "ä¸€åªé›ªå±±æ€ªè›‡,å®ƒé€šä½“é›ªç™½,çœ¼å¦‚çƒˆç‚,çœ‹æ¥è¿™ä¸ªå†°æ´æ˜¯å®ƒçš„å·¢ç©´ã€‚\n");
         set("attitude", "aggressive");
         set("qi", 5000);
         set("max_qi", 5000);
@@ -23,7 +23,7 @@ void create()
         set("max_jing", 500);
         set("str", 100);
         set("cor", 90);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 1500000); 
@@ -45,7 +45,7 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage) > (int)ob->query_temp("apply/armor")
         &&      (int)ob->query_condition("snake_poison") < 10 ) {
                 ob->apply_condition("snake_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾,¿´À´ÖĞ¶¾ÁË£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨,çœ‹æ¥ä¸­æ¯’äº†ï¼\n" NOR );
         }
 }
 

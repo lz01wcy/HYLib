@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���");
+	set("short", "民居");
 	set("long", @LONG
-����һ����ͨ��ũ�ң�����û��ʲô�����İ��衣ǽ�߰ڷ���һЩ
-ũ�ߣ�����ֻ���ıڽԿգ�����������ԣ�� 
+这是一户普通的农家，屋里没有什么象样的摆设。墙边摆放着一些
+农具，除此只外四壁皆空，看来并不富裕。 
 LONG
 	);
 //        set("outdoors", "wudujiao");

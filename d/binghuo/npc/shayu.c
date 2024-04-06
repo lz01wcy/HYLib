@@ -4,20 +4,20 @@ inherit NPC;
 
 void create()
 {
-        set_name("öèÓã", ({ "sha yu", "sha" }) );
-	set("race", "Ò°ÊÞ");
+        set_name("é²¨é±¼", ({ "sha yu", "sha" }) );
+	set("race", "é‡Žå…½");
         set("age", 20);
-        set("long", "Ò»Ö»Éú»îÔÚ±ùº£µÄ¾Þ´ó¾¨öè¡£\n");
+        set("long", "ä¸€åªç”Ÿæ´»åœ¨å†°æµ·çš„å·¨å¤§é²¸é²¨ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", 0);
-	set("gender", "ÐÛÐÔ");
-	set("race", "Ò°ÊÞ");
+	set("gender", "é›„æ€§");
+	set("race", "é‡Žå…½");
 	set("age", 3);
 	set("attitude", "aggressive");
         set("max_qi",1000);
 	set("str", 26);
 	set("cor", 30);
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "¸¹²¿", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è…¹éƒ¨", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 	set("combat_exp", 1000000);
 	set("neili", 300);
@@ -39,7 +39,7 @@ void create()
 void die()
 {
 	object ob, corpse;
-	message_vision("$NÈ«ÉíÒ»Õó¾çÁÒµÄÅ¤Çú£¬ÖÕÓÚ°²¾²ÁËÏÂÀ´£¬·­°×ÑÛËÀÁË¡£\n", this_object());
+	message_vision("$Nå…¨èº«ä¸€é˜µå‰§çƒˆçš„æ‰­æ›²ï¼Œç»ˆäºŽå®‰é™äº†ä¸‹æ¥ï¼Œç¿»ç™½çœ¼æ­»äº†ã€‚\n", this_object());
 	if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
 		ob = new(__DIR__"shadan");
 	ob->move(corpse);

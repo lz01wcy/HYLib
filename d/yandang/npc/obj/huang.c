@@ -1,17 +1,17 @@
-// music yangzhou' °ü×Ó
+// music yangzhou' åŒ…å­
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("»Æ¾«", ({"huang", "jing"}));
+	set_name("é»„ç²¾", ({"huang", "jing"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÖÖÉ½ÖĞµÄÒ°É½Ò©,ÓĞÃ÷Ä¿,Ç¿½¡½î¹ÇÖ®Ğ§¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ç§å±±ä¸­çš„é‡å±±è¯,æœ‰æ˜ç›®,å¼ºå¥ç­‹éª¨ä¹‹æ•ˆã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 50);
 		set("food_remaining", 3);
 		set("food_supply", 80);

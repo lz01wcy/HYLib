@@ -11,11 +11,11 @@ string ask_murenxiang();
 
 void create()
 {
-	set_name("Ìì¾µ´óÊ¦", ({ "tianjing dashi", "tianjing", "dashi"}));
+	set_name("å¤©é•œå¤§å¸ˆ", ({ "tianjing dashi", "tianjing", "dashi"}));
 	set("long",
-		"ËûÊÇÒ»Î»°×ÐëµÄÀÏÉ®£¬Éí´©Ò»Ï®½ðË¿ÐåºìôÂôÄ¡£ËûÉí²Ä²»¸ß£¬\n"
-		"Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓÐÉñ¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"ä»–æ˜¯ä¸€ä½ç™½é¡»çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¢­é‡‘ä¸ç»£çº¢è¢ˆè£Ÿã€‚ä»–èº«æä¸é«˜ï¼Œ\n"
+		"å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥žã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -124,14 +124,14 @@ set_skill("ruying-leg", 360);
 	}) );
 
 	set("inquiry",([
-		"Ä¾ÈËÏï" : (: ask_murenxiang :),
+		"æœ¨äººå··" : (: ask_murenxiang :),
 	]));
 	set_temp("apply/attack", 200);
 	set_temp("apply/defense", 200);
 	set_temp("apply/damage", 660);
 	set_temp("apply/armor", 660);
 
-	create_family("ÄÏÉÙÁÖÅÉ", 18, "´ïÄ¦ÔºÊ××ù");
+	create_family("å—å°‘æž—æ´¾", 18, "è¾¾æ‘©é™¢é¦–åº§");
 	setup();
 	//carry_object(__DIR__"changbian")->wield();
 	carry_object("/d/shaolin/obj/xuan-cloth")->wear();
@@ -150,19 +150,19 @@ string ask_murenxiang()
 	object me = this_player();
 
 	if (!(fam = me->query("family")) ||
-		fam["family_name"] != "ÄÏÉÙÁÖÅÉ")
-		return RANK_D->query_respect(me) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+		fam["family_name"] != "å—å°‘æž—æ´¾")
+		return RANK_D->query_respect(me) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
 	if (me->query("muren_winner") && !wizardp(me)) 
-		return RANK_D->query_respect(me) + "²»ÊÇÒÑ¾­´³¹ýÄ¾ÈËÏïÁËÃ´£¬¿É²»ÒªÄÃÀÏñÄ¿ªÕâµÈÍæÐ¦¡£";
+		return RANK_D->query_respect(me) + "ä¸æ˜¯å·²ç»é—¯è¿‡æœ¨äººå··äº†ä¹ˆï¼Œå¯ä¸è¦æ‹¿è€è¡²å¼€è¿™ç­‰çŽ©ç¬‘ã€‚";
 	if (me->query("combat_exp", 1) < 10000)
-		return RANK_D->query_respect(me) + "µÄ¹¦Á¦²»¹»£¬»¹ÊÇ²»Òª½øÄ¾ÈËÏïÎªºÃ£¡";
+		return RANK_D->query_respect(me) + "çš„åŠŸåŠ›ä¸å¤Ÿï¼Œè¿˜æ˜¯ä¸è¦è¿›æœ¨äººå··ä¸ºå¥½ï¼";
 //	if (me->query("score") < 10000)
-//	        return RANK_D->query_respect(me) + "ÔÄÀú²»¹»£¬»¹ÊÇ²»Òª½øÄ¾ÈËÏïÎªºÃ£¡"; 
+//	        return RANK_D->query_respect(me) + "é˜…åŽ†ä¸å¤Ÿï¼Œè¿˜æ˜¯ä¸è¦è¿›æœ¨äººå··ä¸ºå¥½ï¼"; 
 	command("look " + this_player()->query("id"));
 	command("nod");
 	me->set_temp("ask_muren", 1);
-	say(HIC"Ìì¾µ´óÊ¦³ÁÉùËµµÀ£ºÄ¾ÈËÏïÄËÎÒÉÙÁÖ×îÎªÐ×ÏÕµÄÈ¥´¦Ö®Ò»£¬ÆäÖÐ±é²¼ÊÖ³ÖÀûÆ÷µÄÄ¾ÈË£¬\n´³ÕóÕßÖ»ÄÜÏòÇ°×ß£¬²¢ÎÞ·µ»ØÖ®Â·£¬ÇÒÔÚÒ»´¦²»ÒªÍ£ÁôÌ«³¤Ê±¼ä¡£\n"NOR);
-	return "ÄãÈç¾öÐÄÒÑ¶¨£¬¾Í¸æËßÎÒ(yes)£¡\n";
+	say(HIC"å¤©é•œå¤§å¸ˆæ²‰å£°è¯´é“ï¼šæœ¨äººå··ä¹ƒæˆ‘å°‘æž—æœ€ä¸ºå‡¶é™©çš„åŽ»å¤„ä¹‹ä¸€ï¼Œå…¶ä¸­éå¸ƒæ‰‹æŒåˆ©å™¨çš„æœ¨äººï¼Œ\né—¯é˜µè€…åªèƒ½å‘å‰èµ°ï¼Œå¹¶æ— è¿”å›žä¹‹è·¯ï¼Œä¸”åœ¨ä¸€å¤„ä¸è¦åœç•™å¤ªé•¿æ—¶é—´ã€‚\n"NOR);
+	return "ä½ å¦‚å†³å¿ƒå·²å®šï¼Œå°±å‘Šè¯‰æˆ‘(yes)ï¼\n";
 }
 
 int do_yes()
@@ -170,7 +170,7 @@ int do_yes()
 	object me = this_player();
 
 	if( !me->query_temp("ask_muren") ) return 0;
-	message_vision("$n×ªÉí·ÜÁ¦ÍÆ¿ªÉíºóµÄ·ðÏñ£¬ºóÃæÂ¶³öÒ»¸öÐ¡ÃÅ£¬\n\n$nÉì³öÊÖÔÚ$Nºó±³Ò»ÍÆ£¬½«$NÍÆ½øÃÅÄÚ£¡\n\n$nÑ¸ËÙ½«·ðÏñÍÆ»ØÔ­Î»¡£\n\n", me, this_object());
+	message_vision("$nè½¬èº«å¥‹åŠ›æŽ¨å¼€èº«åŽçš„ä½›åƒï¼ŒåŽé¢éœ²å‡ºä¸€ä¸ªå°é—¨ï¼Œ\n\n$nä¼¸å‡ºæ‰‹åœ¨$NåŽèƒŒä¸€æŽ¨ï¼Œå°†$NæŽ¨è¿›é—¨å†…ï¼\n\n$nè¿…é€Ÿå°†ä½›åƒæŽ¨å›žåŽŸä½ã€‚\n\n", me, this_object());
 	me->move("/d/nanshaolin/entrance");
 	me->look();
 	return 1;

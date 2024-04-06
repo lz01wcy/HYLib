@@ -1,4 +1,4 @@
-// houshan.c ºóÉ½
+// houshan.c åŽå±±
 // zly 99.7.28
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"ºóÉ½"NOR);
+        set("short", HIW"åŽå±±"NOR);
         set("long", @LONG
-ÕâÀïÊÇºóÉ½µÄÒ»¸öÒþ±ÎµÄÐ¡É½¹È£¬³¤ÄêÈË¼£º±ÖÁ¡£¹ÈÖÐ¹ÅÊ÷²ÎÌì£¬
-ÂÌÒñÉ­É­¡£²»Ê§ÎªÒ»¸öÐÞÁ¶¹¦·òµÄºÃµØ·½£¬Å¼¶û´ÓÔ¶´¦´«À´¼¸ÉùÓÆÑïµÄ
-ÄñÓï£¬°éËæ×ÅÕóÕó»¨Ïã£¬¼òÖ±ÈÃÈËÒÉÐÄ×Ô¼ºµ½ÁËÊÀÍâÌÒÔ´¡£
+è¿™é‡Œæ˜¯åŽå±±çš„ä¸€ä¸ªéšè”½çš„å°å±±è°·ï¼Œé•¿å¹´äººè¿¹ç½•è‡³ã€‚è°·ä¸­å¤æ ‘å‚å¤©ï¼Œ
+ç»¿è«æ£®æ£®ã€‚ä¸å¤±ä¸ºä¸€ä¸ªä¿®ç‚¼åŠŸå¤«çš„å¥½åœ°æ–¹ï¼Œå¶å°”ä»Žè¿œå¤„ä¼ æ¥å‡ å£°æ‚ æ‰¬çš„
+é¸Ÿè¯­ï¼Œä¼´éšç€é˜µé˜µèŠ±é¦™ï¼Œç®€ç›´è®©äººç–‘å¿ƒè‡ªå·±åˆ°äº†ä¸–å¤–æ¡ƒæºã€‚
 LONG
         );
         set("exits", ([

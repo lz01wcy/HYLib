@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-   set_name("À×¾ÅÖ¸",({ "lei jiuzhi","lei" }) );
-        set("gender", "ÄĞĞÔ" );
-		set("title","±±¶Ä");
+   set_name("é›·ä¹æŒ‡",({ "lei jiuzhi","lei" }) );
+        set("gender", "ç”·æ€§" );
+		set("title","åŒ—èµŒ");
         set("age", 32);
-   set("long", "Õâ¾ÍÊÇÉÆÓÚ¶Ä²©µÄÀ×¾ÅÖ¸¡£\n");
+   set("long", "è¿™å°±æ˜¯å–„äºèµŒåšçš„é›·ä¹æŒ‡ã€‚\n");
        
    set("combat_exp", 300000);
    set("str", 10);
@@ -20,7 +20,7 @@ void create()
    set_skill("force",80);
    set("attitude", "peaceful");
    set("inquiry",([
-	   "Â³Ãî×Ó":"ËûÊÇÎÒµÄ¶÷Ê¦°¡£¬ËäÈ»Ëû¸ù±¾Ã»ÊÜÎÒÎªÍ½µÜ£¡\n",
+	   "é²å¦™å­":"ä»–æ˜¯æˆ‘çš„æ©å¸ˆå•Šï¼Œè™½ç„¶ä»–æ ¹æœ¬æ²¡å—æˆ‘ä¸ºå¾’å¼Ÿï¼\n",
    ]));
    setup();
    carry_object(__DIR__"obj/cloth")->wear();

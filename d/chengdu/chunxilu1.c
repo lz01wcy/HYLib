@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short",HIY "´ºÎõÂ·" NOR);
+	set("short",HIY "æ˜¥ç†™è·¯" NOR);
 	set("long", 
-"ÕâÀï±ãÊÇ³É¶¼¸®ÖøÃûµÄÉÌÒµÖÐÐÄ£¬½ÖÉÏÐÐÈËÀ´À´ÍùÍù£¬Á½ÅÔµêÆÌÁÖ\n"
-"Á¢£¬ÈÈÄÖ·Ç·²£¬¶«ÃæÓÐ¸ö´ó¾ÆÂ¥£¬½ðÉ«µÄ½õÆìÓ­·çÆ®Ñï£¬Ö»¼ûÉÏÊéËÄ¸ö\n"
-"´ó×Ö¸ñÍâÐÑÄ¿"+BLINK HIR"¡°ÒøÐÓ¾ÆÂ¥¡±"NOR"¡£Î÷Ãæ¿´ÆðÀ´ÊÇ¸ö²è¹Ý£¬Ò»¸ö¸öÒÂ×Å¹âÏÊµÄ\nÈË´ÓÄÇÀï½ø½ø³ö³ö¡£\n"
+"è¿™é‡Œä¾¿æ˜¯æˆéƒ½åºœè‘—åçš„å•†ä¸šä¸­å¿ƒï¼Œè¡—ä¸Šè¡Œäººæ¥æ¥å¾€å¾€ï¼Œä¸¤æ—åº—é“ºæž—\n"
+"ç«‹ï¼Œçƒ­é—¹éžå‡¡ï¼Œä¸œé¢æœ‰ä¸ªå¤§é…’æ¥¼ï¼Œé‡‘è‰²çš„é”¦æ——è¿Žé£Žé£˜æ‰¬ï¼Œåªè§ä¸Šä¹¦å››ä¸ª\n"
+"å¤§å­—æ ¼å¤–é†’ç›®"+BLINK HIR"â€œé“¶æé…’æ¥¼â€"NOR"ã€‚è¥¿é¢çœ‹èµ·æ¥æ˜¯ä¸ªèŒ¶é¦†ï¼Œä¸€ä¸ªä¸ªè¡£ç€å…‰é²œçš„\näººä»Žé‚£é‡Œè¿›è¿›å‡ºå‡ºã€‚\n"
       );
 
 	set("outdoors", "chengdu");

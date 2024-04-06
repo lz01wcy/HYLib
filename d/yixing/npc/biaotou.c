@@ -7,10 +7,10 @@ inherit NPC;
 void create()
 {
 
-	set_name("ïÚÍ·", ({ "biao tou" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("é•–å¤´", ({ "biao tou" }));
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "Ò»ÃûÉí²Ä¸ß´óµÄ×³ºº¡£\n");
+	set("long", "ä¸€åèº«æé«˜å¤§çš„å£®æ±‰ã€‚\n");
 	set("attitude", "peaceful");
 	set("shen_type", 1);
 

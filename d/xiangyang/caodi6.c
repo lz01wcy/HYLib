@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "²İµØ");
+	set("short", "è‰åœ°");
 	set("long", @LONG
-ÕâÊÇÏåÑô³ÇÍâµÄ²İµØ¡£ÃÉ¹Å±ø½ø·¸ÒÔÀ´£¬ÕâÀïµÄ°ÙĞÕÈ«½ø
-³ÇÁË£¬ËäÈ»ÃÉ¹Å±øÃ»À´µ½ÄÏÃÅ£¬µ«ËàÉ±·ÕÎ§Ë¿ºÁ²»¼õ¡£
+è¿™æ˜¯è¥„é˜³åŸå¤–çš„è‰åœ°ã€‚è’™å¤å…µè¿›çŠ¯ä»¥æ¥ï¼Œè¿™é‡Œçš„ç™¾å§“å…¨è¿›
+åŸäº†ï¼Œè™½ç„¶è’™å¤å…µæ²¡æ¥åˆ°å—é—¨ï¼Œä½†è‚ƒæ€æ°›å›´ä¸æ¯«ä¸å‡ã€‚
 LONG );
         set("outdoors", "xiangyang");
 	set("no_clean_up", 0);
@@ -30,7 +30,7 @@ int valid_leave(object me, string dir)
 	object *inv;
 	int sizeinv;
         if( dir=="west" && !userp(me) )
-                return notify_fail("ÄÇÀïÖ»ÓĞÍæ¼Ò²ÅÄÜ½øÈ¥¡£\n");
+                return notify_fail("é‚£é‡Œåªæœ‰ç©å®¶æ‰èƒ½è¿›å»ã€‚\n");
       if( dir=="west" )		
 {
 		inv=all_inventory(me);
@@ -39,7 +39,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character()&& userp(inv[sizeinv])  )  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 }		

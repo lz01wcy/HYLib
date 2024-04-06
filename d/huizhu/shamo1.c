@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set ("short", "ɳĮ");
+	set ("short", "沙漠");
 	set ("long", @LONG
-����ɫ��ɳ�����࣬��������һƬ�������У����ϲ������񣬵���
-�������ޡ�ֻ��ɳĮ�е��е�����ʬ�������㣬�����й������ĺۼ���
-Զ��������һĨ���͡�
+淡黄色的沙堆连绵，在这死寂一片的世界中，天上不见飞鸟，地上
+不见走兽。只有沙漠中倒毙的骆驼尸骨提醒你，曾经有过生命的痕迹。
+远处出现了一抹岗峦。
 LONG);
 	set("outdoors", "huijiang");
 	set("exits", ([ /* sizeof() == 2 */

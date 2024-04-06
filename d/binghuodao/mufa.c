@@ -10,16 +10,16 @@ inherit ROOM;
 void create()
 {
         set("short",
-"Ä¾·¤");
-//  set("short", "Ğ¡Â·");
+"æœ¨ç­");
+//  set("short", "å°è·¯");
         set("long", @LONG
-Ò»ÌõÄ¾·¤.
+ä¸€æ¡æœ¨ç­.
 LONG );
 /*        set_weight(3000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "skin");
                set("value",30);
                set("armor_prop/armor", 3);

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��·");
+        set("short", "大路");
         set("long", @LONG
-·�Ķ�����һ��Сɽ��ɽ�������дУ�����������ɽ�ϱ���һ��
-���������ĺõط�����ȴ��������ռΪ˽�С���·�򶫱��������졣
+路的东边是一座小山。山上郁郁葱葱，种满了树。山上本是一处
+观赏西湖的好地方，但却被丁财主占为私有。大路向东北和南延伸。
 LONG);
         set("exits", ([
             "northwest" : "/d/sandboy/huangni",

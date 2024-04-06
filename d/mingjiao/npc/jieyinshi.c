@@ -10,19 +10,19 @@ string ask_for_join();
 
 void create()
 {
-	set_name("½ÓÒıÊ¹", ({"jieyin shi","jieyin","shi",}));
+	set_name("æ¥å¼•ä½¿", ({"jieyin shi","jieyin","shi",}));
 	set("long",
-		"ËûÊÇÒ»Î»¾«Ã÷µÄÖĞÄêÈË£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-		"ËûÕıÔÚÉÏÏÂ´òÁ¿×ÅÄã¡£\n"
+		"ä»–æ˜¯ä¸€ä½ç²¾æ˜çš„ä¸­å¹´äººï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•¿è¢ã€‚\n"
+		"ä»–æ­£åœ¨ä¸Šä¸‹æ‰“é‡ç€ä½ ã€‚\n"
 		);
 
-	set("title", HIG "Ã÷½Ì" NOR);
+	set("title", HIG "æ˜æ•™" NOR);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 
 	set("inquiry",([
-		"Ã÷½Ì"	: (: ask_for_join :),
+		"æ˜æ•™"	: (: ask_for_join :),
 		]));
 
 	set("age", 30);
@@ -69,7 +69,7 @@ void init()
 
 string ask_for_join()
 {
-	return "ÓĞ½éÉÜĞÅ¾Í¿ÉÒÔ¼ÓÈëÎÒÃ÷½Ì¡£\n";
+	return "æœ‰ä»‹ç»ä¿¡å°±å¯ä»¥åŠ å…¥æˆ‘æ˜æ•™ã€‚\n";
 }
 
 int accept_object(object ob, object obj)
@@ -83,61 +83,61 @@ int accept_object(object ob, object obj)
 
 	if (obj->query("id") == "tuijian xin1" && ob->query_temp("have_letter") )
 	{
-	if(  ob->query("party") && ob->query("party/party_name") != HIG "Ã÷½Ì" NOR )
+	if(  ob->query("party") && ob->query("party/party_name") != HIG "æ˜æ•™" NOR )
 	{
-		message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­¼ÓÈëÆäËû°ï»áÁË£¬²»ÄÜÔÙÈëÎÒÉñÁú½Ì¡£\n",me,ob);
+		message_vision("$Næ‘‡æ‘‡å¤´ï¼Œå¯¹$nè¯´é“ï¼šä½ å·²ç»åŠ å…¥å…¶ä»–å¸®ä¼šäº†ï¼Œä¸èƒ½å†å…¥æˆ‘ç¥é¾™æ•™ã€‚\n",me,ob);
 		return 1;
 	}
 //	if (ob->query("weiwang")>49)
 //	{
-//		message_vision("½ÓÒıÊ¹¶Ô$NÒ¡Ò¡Í·£¬ËµµÀ£º$NÒÑ¾­¼ÓÈëÌìµØ»áÁË£¬²»ÄÜÔÙÈëÎÒÃ÷½Ì¡£\n",ob);
+//		message_vision("æ¥å¼•ä½¿å¯¹$Næ‘‡æ‘‡å¤´ï¼Œè¯´é“ï¼š$Nå·²ç»åŠ å…¥å¤©åœ°ä¼šäº†ï¼Œä¸èƒ½å†å…¥æˆ‘æ˜æ•™ã€‚\n",ob);
 //		return 1;
 //	}
 //	if(ob->query("shenlongjiao")) 
 //	{
 //		command("shake "+ob->query("id") );
-//		message_vision("½ÓÒıÊ¹¶Ô$NÒ¡Ò¡Í·£¬ËµµÀ£º$NÒÑ¾­ÈëÉñÁú½ÌÁË£¬²»ÄÜÔÙÈëÎÒÃ÷½Ì¡£\n",ob);
+//		message_vision("æ¥å¼•ä½¿å¯¹$Næ‘‡æ‘‡å¤´ï¼Œè¯´é“ï¼š$Nå·²ç»å…¥ç¥é¾™æ•™äº†ï¼Œä¸èƒ½å†å…¥æˆ‘æ˜æ•™ã€‚\n",ob);
 //		return 1;
 //	}
    	if( !mapp(party = ob->query("party")) && present("tuijian xin1", ob ))
    	{
-		if ( (string)ob->query("gender") == "Å®ĞÔ" ) men="µØ";
+		if ( (string)ob->query("gender") == "å¥³æ€§" ) men="åœ°";
 		else if ( (string)ob->query("class")=="taoist" 
-		  || (string)ob->query("class")=="bonze" ) men="·ç";
-		else if ( ob->query("shen") < 0 ) men="À×";
-		else men="Ìì";
+		  || (string)ob->query("class")=="bonze" ) men="é£";
+		else if ( ob->query("shen") < 0 ) men="é›·";
+		else men="å¤©";
 
 		ob->delete_temp("have_letter");
 
-		if ( (string)ob->query("gender") == "Å®ĞÔ" )
-			command("say ÎÒÃ÷½ÌÓÖµÃÒ»Å®ÖĞºÀ½Ü£¬ÕæÊÇ¿ÉÏ²¿ÉºØ !");
+		if ( (string)ob->query("gender") == "å¥³æ€§" )
+			command("say æˆ‘æ˜æ•™åˆå¾—ä¸€å¥³ä¸­è±ªæ°ï¼ŒçœŸæ˜¯å¯å–œå¯è´º !");
 		else 
-			command("say ÎÒÃ÷½ÌÓÖµÃÒ»Ó¢ĞÛºÃºº£¬ÕæÊÇ¿ÉÏ²¿ÉºØ !");
+			command("say æˆ‘æ˜æ•™åˆå¾—ä¸€è‹±é›„å¥½æ±‰ï¼ŒçœŸæ˜¯å¯å–œå¯è´º !");
 
 		party = allocate_mapping(5);
-		party["party_name"] = HIG "Ã÷½Ì" NOR;
-		party["rank"] = men+"×ÖÃÅ½ÌÖÚ";
+		party["party_name"] = HIG "æ˜æ•™" NOR;
+		party["rank"] = men+"å­—é—¨æ•™ä¼—";
 		party["level"] = 1;
 		party["tasks"] = 0;
 		party["enter_time"] = time();
 		ob->set("party", party);
 
 		command("smile");
-		message_vision("½ÓÒıÊ¹¶Ô$NËµµÀ£º¹§Ï²$N³ÉÎªÃ÷½Ì"+men+"×ÖÃÅ½ÌÖÚ£¡\n",ob);
+		message_vision("æ¥å¼•ä½¿å¯¹$Nè¯´é“ï¼šæ­å–œ$Næˆä¸ºæ˜æ•™"+men+"å­—é—¨æ•™ä¼—ï¼\n",ob);
 		remove_call_out("destroying");
 		call_out("destroying", 1, me, obj);
 		return 1;
 	}
-   	if( party["party_name"] != HIG "Ã÷½Ì" NOR )
+   	if( party["party_name"] != HIG "æ˜æ•™" NOR )
 	{
-		message_vision("½ÓÒıÊ¹¶Ô$NÒ¡Ò¡Í·£¬ËµµÀ£º$NÒÑ¾­¼ÓÈëÆäËû°ï»áÁË£¬²»ÄÜÔÙÈëÎÒÃ÷½Ì¡£\n",me,ob);
+		message_vision("æ¥å¼•ä½¿å¯¹$Næ‘‡æ‘‡å¤´ï¼Œè¯´é“ï¼š$Nå·²ç»åŠ å…¥å…¶ä»–å¸®ä¼šäº†ï¼Œä¸èƒ½å†å…¥æˆ‘æ˜æ•™ã€‚\n",me,ob);
 		return 1;
 	}
 	else
-		message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­ÊÇÎÒÃ÷½ÌµÄÈËÁË¡£\n",me,ob);
+		message_vision("$Næ‘‡æ‘‡å¤´ï¼Œå¯¹$nè¯´é“ï¼šä½ å·²ç»æ˜¯æˆ‘æ˜æ•™çš„äººäº†ã€‚\n",me,ob);
 	}
         command("?");
-        command("say Õâ¶«Î÷¸øÎÒ¿ÉÃ»ÓĞÊ²÷áÓÃ¡£");
+        command("say è¿™ä¸œè¥¿ç»™æˆ‘å¯æ²¡æœ‰ä»€éº½ç”¨ã€‚");
 	return 0;
 
 }

@@ -6,17 +6,17 @@ inherit DAGGER;
 
 void create()
 {
-   set_name("Ø°Ê×", ({ "dagger" }) );
+   set_name("åŒ•é¦–", ({ "dagger" }) );
    set_weight(800);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 500);
      set("material", "iron");
-     set("long", "ÕâÊÇÒ»Ñ°³£µÄØ°Ê×¡£\n");
-     set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-     set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+     set("long", "è¿™æ˜¯ä¸€å¯»å¸¸çš„åŒ•é¦–ã€‚\n");
+     set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
    }
    init_dagger(120);
    setup();

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ͥ");
+	set("short", "后庭");
 	set("long", @LONG
-�����Ǿ�����Ժ��Ժ�ڵĺ�ͥ��ͥԺ����ʯ�̵ء��Ű�ɭɭ������
-�Ǳ���������������֮�����������������������Ƕ���̳��
+这里是峻极禅院花院内的后庭。庭院中青石铺地、古柏森森，四周
+是本派首脑人物的起居之处，向来少有人来。北面是独尊坛。
 LONG );
 	set("exits", ([
 		"north" : __DIR__"duzuntan",

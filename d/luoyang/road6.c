@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "����С·");
+	set("short",  "北郊小路");
 	set("long",  @LONG
-���������ǽ���һ��é��С·��������·���ͨ���ɿڵ�С·����
-���������������š�
+这是洛阳城郊的一条茅草小路，东北面仿佛是通往渡口的小路，而
+南面则是洛阳城门。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"northeast" :  __DIR__"dukou",

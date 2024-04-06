@@ -3,14 +3,14 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("°¢·É", ({ "afei", "fei","feia" }) );
-	set("gender", "ÄÐÐÔ" );
-        set("title", HIG "ÇéÎªºÎÎï" NOR);
+	set_name("é˜¿é£ž", ({ "afei", "fei","feia" }) );
+	set("gender", "ç”·æ€§" );
+        set("title", HIG "æƒ…ä¸ºä½•ç‰©" NOR);
 	set("age", 20);
 	set("int", 30);
 	set("per", 30);
 	set("long",
-		"ÌìÏÂÎÞµÐ£­£­£­°¢·É\n"
+		"å¤©ä¸‹æ— æ•Œï¼ï¼ï¼é˜¿é£ž\n"
 		);
         set("force_factor", 200);
         set("max_gin", 3000);
@@ -49,7 +49,7 @@ void create()
 int accept_fight(object me)
 {
         command("grin");
-        command("say ÎÒµÄ½£ÊÇÓÃÀ´É±ÈËµÄ£¬²»ÊÇÓÃÀ´±È»®×ÅÍæµÄ£®");
+        command("say æˆ‘çš„å‰‘æ˜¯ç”¨æ¥æ€äººçš„ï¼Œä¸æ˜¯ç”¨æ¥æ¯”åˆ’ç€çŽ©çš„ï¼Ž");
         return 0;
 }
 void init()
@@ -67,9 +67,9 @@ int do_killing(string arg)
 	if( objectp(victim = present(arg, environment(this_object()))) && living(victim))
 	{
 		name = (string)victim->name();
-		if( (string)name == "ÁÖÏÉ¶ù")
+		if( (string)name == "æž—ä»™å„¿")
 		{
-		message_vision("$NÀäÐ¦Ò»ÉùµÀ£ºÎÒ¿´Äã»îµÃÌ«³¤ÁË¡£\n", this_object());
+		message_vision("$Nå†·ç¬‘ä¸€å£°é“ï¼šæˆ‘çœ‹ä½ æ´»å¾—å¤ªé•¿äº†ã€‚\n", this_object());
 		this_object()->kill_ob(player);
 		player->kill_ob(this_object());
 		return 1;

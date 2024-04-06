@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("¶ÏÁËµÄ"+HIG+"´äÖñ"+NOR, ({ "bamboo" }));
+  set_name("æ–­äº†çš„"+HIG+"ç¿ ç«¹"+NOR, ({ "bamboo" }));
   set_weight(8000);
-  set("long","Ò»¸ùÑÕÉ«"+HIG+"±ÌÂÌ"+NOR+"µÄ´äÖñ,¿ÉÏ§¸ø¿³¶ÏÁË.\n");
+  set("long","ä¸€æ ¹é¢œè‰²"+HIG+"ç¢§ç»¿"+NOR+"çš„ç¿ ç«¹,å¯æƒœç»™ç æ–­äº†.\n");
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¸ù");
+    set("unit", "æ ¹");
     set("material", "bamboo");
     set("no_get",1);
        set("no_drop",1);

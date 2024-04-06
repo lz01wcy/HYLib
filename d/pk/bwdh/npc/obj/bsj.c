@@ -7,12 +7,12 @@ inherit SWORD;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("±ÌË®½£",({ "bishui jian", "sword", "jian" }) );
+        set_name("ç¢§æ°´å‰‘",({ "bishui jian", "sword", "jian" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 100000);
                 set("treasure",1);
                 set("rigidity", 5);
@@ -20,10 +20,10 @@ void create()
                 set("weapon_prop/dodge", -2);
                 set("weapon_prop/parry", 1);        
                 set("material", "steel");
-                set("long", "ÕâÊÇ°ÑÇáÇÉµÄ±¦½££¬½£ÉíÉÏÒşÒşµÄÍ¸³ö±ÌÓñÖ®¹â£¬µ±Õæ·æÀûÎŞ±È¡£\n");
-set("wield_msg", HIC "Ö»Ìı¼û¡¸ÎË¡¹µØÒ»Éù£¬±Ì¹âÉÁÏÖ£¬$N½«Ñü¼ä½âÏÂµÄ$n¶¶µÃ±ÊÖ±¡£\n" NOR);
-set("unwield_msg", HIC "±ÌË®½£»Ã×÷Ò»µÀ±ÌÓñÖ®¹â£¬¡¸à§¡¹µØ·ÉÈë½£ÇÊ¡£\n" NOR);
-set("unequip_msg", HIC "±ÌË®½£»Ã×÷Ò»µÀ±ÌÓñÖ®¹â£¬¡¸à§¡¹µØ·ÉÈë½£ÇÊ¡£\n" NOR);
+                set("long", "è¿™æ˜¯æŠŠè½»å·§çš„å®å‰‘ï¼Œå‰‘èº«ä¸Šéšéšçš„é€å‡ºç¢§ç‰ä¹‹å…‰ï¼Œå½“çœŸé”‹åˆ©æ— æ¯”ã€‚\n");
+set("wield_msg", HIC "åªå¬è§ã€Œå—¡ã€åœ°ä¸€å£°ï¼Œç¢§å…‰é—ªç°ï¼Œ$Nå°†è…°é—´è§£ä¸‹çš„$næŠ–å¾—ç¬”ç›´ã€‚\n" NOR);
+set("unwield_msg", HIC "ç¢§æ°´å‰‘å¹»ä½œä¸€é“ç¢§ç‰ä¹‹å…‰ï¼Œã€Œå”°ã€åœ°é£å…¥å‰‘é˜ã€‚\n" NOR);
+set("unequip_msg", HIC "ç¢§æ°´å‰‘å¹»ä½œä¸€é“ç¢§ç‰ä¹‹å…‰ï¼Œã€Œå”°ã€åœ°é£å…¥å‰‘é˜ã€‚\n" NOR);
         }
         init_sword(80);
         setup();

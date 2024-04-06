@@ -1,4 +1,4 @@
-// Room: /d/chengdu/npc/boss2.c ÍõÀÏ°å 
+// Room: /d/chengdu/npc/boss2.c ç‹è€æ¿ 
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
@@ -6,12 +6,12 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÍõÓÀ¿µ", ({ "wang yongkan", "wang" }));
-	set("title", "ÔÓ»õÆÌÀÏ°å");
+        set_name("ç‹æ°¸åº·", ({ "wang yongkan", "wang" }));
+	set("title", "æ‚è´§é“ºè€æ¿");
 	set("shen_type", 1);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
-	set("long", "ÍõÀÏ°åÊÇÍÁÉúÍÁ³¤µÄ³É¶¼ÈË£¬×öÁË¼¸Ê®ÄêµÄĞ¡ÂòÂô¡£\n");
+	set("long", "ç‹è€æ¿æ˜¯åœŸç”ŸåœŸé•¿çš„æˆéƒ½äººï¼Œåšäº†å‡ åå¹´çš„å°ä¹°å–ã€‚\n");
 	set_skill("unarmed", 50);
 	set_skill("dodge", 50);
 	set_temp("apply/damage", 15);

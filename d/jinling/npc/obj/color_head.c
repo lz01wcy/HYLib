@@ -6,13 +6,13 @@ inherit HEAD;
 
 void create()
 {
-	set_name("Ğå»¨Í·½í", ({ "color-headband", "headband" }) );
+	set_name("ç»£èŠ±å¤´å·¾", ({ "color-headband", "headband" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»ÌõĞå×Å´óºì»¨¶äµÄÍ·½í£¬Å®º¢×ÓÓÃÀ´ÔúÍ··¢ÓÃ¡£\n");
-		set("unit", "Ìõ");
+		set("long", "è¿™æ˜¯ä¸€æ¡ç»£ç€å¤§çº¢èŠ±æœµçš„å¤´å·¾ï¼Œå¥³å­©å­ç”¨æ¥æ‰å¤´å‘ç”¨ã€‚\n");
+		set("unit", "æ¡");
 		set("value", 800);
 		set("material", "cloth");
 		set("armor_prop/armor", 11);

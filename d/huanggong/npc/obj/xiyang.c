@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Î÷Ñó±í", ({ "xiyang biao" }));
+        set_name("è¥¿æ´‹è¡¨", ({ "xiyang biao" }));
         set_weight(2);
-   set("long", "ÕâÖ»ÑóÈË½ø¹±µÄÎ÷Ñó±í¡£\n" );
+   set("long", "è¿™åªæ´‹äººè¿›è´¡çš„è¥¿æ´‹è¡¨ã€‚\n" );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("material", "stone");
      set("value", 0);
                 set("no_get", 1);

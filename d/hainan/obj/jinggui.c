@@ -2,14 +2,14 @@ inherit ITEM;
 void create()
 {
 	object shu;
-	set_name("°×ÔÆâÖ²Ø¾­¹ñ",({"cangjin gui","guizi","gui"}));
+	set_name("ç™½äº‘åºµè—ç»æŸœ",({"cangjin gui","guizi","gui"}));
 	set_weight(3000);
 	set_max_encumbrance(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-	set("long","Ò»¸ö¹ÅÌ´Ä¾×÷µÄ¾­¹ñ,É¢·¢³öÌ´ÏãÎ¶¡£\n");
+		set("unit", "ä¸ª");
+	set("long","ä¸€ä¸ªå¤æª€æœ¨ä½œçš„ç»æŸœ,æ•£å‘å‡ºæª€é¦™å‘³ã€‚\n");
 		set("material", "wood");
 		set("no_get",1);
 		set("no_drop",1);

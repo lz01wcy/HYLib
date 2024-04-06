@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÎäÆ÷¿â");
+        set("short", "æ­¦å™¨åº“");
         set("long",
-             "ÕâÀïÊÇ¡º°×ÍÕÉ½¡»µÜ×ÓµÄÎäÆ÷¿â£¬¡º°×ÍÕÉ½¡»µÜ×Ó¿ÉÒÔµ½´Ë\n"
-         "ÄÃÈ¡Á·¹¦ÓÃµÄ¸÷ÖÖÎäÆ÷¡£²»¹ı±ğÅÉµÜ×ÓÊÇ²»ÔÊĞí½øÀ´µÄ¡£\n"
+             "è¿™é‡Œæ˜¯ã€ç™½é©¼å±±ã€å¼Ÿå­çš„æ­¦å™¨åº“ï¼Œã€ç™½é©¼å±±ã€å¼Ÿå­å¯ä»¥åˆ°æ­¤\n"
+         "æ‹¿å–ç»ƒåŠŸç”¨çš„å„ç§æ­¦å™¨ã€‚ä¸è¿‡åˆ«æ´¾å¼Ÿå­æ˜¯ä¸å…è®¸è¿›æ¥çš„ã€‚\n"
         );
         set("exits", ([
                 "east" : __DIR__"yuanzi",
@@ -31,7 +31,7 @@ int valid_leave(object me, string dir)
 		if (inv[i]->query("id") == "gangzhang") j++;
 	}
 	if (j > 1)
-                return notify_fail("ÕâÎ»" + RANK_D->query_respect(me) + "±ğÄÇ÷áÌ°ĞÄ£¬´ø×ßÒ»Ìõ¸ÖÕÈ¾Í¹»À²¡£\n");
+                return notify_fail("è¿™ä½" + RANK_D->query_respect(me) + "åˆ«é‚£éº½è´ªå¿ƒï¼Œå¸¦èµ°ä¸€æ¡é’¢æ–å°±å¤Ÿå•¦ã€‚\n");
         return ::valid_leave(me, dir);
 }
 

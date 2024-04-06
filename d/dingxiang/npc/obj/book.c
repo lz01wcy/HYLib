@@ -3,10 +3,10 @@ inherit ITEM;
 
 void create()
 {
-   set_name("¡¶»ù±¾Ç¹·¨ÈëÃÅ¡·", ({ "spear book","book" }));
+   set_name("ã€ŠåŸºæœ¬æªæ³•å…¥é—¨ã€‹", ({ "spear book","book" }));
    set_weight(200);
-   set("unit", "±¾");
-   set("long","ÕâÊÇÒ»±¾½éÉÜ»ù±¾Ç¹·¨µÄÊé.\n");
+   set("unit", "æœ¬");
+   set("long","è¿™æ˜¯ä¸€æœ¬ä»‹ç»åŸºæœ¬æªæ³•çš„ä¹¦.\n");
    set("no_drop",1);
    set("no_give",1);
    set("no_steal",1);

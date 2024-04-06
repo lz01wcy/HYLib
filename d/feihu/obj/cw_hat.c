@@ -5,13 +5,13 @@
 inherit HEAD;
 void create()
 {	
-  set_name(HIR"´³ÍõÕ½¿ø"NOR, ({ "cw_hat", "hat" }) );
+  set_name(HIR"é—¯ç‹æˆ˜ç›”"NOR, ({ "cw_hat", "hat" }) );
   set_weight(1000);	
    if( clonep() )
   set_default_object(__FILE__);
   else {
-		set("unit", "¶¥");
-		set("long", "ÕâÊÇ´³Íõ´÷¹ıµÄÍ·¿ø£¬Í¸³öÒ»¹É°µºìÉ«¡£\n");
+		set("unit", "é¡¶");
+		set("long", "è¿™æ˜¯é—¯ç‹æˆ´è¿‡çš„å¤´ç›”ï¼Œé€å‡ºä¸€è‚¡æš—çº¢è‰²ã€‚\n");
 		set("no_put", 1);
 //		//set("value", 100000);
 		set("armor_prop/attack", 20);

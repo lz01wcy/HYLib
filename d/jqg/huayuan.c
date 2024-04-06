@@ -1,23 +1,23 @@
-//huayuan.c »¨Ô°
+//huayuan.c èŠ±å›­
 // By River 99/05/20
 inherit ROOM;
 #include <ansi.h>
 void create()
 {
-          set("short",HIM"»¨Ô°"NOR);
+          set("short",HIM"èŠ±å›­"NOR);
           set("long",@LONG
-ÕâÀïÊÇ»¨Ô°£¬ÖÖÂúÁËÇé»¨Ê÷(flower)£¬Î÷±±·½ÊÇÒ»¸öĞ¡³ØÌÁ£¬ÑÛÏÂÕıÖµÁù
-ÔÂ£¬³ØÌÁÄÚºÉ»¨¶¼ÕÀ¿ªÁË»¨¶ä£¬¼¸Ö»ÇàÍÜÅ¿ÔÚºÉÒ¶ÉÏ¡°ßÉßÉ¡±µØ½Ğ¸ö²»Í£¡£Î÷
-ÄÏ·½Ò»×ù¼ÙÉ½£¨hill£©£¬ÄÏÃæÊÇÒ»Ìõ³¤ÀÈ¡£
+è¿™é‡Œæ˜¯èŠ±å›­ï¼Œç§æ»¡äº†æƒ…èŠ±æ ‘(flower)ï¼Œè¥¿åŒ—æ–¹æ˜¯ä¸€ä¸ªå°æ± å¡˜ï¼Œçœ¼ä¸‹æ­£å€¼å…­
+æœˆï¼Œæ± å¡˜å†…è·èŠ±éƒ½ç»½å¼€äº†èŠ±æœµï¼Œå‡ åªé’è›™è¶´åœ¨è·å¶ä¸Šâ€œå‘±å‘±â€åœ°å«ä¸ªä¸åœã€‚è¥¿
+å—æ–¹ä¸€åº§å‡å±±ï¼ˆhillï¼‰ï¼Œå—é¢æ˜¯ä¸€æ¡é•¿å»Šã€‚
 LONG
     );
           set("item_desc",([
-                "flower": "Ê÷Ö¦Ò¶ÉÏÉúÂúĞ¡´Ì£¬Çé»¨»¨°êµÄÑÕÉ«½¿ÑŞÎŞ±È£¬ÓÕµÃÄãÈÌ²»×¡È¥ÕªÏÂÀ´¡£\n",
-                "hill": "ÕâÊÇÒ»×ù¼ÙÉ½£¬Ò»¿é¾ŞÊ¯µ²ÔÚÉ½Ç°£¬¿´ÉÏÈ¥Õâ¿é¾ŞÊ¯ËÆºõÓĞĞ©Ææ¹Ö£¬\n"+
-                        "¾ŞÊ¯ºóÃæËÆºõÓĞĞ©²»Í¬Ñ°³££¬¶şÃûÂÌÒÂµÜ×ÓÊØÔÚ¼ÙÉ½Ç°¡£\n",
+                "flower": "æ ‘æå¶ä¸Šç”Ÿæ»¡å°åˆºï¼Œæƒ…èŠ±èŠ±ç“£çš„é¢œè‰²å¨‡è‰³æ— æ¯”ï¼Œè¯±å¾—ä½ å¿ä¸ä½å»æ‘˜ä¸‹æ¥ã€‚\n",
+                "hill": "è¿™æ˜¯ä¸€åº§å‡å±±ï¼Œä¸€å—å·¨çŸ³æŒ¡åœ¨å±±å‰ï¼Œçœ‹ä¸Šå»è¿™å—å·¨çŸ³ä¼¼ä¹æœ‰äº›å¥‡æ€ªï¼Œ\n"+
+                        "å·¨çŸ³åé¢ä¼¼ä¹æœ‰äº›ä¸åŒå¯»å¸¸ï¼ŒäºŒåç»¿è¡£å¼Ÿå­å®ˆåœ¨å‡å±±å‰ã€‚\n",
           ]));
 
-          set("outdoors","¾øÇé¹È");
+          set("outdoors","ç»æƒ…è°·");
 	  set("exits",([
               "south": __DIR__"lang1",
           ]));  
@@ -37,23 +37,23 @@ int do_zhai(string arg)
 {    
           object me = this_player();
           if (!arg || (arg != "flower"))
-              return notify_fail("ÄãÒªÕªÊ²Ã´°¡£¿\n");
+              return notify_fail("ä½ è¦æ‘˜ä»€ä¹ˆå•Šï¼Ÿ\n");
           if (me->is_busy() || me->is_fighting())
-	      return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+	      return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");
           if (present("flower", this_player()))
-	      return notify_fail("ÄãÉíÉÏ²»ÊÇÓĞÃ´£¬»¹ÏëÒª£¬Ì«Ì°ĞÄÁË¡£\n");
+	      return notify_fail("ä½ èº«ä¸Šä¸æ˜¯æœ‰ä¹ˆï¼Œè¿˜æƒ³è¦ï¼Œå¤ªè´ªå¿ƒäº†ã€‚\n");
           if(me->query_condition("medicine"))
-              return notify_fail("Äã¸ÕÕª¹ı£¬ÕâÃ´¿ì¾Í»¹ÏëÒª£¿\n");
-          message_vision(HIY"$N±Ü¿ªÖ¦ÉÏ¼â´Ì£¬ÉìÊÖÈ¥Õª"HIM"Çé»¨"HIY"£¬ÂäÊÖÉõÊÇĞ¡ĞÄ¡£\n"NOR, this_player());
+              return notify_fail("ä½ åˆšæ‘˜è¿‡ï¼Œè¿™ä¹ˆå¿«å°±è¿˜æƒ³è¦ï¼Ÿ\n");
+          message_vision(HIY"$Né¿å¼€æä¸Šå°–åˆºï¼Œä¼¸æ‰‹å»æ‘˜"HIM"æƒ…èŠ±"HIY"ï¼Œè½æ‰‹ç”šæ˜¯å°å¿ƒã€‚\n"NOR, this_player());
           new(__DIR__"obj/flower")->move(me);
           me->start_busy(2);
           if ( random(me->query("per")) < 10 ){
-          message_vision(HIY"ÆñÖª»¨¶ä±³ááÒş²ØÖøĞ¡´Ì£¬½«$NµÄÊÖÖ¸¸ø´ÌÆÆÁË¡£\n"NOR, this_player());
+          message_vision(HIY"å²‚çŸ¥èŠ±æœµèƒŒå¾Œéšè—è‘—å°åˆºï¼Œå°†$Nçš„æ‰‹æŒ‡ç»™åˆºç ´äº†ã€‚\n"NOR, this_player());
           me->apply_condition("qinghua_poison", me->query("per") + random(me->query("per"))); 
           return 1;
           }
           else {
-          message_vision(HIY"$NÈÆ¿ª»¨¶ä±³ºóµÄĞ¡´Ì£¬ÉìÊÖ½«"HIM"Çé»¨"HIY"ÕªÁËÏÂÀ´¡£\n"NOR, this_player());
+          message_vision(HIY"$Nç»•å¼€èŠ±æœµèƒŒåçš„å°åˆºï¼Œä¼¸æ‰‹å°†"HIM"æƒ…èŠ±"HIY"æ‘˜äº†ä¸‹æ¥ã€‚\n"NOR, this_player());
           return 1;
           }
 }

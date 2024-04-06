@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����С��");
+	set("short", "汤池小镇");
 	set("long", @LONG
-�����Ǿ�������С�򡣳Ƕ��Ƿ羰�续���Ϻ��ϰ�������
-�����ʵ���羰��������Χ�кܶ���Ȫ�����Ա���Ϊ���ء�
+这里是就是汤池小镇。城东是风景如画的南湖南岸。这里
+民风朴实。风景优美。周围有很多温泉，所以被称为汤池。
 LONG );
 	set("exits", ([
                 "west" : __DIR__"qzroad2",

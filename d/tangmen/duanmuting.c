@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¶ÏÄ¾Í¤");
+	set("short", "æ–­æœ¨äº­");
 	set("long", @LONG
-	ÕâÀïÊÇ¶ÏÄ¾Í¤¡£¶Ñ·ÅÁËÐí¶à´Ö´óµÄÊ÷¸É£¬ÓÐ¼¸¸öÌÆÃÅµÜ×Ó¾ÓÈ»ÔÚÓÃÊÖÕÆÅüÄ¾
-²ñ£¬ÀÛµÃÂúÍ·´óº¹¡£Íù±±×ß¾ÍÊÇ³ø·¿£¬ÓÐÒ»ÕóÕó·¹²ËµÄÏãÆø´«À´¡£
+	è¿™é‡Œæ˜¯æ–­æœ¨äº­ã€‚å †æ”¾äº†è®¸å¤šç²—å¤§çš„æ ‘å¹²ï¼Œæœ‰å‡ ä¸ªå”é—¨å¼Ÿå­å±…ç„¶åœ¨ç”¨æ‰‹æŽŒåŠˆæœ¨
+æŸ´ï¼Œç´¯å¾—æ»¡å¤´å¤§æ±—ã€‚å¾€åŒ—èµ°å°±æ˜¯åŽ¨æˆ¿ï¼Œæœ‰ä¸€é˜µé˜µé¥­èœçš„é¦™æ°”ä¼ æ¥ã€‚
 LONG
 	);
 
@@ -41,20 +41,20 @@ int do_pi(string arg)
 	me = this_player();
 
 	if ( !arg || ( arg != "chai" ) )
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 		
 	me->receive_damage("qi", 20);
 
-	message_vision("$NÕýÓÃÁ¦Åü¿³×ÅÊ÷¸É¡£\n", me);
+	message_vision("$Næ­£ç”¨åŠ›åŠˆç ç€æ ‘å¹²ã€‚\n", me);
 
 	if ( (int)me->query_skill("strike", 1) < 60)
 	{
 		me->improve_skill("strike", me->query("int"));
-		write("ÄãÅü¿³ÁËÒ»»á¶ùÊ÷¸É£¬¾õµÃ×Ô¼ºµÄÕÆÁ¦ºÃÏóÇ¿ÁËÒ»µã¡£\n");
+		write("ä½ åŠˆç äº†ä¸€ä¼šå„¿æ ‘å¹²ï¼Œè§‰å¾—è‡ªå·±çš„æŽŒåŠ›å¥½è±¡å¼ºäº†ä¸€ç‚¹ã€‚\n");
 		return 1;
 	}
 
-	write("ÄãµÄÕÆÁ¦ÒÑ¾­²»´íÁË£¬»¹ÊÇÈÃÆäËûÈËÀ´Á·Á·°É¡£\n");
+	write("ä½ çš„æŽŒåŠ›å·²ç»ä¸é”™äº†ï¼Œè¿˜æ˜¯è®©å…¶ä»–äººæ¥ç»ƒç»ƒå§ã€‚\n");
 
 	return 1;
 }

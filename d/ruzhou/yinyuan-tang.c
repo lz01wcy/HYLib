@@ -1,4 +1,4 @@
-// Room: /d/ruzzhou/yinyuan-tang.c    ����֮��
+// Room: /d/ruzzhou/yinyuan-tang.c    拜堂之处
 // by llm 99/06
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ե��");
+	set("short", "姻缘堂");
    set("long", @LONG
-���ֱ�߽���һƬ��ɫ�����磬�ߵ����ҵش��Ÿ�ʽ�����ĺ��籶�
-��ֽ������ϸϸ��ȥ��ÿһ������������ԧ���ˣ�͸��һ�ɹ�Ũ����ϲ
-�����գ�����һ����ң�
-          ǧ����Եһ��ǣ
+你简直走进了一片红色的世界，高低左右地垂着各式各样的红绸绫缎
+彩纸贴花，细细看去，每一处竟都绣扎着鸳鸯凤凰，透出一股股浓郁的喜
+庆气氛，当中一块横匾：
+          千里姻缘一线牵
 LONG
    );
 	set("exits", ([

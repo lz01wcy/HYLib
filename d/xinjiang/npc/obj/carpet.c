@@ -3,13 +3,13 @@
 inherit ITEM;
 void create()
 {
-        set_name("ĞÂ½®µØÌº", ({ "thick carpet" }) );
+        set_name("æ–°ç–†åœ°æ¯¯", ({ "thick carpet" }) );
         set_weight(9000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Ò»¿éÏàµ±ºñÊµµÄĞÂ½®µØÌº¡£\n");
+                set("unit", "å—");
+                set("long", "ä¸€å—ç›¸å½“åšå®çš„æ–°ç–†åœ°æ¯¯ã€‚\n");
                 set("value", 100);
                 set("material", "cloth");
                 set("armor_prop/armor", 10);

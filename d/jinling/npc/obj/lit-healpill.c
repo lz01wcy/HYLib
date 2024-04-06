@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ğ¡»¹µ¤", ({ "lit-heal pill","pill" }) );
+	set_name("å°è¿˜ä¸¹", ({ "lit-heal pill","pill" }) );
 	set_weight(80);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Á£ºÚºÚµÄĞ¡Ò©Íè£¬¿ÉÒÔÖÎÄÚÉË¡£\n");
-		set("unit", "Á£");
+		set("long", "ä¸€ç²’é»‘é»‘çš„å°è¯ä¸¸ï¼Œå¯ä»¥æ²»å†…ä¼¤ã€‚\n");
+		set("unit", "ç²’");
 		set("value", 350);
 	}
 }
@@ -22,15 +22,15 @@ void init()
 int do_eat(string arg)
 {
 	
-	if( !this_object()->id(arg) ) return notify_fail("ÄãÒª³ÔÊ²÷á£¿\n");
+	if( !this_object()->id(arg) ) return notify_fail("ä½ è¦åƒä»€éº½ï¼Ÿ\n");
 	if( this_player()->query_temp("block_msg/all"));
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
         this_player()->add("qi", 50 );
         this_player()->add("jing", 50 );
 
 	 
-	 message_vision("$NÍÌÏÂÒ»Á£" + name() + "£¬¾«ÉñºÃÁËºÜ¶à¡£\n", this_player());
+	 message_vision("$Nåä¸‹ä¸€ç²’" + name() + "ï¼Œç²¾ç¥å¥½äº†å¾ˆå¤šã€‚\n", this_player());
 	 destruct(this_object());
 	return 1;
 

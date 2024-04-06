@@ -4,18 +4,18 @@
 inherit ROOM;
 void create()
 {
-  set ("short",HIC"ÑïÖÝÓÊ¾Ö"NOR);
+  set ("short",HIC"æ‰¬å·žé‚®å±€"NOR);
 set ("long",@LONG
-ÕâÀïÊÇÑïÖÝÓÊ¾Ö,ÎõÎõÈÁÈÁµÄÈËºÜ¶à,·Ç³£·±Ã¦¡£½üÀ´ÓÊ¾ÖÓÉÓÚÍË
-ÐÝÈËÔ±¹ý¶à£¬ÓÊ²îÈËÊÖ²»¹»£¬ÐÅ¼þÂÅÂÅ·¢²»³öÈ¥¡£ÓÐÒ»Ð©½­ºþÈËÊ¿¼û
-´Ë±ãÎÞÊÂÊ±¹ýÀ´°ïÃ¦£¬ÒÔ´Î»ñµÃÒ»Ð©±¨³ê¡£Ç½ÉÏÌû×ÅÒ»ÕÅ²¼¸æ(post)¡£
+è¿™é‡Œæ˜¯æ‰¬å·žé‚®å±€,ç†™ç†™æ”˜æ”˜çš„äººå¾ˆå¤š,éžå¸¸ç¹å¿™ã€‚è¿‘æ¥é‚®å±€ç”±äºŽé€€
+ä¼‘äººå‘˜è¿‡å¤šï¼Œé‚®å·®äººæ‰‹ä¸å¤Ÿï¼Œä¿¡ä»¶å±¡å±¡å‘ä¸å‡ºåŽ»ã€‚æœ‰ä¸€äº›æ±Ÿæ¹–äººå£«è§
+æ­¤ä¾¿æ— äº‹æ—¶è¿‡æ¥å¸®å¿™ï¼Œä»¥æ¬¡èŽ·å¾—ä¸€äº›æŠ¥é…¬ã€‚å¢™ä¸Šå¸–ç€ä¸€å¼ å¸ƒå‘Š(post)ã€‚
 LONG
 );
   set("objects",([
   "/quest/letter/foxmail.c":1,
 ]));
 set("item_desc",([
-"post":"²¼¸æÉÏÃæÐ´×Å:±¾ÓÊ¾Ö³ÏÕÐÓÊµÝÔ±¡£\n",
+"post":"å¸ƒå‘Šä¸Šé¢å†™ç€:æœ¬é‚®å±€è¯šæ‹›é‚®é€’å‘˜ã€‚\n",
 ]));
   set("exits",([
   "north":__DIR__"ximen",

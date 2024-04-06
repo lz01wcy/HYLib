@@ -8,9 +8,9 @@ int do_open(string);
 
 void create()
 {
-        set("short", "ÇôÊÒ´óÃÅ");
+        set("short", "å›šå®¤å¤§é—¨");
         set("long",
-	     "ÕâÊÇÇôÊÒ¶«±ß,Î÷ÃæÓÐÒ»ÉÈ½ô±ÕµÄ´óÃÅ(door)¡£\n"
+	     "è¿™æ˜¯å›šå®¤ä¸œè¾¹,è¥¿é¢æœ‰ä¸€æ‰‡ç´§é—­çš„å¤§é—¨(door)ã€‚\n"
         );
         set("outdoors", "lingjiu");
         set("exits", ([
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
 {
 
 	if (  (dir == "west") && objectp(present("ju jian", environment(me))) )
-	 return notify_fail("¾Õ½£ÉìÊÖÀ¹×¡Äã£¬ËµµÀ£º¡°¶Ô²»Æð£¬±¾ÃÅÖØµØ£¬Çë»Ø£¡¡±\n");
+	 return notify_fail("èŠå‰‘ä¼¸æ‰‹æ‹¦ä½ä½ ï¼Œè¯´é“ï¼šâ€œå¯¹ä¸èµ·ï¼Œæœ¬é—¨é‡åœ°ï¼Œè¯·å›žï¼â€\n");
 	return ::valid_leave(me, dir);
 }
 
@@ -46,8 +46,8 @@ void init()
 string look_door(string arg)
 {
 	if (query_temp("lock") == 0)
-		return "ÃÅÉÏµÄÌúËøÒÑ¾­±»´ò¿ªÁË¡£\n";
-	return "ÕâÉÈÃÅ±»ÌúËøÀÎÀÎËø×¡¡£\n";
+		return "é—¨ä¸Šçš„é“é”å·²ç»è¢«æ‰“å¼€äº†ã€‚\n";
+	return "è¿™æ‰‡é—¨è¢«é“é”ç‰¢ç‰¢é”ä½ã€‚\n";
 }
 
 int do_open(string arg)
@@ -55,10 +55,10 @@ int do_open(string arg)
 	object me=this_player(), room;
 
 	if(!arg || arg!="door")
-		return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¼€ä»€ä¹ˆï¼Ÿ\n");
 
 	if( query_temp("lock") == 1 && !present("key", me) )
-		return notify_fail("Ô¿³×¶¼Ã»ÓÐ£¬ÔõÃ´¿ªÃÅ£¿\n");
+		return notify_fail("é’¥åŒ™éƒ½æ²¡æœ‰ï¼Œæ€Žä¹ˆå¼€é—¨ï¼Ÿ\n");
 
 	if(!( room = find_object(__DIR__"qiushi")) )
 		room = load_object(__DIR__"qiushi");
@@ -69,11 +69,11 @@ int do_open(string arg)
 	if(query_temp("lock") == 1 && present("key", me))
 	{
 		set_temp("lock", 0);
-		message_vision("$N°ÑÔ¿³×²å½øËø¿×£¬Ö»Ìý¼û¡®¿¨àª¡¯Ò»Éù£¬Ëø¿ªÁË¡£\n", me);
-		message("vision", "ÍâÃæ´«À´Ò»Õó¿ªËøµÄÉùÒô£¬Ö»Ìý¼û¡®¿¨àª¡¯Ò»Éù£¬Ëø¿ªÁË¡£\n",room);
+		message_vision("$NæŠŠé’¥åŒ™æ’è¿›é”å­”ï¼Œåªå¬è§â€˜å¡å—’â€™ä¸€å£°ï¼Œé”å¼€äº†ã€‚\n", me);
+		message("vision", "å¤–é¢ä¼ æ¥ä¸€é˜µå¼€é”çš„å£°éŸ³ï¼Œåªå¬è§â€˜å¡å—’â€™ä¸€å£°ï¼Œé”å¼€äº†ã€‚\n",room);
 	}
-	message_vision("$NÇáÇáÍÆ¿ªÃÅ£¬×ßÁË½øÈ¥£¬ËæÊÖ°ÑÃÅÑÚÁËÆðÀ´¡£\n",me);
-	message("vision", "ÓÐÈË×ßÁË½øÀ´£¬ËæÊÖ°ÑÃÅÑÚÉÏÁË¡£\n",room);
+	message_vision("$Nè½»è½»æŽ¨å¼€é—¨ï¼Œèµ°äº†è¿›åŽ»ï¼Œéšæ‰‹æŠŠé—¨æŽ©äº†èµ·æ¥ã€‚\n",me);
+	message("vision", "æœ‰äººèµ°äº†è¿›æ¥ï¼Œéšæ‰‹æŠŠé—¨æŽ©ä¸Šäº†ã€‚\n",room);
 	me->move(room);
 	return 1;
 }

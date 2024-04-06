@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", RED"°Ù»¨¹È"NOR);
+	set("short", RED"ç™¾èŠ±è°·"NOR);
 	set("long", 
-HIC"ÓÖ×ªÁË¼¸¸öÍä£¬Ó­ÃæÁ½ÃæÉ½±Ú¼ĞÖÅÈıÖê´óËÉÊ÷³åÌì¶øÆğ£¬µ²ÔÚ
-É½±Ú¼ä¡£³ÉÎªÁ½µÀÌìÈ»µÄÆÁÕÏ¡£\n"NOR);
+HIC"åˆè½¬äº†å‡ ä¸ªå¼¯ï¼Œè¿é¢ä¸¤é¢å±±å£å¤¹å³™ä¸‰æ ªå¤§æ¾æ ‘å†²å¤©è€Œèµ·ï¼ŒæŒ¡åœ¨
+å±±å£é—´ã€‚æˆä¸ºä¸¤é“å¤©ç„¶çš„å±éšœã€‚\n"NOR);
 	set("exits", ([ /* sizeof() == 1 */
 		"west" : __DIR__"huagu6",
 	]));
@@ -28,17 +28,17 @@ void init()
 int do_swear(string arg)
 {
 	if( !arg) return 0;
-	if( arg == "ÀÏÍçÍ¯" ) 
+	if( arg == "è€é¡½ç«¥" ) 
 	{
-		message_vision(HIG "$NÀÊÉùº°µÀ£ºÀÏÍçÍ¯£¬Ğ¡ÅóÓÑÀ´ÕÒÄãÍæ¶ùÀ²£¡£¡£¡\n"NOR, this_player());
-		message_vision(HIY "Ö»Ìı¼ûÀïÃæºÇºÇµÄĞ¦Éù´«À´£ºÓÖÓĞÈËÀ´ÕÒÎÒÍæ¶ùÁË£¬¿ì½ø¿ì½ø£¡\n"NOR, this_player() );
+		message_vision(HIG "$Næœ—å£°å–Šé“ï¼šè€é¡½ç«¥ï¼Œå°æœ‹å‹æ¥æ‰¾ä½ ç©å„¿å•¦ï¼ï¼ï¼\n"NOR, this_player());
+		message_vision(HIY "åªå¬è§é‡Œé¢å‘µå‘µçš„ç¬‘å£°ä¼ æ¥ï¼šåˆæœ‰äººæ¥æ‰¾æˆ‘ç©å„¿äº†ï¼Œå¿«è¿›å¿«è¿›ï¼\n"NOR, this_player() );
 		call_out("close_passage", 10);
 		set("exits/enter", __DIR__"baihuagu");
 		return 1;
 	}
 	else
 	{
-		message_vision(HIG"$NÀÊÉù¸ßº°£º¡°"+arg+"£¡£¡£¡¡±¿Õ¹È»ØÒô£¬³¤¾Ã²»¾ø¡£\n"NOR, this_player());
+		message_vision(HIG"$Næœ—å£°é«˜å–Šï¼šâ€œ"+arg+"ï¼ï¼ï¼â€ç©ºè°·å›éŸ³ï¼Œé•¿ä¹…ä¸ç»ã€‚\n"NOR, this_player());
 		return 1;
 	}
 }

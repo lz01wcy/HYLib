@@ -1,13 +1,13 @@
 // baling/edao1
-// Room in ����
+// Room in 巴陵
 inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-���Ų����У��ٲ�̤���ľ��ǰ������ݣ�����û��·��ÿ��һ����
-���������̵�С�ȣ�����������塣
+你信步而行，举步踏到的尽是矮树长草，这里没有路，每走一步，
+荆棘都钩刺到小腿，划破你的身体。
 LONG);
 
 	set("exits", ([

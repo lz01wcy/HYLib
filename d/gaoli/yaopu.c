@@ -1,14 +1,14 @@
 // /d/gaoli/yaopu
-// Room in ����
+// Room in 高丽
 // rich 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "ҩ��");
+	set("short", "药铺");
 	set("long", @LONG
-�߽�����һ��ҩ��������������㾫��Ϊ֮һ��ֻ��ҩ���ıڰ�
-����ҩ�񣬼���С�������æµ���д��ſ��ˡ�ԭ�������ҩ��������
-���ĺ�����νӦ�о��У��������Ĵ������Ǯ���뽭�����ˡ�
+走进这里一股药香扑面而来，另你精神为之一振。只见药铺四壁摆
+满了药柜，几个小伙计正在忙碌的招待着客人。原来这里的药材来自五
+湖四海，可谓应有尽有，光顾这里的大多是有钱人与江湖中人。
 LONG
 	);
 set("exits", ([

@@ -1,14 +1,14 @@
-// Room: /d/songshan/liangong.c Á·¹¦·¿
+// Room: /d/songshan/liangong.c ç»ƒåŠŸæˆ¿
 // Last Modified by Winder on Jul. 15 2001
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿");
+	set("short", "ç»ƒåŠŸæˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇáÔÉ½ÅÉÁ·¹¦·¿£¬µØÏÂÁèÂÒµØ·Å×Å¼¸¸öÆÑÍÅ£¬¼¸Î»áÔÉ½µÜ×ÓÕý
-ÅÌÏ¥×øÔÚÉÏÃæ´ò×ø¡£
+è¿™é‡Œæ˜¯åµ©å±±æ´¾ç»ƒåŠŸæˆ¿ï¼Œåœ°ä¸‹å‡Œä¹±åœ°æ”¾ç€å‡ ä¸ªè’²å›¢ï¼Œå‡ ä½åµ©å±±å¼Ÿå­æ­£
+ç›˜è†ååœ¨ä¸Šé¢æ‰“åã€‚
 LONG );
 	set("exits", ([
 		"east" : __DIR__"westpath2",
@@ -31,6 +31,6 @@ int valid_leave(object me, string dir)
 		if (inv[i]->query("id") == "zhujian") j++;
 	}
 	if (j > 1)
-		return notify_fail("ÕâÎ»" + RANK_D->query_respect(me) + "±ðÄÇ÷áÌ°ÐÄ£¬´ø×ßÒ»°ÑÖñ½£¾Í¹»À²¡£\n");
+		return notify_fail("è¿™ä½" + RANK_D->query_respect(me) + "åˆ«é‚£éº½è´ªå¿ƒï¼Œå¸¦èµ°ä¸€æŠŠç«¹å‰‘å°±å¤Ÿå•¦ã€‚\n");
 	return ::valid_leave(me, dir);
 }

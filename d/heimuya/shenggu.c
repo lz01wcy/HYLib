@@ -2,10 +2,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "ʥ����");
+        set("short", "圣姑堂");
         set("long",@LONG
-�����Ǻ�ľ�µ�ʥ�����ڵء�ʥ���á�������������ޣ�ɷ
-��Ư��������һλ����Ů�ӣ�����С�䣬���޲��ɷ��
+这里是黑木崖的圣姑所在地“圣姑堂”。堂上五彩云罗，煞
+是漂亮。堂中一位妙龄女子，青衫小袖，明艳不可方物。
 LONG );
         set("exits", ([
             "east"   : __DIR__"chitang",

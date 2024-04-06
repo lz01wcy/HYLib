@@ -14,15 +14,15 @@ void init()
 
 void create()
 {
-        set_name("°µÃÅ", ({"door",}));
+        set_name("æš—é—¨", ({"door",}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öºÜĞ¡µÄ°µÃÅ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªå¾ˆå°çš„æš—é—¨ã€‚\n");
+                set("unit", "ä¸ª");
                 set("material", "wood");
-                set("no_get", "Çî·èÀ²£¬ÃÅÒ²Òª?\n");
+                set("no_get", "ç©·ç–¯å•¦ï¼Œé—¨ä¹Ÿè¦?\n");
         }
         setup();
 }
@@ -38,13 +38,13 @@ int do_enter(string arg)
 	if (me->query_temp("doorisok") ) 
         {
 	me->delete_temp("doorisok"); 
-	message("vision","ÏÖÔÚ¿ÉÒÔÍù±±×ß.\n",environment(me));
+	message("vision","ç°åœ¨å¯ä»¥å¾€åŒ—èµ°.\n",environment(me));
         return 1;
         }
         if( arg=="door" ) 
 	{
-		message_vision("$N´¥¶¯ÁË»ú¹Ø£¡\n", this_player());
-		message("vision","Í»È»£¬°µÃÅÅéµÄÒ»ÏÂµ¯¿ªÁË£¬ÕıÇÉ×²ÔÚ"+me->name()+"µÄÍ·ÉÏ\n",environment(me));
+		message_vision("$Nè§¦åŠ¨äº†æœºå…³ï¼\n", this_player());
+		message("vision","çªç„¶ï¼Œæš—é—¨ç °çš„ä¸€ä¸‹å¼¹å¼€äº†ï¼Œæ­£å·§æ’åœ¨"+me->name()+"çš„å¤´ä¸Š\n",environment(me));
 	        i = (int)me->query_skill("dodge", 0);
 		ging_cost = 700 / (int)me->query("int");
 		qi_cost = 500 / (int)me->query("int");
@@ -58,7 +58,7 @@ int do_enter(string arg)
 
 void dest()
 {
-	message("vision","»­¾íÍ»È»×Ô¶¯ÒÆ»Ø£¬ÓÖ°Ñ°µÃÅÑÚÉÏÁË¡£\n","/d/city2/aobai7");
+	message("vision","ç”»å·çªç„¶è‡ªåŠ¨ç§»å›ï¼ŒåˆæŠŠæš—é—¨æ©ä¸Šäº†ã€‚\n","/d/city2/aobai7");
 	destruct(this_object());
 }
 

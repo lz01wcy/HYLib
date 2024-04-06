@@ -1,14 +1,14 @@
 // "suiye"/nandajie2
-// Room in ��Ҷ
+// Room in 碎叶
 // laowuwu 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "�ϴ��");
+	set("short", "南大街");
 	set("long", @LONG
-�����·��խ��������һƥ���������������ĵ�·�ᴩ�ϱ���һ��
-С�������ĵĽ����š�������һ�Ҽ�Ժ������Ư����Ů�����űߺ���ʿ
-�������Σ�����ȴ�����ĵģ�ԭ����һ����ꡣ
+这里的路很窄，仅能容一匹马车经过，长长的道路贯穿南北，一个
+小贩在热心的叫卖着。东面是一家妓院。几个漂亮的女子在门边和武士
+打情骂俏，对面却静悄悄的，原来是一家书店。
 LONG
 	);
 set("outdoors", "suiye");

@@ -9,16 +9,16 @@ void create()
 
 {
     
-   set_name(BLU"ÄõÁú"NOR, ({ "nie long" , "long" , "dragon" }));
-                set("race", "Ò°ÊŞ");
+   set_name(BLU"å­½é¾™"NOR, ({ "nie long" , "long" , "dragon" }));
+                set("race", "é‡å…½");
        set("long",
-"Ò»Ìõ³óÂª²»¿°£¬Ğ×²ĞÎŞ±ÈµÄ¾ŞÁú¡£
-Ëü³ä³â×ÅÕâÕû¸ö¶´Ñ¨£¬Äã¶Ù¾õ¿ÕÆøµÄÑ¹ÒÖ£¬¾õµÃËüÊ®·ÖµØ¿ÉÅÂ
-¡£\n");
+"ä¸€æ¡ä¸‘é™‹ä¸å ªï¼Œå‡¶æ®‹æ— æ¯”çš„å·¨é¾™ã€‚
+å®ƒå……æ–¥ç€è¿™æ•´ä¸ªæ´ç©´ï¼Œä½ é¡¿è§‰ç©ºæ°”çš„å‹æŠ‘ï¼Œè§‰å¾—å®ƒååˆ†åœ°å¯æ€•
+ã€‚\n");
               set("attitude", "aggressive");
                 set("vendetta/authority",1);
 
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" , "claw"}) );
 	       set("max_qi",50000+random(20000));
   set("max_jing",50000+random(20000));
@@ -102,11 +102,11 @@ void die()
         ob = this_object();
         me = query_temp("last_damage_from");
         
-        message_vision(WHT"$NÒ»ÉùÅ­ºğ£¬»ëÉíÏÊÑªÖ±Á÷£¬»º»ºÌÉµ¹ÔÚµØ¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nä¸€å£°æ€’å¼ï¼Œæµ‘èº«é²œè¡€ç›´æµï¼Œç¼“ç¼“èººå€’åœ¨åœ°ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
         if((int)me->query("combat_exp") < 900000)   {
-        message("vision", me->name() + "³É¹¦´òËÀÁÔÎïÔö¼ÓÁË600¾­ÑéºÍ250Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸæ‰“æ­»çŒç‰©å¢åŠ äº†600ç»éªŒå’Œ250æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",500);
         me->add("potential",250);
         destruct(ob);
@@ -122,6 +122,6 @@ int hit_ob(object me, object ob, int damage)
    if( random(damage) > (int)ob->query_temp("apply/armor")
 	&&	(int)ob->query_condition("wugong_poison") < 10 ) {
 		ob->apply_condition("wugong_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»ç—’ï¼\n" NOR );
 	}
 }

@@ -3,9 +3,9 @@
 inherit NPC;
 void create()
 {
-    set_name("Óü×ä³¤", ({ "yuzu zhang", "yu zu zhang" }) );
+    set_name("ç‹±å’é•¿", ({ "yuzu zhang", "yu zu zhang" }) );
     set("long",
-            "Óü×äËäĞ¡£¬µ«Ò²²»ÒªÇáÒ×ÈÇµ¹ËûÃÇ£¬ËûÃÇÊÇÓĞ×éÖ¯µÄÒ»ÈºÈË¡£\n");
+            "ç‹±å’è™½å°ï¼Œä½†ä¹Ÿä¸è¦è½»æ˜“æƒ¹å€’ä»–ä»¬ï¼Œä»–ä»¬æ˜¯æœ‰ç»„ç»‡çš„ä¸€ç¾¤äººã€‚\n");
     
     set("attitude", "heroism");
     set("str", 27);
@@ -27,23 +27,23 @@ void create()
     set_temp("apply/move", 100);
     set("chat_chance", 1);
     set("chat_msg", ({
-"Óü×ä³¤µÍÉùµÀ£º¡°ÕâµãÏìÒø£¬»¹²»¹»ÀÏ×Ó´ò¾ÆºÈ¡£¡±\n",
+"ç‹±å’é•¿ä½å£°é“ï¼šâ€œè¿™ç‚¹å“é“¶ï¼Œè¿˜ä¸å¤Ÿè€å­æ‰“é…’å–ã€‚â€\n",
     }) );
     setup(); 
     carry_object("/clone/misc/cloth")->wear();
 } 
 void destory_this()
 {
-        message_vision("$N²»ÄÍ·³µÀ£º¡°»¹Ã»ÏëºÃÂğ£¿ÄÇ¾ÍÂıÂıÏë°É£¡ÏëºÃÁËÔÙ½ĞÎÒ¡£¡±\n",this_object());
-        message_vision("$Nã¬ã¬È»·÷Ğä¶øÈ¥¡£ \n",this_object());
+        message_vision("$Nä¸è€çƒ¦é“ï¼šâ€œè¿˜æ²¡æƒ³å¥½å—ï¼Ÿé‚£å°±æ…¢æ…¢æƒ³å§ï¼æƒ³å¥½äº†å†å«æˆ‘ã€‚â€\n",this_object());
+        message_vision("$Næ‚»æ‚»ç„¶æ‹‚è¢–è€Œå»ã€‚ \n",this_object());
         destruct(this_object());
         return;
 } 
 void release_player(object player)
 {
-        message_vision("$NËµ£º¡°Ïë³öÈ¥£¿ºÙºÙ¡£¡£¡£\n",this_object());
-        message_vision("$N¿´¿´×óÓÒÃ»ÈË£¬µÍÉù¶Ô$nËµµÀ£º¡±ÓĞÇ®¾Í¿ÉÒÔ·ÅÄã³öÈ¥£¬Äã¸¶µÃÆğÂğ£¿¡° \n",this_object(),player);
-        message_vision("$N×öÁËÒ»¸öÊÖÊÆ£¬µÍÉùµÀ£º¡±Õâ¸öÊı£¬»Æ½ğ50Á½¡£ÎÒÖ±½Ó´ÓÄãÕÊ»§ÉÏ×ª£¬Ô¸²»Ô¸Òâ£¿(ACCEPT YES/NO)¡±  \n",this_object());
+        message_vision("$Nè¯´ï¼šâ€œæƒ³å‡ºå»ï¼Ÿå˜¿å˜¿ã€‚ã€‚ã€‚\n",this_object());
+        message_vision("$Nçœ‹çœ‹å·¦å³æ²¡äººï¼Œä½å£°å¯¹$nè¯´é“ï¼šâ€æœ‰é’±å°±å¯ä»¥æ”¾ä½ å‡ºå»ï¼Œä½ ä»˜å¾—èµ·å—ï¼Ÿâ€œ \n",this_object(),player);
+        message_vision("$Nåšäº†ä¸€ä¸ªæ‰‹åŠ¿ï¼Œä½å£°é“ï¼šâ€è¿™ä¸ªæ•°ï¼Œé»„é‡‘50ä¸¤ã€‚æˆ‘ç›´æ¥ä»ä½ å¸æˆ·ä¸Šè½¬ï¼Œæ„¿ä¸æ„¿æ„ï¼Ÿ(ACCEPT YES/NO)â€  \n",this_object());
         add_action("do_accept","accept");
         call_out("destory_this",20);
 }
@@ -58,29 +58,29 @@ int do_accept(string arg)
                 amount = player->query("deposit");
                 if (amount < 500000)
                 {
-                        message_vision("$NÆø¼±°Ü»µ¶Ô$n´óÂîµÀ£º¡°ÎÒ²é¹ıÁË£¬ÄãÕâ¸öÇî¹í¸ù±¾Ã»ÄÇÃ´¶àÇ®£¡¸ÒË£ÎÒ£¬ÔÚÕâ¶ùÂıÂıµÈËÀ°É£¡¡± \n",this_object(),player);
-                        message_vision("$Nã¬ã¬È»·÷Ğä¶øÈ¥¡£ \n",this_object());
+                        message_vision("$Næ°”æ€¥è´¥åå¯¹$nå¤§éª‚é“ï¼šâ€œæˆ‘æŸ¥è¿‡äº†ï¼Œä½ è¿™ä¸ªç©·é¬¼æ ¹æœ¬æ²¡é‚£ä¹ˆå¤šé’±ï¼æ•¢è€æˆ‘ï¼Œåœ¨è¿™å„¿æ…¢æ…¢ç­‰æ­»å§ï¼â€ \n",this_object(),player);
+                        message_vision("$Næ‚»æ‚»ç„¶æ‹‚è¢–è€Œå»ã€‚ \n",this_object());
                         destruct(this_object());
                 }else
                 {
                         amount = amount - 500000;
                         player->set("deposit",amount);
-                        message_vision("$N´ø×ÅÌÖºÃµÄĞ¦¶Ô$nËµ£º¡°ÎÒ¾ÍËµÕâÎ»"+ RANK_D->query_respect(player) + "ÊÇ´ÏÃ÷ÈË£¡¸úÎÒ×ß¡£¡±\n",this_object(),player);
-                        message_vision("$N½«$nÌá³öÁËÀÎ·¿¡£ \n",this_object(),player);
+                        message_vision("$Nå¸¦ç€è®¨å¥½çš„ç¬‘å¯¹$nè¯´ï¼šâ€œæˆ‘å°±è¯´è¿™ä½"+ RANK_D->query_respect(player) + "æ˜¯èªæ˜äººï¼è·Ÿæˆ‘èµ°ã€‚â€\n",this_object(),player);
+                        message_vision("$Nå°†$næå‡ºäº†ç‰¢æˆ¿ã€‚ \n",this_object(),player);
                         player->move("/d/jinan/dayu");
                         player->set("vendetta/authority", 0);
                         player->delete("marks/crime");
-                        message_vision("$NÂúĞÄÉËºÛµÄ³öÁËÀÎ·¿¡£ \n",player);
+                        message_vision("$Næ»¡å¿ƒä¼¤ç—•çš„å‡ºäº†ç‰¢æˆ¿ã€‚ \n",player);
                         destruct(this_object());
                 }
                 return 1;
         }
         if (arg == "no")
         {
-           message_vision("$NÀäºßµÀ£º¡°ÕæÊÇÒªÇ®²»ÒªÃüµÄ¼Ò»ï£¬¿´ÄãÄÜÔÚÕâ¶ù³Åµ½¼¸Ê±¡£¡± \n",this_object(),player);
-                message_vision("$Nã¬ã¬È»·÷Ğä¶øÈ¥¡£ \n",this_object());
+           message_vision("$Nå†·å“¼é“ï¼šâ€œçœŸæ˜¯è¦é’±ä¸è¦å‘½çš„å®¶ä¼™ï¼Œçœ‹ä½ èƒ½åœ¨è¿™å„¿æ’‘åˆ°å‡ æ—¶ã€‚â€ \n",this_object(),player);
+                message_vision("$Næ‚»æ‚»ç„¶æ‹‚è¢–è€Œå»ã€‚ \n",this_object());
                 destruct(this_object());
                 return 1;
         }
-        return notify_fail("ÄãÖ»¿ÉACCEPT YES OR NO \n");
+        return notify_fail("ä½ åªå¯ACCEPT YES OR NO \n");
 }    

@@ -11,12 +11,12 @@ void init()
 
 void create()
 {
-	set_name(BLU"ÄõÁúµ¤"NOR, ({"long dan", "dan"}));
+	set_name(BLU"å­½é¾™ä¸¹"NOR, ({"long dan", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿ÅÄõÁúµÄÄÚµ¤¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—å­½é¾™çš„å†…ä¸¹ã€‚\n");
 		set("value", 0);
 	}
 	setup();
@@ -25,11 +25,11 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("combat_exp", 2000);
 	this_player()->add("potential",1000);
-	message_vision("$N³ÔÏÂÒ»¿ÅÄõÁúµ¤,Ö»¾õµÃ×Ô¼ºÓÖ±äÀûº¦ÁËÒ»Ğ© !\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€é¢—å­½é¾™ä¸¹,åªè§‰å¾—è‡ªå·±åˆå˜åˆ©å®³äº†ä¸€äº› !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "É½Â·");
+	set("short", "å±±è·¯");
 	set("long", @LONG
-×ÅÊÇÒ»Ìõ¶¸ÇÍµÄÉ½Â·£¬ÏòºóÉ½òêÑÑ¶øÈ¥¡£
+ç€æ˜¯ä¸€æ¡é™¡å³­çš„å±±è·¯ï¼Œå‘åå±±èœ¿èœ’è€Œå»ã€‚
 LONG
 	);
 
@@ -18,7 +18,7 @@ LONG
 	]));
  
 
-        set("outdoors", "ÏåÑô");
+        set("outdoors", "è¥„é˜³");
 	setup();
 	replace_program(ROOM); 
 }

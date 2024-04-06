@@ -1,7 +1,7 @@
 // yue-buqun.c lasted updated by cocacola on 2.19 for adding chushi
-// ÔÀ²»Èº
-// ´ËnpcÉÏµÄxunshanÉèÖÃ²»µ±£¡
-// ÐÇÐÇlywin¸ÄÓÚ2000/6/11
+// å²³ä¸ç¾¤
+// æ­¤npcä¸Šçš„xunshanè®¾ç½®ä¸å½“ï¼
+// æ˜Ÿæ˜Ÿlywinæ”¹äºŽ2000/6/11
 
 inherit NPC;
 inherit F_MASTER;
@@ -10,14 +10,14 @@ int do_xunshan();
 
 void create()
 {
-        set_name("ÔÀ²»Èº", ({ "yue buqun", "yue" }) );
-        set("title", "»ªÉ½ÅÉÕÆÃÅ");
-        set("nickname", "¾ý×Ó½£");
-        set("gender", "ÄÐÐÔ");
+        set_name("å²³ä¸ç¾¤", ({ "yue buqun", "yue" }) );
+        set("title", "åŽå±±æ´¾æŽŒé—¨");
+        set("nickname", "å›å­å‰‘");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 55);
         set("long",
-                "ÔÀ²»Èº×ÔÓ×Ö´ÕÆ»ªÉ½ÅÉ£¬ÄËµ±½ñÎäÁÖÖÐÒ»µÈÒ»µÄ¸ßÊÖ¡£\n");
+                "å²³ä¸ç¾¤è‡ªå¹¼æ‰§æŽŒåŽå±±æ´¾ï¼Œä¹ƒå½“ä»Šæ­¦æž—ä¸­ä¸€ç­‰ä¸€çš„é«˜æ‰‹ã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -44,7 +44,7 @@ void create()
                 (: exert_function, "powerup" :),
         }) );
         set("inquiry", ([
-            "Ñ²É½": (: do_xunshan :),
+            "å·¡å±±": (: do_xunshan :),
             "job" : (: do_xunshan :),
         ]) );
 
@@ -70,7 +70,7 @@ void create()
         set_temp("apply/defense", 200);
         set_temp("apply/armor", 500);
         set_temp("apply/damage", 350);
-        create_family("»ªÉ½ÅÉ", 13, "ÕÆÃÅ");
+        create_family("åŽå±±æ´¾", 13, "æŽŒé—¨");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -82,20 +82,20 @@ void attempt_apprentice(object ob)
 {
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say ÂýÖø£¬Ò»¸öÒ»¸öÀ´¡£");
+                        command("say æ…¢è‘—ï¼Œä¸€ä¸ªä¸€ä¸ªæ¥ã€‚");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say ÀÏ·ò½ñÌìÒÑ¾­ÊÕÁËÈý¸öµÜ×Ó£¬²»ÏëÔÙÊÕÍ½ÁË¡£");
+                command("say è€å¤«ä»Šå¤©å·²ç»æ”¶äº†ä¸‰ä¸ªå¼Ÿå­ï¼Œä¸æƒ³å†æ”¶å¾’äº†ã€‚");
         }
 }
 
 void do_recruit(object ob)
 {
         if( (int)ob->query("int") < 20 )
-                command("say ÎÒ»ªÉ½ÅÉÒÔ½£·¨ÎªÖ÷£¬ÒÀÎÒ¿´"+RANK_D->query_respect(ob)+"²»ÊÊºÏÓÚÑ§½£·¨¡£");
+                command("say æˆ‘åŽå±±æ´¾ä»¥å‰‘æ³•ä¸ºä¸»ï¼Œä¾æˆ‘çœ‹"+RANK_D->query_respect(ob)+"ä¸é€‚åˆäºŽå­¦å‰‘æ³•ã€‚");
         else {
-                command("say ºÃ£¬ºÃ£¬ºÃ£¬ºÜºÃ¡£");
+                command("say å¥½ï¼Œå¥½ï¼Œå¥½ï¼Œå¾ˆå¥½ã€‚");
                 command("recruit " + ob->query("id") );
         }
 }
@@ -117,35 +117,35 @@ int do_xunshan()
         {
                if (!me->query_temp("xunshan/chaoyang"))
                {
-                      message_vision("$N¶Ô×Å$nËµ£ºÄã³¯Ñô·åÃ»È¥¿´¿´£¿ÕâËãÑ²µÄÊ²Ã´É½£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä½ æœé˜³å³°æ²¡åŽ»çœ‹çœ‹ï¼Ÿè¿™ç®—å·¡çš„ä»€ä¹ˆå±±ï¼Ÿ\n", this_object(), me);
                       return 1;
                }
                if (!me->query_temp("xunshan/lianhua"))
                {
-                      message_vision("$N¶Ô×Å$nËµ£ºÄãÁ«»¨·åÃ»È¥¿´¿´£¿ÕâËãÑ²µÄÊ²Ã´É½£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä½ èŽ²èŠ±å³°æ²¡åŽ»çœ‹çœ‹ï¼Ÿè¿™ç®—å·¡çš„ä»€ä¹ˆå±±ï¼Ÿ\n", this_object(), me);
                       return 1;
                }
                if (!me->query_temp("xunshan/yuntai"))
                {
-                      message_vision("$N¶Ô×Å$nËµ£ºÄãÔÆÌ¨·åÃ»È¥¿´¿´£¿ÕâËãÑ²µÄÊ²Ã´É½£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä½ äº‘å°å³°æ²¡åŽ»çœ‹çœ‹ï¼Ÿè¿™ç®—å·¡çš„ä»€ä¹ˆå±±ï¼Ÿ\n", this_object(), me);
                       return 1;
                }
                if (!me->query_temp("xunshan/sheshen"))
                {
-                      message_vision("$N¶Ô×Å$nËµ£ºÄãÔõÃ´Ã»È¥ÉáÉíÑÂ£¿ÕâËãÑ²µÄÊ²Ã´É½£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä½ æ€Žä¹ˆæ²¡åŽ»èˆèº«å´–ï¼Ÿè¿™ç®—å·¡çš„ä»€ä¹ˆå±±ï¼Ÿ\n", this_object(), me);
                       return 1;
                }
                if (!me->query_temp("xunshan/siguo"))
                {
-                      message_vision("$N¶Ô×Å$nËµ£ºÄãµ½ÁËË¼¹ýÑÂÈ¥ÁË£¿ÕâËãÑ²µÄÊ²Ã´É½£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä½ åˆ°äº†æ€è¿‡å´–åŽ»äº†ï¼Ÿè¿™ç®—å·¡çš„ä»€ä¹ˆå±±ï¼Ÿ\n", this_object(), me);
                       return 1;
                }
                if (!me->query_temp("xunshan/yunu"))
                {
-                      message_vision("$N¶Ô×Å$nËµ£ºÄãµ½ÓñÅ®·åºóÃæ»ªÉ½Ð¡ÖþÈ¥¿´¹ýÁË£¿ÕâËãÑ²µÄÊ²Ã´É½£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä½ åˆ°çŽ‰å¥³å³°åŽé¢åŽå±±å°ç­‘åŽ»çœ‹è¿‡äº†ï¼Ÿè¿™ç®—å·¡çš„ä»€ä¹ˆå±±ï¼Ÿ\n", this_object(), me);
                       return 1;
                }
-               message_vision("$N¶Ô×Å$nËµ£º²»´í£¬ÐÁ¿àÁË¡£ÄãÕâ¾ÍÈ¥ÐÝÏ¢È¥°É¡£\n", this_object(), me);
+               message_vision("$Nå¯¹ç€$nè¯´ï¼šä¸é”™ï¼Œè¾›è‹¦äº†ã€‚ä½ è¿™å°±åŽ»ä¼‘æ¯åŽ»å§ã€‚\n", this_object(), me);
                me->delete_temp("xunshan");                      
                me->add("combat_exp", random(100));
                me->add("potential", random(40));
@@ -155,19 +155,19 @@ int do_xunshan()
         {
                if ( query_temp("xunshan") < 1)
                {
-                      message_vision("$N¶Ô×Å$nËµ£º½ñÌìÒÑ¾­ÓÐÈËÑ²É½È¥ÁË¡£ÄãÃ÷ÌìÔÙÀ´°É¡£\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šä»Šå¤©å·²ç»æœ‰äººå·¡å±±åŽ»äº†ã€‚ä½ æ˜Žå¤©å†æ¥å§ã€‚\n", this_object(), me);
                       return 1;
                }
-               if( me->query("family/family_name") != "»ªÉ½ÅÉ")
+               if( me->query("family/family_name") != "åŽå±±æ´¾")
                {
-                      message_vision("$N¶Ô×Å$n´óºÈÒ»Éù£º±¾ÅÉµÜ×Ó²ÅÄÜÑ²É½¡£ÄãÊÇÄÄÀ´µÄ¼éÏ¸£¿ÐÝ¹ÖÎÒ½£ÏÂ²»ÁôÇé£¡\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nå¤§å–ä¸€å£°ï¼šæœ¬æ´¾å¼Ÿå­æ‰èƒ½å·¡å±±ã€‚ä½ æ˜¯å“ªæ¥çš„å¥¸ç»†ï¼Ÿä¼‘æ€ªæˆ‘å‰‘ä¸‹ä¸ç•™æƒ…ï¼\n", this_object(), me);
                       this_object()->kill_ob(me);
                       return 1;
                }
                else
                {
                       add_temp("xunshan", -1);
-                      message_vision("$N¶Ô×Å$nËµ£º±¾ÅÉµÜ×ÓÀýµ±Ñ²É½¡£Äã£¬ºÜºÃ£¬ºÜºÃ£¡Õâ¾ÍÈ¥°É¡£\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´ï¼šæœ¬æ´¾å¼Ÿå­ä¾‹å½“å·¡å±±ã€‚ä½ ï¼Œå¾ˆå¥½ï¼Œå¾ˆå¥½ï¼è¿™å°±åŽ»å§ã€‚\n", this_object(), me);
                       me->set_temp("xunshan/start", 1);
                       me->set_temp("xunshan/time", time());
                       return 1;

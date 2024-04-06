@@ -1,16 +1,16 @@
 // /d/gaoli/xuanwumen
-// Room in ����
+// Room in 高丽
 inherit ROOM;
 
 void create()
 
 {
-set("short", "����");
+set("short", "密林");
 
 	set("long", @LONG
-��������һï�ܵĴ���֮�С����ܶ��ǲ���Ĺ�������ס��ͷ�ϵ�
-���⡣��ʱ�м�ֻҰ�ô���������ܹ�������֮�У������˺ܶ����޶�
-�ߣ��㲻��С��������
+你正走在一茂密的丛林之中。四周都是参天的古树，遮住了头上的
+阳光。不时有几只野兔从你的身旁跑过。密林之中，隐藏了很多猛兽毒
+蛇，你不禁小心起来。
 LONG
 	);
 	

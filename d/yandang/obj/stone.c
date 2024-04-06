@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name("¾§Ê¯", ({ "stone" , "¾§Ê¯"}) );
+	set_name("æ™¶çŸ³", ({ "stone" , "æ™¶çŸ³"}) );
 	set_weight(500);
 	set_max_encumbrance(800);
 	set("no_get", 1);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "°×É«µÄ¾§Ê¯ÔÚÌì¹âÏÂÉÁÖøÃÔÈËµÄÉ«²Ê.\n");
+		set("unit", "å—");
+		set("long", "ç™½è‰²çš„æ™¶çŸ³åœ¨å¤©å…‰ä¸‹é—ªè‘—è¿·äººçš„è‰²å½©.\n");
 		set("value", 1);
 set("no_steal",1);
              set("no_drop",1);
@@ -31,11 +31,11 @@ do_eat(string arg)
 	int max_gin, max_kee, max_sen;
 	me = this_player();
 	if( !living(me))	return 0;
-      if (!arg) return notify_fail("ÄãÒª³ÔÊ²Ã´?\n");
+      if (!arg) return notify_fail("ä½ è¦åƒä»€ä¹ˆ?\n");
 	max_gin = (int) me->query("max_qi");
         max_kee = (int) me->query("max_jing");
         max_sen = (int) me->query("max_neili");
-	message_vision( HIR "$NµÄÈ«ÉíÓ³³öÒ»Õóºì¹â£¡£¡\n" NOR, me);
+	message_vision( HIR "$Nçš„å…¨èº«æ˜ å‡ºä¸€é˜µçº¢å…‰ï¼ï¼\n" NOR, me);
 	max_gin = max_gin * 11/10;
 	max_kee = max_kee * 11/10;
 	max_sen = max_sen * 11/10;

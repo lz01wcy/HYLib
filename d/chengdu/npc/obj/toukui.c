@@ -1,4 +1,4 @@
-// Room: /d/chengdu/npc/obj/toukui.c Í·¿ø
+// Room: /d/chengdu/npc/obj/toukui.c å¤´ç›”
 // Last Modifyed by Winder on Jan. 4 2002
  
 #include <armor.h>
@@ -6,14 +6,14 @@ inherit HEAD;
  
 void create()
 {
-	set_name("Í·¿ø", ({ "helmet", "toukui" }) );
+	set_name("å¤´ç›”", ({ "helmet", "toukui" }) );
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "steel");
-		set("unit", "¶¥");
-		set("long", "ÕâÊÇÒ»¶¥ÌúÖÊµÄÍ·¿ø£¬ÓÃÒÔ±£»¤Í·²¿¡£\n");
+		set("unit", "é¡¶");
+		set("long", "è¿™æ˜¯ä¸€é¡¶é“è´¨çš„å¤´ç›”ï¼Œç”¨ä»¥ä¿æŠ¤å¤´éƒ¨ã€‚\n");
 		set("value", 1500);
 		set("armor_prop/dodge", -5);
 	}

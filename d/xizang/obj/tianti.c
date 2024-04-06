@@ -3,7 +3,7 @@
 inherit STAFF; 
 void create()
 {
-        set_name("ÌìÌİÊ¯Õ»", ({ "tianti" , "shizhan","ÌìÌİÊ¯Õ»","ÌìÌİ","Ê¯Õ»"}) );
+        set_name("å¤©æ¢¯çŸ³æ ˆ", ({ "tianti" , "shizhan","å¤©æ¢¯çŸ³æ ˆ","å¤©æ¢¯","çŸ³æ ˆ"}) );
         set_weight(500);
         set_max_encumbrance(8000000);
         set("no_get", 1);
@@ -11,8 +11,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "¹Å´ú¹¤½³ÔÚ¾ø±ÚÉÏ¿ªÔä³öÀ´µÄµÀÂ·¡£\n");
+                set("unit", "æ¡");
+                set("long", "å¤ä»£å·¥åŒ åœ¨ç»å£ä¸Šå¼€å‡¿å‡ºæ¥çš„é“è·¯ã€‚\n");
                 set("value", 1);
         }
         

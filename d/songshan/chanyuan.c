@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������Ժ");
+	set("short", "峻极禅院");
 	set("long", @LONG
-������Ժ����ɽ������Ժ�йŰ�ɭɭ�����ϲ��޷���Ժ��������
-����ǧ�ˡ����������ɽ�ɵı�Ժ�ˡ�
+峻极禅院处嵩山绝顶，院中古柏森森，殿上并无佛像。院宇辽阔，
+可容千人。往里就是嵩山派的本院了。
 LONG );
 	set("exits", ([
 		"south" : __DIR__"qianting",

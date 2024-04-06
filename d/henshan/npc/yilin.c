@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÒÇÁÕ",({ "yi lin", "yi", "lin" }) );
-        set("gender", "Å®ÐÔ" );
+	set_name("ä»ªç³",({ "yi lin", "yi", "lin" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 16);
         set("long", 
-"ÒÇÁÕÊÇºãÉ½ÅÉ¶¨ÒÝÊ¦Ì«µÄÐÄ°®µÜ×Ó¡£\n");
+"ä»ªç³æ˜¯æ’å±±æ´¾å®šé€¸å¸ˆå¤ªçš„å¿ƒçˆ±å¼Ÿå­ã€‚\n");
 	set("combat_exp", 40000);
 	set("shen_type", 1);
 	set("class", "bonze");
@@ -26,7 +26,7 @@ void create()
         set_skill("dodge", 30);
         set_skill("parry", 30);
         set("attitude", "friendly");
-	create_family("ºãÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("æ’å±±æ´¾", 14, "å¼Ÿå­");
         setup();
         carry_object("clone/cloth/cloth")->wear();
         carry_object("clone/weapon/changjian")->wield();

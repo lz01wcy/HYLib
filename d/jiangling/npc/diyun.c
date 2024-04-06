@@ -6,9 +6,9 @@ string ask_me();
 void create ()
 {
 	object weapon;
-	set_name("µÒÔÆ", ({"di yun","di"}));
-	set("long", "Ëû³¤Á³÷îºÚ£¬È§¹ÇÎ¢¸ß£¬´ÖÊÖ´ó½Å£¬ÏóÊÇÏæÎ÷ÏçÏÂ³£¼ûµÄ×¯¼Úºº×Ó¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("ç‹„äº‘", ({"di yun","di"}));
+	set("long", "ä»–é•¿è„¸é»é»‘ï¼Œé¢§éª¨å¾®é«˜ï¼Œç²—æ‰‹å¤§è„šï¼Œè±¡æ˜¯æ¹˜è¥¿ä¹¡ä¸‹å¸¸è§çš„åº„ç¨¼æ±‰å­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 24);
 
 	set("combat_exp", 20000000);
@@ -63,7 +63,7 @@ void create ()
 	map_skill("parry", "liancheng-jian");
 	map_skill("sword", "liancheng-jian");  
 	set("inquiry", ([
-		"Ë®óÏ" : (: ask_me :),
+		"æ°´ç¬™" : (: ask_me :),
 	]));
 	set("wucan_count", 1);
 	setup();
@@ -87,18 +87,18 @@ string ask_me()
 	object ob;
 	
 	if (query("wucan_count") < 1)
-		return "Ë®óÏ¹ÃÄï£¿ËıÔÚÑ©ÓòµÈ×ÅÎÒ£¿";
+		return "æ°´ç¬™å§‘å¨˜ï¼Ÿå¥¹åœ¨é›ªåŸŸç­‰ç€æˆ‘ï¼Ÿ";
 
 	add("wucan_count", -1);
 	this_player()->set_temp("marks/wucan", 1);
-	return "Ë®óÏ¹ÃÄï£¿ËıÔÚÑ©ÓòµÈ×ÅÎÒ£¿ËıÓĞÊ²Ã´¶«Î÷ÉÓ¸øÎÒÃ´£¿";
+	return "æ°´ç¬™å§‘å¨˜ï¼Ÿå¥¹åœ¨é›ªåŸŸç­‰ç€æˆ‘ï¼Ÿå¥¹æœ‰ä»€ä¹ˆä¸œè¥¿æç»™æˆ‘ä¹ˆï¼Ÿ";
 }
 int accept_object(object who, object ob)
 {
 	object obj;
 	if (ob->query("id") != "da chang")
-		return notify_fail("¸øÎÒÕâ¶«Î÷ÓĞÊ²Ã´ÓÃ£¿");
-	message_vision("µÒÔÆĞ¦×ÅËµµÀ£º¡°Ğ»Ğ»Äã£¡ÕâÎ»" + RANK_D->query_respect(ob) +"£¬ĞÁ¿àÄãÁË¡£¡±\n", who);
+		return notify_fail("ç»™æˆ‘è¿™ä¸œè¥¿æœ‰ä»€ä¹ˆç”¨ï¼Ÿ");
+	message_vision("ç‹„äº‘ç¬‘ç€è¯´é“ï¼šâ€œè°¢è°¢ä½ ï¼è¿™ä½" + RANK_D->query_respect(ob) +"ï¼Œè¾›è‹¦ä½ äº†ã€‚â€\n", who);
 	if (!who->query_temp("marks/wucan"))
 	{
 		return 1;
@@ -110,7 +110,7 @@ int accept_object(object who, object ob)
 		destruct( obj );
 		return 1;
 	}
-	message_vision("µÒÔÆ¶Ô$NËµµÀ£º¡°Õâ¼şÎÚ²ÏÒÂÒ²²»ËãÊÇÊ²Ã´±¦±´£¬ÁÄ±íĞÄÒâ°É£¡¡±µÒÔÆ´Ó»³ÀïÌÍ³öÒ»ÍÅ²»ÆğÑÛµÄ¶«Î÷£¬µİµ½$NµÄÊÖÉÏ¡£\n", who);
+	message_vision("ç‹„äº‘å¯¹$Nè¯´é“ï¼šâ€œè¿™ä»¶ä¹Œèš•è¡£ä¹Ÿä¸ç®—æ˜¯ä»€ä¹ˆå®è´ï¼ŒèŠè¡¨å¿ƒæ„å§ï¼â€ç‹„äº‘ä»æ€€é‡Œæå‡ºä¸€å›¢ä¸èµ·çœ¼çš„ä¸œè¥¿ï¼Œé€’åˆ°$Nçš„æ‰‹ä¸Šã€‚\n", who);
 	obj->move(this_player());
 	return 1;
 }

@@ -6,10 +6,10 @@ int accept_fight(object ob);
 void create()
 {
 	seteuid(getuid());
-	set_name("Ìï²®¹â", ({ "tian boguang", "tian" }));
-	set("long", "ËûÒ»ÉíÆ®ÒÝµÄ°×É«³¤ÉÀ£¬·çÁ÷ÈåÑÅ¡£\n");
-	set("nickname", HIM "ÍòÀï¶ÀÐÐ" NOR);
-	set("gender", "ÄÐÐÔ");
+	set_name("ç”°ä¼¯å…‰", ({ "tian boguang", "tian" }));
+	set("long", "ä»–ä¸€èº«é£˜é€¸çš„ç™½è‰²é•¿è¡«ï¼Œé£Žæµå„’é›…ã€‚\n");
+	set("nickname", HIM "ä¸‡é‡Œç‹¬è¡Œ" NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 37);
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -47,7 +47,7 @@ void create()
         }) );
 	set("chat_chance", 10);
 	set("chat_msg", ({
-		"Ìï²®¹âÐ¦µÀ£ºÄá¹ÃÒ²Ã»¹ØÏµÂï£¬ÐîÆðÍ··¢£¬Á½¸öÔÂ¾ÍÊÇÐ¡ÃÀÈËÁË¡£\n",
+		"ç”°ä¼¯å…‰ç¬‘é“ï¼šå°¼å§‘ä¹Ÿæ²¡å…³ç³»å˜›ï¼Œè“„èµ·å¤´å‘ï¼Œä¸¤ä¸ªæœˆå°±æ˜¯å°ç¾Žäººäº†ã€‚\n",
 	}) );
 
 	setup();
@@ -71,20 +71,20 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	if ((string)ob->query("gender")=="Å®ÐÔ")
+	if ((string)ob->query("gender")=="å¥³æ€§")
 	{
-if (ob->query("age")<26) say("Ìï²®¹âÐ¦µÀ£ºÃî¼«£¬Ãî¼«£¬ÓÖÀ´ÁËÒ»¸öÐ¡¹ÃÄï¡£\n");     
-else say("Ìï²®¹âÐ¦µÀ£ºÃî¼«£¬Ãî¼«£¬¿ÉÏ§Ì«ÀÏÁËµã£¬ÎÒ¿ÉÃ»Î¸¿Ú¡£\n");     
+if (ob->query("age")<26) say("ç”°ä¼¯å…‰ç¬‘é“ï¼šå¦™æžï¼Œå¦™æžï¼Œåˆæ¥äº†ä¸€ä¸ªå°å§‘å¨˜ã€‚\n");     
+else say("ç”°ä¼¯å…‰ç¬‘é“ï¼šå¦™æžï¼Œå¦™æžï¼Œå¯æƒœå¤ªè€äº†ç‚¹ï¼Œæˆ‘å¯æ²¡èƒƒå£ã€‚\n");     
 	}
-	else say("Ìï²®¹âÐ¦×ÅÕÐÕÐÊÖ£ºÕâÎ»"+RANK_D->query_respect(ob) + "À´ºÈÁ½±­£¬Õâ¸öÐ¡Äá¹ÃÂï£¬·´ÕýÒ²Ã»Ê²Ã´ÊÂ£¬¾ÍÈÃËý×ø×Å¾ÍÊÇ¡£\n");
+	else say("ç”°ä¼¯å…‰ç¬‘ç€æ‹›æ‹›æ‰‹ï¼šè¿™ä½"+RANK_D->query_respect(ob) + "æ¥å–ä¸¤æ¯ï¼Œè¿™ä¸ªå°å°¼å§‘å˜›ï¼Œåæ­£ä¹Ÿæ²¡ä»€ä¹ˆäº‹ï¼Œå°±è®©å¥¹åç€å°±æ˜¯ã€‚\n");
 	return;
 }
 
 int accept_fight(object ob)
 {
-	if ((string)ob->query("gender") == "Å®ÐÔ")
+	if ((string)ob->query("gender") == "å¥³æ€§")
 	{
-		write("Ìï²®¹âÐ¦µÀ£º»¨¹ÃÄï£¿É±ÁËÌ«¿ÉÏ§ÁËµÄ¡£\n");
+		write("ç”°ä¼¯å…‰ç¬‘é“ï¼šèŠ±å§‘å¨˜ï¼Ÿæ€äº†å¤ªå¯æƒœäº†çš„ã€‚\n");
 		return 0;
         }
 	return 1;
@@ -92,9 +92,9 @@ int accept_fight(object ob)
  
 int recognize_apprentice(object ob)
 {
-        if (ob->query_temp("mark/Ìï") > 1)
+        if (ob->query_temp("mark/ç”°") > 1)
         {
-                ob->add_temp("mark/Ìï", -1);
+                ob->add_temp("mark/ç”°", -1);
                 return 1;
         }
         else
@@ -104,11 +104,11 @@ int recognize_apprentice(object ob)
 int accept_object(object who, object ob)
 {
         object me = this_player();
-        if (!(int)who->query_temp("mark/Ìï"))
-                who->set_temp("mark/Ìï", 0);
+        if (!(int)who->query_temp("mark/ç”°"))
+                who->set_temp("mark/ç”°", 0);
         if (ob->query("money_id") && ob->value() >= 1000) {
-                message_vision("Ìï²®¹âËµ£ººÃËµºÃËµ£¬ÄãÒªÑ§´óÒ¯¾Í½Ì¸øÄã¡£\n", who);
-                who->add_temp("mark/Ìï", (int)(ob->value() / 50));
+                message_vision("ç”°ä¼¯å…‰è¯´ï¼šå¥½è¯´å¥½è¯´ï¼Œä½ è¦å­¦å¤§çˆ·å°±æ•™ç»™ä½ ã€‚\n", who);
+                who->add_temp("mark/ç”°", (int)(ob->value() / 50));
                 return 1;
          }
 }

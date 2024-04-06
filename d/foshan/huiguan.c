@@ -6,11 +6,11 @@ int sos(int,int);
 void fresh(object ob);
 void create()
 {
-	set("short","Ó¢ĞÛ»á¹İ");
+	set("short","è‹±é›„ä¼šé¦†");
 	set("long",@LONG
-Ó¢ĞÛ»á¹İÒ²ÊÇ·ïÀÏÒ¯µÄ¼ÒÒµ¡£À´ÕâÀï¶ÄÇ®µÄ£¬¶¼ÊÇÓĞÄÜÄÍÓĞÀ´
-Í·µÄ¡£¶Ä³¡ÀïÎ§×ÅºÚÑ¹Ñ¹µÄÒ»ÈºÈË£¬ÕıÔÚÖÀ(gamble)÷»×ÓÑº´óĞ¡¡£
-ÃÅ±ßÁ¢×ÅÒ»¸öÅÆ×Ó(paizi)¡£
+è‹±é›„ä¼šé¦†ä¹Ÿæ˜¯å‡¤è€çˆ·çš„å®¶ä¸šã€‚æ¥è¿™é‡ŒèµŒé’±çš„ï¼Œéƒ½æ˜¯æœ‰èƒ½è€æœ‰æ¥
+å¤´çš„ã€‚èµŒåœºé‡Œå›´ç€é»‘å‹å‹çš„ä¸€ç¾¤äººï¼Œæ­£åœ¨æ·(gamble)éª°å­æŠ¼å¤§å°ã€‚
+é—¨è¾¹ç«‹ç€ä¸€ä¸ªç‰Œå­(paizi)ã€‚
 LONG);
 	set("objects", ([
 	   __DIR__"npc/fengyiming": 1,
@@ -18,14 +18,14 @@ LONG);
 //	set("no_fight", "1");
         set("item_desc", ([
                 "paizi" :
-"¡¸´óĞ¡¡¹¶Ä·¨£º\n"
-"¹²ÓÃÈıÁ£É«×ÓÈöÔÚÒ»Ö»ÍëÀï£¬É«×ÓµãÊı×ÜºÍ£º\n"
-"       ËÄ ÖÁ Ê® Îª¡¸Ğ¡¡¹£¬\n"
-"       Ê®Ò» ÖÁ Ê®Æß Îª¡¸´ó¡¹£¬\n"
-"       ÈıÁ£É«×ÓµãÊıÏàÍ¬£¬Ôò´óĞ¡Í¨³Ô¡£\n"
-"\n¿ª´óÅâ´ó£¬¿ªĞ¡ÅâĞ¡£¬Ò»ÅâÒ»¡£\n"
-"\n±¾¶Ä³¡½ÓÊÜ¸÷ÖÖ»õ±Ò¼°¹¦·òµÄµãÊıÎª¶Ä×¢¡£\n"
-"\n¶Ä×¢ÎªÎåÊ®µ½Ò»Ç§Îå°Ù¡£\n",
+"ã€Œå¤§å°ã€èµŒæ³•ï¼š\n"
+"å…±ç”¨ä¸‰ç²’è‰²å­æ’’åœ¨ä¸€åªç¢—é‡Œï¼Œè‰²å­ç‚¹æ•°æ€»å’Œï¼š\n"
+"       å›› è‡³ å ä¸ºã€Œå°ã€ï¼Œ\n"
+"       åä¸€ è‡³ åä¸ƒ ä¸ºã€Œå¤§ã€ï¼Œ\n"
+"       ä¸‰ç²’è‰²å­ç‚¹æ•°ç›¸åŒï¼Œåˆ™å¤§å°é€šåƒã€‚\n"
+"\nå¼€å¤§èµ”å¤§ï¼Œå¼€å°èµ”å°ï¼Œä¸€èµ”ä¸€ã€‚\n"
+"\næœ¬èµŒåœºæ¥å—å„ç§è´§å¸åŠåŠŸå¤«çš„ç‚¹æ•°ä¸ºèµŒæ³¨ã€‚\n"
+"\nèµŒæ³¨ä¸ºäº”ååˆ°ä¸€åƒäº”ç™¾ã€‚\n",
         ]));
 	set("exits",([ /* sizeof() == 1 */
 	    "north" : __DIR__"street2",
@@ -52,7 +52,7 @@ int do_gamble(string arg)
         me = this_player();
 
         if (me->query_temp("casino/mark"))
-                return notify_fail("ÄãÕâÃ´×Å¼±°¡? »¹ÊÇÔÙ¶àĞİÏ¢Ò»»á¶ù°É -:)\n");
+                return notify_fail("ä½ è¿™ä¹ˆç€æ€¥å•Š? è¿˜æ˜¯å†å¤šä¼‘æ¯ä¸€ä¼šå„¿å§ -:)\n");
 
     if (!arg || sscanf(arg, "%s %s %s %d", wtype0, wtype1, wtype2, wager) !=4)
         return notify_fail("gamble big|small money|skill <type> <amount>\n"
@@ -61,34 +61,34 @@ int do_gamble(string arg)
         if (wtype1 == "money")
         {
                 mtype = present(wtype2 + "_money", me);
-                if( !mtype)          return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
-                if( wager < 1 )        return notify_fail("ÄãÒªÑ¹¶àÉÙ°¡?\n");
+                if( !mtype)          return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
+                if( wager < 1 )        return notify_fail("ä½ è¦å‹å¤šå°‘å•Š?\n");
                 if( (int)mtype->query_amount() < wager)
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÄÇÃ´¶à" + mtype->query("name") + "¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‚£ä¹ˆå¤š" + mtype->query("name") + "ã€‚\n");
                 if( wager*(mtype->query("base_value")) < min ||
                     wager*(mtype->query("base_value")) > max )
-                        return notify_fail("ÄãµÄ¶Ä×¢²»ÔÚÏŞ¶îÖ®ÄÚ!\n"
-                        "ÕâÀïµÄÏŞ¶îÊÇ" + chinese_number(min) + "ÖÁ" + chinese_number(max) + "¡£\n");
+                        return notify_fail("ä½ çš„èµŒæ³¨ä¸åœ¨é™é¢ä¹‹å†…!\n"
+                        "è¿™é‡Œçš„é™é¢æ˜¯" + chinese_number(min) + "è‡³" + chinese_number(max) + "ã€‚\n");
         }
         else if (wtype1 == "skill")
         {
                 skill = me->query_skill(wtype2, 1);
                 if( skill < 1 )
-                return notify_fail("ÄãÒªÕ©¶Ä°¡? Äã¸ù±¾²»»áÕâÏî¹¦·ò!\n");
+                return notify_fail("ä½ è¦è¯ˆèµŒå•Š? ä½ æ ¹æœ¬ä¸ä¼šè¿™é¡¹åŠŸå¤«!\n");
                 lrn = me->query_learned(wtype2, 1);
                 lpoint = (int)lrn[wtype2];
 //              message_vision("learned pt: " + lpoint + "\n", me);
                 tpoint = lpoint + sos(1, skill);
 //              message_vision("total learned pt: " + tpoint + "\n", me);
-                if (wager > tpoint) return notify_fail("Äã¶Ä²»Æğ!\n");
+                if (wager > tpoint) return notify_fail("ä½ èµŒä¸èµ·!\n");
                 if (wager < min || wager > max)
-                        return notify_fail("ÄãµÄ¶Ä×¢²»ÔÚÏŞ¶îÖ®ÄÚ!\n"
-                        "ÕâÀïµÄÏŞ¶îÊÇ" + chinese_number(min) + "ÖÁ" + chinese_number(max) + "¡£\n");
+                        return notify_fail("ä½ çš„èµŒæ³¨ä¸åœ¨é™é¢ä¹‹å†…!\n"
+                        "è¿™é‡Œçš„é™é¢æ˜¯" + chinese_number(min) + "è‡³" + chinese_number(max) + "ã€‚\n");
         }
-        else    return notify_fail("±¾¶Ä³¡²»½ÓÊÜÕâÖÖ¶Ä×¢¡£\n");
+        else    return notify_fail("æœ¬èµŒåœºä¸æ¥å—è¿™ç§èµŒæ³¨ã€‚\n");
 
         if ( (wtype0 != "big") && (wtype0 != "small") )
-                return notify_fail("ÄãÒª¶Ä´ó»¹ÊÇ¶ÄĞ¡?\n");
+                return notify_fail("ä½ è¦èµŒå¤§è¿˜æ˜¯èµŒå°?\n");
 
         me->set_temp("gamb_t",(me->query_temp("gamb_t") +1));
         if (me->query_temp("gamb_t") > 50)
@@ -96,24 +96,24 @@ int do_gamble(string arg)
                 call_out("fresh", 300, me);
                 me->set_temp("casino/mark", 1);
                 return notify_fail(
-"ÕâÎ»" + RANK_D->query_respect(me) + "£¬ÄãÒÑ¾­¶ÄÁËºÜ¾ÃÁË£¬»¹ÊÇÏÈĞİÏ¢Ò»»á¶ù°É¡£\n");
+"è¿™ä½" + RANK_D->query_respect(me) + "ï¼Œä½ å·²ç»èµŒäº†å¾ˆä¹…äº†ï¼Œè¿˜æ˜¯å…ˆä¼‘æ¯ä¸€ä¼šå„¿å§ã€‚\n");
         }
 
         a = random(6) + 1;
         b = random(6) + 1;
         c = random(6) + 1;
 
-        message_vision("¿ª£º" + a + "   " + b + "   " + c + "   £¬", me);
+        message_vision("å¼€ï¼š" + a + "   " + b + "   " + c + "   ï¼Œ", me);
 
         if ((a == b) && (b == c) )
-//              message_vision("¿ª£º" + a + " " + b + " " + c " ,´óĞ¡Í¨É±¡£\n", me);
-                message_vision("´óĞ¡Í¨É±¡£\n", me);
+//              message_vision("å¼€ï¼š" + a + " " + b + " " + c " ,å¤§å°é€šæ€ã€‚\n", me);
+                message_vision("å¤§å°é€šæ€ã€‚\n", me);
         else if ( (a+b+c) > 10 )
-//              message_vision("¿ª£º" + a + " " + b + " " + c " ,³ÔĞ¡Åâ´ó¡£\n", me);
-                message_vision("³ÔĞ¡Åâ´ó¡£\n",me);
+//              message_vision("å¼€ï¼š" + a + " " + b + " " + c " ,åƒå°èµ”å¤§ã€‚\n", me);
+                message_vision("åƒå°èµ”å¤§ã€‚\n",me);
         else if ( (a+b+c) < 11 )
-//              message_vision("¿ª£º" + a + " " + b + " " + c " ,³Ô´óÅâĞ¡¡£\n", me);
-                message_vision("³Ô´óÅâĞ¡¡£\n",me);
+//              message_vision("å¼€ï¼š" + a + " " + b + " " + c " ,åƒå¤§èµ”å°ã€‚\n", me);
+                message_vision("åƒå¤§èµ”å°ã€‚\n",me);
 
         if ( ( (a == b) && (b == c) ) ||
              ( (a+b+c) > 10 && (wtype0 == "small") ) ||
@@ -123,14 +123,14 @@ int do_gamble(string arg)
         if (wtype1 == "money")
         {
                 if ( status == "lose") {
-        message_vision(me->query("name") + "ÊäÁË" + chinese_number(wager) +
-mtype->query("base_unit") + mtype->query("name") + "¡£\n", me);
+        message_vision(me->query("name") + "è¾“äº†" + chinese_number(wager) +
+mtype->query("base_unit") + mtype->query("name") + "ã€‚\n", me);
                         mtype->set_amount((int)mtype->query_amount() - wager);
                         mtype->move(me);
                 }
                 else {
-        message_vision(me->query("name") + "Ó®ÁË" + chinese_number(wager) +
-mtype->query("base_unit") + mtype->query("name") + "¡£\n", me);
+        message_vision(me->query("name") + "èµ¢äº†" + chinese_number(wager) +
+mtype->query("base_unit") + mtype->query("name") + "ã€‚\n", me);
                         mtype->set_amount((int)mtype->query_amount() + wager);
                         mtype->move(me);
                 }
@@ -138,8 +138,8 @@ mtype->query("base_unit") + mtype->query("name") + "¡£\n", me);
         else if (wtype1 == "skill")
         {
                 if ( status == "lose") {
-        message_vision(me->query("name") + "ÊäÁË" + chinese_number(wager) +
-"µã" + to_chinese(wtype2) + "µÄ¹¦Á¦¡£\n", me);
+        message_vision(me->query("name") + "è¾“äº†" + chinese_number(wager) +
+"ç‚¹" + to_chinese(wtype2) + "çš„åŠŸåŠ›ã€‚\n", me);
                         wager -= lpoint;
                         while (wager > 0)
                         {
@@ -151,8 +151,8 @@ mtype->query("base_unit") + mtype->query("name") + "¡£\n", me);
                         else wager += (lpoint*-1);
                 }
                 else {
-        message_vision(me->query("name") + "Ó®ÁË" + chinese_number(wager) +
-"µã" + to_chinese(wtype2) + "µÄ¹¦Á¦¡£\n", me);
+        message_vision(me->query("name") + "èµ¢äº†" + chinese_number(wager) +
+"ç‚¹" + to_chinese(wtype2) + "çš„åŠŸåŠ›ã€‚\n", me);
                         wager += lpoint;
                         while (wager >= (skill+1)*(skill+1))
                         {

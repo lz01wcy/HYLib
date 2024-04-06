@@ -5,13 +5,13 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("Ğ¡½ğ±­", ({ "gold cup", "cup" }) );
+	set_name("å°é‡‘æ¯", ({ "gold cup", "cup" }) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öĞ¡Ğ¡µÄ½ğ±­£¬´ó¸Å×°µÃÒ»¡¢Á½¿ÚµÄ¾Æ¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªå°å°çš„é‡‘æ¯ï¼Œå¤§æ¦‚è£…å¾—ä¸€ã€ä¸¤å£çš„é…’ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 100000);
 		set("max_liquid", 2);
 	}
@@ -20,7 +20,7 @@ void create()
 	// in each cloned copy.
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "¹óÖİÃ©Ì¨",
+		"name": "è´µå·èŒ…å°",
 		"remaining": 2,
 		"drunk_apply": 15,
 	]) );

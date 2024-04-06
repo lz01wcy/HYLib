@@ -12,10 +12,10 @@ void create()
 {
    int i;
    object *ob;
-   set_name("±ÏĞş",({ "bi xuan","bi" }) );
-   set("gender", "ÄĞĞÔ" );		
+   set_name("æ¯•ç„",({ "bi xuan","bi" }) );
+   set("gender", "ç”·æ€§" );		
    set("age", 42);
-   set("long", "Ëû¾ÍÊÇÎä×ğ±ÏĞş£¬ÓòÄÚÍâÈı´ó×ÚÊ¦Ö®Ò»\n");
+   set("long", "ä»–å°±æ˜¯æ­¦å°Šæ¯•ç„ï¼ŒåŸŸå†…å¤–ä¸‰å¤§å®—å¸ˆä¹‹ä¸€\n");
        
    set("combat_exp",8000000);
    set("str", 35);
@@ -39,7 +39,7 @@ void create()
    set("neili",15000);
    set("max_neili",15000);
    set("jiali",150);
-   create_family("Í»ØÊ",2,"Îä×ğ");
+   create_family("çªå¥",2,"æ­¦å°Š");
 
    set("apply_points",2000);
 

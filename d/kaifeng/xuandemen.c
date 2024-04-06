@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÐûµÂÃÅ");
+	set("short", "å®£å¾·é—¨");
 	set("long", @LONG
-ÐûµÂÃÅÊÇ¿ª·âµÄ±±³ÇÃÅ£¬ÓÉÓÚÕâÀïÀúÀ´ÊÇ»Ê³ÇËùÔÚ¡£³ÇÇ½½¨ÖþµÃ¸ñ
-ÍâÀÎ¹Ì¡£Á½±ßµÄ²Ø±ø¶´Ö÷¿ÉÈÝÇ§ÈË£¬Æä×÷ÓÃÊÇµ±µÐÈË¹¥ÆÆ³ÇÃÅÖ®Ê±£¬ÓÉ
-·ü±øÉ±³ö£¬½ØÉ±µÐÈË¡£
+å®£å¾·é—¨æ˜¯å¼€å°çš„åŒ—åŸŽé—¨ï¼Œç”±äºŽè¿™é‡ŒåŽ†æ¥æ˜¯çš‡åŸŽæ‰€åœ¨ã€‚åŸŽå¢™å»ºç­‘å¾—æ ¼
+å¤–ç‰¢å›ºã€‚ä¸¤è¾¹çš„è—å…µæ´žä¸»å¯å®¹åƒäººï¼Œå…¶ä½œç”¨æ˜¯å½“æ•Œäººæ”»ç ´åŸŽé—¨ä¹‹æ—¶ï¼Œç”±
+ä¼å…µæ€å‡ºï¼Œæˆªæ€æ•Œäººã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/guanbing" : 2,

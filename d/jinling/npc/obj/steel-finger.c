@@ -5,13 +5,13 @@ inherit FINGER;
 
 void create()
 {
-	set_name("Ìú½äÖ¸", ({ "steel-finger", "finger" }) );
+	set_name("é“æˆ’æŒ‡", ({ "steel-finger", "finger" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ö»ÉúÌúÖı³ÉµÄ½äÖ¸£¬ÉÏÃæÓĞ·æÀûµÄÁâ½Ç£¬ÊÇÒ»¼ş²»´íµÄÎäÆ÷¡£\n");
-		set("unit", "Ö»");
+		set("long", "è¿™æ˜¯ä¸€åªç”Ÿé“é“¸æˆçš„æˆ’æŒ‡ï¼Œä¸Šé¢æœ‰é”‹åˆ©çš„è±è§’ï¼Œæ˜¯ä¸€ä»¶ä¸é”™çš„æ­¦å™¨ã€‚\n");
+		set("unit", "åª");
 		set("value", 500);
 		set("material", "steel");
 		set("armor_prop/damage", 8);

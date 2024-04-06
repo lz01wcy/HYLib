@@ -4,10 +4,10 @@ void create()// square.c
 
 
 {
-        set("short", "Á·Îä³¡");
+        set("short", "ç»ƒæ­¦åœº");
         set("long", @LONG
-ÕâÀïÊÇØ¤°ïµÄÁ·Îä³¡£¬³¡ÉÏÁ¢Õâ¼¸¸öÄ¾ÈË£¬Í¨³£ÓÐÐí¶àØ¤°ïµÄµÜ×ÓÔÚ
-´ËÏ°ÎäÁ·½£¡£
+è¿™é‡Œæ˜¯ä¸å¸®çš„ç»ƒæ­¦åœºï¼Œåœºä¸Šç«‹è¿™å‡ ä¸ªæœ¨äººï¼Œé€šå¸¸æœ‰è®¸å¤šä¸å¸®çš„å¼Ÿå­åœ¨
+æ­¤ä¹ æ­¦ç»ƒå‰‘ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */        
             "south"     : __DIR__"mishi",       
@@ -25,9 +25,9 @@ int valid_leave(object me, string dir)
 {
         mapping myfam;
         myfam=(mapping)me->query("family");
-        if ((!myfam ||myfam["family_name"] != "Ø¤°ï") && (dir == "east"))
+        if ((!myfam ||myfam["family_name"] != "ä¸å¸®") && (dir == "east"))
                 return notify_fail(
-"ÄÇ±ßÊÇØ¤°ïµÄÁ·Îä³¡£¬ÕâÎ»" + RANK_D->query_respect(me) + "ÇëÖ¹²½¡£\n");
+"é‚£è¾¹æ˜¯ä¸å¸®çš„ç»ƒæ­¦åœºï¼Œè¿™ä½" + RANK_D->query_respect(me) + "è¯·æ­¢æ­¥ã€‚\n");
         return ::valid_leave(me, dir);
 }
 

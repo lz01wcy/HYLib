@@ -8,17 +8,17 @@ int on_service = 0;
 
 void create()
 {
-	set_name("��С��", ({ "waiter", "snow_inn_waiter" }) );
+	set_name("店小二", ({ "waiter", "snow_inn_waiter" }) );
 
 	set("age", 21);
 	set("long",
-		"һ��Լ��ʮ��ͷ������С��ƣ���æ��æ���к����ˣ��������\n"
-		"list �����Ե�ʲ��ˣ��� buy ����С����ˡ�\n");
+		"一个约二十出头的年轻小伙计，正忙进忙出招呼客人，你可以用\n"
+		"list 看可以点什麽菜，用 buy 跟店小二点菜。\n");
 	set("chat_chance", 1);
 	set("chat_msg", ({
-		"��С���������ģ�����С��������\n",
-		"��С��һƨ�������ż��ϣ����������\n",
-		"��С��˵�������Ľ�����ô�пգ����������������˵��������\n",
+		"店小二闲著无聊，哼起小曲儿来。\n",
+		"店小二一屁股做在门槛上，发起呆来。\n",
+		"店小二说道：客倌今天怎么有空，最近可有新鲜事能说来听听吗？\n",
 	}));
 	
 		set("vendor_goods", ({
@@ -45,8 +45,8 @@ void init()
 
 int accept_fight(object ob)
 {
-//	do_chat("��С�����˸�������˵��������Ҫ��ܵĻ���С���ҿɲ��Ƕ��֡�\n");
-	say("��С�����˸�������˵��������Ҫ��ܵĻ���С���ҿɲ��Ƕ��֡�\n");
+//	do_chat("店小二扮了个鬼脸，说道：客倌要打架的话，小的我可不是对手。\n");
+	say("店小二扮了个鬼脸，说道：客倌要打架的话，小的我可不是对手。\n");
 	return 0;
 }
 

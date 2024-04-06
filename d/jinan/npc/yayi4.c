@@ -3,9 +3,9 @@
 inherit NPC; 
 void create()
 {
-        set_name("Ğ¡ÑÃÒÛ", ({ "yayi", "ya" }) );
+        set_name("å°è¡™å½¹", ({ "yayi", "ya" }) );
         set("long",
-                "ÕıÔÚÉÏÌÃµÄÑÃÒÛ£¬Ç§Íò²»ÒªÈÇËûÃÇ\n"); 
+                "æ­£åœ¨ä¸Šå ‚çš„è¡™å½¹ï¼Œåƒä¸‡ä¸è¦æƒ¹ä»–ä»¬\n"); 
         set("attitude", "heroism");
         set("vendetta_mark", "authority"); 
         set("cor", 40);

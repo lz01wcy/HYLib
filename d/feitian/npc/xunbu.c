@@ -7,14 +7,14 @@ int do_catch(object ob);
 
 void create()
 {
-	set_name("´øµ¶¾¯²ì",({"xunbu"}));
+	set_name("å¸¦åˆ€è­¦å¯Ÿ",({"xunbu"}));
 
-	set("nickname","ÖÎ°²¾¯±¸");
-	set("title","¾©¶¼");
-	set("gender", "ÄĞĞÔ" );
+	set("nickname","æ²»å®‰è­¦å¤‡");
+	set("title","äº¬éƒ½");
+	set("gender", "ç”·æ€§" );
 	set("age",25);
 	set("long",
-	"ÈÕ±¾Õş¸®µÄ´øµ¶¾¯ÎÀ¶Ó¡£Äã×îºÃ»¹ÊÇ²»ÒªÕĞÈÇËû¡£\n"
+	"æ—¥æœ¬æ”¿åºœçš„å¸¦åˆ€è­¦å«é˜Ÿã€‚ä½ æœ€å¥½è¿˜æ˜¯ä¸è¦æ‹›æƒ¹ä»–ã€‚\n"
 	);
 	set("pursuer",1);
 	set("attitude", "heroism");

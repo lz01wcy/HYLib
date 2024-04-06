@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÑÃÃÅÕýÌü");
+	set("short", "è¡™é—¨æ­£åŽ…");
 	set("long", @LONG
-ÌÃÉÏ¶«Î÷ÓÐÁ½¸ùéº×¡£¬¹Ò×ÅÒ»·ù¶ÔÁª£¬µ«ÊÇÄãÎÞÐÄÏ¸¿´¡£ÕýÇ½ÉÏÐü¹ÒÒ»¸öºá
-ØÒ£¬ÉÏÊé¡°Õý´ó¹âÃ÷¡±ËÄ¸ö½ð¹âÉÁÉÁµÄ´ó×Ö¡£Öª¸®Õý×øÔÚÎÄ°¸ºóÅúÔÄÎÄÊé£¬ÌýÒª
-ÕâÀïÎªÍæ¼Ò¾ÙÐÐ»éÀñ.Äã¿ÉÒÔÔÚÕâÀïºÍÄãµÄÐÄÉÏÈË½á»é£¨jiehun£©,Àë»é£¨lihun£©¡£
+å ‚ä¸Šä¸œè¥¿æœ‰ä¸¤æ ¹æ¥¹ä½ï¼ŒæŒ‚ç€ä¸€å¹…å¯¹è”ï¼Œä½†æ˜¯ä½ æ— å¿ƒç»†çœ‹ã€‚æ­£å¢™ä¸Šæ‚¬æŒ‚ä¸€ä¸ªæ¨ª
+åŒ¾ï¼Œä¸Šä¹¦â€œæ­£å¤§å…‰æ˜Žâ€å››ä¸ªé‡‘å…‰é—ªé—ªçš„å¤§å­—ã€‚çŸ¥åºœæ­£ååœ¨æ–‡æ¡ˆåŽæ‰¹é˜…æ–‡ä¹¦ï¼Œå¬è¦
+è¿™é‡Œä¸ºçŽ©å®¶ä¸¾è¡Œå©šç¤¼.ä½ å¯ä»¥åœ¨è¿™é‡Œå’Œä½ çš„å¿ƒä¸Šäººç»“å©šï¼ˆjiehunï¼‰,ç¦»å©šï¼ˆlihunï¼‰ã€‚
 LONG );
 	set("exits", ([
 		"west" : __DIR__"yamen",

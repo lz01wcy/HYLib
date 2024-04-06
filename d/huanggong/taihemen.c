@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "̫����");
+	set("short", "太和门");
 	set("long", @LONG
-����������ǰ��. ��ǰ����һ��ͭ��ʨ��, ������ֻ��ʨǰ��̤
-����, ����Ȩ����ͳһ���. ������ֻ��ʨ, ǰ֫��ŪһС��ʨ, ����
-���ò�ʢ.
+这是三大殿的前门. 门前立着一对铜铸狮子, 东边是只雄狮前足踏
+绣球, 象征权力和统一寰宇. 西边是只雌狮, 前肢抚弄一小乳狮, 象征
+子嗣昌盛.
 LONG
 	);
 	set("outdoors", "huanggong");

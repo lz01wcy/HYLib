@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�����");
+	set("short", "北大街");
 	set("long", @LONG
-��������˫�˺ϱ�����ͩʮ��һ�꣬�������룬��ʯ�̾͵�·���
-ɨ�øɸɾ����������Ǹ��鱦�̣����������������µ������ھ֡�
+这条街上双人合抱的梧桐十步一株，整整齐齐，青石铺就的路面打
+扫得干干净净。东边是个珠宝铺，西边则是闻名天下的武威镖局。
 LONG	);
 	set("outdoors", "chengdu");
 	set("exits", ([

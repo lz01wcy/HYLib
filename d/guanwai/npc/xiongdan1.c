@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-	set_name("ĞÜµ¨¸É", ({"xiongdan gan", "xiongdan", "gan"}));
+	set_name("ç†Šèƒ†å¹²", ({"xiongdan gan", "xiongdan", "gan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸±");
-		set("long", "ÕâÊÇÒ»¸±ĞÜµ¨¸É¡£\n");
+		set("unit", "å‰¯");
+		set("long", "è¿™æ˜¯ä¸€å‰¯ç†Šèƒ†å¹²ã€‚\n");
 		set("value", 1000);
 	}
 	setup();
@@ -26,10 +26,10 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->set("eff_qi", this_player()->query("max_qi"));
-	message_vision("$N³ÔÏÂÒ»¸±ĞÜµ¨¸É£¬¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€å‰¯ç†Šèƒ†å¹²ï¼Œè§‰å¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
 	destruct(this_object());
 	return 1;
 }

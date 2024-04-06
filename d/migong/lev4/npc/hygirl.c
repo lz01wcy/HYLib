@@ -7,12 +7,12 @@ void greeting(object ob);
 int do_kiss(string arg);
 void create()
 {
-set_name(HIY"º£ÑóÌì½¾"NOR, ({"hygirl", "girl"}));
-set("title", HIW"ÁúÅ®"NOR);
-set("gender", "Å®ĞÔ");
+set_name(HIY"æµ·æ´‹å¤©éª„"NOR, ({"hygirl", "girl"}));
+set("title", HIW"é¾™å¥³"NOR);
+set("gender", "å¥³æ€§");
 set("age", 16);
 set("long",
-HIG "ÕâÊÇÒøÆ±µÄÊÌÅ®£¬Ê®·Ö¹ÔÇÉ£¬ÌÖÈËÏ²°®¡£\n"
+HIG "è¿™æ˜¯é“¶ç¥¨çš„ä¾å¥³ï¼Œååˆ†ä¹–å·§ï¼Œè®¨äººå–œçˆ±ã€‚\n"
 NOR);
 set("str", 50);
  set("int", 90);
@@ -66,10 +66,10 @@ map_skill("finger"  , "six-finger");
 map_skill("parry"  , "taiji-jian");
 map_skill("strike"  , "huoyan-dao");
 prepare_skill("finger", "six-finger");
-create_family("ÒøÆ±", 2, "ÊÌÅ®");
+create_family("é“¶ç¥¨", 2, "ä¾å¥³");
 set("inquiry", ([       
-"ÒøÆ±" : "ÒøÆ±ÊÇÎÒµÄÖ÷ÈË!ÓĞ¹ØÖ÷ÈËµÄÊÂ¿ÉÒÔÎÊÎÒ¡£ ",
-"Ö÷ÈË" : "Ö÷ÈË´ó¸Å»¹ÔÚË¯¾õ£¬ÓĞÊÂÕÒËû¿ÉÒÔpost"
+"é“¶ç¥¨" : "é“¶ç¥¨æ˜¯æˆ‘çš„ä¸»äºº!æœ‰å…³ä¸»äººçš„äº‹å¯ä»¥é—®æˆ‘ã€‚ ",
+"ä¸»äºº" : "ä¸»äººå¤§æ¦‚è¿˜åœ¨ç¡è§‰ï¼Œæœ‰äº‹æ‰¾ä»–å¯ä»¥post"
 ]) );  
           set("vendor_goods", ({
               "/d/migong/obj/jiudai",
@@ -113,17 +113,17 @@ if (!ob || environment(ob) != environment())
 if ((string)ob->query("id") == "cash")
 {
  command("jump cash");
-message_vision(HIM "\nº£ÑóÌì½¾¸ßĞËµÄËµµÀ£º¡°Ö÷ÈËÄúÀ´À­¡£¡± \n"NOR, ob);
+message_vision(HIM "\næµ·æ´‹å¤©éª„é«˜å…´çš„è¯´é“ï¼šâ€œä¸»äººæ‚¨æ¥æ‹‰ã€‚â€ \n"NOR, ob);
 }
 else
 {
 command("wanfu "+(string)ob->query("id"));
-message_vision(HIY"\nº£ÑóÌì½¾ÌğÌğµÄËµµÀ£º¡°"+RANK_D->query_respect(ob)+"»¶Ó­¹âÁÙ±¾µê¡£¡± \n"NOR, ob);
+message_vision(HIY"\næµ·æ´‹å¤©éª„ç”œç”œçš„è¯´é“ï¼šâ€œ"+RANK_D->query_respect(ob)+"æ¬¢è¿å…‰ä¸´æœ¬åº—ã€‚â€ \n"NOR, ob);
 }
 }
 void attempt_apprentice(object ob)
 {
-command("say Ïë°İÊ¦£¿»¹ÊÇÈ¥ÎÊÎÒÖ÷ÈËÒøÆ±°É£¡");
+command("say æƒ³æ‹œå¸ˆï¼Ÿè¿˜æ˜¯å»é—®æˆ‘ä¸»äººé“¶ç¥¨å§ï¼");
 }
 
 

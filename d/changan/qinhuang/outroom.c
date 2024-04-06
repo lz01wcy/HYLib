@@ -4,11 +4,11 @@ inherit ROOM;
 int do_climb(string arg);
 void create()
 {
-    set("short", "±øÂíÙ¸");
+    set("short", "å…µé©¬ä¿‘");
     set("long", @LONG
-À´µ½ÕâÀïËÆºõÒÑ¾­ÎÞÂ·¿É×ßÁË£¬×óÃæÓÐ¸öÊ¯Ì¨£¬²»ÖªÊÇ×öÊ²Ã´ÓÃ
-µÄ£¬Ê¯Ì¨µÄÉÏ·½¿ÉÒÔ¿´µ½Ðí¶àÖ²ÎïµÄ¸ù£¬ÅÌ¸ù´í½Ú£¬ÓÐÐ©ÒÑ¾­³¤µ½ÁË
-Ê¯Ì¨ÉÏÁË¡£
+æ¥åˆ°è¿™é‡Œä¼¼ä¹Žå·²ç»æ— è·¯å¯èµ°äº†ï¼Œå·¦é¢æœ‰ä¸ªçŸ³å°ï¼Œä¸çŸ¥æ˜¯åšä»€ä¹ˆç”¨
+çš„ï¼ŒçŸ³å°çš„ä¸Šæ–¹å¯ä»¥çœ‹åˆ°è®¸å¤šæ¤ç‰©çš„æ ¹ï¼Œç›˜æ ¹é”™èŠ‚ï¼Œæœ‰äº›å·²ç»é•¿åˆ°äº†
+çŸ³å°ä¸Šäº†ã€‚
 LONG
 );
         set("exits", ([
@@ -20,15 +20,15 @@ void init()
 {
         add_action("do_climb", "climb");
         add_action("do_jump", "jump");
-        add_action("do_pa", "ÅÀ");
+        add_action("do_pa", "çˆ¬");
 }
 int do_climb(string arg)
 {
         object me = this_player();
         if( !arg || arg == "" ) return 0;
-        if(me->query_temp("pa")) return notify_fail("ÄãÒÑ¾­ÔÚÊ¯Ì¨ÉÏÁË£¬»¹ÅÀÊ²Ã´Ñ½£¡\n");
-        if( arg == "Ê¯Ì¨" ) {
-                message_vision("$NÏë¶¼²»Ïë£¬¾ÍÅÀÉÏÁËÈ¥¡£\n",me);
+        if(me->query_temp("pa")) return notify_fail("ä½ å·²ç»åœ¨çŸ³å°ä¸Šäº†ï¼Œè¿˜çˆ¬ä»€ä¹ˆå‘€ï¼\n");
+        if( arg == "çŸ³å°" ) {
+                message_vision("$Næƒ³éƒ½ä¸æƒ³ï¼Œå°±çˆ¬ä¸Šäº†åŽ»ã€‚\n",me);
         me->set_temp("pa",1);
         return 1;
         }
@@ -37,10 +37,10 @@ int do_jump(string arg)
 {
         object me = this_player();
         if( !me->query_temp("pa")) return 0; 
-        if( !arg || arg == "") return notify_fail("ÄãÒªÌøµ½Ê²Ã´µØ·½È¥Ñ½£¿\n");
-        if( me->query_temp("jump")) return notify_fail("ÄãÒÑ¾­ÌøÏÂÀ´ÁË¡£\n");
+        if( !arg || arg == "") return notify_fail("ä½ è¦è·³åˆ°ä»€ä¹ˆåœ°æ–¹åŽ»å‘€ï¼Ÿ\n");
+        if( me->query_temp("jump")) return notify_fail("ä½ å·²ç»è·³ä¸‹æ¥äº†ã€‚\n");
         if( arg == "down" ) {
-                message_vision("$NÌáÁËÌáÆø£¬ÓÖÌøÁËÏÂÈ¥¡£\n",me);
+                message_vision("$Næäº†ææ°”ï¼Œåˆè·³äº†ä¸‹åŽ»ã€‚\n",me);
         me->set_temp("jump",1);
         me->delete_temp("pa");
         return 1;
@@ -50,9 +50,9 @@ int do_pa(string arg)
 {
         object me = this_player();
         if( !me->query_temp("pa")) return 0;
-        if(!arg || arg == "") return notify_fail("ÄãÒªÍùÄÇÅÀ£¿\n");
-        if( arg == "¸ù" ) {
-                message_vision("$N²üÓÆÓÆµØÅÀÉÏÁËÅÌÔÚÊ¯Ì¨ÉÏµÄÊ÷¸ù......\n",me);
+        if(!arg || arg == "") return notify_fail("ä½ è¦å¾€é‚£çˆ¬ï¼Ÿ\n");
+        if( arg == "æ ¹" ) {
+                message_vision("$Né¢¤æ‚ æ‚ åœ°çˆ¬ä¸Šäº†ç›˜åœ¨çŸ³å°ä¸Šçš„æ ‘æ ¹......\n",me);
         me->delete_temp("pa");
         me->delete_temp("jump");
         call_out("go_up", 10 , me );
@@ -62,6 +62,6 @@ int do_pa(string arg)
 void go_up(object me)
 {
         if(!me) return;
-        tell_object(me, "ÄãË³×ÅÊ÷¸ùÅÀÑ½...ÅÀÑ½......\nÄãÅÀÁËºÜ¾Ã£¬ÖÕÓÚÄãÓÖ¼ûµ½ÁËÑô¹â¡£\n");
+        tell_object(me, "ä½ é¡ºç€æ ‘æ ¹çˆ¬å‘€...çˆ¬å‘€......\nä½ çˆ¬äº†å¾ˆä¹…ï¼Œç»ˆäºŽä½ åˆè§åˆ°äº†é˜³å…‰ã€‚\n");
         me->move("/d/changan/caodi.c");
 }       

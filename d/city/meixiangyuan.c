@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÄÏãÔº");
+	set("short", "åªšé¦™é™¢");
 	set("long", @LONG
-ÔºÖĞµã×º¼¸¿éÉ½Ê¯£¬Î÷±ßÒÀÇ½ÖÖ×ÅÒ»Öê°Å½¶£¬Ò»ÖêÌú¹£º£ÌÄ¡£±±±ß
-ÓĞÒ»Ğù£¬ÉÏÃæÒ»¶îÌâÔ»¡¸ÃÄÏãÂ¥¡¹£¬ĞùÍâÓĞÊıÊ®ÖêÃ·»¨Ö²×Å¡£É½Ê¯ºó£¬
-ÓĞÒ»³Ø¡£³ØÖĞĞóĞí¶à¹ÒÖéµ°ÖÖ£¬Ï¸°×»¨ÁÛ£¬ÖĞ¸ÇÒ»Í¤£¬Ô»ÏÒ·ç¡£
+é™¢ä¸­ç‚¹ç¼€å‡ å—å±±çŸ³ï¼Œè¥¿è¾¹ä¾å¢™ç§ç€ä¸€æ ªèŠ­è•‰ï¼Œä¸€æ ªé“æ¢—æµ·æ£ ã€‚åŒ—è¾¹
+æœ‰ä¸€è½©ï¼Œä¸Šé¢ä¸€é¢é¢˜æ›°ã€Œåªšé¦™æ¥¼ã€ï¼Œè½©å¤–æœ‰æ•°åæ ªæ¢…èŠ±æ¤ç€ã€‚å±±çŸ³åï¼Œ
+æœ‰ä¸€æ± ã€‚æ± ä¸­ç•œè®¸å¤šæŒ‚ç è›‹ç§ï¼Œç»†ç™½èŠ±é³ï¼Œä¸­ç›–ä¸€äº­ï¼Œæ›°å¼¦é£ã€‚
 LONG );
 	set("no_fight", 1);
 	set("item_desc", ([
-		"north" : "ÒÀÏ¡¿ÉÒÔ¿´µ½ÓĞÅ®×ÓÔÚÀïÃæ¡£\n",
+		"north" : "ä¾ç¨€å¯ä»¥çœ‹åˆ°æœ‰å¥³å­åœ¨é‡Œé¢ã€‚\n",
 	]));
 	set("objects", ([
 		__DIR__"npc/changxiang" : 1,
@@ -38,28 +38,28 @@ int valid_leave(object me, string dir)
 	{
 		if ( dir == "north" )
 		{
-			if( (strsrch(time, "ËÈÊ±") >= 0) || (strsrch(time, "ÎçÊ±") >= 0) || (strsrch(time, "³óÊ±") >= 0) || (strsrch(time, "ÉêÊ±") >= 0)) 
+			if( (strsrch(time, "å·³æ—¶") >= 0) || (strsrch(time, "åˆæ—¶") >= 0) || (strsrch(time, "ä¸‘æ—¶") >= 0) || (strsrch(time, "ç”³æ—¶") >= 0)) 
 			{
-				message_vision("³£ÏèÀ¸×¡ÁË$NËµµÀ£º¡°ÏÖÔÚĞ¡½ãÔÚĞİÏ¢ÄØ£¬ÇëÒÔºóÔÙÀ´°É°É¡£¡±\n", me);
-				return notify_fail( "Äã±»³£ÏèÀ¹×¡ÁËÈ¥Â·¡£\n" );
+				message_vision("å¸¸ç¿”æ ä½äº†$Nè¯´é“ï¼šâ€œç°åœ¨å°å§åœ¨ä¼‘æ¯å‘¢ï¼Œè¯·ä»¥åå†æ¥å§å§ã€‚â€\n", me);
+				return notify_fail( "ä½ è¢«å¸¸ç¿”æ‹¦ä½äº†å»è·¯ã€‚\n" );
 			}
 			if ( random(2) || me->query_temp( "chang_block" ) )
 			{
-				message_vision("³£ÏèÀ¹×¡ÁË$NËµµÀ£º¡°ÏÖÔÚĞ¡½ã²»¼û¿Í£¬Çë»Ø°É¡£¡±\n", me);
+				message_vision("å¸¸ç¿”æ‹¦ä½äº†$Nè¯´é“ï¼šâ€œç°åœ¨å°å§ä¸è§å®¢ï¼Œè¯·å›å§ã€‚â€\n", me);
 				me->set_temp("chang_block", 1);
 				remove_call_out("chang_dest");
 				call_out("chang_dest", 1, me);
-				return notify_fail("Äã±»³£ÏèÀ¹×¡ÁËÈ¥Â·¡£\n");
+				return notify_fail("ä½ è¢«å¸¸ç¿”æ‹¦ä½äº†å»è·¯ã€‚\n");
 			}
 		}
 		if ( dir == "west" && me->query("lu_sing") )
 		{
 			money = chinese_number ( 8 + 2 * me->query("lu_sing") );
-			msg = sprintf("%s%s%s%s%s", "³£Ïè¸æËßÄã£ºÄãÌıÁËĞ¡½ã", 
+			msg = sprintf("%s%s%s%s%s", "å¸¸ç¿”å‘Šè¯‰ä½ ï¼šä½ å¬äº†å°å§", 
 				chinese_number( me->query("lu_sing") ), 
-				"Ê×Çú×Ó£¬Ò»¹²ÊÇ", money, "Á½½ğ×Ó¡£\n");
+				"é¦–æ›²å­ï¼Œä¸€å…±æ˜¯", money, "ä¸¤é‡‘å­ã€‚\n");
 			write( msg );
-			return notify_fail("Äã±»³£ÏèÀ¹×¡ÁËÈ¥Â·¡£\n");
+			return notify_fail("ä½ è¢«å¸¸ç¿”æ‹¦ä½äº†å»è·¯ã€‚\n");
 		}
 	}
 	return ::valid_leave(me, dir);

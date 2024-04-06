@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ïá·¿");
+	set("short", "åŽ¢æˆ¿");
 	set("long", @LONG
-ÕâÊÇÒ»¼äÂÒÔãÔãµÄÏá·¿£¬ÀïÃæµ½´¦¶¼ÊÇ¸÷ÖÖ´ó´óÐ¡Ð¡µÄÁý×Ó¡¢Íß¹ÞÖ®
-ÀàµÄ¶«Î÷¡£²»Ê±ÄÜ¿´µ½ÓÐ¶¾³æÔÚÁý×ÓÀïÃæÉÏ´ÜÏÂÌø£¬ËÄ´¦ÓÎ×ß¡£Ò»¸ö³à×Å
-°ò×ÓµÄ°×ºú×ÓÀÏÕßÕýÔÚÊÖÃ¦½ÅÂÒµÄ¸ø¶¾³æÃÇ°¤¸öÎ¹Ê³£¬Ã¦µÃÊÖÃ¦½ÅÂÒ¡£
-Äã¿ÉÒÔ¼Ä´æ(cunchong)È¡´æ(quchong)
+è¿™æ˜¯ä¸€é—´ä¹±ç³Ÿç³Ÿçš„åŽ¢æˆ¿ï¼Œé‡Œé¢åˆ°å¤„éƒ½æ˜¯å„ç§å¤§å¤§å°å°çš„ç¬¼å­ã€ç“¦ç½ä¹‹
+ç±»çš„ä¸œè¥¿ã€‚ä¸æ—¶èƒ½çœ‹åˆ°æœ‰æ¯’è™«åœ¨ç¬¼å­é‡Œé¢ä¸Šçªœä¸‹è·³ï¼Œå››å¤„æ¸¸èµ°ã€‚ä¸€ä¸ªèµ¤ç€
+è†€å­çš„ç™½èƒ¡å­è€è€…æ­£åœ¨æ‰‹å¿™è„šä¹±çš„ç»™æ¯’è™«ä»¬æŒ¨ä¸ªå–‚é£Ÿï¼Œå¿™å¾—æ‰‹å¿™è„šä¹±ã€‚
+ä½ å¯ä»¥å¯„å­˜(cunchong)å–å­˜(quchong)
 LONG
 	);
 	set("exits", ([
@@ -41,19 +41,19 @@ int do_cun (string arg)
         int du_age;
     string du_name,du_id;
     object me = this_player();
-    if ((string)me->query("family/family_name")!="Îå¶¾½Ì"
+    if ((string)me->query("family/family_name")!="äº”æ¯’æ•™"
         || !objectp(present("old man", environment(me))))
-          return notify_fail("Ê²Ã´£¿\n");
-    if (!arg)  return notify_fail("ÄãÒª¼Ä´æÊ²Ã´£¿\n");
+          return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
+    if (!arg)  return notify_fail("ä½ è¦å¯„å­˜ä»€ä¹ˆï¼Ÿ\n");
     ob = present(arg,environment(me));
-    if (!objectp(ob))  return notify_fail("ÄãÒª¼Ä´æÊ²Ã´£¿\n");
+    if (!objectp(ob))  return notify_fail("ä½ è¦å¯„å­˜ä»€ä¹ˆï¼Ÿ\n");
     if (ob->query("host_id") != me->query("id"))
-         return notify_fail("¿´Çå³þÁË£¬ÄÇ¿É²»ÊÇÄãµÄ¶¾³æ¡£\n");
+         return notify_fail("çœ‹æ¸…æ¥šäº†ï¼Œé‚£å¯ä¸æ˜¯ä½ çš„æ¯’è™«ã€‚\n");
     if (ob->query("age") < 99 )
-         return notify_fail("¿´Çå³þÁË£¬ÄÇ¿É²»ÊÇÄãµÄ¶¾³æ¡£\n");
+         return notify_fail("çœ‹æ¸…æ¥šäº†ï¼Œé‚£å¯ä¸æ˜¯ä½ çš„æ¯’è™«ã€‚\n");
     if (me->query("duchong_cun") > 0 )
-         return notify_fail("°×÷×ÀÏÕß°ÑÑÛÒ»µÉ£¬ÆøºôºôµÄµÀ£ºÄãÒÑ¾­´æÓÐÒ»¸ö¶¾³æÁË£¬ÏëÀÛËÀÎÒ°¡£¿\n");
-         message_vision ("°×÷×ÀÏÕßÐ¦µÀ£ººÃ°É£¬ÎÒ¾Í°ïÄãÕÕ¿´Ò»¶ÎÊ±¼ä£¬Äã·ÅÐÄ°É¡£\n",me);
+         return notify_fail("ç™½é«¯è€è€…æŠŠçœ¼ä¸€çžªï¼Œæ°”å‘¼å‘¼çš„é“ï¼šä½ å·²ç»å­˜æœ‰ä¸€ä¸ªæ¯’è™«äº†ï¼Œæƒ³ç´¯æ­»æˆ‘å•Šï¼Ÿ\n");
+         message_vision ("ç™½é«¯è€è€…ç¬‘é“ï¼šå¥½å§ï¼Œæˆ‘å°±å¸®ä½ ç…§çœ‹ä¸€æ®µæ—¶é—´ï¼Œä½ æ”¾å¿ƒå§ã€‚\n",me);
      me->set("duchong_cun",1);
      du_exp=ob->query("combat_exp");
      du_attack=ob->query_temp("apply/attack");
@@ -77,7 +77,7 @@ int do_cun (string arg)
      if(du_age > 99 && du_age < 999) me->set("du_age",100);
      if(du_age > 999 && du_age < 9999) me->set("du_age",1000);
      if(du_age > 9999 ) me->set("du_age",10000);
-     message_vision ("°×÷×ÀÏÕßÒ»°Ñ½«"+du_name+"×¥ÆðÀ´£¬¶ª½øÁËÅÔ±ßµÄÁý×ÓÀï¡£\n",me);
+     message_vision ("ç™½é«¯è€è€…ä¸€æŠŠå°†"+du_name+"æŠ“èµ·æ¥ï¼Œä¸¢è¿›äº†æ—è¾¹çš„ç¬¼å­é‡Œã€‚\n",me);
       destruct(ob);
       me->save();
  return 1;
@@ -89,17 +89,17 @@ int do_qu (string arg)
         int du_age;
     string du_name,du_id;
     object me = this_player();
-    if ((string)me->query("family/family_name")!="Îå¶¾½Ì"
+    if ((string)me->query("family/family_name")!="äº”æ¯’æ•™"
         || !objectp(present("old man", environment(me))))
-          return notify_fail("Ê²Ã´£¿\n");
+          return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
     if (present("wudu ling",me)){
              me->set("duchong_cun",1);
-             message_vision ("°×÷×ÀÏÕß¿àÐ¦µÀ£º¸óÏÂÄÃ×ÅÎå¶¾Áî£¬²»¹ÜÓÐÃ»ÓÐ£¬±äÒ²Òª¸øÄã±ä³öÀ´Ò»¸ö¡£\n",me);
+             message_vision ("ç™½é«¯è€è€…è‹¦ç¬‘é“ï¼šé˜ä¸‹æ‹¿ç€äº”æ¯’ä»¤ï¼Œä¸ç®¡æœ‰æ²¡æœ‰ï¼Œå˜ä¹Ÿè¦ç»™ä½ å˜å‡ºæ¥ä¸€ä¸ªã€‚\n",me);
              destruct(present("wudu ling",me));
      }        
     if (me->query("duchong_cun") < 1 )
-         return notify_fail("°×÷×ÀÏÕß°ÑÑÛÒ»µÉ£¬ÆøºôºôµÄµÀ£ºÄãÊ²Ã´Ê±ºòÀ´´æ¹ý¶«Î÷°¡£¿\n");
-     message_vision ("°×÷×ÀÏÕßÐ¦µÀ£º¿ì°ÑËüÁì×ß°É£¬Õâ¶ÎÊ±¼äÕæÀÛËÀÎÒÁË¡£\n",me);
+         return notify_fail("ç™½é«¯è€è€…æŠŠçœ¼ä¸€çžªï¼Œæ°”å‘¼å‘¼çš„é“ï¼šä½ ä»€ä¹ˆæ—¶å€™æ¥å­˜è¿‡ä¸œè¥¿å•Šï¼Ÿ\n");
+     message_vision ("ç™½é«¯è€è€…ç¬‘é“ï¼šå¿«æŠŠå®ƒé¢†èµ°å§ï¼Œè¿™æ®µæ—¶é—´çœŸç´¯æ­»æˆ‘äº†ã€‚\n",me);
      me->set("duchong_cun",0);
      du_exp=me->query("du_exp");
      du_attack=me->query("du_attack");
@@ -171,8 +171,8 @@ int do_qu (string arg)
      ob->set("qi",   ob->query("max_qi"));
      ob->set("food",    ob->max_food_capacity());
      ob->set("water",    ob->max_water_capacity());
-     message_vision ("°×÷×ÀÏÕß´ÓÅÔ±ßÈ¡³öÒ»¸öÁý×Ó£¬´ò¿ªÁýÃÅ¡£"
-                     +du_name+"¶ÙÊ±´ÓÀïÃæ´ÜÁË³öÀ´¡£\n",me);
+     message_vision ("ç™½é«¯è€è€…ä»Žæ—è¾¹å–å‡ºä¸€ä¸ªç¬¼å­ï¼Œæ‰“å¼€ç¬¼é—¨ã€‚"
+                     +du_name+"é¡¿æ—¶ä»Žé‡Œé¢çªœäº†å‡ºæ¥ã€‚\n",me);
      ob->set("host_id",(string)me->query("id"));
      ob->set_leader(me);
       me->save();

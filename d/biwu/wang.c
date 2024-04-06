@@ -1,4 +1,4 @@
-// wang.c ÍõÖØÑô
+// wang.c ç‹é‡é˜³
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -11,16 +11,16 @@ string ask_duan();
 
 void create()
 {
-        set_name("ÍõÖØÑô", ({"wang chongyang", "wang"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‹é‡é˜³", ({"wang chongyang", "wang"}));
+        set("gender", "ç”·æ€§");
         set("age", 66);
         set("class", "taoist");
-        set("nickname",HIW"»îËÀÈË"NOR);
+        set("nickname",HIW"æ´»æ­»äºº"NOR);
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÄ¿ªÉ½×æÊ¦¡¢Ê×´úÕÆ½ÌÍõÖØÑôÍõÕæÈË¡£Ëû°×ĞëÆ®\n"
-                "Æ®£¬¿íÅÛ»ºĞä£¬Ã¼Ä¿Çåñ³£¬ÆÄÓĞĞ©ÏÉ·çµÀ¹ÇµÄÎ¶µÀ¡£Ëû±¾À´Ò»\n"
-                "Ç»ÈÈÑªÓû±¨Ğ§¹ú¼ÒÁ¦¿¹½ğ±ø£¬¿ÉÏ§³¯Í¢¸¯°Ü£¬ÓÚÊÇĞÄ»ÒÒâÀä£¬\n"
-                "ÓÖ´ÓµÀµÂ¾­ÖĞÎòµÃÁËÌìµØ×ÌÉúµÄ´óµÀ£¬ÊÖ´´È«Õæ½Ì¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™çš„å¼€å±±ç¥–å¸ˆã€é¦–ä»£æŒæ•™ç‹é‡é˜³ç‹çœŸäººã€‚ä»–ç™½é¡»é£˜\n"
+                "é£˜ï¼Œå®½è¢ç¼“è¢–ï¼Œçœ‰ç›®æ¸…ç™¯ï¼Œé¢‡æœ‰äº›ä»™é£é“éª¨çš„å‘³é“ã€‚ä»–æœ¬æ¥ä¸€\n"
+                "è…”çƒ­è¡€æ¬²æŠ¥æ•ˆå›½å®¶åŠ›æŠ—é‡‘å…µï¼Œå¯æƒœæœå»·è…è´¥ï¼Œäºæ˜¯å¿ƒç°æ„å†·ï¼Œ\n"
+                "åˆä»é“å¾·ç»ä¸­æ‚Ÿå¾—äº†å¤©åœ°æ»‹ç”Ÿçš„å¤§é“ï¼Œæ‰‹åˆ›å…¨çœŸæ•™ã€‚\n");
         set("attitude", "peaceful");
         set("shen_type",1);
         set("str", 45);
@@ -58,19 +58,19 @@ void create()
         set("score", 500000);
 
         set_skill("force", 200);
-        set_skill("xiantian-qigong", 380);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 380);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 250);
-        set_skill("quanzhen-jian",380);  //È«Õæ½£
+        set_skill("quanzhen-jian",380);  //å…¨çœŸå‰‘
         set_skill("dodge", 160);
-        set_skill("jinyan-gong", 380);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 380);   //é‡‘é›åŠŸ
         set_skill("parry", 200);
         set_skill("unarmed",200);
-        set_skill("haotian-zhang", 380);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 380);    //æ˜Šå¤©æŒ
         set_skill("literate",120);
         set_skill("strike",150);
         set_skill("taoism",140);
         set_skill("finger",200);
-        set_skill("sun-finger",280);  //Ò»ÑôÖ¸
+        set_skill("sun-finger",280);  //ä¸€é˜³æŒ‡
         map_skill("force", "xiantian-qigong");
         map_skill("sword", "quanzhen-jian");
         map_skill("dodge", "jinyan-gong");
@@ -84,14 +84,14 @@ void create()
         set_temp("apply/armor", 500);
         set_temp("apply/damage", 250);
 
-        create_family("È«Õæ½Ì", 1, "ÕÆ½Ì");
+        create_family("å…¨çœŸæ•™", 1, "æŒæ•™");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
-                "¾ÅÒõÕæ¾­" : (: ask_jiuyin :),
-                "Ò»ÑôÖ¸" : (: ask_zhipu :),
-                "¶Î»ÊÒ¯" : (: ask_duan :),
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é—¨æ­£å®—ã€‚\n",
+                "ä¹é˜´çœŸç»" : (: ask_jiuyin :),
+                "ä¸€é˜³æŒ‡" : (: ask_zhipu :),
+                "æ®µçš‡çˆ·" : (: ask_duan :),
         ]) );
 
         setup();
@@ -104,19 +104,19 @@ void create()
 void attempt_apprentice(object ob)
 {
         if (ob->query_int() < 30) {
-                command("say ÄãµÄ×ÊÖÊ²»¹»£¬»¹ÊÇÏÈÕÒÎÒÄÇ¼¸¸öÍ½µÜÑ§Ï°°É¡£");
+                command("say ä½ çš„èµ„è´¨ä¸å¤Ÿï¼Œè¿˜æ˜¯å…ˆæ‰¾æˆ‘é‚£å‡ ä¸ªå¾’å¼Ÿå­¦ä¹ å§ã€‚");
                 return;
         }
         if ((int)ob->query_skill("xiantian-qigong",1) < 100 ) {
-                command("say ÄãµÄ±¾ÃÅÄÚ¹¦ĞÄ·¨»ğºò²»×ã,ÄÑÒÔÁìÂÔ¸ü¸ßÉîµÄÎä¹¦¡£");
+                command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•ç«å€™ä¸è¶³,éš¾ä»¥é¢†ç•¥æ›´é«˜æ·±çš„æ­¦åŠŸã€‚");
                 return;
         }
         if ((int)ob->query("shen")<10000) {
-                command("say ĞĞÏÀÕÌÒåÊÇÎÒ±²Ñ§ÎäÈËµÄ»ù±¾Æ·ÖÊ£¬ÄãÈôÄÜ¶à×öĞ©ÏÁÒåÖ®
-ÊÂ£¬ÎÒÒ»¶¨ÊÕÄãÎªÍ½¡£\n");
+                command("say è¡Œä¾ ä»—ä¹‰æ˜¯æˆ‘è¾ˆå­¦æ­¦äººçš„åŸºæœ¬å“è´¨ï¼Œä½ è‹¥èƒ½å¤šåšäº›ç‹­ä¹‰ä¹‹
+äº‹ï¼Œæˆ‘ä¸€å®šæ”¶ä½ ä¸ºå¾’ã€‚\n");
                 return;
         }
-        command("say ºÃ°É£¬ÒÀÄã×ÊÖÊ£¬¶¨¿É´«ÎÒÒÂ²§£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œä¾ä½ èµ„è´¨ï¼Œå®šå¯ä¼ æˆ‘è¡£é’µï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 
@@ -126,47 +126,47 @@ string ask_jiuyin()
         int lvl_force;
 
         if (!(fam = this_player()->query("family"))
-            || fam["family_name"] != "È«Õæ½Ì")
+            || fam["family_name"] != "å…¨çœŸæ•™")
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾½ÌºÁÎŞ¹Ï¸ğ£¬Õâ»°´ÓºÎËµÆğ£¿";
+                "ä¸æœ¬æ•™æ¯«æ— ç“œè‘›ï¼Œè¿™è¯ä»ä½•è¯´èµ·ï¼Ÿ";
         if (!(lvl_force = this_player()->query_skill("force",1))
             || lvl_force < 50)
                 return RANK_D->query_respect(this_player()) +
-                "µÄ»ù±¾ÄÚ¹¦»ğºòÈç´ËÖ®Ç³£¬Ç¿Á·Õæ¾­ÉÏµÄÉÏ³ËÎä¹¦ÓĞº¦ÎŞÒæ¡£";
-        return "¾ÅÒõÕæ¾­ÊÇÌìÏÂÎäÑ§Õı×Ú£¬ÎÒÒÑ½»¸øÎÒÊ¦µÜÖÜ²®Í¨±£¹Ü£¬\n"
-                +"²»¹ı....ÔÚ¹ÅÄ¹ÅÉµÄÊ¯¹×ÄÚ£¬ÎÒ»¹¿Ì×ÅÒ»Ğ©Í¼ĞÎ¡£\n";
+                "çš„åŸºæœ¬å†…åŠŸç«å€™å¦‚æ­¤ä¹‹æµ…ï¼Œå¼ºç»ƒçœŸç»ä¸Šçš„ä¸Šä¹˜æ­¦åŠŸæœ‰å®³æ— ç›Šã€‚";
+        return "ä¹é˜´çœŸç»æ˜¯å¤©ä¸‹æ­¦å­¦æ­£å®—ï¼Œæˆ‘å·²äº¤ç»™æˆ‘å¸ˆå¼Ÿå‘¨ä¼¯é€šä¿ç®¡ï¼Œ\n"
+                +"ä¸è¿‡....åœ¨å¤å¢“æ´¾çš„çŸ³æ£ºå†…ï¼Œæˆ‘è¿˜åˆ»ç€ä¸€äº›å›¾å½¢ã€‚\n";
 }
 
 string ask_duan()
 {
         object me=this_player();
-        if(me->query_temp("tmark/Ö¸")==4) {
-                me->add_temp("tmark/Ö¸",1);
-                return("¶Î»ÊÒ¯ºÅ³Æ¡®ÄÏµÛ¡¯£¬¼Ò´«µÄÒ»ÑôÖ¸ÊÇÌìÏÂ×îÀ÷º¦µÄÖ¸·¨¡£\n");
+        if(me->query_temp("tmark/æŒ‡")==4) {
+                me->add_temp("tmark/æŒ‡",1);
+                return("æ®µçš‡çˆ·å·ç§°â€˜å—å¸â€™ï¼Œå®¶ä¼ çš„ä¸€é˜³æŒ‡æ˜¯å¤©ä¸‹æœ€å‰å®³çš„æŒ‡æ³•ã€‚\n");
         }
         else {
-                me->set_temp("tmark/Ö¸",0);
-                return("ÄãÎÊ¶Î»ÊÒ¯×öÉõÃ´£¬Äª·ÇÏëÓëËûÎªÄÑ£¿\n");
+                me->set_temp("tmark/æŒ‡",0);
+                return("ä½ é—®æ®µçš‡çˆ·åšç”šä¹ˆï¼Œè«éæƒ³ä¸ä»–ä¸ºéš¾ï¼Ÿ\n");
         }
 }
 
 string ask_zhipu()
 {
         object ob,me=this_player();
-        if(me->query_temp("tmark/Ö¸")==5) {
-                me->set_temp("tmark/Ö¸",0);
+        if(me->query_temp("tmark/æŒ‡")==5) {
+                me->set_temp("tmark/æŒ‡",0);
                 if(query("book_count")>0) {
                         ob=new("/clone/book/zhifapu");
                         ob->move(me);
                         add("book_count",-1);
-                        return("ºÃ°É£¬ÄãÀú¾­¼è¿à£¬ÒâÖ¾Éõ¼á£¬Õâ±¾Ö¸·¨Æ×¾Í½»¸øÄãÁË¡£\n");
+                        return("å¥½å§ï¼Œä½ å†ç»è‰°è‹¦ï¼Œæ„å¿—ç”šåšï¼Œè¿™æœ¬æŒ‡æ³•è°±å°±äº¤ç»™ä½ äº†ã€‚\n");
                 }
                 else
-                        return("ÄãÀ´ÍíÁË£¬Ö¸·¨Æ×ÒÑ¾­±»ÈËÈ¡×ßÁË¡£\n");
+                        return("ä½ æ¥æ™šäº†ï¼ŒæŒ‡æ³•è°±å·²ç»è¢«äººå–èµ°äº†ã€‚\n");
         }
         else {
-                me->set_temp("tmark/Ö¸",0);
+                me->set_temp("tmark/æŒ‡",0);
                 return  RANK_D->query_respect(me) +
-                        "²»ÊÇÏë¸úÎÒ½ÏÁ¿½ÏÁ¿°É£¿\n";
+                        "ä¸æ˜¯æƒ³è·Ÿæˆ‘è¾ƒé‡è¾ƒé‡å§ï¼Ÿ\n";
         }
 }

@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("野鸭", ({ "duck" }) );
-        set("race", "野兽");
+        set_name("閲庨腑", ({ "duck" }) );
+        set("race", "閲庡吔");
         set("age", 1);
-        set("long", "一只野鸭。\n");
-        set("limbs", ({ "头部", "身体", "尾巴" }) );
+        set("long", "涓�鍙噹楦�俓n");
+        set("limbs", ({ "澶撮儴", "韬綋", "灏惧反" }) );
         set("verbs", ({ "bite" }) );
 
         set_skill("dodge", 50);

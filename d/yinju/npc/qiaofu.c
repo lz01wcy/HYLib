@@ -2,16 +2,16 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("éÔ·ò", ({ "qiao fu", "qiao" }));
-	set("title",  "´óÀí¹ú´ó½«¾ü" );
+	set_name("æ¨µå¤«", ({ "qiao fu", "qiao" }));
+	set("title",  "å¤§ç†å›½å¤§å°†å†›" );
 	set("long", 
-"Ëû¾ÍÊÇ´óÀí¹úµÄÔ­´ó½«¾ü£¬Ò»µÆ´óÊ¦µÄËÄ´óµÜ×ÓÖ®Ò»¡£
-×óÊÖÌá×ÅÒ»À¦ËÉ²ñ£¬ÓÒÊÖÎÕ×ÅÒ»±ú¸«Í·£¬µ«¼ûËûÈÝÉ«ºÀ
-×³£¬ÉñÌ¬»¢»¢£¬¾ÙÊÖÂõ×ã¼äËÆÊÇ´ó½«¾üÓÐ°ËÃæÍþ·ç¡£Èô
-·ÇÉí´©´Ö²¼ÒÂÉÑ¶øÔÚÕâÉ½ÁÖ¼äéÔ²ñ£¬±Øµ±ËûÊÇ¸öß³ßå·ç
-ÔÆµÄÍ³±ø½«Ë§¡£\n");
-              set("nickname", HIY "ÓæéÔ¸û¶Á" NOR );   
-        set("gender", "ÄÐÐÔ");
+"ä»–å°±æ˜¯å¤§ç†å›½çš„åŽŸå¤§å°†å†›ï¼Œä¸€ç¯å¤§å¸ˆçš„å››å¤§å¼Ÿå­ä¹‹ä¸€ã€‚
+å·¦æ‰‹æç€ä¸€æ†æ¾æŸ´ï¼Œå³æ‰‹æ¡ç€ä¸€æŸ„æ–§å¤´ï¼Œä½†è§ä»–å®¹è‰²è±ª
+å£®ï¼Œç¥žæ€è™Žè™Žï¼Œä¸¾æ‰‹è¿ˆè¶³é—´ä¼¼æ˜¯å¤§å°†å†›æœ‰å…«é¢å¨é£Žã€‚è‹¥
+éžèº«ç©¿ç²—å¸ƒè¡£è£³è€Œåœ¨è¿™å±±æž—é—´æ¨µæŸ´ï¼Œå¿…å½“ä»–æ˜¯ä¸ªå±å’¤é£Ž
+äº‘çš„ç»Ÿå…µå°†å¸…ã€‚\n");
+              set("nickname", HIY "æ¸”æ¨µè€•è¯»" NOR );   
+        set("gender", "ç”·æ€§");
         set("age", 45);
 
         set("class", "officer");
@@ -39,9 +39,9 @@ void create()
         set_skill("dodge", 150);
         set_skill("cuff", 180);
         set("inquiry", ([
-                "Ò»µÆ´óÊ¦"   : "Ê¦¸¸ËûÀÏÈË¼ÒÔÚÉÏÃæ¡£\n",
-                "¶ÎÖÇÐË"     : "ÄÇÊÇÎÒÊ¦¸¸Ë×ÊÀµÄÃû»ä¡£\n",
-                "Áõçø¹Ã"     : "ËýÊÇÎÒÊ¦¸¸Ë×ÊÀµÄåú×Ó¡£\n",
+                "ä¸€ç¯å¤§å¸ˆ"   : "å¸ˆçˆ¶ä»–è€äººå®¶åœ¨ä¸Šé¢ã€‚\n",
+                "æ®µæ™ºå…´"     : "é‚£æ˜¯æˆ‘å¸ˆçˆ¶ä¿—ä¸–çš„åè®³ã€‚\n",
+                "åˆ˜ç‘›å§‘"     : "å¥¹æ˜¯æˆ‘å¸ˆçˆ¶ä¿—ä¸–çš„å¦ƒå­ã€‚\n",
         ]) );
        map_skill("force", "kurong-changong");
         map_skill("dodge", "tiannan-step");

@@ -1,4 +1,4 @@
-// mu nianci.c ÄÂÄî´È
+// mu nianci.c ç©†å¿µæ…ˆ
 // By tangfeng 2004
 
 #include <ansi.h>
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÄÂÄî´È",({"mu nianci", "mu", "nianci"}));
-	set("long", "ÕâÎ»¹ÃÄïËäÈ»´©×ÅÆÓËØ£¬µ«ĞãÀöÖ®ÖÊÄÑÒÔÑÚÈ´¡£\n");
+	set_name("ç©†å¿µæ…ˆ",({"mu nianci", "mu", "nianci"}));
+	set("long", "è¿™ä½å§‘å¨˜è™½ç„¶ç©¿ç€æœ´ç´ ï¼Œä½†ç§€ä¸½ä¹‹è´¨éš¾ä»¥æ©å´ã€‚\n");
 	set("age", 25);
 	set("attitude", "friendly");
 	set("shen", 0);
@@ -27,7 +27,7 @@ void create()
 	set("jiali", 200);
 	set("combat_exp", 5500000); 
 	set("unique", 1);
-	set("no_clean_up",1);//¿¼ÂÇing
+	set("no_clean_up",1);//è€ƒè™‘ing
 
 	set_skill("dodge",320);
 	set_skill("force", 320);
@@ -46,8 +46,8 @@ void create()
 	prepare_skill("strike", "tiezhang-zhangfa");
 
 	set("inquiry", ([
-		"¹ù¾¸"	:	"¹ù´óÏÀÏÖÔÚÓ¦¸Ã»¹ÔÚÏåÑô£¬ÕòÊØ±ß¾³¡£",
-		"Ñî¿µ":	    "...............................Ô©Äõ£¡",
+		"éƒ­é–"	:	"éƒ­å¤§ä¾ ç°åœ¨åº”è¯¥è¿˜åœ¨è¥„é˜³ï¼Œé•‡å®ˆè¾¹å¢ƒã€‚",
+		"æ¨åº·":	    "...............................å†¤å­½ï¼",
 	]));
 
 	setup();

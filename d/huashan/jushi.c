@@ -4,11 +4,11 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "¾ÓÊÒ");
+        set("short", "å±…å®¤");
 	set("long", @LONG
-ÕâÀïÊÇÔÀ·òÈËµÄÇŞÊÒ£¬ÔÀ·òÈËÔÚ½­ºşÉÏÈË³Æ¡¸ÊçÅ®½£¡¹£¬ÎªÈË¼«ÓĞ¹Ç
-Æø£¬ËıµÄ¾ÓÊÒÈ´Ïàµ±ÆÓËØ£¬´²ÒÎÖ®Íâ£¬¿¿´°(window)´¦ÓĞ¸öÊá×±Ì¨(tai)£¬
-Ç½ÉÏ¹Ò×ÅÒ»¿Ú±¦½£(sword)£¬ ÉßÆ¤ÍÌ¿Ú¿´À´ºÜÊÇ·æÀû¡£
+è¿™é‡Œæ˜¯å²³å¤«äººçš„å¯å®¤ï¼Œå²³å¤«äººåœ¨æ±Ÿæ¹–ä¸Šäººç§°ã€Œæ·‘å¥³å‰‘ã€ï¼Œä¸ºäººææœ‰éª¨
+æ°”ï¼Œå¥¹çš„å±…å®¤å´ç›¸å½“æœ´ç´ ï¼ŒåºŠæ¤…ä¹‹å¤–ï¼Œé çª—(window)å¤„æœ‰ä¸ªæ¢³å¦†å°(tai)ï¼Œ
+å¢™ä¸ŠæŒ‚ç€ä¸€å£å®å‰‘(sword)ï¼Œ è›‡çš®åå£çœ‹æ¥å¾ˆæ˜¯é”‹åˆ©ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "east" : __DIR__"changlang",
@@ -17,9 +17,9 @@ LONG );
             CLASS_D("huashan") + "/yue-wife" :1,
         ]));
         set("item_desc", ([
-		"window" : "´°Íâ¾ÍÊÇÌìÉùÏ¿ÁË¡£ÍùÍâÍûÈ¥£¬ÔÆÉî¹ÈÓÄÁîÈËÄ¿Ñ£¡£\n",
-		"sword"  : "ÕâÊÇÉÏ´ÎÇ°Íù¸£½¨Ê±´ø»ØµÄÁúÈª½£¡£\n",
-		"tai"    : "ÕâÊÇÒ»ÕÅºìÆáÊá×±Ì¨£¬°ë¿ªµÄ³éÌëĞ±²å×Å¼¸¶äÏÊ»¨¡£\n"
+		"window" : "çª—å¤–å°±æ˜¯å¤©å£°å³¡äº†ã€‚å¾€å¤–æœ›å»ï¼Œäº‘æ·±è°·å¹½ä»¤äººç›®çœ©ã€‚\n",
+		"sword"  : "è¿™æ˜¯ä¸Šæ¬¡å‰å¾€ç¦å»ºæ—¶å¸¦å›çš„é¾™æ³‰å‰‘ã€‚\n",
+		"tai"    : "è¿™æ˜¯ä¸€å¼ çº¢æ¼†æ¢³å¦†å°ï¼ŒåŠå¼€çš„æŠ½å±‰æ–œæ’ç€å‡ æœµé²œèŠ±ã€‚\n"
         ]));
 //        set("no_clean_up", 0);
 
@@ -45,21 +45,21 @@ int do_move(string arg)
 			objectp(present("yue wife", environment(me))))
 		{
 			return notify_fail(
-"ÔÀ·òÈËºÈµÀ£ºÕâÎ»" + RANK_D->query_respect(me) + "£¬Äã²»ÄÜËæ±ã·­ÈË¼Ò¶«Î÷¡£\n");
+"å²³å¤«äººå–é“ï¼šè¿™ä½" + RANK_D->query_respect(me) + "ï¼Œä½ ä¸èƒ½éšä¾¿ç¿»äººå®¶ä¸œè¥¿ã€‚\n");
 			return 1;
 		}
 		if (!query("had_yunu"))
 		{
 			message_vision(
-"$NÇáÇáµÄÀ­¿ª³éÌë£¬·¢ÏÖÀïÃæÓĞÒ»±¾Êé...¡£\n", this_player());
+"$Nè½»è½»çš„æ‹‰å¼€æŠ½å±‰ï¼Œå‘ç°é‡Œé¢æœ‰ä¸€æœ¬ä¹¦...ã€‚\n", this_player());
 			paper = new("/clone/book/yunu_book");
 			paper->move(__FILE__);
-message("channel:rumor", MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+this_player()->query("name")+"ÄÃµ½ÓñÅ®½£Æ×À²¡£\n"NOR, users());
+message("channel:rumor", MAG"ã€è°£è¨€ã€‘æŸäººï¼š"+this_player()->query("name")+"æ‹¿åˆ°ç‰å¥³å‰‘è°±å•¦ã€‚\n"NOR, users());
 			set("had_yunu", 1);
 			return 1;
 		}
 		message_vision(
-"$NÇáÇáµÄÀ­¿ª³éÌë£¬¿ÉÊÇÀïÃæÉ¶¶¼Ã»ÓĞ...¡£\n", this_player());
+"$Nè½»è½»çš„æ‹‰å¼€æŠ½å±‰ï¼Œå¯æ˜¯é‡Œé¢å•¥éƒ½æ²¡æœ‰...ã€‚\n", this_player());
 		return 1;
 	}
 	return 0;
@@ -77,21 +77,21 @@ int do_pick(string arg)
 			objectp(present("yue wife", environment(me))))
 		{
 			return notify_fail(
-"ÔÀ·òÈËºÈµÀ£ºÕâÎ»" + RANK_D->query_respect(me) + "£¬Äã²»ÄÜËæ±ã·­ÈË¼Ò¶«Î÷¡£\n");
+"å²³å¤«äººå–é“ï¼šè¿™ä½" + RANK_D->query_respect(me) + "ï¼Œä½ ä¸èƒ½éšä¾¿ç¿»äººå®¶ä¸œè¥¿ã€‚\n");
 			return 1;
 		}
 		if (!query("had_sword"))
 		{
 			message_vision(
-"$NÇáÇáµÄÕªÏÂ±¦½££¬¹ş¹ş£¬Õæ¿ªĞÄ...¡£\n", this_player());
+"$Nè½»è½»çš„æ‘˜ä¸‹å®å‰‘ï¼Œå“ˆå“ˆï¼ŒçœŸå¼€å¿ƒ...ã€‚\n", this_player());
 			sword = new(__DIR__"obj/longquan");
 			sword->move(me);
-message("channel:rumor", MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+this_player()->query("name")+"ÇÀÁËÒ»¿ÚÁúÈª½£À²¡£\n"NOR, users());
+message("channel:rumor", MAG"ã€è°£è¨€ã€‘æŸäººï¼š"+this_player()->query("name")+"æŠ¢äº†ä¸€å£é¾™æ³‰å‰‘å•¦ã€‚\n"NOR, users());
 			set("had_sword", 1);
 			return 1;
 		}
 		message_vision(
-"$NÉìÊÖÈ¥Õª±¦½££¬²Å·¢ÏÖÖ»Ê£½£ÇÊÁË£¬±¦½£Ôç¾Í±»±ğÈËÈ¡×ßÁË...¡£\n", this_player());
+"$Nä¼¸æ‰‹å»æ‘˜å®å‰‘ï¼Œæ‰å‘ç°åªå‰©å‰‘é˜äº†ï¼Œå®å‰‘æ—©å°±è¢«åˆ«äººå–èµ°äº†...ã€‚\n", this_player());
 		return 1;
 	}
 	return 0;

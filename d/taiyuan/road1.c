@@ -1,16 +1,16 @@
 // /d/taiyuan/road1.c
-// Room in Ì«Ô­
+// Room in å¤ªåŽŸ
 // modify by yang
 
 inherit ROOM;
 void create()	
 {
-	set("short", "´óæäµÀ");
+	set("short", "å¤§é©¿é“");
 	set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ´óæäµÀÉÏ¡£ËÄÖÜÈËÀ´ÈËÍù¡£Ìôµ£×ÓµÄ¡¢ÐÐÉÌ
-µÄ¡¢¸Ï×Å´ó³µµÄÂí·ò£¬ÎõÎõÈÁÈÁ£¬·Ç³£ÈÈÄÖ¡£²»Ê±»¹ÓÐÁ½ÈýÆï¿ìÂí´ÓÉí
-±ß·É³Û¶ø¹ý£¬ÑïÆðÒ»Â·³¾°£¡£µÀÂ·Á½ÅÔÊÇÕûÕûÆëÆëµÄÑîÊ÷ÁÖ¡£¶«ÃæÔòÊÇ
-ÖÚÈË½ÔÖªµÄÌ«Ô­ÁË¡£
+ä½ èµ°åœ¨ä¸€æ¡å°˜åœŸé£žæ‰¬çš„å¤§é©¿é“ä¸Šã€‚å››å‘¨äººæ¥äººå¾€ã€‚æŒ‘æ‹…å­çš„ã€è¡Œå•†
+çš„ã€èµ¶ç€å¤§è½¦çš„é©¬å¤«ï¼Œç†™ç†™æ”˜æ”˜ï¼Œéžå¸¸çƒ­é—¹ã€‚ä¸æ—¶è¿˜æœ‰ä¸¤ä¸‰éª‘å¿«é©¬ä»Žèº«
+è¾¹é£žé©°è€Œè¿‡ï¼Œæ‰¬èµ·ä¸€è·¯å°˜åŸƒã€‚é“è·¯ä¸¤æ—æ˜¯æ•´æ•´é½é½çš„æ¨æ ‘æž—ã€‚ä¸œé¢åˆ™æ˜¯
+ä¼—äººçš†çŸ¥çš„å¤ªåŽŸäº†ã€‚
 LONG
         );
 set("outdoors", "taiyuan");

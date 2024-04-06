@@ -4,9 +4,9 @@ inherit F_BANKER;
 #include <ansi.h>
 void create()
 {
-set_name("ÀîÀÏ°å", ({"li laoban", "li"}));
-        set("title", "ÉÌĞĞÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+set_name("æè€æ¿", ({"li laoban", "li"}));
+        set("title", "å•†è¡ŒæŒæŸœ");
+        set("gender", "ç”·æ€§");
         set("age", 34);
 
         set("str", 22);

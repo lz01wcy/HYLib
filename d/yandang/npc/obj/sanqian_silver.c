@@ -4,15 +4,15 @@ inherit MONEY;
 
 void create()
 {
-	set_name("ÈıÇ®É¢ËéÒø×Ó", ({"sanqian_silver", "ingot", "silver_money"}));
+	set_name("ä¸‰é’±æ•£ç¢é“¶å­", ({"sanqian_silver", "ingot", "silver_money"}));
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("money_id", "silver");
-		set("long", "°×»¨»¨µÄÒø×Ó£¬ÈË¼ûÈË°®µÄÒø×Ó¡£\n");
-		set("unit", "¿é");
+		set("long", "ç™½èŠ±èŠ±çš„é“¶å­ï¼Œäººè§äººçˆ±çš„é“¶å­ã€‚\n");
+		set("unit", "å—");
 		set("base_value", 30);
-		set("base_unit", "¿é");
+		set("base_unit", "å—");
 		set("base_weight", 10);
 	}
 	set_amount(1);

@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-         set("short",GRN"С��"NOR);
+         set("short",GRN"小径"NOR);
          set("long",@long
-һ�����������ö���ʯ�̳ɵ�С��, ·������������, һ����ɽʯ��ľ
-��׺�����С�������ʯ���ϣ�ž�žવķ������������������濴ȥ��һ
-Ƭ�����֣�����Ͷ�����С�������졣
+一条曲曲折折用鹅卵石铺成的小径, 路两旁绿柳成阴, 一处处山石花木
+点缀在其中。你走在石地上，啪嗒啪嗒的发出清脆的响声，往北面看去是一
+片柳树林，南面和东面是小径的延伸。
 long);
 set("outdoors","mr");
          set("exits",([

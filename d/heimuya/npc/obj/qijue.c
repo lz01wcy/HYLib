@@ -1,4 +1,4 @@
-// weapon: xiuhua.c Ğå»¨Õë
+// weapon: xiuhua.c ç»£èŠ±é’ˆ
 // Jay 4/7/96
 #include <ansi.h>
 #include <weapon.h>
@@ -6,17 +6,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIR"Æß¾øÕë"NOR, ({ "qijue zhen", "zhen", "qijue" }));
+        set_name(HIR"ä¸ƒç»é’ˆ"NOR, ({ "qijue zhen", "zhen", "qijue" }));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù¾«¸ÖÏ¸Ä¥µÄÆß¾øÕë¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ä¸€æ ¹ç²¾é’¢ç»†ç£¨çš„ä¸ƒç»é’ˆã€‚\n");
                 set("value", 100);
                 set("material", "steel");
-                set("wield_msg", "$NÓÃÄ´Ö¸ºÍÊ³Ö¸´Ó÷Ş¼äÄé³öÒ»¸ù$n¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø÷Ş¼ä¡£\n");
+                set("wield_msg", "$Nç”¨æ‹‡æŒ‡å’Œé£ŸæŒ‡ä»é¬“é—´æ‹ˆå‡ºä¸€æ ¹$nã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›é¬“é—´ã€‚\n");
         }
         init_sword(400);
         setup();

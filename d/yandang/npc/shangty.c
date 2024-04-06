@@ -3,16 +3,16 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÉĞÌìÒ»", ({ "shang tianyi","dizi"}));
-	set("gender", "ÄĞĞÔ");
+	set_name("å°šå¤©ä¸€", ({ "shang tianyi","dizi"}));
+	set("gender", "ç”·æ€§");
 	set("age", 23);
-       set("title","Ñãµ´Èı½£");
-       set("nickname","ÁéĞÄ½£");
+       set("title","é›è¡ä¸‰å‰‘");
+       set("nickname","çµå¿ƒå‰‘");
        set("food",250);
        set("water",250);
     set("chat_chance", 7);
 	set("chat_msg", ({
-		"°¦,ËıÃÇËµ¾ÍÊÇÔÚÕâ¸½½ü¶ªÊ§µÄ,Ôõ»áÕÒ²»µ½!\n",
+		"å”‰,å¥¹ä»¬è¯´å°±æ˜¯åœ¨è¿™é™„è¿‘ä¸¢å¤±çš„,æ€ä¼šæ‰¾ä¸åˆ°!\n",
 	}));
 	set("combat_exp", 10000);
 	set("mingwang", 2000);
@@ -24,7 +24,7 @@ void create()
        set_skill("force", 160);
 
 
-   create_family("Ñãµ´ÅÉ",2,"µÜ×Ó");
+   create_family("é›è¡æ´¾",2,"å¼Ÿå­");
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
 	carry_object("/clone/misc/cloth")->wear();

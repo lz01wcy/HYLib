@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ʱ����",({"shi wannian","shi",}));
-        set("gender", "����");
+        set_name("时万年",({"shi wannian","shi",}));
+        set("gender", "男性");
         set("age", 20);
         set("long", 
-               "���������ǵ���������ʱ���꣬�ڴ�����������\n");
+               "他是凌霄城第六代弟子时万年，在此守卫监狱。\n");
         set("attitude", "peaceful");
 
         set("str", 30);
@@ -33,8 +33,8 @@ void create()
         }) );
         set("chat_chance", 5);
         set("chat_msg", ({
-       "ʱ����޺�˵�����Ϸ��Ӳ�֪������ô�ˣ����Լ���������Ū�����ϳ�����\n", 
-       "ʱ����ѽ�һ������Ȼ�������������⣬˭��������Ϸ��ӷų�����\n", 
+       "时万年恨恨说道：老疯子不知道又怎么了，把自己关在里面弄死不肯出来。\n", 
+       "时万年把剑一弹，傲然道：有我守在这，谁都别想把老疯子放出来。\n", 
         }) );
         set_skill("unarmed", 120);
         set_skill("sword", 150);
@@ -55,7 +55,7 @@ void create()
         map_skill("unarmed", "snow-zhang");
         map_skill("dodge", "snowstep");
 
-        create_family("������", 6, "����");
+        create_family("凌霄城", 6, "弟子");
         setup();
 
         
@@ -68,20 +68,20 @@ void init()
         ::init();
 
         ob = this_player();  
-      if(ob->query("family/family_name") !="������")
+      if(ob->query("family/family_name") !="凌霄城")
         {
                 command("heng");
-                command("say ���Ȼ�Ҵ��뱾�ɽ��أ������ɣ�\n");
+                command("say 你居然敢闯入本派禁地，受死吧！\n");
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 1, ob); 
         }
-        else if(ob->query("family")["master_name"]=="������")
+        else if(ob->query("family")["master_name"]=="白自在")
         {
-                command("say ʦ������ˣ���ȥ��ʦ��ɣ�����С�ĵ㡭��û׼���ַ����ˡ�");
+                command("say 师叔回来了，快去见师祖吧，不过小心点……没准他又犯病了。");
         } 
-        else if(ob->query("family")["master_name"]=="����")
+        else if(ob->query("family")["master_name"]=="白万剑")
         {
-                command("say ���ǰ�ʦ��ĵ��Ӱɣ����ȥ������ү�Ӱɣ����Ĳ�Խ��Խ����������");
+                command("say 你是白师哥的弟子吧，快进去见见老爷子吧，他的病越来越不得了啦。");
         }
 }
 

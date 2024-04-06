@@ -1,4 +1,4 @@
-// xuejie.c Ñª½ß
+// xuejie.c è¡€ç«­
 // By Lgg,1998.10
 
 inherit ITEM;
@@ -11,19 +11,19 @@ void init()
 
 void create()
 {
-        set_name(RED"Ñª½ß"NOR, ({"xuejie"}));
+        set_name(RED"è¡€ç«­"NOR, ({"xuejie"}));
         set_weight(800);
-        set("unit", "¿Å");
-        set("long", "ÕâÊÇÒ»¿ÅÏÊºìµÄÑª½ß£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "é¢—");
+        set("long", "è¿™æ˜¯ä¸€é¢—é²œçº¢çš„è¡€ç«­ï¼Œçœ‹æ¥å¯ä»¥å…¥è¯ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-        if (!(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if(arg=="xuejie")
         {
-                write("ÄãÈı¿ÚÁ½¿Ú°ÑÑª½ß³ÔÁËÏÂÈ¥¡£\n");
+                write("ä½ ä¸‰å£ä¸¤å£æŠŠè¡€ç«­åƒäº†ä¸‹å»ã€‚\n");
                 destruct(this_object());
         }
         return 1;

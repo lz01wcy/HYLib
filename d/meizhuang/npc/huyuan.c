@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("»¤Ôº", ({
+        set_name("æŠ¤é™¢", ({
                 "hu yuan",
                 "yuan",
         }));
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
 
         set("age", 30);
@@ -31,7 +31,7 @@ void create()
         set_skill("sword", 120);
         set_skill("parry", 100);
 
-        create_family("Ã·×¯", 3, "µÜ×Ó");
+        create_family("æ¢…åº„", 3, "å¼Ÿå­");
 
         setup();
 

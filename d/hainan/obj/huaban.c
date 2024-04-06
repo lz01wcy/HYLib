@@ -5,13 +5,13 @@ inherit THROWING;
 
 void create()
 {
-        set_name("»¨°ê", ({ "hua ban" ,"flower"}) );
+        set_name("èŠ±ç“£", ({ "hua ban" ,"flower"}) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "·ÛÉ«µÄÌÒ»¨»¨°ê¡£\n");
-                set("unit", "Æ¬");
-                set("base_unit", "Æ¬");
+                set("long", "ç²‰è‰²çš„æ¡ƒèŠ±èŠ±ç“£ã€‚\n");
+                set("unit", "ç‰‡");
+                set("base_unit", "ç‰‡");
                 set("base_weight", 2);
                 set("base_value", 1);
                 set("value", 0);

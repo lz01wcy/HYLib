@@ -3,17 +3,17 @@
 inherit CLOTH; 
 void create()
 {
-    set_name(BLK"ºÚÅû·ç"NOR, ({ "black cloak","cloak" }) );
+    set_name(BLK"é»‘æŠ«é£"NOR, ({ "black cloak","cloak" }) );
         set_weight(6000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "cloth");
-                set("long", "Ò»¼şÆáºÚµÄÅû·ç£¬Ó­×Å·çÁÔÁÔ×÷Ïì¡£\n");
+                set("long", "ä¸€ä»¶æ¼†é»‘çš„æŠ«é£ï¼Œè¿ç€é£çŒçŒä½œå“ã€‚\n");
         set("armor_prop/armor", 50);
                 set("value", 5000);
-        set("wear_msg", "$NÓ­·ç¶øÁ¢£¬»©À²À²Ò»¶¶£¬ÅûÉÏÒ»¼ş$n£¬ÁÔÁÔ×÷Ïì¡£\n");
+        set("wear_msg", "$Nè¿é£è€Œç«‹ï¼Œå“—å•¦å•¦ä¸€æŠ–ï¼ŒæŠ«ä¸Šä¸€ä»¶$nï¼ŒçŒçŒä½œå“ã€‚\n");
         }
 
 }  

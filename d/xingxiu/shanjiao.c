@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌìÉ½½ÅÏÂ");
+        set("short", "å¤©å±±è„šä¸‹");
         set("long", @LONG
-ÕâÀïÊÇÌìÉ½½ÅÏÂ£¬Î÷ÃæÊÇ¸ßËÊÈëÔÆµÄÌìÉ½¡£ÌìÇçµÄÊ±ºò¿ÉÒÔ¿´µ½É½¶¥
-ÉÏµÄ±ù´¨¡£Ò»µÀÌìÉ½½«Î÷Óò·ÖÎªÁ½°ë¡£±±½®ÊÇÎ÷Óò¸÷×åµÄ¾Û¾ÓÇø£¬ÄÏ½®ÊÇ
-ÎÞ±ßµÄËþ¿ËÀ­Âí¸É´óÉ³Ä®¡£
+è¿™é‡Œæ˜¯å¤©å±±è„šä¸‹ï¼Œè¥¿é¢æ˜¯é«˜è€¸å…¥äº‘çš„å¤©å±±ã€‚å¤©æ™´çš„æ—¶å€™å¯ä»¥çœ‹åˆ°å±±é¡¶
+ä¸Šçš„å†°å·ã€‚ä¸€é“å¤©å±±å°†è¥¿åŸŸåˆ†ä¸ºä¸¤åŠã€‚åŒ—ç–†æ˜¯è¥¿åŸŸå„æ—çš„èšå±…åŒºï¼Œå—ç–†æ˜¯
+æ— è¾¹çš„å¡”å…‹æ‹‰é©¬å¹²å¤§æ²™æ¼ ã€‚
 LONG );
         set("exits", ([
             "westup" : __DIR__"tianroad1",

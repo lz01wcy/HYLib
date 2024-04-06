@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹ÛÖÚ", ({ "guan zhong", "guan" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è§‚ä¼—", ({ "guan zhong", "guan" }));
+	set("gender", "ç”·æ€§");
 	set("age", 15+random(70));
 
 	set("combat_exp", 5000+random(10000));

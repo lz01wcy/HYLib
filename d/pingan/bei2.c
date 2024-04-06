@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ƽ������");
+  set ("short", "平安北街");
   set ("long", @LONG
-����ƽ���ǵ�һ����·ƽ�����֡����ϱ����ƽ���ǡ�����
-�ǲ�԰��ƽ�����������ڵء�ǰ��ı��ź���û�п���.
+这是平安城的一条老路平安北街。它南北横跨平安城。这里
+是菜园和平安武庙的所在地。前面的北门好像还没有开放.
 LONG);
 
   set("outdoors", "pingan");

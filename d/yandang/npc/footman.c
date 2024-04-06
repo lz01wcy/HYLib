@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÌË×ÓÊÖ",({"tangzi shou","shou"}));
+	set_name("è¶Ÿå­æ‰‹",({"tangzi shou","shou"}));
         set("shen_type",-1);
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 52);
         set("combat_exp", 20000);
         set("attitude", "heroism");
@@ -36,10 +36,10 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-message_vision("ÌË×ÓÊÖ´óÉùº°µÀ:ÎÒÎä-----ÍşÑï-------\n",ob);
+message_vision("è¶Ÿå­æ‰‹å¤§å£°å–Šé“:æˆ‘æ­¦-----å¨æ‰¬-------\n",ob);
 			break;
 		case 1:
-message_vision("ÕâÌËïÚ²»Òª³öÊ²Ã´ÊÂ²ÅºÃ,Ï£ÍûÆ½Æ½°²°²,»ØÈ¥ÅãĞ¡ÏãÓñ.\n",ob);
+message_vision("è¿™è¶Ÿé•–ä¸è¦å‡ºä»€ä¹ˆäº‹æ‰å¥½,å¸Œæœ›å¹³å¹³å®‰å®‰,å›å»é™ªå°é¦™ç‰.\n",ob);
 			break;
                            }
 }

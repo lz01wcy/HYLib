@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�����");
+	set("short", "大驿道");
 	set("long", @LONG
-�����ӱޣ����ڽ���ƽ̹������ϣ�΢����棬����ҡ�ڣ�����
-Ҳ���ʮ����졣���ֱֱ�������������ȥ����ԶԶ�ؾ��Ѿ�
-�������ݵı�ƽ���ˣ����ϵ�����Ҳ���˲��١�
+快马加鞭，走在江南平坦的驿道上，微风拂面，扬柳摇摆，心情
+也变得十分愉快。驿道直直地向东西方延伸过去。向东远远地就已经
+看见苏州的北平门了，道上的行人也多了不少。
 LONG );
 	set("outdoors", "suzhou");
 	set("no_clean_up", 0);

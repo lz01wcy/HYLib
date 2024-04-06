@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name("Ã÷Ê·¼­ÂÔ", ({"book ming","book","ming"}));
+        set_name("æ˜å²è¾‘ç•¥", ({"book ming","book","ming"}));
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±¾ºñºñµÄÊé¡£\n");
-                set("unit", "±¾");
+                set("long", "ä¸€æœ¬åšåšçš„ä¹¦ã€‚\n");
+                set("unit", "æœ¬");
                 set("gold", 1);
                 set("material", "paper");
         }
@@ -35,7 +35,7 @@ int do_shake(string arg)
 	{
                 if(query("gold") == 1)
 		{
-								message("vision","Í»È»£¬¼¸Æ¬½ğÒ¶´ÓÊéÖĞµôÁË³öÀ´¡£\n",environment(me));
+								message("vision","çªç„¶ï¼Œå‡ ç‰‡é‡‘å¶ä»ä¹¦ä¸­æ‰äº†å‡ºæ¥ã€‚\n",environment(me));
                 goldleaf1 = new(__DIR__"goldleaf");
                 goldleaf1->move(environment(me));
                 goldleaf2 = new(__DIR__"goldleaf");
@@ -45,7 +45,7 @@ int do_shake(string arg)
                 newbook->move(me);
                 destruct(this_object());
     }
-		else message("vision","²»¹ÜÔõÃ´¶¶£¬ÔÙÃ»½ğÒ¶ÁË¡£\n",environment(me));
+		else message("vision","ä¸ç®¡æ€ä¹ˆæŠ–ï¼Œå†æ²¡é‡‘å¶äº†ã€‚\n",environment(me));
 	return 1;
 	}
 }	

@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-set("short", "��Ұ��Ȫ");
+set("short", "福野温泉");
 set("long", @LONG
-�����Ǹ�Ұ��Ȫ��ƣ����һ�����������������Ȫ������һ���ƣ��
-������Ҳ������ҪԱ����ٹ��˵ĳ���֮����ͬʱ������Ư����ɣ��С��
-�ṩȫ��λ�ķ���ˬ���ˡ�
+这里是福野温泉，疲惫了一天的人们在这里泡温泉，消除一天的疲劳
+，这里也是政界要员，达官贵人的常来之所。同时这里有漂亮的桑拿小姐
+提供全方位的服务，爽极了。
 LONG );
 set("exits",  ([
         "north"  : __DIR__"xiaoxiang1",

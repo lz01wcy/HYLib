@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(RED"ÎüÑªòùòğ"NOR, ({ "bat", "bianfu" }) );
-        set("race", "Ò°ÊŞ");
+        set_name(RED"å¸è¡€è™è "NOR, ({ "bat", "bianfu" }) );
+        set("race", "é‡å…½");
         set("age", 4);
-        set("long", "Éú»îÔÚÒõÉ­É½¶´ÖĞµÄòùòğ,ÒÔÎüÑªÎ¬Éú¡£\n");
+        set("long", "ç”Ÿæ´»åœ¨é˜´æ£®å±±æ´ä¸­çš„è™è ,ä»¥å¸è¡€ç»´ç”Ÿã€‚\n");
         set("attitude", "peaceful");
 
 		set("can_speak",0);
@@ -15,7 +15,7 @@ void create()
         set("cor", 30);
         set("kee", 100);
         set("max_kee",100);
-        set("limbs", ({ "¼â×ì", "ÉíÌå", "ÈâÒí", "×¦×Ó" }) );
+        set("limbs", ({ "å°–å˜´", "èº«ä½“", "è‚‰ç¿¼", "çˆªå­" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 1000);
@@ -38,6 +38,6 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$NÒ»Í·ÔÔµ¹ÔÚµØ,ÕõÔúÁË¼¸ÏÂ£¡$NËÀÁË¡£\n", this_object());
+        message_vision("$Nä¸€å¤´æ ½å€’åœ¨åœ°,æŒ£æ‰äº†å‡ ä¸‹ï¼$Næ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }

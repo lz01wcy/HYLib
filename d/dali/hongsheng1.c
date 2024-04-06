@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-	set("short","Ëş»ù");
+	set("short","å¡”åŸº");
 	set("long",@LONG
-ºêÊ¥ËÂËş»ù×ùÏµÓÃÊ¯°åÆö³É£¬ÓëÇ§Ñ°Ëş»ùÎª×©Æö²»Í¬¡£»ù×ùÎ÷
-ÃæÓĞËşÃÅ£¬¿ÉÈëÄÚÅÊµÇ¶øÉÏ¡£
+å®åœ£å¯ºå¡”åŸºåº§ç³»ç”¨çŸ³æ¿ç Œæˆï¼Œä¸åƒå¯»å¡”åŸºä¸ºç –ç Œä¸åŒã€‚åŸºåº§è¥¿
+é¢æœ‰å¡”é—¨ï¼Œå¯å…¥å†…æ”€ç™»è€Œä¸Šã€‚
 LONG);
 	set("exits",([ /* sizeof() == 1 */
 	    "out"    : __DIR__"hongsheng",
@@ -27,7 +27,7 @@ int valid_leave(object me, string dir)
 		me->add("qi", -20);
 		if (((c_skill*c_skill*c_skill/10)< c_exp) && (c_skill<101))
 		me->improve_skill("dodge", (int)me->query_skill("dodge", 1));
-		tell_object(me,"ÄãÅÀÉÏÒ»²ãÂ¥£¬ÓĞĞ©ÀÛÁË¡£\n");
+		tell_object(me,"ä½ çˆ¬ä¸Šä¸€å±‚æ¥¼ï¼Œæœ‰äº›ç´¯äº†ã€‚\n");
 	}
 	return 1;
 }

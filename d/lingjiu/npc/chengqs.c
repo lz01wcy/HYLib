@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("³ÌÇàËª", ({ "cheng qingshuang", "cheng"}));
+	set_name("ç¨‹é’éœœ", ({ "cheng qingshuang", "cheng"}));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞ¾ûÌì²¿µÄ¸±Ê×Áì.\n");
-	set("title", "¾ûÌì²¿¸±Ê×Áì");
-	set("gender", "Å®ĞÔ");
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­é’§å¤©éƒ¨çš„å‰¯é¦–é¢†.\n");
+	set("title", "é’§å¤©éƒ¨å‰¯é¦–é¢†");
+	set("gender", "å¥³æ€§");
 	set("age", 20);
 	set("shen_type",1);
 	set("attitude", "peaceful");
@@ -50,7 +50,7 @@ void create()
 	map_skill("parry", "liuyang-zhang");
 
 
-	create_family("ÁéğÕ¹¬",3,"µÜ×Ó");
+	create_family("çµé¹«å®«",3,"å¼Ÿå­");
 	setup();
 	carry_object("/d/lingjiu/obj/qingyi")->wear();
             carry_object("/d/lingjiu/obj/doupeng")->wear();

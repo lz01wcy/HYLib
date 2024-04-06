@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ǧ��ͤ");
+	set("short", "千秋亭");
 	set("long", @LONG
-ǰ���ξ�ʮ���깹���޽���ǧ��ͤ��Բ�·�, �����ĳ�, �ϲ�ɡ״
-Բ�����²��ڶ�������ܽ�, ��֯�ü�������.
+前明嘉靖十二年构建修建的千秋亭上圆下方, 抱厦四出, 上层伞状
+圆顶与下层众多进出的檐角, 组织得极其巧妙.
 LONG
 );
 	set("outdoors", "huanggong");

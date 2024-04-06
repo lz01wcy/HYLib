@@ -1,14 +1,14 @@
 inherit NPC;
 inherit F_VENDOR;
 
-string query_save_file() { return DATA_DIR+"npc/¶ËÄ¾Á¼Ó¹";}
+string query_save_file() { return DATA_DIR+"npc/ç«¯æœ¨è‰¯åº¸";}
 void create()
 {
-	set_name("¶ËÄ¾Á¼Ó¹", ({ "duanmu" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç«¯æœ¨è‰¯åº¸", ({ "duanmu" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»¶ËÄ¾Á¼Ó¹ÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½ç«¯æœ¨è‰¯åº¸æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("no_get", "1");
@@ -19,7 +19,7 @@ void create()
 	}));
 
 
-	set("area_name","¾°µÂÕò²ØÕä¸ó");
+	set("area_name","æ™¯å¾·é•‡è—çé˜");
 	set("area_file","/d/jindezheng/gudong-shop.c");
 
         setup();

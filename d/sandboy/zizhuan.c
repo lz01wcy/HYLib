@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "×ÏÖñâÖ");
+  set ("short", "ç´«ç«¹åºµ");
   set ("long", @LONG
-ÖñÁÖÖĞµÄÒ»×ùĞ¡ÄáâÖ£¬Í¨ÌåÆá³Éµ­ÇàÉ«£¬ÓëËÄÖÜµÄ»·¾³ÈÚÎªÒ»Ìå£¬âÖ
-ÖĞÒşÒş´«³ö±øÆ÷µÄÏà»¥×²»÷Éù¡£
+ç«¹æ—ä¸­çš„ä¸€åº§å°å°¼åºµï¼Œé€šä½“æ¼†æˆæ·¡é’è‰²ï¼Œä¸å››å‘¨çš„ç¯å¢ƒèä¸ºä¸€ä½“ï¼Œåºµ
+ä¸­éšéšä¼ å‡ºå…µå™¨çš„ç›¸äº’æ’å‡»å£°ã€‚
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -26,7 +26,7 @@ int valid_leave(object me,string dir)
  ob=present("dubi shenni",this_object());
  if (objectp(ob)&&dir=="enter")  {
        if (ob->query("banghui")!=me->query("banghui"))  {
-   message_vision("$NË«ÊÖÒ»À¹,¶Ô$nµÀ£ºÕâÎ»Ê©Ö÷£¬ÇëÁô²½.\n",ob,me);
+   message_vision("$NåŒæ‰‹ä¸€æ‹¦,å¯¹$né“ï¼šè¿™ä½æ–½ä¸»ï¼Œè¯·ç•™æ­¥.\n",ob,me);
      return notify_fail("");
                   }  
         }

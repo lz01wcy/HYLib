@@ -6,15 +6,15 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("�ϰ���", ({ "laoban niang", "woman", "boss" }));
-	set("title", HIY"��ͨ�ǵ��������"NOR);
-	set("nickname", HIW"����һ��"NOR);
+	set_name("老板娘", ({ "laoban niang", "woman", "boss" }));
+	set("title", HIY"老通城第五代传人"NOR);
+	set("nickname", HIW"汉口一宝"NOR);
 	set("shen_type", 1);
 
 	set("str", 30);
-	set("gender", "Ů��");
+	set("gender", "女性");
 	set("age", 25);
-	set("long","һλ����Ů�ˣ���ʩ֬�ۣ�����һ�����ϣ���������̨��æ���ţ�һ�߻��к��ſ��ˡ�\n");
+	set("long","一位年轻女人，略施脂粉，别有一番风韵，她正在灶台上忙活着，一边还招呼着客人。\n");
 	set("combat_exp", 500);
 	set("attitude", "friendly");
 	set("vendor_goods", ({
@@ -45,10 +45,10 @@ void greeting(object ob)
 	if (!ob || environment(ob) != environment()) return;
 	switch(random(2)) {
 	case 0 :
-		say("�ϰ���Ц���е�˵������λ" + RANK_D->query_respect(ob) + "����������ȱ��Ȳ�~��\n");
+		say("老板娘笑眯眯地说道：这位" + RANK_D->query_respect(ob) + "，快请进来喝杯热茶~。\n");
 		break;
 	case 1 :
-		say("�ϰ���˵����Ӵ����λ" + RANK_D->query_respect(ob) + "����ô�£������иռ�õĶ�Ƥ��������Ć~��\n");
+		say("老板娘说道：哟！这位" + RANK_D->query_respect(ob) + "您嗣词拢勘镜暧懈占搴玫亩蛊ぃ香喷喷的~。\n");
 		break;
 	}
 }

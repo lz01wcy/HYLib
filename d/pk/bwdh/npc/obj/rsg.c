@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-        set_name(HIG "³¤Éú¹û" NOR, ({"changsheng guo","guo"}));
+        set_name(HIG "é•¿ç”Ÿæžœ" NOR, ({"changsheng guo","guo"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("long",
-                "Îäµ±É½µÄÌØ²ú, µÀÊ¿ÃÇÑøÉú¼ÑÆ·¡£\n");
+                "æ­¦å½“å±±çš„ç‰¹äº§, é“å£«ä»¬å…»ç”Ÿä½³å“ã€‚\n");
 set("value", 0);
-		set("unit", "Ã¶");
+		set("unit", "æžš");
 		set("no_get", 1);
                set("medicine", "drug");
 //                set("no_drop", 1);
@@ -35,19 +35,19 @@ int do_eat(string arg)
 	string *sk;
 
 	object me = this_player();
-	if (!living(me)) return notify_fail("Ïëµ±»úÂð£¿\n");
+	if (!living(me)) return notify_fail("æƒ³å½“æœºå—ï¼Ÿ\n");
 	if (!id(arg)) return 0;
         if( !environment(me)->query("bwdhpk"))
 {
-       message_vision(HIR "\n$N´ËÒ© Îª±ÈÈü×¨ÓÃ£¬Ò©±»Ã»ÊÕÁË£¡\n\n" NOR,
+       message_vision(HIR "\n$Næ­¤è¯ ä¸ºæ¯”èµ›ä¸“ç”¨ï¼Œè¯è¢«æ²¡æ”¶äº†ï¼\n\n" NOR,
                        me);
 	destruct(this_object());   
        return 1;       
 }
 
-	message_vision(HIG "$N³ÔÏÂÒ»Ã¶"
+	message_vision(HIG "$Nåƒä¸‹ä¸€æžš"
 	+this_object()->query("name")+
-	HIG "£¬¶ÙÊ±¾õµÃ¾«Á¦ÍúÊ¢£¬ÉõÖÁ²»ÔÙ¸Ðµ½¸É¿Ê¼¢¶ö¡£\n"
+	HIG "ï¼Œé¡¿æ—¶è§‰å¾—ç²¾åŠ›æ—ºç››ï¼Œç”šè‡³ä¸å†æ„Ÿåˆ°å¹²æ¸´é¥¥é¥¿ã€‚\n"
 	NOR,me);
 //	"/adm/daemons/emoted"->do_emote(me,"taste");
         me->set("qi", me->query("max_qi"));

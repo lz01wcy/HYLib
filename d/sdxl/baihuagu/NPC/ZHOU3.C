@@ -1,5 +1,5 @@
 //
-// zhou.c ÖÜ²®Í¨
+// zhou.c å‘¨ä¼¯é€š
 
 #include <ansi.h>;
 
@@ -7,14 +7,14 @@ inherit NPC;
 void create()
 {
 int i,k,a,b,c,d,e,f,temp;
-	set_name("ÖÜ²®Í¨", ({ "zhou botong", "zhou", "bo tong" }));
-	set("gender", "ÄĞĞÔ");
-	set("nickname", CYN "ÀÏÍçÍ¯" NOR ) ;
-	set("title", "È«Õæ½ÌµÚÒ»´úµÜ×Ó") ;
+	set_name("å‘¨ä¼¯é€š", ({ "zhou botong", "zhou", "bo tong" }));
+	set("gender", "ç”·æ€§");
+	set("nickname", CYN "è€é¡½ç«¥" NOR ) ;
+	set("title", "å…¨çœŸæ•™ç¬¬ä¸€ä»£å¼Ÿå­") ;
 	set("age", 45);
 	set("long",
-		"Ëû¾ÍÊÇÈË³Æ¡¸ÀÏÍçÍ¯¡¹µÄÖÜ²®Í¨¡£\n"
-		"ËûÒ»¸±ÏÉ·çµÀ¹ÇµÄÑù×Ó£¬¿´ÆğÀ´ºÃÏó²ÅËÄÊ®À´Ëê¡£ºÜÄÑÏëÏóËûÆäÊµÒÑ¾­ÄêÓâ¹ÅÏ¡ÁË¡£\n"
+		"ä»–å°±æ˜¯äººç§°ã€Œè€é¡½ç«¥ã€çš„å‘¨ä¼¯é€šã€‚\n"
+		"ä»–ä¸€å‰¯ä»™é£é“éª¨çš„æ ·å­ï¼Œçœ‹èµ·æ¥å¥½è±¡æ‰å››åæ¥å²ã€‚å¾ˆéš¾æƒ³è±¡ä»–å…¶å®å·²ç»å¹´é€¾å¤ç¨€äº†ã€‚\n"
 	);
 
 	set("combat_exp", 25000000);
@@ -38,17 +38,17 @@ set("kar",d);
         set("jiuyin/shang", 1);
         set("jiuyin/xia", 1);
 	set_skill("force", 580);
-	set_skill("xiantian-qigong", 580);    //ÏÈÌìÆø¹¦
+	set_skill("xiantian-qigong", 580);    //å…ˆå¤©æ°”åŠŸ
 	set_skill("sword", 580);
-	set_skill("quanzhen-jian", 580);  //È«Õæ½£
+	set_skill("quanzhen-jian", 580);  //å…¨çœŸå‰‘
 	set_skill("dodge", 580);
-	set_skill("jinyan-gong", 580);   //½ğÑã¹¦
+	set_skill("jinyan-gong", 580);   //é‡‘é›åŠŸ
 	set_skill("strike", 580);
-	set_skill("haotian-zhang", 580);    //ê»ÌìÕÆ
+	set_skill("haotian-zhang", 580);    //æ˜Šå¤©æŒ
 	set_skill("cuff", 580);
 
 	set_skill("unarmed", 600);
-	set_skill("kongming-quan", 600);     //¿ÕÃ÷Èª
+	set_skill("kongming-quan", 600);     //ç©ºæ˜æ³‰
 	set_skill("hubo", 600);
 	set_skill("parry", 680);
 	set_skill("literate", 660);
@@ -63,14 +63,14 @@ set("kar",d);
 	prepare_skill("strike", "haotian-zhang");
 
 	set("inquiry", ([
-		"¾ÅÒõÕæ¾­" : "ÄãÔÙÌáÕâÀÍÊ²×Ó£¬ÎÒ¾Í²»¸úÄãÍæÁË¡£\n",
-		"çø¹Ã"     : "ÄãÖªµÀËıÔÚÄÄ¶ùÂğ£¿¿ì£¬¿ì¸æËßÎÒ¡£",
-		"Éß"       : "²»ÒªÏÅÎÒ£¬ÎÒ×îÅÂÉßÁË£¡\n",
-		"°İ°ÑĞÖµÜ" : "ÌáÆğÎÒµÄ°İ°ÑĞÖµÜ¹ù¾¸£¬Ëû¿ÉÊÇ¸ö´óÓ¢ĞÛ¡£²»¹ı±ÈÆğÎÒÀ´£¬ÎûÎû¡£",
-		"¹ù¾¸"     : "ÌáÆğÎÒµÄ°İ°ÑĞÖµÜ¹ù¾¸£¬Ëû¿ÉÊÇ¸ö´óÓ¢ĞÛ¡£²»¹ı±ÈÆğÎÒÀ´£¬ÎûÎû¡£",
-		"»ÆÈØ"     : "ÕâĞ¡Ñ¾Í·¹í»úÁé£¬ÎÒ±È²»¹ıËı¡£",
+		"ä¹é˜´çœŸç»" : "ä½ å†æè¿™åŠ³ä»€å­ï¼Œæˆ‘å°±ä¸è·Ÿä½ ç©äº†ã€‚\n",
+		"ç‘›å§‘"     : "ä½ çŸ¥é“å¥¹åœ¨å“ªå„¿å—ï¼Ÿå¿«ï¼Œå¿«å‘Šè¯‰æˆ‘ã€‚",
+		"è›‡"       : "ä¸è¦å“æˆ‘ï¼Œæˆ‘æœ€æ€•è›‡äº†ï¼\n",
+		"æ‹œæŠŠå…„å¼Ÿ" : "æèµ·æˆ‘çš„æ‹œæŠŠå…„å¼Ÿéƒ­é–ï¼Œä»–å¯æ˜¯ä¸ªå¤§è‹±é›„ã€‚ä¸è¿‡æ¯”èµ·æˆ‘æ¥ï¼Œå˜»å˜»ã€‚",
+		"éƒ­é–"     : "æèµ·æˆ‘çš„æ‹œæŠŠå…„å¼Ÿéƒ­é–ï¼Œä»–å¯æ˜¯ä¸ªå¤§è‹±é›„ã€‚ä¸è¿‡æ¯”èµ·æˆ‘æ¥ï¼Œå˜»å˜»ã€‚",
+		"é»„è“‰"     : "è¿™å°ä¸«å¤´é¬¼æœºçµï¼Œæˆ‘æ¯”ä¸è¿‡å¥¹ã€‚",
 	]) );
-	create_family("È«Õæ½Ì", 1, "µÜ×Ó");
+	create_family("å…¨çœŸæ•™", 1, "å¼Ÿå­");
 	set_temp("apply/attack", 150);
 	set_temp("apply/armor", 510);
 	set_temp("apply/damage", 515);
@@ -84,9 +84,9 @@ int accept_object(object who, object ob)
 {
 	if (ob->query("id") == "du she")
 	{
-		message_vision("$NÄÃ³öÒ»Ìõ¶¾ÉßÔÚÀÏÍçÍ¯µÄÑÛÇ°»ÎÁË»Î£®£®£®£®£®£®
-ÀÏÍçÍ¯ÏÅµÃÌøÁËÆğÀ´£¬³å³ö¶´Íâ£¡±ßÅÜ±ßº°£ºÔã¸âÍ¸ÁË£¬ÀÏÍæÍ¯Õâ·¬ËÀ¶¨ÁË£¡\n\n
-ÉùÒô½¥½¥Ô¶È¥£¬ÖÕÓÚ²»¸´¶úÎÅ¡£\n" ,who);
+		message_vision("$Næ‹¿å‡ºä¸€æ¡æ¯’è›‡åœ¨è€é¡½ç«¥çš„çœ¼å‰æ™ƒäº†æ™ƒï¼ï¼ï¼ï¼ï¼ï¼
+è€é¡½ç«¥å“å¾—è·³äº†èµ·æ¥ï¼Œå†²å‡ºæ´å¤–ï¼è¾¹è·‘è¾¹å–Šï¼šç³Ÿç³•é€äº†ï¼Œè€ç©ç«¥è¿™ç•ªæ­»å®šäº†ï¼\n\n
+å£°éŸ³æ¸æ¸è¿œå»ï¼Œç»ˆäºä¸å¤è€³é—»ã€‚\n" ,who);
 		destruct(this_object());
 		return 0;
 	}
@@ -94,10 +94,10 @@ int accept_object(object who, object ob)
 	{
 		if(who->query_temp("marks/mihave") && (int)who->query("marks/mi_age")<=121 )
 		{
-			message_vision("ÀÏÍçÍ¯½Ó¹ı·äÃÛ£¬¸ßĞËµØËµµÀ£ººÃ£¬ºÃ£¬ºÃ¡£\n\n",who);
+			message_vision("è€é¡½ç«¥æ¥è¿‡èœ‚èœœï¼Œé«˜å…´åœ°è¯´é“ï¼šå¥½ï¼Œå¥½ï¼Œå¥½ã€‚\n\n",who);
 			if(who->query("combat_exp") < 100000)
 			{
-				tell_object(who,HIW"ÄãµÄ¾­ÑéÉÏÉıÁË£¡\nÄãµÄÇ±ÄÜÉÏÉıÁË£¡\n" NOR);
+				tell_object(who,HIW"ä½ çš„ç»éªŒä¸Šå‡äº†ï¼\nä½ çš„æ½œèƒ½ä¸Šå‡äº†ï¼\n" NOR);
 				who->add("combat_exp",100+random(50));
 				who->add("potential",20+random(30));
 			}
@@ -105,7 +105,7 @@ int accept_object(object who, object ob)
 			who->add("marks/mi",1);
 			if(who->query("age")>39)
 			{
-				tell_object(who, HIG "ÓÉì¶ÇÚÑøÓñ·ä£¬ÄãÏÔµÃ¸ü·¢ÄêÇáÁË£¡\n" NOR);
+				tell_object(who, HIG "ç”±æ–¼å‹¤å…»ç‰èœ‚ï¼Œä½ æ˜¾å¾—æ›´å‘å¹´è½»äº†ï¼\n" NOR);
 				who->add("mud_age",-86400);
 				who->delete("last_slp");
 				who->delete("jingzuo_time");
@@ -116,7 +116,7 @@ int accept_object(object who, object ob)
 
 		else
 		{
-			message_vision( HIY"ÀÏÍçÍ¯½Ó¹ı·äÃÛ£¬¶Ô$N°çÁË¸ö¹íÁ³£¬Ğ¦µÀ£º·´ÕıÕâÃÛÒ²²»ÊÇÄã×öµÄ£¬²»³Ô°×²»³Ô¡£\n\n"NOR,who);
+			message_vision( HIY"è€é¡½ç«¥æ¥è¿‡èœ‚èœœï¼Œå¯¹$Næ‰®äº†ä¸ªé¬¼è„¸ï¼Œç¬‘é“ï¼šåæ­£è¿™èœœä¹Ÿä¸æ˜¯ä½ åšçš„ï¼Œä¸åƒç™½ä¸åƒã€‚\n\n"NOR,who);
 		}
 		call_out("delmi",2);
 		return 1;

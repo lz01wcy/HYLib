@@ -1,4 +1,4 @@
-// miejue.c Ãğ¾øÊ¦Ì«
+// miejue.c ç­ç»å¸ˆå¤ª
 // Modified by That Oct.1997
 #include <command.h>
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ğ¡Ãğ¾øÊ¦Ì«", ({ "miejue shitai","miejue","shitai"}));
+        set_name("å°ç­ç»å¸ˆå¤ª", ({ "miejue shitai","miejue","shitai"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚÈı´úµÜ×Ó£¬ÏÖÈÎ¶ëáÒÅÉÕÆÃÅÈË¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬ä¸‰ä»£å¼Ÿå­ï¼Œç°ä»»å³¨åµ‹æ´¾æŒé—¨äººã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 62);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -34,8 +34,8 @@ void create()
                 (: exert_function, "zhixin" :), 
         }) );
         set("inquiry",([
-                "Ìê¶È"  : "Æ¶ÄáÖ»Öª³ıÑıÉ±Ä§£¬²»Ìê¶ÈµÜ×Ó¡£",
-                "³ö¼Ò"  : "Æ¶ÄáÖ»Öª³ıÑıÉ±Ä§£¬²»Ìê¶ÈµÜ×Ó¡£",
+                "å‰ƒåº¦"  : "è´«å°¼åªçŸ¥é™¤å¦–æ€é­”ï¼Œä¸å‰ƒåº¦å¼Ÿå­ã€‚",
+                "å‡ºå®¶"  : "è´«å°¼åªçŸ¥é™¤å¦–æ€é­”ï¼Œä¸å‰ƒåº¦å¼Ÿå­ã€‚",
         ]));
 
         set("str", 40);
@@ -80,7 +80,7 @@ void create()
         map_skill("parry","huifeng-jian");
         prepare_skill("strike", "jinding-zhang");
 //        map_skill("magic","bashi-shentong");
-        create_family("¶ëáÒÅÉ", 3, "ÕÆÃÅÈË");
+        create_family("å³¨åµ‹æ´¾", 3, "æŒé—¨äºº");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();

@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name(HIY"½ğÓ¥"NOR, ({ "hawk" }) );
+        set_name(HIY"é‡‘é¹°"NOR, ({ "hawk" }) );
         set("no_get",1);
-        set("gender", "ÄĞĞÔ" );
-	 set("title",HIY"´óÄ®·ÉÓ¥"NOR);
+        set("gender", "ç”·æ€§" );
+	 set("title",HIY"å¤§æ¼ é£é¹°"NOR);
         set("age", 22);
-        set("long","Ò»¸öÉíĞÎ¸ß´óµÄºº×Ó,ÊìÏ¤ÈçºÎÌá¸ß(trainpet)Ò°ÊŞµÄÄÜÁ¦¡£\n");
+        set("long","ä¸€ä¸ªèº«å½¢é«˜å¤§çš„æ±‰å­,ç†Ÿæ‚‰å¦‚ä½•æé«˜(trainpet)é‡å…½çš„èƒ½åŠ›ã€‚\n");
         set("combat_exp", 500000);
         set("attitude", "friendly");
         set("chat_chance", 5);
@@ -36,12 +36,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "½ğÓ¥ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÎÒ¿ÉÒÔ°ïÄãÑµÁ·Ò°ÊŞ£¨trainpet£©£¬Äã¸¶½ğ×Ó£¿\n");
+                        say( "é‡‘é¹°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæˆ‘å¯ä»¥å¸®ä½ è®­ç»ƒé‡å…½ï¼ˆtrainpetï¼‰ï¼Œä½ ä»˜é‡‘å­ï¼Ÿ\n");
                         break;
                 case 1:
-                        say( "½ğÓ¥Ğ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬·ÅĞÄ£¡´ò²»ÉËµÄ£¡\n");
+                        say( "é‡‘é¹°ç¬‘é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæ”¾å¿ƒï¼æ‰“ä¸ä¼¤çš„ï¼\n");
 
                         break;
         }
@@ -53,25 +53,25 @@ int do_train(string arg)
 	int cost;
         me = this_player();
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
-	if(!arg) return notify_fail("½ğÓ¥µÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
+	if(!arg) return notify_fail("é‡‘é¹°é“ï¼šï¼‚ä½ è¦ä»€ä¹ˆå‘€ï¼Ÿï¼‚\n");
 	pet = present(arg,environment());
-	if(!objectp(pet)) return notify_fail("½ğÓ¥µÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+	if(!objectp(pet)) return notify_fail("é‡‘é¹°é“ï¼šï¼‚ä½ è¦ä»€ä¹ˆå‘€ï¼Ÿï¼‚\n");
 	if(pet->query("possessed") != me )
-	return notify_fail("½ğÓ¥µÀ£º£¢ÄÇºÃÏó²»ÊÇÄãµÄ°É£¿£¢\n");
+	return notify_fail("é‡‘é¹°é“ï¼šï¼‚é‚£å¥½è±¡ä¸æ˜¯ä½ çš„å§ï¼Ÿï¼‚\n");
 //okey we identified the target, now the cost:
 	cost = to_int(sqrt(to_float((int)pet->query("combat_exp"))))/5;
 	gold = present("gold_money", me);
-        if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if(!gold) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < cost/3)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ"+chinese_number(cost)+"Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰"+chinese_number(cost)+"ä¸¤é‡‘å­ã€‚\n");
 	if((int)me->query("score") < cost/8)
-	return notify_fail("ÄãµÄ½­ºşÔÄÀú²»¹»"+chinese_number(cost/8)+"µã¡£\n");
+	return notify_fail("ä½ çš„æ±Ÿæ¹–é˜…å†ä¸å¤Ÿ"+chinese_number(cost/8)+"ç‚¹ã€‚\n");
 	pet->add("combat_exp",cost*50);
 	pet->save();
 	gold->add_amount(-cost/3);
 	me->add("score",-cost/8);
-	command("say ºÃÁË£¡ÏÂ´ÎÔÙ´ò£¡\n");
+	command("say å¥½äº†ï¼ä¸‹æ¬¡å†æ‰“ï¼\n");
 	return 1;
 }
 void unconcious()

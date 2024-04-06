@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÀ±ø", ({ "wei bing", "bing" }) );
+        set_name("å«å…µ", ({ "wei bing", "bing" }) );
         set("long",
-"ÕâÊÇ¸öÕýÔÚÖ´ÐÐÑ²ÂßÈÎÎñµÄÎÀ±ø£¬Ë­Ò²²»ÇáÒ×µØÕÐÈÇËûÃÇ¡£\n"
-"Äã×îºÃÒ²²»ÒªÕÐÈÇËûÃÇ¡£ \n");
+"è¿™æ˜¯ä¸ªæ­£åœ¨æ‰§è¡Œå·¡é€»ä»»åŠ¡çš„å«å…µï¼Œè°ä¹Ÿä¸è½»æ˜“åœ°æ‹›æƒ¹ä»–ä»¬ã€‚\n"
+"ä½ æœ€å¥½ä¹Ÿä¸è¦æ‹›æƒ¹ä»–ä»¬ã€‚ \n");
         set("attitude", "heroism");
         set("pursuer", 1);
         set("vendetta_mark", "authority");
@@ -15,8 +15,8 @@ void create()
          set("combat_exp", 200000+random(10000000));
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "ÎÀ±øºÈµÀ£º¹ê¶ù×Ó£¬»¹²»¿ì¸øÀÏ×Ó·ÅÏÂÎäÆ÷ÊøÊÖ¾Í¸¿£¿\n",
-                "ÎÀ±øºÈµÀ£ºÄãÍÞ¾¹¸Ò¾Ü²¶£¿·´ÁË£¡·´ÁË£¡\n"
+                "å«å…µå–é“ï¼šé¾Ÿå„¿å­ï¼Œè¿˜ä¸å¿«ç»™è€å­æ”¾ä¸‹æ­¦å™¨æŸæ‰‹å°±ç¼šï¼Ÿ\n",
+                "å«å…µå–é“ï¼šä½ å¨ƒç«Ÿæ•¢æ‹’æ•ï¼Ÿåäº†ï¼åäº†ï¼\n"
         }) );
 
         set_skill("unarmed", 660);
@@ -50,13 +50,13 @@ void init()
         if (!living(this_object()))     return;
         if (interactive(ob = this_player())){
                 if (    (int)ob->query_condition("killer") ){
-                        command("say ¹þ£¡×ÜËã¸ø´óÒ¯´þ×¡ÁË£¬É±ÈË·¸£¬ÄÇÀïÌÓ£¿\n");
+                        command("say å“ˆï¼æ€»ç®—ç»™å¤§çˆ·é€®ä½äº†ï¼Œæ€äººçŠ¯ï¼Œé‚£é‡Œé€ƒï¼Ÿ\n");
                         ob->start_busy(2);
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 0, ob);
                 }
                 if( this_player()->query_temp("illicit") ){
-                        command("say ÑÎèÉ£¡ÄÇÀïÌÓ£¿\n");
+                        command("say ç›æž­ï¼é‚£é‡Œé€ƒï¼Ÿ\n");
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 0, ob);
                 }
@@ -68,7 +68,7 @@ int do_kill(string arg)
 {
         object ob;
         if (living(this_object()) && this_object()->id(arg)){
-                command("say Ïë´ò¼Ü£¿ÐÖµÜÃÇ£¬ÉÏ£¡");
+                command("say æƒ³æ‰“æž¶ï¼Ÿå…„å¼Ÿä»¬ï¼Œä¸Šï¼");
                 if (ob=present("wu jiang",environment()))
                         ob->kill_ob(this_player());
                 if (ob=present("guan bing",environment()))
@@ -78,7 +78,7 @@ int do_kill(string arg)
 }
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("killer", 500);
         kill_ob(me);
         return 1;

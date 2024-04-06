@@ -7,15 +7,15 @@ string ask_me(object who);
 
 void create()
 {
-        set_name("Ğ¡Æ¦×Ó", ({ "pizi" }) );
-        set("title", "Æ¦×Ó°ï");
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°ç—å­", ({ "pizi" }) );
+        set("title", "ç—å­å¸®");
+        set("gender", "ç”·æ€§" );
         set("age", 23);
         set("cor", 30);
         set("long",
                 
-"ËûÊÇ¸öÔÚºúÍ¬Àï´ô×ÅµÄÆ¦×Ó£¬ËûÃÇ²»¸ÒÈÇ¹Ù±ø£¬ÎäÁÖÖĞµÄÈË¡£\n"                              
-                "µ«ÊÇËûÃÇ¾­³£ÆÛ¸ºÀÏ°ÙĞÕ¡£\n");
+"ä»–æ˜¯ä¸ªåœ¨èƒ¡åŒé‡Œå‘†ç€çš„ç—å­ï¼Œä»–ä»¬ä¸æ•¢æƒ¹å®˜å…µï¼Œæ­¦æ—ä¸­çš„äººã€‚\n"                              
+                "ä½†æ˜¯ä»–ä»¬ç»å¸¸æ¬ºè´Ÿè€ç™¾å§“ã€‚\n");
 
         set("combat_exp", 3000);
         set("attitude", "friendly");
@@ -31,7 +31,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say ß×... Òª´ò¾ÍÕæ´ò°É£¬¹âÊÇ½ÏÁ¿¶àÃ»ÒâË¼£¿");
+        command("say å’¦... è¦æ‰“å°±çœŸæ‰“å§ï¼Œå…‰æ˜¯è¾ƒé‡å¤šæ²¡æ„æ€ï¼Ÿ");
         command("grin");
         kill_ob(me);
         return 1;

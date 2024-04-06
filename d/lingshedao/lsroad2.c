@@ -2,8 +2,8 @@
 inherit ROOM;
 void create()
 {
-        set("short", "É½¼äĞ¡µÀ");
-        set("long", "ÕâÊÇÒ»ÌõËéÊ¯Ğ¡Â·,Íù±±¾Íµ½É½¸ÔÁË.\n");
+        set("short", "å±±é—´å°é“");
+        set("long", "è¿™æ˜¯ä¸€æ¡ç¢çŸ³å°è·¯,å¾€åŒ—å°±åˆ°å±±å†ˆäº†.\n");
         set("exits", ([
                 "southeast"    : __DIR__"lsroad1",
                 "northup"  : __DIR__"shangang",

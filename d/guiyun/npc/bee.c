@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃÛ·ä", ({ "bee", "mifeng", "feng" }) );
-	set("race", "Ò°ÊŞ");
-	set("subrace", "·É³æ");
+        set_name("èœœèœ‚", ({ "bee", "mifeng", "feng" }) );
+	set("race", "é‡å…½");
+	set("subrace", "é£è™«");
         set("age", 2);
-        set("long", "Ò»Ö»·ÉÀ´·ÉÈ¥µÄĞ¡ÃÛ·ä¡£\n");
+        set("long", "ä¸€åªé£æ¥é£å»çš„å°èœœèœ‚ã€‚\n");
 	set("attitude", "aggressive");
         set("combat_exp", 500);
-    set("limbs", ({ "×ì","´¥½Ç", "ÉíÌå", "Î²´Ì"}));
+    set("limbs", ({ "å˜´","è§¦è§’", "èº«ä½“", "å°¾åˆº"}));
     set("verbs", ({ "bite" }) );
 	set_temp("apply/attack", 5);
         set_temp("apply/defense", 4);

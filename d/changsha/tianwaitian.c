@@ -1,13 +1,13 @@
 // /d/zhuojun/tianwaitian.c
-// Room in �ÿ�
+// Room in 涿郡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "������");
+	set("short", "望江阁");
 	set("long", @LONG
-�������¥�ǳ�ɳ������һ�Ҿ�¥���������Ƶ�״Ԫ����Կ���
-һ����ɽ�ͺ��ʣ��ϱ����Ӧ�о��С��۸񹫵����������ϡ�
+望江阁酒楼是长沙城最大的一家酒楼，里面酿制的状元红可以堪称
+一绝。山猛海鲜，南北大菜应有尽有。价格公道，服务至上。
 LONG
 	);
 set("exits", ([

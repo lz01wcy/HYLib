@@ -3,17 +3,17 @@
 inherit BLADE; 
 void create()
 {
-        set_name(BLK"Õ¶¹íµ¶"NOR, ({ "ghost blade","blade" }) );
+        set_name(BLK"æ–©é¬¼åˆ€"NOR, ({ "ghost blade","blade" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñµ¶ÉíÏÁ³¤ÆáºÚµÄºúµ¶£¬ÉÁË¸×Å»Ş°µµÄÑª¹â¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠåˆ€èº«ç‹­é•¿æ¼†é»‘çš„èƒ¡åˆ€ï¼Œé—ªçƒç€æ™¦æš—çš„è¡€å…‰ã€‚\n");
                 set("value", 8000);
                 set("material", "steel");
-        set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»°ÑÁÁÉÁÉÁµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æŠ½å‡ºä¸€æŠŠäº®é—ªé—ªçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nåˆ«åœ¨è…°é—´ã€‚\n");
         }
         ::init_blade(280);
 }

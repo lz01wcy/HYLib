@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("ÊÌÎÀ",({ "shiwei" }) );
-   set("gender", "ÄÐÐÔ" );
+   set_name("ä¾å«",({ "shiwei" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 35);
-   set("long", "ÕâÊÇÊØÎÀ»Ê¹¬µÄÊÌÎÀ£¬¿´ÆðÀ´Íþ·çÁÝÁÝ¡£\n");
+   set("long", "è¿™æ˜¯å®ˆå«çš‡å®«çš„ä¾å«ï¼Œçœ‹èµ·æ¥å¨é£Žå‡›å‡›ã€‚\n");
 //   set("guard","taiyuan");  
 	set("combat_exp", 810000);
 	set("shen_type", 1);
@@ -70,7 +70,7 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 //	me->apply_condition("killer", 500);
 	kill_ob(me);
 	return 1;

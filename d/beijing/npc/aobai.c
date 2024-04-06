@@ -4,15 +4,15 @@ inherit F_UNIQUE;
 #include <ansi.h>
 void create()
 {
-	set_name("÷¡°İ", ({ "ao bai", "ao", "bai"}));
+	set_name("é³Œæ‹œ", ({ "ao bai", "ao", "bai"}));
 	set("long",
-		"Ëû¾ÍÊÇÂúÖŞµÚÒ»ÓÂÊ¿£¬Éí´©Ò»Ï®½ğ±ß½õ¶Ğ¡£ËûÉí²Ä¿ıÎà£¬\n"
-		"ÏàÃ²ÕøÄü£¬Ì«ÑôÑ¨¸ß¸ß¹ÄÆğ£¬ËÆºõÉí»³¾øÊÀÎä¹¦¡£\n"
+		"ä»–å°±æ˜¯æ»¡æ´²ç¬¬ä¸€å‹‡å£«ï¼Œèº«ç©¿ä¸€è¢­é‡‘è¾¹é”¦ç¼ã€‚ä»–èº«æé­æ¢§ï¼Œ\n"
+		"ç›¸è²Œç‹°ç‹ï¼Œå¤ªé˜³ç©´é«˜é«˜é¼“èµ·ï¼Œä¼¼ä¹èº«æ€€ç»ä¸–æ­¦åŠŸã€‚\n"
 	);
 
-	set("nickname", "ÂúÖŞµÚÒ»ÓÂÊ¿");
-	set("title", HIC"ÉÙ±£"HIR"Ò»µÈ³¬Îä¹«"HIY"Ïâ»ÆÆìÆìÖ÷"NOR);
-	set("gender", "ÄĞĞÔ");
+	set("nickname", "æ»¡æ´²ç¬¬ä¸€å‹‡å£«");
+	set("title", HIC"å°‘ä¿"HIR"ä¸€ç­‰è¶…æ­¦å…¬"HIY"é•¶é»„æ——æ——ä¸»"NOR);
+	set("gender", "ç”·æ€§");
 	set("attitude", "aggressive");
 
 	set("age", 50);
@@ -47,8 +47,8 @@ void create()
 
         set("chat_chance_combat", 10);  
         set("chat_msg_combat", ({
-                " ÷¡°İÅ­µÀ£ºÄã¸Ò²»ÈÃÎÒË¯¾õ£¬ÀÏ×ÓÔ×ÁËÄã £¡\n",
-                (: command("say ÀÏ×ÓÔ×ÁËÄãÕâ" + RANK_D->query_rude(this_player())+"!\n") :),
+                " é³Œæ‹œæ€’é“ï¼šä½ æ•¢ä¸è®©æˆ‘ç¡è§‰ï¼Œè€å­å®°äº†ä½  ï¼\n",
+                (: command("say è€å­å®°äº†ä½ è¿™" + RANK_D->query_rude(this_player())+"!\n") :),
 		(: command("pain") :),
                       }) );
         setup();
@@ -61,9 +61,9 @@ void create()
 
 void die()
 {
-        message("vision","\n÷¡°İ¿ñ½ĞµÀ£ºÏë²»µ½ÎÒÒ»ÊÀÍşÃû¾¹È»»ÙÓÚÄãÊÖ£¡\n","/d/beijing/aobai6");        	 
-        message("vision","÷¡°İ¶ÙÁËÒ»¶Ù£¬Ì¾µÀ£º°¦£¬Ö»¿ÉÏ§ÎÒµÄÄÇÃ´¶à±¦±´°¡£¡\n","/d/beijing/aobai6");        	 
-        message_vision("$N°§º¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+        message("vision","\né³Œæ‹œç‹‚å«é“ï¼šæƒ³ä¸åˆ°æˆ‘ä¸€ä¸–å¨åç«Ÿç„¶æ¯äºä½ æ‰‹ï¼\n","/d/beijing/aobai6");        	 
+        message("vision","é³Œæ‹œé¡¿äº†ä¸€é¡¿ï¼Œå¹é“ï¼šå”‰ï¼Œåªå¯æƒœæˆ‘çš„é‚£ä¹ˆå¤šå®è´å•Šï¼\n","/d/beijing/aobai6");        	 
+        message_vision("$Nå“€åšä¸€å£°ï¼Œæ­»äº†ï¼\n", this_object());
         ::die();
 }
 

@@ -10,10 +10,10 @@ void serve_tea(object who);
 
 void create()
 {
-      set_name("Ğ¡ºÍÉĞ", ({ "xiao heshang" }) );
-      set("gender", "ÄĞĞÔ" );
+      set_name("å°å’Œå°š", ({ "xiao heshang" }) );
+      set("gender", "ç”·æ€§" );
       set("age", 14);
-      set("long", "ÕâÊÇ¸ö»úÁé¹ÔÇÉµÄĞ¡ºÍÉĞ\n");
+      set("long", "è¿™æ˜¯ä¸ªæœºçµä¹–å·§çš„å°å’Œå°š\n");
       set("str", 15);
       set("dex", 20);
       set("con", 17);
@@ -29,16 +29,16 @@ void create()
 
       set("attitude", "peaceful");
       set("inquiry", ([
-            "¶¨Á¦" : (: ask_dingli :),
-            "ìøÁ¦" : (: ask_changli :),
-            "ÌìÂíĞĞ¿Õ" : "ÄãÍæÍêÀ²£¬¾ÓÈ»Á¬ÎÒµÄÖ÷ÈË¶¼²»ÈÏÊ¶£¡\n",
+            "å®šåŠ›" : (: ask_dingli :),
+            "ç¦…åŠ›" : (: ask_changli :),
+            "å¤©é©¬è¡Œç©º" : "ä½ ç©å®Œå•¦ï¼Œå±…ç„¶è¿æˆ‘çš„ä¸»äººéƒ½ä¸è®¤è¯†ï¼\n",
       ]));
       set("chat_chance", 20);
       set("chat_msg", ({
-            "ÄÏÎŞ°¢ÃÖÍÓ·ğ£¡\n",
-            "ÄÏÎŞÃÖÀÕ·ğÆĞÈø£¡\n",
-            "ÄÏÎŞ´óÊÆÖÂÆĞÈø£¡\n",
-            "ÄÏÎŞ´ó´È´ó±¯¹ÛÊÀÒôÆĞÈø£¡\n",
+            "å—æ— é˜¿å¼¥é™€ä½›ï¼\n",
+            "å—æ— å¼¥å‹’ä½›è©è¨ï¼\n",
+            "å—æ— å¤§åŠ¿è‡´è©è¨ï¼\n",
+            "å—æ— å¤§æ…ˆå¤§æ‚²è§‚ä¸–éŸ³è©è¨ï¼\n",
             (: random_move :),
             (: random_move :),
       }) );
@@ -64,7 +64,7 @@ void greeting(object ob)
       if ( environment(ob) != environment() )
             return;
       if (ob->query("id") == "solomon" )
-            command("say Ê¦¸µ»ØÀ´À²");
+            command("say å¸ˆå‚…å›æ¥å•¦");
       else
             command("hi "+ob->query("id"));
 }
@@ -73,12 +73,12 @@ int ask_dingli()
 {
       if ( this_player()->query("chanxin/save")>=2 )
       {
-            command("say Õâ¸ö÷áÄã»¹ÊÇÓĞÒ»µãµÄ£¡\n");
+            command("say è¿™ä¸ªéº½ä½ è¿˜æ˜¯æœ‰ä¸€ç‚¹çš„ï¼\n");
             this_player()->set("chanxin/save",3);
       }
       else
       {
-            command("say ±ğ¸øÎÒ´ò¹ş¹ş£¬ÇÆÄãÕâµÂĞÔ£¡\n");
+            command("say åˆ«ç»™æˆ‘æ‰“å“ˆå“ˆï¼Œç§ä½ è¿™å¾·æ€§ï¼\n");
       }
       return 1;
 }
@@ -87,12 +87,12 @@ int ask_changli()
 {
       if ( this_player()->query("chanxin/save")>=3 )
       {
-            command("say Õâ¸ö÷á»¹²»´í£¬Òªµ½Â¥ÉÏÀ´ºÈµã¾ÆÃ´£¡\n");
+            command("say è¿™ä¸ªéº½è¿˜ä¸é”™ï¼Œè¦åˆ°æ¥¼ä¸Šæ¥å–ç‚¹é…’ä¹ˆï¼\n");
             this_player()->set("chanxin/save",4);
       }
       else
       {
-            command("say ±ğ¸øÎÒ´ò¹ş¹ş£¬ÇÆÄãÕâµÂĞÔ£¡\n");
+            command("say åˆ«ç»™æˆ‘æ‰“å“ˆå“ˆï¼Œç§ä½ è¿™å¾·æ€§ï¼\n");
       }
       return 1;
 }
@@ -113,7 +113,7 @@ void serve_tea(object who)
 
       obn = new("d/wudang/obj/xiangcha");
       obn->move(room);
-      message_vision("Ğ¡ºÍÉĞÄÃ³ö×ÏÉ³Ğ¡²èºø£¬ÆãÁË±­Ïã²è£¬·ÅÔÚ×ÀÉÏ£®\n", who);
+      message_vision("å°å’Œå°šæ‹¿å‡ºç´«æ²™å°èŒ¶å£¶ï¼Œæ²äº†æ¯é¦™èŒ¶ï¼Œæ”¾åœ¨æ¡Œä¸Šï¼\n", who);
 
       obn = new("d/hangzhou/npc/obj/jiuping");
       obn->move(room);
@@ -127,7 +127,7 @@ void serve_tea(object who)
       obn->move(room);
       obn = new("d/hangzhou/npc/obj/fish");
       obn->move(room);
-      message_vision("È»ºóÄÃ³öÒ»Æ¿¾ÆºÍÒ»ÅÌÅÌºÃ³ÔµÄ·ÅÔÚ×ÀÉÏ£®\n", who);
+      message_vision("ç„¶åæ‹¿å‡ºä¸€ç“¶é…’å’Œä¸€ç›˜ç›˜å¥½åƒçš„æ”¾åœ¨æ¡Œä¸Šï¼\n", who);
       
       return;
 }

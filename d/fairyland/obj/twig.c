@@ -6,17 +6,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name("Ö¦Ìõ", ({ "twig", "zhi tiao", "zhi" }));
+	set_name("ææ¡", ({ "twig", "zhi tiao", "zhi" }));
 	set_weight(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ùÊ÷ÉÏµÄÖ¦Ìõ£¬Äã»ÓÁËÁ½ÏÂ£¬¸Ğ¾õ¿ÉÒÔÓÃÀ´»÷´ÌµĞÈË¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹æ ‘ä¸Šçš„ææ¡ï¼Œä½ æŒ¥äº†ä¸¤ä¸‹ï¼Œæ„Ÿè§‰å¯ä»¥ç”¨æ¥å‡»åˆºæ•Œäººã€‚\n");
 		set("value", 1);
 		set("material", "wood");
-		set("wield_msg", "$NÄÃ³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÁËÊÖÖĞµÄ$n¡£\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹äº†æ‰‹ä¸­çš„$nã€‚\n");
 	}
 	init_sword(2);
 	setup();

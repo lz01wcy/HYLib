@@ -4,11 +4,11 @@ inherit ROOM;
 #include <room.h>
 void create()
 {
-	set("short", "°×ÔÆâÖ");
+	set("short", "ç™½äº‘åºµ");
 	set("long", @LONG
-ÔÚÃ£Ã£²Ô²ÔµÄÂÌÊ÷»·ÈÆÖÐ,Ò»×ùÐ¡ÄáâÖÑÚÓ³ÆäÖÐ,ÏÔµÃ·ÖÍâµ­ÑÅÇåÓÄ
-×ß½ü¿´,ÃÅé¹ÉÏ¹ÒµÄÒ»¿éÄ¾ØÒÒÑ¾­ºÜÆÆ¾ÉÁË,µ«»¹ÄÜ¿´³ö'°×ÔÆ'Á½×Ö.ÄáâÖ
-²¢ÎÞÒ»µã×°ÊÎ,¾ÍÁ¬Ñ°³£ËÂÃíµÄÌúÂíÍ­Áå¶¼Ã»¹Ò,È·ÏÔµÃ¸ü¼ÓÆ®È»³ö³¾.
+åœ¨èŒ«èŒ«è‹è‹çš„ç»¿æ ‘çŽ¯ç»•ä¸­,ä¸€åº§å°å°¼åºµæŽ©æ˜ å…¶ä¸­,æ˜¾å¾—åˆ†å¤–æ·¡é›…æ¸…å¹½
+èµ°è¿‘çœ‹,é—¨æ¥£ä¸ŠæŒ‚çš„ä¸€å—æœ¨åŒ¾å·²ç»å¾ˆç ´æ—§äº†,ä½†è¿˜èƒ½çœ‹å‡º'ç™½äº‘'ä¸¤å­—.å°¼åºµ
+å¹¶æ— ä¸€ç‚¹è£…é¥°,å°±è¿žå¯»å¸¸å¯ºåº™çš„é“é©¬é“œé“ƒéƒ½æ²¡æŒ‚,ç¡®æ˜¾å¾—æ›´åŠ é£˜ç„¶å‡ºå°˜.
 LONG
 	);
 	set("no_clean_up", 0);
@@ -20,7 +20,7 @@ LONG
   "south" : __DIR__"road3",
   "north" : __DIR__"jingtang",
 ]));
-create_door("north","âÖÃÅ","south",DOOR_CLOSED);
+create_door("north","åºµé—¨","south",DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

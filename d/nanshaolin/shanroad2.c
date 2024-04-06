@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "É½Â·");
+	set("short", "å±±è·¯");
 	set("long", @LONG
-ÕâÊÇÄÏÉÙÁÖºóÃÅÍâµÄÒ»ÌõÐ¡Â·£¬Â·ÅÔ³¤ÂúµÄÇà²Ý¡£»ÆÍÁÆÌ¾ÍµÄÐ¡Â·
-¿´ÆðÀ´ºÜÆëÕû£¬ËÆºõÓÐÈË¾­³£´òÉ¨¡£²»Ô¶´¦¾ÍÊÇºóÉ½ÁË£¬É½ÊÆÍ¦°Î£¬¾°
-Ðã¾³ÓÄ£¬·åÉÏÖÖÂúÁËËÉÊ÷£¬Ëæ×ÅÎ¢·ç·÷¹ý£¬´«À´ÕóÕóÌÏÉù¡£
+è¿™æ˜¯å—å°‘æž—åŽé—¨å¤–çš„ä¸€æ¡å°è·¯ï¼Œè·¯æ—é•¿æ»¡çš„é’è‰ã€‚é»„åœŸé“ºå°±çš„å°è·¯
+çœ‹èµ·æ¥å¾ˆé½æ•´ï¼Œä¼¼ä¹Žæœ‰äººç»å¸¸æ‰“æ‰«ã€‚ä¸è¿œå¤„å°±æ˜¯åŽå±±äº†ï¼Œå±±åŠ¿æŒºæ‹”ï¼Œæ™¯
+ç§€å¢ƒå¹½ï¼Œå³°ä¸Šç§æ»¡äº†æ¾æ ‘ï¼Œéšç€å¾®é£Žæ‹‚è¿‡ï¼Œä¼ æ¥é˜µé˜µæ»”å£°ã€‚
 LONG );
 	set("exits", ([
 		"northup" : __DIR__"shanroad3",

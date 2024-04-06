@@ -1,4 +1,4 @@
-// ÉĞ·½±¦½£ unix 1998.10
+// å°šæ–¹å®å‰‘ unix 1998.10
 
 #include <weapon.h>
 #include <ansi.h>
@@ -6,18 +6,18 @@ inherit SWORD;
 
 void create()
 {
-	set_name("ÉĞ·½±¦½£", ({"shan jian", "jian", "sword"}));
+	set_name("å°šæ–¹å®å‰‘", ({"shan jian", "jian", "sword"}));
 	set_weight(7000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-	set("long", HIW"ÕâÊÇµ±½ñÍòËê´Í¸ø°üÁúĞÇ°ü´óÈËµÄ"NOR+HIY"ÉĞ·½±¦½£"NOR+HIB"¿ÉÉÏÕ¶»ÊÇ×, ÏÂÕ¶ÂÒ³¼¡£\n"NOR);
+		set("unit", "æŸ„");
+	set("long", HIW"è¿™æ˜¯å½“ä»Šä¸‡å²èµç»™åŒ…é¾™æ˜ŸåŒ…å¤§äººçš„"NOR+HIY"å°šæ–¹å®å‰‘"NOR+HIB"å¯ä¸Šæ–©çš‡äº², ä¸‹æ–©ä¹±è‡£ã€‚\n"NOR);
 		set("value", 80000);
 		set("material", "gold");
-	set("wield_msg", HIY"Ò»Õó½ğ¹âÉÁ¹ı, $N´Ó»³ÖĞ°Î³öÒ»°ÑÀ¶ÍôÍôµÄ\n"NOR+
-HIB"		*ÉĞ·½±¦½£*\n"NOR);
-	set("unwield_msg", HIY"$NĞ¡ĞÄ½«ÉĞ·½±¦½£²å»Ø½£ÇÊÖ®ÖĞ\n"NOR);
+	set("wield_msg", HIY"ä¸€é˜µé‡‘å…‰é—ªè¿‡, $Nä»æ€€ä¸­æ‹”å‡ºä¸€æŠŠè“æ±ªæ±ªçš„\n"NOR+
+HIB"		*å°šæ–¹å®å‰‘*\n"NOR);
+	set("unwield_msg", HIY"$Nå°å¿ƒå°†å°šæ–¹å®å‰‘æ’å›å‰‘é˜ä¹‹ä¸­\n"NOR);
 }
 	init_sword(1100);
 	setup();

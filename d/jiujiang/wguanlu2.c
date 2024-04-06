@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","��·");
+  set ("short","官路");
   set ("long", @LONG
-����������·���кܶ������������ߵľŽ���ȥ���㲻���ӿ�����
-���ĽŲ���
+这里是条官路。有很多行人在往东边的九江走去。你不觉加快了行
+进的脚步。
 LONG);
 
   set("exits", ([ 

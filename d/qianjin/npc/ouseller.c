@@ -5,11 +5,11 @@ inherit F_DEALER;
 #include <ansi.h>
 void create()
 {
-	set_name("²ÉÁâÅ®", ({ "cailing" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("é‡‡è±å¥³", ({ "cailing" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 15);
 	set("long",
-		"ÕâÎ»¸ß¾í×Å¿ã½Å£¬Ğ¦ßäßäµØ¿´×ÅÄã£®\n");
+		"è¿™ä½é«˜å·ç€è£¤è„šï¼Œç¬‘å’ªå’ªåœ°çœ‹ç€ä½ ï¼\n");
 	set("combat_exp", 5000);
 	set("attitude", "friendly");
 	set("per",30);
@@ -41,15 +41,15 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(10) ) {
 		case 0:
-message_vision("$NĞ¦µÀ£ºÕâµÄ¹ÃÄï¶¼°®³ÔÄÛÅº£¬ÂòÒ»¿é£¿\n",this_object(),ob);
+message_vision("$Nç¬‘é“ï¼šè¿™çš„å§‘å¨˜éƒ½çˆ±åƒå«©è—•ï¼Œä¹°ä¸€å—ï¼Ÿ\n",this_object(),ob);
 			break;
 	}
 }
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) +
-"£¬ÄúÒ»¶¨»áÔÚÕâ¶ùÍæµÄ¿ªĞÄµÄ£¡");
+        command("say å¤šè°¢è¿™ä½" + RANK_D->query_respect(me) +
+"ï¼Œæ‚¨ä¸€å®šä¼šåœ¨è¿™å„¿ç©çš„å¼€å¿ƒçš„ï¼");
         return 1;
 }
 

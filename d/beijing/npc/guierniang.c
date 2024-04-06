@@ -6,12 +6,12 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("¹é¶şÄï", ({ "gui erniang", "gui" }));
+	set_name("å½’äºŒå¨˜", ({ "gui erniang", "gui" }));
 	set("long", 
-"Ò»¸öÄêÂõµÄÀÏ¸¾£¬Í··¢°ë°×£¬µ«¿´ÆğÀ´È´ÊÇ¾«Éñ¶¶ËÓ£¬\n"
-"Æ¢ÆøÏàµ±µÄ»ğ±©¡£Ëû±ãÊÇÉñÈ­ÎŞµĞ¹éĞÄÊ÷µÄÄÚÈË¡ª¡ª¹é\n"
-"¶şÄï¡£\n");
-	set("gender", "Å®ĞÔ");
+"ä¸€ä¸ªå¹´è¿ˆçš„è€å¦‡ï¼Œå¤´å‘åŠç™½ï¼Œä½†çœ‹èµ·æ¥å´æ˜¯ç²¾ç¥æŠ–æ“ï¼Œ\n"
+"è„¾æ°”ç›¸å½“çš„ç«æš´ã€‚ä»–ä¾¿æ˜¯ç¥æ‹³æ— æ•Œå½’å¿ƒæ ‘çš„å†…äººâ€•â€•å½’\n"
+"äºŒå¨˜ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 68);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -55,10 +55,10 @@ void create()
 	prepare_skill("cuff", "poyu-quan");
 	set("chat_chance", 2);
 	set("chat_msg", ({
-		"¹é¶şÄïÍûÁË¹éÖÓÒ»ÑÛ£¬ÉîÉîµÄÌ¾ÁË¿ÚÆø¡£\n",
+		"å½’äºŒå¨˜æœ›äº†å½’é’Ÿä¸€çœ¼ï¼Œæ·±æ·±çš„å¹äº†å£æ°”ã€‚\n",
 	}) );	
 
-	create_family("»ªÉ½ÅÉ", 31, "µÜ×Ó");
+	create_family("åå±±æ´¾", 31, "å¼Ÿå­");
 	set("chat_chance_combat", 60);
 	set("chat_msg_combat", ({
 		(: exert_function, "recover" :),

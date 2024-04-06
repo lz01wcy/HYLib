@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-    set("short", "ÍÁµØÃí");
+    set("short", "åœŸåœ°åº™");
     set("long",@LONG
-ÕâÀïÏã»ð¶¦Ê¢£¬ÕýÖÐÑë°Ú·ÅÁËÒ»¸ö²»´óµÄÄàÆÐÈø£¬Ç°ÅÅ·Å×ÅÒ»¸ö
-ÏãÂ¯£¬×óÓÒ·ÅÁËÒ»Ð©¹©¹û¡£ÅÔ±ß»¹ÓÐÒ»ÕÅÆÆ¾ÉµÄ×À×Ó£¬×ÀÉÏ¹ÒÁËÒ»¿é
-Ä¾ØÒ£¨bian£©¡£
+è¿™é‡Œé¦™ç«é¼Žç››ï¼Œæ­£ä¸­å¤®æ‘†æ”¾äº†ä¸€ä¸ªä¸å¤§çš„æ³¥è©è¨ï¼Œå‰æŽ’æ”¾ç€ä¸€ä¸ª
+é¦™ç‚‰ï¼Œå·¦å³æ”¾äº†ä¸€äº›ä¾›æžœã€‚æ—è¾¹è¿˜æœ‰ä¸€å¼ ç ´æ—§çš„æ¡Œå­ï¼Œæ¡Œä¸ŠæŒ‚äº†ä¸€å—
+æœ¨åŒ¾ï¼ˆbianï¼‰ã€‚
 LONG
 );
     set("no_sleep_room", "1");
@@ -21,7 +21,7 @@ LONG
          "east" :__DIR__"ca9",
 ]));
         set("item_desc", ([
-    "bian" : "ÈËÓÐµ©Ï¦»ö¸££¬ÌìÓÐ²»²â·çÔÆ¡£
+    "bian" : "äººæœ‰æ—¦å¤•ç¥¸ç¦ï¼Œå¤©æœ‰ä¸æµ‹é£Žäº‘ã€‚
 ",
 ]));
     setup();
@@ -41,21 +41,21 @@ int do_knock(string arg)
         me = this_player();
         ob = present("shensuan zi",this_object());
         if (ob){
-         if(!arg || arg != "table")   return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+         if(!arg || arg != "table")   return notify_fail("ä½ è¦æ•²ä»€ä¹ˆï¼Ÿ\n");
          if(! ob->query_temp("sleeped") )
-            return notify_fail("ÈüÉñÏÉÒÑ¾­ÐÑÁË£¬²»±ØÔÙÇÃ×À×ÓÁË¡£\n");
+            return notify_fail("èµ›ç¥žä»™å·²ç»é†’äº†ï¼Œä¸å¿…å†æ•²æ¡Œå­äº†ã€‚\n");
          ob->delete_temp("sleeped");
          ob->delete("no_get");
          ob->delete("no_get_from");
          ob->enable_player();
-//         ob->set("long","Ëû¾ÍÊÇÔ¶½üÎÅÃûµÄÉñËã×Ó¡°Èü°ëÏÉ¡±£¬ºÜ¶àÈË¶¼Ä½Ãû¶øÀ´ÕÒËûËãÃü¡£\n" HIY "Ëû¿´ÆðÀ´ËÆºõÒþ²ØÁËÒ»Ð©Ìì´óµÄÃØÃÜ¡£\n" NOR);
-         message_vision("$NÓÃÁ¦ÇÃÁËÇÃ×À×Ó¡£\n",me);
-         message_vision("Èü°ëÏÉÕö¿ªË¯ÒâëüëÊµÄÑÛ¾¦£¬ÉìÁË¸öÀÁÑü£¬²»»³ºÃÒâµÄ¿´ÁË¿´$N¡£\n",me);
+//         ob->set("long","ä»–å°±æ˜¯è¿œè¿‘é—»åçš„ç¥žç®—å­â€œèµ›åŠä»™â€ï¼Œå¾ˆå¤šäººéƒ½æ…•åè€Œæ¥æ‰¾ä»–ç®—å‘½ã€‚\n" HIY "ä»–çœ‹èµ·æ¥ä¼¼ä¹Žéšè—äº†ä¸€äº›å¤©å¤§çš„ç§˜å¯†ã€‚\n" NOR);
+         message_vision("$Nç”¨åŠ›æ•²äº†æ•²æ¡Œå­ã€‚\n",me);
+         message_vision("èµ›åŠä»™çå¼€ç¡æ„æœ¦èƒ§çš„çœ¼ç›ï¼Œä¼¸äº†ä¸ªæ‡’è…°ï¼Œä¸æ€€å¥½æ„çš„çœ‹äº†çœ‹$Nã€‚\n",me);
           me->set_temp("knock", 1);
          remove_call_out("do_sleep");
          call_out("do_sleep",60);
          return 1;
-        }else  return notify_fail("ÄãµÃµÈÈüÉñÏÉ»ØÀ´ÔÙËµ£¬\n");
+        }else  return notify_fail("ä½ å¾—ç­‰èµ›ç¥žä»™å›žæ¥å†è¯´ï¼Œ\n");
 }
 void do_sleep()
 {
@@ -64,12 +64,12 @@ void do_sleep()
       remove_call_out("do_sleep");
       ob=present("shensuan zi",this_object());
       if (ob && living(ob)){
-      message_vision("$N´òÁË¸ö¹þÇ·£¬ÓÖË¯×ÅÁË¡£\n",ob);
+      message_vision("$Næ‰“äº†ä¸ªå“ˆæ¬ ï¼Œåˆç¡ç€äº†ã€‚\n",ob);
       ob->set_temp("sleeped",1);
       ob->set("no_get",1);
       ob->set("no_get_from",1);
-      ob->disable_player("<Ë¯ÃÎÖÐ>");
-      ob->set("long","ÉñËã×ÓÕý×øÔÚ°åµÊÍ·Å¿ÔÚ×À×ÓÉÏË¯¾õ£¬ÍÙÒºÒ»Ö±Á÷µ½ÁË×À×Óµ×ÏÂ¡£\n");
+      ob->disable_player("<ç¡æ¢¦ä¸­>");
+      ob->set("long","ç¥žç®—å­æ­£ååœ¨æ¿å‡³å¤´è¶´åœ¨æ¡Œå­ä¸Šç¡è§‰ï¼Œå”¾æ¶²ä¸€ç›´æµåˆ°äº†æ¡Œå­åº•ä¸‹ã€‚\n");
       }
       
 }
@@ -81,7 +81,7 @@ int stat(object me)
    
    ob=present("shensuan zi",this_object());
    if (ob && ob->query_temp("sleeped")){
-      message_vision("ºôàà.....ºô.........àà...............\n",ob);
+      message_vision("å‘¼å™œ.....å‘¼.........å™œ...............\n",ob);
    }
    remove_call_out("stat");
    call_out("stat",60,me);

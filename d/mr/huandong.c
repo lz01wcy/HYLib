@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-         set("short",MAG"������"NOR);
+         set("short",MAG"娘缳玉洞"NOR);
          set ("long",@long
-������٢��ɽׯ����书�ؼ��ĵط���һ�������������İڷ��Ÿ����鼮��
-һλ�����Ĺ����������ǰ�ж��伮��
+这是曼佗罗山庄存放武功秘籍的地方，一排排书架上整齐的摆放着各种书籍。
+一位美丽的姑娘正在书架前研读武籍。
 long);
          set("exits",([
              "north" : __DIR__"ytyuan",

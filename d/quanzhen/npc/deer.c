@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-        set_name(YEL"Ã·»¨Â¹"NOR, ({ "deer", "lu" }) );
-        set("race", "Ò°ÊŞ");
+        set_name(YEL"æ¢…èŠ±é¹¿"NOR, ({ "deer", "lu" }) );
+        set("race", "é‡å…½");
         set("age", 20);
-        set("long", "Ò»Ö»ÎÂÑ±Æ¯ÁÁµÄÃ·»¨ĞÛÂ¹¡£\n");
+        set("long", "ä¸€åªæ¸©é©¯æ¼‚äº®çš„æ¢…èŠ±é›„é¹¿ã€‚\n");
         set("attitude", "peace");
         set("shen_type", 1);
 
-        set("limbs", ({ "Â¹Í·", "Â¹Éí", "Ç°ÍÈ", "ºóÍÈ", "ÍÎ²¿" }) );
+        set("limbs", ({ "é¹¿å¤´", "é¹¿èº«", "å‰è…¿", "åè…¿", "è‡€éƒ¨" }) );
         set("verbs", ({ "hoof" }) );
 
         set("combat_exp", 2000);

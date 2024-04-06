@@ -4,12 +4,12 @@ inherit ROOM;
 #define TIME_TICK1 (time()*60)
 void create()
 {
-	set("short", "´óÃÅ¿²×Ó");
+	set("short", "å¤§é—¨åå­");
 	set("long", @LONG
-ÕâÀïÊÇÑØ½­Ïò¶«µÄ¹ÅµÀ£¬¶àÎª½øÉ½²É²ÎµÄ²Î¿ÍËù×ß£¬Òò´ËÒ²³Æ¡°²ÎÂ·¡±
-¡£Ç°ÃæÒ»×ùĞ¡É½½Ø¶ÏÈ¥Â·£¬ÒòÆäĞĞËÆÃÅ¿²£¬ÇÒÎª¶«È¥²É²ÎµÄµÚÒ»µÀÆÁÕÏ£¬¹Ê
-±»³ÆÎª´óÃÅ¿²×Ó¡£Î÷ÃæÊÇ¿íÀ«µÄËÉ»¨½­¡£ËÉ»¨½­ÔÚ¶¬´ºÊ±½á±ù¿ÉÍ¨ĞĞ£¬ÏÄÇï
-»¯¶³ÄãÖ»ºÃÕÒ´¬¼Ò°ïÃ¦ÁË¡£
+è¿™é‡Œæ˜¯æ²¿æ±Ÿå‘ä¸œçš„å¤é“ï¼Œå¤šä¸ºè¿›å±±é‡‡å‚çš„å‚å®¢æ‰€èµ°ï¼Œå› æ­¤ä¹Ÿç§°â€œå‚è·¯â€
+ã€‚å‰é¢ä¸€åº§å°å±±æˆªæ–­å»è·¯ï¼Œå› å…¶è¡Œä¼¼é—¨åï¼Œä¸”ä¸ºä¸œå»é‡‡å‚çš„ç¬¬ä¸€é“å±éšœï¼Œæ•…
+è¢«ç§°ä¸ºå¤§é—¨åå­ã€‚è¥¿é¢æ˜¯å®½é˜”çš„æ¾èŠ±æ±Ÿã€‚æ¾èŠ±æ±Ÿåœ¨å†¬æ˜¥æ—¶ç»“å†°å¯é€šè¡Œï¼Œå¤ç§‹
+åŒ–å†»ä½ åªå¥½æ‰¾èˆ¹å®¶å¸®å¿™äº†ã€‚
 LONG );
 	set("exits", ([
 		"northeast"  : __DIR__"ermenkan",
@@ -31,15 +31,15 @@ int valid_leave(object me, string dir)
 	if (dir=="west")
 	{
 		chn_month = CHINESE_D->chinese_number(local[4]);
-		if (chn_month=="Ê®¶ş" || chn_month=="Ò»" || chn_month=="¶ş" ||
-		 chn_month=="Èı" || chn_month=="ËÄ" || chn_month=="Îå")
+		if (chn_month=="åäºŒ" || chn_month=="ä¸€" || chn_month=="äºŒ" ||
+		 chn_month=="ä¸‰" || chn_month=="å››" || chn_month=="äº”")
 		{
-			message_vision("$N¼û½­Ãæ½á¶³£¬±ã×³Æğµ¨×Ó²È±ù¶ø¹ı¡£\n\n", me);
+			message_vision("$Nè§æ±Ÿé¢ç»“å†»ï¼Œä¾¿å£®èµ·èƒ†å­è¸©å†°è€Œè¿‡ã€‚\n\n", me);
 			if (random(me->query_dex())<20)
 			{
 				me->receive_wound("qi",20);
 				me->receive_damage("qi",20);
-			message_vision(chn_month+"$NÖ»¾õµÃ½ÅÏÂÒ»»¬£¬È«ÉíÌÚ¿Õ¶øÆğ£¬½á½áÊµÊµµÄË¤ÔÚÁË±ùÃæÉÏ£¡\n", me);
+			message_vision(chn_month+"$Nåªè§‰å¾—è„šä¸‹ä¸€æ»‘ï¼Œå…¨èº«è…¾ç©ºè€Œèµ·ï¼Œç»“ç»“å®å®çš„æ‘”åœ¨äº†å†°é¢ä¸Šï¼\n", me);
 			}
 			return 1;
 		}
@@ -57,11 +57,11 @@ int valid_leave(object me, string dir)
 			{
 				obj = new(__DIR__"npc/chuanfu1");
 				obj -> move(environment(me));
-			message_vision("¿²ºó×ß³öÒ»¸ö´¬·ò£¬Õ¾ÔÚ±ßÉÏµÉ×ÅÑÛ¿´×Å$N¡£", me);
+			message_vision("ååèµ°å‡ºä¸€ä¸ªèˆ¹å¤«ï¼Œç«™åœ¨è¾¹ä¸Šçªç€çœ¼çœ‹ç€$Nã€‚", me);
 			}
 			else
-			message_vision("´¬·òÔÚÅÔ±ßÄÃÑÛµÉ×Å$N¿´¡£", me);
-			return notify_fail("±ùÃæ»¯¶³£¬»¹ÊÇ³Ë´¬°É£¡\n");
+			message_vision("èˆ¹å¤«åœ¨æ—è¾¹æ‹¿çœ¼çªç€$Nçœ‹ã€‚", me);
+			return notify_fail("å†°é¢åŒ–å†»ï¼Œè¿˜æ˜¯ä¹˜èˆ¹å§ï¼\n");
 		}
 	}
 	return 1;

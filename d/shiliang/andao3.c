@@ -6,10 +6,10 @@ int do_open(string arg);
 int do_close(string arg);
 void create()
 {
-	set("short", "°µµÀ¾¡Í·");
+	set("short", "æš—é“å°½å¤´");
 	set("long",@LONG
-ÕâÀïÊÇ°µµÀµÄ¾¡Í·£¬ÓĞÉÈÌúÃÅ(door)¿´ÆğÀ´ºÜ³Â¾É£¬²»ÖªµÀÍ¨Íù
-ÄÄÀï¡£
+è¿™é‡Œæ˜¯æš—é“çš„å°½å¤´ï¼Œæœ‰æ‰‡é“é—¨(door)çœ‹èµ·æ¥å¾ˆé™ˆæ—§ï¼Œä¸çŸ¥é“é€šå¾€
+å“ªé‡Œã€‚
 LONG		
 	);
 	set("no_clean_up", 0);
@@ -17,7 +17,7 @@ LONG
 		"south" : __DIR__"andao2",
 	]));
 	set("item_desc",([
-		"door"	: "ÕâÊÇÒ»ÉÈÆÆ¾ÉµÄÌúÃÅ¡£\n"
+		"door"	: "è¿™æ˜¯ä¸€æ‰‡ç ´æ—§çš„é“é—¨ã€‚\n"
 	]));
 	set("coor/x", 1620);
 	set("coor/y", -1750);
@@ -37,18 +37,18 @@ void close_door()
 	if(objectp(room))
 	{
 		delete("exits/east");
-			message("vision", "ºöÈ»¼ä£¬Ë®Á÷·­Ó¿£¬ÓÖ°ÑÃÅºÏÉÏÁË¡£\n", this_object());
+			message("vision", "å¿½ç„¶é—´ï¼Œæ°´æµç¿»æ¶Œï¼ŒåˆæŠŠé—¨åˆä¸Šäº†ã€‚\n", this_object());
 		room->delete("exits/west");
-		message("vision", "Ë®Á÷ÓÖÓÆÈ»ºÏÉÏÁË¡£\n", room);
+		message("vision", "æ°´æµåˆæ‚ ç„¶åˆä¸Šäº†ã€‚\n", room);
 	}
 }
 int do_close(string arg)
 {
 	if (!query("exits/east"))
-		return notify_fail("ÒÑ¾­Ã»ÓĞ³öÂ·ÁË£¡\n");
+		return notify_fail("å·²ç»æ²¡æœ‰å‡ºè·¯äº†ï¼\n");
 	if (!arg || (arg != "door" && arg != "east"))
-		return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
-	message_vision("$NµãÁËµãÍ·¡£\n", this_player());
+		return notify_fail("ä½ è¦å…³ä»€ä¹ˆï¼Ÿ\n");
+	message_vision("$Nç‚¹äº†ç‚¹å¤´ã€‚\n", this_player());
 	remove_call_out("close_door");
 	call_out("close_door", 2);
 	return 1;
@@ -57,17 +57,17 @@ int do_open(string arg)
 {
 	object room;
 	if (query("exits/east"))
-		return notify_fail("ÒÑ¾­ÓĞ³öÂ·ÁË£¡\n");
+		return notify_fail("å·²ç»æœ‰å‡ºè·¯äº†ï¼\n");
 	if (!arg || (arg != "door" && arg != "east"))
-		return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¼€ä»€ä¹ˆï¼Ÿ\n");
 	if(!( room = find_object(__DIR__"tingzi")) )
 		room = load_object(__DIR__"tingzi");
 	if(objectp(room))
 	{
 		set("exits/east",__DIR__"tingzi");
-		message_vision("$NÓÃÁ¦°ÑÆÆÌúÃÅ´òÁË¿ªÀ´¡£\n", this_player());
+		message_vision("$Nç”¨åŠ›æŠŠç ´é“é—¨æ‰“äº†å¼€æ¥ã€‚\n", this_player());
 		room->set("exits/west", __FILE__);
-		message("vision", "ºöÈ»¼ä£¬Ë®Á÷·Ö¿ª£¬Â¶³öÒ»Ìõ³öÂ·¡£\n", this_object());
+		message("vision", "å¿½ç„¶é—´ï¼Œæ°´æµåˆ†å¼€ï¼Œéœ²å‡ºä¸€æ¡å‡ºè·¯ã€‚\n", this_object());
 		remove_call_out("close_door");
 		call_out("close_door", 2);
 	}

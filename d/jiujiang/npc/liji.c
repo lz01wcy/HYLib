@@ -7,13 +7,13 @@ int do_eat(string arg);
 
 void create()
 {
-   set_name("»¬ÁïÀï¼¹", ({"liji"}));
+   set_name("æ»‘æºœé‡Œè„Š", ({"liji"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ¾Å½­´ºÔÚÂ¥µÄÃû²Ë»¬ÁïÀï¼¹¡£\n");
-                set("unit", "ÅÌ");
+                set("long", "è¿™æ˜¯ä¹æ±Ÿæ˜¥åœ¨æ¥¼çš„åèœæ»‘æºœé‡Œè„Šã€‚\n");
+                set("unit", "ç›˜");
                 set("value",400);
                 //set("no_decay",1);
                 set("food_remaining",100);

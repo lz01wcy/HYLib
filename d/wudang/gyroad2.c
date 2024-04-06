@@ -1,4 +1,4 @@
-// gytoad2.c ¹ûÔ°Ğ¡Â·
+// gytoad2.c æœå›­å°è·¯
 // by Java
 
 inherit ROOM;
@@ -6,16 +6,16 @@ inherit ROOM;
 int do_zhai(string arg);
 void create()
 {
-	set("short", "¹ûÔ°");
+	set("short", "æœå›­");
 	set("long", @LONG
-ÄãÇáËÉµØ×ß½ø¹ûÔ°¡£Ô°ÖĞÂäÓ¢çÍ·×£¬Á½±ßÊÇÌÒÊ÷ÁÖ£¬Ê¢¿ª×Å·ÛºìµÄÌÒ»¨£¬
-ºìÔÆÒ»Æ¬£¬Íû²»µ½±ß¡£ÖĞ¼äÈ´ÊÇÒ»Öê¹Ú¸ÇÊıÄ¶µÄ´óÊ÷(tree)£¬ÕÚ×¡µØÃæºÃ´óÒ»
-Æ¬ÂÌÒñ¡£
+ä½ è½»æ¾åœ°èµ°è¿›æœå›­ã€‚å›­ä¸­è½è‹±ç¼¤çº·ï¼Œä¸¤è¾¹æ˜¯æ¡ƒæ ‘æ—ï¼Œç››å¼€ç€ç²‰çº¢çš„æ¡ƒèŠ±ï¼Œ
+çº¢äº‘ä¸€ç‰‡ï¼Œæœ›ä¸åˆ°è¾¹ã€‚ä¸­é—´å´æ˜¯ä¸€æ ªå† ç›–æ•°äº©çš„å¤§æ ‘(tree)ï¼Œé®ä½åœ°é¢å¥½å¤§ä¸€
+ç‰‡ç»¿è«ã€‚
 LONG );
 	set("outdoors", "wudang");
 	set("item_desc", ([
 		"tree" : 
-"ÕâÊÇÒ»ÖêÈË²Î¹ûÊ÷£¬ÉÏÃæ½á×ÅÈË²Î¹û£¬¾İËµÕªÏÂ³ÔÁË¶ÔÎä¹¦½øÒæºÜÓĞºÃ´¦¡£\n"
+"è¿™æ˜¯ä¸€æ ªäººå‚æœæ ‘ï¼Œä¸Šé¢ç»“ç€äººå‚æœï¼Œæ®è¯´æ‘˜ä¸‹åƒäº†å¯¹æ­¦åŠŸè¿›ç›Šå¾ˆæœ‰å¥½å¤„ã€‚\n"
 	]));
 	set("exits", ([
 		"west" : __DIR__"gyroad1",
@@ -35,20 +35,20 @@ int do_zhai(string arg)
 	object guo;
 	if( !arg || arg=="" )
 	{
-		message_vision("ÄãÏëÕªÊ²Ã´£¿\n", this_player());
+		message_vision("ä½ æƒ³æ‘˜ä»€ä¹ˆï¼Ÿ\n", this_player());
 		return 1;
 	}
 	if( arg=="guo"||arg=="renshen guo" )
 	{
 		if(uptime() < 1800)
 		{
-	message_vision("ÈË²Î¹ûÎ´ÊìÄØ£¬$NµÈÒ»»áÔÙÀ´°É¡£\n",this_player());
+	message_vision("äººå‚æœæœªç†Ÿå‘¢ï¼Œ$Nç­‰ä¸€ä¼šå†æ¥å§ã€‚\n",this_player());
 			return 1;
 		}
 		if(query("guocount") > 0 && random(2)==1)
 		{
-//message("channel:rumor", MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+this_player()->query("name")+"µÃµ½Ò»¸öÈË²Î¹ûÁË¡£\n"NOR, users());
-	message_vision("$NÈË²Î¹ûÊ÷ÉÏÕªÏÂÒ»¸öÊìÍ¸µÄ"HIR"ÈË²Î¹û¡£\n"NOR,
+//message("channel:rumor", MAG"ã€è°£è¨€ã€‘æŸäººï¼š"+this_player()->query("name")+"å¾—åˆ°ä¸€ä¸ªäººå‚æœäº†ã€‚\n"NOR, users());
+	message_vision("$Näººå‚æœæ ‘ä¸Šæ‘˜ä¸‹ä¸€ä¸ªç†Ÿé€çš„"HIR"äººå‚æœã€‚\n"NOR,
 			this_player());
 			guo = new(__DIR__"obj/renshenguo");
 			guo->move(this_player());
@@ -58,7 +58,7 @@ int do_zhai(string arg)
 		else
 		{
 			set("guocount",0);
-			message_vision("$NÕæÊÇºÃ¿ÉÁ¯°¡£¿ÈË²Î¹û¸Õ±»Õª×ß¡£\n",this_player());
+			message_vision("$NçœŸæ˜¯å¥½å¯æ€œå•Šï¼Ÿäººå‚æœåˆšè¢«æ‘˜èµ°ã€‚\n",this_player());
 			return 1;	     
 		}
 	}

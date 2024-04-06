@@ -3,9 +3,9 @@
 inherit NPC; 
 void create()
 {
-        set_name("毒蛇", ({ "venomsnake", "snake" }) );
-        set("long",     "一支昂首吐信的毒蛇正虎视眈眈地盯著你。\n"); 
-        set("race", "野兽");
+        set_name("姣掕泧", ({ "venomsnake", "snake" }) );
+        set("long",     "涓�鏀槀棣栧悙淇＄殑姣掕泧姝ｈ檸瑙嗙湀鐪堝湴鐩憲浣犮�俓n"); 
+        set("race", "閲庡吔");
         set("age", 3);
         set("pursuer", 1); 
         set("max_gin", 60);
@@ -13,7 +13,7 @@ void create()
         set("max_sen", 10); 
         set("str", 10);
         set("cor", 50); 
-        set("limbs", ({ "头部", "身体", "尾巴" }) );
+        set("limbs", ({ "澶撮儴", "韬綋", "灏惧反" }) );
         set("verbs", ({ "bite" }) ); 
         set_temp("apply/attack", 10);
         set_temp("apply/damage", 10);
@@ -26,6 +26,6 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage) > (int)ob->query_temp("apply/armor")
         &&      (int)ob->query_condition("snake_poison") < 10 ) {
                 ob->apply_condition("snake_poison", 20);
-                tell_object(ob, HIG "你觉得被咬中的地方一阵麻痒！\n"NOR );
+                tell_object(ob, HIG "浣犺寰楄鍜腑鐨勫湴鏂逛竴闃甸夯鐥掞紒\n"NOR );
         }
 }

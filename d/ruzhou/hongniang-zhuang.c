@@ -9,11 +9,11 @@ string look_sign(object me);
 
 void create()
 {
-	set("short", "������");
+	set("short", "红娘堂");
    set("long", @LONG
-����������·򸾶�Լ��Ե�ĺ����ã�ֻ��������޽��Լ���ǽ��
-��Լ���ܵõ����˵ĳ��ϡ�������һ����������������Ǿ���һ������֮
-���Ե�ʮ�ֵ����ɡ��������й���һ������ֵ���ľ����(sign)��
+这里就是天下夫妇定约结缘的红娘堂，只有在这里缔结婚约或是解除
+婚约才能得到世人的承认。这里是一个不大的门厅，但是经过一番修整之
+后，显得十分地气派。厅堂正中挂着一块雕着字的乌木匾牌(sign)。
 LONG
         );
 	set("exits", ([
@@ -33,10 +33,10 @@ LONG
 
 string look_sign(object me)
 {
-	return HIM"Ȱ�Ͳ�Ȱ��\n"
-   "��Ե�����\n"
-   "����ǰ��ϵ\n"
-   "����һ����\n"NOR;
+	return HIM"劝和不劝分\n"
+   "求缘更求份\n"
+   "红线前生系\n"
+   "姻结一世人\n"NOR;
 }
 
 int valid_leave(object me, string dir)

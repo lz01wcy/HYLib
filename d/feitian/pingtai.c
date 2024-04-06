@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ٲ�ƽ̨");
+  set ("short", "瀑布平台");
   set ("long", @LONG
-�������ٲ������һ��Сƽ̨��һ�������������ٲ�������
-ƽ̨����ٲ�����һ��ˮ�����ٲ��ĳ����һ���һ��
+这里是瀑布里面的一个小平台。一个剑客正对着瀑布发呆。
+平台外的瀑布犹如一道水帘，瀑布的冲击声一阵接一阵。
 LONG);
       set("valid_startroom", "1");
 

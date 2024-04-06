@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ʒ���");
+	set("short", "破帆船");
 	set("long", @LONG
-������ʱֻʣ�󷫳Է磬�Ǵ���б��࣬�ں����Ͽ�����������
-Φ�����б������������ˮ�档����ˮ��ȫ�����˾����ˣ���Χ���
-һ�ţ���������������ͣ����ʱ�������ѡ�
+帆船这时只剩后帆吃风，那船歪斜倾侧，在海面上狂舞乱跳，后
+桅向左横斜，帆边已碰到水面。船上水手全给海浪卷走了！周围漆黑
+一团，船身格格格的响个不停，随时都能碎裂。
 LONG );
 	set("no_sleep_room",1);
 	set("outdoors", "binghuo");

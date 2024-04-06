@@ -4,13 +4,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹ÅÃí");
+	set("short", "å¤åº™");
 	set("long", @LONG
-Õâ¹ÅÃíµØ´¦»ÄÆ§£¬Äê¾ÃÊ§ĞŞ£¬ÃíÄÚÒ²ÎŞÃí×£ºÍÉĞ¡£Éñ°¸ÉÏÂúÊÇ»Ò³¾
-»ı¹¸£¬È´ÓĞÖ¦´Ö´óµÄÀ¯Öò(lazhu)·ÅÔÚ°¸ÉÏ¡£
+è¿™å¤åº™åœ°å¤„è’åƒ»ï¼Œå¹´ä¹…å¤±ä¿®ï¼Œåº™å†…ä¹Ÿæ— åº™ç¥å’Œå°šã€‚ç¥æ¡ˆä¸Šæ»¡æ˜¯ç°å°˜
+ç§¯å¢ï¼Œå´æœ‰æç²—å¤§çš„èœ¡çƒ›(lazhu)æ”¾åœ¨æ¡ˆä¸Šã€‚
 LONG );
 	set("item_desc", ([
-		"lazhu": "Ò»Ö¦´Ö´óµÄÀ¯Öò£¬ÖòÀáËÆºõÆÄÎªĞÂÏÊ£¬ºÃÏó¸ÕÓĞÈËµã¹ı¡£\n"
+		"lazhu": "ä¸€æç²—å¤§çš„èœ¡çƒ›ï¼Œçƒ›æ³ªä¼¼ä¹é¢‡ä¸ºæ–°é²œï¼Œå¥½è±¡åˆšæœ‰äººç‚¹è¿‡ã€‚\n"
 	]) );
 	set("exits", ([
 		"east" : __DIR__"shangang2",
@@ -42,25 +42,25 @@ int do_dian(string arg)
 	if( arg=="lazhu" )
 	{
 		if (! objectp(present("tangshi jianpu", me)))
-			return notify_fail("ÄãÏëµãÀ¯Öò¸ÉÂï£¡\n");
-	message("vision", me->name()+"°ÑÀ¯ÖòµãÁËÆğÀ´£¬Í»È»·¢ÏÖ·ğÏñºóÃæÓĞ¸ö°µÃÅÒ®£¡£¡\n", environment(me));
+			return notify_fail("ä½ æƒ³ç‚¹èœ¡çƒ›å¹²å˜›ï¼\n");
+	message("vision", me->name()+"æŠŠèœ¡çƒ›ç‚¹äº†èµ·æ¥ï¼Œçªç„¶å‘ç°ä½›åƒåé¢æœ‰ä¸ªæš—é—¨è€¶ï¼ï¼\n", environment(me));
 		me->set_temp("marks/lazhu", 1);
 		return 1;
 	}
 	else 
-		return notify_fail("ÄãÏëÒªµãÊ²Ã´£¿\n");
+		return notify_fail("ä½ æƒ³è¦ç‚¹ä»€ä¹ˆï¼Ÿ\n");
 }
 int do_open(string arg)
 {
 	object foxiang, obj, me = this_player();
 
 	if (!objectp(foxiang = present("dafo xiang", this_object())))
-		return notify_fail("Ææ¹Ö£¬·ğÏñ²»¼ûÁË£¡\n");
+		return notify_fail("å¥‡æ€ªï¼Œä½›åƒä¸è§äº†ï¼\n");
 	if (foxiang->query("opened"))
-		return notify_fail("·ğÏñ°µÃÅÔç¸øÈË¼Ò´ò¿ªÁË£¡\n");
+		return notify_fail("ä½›åƒæš—é—¨æ—©ç»™äººå®¶æ‰“å¼€äº†ï¼\n");
 	if (me->query_temp("marks/lazhu") )
 	{
-		message("vision", me->name() + "·ÜÁ¦È¥ÇË°µÃÅ¡£ÇËµÃ¼¸ÏÂ£¬ÄÇ°µÃÅ½¥½¥ËÉÁË¡£"+me->name()+"ÉìÊÖÖ¸½«°µÃÅÇáÇáÆğÁË³öÀ´£¬¾ÙÖòÒ»ÕÕ£¬Ö»¼û·ğÏñ¶ÇÀïÖé¹â±¦Æø£¬ö°ö°¸¡¶¯£¬²»ÖªÕâ¸ö´ó¶Ç×ÓÖ®ÖĞ£¬²ØÁËÓĞ¶àÉÙÕäÖé±¦±´¡£\n", environment(me) );
+		message("vision", me->name() + "å¥‹åŠ›å»æ’¬æš—é—¨ã€‚æ’¬å¾—å‡ ä¸‹ï¼Œé‚£æš—é—¨æ¸æ¸æ¾äº†ã€‚"+me->name()+"ä¼¸æ‰‹æŒ‡å°†æš—é—¨è½»è½»èµ·äº†å‡ºæ¥ï¼Œä¸¾çƒ›ä¸€ç…§ï¼Œåªè§ä½›åƒè‚šé‡Œç å…‰å®æ°”ï¼Œéœ­éœ­æµ®åŠ¨ï¼Œä¸çŸ¥è¿™ä¸ªå¤§è‚šå­ä¹‹ä¸­ï¼Œè—äº†æœ‰å¤šå°‘çç å®è´ã€‚\n", environment(me) );
 		me->delete_temp("marks/lazhu");
 		obj = new("/d/city/obj/goldring");
 		obj -> move(foxiang); 
@@ -78,7 +78,7 @@ int do_open(string arg)
 		return 1;
 	}
         else {
-		write("ºÚºôºôµÄÄãÏë¸ÉÊ²Ã´£¿£¡\n");
+		write("é»‘å‘¼å‘¼çš„ä½ æƒ³å¹²ä»€ä¹ˆï¼Ÿï¼\n");
 		return 1;
         }
 }

@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Áîºü³å", ({ "ling huchong", "ling", "huchong" }) );
+        set_name("ä»¤ç‹å†²", ({ "ling huchong", "ling", "huchong" }) );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 29);
         set("long",
-                "Áîºü³åÊÇ»ªÉ½ÅÉµÄ¿ªÃÅ´óµÜ×Ó£¬Ò²ÊÇ·çÇåÑï¶À¹Â¾Å½£ÔÚ³¾ÊÀÖĞµÄÎ¨Ò»´«ÈË¡£\n");
+                "ä»¤ç‹å†²æ˜¯åå±±æ´¾çš„å¼€é—¨å¤§å¼Ÿå­ï¼Œä¹Ÿæ˜¯é£æ¸…æ‰¬ç‹¬å­¤ä¹å‰‘åœ¨å°˜ä¸–ä¸­çš„å”¯ä¸€ä¼ äººã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -51,7 +51,7 @@ void create()
         map_skill("unarmed", "huashan-ken");
         map_skill("dodge", "feiyan-huixiang");
 
-        create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("åå±±æ´¾", 14, "å¼Ÿå­");
 
         setup();
 
@@ -75,7 +75,7 @@ void greeting(object ob)
            && ((int)ob->query("marks/feng-qingyang")==1) )
       {
            ob->set("marks/feng-qingyang",2);
-           say( "Áîºü³åËµµÀ£º¡°ÎÒ·çÌ«Ê¦Êå×¡ÔÚÄÏ·å£¬Õâ¾ÍÈ¥°É!¡±\n");
+           say( "ä»¤ç‹å†²è¯´é“ï¼šâ€œæˆ‘é£å¤ªå¸ˆå”ä½åœ¨å—å³°ï¼Œè¿™å°±å»å§!â€\n");
       }
       set("exits/southdown", __DIR__"sgyhole");
 

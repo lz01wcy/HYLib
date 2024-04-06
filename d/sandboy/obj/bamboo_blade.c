@@ -4,17 +4,17 @@ inherit BLADE;
 
 void create()
 {
-   set_name("¿³Öñµ¶", ({"bamboo blade","dao","blade"}) );
+   set_name("ç ç«¹åˆ€", ({"bamboo blade","dao","blade"}) );
    set_weight(600);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 100);
      set("material", "iron");
-     set("long", "Ò»°Ñ³¤±ú¿³Öñµ¶¡£\n");
-     set("wield_msg", "$N´ÓºóÑü´ø³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-     set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä¡£\n");
+     set("long", "ä¸€æŠŠé•¿æŸ„ç ç«¹åˆ€ã€‚\n");
+     set("wield_msg", "$Nä»åè…°å¸¦æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ã€‚\n");
    }
    init_blade(35);
    setup();

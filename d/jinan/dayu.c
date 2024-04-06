@@ -1,11 +1,11 @@
  inherit ROOM;
 void create()
 {
-    set("short", "´óÀÎÍâ");
+    set("short", "å¤§ç‰¢å¤–");
         set("long", @LONG
-ÕâÊÇÒ»×ùÓÃ¾ŞÊ¯½¨³ÉµÄ´óÀÎ£¬¸ßËÊµÄÎ§Ç½ÊÇÒ»°ãÎ§Ç½µÄÈıËÄ±¶Ö®¸ß£¬¼´Ê¹×îºÃ
-µÄÇá¹¦Ò²ÄÑÒ»Ô½¶øÈë¡£ÇàºÚÉ«µÄ´óÊ¯Í·¸øÈËÒ»ÖÖËàÄÂµÄ¸Ğ¾õ£¬¶«ÃæÊÇÁ½ÉÈºñºñµÄÄ¾
-ÃÅ£¬ÈÃÈËÄÑ¿ú¾¿¾¹¡£
+è¿™æ˜¯ä¸€åº§ç”¨å·¨çŸ³å»ºæˆçš„å¤§ç‰¢ï¼Œé«˜è€¸çš„å›´å¢™æ˜¯ä¸€èˆ¬å›´å¢™çš„ä¸‰å››å€ä¹‹é«˜ï¼Œå³ä½¿æœ€å¥½
+çš„è½»åŠŸä¹Ÿéš¾ä¸€è¶Šè€Œå…¥ã€‚é’é»‘è‰²çš„å¤§çŸ³å¤´ç»™äººä¸€ç§è‚ƒç©†çš„æ„Ÿè§‰ï¼Œä¸œé¢æ˜¯ä¸¤æ‰‡åšåšçš„æœ¨
+é—¨ï¼Œè®©äººéš¾çª¥ç©¶ç«Ÿã€‚
 LONG
         );
     set("exits", ([ /* sizeof() == 3 */
@@ -16,8 +16,8 @@ LONG
         __DIR__"npc/yuzu" : 2,
     ]) );
     set("item_desc", ([
-        "door" : "ºÚÉ«µÄ´óÃÅÒì³£µÄºñÊµ£¨£ï£ğ£å£î£©¡£\n",
-        "Ä¾ÃÅ" : "ºÚÉ«µÄ´óÃÅÒì³£µÄºñÊµ£¨£ï£ğ£å£î£©¡£\n", 
+        "door" : "é»‘è‰²çš„å¤§é—¨å¼‚å¸¸çš„åšå®ï¼ˆï½ï½ï½…ï½ï¼‰ã€‚\n",
+        "æœ¨é—¨" : "é»‘è‰²çš„å¤§é—¨å¼‚å¸¸çš„åšå®ï¼ˆï½ï½ï½…ï½ï¼‰ã€‚\n", 
     ]));
     set("outdoors", "jinan");
     set("coor/x",50);
@@ -34,13 +34,13 @@ int open_door(string arg){
         me = this_player();
         if(arg == "door"){
                 if(query("exits/east")){
-                        return notify_fail("ÃÅÊÇ¿ª×ÅµÄ¡£\n");
+                        return notify_fail("é—¨æ˜¯å¼€ç€çš„ã€‚\n");
                 }
-                if(!me->query_temp("Ì½¼à") && !me->query("vendetta_mark")){
-                        return notify_fail("ÀÎ·¿»¹ÊÇ²»ÒªÂÒ´³µÄÎªÃî¡£\n");
+                if(!me->query_temp("æ¢ç›‘") && !me->query("vendetta_mark")){
+                        return notify_fail("ç‰¢æˆ¿è¿˜æ˜¯ä¸è¦ä¹±é—¯çš„ä¸ºå¦™ã€‚\n");
            } else {
                         if(load_object(__DIR__"pyard")){
-                                message("vision", me->name() + "ÉìÊÖÍÆ¿ªÁË³ÁÖØµÄ´óÃÅ¡£\n", environment(me));
+                                message("vision", me->name() + "ä¼¸æ‰‹æ¨å¼€äº†æ²‰é‡çš„å¤§é—¨ã€‚\n", environment(me));
                                 set("exits/east", __DIR__"pyard");
                         }                               
                 }
@@ -50,14 +50,14 @@ int open_door(string arg){
 int valid_leave(object me, string dir){
         object obj;
         
-        if(dir == "east" && (!me->query_temp("Ì½¼à") && !me->query("vendetta_mark"))) {
+        if(dir == "east" && (!me->query_temp("æ¢ç›‘") && !me->query("vendetta_mark"))) {
                 if(obj=present("yu zu", this_object())) {
-                        return notify_fail("Óü×äºÈµÀ£º¡°Õ¾×¡£¬ÀÎ·¿ÖØµØ²»¿ÉÂÒ´³¡£¡±\n");
+                        return notify_fail("ç‹±å’å–é“ï¼šâ€œç«™ä½ï¼Œç‰¢æˆ¿é‡åœ°ä¸å¯ä¹±é—¯ã€‚â€\n");
                 } else {
-                        return notify_fail("ÀÎ·¿»¹ÊÇ²»ÒªÂÒ´³µÄÎªÃî¡£\n");
+                        return notify_fail("ç‰¢æˆ¿è¿˜æ˜¯ä¸è¦ä¹±é—¯çš„ä¸ºå¦™ã€‚\n");
                 }
         }
 
-//      me->delete_temp("Ì½¼à");
+//      me->delete_temp("æ¢ç›‘");
         return 1;
 } 

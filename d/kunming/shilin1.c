@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIY "��ʫ��" NOR);
+        set("short", HIY "阿诗玛" NOR);
         set("long", @LONG
-������ʯ�������İ�ʫ��壬�ഫ�ܾ���ǰ�������Ĺ��������
-��ʫ���ڴ˵Ⱥ����İ��ڸ磬Ȼ������ȴ�������ϲ�ɱ���ˣ���ʫ��
-�Ȱ��ȣ�ʼ��û�е����İ������ɣ��վ�������һ��ʯ�壬��Զ����
-����ȥ��
+这里是石林著名的阿诗玛峰，相传很就以前，美丽的哈尼族姑娘
+阿诗玛在此等侯他的阿黑哥，然而阿黑却被地主老财杀害了，阿诗玛
+等啊等，始终没有等来心爱的情郎，终究化作了一座石峰，永远的守
+侯下去。
 LONG
         );
         set("outdoors", "kunming");

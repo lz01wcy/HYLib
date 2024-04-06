@@ -6,17 +6,17 @@ inherit NPC;
 
 void create()
 {
-	set_name(YEL "´÷´ºÁÖ" NOR, ({ "dai chunlin", "dai", "chunlin"}) );
-    set("title", "´÷¼ÇÏã·ÛÆÌÀÏ°å");
+	set_name(YEL "æˆ´æ˜¥æ—" NOR, ({ "dai chunlin", "dai", "chunlin"}) );
+    set("title", "æˆ´è®°é¦™ç²‰é“ºè€æ¿");
     set("age", 42);
     set("long", @LONG
-ËûÊÇÑïÖİ³ÇÀï´÷¼ÇÏã·ÛÆÌµÄÀÏ°å£¬Îå¶ÌÉí²Ä£¬·Ê·ÊÅÖÅÖ£¬µ«¿´ÉÏÈ¥ÉõÊÇÍş
-ÑÏ£¬ÁíÈË²»¸ÒÇ×½ü¡£
+ä»–æ˜¯æ‰¬å·åŸé‡Œæˆ´è®°é¦™ç²‰é“ºçš„è€æ¿ï¼Œäº”çŸ­èº«æï¼Œè‚¥è‚¥èƒ–èƒ–ï¼Œä½†çœ‹ä¸Šå»ç”šæ˜¯å¨
+ä¸¥ï¼Œå¦äººä¸æ•¢äº²è¿‘ã€‚
 LONG
 	);
 	set("attitude", "friendly");
-	set("rank_info/respect", "ÀÏ¸ç");
-	set("rank_info/rude","ÀÏÍõ°Ëµ°");
+	set("rank_info/respect", "è€å“¥");
+	set("rank_info/rude","è€ç‹å…«è›‹");
 	set("combat_exp",10000);
 	set_skill("unarmed", 5);
 	setup();

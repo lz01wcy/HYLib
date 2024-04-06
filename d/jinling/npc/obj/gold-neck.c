@@ -5,13 +5,13 @@ inherit NECK;
 
 void create()
 {
-	set_name("½ğÏîÁ´", ({ "gold-neck", "neck" }) );
+	set_name("é‡‘é¡¹é“¾", ({ "gold-neck", "neck" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ìõ½ğ²Ó²ÓµÄÏîÁ´£¬Á´×¹ÉÏÏâ×ÅÒ»Á£ºì±¦Ê¯¡£\n");
-		set("unit", "Ìõ");
+		set("long", "è¿™æ˜¯ä¸€æ¡é‡‘ç¿ç¿çš„é¡¹é“¾ï¼Œé“¾å ä¸Šé•¶ç€ä¸€ç²’çº¢å®çŸ³ã€‚\n");
+		set("unit", "æ¡");
 		set("value", 5000);
 		set("material", "gold");
 		set("armor_prop/armor", 1);

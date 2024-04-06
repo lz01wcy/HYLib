@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���㳡");
+	set("short", "后殿广场");
 	set("long", @LONG
-�����Ǻ��㳡�����������ʯ��ƴ�ɵĵ������м�����͹��̤�ۣ�
-������ǰ�и���ʩչ�ڹ���������ӡ�ǣ������Ǻ�
+这里是后殿广场，由整块大青石板拼成的地面上有几处凹凸的踏痕，
+似是以前有高手施展内功所遗留的印记，东面是后殿。
 LONG );
 	set("outdoors","nanshaolin");
 	set("exits", ([

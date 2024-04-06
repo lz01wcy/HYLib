@@ -5,11 +5,11 @@ string ask_me();
 
 void create()
 {
-	set_name("³øÄï", ({ "chu niang", "chu" }));
-	set("title", "Öª¸®ÑÃÃÅ");
+	set_name("å¨å¨˜", ({ "chu niang", "chu" }));
+	set("title", "çŸ¥åºœè¡™é—¨");
 	set("long",
-		"Öª¸®ÑÃÃÅµÄ³øÄï£¬Ğ¦ÃĞÃĞµØ¿´×ÅÄã£¬¿´À´ºÜºÍÉÆµÄÑù×Ó¡£\n");
-	set("gender", "Å®ĞÔ");
+		"çŸ¥åºœè¡™é—¨çš„å¨å¨˜ï¼Œç¬‘çœ¯çœ¯åœ°çœ‹ç€ä½ ï¼Œçœ‹æ¥å¾ˆå’Œå–„çš„æ ·å­ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 34);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -33,7 +33,7 @@ void create()
 	set_skill("parry", 10);
 
 	set("inquiry", ([
-		"³Ô·¹" : (: ask_me :),
+		"åƒé¥­" : (: ask_me :),
 	]));
 	setup();
 }
@@ -48,6 +48,6 @@ string ask_me()
 	object me=this_player();
 	me->set("food", (int)me->max_food_capacity());
 	me->set("water", (int)me->max_water_capacity());
-	return "ÂıÂı³Ô£¡±ğÒ­×¡ÁË¡£";
+	return "æ…¢æ…¢åƒï¼åˆ«å™ä½äº†ã€‚";
 }
 

@@ -1,6 +1,6 @@
-//ÏÀ¿ÍĞĞ100º£Ñó°æII
- // xiaoer.c Æ½°²³ÇµêĞ¡¶ş 
-//ĞÇĞÇlywin 2000/6/1 ¶ùÍ¯½Ú  
+//ä¾ å®¢è¡Œ100æµ·æ´‹ç‰ˆII
+ // xiaoer.c å¹³å®‰åŸåº—å°äºŒ 
+//æ˜Ÿæ˜Ÿlywin 2000/6/1 å„¿ç«¥èŠ‚  
 #include <ansi.h>
 #include <command.h>
  inherit NPC;
@@ -9,10 +9,10 @@
  int ask_done();
  void create() 
 { 
-        set_name("µêĞ¡¶ş", ({"xiao er", "xiao"}));
-         set("gender", "ÄĞĞÔ");
+        set_name("åº—å°äºŒ", ({"xiao er", "xiao"}));
+         set("gender", "ç”·æ€§");
          set("age", 25); 
-        set("long",                  "ËûÊÇÆ½°²¿ÍÕ»µÄµêĞ¡¶ş¡£\n");
+        set("long",                  "ä»–æ˜¯å¹³å®‰å®¢æ ˆçš„åº—å°äºŒã€‚\n");
          set("qi", 100); 
         set("max_qi", 100);
          set("jing", 100);
@@ -21,7 +21,7 @@
                  set("combat_exp", 1500);
          set("score", 200);
                   set("inquiry", ([  
-               "¹¤×÷" : (: do_gongzuo :), 
+               "å·¥ä½œ" : (: do_gongzuo :), 
                 "job"  : (: do_gongzuo :),  
                "work" : (: do_gongzuo :),
          ]) ); 
@@ -32,14 +32,14 @@
  {               object me;
          me = this_player(); 
               if (me->query("combat_exp")>=10000)
-     {                 tell_object(me,"ÕâµãĞ¡ÊÂÔõÃ´¸ÒÀÍÄúµÄ´ó¼İ¡£\n");
+     {                 tell_object(me,"è¿™ç‚¹å°äº‹æ€ä¹ˆæ•¢åŠ³æ‚¨çš„å¤§é©¾ã€‚\n");
                  return 1;
      }  
      if( me->query_temp("gongzuo/xipanzi")>0)
-     {                 tell_object(me,"¿ìÈ¥Ï´ÅÌ×Ó°É¡£\n");
+     {                 tell_object(me,"å¿«å»æ´—ç›˜å­å§ã€‚\n");
                  return 1;
      } 
-      message_vision(CYN"Ğ¡¶ş¶Ô$NËµµÀ£ºÕâ¼¸Ìì¿ÍÈË¶à£¡ÅÌ×ÓÏ´²»¹ıÀ´£¬ÄãÈ¥ÌüÌÃÕÒ¹ÜÊÂÒªµãÅÌ×ÓÀ´Ï´°É¡£\n"NOR,me);
+      message_vision(CYN"å°äºŒå¯¹$Nè¯´é“ï¼šè¿™å‡ å¤©å®¢äººå¤šï¼ç›˜å­æ´—ä¸è¿‡æ¥ï¼Œä½ å»å…å ‚æ‰¾ç®¡äº‹è¦ç‚¹ç›˜å­æ¥æ´—å§ã€‚\n"NOR,me);
           me->set_temp("gongzuo/xipanzi", 1); 
         return 1;
     }
@@ -47,13 +47,13 @@
  {         object ob1; 
         if (me->query_temp("gongzuo/xipanzi")<1)         
 { 
-         command("say ÄãÃ»ÓĞÕÒÎÒÒª¹ı¹¤×÷°É¡£\n");
-         }         else if ( ob->query("name") != "ÅÌ×Ó" ) 
-//        else if (strsrch(ob->query("name"), "ÅÌ×Ó") < 0) 
-         {             command("say ÕâÊÇÏ´ºÃµÄÅÌ×Ó£¿Äã²»ÊÇ¿ªÍæĞ¦°É£¡\n"); 
+         command("say ä½ æ²¡æœ‰æ‰¾æˆ‘è¦è¿‡å·¥ä½œå§ã€‚\n");
+         }         else if ( ob->query("name") != "ç›˜å­" ) 
+//        else if (strsrch(ob->query("name"), "ç›˜å­") < 0) 
+         {             command("say è¿™æ˜¯æ´—å¥½çš„ç›˜å­ï¼Ÿä½ ä¸æ˜¯å¼€ç©ç¬‘å§ï¼\n"); 
         }         else         
-{     message_vision(CYN"Ğ¡¶ş¶Ô$NËµµÀ£ºĞÁ¿àÁË£¬ÕâÊÇÄãµÄ¹¤Ç®¡£\n"NOR,me); 
-    message_vision(CYN"Ğ¡¶şµİ¸ø$NÒ»Ğ©Òø×Ó¡£\n"NOR,me); 
+{     message_vision(CYN"å°äºŒå¯¹$Nè¯´é“ï¼šè¾›è‹¦äº†ï¼Œè¿™æ˜¯ä½ çš„å·¥é’±ã€‚\n"NOR,me); 
+    message_vision(CYN"å°äºŒé€’ç»™$Nä¸€äº›é“¶å­ã€‚\n"NOR,me); 
                   me->delete_temp("gongzuo/xipanzi");
                  me->delete_temp("gongzuo/gepanzi"); 
                 if (me->query("combat_exp")>=5000)

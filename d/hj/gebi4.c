@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-       set("short","�������");
+       set("short","西域大戈壁");
        set("long", @LONG
-��������Ĵ��ڣ�Ҫ�߳����ﲢ�����¡���Զ������ɳ�������
-�ذ㴵��������Ҫ��籩�ˡ�
+这是西域的大戈壁，要走出这里并非易事。不远处尘土沙粒铺天盖
+地般吹来，看来要起风暴了。
 LONG);
         set("exits", ([
                 "north" : __DIR__"gebi2",

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","��վ");
+  set ("short","驿站");
   set ("long", @LONG
-�����ǺϷʵ���վ���������Ĺٱ���Ϣ֮�á��м���ʿ����������
-��Ϣ���Ա߻�ι���ż�ƥ��������ȱ�����ϣ��Ѿ��ݹ�����ˡ�
+这里是合肥的驿站，给来往的官兵休息之用。有几个士兵正在这里
+休息。旁边还喂养着几匹马，但是缺于照料，已经瘦骨嶙峋了。
 LONG);
 
   set("exits", ([ 

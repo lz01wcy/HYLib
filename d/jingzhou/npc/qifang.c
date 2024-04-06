@@ -7,10 +7,10 @@ int ask_yuan();
 int ask_kong();
 void create()
 {
-	set_name("Æİ·¼", ({ "qi fang","qi","fang"}) );
-	set("gender", "Å®ĞÔ" );
+	set_name("æˆšèŠ³", ({ "qi fang","qi","fang"}) );
+	set("gender", "å¥³æ€§" );
 	set("age", 24);
-	set("long", "Ö»¼ûËıÓĞÒ»¶ÔÎÚºÚ¶ø¹âÁïÁïµÄÑÛÖé£¬Î¢Î¢ÉÏÇÌµÄ±Ç¼â£¬Ö»ÊÇÁ³É«°×ÁËĞ©¡£\n");
+	set("long", "åªè§å¥¹æœ‰ä¸€å¯¹ä¹Œé»‘è€Œå…‰æºœæºœçš„çœ¼ç ï¼Œå¾®å¾®ä¸Šç¿˜çš„é¼»å°–ï¼Œåªæ˜¯è„¸è‰²ç™½äº†äº›ã€‚\n");
 	set("shen_type", 1);
 	set("combat_exp", 5000);
 	set("str", 20);
@@ -34,13 +34,13 @@ void create()
 	set_temp("apply/damage", 11);
 	set_temp("apply/armor", 7);
         set("inquiry", ([
-            "ãäÁê" : (: ask_yuan :),
-            "¿ÕĞÄ²Ë" : (: ask_kong :),
+            "æ²…é™µ" : (: ask_yuan :),
+            "ç©ºå¿ƒèœ" : (: ask_kong :),
         ]) );	
          set("chat_chance", 10);
          set("chat_msg", ({
-		"Æİ·¼´øĞ¦µÄÈáºÍÉùÒôËµµÀ£º¡°¿ÕĞÄ²Ë£¬Äã¶ãµ½ÄÄ¶ùÀ²£¿Âèµ½´¦ÕÒ²»×Å¡£¡±\n",
-		"Æİ·¼´øĞ¦×Å½ĞµÀ£º¡°¿ÕĞÄ²Ë£¬Äã»¹²»³öÀ´£¿¡±\n",		
+		"æˆšèŠ³å¸¦ç¬‘çš„æŸ”å’Œå£°éŸ³è¯´é“ï¼šâ€œç©ºå¿ƒèœï¼Œä½ èº²åˆ°å“ªå„¿å•¦ï¼Ÿå¦ˆåˆ°å¤„æ‰¾ä¸ç€ã€‚â€\n",
+		"æˆšèŠ³å¸¦ç¬‘ç€å«é“ï¼šâ€œç©ºå¿ƒèœï¼Œä½ è¿˜ä¸å‡ºæ¥ï¼Ÿâ€\n",		
 	}));        
 	setup();
 	carry_object("/clone/misc/cloth")->wear();
@@ -52,7 +52,7 @@ int ask_yuan()
 {
 	object me = this_player();
         command("consider");
-        command("say ºÃÊìÏ¤µÄµØ·½°¡£¬ºÃÏóÔÚÉ¹¹È³¡ÉÏ£¬ÎÒ»¹ºÍÒ»¸öÄĞ×Ó±ÈÊÔ¹ıÎä¹¦µÄ¡£\n");
+        command("say å¥½ç†Ÿæ‚‰çš„åœ°æ–¹å•Šï¼Œå¥½è±¡åœ¨æ™’è°·åœºä¸Šï¼Œæˆ‘è¿˜å’Œä¸€ä¸ªç”·å­æ¯”è¯•è¿‡æ­¦åŠŸçš„ã€‚\n");
         command("?");
         me->set_temp("yuan",1);
         return 1;
@@ -64,18 +64,18 @@ int ask_kong()
 	object ob;
 if (this_object()->query("get") ) return 0;
 	{
-		message_vision(CYN"Æİ·¼Ğ¦µÀ£ºÊéÒÑ¾­¸ø±ğÈËÁË!\n"NOR,me);
+		message_vision(CYN"æˆšèŠ³ç¬‘é“ï¼šä¹¦å·²ç»ç»™åˆ«äººäº†!\n"NOR,me);
 		return 1;
 	}
 
 	if(me->query_temp("yuan")!=1)
 	{
-		message_vision(CYN"Æİ·¼Ğ¦µÀ£ºÄãÊÇÎÊÎÒµÄÅ®¶ùÂğ£¿\n"NOR,me);
+		message_vision(CYN"æˆšèŠ³ç¬‘é“ï¼šä½ æ˜¯é—®æˆ‘çš„å¥³å„¿å—ï¼Ÿ\n"NOR,me);
 		return 1;
 	}
 	else
 	{
-		message_vision(CYN"Æİ·¼³ÁË¼ÁËÒ»»á¶ù£¬ÄÃ³öÁËÒ»±¾Êéµİ¸øÁË$N¡£\n"NOR,me);	
+		message_vision(CYN"æˆšèŠ³æ²‰æ€äº†ä¸€ä¼šå„¿ï¼Œæ‹¿å‡ºäº†ä¸€æœ¬ä¹¦é€’ç»™äº†$Nã€‚\n"NOR,me);	
 		ob = new ("/d/jingzhou/obj/tangshixuan");
 		ob->move(me);
 this_object()->set("get",1);

@@ -8,18 +8,18 @@ int consider_lv(object ob,int a);
 
 void create()
 {
-	set("short", "´ò¹·¸Û");
+	set("short", "æ‰“ç‹—æ¸¯");
 	set("long", @LONG
-´ò¹·¸ÛÎ»ÓÚÌ¨ÍåÄÏ²¿£¬¸ÛÓò¿ÚĞ¡¸¹´ó£¬ÍâÓĞµºÁ´»·±§£¬
-ÄÚ¾ßÇúÕÛÏ¿Íå£¬³ÏÈ«Ì¨µÚÒ»Á¼¸Û¡£
-    ³ÇÍâº£¸Û£¬ÓĞÉÌ´¬(chuan)Ç°Íù¶«å­¡£
+æ‰“ç‹—æ¸¯ä½äºå°æ¹¾å—éƒ¨ï¼Œæ¸¯åŸŸå£å°è…¹å¤§ï¼Œå¤–æœ‰å²›é“¾ç¯æŠ±ï¼Œ
+å†…å…·æ›²æŠ˜å³¡æ¹¾ï¼Œè¯šå…¨å°ç¬¬ä¸€è‰¯æ¸¯ã€‚
+    åŸå¤–æµ·æ¸¯ï¼Œæœ‰å•†èˆ¹(chuan)å‰å¾€ä¸œç€›ã€‚
 LONG );
 	set("exits", ([
                 "east" : "/d/taiwan/dagougang",
                 "north" : __DIR__"chiqian",
 	]));
 	set("item_desc", ([
-                "chuan" : "Ò»ÌõÉÌ´¬£¬¿ÉÒÔÓÃ(shangchuan)È¥¶«å­¡£\n",
+                "chuan" : "ä¸€æ¡å•†èˆ¹ï¼Œå¯ä»¥ç”¨(shangchuan)å»ä¸œç€›ã€‚\n",
 	]));
 	set("objects", ([
 		__DIR__"npc/wokou": 4,
@@ -39,7 +39,7 @@ int do_enter ( string arg )
 	object me, ob,room;
     if( !arg || arg !="chuan" ) 
        {
-         tell_object(this_player() , "ÄãÒª ÉÏÄÄÀïÈ¥£¿\n" ) ;
+         tell_object(this_player() , "ä½ è¦ ä¸Šå“ªé‡Œå»ï¼Ÿ\n" ) ;
          return 1 ;
        }
     if (!room=find_object("/d/feitian/dahai"))
@@ -47,22 +47,22 @@ int do_enter ( string arg )
     me = this_player () ;
 if (me->is_busy())
        {
-         tell_object(this_player() , "ÄãÕıÃ¦×ÅÄØ!\n" ) ;
+         tell_object(this_player() , "ä½ æ­£å¿™ç€å‘¢!\n" ) ;
          return 1 ;
        }
 if (me->is_fighting())
        {
-         tell_object(this_player() , "ÄãÕı´ò×ÅÄØ!\n" ) ;
+         tell_object(this_player() , "ä½ æ­£æ‰“ç€å‘¢!\n" ) ;
          return 1 ;
        }
-    message_vision("´¬ÀÏ´óÒ»¼ûÓĞÈËÉÏ´¬£¬Ã¦½ĞÁËÒ»Éù£º¿ª´¬à¶£¡\n", me);
-    message_vision("´¬·òÉıÆğ·«£¬´¬¾ÍÏò¶«å­ĞĞÈ¥¡£\n", me);
+    message_vision("èˆ¹è€å¤§ä¸€è§æœ‰äººä¸Šèˆ¹ï¼Œå¿™å«äº†ä¸€å£°ï¼šå¼€èˆ¹å–½ï¼\n", me);
+    message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘ä¸œç€›è¡Œå»ã€‚\n", me);
     me->move(room) ;
-    tell_object(me, BLU "ÄãÔÚº£ÉÏº½ĞĞÁËºÜ¾ÃºÜ¾Ã.......\n" NOR ) ;
+    tell_object(me, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†å¾ˆä¹…å¾ˆä¹….......\n" NOR ) ;
 if (random(10) > 7)
 {
-		message_vision(HIB"Í»È»º£ÃæÉÏ³öÏÖÁËÒ»°ãº£µÁ´¬£¬Ò»¸öº£µÁÅÀÉÏÁË´¬.......\n"NOR, me);
-		message_vision(HIB"º£µÁ´óºÈÒ»Éù£ºËùÓĞµÄÈËÍ¨Í¨µÄËÀÀ²£¬ËÀÀ²£¡£¡£¡\n"NOR, me);
+		message_vision(HIB"çªç„¶æµ·é¢ä¸Šå‡ºç°äº†ä¸€èˆ¬æµ·ç›—èˆ¹ï¼Œä¸€ä¸ªæµ·ç›—çˆ¬ä¸Šäº†èˆ¹.......\n"NOR, me);
+		message_vision(HIB"æµ·ç›—å¤§å–ä¸€å£°ï¼šæ‰€æœ‰çš„äººé€šé€šçš„æ­»å•¦ï¼Œæ­»å•¦ï¼ï¼ï¼\n"NOR, me);
 
 		ob = new("/d/feitian/npc/wokou");
               ob->set("combat_exp",me->query("combat_exp") * 8 / 10);
@@ -102,7 +102,7 @@ else    call_out("rfeitian", 20 , me );
 void rfeitian( object me )
 {
     if (!me || me->is_ghost()) return;
-  tell_object(me , "´¬º½ĞĞÁËÕâÃ´¾ÃÖÕÓÚµÖ´ïÁËÒ»¸öµ½´ïÁË¶«å­µÄÒ»¸ö¸Û¿Ú¡£\n" ) ;
+  tell_object(me , "èˆ¹èˆªè¡Œäº†è¿™ä¹ˆä¹…ç»ˆäºæŠµè¾¾äº†ä¸€ä¸ªåˆ°è¾¾äº†ä¸œç€›çš„ä¸€ä¸ªæ¸¯å£ã€‚\n" ) ;
   me->move ("/d/japan/haigang.c") ;
 }
 

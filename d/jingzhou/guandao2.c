@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ٵ�" );
+        set("short", "官道" );
         set("long", @LONG
-������һ����ٵ��ϣ����Բ�ʱ���˴��������߹������Էֱ�
-���м����ǽ������ˡ�������Լ���Կ������ݣ����ߺ�һ��С·������
+你走在一条大官道上，两旁不时有人从你身边走过，可以分辩
+出有几个是江湖中人。西面隐约可以看见荆州，东边和一条小路相连。
 LONG
         );
         set("exits", ([

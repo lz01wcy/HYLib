@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "�ײ���");
+  set ("short", "棺材铺");
   set ("long", @LONG
-�ս���,��ʹ��˸�ͻ,������������˴��СС�Ĺײ�,�ڷ������
-��,������Щ����,��Ӱ�������лζ�,����ʮ�ֲֿ�.
+刚进门,你就打了个突,房间里面摆满了大大小小的棺材,在房间的四
+周,还点着些蜡烛,光影在屋子中晃动,看来十分恐怖.
 LONG);
 
   set("exits", ([ /* sizeof() == 1 */

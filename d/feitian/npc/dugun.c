@@ -3,11 +3,11 @@
 inherit NPC;
 void create()
 {
-	set_name("¶Ä¹÷",({"du gun","dugun"}));
-	set("gender", "ÄĞĞÔ" );
+	set_name("èµŒæ£",({"du gun","dugun"}));
+	set("gender", "ç”·æ€§" );
 	set("age",25);
 	set("long",
-		"Ò»¸ößººÈµÄÕıÆğ¾¢µÄ¶Ä¹÷¡£\n");
+		"ä¸€ä¸ªå†å–çš„æ­£èµ·åŠ²çš„èµŒæ£ã€‚\n");
 	set("combat_exp",1000);
 	set_temp("apply/attack",10);
 	set_temp("apply/defense",10);
@@ -35,11 +35,11 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			say("¶Ä¹÷×ÔÑÔ×ÔÓïµÀ£º½ñ¸÷ÊÖÆøÕæ±³£¬ÓÖ±»×óÖ®ÖúÓ®ÁË¡£\n");
+			say("èµŒæ£è‡ªè¨€è‡ªè¯­é“ï¼šä»Šå„æ‰‹æ°”çœŸèƒŒï¼Œåˆè¢«å·¦ä¹‹åŠ©èµ¢äº†ã€‚\n");
 			break;
 		case 1:
-			message_vision("¶Ä¹÷¶Ô×Å$NĞ¦µÀ£º"+RANK_D->query_respect(ob)+
-			"Ò²Ò²¶ÄÒ»°Ñ°É¡£\n",ob);
+			message_vision("èµŒæ£å¯¹ç€$Nç¬‘é“ï¼š"+RANK_D->query_respect(ob)+
+			"ä¹Ÿä¹ŸèµŒä¸€æŠŠå§ã€‚\n",ob);
 			break;
                            }
 }

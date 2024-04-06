@@ -5,19 +5,19 @@ inherit HAMMER;
 
 void create()
 {
-	set_name(RED"ºäÌì´¸"NOR, ({ "bighammer", "hammer" }) );
+	set_name(RED"è½°å¤©é”¤"NOR, ({ "bighammer", "hammer" }) );
 	set_weight(6000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("material", "steel");
-		set("long", "ÕâÊÇÒ»°Ñ³ÁÖØµÄºäÌì´¸£¬´¸Æğ¶«Î÷À´·Ç³£Àúº¦¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠæ²‰é‡çš„è½°å¤©é”¤ï¼Œé”¤èµ·ä¸œè¥¿æ¥éå¸¸å†å®³ã€‚\n");
 		set("value", 1500);
 //                set("no_put", 1);
 //                set("no_drop", 1);
- 		set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+ 		set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­å½“ä½œæ­¦å™¨ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 	init_hammer(800, TWO_HANDED);
 	setup();

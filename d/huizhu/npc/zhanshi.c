@@ -1,11 +1,11 @@
 inherit NPC;
 void create()
 {
-   set_name("»Ø×åÕ½Ê¿",({"zhan shi"}));
-   set("gender","ÄĞĞÔ");
+   set_name("å›æ—æˆ˜å£«",({"zhan shi"}));
+   set("gender","ç”·æ€§");
    set("score",900);
    set("combat_exp",4000+random(500000));
-set("long", "ËäÈ»»Ø×åÕ½Ê¿µÄÎäÒÕ²»ÄÜºÍÎäÁÖÈËÊ¿Ïà±È£¬¿ÉÊÇËûÃÇ½²¾¿µÄÊÇÈË¶àÁ¦Á¿´ó¡£\n");
+set("long", "è™½ç„¶å›æ—æˆ˜å£«çš„æ­¦è‰ºä¸èƒ½å’Œæ­¦æ—äººå£«ç›¸æ¯”ï¼Œå¯æ˜¯ä»–ä»¬è®²ç©¶çš„æ˜¯äººå¤šåŠ›é‡å¤§ã€‚\n");
 set("attitude", "peaceful");
 
    set("age",19+random(30));

@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÕÅÕÙÖØ", ({ "zhang zhaozhong", "zhang", "zhaozhong"}) );
-	set("title", "ÓùÁÖ¾üæçÆïÓª×ôÁì");
-	set("nickname", HIR"»ðÊÖÅÐ¹Ù"NOR);
-	set("gender", "ÄÐÐÔ");
+	set_name("å¼ å¬é‡", ({ "zhang zhaozhong", "zhang", "zhaozhong"}) );
+	set("title", "å¾¡æž—å†›éªéª‘è¥ä½é¢†");
+	set("nickname", HIR"ç«æ‰‹åˆ¤å®˜"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 43);
 	set("long",
-"ÕÅÕÙÖØÈË³Æ¡°»ðÊÖÅÐ¹Ù¡±£¬Éí²Ä¿ýÎà£¬ÁôÒ»´Ô¶Ìºú×Ó¡£½­ºþÊ¢
-ÑÔ¡°Äþ°¤Ò»Ç¹£¬ÄªÓöÒ»ÕÅ¡±¾ÍÊÇÖ¸ËûÁË¡£ËûÈÈÖÔ¹¦ÃûÀûÂ»£¬Í¶
-Éí³¯Í¢£¬´ËÈË°ìÊÂÂôÁ¦£¬ÕâÐ©ÄêÀ´¸üÊÇÇàÔÆÖ±ÉÏ¡£\n");
+"å¼ å¬é‡äººç§°â€œç«æ‰‹åˆ¤å®˜â€ï¼Œèº«æé­æ¢§ï¼Œç•™ä¸€ä¸›çŸ­èƒ¡å­ã€‚æ±Ÿæ¹–ç››
+è¨€â€œå®æŒ¨ä¸€æžªï¼ŒèŽ«é‡ä¸€å¼ â€å°±æ˜¯æŒ‡ä»–äº†ã€‚ä»–çƒ­è¡·åŠŸååˆ©ç¦„ï¼ŒæŠ•
+èº«æœå»·ï¼Œæ­¤äººåŠžäº‹å–åŠ›ï¼Œè¿™äº›å¹´æ¥æ›´æ˜¯é’äº‘ç›´ä¸Šã€‚\n");
 	set("combat_exp", 750000);
         set("shen_type", -1);
 	set("attitude", "heroism");
@@ -45,7 +45,7 @@ void create()
 	map_skill("unarmed", "taiji-quan");
 	map_skill("parry", "taiji-jian");
 
-        create_family("Îäµ±ÅÉ", 13, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 13, "å¼Ÿå­");
 	setup();
 
         carry_object(__DIR__"obj/green_sword")->wield();

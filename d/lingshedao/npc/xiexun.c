@@ -8,14 +8,14 @@ int ask_wuji();
 int ask_tulong();
 void create()
 {
-        set_name("лѷ", ({"xie xun", "xie", "xun", }));
+        set_name("谢逊", ({"xie xun", "xie", "xun", }));
         set("long",
-        "\n����һλ���Ŀ�ΰ�쳣�ĵ�����,��ͷ�Ʒ�����������.\n"
-        "����,������ֻ�۾���������,������Ϲ��.\n"
-        "������һ�ѱ���,���ڿ��ڤ˼��ʲô.\n"
+        "\n他是一位身材魁伟异常的的老者,满头黄发，威风凛凛.\n"
+        "可是,他的两只眼睛并不睁开,好象是瞎了.\n"
+        "他捧着一把宝刀,正在苦苦冥思着什么.\n"
         );
-        set("nickname",HIY "��ëʨ��" NOR);
-        set("gender", "����");
+        set("nickname",HIY "金毛狮王" NOR);
+        set("gender", "男性");
         set("attitude", "peaceful");
 
         set("age", 53);
@@ -78,19 +78,19 @@ void create()
         }) );
        
         set("inquiry",([
-            "�޼�" :    ( :ask_wuji: ),
-            "������" :  ( :ask_tulong: ),
+            "无忌" :    ( :ask_wuji: ),
+            "屠龙刀" :  ( :ask_tulong: ),
             "wuji" :    ( :ask_wuji: ),
-            "�ؼ�" :    ( :ask_huijia: ),
+            "回家" :    ( :ask_huijia: ),
             "tulong" :  ( :ask_tulong: ),
         ]) );
 
         set("chat_chance",4);
         set("chat_msg",({
-           "лѷ������˼��:��������������,�㵽����ʲô������?\n",
-           "лѷ�޺޵�˵��:��������,�㺦�Ҽ�������,�Ҳ�����ɱ����,�����Ŀ!\n",
-           "лѷ�૵�˵��:Ҳ��֪�������޼ɺ�����������.\n",
-           "лѷ�����̾��:��֪�������˴��ҵ������Ϊ��ʲô.\n",
+           "谢逊抚刀沉思道:屠龙刀啊屠龙刀,你到底有什么秘密呢?\n",
+           "谢逊恨恨的说道:成昆老贼,你害我家破人亡,我不亲手杀了你,死不瞑目!\n",
+           "谢逊喃喃的说道:也不知道我那无忌孩儿过得怎样.\n",
+           "谢逊轻轻的叹道:不知道韩夫人带我到这儿是为了什么.\n",
         }) );
         setup();
         carry_object("/d/city/obj/cloth")->wear();
@@ -99,8 +99,8 @@ void create()
 
 int accept_fight(object ob)
 {
-        say("лѷ��Ȼ��: ��Ҫ��ǿ�ᵶ���ǲ��ǣ�лѷ�����������֣��ֵù�����һ������..\n");
-        say("лѷŭ��һ��: Ҫȡ��������ȡ������������!\n");
+        say("谢逊昂然道: 你要恃强夺刀，是不是？谢逊有屠龙刀在手，抵得过坏了一对招子..\n");
+        say("谢逊怒吼一声: 要取宝刀，先取了我这条性命!\n");
         kill_ob(ob);
         return 1;
 }
@@ -116,23 +116,23 @@ int accept_object(object who, object ob)
             {
               if(who->query_temp("marks/wuji")&&who->query_temp("marks/tulong"))
                {
-     say("лѷ��"+ ob->query("name") + "�������︧����һ��,ͻȻ
-���ʵ�:�ǵ�,�����޼ɺ����Ķ���\n");
-                if(who->query("party/party_name")== HIG "����" NOR)
+     say("谢逊把"+ ob->query("name") + "放在手里抚摸了一会,突然
+哽咽道:是的,这是无忌孩儿的东西\n");
+                if(who->query("party/party_name")== HIG "明教" NOR)
                {
                 tlblade= new("/d/lingshedao/obj/tlblade");
-               message_vision("лѷ������ס$N����˵����лл��������޼ɵ�ѶϢ�����Ѿ���������
-�������ϵķ���,���������,������ת�����޼ɰ�!\n
-˵��лѷ��"+ tlblade->query("name") + "������" + who->query("name") + "��\n",who);
+               message_vision("谢逊紧紧握住$N的手说道：谢谢你带来了无忌的讯息，我已经年老体迈
+经不起海上的风浪,这把屠龙刀,就请你转交给无忌吧!\n
+说罢谢逊把"+ tlblade->query("name") + "交给了" + who->query("name") + "。\n",who);
               tlblade->move(who);
-                command("rumor "+who->query("name")+"�õ��������ˡ�\n");
+                command("rumor "+who->query("name")+"拿到屠龙刀了。\n");
                 add("blade_count",-1);
                 who->set("blade_get",1);
                 who->delete_temp("marks/wuji",1);
                 who->delete_temp("marks/tulong",1);
-                message_vision(HIC" ���ڴ�ʱ���������������������������������˼�������,
-�����˶�����������ۣ����������������ߣ�����һ���Ǹ�Ů�ӡ�
-ÿ�˵İ��۽��Ϻ�Ȼ������һ������֮�Σ������������ˡ�\n\n"NOR,who);
+                message_vision(HIC" 便在此时，忽听得身后传来两下玎玎异声，三个人疾奔而至,
+那三人都身穿宽大白袍，其中两人身形甚高，左首一人是个女子。
+每人的白袍角上赫然都绣着一个火焰之形，竟是明教中人。\n\n"NOR,who);
                 if(!(room=find_object("/d/lingshedao/chuan")) )
                 room=load_object("/d/lingshedao/chuan");
                 shi1 = new("/d/lingshedao/npc/liuyun");
@@ -146,16 +146,16 @@ int accept_object(object who, object ob)
                 shi3->move("d/lingshedao/xiaowu");
                 return 1;
                }
-              say("лѷ��Ĭ��һ��,˵��:��������������������ת�����޼�,��ϧ 
-�������������,��ʵ�ڷ��Ĳ���.��!\n\n");
-              say("лѷ��˵��:������һ��С��,������,�����㵽�Ƕ�,��������ǧ��Ҫй¶�ҵ�����.��.\n\n");
+              say("谢逊沉默了一阵,说道:本来想请你把这把屠龙刀转交给无忌,可惜 
+你非我明教中人,我实在放心不下.唉!\n\n");
+              say("谢逊又说道:岛东有一条小船,这样吧,我送你到那儿,回中土后千万不要泄露我的行踪.唉.\n\n");
               call_out("go_back",4,who);
               return 1;
                }
-              say("лѷ��Цһ��:����ʲô����?���������Զ��!\n");
+              say("谢逊冷笑一声:这是什么东西?你最好离我远点!\n");
               return 0;
             }
-        say("лѷ˵��:�Ҳ��������������ת�����޼���?\n");  
+        say("谢逊说道:我不是让你把屠龙刀转交给无忌吗?\n");  
         command("heng");
         command("give " + ob->query("id") + " to " + who->query("id"));
         return 1;
@@ -168,8 +168,8 @@ int ask_wuji()
 {
         object ob;
         ob=this_player();
-        message_vision(MAG"\nлѷһ�,�������еı���,�����ʵ�:�޼�,�޼�,��֪��\n
-���޼ɺ�������Ϣô?�������,�޼ɺ�������?\n"NOR,ob);
+        message_vision(MAG"\n谢逊一愣,放下手中的宝刀,颤声问道:无忌,无忌,你知道\n
+我无忌孩儿的消息么?快告诉我,无忌孩儿在哪?\n"NOR,ob);
         ob->set_temp("marks/wuji","1");
         return 1;
 }
@@ -178,7 +178,7 @@ int ask_huijia()
 {
         object who;
         who=this_player();
-        message_vision(MAG"\nлѷ��˵��:������һ��С��,������,�����㵽�Ƕ�,��������ǧ��Ҫй¶�ҵ�����.��.?\n"NOR,who);
+        message_vision(MAG"\n谢逊又说道:岛东有一条小船,这样吧,我送你到那儿,回中土后千万不要泄露我的行踪.唉.?\n"NOR,who);
        call_out("go_back",4,who);
         return 1;
 }
@@ -190,18 +190,18 @@ int ask_tulong()
         ob=this_player();
         if((int)ob->query("combat_exp")<200000)
         {
-        say("лѷ�ߵ�һ��,˵��:�������΢ĩ����,Ҳ������������?\n");
-        message_vision("˵��лѷ����һ��,��$N�߳���С��\n",ob);
+        say("谢逊哼的一声,说道:就你这点微末道行,也配来问屠龙刀?\n");
+        message_vision("说完谢逊飞起一脚,把$N踢出了小屋\n",ob);
         ob->move("/d/lingshedao/xiaowuout");
         return 1;
         }
         if(this_object()->query("blade_count")>0) 
        { command("nod");
-        say(HIW"лѷ˵��: �������𣬱����������������£�Ī�Ҳ��ӣ�\n"NOR);
+        say(HIW"谢逊说道: 武林至尊，宝刀屠龙，号令天下，莫敢不从！\n"NOR);
         ob->set_temp("marks/tulong","1");
         return 1;
        }
-        command("say �Ѿ����˰�������������.\n");
+        command("say 已经有人把屠龙刀带走了.\n");
         return 1;
 }
 
@@ -214,20 +214,20 @@ int go_back(object who)
        if (  present("miao feng", environment(who))
        || present("hui yue", environment(who))
        || present("liu yun", environment(who)))
-        return notify_fail("���̵��˶����������ϵĵ���������¹�(kneel)���Ǿܾ�(refuse)?\n");
+        return notify_fail("明教的人都看着你手上的刀，你决定下跪(kneel)还是拒绝(refuse)?\n");
 }
 else {
-    message_vision("лѷ��$N�͵���һ����̲��.\n",who);
+    message_vision("谢逊将$N送到了一个海滩上.\n",who);
         who->move("/d/lingshedao/haitan2");
         return 1;
 }
 } 
 void die()
 {
-        message("vision","\nлѷ���쳤Ц��:�벻����лѷ�ݺὭ����ʮ��,���վ�����һ
-������С������.ֻ��ϧ���������,�������ֽ����ҵ��޼ɺ�����!\n","/d/lingshedao/xiaowu");
-        message("vision","лѷ��̾һ��:����������,������Ҳ�����������֮��!˵��,лѷ
-������������������һ��,����������ɽ������,��Ҳû����Ӱ.\n","/d/lingshedao/xiaowu");
-        message_vision("ֻ��$N�����ĵ�����ȥ,����.\n",this_object());
+        message("vision","\n谢逊仰天长笑道:想不到我谢逊纵横江湖数十年,今日竟败在一
+个无名小卒手下.只可惜这把屠龙刀,不能亲手交给我的无忌孩儿了!\n","/d/lingshedao/xiaowu");
+        message("vision","谢逊长叹一声:就算我死了,屠龙刀也不能落入奸人之手!说罢,谢逊
+将屠龙刀奋力往窗外一扔,屠龙刀落入山中密林,再也没了踪影.\n","/d/lingshedao/xiaowu");
+        message_vision("只见$N缓缓的倒了下去,死了.\n",this_object());
         ::die();
 }

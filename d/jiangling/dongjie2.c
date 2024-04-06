@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-	set("short", "����");
+	set("short", "东街");
 	set("long", @LONG
-���ǽ���Ƕ���һ��С�֡���Ȼ����û�����ַ���������ȴҲ����
-Щ����������ȥ�Ҵҡ�������һ�¸߸ߵ�Χǽ��������һ����ݡ�
+这是江陵城东的一条小街。虽然这里没有西街繁华，近日却也颇有
+些江湖人物来去匆匆。西边是一堵高高的围墙，东边是一个茶馆。
 LONG
 	);
 	set("outdoors", "jiangling");

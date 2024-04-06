@@ -7,12 +7,12 @@ void setup()
 
 void create()
 {
-	       set_name("´©ĞÄÁ«", ({"chuanxin lian","lian" }));
+	       set_name("ç©¿å¿ƒè²", ({"chuanxin lian","lian" }));
 	
-		set("unit", "¶ä");
-		set("long", "ÕâÊÇÒ»¶ä·ÛºìÉ«µÄÁ«»¨¡£\n");
+		set("unit", "æœµ");
+		set("long", "è¿™æ˜¯ä¸€æœµç²‰çº¢è‰²çš„è²èŠ±ã€‚\n");
 		set("value", 500);
-//            set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//            set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
               set_weight(50);
 
 	

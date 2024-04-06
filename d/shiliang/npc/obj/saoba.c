@@ -2,12 +2,12 @@
 inherit ITEM;
 void create()
 {
-        set_name( "É¨°Ñ", ({ "saoba"}));
+        set_name( "æ‰«æŠŠ", ({ "saoba"}));
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long","ÕâÊÇÒ»°ÑÓÃÀ´µÄ´òÉ¨ÎÀÉúµÄÉ¨°Ñ¡£\n");
+                set("unit", "æŠŠ");
+                set("long","è¿™æ˜¯ä¸€æŠŠç”¨æ¥çš„æ‰“æ‰«å«ç”Ÿçš„æ‰«æŠŠã€‚\n");
              }
 }

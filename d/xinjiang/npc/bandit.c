@@ -2,11 +2,11 @@
 inherit NPC; 
 void create()
 {
-        set_name("ÍÁ·Ë", ({ "bandit" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("åœŸåŒª", ({ "bandit" }) );
+        set("gender", "ç”·æ€§");
         set("age", 33);
         set("long",
-                "Õâ¼Ò»ïÂúÁ³ºáÈâ£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬ÁîÈËÍû¶øÉúÎ·¡£\n");
+                "è¿™å®¶ä¼™æ»¡è„¸æ¨ªè‚‰ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚\n");
         set("combat_exp", 600);
         set("score", 60);
         set("attitude", "friendly");
@@ -34,13 +34,13 @@ void greeting(object ob)
                 return;
         if (ob->query("class") != "bandit")
         {
-                message_vision("$N¿´×ÅÄã´óÉùºôº°µ½£º¡°ĞÖµÜÃÇ£¬·ÊÑòÈë¿Ú£¡¡±\n", this_object() );
+                message_vision("$Nçœ‹ç€ä½ å¤§å£°å‘¼å–Šåˆ°ï¼šâ€œå…„å¼Ÿä»¬ï¼Œè‚¥ç¾Šå…¥å£ï¼â€\n", this_object() );
                 this_object()->kill_ob(ob);
                 ob->kill_ob(this_object());
         }
         else if(ob->query("class")=="bandit")
         {
-                message_vision("$N¶ÔÄãÒõĞ¦µÀ£ºĞÖµÜ½ñÌìÓÖµ½ÄÄÀï´ò¼Ò½ÙÉá£¿\n", this_object() );
+                message_vision("$Nå¯¹ä½ é˜´ç¬‘é“ï¼šå…„å¼Ÿä»Šå¤©åˆåˆ°å“ªé‡Œæ‰“å®¶åŠ«èˆï¼Ÿ\n", this_object() );
         }
         return;
 }     

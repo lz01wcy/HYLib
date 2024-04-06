@@ -1,18 +1,18 @@
-// xiaoer2.c µêÐ¡¶þ
+// xiaoer2.c åº—å°äºŒ
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("µêÐ¡¶þ", ({ "xiao er", "xiao", "waiter" }) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»µêÐ¡¶þÕýÐ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆð¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ð¡¶þ¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
 		__DIR__"obj/tangbo",
 		__DIR__"obj/kaoya",
@@ -43,12 +43,12 @@ void greeting(object ob)
 		return;
 	switch(random(2)) {
 	case 0 :
-		say("µêÐ¡¶þÐ¦ÃÐÃÐµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-			"£¬¿ìÇë½øÀ´ºÈ±­ÈÈ²è¡£\n");
+		say("åº—å°äºŒç¬‘çœ¯çœ¯åœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) +
+			"ï¼Œå¿«è¯·è¿›æ¥å–æ¯çƒ­èŒ¶ã€‚\n");
 		break;
 	case 1 :
-		say("µêÐ¡¶þËµµÀ£ºÓ´£¡ÕâÎ»" + RANK_D->query_respect(ob) + 
-			"ÄúÀ´ÁË°¡£¡±¾µêÓÐ¸ÕÕôºÃµÄÌÀ°ü³öÊÛ¡£\n");
+		say("åº—å°äºŒè¯´é“ï¼šå“Ÿï¼è¿™ä½" + RANK_D->query_respect(ob) + 
+			"æ‚¨æ¥äº†å•Šï¼æœ¬åº—æœ‰åˆšè’¸å¥½çš„æ±¤åŒ…å‡ºå”®ã€‚\n");
 		break;
 	}
 }

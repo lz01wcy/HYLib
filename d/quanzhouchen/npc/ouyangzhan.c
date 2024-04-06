@@ -1,14 +1,14 @@
-// ouyangzhan.c Å·ÑôÕ²
+// ouyangzhan.c æ¬§é˜³è©¹
 
 inherit NPC;
 #include <ansi.h>
 
 void create()
 {
-	set_name("Å·ÑôÕ²", ({ "ouyang zhan", "zhan", "ouyang" }));
+	set_name("æ¬§é˜³è©¹", ({ "ouyang zhan", "zhan", "ouyang" }));
 	set("long",
-"Å·ÑôÕ²ÊÇÈªÖÝÃûÊ¿¡£\n");
-	set("gender", "ÄÐÐÔ");
+"æ¬§é˜³è©¹æ˜¯æ³‰å·žåå£«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 	set("no_get", 1);
 	set_skill("literate", 300);
@@ -27,20 +27,20 @@ void create()
 
 int recognize_apprentice(object ob)
 {
-	if (!(int)ob->query_temp("mark/Öì")) return 0;
-	ob->add_temp("mark/Öì", -1);
+	if (!(int)ob->query_temp("mark/æœ±")) return 0;
+	ob->add_temp("mark/æœ±", -1);
 	return 1;
 }
 
 int accept_object(object who, object ob)
 {
 	object me = this_player();
-	if (!(int)who->query_temp("mark/Öì"))
-		who->set_temp("mark/Öì", 0);
+	if (!(int)who->query_temp("mark/æœ±"))
+		who->set_temp("mark/æœ±", 0);
 	if (ob->query("money_id") && ob->value() >= 1000)
 	{
-		message_vision("Å·ÑôÕ²Í¬ÒâÖ¸µã$NÒ»Ð©¶ÁÊéÐ´×ÖµÄÎÊÌâ¡£\n", who);
-		who->add_temp("mark/Öì", ob->value() / 50);
+		message_vision("æ¬§é˜³è©¹åŒæ„æŒ‡ç‚¹$Nä¸€äº›è¯»ä¹¦å†™å­—çš„é—®é¢˜ã€‚\n", who);
+		who->add_temp("mark/æœ±", ob->value() / 50);
 		return 1;
 	}
 }

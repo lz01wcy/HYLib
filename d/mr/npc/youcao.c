@@ -1,4 +1,4 @@
-// /u/beyond/mr/npc/youcao.c �Ĳ�
+// /u/beyond/mr/npc/youcao.c 幽草
 // this is made by beyond
 // update 1997.6.23
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("�Ĳ�", ({ "you cao", "cao", "you" }));
-        set("gender", "Ů��");
+        set_name("幽草", ({ "you cao", "cao", "you" }));
+        set("gender", "女性");
         set("age", 20);      
-	set("title",GRN"Ѿ��"NOR);
+	set("title",GRN"丫鬟"NOR);
 	set("str", 25);
         set("int", 26);
         set("con", 26);
@@ -44,20 +44,20 @@ void create()
         carry_object(__DIR__"obj/red_silk")->wear();
         carry_object(__DIR__"obj/skirt1")->wear();
         set("inquiry", ([
-            "name" : "�Ҿ�����٢��ɽׯ��Ѿ���Ĳݡ�\n",
-            "here" : "��������٢��ɽׯ���ѵ���û����˵����\n",
-            "rumors" : "���ʷ��������辭�����������ʣ�ǧ������������㡣\n",
-            "����" : "����ס������ˮ鿣���Ľ�ݹ��ӵ�����Ѿ�ߣ�������������һͬ�̷�ӡ�\n",
-            "����" : "���̹���ס������С��������Ҫ�ݼ�Ľ�ݹ��ӵ��˶�Ҫ�������ﾭ����\n",
-            "������" : "���������Ҽ�С�㡣\n",
-            "����ˮ�" : "����ˮ��ǰ������ס�ĵط��������ﲻԶ��\n",
-            "����С��" : "����С���ǰ��̹���ס�ĵط�����С��������ˮ·�͵��ˡ�\n",
-            "��٢��ɽׯ" : "���������٢��ɽׯ�ˡ�\n",
+            "name" : "我就是曼佗罗山庄的丫鬟幽草。\n",
+            "here" : "这里是曼佗罗山庄，难道你没有听说过？\n",
+            "rumors" : "花肥房的严妈妈经常用人做花肥，千万别让他看见你。\n",
+            "阿朱" : "阿朱住在听香水榭，是慕容公子的贴身丫鬟，跟阿碧两个人一同侍奉公子。\n",
+            "阿碧" : "阿碧姑娘住在琴韵小筑，所有要拜见慕容公子的人都要由她那里经过。\n",
+            "王语嫣" : "王姑娘是我家小姐。\n",
+            "听香水榭" : "听香水榭是阿珠姑娘住的地方，离这里不远。\n",
+            "琴韵小筑" : "琴韵小筑是阿碧姑娘住的地方，坐小舟有三九水路就到了。\n",
+            "曼佗罗山庄" : "这里就是曼佗罗山庄了。\n",
             
        ]));                 
         set("chat_chance",20);
        set("chat_msg",({
-                "�Ĳ��������ﵽ����ǧ����������迴���㣬Ҫ����������ɻ��ʵġ���\n",
+                "幽草自言自语到：“千万别让严妈妈看见你，要不会把你作成花肥的。”\n",
                 
         }) );        
 }

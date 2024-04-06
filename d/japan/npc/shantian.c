@@ -3,10 +3,10 @@ inherit F_DEALER;
 inherit NPC;
 void create()
 {
-  set_name("É½ÌïÓ¢Ê÷",({"shantian yingshu","shantian","yingshu"}));
-   set("gender","ÄĞĞÔ");
+  set_name("å±±ç”°è‹±æ ‘",({"shantian yingshu","shantian","yingshu"}));
+   set("gender","ç”·æ€§");
    set("age",47);
-   set("title","Éñ»§³¯Ò°ÊéÎİ");
+   set("title","ç¥æˆ·æœé‡ä¹¦å±‹");
    set("combat_exp",20000);
    set_skill("unarmed",10);
    set_skill("dodge",10);

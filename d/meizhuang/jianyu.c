@@ -4,16 +4,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", BLU"Ã·×¯µØÀÎ"NOR);
+        set("short", BLU"æ¢…åº„åœ°ç‰¢"NOR);
         set("long", @LONG
-ÕâÀïºÚºÚ°µ°µ£¬¼¸ºõÉìÊÖ²»¼ûÎåÖ¸¡£Î¨Ò»µÄ¹âÁÁÀ´×ÔÇ½ÉÏºöÃ÷ºö°µµÄ
-ËÉÓÍµÆ¡£µØÉÏºÍÇ½ÉÏ²¼ÂúÁË°µºìÉ«µÄÑªºÛ£¬É¢·¢³öÕóÕóĞÈÆø¡£²»¶Ï´«À´µÄ
-´­Ï¢ÉùÔÚËÀ³ÁµÄµØÀÎÀï»Øµ´£¬ÁîÈËÃ«¹ÇËÊÈ»¡£´ÓµØÀÎµÄÇ½·ìÀïÍ¸³ö¼¸ÂÆÑô
-¹â¡£
+è¿™é‡Œé»‘é»‘æš—æš—ï¼Œå‡ ä¹ä¼¸æ‰‹ä¸è§äº”æŒ‡ã€‚å”¯ä¸€çš„å…‰äº®æ¥è‡ªå¢™ä¸Šå¿½æ˜å¿½æš—çš„
+æ¾æ²¹ç¯ã€‚åœ°ä¸Šå’Œå¢™ä¸Šå¸ƒæ»¡äº†æš—çº¢è‰²çš„è¡€ç—•ï¼Œæ•£å‘å‡ºé˜µé˜µè…¥æ°”ã€‚ä¸æ–­ä¼ æ¥çš„
+å–˜æ¯å£°åœ¨æ­»æ²‰çš„åœ°ç‰¢é‡Œå›è¡ï¼Œä»¤äººæ¯›éª¨è€¸ç„¶ã€‚ä»åœ°ç‰¢çš„å¢™ç¼é‡Œé€å‡ºå‡ ç¼•é˜³
+å…‰ã€‚
 LONG
         );
         set("item_desc", ([
-                "wall": "Ç½ÉÏµÄÇàÊ¯×©ËÆºõÒÔÇ°ÓĞÈË¶¯¹ıÊ²Ã´ÊÖ½Å¡£\n",
+                "wall": "å¢™ä¸Šçš„é’çŸ³ç –ä¼¼ä¹ä»¥å‰æœ‰äººåŠ¨è¿‡ä»€ä¹ˆæ‰‹è„šã€‚\n",
         ]) );
         set("objects", ([
                 "/d/heimuya/npc/renwoxing" : 1,
@@ -33,11 +33,11 @@ void check_trigger()
         object room;
         if( (int)query("trigger")==8 && !query("exits/out") )
         {
-message("vision", "Ç½±Ú±»ÄãÍÆµÃÁÑ¿ªÁËÒ»µÀ·ìÏ¶£¬¸ÕºÃ¿ÉÒÔÈİÄã×ê³öÈ¥¡£\n", this_object() );
+message("vision", "å¢™å£è¢«ä½ æ¨å¾—è£‚å¼€äº†ä¸€é“ç¼éš™ï¼Œåˆšå¥½å¯ä»¥å®¹ä½ é’»å‡ºå»ã€‚\n", this_object() );
                 set("exits/out", __DIR__"xiaowu");
                 if(!( room = find_object(__DIR__"xiaowu")) )
                      room = load_object(__DIR__"xiaowu");
-                message("vision", "µØÏÂÍ»È»ÁÑ¿ªÒ»ÌõÕ­·ì¡£\n", room );
+                message("vision", "åœ°ä¸‹çªç„¶è£‚å¼€ä¸€æ¡çª„ç¼ã€‚\n", room );
                 room->set("exits/enter", __FILE__);
                 delete("trigger");
                 call_out("close_passage", 5);
@@ -50,11 +50,11 @@ void close_passage()
 
         if( !query("exits/out") ) return;
         message("vision",
-"Ò»Æ¬É³ÍÁÂäÏÂÀ´, ÓÖ½«Í¨µÀÑÚ¸Ç×¡ÁË¡£\n", this_object());
+"ä¸€ç‰‡æ²™åœŸè½ä¸‹æ¥, åˆå°†é€šé“æ©ç›–ä½äº†ã€‚\n", this_object());
 //        if( room = find_object(__DIR__"east_castle") ) {
         if( room = find_object(__DIR__"xiaowu") )
         {
-message("vision", "Ò»Æ¬É³ÍÁÂäÏÂÀ´£¬ÓÖ½«Í¨µÀÑÚ¸Ç×¡ÁË¡£\n", room );
+message("vision", "ä¸€ç‰‡æ²™åœŸè½ä¸‹æ¥ï¼Œåˆå°†é€šé“æ©ç›–ä½äº†ã€‚\n", room );
                 room->delete("exits/enter");
         }
         delete("exits/out");
@@ -66,14 +66,14 @@ int do_push(string arg)
 
         if( !arg || arg=="" )
         {
-                write("ÄãÒªÍÆÊ²Ã´£¿\n");
+                write("ä½ è¦æ¨ä»€ä¹ˆï¼Ÿ\n");
                 return 1;
         }
 
-        if( arg=="wall" || arg == "Ç½±Ú")
+        if( arg=="wall" || arg == "å¢™å£")
         {
                 add("trigger", 1);
-                write("ÄãÊÔÖøÓÃÁ¦ÍÆ×ÅÇ½±ÚÉÏµÄÇà×©£¬ËÆºõÓĞÒ»µãËÉ¶¯....\n");
+                write("ä½ è¯•è‘—ç”¨åŠ›æ¨ç€å¢™å£ä¸Šçš„é’ç –ï¼Œä¼¼ä¹æœ‰ä¸€ç‚¹æ¾åŠ¨....\n");
                 check_trigger();
                 return 1;
         }

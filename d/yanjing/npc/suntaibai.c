@@ -3,17 +3,17 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ËïÌ«°×", ({ "sun taibai", "sun", "taibai" }));
-	set("title", "Ì«°×¾ÆÂ¥");
+	set_name("å­™å¤ªç™½", ({ "sun taibai", "sun", "taibai" }));
+	set("title", "å¤ªç™½é…’æ¥¼");
 	set("shen_type", 1);
 
 	set("str", 30);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("combat_exp", 5800);
 	set("attitude", "friendly");
 
-	set("rank_info/respect", "ÀÏ°å");
+	set("rank_info/respect", "è€æ¿");
 	set("vendor_goods", ({
                __DIR__"obj/zuitaibai",
                 __DIR__"obj/niurou",

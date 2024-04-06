@@ -5,16 +5,16 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÍõÅÌÉ½Óæ¸Û");
+	set("short", "çŽ‹ç›˜å±±æ¸”æ¸¯");
 	set("long", @LONG
-ÕâÀï¾ÍÊÇÍõÅÌµºÉ½Óæ¸ÛÁË¡£±±±ßÊÇÒ»ÍûÎÞ¼ÊµÄ´óº££»ÍùÎ÷±±ÊÇÒ»
-Æ¬Ê÷ÁÖ¡£µºÉÏµÄ¿ÕÆøËÆºõÓÖÈÈÓÖÃÆ£¬ÏÌÊªµÄº£·çÖÐ´ø×ÅÒ»¹ÉÐÈ³ô¡£º£
-±ß²´×Å¼¸ËÒ´ó´¬(chuan)¡£
+è¿™é‡Œå°±æ˜¯çŽ‹ç›˜å²›å±±æ¸”æ¸¯äº†ã€‚åŒ—è¾¹æ˜¯ä¸€æœ›æ— é™…çš„å¤§æµ·ï¼›å¾€è¥¿åŒ—æ˜¯ä¸€
+ç‰‡æ ‘æž—ã€‚å²›ä¸Šçš„ç©ºæ°”ä¼¼ä¹Žåˆçƒ­åˆé—·ï¼Œå’¸æ¹¿çš„æµ·é£Žä¸­å¸¦ç€ä¸€è‚¡è…¥è‡­ã€‚æµ·
+è¾¹æ³Šç€å‡ è‰˜å¤§èˆ¹(chuan)ã€‚
 LONG );
 	set("outdoors", "wangpan");
 	set("no_clean_up", 0);
 	set("item_desc", ([
-		"chuan" : "¼¸ËÒÔ¶Ñó´óº£´¬¡£ÉÏ´¬(enter)¾Í¿ÉÒÔ³öº£¡£\n",
+		"chuan" : "å‡ è‰˜è¿œæ´‹å¤§æµ·èˆ¹ã€‚ä¸Šèˆ¹(enter)å°±å¯ä»¥å‡ºæµ·ã€‚\n",
 	]));
 	set("exits", ([
 		"northwest" : __DIR__"wangpanlin",
@@ -32,40 +32,40 @@ int do_enter ( string arg )
 	string dir;
 	if( !arg || arg !="chuan" ) 
 	{
-		tell_object(this_player() , "ÄãÒª enter ÄÄ¶ù£¿\n" ) ;
+		tell_object(this_player() , "ä½ è¦ enter å“ªå„¿ï¼Ÿ\n" ) ;
 		return 1 ;
 	}
 	ob = this_player ();
 	if (random(3) >0)
 	{
-		message_vision("·ç·«ÉýÆð£¬´¬Í·»º»º×ª¹ý£¬·çÏòÄæ×ª£¬´¬·´¶øÏòÎ÷·½º½ÐÐ¡£\n", ob);
+		message_vision("é£Žå¸†å‡èµ·ï¼Œèˆ¹å¤´ç¼“ç¼“è½¬è¿‡ï¼Œé£Žå‘é€†è½¬ï¼Œèˆ¹åè€Œå‘è¥¿æ–¹èˆªè¡Œã€‚\n", ob);
 		ob ->move(__DIR__"westboat") ;
-		tell_object(ob, BLU "ÄãÔÚÇ®ÌÁ½­ÉÏË³·çË³Ë®¶µ·ç£¬ÐÄÇéÂùºÃ.......\n" NOR ) ;
+		tell_object(ob, BLU "ä½ åœ¨é’±å¡˜æ±Ÿä¸Šé¡ºé£Žé¡ºæ°´å…œé£Žï¼Œå¿ƒæƒ…è›®å¥½.......\n" NOR ) ;
 		call_out("home", 10 , ob );
 	}
 	else
 	{
-		message_vision("·ç·«ÉýÆð£¬´¬Í·»º»º×ª¹ý£¬·çÁ¦½¥¾¢£¬´¬Ïò¶«·½´óº£Éî´¦º½ÐÐ¡£\n", ob);
+		message_vision("é£Žå¸†å‡èµ·ï¼Œèˆ¹å¤´ç¼“ç¼“è½¬è¿‡ï¼Œé£ŽåŠ›æ¸åŠ²ï¼Œèˆ¹å‘ä¸œæ–¹å¤§æµ·æ·±å¤„èˆªè¡Œã€‚\n", ob);
 		ob ->move(__DIR__"eastboat1") ;
-		tell_object(ob, BLU "ÄãÔÚº£ÉÏÆ¾À¸Ï·Å¸£¬ÐÄÇéÆð·ü²»Äþ......\n" NOR ) ;
+		tell_object(ob, BLU "ä½ åœ¨æµ·ä¸Šå‡­æ æˆé¸¥ï¼Œå¿ƒæƒ…èµ·ä¼ä¸å®......\n" NOR ) ;
 		call_out("fore1", 10 , ob );
 	}
 	return 1 ;
 }
 void home( object ob )
 {
-	tell_object(ob , "´¬ºÜ¿ì¾Í»Øµ½º¼ÖÝÁË¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+	tell_object(ob , "èˆ¹å¾ˆå¿«å°±å›žåˆ°æ­å·žäº†ã€‚ä½ èµ°ä¸‹èˆ¹æ¥ã€‚\n" ) ;
 	ob->move (__DIR__"qiantang") ;
 }
 void fore1( object ob )
 {
-	tell_object(ob , "ËÄÖÜÒ»ÍûÎÞ¼ÊµÄ´óº£¡£Äã²»½ûÓÐµãÐÄÏÂã·ã·¡£\n" ) ;
+	tell_object(ob , "å››å‘¨ä¸€æœ›æ— é™…çš„å¤§æµ·ã€‚ä½ ä¸ç¦æœ‰ç‚¹å¿ƒä¸‹æƒ´æƒ´ã€‚\n" ) ;
 	ob->move (__DIR__"eastboat2") ;
-	tell_object(ob, BLU "Õâ´¬È¥ÄÄÀïÄØ£¿Äã²»½ûÓÐµã½ôÕÅ......\n" NOR ) ;
+	tell_object(ob, BLU "è¿™èˆ¹åŽ»å“ªé‡Œå‘¢ï¼Ÿä½ ä¸ç¦æœ‰ç‚¹ç´§å¼ ......\n" NOR ) ;
 	call_out("fore2", 10 , ob );
 }
 void fore2( object ob )
 {
-	tell_object(ob , "´¬ºÜ¿ì¾Í¿¿ÉÏµºÁË¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+	tell_object(ob , "èˆ¹å¾ˆå¿«å°±é ä¸Šå²›äº†ã€‚ä½ èµ°ä¸‹èˆ¹æ¥ã€‚\n" ) ;
 	ob->move (__DIR__"lingshedao") ;
 }

@@ -13,15 +13,15 @@ void init()
 
 void create()
 {
-  set_name( HIR "¹ÖÉßÑª" NOR , ({"she xue", "blood"}));
+  set_name( HIR "æ€ªè›‡è¡€" NOR , ({"she xue", "blood"}));
   set_weight(90);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¹Ü");
-    set("long", "Ò»¹Ü¹ÖÉßµÄÑªÒº,ºÜÊÇĞÈ³ô,¿´ÆğÀ´ÂÌÓÍÓÍµÄ¡£\n");
+    set("unit", "ç®¡");
+    set("long", "ä¸€ç®¡æ€ªè›‡çš„è¡€æ¶²,å¾ˆæ˜¯è…¥è‡­,çœ‹èµ·æ¥ç»¿æ²¹æ²¹çš„ã€‚\n");
     set("value", 1000);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è¡¥å“");
   }
   set("is_monitored",1);
   setup();
@@ -34,13 +34,13 @@ int do_drink(string arg)
         if ( (int)me->query_condition("medicine") > 0 )
 	{
 		me->add("max_neili", -5);
-		message_vision(HIR "$N³ÔÏÂÒ»¹ÖÉßµÄÑªÒº£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€æ€ªè›‡çš„è¡€æ¶²ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 return 1;
 	}
         me->apply_condition("medicine", 30);
   
   me->add("max_neili", 5);
-  message_vision(HIR "$NÖ»¾õÒ»¹ÉÈÈÏß´ÓÑÊºíÖ±Í¨µ½¸¹ÖĞ,È»ºóµ¤Ìï¾ÍÏóÓĞÒ»ÍÅ»ğ°ãÉÕÁËÆğÀ´¡£\n" NOR, me);
+  message_vision(HIR "$Nåªè§‰ä¸€è‚¡çƒ­çº¿ä»å’½å–‰ç›´é€šåˆ°è…¹ä¸­,ç„¶åä¸¹ç”°å°±è±¡æœ‰ä¸€å›¢ç«èˆ¬çƒ§äº†èµ·æ¥ã€‚\n" NOR, me);
   destruct(this_object());
   return 1;
 }

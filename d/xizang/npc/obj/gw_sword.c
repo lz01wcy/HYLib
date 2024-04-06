@@ -3,19 +3,19 @@
 inherit SWORD; 
 void create()
 {
-    set_name("Î÷ÈÖÀû½£", ({ "sword" }) );
+    set_name("è¥¿æˆåˆ©å‰‘", ({ "sword" }) );
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-        set("long", "±ß½®Öî¹úÈËÊ¿³£ÓÃµÄ±¦½££¬±ÈÆğÖĞÔ­µÄ½£Ã´¸ÕÓ²ºÜ¶à¡£\n");
+                set("unit", "æŠŠ");
+        set("long", "è¾¹ç–†è¯¸å›½äººå£«å¸¸ç”¨çš„å®å‰‘ï¼Œæ¯”èµ·ä¸­åŸçš„å‰‘ä¹ˆåˆšç¡¬å¾ˆå¤šã€‚\n");
         set("value", 500000);
                 set("material", "steel");
         }
     ::init_sword(70); 
 // These properties are optional, if you don't set them, it will use the
 // default values. 
-        set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");  
+        set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");  
 }       

@@ -5,15 +5,15 @@
 inherit ROOM;
 void create()
 {
-  set("short","Âé½«¹Ý");
+  set("short","éº»å°†é¦†");
   set("long",@LONG
-Ò»½øÃÅ£¬Ò»¸ö³¤×Å´óÍÃÑÀµÄÃîÁäÉÙÅ®Ð¦×ÅÓ­ÁËÉÏÀ´£¬°ÑÄã´øµ½×ùÎ»ÉÏ£¬²¢°ïÄãÍÑ
-ÏÂ´óÒÂ¹ÒºÃ£¬ÄãÏ¸ÐÄµÄ¹Û²ì×ÅÖÜÎ§£¬ÕæÊÇÆøÅÉ°¡£¬Ç½ÉÏ¹Ò×Å¼¸¸±Êé»­£¬ËäÈ»Äã¿´²»³ö
-ÊÇË­ÈË×÷Æ·£¬µ«¿Ï¶¨ÊÇ³öÓÚÃû¼ÒÖ®ÊÖ¡£¾ÓÖÐÒ»×ÀËÄÒÎ£¬×ÀÒÎ¶¼ÊÇºìÌ´Ä¾ËùÖÆ£¬ËÄÕÅÒÎ
-×ÓÉÏ·Ö±ðÆÌ×Å»¢£¬±ª£¬õõ£¬ºüËÄÊÞÖ®Æ¤£¬ÔÙ¿´ÄÇÒÑ¾­°ÚºÃµÄËÄ·½Î§³Ç£¬Äã¿´×ÅÄÇ¸±Âé
-½«ÏñÊÇÒÔÏóÑÀËùÖÆ£¬ÉÏÃæµÄ¸÷É«Í¼±ê¶¼ÊÇÒÔ±¦Ê¯ÏâÇ¶£¬µ«±³ÃæÒ»ÐÐÐ¡×ÖÐ´µÀ£ºº£ÑóÂé
-½«£¬Õýµ±Äã¾ªÑÈÖ®¼Ê£¬¸Õ²ÅÄÇÉÙÅ®ÒÑ¾­·îÉÏ²èË®µãÐÄ£¬²¢ÎÊ´ó¼ÒµÀ£º¿ÉÒÔ¿ªÊ¼ÁËÂð£¿
-ÏêÏ¸µÄ¹æÔòÇë¿´¿´²¼¸æÀ¸£¨£â£ï£á£ò£ä£©ºÍÂé½«Ö¸ÄÏ£¨£â£ï£ï£ë£©¡£
+ä¸€è¿›é—¨ï¼Œä¸€ä¸ªé•¿ç€å¤§å…”ç‰™çš„å¦™é¾„å°‘å¥³ç¬‘ç€è¿Žäº†ä¸Šæ¥ï¼ŒæŠŠä½ å¸¦åˆ°åº§ä½ä¸Šï¼Œå¹¶å¸®ä½ è„±
+ä¸‹å¤§è¡£æŒ‚å¥½ï¼Œä½ ç»†å¿ƒçš„è§‚å¯Ÿç€å‘¨å›´ï¼ŒçœŸæ˜¯æ°”æ´¾å•Šï¼Œå¢™ä¸ŠæŒ‚ç€å‡ å‰¯ä¹¦ç”»ï¼Œè™½ç„¶ä½ çœ‹ä¸å‡º
+æ˜¯è°äººä½œå“ï¼Œä½†è‚¯å®šæ˜¯å‡ºäºŽåå®¶ä¹‹æ‰‹ã€‚å±…ä¸­ä¸€æ¡Œå››æ¤…ï¼Œæ¡Œæ¤…éƒ½æ˜¯çº¢æª€æœ¨æ‰€åˆ¶ï¼Œå››å¼ æ¤…
+å­ä¸Šåˆ†åˆ«é“ºç€è™Žï¼Œè±¹ï¼Œè²‚ï¼Œç‹å››å…½ä¹‹çš®ï¼Œå†çœ‹é‚£å·²ç»æ‘†å¥½çš„å››æ–¹å›´åŸŽï¼Œä½ çœ‹ç€é‚£å‰¯éº»
+å°†åƒæ˜¯ä»¥è±¡ç‰™æ‰€åˆ¶ï¼Œä¸Šé¢çš„å„è‰²å›¾æ ‡éƒ½æ˜¯ä»¥å®çŸ³é•¶åµŒï¼Œä½†èƒŒé¢ä¸€è¡Œå°å­—å†™é“ï¼šæµ·æ´‹éº»
+å°†ï¼Œæ­£å½“ä½ æƒŠè®¶ä¹‹é™…ï¼Œåˆšæ‰é‚£å°‘å¥³å·²ç»å¥‰ä¸ŠèŒ¶æ°´ç‚¹å¿ƒï¼Œå¹¶é—®å¤§å®¶é“ï¼šå¯ä»¥å¼€å§‹äº†å—ï¼Ÿ
+è¯¦ç»†çš„è§„åˆ™è¯·çœ‹çœ‹å¸ƒå‘Šæ ï¼ˆï½‚ï½ï½ï½’ï½„ï¼‰å’Œéº»å°†æŒ‡å—ï¼ˆï½‚ï½ï½ï½‹ï¼‰ã€‚
 LONG
   );
   set("exits",([
@@ -29,36 +29,36 @@ set("no_fight",1);
        ]) );
         set("item_desc",([
 "board":"
-                       »ù  ±¾  Éè  ¶¨
-            setmj ¿ÉÓÃµÄÓÐ×Ô¶¯ºú¡¢  ¡¢Åö¡¢Ìý¡¢ÏÔÊ½·½·¨¡£
+                       åŸº  æœ¬  è®¾  å®š
+            setmj å¯ç”¨çš„æœ‰è‡ªåŠ¨èƒ¡ã€  ã€ç¢°ã€å¬ã€æ˜¾å¼æ–¹æ³•ã€‚
 --------------------------------------------------------------------
-Àý×Ó1: setmj pon 1w        Éè¶¨»á×Ô¶¯Åö1w µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯ÅöÒ»Íò¡£
-       setmj gon 1w                                         ×Ô¶¯  Ò»Íò¡£
-       setmj tin 1w                                         ×Ô¶¯ºúÒ»Íò¡£
-Àý×Ó2: setmj show ´úÂë        Éè¶¨ÎªÖ»ÏÔÊ¾´úÂë¡£
-       setmj show color Éè¶¨Îª²ÊÉ«ÏÔÊ¾¡£
-Àý×Ó3: setmj tin none        È¡Ïû»á×Ô¶¯ºúÅÆÉè¶¨¡£
+ä¾‹å­1: setmj pon 1w        è®¾å®šä¼šè‡ªåŠ¨ç¢°1w å½“åˆ«äººæ‰“å‡ºä¸€ä¸‡æ—¶ä¼šè‡ªåŠ¨ç¢°ä¸€ä¸‡ã€‚
+       setmj gon 1w                                         è‡ªåŠ¨  ä¸€ä¸‡ã€‚
+       setmj tin 1w                                         è‡ªåŠ¨èƒ¡ä¸€ä¸‡ã€‚
+ä¾‹å­2: setmj show ä»£ç         è®¾å®šä¸ºåªæ˜¾ç¤ºä»£ç ã€‚
+       setmj show color è®¾å®šä¸ºå½©è‰²æ˜¾ç¤ºã€‚
+ä¾‹å­3: setmj tin none        å–æ¶ˆä¼šè‡ªåŠ¨èƒ¡ç‰Œè®¾å®šã€‚
        setmj gon none
        setmj pon none
-Àý×Ó4: setmj auto tin        Éè¶¨×Ô¶¯ÌýÅÆ¡£
+ä¾‹å­4: setmj auto tin        è®¾å®šè‡ªåŠ¨å¬ç‰Œã€‚
 --------------------------------------------------------------------
 ",
 "book":"
-      Ö¸  Áî         Àý          ×Ó                Ëµ    Ã÷
-    ©°¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª©´
-    ©¦ look  l mj»ò.¿´×Ô¼ºÅÆ,l 1p»ò.1¿´Íæ¼Ò1µÄÅÆ                ©¦
-    ©¦       l all»ò..¿´È«²¿,l end¿´Á÷¾Öl dump¡£      ¿´ÅÆ      ©¦
-    ©¦ mo    Èç¹û¸ÕÃþÍê¾Í°´»á´òµô¸ÕÃþµÄÅÆ£¬·½±ãÌýºú      ÃþÅÆ      ©¦
-    ©¦ dump         dump <´úÂë>¡£                     ´òÅÆ     ©¦
-    ©¦ eat          eat <´úÂë1> <´úÂë2>¡£             ³ÔÅÆ     ©¦
-    ©¦addin  ¼ÓÈëÅÅ¾Ö   pon    ÅöÅÆ    hu  ºúÅÆ  start ÅÆ¾Ö¿ªÊ¼  ©¦
-    ©¦ gon          gon »ò gon <´úÂë>(°µ¸ÜÓÃ)¡£       ¸ÜÅÆ      ©¦
-    ©¦ setmj        help setmj¡£                     Éè¶¨²ÎÊý  ©¦
-    ©¦ restart   restart »ò restart mj¡£             ÖØÐÂ¿ªÊ¼  ©¦
-    ©¦ continue     ´ßNPC»òÍæ¼Ò³öÅÆ£¬ÌØÊâÇé¿öÊ±ÌØ±ðÓÐÓÃ¡£         ©¦
-    ©¦ top   top aip,top -p,top -w,top -h,top -d              ©¦
-    ©¦       top -l¿´È«²¿,-lw,-lh,-ld¡£               ²é×ÊÁÏ    ©¦
-    ©¸¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª©¼
+      æŒ‡  ä»¤         ä¾‹          å­                è¯´    æ˜Ž
+    â”Œâ€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â”
+    â”‚ look  l mjæˆ–.çœ‹è‡ªå·±ç‰Œ,l 1pæˆ–.1çœ‹çŽ©å®¶1çš„ç‰Œ                â”‚
+    â”‚       l allæˆ–..çœ‹å…¨éƒ¨,l endçœ‹æµå±€l dumpã€‚      çœ‹ç‰Œ      â”‚
+    â”‚ mo    å¦‚æžœåˆšæ‘¸å®Œå°±æŒ‰ä¼šæ‰“æŽ‰åˆšæ‘¸çš„ç‰Œï¼Œæ–¹ä¾¿å¬èƒ¡      æ‘¸ç‰Œ      â”‚
+    â”‚ dump         dump <ä»£ç >ã€‚                     æ‰“ç‰Œ     â”‚
+    â”‚ eat          eat <ä»£ç 1> <ä»£ç 2>ã€‚             åƒç‰Œ     â”‚
+    â”‚addin  åŠ å…¥æŽ’å±€   pon    ç¢°ç‰Œ    hu  èƒ¡ç‰Œ  start ç‰Œå±€å¼€å§‹  â”‚
+    â”‚ gon          gon æˆ– gon <ä»£ç >(æš—æ ç”¨)ã€‚       æ ç‰Œ      â”‚
+    â”‚ setmj        help setmjã€‚                     è®¾å®šå‚æ•°  â”‚
+    â”‚ restart   restart æˆ– restart mjã€‚             é‡æ–°å¼€å§‹  â”‚
+    â”‚ continue     å‚¬NPCæˆ–çŽ©å®¶å‡ºç‰Œï¼Œç‰¹æ®Šæƒ…å†µæ—¶ç‰¹åˆ«æœ‰ç”¨ã€‚         â”‚
+    â”‚ top   top aip,top -p,top -w,top -h,top -d              â”‚
+    â”‚       top -lçœ‹å…¨éƒ¨,-lw,-lh,-ldã€‚               æŸ¥èµ„æ–™    â”‚
+    â””â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â”˜
 ",
 ]));       
         set("coor/x",10);
@@ -84,7 +84,7 @@ void init()
         {
             if( !interactive(ob[i]) || ob[i]==me ) continue;
                 if(query_ip_number(ob[i]) == query_ip_number(me))
-            return notify_fail("Ïë×÷±×Ñ½£¡ÄãÒÑ¾­ÓÐ¸öÈËÔÚÀïÃæÁË¡£\n");   
+            return notify_fail("æƒ³ä½œå¼Šå‘€ï¼ä½ å·²ç»æœ‰ä¸ªäººåœ¨é‡Œé¢äº†ã€‚\n");   
     }   
     add_action("do_give", "give");
     add_action("do_leave", "leave");
@@ -94,13 +94,13 @@ int valid_leave(object me, string dir)
         room=this_object();
         
         if(userp(me) && me->query_temp("playing_mj") && dir="east")
-                return notify_fail("¶Ä¾ÖÕýÔÚ½øÐÐÖÐ£¬²»¿ÉËæ±ã×ß¶¯£¡\n");         
+                return notify_fail("èµŒå±€æ­£åœ¨è¿›è¡Œä¸­ï¼Œä¸å¯éšä¾¿èµ°åŠ¨ï¼\n");         
         return 1;
 } 
 int do_give()
 {
     if(userp(this_player()))
-    write("ÕâÀï²»ÄÜ×ªÒÆÊ²Ã´ÎïÆ·¡£\n");
+    write("è¿™é‡Œä¸èƒ½è½¬ç§»ä»€ä¹ˆç‰©å“ã€‚\n");
     return 1;
 }
  
@@ -109,7 +109,7 @@ int do_leave()
     if(interactive(this_player()) && this_player()->query_temp("playing_mj"))
     {
     this_player()->delete_temp("playing_mj");
-    tell_room(environment(),this_player()->name()+"²»ÏëÍæÁË¡£\n");
+    tell_room(environment(),this_player()->name()+"ä¸æƒ³çŽ©äº†ã€‚\n");
     }
     return 1;
 }       

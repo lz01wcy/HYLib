@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÖìÓÉÄÂ", ({ "zhu youmu"}));
+	set_name("æœ±ç”±ç©†", ({ "zhu youmu"}));
 	set("age", 36);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("str", 34);
-       set("title","ÏÀÊ¿");
+       set("title","ä¾ å£«");
 	set("combat_exp", 10000+random(10000));
 	set_skill("unarmed", 60+random(40));
 	set_skill("dodge", 60+random(40));
@@ -16,7 +16,7 @@ void create()
 	set_skill("force", 60+random(40));
     set("chat_chance", 7);
 	set("chat_msg", ({
-		"ÌıËµÂäÑãÉ½×¯²ØÓĞÈı±¦,²»ÖªµÀ»áÔÚÄÄ¶ù!\n",
+		"å¬è¯´è½é›å±±åº„è—æœ‰ä¸‰å®,ä¸çŸ¥é“ä¼šåœ¨å“ªå„¿!\n",
 		(:random_move:)
 	}));
 	setup();

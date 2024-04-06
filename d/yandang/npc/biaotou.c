@@ -1,11 +1,11 @@
-// biaotou.c ²ÆÖ÷¹Ü¼Ò
+// biaotou.c è´¢ä¸»ç®¡å®¶
 
 inherit NPC;
 
 void create()
 {
-	set_name("ïÚÍ·", ({ "biao tou", "biao" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("é•–å¤´", ({ "biao tou", "biao" }));
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 
 	set("combat_exp", 50000);
@@ -39,7 +39,7 @@ int do_get(string arg)
 	if(sscanf(arg, "%s from %s", arg, from)==2)
 	{
 		if(from=="biaoche"||from=="che"||from=="biao")	{
-		command("say ´óµ¨Ç¿µÁ,¹âÌì»¯ÈÕÖ®ÏÂ,¾¹¸ÒÀ¹Â·ÇÀ½Ù£¡\n");
+		command("say å¤§èƒ†å¼ºç›—,å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹,ç«Ÿæ•¢æ‹¦è·¯æŠ¢åŠ«ï¼\n");
                       call_out("kill_ob", 1, me); 
 		return 1;
 		}
@@ -55,7 +55,7 @@ int do_steal(string arg)
 	if(!arg)	return 0;
 	if(sscanf(arg,"%s from %s",arg,from)==2)	{
 		if(from=="biaoche"||from=="che"||from=="biao")	{
-		command("say ´óµ¨¶ñÔô,¾ÓÈ»ÀÏ»¢×ì±ß°ÎÃ«,ÎÒ¿´Äã»îµÃ²»ÄÍ·³ÁË£¡\n");
+		command("say å¤§èƒ†æ¶è´¼,å±…ç„¶è€è™å˜´è¾¹æ‹”æ¯›,æˆ‘çœ‹ä½ æ´»å¾—ä¸è€çƒ¦äº†ï¼\n");
         call_out("kill_ob", 1, me); 
 return 1;
 	}

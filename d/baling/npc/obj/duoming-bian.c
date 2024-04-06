@@ -7,17 +7,17 @@ inherit WHIP;
 
 void create()
 {
-   set_name(HIR"¶áÃü±Ş"NOR, ({ "duoming bian","bian","whip" }) );
+   set_name(HIR"å¤ºå‘½é­"NOR, ({ "duoming bian","bian","whip" }) );
    set_weight(3000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("unit", "±ú");
+     set("unit", "æŸ„");
      set("value", 1500);
      set("material", "iron");
-     set("long", "ÕâÊÇÒ»Ìõ¸Ö±Ş£¬ÃûÎª¶áÃü¡£\n");
-     set("wield_msg", "$NÒ»»Î$n£¬Ö»Ìı¡°Å¾¡±µÄÒ»Éù£¬½«$nÎÕÔÚÊÖÖĞ¡£\n");
-     set("unequip_msg", "$N½«ÊÖÖĞµÄ$nÅÌÔÚÁËÑüÉÏ¡£\n");
+     set("long", "è¿™æ˜¯ä¸€æ¡é’¢é­ï¼Œåä¸ºå¤ºå‘½ã€‚\n");
+     set("wield_msg", "$Nä¸€æ™ƒ$nï¼Œåªå¬â€œå•ªâ€çš„ä¸€å£°ï¼Œå°†$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+     set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$nç›˜åœ¨äº†è…°ä¸Šã€‚\n");
    }
    init_whip(380);
    setup();

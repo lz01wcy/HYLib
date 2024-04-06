@@ -1,14 +1,14 @@
 // Last Modified by Sir on May. 22 2001
-// liangong.c Á·¹¦·¿
+// liangong.c ç»ƒåŠŸæˆ¿
 
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿");
+	set("short", "ç»ƒåŠŸæˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇºãÉ½ÅÉµÜ×ÓÁ·¹¦µÄ·¿¼ä¡£·¿¼äÖĞÑëÁ¢×Å¼¸¸öÁ·¹¦ÓÃµÄÄ¾ÈË¡£
+è¿™é‡Œæ˜¯æ’å±±æ´¾å¼Ÿå­ç»ƒåŠŸçš„æˆ¿é—´ã€‚æˆ¿é—´ä¸­å¤®ç«‹ç€å‡ ä¸ªç»ƒåŠŸç”¨çš„æœ¨äººã€‚
 LONG );
 
 	set("exits", ([

@@ -5,13 +5,13 @@ inherit ARMOR;
 
 void create()
 {
-   set_name(HIB"°²ÄÏ¾üÌÙ¼×"NOR, ({ "armor"}) );
+   set_name(HIB"å®‰å—å†›è—¤ç”²"NOR, ({ "armor"}) );
    set_weight(4000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("material", "Ìú");
-     set("unit", "¼ş");
+     set("material", "é“");
+     set("unit", "ä»¶");
      set("value",2000);
      set("armor_prop/armor",65);
      set("armor_prop/dodge",12);

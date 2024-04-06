@@ -3,15 +3,15 @@ inherit F_FOOD;
 void create()
 {
         int i;
-        string *names = ({ "²İÓã", "ÒøÓã", "ÁøÌõÓã" });
+        string *names = ({ "è‰é±¼", "é“¶é±¼", "æŸ³æ¡é±¼" });
         i = random(3);
         set_name(names[i], ({ "fish" }) );
         set_weight(500);
         if( clonep() )
             set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ìõ¸Õ¸ÕµöÉÏÀ´µÄÏÊÓã¡£\n");
-                set("unit", "Ìõ");
+                set("long", "è¿™æ˜¯ä¸€æ¡åˆšåˆšé’“ä¸Šæ¥çš„é²œé±¼ã€‚\n");
+                set("unit", "æ¡");
                 set("value", 150);
                 set("food_remaining", 3);
                 set("food_supply", 10);

@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-   set_name(MAG"Åû½í"NOR, ({ "pi jin","jin"}) );
+   set_name(MAG"æŠ«å·¾"NOR, ({ "pi jin","jin"}) );
    set_weight(10);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÒ»¸öÅ®ÈË´÷µÄÅû½í¡£\n");
-     set("material", "Ï¸É´²¼");
-     set("unit", "Ìõ");
+     set("long","è¿™æ˜¯ä¸€ä¸ªå¥³äººæˆ´çš„æŠ«å·¾ã€‚\n");
+     set("material", "ç»†çº±å¸ƒ");
+     set("unit", "æ¡");
      set("value",10);
      set("armor_prop/armor",3);
      set("female_only",1);

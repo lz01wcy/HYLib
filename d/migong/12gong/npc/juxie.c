@@ -3,10 +3,10 @@ inherit NPC;
  
 void create()
 {
-        set_name("°¢ÌáÃ×Ë¹", ({"adimis", "ju xie"}));
-        set("long", "´«ËµÖĞµÄÔÂÁÁÅ®Éñ£­°¢ÌáÃ×Ë¹£¬ÊØ»¤×Å¾ŞĞ·×ù¡£\n");
-        set("gender","Å®ĞÔ");
-        set("title", "¡¾ÔÂÁÁÉñ¡¿");
+        set_name("é˜¿æç±³æ–¯", ({"adimis", "ju xie"}));
+        set("long", "ä¼ è¯´ä¸­çš„æœˆäº®å¥³ç¥ï¼é˜¿æç±³æ–¯ï¼Œå®ˆæŠ¤ç€å·¨èŸ¹åº§ã€‚\n");
+        set("gender","å¥³æ€§");
+        set("title", "ã€æœˆäº®ç¥ã€‘");
          set("no_get",1);
         set("age",37);
         set("con",30);
@@ -18,7 +18,7 @@ void create()
         set("daoxing",3000000);
         set("chat_chance",20);
         set("chat_msg", ({
-                "°¢ÌáÃ×Ë¹ËµµÀ£º²»ÖªºÎÊ±ÄÜÔÙ¼ûµ½ÑÅµäÄÈ£¡\n"   
+                "é˜¿æç±³æ–¯è¯´é“ï¼šä¸çŸ¥ä½•æ—¶èƒ½å†è§åˆ°é›…å…¸å¨œï¼\n"   
         }));
         set("attitude", "friendly");
         set_skill("dodge", 250);
@@ -71,17 +71,17 @@ void check()
      {        
         case 0:
         {
-        message_vision(HIC"$N¸ß¾ÙË«ÊÖ£¬$nµÄÃæÇ°ºöÈ»³öÏÖÁËÍòÕÉ²¨ÀË£¡\n",ob,me);
+        message_vision(HIC"$Né«˜ä¸¾åŒæ‰‹ï¼Œ$nçš„é¢å‰å¿½ç„¶å‡ºç°äº†ä¸‡ä¸ˆæ³¢æµªï¼\n",ob,me);
 
         if(random(3)==0)
 
                 {
-              message_vision(HIC"$N±»²¨ÀË³åÁË¸ö´óõÔïê£¬²îµãË¤µ¹£¡\n"NOR,me);
+              message_vision(HIC"$Nè¢«æ³¢æµªå†²äº†ä¸ªå¤§è¸‰é•ªï¼Œå·®ç‚¹æ‘”å€’ï¼\n"NOR,me);
               me->add("eff_qi",-me->query("max_qi")/10);
               me->add("eff_jing",-me->query("max_jing")/10);
                 }
         else
-        message_vision(HIC"$NÒ»ÉùÇáĞ¦£¬¶ã¿ªÁËÕâÍòÕÉ²¨ÀË¡£\n"NOR,me);
+        message_vision(HIC"$Nä¸€å£°è½»ç¬‘ï¼Œèº²å¼€äº†è¿™ä¸‡ä¸ˆæ³¢æµªã€‚\n"NOR,me);
         }
         break;
 
@@ -89,35 +89,35 @@ void check()
         case 1:
         {
 
-        message_vision(HIC"$NÑÛÍûÌì¿Õ£¬Ò»ÂÖÔ²ÔÂºöÈ»³öÏÖÔÚ$nµÄÃæÇ°£¡\n",ob,me);
+        message_vision(HIC"$Nçœ¼æœ›å¤©ç©ºï¼Œä¸€è½®åœ†æœˆå¿½ç„¶å‡ºç°åœ¨$nçš„é¢å‰ï¼\n",ob,me);
 
         if(random(3)==0)
 
                 {
-              message_vision(HIC"Ô­À´ÕâÒ»ÂÖÔ²ÔÂ¾¹·æÀûÎŞ±È£¬$NµÄÉíÉÏ±»»®ÁËÒ»´óÑª¿Ú£¡\n"NOR,me);
+              message_vision(HIC"åŸæ¥è¿™ä¸€è½®åœ†æœˆç«Ÿé”‹åˆ©æ— æ¯”ï¼Œ$Nçš„èº«ä¸Šè¢«åˆ’äº†ä¸€å¤§è¡€å£ï¼\n"NOR,me);
               me->add("eff_qi",-2*me->query("max_qi")/10);
               me->add("eff_jing",-2*me->query("max_jing")/10);
                 }
         else
-        message_vision(HIC"$N¶ã±Ü¼°Ê±£¬Ô²ÔÂÔÚµØÉÏàÔ³öÁËÒ»µÀÁÑºÛ¡£\n"NOR,me);
+        message_vision(HIC"$Nèº²é¿åŠæ—¶ï¼Œåœ†æœˆåœ¨åœ°ä¸Šå˜£å‡ºäº†ä¸€é“è£‚ç—•ã€‚\n"NOR,me);
         }
         break;
 
         case 2:
         {
 
-        message_vision(HIC"$N¿ÚÄîÖäÓï£¬Ò»Ö»¾ŞĞ·´ÓÌì¶ø½µ£¬ÂäÔÚ$nµÄÃæÇ°¡£\n",ob,me);
+        message_vision(HIC"$Nå£å¿µå’’è¯­ï¼Œä¸€åªå·¨èŸ¹ä»å¤©è€Œé™ï¼Œè½åœ¨$nçš„é¢å‰ã€‚\n",ob,me);
                               
         if(random(3)==0)
 
                 {
-              message_vision(HIR"¾ŞĞ·Éì³öÒ»Ë«´óÌúÇ¯£¬¼Ğ×¡ÁË$N£¡\n"NOR,me);
+              message_vision(HIR"å·¨èŸ¹ä¼¸å‡ºä¸€åŒå¤§é“é’³ï¼Œå¤¹ä½äº†$Nï¼\n"NOR,me);
               me->start_busy(1);
               me->add("eff_qi",-2*me->query("max_qi")/10);
               me->add("eff_jing",-2*me->query("max_jing")/10);
                 }
         else
-        message_vision(HIR"$N¶¨¾¦Ò»¿´£¬Ô­À´ÊÇ¸ö»ÃÏó£¡\n"NOR,me,ob);
+        message_vision(HIR"$Nå®šç›ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯ä¸ªå¹»è±¡ï¼\n"NOR,me,ob);
         }
         break;
 
@@ -136,12 +136,12 @@ void die()
         if((ob&&ob->query("12gong/shuangzi")=="done") &&(ob&&ob->query("12gong/juxie")!="done"))
         {
         ob->start_busy(3);
-        message("chat",HIY+"¡¾»Æ½ğÊ®¶ş¹¬¡¿ÑÅµäÄÈ(Ya dian na):"+ob->name()+
-        "´³¹ıÁËµÚËÄ¹¬¾ŞĞ·×ù£¬¼ÌĞøÏò»Æ½ğÕ½Ê¿Ç°½ø¡£\n"NOR,users());
+        message("chat",HIY+"ã€é»„é‡‘åäºŒå®«ã€‘é›…å…¸å¨œ(Ya dian na):"+ob->name()+
+        "é—¯è¿‡äº†ç¬¬å››å®«å·¨èŸ¹åº§ï¼Œç»§ç»­å‘é»„é‡‘æˆ˜å£«å‰è¿›ã€‚\n"NOR,users());
         ob->set("12gong/juxie","done");
         ob->add("12gong/number",1);
         ob->add("combat_exp", 20000);
-        tell_object(ob,"ÄãÓ®µÃÁË20000¾­Ñé");
+        tell_object(ob,"ä½ èµ¢å¾—äº†20000ç»éªŒ");
 
         }
        ::die();

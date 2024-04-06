@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","����");
+        set("short","洞口");
         set("long",@LONG
-ɽ�����ѩ��£�ɼ���ѩ�ѣ�����ʱ������ɨ����ѩ����ǰ�����
-��������ԼԼ��һ��ɽ����
+山谷里积雪被拢成几个雪堆，这里时常有人扫除积雪。你前面的峭
+壁下隐隐约约有一个山洞。
 LONG );
         set("exits",([
                 "enter" : __DIR__"shandong3",

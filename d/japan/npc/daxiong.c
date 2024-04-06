@@ -4,11 +4,11 @@ void random_chat();
 int answer();
 void create()
 {
-     set_name("¶«Ìõ´óĞÛ",({"dongtiao daxiong","dongtiao","daxiong"}));
-   set("gender","ÄĞĞÔ");
+     set_name("ä¸œæ¡å¤§é›„",({"dongtiao daxiong","dongtiao","daxiong"}));
+   set("gender","ç”·æ€§");
    set("age",47);
    set("combat_exp",20000);
-    set("title","Éñ»§ÂÃµê");
+    set("title","ç¥æˆ·æ—…åº—");
    set_skill("unarmed",10);
    set_skill("dodge",10);
    set_skill("force",10);
@@ -47,6 +47,6 @@ void random_chat()
 }
 int answer()
 {
- command("say Õâ¸öemoteÃ´,ÊÇ("+query("answer")+").\n");
+ command("say è¿™ä¸ªemoteä¹ˆ,æ˜¯("+query("answer")+").\n");
  return 1;
  }

@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-	set_name("Ğ¡··", ({ "seller" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å°è´©", ({ "seller" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 32);
 	set("long",
-		"ÕâÊÇ¸öĞ¡··£¬±ğ¿´Ëû³¤µÄÀÏÀÏÊµÊµ£¬¿ÉÄã±ğÏë´ÓËûÄÇ¶ùÌÍ±ãÒË¡£\n");
+		"è¿™æ˜¯ä¸ªå°è´©ï¼Œåˆ«çœ‹ä»–é•¿çš„è€è€å®å®ï¼Œå¯ä½ åˆ«æƒ³ä»ä»–é‚£å„¿æä¾¿å®œã€‚\n");
 	set("combat_exp", 300);
 	set("str", 17);
 	set("dex", 20);
@@ -26,8 +26,8 @@ void create()
 		"/d/xingxiu/obj/fire",
 	}) );
 	set("inquiry", ([
-		"Ò©" : (: ask_me :),
-		"Ò©²Ä" : (: ask_me :),
+		"è¯" : (: ask_me :),
+		"è¯æ" : (: ask_me :),
 	]) );
 	setup();
 	carry_object(__DIR__"cloth/cloth")->wear();
@@ -44,14 +44,14 @@ void init()
 string ask_me()
 {
 	object me=this_player();
-	if ( me->query_temp("tmark/Ò©")) {
-		return "ÎÒ×ßÄÏ´³±±£¬Ã»¼û¹ıÄãÕâÃ´ÂŞàÂµÄÈË£¡\n";
+	if ( me->query_temp("tmark/è¯")) {
+		return "æˆ‘èµ°å—é—¯åŒ—ï¼Œæ²¡è§è¿‡ä½ è¿™ä¹ˆç½—å—¦çš„äººï¼\n";
 	}
 	else
 	{
-		me->set_temp("tmark/Ò©",1);
-		return "µ±ÄêÎÒµ½¼«±±É­ÁÖÖĞ²ÉÒ©£¬»¹ÕæÓöµ½ÁËÒ»Ğ©ºÃÒ©²Ä£¬ÒªÂòµÃÏÈ½»
-Ç®¡£\n";
+		me->set_temp("tmark/è¯",1);
+		return "å½“å¹´æˆ‘åˆ°æåŒ—æ£®æ—ä¸­é‡‡è¯ï¼Œè¿˜çœŸé‡åˆ°äº†ä¸€äº›å¥½è¯æï¼Œè¦ä¹°å¾—å…ˆäº¤
+é’±ã€‚\n";
 	}
 }
 
@@ -61,28 +61,28 @@ int accept_object(object who, object ob)
 
 	if(this_object()->query("count") < 0)
 	{
-		write("Ğ¡··ËµµÀ£º¡°¼ÈÈ»Äú³öµÃÆğ¼ÛÇ®£¬»¹³îÃ»µØÂò£¿ÎÒÕâÊÇÃ»ÁË¡£¡±\n");
+		write("å°è´©è¯´é“ï¼šâ€œæ—¢ç„¶æ‚¨å‡ºå¾—èµ·ä»·é’±ï¼Œè¿˜æ„æ²¡åœ°ä¹°ï¼Ÿæˆ‘è¿™æ˜¯æ²¡äº†ã€‚â€\n");
 		return 1;
 	}
 	if ((ob->query("money_id")) && (ob->value() >= 10000) &&
-		(who->query_temp("tmark/Ò©")))
+		(who->query_temp("tmark/è¯")))
 	{
 		obj = new(__DIR__"obj/heshouwu");
 		obj->move(who);
-		who->add_temp("tmark/Ò©",0);
-		write("Ğ¡··ËµµÀ£º¡°¼ÈÈ»Äú³öµÃÆğ¼ÛÇ®£¬ÕâÎ¶Ò©¿É¾Í¹éÄúÁË¡£¡±\n");
+		who->add_temp("tmark/è¯",0);
+		write("å°è´©è¯´é“ï¼šâ€œæ—¢ç„¶æ‚¨å‡ºå¾—èµ·ä»·é’±ï¼Œè¿™å‘³è¯å¯å°±å½’æ‚¨äº†ã€‚â€\n");
 		add("count", -1);
 		return 1;
 	}
 	else
 		if (ob->query("money_id"))
 		{
-			write("Ğ¡··ÒõĞ¦Ò»Éù£¬ËµµÀ£º¡°ºÙºÙ£¬¸øÎÒÕâÃ´¶àÇ®ÄÄ¡£¡±\n");
+			write("å°è´©é˜´ç¬‘ä¸€å£°ï¼Œè¯´é“ï¼šâ€œå˜¿å˜¿ï¼Œç»™æˆ‘è¿™ä¹ˆå¤šé’±å“ªã€‚â€\n");
 			return 1;
 		}
 		else
 		{
-			return notify_fail("Ğ¡··²ïÒìµØËµµÀ£º¡°¸øÎÒÕâ¸ö¸ÉÊ²Ã´£¿¡±\n");
+			return notify_fail("å°è´©è¯§å¼‚åœ°è¯´é“ï¼šâ€œç»™æˆ‘è¿™ä¸ªå¹²ä»€ä¹ˆï¼Ÿâ€\n");
 		}
 }
 

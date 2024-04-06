@@ -5,9 +5,9 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "ÃÔ¶´");
+	set("short", "è¿·æ´");
 	set("long", @LONG
-ÓÖÊªÓÖ³±µÄÒ»¸öÊ¯¶´,»¹É¢·¢×ÅÒ°ÊŞµÄĞÈ³ô.
+åˆæ¹¿åˆæ½®çš„ä¸€ä¸ªçŸ³æ´,è¿˜æ•£å‘ç€é‡å…½çš„è…¥è‡­.
 LONG );
 set("exits", ([
 		"north" : __DIR__"dong1",

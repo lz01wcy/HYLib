@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����");
+        set("short", "囚室");
         set("long",@LONG
-���ǡ����չ�����Ѻ���˵ĵط������й��߻谵����ζ���š��ݽ���
-��ԼԼ�и���Ӱ��
+这是『灵鹫宫』关押犯人的地方，屋中光线昏暗，气味难闻。屋角隐
+隐约约有个人影。
 LONG );
         set("exits", ([
 		"east" : __DIR__"men1",

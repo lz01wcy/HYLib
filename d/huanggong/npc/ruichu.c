@@ -1,19 +1,19 @@
 inherit NPC;
 void create()
 {
-   set_name("Èï³õ",({"rui chu"}));
-   set("age","Å®ĞÔ");
-   set("nickname","Ğ¡¹¬Å®");
+   set_name("è•Šåˆ",({"rui chu"}));
+   set("age","å¥³æ€§");
+   set("nickname","å°å®«å¥³");
    set("age",15);
    set("combat_exp",200);
    
    set_skill("unarmed",5);
    set("chat_chance",5);
    set("chat_msg",({
-   "Èï³õµÀ:ÄÇÌìº£¹«¹«ÉîÒ¹µ½´ÈÄş¹¬À´,ÎÒ¿ÉÃ»¿´¼û.\n",
-   "Èï³õµÀ:ÒÔÇ°Ğ¡¹ğ×Ó³£µ½ÕâÀ´Íæ.\n",
-   "Èï³õµÀ:ÎÒÌıËµ¹¬Àï³ÂÆ¤´óÏºÌØ±ğºÃ³Ô£¬ÕæÏë³ÔÒ»³Ô.\n",
-   "Èï³õµÀ:ÉÏ´ÎÔÚ±±º£³Ô¹ıÒ»»á³ÂÆ¤´óÏº,ÍüÒ²Íü²»ÁË.\n",
+   "è•Šåˆé“:é‚£å¤©æµ·å…¬å…¬æ·±å¤œåˆ°æ…ˆå®å®«æ¥,æˆ‘å¯æ²¡çœ‹è§.\n",
+   "è•Šåˆé“:ä»¥å‰å°æ¡‚å­å¸¸åˆ°è¿™æ¥ç©.\n",
+   "è•Šåˆé“:æˆ‘å¬è¯´å®«é‡Œé™ˆçš®å¤§è™¾ç‰¹åˆ«å¥½åƒï¼ŒçœŸæƒ³åƒä¸€åƒ.\n",
+   "è•Šåˆé“:ä¸Šæ¬¡åœ¨åŒ—æµ·åƒè¿‡ä¸€ä¼šé™ˆçš®å¤§è™¾,å¿˜ä¹Ÿå¿˜ä¸äº†.\n",
    }));
    setup();
    carry_object("/clone/cloth/female5-cloth.c")->wear();
@@ -21,17 +21,17 @@ void create()
  int accept_object(object me, object obj)
 {
 	object pai;
-        if( (string) obj->query("name") == "³ÂÆ¤´óÏº"
+        if( (string) obj->query("name") == "é™ˆçš®å¤§è™¾"
         || obj->query("id") =="cp dx")
 	{
-        message_vision("$N¶Ô$nĞ¦ÁËĞ¦£º\n",this_object(),me);
+        message_vision("$Nå¯¹$nç¬‘äº†ç¬‘ï¼š\n",this_object(),me);
         command("love");
-	command("say Ì«Ğ»Ğ»ÄãÁË£¬ÎÒ¾ÍÊÇÏ²»¶³ÔÕâ¸ö£¡\n");
-	command("say Õâ±¾42ÕÂ¾­£¬¾ÍËÍ¸øÄã°É£¡\n");
+	command("say å¤ªè°¢è°¢ä½ äº†ï¼Œæˆ‘å°±æ˜¯å–œæ¬¢åƒè¿™ä¸ªï¼\n");
+	command("say è¿™æœ¬42ç« ç»ï¼Œå°±é€ç»™ä½ å§ï¼\n");
 	pai = new("/d/city2/obj/book14_6");
 	if(pai)
 	pai->move(me);
-        message_vision("$NÄÃ³öÒ»±¾42ÕÂ¾­¸øÁË$n¡£\n",this_object(),me);
+        message_vision("$Næ‹¿å‡ºä¸€æœ¬42ç« ç»ç»™äº†$nã€‚\n",this_object(),me);
         call_out("destroying", 0, obj,me);                       
 	return 1;	
 	}

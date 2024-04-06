@@ -1,4 +1,4 @@
-// tang buping.c ÌÆ²»Æ½
+// tang buping.c å”ä¸å¹³
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÌÆ²»Æ½", ({ "tang buping", "tang" }));
-	set("nickname", HIW "ÉÁµçÊÖ" NOR);
+	set_name("å”ä¸å¹³", ({ "tang buping", "tang" }));
+	set("nickname", HIW "é—ªç”µæ‰‹" NOR);
 	set("long", 
-		"ËûÊÇÌÆÃÅµÚ°Ë´úµÜ×Ó£¬ÊÇ½­ºşĞÂÒ»±²ÖĞÆÄÓĞÃûÆøµÄÈËÎï¡£\n"
-		"Ëû´óÔ¼¶şÊ®ÓĞÓà£¬Á³ÉÏ»¹´ø×ÅÒ»¹Éº¢×ÓÆø¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–æ˜¯å”é—¨ç¬¬å…«ä»£å¼Ÿå­ï¼Œæ˜¯æ±Ÿæ¹–æ–°ä¸€è¾ˆä¸­é¢‡æœ‰åæ°”çš„äººç‰©ã€‚\n"
+		"ä»–å¤§çº¦äºŒåæœ‰ä½™ï¼Œè„¸ä¸Šè¿˜å¸¦ç€ä¸€è‚¡å­©å­æ°”ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 22);
 	set("attitude", "friendly");
 	set("shen_type", 1);
@@ -48,7 +48,7 @@ void create()
 	map_skill("parry", "zhuihun-biao");
 	map_skill("throwing", "zhuihun-biao");
 	
-	create_family("ÌÆÃÅ", 8, "µÜ×Ó");
+	create_family("å”é—¨", 8, "å¼Ÿå­");
 	set("class", "tangmen");
 
 	set("chat_chance_combat", 60);
@@ -66,6 +66,6 @@ void create()
 void attempt_apprentice(object ob)
 {
 
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄã¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ ã€‚");
 	command("recruit " + ob->query("id"));
 }

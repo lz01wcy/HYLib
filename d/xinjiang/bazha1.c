@@ -1,11 +1,11 @@
  inherit ROOM;
 void create()
 {
-        set("short", "ľ���ᵱ��");
+        set("short", "木拉提当铺");
         set("long", @LONG
-���������������ʮ�﷽ԲΨһ��һ�䵱�̣����ⲻ��Ҳ������
-����������Ǳ����ˣ��˺ܺã������Ͳ����ռ���˵ı��ˡ�����
-�����ƣ�����һ�顣
+这个当铺是乌拉泊十里方圆唯一的一间当铺，生意不好也不坏，
+这里的主人是本地人，人很好，从来就不想多占别人的便宜。当铺
+挂有牌（ｓｉｇｎ）一块。
 LONG
         );
         set("exits", ([ 
@@ -15,11 +15,11 @@ LONG
 ]));
         set("item_desc", ([
                 "sign": @TEXT
-������Ǯׯ��Ŀǰ�����ṩ�ķ����У� 
-pawn        �䵱���
-value       ���ۻ��
-sell        ���ϻ��
-redeem      ��ػ�� 
+这里是钱庄，目前我们提供的服务有： 
+pawn        典当货物。
+value       估价货物。
+sell        卖断货物。
+redeem      赎回货物。 
 TEXT
         ]) );
         set("objects", ([

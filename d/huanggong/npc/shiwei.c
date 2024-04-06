@@ -1,16 +1,16 @@
-// shiwei.c ´øµ¶ÊÌÎÀ
+// shiwei.c å¸¦åˆ€ä¾å«
 
 inherit NPC;
 //inherit F_SKILL;
 
 void create()
 {
-	set_name("ÊÌÎÀ", ({ "shi wei", "shi", "wei" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("ä¾å«", ({ "shi wei", "shi", "wei" }));
+	set("gender", "ç”·æ€§");
 	set("age", random(20) + 30);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "ËûÊÖÎÕ¸Öµ¶£¬Ä¿ÊÓÇ°·½£¬ÕæÊÇÍş·çÁİÁİ¡£\n");
+	set("long", "ä»–æ‰‹æ¡é’¢åˆ€ï¼Œç›®è§†å‰æ–¹ï¼ŒçœŸæ˜¯å¨é£å‡›å‡›ã€‚\n");
 	set("combat_exp", 175000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");

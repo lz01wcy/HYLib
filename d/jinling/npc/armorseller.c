@@ -7,14 +7,14 @@ int do_make(string arg);
 
 void create()
 {
-	set_name("ÀÏÆòØ¤", ({"beggar","seller"}));
-	set("title","Æ¦×Ó°ïÌÃÖ÷");
-       set("nickname", HIW "ÆòØ¤Íõ" NOR );
+	set_name("è€ä¹ä¸", ({"beggar","seller"}));
+	set("title","ç—å­å¸®å ‚ä¸»");
+       set("nickname", HIW "ä¹ä¸ç‹" NOR );
 	set_skill("unarmed", 100);
 	set_skill("parry", 100);
 	set_skill("dodge", 150);
        set_skill("blade", 100);
-	set("gender","ÄĞĞÔ");
+	set("gender","ç”·æ€§");
 
 	set("force",2000);
 	set("max_force",2000);
@@ -25,8 +25,8 @@ void create()
 
 	set("age", 37);
 	set("long", @LONG
-Ëû¾ÍÊÇ½ğÁê×î´óµÄ°ï»áÆ¦×Ó°ïµÄÌÃÖ÷£¬Ëû¿´ÆğÀ´ÈıÊ®¶àËê£¬
-ÂúÃæºì¹â£¬Ì«ÑôÑ¨¸ß¸ß¹ÄÆğ£¬Ò»¿´¾ÍÖ»Îä¹¦²»Èõ¡£
+ä»–å°±æ˜¯é‡‘é™µæœ€å¤§çš„å¸®ä¼šç—å­å¸®çš„å ‚ä¸»ï¼Œä»–çœ‹èµ·æ¥ä¸‰åå¤šå²ï¼Œ
+æ»¡é¢çº¢å…‰ï¼Œå¤ªé˜³ç©´é«˜é«˜é¼“èµ·ï¼Œä¸€çœ‹å°±åªæ­¦åŠŸä¸å¼±ã€‚
 LONG
 );
 
@@ -37,7 +37,7 @@ LONG
 	setup();
        set("chat_chance", 40);
        set("chat_msg", ({
-                "ÀÏÆòØ¤ËµµÀ£ºÎÒÕâÀïÓĞ¸ö±¦±´......ÄãÒª²»ÒªÑ½£¿\n",
+                "è€ä¹ä¸è¯´é“ï¼šæˆ‘è¿™é‡Œæœ‰ä¸ªå®è´......ä½ è¦ä¸è¦å‘€ï¼Ÿ\n",
                 (: random_move :)
         }) );
 

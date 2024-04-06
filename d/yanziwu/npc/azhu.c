@@ -6,12 +6,12 @@ int inquiry_tanqin();
 
 void create()
 {
-        set_name("����", ({ "azhu", "zhu" }));
+        set_name("阿朱", ({ "azhu", "zhu" }));
         set("long",
-                "���Ǹ��������µ�Ů�ɣ���Լʮ�߰��꣬һ��������Ƥ��������\n"
-                "һ�Ŷ쵰���������鶯������һ�����˷��ϡ�\n");
+                "这是个身穿红衣的女郎，大约十七八岁，一脸精灵顽皮的神气。\n"
+                "一张鹅蛋脸，眼珠灵动，别有一番动人风韵。\n");
 
-        set("gender", "Ů��");
+        set("gender", "女性");
         set("age", 17);
         set("shen_type", 1);
 
@@ -30,10 +30,10 @@ void create()
 
         set("combat_exp", 10000);
         set("inquiry",([
-            "����ɽׯ" : "�ҲŲ���ȥ����ɽׯ��������̫�Ե���!\n",
-            "������" : "����ֻ��������������ǹ��ӣ�Ҳ��֪��������ô����!\n",
-            "����" : "��СѾͷҲ��ֻ���Ķ�ȥ�ˡ�\n",
-            "����" : ( : inquiry_tanqin : ),
+            "曼陀山庄" : "我才不敢去曼陀山庄，王夫人太霸道了!\n",
+            "王语嫣" : "哎，只有她才配得上我们公子，也不知她现在怎么样了!\n",
+            "阿碧" : "那小丫头也不只跑哪儿去了。\n",
+            "弹琴" : ( : inquiry_tanqin : ),
         ]) );
         setup();
         carry_object(__DIR__"obj/goldring")->wear();
@@ -47,9 +47,9 @@ void create()
 int inquiry_tanqin()
 {
         object me=this_player();
-message_vision("����˵������λ"+ RANK_D->query_respect(me)+ "��ô�����ˣ����Ҿ�Ϊ�㵯��һ����
-                 \nֻ�����������������㲻�ɵĳ��ˡ�\n", me );
-//        ϸϸƷ�������������ܵ�<<���糱ˮ>>!!!\n 
-        message_vision("����һ�����ˣ������򸣣�˵�����ֳ��ˡ�\n", me );
+message_vision("阿朱说道：这位"+ RANK_D->query_respect(me)+ "这么有雅兴，那我就为你弹奏一曲！
+                 \n只听琴声繁复清亮，你不由的痴了。\n", me );
+//        细细品来，竟是张信哲的<<爱如潮水>>!!!\n 
+        message_vision("阿朱一曲终了，道个万福，说道：现丑了。\n", me );
         return 1;
 }

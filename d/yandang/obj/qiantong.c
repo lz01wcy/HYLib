@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL"Ç©Í²"NOR, ({ "qiantong","tong" }) );
-        set("long", "Ò»¸öÖñÇ©Í²,ÀïÃæ×°ÁË¼¸Ê®¸ùÇ©.Äã¿ÉÒÔÒ¡(yao)×ÅÊÔÊÔ.\n");
-        set("unit", "¸ö");
+        set_name(YEL"ç­¾ç­’"NOR, ({ "qiantong","tong" }) );
+        set("long", "ä¸€ä¸ªç«¹ç­¾ç­’,é‡Œé¢è£…äº†å‡ åæ ¹ç­¾.ä½ å¯ä»¥æ‘‡(yao)ç€è¯•è¯•.\n");
+        set("unit", "ä¸ª");
         set("weight", 700);
         set("no_give",1);
         set("no_get",1);
@@ -23,18 +23,18 @@ int do_yao(string arg)
     if(arg!="qiantong") return 0;
     me=this_player(); 
     if (me->query_temp("oldsix_flag/money")!=1) 
-     return notify_fail("ÉÏÈË¹ş¹şĞ¦×Å,Ö¸ÁËÖ¸ÉÆÔµÏä,µÀ:ÇëÊ©Ö÷²¼Ê©Ò»¶ş!\n");
+     return notify_fail("ä¸Šäººå“ˆå“ˆç¬‘ç€,æŒ‡äº†æŒ‡å–„ç¼˜ç®±,é“:è¯·æ–½ä¸»å¸ƒæ–½ä¸€äºŒ!\n");
     me->set_temp("yao",me->query_temp("yao")+1);
 
     if(me->query_temp("yao")==5)
     {
       me->set_temp("yao",0);
-   tell_object(me,"´ÓÇ©Í²ÖĞµô³öÀ´Ò»¸ùÇ©,Äã×ĞÏ¸µØ°ÑËü·ÅºÃ!\n");
+   tell_object(me,"ä»ç­¾ç­’ä¸­æ‰å‡ºæ¥ä¸€æ ¹ç­¾,ä½ ä»”ç»†åœ°æŠŠå®ƒæ”¾å¥½!\n");
    clone_object(__DIR__"qian")->move(me);
    me->delete_temp("oldsix_flag/money");
     }
     else
-      message_vision("$Nò¯³ÏµØÒ¡ÁËÏÂÇ©Í²¡£\n", me);
+      message_vision("$Nè™”è¯šåœ°æ‘‡äº†ä¸‹ç­¾ç­’ã€‚\n", me);
    
     return 1; 
 }

@@ -1,13 +1,13 @@
 // /d/taiyuan/xidajie2.c
-// Room in Ì«Ô­
+// Room in å¤ªåŽŸ
 // rich 99/04/05
 inherit ROOM;
 void create()	
 {
-	set("short", "Î÷´ó½Ö");
+	set("short", "è¥¿å¤§è¡—");
 	set("long", @LONG
-´ó½ÖÓÐÁ½Á¾Âí³µ²¢ÐÐ£¬ÄÇÃ´¿íÉíÎ÷ÒþÒþÔ¼Ô¼ÄÜ¿´¼ûÎ÷³ÇÃÅ£¬¶«ÃæÊÇ
-ÖÐÐÄ¹ã³¡£¬±±ÃæÊÇÒ»¼Ò²è¹Ý£¬ÄÏÃæÊÇÌ«Ô­ÑÎË¾µÄËùÔÚµØÁË¡£
+å¤§è¡—æœ‰ä¸¤è¾†é©¬è½¦å¹¶è¡Œï¼Œé‚£ä¹ˆå®½èº«è¥¿éšéšçº¦çº¦èƒ½çœ‹è§è¥¿åŸŽé—¨ï¼Œä¸œé¢æ˜¯
+ä¸­å¿ƒå¹¿åœºï¼ŒåŒ—é¢æ˜¯ä¸€å®¶èŒ¶é¦†ï¼Œå—é¢æ˜¯å¤ªåŽŸç›å¸çš„æ‰€åœ¨åœ°äº†ã€‚
 LONG
 	);
 set("outdoors", "taiyuan");

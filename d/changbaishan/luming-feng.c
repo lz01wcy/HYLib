@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","Â¹Ãù·å");
+  set ("short","é¹¿é¸£å³°");
   set ("long", @LONG
-Â¹Ãù·åÓÖ½ĞÖ¥ÅÌ·å£¬Î»ÓÚÖ®Ìì³ØÎ÷±±£¬·å¶¥ÓĞÒ»²İµé×Ó£¬ÆäĞÎÔ²Èç
-ÅÌ£¬Ã¿µ½ÑÏ¶¬µÄ¼¾½Ú£¬ÆäËü¸÷·åÒÑÊÇ»ıÑ©¸²¸Ç£¬Î¨ÓĞ´Ë·å»¹Â¶ÔÚ°×Ñ©Ö®
-Íâ¡£
+é¹¿é¸£å³°åˆå«èŠç›˜å³°ï¼Œä½äºä¹‹å¤©æ± è¥¿åŒ—ï¼Œå³°é¡¶æœ‰ä¸€è‰ç”¸å­ï¼Œå…¶å½¢åœ†å¦‚
+ç›˜ï¼Œæ¯åˆ°ä¸¥å†¬çš„å­£èŠ‚ï¼Œå…¶å®ƒå„å³°å·²æ˜¯ç§¯é›ªè¦†ç›–ï¼Œå”¯æœ‰æ­¤å³°è¿˜éœ²åœ¨ç™½é›ªä¹‹
+å¤–ã€‚
 LONG);
 
   set("exits", ([ 
@@ -38,25 +38,25 @@ int do_wa(string arg)
 {
    object me,ob;
    me=this_player();
-   if(!arg||arg!="Ò©²Ä")
-   return notify_fail("ÄãÒªÍÚÊ²Ã´£¿\n");
+   if(!arg||arg!="è¯æ")
+   return notify_fail("ä½ è¦æŒ–ä»€ä¹ˆï¼Ÿ\n");
    if(me->query("sen")<20)
-   return notify_fail("ÄãÍÚÁË»á£¬¾õµÃ¾«ÉñÆ£±¹£¬ÎŞ·¨¼ÌĞøÁË¡£\n");
+   return notify_fail("ä½ æŒ–äº†ä¼šï¼Œè§‰å¾—ç²¾ç¥ç–²æƒ«ï¼Œæ— æ³•ç»§ç»­äº†ã€‚\n");
  if(me->is_busy())
- return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+ return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
  if(query("no_dig")>=10)
- return notify_fail("¿´À´ÕâÀïºÃÏóÃ»ÓĞÒ©²ÄÁË£¬ºÃÏó¸Ã»»¸öµØ·½ÁË¡£\n");
+ return notify_fail("çœ‹æ¥è¿™é‡Œå¥½è±¡æ²¡æœ‰è¯æäº†ï¼Œå¥½è±¡è¯¥æ¢ä¸ªåœ°æ–¹äº†ã€‚\n");
    me->add("sen",-20);
  me->start_busy(1+random(2));
    if(random(100)>30)
    {
      ob=new("/obj/medicine/yaocai");
      ob->move((me));
-     message_vision("$NÍÚµ½ÁËÒ»¿ÃÒ©²Ä£¡\n",me);
+     message_vision("$NæŒ–åˆ°äº†ä¸€æ£µè¯æï¼\n",me);
 add("no_dig",1);
      return 1;
     }
-   message_vision("$NÀÛµÄÂúÍ·´óº¹£¬µ«ÊÇÊ²Ã´Ò²Ã»ÍÚµ½¡£\n",me);
+   message_vision("$Nç´¯çš„æ»¡å¤´å¤§æ±—ï¼Œä½†æ˜¯ä»€ä¹ˆä¹Ÿæ²¡æŒ–åˆ°ã€‚\n",me);
    return 1;
 }
 

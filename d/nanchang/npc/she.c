@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-   set_name("Éß",({ "she"}) );
-        set("race", "Ò°ÊÞ" );
-     set("long", "ÕâÊÇÒ»ÌõÉß¡£\n");
+   set_name("è›‡",({ "she"}) );
+        set("race", "é‡Žå…½" );
+     set("long", "è¿™æ˜¯ä¸€æ¡è›‡ã€‚\n");
 	 set("verbs",({"bite"}));
-     set("limbs",({"Í·","Î²°Í","Æß´ç"}));
+     set("limbs",({"å¤´","å°¾å·´","ä¸ƒå¯¸"}));
 	 set("attitude","aggressive");
   setup();
 
@@ -17,7 +17,7 @@ void die()
 {
 	object ob,corpse;
 	ob=this_object();
-	message_vision("$NÌÉÔÚµØÉÏ»ÎÁË»Î£¬ËÀÁË¹ýÈ¥¡£\n",ob);
+	message_vision("$Nèººåœ¨åœ°ä¸Šæ™ƒäº†æ™ƒï¼Œæ­»äº†è¿‡åŽ»ã€‚\n",ob);
     corpse=new(__DIR__"obj/shedan");
 	corpse->move(environment(ob));
 	destruct(ob);

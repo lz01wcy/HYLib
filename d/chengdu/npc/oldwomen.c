@@ -1,4 +1,4 @@
-// Room: /d/chengdu/npc/oldwomen.c ÀÏ´óÄï
+// Room: /d/chengdu/npc/oldwomen.c è€å¤§å¨˜
 // Last Modifyed by Winder on Jan. 4 2002
 
 inherit NPC;
@@ -6,14 +6,14 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÀÏ´óÄï", ({ "Old women", "old", "women" }) );
-	set("gender", "Å®ĞÔ" );
+	set_name("è€å¤§å¨˜", ({ "Old women", "old", "women" }) );
+	set("gender", "å¥³æ€§" );
 	set("age", 62);
 	set("long",
-		"ËıÊÇ²Ë³¡ÀÏ°å£¬ÉúÒâºì»ğ£¬Òò´ËÒÂ×Å´©´÷»¹ËãÌåÃæ¡£\n");
+		"å¥¹æ˜¯èœåœºè€æ¿ï¼Œç”Ÿæ„çº¢ç«ï¼Œå› æ­¤è¡£ç€ç©¿æˆ´è¿˜ç®—ä½“é¢ã€‚\n");
 	set("combat_exp", 120);
 	set("attitude", "friendly");
-	set("rank_info/respect", "ÀÏ´óÄï");
+	set("rank_info/respect", "è€å¤§å¨˜");
 	set("vendor_goods", ({
 		__DIR__"obj/qingcai",
 		__DIR__"obj/dabaicai",

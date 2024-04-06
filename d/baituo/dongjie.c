@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "东街");
+	set("short", "涓滆");
 	set("long",
-	     "这里是小镇的东街。南边有个打铁铺，里面传来丁丁当当\n"
-	 "的声音。东南方是荒凉的戈壁，东北方有条小路可上山。\n"
+	     "杩欓噷鏄皬闀囩殑涓滆銆傚崡杈规湁涓墦閾侀摵锛岄噷闈紶鏉ヤ竵涓佸綋褰揬n"
+	 "鐨勫０闊炽�備笢鍗楁柟鏄崚鍑夌殑鎴堝锛屼笢鍖楁柟鏈夋潯灏忚矾鍙笂灞便�俓n"
 	);
 	set("outdoors", "baituo");
 	set("exits", ([

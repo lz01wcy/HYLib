@@ -1,14 +1,14 @@
-// dongmen.c ����
+// dongmen.c 洞门
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "洞门");
         set("long", @LONG
-�����ǰͻȻһ������ǰ��Ȼ����һ����ʯ���ɵĶ��ţ��Ŷ�
-�ϵ�����������ӭ���ݣ�����ʯ�������̷��֪�����Ŷ�������
-�ɽ�����Ѫ�ۣ������ֳ����˵ĸ��к��ݳޡ�
+你的面前突然一亮，眼前赫然出现一道玉石砌成的洞门，门额
+上雕有三个大字迎宾馆，两旁石粱雕龙刻凤，不知凝聚着多少名工
+巧匠的心血哇！更体现出主人的富有和奢侈。
 LONG );
 //        set("outdoors", "xiakedao");
         set("exits", ([

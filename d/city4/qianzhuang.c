@@ -7,23 +7,23 @@ void  reset_balance(object  me);
 
 void  create  ()
 {
-	set  ("short",  "���Ǯׯ");
+	set  ("short",  "相记钱庄");
 	set  ("long",  @LONG
-����һ�����ֺŵ�Ǯׯ�����ϰ���ɽ���ˣ����Ǯׯ������үү��
-үү��үү��үү�Ǳ���ʼ����һֱ��������������ǳ��ã���ȫ
-�����ض��зֵꡣ�����е���Ʊ�����ǳ��ã�ͨ��ȫ�����⿴�ϰ彫Ǯ
-ׯ���ڱ�Ӫ�Աߣ������ڶ�ʡ�ˣ����֪�����������ë��֮����Ȼ��
-���ɲ⡣
-    Ǯׯ���ſڣ�����һ������(paizi)��
+这是一家老字号的钱庄，相老板是山西人，这家钱庄从他的爷爷的
+爷爷的爷爷的爷爷那辈开始办起，一直传到他手里，声誉非常好，在全
+国各地都有分店。它发行的银票信誉非常好，通行全国。光看老板将钱
+庄开在兵营旁边，连保镖都省了，你就知道他“雁过拔毛”之术已然深
+不可测。
+    钱庄的门口，挂有一块牌子(paizi)。
 LONG);
 	set("item_desc",  ([
 		"paizi":  @TEXT
-������Ǯׯ��Ŀǰ�����ṩ�ķ����У�
+这里是钱庄，目前我们提供的服务有：
 
-check             ���ʡ�
-deposit           ��
-withdraw          ȡ�
-convert           �һ�Ǯ�ҡ�
+check             查帐。
+deposit           存款。
+withdraw          取款。
+convert           兑换钱币。
 
 TEXT
 	])  );
@@ -54,7 +54,7 @@ void  reset_balance(object  me)
 	int  myexp=me->query("combat_exp")/1000;
 	int  allowed,  removed_gold;
 	string  myid=me->query("id");
-	string  NPCNAME="������";
+	string  NPCNAME="铁算盘";
 
 	if(myexp<1)  myexp=1;
 	if(myexp>100)  myexp=100;
@@ -64,13 +64,13 @@ void  reset_balance(object  me)
 	me->set("balance_old",  me->query("balance"));
 	me->set("balance",  allowed);
 	removed_gold  =  (me->query("balance_old")  -  me->query("balance"))/10000;
-	log_file("MONEY_RESET",  ctime(  time()  )+"��κ�����ս���"+me->query("name")+"("+me->query("id")+")"+removed_gold+"���ƽ�\n");
-	tell_object(me,  GRN+NPCNAME+"����Ķ�������˵����"+RANK_D->query_respect(me)+
-		"���⡢���治֪��ô˵�Ǻã�����\n"NOR);
-	tell_object(me,  GRN+NPCNAME+"����Ķ�������˵����"+
-		"����κ��������ǰ���참���������ϵĻƽ���·������\n"NOR);
-	tell_object(me,  GRN+NPCNAME+"����Ķ�������˵����"+
-		"���������°����ϱ�⣬���ϵ�Ǯ��ȫ���乫�ˣ�����\n"NOR);
+	log_file("MONEY_RESET",  ctime(  time()  )+"：魏大人收缴了"+me->query("name")+"("+me->query("id")+")"+removed_gold+"两黄金。\n");
+	tell_object(me,  GRN+NPCNAME+"在你的耳边悄声说道："+RANK_D->query_respect(me)+
+		"，这、这真不知怎么说是好．．．\n"NOR);
+	tell_object(me,  GRN+NPCNAME+"在你的耳边悄声说道："+
+		"昨日魏大人派人前来察案，发觉你老的黄金来路．．．\n"NOR);
+	tell_object(me,  GRN+NPCNAME+"在你的耳边悄声说道："+
+		"若不是在下帮你老辩解，你老的钱就全都充公了．．．\n"NOR);
 	}
 	return;
 }

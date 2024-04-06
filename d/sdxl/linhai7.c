@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ֺ�");
+	set("short", "林海");
 	set("long", @LONG
-������һƬһ�������ֺ���ÿ����ľ����ʮ���ɸߣ���Χ��İ
-������������о����Լ���·��
+这里是一片一望无垠林海，每棵树木都有十来丈高，周围阡陌
+交错，你进来感觉到自己迷路了
 LONG
 	);
 	set("exits", ([

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����̨");
+	set("short", "更衣台");
 	set("long", @LONG
-����Ϫ�ϵĸ���̨��ͻأ���㡢ʯ�������������񷤣�ԶԶ���ܿ�
-���������ݡ��ഫκ����ڴλ��£���������������ġ��������ʯ��
-�����С�����̨���͡���ʴ����𡱵�ʯ�̡�
+五曲溪南的更衣台，突兀竟秀、石峰耸立。乘坐竹筏，远远便能看
+到它的尊容。相传魏子骞在次换衣，登上天柱峰升天的。至今半腰石壁
+上仍有“更衣台”和“玉皇大天尊”的石刻。
 LONG );
 	set("outdoors", "wuyi");
 	set("no_clean_up", 0);

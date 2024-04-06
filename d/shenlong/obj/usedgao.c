@@ -13,14 +13,14 @@ void init()
 
 void create()
 {
-	set_name("ÓÃ¹ıµÄ°Ù»¨¸¹Éß¸à", ({"usedgao"}));
+	set_name("ç”¨è¿‡çš„ç™¾èŠ±è…¹è›‡è†", ({"usedgao"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "ÕÅ");
-		set("long", "ÕâÊÇÒ»ÕÅÓÃ¹ıµÄ°Ù»¨¸¹Éß¸à¡£\n");
+		set("unit", "å¼ ");
+		set("long", "è¿™æ˜¯ä¸€å¼ ç”¨è¿‡çš„ç™¾èŠ±è…¹è›‡è†ã€‚\n");
 		set("value", 1000);
-//                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã!\n");
+//                set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ !\n");
 	}
 	setup();
 }

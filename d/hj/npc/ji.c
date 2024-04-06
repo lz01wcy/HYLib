@@ -3,11 +3,11 @@ inherit NPC;
 string ask_li();
 void create()
 {
-        set_name("¼ÆÀÏÈË", ({ "ji laoren", "ji"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("è®¡è€äºº", ({ "ji laoren", "ji"}));
+        set("gender", "ç”·æ€§");
         set("age", 83);
-        set("long", "ÂúÍ·°×·¢£¬¾¹ÎÞÒ»¸ùÊÇºÚµÄ£¬Éí²ÄÉõÊÇ¸ß´ó£¬
-Ö»ÊÇ¹­ÑüÇú±³£¬Á³ÉÏÈ«ÊÇÖåÎÆ£¬Ë¥ÀÏÒÑ¼«¡£\n");
+        set("long", "æ»¡å¤´ç™½å‘ï¼Œç«Ÿæ— ä¸€æ ¹æ˜¯é»‘çš„ï¼Œèº«æç”šæ˜¯é«˜å¤§ï¼Œ
+åªæ˜¯å¼“è…°æ›²èƒŒï¼Œè„¸ä¸Šå…¨æ˜¯çš±çº¹ï¼Œè¡°è€å·²æžã€‚\n");
         set("attitude", "friendly");
         set("combat_exp", 475000);
         set("shen", 4800);
@@ -36,9 +36,9 @@ void create()
         map_skill("cuff", "taizu-quan");
         prepare_skill("cuff", "taizu-quan");
         set("inquiry", ([
-            "ÀîÎÄÐã" : (: ask_li :),
-            "¹þÈø¿ËÈË" : "¹þÈø¿ËÈË×î°®ºÈÓÖÏãÓÖÁÒµÄÃÀ¾Æ¡£\n",
-            "»ª»Ô" : "Ë­£¿ÎÒ²»ÖªµÀÕâ¸öÈË¡£\n",
+            "æŽæ–‡ç§€" : (: ask_li :),
+            "å“ˆè¨å…‹äºº" : "å“ˆè¨å…‹äººæœ€çˆ±å–åˆé¦™åˆçƒˆçš„ç¾Žé…’ã€‚\n",
+            "åŽè¾‰" : "è°ï¼Ÿæˆ‘ä¸çŸ¥é“è¿™ä¸ªäººã€‚\n",
         ]) );
         setup();
         carry_object(__DIR__"obj/bishou")->wield();
@@ -52,8 +52,8 @@ string ask_li()
     object me, ob, where;
     me=this_player();
     ob = find_living("li wenxiu");
-    if (!ob) return "Õâº¢×Ó£¬²»ÖªµÀÓÖÅÜÄÄÈ¥ÁË£¬°¦¡£¡£¡£\n";
+    if (!ob) return "è¿™å­©å­ï¼Œä¸çŸ¥é“åˆè·‘å“ªåŽ»äº†ï¼Œå”‰ã€‚ã€‚ã€‚\n";
     where = environment(ob);
-       if (!where) return "Õâº¢×Ó£¬²»ÖªµÀÓÖÅÜÄÄÈ¥ÁË£¬°¦¡£¡£¡£\n";
-    return "Å¶£¬Õâº¢×ÓºÃÏóÅÜµ½"+where->query("short")+"ÍæÈ¥ÁË¡£";        
+       if (!where) return "è¿™å­©å­ï¼Œä¸çŸ¥é“åˆè·‘å“ªåŽ»äº†ï¼Œå”‰ã€‚ã€‚ã€‚\n";
+    return "å“¦ï¼Œè¿™å­©å­å¥½è±¡è·‘åˆ°"+where->query("short")+"çŽ©åŽ»äº†ã€‚";        
 }

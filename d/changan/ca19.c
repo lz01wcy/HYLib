@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-    set("short",HIY "��¥" NOR);
+    set("short",HIY "钟楼" NOR);
     set("long", @LONG
-��¥����������һʮ���ꡣ����ʯΪ��������ľΪ��¥��¥����
-�Ҿ���һ�ڣ����Ա�ʱ����¥��˵�����
+钟楼建于明洪武一十三年。青条石为方基，巨木为塔楼。楼内悬
+挂巨钟一口，用以报时，钟楼因此得名。
 LONG
 );
     set("exits", ([

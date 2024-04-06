@@ -6,12 +6,12 @@ string look_board();
 
 void create()
 {
-        set("short", HIY"¹ã³¡¿ÕµØ"NOR);
-        set("long", "´Ë´¦ÄÚÊÇÌÁ¹Á·±»ªÖ®Ëù£¬Ö»¼ûºìÂ¥»­¸ó£¬Ðå»§ÖìÃÅ£¬µñ³µ¾º×¤£¬¿¥ÂíÕù³Û¡£Ò»
-Æ¬¿ªÀ«µÄ³¡µØÉÏ£¬µ«ÌýµÃÇ°ÃæÈËÉùÐú»©£¬ºÈ²ÊÖ®Éù²»¾øÓÚ¶ú£¬Ô¶Ô¶ÍûÈ¥£¬Î§×ÅºÃ´ó
-Ò»¶ÑÈË£¬Ö»¼ûÖÐ¼äÀÏ´óÒ»¿é¿ÕµØ£¬Á¢×ÅÒ»·½"NOR+HIR"ÀÞÌ¨"NOR+"£¬µØÏÂ²åÁËÒ»Ãæ½õÆì£¨Qi£©£¬°×µ×
-ºì»¨£¬Ðå×Å¡º"NOR+HIY"±ÈÎä ÕÐÇ×"NOR+"¡»ËÄ¸ö½ð×Ö£¬ÆìÏÂÒ»¿é°×°å£¨Board£©¡£ÆìÏÂÁ½ÈËÕý×ÔÈ­À´
-½ÅÈ¥µÄ´òµÃÈÈÄÖ£¬Ò»¸öÊÇºìÒÂÉÙÅ®£¬Ò»¸öÊÇ³¤´óºº×Ó¡£\n");
+        set("short", HIY"å¹¿åœºç©ºåœ°"NOR);
+        set("long", "æ­¤å¤„å†…æ˜¯å¡˜æ²½ç¹åŽä¹‹æ‰€ï¼Œåªè§çº¢æ¥¼ç”»é˜ï¼Œç»£æˆ·æœ±é—¨ï¼Œé›•è½¦ç«žé©»ï¼Œéªé©¬äº‰é©°ã€‚ä¸€
+ç‰‡å¼€é˜”çš„åœºåœ°ä¸Šï¼Œä½†å¬å¾—å‰é¢äººå£°å–§å“—ï¼Œå–å½©ä¹‹å£°ä¸ç»äºŽè€³ï¼Œè¿œè¿œæœ›åŽ»ï¼Œå›´ç€å¥½å¤§
+ä¸€å †äººï¼Œåªè§ä¸­é—´è€å¤§ä¸€å—ç©ºåœ°ï¼Œç«‹ç€ä¸€æ–¹"NOR+HIR"æ“‚å°"NOR+"ï¼Œåœ°ä¸‹æ’äº†ä¸€é¢é”¦æ——ï¼ˆQiï¼‰ï¼Œç™½åº•
+çº¢èŠ±ï¼Œç»£ç€ã€Ž"NOR+HIY"æ¯”æ­¦ æ‹›äº²"NOR+"ã€å››ä¸ªé‡‘å­—ï¼Œæ——ä¸‹ä¸€å—ç™½æ¿ï¼ˆBoardï¼‰ã€‚æ——ä¸‹ä¸¤äººæ­£è‡ªæ‹³æ¥
+è„šåŽ»çš„æ‰“å¾—çƒ­é—¹ï¼Œä¸€ä¸ªæ˜¯çº¢è¡£å°‘å¥³ï¼Œä¸€ä¸ªæ˜¯é•¿å¤§æ±‰å­ã€‚\n");
 
         set("no_fight", 1);
         set("no_sleep_room", 1);
@@ -28,7 +28,7 @@ void create()
 				"leitai" : (: look_leitai :),
 				"board" : (: look_board :),
         ]));
-        set("outdoors", "³¤°²");  
+        set("outdoors", "é•¿å®‰");  
         setup(); 
 }
 
@@ -40,10 +40,10 @@ string look_qi()
 		int i,p;
     	me = this_player();
     	if (me->is_busy()) 
-          	return "ÄãÕýÃ¦×ÅÄØ¡£\n";
+          	return "ä½ æ­£å¿™ç€å‘¢ã€‚\n";
     	me->start_busy(2);
-		str  = "Ò»Ãæ½õÆì£¬°×µ×ºì»¨£¬Ðå×Å¡º"+HIY"±ÈÎäÕÐÇ×"NOR+"¡»£¬µ×ÏÂ¼¸ÐÐÐ¡×Ö£º\n\n";
-		str += "        ¡º"+HIC"ÎÔ»¢²ØÁúµØ£¬Á¼³½ÃÀ¾°Ìì"NOR+"¡»\n\n";
+		str  = "ä¸€é¢é”¦æ——ï¼Œç™½åº•çº¢èŠ±ï¼Œç»£ç€ã€Ž"+HIY"æ¯”æ­¦æ‹›äº²"NOR+"ã€ï¼Œåº•ä¸‹å‡ è¡Œå°å­—ï¼š\n\n";
+		str += "        ã€Ž"+HIC"å§è™Žè—é¾™åœ°ï¼Œè‰¯è¾°ç¾Žæ™¯å¤©"NOR+"ã€\n\n";
 		obj=present("mu nianci",this_object());
 		if(obj && obj->query("station") && obj->query("bwzh/host_player"))
 		{
@@ -53,8 +53,8 @@ string look_qi()
 			if(i<18) i=18;
 			p=who->query("age")+obj->query("bwzh/age");
 			if(p>80) p=80;
-			str += HIC"ÔÚ½õÆìµÄ²àÃæÒ»½Ç£¬Ð´×ÅÒ»¸öÃû×Ö£º"+obj->query("bwzh/host_player/name")+"¡£\n"NOR;
-			str += HIC"Ãû×ÖÏÂÃæ×¢Ã÷¼¸¸öÊý×Ö£º"+obj->query("bwzh/exp")+"|"+obj->query("bwzh/per")+"|"+i+"|"+p+"¡£\n"NOR;
+			str += HIC"åœ¨é”¦æ——çš„ä¾§é¢ä¸€è§’ï¼Œå†™ç€ä¸€ä¸ªåå­—ï¼š"+obj->query("bwzh/host_player/name")+"ã€‚\n"NOR;
+			str += HIC"åå­—ä¸‹é¢æ³¨æ˜Žå‡ ä¸ªæ•°å­—ï¼š"+obj->query("bwzh/exp")+"|"+obj->query("bwzh/per")+"|"+i+"|"+p+"ã€‚\n"NOR;
 		}
         tell_object(me,str);
     	return "";
@@ -65,24 +65,24 @@ string look_board()
 		string str;
     	me = this_player();
     	if (me->is_busy()) 
-          	return "ÄãÕýÃ¦×ÅÄØ¡£\n";
+          	return "ä½ æ­£å¿™ç€å‘¢ã€‚\n";
 
     	me->start_busy(2);
 		obj=present("mu nianci",this_object());
 		if(!obj || !obj->query("bwzh/winner_player"))
 		{
-			str  = "Ò»¿é°×°å£¬ÕýÉÏ·½Ð´×Å¡º"+HIY"±ÈÎäÕÐÇ×"NOR+"¡»±êÌâ£¬µ×ÏÂÈ´Ê²Ã´Ò²Ã»Ð´¡£\n";
+			str  = "ä¸€å—ç™½æ¿ï¼Œæ­£ä¸Šæ–¹å†™ç€ã€Ž"+HIY"æ¯”æ­¦æ‹›äº²"NOR+"ã€æ ‡é¢˜ï¼Œåº•ä¸‹å´ä»€ä¹ˆä¹Ÿæ²¡å†™ã€‚\n";
 		}
 		else
 		{
 			if(obj->query("bwzh/challenge_player"))
-				str  = "Ò»¿é°×°å£¬ÕýÉÏ·½Ð´×Å¡º"+HIY"±ÈÎäÕÐÇ×"NOR+"¡»±êÌâ£¬µ×ÏÂÒ²Ð´ÓÐÁ½ÐÐ×Ö£º\n";
+				str  = "ä¸€å—ç™½æ¿ï¼Œæ­£ä¸Šæ–¹å†™ç€ã€Ž"+HIY"æ¯”æ­¦æ‹›äº²"NOR+"ã€æ ‡é¢˜ï¼Œåº•ä¸‹ä¹Ÿå†™æœ‰ä¸¤è¡Œå­—ï¼š\n";
 			else 
-				str  = "Ò»¿é°×°å£¬ÕýÉÏ·½Ð´×Å¡º"+HIY"±ÈÎäÕÐÇ×"NOR+"¡»±êÌâ£¬µ×ÏÂÒ²Ð´ÓÐÒ»ÐÐ×Ö£º\n";
+				str  = "ä¸€å—ç™½æ¿ï¼Œæ­£ä¸Šæ–¹å†™ç€ã€Ž"+HIY"æ¯”æ­¦æ‹›äº²"NOR+"ã€æ ‡é¢˜ï¼Œåº•ä¸‹ä¹Ÿå†™æœ‰ä¸€è¡Œå­—ï¼š\n";
 
-			str += "\n             ¡º"+HIC"ÀÞ  Ö÷"NOR+"¡»£º"+obj->query("bwzh/winner_player/name")+"\n";
+			str += "\n             ã€Ž"+HIC"æ“‚  ä¸»"NOR+"ã€ï¼š"+obj->query("bwzh/winner_player/name")+"\n";
 			if(obj->query("bwzh/challenge_player"))
-				str += "             ¡º"+HIC"ÌôÕ½Õß"NOR+"¡»£º"+obj->query("bwzh/challenge_player/name")+"\n";
+				str += "             ã€Ž"+HIC"æŒ‘æˆ˜è€…"NOR+"ã€ï¼š"+obj->query("bwzh/challenge_player/name")+"\n";
 		}
         tell_object(me,str);
     	return "";

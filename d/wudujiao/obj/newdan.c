@@ -1,4 +1,4 @@
-// newdan.c ĞÂÊÖÉÏÂ·µ¤
+// newdan.c æ–°æ‰‹ä¸Šè·¯ä¸¹
 // 99-11-10 15:04 By victori
 
 #include <ansi.h>
@@ -10,30 +10,30 @@ void init()
 }
 void create()
 {
-        set_name(HIC"ĞÂÊÖÉÏÂ·µ¤"NOR, ({"new dan", "dan"}));          
-        set("unit", "¿Å");
+        set_name(HIC"æ–°æ‰‹ä¸Šè·¯ä¸¹"NOR, ({"new dan", "dan"}));          
+        set("unit", "é¢—");
         set("value", 10000);
-        set("long", "ÕâÊÇÒ»¿ÅÌìÉÏµÄÉñÏÉÃÇËÍ¸ø¸Õ½øÈë½­ºşµÄĞÂÊÖ³ÔµÄ
-ÏÉµ¤£¬¾İËµÁéÑéÎŞ±È£¬ÈË¼äÉÙÓĞ¡£\n");
+        set("long", "è¿™æ˜¯ä¸€é¢—å¤©ä¸Šçš„ç¥ä»™ä»¬é€ç»™åˆšè¿›å…¥æ±Ÿæ¹–çš„æ–°æ‰‹åƒçš„
+ä»™ä¸¹ï¼Œæ®è¯´çµéªŒæ— æ¯”ï¼Œäººé—´å°‘æœ‰ã€‚\n");
         setup();
 }
 int do_eat(string arg)
 {
         object me=this_player();
-        if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if (me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
-        if (me->query("tmarks/µ¤",1)>0)
-                return notify_fail("¸ãÊ²Ã´°¡£¬Äã³Ô¹ıÁË»¹Ïë³Ô£¿£¡\n");
+                return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
+        if (me->query("tmarks/ä¸¹",1)>0)
+                return notify_fail("æä»€ä¹ˆå•Šï¼Œä½ åƒè¿‡äº†è¿˜æƒ³åƒï¼Ÿï¼\n");
         if (me->query("combat_exp")>0)
-              return notify_fail("¸ãÊ²Ã´°¡£¬Äã¶¼²»ÊÇĞÂÊÖÁË»¹Ïë³Ô£¿£¡\n");
+              return notify_fail("æä»€ä¹ˆå•Šï¼Œä½ éƒ½ä¸æ˜¯æ–°æ‰‹äº†è¿˜æƒ³åƒï¼Ÿï¼\n");
         else
         {
         me->set("combat_exp", 5000);                    
         me->set("potential", 5000);
-        message_vision(HIW"$N³ÔÏÂÒ»¿ÅĞÂÊÖÉÏÂ·µ¤£¬Ò»¹ÉÈÈÁ÷´Óµ¤ÌïÉıÆğ£¬¶ÙÊ±È«Éí³äÂúÁ¦Á¿£¡\n"NOR,me);
-        tell_object(me,HIY"Ú¤Ú¤ÖĞºÃÏóÓĞÈËÔÚÄã¶ú±ßËµ£º¡°ÔõÃ´Ñù£¿Ë¬°É£¿×£ÄãÒ»Â·ºÃÔË£¡¡±\n"NOR,);
-        me->set("tmarks/µ¤",1);
+        message_vision(HIW"$Nåƒä¸‹ä¸€é¢—æ–°æ‰‹ä¸Šè·¯ä¸¹ï¼Œä¸€è‚¡çƒ­æµä»ä¸¹ç”°å‡èµ·ï¼Œé¡¿æ—¶å…¨èº«å……æ»¡åŠ›é‡ï¼\n"NOR,me);
+        tell_object(me,HIY"å†¥å†¥ä¸­å¥½è±¡æœ‰äººåœ¨ä½ è€³è¾¹è¯´ï¼šâ€œæ€ä¹ˆæ ·ï¼Ÿçˆ½å§ï¼Ÿç¥ä½ ä¸€è·¯å¥½è¿ï¼â€\n"NOR,);
+        me->set("tmarks/ä¸¹",1);
         me->start_busy(2);
         destruct(this_object());
         return 1;

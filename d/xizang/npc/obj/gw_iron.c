@@ -3,21 +3,21 @@
 inherit DAGGER;
 void create()
 {
-        set_name(BLU "ÌìÉ½¾«Ìú¿é"NOR, ({ "rare iron" }) );
+        set_name(BLU "å¤©å±±ç²¾é“å—"NOR, ({ "rare iron" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Ò»¿éÆáºÚ±ùÀäµÄÌìÉ½¾«Ìú£¬ÒşÒşµÄ·º×ÅÀ¶¹â¡£\n");
+                set("unit", "å—");
+                set("long", "ä¸€å—æ¼†é»‘å†°å†·çš„å¤©å±±ç²¾é“ï¼Œéšéšçš„æ³›ç€è“å…‰ã€‚\n");
                 set("value", 10000);
                 set("rigidity",2000);   
                 set("material", "steel");
                 set("max_enchant",6);
                 set("for_create_weapon",1);
                 set("base_damage",25);
-        set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»¿é$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");
+        set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€å—$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nè—å…¥æ€€ä¸­ã€‚\n");
         }
         ::init_dagger(625);
 }    

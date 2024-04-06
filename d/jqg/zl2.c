@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "»ØÀÈ");
+	set("short", "å›å»Š");
 	set("long", @LONG
-Ò»ÌõµäÑÅµÄ»ØÀÈ£¬ÉÏÃæ»­Âúµ±´úÃûÈËµÄÊé»­¡£
+ä¸€æ¡å…¸é›…çš„å›å»Šï¼Œä¸Šé¢ç”»æ»¡å½“ä»£åäººçš„ä¹¦ç”»ã€‚
 LONG
 	);
 
@@ -28,6 +28,6 @@ int valid_leave(object me, string dir)
           if (!me->query("jqg_pass")&&
           present("pu ren", environment(me)) &&
 	  (dir=="north"))
-          return notify_fail("ÆÍÈËÀ¹×¡ÄãËµµÀ£¬µ¤·¿Ã»¾­¹ÈÖ÷Í¬Òâ£¬²»ÄÜËæ±ã½øÈë¡£\n");
+          return notify_fail("ä»†äººæ‹¦ä½ä½ è¯´é“ï¼Œä¸¹æˆ¿æ²¡ç»è°·ä¸»åŒæ„ï¼Œä¸èƒ½éšä¾¿è¿›å…¥ã€‚\n");
           return ::valid_leave(me, dir);
 }

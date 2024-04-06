@@ -6,17 +6,17 @@ inherit DAGGER;
 
 void create()
 {
-        set_name("ºì³ñÎèÆ÷", ({ "wuqi" }) );
+        set_name("çº¢ç»¸èˆå™¨", ({ "wuqi" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñºì³ñÎèÆ÷\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠçº¢ç»¸èˆå™¨\n");
                 set("value", 3);
                 set("material", "stone");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_dagger(5);

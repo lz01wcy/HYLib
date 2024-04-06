@@ -4,19 +4,19 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÉÌÈË", ({ "shangren","shopper","shang" }) );
+	set_name("å•†äºº", ({ "shangren","shopper","shang" }) );
        set("str", 19);
 	set("per", 26);
 	set("age", 30);
 
 	set("long",
-		"Ò»¸öÖÐÄêÉÌÈË£¬Ëû±³×Å¸ö³ÁµéµéµÄ°ü¸¤¡£\n"
-		"Ëû²»Í£µÄËÄ³öÕÅÍû×Å¡£\n");
+		"ä¸€ä¸ªä¸­å¹´å•†äººï¼Œä»–èƒŒç€ä¸ªæ²‰ç”¸ç”¸çš„åŒ…è¢±ã€‚\n"
+		"ä»–ä¸åœçš„å››å‡ºå¼ æœ›ç€ã€‚\n");
 
 	set("chat_chance", 3);
 	set("chat_msg", ({
-		"ÉÌÈËËµµÀ£º×¬Ç®²»ÈÝÒ×Ñ½¡£\n",
-		"ÉÌÈËÒ»µãµãÊý×Å°ü¸¤ÀïµÄÒø×Ó¡£\n",
+		"å•†äººè¯´é“ï¼šèµšé’±ä¸å®¹æ˜“å‘€ã€‚\n",
+		"å•†äººä¸€ç‚¹ç‚¹æ•°ç€åŒ…è¢±é‡Œçš„é“¶å­ã€‚\n",
 	}));
 	setup();
 	carry_object(__DIR__"obj/silk-cloth")->wear();

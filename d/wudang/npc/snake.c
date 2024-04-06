@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name(RED"赤冠巨蟒"NOR, ({ "ju man", "snake" }) );
-	set("race", "野兽");
+	set_name(RED"璧ゅ啝宸ㄨ煉"NOR, ({ "ju man", "snake" }) );
+	set("race", "閲庡吔");
 	set("age", 20);
-	set("long", "一只庞然大物，它眼中喷火，朱冠厉齿，忠心守卫这个果园，
-好象要一口把你吞下。\n");
+	set("long", "涓�鍙簽鐒跺ぇ鐗╋紝瀹冪溂涓柗鐏紝鏈卞啝鍘夐娇锛屽繝蹇冨畧鍗繖涓灉鍥紝
+濂借薄瑕佷竴鍙ｆ妸浣犲悶涓嬨�俓n");
 	set("attitude", "aggressive");
         set("qi", 5000);
 	set("max_qi", 5000);
@@ -17,7 +17,7 @@ void create()
 	set("max_jing", 500);
 	set("str", 86);
 	set("cor", 80);
-	set("limbs", ({ "头部", "身体", "七寸", "尾巴" }) );
+	set("limbs", ({ "澶撮儴", "韬綋", "涓冨", "灏惧反" }) );
 	set("verbs", ({ "bite" }) );
 
 	set("combat_exp", 1000000);
@@ -37,6 +37,6 @@ int hit_ob(object me, object ob, int damage)
 	if( random(damage) > (int)ob->query_temp("apply/armor")
 	&&	(int)ob->query_condition("snake_poison") < 10 ) {
 		ob->apply_condition("snake_poison", 40);
-        tell_object(ob, HIG "你觉得被咬中的地方一阵麻木！\n" NOR );
+        tell_object(ob, HIG "浣犺寰楄鍜腑鐨勫湴鏂逛竴闃甸夯鏈紒\n" NOR );
 	}
 }

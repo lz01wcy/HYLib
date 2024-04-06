@@ -3,11 +3,11 @@ inherit ROOM;
 string script();
 void create()
 {
-        set("short", "Êé¿â");
+        set("short", "ä¹¦åº“");
         set("long", @LONG
-ÕâÀïÊÇ´óÑ§Ê¿ÒóÕýÁ®±£´æËûÆ½ÉúÊÕ¼¯¸÷ÖÖÎÄÏ×µÄËùÔÚ¡£¸üÓÐËûÄêÇáÊ±×«Ð´µÄÊý
-±¾Îä¹¦ÐÄµÃ¡£·¿¼äÊÕÊ°µÃ¸É¾»Õû½à£¬ÂúÎÝµÄÊé¼ÜÉÏ¶ÑÂúÁËÊé¼®£¬µ±ÖÐÓÐÕÅ²»´óµÄÌÙ
-ÖÆ·½×À£¬ÉÏÃæ·Å×ÅÒ»µþÊÖ¸å¡£ 
+è¿™é‡Œæ˜¯å¤§å­¦å£«æ®·æ­£å»‰ä¿å­˜ä»–å¹³ç”Ÿæ”¶é›†å„ç§æ–‡çŒ®çš„æ‰€åœ¨ã€‚æ›´æœ‰ä»–å¹´è½»æ—¶æ’°å†™çš„æ•°
+æœ¬æ­¦åŠŸå¿ƒå¾—ã€‚æˆ¿é—´æ”¶æ‹¾å¾—å¹²å‡€æ•´æ´ï¼Œæ»¡å±‹çš„ä¹¦æž¶ä¸Šå †æ»¡äº†ä¹¦ç±ï¼Œå½“ä¸­æœ‰å¼ ä¸å¤§çš„è—¤
+åˆ¶æ–¹æ¡Œï¼Œä¸Šé¢æ”¾ç€ä¸€å æ‰‹ç¨¿ã€‚ 
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */

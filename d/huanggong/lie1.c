@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "上林囿");
 	set("long", @LONG
-������Է��һƬ����Ĵ��Գ�, ���紵����, ���вݿ�ӥ�ۼ��ķ�
-������.
+这是西苑的一片广袤的大猎场, 疾风吹劲草, 大有草枯鹰眼疾的非
+凡气派.
 LONG
 	);
 

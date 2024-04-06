@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-   set_name("Éß",({ "she"}) );
-        set("race", "Ò°ÊŞ" );
+   set_name("è›‡",({ "she"}) );
+        set("race", "é‡å…½" );
         set("combat_exp",20000);
-     set("long", "ÕâÊÇÒ»ÌõÉß¡£\n");
+     set("long", "è¿™æ˜¯ä¸€æ¡è›‡ã€‚\n");
 	 set("verbs",({"bite"}));
      set("attitude","aggressive");
-     set("limbs",({"Í·","Î²°Í","Æß´ç"}));
+     set("limbs",({"å¤´","å°¾å·´","ä¸ƒå¯¸"}));
   setup();
 
 }

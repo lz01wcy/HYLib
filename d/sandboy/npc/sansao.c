@@ -2,13 +2,13 @@ inherit NPC;
 int give_food();
 void create()
 {
-   set_name("ÕÅÉ½É©",({"sansao","saozi","woman"}));
-   set("gender","Å®ÐÔ");
+   set_name("å¼ å±±å«‚",({"sansao","saozi","woman"}));
+   set("gender","å¥³æ€§");
    set("shen_type",1);
    set("age",32);
    set("combat_exp",30000);
-   set("long","ÕÅÉ½É©µÄÐÄºÜºÃ,ÄãÈç¹û¶öÁËµÄ»°,¿ÉÒÔ
-ÏòËýÒªÐ©³ÔµÄ(ask sansao about eat).\n");
+   set("long","å¼ å±±å«‚çš„å¿ƒå¾ˆå¥½,ä½ å¦‚æžœé¥¿äº†çš„è¯,å¯ä»¥
+å‘å¥¹è¦äº›åƒçš„(ask sansao about eat).\n");
   
    set_skill("unarmed",150);
    set_skill("dodge",150);
@@ -17,7 +17,7 @@ void create()
    set_skill("force",130);
 
    set("inquiry",([
-     "³Ô":(:give_food:),
+     "åƒ":(:give_food:),
      "eat":(:give_food:),
      ]));
   setup();
@@ -29,10 +29,10 @@ int give_food()
   object ob;
   ob=this_player();
   if (ob->query("mingwang")<0)  {
-       command("say ÀÏÄïµÄÂøÍ·ÇéÔ¸Î¹¹·,Ò²²»¸ø»µÈË³Ô.\n");
+       command("say è€å¨˜çš„é¦’å¤´æƒ…æ„¿å–‚ç‹—,ä¹Ÿä¸ç»™åäººåƒ.\n");
        return 1;
             }
-  else command("say ¶öÁË°É,Õâ¸öÂøÍ·¿ìÄÃ×Å.\n");
+  else command("say é¥¿äº†å§,è¿™ä¸ªé¦’å¤´å¿«æ‹¿ç€.\n");
    new("/d/sandboy/obj/mantou")->move(this_object());
   command("give mantou to "+ob->query("id"));
   return 1;

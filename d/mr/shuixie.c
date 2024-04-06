@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIW"����ˮ�"NOR);
+         set("short",HIW"听香水榭"NOR);
          set("long",@long
-��䷿��С������, ��Ϊ���š�С���Ҷ���д��"����ˮ�"�ĸ�����, 
-������Ϊ������������һ��С·����֪��ͨ������ġ�����ǰ�ߣ��͵���
-"������"���ϱ���ˮ鿵ĺ�Ժ��
+这间房舍小巧玲珑, 颇为精雅。小舍匾额上写着"听香水榭"四个大字, 
+笔致颇为潇洒。东边是一条小路，不知是通往哪里的。再往前走，就到了
+"燕子坞"。南边是水榭的后院。
 long);
          set("exits",([
              "north" : __DIR__"anbian2",

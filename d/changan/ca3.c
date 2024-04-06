@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ƶ��¥");
+	set("short", "酒店二楼");
 	set("long", @LONG
-�ϵ��͵�Ķ�¥���㲻��������һ˿���⣬�붫�᷿�ɣ����᷿
-�Ѿ�����ס�ˡ���˵���и�����һֱס���ǵġ�
+上到客店的二楼，你不觉增添了一丝困意，与东厢房吧，西厢房
+已经有人住了。听说是有个书生一直住在那的。
 LONG
 );
         set("exits", ([

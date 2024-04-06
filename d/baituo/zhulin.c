@@ -2,9 +2,9 @@
 inherit ROOM;
 void create()
 {
-  set("short","竹林");
+  set("short","绔规灄");
   set("long",
-  "这里是青竹林，常有蛇出没。南边是蒿草丛。北边有一个大岩洞。\n"
+  "杩欓噷鏄潚绔规灄锛屽父鏈夎泧鍑烘病銆傚崡杈规槸钂胯崏涓涖�傚寳杈规湁涓�涓ぇ宀╂礊銆俓n"
       );
   set("exits",([
       "northup" : __DIR__"cave",

@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name(HIM"Õ¡”•"NOR, ({ "hawk" }) );
+        set_name(HIM"ÂúüÈπ∞"NOR, ({ "hawk" }) );
         set("no_get",1);
-        set("gender", "ƒ––‘" );
-	set("title",HIM"¥ÛƒÆ∑…”•"NOR);
+        set("gender", "Áî∑ÊÄß" );
+	set("title",HIM"Â§ßÊº†È£ûÈπ∞"NOR);
         set("age", 32);
-        set("long","“ª∏ˆø…“‘∞Ôƒ„—µ ﬁ(trainpet)µƒπ÷»À£Æ£Æ£Æ\n");
+        set("long","‰∏Ä‰∏™ÂèØ‰ª•Â∏Æ‰Ω†ËÆ≠ÂÖΩ(trainpet)ÁöÑÊÄ™‰∫∫ÔºéÔºéÔºé\n");
         set("combat_exp", 500000);
         set("chat_chance", 5);
         set("chat_msg", ({
@@ -36,8 +36,8 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "Õ¡”•Àµµ¿£∫’‚Œª" + RANK_D->query_respect(ob)
-                                + "£¨¿¥»√Œ“ø¥ø¥∞…£ø\n");
+                        say( "ÂúüÈπ∞ËØ¥ÈÅìÔºöËøô‰Ωç" + RANK_D->query_respect(ob)
+                                + "ÔºåÊù•ËÆ©ÊàëÁúãÁúãÂêßÔºü\n");
                         break;
                
         }
@@ -50,12 +50,12 @@ int do_train(string arg)
 	string which;
         me = this_player();
         if(me->is_busy())
-        return notify_fail("ƒ„…œ“ª∏ˆ∂Ø◊˜ªπ√ª”–ÕÍ≥…°£\n");
-	if(!arg) return notify_fail("Õ¡”•µ¿£∫£¢ƒ„“™ ≤√¥—Ω£ø£¢\n");
+        return notify_fail("‰Ω†‰∏ä‰∏Ä‰∏™Âä®‰ΩúËøòÊ≤°ÊúâÂÆåÊàê„ÄÇ\n");
+	if(!arg) return notify_fail("ÂúüÈπ∞ÈÅìÔºöÔºÇ‰Ω†Ë¶Å‰ªÄ‰πàÂëÄÔºüÔºÇ\n");
 	pet = present(arg,environment());
-	if(!objectp(pet)) return notify_fail("Õ¡”•µ¿£∫£¢ƒ„“™ ≤√¥—Ω£ø£¢\n");
+	if(!objectp(pet)) return notify_fail("ÂúüÈπ∞ÈÅìÔºöÔºÇ‰Ω†Ë¶Å‰ªÄ‰πàÂëÄÔºüÔºÇ\n");
 	if(pet->query("possessed") != me )
-	return notify_fail("Õ¡”•µ¿£∫£¢ƒ«∫√œÛ≤ª «ƒ„µƒ∞…£ø£¢\n");
+	return notify_fail("ÂúüÈπ∞ÈÅìÔºöÔºÇÈÇ£Â•ΩË±°‰∏çÊòØ‰Ω†ÁöÑÂêßÔºüÔºÇ\n");
 	switch (random(7)){
 	case 0: which = "int"; break;
 	case 1: which = "con"; break;
@@ -70,11 +70,11 @@ int do_train(string arg)
 	cost = (int) pet->query(which) ;
 	cost *= cost;
 	gold = present("gold_money", me);
-        if(!gold) return notify_fail("ƒ„…Ì…œ√ª”–Ω◊”°£\n");
+        if(!gold) return notify_fail("‰Ω†Ë∫´‰∏äÊ≤°ÊúâÈáëÂ≠ê„ÄÇ\n");
         if((int) gold->query_amount() < cost/2)
-        return notify_fail("ƒ„…Ì…œ√ª”–"+chinese_number(cost)+"¡ΩΩ◊”°£\n");
+        return notify_fail("‰Ω†Ë∫´‰∏äÊ≤°Êúâ"+chinese_number(cost)+"‰∏§ÈáëÂ≠ê„ÄÇ\n");
 	if((int)me->query("score") < cost/8)
-	return notify_fail("ƒ„µƒΩ≠∫˛‘ƒ¿˙≤ªπª"+chinese_number(cost/8)+"µ„°£\n");
+	return notify_fail("‰Ω†ÁöÑÊ±üÊπñÈòÖÂéÜ‰∏çÂ§ü"+chinese_number(cost/8)+"ÁÇπ„ÄÇ\n");
 	pet->add(which,1);
 	pet->add("max_neili",1);
 	pet->add("eff_neili",1);
@@ -82,7 +82,7 @@ int do_train(string arg)
 	pet->save();
 	gold->add_amount(-cost/2);
 	me->add("score",-cost/8);
-	command("say ∫√¡À£°\n");
+	command("say Â•Ω‰∫ÜÔºÅ\n");
 	return 1;
 }
 void unconcious()

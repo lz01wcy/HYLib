@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�����");
+	set("short", "树林深处");
 	set("long",@LONG
-����һƬС���֡��������̲�����ï�ܵ������š���Ҷ�ķ�϶��
-ż������һֻС�񱻾�������ʮ�־��š�
+这是一片小树林。地面上绿草如荫，茂密地生长着。树叶的缝隙间
+偶尔会有一只小鸟被惊起，四周十分静寂。
 LONG
 );
 	set("objects",([

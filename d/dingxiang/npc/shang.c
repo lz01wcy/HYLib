@@ -4,10 +4,10 @@ inherit F_DEALER;
 void create()
 {
    //reload("saiwai_shangren");
-   set_name("ÉÌ··",({ "shang fan","shang","fan" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("å•†è´©",({ "shang fan","shang","fan" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇÑàÔ­¼¯µÄÒ»¸öÉÌ··¡£\n");
+   set("long", "è¿™æ˜¯ç‡•åŸé›†çš„ä¸€ä¸ªå•†è´©ã€‚\n");
     set("shop_id",({ "shang fan","shang","fan" }) );
    set("combat_exp", 200);
    set("str", 18);

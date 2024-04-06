@@ -2,11 +2,11 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "����");
+        set("short", "大树");
         set("long", @LONG
-�������������ӣ�ͥԺ�������续�����ɫ�ĳ���������ɽ�ּ䡢Ȫˮ����
-���ֽ���һ�������Ʈ��Ʈɢ��Զ����һ�ô�������Ļһ��չ���������ŵġ����
-��֦Ѿ�������Ϸ���һ���ƣ���һ���Ʊ���
+阳光已升起，林子，庭院，美丽如画。乳白色的晨雾渐渐在山林间、泉水上升
+起又渐渐一缕缕随风飘靛飘散到远方。一棵大树象天幕一般展开着它铺张的、多节
+的枝丫，树干上放着一壶酒，和一个酒杯。
 LONG
         );
         set("exits", ([ 
@@ -52,7 +52,7 @@ int do_get(string arg) {
         }
         
         if (gao) {
-                message_vision("$Nһ���ֵ�ס����,��Ц��˵�����Ҿ���ô��ҵ��ˡ���\n",ye);
+                message_vision("$N一伸手挡住了你,苦笑着说：“我就这么点家当了。”\n",ye);
                 return 1;
         }
         

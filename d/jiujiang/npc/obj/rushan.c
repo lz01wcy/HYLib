@@ -5,14 +5,14 @@ inherit ARMOR;
 
 void create()
 {
-   set_name(HIG"½ôĞäÅ´ÉÀ"NOR, ({ "ru shan","shan"}) );
+   set_name(HIG"ç´§è¢–ç³¯è¡«"NOR, ({ "ru shan","shan"}) );
    set_weight(100);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÒ»Ë«Å®ÈË´©µÄ½ôĞäÅ´ÉÀ¡£\n");
-     set("material", "²¼");
-     set("unit", "¼ş");
+     set("long","è¿™æ˜¯ä¸€åŒå¥³äººç©¿çš„ç´§è¢–ç³¯è¡«ã€‚\n");
+     set("material", "å¸ƒ");
+     set("unit", "ä»¶");
      set("value",10);
      set("armor_prop/armor",3);
      set("female_only",1);

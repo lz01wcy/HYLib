@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ʯ��");
+	set("short","石阶");
 	set("long",@TEXT
-��������ʯ���̳ɵ�ʯ���ϡ�������Ǵ�˵�����صİ���ɽ��ԶԶ
-��ȥ��������ɳ�ѻ��γɵ�ɽ�����һֻ���յļ�����һ��ɽ��������
-����ǰ��
+你走在青石板铺成的石阶上。这里就是传说中神秘的白驼山。远远
+望去，两座白沙堆积形成的山峰好像一只骆驼的脊背。一座山门立在你
+的眼前。
 TEXT );
 	set("exits",([
 		"east" : __DIR__"caoping",

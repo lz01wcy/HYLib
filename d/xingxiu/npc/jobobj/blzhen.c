@@ -1,4 +1,4 @@
-// yfzhen.c ±ÌÁ×Õë
+// yfzhen.c ç¢§ç£·é’ˆ
 // By Kayin @ CuteRabbit Studio 1999.3.23 new
 #include <weapon.h>
 #include <ansi.h>
@@ -11,20 +11,20 @@ void init()
 
 void create()
 {
-   set_name(HIG"±ÌÁ×Õë"NOR, ({"bilin zhen", "zhen", "bilin"}));
+   set_name(HIG"ç¢§ç£·é’ˆ"NOR, ({"bilin zhen", "zhen", "bilin"}));
     	set_weight(100);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("unit", "Ð©");
+                set("unit", "äº›");
                 set("value", 0);
-                set("base_unit", "Ã¶");
+                set("base_unit", "æžš");
                 set("base_weight", 300);
                 set("base_value", 0);
 	set("value", 0);
                 set("material", "iron");
-      set("long", HIG"Ò»Ã¶·¢³öÂÌÓÍÓÍ¹âÃ£µÄÏ¸Õë£¬Ò»Íû¶øÖªÎ¹ÓÐ¾ç¶¾¡£Äã¿ÉÒÔ
-      Éä(shoot)\n" NOR);
+      set("long", HIG"ä¸€æžšå‘å‡ºç»¿æ²¹æ²¹å…‰èŒ«çš„ç»†é’ˆï¼Œä¸€æœ›è€ŒçŸ¥å–‚æœ‰å‰§æ¯’ã€‚ä½ å¯ä»¥
+      å°„(shoot)\n" NOR);
         	}
         set_amount(50);
         init_throwing(50);
@@ -37,42 +37,42 @@ int do_yong(string arg)
 string limbs;
 	me=this_player();
 if(!me->query("family"))
-return notify_fail("²»ÅÂ×Ô¼º±»ÕâÕëÔúµ½Âð?\n");
+return notify_fail("ä¸æ€•è‡ªå·±è¢«è¿™é’ˆæ‰Žåˆ°å—?\n");
 	myfam = (mapping)me->query("family");
    if(!arg)
-       return notify_fail("ÄãÒªÓÃÕëÔúË­£¿\n");
+       return notify_fail("ä½ è¦ç”¨é’ˆæ‰Žè°ï¼Ÿ\n");
 
-   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "ÐÇËÞÅÉ"))
-                  return notify_fail("Ö»ÓÐÐÇËÞµÜ×ÓÀûÓÃ±¾ÃÅÃØ´«ÄÚ¹¦·½ÄÜÊ¹ÓÃ±ÌÁ×Õë¡£\n"); 
+   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "æ˜Ÿå®¿æ´¾"))
+                  return notify_fail("åªæœ‰æ˜Ÿå®¿å¼Ÿå­åˆ©ç”¨æœ¬é—¨ç§˜ä¼ å†…åŠŸæ–¹èƒ½ä½¿ç”¨ç¢§ç£·é’ˆã€‚\n"); 
 
 
 	if( !me->is_fighting() )
-		return notify_fail("±ÌÁ×ÕëÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç¢§ç£·é’ˆåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ( (int)me->query_skill("poison",1) <= 0 )
-        return notify_fail("Äã»áÓÃ¶¾£¿£¡\n");
+        return notify_fail("ä½ ä¼šç”¨æ¯’ï¼Ÿï¼\n");
 
 	if(!objectp(target = present(arg, environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 	if(target == me)
-        return notify_fail("ÄãÏë×ÔÉ±£¿ :p\n");
+        return notify_fail("ä½ æƒ³è‡ªæ€ï¼Ÿ :p\n");
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("±ÌÁ×Õë,Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç¢§ç£·é’ˆ,åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         
-   message_vision(HIG"$N×óÊÖÔÚÐäµ×ÇáÇáÒ»Ñï£¬Ò»Åî±ÌÂÌµÄÉÁ¹â£¬Ïò$n¼¤Éä¶øÈ¥¡£\n" NOR, me, target);
+   message_vision(HIG"$Nå·¦æ‰‹åœ¨è¢–åº•è½»è½»ä¸€æ‰¬ï¼Œä¸€è“¬ç¢§ç»¿çš„é—ªå…‰ï¼Œå‘$næ¿€å°„è€ŒåŽ»ã€‚\n" NOR, me, target);
     me-> start_busy (2) ;
     if (  random ( (int)me->query("combat_exp")+(int)me->query_skill("poison",1)*500 ) < (int)target->query("combat_exp") / 2 )
       {
-      message_vision(HIB"\nµ«$n"HIB"·´Ó³ÉñËÙ£¬ÓÐ¾ªÎÞÏÕµÄ¶ã¿ªÁË$NµÄ"HIY"Óñ·äÕë£¡\n"NOR , me, target);
+      message_vision(HIB"\nä½†$n"HIB"åæ˜ ç¥žé€Ÿï¼Œæœ‰æƒŠæ— é™©çš„èº²å¼€äº†$Nçš„"HIY"çŽ‰èœ‚é’ˆï¼\n"NOR , me, target);
       }
     else
       {
    limbs = target->query("limbs");
 if (limbs)
 {
-   message_vision(CYN"\n½á¹û$NÒ»Éù²Ò½Ð£¬±ÌÁ×ÕëÒÑÈ»´©½øÁË$NµÄ"+limbs[random(sizeof(limbs))]+"¡£\n"NOR, target, me);
+   message_vision(CYN"\nç»“æžœ$Nä¸€å£°æƒ¨å«ï¼Œç¢§ç£·é’ˆå·²ç„¶ç©¿è¿›äº†$Nçš„"+limbs[random(sizeof(limbs))]+"ã€‚\n"NOR, target, me);
 }
 	target->apply_condition("insect_poison",(int)target->query_condition("insect_poison")+ 40);
       }

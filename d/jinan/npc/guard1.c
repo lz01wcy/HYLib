@@ -3,9 +3,9 @@
 inherit NPC; 
 void create()
 {
-        set_name("天牢守卫", ({ "prison guard", "guard" }) );
+        set_name("澶╃墷瀹堝崼", ({ "prison guard", "guard" }) );
         set("long",
-                "一个如狼似虎的天牢守卫。\n"); 
+                "涓�涓鐙间技铏庣殑澶╃墷瀹堝崼銆俓n"); 
         set("attitude", "heroism"); 
         set("str", 100);
         set("cor", 26);
@@ -29,7 +29,7 @@ void create()
         set_temp("apply/damage", 300);
         set("chat_chance", 1);
         set("chat_msg", ({
-"天牢守卫沉声道：天牢重地，闲人莫入！\n"
+"澶╃墷瀹堝崼娌夊０閬擄細澶╃墷閲嶅湴锛岄棽浜鸿帿鍏ワ紒\n"
 }) ); 
                 set("prison_guard",2); 
         setup(); 

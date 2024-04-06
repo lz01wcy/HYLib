@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-    set_name("Ë¯´ü", ({ "sleep bag","bag"}) );
+    set_name("ç¡è¢‹", ({ "sleep bag","bag"}) );
         set_weight(1500);
         set_max_encumbrance(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-          set("unit", "Ö»");
-          set("long", "Ò»¸ö¿ÉÒÔËæÊ±Ë¯¾õ(sleephere)µÄË¯´ü¡£\n");
+          set("unit", "åª");
+          set("long", "ä¸€ä¸ªå¯ä»¥éšæ—¶ç¡è§‰(sleephere)çš„ç¡è¢‹ã€‚\n");
           set("value", 30000);
         }
 }
@@ -35,31 +35,31 @@ int do_sleephere(object me, string arg)
         where = environment(me);
         
         if (me->is_busy())
-                return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐ²»ÄÜË¯¾õ£¡\n");
+                return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç¡è§‰ï¼\n");
 
         if (where->query("sleep_room")==1)
         {
-                write("ÄãÍù´²ÉÏÒ»ÌÉ£¬¿ªÊ¼Ë¯¾õ¡£\n");
-                write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+                write("ä½ å¾€åºŠä¸Šä¸€èººï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+                write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
                 me->set_temp("block_msg/all",1);
-                message_vision("$NÒ»ÍáÉí£¬µ¹ÔÚ´²ÉÏ£¬²»Ò»»á±ã÷ýÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n",me);
+                message_vision("$Nä¸€æ­ªèº«ï¼Œå€’åœ¨åºŠä¸Šï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n",me);
             rnd = random((60 - me->query_con()) / 3);
         }
 //        if ( (where->query("no_fight")==1)||(where->query("no_sleep")==1)||(where->query("no_steal")==1))
 //       {
-//                return notify_fail("ÕâÀï²»ÄÜÊ¹ÓÃË¯´ü£¡\n");
+//                return notify_fail("è¿™é‡Œä¸èƒ½ä½¿ç”¨ç¡è¢‹ï¼\n");
 //        }
         if (me->query("age") > 18) { 
-                return notify_fail("ÄãÀÏ´ó²»Ð¡ÁË»¹ÓÃË¯´ü£¬Ðß²»Ðß£¡\n");
+                return notify_fail("ä½ è€å¤§ä¸å°äº†è¿˜ç”¨ç¡è¢‹ï¼Œç¾žä¸ç¾žï¼\n");
        }
         else { 
-                write("ÄãÕ¹¿ªÒ»¸öË¯´ü×êÁË½øÈ¥£¬¿ªÊ¼Ë¯¾õ¡£\n");
-                write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+                write("ä½ å±•å¼€ä¸€ä¸ªç¡è¢‹é’»äº†è¿›åŽ»ï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+                write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
                 me->set_temp("block_msg/all",1);
-                message_vision("$NÕ¹¿ªÒ»¸öË¯´ü×êÁË½øÈ¥£¬²»Ò»»á±ã÷ýÉù´ó×÷£¬×öÆðÃÎÀ´¡£\n",me);
+                message_vision("$Nå±•å¼€ä¸€ä¸ªç¡è¢‹é’»äº†è¿›åŽ»ï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œåšèµ·æ¢¦æ¥ã€‚\n",me);
             rnd = 10 + random((100 - me->query_con()) / 3);
         }
         where->set("no_fight", 1);
@@ -85,9 +85,9 @@ void wakeup(object me,object where)
         me->add("neili", me->query("max_neili")/2 - me->query("neili")/2 );
         me->enable_player();
   
-        message_vision("$NÒ»¾õÐÑÀ´£¬¾«Á¦³äÅæµØ»î¶¯ÁËÒ»ÏÂ½î¹Ç¡£\n",me);
+        message_vision("$Nä¸€è§‰é†’æ¥ï¼Œç²¾åŠ›å……æ²›åœ°æ´»åŠ¨äº†ä¸€ä¸‹ç­‹éª¨ã€‚\n",me);
         me->set_temp("block_msg/all", 0);
-        write("ÄãÒ»¾õÐÑÀ´£¬Ö»¾õ¾«Á¦³äÅæ¡£¸Ã»î¶¯Ò»ÏÂÁË¡£\n");
+        write("ä½ ä¸€è§‰é†’æ¥ï¼Œåªè§‰ç²¾åŠ›å……æ²›ã€‚è¯¥æ´»åŠ¨ä¸€ä¸‹äº†ã€‚\n");
 
         if (!where->query("sleep_room") && !where->query("hotel"))
                 where->delete("no_fight");

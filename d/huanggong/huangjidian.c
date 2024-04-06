@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ʼ���");
+	set("short", "皇极殿");
 	set("long", @LONG
-�����ǹ��н���������԰��Ǭ¡��԰�����ġ��ʼ���ǰ�������ţ�
-��ͨ���ٹ��������׳ơ��ⶫ·����̫�ϻ��������Դ���
+这里是宫中仅次于御花园的乾隆花园的中心。皇极殿前是宁寿门，
+后通宁寿宫，就是俗称“外东路”的太上皇修身怡性处。
 LONG
 	);
 	set("outdoors", "huanggong");

@@ -2,12 +2,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name("½ğÒ¶", ({ "gold leaf" , "leaf"}));
+	set_name("é‡‘å¶", ({ "gold leaf" , "leaf"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Æ¬");
-		set("long", "ÕâÊÇÒ»Æ¬¾«ÃÀµÄ½ğÒ¶×Ó¡£\n");
+		set("unit", "ç‰‡");
+		set("long", "è¿™æ˜¯ä¸€ç‰‡ç²¾ç¾çš„é‡‘å¶å­ã€‚\n");
 		set("value", 10000);
 	}
 	setup();

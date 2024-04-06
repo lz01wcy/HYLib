@@ -1,4 +1,4 @@
-// hongma.c ÔæºìÂí
+// hongma.c æ£çº¢é©¬
 
 #include <command.h>
 #include <dbase.h>
@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(RED"ÔæºìÂí"NOR, ({ "zaohongma" }));
-        set("long","Ò»Æ¥¿¥Âí£¬È«Éí»ğºì£¬ÎŞÒ»¸ùÔÓÃ«¡£\n"
-		"Íæ¼Ò¿ÉÒÔÆïÉÏËüÈ¥Ö¸¶¨µÄµØ·½(ride)¡£\n");
-        set("race", "Ò°ÊŞ");
+        set_name(RED"æ£çº¢é©¬"NOR, ({ "zaohongma" }));
+        set("long","ä¸€åŒ¹éªé©¬ï¼Œå…¨èº«ç«çº¢ï¼Œæ— ä¸€æ ¹æ‚æ¯›ã€‚\n"
+		"ç©å®¶å¯ä»¥éª‘ä¸Šå®ƒå»æŒ‡å®šçš„åœ°æ–¹(ride)ã€‚\n");
+        set("race", "é‡å…½");
         set("age", 5);
 	set("ridable", 1);
 	set("int", 30);
@@ -24,15 +24,15 @@ void create()
 	set("combat_exp",50000);
 	set("attitude", "peaceful");
 
-	set("limbs", ({ "Í·²¿", "¸¹²¿", "Î²°Í","ºóÍÈ","Ç°ÍÈ" }) );
+	set("limbs", ({ "å¤´éƒ¨", "è…¹éƒ¨", "å°¾å·´","åè…¿","å‰è…¿" }) );
 	set("verbs", ({ "bite","hoof" }) );
 	set_temp("apply/attack", 50);
 	set_temp("apply/armor", 15);
 	set_temp("apply/damage", 25);
 	set("chat_chance", 3);
         set("chat_msg", ({
-		RED"ÔæºìÂí"NOR"¶¶¶¶³¤Ã«£¬Ñï¾±¡¸ÓõĞêĞê¡¹Ò»ÕóË»Ãù¡£\n",
-                RED"ÔæºìÂí"NOR"³¶ÁË³¶çÖÉş£¬È»ºó²»ÄÍµØÔÚµØÉÏÅÙ×ÅÌã×Ó¡£\n",
+		RED"æ£çº¢é©¬"NOR"æŠ–æŠ–é•¿æ¯›ï¼Œæ‰¬é¢ˆã€Œåå˜˜å˜˜ã€ä¸€é˜µå˜¶é¸£ã€‚\n",
+                RED"æ£çº¢é©¬"NOR"æ‰¯äº†æ‰¯ç¼°ç»³ï¼Œç„¶åä¸è€åœ°åœ¨åœ°ä¸Šåˆ¨ç€è¹„å­ã€‚\n",
         }) );
 
 	setup();

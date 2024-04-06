@@ -1,9 +1,9 @@
 inherit NPC;
 void create()
 {
-     set_name("¶ÀÐÐµÁ",({"duxing dao","dao","qiangdao"}));
+     set_name("ç‹¬è¡Œç›—",({"duxing dao","dao","qiangdao"}));
      set("shen_type",-1);
-     set("gender","ÄÐÐÔ");
+     set("gender","ç”·æ€§");
      set("age",20+random(30));
      set("str",20+random(20));
      set("max_qi",1700);

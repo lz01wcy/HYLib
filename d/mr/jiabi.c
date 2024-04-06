@@ -6,9 +6,9 @@
 inherit ROOM;
 void create()
 {
-         set("short",HIW"¼Ğ±Ú"NOR);
+         set("short",HIW"å¤¹å£"NOR);
          set("long",@long
-ÕâÊÇÊé¼ÜºóÃæµÄÒ»µÀ¼Ğ±Ú£¬ÒªÓÃÁ¦ÍÆ¿ªÊé¼ÜµÄºóÃæ¡£²ÅÓĞ¿ÉÄÜ³öÈ¥¡£
+è¿™æ˜¯ä¹¦æ¶åé¢çš„ä¸€é“å¤¹å£ï¼Œè¦ç”¨åŠ›æ¨å¼€ä¹¦æ¶çš„åé¢ã€‚æ‰æœ‰å¯èƒ½å‡ºå»ã€‚
 long);
          set("exits",([
              "north" : __DIR__"hssg",
@@ -28,17 +28,17 @@ int do_push(string arg)
 me = this_player();
 
         if (arg !="shujia") 
-return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
  if( arg=="shujia")
         {
             
-             write("ÄãÍÆÁËÒ»ÏÂÊé¼Ü£¬Êé¼ÜÏòÁ½±ßÒ»ÒÆ¡£\n");
+             write("ä½ æ¨äº†ä¸€ä¸‹ä¹¦æ¶ï¼Œä¹¦æ¶å‘ä¸¤è¾¹ä¸€ç§»ã€‚\n");
                     message("vision",
-me->name() + "ÉíĞĞÒ»ÉÁÍ»È»²»¼ûÁË¡£\n",
+me->name() + "èº«è¡Œä¸€é—ªçªç„¶ä¸è§äº†ã€‚\n",
                              environment(me), ({me}) );
                     me->move(__DIR__"shufang");
                     message("vision",
-me->name() + "×ßÁË¹ıÀ´¡£\n",
+me->name() + "èµ°äº†è¿‡æ¥ã€‚\n",
                              environment(me), ({me}) );
                 }
                 return 1;

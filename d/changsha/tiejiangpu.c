@@ -1,14 +1,14 @@
 // /d/zhuojun/tiejiangpu.c
-// Room in äÃ¿¤
+// Room in æ¶¿éƒ¡
 // laowuwu 99/04/11
 inherit ROOM;
 void create()	
 {
-	set("short", "Ìú½³ÆÌ");
+	set("short", "é“åŒ é“º");
 	set("long", @LONG
-¾Ý½ÐÕâ¸öÌú½³ÆÌµÄÌú½³ÊÇÖý´óÊ¦Å·ÖÎ×ÓµÄºóÈË£¬Ëû´òÖÆµÄ±øÆ÷¾­¾Ã
-ÄÍÓÃ£¬·æÀûÒì³£ËùÒÔ²»ÉÙÖªÃûÎäÁÖÈËÊ¿²»Ï§ÖØ½ðÇ§ÀïÌöÌöÀ´´Ë¶©ÖÆËùÐè
-±øÆ÷¡£
+æ®å«è¿™ä¸ªé“åŒ é“ºçš„é“åŒ æ˜¯é“¸å¤§å¸ˆæ¬§æ²»å­çš„åŽäººï¼Œä»–æ‰“åˆ¶çš„å…µå™¨ç»ä¹…
+è€ç”¨ï¼Œé”‹åˆ©å¼‚å¸¸æ‰€ä»¥ä¸å°‘çŸ¥åæ­¦æž—äººå£«ä¸æƒœé‡é‡‘åƒé‡Œè¿¢è¿¢æ¥æ­¤è®¢åˆ¶æ‰€éœ€
+å…µå™¨ã€‚
 LONG
 	);
 set("exits", ([

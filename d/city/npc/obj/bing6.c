@@ -1,18 +1,18 @@
-// /d/city/obj/bing6.c ×´Ôª±ı
+// /d/city/obj/bing6.c çŠ¶å…ƒé¥¼
 
 inherit ITEM;
 #include <ansi.h>
 
 mapping attr = ([
-	"str" : "ëöÁ¦",
-	"con" : "¸ù¹Ç",
-	"dex" : "Éí·¨",
-	"sta" : "ÄÍÁ¦",
-	"kar" : "¸£Ôµ",
-	"cps" : "¶¨Á¦",
-	"cor" : "µ¨Ê¶",
-	"per" : "ÈİÃ²",
-	"spi" : "ÁéĞÔ",
+	"str" : "è†‚åŠ›",
+	"con" : "æ ¹éª¨",
+	"dex" : "èº«æ³•",
+	"sta" : "è€åŠ›",
+	"kar" : "ç¦ç¼˜",
+	"cps" : "å®šåŠ›",
+	"cor" : "èƒ†è¯†",
+	"per" : "å®¹è²Œ",
+	"spi" : "çµæ€§",
 ]);
 	
 void init()
@@ -22,9 +22,9 @@ void init()
 
 void create()
 {
-	set_name(RED "×´Ôª±ı" NOR, ({"bing6", "zhuangyuanbing"}));
-	set("unit", "¸ö");
-	set("long", "ÕâÊÇÒ»¸öÎ¨Ò»µÄ×´Ôª±ı¡£\n");
+	set_name(RED "çŠ¶å…ƒé¥¼" NOR, ({"bing6", "zhuangyuanbing"}));
+	set("unit", "ä¸ª");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªå”¯ä¸€çš„çŠ¶å…ƒé¥¼ã€‚\n");
 	set("no_get", 1);
 	set("no_drop", 1);
 	set("no_put", 1);
@@ -38,10 +38,10 @@ int do_eat(string arg)
 	int i;
 	object me=this_player();
 	
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (!wizardp(me) && query("owner") != me->query("id"))
 	{
-		write(HIR"ÄãÖ»ÄÜ³Ô×Ô¸öÓ®À´µÄ±ı¡£\n"NOR);
+		write(HIR"ä½ åªèƒ½åƒè‡ªä¸ªèµ¢æ¥çš„é¥¼ã€‚\n"NOR);
 		return 1;
 	}
 	if(arg=="bing6"||arg=="zhuangyuanbing")
@@ -52,12 +52,12 @@ int do_eat(string arg)
 		me->add(keys(attr)[i], 1);
 		log_file( "bobing", sprintf("%s %s\n", me->query("id"), keys(attr)[i]));
 		log_file("gift/tianfu",
-		        sprintf("%-20s ³ÔÏÂ%-10sÔö¼ÓÁË%s(%s) [%s]\n",
+		        sprintf("%-20s åƒä¸‹%-10så¢åŠ äº†%s(%s) [%s]\n",
 		        me->query("name")+"("+me->query("id")+")",
 		        base_name(this_object()),
 		        values(attr)[i],keys(attr)[i],ctime(time())));
-		message_vision(HIY "$NÈı¿ÚÁ½¿Ú³ÔÏÂÒ»¿é$n¡£\n" NOR, this_player(), this_object());
-		tell_object(me, "ÄãµÄ"HIG + values(attr)[i] + NOR"ÌáÉıÁË¡£\n");
+		message_vision(HIY "$Nä¸‰å£ä¸¤å£åƒä¸‹ä¸€å—$nã€‚\n" NOR, this_player(), this_object());
+		tell_object(me, "ä½ çš„"HIG + values(attr)[i] + NOR"æå‡äº†ã€‚\n");
 		destruct(this_object());
 	}
 	return 1;

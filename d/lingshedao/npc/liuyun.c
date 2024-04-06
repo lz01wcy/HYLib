@@ -5,12 +5,12 @@ inherit NPC;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("Á÷ÔÆÊ¹", ({"liu yun", "liu",}));
+        set_name("æµäº‘ä½¿", ({"liu yun", "liu",}));
         set("long",
-        "ÕâÈËÉí²Ä¸ß´ó,ò°÷×±ÌÑÛ,ÑÛÖÐÍ¸³öÒ»¹ÉÐ°Æø.\n"
+        "è¿™äººèº«æé«˜å¤§,è™¬é«¯ç¢§çœ¼,çœ¼ä¸­é€å‡ºä¸€è‚¡é‚ªæ°”.\n"
         );
-        set("nickname",MAG"²¨Ë¹Ã÷½Ì×Ü½Ì»¤½ÌÊ¹Õß" NOR);
-        set("gender", "ÄÐÐÔ");
+        set("nickname",MAG"æ³¢æ–¯æ˜Žæ•™æ€»æ•™æŠ¤æ•™ä½¿è€…" NOR);
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("age", 30);
         set("shen_type",-1);
@@ -51,11 +51,11 @@ set_temp("no_kill",1);
 void init()
 {
         object ob=this_player();
-        if(interactive(ob) && ob->query("party/party_name")== HIG "Ã÷½Ì" NOR)
+        if(interactive(ob) && ob->query("party/party_name")== HIG "æ˜Žæ•™" NOR)
     {
-        message("vision",HIC"Á÷ÔÆÊ¹ÀÊÉùËµµÀ:Ã÷½ÌÊ¥»ðÁîµ½£¬»¤½ÌÊ¨Íõ»¹²»ÏÂ¹òÓ­½Ó£¬¸ü´ýºÎÊ±?\n\n"NOR,"/d/lingshedao/xiaowu");
-        message_vision(HIC"Á÷ÔÆÊ¹½Ó×Å¶Ô$NÀ÷ÉùËµµÀ:ÄãÊÇÎÒÃ÷½ÌÃÅÖÚ,¼ûÁË»¤½ÌÊ¹Õß,ÎªºÎ²»ÏÂ¹ò?\n\n"NOR,ob);
-        tell_object(ob,HIC"Äã¾ö¶¨ÏÂ¹ò(kneel)»¹ÊÇ¾Ü¾ø(refuse)?\n\n"NOR);
+        message("vision",HIC"æµäº‘ä½¿æœ—å£°è¯´é“:æ˜Žæ•™åœ£ç«ä»¤åˆ°ï¼ŒæŠ¤æ•™ç‹®çŽ‹è¿˜ä¸ä¸‹è·ªè¿ŽæŽ¥ï¼Œæ›´å¾…ä½•æ—¶?\n\n"NOR,"/d/lingshedao/xiaowu");
+        message_vision(HIC"æµäº‘ä½¿æŽ¥ç€å¯¹$NåŽ‰å£°è¯´é“:ä½ æ˜¯æˆ‘æ˜Žæ•™é—¨ä¼—,è§äº†æŠ¤æ•™ä½¿è€…,ä¸ºä½•ä¸ä¸‹è·ª?\n\n"NOR,ob);
+        tell_object(ob,HIC"ä½ å†³å®šä¸‹è·ª(kneel)è¿˜æ˜¯æ‹’ç»(refuse)?\n\n"NOR);
     }
         add_action("do_kneel","kneel");
         add_action("do_refuse","refuse");
@@ -67,9 +67,9 @@ int do_kneel()
         object ob=this_player();
 if (ob && present("tulong dao",ob))
 {
-        message_vision("$N¹§¹§¾´¾´µÄ¹òÔÚµØÉÏ,ËµµÀ:ÔÚÏÂ"+ob->query("name")+"¹§Ó­»¤½ÌÊ¹Õß.\n\n",ob);
-        message("vision",HIC"Á÷ÔÆÊ¹¹þ¹þ´óÐ¦,ËµµÀ:²»´í,²»´í.²»¹ýÄãÊÖÖÐµÄÕâ°Ñµ¶,±¾Ê¹Õßµ¹ÊÇ¿´ÉÏÁË,ÄÃÀ´°Õ!\n\n"NOR,"/d/lingshedao/xiaowu");
-        message_vision(HIC"ËµÍêÁ÷ÔÆÊ¹½«$NÊÖÖÐµÄÍÀÁúµ¶ÄÃÁË¹ýÈ¥.\n\n"NOR,ob);
+        message_vision("$Næ­æ­æ•¬æ•¬çš„è·ªåœ¨åœ°ä¸Š,è¯´é“:åœ¨ä¸‹"+ob->query("name")+"æ­è¿ŽæŠ¤æ•™ä½¿è€….\n\n",ob);
+        message("vision",HIC"æµäº‘ä½¿å“ˆå“ˆå¤§ç¬‘,è¯´é“:ä¸é”™,ä¸é”™.ä¸è¿‡ä½ æ‰‹ä¸­çš„è¿™æŠŠåˆ€,æœ¬ä½¿è€…å€’æ˜¯çœ‹ä¸Šäº†,æ‹¿æ¥ç½¢!\n\n"NOR,"/d/lingshedao/xiaowu");
+        message_vision(HIC"è¯´å®Œæµäº‘ä½¿å°†$Næ‰‹ä¸­çš„å± é¾™åˆ€æ‹¿äº†è¿‡åŽ».\n\n"NOR,ob);
         tld=present("tulong dao",ob);
 if (tld)
 {
@@ -85,10 +85,10 @@ int do_refuse()
         object ob=this_player();
 if (ob)
 {
-        message_vision(HIC"$NÁÝÈ»ËµµÀ:ÎÒËäÊÇÃ÷½ÌÃÅÖÚ,¿ÉÎÒ¼ÓÈëµÄÊÇÖÐÍÁÃ÷½Ì,È´²»ÊÇÄãÄÇ¸ö²¨Ë¹Ã÷½Ì,ÎªºÎÏÂ¹ò?\n\n"NOR,ob);
-        message_vision(HIC"Á÷ÔÆÊ¹Á³É«Ò»³Á,Å­µÀ:ºúËµ¾ÅµÀ,ºúËµ¾ÅµÀ,
-½ñÈÕ·ÇÈÃÄã¼ûÊ¶Ò»ÏÂÎÒÃÇµÄÀ÷º¦²»¿É.\n\n"NOR,ob);
-        message_vision(HIC"Á÷ÔÆÊ¹´óÊÖÒ»»Ó,µ«¼ûÃî·çÊ¹,»ÔÔÂÊ¹Î§ÁËÉÏÀ´,Á÷ÔÆÊ¹¶Ô$N´óºÈÒ»Éù:½ÓÕÐ°Õ.\n\n"NOR,ob);
+        message_vision(HIC"$Nå‡›ç„¶è¯´é“:æˆ‘è™½æ˜¯æ˜Žæ•™é—¨ä¼—,å¯æˆ‘åŠ å…¥çš„æ˜¯ä¸­åœŸæ˜Žæ•™,å´ä¸æ˜¯ä½ é‚£ä¸ªæ³¢æ–¯æ˜Žæ•™,ä¸ºä½•ä¸‹è·ª?\n\n"NOR,ob);
+        message_vision(HIC"æµäº‘ä½¿è„¸è‰²ä¸€æ²‰,æ€’é“:èƒ¡è¯´ä¹é“,èƒ¡è¯´ä¹é“,
+ä»Šæ—¥éžè®©ä½ è§è¯†ä¸€ä¸‹æˆ‘ä»¬çš„åŽ‰å®³ä¸å¯.\n\n"NOR,ob);
+        message_vision(HIC"æµäº‘ä½¿å¤§æ‰‹ä¸€æŒ¥,ä½†è§å¦™é£Žä½¿,è¾‰æœˆä½¿å›´äº†ä¸Šæ¥,æµäº‘ä½¿å¯¹$Nå¤§å–ä¸€å£°:æŽ¥æ‹›ç½¢.\n\n"NOR,ob);
         call_out("fight3",5,ob);
 }
         return 1;

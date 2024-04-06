@@ -6,13 +6,13 @@ inherit WHIP;
 
 void create()
 {
-        set_name("¶Ï¿ªµÄÌúÁ´", ({"duan tielian", "lian", "whip"}));
+        set_name("æ–­å¼€çš„é“é“¾", ({"duan tielian", "lian", "whip"}));
         set_weight(100000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»Ìõ³¤³¤µÄÌúÁ´£¬ÉÏÃæÒşÏÖºìÃ££®\n");
-                set("unit", "Ìõ");
+                set("long","ä¸€æ¡é•¿é•¿çš„é“é“¾ï¼Œä¸Šé¢éšç°çº¢èŒ«ï¼\n");
+                set("unit", "æ¡");
                 set("value", 500);
         }
         init_whip(125);

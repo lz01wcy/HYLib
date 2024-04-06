@@ -7,13 +7,13 @@ void consider();
 
 void create()
 {
-    set_name("Ò»µÆ´óÊ¦", ({"yideng-dashi", "dashi", "yideng"}));
-    set("nickname", HIG "ÄÏµÛ" NOR );
-    set("gender", "ÄĞĞÔ");
+    set_name("ä¸€ç¯å¤§å¸ˆ", ({"yideng-dashi", "dashi", "yideng"}));
+    set("nickname", HIG "å—å¸" NOR );
+    set("gender", "ç”·æ€§");
     set("age", 52);
     set("long", 
-        "Ëû¾ÍÊÇºÅ³Æ¡¸ÄÏµÛ¡¹µÄÒ»µÆ´óÊ¦£¬Ë×Ãû¶ÎÖÇĞË£¬ÏÖÒÑÑ·Î»ÎªÉ®¡£\n"
-        "´óÊ¦Ò»ÉúĞĞÉÆ£¬»ıµÂÎŞÇî¡£\n");
+        "ä»–å°±æ˜¯å·ç§°ã€Œå—å¸ã€çš„ä¸€ç¯å¤§å¸ˆï¼Œä¿—åæ®µæ™ºå…´ï¼Œç°å·²é€Šä½ä¸ºåƒ§ã€‚\n"
+        "å¤§å¸ˆä¸€ç”Ÿè¡Œå–„ï¼Œç§¯å¾·æ— ç©·ã€‚\n");
     set("attitude", "peaceful");
     set("class", "scholar");
 	
@@ -33,14 +33,14 @@ void create()
     set("combat_exp", 1500000);
     set("score", 0);
 	 
-    set_skill("force", 150);             // »ù±¾ÄÚ¹¦
-    set_skill("finger", 170);            // »ù±¾Ö¸·¨
-    set_skill("dodge", 150);             // »ù±¾¶ãÉÁ
-    set_skill("parry", 150);             // »ù±¾ÕĞ¼Ü
-    set_skill("liumai-shenjian", 200);   // ÁùÂöÉñ½£
-    set_skill("taixuan-gong", 200);      // Ì«ĞşÉñ¹¦
-    set_skill("lingxu-bu", 200);         // ÁèĞé²½
-    set_skill("literate",150);           // ¶ÁÊéÊ¶×Ö
+    set_skill("force", 150);             // åŸºæœ¬å†…åŠŸ
+    set_skill("finger", 170);            // åŸºæœ¬æŒ‡æ³•
+    set_skill("dodge", 150);             // åŸºæœ¬èº²é—ª
+    set_skill("parry", 150);             // åŸºæœ¬æ‹›æ¶
+    set_skill("liumai-shenjian", 200);   // å…­è„‰ç¥å‰‘
+    set_skill("taixuan-gong", 200);      // å¤ªç„ç¥åŠŸ
+    set_skill("lingxu-bu", 200);         // å‡Œè™šæ­¥
+    set_skill("literate",150);           // è¯»ä¹¦è¯†å­—
 	
     map_skill("force"  , "taixuan-gong");
     map_skill("finger" , "liumai-shenjian");
@@ -49,7 +49,7 @@ void create()
 
     prepare_skill("finger", "liumai-shenjian");
 
-    create_family("´óÀí¶Î¼Ò", 17, "µÜ×Ó");
+    create_family("å¤§ç†æ®µå®¶", 17, "å¼Ÿå­");
     setup();
 
     carry_object("/clone/misc/cloth")->wear();
@@ -72,9 +72,9 @@ void greeting(object ob)
 	int i;
 
 	obj = all_inventory(environment(me));
-//Ò»µÆ´óÊ¦¹ş¹ş´óĞ¦£¬¶Ô×Å»ÆÒ©Ê¦¹°ÁË¹°ÊÖµÀ£ºÀÏÒ¯×Ó¹ı½±ÁË!
+//ä¸€ç¯å¤§å¸ˆå“ˆå“ˆå¤§ç¬‘ï¼Œå¯¹ç€é»„è¯å¸ˆæ‹±äº†æ‹±æ‰‹é“ï¼šè€çˆ·å­è¿‡å¥–äº†!
         command("nali huang");
-        command("say ¾¢Á¦ÄÚº¬£¬·¢Ö®ÎŞĞÎ£¬ÉËÈËÓë²»¾õÖ®ÖĞ¡£");
+        command("say åŠ²åŠ›å†…å«ï¼Œå‘ä¹‹æ— å½¢ï¼Œä¼¤äººä¸ä¸è§‰ä¹‹ä¸­ã€‚");
 	for(i=0; i<sizeof(obj); i++)
 	{
 		if( obj[i]->query("id")=="huang-yaoshi")

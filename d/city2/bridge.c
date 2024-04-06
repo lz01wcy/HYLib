@@ -4,10 +4,10 @@ int do_out(string arg);
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小桥");
         set("long",
-        "����һ���ƾɵ�ʯ�ţ������ǻ��Ǻӻ�������ˮ��ˮ����ȥ���壬\n"+
-	"��˵����������������(out)�������ǽ��ʹ����ŵıؾ�֮·��\n");
+        "这是一座破旧的石桥，桥下是护城河缓缓的流水。水看上去很清，\n"+
+	"据说曾有人在这里跳河(out)。这里是进皇宫正门的必经之路。\n");
         set("outdoors", "city2");
         set("exits", ([
                 "north" : __DIR__"zhengmen",
@@ -36,15 +36,15 @@ int do_out(string arg)
 	if(((int)me->query("jing") < ging_cost) || ((int)me->query("qi") < qi_cost))
 		i = 0;
 
-	message_vision("$N����ʯ����һ��������������ȥ��\n", me);
+	message_vision("$N翻过石栏，一个纵身，跳了下去。\n", me);
 	if ( i < 75)
 		{
-	        message_vision("һ��Ǳ�����̰�$N��û�ˡ�\n", me);
+	        message_vision("一股潜流立刻把$N吞没了。\n", me);
 		me->die();
 	        }
 	else if( i < 100)
 		{
-	        message_vision("һ��Ǳ�����̰�$N��û�ˡ�\n", me);
+	        message_vision("一股潜流立刻把$N吞没了。\n", me);
 		me->unconcious();
 		switch( random(2) ) {
 		case 0:
@@ -53,25 +53,25 @@ int do_out(string arg)
 		case 1:
 		me->move(__DIR__"bridge3");
 			break;
-		message_vision("һ��Ǳ����$N��ذ��ߡ�\n", me);
+		message_vision("一股潜流把$N冲回岸边。\n", me);
 		}
 	        }
 	else {
 		switch( random(5) ) {
 		case 0:
-		message_vision("һ��Ǳ����$N��ذ��ߡ�\n", me);
+		message_vision("一股潜流把$N冲回岸边。\n", me);
 		me->move(__DIR__"bridge2");
 			break;
 		case 1:
-		message_vision("һ��Ǳ����$N��ذ��ߡ�\n", me);
+		message_vision("一股潜流把$N冲回岸边。\n", me);
 		me->move(__DIR__"bridge3");
 			break;
 		case 2:
 		case 3:
 		case 4:
-		message_vision("$N��ˮ�л������غ���������ͻȻ֮�䴥����һ��Ӳ�ڡ�\n", me);
-		message_vision("$N����ץס�˾������ݣ����Ż������Ӳ�ھ͸�����ˮ�档\n", me);
-		message_vision("$N����һ��ˮ��̧ͷһ����ԭ������һ�ھ��С�\n", me);
+		message_vision("$N在水中昏昏沉沉地胡乱挣扎，突然之间触到了一面硬壁。\n", me);
+		message_vision("$N恍若抓住了救命稻草，贴着滑溜溜的硬壁就浮出了水面。\n", me);
+		message_vision("$N吐了一口水，抬头一看，原来身在一口井中。\n", me);
          	me->move("/d/huanggon/inwell");
 		break;
 		}

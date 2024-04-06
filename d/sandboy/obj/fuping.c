@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"¸¡Æ¼"NOR, ({ "fuping","ping" }) );
+        set_name(HIG"æµ®è"NOR, ({ "fuping","ping" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Æ¬");
+                set("unit", "ç‰‡");
                 set("material", "wood");
-                set("long","Ò»ÖÖÉú³¤ÔÚ³ØÌÁÖĞµÄ"+HIG+"ÂÌÉ«"+NOR+"Ë®²İ.\n");
+                set("long","ä¸€ç§ç”Ÿé•¿åœ¨æ± å¡˜ä¸­çš„"+HIG+"ç»¿è‰²"+NOR+"æ°´è‰.\n");
         }
         setup();
 }

@@ -11,7 +11,7 @@ i=query_temp("marks/bing");
 
 if(!me->query_temp("marks/bing"))
 {
-write("Ğ»Ğ»ÄãËÍÎŞ¼É»ØÀ´,Õâ±¾ÊéÁô×ö¼ÍÄî°É.\n");
+write("è°¢è°¢ä½ é€æ— å¿Œå›æ¥,è¿™æœ¬ä¹¦ç•™åšçºªå¿µå§.\n");
 ob=new("/d/binghuodao/npc/obj/force_book");
 me->set_temp("marks/bing/zhang",1);
 ob->move(me);
@@ -19,17 +19,17 @@ return "\n";
 }
 else 
 {
-return "ÎŞ¼É³öÈ¥Íæ,»¹Ã»»ØÀ´,°ïÎÒÃÇÕÒÕÒ°É.\n";
+return "æ— å¿Œå‡ºå»ç©,è¿˜æ²¡å›æ¥,å¸®æˆ‘ä»¬æ‰¾æ‰¾å§.\n";
 }
 }
 void create()
 {
-set_name("ÕÅ´äÉ½", ({ "zhang cuishan", "zhang" }));  
-set("nickname","Îäµ±ÎåÏÀ");
+set_name("å¼ ç¿ å±±", ({ "zhang cuishan", "zhang" }));  
+set("nickname","æ­¦å½“äº”ä¾ ");
         set("long", 
-                "Ëû¾ÍÊÇÕÅÈı·áµÄÎåµÜ×Ó¡¢Îäµ±ÆßÏÀÖ®ÖĞµÄÕÅ´äÉ½¡£\n"
-                "Éí´©Ò»¼ş¸É¸É¾»¾»µÄ°×É«µÀÅÛ¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯å¼ ä¸‰ä¸°çš„äº”å¼Ÿå­ã€æ­¦å½“ä¸ƒä¾ ä¹‹ä¸­çš„å¼ ç¿ å±±ã€‚\n"
+                "èº«ç©¿ä¸€ä»¶å¹²å¹²å‡€å‡€çš„ç™½è‰²é“è¢ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age",31);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -64,9 +64,9 @@ set("nickname","Îäµ±ÎåÏÀ");
         map_skill("parry", "taiji-quan");
         map_skill("sword", "taiji-jian");
 
-        create_family("Îäµ±ÅÉ", 2, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 2, "å¼Ÿå­");
 set("inquiry", ([
-        "ÕÅÎŞ¼É" : (:ask_huijia:) ,
+        "å¼ æ— å¿Œ" : (:ask_huijia:) ,
          ]) );
         setup();
 
@@ -82,7 +82,7 @@ set("inquiry", ([
 }
 void attempt_apprentice(object ob)
 {
-                command("say ÎÒÊÇÒÑÎŞÃæÄ¿ÔÙ»ØÈ¥¼ûÊ¦¸µËûÀÏÈË¼ÒÁË£¬ÈçºÎ»¹¸ÒÊÕÍ½¡£");
+                command("say æˆ‘æ˜¯å·²æ— é¢ç›®å†å›å»è§å¸ˆå‚…ä»–è€äººå®¶äº†ï¼Œå¦‚ä½•è¿˜æ•¢æ”¶å¾’ã€‚");
                 return;
 
 }

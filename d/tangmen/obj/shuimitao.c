@@ -1,4 +1,4 @@
-// shuimitao.c Ë®ÃÛÌÒ
+// shuimitao.c æ°´èœœæ¡ƒ
 
 
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("Ë®ÃÛÌÒ", ({"tao", "mi tao"}));
+	set_name("æ°´èœœæ¡ƒ", ({"tao", "mi tao"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»µúË®ÁéĞÂÏÊµÄË®ÃÛÌÒ£¬ÊÇÌÆÃÅÔÚÁúÈªÉ½¡°°Ù¹ûÉ½×¯¡±µÄÌØ²ú¡£\n");
-		set("unit", "µú");
+		set("long", "ä¸€ç¢Ÿæ°´çµæ–°é²œçš„æ°´èœœæ¡ƒï¼Œæ˜¯å”é—¨åœ¨é¾™æ³‰å±±â€œç™¾æœå±±åº„â€çš„ç‰¹äº§ã€‚\n");
+		set("unit", "ç¢Ÿ");
 		set("value", 80);
 		set("food_remaining", 4);
 		set("food_supply", 30);

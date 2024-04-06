@@ -5,11 +5,11 @@ inherit F_FOOD;
 #include <ansi.h>
 
 string *names = ({
-  "ºìÉ«½â¶¾µ¤",
-  "»ÆÉ«½â¶¾µ¤",
-  "ÂÌÉ«½â¶¾µ¤",
-  "°×É«½â¶¾µ¤",
-  "ºÚÉ«½â¶¾µ¤",
+  "çº¢è‰²è§£æ¯’ä¸¹",
+  "é»„è‰²è§£æ¯’ä¸¹",
+  "ç»¿è‰²è§£æ¯’ä¸¹",
+  "ç™½è‰²è§£æ¯’ä¸¹",
+  "é»‘è‰²è§£æ¯’ä¸¹",
 });
 string *name = ({
   "red dan",
@@ -21,13 +21,13 @@ string *name = ({
 
 void create()
 {
-  set_name("¸÷Ê½½â¶¾µ¤", ({"jiedu dan", "dan", "yao"}));
+  set_name("å„å¼è§£æ¯’ä¸¹", ({"jiedu dan", "dan", "yao"}));
   set_weight(100);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»¿ÅÃ×Á£´óÐ¡µÄµ¤Íè¡£\n");
-    set("unit", "¿Å");
+    set("long", "ä¸€é¢—ç±³ç²’å¤§å°çš„ä¸¹ä¸¸ã€‚\n");
+    set("unit", "é¢—");
     set("value", 20000);
     set("food_remaining", 5);
     set("food_supply", 35);
@@ -38,7 +38,7 @@ void create()
 void init()
 {
   int num = random(sizeof(names));
-  if (query("name")=="¸÷Ê½½â¶¾µ¤")
+  if (query("name")=="å„å¼è§£æ¯’ä¸¹")
     set_name(names[num], ({name[num]}));
 // ::init();
         add_action("do_eat", "eat");
@@ -46,57 +46,57 @@ void init()
 }
 int do_eat(string arg)
 {
-  if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+  if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
   if(arg=="red dan"||arg=="yellow dan"||arg=="green dan"
      ||arg=="white dan"||arg=="black dan") 
   {
       object ob;
       ob=this_object();
-      if((string)ob->query("name")=="ºìÉ«½â¶¾µ¤"&& arg=="red dan"){
+      if((string)ob->query("name")=="çº¢è‰²è§£æ¯’ä¸¹"&& arg=="red dan"){
          if((int)this_player()->query_condition("snake_poison") <1)
-         tell_object(this_player(), HIG "Äã³ÔÏÂÒ»¿ÃºìÉ«½â¶¾µ¤£¬µ«ËÆºõÃ»ÓÐÊ²Ã´Ð§¹û£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åƒä¸‹ä¸€æ£µçº¢è‰²è§£æ¯’ä¸¹ï¼Œä½†ä¼¼ä¹Žæ²¡æœ‰ä»€ä¹ˆæ•ˆæžœï¼\n" NOR );
          else {
-         tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Ž,ç¥žæ„æ¸…çˆ½ï¼\n" NOR );
          this_player()->apply_condition("snake_poison", 0);
           }
          destruct(this_object());
          return 1;
         }
-      if((string)ob->query("name")=="»ÆÉ«½â¶¾µ¤"&& arg=="yellow dan"){
+      if((string)ob->query("name")=="é»„è‰²è§£æ¯’ä¸¹"&& arg=="yellow dan"){
          if((int)this_player()->query_condition("wugong_poison") <1)
-         tell_object(this_player(), HIG "Äã³ÔÏÂÒ»¿Ã»ÆÉ«½â¶¾µ¤£¬µ«ËÆºõÃ»ÓÐÊ²Ã´Ð§¹û£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åƒä¸‹ä¸€æ£µé»„è‰²è§£æ¯’ä¸¹ï¼Œä½†ä¼¼ä¹Žæ²¡æœ‰ä»€ä¹ˆæ•ˆæžœï¼\n" NOR );
          else {
-         tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Ž,ç¥žæ„æ¸…çˆ½ï¼\n" NOR );
          this_player()->apply_condition("wugong_poison", 0);
          }
          destruct(this_object());
          return 1;
        }
-      if((string)ob->query("name")=="ÂÌÉ«½â¶¾µ¤"&& arg=="green dan"){
+      if((string)ob->query("name")=="ç»¿è‰²è§£æ¯’ä¸¹"&& arg=="green dan"){
          if((int)this_player()->query_condition("zhizhu_poison") <1)
-         tell_object(this_player(), HIG "Äã³ÔÏÂÒ»¿ÃÂÌÉ«½â¶¾µ¤£¬µ«ËÆºõÃ»ÓÐÊ²Ã´Ð§¹û£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åƒä¸‹ä¸€æ£µç»¿è‰²è§£æ¯’ä¸¹ï¼Œä½†ä¼¼ä¹Žæ²¡æœ‰ä»€ä¹ˆæ•ˆæžœï¼\n" NOR );
          else {
-         tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Ž,ç¥žæ„æ¸…çˆ½ï¼\n" NOR );
          this_player()->apply_condition("zhizhu_poison", 0);
          }
          destruct(this_object());
          return 1;
        }
-      if((string)ob->query("name")=="°×É«½â¶¾µ¤"&& arg=="white dan"){
+      if((string)ob->query("name")=="ç™½è‰²è§£æ¯’ä¸¹"&& arg=="white dan"){
          if((int)this_player()->query_condition("xiezi_poison") <1)
-         tell_object(this_player(), HIG "Äã³ÔÏÂÒ»¿Ã°×É«½â¶¾µ¤£¬µ«ËÆºõÃ»ÓÐÊ²Ã´Ð§¹û£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åƒä¸‹ä¸€æ£µç™½è‰²è§£æ¯’ä¸¹ï¼Œä½†ä¼¼ä¹Žæ²¡æœ‰ä»€ä¹ˆæ•ˆæžœï¼\n" NOR );
          else {
-         tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Ž,ç¥žæ„æ¸…çˆ½ï¼\n" NOR );
          this_player()->apply_condition("xiezi_poison", 0);
          }
          destruct(this_object());
          return 1;
        }
-      if((string)ob->query("name")=="ºÚÉ«½â¶¾µ¤"&& arg=="black dan"){
+      if((string)ob->query("name")=="é»‘è‰²è§£æ¯’ä¸¹"&& arg=="black dan"){
          if((int)this_player()->query_condition("chanchu_poison") <1)
-         tell_object(this_player(), HIG "Äã³ÔÏÂÒ»¿ÃºÚÉ«½â¶¾µ¤£¬µ«ËÆºõÃ»ÓÐÊ²Ã´Ð§¹û£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åƒä¸‹ä¸€æ£µé»‘è‰²è§£æ¯’ä¸¹ï¼Œä½†ä¼¼ä¹Žæ²¡æœ‰ä»€ä¹ˆæ•ˆæžœï¼\n" NOR );
          else {
-         tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+         tell_object(this_player(), HIG "ä½ åªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Ž,ç¥žæ„æ¸…çˆ½ï¼\n" NOR );
          this_player()->apply_condition("chanchu_poison", 0);
          }
          destruct(this_object());

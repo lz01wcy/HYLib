@@ -1,4 +1,4 @@
-// yzuo.c ÎíÓê
+// yzuo.c é›¾é›¨
  
 #include <ansi.h>
  
@@ -6,12 +6,12 @@ inherit NPC;
  
 void create()
 {
-        set_name("ÎíÓê", ({"yzuo"}));
-        set("nickname",HIM"ĞÇËŞ×æÊ¦"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é›¾é›¨", ({"yzuo"}));
+        set("nickname",HIM"æ˜Ÿå®¿ç¥–å¸ˆ"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long",
-                "Ëû¾ÍÊÇ¸ºµ£ÆğÕñĞËĞÇËŞÅÉ´óÒµµÄ´óÎ×Ê¦ÎíÓê£¡\n");
+                "ä»–å°±æ˜¯è´Ÿæ‹…èµ·æŒ¯å…´æ˜Ÿå®¿æ´¾å¤§ä¸šçš„å¤§å·«å¸ˆé›¾é›¨ï¼\n");
         set("attitude", "peaceful");
  
         set("str", 30);

@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("Æ½Íş", ({ "ping wei", "wei" ,"ping"}));
-	set("gender", "ÎŞĞÔ");
-	set("title", HIC"Î÷Áù¹¬Ì«¼à"NOR);
+	set_name("å¹³å¨", ({ "ping wei", "wei" ,"ping"}));
+	set("gender", "æ— æ€§");
+	set("title", HIC"è¥¿å…­å®«å¤ªç›‘"NOR);
 	set("age", 26);
 	set("per", 16);
-	set("long", "Ò»¸ö·ÊÅÖºº×Ó£¬¿´ËÆÍşÃÍ£¬¿ÉÏ§ÊÇ¸öÌ«¼à¡£\n");
+	set("long", "ä¸€ä¸ªè‚¥èƒ–æ±‰å­ï¼Œçœ‹ä¼¼å¨çŒ›ï¼Œå¯æƒœæ˜¯ä¸ªå¤ªç›‘ã€‚\n");
 
 	set("combat_exp", 3000);
 	set("shen_type", 0);

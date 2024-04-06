@@ -7,18 +7,18 @@ int ask_me();
 
 void create()
 {
-	set_name("��������", ({ "old man", "oldman"}) );
-	set("gender", "����" );
+	set_name("白髯老者", ({ "old man", "oldman"}) );
+	set("gender", "男性" );
 	set("age", 64);
 	set("long",
-		"һ���뷢�԰׵����ߣ��������壬�����⡣\n");
+		"一个须发皆白的老者，精神矍铄，满面红光。\n");
 	set("max_qi", 2000);
 	set("max_jing", 2000);
 	set("max_neili", 2000);
 	set("jiali", 50);
 	set("combat_exp", 400000);
 	set("attitude", "friendly");
-	set("title", "����");
+	set("title", "毒叟");
 	set_skill("dodge", 120);
 	set_skill("unarmed",120);
 	set_skill("parry", 120);
@@ -42,9 +42,9 @@ void create()
 	carry_object("/clone/misc/cloth")->wear();
        add_money("silver",30);
 set("inquiry", ([
-"�Ĵ�": (: ask_me :),
-"����": (: ask_me :),
-"�տ�": (: ask_me :),
+"寄存": (: ask_me :),
+"毒虫": (: ask_me :),
+"照看": (: ask_me :),
 ]) );
 }
 
@@ -64,16 +64,16 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(3) ) {
 		case 0:
-			say( "������������Ц������λ" + RANK_D->query_respect(ob)
-				+ "�������������Ķ������\n");
+			say( "白髯老者掀髯笑道：这位" + RANK_D->query_respect(ob)
+				+ "，是来领你养的毒虫的吗？\n");
 			break;
 		case 1:
-			say( "�������ߵ���ĵ�������û�б���Ⱥã����Ǵ�Сϲ����Ū���棬\n��λ" + RANK_D->query_respect(ob)
-				+ "Ҫ��������������ߵĶ��治�������տ���\n");
+			say( "白髯老者得意的道：老朽没有别的嗜好，就是从小喜欢摆弄毒虫，\n这位" + RANK_D->query_respect(ob)
+				+ "要是有事外出，身边的毒虫不妨交我照看。\n");
 			break;
 		case 2:
-			say( "�������ߺٺټ�Ц������λ" + RANK_D->query_respect(ob)
-				+"���罫����Ĵ�����������ɣ�������ʱ����Ǯ�ġ�\n");
+			say( "白髯老者嘿嘿奸笑道：这位" + RANK_D->query_respect(ob)
+				+"不如将毒虫寄存在老朽这里吧，这里暂时不收钱的。\n");
 			break;
 	}
 }
@@ -81,12 +81,12 @@ int ask_me()
 {
         object me;
         me = this_player();
-        if ((string)me->query("family/family_name") != "�嶾��"){
-        command("say ��λ"+ RANK_D->query_respect(me)
-               + "���Ǳ��̵��ӣ���ô�ܵ��������ˣ�\n");
+        if ((string)me->query("family/family_name") != "五毒教"){
+        command("say 这位"+ RANK_D->query_respect(me)
+               + "不是本教弟子，怎么跑到这里来了？\n");
         return 1;
          }
-        command("say ���������֮�������о�������Ķ���Ĵ�(cun)������ɡ�\nÿ��ֻ�ջƽ�һ�������(qu)ʱһ�θ��壬�����ǳ��ӵķ�Ǯ���ѡ�");
+        command("say 老朽对养虫之道多有研究，把你的毒虫寄存(cun)在我这吧。\n每次只收黄金一两，领回(qu)时一次付清，不过是虫子的饭钱而已。");
         return 1;
 
 }

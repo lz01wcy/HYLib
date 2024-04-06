@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("����֩��",({"zhi zhu"}));
-        set("race", "Ұ��");
-        set("long", "һֻ�����С�����������Դ��Ĵ�֩�롣\n");
+        set_name("人面蜘蛛",({"zhi zhu"}));
+        set("race", "野兽");
+        set("long", "一只面盆大小，长着人样脑袋的大蜘蛛。\n");
         set("age", 10000);
         set("attitude", "peaceful");
 
@@ -22,7 +22,7 @@ void create()
         set("str", 40);
         set("con", 50);
 
-        set("limbs", ({ "ͷ��", "����", "����" }) );
+        set("limbs", ({ "头部", "身体", "长腿" }) );
         set("verbs", ({ "bite" }) );
 
         set_temp("apply/attack", 200);
@@ -56,15 +56,15 @@ int do_xun(string arg)
         me =this_object();
         who=this_player();
         if (!arg || (arg != "zhi zhu"))
-                return notify_fail("��Ҫѱ��ʲô��\n");
+                return notify_fail("你要驯服什么？\n");
         if(me->is_fighting())
-                return notify_fail("��ֻ֩������ս����\n");
-        if((string)who->query("family/family_name")!="�嶾��")
-                return notify_fail("ʲô��\n");
+                return notify_fail("这只蜘蛛正在战斗。\n");
+        if((string)who->query("family/family_name")!="五毒教")
+                return notify_fail("什么？\n");
         
-        message_vision("$N��$nһ���Х���󵨣�����ѱ��������ʱ��\n\n", who,me);
-        message_vision("$N��Ȼ��ŭ��������˭ѱ˭����һ���ġ�\n
-��������$nŤ��һ��\n",me,who);
+        message_vision("$N对$n一阵怪啸：大胆，还不驯服更待何时？\n\n", who,me);
+        message_vision("$N勃然大怒道：咱们谁驯谁还不一定哪。\n
+冲上来和$n扭打到一起。\n",me,who);
         me->kill_ob(who);
         who->kill_ob(me);
         COMBAT_D->do_attack(me, who, query_temp("weapon"));
@@ -80,7 +80,7 @@ void die()
         owner = query("owner");
         if(owner) owner_ob= find_player(owner);
         if(owner_ob &&  (object)query_temp("last_damage_from") == owner_ob ) {
-                message_vision("$Nſ�ڵ��ϣ�һ��Ҳ���Ҷ��ˡ�\n",this_object());
+                message_vision("$N趴在地上，一动也不敢动了。\n",this_object());
         ob=new(__DIR__"zhizhu3.c");
         ob->move(environment(owner_ob));
         ob->set_leader(owner_ob);
@@ -93,7 +93,7 @@ void die()
         }
 
        else {
-            message_vision("$N���ڵ��ϣ����ˣ�\n", this_object());
+            message_vision("$N倒在地上，死了！\n", this_object());
             ob=new(__DIR__"obj/zhizhudu.c");
               ob->move(environment(this_object()));
               destruct(this_object());
@@ -104,10 +104,10 @@ void die()
 
 int hit_ob(object me, object ob, int damage)
 {
-       if ((string)ob->query("family/family_name") != "�嶾��") {
+       if ((string)ob->query("family/family_name") != "五毒教") {
                 ob->apply_condition("zhizhu_poison", 20
               +(int)ob->query_condition("zhizhu_poison") );
-              tell_object(ob, HIG "����ñ�ҧ�еĵط�һ����ľ��\n" NOR );
+              tell_object(ob, HIG "你觉得被咬中的地方一阵麻木！\n" NOR );
         }
 }
 

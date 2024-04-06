@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("ÑÃÒÛ",({ "yayi"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("è¡™å½¹",({ "yayi"}) );
+        set("gender", "ç”·æ€§" );
         set("age",30+random(10));
-   set("long", "ÕâÊÇÒ»¸ö¾Å½­ÑÃÃÅµÄÑÃÒÛ¡£\n");       
+   set("long", "è¿™æ˜¯ä¸€ä¸ªä¹æ±Ÿè¡™é—¨çš„è¡™å½¹ã€‚\n");       
    set("combat_exp",10000);
    set("str",28);
    set_skill("parry",40);
@@ -16,7 +16,7 @@ void create()
    set("attitude", "peaceful");
    set("chat_chance",10);
    set("chat_msg",({
-       "ÑÃÒÛÌ¾ÁË¿ÚÆø¡£\n",
+       "è¡™å½¹å¹äº†å£æ°”ã€‚\n",
    }));
   
    setup();

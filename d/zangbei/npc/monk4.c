@@ -3,8 +3,8 @@
 inherit NPC;
 void create()
 {
-        set_name(HIY"Ìæ²¹"NOR,({"guardian"}));
-        set("long", "ÕâÊÇ°öÆÕËÂ´òÉ¨ËÂÔºµÄĞ¡À®Âï¡£\n");
+        set_name(HIY"æ›¿è¡¥"NOR,({"guardian"}));
+        set("long", "è¿™æ˜¯èšŒæ™®å¯ºæ‰“æ‰«å¯ºé™¢çš„å°å–‡å˜›ã€‚\n");
         set("age",30+random(20));
         set("attitude", "friendly");
         set("combat_exp", 1500000);
@@ -39,7 +39,7 @@ void create()
         
         set("chat_chance", 1);
         set("chat_msg", ({
-                "À®Âï°ÑÊÖÀïµÄôØôÎÄóËé£¬ĞËÖÂ²ª²ªµØÈÓµ½ºÓÀï£¬¶ÙÊ±Óã¶ùÃÇ¾Í»îÔ¾ÁËÆğÀ´¡£\n",  
+                "å–‡å˜›æŠŠæ‰‹é‡Œçš„ç³Œç²‘æç¢ï¼Œå…´è‡´å‹ƒå‹ƒåœ°æ‰”åˆ°æ²³é‡Œï¼Œé¡¿æ—¶é±¼å„¿ä»¬å°±æ´»è·ƒäº†èµ·æ¥ã€‚\n",  
                 
         }) );
         set("chat_chance_combat", 50);
@@ -51,7 +51,7 @@ void create()
         }) ); */
           
 //        auto_npc_setup();("wang",200,160,0,"/obj/weapon/","fighter_w","lianxin-blade",2);
-        set_name("°öÆÕËÂµÄÀ®Âï",({"bangpu lama","lama"}));
+        set_name("èšŒæ™®å¯ºçš„å–‡å˜›",({"bangpu lama","lama"}));
         set("force_factor",40+random(50));
         setup();
         carry_object(__DIR__"obj/lamacloth")->wear();

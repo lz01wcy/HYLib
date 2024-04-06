@@ -10,12 +10,12 @@ void greeting(object ob);
 void create()
 {
     seteuid(getuid());
-    set_name("Ð¡ÕÅÎÞ¼É", ({ "zhang wuji", "zhang", "wuji" }));
-    set("long", "Ã÷½Ì½ÌÖ÷ÕÅÎÞ¼É£¬Í³ÁìÌìÏÂÊ®Íò½ÌÖÚ£¬ºÀÆø¸ÉÔÆ£¬ß³ßåÇ§Çï£¬\n"
-               +"¡¸¾ÅÑôÉñ¹¦¡¹¡¢¡¸Ç¬À¤´óÅ²ÒÆ¡¹¶À²½ÌìÏÂ£¬ÊÇ½­ºþÖÐ²»ÊÀ³öµÄ\n"
-               +"ÉÙÄêÓ¢ÐÛ¡£\n");
-    set("title",HIG "Ã÷½Ì"HIM"½ÌÖ÷"NOR);
-    set("gender", "ÄÐÐÔ");
+    set_name("å°å¼ æ— å¿Œ", ({ "zhang wuji", "zhang", "wuji" }));
+    set("long", "æ˜Žæ•™æ•™ä¸»å¼ æ— å¿Œï¼Œç»Ÿé¢†å¤©ä¸‹åä¸‡æ•™ä¼—ï¼Œè±ªæ°”å¹²äº‘ï¼Œå±å’¤åƒç§‹ï¼Œ\n"
+               +"ã€Œä¹é˜³ç¥žåŠŸã€ã€ã€Œä¹¾å¤å¤§æŒªç§»ã€ç‹¬æ­¥å¤©ä¸‹ï¼Œæ˜¯æ±Ÿæ¹–ä¸­ä¸ä¸–å‡ºçš„\n"
+               +"å°‘å¹´è‹±é›„ã€‚\n");
+    set("title",HIG "æ˜Žæ•™"HIM"æ•™ä¸»"NOR);
+    set("gender", "ç”·æ€§");
     set("age", 20);
     set("shen_type",1);
     set("attitude", "friendly");
@@ -64,13 +64,13 @@ void create()
     map_skill("parry","shenghuo-ling");
     map_skill("blade","taiji-dao");
 
-    create_family("Ã÷½Ì",34, "½ÌÖ÷");
+    create_family("æ˜Žæ•™",34, "æ•™ä¸»");
 
     set("chat_chance",2);
     set("chat_msg",({
- "ÕÅÎÞ¼É·ßÈ»ËµµÀ¡°´óÕÉ·òµ±ÒÔ¹úÎª¼Ò, ¾èÇûÉ³³¡, ¿¹Ôª´óÒµÎ´³É, Í¬±²ÈÔÐèÅ¬Á¦!¡±\n",
-        "ÕÅÎÞ¼ÉÌ¾µÀ¡°ÈËÉúÊ§Ò»Öª¼º, ÉúÒàºÎ»¶, ËÀÒàºÎÓÇ, Ãô¶ù, ÄãÔÚÄÄÀï?¡±\n",
-        "ÕÅÎÞ¼ÉµÀ¡°ÎÒ½ÌÐÖµÜÌýÁË: ÉúÓÚÂÒÊÀ, µ±¿Ë¼ºÎª¹«, ÐÐÏÀÕÌÒå, µ´¿ÜÇýÄ§!¡±\n",
+ "å¼ æ— å¿Œæ„¤ç„¶è¯´é“â€œå¤§ä¸ˆå¤«å½“ä»¥å›½ä¸ºå®¶, æèº¯æ²™åœº, æŠ—å…ƒå¤§ä¸šæœªæˆ, åŒè¾ˆä»éœ€åŠªåŠ›!â€\n",
+        "å¼ æ— å¿Œå¹é“â€œäººç”Ÿå¤±ä¸€çŸ¥å·±, ç”Ÿäº¦ä½•æ¬¢, æ­»äº¦ä½•å¿§, æ•å„¿, ä½ åœ¨å“ªé‡Œ?â€\n",
+        "å¼ æ— å¿Œé“â€œæˆ‘æ•™å…„å¼Ÿå¬äº†: ç”ŸäºŽä¹±ä¸–, å½“å…‹å·±ä¸ºå…¬, è¡Œä¾ ä»—ä¹‰, è¡å¯‡é©±é­”!â€\n",
 //        	(: random_move :)
     }));
 
@@ -91,15 +91,15 @@ void create()
                 (: perform_action, "dodge.canghaiyixiao" :),                                
         }) );
     set("inquiry",([
-	  "Ã÷½Ì" :     "Ã÷½ÌÕýÔÚ±àÐ´Ö®ÖÐ£¬Çë¾ýÉÔºò¡£\n",
-          "½ðÃ«Ê¨Íõ" : "ÄÇÊÇÎÒÒå¸¸Ð»´óÏÀµÄÖ°Ë¾¡£\n",
-          "Ð»Ñ·" :     "Ëû¾ÍÊÇÎÒÒå¸¸µÄ´óºÅ¡£\n",
-          "ÕÅ´äÉ½" :   "ÄãÏëÕÒÎÒ¸¸Ç×ÓÐÊÂ÷á? \n",
-          "ÒóËØËØ" :   "ÎÒÂèÊÇÃ÷×ð×ùÏÂ×ÏÎ¢ÌÃÖ÷¡£\n",
-          "ÕÅÈý·á" :   "ÎÒÌ«Ê¦¸¸½üÀ´¿ÉºÃ? \n",
-          "ÕÔÃô" :     "ÈËÉúÊ§Ò»Öª¼º, ÉúÒàºÎ»¶, ËÀÒàºÎÓÇ, Ãô¶ù, ÄãÔÚÄÄÀï?\n",
-          "Ð¡ÕÑ" :     "Ð¡ÕÑÎÒ¿ÉÒ»Ö±Äî×ÅËýµÄºÃ´¦¡£\n",
-          "ÖÜÜÆÈô" :   "ÕÒËý¾ÍÈ¥¶ëáÒÉ½, ±ðÀ´·³ÎÒ¡£\n",
+	  "æ˜Žæ•™" :     "æ˜Žæ•™æ­£åœ¨ç¼–å†™ä¹‹ä¸­ï¼Œè¯·å›ç¨å€™ã€‚\n",
+          "é‡‘æ¯›ç‹®çŽ‹" : "é‚£æ˜¯æˆ‘ä¹‰çˆ¶è°¢å¤§ä¾ çš„èŒå¸ã€‚\n",
+          "è°¢é€Š" :     "ä»–å°±æ˜¯æˆ‘ä¹‰çˆ¶çš„å¤§å·ã€‚\n",
+          "å¼ ç¿ å±±" :   "ä½ æƒ³æ‰¾æˆ‘çˆ¶äº²æœ‰äº‹éº½? \n",
+          "æ®·ç´ ç´ " :   "æˆ‘å¦ˆæ˜¯æ˜Žå°Šåº§ä¸‹ç´«å¾®å ‚ä¸»ã€‚\n",
+          "å¼ ä¸‰ä¸°" :   "æˆ‘å¤ªå¸ˆçˆ¶è¿‘æ¥å¯å¥½? \n",
+          "èµµæ•" :     "äººç”Ÿå¤±ä¸€çŸ¥å·±, ç”Ÿäº¦ä½•æ¬¢, æ­»äº¦ä½•å¿§, æ•å„¿, ä½ åœ¨å“ªé‡Œ?\n",
+          "å°æ˜­" :     "å°æ˜­æˆ‘å¯ä¸€ç›´å¿µç€å¥¹çš„å¥½å¤„ã€‚\n",
+          "å‘¨èŠ·è‹¥" :   "æ‰¾å¥¹å°±åŽ»å³¨åµ‹å±±, åˆ«æ¥çƒ¦æˆ‘ã€‚\n",
     ]));
     setup();
     carry_object("/d/mingjiao/obj/yitianjian");

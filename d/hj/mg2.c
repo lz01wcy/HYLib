@@ -1,12 +1,12 @@
-// mg2.c ÃÔ¹¬´óÃÅ
+// mg2.c è¿·å®«å¤§é—¨
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-        set("short", CYN "¸ß²ýÃÔ¹¬" NOR);
+        set("short", CYN "é«˜æ˜Œè¿·å®«" NOR);
         set("long", @LONG
-ÄãÏòÀïÃæ×ßÈ¥£¬·¢ÏÖÃÔ¹¬ÄÚ¹âÏßÔ½À´Ô½ºÚ£¬¿´²»Çå½ÅÏÂµÄÂ·¡£
-Ç°ÃæºÃÏóÓÖ·ÖÁË¼¸¸ö²íµÀ¡£
+ä½ å‘é‡Œé¢èµ°åŽ»ï¼Œå‘çŽ°è¿·å®«å†…å…‰çº¿è¶Šæ¥è¶Šé»‘ï¼Œçœ‹ä¸æ¸…è„šä¸‹çš„è·¯ã€‚
+å‰é¢å¥½è±¡åˆåˆ†äº†å‡ ä¸ªå²”é“ã€‚
 LONG);
         set("no_sleep_room", 1);
         set("exits", ([            

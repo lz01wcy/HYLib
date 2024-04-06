@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "半线社");
 	set("long", @LONG
-������λ��̨������ƽԭ�жΣ�Ϊƽ��������֮�ء���֣ʱ������
-���˾۾ӣ�����������أ�����������̶��ɣ��ƿ�̨�������жΣ���
-�زŽ�����ʢ������
+半线社位于台湾西部平原中段，为平埔族游猎之地。明郑时代已有
+汉人聚居，清初隶诸罗县，闽海居民相继东渡，移垦台湾西部中段，此
+地才渐渐繁盛起来。
 LONG );
 	set("exits", ([
 		"northeast" : __DIR__"maolishe",

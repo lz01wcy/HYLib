@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", "ËÄ¼¾ÃÀ");
+	set("short", "å››å­£ç¾Ž");
 	set("long", @LONG
-ÌáÆð¡°ËÄ¼¾ÃÀ¡±½­ÁêÒ»´øÎÞÈË²»Öª¡£ÕâÀï¸÷Ê½²ËëÈ¾ùÊÇÎäººÒ»¾ø¡£
-ÄÏÀ´±±ÍùµÄ¿ÍÈËÃÇ¶¼»áÀ´ÕâÀï³¢³¢¡£Õû¸ö´óÌÃÄÖºåºåµÄ£¬¼·µÃÂúÂúµÇµÇ¡£
-µêÀïµÄ»ï¼ÆÅÜÀ´ÅÜÈ¥£¬Ã¦×ÅÕÐºô¿ÍÈË¡£Ç½ÉÏ¹Ò×Å¼Û¸ñÅÆ×Ó(paizi)¡£
+æèµ·â€œå››å­£ç¾Žâ€æ±Ÿé™µä¸€å¸¦æ— äººä¸çŸ¥ã€‚è¿™é‡Œå„å¼èœè‚´å‡æ˜¯æ­¦æ±‰ä¸€ç»ã€‚
+å—æ¥åŒ—å¾€çš„å®¢äººä»¬éƒ½ä¼šæ¥è¿™é‡Œå°å°ã€‚æ•´ä¸ªå¤§å ‚é—¹å“„å“„çš„ï¼ŒæŒ¤å¾—æ»¡æ»¡ç™»ç™»ã€‚
+åº—é‡Œçš„ä¼™è®¡è·‘æ¥è·‘åŽ»ï¼Œå¿™ç€æ‹›å‘¼å®¢äººã€‚å¢™ä¸ŠæŒ‚ç€ä»·æ ¼ç‰Œå­(paizi)ã€‚
 LONG);
 	set("exits", ([
 		"west"  : __DIR__"hzjie1",
@@ -18,13 +18,13 @@ LONG);
 	]));
 	set("item_desc", ([
 		"paizi" : "
-¶¬¹Ï±îÈ¹¸þ(Donggua)        £ºÎåÁ½°×Òø
-ºïÍ·Ü½ÈØ(Houtou)           £ºÎåÁ½°×Òø
-Áú·ïÅä(Longfeng)           £ºÎåÁ½°×Òø
-ÌìÂéÒø¶úÌÀ(Tianma soup)    £ºÎåÁ½°×Òø
-ËÉ×ÓÎä²ýÓã(Wuchang yu)     £ºÎåÁ½°×Òø
-Ïã¹½ÉÕ°åÀõ(Xianggu banli)  £ºÎåÁ½°×Òø
-ÕäÖé¼×ÓãÌÀ(Zhenzhu soup)   £ºÎåÁ½°×Òø\n",
+å†¬ç“œé³–è£™ç¾¹(Donggua)        ï¼šäº”ä¸¤ç™½é“¶
+çŒ´å¤´èŠ™è“‰(Houtou)           ï¼šäº”ä¸¤ç™½é“¶
+é¾™å‡¤é…(Longfeng)           ï¼šäº”ä¸¤ç™½é“¶
+å¤©éº»é“¶è€³æ±¤(Tianma soup)    ï¼šäº”ä¸¤ç™½é“¶
+æ¾å­æ­¦æ˜Œé±¼(Wuchang yu)     ï¼šäº”ä¸¤ç™½é“¶
+é¦™è‡çƒ§æ¿æ —(Xianggu banli)  ï¼šäº”ä¸¤ç™½é“¶
+çç ç”²é±¼æ±¤(Zhenzhu soup)   ï¼šäº”ä¸¤ç™½é“¶\n",
         ]));
 
 	set("coor/x", -1490);

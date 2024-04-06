@@ -4,20 +4,20 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山道");
 	set("long", @LONG
-����һ���ľ���ɽ����̫��ů�������ͷ�ϣ�Ϫˮ�����õ��ڽű�������
-С���������ŷɹ���Զ�����֣�·�Ķ����и�������
+这是一条幽静的山道。太阳暖洋洋地在头上，溪水活泼泼地在脚边流过。
+小鸟儿唧唧叫着飞过不远的树林，路的东面有个破庙。
 LONG
 	);
 	set("no_clean_up", 0);
 set("outdoors","/d/jiangnan");
 	set("item_desc", ([ /* sizeof() == 3 */
-  "����" : "һƬ�����֣���Լ�кü�ʮ�á�
+  "树林" : "一片杂树林，大约有好几十棵。
 ",
-  "����" : "Զ��ȥ���������ҡҡ��׹����ʱ������̣������
+  "破庙" : "远看去，这间破庙摇摇欲坠，随时都可能蹋下来。
 ",
-  "Ϫˮ" : "ɽȪ�Ӹߴ����£��γɵ�СϪ����
+  "溪水" : "山泉从高处流下，形成的小溪流。
 ",
 ]));
 	set("exits", ([ /* sizeof() == 2 */
@@ -29,5 +29,5 @@ set("outdoors","/d/jiangnan");
 }
 void init()
 {
-  tell_room(__DIR__"pomiao",HIC+"�����⴫��һ��Ų���!\n"+NOR);
+  tell_room(__DIR__"pomiao",HIC+"庙门外传来一阵脚步声!\n"+NOR);
 }

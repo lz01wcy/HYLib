@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(CYN "ÎÚ²ÏÒÂ" NOR, ({ "wucan yi", "yi" }) );
+        set_name(CYN "ä¹Œèš•è¡£" NOR, ({ "wucan yi", "yi" }) );
         set_weight(5000); 
         set("unique", 1);        if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("no_drop","±¦ÎïÊÇÈÓ/Âô²»ÁËµÄ£¬Ò²²»ÄÜ¸ø±ğÈË¡£");
+                set("unit", "ä»¶");
+                set("no_drop","å®ç‰©æ˜¯æ‰”/å–ä¸äº†çš„ï¼Œä¹Ÿä¸èƒ½ç»™åˆ«äººã€‚");
                 set("value", 50000);
                 set("material", "gold");
                 set("armor_prop/armor", 200);

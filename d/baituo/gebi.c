@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "戈壁");
+	set("short", "鎴堝");
 	set("long",
-	     "这里是临近沙漠的戈壁滩，荒无人烟。东边是一望无际的大沙漠，\n"
-	 "西北方可以看见一座小镇。\n"
+	     "杩欓噷鏄复杩戞矙婕犵殑鎴堝婊╋紝鑽掓棤浜虹儫銆備笢杈规槸涓�鏈涙棤闄呯殑澶ф矙婕狅紝\n"
+	 "瑗垮寳鏂瑰彲浠ョ湅瑙佷竴搴у皬闀囥�俓n"
 	);
 	set("outdoors", "baituo");
         set("no_clean_up", 0);

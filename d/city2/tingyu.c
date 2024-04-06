@@ -7,11 +7,11 @@ string look_shelf();
 
 void create()
 {	
-set("short", "ÌıÓêĞù");
+set("short", "å¬é›¨è½©");
 set("long", @LONG	
-ÕâÊÇÒ»¼äÇåÓÄµÄĞ¡ÖñÉá¡£Ò»³¾²»È¾µÄÊé¼Ü(shelf) ÉÏ·ÅÂú¸÷ÖÖÊé¼®£¬
-ÆäÖĞÓĞÎŞÊı¾øÃÀµÄÊ«´Ê¡£Äã¿ÉÒÔÓÃreadÀ´¶ÁÈ¡¡£Ò»Î»ÌìÏÉ°ãµÄÉÙÅ®ÕıµÍ
-×ÅÍ·¶ÁÊé£¬ÌıµÃ½Å²½£¬Ì§Í·ÍûÄã¡£
+è¿™æ˜¯ä¸€é—´æ¸…å¹½çš„å°ç«¹èˆã€‚ä¸€å°˜ä¸æŸ“çš„ä¹¦æ¶(shelf) ä¸Šæ”¾æ»¡å„ç§ä¹¦ç±ï¼Œ
+å…¶ä¸­æœ‰æ— æ•°ç»ç¾çš„è¯—è¯ã€‚ä½ å¯ä»¥ç”¨readæ¥è¯»å–ã€‚ä¸€ä½å¤©ä»™èˆ¬çš„å°‘å¥³æ­£ä½
+ç€å¤´è¯»ä¹¦ï¼Œå¬å¾—è„šæ­¥ï¼ŒæŠ¬å¤´æœ›ä½ ã€‚
 LONG	);	
 set("valid_startroom",1);
 set("no_steal", "1");
@@ -42,7 +42,7 @@ string look_shelf()
 int do_read(string arg)
 {
         if (arg == "" || file_size(POEM_DIR + arg) <= 0)
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ±¾Êé¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æœ¬ä¹¦ã€‚\n");
 	log_file("POEM", sprintf("%s read %s.\n", this_player()->query("name"), arg));
 	this_player()->start_more(read_file(POEM_DIR + arg));
 	return 1;

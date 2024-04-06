@@ -1,4 +1,4 @@
-// suquan.c ËÕÜõ
+// suquan.c è‹èƒ
 
 #include <ansi.h>
 inherit NPC;
@@ -9,10 +9,10 @@ int do_join(string arg);
 
 void create()
 {
-	set_name("ËÕÜõ", ({ "su-quan", "su" }));
-	set("title",  "ÉñÁú½Ì½ÌÖ÷·òÈË" );
-	set("long", "Ò»¸öÇ§½¿°ÙÃÄ¡¢Ã÷ÑŞ²»¿É·½ÎïµÄÉÙ¸¾¡£\n");
-	set("gender", "Å®ĞÔ");
+	set_name("è‹èƒ", ({ "su-quan", "su" }));
+	set("title",  "ç¥é¾™æ•™æ•™ä¸»å¤«äºº" );
+	set("long", "ä¸€ä¸ªåƒå¨‡ç™¾åªšã€æ˜è‰³ä¸å¯æ–¹ç‰©çš„å°‘å¦‡ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 25);
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -70,7 +70,7 @@ void greeting(object ob)
 	int i;
 
 	obj = all_inventory(environment(me));
-        command("say ºá½£´¿ÎªÊØÊÆ£¬Ï¥Ç°Ï¥Ç°¸ü²»¿É½â¡£");
+        command("say æ¨ªå‰‘çº¯ä¸ºå®ˆåŠ¿ï¼Œè†å‰è†å‰æ›´ä¸å¯è§£ã€‚");
 	for(i=0; i<sizeof(obj); i++)
 	{
 		if( obj[i]->query("id")=="hong-antong")

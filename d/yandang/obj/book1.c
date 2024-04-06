@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÆÆÊé", ({ "poshu" , "book"}) );
+	set_name("ç ´ä¹¦", ({ "poshu" , "book"}) );
 	set_weight(4000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "·­¿ªÀ´¿´Ê±,ÀïÃæ¶¼ÊÇ°×Ö½,Ê²Ã´¶¼Ã»Ğ´.\n");
+		set("unit", "æœ¬");
+		set("long", "ç¿»å¼€æ¥çœ‹æ—¶,é‡Œé¢éƒ½æ˜¯ç™½çº¸,ä»€ä¹ˆéƒ½æ²¡å†™.\n");
 		set("material", "paper");
 	}
 setup();

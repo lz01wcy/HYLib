@@ -1,15 +1,15 @@
-//Room: shizhu.c Ê¯Öù
+//Room: shizhu.c çŸ³æŸ±
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","Ê¯Öù");
+      set("short","çŸ³æŸ±");
       set("long",@LONG
-ÕâÊÇÄÏÑÒ¹¬Ç°µÄÒ»¸ùÊ¯Öù£¬µñ³ÉÁúÐÎ£¬×ÔÇÍ±ÚÉÏºá³ö£¬ÓÌÈç·ÉÁúÔÚÌì¡£ÁúÊ×
-¿ÌÒ»ÏãÂ¯£¬ÔÚ´ËÉÏÏã³ÆÎª¡°ÉÏÁúÍ·Ïã¡±£¬ÊÇÏã¿ÍµÄ×î´óÐÄÔ¸¡£Ê¯Öù½ö´ÖÈçÎÝÁº£¬
-ÅÔÎÞ·öÀ¸£¬Ç°ÓÐ°×ÔÆçÔÈÆ£¬ÏÂÓÐÍòÕÉÉîÔ¨£¬ÉÔÒ»Ê§×ã£¬¼´Ê¬¹ÇÎÞ´æ¡£
+è¿™æ˜¯å—å²©å®«å‰çš„ä¸€æ ¹çŸ³æŸ±ï¼Œé›•æˆé¾™å½¢ï¼Œè‡ªå³­å£ä¸Šæ¨ªå‡ºï¼ŒçŠ¹å¦‚é£žé¾™åœ¨å¤©ã€‚é¾™é¦–
+åˆ»ä¸€é¦™ç‚‰ï¼Œåœ¨æ­¤ä¸Šé¦™ç§°ä¸ºâ€œä¸Šé¾™å¤´é¦™â€ï¼Œæ˜¯é¦™å®¢çš„æœ€å¤§å¿ƒæ„¿ã€‚çŸ³æŸ±ä»…ç²—å¦‚å±‹æ¢ï¼Œ
+æ—æ— æ‰¶æ ï¼Œå‰æœ‰ç™½äº‘ç¼­ç»•ï¼Œä¸‹æœ‰ä¸‡ä¸ˆæ·±æ¸Šï¼Œç¨ä¸€å¤±è¶³ï¼Œå³å°¸éª¨æ— å­˜ã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "northup"  : __DIR__"nanyanfeng",
@@ -33,17 +33,17 @@ int do_mianbi(string arg)
    ob = this_player();
    if ( !arg )
    {
-      message_vision("$NÃæ¶Ô×ÅÊ¯ÖùõÃ×ø¾²Ë¼Á¼¾Ã£¬°×Ã¦Ò»³¡£¬Ò»ÎÞËù»ñ¡£\n",ob);
+      message_vision("$Né¢å¯¹ç€çŸ³æŸ±è¶ºåé™æ€è‰¯ä¹…ï¼Œç™½å¿™ä¸€åœºï¼Œä¸€æ— æ‰€èŽ·ã€‚\n",ob);
       return 1;
    }
    if ((int)ob->query_skill("taoism", 1) <100)
    {
-      message_vision("$NÃæ¶Ô×ÅÊ¯ÖùÉÏÂúÃæòòò½ÎÄ£¬Ã»Ò»¸ö×ÖÈÏÊ¶¡£\n",ob);
+      message_vision("$Né¢å¯¹ç€çŸ³æŸ±ä¸Šæ»¡é¢èŒèšªæ–‡ï¼Œæ²¡ä¸€ä¸ªå­—è®¤è¯†ã€‚\n",ob);
       return 1;
    }
    if ((int)ob->query_skill("literate", 1) <100)
    {
-      message_vision("$N¶ÔÊ¯ÖùÉÏÃ¿Ò»¸ö×Ö¶¼ÈÏÊ¶£¬¾ÍÊÇ²»ÖªµÀËµµÄÊÇÊ²Ã´¡£\n",ob);
+      message_vision("$Nå¯¹çŸ³æŸ±ä¸Šæ¯ä¸€ä¸ªå­—éƒ½è®¤è¯†ï¼Œå°±æ˜¯ä¸çŸ¥é“è¯´çš„æ˜¯ä»€ä¹ˆã€‚\n",ob);
       return 1;
    }
    if (((int)ob->query_skill("huagong-dafa", 1) >0)||
@@ -53,7 +53,7 @@ int do_mianbi(string arg)
        ((int)ob->query_skill("xuantian-force", 1) >0)||
        ((int)ob->query_skill("zixia-shengong", 1) >0))
    {
-      message_vision("$NÅÔÃÅÔÓÑ§Ì«¶àÁË£¬ÊµÔÚ¾²²»ÏÂÐÄÀ´Ãæ±Ú¡£\n",ob);
+      message_vision("$Næ—é—¨æ‚å­¦å¤ªå¤šäº†ï¼Œå®žåœ¨é™ä¸ä¸‹å¿ƒæ¥é¢å£ã€‚\n",ob);
       return 1;
    }    
    if (
@@ -62,12 +62,12 @@ int do_mianbi(string arg)
    {
       if ((int)ob->query_skill(arg, 1) <100)
       {
-         message_vision("$NµÄ" + to_chinese(arg) + "ÏÔÈ»Ì«µÍ£¬ÎÞ·¨ÁìÎòÊ¯ÖùÄÚÈÝ¡£\n",ob);
+         message_vision("$Nçš„" + to_chinese(arg) + "æ˜¾ç„¶å¤ªä½Žï¼Œæ— æ³•é¢†æ‚ŸçŸ³æŸ±å†…å®¹ã€‚\n",ob);
          return 1;
       }
       if ((int)ob->query_skill(arg, 1) > 180)
       {
-         message_vision("$NµÄ" + to_chinese(arg) + "ÒÑ¾­Ã»±ØÒª¶ÁÊ¯ÖùÄÚÈÝÁË¡£\n",
+         message_vision("$Nçš„" + to_chinese(arg) + "å·²ç»æ²¡å¿…è¦è¯»çŸ³æŸ±å†…å®¹äº†ã€‚\n",
 ob);
          return 1;
       }
@@ -76,20 +76,20 @@ ob);
         *ob->query_skill(arg,1)/10)> (int)ob->query("combat_exp"))
         && arg != "literate")
       {
-         message_vision("$NµÄÊµÕ½¾­Ñé²»×ã£¬ÎÞ·¨ÁìÎòÊ¯ÖùÄÚÈÝ¡£\n",ob);
+         message_vision("$Nçš„å®žæˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†æ‚ŸçŸ³æŸ±å†…å®¹ã€‚\n",ob);
          return 1;
       }
       if (ob->query("jing")<20)
       {
-         message_vision("$NÌ«ÀÛÁË£¬ÏÖÔÚÎÞ·¨ÁìÎòÊ¯ÖùÄÚÈÝ¡£\n",ob);
+         message_vision("$Nå¤ªç´¯äº†ï¼ŒçŽ°åœ¨æ— æ³•é¢†æ‚ŸçŸ³æŸ±å†…å®¹ã€‚\n",ob);
          return 1;
       }
-      message_vision("$NÃæ¶Ô×ÅÊ¯ÖùõÃ×ø¾²Ë¼£¬Á¼¾Ã£¬¶Ô" + to_chinese(arg) + "ËÆÓÐËùÎò¡£\n",ob);
+      message_vision("$Né¢å¯¹ç€çŸ³æŸ±è¶ºåé™æ€ï¼Œè‰¯ä¹…ï¼Œå¯¹" + to_chinese(arg) + "ä¼¼æœ‰æ‰€æ‚Ÿã€‚\n",ob);
       ob->improve_skill(arg, random(10*ob->query("int")));
       ob->add("jing",-5);
       return 1;
    }
-   message_vision("$NÃæ¶Ô×ÅÊ¯ÖùõÃ×ø¾²Ë¼£¬Á¼¾Ã£¬ËÆÓÐËùÎò¡£\n",ob);
+   message_vision("$Né¢å¯¹ç€çŸ³æŸ±è¶ºåé™æ€ï¼Œè‰¯ä¹…ï¼Œä¼¼æœ‰æ‰€æ‚Ÿã€‚\n",ob);
    ob->add("jing",-5);
    return 1;
 }

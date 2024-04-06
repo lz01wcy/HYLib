@@ -2,12 +2,12 @@
 inherit NPC; 
 void create()
 {
-        set_name("С��", ({ "xiao fang","fang" }) );
-        set("gender", "����" );
+        set_name("小方", ({ "xiao fang","fang" }) );
+        set("gender", "男性" );
         set("long",
-                "һ���������⡢Ư������Ĺ¶����ӡ�\n"
+                "一个流浪塞外、漂泊异乡的孤独浪子。\n"
                 );
-        set("title", HIW"����"NOR);
+        set("title", HIW"浪子"NOR);
         set("attitude", "peaceful");
         
         set("age", 28);
@@ -29,7 +29,7 @@ void create()
          
         set("chat_chance", 1);
         set("chat_msg", ({
-                "С��Զ�����Ŵ����ʥĸѩ�壬����ɤ�ӵ�����ӥ������һ�����ҵ�\n�㣬�ҵ�һ���úû��ŵ��㡭��\n",
+                "小方远望着着窗外的圣母雪峰，哑着嗓子道：卜鹰……我一定会找到\n你，找到一个好好活着的你……\n",
                 }) ); 
         set_skill("unarmed", 200);
         set_skill("parry", 200);
@@ -54,20 +54,20 @@ void create()
 } 
 int accept_object(object me, object obj)
 {
-        if(obj->query("name") == BLU"ħ�۽�"NOR && obj->query("owner") == me->query("id"))
+        if(obj->query("name") == BLU"魔眼剑"NOR && obj->query("owner") == me->query("id"))
         {
-                message_vision("$N��������ħ�۽������������˸���԰׵����Ϸ�����Ѫɫ��\n", this_object());
-                message_vision("$N��$n�м��ص��˵�ͷ������绹���ţ�����֪���������š�\n",this_object(),me);
-                if(!me->query("m_success/������ӥ"))
+                message_vision("$N紧紧握着魔眼剑，眼中泪光闪烁，苍白的脸上泛出了血色。\n", this_object());
+                message_vision("$N向$n感激地点了点头：卜大哥还活着，我早知道他还活着。\n",this_object(),me);
+                if(!me->query("m_success/义助卜鹰"))
                 {
-                        me->set("m_success/������ӥ",1);
+                        me->set("m_success/义助卜鹰",1);
                         me->add("score",200);
                 }
                 return 1;
         }
         else
         {
-                write("С�����ֵ��������Ӳ��������������²��ܽ������Ķ�������\n");
+                write("小方拱手道：“君子不夺人所爱，在下不能接受您的东西。”\n");
                 return 0;
         }
 } 

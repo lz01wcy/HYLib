@@ -2,11 +2,11 @@
 inherit NPC; 
 void create()
 {
-        set_name("²·Ó¥", ({ "ying" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("åœé¹°", ({ "ying" }) );
+        set("gender", "ç”·æ€§" );
         set("long",
-                "Ø£Ó¥°ãµÄÈñÑÛ£¬ÓÄÁé°ãµÄ°×ÒÂ£¬µ¶·æ°ãµÄÀä¿á£¬É½ÔÀ°ãµÄÕò¶¨¡£\n" );
-        set("title", GRN"²ÝÔ­Ö®Ó¥"NOR);
+                "å…€é¹°èˆ¬çš„é”çœ¼ï¼Œå¹½çµèˆ¬çš„ç™½è¡£ï¼Œåˆ€é”‹èˆ¬çš„å†·é…·ï¼Œå±±å²³èˆ¬çš„é•‡å®šã€‚\n" );
+        set("title", GRN"è‰åŽŸä¹‹é¹°"NOR);
         set("attitude", "peaceful");
         set("age", 44);
         set("str", 100);
@@ -22,7 +22,7 @@ void create()
         set_temp("apply/damage",50);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "²·Ó¥ÓÃÒ»ÖÖ¼¥Ú½µÄÄ¿¹âÀäÀäµØ¶¢×ÅÄã¡£\n",
+                "åœé¹°ç”¨ä¸€ç§è®¥è¯®çš„ç›®å…‰å†·å†·åœ°ç›¯ç€ä½ ã€‚\n",
                 }) );
         set_skill("unarmed", 200);
         set_skill("parry", 200);
@@ -78,13 +78,13 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         if( ob->query("score") > 5000 && ob->query_temp("marks/guanwai_knowsecret") )
         {
-                message_vision("$NºÈÁË¿Ú¹Å³ÇÉÕ£¬ÈñÑÛÖÐÏÖ³öÒ»Ë¿Ð¦Òâ£¬ÂþÉù¶ø¸è£º\n¡¡¡¡¡¡¶ùÐë³ÉÃû¡«¡«¾ÆÐë×í¡«¡«¡«¡£\n",npc);
-                message_vision("$N×ª¹ýÍ·À´¿´ÁË¿´$nÐ¦µÀ£º³ªÏÂÈ¥£¡£¨continue .....£© \n",npc,ob);
+                message_vision("$Nå–äº†å£å¤åŸŽçƒ§ï¼Œé”çœ¼ä¸­çŽ°å‡ºä¸€ä¸ç¬‘æ„ï¼Œæ¼«å£°è€Œæ­Œï¼š\nã€€ã€€ã€€å„¿é¡»æˆåï½žï½žé…’é¡»é†‰ï½žï½žï½žã€‚\n",npc);
+                message_vision("$Nè½¬è¿‡å¤´æ¥çœ‹äº†çœ‹$nç¬‘é“ï¼šå”±ä¸‹åŽ»ï¼ï¼ˆcontinue .....ï¼‰ \n",npc,ob);
                 set("enable_continue",1);
         }
         else
         {
-                message_vision("$NºÈÁË¿Ú¹Å³ÇÉÕ£¬ÓÃÒ»ÖÖ¼¥Ú½µÄÄ¿¹âÀäÀäµØ¶¢×Å$n¡£\n",npc,ob);
+                message_vision("$Nå–äº†å£å¤åŸŽçƒ§ï¼Œç”¨ä¸€ç§è®¥è¯®çš„ç›®å…‰å†·å†·åœ°ç›¯ç€$nã€‚\n",npc,ob);
         }
 } 
 int do_continue(string arg)
@@ -95,25 +95,25 @@ int do_continue(string arg)
         
         if(!query("enable_continue")) return 0;
         if ( !arg )
-                return notify_fail("ÄãÒª¼ÌÐø³ªÊ²Ã´£¿\n");
-        if (arg == "×íºó³©Ì¸¡«¡«¼ûÐÄÑÔ¡«¡«¡«" || arg == "×íºó³©Ì¸¼ûÐÄÑÔ" || arg == "×íºó³©Ì¸¼ûÐÄÑÔ¡£" )
+                return notify_fail("ä½ è¦ç»§ç»­å”±ä»€ä¹ˆï¼Ÿ\n");
+        if (arg == "é†‰åŽç•…è°ˆï½žï½žè§å¿ƒè¨€ï½žï½žï½ž" || arg == "é†‰åŽç•…è°ˆè§å¿ƒè¨€" || arg == "é†‰åŽç•…è°ˆè§å¿ƒè¨€ã€‚" )
         {
                 delete("enable_continue");
-                message_vision("$N»÷ÕÆÓ¦ÉùºÍ³ª£º×íºó³©Ì¸¡«¡«¼ûÐÄÑÔ¡«¡«¡«¡£\n",player);
+                message_vision("$Nå‡»æŽŒåº”å£°å’Œå”±ï¼šé†‰åŽç•…è°ˆï½žï½žè§å¿ƒè¨€ï½žï½žï½žã€‚\n",player);
                 call_out("ask_help",3,npc,player);
         }
         else
-                message_vision("$N³¶×ÅÉ¤×ÓºúÂÒ³ªµ½£º"+arg+"¡£\n",player);
+                message_vision("$Næ‰¯ç€å—“å­èƒ¡ä¹±å”±åˆ°ï¼š"+arg+"ã€‚\n",player);
         return 1;
 } 
 void ask_help(object npc,object player)
 {
         object sword;
-        message_vision("$N¹þ¹þ´óÐ¦µÀ£ººÃºÃ£¬ºÃÒ»¸ö¼ûÐÄÑÔ£¡À´À´£¬°ïÎÒ¸öÃ¦£¬ÕÒµ½Ð¡·½£¬\n°ÑÕâ°ÑÄ§ÑÛ½£¸øËû¡£½ÐËû²»ÓÃÔÙÏ¹µ£ÐÄÁË¡£\n",npc);
+        message_vision("$Nå“ˆå“ˆå¤§ç¬‘é“ï¼šå¥½å¥½ï¼Œå¥½ä¸€ä¸ªè§å¿ƒè¨€ï¼æ¥æ¥ï¼Œå¸®æˆ‘ä¸ªå¿™ï¼Œæ‰¾åˆ°å°æ–¹ï¼Œ\næŠŠè¿™æŠŠé­”çœ¼å‰‘ç»™ä»–ã€‚å«ä»–ä¸ç”¨å†çžŽæ‹…å¿ƒäº†ã€‚\n",npc);
         sword = new(__DIR__"obj/magicsword");
         sword->set("owner",player->query("id"));
         sword->move(player);
-        message_vision("$NÄÃ³öÒ»°ÑÄ§ÑÛ½£½»¸ø$n¡£\n",npc,player);
+        message_vision("$Næ‹¿å‡ºä¸€æŠŠé­”çœ¼å‰‘äº¤ç»™$nã€‚\n",npc,player);
         player->delete_temp("marks/guanwai_knowsecret");
         player->set_temp("marks/guanwai_help_ying",1);
         return;

@@ -2,11 +2,11 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-	set_name("Ð»ÁÕ", ({ "xie lin","girl", "dizi" }));
+	set_name("è°¢ç³", ({ "xie lin","girl", "dizi" }));
 	set("age", 16);
-	set("gender", "Å®ÐÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "peaceful");
-       set("title","Ñãµ´Ð¡Ê¦ÃÃ");
+       set("title","é›è¡å°å¸ˆå¦¹");
 	set("str", 34);
 	set("dex", 36);
 	set("combat_exp", 10000);
@@ -19,10 +19,10 @@ void create()
         set("shen_type",1);
 
 
-   create_family("Ñãµ´ÅÉ",3,"µÜ×Ó");
+   create_family("é›è¡æ´¾",3,"å¼Ÿå­");
 	set("inquiry", ([
-		"»¨" : "ÊÇÈýÊ¦ÐÖËÍÀ´µÄ,ÎÒ......",
-		"flower" : "ÊÇÈýÊ¦ÐÖËÍÀ´µÄ,ÎÒ......",
+		"èŠ±" : "æ˜¯ä¸‰å¸ˆå…„é€æ¥çš„,æˆ‘......",
+		"flower" : "æ˜¯ä¸‰å¸ˆå…„é€æ¥çš„,æˆ‘......",
 		]) );	
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();

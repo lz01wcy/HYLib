@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name( "°µÓ°¸¡Ïã²½·¨",({ "bagua tupu","tupu","ba gua","book"}));
+	set_name( "æš—å½±æµ®é¦™æ­¥æ³•",({ "bagua tupu","tupu","ba gua","book"}));
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long","ÕâÊÇÒ»±¾¼ÇÔØ×ÅÌÒ»¨µº°µÓ°¸¡Ïã²½·¨µÄÊé¡£\n");
+		set("unit", "æœ¬");
+		set("long","è¿™æ˜¯ä¸€æœ¬è®°è½½ç€æ¡ƒèŠ±å²›æš—å½±æµ®é¦™æ­¥æ³•çš„ä¹¦ã€‚\n");
 		set("value", 5000);
 		set("material", "paper");
 		set("skill", ([

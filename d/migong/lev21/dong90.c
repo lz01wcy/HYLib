@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIB"����Ķ���"NOR);
+	set("short", HIB"虚神的洞窟"NOR);
 	set("long", HIB @LONG
-�ⶴѨ����һֱ���굽�ص�ȥ.����ӵصײ�ͣ�ش�
-����. һЩ����ֵֹ�ͼ�λ�����������Ѩ,����֮��,
-���ϵ��㼣Ҳ���������ҵ�.
+这洞穴像是一直延申到地底去.而风从地底不停地吹
+上来. 一些奇奇怪怪的图形画满了整个洞穴,除此之外,
+地上的足迹也是零零乱乱的.
 LONG NOR);
 set("magicroom",1);set("outdoors","migong");
 set("magicset",1);

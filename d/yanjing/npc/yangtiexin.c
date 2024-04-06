@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-	set_name("ÑîÌúĞÄ",({"yang tiexin","yang"}));
-   set("gender","ÄĞĞÔ");
+	set_name("æ¨é“å¿ƒ",({"yang tiexin","yang"}));
+   set("gender","ç”·æ€§");
    set("mingwang",5000);
    set("combat_exp",60000);
    
@@ -54,7 +54,7 @@ int accept_object(object who, object ob)
 	}
 	who->add_temp("learn_timeh",i);
 
-      message_vision("ÑîÌúĞÄ¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
+      message_vision("æ¨é“å¿ƒå¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
 
 	return 1;
 }

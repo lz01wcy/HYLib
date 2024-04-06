@@ -1,4 +1,4 @@
-// /d/yixing/npc/cl_bangzhong.c ����
+// /d/yixing/npc/cl_bangzhong.c 帮众
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>;
@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("����", ({ "changle bangzhong", "bangzhong" }));
-	set("party/party_name", HIC"���ְ�"NOR);
-	set("party/rank", "������");
-	set("long", "����һ������Ϊ�������ĳ��ְ��ڡ�\n��������ת���ƺ�������ʲô�����⡣\n");
-	set("gender", "����");
+	set_name("帮众", ({ "changle bangzhong", "bangzhong" }));
+	set("party/party_name", HIC"长乐帮"NOR);
+	set("party/rank", "虎猛堂");
+	set("long", "这是一个惯于为非作歹的长乐帮众。\n他眼珠乱转，似乎正在想什么坏主意。\n");
+	set("gender", "男性");
 	set("age", 25);
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -32,14 +32,14 @@ void create()
 	set_skill("parry", 50);
 
 	set("inquiry", ([
-		"���ְ�" : "������ǳ��ְ��ܶ����ڵء�",
-		"˾ͽ��" : "�Ҷ����ǰ������˼ҵľ���֮�飬�������Ͻ�ˮ���಻����",
-		"������" : "�������Դ����������κ�һ��ǧ�",
-		"������" : "��������Ӵ����ˡ�",
-		"��ɽ��" : "��������Ӵ����ˡ�",
-		"����" : "��λ�����������ɰ������˼�˵���㡣",
-		"����ʯ" : "������ڱװ��Ϳ๦�ߣ��ĵð������Ρ�",
-		"����" : "�ҼҰ���˾ͽ��ү�������ϵġ������족Ҳ��",
+		"长乐帮" : "这里就是长乐帮总舵所在地。",
+		"司徒横" : "我对我们帮主老人家的景仰之情，有如滔滔江水连绵不绝。",
+		"虎猛堂" : "虎猛堂自从邱香主上任后，一日千里！",
+		"邱香主" : "他在外面接待客人。",
+		"邱山风" : "他在外面接待客人。",
+		"香主" : "各位香主的任命由帮主老人家说了算。",
+		"贝海石" : "贝大夫在弊帮劳苦功高，颇得帮主信任。",
+		"帮主" : "我家帮主司徒大爷乃威镇江南的“东霸天”也。",
 	]));
 
 	setup();

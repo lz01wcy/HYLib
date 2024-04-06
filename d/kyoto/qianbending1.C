@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-set("short", "Ç§±¾î®");
+set("short", "åƒæœ¬ç”º");
 set("long", @LONG
-ÕâÀï¾ÍÊÇÇ§±¾î®£¬¹á´©¾©¶¼¶«Î÷µÄ´ó¶¯Âö£¬Ò²ÊÇ×î·±»ªµÄ½ÖÇø£¬Á½±ß
-ÐÐ¹ÝµêÆÌÁÛ´ÎèÎ±È¡£±±ÃæÊÇÒ»¸ö¾Æ¹Ý£¬ÒÔ¾©¶¼Çå¾ÆÎÅÃû¡£ÄÏÃæÊÇÎäÊ¿ÐÐ¹Ý
-ÎäÊ¿¿ÉÒÔÔÚÄÇÀïÐÝÏ¢»òÕßÏà»¥ÇÐ´èÎäÑ§¡£
+è¿™é‡Œå°±æ˜¯åƒæœ¬ç”ºï¼Œè´¯ç©¿äº¬éƒ½ä¸œè¥¿çš„å¤§åŠ¨è„‰ï¼Œä¹Ÿæ˜¯æœ€ç¹åŽçš„è¡—åŒºï¼Œä¸¤è¾¹
+è¡Œé¦†åº—é“ºé³žæ¬¡æ ‰æ¯”ã€‚åŒ—é¢æ˜¯ä¸€ä¸ªé…’é¦†ï¼Œä»¥äº¬éƒ½æ¸…é…’é—»åã€‚å—é¢æ˜¯æ­¦å£«è¡Œé¦†
+æ­¦å£«å¯ä»¥åœ¨é‚£é‡Œä¼‘æ¯æˆ–è€…ç›¸äº’åˆ‡ç£‹æ­¦å­¦ã€‚
 LONG );
 set("exits",  ([
         "east"  : __DIR__"qianbending2",

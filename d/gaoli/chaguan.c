@@ -1,14 +1,14 @@
 // /d/gaoli/chaguan
-// Room in ¸ßÀö
+// Room in é«˜ä¸½
 // rich 99/03/28
 inherit ROOM;
 void create()	
 {
-	set("short", "²è¹Ý");
+	set("short", "èŒ¶é¦†");
 	set("long", @LONG
-¸÷µØµÄÃû²èÕâÀï¶¼ÓÐµÄÂô¡£ÕâÀï³å²èµÄË®Ò²ÊÇ´Ó³ÇÍâ×¨³ÌÔËÀ´µÄ¡£
-ÕâÀï³å²èµÄºø¸üÊÇÃû¹óµÄ×ÏÉ°ºø¡£ÕâÀï³å²èµÄ·½·¨Ò²ÊÇ×î½²¾¿µÄ¡£Ã¿ºø
-²èµÄµÚÒ»±­ÊÇÓÃÀ´ÑøºøµÄ¡£ËùÒÔÕâÀï³å³öµÄ²è¶¼ÓÐÒ»ÖÖ´¿ºñµÄÏãÆø¡£
+å„åœ°çš„åèŒ¶è¿™é‡Œéƒ½æœ‰çš„å–ã€‚è¿™é‡Œå†²èŒ¶çš„æ°´ä¹Ÿæ˜¯ä»ŽåŸŽå¤–ä¸“ç¨‹è¿æ¥çš„ã€‚
+è¿™é‡Œå†²èŒ¶çš„å£¶æ›´æ˜¯åè´µçš„ç´«ç ‚å£¶ã€‚è¿™é‡Œå†²èŒ¶çš„æ–¹æ³•ä¹Ÿæ˜¯æœ€è®²ç©¶çš„ã€‚æ¯å£¶
+èŒ¶çš„ç¬¬ä¸€æ¯æ˜¯ç”¨æ¥å…»å£¶çš„ã€‚æ‰€ä»¥è¿™é‡Œå†²å‡ºçš„èŒ¶éƒ½æœ‰ä¸€ç§çº¯åŽšçš„é¦™æ°”ã€‚
 LONG
 	);
 set("exits", ([

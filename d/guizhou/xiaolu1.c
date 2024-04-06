@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С·");
+	set("short", "小路");
 	set("long", @LONG
-�˼���ͨ������Ժ��ɽ��һ��С·��פ����
-�����ƺ����������洫�����о���������
+此间是通向静念禅院后山的一条小路。驻足倾
+听，似乎能听到西面传来的诵经的声音。
 LONG );
 
 	set("exits", ([

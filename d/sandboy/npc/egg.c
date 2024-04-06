@@ -1,14 +1,14 @@
 inherit ITEM;
 void create()
 {
-  set_name("´óÑãµ°", ({"egg", "danyan egg"}));
+  set_name("å¤§é›è›‹", ({"egg", "danyan egg"}));
   set_weight(60);
   if( clonep() )
     set_default_object(__FILE__);
   else
   {
-    set("long", "Ò»Ã¶´óÑãµ°,Ëµ²»¶¨ÄÜ·õ³ö´óÑãÀ´ÄØ¡£\n");
-    set("unit", "Ã¶");
+    set("long", "ä¸€æšå¤§é›è›‹,è¯´ä¸å®šèƒ½å­µå‡ºå¤§é›æ¥å‘¢ã€‚\n");
+    set("unit", "æš");
     set("value", 50);
   }
 }

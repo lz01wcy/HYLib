@@ -3,16 +3,16 @@
 inherit NPC;
 void create()
 {
-        set_name("Àî±ª", ({ "lee", "lee bao" }) );
-        set("long","ĞÂ½®µÄ×î´óµÄÑÎĞĞÀÏ°å£¬ÈË¼Ò¶¼³ÆËûÎª£¢ÀîÀÏ´ó£¢\n");
-        set("gender","ÄĞĞÔ");
+        set_name("æè±¹", ({ "lee", "lee bao" }) );
+        set("long","æ–°ç–†çš„æœ€å¤§çš„ç›è¡Œè€æ¿ï¼Œäººå®¶éƒ½ç§°ä»–ä¸ºï¼‚æè€å¤§ï¼‚\n");
+        set("gender","ç”·æ€§");
         set("age", 39);
         set("combat_exp", 100000);
         set_skill("unarmed",100);
         set("chat_chance", 15);
         set("chat_msg", ({
-                "Àî±ªµÀ£ºÈ±Òø×Ó»¨Ã´£¿°ïÎÒ×°ÑÎ£¨work£©£¬Ò»Âí³µÒ»Á½Òø×Ó£¡\n",
-                "Àî±ªÖ¸×ÅÄã£º±ğÍµÀÁ£¬¿ì¸É»î£¡\n",
+                "æè±¹é“ï¼šç¼ºé“¶å­èŠ±ä¹ˆï¼Ÿå¸®æˆ‘è£…ç›ï¼ˆworkï¼‰ï¼Œä¸€é©¬è½¦ä¸€ä¸¤é“¶å­ï¼\n",
+                "æè±¹æŒ‡ç€ä½ ï¼šåˆ«å·æ‡’ï¼Œå¿«å¹²æ´»ï¼\n",
         }) );
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -27,13 +27,13 @@ int do_work(string arg)
         object ob;
         object me;
         me = this_player();
-if(me->is_busy()) return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜ¹¤×÷¡£\n");
-message_vision("$N½áÊø×°ÂúÁËÒ»³µÑÎ£¬¿ÉÈËÒ²ÀÛµÄÒªËÀ\n",me);
+if(me->is_busy()) return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½å·¥ä½œã€‚\n");
+message_vision("$Nç»“æŸè£…æ»¡äº†ä¸€è½¦ç›ï¼Œå¯äººä¹Ÿç´¯çš„è¦æ­»\n",me);
 me->receive_wound("jing",30);
 me->receive_wound("qi",30);
 ob = new("/clone/money/silver");
 ob->move(me);
-message_vision("Àî±ª¸ÉĞ¦ÁËÁ½Éù£¬¶Ô$NËµ£ºÕâÊÇÄãµÄ¹¤Ç®¡£\n", me);
+message_vision("æè±¹å¹²ç¬‘äº†ä¸¤å£°ï¼Œå¯¹$Nè¯´ï¼šè¿™æ˜¯ä½ çš„å·¥é’±ã€‚\n", me);
 me->start_busy(2);
 return 1;
 }     

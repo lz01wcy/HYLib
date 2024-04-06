@@ -1,21 +1,21 @@
-// wushidao.c ÎäÊ¿µ¶
+// wushidao.c æ­¦å£«åˆ€
 
 #include <weapon.h>
 inherit BLADE;
 
 void create()
 {
-	set_name("ÎäÊ¿µ¶", ({ "wushi dao", "dao", "wushidao" }));
+	set_name("æ­¦å£«åˆ€", ({ "wushi dao", "dao", "wushidao" }));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñ¶«ÑóÎäÊ¿µ¶£¬¶«ÑóÎäÊ¿¶¼°®Åå´ø¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠä¸œæ´‹æ­¦å£«åˆ€ï¼Œä¸œæ´‹æ­¦å£«éƒ½çˆ±ä½©å¸¦ã€‚\n");
 		set("value", 100);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕ»ØÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¶å›é˜ã€‚\n");
 	}
 	init_blade(125);
 	setup();

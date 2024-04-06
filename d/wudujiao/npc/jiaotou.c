@@ -1,5 +1,5 @@
 // jiaotou.c
-// É³Ç§Àï
+// æ²™åƒé‡Œ
 // by star
 #include <ansi.h>
 inherit NPC;
@@ -7,15 +7,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("É³Ç§Àï", ({ "sha qianli", "sha" }));
-        set("nickname", HIG "ºÚÁú" NOR);
+        set_name("æ²™åƒé‡Œ", ({ "sha qianli", "sha" }));
+        set("nickname", HIG "é»‘é¾™" NOR);
         set("long",@LONG
-Ëû¾ÍÊÇÎå¶¾½ÌµÄ»¤·¨µÜ×ÓÉ³Ç§Àï£¬Éí²Ä¿ıÎà£¬·½Ãæ´ó¶ú¡£ÔÚ½ÌÖĞ×ª¹ÜÕĞÄ¼
-½ÌÖÚ£¬½ÌÊÚµÜ×ÓÃÇµÄÈëÃÅ¹¦·ò¡£
+ä»–å°±æ˜¯äº”æ¯’æ•™çš„æŠ¤æ³•å¼Ÿå­æ²™åƒé‡Œï¼Œèº«æé­æ¢§ï¼Œæ–¹é¢å¤§è€³ã€‚åœ¨æ•™ä¸­è½¬ç®¡æ‹›å‹Ÿ
+æ•™ä¼—ï¼Œæ•™æˆå¼Ÿå­ä»¬çš„å…¥é—¨åŠŸå¤«ã€‚
 LONG
         );
-        set("title","Îå¶¾½Ì»¤·¨µÜ×Ó");
-        set("gender", "ÄĞĞÔ");
+        set("title","äº”æ¯’æ•™æŠ¤æ³•å¼Ÿå­");
+        set("gender", "ç”·æ€§");
         set("age", 32);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -54,7 +54,7 @@ LONG
         map_skill("sword", "wudu-goufa");
 //        map_skill("hammer", "jinshe-chui");
 
-        create_family("Îå¶¾½Ì", 13, "»¤·¨µÜ×Ó");
+        create_family("äº”æ¯’æ•™", 13, "æŠ¤æ³•å¼Ÿå­");
 
         setup();
 
@@ -67,25 +67,25 @@ LONG
 void attempt_apprentice(object ob)
 {
 
- 		  if ((string)ob->query("gender") == "ÎŞĞÔ") {
-        			 command("say ÕâÎ»¹«¹«²»Òª¿ªÍæĞ¦ÁË¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "»¹ÊÇ¿ìÈ¥ËÅºò»ÊÉÏ°É£¡");
+ 		  if ((string)ob->query("gender") == "æ— æ€§") {
+        			 command("say è¿™ä½å…¬å…¬ä¸è¦å¼€ç©ç¬‘äº†ã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "è¿˜æ˜¯å¿«å»ä¼ºå€™çš‡ä¸Šå§ï¼");
                 return;
 		  }
 
 		  if ((int)ob->query("shen") > 1000) {
-        			 command("say ×öÎÒÎå¶¾½ÌµÜ×Ó±ØĞëĞÄºİÊÖÀ±¡£");
-                command("say ÎÒ½ÌµÜ×Ó¹óÔÚËæĞÄËùÓû£¬²»ÊÕÎ±¾ı×Ó");
+        			 command("say åšæˆ‘äº”æ¯’æ•™å¼Ÿå­å¿…é¡»å¿ƒç‹ æ‰‹è¾£ã€‚");
+                command("say æˆ‘æ•™å¼Ÿå­è´µåœ¨éšå¿ƒæ‰€æ¬²ï¼Œä¸æ”¶ä¼ªå›å­");
                 return;
 		  }
 
 
-//          command("chat ºÙºÙºÙºÙ£¡£¡£¡£¡£¡");
-//          command("chat ¸Ãµ±ÎÒÎå¶¾½Ì·¢Ñï¹â´ó£¬³Æ°ÔÎäÁÖÖ¸ÈÕ¿É´ıÁË¡£");
-//          command("chat ºÙºÙºÙºÙ£¡£¡£¡£¡£¡");
+//          command("chat å˜¿å˜¿å˜¿å˜¿ï¼ï¼ï¼ï¼ï¼");
+//          command("chat è¯¥å½“æˆ‘äº”æ¯’æ•™å‘æ‰¬å…‰å¤§ï¼Œç§°éœ¸æ­¦æ—æŒ‡æ—¥å¯å¾…äº†ã€‚");
+//          command("chat å˜¿å˜¿å˜¿å˜¿ï¼ï¼ï¼ï¼ï¼");
         command("recruit " + ob->query("id"));
         ob->set("class", "none");
-	 ob->set("title","Îå¶¾½ÌÍ½");
+	 ob->set("title","äº”æ¯’æ•™å¾’");
        return;
 }

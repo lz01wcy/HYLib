@@ -5,7 +5,7 @@ inherit ROOM;
 void create()
 
 {
-set("short", "»¨´ÔÐ¡Â·");
+set("short", "èŠ±ä¸›å°è·¯");
 
 	set("long", @LONG
  
@@ -27,7 +27,7 @@ void init()
 int do_down(string arg)
 {
 	object me = this_player();
-	message_vision(HIR "$N·üÔÚÆÂÉÏ£¬°ë¹ö°ëÅÀ£¬Ò»ÏÂ×ÓÁïµ½ÁË¹Èµ×¡£\n" NOR, me);
+	message_vision(HIR "$Nä¼åœ¨å¡ä¸Šï¼ŒåŠæ»šåŠçˆ¬ï¼Œä¸€ä¸‹å­æºœåˆ°äº†è°·åº•ã€‚\n" NOR, me);
 	me->move(__DIR__"gudi");
 	return 1;
 }

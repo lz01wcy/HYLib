@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "东侧廊");
 	set("long", @LONG
-�������������ԵĲ��ȡ�����������������Ҳ�ò�������˸��ַ�
-���ͼ�Σ�ÿ�����ƺ�������˵һ���渶��˵ķ𾭹��¡�����Ʈ����
-���׷������㣬����ɮ�������ŵ�ի�á�
+这里是天王殿旁的侧廊。彩梁画栋，连顶棚也用彩漆绘满了各种飞
+天的图形，每幅画似乎都在诉说一个娓娓动人的佛经故事。东面飘来阵
+阵米饭的清香，乃是僧人们用膳的斋堂。
 LONG );
 	set("outdoors", "nanshaolin");
 	set("exits", ([

@@ -1,4 +1,4 @@
-// heima.c ºÚÂí
+// heima.c é»‘é©¬
 
 #include <command.h>
 #include <dbase.h>
@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºÚÂí", ({ "hei ma" }));
-        set("long","Ò»Æ¥¿¥Âí£¬È«ÉíÆáºÚ£¬ÎÞÒ»¸ùÔÓÃ«¡£\n");
-        set("race", "Ò°ÊÞ");
+        set_name("é»‘é©¬", ({ "hei ma" }));
+        set("long","ä¸€åŒ¹éªé©¬ï¼Œå…¨èº«æ¼†é»‘ï¼Œæ— ä¸€æ ¹æ‚æ¯›ã€‚\n");
+        set("race", "é‡Žå…½");
         set("age", 5);
         set("attitude","heroism");
         set("str", 30);

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "Æ½°²ÃÅ");
+  set ("short", "å¹³å®‰é—¨");
   set ("long", @LONG
-Õâ¶ùÊÇÌì¹¬Æ½°²³ÇµÄÈë¿Ú£¬ÓĞ×ÅÎŞÏŞµÄ×¯ÑÏ¡£´Ó´Ë´¦±±ĞĞ£¬¾Íµ½Æ½°²³Ç
-ÁË¡£Ò»ÈëÆ½°²³Ç£¬ÓÀÔ¶½«»áÆ½°²£¬ÔÙÎŞÑªĞÈ·çÓê£¬ÊÇÒ»¸ö±ÜÊÀµÄ¾øºÃÈ¥´¦¡£
-Èç¹ûÏòÏÂĞĞ£¬Äã¾Í½øÈë½­ºşÁË¡£
+è¿™å„¿æ˜¯å¤©å®«å¹³å®‰åŸçš„å…¥å£ï¼Œæœ‰ç€æ— é™çš„åº„ä¸¥ã€‚ä»æ­¤å¤„åŒ—è¡Œï¼Œå°±åˆ°å¹³å®‰åŸ
+äº†ã€‚ä¸€å…¥å¹³å®‰åŸï¼Œæ°¸è¿œå°†ä¼šå¹³å®‰ï¼Œå†æ— è¡€è…¥é£é›¨ï¼Œæ˜¯ä¸€ä¸ªé¿ä¸–çš„ç»å¥½å»å¤„ã€‚
+å¦‚æœå‘ä¸‹è¡Œï¼Œä½ å°±è¿›å…¥æ±Ÿæ¹–äº†ã€‚
 LONG);
 
   set("outdoors", "pingan");
@@ -29,11 +29,11 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
        if (  me->query_temp("xunchen")< 1 && dir == "up" )
-        return notify_fail("Ê¿±øËµµÀ£ºµÈÒ»µÈ,ÄãºÍÍõ´óÈËËµÒ»ÏÂ,²ÅÄÜÑ²³Ç£¡\n");
+        return notify_fail("å£«å…µè¯´é“ï¼šç­‰ä¸€ç­‰,ä½ å’Œç‹å¤§äººè¯´ä¸€ä¸‹,æ‰èƒ½å·¡åŸï¼\n");
 	if (dir =="east")
 	{
 		if ( me->query("PKS") >= 10)
-		return notify_fail("ÄãÉ±¹ıÌ«¶àµÄÍæ¼Ò£¡Æ½°²³Ç²»»¶Ó­Äã£¡\n");
+		return notify_fail("ä½ æ€è¿‡å¤ªå¤šçš„ç©å®¶ï¼å¹³å®‰åŸä¸æ¬¢è¿ä½ ï¼\n");
 	
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
@@ -41,7 +41,7 @@ int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

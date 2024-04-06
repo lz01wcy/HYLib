@@ -5,10 +5,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-    set  ("short",  "Âé½«¹Ý");
+    set  ("short",  "éº»å°†é¦†");
     set  ("long",  @LONG
-ÕâÊÇÒ»¼ä¿í³¨Ã÷ÁÁµÄ´óÌü£¬ÌüµÄÕýÖÐ¼äÊÇÒ»¸ùÔ²ÐÎµÄÖù×Ó¡£Öù
-×ÓÉÏ£¬ÎÝ×ÓÕýÖÐ·Å×ÅÒ»¸öÂé½«Ì¨£¬ÓÐ¼¸¸öÅÆÓÑ×øÔÚÄÇÀï´òÅÆ¡£
+è¿™æ˜¯ä¸€é—´å®½æ•žæ˜Žäº®çš„å¤§åŽ…ï¼ŒåŽ…çš„æ­£ä¸­é—´æ˜¯ä¸€æ ¹åœ†å½¢çš„æŸ±å­ã€‚æŸ±
+å­ä¸Šï¼Œå±‹å­æ­£ä¸­æ”¾ç€ä¸€ä¸ªéº»å°†å°ï¼Œæœ‰å‡ ä¸ªç‰Œå‹ååœ¨é‚£é‡Œæ‰“ç‰Œã€‚
 LONG);
 
     set("light_up",  1);

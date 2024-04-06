@@ -6,15 +6,15 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÀîÀÏ²®", ({ "lilaotou", "li", "laotou" }));
-	set("title", "ÉĞÎäÊéµêÀÏ°å");
+	set_name("æè€ä¼¯", ({ "lilaotou", "li", "laotou" }));
+	set("title", "å°šæ­¦ä¹¦åº—è€æ¿");
 	set("shen_type", 1);
 
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"ÀîÀÏ²®¾Ã¾ÓÆ½°²³Ç£¬¾İËµËûÄêÇáÊ±ÊÇ¸öÎäÁÖ¸ßÊÖ£¬\n");
+		"æè€ä¼¯ä¹…å±…å¹³å®‰åŸï¼Œæ®è¯´ä»–å¹´è½»æ—¶æ˜¯ä¸ªæ­¦æ—é«˜æ‰‹ï¼Œ\n");
 	set("combat_exp", 38000);
 	set("attitude", "friendly");
 	
@@ -48,10 +48,10 @@ void greeting(object ob)
 		return;
 	switch(random(2)) {
 	case 0 :
-		say("ÀîÀÏ°åĞ¦ÃĞÃĞµØËµµÀ£ºÈË¿ÍÀ´×ø¡£\n");
+		say("æè€æ¿ç¬‘çœ¯çœ¯åœ°è¯´é“ï¼šäººå®¢æ¥åã€‚\n");
 		break;
 	case 1 :
-		say("ÀîÀÏ°åËµµÀ£ºÕâÎ»ĞÖµÜ£¬ÄãÒªÂòÊ²Ã´£¿\n");
+		say("æè€æ¿è¯´é“ï¼šè¿™ä½å…„å¼Ÿï¼Œä½ è¦ä¹°ä»€ä¹ˆï¼Ÿ\n");
 		break;
 	}
 }

@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-set("short", "½õÇÅ");
+set("short", "é”¦æ¡¥");
 set("long", @LONG
-Ô­ÏÈÕâÀïÊÇÒ»×ùÄ¾ÇÅ£¬ºóÀ´ÓÉÄÜ¹¤ÇÉ½³ÓÃÂÞÂíÔËÀ´µÄ¸ÚÊ¯ÖØ½¨£¬ÇÅÀ¸
-¹â»¬Èç½õ¶ÐÒ»°ã£¬¹ÊµÃÃû½õÇÅ¡£ÕâÀïÍù±±¾ÍÊÇ×¯ÑÏËàÄÂµÄ»Ê¹¬£Û¾©¶¼ÓùËù£Ý
-£¬ÄÏÃæÊÇ¾©¶¼Éú»îºÍÉÌÒµµÄÖÐÐÄÉÏÔ­¡£
+åŽŸå…ˆè¿™é‡Œæ˜¯ä¸€åº§æœ¨æ¡¥ï¼ŒåŽæ¥ç”±èƒ½å·¥å·§åŒ ç”¨ç½—é©¬è¿æ¥çš„å²—çŸ³é‡å»ºï¼Œæ¡¥æ 
+å…‰æ»‘å¦‚é”¦ç¼Žä¸€èˆ¬ï¼Œæ•…å¾—åé”¦æ¡¥ã€‚è¿™é‡Œå¾€åŒ—å°±æ˜¯åº„ä¸¥è‚ƒç©†çš„çš‡å®«ï¼»äº¬éƒ½å¾¡æ‰€ï¼½
+ï¼Œå—é¢æ˜¯äº¬éƒ½ç”Ÿæ´»å’Œå•†ä¸šçš„ä¸­å¿ƒä¸ŠåŽŸã€‚
 LONG );
 set("exits",  ([
         "north"  : __DIR__"yusuogate",

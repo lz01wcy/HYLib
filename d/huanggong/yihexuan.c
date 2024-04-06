@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ú���");
+	set("short", "颐和轩");
 	set("long", @LONG
-�����Ǭ¡�������鼮������ĵط�, Ҳ��һ���䱦��, ���ж���
-��ȫ�������ѹ������鱦����.
+这儿是乾隆帝阅览书籍和游玩的地方, 也是一座珍宝馆, 其中多是
+从全国各地搜刮来的珠宝珍奇.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

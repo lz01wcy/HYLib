@@ -1,4 +1,4 @@
- //      jueding.c ÁèÏö¾ø¶¥
+ //      jueding.c å‡Œéœ„ç»é¡¶
 
 #include <ansi.h>
 
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIW"¾ø¶¥"NOR);
+        set("short",HIW"ç»é¡¶"NOR);
         set("long",@LONG 
-ÕâÀïÊÇ´óÑ©É½¶¥·å£¬ÈË¼£º±ÖÁ£¬Á¬ÄñÊÞ¶¼²»¼û×ÙÓ°¡£ËÄÃæ¼Å¾²£¬Î©ÎÅ·çÉù¡£
-ÁÝÙýµÄÉ½·ç¹ÎÁ³Èçµ¶£¬Í¸¹Ç±ùÁ¹£¬Æ½³£ÈËÖ»´ýÉÏÒ»Ð¡»á¾ÍµÃ±»¶³½©¡£
+è¿™é‡Œæ˜¯å¤§é›ªå±±é¡¶å³°ï¼Œäººè¿¹ç½•è‡³ï¼Œè¿žé¸Ÿå…½éƒ½ä¸è§è¸ªå½±ã€‚å››é¢å¯‚é™ï¼ŒæƒŸé—»é£Žå£°ã€‚
+å‡›å†½çš„å±±é£Žåˆ®è„¸å¦‚åˆ€ï¼Œé€éª¨å†°å‡‰ï¼Œå¹³å¸¸äººåªå¾…ä¸Šä¸€å°ä¼šå°±å¾—è¢«å†»åƒµã€‚
 LONG);
 //        set("objects", ([__DIR__("npc/obj/zanghonghua") : 1 ]));
 	set("exits", ([
@@ -30,8 +30,8 @@ void init()
         local = localtime(time() * 60);
         if (local[2] < 11 || local[2] > 13) {
 	message_vision(HIW
-"¿ñ·ç¼Ð×ÅÑ©»¨ÅüÍ·¸ÇÁ³´òÁË¹ýÀ´£¬´µµÃ$NÕö²»¿ªÑÛ¡£Í»È»´ÓÉ½ÑÂ±ßÂäÏÂÒ»´ó¿é»ýÑ©£¬$N¶ãÉÁ²»¼°ÕýÔÒÔÚÍ·ÉÏ£¡\n"NOR,this_player());
-	message_vision(HIR"$N½ÅÏÂ²»ÎÈ£¬Ë³×ÅÉ½ÑÂµøÂäÏÂÈ¥¡£\n"NOR,this_player());
+"ç‹‚é£Žå¤¹ç€é›ªèŠ±åŠˆå¤´ç›–è„¸æ‰“äº†è¿‡æ¥ï¼Œå¹å¾—$Nçä¸å¼€çœ¼ã€‚çªç„¶ä»Žå±±å´–è¾¹è½ä¸‹ä¸€å¤§å—ç§¯é›ªï¼Œ$Nèº²é—ªä¸åŠæ­£ç ¸åœ¨å¤´ä¸Šï¼\n"NOR,this_player());
+	message_vision(HIR"$Nè„šä¸‹ä¸ç¨³ï¼Œé¡ºç€å±±å´–è·Œè½ä¸‹åŽ»ã€‚\n"NOR,this_player());
     this_player()->move(__DIR__"xuegu");
     this_player()->unconcious();
         }

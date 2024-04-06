@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Îå²½Éß", ({ "wubushe" }) );
-	set("long",	"Îå²½ÉßÊÇ¸£½¨µØ·½¶¾Éß£¬Ïà´«ÖĞ¶¾ĞĞÂ·Îå²½¼´ĞĞµ¹±Ğ¡£\n");
+	set_name("äº”æ­¥è›‡", ({ "wubushe" }) );
+	set("long",	"äº”æ­¥è›‡æ˜¯ç¦å»ºåœ°æ–¹æ¯’è›‡ï¼Œç›¸ä¼ ä¸­æ¯’è¡Œè·¯äº”æ­¥å³è¡Œå€’æ¯™ã€‚\n");
 
-	set("race", "Ò°ÊŞ");
+	set("race", "é‡å…½");
 	set("age", 3);
 	set("attitude", "peaceful");
 
@@ -19,7 +19,7 @@ void create()
 	set("str", 10);
 	set("cor", 50);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 
 	set_temp("apply/attack", 10);
@@ -50,6 +50,6 @@ int hit_ob(object me, object ob, int damage)
 	if( random(damage) > (int)ob->query_temp("apply/armor")
 	&&	(int)ob->query_condition("snake_poison") < 10 ) {
 		ob->apply_condition("snake_poison", 40);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨ï¼\n" NOR );
 	}
 }

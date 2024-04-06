@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-		set("short", RED"ÈÛÑÒ¶´"NOR);
+		set("short", RED"ç†”å²©æ´"NOR);
 	set("long", RED @LONG
-    ¹öÌÌÑÒ½¬²»¶ÏÉ¢·¢×ÅÈÈÆø£¬ÁîÈË´­²»¹ıÆøÀ´£¬Ò»Ğ©Ç°Ëù
-Î´¼ûµÄ¾Ş´óÉúÎïÔÚÕâÀï×ß¶¯×Å¡£ 
+    æ»šçƒ«å²©æµ†ä¸æ–­æ•£å‘ç€çƒ­æ°”ï¼Œä»¤äººå–˜ä¸è¿‡æ°”æ¥ï¼Œä¸€äº›å‰æ‰€
+æœªè§çš„å·¨å¤§ç”Ÿç‰©åœ¨è¿™é‡Œèµ°åŠ¨ç€ã€‚ 
 LONG NOR);
 	set("exits", ([
 		"out" : __DIR__"dong39",
@@ -24,7 +24,7 @@ int valid_leave(object me, string dir)
 {
         me = this_player();
         if ( dir == "out" && objectp(present("nie long", environment(me))))
-                return notify_fail(BLU"ÄõÁú"NOR"Ò»Ô¾À¹×¡ÄãµÄÈ¥Â·¡£\n");
+                return notify_fail(BLU"å­½é¾™"NOR"ä¸€è·ƒæ‹¦ä½ä½ çš„å»è·¯ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

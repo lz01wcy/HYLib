@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"±ùÆÇÓñ¾«"NOR, ({"bingpo yujing", "yujing"}));
+        set_name(HIW"å†°é­„ç‰ç²¾"NOR, ({"bingpo yujing", "yujing"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-         set("long", "ÕâÊÇÍòÄêº®ÓñËùÄı½á¶ø³ÉµÄ±ùÆÇÓñ¾«,¿´ÉÏÈ¥½à°×ÌŞÍ¸,É¢·¢³öÂÌÓÄÓÄµÄ¹âÃ¢¡£\n");
+         set("long", "è¿™æ˜¯ä¸‡å¹´å¯’ç‰æ‰€å‡ç»“è€Œæˆçš„å†°é­„ç‰ç²¾,çœ‹ä¸Šå»æ´ç™½å‰”é€,æ•£å‘å‡ºç»¿å¹½å¹½çš„å…‰èŠ’ã€‚\n");
 set("treasure",1);
-                set("unit", "¿é");
+                set("unit", "å—");
                 set("value", 70000);
         }
 }

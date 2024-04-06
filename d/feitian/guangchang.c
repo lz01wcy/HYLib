@@ -4,13 +4,13 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÖÐÑë¹ã³¡");
+  set ("short", "ä¸­å¤®å¹¿åœº");
   set ("long", @LONG
-¾©¶¼µÄÖÐÐÄ¾ÍÊÇÕâÀïÁË,Ò»¸öºÜ¿íÀ«µÄ¹ã³¡,Ò»Ð©µØÆ¦,ÎäÊ¿ÔÚÕâÀïÏÐ¹ä.
-¾­³£ÓÐÆäËû¹ú¼ÒµÄÒÕÈËÔÚÀï±íÑÝ.ÔÚ¹ã³¡ÖÐÑëÓÐÒ»¿ÃÓ£»¨Ê÷(tree).Ã¿µ±
-Ó£»¨Ê¢¿ªµÄÊ±ºò²»ÉÙÈË¾ÍÔÚÕâÀïºÈ¾ÆÉÍ»¨,Ò²ÊÇ¾ÍÓ£»¨ÉÍÁË,Ó£»¨ÉÏµÄÊ÷
-Ò¶(leaf)·Ç³£Ã¯ÃÜ,ÓÐ¼¸Ö»Ð¡ÄñÔÚÕâÀï·ÉÀ´·ÉÈ¥.´óÊ÷ÅÔ±ßÓÐÒ»¿ìÐÂÁ¢µÄ
-ÅÆ×Ó(sign).
+äº¬éƒ½çš„ä¸­å¿ƒå°±æ˜¯è¿™é‡Œäº†,ä¸€ä¸ªå¾ˆå®½é˜”çš„å¹¿åœº,ä¸€äº›åœ°ç—ž,æ­¦å£«åœ¨è¿™é‡Œé—²é€›.
+ç»å¸¸æœ‰å…¶ä»–å›½å®¶çš„è‰ºäººåœ¨é‡Œè¡¨æ¼”.åœ¨å¹¿åœºä¸­å¤®æœ‰ä¸€æ£µæ¨±èŠ±æ ‘(tree).æ¯å½“
+æ¨±èŠ±ç››å¼€çš„æ—¶å€™ä¸å°‘äººå°±åœ¨è¿™é‡Œå–é…’èµèŠ±,ä¹Ÿæ˜¯å°±æ¨±èŠ±èµäº†,æ¨±èŠ±ä¸Šçš„æ ‘
+å¶(leaf)éžå¸¸èŒ‚å¯†,æœ‰å‡ åªå°é¸Ÿåœ¨è¿™é‡Œé£žæ¥é£žåŽ».å¤§æ ‘æ—è¾¹æœ‰ä¸€å¿«æ–°ç«‹çš„
+ç‰Œå­(sign).
 LONG);
 
   set("objects", ([ /* sizeof() == 3 */
@@ -20,11 +20,11 @@ LONG);
 ]));
   set("peach_count", 30);
   set("item_desc", ([ /* sizeof() == 3 */
-  "sign" : "Çë°®»¤»¨²ÝÊ÷Ä¾£¬ÅÊÅÀËð»ÙÕßÖØ·££¡    --¾©¶¼¸æÊ¾
+  "sign" : "è¯·çˆ±æŠ¤èŠ±è‰æ ‘æœ¨ï¼Œæ”€çˆ¬æŸæ¯è€…é‡ç½šï¼    --äº¬éƒ½å‘Šç¤º
 ",
-  "leaf" : "Ê÷Ò¶ËÉËÉµØ¹ÒÔÚÊ÷ÉÏ£¬¿´ÉÏÈ¥ºÜÏë°ÑËüÕªÏÂÀ´¡£
+  "leaf" : "æ ‘å¶æ¾æ¾åœ°æŒ‚åœ¨æ ‘ä¸Šï¼Œçœ‹ä¸ŠåŽ»å¾ˆæƒ³æŠŠå®ƒæ‘˜ä¸‹æ¥ã€‚
 ",
-  "tree" : "Ò»¿Ã´óÊ÷£¬Ö¦Ò¶Ã¯ÃÜ£¬¿´²»ÇåÉÏÃæµÄÇé¿ö¡£Ö¦Í·¹ÒÂúÁËÌÒ×Ó£¬ÒÑ¾­ÊìµØÒªµôÏÂÀ´ÁË¡£
+  "tree" : "ä¸€æ£µå¤§æ ‘ï¼Œæžå¶èŒ‚å¯†ï¼Œçœ‹ä¸æ¸…ä¸Šé¢çš„æƒ…å†µã€‚æžå¤´æŒ‚æ»¡äº†æ¡ƒå­ï¼Œå·²ç»ç†Ÿåœ°è¦æŽ‰ä¸‹æ¥äº†ã€‚
 ",
 ]));
   set("stick_count", 5);
@@ -34,7 +34,7 @@ LONG);
   "south" : __DIR__"haigang.c",
   "east" : __DIR__"jiedao1",
 ]));
-  set("outdoors", "·ÉÌìÓù½£Á÷");
+  set("outdoors", "é£žå¤©å¾¡å‰‘æµ");
   set("no_sleep_room", 1);
 
   setup();

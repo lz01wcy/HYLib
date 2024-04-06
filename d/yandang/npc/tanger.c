@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÌÄ¶ù", ({ "tanger", "yahuan" }));
-	set("gender", "Å®ĞÔ");
+	set_name("æ£ å„¿", ({ "tanger", "yahuan" }));
+	set("gender", "å¥³æ€§");
 	set("age", 16);
    
 	set("combat_exp", 1000); 
-	set("nickname","Ñ¾÷ß");
+	set("nickname","ä¸«é¬Ÿ");
 	set_skill("unarmed", 20);
 	set_skill("parry", 20);
 	set_skill("dodge", 20);
@@ -30,8 +30,8 @@ void init()
 void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
-	     say("ÌÄ¶ùĞ¦Ó¯Ó¯µÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-	     + "£¬Ò²ÊÇÀ´ÕÒÎÒ¼ÒĞ¡½ãµÄÃ´?\n");
+	     say("æ£ å„¿ç¬‘ç›ˆç›ˆé“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+	     + "ï¼Œä¹Ÿæ˜¯æ¥æ‰¾æˆ‘å®¶å°å§çš„ä¹ˆ?\n");
 	return;
 }
 	

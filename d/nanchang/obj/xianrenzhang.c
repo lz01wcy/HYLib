@@ -3,16 +3,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÏÉÈËÕÆ", ({ "xianren zhang","zhang" }) );
+        set_name("ä»™äººæŒ", ({ "xianren zhang","zhang" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-		set("long","ÕâÊÇÒ»¸öÏÉÈËÕÆ£¬¿ÉÒÔÓÃËüÀ´Á¶ÖÆÒ©Îï¡£\n");
+                set("unit", "ä¸ª");
+		set("long","è¿™æ˜¯ä¸€ä¸ªä»™äººæŒï¼Œå¯ä»¥ç”¨å®ƒæ¥ç‚¼åˆ¶è¯ç‰©ã€‚\n");
                 set("medicine_type",([
 			    "gongxiao" :20+random(10),
-                            "type" : "ÆøÑª",
+                            "type" : "æ°”è¡€",
 		]));
                 
         }

@@ -6,11 +6,11 @@ int do_open();
 int do_close();
 void create()
 {
-	set("short", "пщо╒йр");
+	set("short", "Д╪▒Ф│╞Е╝╓");
 	set("long", @LONG
-    уБйгр╩╦Ж╨з╟╣╣д╢С╥©╪Д║ё╢╟╩╖сц╨Я╨Я╣да╠всузв║ё╛╡╩б╤к©╨а╧Баа  
-║ёнщдзуШфК╣дееапвей╝╪╦уед╬╟Е╢НЁи╣д╢╡флё╛©иртхца╥╧╕╨С╣д╟Ожз╪╟й╠╣ц╣╫ 
-пщо╒║ёуБюО╬╡гдгд╣дё╛╨з╟╣жпе╪╤Ш╢╚ю╢гЕн╒╣дВЩиЫ║ё
+    Х©≥Ф≤╞Д╦─Д╦╙И╩▒Ф ≈Г └Е╓╖Ф┬©И≈╢Ц─┌Г╙≈Ф┬╥Г■╗Е▌ Е▌ Г └Е╦≤Е╜░И│╝Д╫▐О╪▄Д╦█И°╡Д╦²Ф╞╚Е┘┴Д╨╝  
+Ц─┌Е╠▀Е├┘Ф∙╢И╫░Г └Ф▌▓Е┬≈Г²─Е█│Е┤═Е╪═Ф°╗Ф²©Ф░╜Ф┬░Г └Е╨┼И⌠╨О╪▄Е▐╞Д╩╔Х╝╘Г╩┐Е┼÷Е░▌Г └Е╦╝Д╪≈Е▐┼Ф≈╤Е╬≈Е┬╟ 
+Д╪▒Ф│╞Ц─┌Х©≥И┤▄И²≥Ф┌└Ф┌└Г └О╪▄И╩▒Ф ≈Д╦╜Е│╤Е╟■Д╪═Ф²╔Ф╦┘Е╬╝Г └И╪╬Её╟Ц─┌
 LONG	);
     set("sleep_room", 1);
     set("no_fight", 1);
@@ -35,9 +35,9 @@ void close_men()
 	if(objectp(room))
 	{
 		delete("exits/south");
-			message("vision", "цеж╗ж╗я╫я╫╣ьвт╪╨╨оиоак║ё\n", this_object());
+			message("vision", "И≈╗Е░╠Е░╠Е▒─Е▒─Е°╟Х┤╙Е╥╠Е░┬Д╦┼Д╨├Ц─┌\n", this_object());
 		room->delete("exits/north");
-		message("vision", "цеж╗ж╗я╫я╫╣ьвт╪╨╨оиоак║ё\n", room);
+		message("vision", "И≈╗Е░╠Е░╠Е▒─Е▒─Е°╟Х┤╙Е╥╠Е░┬Д╦┼Д╨├Ц─┌\n", room);
 	}
 }
 int do_tui(string arg)
@@ -46,26 +46,26 @@ int do_tui(string arg)
 	object me = this_player();
 
 	if (query("exits/south"))
-		return notify_fail("╢Сцеря╬╜йг©╙веак║ё\n");
+		return notify_fail("Е╓╖И≈╗Е╥╡Г╩▐Ф≤╞Е╪─Г²─Д╨├Ц─┌\n");
 
 	if (arg != "men" && arg != "door" && arg != "south")
-		return notify_fail("дЦр╙©╙й╡ц╢ё©\n");
+		return notify_fail("Д╫═Х╕│Е╪─Д╩─Д╧┬О╪÷\n");
 
 	if(!( room = find_object(__DIR__"zoulang-4")) )
 		room = load_object(__DIR__"zoulang-4");
 	if(objectp(room))
 	{
 		set("exits/south", __DIR__"zoulang-4");
-		message_vision("$NгАйжгА╫е╣ь╟яце╢Р©╙║ё\n", this_player());
+		message_vision("$NХ╫╩Ф┴▀Х╫╩Х└ Е°╟Ф┼┼И≈╗Ф┴⌠Е╪─Ц─┌\n", this_player());
 		room->set("exits/north", __FILE__);
 		
 		if (me->query_temp("sleeped"))
 		{
-		message("vision", "ж╗╣ьр╩иЫё╛"+me->query("name")+"╢сюОцФ╟яце╢Р©╙ак║ё\n",
+		message("vision", "Е░╠Е°╟Д╦─Её╟О╪▄"+me->query("name")+"Д╩▌И┤▄И²╒Ф┼┼И≈╗Ф┴⌠Е╪─Д╨├Ц─┌\n",
 		room);
 		} else 
 		{
-		message("vision", "ж╗╣ьр╩иЫё╛"+me->query("name")+"╢сюОцФ╟яце╢Р©╙║ё\n",
+		message("vision", "Е░╠Е°╟Д╦─Её╟О╪▄"+me->query("name")+"Д╩▌И┤▄И²╒Ф┼┼И≈╗Ф┴⌠Е╪─Ц─┌\n",
 			 room);
 		}	
 		

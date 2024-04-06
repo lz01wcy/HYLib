@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","�ƺӶɿ�");
+  set ("short","黄河渡口");
   set ("long", @LONG
-�����ǻƺ������Ķɿڡ���ǰ�ǹ����Ļƺӣ�ֻ�м�������������
-�ڶ����������ˡ�
+这里是黄河西岸的渡口。面前是滚滚的黄河，只有几个艄公在这里
+摆渡来往的行人。
 LONG);
 
   set("exits", ([ 

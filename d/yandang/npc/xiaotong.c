@@ -3,17 +3,17 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("ÇàÒÂĞ¡Í¯", ({"xiaotong", "xiaohai", }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é’è¡£å°ç«¥", ({"xiaotong", "xiaohai", }) );
+        set("gender", "ç”·æ€§" );
         set("age", 14);
         set("combat_exp", 2000);
         set("attitude", "friendly");
-        set("rank_info/respect", "Ğ¡¸ç");
+        set("rank_info/respect", "å°å“¥");
 
         set("inquiry", ([
-              "zhuangzhu": "×¯Ö÷ÔÚ´óÌü,ËûÆ½Ê±ºÜÉÙÀ´ÁË!\n",
-              "×¯Ö÷": "×¯Ö÷ÔÚ´óÌü,ËûÆ½Ê±ºÜÉÙÀ´ÁË!\n",
-              "½£": "ÄãËµµÄÊÇÇ½ÉÏµÄÄÇ°Ñ½£ÄÄ,×¯Ö÷Æ½Ê±¶¼²»Ğí±ğÈËÅöµÄ." ,
+              "zhuangzhu": "åº„ä¸»åœ¨å¤§å…,ä»–å¹³æ—¶å¾ˆå°‘æ¥äº†!\n",
+              "åº„ä¸»": "åº„ä¸»åœ¨å¤§å…,ä»–å¹³æ—¶å¾ˆå°‘æ¥äº†!\n",
+              "å‰‘": "ä½ è¯´çš„æ˜¯å¢™ä¸Šçš„é‚£æŠŠå‰‘å“ª,åº„ä¸»å¹³æ—¶éƒ½ä¸è®¸åˆ«äººç¢°çš„." ,
 ]) );
 
 
@@ -40,12 +40,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
 	inv=all_inventory(ob);
 	for(count=0;count<sizeof(inv);count++)
-	    if(inv[count]->query("name")=="°×Óñ±­")
+	    if(inv[count]->query("name")=="ç™½ç‰æ¯")
 	return;
 else
-     if(ob->query("family/family_name")=="Ñãµ´ÅÉ" ) 
+     if(ob->query("family/family_name")=="é›è¡æ´¾" ) 
   {
-  say("ÇàÒÂĞ¡Í¯¸ø"+ob->query("name")+"µİÉÏÒ»±­²è¡£\n");
+  say("é’è¡£å°ç«¥ç»™"+ob->query("name")+"é€’ä¸Šä¸€æ¯èŒ¶ã€‚\n");
   clone_object(__DIR__"obj/baiyubei")->move(ob);
 	return;
 }

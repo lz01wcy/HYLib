@@ -2,13 +2,13 @@
 inherit BLADE; 
 void create()
 {
-        set_name("ÎÚÇÊ³¤µ¶", ({ "black blade","blade" }) );
+        set_name("ä¹Œé˜é•¿åˆ€", ({ "black blade","blade" }) );
         set_weight(1000);
         if( clonep() )
             set_default_object(__FILE__);
         else {
-            set("unit", "°Ñ");
-            set("long", "ÕâÊÇÒ»°ÑÈĞÉÏÓĞÒ»¸öÈ±¿ÚµÄÀûÆ÷£¡\n");
+            set("unit", "æŠŠ");
+            set("long", "è¿™æ˜¯ä¸€æŠŠåˆƒä¸Šæœ‰ä¸€ä¸ªç¼ºå£çš„åˆ©å™¨ï¼\n");
             set("value", 10000);
                 set("rigidity", 15000);
             set("material", "steel");

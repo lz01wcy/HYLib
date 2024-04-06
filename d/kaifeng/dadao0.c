@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set ("short", "���");
+	set ("short", "大道");
 	set ("long", @LONG
-��ƽԭ֮�ϵ�һ����·�������˺ܶ࣬·�������Զ���и�Сͤ��
-������Ъ�ţ���ȥ���ǿ���ǡ����治Զ�Ǹ�����·�ڡ�
+在平原之上的一条大路，来往人很多，路边相隔不远就有个小亭子
+供行人歇脚，向北去就是开封城。南面不远是个三叉路口。
 LONG);
 	set("outdoors", "kaifeng");
 

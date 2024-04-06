@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ţ�Ҵ��");
+	set("short", "牛家村口");
 	set("long", @LONG
-����һ��С���������ڡ����Ӻ�С��������һƬ�ž��С��ϱ���
-Լ���Կ���һ���󽭡�
+这是一座小村落的西村口。村子很小，笼罩在一片寂静中。南边隐
+约可以看到一条大江。
 LONG
 	);
 	set("no_clean_up", 0);

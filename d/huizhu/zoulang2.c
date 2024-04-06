@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "×ßÀÈ");
+	set("short", "èµ°å»Š");
 	set("long",@LONG
-Äã×ßÔÚÒ»Ìõ³¤³¤µÄ×ßÀÈÉÏ£¬ËÄÖÜÃ»ÓÐÒ»¸öÈË£¬ÄãµÄ½Å²½Éù´«µÃºÜÔ¶£¬
-Á½ÅÔ³ØÌÁÀïµÄ²ÐºÉÉÏÍ£ÁË¼¸Ö»ßÉßÉÂÒ½ÐµÄÇàÍÜ£¬ÕóÕóÇá·ç´µÀ´£¬ÁîÈËÓû
-×í¡£ÄÏ±ßËÆºõÓÐÒ»ÉÈÃÅ¡£
+ä½ èµ°åœ¨ä¸€æ¡é•¿é•¿çš„èµ°å»Šä¸Šï¼Œå››å‘¨æ²¡æœ‰ä¸€ä¸ªäººï¼Œä½ çš„è„šæ­¥å£°ä¼ å¾—å¾ˆè¿œï¼Œ
+ä¸¤æ—æ± å¡˜é‡Œçš„æ®‹è·ä¸Šåœäº†å‡ åªå‘±å‘±ä¹±å«çš„é’è›™ï¼Œé˜µé˜µè½»é£Žå¹æ¥ï¼Œä»¤äººæ¬²
+é†‰ã€‚å—è¾¹ä¼¼ä¹Žæœ‰ä¸€æ‰‡é—¨ã€‚
 LONG );
 	set("outdoors", "huijiang");	
 	set("exits", ([
@@ -22,7 +22,7 @@ LONG );
 	set("coor/x", -50070);
 	set("coor/y", 9140);
 	set("coor/z", 10);
-	set("door_name","ÃÅ");
+	set("door_name","é—¨");
 	set("door_dir","south");
 	set("restroom",__DIR__"xiuxishi");
 

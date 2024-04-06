@@ -5,11 +5,11 @@ int ask_kill();
 
 void create()
 {
-    set_name("ÏòÎÊÌì", ({ "xiang wentian", "xiang"}));
-    set("nickname", HIR "ÌìÍõÀÏ×Ó" NOR );
-    set("gender", "ÄÐÐÔ");
-    set("title", "ÈÕÔÂÉñ½Ì¹âÃ÷ÓÒÊ¹");
-    set("long", "Ëû¾ÍÊÇÈÕÔÂÉñ½ÌµÄ¹âÃ÷ÓÒÊ¹¡£ÎªÈË¼«ÎªºÀË¬¡£\n");
+    set_name("å‘é—®å¤©", ({ "xiang wentian", "xiang"}));
+    set("nickname", HIR "å¤©çŽ‹è€å­" NOR );
+    set("gender", "ç”·æ€§");
+    set("title", "æ—¥æœˆç¥žæ•™å…‰æ˜Žå³ä½¿");
+    set("long", "ä»–å°±æ˜¯æ—¥æœˆç¥žæ•™çš„å…‰æ˜Žå³ä½¿ã€‚ä¸ºäººæžä¸ºè±ªçˆ½ã€‚\n");
     set("age", 45);
     set("shen_type", -1);
 
@@ -20,10 +20,10 @@ void create()
     set("dex", 30);
     set("chat_chance", 1);
     set("inquiry", ([
-      "ÑîÁ«Í¤"     : "ÕâÖÖÈË£¬¸ÃÉ±£¡\n",
-      "¶«·½²»°Ü"   : "´ÛÎ»ÅÑÍ½£¬ÎÒ·ÇÉ±ÁËËû²»¿É£¡\n",
-      "É±¶«·½²»°Ü" : (: ask_kill() :),
-      "ÈÎÎÒÐÐ"     : "½ÌÖ÷±»À§£¬ÒÑÀúÊ®Äê......\n",
+      "æ¨èŽ²äº­"     : "è¿™ç§äººï¼Œè¯¥æ€ï¼\n",
+      "ä¸œæ–¹ä¸è´¥"   : "ç¯¡ä½å›å¾’ï¼Œæˆ‘éžæ€äº†ä»–ä¸å¯ï¼\n",
+      "æ€ä¸œæ–¹ä¸è´¥" : (: ask_kill() :),
+      "ä»»æˆ‘è¡Œ"     : "æ•™ä¸»è¢«å›°ï¼Œå·²åŽ†åå¹´......\n",
     ]));
     set("qi", 14000);
     set("max_qi", 14000);
@@ -65,7 +65,7 @@ void create()
         set_temp("apply/attack", 200);
     prepare_skill("finger", "nianhua-zhi");
     prepare_skill("strike", "sanhua-zhang");
-    create_family("ÈÕÔÂÉñ½Ì", 2, "¹âÃ÷ÓÒÊ¹");
+    create_family("æ—¥æœˆç¥žæ•™", 2, "å…‰æ˜Žå³ä½¿");
 
     setup();
     carry_object(__DIR__"obj/cloth")->wear();
@@ -73,7 +73,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-    command("say ÎÒ²»ÊÕµÜ×Ó¡£\n");
+    command("say æˆ‘ä¸æ”¶å¼Ÿå­ã€‚\n");
     return;
 }
 
@@ -81,10 +81,10 @@ int ask_kill()
 {
    object ob,me = this_player();
 
-   command("tell "+this_player()->query("id")+" ÄãÒªÈ¥É±¶«·½²»°Ü£¿\n");
-   message_vision(HIC "ÏòÎÊÌì¶Ô$NµãÁËµãÍ·Ëµ£ºÎÒÖúÄãÒ»±ÛÖ®Á¦¡£\n" NOR,this_player());
+   command("tell "+this_player()->query("id")+" ä½ è¦åŽ»æ€ä¸œæ–¹ä¸è´¥ï¼Ÿ\n");
+   message_vision(HIC "å‘é—®å¤©å¯¹$Nç‚¹äº†ç‚¹å¤´è¯´ï¼šæˆ‘åŠ©ä½ ä¸€è‡‚ä¹‹åŠ›ã€‚\n" NOR,this_player());
    ob=new("/d/heimuya/npc/obj/card4");
    ob->move(me);
-   tell_object(me,"ÏòÎÊÌì´Ó»³ÀïÃþ³öÒ»¿éÁîÅÆÈûµ½ÄãµÄÊÖÉÏ¡£\n");
+   tell_object(me,"å‘é—®å¤©ä»Žæ€€é‡Œæ‘¸å‡ºä¸€å—ä»¤ç‰Œå¡žåˆ°ä½ çš„æ‰‹ä¸Šã€‚\n");
    return 1;
 }

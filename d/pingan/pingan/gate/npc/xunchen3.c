@@ -2,15 +2,15 @@
 inherit ITEM;
 void create()
 {
-    set_name(GRN"Ñ²³Ç±¨¸æ3"NOR, ({ "xunchen3" }) );
+    set_name(GRN"å·¡åŸŽæŠ¥å‘Š3"NOR, ({ "xunchen3" }) );
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
 	         set("value", 100);
-           set("unit", "±¾");
+           set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾Ñ²³Ç±¨¸æ¡£\n");
+            set("long", "ä¸€æœ¬å·¡åŸŽæŠ¥å‘Šã€‚\n");
           }
 
     setup();

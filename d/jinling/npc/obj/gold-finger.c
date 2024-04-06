@@ -5,13 +5,13 @@ inherit FINGER;
 
 void create()
 {
-	set_name("½ğ½äÖ¸", ({ "gold-finger", "finger" }) );
+	set_name("é‡‘æˆ’æŒ‡", ({ "gold-finger", "finger" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ö»»Æ½ğ´òÔìµÄ½äÖ¸£¬¿ÉÒÔ×÷ÎªÊÎÎï£¬¿ÉÔö¼ÓĞ¡Ğí¹¥»÷Á¦¡£\n");
-		set("unit", "Ö»");
+		set("long", "è¿™æ˜¯ä¸€åªé»„é‡‘æ‰“é€ çš„æˆ’æŒ‡ï¼Œå¯ä»¥ä½œä¸ºé¥°ç‰©ï¼Œå¯å¢åŠ å°è®¸æ”»å‡»åŠ›ã€‚\n");
+		set("unit", "åª");
 		set("value", 2000);
 		set("material", "gold");
 		set("armor_prop/damage", 2);

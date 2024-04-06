@@ -2,11 +2,11 @@
 #include <ansi.h> 
 void create() 
 {
-        set("short", "°öÆÕËÂ");
+        set("short", "èšŒæ™®å¯º");
         set("long", @LONG
-°öÆÕËÂÊÇÒ»ÊÀ¸ÁÂê°Í©q¶¼ËÉÇÕ°ÍÓÚÒ»Ò»ËÄËÄÄê´´½¨µÄ¡£ËÂÔºÒÀÉ½¸©Ë®£¬·ç¾°Èç
-»­¡£ËÂÄÚ´æÓĞÒ»ÊÀ¶¼ËÉÇÕ°Í×ÔËÜµñÏñÒ»×ğ£¬´óÊ¦ÉúÇ°ÁôÏÂµÄÊÖ¼££¬±ÇÑªÑÒ»­ÁîÈËËà
-È»Æğ¾´¡£ÔÚĞãÀöµÄÉ£¶ÑºÓÖĞ£¬ÓÎÓã³ÉÈº£¬¸ÃËÂÉ®ÈË³£ÓÃÊÖ¸§ÃşÓã±³£¬Î¹ÒÔôØôÎ¡£
+èšŒæ™®å¯ºæ˜¯ä¸€ä¸–å™¶ç›å·´qéƒ½æ¾é’¦å·´äºä¸€ä¸€å››å››å¹´åˆ›å»ºçš„ã€‚å¯ºé™¢ä¾å±±ä¿¯æ°´ï¼Œé£æ™¯å¦‚
+ç”»ã€‚å¯ºå†…å­˜æœ‰ä¸€ä¸–éƒ½æ¾é’¦å·´è‡ªå¡‘é›•åƒä¸€å°Šï¼Œå¤§å¸ˆç”Ÿå‰ç•™ä¸‹çš„æ‰‹è¿¹ï¼Œé¼»è¡€å²©ç”»ä»¤äººè‚ƒ
+ç„¶èµ·æ•¬ã€‚åœ¨ç§€ä¸½çš„æ¡‘å †æ²³ä¸­ï¼Œæ¸¸é±¼æˆç¾¤ï¼Œè¯¥å¯ºåƒ§äººå¸¸ç”¨æ‰‹æŠšæ‘¸é±¼èƒŒï¼Œå–‚ä»¥ç³Œç²‘ã€‚
 LONG
         );
         set("exits", ([ 
@@ -14,9 +14,9 @@ LONG
                 "north" : "/d/zangbei/sela",
         ]));
         set("item_desc", ([
-                "±ÇÑªÑÒ»­":     "¶¼ËÉÇÕ°ÍÉúÇ°ÁôÏÂµÄÊÖ¼£¡£\n",
-                "picture":      "¶¼ËÉÇÕ°ÍÉúÇ°ÁôÏÂµÄÊÖ¼£¡£\n",
-                "ÑÒ»­":         "¶¼ËÉÇÕ°ÍÉúÇ°ÁôÏÂµÄÊÖ¼£¡£\n",
+                "é¼»è¡€å²©ç”»":     "éƒ½æ¾é’¦å·´ç”Ÿå‰ç•™ä¸‹çš„æ‰‹è¿¹ã€‚\n",
+                "picture":      "éƒ½æ¾é’¦å·´ç”Ÿå‰ç•™ä¸‹çš„æ‰‹è¿¹ã€‚\n",
+                "å²©ç”»":         "éƒ½æ¾é’¦å·´ç”Ÿå‰ç•™ä¸‹çš„æ‰‹è¿¹ã€‚\n",
         ]));
         
         set("objects", ([
@@ -25,7 +25,7 @@ LONG
                 __DIR__"npc/monk4":     1,
         ]) );
          set("resource/water", 1);
-        set("liquid/container", "É£¶ÑºÓ");  
+        set("liquid/container", "æ¡‘å †æ²³");  
         set("coor/x",-1070);
         set("coor/y",170);
         set("coor/z",0);
@@ -49,52 +49,52 @@ void fish_notify(object obj){
         me = this_player();
         inv = all_inventory(obj);
         if(sizeof(inv) == 0){
-                message("vision",me->name() + "ÌÍ³öÁË" + obj->name() + "ÓÖ·ÅÁË»ØÈ¥¡£\n", environment(me), me);
-                tell_object(me, obj->name() + "ÉÏÃ»ÓĞ¶üÔõÃ´¿ÉÒÔµöÓãÄØ ? \n");           
+                message("vision",me->name() + "æå‡ºäº†" + obj->name() + "åˆæ”¾äº†å›å»ã€‚\n", environment(me), me);
+                tell_object(me, obj->name() + "ä¸Šæ²¡æœ‰é¥µæ€ä¹ˆå¯ä»¥é’“é±¼å‘¢ ? \n");           
                 return;
         }               
         for(i=0; i<sizeof(inv); i++) {
                 if(inv[i]->query("fish_bait")) {
                         bait = inv[i];
-                        message_vision("$N»Ó¶¯ÁËÒ»ÏÂ," + obj->name() + "ÔÚ¿ÕÖĞ»®ÁËÒ»µÀÆ¯ÁÁµÄ»¡Ïß, Óã¹³ÂäÈëÁËË®ÖĞ. \n" , me);
+                        message_vision("$NæŒ¥åŠ¨äº†ä¸€ä¸‹," + obj->name() + "åœ¨ç©ºä¸­åˆ’äº†ä¸€é“æ¼‚äº®çš„å¼§çº¿, é±¼é’©è½å…¥äº†æ°´ä¸­. \n" , me);
                         me->start_busy(5);
                         remove_call_out("do_fishing");              
                         call_out("do_fishing", 5, me, bait);                    
                         return;
                 } 
         }
-        tell_object(me, "ÄãÓÃµÄ¶ü²»Ì«¶Ô°É ? \n");                       
+        tell_object(me, "ä½ ç”¨çš„é¥µä¸å¤ªå¯¹å§ ? \n");                       
         return;
 } 
 void do_fishing(object me, object bait){
         object  fish; 
         if(me && environment(me) == this_object()) {
-                message_vision("$NºÜ¿ìÓÖ³¶¶¯ÁËÒ»ÏÂÓã¸Ë, " , me);
+                message_vision("$Nå¾ˆå¿«åˆæ‰¯åŠ¨äº†ä¸€ä¸‹é±¼æ†, " , me);
                 switch (random(10)) {
                         case 0:
                         case 1:
                         case 2:
-                        case 3:         message_vision("È´Ê²Ã´¶¼Ã»µöÉÏÀ´ ! \n", me);
+                        case 3:         message_vision("å´ä»€ä¹ˆéƒ½æ²¡é’“ä¸Šæ¥ ! \n", me);
                                         break;
                         case 4:
                         case 5:
-                           case 6:         message_vision("Ê²Ã´¶¼Ã»µöÉÏÀ´ , Óã¶üÈ´±»Óã³ÔÁË !!  \n", me);
+                           case 6:         message_vision("ä»€ä¹ˆéƒ½æ²¡é’“ä¸Šæ¥ , é±¼é¥µå´è¢«é±¼åƒäº† !!  \n", me);
                                         destruct(bait);                         
                                         break;
                         case 7:
                         case 8:
                         case 9:         if (!bait->query("fish_bait_zanba")){        
-                                                message_vision("Ê²Ã´¶¼Ã»µöÉÏÀ´ , Óã¶üÈ´±»Óã³ÔÁË !!  \n", me);
+                                                message_vision("ä»€ä¹ˆéƒ½æ²¡é’“ä¸Šæ¥ , é±¼é¥µå´è¢«é±¼åƒäº† !!  \n", me);
                                                 destruct(bait);                         
                                                 break;
                                         }       
                                         if (random(5)) {                                
-                                                message_vision("Óã¹³ÉÏµöµ½ÁËÒ»Ìõ´óÓã£¡£¡£¡  \n", me);
+                                                message_vision("é±¼é’©ä¸Šé’“åˆ°äº†ä¸€æ¡å¤§é±¼ï¼ï¼ï¼  \n", me);
                                                 fish = new(__DIR__"obj/fish");
                                                 fish->move(me);
                                         } else {      
-                                                message_vision("ÓãÏßÍùÏÂÒ»³Á£¬ËÆºõ¹³µ½ÁËÊ²Ã´ÖØÎï £¡£¡  \n", me);
-                                                message_vision("$N·Ñ¾¢µØ°ÑÓã¸ÍÀ­ÁËÉÏÀ´¡£\n",me);
+                                                message_vision("é±¼çº¿å¾€ä¸‹ä¸€æ²‰ï¼Œä¼¼ä¹é’©åˆ°äº†ä»€ä¹ˆé‡ç‰© ï¼ï¼  \n", me);
+                                                message_vision("$Nè´¹åŠ²åœ°æŠŠé±¼ç«¿æ‹‰äº†ä¸Šæ¥ã€‚\n",me);
                                                 fish = new(__DIR__"obj/item");
                                                 fish->move(me);
                                         }

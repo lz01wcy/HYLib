@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»¹Ê©Ë®¸ó");
+        set("short", "è¿˜æ–½æ°´é˜");
         set("long",@LONG
-¸óÖÐÂúÊÇÊé¼Ü£¬¼ÜÉÏ°Ú×ÅÐí¶àÆÄ¹Å¾ÉµÄÊé¼®£¬¼ÜÉÏ¾ùÌùÓÐ±êÇ©(sign)¡£
-Õâ¾ÍÊÇÄ½ÈÝÊÀ¼ÒÀú¾­Êý´ú²ÅÊÕ¼¯»ýÀÛ¶ø³ÉµÄÎäÑ§±¦¿â¡£
+é˜ä¸­æ»¡æ˜¯ä¹¦æž¶ï¼Œæž¶ä¸Šæ‘†ç€è®¸å¤šé¢‡å¤æ—§çš„ä¹¦ç±ï¼Œæž¶ä¸Šå‡è´´æœ‰æ ‡ç­¾(sign)ã€‚
+è¿™å°±æ˜¯æ…•å®¹ä¸–å®¶åŽ†ç»æ•°ä»£æ‰æ”¶é›†ç§¯ç´¯è€Œæˆçš„æ­¦å­¦å®åº“ã€‚
 LONG );
         set("exits", ([
             "north": __DIR__"jiashan",
@@ -21,7 +21,7 @@ LONG );
         ]));
         set("item_desc",([
             "sign" :
-            "ÓÉÓÚÄ½ÈØ¼ÒÖ÷ÈËÍâ³ö£¬´ó²¿·ÖÃÜ¼®¶¼±¸·â´æÁË¡£\n"
+            "ç”±äºŽæ…•è“‰å®¶ä¸»äººå¤–å‡ºï¼Œå¤§éƒ¨åˆ†å¯†ç±éƒ½å¤‡å°å­˜äº†ã€‚\n"
         ]));
         set("no_clean_up", 0);
         setup();

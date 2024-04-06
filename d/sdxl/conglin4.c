@@ -9,11 +9,11 @@ string shanlu(object);
 
 void create()
 {
-	set("short", "É½Â·");
+	set("short", "å±±è·¯");
 	set("long", @LONG
-ÕâÀïÊÇÉ½Â´(shanlu)ÉÏµÄÒ»¿é¿ÕµØ£¬Â·ÅÔµÄÔÓ²İºÍÊ÷Ä¾±»ÈË
-ĞİÕû¹ıÁË¡£Â·ÅÔÓĞÒ»¸öÓÃÊ÷Ä¾´îÆğµÄĞ¡Îİ£¬Ğ¡Îİ(xiaowu)µÄÃÅ¿Ú
-ÓĞÒ»Ğ©ÁÔÈËÔÚĞİÏ¢¡£Ò»Ğ©¹­¼ıºÍÉşË÷¹ÒÔÚÂ·ÅÔµÄÊ÷ÉÏ¡£
+è¿™é‡Œæ˜¯å±±éº“(shanlu)ä¸Šçš„ä¸€å—ç©ºåœ°ï¼Œè·¯æ—çš„æ‚è‰å’Œæ ‘æœ¨è¢«äºº
+ä¼‘æ•´è¿‡äº†ã€‚è·¯æ—æœ‰ä¸€ä¸ªç”¨æ ‘æœ¨æ­èµ·çš„å°å±‹ï¼Œå°å±‹(xiaowu)çš„é—¨å£
+æœ‰ä¸€äº›çŒäººåœ¨ä¼‘æ¯ã€‚ä¸€äº›å¼“ç®­å’Œç»³ç´¢æŒ‚åœ¨è·¯æ—çš„æ ‘ä¸Šã€‚
 LONG	);
 	set("exits", ([  
         "eastdown" : __DIR__"conglin3",
@@ -39,19 +39,19 @@ string xiaowu(object me)
 {
             me = this_player();
             if(!me->query_temp("make/xtj_look1")){
-            return "Ò»¼äÆÕÍ¨µÄĞ¡Ä¾Îİ¡£\n";
+            return "ä¸€é—´æ™®é€šçš„å°æœ¨å±‹ã€‚\n";
             }
             me->set_temp("make/xtj_enter",1);
-            return "Ò»¼äÆÕÍ¨µÄĞ¡Ä¾Îİ£¬ÎİÃÅ°ëÑÚ×Å£¬ÀïÃæËÆºõ¶Ñ»ı×ÅÒ»Ğ©ÔÓÎï¡£\n";
+            return "ä¸€é—´æ™®é€šçš„å°æœ¨å±‹ï¼Œå±‹é—¨åŠæ©ç€ï¼Œé‡Œé¢ä¼¼ä¹å †ç§¯ç€ä¸€äº›æ‚ç‰©ã€‚\n";
 }
 string shanlu(object me)
 {
             me = this_player();
             if (!me->query_temp("make/xtj_look1")){
-            return "Ò»×ù¸ßËÊµÄÉ½Â´¡£\n";
+            return "ä¸€åº§é«˜è€¸çš„å±±éº“ã€‚\n";
             }
             me->set_temp("make/xtj_shan",1);
-          return "Ò»×ù¸ßËÊµÄÉ½Â´£¬ÄãËÆºõ¸Ğ¾õµ½ÄÇÀïËÆºõÓĞĞ©Ê²÷á¡£\n";
+          return "ä¸€åº§é«˜è€¸çš„å±±éº“ï¼Œä½ ä¼¼ä¹æ„Ÿè§‰åˆ°é‚£é‡Œä¼¼ä¹æœ‰äº›ä»€éº½ã€‚\n";
 }
 void init()
 {
@@ -62,7 +62,7 @@ void init()
  
     if(interactive(ob) && (int)ob->query_skill("force") > 100
     && random(20) < 5){
-    write("ÄãºöÈ»Ìı¼û±±ÃæµÄÉ½ºó´«À´¼¸ÉùµñÃù¡£\n",this_player());
+    write("ä½ å¿½ç„¶å¬è§åŒ—é¢çš„å±±åä¼ æ¥å‡ å£°é›•é¸£ã€‚\n",this_player());
     ob->set_temp("make/xtj_look1",1);
         }
  
@@ -77,11 +77,11 @@ int do_enter(string arg)
        return 0;
       
     if((!arg) || (arg != "muwu"))
-        return notify_fail("ÄãÒª½øÄÇÀï£¿\n");
-     message_vision("$NÇáÇáÍÆ¿ªÃÅ£¬×ß½øÁËÄ¾Îİ¡£\n", me);
+        return notify_fail("ä½ è¦è¿›é‚£é‡Œï¼Ÿ\n");
+     message_vision("$Nè½»è½»æ¨å¼€é—¨ï¼Œèµ°è¿›äº†æœ¨å±‹ã€‚\n", me);
     me->delete_temp("make/xtj_enter");
        me->move(__DIR__"muwu");
-    message("vision", me->name() + "ÍÆÃÅ×ßÁË½øÀ´¡£\n", environment(me), ({me}) );
+    message("vision", me->name() + "æ¨é—¨èµ°äº†è¿›æ¥ã€‚\n", environment(me), ({me}) );
     return 1;
 }
 int do_climb(string arg)
@@ -90,11 +90,11 @@ int do_climb(string arg)
     if (!me->query_temp("make/xtj_shan"))
     return 0;
     if((!arg) || (arg != "shanlu"))
-    return notify_fail("ÄãÏòÄÇÀïÅÀ£¿\n");
+    return notify_fail("ä½ å‘é‚£é‡Œçˆ¬ï¼Ÿ\n");
     me->delete_temp("make/xtj_shan");
-    message_vision("$NÎ¢Î¢ÌáÆø£¬×İÉíÏò±±ÃæµÄÉ½Â´ÅÀÈ¥¡£\n", me);
+    message_vision("$Nå¾®å¾®ææ°”ï¼Œçºµèº«å‘åŒ—é¢çš„å±±éº“çˆ¬å»ã€‚\n", me);
     me->move(__DIR__"linhai1");
-    message("vision", me->name() + "´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n", environment(me), ({me}) );
+    message("vision", me->name() + "ä»ä¸‹é¢çˆ¬äº†ä¸Šæ¥ã€‚\n", environment(me), ({me}) );
     return 1;
 }
 

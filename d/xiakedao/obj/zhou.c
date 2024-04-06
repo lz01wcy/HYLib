@@ -11,12 +11,12 @@ void init()
 
 void create()
 {
-        set_name("À°°ËÖà", ({ "zhou"}));
+        set_name("è…Šå…«ç²¥", ({ "zhou"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Íë");
-                set("long", "ÕâÊÇÒ»ÍëÕä¹óµÄ²¹Æ·À°°ËÖà¡£\n");
+                set("unit", "ç¢—");
+                set("long", "è¿™æ˜¯ä¸€ç¢—çè´µçš„è¡¥å“è…Šå…«ç²¥ã€‚\n");
                 set("value", 20000);
         }
         setup();
@@ -32,17 +32,17 @@ int do_eat(string arg)
         neili_limit = me->query("max_neili");
 
         if (!id(arg)||(arg!="gao"&&arg!="zhou"))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         if ( neili_limit <= force_limit  )
         {
              me->add("max_neili",random(50));
              me->add("neili",25-random(50));
 
-message_vision(HIY "$N³ÔÏÂÒ»ÍëÀ°°ËÖà£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉÈÈÆøÖ±ÇßĞÄ·Î...\n" NOR, this_player());
+message_vision(HIY "$Nåƒä¸‹ä¸€ç¢—è…Šå…«ç²¥ï¼Œé¡¿ç„¶é—´åªè§‰ä¸€è‚¡çƒ­æ°”ç›´æ²å¿ƒè‚º...\n" NOR, this_player());
         }
         else
-message_vision(HIY "$N³ÔÏÂÒ»ÍëÀ°°ËÖà£¬µ«ÊÇºÃÏóÃ»Ê²Ã´ÓÃ...\n" NOR,this_player());
+message_vision(HIY "$Nåƒä¸‹ä¸€ç¢—è…Šå…«ç²¥ï¼Œä½†æ˜¯å¥½è±¡æ²¡ä»€ä¹ˆç”¨...\n" NOR,this_player());
 
         destruct(this_object());
         return 1;

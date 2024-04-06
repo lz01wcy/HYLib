@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /clone/beast/xbaozi.c
-// Ğ¡±ª×Ó
+// å°è±¹å­
 // sdong 08/98
 // Modified by xQin 11/00
 
@@ -10,12 +10,12 @@ inherit NPC;
 
 void create()
 {
-		  set_name("Ğ¡±ª×Ó", ({ "xiao baozi", "baozi" }) );
+		  set_name("å°è±¹å­", ({ "xiao baozi", "baozi" }) );
 set("no_get",1);
-	set("race", "Ò°ÊŞ");
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+	set("race", "é‡å…½");
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åè„š", "å°¾å·´" }) );
 	set("verbs", ({ "bite", "claw" }) );
-		  set("long", "Ò»Ö»ÉíÌå²»´ó¿ÉÊÇºÜ½áÊµµÄĞ¡±ª×Ó£¬ËüÕıµÉ×ÅÑÛ¾¦¿´×ÅÄã¡£\n");
+		  set("long", "ä¸€åªèº«ä½“ä¸å¤§å¯æ˜¯å¾ˆç»“å®çš„å°è±¹å­ï¼Œå®ƒæ­£çªç€çœ¼ç›çœ‹ç€ä½ ã€‚\n");
 		  set("attitude", "aggressive");
 		  set("max_qi", 100);
 		  set("max_jing", 100);

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-		set("short", RED"ÃßÁú¶´¾¡Í·"NOR);
+		set("short", RED"çœ é¾™æ´å°½å¤´"NOR);
 	set("long", RED @LONG
-    ÕâÀïÒÑ¾­ÊÇ¶´Ñ¨µÄ¾¡Í·ÁË£¬ËÄÖÜ¶¼ÊÇ¹öÌÌµÄÑÒ½¬£¬Ò»¸ö
-ÅÓÈ»´óÎïÕı¶×ÔÚÂ·ÖĞÑë£¬¿ÚÖĞÉ¢·¢×ÅÕóÕó»ğÑæ¡£ 
+    è¿™é‡Œå·²ç»æ˜¯æ´ç©´çš„å°½å¤´äº†ï¼Œå››å‘¨éƒ½æ˜¯æ»šçƒ«çš„å²©æµ†ï¼Œä¸€ä¸ª
+åºç„¶å¤§ç‰©æ­£è¹²åœ¨è·¯ä¸­å¤®ï¼Œå£ä¸­æ•£å‘ç€é˜µé˜µç«ç„°ã€‚ 
 LONG NOR);
 	set("exits", ([
 		"north" : __DIR__"dong3",
@@ -37,9 +37,9 @@ int valid_leave(object me, string dir)
 	int sizeinv,n,tt;
 	
        if ( present("huo long", environment(me)) && dir == "down" )
-        return notify_fail("»ğÁúÍõµ²×¡ÁËÄãµÄÈ¥Â·!!\n");
+        return notify_fail("ç«é¾™ç‹æŒ¡ä½äº†ä½ çš„å»è·¯!!\n");
        if ( me->is_fighting() && dir == "down" )
-        return notify_fail("»ğÁúÃÇµ²×¡ÁËÄãµÄÈ¥Â·!!\n");
+        return notify_fail("ç«é¾™ä»¬æŒ¡ä½äº†ä½ çš„å»è·¯!!\n");
 
 	if (dir =="down")
 	{
@@ -51,7 +51,7 @@ me->set("magicgift",2);
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
 		

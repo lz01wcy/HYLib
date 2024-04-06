@@ -1,4 +1,4 @@
-// hong.c ºé°²Í¨
+// hong.c æ´ªå®‰é€š
 
 #include <ansi.h>
 inherit NPC;
@@ -9,11 +9,11 @@ int do_join(string arg);
 
 void create()
 {
-	set_name("ºé°²Í¨", ({ "hong-antong", "hong" }));
-	set("title",  "ÉñÁú½Ì½ÌÖ÷" );
-        set("nickname", HIR "ÓÀÏíÏÉ¸£" NOR);
-	set("long", "Ëû¾ÍÊÇÎä¹¦¸ÇÊÀ¡¢Áî½­ºşÈËµÈÌ¸Ö®É«±äµÄÉñÁú½Ì½ÌÖ÷ºé°²Í¨¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ´ªå®‰é€š", ({ "hong-antong", "hong" }));
+	set("title",  "ç¥é¾™æ•™æ•™ä¸»" );
+        set("nickname", HIR "æ°¸äº«ä»™ç¦" NOR);
+	set("long", "ä»–å°±æ˜¯æ­¦åŠŸç›–ä¸–ã€ä»¤æ±Ÿæ¹–äººç­‰è°ˆä¹‹è‰²å˜çš„ç¥é¾™æ•™æ•™ä¸»æ´ªå®‰é€šã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 50);
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -71,7 +71,7 @@ void greeting(object ob)
 	int i;
 
 	obj = all_inventory(environment(me));
-        command("say ·òÈËËùËµÉõÊÇÓĞÀí£¬µ«Õâ¾äËÆ¸üº¬ÉîÒâ¡£");
+        command("say å¤«äººæ‰€è¯´ç”šæ˜¯æœ‰ç†ï¼Œä½†è¿™å¥ä¼¼æ›´å«æ·±æ„ã€‚");
 	for(i=0; i<sizeof(obj); i++)
 	{
 		if( obj[i]->query("id")=="su-quan")
@@ -80,7 +80,7 @@ void greeting(object ob)
                     COMBAT_D->do_attack(me, obj[i], me->query_temp("weapon"), 0);
                 }
 	}
-        command("say ºá½£ËÆÖ¸½£ĞĞÖ®ÊÆ¡£¡£¡£");
+        command("say æ¨ªå‰‘ä¼¼æŒ‡å‰‘è¡Œä¹‹åŠ¿ã€‚ã€‚ã€‚");
         return;
 }
 

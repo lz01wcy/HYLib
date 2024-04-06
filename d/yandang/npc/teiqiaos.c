@@ -2,10 +2,10 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("ÌúÇÅÈı", ({ "tie qiaosan", "tie"}) );
-set("title","Ñãµ´Èı½£");
-        set("gender", "ÄĞĞÔ");
-set("nickname","±¯Ìì½£");
+        set_name("é“æ¡¥ä¸‰", ({ "tie qiaosan", "tie"}) );
+set("title","é›è¡ä¸‰å‰‘");
+        set("gender", "ç”·æ€§");
+set("nickname","æ‚²å¤©å‰‘");
 	set("age", 46);
 	set("str", 30);
 	set("cor", 30);
@@ -26,7 +26,7 @@ set("nickname","±¯Ìì½£");
 	set_skill("dodge", 120);
        set_skill("force", 120);
  
-create_family("Ñãµ´ÅÉ",2,"µÜ×Ó");
+create_family("é›è¡æ´¾",2,"å¼Ÿå­");
 	set_temp("apply/attack", 15);
 	set_temp("apply/defense", 15);
 	set_temp("apply/damage", 20);

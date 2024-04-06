@@ -7,12 +7,12 @@ int ask_skill1();
 int ask_skill2();
 void create ()
 {
-	set_name("¶¡µä", ({"ding dian","ding","dian"}));
+	set_name("ä¸å…¸", ({"ding dian","ding","dian"}));
 	set("long", "
-ÕâÈËÂúÁ³ò°÷×£¬Í··¢³¤³¤µÄÖ±´¹ÖÁ¾±£¬ÒÂÉÀÆÆÀÃ²»¿°£¬¼òÖ±ÈçÍ¬»ÄÉ½ÖÐ
-µÄÒ°ÈË¡£ÊÖÉÏÊÖîí£¬×ãÉÏ×ãÁÍ£¬ÅýÅÃ¹ÇÖÐ´©×ÅÁ½ÌõÌúÁ´¡£ËûÁ³ÉÏ¡¢±ÛÉÏ¡¢
-ÍÈÉÏ£¬¶¼ÊÇ¿áÔâ±Þ´òµÄÑªºÛ¡£\n");
-	set("gender", "ÄÐÐÔ");
+è¿™äººæ»¡è„¸è™¬é«¯ï¼Œå¤´å‘é•¿é•¿çš„ç›´åž‚è‡³é¢ˆï¼Œè¡£è¡«ç ´çƒ‚ä¸å ªï¼Œç®€ç›´å¦‚åŒè’å±±ä¸­
+çš„é‡Žäººã€‚æ‰‹ä¸Šæ‰‹é“ï¼Œè¶³ä¸Šè¶³é•£ï¼Œçµç¶éª¨ä¸­ç©¿ç€ä¸¤æ¡é“é“¾ã€‚ä»–è„¸ä¸Šã€è‡‚ä¸Šã€
+è…¿ä¸Šï¼Œéƒ½æ˜¯é…·é­éž­æ‰“çš„è¡€ç—•ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("combat_exp", 5000000);
 	set("str", 30);
@@ -32,15 +32,15 @@ void create ()
 	map_skill("dodge", "feixian-steps");
 	set("chat_chance", 10);
 	set("chat_msg", ({
-"¶¡µäÇáÇáÌ¾ÁËÒ»¿ÚÆø¡£ÄÇÌ¾Ï¢ÖÐ£¬¾¹ÓÐÓÇÉË¡¢ÎÂÈáÖ®Òâ¡£\n",
-"¶¡µä×ì½Ç¹Ò×ÅÒ»Ë¿Î¢Ð¦£¬³ÕÍûÔ¶´¦¸ßÂ¥É´´°ÉÏÄÇÒ»ÅèÏÊ»¨¡£\n",
-"¶¡µä´óÉùµÀ£ºÔõÃ´»áÍü¼Ç£¿¾ö²»»áµÄ£¡ÄÑµÀ¡­¡­ÄÑµÀÊÇÉúÁË²¡£¿\n",
-"¶¡µäà«à«µÀ£º¾ÍËãÊÇÉúÁË²¡£¬Ò²»á½ÐÈËÀ´»»»¨°¡£¡\n",
+"ä¸å…¸è½»è½»å¹äº†ä¸€å£æ°”ã€‚é‚£å¹æ¯ä¸­ï¼Œç«Ÿæœ‰å¿§ä¼¤ã€æ¸©æŸ”ä¹‹æ„ã€‚\n",
+"ä¸å…¸å˜´è§’æŒ‚ç€ä¸€ä¸å¾®ç¬‘ï¼Œç—´æœ›è¿œå¤„é«˜æ¥¼çº±çª—ä¸Šé‚£ä¸€ç›†é²œèŠ±ã€‚\n",
+"ä¸å…¸å¤§å£°é“ï¼šæ€Žä¹ˆä¼šå¿˜è®°ï¼Ÿå†³ä¸ä¼šçš„ï¼éš¾é“â€¦â€¦éš¾é“æ˜¯ç”Ÿäº†ç—…ï¼Ÿ\n",
+"ä¸å…¸å–ƒå–ƒé“ï¼šå°±ç®—æ˜¯ç”Ÿäº†ç—…ï¼Œä¹Ÿä¼šå«äººæ¥æ¢èŠ±å•Šï¼\n",
 }) );
 	set("inquiry", ([
-		"ÁèËª»ª" : "¡°°¦¡­¡­¡±£¬È»ºóÖ¸ÁËÖ¸ÀÎÍâÄÇ×ùÐ¡Â¥µÄ´°¿Ú£¬É¶Ò²²»ËµÁË¡£\n",
-		"»½ÐÑ"   : (: ask_skill1 :),
-		"ÁÆ¾«"   : (: ask_skill2 :),
+		"å‡ŒéœœåŽ" : "â€œå”‰â€¦â€¦â€ï¼Œç„¶åŽæŒ‡äº†æŒ‡ç‰¢å¤–é‚£åº§å°æ¥¼çš„çª—å£ï¼Œå•¥ä¹Ÿä¸è¯´äº†ã€‚\n",
+		"å”¤é†’"   : (: ask_skill1 :),
+		"ç–—ç²¾"   : (: ask_skill2 :),
 	]));
 
 	setup();
@@ -49,21 +49,21 @@ void create ()
 
 int recognize_apprentice(object ob)
 {
-	if (!(int)ob->query_temp("mark/¶¡"))
+	if (!(int)ob->query_temp("mark/ä¸"))
 		return 0;
-	ob->add_temp("mark/¶¡", -1);
+	ob->add_temp("mark/ä¸", -1);
 	return 1;
 }
 
 int accept_object(object who, object ob)
 {
 	object me = this_player();
-	if (!(int)who->query_temp("mark/¶¡"))
-		who->set_temp("mark/¶¡", 0);
+	if (!(int)who->query_temp("mark/ä¸"))
+		who->set_temp("mark/ä¸", 0);
 	if (ob->query("id") == "green flower")
 	{
-		message_vision("¿´À´$NÓÐÍûµÃµ½¶¡µäÖ¸µãÒ»Ð©Îä¹¦µÄÎÊÌâ¡£\n",who);
-		who->add_temp("mark/¶¡", 1000);
+		message_vision("çœ‹æ¥$Næœ‰æœ›å¾—åˆ°ä¸å…¸æŒ‡ç‚¹ä¸€äº›æ­¦åŠŸçš„é—®é¢˜ã€‚\n",who);
+		who->add_temp("mark/ä¸", 1000);
 		return 1;
 	}
 }
@@ -73,18 +73,18 @@ int ask_skill1()
 	object ob = this_object();
 	object who = this_player();
 	
-	if (!who->query_temp("mark/¶¡")) return 0;
+	if (!who->query_temp("mark/ä¸")) return 0;
 	if (!who->query_skill("shenzhao-jing",1)) return 0;
 	if (who->query("can_perform/shenzhao-jing/wakeup")) return 0;
 	if (who->query_skill("shenzhao-jing",1) < 100)
 	{
-		command("say ÄãµÄÉñÕÕ¾­¹¦Á¦»¹²»¹»¸ß£¬¶àÑ§Ñ§°É¡£");
+		command("say ä½ çš„ç¥žç…§ç»åŠŸåŠ›è¿˜ä¸å¤Ÿé«˜ï¼Œå¤šå­¦å­¦å§ã€‚");
 		return 1;
 	}
 	command("sign");
-	command("say ²»ÖªÄãÑ§µÃÉñÕÕ¾­ÊÇ¸£ÊÇ»öÁË¡£Ò²°Õ£¬ËæÄãÈ¥°É¡£");
-	tell_object(who,HIC"¶¡µäÔÚÄã¶ú±ßÇÄÇÄËµÁË¼¸¾äÔË¹¦µÄ¿Ú¾÷£¬Äã¼±Ã¦ÓÃÐÄÒ»Ò»¼ÇÏÂ¡£\n"NOR);
-	tell_object(who,HIC "ÄãÑ§»áÁË¡¸»½ÐÑ¡¹¡£\n" NOR);
+	command("say ä¸çŸ¥ä½ å­¦å¾—ç¥žç…§ç»æ˜¯ç¦æ˜¯ç¥¸äº†ã€‚ä¹Ÿç½¢ï¼Œéšä½ åŽ»å§ã€‚");
+	tell_object(who,HIC"ä¸å…¸åœ¨ä½ è€³è¾¹æ‚„æ‚„è¯´äº†å‡ å¥è¿åŠŸçš„å£è¯€ï¼Œä½ æ€¥å¿™ç”¨å¿ƒä¸€ä¸€è®°ä¸‹ã€‚\n"NOR);
+	tell_object(who,HIC "ä½ å­¦ä¼šäº†ã€Œå”¤é†’ã€ã€‚\n" NOR);
 	who->set("can_perform/shenzhao-jing/wakeup",1);
 	return 1;
 }
@@ -93,18 +93,18 @@ int ask_skill2()
 	object ob = this_object();
 	object who = this_player();
 	
-	if (!who->query_temp("mark/¶¡")) return 0;
+	if (!who->query_temp("mark/ä¸")) return 0;
 	if (!who->query_skill("shenzhao-jing",1)) return 0;
 	if (who->query("can_perform/shenzhao-jing/jingheal")) return 0;
 	if (who->query_skill("shenzhao-jing",1) < 50)
 	{
-		command("say ÄãµÄÉñÕÕ¾­¹¦Á¦»¹²»¹»¸ß£¬¶àÑ§Ñ§°É¡£");
+		command("say ä½ çš„ç¥žç…§ç»åŠŸåŠ›è¿˜ä¸å¤Ÿé«˜ï¼Œå¤šå­¦å­¦å§ã€‚");
 		return 1;
 	}
 	command("sign");
-	command("say ²»ÖªÄãÑ§µÃÉñÕÕ¾­ÊÇ¸£ÊÇ»öÁË¡£Ò²°Õ£¬ËæÄãÈ¥°É¡£");
-	tell_object(who,HIC"¶¡µäÔÚÄã¶ú±ßÇÄÇÄËµÁË¼¸¾äÔË¹¦µÄ¿Ú¾÷£¬Äã¼±Ã¦ÓÃÐÄÒ»Ò»¼ÇÏÂ¡£\n"NOR);
-	tell_object(who,HIC "ÄãÑ§»áÁË¡¸ÁÆ¾«¡¹¡£\n" NOR);
+	command("say ä¸çŸ¥ä½ å­¦å¾—ç¥žç…§ç»æ˜¯ç¦æ˜¯ç¥¸äº†ã€‚ä¹Ÿç½¢ï¼Œéšä½ åŽ»å§ã€‚");
+	tell_object(who,HIC"ä¸å…¸åœ¨ä½ è€³è¾¹æ‚„æ‚„è¯´äº†å‡ å¥è¿åŠŸçš„å£è¯€ï¼Œä½ æ€¥å¿™ç”¨å¿ƒä¸€ä¸€è®°ä¸‹ã€‚\n"NOR);
+	tell_object(who,HIC "ä½ å­¦ä¼šäº†ã€Œç–—ç²¾ã€ã€‚\n" NOR);
 	who->set("can_perform/shenzhao-jing/jingheal",1);
 	return 1;
 }

@@ -5,12 +5,12 @@ inherit ROOM;
 string look_gaoshi();
 void create()
 {
-	set("short", "Ì¶±ßÐ¡Â·");
+	set("short", "æ½­è¾¹å°è·¯");
 	set("long", @LONG
-¼¾½ÚËäÈ»ÒÑ¾­ÊÇÉîÇï£¬µ«ÈÕÕýµ±ÖÐµÄÑô¹â£¬ÈÔ¾ÉÊÇÊ®·ÖÑ×ÈÈµÄ¡£ËÄ
-ÖÜÊÇÒ»Æ¬Ü½ÈØÊ÷£¬Ô¶É½ÒþÔÚÔÆÎíÖ®ÖÐ£¬»ÐÈôÃÔÀëµÄÃÀÈË£¬²»Ô¶´¦ÓÐ×Å£¬
-Ò»´Ô´ÔµÄÊ÷ÁÖ£¬ÓÐÒ»ÌõÏªÁ÷£¬ÑØ×ÅÁÖÅÔòêÑÑÁ÷È¥¡£ÖÃÉíÆäÖÐ£¬ÈÃÈËÓÐ·¢
-¹ÅÖ®ÓÄË¼£¬ÓÖÏí´ó×ÔÈ»Ö®ÀËÂþ¡£
+å­£èŠ‚è™½ç„¶å·²ç»æ˜¯æ·±ç§‹ï¼Œä½†æ—¥æ­£å½“ä¸­çš„é˜³å…‰ï¼Œä»æ—§æ˜¯ååˆ†ç‚Žçƒ­çš„ã€‚å››
+å‘¨æ˜¯ä¸€ç‰‡èŠ™è“‰æ ‘ï¼Œè¿œå±±éšåœ¨äº‘é›¾ä¹‹ä¸­ï¼Œæè‹¥è¿·ç¦»çš„ç¾Žäººï¼Œä¸è¿œå¤„æœ‰ç€ï¼Œ
+ä¸€ä¸›ä¸›çš„æ ‘æž—ï¼Œæœ‰ä¸€æ¡æºªæµï¼Œæ²¿ç€æž—æ—èœ¿èœ’æµåŽ»ã€‚ç½®èº«å…¶ä¸­ï¼Œè®©äººæœ‰å‘
+å¤ä¹‹å¹½æ€ï¼Œåˆäº«å¤§è‡ªç„¶ä¹‹æµªæ¼«ã€‚
 LONG );
 	set("outdoors", "chengdu");
 	set("exits", ([

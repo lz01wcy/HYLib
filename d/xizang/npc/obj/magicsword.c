@@ -3,18 +3,18 @@
 inherit SWORD; 
 void create()
 {
-        set_name(BLU"Ä§ÑÛ½£"NOR, ({ "mageye sword","sword" }) );
+        set_name(BLU"é­”çœ¼å‰‘"NOR, ({ "mageye sword","sword" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "°Ñ");
-                set("long", "Ã÷ÁÁÈçÇïË®°ãµÄ½£·æÉÏ£¬Ö»ÓĞÒ»µãÏ¾´Ã£¬¿´À´¾ÍÏñÊÇÒ»Ö»Ä§ÑÛ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "æ˜äº®å¦‚ç§‹æ°´èˆ¬çš„å‰‘é”‹ä¸Šï¼Œåªæœ‰ä¸€ç‚¹æš‡ç–µï¼Œçœ‹æ¥å°±åƒæ˜¯ä¸€åªé­”çœ¼ã€‚\n");
                 set("value", 0);
                 set("material", "steel"); 
-        set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»°ÑÃ÷ÈçÇïË®µÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğÔÚÑü¼ä¡£\n");
+        set("wield_msg", "$Nä»è…°é—´æŠ½å‡ºä¸€æŠŠæ˜å¦‚ç§‹æ°´çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nåˆ«åœ¨è…°é—´ã€‚\n");
         }
         ::init_sword(50);
 }    

@@ -1,20 +1,20 @@
 inherit ROOM;
 void create()
 {
-        set("short", "¶«Æ«Ìü");
+        set("short", "ä¸œåå…");
         set("long", @LONG
-´ËÌüÎŞ´°£¬¾¡ÒÔ¶ù±ÛºìÖòÕÕÒ«¡£ÌüÖĞÒ»ÕÅĞ¡Ä¾Ì¨£¬Ì¨ÉÏÒ»ºø¾Æ£¬¾ÆÉĞÓĞÓàÎÂ¡£ÓÒ½Ç
-Ò»Ğ¡·½µØÌº£¬ÌºÉ«ÏÊºì¡£×ó±ßÊÇÖ§Ä¾¼Ü£¬¼ÜÉÏÓĞ³ÂÄêÀÏ¾Æ¡£»¹ÓĞÒ»ÕÅĞ¡´²£¬ËÆºõÓĞÈË³¤
-Äê×¡ÔÚÕâÀïµÄÑù×Ó¡£
+æ­¤å…æ— çª—ï¼Œå°½ä»¥å„¿è‡‚çº¢çƒ›ç…§è€€ã€‚å…ä¸­ä¸€å¼ å°æœ¨å°ï¼Œå°ä¸Šä¸€å£¶é…’ï¼Œé…’å°šæœ‰ä½™æ¸©ã€‚å³è§’
+ä¸€å°æ–¹åœ°æ¯¯ï¼Œæ¯¯è‰²é²œçº¢ã€‚å·¦è¾¹æ˜¯æ”¯æœ¨æ¶ï¼Œæ¶ä¸Šæœ‰é™ˆå¹´è€é…’ã€‚è¿˜æœ‰ä¸€å¼ å°åºŠï¼Œä¼¼ä¹æœ‰äººé•¿
+å¹´ä½åœ¨è¿™é‡Œçš„æ ·å­ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
   "west" : __DIR__"tading",
 ]));
         set("item_desc", ([
-                "carpet": "Õâ¿éĞ¡·½µØÌºËÆºõ¿ÉÒÔÀ­¿ª(pull)¡£\n",
-                "ditan": "Õâ¿éĞ¡·½µØÌºËÆºõ¿ÉÒÔÀ­¿ª(pull)¡£\n",
-                "µØÌº": "Õâ¿éĞ¡·½µØÌºËÆºõ¿ÉÒÔÀ­¿ª(pull)¡£\n",
+                "carpet": "è¿™å—å°æ–¹åœ°æ¯¯ä¼¼ä¹å¯ä»¥æ‹‰å¼€(pull)ã€‚\n",
+                "ditan": "è¿™å—å°æ–¹åœ°æ¯¯ä¼¼ä¹å¯ä»¥æ‹‰å¼€(pull)ã€‚\n",
+                "åœ°æ¯¯": "è¿™å—å°æ–¹åœ°æ¯¯ä¼¼ä¹å¯ä»¥æ‹‰å¼€(pull)ã€‚\n",
 
         ]) );
 	set("NONPC",1);
@@ -35,18 +35,18 @@ int do_pull(string arg)
 {
 object ob;
 object sect;
-if ( !arg && arg != "carpet" && arg != "ditan" && arg != "µØÌº")
+if ( !arg && arg != "carpet" && arg != "ditan" && arg != "åœ°æ¯¯")
                 return 0;
         if( ob = present("guard", this_object()))
         {
-        message_vision("$N¶Ô$nËµ£ºÀ´£¬±ğÏ¹Ã¦£¬ºÈ£¡\n", ob, this_player());
+        message_vision("$Nå¯¹$nè¯´ï¼šæ¥ï¼Œåˆ«çå¿™ï¼Œå–ï¼\n", ob, this_player());
         return 1;
         }
         if( !query("exits/down") ) {
-        message_vision("$N°ÑµØÌºÀ­¿ª·¢ÏÖÁËÒ»ÌõÃÜµÀ£®\n", this_player());
-        if(!this_player()->query("m_success/µ×²Õ"))
+        message_vision("$NæŠŠåœ°æ¯¯æ‹‰å¼€å‘ç°äº†ä¸€æ¡å¯†é“ï¼\n", this_player());
+        if(!this_player()->query("m_success/åº•èˆ±"))
         {
-                this_player()->set("m_success/µ×²Õ",1);
+                this_player()->set("m_success/åº•èˆ±",1);
                 this_player()->add("score",550);
                 this_player()->add("shen",550);
 
@@ -61,7 +61,7 @@ if ( !arg && arg != "carpet" && arg != "ditan" && arg != "µØÌº")
         }
         else
         {
-       message_vision("$N°ÑµØÌºÀ­¹ıÀ´ÑÚ¸Ç×¡ÃÜµÀ£®\n", this_player());
+       message_vision("$NæŠŠåœ°æ¯¯æ‹‰è¿‡æ¥æ©ç›–ä½å¯†é“ï¼\n", this_player());
         delete("exits/down");
         sect = find_object(__DIR__"secret_room");
         if( ! sect)

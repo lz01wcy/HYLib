@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾µÍ·", ({ "jingtou" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("é•œå¤´", ({ "jingtou" }) );
+        set("gender", "ç”·æ€§");
         set("env/invisibility", 3);    
 set_temp("no_kill",1);        set("attitude", "friendly");
         set("location", 1);
@@ -39,7 +39,7 @@ int checking(object target)
         }
         
        if(!objectp(target) || !objectp(where = environment(target))){
-message("vision", HIW"\n¡¾ÊÔ½£É½×¯¡¿ºöÈ»¼ä£¬ÉãÏñ»ú·¢³öÁËÒ»ÕûÒì³£µÄÏìÉù£¬»µÁË»úÆ÷¹ÊÕÏ¡£\n"NOR, environment(me));
+message("vision", HIW"\nã€è¯•å‰‘å±±åº„ã€‘å¿½ç„¶é—´ï¼Œæ‘„åƒæœºå‘å‡ºäº†ä¸€æ•´å¼‚å¸¸çš„å“å£°ï¼Œåäº†æœºå™¨æ•…éšœã€‚\n"NOR, environment(me));
            me->delete_temp("jingtou");
            destruct(this_object());  
            return 0;
@@ -64,6 +64,6 @@ if (sizeof(ary) >30) return;
         if(objectp(player = query("master")))
            room = environment(player);
         for (i=1;i<sizeof(ary);i++)
-          if (room) message("vision", HIW"¡¾ÊÔ½£É½×¯¡¿"NOR+ary[i]+NOR+"\n", room);
+          if (room) message("vision", HIW"ã€è¯•å‰‘å±±åº„ã€‘"NOR+ary[i]+NOR+"\n", room);
 }
 

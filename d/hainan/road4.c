@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "É½Â·");
+  set ("short", "å±±è·¯");
   set ("long", @LONG
-¶¸ÇÍµÄÉ½Â·,ÓĞĞí¶àµØ·½ÊÇ´ÓÑÒÊ¯ÖĞÔäÁË¶´,´ÓÊ÷ÁÖÖĞÍäÇúòêÑÑ¶ø³ö. 
-Á½±ßÊÇ²ÔÃ£µÄºÚËÉÁÖ.ºÚ¹¾Áş¶¬µÄ,Ê²Ã´¶¼¿´²»Çå. 
+é™¡å³­çš„å±±è·¯,æœ‰è®¸å¤šåœ°æ–¹æ˜¯ä»å²©çŸ³ä¸­å‡¿äº†æ´,ä»æ ‘æ—ä¸­å¼¯æ›²èœ¿èœ’è€Œå‡º. 
+ä¸¤è¾¹æ˜¯è‹èŒ«çš„é»‘æ¾æ—.é»‘å’•çª¿å†¬çš„,ä»€ä¹ˆéƒ½çœ‹ä¸æ¸…. 
 LONG);
 
   set("objects", ([ /* sizeof() == 1 */
@@ -28,9 +28,9 @@ int valid_leave(object me,string dir)
 
         fam=(string)me->query("family/family_name");
 	npc=present("nv dizi",environment(me));
-	if( fam && fam!="°×ÔÆâÖ" && objectp(npc) &&
+	if( fam && fam!="ç™½äº‘åºµ" && objectp(npc) &&
 		dir=="east")
-	return notify_fail(npc->query("name")+"ËµµÀ£º·Ç±¾ÅÉµÜ×Ó½ûÖ¹ÉÏÑÂ¡£\n");
+	return notify_fail(npc->query("name")+"è¯´é“ï¼šéæœ¬æ´¾å¼Ÿå­ç¦æ­¢ä¸Šå´–ã€‚\n");
         return ::valid_leave(me,dir);
 }
 

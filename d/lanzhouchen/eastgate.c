@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-	set("short",  "����");
+	set("short",  "东门");
 	set("long",  @LONG
-���������ݶ��š�������һƬï�ܵ����֣���������Ǳ��ΰ���̫
-�ã���˼������Źٱ������Ž����ر��ˡ�
+这里是兰州东门。城外是一片茂密的树林，不过最近那边治安不太
+好，因此几个守门官兵将城门紧紧关闭了。
 LONG);
 	set("exits",  ([  /*  sizeof()  ==  2  */
 		"west" : __DIR__"street1",

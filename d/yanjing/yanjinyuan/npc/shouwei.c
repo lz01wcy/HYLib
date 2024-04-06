@@ -2,8 +2,8 @@
 inherit NPC;
 void create()
 {
-set_name("守门卫士",({"wei shi"}));
-set("long","威风凛凛的卫士，身材高大，站立地笔直不动.\n");
+set_name("瀹堥棬鍗＋",({"wei shi"}));
+set("long","濞侀鍑涘嚊鐨勫崼澹紝韬潗楂樺ぇ锛岀珯绔嬪湴绗旂洿涓嶅姩.\n");
 set("age",20+random(20));
 set("combat_exp",100000+random(900000));
 set("food",300);
@@ -27,6 +27,6 @@ carry_object(__DIR__"tiespear")->wield();
 }
 int accept_fight(object who)
 {
-command("say 公务在身，不便奉陪。\n");
+command("say 鍏姟鍦ㄨ韩锛屼笉渚垮闄�俓n");
 return 0;
 }

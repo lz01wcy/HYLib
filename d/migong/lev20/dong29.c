@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIW"ÌìÊ¹Ö®³ÇÂÃµê"NOR);
+	set("short", HIW"å¤©ä½¿ä¹‹åŸŽæ—…åº—"NOR);
 	set("long", HIW @LONG
-ÉñÊ¥µÄÁ¦Á¿ÔÚÕâ¸ö³ÇÊÐÎÞ´¦²»ÔÚ£¬ÎÂºÍµÄÌ«Ñô¹âÕÕÔÚ
-µ½´¦¿É¼ûµÄÉñÏñÉÏ£¬Ê¹µÄÕû¸ö³ÇÊÐÔÊÂúÁËÉÁÒ«µÄ¹â»Ô¡£
-Õâ¾ÍÊÇÖÚÉñËù±Ó»¤µÄ³ÇÊÐ£¬ÌìÊ¹Ö®³Ç¡£´«ËµÖÐ²»ÃðµÄ³Ç
-ÊÐ¡£Äã¿ÉÒÔÔÚÕâ¸öµØ·½Ë¯¾õ??(sleep)£¬Ò²¿ÉÒÔÂòµã³ÔµÄ(list)
+ç¥žåœ£çš„åŠ›é‡åœ¨è¿™ä¸ªåŸŽå¸‚æ— å¤„ä¸åœ¨ï¼Œæ¸©å’Œçš„å¤ªé˜³å…‰ç…§åœ¨
+åˆ°å¤„å¯è§çš„ç¥žåƒä¸Šï¼Œä½¿çš„æ•´ä¸ªåŸŽå¸‚å…æ»¡äº†é—ªè€€çš„å…‰è¾‰ã€‚
+è¿™å°±æ˜¯ä¼—ç¥žæ‰€åº‡æŠ¤çš„åŸŽå¸‚ï¼Œå¤©ä½¿ä¹‹åŸŽã€‚ä¼ è¯´ä¸­ä¸ç­çš„åŸŽ
+å¸‚ã€‚ä½ å¯ä»¥åœ¨è¿™ä¸ªåœ°æ–¹ç¡è§‰??(sleep)ï¼Œä¹Ÿå¯ä»¥ä¹°ç‚¹åƒçš„(list)
 LONG NOR);
 
 set("magicroom",1);set("outdoors","migong");

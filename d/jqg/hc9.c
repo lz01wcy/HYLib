@@ -5,9 +5,9 @@
 inherit ROOM;
 void create()
 {
-	set("short", "»¨´Ô");
+	set("short", "èŠ±ä¸›");
 	set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬»¨´Ô£¬Äã¸Ğµ½ÒÑ¾­ºÜÄÑ±æÇåµÀÂ·ÁË¡£
+è¿™é‡Œæ˜¯ä¸€ç‰‡èŠ±ä¸›ï¼Œä½ æ„Ÿåˆ°å·²ç»å¾ˆéš¾è¾¨æ¸…é“è·¯äº†ã€‚
 LONG
 	);
 
@@ -20,7 +20,7 @@ LONG
                 "southwest" : __DIR__"hc"+(random(10)+1),
 	]));
 
-      set("outdoors", "ÏåÑô");
+      set("outdoors", "è¥„é˜³");
           replace_program(ROOM);
 
 	setup();

@@ -6,18 +6,18 @@
 inherit CLOTH;
 void create()
 {
-        set_name(HIW "»éÉ´" NOR, ({ "marry dress"}) );
+        set_name(HIW "å©šçº±" NOR, ({ "marry dress"}) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Õâ¼şÑ©°×µÄ»éÉ´³ö×ÔÉè¼Æ¹¬Í¢ÃûÊ¦Ö®ÊÖ£¬´©ÉÏËüÕæÊÇÑŞÀö¶¯ÈË£¬É·ÊÇĞÔ¸Ğ¡£\n");
-                set("unit", "¼ş");
+                set("long", "è¿™ä»¶é›ªç™½çš„å©šçº±å‡ºè‡ªè®¾è®¡å®«å»·åå¸ˆä¹‹æ‰‹ï¼Œç©¿ä¸Šå®ƒçœŸæ˜¯è‰³ä¸½åŠ¨äººï¼Œç…æ˜¯æ€§æ„Ÿã€‚\n");
+                set("unit", "ä»¶");
                 set("value", 1000);
                 set("armor_type", "cloth");
                 set("armor_prop/personality", 1);
-                set("wear_msg","$N´©ÉÏÒ»¼ş$n¡£\n");
-                set("remove_msg","$½«$nÍÑÁËÏÂÀ´¡£\n");
+                set("wear_msg","$Nç©¿ä¸Šä¸€ä»¶$nã€‚\n");
+                set("remove_msg","$å°†$nè„±äº†ä¸‹æ¥ã€‚\n");
                 set("material", "cloth");
                 set("armor_prop/armor", 1);
         }

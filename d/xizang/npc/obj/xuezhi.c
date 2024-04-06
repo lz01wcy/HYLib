@@ -3,14 +3,14 @@ inherit ITEM;
 #include <ansi.h> 
 void create()
 {
-    set_name(WHT"Ñ©Ö¥"NOR,({ "xuezhi"}));
+    set_name(WHT"é›ªèŠ"NOR,({ "xuezhi"}));
         set_weight(60);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
             set("long",
-                "Ò»¶ä²É×ÔÊ¥Ä¸Ñ©·åµÄÑ©Ö¥£¬Ñ©°×ÎÞÏ¾£¬·¼ÏãÆËÃæ£¬ ¿ÉÒÔÓÃ£¨yong£©À´ÔöÉñ ¡£\n");
-        set("unit","¶ä");
+                "ä¸€æœµé‡‡è‡ªåœ£æ¯é›ªå³°çš„é›ªèŠï¼Œé›ªç™½æ— æš‡ï¼ŒèŠ³é¦™æ‰‘é¢ï¼Œ å¯ä»¥ç”¨ï¼ˆyongï¼‰æ¥å¢žç¥ž ã€‚\n");
+        set("unit","æœµ");
         set("value", 15000);
         }
 } 
@@ -24,12 +24,12 @@ int apply_medicine()
     int value = 250;
         int diff; 
         if(this_player()->is_fighting())
-            return notify_fail("Õ½¶·ÖÐ²»ÄÜÓÃÒ©£¡£¡\n");
+            return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç”¨è¯ï¼ï¼\n");
         diff = this_player()->query("max_jing")-this_player()->query("eff_sen");
-        if(!(diff))    return notify_fail("ÄãÃ»ÓÐÊÜÉË£¡\n");
+        if(!(diff))    return notify_fail("ä½ æ²¡æœ‰å—ä¼¤ï¼\n");
         if(value > diff) value = diff;
             
-    message_vision("$N»º»º½ÀÏÂÑ©Ö¥£¬ÐÄÉñ¸Ð¾õÆ½ºÍÁËÐí¶à¡£\n",this_player());
+    message_vision("$Nç¼“ç¼“åš¼ä¸‹é›ªèŠï¼Œå¿ƒç¥žæ„Ÿè§‰å¹³å’Œäº†è®¸å¤šã€‚\n",this_player());
         this_player()->add("eff_sen",value);
         destruct(this_object());
         return 1;

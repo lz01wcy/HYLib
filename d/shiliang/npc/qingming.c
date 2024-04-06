@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÇåÃ÷ìøÊ¦", ({ "shiqing chanshi", "chanshi", "shiqing" }) );
-        set("title", "Ê®·½ËÂ·½ÕÉ");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¸…æ˜ç¦…å¸ˆ", ({ "shiqing chanshi", "chanshi", "shiqing" }) );
+        set("title", "åæ–¹å¯ºæ–¹ä¸ˆ");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("long",
-		"ÕâÊÇÒ»¸öÂúÁ³ºáÈâµÄºÍÉĞ¡£\n");
+		"è¿™æ˜¯ä¸€ä¸ªæ»¡è„¸æ¨ªè‚‰çš„å’Œå°šã€‚\n");
 	set("combat_exp", 1200000);
         set("shen_type", -1);
 	set("attitude", "aggressive");

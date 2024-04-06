@@ -5,9 +5,9 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("µêÖ÷", ({"dian zhu", "zhu"}));
+	set_name("åº—ä¸»", ({"dian zhu", "zhu"}));
 	set("age", 52);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("per", 20);
 	set("attitude", "friendly");
 
@@ -21,7 +21,7 @@ void create()
 	}));
 	set("chat_chance", 20);
 	set("chat_msg", ({
-		"µêÖ÷×ÔÑÔ×ÔÓïµÀ£ºÕâÃ´¶àÄêµÄÕ½ÂÒ£¬ÂåÑôÒÑ¾­¼¸ºõ·ÏµôÁË£¬°¦......\n",
+		"åº—ä¸»è‡ªè¨€è‡ªè¯­é“ï¼šè¿™ä¹ˆå¤šå¹´çš„æˆ˜ä¹±ï¼Œæ´›é˜³å·²ç»å‡ ä¹åºŸæ‰äº†ï¼Œå”‰......\n",
 	}));
 
 	setup();

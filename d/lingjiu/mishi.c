@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ÃÜÊÒ");
+    set("short", "å¯†å®¤");
     set("long", @LONG
-ÕâÊÇ¸öÒõ°µµÄÃÜÊÒ£¬Ç½ÉÏµÄÓÍµÆ·¢³ö»è°µµÄ»Æ¹â¡£
+è¿™æ˜¯ä¸ªé˜´æš—çš„å¯†å®¤ï¼Œå¢™ä¸Šçš„æ²¹ç¯å‘å‡ºæ˜æš—çš„é»„å…‰ã€‚
 LONG );
     set("exits", ([
         "up" : __DIR__"huayuan",
@@ -30,7 +30,7 @@ int valid_leave(object me, string dir)
       (!present("shoufa tu1", this_object())) ||
       (!present("shoufa tu2", this_object())) ||
       (!present("pu", this_object())) )
-          return notify_fail("ÕâµÄÃØ¼­²»¼ûÁËÄãÔõÄÜ¾Í×ßÄØ£¡\n");
+          return notify_fail("è¿™çš„ç§˜è¾‘ä¸è§äº†ä½ æ€èƒ½å°±èµ°å‘¢ï¼\n");
 
     return ::valid_leave(me, dir);
 }

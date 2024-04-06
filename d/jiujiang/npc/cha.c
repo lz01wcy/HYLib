@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("²è¹İÀÏ°å",({ "chaguan laoban","laoban" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("èŒ¶é¦†è€æ¿",({ "chaguan laoban","laoban" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-   set("long", "ÕâÊÇ²è¹İµÄÀÏ°å¡£\n");
+   set("long", "è¿™æ˜¯èŒ¶é¦†çš„è€æ¿ã€‚\n");
        
    set("combat_exp", 50000);
    set("str", 10);
@@ -33,8 +33,8 @@ void welcome(object ob,object ob2)
    if(!ob||!present(ob,environment())||ob2->is_fighting()) return;
 	switch(random(2))
 	{
-	case 0: message_vision("$NĞ¦µÀ:ÕâÎ»¿Í¹Ù£¬»¶Ó­À´×ø×ø!\n",ob2);break;
-	case 1: message_vision("$N³å$nĞ¦µÀ£ºÎÒÃÇµÄ²èÒ¶¿É¶¼ÊÇÉÏµÈµÄ¡£\n",ob2,ob);
+	case 0: message_vision("$Nç¬‘é“:è¿™ä½å®¢å®˜ï¼Œæ¬¢è¿æ¥åå!\n",ob2);break;
+	case 1: message_vision("$Nå†²$nç¬‘é“ï¼šæˆ‘ä»¬çš„èŒ¶å¶å¯éƒ½æ˜¯ä¸Šç­‰çš„ã€‚\n",ob2,ob);
 	}
 	remove_call_out("welcome");
 	return;

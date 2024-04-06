@@ -3,22 +3,22 @@
 inherit NPC;
 void create()
 {
-	set_name("¿Õ¹â", ({ "shaolin monk", "monk"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç©ºå…‰", ({ "shaolin monk", "monk"}) );
+	set("gender", "ç”·æ€§" );
 	set("age",random(10)+ 32);
-	set("long", "ÕâÊÇÉÙÁÖËÂ³öÍâ»¯Õ«µÄºÍÉĞ¡£\n");
+	set("long", "è¿™æ˜¯å°‘æ—å¯ºå‡ºå¤–åŒ–æ–‹çš„å’Œå°šã€‚\n");
 	set("combat_exp", random(10000)+10000);
 	set("attitude", "friendly");
 	set("chat_chance", 20);
 	set("chat_msg", ({
-		"¿Õ¹â³ªÁË¸ö·ÊÅµµÀ£º¡°Ê©Ö÷¾èµãÏã»ğÇ®°É£¡¡±\n",
+		"ç©ºå…‰å”±äº†ä¸ªè‚¥è¯ºé“ï¼šâ€œæ–½ä¸»æç‚¹é¦™ç«é’±å§ï¼â€\n",
 	}) );
 	set_skill("unarmed", 5+random(40));
 	set_skill("dodge",40);
 	set_skill("force",20);
 	set("force",100);
 	set("max_neili",100);
-	create_family("ÉÙÁÖËÂ", 41, "µÜ×Ó");
+	create_family("å°‘æ—å¯º", 41, "å¼Ÿå­");
 	setup();
 	carry_object("/d/shaolin/obj/xu-cloth")->wear();
 	carry_object(__DIR__"obj/bowl");
@@ -27,8 +27,8 @@ void create()
 int accept_object(object me, object obj)
 {
 	command("sigh");
-	command("say ÈÕ×ÓÄÑ¹ıÑ½£¡\n");
-	command("say ËÂÄÚµÄ²Ø¾­Â¥×ÜÊÇ¶ªÊé£¬·½ÕÉÏÖÔÚ¶¯²»¶¯¾ÍÔğ·£µÜ×ÓÃæ±ÚÊ®Äê£¡\n");
+	command("say æ—¥å­éš¾è¿‡å‘€ï¼\n");
+	command("say å¯ºå†…çš„è—ç»æ¥¼æ€»æ˜¯ä¸¢ä¹¦ï¼Œæ–¹ä¸ˆç°åœ¨åŠ¨ä¸åŠ¨å°±è´£ç½šå¼Ÿå­é¢å£åå¹´ï¼\n");
 	command("thank " + me->query("id"));
 	return 1;
 }

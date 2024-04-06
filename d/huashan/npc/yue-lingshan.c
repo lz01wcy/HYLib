@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÔÀÁéÉº", ({ "yue lingshan", "yue", "lingshan" }) );
-        set("nickname", "Ğ¡Ê¦ÃÃ");
-        set("gender", "Å®ĞÔ" );
+        set_name("å²³çµçŠ", ({ "yue lingshan", "yue", "lingshan" }) );
+        set("nickname", "å°å¸ˆå¦¹");
+        set("gender", "å¥³æ€§" );
         set("age", 17);
         set("per", 29);
         set("str", 16);
@@ -23,9 +23,9 @@ void create()
         set("jiali", 80);
         set("combat_exp", 500000);
 
-        set("long",     "ÔÀÁéÉºÊÇ»ªÉ½ÅÉÕÆÃÅÔÀ²»ÈºµÄ¶ÀÉúÅ®¶ù¡£\n");
+        set("long",     "å²³çµçŠæ˜¯åå±±æ´¾æŒé—¨å²³ä¸ç¾¤çš„ç‹¬ç”Ÿå¥³å„¿ã€‚\n");
 
-        create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("åå±±æ´¾", 14, "å¼Ÿå­");
 
         set_skill("unarmed", 50);
         set_skill("sword", 50);
@@ -61,6 +61,6 @@ set_skill("zixia-shengong", 150);
 
 int accept_fight(object me)
 {
-        command("say Ğ¡Å®×ÓÔõ»áÊÇÄãµÄ¶ÔÊÖ?");
+        command("say å°å¥³å­æ€ä¼šæ˜¯ä½ çš„å¯¹æ‰‹?");
         return 0;
 }

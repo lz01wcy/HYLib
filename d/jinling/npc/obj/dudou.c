@@ -6,13 +6,13 @@ inherit WAIST;
 
 void create()
 {
-	set_name("Ë¿³ñ¶Ç¶µ", ({ "silk underwear", "underwear" }) );
+	set_name("ä¸ç»¸è‚šå…œ", ({ "silk underwear", "underwear" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¼ş´óºìË¿³ñ×ö³ÉµÄ¶Ç¶µ£¬ÉÏÃæĞå×ÅÔ§ÑìÏ·Ë®£¬ÎÅÆğÀ´»¹ÓĞÒ»¹Éµ­Ïã¡£\n");
-		set("unit", "¼ş");
+		set("long", "è¿™æ˜¯ä¸€ä»¶å¤§çº¢ä¸ç»¸åšæˆçš„è‚šå…œï¼Œä¸Šé¢ç»£ç€é¸³é¸¯æˆæ°´ï¼Œé—»èµ·æ¥è¿˜æœ‰ä¸€è‚¡æ·¡é¦™ã€‚\n");
+		set("unit", "ä»¶");
 		set("value", 1200);
 		set("material", "cloth");
 		set("armor_prop/armor", 11);

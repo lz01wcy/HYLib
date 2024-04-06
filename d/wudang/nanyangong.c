@@ -1,4 +1,4 @@
-//Room: nanyangong.c ÄÏÑÒ¹¬
+//Room: nanyangong.c å—å²©å®«
 //Date: Sep 29 1997
 
 #include <ansi.h>
@@ -10,12 +10,12 @@ int do_move(string arg);
 
 void create()
 {
-      set("short","ÄÏÑÒ¹¬");
+      set("short","å—å²©å®«");
       set("long",@LONG
-ÕâÀïÊÇ¾ÍÊÇÄÏÑÒ¹¬¡£´Ë¹¬°ëÎÔĞüÑÂÖ®ÏÂ¡£µîÄÚÈıÇå×øÏñ½ğ¹âÉÁÉÁ£¬ÆøÓî
-Ğù°º¡£µîÄÚÌì¾®´¦·¼²İÃÔ¾¶£¬°Ù»ÜÕùåû¡£
-    ÓĞ¼¸¸ö×°ÊøĞÑÄ¿µÄÎäµ±Èı´úµÜ×Ó´ÓÕâ´Ò´Ò×ß¹ı¡£
-    ÄÏÃæ¸ßÌ¨¾ÍÊÇÕæÎä½£Õó¡£ÅÑÊ¦»ò°ëÂ·Í¶Ê¦ÕßÕäÖØ¡£
+è¿™é‡Œæ˜¯å°±æ˜¯å—å²©å®«ã€‚æ­¤å®«åŠå§æ‚¬å´–ä¹‹ä¸‹ã€‚æ®¿å†…ä¸‰æ¸…ååƒé‡‘å…‰é—ªé—ªï¼Œæ°”å®‡
+è½©æ˜‚ã€‚æ®¿å†…å¤©äº•å¤„èŠ³è‰è¿·å¾„ï¼Œç™¾å‰äº‰å¦ã€‚
+    æœ‰å‡ ä¸ªè£…æŸé†’ç›®çš„æ­¦å½“ä¸‰ä»£å¼Ÿå­ä»è¿™åŒ†åŒ†èµ°è¿‡ã€‚
+    å—é¢é«˜å°å°±æ˜¯çœŸæ­¦å‰‘é˜µã€‚å›å¸ˆæˆ–åŠè·¯æŠ•å¸ˆè€…çé‡ã€‚
 LONG);
       set("exits",([ /* sizeof() == 1 */
           "out"    : __DIR__"shizhu",
@@ -26,7 +26,7 @@ LONG);
       ]));
 
       set("item_desc",([
-          "ÈıÇå×øÏñ" :       (: look_xiang :),
+          "ä¸‰æ¸…ååƒ" :       (: look_xiang :),
       ]));
       set("no_clean_up", 0);
       setup();
@@ -38,10 +38,10 @@ int valid_leave(object ob, string dir)
         ob = this_player();
         myfam = (mapping)ob->query("family");
         if ((int)ob->query("combat_exp",1)<50000 && (dir == "southup"))
-            return notify_fail("ÍâÃæµÄÕæÎä½£ÕóÍşÁ¦Ì«´ó£¬Äã±»ÄÚÁ¦¹Äµ´£¬²»ÄÜÉÏÈ¥¡£\n");
-        if ((!myfam || (myfam["family_name"] != "Îäµ±ÅÉ")) && (dir == "southup")
+            return notify_fail("å¤–é¢çš„çœŸæ­¦å‰‘é˜µå¨åŠ›å¤ªå¤§ï¼Œä½ è¢«å†…åŠ›é¼“è¡ï¼Œä¸èƒ½ä¸Šå»ã€‚\n");
+        if ((!myfam || (myfam["family_name"] != "æ­¦å½“æ´¾")) && (dir == "southup")
              &&  objectp(present("daotong", environment(ob))))
-            return notify_fail("µÀÍ¯ËµµÀ:·ÇÎäµ±µÜ×Ó£¬²»ÄÜÊÔÑİÕæÎä½£Õó¡£\n");
+            return notify_fail("é“ç«¥è¯´é“:éæ­¦å½“å¼Ÿå­ï¼Œä¸èƒ½è¯•æ¼”çœŸæ­¦å‰‘é˜µã€‚\n");
         return 1;
 }
 
@@ -53,7 +53,7 @@ void init()
 string look_xiang()
 {
         return
-        "ÈıÇå×øÏñ´¿Í­´ò¾Í£¬¶ÆÒÔ´¿½ğ£¬¹âÕÕÂúµî¡£Ö»ÊÇºÃÏóÈı¸ö×øÏñ°ÚµÃ²¢²»ºÜÕûÆë¡£\n";
+        "ä¸‰æ¸…ååƒçº¯é“œæ‰“å°±ï¼Œé•€ä»¥çº¯é‡‘ï¼Œå…‰ç…§æ»¡æ®¿ã€‚åªæ˜¯å¥½è±¡ä¸‰ä¸ªååƒæ‘†å¾—å¹¶ä¸å¾ˆæ•´é½ã€‚\n";
 }
 
 int do_move(string arg)
@@ -61,17 +61,17 @@ int do_move(string arg)
         object room, ob;
 
         ob = this_player();
-        if( !arg || arg!="xiang" ) return notify_fail("ÕâÀïµÄ°ÚÉè²»ÄÜÂÒ¶¯£¡\n");
+        if( !arg || arg!="xiang" ) return notify_fail("è¿™é‡Œçš„æ‘†è®¾ä¸èƒ½ä¹±åŠ¨ï¼\n");
         message_vision(HIC
-          "$N×ßµ½ÈıÇå×øÏñ±³ºó£¬ÓÃÁ¦Ê¹¾¢ÍÆÒÆÀÏ¾ıÏñ£¬ÂıÂıµÄÍÆ×Å£¬ÖÕÓÚÍÆ¶¯ÁË¡­¡­\n"
-          "ÏñÏÂÂ¶³öÒ»¸ö´ó¶´£¬¼¸ÅÅÊ¯½×ÍùÏÂÉìÈ¥£¬´ÓÕâÀï·ÖÃ÷Í¨ÏòÒ»¸ö°µµÀ¡£\n"NOR, ob);
+          "$Nèµ°åˆ°ä¸‰æ¸…ååƒèƒŒåï¼Œç”¨åŠ›ä½¿åŠ²æ¨ç§»è€å›åƒï¼Œæ…¢æ…¢çš„æ¨ç€ï¼Œç»ˆäºæ¨åŠ¨äº†â€¦â€¦\n"
+          "åƒä¸‹éœ²å‡ºä¸€ä¸ªå¤§æ´ï¼Œå‡ æ’çŸ³é˜¶å¾€ä¸‹ä¼¸å»ï¼Œä»è¿™é‡Œåˆ†æ˜é€šå‘ä¸€ä¸ªæš—é“ã€‚\n"NOR, ob);
         set("exits/down", __DIR__"nanyan0");
-//        message_vision(HIC"$NºÁ²»ÓÌÔ¥Ò»×İ¶øÏÂ¡­¡­\n\n\n"NOR,ob);
+//        message_vision(HIC"$Næ¯«ä¸çŠ¹è±«ä¸€çºµè€Œä¸‹â€¦â€¦\n\n\n"NOR,ob);
 
         if( room = find_object(__DIR__"nanyan0") )
         {
            room->set("exits/up", __FILE__);
-           message("vision", "Ìì»¨°åºöÈ»·¢³öÔşÔşµÄÉùÒô£¬Â¶³öÒ»¸öÏòÉÏµÄÂ¥Ìİ¡£\n",room );
+           message("vision", "å¤©èŠ±æ¿å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå‘ä¸Šçš„æ¥¼æ¢¯ã€‚\n",room );
         }
 //        ob->move(__DIR__"nanyan0");
         remove_call_out("close_andao");
@@ -85,11 +85,11 @@ void close_andao()
     int i;
 
     if (!query("exits/down")) return;
-    message("vision","Ö»ÌıÆ¹µØÒ»ÉùÏì£¬ÀÏ¾ıÏñ×Ô¶¯ÒÆ»ØÔ­´¦¡£\n", this_object() );
+    message("vision","åªå¬ä¹’åœ°ä¸€å£°å“ï¼Œè€å›åƒè‡ªåŠ¨ç§»å›åŸå¤„ã€‚\n", this_object() );
     if( room = find_object(__DIR__"nanyan0") )
     {
 //        room->delete("exits/up");
-        message("vision","Ö»ÌıÆ¹µØÒ»ÉùÏì£¬ÏòÉÏµÄ¶´¿Ú×Ô¶¯ÑÏÑÏÊµÊµµØ¹ØÁËÆğÀ´¡£\n",room);
+        message("vision","åªå¬ä¹’åœ°ä¸€å£°å“ï¼Œå‘ä¸Šçš„æ´å£è‡ªåŠ¨ä¸¥ä¸¥å®å®åœ°å…³äº†èµ·æ¥ã€‚\n",room);
     }
     delete("exits/down");
 }

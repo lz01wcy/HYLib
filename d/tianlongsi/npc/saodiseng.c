@@ -6,8 +6,8 @@ string ask_me2();
 
 void create()
 {
-	set_name("É¨µØÉ®", ({ "saodi seng","seng"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("æ‰«åœ°åƒ§", ({ "saodi seng","seng"}) );
+	set("gender", "ç”·æ€§" );
 	set("class", "bonze");
 	set("age", 100);
 	set("shen_type", 1);
@@ -35,8 +35,8 @@ void create()
 	map_skill("force", "kurong-changong");
 	map_skill("dodge", "tiannan-step");
 	set("inquiry" ,([
-		"ÉáÀû×Ó" : (:ask_me1():),
-		"¶ªÊ§" : (:ask_me2():),
+		"èˆåˆ©å­" : (:ask_me1():),
+		"ä¸¢å¤±" : (:ask_me2():),
 	]));
 
 	setup();
@@ -47,9 +47,9 @@ string ask_me1()
 {
 	object me=this_player();
 	if(me->query_temp("marks/ask_temp1"))
-		return "¡°ÄÇÊÇ±¾ËÂµÄÕòËÂÖ®±¦£¬µ±Äê²»ÖªÎªºÎ¶ªÊ§ÁË¡£¡±\n";
+		return "â€œé‚£æ˜¯æœ¬å¯ºçš„é•‡å¯ºä¹‹å®ï¼Œå½“å¹´ä¸çŸ¥ä¸ºä½•ä¸¢å¤±äº†ã€‚â€\n";
 	else
-		return "¡°ÄãºúËµ°ËµÀÊ²Ã´£¿¡±\n";
+		return "â€œä½ èƒ¡è¯´å…«é“ä»€ä¹ˆï¼Ÿâ€\n";
 }
 
 string ask_me2()
@@ -58,9 +58,9 @@ string ask_me2()
 	if(me->query_temp("marks/ask_temp1"))
 		{
 		me->set_temp("marks/ask_temp2",1);
-		return "¡°ÄÇÌìÍíÉÏÎÒÖ»¿´¼ûÒ»¸öºÚÓ°´ÓËşÉÏ·ÉÏÂ£¬ÍùºóËÂÅÜÁË¡£\n";
+		return "â€œé‚£å¤©æ™šä¸Šæˆ‘åªçœ‹è§ä¸€ä¸ªé»‘å½±ä»å¡”ä¸Šé£ä¸‹ï¼Œå¾€åå¯ºè·‘äº†ã€‚\n";
 		}
 	else
-		return "¡°ÄãºúËµ°ËµÀÊ²Ã´£¿¡±\n";
+		return "â€œä½ èƒ¡è¯´å…«é“ä»€ä¹ˆï¼Ÿâ€\n";
 }
 

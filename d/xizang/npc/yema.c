@@ -4,11 +4,11 @@ inherit NPC;
 string horsedesc();
 void create()
 {
-    set_name("ºÚ¿¥Âí", ({ "black horse" }) );
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+    set_name("é»‘éªé©¬", ({ "black horse" }) );
+        set("race", "é‡Žå…½");
+        set("gender", "é›„æ€§");
         set("age", 3);
-    //set("long", "Ò»Æ¥Æ¤Ã«ºÚÁÁµÄÒ°Âí£¬×ÔÓÉ×ÔÔÚµÄÈöÌã·É±¼×Å£¬²»ÖªÊÇ·ñ¿ÉÒÔÑ±·þ£¨£ø£õ£î£æ£õ£©¡£\n");
+    //set("long", "ä¸€åŒ¹çš®æ¯›é»‘äº®çš„é‡Žé©¬ï¼Œè‡ªç”±è‡ªåœ¨çš„æ’’è¹„é£žå¥”ç€ï¼Œä¸çŸ¥æ˜¯å¦å¯ä»¥é©¯æœï¼ˆï½˜ï½•ï½Žï½†ï½•ï¼‰ã€‚\n");
         set("long",(: horsedesc :));
         set("max_qi", 3000);
         set("max_jing", 3000);
@@ -17,11 +17,11 @@ void create()
         set("cor",80);
         set("str",50);
         set("attitude", "peaceful");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "hoof"}) ); 
         set("chat_chance", 1);
         set("chat_msg", ({
-     "ºÚ¿¥Âí£¢ßÔ¡«¡«ßÔßÔ£¢µØÑöÌì³¤ÁË¼¸Éù\n",
+     "é»‘éªé©¬ï¼‚å’´ï½žï½žå’´å’´ï¼‚åœ°ä»°å¤©é•¿äº†å‡ å£°\n",
         }) );
         set("combat_exp", 3000000);
         set_temp("apply/attack", 300);
@@ -39,41 +39,41 @@ string horsedesc()
 {
         object me;
    me = this_player();
-        if (me ->query_temp("marks/Ñ±·þ_ºÚ¿¥Âí"))
+        if (me ->query_temp("marks/é©¯æœ_é»‘éªé©¬"))
         {       
-                return "Å­½­ÎÞ´¬ÎÞÈË£¬ÄãÖ»ÓÐÆïÉÏ£¨ride£©ÕâÒ°ÂíÔ¾¹ýÅ­½­£¡";
+                return "æ€’æ±Ÿæ— èˆ¹æ— äººï¼Œä½ åªæœ‰éª‘ä¸Šï¼ˆrideï¼‰è¿™é‡Žé©¬è·ƒè¿‡æ€’æ±Ÿï¼";
         }
-        return "Ò»Æ¥Æ¤Ã«ºÚÁÁµÄÒ°Âí£¬×ÔÓÉ×ÔÔÚµÄÈöÌã·É±¼×Å£¬²»ÖªÊÇ·ñ¿ÉÒÔÑ±·þ£¨£ø£õ£î£æ£õ£©¡£\n";
+        return "ä¸€åŒ¹çš®æ¯›é»‘äº®çš„é‡Žé©¬ï¼Œè‡ªç”±è‡ªåœ¨çš„æ’’è¹„é£žå¥”ç€ï¼Œä¸çŸ¥æ˜¯å¦å¯ä»¥é©¯æœï¼ˆï½˜ï½•ï½Žï½†ï½•ï¼‰ã€‚\n";
 } 
 int do_xunfu(string arg)
 {
         object me;
-        if (arg != "ºÚ¿¥Âí" && arg != "black horse" && arg != "Ò°Âí")
+        if (arg != "é»‘éªé©¬" && arg != "black horse" && arg != "é‡Žé©¬")
         {       
                 return 0;
         }
         me = this_player();
-        if (me->query_temp("marks/Ñ±·þ_ºÚ¿¥Âí"))
+        if (me->query_temp("marks/é©¯æœ_é»‘éªé©¬"))
         {
                 return 0;
         }
         
-        message_vision("$N³¤Ë»Ò»Éù£¬ÑïÎ²Ì¤×ã£¬ÂÒÌß¿ñ±¼£¬Ó²ÊÇÒª°Ñ$nÈÓÏÂÀ´¡£¡£¡£ \n",this_object(),me);
+        message_vision("$Né•¿å˜¶ä¸€å£°ï¼Œæ‰¬å°¾è¸è¶³ï¼Œä¹±è¸¢ç‹‚å¥”ï¼Œç¡¬æ˜¯è¦æŠŠ$næ‰”ä¸‹æ¥ã€‚ã€‚ã€‚ \n",this_object(),me);
         if ((me->query_skill("dodge",1)>=50 && me->query("cor")>=10 && me->query("kar")>=(10+random(10)))||me->query_skill("animal-training",1)>=80)
         {
-        message_vision(HIC"$n½ô½ô×¥×¡Âí××£¬ÎÞÂÛ$NÈçºÎÁÃÌã´ò¾ï£¬ÎÈÈçÌ©É½°ã¸½ÔÚÂí±³¡£\n "NOR,this_object(),me);
-        message_vision("$NÖÕÓÚ°²¾²ÁËÏÂÀ´£¬Ñ±·þµØ´­×Å´ÖÆø¡£¡£\n$nÂúÒâµØÅÄÁËÅÄ$NµÄÍ·£¬´ÓÂíÉÏÔ¾ÁËÏÂÀ´¡£\n",this_object(),me);
-                if (!me->query("marks/Ñ±·þ_Ò°Âí"))
+        message_vision(HIC"$nç´§ç´§æŠ“ä½é©¬é¬ƒï¼Œæ— è®º$Nå¦‚ä½•æ’©è¹„æ‰“æ’…ï¼Œç¨³å¦‚æ³°å±±èˆ¬é™„åœ¨é©¬èƒŒã€‚\n "NOR,this_object(),me);
+        message_vision("$Nç»ˆäºŽå®‰é™äº†ä¸‹æ¥ï¼Œé©¯æœåœ°å–˜ç€ç²—æ°”ã€‚ã€‚\n$næ»¡æ„åœ°æ‹äº†æ‹$Nçš„å¤´ï¼Œä»Žé©¬ä¸Šè·ƒäº†ä¸‹æ¥ã€‚\n",this_object(),me);
+                if (!me->query("marks/é©¯æœ_é‡Žé©¬"))
                 {
                         me->add("potential",500);
                         me->add("score",100);
-                        tell_object(me,"Äã±»½±ÀøÁË£º\nÎå°ÙµãÇ±ÄÜ\nÒ»°Ùµã×ÛºÏÆÀ¼Û\n\n");
-                        me->set("marks/Ñ±·þ_Ò°Âí",1);
+                        tell_object(me,"ä½ è¢«å¥–åŠ±äº†ï¼š\näº”ç™¾ç‚¹æ½œèƒ½\nä¸€ç™¾ç‚¹ç»¼åˆè¯„ä»·\n\n");
+                        me->set("marks/é©¯æœ_é‡Žé©¬",1);
                 }
-                me->set_temp("marks/Ñ±·þ_ºÚ¿¥Âí",1);
+                me->set_temp("marks/é©¯æœ_é»‘éªé©¬",1);
         }else
         {
-                message_vision("$nÖÕÓÚ²»Ö§£¬´Ó$N±³ÉÏË¤ÁËÏÂÀ´¡£\n",this_object(),me);
+                message_vision("$nç»ˆäºŽä¸æ”¯ï¼Œä»Ž$NèƒŒä¸Šæ‘”äº†ä¸‹æ¥ã€‚\n",this_object(),me);
                 me->unconcious();
         }
         return 1;
@@ -81,28 +81,28 @@ int do_xunfu(string arg)
 int do_ride(string arg)
 {
         object me;
-        if (arg != "ºÚ¿¥Âí" && arg != "black horse" && arg != "Ò°Âí")
+        if (arg != "é»‘éªé©¬" && arg != "black horse" && arg != "é‡Žé©¬")
         {       
                 return 0;
         }
         me = this_player();
-        if (!me->query_temp("marks/Ñ±·þ_ºÚ¿¥Âí"))
+        if (!me->query_temp("marks/é©¯æœ_é»‘éªé©¬"))
         {
                 return 0;
         }
-        message_vision(HIC"$nÆïÉÏÂí±³£¬ÑöÌì³¤Ð¥Ò»Éù£¬±§½ôÂí¾±£¬Ë«ÍÈ¼Ð½ôÂí¸¹£¬ÓÃÁ¦Ò»±Þ$N¡£¡£ ¡£\n\n"NOR,this_object(),me);
+        message_vision(HIC"$néª‘ä¸Šé©¬èƒŒï¼Œä»°å¤©é•¿å•¸ä¸€å£°ï¼ŒæŠ±ç´§é©¬é¢ˆï¼ŒåŒè…¿å¤¹ç´§é©¬è…¹ï¼Œç”¨åŠ›ä¸€éž­$Nã€‚ã€‚ ã€‚\n\n"NOR,this_object(),me);
         if (random(10))
         {
-                message_vision(HIW"$NÁè¿ÕÔ¾Æð£¬ÒÔÒ»¸ö¶¯ÈËÐÄÏÒ¡¢³¬Ô½ÁËÊÀ¼äÒ»ÇÐÃÀÌ¬µÄ×ËÊÆ£¬¾±ºóµÄºÚ××Ã« 
-ÔÚÉ½·çÖÐ×ÔÓÉµØÆ®Ñï£¬ÓÐÈôÌìÂíÐÐ¿Õ£¬ÔÚÌì¿ÕÀï»®³öÒ»ÌõÃÀÀöµÄ»¡Ïß£¬ÔÙÂäÏÂÖÁ 
-Ô¶·½µÄÅ¨ÎíÀï¡£ \n"NOR,this_object(),me);
+                message_vision(HIW"$Nå‡Œç©ºè·ƒèµ·ï¼Œä»¥ä¸€ä¸ªåŠ¨äººå¿ƒå¼¦ã€è¶…è¶Šäº†ä¸–é—´ä¸€åˆ‡ç¾Žæ€çš„å§¿åŠ¿ï¼Œé¢ˆåŽçš„é»‘é¬ƒæ¯› 
+åœ¨å±±é£Žä¸­è‡ªç”±åœ°é£˜æ‰¬ï¼Œæœ‰è‹¥å¤©é©¬è¡Œç©ºï¼Œåœ¨å¤©ç©ºé‡Œåˆ’å‡ºä¸€æ¡ç¾Žä¸½çš„å¼§çº¿ï¼Œå†è½ä¸‹è‡³ 
+è¿œæ–¹çš„æµ“é›¾é‡Œã€‚ \n"NOR,this_object(),me);
                 me->move("/d/xizang/yuema");
-                message_vision("$NÍðÈôÉñìó£¬³Ë×ÅºÚ¿¥Âí´ÓÌì¶ø½µ¡£\n",me);
-                message_vision("$NÔ¾ÏÂÂí±³£¬ºÚ¿¥ÂíÌ¤·ç¶øÈ¥¡£\n",me);
+                message_vision("$Nå®›è‹¥ç¥žç¥—ï¼Œä¹˜ç€é»‘éªé©¬ä»Žå¤©è€Œé™ã€‚\n",me);
+                message_vision("$Nè·ƒä¸‹é©¬èƒŒï¼Œé»‘éªé©¬è¸é£Žè€ŒåŽ»ã€‚\n",me);
         }else
         {
-        message_vision(RED"$NÁè¿ÕÔ¾Æð£¬½ß¾¡È«Á¦ÍùÇ°Ìø£¬µ«ÖÕÓÚÁ¦Ëù²»ÖÁ£¬±¯Ë»Ò»Éù£¬×¹ÈëÅ­½­¡£\n"NOR,this_object());
-                message_vision(RED"ÔÚ×¹ÂäµÄÒ»É²ÄÇ£¬$Nºó±³¹°Æð£¬¶øºóËÄÌã·ÜÕÅ£¬»ý×îºóÒ»Ë¿Á¦Á¿½«$nµ¯ÉÏÐüÑÂ¡£\n",this_object(),me);
+        message_vision(RED"$Nå‡Œç©ºè·ƒèµ·ï¼Œç«­å°½å…¨åŠ›å¾€å‰è·³ï¼Œä½†ç»ˆäºŽåŠ›æ‰€ä¸è‡³ï¼Œæ‚²å˜¶ä¸€å£°ï¼Œå å…¥æ€’æ±Ÿã€‚\n"NOR,this_object());
+                message_vision(RED"åœ¨å è½çš„ä¸€åˆ¹é‚£ï¼Œ$NåŽèƒŒæ‹±èµ·ï¼Œè€ŒåŽå››è¹„å¥‹å¼ ï¼Œç§¯æœ€åŽä¸€ä¸åŠ›é‡å°†$nå¼¹ä¸Šæ‚¬å´–ã€‚\n",this_object(),me);
                 if(random(10))
                 {
                         me->unconcious();

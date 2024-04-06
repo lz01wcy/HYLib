@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-set("short", "ÉÏÔ­");
+set("short", "ä¸ŠåŽŸ");
 set("long", @LONG
-ÕâÀï¾ÍÊÇÉÏÔ­£¬Íù±±¾ÍÊÇ¾©¶¼×î·±»ªµÄÖÐÐÄ£¬ÎõÎõÈÁÈÁµÄÈËÈº²»¶Ï´Ó
-Éí±ß²ÁÉí¶ø¹ý£¬Á½±ßµêÆÌµÄ½ÐÂôÉù²»¾øÓÚ¶ú¡£¶«ÃæÊÇÎ¬ÐÂÕþ¸®µÄÊÐÕþÌü£¬
-ÊØÎÀÉ­ÑÏ¡£Î÷ÃæÊÇ¹ÜÖÆËù£¬×ö¼é·¸¿ÆÖ®Í½¶¼±»¹ØÑºÔÚÄÇÀï¡£
+è¿™é‡Œå°±æ˜¯ä¸ŠåŽŸï¼Œå¾€åŒ—å°±æ˜¯äº¬éƒ½æœ€ç¹åŽçš„ä¸­å¿ƒï¼Œç†™ç†™æ”˜æ”˜çš„äººç¾¤ä¸æ–­ä»Ž
+èº«è¾¹æ“¦èº«è€Œè¿‡ï¼Œä¸¤è¾¹åº—é“ºçš„å«å–å£°ä¸ç»äºŽè€³ã€‚ä¸œé¢æ˜¯ç»´æ–°æ”¿åºœçš„å¸‚æ”¿åŽ…ï¼Œ
+å®ˆå«æ£®ä¸¥ã€‚è¥¿é¢æ˜¯ç®¡åˆ¶æ‰€ï¼Œåšå¥¸çŠ¯ç§‘ä¹‹å¾’éƒ½è¢«å…³æŠ¼åœ¨é‚£é‡Œã€‚
 LONG );
 set("exits",  ([
         "west"  : __DIR__"guanzhisuo",

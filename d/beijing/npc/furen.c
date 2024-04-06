@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("×¯·òÈË", ({ "san furen", "san","furen"}));
-	set("title", "×¯¼ÒÈıÉÙÄÌÄÌ" );
-	set("nickname", HIW "Î´ÍöÈË" NOR);
-	set("long",  "\nÖ»¼ûËıÔ¼Äª¶şÊ®ÁùÆßÄê¼Í,È«ÉíçÉËØ,²»Ê©Ö¬·Û,Á³É«²Ô°×.\n");
-	set("gender", "Å®ĞÔ");
+	set_name("åº„å¤«äºº", ({ "san furen", "san","furen"}));
+	set("title", "åº„å®¶ä¸‰å°‘å¥¶å¥¶" );
+	set("nickname", HIW "æœªäº¡äºº" NOR);
+	set("long",  "\nåªè§å¥¹çº¦è«äºŒåå…­ä¸ƒå¹´çºª,å…¨èº«ç¼Ÿç´ ,ä¸æ–½è„‚ç²‰,è„¸è‰²è‹ç™½.\n");
+	set("gender", "å¥³æ€§");
 	set("age", 25);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -39,10 +39,10 @@ void create()
 	set_temp("apply/attack", 35);
 	set_temp("apply/damage", 35);
         set("inquiry", ([
-		"÷¡°İ" : "÷¡°İÊÇÎÒ¼ÒµÄ´ó³ğÈË¡£",
-		"ÎâÖ®ÈÙ" :"ÎÒÒ»¶¨ÒªÊÖÈĞÁËÕâ¸ö¼éÔô¡£",
-		"ÀñÎï" :  "ÕâÑùÀñÎï¿É²»Ò»°ã,Ëı¾ÍÊÇÎÒµÄºÃÑ¾»·Ë«¶ù¡£",
-		"Ë«¶ù" :  "ÕâĞ¡Ñ¾Í·¸úËæÎÒ¶àÄê,×öÊÂÒ²»¹Í×µ±¡£",
+		"é³Œæ‹œ" : "é³Œæ‹œæ˜¯æˆ‘å®¶çš„å¤§ä»‡äººã€‚",
+		"å´ä¹‹è£" :"æˆ‘ä¸€å®šè¦æ‰‹åˆƒäº†è¿™ä¸ªå¥¸è´¼ã€‚",
+		"ç¤¼ç‰©" :  "è¿™æ ·ç¤¼ç‰©å¯ä¸ä¸€èˆ¬,å¥¹å°±æ˜¯æˆ‘çš„å¥½ä¸«ç¯åŒå„¿ã€‚",
+		"åŒå„¿" :  "è¿™å°ä¸«å¤´è·Ÿéšæˆ‘å¤šå¹´,åšäº‹ä¹Ÿè¿˜å¦¥å½“ã€‚",
 	]) );
 	setup();
 	carry_object("/clone/misc/cloth")->wear();
@@ -55,8 +55,8 @@ void init()
 	ob = this_player();
 
 	if( interactive(ob) && !is_fighting() ) 
-	say( "×¯·òÈËËµµÀ£ººÜ¾ÃÃ»ÓĞÈËÀ´ÁË,\nÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬¿ÉÖªµÀÎÒÏà¹«µÄÏÂÂäÂğ?\n");
+	say( "åº„å¤«äººè¯´é“ï¼šå¾ˆä¹…æ²¡æœ‰äººæ¥äº†,\nè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œå¯çŸ¥é“æˆ‘ç›¸å…¬çš„ä¸‹è½å—?\n");
 }
 
 int accept_object(object me, object ob)
@@ -64,7 +64,7 @@ int accept_object(object me, object ob)
 	int i;
 	if( !me || environment(me) != environment() ) return 0;
 	if ( !objectp(ob) ) return 0; 
-	if ( !present(ob, me) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£");
+	if ( !present(ob, me) ) return notify_fail("ä½ æ²¡æœ‰è¿™ä»¶ä¸œè¥¿ã€‚");
 	if ( (string)ob->query("id") == "wu zhi rong") 
 	{
 	i=(int)this_player()->query("weiwang");
@@ -72,26 +72,26 @@ int accept_object(object me, object ob)
 	{
 	i=i+10;
 	this_player()->set("weiwang",i);
-	message_vision(HIC "\n$NµÄ½­ºşÍşÍûÌá¸ßÁË£¡\n" NOR,me);
-	command("tell "+this_player()->query("id")+" ÄãÏÖÔÚµÄ½­ºşÍşÍûÊÇ " +(string)(i));
-	write(HIC "\n×¯·òÈË´óÏ²µÀ£º¹·Ôô,¿´´ò!Ïë²»µ½ÄãÒ²ÓĞ½ñÌì!!!\n");
+	message_vision(HIC "\n$Nçš„æ±Ÿæ¹–å¨æœ›æé«˜äº†ï¼\n" NOR,me);
+	command("tell "+this_player()->query("id")+" ä½ ç°åœ¨çš„æ±Ÿæ¹–å¨æœ›æ˜¯ " +(string)(i));
+	write(HIC "\nåº„å¤«äººå¤§å–œé“ï¼šç‹—è´¼,çœ‹æ‰“!æƒ³ä¸åˆ°ä½ ä¹Ÿæœ‰ä»Šå¤©!!!\n");
         ob->die();
 	}
          if(this_player()->query("weiwang")>=70)
 	 {
-	 write(HIC "\n×¯·òÈËËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)+",Èç´Ë´ó¶÷´óµÂ,æªÉíÊµ²»ÖªºÎÒÔÎª±¨.\n");
-	 write(HIC "ÎÒÏëËÍ¶÷¹«Ò»¼şÀñÎï,ÎñÇëÎğÈ´ÊÇĞÒ.\n");
+	 write(HIC "\nåº„å¤«äººè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)+",å¦‚æ­¤å¤§æ©å¤§å¾·,å¦¾èº«å®ä¸çŸ¥ä½•ä»¥ä¸ºæŠ¥.\n");
+	 write(HIC "æˆ‘æƒ³é€æ©å…¬ä¸€ä»¶ç¤¼ç‰©,åŠ¡è¯·å‹¿å´æ˜¯å¹¸.\n");
 	 }
         }		
-	if ( (string)ob->query("name") == "Ã÷Ê·¼­ÂÔ") 
+	if ( (string)ob->query("name") == "æ˜å²è¾‘ç•¥") 
 	{
-	 write(HIC "\n×¯·òÈËËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)+",¶àĞ»ÁË.\n");
-	 write(HIC "°¦,ÄãÒªÄÜ°ïÎÒÕÒµ½ÎâÖ®ÈÙÕâ¹·Ôô¾ÍºÃÁË.\n");
+	 write(HIC "\nåº„å¤«äººè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)+",å¤šè°¢äº†.\n");
+	 write(HIC "å”‰,ä½ è¦èƒ½å¸®æˆ‘æ‰¾åˆ°å´ä¹‹è£è¿™ç‹—è´¼å°±å¥½äº†.\n");
         }		
-	if ( (string)ob->query("name") == "×¯ÔÊ³Ç") 
+	if ( (string)ob->query("name") == "åº„å…åŸ") 
 	{
-	 write(HIC "\n×¯·òÈËËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)+",¶àĞ»ÁË.\n");
-	 write(HIC "°¦,ÄãÒªÄÜ°ïÎÒÕÒµ½ÎâÖ®ÈÙÕâ¹·Ôô¾ÍºÃÁË.\n");
+	 write(HIC "\nåº„å¤«äººè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)+",å¤šè°¢äº†.\n");
+	 write(HIC "å”‰,ä½ è¦èƒ½å¸®æˆ‘æ‰¾åˆ°å´ä¹‹è£è¿™ç‹—è´¼å°±å¥½äº†.\n");
         }		
  return 1;
 }

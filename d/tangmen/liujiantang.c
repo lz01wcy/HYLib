@@ -4,10 +4,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "Áô½£ÌÃ");
+	set("short", "ç•™å‰‘å ‚");
 	set("long", @LONG
-	¡°Áô½£ÌÃ¡±£¬¹ËÃûË¼Òå£¬·²ÊÇÀ´ÌÆÃÅµÄ·Ã¿Í£¬¹ıÕâ¶ù¶¼Òª½âÏÂ±øÆ÷£¬·ñÔò²»ÔÊ
-ĞíÔÙÉîÈëÌÆÃÅ¡£
+	â€œç•™å‰‘å ‚â€ï¼Œé¡¾åæ€ä¹‰ï¼Œå‡¡æ˜¯æ¥å”é—¨çš„è®¿å®¢ï¼Œè¿‡è¿™å„¿éƒ½è¦è§£ä¸‹å…µå™¨ï¼Œå¦åˆ™ä¸å…
+è®¸å†æ·±å…¥å”é—¨ã€‚
 LONG
 	);
         set("exits", ([
@@ -36,34 +36,34 @@ int valid_leave(object me, string dir)
 myfam = (mapping)me->query("family");
                
 
-    if ((!myfam || myfam["family_name"] != "ÌÆÃÅ" ) && dir == "west"  ) {
+    if ((!myfam || myfam["family_name"] != "å”é—¨" ) && dir == "west"  ) {
         inv = all_inventory(me);
         for(i=sizeof(inv)-1; i>=0; i--)
             if(inv[i]->query("weapon_prop") && (inv[i]->query("equipped")))
                 if(objectp(present("tang wuhuo", environment(me))))
-                    return notify_fail("ÌÆÎŞ»ğÀ¹×¡ÄãºÈµÀ£ºÕâÎ»" +
-                        RANK_D->query_respect(me) + "Çë·ÅÏÂ±øÈĞ¡£ÔÙ½øÈ¥¾ÍÊÇ"
-                        "ÌÆÃÅÄÚÌÃ£¬Íâ¿Í\n²»µÃ³Ö±øÈĞÈçÄÚ£¡\n");
+                    return notify_fail("å”æ— ç«æ‹¦ä½ä½ å–é“ï¼šè¿™ä½" +
+                        RANK_D->query_respect(me) + "è¯·æ”¾ä¸‹å…µåˆƒã€‚å†è¿›å»å°±æ˜¯"
+                        "å”é—¨å†…å ‚ï¼Œå¤–å®¢\nä¸å¾—æŒå…µåˆƒå¦‚å†…ï¼\n");
                 
     }
-    if ((!myfam || myfam["family_name"] != "ÌÆÃÅ" ) && dir == "east"  ) {
+    if ((!myfam || myfam["family_name"] != "å”é—¨" ) && dir == "east"  ) {
         inv = all_inventory(me);
         for(i=sizeof(inv)-1; i>=0; i--)
             if(inv[i]->query("weapon_prop") && (inv[i]->query("equipped")))
                 if(objectp(present("tang wuhuo", environment(me))))
-                    return notify_fail("ÌÆÎŞ»ğÀ¹×¡ÄãºÈµÀ£ºÕâÎ»" +
-                        RANK_D->query_respect(me) + "Çë·ÅÏÂ±øÈĞ¡£ÔÙ½øÈ¥¾ÍÊÇ"
-                        "ÌÆÃÅÄÚÌÃ£¬Íâ¿Í\n²»µÃ³Ö±øÈĞÈçÄÚ£¡\n");
+                    return notify_fail("å”æ— ç«æ‹¦ä½ä½ å–é“ï¼šè¿™ä½" +
+                        RANK_D->query_respect(me) + "è¯·æ”¾ä¸‹å…µåˆƒã€‚å†è¿›å»å°±æ˜¯"
+                        "å”é—¨å†…å ‚ï¼Œå¤–å®¢\nä¸å¾—æŒå…µåˆƒå¦‚å†…ï¼\n");
                 
     }
-    if ((!myfam || myfam["family_name"] != "ÌÆÃÅ" ) && dir == "south"  ) {
+    if ((!myfam || myfam["family_name"] != "å”é—¨" ) && dir == "south"  ) {
         inv = all_inventory(me);
         for(i=sizeof(inv)-1; i>=0; i--)
             if(inv[i]->query("weapon_prop") && (inv[i]->query("equipped")))
                 if(objectp(present("tang wuhuo", environment(me))))
-                    return notify_fail("ÌÆÎŞ»ğÀ¹×¡ÄãºÈµÀ£ºÕâÎ»" +
-                        RANK_D->query_respect(me) + "Çë·ÅÏÂ±øÈĞ¡£ÔÙ½øÈ¥¾ÍÊÇ"
-                        "ÌÆÃÅÄÚÌÃ£¬Íâ¿Í\n²»µÃ³Ö±øÈĞÈçÄÚ£¡\n");
+                    return notify_fail("å”æ— ç«æ‹¦ä½ä½ å–é“ï¼šè¿™ä½" +
+                        RANK_D->query_respect(me) + "è¯·æ”¾ä¸‹å…µåˆƒã€‚å†è¿›å»å°±æ˜¯"
+                        "å”é—¨å†…å ‚ï¼Œå¤–å®¢\nä¸å¾—æŒå…µåˆƒå¦‚å†…ï¼\n");
                 
     }
     return ::valid_leave(me, dir);

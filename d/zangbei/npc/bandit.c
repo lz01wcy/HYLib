@@ -3,10 +3,10 @@
 inherit NPC;
 void create()
 {
-        set_name("É½Õ¯à¶ÂŞ",({"bandit"}));
-        set("title",YEL"Áú»¢Õ¯"NOR); 
-        set("long","Ò»¸öÉí´©ºÚÒÂ£¬ÄÃ×ÅÃ÷»Î»Î¸Öµ¶µÄĞ¡ÍÁ·Ë¡£\n");
-        set("gender","ÄĞĞÔ");
+        set_name("å±±å¯¨å–½ç½—",({"bandit"}));
+        set("title",YEL"é¾™è™å¯¨"NOR); 
+        set("long","ä¸€ä¸ªèº«ç©¿é»‘è¡£ï¼Œæ‹¿ç€æ˜æ™ƒæ™ƒé’¢åˆ€çš„å°åœŸåŒªã€‚\n");
+        set("gender","ç”·æ€§");
         set("age",32);
         set("group","longhuzhai");      
         set("int",22);
@@ -37,11 +37,11 @@ void create()
         set("combat_exp",1034101);  
         set("attitude", "aggressive");
                 
-        set("death_msg",CYN"\n$N½ĞµÀ£º¡°ÔçÖªµÀ¡£¡£¾Í²»µ±ÍÁ·ËÁË¡£¡£¡±\n"NOR);    
+        set("death_msg",CYN"\n$Nå«é“ï¼šâ€œæ—©çŸ¥é“ã€‚ã€‚å°±ä¸å½“åœŸåŒªäº†ã€‚ã€‚â€\n"NOR);    
         set("nb_chat_chance", 100);
         set("nb_chat_msg_combat", ([
-                10: "É½Õ¯à¶ÂŞ½ĞµÀ£º¡°ËÍÉÏÃÅµÄ·ÊÑò£¬µÜĞÖÃÇ²¢¼çÉÏÑ½¡£¡±\n",
-                15: "É½Õ¯à¶ÂŞ½ĞµÀ£º¡°´óÍõ£¬´óÍõÔÚÄÄÀï£¿¶¥²»×¡ÁË¡£¡±\n",
+                10: "å±±å¯¨å–½ç½—å«é“ï¼šâ€œé€ä¸Šé—¨çš„è‚¥ç¾Šï¼Œå¼Ÿå…„ä»¬å¹¶è‚©ä¸Šå‘€ã€‚â€\n",
+                15: "å±±å¯¨å–½ç½—å«é“ï¼šâ€œå¤§ç‹ï¼Œå¤§ç‹åœ¨å“ªé‡Œï¼Ÿé¡¶ä¸ä½äº†ã€‚â€\n",
         ]) );           
         set("chat_chance_combat", 100);
 /*        set("chat_msg_combat", ({
@@ -49,7 +49,7 @@ void create()
         }) );*/
         set("chat_chance",1);
         set("chat_msg",({
-                "É½Õ¯à¶ÂŞ½ĞµÀ£º¡°Áú»¢Õ¯µÄ´óÍõÔÚ´Ë£¬ÏĞÔÓÈËµÈÉÁ¿ªÁË£¡¡±\n",
+                "å±±å¯¨å–½ç½—å«é“ï¼šâ€œé¾™è™å¯¨çš„å¤§ç‹åœ¨æ­¤ï¼Œé—²æ‚äººç­‰é—ªå¼€äº†ï¼â€\n",
         }) );                   
            
 //        CHAR_D->setup();_char(this_object());
@@ -62,12 +62,12 @@ void create()
 int accept_object(object who, object ob)
 { 
         if( ob->value() >= 10000) {
-                        command( "say ¹ş¹ş£¬¿´ÔÚÄãĞ¢Ë³µÄ·İÉÏ£¬¾Í¸øÄã¸ö·½±ã°É¡£");
+                        command( "say å“ˆå“ˆï¼Œçœ‹åœ¨ä½ å­é¡ºçš„ä»½ä¸Šï¼Œå°±ç»™ä½ ä¸ªæ–¹ä¾¿å§ã€‚");
                         who->set_temp("wild4_pass", 1);
                         who->remove_all_killer();
                         return 1;
                 } else {
-                        command("say ÅŞ£¬Äãµ±´óÒ¯ÊÇ½Ğ»¨×Ó£¿\n");
+                        command("say å‘¸ï¼Œä½ å½“å¤§çˆ·æ˜¯å«èŠ±å­ï¼Ÿ\n");
                         return 0;
                 }
         return 0;

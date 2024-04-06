@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ĳ�");
+        set("short", "赌场");
         set("long", @LONG
-������һ�Ҷĳ���һ���ţ���ͻῴ���پ��������ĸ����֡�Ը��
-���䡱����˵������������������￪��������ӡ�ûǮ������û�
-�ұ�����ȥ��
+这里是一家赌场，一进门，你就会看见遒劲有力的四个大字“愿赌
+服输”。听说有两个世外高人在这里开了这个大场子。没钱的人最好回
+家抱娃娃去。
 LONG	);
         set("exits", ([
                 "west" : __DIR__"beijie2",                              

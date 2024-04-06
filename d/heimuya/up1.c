@@ -10,14 +10,14 @@ int do_insert(string arg);
 
 void create()
 {
-    set("short", "ÈÕÔÂÆº");
+    set("short", "æ—¥æœˆåª");
     set("long", @TEXT
-ÕâÀïÊÇ°ëÉ½µÄÒ»Æ¬Ğ¡ÍÁÆº£¬ÀëÑÂ¶¥»¹ÓĞÒ»¶ÎÂ·Í¾£¬¿Éµ½ÕâÒÑ
-¾­Ã»ÓĞÂ·ÉÏÈ¥£¬ÃæÇ°ÊÇÈç¾³°ãµÄÇÍ±Ú£¬ÑöÍ·¶øÍû£¬µ«¼ûÑÂ¶¥ÒÀÏ¡
-ËÊÁ¢×ÅÂ¥¸ó£¬ÍğÈçÏÉ¾³¡£¿ÉÔÆÑÌçÔÈÆ£¬¿´²»ÇåÎú¡£´ÓĞüÑÂÉÏ´¹ÏÂ
-Ò»ÌõÉşË÷(rope)£¬¿´ÉÏÈ¥ÏóÊÇĞüÑÂÉÏÏÂ»¥Í¨ÏûÏ¢µÄ¹¤¾ß£¬ÉşË÷µÄ
-ÉÏÃæËÆºõÒşÔ¼ÓĞÒ»¸öµõÀº(basket)¡£ĞüÑÂµÄÇ½ÉÏËÆºõÓĞÒ»¸öÏ»×Ó
-(xiazi) £¬ÄãËÆºõ×ßÈëÒ»¸öÎíÕ¬£¬Õæ²»ÖªÈçºÎÊÇºÃ¡£
+è¿™é‡Œæ˜¯åŠå±±çš„ä¸€ç‰‡å°åœŸåªï¼Œç¦»å´–é¡¶è¿˜æœ‰ä¸€æ®µè·¯é€”ï¼Œå¯åˆ°è¿™å·²
+ç»æ²¡æœ‰è·¯ä¸Šå»ï¼Œé¢å‰æ˜¯å¦‚å¢ƒèˆ¬çš„å³­å£ï¼Œä»°å¤´è€Œæœ›ï¼Œä½†è§å´–é¡¶ä¾ç¨€
+è€¸ç«‹ç€æ¥¼é˜ï¼Œå®›å¦‚ä»™å¢ƒã€‚å¯äº‘çƒŸç¼­ç»•ï¼Œçœ‹ä¸æ¸…æ™°ã€‚ä»æ‚¬å´–ä¸Šå‚ä¸‹
+ä¸€æ¡ç»³ç´¢(rope)ï¼Œçœ‹ä¸Šå»è±¡æ˜¯æ‚¬å´–ä¸Šä¸‹äº’é€šæ¶ˆæ¯çš„å·¥å…·ï¼Œç»³ç´¢çš„
+ä¸Šé¢ä¼¼ä¹éšçº¦æœ‰ä¸€ä¸ªåŠç¯®(basket)ã€‚æ‚¬å´–çš„å¢™ä¸Šä¼¼ä¹æœ‰ä¸€ä¸ªåŒ£å­
+(xiazi) ï¼Œä½ ä¼¼ä¹èµ°å…¥ä¸€ä¸ªé›¾å®…ï¼ŒçœŸä¸çŸ¥å¦‚ä½•æ˜¯å¥½ã€‚
 TEXT);
 
     set("exits", ([
@@ -28,9 +28,9 @@ TEXT);
     ]));
 
     set("item_desc", ([
-        "basket": "ÄÇÊÇÒ»¸öµôÀº£¬¿´Ñù×ÓÓĞĞ©¹Å¹Ö¡£\n",
-        "rope"  : "Éş×Ó¾ÍÊÇÉş×Ó£¬¿ÉÄÜÊÇÏòÉÏµÄ¹¤¾ß¡£\n",
-        "xiazi" : "ÕâÊÇÒ»¸öÏ»×Ó£¬¿´Ñù×ÓÊÇÒ»¸ö¿ª¹Ø£¬Ï»×ÓµÄ²àÃæÓĞÒ»¸ö²å¿×¡£\n",
+        "basket": "é‚£æ˜¯ä¸€ä¸ªæ‰ç¯®ï¼Œçœ‹æ ·å­æœ‰äº›å¤æ€ªã€‚\n",
+        "rope"  : "ç»³å­å°±æ˜¯ç»³å­ï¼Œå¯èƒ½æ˜¯å‘ä¸Šçš„å·¥å…·ã€‚\n",
+        "xiazi" : "è¿™æ˜¯ä¸€ä¸ªåŒ£å­ï¼Œçœ‹æ ·å­æ˜¯ä¸€ä¸ªå¼€å…³ï¼ŒåŒ£å­çš„ä¾§é¢æœ‰ä¸€ä¸ªæ’å­”ã€‚\n",
     ]));
 //    set("no_clean_up", 0);
     setup();
@@ -54,17 +54,17 @@ void check_trigger()
                 room->set("insert_trigger", 1);
                 set("exits/enter", __DIR__"basket");
                 room->set("exits/out", __FILE__);
-                message("vision", "Ö»¼ûÒ»¸öµôÀº(basket)´ÓÌì¶ø½µ£¬Äã²»½ûÒ»Õú£¡\n"
+                message("vision", "åªè§ä¸€ä¸ªæ‰ç¯®(basket)ä»å¤©è€Œé™ï¼Œä½ ä¸ç¦ä¸€æ€”ï¼\n"
                     , this_object() );
                 set("item_desc", ([
-                    "basket" : "ÕâÊÇÒ»¸öµôÀº£¬ÊÇ´«ËµÖĞµÄ½»Í¨¹¤¾ß¡£\n",
+                    "basket" : "è¿™æ˜¯ä¸€ä¸ªæ‰ç¯®ï¼Œæ˜¯ä¼ è¯´ä¸­çš„äº¤é€šå·¥å…·ã€‚\n",
                 ]));
                 
                 remove_call_out("on_board");
                 call_out("on_board", 15);
             }
             else
-                message("vision", "¿´Ñù×ÓÄãµÃµÈÏÂ²¦¶ù¡£\n",this_object() );
+                message("vision", "çœ‹æ ·å­ä½ å¾—ç­‰ä¸‹æ‹¨å„¿ã€‚\n",this_object() );
         }
         else
             message("vision", "ERROR: basket not found\n", this_object() );
@@ -75,8 +75,8 @@ void on_board()
 {
     object room;
     if( !query("exits/enter") ) return;
-    message("vision", "Ö»¼ûµôÀº»º»ºÏòÉÏ£¬ËÄÖÜÎŞÏŞÃÀºÃ£¬\n"
-             "ÄãËÆºõÖÃÉíÓÚÒ»´¦ÈË¼äÏÉ¾³ÎŞÒì¡£\n", this_object() );
+    message("vision", "åªè§æ‰ç¯®ç¼“ç¼“å‘ä¸Šï¼Œå››å‘¨æ— é™ç¾å¥½ï¼Œ\n"
+             "ä½ ä¼¼ä¹ç½®èº«äºä¸€å¤„äººé—´ä»™å¢ƒæ— å¼‚ã€‚\n", this_object() );
 
     if( room = find_object(__DIR__"basket") )
     {
@@ -93,7 +93,7 @@ void arrive()
     if( room = find_object(__DIR__"basket") )
     {
         room->set("exits/out", __DIR__"up2");
-        message("vision", "àâµÄÒ»Éù£¬ÄãËÆºõÒ»ÏÂ´ÓÌìÉÏµ½ÁËµØÉÏ¡£\n",room );
+        message("vision", "å™”çš„ä¸€å£°ï¼Œä½ ä¼¼ä¹ä¸€ä¸‹ä»å¤©ä¸Šåˆ°äº†åœ°ä¸Šã€‚\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 20);
@@ -119,12 +119,12 @@ int do_insert(string arg)
 
     if( !arg || arg=="" ) return 0;
 
-    if( arg=="¿¨" ) arg = "card1";   
+    if( arg=="å¡" ) arg = "card1";   
     
     if( arg=="card1")
     {
 	if( !objectp(ob = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if( !me->query_temp("mark/cards") )
                 me->set_temp("mark/cards",1);
         if( me->query_temp("mark/cards")==4)
@@ -134,7 +134,7 @@ int do_insert(string arg)
         }
         else    {
                 me->add_temp("mark/cards",1);
-                message("vision", "àâµÄÒ»Éù£¬Äã¿´µ½µôÀºÏòÏÂÒ»½Ú¡£\n",me );
+                message("vision", "å™”çš„ä¸€å£°ï¼Œä½ çœ‹åˆ°æ‰ç¯®å‘ä¸‹ä¸€èŠ‚ã€‚\n",me );
         }
     }
     return 1;

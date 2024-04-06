@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡ºÍÉĞ", ({ "xiao heshang", "xiao", "heshang" }));
-	set("long", "ÕâÊÇÎ»ÄêÇáµÄºÍÉĞ£¬¿´Ëûò¯³ÏµÄÑù×Ó£¬³¤´óºó¿Ï¶¨ÊÇÎ»µÃµÀ¸ßÉ®¡£\n"); 
-	set("gender", "ÄĞĞÔ");
+	set_name("å°å’Œå°š", ({ "xiao heshang", "xiao", "heshang" }));
+	set("long", "è¿™æ˜¯ä½å¹´è½»çš„å’Œå°šï¼Œçœ‹ä»–è™”è¯šçš„æ ·å­ï¼Œé•¿å¤§åè‚¯å®šæ˜¯ä½å¾—é“é«˜åƒ§ã€‚\n"); 
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 

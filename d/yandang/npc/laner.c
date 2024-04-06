@@ -2,18 +2,18 @@ inherit NPC;
 
 void create()
 {
-	set_name("À¼¶ù", ({ "laner", "yahuan" }));
-	set("gender", "Å®ĞÔ");
+	set_name("å…°å„¿", ({ "laner", "yahuan" }));
+	set("gender", "å¥³æ€§");
 	set("age", 16);
    
 	set("combat_exp", 1000); 
-	set("nickname","Ñ¾÷ß");
+	set("nickname","ä¸«é¬Ÿ");
 	set_skill("unarmed", 20);
 	set_skill("parry", 20);
 	set_skill("dodge", 20);
     set("chat_chance", 7);
 	set("chat_msg", ({
-		"Ğ¡½ã×òÍíÈ¥³ØÌÁ±ßÉÍÔÂ,»ØÀ´¾Í²»¼ûÄÇô¢ÁË!\n",
+		"å°å§æ˜¨æ™šå»æ± å¡˜è¾¹èµæœˆ,å›æ¥å°±ä¸è§é‚£ç°ªäº†!\n",
        }));
 	setup();
 	add_money("silver",10);

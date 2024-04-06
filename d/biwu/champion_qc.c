@@ -10,7 +10,7 @@ void changeshape(object winner);
 void create()
 {
 	string info,name,id,file;
-        set_name( "´óµÜ×Ó" , ({ "dizi" }) );
+        set_name( "å¤§å¼Ÿå­" , ({ "dizi" }) );
         set_temp("no_kill",1);
 set("pubmaster",1);
 	setup();
@@ -20,7 +20,7 @@ set("pubmaster",1);
 		restore_object(file);
         set_name( name , ({ id }) );
         set("pubmaster",1);
-        create_family("Çà³ÇÅÉ", 40, "µÜ×Ó");
+        create_family("é’åŸŽæ´¾", 40, "å¼Ÿå­");
 	 delete("env");
         set("attitude", "aggressive");
         reset_action();
@@ -28,7 +28,7 @@ set("pubmaster",1);
         loadall(this_object());
         this_object()->set_max_encumbrance(100000000);
         this_object()->clear_condition();
-        set("title", HIY "Çà³ÇÅÉÕÆÃÅ´óµÜ×Ó" NOR);
+        set("title", HIY "é’åŸŽæ´¾æŽŒé—¨å¤§å¼Ÿå­" NOR);
 	 set_temp("no_kill",1);
 	carry_object("clone/weapon/gangjian")->wield();
 	carry_object("clone/misc/cloth")->wear();
@@ -49,13 +49,13 @@ void changeshape( object winner)
 	object zheng;
 	string name,id,nick;
         if (!userp(winner))
-        return notify_fail("Äã²»ÊÇÍæ¼Ò£¬ÊÇ»úÆ÷ÈË.\n");
-	if( (string)winner->query("family/family_name") != "Çà³ÇÅÉ" ) 
-	return notify_fail("Ö»ÓÐÇà³ÇÅÉµÜ×Ó²ÅÄÜÕù¶á´óµÜ×ÓÖ®Î»£¡\n");
+        return notify_fail("ä½ ä¸æ˜¯çŽ©å®¶ï¼Œæ˜¯æœºå™¨äºº.\n");
+	if( (string)winner->query("family/family_name") != "é’åŸŽæ´¾" ) 
+	return notify_fail("åªæœ‰é’åŸŽæ´¾å¼Ÿå­æ‰èƒ½äº‰å¤ºå¤§å¼Ÿå­ä¹‹ä½ï¼\n");
 
 	winner_file = winner->query_save_file();
         CHANNEL_D->do_channel(this_object(), "party",
-        sprintf( "%s´ÓÏÖÔÚ¿ªÊ¼ÊÇÇà³ÇÅÉÐÂµÄÕÆÃÅ´óµÜ×ÓÁË£¡£¡ \n",
+        sprintf( "%sä»ŽçŽ°åœ¨å¼€å§‹æ˜¯é’åŸŽæ´¾æ–°çš„æŽŒé—¨å¤§å¼Ÿå­äº†ï¼ï¼ \n",
         winner->name(1)));
 	write_file(CHAMPION_FILE,sprintf("%s %s %s",
 	winner_file,winner->query("id"),winner->query("name")),1);
@@ -69,12 +69,12 @@ void changeshape( object winner)
 	reset_action();
 	delete_temp("already_loaded");
 	loadall(this_object());	
-	set("title", HIY "Çà³ÇÅÉÕÆÃÅ´óµÜ×Ó" NOR);	
+	set("title", HIY "é’åŸŽæ´¾æŽŒé—¨å¤§å¼Ÿå­" NOR);	
 	set("nickname",nick);
 	zheng = new(__DIR__"ling_qc");
 	find(id);
 	zheng->move(winner);
-	message_vision("ÕÆÃÅ´óµÜ×Ó¸øÁË$NÒ»¿éÇà³ÇÅÉµÄÁîÅÆ¡£\n",winner);
+	message_vision("æŽŒé—¨å¤§å¼Ÿå­ç»™äº†$Nä¸€å—é’åŸŽæ´¾çš„ä»¤ç‰Œã€‚\n",winner);
 	 set_temp("no_kill",1);
 
 	
@@ -131,7 +131,7 @@ return 0;
 	command("give coin to "+(string)this_player()->query("id")+"");
 	command("give gold to "+(string)this_player()->query("id")+"");
 	command("give Thousand-cash to "+(string)this_player()->query("id")+"");
-	command("say ºÃ£¬½ñÌìµÄÊÕÒæÇë²éÊÕ£¡");
+	command("say å¥½ï¼Œä»Šå¤©çš„æ”¶ç›Šè¯·æŸ¥æ”¶ï¼");
 	this_player()->start_busy(6);
 	return 1;
 }
@@ -140,12 +140,12 @@ int accept_fight(object me)
 {
 object ob;
 ob=this_object();
-	if( (string)this_player()->query("family/family_name") != "Çà³ÇÅÉ" ) 
-	return notify_fail("Ö»ÓÐ±¾ÅÉµÜ×Ó²ÅÄÜÕù¶á´óµÜ×ÓÖ®Î»£¡\n");
+	if( (string)this_player()->query("family/family_name") != "é’åŸŽæ´¾" ) 
+	return notify_fail("åªæœ‰æœ¬æ´¾å¼Ÿå­æ‰èƒ½äº‰å¤ºå¤§å¼Ÿå­ä¹‹ä½ï¼\n");
        if (this_player()->query("combat_exp") < 100000 || this_player()->query("age") <= 18)
-        return notify_fail("ÄãµÄÄÜÁ¦²»×ãÒÔ³ÉÎª´óµÜ×Ó.\n");
+        return notify_fail("ä½ çš„èƒ½åŠ›ä¸è¶³ä»¥æˆä¸ºå¤§å¼Ÿå­.\n");
 
-       command("say ºÃ£¬Äã´ò°ÜÎÒ¾Í¿ÉÒÔ³ÉÎªÕÆÃÅ´óµÜ×Ó£¡");
+       command("say å¥½ï¼Œä½ æ‰“è´¥æˆ‘å°±å¯ä»¥æˆä¸ºæŽŒé—¨å¤§å¼Ÿå­ï¼");
  if (!ob->query_skill_mapped("unarmed"))
 {
 ob->set_skill("gedoushu",this_player()->query_skill("force"));
@@ -191,7 +191,7 @@ while (i--) {
 	destruct(ob);
 			}
 	}
-message_vision(HIY"$NÉíÉÏµÄÁîÅÆ²»Òí¶ø·ÉÁË¡£\n"NOR,ulist[i]);
+message_vision(HIY"$Nèº«ä¸Šçš„ä»¤ç‰Œä¸ç¿¼è€Œé£žäº†ã€‚\n"NOR,ulist[i]);
 	}
 }
 }
@@ -206,7 +206,7 @@ int accept_object(object who, object ob)
 		return 0;		
 
 	if( (string)this_player()->query("family/family_name") != query("family/family_name")) 
-	return notify_fail("Ö»ÓÐ±¾ÅÉµÜ×Ó²ÅÄÜµ½ÎÒÕâÑ§¹¦·ò£¡\n");
+	return notify_fail("åªæœ‰æœ¬æ´¾å¼Ÿå­æ‰èƒ½åˆ°æˆ‘è¿™å­¦åŠŸå¤«ï¼\n");
 
 	if(who->query_skill("force",1)<30)
 		i=ob->value() / 50;
@@ -223,8 +223,8 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timem",i);
-command("say ¿´ÔÚÄãÎª±¾ÅÉ¾¡ÐÄ¾¡Á¦£¬ÎÒ¾ÍÖ¸¶¨ÄãÁ½ÊÖ¹¦·ò°É£¡");
-//      message_vision("×óÀäìø¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏÐÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
+command("say çœ‹åœ¨ä½ ä¸ºæœ¬æ´¾å°½å¿ƒå°½åŠ›ï¼Œæˆ‘å°±æŒ‡å®šä½ ä¸¤æ‰‹åŠŸå¤«å§ï¼");
+//      message_vision("å·¦å†·ç¦…å¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
 
 	return 1;
 }
@@ -233,7 +233,7 @@ int recognize_apprentice(object ob)
 {
 
 	if( (string)ob->query("family/family_name") != this_object()->query("family/family_name")) 
-	return notify_fail("Ö»ÓÐ±¾ÅÉµÜ×Ó²ÅÄÜµ½ÎÒÕâÑ§¹¦·ò£¡\n");
+	return notify_fail("åªæœ‰æœ¬æ´¾å¼Ÿå­æ‰èƒ½åˆ°æˆ‘è¿™å­¦åŠŸå¤«ï¼\n");
 
 	if( ob->query_temp("learn_timem") <= 0) return 0;
 else         

@@ -1,4 +1,4 @@
-// shiye.c Öª¸®Ê¦Ò¯
+// shiye.c çŸ¥åºœå¸ˆçˆ·
 
 inherit NPC;
 
@@ -6,9 +6,9 @@ string ask_me();
 
 void create()
 {
-	set_name("²ÜµÃ»Ä", ({ "cao dehuang", "cao" }));
-	set("title", "Öª¸®Ê¦Ò¯");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ›¹å¾—è’", ({ "cao dehuang", "cao" }));
+	set("title", "çŸ¥åºœå¸ˆçˆ·");
+	set("gender", "ç”·æ€§");
 	set("age", 57);
 
 	set("combat_exp", 30000);
@@ -20,7 +20,7 @@ void create()
 	set("shen_type", 0);
 
 	set("inquiry", ([
-		"½Ğ»¯¼¦" : (: ask_me :)
+		"å«åŒ–é¸¡" : (: ask_me :)
 	]) );
 
 	setup();
@@ -29,18 +29,18 @@ void create()
 	
 string ask_me()
 {
-	if ((int)this_player()->query_temp("marks/¼¦"))
+	if ((int)this_player()->query_temp("marks/é¸¡"))
 	{
-		say("ºÃĞ¡×Ó£¬ÄãÔõÃ´ÖªµÀÎÒÏ²»¶³Ô½Ğ»¯¼¦£¿\n");
+		say("å¥½å°å­ï¼Œä½ æ€ä¹ˆçŸ¥é“æˆ‘å–œæ¬¢åƒå«åŒ–é¸¡ï¼Ÿ\n");
 		command("lick");
-		say("¼ÈÈ»ÄãÎÒ³ÉÁËÊ³ÓÑ£¬ÎÒ¾Í¸æËßÄã°É¡£¸¶¶ú¹ıÀ´£¡\n");
-		command("whisper " + this_player()->query("id") + " ÄãÈ¥±±¾©ÕÒÈ«¾ÛµÂµÄÀÏ°å£¬Ö»Òª¸æËßËûÊÇÎÒ½ĞÄãÈ¥µÄ£¬Ëû¾Í»á...");
-		this_player()->delete_temp("marks/¼¦");
-		this_player()->set_temp("marks/¼¦2", 1);
-		return "½ñÌìàÅ....°¡....ÄÇ¸öÌìÆøºÜºÃ....\n";
+		say("æ—¢ç„¶ä½ æˆ‘æˆäº†é£Ÿå‹ï¼Œæˆ‘å°±å‘Šè¯‰ä½ å§ã€‚ä»˜è€³è¿‡æ¥ï¼\n");
+		command("whisper " + this_player()->query("id") + " ä½ å»åŒ—äº¬æ‰¾å…¨èšå¾·çš„è€æ¿ï¼Œåªè¦å‘Šè¯‰ä»–æ˜¯æˆ‘å«ä½ å»çš„ï¼Œä»–å°±ä¼š...");
+		this_player()->delete_temp("marks/é¸¡");
+		this_player()->set_temp("marks/é¸¡2", 1);
+		return "ä»Šå¤©å—¯....å•Š....é‚£ä¸ªå¤©æ°”å¾ˆå¥½....\n";
 	}
-	else if((int)this_player()->query_temp("marks/¼¦2"))
-		return "ÎÒÊÇ¸öÕã½­ÈË£¬Ò²Ã»ÓĞÄãÄÇÃ´ÂŞàÂ£¡\n";
+	else if((int)this_player()->query_temp("marks/é¸¡2"))
+		return "æˆ‘æ˜¯ä¸ªæµ™æ±Ÿäººï¼Œä¹Ÿæ²¡æœ‰ä½ é‚£ä¹ˆç½—å—¦ï¼\n";
 	else
-		return "ÄàËõË¿Ã×Å¼¶¤²¼¶®\n";
+		return "æ³¥ç¼©ä¸ç±³å¶é’‰å¸ƒæ‡‚\n";
 }

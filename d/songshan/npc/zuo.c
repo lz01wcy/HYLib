@@ -4,9 +4,9 @@ inherit F_MASTER;
 #include <ansi.h>;
 void create()
 {
-        set_name("×óÀäìø", ({ "zuo lengchan", "zuo" }) );
-        set("title", HIR"ÎåÔÀ½£ÅÉÃËÖ÷"HIY"áÔÉ½ÅÉµÚÊ®ÈıÕÆÃÅ"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å·¦å†·ç¦…", ({ "zuo lengchan", "zuo" }) );
+        set("title", HIR"äº”å²³å‰‘æ´¾ç›Ÿä¸»"HIY"åµ©å±±æ´¾ç¬¬åä¸‰æŒé—¨"NOR);
+        set("gender", "ç”·æ€§");
 set("pubmaster",1);
         set("class", "swordsman");
         set("age", 55);
@@ -81,7 +81,7 @@ set("chat_chance_combat", 90);
 		  set_temp("apply/damage", 200);
 	set_temp("apply/attack",200);
 	set_temp("apply/defense",200);
-        create_family("áÔÉ½ÅÉ", 13, "ÕÆÃÅ");
+        create_family("åµ©å±±æ´¾", 13, "æŒé—¨");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -114,9 +114,9 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timee",i);
-	who->set("title",HIR"áÔÉ½ÅÉ"NOR);
-	who->set("nickname", HIY "ÎåÔÀÉñ½£" NOR );
-      message_vision("×óÀäìø¶Ô$NËµµÀ£º¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£\n",who);
+	who->set("title",HIR"åµ©å±±æ´¾"NOR);
+	who->set("nickname", HIY "äº”å²³ç¥å‰‘" NOR );
+      message_vision("å·¦å†·ç¦…å¯¹$Nè¯´é“ï¼šæ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚\n",who);
 
 	return 1;
 }

@@ -5,10 +5,10 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "ºþ±ßÐ¡¾¶");
+	set("short", "æ¹–è¾¹å°å¾„");
 	set("long", @LONG
-ÕâÊÇÌ«ºþ±ßÉÏµÄÒ»ÌõÐ¡¾¶£¬µÀÅÔ»¨²ÝÔÓÉú£¬¶úÖÐÝº¸èÑàÌä¡£¶«Ãæ
-ÊÇÒ»ÍûÎÞ¼ÊµÄÌ«ºþ£¬±Ì²¨ÍòÇê£¬ÑÌ²¨ºÆÃì£¬Ì÷Ö®ÉíÐÄÊæ³©¡£
+è¿™æ˜¯å¤ªæ¹–è¾¹ä¸Šçš„ä¸€æ¡å°å¾„ï¼Œé“æ—èŠ±è‰æ‚ç”Ÿï¼Œè€³ä¸­èŽºæ­Œç‡•å•¼ã€‚ä¸œé¢
+æ˜¯ä¸€æœ›æ— é™…çš„å¤ªæ¹–ï¼Œç¢§æ³¢ä¸‡é¡·ï¼ŒçƒŸæ³¢æµ©æ¸ºï¼Œçœºä¹‹èº«å¿ƒèˆ’ç•…ã€‚
 LONG );
 	set("outdoors", "wuxi");
 	set("no_clean_up", 0);

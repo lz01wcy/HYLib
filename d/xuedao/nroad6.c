@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","ɽ·");
+        set("short","山路");
         set("long",@LONG
-������һɽ·�ϣ�������һ����Сɽ��Զ�����Կ��������ѩ
-��ɽ�⡣��Χ�������Ѿ����ѿ��õ��ˡ�
+你走在一山路上，四周有一座座小山丘。远处可以看见终年积雪
+的山尖。周围的树草已经很难看得到了。
 LONG );
         set("exits",([
                 "north"   : __DIR__"nroad7",
@@ -45,6 +45,6 @@ void clone_shui(object me)
 	if (!j) {
 		obj=new(__DIR__"npc/shuisheng.c");
 		obj->move(environment(me));
-		message_vision(HIC"ֻ���ö����ᣬ������һ��������һ�����������������Ž��߳�����\n"NOR, me);
+		message_vision(HIC"只听得叮玲玲，叮玲玲一阵铃声，一骑马自西至东，沿着江边驰来。\n"NOR, me);
 	}
 }

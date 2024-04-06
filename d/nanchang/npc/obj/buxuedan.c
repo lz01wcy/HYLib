@@ -4,10 +4,10 @@ inherit ITEM;
 int do_fu(string arg);
 void create()
 {
-   set_name(HIR"²¹Ñªµ¤"NOR, ({ "buxue dan","dan" }));
+   set_name(HIR"è¡¥è¡€ä¸¹"NOR, ({ "buxue dan","dan" }));
    set_weight(100);
-   set("unit", "¿Å");
-   set("long","ÕâÊÇÓÃÀ´ÁÆÉËµÄÒ©,Äã¿ÉÒÔ·şÓÃ(fu dan)ÓÃËü.\n");
+   set("unit", "é¢—");
+   set("long","è¿™æ˜¯ç”¨æ¥ç–—ä¼¤çš„è¯,ä½ å¯ä»¥æœç”¨(fu dan)ç”¨å®ƒ.\n");
    set("value", 2000);
    
 }
@@ -20,15 +20,15 @@ int do_fu(string arg)
 {
 	object me,ob;int i;
 	ob=this_object();me=this_player();
-	if(!arg||(arg!="dan"&&arg!="µ¤"))
-		return notify_fail("ÄãÒª·şÓÃÊ²Ã´?\n");
+	if(!arg||(arg!="dan"&&arg!="ä¸¹"))
+		return notify_fail("ä½ è¦æœç”¨ä»€ä¹ˆ?\n");
 	if(me->query("eff_qi")==me->query("max_qi"))
-		return notify_fail("ÄãµÄÆøÑªÃ»ÓĞÊÜµ½ËğÉË,·şÊ²Ã´Ò©°¡?\n");
+		return notify_fail("ä½ çš„æ°”è¡€æ²¡æœ‰å—åˆ°æŸä¼¤,æœä»€ä¹ˆè¯å•Š?\n");
     i=me->query("max_qi")-me->query("eff_qi");
 	if(i<=10)
 	me->add("eff_qi",i);
 	else me->add("eff_qi",i/5); 
-	message_vision("$N·şÏÂÁËÒ»¿Å[²¹Ñªµ¤].\n",me);
+	message_vision("$Næœä¸‹äº†ä¸€é¢—[è¡¥è¡€ä¸¹].\n",me);
 	destruct(ob);
 	return 1;
 }

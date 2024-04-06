@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 { 
-        set("short","É½¶´");
+        set("short","å±±æ´ž");
         set("long", @LONG
-ÕâÀïÊÇÉ½¶´µÄÈë¿Ú¡£É½¶´ÀïÃæÆáºÚÒ»ÍÅ£¬Äã¸ù±¾·Ö²»Çå¶«ÄÏÎ÷±±£¬Ö»ºÃºú
-ÂÒÏ¹´³ÁË¡£
+è¿™é‡Œæ˜¯å±±æ´žçš„å…¥å£ã€‚å±±æ´žé‡Œé¢æ¼†é»‘ä¸€å›¢ï¼Œä½ æ ¹æœ¬åˆ†ä¸æ¸…ä¸œå—è¥¿åŒ—ï¼Œåªå¥½èƒ¡
+ä¹±çžŽé—¯äº†ã€‚
 LONG
         );
         setup();
@@ -29,23 +29,23 @@ int do_use(string arg)
         if(!living(me) ) return 0;
 
         if (me->is_busy() || me->is_fighting())
-        return notify_fail("ÄãÕýÃ¦×ÅÄÄ£¡\n");
+        return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");
 
         if(!objectp(ob = present("fire", me)))
-        return notify_fail("ÄãÊÖÖÐÃ»ÓÐ»ðÕÛ£¬ÔõÃ´ÄÜÔÚÉ½¶´ÀïÐÐ¶¯£¿\n");
+        return notify_fail("ä½ æ‰‹ä¸­æ²¡æœ‰ç«æŠ˜ï¼Œæ€Žä¹ˆèƒ½åœ¨å±±æ´žé‡Œè¡ŒåŠ¨ï¼Ÿ\n");
 
         if( !arg || arg=="" ) return 0;
 
         if( arg == "fire" ) {
-        message_vision(HIC"$NµãÈ¼»ðÕÛ£¬°Ñ¶´ÄÚÕÕÁÁÁËÒ»Ð©¡£¶´ÄÚÁÁÁËÒ»Ð©£¬
-Î¢ÈõµÄ»ð¹âÒ»ÉÁÒ»ÉÁµÄ¡£Äã·¢ÏÖ×ó±ß"HIG"(left)"HIC"ºÃÏóÓÐ¸öÐ¡¿Ú¿ÉÒÔ¹ýÈ¥¡£\n"NOR, me);
+        message_vision(HIC"$Nç‚¹ç‡ƒç«æŠ˜ï¼ŒæŠŠæ´žå†…ç…§äº®äº†ä¸€äº›ã€‚æ´žå†…äº®äº†ä¸€äº›ï¼Œ
+å¾®å¼±çš„ç«å…‰ä¸€é—ªä¸€é—ªçš„ã€‚ä½ å‘çŽ°å·¦è¾¹"HIG"(left)"HIC"å¥½è±¡æœ‰ä¸ªå°å£å¯ä»¥è¿‡åŽ»ã€‚\n"NOR, me);
         destruct(ob);
         if(!(room = find_object(__DIR__"rukou")))
             room = load_object(__DIR__"rukou");
             set("exits/left", __DIR__"cave");
             if (me->query_temp("mb"))
 {
-tell_object("ÄãËÆºõ·¢ÏÖÓÒ·½¶àÁËÒ»ÌõÐ¡Â·¡£(right)\n",me);
+tell_object("ä½ ä¼¼ä¹Žå‘çŽ°å³æ–¹å¤šäº†ä¸€æ¡å°è·¯ã€‚(right)\n",me);
              set("exits/right",__DIR__"midao"); 
 }
             call_out("delete_exit", 4, room);   
@@ -53,7 +53,7 @@ tell_object("ÄãËÆºõ·¢ÏÖÓÒ·½¶àÁËÒ»ÌõÐ¡Â·¡£(right)\n",me);
 }
 void delete_exit(object room)
 {       
-        message("vision",BLU"Ö»Ìý¼ûÆËµÄÒ»Éù£¬»ðÕÛÏ¨ÃðÁË¡£\n"NOR, room);
+        message("vision",BLU"åªå¬è§æ‰‘çš„ä¸€å£°ï¼Œç«æŠ˜ç†„ç­äº†ã€‚\n"NOR, room);
         delete("exits/left");
         delete("exits/right");
 }
@@ -69,13 +69,13 @@ int do_break(string arg)
         room = find_object(__DIR__"hole");
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊÖÖÐÎÞ½££¬ÔõÄÜÆÆ±Ú£¿\n");
+		return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œæ€Žèƒ½ç ´å£ï¼Ÿ\n");
      message_vision(
-    "$N×ßµ½Ê¯±ÚÇ°£¬°Î³öÑü¼äËùÐü³¤½££¬ÔË¾¢ÏòÊ¯±Ú´ÌÁË¹ýÈ¥¡£\n", me);
+    "$Nèµ°åˆ°çŸ³å£å‰ï¼Œæ‹”å‡ºè…°é—´æ‰€æ‚¬é•¿å‰‘ï¼Œè¿åŠ²å‘çŸ³å£åˆºäº†è¿‡åŽ»ã€‚\n", me);
 
     if ( n >= 600 ){
     message_vision(
-    "$NÖ»ÌýÒ»ÉùºäÏì£¬Ê¯±Ú±»Í±´©ÁË¡££¡\n", me);
+    "$Nåªå¬ä¸€å£°è½°å“ï¼ŒçŸ³å£è¢«æ…ç©¿äº†ã€‚ï¼\n", me);
     set("exits/out",__DIR__"hole");
     this_player()->add("neili", -200);
     remove_call_out("close");
@@ -84,7 +84,7 @@ int do_break(string arg)
     if(!(room = find_object(__DIR__"hole")))
          room = load_object(__DIR__"hole");
     if( room = find_object(__DIR__"hole") ) {
-    message("vision", "ÄãÖ»ÌýÍâÃæÒ»ÉùºäÏì£¬Ê¯¶´±»ÈË´ÓÀïÃæÍ±´©ÁË£¬Â¶³öÁËÒ»¸ö¶´¿Ú¡£\n", room);
+    message("vision", "ä½ åªå¬å¤–é¢ä¸€å£°è½°å“ï¼ŒçŸ³æ´žè¢«äººä»Žé‡Œé¢æ…ç©¿äº†ï¼Œéœ²å‡ºäº†ä¸€ä¸ªæ´žå£ã€‚\n", room);
     room->set("exits/enter",__DIR__"rukou");
     room->set("exits/out",__DIR__"siguoya");
     remove_call_out("close1");
@@ -92,7 +92,7 @@ int do_break(string arg)
     }
     else {
     message_vision(
-    "½á¹ûÖ»ÌýÒ»ÉùÃÆºß£¬$N±»Ê¯±ÚµÄ·´µ¯Á¦ÕðµÃÑÛÇ°Ò»ºÚ....\n", me);
+    "ç»“æžœåªå¬ä¸€å£°é—·å“¼ï¼Œ$Nè¢«çŸ³å£çš„åå¼¹åŠ›éœ‡å¾—çœ¼å‰ä¸€é»‘....\n", me);
     this_player()->unconcious();
     }
 
@@ -101,12 +101,12 @@ int do_break(string arg)
 
 void close(object ob)
 {
-        message("vision","ÑÂÉÏºöÈ»µôÏÂÀ´Ò»¿é¾ÞÊ¯£¬½«¶´¿Ú·âÁË¸öÑÏÑÏÊµÊµ¡£\n", ob);
+        message("vision","å´–ä¸Šå¿½ç„¶æŽ‰ä¸‹æ¥ä¸€å—å·¨çŸ³ï¼Œå°†æ´žå£å°äº†ä¸ªä¸¥ä¸¥å®žå®žã€‚\n", ob);
         ob->delete("exits/out");
 }
 void close1(object room)
 {       
-        message("vision","ÑÂÉÏºöÈ»µôÏÂÀ´Ò»¿é¾ÞÊ¯£¬½«¶´¿Ú·âÁË¸öÑÏÑÏÊµÊµ¡£\n", room);
+        message("vision","å´–ä¸Šå¿½ç„¶æŽ‰ä¸‹æ¥ä¸€å—å·¨çŸ³ï¼Œå°†æ´žå£å°äº†ä¸ªä¸¥ä¸¥å®žå®žã€‚\n", room);
         room->delete("exits/enter");
         room->set("exits/out",__DIR__"siguoya");
 }

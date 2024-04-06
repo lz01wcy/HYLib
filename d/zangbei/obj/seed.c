@@ -2,14 +2,14 @@
 inherit ITEM;
 void create()
 {
-    set_name("ÃÞ×Ñ", ({ "seed" }) );
+    set_name("æ£‰ç±½", ({ "seed" }) );
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-            set("unit", "´ü");
+            set("unit", "è¢‹");
             set("material", "jade");
-            set("long", "Ò»´üÉÏºÃµÄÃÞ×Ñ¡£\n");
+            set("long", "ä¸€è¢‹ä¸Šå¥½çš„æ£‰ç±½ã€‚\n");
           } 
     
 }   

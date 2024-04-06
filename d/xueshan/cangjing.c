@@ -1,15 +1,15 @@
-//      cangjingge.c ²Ø¾­¸ó
-//      Designed by secret (ÃØÃÜ)
+//      cangjingge.c è—ç»é˜
+//      Designed by secret (ç§˜å¯†)
 //      97/04/09
 
 inherit ROOM;
 
 void create()
 {
-        set("short","²Ø¾­¸ó");
+        set("short","è—ç»é˜");
         set("long",@LONG
-ÕâÀïÊÇÑ©É½ËÂµÄ²Ø¾­Ö®´¦¡£Êé¼ÜÉÏÁÖÁÖ×Ü×Ü¶¼ÊÇèóÎÄ
-µä¼®¡£ÄãÒ»¸ö×ÖÒ²¿´²»¶®¡£
+è¿™é‡Œæ˜¯é›ªå±±å¯ºçš„è—ç»ä¹‹å¤„ã€‚ä¹¦æ¶ä¸Šæ—æ—æ€»æ€»éƒ½æ˜¯æ¢µæ–‡
+å…¸ç±ã€‚ä½ ä¸€ä¸ªå­—ä¹Ÿçœ‹ä¸æ‡‚ã€‚
 LONG );
         set("exits",([
                 "northwest" : __DIR__"dating",

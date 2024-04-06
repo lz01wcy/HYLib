@@ -6,15 +6,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name("Ð¡Ð»Ñ·", ({"xie xun", "xie", "xun", }));
+	set_name("å°è°¢é€Š", ({"xie xun", "xie", "xun", }));
 	set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ýÎ°Òì³£µÄµÄÀÏÕß£¬Éí´©Ò»¼þ°×²¼³¤ÅÛ¡£\n"
-        "ËûÂúÍ·»Æ·¢£¬Íþ·çÁÝÁÝ£¬ÕæÈçÌìÉñÒ»°ã£¬Ö»ÊÇÁ½Ö»ÑÛ¾¦²¢²»Õö¿ª¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æé­ä¼Ÿå¼‚å¸¸çš„çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•¿è¢ã€‚\n"
+        "ä»–æ»¡å¤´é»„å‘ï¼Œå¨é£Žå‡›å‡›ï¼ŒçœŸå¦‚å¤©ç¥žä¸€èˆ¬ï¼Œåªæ˜¯ä¸¤åªçœ¼ç›å¹¶ä¸çå¼€ã€‚\n"
 	);
 
-	set("title",HIG "Ã÷½Ì" HIY "½ðÃ«Ê¨Íõ" NOR);
+	set("title",HIG "æ˜Žæ•™" HIY "é‡‘æ¯›ç‹®çŽ‹" NOR);
 	set("level",9);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 
 	set("age", 63);
@@ -67,7 +67,7 @@ void create()
                 (: perform_action, "cuff.youyouhunduan" :),                
                 (: perform_action, "dodge.canghaiyixiao" :),                                
 	}) );
-	create_family("Ã÷½Ì",34, "·¨Íõ");
+	create_family("æ˜Žæ•™",34, "æ³•çŽ‹");
 	setup();
     	carry_object("/d/mingjiao/obj/baipao")->wear();
         carry_object(__DIR__"obj/jinchuang");

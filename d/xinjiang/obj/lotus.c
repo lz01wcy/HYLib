@@ -3,14 +3,14 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIC"ÌìÉ½Ñ©Á«"NOR,({"snow lotus"}));
+        set_name(HIC"å¤©å±±é›ªè²"NOR,({"snow lotus"}));
         set_weight(60);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
             set("long",
-                "Ò»ÖêÆæº®ÎŞ±ÈµÄ£¬°ÙÄêÒ»ÏÖµÄÌìÉ½Ñ©Á«£¡\n");
-            set("unit","Öê");
+                "ä¸€æ ªå¥‡å¯’æ— æ¯”çš„ï¼Œç™¾å¹´ä¸€ç°çš„å¤©å±±é›ªè²ï¼\n");
+            set("unit","æ ª");
             set("value", 2000);
         }
        	setup();
@@ -23,13 +23,13 @@ void init()
 int apply_medicine()
 {
 
-        this_player()->set("m_success/ÌìÉ½Ñ©Á«");
+        this_player()->set("m_success/å¤©å±±é›ªè²");
         this_player()->add("score",200);
 this_player()->add("qi",800);
 this_player()->add("eff_qi",800);
 this_player()->add("jing",800);
 this_player()->add("eff_jing",800);
-        message_vision("$NÒ»ÕÅ¿Ú£¬½«Ò»ÖêÆæº®ÎŞ±ÈµÄÌìÉ½Ñ©Á«·şÈëÌåÄÚ£¡\n",this_player()); 
+        message_vision("$Nä¸€å¼ å£ï¼Œå°†ä¸€æ ªå¥‡å¯’æ— æ¯”çš„å¤©å±±é›ªè²æœå…¥ä½“å†…ï¼\n",this_player()); 
         destruct(this_object());
         return 1;
 }  

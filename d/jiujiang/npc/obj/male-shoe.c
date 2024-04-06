@@ -5,14 +5,14 @@ inherit BOOTS;
 
 void create()
 {
-   set_name("¼âÍ·ÂÄ", ({ "boot"}) );
+   set_name("å°–å¤´å±¥", ({ "boot"}) );
    set_weight(100);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÒ»Ë«Å®ÈË´©µÄ¼âÍ·ÂÄ¡£\n");
-     set("material", "²¼");
-     set("unit", "Ë«");
+     set("long","è¿™æ˜¯ä¸€åŒå¥³äººç©¿çš„å°–å¤´å±¥ã€‚\n");
+     set("material", "å¸ƒ");
+     set("unit", "åŒ");
      set("value",10);
      set("armor_prop/armor",3);
      set("female_only",1);

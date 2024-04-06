@@ -1,4 +1,4 @@
-// À¥ÂØÉ½ÈýÊ¥Ûê sanshengao.c
+// æ˜†ä»‘å±±ä¸‰åœ£å³ sanshengao.c
 
 #include <ansi.h>
 #include <room.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-set("short","À¥ÂØÉ½ÈýÊ¥Ûê");
+set("short","æ˜†ä»‘å±±ä¸‰åœ£å³");
 	set("long",@long
-µ«¼û±éµØÂÌ²ÝÈç½õ£¬µ½´¦¹ûÊ÷Ïã»¨¡£Ô­À´ÄÇÈýÊ¥ÛêËÄÖÜ¶¼ÊÇ²åÌì¸ßÉ½£¬µ²×¡
-ÁËº®Æø¡£À¥ÂØÅÉÀú´úÕÆÃÅÈËÔø»¨ÁË¼«´óÁ¦ÆøÕû¶ÙÕâ¸öÉ½Ûê£¬ÅÉÇ²µÜ×Ó¶«ÖÁ½­ÄÏ£¬
-Î÷ÖÁÌìóÃ£¬°áÒÆÆæ»¨ÒìÊ÷Ç°À´ÖÖÖ²¡£ºöÌýµÃÉ½ÛêºóÒþÒþ´«³öÒ»ÕóÇÙÉù£¬ÄãºÃÆæÐÄ
-Æð£¬±ãÑ­ÉùÑ°È¥¡£
+ä½†è§éåœ°ç»¿è‰å¦‚é”¦ï¼Œåˆ°å¤„æžœæ ‘é¦™èŠ±ã€‚åŽŸæ¥é‚£ä¸‰åœ£å³å››å‘¨éƒ½æ˜¯æ’å¤©é«˜å±±ï¼ŒæŒ¡ä½
+äº†å¯’æ°”ã€‚æ˜†ä»‘æ´¾åŽ†ä»£æŽŒé—¨äººæ›¾èŠ±äº†æžå¤§åŠ›æ°”æ•´é¡¿è¿™ä¸ªå±±å³ï¼Œæ´¾é£å¼Ÿå­ä¸œè‡³æ±Ÿå—ï¼Œ
+è¥¿è‡³å¤©ç«ºï¼Œæ¬ç§»å¥‡èŠ±å¼‚æ ‘å‰æ¥ç§æ¤ã€‚å¿½å¬å¾—å±±å³åŽéšéšä¼ å‡ºä¸€é˜µç´å£°ï¼Œä½ å¥½å¥‡å¿ƒ
+èµ·ï¼Œä¾¿å¾ªå£°å¯»åŽ»ã€‚
 long);
 
 set("exits", ([

@@ -7,13 +7,13 @@ int do_eat(string arg);
 
 void create()
 {
-   set_name("Âú´º²è", ({"cha"}));
+   set_name("æ»¡æ˜¥èŒ¶", ({"cha"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ¾Å½­´ºÔÚÂ¥µÄÂú´º²è¡£\n");
-                set("unit", "ºø");
+                set("long", "è¿™æ˜¯ä¹æ±Ÿæ˜¥åœ¨æ¥¼çš„æ»¡æ˜¥èŒ¶ã€‚\n");
+                set("unit", "å£¶");
                 set("value",300);
                 set("no_decay",1);
                 set("food_remaining",80);
@@ -31,12 +31,12 @@ int do_eat(string arg)
    object ob;
    ob=this_player();
    if(!arg||arg!="cha")
-   return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+   return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
    if(environment(this_object())!=ob)
-   return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷¡£\n");
+   return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸ªä¸œè¥¿ã€‚\n");
    ob->add("food",80);
    ob->add("water",80);
-   message_vision("$N³ÔÁËÒ»¿Ú"+query("name")+"£¬¾õµÃÊæ·ş¼«ÁË¡£\n",ob);
+   message_vision("$Nåƒäº†ä¸€å£"+query("name")+"ï¼Œè§‰å¾—èˆ’æœæäº†ã€‚\n",ob);
    destruct(this_object());
    return 1;
 }

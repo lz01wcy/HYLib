@@ -7,13 +7,13 @@ inherit HEAD;
 
 void create()
 {
-    set_name( YEL "·ï³á½ğîÎ" NOR, ({ "clasp" }) );
+    set_name( YEL "å‡¤ç¿…é‡‘é’—" NOR, ({ "clasp" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("long", "Ò»Ö§½ğË¿Æß±¦ÔÜÖé·ï³áîÎ»·¡£\n");
-        set("unit", "Ö§");
+        set("long", "ä¸€æ”¯é‡‘ä¸ä¸ƒå®æ”’ç å‡¤ç¿…é’—ç¯ã€‚\n");
+        set("unit", "æ”¯");
 
         set("value", 100000);
 
@@ -21,8 +21,8 @@ void create()
         set("material", "gold");
                 set("armor_prop/armor", 0);
         set("armor_prop/personality", 15);
-        set("wear_msg", "$NÇáÇáµØ°ÑÒ»Ö§$n²åÔÚ·¢÷ÙÉÏ¡£\n");
-        set("remove_msg", "$NÇáÇáµØ°ÑÒ»Ö§$n´Ó·¢÷ÙÉÏ³ıÁËÏÂÀ´¡£\n");
+        set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æ”¯$næ’åœ¨å‘é«»ä¸Šã€‚\n");
+        set("remove_msg", "$Nè½»è½»åœ°æŠŠä¸€æ”¯$nä»å‘é«»ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
 
                 set("female_only", 1);
 
