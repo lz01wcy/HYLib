@@ -5,48 +5,48 @@
 mapping combat_action =
 ([
 	"hoof": ([
-		"action":		"$NÓÃºóÍÈÍù$nµÄ$lÓÃÁ¦Ò»µÅ",
+		"action":		"$Nç”¨åŽè…¿å¾€$nçš„$lç”¨åŠ›ä¸€è¹¬",
 		"damage":		100,
-		"damage_type":	"ðöÉË",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
 	"kick": ([
-		"action":		"$N³åÉÏÀ´ºÝºÝÌßÁË$nÒ»ÍÈ",
+		"action":		"$Nå†²ä¸Šæ¥ç‹ ç‹ è¸¢äº†$nä¸€è…¿",
 		"damage":		25,
-		"damage_type":	"ðöÉË",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
 	"sting": ([
-		"action":		"$N·´×ªÉíÓÃÎ²°Í¼â¶Ô×¼$nµÄ$lÒ»´Ì",
+		"action":		"$Nåè½¬èº«ç”¨å°¾å·´å°–å¯¹å‡†$nçš„$lä¸€åˆº",
 		"damage":		20,
-		"damage_type":	"Ò§ÉË",
+		"damage_type":	"å’¬ä¼¤",
 	]),
 	"bite": ([
-		"action":		"$NÆËÉÏÀ´ÕÅ×ìÍù$nµÄ$lºÝºÝµØÒ»Ò§",
+		"action":		"$Næ‰‘ä¸Šæ¥å¼ å˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
 		"damage":		20,
-		"damage_type":	"Ò§ÉË",
+		"damage_type":	"å’¬ä¼¤",
 	]),
 	"claw": ([
-		"action":		"$NÓÃ×¦×ÓÍù$nµÄ$lÒ»×¥",
-		"damage_type":	"×¥ÉË",
+		"action":		"$Nç”¨çˆªå­å¾€$nçš„$lä¸€æŠ“",
+		"damage_type":	"æŠ“ä¼¤",
 	]),
 	"poke": ([
-		"action":		"$NÓÃ×ìÍù$nµÄ$lÒ»×Ä",
+		"action":		"$Nç”¨å˜´å¾€$nçš„$lä¸€å•„",
 		"damage":		30,
-		"damage_type":	"´ÌÉË",
+		"damage_type":	"åˆºä¼¤",
 	]),
 	"knock": ([
-		"action":		"$NÌ§ÆðÌã×ÓÍù$nµÄ$lÒ»õß",
+		"action":		"$NæŠ¬èµ·è¹„å­å¾€$nçš„$lä¸€è¸¹",
 		"damage":		100,
-		"damage_type":	"ðöÉË",
+		"damage_type":	"ç˜€ä¼¤",
 	]),
 	"sweep": ([
-		"action":		"$N°Ú¶¯Î²°Í³¯×Å$nÒ»¾í",
+		"action":		"$Næ‘†åŠ¨å°¾å·´æœç€$nä¸€å·",
 		"damage":		20,
-		"damage_type":	"´ÌÉË",
+		"damage_type":	"åˆºä¼¤",
 	]),
 	"twist": ([
-		"action":		"$N°ÑÎ²°ÍºÝºÝÒ»°Ú£¬ÆóÍ¼²ø×¡$n",
+		"action":		"$NæŠŠå°¾å·´ç‹ ç‹ ä¸€æ‘†ï¼Œä¼å›¾ç¼ ä½$n",
 		"damage":		20,
-		"damage_type":	"´ÌÉË",
+		"damage_type":	"åˆºä¼¤",
 	]),
 ]);
 
@@ -63,18 +63,18 @@ void setup_beast(object ob)
 
 	my = ob->query_entire_dbase();
 
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 
 	if( undefinedp(my["actions"]) ) {
 		if( pointerp(my["verbs"]) )
 			ob->set("default_actions", (: call_other, __FILE__, "query_action" :) );
 		else
 			my["default_actions"] = ([
-				"action": "$N¹¥»÷$nµÄ%s£¬%s\n",
+				"action": "$Næ”»å‡»$nçš„%sï¼Œ%s\n",
 			]);
 	}
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ÐÛÐÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random(40) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random(41) + 5;

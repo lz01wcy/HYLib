@@ -12,7 +12,7 @@ string age_string(int time) {
     time /= 24;
     day = time % 30;
     month = time / 30;
-    return (month ? month + "ÔÂ" : "") + (day ? day + "Ìì" : "") + hour + "Ğ¡Ê±";
+    return (month ? month + "æœˆ" : "") + (day ? day + "å¤©" : "") + hour + "å°æ—¶";
 }
 
 string finger_all(int showage) {
@@ -44,35 +44,35 @@ string finger_user(string name, int wizship) {
 
     if (sscanf(name, "%s@%s", name, mud) == 2) {
         GFINGER_Q->send_finger_q(mud, name, this_player(1));
-        return "ÍøÂ·Ö¸Áî´«ËÍ¹ı³Ì¿ÉÄÜĞèÒªÒ»Ğ©Ê±¼ä£¬ÇëÉÔºò¡£\n";
+        return "ç½‘è·¯æŒ‡ä»¤ä¼ é€è¿‡ç¨‹å¯èƒ½éœ€è¦ä¸€äº›æ—¶é—´ï¼Œè¯·ç¨å€™ã€‚\n";
     }
 
     ob = new(LOGIN_OB);
     ob->set("id", name);
-    if (!ob->restore()) return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+    if (!ob->restore()) return "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n";
     if (wizship) {
         if (objectp(body = find_player(name)) && geteuid(body) == name) {
-            msg = sprintf("\n%sÄ¿Ç°ÕıÔÚ´Ó %s Á¬ÏßÖĞ¡£\n", body->name(1),
+            msg = sprintf("\n%sç›®å‰æ­£åœ¨ä» %s è¿çº¿ä¸­ã€‚\n", body->name(1),
                           query_ip_name(body));
         }
-        msg += sprintf("\nÓ¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-                       "µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬ÏßµØÖ·£º\t%s( %s )\n"
-                       "ºÏ¼ÆÔÚÏßÊ±¼ä£º\t%s\n\n",
+        msg += sprintf("\nè‹±æ–‡ä»£å·ï¼š\t%s\nå§“    åï¼š\t%s\næƒé™ç­‰çº§ï¼š\t%s\n"
+                       "ç”µå­é‚®ä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡è¿çº¿åœ°å€ï¼š\t%s( %s )\n"
+                       "åˆè®¡åœ¨çº¿æ—¶é—´ï¼š\t%s\n\n",
                        ob->query("id"),
                        ob->query("name"),
                        SECURITY_D->get_status(name),
                        ob->query("email"),
                        ob->query("last_from"),
                        ctime(ob->query("last_on")),
-                       (body ? (age_string((int) body->query("mud_age"))) : "²»¸æËßÄã")
+                       (body ? (age_string((int) body->query("mud_age"))) : "ä¸å‘Šè¯‰ä½ ")
         );
     } else {
         if (objectp(body = find_player(name)) && geteuid(body) == name) {
-            msg = sprintf("\n%sÄ¿Ç°ÕıÔÚÁ¬ÏßÖĞ¡£\n", body->name(1),
+            msg = sprintf("\n%sç›®å‰æ­£åœ¨è¿çº¿ä¸­ã€‚\n", body->name(1),
             );
         }
-        msg += sprintf("\nÓ¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-                       "ÉÏ´ÎÁ¬ÏßÊ±¼ä£º\t%s\n\n",
+        msg += sprintf("\nè‹±æ–‡ä»£å·ï¼š\t%s\nå§“    åï¼š\t%s\næƒé™ç­‰çº§ï¼š\t%s\n"
+                       "ä¸Šæ¬¡è¿çº¿æ—¶é—´ï¼š\t%s\n\n",
                        ob->query("id"),
                        ob->query("name"),
                        SECURITY_D->get_status(name),
@@ -99,11 +99,11 @@ if( !ob->
 restore()
 
 )
-return chinese_flag ? "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n" : "No such user.\n";
+return chinese_flag ? "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n" : "No such user.\n";
 if( chinese_flag )
 msg = sprintf(
-        "\nÓ¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-        "µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬ÏßµØÖ·£º\t%s( %s )\n\n",
+        "\nè‹±æ–‡ä»£å·ï¼š\t%s\nå§“    åï¼š\t%s\næƒé™ç­‰çº§ï¼š\t%s\n"
+        "ç”µå­é‚®ä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡è¿çº¿åœ°å€ï¼š\t%s( %s )\n\n",
         ob->query("id"),
         ob->query("name"),
         SECURITY_D->get_status(name),
@@ -135,7 +135,7 @@ this_player()
 visible(body)
 )
 msg += chinese_flag ?
-("\n" + ob->query("name") + "Ä¿Ç°ÕıÔÚÏßÉÏ¡£\n"):
+("\n" + ob->query("name") + "ç›®å‰æ­£åœ¨çº¿ä¸Šã€‚\n"):
 ("\n" +
 capitalize(name)
 + " is currently connected.\n");

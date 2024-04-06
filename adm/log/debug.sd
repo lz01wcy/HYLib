@@ -9,14 +9,15 @@ Accepting connections on port 8888.
 Accepting connections on port 88.
 Accepting connections on port 1863.
 
-Ö´ĞĞÊ±¶Î´íÎó£º*Bad argument 3 to message()
+æ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š*Bad argument 3 to message()
 Expected: string or array or object Got: 0.
 
-³ÌÊ½£ºkungfu/condition/xscold_poison.c µÚ 15 ĞĞ
-ºô½ĞÀ´×Ô£ºinherit/char/char.c µÄ heart_beat() µÚ 127 ĞĞ£¬Îï¼ş£º clone/npc/fa-e ("¡ô¡ó¡ô(fae)")
-ºô½ĞÀ´×Ô£ºfeature/condition.c µÄ update_condition() µÚ 67 ĞĞ£¬Îï¼ş£º clone/npc/fa-e ("¡ô¡ó¡ô(fae)")
-ºô½ĞÀ´×Ô£ºkungfu/condition/xscold_poison.c µÄ update_condition() µÚ 15 ĞĞ£¬Îï¼ş£º kungfu/condition/xscold_poison ("0(0)")
+ç¨‹å¼ï¼škungfu/condition/xscold_poison.c ç¬¬ 15 è¡Œ
+å‘¼å«æ¥è‡ªï¼šinherit/char/char.c çš„ heart_beat() ç¬¬ 127 è¡Œï¼Œç‰©ä»¶ï¼š clone/npc/fa-e ("â—†â—‡â—†(fae)")
+å‘¼å«æ¥è‡ªï¼šfeature/condition.c çš„ update_condition() ç¬¬ 67 è¡Œï¼Œç‰©ä»¶ï¼š clone/npc/fa-e ("â—†â—‡â—†(fae)")
+å‘¼å«æ¥è‡ªï¼škungfu/condition/xscold_poison.c çš„ update_condition() ç¬¬ 15 è¡Œï¼Œç‰©ä»¶ï¼š kungfu/condition/xscold_poison ("0(0)")
 Heart beat in clone/npc/fa-e turned off.
 get_user_data: read on fd 300
-System Error: get_user_data: read: µ±ÎÄ¼şÒÑ´æÔÚÊ±£¬ÎŞ·¨´´½¨¸ÃÎÄ¼ş¡£
+System Error: get_user_data: read: å½“æ–‡ä»¶å·²å­˜åœ¨æ—¶ï¼Œæ— æ³•åˆ›å»ºè¯¥æ–‡ä»¶ã€‚
+
 

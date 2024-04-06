@@ -53,12 +53,12 @@ string finger_all()
 				msg, ob[i]->query("name"), ob[i]->query("id"),
 				query_idle(ob[i]) + "s");
 		}
-		return "¡ò "+CHINESE_MUD_NAME+" ¡ò\n" + 
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-		+ "ĞÕÃû          ÕÊºÅ          ·¢´ô\n" +
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
+		return "â— "+CHINESE_MUD_NAME+" â—\n" + 
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n"
+		+ "å§“å          å¸å·          å‘å‘†\n" +
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n"
 		+ msg +
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n";
 	} else  	// wizard finger
 	{
 		for(i=1; i<sizeof(ob); i++) {
@@ -66,21 +66,21 @@ string finger_all()
 			msg = sprintf("%s%-14s%-14s%-14s%-7s%s\n",
 				msg, ob[i]->query("name"), ob[i]->query("id"),
 				age_string( (int)ob[i]->query("mud_age")), 
-				query_idle(ob[i]) + "s", wizardp(ob[i])?"Î´Öª":query_ip_number(ob[i]));
+				query_idle(ob[i]) + "s", wizardp(ob[i])?"æœªçŸ¥":query_ip_number(ob[i]));
 //				query_idle(ob[i]) + "s", query_ip_name(ob[i]));
 
 				}
 if (this_player())
 		ips=query_only_ip(ob)+10;
 else ips=40+random(40);
-			return "¡ò "+CHINESE_MUD_NAME+" ¡ò\n" 
-                         "ÅÅ³ıÓÉÍ¬Ò»IPµÇÂ¼µÄÈËºó£¬Êµ¼ÊÓĞ£º"+ips+"ÈË\n"
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-		+ "ĞÕÃû          ÕÊºÅ          ÄêÁä          ·¢´ô   Á¬Ïß\n" +
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
+			return "â— "+CHINESE_MUD_NAME+" â—\n" 
+                         "æ’é™¤ç”±åŒä¸€IPç™»å½•çš„äººåï¼Œå®é™…æœ‰ï¼š"+ips+"äºº\n"
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n"
+		+ "å§“å          å¸å·          å¹´é¾„          å‘å‘†   è¿çº¿\n" +
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n"
 		+ msg +
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-		+"ÅÅ³ıÓÉÍ¬Ò»IPµÇÂ¼µÄÈËºó£¬Êµ¼ÊÓĞ£º"+ips+"ÈË\n";
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n"
+		+"æ’é™¤ç”±åŒä¸€IPç™»å½•çš„äººåï¼Œå®é™…æœ‰ï¼š"+ips+"äºº\n";
 	}
 }
 	
@@ -90,16 +90,16 @@ string finger_user(string name)
 	string msg, mud;
 string wiz_status;
 	int public_flag;
-//±¾º¯ÊıÓÉJackyBoyÖØĞÂ±àĞ´²¢ÓÅ»¯£¡
+//æœ¬å‡½æ•°ç”±JackyBoyé‡æ–°ç¼–å†™å¹¶ä¼˜åŒ–ï¼
 	if( sscanf(name, "%s@%s", name, mud)==2 ) {
 		GFINGER_Q->send_finger_q(mud, name, this_player(1));
-		return "ÍøÂ·Ö¸Áî´«ËÍ¹ı³Ì¿ÉÄÜĞèÒªÒ»Ğ©Ê±¼ä£¬ÇëÉÔºò¡£\n";
+		return "ç½‘è·¯æŒ‡ä»¤ä¼ é€è¿‡ç¨‹å¯èƒ½éœ€è¦ä¸€äº›æ—¶é—´ï¼Œè¯·ç¨å€™ã€‚\n";
 	}
 
 	ob = new(LOGIN_OB);
 	ob->set("id", name);
 	if( !ob->restore() ) 
-		return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+		return "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n";
 	if( objectp(body = find_player(name)) && geteuid(body)==name )
 	{
 		if(wizardp(this_player()))
@@ -110,29 +110,29 @@ string wiz_status;
 	else 
 	{
 		if( !ob) 
-			return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+			return "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n";
 
 		body = LOGIN_D->make_body(ob);
 		if( !body) 
-			return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+			return "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n";
 		if( !body->restore() ) 
-			return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+			return "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n";
 		if(wizardp(this_player()))
 			public_flag=1;
 		else
 			public_flag =body->query("env/public")?1:0;
 		destruct(body);
 	}		
-	msg =  sprintf("\nÓ¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-		"µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬Ïß£º\t%s\n\n",
+	msg =  sprintf("\nè‹±æ–‡ä»£å·ï¼š\t%s\nå§“    åï¼š\t%s\næƒé™ç­‰çº§ï¼š\t%s\n"
+		"ç”µå­é‚®ä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡è¿çº¿ï¼š\t%s\n\n",
 		ob->query("id"),
 		ob->query("name"),
 		SECURITY_D->get_status(name),
-		public_flag?ob->query("email"):"²»¸æËßÄã",
-		"("+(wizardp(this_player(1))?ob->query("last_from"):"Î´Öª")+") "+
+		public_flag?ob->query("email"):"ä¸å‘Šè¯‰ä½ ",
+		"("+(wizardp(this_player(1))?ob->query("last_from"):"æœªçŸ¥")+") "+
 		ctime(ob->query("last_on")));
 	if(!ob->query("profile")||ob->query("profile")=="")
-		msg+="Ã»ÓĞ×ÔÎÒ½éÉÜ¡£\n\n";
+		msg+="æ²¡æœ‰è‡ªæˆ‘ä»‹ç»ã€‚\n\n";
 	else
 		msg+=ob->query("profile")+"\n\n";
 	if( objectp(body = find_player(name)) && geteuid(body)==name && 
@@ -141,17 +141,17 @@ string wiz_status;
 	wiz_status = SECURITY_D->get_status(body);
 	if( wiz_status != "(admin)" && wiz_status != "(arch)" )
 {
-		msg += sprintf("\n%sÄ¿Ç°Õı´Ó%sÁ¬ÏßÖĞ¡£\n", body->name(1),
-			wizardp(this_player(1))?query_ip_number(body):"Î´Öª");
+		msg += sprintf("\n%sç›®å‰æ­£ä»%sè¿çº¿ä¸­ã€‚\n", body->name(1),
+			wizardp(this_player(1))?query_ip_number(body):"æœªçŸ¥");
 }
 else
 {	wiz_status = SECURITY_D->get_status(this_player(1));
 	if( wiz_status == "(admin)")
 {
-		msg += sprintf("\n%sÄ¿Ç°Õı´Ó%sÁ¬ÏßÖĞ¡£\n", body->name(1),
-			wizardp(this_player(1))?query_ip_number(body):"Î´Öª");
+		msg += sprintf("\n%sç›®å‰æ­£ä»%sè¿çº¿ä¸­ã€‚\n", body->name(1),
+			wizardp(this_player(1))?query_ip_number(body):"æœªçŸ¥");
 }
-else 	msg += sprintf("\n%sÄ¿Ç°Õı´Ó±£ÃÜ´¦Á¬ÏßÖĞ¡£\n", body->name(1));
+else 	msg += sprintf("\n%sç›®å‰æ­£ä»ä¿å¯†å¤„è¿çº¿ä¸­ã€‚\n", body->name(1));
 }
 	}
 		destruct(ob);
@@ -165,15 +165,15 @@ varargs string remote_finger_user(string name, int chinese_flag)
 	ob = new(LOGIN_OB);
 	ob->set("id", name);
 	if( !ob->restore() )
-		return chinese_flag ? "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n" : "No such user.\n";
+		return chinese_flag ? "æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n" : "No such user.\n";
 	if( chinese_flag ) msg =  sprintf(
-		"\nÓ¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-		"µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬ÏßµØÖ·£º\t%s( %s )\n\n",
+		"\nè‹±æ–‡ä»£å·ï¼š\t%s\nå§“    åï¼š\t%s\næƒé™ç­‰çº§ï¼š\t%s\n"
+		"ç”µå­é‚®ä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡è¿çº¿åœ°å€ï¼š\t%s( %s )\n\n",
 		ob->query("id"),
 		ob->query("name"),
 		SECURITY_D->get_status(name),
 		ob->query("email"),
-		"Î´Öª",
+		"æœªçŸ¥",
 		ctime(ob->query("last_on")));
 	else msg =  sprintf(
 		"\nName\t: %s\nStatus\t: %s\nEmail\t: %s\nLastOn\t: %s( %s )\n\n",
@@ -183,7 +183,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
 		wizardp(this_player(1))?ob->query("last_from"):"Unknow",
 		ctime(ob->query("last_on")));
 	if(!ob->query("profile")||ob->query("profile")=="")
-		msg+="Ã»ÓĞ×ÔÎÒ½éÉÜ¡£\n\n";
+		msg+="æ²¡æœ‰è‡ªæˆ‘ä»‹ç»ã€‚\n\n";
 	else
 		msg+=ob->query("profile")+"\n";
 	if( body = find_player(name) ) {
@@ -191,7 +191,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
 		{
 			if(chinese_flag)
 			{
-				msg+="\n" + ob->query("name") + "Ä¿Ç°ÕıÔÚÁ¬Ïß¡£\n";
+				msg+="\n" + ob->query("name") + "ç›®å‰æ­£åœ¨è¿çº¿ã€‚\n";
 			}
 			else
 				msg+="\n" + capitalize(name) + " is currently connected.\n";
@@ -226,9 +226,9 @@ string get_killer()
 		if ((int)ob[i]->query_condition("killer"))
 			msg += (ob[i]->short() + "\n");
 	if (msg == "")
-		return "±¾³ÇÖÎ°²Á¼ºÃ¡£\n";
+		return "æœ¬åŸæ²»å®‰è‰¯å¥½ã€‚\n";
 	else
-		return "ÏÖÔÚ±¾³ÇÕıÔÚ¼©ÄÃÒÔÏÂÈË·¸£º\n\n" + msg;
+		return "ç°åœ¨æœ¬åŸæ­£åœ¨ç¼‰æ‹¿ä»¥ä¸‹äººçŠ¯ï¼š\n\n" + msg;
 }
 /*
 string get_win_mengzhu()
@@ -247,7 +247,7 @@ string get_win_mengzhu()
               } else { return 0;}
         } else { return 0;}
 }*/
-//ÒÔÏÂº¯ÊıÅÅ³ıÍ¬Ò»¸öIPÁ¬ÏßµÄ
+//ä»¥ä¸‹å‡½æ•°æ’é™¤åŒä¸€ä¸ªIPè¿çº¿çš„
 //write by JackyBoy@CuteRabbits Studio for CCTX 1999/4/9
 int query_only_ip(object *ob)
 {	
