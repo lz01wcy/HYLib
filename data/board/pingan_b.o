@@ -1,2 +1,14 @@
 #/inherit/misc/bboard.c
-dbase (["long":"ºÍÆ½°²Äş£¬ĞÒ¸£¿ìÀÖ¡£","name":"Æ½°²´ó¼ªÁôÑÔ°å","location":"/d/pingan/pinganguangchang","capacity":100,"no_get":1,"notes":({(["author":"ÈËÃñ±Ò-renminbi","title":"to new players and old players","time":966324357,"msg":"×££º   Æ½°²´ó¼ª    Á·¹¦Ë³Àû     ¶à×Ó¶àËï                                              ÈËÃñ±Ò¾´ÉÏ                                            2000.8.15",]),(["author":"ÌÆÎäÁÄ-ask","title":"haha","time":966664362,"msg":"ÎÒÀ´ÍíÁË",]),(["author":"ÎèÁé-wuling","title":"3","time":966751385,"msg":"",]),(["author":"ÎèÁé-wuling","title":"3","time":966751615,"msg":"",]),(["author":"ÎèÁé-wuling","title":"4","time":966751635,"msg":"ĞÂÊÖ°İÊ¦±Ï¶Á¡£",]),}),"board_id":"pingan_b","id":"board",])
+dbase (["long":"å’Œå¹³å®‰å®ï¼Œå¹¸ç¦å¿«ä¹ã€‚
+","name":"å¹³å®‰å¤§å‰ç•™è¨€æ¿","location":"/d/pingan/pinganguangchang","capacity":100,"no_get":1,"notes":({(["author":"äººæ°‘å¸-renminbi","title":"to new players and old players","time":966324357,"msg":"ç¥ï¼š
+   å¹³å®‰å¤§å‰
+    ç»ƒåŠŸé¡ºåˆ©
+     å¤šå­å¤šå­™
+
+
+
+                                              äººæ°‘å¸æ•¬ä¸Š
+                                            2000.8.15
+",]),(["author":"å”æ­¦èŠ-ask","title":"haha","time":966664362,"msg":"æˆ‘æ¥æ™šäº†
+",]),(["author":"èˆçµ-wuling","title":"3","time":966751385,"msg":"",]),(["author":"èˆçµ-wuling","title":"3","time":966751615,"msg":"",]),(["author":"èˆçµ-wuling","title":"4","time":966751635,"msg":"æ–°æ‰‹æ‹œå¸ˆæ¯•è¯»ã€‚
+",]),}),"board_id":"pingan_b","id":"board",])

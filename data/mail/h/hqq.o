@@ -1,3 +1,11 @@
 #/clone/misc/mailbox.c
-dbase (["unit":"¸ö","owner_id":"hqq","long":"ÕâÊÇ¸öÈËĞÅÏä£¬µ«ĞÅ¼şÄÚÈİ¶ÔÎ×Ê¦ÎŞ·¨±£ÃÜ£¬ÇëÎğÌ¸¼°¸öÈËÒşË½£ºmailto  <Ä³ÈË>            ¼ÄĞÅ¸ø±ğÈË¡£forward <ĞÅ¼ş±àºÅ> <Ä³ÈË> ½«Ä³·âĞÅ×ª¼Ä¸ø±ğÈË¡£from                      ²é¿´ĞÅÏäÖĞµÄĞÅ¼ş¡£read    <ĞÅ¼ş±àºÅ>        ÔÄ¶ÁÄ³Ò»·âĞÅ¼ş¡£discard <ĞÅ¼ş±àºÅ>        ¶ªÆúÒ»·âĞÅ¼ş¡£","no_get":1,"no_beg":1,"no_drop":1,"no_steal":1,"no_put":1,"name":"ÎòÌìµÄĞÅÏä","no_insert":1,"id":"mailbox",])
-mails ({(["text":"","title":"ÎÒÒÑ¾­À´¹ıÁË²»°²¹ıÎÒµÄid(long)ÒÑ¾­±»ËûÈË×¢²áÁË!","to":"hqq","from":"ÀË×Ó(lang)","time":961816927,]),(["text":"bill@waytowww.com»òbill@xmnet.net","title":"bill@waytowww.com»òbill@xmnet.net","to":"hqq","from":"ÁÖ×Ó(bill)","time":963926863,]),})
+dbase (["unit":"ä¸ª","owner_id":"hqq","long":"è¿™æ˜¯ä¸ªäººä¿¡ç®±ï¼Œä½†ä¿¡ä»¶å†…å®¹å¯¹å·«å¸ˆæ— æ³•ä¿å¯†ï¼Œè¯·å‹¿è°ˆåŠä¸ªäººéšç§ï¼š
+
+mailto  <æŸäºº>            å¯„ä¿¡ç»™åˆ«äººã€‚
+forward <ä¿¡ä»¶ç¼–å·> <æŸäºº> å°†æŸå°ä¿¡è½¬å¯„ç»™åˆ«äººã€‚
+from                      æŸ¥çœ‹ä¿¡ç®±ä¸­çš„ä¿¡ä»¶ã€‚
+read    <ä¿¡ä»¶ç¼–å·>        é˜…è¯»æŸä¸€å°ä¿¡ä»¶ã€‚
+discard <ä¿¡ä»¶ç¼–å·>        ä¸¢å¼ƒä¸€å°ä¿¡ä»¶ã€‚
+","no_get":1,"no_beg":1,"no_drop":1,"no_steal":1,"no_put":1,"name":"æ‚Ÿå¤©çš„ä¿¡ç®±","no_insert":1,"id":"mailbox",])
+mails ({(["text":"","title":"æˆ‘å·²ç»æ¥è¿‡äº†ä¸å®‰è¿‡æˆ‘çš„id(long)å·²ç»è¢«ä»–äººæ³¨å†Œäº†!","to":"hqq","from":"æµªå­(lang)","time":961816927,]),(["text":"bill@waytowww.comæˆ–bill@xmnet.net
+","title":"bill@waytowww.comæˆ–bill@xmnet.net","to":"hqq","from":"æ—å­(bill)","time":963926863,]),})

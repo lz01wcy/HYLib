@@ -9,7 +9,7 @@ int changeshape(object winner);
 void create()
 {
 	string info,name,id,file;
-        set_name( "ÃËÖ÷" , ({ "numberone" }) );
+        set_name( "ç›Ÿä¸»" , ({ "numberone" }) );
 	setup();
 	info = read_file(CHAMPION_FILE);
 	if( info && sscanf(info,"%s %s %s",file,id,name) == 3)
@@ -21,7 +21,7 @@ void create()
         reset_action();
         delete_temp("already_loaded");
         loadall(this_object());
-        set("title", HIC "ÕıÅÉÃËÖ÷" NOR);
+        set("title", HIC "æ­£æ´¾ç›Ÿä¸»" NOR);
 	
 }
 	
@@ -39,7 +39,7 @@ void changeshape( object winner)
 	string name,id,nick;
 	winner_file = winner->query_save_file();
         CHANNEL_D->do_channel(this_object(), "chat",
-        sprintf( "%s´ÓÏÖÔÚ¿ªÊ¼ÊÇÎÒÃÇĞÂµÄÕıÅÉÃËÖ÷ÁË£¡£¡ \n",
+        sprintf( "%sä»ç°åœ¨å¼€å§‹æ˜¯æˆ‘ä»¬æ–°çš„æ­£æ´¾ç›Ÿä¸»äº†ï¼ï¼ \n",
         winner->name(1)));
 	write_file(CHAMPION_FILE,sprintf("%s %s %s",
 	winner_file,winner->query("id"),winner->query("name")),1);
@@ -53,7 +53,7 @@ void changeshape( object winner)
 	reset_action();
 	delete_temp("already_loaded");
 	loadall(this_object());	
-	set("title", HIC "ÕıÅÉÃËÖ÷" NOR);	
+	set("title", HIC "æ­£æ´¾ç›Ÿä¸»" NOR);	
 	set("nickname",nick);
 		   
 return;
@@ -119,10 +119,10 @@ int do_yao()
 	if(ob->query("id")==me->query("id") && (!present("shenstaff",me)))
 	{find(id1);
 	zhang->move(me);
-	message_vision("$N¸øÁË$nÒ»¸ùÉñÕÈ¡£\n",ob,me);
+	message_vision("$Nç»™äº†$nä¸€æ ¹ç¥æ–ã€‚\n",ob,me);
 	return 1;
 	}
-tell_object(me,"ÄãÏ¹ÒªÊ²Ã´£¿\n");
+tell_object(me,"ä½ çè¦ä»€ä¹ˆï¼Ÿ\n");
 return 1;
 }
 void find(string id)
@@ -143,7 +143,7 @@ while (i--) {
 	if(ob->query("id")=="shenstaff")
 	destruct(ob);
 	}
-message_vision(HIY"$NÉíÉÏµÄÉñÕÈ»¯×÷Ò»µÀ½ğÃ¢·ÉÏòÁËÔ¶·½¡£\n"NOR,ulist[i]);
+message_vision(HIY"$Nèº«ä¸Šçš„ç¥æ–åŒ–ä½œä¸€é“é‡‘èŠ’é£å‘äº†è¿œæ–¹ã€‚\n"NOR,ulist[i]);
 	}
 }
 }

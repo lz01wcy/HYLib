@@ -1,2 +1,22 @@
 #/inherit/misc/bboard.c
-dbase (["capacity":100,"no_get":1,"id":"board","long":"ÕâÊÇÒ»¸ö¹©À´µ½ÏÀ¿ÍµºµÄ¹ó±ö½»Á÷µÄÁôÑÔ°å¡£","name":"ÏÀ¿ÍµºÁôÑÔ°å","board_id":"xiake_b","location":"/d/xiakedao/dating","notes":({(["title":"no.1","author":"ÌÕÌÕ-taotao","msg":"ÎÒÊÇµÚÒ»¸öÅ¶eat yahe jiudaibb","time":984190349,]),(["title":"2","author":"ÁøËæ·ç-liusuifeng","msg":"i am the 2","time":984375987,]),(["title":"about 1 and 2 pei","author":"ÃÄ¶ù-meier","msg":"peipeipeipeipeiheng taoheng liusuifeng","time":985023813,]),(["title":"ÆäÊµÎÒÔçµ½¹ıÁË(:","author":"Ó¢ĞÛ-akien","msg":"","time":985249172,]),(["title":"nod","author":"ÃÄ¶ù-dings","msg":"","time":986478104,]),(["title":"sigh","author":"Èç¹û-ifcan","msg":"ÈçÌâ","time":1041541182,]),(["title":"Á÷ÀËÌìÑÄÓÚ´Ë","author":"ÎŞÒâ-yaguang","msg":"Ò»Â·Á÷ÀË£¬ÖÕµ½ÏÀ¿ÍµºÒ»ÓÎ£¬²»ÒàÀÖºõ£¡                       ¡£","time":1047990752,]),(["title":"sigh","author":"Áú°ÔÌìÏÂ-greenb","msg":"ÎòĞÔ²»¹»","time":1055895305,]),(["title":"ÖÕÓÚÑ§³ÉÁË","author":"¾ÅÆß-alive","msg":"ÖÕÓÚÑ§³ÉÁË ¿ÉÊÇÏŞÖÆÌ«¶àÁË Ï£ÍûhxsdÄÜ¸øcutµãÏŞÖÆ ×îºÃÊÇÄÜ°Ñyun heal yun jingheal¸øÅªÉÏ thank","time":1092903024,]),(["title":"idle alive","author":"°²ÅµÌØÌØ¶û-antter","msg":"buddhieat","time":1094035990,]),}),])
+dbase (["capacity":100,"no_get":1,"id":"board","long":"è¿™æ˜¯ä¸€ä¸ªä¾›æ¥åˆ°ä¾ å®¢å²›çš„è´µå®¾äº¤æµçš„ç•™è¨€æ¿ã€‚
+","name":"ä¾ å®¢å²›ç•™è¨€æ¿","board_id":"xiake_b","location":"/d/xiakedao/dating","notes":({(["title":"no.1","author":"é™¶é™¶-taotao","msg":"æˆ‘æ˜¯ç¬¬ä¸€ä¸ªå“¦
+eat ya
+he jiudai
+bb
+","time":984190349,]),(["title":"2","author":"æŸ³éšé£-liusuifeng","msg":"i am the 2
+","time":984375987,]),(["title":"about 1 and 2 pei","author":"åªšå„¿-meier","msg":"pei
+pei
+pei
+pei
+pei
+heng tao
+heng liusuifeng
+","time":985023813,]),(["title":"å…¶å®æˆ‘æ—©åˆ°è¿‡äº†(:","author":"è‹±é›„-akien","msg":"","time":985249172,]),(["title":"nod","author":"åªšå„¿-dings","msg":"","time":986478104,]),(["title":"sigh","author":"å¦‚æœ-ifcan","msg":"å¦‚é¢˜
+","time":1041541182,]),(["title":"æµæµªå¤©æ¶¯äºæ­¤","author":"æ— æ„-yaguang","msg":"ä¸€è·¯æµæµªï¼Œç»ˆåˆ°ä¾ å®¢å²›ä¸€æ¸¸ï¼Œä¸äº¦ä¹ä¹ï¼
+                       ã€‚
+","time":1047990752,]),(["title":"sigh","author":"é¾™éœ¸å¤©ä¸‹-greenb","msg":"æ‚Ÿæ€§ä¸å¤Ÿ
+","time":1055895305,]),(["title":"ç»ˆäºå­¦æˆäº†","author":"ä¹ä¸ƒ-alive","msg":"ç»ˆäºå­¦æˆäº† å¯æ˜¯é™åˆ¶å¤ªå¤šäº† å¸Œæœ›hxsdèƒ½ç»™cutç‚¹é™åˆ¶ æœ€å¥½æ˜¯èƒ½æŠŠyun heal yun jinghealç»™å¼„ä¸Š thank
+","time":1092903024,]),(["title":"idle alive","author":"å®‰è¯ºç‰¹ç‰¹å°”-antter","msg":"buddhi
+eat
+","time":1094035990,]),}),])

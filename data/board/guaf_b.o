@@ -1,2 +1,11 @@
 #/inherit/misc/bboard.c
-dbase (["id":"board","notes":({(["title":"to all","author":"¹Î·ç-guaf","msg":"ÓĞÊÂÇëÔÚÕâÀïÁôÑÔ£¬Ğ»Ğ»£¡ÎÒÃÇ°ì¹«ÊÒµÄµç»°ÍâÏß±»ÆşµôÁË£¬²»ÄÜ´ò³öÈ¥ÁË£¬µ«ÊÇÍâÃæµÄÄÜ´ò½øÀ´£¡","time":1053352893,]),(["title":"2","author":"ÌÖÕ®-uuu","msg":"uuuµ½´ËÒ»ÓÎ 2003Äê5ÔÂ27.","time":1053979369,]),(["title":"to guaf","author":"±±¾©-xyanhu","msg":"³ôguaf¡£trip guaf.","time":1085654712,]),(["title":"to guaf","author":"±±¾©-xyanhu","msg":"asdasfÇ°Á½Ìì¿´ÁË¼¸¸öÂÛÌ³µÄÀÏÌû×Ó£¬Ëµº£Ñó¹ÊÊÂµÄ£¬touch","time":1092275698,]),(["title":"to guaf","author":"Æô³½-calvin","msg":"sing2À´Ç°±²ÕâÀï²Î¹ÛÒ»ÏÂ£¬giggle","time":1151394099,]),(["title":"ºÇºÇ","msg":"","author":"±±¾©-xyanhu","time":1183690854,]),}),"no_get":1,"location":"/u/guaf/workroom","long":"ÓĞÈÎºÎÕÒGUAFµÄÊÂÇéÇëÔÚÕâÀïÁôÑÔ£¡","capacity":100,"name":"GUAFµÄÁôÑÔ²¾","board_id":"guaf_b",])
+dbase (["id":"board","notes":({(["title":"to all","author":"åˆ®é£-guaf","msg":"æœ‰äº‹è¯·åœ¨è¿™é‡Œç•™è¨€ï¼Œè°¢è°¢ï¼
+æˆ‘ä»¬åŠå…¬å®¤çš„ç”µè¯å¤–çº¿è¢«ææ‰äº†ï¼Œä¸èƒ½æ‰“å‡ºå»äº†ï¼Œä½†æ˜¯å¤–é¢çš„èƒ½æ‰“è¿›æ¥ï¼
+","time":1053352893,]),(["title":"2","author":"è®¨å€º-uuu","msg":"uuuåˆ°æ­¤ä¸€æ¸¸ 2003å¹´5æœˆ27.
+","time":1053979369,]),(["title":"to guaf","author":"åŒ—äº¬-xyanhu","msg":"è‡­guafã€‚trip guaf.
+","time":1085654712,]),(["title":"to guaf","author":"åŒ—äº¬-xyanhu","msg":"asdasf
+å‰ä¸¤å¤©çœ‹äº†å‡ ä¸ªè®ºå›çš„è€å¸–å­ï¼Œè¯´æµ·æ´‹æ•…äº‹çš„ï¼Œtouch
+","time":1092275698,]),(["title":"to guaf","author":"å¯è¾°-calvin","msg":"sing2
+æ¥å‰è¾ˆè¿™é‡Œå‚è§‚ä¸€ä¸‹ï¼Œgiggle
+","time":1151394099,]),(["title":"å‘µå‘µ","msg":"","author":"åŒ—äº¬-xyanhu","time":1183690854,]),}),"no_get":1,"location":"/u/guaf/workroom","long":"æœ‰ä»»ä½•æ‰¾GUAFçš„äº‹æƒ…è¯·åœ¨è¿™é‡Œç•™è¨€ï¼
+","capacity":100,"name":"GUAFçš„ç•™è¨€ç°¿","board_id":"guaf_b",])

@@ -1,2 +1,96 @@
 #/inherit/misc/bboard.c
-dbase (["long":"×¨¹©Î×Ê¦¼ÇÂ¼ĞŞ¸ÄµÄÁôÑÔ°å¡£","capacity":200,"notes":({(["title":"°ËÔÂÊ®¶şÈÕ","time":966068819,"msg":"ÌÒ»¨´å/d/taohua7³öÏÖÎÊÌâ£¡ÔİÊ±Ã»ÓĞĞŞ¸´£¡ Ä¿Ç°ÒÑĞŞ¸Ä/d/taohuacun/toahua6.cÖĞÂ·¾¶Ê¹Ö®²»ÄÜ½øÈëtaohua7µÄbug´ı²é","author":"ĞÇĞÇ-lywin",]),(["title":"°ËÔÂÊ®ÈıÈÕ","time":966148457,"msg":"ĞŞ¸´ÁËÈı¸öÒòÎªdos->unixµÄÎÄ¼ş´íÎó£¡´ËÀà´íÎó¶¼ÊÇÓï¾äÖĞ¶àÁËÒ»¸ö/×ÖÁí¿Íµê¶şÂ¥µÄset_light(0)ÊÇºÎÒâ£¿¿ÉÓĞÈËÖªµÀÊÇºÎ´¦Éè¶¨µÄ£¿Èç¹û²»ÖªÊÇºÎÓÃ´¦¾ÍÈ«²¿//µôÎªºÃ´óÀíÍõ¸®µÄ¸®ÃÅÖîÍòÀïËÀÁËÒ²ÒªÀ¹Â·£¡´ËbugÎÒÒÑĞŞ¸´£¡","author":"ĞÇĞÇ-lywin",]),(["title":"to all","time":966495309,"msg":"ÎÒ»»¸öcombatd.cÊÔÊÔ£¬Èç¹û²»ĞĞ£¬ÔÙ»»»ØÀ´Ô­ÏÈµÄÄÇ¸örename .bak","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"¸ÄÁËcombatd.c£¬updateÁËËùÓĞµÄpfm","time":966502099,"msg":"²»¹ıºÃÏóÏÖÔÚĞóÉú²»ÄÜfight£¬ÎÒÔÙÈ¥¿´¿´","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"°ËÔÂÊ®°ËÈÕ","time":966587218,"msg":"²»ÖªË­¸ÄÁËlookÀïµÄÉ«²ÊÒ²²»ÌùÒ»Ìù£¡ÎÒÒÑ¸Ä»ØÀ´£¡Îå²ÊçÍ·×µÄÉ«²Ê²¢·ÇÍæ¼ÒËùÏ²£¡²»Òª°Ñ¾«Á¦·ÅÔÚÕâÉÏÃæ","author":"ĞÇĞÇ-lywin",]),(["title":"°ËÔÂÊ®°Ë","time":966587616,"msg":"·¢ÏÖÆ½°²¹ã³¡µÄoutdoorsÉè¶¨ÓĞ´í£¡ÎÒÒÑ¸ÄÎª\"outdoors\",\"pingan\"ÇëhxsdºÃºÃ¼ì²éÆ½°²³Ç","author":"ĞÇĞÇ-lywin",]),(["title":"°ËÔÂÊ®°ËÈÕ","time":966588250,"msg":"Æ½°²³ÇµÄÊéµêÀïÓĞÎŞÊıbug£¡ÎÒÒÑ¸ÄÕıºÃ£¡·âÁËÊé£¡","author":"ĞÇĞÇ-lywin",]),(["title":"Æ½°²µÄÊÂ","time":966663352,"msg":"Æ½°²ÎÒÒÑ¸ãºÃ,ÎÒÒÑÉÏ´«µ½u/hxsd/pingan.zip»¹ÓĞĞÂµÄÂåÑôu/hxsd/luoyang.zip´ó¼Ò¿´¿´ÓĞÊ²Ã´bug??                         hxsd","author":"Ğ¡ÈËÎï-hxsd",]),(["title":"look.cµÄupdate","time":966665665,"msg":"look.cÎÒÒÑupdateÁË.         hxsd","author":"Ğ¡ÈËÎï-hxsd",]),(["title":"ÎÒÖØĞÂĞŞ¸ÄÁËdazuo.c","time":966840738,"msg":"ÓÉÓÚ´ò×øµÄÎÊÌâ£¬ÎÒupdateÁËdazuo.c£¬²¢ÇÒ¶ÔÒ»²¿·ÖÀûÓÃÔ­ÏÈbugµÄplayer×öÁËµ÷Õû¡£","author":"ÎŞÓÇ-wuyou",]),(["title":"°ËÔÂ¶şÊ®Ò»ÈÕ","time":966847164,"msg":"·¢ÏÖĞÇËŞµÄĞİÏ¢ÊÒÓĞbugÎÒ//µôÁËset_lightÕâ¸ö¶«Î÷²»Ã÷ÒâÍ¼£¡£¡","author":"ĞÇĞÇ-lywin",]),(["title":"ĞŞÕıÁË´òÌúÉ®µÄbug","time":966863017,"msg":"","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"°ËÔÂ¶şÊ®¶şÈÕ","time":966914593,"msg":"ËÄÊ®¶şÕÂ¾­µÄ7ºÍ1ÀïÃæÓĞÆæ¹ÖµÄ±äÁ¿Éè¶¨~£¡ÔÚ³ÌĞòÖĞ¾¹ÓÃµ½ÁË\\Õâ¸ö¶«Î÷£¡ÒÔÖÁÓÚÎŞ·¨update£¡ÎÒÒÑ¸ÄÎªÁË/","author":"ĞÇĞÇ-lywin",]),(["title":"°ËÔÂ¶şÊ®¶şÈÕ","time":966914791,"msg":"/d/taohua/xiaowu.cµÄµÚÊ®°ËĞĞÓÖÓĞset_lightÎÒÒÑ//µô£¡Çë´ó¼ÒÏë·¨²é³öÎªºÎÓĞ´Ë±äÁ¿","author":"ĞÇĞÇ-lywin",]),(["title":"¸ÄÁËcombatd.c","time":966998335,"msg":"¼ÓÁËbeiµÄÏµÍ³","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"ÎÒµÄĞŞ¸Ä","time":967254359,"msg":"ÎÒĞŞ¸ÄÁËlook.c»¹ÓĞ¼ÓÈëÁËbig5ºÍËæ»úĞÕÃûµÄÖ§³Ölook.c´ó¼Ò¶¼Ëµ±ÈÒÔÇ°µÄºÃ¿´,ĞÇĞÇÓ¦¸ÃÃ»Òâ¼û°É...±¾À´µÄlookÌ«²»ºÃ¿´ÁË.","author":"ÎŞÓÇ-wuyou",]),(["title":"¼ÓÁËmr,tiezhang,kunlun","time":967261179,"msg":"/d/mr/d/tiezhang/d/kunlunupdatedir Í¨¹ı","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"mr,kunlun,tiezhang board ok","time":967355167,"msg":"as the title","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"add hytask","time":967430603,"msg":"as the title","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"update","time":967624114,"msg":"/d/wudang/npc/little_money.c/d/hangzhou/npc/camel.cÒòÎªÃ»ÓĞ×ölimbsºÍverbËùÒÔupdate","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"to all","time":967633082,"msg":"i chnage   /inherit/item/combined.c","author":"É±ÊÖ-bbs",]),(["title":"°ËÔÂÈıÊ®Ò»ÈÕ","time":967687631,"msg":"logÖĞ¼ÇÂ¼ÓĞÆæ¹ÖµÄ´íÎó£¡´ËÊÂ´ı²é£¡ÁíÍâ£¡/d/wanjiegu/npc/duan_yanqing.c³öÏÖÁË¶¨Òå´íÎó¸Äint check_skillsÎªvoid check_skills","author":"ĞÇĞÇ-lywin",]),(["title":"update rankd.c","time":967700843,"msg":"¼ÓÁËmr,kunlunµÄrankd.c","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":" ĞÂ¼ÓÁËÒ»¸öwhomp","time":967767468,"msg":"ÎÒ¼ÓÁËÒ»¸öwhompµÄĞÂÖ¸Áî.addÁËcmds/usr/who","author":"É±ÊÖ-bbs",]),(["title":"¸ÄÁËÓĞ¹ØÉñÊéµÄÎÄ¼ş","time":967793914,"msg":"1.questd   ¸ÄÁËlocateµÄ·½Ê½2.cut locate.c ¼ÓÁË/clone/misc/findbook  ÁéÊ¯µÄÎÄ¼ş3.¸ÄÁË/quest/shenshu/ÏÂµÄËùÓĞ¶«Î÷  ","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"²¹³ä","time":967794028,"msg":"yz gc¼ÓÁË__DIR__\"npc/man\"  ÎŞÃû¾ÓÊ¿","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"update questd","time":967951739,"msg":"¼ÓÈëÁËÄ£ºıÊÕË÷¸ÅÄî","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"ĞŞ¸Ä¼ÇÂ¼","time":968378643,"msg":"ÎÒ°Ñ/d/taohuacun/objÄ¿Â¼ÏÂµÄhome.cÎÄ¼şÒÆµ½ÁË/clone/homeÄ¿Â¼ÏÂÁË¡£ÁíÍâĞŞ¸ÄÁË/d/taohuacun/npcÏÂµÄtaohuatong.cÎÄ¼şµ±Ëü´´ÔìÒ»¸öĞÂÎï¼şµÄÊ±ºò²»ÊÇnew /taohuacun/obj/homeÁË¶øÊÇnew /clone/home/home","author":"Ò»ÇÏ²»Í¨-cloth",]),(["title":"About perform cimu","time":968409035,"msg":"ĞŞ¸ÄÁË/kungfu/skill/pixie-sword/cimu.cĞŞ¸ÄÍê±Ï¡£","author":"²¼ÒÂ-cloth",]),(["title":"ĞÂµÄ¸üĞÂ","time":968633486,"msg":"ÎÒ¼ÓÁËĞÂµÄjobÔÚquest/famu quest/guanfuĞŞ¸ÄÁËd/city/jiaowai4 d/city/bingyin,bingyindamenÍêÉÆÁËhelp aboutquest","author":"ÎŞÓÇ-wuyou",]),(["title":"emote slap ÎÒÒÑ¾­ĞŞºÃÁË","time":969087239,"msg":"hehe","author":"×íÎÔÃÀÈËÏ¥-chao",]),(["title":"damage ºÍ qi,jingµÄ¼ÆËãÎÒ¸Ä¹ıÁË","time":969095799,"msg":"combatd.c and human.c","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"new pfm","time":969586015,"msg":"¡¾Î×Ê¦¡¿Ğ¡ÈËÎï(Hxsd)£ºÎÒluoyin-jian¼ÓÁËtaohuajian ÃÜ×ÚµÄµÄriyue-lun¼ÓÁËwulundafa","author":"Ìì×Ó-bbs",]),(["title":"34","time":969692449,"msg":"    1.ÁéğÕ·å¼ÓÁËĞÂµÄskill,wuzhan-meiÓĞ2¸öpfmÓÃverify¿´    2.¹ÅÄ¹¼ÓÁËskill wuzhan-meiÍ¬ÁéğÕ,yunv-jian¼ÓÁËhebi.Á½¸öË«½£ºÏèµ    3.ÌÒ»¨¼ÓÁËyuxiao-jian¼ÓÁËĞÂµÄpfm taohuajian    4.ÃÜ×Ú¼ÓÁË ÈÕÔÂÂÖ·¨ (riyue-lun)ĞÂµÄpfm wulundafa    5.ÌúÕÆ¼ÓÁËĞÂµÄskill duanyu»¹¼ÓÁËfly¸Ä¶¯ÁËlogind.c clone/misc/fly.c tiand.c","author":"Ğ¡ÈËÎï-hxsd",]),(["title":"add dizi and champion","time":969765513,"msg":"in /d/biwu","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"36","time":969850892,"msg":"ÎÒĞŞÕıÁËpost 98 µÄall bug.»¹ÓĞ¼ÓÇ¿ÁËhuashan","author":"Ğ¡ÈËÎï-hxsd",]),(["title":"add","time":969971491,"msg":"add riyue ,kunlun,mr,xiaoyao,tiezhang dizirepair sanshen","author":"ÌìµØÎŞÓÃ-tiandi",]),(["title":"to all","time":970207001,"msg":"        ÁéğÕ¹¬ÕÆÃÅ´óµÜ×Ó ÌÇÌÇ(applett)ÓÃ¿Õ×¢ÒâÒ»ÏÂÕâ¸öid,ÓÃsnoop Ëû.","author":"Ìì×Ó-bbs",]),(["title":"To all","time":973510751,"msg":"ÉÔÎ¢¼õÈõÌ«¼«½£µÄÍşÁ¦£¬Èç¹û´ò²»ÖĞ¶Ô·½µÄ»°busyÊ±¼äÎªrandom(3)Ãë,Ô­À´ÊÇ1Ãë¡£","author":"²¼ÒÂ-cloth",]),(["title":"About ½õºĞ","time":974699019,"msg":"ÎÒ°Ñ½õºĞµÄvalue¸ÄÎªÁãÁË¡£/d/tianlongsi/obj/box.c","author":"²¼ÒÂ-cloth",]),(["title":"About teamjob.c","msg":"ÀïÃæµÄÒ»¸öµØ·½Ğ´´íÁË£¬ÎÒ¸ÄÁËÒ»ÏÂ¡£","time":974864470,"author":"²¼ÒÂ-cloth",]),}),"name":"ĞŞ¸Ä¼ÇÂ¼ÁôÑÔ²¾","id":"board","location":"/d/wizard/edit_room","board_id":"wized_b","no_get":1,])
+dbase (["long":"ä¸“ä¾›å·«å¸ˆè®°å½•ä¿®æ”¹çš„ç•™è¨€æ¿ã€‚
+","capacity":200,"notes":({(["title":"å…«æœˆåäºŒæ—¥","time":966068819,"msg":"æ¡ƒèŠ±æ‘/d/taohua7å‡ºç°é—®é¢˜ï¼
+æš‚æ—¶æ²¡æœ‰ä¿®å¤ï¼ 
+ç›®å‰å·²ä¿®æ”¹/d/taohuacun/toahua6.cä¸­è·¯å¾„ä½¿ä¹‹ä¸èƒ½è¿›å…¥
+taohua7çš„bugå¾…æŸ¥
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"å…«æœˆåä¸‰æ—¥","time":966148457,"msg":"ä¿®å¤äº†ä¸‰ä¸ªå› ä¸ºdos->unixçš„æ–‡ä»¶é”™è¯¯ï¼
+æ­¤ç±»é”™è¯¯éƒ½æ˜¯è¯­å¥ä¸­å¤šäº†ä¸€ä¸ª/å­—
+å¦å®¢åº—äºŒæ¥¼çš„set_light(0)æ˜¯ä½•æ„ï¼Ÿå¯æœ‰äººçŸ¥é“æ˜¯ä½•å¤„è®¾å®šçš„ï¼Ÿ
+å¦‚æœä¸çŸ¥æ˜¯ä½•ç”¨å¤„å°±å…¨éƒ¨//æ‰ä¸ºå¥½
+å¤§ç†ç‹åºœçš„åºœé—¨è¯¸ä¸‡é‡Œæ­»äº†ä¹Ÿè¦æ‹¦è·¯ï¼æ­¤bugæˆ‘å·²ä¿®å¤ï¼
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"to all","time":966495309,"msg":"æˆ‘æ¢ä¸ªcombatd.cè¯•è¯•ï¼Œå¦‚æœä¸è¡Œï¼Œå†æ¢å›æ¥
+åŸå…ˆçš„é‚£ä¸ªrename .bak
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"æ”¹äº†combatd.cï¼Œupdateäº†æ‰€æœ‰çš„pfm","time":966502099,"msg":"ä¸è¿‡å¥½è±¡ç°åœ¨ç•œç”Ÿä¸èƒ½fightï¼Œæˆ‘å†å»çœ‹çœ‹
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"å…«æœˆåå…«æ—¥","time":966587218,"msg":"ä¸çŸ¥è°æ”¹äº†looké‡Œçš„è‰²å½©ä¹Ÿä¸è´´ä¸€è´´ï¼
+æˆ‘å·²æ”¹å›æ¥ï¼
+äº”å½©ç¼¤çº·çš„è‰²å½©å¹¶éç©å®¶æ‰€å–œï¼
+ä¸è¦æŠŠç²¾åŠ›æ”¾åœ¨è¿™ä¸Šé¢
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"å…«æœˆåå…«","time":966587616,"msg":"å‘ç°å¹³å®‰å¹¿åœºçš„outdoorsè®¾å®šæœ‰é”™ï¼
+æˆ‘å·²æ”¹ä¸º\"outdoors\",\"pingan\"
+è¯·hxsdå¥½å¥½æ£€æŸ¥å¹³å®‰åŸ
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"å…«æœˆåå…«æ—¥","time":966588250,"msg":"å¹³å®‰åŸçš„ä¹¦åº—é‡Œæœ‰æ— æ•°bugï¼
+æˆ‘å·²æ”¹æ­£å¥½ï¼å°äº†ä¹¦ï¼
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"å¹³å®‰çš„äº‹","time":966663352,"msg":"å¹³å®‰æˆ‘å·²æå¥½,æˆ‘å·²ä¸Šä¼ åˆ°u/hxsd/pingan.zipè¿˜æœ‰æ–°çš„æ´›é˜³u/hxsd/luoyang.zip
+
+
+å¤§å®¶çœ‹çœ‹æœ‰ä»€ä¹ˆbug??
+
+
+                         hxsd
+","author":"å°äººç‰©-hxsd",]),(["title":"look.cçš„update","time":966665665,"msg":"look.cæˆ‘å·²updateäº†.
+         hxsd
+","author":"å°äººç‰©-hxsd",]),(["title":"æˆ‘é‡æ–°ä¿®æ”¹äº†dazuo.c","time":966840738,"msg":"ç”±äºæ‰“åçš„é—®é¢˜ï¼Œæˆ‘updateäº†dazuo.cï¼Œå¹¶ä¸”å¯¹ä¸€éƒ¨åˆ†åˆ©ç”¨åŸå…ˆ
+bugçš„playeråšäº†è°ƒæ•´ã€‚
+","author":"æ— å¿§-wuyou",]),(["title":"å…«æœˆäºŒåä¸€æ—¥","time":966847164,"msg":"å‘ç°æ˜Ÿå®¿çš„ä¼‘æ¯å®¤æœ‰bug
+æˆ‘//æ‰äº†set_light
+è¿™ä¸ªä¸œè¥¿ä¸æ˜æ„å›¾ï¼ï¼
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"ä¿®æ­£äº†æ‰“é“åƒ§çš„bug","time":966863017,"msg":"","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"å…«æœˆäºŒåäºŒæ—¥","time":966914593,"msg":"å››åäºŒç« ç»çš„7å’Œ1é‡Œé¢æœ‰å¥‡æ€ªçš„å˜é‡è®¾å®š~ï¼
+åœ¨ç¨‹åºä¸­ç«Ÿç”¨åˆ°äº†\\è¿™ä¸ªä¸œè¥¿ï¼
+ä»¥è‡³äºæ— æ³•updateï¼æˆ‘å·²æ”¹ä¸ºäº†/
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"å…«æœˆäºŒåäºŒæ—¥","time":966914791,"msg":"/d/taohua/xiaowu.cçš„ç¬¬åå…«è¡Œåˆæœ‰set_light
+æˆ‘å·²//æ‰ï¼è¯·å¤§å®¶æƒ³æ³•æŸ¥å‡ºä¸ºä½•æœ‰æ­¤å˜é‡
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"æ”¹äº†combatd.c","time":966998335,"msg":"åŠ äº†beiçš„ç³»ç»Ÿ
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"æˆ‘çš„ä¿®æ”¹","time":967254359,"msg":"æˆ‘ä¿®æ”¹äº†look.cè¿˜æœ‰åŠ å…¥äº†big5å’Œéšæœºå§“åçš„æ”¯æŒ
+look.cå¤§å®¶éƒ½è¯´æ¯”ä»¥å‰çš„å¥½çœ‹,æ˜Ÿæ˜Ÿåº”è¯¥æ²¡æ„è§å§...
+æœ¬æ¥çš„lookå¤ªä¸å¥½çœ‹äº†.
+","author":"æ— å¿§-wuyou",]),(["title":"åŠ äº†mr,tiezhang,kunlun","time":967261179,"msg":"/d/mr
+/d/tiezhang
+/d/kunlun
+updatedir é€šè¿‡
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"mr,kunlun,tiezhang board ok","time":967355167,"msg":"as the title
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"add hytask","time":967430603,"msg":"as the title
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"update","time":967624114,"msg":"/d/wudang/npc/little_money.c
+/d/hangzhou/npc/camel.c
+å› ä¸ºæ²¡æœ‰åšlimbså’Œverb
+æ‰€ä»¥update
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"to all","time":967633082,"msg":"i chnage   /inherit/item/combined.c
+","author":"æ€æ‰‹-bbs",]),(["title":"å…«æœˆä¸‰åä¸€æ—¥","time":967687631,"msg":"logä¸­è®°å½•æœ‰å¥‡æ€ªçš„é”™è¯¯ï¼æ­¤äº‹å¾…æŸ¥ï¼
+å¦å¤–ï¼
+/d/wanjiegu/npc/duan_yanqing.cå‡ºç°äº†å®šä¹‰é”™è¯¯
+æ”¹int check_skillsä¸ºvoid check_skills
+","author":"æ˜Ÿæ˜Ÿ-lywin",]),(["title":"update rankd.c","time":967700843,"msg":"åŠ äº†mr,kunlunçš„rankd.c
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":" æ–°åŠ äº†ä¸€ä¸ªwhomp","time":967767468,"msg":"æˆ‘åŠ äº†ä¸€ä¸ªwhompçš„æ–°æŒ‡ä»¤.addäº†cmds/usr/who
+","author":"æ€æ‰‹-bbs",]),(["title":"æ”¹äº†æœ‰å…³ç¥ä¹¦çš„æ–‡ä»¶","time":967793914,"msg":"1.questd   æ”¹äº†locateçš„æ–¹å¼
+2.cut locate.c åŠ äº†/clone/misc/findbook  çµçŸ³çš„æ–‡ä»¶
+3.æ”¹äº†/quest/shenshu/ä¸‹çš„æ‰€æœ‰ä¸œè¥¿  
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"è¡¥å……","time":967794028,"msg":"yz gcåŠ äº†__DIR__\"npc/man\"  æ— åå±…å£«
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"update questd","time":967951739,"msg":"åŠ å…¥äº†æ¨¡ç³Šæ”¶ç´¢æ¦‚å¿µ
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"ä¿®æ”¹è®°å½•","time":968378643,"msg":"æˆ‘æŠŠ/d/taohuacun/objç›®å½•ä¸‹çš„home.cæ–‡ä»¶ç§»åˆ°
+äº†/clone/homeç›®å½•ä¸‹äº†ã€‚
+å¦å¤–ä¿®æ”¹äº†/d/taohuacun/npcä¸‹çš„taohuatong.cæ–‡ä»¶
+å½“å®ƒåˆ›é€ ä¸€ä¸ªæ–°ç‰©ä»¶çš„æ—¶å€™ä¸æ˜¯new /taohuacun/obj/homeäº†
+è€Œæ˜¯new /clone/home/home
+","author":"ä¸€çªä¸é€š-cloth",]),(["title":"About perform cimu","time":968409035,"msg":"ä¿®æ”¹äº†/kungfu/skill/pixie-sword/cimu.c
+ä¿®æ”¹å®Œæ¯•ã€‚
+","author":"å¸ƒè¡£-cloth",]),(["title":"æ–°çš„æ›´æ–°","time":968633486,"msg":"æˆ‘åŠ äº†æ–°çš„jobåœ¨quest/famu quest/guanfu
+ä¿®æ”¹äº†d/city/jiaowai4 d/city/bingyin,bingyindamen
+å®Œå–„äº†help aboutquest
+","author":"æ— å¿§-wuyou",]),(["title":"emote slap æˆ‘å·²ç»ä¿®å¥½äº†","time":969087239,"msg":"hehe
+","author":"é†‰å§ç¾äººè†-chao",]),(["title":"damage å’Œ qi,jingçš„è®¡ç®—æˆ‘æ”¹è¿‡äº†","time":969095799,"msg":"combatd.c and human.c
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"new pfm","time":969586015,"msg":"ã€å·«å¸ˆã€‘å°äººç‰©(Hxsd)ï¼šæˆ‘luoyin-jianåŠ äº†taohuajian å¯†å®—çš„çš„riyue-lunåŠ äº†wulundafa
+","author":"å¤©å­-bbs",]),(["title":"34","time":969692449,"msg":"    1.çµé¹«å³°åŠ äº†æ–°çš„skill,wuzhan-meiæœ‰2ä¸ªpfmç”¨verifyçœ‹    2.å¤å¢“åŠ äº†skill wuzhan-meiåŒçµé¹«,yunv-jianåŠ äº†hebi.ä¸¤ä¸ªåŒå‰‘åˆç’§    3.æ¡ƒèŠ±åŠ äº†yuxiao-jianåŠ äº†æ–°çš„pfm taohuajian    4.å¯†å®—åŠ äº† æ—¥æœˆè½®æ³• (riyue-lun)æ–°çš„pfm wulundafa    5.é“æŒåŠ äº†æ–°çš„skill duanyu
+è¿˜åŠ äº†flyæ”¹åŠ¨äº†logind.c clone/misc/fly.c tiand.c
+","author":"å°äººç‰©-hxsd",]),(["title":"add dizi and champion","time":969765513,"msg":"in /d/biwu
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"36","time":969850892,"msg":"æˆ‘ä¿®æ­£äº†post 98 çš„all bug.
+è¿˜æœ‰åŠ å¼ºäº†huashan
+","author":"å°äººç‰©-hxsd",]),(["title":"add","time":969971491,"msg":"add riyue ,kunlun,mr,xiaoyao,tiezhang dizi
+repair sanshen
+","author":"å¤©åœ°æ— ç”¨-tiandi",]),(["title":"to all","time":970207001,"msg":"        çµé¹«å®«æŒé—¨å¤§å¼Ÿå­ ç³–ç³–(applett)
+ç”¨ç©ºæ³¨æ„ä¸€ä¸‹è¿™ä¸ªid,ç”¨snoop ä»–.
+","author":"å¤©å­-bbs",]),(["title":"To all","time":973510751,"msg":"ç¨å¾®å‡å¼±å¤ªæå‰‘çš„å¨åŠ›ï¼Œå¦‚æœæ‰“ä¸ä¸­å¯¹æ–¹çš„è¯
+busyæ—¶é—´ä¸ºrandom(3)ç§’,åŸæ¥æ˜¯1ç§’ã€‚
+","author":"å¸ƒè¡£-cloth",]),(["title":"About é”¦ç›’","time":974699019,"msg":"æˆ‘æŠŠé”¦ç›’çš„valueæ”¹ä¸ºé›¶äº†ã€‚
+/d/tianlongsi/obj/box.c
+","author":"å¸ƒè¡£-cloth",]),(["title":"About teamjob.c","msg":"é‡Œé¢çš„ä¸€ä¸ªåœ°æ–¹å†™é”™äº†ï¼Œæˆ‘æ”¹äº†ä¸€ä¸‹ã€‚
+","time":974864470,"author":"å¸ƒè¡£-cloth",]),}),"name":"ä¿®æ”¹è®°å½•ç•™è¨€ç°¿","id":"board","location":"/d/wizard/edit_room","board_id":"wized_b","no_get":1,])

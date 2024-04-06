@@ -1,3 +1,17 @@
 #/clone/misc/mailbox.c
-dbase (["no_drop":1,"unit":"¸ö","no_steal":1,"name":"Ğ¡·ÉÏÀµÄĞÅÏä","no_put":1,"no_beg":1,"long":"ÕâÊÇ¸öÈËĞÅÏä£¬µ«ĞÅ¼şÄÚÈİ¶ÔÎ×Ê¦ÎŞ·¨±£ÃÜ£¬ÇëÎğÌ¸¼°¸öÈËÒşË½£ºmailto  <Ä³ÈË>            ¼ÄĞÅ¸ø±ğÈË¡£forward <ĞÅ¼ş±àºÅ> <Ä³ÈË> ½«Ä³·âĞÅ×ª¼Ä¸ø±ğÈË¡£from                      ²é¿´ĞÅÏäÖĞµÄĞÅ¼ş¡£read    <ĞÅ¼ş±àºÅ>        ÔÄ¶ÁÄ³Ò»·âĞÅ¼ş¡£discard <ĞÅ¼ş±àºÅ>        ¶ªÆúÒ»·âĞÅ¼ş¡£","id":"mailbox","owner_id":"herofay","no_get":1,"no_insert":1,])
-mails ({(["to":"herofay","from":"ËæÉíÌı(discman)","title":"discman","text":"I_Carele","time":979656971,]),(["from":"Ë¼º£(sayhi)","to":"herofay","title":"sayhi","time":979657009,"text":"I_CareleI_Carele",]),(["to":"herofay","from":"ÃÎÓÎ(mengyou)","title":"mengyou","text":"I_CareleI_Carele","time":979657839,]),(["to":"herofay","from":"µ°Äà(danny)","title":"danny","text":"I_CareleI_Carele","time":979658155,]),})
+dbase (["no_drop":1,"unit":"ä¸ª","no_steal":1,"name":"å°é£ä¾ çš„ä¿¡ç®±","no_put":1,"no_beg":1,"long":"è¿™æ˜¯ä¸ªäººä¿¡ç®±ï¼Œä½†ä¿¡ä»¶å†…å®¹å¯¹å·«å¸ˆæ— æ³•ä¿å¯†ï¼Œè¯·å‹¿è°ˆåŠä¸ªäººéšç§ï¼š
+
+mailto  <æŸäºº>            å¯„ä¿¡ç»™åˆ«äººã€‚
+forward <ä¿¡ä»¶ç¼–å·> <æŸäºº> å°†æŸå°ä¿¡è½¬å¯„ç»™åˆ«äººã€‚
+from                      æŸ¥çœ‹ä¿¡ç®±ä¸­çš„ä¿¡ä»¶ã€‚
+read    <ä¿¡ä»¶ç¼–å·>        é˜…è¯»æŸä¸€å°ä¿¡ä»¶ã€‚
+discard <ä¿¡ä»¶ç¼–å·>        ä¸¢å¼ƒä¸€å°ä¿¡ä»¶ã€‚
+","id":"mailbox","owner_id":"herofay","no_get":1,"no_insert":1,])
+mails ({(["to":"herofay","from":"éšèº«å¬(discman)","title":"discman","text":"I_Carele
+","time":979656971,]),(["from":"æ€æµ·(sayhi)","to":"herofay","title":"sayhi","time":979657009,"text":"I_Carele
+I_Carele
+",]),(["to":"herofay","from":"æ¢¦æ¸¸(mengyou)","title":"mengyou","text":"I_Carele
+I_Carele
+","time":979657839,]),(["to":"herofay","from":"è›‹æ³¥(danny)","title":"danny","text":"I_Carele
+I_Carele
+","time":979658155,]),})

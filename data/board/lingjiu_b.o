@@ -1,2 +1,62 @@
 #/inherit/misc/bboard.c
-dbase (["board_id":"lingjiu_b","capacity":100,"no_get":1,"name":"ÁéğÕ¹¬µÜ×ÓÁôÑÔ°å","id":"board","location":"/d/lingjiu/dating","notes":({(["time":987715733,"author":"Ïæ¶ù-shell","title":"visit","msg":"who is lj player ah?",]),(["time":1034198820,"author":"Ê¯Áñ-megranate","title":"i am ljf","msg":"",]),(["time":1038031478,"author":"³æ³æ-com","title":"me","msg":"herexixi",]),(["time":1038665179,"author":"ÎŞĞ¾-xuthy","title":"somebody help","msg":"yun powerupl xuthyÎÒÏëÏòÁéğÕ¹¬´óµÜ×ÓÑ§Á¬³Ç½££¡help",]),(["time":1041423301,"author":"Íñ¶ù-nwanc","title":"³õÆÚÁôÄî","msg":"ÁéğÕ¹¬µÚÈı´úµÜ×Ó Íñ¶ù(Nwanc)¡£Äã¿´ÆğÀ´Ô¼Ê®¶àËê£¬ÄãÏÖÔÚ÷ŞÈôµ¶²Ã£¬Ã¼ÈçÄ«»­£¬ÃæÈçÌÒ°ê£¬Ä¿ÈôÇï²¨¡£¡¾ÄêËê¡¿Ê®ËÄËêÊ®Ò»ÔÂ¡¾ÉúÈÕ¡¿±ûĞçÄêÈıÔÂÊ®ÈıÈÕÃ®Ê±Ò»¿Ì  ¡º Òû Ë® ¡»  323/  320Õ      ¡º ¾­ Ñé ¡» 40843",]),(["time":1048206731,"author":"×ÏÂŞÀ¼-vviolet","title":"±¨µ½","msg":"ÎÒÊÇĞÂÀ´µÄ£¬µÚÒ»´ÎÍæÕâ¸öÓÎÏ·£¬»¹Çë¶à¶à¹ØÕÕ",]),(["time":1056895153,"author":"¿Õ»¨-huawang","title":"hello","msg":"Äã´ó¼Ò¶à¶à¹ØÕÕ,Ğ»Ğ».",]),(["time":1064649582,"author":"Ş±Ñ©-fzweixue","title":"Â·¾¶","msg":"gc-ljg neegive 1 silver to ma furideylssewunnuwuwunuzou tiesuoeunnljg-gc sswdsdsdededsdsednwngive 1 silver to ma furideyzwws;",]),(["time":1064649661,"author":"Ş±Ñ©-fzweixue","title":"Â·¾¶£¨Ç°ÃæÃ»Ğ´ºÃ)","msg":"{gc-ljg n;e;e;give 1 silver to ma fu;rideyl;s;se;wu;n;nu;wu;wu;nu;zou tiesuo;eu;n;n;}{ ljg-gc s;s;wd;sd;sd;ed;ed;sd;s;ed;nw;n;give 1 silver to ma fu;rideyz;w;w;s;}",]),(["time":1088037742,"author":"Æ¿¶ù-piner","title":"ÁéğÕ¹¬µÄÃØ¼®ÔÚÄÄÀï£¬ÈçºÎÄÃ£¿ÎÒÔõÃ´Òª²»µ½ÄØ¡£","msg":"Ğ»Ğ»¡£",]),(["time":1100336278,"author":"¦Bµ£-child","title":"hi hi","msg":"bow",]),(["time":1142641541,"author":"±´·ç·ç-savignyy","title":"welcome","msg":"  ÎÄÃ¤ Ã÷½ÌµØ×ÖÃÅ½ÌÖÚ ÁéğÕ¹¬ÕÆÃÅ´óµÜ×Ó ±´·ç·ç(Savignyy)",]),(["time":1212251558,"author":"Ğ¡ÔÂ-ststst","title":"Ë­´ø¸ö¸ßµãlitµÄidÀ´ °ÑÕâ¸ö´òµô£¿ljµÄ½ãÃÃÃÇ°ï°ïÃ¦¿©","msg":"sighÏÖÔÚµÄdizi litÖ»ÓĞ500²»¹»°¡Ë­´ø¸ö¸ßµãµÄlitÀ´°¡¶øÇÒ¼¼ÄÜ¶¼²»ÊÇÊ¦ÃÅ¼¼ÄÜ°İÍĞ",]),}),"long":"ÕâÊÇÒ»¸ö¹©ÁéğÕ¹¬µÜ×Ó½»Á÷µÄÁôÑÔ°å¡£",])
+dbase (["board_id":"lingjiu_b","capacity":100,"no_get":1,"name":"çµé¹«å®«å¼Ÿå­ç•™è¨€æ¿","id":"board","location":"/d/lingjiu/dating","notes":({(["time":987715733,"author":"æ¹˜å„¿-shell","title":"visit","msg":"who is lj player ah?
+",]),(["time":1034198820,"author":"çŸ³æ¦´-megranate","title":"i am ljf","msg":"",]),(["time":1038031478,"author":"è™«è™«-com","title":"me","msg":"here
+xixi
+",]),(["time":1038665179,"author":"æ— èŠ¯-xuthy","title":"somebody help","msg":"yun powerup
+l xuthy
+æˆ‘æƒ³å‘çµé¹«å®«å¤§å¼Ÿå­å­¦è¿åŸå‰‘ï¼
+help
+",]),(["time":1041423301,"author":"å©‰å„¿-nwanc","title":"åˆæœŸç•™å¿µ","msg":"çµé¹«å®«ç¬¬ä¸‰ä»£å¼Ÿå­ å©‰å„¿(Nwanc)ã€‚
+ä½ çœ‹èµ·æ¥çº¦åå¤šå²ï¼Œä½ ç°åœ¨é¬“è‹¥åˆ€è£ï¼Œçœ‰å¦‚å¢¨ç”»ï¼Œé¢å¦‚æ¡ƒç“£ï¼Œç›®è‹¥ç§‹æ³¢ã€‚
+ã€å¹´å²ã€‘åå››å²åä¸€æœˆ
+ã€ç”Ÿæ—¥ã€‘ä¸™æˆŒå¹´ä¸‰æœˆåä¸‰æ—¥å¯æ—¶ä¸€åˆ»
+  ã€ é¥® æ°´ ã€  323/  320      ã€ ç» éªŒ ã€ 40843
+",]),(["time":1048206731,"author":"ç´«ç½—å…°-vviolet","title":"æŠ¥åˆ°","msg":"æˆ‘æ˜¯æ–°æ¥çš„ï¼Œç¬¬ä¸€æ¬¡ç©è¿™ä¸ªæ¸¸æˆï¼Œè¿˜è¯·å¤šå¤šå…³ç…§
+",]),(["time":1056895153,"author":"ç©ºèŠ±-huawang","title":"hello","msg":"ä½ å¤§å®¶å¤šå¤šå…³ç…§,è°¢è°¢.
+",]),(["time":1064649582,"author":"è–‡é›ª-fzweixue","title":"è·¯å¾„","msg":"gc-ljg n
+e
+e
+give 1 silver to ma fu
+rideyl
+s
+se
+wu
+n
+nu
+wu
+wu
+nu
+zou tiesuo
+eu
+n
+n
+ljg-gc s
+s
+wd
+sd
+sd
+ed
+ed
+sd
+s
+ed
+nw
+n
+give 1 silver to ma fu
+rideyz
+w
+w
+s;
+",]),(["time":1064649661,"author":"è–‡é›ª-fzweixue","title":"è·¯å¾„ï¼ˆå‰é¢æ²¡å†™å¥½)","msg":"{gc-ljg n;e;e;give 1 silver to ma fu;rideyl;s;se;wu;n;nu;wu;wu;nu;zou tiesuo;eu;n;n;}
+{ ljg-gc s;s;wd;sd;sd;ed;ed;sd;s;ed;nw;n;give 1 silver to ma fu;rideyz;w;w;s;}
+",]),(["time":1088037742,"author":"ç“¶å„¿-piner","title":"çµé¹«å®«çš„ç§˜ç±åœ¨å“ªé‡Œï¼Œå¦‚ä½•æ‹¿ï¼Ÿæˆ‘æ€ä¹ˆè¦ä¸åˆ°å‘¢ã€‚","msg":"è°¢è°¢ã€‚
+",]),(["time":1100336278,"author":"Bæ‹…-child","title":"hi hi","msg":"bow
+",]),(["time":1142641541,"author":"è´é£é£-savignyy","title":"welcome","msg":"  æ–‡ç›² æ˜æ•™åœ°å­—é—¨æ•™ä¼— çµé¹«å®«æŒé—¨å¤§å¼Ÿå­ è´é£é£(Savignyy)
+",]),(["time":1212251558,"author":"å°æœˆ-ststst","title":"è°å¸¦ä¸ªé«˜ç‚¹litçš„idæ¥ æŠŠè¿™ä¸ªæ‰“æ‰ï¼Ÿljçš„å§å¦¹ä»¬å¸®å¸®å¿™å’¯","msg":"sigh
+ç°åœ¨çš„dizi litåªæœ‰500
+ä¸å¤Ÿå•Š
+è°å¸¦ä¸ªé«˜ç‚¹çš„litæ¥å•Š
+è€Œä¸”æŠ€èƒ½éƒ½ä¸æ˜¯å¸ˆé—¨æŠ€èƒ½
+æ‹œæ‰˜
+",]),}),"long":"è¿™æ˜¯ä¸€ä¸ªä¾›çµé¹«å®«å¼Ÿå­äº¤æµçš„ç•™è¨€æ¿ã€‚
+",])

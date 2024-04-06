@@ -1,3 +1,408 @@
 #/clone/misc/mailbox.c
-dbase (["no_get":1,"no_put":1,"unit":"¸ö","long":"ÕâÊÇ¸öÈËĞÅÏä£¬µ«ĞÅ¼şÄÚÈİ¶ÔÎ×Ê¦ÎŞ·¨±£ÃÜ£¬ÇëÎğÌ¸¼°¸öÈËÒşË½£ºmailto  <Ä³ÈË>            ¼ÄĞÅ¸ø±ğÈË¡£forward <ĞÅ¼ş±àºÅ> <Ä³ÈË> ½«Ä³·âĞÅ×ª¼Ä¸ø±ğÈË¡£from                      ²é¿´ĞÅÏäÖĞµÄĞÅ¼ş¡£read    <ĞÅ¼ş±àºÅ>        ÔÄ¶ÁÄ³Ò»·âĞÅ¼ş¡£discard <ĞÅ¼ş±àºÅ>        ¶ªÆúÒ»·âĞÅ¼ş¡£","id":"mailbox","no_drop":1,"no_insert":1,"mails":({(["time":1021787687,"title":"about mudlist","text":"ÎÒÊÇ202.197.32.136 8888ÉÏµÄ£¬ÏëºÍÄãÃÇÕâÀï×ö»¥Á¬Í¬ÒâÂğ£¿Í¬ÒâµÄ»°£¬ÇëÔÚÎÒÄÇÀïÁô¸öpostÕÒhappy or lost ¶¼¿ÉÒÔthanks","from":"¼¤Çé(passion)","to":"hxsd",]),(["time":1037215770,"title":"ÎÒµÄsosĞĞ²»ĞĞËµ¾ä»°ºÃ²»£¿","text":"±ğÕâÃ´²»ÏÌ²»µ­µÄ·Å×ÅÖªµÀÄãÀÏÈË¼ÒÔÚ","from":"´óÄ®¹ÂÑÌ(dmgy)","to":"hxsd",]),(["time":1038195969,"title":"q","text":"q","from":"µó×ê¹Å¹Ö(marine)","to":"hxsd",]),(["time":1039116634,"title":"ÉêÇë wiz","text":"»¹¼ÇµÃÎÒ°É hxsd ÎÒ¸øÄãÈ¥¹ıĞÅµÄ ºÜ²»ºÃÒâË¼ ÎÒÔçÉÏÃ»Ê±¼äÀ´ÎÒÏë Äã°ÑÌâÄ¿¸æËßÎÒ°É  ÎÒ×öÍêÁË¸øÄã","from":"ÌìÎÊ(rzrz)","to":"hxsd",]),(["time":1052492223,"title":"can you teach me ??","text":"What is the problem, if the mud auto shutdown ??some system file ??can you teach me ?? please thanks a lotbow","from":"»¨¥J(kwok)","to":"hxsd",]),(["time":1053442707,"title":"¹ØÓÚweb·şÎñÆ÷","text":"ÓÃ»§£ºzmudÃÜÂë£ºlyf$guaf","from":"¹Î·ç(guaf)","to":"hxsd",]),(["time":1062378697,"title":"¹ØÓÚTOMµÄÎÊÌâÏëÇë½Ì","text":"ÄãºÃ£¬HXSD£¬¼ÇµÃÈ¥Äêµ×ÓĞºÍÄã½»Á÷¹ı£¬ºÜ¾ÃÃ»ÓĞÀ´ÁË£¬ÊÇ²»ÊÇ²»¼ÇµÃÓĞÎÒÕâºÅIDÁË£¿TOMÎÒ×òÌì²ÅÒª»ØµÄÃÜÂë£¬¿´FINGER TOMµÄ¼ÇÂ¼Ó¦¸ÃÒ²ÊÇÕıÈ·µÄ£¬µ«ÃÜÂëhp¶ªÊ§ÎÒ¾õµÃÓĞµãÆæ¹Ö£¬ÄãÓĞ¸Ä¹ıÂğ£¿ËµÕæµÄ£¬µ±³õºÍÄãÒªÃÜÂëºÃ¼¸»Ø¶¼Ã»ÓĞµÃµ½½â¾ö£¬ÎÒºÜÊ§Íû£¬µ«ÎÒÁË½â£¬ÏóHY2ÕâÑùµÄÃâ·ÑÕ¾µã£¬²¢Ã»ÓĞÊ²Ã´È¨ÀûºÍÒåÎñ£¬ËùÒÔÎÒÒ²²»ÏëÈ¥½²ÕâĞ©£¬Ö»²»¹ı£¬¸Ğ¾õºÜ²»Ë¬£¬Ã»ÓĞ°ì·¨¡£Èç¹ûÄã»¹ÊÇÃ»¿´µ½£¬ÄÇ¾ÍËãÁË£¬Íæ²»Íæ²¢²»ÊÇºÜÖØÒª¡£OK£¬¾ÍÕâÑù£¬Äã¿´µ½¾ÍÂé·³ÄãÁË£¡","from":"»¶ÀÖ(saqiu)","to":"hxsd",]),(["time":1077707455,"title":"sigh","text":"beg~~~¡£¡£¡£¡£¡£ÄÜ¸øÎÒ»Ö¸´Âğ£¿ÎÒµÈÁË1ÌìÁË£¬ºÃÏëÍæµÄ¡£¡£Ğ»Ğ»ÁË¡£¡£¡£","from":"Ğ¡Ø«(qqppcsq)","to":"hxsd",]),(["time":1078198847,"title":"¹ØÓÚĞÂÔö±¦ÎïÃèÊö","text":"hxsd£¬ÄãºÃ¡£ÔÚÕâ¸ömudÎÒÒÑ¾­ÍæÁËÓĞ2Äê¶à¡£¿ÉÒÔËµ£¬ÎÒÊÇºÜÇå³şµØÄ¿¶ÃÄãÈçºÎ½«º£ÑóÖ§³Å¹ıÀ´µÄ¡£ºÜ¸ßĞËÄãÔÚ²»¶ÏµØ¸Ä½øº£Ñó¡£sing2µ«ÊÇÏÖÔÚºÜ¶à¶«Î÷¶¼³ÉÁËÊı×ÖµÄÀÛ»ı¡£¶«Î÷µÄÈ·ÊÇÒªÊµÓÃ£¬µ«ÊÇÔÚÊµÓÃµÄ»ù´¡ÉÏÒªÊÇÔöÌíÁËÃÀ¹Û£¬ÄÇÃ´ÊÇ²»ÊÇ»áÎüÒı¸ü¶àµÄÈËÄØ£¿ÎÒ²»ºÜ¶®Ğ´³ÌĞòÕâĞ©·½Ãæ£¬µ«ÊÇÊÇ·ñ¿ÉÒÔÈÃÎÒ¾¡Ò»µãÁ¦£¬Ğ´Ğ´ÕâĞ©Ö»ÓĞÃû³Æ£¬È´ÎŞÃèÊöµÄ±¦ÎïÄØ¡£ÒòÎªÎÒ¾õµÃËüÃÇÊµÔÚÊÇÌ«ÄÑ¿´ÁË¡£²»ÊÇÖ»Òª´÷ÉÏËüÃÇ¼ÓÁË¼¸µãÊ²Ã´Ê²Ã´ÊôĞÔ¾Í¹»ÁËµÄ°¡£¿sing2Èç¹û¿ÉÒÔµÄ»°£¬ÇëÄú½«Ãûµ¥ÁĞ¸øÎÒ£¬ÎÒ»á¾¡×Ô¼ºÄÜÁ¦°ÑÃèÊöĞ´ºÃ¡£¹ØÓÚÃèÊö£¬×°±¸Ê±ÃèÊö£¬Ğ¶ÏÂÊ±ÃèÊö¡£È»ºóÈç¹û¿ÉÒÔÈÃdhxy»òÕßxyanhu¼ÓÃèÊö¾Í¸üºÃÁË¡£Ï£Íû¿ÉÒÔ·Öµ£Ò»µã£¬Ò²Ï£Íû¿ÉÒÔ¸øÎÒÕâ¸ö»ú»á¾¡Ò»µãÃàÁ¦°É¡£Ğ»Ğ»¡£µ±È»ÕâÖ»ÊÇÎÒÒ»¼ºÖ®¼û£¬Èç¹û¿ÉÒÔµÄ»°£¬ÄÇÕæÊÇÈÃÎÒ·Ç³£¸ßĞËµÄÒ»¼şÊÂ¡£","from":"¹íÆÍ(guipu)","to":"hxsd",]),(["time":1078198847,"title":"¹ØÓÚĞÂÔö±¦ÎïÃèÊö","text":"hxsd£¬ÄãºÃ¡£ÔÚÕâ¸ömudÎÒÒÑ¾­ÍæÁËÓĞ2Äê¶à¡£¿ÉÒÔËµ£¬ÎÒÊÇºÜÇå³şµØÄ¿¶ÃÄãÈçºÎ½«º£ÑóÖ§³Å¹ıÀ´µÄ¡£ºÜ¸ßĞËÄãÔÚ²»¶ÏµØ¸Ä½øº£Ñó¡£sing2µ«ÊÇÏÖÔÚºÜ¶à¶«Î÷¶¼³ÉÁËÊı×ÖµÄÀÛ»ı¡£¶«Î÷µÄÈ·ÊÇÒªÊµÓÃ£¬µ«ÊÇÔÚÊµÓÃµÄ»ù´¡ÉÏÒªÊÇÔöÌíÁËÃÀ¹Û£¬ÄÇÃ´ÊÇ²»ÊÇ»áÎüÒı¸ü¶àµÄÈËÄØ£¿ÎÒ²»ºÜ¶®Ğ´³ÌĞòÕâĞ©·½Ãæ£¬µ«ÊÇÊÇ·ñ¿ÉÒÔÈÃÎÒ¾¡Ò»µãÁ¦£¬Ğ´Ğ´ÕâĞ©Ö»ÓĞÃû³Æ£¬È´ÎŞÃèÊöµÄ±¦ÎïÄØ¡£ÒòÎªÎÒ¾õµÃËüÃÇÊµÔÚÊÇÌ«ÄÑ¿´ÁË¡£²»ÊÇÖ»Òª´÷ÉÏËüÃÇ¼ÓÁË¼¸µãÊ²Ã´Ê²Ã´ÊôĞÔ¾Í¹»ÁËµÄ°¡£¿sing2Èç¹û¿ÉÒÔµÄ»°£¬ÇëÄú½«Ãûµ¥ÁĞ¸øÎÒ£¬ÎÒ»á¾¡×Ô¼ºÄÜÁ¦°ÑÃèÊöĞ´ºÃ¡£¹ØÓÚÃèÊö£¬×°±¸Ê±ÃèÊö£¬Ğ¶ÏÂÊ±ÃèÊö¡£È»ºóÈç¹û¿ÉÒÔÈÃdhxy»òÕßxyanhu¼ÓÃèÊö¾Í¸üºÃÁË¡£Ï£Íû¿ÉÒÔ·Öµ£Ò»µã£¬Ò²Ï£Íû¿ÉÒÔ¸øÎÒÕâ¸ö»ú»á¾¡Ò»µãÃàÁ¦°É¡£Ğ»Ğ»¡£µ±È»ÕâÖ»ÊÇÎÒÒ»¼ºÖ®¼û£¬Èç¹û¿ÉÒÔµÄ»°£¬ÄÇÕæÊÇÈÃÎÒ·Ç³£¸ßĞËµÄÒ»¼şÊÂ¡£","from":"¹íÆÍ(guipu)/×ª¼Ä×Ô¹íÆÍ/×ª¼Ä×Ô±±¾©","to":"hxsd",]),(["time":1084709218,"title":"ÄãºÃ ÎÒÏë¸ÄÃû","text":"ÄãºÃ ÎÒÊÇÌ¨ÍåµÄÍæ¼Ò×¢²áÊ±ÒòÎª×ªÂëµÄÎÊÌâ ÎÒµÄÃûÊÇÆæµÂ×ª³ÉÁËÒ»¸öÎÒ²»¶®µÄ×Ö ÏÖÔÚÎÒµÄÃû×ÖÒòÎª°İÉÙÁÖµÄ¹ØÏµÒ»¸ö×ÖÕı³£Ò»¸ö²»Õı³£Ï£ÍûÎ×Ê¦ÄÜ°ï°ïÃ¦°ÑÎÒµÄÃû×Ö¸Ä³ÉÇåµÂ Ğ»Ğ»ÄãÁËÄãÈç¹û²»ĞÅÎÒÊÇÌ¨ÍåÀ´µÄ ¿ÉÒÔ²éÎÒµÄÀ´Ô´ ¶¼ÊÇÌ¨ÍåµÄÖĞ»ªµçĞÅ","from":"Çå©_(kydd)","to":"hxsd",]),(["time":1087745031,"title":"to hxsd»òÆäËûÖ÷ÊÂµÄÀÏ´ó","text":"to hxsd»òÆäËûÖ÷ÊÂµÄÀÏ´ó;ÎÒÃÇÒÔÇ°ÊÇ¿ªÏÀ¿ÍÓ¢ĞÛÖ®ÀË¼£ÌìÑÄ£¬¿ªÁË£µÄê£¬ÏÖÔÚÎÒÃÇµÄmud¼¸ºõÃ»ÈËÍæÁË;·şÎñÆ÷Çé¿öÎÒ¼òÂÔËµÏÂ°É;CPU: P4 1.6G;Memory: 1G;SCSI hard disk: 20G;Speed: 100M~500M;ÏµÍ³ÊÇwin2000 server;µçĞÅ´ú¹Ü£¬Ìá¹©FTP,µ«²»Ìá¹©Ô¶³ÌµÇÂ½£¬¿ÉÌá¹©¹ÜÀíÔ±ÁªÏµ·½Ê½;ÏÖÔÚ¿ª×Å¸öÊé½£µÄmud£¬¿ÉÏ§Ã»ÈËÍæÁË;ipÊÇ61.153.224.52 portÊÇ5556;ÄãÃÇ¿ÉÒÔÉÏÈ¥¿´¿´;Èç¹ûÄãÃÇÓĞÒâÄÃÈ¥¿ªº£Ñó¾Í¸øÄãÃÇ¿ª°É;ÎÒµÄÓÊÏäÊÇshakey1981@126.com ;²»¹ÜÄãÃÇÔõÃ´¾ö¶¨Çë¸øÎÒ¸öÏûÏ¢£¬Ğ»Ğ»","from":"ÉêÇë(shenqing)","to":"hxsd",]),(["time":1099633338,"title":"ÈËÎï±à¼­Æ÷2","text":"//ÉíÉÏÎïÆ·        inv = all_inventory(env);        for(i=0; i<sizeof(inv); i++) {                if ( !inv[i]->query_temp(\"check_only\") ){                        //ÒÂ·ş                        if(inv[i]->query(\"equipped\")==\"worn\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";                        }                        //×°±¸                        if(inv[i]->query(\"equipped\")==\"wielded\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";                        }                }        }        str += \"}\\n\";//      write (str);        write(\"ÇëÊäÈëĞÂµµÃû: \");         input_to(\"save_room_file\",str);         return 1; }int do_saveobj(string arg) {         object env,*inv;         string str, *name1,username,changtime, file1,file,age1;        mapping prop;        mixed *thistime;        int i; //        if( !arg || sscanf(arg, \"%d\",age1)!=1 ) //                return notify_fail(\"Ö¸Áî¸ñÊ½£ºsaveobj <ÖØÁ¿>\\n\");         env = present(\"npc1\",this_player());         if(!env)                return notify_fail(\"ÕÒ²»µ½Ö¸¶¨ÈËÎï\\n\");         file1 = base_name(env) + \".c\"; //water()        username=this_player()->query(\"name\")+\"(\"+this_player()->query(\"id\")+\")\";        thistime=localtime(time());        changtime=sprintf(\"¹«Ôª£º%dÄê%dÔÂ%dÈÕ£¬±±¾©Ê±¼ä£º%dÊ±%d·Ö%dÃë¡£\",               thistime[LT_YEAR],thistime[LT_MON]+1,thistime[LT_MDAY],               thistime[LT_HOUR],thistime[LT_MIN],thistime[LT_SEC]);            str = \"// NPC: \" + file1               + \"\\n// Data: \"+ username               + \"\\n// Time: \"+ changtime              +  @OBJ_CODE   inherit NPC; #include <ansi.h> void create() { OBJ_CODE         ;         str += sprintf(\"\\tset_name(\\\"%s\\\", ({\\\"%s\\\"}));\\n\", env->query(\"name\"),env->query(\"id\"));         str += sprintf(\"\\tset(\\\"long\\\", @LONG\\n%s\\nLONG\\n\\t);\\n\", env->query(\"long\") );         prop = env->query_entire_dbase();         name1 = keys(prop);         for(i=0; i<sizeof(name1); i++) {                 if( member_array(name1[i], special_props)!=-1 ) continue;                if(name1[i]==\"default_actions\") continue;                if(name1[i]==\"actions\") continue;                if(prop[name1[i]]==\"ÈËÀà\") continue;                if(name1[i]==\"id\") continue;                if(name1[i]==\"eff_qi\") continue;                if(name1[i]==\"max_jing\") continue;                if(name1[i]==\"eff_jing\") continue;                if(name1[i]==\"jing\") continue;                if(name1[i]==\"max_qi\") continue;                if(name1[i]==\"pighead\") continue;                if(prop[name1[i]]==0) continue;                str += sprintf(\"\\tset(\\\"%s\\\", %O);\\n\", name1[i], prop[name1[i]] );         } //¿½±´Îä¹¦        prop = env->query_skills();        if(!sizeof(prop)) {        }else{                name1 = keys(prop);                 for(i=0; i<sizeof(name1); i++) {                         if( member_array(name1[i], special_props)!=-1 ) continue;                         str += sprintf(\"\\tset_skill(\\\"%s\\\", %O);\\t\\t//\"+to_chinese(name1[i])+\"\\n\", name1[i], prop[name1[i]] );                 }            }        str += \"\\n\\tsetup();\\n\"; //ÉíÉÏÎïÆ·        inv = all_inventory(env);        for(i=0; i<sizeof(inv); i++) {                if ( !inv[i]->query_temp(\"check_only\") ){                        //ÒÂ·ş                        if(inv[i]->query(\"equipped\")==\"worn\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";                        }                        //×°±¸                        if(inv[i]->query(\"equipped\")==\"wielded\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";                        }                }        }        str += \"}\\n\";//      write (str);        write(\"ÇëÊäÈëĞÂµµÃû: \");         input_to(\"save_room_file\",str);         return 1; }  int save_room_file(string file,string str) { //        object ob;         file = resolve_path(this_player()->query(\"cwd\"), file) + \".c\";  //      if( wizardp(environment()) ) { //        ob=present(\"npc1\",this_player()); //              seteuid(getuid(environment())); //      seteuid(getuid(ob));  //      if( strlen(yn)<1 || yn[0]!='y' ) return 1;         rm(file);         printf(str);         write(\"´æµµ \" + file + \"....\");        if( write_file(file, str) ) {                write(\"Ok.\\n\");                return 1;        } else                return notify_fail(\"ÄãÃ»ÓĞĞ´ÈëÕâ¸öµµ°¸(\" + file + \")µÄÈ¨Àû¡£\\n\");} void owner_is_killed() { destruct(this_object()); }  ","from":"¶¤×Ó±¦±¦(dingzichat)","to":"hxsd",]),(["time":1171364728,"title":"thillÃÜÂë","text":"821102","from":"Ç§É½(thill)","to":"hxsd",]),}),"owner_id":"hxsd","name":"Ä³ÈËµÄĞÅÏä","no_beg":1,"no_steal":1,])
-mails ({(["time":1021787687,"title":"about mudlist","text":"ÎÒÊÇ202.197.32.136 8888ÉÏµÄ£¬ÏëºÍÄãÃÇÕâÀï×ö»¥Á¬Í¬ÒâÂğ£¿Í¬ÒâµÄ»°£¬ÇëÔÚÎÒÄÇÀïÁô¸öpostÕÒhappy or lost ¶¼¿ÉÒÔthanks","from":"¼¤Çé(passion)","to":"hxsd",]),(["time":1037215770,"title":"ÎÒµÄsosĞĞ²»ĞĞËµ¾ä»°ºÃ²»£¿","text":"±ğÕâÃ´²»ÏÌ²»µ­µÄ·Å×ÅÖªµÀÄãÀÏÈË¼ÒÔÚ","from":"´óÄ®¹ÂÑÌ(dmgy)","to":"hxsd",]),(["time":1038195969,"title":"q","text":"q","from":"µó×ê¹Å¹Ö(marine)","to":"hxsd",]),(["time":1039116634,"title":"ÉêÇë wiz","text":"»¹¼ÇµÃÎÒ°É hxsd ÎÒ¸øÄãÈ¥¹ıĞÅµÄ ºÜ²»ºÃÒâË¼ ÎÒÔçÉÏÃ»Ê±¼äÀ´ÎÒÏë Äã°ÑÌâÄ¿¸æËßÎÒ°É  ÎÒ×öÍêÁË¸øÄã","from":"ÌìÎÊ(rzrz)","to":"hxsd",]),(["time":1052492223,"title":"can you teach me ??","text":"What is the problem, if the mud auto shutdown ??some system file ??can you teach me ?? please thanks a lotbow","from":"»¨¥J(kwok)","to":"hxsd",]),(["time":1053442707,"title":"¹ØÓÚweb·şÎñÆ÷","text":"ÓÃ»§£ºzmudÃÜÂë£ºlyf$guaf","from":"¹Î·ç(guaf)","to":"hxsd",]),(["time":1062378697,"title":"¹ØÓÚTOMµÄÎÊÌâÏëÇë½Ì","text":"ÄãºÃ£¬HXSD£¬¼ÇµÃÈ¥Äêµ×ÓĞºÍÄã½»Á÷¹ı£¬ºÜ¾ÃÃ»ÓĞÀ´ÁË£¬ÊÇ²»ÊÇ²»¼ÇµÃÓĞÎÒÕâºÅIDÁË£¿TOMÎÒ×òÌì²ÅÒª»ØµÄÃÜÂë£¬¿´FINGER TOMµÄ¼ÇÂ¼Ó¦¸ÃÒ²ÊÇÕıÈ·µÄ£¬µ«ÃÜÂëhp¶ªÊ§ÎÒ¾õµÃÓĞµãÆæ¹Ö£¬ÄãÓĞ¸Ä¹ıÂğ£¿ËµÕæµÄ£¬µ±³õºÍÄãÒªÃÜÂëºÃ¼¸»Ø¶¼Ã»ÓĞµÃµ½½â¾ö£¬ÎÒºÜÊ§Íû£¬µ«ÎÒÁË½â£¬ÏóHY2ÕâÑùµÄÃâ·ÑÕ¾µã£¬²¢Ã»ÓĞÊ²Ã´È¨ÀûºÍÒåÎñ£¬ËùÒÔÎÒÒ²²»ÏëÈ¥½²ÕâĞ©£¬Ö»²»¹ı£¬¸Ğ¾õºÜ²»Ë¬£¬Ã»ÓĞ°ì·¨¡£Èç¹ûÄã»¹ÊÇÃ»¿´µ½£¬ÄÇ¾ÍËãÁË£¬Íæ²»Íæ²¢²»ÊÇºÜÖØÒª¡£OK£¬¾ÍÕâÑù£¬Äã¿´µ½¾ÍÂé·³ÄãÁË£¡","from":"»¶ÀÖ(saqiu)","to":"hxsd",]),(["time":1077707455,"title":"sigh","text":"beg~~~¡£¡£¡£¡£¡£ÄÜ¸øÎÒ»Ö¸´Âğ£¿ÎÒµÈÁË1ÌìÁË£¬ºÃÏëÍæµÄ¡£¡£Ğ»Ğ»ÁË¡£¡£¡£","from":"Ğ¡Ø«(qqppcsq)","to":"hxsd",]),(["time":1078198847,"title":"¹ØÓÚĞÂÔö±¦ÎïÃèÊö","text":"hxsd£¬ÄãºÃ¡£ÔÚÕâ¸ömudÎÒÒÑ¾­ÍæÁËÓĞ2Äê¶à¡£¿ÉÒÔËµ£¬ÎÒÊÇºÜÇå³şµØÄ¿¶ÃÄãÈçºÎ½«º£ÑóÖ§³Å¹ıÀ´µÄ¡£ºÜ¸ßĞËÄãÔÚ²»¶ÏµØ¸Ä½øº£Ñó¡£sing2µ«ÊÇÏÖÔÚºÜ¶à¶«Î÷¶¼³ÉÁËÊı×ÖµÄÀÛ»ı¡£¶«Î÷µÄÈ·ÊÇÒªÊµÓÃ£¬µ«ÊÇÔÚÊµÓÃµÄ»ù´¡ÉÏÒªÊÇÔöÌíÁËÃÀ¹Û£¬ÄÇÃ´ÊÇ²»ÊÇ»áÎüÒı¸ü¶àµÄÈËÄØ£¿ÎÒ²»ºÜ¶®Ğ´³ÌĞòÕâĞ©·½Ãæ£¬µ«ÊÇÊÇ·ñ¿ÉÒÔÈÃÎÒ¾¡Ò»µãÁ¦£¬Ğ´Ğ´ÕâĞ©Ö»ÓĞÃû³Æ£¬È´ÎŞÃèÊöµÄ±¦ÎïÄØ¡£ÒòÎªÎÒ¾õµÃËüÃÇÊµÔÚÊÇÌ«ÄÑ¿´ÁË¡£²»ÊÇÖ»Òª´÷ÉÏËüÃÇ¼ÓÁË¼¸µãÊ²Ã´Ê²Ã´ÊôĞÔ¾Í¹»ÁËµÄ°¡£¿sing2Èç¹û¿ÉÒÔµÄ»°£¬ÇëÄú½«Ãûµ¥ÁĞ¸øÎÒ£¬ÎÒ»á¾¡×Ô¼ºÄÜÁ¦°ÑÃèÊöĞ´ºÃ¡£¹ØÓÚÃèÊö£¬×°±¸Ê±ÃèÊö£¬Ğ¶ÏÂÊ±ÃèÊö¡£È»ºóÈç¹û¿ÉÒÔÈÃdhxy»òÕßxyanhu¼ÓÃèÊö¾Í¸üºÃÁË¡£Ï£Íû¿ÉÒÔ·Öµ£Ò»µã£¬Ò²Ï£Íû¿ÉÒÔ¸øÎÒÕâ¸ö»ú»á¾¡Ò»µãÃàÁ¦°É¡£Ğ»Ğ»¡£µ±È»ÕâÖ»ÊÇÎÒÒ»¼ºÖ®¼û£¬Èç¹û¿ÉÒÔµÄ»°£¬ÄÇÕæÊÇÈÃÎÒ·Ç³£¸ßĞËµÄÒ»¼şÊÂ¡£","from":"¹íÆÍ(guipu)","to":"hxsd",]),(["time":1078198847,"title":"¹ØÓÚĞÂÔö±¦ÎïÃèÊö","text":"hxsd£¬ÄãºÃ¡£ÔÚÕâ¸ömudÎÒÒÑ¾­ÍæÁËÓĞ2Äê¶à¡£¿ÉÒÔËµ£¬ÎÒÊÇºÜÇå³şµØÄ¿¶ÃÄãÈçºÎ½«º£ÑóÖ§³Å¹ıÀ´µÄ¡£ºÜ¸ßĞËÄãÔÚ²»¶ÏµØ¸Ä½øº£Ñó¡£sing2µ«ÊÇÏÖÔÚºÜ¶à¶«Î÷¶¼³ÉÁËÊı×ÖµÄÀÛ»ı¡£¶«Î÷µÄÈ·ÊÇÒªÊµÓÃ£¬µ«ÊÇÔÚÊµÓÃµÄ»ù´¡ÉÏÒªÊÇÔöÌíÁËÃÀ¹Û£¬ÄÇÃ´ÊÇ²»ÊÇ»áÎüÒı¸ü¶àµÄÈËÄØ£¿ÎÒ²»ºÜ¶®Ğ´³ÌĞòÕâĞ©·½Ãæ£¬µ«ÊÇÊÇ·ñ¿ÉÒÔÈÃÎÒ¾¡Ò»µãÁ¦£¬Ğ´Ğ´ÕâĞ©Ö»ÓĞÃû³Æ£¬È´ÎŞÃèÊöµÄ±¦ÎïÄØ¡£ÒòÎªÎÒ¾õµÃËüÃÇÊµÔÚÊÇÌ«ÄÑ¿´ÁË¡£²»ÊÇÖ»Òª´÷ÉÏËüÃÇ¼ÓÁË¼¸µãÊ²Ã´Ê²Ã´ÊôĞÔ¾Í¹»ÁËµÄ°¡£¿sing2Èç¹û¿ÉÒÔµÄ»°£¬ÇëÄú½«Ãûµ¥ÁĞ¸øÎÒ£¬ÎÒ»á¾¡×Ô¼ºÄÜÁ¦°ÑÃèÊöĞ´ºÃ¡£¹ØÓÚÃèÊö£¬×°±¸Ê±ÃèÊö£¬Ğ¶ÏÂÊ±ÃèÊö¡£È»ºóÈç¹û¿ÉÒÔÈÃdhxy»òÕßxyanhu¼ÓÃèÊö¾Í¸üºÃÁË¡£Ï£Íû¿ÉÒÔ·Öµ£Ò»µã£¬Ò²Ï£Íû¿ÉÒÔ¸øÎÒÕâ¸ö»ú»á¾¡Ò»µãÃàÁ¦°É¡£Ğ»Ğ»¡£µ±È»ÕâÖ»ÊÇÎÒÒ»¼ºÖ®¼û£¬Èç¹û¿ÉÒÔµÄ»°£¬ÄÇÕæÊÇÈÃÎÒ·Ç³£¸ßĞËµÄÒ»¼şÊÂ¡£","from":"¹íÆÍ(guipu)/×ª¼Ä×Ô¹íÆÍ/×ª¼Ä×Ô±±¾©","to":"hxsd",]),(["time":1084709218,"title":"ÄãºÃ ÎÒÏë¸ÄÃû","text":"ÄãºÃ ÎÒÊÇÌ¨ÍåµÄÍæ¼Ò×¢²áÊ±ÒòÎª×ªÂëµÄÎÊÌâ ÎÒµÄÃûÊÇÆæµÂ×ª³ÉÁËÒ»¸öÎÒ²»¶®µÄ×Ö ÏÖÔÚÎÒµÄÃû×ÖÒòÎª°İÉÙÁÖµÄ¹ØÏµÒ»¸ö×ÖÕı³£Ò»¸ö²»Õı³£Ï£ÍûÎ×Ê¦ÄÜ°ï°ïÃ¦°ÑÎÒµÄÃû×Ö¸Ä³ÉÇåµÂ Ğ»Ğ»ÄãÁËÄãÈç¹û²»ĞÅÎÒÊÇÌ¨ÍåÀ´µÄ ¿ÉÒÔ²éÎÒµÄÀ´Ô´ ¶¼ÊÇÌ¨ÍåµÄÖĞ»ªµçĞÅ","from":"Çå©_(kydd)","to":"hxsd",]),(["time":1087745031,"title":"to hxsd»òÆäËûÖ÷ÊÂµÄÀÏ´ó","text":"to hxsd»òÆäËûÖ÷ÊÂµÄÀÏ´ó;ÎÒÃÇÒÔÇ°ÊÇ¿ªÏÀ¿ÍÓ¢ĞÛÖ®ÀË¼£ÌìÑÄ£¬¿ªÁË£µÄê£¬ÏÖÔÚÎÒÃÇµÄmud¼¸ºõÃ»ÈËÍæÁË;·şÎñÆ÷Çé¿öÎÒ¼òÂÔËµÏÂ°É;CPU: P4 1.6G;Memory: 1G;SCSI hard disk: 20G;Speed: 100M~500M;ÏµÍ³ÊÇwin2000 server;µçĞÅ´ú¹Ü£¬Ìá¹©FTP,µ«²»Ìá¹©Ô¶³ÌµÇÂ½£¬¿ÉÌá¹©¹ÜÀíÔ±ÁªÏµ·½Ê½;ÏÖÔÚ¿ª×Å¸öÊé½£µÄmud£¬¿ÉÏ§Ã»ÈËÍæÁË;ipÊÇ61.153.224.52 portÊÇ5556;ÄãÃÇ¿ÉÒÔÉÏÈ¥¿´¿´;Èç¹ûÄãÃÇÓĞÒâÄÃÈ¥¿ªº£Ñó¾Í¸øÄãÃÇ¿ª°É;ÎÒµÄÓÊÏäÊÇshakey1981@126.com ;²»¹ÜÄãÃÇÔõÃ´¾ö¶¨Çë¸øÎÒ¸öÏûÏ¢£¬Ğ»Ğ»","from":"ÉêÇë(shenqing)","to":"hxsd",]),(["time":1099633338,"title":"ÈËÎï±à¼­Æ÷2","text":"//ÉíÉÏÎïÆ·        inv = all_inventory(env);        for(i=0; i<sizeof(inv); i++) {                if ( !inv[i]->query_temp(\"check_only\") ){                        //ÒÂ·ş                        if(inv[i]->query(\"equipped\")==\"worn\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";                        }                        //×°±¸                        if(inv[i]->query(\"equipped\")==\"wielded\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";                        }                }        }        str += \"}\\n\";//      write (str);        write(\"ÇëÊäÈëĞÂµµÃû: \");         input_to(\"save_room_file\",str);         return 1; }int do_saveobj(string arg) {         object env,*inv;         string str, *name1,username,changtime, file1,file,age1;        mapping prop;        mixed *thistime;        int i; //        if( !arg || sscanf(arg, \"%d\",age1)!=1 ) //                return notify_fail(\"Ö¸Áî¸ñÊ½£ºsaveobj <ÖØÁ¿>\\n\");         env = present(\"npc1\",this_player());         if(!env)                return notify_fail(\"ÕÒ²»µ½Ö¸¶¨ÈËÎï\\n\");         file1 = base_name(env) + \".c\"; //water()        username=this_player()->query(\"name\")+\"(\"+this_player()->query(\"id\")+\")\";        thistime=localtime(time());        changtime=sprintf(\"¹«Ôª£º%dÄê%dÔÂ%dÈÕ£¬±±¾©Ê±¼ä£º%dÊ±%d·Ö%dÃë¡£\",               thistime[LT_YEAR],thistime[LT_MON]+1,thistime[LT_MDAY],               thistime[LT_HOUR],thistime[LT_MIN],thistime[LT_SEC]);            str = \"// NPC: \" + file1               + \"\\n// Data: \"+ username               + \"\\n// Time: \"+ changtime              +  @OBJ_CODE   inherit NPC; #include <ansi.h> void create() { OBJ_CODE         ;         str += sprintf(\"\\tset_name(\\\"%s\\\", ({\\\"%s\\\"}));\\n\", env->query(\"name\"),env->query(\"id\"));         str += sprintf(\"\\tset(\\\"long\\\", @LONG\\n%s\\nLONG\\n\\t);\\n\", env->query(\"long\") );         prop = env->query_entire_dbase();         name1 = keys(prop);         for(i=0; i<sizeof(name1); i++) {                 if( member_array(name1[i], special_props)!=-1 ) continue;                if(name1[i]==\"default_actions\") continue;                if(name1[i]==\"actions\") continue;                if(prop[name1[i]]==\"ÈËÀà\") continue;                if(name1[i]==\"id\") continue;                if(name1[i]==\"eff_qi\") continue;                if(name1[i]==\"max_jing\") continue;                if(name1[i]==\"eff_jing\") continue;                if(name1[i]==\"jing\") continue;                if(name1[i]==\"max_qi\") continue;                if(name1[i]==\"pighead\") continue;                if(prop[name1[i]]==0) continue;                str += sprintf(\"\\tset(\\\"%s\\\", %O);\\n\", name1[i], prop[name1[i]] );         } //¿½±´Îä¹¦        prop = env->query_skills();        if(!sizeof(prop)) {        }else{                name1 = keys(prop);                 for(i=0; i<sizeof(name1); i++) {                         if( member_array(name1[i], special_props)!=-1 ) continue;                         str += sprintf(\"\\tset_skill(\\\"%s\\\", %O);\\t\\t//\"+to_chinese(name1[i])+\"\\n\", name1[i], prop[name1[i]] );                 }            }        str += \"\\n\\tsetup();\\n\"; //ÉíÉÏÎïÆ·        inv = all_inventory(env);        for(i=0; i<sizeof(inv); i++) {                if ( !inv[i]->query_temp(\"check_only\") ){                        //ÒÂ·ş                        if(inv[i]->query(\"equipped\")==\"worn\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";                        }                        //×°±¸                        if(inv[i]->query(\"equipped\")==\"wielded\"){                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";                        }                }        }        str += \"}\\n\";//      write (str);        write(\"ÇëÊäÈëĞÂµµÃû: \");         input_to(\"save_room_file\",str);         return 1; }  int save_room_file(string file,string str) { //        object ob;         file = resolve_path(this_player()->query(\"cwd\"), file) + \".c\";  //      if( wizardp(environment()) ) { //        ob=present(\"npc1\",this_player()); //              seteuid(getuid(environment())); //      seteuid(getuid(ob));  //      if( strlen(yn)<1 || yn[0]!='y' ) return 1;         rm(file);         printf(str);         write(\"´æµµ \" + file + \"....\");        if( write_file(file, str) ) {                write(\"Ok.\\n\");                return 1;        } else                return notify_fail(\"ÄãÃ»ÓĞĞ´ÈëÕâ¸öµµ°¸(\" + file + \")µÄÈ¨Àû¡£\\n\");} void owner_is_killed() { destruct(this_object()); }  ","from":"¶¤×Ó±¦±¦(dingzichat)","to":"hxsd",]),(["time":1171364728,"title":"thillÃÜÂë","text":"821102","from":"Ç§É½(thill)","to":"hxsd",]),})
+dbase (["no_get":1,"no_put":1,"unit":"ä¸ª","long":"è¿™æ˜¯ä¸ªäººä¿¡ç®±ï¼Œä½†ä¿¡ä»¶å†…å®¹å¯¹å·«å¸ˆæ— æ³•ä¿å¯†ï¼Œè¯·å‹¿è°ˆåŠä¸ªäººéšç§ï¼š
+
+mailto  <æŸäºº>            å¯„ä¿¡ç»™åˆ«äººã€‚
+forward <ä¿¡ä»¶ç¼–å·> <æŸäºº> å°†æŸå°ä¿¡è½¬å¯„ç»™åˆ«äººã€‚
+from                      æŸ¥çœ‹ä¿¡ç®±ä¸­çš„ä¿¡ä»¶ã€‚
+read    <ä¿¡ä»¶ç¼–å·>        é˜…è¯»æŸä¸€å°ä¿¡ä»¶ã€‚
+discard <ä¿¡ä»¶ç¼–å·>        ä¸¢å¼ƒä¸€å°ä¿¡ä»¶ã€‚
+","id":"mailbox","no_drop":1,"no_insert":1,"mails":({(["time":1021787687,"title":"about mudlist","text":"æˆ‘æ˜¯202.197.32.136 8888ä¸Šçš„ï¼Œæƒ³å’Œä½ ä»¬è¿™é‡Œåšäº’è¿
+åŒæ„å—ï¼ŸåŒæ„çš„è¯ï¼Œè¯·åœ¨æˆ‘é‚£é‡Œç•™ä¸ªpost
+æ‰¾happy or lost éƒ½å¯ä»¥
+thanks
+","from":"æ¿€æƒ…(passion)","to":"hxsd",]),(["time":1037215770,"title":"æˆ‘çš„sosè¡Œä¸è¡Œè¯´å¥è¯å¥½ä¸ï¼Ÿ","text":"åˆ«è¿™ä¹ˆä¸å’¸ä¸æ·¡çš„æ”¾ç€
+çŸ¥é“ä½ è€äººå®¶åœ¨
+","from":"å¤§æ¼ å­¤çƒŸ(dmgy)","to":"hxsd",]),(["time":1038195969,"title":"q","text":"q
+","from":"åˆé’»å¤æ€ª(marine)","to":"hxsd",]),(["time":1039116634,"title":"ç”³è¯· wiz","text":"è¿˜è®°å¾—æˆ‘å§ hxsd æˆ‘ç»™ä½ å»è¿‡ä¿¡çš„ å¾ˆä¸å¥½æ„æ€ æˆ‘æ—©ä¸Šæ²¡æ—¶é—´æ¥
+æˆ‘æƒ³ ä½ æŠŠé¢˜ç›®å‘Šè¯‰æˆ‘å§  æˆ‘åšå®Œäº†ç»™ä½ 
+","from":"å¤©é—®(rzrz)","to":"hxsd",]),(["time":1052492223,"title":"can you teach me ??","text":"What is the problem, if the mud auto shutdown ??
+some system file ??
+can you teach me ?? please 
+thanks a lot
+bow
+","from":"èŠ±J(kwok)","to":"hxsd",]),(["time":1053442707,"title":"å…³äºwebæœåŠ¡å™¨","text":"ç”¨æˆ·ï¼šzmud
+å¯†ç ï¼šlyf$guaf
+","from":"åˆ®é£(guaf)","to":"hxsd",]),(["time":1062378697,"title":"å…³äºTOMçš„é—®é¢˜æƒ³è¯·æ•™","text":"ä½ å¥½ï¼ŒHXSDï¼Œè®°å¾—å»å¹´åº•æœ‰å’Œä½ äº¤æµè¿‡ï¼Œå¾ˆä¹…æ²¡æœ‰æ¥äº†ï¼Œæ˜¯ä¸æ˜¯ä¸è®°å¾—æœ‰
+æˆ‘è¿™å·IDäº†ï¼Ÿ
+TOMæˆ‘æ˜¨å¤©æ‰è¦å›çš„å¯†ç ï¼Œçœ‹FINGER TOMçš„è®°å½•åº”è¯¥ä¹Ÿæ˜¯æ­£ç¡®çš„ï¼Œä½†å¯†ç 
+hp
+ä¸¢å¤±æˆ‘è§‰å¾—æœ‰ç‚¹å¥‡æ€ªï¼Œä½ æœ‰æ”¹è¿‡å—ï¼Ÿè¯´çœŸçš„ï¼Œå½“åˆå’Œä½ è¦å¯†ç å¥½å‡ å›éƒ½æ²¡æœ‰
+å¾—åˆ°è§£å†³ï¼Œæˆ‘å¾ˆå¤±æœ›ï¼Œä½†æˆ‘äº†è§£ï¼Œè±¡HY2è¿™æ ·çš„å…è´¹ç«™ç‚¹ï¼Œå¹¶æ²¡æœ‰ä»€ä¹ˆæƒåˆ©
+å’Œä¹‰åŠ¡ï¼Œæ‰€ä»¥æˆ‘ä¹Ÿä¸æƒ³å»è®²è¿™äº›ï¼Œåªä¸è¿‡ï¼Œæ„Ÿè§‰å¾ˆä¸çˆ½ï¼Œæ²¡æœ‰åŠæ³•ã€‚
+å¦‚æœä½ è¿˜æ˜¯æ²¡çœ‹åˆ°ï¼Œé‚£å°±ç®—äº†ï¼Œç©ä¸ç©å¹¶ä¸æ˜¯å¾ˆé‡è¦ã€‚
+OKï¼Œå°±è¿™æ ·ï¼Œä½ çœ‹åˆ°å°±éº»çƒ¦ä½ äº†ï¼
+","from":"æ¬¢ä¹(saqiu)","to":"hxsd",]),(["time":1077707455,"title":"sigh","text":"beg~~~ã€‚ã€‚ã€‚ã€‚ã€‚
+èƒ½ç»™æˆ‘æ¢å¤å—ï¼Ÿæˆ‘ç­‰äº†1å¤©äº†ï¼Œå¥½æƒ³ç©çš„ã€‚ã€‚è°¢è°¢äº†ã€‚ã€‚ã€‚
+","from":"å°å­¬(qqppcsq)","to":"hxsd",]),(["time":1078198847,"title":"å…³äºæ–°å¢å®ç‰©æè¿°","text":"hxsdï¼Œä½ å¥½ã€‚
+åœ¨è¿™ä¸ªmudæˆ‘å·²ç»ç©äº†æœ‰2å¹´å¤šã€‚å¯ä»¥è¯´ï¼Œæˆ‘æ˜¯å¾ˆæ¸…æ¥šåœ°ç›®ç¹ä½ å¦‚ä½•å°†æµ·æ´‹æ”¯æ’‘è¿‡æ¥çš„ã€‚
+å¾ˆé«˜å…´ä½ åœ¨ä¸æ–­åœ°æ”¹è¿›æµ·æ´‹ã€‚
+sing2
+ä½†æ˜¯ç°åœ¨å¾ˆå¤šä¸œè¥¿éƒ½æˆäº†æ•°å­—çš„ç´¯ç§¯ã€‚
+ä¸œè¥¿çš„ç¡®æ˜¯è¦å®ç”¨ï¼Œä½†æ˜¯åœ¨å®ç”¨çš„åŸºç¡€ä¸Šè¦æ˜¯å¢æ·»äº†ç¾è§‚ï¼Œé‚£ä¹ˆæ˜¯ä¸æ˜¯ä¼šå¸å¼•æ›´å¤šçš„äººå‘¢ï¼Ÿ
+æˆ‘ä¸å¾ˆæ‡‚å†™ç¨‹åºè¿™äº›æ–¹é¢ï¼Œä½†æ˜¯æ˜¯å¦å¯ä»¥è®©æˆ‘å°½ä¸€ç‚¹åŠ›ï¼Œå†™å†™è¿™äº›åªæœ‰åç§°ï¼Œå´æ— æè¿°çš„å®ç‰©å‘¢ã€‚
+å› ä¸ºæˆ‘è§‰å¾—å®ƒä»¬å®åœ¨æ˜¯å¤ªéš¾çœ‹äº†ã€‚
+ä¸æ˜¯åªè¦æˆ´ä¸Šå®ƒä»¬åŠ äº†å‡ ç‚¹ä»€ä¹ˆä»€ä¹ˆå±æ€§å°±å¤Ÿäº†çš„å•Šï¼Ÿ
+sing2
+å¦‚æœå¯ä»¥çš„è¯ï¼Œè¯·æ‚¨å°†åå•åˆ—ç»™æˆ‘ï¼Œæˆ‘ä¼šå°½è‡ªå·±èƒ½åŠ›æŠŠæè¿°å†™å¥½ã€‚å…³äºæè¿°ï¼Œè£…å¤‡æ—¶æè¿°ï¼Œå¸ä¸‹æ—¶æè¿°ã€‚
+ç„¶åå¦‚æœå¯ä»¥è®©dhxyæˆ–è€…xyanhuåŠ æè¿°å°±æ›´å¥½äº†ã€‚
+å¸Œæœ›å¯ä»¥åˆ†æ‹…ä¸€ç‚¹ï¼Œä¹Ÿå¸Œæœ›å¯ä»¥ç»™æˆ‘è¿™ä¸ªæœºä¼šå°½ä¸€ç‚¹ç»µåŠ›å§ã€‚
+è°¢è°¢ã€‚
+å½“ç„¶è¿™åªæ˜¯æˆ‘ä¸€å·±ä¹‹è§ï¼Œå¦‚æœå¯ä»¥çš„è¯ï¼Œé‚£çœŸæ˜¯è®©æˆ‘éå¸¸é«˜å…´çš„ä¸€ä»¶äº‹ã€‚
+","from":"é¬¼ä»†(guipu)","to":"hxsd",]),(["time":1078198847,"title":"å…³äºæ–°å¢å®ç‰©æè¿°","text":"hxsdï¼Œä½ å¥½ã€‚
+åœ¨è¿™ä¸ªmudæˆ‘å·²ç»ç©äº†æœ‰2å¹´å¤šã€‚å¯ä»¥è¯´ï¼Œæˆ‘æ˜¯å¾ˆæ¸…æ¥šåœ°ç›®ç¹ä½ å¦‚ä½•å°†æµ·æ´‹æ”¯æ’‘è¿‡æ¥çš„ã€‚
+å¾ˆé«˜å…´ä½ åœ¨ä¸æ–­åœ°æ”¹è¿›æµ·æ´‹ã€‚
+sing2
+ä½†æ˜¯ç°åœ¨å¾ˆå¤šä¸œè¥¿éƒ½æˆäº†æ•°å­—çš„ç´¯ç§¯ã€‚
+ä¸œè¥¿çš„ç¡®æ˜¯è¦å®ç”¨ï¼Œä½†æ˜¯åœ¨å®ç”¨çš„åŸºç¡€ä¸Šè¦æ˜¯å¢æ·»äº†ç¾è§‚ï¼Œé‚£ä¹ˆæ˜¯ä¸æ˜¯ä¼šå¸å¼•æ›´å¤šçš„äººå‘¢ï¼Ÿ
+æˆ‘ä¸å¾ˆæ‡‚å†™ç¨‹åºè¿™äº›æ–¹é¢ï¼Œä½†æ˜¯æ˜¯å¦å¯ä»¥è®©æˆ‘å°½ä¸€ç‚¹åŠ›ï¼Œå†™å†™è¿™äº›åªæœ‰åç§°ï¼Œå´æ— æè¿°çš„å®ç‰©å‘¢ã€‚
+å› ä¸ºæˆ‘è§‰å¾—å®ƒä»¬å®åœ¨æ˜¯å¤ªéš¾çœ‹äº†ã€‚
+ä¸æ˜¯åªè¦æˆ´ä¸Šå®ƒä»¬åŠ äº†å‡ ç‚¹ä»€ä¹ˆä»€ä¹ˆå±æ€§å°±å¤Ÿäº†çš„å•Šï¼Ÿ
+sing2
+å¦‚æœå¯ä»¥çš„è¯ï¼Œè¯·æ‚¨å°†åå•åˆ—ç»™æˆ‘ï¼Œæˆ‘ä¼šå°½è‡ªå·±èƒ½åŠ›æŠŠæè¿°å†™å¥½ã€‚å…³äºæè¿°ï¼Œè£…å¤‡æ—¶æè¿°ï¼Œå¸ä¸‹æ—¶æè¿°ã€‚
+ç„¶åå¦‚æœå¯ä»¥è®©dhxyæˆ–è€…xyanhuåŠ æè¿°å°±æ›´å¥½äº†ã€‚
+å¸Œæœ›å¯ä»¥åˆ†æ‹…ä¸€ç‚¹ï¼Œä¹Ÿå¸Œæœ›å¯ä»¥ç»™æˆ‘è¿™ä¸ªæœºä¼šå°½ä¸€ç‚¹ç»µåŠ›å§ã€‚
+è°¢è°¢ã€‚
+å½“ç„¶è¿™åªæ˜¯æˆ‘ä¸€å·±ä¹‹è§ï¼Œå¦‚æœå¯ä»¥çš„è¯ï¼Œé‚£çœŸæ˜¯è®©æˆ‘éå¸¸é«˜å…´çš„ä¸€ä»¶äº‹ã€‚
+","from":"é¬¼ä»†(guipu)/è½¬å¯„è‡ªé¬¼ä»†/è½¬å¯„è‡ªåŒ—äº¬","to":"hxsd",]),(["time":1084709218,"title":"ä½ å¥½ æˆ‘æƒ³æ”¹å","text":"ä½ å¥½ æˆ‘æ˜¯å°æ¹¾çš„ç©å®¶
+æ³¨å†Œæ—¶å› ä¸ºè½¬ç çš„é—®é¢˜ æˆ‘çš„åæ˜¯å¥‡å¾·
+è½¬æˆäº†ä¸€ä¸ªæˆ‘ä¸æ‡‚çš„å­— ç°åœ¨æˆ‘çš„åå­—å› ä¸ºæ‹œå°‘æ—çš„å…³ç³»
+ä¸€ä¸ªå­—æ­£å¸¸ä¸€ä¸ªä¸æ­£å¸¸
+å¸Œæœ›å·«å¸ˆèƒ½å¸®å¸®å¿™æŠŠæˆ‘çš„åå­—æ”¹æˆæ¸…å¾· è°¢è°¢ä½ äº†
+
+ä½ å¦‚æœä¸ä¿¡æˆ‘æ˜¯å°æ¹¾æ¥çš„ å¯ä»¥æŸ¥æˆ‘çš„æ¥æº éƒ½æ˜¯å°æ¹¾çš„ä¸­åç”µä¿¡
+","from":"æ¸…_(kydd)","to":"hxsd",]),(["time":1087745031,"title":"to hxsdæˆ–å…¶ä»–ä¸»äº‹çš„è€å¤§","text":"to hxsdæˆ–å…¶ä»–ä¸»äº‹çš„è€å¤§;æˆ‘ä»¬ä»¥å‰æ˜¯å¼€ä¾ å®¢è‹±é›„ä¹‹æµªè¿¹å¤©æ¶¯ï¼Œå¼€äº†ï¼•å¹´ï¼Œç°åœ¨æˆ‘ä»¬çš„mudå‡ ä¹æ²¡äººç©äº†;æœåŠ¡å™¨æƒ…å†µæˆ‘ç®€ç•¥è¯´ä¸‹å§;CPU: P4 1.6G;Memory: 1G;SCSI hard disk: 20G;Speed: 100M~500M;ç³»ç»Ÿæ˜¯win2000 server;ç”µä¿¡ä»£ç®¡ï¼Œæä¾›FTP,ä½†ä¸æä¾›è¿œç¨‹ç™»é™†ï¼Œå¯æä¾›ç®¡ç†å‘˜è”ç³»æ–¹å¼;ç°åœ¨å¼€ç€ä¸ªä¹¦å‰‘çš„mudï¼Œå¯æƒœæ²¡äººç©äº†;ipæ˜¯61.153.224.52 portæ˜¯5556;ä½ ä»¬å¯ä»¥ä¸Šå»çœ‹çœ‹;å¦‚æœä½ ä»¬æœ‰æ„æ‹¿å»å¼€æµ·æ´‹å°±ç»™ä½ ä»¬å¼€å§;æˆ‘çš„é‚®ç®±æ˜¯shakey1981@126.com ;ä¸ç®¡ä½ ä»¬æ€ä¹ˆå†³å®šè¯·ç»™æˆ‘ä¸ªæ¶ˆæ¯ï¼Œè°¢è°¢
+","from":"ç”³è¯·(shenqing)","to":"hxsd",]),(["time":1099633338,"title":"äººç‰©ç¼–è¾‘å™¨2","text":"//èº«ä¸Šç‰©å“
+        inv = all_inventory(env);
+        for(i=0; i<sizeof(inv); i++) {
+                if ( !inv[i]->query_temp(\"check_only\") ){
+                        //è¡£æœ
+                        if(inv[i]->query(\"equipped\")==\"worn\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";
+                        }
+                        //è£…å¤‡
+                        if(inv[i]->query(\"equipped\")==\"wielded\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";
+                        }
+
+                }
+        }
+        str += \"}\\n\";
+//      write (str);
+        write(\"è¯·è¾“å…¥æ–°æ¡£å: \"); 
+        input_to(\"save_room_file\",str); 
+        return 1; 
+}
+int do_saveobj(string arg) 
+{ 
+        object env,*inv; 
+        string str, *name1,username,changtime, file1,file,age1;
+        mapping prop;
+        mixed *thistime;
+        int i; 
+//        if( !arg || sscanf(arg, \"%d\",age1)!=1 ) 
+//                return notify_fail(\"æŒ‡ä»¤æ ¼å¼ï¼šsaveobj <é‡é‡>\\n\"); 
+
+        env = present(\"npc1\",this_player()); 
+        if(!env)
+                return notify_fail(\"æ‰¾ä¸åˆ°æŒ‡å®šäººç‰©\\n\"); 
+        file1 = base_name(env) + \".c\"; 
+//water()
+        username=this_player()->query(\"name\")+\"(\"+this_player()->query(\"id\")+\")\";
+        thistime=localtime(time());
+        changtime=sprintf(\"å…¬å…ƒï¼š%då¹´%dæœˆ%dæ—¥ï¼ŒåŒ—äº¬æ—¶é—´ï¼š%dæ—¶%dåˆ†%dç§’ã€‚\",
+               thistime[LT_YEAR],thistime[LT_MON]+1,thistime[LT_MDAY],
+               thistime[LT_HOUR],thistime[LT_MIN],thistime[LT_SEC]);    
+
+        str = \"// NPC: \" + file1 
+              + \"\\n// Data: \"+ username 
+              + \"\\n// Time: \"+ changtime
+              +  @OBJ_CODE 
+ 
+ 
+inherit NPC; 
+#include <ansi.h> 
+void create() 
+{ 
+OBJ_CODE 
+        ; 
+        str += sprintf(\"\\tset_name(\\\"%s\\\", ({\\\"%s\\\"}));\\n\", env->query(\"name\"),env->query(\"id\")); 
+        str += sprintf(\"\\tset(\\\"long\\\", @LONG\\n%s\\nLONG\\n\\t);\\n\", env->query(\"long\") ); 
+        prop = env->query_entire_dbase(); 
+        name1 = keys(prop); 
+        for(i=0; i<sizeof(name1); i++) { 
+                if( member_array(name1[i], special_props)!=-1 ) continue;
+                if(name1[i]==\"default_actions\") continue;
+                if(name1[i]==\"actions\") continue;
+                if(prop[name1[i]]==\"äººç±»\") continue;
+                if(name1[i]==\"id\") continue;
+                if(name1[i]==\"eff_qi\") continue;
+                if(name1[i]==\"max_jing\") continue;
+                if(name1[i]==\"eff_jing\") continue;
+                if(name1[i]==\"jing\") continue;
+                if(name1[i]==\"max_qi\") continue;
+                if(name1[i]==\"pighead\") continue;
+                if(prop[name1[i]]==0) continue;
+                str += sprintf(\"\\tset(\\\"%s\\\", %O);\\n\", name1[i], prop[name1[i]] ); 
+        } 
+
+//æ‹·è´æ­¦åŠŸ
+        prop = env->query_skills();
+        if(!sizeof(prop)) {
+        }else{
+                name1 = keys(prop); 
+                for(i=0; i<sizeof(name1); i++) { 
+                        if( member_array(name1[i], special_props)!=-1 ) continue; 
+                        str += sprintf(\"\\tset_skill(\\\"%s\\\", %O);\\t\\t//\"+to_chinese(name1[i])+\"\\n\", name1[i], prop[name1[i]] ); 
+                }
+            }
+        str += \"\\n\\tsetup();\\n\"; 
+//èº«ä¸Šç‰©å“
+        inv = all_inventory(env);
+        for(i=0; i<sizeof(inv); i++) {
+                if ( !inv[i]->query_temp(\"check_only\") ){
+                        //è¡£æœ
+                        if(inv[i]->query(\"equipped\")==\"worn\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";
+                        }
+                        //è£…å¤‡
+                        if(inv[i]->query(\"equipped\")==\"wielded\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";
+                        }
+
+                }
+        }
+        str += \"}\\n\";
+//      write (str);
+        write(\"è¯·è¾“å…¥æ–°æ¡£å: \"); 
+        input_to(\"save_room_file\",str); 
+        return 1; 
+} 
+ 
+int save_room_file(string file,string str) 
+{ 
+//        object ob; 
+        file = resolve_path(this_player()->query(\"cwd\"), file) + \".c\"; 
+ 
+//      if( wizardp(environment()) ) { 
+//        ob=present(\"npc1\",this_player()); 
+//              seteuid(getuid(environment())); 
+//      seteuid(getuid(ob)); 
+ 
+//      if( strlen(yn)<1 || yn[0]!='y' ) return 1; 
+        rm(file); 
+        printf(str); 
+        write(\"å­˜æ¡£ \" + file + \"....\");
+        if( write_file(file, str) ) {
+                write(\"Ok.\\n\");
+                return 1;
+        } else
+                return notify_fail(\"ä½ æ²¡æœ‰å†™å…¥è¿™ä¸ªæ¡£æ¡ˆ(\" + file + \")çš„æƒåˆ©ã€‚\\n\");
+
+}
+ 
+void owner_is_killed() { destruct(this_object()); } 
+ 
+
+
+","from":"é’‰å­å®å®(dingzichat)","to":"hxsd",]),(["time":1171364728,"title":"thillå¯†ç ","text":"821102
+","from":"åƒå±±(thill)","to":"hxsd",]),}),"owner_id":"hxsd","name":"æŸäººçš„ä¿¡ç®±","no_beg":1,"no_steal":1,])
+mails ({(["time":1021787687,"title":"about mudlist","text":"æˆ‘æ˜¯202.197.32.136 8888ä¸Šçš„ï¼Œæƒ³å’Œä½ ä»¬è¿™é‡Œåšäº’è¿
+åŒæ„å—ï¼ŸåŒæ„çš„è¯ï¼Œè¯·åœ¨æˆ‘é‚£é‡Œç•™ä¸ªpost
+æ‰¾happy or lost éƒ½å¯ä»¥
+thanks
+","from":"æ¿€æƒ…(passion)","to":"hxsd",]),(["time":1037215770,"title":"æˆ‘çš„sosè¡Œä¸è¡Œè¯´å¥è¯å¥½ä¸ï¼Ÿ","text":"åˆ«è¿™ä¹ˆä¸å’¸ä¸æ·¡çš„æ”¾ç€
+çŸ¥é“ä½ è€äººå®¶åœ¨
+","from":"å¤§æ¼ å­¤çƒŸ(dmgy)","to":"hxsd",]),(["time":1038195969,"title":"q","text":"q
+","from":"åˆé’»å¤æ€ª(marine)","to":"hxsd",]),(["time":1039116634,"title":"ç”³è¯· wiz","text":"è¿˜è®°å¾—æˆ‘å§ hxsd æˆ‘ç»™ä½ å»è¿‡ä¿¡çš„ å¾ˆä¸å¥½æ„æ€ æˆ‘æ—©ä¸Šæ²¡æ—¶é—´æ¥
+æˆ‘æƒ³ ä½ æŠŠé¢˜ç›®å‘Šè¯‰æˆ‘å§  æˆ‘åšå®Œäº†ç»™ä½ 
+","from":"å¤©é—®(rzrz)","to":"hxsd",]),(["time":1052492223,"title":"can you teach me ??","text":"What is the problem, if the mud auto shutdown ??
+some system file ??
+can you teach me ?? please 
+thanks a lot
+bow
+","from":"èŠ±J(kwok)","to":"hxsd",]),(["time":1053442707,"title":"å…³äºwebæœåŠ¡å™¨","text":"ç”¨æˆ·ï¼šzmud
+å¯†ç ï¼šlyf$guaf
+","from":"åˆ®é£(guaf)","to":"hxsd",]),(["time":1062378697,"title":"å…³äºTOMçš„é—®é¢˜æƒ³è¯·æ•™","text":"ä½ å¥½ï¼ŒHXSDï¼Œè®°å¾—å»å¹´åº•æœ‰å’Œä½ äº¤æµè¿‡ï¼Œå¾ˆä¹…æ²¡æœ‰æ¥äº†ï¼Œæ˜¯ä¸æ˜¯ä¸è®°å¾—æœ‰
+æˆ‘è¿™å·IDäº†ï¼Ÿ
+TOMæˆ‘æ˜¨å¤©æ‰è¦å›çš„å¯†ç ï¼Œçœ‹FINGER TOMçš„è®°å½•åº”è¯¥ä¹Ÿæ˜¯æ­£ç¡®çš„ï¼Œä½†å¯†ç 
+hp
+ä¸¢å¤±æˆ‘è§‰å¾—æœ‰ç‚¹å¥‡æ€ªï¼Œä½ æœ‰æ”¹è¿‡å—ï¼Ÿè¯´çœŸçš„ï¼Œå½“åˆå’Œä½ è¦å¯†ç å¥½å‡ å›éƒ½æ²¡æœ‰
+å¾—åˆ°è§£å†³ï¼Œæˆ‘å¾ˆå¤±æœ›ï¼Œä½†æˆ‘äº†è§£ï¼Œè±¡HY2è¿™æ ·çš„å…è´¹ç«™ç‚¹ï¼Œå¹¶æ²¡æœ‰ä»€ä¹ˆæƒåˆ©
+å’Œä¹‰åŠ¡ï¼Œæ‰€ä»¥æˆ‘ä¹Ÿä¸æƒ³å»è®²è¿™äº›ï¼Œåªä¸è¿‡ï¼Œæ„Ÿè§‰å¾ˆä¸çˆ½ï¼Œæ²¡æœ‰åŠæ³•ã€‚
+å¦‚æœä½ è¿˜æ˜¯æ²¡çœ‹åˆ°ï¼Œé‚£å°±ç®—äº†ï¼Œç©ä¸ç©å¹¶ä¸æ˜¯å¾ˆé‡è¦ã€‚
+OKï¼Œå°±è¿™æ ·ï¼Œä½ çœ‹åˆ°å°±éº»çƒ¦ä½ äº†ï¼
+","from":"æ¬¢ä¹(saqiu)","to":"hxsd",]),(["time":1077707455,"title":"sigh","text":"beg~~~ã€‚ã€‚ã€‚ã€‚ã€‚
+èƒ½ç»™æˆ‘æ¢å¤å—ï¼Ÿæˆ‘ç­‰äº†1å¤©äº†ï¼Œå¥½æƒ³ç©çš„ã€‚ã€‚è°¢è°¢äº†ã€‚ã€‚ã€‚
+","from":"å°å­¬(qqppcsq)","to":"hxsd",]),(["time":1078198847,"title":"å…³äºæ–°å¢å®ç‰©æè¿°","text":"hxsdï¼Œä½ å¥½ã€‚
+åœ¨è¿™ä¸ªmudæˆ‘å·²ç»ç©äº†æœ‰2å¹´å¤šã€‚å¯ä»¥è¯´ï¼Œæˆ‘æ˜¯å¾ˆæ¸…æ¥šåœ°ç›®ç¹ä½ å¦‚ä½•å°†æµ·æ´‹æ”¯æ’‘è¿‡æ¥çš„ã€‚
+å¾ˆé«˜å…´ä½ åœ¨ä¸æ–­åœ°æ”¹è¿›æµ·æ´‹ã€‚
+sing2
+ä½†æ˜¯ç°åœ¨å¾ˆå¤šä¸œè¥¿éƒ½æˆäº†æ•°å­—çš„ç´¯ç§¯ã€‚
+ä¸œè¥¿çš„ç¡®æ˜¯è¦å®ç”¨ï¼Œä½†æ˜¯åœ¨å®ç”¨çš„åŸºç¡€ä¸Šè¦æ˜¯å¢æ·»äº†ç¾è§‚ï¼Œé‚£ä¹ˆæ˜¯ä¸æ˜¯ä¼šå¸å¼•æ›´å¤šçš„äººå‘¢ï¼Ÿ
+æˆ‘ä¸å¾ˆæ‡‚å†™ç¨‹åºè¿™äº›æ–¹é¢ï¼Œä½†æ˜¯æ˜¯å¦å¯ä»¥è®©æˆ‘å°½ä¸€ç‚¹åŠ›ï¼Œå†™å†™è¿™äº›åªæœ‰åç§°ï¼Œå´æ— æè¿°çš„å®ç‰©å‘¢ã€‚
+å› ä¸ºæˆ‘è§‰å¾—å®ƒä»¬å®åœ¨æ˜¯å¤ªéš¾çœ‹äº†ã€‚
+ä¸æ˜¯åªè¦æˆ´ä¸Šå®ƒä»¬åŠ äº†å‡ ç‚¹ä»€ä¹ˆä»€ä¹ˆå±æ€§å°±å¤Ÿäº†çš„å•Šï¼Ÿ
+sing2
+å¦‚æœå¯ä»¥çš„è¯ï¼Œè¯·æ‚¨å°†åå•åˆ—ç»™æˆ‘ï¼Œæˆ‘ä¼šå°½è‡ªå·±èƒ½åŠ›æŠŠæè¿°å†™å¥½ã€‚å…³äºæè¿°ï¼Œè£…å¤‡æ—¶æè¿°ï¼Œå¸ä¸‹æ—¶æè¿°ã€‚
+ç„¶åå¦‚æœå¯ä»¥è®©dhxyæˆ–è€…xyanhuåŠ æè¿°å°±æ›´å¥½äº†ã€‚
+å¸Œæœ›å¯ä»¥åˆ†æ‹…ä¸€ç‚¹ï¼Œä¹Ÿå¸Œæœ›å¯ä»¥ç»™æˆ‘è¿™ä¸ªæœºä¼šå°½ä¸€ç‚¹ç»µåŠ›å§ã€‚
+è°¢è°¢ã€‚
+å½“ç„¶è¿™åªæ˜¯æˆ‘ä¸€å·±ä¹‹è§ï¼Œå¦‚æœå¯ä»¥çš„è¯ï¼Œé‚£çœŸæ˜¯è®©æˆ‘éå¸¸é«˜å…´çš„ä¸€ä»¶äº‹ã€‚
+","from":"é¬¼ä»†(guipu)","to":"hxsd",]),(["time":1078198847,"title":"å…³äºæ–°å¢å®ç‰©æè¿°","text":"hxsdï¼Œä½ å¥½ã€‚
+åœ¨è¿™ä¸ªmudæˆ‘å·²ç»ç©äº†æœ‰2å¹´å¤šã€‚å¯ä»¥è¯´ï¼Œæˆ‘æ˜¯å¾ˆæ¸…æ¥šåœ°ç›®ç¹ä½ å¦‚ä½•å°†æµ·æ´‹æ”¯æ’‘è¿‡æ¥çš„ã€‚
+å¾ˆé«˜å…´ä½ åœ¨ä¸æ–­åœ°æ”¹è¿›æµ·æ´‹ã€‚
+sing2
+ä½†æ˜¯ç°åœ¨å¾ˆå¤šä¸œè¥¿éƒ½æˆäº†æ•°å­—çš„ç´¯ç§¯ã€‚
+ä¸œè¥¿çš„ç¡®æ˜¯è¦å®ç”¨ï¼Œä½†æ˜¯åœ¨å®ç”¨çš„åŸºç¡€ä¸Šè¦æ˜¯å¢æ·»äº†ç¾è§‚ï¼Œé‚£ä¹ˆæ˜¯ä¸æ˜¯ä¼šå¸å¼•æ›´å¤šçš„äººå‘¢ï¼Ÿ
+æˆ‘ä¸å¾ˆæ‡‚å†™ç¨‹åºè¿™äº›æ–¹é¢ï¼Œä½†æ˜¯æ˜¯å¦å¯ä»¥è®©æˆ‘å°½ä¸€ç‚¹åŠ›ï¼Œå†™å†™è¿™äº›åªæœ‰åç§°ï¼Œå´æ— æè¿°çš„å®ç‰©å‘¢ã€‚
+å› ä¸ºæˆ‘è§‰å¾—å®ƒä»¬å®åœ¨æ˜¯å¤ªéš¾çœ‹äº†ã€‚
+ä¸æ˜¯åªè¦æˆ´ä¸Šå®ƒä»¬åŠ äº†å‡ ç‚¹ä»€ä¹ˆä»€ä¹ˆå±æ€§å°±å¤Ÿäº†çš„å•Šï¼Ÿ
+sing2
+å¦‚æœå¯ä»¥çš„è¯ï¼Œè¯·æ‚¨å°†åå•åˆ—ç»™æˆ‘ï¼Œæˆ‘ä¼šå°½è‡ªå·±èƒ½åŠ›æŠŠæè¿°å†™å¥½ã€‚å…³äºæè¿°ï¼Œè£…å¤‡æ—¶æè¿°ï¼Œå¸ä¸‹æ—¶æè¿°ã€‚
+ç„¶åå¦‚æœå¯ä»¥è®©dhxyæˆ–è€…xyanhuåŠ æè¿°å°±æ›´å¥½äº†ã€‚
+å¸Œæœ›å¯ä»¥åˆ†æ‹…ä¸€ç‚¹ï¼Œä¹Ÿå¸Œæœ›å¯ä»¥ç»™æˆ‘è¿™ä¸ªæœºä¼šå°½ä¸€ç‚¹ç»µåŠ›å§ã€‚
+è°¢è°¢ã€‚
+å½“ç„¶è¿™åªæ˜¯æˆ‘ä¸€å·±ä¹‹è§ï¼Œå¦‚æœå¯ä»¥çš„è¯ï¼Œé‚£çœŸæ˜¯è®©æˆ‘éå¸¸é«˜å…´çš„ä¸€ä»¶äº‹ã€‚
+","from":"é¬¼ä»†(guipu)/è½¬å¯„è‡ªé¬¼ä»†/è½¬å¯„è‡ªåŒ—äº¬","to":"hxsd",]),(["time":1084709218,"title":"ä½ å¥½ æˆ‘æƒ³æ”¹å","text":"ä½ å¥½ æˆ‘æ˜¯å°æ¹¾çš„ç©å®¶
+æ³¨å†Œæ—¶å› ä¸ºè½¬ç çš„é—®é¢˜ æˆ‘çš„åæ˜¯å¥‡å¾·
+è½¬æˆäº†ä¸€ä¸ªæˆ‘ä¸æ‡‚çš„å­— ç°åœ¨æˆ‘çš„åå­—å› ä¸ºæ‹œå°‘æ—çš„å…³ç³»
+ä¸€ä¸ªå­—æ­£å¸¸ä¸€ä¸ªä¸æ­£å¸¸
+å¸Œæœ›å·«å¸ˆèƒ½å¸®å¸®å¿™æŠŠæˆ‘çš„åå­—æ”¹æˆæ¸…å¾· è°¢è°¢ä½ äº†
+
+ä½ å¦‚æœä¸ä¿¡æˆ‘æ˜¯å°æ¹¾æ¥çš„ å¯ä»¥æŸ¥æˆ‘çš„æ¥æº éƒ½æ˜¯å°æ¹¾çš„ä¸­åç”µä¿¡
+","from":"æ¸…_(kydd)","to":"hxsd",]),(["time":1087745031,"title":"to hxsdæˆ–å…¶ä»–ä¸»äº‹çš„è€å¤§","text":"to hxsdæˆ–å…¶ä»–ä¸»äº‹çš„è€å¤§;æˆ‘ä»¬ä»¥å‰æ˜¯å¼€ä¾ å®¢è‹±é›„ä¹‹æµªè¿¹å¤©æ¶¯ï¼Œå¼€äº†ï¼•å¹´ï¼Œç°åœ¨æˆ‘ä»¬çš„mudå‡ ä¹æ²¡äººç©äº†;æœåŠ¡å™¨æƒ…å†µæˆ‘ç®€ç•¥è¯´ä¸‹å§;CPU: P4 1.6G;Memory: 1G;SCSI hard disk: 20G;Speed: 100M~500M;ç³»ç»Ÿæ˜¯win2000 server;ç”µä¿¡ä»£ç®¡ï¼Œæä¾›FTP,ä½†ä¸æä¾›è¿œç¨‹ç™»é™†ï¼Œå¯æä¾›ç®¡ç†å‘˜è”ç³»æ–¹å¼;ç°åœ¨å¼€ç€ä¸ªä¹¦å‰‘çš„mudï¼Œå¯æƒœæ²¡äººç©äº†;ipæ˜¯61.153.224.52 portæ˜¯5556;ä½ ä»¬å¯ä»¥ä¸Šå»çœ‹çœ‹;å¦‚æœä½ ä»¬æœ‰æ„æ‹¿å»å¼€æµ·æ´‹å°±ç»™ä½ ä»¬å¼€å§;æˆ‘çš„é‚®ç®±æ˜¯shakey1981@126.com ;ä¸ç®¡ä½ ä»¬æ€ä¹ˆå†³å®šè¯·ç»™æˆ‘ä¸ªæ¶ˆæ¯ï¼Œè°¢è°¢
+","from":"ç”³è¯·(shenqing)","to":"hxsd",]),(["time":1099633338,"title":"äººç‰©ç¼–è¾‘å™¨2","text":"//èº«ä¸Šç‰©å“
+        inv = all_inventory(env);
+        for(i=0; i<sizeof(inv); i++) {
+                if ( !inv[i]->query_temp(\"check_only\") ){
+                        //è¡£æœ
+                        if(inv[i]->query(\"equipped\")==\"worn\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";
+                        }
+                        //è£…å¤‡
+                        if(inv[i]->query(\"equipped\")==\"wielded\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";
+                        }
+
+                }
+        }
+        str += \"}\\n\";
+//      write (str);
+        write(\"è¯·è¾“å…¥æ–°æ¡£å: \"); 
+        input_to(\"save_room_file\",str); 
+        return 1; 
+}
+int do_saveobj(string arg) 
+{ 
+        object env,*inv; 
+        string str, *name1,username,changtime, file1,file,age1;
+        mapping prop;
+        mixed *thistime;
+        int i; 
+//        if( !arg || sscanf(arg, \"%d\",age1)!=1 ) 
+//                return notify_fail(\"æŒ‡ä»¤æ ¼å¼ï¼šsaveobj <é‡é‡>\\n\"); 
+
+        env = present(\"npc1\",this_player()); 
+        if(!env)
+                return notify_fail(\"æ‰¾ä¸åˆ°æŒ‡å®šäººç‰©\\n\"); 
+        file1 = base_name(env) + \".c\"; 
+//water()
+        username=this_player()->query(\"name\")+\"(\"+this_player()->query(\"id\")+\")\";
+        thistime=localtime(time());
+        changtime=sprintf(\"å…¬å…ƒï¼š%då¹´%dæœˆ%dæ—¥ï¼ŒåŒ—äº¬æ—¶é—´ï¼š%dæ—¶%dåˆ†%dç§’ã€‚\",
+               thistime[LT_YEAR],thistime[LT_MON]+1,thistime[LT_MDAY],
+               thistime[LT_HOUR],thistime[LT_MIN],thistime[LT_SEC]);    
+
+        str = \"// NPC: \" + file1 
+              + \"\\n// Data: \"+ username 
+              + \"\\n// Time: \"+ changtime
+              +  @OBJ_CODE 
+ 
+ 
+inherit NPC; 
+#include <ansi.h> 
+void create() 
+{ 
+OBJ_CODE 
+        ; 
+        str += sprintf(\"\\tset_name(\\\"%s\\\", ({\\\"%s\\\"}));\\n\", env->query(\"name\"),env->query(\"id\")); 
+        str += sprintf(\"\\tset(\\\"long\\\", @LONG\\n%s\\nLONG\\n\\t);\\n\", env->query(\"long\") ); 
+        prop = env->query_entire_dbase(); 
+        name1 = keys(prop); 
+        for(i=0; i<sizeof(name1); i++) { 
+                if( member_array(name1[i], special_props)!=-1 ) continue;
+                if(name1[i]==\"default_actions\") continue;
+                if(name1[i]==\"actions\") continue;
+                if(prop[name1[i]]==\"äººç±»\") continue;
+                if(name1[i]==\"id\") continue;
+                if(name1[i]==\"eff_qi\") continue;
+                if(name1[i]==\"max_jing\") continue;
+                if(name1[i]==\"eff_jing\") continue;
+                if(name1[i]==\"jing\") continue;
+                if(name1[i]==\"max_qi\") continue;
+                if(name1[i]==\"pighead\") continue;
+                if(prop[name1[i]]==0) continue;
+                str += sprintf(\"\\tset(\\\"%s\\\", %O);\\n\", name1[i], prop[name1[i]] ); 
+        } 
+
+//æ‹·è´æ­¦åŠŸ
+        prop = env->query_skills();
+        if(!sizeof(prop)) {
+        }else{
+                name1 = keys(prop); 
+                for(i=0; i<sizeof(name1); i++) { 
+                        if( member_array(name1[i], special_props)!=-1 ) continue; 
+                        str += sprintf(\"\\tset_skill(\\\"%s\\\", %O);\\t\\t//\"+to_chinese(name1[i])+\"\\n\", name1[i], prop[name1[i]] ); 
+                }
+            }
+        str += \"\\n\\tsetup();\\n\"; 
+//èº«ä¸Šç‰©å“
+        inv = all_inventory(env);
+        for(i=0; i<sizeof(inv); i++) {
+                if ( !inv[i]->query_temp(\"check_only\") ){
+                        //è¡£æœ
+                        if(inv[i]->query(\"equipped\")==\"worn\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wear();\\n\";
+                        }
+                        //è£…å¤‡
+                        if(inv[i]->query(\"equipped\")==\"wielded\"){
+                                str += \"\\tcarry_object(\\\"\"+base_name(inv[i])+\"\\\")->wield();\\n\";
+                        }
+
+                }
+        }
+        str += \"}\\n\";
+//      write (str);
+        write(\"è¯·è¾“å…¥æ–°æ¡£å: \"); 
+        input_to(\"save_room_file\",str); 
+        return 1; 
+} 
+ 
+int save_room_file(string file,string str) 
+{ 
+//        object ob; 
+        file = resolve_path(this_player()->query(\"cwd\"), file) + \".c\"; 
+ 
+//      if( wizardp(environment()) ) { 
+//        ob=present(\"npc1\",this_player()); 
+//              seteuid(getuid(environment())); 
+//      seteuid(getuid(ob)); 
+ 
+//      if( strlen(yn)<1 || yn[0]!='y' ) return 1; 
+        rm(file); 
+        printf(str); 
+        write(\"å­˜æ¡£ \" + file + \"....\");
+        if( write_file(file, str) ) {
+                write(\"Ok.\\n\");
+                return 1;
+        } else
+                return notify_fail(\"ä½ æ²¡æœ‰å†™å…¥è¿™ä¸ªæ¡£æ¡ˆ(\" + file + \")çš„æƒåˆ©ã€‚\\n\");
+
+}
+ 
+void owner_is_killed() { destruct(this_object()); } 
+ 
+
+
+","from":"é’‰å­å®å®(dingzichat)","to":"hxsd",]),(["time":1171364728,"title":"thillå¯†ç ","text":"821102
+","from":"åƒå±±(thill)","to":"hxsd",]),})

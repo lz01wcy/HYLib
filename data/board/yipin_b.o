@@ -1,2 +1,10 @@
 #/inherit/misc/bboard.c
-dbase (["notes":({(["author":"ÃÎÇïºÛ-pose","time":969746318,"msg":"","title":"Ë­ÔÚ×ö ºÕÁ¬ÌúÊ÷(Helian tieshu) µÄjob £¿",]),(["author":"½£Ôµ-msaa","time":969901274,"msg":"","title":"me",]),(["author":"±½±½-andi","time":971684278,"msg":"¸÷Î»ÇëÁËxixi","title":"bow",]),(["author":"Ğ¡Ó£ÌÒ-smile","time":1010728250,"msg":"yayajoin yipintang ¡¾µóÂù¶ñÅ®¡¿Êü¼ªÊ¿Ã÷½ÌµØ×ÖÃÅ½ÌÖÚ²É»¨ÒùÔô¡¸ÎÒÎªÇä¿ñ¡¹Ğ¡Ó£ÌÒ(Smile)i like it ~!!","title":"grin",]),}),"long":"ÕâÊÇÒ»¸ö¹©Ò»Æ·ÌÃ½»Á÷µÄÁôÑÔ°å¡£","no_get":1,"capacity":100,"board_id":"yipin_b","id":"board","location":"/d/lingzhou/yipindayuan","name":"Ò»Æ·ÌÃÁôÑÔ°å",])
+dbase (["notes":({(["author":"æ¢¦ç§‹ç—•-pose","time":969746318,"msg":"","title":"è°åœ¨åš èµ«è¿é“æ ‘(Helian tieshu) çš„job ï¼Ÿ",]),(["author":"å‰‘ç¼˜-msaa","time":969901274,"msg":"","title":"me",]),(["author":"è‹¯è‹¯-andi","time":971684278,"msg":"å„ä½è¯·äº†
+xixi
+","title":"bow",]),(["author":"å°æ¨±æ¡ƒ-smile","time":1010728250,"msg":"ya
+ya
+join yipintang 
+ã€åˆè›®æ¶å¥³ã€‘åº¶å‰å£«æ˜æ•™åœ°å­—é—¨æ•™ä¼—é‡‡èŠ±æ·«è´¼ã€Œæˆ‘ä¸ºå¿ç‹‚ã€å°æ¨±æ¡ƒ(Smile)
+i like it ~!!
+","title":"grin",]),}),"long":"è¿™æ˜¯ä¸€ä¸ªä¾›ä¸€å“å ‚äº¤æµçš„ç•™è¨€æ¿ã€‚
+","no_get":1,"capacity":100,"board_id":"yipin_b","id":"board","location":"/d/lingzhou/yipindayuan","name":"ä¸€å“å ‚ç•™è¨€æ¿",])

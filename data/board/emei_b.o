@@ -1,2 +1,11 @@
 #/inherit/misc/bboard.c
-dbase (["board_id":"emei_b","name":"¶ëáÒµÜ×ÓÁôÑÔ°å","long":"ÕâÊÇÒ»¸ö¹©¶ëáÒÃÅÏÂ½»Á÷µÄÁôÑÔ°å¡£","notes":({(["msg":"post ¶ğÃ¼ÓÖ¸ÄÁË£¬¸ÄµÄÁ·²»ÉÏÈ¥ÁË ","title":"¶ğÃ¼ÓÖ¸ÄÁË£¬¸ÄµÄÁ·²»ÉÏÈ¥ÁË","time":983615582,"author":"¾²¶ê-ehuan",]),(["msg":"q","title":"1","time":983615590,"author":"¾²¶ê-ehuan",]),(["msg":"ÎÒÀ´ÁË,¶à¶à¹ØÕÕ!hehe","title":"hi","time":988480292,"author":"Áé¾²-ccjj",]),(["msg":"±¨µÀ","title":"hi","time":1090555856,"author":"Áé±¦-baobao",]),(["msg":"emÓĞÈËÂğ","title":"ĞÂÈË±¨µÀ","time":1094398617,"author":"ÎÄÔ¬-yuanyi",]),(["msg":"  Ã÷½ÌµØ×ÖÃÅ½ÌÖÚ ¶ëÃ¼ÅÉÕÆÃÅ´óµÜ×Ó ¾²×Ô(Telnet)","title":"aaaa","time":1143366115,"author":"¾²×Ô-telnet",]),}),"location":"/d/emei/hcaguangchang","capacity":100,"id":"board","no_get":1,])
+dbase (["board_id":"emei_b","name":"å³¨åµ‹å¼Ÿå­ç•™è¨€æ¿","long":"è¿™æ˜¯ä¸€ä¸ªä¾›å³¨åµ‹é—¨ä¸‹äº¤æµçš„ç•™è¨€æ¿ã€‚
+","notes":({(["msg":"post å¨¥çœ‰åˆæ”¹äº†ï¼Œæ”¹çš„ç»ƒä¸ä¸Šå»äº† 
+","title":"å¨¥çœ‰åˆæ”¹äº†ï¼Œæ”¹çš„ç»ƒä¸ä¸Šå»äº†","time":983615582,"author":"é™è›¾-ehuan",]),(["msg":"q
+
+","title":"1","time":983615590,"author":"é™è›¾-ehuan",]),(["msg":"æˆ‘æ¥äº†,å¤šå¤šå…³ç…§!
+hehe
+","title":"hi","time":988480292,"author":"çµé™-ccjj",]),(["msg":"æŠ¥é“
+","title":"hi","time":1090555856,"author":"çµå®-baobao",]),(["msg":"emæœ‰äººå—
+","title":"æ–°äººæŠ¥é“","time":1094398617,"author":"æ–‡è¢-yuanyi",]),(["msg":"  æ˜æ•™åœ°å­—é—¨æ•™ä¼— å³¨çœ‰æ´¾æŒé—¨å¤§å¼Ÿå­ é™è‡ª(Telnet)
+","title":"aaaa","time":1143366115,"author":"é™è‡ª-telnet",]),}),"location":"/d/emei/hcaguangchang","capacity":100,"id":"board","no_get":1,])

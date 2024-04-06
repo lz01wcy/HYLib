@@ -1,2 +1,17 @@
 #/inherit/misc/bboard.c
-dbase (["notes":({(["title":"no.1","time":983685513,"author":"ÇóÇ®ÈË-qiuqianren","msg":"ÎÒÊÇµÚÒ»£¡£¡£¡hoho",]),(["title":"Ç°À´·¢Õ¹","time":1038025621,"author":"ñöÂ ¾Å„¦-lting","msg":"Àë¿ª»ªÉ½µ½´Ë£¬ĞèÒªÓÂÆø°¡£¬ÒòÎªÎÒÒª·ÅÆú+shen,¶øzixiaĞèÒª°¡£¬ÏŞÖÆ9j°¡£¬Î÷Î÷À´ÁË´ó¼ÒÒ»Æğ×³´ó¼ÒÔ°",]),(["title":"poke","time":1040688081,"author":"ÈË¼äËÄÔÂÌì-lting","msg":"aka,hadis,»¹ÓĞ£¬Çë±ğ¼±×Åµ±´óµÜ×Ó°¡£¬ÈÃÎÒÃÇÑ§Ñ§furyµÄskills,Ê¡µãpot°¡ÎÒÒªÑ§°¡",]),(["title":"tz","time":1108982227,"msg":"ºÙºÙ!ÎÒÒ²À´ÁË","author":"Áé°Å-white",]),}),"location":"/d/tiezhang/guangchang","capacity":100,"id":"board","name":"ÌúÕÆ°ïµÜ×ÓÁôÑÔ°å","no_get":1,"long":"ÕâÊÇÒ»¸ö¹©ÌúÕÆ°ïµÜ×Ó½»Á÷µÄÁôÑÔ°å¡£","board_id":"tiezhang_b",])
+dbase (["notes":({(["title":"no.1","time":983685513,"author":"æ±‚é’±äºº-qiuqianren","msg":"æˆ‘æ˜¯ç¬¬ä¸€ï¼ï¼ï¼
+hoho
+",]),(["title":"å‰æ¥å‘å±•","time":1038025621,"author":"è†ä¹-lting","msg":"ç¦»å¼€åå±±åˆ°æ­¤ï¼Œéœ€è¦å‹‡æ°”å•Šï¼Œ
+å› ä¸ºæˆ‘è¦æ”¾å¼ƒ+shen,
+è€Œzixiaéœ€è¦å•Šï¼Œé™åˆ¶9jå•Šï¼Œ
+è¥¿è¥¿
+æ¥äº†
+å¤§å®¶ä¸€èµ·å£®å¤§å®¶å›­
+",]),(["title":"poke","time":1040688081,"author":"äººé—´å››æœˆå¤©-lting","msg":"aka,hadis,è¿˜æœ‰ï¼Œ
+è¯·åˆ«æ€¥ç€å½“å¤§å¼Ÿå­å•Šï¼Œ
+è®©æˆ‘ä»¬å­¦å­¦furyçš„skills,
+çœç‚¹potå•Š
+æˆ‘è¦å­¦å•Š
+",]),(["title":"tz","time":1108982227,"msg":"å˜¿å˜¿!æˆ‘ä¹Ÿæ¥äº†
+","author":"çµèŠ­-white",]),}),"location":"/d/tiezhang/guangchang","capacity":100,"id":"board","name":"é“æŒå¸®å¼Ÿå­ç•™è¨€æ¿","no_get":1,"long":"è¿™æ˜¯ä¸€ä¸ªä¾›é“æŒå¸®å¼Ÿå­äº¤æµçš„ç•™è¨€æ¿ã€‚
+","board_id":"tiezhang_b",])

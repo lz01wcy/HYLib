@@ -1,2 +1,7 @@
 #/inherit/misc/bboard.c
-dbase (["board_id":"shenlong_b","long":"ÕâÊÇÒ»¸ö¹©ÉñÁú½ÌÏÂµÜ×Ó½»Á÷µÄÁôÑÔ°å¡£","id":"board","no_get":1,"name":"ÉñÁú½ÌÖÚÁôÑÔ°å","notes":({(["title":"haha","msg":"ÎÒÊÇµÚÒ»¸ö  ¹ş¹ş¹ş¹ş¹ş¹ş¹ş","time":986758529,"author":"Çåßó-ggyy",]),(["title":"¿´Ò»¿´","msg":"ÉÏÃæµÄÄãÔÚ¸ÉÂï£¿","time":987828727,"author":"¸ßÌì-oicq",]),(["title":"hoho","msg":"hoho","time":1057594088,"author":"»¯¹ÇÃàÕÆ-greenr",]),(["title":"µ½´ËÒ»ÓÎ","msg":"lalalalal","time":1073975424,"author":"¹ÉÆ±-mxha",]),}),"location":"/d/shenlong/dating","capacity":100,])
+dbase (["board_id":"shenlong_b","long":"è¿™æ˜¯ä¸€ä¸ªä¾›ç¥é¾™æ•™ä¸‹å¼Ÿå­äº¤æµçš„ç•™è¨€æ¿ã€‚
+","id":"board","no_get":1,"name":"ç¥é¾™æ•™ä¼—ç•™è¨€æ¿","notes":({(["title":"haha","msg":"æˆ‘æ˜¯ç¬¬ä¸€ä¸ª  å“ˆå“ˆå“ˆå“ˆå“ˆå“ˆå“ˆ
+","time":986758529,"author":"æ¸…å”§-ggyy",]),(["title":"çœ‹ä¸€çœ‹","msg":"ä¸Šé¢çš„ä½ åœ¨å¹²å˜›ï¼Ÿ
+","time":987828727,"author":"é«˜å¤©-oicq",]),(["title":"hoho","msg":"hoho
+","time":1057594088,"author":"åŒ–éª¨ç»µæŒ-greenr",]),(["title":"åˆ°æ­¤ä¸€æ¸¸","msg":"lalalalal
+","time":1073975424,"author":"è‚¡ç¥¨-mxha",]),}),"location":"/d/shenlong/dating","capacity":100,])

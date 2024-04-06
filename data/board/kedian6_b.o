@@ -1,2 +1,13 @@
 #/inherit/misc/bboard.c
-dbase (["board_id":"kedian6_b","id":"board","name":"¿ÍµêÁôÑÔ°å","long":"ÓĞÓĞÓÃµÄ»°¾ÍÍùÕâÀïËµ£¬ÂÒ¹àË®É±ÎŞÉâ¡£","notes":({(["title":"ppp","time":967507168,"msg":"","author":"Ø¤°ï´óÃ×-gbdami",]),(["title":"yeyeye","time":969930704,"msg":"","author":"ÓñÁáçç-pine",]),(["title":"hahaha","time":971525745,"msg":"","author":"Òõö²-finger",]),(["title":"xixixi","time":982821511,"msg":"","author":"¸Áëà-qqbbjj",]),(["title":"åê","time":991235556,"msg":"ÎÒåê¡¡åêåêåê¡£","author":"¸ßĞÕ-lxudd",]),(["title":"ºÈ!","time":993285432,"msg":"±ğÈËĞ¦ÎÒÌ«·èñ²,ÎÒĞ¦ÊÀÈË¿´²»´©.","author":"ÏôÏô-lmx",]),(["title":"read new","time":1004041222,"msg":"ÄúÒª¶ÁÄÄÒ»·âĞÅ£¿","author":"¼Ò¿ÉÇë-keshanbb",]),(["title":"dao ci yi you","time":1009596946,"msg":"","author":"ªF¤è®Ò-rainbow",]),(["title":"ÏåÑô³ÇÍ¼","time":1061590662,"msg":"µ½´ËÒ»ÓÎ£¬iMUD¡£","author":"ÓÎÉ½ÍæË®-ysws",]),(["title":"ĞÂÈË±¨µÀ","time":1073775874,"msg":"ÎÒÊÇĞÂÈË¡£ÎÒÀ´±¨µÀÁË¡£Ç§Ç§ÄñÙºÉÏ£¡~qlQqe","author":"Ç§Ç§Äñ-qqn",]),}),"no_get":1,"location":"/d/xiangyang/kedian","capacity":100,])
+dbase (["board_id":"kedian6_b","id":"board","name":"å®¢åº—ç•™è¨€æ¿","long":"æœ‰æœ‰ç”¨çš„è¯å°±å¾€è¿™é‡Œè¯´ï¼Œä¹±çŒæ°´æ€æ— èµ¦ã€‚
+","notes":({(["title":"ppp","time":967507168,"msg":"","author":"ä¸å¸®å¤§ç±³-gbdami",]),(["title":"yeyeye","time":969930704,"msg":"","author":"ç‰ç²ç‘-pine",]),(["title":"hahaha","time":971525745,"msg":"","author":"é˜´éœ¾-finger",]),(["title":"xixixi","time":982821511,"msg":"","author":"å™¶è±š-qqbbjj",]),(["title":"å°»","time":991235556,"msg":"æˆ‘å°»ã€€å°»å°»å°»
+ã€‚
+","author":"é«˜å§“-lxudd",]),(["title":"å–!","time":993285432,"msg":"åˆ«äººç¬‘æˆ‘å¤ªç–¯ç™«,æˆ‘ç¬‘ä¸–äººçœ‹ä¸ç©¿.
+","author":"è§è§-lmx",]),(["title":"read new","time":1004041222,"msg":"æ‚¨è¦è¯»å“ªä¸€å°ä¿¡ï¼Ÿ
+","author":"å®¶å¯è¯·-keshanbb",]),(["title":"dao ci yi you","time":1009596946,"msg":"","author":"Fã‚ˆ-rainbow",]),(["title":"è¥„é˜³åŸå›¾","time":1061590662,"msg":"åˆ°æ­¤ä¸€æ¸¸ï¼ŒiMUDã€‚
+","author":"æ¸¸å±±ç©æ°´-ysws",]),(["title":"æ–°äººæŠ¥é“","time":1073775874,"msg":"æˆ‘æ˜¯æ–°äººã€‚æˆ‘æ¥æŠ¥é“äº†ã€‚åƒåƒé¸Ÿä¿¸ä¸Šï¼~q
+l
+Q
+q
+e
+","author":"åƒåƒé¸Ÿ-qqn",]),}),"no_get":1,"location":"/d/xiangyang/kedian","capacity":100,])

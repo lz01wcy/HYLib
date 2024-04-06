@@ -1,2 +1,51 @@
 #/inherit/misc/bboard.c
-dbase (["no_get":1,"long":"ÕâÊÇÒ»¸ö¹©Ä½ÈİµÜ×Ó½»Á÷µÄÁôÑÔ°å¡£","id":"board","capacity":100,"location":"/d/mr/yanziwu","board_id":"murong_b","notes":({(["msg":"ÈçÌâ","title":"´Ë´¦²»ÄÜ´æÅÌ£¿","time":980877425,"author":"±ù¶ù-binger",]),(["msg":"eesdhffd sdhffd sdfksdfkqqqqlq^q^q__¡££®¡«eeelsdfi   dk   lsdfi   dk   lsdfi   dk   dfsdkf dfsdkf dfsdkf qQ qwait___qhelp board%abs()%abs()%abs()%abs()","title":" sjrlsg","time":1033807805,"author":"ÊÀ½çÈË-lsgsjr",]),(["msg":"µ½´ËÒ»ÓÎ","title":"3","time":1034655572,"author":"ÄÑÃâ-dali",]),(["msg":"west can save","title":"save","time":1034984724,"author":"ÆëÌì´óÊ¥-wukong",]),(["msg":"ÎÒÀ´ÁË","title":"lting","time":1042685542,"author":"À×öª-lting",]),(["msg":"haha Ä½ÈİµÄ¶·×ªĞÇÒÆÒ»¶¨Òª¸ãµ½ÊÖ","title":"ÎÒÀ´À­£¡","time":1049490259,"author":"×Ï´¨Ğã-smap",]),(["msg":"lpost ±ğ°Ñfen´òµô","title":"±ğ°Ñfen´òµô","time":1061657365,"author":"Ë®Áé-lting",]),(["msg":"^_^o(¡É_¡É)o...¹ş¹ş","title":"o(¡É_¡É)o...","time":1205599214,"author":"ºìÒ¶·ç-green",]),}),"name":"Ä½ÈİµÜ×ÓÁôÑÔ°å",])
+dbase (["no_get":1,"long":"è¿™æ˜¯ä¸€ä¸ªä¾›æ…•å®¹å¼Ÿå­äº¤æµçš„ç•™è¨€æ¿ã€‚
+","id":"board","capacity":100,"location":"/d/mr/yanziwu","board_id":"murong_b","notes":({(["msg":"å¦‚é¢˜
+","title":"æ­¤å¤„ä¸èƒ½å­˜ç›˜ï¼Ÿ","time":980877425,"author":"å†°å„¿-binger",]),(["msg":"e
+e
+sdhffd 
+sdhffd 
+sdfk
+sdfk
+q
+q
+q
+q
+l
+q
+^q
+^q
+_
+_
+ã€‚
+ï¼
+ï½e
+e
+e
+lsdfi   dk   
+lsdfi   dk   
+lsdfi   dk   
+dfsdkf 
+dfsdkf 
+dfsdkf 
+q
+Q
+ q
+wait
+_
+_
+_
+q
+help board
+%abs()
+%abs()
+%abs()
+%abs()
+","title":" sjrlsg","time":1033807805,"author":"ä¸–ç•Œäºº-lsgsjr",]),(["msg":"åˆ°æ­¤ä¸€æ¸¸
+","title":"3","time":1034655572,"author":"éš¾å…-dali",]),(["msg":"west can save
+","title":"save","time":1034984724,"author":"é½å¤©å¤§åœ£-wukong",]),(["msg":"æˆ‘æ¥äº†
+","title":"lting","time":1042685542,"author":"é›·éœ†-lting",]),(["msg":"haha æ…•å®¹çš„æ–—è½¬æ˜Ÿç§»ä¸€å®šè¦æåˆ°æ‰‹
+","title":"æˆ‘æ¥æ‹‰ï¼","time":1049490259,"author":"ç´«å·ç§€-smap",]),(["msg":"l
+post åˆ«æŠŠfenæ‰“æ‰
+","title":"åˆ«æŠŠfenæ‰“æ‰","time":1061657365,"author":"æ°´çµ-lting",]),(["msg":"^_^o(âˆ©_âˆ©)o...å“ˆå“ˆ
+","title":"o(âˆ©_âˆ©)o...","time":1205599214,"author":"çº¢å¶é£-green",]),}),"name":"æ…•å®¹å¼Ÿå­ç•™è¨€æ¿",])

@@ -1,3 +1,43 @@
 #/clone/misc/mailbox.c
-dbase (["no_get":1,"unit":"¸ö","name":"Õä±¦ÖíµÄĞÅÏä","no_drop":1,"id":"mailbox","owner_id":"xnono","no_beg":1,"no_put":1,"no_insert":1,"no_steal":1,"long":"ÕâÊÇ¸öÈËĞÅÏä£¬µ«ĞÅ¼şÄÚÈİ¶ÔÎ×Ê¦ÎŞ·¨±£ÃÜ£¬ÇëÎğÌ¸¼°¸öÈËÒşË½£ºmailto  <Ä³ÈË>            ¼ÄĞÅ¸ø±ğÈË¡£forward <ĞÅ¼ş±àºÅ> <Ä³ÈË> ½«Ä³·âĞÅ×ª¼Ä¸ø±ğÈË¡£from                      ²é¿´ĞÅÏäÖĞµÄĞÅ¼ş¡£read    <ĞÅ¼ş±àºÅ>        ÔÄ¶ÁÄ³Ò»·âĞÅ¼ş¡£discard <ĞÅ¼ş±àºÅ>        ¶ªÆúÒ»·âĞÅ¼ş¡£",])
-mails ({(["title":"laugh","time":967996986,"from":"¾»Ò»(coin)","text":"savegiggle.","to":"xnono",]),(["title":"heihei","time":967997046,"from":"¾»Ò»(coin)","text":"heihei","to":"xnono",]),(["title":"giggle","time":969346314,"from":"ºüÀê(fox)","text":"","to":"xnono",]),(["title":"lglg","time":969951934,"from":"Öñ¶ù(huhu)","text":"lglg,miss u","to":"xnono",]),(["title":"help","time":976200863,"from":"ÒøÆ±(cash)","text":"°Ñxnono µÄpasswd mail me,ÏÖÔÚluanËûÃÇÔÚºÍguipu fox tkÎÒÈ¥°ïÃ¦","to":"xnono",]),(["title":"help!!!!!!!!","time":976285166,"from":"ÒøÆ±(cash)","text":"ÏÖÔÚluanËûÃÇºÍfox,guipu pkÉÏÁË£¬°Ñxnono passwd mailto cash,ÎÒ¿ÉÒÔÈ¥°ïÃ¦","to":"xnono",]),(["title":"¿ì¿ª°ïÀ­","time":977717491,"from":"Ğ¦°ÁÔÆÓî(yungyu)","text":"ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­ÎÒÒªÑ§anran,Äã¿ìµã¿ª°ïÀ­beg beg beg beg lean xnono","to":"xnono",]),(["title":"gongxi","time":977890293,"from":"¹íÆÍ(guipu)","text":"> Ğ¡ÈËÎï(hxsd)¸æËßÄã£ºÈÎÎñÌÃÔìÁËÂğ?;> Ğ¡ÈËÎï(hxsd)¸æËßÄã£ºÈÎÎñÌÃÔìÁËÂğ?;Äã»Ø´ğĞ¡ÈËÎï£ºshake;Äã»Ø´ğĞ¡ÈËÎï£ºÎÒ»¹Ã»¼ûµ½Ëû;> Ğ¡ÈËÎï(hxsd)¸æËßÄã£ºÃ»ÔìµÄ»°ÎÒ¸øxnono 5000 score;Äã»Ø´ğĞ¡ÈËÎï£ºnod;> Ğ¡ÈËÎï(hxsd)¸æËßÄã£ºËû²»ÔÚ¾ÍÃ»°ì·¨ÁË;Äã»Ø´ğĞ¡ÈËÎï£ºnodheiheiheiheigongxigongxigongxigongxi","to":"xnono",]),(["title":"poke","time":978280381,"text":"°Ñxnono passwd¸øÎÒÁ·Á·°É£¬ÏÖÔÚÃ»Ê²Ã´ÊÂ×ö,poseÓÖÌ«ÏùÕÅÁËÎÒÒ»°ã¶¼ÊÇ°ëÒ¹ÉÏÏßµÄ£¬ºÍÄãÓ¦¸ÃÃ»³åÍ»","from":"ÒøÆ±(cash)","to":"xnono",]),})
+dbase (["no_get":1,"unit":"ä¸ª","name":"çå®çŒªçš„ä¿¡ç®±","no_drop":1,"id":"mailbox","owner_id":"xnono","no_beg":1,"no_put":1,"no_insert":1,"no_steal":1,"long":"è¿™æ˜¯ä¸ªäººä¿¡ç®±ï¼Œä½†ä¿¡ä»¶å†…å®¹å¯¹å·«å¸ˆæ— æ³•ä¿å¯†ï¼Œè¯·å‹¿è°ˆåŠä¸ªäººéšç§ï¼š
+
+mailto  <æŸäºº>            å¯„ä¿¡ç»™åˆ«äººã€‚
+forward <ä¿¡ä»¶ç¼–å·> <æŸäºº> å°†æŸå°ä¿¡è½¬å¯„ç»™åˆ«äººã€‚
+from                      æŸ¥çœ‹ä¿¡ç®±ä¸­çš„ä¿¡ä»¶ã€‚
+read    <ä¿¡ä»¶ç¼–å·>        é˜…è¯»æŸä¸€å°ä¿¡ä»¶ã€‚
+discard <ä¿¡ä»¶ç¼–å·>        ä¸¢å¼ƒä¸€å°ä¿¡ä»¶ã€‚
+",])
+mails ({(["title":"laugh","time":967996986,"from":"å‡€ä¸€(coin)","text":"save
+giggle.
+","to":"xnono",]),(["title":"heihei","time":967997046,"from":"å‡€ä¸€(coin)","text":"heihei
+","to":"xnono",]),(["title":"giggle","time":969346314,"from":"ç‹ç‹¸(fox)","text":"","to":"xnono",]),(["title":"lglg","time":969951934,"from":"ç«¹å„¿(huhu)","text":"lglg,miss u
+","to":"xnono",]),(["title":"help","time":976200863,"from":"é“¶ç¥¨(cash)","text":"æŠŠxnono çš„passwd mail me,ç°åœ¨luanä»–ä»¬åœ¨å’Œguipu fox tkæˆ‘å»å¸®å¿™
+","to":"xnono",]),(["title":"help!!!!!!!!","time":976285166,"from":"é“¶ç¥¨(cash)","text":"ç°åœ¨luanä»–ä»¬å’Œfox,guipu pkä¸Šäº†ï¼ŒæŠŠxnono passwd mailto cash,æˆ‘å¯ä»¥å»å¸®å¿™
+","to":"xnono",]),(["title":"å¿«å¼€å¸®æ‹‰","time":977717491,"from":"ç¬‘å‚²äº‘å®‡(yungyu)","text":"æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+æˆ‘è¦å­¦anran,ä½ å¿«ç‚¹å¼€å¸®æ‹‰
+beg 
+beg 
+beg 
+beg 
+lean xnono
+","to":"xnono",]),(["title":"gongxi","time":977890293,"from":"é¬¼ä»†(guipu)","text":"> å°äººç‰©(hxsd)å‘Šè¯‰ä½ ï¼šä»»åŠ¡å ‚é€ äº†å—?;> å°äººç‰©(hxsd)å‘Šè¯‰ä½ ï¼šä»»åŠ¡å ‚é€ äº†å—?;ä½ å›ç­”å°äººç‰©ï¼šshake;ä½ å›ç­”å°äººç‰©ï¼šæˆ‘è¿˜æ²¡è§åˆ°ä»–;> å°äººç‰©(hxsd)å‘Šè¯‰ä½ ï¼šæ²¡é€ çš„è¯æˆ‘ç»™xnono 5000 score;ä½ å›ç­”å°äººç‰©ï¼šnod;> å°äººç‰©(hxsd)å‘Šè¯‰ä½ ï¼šä»–ä¸åœ¨å°±æ²¡åŠæ³•äº†;ä½ å›ç­”å°äººç‰©ï¼šnod
+
+
+heihei
+heihei
+gongxi
+gongxi
+gongxi
+gongxi
+","to":"xnono",]),(["title":"poke","time":978280381,"text":"æŠŠxnono passwdç»™æˆ‘ç»ƒç»ƒå§ï¼Œç°åœ¨æ²¡ä»€ä¹ˆäº‹åš,poseåˆå¤ªåš£å¼ äº†
+æˆ‘ä¸€èˆ¬éƒ½æ˜¯åŠå¤œä¸Šçº¿çš„ï¼Œå’Œä½ åº”è¯¥æ²¡å†²çª
+","from":"é“¶ç¥¨(cash)","to":"xnono",]),})

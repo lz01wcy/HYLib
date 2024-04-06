@@ -1,2 +1,26 @@
 #/inherit/misc/bboard.c
-dbase (["no_get":1,"name":"ÈÕÔÂÉñ½Ì½ÌÖÚ¼ÇÊÂ°å","capacity":100,"location":"/d/heimuya/chengdedian","board_id":"riyue_b","notes":({(["author":"ÀäÇ§Ñª-kkice","title":"ÔõÃ´Ã»ÓĞÈËÄØ£¿","time":972915162,"msg":"ÈÕÔÂÉñ½ÌÕâÃ´²Ò°¡ÎÒµ½³ÉÁËµÚÒ»¸öÁË¹ş¹ş",]),(["author":"ÁËÎŞºÛ-liaowh","title":"Ï¹ËµÎÒÀ´ÁË hehe !!!","time":983308872,"msg":"Ï¹ËµÎÒÀ´ÁË hehe !!!",]),(["author":"Ğ°½£-xiejian","title":"ÎÒĞÂÈËÒ»¸ö,¾Í°İÁË¶«·½²»°İ,ºÇºÇ,¿ªĞÄ!!","time":984025270,"msg":"¶àĞ»zxbºÍpkerµÄ°ïÖú!!!!!",]),(["author":"²»ËÀĞ°Éñ-adam","title":"haha","time":990415241,"msg":"bai ºÃÁËthank hoindathank hondathank honda",]),(["author":"²»ËÀĞ°Éñ-adam","title":"hahahaha","time":990517808,"msg":"¶¹¶¹(doudou)¸æËßÄã£º(n;circle wan;circle wan;down;e;s;w;n;su;n;enter;e)¶¹¶¹(doudou)¸æËßÄã£º(n;circle wan;circle wan;down;e;s;w;n;su;n;enter;e)¶¹¶¹(doudou)¸æËßÄã£º(n;circle wan;circle wan;down;e;s;w;n;su;n;enter;e)hohohohohoho",]),(["author":"²»ËÀĞ°Éñ-adam","title":"wawa","time":990517830,"msg":"¶¹¶¹(doudou)¸æËßÄã£º(w;out;s;nd;e;out;)",]),(["author":"½­Ğ¡Óã-jxy","title":"°³Ò²ÊÇÒ»¸ö","time":993924540,"msg":"ÎÒ²ÅÊÇÈÕÔÂµÄÎ´À´£¬xixi,±ğÌ«³ç°İÎÒ°¡£¡",]),(["author":"½£Ä§-swordman","title":"thank","time":1000414137,"msg":"ÎÒÄÜµ½ÈÕÔÂÀ´È«¿¿liaowhµÄ°ïÖú£¡£¡£¡£¡ÔÚÏÂ·Ç³£µÄ¸ĞĞ»!!",]),(["author":"Á÷ÔÆ$¾øÇé-tianjun","title":"thank npc ÖÕÓÚÀ´ÁË","time":1002139364,"msg":"",]),(["author":"·ÉÁú-fff","title":"ÑïÎÒÈÕÔÂÉñÍş£¡¹ş¹ş£¡ÎÒÀ´³ÙÁË¡£","time":1014180027,"msg":"post ÑïÎÒÈÕÔÂÉñÍş£¡¹ş¹ş£¡ÎÒÀ´³ÙÁË¡£.post ÑïÎÒÈÕÔÂÉñÍş£¡¹ş¹ş£¡ÎÒÀ´³ÙÁË¡£.",]),(["author":"Ì¡Ì¡Ã×-nanami","title":"µ½´ËÒ»ÓÎ","time":1037866402,"msg":"xixi",]),(["author":"¶«Î÷·½²»°Ü-mvm","title":"ÎÒÖÕÓÚ°İÁË¶«·½²»°ÜÁË¡£¹ş¹ş","time":1056994227,"msg":"Ğ»Ğ»ryth~£¡",]),}),"long":"ÕâÊÇÒ»¸ö×¨¹©ÈÕÔÂÉñ½Ì½ÌÖÚÔÚÊ¹ÓÃµÄÁôÑÔ°å¡£","id":"board",])
+dbase (["no_get":1,"name":"æ—¥æœˆç¥æ•™æ•™ä¼—è®°äº‹æ¿","capacity":100,"location":"/d/heimuya/chengdedian","board_id":"riyue_b","notes":({(["author":"å†·åƒè¡€-kkice","title":"æ€ä¹ˆæ²¡æœ‰äººå‘¢ï¼Ÿ","time":972915162,"msg":"æ—¥æœˆç¥æ•™è¿™ä¹ˆæƒ¨å•Š
+æˆ‘åˆ°æˆäº†ç¬¬ä¸€ä¸ªäº†
+å“ˆå“ˆ
+",]),(["author":"äº†æ— ç—•-liaowh","title":"çè¯´æˆ‘æ¥äº† hehe !!!","time":983308872,"msg":"çè¯´æˆ‘æ¥äº† hehe !!!
+",]),(["author":"é‚ªå‰‘-xiejian","title":"æˆ‘æ–°äººä¸€ä¸ª,å°±æ‹œäº†ä¸œæ–¹ä¸æ‹œ,å‘µå‘µ,å¼€å¿ƒ!!","time":984025270,"msg":"å¤šè°¢zxbå’Œpkerçš„å¸®åŠ©!!!!!
+",]),(["author":"ä¸æ­»é‚ªç¥-adam","title":"haha","time":990415241,"msg":"bai å¥½äº†
+thank hoinda
+thank honda
+thank honda
+",]),(["author":"ä¸æ­»é‚ªç¥-adam","title":"hahahaha","time":990517808,"msg":"è±†è±†(doudou)å‘Šè¯‰ä½ ï¼š(n;circle wan;circle wan;down;e;s;w;n;su;n;enter;e)
+è±†è±†(doudou)å‘Šè¯‰ä½ ï¼š(n;circle wan;circle wan;down;e;s;w;n;su;n;enter;e)
+è±†è±†(doudou)å‘Šè¯‰ä½ ï¼š(n;circle wan;circle wan;down;e;s;w;n;su;n;enter;e)
+hoho
+hoho
+hoho
+",]),(["author":"ä¸æ­»é‚ªç¥-adam","title":"wawa","time":990517830,"msg":"è±†è±†(doudou)å‘Šè¯‰ä½ ï¼š(w;out;s;nd;e;out;)
+",]),(["author":"æ±Ÿå°é±¼-jxy","title":"ä¿ºä¹Ÿæ˜¯ä¸€ä¸ª","time":993924540,"msg":"æˆ‘æ‰æ˜¯æ—¥æœˆçš„æœªæ¥ï¼Œxixi,åˆ«å¤ªå´‡æ‹œæˆ‘å•Šï¼
+",]),(["author":"å‰‘é­”-swordman","title":"thank","time":1000414137,"msg":"æˆ‘èƒ½åˆ°æ—¥æœˆæ¥å…¨é liaowhçš„å¸®åŠ©ï¼ï¼ï¼ï¼
+åœ¨ä¸‹éå¸¸çš„æ„Ÿè°¢!!
+",]),(["author":"æµäº‘$ç»æƒ…-tianjun","title":"thank npc ç»ˆäºæ¥äº†","time":1002139364,"msg":"",]),(["author":"é£é¾™-fff","title":"æ‰¬æˆ‘æ—¥æœˆç¥å¨ï¼å“ˆå“ˆï¼æˆ‘æ¥è¿Ÿäº†ã€‚","time":1014180027,"msg":"post æ‰¬æˆ‘æ—¥æœˆç¥å¨ï¼å“ˆå“ˆï¼æˆ‘æ¥è¿Ÿäº†ã€‚.
+post æ‰¬æˆ‘æ—¥æœˆç¥å¨ï¼å“ˆå“ˆï¼æˆ‘æ¥è¿Ÿäº†ã€‚.
+",]),(["author":"ç­ç­ç±³-nanami","title":"åˆ°æ­¤ä¸€æ¸¸","time":1037866402,"msg":"xixi
+",]),(["author":"ä¸œè¥¿æ–¹ä¸è´¥-mvm","title":"æˆ‘ç»ˆäºæ‹œäº†ä¸œæ–¹ä¸è´¥äº†ã€‚å“ˆå“ˆ","time":1056994227,"msg":"è°¢è°¢ryth~ï¼
+",]),}),"long":"è¿™æ˜¯ä¸€ä¸ªä¸“ä¾›æ—¥æœˆç¥æ•™æ•™ä¼—åœ¨ä½¿ç”¨çš„ç•™è¨€æ¿ã€‚
+","id":"board",])

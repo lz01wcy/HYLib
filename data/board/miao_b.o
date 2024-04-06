@@ -1,2 +1,8 @@
 #/inherit/misc/bboard.c
-dbase (["capacity":100,"board_id":"miao_b","name":"Ãç¼ÒµÜ×ÓÁôÑÔ°å","id":"board","long":"ÕâÊÇÒ»¸ö¹©Ãç¼ÒµÜ×Ó½»Á÷µÄÁôÑÔ°å¡£","notes":({(["msg":"asfsafa","time":1233021207,"title":"to all","author":"Ä³ÈË-hxsd",]),(["msg":"","time":1233060498,"title":"...","author":"º®Äı±ùÂ¶-hjyue",]),(["msg":"","time":1233060562,"title":"×ß¹ı³¡","author":"¡¾º£ÑóII¡¿-xzxz",]),(["msg":"µ½´¦¹ä¹ä","time":1233760773,"title":"¿´¿´","author":"ÌïÇì-qzz",]),}),"no_get":1,"location":"/d/zhongzhou/miaojia_houting",])
+dbase (["capacity":100,"board_id":"miao_b","name":"è‹—å®¶å¼Ÿå­ç•™è¨€æ¿","id":"board","long":"è¿™æ˜¯ä¸€ä¸ªä¾›è‹—å®¶å¼Ÿå­äº¤æµçš„ç•™è¨€æ¿ã€‚
+","notes":({(["msg":"asfsafa
+","time":1233021207,"title":"to all","author":"æŸäºº-hxsd",]),(["msg":"
+
+
+","time":1233060498,"title":"...","author":"å¯’å‡å†°éœ²-hjyue",]),(["msg":"","time":1233060562,"title":"èµ°è¿‡åœº","author":"ã€æµ·æ´‹IIã€‘-xzxz",]),(["msg":"åˆ°å¤„é€›é€›
+","time":1233760773,"title":"çœ‹çœ‹","author":"ç”°åº†-qzz",]),}),"no_get":1,"location":"/d/zhongzhou/miaojia_houting",])

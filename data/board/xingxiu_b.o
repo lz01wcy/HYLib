@@ -1,2 +1,21 @@
 #/inherit/misc/bboard.c
-dbase (["name":"ĞÇËŞÅÉµÜ×ÓÁôÑÔ°å","long":"ÕâÊÇ¹©ĞÇËŞÃÅÏÂÁôÑÔµÄ°å×Ó.","location":"/d/xingxiu/xxh2","capacity":100,"id":"board","board_id":"xingxiu_b","no_get":1,"notes":({(["time":981700690,"msg":"welcome all","title":"no.1","author":"ÑÅ¸÷-young",]),(["time":982378807,"msg":"xixi","title":"no.2","author":"¸ßÃû-gray",]),(["time":983795789,"msg":"","title":"haha","author":"ÉËĞÄĞ¡½£-raz",]),(["time":1034092812,"msg":"xixi","title":"1","author":"·ÙÓñ-waner",]),(["time":1036742220,"msg":"post No.5q","title":"No.5","author":"ÁÄÌì´óÃ×-wdamy",]),(["time":1036742738,"msg":"","title":"ÒÔºóÇëÊ¦ĞÖ£¬Ê¦½ãÃÇ¶à¶à°ïÖú£¬Ğ»Ğ»£¡","author":"ÁÄÌì´óÃ×-wdamy",]),(["time":1039043291,"msg":"","title":"wuwuhahaha","author":"±ù·èÇò-justice",]),(["time":1074159341,"msg":"µ½´ËÒ»ÓÎ","title":"lala","author":"²»¶¯²ú-mxhb",]),(["time":1086121524,"msg":"madeËµµãÓĞÓÃµÄ","title":"made]","author":"Èç¹û-ifcan",]),(["time":1094986263,"msg":"»¹ÊÇµÚÒ»´ÎÀ´ÕâÀïÅ¶¡«¡«¡«","title":"±¾ÈËµ½´ËÒ»ÓÎ£¡","author":"Á÷·çËª-zard",]),(["time":1097050338,"msg":"ÁôÄî£¬ÒÔºó»Ø¼ÇµÃÀ´¹ıµÄÁôÄî£¬ÒÔºó»Ø¼ÇµÃÀ´¹ıµÄ¡£ÁôÄî£¬ÒÔºó»Ø¼ÇµÃÀ´¹ıµÄ¡£.ÁôÄî£¬ÒÔºó»Ø¼ÇµÃÀ´¹ıµÄ¡£.¡£¡£¡£","title":"ÁôÄî","author":"ºØĞ¡Óğ-paima",]),(["time":1146793847,"msg":"shinu µ½´ËÒ»ÓÎ","title":"ahah","author":" Áé¶ù -lting's shinu",]),}),])
+dbase (["name":"æ˜Ÿå®¿æ´¾å¼Ÿå­ç•™è¨€æ¿","long":"è¿™æ˜¯ä¾›æ˜Ÿå®¿é—¨ä¸‹ç•™è¨€çš„æ¿å­.
+","location":"/d/xingxiu/xxh2","capacity":100,"id":"board","board_id":"xingxiu_b","no_get":1,"notes":({(["time":981700690,"msg":"welcome all
+","title":"no.1","author":"é›…å„-young",]),(["time":982378807,"msg":"xixi
+","title":"no.2","author":"é«˜å-gray",]),(["time":983795789,"msg":"","title":"haha","author":"ä¼¤å¿ƒå°å‰‘-raz",]),(["time":1034092812,"msg":"xixi
+","title":"1","author":"ç„šç‰-waner",]),(["time":1036742220,"msg":"post No.5
+q
+
+","title":"No.5","author":"èŠå¤©å¤§ç±³-wdamy",]),(["time":1036742738,"msg":"","title":"ä»¥åè¯·å¸ˆå…„ï¼Œå¸ˆå§ä»¬å¤šå¤šå¸®åŠ©ï¼Œè°¢è°¢ï¼","author":"èŠå¤©å¤§ç±³-wdamy",]),(["time":1039043291,"msg":"","title":"wuwuhahaha","author":"å†°ç–¯çƒ-justice",]),(["time":1074159341,"msg":"åˆ°æ­¤ä¸€æ¸¸
+","title":"lala","author":"ä¸åŠ¨äº§-mxhb",]),(["time":1086121524,"msg":"made
+è¯´ç‚¹æœ‰ç”¨çš„
+","title":"made]","author":"å¦‚æœ-ifcan",]),(["time":1094986263,"msg":"è¿˜æ˜¯ç¬¬ä¸€æ¬¡æ¥è¿™é‡Œå“¦ï½ï½ï½
+","title":"æœ¬äººåˆ°æ­¤ä¸€æ¸¸ï¼","author":"æµé£éœœ-zard",]),(["time":1097050338,"msg":"ç•™å¿µï¼Œä»¥åå›è®°å¾—æ¥è¿‡çš„
+ç•™å¿µï¼Œä»¥åå›è®°å¾—æ¥è¿‡çš„ã€‚
+ç•™å¿µï¼Œä»¥åå›è®°å¾—æ¥è¿‡çš„ã€‚.
+ç•™å¿µï¼Œä»¥åå›è®°å¾—æ¥è¿‡çš„ã€‚.
+ã€‚
+ã€‚
+ã€‚
+","title":"ç•™å¿µ","author":"è´ºå°ç¾½-paima",]),(["time":1146793847,"msg":"shinu åˆ°æ­¤ä¸€æ¸¸
+","title":"ahah","author":" çµå„¿ -lting's shinu",]),}),])

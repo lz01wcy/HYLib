@@ -1,2 +1,11 @@
 #/inherit/misc/bboard.c
-dbase (["capacity":100,"no_get":1,"long":"ÕâÊÇÒ»¸ö¹©Çà³ÇÃÅÏÂ½»Á÷µÄÁôÑÔ°å¡£","id":"board","board_id":"qingcheng_b","location":"/d/qingcheng/songfengguan","notes":({(["msg":"","title":"ÎÒÀ´ÁË","author":"µØÍõ-diyun","time":986714234,]),(["msg":"ÎÒÒ²À´ÁË","title":"hi","author":"Ë®Èôº®-cgn","time":988964875,]),(["msg":"ÎÒÒ²Ò²À´ÁË,","title":"hihi","author":"ºĞ·¹-templar","time":1039479658,]),(["msg":"l","title":"µ½´ËÒ»ÓÎ","author":"Ú¤ÑÄ-antter","time":1073842946,]),(["msg":"ÈçÌâ","title":"À´¹ä¹ä","author":"ÁøÎŞ¼«-luger","time":1092833503,]),(["msg":"Â·¹ı","title":"Â·Ô¶ÄÑ×ß£¬","time":1208092283,"author":"Ááçç-kkk",]),}),"name":"Çà³ÇµÜ×ÓÁôÑÔ°å",])
+dbase (["capacity":100,"no_get":1,"long":"è¿™æ˜¯ä¸€ä¸ªä¾›é’åŸé—¨ä¸‹äº¤æµçš„ç•™è¨€æ¿ã€‚
+","id":"board","board_id":"qingcheng_b","location":"/d/qingcheng/songfengguan","notes":({(["msg":"","title":"æˆ‘æ¥äº†","author":"åœ°ç‹-diyun","time":986714234,]),(["msg":"æˆ‘ä¹Ÿæ¥äº†
+","title":"hi","author":"æ°´è‹¥å¯’-cgn","time":988964875,]),(["msg":"æˆ‘ä¹Ÿä¹Ÿæ¥äº†
+,
+","title":"hihi","author":"ç›’é¥­-templar","time":1039479658,]),(["msg":"
+
+l
+","title":"åˆ°æ­¤ä¸€æ¸¸","author":"å†¥æ¶¯-antter","time":1073842946,]),(["msg":"å¦‚é¢˜
+","title":"æ¥é€›é€›","author":"æŸ³æ— æ-luger","time":1092833503,]),(["msg":"è·¯è¿‡
+","title":"è·¯è¿œéš¾èµ°ï¼Œ","time":1208092283,"author":"ç²ç‘-kkk",]),}),"name":"é’åŸå¼Ÿå­ç•™è¨€æ¿",])

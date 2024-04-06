@@ -1,2 +1,3 @@
 #/cmds/usr/news.c
-dbase (["id":"newsboard","no_get":1,"notes":({(["title":"µÚÒ»¸öÀ´ÕâÀïÁôÑÔ","msg":"ÔõÃ´Ã»ÓĞÈËÔÚÕâÀïÁôÑÔÄØ£¬¿ìÒªÔªµ©ÁË£¬×£¸÷Î»º£ÑóµÄÍæ¼ÒĞÂÄê¿ìÀÖ£¬ÍòÊÂÈçÒâ","author":"Æô³½-calvin","time":1167527692,]),(["title":"ºÃÏñ¶Á²»ÁË°¡","msg":"","author":"±±¾©-xyanhu","time":1183619412,]),}),"location":"/d/wizard/proom","name":"º£ÑóIIĞÂÎÅ°æ","board_id":"hy2news_b","capacity":500,])
+dbase (["id":"newsboard","no_get":1,"notes":({(["title":"ç¬¬ä¸€ä¸ªæ¥è¿™é‡Œç•™è¨€","msg":"æ€ä¹ˆæ²¡æœ‰äººåœ¨è¿™é‡Œç•™è¨€å‘¢ï¼Œå¿«è¦å…ƒæ—¦äº†ï¼Œç¥å„ä½æµ·æ´‹çš„ç©å®¶æ–°å¹´å¿«ä¹ï¼Œä¸‡äº‹å¦‚æ„
+","author":"å¯è¾°-calvin","time":1167527692,]),(["title":"å¥½åƒè¯»ä¸äº†å•Š","msg":"","author":"åŒ—äº¬-xyanhu","time":1183619412,]),}),"location":"/d/wizard/proom","name":"æµ·æ´‹IIæ–°é—»ç‰ˆ","board_id":"hy2news_b","capacity":500,])
