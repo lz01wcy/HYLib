@@ -46,7 +46,7 @@ void receive_message(string msgclass, string msg)
 
 void write_prompt()
 {
-        string msg = "[输入时暂存讯息]\n" ;
+        string msg = "[杈撳叆鏃舵殏瀛樿鎭痌\n" ;
         string cwd = this_object()->query("cwd");
 
         msg = CONVERT_D->output(msg,this_object());

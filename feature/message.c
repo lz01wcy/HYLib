@@ -19,7 +19,7 @@ void receive_message(string msgclass, string msg)
 	//added by mon 11/13/97 trying to prevent crash.
 
 	if(len>8000) 
-	  msg=msg[0..8000]+"\n\n£®£®£®\n";
+	  msg=msg[0..8000]+"\n\nï¼Žï¼Žï¼Ž\n";
 	  //added by mon 11/13/97 trying to prevent crash.
 
 	msg = CONVERT_D->output(msg,this_object());
@@ -73,7 +73,7 @@ void write_prompt()
 	int env;
 	string prompt;
 	object me;
-        string msg = "[ÊäÈëÊ±ÔÝ´æÑ¶Ï¢]\n" ;
+        string msg = "[è¾“å…¥æ—¶æš‚å­˜è®¯æ¯]\n" ;
         string cwd = this_object()->query("cwd");
 	me=this_player(1);
 
@@ -105,17 +105,17 @@ void write_prompt()
 				prompt=HIY"["+HIW+prompt+HIY"]"NOR;
 			break;
 		case 3:
-			prompt=HIY"["+HIW+"Æø:"+me->query("qi")+"|¾«:"+me->query("jing")+HIY"]"NOR;
+			prompt=HIY"["+HIW+"æ°”:"+me->query("qi")+"|ç²¾:"+me->query("jing")+HIY"]"NOR;
 			break;
 		case 4:
-			prompt=HIY"["+HIW+"Æø:"+me->query("qi")+"|¾«:"+me->query("jing")+
-				"|¾­Ñé:"+me->query("combat_exp")+"|Ç±ÄÜ:"+
+			prompt=HIY"["+HIW+"æ°”:"+me->query("qi")+"|ç²¾:"+me->query("jing")+
+				"|ç»éªŒ:"+me->query("combat_exp")+"|æ½œèƒ½:"+
 				((int)me->query("potential") - (int)me->query("learned_points"))+
 				HIY"]"NOR;
 			break;
 		default:
 			if(!stringp(prompt))
-				prompt=HIB"¡Ñ"NOR;
+				prompt=HIB"âŠ™"NOR;
 		}
 	}
 	else

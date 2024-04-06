@@ -58,13 +58,13 @@ private nomask int command_hook(string arg)
         para = para["env"];
         if (mapp(para) && para["pure_say"] && ! me->is_direct_command())
         {
-                // ²»ÊÇ×ö¶¯×÷£¬¶øÊÇËµ»°
+                // ä¸æ˜¯åšåŠ¨ä½œï¼Œè€Œæ˜¯è¯´è¯
                 if (stringp(file = find_command("say")) &&
                     call_other(file, "main", me, me->query_orginal_input()))
-                        // Ö´ĞĞÍê±ÏËµ»°µÄ¶¯×÷
+                        // æ‰§è¡Œå®Œæ¯•è¯´è¯çš„åŠ¨ä½œ
                         return 1;
                 else
-                        // ÎŞ·¨Ëµ»°
+                        // æ— æ³•è¯´è¯
                         return 0;
         }
 

@@ -22,10 +22,10 @@ string find_command(string verb)
           if(me->query_temp("is_living")!=1) {
             if(verb!="bian" && verb!="chat" && verb!="say"
        && verb!="tell" && verb!="reply" && verb!="look")
-       return (string)notify_fail("±Õ¸¡Àƒ„œ÷‘⁄ «“ª"+
+       return (string)notify_fail("Âà´Âøò‰∫Ü‰Ω†Áé∞Âú®ÊòØ‰∏Ä"+
            (undefinedp(me->query_temp("unit"))?
-         "∏ˆ":me->query_temp("unit"))
-              +me->name()+"£°\n");
+         "‰∏™":me->query_temp("unit"))
+              +me->name()+"ÔºÅ\n");
      }
         } 
    

@@ -200,7 +200,7 @@ varargs void improve_skill(string skill, int amount, int weak_mode)
 		if (lvl*lvl*lvl/10 > this_object()->query("combat_exp")) {
 			weak_mode = 1;
 			if (!random(3)) tell_object(this_object(),
-				HIY "ÓÉÓÚÊµÕ½¾­Ñé²»×ã£¬×è°­ÁËÄãµÄ¡¸" + to_chinese(skill) + "¡¹½ø²½£¡\n" NOR);
+				HIY "ç”±äºŽå®žæˆ˜ç»éªŒä¸è¶³ï¼Œé˜»ç¢äº†ä½ çš„ã€Œ" + to_chinese(skill) + "ã€è¿›æ­¥ï¼\n" NOR);
 		}
 	}
 	if( !weak_mode ) {
@@ -225,7 +225,7 @@ varargs void improve_skill(string skill, int amount, int weak_mode)
 		skills[skill]= skills[skill]+1;
 
 		learned[skill] = 0;
-		tell_object(this_object(), HIC "ÄãµÄ¡¸" + to_chinese(skill) + "¡¹½ø²½ÁË£¡\n" NOR);
+		tell_object(this_object(), HIC "ä½ çš„ã€Œ" + to_chinese(skill) + "ã€è¿›æ­¥äº†ï¼\n" NOR);
 		SKILL_D(skill)->skill_improved(this_object());
 	}
 }

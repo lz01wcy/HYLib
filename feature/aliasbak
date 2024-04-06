@@ -15,11 +15,11 @@ string process_input(string str)
     int i, j;
     object ob,dest;
     object me = this_player();
-    if( me->query_temp("disable_inputs") )   return HIR"Ê²÷á£¿\n"NOR;
+    if( me->query_temp("disable_inputs") )   return HIR"ä»€éº½ï¼Ÿ\n"NOR;
     cmd_time++;
     if (time()-last_cmd_time<1){
             if (kill_time>4){
-                tell_object( this_object(),HIB "\n\nº£ÑóÖ®ÉñÍ»È»ÔÚÒ»ÕóÑÌÎíÖĞ³öÏÖ¡£\n\n\n\nº£ÑóÖ®ÉñºÈµÀ£ºÄãÀÏÔÚ³³ÎÒË¯¾õ£¬ÄãÈ¥ËÀ°É!!!\n\n" NOR);
+                tell_object( this_object(),HIB "\n\næµ·æ´‹ä¹‹ç¥çªç„¶åœ¨ä¸€é˜µçƒŸé›¾ä¸­å‡ºç°ã€‚\n\n\n\næµ·æ´‹ä¹‹ç¥å–é“ï¼šä½ è€åœ¨åµæˆ‘ç¡è§‰ï¼Œä½ å»æ­»å§!!!\n\n" NOR);
                     seteuid(getuid());
                     dest = this_player();
  	   if( !dest->is_ghost() ) {
@@ -31,7 +31,7 @@ string process_input(string str)
                     kill_time=0;
             }
                         if (cmd_time>14){
-                tell_object( this_object(),HIB "\n\nº£ÑóÖ®ÉñÍ»È»ÔÚÒ»ÕóÑÌÎíÖĞ³öÏÖ¡£\n\n\n\nº£ÑóÖ®ÉñºÈµÀ£ºÄãÔÙÕâÑù³³ÎÒË¯¾õ£¬ÎÒ¾Í²»¿ÍÆøÁË!!!\n\n" NOR );
+                tell_object( this_object(),HIB "\n\næµ·æ´‹ä¹‹ç¥çªç„¶åœ¨ä¸€é˜µçƒŸé›¾ä¸­å‡ºç°ã€‚\n\n\n\næµ·æ´‹ä¹‹ç¥å–é“ï¼šä½ å†è¿™æ ·åµæˆ‘ç¡è§‰ï¼Œæˆ‘å°±ä¸å®¢æ°”äº†!!!\n\n" NOR );
                 cmd_time=0;
                 kill_time++;
             }
@@ -48,8 +48,8 @@ string process_input(string str)
         repeat_cnt++;
         if( repeat_cnt > MAX_REPEAT && !wizardp(this_object())) {
             tell_object( this_object(),
-                HIB "\n\nº£ÑóÖ®ÉñÍ»È»ÔÚÒ»ÕóÑÌÎíÖĞ³öÏÖ¡£\n\n"
-                "\n\nº£ÑóÖ®ÉñºÈµÀ£ºĞ¡Íõ°Ëµ°ºÃµÄ²»Ñ§£¬Ñ§ÈË¸ÉÈÅÍøÂç¸ºµ££¿¿´ÕĞ£¡!!\n\n" NOR);
+                HIB "\n\næµ·æ´‹ä¹‹ç¥çªç„¶åœ¨ä¸€é˜µçƒŸé›¾ä¸­å‡ºç°ã€‚\n\n"
+                "\n\næµ·æ´‹ä¹‹ç¥å–é“ï¼šå°ç‹å…«è›‹å¥½çš„ä¸å­¦ï¼Œå­¦äººå¹²æ‰°ç½‘ç»œè´Ÿæ‹…ï¼Ÿçœ‹æ‹›ï¼!!\n\n" NOR);
 	if( !this_object()->is_ghost() ) {
 //  //          this_object()->move("/d/city/wumiao");
             this_object()->unconcious();
@@ -114,7 +114,7 @@ int set_alias(string verb, string replace)
     } else {
         if( !mapp(alias) ) alias = ([ verb:replace ]);
         else if( sizeof(alias) > MAX_ALIASES )
-            return notify_fail("ÄúÉè¶¨µÄ alias Ì«¶àÁË£¬ÇëÏÈÉ¾µôÒ»Ğ©²»³£ÓÃµÄ¡£\n");
+            return notify_fail("æ‚¨è®¾å®šçš„ alias å¤ªå¤šäº†ï¼Œè¯·å…ˆåˆ æ‰ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");
         else alias[verb] = replace;
         return 1;
     }

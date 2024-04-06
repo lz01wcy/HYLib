@@ -60,7 +60,7 @@ void kill_ob(object ob)
         if (!ob ) return;
         if( me->query_temp("guarding/living")==ob->query("id"))   
              {
-              tell_object(ob, HIR "²»ÄÜÉ±ÄãÒª±£»¤µÄÈË£¡\n" NOR);
+              tell_object(ob, HIR "ä¸èƒ½æ€ä½ è¦ä¿æŠ¤çš„äººï¼\n" NOR);
               return;
              } 
 	if( member_array(ob->query("id"), killer)==-1 )
@@ -77,14 +77,14 @@ void kill_ob(object ob)
                 } else ob->set_temp("kill_other/"+mid, 1);
         }
 
-	tell_object(ob, HIR "¿´ÆğÀ´" + this_object()->name() + "ÏëÉ±ËÀÄã£¡\n" NOR);
+	tell_object(ob, HIR "çœ‹èµ·æ¥" + this_object()->name() + "æƒ³æ€æ­»ä½ ï¼\n" NOR);
         inv = all_inventory(environment(me));  
         for(i=0;i<sizeof(inv);i++)
            { 
             if( !living(inv[i]) ) continue;
             else if(inv[i]!=me && inv[i]->query_temp("guarding/living")==ob->query("id") )
                 { 
-                  tell_object(inv[i], HIR ""+ob->query("name")+"ÊÜµ½¹¥»÷£¬ÄãÍ¦Éí¶ø³ö£¬¼ÓÈëÕ½ÍÅ£¡\n" NOR);
+                  tell_object(inv[i], HIR ""+ob->query("name")+"å—åˆ°æ”»å‡»ï¼Œä½ æŒºèº«è€Œå‡ºï¼ŒåŠ å…¥æˆ˜å›¢ï¼\n" NOR);
               inv[i]->kill_ob(me);
                 }  
            }  
@@ -313,13 +313,13 @@ void meet(string str,object ob)
         if(degree > 100)
           {
              if(me->query("combat_exp")>50*ob->query("combat_exp"))
-               {call_out("meet",0,"say ËäÈ»ÄãÅÉÓëÎÒÓĞ³ğ£¬µ«ÄîÄãÄêÓ×ÎŞÖª£¬·ÅÄãÒ»ÌõÉúÂ·¡£",ob); 
+               {call_out("meet",0,"say è™½ç„¶ä½ æ´¾ä¸æˆ‘æœ‰ä»‡ï¼Œä½†å¿µä½ å¹´å¹¼æ— çŸ¥ï¼Œæ”¾ä½ ä¸€æ¡ç”Ÿè·¯ã€‚",ob); 
                 return 1;
                }     
 
              if(ob->query("combat_exp")>50*me->query("combat_exp"))
                 return 1;   
-             call_out("meet",0,"say ÎÒÓëÄãÅÉÊÆ²»Á½Á¢£¬½ñÈÕ²»ÄÜ·Å¹ıÄãÁË!",ob);  
+             call_out("meet",0,"say æˆ‘ä¸ä½ æ´¾åŠ¿ä¸ä¸¤ç«‹ï¼Œä»Šæ—¥ä¸èƒ½æ”¾è¿‡ä½ äº†!",ob);  
           }   
 	return degree;
 }*/

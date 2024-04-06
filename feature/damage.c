@@ -14,11 +14,11 @@ varargs int receive_damage(string type, int damage, object who)
 {
 	int val;
         if( damage < 1 ) damage=1;
-	if( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+	if( damage < 0 ) error("F_DAMAGE: ä¼¤å®³å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 //	if( type!="jing" && type!="qi" )
-//		error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+//		error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
         if( type!="jing" && type!="qi" && type!="jingli" && type!="neili")
-                error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+                error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	if( objectp(who) ) set_temp("last_damage_from", who);
 	val = (int)query(type) - damage;
@@ -35,11 +35,11 @@ varargs int receive_wound(string type, int damage, object who)
 {
 	int val;
         if( damage < 1 ) damage=1;
-	if( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+	if( damage < 0 ) error("F_DAMAGE: ä¼¤å®³å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 //	if( type!="jing" && type!="qi" )
-//		error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+//		error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
         if( type!="jing" && type!="qi" && type!="jingli" && type!="neili")
-                error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+                error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	if( objectp(who) ) set_temp("last_damage_from", who);
 	val = (int)query("eff_" + type) - damage;
@@ -61,11 +61,11 @@ int receive_heal(string type, int heal)
 {
 	int val;
         if( heal < 1 ) heal=1;
-	if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+	if( heal < 0 ) error("F_DAMAGE: æ¢å¤å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 //	if( type!="jing" && type!="qi" )
-//		error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+//		error("F_DAMAGE: æ¢å¤ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
         if( type!="jing" && type!="qi" && type!="jingli" && type!="neili")
-                error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+                error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	val = (int)query(type) + heal;
 
@@ -79,11 +79,11 @@ int receive_curing(string type, int heal)
 {
 	int max, val;
         if( heal < 1 ) heal=1;
-	if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+	if( heal < 0 ) error("F_DAMAGE: æ¢å¤å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 //	if( type!="jing" && type!="qi" )
-//		error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+//		error("F_DAMAGE: æ¢å¤ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
         if( type!="jing" && type!="qi" && type!="jingli" && type!="neili")
-                error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+                error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	val = (int)query("eff_" + type);
 	max = (int)query("max_" + type);
@@ -108,7 +108,7 @@ void unconcious()
 	if( !living(this_object()) ) return;
 	if( wizardp(this_object()) && query("env/immortal") ) return;
 	
-	//ÌØÊâ·¿¼ä¸Ä¶¯ÔÎµ¹ idea
+	//ç‰¹æ®Šæˆ¿é—´æ”¹åŠ¨æ™•å€’ idea
 	if (environment() && environment()->query("alternative_unc")) {
 		environment()->alternative_unc(this_object());
 		return;
@@ -116,12 +116,12 @@ void unconcious()
 	
         if (userp(this_object())&& environment(this_object())->query("bwdhpk"))
         {
-                message_vision(HIR "±ÈÎäÖ®µØ£¬Ö»·ÖÊ¤¸º£¬²»·ÖÉúËÀ¡£$N±»´ò°ÜÁËµ«È´ÍµµÃÒ»Ãü¡£\n" NOR, this_object());
-                message_vision(HIR "$N±»Ì§ÁËÏÂÈ¥¡£\n" NOR, this_object());
+                message_vision(HIR "æ¯”æ­¦ä¹‹åœ°ï¼Œåªåˆ†èƒœè´Ÿï¼Œä¸åˆ†ç”Ÿæ­»ã€‚$Nè¢«æ‰“è´¥äº†ä½†å´å·å¾—ä¸€å‘½ã€‚\n" NOR, this_object());
+                message_vision(HIR "$Nè¢«æŠ¬äº†ä¸‹åŽ»ã€‚\n" NOR, this_object());
 	if( objectp(killer = query_temp("last_damage_from")) )
 {
 	killer->add_temp("bwdhpk",1);
-message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+this_object()->query("name")+"±»"+killer->query("name")+"´ò³öÁËÍÀÈË´ó»á£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€å± äººæˆ˜å†µã€‘"HIR + " "+this_object()->query("name")+"è¢«"+killer->query("name")+"æ‰“å‡ºäº†å± äººå¤§ä¼šï¼\n"NOR,users() );
 }
 	  this_object()->set("eff_jing", (int)this_object()->query("max_jing"));
 	  this_object()->set("jing", (int)this_object()->query("max_jing"));
@@ -137,10 +137,10 @@ message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+this_object()->query("name")+
           return;
 }
 
-	//Æ½°²³Ç²»»è
+	//å¹³å®‰åŸŽä¸æ˜
 //        if (environment(this_object())->query("pingan"))
 //        {
-//		message_vision(HIW "$NÑÛ¿´¾ÍÒª»èµ¹£¬µ«ÊÇÆ½°²³ÇµÄÊ¥ÁéÖ®ÆøÊ¹$NÒ»ÏÂ×Ó¾ÍÇåÐÑÁË¹ýÀ´¡£\n" NOR, this_object());
+//		message_vision(HIW "$Nçœ¼çœ‹å°±è¦æ˜å€’ï¼Œä½†æ˜¯å¹³å®‰åŸŽçš„åœ£çµä¹‹æ°”ä½¿$Nä¸€ä¸‹å­å°±æ¸…é†’äº†è¿‡æ¥ã€‚\n" NOR, this_object());
 //		this_object()->set("eff_jing",this_object()->query("max_jing"));
 //		this_object()->set("jing",1);
 //		this_object()->set("eff_qi",this_object()->query("max_qi"));
@@ -157,7 +157,7 @@ message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+this_object()->query("name")+
 }
 //        if (objectp(riding = me->query_temp("is_riding")))
 //        {
-//                message_vision("$NÒ»Í·´Ó$nÉÏÃæÔÔÁËÏÂÀ´£¡\n",
+//                message_vision("$Nä¸€å¤´ä»Ž$nä¸Šé¢æ ½äº†ä¸‹æ¥ï¼\n",
 //                              me, riding);
 //                me->delete_temp("is_riding");
 //                riding->delete_temp("is_rided_by");
@@ -166,9 +166,9 @@ message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+this_object()->query("name")+
 	this_object()->remove_all_enemy();
 	set("hunmi",1);
         this_object()->delete_temp("fight/dodge");
-	message("system", HIR "\nÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\n\n" NOR,
+	message("system", HIR "\nä½ çš„çœ¼å‰ä¸€é»‘ï¼ŒæŽ¥è‘—ä»€ä¹ˆä¹Ÿä¸çŸ¥é“äº†....\n\n" NOR,
 		this_object());
-	this_object()->disable_player("<»èÃÔ²»ÐÑ£¡ÈËÊÂ²»Öª£¡>");
+	this_object()->disable_player("<æ˜è¿·ä¸é†’ï¼äººäº‹ä¸çŸ¥ï¼>");
         this_object()->delete_temp("fight/dodge");
 
 	set("jing", 0);
@@ -206,7 +206,7 @@ void revive(int quiet)
 		set_temp("block_msg/all", 0);
 		set("hunmi",0);
 		
-		message("system", HIY "\nÂýÂýµØÄãÖÕÓÚÓÖÓÐÁËÖª¾õ....\n\n" NOR,
+		message("system", HIY "\næ…¢æ…¢åœ°ä½ ç»ˆäºŽåˆæœ‰äº†çŸ¥è§‰....\n\n" NOR,
 			this_object());
 	} else
 		{set_temp("block_msg/all", 0);set("hunmi",0);}
@@ -221,21 +221,21 @@ void die()
 	if( !living(this_object()) ) revive(1);
 	if( wizardp(this_object()) && query("env/immortal") ) return;
 	
-	//ÌØÊâ·¿¼ä¸Ä¶¯ËÀÍö idea
+	//ç‰¹æ®Šæˆ¿é—´æ”¹åŠ¨æ­»äº¡ idea
 	if (environment() && environment()->query("alternative_die")) {
 		environment()->alternative_die(this_object());
 		return;
 	}
-//ÐÂÊÖ²»ËÀ
+//æ–°æ‰‹ä¸æ­»
         if(userp(this_object())&& this_object()->query("combat_exp") < 2500000
         && !this_object()->query_condition("killer")
         && this_object()->query("PKS",1) < 3
         && !this_object()->query("zhuanshen")
         )
 {
-	message("channel:rumor", HIM"¡¾Ò¥ÑÔ¡¿"+"ÌýËµ"+this_object()->name()+
-    "ËÀÁË ËÀÒò²»Ã÷¡£\n"NOR, users());
-message_vision(HIW "$N±¾À´ËÀ¶¨ÁË£¬µ«Ò»Õó°×¹â°üÎ§ÁË$N£¬$NÏûÊ§ÔÚÁË°×¹âÖÐ! \n" NOR, this_object());
+	message("channel:rumor", HIM"ã€è°£è¨€ã€‘"+"å¬è¯´"+this_object()->name()+
+    "æ­»äº† æ­»å› ä¸æ˜Žã€‚\n"NOR, users());
+message_vision(HIW "$Næœ¬æ¥æ­»å®šäº†ï¼Œä½†ä¸€é˜µç™½å…‰åŒ…å›´äº†$Nï¼Œ$Næ¶ˆå¤±åœ¨äº†ç™½å…‰ä¸­! \n" NOR, this_object());
 		this_object()->set("jing", this_object()->query("max_jing")+100);
 		this_object()->set("eff_jing", this_object()->query("max_jing")+100);
 		this_object()->set("qi", this_object()->query("max_qi")+100);
@@ -256,23 +256,23 @@ this_object()->delete_temp("in_guard");
 return;
 }
 
-	//ÀÞÌ¨±ÈÎä²»ËÀ
+	//æ“‚å°æ¯”æ­¦ä¸æ­»
 	if ( userp(this_object()) && file_name(environment(this_object())) == "/d/city/leitai")
 	{
-		message_vision(HIR "¹«Æ½×ÓµÀ£º¡°ÒÑ·ÖÊ¤¸º£¬²»¾öÉúËÀ¡£¡±\n" NOR, this_object());
+		message_vision(HIR "å…¬å¹³å­é“ï¼šâ€œå·²åˆ†èƒœè´Ÿï¼Œä¸å†³ç”Ÿæ­»ã€‚â€\n" NOR, this_object());
 		this_object()->set("eff_jing",this_object()->query("max_jing"));
 		this_object()->set("jing",this_object()->query("max_jing"));
 		this_object()->set("eff_qi",this_object()->query("max_qi"));
 		this_object()->set("qi",this_object()->query("max_qi"));
 		return;
 	}
-	//Æ½°²³Ç²»ËÀ
+	//å¹³å®‰åŸŽä¸æ­»
 //    if((int)obj->query("age") <= 17 && userp(obj) && !obj->query_condition("killer"))
-//        return notify_fail("ÎªÁËÊÀ½ç¸üÃÀºÃ£¬·Å¹ýÐ¡º¢×Ó°É.\n");
+//        return notify_fail("ä¸ºäº†ä¸–ç•Œæ›´ç¾Žå¥½ï¼Œæ”¾è¿‡å°å­©å­å§.\n");
 
         if (userp(this_object())&& environment(this_object())->query("pingan") && (int)this_object()->query("age") <= 17)
         {
-		message_vision(HIR "$N±¾À´ËÀ¶¨ÁË£¬µ«$NÍ»È»´ó½ÐÁËÒ»Éù¡°Æ½°²Ö®³Ç£¬ÓÀÔ¶²»ËÀ¡£¡±¾¹ÓÖ»îÁË»ØÁË¡£\n" NOR, this_object());
+		message_vision(HIR "$Næœ¬æ¥æ­»å®šäº†ï¼Œä½†$Nçªç„¶å¤§å«äº†ä¸€å£°â€œå¹³å®‰ä¹‹åŸŽï¼Œæ°¸è¿œä¸æ­»ã€‚â€ç«Ÿåˆæ´»äº†å›žäº†ã€‚\n" NOR, this_object());
 		this_object()->set("eff_jing",100);
 		this_object()->set("jing",1);
 		this_object()->set("eff_qi",100);
@@ -280,10 +280,10 @@ return;
 		return;
 	}
 
-        //±ÈÎäÇø²»ËÀ
+        //æ¯”æ­¦åŒºä¸æ­»
         if (userp(this_object())&&environment(this_object())->query("biwu"))
         {
-                message_vision(HIR "±ÈÎäÖ®µØ£¬Ö»·ÖÊ¤¸º£¬²»·ÖÉúËÀ¡£$N±»´ò°ÜÁËµ«È´ÍµµÃÒ»Ãü¡£\n" NOR, this_object());
+                message_vision(HIR "æ¯”æ­¦ä¹‹åœ°ï¼Œåªåˆ†èƒœè´Ÿï¼Œä¸åˆ†ç”Ÿæ­»ã€‚$Nè¢«æ‰“è´¥äº†ä½†å´å·å¾—ä¸€å‘½ã€‚\n" NOR, this_object());
                 this_object()->set("eff_jing",this_object()->query("max_jing")/2);
                 this_object()->set("jing",1);
                 this_object()->set("eff_qi",this_object()->query("max_qi")/2);
@@ -293,8 +293,8 @@ return;
 
         if(userp(this_object())&& this_object()->is_ghost())
 {
-                message_vision(HIC "ËÀÈËÃ»ÓÐ°ì·¨ÔÙËÀÒ»´Î¡£\n" NOR, this_object());
-                message_vision(HIG "$NµÄ»êÆÇ»Øµ½ÁËÒõ¼ä¡£\n" NOR, this_object());
+                message_vision(HIC "æ­»äººæ²¡æœ‰åŠžæ³•å†æ­»ä¸€æ¬¡ã€‚\n" NOR, this_object());
+                message_vision(HIG "$Nçš„é­‚é­„å›žåˆ°äº†é˜´é—´ã€‚\n" NOR, this_object());
 		this_object()->set("jing", 10);
 		this_object()->set("eff_jing", 10);
 		this_object()->set("qi", 10);
@@ -304,12 +304,12 @@ return;
 
         if (userp(this_object())&& environment(this_object())->query("bwdhpk"))
         {
-                message_vision(HIR "±ÈÎäÖ®µØ£¬Ö»·ÖÊ¤¸º£¬²»·ÖÉúËÀ¡£$N±»´ò°ÜÁËµ«È´ÍµµÃÒ»Ãü¡£\n" NOR, this_object());
-                message_vision(HIR "$N±»Ì§ÁËÏÂÈ¥¡£\n" NOR, this_object());
+                message_vision(HIR "æ¯”æ­¦ä¹‹åœ°ï¼Œåªåˆ†èƒœè´Ÿï¼Œä¸åˆ†ç”Ÿæ­»ã€‚$Nè¢«æ‰“è´¥äº†ä½†å´å·å¾—ä¸€å‘½ã€‚\n" NOR, this_object());
+                message_vision(HIR "$Nè¢«æŠ¬äº†ä¸‹åŽ»ã€‚\n" NOR, this_object());
 	if( objectp(killer = query_temp("last_damage_from")) )
 {
 	killer->add_temp("bwdhpk",1);
-message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+this_object()->query("name")+"±»"+killer->query("name")+"´ò³öÁËÍÀÈË´ó»á£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€å± äººæˆ˜å†µã€‘"HIR + " "+this_object()->query("name")+"è¢«"+killer->query("name")+"æ‰“å‡ºäº†å± äººå¤§ä¼šï¼\n"NOR,users() );
 }
 	  this_object()->set("eff_jing", (int)this_object()->query("max_jing"));
 	  this_object()->set("jing", (int)this_object()->query("max_jing"));
@@ -327,7 +327,7 @@ message("channel:chat", HIC"¡¾ÍÀÈËÕ½¿ö¡¿"HIR + " "+this_object()->query("name")+
 if (userp(this_object())&&  this_object()->query("zhuanbest") && environment(this_object())->query("magicroom")
 && !this_object()->query_condition("killer"))
         {
-                message_vision(HIR "Ò»Õó¹âÃ¢¹ýºó¡£$NÏûÊ§ÁË¡£\n" NOR, this_object());
+                message_vision(HIR "ä¸€é˜µå…‰èŠ’è¿‡åŽã€‚$Næ¶ˆå¤±äº†ã€‚\n" NOR, this_object());
                 this_object()->remove_all_killer();
                 this_object()->unconcious();
 		this_object()->set("jing", 150);	
@@ -340,8 +340,8 @@ if (userp(this_object())&&  this_object()->query("zhuanbest") && environment(thi
 
         if (userp(this_object())&& environment(this_object())->query("citybiwu"))
         {
-                message_vision(HIR "±ÈÎäÖ®µØ£¬Ö»·ÖÊ¤¸º£¬²»·ÖÉúËÀ¡£$N±»´ò°ÜÁËµ«È´ÍµµÃÒ»Ãü¡£\n" NOR, this_object());
-                message_vision(HIR "$N±»Ì§ÁËÏÂÈ¥¡£\n" NOR, this_object());
+                message_vision(HIR "æ¯”æ­¦ä¹‹åœ°ï¼Œåªåˆ†èƒœè´Ÿï¼Œä¸åˆ†ç”Ÿæ­»ã€‚$Nè¢«æ‰“è´¥äº†ä½†å´å·å¾—ä¸€å‘½ã€‚\n" NOR, this_object());
+                message_vision(HIR "$Nè¢«æŠ¬äº†ä¸‹åŽ»ã€‚\n" NOR, this_object());
 	  this_object()->set("eff_jing", (int)this_object()->query("max_jing"));
 	  this_object()->set("jing", (int)this_object()->query("max_jing"));
 	  this_object()->set("eff_qi", (int)this_object()->query("max_qi"));
@@ -360,10 +360,10 @@ if (userp(victim))
 {
 if (victim->query_condition("psgc") && userp(victim))
 {
-log_file("log", "ËÀÍöÈËÎï" + victim->query_condition("psgc") + victim->query("name")+"\n", 1);
+log_file("log", "æ­»äº¡äººç‰©" + victim->query_condition("psgc") + victim->query("name")+"\n", 1);
 	victim->skill_expell_penalty();
 		CHANNEL_D->do_channel(this_object(), "rumor",
-		sprintf("%sÓÉÓÚÅÐÊ¦±»ÃÅÅÉ×·É±¶øËÀ!", victim->name(), victim->name()));
+		sprintf("%sç”±äºŽåˆ¤å¸ˆè¢«é—¨æ´¾è¿½æ€è€Œæ­»!", victim->name(), victim->name()));
 }
 }
 if (!this_object()->query_condition("killer"))
@@ -371,7 +371,7 @@ if (!this_object()->query_condition("killer"))
 	this_object()->clear_condition();
 }
     //call clear not here , in combatd.c 
-        this_object()->set("killbyname","ËÀÒò²»Ã÷");
+        this_object()->set("killbyname","æ­»å› ä¸æ˜Ž");
 	COMBAT_D->announce(this_object(), "dead");
 	if( objectp(killer = query_temp("last_damage_from")) &&
 		file_name(environment(killer)) == file_name(environment(this_object())))
@@ -382,8 +382,8 @@ if (!this_object()->query_condition("killer"))
 	}
 	else
 
-	message("channel:rumor", HIM"¡¾Ò¥ÑÔ¡¿"+"ÌýËµ"+this_object()->name()+
-    "ËÀÁË ËÀÒò²»Ã÷¡£\n"NOR, users());
+	message("channel:rumor", HIM"ã€è°£è¨€ã€‘"+"å¬è¯´"+this_object()->name()+
+    "æ­»äº† æ­»å› ä¸æ˜Žã€‚\n"NOR, users());
 	this_object()->add("dietimes",1);
         if (!environment(this_object())->query("no_death_penalty"))
         {
@@ -398,9 +398,9 @@ if (!this_object()->query_condition("killer"))
 	if( objectp(corpse = CHAR_D->make_corpse(this_object(), killer)) )
 	{
 		corpse->move(environment());
-// ³¬¶ÈÓÃµÄ¾­ÑéÖµ
+// è¶…åº¦ç”¨çš„ç»éªŒå€¼
 		corpse->set("combat_exp", this_object()->query("combat_exp"));
-// ËÀÕßÊÇÍæ¼Ò
+// æ­»è€…æ˜¯çŽ©å®¶
 		if (userp(this_player()))
 			corpse->set("userp", 1);
 	}
@@ -454,18 +454,18 @@ int heal_up()
 	{
 	my["food"] -= 1;
 	if ( my["food"] == ob->max_food_capacity()*0.3 )
-		tell_object(ob,HIY "\nÄã¶Ç×Ó¹¾¹¾Ö±½Ð£¬¿´À´µÃ³Ôµã¶«Î÷ÁË¡£\n"NOR);
+		tell_object(ob,HIY "\nä½ è‚šå­å’•å’•ç›´å«ï¼Œçœ‹æ¥å¾—åƒç‚¹ä¸œè¥¿äº†ã€‚\n"NOR);
 	if ( my["food"] == ob->max_food_capacity()*0.1 )
 		{
-		tell_object(ob,HIY "\nÄã¶öµÃÖ±·¢»Å£¬¸Ï¿ì³Ôµã¶«Î÷°É¡£\n"NOR);
+		tell_object(ob,HIY "\nä½ é¥¿å¾—ç›´å‘æ…Œï¼Œèµ¶å¿«åƒç‚¹ä¸œè¥¿å§ã€‚\n"NOR);
 		ob->delete_temp("foods");
 		}
 	if ( my["food"] == ob->max_food_capacity()*0.1 )
 		{
 			if ((int)ob->query("age")<20 && this_object()->query("combat_exp") < 2500000) 
 			{
-			tell_object(ob,HIR "ÄãÓÖ¶öÓÖÀä£¬»ëÉí·¢¶¶£¬¿´Ñù×Ó¿ì²»ÐÐÁË......\n"NOR);
-			tell_object(ob,HIY "»¹ºÃÂ·±ßÓÐÎ»ºÃÐÄµÄ´óÉô£¬¸øÁËÄãÒ»Íë¸ôÒ¹µÄÃæÌõ£¬ÄãÀÇÍÌ»¢ÑÊµÄÍÌÁËÏÂÈ¥¡£\n"NOR);
+			tell_object(ob,HIR "ä½ åˆé¥¿åˆå†·ï¼Œæµ‘èº«å‘æŠ–ï¼Œçœ‹æ ·å­å¿«ä¸è¡Œäº†......\n"NOR);
+			tell_object(ob,HIY "è¿˜å¥½è·¯è¾¹æœ‰ä½å¥½å¿ƒçš„å¤§å©¶ï¼Œç»™äº†ä½ ä¸€ç¢—éš”å¤œçš„é¢æ¡ï¼Œä½ ç‹¼åžè™Žå’½çš„åžäº†ä¸‹åŽ»ã€‚\n"NOR);
 			ob->set("food",ob->max_food_capacity());ob->set("water",ob->max_water_capacity());
 			}
 		}
@@ -474,24 +474,24 @@ int heal_up()
 
 /*	else
 	{	if (!ob->query_temp("foods"))
-		{tell_object(ob,HIR "\nÄã¶öµÃÖ±Ã°½ðÐÇ£¬ÊµÔÚÊÇ¶¥²»×¡ÁË¡£\n"NOR);
+		{tell_object(ob,HIR "\nä½ é¥¿å¾—ç›´å†’é‡‘æ˜Ÿï¼Œå®žåœ¨æ˜¯é¡¶ä¸ä½äº†ã€‚\n"NOR);
 		ob->set_temp("foods",10);}
 	
 		if ((int)ob->query_temp("foods") > 1) ob->add_temp("foods",-1);
-		else {tell_object(ob,HIR "\nÄã¶öµÃ¿ìÒªËÀÁË¡£¡£¡£¡£\n"NOR);  
+		else {tell_object(ob,HIR "\nä½ é¥¿å¾—å¿«è¦æ­»äº†ã€‚ã€‚ã€‚ã€‚\n"NOR);  
                         if (userp(this_object())&& environment(this_object())->query("pingan") && (int)this_object()->query("age") <= 17)
-		        {tell_object(ob,HIY "»¹ºÃÕâ¶ùÊÇÆ½°²³Ç£¬ÓÀÔ¶²»»áÓÐ¶öËÀµÄÈË£¬Æ½°²Ö®¹âÕÕµÃÄã¾«Éñ±¥Âú¡£\n"NOR);
+		        {tell_object(ob,HIY "è¿˜å¥½è¿™å„¿æ˜¯å¹³å®‰åŸŽï¼Œæ°¸è¿œä¸ä¼šæœ‰é¥¿æ­»çš„äººï¼Œå¹³å®‰ä¹‹å…‰ç…§å¾—ä½ ç²¾ç¥žé¥±æ»¡ã€‚\n"NOR);
 			ob->set("food",ob->max_food_capacity());ob->set("water",ob->max_water_capacity());
 			}else
 			if (wizardp(ob))
-			{tell_object(ob,HIY "»¹ºÃÄãÊÇÉñÏÉ£¬Ö»¼ûÄãÉìÊÖÒ»ÕÐ£¬±ä³öÁËÒ»´ó¶ÑºÃ³ÔµÄ\n"+
-					"ÍÛ£¬»¹ÓÐºº±¤°üÒ®£¡£¬Äã»©À²Á½ÏÂ¾Í³Ô¹âÁË£¬¿´À´ÄãÕæÊÇ¶ö»µÁË£¡\n"NOR);
+			{tell_object(ob,HIY "è¿˜å¥½ä½ æ˜¯ç¥žä»™ï¼Œåªè§ä½ ä¼¸æ‰‹ä¸€æ‹›ï¼Œå˜å‡ºäº†ä¸€å¤§å †å¥½åƒçš„\n"+
+					"å“‡ï¼Œè¿˜æœ‰æ±‰å ¡åŒ…è€¶ï¼ï¼Œä½ å“—å•¦ä¸¤ä¸‹å°±åƒå…‰äº†ï¼Œçœ‹æ¥ä½ çœŸæ˜¯é¥¿åäº†ï¼\n"NOR);
 			ob->set("food",ob->max_food_capacity());ob->set("water",ob->max_water_capacity());
 			}else
 			if ((int)ob->query("age")<15) 
 			{
-			tell_object(ob,HIR "ÄãÓÖ¶öÓÖÀä£¬»ëÉí·¢¶¶£¬¿´Ñù×Ó¿ì²»ÐÐÁË......\n"NOR);
-			tell_object(ob,HIY "»¹ºÃÂ·±ßÓÐÎ»ºÃÐÄµÄ´óÉô£¬¸øÁËÄãÒ»Íë¸ôÒ¹µÄÃæÌõ£¬ÄãÀÇÍÌ»¢ÑÊµÄÍÌÁËÏÂÈ¥¡£\n"NOR);
+			tell_object(ob,HIR "ä½ åˆé¥¿åˆå†·ï¼Œæµ‘èº«å‘æŠ–ï¼Œçœ‹æ ·å­å¿«ä¸è¡Œäº†......\n"NOR);
+			tell_object(ob,HIY "è¿˜å¥½è·¯è¾¹æœ‰ä½å¥½å¿ƒçš„å¤§å©¶ï¼Œç»™äº†ä½ ä¸€ç¢—éš”å¤œçš„é¢æ¡ï¼Œä½ ç‹¼åžè™Žå’½çš„åžäº†ä¸‹åŽ»ã€‚\n"NOR);
 			ob->set("food",ob->max_food_capacity());ob->set("water",ob->max_water_capacity());
 			}else
 			{if (userp(ob))
@@ -537,7 +537,7 @@ int heal_up()
 	}
 	if (ob->query("szj/passed") && ob->query("szj/over200") && my["max_neili"] && my["neili"] < my["max_neili"] * 3 / 2
 	&& (int)ob->query_skill("shenzhao-jing", 1) > 100) {
-		tell_object(ob, WHT"ÄãÇ±ÔË¡¸ÉñÕÕ¾­¡¹ÐÄ·¨£¬½«ÌìµØ¶þÆø½»Ì©ÓÚÉí£¬¶Ù¾õ×Ô¼ºÄÚÁ¦Ô´Ô´²»Ö¹ÁË¡£\n"NOR);
+		tell_object(ob, WHT"ä½ æ½œè¿ã€Œç¥žç…§ç»ã€å¿ƒæ³•ï¼Œå°†å¤©åœ°äºŒæ°”äº¤æ³°äºŽèº«ï¼Œé¡¿è§‰è‡ªå·±å†…åŠ›æºæºä¸æ­¢äº†ã€‚\n"NOR);
 		i = (int)ob->query_skill("shenzhao-jing", 1);
 		if (ob->is_fighting()) i /= 2;
 		my["neili"] += i + random(i * 2);

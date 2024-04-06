@@ -199,7 +199,7 @@ int skill_death_penalty() {
                 this_object()->prepare_skill("strike");
                 this_object()->reset_action();
                 tell_object(this_object(), HIR
-                "ÄãÓĞÎä¹¦ÎªÁã¼¶ÁË£¬ÇëÖØĞÂenable ËùÓĞµÄÎä¹¦£¬ÌØ±ğÊÇforce£¡\n"
+                "ä½ æœ‰æ­¦åŠŸä¸ºé›¶çº§äº†ï¼Œè¯·é‡æ–°enable æ‰€æœ‰çš„æ­¦åŠŸï¼Œç‰¹åˆ«æ˜¯forceï¼\n"
                 NOR);
             }
         }
@@ -255,7 +255,7 @@ int skill_death_penalty() {
                     this_object()->prepare_skill("strike");
                     this_object()->reset_action();
                     tell_object(this_object(), HIR
-                    "ÄãÓĞÎä¹¦ÎªÁã¼¶ÁË£¬ÇëÖØĞÂenable ËùÓĞµÄÎä¹¦£¬ÌØ±ğÊÇforce£¡\n"
+                    "ä½ æœ‰æ­¦åŠŸä¸ºé›¶çº§äº†ï¼Œè¯·é‡æ–°enable æ‰€æœ‰çš„æ­¦åŠŸï¼Œç‰¹åˆ«æ˜¯forceï¼\n"
                     NOR);
                 }
             }
@@ -288,7 +288,7 @@ varargs void improve_skill(string skill, int amount, int weak_mode) {
             if (!random(3))
                 tell_object(this_object(),
                             HIY
-            "ÓÉÓÚÊµÕ½¾­Ñé²»×ã£¬×è°­ÁËÄãµÄ¡¸" + to_chinese(skill) + "¡¹½ø²½£¡\n"
+            "ç”±äºå®æˆ˜ç»éªŒä¸è¶³ï¼Œé˜»ç¢äº†ä½ çš„ã€Œ" + to_chinese(skill) + "ã€è¿›æ­¥ï¼\n"
             NOR);
         }
     }
@@ -316,7 +316,7 @@ varargs void improve_skill(string skill, int amount, int weak_mode) {
 
         learned[skill] = 0;
         tell_object(this_object(), HIC
-        "ÄãµÄ¡¸" + to_chinese(skill) + "¡¹½ø²½ÁË£¡\n"
+        "ä½ çš„ã€Œ" + to_chinese(skill) + "ã€è¿›æ­¥äº†ï¼\n"
         NOR);
         SKILL_D(skill)->skill_improved(this_object());
     }
@@ -357,7 +357,7 @@ int skill_expell_penalty() {
             continue;
         }
 
-        // ×Ô´´µÄÎä¹¦²»½µµÍ
+        // è‡ªåˆ›çš„æ­¦åŠŸä¸é™ä½
         if (SKILL_D(skname[i])->is_invent_skill())
             continue;
 

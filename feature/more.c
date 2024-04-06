@@ -20,8 +20,8 @@ void more(string cmd, string *text, int line)
 				write(text[line] + "\n");
 			if( line>=sizeof(text) ) return;
 	}
-  printf("[1;45m   [0;1mÒÑ¾­ÏÔÊ¾[45m " HIY "%d%%"  
-   " [1m   (ENTER ¼ÌĞøÏÂÒ»Ò³£¬q Àë¿ª£¬b Ç°Ò»Ò³)[m",
+  printf("[1;45m   [0;1må·²ç»æ˜¾ç¤º[45m " HIY "%d%%"  
+   " [1m   (ENTER ç»§ç»­ä¸‹ä¸€é¡µï¼Œq ç¦»å¼€ï¼Œb å‰ä¸€é¡µ)[m",
    (line*100/sizeof(text)) );
 	input_to("more", text, line);
 }

@@ -20,7 +20,7 @@ nomask mixed query_busy() { return busy; }
 nomask int is_busy() { return busy; }
 
 static int exert_time;
-static string exert_type = "内功";
+static string exert_type = "鍐呭姛";
 
 varargs void start_exert(int new_exert, string new_type)
 {
@@ -28,7 +28,7 @@ varargs void start_exert(int new_exert, string new_type)
 		error("action: Invalid exert time.\n");
 	exert_time = new_exert;
 	if( !stringp(new_type) )
-		new_type = "内功";
+		new_type = "鍐呭姛";
 	exert_type = new_type;
 	set_heart_beat(1);
 }
@@ -37,7 +37,7 @@ nomask string query_exert() { return exert_type; }
 nomask int is_exert() { return exert_time; }
 
 static int perform_time;
-static string perform_type = "外功";
+static string perform_type = "澶栧姛";
 
 varargs void start_perform(int new_perform, string new_type)
 {
@@ -45,7 +45,7 @@ varargs void start_perform(int new_perform, string new_type)
 		error("action: Invalid perform time.\n");
 	perform_time = new_perform;
 	if( !stringp(new_type) )
-		new_type = "外功";
+		new_type = "澶栧姛";
 	perform_type = new_type;
 	set_heart_beat(1);
 }

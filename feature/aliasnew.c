@@ -17,12 +17,12 @@ string process_input(string str)
     object me = this_player();
     if (!query_heart_beat(me))
     {
-    write("ÓÉÓÚÄãÃ»ÓĞĞÄÌø£¬ÇëÖØĞÂµÇÂ½!!\n");
+    write("ç”±äºä½ æ²¡æœ‰å¿ƒè·³ï¼Œè¯·é‡æ–°ç™»é™†!!\n");
     "/cmds/usr/quithy"->main(me);
     }
 
-    if( me->query_temp("disable_inputs") )   return HIR"Ê²Ã´£¿\n"NOR;
-    if( me->query_temp("block_msg/all") )   return HIR"Äã¿´²»¼ûÊ²Ã´,Ê²Ã´¶¼²»ÄÜ×ö!\n"NOR;
+    if( me->query_temp("disable_inputs") )   return HIR"ä»€ä¹ˆï¼Ÿ\n"NOR;
+    if( me->query_temp("block_msg/all") )   return HIR"ä½ çœ‹ä¸è§ä»€ä¹ˆ,ä»€ä¹ˆéƒ½ä¸èƒ½åš!\n"NOR;
 	if(!living(this_object())) return "";
 	if(str && str != "")
 	cmd_cnt++;
@@ -34,8 +34,8 @@ string process_input(string str)
 		if(cmd_cnt1==0){
 		cmd_cnt2=cmd_cnt/(curr_time-last_time+1);
 		
-write("ÄãÒ»´ÎÊäÈëÌ«¶àÃüÁîÁË£¬
-ÇëÉÔºóÔÙÊÔ£¡\n");
+write("ä½ ä¸€æ¬¡è¾“å…¥å¤ªå¤šå‘½ä»¤äº†ï¼Œ
+è¯·ç¨åå†è¯•ï¼\n");
 	}
 	cmd_cnt1++;
 	if(cmd_cnt1> 120) cmd_cnt1=0;
@@ -111,7 +111,7 @@ int set_alias(string verb, string replace)
 	} else {
 		if( !mapp(alias) ) alias = ([ verb:replace ]);
 		else if( sizeof(alias) > MAX_ALIASES )
-        return notify_fail("ÄúÉè¶¨µÄ alias Ì«¶àÁË£¬ÇëÏÈÉ¾µôÒ»Ğ©²»³£ÓÃµÄ¡£\n");		else alias[verb] = replace;
+        return notify_fail("æ‚¨è®¾å®šçš„ alias å¤ªå¤šäº†ï¼Œè¯·å…ˆåˆ æ‰ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");		else alias[verb] = replace;
 		return 1;
 	}
 }

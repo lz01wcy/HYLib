@@ -17,16 +17,16 @@ string process_input(string str)
     object me = this_player();
     if (!query_heart_beat(me))
     {
-    write("ÓÉÓÚÄãÃ»ÓĞĞÄÌø£¬ÇëÖØĞÂµÇÂ½!!\n");
+    write("ç”±äºä½ æ²¡æœ‰å¿ƒè·³ï¼Œè¯·é‡æ–°ç™»é™†!!\n");
     "/cmds/usr/quithy"->main(me);
     }
 
-    if( me->query_temp("disable_inputs") )   return HIR"Ê²Ã´£¿\n"NOR;
-    if( me->query_temp("block_msg/all") )   return HIR"Äã¿´²»¼ûÊ²Ã´,Ê²Ã´¶¼²»ÄÜ×ö!\n"NOR;
+    if( me->query_temp("disable_inputs") )   return HIR"ä»€ä¹ˆï¼Ÿ\n"NOR;
+    if( me->query_temp("block_msg/all") )   return HIR"ä½ çœ‹ä¸è§ä»€ä¹ˆ,ä»€ä¹ˆéƒ½ä¸èƒ½åš!\n"NOR;
     cmd_time++;
     if (time()-last_cmd_time<1){
             if (kill_time>4){
-                tell_object( this_object(),HIR "\nÓÉÓÚÄãÀÄÓÃÖ¸Áî,ÄãµÄÖ¸Áî±»ÔİÊ±·â±ÕÁË!!!¡£\n¶ş·ÖÖÓºó×Ô¶¯»Ö¸´\n" NOR);
+                tell_object( this_object(),HIR "\nç”±äºä½ æ»¥ç”¨æŒ‡ä»¤,ä½ çš„æŒ‡ä»¤è¢«æš‚æ—¶å°é—­äº†!!!ã€‚\näºŒåˆ†é’Ÿåè‡ªåŠ¨æ¢å¤\n" NOR);
                     seteuid(getuid());
                     dest = this_player();
 //	            this_player()->set_temp("block_msg/all", 1);
@@ -37,7 +37,7 @@ string process_input(string str)
                     kill_time=0;
             }
                         if (cmd_time>14){
-                tell_object( this_object(), "\nÄãµÄÖ¸ÁîÊäÈë¹ı¿ìÁË¡£\nÕâ¸öÖ¸Áî±»È¡ÏûÁË!\n"  );
+                tell_object( this_object(), "\nä½ çš„æŒ‡ä»¤è¾“å…¥è¿‡å¿«äº†ã€‚\nè¿™ä¸ªæŒ‡ä»¤è¢«å–æ¶ˆäº†!\n"  );
                 cmd_time=0;
                 kill_time++;
             }
@@ -54,8 +54,8 @@ string process_input(string str)
         repeat_cnt++;
         if( repeat_cnt > MAX_REPEAT && !wizardp(this_object())) {
             tell_object( this_object(),
-                HIR "\nÄãÊäÈëÁË¹ı¶àµÄÖØ¸´Ö¸Áî¡£\n"
-                "\nÄãµÄÖ¸Áî±»ÔİÊ±·â±ÕÁË!!¶ş·ÖÖÓºó×Ô¶¯»Ö¸´!!\n" NOR);
+                HIR "\nä½ è¾“å…¥äº†è¿‡å¤šçš„é‡å¤æŒ‡ä»¤ã€‚\n"
+                "\nä½ çš„æŒ‡ä»¤è¢«æš‚æ—¶å°é—­äº†!!äºŒåˆ†é’Ÿåè‡ªåŠ¨æ¢å¤!!\n" NOR);
 //	this_object()->set_temp("block_msg/all", 1);
         this_object()->set_temp("disable_inputs",1);
         this_object()->start_busy(50);
@@ -118,7 +118,7 @@ int set_alias(string verb, string replace)
     } else {
         if( !mapp(alias) ) alias = ([ verb:replace ]);
         else if( sizeof(alias) > MAX_ALIASES )
-            return notify_fail("ÄúÉè¶¨µÄ alias Ì«¶àÁË£¬ÇëÏÈÉ¾µôÒ»Ğ©²»³£ÓÃµÄ¡£\n");
+            return notify_fail("æ‚¨è®¾å®šçš„ alias å¤ªå¤šäº†ï¼Œè¯·å…ˆåˆ æ‰ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");
         else alias[verb] = replace;
         return 1;
     }
@@ -134,6 +134,6 @@ void recoveralias()
         this_object()->set_temp("disable_inputs",0);
 //	this_player()->set_temp("block_msg/all", 0);
         this_player()->set_temp("disable_inputs",0);
-     message("system", HIG "\nÂıÂıµØÏµÍ³»Ö¸´ÁËÄãµÄÖ¸Áî....\n\n" NOR,
+     message("system", HIG "\næ…¢æ…¢åœ°ç³»ç»Ÿæ¢å¤äº†ä½ çš„æŒ‡ä»¤....\n\n" NOR,
 		this_object());
 }
