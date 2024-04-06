@@ -42,7 +42,7 @@ int do_invite(string arg)
 	if((string)me->query("id") != (string)query("owner"))
 	return 0;
 	set("invite",arg);
-	write("ÄãÑûÇë"+arg+"À´ÄãµÄ·¿¼ä¡£\n");
+	write("ä½ é‚€è¯·"+arg+"æ¥ä½ çš„æˆ¿é—´ã€‚\n");
 	return 1;
 }
 
@@ -51,7 +51,7 @@ int do_invite(string arg)
 	string oldowner;
 	oldowner = (string)query("owner");
 	set("owner",arg);
-	write("Äã½«·¿¼äµÄÖ÷ÈËÔİÊ±ÉèÎª"+arg+"¡£\n");
+	write("ä½ å°†æˆ¿é—´çš„ä¸»äººæš‚æ—¶è®¾ä¸º"+arg+"ã€‚\n");
 	call_out("set_back",60, oldowner);
 	return 1;
 }
@@ -71,20 +71,20 @@ varargs int valid_leave(object me, string dir)
 
         if ((int)me->query_condition("killer")>1)
         {
-        write("ÄãÕıÔÚ±»Í¨¼­ÖĞ£¬²»ÄÜ½øÈë×Ô¼ºµÄÃÅÅÉ¡£\n");
-        write("Äã±»¼¸¸öµÜ×Ó´òÁË³öÈ¥¡£\n");
+        write("ä½ æ­£åœ¨è¢«é€šè¾‘ä¸­ï¼Œä¸èƒ½è¿›å…¥è‡ªå·±çš„é—¨æ´¾ã€‚\n");
+        write("ä½ è¢«å‡ ä¸ªå¼Ÿå­æ‰“äº†å‡ºå»ã€‚\n");
 	call_out("kicking", 0, me);
         me->unconcious();
-	return notify_fail("Äã²»ÄÜ½øÈ¥!\n");
+	return notify_fail("ä½ ä¸èƒ½è¿›å»!\n");
         }
 
         if ( me->query("family/family_name") != (string)query("class"))
         {
-        write("ÕâÊÇ±ğÈËµÄÃÅÅÉ,Äã²»ÄÜÂÒ×ß¡£\n");
-        write("Äã±»¼¸¸öµÜ×Ó´òÁË³öÈ¥¡£\n");
+        write("è¿™æ˜¯åˆ«äººçš„é—¨æ´¾,ä½ ä¸èƒ½ä¹±èµ°ã€‚\n");
+        write("ä½ è¢«å‡ ä¸ªå¼Ÿå­æ‰“äº†å‡ºå»ã€‚\n");
 	call_out("kicking", 0, me);
         me->unconcious();
-	return notify_fail("Äã²»ÄÜ½øÈ¥!\n");
+	return notify_fail("ä½ ä¸èƒ½è¿›å»!\n");
         }
         else {
 		inv=all_inventory(me);
@@ -93,7 +93,7 @@ varargs int valid_leave(object me, string dir)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character() && userp(inv[sizeinv])  )  
-     				return notify_fail("ÄãÏë½øÈ¥¹ÕÂôÈË¿Ú£¿\n");
+     				return notify_fail("ä½ æƒ³è¿›å»æ‹å–äººå£ï¼Ÿ\n");
        		
 		}
         return ::valid_leave(me, dir);
