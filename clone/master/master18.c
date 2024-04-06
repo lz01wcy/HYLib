@@ -4,14 +4,14 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("°¢·É", ({ "afei", "fei","feia" }) );
-	set("gender", "ÄĞĞÔ" );
-        set("title", HIG "ÇéÎªºÎÎï" NOR);
+	set_name("é˜¿é£", ({ "afei", "fei","feia" }) );
+	set("gender", "ç”·æ€§" );
+        set("title", HIG "æƒ…ä¸ºä½•ç‰©" NOR);
 	set("age", 20);
 	set("int", 30);
 	set("per", 30);
 	set("long",
-		"ÌìÏÂÎŞµĞ£­£­£­°¢·É\n"
+		"å¤©ä¸‹æ— æ•Œï¼ï¼ï¼é˜¿é£\n"
 		);
         set("force_factor", 200);
         set("max_gin", 3000);
@@ -49,10 +49,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIR"ÂíÈçÁú"NOR, ({ "master ma", "master"}) );
-        set("title", HIC"Ä±²Æº¦Ãü"NOR);
+	set_name(HIR"é©¬å¦‚é¾™"NOR, ({ "master ma", "master"}) );
+        set("title", HIC"è°‹è´¢å®³å‘½"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -77,7 +77,7 @@ if (random(2)==0)
 int accept_fight(object me)
 {
         command("grin");
-        command("say ÎÒµÄ½£ÊÇÓÃÀ´É±ÈËµÄ£¬²»ÊÇÓÃÀ´±È»®×ÅÍæµÄ£®");
+        command("say æˆ‘çš„å‰‘æ˜¯ç”¨æ¥æ€äººçš„ï¼Œä¸æ˜¯ç”¨æ¥æ¯”åˆ’ç€ç©çš„ï¼");
         return 0;
 }
 
@@ -107,7 +107,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

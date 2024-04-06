@@ -1,17 +1,17 @@
-// jitui.c ¼¦ÍÈ
+// jitui.c é¸¡è…¿
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Ãæ", ({ "mian" }));
+	set_name("é¢", ({ "mian" }));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long", "Ò»ÍëÈÈÆøÌÚÌÚµÄÌÀÃæ¡£\n");
-		set("unit", "Íë");
+		set("long", "ä¸€ç¢—çƒ­æ°”è…¾è…¾çš„æ±¤é¢ã€‚\n");
+		set("unit", "ç¢—");
 		set("value", 100);
 		set("food_remaining", 3);
 		set("food_supply", 30);

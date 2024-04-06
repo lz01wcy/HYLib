@@ -1,5 +1,5 @@
 // z-dan.c
-// ĞÇĞÇ(lywin)Á¶µ¤ÈÎÎñ¸½ÊôµÀ¾ß
+// æ˜Ÿæ˜Ÿ(lywin)ç‚¼ä¸¹ä»»åŠ¡é™„å±é“å…·
 #include <ansi.h>
 inherit ITEM;
 
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-	set_name("»ØÑô¸à", ({"neilidan", "neilidan"}));
+	set_name("å›é˜³è†", ({"neilidan", "neilidan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å»ØÑô¸à¡£Äã¿ÉÒÔÓÃchiÀ´³ÔËü¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—å›é˜³è†ã€‚ä½ å¯ä»¥ç”¨chiæ¥åƒå®ƒã€‚\n");
 		set("value", 50000);
 	}
 	setup();
@@ -28,31 +28,31 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»·¨³Ô¶«Î÷¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ²¡æ³•åƒä¸œè¥¿ã€‚\n");
 
         if(!me->is_fighting())
-        return notify_fail("»ØÑô¸àÊÇÔÚÕ¾¶·ÖĞ¼±ÓÃµÄ£¡\n");
+        return notify_fail("å›é˜³è†æ˜¯åœ¨ç«™æ–—ä¸­æ€¥ç”¨çš„ï¼\n");
 
         if( (int)me->query("neili") * 100 / (int)me->query("max_neili") >= 40)
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦»¹¶à×ÅÄØ£¡\n");
+        return notify_fail("ä½ ç°åœ¨å†…åŠ›è¿˜å¤šç€å‘¢ï¼\n");
 
 	if ( me->query("max_neili") < 600 )
 	{
         me->add("neili", 1);
-		message_vision(HIR "$N³ÔÏÂÒ»¿Å»ØÑô¸à£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´¹¦Á¦²»¹»£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€é¢—å›é˜³è†ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥åŠŸåŠ›ä¸å¤Ÿï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 	}
             else if ( (int)me->query_condition("neilidan") > 0 )
 	{
         me->add("neili", 1);
-		message_vision(HIR "$N³ÔÏÂÒ»¿Å»ØÑô¸à£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€é¢—å›é˜³è†ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 	}
 	else
 	{
         me->add("neili", me->query("max_neili")/2);
-        message_vision(HIG "$N³ÔÏÂÒ»¿Å»ØÑô¸à£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÄãµÄÄÚÁ¦Ìá¸ßÁË!\n" NOR, me);
+        message_vision(HIG "$Nåƒä¸‹ä¸€é¢—å›é˜³è†ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä½ çš„å†…åŠ›æé«˜äº†!\n" NOR, me);
 	}
 
         me->apply_condition("neilidan", 2);

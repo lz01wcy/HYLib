@@ -6,12 +6,12 @@ inherit NECK;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});  
 void create()
 {
-	set_name((order[random(13)])+"´ºÓêÏîÁ´"NOR, ({ "necklace1"}));
+	set_name((order[random(13)])+"æ˜¥é›¨é¡¹é“¾"NOR, ({ "necklace1"}));
 	set("weight", 500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "´®");
+		set("unit", "ä¸²");
 		set("value", 2500);
 		set("material", "gold");
 		set("armor_prop/armor", 63);

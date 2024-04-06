@@ -1,4 +1,4 @@
-// xiandan.c œ…µ§
+// xiandan.c ‰ªô‰∏π
 
 #include <ansi.h>
 
@@ -6,29 +6,29 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "∏£‘µµ§" NOR, ({ "kar dan", "dan", "kar" }) );
+        set_name(HIY "Á¶èÁºò‰∏π" NOR, ({ "kar dan", "dan", "kar" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "“ªø≈‘∞‘∞µƒœ…µ§£¨æ›Àµ≥‘¡Àø…“‘‘ˆ«ø‘À∆¯°£\n");
+                set("long", "‰∏ÄÈ¢óÂõ≠Âõ≠ÁöÑ‰ªô‰∏πÔºåÊçÆËØ¥ÂêÉ‰∫ÜÂèØ‰ª•Â¢ûÂº∫ËøêÊ∞î„ÄÇ\n");
                 set("value", 10000);
-                set("unit", "¡£");
+                set("unit", "Á≤í");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$N“ª—ˆ≤±£¨ÕÃœ¬¡À“ª¡£" + this_object()->name() +
-                       "°£\n", me);
+        message_vision("$N‰∏Ä‰ª∞ËÑñÔºåÂêû‰∏ã‰∫Ü‰∏ÄÁ≤í" + this_object()->name() +
+                       "„ÄÇ\n", me);
         if (me->query("kar") >= 30)
         {
-                message_vision("$N∫ˆ»ª°∞Õ€Õ€°±£¨Õ¬¡À“ªµÿ°£\n", me);
-                tell_object(me, "ƒ„æıµ√◊Ï¿Ô∑«≥£µƒø‡°£\n");
+                message_vision("$NÂøΩÁÑ∂‚ÄúÂìáÂìá‚ÄùÔºåÂêê‰∫Ü‰∏ÄÂú∞„ÄÇ\n", me);
+                tell_object(me, "‰Ω†ËßâÂæóÂò¥ÈáåÈùûÂ∏∏ÁöÑËã¶„ÄÇ\n");
         } else
         {
-                tell_object(me, HIG "ƒ„ø™ ºæıµ√ƒ„µƒ‘À∆¯ø™ º≤ª¥Ì∆¿¥£¨ƒ„µƒ∏£‘µ÷∏ ˝Ã·…˝¡À°£\n" NOR);
+                tell_object(me, HIG "‰Ω†ÂºÄÂßãËßâÂæó‰Ω†ÁöÑËøêÊ∞îÂºÄÂßã‰∏çÈîôËµ∑Êù•Ôºå‰Ω†ÁöÑÁ¶èÁºòÊåáÊï∞ÊèêÂçá‰∫Ü„ÄÇ\n" NOR);
                 me->add("kar", 1);
         }
 

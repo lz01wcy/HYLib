@@ -8,21 +8,21 @@ inherit F_AUTOLOAD;
 
 void create()
 {
-        set_name(HIY"ÎŞ×ÖÌìÊé"NOR, ({"skybook","book"}) );
+        set_name(HIY"æ— å­—å¤©ä¹¦"NOR, ({"skybook","book"}) );
         set_weight(10);
         set("no_steal", 1);
         set("no_beg", 1);
         set("no_get", 1);
-        set("no_drop","ÍÛ£¿ÌìÊé¶¼Ïë¶ªµô,Ğ¡ĞÄÔâÌìÇ´¡£\n\n");
+        set("no_drop","å“‡ï¼Ÿå¤©ä¹¦éƒ½æƒ³ä¸¢æ‰,å°å¿ƒé­å¤©è°´ã€‚\n\n");
         set("long",@LONG
-´ËÄËµ±ÄêÏÉÈËÔùÓÚ"µ°Éú"µÄ±¦Îï,ÒòÎªµ°Éú²»Ê¶×Ö,ÏÉÈËÊ©ÁË·¨,
-°ÑÌìÊé±ä³ÉÁËÎŞ×ÖÌìÊé,ºÇºÇ!¾ÍÊÇÎÄÃ¤Ò²ÄÜ¶Á¶®,¿ì¿´¿´(kan)°É£¡
+æ­¤ä¹ƒå½“å¹´ä»™äººèµ äº"è›‹ç”Ÿ"çš„å®ç‰©,å› ä¸ºè›‹ç”Ÿä¸è¯†å­—,ä»™äººæ–½äº†æ³•,
+æŠŠå¤©ä¹¦å˜æˆäº†æ— å­—å¤©ä¹¦,å‘µå‘µ!å°±æ˜¯æ–‡ç›²ä¹Ÿèƒ½è¯»æ‡‚,å¿«çœ‹çœ‹(kan)å§ï¼
 LONG );
         if( clonep() )
                         set_default_object(__FILE__);
         else
        {
-                set("treasure",1);set("unit", "±¾");
+                set("treasure",1);set("unit", "æœ¬");
                 set("material", "unknow");
         }
 }

@@ -1,18 +1,18 @@
-// ²¼Â×Ï£¶àÉñ±Ş
+// å¸ƒä¼¦å¸Œå¤šç¥é­
 #include <ansi.h>
 #include <weapon.h>
 inherit WHIP;
 
 void create()
 {
-        set_name(HIC"²¼Â×Ï£¶àÉñ±Ş"NOR, ({"magic whipd", "mwhipd"}));
+        set_name(HIC"å¸ƒä¼¦å¸Œå¤šç¥é­"NOR, ({"magic whipd", "mwhipd"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIC"ÕâÊÇÒ»°Ñ²¼Â×Ï£¶àÉñ±Ş,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIC"è¿™æ˜¯ä¸€æŠŠå¸ƒä¼¦å¸Œå¤šç¥é­,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",10);

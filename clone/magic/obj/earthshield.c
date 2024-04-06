@@ -1,4 +1,4 @@
-// shield.c Å£Æ¤¶Ü
+// shield.c ç‰›çš®ç›¾
 #include "ansi.h"
 #include "armor.h"
  
@@ -6,14 +6,14 @@ inherit SHIELD;
  
 void create()
 {
-	set_name(YEL"´óµØÖ®¶Ü"NOR, ({ "earth shield", "earthshield" }) );
+	set_name(YEL"å¤§åœ°ä¹‹ç›¾"NOR, ({ "earth shield", "earthshield" }) );
 	set_weight(9000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "leather");
-		set("unit", "Ãæ");
-set("long", HIR"ÕâÊÇÒ»Ãæ´óµØÖ®¶Ü,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»¡£\n"NOR);
+		set("unit", "é¢");
+set("long", HIR"è¿™æ˜¯ä¸€é¢å¤§åœ°ä¹‹ç›¾,åšå·¥æå…¶ç²¾è‡´ã€‚æ˜¯ä¼—ç¥çš„é—äº§ä¹‹ä¸€ã€‚\n"NOR);
 set("no_put", 1);
 		set("no_get", 1);
 		set("no_drop", 1);
@@ -31,8 +31,8 @@ set("no_put", 1);
                         "min_skill":  500,
                              "max_skill": 1000,              
                 ]) );	}
-                set("wear_msg",YEL"Ò»Õó´óµØµÄ¹âÃ¢¹ıºó £¬$NµÄÊÖÉÏ¶à³öÁËÃæ´óµØÖ®¶Ü¡£\n"NOR);
-                set("unequip_msg",YEL"$N°Ñ´óµØÖ®¶Ü·ÅÏÂ¡£´óµØµÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",YEL"ä¸€é˜µå¤§åœ°çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„æ‰‹ä¸Šå¤šå‡ºäº†é¢å¤§åœ°ä¹‹ç›¾ã€‚\n"NOR);
+                set("unequip_msg",YEL"$NæŠŠå¤§åœ°ä¹‹ç›¾æ”¾ä¸‹ã€‚å¤§åœ°çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 		set("armor_prop/armor",400);
 set("armor_prop/damage", 100);
 	setup();
@@ -44,7 +44,7 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(4)==0)
 {
-message_vision(YEL"$NµÄ´óµØÖ®¶ÜÓë´óµØ¹²Ãù£¬Ò»¸öµØ´Ì´ÌÏò$n£¡\n"NOR, me,ob);
+message_vision(YEL"$Nçš„å¤§åœ°ä¹‹ç›¾ä¸å¤§åœ°å…±é¸£ï¼Œä¸€ä¸ªåœ°åˆºåˆºå‘$nï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3)
 {
 a = (int)me->query_skill("magic-earth", 1);
@@ -54,9 +54,9 @@ a=a;
                 ob->receive_wound("qi", a);
 if (!ob->is_busy())
 ob->start_busy(3);
-message_vision(HIR"$n±»µØ´Ì´ÌµÄ²»ÄÜ¶¯µ¯!\n"NOR, me,ob);
+message_vision(HIR"$nè¢«åœ°åˆºåˆºçš„ä¸èƒ½åŠ¨å¼¹!\n"NOR, me,ob);
 }
-else message_vision(HIG"µØ´ÌÔÚ$nÉí²à´Ì¹ı£¬$nºÁ·¢ÎŞÉË¡£!\n"NOR, me,ob);
+else message_vision(HIG"åœ°åˆºåœ¨$nèº«ä¾§åˆºè¿‡ï¼Œ$næ¯«å‘æ— ä¼¤ã€‚!\n"NOR, me,ob);
 }
 else   return damage;
 }

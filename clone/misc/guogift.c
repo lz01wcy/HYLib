@@ -1,17 +1,17 @@
-// yuebing ÔÂ±ı
+// yuebing æœˆé¥¼
 
 
 inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name(RED"¹úÇì½Úºì°ü"NOR, ({"hongbao", "gift"}));
+        set_name(RED"å›½åº†èŠ‚çº¢åŒ…"NOR, ({"hongbao", "gift"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ¹úÇì½Ú¸ø´ó¼ÒµÄÀñÎï.¡£\n");
-                set("unit", "Ö»");
+                set("long", "è¿™æ˜¯å›½åº†èŠ‚ç»™å¤§å®¶çš„ç¤¼ç‰©.ã€‚\n");
+                set("unit", "åª");
                 set("no_get", 1);
                 set("no_give", 1);
            
@@ -26,13 +26,13 @@ int do_open()
 me = this_player();
 if(!me->query("marks/hongbao"))
 {
-message_vision("$NÓÃ×Å²ü¶¶µÄË«ÊÖ»º»ºµØ´ò¿ªÁËºì°ü¡£\n",me);
+message_vision("$Nç”¨ç€é¢¤æŠ–çš„åŒæ‰‹ç¼“ç¼“åœ°æ‰“å¼€äº†çº¢åŒ…ã€‚\n",me);
 me -> add("combat_exp",5000);
 me -> add("potential",3000);
-tell_object(me,"Äã±»½±ÀøÁËÎåÇ§µãÊµÕ½¾­Ñé,ÈıÇ§µãÇ±ÄÜ¡£\n");
+tell_object(me,"ä½ è¢«å¥–åŠ±äº†äº”åƒç‚¹å®æˆ˜ç»éªŒ,ä¸‰åƒç‚¹æ½œèƒ½ã€‚\n");
 me->set("marks/hongbao",1);
 }
-else tell_object(me,"ÄãÒÑ¾­ÄÃ¹ıÒ»´Îºì°üÁË£¬»¹ÏëÄÃ£¿\n");
+else tell_object(me,"ä½ å·²ç»æ‹¿è¿‡ä¸€æ¬¡çº¢åŒ…äº†ï¼Œè¿˜æƒ³æ‹¿ï¼Ÿ\n");
 destruct(this_object());
 return 1;
 }

@@ -9,11 +9,11 @@ void create()
 
 {
     
-   set_name(HIC"É³À­Ë¹"NOR, ({ "tian moshen" , "tianmoshen" }));
-                set("gender", "ÄĞĞÔ");
+   set_name(HIC"æ²™æ‹‰æ–¯"NOR, ({ "tian moshen" , "tianmoshen" }));
+                set("gender", "ç”·æ€§");
        set("long",
-"Ò»¸ö¸ß´óÎŞ±È£¬È«ÉíÉÁµçµÄÄĞ×Ó¡£
-¡£\n");
+"ä¸€ä¸ªé«˜å¤§æ— æ¯”ï¼Œå…¨èº«é—ªç”µçš„ç”·å­ã€‚
+ã€‚\n");
 //              set("attitude", "aggressive");
                set("vendetta/authority",1);
 
@@ -26,7 +26,7 @@ set("per",40);
 set("zhuanbest",1);  
 set("magicgift",3);  
 
-set("title",HIC+"ÌìÄ§Éñ"+NOR);
+set("title",HIC+"å¤©é­”ç¥"+NOR);
       set("dex",100);
       set("con",100);
      set("str" ,100);
@@ -85,7 +85,7 @@ void invocation(object who, int level)
 if (!wizardp(who))
         who->apply_condition("zdizi_busy",4);
 	message("vision",
-		 name() + "Í»È»ÀäÒ÷Ò»Éù£¡\n" NOR,
+		 name() + "çªç„¶å†·åŸä¸€å£°ï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);
@@ -114,8 +114,8 @@ int heal_up()
 void leave()
 {
 	object owner;
-	message("vision",HIC"ÓÉÓÚÕ½¶·ÒÑ¾­½áÊø£¡\n\n"
-		+ name() + HIC"»¯ÎªÒ»Æ¬ÉÁµç£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+	message("vision",HIC"ç”±äºæˆ˜æ–—å·²ç»ç»“æŸï¼\n\n"
+		+ name() + HIC"åŒ–ä¸ºä¸€ç‰‡é—ªç”µï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

@@ -1,4 +1,4 @@
-// fcrystal.c Ï¡ÊÀË®¾§
+// fcrystal.c ç¨€ä¸–æ°´æ™¶
 
 #include <ansi.h>
 #include <armor.h>
@@ -7,23 +7,23 @@ inherit HEAD;
 
 void create()
 {
-	set_name(HIM "Ï¡ÊÀË®¾§" NOR, ({ "flawless crystal" }) );
+	set_name(HIM "ç¨€ä¸–æ°´æ™¶" NOR, ({ "flawless crystal" }) );
 	set_weight(40);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("long", HIM "Ò»¿é¹â²ÊÕÕÈËµÄ´óË®¾§£¬ÃÀÂØ"
-                            "ÃÀÛ¼£¬ÊÀËùº±ÓĞ¡£\n" NOR);
+                set("long", HIM "ä¸€å—å…‰å½©ç…§äººçš„å¤§æ°´æ™¶ï¼Œç¾ä»‘"
+                            "ç¾å¥‚ï¼Œä¸–æ‰€ç½•æœ‰ã€‚\n" NOR);
                 set("value", 10000);
-		set("unit", "¿é");
+		set("unit", "å—");
                 set("armor_prop/percao", 17);
                 set("armor_prop/karay",17);
 set("armor_prop/armor", 67);
 
-                set("wear_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIC "$N" HIC "è½»è½»åœ°æŠŠ$n"
+                    HIC "æˆ´åœ¨å¤´ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è½»è½»åœ°æŠŠ$n"
+                    HIC "ä»å¤´ä¸Šæ‘˜äº†ä¸‹æ¥ã€‚\n" NOR);
 	}
         setup();
 }

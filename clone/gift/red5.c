@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÁéÖ¥
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´çµèŠ
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,21 +14,21 @@ void init()
 }
 void create()
 {
-        set_name(HIY"±±¾©"NOR, ({"xyanhu"}));
+        set_name(HIY"åŒ—äº¬"NOR, ({"xyanhu"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
 set("liwu",1);
 set("no_steal",1);
 set("no_beg",1);
     set("no_put",1);
-    set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸ö±±¾©£¨xyanhu),¾İËµËûËµº£ÑóµÄÈÙÓşÍæ¼Ò£¬\nËû¿´ÆğÀ´ÈıÊ®¶àËêÁË£¬ÓĞĞ©ÖåÎÆºÍ°×·¢£¬Ò»¸±ÊÜÆø°üµÄÄ£Ñù£¬\nËûÅã×ÅĞ¦Á³£¬ÈÃÄã¾õµÃÏëÆÛ¸º(qifu)Ëû¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªåŒ—äº¬ï¼ˆxyanhu),æ®è¯´ä»–è¯´æµ·æ´‹çš„è£èª‰ç©å®¶ï¼Œ\nä»–çœ‹èµ·æ¥ä¸‰åå¤šå²äº†ï¼Œæœ‰äº›çš±çº¹å’Œç™½å‘ï¼Œä¸€å‰¯å—æ°”åŒ…çš„æ¨¡æ ·ï¼Œ\nä»–é™ªç€ç¬‘è„¸ï¼Œè®©ä½ è§‰å¾—æƒ³æ¬ºè´Ÿ(qifu)ä»–ã€‚\n");
 
 		set("value", 0);
 	}
@@ -38,12 +38,13 @@ set("no_beg",1);
 int do_eat(string arg)
 {
 	if (!id(arg))
-        return notify_fail("ÄãÒªÆÛ¸ºË­£¿\n");
+        return notify_fail("ä½ è¦æ¬ºè´Ÿè°ï¼Ÿ\n");
         this_player()->start_busy(20);
         this_player()->add("max_neili",10);
         this_player()->add("potential",500);
         this_player()->add("combat_exp",1000);
-        message_vision("$N³É¹¦µÄÆÛ¸ºÁË±±¾©£¬Ëû¸øÄãÏ×ÉÏÁË1000¾­Ñé500Ç±ÄÜºÍ10ÄÚÁ¦ÉÏÏŞ\n", this_player());
+        message_vision("$NæˆåŠŸçš„æ¬ºè´Ÿäº†åŒ—äº¬ï¼Œä»–ç»™ä½ çŒ®ä¸Šäº†1000ç»éªŒ500æ½œèƒ½å’Œ10å†…åŠ›ä¸Šé™
+\n", this_player());
 	destruct(this_object());
 	return 1;
 }

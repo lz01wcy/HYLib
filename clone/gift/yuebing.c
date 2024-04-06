@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÑ©Á«
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´é›ªè²
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,9 +14,9 @@ void init()
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
 string *nm1_jp =({
-"ÎåÈÊÔÂ±ı","¶¹É³ÔÂ±ı","±ùÌÇÔÂ±ı","Ö¥ÂéÔÂ±ı","»ğÍÈÔÂ±ı","»¨±ßÔÂ±ı","ÀÏÊÙĞÇÔÂ±ı","¹ûÊßÔÂ±ı","±ùÆ¤ÔÂ±ı","ËÖÆ¤ÔÂ±ı",
-"²èÒ¶ÔÂ±ı","Ò¬ÄÌÔÂ±ı","º£Î¶ÔÂ±ı","Ò©ÉÅÔÂ±ı","ÒôÀÖÔÂ±ı","ÃÔÄãÔÂ±ı","ÇåÕæÔÂ±ı","Ò¬ÈØÔÂ±ı","Ë®¾§¶¹ÈØÔÂ±ı","ÆÏÌÑÈíÏÚÔÂ±ı",
-"µ¾Ïã´åÔÂ±ı","Ë®¾§ÔÂ±ı","ÈËÈâÔÂ±ı","Ë®¹ûÔÂ±ı",
+"äº”ä»æœˆé¥¼","è±†æ²™æœˆé¥¼","å†°ç³–æœˆé¥¼","èŠéº»æœˆé¥¼","ç«è…¿æœˆé¥¼","èŠ±è¾¹æœˆé¥¼","è€å¯¿æ˜Ÿæœˆé¥¼","æœè”¬æœˆé¥¼","å†°çš®æœˆé¥¼","é…¥çš®æœˆé¥¼",
+"èŒ¶å¶æœˆé¥¼","æ¤°å¥¶æœˆé¥¼","æµ·å‘³æœˆé¥¼","è¯è†³æœˆé¥¼","éŸ³ä¹æœˆé¥¼","è¿·ä½ æœˆé¥¼","æ¸…çœŸæœˆé¥¼","æ¤°è“‰æœˆé¥¼","æ°´æ™¶è±†è“‰æœˆé¥¼","è‘¡è„è½¯é¦…æœˆé¥¼",
+"ç¨»é¦™æ‘æœˆé¥¼","æ°´æ™¶æœˆé¥¼","äººè‚‰æœˆé¥¼","æ°´æœæœˆé¥¼",
 });
 string *nm2_jp =({
 "yue bing","yue bing",
@@ -28,12 +28,12 @@ int i = random(sizeof(nm1_jp));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸öÆ¯ÁÁµÄÔÂ±ı¡£\n");
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªæ¼‚äº®çš„æœˆé¥¼ã€‚\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
-    set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 set("liwu",1);
 set("no_drop", 1);
 set("no_put", 1);
@@ -54,13 +54,13 @@ int do_eat(string arg)
 object corpse;
         object me = this_player();
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy())
-	return notify_fail("ÄãÕıÃ¦×ÅÄØ£¿\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Ÿ\n");
 
 if (query("eat")>1)
 {
-message_vision(HIW "$N³ÔÁËÒ»¿Ú"+query("name")+HIW"ºÃ³Ô¼«ÁË!\n" NOR, me);
+message_vision(HIW "$Nåƒäº†ä¸€å£"+query("name")+HIW"å¥½åƒæäº†!\n" NOR, me);
 me->add("food",10);
 me->start_busy(2);
 add("eat",-1);
@@ -76,12 +76,12 @@ else
         me->add("max_neili", 8);
         me->add("combat_exp", exp);
         me->add("potential", pot);
-tell_object(me,HIY"Äã±»½±ÀøÁË£º8µãÄÚÁ¦ÉÏÏŞ\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);
+tell_object(me,HIY"ä½ è¢«å¥–åŠ±äº†ï¼š8ç‚¹å†…åŠ›ä¸Šé™\n" +
+             chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+            chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);
 
-        message_vision(HIW "$N³ÔÏÂÒ»¸ö"+query("name")+HIW"ºÃ³Ô¼«ÁË£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÄãºÃÏñ±äÁËÒ»¸öÈËËÆµÄ!\n" NOR, me);
+        message_vision(HIW "$Nåƒä¸‹ä¸€ä¸ª"+query("name")+HIW"å¥½åƒæäº†ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä½ å¥½åƒå˜äº†ä¸€ä¸ªäººä¼¼çš„!\n" NOR, me);
 /*
 if (me->query("weapon/lv") &&
 (int)me->query("weapon/lv",1)<100)
@@ -89,7 +89,7 @@ if (me->query("weapon/lv") &&
   me->add("weapon/lv",2);
 if (me->query("weapon/lv",1)>100)
 me->set("weapon/lv",100);
-message_vision(HIW"$NµÄ×ÔÔìÎäÆ÷µÈ¼¶Ôö¼ÓÁË£¡ÖØĞÂµÇÂ½ºóÓĞĞ§!!\n"NOR, this_player());
+message_vision(HIW"$Nçš„è‡ªé€ æ­¦å™¨ç­‰çº§å¢åŠ äº†ï¼é‡æ–°ç™»é™†åæœ‰æ•ˆ!!\n"NOR, this_player());
 }
 if (me->query("jia/lv")&&
 me->query("jia/lv",1)<150)
@@ -97,10 +97,10 @@ me->query("jia/lv",1)<150)
   me->add("jia/lv",2);
 if (me->query("jia/lv",1)>150)
 me->set("jia/lv",150);
-message_vision(HIW"$NµÄ×ÔÔì¼×ÒÂµÈ¼¶Ôö¼ÓÁË£¡ÖØĞÂµÇÂ½ºóÓĞĞ§!!\n"NOR, this_player());
+message_vision(HIW"$Nçš„è‡ªé€ ç”²è¡£ç­‰çº§å¢åŠ äº†ï¼é‡æ–°ç™»é™†åæœ‰æ•ˆ!!\n"NOR, this_player());
 }
 me->delete("last_getzhen");
-message_vision(HIW"$NÔÙ´Î»ñµÃÄÃÒøÕëµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIW"$Nå†æ¬¡è·å¾—æ‹¿é“¶é’ˆçš„æœºä¼šï¼\n"NOR, this_player());
 */
 	destruct(this_object());
 }

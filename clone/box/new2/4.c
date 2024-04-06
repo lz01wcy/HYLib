@@ -1,4 +1,4 @@
-// »Ø¸´¼Á
+// å›å¤å‰‚
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIR"Éñ¸£Íè"NOR, ({ "shenfu wan", "wan" }) );
+        set_name(HIR"ç¥ç¦ä¸¸"NOR, ({ "shenfu wan", "wan" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÉñÆæµÄÒ©Íè¿ÉÒÔÊ¹ÓÃ(use id)¡£\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªç¥å¥‡çš„è¯ä¸¸å¯ä»¥ä½¿ç”¨(use id)ã€‚\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 50000);
                 set("zhen", 1);
         }
@@ -47,15 +47,15 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
 //        if(me->is_busy() )
-//                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+//                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
         if( !objectp(ob = present("shenfu wan", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(HIY"\n$n"HIY"Ò»¿Ú³ÔÏÂÁË$N,"HIY" $n¾õµÄÔËÆøÎŞ±ÈµÄºÃ!  \n"NOR,this_object(),me);
+        message_vision(HIY"\n$n"HIY"ä¸€å£åƒä¸‹äº†$N,"HIY" $nè§‰çš„è¿æ°”æ— æ¯”çš„å¥½!  \n"NOR,this_object(),me);
 me->add("qi",500);
 me->add("eff_qi",500);
         
@@ -69,7 +69,7 @@ if (me->query("eff_qi") > me->query("max_qi"))
 me->set("eff_qi",me->query("max_qi"));
         }
 		me->set_temp("apply/karey", 200);
-message_vision(HIY"$N¾õµÄÈ«ÉíÔËÆøÎŞ±ÈµÄºÃ!!\n"NOR, me);
+message_vision(HIY"$Nè§‰çš„å…¨èº«è¿æ°”æ— æ¯”çš„å¥½!!\n"NOR, me);
         destruct(this_object());
 
         return 1;

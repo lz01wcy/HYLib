@@ -1,24 +1,24 @@
-// ºì°ü
+// çº¢åŒ…
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(HIR"ºì°ü"NOR, ({"hong bao", "bao", "hong"}));
+	set_name(HIR"çº¢åŒ…"NOR, ({"hong bao", "bao", "hong"}));
 	set_weight(10);
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
 set("no_steal",1);
 set("no_beg",1);
     set("no_put",1);
-    set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃºìÖ½ÖÆ×÷¶ø³ÉµÄ"+HIR"ºì°ü£¬"NOR+"ËÆºõ¿ÉÒÔËº¿ª(opengift)¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨çº¢çº¸åˆ¶ä½œè€Œæˆçš„"+HIR"çº¢åŒ…ï¼Œ"NOR+"ä¼¼ä¹å¯ä»¥æ’•å¼€(opengift)ã€‚\n");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -33,7 +33,7 @@ object ob;
 //       ob=new("/clone/money/gold");
 //        ob->set_amount(50+random(100));
 //        ob->move(this_player());
-	message_vision("$N´ò¿ªÁËºì°ü£¬Ö»¾õµÃ×Ô¼ºÓÖ±äÀûº¦ÁËÒ»Ğ© !\n", this_player());
+	message_vision("$Næ‰“å¼€äº†çº¢åŒ…ï¼Œåªè§‰å¾—è‡ªå·±åˆå˜åˆ©å®³äº†ä¸€äº› !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

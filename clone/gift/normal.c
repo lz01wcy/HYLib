@@ -4,7 +4,7 @@
 string give_gift();
 
 private mixed *story = ({
-        "½­ºş·çÆ½ÀË¾²£¬²¨À½²»¾ª¡£",
+        "æ±Ÿæ¹–é£å¹³æµªé™ï¼Œæ³¢æ¾œä¸æƒŠã€‚",
 });
 
 void create()

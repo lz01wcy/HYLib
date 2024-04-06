@@ -1,4 +1,4 @@
-// °µºÚºËÈÚÊõ¾íÖá
+// æš—é»‘æ ¸èæœ¯å·è½´
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIC"Ìì±ø·û"NOR, ({ "tianbing fu", "fu" }) );
+        set_name(HIC"å¤©å…µç¬¦"NOR, ({ "tianbing fu", "fu" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ö¿ÉÒÔÊ¹ÓÃµÄÉñ·û¡£¿ÉÒÔÊ¹ÓÃ(use)\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªå¯ä»¥ä½¿ç”¨çš„ç¥ç¬¦ã€‚å¯ä»¥ä½¿ç”¨(use)\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 150000);
                 set("zhen", 3);
         }
@@ -50,37 +50,37 @@ int exp;
         object weapon;
         me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÎŞ·¨Ê¹ÓÃÕâ¸ö!\n");
+	return notify_fail("ä½ æ— æ³•ä½¿ç”¨è¿™ä¸ª!\n");
 	
-        if( !arg ) return notify_fail("ÄãÏë¶ÔË­Ê¹ÓÃ£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³å¯¹è°ä½¿ç”¨ï¼Ÿ\n");
 
       if( !target ) target = offensive_target(me);
 
       if( !target || !target->is_character() || !me->is_fighting(target) )
-              return notify_fail("Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !target->is_character() || target->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
 
 
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("¶Ô·½±ÈÄãÈõĞ¡£¬Ã»±ØÒªÊ¹ÓÃ£¡\n");
+	return notify_fail("å¯¹æ–¹æ¯”ä½ å¼±å°ï¼Œæ²¡å¿…è¦ä½¿ç”¨ï¼\n");
 	
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
 
         if( !objectp(ob = present("tianbing fu", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
 if (target->is_busy())
-return notify_fail("ÏÖÔÚÕıÊÇÓÃ¹¥»÷µĞÈËµÄÊ±ºò°¡£¡\n");
+return notify_fail("ç°åœ¨æ­£æ˜¯ç”¨æ”»å‡»æ•Œäººçš„æ—¶å€™å•Šï¼\n");
                 me->start_busy(3);
-        message_vision(HIC"\n$n"HIC"Í»È»¼À³öÒ»ÕÅ Ìì±ø·û !!  \n"NOR,this_object(),me);
-         msg = HIC"$N"HIC"¶Ô×Å$n"HIC"¼À³öÒ»ÕÅ Ìì±ø·û£¡\n"NOR;
-        msg += HIC"$n"HIC"´ó³ÔÒ»¾ª!!\n"NOR;
+        message_vision(HIC"\n$n"HIC"çªç„¶ç¥­å‡ºä¸€å¼  å¤©å…µç¬¦ !!  \n"NOR,this_object(),me);
+         msg = HIC"$N"HIC"å¯¹ç€$n"HIC"ç¥­å‡ºä¸€å¼  å¤©å…µç¬¦ï¼\n"NOR;
+        msg += HIC"$n"HIC"å¤§åƒä¸€æƒŠ!!\n"NOR;
 
 	exp = (int)me->query("combat_exp");
 	me->receive_damage("jing",100);

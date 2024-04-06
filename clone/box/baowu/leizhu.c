@@ -12,18 +12,18 @@ object offensive_target(object me);
 
 void create()
 {
-        set_name(HIB "À×ÁéÖé" NOR, ({"lei lingzhu", "leizhu"}) );
+        set_name(HIB "é›·çµç " NOR, ({"lei lingzhu", "leizhu"}) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¢—");
                 set("material", "crystal");
                 set("value",10000);
 set("no_steal",1);
-                set("no_give", "ÕâÖÖÏ¡ÊÀÖ®±¦ÔõÃ´ÄÜÇáÒ×ËÍÈËÄØ?\n");
-                set("no_sell", "Âô?ÕâÖÖÏ¡ÊÀÖ®±¦Ë­ÂòµÃÆð°¡!\n");
-                set("long","´«ËµÖÐµÄÎåÐÐ±¦ÖéÖ®Ò»£¬ÅåÖ®¿É±ÜÀ×»÷£¬²¢¿É·¢³öÀ×»÷·¨Êõ¡£\nÎªÆíÓêËù±ØÐèÖ®Îï¡£");
+                set("no_give", "è¿™ç§ç¨€ä¸–ä¹‹å®æ€Žä¹ˆèƒ½è½»æ˜“é€äººå‘¢?\n");
+                set("no_sell", "å–?è¿™ç§ç¨€ä¸–ä¹‹å®è°ä¹°å¾—èµ·å•Š!\n");
+                set("long","ä¼ è¯´ä¸­çš„äº”è¡Œå®ç ä¹‹ä¸€ï¼Œä½©ä¹‹å¯é¿é›·å‡»ï¼Œå¹¶å¯å‘å‡ºé›·å‡»æ³•æœ¯ã€‚\nä¸ºç¥ˆé›¨æ‰€å¿…éœ€ä¹‹ç‰©ã€‚");
                 set("bb",1);
                 set("replace_file", __DIR__"rose");
                 set("armor_prop/armor", 100);
@@ -63,11 +63,11 @@ int do_wear (string arg)
   string msg;
 
 if (arg != "all" && arg != "leizhu" &&  arg != "lei lingzhu" )
-    return notify_fail("ÄãÒªÅå´øÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦ä½©å¸¦ä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy())
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-  msg = "$N´÷ÉÏÒ»¿Å"+name+"£¬²»½û¾«ÉñÒ»Õñ¡£\n"; 
+  msg = "$Næˆ´ä¸Šä¸€é¢—"+name+"ï¼Œä¸ç¦ç²¾ç¥žä¸€æŒ¯ã€‚\n"; 
 if (me->is_fighting())
 {
   me->start_busy(2);
@@ -87,12 +87,12 @@ int do_remove (string arg)
   string msg;
 
 if (arg != "all" && arg != "leizhu" && arg != "lei lingzhu")
-    return notify_fail("ÄãÒªÕªµôÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ‘˜æŽ‰ä»€ä¹ˆï¼Ÿ\n");
 
 	if (me->is_busy())
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-  msg = "$N½«"+name+"ÇáÇáµØÕªÏÂÀ´¡­¡­\n"; 
+  msg = "$Nå°†"+name+"è½»è½»åœ°æ‘˜ä¸‹æ¥â€¦â€¦\n"; 
 if (me->is_fighting())
 {
   me->start_busy(2);
@@ -119,8 +119,8 @@ return;
   if( ! target ) return ;      
  if( ! present( target,environment(who)) ) return ;    
         msg = HIC
-"\nÀ×ÁéÖéÍ»·¢Òì²Ê£¬°ë¿Õ×ß³öÎ»¼âÍ·Ó¥±ÇµÄÀ×¹«£¬×óÊÖÖ´¸«£¬ÓÒÊÖÌá×¶¡£
-¸«×¶Ïà»÷£¬ÔÚ$nµÄÍ·¶¥Õ¨ÆðÒ»Æ¬ÏìÀ×£¡\n"NOR;
+"\né›·çµç çªå‘å¼‚å½©ï¼ŒåŠç©ºèµ°å‡ºä½å°–å¤´é¹°é¼»çš„é›·å…¬ï¼Œå·¦æ‰‹æ‰§æ–§ï¼Œå³æ‰‹æé”¥ã€‚
+æ–§é”¥ç›¸å‡»ï¼Œåœ¨$nçš„å¤´é¡¶ç‚¸èµ·ä¸€ç‰‡å“é›·ï¼\n"NOR;
 
         ap = who->query("combat_exp")/2;
         dp = target->query("combat_exp");
@@ -131,7 +131,7 @@ return;
 //here we can see if 2 players are at same status, the attacker has higher chance.
                 if( damage > 0 ) 
                 {
-                msg +=  HIR "\n$n±»À×ÉùÕðµÄÑÛÃ°½ðÐÇ£¬ÐÄÉñ²»¶¨£¬²îµãµøµ¹ÔÚµØ£¡\n" NOR;
+                msg +=  HIR "\n$nè¢«é›·å£°éœ‡çš„çœ¼å†’é‡‘æ˜Ÿï¼Œå¿ƒç¥žä¸å®šï¼Œå·®ç‚¹è·Œå€’åœ¨åœ°ï¼\n" NOR;
 //finally damage also depends on enabled spells level.
                 target->receive_damage("jing", damage);
                 target->receive_wound("jing", damage/3);
@@ -139,11 +139,11 @@ return;
             else 
 //here, cast failed and the target's mana_factor will be added to the previous 
 //damage to hurt yourself:(...note damage<0.
-                msg += HIC "\nË­Öª$nºÁÎÞ·´Ó¦¡£\n" NOR;
+                msg += HIC "\nè°çŸ¥$næ¯«æ— ååº”ã€‚\n" NOR;
                  
            } 
         else
-               msg += "\nË­Öª$nºÁÎÞ·´Ó¦£¬ÒÀ¾ÉÒ»ÐÄÒ»ÒâµØºÍ$NÕ½¶·¡£\n";
+               msg += "\nè°çŸ¥$næ¯«æ— ååº”ï¼Œä¾æ—§ä¸€å¿ƒä¸€æ„åœ°å’Œ$Næˆ˜æ–—ã€‚\n";
 
         message_vision(msg, who, target);
     }

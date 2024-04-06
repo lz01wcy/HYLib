@@ -1,4 +1,4 @@
-// shenliwan.c ÃÀÈİµ¤
+// shenliwan.c ç¾å®¹ä¸¹
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIG "ÃÀÈİÍè" NOR, ({ "meili wan", "wan"}) );
+	set_name(HIG "ç¾å®¹ä¸¸" NOR, ({ "meili wan", "wan"}) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¿ÅÆß²ÊµÄÃÀÈİÍè£¬¾İËµ³ÔÁË¿ÉÒÔ±äÃÀ¡£\n");
+                set("long", "ä¸€é¢—ä¸ƒå½©çš„ç¾å®¹ä¸¸ï¼Œæ®è¯´åƒäº†å¯ä»¥å˜ç¾ã€‚\n");
                 set("value", 10000);
-		set("unit", "¿Å");
+		set("unit", "é¢—");
 	}
 }
 
@@ -27,22 +27,22 @@ int do_eat(string arg)
 	object me;
 
         if (! id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         me = this_player();
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¢—" + this_object()->name() +
+                       "ã€‚\n", me);
         if (me->query("gift/perwan") >= 10)
         {
-                message_vision("$NÕ£Õ£ÑÛ¡£\n", me);
-                tell_object(me, "Äã¾õµÃÕâÒ©Ã»É¶Î¶µÀ£¬»¹²»Èç»¨ÉúºÃ³Ô¡£\n");
+                message_vision("$Nçœ¨çœ¨çœ¼ã€‚\n", me);
+                tell_object(me, "ä½ è§‰å¾—è¿™è¯æ²¡å•¥å‘³é“ï¼Œè¿˜ä¸å¦‚èŠ±ç”Ÿå¥½åƒã€‚\n");
         } else
         if (random(5) == 0)
         {
-                tell_object(me, "²»¹ıÄã¾õµÃºÃÏñÃ»Ê²Ã´×÷ÓÃ¡£\n");
+                tell_object(me, "ä¸è¿‡ä½ è§‰å¾—å¥½åƒæ²¡ä»€ä¹ˆä½œç”¨ã€‚\n");
         } else
         {
-                tell_object(me, HIR "Äã¾õµÃËÆºõ×Ô¼º±äÃÀÁËÒ»Ğ©¡£\n" NOR);
+                tell_object(me, HIR "ä½ è§‰å¾—ä¼¼ä¹è‡ªå·±å˜ç¾äº†ä¸€äº›ã€‚\n" NOR);
                 me->add("per", 1);
         }
 

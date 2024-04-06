@@ -1,4 +1,4 @@
-// »Ø³ÇÊõ
+// å›žåŸŽæœ¯
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIY"»Ø³ÇÊõ¾íÖá"NOR, ({ "portal axes", "31axes" }) );
+        set_name(HIY"å›žåŸŽæœ¯å·è½´"NOR, ({ "portal axes", "31axes" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÄ§·¨¾íÖá¿ÉÒÔÊ¹ÓÃ(spell id)ÉÏÃæµÄÄ§·¨¡£\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªé­”æ³•å·è½´å¯ä»¥ä½¿ç”¨(spell id)ä¸Šé¢çš„é­”æ³•ã€‚\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 140000);
                 set("zhen", 1);
         }
@@ -47,54 +47,54 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÎÞ·¨Ê¹ÓÃÕâ¸ö¾íÖá!\n");
+	return notify_fail("ä½ æ— æ³•ä½¿ç”¨è¿™ä¸ªå·è½´!\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕýÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
         if (me->query("neili") < 400)
-        return notify_fail("ÄãµÄ·¨Á¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕý´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
         if (me->is_busy()) 
-        return notify_fail("ÄãÕýÃ¦×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
 
 	if( environment(me)->query("outdoors")=="12gong" )
-		return notify_fail("ÔÚ12¹¬ÄÚ²»ÔÊÐíÊ¹ÓÃ»Ø³ÇÊõ¡£\n");
+		return notify_fail("åœ¨12å®«å†…ä¸å…è®¸ä½¿ç”¨å›žåŸŽæœ¯ã€‚\n");
 
-   if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR)
-	return notify_fail("Ö»ÓÐÔÚ±È½Ï°²È«µÄµØ·½²ÅÄÜÊ¹ÓÃ»Ø³ÇÊõ¡£\n");
+   if(environment(me)->query("short")==BLU"å±±æ´ž"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´ž"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´ž"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´ž"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´ž"NOR)
+	return notify_fail("åªæœ‰åœ¨æ¯”è¾ƒå®‰å…¨çš„åœ°æ–¹æ‰èƒ½ä½¿ç”¨å›žåŸŽæœ¯ã€‚\n");
 	
         if( !environment(me)->query("no_fight") )
-		return notify_fail("Ö»ÓÐÔÚ±È½Ï°²È«µÄµØ·½²ÅÄÜÊ¹ÓÃ»Ø³ÇÊõ¡£\n");	        
+		return notify_fail("åªæœ‰åœ¨æ¯”è¾ƒå®‰å…¨çš„åœ°æ–¹æ‰èƒ½ä½¿ç”¨å›žåŸŽæœ¯ã€‚\n");	        
 
         if( this_object()->query("zhen") < 1 ) {
-        message_vision(HIY"\n$N"HIY"ÉÏµÄÄ§·¨Á¦Á¿ÓÃÍêÁË!  $N"HIY"ÏûÊ§ÁË¡£\n"NOR,this_object(),me);
+        message_vision(HIY"\n$N"HIY"ä¸Šçš„é­”æ³•åŠ›é‡ç”¨å®Œäº†!  $N"HIY"æ¶ˆå¤±äº†ã€‚\n"NOR,this_object(),me);
         destruct(this_object());
 return 1;
                 }
 
         if( !objectp(ob = present("portal axes", me)) )
-                return notify_fail("ÄãÃ»ÓÐÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
         startroom = me->query("startroom");
         if( !me->query("startroom") )
-		return notify_fail("ÇëÏÈÈ·¶¨ÄãÒªÈ¥µÄÄ¿±ê°É!\n");
+		return notify_fail("è¯·å…ˆç¡®å®šä½ è¦åŽ»çš„ç›®æ ‡å§!\n");
 	me->add("neili",-150);
 
-	message_vision(YEL "\n$NÔÚµØÉÏ»®ÁËÒ»¸öÎåÃ¢ÐÇ£¬¿ÚÖÐà«à«µØÄîÖøÖäÎÄ!!\n" NOR, me);	
-	message_vision(YEL "\n$NÕ¾ÔÚµÄµØÉÏ³öÏÖÁË¾Þ´óµÄ¹âÃ¢£¬°Ñ$N°üÎ§ÁË!\n" NOR, me);
-        message_vision(YEL "\n$NÔÚ¹âÃ¢ÖÐ£¬ÏûÊ§²»¼ûÁË!\n" NOR, me);
+	message_vision(YEL "\n$Nåœ¨åœ°ä¸Šåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡!!\n" NOR, me);	
+	message_vision(YEL "\n$Nç«™åœ¨çš„åœ°ä¸Šå‡ºçŽ°äº†å·¨å¤§çš„å…‰èŠ’ï¼ŒæŠŠ$NåŒ…å›´äº†!\n" NOR, me);
+        message_vision(YEL "\n$Nåœ¨å…‰èŠ’ä¸­ï¼Œæ¶ˆå¤±ä¸è§äº†!\n" NOR, me);
         me->move(startroom);
 	me->start_busy(3);
         if( this_object()->query("zhen") < 1 ) {
-        message_vision(HIY"\n$N"HIY"ÉÏµÄÄ§·¨Á¦Á¿ÓÃÍêÁË!  $N"HIY"ÏûÊ§ÁË¡£\n"NOR,this_object(),me);
+        message_vision(HIY"\n$N"HIY"ä¸Šçš„é­”æ³•åŠ›é‡ç”¨å®Œäº†!  $N"HIY"æ¶ˆå¤±äº†ã€‚\n"NOR,this_object(),me);
         destruct(this_object());
 return 1;
                 }

@@ -1,4 +1,4 @@
-// »Ø¸´¼Á
+// å›å¤å‰‚
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIR"Õæ!ÌìÏÉÍè"NOR, ({ "zhentianxian wan", "wan" }) );
+        set_name(HIR"çœŸ!å¤©ä»™ä¸¸"NOR, ({ "zhentianxian wan", "wan" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÉñÆæµÄÒ©Íè¿ÉÒÔÊ¹ÓÃ(use id)¡£\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªç¥å¥‡çš„è¯ä¸¸å¯ä»¥ä½¿ç”¨(use id)ã€‚\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 50000);
                 set("zhen", 1);
         }
@@ -47,15 +47,15 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
 //        if(me->is_busy() )
-//                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+//                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
         if( !objectp(ob = present("zhentianxian wan", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(HIR"\n$n"HIR"Ò»¿Ú³ÔÏÂÁË$N,"HIR" $n¾õµÄ×Ô¼ºÓĞÁËÎŞÏŞµÄ³¬¼¶¾«Á¦!!  \n"NOR,this_object(),me);
+        message_vision(HIR"\n$n"HIR"ä¸€å£åƒä¸‹äº†$N,"HIR" $nè§‰çš„è‡ªå·±æœ‰äº†æ— é™çš„è¶…çº§ç²¾åŠ›!!  \n"NOR,this_object(),me);
 me->add("qi",500);
 me->add("eff_qi",500);
         
@@ -72,7 +72,7 @@ me->set("eff_qi",me->query("max_qi"));
 	me->set("jing",120000);
 me->set("eff_jing",120000);       
 
-message_vision(HIR"$N¾õµÄ×Ô¼ºÓĞÁËÎŞÏŞµÄ³¬¼¶¾«Á¦!!\n"NOR, me);
+message_vision(HIR"$Nè§‰çš„è‡ªå·±æœ‰äº†æ— é™çš„è¶…çº§ç²¾åŠ›!!\n"NOR, me);
         destruct(this_object());
 
         return 1;

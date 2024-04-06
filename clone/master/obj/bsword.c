@@ -5,17 +5,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name("ÑÅÎÚ¹Å½£", ({ "darksword" }) );
+	set_name("é›…ä¹Œå¤å‰‘", ({ "darksword" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñ¿´Æğ¹ÅÆÓ¶øÓÖ·æÀûµÄ½£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠçœ‹èµ·å¤æœ´è€Œåˆé”‹åˆ©çš„å‰‘\n");
 		set("value", 400);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");
 	}
 	init_sword(235);
 	setup();

@@ -1,4 +1,4 @@
-// baiyunwan.c °×ÔÆĞÜµ¨Íè
+// baiyunwan.c ç™½äº‘ç†Šèƒ†ä¸¸
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,15 +11,15 @@ void init()
 
 void create()
 {
-	set_name(HIW"°×ÔÆĞÜµ¨Íè"NOR, ({"baiyun xiongdanwan", "wan"}));
-	set("unit", "Á£");
+	set_name(HIW"ç™½äº‘ç†Šèƒ†ä¸¸"NOR, ({"baiyun xiongdanwan", "wan"}));
+	set("unit", "ç²’");
 	set("vegetable", 26);
 	set("nostrum", 92);
 	set("level", 40);
 	set("lev", 3+random(3));
 	set("value", 1000);
 	set("pour_type", "1");
-	set("long", "ÕâÊÇÒ»Á£°×ÔÆĞÜµ¨Íè£¬Ñ©°×Í¸ÁÁ¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ç²’ç™½äº‘ç†Šèƒ†ä¸¸ï¼Œé›ªç™½é€äº®ã€‚\n");
 	setup();
 }
 
@@ -31,23 +31,23 @@ int exp,pot,i;
 exp = 888+random(888);
 pot = exp/2;
 
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 
 	if ( me->query("eff_jing") >= me->query("max_jing") &&
 		me->query("eff_qi") >= me->query("max_qi") &&
 		me->query("neili") >= me->query("max_neili"))
 	{
-		message_vision("$NÃ»±ØÒª³Ô°×ÔÆĞÜµ¨Íè¡£\n",me);
+		message_vision("$Næ²¡å¿…è¦åƒç™½äº‘ç†Šèƒ†ä¸¸ã€‚\n",me);
 	}
 	else
 	{
        me->add("combat_exp",exp);
        me->add("potential",pot);
-message_vision("$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!\n", me);
+message_vision("$Nè·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!\n", me);
 i=1+random(3);
 if (random(12)==0 || wizardp(me))
 {
@@ -61,7 +61,7 @@ else
 {
 me->add("expmax",i);
 }       
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, me);
+message_vision(HIR"$Nè·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, me);
 }       
 }
 		me->set("eff_jing",me->query("max_jing"));
@@ -69,7 +69,7 @@ message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, me);
 		me->set("eff_qi",me->query("max_qi"));
 		me->set("qi",me->query("eff_qi"));
 		me->set("neili",me->query("max_neili"));
-		message_vision("$N³ÔÏÂÒ»Á£°×ÔÆĞÜµ¨Íè£¬Ö»¾õµÃÖÜÉíÈÈºõºõµÄ£¬Ê®·ÖÊæÌ¹¡£\n",me);
+		message_vision("$Nåƒä¸‹ä¸€ç²’ç™½äº‘ç†Šèƒ†ä¸¸ï¼Œåªè§‰å¾—å‘¨èº«çƒ­ä¹ä¹çš„ï¼Œååˆ†èˆ’å¦ã€‚\n",me);
 		destruct(this_object());
 	}
 	return 1;

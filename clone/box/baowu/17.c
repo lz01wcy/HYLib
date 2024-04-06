@@ -6,18 +6,18 @@ inherit HAMMER;
 
 void create()
 {
-        set_name(NOR + YEL "»Æ½ğ¸«" NOR, ({"huangjin fu", "huangjin", "fu"}));
+        set_name(NOR + YEL "é»„é‡‘æ–§" NOR, ({"huangjin fu", "huangjin", "fu"}));
         set_weight(20000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "ÕâÊÇÒ»±ú´¿½ğ»ÆÖıÔìµÄ´ó¸«£¬¸«±úÄ©¶ËËÆºõÓĞĞ©ËÉ¶¯¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", YEL "è¿™æ˜¯ä¸€æŸ„çº¯é‡‘é»„é“¸é€ çš„å¤§æ–§ï¼Œæ–§æŸ„æœ«ç«¯ä¼¼ä¹æœ‰äº›æ¾åŠ¨ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 8000);
                 set("treasure", 1);
                 set("material", "gold");
-                set("wield_msg", YEL "$N" YEL "¾ÙÆğÒ»±ú´¿»ÆËùÖıµÄ´ó¸«£¬ËæÊÖ»ÓÎèÁËÁ½ÏÂ¡£\n" NOR);
-                set("unwield_msg", YEL "$N" YEL "¹ş¹şÒ»Ğ¦£¬½«ÊÖÖĞµÄ»Æ½ğ¸«ÊÕ»Ø±³ºó¡£\n" NOR);
+                set("wield_msg", YEL "$N" YEL "ä¸¾èµ·ä¸€æŸ„çº¯é»„æ‰€é“¸çš„å¤§æ–§ï¼Œéšæ‰‹æŒ¥èˆäº†ä¸¤ä¸‹ã€‚\n" NOR);
+                set("unwield_msg", YEL "$N" YEL "å“ˆå“ˆä¸€ç¬‘ï¼Œå°†æ‰‹ä¸­çš„é»„é‡‘æ–§æ”¶å›èƒŒåã€‚\n" NOR);
                 set("stable", 100);
         }
         init_hammer(800+random(320));
@@ -37,8 +37,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n = me->query_skill("hammer");
                 victim->receive_damage("qi", n);
                 victim->receive_wound("qi", n);
-                return YEL "$N" YEL "Ò»Éù¶ÏºÈ£¬ÊÖÖĞ»Æ½ğ¸«ö®Ê±½ğÃ¢±©ÕÇ£¬ºôµÄÒ»Éù³¯$n"
-                       YEL "ÃÍÅü¶øÈ¥£¡\n" NOR;
+                return YEL "$N" YEL "ä¸€å£°æ–­å–ï¼Œæ‰‹ä¸­é»„é‡‘æ–§éœæ—¶é‡‘èŠ’æš´æ¶¨ï¼Œå‘¼çš„ä¸€å£°æœ$n"
+                       YEL "çŒ›åŠˆè€Œå»ï¼\n" NOR;
         }
         return damage_bonus;
 }

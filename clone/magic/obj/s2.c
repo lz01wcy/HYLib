@@ -7,14 +7,14 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(HIR "»ğÉ½ÑÒËø×Ó¼×" NOR, ({ "stone body","stonebody"}) );
+	set_name(HIR "ç«å±±å²©é”å­ç”²" NOR, ({ "stone body","stonebody"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", HIR"\nÕâÊÇÒ»¼ş»ğÉ½ÑÒËø×Ó¼×,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+		set("long", HIR"\nè¿™æ˜¯ä¸€ä»¶ç«å±±å²©é”å­ç”²,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                set("value", 19000);
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("armor_prop/armor", 550);
 		set("armor_prop/defense", 10);	
 	}

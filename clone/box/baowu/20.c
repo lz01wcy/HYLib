@@ -5,14 +5,14 @@ inherit HANDS;
 
 void create()
 {
-        set_name(HIY "çúçêÉñ»·" NOR, ({ "hupo shenhuan" , "hupo" , "shenhuan", "huan" }) );
+        set_name(HIY "ç¥ç€ç¥ç¯" NOR, ({ "hupo shenhuan" , "hupo" , "shenhuan", "huan" }) );
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", HIY "É¢·¢×Å¹ÅÆÓ¹âÔóµÄÖ¸»·£¬Õâ±ãÊÇÑà×ÓÚùÖ÷ÈËÄ½Èİ"
-                            "²©µÄĞÅÎïçúçêÉñ»·¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIY "æ•£å‘ç€å¤æœ´å…‰æ³½çš„æŒ‡ç¯ï¼Œè¿™ä¾¿æ˜¯ç‡•å­é‚¬ä¸»äººæ…•å®¹"
+                            "åšçš„ä¿¡ç‰©ç¥ç€ç¥ç¯ã€‚\n" NOR);
                 set("value", 8000);
                 set("treasure", 1);
                 set("material", "steel");
@@ -20,9 +20,9 @@ void create()
         	set("armor_prop/finger", 50);
         	set("armor_prop/strike", 50);
         	set("armor_prop/unarmed_damage", 100);
-	        set("wear_msg", HIY "$N" HIY "Î¢Î¢Ò»Ğ¦£¬ÇáÇá´÷ÉÏÒ»Ã¶çúçêÉñ»·£¬¶Ù"
-                                "Ê±Ö¸¼â¹â»ªËÄÉä¡£\n" NOR);
-        	set("remove_msg", HIY "$N" HIY "½«çúçêÉñ»·´ÓÖ¸¼âÈ¡ÁËÏÂÀ´¡£\n" NOR);
+	        set("wear_msg", HIY "$N" HIY "å¾®å¾®ä¸€ç¬‘ï¼Œè½»è½»æˆ´ä¸Šä¸€æšç¥ç€ç¥ç¯ï¼Œé¡¿"
+                                "æ—¶æŒ‡å°–å…‰åå››å°„ã€‚\n" NOR);
+        	set("remove_msg", HIY "$N" HIY "å°†ç¥ç€ç¥ç¯ä»æŒ‡å°–å–äº†ä¸‹æ¥ã€‚\n" NOR);
                 set("stable", 100);
         }
         setup();

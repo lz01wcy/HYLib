@@ -15,8 +15,8 @@ void create()
 	string *msg;
 	
 	seteuid(getuid());
-	set_name("ĞÂÎÅ¹ÜÀíÆ÷",({"msgd","msg"}));
-	set("channel_id","ĞÅÏ¢Í¨¸æ");
+	set_name("æ–°é—»ç®¡ç†å™¨",({"msgd","msg"}));
+	set("channel_id","ä¿¡æ¯é€šå‘Š");
 	if (file_size(MSGFILE)<=0){
 		setup();
 		msg=({});
@@ -27,7 +27,7 @@ void create()
 	restore();
 	if (clonep())
 		return;
-	CHANNEL_D->do_channel( this_object(), "sys", "ĞÂÎÅÏµÍ³ÒÑ¾­Æô¶¯¡£\n");	
+	CHANNEL_D->do_channel( this_object(), "sys", "æ–°é—»ç³»ç»Ÿå·²ç»å¯åŠ¨ã€‚\n");	
 	call_out("on_time",10);
 }
 
@@ -64,7 +64,7 @@ void on_time()
 	i=sizeof(msg);
 	if (i<=0){
 		//CHANNEL_D->do_channel(this_object(),"chat",
-		//	"Ã»ÓĞĞÂÎÅ\n");
+		//	"æ²¡æœ‰æ–°é—»\n");
 		call_out("on_time",120);
 		return;
 		}
@@ -81,7 +81,7 @@ int do_addmsg(string arg)
 	string *msg;
 	
 	if (!arg||!valid_string(arg))
-		return notify_fail("·Ç·¨µÄĞÅÏ¢\n");
+		return notify_fail("éæ³•çš„ä¿¡æ¯\n");
 	msg=query("msg");
 	msg=msg+({arg});
 	set("msg",msg);
@@ -89,7 +89,7 @@ int do_addmsg(string arg)
 	ob=find_object(MSGD);
 	if (ob)
 		ob->restore();
-	tell_object(me,"ĞÂÎÅÔö¼ÓÍê±Ï\n");		
+	tell_object(me,"æ–°é—»å¢åŠ å®Œæ¯•\n");		
 	return 1;
 }
 
@@ -112,7 +112,7 @@ int do_delmsg(string arg)
 	int i,j;
 	
 	if (sscanf(arg, "%d", i)!=1)
-		return notify_fail("ÄãÒªÉ¾³ıÄÄÒ»ÌõĞÅÏ¢£¿\n");
+		return notify_fail("ä½ è¦åˆ é™¤å“ªä¸€æ¡ä¿¡æ¯ï¼Ÿ\n");
 	msg=query("msg");
 	msg=msg-({msg[i-1]});
 	set("msg",msg);
@@ -121,6 +121,6 @@ int do_delmsg(string arg)
 	if (ob){
 		ob->restore();
 		}
-	tell_object(me,"ĞÂÎÅÉ¾³ıÍê±Ï\n");
+	tell_object(me,"æ–°é—»åˆ é™¤å®Œæ¯•\n");
 	return 1;
 }

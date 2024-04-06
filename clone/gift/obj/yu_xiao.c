@@ -5,19 +5,19 @@
 inherit SWORD;
 void create()
 {  
-        set_name( CYN"Óñóï" NOR,({ "yu_xiao" }));
+        set_name( CYN"ç‰ç®«" NOR,({ "yu_xiao" }));
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else{
-        set("unit", "Ö»");
-        set("long","Ò»Ö»¾§Ó¨Í¸ÁÁµÄÓñóï¡£ÄÃÔÚÊÖÀï¡£»¬ÄåÄåµÄ¡£ÉÏÃæ¿Ì×Å¼¸¸ö×Ö\n"
-					HIM"\t\tÓ¯Ó¯ËÍ\n"NOR);
+        set("unit", "åª");
+        set("long","ä¸€åªæ™¶è¹é€äº®çš„ç‰ç®«ã€‚æ‹¿åœ¨æ‰‹é‡Œã€‚æ»‘è…»è…»çš„ã€‚ä¸Šé¢åˆ»ç€å‡ ä¸ªå­—\n"
+					HIM"\t\tç›ˆç›ˆé€\n"NOR);
         set("value", 10000);
-        set("material", "ÒìÀà½ğÊô");
-        set("wield_msg", "$N´Ó»³ÀïÃş³öÒ»Ö»$n×÷ÎªÎäÆ÷¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÈë»³Àï¡£\n");
-        set("owner","Áîºü³å");
+        set("material", "å¼‚ç±»é‡‘å±");
+        set("wield_msg", "$Nä»æ€€é‡Œæ‘¸å‡ºä¸€åª$nä½œä¸ºæ­¦å™¨ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾å…¥æ€€é‡Œã€‚\n");
+        set("owner","ä»¤ç‹å†²");
 		set("task",1);	
         set("no_put_in",1);
             }

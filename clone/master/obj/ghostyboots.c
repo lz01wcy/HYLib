@@ -7,12 +7,12 @@ inherit BOOTS;
 
 void create()
 {
-	set_name(  "÷ÈÓ°ÉñÑ¥" , ({ "ghosty boots", "boots" }) );
+	set_name(  "é­…å½±ç¥é´" , ({ "ghosty boots", "boots" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("value", 8000);
 		set("material", "cloth");
 		set("armor_prop/armor", 11);

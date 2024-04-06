@@ -5,10 +5,10 @@ inherit SHIELD;
 
 void create()
 {
-	set_name(HIR"°«Áé¶Ü"NOR, ({ "earth shield", "earthshield" }));
-	set("long", HIR"ÕâÊÇÒ»Ãæ°«Áé¶Ü£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIR"çŸ®çµç›¾"NOR, ({ "earth shield", "earthshield" }));
+	set("long", HIR"è¿™æ˜¯ä¸€é¢çŸ®çµç›¾ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "Ãæ");
+	set("unit", "é¢");
 	set("value", 27000);
 	set("material", "gem");
 	set("armor_prop/armor", 100);

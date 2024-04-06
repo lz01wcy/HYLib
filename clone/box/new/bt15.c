@@ -1,4 +1,4 @@
-// boots.c Æ¤Ñ¥
+// boots.c çš®é´
 #include <ansi.h> 
 #include <armor.h>
 
@@ -6,14 +6,14 @@ inherit BOOTS;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});  
 void create()
 {
-	set_name((order[random(13)])+"Éñ±ªÖ®Ñ¥"NOR, ({ "boots15"}) );
+	set_name((order[random(13)])+"ç¥è±¹ä¹‹é´"NOR, ({ "boots15"}) );
 	set_weight(800);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "leather");
-		set("unit", "Ë«");
-		set("long", "ÕâÊÇÒ»Ë«Éñ±ªÖ®Ñ¥¡£ÓÃÒÔ±£»¤×ã²¿¡£²¢¼Ó¿ìÄãµÄËÙ¶È¡£\n");
+		set("unit", "åŒ");
+		set("long", "è¿™æ˜¯ä¸€åŒç¥è±¹ä¹‹é´ã€‚ç”¨ä»¥ä¿æŠ¤è¶³éƒ¨ã€‚å¹¶åŠ å¿«ä½ çš„é€Ÿåº¦ã€‚\n");
 		set("value", 2300);
 set("armor_prop/armor", 67);
 		set("armor_prop/dodge", 10);

@@ -5,9 +5,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("Ğ»Ïş·å", ({ "master xie", "master", "xiexiaofeng" }) );
-        set("title", HIG"½£Éñ"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("è°¢æ™“å³°", ({ "master xie", "master", "xiexiaofeng" }) );
+        set("title", HIG"å‰‘ç¥"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 34);
         set("str", 30);
         set("cor", 30);
@@ -29,17 +29,17 @@ void create()
         set("force_factor", 3);
         set("long",
 "
-Ğ»Ïş·åÎåËêÑ§½£,Ê®ÁùËê½£³É,Ê®¾ÅËê°Ü»ªÉÙÀ¤,Ò»ÊÖÇå·çÏ¸ÓêÎÂÈá½£·¨µ±ÊÀÎŞË«
-¸ü¼æ·ç¶ÈäìÈ÷¾øÂ×,µÃÆßĞÇÌÁÄ½ÈİÇïİ¶·¼ĞÄ,ÈÇÀ´Ò»ÉúÇéÕ®£®£®
+è°¢æ™“å³°äº”å²å­¦å‰‘,åå…­å²å‰‘æˆ,åä¹å²è´¥åå°‘å¤,ä¸€æ‰‹æ¸…é£ç»†é›¨æ¸©æŸ”å‰‘æ³•å½“ä¸–æ— åŒ
+æ›´å…¼é£åº¦æ½‡æ´’ç»ä¼¦,å¾—ä¸ƒæ˜Ÿå¡˜æ…•å®¹ç§‹è»èŠ³å¿ƒ,æƒ¹æ¥ä¸€ç”Ÿæƒ…å€ºï¼ï¼
 \n"
 	);
 
 if (random(2)==0)
 {
-	set_name(GRN"Â½Ğ¡·ç"NOR, ({ "master lu", "master"}) );
-        set("title", HIY"ÁéÏ¬Ò»Ö¸"NOR);
+	set_name(GRN"é™†å°é£"NOR, ({ "master lu", "master"}) );
+        set("title", HIY"çµçŠ€ä¸€æŒ‡"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -108,7 +108,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

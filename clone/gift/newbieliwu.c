@@ -1,27 +1,27 @@
-// ºì°ü
+// çº¢åŒ…
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIY"ÀñÎïÌ¨"NOR, ({"liwu tai"}));
+        set_name(HIY"ç¤¼ç‰©å°"NOR, ({"liwu tai"}));
 	set_weight(100000000);
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
     set("no_steal",1);
     set("no_beg",1);
     set("no_put",1);
-    set("no_get","Õâ¸ö¶«Î÷ÄÃ²»×ßµÄ£¡\n");
-    set("no_drop","Õâ¸ö¶«Î÷ÈÓ²»µôµÄ£¡£¡\n");
+    set("no_get","è¿™ä¸ªä¸œè¥¿æ‹¿ä¸èµ°çš„ï¼\n");
+    set("no_drop","è¿™ä¸ªä¸œè¥¿æ‰”ä¸æ‰çš„ï¼ï¼\n");
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¸öÉÏÃæ·Å×ÅºÜ¶à¶«Î÷µÄ"+HIY"ÀñÎïÌ¨£¬"NOR+"ËÆºõ¿ÉÒÔÄÃ×ß(openliwu)×Ô¼ºµÄÒ»·İ¡£
-Ã¿¸öĞÂÊÖ£¬¶¼ÄÜ»»µÃ×Ô¼ºµÄÒ»·İÀñÎï¡£
+                set("long", "ä¸€ä¸ªä¸Šé¢æ”¾ç€å¾ˆå¤šä¸œè¥¿çš„"+HIY"ç¤¼ç‰©å°ï¼Œ"NOR+"ä¼¼ä¹å¯ä»¥æ‹¿èµ°(openliwu)è‡ªå·±çš„ä¸€ä»½ã€‚
+æ¯ä¸ªæ–°æ‰‹ï¼Œéƒ½èƒ½æ¢å¾—è‡ªå·±çš„ä¸€ä»½ç¤¼ç‰©ã€‚
 \n
 \n");
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -37,82 +37,82 @@ ob=this_object();
         this_player()->start_busy(10);
   if(me->query("openliwu")>0)
   {
-message_vision("ÊôÓÚ$NµÄÄÇ·İÀñÎïÒÑ¾­¸øÄÃ×ßÁË!\n", this_player());
+message_vision("å±äº$Nçš„é‚£ä»½ç¤¼ç‰©å·²ç»ç»™æ‹¿èµ°äº†!\n", this_player());
    return 1;
   }
   if ( me->query("zhuanshen"))
   {
-message_vision("$N²»ÊÇĞÂÊÖ!\n", this_player());
+message_vision("$Nä¸æ˜¯æ–°æ‰‹!\n", this_player());
    return 1;
   }
   if ( me->query("combat_exp")> 2000000)
   {
-message_vision("$N²»ÊÇĞÂÊÖ!\n", this_player());
+message_vision("$Nä¸æ˜¯æ–°æ‰‹!\n", this_player());
    return 1;
   }
 
   me->set("openliwu",1);
         this_player()->add("combat_exp", 300000);
         this_player()->add("potential",80000);
-        message_vision(HIR"$N»ñµÃÁË300000¾­ÑéºÍ80000Ç±ÄÜ!\n"NOR, this_player());
+        message_vision(HIR"$Nè·å¾—äº†300000ç»éªŒå’Œ80000æ½œèƒ½!\n"NOR, this_player());
         this_player()->add("max_neili", 300);
-        message_vision(HIR"$N»ñµÃÁË300µãÄÚÁ¦ÉÏÏŞ!\n"NOR, this_player());
+        message_vision(HIR"$Nè·å¾—äº†300ç‚¹å†…åŠ›ä¸Šé™!\n"NOR, this_player());
 
 if (this_player()->query("str") <15)
 {
 this_player()->set("str",15);
-message_vision(HIB"$NµÄÏÈÌì±ÛÁ¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIB"$Nçš„å…ˆå¤©è‡‚åŠ›å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("int") <15)
 {
 this_player()->set("int",15);
-message_vision(HIC"$NµÄÏÈÌìÎòĞÔÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIC"$Nçš„å…ˆå¤©æ‚Ÿæ€§å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("con") <15)
 {
 this_player()->set("con",15);
-message_vision(HIY"$NµÄÏÈÌì¸ù¹ÇÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIY"$Nçš„å…ˆå¤©æ ¹éª¨å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("dex") <15)
 {
 this_player()->set("dex",15);
-message_vision(HIG"$NµÄÏÈÌìÉí·¨Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIG"$Nçš„å…ˆå¤©èº«æ³•å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("kar") <20)
 {
 this_player()->set("kar",20);
-message_vision(HIC"$NµÄÏÈÌì¸£ÔµÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIC"$Nçš„å…ˆå¤©ç¦ç¼˜å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("per") <20)
 {
 this_player()->set("per",20);
-message_vision(HIB"$NµÄÏÈÌìÈİÃ²Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIB"$Nçš„å…ˆå¤©å®¹è²Œå¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("unarmed",1)<100)
 {
   me->set_skill("unarmed",100);
-message_vision(HIM"$NµÄ»ù±¾¸ñ¶·Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬æ ¼æ–—å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("parry",1)<100)
 {
  me->set_skill("parry",100);
-message_vision(HIM"$NµÄ»ù±¾ÕĞ¼ÜÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬æ‹›æ¶å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("dodge",1)<100)
 {
   me->set_skill("dodge",100);
-message_vision(HIM"$NµÄ»ù±¾Çá¹¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬è½»åŠŸå¢åŠ äº†ï¼\n"NOR, this_player());
 
 }
 if (me->query_skill("force",1)<100)
 {
   me->set_skill("force",100);
-message_vision(HIM"$NµÄ»ù±¾ÄÚ¹¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬å†…åŠŸå¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("literate",1)<100)
 {
   me->set_skill("literate",100);
-message_vision(HIM"$NµÄ¶ÁÊéĞ´×ÖÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„è¯»ä¹¦å†™å­—å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 return 1;
 }

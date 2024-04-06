@@ -1,4 +1,4 @@
-// shield.c ÒøÉ«´Ì¶Ü 
+// shield.c é“¶è‰²åˆºç›¾ 
 #include "ansi.h"
 #include "armor.h"
  
@@ -6,14 +6,14 @@ inherit SHIELD;
  
 void create()
 {
-	set_name(HIR"ÒøÉ«´Ì¶Ü "NOR, ({ "metal shield", "metalshield" }) );
+	set_name(HIR"é“¶è‰²åˆºç›¾ "NOR, ({ "metal shield", "metalshield" }) );
 	set_weight(9000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "leather");
-		set("unit", "Ãæ");
-set("long", HIR"ÕâÊÇÒ»ÃæÒøÉ«´Ì¶Ü,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»¡£\n"NOR);
+		set("unit", "é¢");
+set("long", HIR"è¿™æ˜¯ä¸€é¢é“¶è‰²åˆºç›¾,åšå·¥æå…¶ç²¾è‡´ã€‚æ˜¯ä¼—ç¥çš„é—äº§ä¹‹ä¸€ã€‚\n"NOR);
                set("value", 15000);
 		set("armor_prop/armor",100);
 		set("armor_prop/damage",10);

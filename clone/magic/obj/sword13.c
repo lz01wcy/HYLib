@@ -1,4 +1,4 @@
-// °µºÚÖ®½£
+// æš—é»‘ä¹‹å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit AXE;
@@ -6,14 +6,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIR"°«ÁéÁ÷ĞÇ"NOR, ({"earth meteor", "earth meteor"}));
+        set_name(HIR"çŸ®çµæµæ˜Ÿ"NOR, ({"earth meteor", "earth meteor"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIY"ÕâÊÇÒ»°Ñ°«ÁéÁ÷ĞÇ,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞ´óµØµÄÁ¦Á¿!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIY"è¿™æ˜¯ä¸€æŠŠçŸ®çµæµæ˜Ÿ,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰å¤§åœ°çš„åŠ›é‡!\n"NOR);
                 set("unique", 1);
                 set("value", 50000);
                                 set("no_give",1);
@@ -25,8 +25,8 @@ void create()
                 set("wield_maxneili", 3000);
                 set("wield_str", 30);        
                 set("treasure",1);       
-                set("wield_msg",HIY"Ò»ÕóÀ¶É«µÄ¹âÃ¢¹ıºó £¬$NµÄÊÖÉÏ¶à³öÁËÒ»°ÑË®¾§Ø°Ê×¡£\n"NOR);
-                set("unwield_msg",HIY"$NÊÕÆğÊÖÖĞµÄË®¾§Ø°Ê×¡£À¶É«µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wield_msg",HIY"ä¸€é˜µè“è‰²çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„æ‰‹ä¸Šå¤šå‡ºäº†ä¸€æŠŠæ°´æ™¶åŒ•é¦–ã€‚\n"NOR);
+                set("unwield_msg",HIY"$Næ”¶èµ·æ‰‹ä¸­çš„æ°´æ™¶åŒ•é¦–ã€‚è“è‰²çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
         }
      init_axe(800);
         setup();
@@ -45,6 +45,6 @@ if (victim->query("qi") > a)
 a=420+a;
 if (victim->query("eff_qi") > a)
                 victim->receive_wound("qi", a);
-message_vision(HIY"$n±»°«ÁéÁ÷ĞÇÕğÉËÁË!!\n"NOR, me,victim);
+message_vision(HIY"$nè¢«çŸ®çµæµæ˜Ÿéœ‡ä¼¤äº†!!\n"NOR, me,victim);
 }
 }

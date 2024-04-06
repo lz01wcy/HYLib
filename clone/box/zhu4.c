@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIC"Éí·¨Öé"NOR, ({ "jobzhu4" }) );
+    set_name(HIC"èº«æ³•ç "NOR, ({ "jobzhu4" }) );
     set_weight(1);
             set("no_put", 1);
             set("value", 0);
@@ -15,9 +15,9 @@ void create()
             set("no_get", 1);
             set("no_beg", 1);
             set("value", 0);
-            set("unit", "¿Å");
+            set("unit", "é¢—");
             set("material", "paper");
-            set("long", "ÉñÖéÖ®Ò»¡£\n");
+            set("long", "ç¥ç ä¹‹ä¸€ã€‚\n");
           }
 
     setup();
@@ -31,12 +31,12 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
   	me->add("combat_exp", 2000);
 	me->add("potential",1000);        
 	me->add("max_neili",50);
-        message_vision(HIG "$N³Ô°ÑÖé³ÔÁËÏÂÈ¥£¬Ö»¾õµÃÈ«ÉíÊæ·şÁË²»ÉÙ!\n" NOR, me);
+        message_vision(HIG "$NåƒæŠŠç åƒäº†ä¸‹å»ï¼Œåªè§‰å¾—å…¨èº«èˆ’æœäº†ä¸å°‘!\n" NOR, me);
 	
 	destruct(this_object());
 	return 1;

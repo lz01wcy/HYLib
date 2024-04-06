@@ -9,15 +9,15 @@ void create()
 
 {
     
-   set_name(HIR"ÒÁ¸¥ÀûÌØ"NOR, ({ "shenghuo long" , "long" , "dragon" }));
-                set("race", "Ò°ÊŞ");
+   set_name(HIR"ä¼Šå¼—åˆ©ç‰¹"NOR, ({ "shenghuo long" , "long" , "dragon" }));
+                set("race", "é‡å…½");
        set("long",
-"Ò»Ìõ¾Ş´óµÄºìÉ«µÄÁú£¬¿´µ½ÁËÄã£¬ÏòÄãÆËÁË¹ıÀ´¡£
-¡£\n");
+"ä¸€æ¡å·¨å¤§çš„çº¢è‰²çš„é¾™ï¼Œçœ‹åˆ°äº†ä½ ï¼Œå‘ä½ æ‰‘äº†è¿‡æ¥ã€‚
+ã€‚\n");
 //              set("attitude", "aggressive");
                 set("vendetta/authority",1);
 
-set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
         set("verbs", ({ "bite" , "claw"}) );
 	       set("max_qi",20000+random(10000));
   set("max_jing",20000+random(10000));
@@ -27,7 +27,7 @@ set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
 set("zhuanbest",1);  
 set("magicgift",1);  
 
-set("title",HIR+"Ê¥Ö®ºìÁú"+NOR);
+set("title",HIR+"åœ£ä¹‹çº¢é¾™"+NOR);
       set("dex",100);
       set("con",100);
      set("str" ,100);
@@ -86,7 +86,7 @@ void invocation(object who, int level)
 if (!wizardp(who))
         who->apply_condition("zdizi_busy",4);
 	message("vision",
-		 name() + "Í»È»´óºğÒ»Éù£¡\n" NOR,
+		 name() + "çªç„¶å¤§å¼ä¸€å£°ï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);
@@ -115,8 +115,8 @@ int heal_up()
 void leave()
 {
 	object owner;
-	message("vision",HIR"ÓÉÓÚÕ½¶·ÒÑ¾­½áÊø£¡\n\n"
-		+ name() + HIR"»¯ÎªÒ»µÀºì¹â£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+	message("vision",HIR"ç”±äºæˆ˜æ–—å·²ç»ç»“æŸï¼\n\n"
+		+ name() + HIR"åŒ–ä¸ºä¸€é“çº¢å…‰ï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

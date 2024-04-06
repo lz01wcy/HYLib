@@ -3,18 +3,18 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("À¶Ìì´¸", ({ "master lan", "lan","master" }) );
-	set("gender", "ÄĞĞÔ" );
-        set("title",HIB "À¶´óÏÈÉú" NOR);
+	set_name("è“å¤©é”¤", ({ "master lan", "lan","master" }) );
+	set("gender", "ç”·æ€§" );
+        set("title",HIB "è“å¤§å…ˆç”Ÿ" NOR);
 	set("age", 45);
 	set("int", 30);
 	set("str",700);
 	set("per", 30);
         set("apprentice_available", 50);
 	set("long",
-		"À¶Ìì´¸µÄÒ»±ú´ó´¸ÓÃµÄ³öÉñÈë»¯£®£®£®
-Ã¿Äê¶¼ºÍµÛÍõ¹ÈÖ÷¾ø¶¥Ò»Õ½£¬ÖÂ½ñÊ¤¸º²»·Ö£® 
-À¶Ìì´¸µÄÆ¢Æø±¬ÈçÁÒ»ğ£¬¾­³£ÎŞÔµÎŞ¹ÊµÄ½«µÜ×Ó´ò³ÉËÀÉË»òÖğ³öÇ½ÃÅ£®\n"
+		"è“å¤©é”¤çš„ä¸€æŸ„å¤§é”¤ç”¨çš„å‡ºç¥å…¥åŒ–ï¼ï¼ï¼
+æ¯å¹´éƒ½å’Œå¸ç‹è°·ä¸»ç»é¡¶ä¸€æˆ˜ï¼Œè‡´ä»Šèƒœè´Ÿä¸åˆ†ï¼ 
+è“å¤©é”¤çš„è„¾æ°”çˆ†å¦‚çƒˆç«ï¼Œç»å¸¸æ— ç¼˜æ— æ•…çš„å°†å¼Ÿå­æ‰“æˆæ­»ä¼¤æˆ–é€å‡ºå¢™é—¨ï¼\n"
 		);
         set("max_neili", 3500);
         set("neili", 3500);
@@ -35,10 +35,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIR"µÒÇà÷ë"NOR, ({ "master di", "master"}) );
-        set("title", RED"¾ø²»µÍÍ·"NOR);
+	set_name(HIR"ç‹„é’éºŸ"NOR, ({ "master di", "master"}) );
+        set("title", RED"ç»ä¸ä½å¤´"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -116,7 +116,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

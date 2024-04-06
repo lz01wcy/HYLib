@@ -3,13 +3,13 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("°×Ë®ÄïÄï", ({ "master shenshui", "master", "shenshui" }) );
-        set("title", HIW"Ë®Ä¸Òõ¼§"NOR);
-        set("gender", "Å®ĞÔ");
+        set_name("ç™½æ°´å¨˜å¨˜", ({ "master shenshui", "master", "shenshui" }) );
+        set("title", HIW"æ°´æ¯é˜´å§¬"NOR);
+        set("gender", "å¥³æ€§");
         set("age", 33);
         set("long",
-"Ò»Î»Á³ÉÏ´ø×ÅÃæÉ³µÄÃÀÅ®£¬×øÔÚµñ»¨ÒÎÉÏ£¬ÄãËäÈ»¿´²»µ½ËıµÄÃæÈİ£¬È´¿ÉÒÔ¸Ğ¾õµ½Ëı
-ÄÇ¾ø¼ÑµÄÆøÖÊºÍ¾ÙÊÖÍ¶×ã¼äµÄ³ÉÊì·çÔÏ¡£\n"
+"ä¸€ä½è„¸ä¸Šå¸¦ç€é¢æ²™çš„ç¾å¥³ï¼Œååœ¨é›•èŠ±æ¤…ä¸Šï¼Œä½ è™½ç„¶çœ‹ä¸åˆ°å¥¹çš„é¢å®¹ï¼Œå´å¯ä»¥æ„Ÿè§‰åˆ°å¥¹
+é‚£ç»ä½³çš„æ°”è´¨å’Œä¸¾æ‰‹æŠ•è¶³é—´çš„æˆç†Ÿé£éŸµã€‚\n"
                 );
         set("attitude", "peaceful");
         set("class", "shenshui");
@@ -21,10 +21,10 @@ set("pubmaster",1);
 
 if (random(2)==0)
 {
-	set_name(GRN"¶¡ÁéÁÕ"NOR, ({ "master ding", "ding"}) );
-        set("title", GRN"¶£ÁáÁá"NOR);
+	set_name(GRN"ä¸çµç³"NOR, ({ "master ding", "ding"}) );
+        set("title", GRN"å®ç²ç²"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -118,7 +118,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

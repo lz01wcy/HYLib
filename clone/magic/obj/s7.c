@@ -5,13 +5,13 @@
 inherit HEAD;
 void create()
 {	
-  set_name(HIB"°×½ğÃæÕÖ"NOR, ({ "helmet hat", "helmethat" }) );
+  set_name(HIB"ç™½é‡‘é¢ç½©"NOR, ({ "helmet hat", "helmethat" }) );
   set_weight(1000);	
    if( clonep() )
   set_default_object(__FILE__);
   else {
-		set("unit", "¶¥");
-set("long", HIB"ÕâÊÇÒ»¶¥°×½ğÃæÕÖ,×ö¹¤¼«Æä¾«ÖÂ¡£\n"NOR);
+		set("unit", "é¡¶");
+set("long", HIB"è¿™æ˜¯ä¸€é¡¶ç™½é‡‘é¢ç½©,åšå·¥æå…¶ç²¾è‡´ã€‚\n"NOR);
                 set("value", 15000);
                 set("wield_neili", 5000);
                 set("wield_maxneili", 5000);

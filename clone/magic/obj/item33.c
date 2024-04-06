@@ -1,4 +1,4 @@
-// ¾«ÉñÒ©·Û 
+// ç²¾ç¥è¯ç²‰ 
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIC"×êÊ¯Ò©·Û"NOR, ({ "jing itemc", "33item" }) );
+        set_name(HIC"é’»çŸ³è¯ç²‰"NOR, ({ "jing itemc", "33item" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°ü×êÊ¯Ò©·Û¿ÉÒÔÊ¹ÓÃ(use id)¡£¾İËµ¿ÉÒÔ»Ö¸´¾«Á¦\n") ;
+                set("long", "è¿™æ˜¯ä¸€åŒ…é’»çŸ³è¯ç²‰å¯ä»¥ä½¿ç”¨(use id)ã€‚æ®è¯´å¯ä»¥æ¢å¤ç²¾åŠ›\n") ;
 set("treasure",1);
-                set("unit", "°ü");
+                set("unit", "åŒ…");
 
                 set("value", 96000);
                 set("zhen", 1);
@@ -48,19 +48,19 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
 
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
         if( !objectp(ob = present("jing itemc", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(HIC"\n$n"HIC"Ò»¿Ú³ÔÏÂÁË$N"HIC"  $n¾õµÄÈ«ÉíÊæ·ş¶àÁË!  \n"NOR,this_object(),me);
+        message_vision(HIC"\n$n"HIC"ä¸€å£åƒä¸‹äº†$N"HIC"  $nè§‰çš„å…¨èº«èˆ’æœå¤šäº†!  \n"NOR,this_object(),me);
         me->start_busy(1) ;
 me->add("jing",650);
 
@@ -72,7 +72,7 @@ if (me->query("jing") > me->query("max_jing")+550)
 me->set("jing",me->query("max_jing")+550);
 if (me->query("eff_jing") > me->query("max_jing"))
 me->set("eff_jing",me->query("max_jing"));
-message_vision(HIG"$NÉíÉÏµÄ¾«ÉñÁË²»ÉÙ!!\n"NOR, me);
+message_vision(HIG"$Nèº«ä¸Šçš„ç²¾ç¥äº†ä¸å°‘!!\n"NOR, me);
          }
 
 

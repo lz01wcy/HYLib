@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIY"»ú»áÖé"NOR, ({ "jihuizhu" }) );
+    set_name(HIY"æœºä¼šç "NOR, ({ "jihuizhu" }) );
     set_weight(1);
             set("no_put", 1);
             set("value", 88);
@@ -16,9 +16,9 @@ void create()
             set("no_pawn", 1);
             set("value", 88);
             set("treasure",1);
-            set("unit", "¿Å");
+            set("unit", "é¢—");
             set("material", "paper");
-            set("long", "ÉñÖéÖ®Ò»¡£×÷ÓÃ¾ÍÊÇºó»ÚÒ©£¡£¡\n");
+            set("long", "ç¥ç ä¹‹ä¸€ã€‚ä½œç”¨å°±æ˜¯åæ‚”è¯ï¼ï¼\n");
           }
 
     setup();
@@ -32,39 +32,39 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 if (random(6)==1)
 {
 me->delete("szj/failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃÆÆ½âÉñÕÕ¾­µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—ç ´è§£ç¥ç…§ç»çš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(6)==2)
 {
 me->delete("jiuyin/shang-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõÉÏ²áµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£ä¹é˜´ä¸Šå†Œçš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(6)==3)
 {
 me->delete("jiuyin/xia-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõÏÂ²áµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£ä¹é˜´ä¸‹å†Œçš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(6)==4)
 {
 me->delete("zhou/jieyi");
 me->delete("zhou/fail");
 me->delete("zhou/failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½âË«ÊÖ»¥²¶µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£åŒæ‰‹äº’æ•çš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(6)==5)
 {
 me->delete("jiuyin/gumu-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõ¹ÅÄ¹µÄ»ú»á£¡\n"NOR, this_player());
-        message_vision(HIG "$N³Ô°ÑÖé³ÔÁËÏÂÈ¥£¬Ö»¾õµÃÈ«ÉíÊæ·şÁË²»ÉÙ!\n" NOR, me);
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£ä¹é˜´å¤å¢“çš„æœºä¼šï¼\n"NOR, this_player());
+        message_vision(HIG "$NåƒæŠŠç åƒäº†ä¸‹å»ï¼Œåªè§‰å¾—å…¨èº«èˆ’æœäº†ä¸å°‘!\n" NOR, me);
 }	
 else 
 {
 me->set("betrayer",0);
-message_vision(HIG"$NµÄÅÑÊ¦ÃÅÊıÇåÁã£¡\n"NOR, this_player());
+message_vision(HIG"$Nçš„å›å¸ˆé—¨æ•°æ¸…é›¶ï¼\n"NOR, this_player());
 }
 	destruct(this_object());
 	return 1;

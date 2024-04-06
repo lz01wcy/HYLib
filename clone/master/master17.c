@@ -5,9 +5,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("°×Èı¿Õ", ({ "master bai", "master", "baisankong" }) );
-        set("title", HIY"ÇåÆ½½£¿Í"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç™½ä¸‰ç©º", ({ "master bai", "master", "baisankong" }) );
+        set("title", HIY"æ¸…å¹³å‰‘å®¢"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 54);
         set("str", 30);
         set("cor", 30);
@@ -28,7 +28,7 @@ void create()
         set("score", 200000);
         set("chat_chance", 10);
         set("chat_msg", ({
-	"°×Èı¿ÕÒ¡Í·Ì¾µÀ£º£¢ÇåÆ½É½×¯ºá»ö²»¶Ï£¬ÈË¶¡Ë¥Èõ£®£®£®£¢\n",
+	"ç™½ä¸‰ç©ºæ‘‡å¤´å¹é“ï¼šï¼‚æ¸…å¹³å±±åº„æ¨ªç¥¸ä¸æ–­ï¼Œäººä¸è¡°å¼±ï¼ï¼ï¼ï¼‚\n",
                 (: random_move :),
         }) );
 
@@ -52,10 +52,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIB"Ğ¡À×"NOR, ({ "master lei", "lei"}) );
-        set("title", RED"¾ø²»Î·ËÀ"NOR);
+	set_name(HIB"å°é›·"NOR, ({ "master lei", "lei"}) );
+        set("title", RED"ç»ä¸ç•æ­»"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -109,7 +109,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

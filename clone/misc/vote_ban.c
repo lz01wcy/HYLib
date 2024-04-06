@@ -1,23 +1,23 @@
 //clone/misc/vote_ban.c--
-// ¶¯ÒéÏµÍ³ Êı¾İ°å
-// Written by Sunyc@kync 2001Äê8ÔÂ30ÈÕ
+// åŠ¨è®®ç³»ç»Ÿ æ•°æ®æ¿
+// Written by Sunyc@kync 2001å¹´8æœˆ30æ—¥
 // All Copyrights.
 
 #include <ansi.h>
 
 inherit ITEM;
 inherit F_SAVE;
-/*Ôö¼ÓĞÂµÄ¶¯Òé*/
+/*å¢åŠ æ–°çš„åŠ¨è®®*/
 int add_vote(string me_name,string time,string subject,mapping choice);
-/*¶¯Òé¼ì²é*/
+/*åŠ¨è®®æ£€æŸ¥*/
 void check();
-/*ÁĞ³ö¶¯Òé*/
+/*åˆ—å‡ºåŠ¨è®®*/
 int do_list(int z);
-/*Ïò¶¯ÒéÍ¶Æ±*/
+/*å‘åŠ¨è®®æŠ•ç¥¨*/
 int add_vote_piao(int i,string choice,string id);
-/*Ö÷Òª±äÁ¿*/
+/*ä¸»è¦å˜é‡*/
 mapping vote_ban,vote_ban_choice;
-/*½»»¥½Ó¿Ú*/
+/*äº¤äº’æ¥å£*/
 mixed query_data() { 
      if (undefinedp(vote_ban[0]))
         return 0;
@@ -31,7 +31,7 @@ mixed query_choice() {
 
 void create()
 {
-    set_name("º£ÑóII¶¯ÒéÏµÍ³", ({"kync vote system"}) );
+    set_name("æµ·æ´‹IIåŠ¨è®®ç³»ç»Ÿ", ({"kync vote system"}) );
     seteuid(getuid());
     restore();
     check();
@@ -46,7 +46,7 @@ int add_vote(string me_name,string time,string subject,mapping choice)
 {
     mapping list;
     int i;
-    //³õÊ¼±äÁ¿¸ñÊ½
+    //åˆå§‹å˜é‡æ ¼å¼
     list=([
       "id":me_name,
       "time":time,
@@ -73,8 +73,8 @@ int do_list(int z)
     //  if (vote_ban=({})) return 0;
     if(z==-1)
     {
-        /*¶ÔÆëÓĞ´ı¸ÄÕı*/
-        printf("%-4s|%-18s %-23s %s\n",HIG"ĞòºÅ"NOR,"Ìá½»Õß","Ìá½»Ê±¼ä","¶¯ÒéÌâÄ¿");
+        /*å¯¹é½æœ‰å¾…æ”¹æ­£*/
+        printf("%-4s|%-18s %-23s %s\n",HIG"åºå·"NOR,"æäº¤è€…","æäº¤æ—¶é—´","åŠ¨è®®é¢˜ç›®");
         printf("%s\n","----------------------------------------------------------------------------------------------------");
         for(i=1; i<sizeof(vote_ban)+1; i++)
         {
@@ -83,21 +83,21 @@ int do_list(int z)
             printf("%-4d|%-40s %-23s %s\n",i,list["id"],list["time"],HIY+list["subject"]+NOR);
             printf("%s\n","----------------------------------------------------------------------------------------------------");
         }
-        printf("%s\n",HIY"Wiz@Kync£¬ÏêÇéÇë²ÎÕÕhelp vote1"NOR);
+        printf("%s\n",HIY"Wiz@Kyncï¼Œè¯¦æƒ…è¯·å‚ç…§help vote1"NOR);
         return 1;
     }
     else 
     {
         list=vote_ban[z];
         if (vote_ban_choice[z]=="") return 0;
-        printf("%-4s|%-40s %-23s %s\n",HIG"ĞòºÅ"NOR,"Ìá½»Õß","Ìá½»Ê±¼ä","¶¯ÒéÌâÄ¿");
+        printf("%-4s|%-40s %-23s %s\n",HIG"åºå·"NOR,"æäº¤è€…","æäº¤æ—¶é—´","åŠ¨è®®é¢˜ç›®");
         printf("%-4d|%-40s %-23s %s\n",z+1,list["id"],list["time"],HIY+list["subject"]+NOR);
-        printf("%s\n","Ñ¡Ïî£º");
+        printf("%s\n","é€‰é¡¹ï¼š");
         for (i=1;i<sizeof(keys((mapping)list["choice"]))+1;i++)
-            printf("%-4s:%-50s %-6dÆ±\n",letters[i],list["choice"][letters[i]],vote_ban_choice[z][letters[i]]);
+            printf("%-4s:%-50s %-6dç¥¨\n",letters[i],list["choice"][letters[i]],vote_ban_choice[z][letters[i]]);
         if(wizardp(this_player()))
         {
-            printf("²ÎÓëÍ¶Æ±µÄÍæ¼Ò:\n");
+            printf("å‚ä¸æŠ•ç¥¨çš„ç©å®¶:\n");
             for (t=0;t<sizeof(vote_ban_choice[z]["id"]);t++)
                 printf("%-4s\n",vote_ban_choice[z]["id"][t]);
         }
@@ -145,7 +145,7 @@ void check()
         if (vote_ban[i]=="") continue;
         if ((string)list["name"]=="none")
         {               
-            message("channel:chat",HIG+"¡¾±í¾ö¡¿"+"µÚ"+(i+1)+"ºÅ¶¯Òé±í¾ö½áÊø¡£\n"NOR,users());
+            message("channel:chat",HIG+"ã€è¡¨å†³ã€‘"+"ç¬¬"+(i+1)+"å·åŠ¨è®®è¡¨å†³ç»“æŸã€‚\n"NOR,users());
             map_delete(vote_ban,i);
             map_delete(vote_ban_choice,i);
             check();

@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(GRN"±Ì²Ï·Û"NOR, ({"bican feng", "feng"}));
+	set_name(GRN"ç¢§èš•ç²‰"NOR, ({"bican feng", "feng"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»´ü¾ç¶¾µÄ¶¾Ò©, Èç¹ûÓÃÀ´Á¶°µÆ÷ÓÐ¼ûÑª·âºíÖ®Ð§. \n");
-		set("unit", "´ü");
+		set("long", "ä¸€è¢‹å‰§æ¯’çš„æ¯’è¯, å¦‚æžœç”¨æ¥ç‚¼æš—å™¨æœ‰è§è¡€å°å–‰ä¹‹æ•ˆ. \n");
+		set("unit", "è¢‹");
 		set("value", 20000);
 	}
 	setup();
@@ -26,10 +26,10 @@ int do_eat(string arg)
 	object me = this_player();
 
 	if(!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="feng" || arg=="bican feng") 
 	{
-		message_vision("$NÑöÍ·°ÑÒ»Ð¡´ü" + name() + "¶¼ÑÊÁËÏÂÈ¥¡£\n", me);
+		message_vision("$Nä»°å¤´æŠŠä¸€å°è¢‹" + name() + "éƒ½å’½äº†ä¸‹åŽ»ã€‚\n", me);
 		me->die();
 		destruct(this_object());
 	}

@@ -4,16 +4,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name("²¯¾í", ({ "bo juan", "bo", "juan" }));
+	set_name("å¸›å·", ({ "bo juan", "bo", "juan" }));
 	set_weight(50);
-//	set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//	set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¾í");
+		set("unit", "å·");
 		set("long",
-			"ÕâÊÇÒ»¾í²¯¾í£¬ÀïÃæÐ´×Å £º\n"
-			"×¯×Ó¡°åÐÒ£ÓÎ¡±ÓÐÔÆ£ºÇî·¢Ö®±±ÓÐÚ¤º£Õß£¬Ìì³ØÒ²¡£ÓÐÓãÑÉ£¬Æä¹ãÊýÇ§Àï¡£¡£¡£¡£\n");
+			"è¿™æ˜¯ä¸€å·å¸›å·ï¼Œé‡Œé¢å†™ç€ ï¼š\n"
+			"åº„å­â€œé€é¥æ¸¸â€æœ‰äº‘ï¼šç©·å‘ä¹‹åŒ—æœ‰å†¥æµ·è€…ï¼Œå¤©æ± ä¹Ÿã€‚æœ‰é±¼ç„‰ï¼Œå…¶å¹¿æ•°åƒé‡Œã€‚ã€‚ã€‚ã€‚\n");
 		set("value", 500);
 		set("material", "silk");
 		set("skill", ([
@@ -40,24 +40,24 @@ int do_study(string arg)
 	object me = this_player();
 
 	if ( arg != "bo" && arg != "juan" && arg !="bo juan" )
-	return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
 
-	if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+	if (me->is_busy()) return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
  
-//	if (me->query("family")["family_name"]!="åÐÒ£ÅÉ") 
-//	return notify_fail("ÏëÑ§¸ü¸ßÉîµÄ±±Ú¤Éñ¹¦£¬±ØÐë¼ÓÈëÎÒåÐÒ£ÅÉ¡£\n");
+//	if (me->query("family")["family_name"]!="é€é¥æ´¾") 
+//	return notify_fail("æƒ³å­¦æ›´é«˜æ·±çš„åŒ—å†¥ç¥žåŠŸï¼Œå¿…é¡»åŠ å…¥æˆ‘é€é¥æ´¾ã€‚\n");
 
 	if (me->query("jing") < 40) 
-	return notify_fail("ÄãµÄ¾«²»¹»ÁË¡£\n");
+	return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿäº†ã€‚\n");
 
-	if ( me->is_fighter()) return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔÄ¶ÁÐÂÖª£¡\n");
+	if ( me->is_fighter()) return notify_fail("æˆ˜æ–—ä¸­æ— æ³•é˜…è¯»æ–°çŸ¥ï¼\n");
 
 	if ( (int)me->query_skill("beiming-shengong",1) >= 20 
 	&& (int)me->query_skill("beiming-shengong",1) <= 100 )
 	{
 		me->receive_damage("jing", 20);
 		me->improve_skill("beiming-shengong", (me->query_skill("beiming-shengong",1)+me->query("int")));
-		message_vision("$NÕýÔÚ×¨ÐÄÑÐ¶Á±±Ú¤Éñ¹¦ÐÄ·¨¡£\n", me);
+		message_vision("$Næ­£åœ¨ä¸“å¿ƒç ”è¯»åŒ—å†¥ç¥žåŠŸå¿ƒæ³•ã€‚\n", me);
 		return 1;
 	}
 	return 0;

@@ -1,7 +1,7 @@
-//°æ±¾£ºÎäÁÖÕù°Ô6.0 (98/12)
-//¿ª·¢Õß£ºĞì¾º
-// meng-zhu.c ÎäÁÖÃËÖ÷
-// colored the title of ÎäÁÖÃËÖ÷(player) ,   ReyGod, 1/15/1997
+//ç‰ˆæœ¬ï¼šæ­¦æ—äº‰éœ¸6.0 (98/12)
+//å¼€å‘è€…ï¼šå¾ç«
+// meng-zhu.c æ­¦æ—ç›Ÿä¸»
+// colored the title of æ­¦æ—ç›Ÿä¸»(player) ,   ReyGod, 1/15/1997
 #include <ansi.h>
 
 #ifndef NPCDATA
@@ -25,11 +25,11 @@ void create()
 	seteuid(getuid());
 
 	if (!restore()) {
-	set_name("ÎºÎŞË«", ({ "wulin mengzhu", "mengzhu", "zhu" }) );
-	set("title", "ÎäÁÖÃËÖ÷" );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é­æ— åŒ", ({ "wulin mengzhu", "mengzhu", "zhu" }) );
+	set("title", "æ­¦æ—ç›Ÿä¸»" );
+	set("gender", "ç”·æ€§" );
 	set("age", 40);
-        set("long","Ëû¾ÍÊÇĞÛ¾áÎäÁÖ£¬ºÅÕÙÌìÏÂ£¬Íş·çºÕºÕµÄµ±½ñÎäÁÖÃËÖ÷¡£\n");
+        set("long","ä»–å°±æ˜¯é›„è¸æ­¦æ—ï¼Œå·å¬å¤©ä¸‹ï¼Œå¨é£èµ«èµ«çš„å½“ä»Šæ­¦æ—ç›Ÿä¸»ã€‚\n");
 	set("attitude", "heroism");
 	set("generation",0);
 	set("winner","none");
@@ -91,10 +91,10 @@ int do_kill()
 	object ob;
 	int i;
 
-	command("say ÄãÏëÄ±º¦±¾ÃËÖ÷£¬µ±ÕæÊÇ³ÔÁËĞÜĞÄ±ª×Óµ¨ÁË£¡£¡");
-	command("say ×ùÏÂ°×ÒÂÎäÊ¿ºÎÔÚ£¡");
+	command("say ä½ æƒ³è°‹å®³æœ¬ç›Ÿä¸»ï¼Œå½“çœŸæ˜¯åƒäº†ç†Šå¿ƒè±¹å­èƒ†äº†ï¼ï¼");
+	command("say åº§ä¸‹ç™½è¡£æ­¦å£«ä½•åœ¨ï¼");
 	
-	message_vision("ËÄÖÜµÄ°×ÒÂÎäÊ¿ÈºÆğ¶Ô$N·¢¶¯¹¥»÷£¡\n", this_player());
+	message_vision("å››å‘¨çš„ç™½è¡£æ­¦å£«ç¾¤èµ·å¯¹$Nå‘åŠ¨æ”»å‡»ï¼\n", this_player());
 
 	for(i=0; i<4; i++) {
 		if( objectp( ob = present("wei shi " + (i+1), environment(this_object())) ) )
@@ -113,14 +113,14 @@ int accept_fight(object ob)
 {
 //                remove_call_out("do_copy");
 //                call_out("do_copy", 1, me, ob);
-		return notify_fail("Äã¸úÄã×Ô¼º´òÊ²Ã´¼Ü£¿£¡\n");
+		return notify_fail("ä½ è·Ÿä½ è‡ªå·±æ‰“ä»€ä¹ˆæ¶ï¼Ÿï¼\n");
 }
 
 	if (wizardp(this_player()))
-		return notify_fail("Î×Ê¦²»ÄÜÇÀÃËÖ÷Ö®Î»£¡\n");
+		return notify_fail("å·«å¸ˆä¸èƒ½æŠ¢ç›Ÿä¸»ä¹‹ä½ï¼\n");
 
 	if ( me->is_fighting() ) 
-		return notify_fail("ÒÑ¾­ÓĞÈËÕıÔÚÌôÕ½ÎäÁÖÃËÖ÷£¡\n");
+		return notify_fail("å·²ç»æœ‰äººæ­£åœ¨æŒ‘æˆ˜æ­¦æ—ç›Ÿä¸»ï¼\n");
 
 	me->set("eff_qi", me->query("max_qi"));
 	me->set("qi",     me->query("max_qi"));
@@ -142,8 +142,8 @@ void die()
 	me->set("eff_jing", me->query("max_jing"));
 	me->set("jing",   me->query("max_jing"));
 	me->set("neili",  me->query("max_neili"));
-	message_vision(HIR"\n$NËÀµôÁË¡£\n"NOR, me);
-	message_vision(HIB"\n¿ÉÊÇÔÚ´ËÍ¬Ê±$N¿ÚÖĞÄ¬Äî"HIC"¡º»¹»êÖä¡»"HIB"ËÄÖÜÑı·çÕóÕó£¬ÂıÂıµÄ$NÓÖÕ¾ÁËÆğÀ´¡£\n"NOR, me);
+	message_vision(HIR"\n$Næ­»æ‰äº†ã€‚\n"NOR, me);
+	message_vision(HIB"\nå¯æ˜¯åœ¨æ­¤åŒæ—¶$Nå£ä¸­é»˜å¿µ"HIC"ã€è¿˜é­‚å’’ã€"HIB"å››å‘¨å¦–é£é˜µé˜µï¼Œæ…¢æ…¢çš„$Nåˆç«™äº†èµ·æ¥ã€‚\n"NOR, me);
 }
 
 int checking(object me, object ob)
@@ -166,17 +166,17 @@ int checking(object me, object ob)
 	if ( !present(ob, environment()) ) return 1; 
 
 	if (( (int)me->query("qi")*100 / my_max_qi) <= 50 ) {
-		command("say ¹ûÈ»À÷º¦£¬¹§Ï²Äã³ÉÎªµ±½ñÎäÁÖÃËÖ÷£¡\n");
-		command("chat ¹ş¹ş¹ş£¬µ½µ×ÊÇ³¤½­ááÀËÍÆÇ°ÀË£¬Ò»´úĞÂÈË»»¾ÉÈË£¡\n");
-		command("chat ¹§Ï²" + ob->query("name") + "±»ÍÆ¾ÙÎªµ±½ñÎäÁÖÃËÖ÷£¡\n");
+		command("say æœç„¶å‰å®³ï¼Œæ­å–œä½ æˆä¸ºå½“ä»Šæ­¦æ—ç›Ÿä¸»ï¼\n");
+		command("chat å“ˆå“ˆå“ˆï¼Œåˆ°åº•æ˜¯é•¿æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œä¸€ä»£æ–°äººæ¢æ—§äººï¼\n");
+		command("chat æ­å–œ" + ob->query("name") + "è¢«æ¨ä¸¾ä¸ºå½“ä»Šæ­¦æ—ç›Ÿä¸»ï¼\n");
 		remove_call_out("do_copy");
 		call_out("do_copy", 1, me, ob);
 		return 1;
 	}
 
 	if (( (int)ob->query("qi")*100 / his_max_qi) < 50 ) {
-		command("say ¿´À´" + RANK_D->query_respect(ob) + 
-			"»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚµ±½ñÎäÁÖÖĞ³öÈËÍ·µØ !\n");
+		command("say çœ‹æ¥" + RANK_D->query_respect(ob) + 
+			"è¿˜å¾—å¤šåŠ ç»ƒä¹ ï¼Œæ–¹èƒ½åœ¨å½“ä»Šæ­¦æ—ä¸­å‡ºäººå¤´åœ° !\n");
 		return 1;
 	}
 
@@ -195,7 +195,7 @@ int do_copy(object me, object ob)
 
 	me->set("name",  ob->query("name") );
 	
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÎäÁÖÃËÖ÷");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£æ­¦æ—ç›Ÿä¸»");
 	me->set("short", HIR + me->query("title") + NOR + " " + me->query("name") + "(" + capitalize(ob->query("id")) + ")");
 	me->delete("title");
 
@@ -205,7 +205,7 @@ int do_copy(object me, object ob)
 // = better to place this checking when players login.
 //	ob->set("mengzhu_gen",me->query("generation"));
 	
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÎäÁÖÃËÖ÷");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£æ­¦æ—ç›Ÿä¸»");
 	me->set("short", me->query("title") + " " + me->query("name") + "(Wulin mengzhu)");
 	me->delete("title");
 
@@ -238,10 +238,10 @@ int do_recopy(object me, object ob)
 	ob = this_player();
 
 	if ( me->query("winner") != ob->query("id") ) 
-		return notify_fail("Äã²»ÊÇÏÖÈÎÎäÁÖÃËÖ÷£¡\n");;
+		return notify_fail("ä½ ä¸æ˜¯ç°ä»»æ­¦æ—ç›Ÿä¸»ï¼\n");;
 
 	me->set("name",  ob->query("name") );
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÎäÁÖÃËÖ÷");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£æ­¦æ—ç›Ÿä¸»");
 	me->set("short", HIR + me->query("title") + NOR + " " + me->query("name") + "(" + capitalize(ob->query("id")) + ")");
 	me->delete("title");
 
@@ -252,7 +252,7 @@ int do_recopy(object me, object ob)
 //	ob->set("mengzhu_gen",me->query("generation"));
 
 
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÎäÁÖÃËÖ÷");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£æ­¦æ—ç›Ÿä¸»");
 	me->set("short", me->query("title") + " " + me->query("name") + "(Wulin mengzhu)");
 	me->delete("title");
 
@@ -380,7 +380,7 @@ int do_clone(object me, object ob)
 me->clear_condition();
 	save();
 
-	tell_object(ob, "×´Ì¬´¢´æÍê±Ï¡£\n");
+	tell_object(ob, "çŠ¶æ€å‚¨å­˜å®Œæ¯•ã€‚\n");
 
 	new1 = new("/clone/npc/meng-zhu");
 	new1->move("/d/taishan/fengchan");
@@ -400,12 +400,12 @@ int do_recover()
     me = this_object();
     ob = this_player();
     if (me->is_fighting() || ob->is_fighting() || me->query("fighting"))
-        return notify_fail("ÏÖÔÚÕâÀïÕı´òµÄ²»ÒàÀÖºõ£¡µÈ»á°É£¡\n");
+        return notify_fail("ç°åœ¨è¿™é‡Œæ­£æ‰“çš„ä¸äº¦ä¹ä¹ï¼ç­‰ä¼šå§ï¼\n");
 
     if ( me->query("winner") != ob->query("id") || me->query("age")>ob->query("age") ) 
-        return notify_fail("Äã²»ÊÇÏÖÈÎÎäÁÖÃËÖ÷£¡\n");;
+        return notify_fail("ä½ ä¸æ˜¯ç°ä»»æ­¦æ—ç›Ÿä¸»ï¼\n");;
     if (time()-me->query("recover")<60)
-        return notify_fail("×´Ì¬¸´ÔªÍê±Ï¡£\n");
+        return notify_fail("çŠ¶æ€å¤å…ƒå®Œæ¯•ã€‚\n");
 
 
    ob->set("qi",ob->query("max_qi"));
@@ -414,7 +414,7 @@ int do_recover()
    ob->set("eff_jing",ob->query("max_jing"));
    ob->set("neili",ob->query("max_neili"));
 
-    write("×´Ì¬¸´ÔªÍê±Ï¡£\n");
+    write("çŠ¶æ€å¤å…ƒå®Œæ¯•ã€‚\n");
     me->set("recover",time());
     return 1;
 }

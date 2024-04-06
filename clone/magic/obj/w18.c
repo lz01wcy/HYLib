@@ -1,18 +1,18 @@
-// ĞÇ³¾ÕÈ
+// æ˜Ÿå°˜æ–
 #include <ansi.h>
 #include <weapon.h>
 inherit STAFF;
 
 void create()
 {
-        set_name(HIC"ĞÇ³¾ÕÈ"NOR, ({"magic staffe", "mstaffe"}));
+        set_name(HIC"æ˜Ÿå°˜æ–"NOR, ({"magic staffe", "mstaffe"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIC"ÕâÊÇÒ»°ÑĞÇ³¾ÕÈ,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIC"è¿™æ˜¯ä¸€æŠŠæ˜Ÿå°˜æ–,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("armor_prop/intelligence",20);
                 set("value", 165000);

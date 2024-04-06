@@ -1,18 +1,18 @@
-// ²¼Â×Ï£¶àÉñ±Ş
+// å¸ƒä¼¦å¸Œå¤šç¥é­
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
 
 void create()
 {
-        set_name(RED"ËÀÉñÖ®½£"NOR, ({"magic swordf", "mswordf"}));
+        set_name(RED"æ­»ç¥ä¹‹å‰‘"NOR, ({"magic swordf", "mswordf"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", RED"ÕâÊÇÒ»°ÑËÀÉñÖ®½£,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", RED"è¿™æ˜¯ä¸€æŠŠæ­»ç¥ä¹‹å‰‘,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("armor_prop/dexterity",15);
                 set("value", 165000);

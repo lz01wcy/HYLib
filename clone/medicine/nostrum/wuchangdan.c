@@ -10,13 +10,13 @@ void init()
 }
 void create()
 {
-	set_name(HIR"ÎŞ³£µ¤"NOR, ({"wuchang dan", "dan"}));
+	set_name(HIR"æ— å¸¸ä¸¹"NOR, ({"wuchang dan", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å¾§Ó¨»ğºìµÄÎŞ³£µ¤£¬¾­ÌÒ»¨µºÖ÷¾«ĞÄÁ·ÖÆ£¬
-ÓĞÆğËÀ»ØÉúÖ®¹¦¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—æ™¶è¹ç«çº¢çš„æ— å¸¸ä¸¹ï¼Œç»æ¡ƒèŠ±å²›ä¸»ç²¾å¿ƒç»ƒåˆ¶ï¼Œ
+æœ‰èµ·æ­»å›ç”Ÿä¹‹åŠŸã€‚\n");
 		set("lev", 3+random(5));
 		set("value", 50000);
 	}
@@ -40,16 +40,16 @@ pot = exp/2;
 	neili_limit = me->query("max_neili");
 	force_skill = me->query_skill("force", 1);
 
-	if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 
 	if(me->query("eff_jing") >= me->query("max_jing") &&
 		me->query("eff_qi") >= me->query("max_qi") )
 	{
-		message_vision(HIG"$N³ÔÏÂÒ»Ö»ÎŞ³£µ¤£¬Ö»¾õÈ«Éí±ùÁ¹£¬¿´À´Äã²¹Ò©³ÔÌ«¶àÁË£¬ÄÖÆğ¶Ç×ÓÀ´ÁË£¡\n" NOR, me);
+		message_vision(HIG"$Nåƒä¸‹ä¸€åªæ— å¸¸ä¸¹ï¼Œåªè§‰å…¨èº«å†°å‡‰ï¼Œçœ‹æ¥ä½ è¡¥è¯åƒå¤ªå¤šäº†ï¼Œé—¹èµ·è‚šå­æ¥äº†ï¼\n" NOR, me);
 		me->receive_damage("jing",30);
 		me->receive_damage("qi",50);
 		me->receive_wound("jing",20);
@@ -59,7 +59,7 @@ pot = exp/2;
 	{
        me->add("combat_exp",exp);
        me->add("potential",pot);
-message_vision("$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!\n", me);
+message_vision("$Nè·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!\n", me);
 i=1+random(3);
 if (random(12)==0 || wizardp(me))
 {
@@ -73,14 +73,14 @@ else
 {
 me->add("expmax",i);
 }       
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, me);
+message_vision(HIR"$Nè·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, me);
 }       
 }
 	 	me->set("eff_jing",me->query("max_jing"));
 		me->set("jing",me->query("max_jing"));
 		me->set("eff_qi",me->query("max_qi"));
 		me->set("qi",me->query("max_qi"));
-		message_vision(HIR"$N³ÔÏÂÒ»¿ÅÎŞ³£µ¤£¬Ò»¹ÉÈÈÁ÷´Óµ¤ÌïÉıÆğ£¬¶ÙÊ±È«Éí³äÂúÁ¦Á¿£¡\n"NOR,me);
+		message_vision(HIR"$Nåƒä¸‹ä¸€é¢—æ— å¸¸ä¸¹ï¼Œä¸€è‚¡çƒ­æµä»ä¸¹ç”°å‡èµ·ï¼Œé¡¿æ—¶å…¨èº«å……æ»¡åŠ›é‡ï¼\n"NOR,me);
 	}
 	destruct(this_object());
 	me->start_busy(2);

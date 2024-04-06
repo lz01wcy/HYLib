@@ -1,5 +1,5 @@
-// lingzhi.c ±ùÌÇºùÂ«
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c å†°ç³–è‘«èŠ¦
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-	set_name(HIM"±ùÌÇºùÂ«"NOR, ({"ling zhi", "zhi"}));
+	set_name(HIM"å†°ç³–è‘«èŠ¦"NOR, ({"ling zhi", "zhi"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "´®");
-		set("long", "ÕâÊÇÒ»¿ÃÎäÁÖÈËÊ¿ÃÎÃÂÒÔÇóµÄ±ùÌÇºùÂ«£¬¾İËµ³ÔÒ»¿Ã¿ÉµÃ2000¾­Ñé£¬200Ç±ÄÜ¡£\n");
+		set("unit", "ä¸²");
+		set("long", "è¿™æ˜¯ä¸€æ£µæ­¦æ—äººå£«æ¢¦å¯ä»¥æ±‚çš„å†°ç³–è‘«èŠ¦ï¼Œæ®è¯´åƒä¸€æ£µå¯å¾—2000ç»éªŒï¼Œ200æ½œèƒ½ã€‚\n");
 		set("value", 0);
 	}
 	setup();
@@ -28,11 +28,11 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("combat_exp", 2000);
 	this_player()->add("potential",1000);
-	message_vision("$N³ÔÏÂÒ»´®±ùÌÇºùÂ«£¬Ö»¾õµÃ×Ô¼ºÓÖ±äÀûº¦ÁËÒ»Ğ© !\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€ä¸²å†°ç³–è‘«èŠ¦ï¼Œåªè§‰å¾—è‡ªå·±åˆå˜åˆ©å®³äº†ä¸€äº› !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

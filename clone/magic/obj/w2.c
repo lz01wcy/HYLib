@@ -1,18 +1,18 @@
-// ÒøÉ«³¤Ç¹
+// é“¶è‰²é•¿æª
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
 
 void create()
 {
-        set_name(RED"°«ÁéÖ®½£"NOR, ({"w sword", "wsword"}));
+        set_name(RED"çŸ®çµä¹‹å‰‘"NOR, ({"w sword", "wsword"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", RED"ÕâÊÇÒ»°Ñ°«ÁéÖ®½£,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", RED"è¿™æ˜¯ä¸€æŠŠçŸ®çµä¹‹å‰‘,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",10);

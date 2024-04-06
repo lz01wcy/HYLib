@@ -7,14 +7,14 @@ void backattack();
 void create()
 {
 
-	set_name("��������", ({ "jin she", "she" }) );
-	set("race", "Ұ��");
+	set_name("神龙奇蛇", ({ "jin she", "she" }) );
+	set("race", "野兽");
 	set("age", 2);
-	set("long", "һֻ���˿�����ë���Ȼ����������	��\n");
+	set("long", "一只让人看了起毛骨悚然的神龙奇蛇	。\n");
 	set("attitude", "peaceful");
 	set("str", 30);
 	set("cor", 30);
-	set("limbs", ({ "ͷ��", "����", "�ߴ�", "β��" }) );
+	set("limbs", ({ "头部", "身体", "七寸", "尾巴" }) );
 	set("verbs", ({ "bite" }) );
         set("vendetta/authority",1);
 
@@ -49,8 +49,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		 name() + "֨֨�ķ����˼���������\n\n"
-		+ name() + "��������Ĳݵؾ���ʧ�����ˡ�\n" , environment(),
+		 name() + "吱吱的发出了几声怪声！\n\n"
+		+ name() + "钻进附近的草地就消失不见了。\n" , environment(),
 		this_object() );
         if(objectp(owner=this_object()->query("possessed")))
 		owner->add_temp("max_guard",-1);
@@ -66,7 +66,7 @@ void invocation(object who, int level)
 	set_skill("unarmed", 170 + random(level));
 	set("combat_exp", 100000 + random(level/2*level*level));
 	message("vision",
-		 name() + "֨֨�Ĺֽ��˼���,��������ͷ��\n" NOR,
+		 name() + "吱吱的怪叫了几声,吐了吐舌头！\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);
@@ -116,5 +116,5 @@ int hit_ob(object me, object ob, int damage)
         ob->apply_condition("ill_shanghan",50);
         ob->apply_condition("ill_zhongshu",50);
         ob->apply_condition("ill_dongshang",50);
-        tell_object(ob, HIG "����ñ�ҧ�еĵط�һ��������\n" NOR );
+        tell_object(ob, HIG "你觉得被咬中的地方一阵麻痒！\n" NOR );
 }

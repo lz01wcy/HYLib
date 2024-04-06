@@ -1,4 +1,4 @@
-// °×É«Ïã¹½
+// ç™½è‰²é¦™è‡
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIC"°×É«Ïã¹½"NOR, ({ "mp itema", "2item" }) );
+        set_name(HIC"ç™½è‰²é¦™è‡"NOR, ({ "mp itema", "2item" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ö°×É«Ïã¹½¿ÉÒÔÊ¹ÓÃ(use id)¡£¾İËµ¿ÉÒÔ»Ö¸´·¨Á¦\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªç™½è‰²é¦™è‡å¯ä»¥ä½¿ç”¨(use id)ã€‚æ®è¯´å¯ä»¥æ¢å¤æ³•åŠ›\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 77000);
                 set("zhen", 1);
         }
@@ -47,20 +47,20 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
 
 
         if( !objectp(ob = present("mp itema", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(HIC"\n$n"HIC"Ò»¿Ú³ÔÏÂÁË$N"HIC"  $n¾õµÄÈ«ÉíÊæ·ş¶àÁË!  \n"NOR,this_object(),me);
+        message_vision(HIC"\n$n"HIC"ä¸€å£åƒä¸‹äº†$N"HIC"  $nè§‰çš„å…¨èº«èˆ’æœå¤šäº†!  \n"NOR,this_object(),me);
         me->start_busy(1) ;
 me->add("neili",500);
 
@@ -69,7 +69,7 @@ me->add("neili",500);
         me->add("neili",me->query("max_neili")/6);
 if (me->query("neili") > me->query("max_neili")+200)
 me->set("neili",me->query("max_neili")+200);
-message_vision(HIC"$NµÄ·¨Á¦»Ö¸´ÁË²»ÉÙ!!\n"NOR, me);
+message_vision(HIC"$Nçš„æ³•åŠ›æ¢å¤äº†ä¸å°‘!!\n"NOR, me);
         }
 
 

@@ -3,16 +3,16 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("ÌúÉÙ", ({ "master tieshao", "master","tieshao" }) );
-	set("gender", "ÄĞĞÔ" );
-        set("title", HIY"¶àÇéµ¶¿Í"NOR);
+	set_name("é“å°‘", ({ "master tieshao", "master","tieshao" }) );
+	set("gender", "ç”·æ€§" );
+        set("title", HIY"å¤šæƒ…åˆ€å®¢"NOR);
 	set("age", 25);
 	set("int", 30);
 	set("per", 30);
         set("apprentice_available", 50);
 	set("long",
-		"ÌúÉÙ´ÓÊ®ÎåËê¿ªÊ¼¾ÍºÍ°®ÆŞÑ©Èï¶ùĞĞÏÀ½­ºş£¬Á©ÈËµ¶½£ºÏ±Ú£¬\n"
-		"ÌìÏÂÎŞµĞ¡£Õıµ±Á©ÈËÃûÉù¶¥Ê¢Ö®Ê±£¬ÓÖºöÈ»ÍË³ö½­ºş£¬Òş¾ÓÓÚ´Ë¡£\n"
+		"é“å°‘ä»åäº”å²å¼€å§‹å°±å’Œçˆ±å¦»é›ªè•Šå„¿è¡Œä¾ æ±Ÿæ¹–ï¼Œä¿©äººåˆ€å‰‘åˆå£ï¼Œ\n"
+		"å¤©ä¸‹æ— æ•Œã€‚æ­£å½“ä¿©äººåå£°é¡¶ç››ä¹‹æ—¶ï¼Œåˆå¿½ç„¶é€€å‡ºæ±Ÿæ¹–ï¼Œéšå±…äºæ­¤ã€‚\n"
 		);
         set("force_factor", 200);
         set("max_gin", 3000);
@@ -62,10 +62,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIG"ÓáÅåÓñ"NOR, ({ "master yu", "master"}) );
-        set("title", HIG"±ÌÓñµ¶"NOR);
+	set_name(HIG"ä¿ä½©ç‰"NOR, ({ "master yu", "master"}) );
+        set("title", HIG"ç¢§ç‰åˆ€"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -113,7 +113,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

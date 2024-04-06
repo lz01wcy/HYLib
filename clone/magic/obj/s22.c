@@ -5,10 +5,10 @@ inherit HEAD;
 
 void create()
 {
-	set_name(HIB"¶ñÄ§ÃæÕÖ"NOR, ({ "dark head", "darkhead" }));
-	set("long", HIB"ÕâÊÇÒ»¸ö¶ñÄ§ÃæÕÖ£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIB"æ¶é­”é¢ç½©"NOR, ({ "dark head", "darkhead" }));
+	set("long", HIB"è¿™æ˜¯ä¸€ä¸ªæ¶é­”é¢ç½©ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¸ö");
+	set("unit", "ä¸ª");
 	set("armor_prop/dexterity",15);
 	set("value", 132000);
 	set("material", "gem");

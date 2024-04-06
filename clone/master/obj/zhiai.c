@@ -7,12 +7,12 @@ inherit HEAD;
 
 void create()
 {
-	set_name( HIW "°×»¢Ö®îø" NOR, ({ "white tiger", "ribbon" }) );
+	set_name( HIW "ç™½è™ä¹‹é“ " NOR, ({ "white tiger", "ribbon" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
+		set("unit", "æ¡");
 		set("value", 4000);
 		set("material", "cloth");
 		set("armor_prop/armor", 40);

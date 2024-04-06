@@ -6,17 +6,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Áú·ïË«»·", ({ "longfeng" }) );
+        set_name("é¾™å‡¤åŒç¯", ({ "longfeng" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»Ì×Áú·ïË«»·£¬ÉÏ¹ÙµÄ³ÉÃû±øÆ÷\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€å¥—é¾™å‡¤åŒç¯ï¼Œä¸Šå®˜çš„æˆåå…µå™¨\n");
                 set("value", 3000);
                 set("material", "iron");
-                set("wield_msg", "$NË«ÊÖÒ»·Ö£¬ÄÃ³öÒ»Ë«$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$NåŒæ‰‹ä¸€åˆ†ï¼Œæ‹¿å‡ºä¸€åŒ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(225);

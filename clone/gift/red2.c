@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÁéÖ¥
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´çµèŠ
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -13,21 +13,21 @@ void init()
 }
 void create()
 {
-        set_name(HIR"ÕÔĞ¡Âü"NOR, ({"lting"}));
+        set_name(HIR"èµµå°æ›¼"NOR, ({"lting"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
    set("liwu",1);
     set("value", 0);
 set("no_steal",1);
 set("no_beg",1);
     set("no_put",1);
-    set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 
-                set("unit", "Î»");
-                set("long", "ÃÀÅ®ÕÔĞ¡Âü ·çÉ§ÑŞÀö µßµ¹ÖÚÉú ´ó¼Ò¿ÉÒÔÀ´ĞÀÉÍ(xinshang)Ëı\n");
+                set("unit", "ä½");
+                set("long", "ç¾å¥³èµµå°æ›¼ é£éªšè‰³ä¸½ é¢ å€’ä¼—ç”Ÿ å¤§å®¶å¯ä»¥æ¥æ¬£èµ(xinshang)å¥¹\n");
                 set("no_give", 1);
 		set("value", 0);
 	}
@@ -39,7 +39,7 @@ int do_eat(string arg)
 
 	this_player()->add("combat_exp", 500);
 	this_player()->add("potential",200);
-        message_vision("$NÇáÇáµØÍÇÏÂÕÔĞ¡ÂüÉíÉÏµÄ±¡É´.... ÍÛ!!! ÊÇÄĞ°çÅ®×°°¡!!!\n", this_player());
+        message_vision("$Nè½»è½»åœ°é¢“ä¸‹èµµå°æ›¼èº«ä¸Šçš„è–„çº±.... å“‡!!! æ˜¯ç”·æ‰®å¥³è£…å•Š!!!\n", this_player());
 	destruct(this_object());
 	return 1;
 }

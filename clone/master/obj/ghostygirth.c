@@ -7,12 +7,12 @@ inherit WAIST;
 
 void create()
 {
-	set_name(  "÷ÈÓ°Éñ´ø" , ({ "ghosty girth", "girth" }) );
+	set_name(  "é­…å½±ç¥å¸¦" , ({ "ghosty girth", "girth" }) );
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
+		set("unit", "æ¡");
 		set("value", 7000);
 		set("material", "cloth");
 		set("armor_prop/armor", 10);

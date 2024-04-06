@@ -1,14 +1,14 @@
-// Killer-n.c ,No greeting, ÉÙÁÖ¹¦·ò, ±±ÃÅ
+// Killer-n.c ,No greeting, å°‘æž—åŠŸå¤«, åŒ—é—¨
 inherit NPC;
 
 void create()
 {
-	set_name("É±ÊÖ", ({"killer"}));
+	set_name("æ€æ‰‹", ({"killer"}));
 	set("long",
-	"ÕâÊÇÒ»¸öÉí²Ä¸ß´óµÄ½­ºþÈË£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²£¬¿´ÆðÀ´ËÆºõ²»»³ºÃÒâ¡£\n"
+	"è¿™æ˜¯ä¸€ä¸ªèº«æé«˜å¤§çš„æ±Ÿæ¹–äººï¼Œä¸¤è‡‚ç²—å£®ï¼Œè†€é˜”è…°åœ†ï¼Œçœ‹èµ·æ¥ä¼¼ä¹Žä¸æ€€å¥½æ„ã€‚\n"
 	);
 
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "aggressive");
 	set("class", "bonze");
 
@@ -54,8 +54,8 @@ void create()
 
 	set("chat_chance", 20);
 	set("chat_msg", ({
-		"É±ÊÖËµµÀ: Õâ´Î¿´ÄÇÐ©Íæ¼ÒÃÇÍùÄÄ¶ùÅÜ¡£\n",
-		"É±ÊÖËµµÀ: É±! É±! É±!!!¡£\n",
+		"æ€æ‰‹è¯´é“: è¿™æ¬¡çœ‹é‚£äº›çŽ©å®¶ä»¬å¾€å“ªå„¿è·‘ã€‚\n",
+		"æ€æ‰‹è¯´é“: æ€! æ€! æ€!!!ã€‚\n",
 		(: random_move :)
 	}) );
 
@@ -82,7 +82,7 @@ void greeting(object ob)
 	if (interactive(ob))
 //	&& !environment(ob)->query("no_fight"))
 	{
-		command("say ÄãÕâ¼Ò»ï²»ÒªÅÜ£¬ÈÃ´óÒ¯ÎÒÔ×ÁËÄã£¡£¡£¡\n");
+		command("say ä½ è¿™å®¶ä¼™ä¸è¦è·‘ï¼Œè®©å¤§çˆ·æˆ‘å®°äº†ä½ ï¼ï¼ï¼\n");
 		me->set_leader(ob);
 		remove_call_out("kill_ob");
 		call_out("kill_ob", 1, ob); 

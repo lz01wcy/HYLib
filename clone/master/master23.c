@@ -2,13 +2,13 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name(HIY "Ìì»úÀÏÈË" NOR, ({ "tianji", "Tian ji", "Tian" }) );
-        set("gender", "ÄĞĞÔ");
-	set("title", HIC"ÏĞÔÆÒ°º×"NOR);
+        set_name(HIY "å¤©æœºè€äºº" NOR, ({ "tianji", "Tian ji", "Tian" }) );
+        set("gender", "ç”·æ€§");
+	set("title", HIC"é—²äº‘é‡é¹¤"NOR);
         set("age", 99);
         set("long",
-		"Ìì»úÀÏÈËÄê¹ıÁù¼×£¬º×·¢Í¯ÑÕ¡£ÔÚ±øÆ÷Æ×ÉÏÅÅÃûµÚÒ»£¬
-ÓÈÔÚÉÏ¹Ù£¬Ğ¡ÀîÖ®ÉÏ£®´ËÈËÒàÕıÒàĞ°£¬·²ÊÂ¶¼ÓÉ°®¶ñ¶ø¶¨¡£Ìì»úÀÏÈËÊÕÍ½¼«ÌôÌŞ£®£®£®£®\n");
+		"å¤©æœºè€äººå¹´è¿‡å…­ç”²ï¼Œé¹¤å‘ç«¥é¢œã€‚åœ¨å…µå™¨è°±ä¸Šæ’åç¬¬ä¸€ï¼Œ
+å°¤åœ¨ä¸Šå®˜ï¼Œå°æä¹‹ä¸Šï¼æ­¤äººäº¦æ­£äº¦é‚ªï¼Œå‡¡äº‹éƒ½ç”±çˆ±æ¶è€Œå®šã€‚å¤©æœºè€äººæ”¶å¾’ææŒ‘å‰”ï¼ï¼ï¼ï¼\n");
         set("attitude", "peaceful");
         set("skill_public",1);
         set("str", 260);
@@ -17,7 +17,7 @@ void create()
         set("cps", 30);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "Ìì»úÀÏÈËÄÃÆğºµÑÌ³éÁË¼¸¿Ú£®£®£®£®\n",
+                "å¤©æœºè€äººæ‹¿èµ·æ—±çƒŸæŠ½äº†å‡ å£ï¼ï¼ï¼ï¼\n",
         }) );
 
 	set("neili", 40000);
@@ -30,10 +30,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(RED"Ñîï£"NOR, ({ "master yang", "master"}) );
-        set("title", HIY"Àë±ğ¹³"NOR);
+	set_name(RED"æ¨é“®"NOR, ({ "master yang", "master"}) );
+        set("title", HIY"ç¦»åˆ«é’©"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -105,7 +105,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

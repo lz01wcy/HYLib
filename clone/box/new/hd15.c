@@ -1,4 +1,4 @@
-// toukui.c Í·¿ø
+// toukui.c å¤´ç›”
 #include <ansi.h>  
 #include <armor.h>
  
@@ -6,14 +6,14 @@ inherit HEAD;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});  
 void create()
 {
-	set_name((order[random(13)])+"ÑªÕ¶Í·¿ø"NOR, ({ "helmet15" }) );
+	set_name((order[random(13)])+"è¡€æ–©å¤´ç›”"NOR, ({ "helmet15" }) );
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "steel");
-		set("unit", "¶¥");
-		set("long", "ÕâÊÇÒ»¶¥ÑªÕ¶Í·¿ø£¬ÓÃÒÔ±£»¤Í·²¿¡£\n");
+		set("unit", "é¡¶");
+		set("long", "è¿™æ˜¯ä¸€é¡¶è¡€æ–©å¤´ç›”ï¼Œç”¨ä»¥ä¿æŠ¤å¤´éƒ¨ã€‚\n");
 		set("value", 2900);
 set("armor_prop/intelligence",18);
 set("armor_prop/armor", 89);

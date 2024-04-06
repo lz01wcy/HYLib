@@ -6,21 +6,21 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIR "ÁúÏóôÂôÄ" NOR, ({ "longxiang jiasha", "longxiang", "jiasha" }));
+        set_name(HIR "é¾™è±¡è¢ˆè£Ÿ" NOR, ({ "longxiang jiasha", "longxiang", "jiasha" }));
         set_weight(8000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIR "ÕâÊÇÒ»¼ş³Â¾ÉµÄôÂôÄ£¬Í¨ÌåÑªºì£¬Ó¡ÓĞÁúÏóÎÆÑù¡£×Å"
-                            "ÊÖ´¦¼áÈÍ\nÎŞ±È£¬Ïë±ØÊÇÓÉ½ğ¸ÕË¿»ì¼°Ñ©²ÏË¿±àÖ¯¶ø³É¡£"
-                            "¸üÓĞ´«ÎÅËµÃÜ×Ú\nÉñ¹¦ÁúÏó°ãÈô¹¦±ãÊÇ¼ÇÔØÓÚÕâ¼şôÂôÄÖ®"
-                            "ÉÏ¡£\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIR "è¿™æ˜¯ä¸€ä»¶é™ˆæ—§çš„è¢ˆè£Ÿï¼Œé€šä½“è¡€çº¢ï¼Œå°æœ‰é¾™è±¡çº¹æ ·ã€‚ç€"
+                            "æ‰‹å¤„åšéŸ§\næ— æ¯”ï¼Œæƒ³å¿…æ˜¯ç”±é‡‘åˆšä¸æ··åŠé›ªèš•ä¸ç¼–ç»‡è€Œæˆã€‚"
+                            "æ›´æœ‰ä¼ é—»è¯´å¯†å®—\nç¥åŠŸé¾™è±¡èˆ¬è‹¥åŠŸä¾¿æ˜¯è®°è½½äºè¿™ä»¶è¢ˆè£Ÿä¹‹"
+                            "ä¸Šã€‚\n" NOR);
                 set("value", 8000);
                 set("treasure", 1);
                 set("material", "cloth");
-                set("wear_msg", HIY "$N" HIY "Õ¹¿ª$n" HIY "£¬ö®Ê±½ğ²¨Á÷×ª£¬î¸Æø"
-                                "ÁıÕÖÈ«Éí¡£\n" NOR);
+                set("wear_msg", HIY "$N" HIY "å±•å¼€$n" HIY "ï¼Œéœæ—¶é‡‘æ³¢æµè½¬ï¼Œç½¡æ°”"
+                                "ç¬¼ç½©å…¨èº«ã€‚\n" NOR);
                 set("armor_prop/armor", 900);
                 set("force", 13);
                 set("stable", 100);

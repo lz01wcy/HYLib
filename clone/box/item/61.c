@@ -8,16 +8,16 @@ inherit F_UNIQUE;
 void create()
 {
 
-        set_name(RED"Ñªµ¶"NOR, ({ "xuedao","blade","dao" }));
+        set_name(RED"è¡€åˆ€"NOR, ({ "xuedao","blade","dao" }));
         set_weight(15000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("rigidity", 5);
                 set("sharpness", 3);
-                set("long", "Ò»±úÈíÈíµÄÃåµ¶£¬µ¶Éí²»×¡²ü¶¯£¬ÍğÈç»îÉßÒ»°ã¡£Òı¹âÍûÈ¥£¬µ¶·æÈ«ÊÇ°µºìÖ®É«¡££¬
-Ñª¹âÒşÒş,¼«ÊÇ¿É²À.\n");
+                set("long", "ä¸€æŸ„è½¯è½¯çš„ç¼…åˆ€ï¼Œåˆ€èº«ä¸ä½é¢¤åŠ¨ï¼Œå®›å¦‚æ´»è›‡ä¸€èˆ¬ã€‚å¼•å…‰æœ›å»ï¼Œåˆ€é”‹å…¨æ˜¯æš—çº¢ä¹‹è‰²ã€‚ï¼Œ
+è¡€å…‰éšéš,ææ˜¯å¯æ€–.\n");
                 set("value", 1);
                 set("unique", 1);
                 set("weapon_prop/dodge", 2);
@@ -26,8 +26,8 @@ void create()
                 set("wield_neili", 120);
                 set("wield_maxneili", 1000);
                 set("wield_str", 26);
-                set("wield_msg", RED"Ö»Ìı¡¸à§¡¹µÄÒ»Éù£¬Ñªµ¶ÍÑÇÊ·É³ö£¬$NÊÖÖĞËÆÊÇÎÕ×¡Ò»Ìõ³àÉß·º×Åºì¹â£¬ÃÖÂş×ÅÒ»Æ¬ÑªÆø¡££¡\n"NOR);            
-                set("unwield_msg", RED"Ö»¼û$NËæÊÖÒ»»Ó,Ñªµ¶ÏóÒ»Ìõ³àÉß·ÉÎèÈëÇÊ¡£\n"NOR);
+                set("wield_msg", RED"åªå¬ã€Œå”°ã€çš„ä¸€å£°ï¼Œè¡€åˆ€è„±é˜é£å‡ºï¼Œ$Næ‰‹ä¸­ä¼¼æ˜¯æ¡ä½ä¸€æ¡èµ¤è›‡æ³›ç€çº¢å…‰ï¼Œå¼¥æ¼«ç€ä¸€ç‰‡è¡€æ°”ã€‚ï¼\n"NOR);            
+                set("unwield_msg", RED"åªè§$Néšæ‰‹ä¸€æŒ¥,è¡€åˆ€è±¡ä¸€æ¡èµ¤è›‡é£èˆå…¥é˜ã€‚\n"NOR);
                 set("treasure",1);
         }
         init_blade(100);

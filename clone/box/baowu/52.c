@@ -5,18 +5,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(NOR + WHT "ĞşÌúÖØ½£" NOR, ({ "xuantie jian", "xuantie", "jian" }) );
+        set_name(NOR + WHT "ç„é“é‡å‰‘" NOR, ({ "xuantie jian", "xuantie", "jian" }) );
         set_weight(28000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + WHT "Ò»±úÓÉĞşÌúÖı³ÉµÄÎŞ·æ³¤½££¬×ÅÊÖ³ÁÖØÎŞ±È£¬µ«ÊÇÈ´ÔÌ²Ø×Å¼«´óµÄÍşÁ¦¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", NOR + WHT "ä¸€æŸ„ç”±ç„é“é“¸æˆçš„æ— é”‹é•¿å‰‘ï¼Œç€æ‰‹æ²‰é‡æ— æ¯”ï¼Œä½†æ˜¯å´è•´è—ç€æå¤§çš„å¨åŠ›ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 8000);
                 set("treasure", 1);
                 set("material", "steel");
-                set("wield_msg", NOR + WHT "$N" NOR + WHT "³é³ö$n" NOR + WHT"£¬ÕÌ½£¶øÁ¢£¬Íş·çÁİÁİ£¬ÁîÈËËàÈ»Æğ¾´¡£\n" NOR);
-                set("unwield_msg", NOR + WHT "$N" NOR + WHT "ÑöÌì³¤Ì¾£¬Ç±ÔËÄÚÁ¦£¬½«$n" NOR + WHT "ÊÕ»Ø¡£\n" NOR);
+                set("wield_msg", NOR + WHT "$N" NOR + WHT "æŠ½å‡º$n" NOR + WHT"ï¼Œä»—å‰‘è€Œç«‹ï¼Œå¨é£å‡›å‡›ï¼Œä»¤äººè‚ƒç„¶èµ·æ•¬ã€‚\n" NOR);
+                set("unwield_msg", NOR + WHT "$N" NOR + WHT "ä»°å¤©é•¿å¹ï¼Œæ½œè¿å†…åŠ›ï¼Œå°†$n" NOR + WHT "æ”¶å›ã€‚\n" NOR);
                 set("stable", 100);
 
         }

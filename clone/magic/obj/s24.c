@@ -5,10 +5,10 @@ inherit SHIELD;
 
 void create()
 {
-	set_name(YEL"ËÀÉñ¶Ü"NOR, ({ "dead shield", "deadshield" }));
-	set("long", YEL"ÕâÊÇÒ»ÃæËÀÉñ¶Ü£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(YEL"æ­»ç¥ç›¾"NOR, ({ "dead shield", "deadshield" }));
+	set("long", YEL"è¿™æ˜¯ä¸€é¢æ­»ç¥ç›¾ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "Ãæ");
+	set("unit", "é¢");
         set("armor_prop/karay",15);
         set("armor_prop/percao",15);
 	     set("armor_prop/dexterity",5);

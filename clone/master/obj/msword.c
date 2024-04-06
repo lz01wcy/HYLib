@@ -6,18 +6,18 @@ inherit SWORD;
 
 void create()
 {
-	set_name("Óİ¼§½£", ({ "wangsword" }) );
+	set_name("è™å§¬å‰‘", ({ "wangsword" }) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñ½£ÉíÖ»ÓĞÁ½Ö¸¿íµÄÎèÆ÷¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠå‰‘èº«åªæœ‰ä¸¤æŒ‡å®½çš„èˆå™¨ã€‚\n");
 		set("value", 4000);
 		set("material", "steel");
 		set("rigidity", 200);
-		set("wield_msg", "$N´Ó³àÆ¤½£ÇÊÖĞ³é³öÒ»°ÑÖ»ÓĞÁ½Ö¸¿íµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ³àÆ¤½£ÇÊ¡£\n");
+		set("wield_msg", "$Nä»èµ¤çš®å‰‘é˜ä¸­æŠ½å‡ºä¸€æŠŠåªæœ‰ä¸¤æŒ‡å®½çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„èµ¤çš®å‰‘é˜ã€‚\n");
 	}
 	init_sword(180);
 	setup();

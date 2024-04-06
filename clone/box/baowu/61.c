@@ -7,16 +7,16 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIY "ÕæÎä½£" NOR,({ "zhenwu jian", "jian", "sword", "zhenwu" }) );
+        set_name(HIY "çœŸæ­¦å‰‘" NOR,({ "zhenwu jian", "jian", "sword", "zhenwu" }) );
         set_weight(1500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("long", @LONG
-ÕâÊÇÒ»±úº®¹âÉÁÉÁµÄ±¦½££¬ÎôÄêÎäµ±ÕÅÕæÈË³Ö´Ë½£µ´Ñý³ýÄ§£¬É¨¾¡Èº³ó¡£
-½­ºþÏüÐ¡£¬¼û´Ë½£ÎÞ²»ÐÄµ´ÉñÒ¡¡£
+è¿™æ˜¯ä¸€æŸ„å¯’å…‰é—ªé—ªçš„å®å‰‘ï¼Œæ˜”å¹´æ­¦å½“å¼ çœŸäººæŒæ­¤å‰‘è¡å¦–é™¤é­”ï¼Œæ‰«å°½ç¾¤ä¸‘ã€‚
+æ±Ÿæ¹–å®µå°ï¼Œè§æ­¤å‰‘æ— ä¸å¿ƒè¡ç¥žæ‘‡ã€‚
 LONG );
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 8000);
                 set("treasure", 1);
                 set("material", "steel");
@@ -37,9 +37,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
         case 0:
                 victim->start_busy(me->query_skill("sword") / 10 + 2);
-                return HIC "$N" HIC "¿çÇ°Ò»²½£¬ÊÖÖÐµÄ" NOR + HIY "ÕæÎä½£" NOR
-                       + HIC "»Ã»¯³ÉÎÞÊýÔ²È¦£¬Ïò$n" HIC "±ÆÈ¥£¬½£·¨Ï¸ÃÜÖ®¼«¡£"
-                       "$n" HIC "´ó³ÔÒ»\n¾ª£¬²»ÖªÈçºÎµÖµ²£¬Ö»ÓÐÁ¬Á¬ºóÍË£¡\n" NOR;
+                return HIC "$N" HIC "è·¨å‰ä¸€æ­¥ï¼Œæ‰‹ä¸­çš„" NOR + HIY "çœŸæ­¦å‰‘" NOR
+                       + HIC "å¹»åŒ–æˆæ— æ•°åœ†åœˆï¼Œå‘$n" HIC "é€¼åŽ»ï¼Œå‰‘æ³•ç»†å¯†ä¹‹æžã€‚"
+                       "$n" HIC "å¤§åƒä¸€\næƒŠï¼Œä¸çŸ¥å¦‚ä½•æŠµæŒ¡ï¼Œåªæœ‰è¿žè¿žåŽé€€ï¼\n" NOR;
 
         case 1:
                 n = me->query_skill("sowrd");
@@ -49,11 +49,11 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n /= 2;
                 victim->receive_damage("jing", n);
                 victim->receive_wound("jing", n / 2);
-                return random(2) ? HIY "$N" HIY "Ò»Éù³¤Ò÷£¬ÊÖÖÐµÄÕæÎä½£»¯×÷Ò»"
-                                   "µ½³¤ºç£¬¡°à§¡±µÄÉ¨¹ý$n" HIY "¶øÈ¥£¡\n" NOR:
-                                   HIY "$N" HIY "Í»È»´óÉùºÈµÀ£º¡°Ð°Ä§ÍâµÀ£¬»¹"
-                                   "²»ÊÜËÀ£¿¡±ÊÖÖÐÕæÎä½£" HIY "ºöµÄÒ»¶¶£¬$n"
-                                   HIY "µÇÊ±¾õµÃÑÛ»¨çÔÂÒ£¡\n" NOR;
+                return random(2) ? HIY "$N" HIY "ä¸€å£°é•¿åŸï¼Œæ‰‹ä¸­çš„çœŸæ­¦å‰‘åŒ–ä½œä¸€"
+                                   "åˆ°é•¿è™¹ï¼Œâ€œå”°â€çš„æ‰«è¿‡$n" HIY "è€ŒåŽ»ï¼\n" NOR:
+                                   HIY "$N" HIY "çªç„¶å¤§å£°å–é“ï¼šâ€œé‚ªé­”å¤–é“ï¼Œè¿˜"
+                                   "ä¸å—æ­»ï¼Ÿâ€æ‰‹ä¸­çœŸæ­¦å‰‘" HIY "å¿½çš„ä¸€æŠ–ï¼Œ$n"
+                                   HIY "ç™»æ—¶è§‰å¾—çœ¼èŠ±ç¼­ä¹±ï¼\n" NOR;
         }
 
         // double effect

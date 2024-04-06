@@ -2,15 +2,15 @@
 inherit ITEM;
 void create()
 {
-    set_name("ÌúÑª´óÆì", ({ "flag" }) );
+    set_name("é“è¡€å¤§æ——", ({ "flag" }) );
     set_weight(10000);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-            set("unit", "Ãæ");
+            set("unit", "é¢");
             set("value", 1000);
             set("material", "cloth");
-            set("long", "Ò»ÃæÓÃÏÊÑªÈ¾³ÉµÄÆìÖÄ£¬ÊÇÌúÑª´óÆìÃÅÕÆÃÅĞÅÎï¡£\n");
+            set("long", "ä¸€é¢ç”¨é²œè¡€æŸ“æˆçš„æ——å¸œï¼Œæ˜¯é“è¡€å¤§æ——é—¨æŒé—¨ä¿¡ç‰©ã€‚\n");
           }
 
     setup();

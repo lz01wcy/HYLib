@@ -13,18 +13,18 @@ object offensive_target(object me);
 
 void create()
 {
-        set_name(HIR "»ğÁéÖé" NOR, ({"huo lingzhu", "huozhu"}) );
+        set_name(HIR "ç«çµç " NOR, ({"huo lingzhu", "huozhu"}) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¢—");
                 set("material", "crystal");
 set("no_steal",1);
                 set("value",10000);
-                set("no_give", "ÕâÖÖÏ¡ÊÀÖ®±¦ÔõÃ´ÄÜÇáÒ×ËÍÈËÄØ?\n");
-                set("no_sell", "Âô?ÕâÖÖÏ¡ÊÀÖ®±¦Ë­ÂòµÃÆğ°¡!\n");
-                set("long","´«ËµÖĞµÄÎåĞĞ±¦ÖéÖ®Ò»£¬ÅåÖ®¿É±Ü»ğÉÕ£¬²¢¿É·¢³ö»ğÏµ·¨Êõ¡£\nÎªÆíÓêËù±ØĞèÖ®Îï¡£");
+                set("no_give", "è¿™ç§ç¨€ä¸–ä¹‹å®æ€ä¹ˆèƒ½è½»æ˜“é€äººå‘¢?\n");
+                set("no_sell", "å–?è¿™ç§ç¨€ä¸–ä¹‹å®è°ä¹°å¾—èµ·å•Š!\n");
+                set("long","ä¼ è¯´ä¸­çš„äº”è¡Œå®ç ä¹‹ä¸€ï¼Œä½©ä¹‹å¯é¿ç«çƒ§ï¼Œå¹¶å¯å‘å‡ºç«ç³»æ³•æœ¯ã€‚\nä¸ºç¥ˆé›¨æ‰€å¿…éœ€ä¹‹ç‰©ã€‚");
                 set("replace_file", __DIR__"rose");
                 set("bb",1);
                 set("armor_prop/armor", 100);
@@ -37,7 +37,7 @@ int init()
 {
         add_action("do_wear","wear");
         add_action("do_remove", "remove");
-        //·ç»ğÀ×ÍÁË®ËÄÖéºÏ±Ú
+        //é£ç«é›·åœŸæ°´å››ç åˆå£
         add_action("do_amalgamation", "wuzhuhebi");
         return 1;
 }
@@ -67,11 +67,11 @@ int do_wear (string arg)
 
 if (arg == "all") arg ="huozhu";
 if (arg != "huozhu" &&  arg != "huo lingzhu" )
-    return notify_fail("ÄãÒªÅå´øÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦ä½©å¸¦ä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-  msg = "$N´÷ÉÏÒ»¿Å"+name+"£¬ºì¹âÕÕÁÁÁËÌì¼Ê¡£\n"; 
+  msg = "$Næˆ´ä¸Šä¸€é¢—"+name+"ï¼Œçº¢å…‰ç…§äº®äº†å¤©é™…ã€‚\n"; 
 if (me->is_fighting())
 {
   me->start_busy(2);
@@ -91,12 +91,12 @@ int do_remove (string arg)
   string msg;
 
   if (arg!= "all" && arg != "huozhu" && arg != "huo lingzhu")
-    return notify_fail("ÄãÒªÕªµôÊ²Ã´£¿\n");
+    return notify_fail("ä½ è¦æ‘˜æ‰ä»€ä¹ˆï¼Ÿ\n");
 
 	if (me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-  msg = "$N½«"+name+"ÇáÇáµØÕªÏÂÀ´¡­¡­\n"; 
+  msg = "$Nå°†"+name+"è½»è½»åœ°æ‘˜ä¸‹æ¥â€¦â€¦\n"; 
 if (me->is_fighting())
 {
   me->start_busy(2);
@@ -124,8 +124,8 @@ return;
   if( ! target ) return ;      
          if( ! present( target,environment(who)) ) return ;    
 
-        msg = HIR"»ğÁéÖéÃÍÈ»ºì¹âËÄÉä£¬°ë¿ÕÖĞ¸¡ÏÖ³öÒ»¸ö³àºìµÄ»ğÉñ×£ÈÚ£¬Ö»¼û×£ÈÚË«ÊÖÒ»È¦£¬\n
-Ò»¸öË¶´óµÄ»ğÇò³å×Å$n·ÉÈ¥£¡\n"NOR;
+        msg = HIR"ç«çµç çŒ›ç„¶çº¢å…‰å››å°„ï¼ŒåŠç©ºä¸­æµ®ç°å‡ºä¸€ä¸ªèµ¤çº¢çš„ç«ç¥ç¥èï¼Œåªè§ç¥èåŒæ‰‹ä¸€åœˆï¼Œ\n
+ä¸€ä¸ªç¡•å¤§çš„ç«çƒå†²ç€$né£å»ï¼\n"NOR;
 //divid by 10;
 
                 ap = who->query("combat_exp")/2;
@@ -139,7 +139,7 @@ return;
 
                         if( damage > 0 ) 
                         {
-                                msg += HIC "½á¹û$n¶ã±Ü²»¼°£¬±»»ğÇò×²¸öÕı×Å£¡Ğë·¢¾¡½¹¡£\n" NOR;
+                                msg += HIC "ç»“æœ$nèº²é¿ä¸åŠï¼Œè¢«ç«çƒæ’ä¸ªæ­£ç€ï¼é¡»å‘å°½ç„¦ã€‚\n" NOR;
 if (damage> 800) damage=800;
                                 target->receive_damage("jing", damage*4/5);
                                 target->receive_wound("jing", damage/3);
@@ -149,10 +149,10 @@ if (damage> 800) damage=800;
             else
 //here, cast failed and the target's mana_factor will be added to the previous
 //damage to hurt yourself:(...note damage<0.
-                msg += HIC "\nË­Öª$nºÁÎŞ·´Ó¦¡£\n" NOR;   
+                msg += HIC "\nè°çŸ¥$næ¯«æ— ååº”ã€‚\n" NOR;   
                 }
                 else
-                        msg += "µ«ÊÇ±»$n¶ã¿ªÁË¡£\n";
+                        msg += "ä½†æ˜¯è¢«$nèº²å¼€äº†ã€‚\n";
 
                 message_vision(msg, who, target); 
         }
@@ -161,61 +161,61 @@ call_out("conditionhuozhu",7,who,ob);
 
 int do_amalgamation()
 {
-        //Îå¿Å±¦Öé
+        //äº”é¢—å®ç 
         object wind,water,thunder,earth;
         object who = this_player();
         object shengzhu;
 
         if(who->is_fighting())
-           return notify_fail("ÄãÕı´òÕÌÄØ£¡ÏëËÀ°¡£¡\n");
+           return notify_fail("ä½ æ­£æ‰“ä»—å‘¢ï¼æƒ³æ­»å•Šï¼\n");
         if(who->is_busy())
-           return notify_fail("ÄãÕıÃ¦×ÅÄØ!\n");
+           return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
         if(!wind = present("fengzhu",who))
-           return notify_fail("Äã»¹È±ÉÙ"+HIG "·çÁéÖé" NOR +"ÄØ!ÔõÃ´ÎåÖéºÏ±ÚÄØ?\n");
+           return notify_fail("ä½ è¿˜ç¼ºå°‘"+HIG "é£çµç " NOR +"å‘¢!æ€ä¹ˆäº”ç åˆå£å‘¢?\n");
         if(!thunder = present("leizhu",who))
-           return notify_fail("Äã»¹È±ÉÙ"+HIB "À×ÁéÖé" NOR +"ÄØ!ÔõÃ´ÎåÖéºÏ±ÚÄØ?\n");
+           return notify_fail("ä½ è¿˜ç¼ºå°‘"+HIB "é›·çµç " NOR +"å‘¢!æ€ä¹ˆäº”ç åˆå£å‘¢?\n");
         if(!earth = present("tuzhu",who))
-           return notify_fail("Äã»¹È±ÉÙ"+HIY "ÍÁÁéÖé" NOR +"ÄØ!ÔõÃ´ÎåÖéºÏ±ÚÄØ?\n");
+           return notify_fail("ä½ è¿˜ç¼ºå°‘"+HIY "åœŸçµç " NOR +"å‘¢!æ€ä¹ˆäº”ç åˆå£å‘¢?\n");
         if(!water = present("shuizhu",who))
-           return notify_fail("Äã»¹È±ÉÙ"+HIW "Ë®ÁéÖé" NOR +"ÄØ!ÔõÃ´ÎåÖéºÏ±ÚÄØ?\n");
+           return notify_fail("ä½ è¿˜ç¼ºå°‘"+HIW "æ°´çµç " NOR +"å‘¢!æ€ä¹ˆäº”ç åˆå£å‘¢?\n");
 
         if( wind->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(wind))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( wind->is_character() || wind->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 
         if( thunder->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(thunder))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( thunder->is_character() || thunder->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 
         if( earth->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(earth))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( earth->is_character() || earth->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 	
 	
         if( water->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(water))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( water->is_character() || water->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 
 if ((water->query("equipped")!="worn") && (wind->query("equipped")!="worn") && (thunder->query("equipped")!="worn") && (earth->query("equipped")!="worn") && (this_object()->query("equipped")!="worn"))
 {        
-        message_vision("$N°ÑÎå¿Å±¦Öé·ÅÔÚÒ»Æğ¡£Ö»¼ûÎå¿Å±¦ÖéÈ½È½ÉıÆğ£¬Ò»Ê±±¦¹â´óÊ¢£¬Ö±³åÔÆÏö£¡\n
-¶íÇê£¬"+HIG "·çÁéÖé" NOR+"·ÉÖÁ¶«·½·Å³öÈáºÍÂÌ¹â£»"+HIR "»ğÁéÖé" NOR +"·ÉÖÁÄÏ·½·¢³ö×ÆÄ¿ºì¹â£»"+HIB "À×ÁéÖé" NOR +"·ÉÖÁÎ÷·½ºöÃ÷ºö°µ£¬\n
-ÉÁ³öÓÄÓÄÀ¶¹â£»"+HIW "Ë®ÁéÖé" NOR +"È´Í¨ÌåÓ¨°×£¬·ÉÖÁ±±·½£»"+HIY "ÍÁÁéÖé" NOR +"Ö±³åÌìñ·£¬ĞºÏÂÍòÀï»Æ¹â¡£\n
-ÓÖ´ıÆ¬¿Ì£¬ÎåÖéºôµÄÒ»°µ£¬$NÊÖÖĞÈ´¶àÁËÒ»¿ÅË¶´óµÄÍ¸Ã÷±¦Öé£¬²»Ê±·¢³öÎå²ÊºÁ¹â¡£\n",who);
+        message_vision("$NæŠŠäº”é¢—å®ç æ”¾åœ¨ä¸€èµ·ã€‚åªè§äº”é¢—å®ç å†‰å†‰å‡èµ·ï¼Œä¸€æ—¶å®å…‰å¤§ç››ï¼Œç›´å†²äº‘éœ„ï¼\n
+ä¿„é¡·ï¼Œ"+HIG "é£çµç " NOR+"é£è‡³ä¸œæ–¹æ”¾å‡ºæŸ”å’Œç»¿å…‰ï¼›"+HIR "ç«çµç " NOR +"é£è‡³å—æ–¹å‘å‡ºç¼ç›®çº¢å…‰ï¼›"+HIB "é›·çµç " NOR +"é£è‡³è¥¿æ–¹å¿½æ˜å¿½æš—ï¼Œ\n
+é—ªå‡ºå¹½å¹½è“å…‰ï¼›"+HIW "æ°´çµç " NOR +"å´é€šä½“è¹ç™½ï¼Œé£è‡³åŒ—æ–¹ï¼›"+HIY "åœŸçµç " NOR +"ç›´å†²å¤©ç©¹ï¼Œæ³»ä¸‹ä¸‡é‡Œé»„å…‰ã€‚\n
+åˆå¾…ç‰‡åˆ»ï¼Œäº”ç å‘¼çš„ä¸€æš—ï¼Œ$Næ‰‹ä¸­å´å¤šäº†ä¸€é¢—ç¡•å¤§çš„é€æ˜å®ç ï¼Œä¸æ—¶å‘å‡ºäº”å½©æ¯«å…‰ã€‚\n",who);
 
-        message("channel:rumor",RED+"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+who->query("name")+"ÄÃµ½Ê¥ÁéÖéÁË£¡\n"+NOR,users() );
+        message("channel:rumor",RED+"ã€è°£è¨€ã€‘æŸäººï¼š"+who->query("name")+"æ‹¿åˆ°åœ£çµç äº†ï¼\n"+NOR,users() );
         
          shengzhu = new("clone/box/baowu/shengzhu");
         shengzhu->move(who);
@@ -226,7 +226,7 @@ if ((water->query("equipped")!="worn") && (wind->query("equipped")!="worn") && (
         destruct(this_object());
         return 1;
 }
-return notify_fail("±¦Öé±ØĞëÕªÏÂ²ÅÄÜºÏèµ£¡\n");
+return notify_fail("å®ç å¿…é¡»æ‘˜ä¸‹æ‰èƒ½åˆç’§ï¼\n");
 }
 void owner_is_killed()
 {

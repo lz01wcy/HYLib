@@ -5,10 +5,10 @@ inherit FINGER;
 
 void create()
 {
-	set_name(YEL"»ìãç½äÖ¸"NOR, ({ "dark ring", "darkring" }));
-	set("long", YEL"ÕâÊÇÒ»¸ö»ìãç½äÖ¸£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(YEL"æ··æ²Œæˆ’æŒ‡"NOR, ({ "dark ring", "darkring" }));
+	set("long", YEL"è¿™æ˜¯ä¸€ä¸ªæ··æ²Œæˆ’æŒ‡ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¸ö");
+	set("unit", "ä¸ª");
 	set("armor_prop/intelligence",5);
 	     set("armor_prop/dexterity",5);
 	set("armor_prop/strength",8);

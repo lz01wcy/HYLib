@@ -5,17 +5,17 @@ inherit DAGGER;
 
 void create()
 {
-	set_name(  "³¤¸ËºµÑÌÇ¹" , ({ "hanyan" }) );
+	set_name(  "é•¿æ†æ—±çƒŸæª" , ({ "hanyan" }) );
 	set_weight(7000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°ÑÑÌ¹øÓÖÈ­Í·´óĞ¡µÄ³¤¸ËºµÑÌÇ¹¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠçƒŸé”…åˆæ‹³å¤´å¤§å°çš„é•¿æ†æ—±çƒŸæªã€‚\n");
 		set("value", 4000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
 	}
 	init_dagger(125);
 	setup();

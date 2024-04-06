@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(RED"º×¶¥ºì"NOR, ({"heding hong", "hong"}));
+	set_name(RED"é¹¤é¡¶çº¢"NOR, ({"heding hong", "hong"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Æ¿¾ç¶¾µÄ¶¾Ò©, Èç¹ûÓÃÀ´Á¶°µÆ÷ÓÐ¼ûÑª·âºíÖ®Ð§. \n");
-		set("unit", "Æ¿");
+		set("long", "ä¸€ç“¶å‰§æ¯’çš„æ¯’è¯, å¦‚æžœç”¨æ¥ç‚¼æš—å™¨æœ‰è§è¡€å°å–‰ä¹‹æ•ˆ. \n");
+		set("unit", "ç“¶");
 		set("value", 20000);
 	}
 	setup();
@@ -25,10 +25,10 @@ int do_eat(string arg)
 	object me = this_player();
 
 	if(!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(arg=="hong" || arg=="heding hong") 
 	{
-		message_vision("$NÑöÍ·¹¾à½¹¾à½¹àÏÂÒ»Æ¿" + name() + "¡£\n", me);
+		message_vision("$Nä»°å¤´å’•å˜Ÿå’•å˜ŸçŒä¸‹ä¸€ç“¶" + name() + "ã€‚\n", me);
 		me->die();
 		destruct(this_object());
 	}

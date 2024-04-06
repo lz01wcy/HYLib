@@ -1,17 +1,17 @@
-// wineskin.c  ¾Æ´ü
+// wineskin.c  é…’è¢‹
 #include <ansi.h>
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-	set_name(HIC"·çÉñÖ®Ë®"NOR, ({"ice water", "icewater"}));
+	set_name(HIC"é£ç¥ä¹‹æ°´"NOR, ({"ice water", "icewater"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÀ´×°·çÉñÖ®Ë®µÄ´óÆ¤´ü£¬´ó¸Å×°µÃ°Ë¡¢¾ÅÉıµÄ·çÉñÖ®Ë®¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨æ¥è£…é£ç¥ä¹‹æ°´çš„å¤§çš®è¢‹ï¼Œå¤§æ¦‚è£…å¾—å…«ã€ä¹å‡çš„é£ç¥ä¹‹æ°´ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 2000);
 		set("max_liquid", 15);
 	}
@@ -20,7 +20,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "·çÉñÖ®Ë®",
+		"name": "é£ç¥ä¹‹æ°´",
 		"remaining": 160,
 		"drunk_apply": 20,
 	]));

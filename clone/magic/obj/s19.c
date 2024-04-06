@@ -5,10 +5,10 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(HIY"ÖÚÉñ·¨ÒÂ"NOR, ({ "light yi", "lightyi" }));
-	set("long", HIY"ÕâÊÇÒ»¼şÖÚÉñ·¨ÒÂ£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIY"ä¼—ç¥æ³•è¡£"NOR, ({ "light yi", "lightyi" }));
+	set("long", HIY"è¿™æ˜¯ä¸€ä»¶ä¼—ç¥æ³•è¡£ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¼ş");
+	set("unit", "ä»¶");
 	set("armor_prop/dexterity",15);
 	set("value", 132000);
 	set("material", "gem");

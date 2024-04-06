@@ -5,13 +5,13 @@ inherit ARMOR;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});  
 void create()
 {
-        set_name((order[random(13)])+"ôä´äÅû·ç"NOR, ({"pifen17"}));
+        set_name((order[random(13)])+"ç¿¡ç¿ æŠ«é£Ž"NOR, ({"pifen17"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
-     set("long", "Ò»¼þôä´äÅû·ç£®\n");
+                set("unit", "ä»¶");
+     set("long", "ä¸€ä»¶ç¿¡ç¿ æŠ«é£Žï¼Ž\n");
                 set("material", "steel");
                 set("value", 4000);
                 set("armor_prop/armor", 93);

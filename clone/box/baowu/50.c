@@ -5,21 +5,21 @@ inherit BLADE;
 
 void create()
 {
-        set_name(NOR + CYN "ÍÀÁúµ¶" NOR, ({ "tulong dao", "tulong", "dao", "blade" }) );
+        set_name(NOR + CYN "å± é¾™åˆ€" NOR, ({ "tulong dao", "tulong", "dao", "blade" }) );
         set_weight(32000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + CYN "Õâ±ãÊÇºÅ³ÆÎäÁÖÖÁ×ðµÄÍÀÁú±¦µ¶£¬ËÄ³ßÀ´³¤"
-                            "µÄµ¥µ¶£¬¾¹´ïÒ»°Ù¶à½ïÖ®ÖØ¡£\nÏà´«ÆäÖÐ²ØÓÐ¿õÊÀµÄ´ó"
-                            "ÃØÃÜ¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", NOR + CYN "è¿™ä¾¿æ˜¯å·ç§°æ­¦æž—è‡³å°Šçš„å± é¾™å®åˆ€ï¼Œå››å°ºæ¥é•¿"
+                            "çš„å•åˆ€ï¼Œç«Ÿè¾¾ä¸€ç™¾å¤šæ–¤ä¹‹é‡ã€‚\nç›¸ä¼ å…¶ä¸­è—æœ‰æ—·ä¸–çš„å¤§"
+                            "ç§˜å¯†ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 8000);
                 set("treasure", 1);
                 set("material", "steel");
-                set("wield_msg", HIY "$N" HIY "Ò»Éù¿ñÐ¦£¬´Ó±³ºó³é³öÄÇ±úºÅ³Æ¡¸"
-                                 HIR "ÎäÁÖÖÁ×ð" HIY "¡¹µÄÍÀÁú±¦µ¶¸ß¸ß¾ÙÆð¡£\n" NOR);
-                set("unwield_msg", HIY "$N" HIY "¹þ¹þÒ»Ð¦£¬½«ÍÀÁú±¦µ¶²å»Ø±³ºó¡£\n" NOR);
+                set("wield_msg", HIY "$N" HIY "ä¸€å£°ç‹‚ç¬‘ï¼Œä»ŽèƒŒåŽæŠ½å‡ºé‚£æŸ„å·ç§°ã€Œ"
+                                 HIR "æ­¦æž—è‡³å°Š" HIY "ã€çš„å± é¾™å®åˆ€é«˜é«˜ä¸¾èµ·ã€‚\n" NOR);
+                set("unwield_msg", HIY "$N" HIY "å“ˆå“ˆä¸€ç¬‘ï¼Œå°†å± é¾™å®åˆ€æ’å›žèƒŒåŽã€‚\n" NOR);
                 set("stable", 100);
         }
         init_blade(800+random(320));
@@ -32,8 +32,8 @@ if (random(5)==0)
 {
         victim->receive_damage("jing", me->query("str") * 2);
         victim->receive_wound("jing", me->query("str") * 2);
-        return HIM "ÍÀÁúµ¶¼Ð´ø×Å´Ì¶úµÄÆÆ¿ÕÉù»®³öÒ»µÀµÀ³¤ºç£¬ö®Ê±¼ä$n"
-               HIM "Ö»¸Ðµ½ÐÄÉñÒâÂÒ¡£\n" NOR;
+        return HIM "å± é¾™åˆ€å¤¹å¸¦ç€åˆºè€³çš„ç ´ç©ºå£°åˆ’å‡ºä¸€é“é“é•¿è™¹ï¼ŒéœŽæ—¶é—´$n"
+               HIM "åªæ„Ÿåˆ°å¿ƒç¥žæ„ä¹±ã€‚\n" NOR;
 }
         return damage_bonus;
 }

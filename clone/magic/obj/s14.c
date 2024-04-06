@@ -5,10 +5,10 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(HIR"·ï»Ë³¤ÅÛ"NOR, ({ "ice armor", "icearmor" }));
-	set("long", HIR"ÕâÊÇÒ»¼ş·ï»Ë³¤ÅÛ£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIR"å‡¤å‡°é•¿è¢"NOR, ({ "ice armor", "icearmor" }));
+	set("long", HIR"è¿™æ˜¯ä¸€ä»¶å‡¤å‡°é•¿è¢ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¼ş");
+	set("unit", "ä»¶");
 	set("value", 32000);
 	set("material", "gem");
 	set("armor_prop/armor", 150);

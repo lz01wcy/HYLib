@@ -5,9 +5,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("¾£ÎŞÃü", ({ "master jin", "master", "master jinwu" }) );
-        set("title", RED"×óÊÖ½£"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("è†æ— å‘½", ({ "master jin", "master", "master jinwu" }) );
+        set("title", RED"å·¦æ‰‹å‰‘"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 44);
         set("str", 30);
         set("cor", 30);
@@ -22,8 +22,8 @@ void create()
 
         set("long",
 "
-ÕâÈËµÄÉí×ÓÕ¾µÃ¸üÖ±£¬¸üÍ¦£¬¾ÍÏñÊÇÒ»¸ËÇ¹¡£ËûÕû¸öÈËËÆÒÑÂéÄ¾£¬¼È²»ÖªÍ´Ñ÷£¬
-Ò²²»Öª°§ÀÖ¡£
+è¿™äººçš„èº«å­ç«™å¾—æ›´ç›´ï¼Œæ›´æŒºï¼Œå°±åƒæ˜¯ä¸€æ†æªã€‚ä»–æ•´ä¸ªäººä¼¼å·²éº»æœ¨ï¼Œæ—¢ä¸çŸ¥ç—›ç—’ï¼Œ
+ä¹Ÿä¸çŸ¥å“€ä¹ã€‚
 \n"
 	);
 
@@ -56,10 +56,10 @@ set("pubmaster",1);
 
 if (random(2)==0)
 {
-	set_name(HIR"Â·Ğ¡¼Ñ"NOR, ({ "master jia", "master"}) );
-        set("title", HIC"ÈûÍâÉ±ÊÖ"NOR);
+	set_name(HIR"è·¯å°ä½³"NOR, ({ "master jia", "master"}) );
+        set("title", HIC"å¡å¤–æ€æ‰‹"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -113,7 +113,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

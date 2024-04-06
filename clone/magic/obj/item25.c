@@ -1,4 +1,4 @@
-// ºìÉ«Ïã¹½
+// çº¢è‰²é¦™è‡
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIC"Ë®¾§ĞÇÒº"NOR, ({ "mp iteme", "25item" }) );
+        set_name(HIC"æ°´æ™¶æ˜Ÿæ¶²"NOR, ({ "mp iteme", "25item" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öË®¾§ĞÇÒº¿ÉÒÔÊ¹ÓÃ(use id)¡£¾İËµ¿ÉÒÔ»Ö¸´·¨Á¦\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªæ°´æ™¶æ˜Ÿæ¶²å¯ä»¥ä½¿ç”¨(use id)ã€‚æ®è¯´å¯ä»¥æ¢å¤æ³•åŠ›\n") ;
 set("treasure",1);
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 110000);
                 set("zhen", 1);
         }
@@ -47,19 +47,19 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
 
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
         if( !objectp(ob = present("mp iteme", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(HIC"\n$n"HIC"Ò»¿Ú³ÔÏÂÁË$N"HIC"  $n¾õµÄÈ«ÉíÊæ·ş¶àÁË!  \n"NOR,this_object(),me);
+        message_vision(HIC"\n$n"HIC"ä¸€å£åƒä¸‹äº†$N"HIC"  $nè§‰çš„å…¨èº«èˆ’æœå¤šäº†!  \n"NOR,this_object(),me);
         me->start_busy(1) ;
 me->add("neili",1700);
 
@@ -68,7 +68,7 @@ me->add("neili",1700);
         me->add("neili",me->query("max_neili")/3);
 if (me->query("neili") > me->query("max_neili")+1750)
 me->set("neili",me->query("max_neili")+1750);
-message_vision(HIC"$NµÄ·¨Á¦»Ö¸´ÁË²»ÉÙ!!\n"NOR, me);
+message_vision(HIC"$Nçš„æ³•åŠ›æ¢å¤äº†ä¸å°‘!!\n"NOR, me);
         }
 
 

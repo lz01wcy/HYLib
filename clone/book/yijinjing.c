@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name(YEL"Ò×½î¾­"NOR, ({ "yijinjing" }));
+	set_name(YEL"æ˜“ç­‹ç»"NOR, ({ "yijinjing" }));
 	set_weight(300);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("treasure",1);set("unit", "¾í");
+		set("treasure",1);set("unit", "å·");
 		set("long",
-		"Ò×½î¾­\n"
-		"ÕâÊÇÒ»¾í¹ÅÆÓË¿Ö¯¾­Öá£¬¿´À´ºÜÓĞÄêÔÂÁË£¬ÉÏÃæÎÄ×Ö¼áÉî£¬²»ÖªÄãÊ¶
-Ò²²»Ê¶¡£Ò×½î¾­ÊÇÉÙÁÖÕòËÂÖ®±¦ £¬Ò»Ö±Í×²Ø´Ë´¦¡£\n");
+		"æ˜“ç­‹ç»\n"
+		"è¿™æ˜¯ä¸€å·å¤æœ´ä¸ç»‡ç»è½´ï¼Œçœ‹æ¥å¾ˆæœ‰å¹´æœˆäº†ï¼Œä¸Šé¢æ–‡å­—åšæ·±ï¼Œä¸çŸ¥ä½ è¯†
+ä¹Ÿä¸è¯†ã€‚æ˜“ç­‹ç»æ˜¯å°‘æ—é•‡å¯ºä¹‹å® ï¼Œä¸€ç›´å¦¥è—æ­¤å¤„ã€‚\n");
 		set("value", 10);
 		set("material", "silk");
 		set("skill", ([

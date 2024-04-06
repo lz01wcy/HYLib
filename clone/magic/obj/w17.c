@@ -1,18 +1,18 @@
-// ²¼Â×Ï£¶àÉñ±Ş
+// å¸ƒä¼¦å¸Œå¤šç¥é­
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
 
 void create()
 {
-        set_name(HIC"´ÎÔªÖ®½£"NOR, ({"magic sworde", "msworde"}));
+        set_name(HIC"æ¬¡å…ƒä¹‹å‰‘"NOR, ({"magic sworde", "msworde"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIC"ÕâÊÇÒ»°Ñ´ÎÔªÖ®½£,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIC"è¿™æ˜¯ä¸€æŠŠæ¬¡å…ƒä¹‹å‰‘,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("armor_prop/intelligence",15);
                 set("value", 65000);

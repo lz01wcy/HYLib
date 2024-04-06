@@ -1,18 +1,18 @@
-// Áú½£
+// é¾™å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
 
 void create()
 {
-        set_name(YEL"Áú½£"NOR, ({"magic swordd", "mswordd"}));
+        set_name(YEL"é¾™å‰‘"NOR, ({"magic swordd", "mswordd"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", YEL"ÕâÊÇÒ»°ÑÁú½£,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", YEL"è¿™æ˜¯ä¸€æŠŠé¾™å‰‘,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",50);

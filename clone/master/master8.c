@@ -4,12 +4,12 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("Î÷ÃÅ´µÑ©", ({ "master ximen", "ximen", "master" }) );
-        set("title", WHT"ÍòÃ·×¯Ö÷"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("è¥¿é—¨å¹é›ª", ({ "master ximen", "ximen", "master" }) );
+        set("title", WHT"ä¸‡æ¢…åº„ä¸»"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 34);
         set("long",
-"Î÷ÃÅ´µÑ©ÄËÊÇµ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®½£·¨ÒÑ¾­µ½´ïÁË£¢ÎŞ½££¢µÄ¾³½ç£®£®\n"
+"è¥¿é—¨å¹é›ªä¹ƒæ˜¯å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼å‰‘æ³•å·²ç»åˆ°è¾¾äº†ï¼‚æ— å‰‘ï¼‚çš„å¢ƒç•Œï¼ï¼\n"
                ); 
 
         set("attitude", "peaceful");
@@ -17,7 +17,7 @@ void create()
         set("agi",25);
         set("int",40);
         set("long",
-"Î÷ÃÅ´µÑ©ÄËÊÇµ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®½£·¨ÒÑ¾­µ½´ïÁË£¢ÎŞ½££¢µÄ¾³½ç£®£®\n"
+"è¥¿é—¨å¹é›ªä¹ƒæ˜¯å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼å‰‘æ³•å·²ç»åˆ°è¾¾äº†ï¼‚æ— å‰‘ï¼‚çš„å¢ƒç•Œï¼ï¼\n"
                ); 
 
                 set("chat_chance_combat", 90);
@@ -25,26 +25,26 @@ void create()
                 (: perform_action, "sword.hunranyijian" :),
                 (: perform_action, "dodge.feitiantui" :),
 
-		"Î÷ÃÅ´µÑ©ÀäĞ¦µÀ£ºÈç´Ë·ÏÎï£¬»¹À´É±ÎÒ£¿\n"
+		"è¥¿é—¨å¹é›ªå†·ç¬‘é“ï¼šå¦‚æ­¤åºŸç‰©ï¼Œè¿˜æ¥æ€æˆ‘ï¼Ÿ\n"
         }) );
         set("chat_chance", 1);
         set("chat_msg", ({
-                "Î÷ÃÅ´µÑ©Å­ÂîµÀ£ºÂ½Ğ¡·ï£¬Äã¾ÍÊÇÌÓµ½ÓÄÁéÉ½×¯£¬ÎÒÒ²ÒªÉ±ÁËÄã£¡£¡\n",
+                "è¥¿é—¨å¹é›ªæ€’éª‚é“ï¼šé™†å°å‡¤ï¼Œä½ å°±æ˜¯é€ƒåˆ°å¹½çµå±±åº„ï¼Œæˆ‘ä¹Ÿè¦æ€äº†ä½ ï¼ï¼\n",
                 (: random_move :),
         }) );
 if (random(2)==0)
 {
-	set_name(GRN"ÉòÀË"NOR, ({ "master lang", "lang"}) );
-        set("title", GRN"ÈûÍâÓÎÏÀ"NOR);
+	set_name(GRN"æ²ˆæµª"NOR, ({ "master lang", "lang"}) );
+        set("title", GRN"å¡å¤–æ¸¸ä¾ "NOR);
         set("long",
-"ÉòÀËÄËÊÇµ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®½£·¨ÒÑ¾­µ½´ïÁË£¢ÎŞ½££¢µÄ¾³½ç£®£®\n"
+"æ²ˆæµªä¹ƒæ˜¯å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼å‰‘æ³•å·²ç»åˆ°è¾¾äº†ï¼‚æ— å‰‘ï¼‚çš„å¢ƒç•Œï¼ï¼\n"
                ); 
 
         set("chat_chance_combat", 90);
         set("chat_msg_combat", ({
                 (: perform_action, "sword.hunranyijian" :),
                 (: perform_action, "dodge.feitiantui" :),
-		"ÉòÀËÀäĞ¦µÀ£ºÈç´Ë·ÏÎï£¬»¹À´É±ÎÒ£¿\n"
+		"æ²ˆæµªå†·ç¬‘é“ï¼šå¦‚æ­¤åºŸç‰©ï¼Œè¿˜æ¥æ€æˆ‘ï¼Ÿ\n"
         }) );
         set("chat_chance", 5);
         set("chat_msg", ({
@@ -125,7 +125,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

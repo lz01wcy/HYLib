@@ -5,21 +5,21 @@ inherit BLADE;
 
 void create()
 {
-        set_name("ÛòÏÂµ¶", ({ "wangblade" }) );
+        set_name("å“ä¸‹åˆ€", ({ "wangblade" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÇáÈçÑ©Æ¬£¬¿ìÈçÉÁµçµÄ±¦µ¶");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠè½»å¦‚é›ªç‰‡ï¼Œå¿«å¦‚é—ªç”µçš„å®åˆ€");
                 set("value", 9000);
 		set("rigidity", 200);
                 set("material", "steel");
         }
         init_blade(190);
 
-        set("wield_msg", "$N´ÓÎÚÆ¤µ¶ÇÊÖĞ³é³öÒ»°ÑÉ±Æø±ÆÈËµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÎÚÆ¤µ¶ÇÊÖĞ¡£\n");
+        set("wield_msg", "$Nä»ä¹Œçš®åˆ€é˜ä¸­æŠ½å‡ºä¸€æŠŠæ€æ°”é€¼äººçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›ä¹Œçš®åˆ€é˜ä¸­ã€‚\n");
 
 
         setup();

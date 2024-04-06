@@ -4,13 +4,13 @@ inherit ITEM;
 inherit F_FOOD;
 void create()
 {
-        set_name("¿¾Èâ", ({ "fried meat", "meat" }) );
+        set_name("çƒ¤è‚‰", ({ "fried meat", "meat" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´®ÏãÅçÅçµÄ¿¾Èâ\n");
-                set("unit", "´®");
+                set("long", "ä¸€ä¸²é¦™å–·å–·çš„çƒ¤è‚‰\n");
+                set("unit", "ä¸²");
                 set("value", 3);
                 set("food_remaining", 8);
                 set("food_supply", 8);
@@ -35,8 +35,8 @@ this_object()->delete("decayed");
    me->add("eff_jing",-me->query("eff_jing")/10);
    me->add("eff_qi",-me->query("eff_qi")/10);
 
-message_vision("$N½«Ê£ÏÂµÄ$n³ÔµÃ¸É¸É¾»¾»¡£\n", me, obj);
-   message_vision("$NºöÈ»¾õµÃ¶Ç×ÓÀï¹¾à½¹¾à½Ö±Ïì£¬ÕÒÁË¿é¸É¾»µØ·½¾Í¶×ÁËÏÂÀ´...\nÎØ£¬ºÃ³ô£¡\n", me);
+message_vision("$Nå°†å‰©ä¸‹çš„$nåƒå¾—å¹²å¹²å‡€å‡€ã€‚\n", me, obj);
+   message_vision("$Nå¿½ç„¶è§‰å¾—è‚šå­é‡Œå’•å˜Ÿå’•å˜Ÿç›´å“ï¼Œæ‰¾äº†å—å¹²å‡€åœ°æ–¹å°±è¹²äº†ä¸‹æ¥...\nå‘œï¼Œå¥½è‡­ï¼\n", me);
 destruct(this_object());
    return;
 }
@@ -53,7 +53,7 @@ object me=this_player();
 //   foo=::do_eat(arg);
 //   if (!foo) return foo;
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
    obj->set("value", 0);
     obj->add("food_remaining", -1);
 me->add("food", obj->query("food_supply"));            
@@ -62,14 +62,14 @@ me->add("food", obj->query("food_supply"));
 	     obj->delete_temp("apply/long");
 	     if((string)obj->query("finish_msg"))
 	           message_vision(obj->query("finish_msg"), me, obj);
-	     else message_vision("$N½«Ê£ÏÂµÄ$n³ÔµÃ¸É¸É¾»¾»¡£\n", me, obj);
+	     else message_vision("$Nå°†å‰©ä¸‹çš„$nåƒå¾—å¹²å¹²å‡€å‡€ã€‚\n", me, obj);
 		   destruct(obj);
 	     } 
    if (query("decayed")<1)
-       message_vision("$N¾õµÃ" + name() + "·Ç³£ºÃ³Ô£¬ÕæÏëÔÙÀ´Ò»´®¡£\n", this_player());
+       message_vision("$Nè§‰å¾—" + name() + "éå¸¸å¥½åƒï¼ŒçœŸæƒ³å†æ¥ä¸€ä¸²ã€‚\n", this_player());
    else
    {
-     message_vision("$N¾õµÃ" + name() + "Î¶µÀ¹Ö¹ÖµÄ¡£\n", this_player());
+     message_vision("$Nè§‰å¾—" + name() + "å‘³é“æ€ªæ€ªçš„ã€‚\n", this_player());
      call_out("eat_decayed",6,this_player());
    }
   return 1;

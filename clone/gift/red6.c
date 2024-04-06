@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÑ©Á«
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´é›ªè²
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,20 +14,20 @@ void init()
 
 void create()
 {
-	set_name(HIY"¾Å×ªĞ¡½ğµ¤"NOR, ({"sjin dan", "jindan"}));
+	set_name(HIY"ä¹è½¬å°é‡‘ä¸¹"NOR, ({"sjin dan", "jindan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å¾Å×ª½ğµ¤¡£\n");
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—ä¹è½¬é‡‘ä¸¹ã€‚\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
 set("liwu",1);
 set("no_steal",1);
 set("no_beg",1);
     set("no_put",1);
-    set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 		set("value", 0);
 	}
 	setup();
@@ -39,7 +39,7 @@ int do_eat(string arg)
 object corpse;
         object me = this_player();
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         this_player()->start_busy(30);
 
 	exp = 500+random(500);
@@ -48,12 +48,12 @@ object corpse;
         me->add("max_neili", 5);
         me->add("combat_exp", exp);
         me->add("potential", pot);
-tell_object(me,HIY"Äã±»½±ÀøÁË£º5µãÄÚÁ¦ÉÏÏŞ\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);
+tell_object(me,HIY"ä½ è¢«å¥–åŠ±äº†ï¼š5ç‚¹å†…åŠ›ä¸Šé™\n" +
+             chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+            chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);
 
-        message_vision(HIY "$N³ÔÏÂÒ»¿Å¾Å×ª½ğµ¤£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÄãºÃÏñ±äÁËÒ»¸öÈËËÆµÄ!\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€é¢—ä¹è½¬é‡‘ä¸¹ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä½ å¥½åƒå˜äº†ä¸€ä¸ªäººä¼¼çš„!\n" NOR, me);
 
 	destruct(this_object());
 	return 1;

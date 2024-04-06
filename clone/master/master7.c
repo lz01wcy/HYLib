@@ -3,24 +3,24 @@ inherit NPC;
 void create()
 {
 	object armor;
-        set_name(RED"ÈÕºó"NOR, ({ "master queen", "master","queen" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name(RED"æ—¥å"NOR, ({ "master queen", "master","queen" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 46);
 	set("agi",35);
         set("int", 30);
         set("per", 30);
         set("apprentice_available", 50);
 	set("long",
-		"ÈÕºóÄËÌúÑª´óÆìÃÅµÚÆß´úÕÆÃÅÈËÔÆÒíÖ®ÆŞ£¬Òò¿´²»¹ßÌúÑª´óÆìÃÅÈË¶ÔÆä\n"
-		"ÆŞ×ÓµÄÎŞÇé£¬¿ª´´³£´ºµºÒ»ÅÉ£¬ÒÔÊÕÈİÊÀÉÏËùÓĞÉËĞÄÅ®×Ó¡£\n"
+		"æ—¥åä¹ƒé“è¡€å¤§æ——é—¨ç¬¬ä¸ƒä»£æŒé—¨äººäº‘ç¿¼ä¹‹å¦»ï¼Œå› çœ‹ä¸æƒ¯é“è¡€å¤§æ——é—¨äººå¯¹å…¶\n"
+		"å¦»å­çš„æ— æƒ…ï¼Œå¼€åˆ›å¸¸æ˜¥å²›ä¸€æ´¾ï¼Œä»¥æ”¶å®¹ä¸–ä¸Šæ‰€æœ‰ä¼¤å¿ƒå¥³å­ã€‚\n"
 		);
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(WHT"°×·É·É"NOR, ({ "master bai", "bai"}) );
-        set("title", WHT"¿ÉÁ¯ÉÙÅ®"NOR);
+	set_name(WHT"ç™½é£é£"NOR, ({ "master bai", "bai"}) );
+        set("title", WHT"å¯æ€œå°‘å¥³"NOR);
         set("long",
-"°×·É·É¿´ÉÏÈ¥ÊÇ¸ö¿ÉÁ¯ÉÙÅ®£¬µ«ÊÇ£®£®\n"
+"ç™½é£é£çœ‹ä¸Šå»æ˜¯ä¸ªå¯æ€œå°‘å¥³ï¼Œä½†æ˜¯ï¼ï¼\n"
                ); 
 
 }
@@ -65,7 +65,7 @@ if (random(2)==0)
         }) );
 		set_temp("apply/attack", 200);set_temp("apply/defense", 200);set_temp("apply/armor", 500);set_temp("apply/damage", 600);setup();
   	         armor=new(__DIR__"obj/corclot");
-		armor->set_name("ÌìÇàË¿ÒÂ",({"cloth"}) );
+		armor->set_name("å¤©é’ä¸è¡£",({"cloth"}) );
 		armor->move(this_object());
 		armor->wear();
 
@@ -98,7 +98,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

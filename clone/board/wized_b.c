@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("ĞŞ¸Ä¼ÇÂ¼ÁôÑÔ²¾", ({ "board" }) );
+	set_name("ä¿®æ”¹è®°å½•ç•™è¨€ç°¿", ({ "board" }) );
 	set("location", "/d/wizard/edit_room");
 	set("board_id", "wized_b");
-	set("long", "×¨¹©Î×Ê¦¼ÇÂ¼ĞŞ¸ÄµÄÁôÑÔ°å¡£\n" );
+	set("long", "ä¸“ä¾›å·«å¸ˆè®°å½•ä¿®æ”¹çš„ç•™è¨€æ¿ã€‚\n" );
 	setup();
 	set("capacity", 200);
 	replace_program(BULLETIN_BOARD);

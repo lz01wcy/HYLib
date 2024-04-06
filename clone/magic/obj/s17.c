@@ -5,10 +5,10 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(YEL"ĞÄÖ®ÅÛ"NOR, ({ "light pao", "lightpao" }));
-	set("long", YEL"ÕâÊÇÒ»¼şĞÄÖ®ÅÛ£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(YEL"å¿ƒä¹‹è¢"NOR, ({ "light pao", "lightpao" }));
+	set("long", YEL"è¿™æ˜¯ä¸€ä»¶å¿ƒä¹‹è¢ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¼ş");
+	set("unit", "ä»¶");
 	set("armor_prop/intelligence",10);
 	set("value", 132000);
 	set("material", "gem");

@@ -9,11 +9,11 @@ void create()
 
 {
     
-   set_name(HIB"Â·Î÷·¨"NOR, ({ "dark angel" , "darkangel" }));
-                set("gender", "ÄĞĞÔ");
+   set_name(HIB"è·¯è¥¿æ³•"NOR, ({ "dark angel" , "darkangel" }));
+                set("gender", "ç”·æ€§");
        set("long",
-"Ò»¸ö¸ß´óÎŞ±È£¬ÉíÉÏÓĞÊ®¶şÒíµÄ×¹ÌìÊ¹¡£
-¡£\n");
+"ä¸€ä¸ªé«˜å¤§æ— æ¯”ï¼Œèº«ä¸Šæœ‰åäºŒç¿¼çš„å å¤©ä½¿ã€‚
+ã€‚\n");
 //              set("attitude", "aggressive");
                set("vendetta/authority",1);
 
@@ -26,7 +26,7 @@ set("per",40);
 set("zhuanbest",1);  
 set("magicgift",4);  
 
-set("title",HIB+"×¹ÌìÊ¹"+NOR);
+set("title",HIB+"å å¤©ä½¿"+NOR);
       set("dex",150);
       set("con",150);
      set("str" ,150);
@@ -112,8 +112,8 @@ int heal_up()
 void leave()
 {
 	object owner;
-	message("vision",BLK"ÓÉÓÚÕ½¶·ÒÑ¾­½áÊø£¡\n\n"
-		+ name() + BLK"»¯ÎªÒ»¸öºÚ¶´£¬ÏûÊ§²»¼ûÁË¡£\n" NOR, environment(),
+	message("vision",BLK"ç”±äºæˆ˜æ–—å·²ç»ç»“æŸï¼\n\n"
+		+ name() + BLK"åŒ–ä¸ºä¸€ä¸ªé»‘æ´ï¼Œæ¶ˆå¤±ä¸è§äº†ã€‚\n" NOR, environment(),
 		this_object() );
 	destruct(this_object());
 }

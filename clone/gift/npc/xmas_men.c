@@ -9,9 +9,9 @@ string ask_for_present();
 
 void create()
 {
-    set_name("ÀñÎïÀÏÈË", ({ "liwu man", "man" }) );
-	set("title", HIY"ÀñÎï"+HIW" Ê¹Õß"NOR);
-	set("gender", "ÄĞĞÔ" );
+    set_name("ç¤¼ç‰©è€äºº", ({ "liwu man", "man" }) );
+	set("title", HIY"ç¤¼ç‰©"+HIW" ä½¿è€…"NOR);
+	set("gender", "ç”·æ€§" );
 
 	set("age", 400);
 	set("str", 100);
@@ -20,15 +20,15 @@ void create()
 	set("int", 100);
          
 	set("long",
-		"ß×£¿Õâ¸öÀñÎïÀÏÈËÔõÃ´ºÍÊ¥µ®ÀÏÈËÕÅµÃÒ»Ä£Ò»Ñù£¬ºÇºÇ...\n"
-                "ËûÕıÔÚÄÇÀï·¢ºì°ü£¬¿´À´Äã¿ÉÒÔÏòËûÒª¡£(ask men about ºì°ü)\n" );
+		"å’¦ï¼Ÿè¿™ä¸ªç¤¼ç‰©è€äººæ€ä¹ˆå’Œåœ£è¯è€äººå¼ å¾—ä¸€æ¨¡ä¸€æ ·ï¼Œå‘µå‘µ...\n"
+                "ä»–æ­£åœ¨é‚£é‡Œå‘çº¢åŒ…ï¼Œçœ‹æ¥ä½ å¯ä»¥å‘ä»–è¦ã€‚(ask men about çº¢åŒ…)\n" );
 
 	set("combat_exp", 8000000);
 	set("attitude", "friendly");
 	
 	set("inquiry", ([
-		"ÉêÇë"   : (: ask_for_yao :),		
-		"ÀñÎï"   : (: ask_for_present :),
+		"ç”³è¯·"   : (: ask_for_yao :),		
+		"ç¤¼ç‰©"   : (: ask_for_present :),
 	]) );
 
 	set_temp("no_kill", 1);
@@ -93,9 +93,9 @@ void greeting(object ob)
 {
 	if(!ob || environment(ob)!=environment()) return;
 
-      command("say ÄãÊÇÀ´ÄÃÀñÎïµÄ°É£¿\n");
-//      Ôªµ©,ÇåÃ÷½Ú,ÀÍ¶¯½Ú,ÇàÄê½Ú,¶ùÍ¯½Ú,½¨µ³ÈÕ,½¨¾ü½Ú,¹úÇì½Ú
-//      ÇéÈË½Ú,ÓŞÈË½Ú,Ê¥µ®½Ú,´º½Ú,ÔªÏü½Ú,¶ËÎç½Ú,ÖĞÇï½Ú,ÖØÑô½Ú,
+      command("say ä½ æ˜¯æ¥æ‹¿ç¤¼ç‰©çš„å§ï¼Ÿ\n");
+//      å…ƒæ—¦,æ¸…æ˜èŠ‚,åŠ³åŠ¨èŠ‚,é’å¹´èŠ‚,å„¿ç«¥èŠ‚,å»ºå…šæ—¥,å»ºå†›èŠ‚,å›½åº†èŠ‚
+//      æƒ…äººèŠ‚,æ„šäººèŠ‚,åœ£è¯èŠ‚,æ˜¥èŠ‚,å…ƒå®µèŠ‚,ç«¯åˆèŠ‚,ä¸­ç§‹èŠ‚,é‡é˜³èŠ‚,
 }
 
 string ask_for_present()
@@ -103,112 +103,112 @@ string ask_for_present()
 mapping *holiday= ({
 
 	          ([
-                      "name":             HIR"Ôªµ©"NOR,
+                      "name":             HIR"å…ƒæ—¦"NOR,
                       "year":             "either",
                       "month":            "Jan",
                       "day":              "01",
                   ]),
   
                   ([
-                      "name":             HIW"ÇåÃ÷½Ú"NOR,
+                      "name":             HIW"æ¸…æ˜èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Apr",
                       "day":              "05",
                   ]),
 
                   ([
-                      "name":             HIR"ÀÍ¶¯½Ú"NOR,
+                      "name":             HIR"åŠ³åŠ¨èŠ‚"NOR,
                       "year":             "either",
                       "month":            "May",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIW"ÇàÄê½Ú"NOR,
+                      "name":             HIW"é’å¹´èŠ‚"NOR,
                       "year":             "either",
                       "month":            "May",
                       "day":              "04",
                   ]),
 
                   ([
-                      "name":             HIR"¶ùÍ¯½Ú"NOR,
+                      "name":             HIR"å„¿ç«¥èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Jun",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIR"½¨µ³ÈÕ"NOR,
+                      "name":             HIR"å»ºå…šæ—¥"NOR,
                       "year":             "either",
                       "month":            "Jul",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIR"½¨¾ü½Ú"NOR,
+                      "name":             HIR"å»ºå†›èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Aug",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIR"¹úÇì½Ú"NOR,
+                      "name":             HIR"å›½åº†èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Oct",
                       "day":              "01",
                   ]),
 
        		  ([
-                      "name":             HIR"ÇéÈË½Ú"NOR,
+                      "name":             HIR"æƒ…äººèŠ‚"NOR,
                       "year":             "eihter",
                       "month":            "Feb",
                       "day":              "14",                    
                   ]),
 
                   ([
-                      "name":             HIC"ÓŞÈË½Ú"NOR,
+                      "name":             HIC"æ„šäººèŠ‚"NOR,
                       "year":             "either",
                       "month":            "Apr",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIW"Ê¥µ®½Ú"NOR,
+                      "name":             HIW"åœ£è¯èŠ‚"NOR,
                       "year":             "either", 
                       "month":            "Dec",
                       "day":              "24",
                   ]),
 
                   ([
-                      "name":             HIR"´º"+HIC"½Ú"NOR,
+                      "name":             HIR"æ˜¥"+HIC"èŠ‚"NOR,
                       "year":             "2002",
                       "month":            "Feb",
                       "day":              "1",
                   ]),
 
                   ([
-                      "name":             HIR"ÔªÏü"NOR+"½Ú",
+                      "name":             HIR"å…ƒå®µ"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Feb",
                       "day":              "23",
                   ]),
                
                   ([
-                      "name":             HIR"¶ËÎç"NOR+"½Ú",
+                      "name":             HIR"ç«¯åˆ"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Jun",
                       "day":              "22",
                   ]),
                       
        		  ([
-                      "name":             HIY"ÖĞÇï"NOR+"½Ú",
+                      "name":             HIY"ä¸­ç§‹"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Sep",
                       "day":              "14",                    
                   ]),
 
        		  ([
-                      "name":             HIY"ÖØÑô"NOR+"½Ú",
+                      "name":             HIY"é‡é˜³"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Oct",
                       "day":              "25",                    
@@ -244,15 +244,15 @@ mapping *holiday= ({
       }
     if(what_day==100)
 {
-    write("ÏÖÔÚÊÇ:");
+    write("ç°åœ¨æ˜¯:");
     write(month);
     write(day);
-      return "½ñÌìºÃÏó²»ÊÇÊ²Ã´½ÚÈÕÒ®£¡\n";
+      return "ä»Šå¤©å¥½è±¡ä¸æ˜¯ä»€ä¹ˆèŠ‚æ—¥è€¶ï¼\n";
 }    
     me = this_player();
 
     if ((int)me->query("combat_exp") <3000 || (int)me->query("mud_age")<18000)
-        return "ºÙºÙ£¬ÏëÓÃĞÂÍæ¼ÒÀ´Æ­ÎÒ£¬Ã»ÃÅ£¡¡£\n";
+        return "å˜¿å˜¿ï¼Œæƒ³ç”¨æ–°ç©å®¶æ¥éª—æˆ‘ï¼Œæ²¡é—¨ï¼ã€‚\n";
       
     if ((int)me->query("combat_exp") >=3000 ) 
          {
@@ -262,7 +262,7 @@ mapping *holiday= ({
             for(i=0; i<sizeof(skl); i++)
                    if (skl[sname[i]] >= 10)how=how+1; 
                           if(how<3)
-                            return "¾ÍÄãµÄË®Æ½£¿ÔÙÈ¥Á·Ò»»á¶ù£¡¡£\n";
+                            return "å°±ä½ çš„æ°´å¹³ï¼Ÿå†å»ç»ƒä¸€ä¼šå„¿ï¼ã€‚\n";
 	
           } 
      today = holiday[what_day];   
@@ -270,7 +270,7 @@ mapping *holiday= ({
      check=year+today["name"];
      
      if(me->query("goodday_gift")==check)
-       return "Ã¿¸öÈËÒ»·İ£¬²»ÒªÕâÃ´Ì°ĞÄºÃ²»ºÃ£¡\n";
+       return "æ¯ä¸ªäººä¸€ä»½ï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒå¥½ä¸å¥½ï¼\n";
 neili=280+random(888);
 exp=68000+random(88888);
 pot=18000+random(88888);
@@ -280,7 +280,7 @@ me->add("potential",pot);
 //     ob = new(__DIR__"red");
 //     ob->move(me);
      me->set("goodday_gift",check);
-     return today["name"]+"¿ìÀÖ£¡\n"+"ÀñÎïÀÏÈË°Ñ"+me->query("name")+"µÄ"+HIR"ÄÜÁ¦¼ÓÇ¿ÁËĞí¶à"NOR+"¡£ÄÚÁ¦"+neili+",¾­Ñé"+exp+",Ç±ÄÜ"+pot+"\n";
+     return today["name"]+"å¿«ä¹ï¼\n"+"ç¤¼ç‰©è€äººæŠŠ"+me->query("name")+"çš„"+HIR"èƒ½åŠ›åŠ å¼ºäº†è®¸å¤š"NOR+"ã€‚å†…åŠ›"+neili+",ç»éªŒ"+exp+",æ½œèƒ½"+pot+"\n";
 }
 
 string ask_for_yao()
@@ -288,112 +288,112 @@ string ask_for_yao()
 mapping *holiday= ({
 
 	          ([
-                      "name":             HIR"Ôªµ©"NOR,
+                      "name":             HIR"å…ƒæ—¦"NOR,
                       "year":             "either",
                       "month":            "Jan",
                       "day":              "01",
                   ]),
   
                   ([
-                      "name":             HIW"ÇåÃ÷½Ú"NOR,
+                      "name":             HIW"æ¸…æ˜èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Apr",
                       "day":              "05",
                   ]),
 
                   ([
-                      "name":             HIR"ÀÍ¶¯½Ú"NOR,
+                      "name":             HIR"åŠ³åŠ¨èŠ‚"NOR,
                       "year":             "either",
                       "month":            "May",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIW"ÇàÄê½Ú"NOR,
+                      "name":             HIW"é’å¹´èŠ‚"NOR,
                       "year":             "either",
                       "month":            "May",
                       "day":              "04",
                   ]),
 
                   ([
-                      "name":             HIR"¶ùÍ¯½Ú"NOR,
+                      "name":             HIR"å„¿ç«¥èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Jun",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIR"½¨µ³ÈÕ"NOR,
+                      "name":             HIR"å»ºå…šæ—¥"NOR,
                       "year":             "either",
                       "month":            "Jul",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIR"½¨¾ü½Ú"NOR,
+                      "name":             HIR"å»ºå†›èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Aug",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIR"¹úÇì½Ú"NOR,
+                      "name":             HIR"å›½åº†èŠ‚"NOR,
                       "year":             "either",
                       "month":            "Oct",
                       "day":              "01",
                   ]),
 
        		  ([
-                      "name":             HIR"ÇéÈË½Ú"NOR,
+                      "name":             HIR"æƒ…äººèŠ‚"NOR,
                       "year":             "eihter",
                       "month":            "Feb",
                       "day":              "14",                    
                   ]),
 
                   ([
-                      "name":             HIC"ÓŞÈË½Ú"NOR,
+                      "name":             HIC"æ„šäººèŠ‚"NOR,
                       "year":             "either",
                       "month":            "Apr",
                       "day":              "01",
                   ]),
 
                   ([
-                      "name":             HIW"Ê¥µ®½Ú"NOR,
+                      "name":             HIW"åœ£è¯èŠ‚"NOR,
                       "year":             "either", 
                       "month":            "Dec",
                       "day":              "24",
                   ]),
 
                   ([
-                      "name":             HIR"´º"+HIC"½Ú"NOR,
+                      "name":             HIR"æ˜¥"+HIC"èŠ‚"NOR,
                       "year":             "2002",
                       "month":            "Feb",
                       "day":              "1",
                   ]),
 
                   ([
-                      "name":             HIR"ÔªÏü"NOR+"½Ú",
+                      "name":             HIR"å…ƒå®µ"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Feb",
                       "day":              "23",
                   ]),
                
                   ([
-                      "name":             HIR"¶ËÎç"NOR+"½Ú",
+                      "name":             HIR"ç«¯åˆ"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Jun",
                       "day":              "22",
                   ]),
                       
        		  ([
-                      "name":             HIY"ÖĞÇï"NOR+"½Ú",
+                      "name":             HIY"ä¸­ç§‹"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Sep",
                       "day":              "14",                    
                   ]),
 
        		  ([
-                      "name":             HIY"ÖØÑô"NOR+"½Ú",
+                      "name":             HIY"é‡é˜³"NOR+"èŠ‚",
                       "year":             "2008",
                       "month":            "Oct",
                       "day":              "25",                    
@@ -430,7 +430,7 @@ mapping *holiday= ({
     me = this_player();
     
     if ((int)me->query("combat_exp") <3000 || (int)me->query("mud_age")<18000)
-        return "ºÙºÙ£¬ÏëÓÃĞÂÍæ¼ÒÀ´Æ­ÎÒ£¬Ã»ÃÅ£¡¡£\n";
+        return "å˜¿å˜¿ï¼Œæƒ³ç”¨æ–°ç©å®¶æ¥éª—æˆ‘ï¼Œæ²¡é—¨ï¼ã€‚\n";
 
     if ((int)me->query("combat_exp") >=3000 ) 
          {
@@ -440,19 +440,19 @@ mapping *holiday= ({
             for(i=0; i<sizeof(skl); i++)
                    if (skl[sname[i]] >= 10)how=how+1; 
                           if(how<3)
-                            return "¾ÍÄãµÄË®Æ½£¿ÔÙÈ¥Á·Ò»»á¶ù£¡¡£\n";
+                            return "å°±ä½ çš„æ°´å¹³ï¼Ÿå†å»ç»ƒä¸€ä¼šå„¿ï¼ã€‚\n";
 	
           } 
 
     if(what_day==100)
     {
      me->set("goodday_gift",0);
-     return "ÉêÇëÍê±Õ£¡\n";
+     return "ç”³è¯·å®Œé—­ï¼\n";
     }
-    write("ÏÖÔÚÊÇ:");
+    write("ç°åœ¨æ˜¯:");
     write(month);
     write(day);
-      return "½ñÌì²»Ìá¹©ÉêÇë·şÎñ£¡\n";
+      return "ä»Šå¤©ä¸æä¾›ç”³è¯·æœåŠ¡ï¼\n";
 }
 
   

@@ -5,10 +5,10 @@ inherit FINGER;
 
 void create()
 {
-	set_name(HIY"ÁúÉñ»ÕÕÂ"NOR, ({ "ice ring", "icering" }));
-	set("long", HIY"ÕâÊÇÒ»¸öÁúÉñ»ÕÕÂ£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIY"é¾™ç¥å¾½ç« "NOR, ({ "ice ring", "icering" }));
+	set("long", HIY"è¿™æ˜¯ä¸€ä¸ªé¾™ç¥å¾½ç« ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "Ã¶");
+	set("unit", "æš");
 	set("value", 32000);
 	set("material", "gem");
 	set("armor_prop/armor", 60);

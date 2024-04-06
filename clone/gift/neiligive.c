@@ -5,15 +5,15 @@
 string give_gift();
 
 private mixed *story = ({
-        "ŷ���ˣ��常�������....",
-        "ŷ����˵����ʲô�£�",
-        "ŷ���ˣ���������Ǹ��²�����........",
-        "ŷ����̾��һ��������û�ã���60�껹���С�",
-        "ŷ���ˣ�.........",
-        "ŷ���棺" RED "�������Ǽ��洫����ҩ������" NOR,
-        "ŷ���ˣ�������....", 
-        "ŷ���棺" HIG "ͻȻ���һ�������˷�..." NOR,
-        "ŷ���棺" RED "�ѵ�ҩ������ɽ" NOR,
+        "欧阳克：叔父，帮帮我....",
+        "欧阳锋说道：什么事？",
+        "欧阳克：最近我做那个事不行了........",
+        "欧阳锋叹了一口气道：没用，我60岁还很行。",
+        "欧阳克：.........",
+        "欧阳锋：" RED "给你我们家祖传的神药补补！" NOR,
+        "欧阳克：快拿来....", 
+        "欧阳锋：" HIG "突然大叫一声，发了疯..." NOR,
+        "欧阳锋：" RED "把丹药扔下了山" NOR,
         (: give_gift :)
 });
 
@@ -30,6 +30,6 @@ mixed query_story_message(int step)
 string give_gift()
 {
         STORY_D->give_gift("/clone/gift/neili", 1,
-                           HIM "\n��ž����һ��һö�ɵ���������ǰ��\n\n" NOR);
-        return HIM "��˵����ɽ������һö�ɵ���\n" NOR;
+                           HIM "\n“啪”的一声一枚仙丹掉到你面前。\n\n" NOR);
+        return HIM "听说白驼山遗落了一枚仙丹。\n" NOR;
 }

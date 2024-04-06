@@ -1,4 +1,4 @@
-// dingyangdan.c ¶¨Ñôµ¤
+// dingyangdan.c å®šé˜³ä¸¹
 
 inherit ITEM;
 #include <ansi.h>
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-	set_name(HIY"ĞşÃÅ¶¨Ñôµ¤"NOR, ({"dingyang dan", "dan"}));
+	set_name(HIY"ç„é—¨å®šé˜³ä¸¹"NOR, ({"dingyang dan", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "Ò»¿Å»ğºìÉ«µÄµ¤Ò©¡£´ËÄËÈ«ÕæÒì±¦¡£\n");
+		set("unit", "é¢—");
+		set("long", "ä¸€é¢—ç«çº¢è‰²çš„ä¸¹è¯ã€‚æ­¤ä¹ƒå…¨çœŸå¼‚å®ã€‚\n");
 
 		set("value", 1000);
 		set("lev", 2+random(3));
@@ -42,19 +42,19 @@ pot = exp/2;
 	force_limit = me->query_skill("force")*10;
 	neili_limit = me->query("max_neili");
 	
-	if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (!present(this_object(), this_player()))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 
 	if ( (int)me->query_condition("quanzhen_drug" ) > 0 )
-		return notify_fail("ÄãÊÇ·ñ²ÅÁ¶µ¤Ò©»ò²Å·şÊ³ÁËµ¤Ò©£¿ÄãµÄÈ«ÉíÆøÑªÎ´¹éÎ»£¬²»ÒË³Ôµ¤Ò©¡£\n");
+		return notify_fail("ä½ æ˜¯å¦æ‰ç‚¼ä¸¹è¯æˆ–æ‰æœé£Ÿäº†ä¸¹è¯ï¼Ÿä½ çš„å…¨èº«æ°”è¡€æœªå½’ä½ï¼Œä¸å®œåƒä¸¹è¯ã€‚\n");
 
 	if ( me->query_skill_mapped("force") != "xiantian-qigong" && 1==2)
 	{
 		me->add("max_neili", -10);
-		message_vision(HIR "$N³ÔÏÂÒ»¿ÅĞşÃÅ¶¨Ñôµ¤£¬Ö»¾õµÃ¸¹Í´Èç½Á£¬È«ÉíÈç±»³éÆø°ãµÄ¿ÕĞé¡£Ô­À´´Ëµ¤²»ÊÊÄãËùÁ·ÄÚ¹¦£¬½á¹û´óËğÕæÔª£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€é¢—ç„é—¨å®šé˜³ä¸¹ï¼Œåªè§‰å¾—è…¹ç—›å¦‚æ…ï¼Œå…¨èº«å¦‚è¢«æŠ½æ°”èˆ¬çš„ç©ºè™šã€‚åŸæ¥æ­¤ä¸¹ä¸é€‚ä½ æ‰€ç»ƒå†…åŠŸï¼Œç»“æœå¤§æŸçœŸå…ƒï¼\n" NOR, me);
 		me->start_busy(10);
 		return 1;
 	}
@@ -63,7 +63,7 @@ pot = exp/2;
 		me->start_busy(2);
        me->add("combat_exp",exp);
        me->add("potential",pot);
-message_vision("$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!\n", me);
+message_vision("$Nè·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!\n", me);
 i=1+random(3);
 if (random(12)==0 || wizardp(me))
 {
@@ -77,16 +77,16 @@ else
 {
 me->add("expmax",i);
 }       
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, me);
+message_vision(HIR"$Nè·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, me);
 }       
 }
 		if ( neili_limit <= force_limit  )
 		{
 			me->add("max_neili", 5);
-			message_vision(HIG "$N³ÔÏÂÒ»¿ÅĞşÃÅ¶¨Ñôµ¤£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬¹ı×Ï¹¬£¬ÈëÄàÍèÍ¸Ê®¶şÖØÂ¥£¬±é²¼Ææ½î°ËÂö£¬È«Éí¹¦Á¦¶ÙÈ»Ìá¸ß£¡\n"NOR,me);
+			message_vision(HIG "$Nåƒä¸‹ä¸€é¢—ç„é—¨å®šé˜³ä¸¹ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œè¿‡ç´«å®«ï¼Œå…¥æ³¥ä¸¸é€åäºŒé‡æ¥¼ï¼Œéå¸ƒå¥‡ç­‹å…«è„‰ï¼Œå…¨èº«åŠŸåŠ›é¡¿ç„¶æé«˜ï¼\n"NOR,me);
 		}
 		else
-			message_vision(HIG "$N³ÔÏÂÒ»¿ÅĞşÃÅ¶¨Ñôµ¤£¬²»¹ıºÃÏóÃ»Ê²Ã´×÷ÓÃ¡£\n" NOR, me);
+			message_vision(HIG "$Nåƒä¸‹ä¸€é¢—ç„é—¨å®šé˜³ä¸¹ï¼Œä¸è¿‡å¥½è±¡æ²¡ä»€ä¹ˆä½œç”¨ã€‚\n" NOR, me);
 
 		me->apply_condition("quanzhen_drug", 60);
 	}

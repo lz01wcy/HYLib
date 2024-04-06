@@ -1,4 +1,4 @@
-// xuantie jian ĞşÌúÖØ½£
+// xuantie jian ç„é“é‡å‰‘
 
 #include <weapon.h>
 #include <ansi.h>
@@ -8,12 +8,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name( HIB"¾«¸ÖÖØ½£"NOR,({ "jinggang jian", "jinggang", "jian", "sword"}) );
+        set_name( HIB"ç²¾é’¢é‡å‰‘"NOR,({ "jinggang jian", "jinggang", "jian", "sword"}) );
         set_weight(70000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 10);
                 set("unique", 1);
                 set("rigidity", 10);
@@ -24,11 +24,11 @@ void create()
                 set("wield_neili", 1500);
                 set("wield_maxneili", 2100);
                 set("wield_str", 32);
-                set("long", "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄ¾«¸ÖÖØ½£¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„ç²¾é’¢é‡å‰‘ã€‚\n");
 		set("value", 10000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");       
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");       
         }
         init_sword(600);
         setup();

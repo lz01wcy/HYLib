@@ -4,42 +4,42 @@
 inherit ITEM;
 void create()
 {
-        set_name(YEL "ÇúÆ×" NOR, ({ "qu pu", "pu"}));
+        set_name(YEL "æ›²è°±" NOR, ({ "qu pu", "pu"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "²á");
+                set("unit", "å†Œ");
                 set("long", "
-Ò»²áñÑ¶¤¾«ÃÀµÄÇúÆ×£¬Äã¿ÉÒÔ³ª(chang)ÀïÃæµÄÇú×Ó£º
+ä¸€å†Œè£±é’‰ç²¾ç¾çš„æ›²è°±ï¼Œä½ å¯ä»¥å”±(chang)é‡Œé¢çš„æ›²å­ï¼š
 
-¡¡¡¶ÏãÚ£¡¤ÃúÎÄ¡·(xiangzhong)
-¡¡¡¶¶´ÏÉ¸è¡·(dongxian_ge)
-¡¡¡¶ÂõÚéÌÁ¡¤ÑãÇğ´Ê¡·(maipo_tang)
-¡¡¡¶²¨Ë¹Ğ¡Çú¡·(bosi_xiaoqu)
-¡¡¡¶Ğ¦°Á½­ºş¡·(xiaoao_jianghu)
-¡¡¡¶É½ÆÂÑò¡·(shanpo_yang)
-¡¡¡¶µûÁµ»¨¡·(dielian_hua)
-¡¡¡¶²ÉÉ£×Ó¡·(caisang_zi)
-¡¡¡¶ÎŞË×Äî¡·(wusu_nian)   
-¡¡¡¶¶´ÏÉ¸è¡·(dongxian_ge)
-¡¡¡¶²ÉÉ£×Ó¡·(caisang_zi)
-  ¡¶ÈıÌ¨¡·(san_tai)
-  ¡¶Óù½ÖĞĞ¡·(yujie_xing)
-  ¡¶×í´¹±Ş¡·(zuichui_bian)
-  ¡¶Ë®µ÷¸èÍ·¡·(shuidiao_getou)
-  ¡¶Ô²Ô²Çú¡·(yuanyuan_qu)
-  ¡¶Íûº£³±¡·(wanghai_chao)
-  ¡¶ÎÊÊÀ¼ä  ÇéÎªºÎÎï¡·(wenshi_jian)
-  ¡¶µûÁµ»¨¡·(dielian_hua)
-  ¡¶ÒûÂí³¤³Ç¿ßĞĞ¡·(yinma_changcheng)
-  ¡¶´º½­»¨ÔÂÒ¹¡·(chunjiang_huayueye)
-  ¡¶½«½ø¾Æ¡·(jiangjin_jiu)
-  ¡¶Ğ¦°Á½­ºş¡·(xiaoao_jianghu)
-  ¡¶ÓİÃÀÈË¡·(yu_meiren)
-  ¡¶°×Ñ©¸èËÍÎäÅĞ¹Ù»Ø¾©¡·(baixue_ge)
+ã€€ã€Šé¦™å†¢ãƒ»é“­æ–‡ã€‹(xiangzhong)
+ã€€ã€Šæ´ä»™æ­Œã€‹(dongxian_ge)
+ã€€ã€Šè¿ˆé™‚å¡˜ãƒ»é›ä¸˜è¯ã€‹(maipo_tang)
+ã€€ã€Šæ³¢æ–¯å°æ›²ã€‹(bosi_xiaoqu)
+ã€€ã€Šç¬‘å‚²æ±Ÿæ¹–ã€‹(xiaoao_jianghu)
+ã€€ã€Šå±±å¡ç¾Šã€‹(shanpo_yang)
+ã€€ã€Šè¶æ‹èŠ±ã€‹(dielian_hua)
+ã€€ã€Šé‡‡æ¡‘å­ã€‹(caisang_zi)
+ã€€ã€Šæ— ä¿—å¿µã€‹(wusu_nian)   
+ã€€ã€Šæ´ä»™æ­Œã€‹(dongxian_ge)
+ã€€ã€Šé‡‡æ¡‘å­ã€‹(caisang_zi)
+  ã€Šä¸‰å°ã€‹(san_tai)
+  ã€Šå¾¡è¡—è¡Œã€‹(yujie_xing)
+  ã€Šé†‰å‚é­ã€‹(zuichui_bian)
+  ã€Šæ°´è°ƒæ­Œå¤´ã€‹(shuidiao_getou)
+  ã€Šåœ†åœ†æ›²ã€‹(yuanyuan_qu)
+  ã€Šæœ›æµ·æ½®ã€‹(wanghai_chao)
+  ã€Šé—®ä¸–é—´  æƒ…ä¸ºä½•ç‰©ã€‹(wenshi_jian)
+  ã€Šè¶æ‹èŠ±ã€‹(dielian_hua)
+  ã€Šé¥®é©¬é•¿åŸçªŸè¡Œã€‹(yinma_changcheng)
+  ã€Šæ˜¥æ±ŸèŠ±æœˆå¤œã€‹(chunjiang_huayueye)
+  ã€Šå°†è¿›é…’ã€‹(jiangjin_jiu)
+  ã€Šç¬‘å‚²æ±Ÿæ¹–ã€‹(xiaoao_jianghu)
+  ã€Šè™ç¾äººã€‹(yu_meiren)
+  ã€Šç™½é›ªæ­Œé€æ­¦åˆ¤å®˜å›äº¬ã€‹(baixue_ge)
   
-ÄãÈç¹û¾õµÃ³ªµÃ²»ºÃ£¬¿ÉÒÔÍ£(ting)ÏÂ£¬ÔÙ»ØÈ¥Á·Á·¡£
+ä½ å¦‚æœè§‰å¾—å”±å¾—ä¸å¥½ï¼Œå¯ä»¥åœ(ting)ä¸‹ï¼Œå†å›å»ç»ƒç»ƒã€‚
 \n");
                 set("value", 0);
                 set("material", "silk");
@@ -57,7 +57,7 @@ void init()
 int do_halt()
 {
         if (find_call_out("sing_stage") < 0) return 0;
-        message_vision(HIR"\n$N·¢ÏÖ´ó¼ÒÒ»Á³Í´¿àµÄ±íÇé£¬ŞÏŞÎµØ¿ÈËÔÁËÁ½Éù£¬Í£ÏÂÁËÔëÒô¡£\n"NOR, this_player());
+        message_vision(HIR"\n$Nå‘ç°å¤§å®¶ä¸€è„¸ç—›è‹¦çš„è¡¨æƒ…ï¼Œå°´å°¬åœ°å’³å—½äº†ä¸¤å£°ï¼Œåœä¸‹äº†å™ªéŸ³ã€‚\n"NOR, this_player());
         remove_call_out("sing_stage");
         return 1;
 }
@@ -71,18 +71,18 @@ int do_sing(string arg)
        me = this_player();
        ob = this_object();
 //       if(me->query("id") != "xqin")
-//       return notify_fail("Äã×ÁÄ¥ÁË°ëÌì£¬¿ÉÊÇ°ë¾äÒ²³ª²»³öÀ´¡£\n");
-       if (find_call_out("sing_stage") >= 0) return notify_fail("ÄãÄÜÍ¬Ê±³ªÁ½Ê×Çú×ÓÂğ£¿\n");
-       if(!arg) return notify_fail("ÄãÏë³ªÊ²Ã´£¿\n");
+//       return notify_fail("ä½ ç¢ç£¨äº†åŠå¤©ï¼Œå¯æ˜¯åŠå¥ä¹Ÿå”±ä¸å‡ºæ¥ã€‚\n");
+       if (find_call_out("sing_stage") >= 0) return notify_fail("ä½ èƒ½åŒæ—¶å”±ä¸¤é¦–æ›²å­å—ï¼Ÿ\n");
+       if(!arg) return notify_fail("ä½ æƒ³å”±ä»€ä¹ˆï¼Ÿ\n");
         while (i--) if (arg == qupu[i]["name"]) break;
-        if (i<0) return notify_fail("ÇúÆ×Àï»¹Ã»ÓĞÄãÏë³ªµÄÇú×Ó¡£\n");
+        if (i<0) return notify_fail("æ›²è°±é‡Œè¿˜æ²¡æœ‰ä½ æƒ³å”±çš„æ›²å­ã€‚\n");
         if(me->is_busy())
-           return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
-//        if(me->query("gender") != "ÄĞĞÔ"){
+           return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
+//        if(me->query("gender") != "ç”·æ€§"){
 //
         if(present("zhu xiao", me))
-        message_vision(HIG"$NÄÃÆğÖñóï·Åµ½×ì±ßÇáÇáµÄ´µÁËÆğÀ´£¬óïÉùÇå¶ø²»µ­£¬Ïì¶ø²»Ë×£¬ÁîÈË²»¾õÌÕ×íÆäÖĞ¡£\n\n"NOR,me, ob);
-          else message_vision("$N·­¿ª$n£¬·Å¿ª¸èºí£¬Ñ½Ñ½Ñ½³ªÁËÆğÀ´£º\n\n"NOR, me, ob);
+        message_vision(HIG"$Næ‹¿èµ·ç«¹ç®«æ”¾åˆ°å˜´è¾¹è½»è½»çš„å¹äº†èµ·æ¥ï¼Œç®«å£°æ¸…è€Œä¸æ·¡ï¼Œå“è€Œä¸ä¿—ï¼Œä»¤äººä¸è§‰é™¶é†‰å…¶ä¸­ã€‚\n\n"NOR,me, ob);
+          else message_vision("$Nç¿»å¼€$nï¼Œæ”¾å¼€æ­Œå–‰ï¼Œå‘€å‘€å‘€å”±äº†èµ·æ¥ï¼š\n\n"NOR, me, ob);
 //          }
       call_out("sing_stage", 2, me, stage, i, sizeof(qupu[i]["context"]));
       return 1;
@@ -97,7 +97,7 @@ void sing_stage(object me, int stage, int i, int size)
    }
    else {
       if(present("zhu xiao", me))
-         message_vision(HIG"\n¹ıÁËÒ»»á£¬$NÊÖÖĞóïÉù½¥»º½¥Çá£¬ËÆºõÁ÷Ë®ãéãéÔ¶È¥£¬ÖÕÓÚ¸èÍêÇúÖÕ£¬¼ÅÈ»ÎŞÉù¡£\n"NOR, me);
-      else message_vision("\n$N³ªÍê×îºóÒ»×Ö£¬ÑöÌìÒ»Éù³¤Ğ¥£¬Ğ¥ÉùÔ¶Ô¶´«ÁË¿ªÈ¥¡£\n", me);
+         message_vision(HIG"\nè¿‡äº†ä¸€ä¼šï¼Œ$Næ‰‹ä¸­ç®«å£°æ¸ç¼“æ¸è½»ï¼Œä¼¼ä¹æµæ°´æ±©æ±©è¿œå»ï¼Œç»ˆäºæ­Œå®Œæ›²ç»ˆï¼Œå¯‚ç„¶æ— å£°ã€‚\n"NOR, me);
+      else message_vision("\n$Nå”±å®Œæœ€åä¸€å­—ï¼Œä»°å¤©ä¸€å£°é•¿å•¸ï¼Œå•¸å£°è¿œè¿œä¼ äº†å¼€å»ã€‚\n", me);
     }
 }

@@ -1,4 +1,4 @@
-// necklace.c ¶Ç´ø
+// necklace.c è‚šå¸¦
 #include <ansi.h>   
 #include <armor.h>
  
@@ -6,14 +6,14 @@ inherit SURCOAT;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});   
 void create()
 {
-	set_name((order[random(13)])+"¸ßÉ½¶Ç´ø"NOR, ({ "surcoat11"}) );
+	set_name((order[random(13)])+"é«˜å±±è‚šå¸¦"NOR, ({ "surcoat11"}) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "leather");
-		set("unit", "Ìõ");
-		set("long", "ÕâÊÇÒ»¼şÆ¤ÖÊµÄ¸ßÉ½¶Ç´ø£¬ÓÃÒÔ±£»¤¸¹²¿¡£\n");
+		set("unit", "æ¡");
+		set("long", "è¿™æ˜¯ä¸€ä»¶çš®è´¨çš„é«˜å±±è‚šå¸¦ï¼Œç”¨ä»¥ä¿æŠ¤è…¹éƒ¨ã€‚\n");
 		set("value", 2200);
 		set("armor_prop/dodge", 16);
 set("armor_prop/intelligence",15);

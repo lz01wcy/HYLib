@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIG"Ñø¾«µ¤"NOR, ({"yangjing dan", "dan"}));
+	set_name(HIG"å…»ç²¾ä¸¹"NOR, ({"yangjing dan", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 	        set_weight(4000);
-		set("unit", "Á£");
+		set("unit", "ç²’");
 		set("vegetable", 7);
 		set("nostrum", 128);
 		set("level", 10);
@@ -36,13 +36,13 @@ exp = 888+random(888);
 pot = exp/2;
 
 
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
 
-	message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
+	message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
 /*	if (((int)me->query_condition("xx_poison") > 0) ||
 		((int)me->query("eff_jing") < (int)me->query("max_jing")))
 	{
@@ -51,7 +51,7 @@ pot = exp/2;
 
        me->add("combat_exp",exp);
        me->add("potential",pot);
-message_vision("$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!\n", me);
+message_vision("$NèŽ·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!\n", me);
 i=1+random(3);
 if (random(12)==0 || wizardp(me))
 {
@@ -65,7 +65,7 @@ else
 {
 me->add("expmax",i);
 }       
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏÞ!\n"NOR, me);
+message_vision(HIR"$NèŽ·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, me);
 }       
 }
 	if (((int)me->query_condition("xx_poison") > 0) ||

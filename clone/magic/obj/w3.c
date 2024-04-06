@@ -1,18 +1,18 @@
-// ³¤±úÕ½¸«
+// é•¿æŸ„æˆ˜æ–§
 #include <ansi.h>
 #include <weapon.h>
 inherit AXE;
 
 void create()
 {
-        set_name(RED"³¤±úÕ½¸«"NOR, ({"lang axe", "langaxe"}));
+        set_name(RED"é•¿æŸ„æˆ˜æ–§"NOR, ({"lang axe", "langaxe"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", RED"ÕâÊÇÒ»°Ñ³¤±úÕ½¸«,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", RED"è¿™æ˜¯ä¸€æŠŠé•¿æŸ„æˆ˜æ–§,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",10);

@@ -1,18 +1,18 @@
-// µØÓü¹í¸«
+// åœ°ç‹±é¬¼æ–§
 #include <ansi.h>
 #include <weapon.h>
 inherit DAGGER;
 
 void create()
 {
-        set_name(RED"°«ÁéÖ®Ø°"NOR, ({"magic daggerc", "mdaggerc"}));
+        set_name(RED"çŸ®çµä¹‹åŒ•"NOR, ({"magic daggerc", "mdaggerc"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", RED"ÕâÊÇÒ»°Ñ°«ÁéÖ®Ø°,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", RED"è¿™æ˜¯ä¸€æŠŠçŸ®çµä¹‹åŒ•,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",100);

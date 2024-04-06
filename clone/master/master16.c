@@ -3,15 +3,15 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("ÁøÎŞÃ¼", ({ "master liu", "master","liu" }) );
-        set("gender", "Å®ĞÔ" );
-        set("title", HIG"»ÆÉ½ÅÉÕÆÃÅ·òÈË"NOR);
+        set_name("æŸ³æ— çœ‰", ({ "master liu", "master","liu" }) );
+        set("gender", "å¥³æ€§" );
+        set("title", HIG"é»„å±±æ´¾æŒé—¨å¤«äºº"NOR);
         set("age", 26);
         set("int", 30);
         set("per", 30);
         set("apprentice_available", 50);
 	set("long",
-		"ÁøÎŞÃ¼»ÆÉ½ÅÉÕÆÃÅ·òÈË\n"
+		"æŸ³æ— çœ‰é»„å±±æ´¾æŒé—¨å¤«äºº\n"
 		);
         set("force_factor", 200);
         set("max_gin", 3000);
@@ -55,10 +55,10 @@ void create()
         set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIB"·çËÄÄï"NOR, ({ "master fen", "master"}) );
-        set("title", RED"ÁÃÈËĞÄÏÒ"NOR);
+	set_name(HIB"é£å››å¨˜"NOR, ({ "master fen", "master"}) );
+        set("title", RED"æ’©äººå¿ƒå¼¦"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -106,7 +106,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

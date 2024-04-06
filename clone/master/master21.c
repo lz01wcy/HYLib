@@ -4,9 +4,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("ÀîÑ°»¶", ({ "master li", "master", "master li xunhuan" }) );
-        set("nickname", RED"Ğ¡Àî·Éµ¶"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("æå¯»æ¬¢", ({ "master li", "master", "master li xunhuan" }) );
+        set("nickname", RED"å°æé£åˆ€"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 44);
         set("str", 30);
         set("dex", 130);
@@ -19,14 +19,14 @@ void create()
 	set("courage",1000);
         set("force_factor", 3);
 
-        set("rank_info/respect", "ÀîÌ½»¨");
+        set("rank_info/respect", "ææ¢èŠ±");
 
         set("long",
-"ÀîÑ°»¶±ğºÅÀîÌ½»¨£¬ÓÖÓĞ½­ºş´ÂºÅĞ¡Àî·Éµ¶¡£
-Ò»ÊÖ·Éµ¶¾ø¼¼£¬ÔÚ°ÙÏşÉúµÄ±øÆ÷Æ×ÉÏÅÅĞĞµÚÈı¡£
-²»·¢ÔòÒÑ£¬µ«ÀıÎŞĞé·¢¡£\n"                
+"æå¯»æ¬¢åˆ«å·ææ¢èŠ±ï¼Œåˆæœ‰æ±Ÿæ¹–ç»°å·å°æé£åˆ€ã€‚
+ä¸€æ‰‹é£åˆ€ç»æŠ€ï¼Œåœ¨ç™¾æ™“ç”Ÿçš„å…µå™¨è°±ä¸Šæ’è¡Œç¬¬ä¸‰ã€‚
+ä¸å‘åˆ™å·²ï¼Œä½†ä¾‹æ— è™šå‘ã€‚\n"                
 	);
-	set("student_title","ÈË½Ü");
+	set("student_title","äººæ°");
         set("combat_exp", 10000000);
         set("score", 200000);
 set("pubmaster",1);
@@ -42,9 +42,9 @@ set("pubmaster",1);
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ÀîÑ°»¶²»Í£µÄÔÚ¿È£¬×ì½ÇÁ÷ÏÂÒ»Ë¿ÏÊÑª¡£\n",
-                "ÀîÑ°»¶µÄÁ³É«Ô½·¢²Ô°×ÁË¡£\n",
-"ÀîÑ°»¶Ì¾¿ÚÆø£¬´ô´ôµØÍû×ÅÊÖÀïµÄÄ¾Ïñ¡£\n",
+                "æå¯»æ¬¢ä¸åœçš„åœ¨å’³ï¼Œå˜´è§’æµä¸‹ä¸€ä¸é²œè¡€ã€‚\n",
+                "æå¯»æ¬¢çš„è„¸è‰²è¶Šå‘è‹ç™½äº†ã€‚\n",
+"æå¯»æ¬¢å¹å£æ°”ï¼Œå‘†å‘†åœ°æœ›ç€æ‰‹é‡Œçš„æœ¨åƒã€‚\n",
                (: random_move :),
         }) );
        set("chat_chance_combat", 90);
@@ -62,10 +62,10 @@ set("pubmaster",1);
        	map_skill("throwing", "feidao");
 if (random(2)==0)
 {
-	set_name(HIG"Ò¶¿ª"NOR, ({ "master ye", "master"}) );
-        set("title", HIY"·Éµ¶´«ÈË"NOR);
+	set_name(HIG"å¶å¼€"NOR, ({ "master ye", "master"}) );
+        set("title", HIY"é£åˆ€ä¼ äºº"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -105,7 +105,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

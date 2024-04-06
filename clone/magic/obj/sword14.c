@@ -1,4 +1,4 @@
-// °µºÚÖ®½£
+// æš—é»‘ä¹‹å‰‘
 #include <ansi.h>
 #include "armor.h"
 #include "ansi.h"
@@ -7,14 +7,14 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIC"ÌìÊ¹³á°ò"NOR, ({"ice limb", "icelimb"}));
+        set_name(HIC"å¤©ä½¿ç¿…è†€"NOR, ({"ice limb", "icelimb"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", HIC"ÕâÊÇÒ»Ë«ÌìÊ¹³á°ò,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞÌì¿ÕµÄÁ¦Á¿!\n"NOR);
+                set("unit", "åŒ");
+                set("long", HIC"è¿™æ˜¯ä¸€åŒå¤©ä½¿ç¿…è†€,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰å¤©ç©ºçš„åŠ›é‡!\n"NOR);
                 set("unique", 1);
                 set("value", 50000);
                 set("treasure",1);       
@@ -26,8 +26,8 @@ void create()
                 set("no_put",1);
 
                 set("treasure",1);       
-                set("wear_msg",HIC"Ò»ÕóÌìÀ¶É«µÄ¹âÃ¢¹ıºó £¬$NµÄ±³ºó¶àÁËÒ»Ë«ÌìÊ¹³á°ò¡£\n"NOR);
-                set("unequip_msg",HIC"$NÊÕÆğ±³ºóµÄÌìÊ¹³á°ò¡£ÌìÀ¶É«µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",HIC"ä¸€é˜µå¤©è“è‰²çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„èƒŒåå¤šäº†ä¸€åŒå¤©ä½¿ç¿…è†€ã€‚\n"NOR);
+                set("unequip_msg",HIC"$Næ”¶èµ·èƒŒåçš„å¤©ä½¿ç¿…è†€ã€‚å¤©è“è‰²çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 	set("armor_prop/armor", 250);
 	set("armor_prop/damage", 250);
 	set("armor_type", TYPE_ARMOR);
@@ -41,7 +41,7 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(3)==0)
 {
-message_vision(HIC"$N±³ºóµÄÌìÊ¹³á°òÉÈ³öÒ»¸öÕó¿ñ·ç£¬´òÏòÁË$nÈ«Éí£¡\n"NOR, me,ob);
+message_vision(HIC"$NèƒŒåçš„å¤©ä½¿ç¿…è†€æ‰‡å‡ºä¸€ä¸ªé˜µç‹‚é£ï¼Œæ‰“å‘äº†$nå…¨èº«ï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3
 && ob->query("magicgift")==4)
 {
@@ -53,7 +53,7 @@ a=420+a;
 if (ob->query("eff_qi") > a)
                 ob->receive_wound("qi", a);
 }
-message_vision(HIC"$nÖØÖØµÄ±»¿ñ·ç´òÖĞÁË£¡\n"NOR, me,ob);
+message_vision(HIC"$né‡é‡çš„è¢«ç‹‚é£æ‰“ä¸­äº†ï¼\n"NOR, me,ob);
 return damage;
 }	
 else   return damage;

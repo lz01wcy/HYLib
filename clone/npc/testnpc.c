@@ -1,13 +1,13 @@
-// liumang.c Á÷Ã¥
+// liumang.c æµæ°“
 
 inherit NPC;
 int ask_job();
 void create()
 {
-	set_name("ÐÇÐÇ", ({ "lywin", "ly win" }));
-	set("gender", "ÄÐÐÔ");
+	set_name("æ˜Ÿæ˜Ÿ", ({ "lywin", "ly win" }));
+	set("gender", "ç”·æ€§");
 	set("age", 19);
-	set("long", "ËûÊÇÒ»¸ö³ÉÌìÓÎÊÖºÃÏÐµÄÁ÷Ã¥£¬³¤µÃµ¹ÊÇ°×°×ÅÖÅÖµÄ£¬Ò²ÐíÒÔÇ°ÓÐ¹ýÇ®¡£\n");
+	set("long", "ä»–æ˜¯ä¸€ä¸ªæˆå¤©æ¸¸æ‰‹å¥½é—²çš„æµæ°“ï¼Œé•¿å¾—å€’æ˜¯ç™½ç™½èƒ–èƒ–çš„ï¼Œä¹Ÿè®¸ä»¥å‰æœ‰è¿‡é’±ã€‚\n");
 	
 	set("combat_exp", 10000);
 	set("shen_type", -1);
@@ -27,7 +27,7 @@ void create()
 	set_temp("apply/defense", 10);
         set("inquiry", ([
             "qixue" : (: ask_job() :),
-            "ÆøÑª" : (: ask_job() :),
+            "æ°”è¡€" : (: ask_job() :),
         ]) );
 
 	setup();
@@ -56,8 +56,8 @@ int ask_job()
         object ob = this_player();
         object me = this_object();
 me->clear_condition();	  
-                command("say ÆøÏÖÔÚÊÇ" + me->query("qi") + "¡£ÆøÉÏÏÞÊÇ " + me->query("eff_qi") + "¡£");
+                command("say æ°”çŽ°åœ¨æ˜¯" + me->query("qi") + "ã€‚æ°”ä¸Šé™æ˜¯ " + me->query("eff_qi") + "ã€‚");
 //                command("nod" + me->query("id"));
-                command("say ¾«ÏÖÔÚÊÇ" + me->query("jing") + "¡£¾«ÉÏÏÞÊÇ " + me->query("eff_jing") + "¡£");
+                command("say ç²¾çŽ°åœ¨æ˜¯" + me->query("jing") + "ã€‚ç²¾ä¸Šé™æ˜¯ " + me->query("eff_jing") + "ã€‚");
                 return 1;
 }

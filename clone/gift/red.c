@@ -1,24 +1,24 @@
-// ºì°ü
+// çº¢åŒ…
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIY"20WÁ½»Æ½ð"NOR, ({"20Wgold"}));
+        set_name(HIY"20Wä¸¤é»„é‡‘"NOR, ({"20Wgold"}));
 	set_weight(10);
     set("value", 0);
 set("no_steal",1);
 set("liwu",1);
 set("no_beg",1);
     set("no_put",1);
-    set("no_get","Ã¿¸öÈËÖ»ÓÐÒ»¸ö£¬²»ÒªÕâÃ´Ì°ÐÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»ÕÅ"+HIY"20ÍòÁ½»Æ½ðµÄÖ§Æ±£¬"NOR+"ËÆºõ¿ÉÒÔ¶Ò»»(duihuan)¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "ä¸€å¼ "+HIY"20ä¸‡ä¸¤é»„é‡‘çš„æ”¯ç¥¨ï¼Œ"NOR+"ä¼¼ä¹Žå¯ä»¥å…‘æ¢(duihuan)ã€‚\n");
+                set("unit", "å¼ ");
 	}
 }
   void init()
@@ -31,7 +31,7 @@ object ob;
         this_player()->start_busy(30);
         this_player()->add("combat_exp", 200+random(100));
         this_player()->add("potential",150+random(100));
-        message_vision("$N¶Ò»»ÁË1ÕÅ20ÍòÁ½»Æ½ðµÄÖ§Æ±£¬ÊÇ¼Ù±Ò£¬$NÁ¢¿Ì±»ÑºËÍÍù¹Ù¸®!\n", this_player());
+        message_vision("$Nå…‘æ¢äº†1å¼ 20ä¸‡ä¸¤é»„é‡‘çš„æ”¯ç¥¨ï¼Œæ˜¯å‡å¸ï¼Œ$Nç«‹åˆ»è¢«æŠ¼é€å¾€å®˜åºœ!\n", this_player());
         this_player()->move("/d/pingan/ymzhengting");
 	destruct(this_object());
 	return 1;

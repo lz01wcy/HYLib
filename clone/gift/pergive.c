@@ -5,13 +5,13 @@
 string give_gift();
 
 private mixed *story = ({
-        "¶«·½²»²Æ£ºÁ«Í¤£¬Äã¾õµÄÎÒÃÀÂð£¿",
-        "ÑîÁ«Í¤Ð¦µÀ£ºÃÀ£¬ÃÀ£¬ÎÒÕâ¶ù¸ãµ½ÁËÒ»ÖÖÏÉµ¤£¬¿ÉÒÔÊ¹ÈË±äµÄ¸üÃÀ¡£",
-        "¶«·½²»²Æ´óÏ²µÀ£ººÃ£¬¿ì¸øÎÒÒ»¿Å¡£",
-        "ÑîÁ«Í¤ÌÍ³öÒ»ºùÂ«£ºßö£¬Õâ¶ù¡£",
-        "¶«·½²»²Æ£º" HIY "°¥Ñ½£¡" NOR,
-        "ÑîÁ«Í¤£º²»ºÃ£¬ÔõÃ´µôÏÂÁËºÚÄ¾ÑÂÁË£¬ÂíÉÏÅÉÈËÈ¥ÕÒÕÒ¡£",
-        "¶«·½²»²Æ£ºËãÁËËãÁË£¬ÎÒÒÑ¾­¹»ÃÀÁË......¡£",
+        "ä¸œæ–¹ä¸è´¢ï¼šèŽ²äº­ï¼Œä½ è§‰çš„æˆ‘ç¾Žå—ï¼Ÿ",
+        "æ¨èŽ²äº­ç¬‘é“ï¼šç¾Žï¼Œç¾Žï¼Œæˆ‘è¿™å„¿æžåˆ°äº†ä¸€ç§ä»™ä¸¹ï¼Œå¯ä»¥ä½¿äººå˜çš„æ›´ç¾Žã€‚",
+        "ä¸œæ–¹ä¸è´¢å¤§å–œé“ï¼šå¥½ï¼Œå¿«ç»™æˆ‘ä¸€é¢—ã€‚",
+        "æ¨èŽ²äº­æŽå‡ºä¸€è‘«èŠ¦ï¼šå–ï¼Œè¿™å„¿ã€‚",
+        "ä¸œæ–¹ä¸è´¢ï¼š" HIY "å“Žå‘€ï¼" NOR,
+        "æ¨èŽ²äº­ï¼šä¸å¥½ï¼Œæ€Žä¹ˆæŽ‰ä¸‹äº†é»‘æœ¨å´–äº†ï¼Œé©¬ä¸Šæ´¾äººåŽ»æ‰¾æ‰¾ã€‚",
+        "ä¸œæ–¹ä¸è´¢ï¼šç®—äº†ç®—äº†ï¼Œæˆ‘å·²ç»å¤Ÿç¾Žäº†......ã€‚",
         (: give_gift :)
 });
 
@@ -28,6 +28,6 @@ mixed query_story_message(int step)
 string give_gift()
 {
         STORY_D->give_gift("/clone/gift/perwan", 1,
-                           HIM "\n¡°Å¾¡±µÄÒ»ÉùÒ»Ã¶ÏÉµ¤µôµ½ÄãÃæÇ°¡£\n\n" NOR);
-        return HIM "ÌýËµÈÕÔÂÉñ½ÌÒÅÂäÁËÒ»Ã¶ÏÉµ¤¡£\n" NOR;
+                           HIM "\nâ€œå•ªâ€çš„ä¸€å£°ä¸€æžšä»™ä¸¹æŽ‰åˆ°ä½ é¢å‰ã€‚\n\n" NOR);
+        return HIM "å¬è¯´æ—¥æœˆç¥žæ•™é—è½äº†ä¸€æžšä»™ä¸¹ã€‚\n" NOR;
 }

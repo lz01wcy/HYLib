@@ -1,4 +1,4 @@
-// °µºÚÖ®½£
+// æš—é»‘ä¹‹å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
@@ -6,14 +6,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIY"ÉóÅĞÖ®½£"NOR, ({"light sword", "light sword"}));
+        set_name(HIY"å®¡åˆ¤ä¹‹å‰‘"NOR, ({"light sword", "light sword"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIY"ÕâÊÇÒ»°ÑÉóÅĞÖ®½£,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞ¹âÃ÷µÄÁ¦Á¿!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIY"è¿™æ˜¯ä¸€æŠŠå®¡åˆ¤ä¹‹å‰‘,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰å…‰æ˜çš„åŠ›é‡!\n"NOR);
                 set("unique", 1);
                 set("value", 50000);
                 set("treasure",1);       
@@ -28,8 +28,8 @@ void create()
                 set("armor_prop/percao",10);
                 set("wield_str", 30);        
                 set("treasure",1);       
-                set("wield_msg",HIY"Ò»ÕóÒ«ÑÛµÄ¹âÃ¢¹ıºó £¬$NµÄÊÖÉÏ¶à³öÁËÒ»°ÑÉóÅĞÖ®½£¡£\n"NOR);
-                set("unwield_msg",HIY"$NÊÕÆğÊÖÖĞµÄÉóÅĞÖ®½£¡£Ò«ÑÛµÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wield_msg",HIY"ä¸€é˜µè€€çœ¼çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„æ‰‹ä¸Šå¤šå‡ºäº†ä¸€æŠŠå®¡åˆ¤ä¹‹å‰‘ã€‚\n"NOR);
+                set("unwield_msg",HIY"$Næ”¶èµ·æ‰‹ä¸­çš„å®¡åˆ¤ä¹‹å‰‘ã€‚è€€çœ¼çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
         }
      init_sword(800);
         setup();
@@ -47,7 +47,7 @@ if (victim->query("qi") > a)
 a=420+a;
 if (victim->query("eff_qi") > a)
                 victim->receive_wound("qi", a);
-message_vision(HIY"$n±»ÉóÅĞÖ®½£µÄÌìÌÃÖ®¹âÉ¨ÉËÁË!!\n"NOR, me,victim);
+message_vision(HIY"$nè¢«å®¡åˆ¤ä¹‹å‰‘çš„å¤©å ‚ä¹‹å…‰æ‰«ä¼¤äº†!!\n"NOR, me,victim);
 }
  if (victim->query("magicgift")==5
  && random(3)==0)
@@ -59,6 +59,6 @@ if (victim->query("qi") > a)
 a=420+a;
 if (victim->query("eff_qi") > a)
                 victim->receive_wound("qi", a);
-message_vision(HIY"$n±»ÉóÅĞÖ®½£µÄÌìÌÃÖ®¹âÉ¨ÉËÁË!!\n"NOR, me,victim);
+message_vision(HIY"$nè¢«å®¡åˆ¤ä¹‹å‰‘çš„å¤©å ‚ä¹‹å…‰æ‰«ä¼¤äº†!!\n"NOR, me,victim);
 }
 }

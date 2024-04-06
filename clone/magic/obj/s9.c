@@ -5,10 +5,10 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(HIB"°«ÁéÅû·ç"NOR, ({ "earth pf", "mearth" }));
-	set("long", HIB"ÕâÊÇÒ»¸ö°«ÁéÅû·ç£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIB"çŸ®çµæŠ«é£"NOR, ({ "earth pf", "mearth" }));
+	set("long", HIB"è¿™æ˜¯ä¸€ä¸ªçŸ®çµæŠ«é£ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¼ş");
+	set("unit", "ä»¶");
 	set("value", 28000);
 	set("material", "gem");
 	set("armor_prop/armor", 80);

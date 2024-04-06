@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÑ©Á«
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´é›ªè²
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-	set_name(HIR"ÍòÄêÑ©Á«"NOR, ({"xu lian", "lian"}));
+	set_name(HIR"ä¸‡å¹´é›ªè²"NOR, ({"xu lian", "lian"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ã");
-		set("long", "ÕâÊÇÒ»¿ÃÎäÁÖÈËÊ¿ÃÎÃÂÒÔÇóµÄÍòÄêÑ©Á«£¬¾İËµ³ÔÒ»¿Ã¿ÉµÃ100ÄÚÁ¦ÉÏÏŞ¡£\n");
+		set("unit", "æ£µ");
+		set("long", "è¿™æ˜¯ä¸€æ£µæ­¦æ—äººå£«æ¢¦å¯ä»¥æ±‚çš„ä¸‡å¹´é›ªè²ï¼Œæ®è¯´åƒä¸€æ£µå¯å¾—100å†…åŠ›ä¸Šé™ã€‚\n");
 		set("value", 0);
 	}
 	setup();
@@ -28,11 +28,11 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("max_neili", 100);
 	this_player()->add("eff_neili",100);
-	message_vision("$N³ÔÏÂÒ»¿ÃÍòÄêÑ©Á«£¬Ö»¾õµÃ×Ô¼ºµÄÄÚÁ¦±äÀûº¦ÁËÒ»Ğ© !\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€æ£µä¸‡å¹´é›ªè²ï¼Œåªè§‰å¾—è‡ªå·±çš„å†…åŠ›å˜åˆ©å®³äº†ä¸€äº› !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

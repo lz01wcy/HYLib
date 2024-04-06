@@ -1,4 +1,4 @@
-// pantao.c ó´ÌÒ
+// pantao.c èŸ æ¡ƒ
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ó´ÌÒ" NOR, ({ "tao", "pan tao", "pantao" }) );
+        set_name(HIM "èŸ æ¡ƒ" NOR, ({ "tao", "pan tao", "pantao" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ìì¹úó´ÌÒÔ°ÀïµÄó´ÌÒ£¬¾İËµ³ÔÁË¿ÉÒÔ·µÀÏ»¹Í¯¡£\n");
+                set("long", "å¤©å›½èŸ æ¡ƒå›­é‡Œçš„èŸ æ¡ƒï¼Œæ®è¯´åƒäº†å¯ä»¥è¿”è€è¿˜ç«¥ã€‚\n");
                 set("value", 10000);
-                set("unit", "¿Å");
+                set("unit", "é¢—");
         }
 }
 
@@ -27,12 +27,12 @@ int do_eat(string arg)
         object me;
 
         if (! id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         me = this_player();
-        message_vision("$NÀÇÍÌ»¢ÑÊµØ½«" + this_object()->name() +
-                       "³ÔÁËÏÂÈ¥¡£\n", me);
-        tell_object(me, HIG "ºöÈ»Äã·¢¾õ×Ô¼ºµÄ¼¡·ô¿ªÊ¼ÍÉ±ä£¬ÂıÂı±äµÃ»¬ÄÛÆğÀ´¡£\n");
+        message_vision("$Nç‹¼åè™å’½åœ°å°†" + this_object()->name() +
+                       "åƒäº†ä¸‹å»ã€‚\n", me);
+        tell_object(me, HIG "å¿½ç„¶ä½ å‘è§‰è‡ªå·±çš„è‚Œè‚¤å¼€å§‹èœ•å˜ï¼Œæ…¢æ…¢å˜å¾—æ»‘å«©èµ·æ¥ã€‚\n");
         me->add("max_neili", 10);
 me->add("eff_neili", 10);
 

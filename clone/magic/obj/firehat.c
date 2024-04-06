@@ -5,13 +5,13 @@
 inherit HEAD;
 void create()
 {	
-  set_name(HIR"»ğÑ×Ö®¿ø"NOR, ({ "fire hat", "firehat" }) );
+  set_name(HIR"ç«ç‚ä¹‹ç›”"NOR, ({ "fire hat", "firehat" }) );
   set_weight(1000);	
    if( clonep() )
   set_default_object(__FILE__);
   else {
-		set("unit", "¶¥");
-set("long", HIR"ÕâÊÇÒ»¶¥»ğÑ×Ö®¿ø,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»¡£\n"NOR);
+		set("unit", "é¡¶");
+set("long", HIR"è¿™æ˜¯ä¸€é¡¶ç«ç‚ä¹‹ç›”,åšå·¥æå…¶ç²¾è‡´ã€‚æ˜¯ä¼—ç¥çš„é—äº§ä¹‹ä¸€ã€‚\n"NOR);
 		set("no_put", 1);
 //		//set("value", 100000);
 set("no_put", 1);
@@ -29,8 +29,8 @@ set("no_put", 1);
                         "min_skill":  500,
                              "max_skill": 1000,              
                 ]) );
-                set("wear_msg",HIR"Ò»Õó»ğºìµÄ¹âÃ¢¹ıºó £¬$NµÄÍ·ÉÏ¶à³öÁËÒ»¶¥»ğÑ×Ö®¿ø¡£\n"NOR);
-                set("unequip_msg",HIR"$N°Ñ»ğÑ×Ö®¿øÍÑÏÂ¡£»ğºìµÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",HIR"ä¸€é˜µç«çº¢çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„å¤´ä¸Šå¤šå‡ºäº†ä¸€é¡¶ç«ç‚ä¹‹ç›”ã€‚\n"NOR);
+                set("unequip_msg",HIR"$NæŠŠç«ç‚ä¹‹ç›”è„±ä¸‹ã€‚ç«çº¢çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 		set("armor_prop/armor",200);
 		set("armor_prop/damage", 200);
      }	
@@ -51,7 +51,7 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(4)==0)
 {
-message_vision(HIR"$NÍ·ÉÏµÄ»ğÑ×Ö®¿ø·¢³öÂşÌì»ğ¹â£¬Ò»¸ö»ğÑ×Çò´òÏò$n£¡\n"NOR, me,ob);
+message_vision(HIR"$Nå¤´ä¸Šçš„ç«ç‚ä¹‹ç›”å‘å‡ºæ¼«å¤©ç«å…‰ï¼Œä¸€ä¸ªç«ç‚çƒæ‰“å‘$nï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3)
 {
 a = (int)me->query_skill("magic-fire", 1);
@@ -59,9 +59,9 @@ a=300+a*4;
                 ob->receive_damage("qi", a);
 a=300+a;
                 ob->receive_wound("qi", a);
-message_vision(HIR"$nÈ«Éí¶¼ÉÕÁËÆğÀ´!\n"NOR, me,ob);
+message_vision(HIR"$nå…¨èº«éƒ½çƒ§äº†èµ·æ¥!\n"NOR, me,ob);
 }
-else message_vision(HIG"»ğÑ×ÇòÔÚ$nÉí²à»®¹ı£¬$nºÁ·¢ÎŞÉË¡£!\n"NOR, me,ob);
+else message_vision(HIG"ç«ç‚çƒåœ¨$nèº«ä¾§åˆ’è¿‡ï¼Œ$næ¯«å‘æ— ä¼¤ã€‚!\n"NOR, me,ob);
 }
 else   return damage;
 }

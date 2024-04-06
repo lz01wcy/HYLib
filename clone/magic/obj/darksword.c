@@ -1,4 +1,4 @@
-// °µºÚÖ®½£
+// æš—é»‘ä¹‹å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
@@ -6,14 +6,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(BLK"°µºÚÖ®½£"NOR, ({"dark jian", "darksword"}));
+        set_name(BLK"æš—é»‘ä¹‹å‰‘"NOR, ({"dark jian", "darksword"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", BLK"ÕâÊÇÒ»°Ñ°µºÚÖ®½£,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", BLK"è¿™æ˜¯ä¸€æŠŠæš—é»‘ä¹‹å‰‘,åšå·¥æå…¶ç²¾è‡´ã€‚æ˜¯ä¼—ç¥çš„é—äº§ä¹‹ä¸€!\n"NOR);
                 set("unique", 1);
                 set("value", 0);
 		set("no_put", 1);
@@ -36,8 +36,8 @@ void create()
                 ]) );
                 set("armor_prop/attack", 50);	
                 set("treasure",1);       
-                set("wield_msg",BLK"Ò»ÕóºÚ°µµÄ¹âÃ¢¹ıºó £¬$NµÄÊÖÉÏ¶à³öÁËÒ»°Ñ°µºÚÖ®½£¡£\n"NOR);
-                set("unwield_msg",BLK"$N°ÑÊÖÖĞµÄ¹â½£²åÈë½£ÇÊ¡£ºÚ°µµÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wield_msg",BLK"ä¸€é˜µé»‘æš—çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„æ‰‹ä¸Šå¤šå‡ºäº†ä¸€æŠŠæš—é»‘ä¹‹å‰‘ã€‚\n"NOR);
+                set("unwield_msg",BLK"$NæŠŠæ‰‹ä¸­çš„å…‰å‰‘æ’å…¥å‰‘é˜ã€‚é»‘æš—çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
         }
      init_sword(1888);
         setup();
@@ -57,8 +57,8 @@ int a;
 if (1)
 if (random(4)==0)
 {
-message_vision(BLK"$NÊÖÉÏµÄ°µºÚÖ®½££¬Ê¹Ìì¿Õ±äµÄÆáºÚ£¬Ò»¸öĞ¡ĞÍµÄºÚ¶´³öÏÖÔÚ$nµÄÉÏ¿Õ£¡\n"NOR, me,victim);
-message_vision(BLK"°µºÚºËÈÚÊõ!!  $n¸½½ü·¢ÉúÁËºË±¬£¡£¡\n"NOR, me,victim); 
+message_vision(BLK"$Næ‰‹ä¸Šçš„æš—é»‘ä¹‹å‰‘ï¼Œä½¿å¤©ç©ºå˜çš„æ¼†é»‘ï¼Œä¸€ä¸ªå°å‹çš„é»‘æ´å‡ºç°åœ¨$nçš„ä¸Šç©ºï¼\n"NOR, me,victim);
+message_vision(BLK"æš—é»‘æ ¸èæœ¯!!  $né™„è¿‘å‘ç”Ÿäº†æ ¸çˆ†ï¼ï¼\n"NOR, me,victim); 
  if (random(2)==0)
 {
 a = (int)me->query_skill("magic-dark", 1);
@@ -66,21 +66,21 @@ a=600+a*3;
                 victim->receive_damage("qi", a);
 a=600+a;
                 victim->receive_wound("qi", a);
-message_vision(BLK"$n¸ù±¾Ã»·¨¶ã±Ü£¬$n¸½½ü³ÉÁËºÚ°µµÄºËµØÓü!!\n"NOR, me,victim);
+message_vision(BLK"$næ ¹æœ¬æ²¡æ³•èº²é¿ï¼Œ$né™„è¿‘æˆäº†é»‘æš—çš„æ ¸åœ°ç‹±!!\n"NOR, me,victim);
 }
-else message_vision(HIR"$nÇáÇáÒ»Ğ¦£¬ÓÃÄ§Á¦ÔìÁËÒ»¸ö·À»¤ÆÁ£¬½á¹ûºÁ·¢ÎŞÉË¡£!\n"NOR, me,victim);
+else message_vision(HIR"$nè½»è½»ä¸€ç¬‘ï¼Œç”¨é­”åŠ›é€ äº†ä¸€ä¸ªé˜²æŠ¤å±ï¼Œç»“æœæ¯«å‘æ— ä¼¤ã€‚!\n"NOR, me,victim);
 }
 if (random(4)==1)
 {
-message_vision(BLK"$NÊÖÉÏµÄ°µºÚÖ®½££¬Ê¹Ìì¿Õ±äµÄÆáºÚ,$nËù´¦µÄµØ·½ÎÂ¶ÈÍ»È»ÏÂ½µ,¹ÒÆğÁË±©·çÑ©£¡\n"NOR, me,victim);
-message_vision(BLK"°µºÚ±©·çÑ©!!  $n¸½½ü¹ÒÆğÁË±©·çÑ©£¡£¡\n"NOR, me,victim); 
+message_vision(BLK"$Næ‰‹ä¸Šçš„æš—é»‘ä¹‹å‰‘ï¼Œä½¿å¤©ç©ºå˜çš„æ¼†é»‘,$næ‰€å¤„çš„åœ°æ–¹æ¸©åº¦çªç„¶ä¸‹é™,æŒ‚èµ·äº†æš´é£é›ªï¼\n"NOR, me,victim);
+message_vision(BLK"æš—é»‘æš´é£é›ª!!  $né™„è¿‘æŒ‚èµ·äº†æš´é£é›ªï¼ï¼\n"NOR, me,victim); 
  if (random(2)==1)
 {
 if (!victim->is_busy())
 victim->start_busy(3);
-message_vision(BLK"$nµÄ¸½½ü³ÉÎªÁËºÚ°µµÄ±ùº£!!$n¾õµÄÈ«Éí¾çÍ´£¬Õõ²»¿ªÑÛÁË!!\n"NOR, me,victim);
+message_vision(BLK"$nçš„é™„è¿‘æˆä¸ºäº†é»‘æš—çš„å†°æµ·!!$nè§‰çš„å…¨èº«å‰§ç—›ï¼ŒæŒ£ä¸å¼€çœ¼äº†!!\n"NOR, me,victim);
 }
-else message_vision(BLK"$n·ÉÉíÔ¾Æğ£¬ÌÓ¹ıÁËÒ»ÄÑ¡£!\n"NOR, me,victim);
+else message_vision(BLK"$né£èº«è·ƒèµ·ï¼Œé€ƒè¿‡äº†ä¸€éš¾ã€‚!\n"NOR, me,victim);
 }
 
 }

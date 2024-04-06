@@ -9,13 +9,13 @@ void init()
 }
 void create()
 {
-        set_name(HIG"¾Å»¨ÓñÂ¶Íè"NOR, ({"jiuhuayulu wan", "jiuhua wan", "wan"}));
+        set_name(HIG"ä¹èŠ±çŽ‰éœ²ä¸¸"NOR, ({"jiuhuayulu wan", "jiuhua wan", "wan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å¾§Ó¨±ÌÂÌµÄ¾Å»¨ÓñÂ¶Íè£¬¾­ÌÒ»¨µºÖ÷¾«ÐÄÁ·ÖÆ£¬
-ÓÐÆðËÀ»ØÉúÖ®¹¦¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯ä¸€é¢—æ™¶èŽ¹ç¢§ç»¿çš„ä¹èŠ±çŽ‰éœ²ä¸¸ï¼Œç»æ¡ƒèŠ±å²›ä¸»ç²¾å¿ƒç»ƒåˆ¶ï¼Œ
+æœ‰èµ·æ­»å›žç”Ÿä¹‹åŠŸã€‚\n");
                 set("value", 50000);
         }
         setup();
@@ -26,9 +26,9 @@ int do_eat(string arg)
         int fw;
         object me = this_player();
 
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
 	if(arg=="wan") 
 	{
                 fw = (int)me->max_food_capacity();
@@ -40,7 +40,7 @@ int do_eat(string arg)
 		me->set("eff_qi",me->query("max_qi"));
 		me->set("qi",me->query("max_qi"));
 		me->set("neili",me->query("max_neili"));
-message_vision(HIG"$N³ÔÏÂÒ»¿Å¾Å»¨ÓñÂ¶Íè£¬Ò»¹ÉÇåÐÂÁ¹Ë¬´Óµ¤ÌïÉýÆð£¬ÏòÈ«ÉíÀ©É¢£¡\n"NOR,me);
+message_vision(HIG"$Nåƒä¸‹ä¸€é¢—ä¹èŠ±çŽ‰éœ²ä¸¸ï¼Œä¸€è‚¡æ¸…æ–°å‡‰çˆ½ä»Žä¸¹ç”°å‡èµ·ï¼Œå‘å…¨èº«æ‰©æ•£ï¼\n"NOR,me);
 		me->start_busy(1);
         	destruct(this_object());
 	}

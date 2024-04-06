@@ -5,16 +5,16 @@ inherit BOOTS;
 
 void create()
 {
-        set_name(HIG "Éñ²İ½á" NOR, ({ "shen caojie", "shen", "caojie" }));
+        set_name(HIG "ç¥è‰ç»“" NOR, ({ "shen caojie", "shen", "caojie" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
-                set("long", HIG "µ±Äê´ïÄ¦×æÊ¦Ò»Î­¶É½­Ê±Ëù´©µÄ²İĞ¬¡£\n" NOR);
-                set("wear_msg", HIG "$N" HIG "½«Ò»¶ÔÉñ²İ½á°óÓÚ×ã¼ä¡£\n" NOR);
-                set("remove_msg", HIG "$N" HIG "½«Éñ²İ½á´Ó×ã¼äÈ¡ÏÂ£¬·Å»Ø°ü"
-                                  "ÄÒ¡£\n" NOR);
+                set("unit", "å¯¹");
+                set("long", HIG "å½“å¹´è¾¾æ‘©ç¥–å¸ˆä¸€è‹‡æ¸¡æ±Ÿæ—¶æ‰€ç©¿çš„è‰é‹ã€‚\n" NOR);
+                set("wear_msg", HIG "$N" HIG "å°†ä¸€å¯¹ç¥è‰ç»“ç»‘äºè¶³é—´ã€‚\n" NOR);
+                set("remove_msg", HIG "$N" HIG "å°†ç¥è‰ç»“ä»è¶³é—´å–ä¸‹ï¼Œæ”¾å›åŒ…"
+                                  "å›Šã€‚\n" NOR);
                 set("treasure", 1);
                 set("value", 8000);
                 set("material", "silk");

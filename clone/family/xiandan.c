@@ -1,4 +1,4 @@
-// xiandan.c œ…µ§
+// xiandan.c ‰ªô‰∏π
 
 #include <ansi.h>
 
@@ -6,37 +6,37 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "œ…µ§" NOR, ({ "xian dan", "dan", "xiandan" }) );
+        set_name(HIY "‰ªô‰∏π" NOR, ({ "xian dan", "dan", "xiandan" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "“ªø≈‘∞‘∞µƒœ…µ§£¨æ›Àµ≥‘¡Àø…“‘‘ˆ«ø÷«¡¶°£\n");
+                set("long", "‰∏ÄÈ¢óÂõ≠Âõ≠ÁöÑ‰ªô‰∏πÔºåÊçÆËØ¥ÂêÉ‰∫ÜÂèØ‰ª•Â¢ûÂº∫Êô∫Âäõ„ÄÇ\n");
                 set("value", 10000);
-                set("unit", "ø≈");
+                set("unit", "È¢ó");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$N“ª—ˆ≤±£¨ÕÃœ¬¡À“ªø≈" + this_object()->name() +
-                       "°£\n", me);
+        message_vision("$N‰∏Ä‰ª∞ËÑñÔºåÂêû‰∏ã‰∫Ü‰∏ÄÈ¢ó" + this_object()->name() +
+                       "„ÄÇ\n", me);
         if (me->query("gift/xiandan") >= 5 ||
             me->query("gift/int/succeed") >= 5)
         {
-                message_vision("$N∫ˆ»ª°∞Õ€Õ€°±£¨Õ¬¡À“ªµÿ°£\n", me);
-                tell_object(me, "ƒ„æıµ√◊Ï¿Ô∑«≥£µƒø‡°£\n");
+                message_vision("$NÂøΩÁÑ∂‚ÄúÂìáÂìá‚ÄùÔºåÂêê‰∫Ü‰∏ÄÂú∞„ÄÇ\n", me);
+                tell_object(me, "‰Ω†ËßâÂæóÂò¥ÈáåÈùûÂ∏∏ÁöÑËã¶„ÄÇ\n");
         } else
         if (random(5) == 0)
         {
                 me->add("gift/int/fail", 1);
-                tell_object(me, "≤ªπ˝ƒ„æıµ√∫√œÒ√ª ≤√¥◊˜”√°£\n");
+                tell_object(me, "‰∏çËøá‰Ω†ËßâÂæóÂ•ΩÂÉèÊ≤°‰ªÄ‰πà‰ΩúÁî®„ÄÇ\n");
         } else
         {
-                tell_object(me, HIG "“ªπ…ª»»›Î»ª¥”ƒ‘÷–…˝∆£¨"
-                            "ƒ„Õ∑Õ¥”˚¡—£¨«°‘⁄¥À ±“ªπ…«Â¡π÷Æ“‚"
-                            "”Õ»ª∂¯∆£¨∂Ÿ∏– ÊÃ©Œﬁ±»°£\n");
+                tell_object(me, HIG "‰∏ÄËÇ°ÁÅ´ÁÉ≠Ëì¶ÁÑ∂‰ªéËÑë‰∏≠ÂçáËµ∑Ôºå"
+                            "‰Ω†Â§¥ÁóõÊ¨≤Ë£ÇÔºåÊÅ∞Âú®Ê≠§Êó∂‰∏ÄËÇ°Ê∏ÖÂáâ‰πãÊÑè"
+                            "Ê≤πÁÑ∂ËÄåËµ∑ÔºåÈ°øÊÑüËàíÊ≥∞Êó†ÊØî„ÄÇ\n");
                 me->add("int", 1);
                 me->add("gift/int/succeed", 1);
         }

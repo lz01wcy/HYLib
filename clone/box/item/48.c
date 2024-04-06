@@ -1,17 +1,17 @@
-// wineskin.c  ¾Æ´ü
+// wineskin.c  é…’è¢‹
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-	set_name("»ÆºÓ´óÇú", ({"jiu7",}));
+	set_name("é»„æ²³å¤§æ›²", ({"jiu7",}));
 	set_weight(30000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÀ´×°¾ÆµÄ´ó¾Æ´ü£¬´ó¸Å×°µÃ°Ë¡¢¾ÅÉıµÄ¾Æ¡£\n");
-		set("unit", "ºø");
+		set("long", "ä¸€ä¸ªç”¨æ¥è£…é…’çš„å¤§é…’è¢‹ï¼Œå¤§æ¦‚è£…å¾—å…«ã€ä¹å‡çš„é…’ã€‚\n");
+		set("unit", "å£¶");
 
 		set("value", 8000);
 		set("max_liquid", 15);
@@ -21,7 +21,7 @@ void create()
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "»ÆºÓ´óÇú",
+		"name": "é»„æ²³å¤§æ›²",
 		"remaining": 15,
 		"drunk_supply": 6,
 	]));

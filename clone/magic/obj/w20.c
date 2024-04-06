@@ -1,18 +1,18 @@
-// ²¼Â×Ï£¶àÉñ±Ş
+// å¸ƒä¼¦å¸Œå¤šç¥é­
 #include <ansi.h>
 #include <weapon.h>
 inherit DAGGER;
 
 void create()
 {
-        set_name(GRN"Ë®¾§Ø°Ê×"NOR, ({"magic sworde", "msworde"}));
+        set_name(GRN"æ°´æ™¶åŒ•é¦–"NOR, ({"magic sworde", "msworde"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", GRN"ÕâÊÇÒ»°ÑË®¾§Ø°Ê×,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", GRN"è¿™æ˜¯ä¸€æŠŠæ°´æ™¶åŒ•é¦–,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("armor_prop/strength",15);
                 set("value", 165000);

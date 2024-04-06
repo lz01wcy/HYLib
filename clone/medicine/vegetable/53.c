@@ -1,4 +1,4 @@
-// Ò©²Ä
+// è¯æ
 
 inherit ITEM;
 #include <ansi.h>
@@ -12,13 +12,13 @@ void init()
 
 void create()
 {
-	set_name(order[random(13)]+"Ä¾¹Ï"NOR, ({"zhong yao"}));
+	set_name(order[random(13)]+"æœ¨ç“œ"NOR, ({"zhong yao"}));
 	set_weight(800);
 	set("vegetable", 16);
 	set("value", 30+random(121));
 	set("nostrum", 32);
-	set("unit", "¸ù");
-	set("long", "ÕâÊÇÒ»ÖÖÒ©²Ä¡£\n");
+	set("unit", "æ ¹");
+	set("long", "è¿™æ˜¯ä¸€ç§è¯æã€‚\n");
 	set("pour_type", "1");set("yaocao",1);
 	setup();
 }
@@ -27,14 +27,14 @@ int do_eat(string arg)
 {
 	object me = this_player();
 
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 	me->add("food",20);
 	me->add("water",20);
-	write("ÄãÈı¿ÚÁ½¿Ú°Ñ"+this_object()->query("name")+"³ÔÁËÏÂÈ¥¡£\n");
+	write("ä½ ä¸‰å£ä¸¤å£æŠŠ"+this_object()->query("name")+"åƒäº†ä¸‹å»ã€‚\n");
 	destruct(this_object());
 	return 1;
 }

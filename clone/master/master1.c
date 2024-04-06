@@ -5,9 +5,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("Ò¶¹Â³Ç", ({ "master ye", "master", "master gucheng" }) );
-        set("title", HIW "°×ÔÆ³ÇÖ÷"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¶å­¤åŸ", ({ "master ye", "master", "master gucheng" }) );
+        set("title", HIW "ç™½äº‘åŸä¸»"NOR);
+        set("gender", "ç”·æ€§" );
 set("pubmaster",1);
         set("age", 34);
         set("str", 30);
@@ -29,7 +29,7 @@ set("pubmaster",1);
 	set("jing",9999);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "Ò¶¹Â³Ç´ÓµãµãÑª°ßµÄ°×ÅÛËºÏÂÒ»Ìõ²¼Ìõ¡£\nÒ¶¹Â³ÇÓÃ´ÓµãµãÑª°ßµÄ°×ÅÛËºÏÂµÄ²¼ÌõÌæ×Ô¼º¹üÉË¡£\n",
+                "å¶å­¤åŸä»ç‚¹ç‚¹è¡€æ–‘çš„ç™½è¢æ’•ä¸‹ä¸€æ¡å¸ƒæ¡ã€‚\nå¶å­¤åŸç”¨ä»ç‚¹ç‚¹è¡€æ–‘çš„ç™½è¢æ’•ä¸‹çš„å¸ƒæ¡æ›¿è‡ªå·±è£¹ä¼¤ã€‚\n",
                 (: random_move :),
         }) );
 
@@ -40,8 +40,8 @@ set("pubmaster",1);
         }) );
         set("long",
 "
-°×ÔÆ³ÇÖ÷ÒÔÇ°³äÂúÁË×ğÈÙºÍ¹â²É£®¶øÏÖÔÚ£®£®£®
-ËûÖªµÀÄÇ±»ÌÆÃÅ°µÆ÷ËùÉËµÄÉË¿ÚÒÑÍêÈ«À£ÀÃ£®£®£®
+ç™½äº‘åŸä¸»ä»¥å‰å……æ»¡äº†å°Šè£å’Œå…‰é‡‡ï¼è€Œç°åœ¨ï¼ï¼ï¼
+ä»–çŸ¥é“é‚£è¢«å”é—¨æš—å™¨æ‰€ä¼¤çš„ä¼¤å£å·²å®Œå…¨æºƒçƒ‚ï¼ï¼ï¼
 \n"
 	);
         set("combat_exp", 20000000);
@@ -64,10 +64,10 @@ set("pubmaster",1);
 	map_skill("unarmed", "changquan");
 if (random(2)==0)
 {
-	set_name(HIY"ÍõÁ¯»¨"NOR, ({ "master wang", "master"}) );
-        set("title", HIY"Á¯»¨±¦¼ø"NOR);
+	set_name(HIY"ç‹æ€œèŠ±"NOR, ({ "master wang", "master"}) );
+        set("title", HIY"æ€œèŠ±å®é‰´"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -112,7 +112,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

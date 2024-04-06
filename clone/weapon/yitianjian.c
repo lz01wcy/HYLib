@@ -7,13 +7,13 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW"ÒĞÌì½£"NOR,({ "yitian jian","jian"}));
+        set_name(HIW"å€šå¤©å‰‘"NOR,({ "yitian jian","jian"}));
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-                set("long",        HIW"ÕâÊÇÒ»°ÑÍ¨ÌåÏÁ³¤µÄ½££¬·İÁ¿ÆÄÖØ£¬½£ÇÊÉÏ¿Ì×Å¡°ÒĞÌìÒ»³ö£¬Ë­ÓëÕù·æ¡±¡£\n"NOR);
+		set("unit", "æŠŠ");
+                set("long",        HIW"è¿™æ˜¯ä¸€æŠŠé€šä½“ç‹­é•¿çš„å‰‘ï¼Œä»½é‡é¢‡é‡ï¼Œå‰‘é˜ä¸Šåˆ»ç€â€œå€šå¤©ä¸€å‡ºï¼Œè°ä¸äº‰é”‹â€ã€‚\n"NOR);
 		set("value",1000000);
 		set("material", "steel");
 		set("oldsix/qjdy",1);
@@ -24,8 +24,8 @@ void create()
 // These properties are optional, if you don't set them, it will use the
 // default values.
 
-        set("wield_msg", HIW"Ö»Ìı¡°ï£¡±µÄÒ»Éù£¬Ò»µÀÒ«ÑÛµÄÒø¹âÉÁ¹ı£¬$NµÄÊÖÖĞ¶àÁË°ÑÒĞÌì½£¡£\n"NOR);
-        set("unwield_msg", HIW"Òø¹âÕ¦Á²,$NÊÖÖĞµÄÒĞÌì½£ÒÑ¾­ÊÕÈëÑü¼äµÄ½£ÇÊÄÚ¡£\n"NOR);
+        set("wield_msg", HIW"åªå¬â€œé“®â€çš„ä¸€å£°ï¼Œä¸€é“è€€çœ¼çš„é“¶å…‰é—ªè¿‡ï¼Œ$Nçš„æ‰‹ä¸­å¤šäº†æŠŠå€šå¤©å‰‘ã€‚\n"NOR);
+        set("unwield_msg", HIW"é“¶å…‰å’‹æ•›,$Næ‰‹ä¸­çš„å€šå¤©å‰‘å·²ç»æ”¶å…¥è…°é—´çš„å‰‘é˜å†…ã€‚\n"NOR);
 
 // The setup() is required.
 
@@ -39,15 +39,15 @@ mixed weapon_action(object me,object victim)
 	target_weapon=victim->query_temp("weapon");
 	if(! target_weapon)	return 0;
 	if( target_weapon->query("oldsix/qjdy"))	{
-		msg=HIW"¡°îõ¡±µÄÒ»Éù£¬"+this_object()->query("name")+HIW"Óë"+
-		target_weapon->query("name")+HIW"Ïà½»£¬Ã°³öµãµã»ğĞÇ£¡\n"NOR;
+		msg=HIW"â€œé“›â€çš„ä¸€å£°ï¼Œ"+this_object()->query("name")+HIW"ä¸"+
+		target_weapon->query("name")+HIW"ç›¸äº¤ï¼Œå†’å‡ºç‚¹ç‚¹ç«æ˜Ÿï¼\n"NOR;
 		return msg;
 	}
-	msg=HIW"Ö»¼û°×¹âÒ»ÉÁ£¬"+victim->query("name")+HIW"ÊÖÖĞµÄ"+target_weapon->query("name")+HIW"±»"+this_object()->query("name")+HIW"Ï÷ÎªÁ½¶Î£¡\n"NOR;
+	msg=HIW"åªè§ç™½å…‰ä¸€é—ªï¼Œ"+victim->query("name")+HIW"æ‰‹ä¸­çš„"+target_weapon->query("name")+HIW"è¢«"+this_object()->query("name")+HIW"å‰Šä¸ºä¸¤æ®µï¼\n"NOR;
 			ob=target_weapon;
 			ob->unequip();
                         ob->move(environment(victim));
-                        ob->set("name", "¶ÏµôµÄ" + ob->query("name"));
+                        ob->set("name", "æ–­æ‰çš„" + ob->query("name"));
 			ob->set("value",0);
                         ob->set("weapon_prop", 0);
                         victim->reset_action();
@@ -58,7 +58,7 @@ int move(mixed dest)
 {
         if(! userp(dest))       return ::move(dest);
         if( ::move(dest)==0)    return 0;
-	message("channel:rumor",YEL"¡¾Ò¥ÑÔ¡¿"+ "Ä³ÈË£ºÒĞÌì½£±»"+
-        dest->query("name")+"ÇÀµ½ÊÖÁË£¡\n"NOR,users());
+	message("channel:rumor",YEL"ã€è°£è¨€ã€‘"+ "æŸäººï¼šå€šå¤©å‰‘è¢«"+
+        dest->query("name")+"æŠ¢åˆ°æ‰‹äº†ï¼\n"NOR,users());
         return 1;
 }

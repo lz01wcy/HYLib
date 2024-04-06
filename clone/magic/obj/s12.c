@@ -5,10 +5,10 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(HIC"´óµØîø¼×"NOR, ({ "earth armor", "eartharmor" }));
-	set("long", HIC"ÕâÊÇÒ»¸ö´óµØîø¼×£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIC"å¤§åœ°é“ ç”²"NOR, ({ "earth armor", "eartharmor" }));
+	set("long", HIC"è¿™æ˜¯ä¸€ä¸ªå¤§åœ°é“ ç”²ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¼ş");
+	set("unit", "ä»¶");
 	set("value", 27000);
 	set("material", "gem");
 	set("armor_prop/armor", 150);

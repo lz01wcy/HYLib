@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("±ÙĞ°½£Æ×", ({ "pixie_sword_book", "book" }));
+        set_name("è¾Ÿé‚ªå‰‘è°±", ({ "pixie_sword_book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-                        "ÕâÊÇÒ»±¾±ÙĞ°½£Æ×, ¹©×ÔÎÒĞŞÏ°±ÙĞ°½£·¨¡£\n"
-                        "²»¹ıÕâ±¾Êé²¢²»ÒªÇó×Ô¹¬, ÕæÓĞµã¹Ö¡£\n");
+                        "è¿™æ˜¯ä¸€æœ¬è¾Ÿé‚ªå‰‘è°±, ä¾›è‡ªæˆ‘ä¿®ä¹ è¾Ÿé‚ªå‰‘æ³•ã€‚\n"
+                        "ä¸è¿‡è¿™æœ¬ä¹¦å¹¶ä¸è¦æ±‚è‡ªå®«, çœŸæœ‰ç‚¹æ€ªã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

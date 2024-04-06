@@ -1,5 +1,5 @@
 // z-dan.c
-// ĞÇĞÇ(lywin)Á¶µ¤ÈÎÎñ¸½ÊôµÀ¾ß
+// æ˜Ÿæ˜Ÿ(lywin)ç‚¼ä¸¹ä»»åŠ¡é™„å±é“å…·
 #include <ansi.h>
 inherit ITEM;
 
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-	set_name("»ØÑôÎåÁú¸à", ({"wulong gao", "dan5"}));
+	set_name("å›é˜³äº”é¾™è†", ({"wulong gao", "dan5"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å»ØÑôÎåÁú¸à¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—å›é˜³äº”é¾™è†ã€‚\n");
 		set("value", 15000);
 		set("lev", 1+random(3));
 	}
@@ -29,23 +29,23 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	if ( me->query("max_neili") < 600 )
 	{
 		me->add("max_neili", -1);
-		message_vision(HIR "$N³ÔÏÂÒ»¿Å»ØÑôÎåÁú¸à£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´¹¦Á¦²»¹»£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€é¢—å›é˜³äº”é¾™è†ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥åŠŸåŠ›ä¸å¤Ÿï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 	}
             else if ( (int)me->query_condition("medicine") > 0 )
 	{
 		me->add("max_neili", -5);
-		message_vision(HIR "$N³ÔÏÂÒ»¿Å»ØÑôÎåÁú¸à£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€é¢—å›é˜³äº”é¾™è†ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 	}
 	else
 	{
         me->add("neili", 1500);
         me->add("max_neili", 1);
-        message_vision(HIG "$N³ÔÏÂÒ»¿Å»ØÑôÎåÁú¸à£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÄãµÄÄÚÁ¦Ìá¸ßÁË!\n" NOR, me);
+        message_vision(HIG "$Nåƒä¸‹ä¸€é¢—å›é˜³äº”é¾™è†ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä½ çš„å†…åŠ›æé«˜äº†!\n" NOR, me);
 	}
 
         me->apply_condition("medicine", 60);

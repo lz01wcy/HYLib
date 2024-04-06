@@ -3,13 +3,13 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name(HIB"ÀÏµ¶°Ñ×Ó"NOR, ({ "master laodao", "lao dao"}) );
-	set("gender", "ÄĞĞÔ" );
-	set("long", "ËûÉí´©»ÒÅÛ£¬Í·´÷ÖñóÒ£¬¾ÍÏó¸öÓĞĞÌÎŞÖÊµÄ¹í»ê¡£\n" );
+	set_name(HIB"è€åˆ€æŠŠå­"NOR, ({ "master laodao", "lao dao"}) );
+	set("gender", "ç”·æ€§" );
+	set("long", "ä»–èº«ç©¿ç°è¢ï¼Œå¤´æˆ´ç«¹ç¬ ï¼Œå°±è±¡ä¸ªæœ‰åˆ‘æ— è´¨çš„é¬¼é­‚ã€‚\n" );
 if (random(2)==0)
 {
-	set_name(HIY"¹ùáÔÑô"NOR, ({ "master songyang", "songyang"}) );
-	set("title",YEL"áÔÑôÌú½£"NOR);
+	set_name(HIY"éƒ­åµ©é˜³"NOR, ({ "master songyang", "songyang"}) );
+	set("title",YEL"åµ©é˜³é“å‰‘"NOR);
 }
 	set("age", 45);
 	set("int", 30);
@@ -97,7 +97,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

@@ -31,7 +31,7 @@ void time_out()
 		destruct(ob);
 	}
 	if( interactive(this_object()) )
-		write("您花在连线进入手续的时间太久了，下次想好再来吧。\n");
+		write("鎮ㄨ姳鍦ㄨ繛绾胯繘鍏ユ墜缁殑鏃堕棿澶箙浜嗭紝涓嬫鎯冲ソ鍐嶆潵鍚с�俓n");
 	destruct(this_object());
 }
 

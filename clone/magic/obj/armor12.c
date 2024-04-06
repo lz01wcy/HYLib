@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(HIB "Ë®Ö®·¨ÒÂ" NOR, ({ "water cloth","watercloth"}) );
+	set_name(HIB "æ°´ä¹‹æ³•è¡£" NOR, ({ "water cloth","watercloth"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", HIB"\nÕâÊÇÒ»¼şË®Ö®·¨ÒÂ,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞË®µÄÁ¦Á¿!\n"NOR);
-		set("unit", "¼ş");
+		set("long", HIB"\nè¿™æ˜¯ä¸€ä»¶æ°´ä¹‹æ³•è¡£,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰æ°´çš„åŠ›é‡!\n"NOR);
+		set("unit", "ä»¶");
                 set("value", 50000);
                 set("treasure",1);       
                 set("no_give",1);
@@ -23,8 +23,8 @@ void create()
                 set("wield_neili", 2000);
                 set("wield_maxneili", 3000);
                 set("wield_str", 30);        
-                set("wear_msg",HIB"Ò»ÕóÀ¶É«µÄ¹âÃ¢¹ıºó £¬$NµÄÉíÉÏ´©ÉÏÁËË®Ö®·¨ÒÂ¡£\n"NOR);
-                set("unequip_msg",HIB"$N°ÑË®Ö®·¨ÒÂÍÑÏÂ¡£À¶É«µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",HIB"ä¸€é˜µè“è‰²çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„èº«ä¸Šç©¿ä¸Šäº†æ°´ä¹‹æ³•è¡£ã€‚\n"NOR);
+                set("unequip_msg",HIB"$NæŠŠæ°´ä¹‹æ³•è¡£è„±ä¸‹ã€‚è“è‰²çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 		set("armor_prop/armor", 670);
 	}
 	setup();
@@ -35,15 +35,15 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(5)==0)
 {
-message_vision(HIB"$NÉíÉÏµÄË®Ö®·¨ÒÂÇ°³öÏÖÁËµÀ»ğÇ½£¬±£»¤ÁË$NÈ«Éí£¡\n"NOR, me,ob);
+message_vision(HIB"$Nèº«ä¸Šçš„æ°´ä¹‹æ³•è¡£å‰å‡ºç°äº†é“ç«å¢™ï¼Œä¿æŠ¤äº†$Nå…¨èº«ï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3
 && ob->query("magicgift")==1)
 {
 if (!ob->is_busy())
 ob->start_busy(2);
-message_vision(HIB"$n±»Ë®Ç½µ²µÄ²»ÄÜ¶¯µ¯!\n"NOR, me,ob);
+message_vision(HIB"$nè¢«æ°´å¢™æŒ¡çš„ä¸èƒ½åŠ¨å¼¹!\n"NOR, me,ob);
 }
-message_vision(HIB"$nËùÓĞµÄ¹¥»÷È«±»Ë®Ç½µµ×¡£¡\n"NOR, me,ob);
+message_vision(HIB"$næ‰€æœ‰çš„æ”»å‡»å…¨è¢«æ°´å¢™æ¡£ä½ï¼\n"NOR, me,ob);
 return 0;
 }	
 else   return damage;

@@ -1,11 +1,11 @@
-// ³¬¼¶´óÀñ°ü /ADDED BY KEINXIN
+// è¶…çº§å¤§ç¤¼åŒ… /ADDED BY KEINXIN
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(HIY"2008º£ÑóIIĞÂ´º´óÀñ°ü"NOR, ({"dalibao", "bao", "libao"}));
+	set_name(HIY"2008æµ·æ´‹IIæ–°æ˜¥å¤§ç¤¼åŒ…"NOR, ({"dalibao", "bao", "libao"}));
 	set_weight(10);
 set("no_drop", 1);
 set("no_put", 1);
@@ -14,7 +14,7 @@ set("treasure",1);
     set("no_steal", 1);
     set("no_get", 1);
     set("value", 0);
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
 set("no_drop", 1);
 set("no_put", 1);
     set("no_get", 1);
@@ -24,14 +24,14 @@ set("no_put", 1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
 set("no_drop", 1);
 set("no_put", 1);
     set("no_get", 1);
     set("no_give", 0);
     set("value", 0);
-		set("long", "Ò»¸öÓÃ´¿½ğÖÆ×÷³ÉµÄ"+HIY"´óÀñ°ü"NOR+"´ú±íÁËº£Ñó·¡Î×Ê¦×é¶Ô´ó¼ÒµÄÕæ³Ï×£¸££¬Çë´ò¿ª¿´¿´(opengift)¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨çº¯é‡‘åˆ¶ä½œæˆçš„"+HIY"å¤§ç¤¼åŒ…"NOR+"ä»£è¡¨äº†æµ·æ´‹è´°å·«å¸ˆç»„å¯¹å¤§å®¶çš„çœŸè¯šç¥ç¦ï¼Œè¯·æ‰“å¼€çœ‹çœ‹(opengift)ã€‚\n");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -55,7 +55,7 @@ if ((int)me->query("combat_exp")<=1000000 && !me->query("4zhuan") && !me->query(
         	
   if(me->query("liwuopen/1")>0)
   {
-message_vision("ÊôÓÚ$NµÄÄÇ·İÀñÎïÒÑ¾­¸øÄÃ×ßÁË!\n", this_player());
+message_vision("å±äº$Nçš„é‚£ä»½ç¤¼ç‰©å·²ç»ç»™æ‹¿èµ°äº†!\n", this_player());
 	destruct(this_object());
    return 1;
   }
@@ -65,25 +65,25 @@ message_vision("ÊôÓÚ$NµÄÄÇ·İÀñÎïÒÑ¾­¸øÄÃ×ßÁË!\n", this_player());
         this_player()->add("score", score);
         this_player()->add("max_neili", 380);
 	this_player()->start_busy(50);
-	message_vision(HIY"$N´ò¿ªÁË´óÀñ°ü£¬Ğ¡ÈËÎï£¬±±¾©£¬ç³Óê½£ĞÄ£¬¹Î·ç£¬YQH£¬YAODM£¬Ğ¦ÄªÎÊ´ø×Å½ğ¹â³öÏÖÁË£¡\n"NOR, this_player());
-tell_object(me,HIY"ÄãĞ¡ĞÄÒíÒíµÄ´ò¿ªÀñ°ü£¬Ëæ×Å²ÓÀÃµÄ»ğ»¨£¬Ğ¡ÈËÎï£¬±±¾©£¬ç³Óê½£ĞÄ£¬¹Î·ç£¬YQH£¬YAODM£¬Ğ¦ÄªÎÊ´ø×Å½ğ¹â³öÏÖÁË¡£\n"NOR);
-tell_object(me,HIY" º£ÑóIIĞÂ´º¿ìÀÖ£¡ ´ó¼Ò½ÚÈÕ¿ìÀÖ!!        \n"NOR);
+	message_vision(HIY"$Næ‰“å¼€äº†å¤§ç¤¼åŒ…ï¼Œå°äººç‰©ï¼ŒåŒ—äº¬ï¼Œç»¯é›¨å‰‘å¿ƒï¼Œåˆ®é£ï¼ŒYQHï¼ŒYAODMï¼Œç¬‘è«é—®å¸¦ç€é‡‘å…‰å‡ºç°äº†ï¼\n"NOR, this_player());
+tell_object(me,HIY"ä½ å°å¿ƒç¿¼ç¿¼çš„æ‰“å¼€ç¤¼åŒ…ï¼Œéšç€ç¿çƒ‚çš„ç«èŠ±ï¼Œå°äººç‰©ï¼ŒåŒ—äº¬ï¼Œç»¯é›¨å‰‘å¿ƒï¼Œåˆ®é£ï¼ŒYQHï¼ŒYAODMï¼Œç¬‘è«é—®å¸¦ç€é‡‘å…‰å‡ºç°äº†ã€‚\n"NOR);
+tell_object(me,HIY" æµ·æ´‹IIæ–°æ˜¥å¿«ä¹ï¼ å¤§å®¶èŠ‚æ—¥å¿«ä¹!!        \n"NOR);
         tell_object(me,HIY"                                                           \n"NOR);
-//	tell_object(me,HIY"ËûÃÇ¸ö¸ö´©×ÅÌØÖÆµÄ½ÚÈÕÀñ·ş£¬ÏÔµÃÉñ²ÉŞÈŞÈ¡£ºÍÄãÒ»ÆğÇì×£ĞÂµÄÒ»ÄêµÄµ½À´¡£\n");
-//	tell_object(me,BLINK"º£Ñó·¡Î×Ê¦×é¸ĞĞ»ÄúÔÚĞÂ´ºÅã°éÎÒÃÇ£¬¸ĞĞ»ÄúÅãÍ¬ÎÒÃÇ×ß¹ı·¡ÁãÁãÆß£¬Ï£ÍûÄúÔÚĞÂµÄÒ»ÄêÖĞ¼ÌĞøÖ§³Öº£Ñó·¡¡£\n"+
-//	                    "×£ÄúÔÚĞÂµÄÒ»ÄêÀïÒ»·«·çË³£¬°ÙÊÂ¿ÉÀÖ£¬ÍòÊÂÈçÒâ£¡\n"NOR);                    
-	tell_object(me,HIR"Äã±»½±ÀøÁË£ººÜ¶àºÜ¶«¶«°¡!! ^0^ \n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n"NOR);
-        message_vision(HIR"$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!"+chinese_number(score)+"µã½­ºşÔÄÀú!\n"NOR, this_player());
-        message_vision(HIR"$N»ñµÃÁË380µãÄÚÁ¦ÉÏÏŞ!\n"NOR, this_player());
+//	tell_object(me,HIY"ä»–ä»¬ä¸ªä¸ªç©¿ç€ç‰¹åˆ¶çš„èŠ‚æ—¥ç¤¼æœï¼Œæ˜¾å¾—ç¥é‡‡å¥•å¥•ã€‚å’Œä½ ä¸€èµ·åº†ç¥æ–°çš„ä¸€å¹´çš„åˆ°æ¥ã€‚\n");
+//	tell_object(me,BLINK"æµ·æ´‹è´°å·«å¸ˆç»„æ„Ÿè°¢æ‚¨åœ¨æ–°æ˜¥é™ªä¼´æˆ‘ä»¬ï¼Œæ„Ÿè°¢æ‚¨é™ªåŒæˆ‘ä»¬èµ°è¿‡è´°é›¶é›¶ä¸ƒï¼Œå¸Œæœ›æ‚¨åœ¨æ–°çš„ä¸€å¹´ä¸­ç»§ç»­æ”¯æŒæµ·æ´‹è´°ã€‚\n"+
+//	                    "ç¥æ‚¨åœ¨æ–°çš„ä¸€å¹´é‡Œä¸€å¸†é£é¡ºï¼Œç™¾äº‹å¯ä¹ï¼Œä¸‡äº‹å¦‚æ„ï¼\n"NOR);                    
+	tell_object(me,HIR"ä½ è¢«å¥–åŠ±äº†ï¼šå¾ˆå¤šå¾ˆä¸œä¸œå•Š!! ^0^ \n" +
+             chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n"NOR);
+        message_vision(HIR"$Nè·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!"+chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†!\n"NOR, this_player());
+        message_vision(HIR"$Nè·å¾—äº†380ç‚¹å†…åŠ›ä¸Šé™!\n"NOR, this_player());
 if (me->query("weapon/lv") &&
 (int)me->query("weapon/lv",1)<100)
 {
   me->add("weapon/lv",5);
 if (me->query("weapon/lv",1)>100)
 me->set("weapon/lv",100);
-message_vision(HIW"$NµÄ×ÔÔìÎäÆ÷µÈ¼¶´ó´óµÄÔö¼ÓÁË£¡ÖØĞÂµÇÂ½ºóÓĞĞ§!!\n"NOR, this_player());
+message_vision(HIW"$Nçš„è‡ªé€ æ­¦å™¨ç­‰çº§å¤§å¤§çš„å¢åŠ äº†ï¼é‡æ–°ç™»é™†åæœ‰æ•ˆ!!\n"NOR, this_player());
 }
 if (me->query("jia/lv")&&
 me->query("jia/lv",1)<150)
@@ -91,80 +91,80 @@ me->query("jia/lv",1)<150)
   me->add("jia/lv",5);
 if (me->query("jia/lv",1)>150)
 me->set("jia/lv",150);
-message_vision(HIW"$NµÄ×ÔÔì¼×ÒÂµÈ¼¶´ó´óµÄÔö¼ÓÁË£¡ÖØĞÂµÇÂ½ºóÓĞĞ§!!\n"NOR, this_player());
+message_vision(HIW"$Nçš„è‡ªé€ ç”²è¡£ç­‰çº§å¤§å¤§çš„å¢åŠ äº†ï¼é‡æ–°ç™»é™†åæœ‰æ•ˆ!!\n"NOR, this_player());
 }
 
 if (random(12)==1)
 {
 me->delete("szj/failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃÆÆ½âÉñÕÕ¾­µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—ç ´è§£ç¥ç…§ç»çš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(12)==2)
 {
 me->delete("jiuyin/shang-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõÉÏ²áµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£ä¹é˜´ä¸Šå†Œçš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(12)==3)
 {
 me->delete("jiuyin/xia-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõÏÂ²áµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£ä¹é˜´ä¸‹å†Œçš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(12)==4)
 {
 me->delete("zhou/jieyi");
 me->delete("zhou/fail");
 me->delete("zhou/failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½âË«ÊÖ»¥²¶µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£åŒæ‰‹äº’æ•çš„æœºä¼šï¼\n"NOR, this_player());
 }
 else if (random(12)==5)
 {
 me->delete("jiuyin/gumu-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõ¹ÅÄ¹µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡è·å¾—è§£ä¹é˜´å¤å¢“çš„æœºä¼šï¼\n"NOR, this_player());
 }	
 else if (random(12)==6)
 {
 me->set("betrayer",0);
-message_vision(HIG"$NµÄÅÑÊ¦ÃÅÊıÇåÁã£¡\n"NOR, this_player());
+message_vision(HIG"$Nçš„å›å¸ˆé—¨æ•°æ¸…é›¶ï¼\n"NOR, this_player());
 }
 
 
 me->delete("last_getzhen");
-message_vision(HIW"$NÔÙ´Î»ñµÃÄÃÒøÕëµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIW"$Nå†æ¬¡è·å¾—æ‹¿é“¶é’ˆçš„æœºä¼šï¼\n"NOR, this_player());
 if (this_player()->query("kar") <20)
 {
 this_player()->set("kar",20);
-message_vision(HIW"$NµÄÏÈÌì¸£ÆøÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„å…ˆå¤©ç¦æ°”å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("per") <20)
 {
 this_player()->set("per",20);
-message_vision(HIW"$NµÄÏÈÌìÈİÃ²Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„å…ˆå¤©å®¹è²Œå¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("unarmed",1)<120)
 {
   me->set_skill("unarmed",120);
-message_vision(HIW"$NµÄ»ù±¾¸ñ¶·Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„åŸºæœ¬æ ¼æ–—å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("parry",1)<120)
 {
  me->set_skill("parry",120);
-message_vision(HIW"$NµÄ»ù±¾ÕĞ¼ÜÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„åŸºæœ¬æ‹›æ¶å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("dodge",1)<120)
 {
   me->set_skill("dodge",120);
-message_vision(HIW"$NµÄ»ù±¾Çá¹¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„åŸºæœ¬è½»åŠŸå¢åŠ äº†ï¼\n"NOR, this_player());
 
 }
 if (me->query_skill("force",1)<120)
 {
   me->set_skill("force",120);
-message_vision(HIW"$NµÄ»ù±¾ÄÚ¹¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„åŸºæœ¬å†…åŠŸå¢åŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("literate",1)<120)
 {
   me->set_skill("literate",120);
-message_vision(HIW"$NµÄ¶ÁÊéĞ´×ÖÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„è¯»ä¹¦å†™å­—å¢åŠ äº†ï¼\n"NOR, this_player());
 }
 i=1+random(8);
 if ( me->query("4zhuan") || me->query("5zhuan") )
@@ -177,7 +177,7 @@ else
 {
 me->add("expmax",i);
 }	
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, this_player());
+message_vision(HIR"$Nè·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, this_player());
 
 }    	
 

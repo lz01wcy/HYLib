@@ -1,18 +1,18 @@
-// zixia_book.c  ×ÏÏ¼ÃØÜ¸
+// zixia_book.c  ç´«éœžç§˜èŠ¨
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(MAG"×ÏÏ¼ÃÜÜ¸"NOR, ({ "zixia_book" }));
+        set_name(MAG"ç´«éœžå¯†èŠ¨"NOR, ({ "zixia_book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
 //                set("no_drop",1);
                 set("long",
-                        "Ñ§×ÏÏ¼Éñ¹¦¡£\n");
+                        "å­¦ç´«éœžç¥žåŠŸã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

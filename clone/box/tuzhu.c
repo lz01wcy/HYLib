@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIB"ÍÁÁéÖé"NOR, ({ "tuzhu" }) );
+    set_name(HIB"åœŸçµç "NOR, ({ "tuzhu" }) );
     set_weight(1);
             set("no_put", 1);
     if( clonep() )
@@ -14,9 +14,9 @@ void create()
             set("no_get", 1);
             set("no_beg", 1);
             set("value", 100000);
-            set("unit", "¿Å");
+            set("unit", "é¢—");
             set("material", "paper");
-            set("long", "Äã¿ÉÒÔÓÃ(gohome),»ò(usezhu)À´Àë¿ªÃÔ¹¬¡£ÓÃ(setzhu)À´ÉèÖÃ¿Õ¼äÃÅÎ»ÖÃ\n");
+            set("long", "ä½ å¯ä»¥ç”¨(gohome),æˆ–(usezhu)æ¥ç¦»å¼€è¿·å®«ã€‚ç”¨(setzhu)æ¥è®¾ç½®ç©ºé—´é—¨ä½ç½®\n");
           }
 
     setup();
@@ -35,40 +35,40 @@ int do_set(string arg)
         object me = this_player();
         string target;
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆï¼Ÿ\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã²»ÄÜ±³×ÅÈËÓÃÍÁÖé!\n");
+     				return notify_fail("ä½ ä¸èƒ½èƒŒç€äººç”¨åœŸç !\n");
        		
 		}
     if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
     if (me->is_busy()) 
-        return notify_fail("ÄãÕıÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£çƒ­é—¹ç€å‘¢!\n");
     if (me->query("neili")<1000)
-	return notify_fail("ÄãµÄÄÚÁ¦²»×ã!\n");
+	return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³!\n");
 me->delete("vendetta/authority");
-    if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR
+    if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR
        ||environment(me)->query("magicroom"))
 {
         target=(string)file_name(environment(me));
         me->set("jobtarget",target);
         me->start_busy(8);
-        message_vision(HIG "$N³Ô°ÑÖéÄÃ³ö£¬Ò»Õó¹â»ÔÁıÕÖÁËÄã!\n" NOR, me);
-        message_vision(HIG "ÏÂ´ÎÊ¹ÓÃÍÁÁéÖéÄã½«»áÖ±½ÓÀ´µ½ÕâÀï!\n" NOR, me);
+        message_vision(HIG "$NåƒæŠŠç æ‹¿å‡ºï¼Œä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†ä½ !\n" NOR, me);
+        message_vision(HIG "ä¸‹æ¬¡ä½¿ç”¨åœŸçµç ä½ å°†ä¼šç›´æ¥æ¥åˆ°è¿™é‡Œ!\n" NOR, me);
         me->add("neili",-1000);
 }	
 else 
 {
-        message_vision(HIG "$NÕâÀï²»ÄÜÊ¹ÓÃ!\n" NOR, me);
+        message_vision(HIG "$Nè¿™é‡Œä¸èƒ½ä½¿ç”¨!\n" NOR, me);
 }
 	return 1;
 }
@@ -82,29 +82,29 @@ string msg;
         object me = this_player();
         object tarset;
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆï¼Ÿ\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã²»ÄÜ±³×ÅÈËÓÃÍÁÖé!\n");
+     				return notify_fail("ä½ ä¸èƒ½èƒŒç€äººç”¨åœŸç !\n");
        		
 		}
 
     if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
     if (me->is_busy()) 
-        return notify_fail("ÄãÕıÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£çƒ­é—¹ç€å‘¢!\n");
     if (me->query("neili")<1000)
-	return notify_fail("ÄãµÄÄÚÁ¦²»×ã!\n");
+	return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³!\n");
 
-    if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR
+    if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR
        ||environment(me)->query("magicroom"))
 {
         if (!me->query("jobtarget"))
@@ -115,7 +115,7 @@ string msg;
       tarset=me->query("jobtarget");
 msg=me->query("jobtarget");
     if (me->query_condition("migongmove"))
-	return notify_fail("Äã¸Õ¸ÕÓÃ¹ıÒÆ¶¯µã£¬µÈ»áÔÙÀ´°É!\n");
+	return notify_fail("ä½ åˆšåˆšç”¨è¿‡ç§»åŠ¨ç‚¹ï¼Œç­‰ä¼šå†æ¥å§!\n");
 if (strsrch(msg,"lev19")>1
 && (int)me->query_skill("magic-ice",1) > 10)
 {
@@ -245,16 +245,16 @@ tarset=me->query_temp("jobtar");
 
       me->move(tarset);
 me->apply_condition("migongmove",18);
-      message_vision(HIG "$N³Ô°ÑÖéÄÃ³ö£¬Ò»Õó¹â»ÔÁıÕÖÁËÄã!\n" NOR, me);
+      message_vision(HIG "$NåƒæŠŠç æ‹¿å‡ºï¼Œä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†ä½ !\n" NOR, me);
       }
         me->start_busy(8);
-        message_vision(HIG "$N³Ô°ÑÖéÄÃ³ö£¬Ò»Õó¹â»ÔÁıÕÖÁËÄã!\n" NOR, me);
+        message_vision(HIG "$NåƒæŠŠç æ‹¿å‡ºï¼Œä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†ä½ !\n" NOR, me);
         me->add("neili",-1000);
 	destruct(this_object());
 }	
 else 
 {
-        message_vision(HIG "$NÕâÀï²»ÄÜÊ¹ÓÃ!\n" NOR, me);
+        message_vision(HIG "$Nè¿™é‡Œä¸èƒ½ä½¿ç”¨!\n" NOR, me);
 }
 	return 1;
 }
@@ -266,38 +266,38 @@ int do_eatt(string arg)
         object me = this_player();
         object tarset;
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆï¼Ÿ\n");
 		inv=all_inventory(me);
 		sizeinv=sizeof(inv);
 	
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("Äã²»ÄÜ±³×ÅÈËÓÃÍÁÖé!\n");
+     				return notify_fail("ä½ ä¸èƒ½èƒŒç€äººç”¨åœŸç !\n");
        		
 		}
 
     if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
     if (me->is_busy()) 
-        return notify_fail("ÄãÕıÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£çƒ­é—¹ç€å‘¢!\n");
 
-    if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR
+    if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR
        ||environment(me)->query("magicroom"))
 {
 me->apply_condition("migongmove",18);
         me->move("d/migong/migong3");
         me->start_busy(8);
-        message_vision(HIG "$N³Ô°ÑÖéÄÃ³ö£¬Ò»Õó¹â»ÔÁıÕÖÁËÄã!\n" NOR, me);
+        message_vision(HIG "$NåƒæŠŠç æ‹¿å‡ºï¼Œä¸€é˜µå…‰è¾‰ç¬¼ç½©äº†ä½ !\n" NOR, me);
 	destruct(this_object());
 }	
 else 
 {
-        message_vision(HIG "$NÕâÀï²»ÄÜÊ¹ÓÃ!\n" NOR, me);
+        message_vision(HIG "$Nè¿™é‡Œä¸èƒ½ä½¿ç”¨!\n" NOR, me);
 }
 	return 1;
 }

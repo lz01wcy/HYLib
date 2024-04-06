@@ -4,13 +4,13 @@ inherit ITEM;
 inherit F_UNIQUE;
 void create()
 {
-	set_name( "Âä»¨½£·¨ÃÜ¼®",({ "wlbook5","wlbook5"}));
+	set_name( "è½èŠ±å‰‘æ³•å¯†ç±",({ "wlbook5","wlbook5"}));
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾Ê§Âä¶àÄêµÄÎäÁÖÃÜ¼®¡£\n");
+		set("unit", "æœ¬");
+                set("long","è¿™æ˜¯ä¸€æœ¬å¤±è½å¤šå¹´çš„æ­¦æ—å¯†ç±ã€‚\n");
 		set("value", 0);
                 set("treasure",1);
 		set("no_put", 1);

@@ -7,12 +7,12 @@ inherit WAIST;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});   
 void create()
 {
-	set_name((order[random(13)])+"Ïş´äÑü´ø"NOR, ({ "waist6"}) );
+	set_name((order[random(13)])+"æ™“ç¿ è…°å¸¦"NOR, ({ "waist6"}) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
+		set("unit", "æ¡");
 		
 		set("value", 2000);
 		set("material", "leather");

@@ -7,14 +7,14 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(HIB "ÒøË¿Åû·ç" NOR, ({ "cloak body","cloakbody"}) );
+	set_name(HIB "é“¶ä¸æŠ«é£" NOR, ({ "cloak body","cloakbody"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", HIB"\nÕâÊÇÒ»¼şÒøË¿Åû·ç,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+		set("long", HIB"\nè¿™æ˜¯ä¸€ä»¶é“¶ä¸æŠ«é£,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                set("value", 19000);
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("armor_prop/armor", 560);
 		set("armor_prop/defense", 20);	
 	}

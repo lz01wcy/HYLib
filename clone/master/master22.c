@@ -5,12 +5,12 @@
 inherit NPC;
 void create()
 {
-        set_name(RED"ÒóÕıÁ®"NOR, ({ "master yin", "master","yin" }) );
+        set_name(RED"æ®·æ­£å»‰"NOR, ({ "master yin", "master","yin" }) );
         set("long",
-                "·çÔÆ³ÇÖĞ×î¸ßµÄ¹Ù£¬ÓĞÖÁ¸ßÎŞÉÏµÄÈ¨Á¦\n");
-        set("title", RED"Ò»Æ·ÇÕ²î"NOR);
+                "é£äº‘åŸä¸­æœ€é«˜çš„å®˜ï¼Œæœ‰è‡³é«˜æ— ä¸Šçš„æƒåŠ›\n");
+        set("title", RED"ä¸€å“é’¦å·®"NOR);
         set("attitude", "heroism");
-        set("student_title","¹ÙÔ±");
+        set("student_title","å®˜å‘˜");
         set("vendetta_mark", "authority");
         set("str", 27);
         set("cor", 26);
@@ -42,10 +42,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIY"¹ù´óÂ·"NOR, ({ "master guo", "master"}) );
-        set("title", HIY"»¶ÀÖÓ¢ĞÛ"NOR);
+	set_name(HIY"éƒ­å¤§è·¯"NOR, ({ "master guo", "master"}) );
+        set("title", HIY"æ¬¢ä¹è‹±é›„"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -99,7 +99,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

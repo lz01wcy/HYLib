@@ -6,17 +6,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "ÃÏ×Ó" NOR, ({ "mengzi book", "shu" }));
+        set_name(WHT "å­Ÿå­" NOR, ({ "mengzi book", "shu" }));
         set_weight(300);
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
-                set("long", "Õâ±¾Êé¼ÇÔØÁËµ±ÄêÃÏ×ÓĞí¶àÑÔĞĞÕÜÂÛ£¬ÊÇÈå¼Ò¾­µäÊé¼®¡£\n");
+                set("unit", "æœ¬");
+                set("long", "è¿™æœ¬ä¹¦è®°è½½äº†å½“å¹´å­Ÿå­è®¸å¤šè¨€è¡Œå“²è®ºï¼Œæ˜¯å„’å®¶ç»å…¸ä¹¦ç±ã€‚\n");
                 set("value", 100);
-                set("no_sell", "Õâ...ÕâÖµÊ²Ã´Ç®£¿\n");
+                set("no_sell", "è¿™...è¿™å€¼ä»€ä¹ˆé’±ï¼Ÿ\n");
                 set("material", "paper");
                 set("skill", ([
                         "name": "literate",    // name of the skill

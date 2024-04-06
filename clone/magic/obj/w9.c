@@ -1,18 +1,18 @@
-// µØÓü¹í¸«
+// åœ°ç‹±é¬¼æ–§
 #include <ansi.h>
 #include <weapon.h>
 inherit AXE;
 
 void create()
 {
-        set_name(HIC"µØÓü¹í¸«"NOR, ({"magic axe", "maxe"}));
+        set_name(HIC"åœ°ç‹±é¬¼æ–§"NOR, ({"magic axe", "maxe"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIC"ÕâÊÇÒ»°ÑµØÓü¹í¸«,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIC"è¿™æ˜¯ä¸€æŠŠåœ°ç‹±é¬¼æ–§,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",60);

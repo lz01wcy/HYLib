@@ -6,9 +6,9 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("ÓğÌì°×", ({ "master yu", "master"}) );
-        set("title", HIR "ÍòÊ¤µ¶Ä§" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç¾½å¤©ç™½", ({ "master yu", "master"}) );
+        set("title", HIR "ä¸‡èƒœåˆ€é­”" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 64);
 	set("per", 3);
         set("agi",25);
@@ -19,17 +19,17 @@ void create()
         set("force_factor", 30);
         set("long",
 "
-ÓğÌì°×ÊÇÎ÷·½Éñ½ÌÖĞµÄ½ÌÖ÷£¬ÓğÌì°×µÄÀ´ÀúË­Ò²²»Çå³ş£¬
-Ò²Ã»ÈË¸ÒÎÊ¡£·²ÊÇÎÊ¹ı»òÖªµÀÓğÌì°×À´ÀúµÄÈË¶¼²»Ã÷²»°×µÄ
-ÏûÊ§ÁË¡£
+ç¾½å¤©ç™½æ˜¯è¥¿æ–¹ç¥æ•™ä¸­çš„æ•™ä¸»ï¼Œç¾½å¤©ç™½çš„æ¥å†è°ä¹Ÿä¸æ¸…æ¥šï¼Œ
+ä¹Ÿæ²¡äººæ•¢é—®ã€‚å‡¡æ˜¯é—®è¿‡æˆ–çŸ¥é“ç¾½å¤©ç™½æ¥å†çš„äººéƒ½ä¸æ˜ä¸ç™½çš„
+æ¶ˆå¤±äº†ã€‚
 \n"
 	);
 if (random(2)==0)
 {
-	set_name(RED"¸µºìÑ©"NOR, ({ "master fu", "fuhongxue"}) );
-        set("title", RED"³ğµ¶"NOR);
+	set_name(RED"å‚…çº¢é›ª"NOR, ({ "master fu", "fuhongxue"}) );
+        set("title", RED"ä»‡åˆ€"NOR);
         set("long",
-"¸µºìÑ©¿´ÉÏÈ¥Ò»ÉíÉ±Æø!!\n"
+"å‚…çº¢é›ªçœ‹ä¸Šå»ä¸€èº«æ€æ°”!!\n"
                ); 
 
 }
@@ -111,7 +111,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

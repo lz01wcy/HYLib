@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(RED "Ñ×Ö®½á¾§" NOR, ({ "fire armor","firearmor"}) );
+	set_name(RED "ç‚ä¹‹ç»“æ™¶" NOR, ({ "fire armor","firearmor"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", RED"\nÕâÊÇÒ»¼şÑ×Ö®½á¾§âı¼×,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞ»ğÑ×µÄÁ¦Á¿!\n"NOR);
-		set("unit", "¼ş");
+		set("long", RED"\nè¿™æ˜¯ä¸€ä»¶ç‚ä¹‹ç»“æ™¶æºç”²,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰ç«ç‚çš„åŠ›é‡!\n"NOR);
+		set("unit", "ä»¶");
                 set("value", 500000);
                 set("no_give",1);
                 set("no_get",1);
@@ -23,8 +23,8 @@ void create()
                 set("wield_neili", 2000);
                 set("wield_maxneili", 3000);
                 set("wield_str", 30);        
-                set("wear_msg",RED"Ò»Õó»ğÑ×µÄ¹âÃ¢¹ıºó £¬$NµÄÉíÉÏ´©ÉÏÁË»ğÑ×âı¼×¡£\n"NOR);
-                set("unequip_msg",RED"$N°ÑÑ×Ö®½á¾§âı¼×ÍÑÏÂ¡£»ğÑ×µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",RED"ä¸€é˜µç«ç‚çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„èº«ä¸Šç©¿ä¸Šäº†ç«ç‚æºç”²ã€‚\n"NOR);
+                set("unequip_msg",RED"$NæŠŠç‚ä¹‹ç»“æ™¶æºç”²è„±ä¸‹ã€‚ç«ç‚çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 		set("armor_prop/armor", 660);
 	}
 	setup();
@@ -35,15 +35,15 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(5)==0)
 {
-message_vision(RED"$NÉíÉÏµÄÑ×Ö®½á¾§Ç°³öÏÖÁËµÀ»ğÑ×£¬±£»¤ÁË$NÈ«Éí£¡\n"NOR, me,ob);
+message_vision(RED"$Nèº«ä¸Šçš„ç‚ä¹‹ç»“æ™¶å‰å‡ºç°äº†é“ç«ç‚ï¼Œä¿æŠ¤äº†$Nå…¨èº«ï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3
 && ob->query("magicgift")==2)
 {
 if (!ob->is_busy())
 ob->start_busy(2);
-message_vision(WHT"$n±»»ğÑ×ÉÕµÄ²»ÄÜ¶¯µ¯!\n"NOR, me,ob);
+message_vision(WHT"$nè¢«ç«ç‚çƒ§çš„ä¸èƒ½åŠ¨å¼¹!\n"NOR, me,ob);
 }
-message_vision(HIG"$nËùÓĞµÄ¹¥»÷È«±»»ğÑ×µµ×¡£¡\n"NOR, me,ob);
+message_vision(HIG"$næ‰€æœ‰çš„æ”»å‡»å…¨è¢«ç«ç‚æ¡£ä½ï¼\n"NOR, me,ob);
 return 0;
 }	
 else   return damage;

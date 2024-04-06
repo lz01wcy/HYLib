@@ -7,13 +7,13 @@
 inherit CLOTH;
 void create()
 {
-	set_name(HIW "Ë®Éñâı¼×" NOR, ({ "water armor","waterarmor"}) );
+	set_name(HIW "æ°´ç¥æºç”²" NOR, ({ "water armor","waterarmor"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", HIW"\nÕâÊÇÒ»¼şË®Éñâı¼×,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»!\n"NOR);
-		set("unit", "¼ş");
+		set("long", HIW"\nè¿™æ˜¯ä¸€ä»¶æ°´ç¥æºç”²,åšå·¥æå…¶ç²¾è‡´ã€‚æ˜¯ä¼—ç¥çš„é—äº§ä¹‹ä¸€!\n"NOR);
+		set("unit", "ä»¶");
 		set("no_put", 1);
 		set("no_put", 1);
 		set("no_get", 1);
@@ -32,8 +32,8 @@ void create()
                         "min_skill":  500,
                              "max_skill": 1000,              
                 ]) );
-                set("wear_msg",HIW"Ò»ÕóË®É«µÄ¹âÃ¢¹ıºó £¬$NµÄÉíÉÏ´©ÉÏÁËË®Éñâı¼×¡£\n"NOR);
-                set("unequip_msg",HIW"$N°ÑË®Éñâı¼×ÍÑÏÂ¡£Ë®É«µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",HIW"ä¸€é˜µæ°´è‰²çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„èº«ä¸Šç©¿ä¸Šäº†æ°´ç¥æºç”²ã€‚\n"NOR);
+                set("unequip_msg",HIW"$NæŠŠæ°´ç¥æºç”²è„±ä¸‹ã€‚æ°´è‰²çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 		set("armor_prop/armor", 1600);
 		set("armor_prop/defense", 30);	
 set("armor_prop/damage", 150);
@@ -55,14 +55,14 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(4)==0)
 {
-message_vision(HIW"$NÉíÉÏµÄË®Éñâı¼×Ç°³öÏÖÁËµÀ±ù±Ú£¬±£»¤ÁË$NÈ«Éí£¡\n"NOR, me,ob);
+message_vision(HIW"$Nèº«ä¸Šçš„æ°´ç¥æºç”²å‰å‡ºç°äº†é“å†°å£ï¼Œä¿æŠ¤äº†$Nå…¨èº«ï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3)
 {
 if (!ob->is_busy())
 ob->start_busy(4);
-message_vision(WHT"$n±»¶³µÄ²»ÄÜ¶¯µ¯!\n"NOR, me,ob);
+message_vision(WHT"$nè¢«å†»çš„ä¸èƒ½åŠ¨å¼¹!\n"NOR, me,ob);
 }
-message_vision(HIG"$nËùÓĞµÄ¹¥»÷È«´òÔÚÁË±ù±ÚÉÏ£¡\n"NOR, me,ob);
+message_vision(HIG"$næ‰€æœ‰çš„æ”»å‡»å…¨æ‰“åœ¨äº†å†°å£ä¸Šï¼\n"NOR, me,ob);
 return 0;
 }
 else   return damage;

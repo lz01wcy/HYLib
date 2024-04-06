@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"Ä§·¨»ğÑæ"NOR, ({"fire", "magicfire"}));
+        set_name(HIR"é­”æ³•ç«ç„°"NOR, ({"fire", "magicfire"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-         set("long", RED"ÕâÊÇÒ»ÍÅÄ§·¨»ğÑæ£¬ÕÕÁÁÁËÇ°·ÅµÄºÚ°µ¡£\n"NOR);
-                set("unit", "ÍÅ");
+         set("long", RED"è¿™æ˜¯ä¸€å›¢é­”æ³•ç«ç„°ï¼Œç…§äº®äº†å‰æ”¾çš„é»‘æš—ã€‚\n"NOR);
+                set("unit", "å›¢");
                 set("value", 0);
                 set("no_drop", 1);
                 set("no_get", 1);
@@ -28,6 +28,6 @@ void init()
  
 void dest()
 {
-        tell_room(environment(this_object()),HIR"Ä§·¨»ğÑæÊ§È¥ÁËÄ§Á¦£¬½¥½¥µØÏ¨ÃğÁË¡£\n"NOR);
+        tell_room(environment(this_object()),HIR"é­”æ³•ç«ç„°å¤±å»äº†é­”åŠ›ï¼Œæ¸æ¸åœ°ç†„ç­äº†ã€‚\n"NOR);
         destruct(this_object());
 }

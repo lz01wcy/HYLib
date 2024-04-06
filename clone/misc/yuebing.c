@@ -1,17 +1,17 @@
-// yuebing ÔÂ±ı
+// yuebing æœˆé¥¼
 
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ÖĞÇï½ÚµÄÔÂ±ı", ({"yue bing", "bing"}));
+        set_name("ä¸­ç§‹èŠ‚çš„æœˆé¥¼", ({"yue bing", "bing"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÖĞÇï½Ú¸ø´ó¼ÒµÄÀñÎï.¡£\n");
-                set("unit", "Ö»");
+                set("long", "è¿™æ˜¯ä¸­ç§‹èŠ‚ç»™å¤§å®¶çš„ç¤¼ç‰©.ã€‚\n");
+                set("unit", "åª");
                 set("no_get", 1);
                 set("no_give", 1);
            
@@ -26,13 +26,13 @@ int do_eat()
 me = this_player();
 if(!me->query("marks/yuebing"))
 {
-message_vision("$NÒ»¿Ú°ÑÔÂ±ıÍÌÏÂÁË¶ÇÀï¡£\n",me);
+message_vision("$Nä¸€å£æŠŠæœˆé¥¼åä¸‹äº†è‚šé‡Œã€‚\n",me);
 me -> add("combat_exp",5000);
 me -> add("potential",3000);
-tell_object(me,"Äã±»½±ÀøÁËÎåÇ§µãÆÀ¼Û,ÈıÇ§µãÇ±ÄÜ¡£\n");
+tell_object(me,"ä½ è¢«å¥–åŠ±äº†äº”åƒç‚¹è¯„ä»·,ä¸‰åƒç‚¹æ½œèƒ½ã€‚\n");
 me->set("marks/yuebing",1);
 }
-else tell_object(me,"ÄãÒÑ¾­³Ô¹ıÒ»´ÎÔÂ±ıÁË£¬»¹Ïë³Ô£¿\n");
+else tell_object(me,"ä½ å·²ç»åƒè¿‡ä¸€æ¬¡æœˆé¥¼äº†ï¼Œè¿˜æƒ³åƒï¼Ÿ\n");
 destruct(this_object());
 return 1;
 }

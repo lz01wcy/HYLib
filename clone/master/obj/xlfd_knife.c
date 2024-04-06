@@ -5,17 +5,17 @@ inherit THROWING;
 #include <ansi.h>
 void create()
 {
-	set_name(RED "Ğ¡Àî·Éµ¶" NOR, ({ "flying blade" }) );
+	set_name(RED "å°æé£åˆ€" NOR, ({ "flying blade" }) );
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long",	"Ò»°ÑÈË¼ûÈËÅÂµÄĞ¡Àî·Éµ¶\n");
-		set("unit", "¶Ñ");
+		set("long",	"ä¸€æŠŠäººè§äººæ€•çš„å°æé£åˆ€\n");
+		set("unit", "å †");
 		set("value", 1000);
-		set("base_unit", "°Ñ");
+		set("base_unit", "æŠŠ");
 		set("base_weight", 1);
 		set("base_value", 1);
-		set("wield_msg","$N²»Öª´ÓÄÄÀïÍ»È»¼ä×§³öÒ»°Ñ±¡±¡µÄ$nÎÕÔÚÊÖÀï£®\n");
+		set("wield_msg","$Nä¸çŸ¥ä»å“ªé‡Œçªç„¶é—´æ‹½å‡ºä¸€æŠŠè–„è–„çš„$næ¡åœ¨æ‰‹é‡Œï¼\n");
 	}
 	set_amount(30);
 	init_throwing(200);

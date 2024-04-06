@@ -6,14 +6,14 @@ void init()
 }
 void create()
 {
-	set_name(HIR"Æß"+HIC+"²Ê"+HIY+"Ïò"+HIM+"µ¼"+HIG+"Ê¯"NOR, ({"xdshi"}));
+	set_name(HIR"ä¸ƒ"+HIC+"å½©"+HIY+"å‘"+HIM+"å¯¼"+HIG+"çŸ³"NOR, ({"xdshi"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
+		set("unit", "å—");
 		set("no_put",1);
 		set("no_drop",1);
-		set("long", "ÕâÊÇÓÃÀ´²âÁ¿ÉñÊéÎ»ÖÃµÄÁéÊ¯£¬Äã¿ÉÒÔÓÃ(findbook)À´²âÁ¿¡£\n");
+		set("long", "è¿™æ˜¯ç”¨æ¥æµ‹é‡ç¥ä¹¦ä½ç½®çš„çµçŸ³ï¼Œä½ å¯ä»¥ç”¨(findbook)æ¥æµ‹é‡ã€‚\n");
 		set("no_pawn",1);
 	}
 	setup();
@@ -22,9 +22,9 @@ int do_find(string str)
 {
         object me =this_player();
 	string output = "";
-        if(!str) return notify_fail("Ö¸Áî¸ñÊ½: findbook <ÎïÆ·>\n");
+        if(!str) return notify_fail("æŒ‡ä»¤æ ¼å¼: findbook <ç‰©å“>\n");
       if( me->is_busy() )
-      return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");  
+      return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");  
 	output = ("/adm/daemons/questd")->locate_obj(str);
 	write(output);
 if (!wizardp(me)) me->start_busy(1);

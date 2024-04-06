@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIW"Á¦Á¿Öé"NOR, ({ "jobzhu1" }) );
+    set_name(HIW"åŠ›é‡ç "NOR, ({ "jobzhu1" }) );
     set_weight(1);
             set("no_put", 1);
             set("value", 0);
@@ -15,9 +15,9 @@ void create()
             set("no_get", 1);
             set("no_beg", 1);
             set("value", 0);
-            set("unit", "¿Å");
+            set("unit", "é¢—");
             set("material", "paper");
-            set("long", "ÉñÖéÖ®Ò»,ÈôÊÇÄÜÕÒµ½ËùÓĞÉñÖé¾ÍÄÜ(hebing)¡£\n");
+            set("long", "ç¥ç ä¹‹ä¸€,è‹¥æ˜¯èƒ½æ‰¾åˆ°æ‰€æœ‰ç¥ç å°±èƒ½(hebing)ã€‚\n");
           }
 
     setup();
@@ -37,15 +37,15 @@ int do_hebing()
     || !(ob = present("jobzhu5", me))
     || !(ob = present("jobzhu6", me))
     )
-	tell_object(me,"ÖéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ç å¥½è±¡æ²¡é½.\n");
   else{
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
-        message_vision("$N°Ñ´Ó»³ÖĞÄÃ³öµÄ±ğµÄ¼¸¿ÅÖé,ºÍÊÖÖĞµÄÁ¦Á¿ÖéºÏ²¢³ÉÁËÒ»¿ÅÎŞµĞÖé²¢³ÔÁËÏÂÈ¥¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+        message_vision("$NæŠŠä»æ€€ä¸­æ‹¿å‡ºçš„åˆ«çš„å‡ é¢—ç ,å’Œæ‰‹ä¸­çš„åŠ›é‡ç åˆå¹¶æˆäº†ä¸€é¢—æ— æ•Œç å¹¶åƒäº†ä¸‹å»ã€‚\n", me);
  	me->add("combat_exp", 100000);
 	me->add("potential",100000);        
 	me->add("max_neili",1000);
@@ -62,12 +62,12 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
   	me->add("combat_exp", 2000);
 	me->add("potential",1000);        
 	me->add("max_neili",50);
-        message_vision(HIG "$N³Ô°ÑÖé³ÔÁËÏÂÈ¥£¬Ö»¾õµÃÈ«ÉíÊæ·şÁË²»ÉÙ!\n" NOR, me);
+        message_vision(HIG "$NåƒæŠŠç åƒäº†ä¸‹å»ï¼Œåªè§‰å¾—å…¨èº«èˆ’æœäº†ä¸å°‘!\n" NOR, me);
 	
 	destruct(this_object());
 	return 1;

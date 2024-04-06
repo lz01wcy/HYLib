@@ -5,10 +5,10 @@ inherit SHIELD;
 
 void create()
 {
-	set_name(YEL"ÖÚÉñÖ®¶Ü"NOR, ({ "light shield", "lightshield" }));
-	set("long", YEL"ÕâÊÇÒ»¼şÖÚÉñÖ®¶Ü£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(YEL"ä¼—ç¥ä¹‹ç›¾"NOR, ({ "light shield", "lightshield" }));
+	set("long", YEL"è¿™æ˜¯ä¸€ä»¶ä¼—ç¥ä¹‹ç›¾ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "Ãæ");
+	set("unit", "é¢");
 	set("armor_prop/karay",10);
 	set("value", 132000);
 	set("material", "gem");

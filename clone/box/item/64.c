@@ -8,15 +8,15 @@ inherit F_UNIQUE;
 void create()
 {
 
-        set_name(HIM"¹íÍ·µ¶"NOR, ({ "guitou dao","guitou","dao", "blade" }));
+        set_name(HIM"é¬¼å¤´åˆ€"NOR, ({ "guitou dao","guitou","dao", "blade" }));
         set_weight(35000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("rigidity", 9);
                 set("sharpness", 9);
-                set("long", "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄ¹íÍ·µ¶¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„é¬¼å¤´åˆ€ã€‚\n");
                 set("value", 1);
                 set("unique", 1);
                 set("weapon_prop/dodge", -10);
@@ -27,8 +27,8 @@ void create()
                 set("wield_str", 25);;
 		set("value", 10000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
 
         }
          init_blade(300);

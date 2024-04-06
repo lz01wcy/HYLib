@@ -1,4 +1,4 @@
-// °µºÚÖ®½£
+// æš—é»‘ä¹‹å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
@@ -6,14 +6,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIB"Ë®¾§Ø°Ê×"NOR, ({"water jian", "watersword"}));
+        set_name(HIB"æ°´æ™¶åŒ•é¦–"NOR, ({"water jian", "watersword"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIB"ÕâÊÇÒ»°ÑË®¾§Ø°Ê×,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞË®ÉñµÄÁ¦Á¿!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIB"è¿™æ˜¯ä¸€æŠŠæ°´æ™¶åŒ•é¦–,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰æ°´ç¥çš„åŠ›é‡!\n"NOR);
                 set("unique", 1);
                 set("value", 50000);
                 set("treasure",1);       
@@ -25,8 +25,8 @@ void create()
                 set("wield_maxneili", 3000);
                 set("wield_str", 30);        
                 set("treasure",1);       
-                set("wield_msg",HIB"Ò»ÕóÀ¶É«µÄ¹âÃ¢¹ıºó £¬$NµÄÊÖÉÏ¶à³öÁËÒ»°ÑË®¾§Ø°Ê×¡£\n"NOR);
-                set("unwield_msg",HIB"$NÊÕÆğÊÖÖĞµÄË®¾§Ø°Ê×¡£À¶É«µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wield_msg",HIB"ä¸€é˜µè“è‰²çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„æ‰‹ä¸Šå¤šå‡ºäº†ä¸€æŠŠæ°´æ™¶åŒ•é¦–ã€‚\n"NOR);
+                set("unwield_msg",HIB"$Næ”¶èµ·æ‰‹ä¸­çš„æ°´æ™¶åŒ•é¦–ã€‚è“è‰²çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
         }
      init_sword(670);
         setup();
@@ -45,6 +45,6 @@ if (victim->query("qi") > a)
 a=320+a;
 if (victim->query("eff_qi") > a)
                 victim->receive_wound("qi", a);
-message_vision(HIB"$n±»Ë®¾§Ø°Ê×ÉÏ·¢³öµÄ±ù¶³Çò¶³ÉËÁË!!\n"NOR, me,victim);
+message_vision(HIB"$nè¢«æ°´æ™¶åŒ•é¦–ä¸Šå‘å‡ºçš„å†°å†»çƒå†»ä¼¤äº†!!\n"NOR, me,victim);
 }
 }

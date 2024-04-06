@@ -10,16 +10,16 @@ void get_mail_text(mapping mail, string str);
 
 void create()
 {
-	set_name("ĞÅÏä", ({ "mailbox", "box" }) );
+	set_name("ä¿¡ç®±", ({ "mailbox", "box" }) );
 	set("long",
-		"ÕâÊÇ¸öÈËĞÅÏä£¬µ«ĞÅ¼şÄÚÈİ¶ÔÎ×Ê¦ÎŞ·¨±£ÃÜ£¬ÇëÎğÌ¸¼°¸öÈËÒşË½£º\n\n"
-		"mailto  <Ä³ÈË>            ¼ÄĞÅ¸ø±ğÈË¡£\n"
-		"forward <ĞÅ¼ş±àºÅ> <Ä³ÈË> ½«Ä³·âĞÅ×ª¼Ä¸ø±ğÈË¡£\n"
-		"from                      ²é¿´ĞÅÏäÖĞµÄĞÅ¼ş¡£\n"
-		"read    <ĞÅ¼ş±àºÅ>        ÔÄ¶ÁÄ³Ò»·âĞÅ¼ş¡£\n"
-		"discard <ĞÅ¼ş±àºÅ>        ¶ªÆúÒ»·âĞÅ¼ş¡£\n"
+		"è¿™æ˜¯ä¸ªäººä¿¡ç®±ï¼Œä½†ä¿¡ä»¶å†…å®¹å¯¹å·«å¸ˆæ— æ³•ä¿å¯†ï¼Œè¯·å‹¿è°ˆåŠä¸ªäººéšç§ï¼š\n\n"
+		"mailto  <æŸäºº>            å¯„ä¿¡ç»™åˆ«äººã€‚\n"
+		"forward <ä¿¡ä»¶ç¼–å·> <æŸäºº> å°†æŸå°ä¿¡è½¬å¯„ç»™åˆ«äººã€‚\n"
+		"from                      æŸ¥çœ‹ä¿¡ç®±ä¸­çš„ä¿¡ä»¶ã€‚\n"
+		"read    <ä¿¡ä»¶ç¼–å·>        é˜…è¯»æŸä¸€å°ä¿¡ä»¶ã€‚\n"
+		"discard <ä¿¡ä»¶ç¼–å·>        ä¸¢å¼ƒä¸€å°ä¿¡ä»¶ã€‚\n"
 	);
-	set("unit", "¸ö");
+	set("unit", "ä¸ª");
 	set("no_drop", 1);
 	set("no_steal", 1);
 	set("no_put", 1);
@@ -43,7 +43,7 @@ void init()
 	if( this_player() && environment()==this_player()) {
 		set_owner( (string)this_player()->query("id") );
 		this_player()->set_temp("mbox_ob", this_object());
-		set_name( this_player()->name(1) + "µÄĞÅÏä", ({ "mailbox", "box" }) );
+		set_name( this_player()->name(1) + "çš„ä¿¡ç®±", ({ "mailbox", "box" }) );
 if (!this_player()->is_busy())
 {
 		add_action("do_mail", "mailto");
@@ -81,10 +81,10 @@ void send_mail(string rcvr, mapping mail)
 	// Acquire the login object of receiver and mark the arrival of newmail.
 	ob = FINGER_D->acquire_login_ob(rcvr);
 	if( !ob ) {
-		write("Ã»ÓĞÕâ¸öÈË´æÔÚ¡£\n");
+		write("æ²¡æœ‰è¿™ä¸ªäººå­˜åœ¨ã€‚\n");
 		return;
 	}
-//ĞÅ¼ş¹ı¶à×Ô¶¯É¾³ı
+//ä¿¡ä»¶è¿‡å¤šè‡ªåŠ¨åˆ é™¤
 	if( sizeof(mails) > 16 )
 		mails = mails[16 / 2 .. 16];
 	set("mails", mails);
@@ -96,7 +96,7 @@ void send_mail(string rcvr, mapping mail)
 	ppl = find_player(rcvr);
 	if(ppl)
 	{
-        tell_object(ppl, HIG "ÂÌÁÖÓÊ²îÅÜ²½¹ıÀ´µİ¸øÄãÒ»·âĞÅ£¬×ªÉí¾Í×ßÁË¡£\n" NOR );
+        tell_object(ppl, HIG "ç»¿æ—é‚®å·®è·‘æ­¥è¿‡æ¥é€’ç»™ä½ ä¸€å°ä¿¡ï¼Œè½¬èº«å°±èµ°äº†ã€‚\n" NOR );
 		mbx = ppl->query_temp("mbox_ob");
 	}
 	if( !mbx ) {
@@ -120,19 +120,19 @@ int do_mail(string arg)
 	if( this_player()!=environment() ) return 0;
 
         if (this_player()->is_busy()) 
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( !arg || arg=="" )
-		return notify_fail("ÄãÒª¸øË­¼ÄĞÅ£¿\n");
+		return notify_fail("ä½ è¦ç»™è°å¯„ä¿¡ï¼Ÿ\n");
 
 	mail = ([
 		"from":	this_player()->name(1) + "(" + this_player()->query("id") + ")",
-		"title": "ÎŞÌâ",
+		"title": "æ— é¢˜",
 		"to": arg,
 		"time": time(),
 		"text": ""
 	]);
-	write("ĞÅ¼ş±êÌâ£º");
+	write("ä¿¡ä»¶æ ‡é¢˜ï¼š");
 	input_to("get_mail_title", mail);
 	return 1;
 }
@@ -141,7 +141,7 @@ void get_mail_title(string str, mapping mail)
 {
     str=CONVERT_D->input(str, this_player());
 	if( str!="" ) mail["title"] = str;
-	write("ĞÅ¼şÄÚÈİ£º\n");
+	write("ä¿¡ä»¶å†…å®¹ï¼š\n");
 	this_player()->edit( (: get_mail_text, mail :) );
 }
 
@@ -153,11 +153,11 @@ void get_mail_text(mapping mail, string str)
 	save();
         if (strlen(str) > 12000)
 {
-	write("ÄúµÄĞÅ¼şÈİÁ¿¹ı´óÁË!");
-    return notify_fail("ÄúµÄĞÅ¼şÈİÁ¿¹ı´óÁË!\n");
+	write("æ‚¨çš„ä¿¡ä»¶å®¹é‡è¿‡å¤§äº†!");
+    return notify_fail("æ‚¨çš„ä¿¡ä»¶å®¹é‡è¿‡å¤§äº†!\n");
 }
 	mail["text"] = str;
-	write("ÄúÒª¸ø×Ô¼ºÁôÒ»·İ±¸·İÂğ(y/n)£¿[n]");
+	write("æ‚¨è¦ç»™è‡ªå·±ç•™ä¸€ä»½å¤‡ä»½å—(y/n)ï¼Ÿ[n]");
 	input_to("confirm_copy", mail);
 }
 
@@ -178,12 +178,12 @@ int do_from()
 	int i;
 
 	if( !pointerp(mails) || !sizeof(mails) ) {
-		write("ÄúµÄĞÅÏäÖĞÄ¿Ç°Ã»ÓĞÈÎºÎĞÅ¼ş¡£\n");
+		write("æ‚¨çš„ä¿¡ç®±ä¸­ç›®å‰æ²¡æœ‰ä»»ä½•ä¿¡ä»¶ã€‚\n");
 		return 1;
 	}
-	write("ÄúµÄĞÅÏäÖĞÏÖÔÚ¹²ÓĞ " + sizeof(mails) + " ·âĞÅ¼ş£º\n\n");
+	write("æ‚¨çš„ä¿¡ç®±ä¸­ç°åœ¨å…±æœ‰ " + sizeof(mails) + " å°ä¿¡ä»¶ï¼š\n\n");
 	for(i=0; i<sizeof(mails); i++)
-		printf("%2d %-40s FM£º%-20s\n",
+		printf("%2d %-40s FMï¼š%-20s\n",
 			i+1, mails[i]["title"], mails[i]["from"]);
 	write("\n");
 	return 1;
@@ -194,14 +194,14 @@ int do_read(string arg)
 	int num;
 
 	if( !arg || !sscanf(arg, "%d", num) )
-		return notify_fail("ÄúÒª¶ÁÄÄÒ»·âĞÅ£¿\n");
+		return notify_fail("æ‚¨è¦è¯»å“ªä¸€å°ä¿¡ï¼Ÿ\n");
 
 	if( !pointerp(mails) || num < 1 || num > sizeof(mails) )
-		return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªç¼–å·çš„ä¿¡ä»¶ã€‚\n");
 
 	num --;
 
-	printf("ĞÅ¼ş±êÌâ£º%s\n¼Ä ĞÅ ÈË£º%s\n¼ÄĞÅÊ±¼ä£º%s\n\n%s\n",
+	printf("ä¿¡ä»¶æ ‡é¢˜ï¼š%s\nå¯„ ä¿¡ äººï¼š%s\nå¯„ä¿¡æ—¶é—´ï¼š%s\n\n%s\n",
 		mails[num]["title"], mails[num]["from"], ctime(mails[num]["time"]), mails[num]["text"] );
 	return 1;
 }
@@ -211,12 +211,12 @@ int do_discard(string arg)
 	int num;
 
 	if( !arg || !sscanf(arg, "%d", num) )
-		return notify_fail("ÄúÒª¶ªÆúÄÄÒ»·âĞÅ£¿\n");
+		return notify_fail("æ‚¨è¦ä¸¢å¼ƒå“ªä¸€å°ä¿¡ï¼Ÿ\n");
 
 	if( !pointerp(mails) || num > sizeof(mails) )
-		return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªç¼–å·çš„ä¿¡ä»¶ã€‚\n");
         if (this_player()->is_busy()) 
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	num --;
 
@@ -238,12 +238,12 @@ int do_forward(string arg)
 	mapping m;
 
         if (this_player()->is_busy()) 
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 	if( !arg || sscanf(arg, "%d %s", num, dest)!=2 )
-		return notify_fail("ÄúÒª½«ÄÄÒ»·âĞÅ×ª¼Ä¸ø±ğÈË£¿\n");
+		return notify_fail("æ‚¨è¦å°†å“ªä¸€å°ä¿¡è½¬å¯„ç»™åˆ«äººï¼Ÿ\n");
 
 	if( !pointerp(mails) || num > sizeof(mails) )
-		return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªç¼–å·çš„ä¿¡ä»¶ã€‚\n");
 
 	if( sizeof(mails) > 16 )
 		mails = mails[16 / 2 .. 16];
@@ -256,7 +256,7 @@ int do_forward(string arg)
 	m["title"] = mails[num]["title"];
 	m["text"] = mails[num]["text"];
 	m["time"] = mails[num]["time"];
-	m["from"] = mails[num]["from"] + "/×ª¼Ä×Ô" + this_player()->query("name");
+	m["from"] = mails[num]["from"] + "/è½¬å¯„è‡ª" + this_player()->query("name");
 	m["to"] = dest;
 	send_mail( dest, m );
         this_player()->start_busy(2);

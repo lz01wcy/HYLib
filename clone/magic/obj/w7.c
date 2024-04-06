@@ -1,18 +1,18 @@
-// ³¤±úÕ½¸«
+// é•¿æŸ„æˆ˜æ–§
 #include <ansi.h>
 #include <weapon.h>
 inherit STAFF;
 
 void create()
 {
-        set_name(RED"°«ÁéÈ¨ÕÈ"NOR, ({"wl staff", "wlstaff"}));
+        set_name(RED"çŸ®çµæƒæ–"NOR, ({"wl staff", "wlstaff"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIB"ÕâÊÇÒ»°Ñ°«ÁéÈ¨ÕÈ,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIB"è¿™æ˜¯ä¸€æŠŠçŸ®çµæƒæ–,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",10);

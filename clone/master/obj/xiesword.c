@@ -6,13 +6,13 @@ inherit SWORD;
 
 void create()
 {
-	set_name("ÈıÉÙÒ¯µÄ½£", ({ "xiesword" }) );
+	set_name("ä¸‰å°‘çˆ·çš„å‰‘", ({ "xiesword" }) );
 	set_weight(9000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°ÑºÚÓãÆ¤ÇÊ,»Æ½ğÍÌ¿ÚµÄ³¤½£,³¤Æß³ßÈı´æ,·İÁ¿´óÔ¼ÓĞÊ®À´½ï×óÓÒ¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠé»‘é±¼çš®é˜,é»„é‡‘åå£çš„é•¿å‰‘,é•¿ä¸ƒå°ºä¸‰å­˜,ä»½é‡å¤§çº¦æœ‰åæ¥æ–¤å·¦å³ã€‚\n");
 		set("value", 4000);
 		set("material", "steel");
 	}
@@ -21,8 +21,8 @@ void create()
 // These properties are optional, if you don't set them, it will use the
 // default values.
 
-	set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-	set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+	set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+	set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");
 
 // The setup() is required.
 

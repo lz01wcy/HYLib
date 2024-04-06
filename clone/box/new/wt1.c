@@ -1,4 +1,4 @@
-// huwan.c »¤Íó
+// huwan.c æŠ¤è…•
 
 #include <ansi.h>
 #include <armor.h>
@@ -7,12 +7,12 @@ inherit WRISTS;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});   
 void create()
 {
-	set_name( (order[random(13)])+"ÌìÓğ»¤Íó"NOR, ({ "wrists1"}) );
+	set_name( (order[random(13)])+"å¤©ç¾½æŠ¤è…•"NOR, ({ "wrists1"}) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ë«");
+		set("unit", "åŒ");
 		
 		set("value", 1300);
 		set("material", "cloth");

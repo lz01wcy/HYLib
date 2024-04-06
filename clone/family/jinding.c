@@ -1,4 +1,4 @@
-// jinkuai.c ½ğ¿é
+// jinkuai.c é‡‘å—
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(YEL "½ğ¶§" NOR, ({ "jin ding", "jin", "ding" }));
+	set_name(YEL "é‡‘é”­" NOR, ({ "jin ding", "jin", "ding" }));
 	set_weight(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¶§»Æ³Î³ÎµÄ½ğ¶§¡£\n");
+                set("long", "ä¸€é”­é»„æ¾„æ¾„çš„é‡‘é”­ã€‚\n");
                 set("value", 800000);
-		set("unit", "¶§");
+		set("unit", "é”­");
 	}
 }
 

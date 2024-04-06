@@ -2,23 +2,23 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name(RED"ÌúÖĞÌÄ"NOR, ({ "master tie", "master","tie" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name(RED"é“ä¸­æ£ "NOR, ({ "master tie", "master","tie" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 26);
         set("int", 30);
         set("per", 15);
 	set("agi",35);
         set("apprentice_available", 50);
 	set("long",
-		"ÌúÖĞÌÄÊÇÌúÑª´óÆìÃÅµÄ´«ÈË¡£\n"
+		"é“ä¸­æ£ æ˜¯é“è¡€å¤§æ——é—¨çš„ä¼ äººã€‚\n"
 		);
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(RED"ÏôÊ®Ò»ÀÉ"NOR, ({ "master xiao", "xiao"}) );
-        set("title", RED"¸îÂ¹µ¶"NOR);
+	set_name(RED"è§åä¸€éƒ"NOR, ({ "master xiao", "xiao"}) );
+        set("title", RED"å‰²é¹¿åˆ€"NOR);
         set("long",
-"ÏôÊ®Ò»ÀÉÊÇÎäÁÖÖĞµÄ´«ÆæÈËÎï£®£®\n"
+"è§åä¸€éƒæ˜¯æ­¦æ—ä¸­çš„ä¼ å¥‡äººç‰©ï¼ï¼\n"
                ); 
 
 }
@@ -98,7 +98,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

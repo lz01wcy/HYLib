@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"ԭʼɭ��"NOR);
+	set("short", GRN"原始森林"NOR);
 	set("long", GRN @LONG
-����һ��ԭʼɭ�֣�ɭ�����������ڣ�ˮ���������������Ǹ��ֶ��
+这是一个原始森林，森林中烟雾腾腾，水气弥漫。到处都是各种动物。
 LONG NOR);
 	set("exits", ([
 		"north" : __DIR__"dong81",

@@ -5,10 +5,10 @@ inherit HEAD;
 
 void create()
 {
-	set_name(HIC"²½ÔÆ¿ø"NOR, ({ "ice head", "icehead" }));
-	set("long", HIC"ÕâÊÇÒ»¸ö²½ÔÆ¿ø£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIC"æ­¥äº‘ç›”"NOR, ({ "ice head", "icehead" }));
+	set("long", HIC"è¿™æ˜¯ä¸€ä¸ªæ­¥äº‘ç›”ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¸ö");
+	set("unit", "ä¸ª");
 	set("value", 32000);
 	set("material", "gem");
 	set("armor_prop/armor", 80);

@@ -1,4 +1,4 @@
-// ÊôĞÔ·À»¤¾íÖá
+// å±æ€§é˜²æŠ¤å·è½´
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(BLU"»ìãçÁ¦³¡¾íÖá"NOR, ({ "dfield axes", "53axes" }) );
+        set_name(BLU"æ··æ²ŒåŠ›åœºå·è½´"NOR, ({ "dfield axes", "53axes" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÄ§·¨¾íÖá¿ÉÒÔÊ¹ÓÃ(spell id)ÉÏÃæµÄÄ§·¨¡£\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªé­”æ³•å·è½´å¯ä»¥ä½¿ç”¨(spell id)ä¸Šé¢çš„é­”æ³•ã€‚\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 140000);
                 set("zhen", 1);
         }
@@ -47,34 +47,34 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÎŞ·¨Ê¹ÓÃÕâ¸ö¾íÖá!\n");
+	return notify_fail("ä½ æ— æ³•ä½¿ç”¨è¿™ä¸ªå·è½´!\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
 
 	
         if(me->query("magicgift")==5 )
-                return notify_fail("ÄãÒÑ¾­ÊÇ°µÊôĞÔÁË!!\n");
+                return notify_fail("ä½ å·²ç»æ˜¯æš—å±æ€§äº†!!\n");
 
         if( this_object()->query("zhen") < 1 ) {
-        message_vision(HIY"\n$N"BLU"ÉÏµÄÄ§·¨Á¦Á¿ÓÃÍêÁË!  $N"BLU"ÏûÊ§ÁË¡£\n"NOR,this_object(),me);
+        message_vision(HIY"\n$N"BLU"ä¸Šçš„é­”æ³•åŠ›é‡ç”¨å®Œäº†!  $N"BLU"æ¶ˆå¤±äº†ã€‚\n"NOR,this_object(),me);
         destruct(this_object());
 return 1;
                 }
 
         if( !objectp(ob = present("dfield axes", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(BLU"\n$N"BLU"µÄÖÜÎ§ĞÎ³ÉÁËÒ»¸öÎŞĞÎµÄºÚ°µÁ¦³¡!¡£\n"NOR,this_object(),me);
+        message_vision(BLU"\n$N"BLU"çš„å‘¨å›´å½¢æˆäº†ä¸€ä¸ªæ— å½¢çš„é»‘æš—åŠ›åœº!ã€‚\n"NOR,this_object(),me);
         me->set("magicgift",5);
         this_object()->add("zhen", -1);
         me->start_busy(1) ;
         if( this_object()->query("zhen") < 1 ) {
-        message_vision(HIY"\n$N"BLU"ÉÏµÄÄ§·¨Á¦Á¿ÓÃÍêÁË!  $N"BLU"ÏûÊ§ÁË¡£\n"NOR,this_object(),me);
+        message_vision(HIY"\n$N"BLU"ä¸Šçš„é­”æ³•åŠ›é‡ç”¨å®Œäº†!  $N"BLU"æ¶ˆå¤±äº†ã€‚\n"NOR,this_object(),me);
         destruct(this_object());
 return 1;
                 }

@@ -1,4 +1,4 @@
-// ¾«ÉñÒ©·Û 
+// ç²¾ç¥è¯ç²‰ 
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(GRN"×êÊ¯Ò©·Û"NOR, ({ "jing iteme", "35item" }) );
+        set_name(GRN"é’»çŸ³è¯ç²‰"NOR, ({ "jing iteme", "35item" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°ü×êÊ¯Ò©·Û¿ÉÒÔÊ¹ÓÃ(use id)¡£¾İËµ¿ÉÒÔ»Ö¸´¾«Á¦\n") ;
+                set("long", "è¿™æ˜¯ä¸€åŒ…é’»çŸ³è¯ç²‰å¯ä»¥ä½¿ç”¨(use id)ã€‚æ®è¯´å¯ä»¥æ¢å¤ç²¾åŠ›\n") ;
 set("treasure",1);
-                set("unit", "°ü");
+                set("unit", "åŒ…");
 
                 set("value", 118000);
                 set("zhen", 1);
@@ -48,19 +48,19 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
 
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
         if( !objectp(ob = present("jing iteme", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(GRN"\n$n"GRN"Ò»¿Ú³ÔÏÂÁË$N"GRN"  $n¾õµÄÈ«ÉíÊæ·ş¶àÁË!  \n"NOR,this_object(),me);
+        message_vision(GRN"\n$n"GRN"ä¸€å£åƒä¸‹äº†$N"GRN"  $nè§‰çš„å…¨èº«èˆ’æœå¤šäº†!  \n"NOR,this_object(),me);
         me->start_busy(1) ;
 me->add("jing",1650);
 
@@ -72,7 +72,7 @@ if (me->query("jing") > me->query("max_jing")+1750)
 me->set("jing",me->query("max_jing")+1750);
 if (me->query("eff_jing") > me->query("max_jing"))
 me->set("eff_jing",me->query("max_jing"));
-message_vision(GRN"$NÉíÉÏµÄ¾«ÉñÁË²»ÉÙ!!\n"NOR, me);
+message_vision(GRN"$Nèº«ä¸Šçš„ç²¾ç¥äº†ä¸å°‘!!\n"NOR, me);
          }
 
 

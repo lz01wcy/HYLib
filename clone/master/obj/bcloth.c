@@ -7,13 +7,13 @@ inherit HEAD;
 #include <ansi.h>
 void create()
 {
-	set_name(HIR "±»ÏÊÑª½şÍ¸µÄ²¼Ìõ" NOR, ({ "cloth piece" }) );
+	set_name(HIR "è¢«é²œè¡€æµ¸é€çš„å¸ƒæ¡" NOR, ({ "cloth piece" }) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
-		set("long", "ÕâÊÇÌõ±»ÏÊÑª½şÍ¸µÄ²¼Ìõ¡£\n");
+		set("unit", "ä»¶");
+		set("long", "è¿™æ˜¯æ¡è¢«é²œè¡€æµ¸é€çš„å¸ƒæ¡ã€‚\n");
 		set("value", 1000);
 		set("material", "cloth");
 		set("armor_prop/dodge", -2);

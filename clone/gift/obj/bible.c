@@ -6,16 +6,16 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-	set_name(YEL"Ê¥¾­"NOR, ({ "bible"}));
+	set_name(YEL"åœ£ç»"NOR, ({ "bible"}));
 	set_weight(600);
 	set("task",1);
-	set("owner","½Ì¸¸");
+	set("owner","æ•™çˆ¶");
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long",
-			"ÕâÊÇÒ»±¾Ê¥¾­£¬ÉÏÃæĞ´ÁËÒ»Ğ©½ÌÒå¡£\n"
+			"è¿™æ˜¯ä¸€æœ¬åœ£ç»ï¼Œä¸Šé¢å†™äº†ä¸€äº›æ•™ä¹‰ã€‚\n"
 			);
 		set("value", 1000);
 		set("material", "paper");

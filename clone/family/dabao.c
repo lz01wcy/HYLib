@@ -1,4 +1,4 @@
-// xiaobao.c ´ó±¦
+// xiaobao.c å¤§å®
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "´ó±¦" NOR, ({ "da bao", "bao", "dabao" }) );
+        set_name(YEL "å¤§å®" NOR, ({ "da bao", "bao", "dabao" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿Å½ğ²Ó²ÓµÄµ¤Ò©£¬¾İËµ¿ÉÒÔÑøÑªÃÀÑÕ¡£\n");
+                set("long", "ä¸€é¢—é‡‘ç¿ç¿çš„ä¸¹è¯ï¼Œæ®è¯´å¯ä»¥å…»è¡€ç¾é¢œã€‚\n");
                 set("value", 50000);
-                set("unit", "¿Å");
+                set("unit", "é¢—");
                 set("per",10);
                 set("time",864000);
                 set("only_do_effect", 1);
@@ -24,21 +24,21 @@ int do_effect(object me)
 {
         if (me->query("have_meirong_dan"))
         {
-                tell_object(me, "ÄãÒÑ¾­·şÓÃ¹ıÀàËÆµÄÒ©Æ·£¬Ò©Á¦ÉĞÎ´ÏûÊ§£¬²»ÊÊÒË¼ÌĞø·şÓÃ£¡\n");
+                tell_object(me, "ä½ å·²ç»æœç”¨è¿‡ç±»ä¼¼çš„è¯å“ï¼Œè¯åŠ›å°šæœªæ¶ˆå¤±ï¼Œä¸é€‚å®œç»§ç»­æœç”¨ï¼\n");
                 return 1;
         }
         
-        log_file("static/using", sprintf("%s(%s) eat ´ó±¦ at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat å¤§å® at %s.\n",
                  me->name(1), me->query("id"), ctime(time())));
 
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¢—" + this_object()->name() +
+                       "ã€‚\n", me);
 
-        message("vision", "ÄãËÆºõ¸Ğ¾õ" + me->name() + "µÄÃæÈİ½¥½¥Ä£ºıÆğÀ´£¬²»ÓÉÏÅÁËÒ»´óÌø£¡\n",
+        message("vision", "ä½ ä¼¼ä¹æ„Ÿè§‰" + me->name() + "çš„é¢å®¹æ¸æ¸æ¨¡ç³Šèµ·æ¥ï¼Œä¸ç”±å“äº†ä¸€å¤§è·³ï¼\n",
                           environment(me), ({ me }));
 
-        tell_object(me, HIY "ÄãÖÜÉíµÄÆ¤·ôÑ÷Ñ÷µÄËÆºõÒª±ÀÁÑ¿ªÀ´£¬"
-                        "ºÃÔÚÒ»»á¶ù¾ÍÍ£ÁËÏÂÀ´£¬»ëÉíÉÏÏÂÇáËÉºÜ¶à¡£\n" NOR);
+        tell_object(me, HIY "ä½ å‘¨èº«çš„çš®è‚¤ç—’ç—’çš„ä¼¼ä¹è¦å´©è£‚å¼€æ¥ï¼Œ"
+                        "å¥½åœ¨ä¸€ä¼šå„¿å°±åœäº†ä¸‹æ¥ï¼Œæµ‘èº«ä¸Šä¸‹è½»æ¾å¾ˆå¤šã€‚\n" NOR);
 
         me->set("have_meirong_dan", this_object()->query("per"));
         me->set("meirong_time", time() + this_object()->query("time"));

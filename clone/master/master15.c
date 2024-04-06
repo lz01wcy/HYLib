@@ -3,15 +3,15 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name("ÀîÓñº¯", ({ "master li", "master","li" }) );
-	set("gender", "ÄĞĞÔ" );
-        set("title", HIC"»ÆÉ½ÅÉÕÆÃÅ"NOR);
+	set_name("æç‰å‡½", ({ "master li", "master","li" }) );
+	set("gender", "ç”·æ€§" );
+        set("title", HIC"é»„å±±æ´¾æŒé—¨"NOR);
 	set("age", 25);
 	set("int", 30);
 	set("per", 30);
         set("apprentice_available", 50);
 	set("long",
-		"ÀîÓñº¯ÄËÌìÏÂµÚÒ»½£¿ÍÀî¹ÛÓãÖ®×Ó£¬³öÉíÓµ´äÉ½×¯£¬ÒòÉÙÄêÓĞÎª¶ø±»ÈÎÎª»ÆÉ½ÅÉÕÆÃÅ\n"
+		"æç‰å‡½ä¹ƒå¤©ä¸‹ç¬¬ä¸€å‰‘å®¢æè§‚é±¼ä¹‹å­ï¼Œå‡ºèº«æ‹¥ç¿ å±±åº„ï¼Œå› å°‘å¹´æœ‰ä¸ºè€Œè¢«ä»»ä¸ºé»„å±±æ´¾æŒé—¨\n"
 		);
         set("force_factor", 20);
         set("max_gin", 3000);
@@ -56,10 +56,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIR"²·Ó¥"NOR, ({ "master ying", "master"}) );
-        set("title", WHT"·çÁåÖĞµÄµ¶Éù"NOR);
+	set_name(HIR"åœé¹°"NOR, ({ "master ying", "master"}) );
+        set("title", WHT"é£é“ƒä¸­çš„åˆ€å£°"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -106,7 +106,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

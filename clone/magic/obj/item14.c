@@ -1,4 +1,4 @@
-// »Ø¸´¼Á
+// å›å¤å‰‚
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIG"ÖÎÁÆ¼Á"NOR, ({ "heal itemd", "14item" }) );
+        set_name(HIG"æ²»ç–—å‰‚"NOR, ({ "heal itemd", "14item" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÖÎÁÆ¼Á¿ÉÒÔÊ¹ÓÃ(use id)¡£\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªæ²»ç–—å‰‚å¯ä»¥ä½¿ç”¨(use id)ã€‚\n") ;
 set("treasure",1);
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 75000);
                 set("zhen", 1);
         }
@@ -47,19 +47,19 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÒªÓÃÊ²Ã´¶«Î÷?\n");
+	return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆä¸œè¥¿?\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
 
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
         if( !objectp(ob = present("heal itemd", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-        message_vision(HIG"\n$n"HIG"Ò»¿ÚºÈÏÂÁË$N"HIG"  $n¾õµÄÈ«ÉíÊæ·ş¶àÁË!  \n"NOR,this_object(),me);
+        message_vision(HIG"\n$n"HIG"ä¸€å£å–ä¸‹äº†$N"HIG"  $nè§‰çš„å…¨èº«èˆ’æœå¤šäº†!  \n"NOR,this_object(),me);
 me->add("qi",800);
 me->add("eff_qi",800);
         me->start_busy(1) ;
@@ -71,7 +71,7 @@ if (me->query("qi") > me->query("max_qi")+750)
 me->set("qi",me->query("max_qi")+750);
 if (me->query("eff_qi") > me->query("max_qi"))
 me->set("eff_qi",me->query("max_qi"));
-message_vision(HIG"$NÉíÉÏµÄÉËºÃÁË²»ÉÙ!!\n"NOR, me);
+message_vision(HIG"$Nèº«ä¸Šçš„ä¼¤å¥½äº†ä¸å°‘!!\n"NOR, me);
         }
 
 

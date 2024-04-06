@@ -7,12 +7,12 @@ inherit HEAD;
 
 void create()
 {
-	set_name(  "˜»”∞…ÒΩÌ" , ({ "ghosty ribbon", "ribbon" }) );
+	set_name(  "È≠ÖÂΩ±Á•ûÂ∑æ" , ({ "ghosty ribbon", "ribbon" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ãı");
+		set("unit", "Êù°");
 		set("value", 4000);
 		set("material", "cloth");
 		set("armor_prop/armor", 10);

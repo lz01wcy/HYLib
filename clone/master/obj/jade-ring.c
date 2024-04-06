@@ -5,18 +5,18 @@ inherit FINGER;
 
 void create()
 {
-	set_name(HIC "êèÓñ½äÖ¸" NOR, ({ "jade-ring"}) );
+	set_name(HIC "è§‡ç‰æˆ’æŒ‡" NOR, ({ "jade-ring"}) );
 	set_weight(1);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸ö´äÂÌÓûµÎµÄÓñ½äÖ¸\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç¿ ç»¿æ¬²æ»´çš„ç‰æˆ’æŒ‡\n");
+		set("unit", "ä¸ª");
 		set("value", 1000);
 		set("armor_prop/armor", 10);
 		set("armor_prop/personality", 3);
-		set("wear_msg", "$NÇáÇáµØ°ÑÒ»¸ö$n´÷ÔÚÊÖÖ¸ÉÏ¡£\n");
-		set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÊÖÖ¸ÉÏ³ıÁËÏÂÀ´¡£\n");
+		set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€ä¸ª$næˆ´åœ¨æ‰‹æŒ‡ä¸Šã€‚\n");
+		set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»æ‰‹æŒ‡ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
 
 
 	}

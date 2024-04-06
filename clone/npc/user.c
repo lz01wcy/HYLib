@@ -15,7 +15,7 @@ static int last_age_set;
 void create()
 {
 	::create();
-	set_name("Ê¹ÓÃÕßÎï¼ş", ({ "user object", "user", "object" }) );	
+	set_name("ä½¿ç”¨è€…ç‰©ä»¶", ({ "user object", "user", "object" }) );	
 }
 
 string age_string(int time)
@@ -30,7 +30,7 @@ string age_string(int time)
 void terminal_type(string term_type)
 {
 	set_temp("terminal_type", term_type);
-	message("system", "ÖÕ¶Ë»úĞÍÌ¬Éè¶¨Îª " + term_type + "¡£\n", this_object());
+	message("system", "ç»ˆç«¯æœºå‹æ€è®¾å®šä¸º " + term_type + "ã€‚\n", this_object());
 }
 
 void reset()
@@ -106,7 +106,7 @@ int do_action1(string arg)
 	if(!obj) obj = find_player(objname);
 	if(!obj) obj = find_object(resolve_path(me->query("cwd"), objname));
 	if(objname=="me") obj = me;
-	if(!obj) return notify_fail("ÕÒ²»µ½Ö¸¶¨µÄÎï¼ş¡£\n");
+	if(!obj) return notify_fail("æ‰¾ä¸åˆ°æŒ‡å®šçš„ç‰©ä»¶ã€‚\n");
 	args = explode(param, ",");
 	for(i=0; i<sizeof(args); i++) {
 		parse_command(args[i], environment(me), "%s", args[i]);
@@ -146,9 +146,9 @@ string finger_player(string arg)
 	string msg;
 	int i , wiz_cnt ;
 	ob = users(); wiz_cnt = 0;
-	msg =   "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-		+ "ĞÕÃû          ÕÊºÅ          ÄêÁä          ·¢´ô       Á¬Ïß\n" +
-		"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n" ;
+	msg =   "â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n"
+		+ "å§“å          å¸å·          å¹´é¾„          å‘å‘†       è¿çº¿\n" +
+		"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n" ;
 	for(i=0; i<sizeof(ob); i++) {
 		if( wizardp(ob[i]) ) wiz_cnt++;
 		msg = sprintf("%s%-14s%-14s%-14s%-7s%s\n",
@@ -156,26 +156,26 @@ string finger_player(string arg)
 			age_string( (int)ob[i]->query("mud_age")), 
 			query_idle(ob[i]) + "s", query_ip_name(ob[i]));
 	}
-	msg +=	"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
-	msg = sprintf("%s¹²ÓĞ %d Î»Î×Ê¦ÔÚÏßÉÏ.\n", msg, wiz_cnt );
+	msg +=	"â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n";
+	msg = sprintf("%så…±æœ‰ %d ä½å·«å¸ˆåœ¨çº¿ä¸Š.\n", msg, wiz_cnt );
 	return (msg);
 }
 private void user_dump(int type)
 {
 	switch(type) {
 		case DUMP_NET_DEAD:
-			tell_room( environment(), query("name") + "¶ÏÏß³¬¹ı "
-				+ NET_DEAD_TIMEOUT/60 + " ·ÖÖÓ£¬×Ô¶¯ÍË³öÕâ¸öÊÀ½ç¡£\n");
+			tell_room( environment(), query("name") + "æ–­çº¿è¶…è¿‡ "
+				+ NET_DEAD_TIMEOUT/60 + " åˆ†é’Ÿï¼Œè‡ªåŠ¨é€€å‡ºè¿™ä¸ªä¸–ç•Œã€‚\n");
 			command("quit");
 			break;
 		case DUMP_IDLE:
                        if ((this_object()->query("id") != "ding") &&
                        (this_object()->query("id") != "rover"))
                          {
-			tell_object( this_object(), "¶Ô²»Æğ£¬ÄúÒÑ¾­·¢´ô³¬¹ı " 
-				+ IDLE_TIMEOUT/60 + " ·ÖÖÓÁË£¬ÇëÏÂ´ÎÔÙÀ´¡£\n");
-			tell_room( environment(), "Ò»Õó·ç´µÀ´£¬½«·¢´ôÖĞµÄ" + query("name")
-				+ "»¯ÎªÒ»¶Ñ·É»Ò£¬ÏûÊ§ÁË¡£\n", ({this_object()}));
+			tell_object( this_object(), "å¯¹ä¸èµ·ï¼Œæ‚¨å·²ç»å‘å‘†è¶…è¿‡ " 
+				+ IDLE_TIMEOUT/60 + " åˆ†é’Ÿäº†ï¼Œè¯·ä¸‹æ¬¡å†æ¥ã€‚\n");
+			tell_room( environment(), "ä¸€é˜µé£å¹æ¥ï¼Œå°†å‘å‘†ä¸­çš„" + query("name")
+				+ "åŒ–ä¸ºä¸€å †é£ç°ï¼Œæ¶ˆå¤±äº†ã€‚\n", ({this_object()}));
 			command("quit");
                         }
 			break;
@@ -199,8 +199,8 @@ private void net_dead()
 	set_temp("netdead", 1);
 	if( userp(this_object()) ) {
 		call_out("user_dump", NET_DEAD_TIMEOUT, DUMP_NET_DEAD);
-	    tell_room(environment(), query("name") + "¶ÏÏßÁË¡£", this_object());
-	    CHANNEL_D->do_channel(this_object(), "sys", "¶ÏÏßÁË¡£");
+	    tell_room(environment(), query("name") + "æ–­çº¿äº†ã€‚", this_object());
+	    CHANNEL_D->do_channel(this_object(), "sys", "æ–­çº¿äº†ã€‚");
 	} else {
 		command("quit");
 	}
@@ -212,6 +212,6 @@ void reconnect()
 	set_heart_beat(1);
 	set_temp("netdead",0);
 	remove_call_out("user_dump");
-	tell_object(this_object(), "ÖØĞÂÁ¬ÏßÍê±Ï¡£\n");
+	tell_object(this_object(), "é‡æ–°è¿çº¿å®Œæ¯•ã€‚\n");
 }
 

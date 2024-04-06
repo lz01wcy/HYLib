@@ -4,18 +4,18 @@
 inherit SWORD;
 void create()
 {
-	set_name( HIR "º®Ìì´µÑª" NOR, ({ "soulcrasher" }) );
+	set_name( HIR "å¯’å¤©å¹è¡€" NOR, ({ "soulcrasher" }) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñ½£ÉíÉÏÓĞÒ»µÀ°µºìÉ«Ñª²ÛµÄ³¤½£¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠå‰‘èº«ä¸Šæœ‰ä¸€é“æš—çº¢è‰²è¡€æ§½çš„é•¿å‰‘ã€‚\n");
 		set("value", 4000);
 		set("material", "steel");
 		set("rigidity", 20000);
-		set("wield_msg", "$N´ÓÒøÉ«½£ÇÊÖĞ³é³öÒ»°ÑÓĞÒ»µÀ°µºìÉ«Ñª²ÛµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄÒøÉ«½£ÇÊ¡£\n");
+		set("wield_msg", "$Nä»é“¶è‰²å‰‘é˜ä¸­æŠ½å‡ºä¸€æŠŠæœ‰ä¸€é“æš—çº¢è‰²è¡€æ§½çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„é“¶è‰²å‰‘é˜ã€‚\n");
 	}
 	init_sword(240);
 	setup();

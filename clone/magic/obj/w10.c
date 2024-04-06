@@ -1,18 +1,18 @@
-// µØÓü¹í¸«
+// åœ°ç‹±é¬¼æ–§
 #include <ansi.h>
 #include <weapon.h>
 inherit CLUB;
 
 void create()
 {
-        set_name(HIG"ÃÀ½òÅ¨Çó°ô"NOR, ({"magic clubc", "mclubc"}));
+        set_name(HIG"ç¾æ´¥æµ“æ±‚æ£’"NOR, ({"magic clubc", "mclubc"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIG"ÕâÊÇÒ»°ÑÃÀ½òÅ¨Çó°ô,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIG"è¿™æ˜¯ä¸€æŠŠç¾æ´¥æµ“æ±‚æ£’,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("value", 15000);
 		set("armor_prop/armor",40);

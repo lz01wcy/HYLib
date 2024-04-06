@@ -7,14 +7,14 @@ inherit BOOTS;
 
 void create()
 {
-	set_name(HIC "Ìì¿ÕÕ½Ñ¥" NOR, ({ "air boot", "airboot"}) );
-       	set("long", HIC"ÕâÊÇÒ»Ë«Ìì¿ÕÕ½Ñ¥,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»¡£\n"NOR);
+	set_name(HIC "å¤©ç©ºæˆ˜é´" NOR, ({ "air boot", "airboot"}) );
+       	set("long", HIC"è¿™æ˜¯ä¸€åŒå¤©ç©ºæˆ˜é´,åšå·¥æå…¶ç²¾è‡´ã€‚æ˜¯ä¼—ç¥çš„é—äº§ä¹‹ä¸€ã€‚\n"NOR);
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "wood");
-		set("unit", "Ë«");
+		set("unit", "åŒ");
 		set("no_put", 1);
 		set("no_get", 1);
 		set("no_drop", 1);
@@ -34,8 +34,8 @@ void create()
                 ]) );
 		set("armor_prop/armor",150);
 		set("armor_prop/damage", 250);
-                set("wear_msg",HIC"Ò»ÕóÌìÀ¶µÄ¹âÃ¢¹ıºó £¬$NµÄ½ÅÉÏ¶à³öÁËÒ»Ë«Ìì¿ÕÕ½Ñ¥¡£\n"NOR);
-                set("unequip_msg",HIC"$N°ÑÌì¿ÕÕ½Ñ¥ÍÑÏÂ¡£ÌìÀ¶µÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",HIC"ä¸€é˜µå¤©è“çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„è„šä¸Šå¤šå‡ºäº†ä¸€åŒå¤©ç©ºæˆ˜é´ã€‚\n"NOR);
+                set("unequip_msg",HIC"$NæŠŠå¤©ç©ºæˆ˜é´è„±ä¸‹ã€‚å¤©è“çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 	}
 	setup();
 }
@@ -53,7 +53,7 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(4)==0)
 {
-message_vision(HIC"$N½ÅÉÏµÄÌì¿ÕÕ½Ñ¥·¢³öÒ«ÑÛµÄ¹âÃ¢£¬Ò»µÀÉÁµç´òÏò$n£¡\n"NOR, me,ob);
+message_vision(HIC"$Nè„šä¸Šçš„å¤©ç©ºæˆ˜é´å‘å‡ºè€€çœ¼çš„å…‰èŠ’ï¼Œä¸€é“é—ªç”µæ‰“å‘$nï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3)
 {
 a = (int)me->query_skill("magic-ice", 1);
@@ -61,17 +61,17 @@ a=300+a*2;
                 ob->receive_damage("qi", a);
 a=300+a;
                 ob->receive_wound("qi", a);
-message_vision(HIR"$n¸ù±¾Ã»·¨¶ã±Ü£¬Ò»µÀÉÁµç¶Ë¶ËÕıÕı´òÖĞ$n!\n"NOR, me,ob);
+message_vision(HIR"$næ ¹æœ¬æ²¡æ³•èº²é¿ï¼Œä¸€é“é—ªç”µç«¯ç«¯æ­£æ­£æ‰“ä¸­$n!\n"NOR, me,ob);
 }
-else message_vision(HIR"ÉÁµçÔÚ$nÉí²à»®¹ı£¬$nºÁ·¢ÎŞÉË¡£!\n"NOR, me,ob);
+else message_vision(HIR"é—ªç”µåœ¨$nèº«ä¾§åˆ’è¿‡ï¼Œ$næ¯«å‘æ— ä¼¤ã€‚!\n"NOR, me,ob);
 }
 if (random(4)==1)
 {
-message_vision(HIC"$n½ÅÉÏµÄÌì¿ÕÕ½Ñ¥·¢³öÒ«ÑÛµÄ¹âÃ¢°üÎ§ÁË$n£¡\n"NOR, ob,me);
+message_vision(HIC"$nè„šä¸Šçš„å¤©ç©ºæˆ˜é´å‘å‡ºè€€çœ¼çš„å…‰èŠ’åŒ…å›´äº†$nï¼\n"NOR, ob,me);
 if (me->is_busy())
 {
 me->start_busy(1);
-message_vision(HIC"$nÔ­±¾²»Ì«Áé»îµÄĞĞ¶¯£¬»Ö¸´ÁË£¡\n"NOR, ob,me);
+message_vision(HIC"$nåŸæœ¬ä¸å¤ªçµæ´»çš„è¡ŒåŠ¨ï¼Œæ¢å¤äº†ï¼\n"NOR, ob,me);
 }
 }
 else   return damage;

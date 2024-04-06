@@ -7,13 +7,13 @@ inherit SHIELD;
 
 void create()
 {
-	set_name(RED "¿Ö¾åÖ®¶Ü" NOR, ({ "dark shield","darkshield"}) );
+	set_name(RED "ææƒ§ä¹‹ç›¾" NOR, ({ "dark shield","darkshield"}) );
 	set_weight(1500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", RED"\nÕâÊÇÒ»Ãæ¿Ö¾åÖ®¶Ü,×ö¹¤¼«Æä¾«ÖÂ¡£ÉÏÃæÓĞºÚ°µµÄÁ¦Á¿!\n"NOR);
-		set("unit", "Ãæ");
+		set("long", RED"\nè¿™æ˜¯ä¸€é¢ææƒ§ä¹‹ç›¾,åšå·¥æå…¶ç²¾è‡´ã€‚ä¸Šé¢æœ‰é»‘æš—çš„åŠ›é‡!\n"NOR);
+		set("unit", "é¢");
                 set("value", 50000);
                 set("treasure",1);       
                 set("wield_neili", 2000);
@@ -25,8 +25,8 @@ void create()
          set("armor_prop/strength",10);
                 set("wield_maxneili", 3000);
                 set("wield_str", 30);        
-                set("wear_msg",RED"Ò»ÕóÑªºìµÄ¹âÃ¢¹ıºó £¬$NµÄÊÖÉÏ¶àÁËÒ»Ãæ¿Ö¾åÖ®¶Ü¡£\n"NOR);
-                set("unequip_msg",RED"$N°Ñ¿Ö¾åÖ®¶ÜÍÑÏÂ¡£ÑªºìµÄ¹âÃ¢Ò²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wear_msg",RED"ä¸€é˜µè¡€çº¢çš„å…‰èŠ’è¿‡å ï¼Œ$Nçš„æ‰‹ä¸Šå¤šäº†ä¸€é¢ææƒ§ä¹‹ç›¾ã€‚\n"NOR);
+                set("unequip_msg",RED"$NæŠŠææƒ§ä¹‹ç›¾è„±ä¸‹ã€‚è¡€çº¢çš„å…‰èŠ’ä¹Ÿè·Ÿç€æ¶ˆå¤±äº†ã€‚\n"NOR);
 		set("armor_prop/armor", 500);
 	}
 	setup();
@@ -37,7 +37,7 @@ int ob_hit(object ob, object me, int damage)
    int neili,a;
 if (random(4)==0)
 {
-message_vision(HIR"$NÉíÉÏµÄ¿Ö¾åÖ®¶ÜÇ°³ö´óÁ¿µÄÄ§Á¦ÖÆÔì³öĞ¡ĞÍµÄºÚ¶´´òÏò$nÈ«Éí£¡\n"NOR, me,ob);
+message_vision(HIR"$Nèº«ä¸Šçš„ææƒ§ä¹‹ç›¾å‰å‡ºå¤§é‡çš„é­”åŠ›åˆ¶é€ å‡ºå°å‹çš„é»‘æ´æ‰“å‘$nå…¨èº«ï¼\n"NOR, me,ob);
  if ( random(me->query("combat_exp"))>(int)ob->query("combat_exp")/3
 && ob->query("magicgift")==6)
 {
@@ -50,9 +50,9 @@ ob->receive_damage("qi", a);
 a=200+damage;
 ob->receive_wound("qi", a);
 }
-message_vision(HIC"$n±»°µºÚºËÈÚÊõ´òµÄ²»ÄÜ¶¯µ¯!\n"NOR, me,ob);
+message_vision(HIC"$nè¢«æš—é»‘æ ¸èæœ¯æ‰“çš„ä¸èƒ½åŠ¨å¼¹!\n"NOR, me,ob);
 }
-message_vision(HIC"$nËùÓĞµÄ¹¥»÷È«±»¿Ö¾åÖ®¶Üµµ×¡£¡\n"NOR, me,ob);
+message_vision(HIC"$næ‰€æœ‰çš„æ”»å‡»å…¨è¢«ææƒ§ä¹‹ç›¾æ¡£ä½ï¼\n"NOR, me,ob);
 return 0;
 }	
 else   return damage;

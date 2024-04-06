@@ -4,18 +4,18 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-	set_name(YEL"¸ğÂ×"NOR, ({ "master gelun", "master","gelun" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name(YEL"è‘›ä¼¦"NOR, ({ "master gelun", "master","gelun" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 99);
 	set("int", 30);
         set("apprentice_available", 20);
 
 	set("long",
-		"¸ğÂ×¸ßÉ®ÒÑÔÚ´óÕÑËÂÖ÷³Ö¶àÄê¡£ÄĞÅ®µÜ×Ó±é²¼¹ØÍâ¡£\n"
+		"è‘›ä¼¦é«˜åƒ§å·²åœ¨å¤§æ˜­å¯ºä¸»æŒå¤šå¹´ã€‚ç”·å¥³å¼Ÿå­éå¸ƒå…³å¤–ã€‚\n"
 		);
 	set("inquiry", ([
-		"ÉáÀû×Ó": "àÅ....ÉáÀû×Ó.....ÔÚÉáÀûËşÀï¡£\n",
-		"ÆÕËÉ": "ÆÕËÉÔÚ´óÕÑËÂµÄÄ¾ÎİÀï¡£",
+		"èˆåˆ©å­": "å—¯....èˆåˆ©å­.....åœ¨èˆåˆ©å¡”é‡Œã€‚\n",
+		"æ™®æ¾": "æ™®æ¾åœ¨å¤§æ˜­å¯ºçš„æœ¨å±‹é‡Œã€‚",
 	]) );
         set("combat_exp", 6000000);
         set("score", 90000);
@@ -62,10 +62,10 @@ void create()
 set("pubmaster",1);
 if (random(2)==0)
 {
-	set_name(HIG"»¨ÎŞÈ±"NOR, ({ "master hua", "master"}) );
-        set("title", HIG"¾ø´úË«½¾"NOR);
+	set_name(HIG"èŠ±æ— ç¼º"NOR, ({ "master hua", "master"}) );
+        set("title", HIG"ç»ä»£åŒéª„"NOR);
         set("long",
-"µ±´ú¾ø¶¥¸ßÊÖÖ®Ò»£®£®\n"
+"å½“ä»£ç»é¡¶é«˜æ‰‹ä¹‹ä¸€ï¼ï¼\n"
                ); 
         set("chat_chance", 3);
         set("chat_msg", ({
@@ -112,7 +112,7 @@ int accept_object(object who, object ob)
 		}
 	}
 	who->add_temp("learn_timeb",i);
-command("say ¼ÈÈ»Äã³ÏĞÄÏëÑ§ÎÒµÄÎä¹¦£¬ÎÒ¾Í³ÉÈ«³ÉÈ«Äã°É¡£");
+command("say æ—¢ç„¶ä½ è¯šå¿ƒæƒ³å­¦æˆ‘çš„æ­¦åŠŸï¼Œæˆ‘å°±æˆå…¨æˆå…¨ä½ å§ã€‚");
 	return 1;
 }
 

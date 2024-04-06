@@ -1,4 +1,4 @@
-// yulusan.c ÓñÂ¶ÇåĞÂÉ¢
+// yulusan.c ç‰éœ²æ¸…æ–°æ•£
 
 #include <ansi.h>
 
@@ -15,16 +15,16 @@ void init()
 
 void create()
 {
-	set_name(HIG"ÓñÂ¶ÇåĞÂÉ¢"NOR, ({"yulu qingxinsan", "yulu", "san"}));
+	set_name(HIG"ç‰éœ²æ¸…æ–°æ•£"NOR, ({"yulu qingxinsan", "yulu", "san"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°ü");
+		set("unit", "åŒ…");
 		set("vegetable", 11);
 		set("nostrum", 22);
 		set("level", 130);
 		set("lev", 3+random(5));
-		set("long","ÕâÊÇÒ»°üµ­ÂÌ¾§Ó¨µÄÓñÂ¶ÇåĞÂÉ¢¡£¾İËµÄËÄ½ÈİÊÀ¼ÒµÄÕäÒ©£¬Ìá¸ß¹¦Á¦£¬ÁéĞ§ÎŞ±È¡£\n");
+		set("long","è¿™æ˜¯ä¸€åŒ…æ·¡ç»¿æ™¶è¹çš„ç‰éœ²æ¸…æ–°æ•£ã€‚æ®è¯´ä¹ƒæ…•å®¹ä¸–å®¶çš„çè¯ï¼Œæé«˜åŠŸåŠ›ï¼Œçµæ•ˆæ— æ¯”ã€‚\n");
 		set("value", 10000);
 
 	}
@@ -44,17 +44,17 @@ pot = exp/2;
 	force_limit = me->query_skill("force")*10;
 	neili_limit = me->query("max_neili");
 	
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 
 	me->start_busy(2);
 	if ( me->query_skill_mapped("force") != "shenyuan-gong" && 1==2 )
 	{
 		me->add("max_neili", -10);
-		message_vision(HIR "$N³ÔÏÂÒ»°üÓñÂ¶ÇåĞÂÉ¢£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬Ô­À´ËùÁ·ÄÚ¹¦²»·û£¬·´¶ø´óËğÕæÔª£¡\n" NOR, me);
+		message_vision(HIR "$Nåƒä¸‹ä¸€åŒ…ç‰éœ²æ¸…æ–°æ•£ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼ŒåŸæ¥æ‰€ç»ƒå†…åŠŸä¸ç¬¦ï¼Œåè€Œå¤§æŸçœŸå…ƒï¼\n" NOR, me);
 //		me->unconcious();
 		me->start_busy(10);
 	}
@@ -62,7 +62,7 @@ pot = exp/2;
 	{
        me->add("combat_exp",exp);
        me->add("potential",pot);
-message_vision("$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!\n", me);
+message_vision("$Nè·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!\n", me);
 i=1+random(3);
 if (random(12)==0 || wizardp(me))
 {
@@ -76,18 +76,18 @@ else
 {
 me->add("expmax",i);
 }       
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, me);
+message_vision(HIR"$Nè·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, me);
 }       
 }	
 		if ( (int)me->query_condition("bonze_drug" ) > 0 )
 		{
 			me->add("max_neili", -1);
-			message_vision(HIR "$N³ÔÏÂÒ»°üÓñÂ¶ÇåĞÂÉ¢£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+			message_vision(HIR "$Nåƒä¸‹ä¸€åŒ…ç‰éœ²æ¸…æ–°æ•£ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 		}
 		else if ( neili_limit <= force_limit  )
 		{
 			me->add("max_neili", 1);
-			message_vision(HIG "$N³ÔÏÂÒ»°üÓñÂ¶ÇåĞÂÉ¢£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬¹ı×Ï¹¬£¬ÈëÄàÍè\nÍ¸Ê®¶şÖØÂ¥£¬±é²¼Ææ½î°ËÂö£¬È«Éí¹¦Á¦¶ÙÈ»Ìá¸ß !\n" NOR, me);
+			message_vision(HIG "$Nåƒä¸‹ä¸€åŒ…ç‰éœ²æ¸…æ–°æ•£ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œè¿‡ç´«å®«ï¼Œå…¥æ³¥ä¸¸\né€åäºŒé‡æ¥¼ï¼Œéå¸ƒå¥‡ç­‹å…«è„‰ï¼Œå…¨èº«åŠŸåŠ›é¡¿ç„¶æé«˜ !\n" NOR, me);
 		}
 		me->apply_condition("bonze_drug", 60);
 	}

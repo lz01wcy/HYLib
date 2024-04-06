@@ -2,9 +2,9 @@
 inherit ITEM;
 
 string* book_name = ({
-"ºìÂ¥´ºÃÎ", "ÏÉÏçÑŞ¾³", "ÓñÂ¥´º", "½ğÆ¿Ã·", "ÁÄÕ«ÑŞÊ·", "Æ·»¨±¦¼ø", "·É»¨ÑŞÏë",
-"²ÉÅ®´«", "ÈçÒâ¾ı´«", "µÆ²İºÍÉĞ",  "Óñ½¿Àö", "ÕÑÑôÈ¤Ê·", "ÈâÆÑÍÅ", "ºìĞäÌíÏã´«",
-"ĞÓ»¨Ìì", "´ºµÆÃÔÊ·", "ÑıºüÑŞÊ·",  "°Ë¶Î½õ", "³ÕÆÅ×Ó´«", "ÎäÔòÌìÍâÊ·", "ÑŞ»éÒ°Ê·"
+"çº¢æ¥¼æ˜¥æ¢¦", "ä»™ä¹¡è‰³å¢ƒ", "ç‰æ¥¼æ˜¥", "é‡‘ç“¶æ¢…", "èŠæ–‹è‰³å²", "å“èŠ±å®é‰´", "é£èŠ±è‰³æƒ³",
+"é‡‡å¥³ä¼ ", "å¦‚æ„å›ä¼ ", "ç¯è‰å’Œå°š",  "ç‰å¨‡ä¸½", "æ˜­é˜³è¶£å²", "è‚‰è’²å›¢", "çº¢è¢–æ·»é¦™ä¼ ",
+"æèŠ±å¤©", "æ˜¥ç¯è¿·å²", "å¦–ç‹è‰³å²",  "å…«æ®µé”¦", "ç—´å©†å­ä¼ ", "æ­¦åˆ™å¤©å¤–å²", "è‰³å©šé‡å²"
 });
 
 void create()
@@ -13,7 +13,7 @@ void create()
         set("material", "paper");
         set("dynamic_questjia",1);
         set("value", 5000);
-        set("unit", "±¾");
+        set("unit", "æœ¬");
         set("material", "paper");   
         setup();
 }
@@ -48,68 +48,68 @@ int do_action()
         object me = this_player();
         object ob = this_object();
 
-write( CYN+me->name()+"ÄÃÆğÁË"+ob->name()+CYN+"Ï¸Ï¸µÄ¿´ÁËÆğÀ´!\n" NOR);
-write( CYN+me->name()+"Í»È»ĞÄÓĞËùÎò!\n" NOR);
+write( CYN+me->name()+"æ‹¿èµ·äº†"+ob->name()+CYN+"ç»†ç»†çš„çœ‹äº†èµ·æ¥!\n" NOR);
+write( CYN+me->name()+"çªç„¶å¿ƒæœ‰æ‰€æ‚Ÿ!\n" NOR);
         
         switch(random(12))
         {
                 case 0 : 
-                //write( CYN "ÄãËµµÀ£º¡¸ÎÒÊÇÖí¡£¡¹\n" NOR);
-                //message("sound", CYN + me->name() + "ËµµÀ£º¡¸ÎÒÊÇÖí¡£¡¹\n" NOR, environment(me), me);
+                //write( CYN "ä½ è¯´é“ï¼šã€Œæˆ‘æ˜¯çŒªã€‚ã€\n" NOR);
+                //message("sound", CYN + me->name() + "è¯´é“ï¼šã€Œæˆ‘æ˜¯çŒªã€‚ã€\n" NOR, environment(me), me);
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
                 me->add("max_neili",-1);
                 me->set("qi",8);
-                write( CYN+me->name()+"µÄÆøÑª¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„æ°”è¡€äºæŸäº†!\n" NOR);
                 break;
                 case 1 :
-                //CHANNEL_D->do_channel(me, "chat", "ÎÒÕæµÄÊÇÒ»Í·Öí¡£");
+                //CHANNEL_D->do_channel(me, "chat", "æˆ‘çœŸçš„æ˜¯ä¸€å¤´çŒªã€‚");
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
                 me->add("max_neili",-1);
                 me->set("jing",8);
-                write( CYN+me->name()+"µÄ¾«Æø¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„ç²¾æ°”äºæŸäº†!\n" NOR);
                 break;
                 case 2 :
-                //message("channel:chat", HIW + me->name() + "×İÉù³¤Ğ¥£º¡¸ÎÒÈ·È·ÊµÊµÊÇÒ»Í·Öí¡¹\n"NOR, users()); 
+                //message("channel:chat", HIW + me->name() + "çºµå£°é•¿å•¸ï¼šã€Œæˆ‘ç¡®ç¡®å®å®æ˜¯ä¸€å¤´çŒªã€\n"NOR, users()); 
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
-                write( CYN+me->name()+"µÄÄÚÁ¦¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„å†…åŠ›äºæŸäº†!\n" NOR);
                 me->add("max_neili",-1);
                 me->set("neili",0);
                 break;
 
                 case 3 : 
-                //write( CYN "ÄãËµµÀ£º¡¸ÎÒÊÇÖí¡£¡¹\n" NOR);
-                //message("sound", CYN + me->name() + "ËµµÀ£º¡¸ÎÒÊÇÖí¡£¡¹\n" NOR, environment(me), me);
+                //write( CYN "ä½ è¯´é“ï¼šã€Œæˆ‘æ˜¯çŒªã€‚ã€\n" NOR);
+                //message("sound", CYN + me->name() + "è¯´é“ï¼šã€Œæˆ‘æ˜¯çŒªã€‚ã€\n" NOR, environment(me), me);
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
                 me->add("max_neili",-1);
                 me->set("qi",8);
-                write( CYN+me->name()+"µÄÆøÑª¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„æ°”è¡€äºæŸäº†!\n" NOR);
                 break;
                 case 4 :
-                //CHANNEL_D->do_channel(me, "chat", "ÎÒÕæµÄÊÇÒ»Í·Öí¡£");
+                //CHANNEL_D->do_channel(me, "chat", "æˆ‘çœŸçš„æ˜¯ä¸€å¤´çŒªã€‚");
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
                 me->add("max_neili",-1);
                 me->set("jing",8);
-                write( CYN+me->name()+"µÄ¾«Æø¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„ç²¾æ°”äºæŸäº†!\n" NOR);
                 break;
                 case 5 :
-                //message("channel:chat", HIW + me->name() + "×İÉù³¤Ğ¥£º¡¸ÎÒÈ·È·ÊµÊµÊÇÒ»Í·Öí¡¹\n"NOR, users()); 
+                //message("channel:chat", HIW + me->name() + "çºµå£°é•¿å•¸ï¼šã€Œæˆ‘ç¡®ç¡®å®å®æ˜¯ä¸€å¤´çŒªã€\n"NOR, users()); 
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
-                write( CYN+me->name()+"µÄÄÚÁ¦¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„å†…åŠ›äºæŸäº†!\n" NOR);
                 me->add("max_neili",-1);
                 me->set("neili",0);
                 break;
                 case 6 : 
-                //write( CYN "ÄãËµµÀ£º¡¸ÎÒÊÇÖí¡£¡¹\n" NOR);
-                //message("sound", CYN + me->name() + "ËµµÀ£º¡¸ÎÒÊÇÖí¡£¡¹\n" NOR, environment(me), me);
+                //write( CYN "ä½ è¯´é“ï¼šã€Œæˆ‘æ˜¯çŒªã€‚ã€\n" NOR);
+                //message("sound", CYN + me->name() + "è¯´é“ï¼šã€Œæˆ‘æ˜¯çŒªã€‚ã€\n" NOR, environment(me), me);
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
                 me->add("max_neili",-1);
                 me->set("qi",8);
-                write( CYN+me->name()+"µÄÆøÑª¿÷ËğÁË!\n" NOR);
+                write( CYN+me->name()+"çš„æ°”è¡€äºæŸäº†!\n" NOR);
                 break;
                 case 7 :
                 if (me->query("combat_exp",1)> 1000) me->add("combat_exp",-800);
-                //message("channel:chat", HIW + me->name() + "×İÉù³¤Ğ¥£º¡¸ÎÒÈ·È·ÊµÊµÊÇÒ»Í·Öí¡¹\n"NOR, users()); 
-                write( CYN+me->name()+"ÓÃÁ¦¹ı¶È£¬»èËÀ¹ıÈ¥!\n" NOR);
+                //message("channel:chat", HIW + me->name() + "çºµå£°é•¿å•¸ï¼šã€Œæˆ‘ç¡®ç¡®å®å®æ˜¯ä¸€å¤´çŒªã€\n"NOR, users()); 
+                write( CYN+me->name()+"ç”¨åŠ›è¿‡åº¦ï¼Œæ˜æ­»è¿‡å»!\n" NOR);
                 me->add("max_neili",-1);
                 me->set("jing",8);
                 me->set("qi",8);

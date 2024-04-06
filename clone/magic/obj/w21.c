@@ -1,18 +1,18 @@
-// ²¼Â×Ï£¶àÉñ±Ş
+// å¸ƒä¼¦å¸Œå¤šç¥é­
 #include <ansi.h>
 #include <weapon.h>
 inherit BLADE;
 
 void create()
 {
-        set_name(BLU"ËÀÉñÁ­µ¶"NOR, ({"magic bladef", "mbladef"}));
+        set_name(BLU"æ­»ç¥é•°åˆ€"NOR, ({"magic bladef", "mbladef"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", BLU"ÕâÊÇÒ»°ÑËÀÉñÁ­µ¶,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", BLU"è¿™æ˜¯ä¸€æŠŠæ­»ç¥é•°åˆ€,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                 set("armor_prop/strength",15);
                 set("value", 165000);

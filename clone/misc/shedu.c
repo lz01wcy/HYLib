@@ -8,12 +8,12 @@ int do_eat(string arg);
 void create()
 {
         set_weight(50);
-        set_name(HIG "Éß¶¾" NOR, ({"she du", "du", "shedu"}));
+        set_name(HIG "è›‡æ¯’" NOR, ({"she du", "du", "shedu"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
-                set("long", "ÕâÊÇÒ»Á£ÓÉÉß¶¾¶¾Òº¾«ÖÆ¶ø³ÉµÄ¶¾Ò©£¬Ö»ÒªÒ»¶¡µã¾Í¿ÉÒÔÖÃÈËÓÚËÀµØ£¡\n");
+                set("unit", "ç²’");
+                set("long", "è¿™æ˜¯ä¸€ç²’ç”±è›‡æ¯’æ¯’æ¶²ç²¾åˆ¶è€Œæˆçš„æ¯’è¯ï¼Œåªè¦ä¸€ä¸ç‚¹å°±å¯ä»¥ç½®äººäºæ­»åœ°ï¼\n");
                 set("value", 50);
 		set("poison_type", "poison");
                 set("can_pour", 1);
@@ -22,7 +22,7 @@ void create()
                 set("poison", ([
                         "level" : 250,
                         "id"    : "ouyang feng",
-                        "name"  : "Éß¶¾",
+                        "name"  : "è›‡æ¯’",
                         "duration": 20,
                 ]));
                 set("no_sell", 1);
@@ -39,10 +39,10 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if( !id(arg) ) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        message_vision("$NÒ»Ñö²±£¬°Ñ¶¾Ò©È«²¿µ¹ÈëÁË×ìÖĞ¡£\n",
+        if( !id(arg) ) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+        message_vision("$Nä¸€ä»°è„–ï¼ŒæŠŠæ¯’è¯å…¨éƒ¨å€’å…¥äº†å˜´ä¸­ã€‚\n",
                        me);
-        me->set_temp("die_reason", "³ÔÁËÉß¶¾±©±ĞÉíÍöÁË");
+        me->set_temp("die_reason", "åƒäº†è›‡æ¯’æš´æ¯™èº«äº¡äº†");
         me->die();
         destruct(this_object());
         return 1;

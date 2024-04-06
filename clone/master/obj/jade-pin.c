@@ -5,18 +5,18 @@ inherit HEAD;
 
 void create()
 {
-	set_name(HIC "êèÓñ·¢ô¢" NOR, ({ "jade-pin"}) );
+	set_name(HIC "è§‡ç‰å‘ç°ª" NOR, ({ "jade-pin"}) );
 	set_weight(1);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸ö´äÂÌÓûµÎµÄÓñ·¢ô¢\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç¿ ç»¿æ¬²æ»´çš„ç‰å‘ç°ª\n");
+		set("unit", "ä¸ª");
 		set("value", 2000);
 		set("armor_prop/armor", 10);
 		set("armor_prop/personality", 3);
-		set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-		set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+		set("wear_msg", "$Nè½»è½»åœ°æŠŠä¸€æœµ$næˆ´åœ¨å¤´ä¸Šã€‚\n");
+		set("unwield_msg", "$Nè½»è½»åœ°æŠŠ$nä»å¤´ä¸Šé™¤äº†ä¸‹æ¥ã€‚\n");
 
 
 	}

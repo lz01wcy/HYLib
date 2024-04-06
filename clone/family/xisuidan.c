@@ -1,4 +1,4 @@
-// xisuidan.c œ…µ§
+// xisuidan.c ‰ªô‰∏π
 
 #include <ansi.h>
 
@@ -6,38 +6,38 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "œ¥ÀËµ§" NOR, ({ "xisui dan", "dan", "xisuidan" }) );
+        set_name(YEL "Ê¥óÈ´ì‰∏π" NOR, ({ "xisui dan", "dan", "xisuidan" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "“ªø≈∫⁄≤ª¡Ô«Ôµƒµ§“©£¨≤ª÷™µ¿”– ≤√¥”√°£\n");
+                set("long", "‰∏ÄÈ¢óÈªë‰∏çÊ∫úÁßãÁöÑ‰∏πËçØÔºå‰∏çÁü•ÈÅìÊúâ‰ªÄ‰πàÁî®„ÄÇ\n");
                 set("value", 10000);
-                set("unit", "ø≈");
+                set("unit", "È¢ó");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$N“ª—ˆ≤±£¨ÕÃœ¬¡À“ªø≈" + this_object()->name() +
-                       "°£\n", me);
+        message_vision("$N‰∏Ä‰ª∞ËÑñÔºåÂêû‰∏ã‰∫Ü‰∏ÄÈ¢ó" + this_object()->name() +
+                       "„ÄÇ\n", me);
         if (me->query("gift/xisuidan") >= 5 ||
             me->query("gift/con/succeed") >= 5)
         {
-                message_vision("$NÕª»ª∑≈¡À“ª∏ˆ∆Ê≥ÙŒﬁ±»µƒœÏ∆®°£\n", me);
-                tell_object(me, "ƒ„æıµ√¥Û∏≈ «≥‘ªµ¡À∂«◊”°£\n");
+                message_vision("$NÁ™ÅÁÑ∂Êîæ‰∫Ü‰∏Ä‰∏™Â•áËá≠Êó†ÊØîÁöÑÂìçÂ±Å„ÄÇ\n", me);
+                tell_object(me, "‰Ω†ËßâÂæóÂ§ßÊ¶ÇÊòØÂêÉÂùè‰∫ÜËÇöÂ≠ê„ÄÇ\n");
         } else
         if (random(5) == 0)
         {
                 me->add("gift/con/fail", 1);
-                tell_object(me, "≤ªπ˝ƒ„æıµ√∫√œÒ√ª ≤√¥◊˜”√°£\n");
+                tell_object(me, "‰∏çËøá‰Ω†ËßâÂæóÂ•ΩÂÉèÊ≤°‰ªÄ‰πà‰ΩúÁî®„ÄÇ\n");
         } else
         {
-                message("vision", "ƒ„À∆∫ıÃ˝º˚" + me->name() + "µƒπ«Õ∑ª©¿≤¿≤µƒœÏ°£\n",
+                message("vision", "‰Ω†‰ºº‰πéÂê¨ËßÅ" + me->name() + "ÁöÑÈ™®Â§¥ÂìóÂï¶Âï¶ÁöÑÂìç„ÄÇ\n",
                                   environment(me), ({ me }));
-                tell_object(me, HIY "ƒ„ªÎ…Ìµƒπ«˜¿µ« ±ª©¿≤¿≤µƒœÏ∏ˆ≤ªÕ££¨ø…∞—ƒ„œ≈ªµ¡À£¨"
-                                "∫√‘⁄“ªª·∂˘æÕÕ£¡Àœ¬¿¥£¨À∆∫ıΩÓπ«∏¸¡ÈªÓ¡À°£\n" NOR);
+                tell_object(me, HIY "‰Ω†ÊµëË∫´ÁöÑÈ™®È™ºÁôªÊó∂ÂìóÂï¶Âï¶ÁöÑÂìç‰∏™‰∏çÂÅúÔºåÂèØÊää‰Ω†ÂêìÂùè‰∫ÜÔºå"
+                                "Â•ΩÂú®‰∏Ä‰ºöÂÑøÂ∞±ÂÅú‰∫Ü‰∏ãÊù•Ôºå‰ºº‰πéÁ≠ãÈ™®Êõ¥ÁÅµÊ¥ª‰∫Ü„ÄÇ\n" NOR);
                 me->add("gift/con/succeed", 1);
                 me->add("con", 1);
         }

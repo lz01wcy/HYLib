@@ -1,4 +1,4 @@
-// »Ø³ÇÊõ
+// å›åŸæœ¯
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,21 +14,21 @@ int thunderspell(object me, object target)
 
 	spells = me->query_skill("spells");
 	if((int)me->query("neili")< 500)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
-        msg = HIC"   $NÉíÓ°ÔÚ$nÃæÇ°ÏûÊ§ÁË!  \n"NOR;
+        msg = HIC"   $Nèº«å½±åœ¨$né¢å‰æ¶ˆå¤±äº†!  \n"NOR;
 
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp"))
         {
 
-        msg += HIC"$n"HIC"Í»È»·¢ÏÖ$N²»¼ûÁË£¬Ö»ºÃÍ£ÏÂÁË¹¥ÊÆ!!\n"NOR;
+        msg += HIC"$n"HIC"çªç„¶å‘ç°$Nä¸è§äº†ï¼Œåªå¥½åœä¸‹äº†æ”»åŠ¿!!\n"NOR;
                 target->remove_all_enemy();
                 me->remove_all_enemy();
 		message_combatd(msg, me, target);
 //		COMBAT_D->report_status(target);
         } else
         {
-        msg += HIC"$n"HIC"Ë«Ä¿Ò»ÉÁ£¬Ê¶ÆÆÁËÄãµÄÒşÉíÊõ!\n"NOR;
+        msg += HIC"$n"HIC"åŒç›®ä¸€é—ªï¼Œè¯†ç ´äº†ä½ çš„éšèº«æœ¯!\n"NOR;
 		message_combatd(msg, me, target);
         }
 me->add("neili",-150);
@@ -38,14 +38,14 @@ me->add("neili",-150);
 }
 void create()
 {
-        set_name(HIC"ÒşÉíÊõ¾íÖá"NOR, ({ "invisibe axes", "41axes" }) );
+        set_name(HIC"éšèº«æœ¯å·è½´"NOR, ({ "invisibe axes", "41axes" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÄ§·¨¾íÖá¿ÉÒÔÊ¹ÓÃ(spell id)ÉÏÃæµÄÄ§·¨¡£\n") ;
+                set("long", "è¿™æ˜¯ä¸€ä¸ªé­”æ³•å·è½´å¯ä»¥ä½¿ç”¨(spell id)ä¸Šé¢çš„é­”æ³•ã€‚\n") ;
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 140000);
                 set("zhen", 1);
         }
@@ -69,35 +69,35 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÎŞ·¨Ê¹ÓÃÕâ¸ö¾íÖá!\n");
+	return notify_fail("ä½ æ— æ³•ä½¿ç”¨è¿™ä¸ªå·è½´!\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
         if( me->query("combat_exp")< 500000)
-        return notify_fail("ÄãµÄ¾­ÑéÌ«ÉÙÓÃ²»ÁË£¡\n");
+        return notify_fail("ä½ çš„ç»éªŒå¤ªå°‘ç”¨ä¸äº†ï¼\n");
 
         if (me->query("neili") < 400)
-        return notify_fail("ÄãµÄ·¨Á¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼\n");
 
         if (me->is_busy()) 
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
 
 	if((int)me->query("neili")< 500)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 	
 
         if( this_object()->query("zhen") < 1 ) {
-        message_vision(HIC"\n$N"HIC"ÉÏµÄÄ§·¨Á¦Á¿ÓÃÍêÁË!  $N"HIC"ÏûÊ§ÁË¡£\n"NOR,this_object(),me);
+        message_vision(HIC"\n$N"HIC"ä¸Šçš„é­”æ³•åŠ›é‡ç”¨å®Œäº†!  $N"HIC"æ¶ˆå¤±äº†ã€‚\n"NOR,this_object(),me);
         destruct(this_object());
 return 1;
                 }
 
         if( !objectp(ob = present("invisibe axes", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
-	msg = HIC "$N"HIC"ÉíĞÎÒ»ÉÁ£¬¿ÚÖĞà«à«µØÄîÖøÖäÎÄ£¬\n" NOR;
-       msg += HIC"$NµÄ¶¯×÷Í»È»±äµÄÂıÁËÏÂÀ´£¬ÔÚÌìÀ¶É«µÄ¹âÃ¢ÏÂ, $NµÄÉíÌåÂıÂı±äÍ¸Ã÷ÆğÀ´£¡\n"NOR;
-       msg += HIC"  ¡¸ÒşÉíÊõ¡¹ \n"NOR;
+	msg = HIC "$N"HIC"èº«å½¢ä¸€é—ªï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œ\n" NOR;
+       msg += HIC"$Nçš„åŠ¨ä½œçªç„¶å˜çš„æ…¢äº†ä¸‹æ¥ï¼Œåœ¨å¤©è“è‰²çš„å…‰èŠ’ä¸‹, $Nçš„èº«ä½“æ…¢æ…¢å˜é€æ˜èµ·æ¥ï¼\n"NOR;
+       msg += HIC"  ã€Œéšèº«æœ¯ã€ \n"NOR;
 	message_vision(msg, me,target);
 	env = environment(me);
         inv = all_inventory(env);
@@ -109,7 +109,7 @@ return 1;
         }
 	me->start_busy(3);
         if( this_object()->query("zhen") < 1 ) {
-        message_vision(HIC"\n$N"HIC"ÉÏµÄÄ§·¨Á¦Á¿ÓÃÍêÁË!  $N"HIC"ÏûÊ§ÁË¡£\n"NOR,this_object(),me);
+        message_vision(HIC"\n$N"HIC"ä¸Šçš„é­”æ³•åŠ›é‡ç”¨å®Œäº†!  $N"HIC"æ¶ˆå¤±äº†ã€‚\n"NOR,this_object(),me);
         destruct(this_object());
 return 1;
                 }

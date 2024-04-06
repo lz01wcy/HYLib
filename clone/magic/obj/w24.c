@@ -1,18 +1,18 @@
-// ²¼Â×Ï£¶àÉñ±Ş
+// å¸ƒä¼¦å¸Œå¤šç¥é­
 #include <ansi.h>
 #include <weapon.h>
 inherit THROWING;
 
 void create()
 {
-        set_name(BLU"ÃğÊÀÖ®°µÆ÷"NOR, ({"magic throwingf", "mthrowingf"}));
+        set_name(BLU"ç­ä¸–ä¹‹æš—å™¨"NOR, ({"magic throwingf", "mthrowingf"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
-                set("long", BLU"ÕâÊÇÒ»°ÑÃğÊÀÖ®°µÆ÷,×ö¹¤¼«Æä¾«ÖÂ!\n"NOR);
+                set("unit", "æ”¯");
+                set("long", BLU"è¿™æ˜¯ä¸€æŠŠç­ä¸–ä¹‹æš—å™¨,åšå·¥æå…¶ç²¾è‡´!\n"NOR);
                 set("unique", 1);
                  set("armor_prop/intelligence",15);
                 set("value", 200);

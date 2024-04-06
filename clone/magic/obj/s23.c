@@ -5,10 +5,10 @@ inherit ARMOR;
 
 void create()
 {
-	set_name(HIR"»ìãç·¨ÒÂ"NOR, ({ "dark cloth", "darkcloth" }));
-	set("long", HIR"ÕâÊÇÒ»¼ş»ìãç·¨ÒÂ£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(HIR"æ··æ²Œæ³•è¡£"NOR, ({ "dark cloth", "darkcloth" }));
+	set("long", HIR"è¿™æ˜¯ä¸€ä»¶æ··æ²Œæ³•è¡£ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "¼ş");
+	set("unit", "ä»¶");
 	set("armor_prop/intelligence",15);
 	set("value", 132000);
 	set("material", "gem");

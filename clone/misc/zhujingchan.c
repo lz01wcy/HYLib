@@ -7,26 +7,26 @@ void init()
 }
 void create()
 {
-	set_name(HIR"Öì"NOR"¾¦"HIC"±ù"NOR"ó¸"NOR, ({"chan"}));
-	set("unit", "Ö»");
+	set_name(HIR"æœ±"NOR"ç›"HIC"å†°"NOR"èŸ¾"NOR, ({"chan"}));
+	set("unit", "åª");
 	set("value", 300000);
-	set("long", "ÕâÊÇÒ»Ç§ÄêÄÑµÃÒ»¼ûµÄÖì¾¦±ùó¸, Í¨ÌåÍ¸Ã÷,
-Î©ÑÛ³Ê³àÉ«, ÄÜ½â°Ù¶¾¡£\n");
+	set("long", "è¿™æ˜¯ä¸€åƒå¹´éš¾å¾—ä¸€è§çš„æœ±ç›å†°èŸ¾, é€šä½“é€æ˜Ž,
+æƒŸçœ¼å‘ˆèµ¤è‰², èƒ½è§£ç™¾æ¯’ã€‚\n");
 	setup();
 }
 
 int do_eat(string arg)
 {
 	object me=this_player();
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
 	if (me->is_fighting() )
-		return notify_fail("´ò¼ÜÊ±³Ô£¬²»ÒªÕÒËÀÁË!!\n");
+		return notify_fail("æ‰“æž¶æ—¶åƒï¼Œä¸è¦æ‰¾æ­»äº†!!\n");
 
 	if(arg=="chan") 
 	{
-message_vision(HIG"$N³ÔÏÂÒ»Ö»Öì¾¦±ùó¸£¬Ö»¾õÒ»¹ÉÇåÏãÇßÈëÐÄ·Î£¬¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷£¬ÉñÒâÇåË¬£¡\n" NOR, me);
+message_vision(HIG"$Nåƒä¸‹ä¸€åªæœ±ç›å†°èŸ¾ï¼Œåªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚ºï¼Œé¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜Žï¼Œç¥žæ„æ¸…çˆ½ï¼\n" NOR, me);
 		if (me->query_condition("drunk"))
 			me->apply_condition("drunk",0);
 		if (me->query_condition("flower_poison"))

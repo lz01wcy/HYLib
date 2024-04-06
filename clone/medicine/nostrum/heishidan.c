@@ -1,4 +1,4 @@
-// heishidan.c ºÚÊ¯Óñ¶´µ¤
+// heishidan.c é»‘çŸ³ç‰æ´ä¸¹
 
 inherit ITEM;
 #include <ansi.h>
@@ -10,14 +10,14 @@ void init()
 }
 void create()
 {
-	set_name(HIB"ºÚÊ¯Óñ¶´µ¤"NOR, ({"heishi yudongdan", "dan"}));
-	set("unit", "Á£");
+	set_name(HIB"é»‘çŸ³ç‰æ´ä¸¹"NOR, ({"heishi yudongdan", "dan"}));
+	set("unit", "ç²’");
 	set("vegetable", 51);
 	set("nostrum", 80);
 	set("level", 100);
 	set("lev", 3+random(5));
 	set("value", 10000);
-	set("long", "ÕâÊÇÒ»Á£ÄÜ½â°Ù¶¾µÄºÚÊ¯Óñ¶´µ¤¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ç²’èƒ½è§£ç™¾æ¯’çš„é»‘çŸ³ç‰æ´ä¸¹ã€‚\n");
 	set("pour_type", "1");
 
 	setup();
@@ -31,16 +31,16 @@ int exp,pot,i;
 exp = 888+random(888);
 pot = exp/2;
 
-	if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 
-	message_vision(HIG"$N³ÔÏÂÒ»Á£ºÚÊ¯Óñ¶´µ¤£¬Ö»¾õÒ»¹É¿àÉ¬µÄ×ÌÎ¶Ö±Í¸ĞÄÒÜ¡£\n" NOR, me);
+	message_vision(HIG"$Nåƒä¸‹ä¸€ç²’é»‘çŸ³ç‰æ´ä¸¹ï¼Œåªè§‰ä¸€è‚¡è‹¦æ¶©çš„æ»‹å‘³ç›´é€å¿ƒè‡†ã€‚\n" NOR, me);
        me->add("combat_exp",exp);
        me->add("potential",pot);
-message_vision("$N»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé,"+chinese_number(pot)+"µãÇ±ÄÜ!\n", me);
+message_vision("$Nè·å¾—äº†"+chinese_number(exp)+"ç‚¹ç»éªŒ,"+chinese_number(pot)+"ç‚¹æ½œèƒ½!\n", me);
 i=1+random(3);
 if (random(12)==0 || wizardp(me))
 {
@@ -54,7 +54,7 @@ else
 {
 me->add("expmax",i);
 }       
-message_vision(HIR"$N»ñµÃÁË"+chinese_number(i)+"µã³É³¤ÉÏÏŞ!\n"NOR, me);
+message_vision(HIR"$Nè·å¾—äº†"+chinese_number(i)+"ç‚¹æˆé•¿ä¸Šé™!\n"NOR, me);
 }       
 }
 	if (me->query_condition("chanchu_poison"))

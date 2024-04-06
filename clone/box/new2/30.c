@@ -1,4 +1,4 @@
-// °µºÚºËÈÚÊõ¾íÖá
+// æš—é»‘æ ¸èæœ¯å·è½´
 
 #include <ansi.h>
 inherit ITEM;
@@ -19,14 +19,14 @@ object offensive_target(object me)
 
 void create()
 {
-        set_name(HIR"¾«ÈñºÉÀ¼»ğÇ¹"NOR, ({ "helan huoqiang", "huoqiang" }) );
+        set_name(HIR"ç²¾é”è·å…°ç«æª"NOR, ({ "helan huoqiang", "huoqiang" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°Ñ¿ÉÒÔÊ¹ÓÃµÄÎäÆ÷¡£µ«Ö»ÓĞÒ»·¢×Óµ¯£¬¿ÉÒÔÊ¹ÓÃ(use)\n") ;
+                set("long", "è¿™æ˜¯ä¸€æŠŠå¯ä»¥ä½¿ç”¨çš„æ­¦å™¨ã€‚ä½†åªæœ‰ä¸€å‘å­å¼¹ï¼Œå¯ä»¥ä½¿ç”¨(use)\n") ;
 
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 150000);
                 set("zhen", 3);
         }
@@ -49,37 +49,37 @@ int do_shot(string arg)
         me = this_player();
 
  	if (!id(arg))
-	return notify_fail("ÄãÎŞ·¨Ê¹ÓÃÕâ¸ö!\n");
+	return notify_fail("ä½ æ— æ³•ä½¿ç”¨è¿™ä¸ª!\n");
 	
-        if( !arg ) return notify_fail("ÄãÏë¶ÔË­Ê¹ÓÃ£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³å¯¹è°ä½¿ç”¨ï¼Ÿ\n");
 
       if( !target ) target = offensive_target(me);
 
       if( !target || !target->is_character() || !me->is_fighting(target) )
-              return notify_fail("Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !target->is_character() || target->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
 
 
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("¶Ô·½±ÈÄãÈõĞ¡£¬Ã»±ØÒªÊ¹ÓÃ£¡\n");
+	return notify_fail("å¯¹æ–¹æ¯”ä½ å¼±å°ï¼Œæ²¡å¿…è¦ä½¿ç”¨ï¼\n");
 	
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
 
         if( !objectp(ob = present("helan huoqiang", me)) )
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è¿™ç§ä¸œè¥¿ã€‚\n");
 
 if (target->is_busy())
-return notify_fail("ÏÖÔÚÕıÊÇÓÃ¹¥»÷µĞÈËµÄÊ±ºò°¡£¡\n");
+return notify_fail("ç°åœ¨æ­£æ˜¯ç”¨æ”»å‡»æ•Œäººçš„æ—¶å€™å•Šï¼\n");
                 me->start_busy(3);
-        message_vision(HIR"\n$N"HIR"Í»È»¿ª»ğ  »ğÇ¹Éä»÷!!  \n"NOR,this_object(),target);
-         msg = RED"$N"RED"¾ÙÇ¹¶Ô×Å$n"HIR"¿ª»ğ£¡\n"NOR;
-        msg += HIR"$n"HIR"´ó³ÔÒ»¾ª£¬±»´òÖĞÁË!!\n"NOR;
+        message_vision(HIR"\n$N"HIR"çªç„¶å¼€ç«  ç«æªå°„å‡»!!  \n"NOR,this_object(),target);
+         msg = RED"$N"RED"ä¸¾æªå¯¹ç€$n"HIR"å¼€ç«ï¼\n"NOR;
+        msg += HIR"$n"HIR"å¤§åƒä¸€æƒŠï¼Œè¢«æ‰“ä¸­äº†!!\n"NOR;
 if (userp(target))
 {
 target->set("qi",target->query("max_qi")/5);

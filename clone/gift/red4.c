@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÁéÖ¥
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´çµèŠ
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,21 +14,21 @@ void init()
 }
 void create()
 {
-        set_name(HIM"°¢±¦"NOR, ({"amy"}));
+        set_name(HIM"é˜¿å®"NOR, ({"amy"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
 set("liwu",1);
 set("no_steal",1);
 set("no_beg",1);
     set("no_put",1);
-    set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n");
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+    set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n");
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 
-                set("unit", "¸ö");
-                set("long", "Ò»¸öĞ¡Ğ¡µÄ°¢±¦£¬ÏóĞ¡ÍÃ¹Ô¹ÔÒ»ÑùµÄ¿É°®£¬Äú¿ÉÒÔÊÔÊÔ¸§Ãş(mo)Ëû\n");
+                set("unit", "ä¸ª");
+                set("long", "ä¸€ä¸ªå°å°çš„é˜¿å®ï¼Œè±¡å°å…”ä¹–ä¹–ä¸€æ ·çš„å¯çˆ±ï¼Œæ‚¨å¯ä»¥è¯•è¯•æŠšæ‘¸(mo)ä»–\n");
 
 		set("value", 0);
 	}
@@ -38,11 +38,11 @@ set("no_beg",1);
 int do_eat(string arg)
 {
 	if (!id(arg))
-        return notify_fail("ÄãÒªÃşÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ‘¸ä»€ä¹ˆï¼Ÿ\n");
         this_player()->start_busy(20);
         this_player()->add("potential",1000);
         this_player()->add("score",200);
-        message_vision("ÔÚ$NµÄ¸§ÃşÏÂ£¬°¢±¦»¯×öÒ»ÂÆÇàÑÌÏûÊ§ÁË£¬Äú¶ÙÊ±»ñµÃÁËÁé¸Ğ\n", this_player());
+        message_vision("åœ¨$Nçš„æŠšæ‘¸ä¸‹ï¼Œé˜¿å®åŒ–åšä¸€ç¼•é’çƒŸæ¶ˆå¤±äº†ï¼Œæ‚¨é¡¿æ—¶è·å¾—äº†çµæ„Ÿ\n", this_player());
 	destruct(this_object());
 	return 1;
 }
