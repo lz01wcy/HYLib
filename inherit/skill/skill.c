@@ -31,7 +31,7 @@ int valid_effect(object me, object weapon, string action_name, int skill) {
 // This function should return the type of the skill. The skill type now
 // affects if the skill requires combat exp in order to be learned (see
 // /cmds/std/learn.c ) and the ranking of a skill level (see 
-// /cmds/usr/skills.c )¡£
+// /cmds/usr/skills.c )ã€‚
 // Currently we have only 2 types of skill: "martial" and "knowledge".
 
 string type() { return "martial"; }
@@ -62,7 +62,7 @@ int exert_function(object me, string arg) {
 
     if (sscanf(arg, "%s %s", func, target) == 2) {
         target_ob = present(target, environment(me));
-        if (!target_ob) return notify_fail("ÕâÀïÃ»ÓÐ " + target + "¡£\n");
+        if (!target_ob) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + target + "ã€‚\n");
     } else {
         func = arg;
         target_ob = me;
@@ -81,7 +81,7 @@ int perform_action(object me, string arg) {
 
     if (sscanf(arg, "%s %s", action, target) == 2) {
         target_ob = present(target, environment(me));
-        if (!target_ob) return notify_fail("ÕâÀïÃ»ÓÐ " + target + "¡£\n");
+        if (!target_ob) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + target + "ã€‚\n");
     } else {
         action = arg;
     }
@@ -96,7 +96,7 @@ int perform_action(object me, string arg) {
 int cast_spell(object me, string spell, object target) {
     string file;
 
-    notify_fail("ÄãËùÑ¡ÓÃµÄÖäÎÄÏµÖÐÃ»ÓÐÕâÖÖÖäÎÄ¡£\n");
+    notify_fail("ä½ æ‰€é€‰ç”¨çš„å’’æ–‡ç³»ä¸­æ²¡æœ‰è¿™ç§å’’æ–‡ã€‚\n");
 
     if (!stringp(file = (string) this_object()->cast_spell_file(spell))
         || file_size(file + ".c") <= 0)
@@ -108,7 +108,7 @@ int cast_spell(object me, string spell, object target) {
 int conjure_magic(object me, string spell, object target) {
     string file;
 
-    notify_fail("ÄãËùÑ¡ÓÃµÄ·¨ÊõÏµÖÐÃ»ÓÐÕâÖÖ·¨Êõ¡£\n");
+    notify_fail("ä½ æ‰€é€‰ç”¨çš„æ³•æœ¯ç³»ä¸­æ²¡æœ‰è¿™ç§æ³•æœ¯ã€‚\n");
 
     if (!stringp(file = (string) this_object()->conjure_magic_file(spell))
         || file_size(file + ".c") <= 0)

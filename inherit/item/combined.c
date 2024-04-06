@@ -1,6 +1,6 @@
 //combined_item.c
-//º£Ñó2.0
-//ÐÇÐÇ£¨lywin£©
+//æµ·æ´‹2.0
+//æ˜Ÿæ˜Ÿï¼ˆlywinï¼‰
 
 #include <dbase.h>
 #include <name.h>
@@ -24,8 +24,8 @@ void destruct_me() {
 void set_amount(int v) {
     if (v < 0) error("combine:set_amount less than 1.\n");
     if (v == 0) {
-        // ÎªÁË·ÀÖ¹Íæ¼ÒÔÚÇ®×¯ÀûÓÃÑÓÊ±¸´ÖÆ½ðÇ®£¡
-        //½«Îï¼þÒÆ×ß²¢destruct
+        // ä¸ºäº†é˜²æ­¢çŽ©å®¶åœ¨é’±åº„åˆ©ç”¨å»¶æ—¶å¤åˆ¶é‡‘é’±ï¼
+        //å°†ç‰©ä»¶ç§»èµ°å¹¶destruct
         ::move(VOID_OB);
         call_out("destruct_me", 1);
     } else {

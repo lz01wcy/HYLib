@@ -23,16 +23,16 @@ mixed hit_ob(object me, object victim, int damage) {
         if (wp > 0 && wp > (wp1 + wp2) * 5 &&
             random(me->query("str")) > victim->query("str") / 2) {
             message_vision(HIM
-            "Ö»Ìý¼û¡¸ßÑ¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖÐµÄ" + weapon1->name() + HIY
-            "ÒÑ¾­±»" + weapon->name() + HIY
-            "Ï÷ÎªÁ½½Ø£¡\n"
+            "åªå¬è§ã€Œå“ã€åœ°ä¸€å£°è½»å“ï¼Œ$Næ‰‹ä¸­çš„" + weapon1->name() + HIY
+            "å·²ç»è¢«" + weapon->name() + HIY
+            "å‰Šä¸ºä¸¤æˆªï¼\n"
             NOR, victim);
             weapon1->unequip();
             victim->reset_action();
             seteuid(getuid());
             piece = new("/clone/misc/piece");
-            piece->set("long", "¶Ï³ÉÁ½½ØµÄ" + weapon1->query("name") + "¡£\n");
-            piece->set_name("¶ÏµôµÄ" + weapon1->query("name"), ({ weapon1->query("id"), "piece" }));
+            piece->set("long", "æ–­æˆä¸¤æˆªçš„" + weapon1->query("name") + "ã€‚\n");
+            piece->set_name("æ–­æŽ‰çš„" + weapon1->query("name"), ({ weapon1->query("id"), "piece" }));
             piece->move(environment(victim));
             destruct(weapon1);
         }
@@ -40,7 +40,7 @@ mixed hit_ob(object me, object victim, int damage) {
                weapon1->query("material") != "softsteel" &&
                weapon1->query("skill_type") != "whip" &&
                weapon1->query("rigidity") < weapon->query("rigidity") &&
-               !weapon1->query("rao")) //ÈÆÖ¸Èá½£
+               !weapon1->query("rao")) //ç»•æŒ‡æŸ”å‰‘
     {
         wap = (int) weapon->weight() / 500 +
               (int) weapon->query("rigidity") +
@@ -61,35 +61,35 @@ mixed hit_ob(object me, object victim, int damage) {
         wap = random(wap);
         if (wap > 5 * wdp) {
             message_vision(HIM
-            "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon1->name() + HIM
-            "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n"
+            "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon1->name() + HIM
+            "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n"
             NOR, victim);
             weapon1->unequip();
             victim->reset_action();
             seteuid(getuid());
             piece = new("/clone/misc/piece");
-            piece->set("long", "¶Ï³ÉÁ½½ØµÄ" + weapon1->query("name") + "¡£\n");
-            piece->set_name("¶ÏµôµÄ" + weapon1->query("name"), ({ weapon1->query("id"), "piece" }));
+            piece->set("long", "æ–­æˆä¸¤æˆªçš„" + weapon1->query("name") + "ã€‚\n");
+            piece->set_name("æ–­æŽ‰çš„" + weapon1->query("name"), ({ weapon1->query("id"), "piece" }));
             piece->move(environment(victim));
             destruct(weapon1);
         } else if (wap > 3 * wdp) {
             message_vision(HIY
-            "$NÖ»¾õµÃÊÖÖÐ" + weapon1->name() + HIY
-            "°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n"
+            "$Nåªè§‰å¾—æ‰‹ä¸­" + weapon1->name() + HIY
+            "æŠŠæŒä¸å®šï¼Œè„±æ‰‹é£žå‡ºï¼\n"
             NOR, victim);
             weapon1->unequip();
             weapon1->move(environment(victim));
             victim->reset_action();
         } else if (wap > wdp) {
             message_vision(HIW
-            "$NÖ»¾õµÃÊÖÖÐ" + weapon1->name() + HIW
-            "Ò»Õð£¬ÏÕÐ©ÍÑÊÖ£¡\n"
+            "$Nåªè§‰å¾—æ‰‹ä¸­" + weapon1->name() + HIW
+            "ä¸€éœ‡ï¼Œé™©äº›è„±æ‰‹ï¼\n"
             NOR, victim);
         } else {
             message_vision(HIR
-            "$NµÄ" + weapon->name() + HIR
-            "ºÍ$nµÄ" + weapon1->name() + HIR
-            "Ïà»÷£¬Ã°³öµãµãµÄ»ðÐÇ¡£\n"
+            "$Nçš„" + weapon->name() + HIR
+            "å’Œ$nçš„" + weapon1->name() + HIR
+            "ç›¸å‡»ï¼Œå†’å‡ºç‚¹ç‚¹çš„ç«æ˜Ÿã€‚\n"
             NOR, me, victim);
         }
     }
@@ -100,19 +100,19 @@ mixed hit_ob(object me, object victim, int damage) {
             random(10) > 5 && poison1 > 1 &&
             victim->query_condition(poison) < 50) {
             if (poison1 == 2)
-                weapon->set_temp("apply/long", ({ weapon->query("long") + "ºÃÏóÊÇ±»Î¹¹ý¾ç¶¾£¬²»¹ýÐ§¹ûÒÑ¾­²»Ã÷ÏÔÁË¡£\n" }));
+                weapon->set_temp("apply/long", ({ weapon->query("long") + "å¥½è±¡æ˜¯è¢«å–‚è¿‡å‰§æ¯’ï¼Œä¸è¿‡æ•ˆæžœå·²ç»ä¸æ˜Žæ˜¾äº†ã€‚\n" }));
             weapon->add("poison_number", -1);
             victim->apply_condition(poison, victim->query_condition(poison) + random(10));
-            if (victim->query("race") == "ÈËÀà" && !victim->query("mute"))
+            if (victim->query("race") == "äººç±»" && !victim->query("mute"))
                 message_vision(HIR
-            "$NÖ»¾õµÃÉË¿ÚÉÏÒ»Âé£¬´ó½ÐÒ»Éù£º²»ºÃ£¡\n"
+            "$Nåªè§‰å¾—ä¼¤å£ä¸Šä¸€éº»ï¼Œå¤§å«ä¸€å£°ï¼šä¸å¥½ï¼\n"
             NOR, victim);
-            else if (victim->query("race") == "ÈËÀà")
+            else if (victim->query("race") == "äººç±»")
                 message_vision(HIR
-            "$NÖ»¾õµÃÉË¿ÚÉÏÒ»Âé£¬Ã¼Í·Ò»¼·£¬ÏÔÈ»ÊÇ·¢Å­ÁË£¡\n"
+            "$Nåªè§‰å¾—ä¼¤å£ä¸Šä¸€éº»ï¼Œçœ‰å¤´ä¸€æŒ¤ï¼Œæ˜¾ç„¶æ˜¯å‘æ€’äº†ï¼\n"
             NOR, victim);
             else message_vision(HIR
-            "$NÃÍÈ»Ò»²ü£¬ÉË¿Ú´¦Á÷³öºÚÑª£¬Ð×Ïà±ÏÂ¶£¡\n"
+            "$NçŒ›ç„¶ä¸€é¢¤ï¼Œä¼¤å£å¤„æµå‡ºé»‘è¡€ï¼Œå‡¶ç›¸æ¯•éœ²ï¼\n"
             NOR, victim);
             if (!victim->is_killing(me->query("id"))) victim->kill_ob(me);
         }
