@@ -19,14 +19,14 @@ int draw, l, h, q, w, d, t, f, g;
 
 void create() 
 { 
-        set("short", HIC"Ìì"HIR"ÏÉ"HIG"¸ó"NOR);
+        set("short", HIC"å¤©"HIR"ä»™"HIG"é˜"NOR);
         set("long", @LONG
-ÕâÊÇÌìÏÂÓÐµÐµÄÌìÏÉ¸ó£¬´Ë´¦ÇåÐÂÑÅÖÂ£¬ÄãµÄÐÄ¾³·Â·ðåÛÓÎÓÚ±Ìº£À¶Ìì
+è¿™æ˜¯å¤©ä¸‹æœ‰æ•Œçš„å¤©ä»™é˜ï¼Œæ­¤å¤„æ¸…æ–°é›…è‡´ï¼Œä½ çš„å¿ƒå¢ƒä»¿ä½›é¨æ¸¸äºŽç¢§æµ·è“å¤©
 
-Ö®ÉÏ¡£Ç½ÉÏ¹Ò×ÅÒ»Ð©×Ö(text)»­(drawing)£¬ÎÝÄÚµÄËÄ¸ùÁ¢ÖùÉÏ·Ö±ðÓÐ×ÅÇà
-Áú(dragon)£¬°×»¢(tiger)£¬ÖìÈ¸(phoenix)£¬ÐþÎä(turtle)ËÄÕµÊ¯µÆ¡£ÎÝ×Ó
-ÖÐÑëµÄÊ¯Ì¨ÉÏÓÐ°Ñ½£Ã»ÈëÆäÖÐ£¬Ö»ÓÐ½£±úÂ¶ÔÚÍâÃæ¡£ÎÝ×Ó¶«ÃæÓÐ¿é´óØÒ(bian)¡£
-Î÷ÃæÓÐÉÈÄ¾ÃÅ(door)£¬ÎÝÀï»¹ÓÐºÃ¼¸ÅÅÊé¼Ü(shelf)¡£
+ä¹‹ä¸Šã€‚å¢™ä¸ŠæŒ‚ç€ä¸€äº›å­—(text)ç”»(drawing)ï¼Œå±‹å†…çš„å››æ ¹ç«‹æŸ±ä¸Šåˆ†åˆ«æœ‰ç€é’
+é¾™(dragon)ï¼Œç™½è™Ž(tiger)ï¼Œæœ±é›€(phoenix)ï¼ŒçŽ„æ­¦(turtle)å››ç›çŸ³ç¯ã€‚å±‹å­
+ä¸­å¤®çš„çŸ³å°ä¸Šæœ‰æŠŠå‰‘æ²¡å…¥å…¶ä¸­ï¼Œåªæœ‰å‰‘æŸ„éœ²åœ¨å¤–é¢ã€‚å±‹å­ä¸œé¢æœ‰å—å¤§åŒ¾(bian)ã€‚
+è¥¿é¢æœ‰æ‰‡æœ¨é—¨(door)ï¼Œå±‹é‡Œè¿˜æœ‰å¥½å‡ æŽ’ä¹¦æž¶(shelf)ã€‚
 LONG
         );
 /*
@@ -139,68 +139,68 @@ void init()
 
 string look_text(object me)
 {
-        return HIG"        É¹\n        ²»\nºÃ      ¸É\n¡£      µÄ\n\n²»  ¹Ø  ÍÏ\n¶ã  ÓÚ  Äà\n¡£  Äã  ºÍ\n    µÄ  ´ø\n    ¼Ç  Ë®\n    Òä  µÄ\n\n    Èç\n    Óê\n    Ö±\n    ÏÂ\n    |\n"NOR;
+        return HIG"        æ™’\n        ä¸\nå¥½      å¹²\nã€‚      çš„\n\nä¸  å…³  æ‹–\nèº²  äºŽ  æ³¥\nã€‚  ä½   å’Œ\n    çš„  å¸¦\n    è®°  æ°´\n    å¿†  çš„\n\n    å¦‚\n    é›¨\n    ç›´\n    ä¸‹\n    |\n"NOR;
 }
 
 string look_bian(object me)
 {
-        return HIY"****************\n*  "HIG"¸ó  "HIR"ÏÉ  "HIC"Ìì  "HIY"*\n****************\n"NOR;
+        return HIY"****************\n*  "HIG"é˜  "HIR"ä»™  "HIC"å¤©  "HIY"*\n****************\n"NOR;
 
 }
 
 string look_door(object me)
 {
         if (!query("exits/west"))
-                return "ÕâÊÇÒ»ÉÈºÜºñµÄÄ¾ÃÅ£¬ÄãÍÆÁËÍÆ£¬·¢ÏÖ¸ù±¾ÍÆ²»¿ª¡£\n";
-        else return "ÕâÉÈÄ¾ÃÅºÜºñ£¬²»ÖªµÀÀïÃæÊÇÄÄÀï¡£\n";       
+                return "è¿™æ˜¯ä¸€æ‰‡å¾ˆåŽšçš„æœ¨é—¨ï¼Œä½ æŽ¨äº†æŽ¨ï¼Œå‘çŽ°æ ¹æœ¬æŽ¨ä¸å¼€ã€‚\n";
+        else return "è¿™æ‰‡æœ¨é—¨å¾ˆåŽšï¼Œä¸çŸ¥é“é‡Œé¢æ˜¯å“ªé‡Œã€‚\n";       
 }
 
 string look_shelf(object me)
 {
         if (!query("exits/west"))
-                return "Êé¼ÜÉÏ°ÚÂúÁËÊé£¬µÚÈý²ãÉÏËÆºõÈ±ÁËÒ»±¾¡£\n";
-        else return "Êé¼ÜÉÏ°ÚÂúÁËÊé¡£\n";       
+                return "ä¹¦æž¶ä¸Šæ‘†æ»¡äº†ä¹¦ï¼Œç¬¬ä¸‰å±‚ä¸Šä¼¼ä¹Žç¼ºäº†ä¸€æœ¬ã€‚\n";
+        else return "ä¹¦æž¶ä¸Šæ‘†æ»¡äº†ä¹¦ã€‚\n";       
 }
 
 string look_drawing(object me)
 {
        switch (draw)
-        { case 0 : return HIY"ÕâÊÇÒ»·ùÁúÌÚ»¢Ô¾Í¼¡£\n"NOR;       break;
-        case 1: return HIY"ÕâÊÇÒ»·ùÁú·ï³ÊÏéÍ¼¡£\n"NOR;break;
-        case 2: return HIY"ÕâÊÇÒ»·ùÁúÌÚËÄº£Í¼¡£\n"NOR;break;
-        case 3: return HIY"ÕâÊÇÒ»·ù»­£¬»­µÄÊÇ°ÙÊÞÖ®ÍõÓë°ÙÄñÖ®Íõ¡£\n"NOR;break;
+        { case 0 : return HIY"è¿™æ˜¯ä¸€å¹…é¾™è…¾è™Žè·ƒå›¾ã€‚\n"NOR;       break;
+        case 1: return HIY"è¿™æ˜¯ä¸€å¹…é¾™å‡¤å‘ˆç¥¥å›¾ã€‚\n"NOR;break;
+        case 2: return HIY"è¿™æ˜¯ä¸€å¹…é¾™è…¾å››æµ·å›¾ã€‚\n"NOR;break;
+        case 3: return HIY"è¿™æ˜¯ä¸€å¹…ç”»ï¼Œç”»çš„æ˜¯ç™¾å…½ä¹‹çŽ‹ä¸Žç™¾é¸Ÿä¹‹çŽ‹ã€‚\n"NOR;break;
 
-        case 4: return HIY"ÕâÊÇÒ»·ù»­£¬»­µÄÊÇÃÍ»¢¶·Ðþ¹ê£¬Ææ¹ÖµÄ×÷Æ·¡£\n"NOR;break;
-        case 5: return HIY"ÕâÊÇÒ»·ù»­£¬»­µÄÊÇÎÚ¹êÓë·ï»Ë£¬ÓÐÃ»ÓÐ¸ã´í£¿\n"NOR;break;}
+        case 4: return HIY"è¿™æ˜¯ä¸€å¹…ç”»ï¼Œç”»çš„æ˜¯çŒ›è™Žæ–—çŽ„é¾Ÿï¼Œå¥‡æ€ªçš„ä½œå“ã€‚\n"NOR;break;
+        case 5: return HIY"è¿™æ˜¯ä¸€å¹…ç”»ï¼Œç”»çš„æ˜¯ä¹Œé¾Ÿä¸Žå‡¤å‡°ï¼Œæœ‰æ²¡æœ‰æžé”™ï¼Ÿ\n"NOR;break;}
 }
 
 string look_dragon(object me)
 {
        switch (d)
-        { case 0 : return HIC"ÕâÊÇÒ»ÕµµñÓÐÇàÁúÍ·µÄÊ¯µÆ£¬Áú¿ÚÀïµÄµÆÐ¾ÃðÁË¡£\n"NOR; break;
-        case 1: return HIC"ÕâÊÇÒ»ÕµµñÓÐÇàÁúÍ·µÄÊ¯µÆ£¬Áú¿ÚÀïµÄµÆÐ¾È¼×Å¡£\n"NOR;  break;}
+        { case 0 : return HIC"è¿™æ˜¯ä¸€ç›é›•æœ‰é’é¾™å¤´çš„çŸ³ç¯ï¼Œé¾™å£é‡Œçš„ç¯èŠ¯ç­äº†ã€‚\n"NOR; break;
+        case 1: return HIC"è¿™æ˜¯ä¸€ç›é›•æœ‰é’é¾™å¤´çš„çŸ³ç¯ï¼Œé¾™å£é‡Œçš„ç¯èŠ¯ç‡ƒç€ã€‚\n"NOR;  break;}
 
 }
 string look_tiger(object me)
 {
        switch (t)
-        { case 0 : return HIW"ÕâÊÇÒ»ÕµµñÓÐ°×»¢Í·µÄÊ¯µÆ£¬»¢¿ÚÀïµÄµÆÐ¾ÃðÁË¡£\n"NOR; break;
-        case 1: return HIW"ÕâÊÇÒ»ÕµµñÓÐ°×»¢Í·µÄÊ¯µÆ£¬»¢¿ÚÀïµÄµÆÐ¾È¼×Å¡£\n"NOR;  break;}
+        { case 0 : return HIW"è¿™æ˜¯ä¸€ç›é›•æœ‰ç™½è™Žå¤´çš„çŸ³ç¯ï¼Œè™Žå£é‡Œçš„ç¯èŠ¯ç­äº†ã€‚\n"NOR; break;
+        case 1: return HIW"è¿™æ˜¯ä¸€ç›é›•æœ‰ç™½è™Žå¤´çš„çŸ³ç¯ï¼Œè™Žå£é‡Œçš„ç¯èŠ¯ç‡ƒç€ã€‚\n"NOR;  break;}
 
 }
 string look_phoenix(object me)
 {
        switch (f)
-        { case 0 : return HIR"ÕâÊÇÒ»ÕµµñÓÐÖìÈ¸Í·µÄÊ¯µÆ£¬Äñ×ìÀïµÄµÆÐ¾ÃðÁË¡£\n"NOR; break;
-        case 1: return HIR"ÕâÊÇÒ»ÕµµñÓÐÖìÈ¸Í·µÄÊ¯µÆ£¬Äñ×ìÀïµÄµÆÐ¾È¼×Å¡£\n"NOR;  break;}
+        { case 0 : return HIR"è¿™æ˜¯ä¸€ç›é›•æœ‰æœ±é›€å¤´çš„çŸ³ç¯ï¼Œé¸Ÿå˜´é‡Œçš„ç¯èŠ¯ç­äº†ã€‚\n"NOR; break;
+        case 1: return HIR"è¿™æ˜¯ä¸€ç›é›•æœ‰æœ±é›€å¤´çš„çŸ³ç¯ï¼Œé¸Ÿå˜´é‡Œçš„ç¯èŠ¯ç‡ƒç€ã€‚\n"NOR;  break;}
 
 
 }
 string look_turtle(object me)
 {
        switch (g)
-        { case 0 : return HIB"ÕâÊÇÒ»ÕµµñÓÐÐþÎäÍ·µÄÊ¯µÆ£¬¹ê¿ÚÀïµÄµÆÐ¾ÃðÁË¡£\n"NOR; break;
-        case 1: return HIB"ÕâÊÇÒ»ÕµµñÓÐÐþÎäÍ·µÄÊ¯µÆ£¬¹ê¿ÚÀïµÄµÆÐ¾È¼×Å¡£\n"NOR;  break;}
+        { case 0 : return HIB"è¿™æ˜¯ä¸€ç›é›•æœ‰çŽ„æ­¦å¤´çš„çŸ³ç¯ï¼Œé¾Ÿå£é‡Œçš„ç¯èŠ¯ç­äº†ã€‚\n"NOR; break;
+        case 1: return HIB"è¿™æ˜¯ä¸€ç›é›•æœ‰çŽ„æ­¦å¤´çš„çŸ³ç¯ï¼Œé¾Ÿå£é‡Œçš„ç¯èŠ¯ç‡ƒç€ã€‚\n"NOR;  break;}
 
 }
 
@@ -209,14 +209,14 @@ int do_fire(string arg)
         object me;
         me = this_player();
         if ( !arg || ( ( arg != "dragon") && ( arg != "tiger") && ( arg != "phoenix") && ( arg != "turtle") ) )
-                return notify_fail ("ÄãÒªµãÊ²Ã´£¿\n");
+                return notify_fail ("ä½ è¦ç‚¹ä»€ä¹ˆï¼Ÿ\n");
         if (arg == "dragon")
         {
                 if (d == 1) 
-                        return notify_fail ("ÕâÕµµÆÔ­±¾¾ÍÁÁ×Å¡£\n");
+                        return notify_fail ("è¿™ç›ç¯åŽŸæœ¬å°±äº®ç€ã€‚\n");
                 else
                 {
-                        message_vision (HIC"$NÈ¡³ö»ðÕÛ£¬½«ÇàÁúµÆµãÈ¼¡£\n"NOR, me);
+                        message_vision (HIC"$Nå–å‡ºç«æŠ˜ï¼Œå°†é’é¾™ç¯ç‚¹ç‡ƒã€‚\n"NOR, me);
 
                         d = 1;
                         return 1;
@@ -225,10 +225,10 @@ int do_fire(string arg)
         else if (arg == "tiger")
         {
                 if (t == 1)
-                        return notify_fail ("ÕâÕµµÆÔ­±¾¾ÍÁÁ×Å¡£\n");
+                        return notify_fail ("è¿™ç›ç¯åŽŸæœ¬å°±äº®ç€ã€‚\n");
                 else
                 {
-                        message_vision (HIW"$NÈ¡³ö»ðÕÛ£¬½«°×»¢µÆµãÈ¼¡£\n"NOR, me);
+                        message_vision (HIW"$Nå–å‡ºç«æŠ˜ï¼Œå°†ç™½è™Žç¯ç‚¹ç‡ƒã€‚\n"NOR, me);
                         t = 1;
                         return 1;
                 }
@@ -236,10 +236,10 @@ int do_fire(string arg)
         else if (arg == "phoenix")
         {
                 if (f == 1)
-                        return notify_fail ("ÕâÕµµÆÔ­±¾¾ÍÁÁ×Å¡£\n");
+                        return notify_fail ("è¿™ç›ç¯åŽŸæœ¬å°±äº®ç€ã€‚\n");
                 else
                 {
-                        message_vision (HIR"$NÈ¡³ö»ðÕÛ£¬½«ÖìÈ¸µÆµãÈ¼¡£\n"NOR, me);
+                        message_vision (HIR"$Nå–å‡ºç«æŠ˜ï¼Œå°†æœ±é›€ç¯ç‚¹ç‡ƒã€‚\n"NOR, me);
                         f = 1;
 
                         return 1;
@@ -248,10 +248,10 @@ int do_fire(string arg)
         else if (arg == "turtle")
         {
                 if (g == 1)
-                        return notify_fail ("ÕâÕµµÆÔ­±¾¾ÍÁÁ×Å¡£\n");
+                        return notify_fail ("è¿™ç›ç¯åŽŸæœ¬å°±äº®ç€ã€‚\n");
                 else
                 {
-                        message_vision (HIB"$NÈ¡³ö»ðÕÛ£¬½«ÐþÎäµÆµãÈ¼¡£\n"NOR, me);
+                        message_vision (HIB"$Nå–å‡ºç«æŠ˜ï¼Œå°†çŽ„æ­¦ç¯ç‚¹ç‡ƒã€‚\n"NOR, me);
                         g = 1;
                         return 1;
                 }
@@ -264,15 +264,15 @@ int do_putout(string arg)
         object me;
         me = this_player();
         if ( !arg || ( ( arg != "dragon") && ( arg != "tiger") && ( arg != "phoenix") && ( arg != "turtle") ) )
-                return notify_fail ("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail ("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
         if (arg == "dragon")
         {
                 if (d == 0)
-                        return notify_fail ("ÕâÕµµÆÒÑ¾­ÃðÁË¡£\n");
+                        return notify_fail ("è¿™ç›ç¯å·²ç»ç­äº†ã€‚\n");
                 else
                 {
-                        message_vision (HIC"$N½«ÇàÁúµÆÏ¨ÃðÁË¡£\n"NOR, me);
+                        message_vision (HIC"$Nå°†é’é¾™ç¯ç†„ç­äº†ã€‚\n"NOR, me);
                         d = 0;
                         return 1;
                 }
@@ -280,10 +280,10 @@ int do_putout(string arg)
         else if (arg == "tiger")
         {
                 if (t == 0)
-                        return notify_fail ("ÕâÕµµÆÒÑ¾­ÃðÁË¡£\n");
+                        return notify_fail ("è¿™ç›ç¯å·²ç»ç­äº†ã€‚\n");
                 else
                 {
-                        message_vision (HIW"$N½«°×»¢µÆÏ¨ÃðÁË¡£\n"NOR, me);
+                        message_vision (HIW"$Nå°†ç™½è™Žç¯ç†„ç­äº†ã€‚\n"NOR, me);
                         t = 0;
                         return 1;
                 }
@@ -292,10 +292,10 @@ int do_putout(string arg)
 
         {
                 if (f == 0)
-                        return notify_fail ("ÕâÕµµÆÒÑ¾­ÃðÁË¡£\n");
+                        return notify_fail ("è¿™ç›ç¯å·²ç»ç­äº†ã€‚\n");
                 else
                 {
-                        message_vision (HIR"$N½«ÖìÈ¸µÆµãÏ¨ÃðÁË¡£\n"NOR, me);
+                        message_vision (HIR"$Nå°†æœ±é›€ç¯ç‚¹ç†„ç­äº†ã€‚\n"NOR, me);
                         f = 0;
                         return 1;
                 }
@@ -303,10 +303,10 @@ int do_putout(string arg)
         else if (arg == "turtle")
         {
                 if (g == 0)
-                        return notify_fail ("ÕâÕµµÆÒÑ¾­ÃðÁË¡£\n");
+                        return notify_fail ("è¿™ç›ç¯å·²ç»ç­äº†ã€‚\n");
                 else
                 {
-                        message_vision (HIB"$N½«ÐþÎäµÆÏ¨ÃðÁË¡£\n"NOR, me);
+                        message_vision (HIB"$Nå°†çŽ„æ­¦ç¯ç†„ç­äº†ã€‚\n"NOR, me);
                         g = 0;
                         return 1;
                 }
@@ -322,14 +322,14 @@ int do_get(string arg)
         if(!( room = find_object("/u/batman/woshi")) );
                 room = load_object("/u/batman/woshi");
         if ( !arg || ( arg != "sword") )
-                return notify_fail ("ÄãÒª°ÎÊ²Ã´£¿\n");
+                return notify_fail ("ä½ è¦æ‹”ä»€ä¹ˆï¼Ÿ\n");
         if ( ( d != l ) || ( t !=h ) || ( f != q ) || ( g != w ) )
-                return notify_fail ("ÄãÊ¹³öÁË³ÔÄÌµÄÁ¦Æø£¬»¹ÊÇÎÞ·¨°Ñ½£°Î³ö¡£\n");
+                return notify_fail ("ä½ ä½¿å‡ºäº†åƒå¥¶çš„åŠ›æ°”ï¼Œè¿˜æ˜¯æ— æ³•æŠŠå‰‘æ‹”å‡ºã€‚\n");
         if((sizeof(children("/u/batman/obj/skysword"))>1) || (sizeof(children("/u/batman/obj/qksword"))>1) || (room->query("hole") == 2))
-                message_vision ("$N°Î³öÒ»±úÉúÐâµÄÌú½£À´£¬$NÌ¾ÁË¿ÚÆøÓÖ°ÑËü²å»ØÔ­´¦¡£\n"NOR, me);
+                message_vision ("$Næ‹”å‡ºä¸€æŸ„ç”Ÿé”ˆçš„é“å‰‘æ¥ï¼Œ$Nå¹äº†å£æ°”åˆæŠŠå®ƒæ’å›žåŽŸå¤„ã€‚\n"NOR, me);
          else
         {
-                message_vision (HIC"Í»È»¼ä£¬´°ÍâµÄÌì¿ÕÖÐ´òÁË¸öÅùö¨£¬$NÒÑ½«Ê¯Ì¨ÉÏµÄ¹Å½£°ÎÁË³öÀ´¡£\n"NOR, me);
+                message_vision (HIC"çªç„¶é—´ï¼Œçª—å¤–çš„å¤©ç©ºä¸­æ‰“äº†ä¸ªéœ¹é›³ï¼Œ$Nå·²å°†çŸ³å°ä¸Šçš„å¤å‰‘æ‹”äº†å‡ºæ¥ã€‚\n"NOR, me);
                 ob=new(__DIR__"obj/skysword");
                 ob->move(me);
         }
@@ -344,14 +344,14 @@ int do_xian(string arg)
         if(!( room = find_object("/u/batman/woshi")) );
                 room = load_object("/u/batman/woshi");
         if ( !arg || ( arg != "text") )
-                return notify_fail ("ÄãÒªÏÆÊ²Ã´£¿\n");
+                return notify_fail ("ä½ è¦æŽ€ä»€ä¹ˆï¼Ÿ\n");
         if ( ( d != l ) || ( t !=h ) || ( f != q ) || ( g != w ) )
-                return notify_fail ("²»ÐÐ£¬×Ö»­»áÅª»µµÄ¡£\n");
+                return notify_fail ("ä¸è¡Œï¼Œå­—ç”»ä¼šå¼„åçš„ã€‚\n");
         if((sizeof(children("/u/batman/obj/groundsword"))>1) || (sizeof(children("/u/batman/obj/qksword"))>1) || (room->query("hole") == 2))
-                message_vision ("$NÏÆÆð×Ö»­£¬±³ºóÊ²Ã´Ò²Ã»ÓÐ£¬$N¾õµÃºÃÊ§Íû¡£\n"NOR, me);
+                message_vision ("$NæŽ€èµ·å­—ç”»ï¼ŒèƒŒåŽä»€ä¹ˆä¹Ÿæ²¡æœ‰ï¼Œ$Nè§‰å¾—å¥½å¤±æœ›ã€‚\n"NOR, me);
         else
         {
-                message_vision (MAG"Í»È»¼ä£¬´óµØÎ¢Î¢µØÕðÁËÒ»ÏÂ£¬$NÔÚ×Ö»­ºóÃæÕÒµ½Ò»°Ñ¹Å½£¡£\n"NOR, me);
+                message_vision (MAG"çªç„¶é—´ï¼Œå¤§åœ°å¾®å¾®åœ°éœ‡äº†ä¸€ä¸‹ï¼Œ$Nåœ¨å­—ç”»åŽé¢æ‰¾åˆ°ä¸€æŠŠå¤å‰‘ã€‚\n"NOR, me);
                 ob=new(__DIR__"obj/groundsword");
                 ob->move(me);
         }
@@ -364,17 +364,17 @@ int go_maggie(string arg)
 
         me = this_player();
         if ( !arg || ( arg != "bian") )
-                return notify_fail ("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail ("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
         else
         {
                 int mo = this_player()->query_skill("dodge");
                 if ( mo >= 10 )
                 {
-                        message_vision ("$NÇáÆ®Æ®ÌÚÉíÊýÕÉ£¬ÂäÔÚØÒºó¡£\n",me);
-                        tell_room(__DIR__"bian", me->query("name")+"×ÝÁËÉÏÀ´¡£\n");
+                        message_vision ("$Nè½»é£˜é£˜è…¾èº«æ•°ä¸ˆï¼Œè½åœ¨åŒ¾åŽã€‚\n",me);
+                        tell_room(__DIR__"bian", me->query("name")+"çºµäº†ä¸Šæ¥ã€‚\n");
                         me->move(__DIR__"bian");
                 }
-                else message_vision ("$NÊ¹¾¢¶ù×¡ÉÏÒ»±Ä£¬½á¹ûË¤ÁË¸ö¹·³ÔÊº¡£\n",me);
+                else message_vision ("$Nä½¿åŠ²å„¿ä½ä¸Šä¸€è¹¦ï¼Œç»“æžœæ‘”äº†ä¸ªç‹—åƒå±Žã€‚\n",me);
         }
         return 1;
 }
@@ -386,16 +386,16 @@ int do_plug(string arg)
         me = this_player();
         if (!arg || (sscanf(arg, "%s on %s", item, target)!=2 ))
 
-                return notify_fail ("ÄãÒª²åÊ²Ã´ÔÚÊ²Ã´ÉÏ£¿\n");
+                return notify_fail ("ä½ è¦æ’ä»€ä¹ˆåœ¨ä»€ä¹ˆä¸Šï¼Ÿ\n");
         if ((item != "book") || (target != "shelf"))
-                return notify_fail ("ÄãÒª²åÊ²Ã´ÔÚÊ²Ã´ÉÏ£¿\n");
+                return notify_fail ("ä½ è¦æ’ä»€ä¹ˆåœ¨ä»€ä¹ˆä¸Šï¼Ÿ\n");
         if (! obj = present (item, me))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
-        if (obj->query("name") != HIY"Ð¡ËµÊé"NOR)
-                return notify_fail("Õâ±¾ÊéÌ«ºñÁË£¬·Å²»½ø¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
+        if (obj->query("name") != HIY"å°è¯´ä¹¦"NOR)
+                return notify_fail("è¿™æœ¬ä¹¦å¤ªåŽšäº†ï¼Œæ”¾ä¸è¿›ã€‚\n");
         if (query("exits/west"))
-                return notify_fail("ÒÑ¾­·Å²»ÏÂÁË¡£\n");
-        message_vision("$N½«$n·ÅÔÚÁËÊé¼ÜµÄ¿ÕÎ»ÉÏ£¬Ä¾ÃÅ¾¹È»¿ªÁË¡£\n", me, obj);
+                return notify_fail("å·²ç»æ”¾ä¸ä¸‹äº†ã€‚\n");
+        message_vision("$Nå°†$næ”¾åœ¨äº†ä¹¦æž¶çš„ç©ºä½ä¸Šï¼Œæœ¨é—¨ç«Ÿç„¶å¼€äº†ã€‚\n", me, obj);
         set("exits/west", __DIR__"ada/workroom");
         destruct(obj);
         return 1;
@@ -406,14 +406,14 @@ int do_pick(string arg)
         object me, obj;
         me = this_player();
         if(!arg || (arg != "book"))
-                return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åšä»€ä¹ˆï¼Ÿ\n");
         if ((sizeof(children("/u/batman/maggie/obj/book")) > 1) || (!query("exits/west")))
-                message_vision("$N´ÓÊé¼ÜÉÏÈ¡ÏÂÒ»±¾Êé£¬Ô­À´ÊÇ±¾×Öµä£¬$NÓÖ·ÅÁË»ØÈ¥¡£\n", me);
+                message_vision("$Nä»Žä¹¦æž¶ä¸Šå–ä¸‹ä¸€æœ¬ä¹¦ï¼ŒåŽŸæ¥æ˜¯æœ¬å­—å…¸ï¼Œ$Nåˆæ”¾äº†å›žåŽ»ã€‚\n", me);
 
         else
         {
                 obj = new(__DIR__"maggie/obj/book");
-                message_vision("$N´ÓÊé¼ÜÉÏÈ¡ÏÂÒ»±¾Êé£¬Î÷ÃæµÄÄ¾ÃÅÍ»È»ºÏÉÏÁË¡£\n", me);
+                message_vision("$Nä»Žä¹¦æž¶ä¸Šå–ä¸‹ä¸€æœ¬ä¹¦ï¼Œè¥¿é¢çš„æœ¨é—¨çªç„¶åˆä¸Šäº†ã€‚\n", me);
                 obj->move(me);
                 delete("exits/west");
         }

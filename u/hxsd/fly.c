@@ -10,13 +10,13 @@ void init()
 
 void create()
 {
-       set_name("·ÉĞĞ°ü", ({ "fly bag", "flybag", "bag" }) );
+       set_name("é£è¡ŒåŒ…", ({ "fly bag", "flybag", "bag" }) );
        set_weight(10);
        if( clonep() )
                set_default_object(__FILE__);
        else {
-               set("unit", "¸ö");
-               set("long", "ÕâÊÇÒ»¸ö¸øĞÂÊÖÓÃµÄ·ÉĞĞ°ü,Äã¿ÉÒÔÓÃflyÀ´¿ìËÙ·ÉĞĞ¡£\n");
+               set("unit", "ä¸ª");
+               set("long", "è¿™æ˜¯ä¸€ä¸ªç»™æ–°æ‰‹ç”¨çš„é£è¡ŒåŒ…,ä½ å¯ä»¥ç”¨flyæ¥å¿«é€Ÿé£è¡Œã€‚\n");
 		set("no_get", 1);
 		set("no_put", 1);
 		set("no_drop", 1);
@@ -29,19 +29,19 @@ int do_fly( )
   object ob, myenv, where;
   ob = this_player ( ) ;
   if (ob->is_busy())
-  return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+  return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
   if (ob->is_fighting() )
-  return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞÊ¹ÓÃ·ÉĞĞ°ü£¡\n");
+  return notify_fail("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨é£è¡ŒåŒ…ï¼\n");
 
   seteuid(getuid());
   where = environment(ob);
   if( ! environment(ob)->query("no_fight") )
-		return notify_fail("ÕâÀï²»°²È«£¬²»ÄÜ·É¡£\n");
+		return notify_fail("è¿™é‡Œä¸å®‰å…¨ï¼Œä¸èƒ½é£ã€‚\n");
 
   if (ob->query("age") < 16 && environment(ob)->query("no_fight"))
   {
-        message_vision("Äã·¢¶¯ÁË·ÉĞĞ°ü,Äã·ÉÁËÆğÀ´¡£\n",ob);
-        message_vision("Äã·É°¡·É,·ÉÁËºÜ³¤Ê±¼äÖÕÓÚ·Éµ½ÁË¸ß¿Õ......\n", ob);
+        message_vision("ä½ å‘åŠ¨äº†é£è¡ŒåŒ…,ä½ é£äº†èµ·æ¥ã€‚\n",ob);
+        message_vision("ä½ é£å•Šé£,é£äº†å¾ˆé•¿æ—¶é—´ç»ˆäºé£åˆ°äº†é«˜ç©º......\n", ob);
         ob->add("jing",-10);
         ob->add("qi",-10);
         myenv = environment (ob) ;
@@ -49,8 +49,8 @@ int do_fly( )
       	return 1;
   }
   else  
-  message_vision("ÄãÒÔ¾­ÕâÃ´´óÁË,»¹ÏëÓÃ·ÉĞĞ°ü??\n"
-                 "·ÉĞĞ°üÊÇ¸øĞÂÊÖÅÜµØÍ¼ÓÃµÄ¡£²»ÊÇ¸øÄãÓÃÀ´¼ÓexpµÄ!!!\n"
+  message_vision("ä½ ä»¥ç»è¿™ä¹ˆå¤§äº†,è¿˜æƒ³ç”¨é£è¡ŒåŒ…??\n"
+                 "é£è¡ŒåŒ…æ˜¯ç»™æ–°æ‰‹è·‘åœ°å›¾ç”¨çš„ã€‚ä¸æ˜¯ç»™ä½ ç”¨æ¥åŠ expçš„!!!\n"
                  ,ob);
   return 1;
 }

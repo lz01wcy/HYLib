@@ -1,4 +1,4 @@
-// yunv-xinfa.c ÓñÅ®ĞÄ·¨
+// yunv-xinfa.c ç‰å¥³å¿ƒæ³•
 
 inherit FORCE;
 
@@ -7,11 +7,11 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
 
-        if ( me->query("gender") == "ÎŞĞÔ")
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑôÄÑµ÷£¬²»ÄÜĞŞÏ°ÓñÅ®ĞÄ·¨¡£\n");
+        if ( me->query("gender") == "æ— æ€§")
+                return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³éš¾è°ƒï¼Œä¸èƒ½ä¿®ä¹ ç‰å¥³å¿ƒæ³•ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if (
 	me->query_skill("bahuang-gong",1)
@@ -38,13 +38,13 @@ me->query_skill("huashan-neigong",1)   ||
 me->query_skill("zixia-shengong",1) ||
 me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("guiyuan-tunafa",1) )
-		return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§ÓñÅ®ĞÄ¾­£¿£¡\n");
+		return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦ç‰å¥³å¿ƒç»ï¼Ÿï¼\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÓñÅ®ĞÄ·¨Ö»ÄÜÓÃÑ§(learn)À´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("ç‰å¥³å¿ƒæ³•åªèƒ½ç”¨å­¦(learn)æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name("µç¼ªËû", ({"dian jita", "jita"}));
+	set_name("ç”µå‰ä»–", ({"dian jita", "jita"}));
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("long",@LONG
-ÕâÊÇÒ»°ÑÀ¶É«µÄ£¬ºÜCOOLµÄµç¼ªËû£¬ÉÏÃæÏµ×Å¼¸¸ùÏÒ£¬µ¯£¨tan£©
-ÆğÀ´·¢³öÒ»ÕóÃÀÃîµÄÔÏÂÉ¡£
+è¿™æ˜¯ä¸€æŠŠè“è‰²çš„ï¼Œå¾ˆCOOLçš„ç”µå‰ä»–ï¼Œä¸Šé¢ç³»ç€å‡ æ ¹å¼¦ï¼Œå¼¹ï¼ˆtanï¼‰
+èµ·æ¥å‘å‡ºä¸€é˜µç¾å¦™çš„éŸµå¾‹ã€‚
 LONG
 );
 	set("value", 0);
@@ -28,80 +28,80 @@ void init()
 int do_tan(string arg)
 {
 	object me = this_player();
-	if( !arg || arg=="") return notify_fail("ÄãÒªµ¯Ê²Ã´£¿\n");
+	if( !arg || arg=="") return notify_fail("ä½ è¦å¼¹ä»€ä¹ˆï¼Ÿ\n");
 	
 	if( me->query("qi") < 100 )
-		return notify_fail("±ğÔÙ³ªÁË£¬»áÃ»ÃüµÄ£¡\n");
-	if( arg == "jita"  || arg == "¼ªËû"){
-	   	message_vision("$NºÜCOOLµÄÄÃÆğÒ»°Ñµç¼ªËû£¬¼¤°ºµÄÒôÀÖÉùÕğº³×ÅÃ¿Ò»¸öÉÙÅ®µÄĞÄ»³¡£\n",me);
+		return notify_fail("åˆ«å†å”±äº†ï¼Œä¼šæ²¡å‘½çš„ï¼\n");
+	if( arg == "jita"  || arg == "å‰ä»–"){
+	   	message_vision("$Nå¾ˆCOOLçš„æ‹¿èµ·ä¸€æŠŠç”µå‰ä»–ï¼Œæ¿€æ˜‚çš„éŸ³ä¹å£°éœ‡æ’¼ç€æ¯ä¸€ä¸ªå°‘å¥³çš„å¿ƒæ€€ã€‚\n",me);
 	   	me->add("qi",-100);
-	   	me->set("title",HIR +"·ç"+ HIY +"×ÜÊÇ"+ HIW +"´µ¹ı"NOR);
+	   	me->set("title",HIR +"é£"+ HIY +"æ€»æ˜¯"+ HIW +"å¹è¿‡"NOR);
 	switch( random(22) ) {
                 case 0:
-           	message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"Don~t Break My Heart£¬ÔÙ´ÎÎÂÈá£¬Ï²ÔÃ×ÜÊÇ³öÏÖÔÚÎÒÃÎÖĞ¡«¡«\n"NOR,users());
+           	message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"Don~t Break My Heartï¼Œå†æ¬¡æ¸©æŸ”ï¼Œå–œæ‚¦æ€»æ˜¯å‡ºç°åœ¨æˆ‘æ¢¦ä¸­ï½ï½\n"NOR,users());
 		break;
                 case 1:
-                message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÎÒµÄÈÈÇé£¬ºÃÏóÒ»°Ñ»ğ£¬È¼ÉÕÁËÕû¸öÉ³Ä®£¬Ì«Ñô¼ûÁËÎÒ£¬Ò²»á¶ã×ÅÎÒ¡«¡«\n"NOR,users());
+                message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æˆ‘çš„çƒ­æƒ…ï¼Œå¥½è±¡ä¸€æŠŠç«ï¼Œç‡ƒçƒ§äº†æ•´ä¸ªæ²™æ¼ ï¼Œå¤ªé˜³è§äº†æˆ‘ï¼Œä¹Ÿä¼šèº²ç€æˆ‘ï½ï½\n"NOR,users());
 		break;
                 case 2:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÎÒ³ĞÈÏ¶¼ÊÇÔÂÁÁÈÇµÄ»ö£¬ÄÇÑùµÄÒ¹É«Ì«ÃÀÄãÌ«ÎÂÈá¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æˆ‘æ‰¿è®¤éƒ½æ˜¯æœˆäº®æƒ¹çš„ç¥¸ï¼Œé‚£æ ·çš„å¤œè‰²å¤ªç¾ä½ å¤ªæ¸©æŸ”ï½ï½\n"NOR,users());
 		break;
         	case 4:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"¶¼ÊÇÄãµÄ´í£¬ÇáÒ×°®ÉÏÎÒ£¬ÈÃÎÒ²»Öª²»¾õÂú×ã±»°®µÄĞéÈÙ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"éƒ½æ˜¯ä½ çš„é”™ï¼Œè½»æ˜“çˆ±ä¸Šæˆ‘ï¼Œè®©æˆ‘ä¸çŸ¥ä¸è§‰æ»¡è¶³è¢«çˆ±çš„è™šè£ï½ï½\n"NOR,users());
 		break;
 		case 5:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"½ñÒ¹µÄº®·ç½«ÎÒĞÄËºËé£¬âê»ÅµÄ½Å²½ÎÒ²»×í²»¹é£¬ëüëÊµÄÏ¸ÓêÓĞëüëÊµÄÃÀ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"ä»Šå¤œçš„å¯’é£å°†æˆ‘å¿ƒæ’•ç¢ï¼Œæ€…æ…Œçš„è„šæ­¥æˆ‘ä¸é†‰ä¸å½’ï¼Œæœ¦èƒ§çš„ç»†é›¨æœ‰æœ¦èƒ§çš„ç¾ï½ï½\n"NOR,users());
 		break;
 	 	case 6:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÎÒÔõÃ´¿ŞµÃÈç´ËÀÇ±·£¬ÊÇ·ñÎÒ¶ÔÄã»¹ÓĞËùÒÀÁµ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æˆ‘æ€ä¹ˆå“­å¾—å¦‚æ­¤ç‹¼ç‹ˆï¼Œæ˜¯å¦æˆ‘å¯¹ä½ è¿˜æœ‰æ‰€ä¾æ‹ï½ï½\n"NOR,users());
 		break;
 	   	case 7:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"Ò»±­¾Æ£¬¶ş½ÇÒø£¬Èı¾ä¸æĞÄÂïÀ´´ÕÕó¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"ä¸€æ¯é…’ï¼ŒäºŒè§’é“¶ï¼Œä¸‰å¥å‘Šå¿ƒå˜›æ¥å‡‘é˜µï½ï½\n"NOR,users());
 		break;
 	   	case 8:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÀäÀäµÄ±ùÓêÔÚÁ³ÉÏºúÂÒµÄÅÄ£¬ÀäÀäµÄÑÛÀá¸úÓêË®»ì³ÉÒ»¿é¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"å†·å†·çš„å†°é›¨åœ¨è„¸ä¸Šèƒ¡ä¹±çš„æ‹ï¼Œå†·å†·çš„çœ¼æ³ªè·Ÿé›¨æ°´æ··æˆä¸€å—ï½ï½\n"NOR,users());
 		break;
 	   	case 9:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÎÒÏë¿Şµ«ÊÇ¿Ş²»³öÀ´£¬¸ú×Å¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æˆ‘æƒ³å“­ä½†æ˜¯å“­ä¸å‡ºæ¥ï¼Œè·Ÿç€ï½ï½\n"NOR,users());
 		break;
 		case 10:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ËµÁËÊÇÎŞĞÄ£¬×öÁË¸üÎŞÇé£¬¶¼Ëµ×öÎŞÇéÈËÓĞºÎ±ØÔÙĞ´ĞÅ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"è¯´äº†æ˜¯æ— å¿ƒï¼Œåšäº†æ›´æ— æƒ…ï¼Œéƒ½è¯´åšæ— æƒ…äººæœ‰ä½•å¿…å†å†™ä¿¡ï½ï½\n"NOR,users());
 		break;
 		case 11:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"Çé»¨¿ª£¬¿ª²ÓÀÃ£¬¿ìÀÖÓÀÎŞÏŞ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æƒ…èŠ±å¼€ï¼Œå¼€ç¿çƒ‚ï¼Œå¿«ä¹æ°¸æ— é™ï½ï½\n"NOR,users());
 		break;
 		case 12:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"µ±ÄêÏàÁµÒâÖĞÈË£¬´ó¼ÒĞÔÇé½ü£¬¿ÕÓĞ°®Ë¿ÍòÇ§ÕÉ£¬Ôç¾­ÏûÉ¢»¯ÑÌÔÆ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"å½“å¹´ç›¸æ‹æ„ä¸­äººï¼Œå¤§å®¶æ€§æƒ…è¿‘ï¼Œç©ºæœ‰çˆ±ä¸ä¸‡åƒä¸ˆï¼Œæ—©ç»æ¶ˆæ•£åŒ–çƒŸäº‘ï½ï½\n"NOR,users());
 		break;
 		case 13:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"À´°ÉÎÒÊ²Ã´¶¼Ó¦³Ğ£¬À´°ÉÎÒÊ²Ã´¶¼ÌıÃü¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æ¥å§æˆ‘ä»€ä¹ˆéƒ½åº”æ‰¿ï¼Œæ¥å§æˆ‘ä»€ä¹ˆéƒ½å¬å‘½ï½ï½\n"NOR,users());
 		break;
 		case 14:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÀäÓêÒ¹ÎÒ²»Ïë¹é¼Ò£¬ÅÎÍûÄã±³Ó°£¬¿É¿àĞ¦ÍûÓêµã£¬ËäÖªÒªËµÇå³ş£¬¿ÉÏ§ÎÒÃ»µ¨ÊÔ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"å†·é›¨å¤œæˆ‘ä¸æƒ³å½’å®¶ï¼Œç›¼æœ›ä½ èƒŒå½±ï¼Œå¯è‹¦ç¬‘æœ›é›¨ç‚¹ï¼Œè™½çŸ¥è¦è¯´æ¸…æ¥šï¼Œå¯æƒœæˆ‘æ²¡èƒ†è¯•ï½ï½\n"NOR,users());
 		break;
 		case 15:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÎÒ»á²ëÈ¥ÎÒ²»Ğ¡ĞÄµÎÏÂµÄÀáË®£¬»¹»á×°×öÒ»ÇĞ¶¼ÎŞËùÎ½¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æˆ‘ä¼šæ½å»æˆ‘ä¸å°å¿ƒæ»´ä¸‹çš„æ³ªæ°´ï¼Œè¿˜ä¼šè£…åšä¸€åˆ‡éƒ½æ— æ‰€è°“ï½ï½\n"NOR,users());
 		break;
 		case 16:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÈÃÎÒ½«ÄãĞÄ¶ùÕªÏÂ£¬ÊÔ×ÅÈÃËüÂşÂşÈÚ»¯£¬¿´ÎÒÔÚÄãĞÄÖĞÊÇ·ñÈÔÍêÃÀŸoè¦¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"è®©æˆ‘å°†ä½ å¿ƒå„¿æ‘˜ä¸‹ï¼Œè¯•ç€è®©å®ƒæ¼«æ¼«èåŒ–ï¼Œçœ‹æˆ‘åœ¨ä½ å¿ƒä¸­æ˜¯å¦ä»å®Œç¾oç‘•ï½ï½\n"NOR,users());
 		break;
 		case 17:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"µ±Ëû¶ÔÄãËµÒ»ÍùÇéÉî£¬ÄãÇ§Íò²»ÒªĞÅÒÔÎªÕæ£¬²»ÒªÇáÒ×µÄ¸¶³öÄãµÄÎÇ¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"å½“ä»–å¯¹ä½ è¯´ä¸€å¾€æƒ…æ·±ï¼Œä½ åƒä¸‡ä¸è¦ä¿¡ä»¥ä¸ºçœŸï¼Œä¸è¦è½»æ˜“çš„ä»˜å‡ºä½ çš„å»ï½ï½\n"NOR,users());
 		break;
 		case 18:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"Å¶ÏàË¼ÎŞÓÃ£¬Å¶ÏàË¼ÎŞÓÃ£¬¶ÔÎÒÊÇÒ»ÖÖÌ«°º¹óµÄÍ´¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"å“¦ç›¸æ€æ— ç”¨ï¼Œå“¦ç›¸æ€æ— ç”¨ï¼Œå¯¹æˆ‘æ˜¯ä¸€ç§å¤ªæ˜‚è´µçš„ç—›ï½ï½\n"NOR,users());
 		break;
 		case 19:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"Every Sha La La La£¬Every How How£¬Sunshine¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"Every Sha La La Laï¼ŒEvery How Howï¼ŒSunshineï½ï½\n"NOR,users());
 		break;
 		case 20:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"ÎÒµÄ°®Èç³±Ë®£¬°®Èç³±Ë®½«ÎÒÏòÄãÍÆ£¬½ô½ô¸úËæ£¬°®Èç³±Ë®Ëü½«ÄãÎÒ°üÎ§¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"æˆ‘çš„çˆ±å¦‚æ½®æ°´ï¼Œçˆ±å¦‚æ½®æ°´å°†æˆ‘å‘ä½ æ¨ï¼Œç´§ç´§è·Ÿéšï¼Œçˆ±å¦‚æ½®æ°´å®ƒå°†ä½ æˆ‘åŒ…å›´ï½ï½\n"NOR,users());
 		break;
 		case 21:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"½ñÌìÍíÉÏµÄĞÇĞÇºÜÉÙ£¬²»ÖªµÀËüÃÇµ½ÄÄÀïÁË¡«¡«\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"ä»Šå¤©æ™šä¸Šçš„æ˜Ÿæ˜Ÿå¾ˆå°‘ï¼Œä¸çŸ¥é“å®ƒä»¬åˆ°å“ªé‡Œäº†ï½ï½\n"NOR,users());
 		break;
 		case 22:
-		message("channel:chat",HIY"¡¼"+me->query("name")+"¾Å¾ÅÉÇÍ·Ñİ³ª»á¡½£º"HIC"°¥Ó´Ïò×ÅÌì¿Õ°İ°İÑ½ÓÂ¸ÒÕ¾ÆğÀ´£¬ÀÏÌì°®±¿Ğ¡º¢¡£\n"NOR,users());
+		message("channel:chat",HIY"ã€–"+me->query("name")+"ä¹ä¹æ±•å¤´æ¼”å”±ä¼šã€—ï¼š"HIC"å“å“Ÿå‘ç€å¤©ç©ºæ‹œæ‹œå‘€å‹‡æ•¢ç«™èµ·æ¥ï¼Œè€å¤©çˆ±ç¬¨å°å­©ã€‚\n"NOR,users());
 		break;
 		}
 	return 1;

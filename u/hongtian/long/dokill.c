@@ -9,13 +9,13 @@ int main(object me,string arg)
 	if ( arg ) 
 	{
 		if ( sscanf(arg,"%s %s",ob1name,ob2name)!=2 )
-			return notify_fail("Ö¸Áî´íÎó£¡\n");
+			return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼\n");
 		ob1 = present(ob1name,environment(me));
 		ob2 = present(ob2name,environment(me));
 		if (!ob1 || !ob2)
-			return notify_fail("Ã»ÓÐÕâ¸öÈË!\n");
+			return notify_fail("æ²¡æœ‰è¿™ä¸ªäºº!\n");
 		message("channel:chat", 
-		HIW"¡¾ÀÞÌ¨ÉÏ¡¿"+sprintf("ÕâÀï30ÃëºóÏÖ³¡Ö±²¥%s¶Ô%sµÄ±ÈÎä",ob1->name(),ob2->name()) + "\n"NOR, users());
+		HIW"ã€æ“‚å°ä¸Šã€‘"+sprintf("è¿™é‡Œ30ç§’åŽçŽ°åœºç›´æ’­%så¯¹%sçš„æ¯”æ­¦",ob1->name(),ob2->name()) + "\n"NOR, users());
 		remove_call_out("kill_each");
               call_out("kill_each",30,ob1,ob2);
 		return 1;			
@@ -26,7 +26,7 @@ int main(object me,string arg)
 private void kill_each(object ob1,object ob2)
 {
 	message("channel:chat", 
-		HIW"¡¾ÀÞÌ¨ÉÏ¡¿"+sprintf("%s¶Ô%sµÄ±ÈÎäÏÖÔÚ¿ªÊ¼",ob1->name(),ob2->name()) + "\n"NOR, users());
+		HIW"ã€æ“‚å°ä¸Šã€‘"+sprintf("%så¯¹%sçš„æ¯”æ­¦çŽ°åœ¨å¼€å§‹",ob1->name(),ob2->name()) + "\n"NOR, users());
 	ob1->kill_ob(ob2);
 	ob2->kill_ob(ob1);
 }

@@ -38,36 +38,36 @@ int quest_reward(object me, object who,object quest_item)
         me->add("score",score);
 	color=random(5);
 	if (color>3)
-	{tell_object(me,HIR"Äã±»½±ÀøÁË£º\n" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+	{tell_object(me,HIR"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+        chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);}
 	else if (color>2)
-	{tell_object(me,HIB"Äã±»½±ÀøÁË£º\n" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+	{tell_object(me,HIB"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+        chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);}
 	else if (color>1)
-	{tell_object(me,HIM"Äã±»½±ÀøÁË£º\n" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+	{tell_object(me,HIM"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+        chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);}
 	else if (color>0)
-	{tell_object(me,HIY"Äã±»½±ÀøÁË£º\n" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+	{tell_object(me,HIY"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+        chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);}
 	else 
-	{tell_object(me,HIC"Äã±»½±ÀøÁË£º\n" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-        chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);}
+	{tell_object(me,HIC"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+        chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†\n"NOR);}
 	me->add("TASK",1);
 	if( !undefinedp(quest["fin_func"]))
 	call_other(this_object(),quest["fin_func"],me,who,quest_item);
 	if(quest_item)
 	destruct(quest_item);destruct(present("xdshi",me));
-	tell_object(me,HIW"ÄãÉíÉÏµÄ"+HIR+"Æß"+HIC+"²Ê"+HIY+"Ïò"+HIM+"µ¼"+HIG+"Ê¯"HIW"¸ú×ÅÉñÊéÒ»ÆğÏûÊ§ÁË¡£\n"NOR);
+	tell_object(me,HIW"ä½ èº«ä¸Šçš„"+HIR+"ä¸ƒ"+HIC+"å½©"+HIY+"å‘"+HIM+"å¯¼"+HIG+"çŸ³"HIW"è·Ÿç€ç¥ä¹¦ä¸€èµ·æ¶ˆå¤±äº†ã€‚\n"NOR);
 	return 1;
 }
 
@@ -130,16 +130,16 @@ string dyn_quest_list()
 	if(already_spreaded(quests[i]["file_name"]))
 	{
 	if(random(2))
-	output += sprintf("%sµÄ%s£¨%s£©\n",owner->query("name"),item->query("name"),item->query("id"));
+	output += sprintf("%sçš„%sï¼ˆ%sï¼‰\n",owner->query("name"),item->query("name"),item->query("id"));
 	else
-	output = sprintf("%sµÄ%s£¨%s£©\n",owner->query("name"),item->query("name"),item->query("id")) + output;
+	output = sprintf("%sçš„%sï¼ˆ%sï¼‰\n",owner->query("name"),item->query("name"),item->query("id")) + output;
 	}
 	else
 	{
 	if(random(2))
-	output += sprintf("%sµÄ%s£¨%s£©¡²ÒÑÍê³É¡³\n",owner->query("name"),item->query("name"),item->query("id"));
+	output += sprintf("%sçš„%sï¼ˆ%sï¼‰ã€”å·²å®Œæˆã€•\n",owner->query("name"),item->query("name"),item->query("id"));
 	else
-	output = sprintf("%sµÄ%s£¨%s£©¡²ÒÑÍê³É¡³\n",owner->query("name"),item->query("name"),item->query("id")) + output;
+	output = sprintf("%sçš„%sï¼ˆ%sï¼‰ã€”å·²å®Œæˆã€•\n",owner->query("name"),item->query("name"),item->query("id")) + output;
 	}
 	}
 	return output;
@@ -147,15 +147,15 @@ string dyn_quest_list()
 string locate_obj(string strr)
 {
         string *distance = ({
-"¼«½ü", "ºÜ½ü", "±È½Ï½ü", "²»Ô¶",
-"²»½ü", "±È½ÏÔ¶", "ºÜÔ¶", "¼«Ô¶"
+"æè¿‘", "å¾ˆè¿‘", "æ¯”è¾ƒè¿‘", "ä¸è¿œ",
+"ä¸è¿‘", "æ¯”è¾ƒè¿œ", "å¾ˆè¿œ", "æè¿œ"
         });
         string *altitude =({
-"¸ß´¦", "µØ·½", "µÍ´¦"
+"é«˜å¤„", "åœ°æ–¹", "ä½å¤„"
         });
         string *directions=({
-"ÖÜÎ§","±±·½", "ÄÏ·½", "¶«·½","Î÷·½",
-"¶«±±·½","Î÷±±·½","¶«ÄÏ·½","Î÷ÄÏ·½"
+"å‘¨å›´","åŒ—æ–¹", "å—æ–¹", "ä¸œæ–¹","è¥¿æ–¹",
+"ä¸œåŒ—æ–¹","è¥¿åŒ—æ–¹","ä¸œå—æ–¹","è¥¿å—æ–¹"
         });
         object ob, tmpobj,where, *ob_list;
         object item,room;
@@ -184,105 +184,105 @@ string locate_obj(string strr)
                 map=values(ob->query("exits"));
                 map=values(map[random(sizeof(map))]->query("exits"));//add by zzz for random locate
        if (ob->query("outdoors")=="baituo")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ°×ÍÕÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨ç™½é©¼å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="binghuodao")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ±ù»ğµºµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å†°ç«å²›çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="city")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÑïÖİµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ‰¬å·çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="yangzhou")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÑïÖİ½¼ÍâµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ‰¬å·éƒŠå¤–çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="city2")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ¾©³ÇµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨äº¬åŸçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="chengdu") 
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ³É¶¼µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æˆéƒ½çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="changan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ³¤°²³ÇµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é•¿å®‰åŸçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="dali")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ´óÀíµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å¤§ç†çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="emei")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ¶ğÃ¼É½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å¨¥çœ‰å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="foshan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ·ğÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨ä½›å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="gaibang")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚØ¤°ïµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨ä¸å¸®çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="gaochang")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ¸ß²ıµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é«˜æ˜Œçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="guanwai")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ¹ØÍâµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å…³å¤–çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="guiyun")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ¹éÔÆ×¯µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å½’äº‘åº„çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="gumu")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ¹ÅÄ¹ÅÉµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å¤å¢“æ´¾çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="hangzhou")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚº¼ÖİµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ­å·çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="heimuya")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚºÚÄ¾ÑÂµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é»‘æœ¨å´–çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="hengshan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚºãÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ’å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="henshan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚºâÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨è¡¡å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="huanggon")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ»Ê¹¬µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨çš‡å®«çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="huanghe")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ»ÆºÓ¾ÅÇúµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é»„æ²³ä¹æ›²çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="xx")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ»ªÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨åå±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="jinshe")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ½ğÉßÉ½¶´µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é‡‘è›‡å±±æ´çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="lingjiu")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÁéğÕ¹¬µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨çµé¹«å®«çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="lingzhou")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÁéÖŞµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨çµæ´²çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="meizhuang")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÃ·×¯µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ¢…åº„çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="mingjiao")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÃ÷½ÌµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ˜æ•™çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="qingcheng")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÇà³ÇÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é’åŸå±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="quanzhen")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÖØÑô¹¬µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é‡é˜³å®«çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="quanzhou")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÈªÖŞµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ³‰æ´²çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="shaolin")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÉÙÁÖËÂµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å°‘æ—å¯ºçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="shenlong")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÉñÁúµºµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨ç¥é¾™å²›çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="songshan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚáÔÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨åµ©å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="suzhou")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚËÕÖİµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨è‹å·çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="taishan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÌ©É½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ³°å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="taohua")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÌÒ»¨µºµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ¡ƒèŠ±å²›çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="tianlongsi")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÌìÁúËÂµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨å¤©é¾™å¯ºçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="wanjiegu")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÍò½Ù¹ÈµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨ä¸‡åŠ«è°·çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="wudang")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÎäµ±É½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ­¦å½“å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="xiakedao")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÏÀ¿ÍµºµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨ä¾ å®¢å²›çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="xiangyang")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÏåÑô³ÇµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨è¥„é˜³åŸçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="xiaoyao")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚåĞÒ£ÁÖµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é€é¥æ—çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="xingxiuhai")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚĞÇËŞº£µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ˜Ÿå®¿æµ·çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="xueshan")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÑ©É½ËÂµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é›ªå±±å¯ºçš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="mr")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÄ½ÈİÊÀ¼ÒµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ…•å®¹ä¸–å®¶çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="kunlun")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÀ¥ÂØÉ½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æ˜†ä»‘å±±çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 else if (ob->query("outdoors")=="tiezhang")  
-	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÌúÕÆÃÅµÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
-else 	output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚÄ³¸öµØ·½µÄ"+map[random(sizeof(map))]->query("short")+"¸½½ü¡£\n";
+	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨é“æŒé—¨çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
+else 	output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨æŸä¸ªåœ°æ–¹çš„"+map[random(sizeof(map))]->query("short")+"é™„è¿‘ã€‚\n";
 	return output;
                 }
                 }
 	}
-                return "È·¶¨²»ÁË"+strr+"µÄ´ó¸ÅÎ»ÖÃ.\n";
+                return "ç¡®å®šä¸äº†"+strr+"çš„å¤§æ¦‚ä½ç½®.\n";
 
 }
 varargs int already_spreaded(string str,int hard)
@@ -355,7 +355,7 @@ mapping *read_table(string file)
 }
 void big_reward(object me, object who, object item)
 {
-	tell_object(me,"ÄãÕæĞĞ£¡£¡\n");
+	tell_object(me,"ä½ çœŸè¡Œï¼ï¼\n");
 }
 
 void execute_accept_object(object me, object who, object item)

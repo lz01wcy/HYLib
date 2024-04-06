@@ -1,5 +1,5 @@
 
-// baihong-jian.c °×ºç½£
+// baihong-jian.c ç™½è™¹å‰‘
 
 #include <ansi.h>
 #include <weapon.h>
@@ -8,22 +8,22 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIG "±ÌË®½£" NOR, ({ "bishui jian", "bishui", "jian", "sword" }) );
+        set_name(HIG "ç¢§æ°´å‰‘" NOR, ({ "bishui jian", "bishui", "jian", "sword" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long","ÕâÊÇ°ÑÓÖ±¡ÓÖÇáµÄÈí½££¬½£ÉíÉÏÒşÒşµÄÍ¸³ö°×¹â£¬µ±Õæ·æÀûÎŞ±È¡£\n");
+                set("unit", "æŠŠ");
+                set("long","è¿™æ˜¯æŠŠåˆè–„åˆè½»çš„è½¯å‰‘ï¼Œå‰‘èº«ä¸Šéšéšçš„é€å‡ºç™½å…‰ï¼Œå½“çœŸé”‹åˆ©æ— æ¯”ã€‚\n");
                 set("value", 3000);
                 set("unique", 1);
                 set("rigidity", 1);
                 set("sharpness", 1);
                 set("material", "blacksteel");
                 set("treasure",1);
-                set("long","ÕâÊÇ°ÑÓÖ±¡ÓÖÇáµÄÈí½££¬½£ÉíÉÏÒşÒşµÄÍ¸³öÂÌ¹â£¬µ±Õæ·æÀûÎŞ±È¡£\n");
-                set("wield_msg", "Ö»Ìı¼û¡¸ÎË¡¹µØÒ»Éù£¬°×¹â¶ÙÏÖ£¬$N½«Ñü¼ä½âÏÂµÄ$n¶¶µÃ±ÊÖ±¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n¾íÈëÑü¼ä¡£\n");
+                set("long","è¿™æ˜¯æŠŠåˆè–„åˆè½»çš„è½¯å‰‘ï¼Œå‰‘èº«ä¸Šéšéšçš„é€å‡ºç»¿å…‰ï¼Œå½“çœŸé”‹åˆ©æ— æ¯”ã€‚\n");
+                set("wield_msg", "åªå¬è§ã€Œå—¡ã€åœ°ä¸€å£°ï¼Œç™½å…‰é¡¿ç°ï¼Œ$Nå°†è…°é—´è§£ä¸‹çš„$næŠ–å¾—ç¬”ç›´ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$nå·å…¥è…°é—´ã€‚\n");
         }
         init_sword(80);
 

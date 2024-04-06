@@ -5,10 +5,10 @@ inherit BOOTS;
 
 void create()
 {
-	set_name(YEL"ÏÍÕßÖ®Ñ¥"NOR, ({ "light boots", "lightboots" }));
-	set("long", YEL"ÕâÊÇÒ»Ë«ÏÍÕßÖ®Ñ¥£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+	set_name(YEL"è´¤è€…ä¹‹é´"NOR, ({ "light boots", "lightboots" }));
+	set("long", YEL"è¿™æ˜¯ä¸€åŒè´¤è€…ä¹‹é´ï¼Œä¸Šé¢åˆ»ç€ä¸€äº›å¥‡æ€ªçš„å’’è¯­ã€‚\n"NOR);
 	set("weight", 400);
-	set("unit", "Ë«");
+	set("unit", "åŒ");
 	set("armor_prop/intelligence",5);
 	     set("armor_prop/dexterity",5);
 	set("value", 132000);

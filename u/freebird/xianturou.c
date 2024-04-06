@@ -1,16 +1,16 @@
-// turou.c ÏÉÍÃµÄÈâ
+// turou.c ä»™å…”çš„è‚‰
 inherit ITEM;
 inherit F_FOOD;
 void create()
 {
-    set_name("ÏÉÍÃµÄÈâ", ({
+    set_name("ä»™å…”çš„è‚‰", ({
 "xian turou", "turou"}));
     set_weight(300);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»¿éÓñÍÃµÄÈâ£¬ÌØ±ğºñ¡£Ò»¿é¹»Äã¿ÉÒÔ³Ô3ÌìÁË¡£\n");
-        set("unit", "¿é");
+        set("long", "ä¸€å—ç‰å…”çš„è‚‰ï¼Œç‰¹åˆ«åšã€‚ä¸€å—å¤Ÿä½ å¯ä»¥åƒ3å¤©äº†ã€‚\n");
+        set("unit", "å—");
         set("value", 5000);
         set("food_remaining", 20);
         set("food_supply", 250);

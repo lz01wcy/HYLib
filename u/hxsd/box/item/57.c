@@ -1,4 +1,4 @@
-// Ã«Ëñ /clone/eat/food/mao_sun.c
+// æ¯›ç¬‹ /clone/eat/food/mao_sun.c
 // by lala, 1997-12-16
 
 #include <ansi.h>
@@ -9,11 +9,11 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name(HIM"ó¦Ğ·"NOR, ({"yu8"}));
+    set_name(HIM"èƒèŸ¹"NOR, ({"yu8"}));
     set_weight(30000);
-    set("long", "Ò»¸ö´ó´óµÄó¦Ğ·\n");
-    set("unit", "¸ö");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+    set("long", "ä¸€ä¸ªå¤§å¤§çš„èƒèŸ¹\n");
+    set("unit", "ä¸ª");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);

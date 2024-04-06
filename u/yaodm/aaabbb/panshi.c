@@ -13,14 +13,14 @@ void init()
 
 void create()
 {
-        set_name("µ¼µ¯", ({"daodan"}));
+        set_name("å¯¼å¼¹", ({"daodan"}));
        if (clonep())
                set_default_object(__FILE__);
        else {
                set("long",
-                         "ÕâÊÇÏÀ¿ÍÐÐÄ¿Ç°×îÎªÏÈ½øµÄÎäÆ÷¡£\n");
+                         "è¿™æ˜¯ä¾ å®¢è¡Œç›®å‰æœ€ä¸ºå…ˆè¿›çš„æ­¦å™¨ã€‚\n");
                set("value", 0);
-             set("unit", "¼Ü");
+             set("unit", "æž¶");
                set("no_get", 0);
                set("no_drop", 0);
                set("treasure", 1);
@@ -41,15 +41,15 @@ int do_send(string target)
        if(!(dest = find_player(target)))
              if(!(dest = find_living(target)))
              {
-                   write("Ã»ÓÐÕâ¸öÈË»òÉúÎï¡£\n");
+                   write("æ²¡æœ‰è¿™ä¸ªäººæˆ–ç”Ÿç‰©ã€‚\n");
                    return 1;
              }
-    if (!environment(dest)) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÄÀï¡£\n");
+    if (!environment(dest)) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨å“ªé‡Œã€‚\n");
 
 
 
 
-       dest->set_temp("last_damage_from", "±»" + me->name() + "Õ¨");
+       dest->set_temp("last_damage_from", "è¢«" + me->name() + "ç‚¸");
 
        dest->delete("env/immortal");
        dest->die();

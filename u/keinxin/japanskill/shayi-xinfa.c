@@ -10,7 +10,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force", 1) < 30)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬ÎÞ·¨Áì»áÉ±ÒâÐÄ·¨¡£\n"); if ( 
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šæ€æ„å¿ƒæ³•ã€‚\n"); if ( 
  me->query_skill("bahuang-gong",1)
 	|| me->query_skill("beiming-shengong",1)
 	|| me->query_skill("bibo-shengong",1)
@@ -37,13 +37,13 @@ me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("bingxue-xinfa",1)||
 me->query_skill("shenyuan-gong",1)||
 me->query_skill("wudu-shengong",1)||
-me->query_skill("guiyuan-tunafa",1) ) return notify_fail("Äã²»ÏÈÉ¢ÁË±ðÅÉÄÚ¹¦£¬ÔõÄÜÑ§É±ÒâÐÄ·¨£¿£¡\n");
+me->query_skill("guiyuan-tunafa",1) ) return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€Žèƒ½å­¦æ€æ„å¿ƒæ³•ï¼Ÿï¼\n");
 	return 1;
 }
 
 int practice_skill(object me)
 {
-       return notify_fail("É±ÒâÐÄ·¨Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+       return notify_fail("æ€æ„å¿ƒæ³•åªèƒ½ç”¨å­¦(learn)çš„æ¥å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
               
 }
 
@@ -54,11 +54,11 @@ string exert_function_file(string func)
 mapping exercise_msg(object me)
 {
   return ([
-    "status_msg" : HIB + me->name()+"É±ÒâËÄÆð£¬ÑÛÉñÁèÀ÷¡£" NOR,
-    "start_my_msg" : HIR"ÑÛÉñ±äµÃÁèÀ÷£¬ËÄÖÜÉ±ÒâËÄÆð£¬ÕæÆø¿ªÊ¼ÔÚÌåÄÚÔË×ª¡£\n"NOR,
-    "start_other_msg" : me->name()+"È«ÉíÊÕËõ£¬È«²¿µÄÁ¦Á¿·¢»ÓÁË³öÀ´£¬ÑÛÉñÖÐµÄÉ±ÒâÎÞ±ÈÁèÀ÷¡£\n",
-    "halt_msg" : "$NÃ¼Í·ËÉÕ¹£¬É±ÒâÏûÊ§£¬»Ö¸´ÁËÆ½Ê±µÄÄ£Ñù¡£\n",
-    "end_my_msg" : "ÎÞ¾¡µÄÉ±Òâ»º»ºÉ¢ÈëÈ«Éí£¬Õö¿ªÑÛ£¬³¤ÍÂÁËÒ»¿ÚÆø¡£\n",
-    "end_other_msg" : "Ö»¼û"+me->name()+"µÄÑÛ¾¦ÔÊÂúÉ±Òâ£¬µ«ÂíÉÏÓÖ»Ö¸´ÁËÔ­×´¡£\n"
+    "status_msg" : HIB + me->name()+"æ€æ„å››èµ·ï¼Œçœ¼ç¥žå‡ŒåŽ‰ã€‚" NOR,
+    "start_my_msg" : HIR"çœ¼ç¥žå˜å¾—å‡ŒåŽ‰ï¼Œå››å‘¨æ€æ„å››èµ·ï¼ŒçœŸæ°”å¼€å§‹åœ¨ä½“å†…è¿è½¬ã€‚\n"NOR,
+    "start_other_msg" : me->name()+"å…¨èº«æ”¶ç¼©ï¼Œå…¨éƒ¨çš„åŠ›é‡å‘æŒ¥äº†å‡ºæ¥ï¼Œçœ¼ç¥žä¸­çš„æ€æ„æ— æ¯”å‡ŒåŽ‰ã€‚\n",
+    "halt_msg" : "$Nçœ‰å¤´æ¾å±•ï¼Œæ€æ„æ¶ˆå¤±ï¼Œæ¢å¤äº†å¹³æ—¶çš„æ¨¡æ ·ã€‚\n",
+    "end_my_msg" : "æ— å°½çš„æ€æ„ç¼“ç¼“æ•£å…¥å…¨èº«ï¼Œçå¼€çœ¼ï¼Œé•¿åäº†ä¸€å£æ°”ã€‚\n",
+    "end_other_msg" : "åªè§"+me->name()+"çš„çœ¼ç›å…æ»¡æ€æ„ï¼Œä½†é©¬ä¸Šåˆæ¢å¤äº†åŽŸçŠ¶ã€‚\n"
           ]);
 }

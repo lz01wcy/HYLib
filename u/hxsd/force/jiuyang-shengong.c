@@ -1,4 +1,4 @@
-// jiuyang-shengong.c 九阳神功
+// jiuyang-shengong.c 涔濋槼绁炲姛
 // cleansword
 // Modified by Venus Oct.1997
 
@@ -14,7 +14,7 @@ int valid_learn(object me)
 	int lvl = (int)me->query_skill("jiuyang-shengong", 1);
 
 	if ((int)me->query_skill("force", 1) < 10)
-		return notify_fail("你的基本内功火候还不够，还不能学习九阳神功。\n");
+		return notify_fail("浣犵殑鍩烘湰鍐呭姛鐏�欒繕涓嶅锛岃繕涓嶈兘瀛︿範涔濋槼绁炲姛銆俓n");
 
 	if (
 	me->query_skill("bahuang-gong",1)
@@ -40,14 +40,14 @@ me->query_skill("huashan-neigong",1)   ||
 me->query_skill("zixia-shengong",1) ||
 me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("guiyuan-tunafa",1) )
-		return notify_fail("你不先散了别派内功，怎能学九阳神功？！\n");
+		return notify_fail("浣犱笉鍏堟暎浜嗗埆娲惧唴鍔燂紝鎬庤兘瀛︿節闃崇鍔燂紵锛乗n");
 	return 1;
 }
 
 
 int practice_skill(object me)
 {
-	return notify_fail("九阳神功只能用学(learn)的来增加熟练度。\n");
+	return notify_fail("涔濋槼绁炲姛鍙兘鐢ㄥ(learn)鐨勬潵澧炲姞鐔熺粌搴︺�俓n");
 }
 
 string exert_function_file(string func)

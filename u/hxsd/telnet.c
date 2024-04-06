@@ -19,13 +19,13 @@ void create()
 {
         set_name("Telnet client", ({ "telnet wizard", "telnet" }) );
         set("long",
-                "ÕâÊÇ»ğÔÆĞ°Éñ´´ÔìµÄÓÃÀ´Á¬½ÓÆäËû mud µÄ¾«Áé¡£\n");
+                "è¿™æ˜¯ç«äº‘é‚ªç¥åˆ›é€ çš„ç”¨æ¥è¿æ¥å…¶ä»– mud çš„ç²¾çµã€‚\n");
                 set_weight(3000);
                 set_max_encumbrance(0);
                 if( clonep() )
                         set_default_object(__FILE__);
                 else {
-                        set("unit", "¸ö");
+                        set("unit", "ä¸ª");
                         set("material", "unknow");
                 }
         setup();
@@ -85,7 +85,7 @@ int close_socket()
 
 void read_callback(int fd, mixed message)
 {
-        message = BOLD + "¡ú" + NOR + message;
+        message = BOLD + "â†’" + NOR + message;
         tell_me( (string) message );
 }
 

@@ -1,15 +1,15 @@
-//Npc ±È¹ÅÇåÊ®ÀÉ
-//diabio(ÇàÔÆ)2003.3.1
+//Npc æ¯”å¤æ¸…åéƒ
+//diabio(é’äº‘)2003.3.1
 #include <ansi.h>
 inherit NPC;
 int ask_tianxiang();
 inherit F_MASTER;
 void create()
 {
-        set_name("±È¹ÅÇåÊ®ÀÉ", ({ "biguqing shilang", "shilang" }));
-        set("long", "Ëû¾ÍÊÇç³´å½£ĞÄµÄÊ¦¸µ¡£ \n");
-        set("title", HIR"·ÉÌìÓù½£Á÷"HIY"µ±´úÕÆÃÅÈË"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¯”å¤æ¸…åéƒ", ({ "biguqing shilang", "shilang" }));
+        set("long", "ä»–å°±æ˜¯ç»¯æ‘å‰‘å¿ƒçš„å¸ˆå‚…ã€‚ \n");
+        set("title", HIR"é£å¤©å¾¡å‰‘æµ"HIY"å½“ä»£æŒé—¨äºº"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude","peaceful");
         set("str", 90);
@@ -48,8 +48,8 @@ void create()
         map_skill("force", "shayi-xinfa");
         map_skill("parry", "feitian-yujianliu");
               set("inquiry", ([
-           "·ÉÌìÓù½£Á÷":     "×ÔÕ½¹úÊ±´ú¿ªÊ¼ÒÔÁ÷´«ÁËÈı°ÙÄêµÄÎä¹¦¡£",
-           "ç³´å½£ĞÄ":   "ËûÊÇÎÒÄÇ²»Ğ¢Í½¶ù¡£"]) );
+           "é£å¤©å¾¡å‰‘æµ":     "è‡ªæˆ˜å›½æ—¶ä»£å¼€å§‹ä»¥æµä¼ äº†ä¸‰ç™¾å¹´çš„æ­¦åŠŸã€‚",
+           "ç»¯æ‘å‰‘å¿ƒ":   "ä»–æ˜¯æˆ‘é‚£ä¸å­å¾’å„¿ã€‚"]) );
         set("chat_chance_combat", 99);
         set("chat_msg_combat", ({
                 (: perform_action, "blade.jiu" :),
@@ -74,7 +74,7 @@ void unconcious()
         set("eff_jing", query("max_jing"));
         set("jing", query("max_jing"));
         set("jingli", query("eff_jingli"));
-        say( "±È¹ÅÇåÊ®ÀÉĞ¦×ÅËµ£ºÎÒÖ»ÊÇÔÚÕâ²âÊÔÎä¹¦£¡\n");
+        say( "æ¯”å¤æ¸…åéƒç¬‘ç€è¯´ï¼šæˆ‘åªæ˜¯åœ¨è¿™æµ‹è¯•æ­¦åŠŸï¼\n");
         command("hehe");
 
 }

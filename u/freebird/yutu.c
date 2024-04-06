@@ -1,17 +1,17 @@
-// yutu.c ÓñÍÃ
+// yutu.c çŽ‰å…”
 inherit NPC;
 void create()
 {
-        set_name("ÓñÍÃ", ({
+        set_name("çŽ‰å…”", ({
  "yu tu", "yu", "tu","hare" }) );
-    set("race", "Ò°ÊÞ");
+    set("race", "é‡Žå…½");
     set("age", 5);
         set("no_die",1);
-    set("long", "ËüÊÇ¹ãº®¹¬ÀïµÄÓñÍÃ£¬¸øÍÃ×Ó(tuzi)¹ÕÆ­ÏÂ·²ÁËµÄ¡£\n");
+    set("long", "å®ƒæ˜¯å¹¿å¯’å®«é‡Œçš„çŽ‰å…”ï¼Œç»™å…”å­(tuzi)æ‹éª—ä¸‹å‡¡äº†çš„ã€‚\n");
     set("attitude", "peaceful");
     
     set("limbs", ({
- "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åŽè„š", "å°¾å·´" }) );
     set("verbs", ({
  "bite", "claw" }) );
     set("combat_exp", 500000);
@@ -28,7 +28,7 @@ void create()
 void die()
 {
     object ob;
-    message_vision("$NÆà²ÒµÄº¿ÁË¼¸Éù£¬ËÀÁË¡£\n", this_object());
+    message_vision("$Nå‡„æƒ¨çš„åšŽäº†å‡ å£°ï¼Œæ­»äº†ã€‚\n", this_object());
     ob = new(__DIR__"xianturou");
     ob->move(environment(this_object()));
     destruct(this_object());

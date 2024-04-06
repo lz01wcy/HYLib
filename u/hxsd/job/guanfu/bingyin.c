@@ -1,41 +1,80 @@
-// Room: /city/bingyin.c
-// YZC 1995/12/04 
-
-#include <room.h>
-inherit ROOM;
-
-void create()
-{
-	set("short", "±øÓª");
-	set("long", @LONG
-ÕâÀïÊÇ±øÓª£¬ÃÜÃÜÂéÂéµ½´¦¶¼ÊÇ¹Ù±ø£¬ÓĞµÄÔÚÎä½«µÄÖ¸»ÓÏÂÁĞ¶Ó²ÙÁ·£¬
-ÓĞµÄ¶À×ÔÔÚÁ·¹¦£¬ÓĞµÄ×ø×Å¡¢ÌÉ×ÅÕıÔÚĞİÏ¢¡£ÄÏÇ½ÏÂ×ø×ÅÖ÷Ë§£¬²»¶¯ÉùÉ«
-µØÑ°ÊÓ×ÅËÄÖÜ¡£¿´µ½Äã½øÀ´£¬ËûÃÇÈ«¶¼ÏòÄã°üÎ§ÁË¹ıÀ´£¬ĞÎÊÆ¿´À´²»Ì«Ãî¡£
-ÄÏ±ßÓĞÒ»¸öÃÅ(men)¡£
-LONG );
-	set("item_desc", ([
-		"men" : "ÕâÊÇÒ»ÉÈ¼«ºñµÄÌúÃÅ¡£\n",
-	]));
-	set("exits", ([
-		"south" : __DIR__"bingqiku",
-		"north" : __DIR__"bingyindamen",
+// Room: /city/bingyin.c
+
+// YZC 1995/12/04 
+
+
+
+#include <room.h>
+
+inherit ROOM;
+
+
+
+void create()
+
+{
+
+	set("short", "å…µè¥");
+
+	set("long", @LONG
+
+è¿™é‡Œæ˜¯å…µè¥ï¼Œå¯†å¯†éº»éº»åˆ°å¤„éƒ½æ˜¯å®˜å…µï¼Œæœ‰çš„åœ¨æ­¦å°†çš„æŒ‡æŒ¥ä¸‹åˆ—é˜Ÿæ“ç»ƒï¼Œ
+
+æœ‰çš„ç‹¬è‡ªåœ¨ç»ƒåŠŸï¼Œæœ‰çš„åç€ã€èººç€æ­£åœ¨ä¼‘æ¯ã€‚å—å¢™ä¸‹åç€ä¸»å¸…ï¼Œä¸åŠ¨å£°è‰²
+
+åœ°å¯»è§†ç€å››å‘¨ã€‚çœ‹åˆ°ä½ è¿›æ¥ï¼Œä»–ä»¬å…¨éƒ½å‘ä½ åŒ…å›´äº†è¿‡æ¥ï¼Œå½¢åŠ¿çœ‹æ¥ä¸å¤ªå¦™ã€‚
+
+å—è¾¹æœ‰ä¸€ä¸ªé—¨(men)ã€‚
+
+LONG );
+
+	set("item_desc", ([
+
+		"men" : "è¿™æ˜¯ä¸€æ‰‡æåšçš„é“é—¨ã€‚\n",
+
+	]));
+
+	set("exits", ([
+
+		"south" : __DIR__"bingqiku",
+
+		"north" : __DIR__"bingyindamen",
+
 		"east" : __DIR__"quest/guanfu/kongchang",
-	]));
-	set("objects", ([
-		"quest/guanfu/shi" : 1,
+	]));
+
+	set("objects", ([
+
+		"quest/guanfu/shi" : 1,
+
 		"quest/guanfu/shiye" : 1,
-		__DIR__"npc/wujiang" : 2,
-		__DIR__"npc/bing" : 2,
-	]));
-//	set("no_clean_up", 0);
-	create_door("south", "ÌúÃÅ", "north", DOOR_CLOSED);
-	setup();
-}
-int valid_leave(object me, string dir)
-{
-	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
-		dir == "south")
-		return notify_fail("¹Ù±øÀ¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
-	return ::valid_leave(me, dir);
-}
-
+		__DIR__"npc/wujiang" : 2,
+
+		__DIR__"npc/bing" : 2,
+
+	]));
+
+//	set("no_clean_up", 0);
+
+	create_door("south", "é“é—¨", "north", DOOR_CLOSED);
+
+	setup();
+
+}
+
+int valid_leave(object me, string dir)
+
+{
+
+	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
+
+		dir == "south")
+
+		return notify_fail("å®˜å…µæ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
+
+	return ::valid_leave(me, dir);
+
+}
+
+
+

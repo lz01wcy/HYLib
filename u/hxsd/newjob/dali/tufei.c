@@ -3,15 +3,15 @@ inherit NPC;
 void create()
 {
       string weapon;
-        set_name("ÍÁ·Ë", ({ "tufei"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("åœŸåŒª", ({ "tufei"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 25);
         set("no_quest", 1);
         set("str", 33);
         set("con", 26);
         set("int", 20);
         set("dex", 23);
-        set("long", "É½Î÷½Ù·Ë¡£\n");
+        set("long", "å±±è¥¿åŠ«åŒªã€‚\n");
         set("combat_exp", 1080000 + random(4000000)); 
        
         set("no_quest", 1);

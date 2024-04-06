@@ -1,4 +1,4 @@
-// kuangda.c ºì»¨Ê®Èı½£·¨¡¸¿ñ´ò¡¹¾÷
+// kuangda.c çº¢èŠ±åä¸‰å‰‘æ³•ã€Œç‹‚æ‰“ã€è¯€
 
 #include <ansi.h>
 #include <skill.h>
@@ -17,18 +17,18 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸¿ñ´ò¡¹¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç‹‚æ‰“ã€è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query_skill("luohua-jian", 1) < 80 )
-                return notify_fail("ÄãµÄºì»¨Ê®Èı½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸¿ñ´ò¡¹¾÷¡£\n");
+                return notify_fail("ä½ çš„çº¢èŠ±åä¸‰å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç‹‚æ‰“ã€è¯€ã€‚\n");
          if((int)me->query("neili")<100)
-return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ,²»ÄÜÊ¹ÓÃ¿ñ´ò¾÷.\n");
+return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±,ä¸èƒ½ä½¿ç”¨ç‹‚æ‰“è¯€.\n");
 
-        msg = HIY "$NÊ¹³öºì»¨Ê®Èı½£·¨¡¸¿ñ´ò¡¹¾÷£¬ÕĞÊ½¶¸È»±ä¿ì£¬·è¿ñµÄÆËÏò¶Ô·½¡£\n";
+        msg = HIY "$Nä½¿å‡ºçº¢èŠ±åä¸‰å‰‘æ³•ã€Œç‹‚æ‰“ã€è¯€ï¼Œæ‹›å¼é™¡ç„¶å˜å¿«ï¼Œç–¯ç‹‚çš„æ‰‘å‘å¯¹æ–¹ã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/4 )
 	{
@@ -36,7 +36,7 @@ return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ,²»ÄÜÊ¹ÓÃ¿ñ´ò¾÷.\n");
 		if(attack_time < 1)
 			attack_time = 1;
 
-		msg += CYN " ½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR;
+		msg += CYN " ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼\n" NOR;
 		for(i = 0; i < attack_time; i++){
 			COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0);
 			}
@@ -46,7 +46,7 @@ return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ,²»ÄÜÊ¹ÓÃ¿ñ´ò¾÷.\n");
 	}
 	else
 	{
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
 		me->start_busy(4);
 	}
 	message_vision(msg, me, target);

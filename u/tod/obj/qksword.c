@@ -7,24 +7,24 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW"Ç¬À¤½£"NOR, ({ "qiankun sword","sword","jian" }) );
+        set_name(HIW"ä¹¾å¤å‰‘"NOR, ({ "qiankun sword","sword","jian" }) );
         set_weight(9000);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÓÉ"HIC"¡¸ÌìÇå¡¹"NOR"ºÍ"MAG"¡¸µØÄş¡¹"NOR"×éºÏ³ÉµÄÉñ±øÀûÆ÷¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠç”±"HIC"ã€Œå¤©æ¸…ã€"NOR"å’Œ"MAG"ã€Œåœ°å®ã€"NOR"ç»„åˆæˆçš„ç¥å…µåˆ©å™¨ã€‚\n");
                 set("value", 10000);
                 set("material", "steel");
-                set("wield_msg", HIW"$N°Ñ$nÎÕÔÚÁËÊÖÀï£¬ËÄÖÜÁ¢Ê±±äµÃËÀ¼Å¡£\n"NOR);
-                set("unwield_msg", HIW"$N°Ñ$n»º»ºµØ¹éÈë½£ÇÊ¡£\n"NOR);
-                set("±¦Îï",1);
+                set("wield_msg", HIW"$NæŠŠ$næ¡åœ¨äº†æ‰‹é‡Œï¼Œå››å‘¨ç«‹æ—¶å˜å¾—æ­»å¯‚ã€‚\n"NOR);
+                set("unwield_msg", HIW"$NæŠŠ$nç¼“ç¼“åœ°å½’å…¥å‰‘é˜ã€‚\n"NOR);
+                set("å®ç‰©",1);
 
                 set("no_pawn", 1);
                 set("breakup_object1", "/u/tod/obj/skysword.c");
                  set("breakup_object2", "/u/tod/obj/groundsword.c");
-                set("breakup_msg", "Ë«±ÛÎÕ½££¬Í»·¢Ææ¾¢£¬´óÉùºÈµÀ£º¡¸·Ö£¡¡¹£¬");
+                set("breakup_msg", "åŒè‡‚æ¡å‰‘ï¼Œçªå‘å¥‡åŠ²ï¼Œå¤§å£°å–é“ï¼šã€Œåˆ†ï¼ã€ï¼Œ");
         }
         init_sword(150);
         setup();

@@ -1,4 +1,4 @@
-// yifeng.c  ÒÆ·ç½£ [ÒÆ·çÆðÆÜÔÆ·ÉÑï]
+// yifeng.c  ç§»é£Žå‰‘ [ç§»é£Žèµ·æ –äº‘é£žæ‰¬]
 
 #include <ansi.h>
 #include <skill.h>
@@ -14,29 +14,29 @@ int perform(object me, object target)
     int count;
  
     if( !me->is_fighting() )
-	    return notify_fail("¡¸ÒÆ·çÆðÆÜÔÆ·ÉÑï¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+	    return notify_fail("ã€Œç§»é£Žèµ·æ –äº‘é£žæ‰¬ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if((int)me->query_dex() < 30)
-		return notify_fail("ÄãµÄÉí·¨²»¹», Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÕâÏî¾ø¼¼! \n");
+		return notify_fail("ä½ çš„èº«æ³•ä¸å¤Ÿ, ç›®å‰è¿˜ä¸èƒ½ä½¿ç”¨è¿™é¡¹ç»æŠ€! \n");
 
 //	if((int)me->query_skill("dodge") < 235)
-//		return notify_fail("ÄãµÄÇá¹¦ÐÞÎª²»¹», ²»ÄÜÊ¹ÓÃÒÆ·çÆðÆÜÔÆ·ÉÑï£¡\n");
+//		return notify_fail("ä½ çš„è½»åŠŸä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ç§»é£Žèµ·æ –äº‘é£žæ‰¬ï¼\n");
  
 	if( (int)me->query_skill("yifeng-jian", 1) < 150 )
-		return notify_fail("ÄãµÄÒÆ·ç½£·¨²»¹»æµÊì¡£\n");
+		return notify_fail("ä½ çš„ç§»é£Žå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿã€‚\n");
 
 	if((int)me->query_skill("sword") < 235)
-		return notify_fail("ÄãµÄ½£·¨ÐÞÎª²»¹»£¬ Ä¿Ç°²»ÄÜÊ¹ÓÃÒÆ·çÆðÆÜÔÆ·ÉÑï! \n");
+		return notify_fail("ä½ çš„å‰‘æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œ ç›®å‰ä¸èƒ½ä½¿ç”¨ç§»é£Žèµ·æ –äº‘é£žæ‰¬! \n");
 
     if( (int)me->query("neili") < 1000 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 
-    msg = HIM "$NÊ¹³öÒÆ·ç½£·¨µÄ¾ø¼¼¡¸ÒÆ·çÆðÆÜÔÆ·ÉÑï¡¹£¬¶ÙÊ±»¨°ê·ÉÎè£¡\n" NOR;
+    msg = HIM "$Nä½¿å‡ºç§»é£Žå‰‘æ³•çš„ç»æŠ€ã€Œç§»é£Žèµ·æ –äº‘é£žæ‰¬ã€ï¼Œé¡¿æ—¶èŠ±ç“£é£žèˆžï¼\n" NOR;
     message_vision(msg, me);
 
 //	me->clean_up_enemy();

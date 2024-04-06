@@ -1,4 +1,4 @@
-// break.c Îå¶İ¾øÉ±
+// break.c äº”éç»æ€
 // Modified by Venus Oct.1997
 #include <ansi.h>
 inherit F_SSERVER;
@@ -8,27 +8,27 @@ string msg;
 int count;
   if( !target ) target = offensive_target(me);
 if( !me->is_fighting() )
-      return notify_fail("¡¸Îå¶İ¾øÉ±¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+      return notify_fail("ã€Œäº”éç»æ€ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 if( (int)me->query("qi") < 100 )
-      return notify_fail("ÄãµÄÆø²»¹»£¡\n");
+      return notify_fail("ä½ çš„æ°”ä¸å¤Ÿï¼\n");
 if( (int)me->query("max_neili") < 200 )
-      return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+      return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 if( (int)me->query("neili") < (int)me->query("max_neili")/2)
-      return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+      return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
     if ((int)me->query_skill("shayi-xinfa", 1) < 30)
-   return notify_fail("ÄãµÄÉ±ÒâĞÄ·¨»ğºò²»¹»¡£\n");
+   return notify_fail("ä½ çš„æ€æ„å¿ƒæ³•ç«å€™ä¸å¤Ÿã€‚\n");
 
 	if((int)me->query_skill("wuxing-dun",1) < 50)
-		return notify_fail("ÄãµÄÎåĞĞ¶İÖĞµÄĞŞÎª²»¹», ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
+		return notify_fail("ä½ çš„äº”è¡Œéä¸­çš„ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€ !\n");
 	if((int)me->query_skill("dodge") < 50)
-		return notify_fail("ÄãµÄÇá¹¦ĞŞÎª²»¹»£¬ Ä¿Ç°²»ÄÜÊ¹ÓÃ! \n");
+		return notify_fail("ä½ çš„è½»åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œ ç›®å‰ä¸èƒ½ä½¿ç”¨! \n");
 
  	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸Îå¶İ¾øÉ±¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œäº”éç»æ€ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-msg = HIC "$NÊ¹³öÎåĞĞ¶İÖĞµÄ¡¸Îå¶İ¾øÉ±¡¹£¬Éí·¨¶¸È»¼ä±äµÃ±ä»ÃÄª²â£¡\n" NOR;
+msg = HIC "$Nä½¿å‡ºäº”è¡Œéä¸­çš„ã€Œäº”éç»æ€ã€ï¼Œèº«æ³•é™¡ç„¶é—´å˜å¾—å˜å¹»è«æµ‹ï¼\n" NOR;
 message_combatd(msg, me);
 count = (int)me->query_skill("wuxing-dun") / 40 + 2;
    if( count > 5 ) count = 5;
@@ -38,12 +38,12 @@ count = (int)me->query_skill("wuxing-dun") / 40 + 2;
   me->clean_up_enemy();
   ob = me->select_opponent();
   if( !ob || (environment(ob) != environment(me))) {
-  message_combatd(WHT "$NµÄÉíĞÎÙ¿µØÒ»×ª£¬ÊÕÉíÍ£×¡ÁË½Å²½¡£\n" NOR, me);
+  message_combatd(WHT "$Nçš„èº«å½¢å€åœ°ä¸€è½¬ï¼Œæ”¶èº«åœä½äº†è„šæ­¥ã€‚\n" NOR, me);
      break;
    }
   else
 
-  message_combatd(WHT "$NµÄÉíÓ°ÔÚ$nÉíÅÔÊ±ÒşÊ±ÏÖ ...\n" NOR, me, ob);
+  message_combatd(WHT "$Nçš„èº«å½±åœ¨$nèº«æ—æ—¶éšæ—¶ç° ...\n" NOR, me, ob);
   COMBAT_D->fight(me, ob); 
   COMBAT_D->fight(me, ob);      
   me->receive_damage("qi", 30);

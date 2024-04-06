@@ -9,34 +9,34 @@ inherit F_DBASE;
 inherit F_SKILL;
 
 mapping *combat_action = ({
-        ([      "action":               "$N»ÓÈ­¹¥»÷$nµÄ$l",
-                "damage_type":  "ğöÉË",
+        ([      "action":               "$NæŒ¥æ‹³æ”»å‡»$nçš„$l",
+                "damage_type":  "ç˜€ä¼¤",
         ]),
-        ([      "action":               "$NÍù$nµÄ$lÒ»×¥",
-                "damage_type":  "×¥ÉË",
+        ([      "action":               "$Nå¾€$nçš„$lä¸€æŠ“",
+                "damage_type":  "æŠ“ä¼¤",
         ]),
-        ([      "action":               "$NÍù$nµÄ$lºİºİµØÌßÁËÒ»½Å",
-                "damage_type":  "ğöÉË",
+        ([      "action":               "$Nå¾€$nçš„$lç‹ ç‹ åœ°è¸¢äº†ä¸€è„š",
+                "damage_type":  "ç˜€ä¼¤",
         ]),
-        ([      "action":               "$NÌáÆğÈ­Í·Íù$nµÄ$l´·È¥",
-                "damage_type":  "ğöÉË",
+        ([      "action":               "$Næèµ·æ‹³å¤´å¾€$nçš„$læ¶å»",
+                "damage_type":  "ç˜€ä¼¤",
         ]),
-        ([      "action":               "$N¶Ô×¼$nµÄ$lÓÃÁ¦»Ó³öÒ»È­",
-                "damage_type":  "ğöÉË",
+        ([      "action":               "$Nå¯¹å‡†$nçš„$lç”¨åŠ›æŒ¥å‡ºä¸€æ‹³",
+                "damage_type":  "ç˜€ä¼¤",
         ]),
 });
 
 void create()
 {
         seteuid(getuid());
-        set("unit", "Î»");
-        set("gender", "ÄĞĞÔ");
+        set("unit", "ä½");
+        set("gender", "ç”·æ€§");
         set("can_speak", 1);
         set("attitude", "peaceful");
         set("limbs", ({
-                "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-                "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Ñü¼ä", "Ğ¡¸¹", "×óÍÈ", "ÓÒÍÈ",
-                "×ó½Å", "ÓÒ½Å"
+                "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+                "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "è…°é—´", "å°è…¹", "å·¦è…¿", "å³è…¿",
+                "å·¦è„š", "å³è„š"
         }) );
 }
 
@@ -50,14 +50,14 @@ void setup_human(object ob)
         ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
 
         ob->set_default_action(__FILE__, "query_action");
-        if (! stringp(my["unit"])) my["unit"] = "Î»";
-        if (! stringp(my["gender"])) my["gender"] = "ÄĞĞÔ";
+        if (! stringp(my["unit"])) my["unit"] = "ä½";
+        if (! stringp(my["gender"])) my["gender"] = "ç”·æ€§";
         if (undefinedp(my["can_speak"])) my["can_speak"] = 1;
         if (! stringp(my["attitude"])) my["attitude"] = "peaceful";
         if (! pointerp(my["limbs"])) my["limbs"] = ({
-                "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-                "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Ñü¼ä", "Ğ¡¸¹", "×óÍÈ", "ÓÒÍÈ",
-                "×ó½Å", "ÓÒ½Å"
+                "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+                "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "è…°é—´", "å°è…¹", "å·¦è…¿", "å³è…¿",
+                "å·¦è„š", "å³è„š"
         });
 
         if( undefinedp(my["age"]) ) my["age"] = 14;
@@ -76,7 +76,7 @@ void setup_human(object ob)
 
                 if( my["age"] > 60 ) my["max_jing"] -= (my["age"] - 60) * 5 ;
 
-                // µÀ¼Ò±£¾«£º
+                // é“å®¶ä¿ç²¾ï¼š
 //                if(my["age"] > 20 && ob->query("ob->query("breakup"))
 //                {
 //                        my["max_jing"] += 1000;
@@ -91,7 +91,7 @@ void setup_human(object ob)
                         my["max_jing"] += (my["age"] - 60) * 5;
                 }
 
-                // ·ğ¼ÒÑø¾«£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
+                // ä½›å®¶å…»ç²¾ï¼šï¼“ï¼å²å‰è¡¥ç²¾ï¼Œï¼“ï¼å²åé•¿ç²¾
                 if((xism_age=(int)ob->query_skill("buddhism", 1)) > 39)
                 {
                         xism_age = xism_age/2;
@@ -116,13 +116,13 @@ void setup_human(object ob)
 
                 if( my["age"] > 60 ) my["max_qi"] -= (my["age"] - 60) * 5;
 
-                // ·ğ¼Ò±£Æø£º
+                // ä½›å®¶ä¿æ°”ï¼š
                 if(my["age"] > 60 && (int)ob->query_skill("buddhism", 1) >= 120)
                 {
                         my["max_qi"] += (my["age"] - 60) * 5;
                 }
 
-                // µÀ¼ÒÁ·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
+                // é“å®¶ç»ƒæ°”ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
                 if((xism_age=(int)ob->query_skill("taoism", 1)) > 39)
                 {
                         xism_age = xism_age/2;
@@ -132,7 +132,7 @@ void setup_human(object ob)
                         if (xism_age > 0) my["max_qi"] += xism_age *((int)ob->query_skill("taiji-shengong", 1)/10);
                 }
 
-                // ¶¾¼¼Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
+                // æ¯’æŠ€ç»ƒæ°”ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
                 if((xism_age=(int)ob->query_skill("poison", 1)) > 39)
                 {
                         xism_age = xism_age/2;

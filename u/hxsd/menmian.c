@@ -7,14 +7,14 @@ int do_back(object me);
 void create()
 {
       string weapon;
-        set_name("ÃÉÃæÈË", ({ "mengmian ren","ren"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("è’™é¢äºº", ({ "mengmian ren","ren"}));
+        set("gender", "ç”·æ€§");
         set("age", random(30) + 25);
         set("str", 23);
         set("con", 26);
         set("int", 20);
         set("dex", 83);
-        //set("long", "Ò»¸ö´©×ÅºÚÉ«Ò¹ĞĞÒÂµÄÈË¡£\n");
+        //set("long", "ä¸€ä¸ªç©¿ç€é»‘è‰²å¤œè¡Œè¡£çš„äººã€‚\n");
         set("combat_exp", 5580000 + random(40000)); 
         set("attitude", "friendly");
         set_skill("force", 550);
@@ -76,7 +76,7 @@ int do_copy(object me,int maxpot)
 }
 int do_back(object me)
 {                       
-  tell_room(environment(me), me->query("name")+"´Ò´ÒÃ¦Ã¦µÄÀë¿ªÁË¡£\n", ({me}));	
+  tell_room(environment(me), me->query("name")+"åŒ†åŒ†å¿™å¿™çš„ç¦»å¼€äº†ã€‚\n", ({me}));	
   destruct(me); 
   return 1;
 }

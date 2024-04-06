@@ -1,4 +1,4 @@
-// huashan-neigong.c 华山内功
+// huashan-neigong.c 鍗庡北鍐呭姛
 // Modified by Venus Oct.1997
 
 inherit FORCE;
@@ -11,7 +11,7 @@ int valid_learn(object me)
     int i = (int)me->query_skill("huashan-neigong", 1);
  
   if ((int)me->query_skill("zixia-shengong", 1) < 10)
-   return notify_fail("你的紫霞神功火候还不够。\n");
+   return notify_fail("浣犵殑绱湠绁炲姛鐏�欒繕涓嶅銆俓n");
 
  if (
 
@@ -37,16 +37,16 @@ me->query_skill("bahuang-gong",1)
 me->query_skill("shenghuo-shengong",1)    ||
 me->query_skill("shenyuan-gong",1)   ||
 me->query_skill("xuantian-wuji",1)  ||
-me->query_skill("guiyuan-tunafa",1)) return notify_fail("你不先散了别派内功，怎能学华山内功？！\n");
+me->query_skill("guiyuan-tunafa",1)) return notify_fail("浣犱笉鍏堟暎浜嗗埆娲惧唴鍔燂紝鎬庤兘瀛﹀崕灞卞唴鍔燂紵锛乗n");
 
 //    if ((int)me->query("shen") < (int)pow(i/10, 2) * 100)
-//   return notify_fail("你的神太低了。\n");
+//   return notify_fail("浣犵殑绁炲お浣庝簡銆俓n");
     return 1;
 }
 
 int practice_skill(object me)
 {
-    return notify_fail("华山气功只能用学(learn)的来增加熟练度。\n");
+    return notify_fail("鍗庡北姘斿姛鍙兘鐢ㄥ(learn)鐨勬潵澧炲姞鐔熺粌搴︺�俓n");
 }
 
 string exert_function_file(string func)

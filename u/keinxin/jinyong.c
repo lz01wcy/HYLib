@@ -14,8 +14,8 @@ string ask_age()
 		(: $2->query("age")*12+$2->query("month")
 			< $1->query("age")*12+$1->query("month") :), me);
 	no = sizeof(ob) + 1;
-	return me->name()+RANK_D->query_respect(me)+"µÄÄêÁäÔÚÄ¿Ç°½­ºşÈËÊ¿ÖĞÅÅÃûµÚ"
-		+chinese_number(no)+"¡£";
+	return me->name()+RANK_D->query_respect(me)+"çš„å¹´é¾„åœ¨ç›®å‰æ±Ÿæ¹–äººå£«ä¸­æ’åç¬¬"
+		+chinese_number(no)+"ã€‚";
 }
 
 string ask_beauty()
@@ -27,8 +27,8 @@ string ask_beauty()
 	ob = filter_array(ob,
 		(: $2->query("per")	< $1->query("per") :), me);
 	no = sizeof(ob) + 1;
-	return me->name()+RANK_D->query_respect(me)+"µÄÈİÃ²ÔÚÄ¿Ç°½­ºşÈËÊ¿ÖĞÅÅÃûµÚ"
-		+chinese_number(no)+"¡£";
+	return me->name()+RANK_D->query_respect(me)+"çš„å®¹è²Œåœ¨ç›®å‰æ±Ÿæ¹–äººå£«ä¸­æ’åç¬¬"
+		+chinese_number(no)+"ã€‚";
 }
 
 int ask_exp()
@@ -41,26 +41,26 @@ int ask_exp()
 		(: $2->query("combat_exp")	< $1->query("combat_exp") :), me);
 	no = sizeof(ob) + 1;
 
-	command("say "+me->name()+RANK_D->query_respect(me)+"µÄ¾­ÑéÔÚÄ¿Ç°½­ºşÈËÊ¿ÖĞÅÅÃûµÚ"
-		+chinese_number(no)+"¡£");
-	message_vision(CYN "$NÖ¸×Å$nÔŞÌ¾µÀ£º¡°"+me->name()+"ÊÇÎäÁÖµÚ"
-		+chinese_number(no)+"¸ßÊÖ£¡¡±\n" NOR, this_object(), me);
+	command("say "+me->name()+RANK_D->query_respect(me)+"çš„ç»éªŒåœ¨ç›®å‰æ±Ÿæ¹–äººå£«ä¸­æ’åç¬¬"
+		+chinese_number(no)+"ã€‚");
+	message_vision(CYN "$NæŒ‡ç€$nèµå¹é“ï¼šâ€œ"+me->name()+"æ˜¯æ­¦æ—ç¬¬"
+		+chinese_number(no)+"é«˜æ‰‹ï¼â€\n" NOR, this_object(), me);
 	return 1;
 }
 
 void create()
 {
-	set_name("½ğÓ¹",({"jin yong","jin"}));
-	set("gender","ÄĞĞÔ");
+	set_name("é‡‘åº¸",({"jin yong","jin"}));
+	set("gender","ç”·æ€§");
 	set("age",60);
     set("per", 25);
     set("dex", 30);
 	set("long", @LONG
-Ëû¾ÍÊÇÒ»´úÎäÑ§×ÚÊ¦£¬¹¦·òÉî²»¿É²â£¬²»¹ıÒÑ¾­ÍË³ö½­ºşÁË¡£
-µ«ÊÇÈç¹ûÄãÒª´òÌıÒ»Ğ©½­ºşÉÏµÄÊÂÇé£¬Ëû»áºÜÈÈĞÄµØ¸æËßÄã¡£
-´òÌıÄêÁäÓÃ ask jin about age
-´òÌıÈİÃ²ÓÃ ask jin about beauty
-´òÌı¾­ÑéÓÃ ask jin about exp
+ä»–å°±æ˜¯ä¸€ä»£æ­¦å­¦å®—å¸ˆï¼ŒåŠŸå¤«æ·±ä¸å¯æµ‹ï¼Œä¸è¿‡å·²ç»é€€å‡ºæ±Ÿæ¹–äº†ã€‚
+ä½†æ˜¯å¦‚æœä½ è¦æ‰“å¬ä¸€äº›æ±Ÿæ¹–ä¸Šçš„äº‹æƒ…ï¼Œä»–ä¼šå¾ˆçƒ­å¿ƒåœ°å‘Šè¯‰ä½ ã€‚
+æ‰“å¬å¹´é¾„ç”¨ ask jin about age
+æ‰“å¬å®¹è²Œç”¨ ask jin about beauty
+æ‰“å¬ç»éªŒç”¨ ask jin about exp
 LONG);
 	set("combat_exp", 10000000);
 	set("attitude", "friendly");

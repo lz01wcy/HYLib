@@ -1,4 +1,4 @@
-// dahuan-dan.c ½±Àøµ¤
+// dahuan-dan.c å¥–åŠ±ä¸¹
 
 #include <ansi.h>
 
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-	set_name(MAG"½±Àøµ¤"NOR, ({"super dan", "super", "dan"}));
+	set_name(MAG"å¥–åŠ±ä¸¹"NOR, ({"super dan", "super", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å×Ïºì¾§ÁÁµÄ½±Àøµ¤¡£´Ëµ¤ÄË¸ø·¢ÏÖ´óbugµÄÍæ¼ÒÓÃµÄ£¬Ìá¸ß¹¦Á¦£¬ÁéĞ§ÎŞ±È¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—ç´«çº¢æ™¶äº®çš„å¥–åŠ±ä¸¹ã€‚æ­¤ä¸¹ä¹ƒç»™å‘ç°å¤§bugçš„ç©å®¶ç”¨çš„ï¼Œæé«˜åŠŸåŠ›ï¼Œçµæ•ˆæ— æ¯”ã€‚\n");
 		set("value", 10000);
 	}
 
@@ -37,10 +37,10 @@ int do_eat(string arg)
 	neili_limit = me->query("max_neili");
 	
 	if (!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 
 		me->add("per", 1);
 		me->add("kar", 1);
@@ -48,14 +48,14 @@ int do_eat(string arg)
 		me->add("con", 1);
 		me->add("str", 1);
 		me->add("int", 1);
-		message_vision(HIG "$N³ÔÏÂÒ»¿Å½±Àøµ¤£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬¹ı×Ï¹¬£¬ÈëÄàÍè
-Í¸Ê®¶şÖØÂ¥£¬±é²¼Ææ½î°ËÂö£¬È«Éí¹¦Á¦¶ÙÈ»Ìá¸ß !\n" NOR, me);
-		message_vision(HIY "$NµÄÈİÃ²¼ÓÁË !\n" NOR, me);
-		message_vision(HIW "$NµÄÉí·¨¼ÓÁË !\n" NOR, me);
-		message_vision(HIR "$NµÄ±ÛÁ¦¼ÓÁË !\n" NOR, me);
-		message_vision(HIG "$NµÄÎòĞÔ¼ÓÁË !\n" NOR, me);	
-		message_vision(HIB "$NµÄ¸ù¹Ç¼ÓÁË !\n" NOR, me);
-		message_vision(HIM "$NµÄ¸£Ôµ¼ÓÁË !\n" NOR, me);
+		message_vision(HIG "$Nåƒä¸‹ä¸€é¢—å¥–åŠ±ä¸¹ï¼Œåªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œè¿‡ç´«å®«ï¼Œå…¥æ³¥ä¸¸
+é€åäºŒé‡æ¥¼ï¼Œéå¸ƒå¥‡ç­‹å…«è„‰ï¼Œå…¨èº«åŠŸåŠ›é¡¿ç„¶æé«˜ !\n" NOR, me);
+		message_vision(HIY "$Nçš„å®¹è²ŒåŠ äº† !\n" NOR, me);
+		message_vision(HIW "$Nçš„èº«æ³•åŠ äº† !\n" NOR, me);
+		message_vision(HIR "$Nçš„è‡‚åŠ›åŠ äº† !\n" NOR, me);
+		message_vision(HIG "$Nçš„æ‚Ÿæ€§åŠ äº† !\n" NOR, me);	
+		message_vision(HIB "$Nçš„æ ¹éª¨åŠ äº† !\n" NOR, me);
+		message_vision(HIM "$Nçš„ç¦ç¼˜åŠ äº† !\n" NOR, me);
 	destruct(this_object());
 	return 1;
 }

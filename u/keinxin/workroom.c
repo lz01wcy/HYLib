@@ -8,11 +8,11 @@ string clear_title(string arg);
 void add_title(object me,string arg);
 void create()
 {
-	set("short", "·ÉÌì½£Õ«");
+	set("short", "é£žå¤©å‰‘æ–‹");
 	set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸Êé½£·¡¡¹ÖÐ´«ËµµÄ·ÉÌì½£Õ«£¬ÊÇç³Óê½£ÐÄÒþ¾ÓµÄµØ·½£¬ºÀ»ªµÄÊé¼ÜÉÏ·ÅÂú
-ÁËÊÀ½ç¸÷¹úÖøÃûµÄ¾­¼ÃÑ§Öø×÷£¬Ç½ÉÏ¹Ò×ÅÒ»¸±»­(hua)£¬×óÓÒÊÇÒ»¸±¶ÔÁª(duilian)£¬
-ÎÝ×ÓµÄÕýÖÐÑë·Å×ÅÒ»ÕÅÉÏ¹ÅÊ¯×À¡£          
+è¿™é‡Œå°±æ˜¯ã€Œä¹¦å‰‘è´°ã€ä¸­ä¼ è¯´çš„é£žå¤©å‰‘æ–‹ï¼Œæ˜¯ç»¯é›¨å‰‘å¿ƒéšå±…çš„åœ°æ–¹ï¼Œè±ªåŽçš„ä¹¦æž¶ä¸Šæ”¾æ»¡
+äº†ä¸–ç•Œå„å›½è‘—åçš„ç»æµŽå­¦è‘—ä½œï¼Œå¢™ä¸ŠæŒ‚ç€ä¸€å‰¯ç”»(hua)ï¼Œå·¦å³æ˜¯ä¸€å‰¯å¯¹è”(duilian)ï¼Œ
+å±‹å­çš„æ­£ä¸­å¤®æ”¾ç€ä¸€å¼ ä¸Šå¤çŸ³æ¡Œã€‚          
 LONG );
 
 	set("item_desc", ([ 
@@ -34,7 +34,7 @@ string look_hua()
 {
        return 
 "\n       
-"HIY"½£ÐÄ×÷ÓÚ2002Äê6ÔÂ19ÈÕ
+"HIY"å‰‘å¿ƒä½œäºŽ2002å¹´6æœˆ19æ—¥
 
 \n"NOR;
 }
@@ -43,15 +43,15 @@ string look_duilian()
 	return
 "\n	
 "HIY"
-              ¡ª¡ª                ¡ª¡ª
-              *»Ê*                *²»*  
-              *³¯*                *¼°*
-              *°Ô*                *ÈË*
-              *Òµ*                *Éú* 
-              *Ð¦*                *Ò»*
-              *Ì¸*                *³¯* 
-              *ÖÐ*                *×í* 
-              ¡ª¡ª                ¡ª¡ª 
+              â€•â€•                â€•â€•
+              *çš‡*                *ä¸*  
+              *æœ*                *åŠ*
+              *éœ¸*                *äºº*
+              *ä¸š*                *ç”Ÿ* 
+              *ç¬‘*                *ä¸€*
+              *è°ˆ*                *æœ* 
+              *ä¸­*                *é†‰* 
+              â€•â€•                â€•â€• 
 \n"NOR;           
 }
 

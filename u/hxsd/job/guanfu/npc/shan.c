@@ -1,14 +1,14 @@
-// shan µ¥Õı
+// shan å•æ­£
  
 inherit NPC;
  
 void create()
 {
-	set_name("µ¥Õø", ({ "shan zheng", "shan" }));
-	set("nickname", "Ì©É½µ¥¼ÒÅÑÍ½");
+	set_name("å•ç‹°", ({ "shan zheng", "shan" }));
+	set("nickname", "æ³°å±±å•å®¶å›å¾’");
 	set("long", 
-        "Ì©É½µ¥¼ÒµÄÅÑÍ½£¬ĞÔÈçÁÒ»ğ£¬Ò»Éí¹¦·òÉÙÓĞµĞÊÖ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "æ³°å±±å•å®¶çš„å›å¾’ï¼Œæ€§å¦‚çƒˆç«ï¼Œä¸€èº«åŠŸå¤«å°‘æœ‰æ•Œæ‰‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 66);
 	set("attitude", "peaceful");
 	set("shen", -85000);

@@ -1,14 +1,14 @@
-//  asan°¢Èı
+//  asané˜¿ä¸‰
  
 inherit NPC;
  
 void create()
 {
-	set_name("°¢Èı", ({ "a san", "a" }));
+	set_name("é˜¿ä¸‰", ({ "a san", "a" }));
 //	set("nickname", "");
 	set("long", 
-        "½ğ¸ÕÃÅµÄ¸ßÊÖ£¬Ò»ÉíÍâ¹¦³öÉñÈë»¯£¬³öÊÖ¼«Æäºİ¶¾¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "é‡‘åˆšé—¨çš„é«˜æ‰‹ï¼Œä¸€èº«å¤–åŠŸå‡ºç¥å…¥åŒ–ï¼Œå‡ºæ‰‹æå…¶ç‹ æ¯’ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 46);
 	set("attitude", "peaceful");
 	set("shen", -10000);

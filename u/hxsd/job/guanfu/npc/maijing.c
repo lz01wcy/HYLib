@@ -1,14 +1,14 @@
-// maijing Âó¾¨ 
+// maijing éº¦é²¸ 
  
 inherit NPC;
  
 void create()
 {
-        set_name("Âó¾¨", ({ "mai jing", "mai" }));
-        set("nickname", "¾Ş¾¨°ï°ïÖ÷");
+        set_name("éº¦é²¸", ({ "mai jing", "mai" }));
+        set("nickname", "å·¨é²¸å¸®å¸®ä¸»");
         set("long", 
-        "¾Ş¾¨°ïµÄ°ïÖ÷£¬¾İËµË®ÉÏµÄ¹¦·ò³öÉñÈë»¯¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "å·¨é²¸å¸®çš„å¸®ä¸»ï¼Œæ®è¯´æ°´ä¸Šçš„åŠŸå¤«å‡ºç¥å…¥åŒ–ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("attitude", "peaceful");
         set("shen", -2000);

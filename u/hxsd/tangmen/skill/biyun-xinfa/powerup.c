@@ -1,4 +1,4 @@
-// powerup.c 碧云心法加力
+// powerup.c 纰т簯蹇冩硶鍔犲姏
 
 #include <ansi.h>
 
@@ -11,19 +11,19 @@ int exert(object me, object target)
 	int skill;
 
 	if( target != me ) 
-		return notify_fail("你只能用碧云心法来提升自己的战斗力。\n");
+		return notify_fail("浣犲彧鑳界敤纰т簯蹇冩硶鏉ユ彁鍗囪嚜宸辩殑鎴樻枟鍔涖�俓n");
 
 	if( (int)me->query("neili") < 100  ) 
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 	if( (int)me->query_temp("powerup") ) 
-		return notify_fail("你已经在运功中了。\n");
+		return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
 	skill = me->query_skill("force");
 	me->add("neili", -100);
 	me->receive_damage("qi", 0);
 
 	message_vision(
-	HIG "$N微一凝神，运起碧云心法，脸上泛过一层碧绿色,身上衣衫如鼓风般扬起。\n" NOR, me);
+	HIG "$N寰竴鍑濈锛岃繍璧风ⅶ浜戝績娉曪紝鑴镐笂娉涜繃涓�灞傜ⅶ缁胯壊,韬笂琛ｈ～濡傞紦椋庤埇鎵捣銆俓n" NOR, me);
 
 	me->add_temp("apply/attack", skill/5);
 	me->add_temp("apply/dodge", skill/5);
@@ -42,5 +42,5 @@ void remove_effect(object me, int amount)
 	me->add_temp("apply/attack", - amount);
 	me->add_temp("apply/dodge", - amount);
 	me->delete_temp("powerup");
-	tell_object(me, "你的碧波心法运行完毕，将内力收回丹田。\n");}
+	tell_object(me, "浣犵殑纰ф尝蹇冩硶杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");}
 }

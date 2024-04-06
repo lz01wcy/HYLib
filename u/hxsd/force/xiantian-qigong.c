@@ -1,4 +1,4 @@
-// xiantian-qigong.c ÏÈÌìÆø¹¦
+// xiantian-qigong.c å…ˆå¤©æ°”åŠŸ
 inherit FORCE;
 
 int valid_enable(string usage) { return usage == "force"; }
@@ -11,24 +11,24 @@ int valid_learn(object me)
                 for (j = 1; j < lvl / 10; j++)
                      t*=2;
 
-        if ( me->query("gender") == "ÎŞĞÔ")
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔĞŞĞĞĞşÃÅÕı×ÚµÄÏÈÌìÆø¹¦¡£\n");
+        if ( me->query("gender") == "æ— æ€§")
+                return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥ä¿®è¡Œç„é—¨æ­£å®—çš„å…ˆå¤©æ°”åŠŸã€‚\n");
 
         if ( me->query("class") == "bonze" )
-                return notify_fail(RANK_D->query_respect(me)+"ÓûĞŞÎÒµÀ¼ÒĞşÃÅÆø¹¦£¬ÔõÓÖÈ¥ÈëÁË·ğÃÅ£¿\n");
+                return notify_fail(RANK_D->query_respect(me)+"æ¬²ä¿®æˆ‘é“å®¶ç„é—¨æ°”åŠŸï¼Œæ€åˆå»å…¥äº†ä½›é—¨ï¼Ÿ\n");
 
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
         if(lvl<=100)
         {
                 if (lvl > 10 && (int)me->query("shen") < t * 100)
-                        return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+                        return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
         }
         else
         {
                 if ((int)me->query("shen") < (51200 + (lvl - 100) * 1000))
-                        return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+                        return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
         }
 	if (
 	me->query_skill("bahuang-gong",1)
@@ -55,14 +55,14 @@ me->query_skill("huashan-neigong",1)   ||
 me->query_skill("zixia-shengong",1) ||
 me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("guiyuan-tunafa",1) )
-                return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§Ï°ÏÈÌìÆø¹¦£¿£¡\n");
+                return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦ä¹ å…ˆå¤©æ°”åŠŸï¼Ÿï¼\n");
 
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÏÈÌìÆø¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å…ˆå¤©æ°”åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

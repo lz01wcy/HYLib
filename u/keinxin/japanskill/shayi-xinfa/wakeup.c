@@ -1,33 +1,33 @@
-// wakeup ¾ÈÈË
+// wakeup æ•‘äºº
 
 #include <ansi.h>
 
 int exert(object me, object target)
 {
     if( !objectp(target) )
-		return notify_fail("ÄãÒªÓÃÕæÆø¾ÈË­£¿\n");
+		return notify_fail("ä½ è¦ç”¨çœŸæ°”æ•‘è°ï¼Ÿ\n");
 
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖĞÎŞ·¨¾ÈÈË£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•æ•‘äººï¼\n");
 
 	if( (int)me->query("max_neili") < 1000 )
-		return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if ((int)me->query_skill("shayi-xinfa", 1) < 250)
-		return notify_fail("ÄãµÄÉ±ÒâĞÄ·¨ĞŞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„æ€æ„å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
         if( living(target) )
 		return notify_fail( target->name() +
-			"»¹Ã»ÓĞ»èÃÔ²»ĞÑ°¡£¡\n");
+			"è¿˜æ²¡æœ‰æ˜è¿·ä¸é†’å•Šï¼\n");
 
 	message_vision(
-          HIG "$NÊÕÆğÁËÉ±Æø£¬½«ÊÖÕÆÌùÔÚ$n±³ĞÄ£¬ÒÔ¾ÈÊÀÖ®ĞÄ½«ÕæÆøÊäÈë$nÌåÄÚ......\n\n"
-		"$nÖ»¾õÒ»¹ÉÕæÆøÔ´Ô´²»¾øµÄÊäÈëÌåÄÚ£¬Ë²¼äÁ÷±éÈ«Éí¸÷´óÑ¨Î»¡£$nÍÂ³öÒ»\n\n"
-		"¿ÚğöÑª£¬ÓÆÓÆĞÑÀ´£¡\n" NOR,
+          HIG "$Næ”¶èµ·äº†æ€æ°”ï¼Œå°†æ‰‹æŒè´´åœ¨$nèƒŒå¿ƒï¼Œä»¥æ•‘ä¸–ä¹‹å¿ƒå°†çœŸæ°”è¾“å…¥$nä½“å†…......\n\n"
+		"$nåªè§‰ä¸€è‚¡çœŸæ°”æºæºä¸ç»çš„è¾“å…¥ä½“å†…ï¼Œç¬é—´æµéå…¨èº«å„å¤§ç©´ä½ã€‚$nåå‡ºä¸€\n\n"
+		"å£ç˜€è¡€ï¼Œæ‚ æ‚ é†’æ¥ï¼\n" NOR,
 		me, target );
 
 	target->receive_curing("qi", 10 + (int)me->query_skill("force")/4 );

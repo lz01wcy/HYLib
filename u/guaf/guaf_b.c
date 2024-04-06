@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-          set_name("GUAFµÄÁôÑÔ²¾", ({ "board" }) );
+          set_name("GUAFçš„ç•™è¨€ç°¿", ({ "board" }) );
          set("location", "/u/guaf/workroom");
         set("board_id", "guaf_b");
-        set("long", "ÓĞÈÎºÎÕÒGUAFµÄÊÂÇéÇëÔÚÕâÀïÁôÑÔ£¡\n" );
+        set("long", "æœ‰ä»»ä½•æ‰¾GUAFçš„äº‹æƒ…è¯·åœ¨è¿™é‡Œç•™è¨€ï¼\n" );
 	setup();
 	set("capacity", 100);
 	replace_program(BULLETIN_BOARD);

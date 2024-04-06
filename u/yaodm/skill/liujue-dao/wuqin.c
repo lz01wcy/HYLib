@@ -1,4 +1,4 @@
-// wuqin.c ÎÞÇéÎÞÒå
+// wuqin.c æ— æƒ…æ— ä¹‰
 
 #include <ansi.h>
 #include <skill.h>
@@ -12,23 +12,23 @@ int perform(object me, object target)
 	object weapon, ob;
 string msg;
 	if( !me->is_fighting() )
-		return notify_fail("¡¸ÎÞÇéÎÞÒå¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œæ— æƒ…æ— ä¹‰ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "blade")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("blade") < 50 ||
 	    me->query_skill_mapped("blade") != "liujue-dao")
-		return notify_fail("ÄãµÄ¡¸Áù¾øµ¶·¨¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸ÎÞÇéÎÞÒå¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œå…­ç»åˆ€æ³•ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œæ— æƒ…æ— ä¹‰ã€ï¼\n");
 
 	if( (int)me->query_skill("liujue-dao", 1) < 150 )
-		return notify_fail("ÄãµÄ¡¸Áù¾øµ¶·¨¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸ÎÞÇéÎÞÒå¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œå…­ç»åˆ€æ³•ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œæ— æƒ…æ— ä¹‰ã€ï¼\n");
 
-	msg = HIY "$NÊ¹³ö¡¸ÎÞÇéÎÞÒå¡¹£¬Éí·¨Í»µØ±äµÃÒì³£Áé¶¯Æ®ºö£¡\n" NOR;
+	msg = HIY "$Nä½¿å‡ºã€Œæ— æƒ…æ— ä¹‰ã€ï¼Œèº«æ³•çªåœ°å˜å¾—å¼‚å¸¸çµåŠ¨é£˜å¿½ï¼\n" NOR;
 	message_vision(msg, me);
 
 //	me->clean_up_enemy();

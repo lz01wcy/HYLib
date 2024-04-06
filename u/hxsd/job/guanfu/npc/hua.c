@@ -1,13 +1,13 @@
-// hau »¨½£Ó°
+// hau èŠ±å‰‘å½±
 inherit NPC;
  
 void create()
 {
-	set_name("»¨½£Ó°", ({ "hua jianying", "hua" }));
+	set_name("èŠ±å‰‘å½±", ({ "hua jianying", "hua" }));
 //	set("nickname", "");
 	set("long", 
-        "ÓĞ×ÅÒ»¸öºÃÌıµÄÃû×Ö£¬¿ÉÏ§¹¦·òÆ½Æ½£¬»¹Ê±³£´ò½ÙÒ»Ğ©Â·¿Í¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "æœ‰ç€ä¸€ä¸ªå¥½å¬çš„åå­—ï¼Œå¯æƒœåŠŸå¤«å¹³å¹³ï¼Œè¿˜æ—¶å¸¸æ‰“åŠ«ä¸€äº›è·¯å®¢ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

@@ -1,21 +1,21 @@
-//standard blade.c(µÚ¶şµµ) edit by lin on March 3,  97
+//standard blade.c(ç¬¬äºŒæ¡£) edit by lin on March 3,  97
 #include <weapon.h>
 #include <ansi.h>
 inherit BLADE;
 void create()
 {
-        set_name("µ¥µ¶", ({ "blade"}) );
+        set_name("å•åˆ€", ({ "blade"}) );
         set_weight(2500);
-        set("long","Ò»°Ñ¾«¸Ö´ò¾ÍµÄµ¶£¬³¤Ô¼¶ş³ß°ë£¬±úÏµ»ÆË¿£¬µ¶Ãæ¹â¿É¼øÈË¡£\n");
+        set("long","ä¸€æŠŠç²¾é’¢æ‰“å°±çš„åˆ€ï¼Œé•¿çº¦äºŒå°ºåŠï¼ŒæŸ„ç³»é»„ä¸ï¼Œåˆ€é¢å…‰å¯é‰´äººã€‚\n");
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value",1500);
                 set("material", "steel");
         }
         init_blade(60);
-        set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä¡£\n");
+        set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´ã€‚\n");
         setup();
 }

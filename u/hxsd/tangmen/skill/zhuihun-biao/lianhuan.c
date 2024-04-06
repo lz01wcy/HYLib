@@ -1,4 +1,4 @@
-// Á¬»·ïÚ
+// è¿ç¯é•–
 
 #include <ansi.h>
 #include <skill.h>
@@ -17,32 +17,32 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸Á¬»·ïÚ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œè¿ç¯é•–ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "throwing")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 
 	if( (int)me->query_skill("biyun-xinfa", 1) < 60 )
-                return notify_fail("ÄãµÄ±ÌÔÆĞÄ·¨²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¸å¤Ÿé«˜ã€‚\n");
 
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
-	msg = HIY "$N×óÓÒÊÖ¸÷×¥¶şÃ¶°µÆ÷£¬ËÆºõ·Ö×óÓÒÉäÏò$n£¬¡£" NOR;
+	msg = HIY "$Nå·¦å³æ‰‹å„æŠ“äºŒæšæš—å™¨ï¼Œä¼¼ä¹åˆ†å·¦å³å°„å‘$nï¼Œã€‚" NOR;
 	message_vision(msg, me);
 
-	msg = HIB "¿´ïÚ           ×óÉÏ    "NOR;
+	msg = HIB "çœ‹é•–           å·¦ä¸Š    "NOR;
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0,msg);
-	msg = HIR "¿´ïÚ           ×óÏÂ   "NOR;
+	msg = HIR "çœ‹é•–           å·¦ä¸‹   "NOR;
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0,msg);
-	msg = HIG "¿´ïÚ           ÓÒÉÏ   "NOR;
+	msg = HIG "çœ‹é•–           å³ä¸Š   "NOR;
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0,msg);
-	msg = HIC "¿´ïÚ           ÓÒÏÂ   "NOR;
+	msg = HIC "çœ‹é•–           å³ä¸‹   "NOR;
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0,msg);
         target->apply_condition("tmzhuihun_poison",10);
 	me->add("neili", -150);

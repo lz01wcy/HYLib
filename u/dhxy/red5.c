@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÁéÖ¥
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´çµèŠ
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -15,12 +15,12 @@ void init()
 }
 void create()
 {
-set_name(HIC"ÕıÆøµ¤"NOR, ({"duu"}))
+set_name(HIC"æ­£æ°”ä¸¹"NOR, ({"duu"}))
 ;
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-//set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n")
+//set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n")
 //d
 set("value", 50000)
 ;
@@ -30,10 +30,10 @@ set("no_beg",1)
 ;
 //set("no_put",1)
 //
-//set("no_get","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬²»ÒªÕâÃ´Ì°ĞÄ£¡\n")
-    set("no_drop","ÕâÃ´Õä¹óµÄ¶«Î÷ÄãÒ²ÈÓ£¿£¡\n");
+//set("no_get","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä¸è¦è¿™ä¹ˆè´ªå¿ƒï¼\n")
+    set("no_drop","è¿™ä¹ˆçè´µçš„ä¸œè¥¿ä½ ä¹Ÿæ‰”ï¼Ÿï¼\n");
 
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
 ;
 
 set("value", 50000)
@@ -45,7 +45,7 @@ set("value", 50000)
 int do_eat(string arg)
 {
 	if (!id(arg))
-      return notify_fail("ÄãÒª¶ÔË­Î¢Ğ¦£¿\n")
+      return notify_fail("ä½ è¦å¯¹è°å¾®ç¬‘ï¼Ÿ\n")
 ;
         this_player()->start_busy(20);
         this_player()->add("max_neili",10);
@@ -54,7 +54,7 @@ this_player()->add("combat_exp",1000)
 ;
 this_player()->add("expmax",1)
 ;
-message_vision("$N¶ÔÕıÆøµ¤ÆËßêÒ»Ğ¦£¬Äã¸Ğµ½ÄãÄÜÁ¦´óÔö\n", this_player())
+message_vision("$Nå¯¹æ­£æ°”ä¸¹æ‰‘å“§ä¸€ç¬‘ï¼Œä½ æ„Ÿåˆ°ä½ èƒ½åŠ›å¤§å¢\n", this_player())
 ;
 	destruct(this_object());
 	return 1;

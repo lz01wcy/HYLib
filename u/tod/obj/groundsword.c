@@ -7,25 +7,25 @@ inherit SWORD;
 
 void create()
 {
-        set_name(MAG"µØÄş"NOR, ({ "groundsword","sword","jian" }) );
+        set_name(MAG"åœ°å®"NOR, ({ "groundsword","sword","jian" }) );
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ¹Å½££¬½£ÇÊÉÏµÄ»¨ÎÆ³É·ÉÑÒ×´£¬½£°ÑÉÏºÕÈ»¿Ì×Å"MAG"¡¸µØÄş¡¹"NOR"¡£\nÕâÊÇÒ»°ÑÒõ½££¬ºÍ"HIC"¡¸ÌìÇå¡¹"NOR"ÊÇÒ»¶Ô¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠå¤å‰‘ï¼Œå‰‘é˜ä¸Šçš„èŠ±çº¹æˆé£å²©çŠ¶ï¼Œå‰‘æŠŠä¸Šèµ«ç„¶åˆ»ç€"MAG"ã€Œåœ°å®ã€"NOR"ã€‚\nè¿™æ˜¯ä¸€æŠŠé˜´å‰‘ï¼Œå’Œ"HIC"ã€Œå¤©æ¸…ã€"NOR"æ˜¯ä¸€å¯¹ã€‚\n");
                 set("value", 7000);
                 set("material", "steel");
-                set("wield_msg", MAG"Í»È»¼ä£¬ËÄÖÜ¶¼¼Å¾²ÁËÏÂÀ´£¬$NÑü¼äµÄ¡¸µØÄş¡¹ÒÑÈ»³öÇÊ¡£\n½£Éí·¢É¢³öµÄÎíÆøÁîÄã¾õµÃÓĞĞ©Æ®È»¡£\n"NOR);
-                set("unwield_msg", MAG"$N±ÈÁË¸ö½£ÊÆ£¬½«ÊÖÖĞµÄ¡¸µØÄş¡¹»º»ºµØ¹éÈë½£ÇÊ¡£\n"NOR);
-                set("±¦Îï",1);
+                set("wield_msg", MAG"çªç„¶é—´ï¼Œå››å‘¨éƒ½å¯‚é™äº†ä¸‹æ¥ï¼Œ$Nè…°é—´çš„ã€Œåœ°å®ã€å·²ç„¶å‡ºé˜ã€‚\nå‰‘èº«å‘æ•£å‡ºçš„é›¾æ°”ä»¤ä½ è§‰å¾—æœ‰äº›é£˜ç„¶ã€‚\n"NOR);
+                set("unwield_msg", MAG"$Næ¯”äº†ä¸ªå‰‘åŠ¿ï¼Œå°†æ‰‹ä¸­çš„ã€Œåœ°å®ã€ç¼“ç¼“åœ°å½’å…¥å‰‘é˜ã€‚\n"NOR);
+                set("å®ç‰©",1);
 
                 set("no_pawn", 1);
                 set("combine_id", "skysword");
-                set("combine_name", HIC"ÌìÇå"NOR);
+                set("combine_name", HIC"å¤©æ¸…"NOR);
                 set("combine_object", "/u/tod/obj/qksword.c");
-                set("combine_msg", "ºÏÔÚÒ»Æğ£¬Í»È»ÌìµØ±äÉ«£¬Ò»Õóµç¹â¹ıºó£¬Ë«½£±ä³ÉÁË");
+                set("combine_msg", "åˆåœ¨ä¸€èµ·ï¼Œçªç„¶å¤©åœ°å˜è‰²ï¼Œä¸€é˜µç”µå…‰è¿‡åï¼ŒåŒå‰‘å˜æˆäº†");
         }
         init_sword(80);
         setup();

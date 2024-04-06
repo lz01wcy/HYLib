@@ -1,5 +1,5 @@
-// lingzhi.c Ç§ÄêÁéÖ¥
-//ĞÇĞÇ(lywin)2000/4/22
+// lingzhi.c åƒå¹´çµèŠ
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/22
 
 #include <ansi.h>
 inherit ITEM;
@@ -14,13 +14,13 @@ void init()
 }
 void create()
 {
-        set_name(HIM"°¢±¦"NOR, ({"amy"}));
+        set_name(HIM"é˜¿å®"NOR, ({"amy"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 set("value", 100)
 ;
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
 
 ;
 	}
@@ -30,7 +30,7 @@ set("value", 100)
 int do_eat(string arg)
 {
 	if (!id(arg))
-        return notify_fail("ÄãÒªÃşÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ‘¸ä»€ä¹ˆï¼Ÿ\n");
         this_player()->start_busy(20);
         this_player()->add("potential",1000);
          this_player()->add("score",20000)

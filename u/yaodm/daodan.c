@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-        set_name("ÕÕÑı¾µ", ({"zhaoyao jing"}));
+        set_name("ç…§å¦–é•œ", ({"zhaoyao jing"}));
        if (clonep())
                set_default_object(__FILE__);
        else {
                set("long",
-                         "ÕâÊÇÒ»Ãæº£Ñó×½ÑıµÄ±¦Îï£¬¿ÉÒÔÈÃÎ×Ê¦ÏÖĞÎ²¢È¥µô±£»¤¡£\n");
+                         "è¿™æ˜¯ä¸€é¢æµ·æ´‹æ‰å¦–çš„å®ç‰©ï¼Œå¯ä»¥è®©å·«å¸ˆç°å½¢å¹¶å»æ‰ä¿æŠ¤ã€‚\n");
                set("value", 0);
-             set("unit", "Ö»");
+             set("unit", "åª");
                set("no_get", 1);
                set("no_drop", 0);
                set("treasure", 1);
@@ -42,10 +42,10 @@ int do_send(string target)
        if(!(dest = find_player(target)))
              if(!(dest = find_living(target)))
              {
-                   write("Ã»ÓĞÕâ¸öÈË»òÉúÎï¡£\n");
+                   write("æ²¡æœ‰è¿™ä¸ªäººæˆ–ç”Ÿç‰©ã€‚\n");
                    return 1;
              }
-    if (!environment(dest)) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÄÀï¡£\n");
+    if (!environment(dest)) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨å“ªé‡Œã€‚\n");
 
 
 

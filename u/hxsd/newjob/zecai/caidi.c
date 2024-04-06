@@ -8,10 +8,10 @@ inherit ROOM;
 void create()
 {
 
-         set("short", "²ËµØ");
+         set("short", "èœåœ°");
          set("long", @LONG                              
-ÕâÀïÊÇÎäµ±É½µÄ²ËµØ£¬µØÀï³¤ÂúÁËÂÌÓÍÓÍµÄÊß²Ë£¬ÈÃÈË¿´×Å¾Í¾õµÃ
-Êæ·þ¡£¼¸¸öµÀÈËÕýÔÚµØÀïÕª²Ë(zhaicai)¡£
+è¿™é‡Œæ˜¯æ­¦å½“å±±çš„èœåœ°ï¼Œåœ°é‡Œé•¿æ»¡äº†ç»¿æ²¹æ²¹çš„è”¬èœï¼Œè®©äººçœ‹ç€å°±è§‰å¾—
+èˆ’æœã€‚å‡ ä¸ªé“äººæ­£åœ¨åœ°é‡Œæ‘˜èœ(zhaicai)ã€‚
 LONG
          );
          set("no_fight",1);
@@ -35,28 +35,28 @@ int do_sa(string arg)
 
          if (!me->query_temp("job")||me->query_temp("job")!=1)
          {
-         tell_object(me,"ÄãÒª¸ÉÂï£¿\n");
+         tell_object(me,"ä½ è¦å¹²å˜›ï¼Ÿ\n");
          return 1;
          }
          if(me->is_busy())
-         return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+         return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
          if(me->query_temp("cai",1))
          {
-         write(HIR"¿ì°Ñ²ËËÍµ½»ð¹¤µÀÈËÄÇÀïÈ¥°É¡£\n",NOR);
+         write(HIR"å¿«æŠŠèœé€åˆ°ç«å·¥é“äººé‚£é‡ŒåŽ»å§ã€‚\n",NOR);
          return 1;
          }
 else
 {       
   if(me->query("jing")<10)
-  return notify_fail("Äã½ñÌìÌ«ÀÛÁË£¬Ó¦¸ÃÐÝÏ¢Ò»ÏÂÁË¡£\n");
-         message_vision(HIG"$N·üÏÂÉí¿ªÊ¼ÌôÑ¡×îÄÛµÄÊß²Ë¡£\n"NOR,me); 
+  return notify_fail("ä½ ä»Šå¤©å¤ªç´¯äº†ï¼Œåº”è¯¥ä¼‘æ¯ä¸€ä¸‹äº†ã€‚\n");
+         message_vision(HIG"$Nä¼ä¸‹èº«å¼€å§‹æŒ‘é€‰æœ€å«©çš„è”¬èœã€‚\n"NOR,me); 
          n++; 
          me->receive_damage("jing",10);
         
  if (random(5)>=3||n >= 8)
 {    
-         message_vision(HIC"$NÕªÂúÁËÒ»°ÑÏÊ²Ë£¬¿ì¸ø»ð¹¤µÀÈËËÍÈ¥°É£¡\n"NOR,me);
+         message_vision(HIC"$Næ‘˜æ»¡äº†ä¸€æŠŠé²œèœï¼Œå¿«ç»™ç«å·¥é“äººé€åŽ»å§ï¼\n"NOR,me);
          fish=new("/d/wudang/obj/cai");
          fish->move(me); 
          n=0;

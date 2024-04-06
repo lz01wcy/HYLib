@@ -1,14 +1,14 @@
-// yuan Ôª¹ã²¨
+// yuan å…ƒå¹¿æ³¢
  
 inherit NPC;
  
 void create()
 {
-	set_name("Ôª¹ã²¨", ({ "yuan guangpo", "yuan" }));
-	set("nickname", "º£É°°ï°ïÖ÷");
+	set_name("å…ƒå¹¿æ³¢", ({ "yuan guangpo", "yuan" }));
+	set("nickname", "æµ·ç ‚å¸®å¸®ä¸»");
 	set("long", 
-        "º£É°°ïµÄ°ïÖ÷£¬ÔÚÑØº£µØ´ø´ò¼Ò½ÙÉá£¬×÷¶ñ¶à¶Ë¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "æµ·ç ‚å¸®çš„å¸®ä¸»ï¼Œåœ¨æ²¿æµ·åœ°å¸¦æ‰“å®¶åŠ«èˆï¼Œä½œæ¶å¤šç«¯ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 46);
 	set("attitude", "peaceful");
 	set("shen", -5000);

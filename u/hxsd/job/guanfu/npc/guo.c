@@ -1,14 +1,14 @@
-// guo ¹ıÈıÈ­
+// guo è¿‡ä¸‰æ‹³
  
 inherit NPC;
  
 void create()
 {
-        set_name("¹ıÈıÈ­", ({ "guo sanquan", "guo" }));
-        set("nickname", "ÉñÈ­ÃÅÖ÷");
+        set_name("è¿‡ä¸‰æ‹³", ({ "guo sanquan", "guo" }));
+        set("nickname", "ç¥æ‹³é—¨ä¸»");
         set("long", 
-        "ÉñÈ­ÃÅµÄÃÅÖ÷£¬Ò»ÉíÈ­·¨Ğ¡ÓĞÃûÉù¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ç¥æ‹³é—¨çš„é—¨ä¸»ï¼Œä¸€èº«æ‹³æ³•å°æœ‰åå£°ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 28);
         set("attitude", "peaceful");
         set("shen", -2000);

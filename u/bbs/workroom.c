@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-set("short", "É±ÊÖµÄ¹¤×÷ÊÒ");
+set("short", "æ€æ‰‹çš„å·¥ä½œå®¤");
 set("long", @LONG
-ÕâÀïÊÇÉ±ÊÖµÄ¹¤×÷ÊÒ¡£ÕâÀïÊÇ bbs ÍµÀÁµÄµØ·½
+è¿™é‡Œæ˜¯æ€æ‰‹çš„å·¥ä½œå®¤ã€‚è¿™é‡Œæ˜¯ bbs å·æ‡’çš„åœ°æ–¹
 LONG	);	
 set("valid_startroom",1);
 set("no_steal", "1");

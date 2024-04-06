@@ -35,10 +35,10 @@ int quest_reward(object me, object who,object quest_item)
         me->add("combat_exp",exp);
         me->add("potential",pot);
         me->add("score",score);
-	tell_object(me,"Äã±»½±ÀøÁË£º\n" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n" +
-        chinese_number(score)+"µã×ÛºÏÆÀ¼Û\n");
+	tell_object(me,"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+        chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+        chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+        chinese_number(score)+"ç‚¹ç»¼åˆè¯„ä»·\n");
 	me->add("TASK",1);
 	if( !undefinedp(quest["fin_func"]))
 	call_other(this_object(),quest["fin_func"],me,who,quest_item);
@@ -106,16 +106,16 @@ string dyn_quest_list()
 	if(already_spreaded(quests[i]["file_name"]))
 	{
 	if(random(2))
-	output += sprintf("%sµÄ%s£¨%s£©\n",owner->query("name"),item->query("name"),item->query("id"));
+	output += sprintf("%sçš„%sï¼ˆ%sï¼‰\n",owner->query("name"),item->query("name"),item->query("id"));
 	else
-	output = sprintf("%sµÄ%s£¨%s£©\n",owner->query("name"),item->query("name"),item->query("id")) + output;
+	output = sprintf("%sçš„%sï¼ˆ%sï¼‰\n",owner->query("name"),item->query("name"),item->query("id")) + output;
 	}
 	else
 	{
 	if(random(2))
-	output += sprintf("%sµÄ%s£¨%s£©¡²ÒÑÍê³É¡³\n",owner->query("name"),item->query("name"),item->query("id"));
+	output += sprintf("%sçš„%sï¼ˆ%sï¼‰ã€”å·²å®Œæˆã€•\n",owner->query("name"),item->query("name"),item->query("id"));
 	else
-	output = sprintf("%sµÄ%s£¨%s£©¡²ÒÑÍê³É¡³\n",owner->query("name"),item->query("name"),item->query("id")) + output;
+	output = sprintf("%sçš„%sï¼ˆ%sï¼‰ã€”å·²å®Œæˆã€•\n",owner->query("name"),item->query("name"),item->query("id")) + output;
 	}
 	}
 	return output;
@@ -123,15 +123,15 @@ string dyn_quest_list()
 string locate_obj(object me,string strr)
 {
         string *distance = ({
-"¼«½ü", "ºÜ½ü", "±È½Ï½ü", "²»Ô¶",
-"²»½ü", "±È½ÏÔ¶", "ºÜÔ¶", "¼«Ô¶"
+"æè¿‘", "å¾ˆè¿‘", "æ¯”è¾ƒè¿‘", "ä¸è¿œ",
+"ä¸è¿‘", "æ¯”è¾ƒè¿œ", "å¾ˆè¿œ", "æè¿œ"
         });
         string *altitude =({
-"¸ß´¦", "µØ·½", "µÍ´¦"
+"é«˜å¤„", "åœ°æ–¹", "ä½å¤„"
         });
         string *directions=({
-"ÖÜÎ§","±±·½", "ÄÏ·½", "¶«·½","Î÷·½",
-"¶«±±·½","Î÷±±·½","¶«ÄÏ·½","Î÷ÄÏ·½"
+"å‘¨å›´","åŒ—æ–¹", "å—æ–¹", "ä¸œæ–¹","è¥¿æ–¹",
+"ä¸œåŒ—æ–¹","è¥¿åŒ—æ–¹","ä¸œå—æ–¹","è¥¿å—æ–¹"
         });
         object ob, tmpobj,where, *ob_list;
         object item,room;
@@ -181,11 +181,11 @@ string locate_obj(object me,string strr)
                         if(x<0&&y>0) dir=directions[6];
                         if(x>0&&y<0) dir=directions[7];
                         if(x<0&&y<0) dir=directions[8];
-        output = "¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+dir+dis+"µÄ"+alt+"¡£\n";*/
+        output = "ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨"+dir+dis+"çš„"+alt+"ã€‚\n";*/
 	
 	map=values(ob->query("exits"));
     map=values(map[random(sizeof(map))]->query("exits"));//add by zzz for random locate
-    output="¡º"+ob_list[i]->query("name")+"¡»ËÆºõÔÚ"+ob->query("outdoors")+map[random(sizeof(map))]->query("short");
+    output="ã€"+ob_list[i]->query("name")+"ã€ä¼¼ä¹åœ¨"+ob->query("outdoors")+map[random(sizeof(map))]->query("short");
 	
 	
 	return output;
@@ -228,7 +228,7 @@ string locate_obj(object me,string strr)
                         if(x>0&&y<0) dir=directions[7];
                         if(x<0&&y<0) dir=directions[8];
         
-		output = "¡º"+tmpobj->query("name")+"¡»ËÆºõÔÚ"+dir+dis+"µÄ"+alt+"¡£\n";
+		output = "ã€"+tmpobj->query("name")+"ã€ä¼¼ä¹åœ¨"+dir+dis+"çš„"+alt+"ã€‚\n";
         return output;
 	}
         }
@@ -305,7 +305,7 @@ mapping *read_table(string file)
 }
 void big_reward(object me, object who, object item)
 {
-	tell_object(me,"ÄãÕæĞĞ£¡£¡\n");
+	tell_object(me,"ä½ çœŸè¡Œï¼ï¼\n");
 }
 
 void execute_accept_object(object me, object who, object item)

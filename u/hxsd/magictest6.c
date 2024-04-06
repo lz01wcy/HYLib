@@ -1,15 +1,15 @@
-//Npc ±È¹ÅÇåÊ®ÀÉ
-//diabio(ÇàÔÆ)2003.3.1
+//Npc æ¯”å¤æ¸…åéƒ
+//diabio(é’äº‘)2003.3.1
 #include <ansi.h>
 inherit NPC;
 int ask_tianxiang();
 inherit F_MASTER;
 void create()
 {
-        set_name("Ä§·¨²âÊÔÔ±", ({ "light test", "magictest" }));
-        set("long", "Ëû¾ÍÊÇÄ§·¨²âÊÔÔ±¡£ \n");
-        set("title", HIY"¹âÃ÷Ä§·¨"HIW"²âÊÔÔ±"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é­”æ³•æµ‹è¯•å‘˜", ({ "light test", "magictest" }));
+        set("long", "ä»–å°±æ˜¯é­”æ³•æµ‹è¯•å‘˜ã€‚ \n");
+        set("title", HIY"å…‰æ˜é­”æ³•"HIW"æµ‹è¯•å‘˜"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude","peaceful");
         set("zhuanbest",1);
@@ -83,7 +83,7 @@ void unconcious()
         set("eff_jing", query("max_jing"));
         set("jing", query("max_jing"));
         set("jingli", query("eff_jingli"));
-        say( "Ä§·¨²âÊÔÔ±Ğ¦×ÅËµ£ºÎÒÖ»ÊÇÔÚÕâ²âÊÔÎä¹¦£¡\n");
+        say( "é­”æ³•æµ‹è¯•å‘˜ç¬‘ç€è¯´ï¼šæˆ‘åªæ˜¯åœ¨è¿™æµ‹è¯•æ­¦åŠŸï¼\n");
         command("hehe");
 
 }

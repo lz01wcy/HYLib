@@ -1,4 +1,4 @@
-// taiji-shengong.c Ì«¼«Éñ¹¦
+// taiji-shengong.c å¤ªæç¥åŠŸ
 // By Xiang
 // Modified by Hop
 
@@ -14,25 +14,25 @@ int valid_learn(object me)
 		for (j = 1; j < lvl / 10; j++)
 			t*=2;
 
-	if ( me->query("gender") == "ÎŞĞÔ" && lvl > 49)
-		return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÌ«¼«Éñ¹¦¡£\n");
+	if ( me->query("gender") == "æ— æ€§" && lvl > 49)
+		return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„å¤ªæç¥åŠŸã€‚\n");
 
 	if ( me->query("class") == "bonze" )
-		return notify_fail("Ì«¼«Éñ¹¦½²¾¿ÒõÑôµ÷ºÏ£¬ÓĞÎ¥·ğ¼ÒÁù¸ùÇå¾»Ö®Òâ£¬"
-			+RANK_D->query_respect(me)+"ÓûĞŞ´Ë¹¦£¬ÒÑÊÇ×ï¹ı¡£\n");
+		return notify_fail("å¤ªæç¥åŠŸè®²ç©¶é˜´é˜³è°ƒåˆï¼Œæœ‰è¿ä½›å®¶å…­æ ¹æ¸…å‡€ä¹‹æ„ï¼Œ"
+			+RANK_D->query_respect(me)+"æ¬²ä¿®æ­¤åŠŸï¼Œå·²æ˜¯ç½ªè¿‡ã€‚\n");
 
 	if ((int)me->query_skill("force", 1) < 10)
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if(lvl<=100)
 	{
 		if (lvl > 10 && (int)me->query("shen") < t * 100) 
-			return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+			return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
 	}
 	else
 	{
 		if ((int)me->query("shen") < (51200 + (lvl - 100) * 1000)) 
-			return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+			return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
 	}
 
 	if (
@@ -60,14 +60,14 @@ me->query_skill("huashan-neigong",1)   ||
 me->query_skill("zixia-shengong",1) ||
 me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("guiyuan-tunafa",1) )
-		return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§Ì«¼«Éñ¹¦£¿£¡\n");
+		return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦å¤ªæç¥åŠŸï¼Ÿï¼\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("Ì«¼«Éñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("å¤ªæç¥åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

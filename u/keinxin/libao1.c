@@ -1,11 +1,11 @@
-// ³¬¼¶´óÀñ°ü /ADDED BY KEINXIN
+// è¶…çº§å¤§ç¤¼åŒ… /ADDED BY KEINXIN
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(HIY"ĞÂ»éºØÀñ"NOR, ({"xinhun heli", "heli", "libao"}));
+	set_name(HIY"æ–°å©šè´ºç¤¼"NOR, ({"xinhun heli", "heli", "libao"}));
 	set_weight(10);
 set("no_drop", 1);
 set("no_put", 1);
@@ -16,14 +16,14 @@ set("no_put", 1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","ÕâÊÇĞÂ»éµÄºØÀñ£¬ÔõÃ´ÄÜËæ±ãËÍÈË£¡\n");
+    set("no_give","è¿™æ˜¯æ–°å©šçš„è´ºç¤¼ï¼Œæ€ä¹ˆèƒ½éšä¾¿é€äººï¼\n");
 set("no_drop", 1);
 set("no_put", 1);
     set("no_get", 1);
     set("no_give", 0);
     set("value", 0);
-		set("long", "Ò»¸öÓÃ´¿½ğÖÆ×÷³ÉµÄ"+HIY"ĞÂ»éºØÀñ£¬"NOR+"ÊÇº£Ñó2µÄÎ×Ê¦×£¸£ĞÂÈËµÄÀñÎï£¬ËÆºõ¿ÉÒÔ´ò¿ª(opengift)¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨çº¯é‡‘åˆ¶ä½œæˆçš„"+HIY"æ–°å©šè´ºç¤¼ï¼Œ"NOR+"æ˜¯æµ·æ´‹2çš„å·«å¸ˆç¥ç¦æ–°äººçš„ç¤¼ç‰©ï¼Œä¼¼ä¹å¯ä»¥æ‰“å¼€(opengift)ã€‚\n");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -43,10 +43,10 @@ object ob;
         ob->set_amount(100);
         ob->move(this_player());
 	this_player()->start_busy(50);
-	message_vision("$N´ò¿ªÁËĞÂ»éºØÀñ£¬¾õµÃ×Ô¼ºÓÖ±äÀûº¦ÁËÒ»Ğ© !ºØÀñÀïÃæ»¹ÓĞºÜ¶à»Æ½ğ!\n", this_player());
-	tell_object(me,HIY"Äã±»½±ÀøÁË£ºÒ»°ÙÁ½»Æ½ğ¡£\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n"NOR);
+	message_vision("$Næ‰“å¼€äº†æ–°å©šè´ºç¤¼ï¼Œè§‰å¾—è‡ªå·±åˆå˜åˆ©å®³äº†ä¸€äº› !è´ºç¤¼é‡Œé¢è¿˜æœ‰å¾ˆå¤šé»„é‡‘!\n", this_player());
+	tell_object(me,HIY"ä½ è¢«å¥–åŠ±äº†ï¼šä¸€ç™¾ä¸¤é»„é‡‘ã€‚\n" +
+             chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n"NOR);
 	destruct(this_object());
 	return 1;
 }

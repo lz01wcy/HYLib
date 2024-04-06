@@ -1,4 +1,4 @@
-// ºì°ü
+// çº¢åŒ…
 
 #include <ansi.h>
 inherit ITEM;
@@ -29,7 +29,7 @@ string *du=({
 });
 void create()
 {
-	set_name(HIR"ºì°ü"NOR, ({"hong bao", "bao", "hong"}));
+	set_name(HIR"çº¢åŒ…"NOR, ({"hong bao", "bao", "hong"}));
 	set_weight(10);
 set("no_drop", 1);
 set("no_put", 1);
@@ -40,14 +40,14 @@ set("no_put", 1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
 set("no_drop", 1);
 set("no_put", 1);
     set("no_get", 1);
     set("no_give", 0);
     set("value", 0);
-		set("long", "Ò»¸öÓÃºìÖ½ÖÆ×÷¶ø³ÉµÄ"+HIR"ºì°ü£¬"NOR+"ËÆºõ¿ÉÒÔËº¿ª(opengift)¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨çº¢çº¸åˆ¶ä½œè€Œæˆçš„"+HIR"çº¢åŒ…ï¼Œ"NOR+"ä¼¼ä¹å¯ä»¥æ’•å¼€(opengift)ã€‚\n");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -64,7 +64,7 @@ if (this_player()->query("max_neili") < 1000)
 	this_player()->start_busy(50);
         this_player()->apply_condition(du[random(sizeof(du))], 3);
 //        this_player()->apply_condition("feidian_poison", 5);
-	message_vision("$N´ò¿ªÁËºì°ü£¬Ö»¾õµÃ×Ô¼ºÓÖ±äÀûº¦ÁËÒ»Ğ© !\n", this_player());
+	message_vision("$Næ‰“å¼€äº†çº¢åŒ…ï¼Œåªè§‰å¾—è‡ªå·±åˆå˜åˆ©å®³äº†ä¸€äº› !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

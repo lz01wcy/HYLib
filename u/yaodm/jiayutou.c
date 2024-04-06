@@ -9,13 +9,13 @@ void init()
 }
 void create()
 {
-        set_name(HIG"ÍòÄê¼×ÓãÍ·"NOR, ({"jiayu tou","tou"}));
+        set_name(HIG"ä¸‡å¹´ç”²é±¼å¤´"NOR, ({"jiayu tou","tou"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¸ö¾­¶àÖÖÃû¹óÒ©²Ä½þÅÝµÄ¼×ÓãÍ·£¬¾­ÇïÏã¾«ÐÄÑÐÖÆ£¬
-ÓÐ×ÌÒõ×´ÑôÖ®ÆæÐ§£¬¾ÝËµ£¬·þÓÃºóÒ»¸öÍíÉÏ°üË¯°ÙXX¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªç»å¤šç§åè´µè¯ææµ¸æ³¡çš„ç”²é±¼å¤´ï¼Œç»ç§‹é¦™ç²¾å¿ƒç ”åˆ¶ï¼Œ
+æœ‰æ»‹é˜´çŠ¶é˜³ä¹‹å¥‡æ•ˆï¼Œæ®è¯´ï¼Œæœç”¨åŽä¸€ä¸ªæ™šä¸ŠåŒ…ç¡ç™¾XXã€‚\n");
                 set("value", 50000);
         }
         setup();
@@ -26,9 +26,9 @@ int do_eat(string arg)
         int fw;
         object me = this_player();
 
-	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if (me->is_busy() )
-		return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™Žç€äº†ã€‚\n");
         if(arg=="tou") 
 	{
                 fw = (int)me->max_food_capacity();
@@ -40,7 +40,7 @@ int do_eat(string arg)
                 me->set("jing",me->query("max_jing")*2);
                 me->set("qi",me->query("max_qi")*2);
                 me->set("neili",me->query("max_neili")*2);
-message_vision(HIG"$N³ÔÏÂÒ»¸öÍòÄê¼×ÓãÍ·Íè£¬¸Ðµ½»ëÉíÔïÈÈ£¬²»ÓÉµÄ¿ªÊ¼ÁôÒâÆðÒìÐÔÀ´ÁË£¡\n"NOR,me);
+message_vision(HIG"$Nåƒä¸‹ä¸€ä¸ªä¸‡å¹´ç”²é±¼å¤´ä¸¸ï¼Œæ„Ÿåˆ°æµ‘èº«ç‡¥çƒ­ï¼Œä¸ç”±çš„å¼€å§‹ç•™æ„èµ·å¼‚æ€§æ¥äº†ï¼\n"NOR,me);
 		me->start_busy(1);
         	destruct(this_object());
 	}

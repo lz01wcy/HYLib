@@ -1,37 +1,37 @@
 #include <ansi.h>
 int do_walk();
 inherit NPC;
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ","ÕÅ","³Â","Áø","·ç","Áõ","ÁÖ", }); 
-string *name_words = ({ "Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®", });
-string *color_title = ({"[ÌìÉ±ÃÅ]É±ÊÖ","[µØÉ·ÃÅ]É±ÊÖ",});
+string *first_name = ({ "èµµ","é’±","å­™","æ","å‘¨","å´","éƒ‘","ç‹","å¼ ","é™ˆ","æŸ³","é£","åˆ˜","æ—", }); 
+string *name_words = ({ "ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ","å…«","ä¹","å", });
+string *color_title = ({"[å¤©æ€é—¨]æ€æ‰‹","[åœ°ç…é—¨]æ€æ‰‹",});
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 mapping *data=({
-(["name":"Îä½«",	"id":"wu jiang",	"mw":-1,	]),
-(["name":"É½ÔôÍ·",	"id":"shan zeitou",	"mw":1,	]),
-(["name":"¿Íµê»ï¼Æ",	"id":"huo ji",	"mw":-1,	"weapon":"gangdao",	]),
-(["name":"ÊËÎÀ",	"id":"she wei",	"mw":1,	"weapon":"changqiang",	]),
-(["name":"Ìú½³",	"id":"tie jiang",	"mw":1,	"weapon":"gangdao",	]),
-(["name":"Á÷Ã¥Í·",	"id":"liumang tou",	"mw":-1,	"weapon":"gangjian",	]),
-(["name":"¹ó¹«×Ó",	"id":"gui gongzi",		"mw":1,	"weapon":"gangjian",	]),
-(["name":"ĞĞÕß",	"id":"xing ze",	"mw":1,	"weapon":"gangdao",]),
-(["name":"ÍÁ·ËÍ·",	"id":"tufei tou",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ï·×Ó",		"id":"xi zi",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"Ì¨ÒÄÉÌ··",	"id":"shang fan",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"½­ºşÒÕÈË",	"id":"yi ren",	"mw":1,	"weapon":"gangjian",]),
-(["name":"¿³ÖñÈË",	"id":"kanzu ren",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"ÁÔÈË",		"id":"lie ren",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"Ì¨ÒÄÁÔÈË",	"id":"old lieren",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÄÁÑòÈË",	"id":"muyang ren",	"mw":1,	"weapon":"gangjian",]),
-(["name":"Å©·ò",	"id":"nong fu",	"mw":1,	"weapon":"gangjian",]),
-(["name":"Æ¤»õÉÌ",	"id":"pihuo sang",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ê¯½³",		"id":"shi jiang",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"µÀÈË",	"id":"dao ren",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÓÎ¿Í",	"id":"you ke",	"mw":1,	"weapon":"gangjian",]),
-(["name":"ÊéÍ¯",	"id":"shu tong",	"mw":1,	"weapon":"gangjian",]),
-(["name":"ÂÌÓª»áÖÚ",	"id":"guan bing",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ô±Íâ",		"id":"yuan wai",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"±ÈÇğ",	"id":"bi qiu",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"Á÷Ã¥",	"id":"liu mang",	"mw":1,	"weapon":"gangjian",]),
+(["name":"æ­¦å°†",	"id":"wu jiang",	"mw":-1,	]),
+(["name":"å±±è´¼å¤´",	"id":"shan zeitou",	"mw":1,	]),
+(["name":"å®¢åº—ä¼™è®¡",	"id":"huo ji",	"mw":-1,	"weapon":"gangdao",	]),
+(["name":"ä»•å«",	"id":"she wei",	"mw":1,	"weapon":"changqiang",	]),
+(["name":"é“åŒ ",	"id":"tie jiang",	"mw":1,	"weapon":"gangdao",	]),
+(["name":"æµæ°“å¤´",	"id":"liumang tou",	"mw":-1,	"weapon":"gangjian",	]),
+(["name":"è´µå…¬å­",	"id":"gui gongzi",		"mw":1,	"weapon":"gangjian",	]),
+(["name":"è¡Œè€…",	"id":"xing ze",	"mw":1,	"weapon":"gangdao",]),
+(["name":"åœŸåŒªå¤´",	"id":"tufei tou",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"æˆå­",		"id":"xi zi",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"å°å¤·å•†è´©",	"id":"shang fan",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ±Ÿæ¹–è‰ºäºº",	"id":"yi ren",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ç ç«¹äºº",	"id":"kanzu ren",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"çŒäºº",		"id":"lie ren",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"å°å¤·çŒäºº",	"id":"old lieren",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"ç‰§ç¾Šäºº",	"id":"muyang ren",	"mw":1,	"weapon":"gangjian",]),
+(["name":"å†œå¤«",	"id":"nong fu",	"mw":1,	"weapon":"gangjian",]),
+(["name":"çš®è´§å•†",	"id":"pihuo sang",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"çŸ³åŒ ",		"id":"shi jiang",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"é“äºº",	"id":"dao ren",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ¸¸å®¢",	"id":"you ke",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ä¹¦ç«¥",	"id":"shu tong",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ç»¿è¥ä¼šä¼—",	"id":"guan bing",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"å‘˜å¤–",		"id":"yuan wai",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"æ¯”ä¸˜",	"id":"bi qiu",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æµæ°“",	"id":"liu mang",	"mw":1,	"weapon":"gangjian",]),
 });
 
 
@@ -61,8 +61,8 @@ void create()
         }) );
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
-                "É±ÊÖºÈµÀ£º½ñÌìÀÏ×ÓÓÖÒªÉñÊéÓÖÒªÃü£¡£¡\n",
-                "É±ÊÖĞ¦µÀ£º¿ì°ÑÉñÊé½»³öÀ´£¡ÈÃÄãËÀµÄÍ´¿ìÒ»µã!\n",
+                "æ€æ‰‹å–é“ï¼šä»Šå¤©è€å­åˆè¦ç¥ä¹¦åˆè¦å‘½ï¼ï¼\n",
+                "æ€æ‰‹ç¬‘é“ï¼šå¿«æŠŠç¥ä¹¦äº¤å‡ºæ¥ï¼è®©ä½ æ­»çš„ç—›å¿«ä¸€ç‚¹!\n",
         }) );
 
         set_temp("apply/attack", 20);
@@ -96,7 +96,7 @@ int do_walk()
         if (time() - query("check_time") > 1200)
         {
        set_name((order[random(13)])+name, ({ "killer", "shashou", "sha shou" }));
-       set("gender", "ÄĞĞÔ");
+       set("gender", "ç”·æ€§");
        set("title", color_title[random(sizeof(color_title))]);
         n = 0;
 	inv = all_inventory(this_object());
@@ -104,10 +104,10 @@ int do_walk()
 	for (i = 0; i < sizeof(inv); i++)
         {
                 if (inv[i]->query("dynamic_quest"))
-command("chat "+inv[i]->query("name")+(order[random(13)])+"ÎÒÒÑ¾­ÄÃµ½ÊÖÁË¡£¡£¡£³·!!  \n"NOR);
+command("chat "+inv[i]->query("name")+(order[random(13)])+"æˆ‘å·²ç»æ‹¿åˆ°æ‰‹äº†ã€‚ã€‚ã€‚æ’¤!!  \n"NOR);
         }
 
-                        message_vision("$NĞ¦ÁËĞ¦Ëµ£º¶«Î÷ÒÑ¾­µ½ÊÖ£¬ÈÎÎñÍê³É£¬³·ÁË£¡\n"NOR, this_object());
+                        message_vision("$Nç¬‘äº†ç¬‘è¯´ï¼šä¸œè¥¿å·²ç»åˆ°æ‰‹ï¼Œä»»åŠ¡å®Œæˆï¼Œæ’¤äº†ï¼\n"NOR, this_object());
                         destruct(this_object());
                         return 0;
         }
@@ -129,15 +129,15 @@ command("chat "+inv[i]->query("name")+(order[random(13)])+"ÎÒÒÑ¾­ÄÃµ½ÊÖÁË¡£¡£¡£³
 int accept_fight(object ob)
 {
 				command("say " + RANK_D->query_self(this_object())
-					+ "ÔõÃ´¿ÉÄÜÊÇ" + RANK_D->query_respect(ob)
-					+ "µÄ¶ÔÊÖ£¿\n");
+					+ "æ€ä¹ˆå¯èƒ½æ˜¯" + RANK_D->query_respect(ob)
+					+ "çš„å¯¹æ‰‹ï¼Ÿ\n");
 		  return 0;
 }
 
 int kill_ob(object ob)
 {
 		  command("fear");
-		  command("say ²»ºÃ£¬ÎÒ±»Ê¶ÆÆÁË!!");
+		  command("say ä¸å¥½ï¼Œæˆ‘è¢«è¯†ç ´äº†!!");
 		  return 1;
 }
 

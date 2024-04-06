@@ -1,31 +1,62 @@
-// Room: /city/bingyindamen.c
-// YZC 1995/12/04 
-
-inherit ROOM;
-
-void create()
-{
-	set("short", "±øÓª´óÃÅ");
-	set("long", @LONG
-ÄãÕıÕ¾ÔÚ±øÓªµÄÃÅ¿Ú£¬Ãæ¶Ô×ÅÒ»ÅÅ¼òÂªµÄÓª·¿£¬¿ÉÒÔ¿´µ½´©×ÅÖÆ·şµÄ¹Ù±ø
-ÕıÔÚ²ÙÁ·£¬²»Ê±µØ´«À´ÄÅº°Éù¡£ÀÏ°ÙĞÕÊÇ²»ÔÊĞíÔÚ´Ë¹Û¿´µÄ£¬Äã×îºÃ¸Ï¿ì×ß¿ª¡£
-LONG );
-	set("exits", ([
-		"south" : __DIR__"bingyin",
-		"north" : __DIR__"xidajie1",
-	]));
-	set("objects", ([
-		__DIR__"npc/bing" : 2,
-	]));
-//	set("no_clean_up", 0);
-	setup();
-}
-
-int valid_leave(object me, string dir)
-{
-	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
-		dir == "south")
-		return notify_fail("¹Ù±øÀ¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
-	return ::valid_leave(me, dir);
-}
-
+// Room: /city/bingyindamen.c
+
+// YZC 1995/12/04 
+
+
+
+inherit ROOM;
+
+
+
+void create()
+
+{
+
+	set("short", "å…µè¥å¤§é—¨");
+
+	set("long", @LONG
+
+ä½ æ­£ç«™åœ¨å…µè¥çš„é—¨å£ï¼Œé¢å¯¹ç€ä¸€æ’ç®€é™‹çš„è¥æˆ¿ï¼Œå¯ä»¥çœ‹åˆ°ç©¿ç€åˆ¶æœçš„å®˜å…µ
+
+æ­£åœ¨æ“ç»ƒï¼Œä¸æ—¶åœ°ä¼ æ¥å‘å–Šå£°ã€‚è€ç™¾å§“æ˜¯ä¸å…è®¸åœ¨æ­¤è§‚çœ‹çš„ï¼Œä½ æœ€å¥½èµ¶å¿«èµ°å¼€ã€‚
+
+LONG );
+
+	set("exits", ([
+
+		"south" : __DIR__"bingyin",
+
+		"north" : __DIR__"xidajie1",
+
+	]));
+
+	set("objects", ([
+
+		__DIR__"npc/bing" : 2,
+
+	]));
+
+//	set("no_clean_up", 0);
+
+	setup();
+
+}
+
+
+
+int valid_leave(object me, string dir)
+
+{
+
+	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
+
+		dir == "south")
+
+		return notify_fail("å®˜å…µæ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
+
+	return ::valid_leave(me, dir);
+
+}
+
+
+

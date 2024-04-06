@@ -2,18 +2,18 @@
 inherit RING;
 void create()
 {
-        set_name( "Í­°åÖ¸", ({ "banzi" }) );
+        set_name( "é“œæ¿æŒ‡", ({ "banzi" }) );
 	set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸öÍ­°åÖ¸¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªé“œæ¿æŒ‡ã€‚\n");
                 set("no_drop",1);
                 set("no_get",1);
                 set("rigidity",50);
-	        set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»¸ö$n´÷ÔÚÊÖÉÏ¡£\n");
-        	set("unwield_msg", "$N½«ÊÖÉÏµÄ$n²ØÈë»³ÖĞ¡£\n");
+	        set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€ä¸ª$næˆ´åœ¨æ‰‹ä¸Šã€‚\n");
+        	set("unwield_msg", "$Nå°†æ‰‹ä¸Šçš„$nè—å…¥æ€€ä¸­ã€‚\n");
 	}
 	init_ring(25);
 	setup();

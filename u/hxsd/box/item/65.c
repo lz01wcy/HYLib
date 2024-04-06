@@ -8,15 +8,15 @@ inherit F_UNIQUE;
 void create()
 {
 
-        set_name(HIC"ÎŞÃûµ¶"NOR, ({ "noming dao","noming","dao", "blade" }));
+        set_name(HIC"æ— ååˆ€"NOR, ({ "noming dao","noming","dao", "blade" }));
         set_weight(35000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("rigidity", 9);
                 set("sharpness", 9);
-                set("long", "ÕâÊÇÒ»°Ñ»ëÉí·¢ºÚµÄÎŞÃûµ¶¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæµ‘èº«å‘é»‘çš„æ— ååˆ€ã€‚\n");
                 set("value", 1);
                 set("unique", 1);
                 set("weapon_prop/dodge", -10);
@@ -25,8 +25,8 @@ void create()
                 set("wield_neili", 500);
                 set("wield_maxneili", 1000);;
                 set("wield_str", 25);;
-                set("wield_msg", HIM"Ö»¼ûºÚ¹âÒ»ÉÁ£¬$NÊÖÖĞÒÑÌá×ÅÒ»°ÑºÚ³Á³ÁµÄ´óµ¶£¡\n"NOR);            
-                set("unwield_msg", HIM"ºÚ¹âºöÃğ£¬$nÔ¾Èë$N»³ÖĞ¡£\n"NOR);
+                set("wield_msg", HIM"åªè§é»‘å…‰ä¸€é—ªï¼Œ$Næ‰‹ä¸­å·²æç€ä¸€æŠŠé»‘æ²‰æ²‰çš„å¤§åˆ€ï¼\n"NOR);            
+                set("unwield_msg", HIM"é»‘å…‰å¿½ç­ï¼Œ$nè·ƒå…¥$Næ€€ä¸­ã€‚\n"NOR);
                 set("treasure",1);
         }
          init_blade(600);

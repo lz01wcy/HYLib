@@ -1,4 +1,4 @@
-// jinglei.c ¾ªÀ×
+// jinglei.c æƒŠé›·
 
 #include <ansi.h>
 inherit NPC;
@@ -12,15 +12,15 @@ void bu_move(object me);
 
 void create()
 {
-        set_name(HIW"¾ªÀ×"NOR, ({ "jing lei", "jinglei", "lei" }));        
-        set("title", HIY"ËÄ´óÃû²¶Ö®ËÄ¡°"HIW"À×"HIY"¡±"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(HIW"æƒŠé›·"NOR, ({ "jing lei", "jinglei", "lei" }));        
+        set("title", HIY"å››å¤§åæ•ä¹‹å››â€œ"HIW"é›·"HIY"â€"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("str", 30);
         set("per", 30);
         set("dex", 30);
-        set("long", "Ëû£¬¾ÍÊÇÎÅÃûÌìÏÂµÄËÄ´óÃû²¶ÖĞ×îĞ¡µÄÒ»¸ö£¬ËäÈ»Æ¢Æø»ğ±¬£¬µ«ÊÇÎªÈËºÀË¬ÖØÒå£¬
-½»ÓÎ¹ãÀ«£¬ÔÙ¼ÓÉÏÒ»ÉíÉî²»¿É²âµÄÎä¹¦£¬ËùÒÔÄê¼ÍÇáÇá£¬È´ÒÑ¾­ÃûÂúÌìÏÂÁË¡£\n");
+        set("long", "ä»–ï¼Œå°±æ˜¯é—»åå¤©ä¸‹çš„å››å¤§åæ•ä¸­æœ€å°çš„ä¸€ä¸ªï¼Œè™½ç„¶è„¾æ°”ç«çˆ†ï¼Œä½†æ˜¯ä¸ºäººè±ªçˆ½é‡ä¹‰ï¼Œ
+äº¤æ¸¸å¹¿é˜”ï¼Œå†åŠ ä¸Šä¸€èº«æ·±ä¸å¯æµ‹çš„æ­¦åŠŸï¼Œæ‰€ä»¥å¹´çºªè½»è½»ï¼Œå´å·²ç»åæ»¡å¤©ä¸‹äº†ã€‚\n");
         set("combat_exp", 2500000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -70,8 +70,8 @@ void create()
        
         set("chat_chance",4);
         set("chat_msg",({
-     HIW"¾ªÀ×"HIY"ºßÁËÒ»Éù£¬ËµµÀ£º¡°ÓĞËÄ´óÃû²¶ÔÚ£¬Ë­Ò²²»ÒªÉ±ÈË...Ë­ÒªÊÇÉ±ÁËÈË¸øÎÒÕÒÂé·³£¬¾ÍÈÃËûÂèµÄÈ¥×øÀÎ£¡¡±\n"NOR,
-     HIW"¾ªÀ×¿´×ÅÊÖÖĞµÄ½ğ×Ó£¬Ï²×Ì×ÌµØËµµÀ£º¡°¸Õ×½ÁË¼¸¸öÂÒÉ±ÈËµÄ»ìµ°£¬×¬ÁË²»ÉÙÉÍÒø£¬¿´À´ÓÖ¿ÉÒÔÈ¥ºÈÁ½ÖÑÁË¡£¡±\n"NOR,
+     HIW"æƒŠé›·"HIY"å“¼äº†ä¸€å£°ï¼Œè¯´é“ï¼šâ€œæœ‰å››å¤§åæ•åœ¨ï¼Œè°ä¹Ÿä¸è¦æ€äºº...è°è¦æ˜¯æ€äº†äººç»™æˆ‘æ‰¾éº»çƒ¦ï¼Œå°±è®©ä»–å¦ˆçš„å»åç‰¢ï¼â€\n"NOR,
+     HIW"æƒŠé›·çœ‹ç€æ‰‹ä¸­çš„é‡‘å­ï¼Œå–œæ»‹æ»‹åœ°è¯´é“ï¼šâ€œåˆšæ‰äº†å‡ ä¸ªä¹±æ€äººçš„æ··è›‹ï¼Œèµšäº†ä¸å°‘èµé“¶ï¼Œçœ‹æ¥åˆå¯ä»¥å»å–ä¸¤ç›…äº†ã€‚â€\n"NOR,
         (: random_move :)
         }));
         setup();
@@ -106,14 +106,14 @@ void greeting(object ob)
                 }
                 else
                 {
-                        message_vision(HIC "$N¶Ô$nËµµÀ£ºÌıËµÄã¸öĞ¡»ìµ°É±ÁËÈË£¬µÈÎÒÃ¦ÍêÁËÔÙÀ´ÊÕÊ°Äã£¡"
-                                +RANK_D->query_rude(ob)+"£¬ËãÄãÃü´ó£¬ÔÙÁôÄã¶à»î¼¸Ìì£¡\n" NOR, me, ob);
+                        message_vision(HIC "$Nå¯¹$nè¯´é“ï¼šå¬è¯´ä½ ä¸ªå°æ··è›‹æ€äº†äººï¼Œç­‰æˆ‘å¿™å®Œäº†å†æ¥æ”¶æ‹¾ä½ ï¼"
+                                +RANK_D->query_rude(ob)+"ï¼Œç®—ä½ å‘½å¤§ï¼Œå†ç•™ä½ å¤šæ´»å‡ å¤©ï¼\n" NOR, me, ob);
                         return;
                 }
         }
         else
         {
-                command("say ÕâÄêÍ·£¬¾­¼Ã²»ºÃ£¬Ç®¿ÉÕæÄÑ×¬Ñ½£¬¹Ö²»µÃÕâÃ´¶àÈËÈ¥É±ÈËÔ½»õÀ²£¡");    
+                command("say è¿™å¹´å¤´ï¼Œç»æµä¸å¥½ï¼Œé’±å¯çœŸéš¾èµšå‘€ï¼Œæ€ªä¸å¾—è¿™ä¹ˆå¤šäººå»æ€äººè¶Šè´§å•¦ï¼");    
 //              init();
         }
         return;
@@ -132,9 +132,9 @@ int catch_pk(object me,object dest)
                         return 1;
                 }
 
-                message_vision(HIY "$N¶Ô$nËµµÀ£ºÌıËµÄãÊÇ¸öÉ±ÈË¿ñ£¬ÕûÌìÒÔÉ±ÈËÎªÀÖ£¬ÏÖÔÚÅöµ½ÁËÎÒ£¬
-                                    ËãÄãÃü¿àÁË£¬¹Ô¹ÔµÄ¸úÎÒ»ØÈ¥¶Ô´ó¼Ò×ö¸ö½»´ú£¬·ñÔòÈÃÄã"
-                        +RANK_D->query_rude(dest)+"¼ûÑÖÍõ£¡\n" NOR, me, dest);
+                message_vision(HIY "$Nå¯¹$nè¯´é“ï¼šå¬è¯´ä½ æ˜¯ä¸ªæ€äººç‹‚ï¼Œæ•´å¤©ä»¥æ€äººä¸ºä¹ï¼Œç°åœ¨ç¢°åˆ°äº†æˆ‘ï¼Œ
+                                    ç®—ä½ å‘½è‹¦äº†ï¼Œä¹–ä¹–çš„è·Ÿæˆ‘å›å»å¯¹å¤§å®¶åšä¸ªäº¤ä»£ï¼Œå¦åˆ™è®©ä½ "
+                        +RANK_D->query_rude(dest)+"è§é˜ç‹ï¼\n" NOR, me, dest);
                 me->set_leader(dest);
                 me->fight_ob(dest);
                 
@@ -202,7 +202,7 @@ int checking(object me, object dest)
         if ( dest->query("qi") <= 40 )
 //      if ( dest->query("qi") == 0 )
         {
-//              command("say Õâ´ÎÊÇchecking()ÔÚ¹¤×÷");
+//              command("say è¿™æ¬¡æ˜¯checking()åœ¨å·¥ä½œ");
                 catched(me,dest);
                 return 1;
         } 
@@ -217,10 +217,10 @@ void catched(object me,object dest)
 //      command("say "+(string)dest->query("id")+(string)dest->query("qi"));
         
         dest->apply_condition("gvmt_jail", 30);
-        dest->unconcious(); // »èÃÔ
+        dest->unconcious(); // æ˜è¿·
 //      command("get "+(string)dest->query("id"));
-        command("say ¹ş¹ş¹ş¹ş£¬¾ÍÕâÃ´Èı½ÅÃ¨µÄ¹¦·ò»¹¸Ò³öÀ´µ±É±ÈË¿ñ£¡ÄãÒÑ¾­Ã»×ÅÁË£¬¿´°ó°É£¡" );
-        message_vision(HIC"Ö»Ìı¡°»©À²¡±Ò»Éù£¬$NÅ×³öËøÁ´½«ÈË·¸Ëø×¡£¬Ñº½â×Å"+(string)dest->query("name")+"Ïò¼ÎÓø¹Ø·½Ïò¸ÏÈ¥¡£\n"NOR,me);
+        command("say å“ˆå“ˆå“ˆå“ˆï¼Œå°±è¿™ä¹ˆä¸‰è„šçŒ«çš„åŠŸå¤«è¿˜æ•¢å‡ºæ¥å½“æ€äººç‹‚ï¼ä½ å·²ç»æ²¡ç€äº†ï¼Œçœ‹ç»‘å§ï¼" );
+        message_vision(HIC"åªå¬â€œå“—å•¦â€ä¸€å£°ï¼Œ$NæŠ›å‡ºé”é“¾å°†äººçŠ¯é”ä½ï¼ŒæŠ¼è§£ç€"+(string)dest->query("name")+"å‘å˜‰å³ªå…³æ–¹å‘èµ¶å»ã€‚\n"NOR,me);
 
         dest->move("/d/gvmt/jianyu_do");
         me->move("/d/gvmt/jianyu_do");
@@ -232,7 +232,7 @@ void catched(object me,object dest)
 //      command("drop "+(string)dest->query("id"));
         me->set_leader(0);
                 
-        message_vision(HIC"$NßıÁË¿ÚÍÙÄ­£¬½«"+(string)dest->query("name")+"ÖØÖØµÄÖÀÔÚµØÉÏ£¬ºİºİµØÌßÁËÒ»½Å£¬ÁôÏÂÒ»¸öÇåÎúµÄĞ¬Ó¡£¬×ªÉíËøÉÏÀÎÃÅÀë¿ª¡£\n"NOR,me);
+        message_vision(HIC"$Nå•äº†å£å”¾æ²«ï¼Œå°†"+(string)dest->query("name")+"é‡é‡çš„æ·åœ¨åœ°ä¸Šï¼Œç‹ ç‹ åœ°è¸¢äº†ä¸€è„šï¼Œç•™ä¸‹ä¸€ä¸ªæ¸…æ™°çš„é‹å°ï¼Œè½¬èº«é”ä¸Šç‰¢é—¨ç¦»å¼€ã€‚\n"NOR,me);
         bu_move(me);
         return;
 }
@@ -243,25 +243,25 @@ void bu_move(object me)
         switch ( random(6) )
         {
         case 0 :
-                me->move("/d/city/kedian"); // ÑïÖİ
+                me->move("/d/city/kedian"); // æ‰¬å·
                 break;
         case 1 :
-                me->move("/d/city4/center"); // ³¤°²
+                me->move("/d/city4/center"); // é•¿å®‰
                 break;
         case 2 :
-                me->move("/d/city3/kedian"); // ³¤°²
+                me->move("/d/city3/kedian"); // é•¿å®‰
                 break;
               case 3 :
-                me->move("/d/kunming/kedian"); // ³É¶¼
+                me->move("/d/kunming/kedian"); // æˆéƒ½
                 break;
         case 4 :
-                me->move("/d/jyguan/kedian"); // À¥Ã÷
+                me->move("/d/jyguan/kedian"); // æ˜†æ˜
                 break;
         case 5 :
-                me->move("/d/city2/kedian"); // ±±¾©
+                me->move("/d/city2/kedian"); // åŒ—äº¬
                 break;
         }  
-        message_vision("$N×ßÁË¹ıÀ´¡£\n",me);
+        message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
                 
         return;
 }
@@ -270,7 +270,7 @@ void bu_move(object me)
 void die()
 {
         object ob;
-        message_vision("$Nµ¹ÔÚµØÉÏ,ÕõÔúÁË¼¸ÏÂ,ËÀÁË¡£\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Š,æŒ£æ‰äº†å‡ ä¸‹,æ­»äº†ã€‚\n", this_object());
         ob = new("/cao/bukuai");
         destruct(this_object());
 }

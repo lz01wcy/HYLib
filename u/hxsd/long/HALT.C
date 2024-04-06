@@ -5,16 +5,16 @@ int main(object me, string arg)
 {
 	if (me->is_fighting()) {
 		me->remove_all_enemy();
-		message_vision("$NÉíÐÐÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£\n", me); 
+		message_vision("$Nèº«è¡Œå‘åŽä¸€è·ƒï¼Œè·³å‡ºæˆ˜åœˆä¸æ‰“äº†ã€‚\n", me); 
 	}
 	else if (!me->is_busy()) 
-		return notify_fail("ÄãÏÖÔÚ²»Ã¦¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨ä¸å¿™ã€‚\n");
 	else if ((int)me->query_temp("pending/exercise") != 0) {
-		message_vision("$N°ÑÕýÔÚÔËÐÐµÄÕæÆøÇ¿ÐÐÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆðÀ´¡£\n", me);
+		message_vision("$NæŠŠæ­£åœ¨è¿è¡Œçš„çœŸæ°”å¼ºè¡ŒåŽ‹å›žä¸¹ç”°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
 		me->interrupt_me();
 	}
 	else if ((int)me->query_temp("pending/respirate") != 0){
-		message_vision("$N°ÑÕýÔÚÁéÌ¨ÖÐÔËÐÐµÄÏÈÌìÖ®ÆøÐìÐìÍÂ³ö£¬ÕöÑÛÕ¾ÁËÆðÀ´¡£\n", me);
+		message_vision("$NæŠŠæ­£åœ¨çµå°ä¸­è¿è¡Œçš„å…ˆå¤©ä¹‹æ°”å¾å¾åå‡ºï¼Œççœ¼ç«™äº†èµ·æ¥ã€‚\n", me);
 		me->interrupt_me();
 	}
 	me->interrupt_me();

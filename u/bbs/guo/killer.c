@@ -7,14 +7,14 @@ int do_back(object me);
 void create()
 {
       string weapon;
-        set_name("ºÚÒÂÈË", ({ "heiyi ren","ren"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("é»‘è¡£äºº", ({ "heiyi ren","ren"}));
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("str", 23);
         set("con", 26);
         set("int", 20);
         set("dex", 23);
-        set("long", "Ò»¸ö´©×ÅºÚÉ«Ò¹ÐÐÒÂµÄÈË¡£\n");
+        set("long", "ä¸€ä¸ªç©¿ç€é»‘è‰²å¤œè¡Œè¡£çš„äººã€‚\n");
         set("combat_exp", 80000 + random(40000)); 
         set("attitude", "friendly");
         set_skill("force", 50);
@@ -72,7 +72,7 @@ ob->set("max_qi",300+me->query("max_qi")*2/3);
 }
 int do_back(object me)
 {                       
-  tell_room(environment(me), me->query("name")+"´Ò´ÒÃ¦Ã¦µÄÀë¿ªÁË¡£\n", ({me}));	
+  tell_room(environment(me), me->query("name")+"åŒ†åŒ†å¿™å¿™çš„ç¦»å¼€äº†ã€‚\n", ({me}));	
   destruct(me); 
   return 1;
 }
@@ -84,10 +84,10 @@ void die()
 	else delete_temp("faint_by");
 	COMBAT_D->announce(this_object(), "dead");
 	if( !(killer = query_temp("last_damage_from")) )
-	killer = "ÄªÃûÆäÃîµØ";
+	killer = "èŽ«åå…¶å¦™åœ°";
 	if( objectp(corpse = CHAR_D->make_corpse(this_object(), killer)) )
 	corpse->move(environment());
-	set_temp("last_damage_from", "ÄªÃûÆäÃîµØ");
+	set_temp("last_damage_from", "èŽ«åå…¶å¦™åœ°");
     corpse->set_temp("must_killby",this_object()->query_temp("must_killby"));
 	this_object()->remove_all_killer();
 	all_inventory(environment())->remove_killer(this_object());

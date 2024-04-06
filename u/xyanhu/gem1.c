@@ -33,7 +33,7 @@ void create()
 	set_name(query_gem_name(gem, lev), ({query_gem_id(gem, lev)}));
 	set_weight(100);
 	set("long", query_all_effect(gem));
-	set("unit", "¿Å");
+	set("unit", "é¢—");
 	set("no_put",1);
        set("treasure",1);       
 //	set("no_get",1);
@@ -62,21 +62,21 @@ int do_insert(string arg)
 	object ob, me = this_player();
 
 	if (!arg || arg == "")
-		return notify_fail("Ö¸Áî¸ñÊ½£ºinsert ±¦Ê¯ into ÎïÆ· at socket ±àºÅ\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šinsert å®çŸ³ into ç‰©å“ at socket ç¼–å·\n");
 	if (sscanf(arg, "%s into %s at socket %d", gem, item_name, index) != 3)
-		return notify_fail("Ö¸Áî¸ñÊ½£ºinsert ±¦Ê¯ into ÎïÆ· at socket ±àºÅ\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šinsert å®çŸ³ into ç‰©å“ at socket ç¼–å·\n");
 	if (gem != query("id")) return 0;
 	if (!objectp(ob = present(item_name, me)))
-		return notify_fail("ÄãÏë°ÑËüÏâÇ¶ÔÚÊ²Ã´¶«Î÷ÉÏ£¿\n");
+		return notify_fail("ä½ æƒ³æŠŠå®ƒé•¶åµŒåœ¨ä»€ä¹ˆä¸œè¥¿ä¸Šï¼Ÿ\n");
 	if (index > ob->query("sockets/max"))
-		return notify_fail(ob->name() + "ÉÏºÃÏó²¢Ã»ÓĞÕâ¸ö½Ó¿×Ñ½£¡\n");
+		return notify_fail(ob->name() + "ä¸Šå¥½è±¡å¹¶æ²¡æœ‰è¿™ä¸ªæ¥å­”å‘€ï¼\n");
 	if (ob->query("equipped"))
-		return notify_fail(ob->name() + "Õı×°±¸×ÅÄØ£¡\n");
+		return notify_fail(ob->name() + "æ­£è£…å¤‡ç€å‘¢ï¼\n");
 	if (me->query("max_neili") < 1000 || me->query("neili") < 1500)
-		return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎª£¬»¹ÎŞ·¨ÔË¹¦ÏâÇ¶±¦Ê¯£¡\n");
+		return notify_fail("ä»¥ä½ ç°åœ¨çš„å†…åŠ›ä¿®ä¸ºï¼Œè¿˜æ— æ³•è¿åŠŸé•¶åµŒå®çŸ³ï¼\n");
 
-	message_vision(HIG"$N°µÔËÄÚÁ¦£¬Ò»Ê¹¾¢°Ñ" + name() + HIG"ÏâÈëÁË" + ob->name() + HIG"ÖĞ£¬
-É²ÄÇ¼ä£¬Ö»¾õ" + ob->name() + HIG"ÉÏ·º³öÒ»µÀÆæÒìµÄ¹âÃ¢£¬ËÆºõÓĞÒ»¹ÉÉñÆæµÄÁ¦Á¿¸½ÔÚÆäÖĞ£¡\n", me);
+	message_vision(HIG"$Næš—è¿å†…åŠ›ï¼Œä¸€ä½¿åŠ²æŠŠ" + name() + HIG"é•¶å…¥äº†" + ob->name() + HIG"ä¸­ï¼Œ
+åˆ¹é‚£é—´ï¼Œåªè§‰" + ob->name() + HIG"ä¸Šæ³›å‡ºä¸€é“å¥‡å¼‚çš„å…‰èŠ’ï¼Œä¼¼ä¹æœ‰ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡é™„åœ¨å…¶ä¸­ï¼\n", me);
 	me->add("max_neili", -100);
 	me->add("neili", -1000);
 	me->start_busy(2);
@@ -97,12 +97,12 @@ int do_combine(string arg)
 	object *inv, gem, me = this_player();
 
 	if (!arg || arg == "")
-		return notify_fail("ÄãÏëºÏ²¢Ê²Ã´±¦Ê¯£¿\n");
+		return notify_fail("ä½ æƒ³åˆå¹¶ä»€ä¹ˆå®çŸ³ï¼Ÿ\n");
 	if (arg != query("id")) return 0;
 	if (query("level") == 8)
-		return notify_fail("Õâ¸ö±¦Ê¯ÒÑ¾­ÊÇ×î¸ßµÈ¼¶ÁË£¡\n");
+		return notify_fail("è¿™ä¸ªå®çŸ³å·²ç»æ˜¯æœ€é«˜ç­‰çº§äº†ï¼\n");
 	if (me->query("max_neili") < 500 || me->query("neili") < 800)
-		return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎª£¬»¹ÎŞ·¨ÔË¹¦ºÏ²¢±¦Ê¯£¡\n");
+		return notify_fail("ä»¥ä½ ç°åœ¨çš„å†…åŠ›ä¿®ä¸ºï¼Œè¿˜æ— æ³•è¿åŠŸåˆå¹¶å®çŸ³ï¼\n");
 
 	inv = all_inventory(me);
 	for(i = 0; i < sizeof(inv); i++)
@@ -110,8 +110,8 @@ int do_combine(string arg)
 			if (!objectp(gem))
 				gem = inv[i];
 			else {
-				message_vision(HIG"$N°µÔËÄÚÁ¦¾¢Í¸±¦Ê¯£¬µ«¼û" + name() + HIG"±íÃæÒì²ÊÁ÷¶¯£¬
-½¥½¥µÄ$NÊÕ»ØÁËÄÚÁ¦£¬Ö»¾õ" + name() + HIG"ËÆºõ±äµÃ¸ü¼ÓÍêÃÀÁË£¡\n", me);
+				message_vision(HIG"$Næš—è¿å†…åŠ›åŠ²é€å®çŸ³ï¼Œä½†è§" + name() + HIG"è¡¨é¢å¼‚å½©æµåŠ¨ï¼Œ
+æ¸æ¸çš„$Næ”¶å›äº†å†…åŠ›ï¼Œåªè§‰" + name() + HIG"ä¼¼ä¹å˜å¾—æ›´åŠ å®Œç¾äº†ï¼\n", me);
 				me->add("max_neili", -10);
 				me->add("neili", -500);
 				me->start_busy(1);
@@ -122,5 +122,5 @@ int do_combine(string arg)
 				return 1;
 			}
 		}
-	return notify_fail("Äã±ØĞëÓĞÈı¿éÍ¬ÑùµÄ±¦Ê¯²ÅÄÜ½øĞĞºÏ²¢£¡\n");
+	return notify_fail("ä½ å¿…é¡»æœ‰ä¸‰å—åŒæ ·çš„å®çŸ³æ‰èƒ½è¿›è¡Œåˆå¹¶ï¼\n");
 }

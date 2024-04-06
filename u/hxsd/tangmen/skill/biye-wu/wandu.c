@@ -1,4 +1,4 @@
-// meng.c ±ÌÒ¶Ëæ·çÎè¡¸Íò¶¾¡¹
+// meng.c ç¢§å¶éšé£èˆã€Œä¸‡æ¯’ã€
 
 #include <ansi.h>
 
@@ -28,38 +28,38 @@ int level;
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-            return notify_fail("¡¸"+HIR"Íò¶¾"NOR+"¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+            return notify_fail("ã€Œ"+HIR"ä¸‡æ¯’"NOR+"ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+		return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
 //	if( !userp(target) || wizardp(target) )
-//		return notify_fail("Ê©¶¾Ö»ÄÜ¶ÔÍæ¼ÒÊ¹ÓÃ¡£\n");
+//		return notify_fail("æ–½æ¯’åªèƒ½å¯¹ç©å®¶ä½¿ç”¨ã€‚\n");
 
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸Íò¶¾¡¹£¡\n");		
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œä¸‡æ¯’ã€ï¼\n");		
 
 	if( (int)me->query_skill("biye-wu", 1) < 40 )
-		return notify_fail("ÄãµÄ±ÌÒ¶Ëæ·çÎè²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Íò¶¾¡¹¡£\n");
+		return notify_fail("ä½ çš„ç¢§å¶éšé£èˆä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œä¸‡æ¯’ã€ã€‚\n");
 
 	if( (int)me->query_skill("biyun-xinfa", 1) < 30 )
-		return notify_fail("ÄãµÄ±ÌÔÆĞÄ·¨²»¹»¸ß£¬²»ÄÜÓÃÀ´Íò¶¾ÉËµĞ¡£\n");
+		return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¸å¤Ÿé«˜ï¼Œä¸èƒ½ç”¨æ¥ä¸‡æ¯’ä¼¤æ•Œã€‚\n");
 
 	if( (int)me->query("neili", 1) < 500 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸Íò¶¾¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¸‡æ¯’ã€ã€‚\n");
 
         level=(int)me->query_skill("biye-wu", 1);
 if (!level) level=10;
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ ç°åœ¨çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-	msg = HIW "$NÍ»È»ÊÕÕÆ£¬È»ºóÑ¸ËÙ·¢ÕÆ! ÕÆÖĞ¾¡È»ÓĞ¶¾É°£¬ÕâÕÆ·ç¾¡È»ÊÇÎåÑÕÁùÉ«µÄ£¡£¡\n";
+	msg = HIW "$Nçªç„¶æ”¶æŒï¼Œç„¶åè¿…é€Ÿå‘æŒ! æŒä¸­å°½ç„¶æœ‰æ¯’ç ‚ï¼Œè¿™æŒé£å°½ç„¶æ˜¯äº”é¢œå…­è‰²çš„ï¼ï¼\n";
 
 	me->start_busy(1);
 	if( random( (int)me->query("combat_exp",1))+ level*200
           > target->query("combat_exp")/2  ) {
-		msg += HIR"$nÓ²ÆğÍ·Æ¤£¬ÒÔÕÆÓ²½Ó£¡£¡½á¹ûÉíÖĞ¾Ş¶¾£¡\n" NOR;
+		msg += HIR"$nç¡¬èµ·å¤´çš®ï¼Œä»¥æŒç¡¬æ¥ï¼ï¼ç»“æœèº«ä¸­å·¨æ¯’ï¼\n" NOR;
             me->add("neili",-300);
 		me->start_busy(2);
             target->receive_damage("qi",20);
@@ -71,7 +71,7 @@ if (!level) level=10;
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
 	} else {
-		msg += "$p¼±ÌáÄÚÁ¦·ÜÁ¦Ò»Õğ£¬½«$NÈö³öµÄ¶¾·ÛĞ¶ÔÚÁËÉíÅÔ!\n" NOR;
+		msg += "$pæ€¥æå†…åŠ›å¥‹åŠ›ä¸€éœ‡ï¼Œå°†$Næ’’å‡ºçš„æ¯’ç²‰å¸åœ¨äº†èº«æ—!\n" NOR;
 		me->start_busy(3);
             me->add("neili",-300);
 		message_combatd(msg, me, target);

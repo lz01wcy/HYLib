@@ -1,13 +1,13 @@
-// chang ³£³¤·ç
+// chang å¸¸é•¿é£
 inherit NPC;
  
 void create()
 {
-	set_name("³£³¤·ç", ({ "chang changfeng", "chang" }));
+	set_name("å¸¸é•¿é£", ({ "chang changfeng", "chang" }));
 //	set("nickname", "");
 	set("long", 
-        "Ò»ÉíÆÆÀÃµÄÒÂ·ş£¬ºÜÄÑ¿´³öÊÇÒ»¸ö´ò¼Ò½ÙÉáµÄĞ¡Ç¿µÁ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸€èº«ç ´çƒ‚çš„è¡£æœï¼Œå¾ˆéš¾çœ‹å‡ºæ˜¯ä¸€ä¸ªæ‰“å®¶åŠ«èˆçš„å°å¼ºç›—ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

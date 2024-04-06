@@ -1,4 +1,4 @@
-// huogongdaoren.c »ğ¹¤µÀÈË
+// huogongdaoren.c ç«å·¥é“äºº
 // by mask 1999/11
 inherit NPC;
 
@@ -6,11 +6,11 @@ inherit NPC;
 int ask_me() ;
 void create()
 {
-        set_name("»ğ¹¤µÀÈË", ({ "daoren" }));
+        set_name("ç«å·¥é“äºº", ({ "daoren" }));
         
         set("long", 
-                "Ëû¾ÍÊÇÒ»¸öÄê³¤µÄ³ö¼ÒÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯ä¸€ä¸ªå¹´é•¿çš„å‡ºå®¶äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("str", 30);
@@ -26,7 +26,7 @@ void create()
         set("combat_exp", 100000);
         set("score", 20000);
         set("inquiry", ([
-             "¹¤×÷" : (: ask_me() :),
+             "å·¥ä½œ" : (: ask_me() :),
              "work" : (: ask_me() :),
         ])); 
         set("count",10); 
@@ -42,22 +42,22 @@ int ask_me()
         
  myfam = (mapping)me->query("family");
 
- if ((!myfam || myfam["family_name"] != "Îäµ±ÅÉ"))
- return notify_fail("µÀÈË¶ÔÄãËµµÀ£º¡°ÕâÊÇÎÒÎäµ±ÅÉµÄÊÂ£¬ÓëÄãºÎ¸É£¿¡±\n");
+ if ((!myfam || myfam["family_name"] != "æ­¦å½“æ´¾"))
+ return notify_fail("é“äººå¯¹ä½ è¯´é“ï¼šâ€œè¿™æ˜¯æˆ‘æ­¦å½“æ´¾çš„äº‹ï¼Œä¸ä½ ä½•å¹²ï¼Ÿâ€\n");
 
  if (query("count")<1)
- return notify_fail("µÀÈËËµµÀ£º¡°½ñÌìÃ»Ê²Ã´ÊÂÁË£¬ÄãÃ÷ÌìÔÙÀ´°É¡£¡±\n");
+ return notify_fail("é“äººè¯´é“ï¼šâ€œä»Šå¤©æ²¡ä»€ä¹ˆäº‹äº†ï¼Œä½ æ˜å¤©å†æ¥å§ã€‚â€\n");
 
  if (!me->query_temp("questd"))
  {
- tell_object(me,"µÀÈË¶ÔÄãËµµÀ£º¡°È¥²ËµØÀïÕªµã²Ë»ØÀ´¸øÎÒ¡£¡±\n"); 
+ tell_object(me,"é“äººå¯¹ä½ è¯´é“ï¼šâ€œå»èœåœ°é‡Œæ‘˜ç‚¹èœå›æ¥ç»™æˆ‘ã€‚â€\n"); 
  add("count",-1);
  me->set_temp("job",1);              
  return 1;       
  }
 
  else 
- tell_object(me,"µÀÈË¶ÔÄãËµµÀ£º¡°¿ìÈ¥×öÄãµÄÊÂ£¬²»ĞíÍµÀÁ£¿¡±\n");
+ tell_object(me,"é“äººå¯¹ä½ è¯´é“ï¼šâ€œå¿«å»åšä½ çš„äº‹ï¼Œä¸è®¸å·æ‡’ï¼Ÿâ€\n");
  return 1;
  }
 int accept_object(object me, object ob)
@@ -70,16 +70,16 @@ int accept_object(object me, object ob)
                 call_out("destroying", 1, this_object(), ob);
 
                 if(me->query_temp("job")!=1) 
-                return notify_fail("µÀÈË¶ÔÄãĞ¦×ÅËµ£º¡°ºÃ£¬ÎÒÃÇÕıµÈ×Å×ö²ËÄØ£¡¡±\n"); 
+                return notify_fail("é“äººå¯¹ä½ ç¬‘ç€è¯´ï¼šâ€œå¥½ï¼Œæˆ‘ä»¬æ­£ç­‰ç€åšèœå‘¢ï¼â€\n"); 
                 if(me->query_temp("cai")!=1)
-                return notify_fail("µÀÈË¶ÔÄãĞ¦×ÅËµ£º¡°ºÃ£¬ÎÒÃÇÕıµÈ×Å×ö²ËÄØ£¡¡±\n");        
+                return notify_fail("é“äººå¯¹ä½ ç¬‘ç€è¯´ï¼šâ€œå¥½ï¼Œæˆ‘ä»¬æ­£ç­‰ç€åšèœå‘¢ï¼â€\n");        
 
-                  command("say Ì«ºÃÁË£¬ÎÒÃÇÕıµÈ×Å¸ø´ó»ï×ö·¹ÄØ£¡");
+                  command("say å¤ªå¥½äº†ï¼Œæˆ‘ä»¬æ­£ç­‰ç€ç»™å¤§ä¼™åšé¥­å‘¢ï¼");
                   me->delete_temp("job"); 
                   me->delete_temp("cai");
                   me->add("combat_exp",10);
                   me->add("potential",5); 
-                  tell_object(me,HIY"ÄãµÃµ½ÁË»ğ¹¤µÀÈËµÄ½±Àø¡£\n"NOR,me);
+                  tell_object(me,HIY"ä½ å¾—åˆ°äº†ç«å·¥é“äººçš„å¥–åŠ±ã€‚\n"NOR,me);
 
                 return 1;
         }

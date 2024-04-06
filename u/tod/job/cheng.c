@@ -1,4 +1,4 @@
-// chengyaojia.c ³ÌÑşåÈ
+// chengyaojia.c ç¨‹ç‘¶è¿¦
 
 #include <ansi.h>
 inherit NPC;
@@ -8,12 +8,12 @@ string ask_cancel(object me);
 
 void create()
 {
-        set_name("³ÌÑşåÈ", ({"cheng yaojia", "cheng", "yaojia"}));
-        set("title",HIW "¹éÔÆ×¯ÉÙÄÌÄÌ" NOR);
-        set("gender", "Å®ĞÔ");
+        set_name("ç¨‹ç‘¶è¿¦", ({"cheng yaojia", "cheng", "yaojia"}));
+        set("title",HIW "å½’äº‘åº„å°‘å¥¶å¥¶" NOR);
+        set("gender", "å¥³æ€§");
         set("age", 19);
         set("long", 
-        "ÕâÊÇÃûÊ®°Ë¾ÅËê×óÓÒµÄ½õÒÂÉÙ¸¾£¬·şÊÎ»ªÀö£¬ÉñÇéºÜÊÇëïÌó¡£\n"
+        "è¿™æ˜¯ååå…«ä¹å²å·¦å³çš„é”¦è¡£å°‘å¦‡ï¼Œæœé¥°åä¸½ï¼Œç¥æƒ…å¾ˆæ˜¯è…¼è…†ã€‚\n"
 
         );
 
@@ -39,7 +39,7 @@ void create()
 
         set("inquiry", ([
                  "miyu" : (: ask_cancel :),
-                "ÃÕÓï" : (: ask_cancel :),
+                "è°œè¯­" : (: ask_cancel :),
         ]) );
 
 string ask_cancel(object me)
@@ -47,6 +47,6 @@ string ask_cancel(object me)
         me = this_player();
                  mi(me);
 
-                return "¿ì²Â£¬¿ìÑ½£¡";
+                return "å¿«çŒœï¼Œå¿«å‘€ï¼";
  }
 

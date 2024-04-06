@@ -1,63 +1,63 @@
-// qishenu-dao.c ÆüÉñµ¶·¨
+// qishenu-dao.c æ³£ç¥žåˆ€æ³•
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÊÖÖÐ$wÐ±Ö¸£¬Ò»ÕÐ¡¸ÃæÄ¿È«·Ç¡¹£¬µ¶¾¢¹ü×Åµ¶·æ£¬Ïò$nµÄ$lÁÃÈ¥",
+([      "action" : "$Næ‰‹ä¸­$wæ–œæŒ‡ï¼Œä¸€æ‹›ã€Œé¢ç›®å…¨éžã€ï¼Œåˆ€åŠ²è£¹ç€åˆ€é”‹ï¼Œå‘$nçš„$læ’©åŽ»",
         "force" : 120,
         "dodge" : -10,
         "parry" : 5,
         "damage" : 15,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÒ»ÕÐ¡¸¼ÒÆÆÈËÍö¡¹£¬$w±»ÓÒÊÖ·´ÎÕ£¬½»²æ»Ó¶¯£¬Á¬ÈË¾í³É¼â×¶µ¶Íø£¬Ïò$nÖ±Éä¶øÀ´",
+([      "action" : "$Nä¸€æ‹›ã€Œå®¶ç ´äººäº¡ã€ï¼Œ$wè¢«å³æ‰‹åæ¡ï¼Œäº¤å‰æŒ¥åŠ¨ï¼Œè¿žäººå·æˆå°–é”¥åˆ€ç½‘ï¼Œå‘$nç›´å°„è€Œæ¥",
         "force" : 130,
         "dodge" : -10,
         "parry" : 10,
         "damage" : 20,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÕ¹ÉíÐé²½£¬ÌáÑüÔ¾Âä£¬Ò»ÕÐ¡¸Ñªº£Éî³ð¡¹£¬µ¶·æÒ»¾í£¬À¹ÑüÕ¶Ïò$n",
+([      "action" : "$Nå±•èº«è™šæ­¥ï¼Œæè…°è·ƒè½ï¼Œä¸€æ‹›ã€Œè¡€æµ·æ·±ä»‡ã€ï¼Œåˆ€é”‹ä¸€å·ï¼Œæ‹¦è…°æ–©å‘$n",
         "force" : 140,
         "dodge" : -5,
         "parry" : 5,
         "damage" : 30,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÒ»ÕÐ¡¸¹ÇÈâ·ÖÀë¡¹£¬$w´ó¿ª´óãØ£¬×ÔÉÏ¶øÏÂ»®³öÒ»¸öÉÁµç£¬Ö±ÅüÏò$n",
+([      "action" : "$Nä¸€æ‹›ã€Œéª¨è‚‰åˆ†ç¦»ã€ï¼Œ$wå¤§å¼€å¤§é˜–ï¼Œè‡ªä¸Šè€Œä¸‹åˆ’å‡ºä¸€ä¸ªé—ªç”µï¼Œç›´åŠˆå‘$n",
         "force" : 160,
         "dodge" : 5,
         "parry" : 5,
         "damage" : 40,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÊÖÖÐ$wÒ»³Á£¬Ò»ÕÐ¡¸ÇÐ·ôÖ®Í´¡¹£¬Ë«ÊÖ³ÖÈÐÀ¹Ñü·´ÇÐ£¬¿³Ïò$nµÄÐØ¿Ú",
+([      "action" : "$Næ‰‹ä¸­$wä¸€æ²‰ï¼Œä¸€æ‹›ã€Œåˆ‡è‚¤ä¹‹ç—›ã€ï¼ŒåŒæ‰‹æŒåˆƒæ‹¦è…°ååˆ‡ï¼Œç å‘$nçš„èƒ¸å£",
         "force" : 180,
         "dodge" : 10,
         "parry" : 5,
         "damage" : 50,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÒ»ÕÐ¡¸Ìì³îµØ²Ò¡¹£¬ìåÆø³åÌì»ÓÎè£¬ÈËµ¶¾í²øºÚÔÆ£¬ÆëÆëÕÖÏò$n",
+([      "action" : "$Nä¸€æ‹›ã€Œå¤©æ„åœ°æƒ¨ã€ï¼Œæˆ¾æ°”å†²å¤©æŒ¥èˆžï¼Œäººåˆ€å·ç¼ é»‘äº‘ï¼Œé½é½ç½©å‘$n",
         "force" : 210,
         "dodge" : 15,
         "parry" : 15,
         "damage" : 60,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÒ»ÕÐ¡¸¹í¿ÞÉñºÅ¡¹£¬×ó½ÅÔ¾²½ÂäµØ£¬$wË³ÊÆÍùÇ°£¬Ð®·çÉùÅüÏò$nµÄ$l",
+([      "action" : "$Nä¸€æ‹›ã€Œé¬¼å“­ç¥žå·ã€ï¼Œå·¦è„šè·ƒæ­¥è½åœ°ï¼Œ$wé¡ºåŠ¿å¾€å‰ï¼ŒæŒŸé£Žå£°åŠˆå‘$nçš„$l",
         "force" : 240,
         "dodge" : 5,
         "parry" : 15,
         "damage" : 70,
-        "damage_type" : "ÅüÉË"
+        "damage_type" : "åŠˆä¼¤"
 ]),
-([      "action" : "$NÅÌÉí×¤µØ£¬Ò»ÕÐ¡¸¾ªÌìÆüÉñ¡¹£¬»Ó³öÒ»Æ¬Á÷¹â°ãµÄµ¶Ó°£¬Ïò$nµÄÈ«ÉíÓ¿È¥",
+([      "action" : "$Nç›˜èº«é©»åœ°ï¼Œä¸€æ‹›ã€ŒæƒŠå¤©æ³£ç¥žã€ï¼ŒæŒ¥å‡ºä¸€ç‰‡æµå…‰èˆ¬çš„åˆ€å½±ï¼Œå‘$nçš„å…¨èº«æ¶ŒåŽ»",
         "force" : 280,
         "dodge" : 20,
         "parry" : 10,
         "damage" : 80,
-        "damage_type" : "´ÌÉË"
+        "damage_type" : "åˆºä¼¤"
 ]),
 });
 
@@ -67,9 +67,9 @@ int valid_enable(string usage) { return (usage == "blade") || (usage == "parry")
 int valid_learn(object me)
 {
         if ((int)me->query("max_neili") < 100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if ((int)me->query_skill("blade", 1) < 20)
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•ç«å€™å¤ªæµ…ã€‚\n");
         return 1;
 }
 
@@ -101,13 +101,13 @@ int practice_skill(object me)
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         if ((int)me->query("jing") < 100)
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·´ËÎä¹¦¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒæ­¤æ­¦åŠŸã€‚\n");
         if ((int)me->query("qi") < 100)
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·´ËÎä¹¦¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒæ­¤æ­¦åŠŸã€‚\n");
         if ((int)me->query("neili") < 100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·´ËÎä¹¦¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ­¤æ­¦åŠŸã€‚\n");
         me->receive_damage("qi", 50);
         me->receive_damage("jing", 50);
         me->add("neili", -50);

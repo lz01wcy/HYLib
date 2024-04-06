@@ -34,22 +34,22 @@ mixed main(object me, string arg, int remote)
 					&&	option[i][0]=='@' ) {
 						RWHO_Q->send_rwho_q(option[i][1..sizeof(option[i])],
 							me, opt_long);
-						write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬ÇëÉÔºò¡£\n");
+						write("ç½‘è·¯è®¯æ¯å·²é€å‡ºï¼Œè¯·ç¨å€™ã€‚\n");
 						return 1;
 					}
 */
-					return notify_fail("Ö¸Áî¸ñÊ½£ºwho [-l|-i|-w|-p]\n");
+					return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwho [-l|-i|-w|-p]\n");
 			}
 	}
 
 	if( opt_long && !wizardp(me)) {
 		if( (int)me->query("jing") < 50 )
-			return notify_fail("ÄãµÄ¾«ÉñÌ«²îÁË£¬Ã»ÓĞ°ì·¨µÃÖªËùÓĞÍæ¼ÒµÄÏêÏ¸×ÊÁÏ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®äº†ï¼Œæ²¡æœ‰åŠæ³•å¾—çŸ¥æ‰€æœ‰ç©å®¶çš„è¯¦ç»†èµ„æ–™ã€‚\n");
 		me->receive_damage("jing", 50);
 	}
 
-    str = "¡ò " + MUD_NAME + "\n";
-        str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+    str = "â— " + MUD_NAME + "\n";
+        str += "â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n";
 	ob = filter_array(objects(), (: userp :));
 	if (opt_party)
 		ob = filter_array(ob, (: $1->query("family/family_name") ==
@@ -83,12 +83,12 @@ mixed main(object me, string arg, int remote)
 			if (!wiz_level(list[i]) && fname != list[i]->query("family/family_name")) {
 			    fname = list[i]->query("family/family_name");
 			    if (count % 8) str += "\n";
-			    str += sprintf(HIY "%-10s" NOR, (fname?fname:"ÆÕÍ¨°ÙĞÕ") + "£º");
+			    str += sprintf(HIY "%-10s" NOR, (fname?fname:"æ™®é€šç™¾å§“") + "ï¼š");
 			    count = 1;
 			}
 			if (!wcnt && wiz_level(list[i])) {
 			    if (count % 8) str += "\n";
-			    str += sprintf(HIY "%-10s" NOR, "Î×Ê¦£º");
+			    str += sprintf(HIY "%-10s" NOR, "å·«å¸ˆï¼š");
 			    wcnt = 1;
 			    count = 1;
 			}
@@ -107,8 +107,8 @@ mixed main(object me, string arg, int remote)
 		}
 		if( count%8 ) str += "\n";
 	}
-	str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
-	str = sprintf("%sÓĞ %d Î»Íæ¼ÒÁ¬ÏßÖĞ£¬%d Î»Íæ¼Ò¶ÏÏßÖĞ£¬ÏµÍ³¸ºµ££º%s\n* ±íÊ¾¶ÏÏßÖĞ  + ±íÊ¾·¢´ôÖĞ", str, ppl_cnt,
+	str += "â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n";
+	str = sprintf("%sæœ‰ %d ä½ç©å®¶è¿çº¿ä¸­ï¼Œ%d ä½ç©å®¶æ–­çº¿ä¸­ï¼Œç³»ç»Ÿè´Ÿæ‹…ï¼š%s\n* è¡¨ç¤ºæ–­çº¿ä¸­  + è¡¨ç¤ºå‘å‘†ä¸­", str, ppl_cnt,
 		cnt, query_load_average());
 
 //	if( remote ) return str;
@@ -140,17 +140,17 @@ int sort_user(object ob1, object ob2)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : who [-l|-i|-w|-p]
+æŒ‡ä»¤æ ¼å¼ : who [-l|-i|-w|-p]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁĞ³öËùÓĞÔÚÏßÉÏµÄÍæ¼Ò¼°ÆäµÈ¼¶¡£¸ù¾İÊé½£µÄÏà¹ØÖ¸Áî±àĞ´£¬
-Ô­ÏÈµÄwho¸ÄÎªwho1
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åˆ—å‡ºæ‰€æœ‰åœ¨çº¿ä¸Šçš„ç©å®¶åŠå…¶ç­‰çº§ã€‚æ ¹æ®ä¹¦å‰‘çš„ç›¸å…³æŒ‡ä»¤ç¼–å†™ï¼Œ
+åŸå…ˆçš„whoæ”¹ä¸ºwho1
 
--l Ñ¡ÏîÁĞ³ö½Ï³¤µÄÑ¶Ï¢¡£
--i Ö»ÁĞ³öÍæ¼ÒµÄÓ¢ÎÄ´úºÅ¡£
--p Ö»ÁĞ³öÍ¬ÃÅµÄÍæ¼Ò¡£
--w Ö»ÁĞ³öÏßÉÏËùÓĞµÄÎ×Ê¦¡£
+-l é€‰é¡¹åˆ—å‡ºè¾ƒé•¿çš„è®¯æ¯ã€‚
+-i åªåˆ—å‡ºç©å®¶çš„è‹±æ–‡ä»£å·ã€‚
+-p åªåˆ—å‡ºåŒé—¨çš„ç©å®¶ã€‚
+-w åªåˆ—å‡ºçº¿ä¸Šæ‰€æœ‰çš„å·«å¸ˆã€‚
 
-Ïà¹ØÖ¸Áî£º finger, who1
+ç›¸å…³æŒ‡ä»¤ï¼š finger, who1
 by popsong 2002 may,16
 HELP
 	);

@@ -1,30 +1,30 @@
-// ºì°ü
+// çº¢åŒ…
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIY"ÀñÎïÌ¨"NOR, ({"liwu tai"}));
+        set_name(HIY"ç¤¼ç‰©å°"NOR, ({"liwu tai"}));
 	set_weight(100000000);
-    set("no_give","Ã¿¸öÈËÖ»ÓÐÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
     set("value", 0);
     set("no_steal",1);
     set("no_beg",1);
     set("no_put",1);
-    set("no_get","Õâ¸ö¶«Î÷ÄÃ²»×ßµÄ£¡\n");
-    set("no_drop","Õâ¸ö¶«Î÷ÈÓ²»µôµÄ£¡£¡\n");
+    set("no_get","è¿™ä¸ªä¸œè¥¿æ‹¿ä¸èµ°çš„ï¼\n");
+    set("no_drop","è¿™ä¸ªä¸œè¥¿æ‰”ä¸æŽ‰çš„ï¼ï¼\n");
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("long", "Ò»¸öÉÏÃæ·Å×ÅºÜ¶à¶«Î÷µÄ"+HIY"ÀñÎïÌ¨£¬"NOR+"ËÆºõ¿ÉÒÔÄÃ×ß(openliwu)×Ô¼ºµÄÒ»·Ý¡£
-¹æÔòÈçÏÂ:Ã¿¸öÍæ¼Ò¿ÉÒÔµÃµ½500000¾­ÑéºÍ300000Ç±ÄÜ£¬²»×ã20µÄÏÈÌìÊôÐÔ£¬È«²¿²¹µ½20¡£
-²»×ã120¼¶µÄ³£ÓÃ»ù±¾Îä¹¦£¬È«²¿²¹×ãµ½120¼¶,ÓÐ×ÔÔìÎäÆ÷µÄ£¬Ôö¼ÓÉ±ÉËÁ¦300(×î´óµÈ¼¶1000)¡£
-ÓÐ×ÔÔì¼×ÒÂµÄ£¬Ôö¼Ó·ÀÓùÁ¦300(×î´óµÈ¼¶1500)¡£×ªÉí¹ý£¨»ò¾­Ñé´óÓÚ5M)µÄÍæ¼Ò¿É»ñµÃ2¸öÄ§
-½ä(Ëæ»ú),4¿Å±¦Ê¯(Ëæ»ú)¡£´ËÍâ£¬Íæ¼ÒÉíÉÏµÄ²»Á¼ÊôÐÔ½«»á±»Çå³ý:ÉñÕÕ¾­,¾ÅÒõÉÏ²á£¬¾ÅÒõÏÂ
-²á,Ë«ÊÖ»¥²©,¾ÅÒõ¹ÅÄ¹,PKÍæ¼ÒÊý,ÅÑÊ¦Êý½«»á±»ÇåÁã¡£Íæ¼ÒµÄÄÚÁ¦ÉÏÏÞÒ²½«Ìá¸ß380µã¡£\n
+                set("long", "ä¸€ä¸ªä¸Šé¢æ”¾ç€å¾ˆå¤šä¸œè¥¿çš„"+HIY"ç¤¼ç‰©å°ï¼Œ"NOR+"ä¼¼ä¹Žå¯ä»¥æ‹¿èµ°(openliwu)è‡ªå·±çš„ä¸€ä»½ã€‚
+è§„åˆ™å¦‚ä¸‹:æ¯ä¸ªçŽ©å®¶å¯ä»¥å¾—åˆ°500000ç»éªŒå’Œ300000æ½œèƒ½ï¼Œä¸è¶³20çš„å…ˆå¤©å±žæ€§ï¼Œå…¨éƒ¨è¡¥åˆ°20ã€‚
+ä¸è¶³120çº§çš„å¸¸ç”¨åŸºæœ¬æ­¦åŠŸï¼Œå…¨éƒ¨è¡¥è¶³åˆ°120çº§,æœ‰è‡ªé€ æ­¦å™¨çš„ï¼Œå¢žåŠ æ€ä¼¤åŠ›300(æœ€å¤§ç­‰çº§1000)ã€‚
+æœ‰è‡ªé€ ç”²è¡£çš„ï¼Œå¢žåŠ é˜²å¾¡åŠ›300(æœ€å¤§ç­‰çº§1500)ã€‚è½¬èº«è¿‡ï¼ˆæˆ–ç»éªŒå¤§äºŽ5M)çš„çŽ©å®¶å¯èŽ·å¾—2ä¸ªé­”
+æˆ’(éšæœº),4é¢—å®çŸ³(éšæœº)ã€‚æ­¤å¤–ï¼ŒçŽ©å®¶èº«ä¸Šçš„ä¸è‰¯å±žæ€§å°†ä¼šè¢«æ¸…é™¤:ç¥žç…§ç»,ä¹é˜´ä¸Šå†Œï¼Œä¹é˜´ä¸‹
+å†Œ,åŒæ‰‹äº’åš,ä¹é˜´å¤å¢“,PKçŽ©å®¶æ•°,å›å¸ˆæ•°å°†ä¼šè¢«æ¸…é›¶ã€‚çŽ©å®¶çš„å†…åŠ›ä¸Šé™ä¹Ÿå°†æé«˜380ç‚¹ã€‚\n
 \n");
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -40,70 +40,70 @@ ob=this_object();
         this_player()->start_busy(10);
   if(me->query("openliwu")>0)
   {
-message_vision("ÊôÓÚ$NµÄÄÇ·ÝÀñÎïÒÑ¾­¸øÄÃ×ßÁË!\n", this_player());
+message_vision("å±žäºŽ$Nçš„é‚£ä»½ç¤¼ç‰©å·²ç»ç»™æ‹¿èµ°äº†!\n", this_player());
    return 1;
   }
   me->set("openliwu",1);
         this_player()->add("combat_exp", 500000);
         this_player()->add("potential",300000);
-        message_vision(HIR"$N»ñµÃÁË500000¾­ÑéºÍ300000Ç±ÄÜ!\n"NOR, this_player());
+        message_vision(HIR"$NèŽ·å¾—äº†500000ç»éªŒå’Œ300000æ½œèƒ½!\n"NOR, this_player());
         this_player()->add("max_neili", 380);
-        message_vision(HIR"$N»ñµÃÁË380µãÄÚÁ¦ÉÏÏÞ!\n"NOR, this_player());
+        message_vision(HIR"$NèŽ·å¾—äº†380ç‚¹å†…åŠ›ä¸Šé™!\n"NOR, this_player());
 if (this_player()->query("str") <20)
 {
 this_player()->set("str",20);
-message_vision(HIB"$NµÄÏÈÌì±ÛÁ¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIB"$Nçš„å…ˆå¤©è‡‚åŠ›å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("int") <20)
 {
 this_player()->set("int",20);
-message_vision(HIC"$NµÄÏÈÌìÎòÐÔÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIC"$Nçš„å…ˆå¤©æ‚Ÿæ€§å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("con") <20)
 {
 this_player()->set("con",20);
-message_vision(HIY"$NµÄÏÈÌì¸ù¹ÇÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIY"$Nçš„å…ˆå¤©æ ¹éª¨å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("dex") <20)
 {
 this_player()->set("dex",20);
-message_vision(HIG"$NµÄÏÈÌìÉí·¨Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIG"$Nçš„å…ˆå¤©èº«æ³•å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("kar") <20)
 {
 this_player()->set("kar",20);
-message_vision(HIC"$NµÄÏÈÌì±ÛÁ¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIC"$Nçš„å…ˆå¤©è‡‚åŠ›å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (this_player()->query("per") <20)
 {
 this_player()->set("per",20);
-message_vision(HIB"$NµÄÏÈÌìÈÝÃ²Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIB"$Nçš„å…ˆå¤©å®¹è²Œå¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("unarmed",1)<120)
 {
   me->set_skill("unarmed",120);
-message_vision(HIM"$NµÄ»ù±¾¸ñ¶·Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬æ ¼æ–—å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("parry",1)<120)
 {
  me->set_skill("parry",120);
-message_vision(HIM"$NµÄ»ù±¾ÕÐ¼ÜÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬æ‹›æž¶å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("dodge",1)<120)
 {
   me->set_skill("dodge",120);
-message_vision(HIM"$NµÄ»ù±¾Çá¹¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬è½»åŠŸå¢žåŠ äº†ï¼\n"NOR, this_player());
 
 }
 if (me->query_skill("force",1)<120)
 {
   me->set_skill("force",120);
-message_vision(HIM"$NµÄ»ù±¾ÄÚ¹¦Ôö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„åŸºæœ¬å†…åŠŸå¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query_skill("literate",1)<120)
 {
   me->set_skill("literate",120);
-message_vision(HIM"$NµÄ¶ÁÊéÐ´×ÖÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIM"$Nçš„è¯»ä¹¦å†™å­—å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query("weapon/lv") &&
 me->query("weapon/lv",1)<100)
@@ -111,7 +111,7 @@ me->query("weapon/lv",1)<100)
   me->add("weapon/lv",30);
 if (me->query("weapon/lv",1)>100)
 me->set("weapon/lv",100);
-message_vision(HIW"$NµÄ×ÔÔìÎäÆ÷µÈ¼¶´ó´óµÄÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„è‡ªé€ æ­¦å™¨ç­‰çº§å¤§å¤§çš„å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 if (me->query("jia/lv")&&
 me->query("jia/lv",1)<150)
@@ -119,48 +119,48 @@ me->query("jia/lv",1)<150)
   me->add("jia/lv",30);
 if (me->query("jia/lv",1)>150)
 me->set("jia/lv",150);
-message_vision(HIW"$NµÄ×ÔÔì¼×ÒÂµÈ¼¶´ó´óµÄÔö¼ÓÁË£¡\n"NOR, this_player());
+message_vision(HIW"$Nçš„è‡ªé€ ç”²è¡£ç­‰çº§å¤§å¤§çš„å¢žåŠ äº†ï¼\n"NOR, this_player());
 }
 
 me->delete("szj/failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃÆÆ½âÉñÕÕ¾­µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡èŽ·å¾—ç ´è§£ç¥žç…§ç»çš„æœºä¼šï¼\n"NOR, this_player());
 me->delete("jiuyin/shang-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõÉÏ²áµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡èŽ·å¾—è§£ä¹é˜´ä¸Šå†Œçš„æœºä¼šï¼\n"NOR, this_player());
 me->delete("jiuyin/xia-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõÏÂ²áµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡èŽ·å¾—è§£ä¹é˜´ä¸‹å†Œçš„æœºä¼šï¼\n"NOR, this_player());
 me->delete("zhou/fail");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½âË«ÊÖ»¥²¶µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡èŽ·å¾—è§£åŒæ‰‹äº’æ•çš„æœºä¼šï¼\n"NOR, this_player());
 me->delete("jiuyin/gumu-failed");
-message_vision(HIG"$NÔÙ´Î»ñµÃ½â¾ÅÒõ¹ÅÄ¹µÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡èŽ·å¾—è§£ä¹é˜´å¤å¢“çš„æœºä¼šï¼\n"NOR, this_player());
 me->set("PKS",0);
-message_vision(HIG"$NµÄPKÍæ¼ÒÊýÇåÁã£¡\n"NOR, this_player());
+message_vision(HIG"$Nçš„PKçŽ©å®¶æ•°æ¸…é›¶ï¼\n"NOR, this_player());
 me->set("betrayer",0);
-message_vision(HIG"$NµÄÅÑÊ¦ÃÅÊýÇåÁã£¡\n"NOR, this_player());
+message_vision(HIG"$Nçš„å›å¸ˆé—¨æ•°æ¸…é›¶ï¼\n"NOR, this_player());
 me->delete("last_getzhen");
-message_vision(HIG"$NÔÙ´Î»ñµÃÄÃÒøÕëµÄ»ú»á£¡\n"NOR, this_player());
+message_vision(HIG"$Nå†æ¬¡èŽ·å¾—æ‹¿é“¶é’ˆçš„æœºä¼šï¼\n"NOR, this_player());
 if (me->query("zhuanshen")||
 me->query("combat_exp") > 5000000)
 {
 obj=new("/clone/gem/ring"+random(10));
 obj->move(me);
-message_vision(HIG"$N»ñµÃÒ»¸öÄ§½ä£¡\n"NOR, this_player());
+message_vision(HIG"$NèŽ·å¾—ä¸€ä¸ªé­”æˆ’ï¼\n"NOR, this_player());
 obj=new("/clone/gem/ring"+random(10));
 obj->move(me);
-message_vision(HIG"$N»ñµÃÒ»¸öÄ§½ä£¡\n"NOR, this_player());
+message_vision(HIG"$NèŽ·å¾—ä¸€ä¸ªé­”æˆ’ï¼\n"NOR, this_player());
 obj=new("clone/gem/gem");
 obj->move(me);
-message_vision(HIG"$N»ñµÃÒ»¸öÄ§Á¦±¦Ê¯£¡\n"NOR, this_player());
+message_vision(HIG"$NèŽ·å¾—ä¸€ä¸ªé­”åŠ›å®çŸ³ï¼\n"NOR, this_player());
 obj=new("clone/gem/gem");
 obj->move(me);
-message_vision(HIG"$N»ñµÃÒ»¸öÄ§Á¦±¦Ê¯£¡\n"NOR, this_player());
+message_vision(HIG"$NèŽ·å¾—ä¸€ä¸ªé­”åŠ›å®çŸ³ï¼\n"NOR, this_player());
 obj=new("clone/gem/gem");
 obj->move(me);
-message_vision(HIG"$N»ñµÃÒ»¸öÄ§Á¦±¦Ê¯£¡\n"NOR, this_player());
+message_vision(HIG"$NèŽ·å¾—ä¸€ä¸ªé­”åŠ›å®çŸ³ï¼\n"NOR, this_player());
 obj=new("clone/gem/gem");
 obj->move(me);
-message_vision(HIG"$N»ñµÃÒ»¸öÄ§Á¦±¦Ê¯£¡\n"NOR, this_player());
+message_vision(HIG"$NèŽ·å¾—ä¸€ä¸ªé­”åŠ›å®çŸ³ï¼\n"NOR, this_player());
 }
-message("channel:chat", HIG"¡¾½­ºþÒ¥ÑÔ¡¿ÌýËµ"+me->name() + "ÄÃ×ßÁËÊôÓÚ×Ô¼ºµÄÀñ°ü!"NOR"¡£\n", users());
+message("channel:chat", HIG"ã€æ±Ÿæ¹–è°£è¨€ã€‘å¬è¯´"+me->name() + "æ‹¿èµ°äº†å±žäºŽè‡ªå·±çš„ç¤¼åŒ…!"NOR"ã€‚\n", users());
 	return 1;
 }
 

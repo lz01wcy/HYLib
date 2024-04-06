@@ -1,13 +1,13 @@
-//  dadao ½­Ñó´óµÁ
+//  dadao æ±Ÿæ´‹å¤§ç›—
  
 inherit NPC;
  
 void create()
 {
-    set_name("½­Ñó´óµÁ ÍõÈı", ({ "jiangyang dadao", "dadao" }));
+    set_name("æ±Ÿæ´‹å¤§ç›— ç‹ä¸‰", ({ "jiangyang dadao", "dadao" }));
 	set("long", 
-        "Ò»¸öÎŞ¶ñ²»×öµÄ½­Ñó´óµÁ£¬ËÄ´¦´ò¼Ò½ÙÉá£¬×÷¶ñ¶à¶Ë¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸€ä¸ªæ— æ¶ä¸åšçš„æ±Ÿæ´‹å¤§ç›—ï¼Œå››å¤„æ‰“å®¶åŠ«èˆï¼Œä½œæ¶å¤šç«¯ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(20) + 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

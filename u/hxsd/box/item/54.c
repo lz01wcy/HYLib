@@ -1,4 +1,4 @@
-// Ã«Ëñ /clone/eat/food/mao_sun.c
+// æ¯›ç¬‹ /clone/eat/food/mao_sun.c
 // by lala, 1997-12-16
 
 #include <ansi.h>
@@ -9,17 +9,17 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name( RED"¶ÔÏº"NOR, ({"yu5"}) );
+    set_name( RED"å¯¹è™¾"NOR, ({"yu5"}) );
     set_weight( 30000 );
     if ( clonep() )
             set_default_object( __FILE__ );
     else {
         set( "long", @LONG
-Ò»Ö»¶ÔÏº£¬Ìå´óÈâ·Ê£¬ÏÊÃÀ¿É¿Ú£¬ÊÇº£ÉÏµÄÌØ²ú¡£
+ä¸€åªå¯¹è™¾ï¼Œä½“å¤§è‚‰è‚¥ï¼Œé²œç¾å¯å£ï¼Œæ˜¯æµ·ä¸Šçš„ç‰¹äº§ã€‚
 LONG
         );
-        set( "unit", "Ö»" );
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+        set( "unit", "åª" );
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
@@ -34,5 +34,5 @@ LONG
 
 int do_eat( string arg )
 {
-    return notify_fail("Õâ»¹ÊÇÉúµÄ£¬Ö»ÓĞĞÜÃ¨²Å¿Ï³Ô¡£\n");
+    return notify_fail("è¿™è¿˜æ˜¯ç”Ÿçš„ï¼Œåªæœ‰ç†ŠçŒ«æ‰è‚¯åƒã€‚\n");
 }

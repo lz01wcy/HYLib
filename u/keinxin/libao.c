@@ -1,11 +1,11 @@
-// ³¬¼¶´óÀñ°ü /ADDED BY KEINXIN
+// è¶…çº§å¤§ç¤¼åŒ… /ADDED BY KEINXIN
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(HIY"³¬¼¶´óÀñ°ü"NOR, ({"dalibao", "bao", "libao"}));
+	set_name(HIY"è¶…çº§å¤§ç¤¼åŒ…"NOR, ({"dalibao", "bao", "libao"}));
 	set_weight(10);
 set("no_drop", 1);
 set("no_put", 1);
@@ -16,14 +16,14 @@ set("no_put", 1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-    set("no_give","Ã¿¸öÈËÖ»ÓĞÒ»¸ö£¬Äã¶¼ÕâÃ´´ó·½£¡\n");
+    set("no_give","æ¯ä¸ªäººåªæœ‰ä¸€ä¸ªï¼Œä½ éƒ½è¿™ä¹ˆå¤§æ–¹ï¼\n");
 set("no_drop", 1);
 set("no_put", 1);
     set("no_get", 1);
     set("no_give", 0);
     set("value", 0);
-		set("long", "Ò»¸öÓÃ´¿½ğÖÆ×÷³ÉµÄ"+HIY"³¬¼¶´óÀñ°ü£¬"NOR+"ËÆºõ¿ÉÒÔ´ò¿ª(opengift)¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨çº¯é‡‘åˆ¶ä½œæˆçš„"+HIY"è¶…çº§å¤§ç¤¼åŒ…ï¼Œ"NOR+"ä¼¼ä¹å¯ä»¥æ‰“å¼€(opengift)ã€‚\n");
+		set("unit", "ä¸ª");
 	}
 }
   void init()
@@ -43,10 +43,10 @@ object ob;
         ob->set_amount(1);
         ob->move(this_player());
 	this_player()->start_busy(50);
-	message_vision("$N´ò¿ªÁË³¬¼¶´óÀñ°ü£¬Ö»¾õµÃ×Ô¼ºÓÖ±äÀûº¦ÁËÒ»Ğ© !Àñ°üÀï»¹ÓĞºÜ¶à»Æ½ğ!\n", this_player());
-	tell_object(me,HIY"Äã±»½±ÀøÁË£º¶ş°ÙÁ½»Æ½ğ£¬µ«ÊÇ±»Ò»¸öºÚÓ°ÄÃ×ßÁË\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n"NOR);
+	message_vision("$Næ‰“å¼€äº†è¶…çº§å¤§ç¤¼åŒ…ï¼Œåªè§‰å¾—è‡ªå·±åˆå˜åˆ©å®³äº†ä¸€äº› !ç¤¼åŒ…é‡Œè¿˜æœ‰å¾ˆå¤šé»„é‡‘!\n", this_player());
+	tell_object(me,HIY"ä½ è¢«å¥–åŠ±äº†ï¼šäºŒç™¾ä¸¤é»„é‡‘ï¼Œä½†æ˜¯è¢«ä¸€ä¸ªé»‘å½±æ‹¿èµ°äº†\n" +
+             chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n"NOR);
 	destruct(this_object());
 	return 1;
 }

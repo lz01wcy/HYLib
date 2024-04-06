@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("½·ÑÎÃæ½î", ({ "jymj", "dish" }) );
+	set_name("æ¤’ç›é¢ç­‹", ({ "jymj", "dish" }) );
 	set_weight(350);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÅÌÃû³øÅëµ÷µÄÉÏºÃ´ó²Ë¡£\n");
-		set("unit", "ÅÌ");
+		set("long", "ä¸€ç›˜åå¨çƒ¹è°ƒçš„ä¸Šå¥½å¤§èœã€‚\n");
+		set("unit", "ç›˜");
 		set("food_remaining", 15);
 		set("food_supply", 160);
 		set("material", "food");
@@ -18,7 +18,7 @@ void create()
 }
 int finish_eat()
 {
-        set_name("ÅÌ×Ó", ({"panzi"}));
-        set("long", "Ò»Ö»À¶µ×¶ùµñ»¨µÄ¾°Ì©À¶´óÅÌ×Ó¡£\n");
+        set_name("ç›˜å­", ({"panzi"}));
+        set("long", "ä¸€åªè“åº•å„¿é›•èŠ±çš„æ™¯æ³°è“å¤§ç›˜å­ã€‚\n");
         return 1;
 }

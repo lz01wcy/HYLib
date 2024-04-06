@@ -1,4 +1,4 @@
-// bahuang-gong.c °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦
+// bahuang-gong.c å…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠåŠŸ
 
 inherit FORCE;
 
@@ -12,7 +12,7 @@ int valid_learn(object me)
 	for (j = 1; j < i / 10; j++) t *= 2;
 
 	if ((int)me->query_skill("force", 1) < 10)
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if (
 		me->query_skill("beiming-shengong",1)
@@ -39,13 +39,13 @@ me->query_skill("huashan-neigong",1)   ||
 me->query_skill("zixia-shengong",1) ||
 me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("guiyuan-tunafa",1) )
-                return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦£¿£¡\n");
+                return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦å…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠåŠŸï¼Ÿï¼\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("å…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠåŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

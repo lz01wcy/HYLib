@@ -7,11 +7,11 @@ int update_condition(object me, int duration)
 {
    if( duration < 1 ) return 0;
    if( !living(me) ) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+      message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
    }
    else {
-      tell_object(me, HIR "ºöÈ»Ò»ÕóÖÁÃüµÄÆæÈÈÏ®À´£¬ÄãÖÐµÄÌÆÃÅµÄÅùö¨ïÚÖ®¶¾·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "µÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬Á³ÉÏÒ»ÕóÅ¤Çú,ºÃÏñÍò·ÖÍ´¿à¡£\n",
+      tell_object(me, HIR "å¿½ç„¶ä¸€é˜µè‡³å‘½çš„å¥‡çƒ­è¢­æ¥ï¼Œä½ ä¸­çš„å”é—¨çš„éœ¹é›³é•–ä¹‹æ¯’å‘ä½œäº†ï¼\n" NOR );
+      message("vision", me->name() + "çš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œè„¸ä¸Šä¸€é˜µæ‰­æ›²,å¥½åƒä¸‡åˆ†ç—›è‹¦ã€‚\n",
             environment(me), me);
    }
       me->receive_wound("qi",me->query("qi")/15);

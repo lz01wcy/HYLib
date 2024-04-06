@@ -21,15 +21,15 @@ int perform(object me, object target)
 
 	    me->query_skill_mapped("sword") != "huanhua-jian")
 
-		return notify_fail(HIW "ÄãµÄ¡¸ä½»¨½£·¨¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸ÌìÏÂÓÐÑ©¡¹£¡\n"NOR);
+		return notify_fail(HIW "ä½ çš„ã€Œæµ£èŠ±å‰‘æ³•ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œå¤©ä¸‹æœ‰é›ªã€ï¼\n"NOR);
 
 	if( (int)me->query_skill("huanhua-jian", 1) < 150 )
-		return notify_fail(HIW "ÄãµÄ¡¸ä½»¨½£·¨¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸ÌìÏÂÓÐÑ©¡¹£¡\n"NOR);
+		return notify_fail(HIW "ä½ çš„ã€Œæµ£èŠ±å‰‘æ³•ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œå¤©ä¸‹æœ‰é›ªã€ï¼\n"NOR);
 
 
 	if ((int)me->query("neili",1) < 200)
 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸ÌìÏÂÓÐÑ©¡¹£¡\n");		
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œå¤©ä¸‹æœ‰é›ªã€ï¼\n");		
 
 	if( !target ) target = offensive_target(me);
 
@@ -39,11 +39,11 @@ int perform(object me, object target)
 
 	||	!me->is_fighting(target) )
 
-		return notify_fail(HIW "¡¸ÌìÏÂÓÐÑ©¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+		return notify_fail(HIW "ã€Œå¤©ä¸‹æœ‰é›ªã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
 	weapon = me->query_temp("weapon");
 
-	msg = HIY  "$N³¤Ð¥Ò»Éù£¬½£ÕÐ¶ÙÐ®·çÔÆÖ®Ê½£¬½£ÆøÃÍµÄ±©ÕÇÈý³ß£¬ÊÖÖÐµÄ\n"+ weapon->name()+  "Èç¿ñ·ç±©Óê°ãµØÏò$n¾íÀ´£¡\n\n" NOR;
+	msg = HIY  "$Né•¿å•¸ä¸€å£°ï¼Œå‰‘æ‹›é¡¿æŒŸé£Žäº‘ä¹‹å¼ï¼Œå‰‘æ°”çŒ›çš„æš´æ¶¨ä¸‰å°ºï¼Œæ‰‹ä¸­çš„\n"+ weapon->name()+  "å¦‚ç‹‚é£Žæš´é›¨èˆ¬åœ°å‘$nå·æ¥ï¼\n\n" NOR;
 	message_vision(msg,me,target);
 
         if( !target->is_killing(me) ) target->kill_ob(me);
@@ -59,7 +59,7 @@ int perform(object me, object target)
 
 	{
 
-	msg =  HIW "$N´óºÈÒ»Éù£º½ÓµÚ"+chinese_number(i)+"½££¡\n" NOR;
+	msg =  HIW "$Nå¤§å–ä¸€å£°ï¼šæŽ¥ç¬¬"+chinese_number(i)+"å‰‘ï¼\n" NOR;
 
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 

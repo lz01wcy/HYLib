@@ -1,4 +1,4 @@
-// ding.c ¼Ò¶¡
+// ding.c å®¶ä¸
 
 inherit NPC;
 #include <ansi.h>
@@ -7,12 +7,12 @@ int ask_job();
 
 void create()
 {
-        set_name("³Ì¹Ü¼Ò", ({ "cheng laoban", "cheng", "laoban" }));
+        set_name("ç¨‹ç®¡å®¶", ({ "cheng laoban", "cheng", "laoban" }));
         set("age", 25);
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIY"³ÆÇ§½ğ"NOR);
-        set("title","°×ÍÕÉ½×¯¹Ü¼Ò");
-        set("long", "ËûÊÇÒ»¸ö¾«Ã÷µÄÖĞÄêÈË£¬ÑÛÉñÖĞÁ÷Â¶µÄÈ´²»½ö½öÊÇ½Æ»«£¬¶øÊÇ´õ¶¾¡£\n");
+        set("gender", "ç”·æ€§");
+        set("nickname", HIY"ç§°åƒé‡‘"NOR);
+        set("title","ç™½é©¼å±±åº„ç®¡å®¶");
+        set("long", "ä»–æ˜¯ä¸€ä¸ªç²¾æ˜çš„ä¸­å¹´äººï¼Œçœ¼ç¥ä¸­æµéœ²çš„å´ä¸ä»…ä»…æ˜¯ç‹¡çŒ¾ï¼Œè€Œæ˜¯æ­¹æ¯’ã€‚\n");
         set("attitude", "peaceful");
         set("combat_exp", 20000);
         set("shen", -5000);
@@ -29,7 +29,7 @@ void create()
         set("max_jingli", 600);
         set("neili", 500);
         set("max_neili", 500);
-        set("rank", "°ïÖÚ");
+        set("rank", "å¸®ä¼—");
 
         set_skill("force", 60);
         set_skill("parry", 60);
@@ -37,7 +37,7 @@ void create()
         set_skill("parry", 60); 
 	set_skill("literate", 90); 
 
-//	        create_party("È¨Á¦°ï","°ïÖÚ",1);
+//	        create_party("æƒåŠ›å¸®","å¸®ä¼—",1);
 
 //      carry_object("/clone/misc/cloth")->wear();
 //      carry_object(__DIR__"obj/tiecheng")->wield();
@@ -58,25 +58,25 @@ int ask_job()
         me = this_player();
         quest = __DIR__"jyquest"->query_quest();
 
-         if( me->query("family/family_name") != "°×ÍÕÉ½ÅÉ")
+         if( me->query("family/family_name") != "ç™½é©¼å±±æ´¾")
             {
-                  message_vision("$N¶Ô×Å$n´óºÈÒ»Éù£º±¾ÅÉµÜ×Ó²ÅÄÜÌÖÕ®£¡\n", this_object(), me);
+                  message_vision("$Nå¯¹ç€$nå¤§å–ä¸€å£°ï¼šæœ¬æ´¾å¼Ÿå­æ‰èƒ½è®¨å€ºï¼\n", this_object(), me);
                 return 1;
             }
      
         if (me->query_temp("qljob") && me->query_temp("qljob") == 1)
         {
                 command("hmm");
-                command("say ÊÇ²»ÊÇ¶Ô¸øÄãµÄ¹¤×÷²»ÂúÒâ£¿ºß£¡");
+                command("say æ˜¯ä¸æ˜¯å¯¹ç»™ä½ çš„å·¥ä½œä¸æ»¡æ„ï¼Ÿå“¼ï¼");
                 return 1;
         }
 
         else if (me->query_temp("qljob") && me->query_temp("qljob") == 4)
         {
                 command("jump");
-                command("say ¸ÉµÄºÃ£¬³¤ÁËÎÒÃÇÉ½×¯µÄÍş·ç£¬ÏÂÈ¥ĞªĞª°É£¡");
-                write("ÄãµÄ¾­ÑéÔö¼ÓÁË.\n",);
-                write("ÄãµÄÇ±ÄÜÔö¼ÓÁË.\n",);
+                command("say å¹²çš„å¥½ï¼Œé•¿äº†æˆ‘ä»¬å±±åº„çš„å¨é£ï¼Œä¸‹å»æ­‡æ­‡å§ï¼");
+                write("ä½ çš„ç»éªŒå¢åŠ äº†.\n",);
+                write("ä½ çš„æ½œèƒ½å¢åŠ äº†.\n",);
                 me->add("potential", 80+random(180));
                 me->add("combat_exp", 100+random(300));
                 me->add("party/tasks", 2);
@@ -88,8 +88,8 @@ int ask_job()
 
         else if ( me->query_condition("jyfail") )
         {
-                command("say ÈÃÄãÒª¸öÕÊ¶¼Òª²»À´£¬ÓÖ²»¸ÒÉ±ÈË£¬ÎÒ»¹ÔõÃ´ÈÃÄã×öÊÂ£¡");
-                command("say Äã»¹ÏÂÈ¥°É£¬Ê¡µÃÎÒÃÇ°×ÍÕÉ½×¯µÄÁ³¶¼±»Äã¶ª¹âÁË£¡");
+                command("say è®©ä½ è¦ä¸ªå¸éƒ½è¦ä¸æ¥ï¼Œåˆä¸æ•¢æ€äººï¼Œæˆ‘è¿˜æ€ä¹ˆè®©ä½ åšäº‹ï¼");
+                command("say ä½ è¿˜ä¸‹å»å§ï¼Œçœå¾—æˆ‘ä»¬ç™½é©¼å±±åº„çš„è„¸éƒ½è¢«ä½ ä¸¢å…‰äº†ï¼");
                 me->delete_temp("qljob");
                 me->delete_temp("subject");
                 me->delete_temp("money");
@@ -97,24 +97,24 @@ int ask_job()
         }
         else if ( me->query_temp("qljob"))
         {
-                command("say ÊÕÍêÕÊ²»½»Ç®£¬ÊÇ²»ÊÇÏëÍÌÁËÑ½£¿");
+                command("say æ”¶å®Œå¸ä¸äº¤é’±ï¼Œæ˜¯ä¸æ˜¯æƒ³åäº†å‘€ï¼Ÿ");
                 return 1;
         }
 
-        command("say " + quest["quest_1"] + "Ç·ÎÒÃÇ°×ÍÕÉ½×¯" + chinese_number(quest["quest_2"]) + "Á½Òø×Ó£¬ÄãÈ¥Òª»ØÀ´°É¡£");
-        command("say ÕâÕÅÇ·µ¥´øºÃ£¬µ½ÄÇ±Â·Ï»°£¬Ö±½ÓÊÕÕÊ(shouzhang)¡£");
-        command("say Èç¹û" + quest["quest_1"] + "Àµ×Å²»»¹£¬¾ÍÉ±ÁËËû£¬ÏÔÏÔÎÒÃÇ°×ÍÕÉ½×¯µÄÍş·ç¡£");
+        command("say " + quest["quest_1"] + "æ¬ æˆ‘ä»¬ç™½é©¼å±±åº„" + chinese_number(quest["quest_2"]) + "ä¸¤é“¶å­ï¼Œä½ å»è¦å›æ¥å§ã€‚");
+        command("say è¿™å¼ æ¬ å•å¸¦å¥½ï¼Œåˆ°é‚£ç”­åºŸè¯ï¼Œç›´æ¥æ”¶å¸(shouzhang)ã€‚");
+        command("say å¦‚æœ" + quest["quest_1"] + "èµ–ç€ä¸è¿˜ï¼Œå°±æ€äº†ä»–ï¼Œæ˜¾æ˜¾æˆ‘ä»¬ç™½é©¼å±±åº„çš„å¨é£ã€‚");
 
         me->set_temp("qljob", 1);
         me->set_temp("subject", quest["quest_1"]);
         me->set_temp("money", quest["quest_2"]);
         ob = new(__DIR__"qiandan");
         ob->set("long", "
-        Ç·µ¥
-" + quest["quest_1"] + "Ç·°×ÍÕÉ½×¯" + chinese_number(quest["quest_2"]) + "Á½ÎÆÒø£¬
-¿ÚËµÎŞÆ¾£¬Á¢´ËÎªÖ¤¡£
+        æ¬ å•
+" + quest["quest_1"] + "æ¬ ç™½é©¼å±±åº„" + chinese_number(quest["quest_2"]) + "ä¸¤çº¹é“¶ï¼Œ
+å£è¯´æ— å‡­ï¼Œç«‹æ­¤ä¸ºè¯ã€‚
 
-        ºÚÀÏºº¡¢°×ÍÕÉ½×¯\n");
+        é»‘è€æ±‰ã€ç™½é©¼å±±åº„\n");
         ob->move(me);
         return 1;
 }
@@ -127,15 +127,15 @@ int accept_object(object who, object ob)
         {
                 if (who->query_temp("qljob") && (who->query_temp("qljob") == 1))
                 {
-                        command("say ÕâµãÇ®ÎÒ¾ÍÊÕÏÂÁË£¬¿ÉÊÇÄãµÄ»îÈ´Ã»ÓĞ×öÍê£¡");
-                        command("say »¹²»¿ìÈ¥×ö£¡");
+                        command("say è¿™ç‚¹é’±æˆ‘å°±æ”¶ä¸‹äº†ï¼Œå¯æ˜¯ä½ çš„æ´»å´æ²¡æœ‰åšå®Œï¼");
+                        command("say è¿˜ä¸å¿«å»åšï¼");
 //                        destruct(ob);
                         return 1;
                 }
                 else if (who->query_temp("qljob") && (who->query_temp("qljob") == 2 ||who->query_temp("qljob") == 5))
                 {
-                        command("say ×Ô¼ºÊÕ²»µ½ÕÊ»¹ÏëÂ÷ÎÒ£¿Äãµ±ÎÒÊÇË­£¿");
-                        command("say ÕâµãÇ®¾ÍËãÄãĞ¢¾´ÎÒµÄ£¬ÎÒÓĞÊÂ×öÔÙ½ĞÄã¡£");
+                        command("say è‡ªå·±æ”¶ä¸åˆ°å¸è¿˜æƒ³ç’æˆ‘ï¼Ÿä½ å½“æˆ‘æ˜¯è°ï¼Ÿ");
+                        command("say è¿™ç‚¹é’±å°±ç®—ä½ å­æ•¬æˆ‘çš„ï¼Œæˆ‘æœ‰äº‹åšå†å«ä½ ã€‚");
 //                        destruct(ob);
                         who->delete_temp("qljob");
                         who->delete_temp("subject");
@@ -144,10 +144,10 @@ int accept_object(object who, object ob)
                 }
                 else if (who->query_temp("qljob") && who->query_temp("qljob") == 3 && ob->value() >= (100 * who->query_temp("money")))
                 {
-                        command("say ²»´í²»´í£¬¸ÉµÄÈ·Êµ²»´í£¬ÏÂÈ¥ĞİÏ¢°É¡£");
-                        message_vision("³Ì¹Ü¼ÒÔÚÕÊµ¥ÉÏ¼ÇÉÏÒ»±Ê£¬È»ºó°ÑÇ®·Å½øÁËÇ®¹ñ¡£\n", who);
-                        message_vision("ÄãµÄ¾­ÑéÔö¼ÓÁË.\n", who);
-                        message_vision("ÄãµÄÇ±ÄÜÔö¼ÓÁË.\n", who);
+                        command("say ä¸é”™ä¸é”™ï¼Œå¹²çš„ç¡®å®ä¸é”™ï¼Œä¸‹å»ä¼‘æ¯å§ã€‚");
+                        message_vision("ç¨‹ç®¡å®¶åœ¨å¸å•ä¸Šè®°ä¸Šä¸€ç¬”ï¼Œç„¶åæŠŠé’±æ”¾è¿›äº†é’±æŸœã€‚\n", who);
+                        message_vision("ä½ çš„ç»éªŒå¢åŠ äº†.\n", who);
+                        message_vision("ä½ çš„æ½œèƒ½å¢åŠ äº†.\n", who);
                         who->add("potential", 60+random(60));
                         who->add("combat_exp", 80+random(80));
                         who->delete_temp("qljob");
@@ -158,14 +158,14 @@ int accept_object(object who, object ob)
                 }
                 else if (who->query_temp("qljob") && who->query_temp("qljob") == 3 && ob->value() < (100 * who->query_temp("money")))
                 {
-                        command("say ¾ÍÊÕÁËÕâÃ´Ò»µãÇ®£¬¿ÖÅÂÊÇÄã°ÑÇ®¿ÛÏÂÁË°É£¡");
-                        command("say ¿´À´ÄãÊÇ»îµÄ²»ÄÍ·³ÁË¡£");
+                        command("say å°±æ”¶äº†è¿™ä¹ˆä¸€ç‚¹é’±ï¼Œææ€•æ˜¯ä½ æŠŠé’±æ‰£ä¸‹äº†å§ï¼");
+                        command("say çœ‹æ¥ä½ æ˜¯æ´»çš„ä¸è€çƒ¦äº†ã€‚");
                         return 1;
                 }
-                else return notify_fail("³öÏÖÁËÎ×Ê¦Ã»ÓĞÏëµ½µÄÇé¿ö£¬¿ìÍ¨ÖªÎ×Ê¦°É¡£\n");
+                else return notify_fail("å‡ºç°äº†å·«å¸ˆæ²¡æœ‰æƒ³åˆ°çš„æƒ…å†µï¼Œå¿«é€šçŸ¥å·«å¸ˆå§ã€‚\n");
         }
         else
         {
-                return notify_fail("Äã¸øÎÒÕâ¸ö¸ÉÊ²Ã´?\n");
+                return notify_fail("ä½ ç»™æˆ‘è¿™ä¸ªå¹²ä»€ä¹ˆ?\n");
         }
 }

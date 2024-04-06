@@ -5,13 +5,13 @@ void random_chat();
 int answer();
 void create()
 {
-   set_name("Îä´óÀÉ",({"wu dalang"}));
-   set("gender","ÄĞĞÔ");
+   set_name("æ­¦å¤§éƒ",({"wu dalang"}));
+   set("gender","ç”·æ€§");
    set("age",47);
    set("combat_exp",20000);
-set("long","±»ÀÏÆÅ¸Ï³öÀ´ÂôÉÕ±ıµÄÎä´ó,Äã¿ÉÒÔÏòËû´òÌıÊ¹ÓÃµÄemote,
+set("long","è¢«è€å©†èµ¶å‡ºæ¥å–çƒ§é¥¼çš„æ­¦å¤§,ä½ å¯ä»¥å‘ä»–æ‰“å¬ä½¿ç”¨çš„emote,
 (ask wu dalang about this emote).\n");
-   set("nickname","Ğ¡··");
+   set("nickname","å°è´©");
    set_skill("unarmed",10);
    set_skill("dodge",10);
    set_skill("force",10);
@@ -62,6 +62,6 @@ void random_chat()
 }
 int answer()
 {
- command("say Õâ¸öemoteÃ´,ÊÇ("+query("answer")+").\n");
+ command("say è¿™ä¸ªemoteä¹ˆ,æ˜¯("+query("answer")+").\n");
  return 1;
  }

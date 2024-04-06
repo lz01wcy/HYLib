@@ -1,4 +1,4 @@
-// biyun-xinfa.c ±ÌÔÆÐÄ·¨
+// biyun-xinfa.c ç¢§äº‘å¿ƒæ³•
 // cleansword
 
 inherit FORCE;
@@ -12,14 +12,14 @@ int valid_learn(object me)
 {
         int lvl = (int)me->query_skill("biyun-xinfa", 1);
 
-        if ( (me->query("family/family_name") != "ÌÆÃÅ"))
-                return notify_fail("±ÌÔÆÐÄ·¨ÄËÌÆÃÅ¶ÀÃÅÉñ¹¦, ·ÇÌÆÃÅµÜ×Ó²»´«!\n");
+        if ( (me->query("family/family_name") != "å”é—¨"))
+                return notify_fail("ç¢§äº‘å¿ƒæ³•ä¹ƒå”é—¨ç‹¬é—¨ç¥žåŠŸ, éžå”é—¨å¼Ÿå­ä¸ä¼ !\n");
                                     
-        if ( me->query("gender") == "ÎÞÐÔ" && lvl > 49)
-                return notify_fail("ÌÆÃÅ²»ÒªÄãÕâÖÖÎÞ¸ùÎÞÐÔµÄÈË£¬ÄãÎÞ·¨Áì»á¸ßÉîµÄ±ÌÔÆÐÄ·¨¡£\n");
+        if ( me->query("gender") == "æ— æ€§" && lvl > 49)
+                return notify_fail("å”é—¨ä¸è¦ä½ è¿™ç§æ— æ ¹æ— æ€§çš„äººï¼Œä½ æ— æ³•é¢†ä¼šé«˜æ·±çš„ç¢§äº‘å¿ƒæ³•ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 30)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬ÎÞ·¨Áì»á±ÌÔÆÐÄ·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šç¢§äº‘å¿ƒæ³•ã€‚\n");
         return 1;
 }
 

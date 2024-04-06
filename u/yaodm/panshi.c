@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-        set_name(HIW"ÅÐÊ¦¾µ"NOR, ({"panshi jing"}));
+        set_name(HIW"åˆ¤å¸ˆé•œ"NOR, ({"panshi jing"}));
        if (clonep())
                set_default_object(__FILE__);
        else {
                set("long",
-                         "ÕâÊÇÒ»Ãæº£ÑóÅÐÃÅÅÉµÄ±¦Îï£¬¿ÉÒÔ°ïÖúÄúÅÐÊ¦¡£\n");
+                         "è¿™æ˜¯ä¸€é¢æµ·æ´‹åˆ¤é—¨æ´¾çš„å®ç‰©ï¼Œå¯ä»¥å¸®åŠ©æ‚¨åˆ¤å¸ˆã€‚\n");
                set("value", 0);
-             set("unit", "Ãæ");
+             set("unit", "é¢");
                set("no_get", 1);
                set("no_drop", 0);
                set("treasure", 1);
@@ -38,14 +38,14 @@ int do_send(string target)
        if(!(dest = find_player(target)))
              if(!(dest = find_living(target)))
              {
-                   write("Ã»ÓÐÕâ¸öÈË»òÉúÎï¡£\n");
+                   write("æ²¡æœ‰è¿™ä¸ªäººæˆ–ç”Ÿç‰©ã€‚\n");
                    return 1;
              }
-    if (!environment(dest)) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÄÀï¡£\n");
-       message_vision(HIR "ÅÐÊ¦¾µÉä³öÒ»µÀ¹âÃ¢£¬ÕÕÏò$n£¬½«$nÀïÀïÍâÍâÈ«²¿ÇåÏ´¸É¾»\n" NOR, me, dest);
+    if (!environment(dest)) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨å“ªé‡Œã€‚\n");
+       message_vision(HIR "åˆ¤å¸ˆé•œå°„å‡ºä¸€é“å…‰èŠ’ï¼Œç…§å‘$nï¼Œå°†$né‡Œé‡Œå¤–å¤–å…¨éƒ¨æ¸…æ´—å¹²å‡€\n" NOR, me, dest);
 
 
-dest->set("title","ÆÕÍ¨°ÙÐÕ");
+dest->set("title","æ™®é€šç™¾å§“");
 dest->set("class","0");
 dest->delete("family");
 dest->delete("party");

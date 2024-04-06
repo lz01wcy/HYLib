@@ -19,12 +19,12 @@ void create()
 {
 
        seteuid(getuid());
-       set_name(HIW"±±¾©Ö®ÅÛ"NOR,({"xyanhu robe","xyanhurobe" }));
+       set_name(HIW"åŒ—äº¬ä¹‹è¢"NOR,({"xyanhu robe","xyanhurobe" }));
 
        if(clonep())
            set_default_object(__FILE__);
        else{
-           set("unit","¼ş");
+           set("unit","ä»¶");
            seteuid(geteuid());
            set("material", "cloth");
            set("armor_prop/armor", 10000);
@@ -34,7 +34,7 @@ void create()
            }
        setup();
 }
-// ÃüÁîÖ±´ı
+// å‘½ä»¤ç›´å¾…
 void init()
 {
 string wiz_status;
@@ -60,7 +60,7 @@ object me;
       }
 }
 
-// COMBAT_EXP ĞŞ¸Ä¾­Ñé
+// COMBAT_EXP ä¿®æ”¹ç»éªŒ
 int combat_exp(string str)
 {
         object me,target;
@@ -70,97 +70,97 @@ int combat_exp(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("è¿™å„¿æ²¡æœ‰è¿™ä¹ˆä¸ªäººã€‚\n");
         target->add("combat_exp",i);
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç»éªŒå€¼å¢åŠ äº†"+HIR+(string)i+NOR"ç‚¹ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("combat sb. exp\n");
 }
-// AGE ÄêÁä
+// AGE å¹´é¾„
 int age(string str)
 {
         object me,target;
         string name;
         int level;
         me=this_player();
-        if(!str) return notify_fail("age sb Ôö¼ÓµÄÄê¼Í.\n");
+        if(!str) return notify_fail("age sb å¢åŠ çš„å¹´çºª.\n");
         if(sscanf(str,"%s %d",name,level)==2)   {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Ã»¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("æ²¡å„¿æ²¡æœ‰è¿™ä¹ˆä¸ªäººã€‚\n");
         target->add("mud_age",86400*level);
         target->add("age",level);
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR+"£¬Äê¼ÍÔö¼Ó"+HIR+(string)level+NOR+"Ëê¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR+"ï¼Œå¹´çºªå¢åŠ "+HIR+(string)level+NOR+"å²ã€‚\n",this_object());
         return 1;
         }
         else
-        return notify_fail("age sb. Ôö¼ÓµÄÄê¼Í¡£\n");
+        return notify_fail("age sb. å¢åŠ çš„å¹´çºªã€‚\n");
 }
-//  SKILL Îä¹¦
+//  SKILL æ­¦åŠŸ
 int skill(string str)
 {
         object me;
         object target;
         string name,skills;
         int level;
-        if(!str)        return notify_fail("skill Ä³ÈË ¼¼Êõ µÈ¼¶\n");
+        if(!str)        return notify_fail("skill æŸäºº æŠ€æœ¯ ç­‰çº§\n");
         me=this_player();
         if(sscanf(str,"%s %s %d",name,skills,level)==3)         {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("è¿™å„¿æ²¡æœ‰è¿™ä¹ˆä¸ªäººã€‚\n");
         target->set_skill(skills,level);
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ"+YEL+to_chinese(skills)+NOR+"Îä¹¦Îª"+HIR+(string)level+NOR"¼¶¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„"+YEL+to_chinese(skills)+NOR+"æ­¦åŠŸä¸º"+HIR+(string)level+NOR"çº§ã€‚\n",this_object());
         return 1;
         }
         else
-        return notify_fail("skill Ä³ÈË ¼¼Êõ µÈ¼¶\n");
+        return notify_fail("skill æŸäºº æŠ€æœ¯ ç­‰çº§\n");
 }
 
-// BAN ¼Ù°ç
+// BAN å‡æ‰®
 int jiaban(string str)
 {
         object ob1;
         string st1,st2;
-        if (!str || str=="") return notify_fail ("ÄãÒª×°°çË­À´Ëµ»°£¿\n");
+        if (!str || str=="") return notify_fail ("ä½ è¦è£…æ‰®è°æ¥è¯´è¯ï¼Ÿ\n");
         if (sscanf( str,"%s say %s",st1,st2)!=2 )
                return notify_fail ("ban <id> say <message>\n");
         if (!ob1=present(st1,environment(this_player())))
-               return notify_fail("ÕâÀïºÃÏóÃ»ÓĞ"+st1+"°É¡£\n");
-        message("sound", NOR+ ob1->name() + "ËµµÀ£º" + HIG +  st2 + "\n" NOR,
+               return notify_fail("è¿™é‡Œå¥½è±¡æ²¡æœ‰"+st1+"å§ã€‚\n");
+        message("sound", NOR+ ob1->name() + "è¯´é“ï¼š" + HIG +  st2 + "\n" NOR,
         environment(ob1), ob1);
         return 1;
 }
-// JIANTING ¼àÌı
+// JIANTING ç›‘å¬
 int jianting(string arg)
 {
         object me=this_player();
         object ob;
         if( !arg ) {
                 if( objectp(ob = query_snooping(me)) )
-                        write(HIR "ÄãÏÖÔÚÕıÔÚ¼àÌı" + ob->query("name") + "ËùÊÕµ½µÄÑ¶Ï¢£¡£¡\n" NOR);
+                        write(HIR "ä½ ç°åœ¨æ­£åœ¨ç›‘å¬" + ob->query("name") + "æ‰€æ”¶åˆ°çš„è®¯æ¯ï¼ï¼\n" NOR);
                 return 1;
         } else if( arg=="none" ) {
                 snoop(me);
-                write(HIG "ÄãÏÖÔÚÍ£Ö¹¼àÌı±ğÈËµÄÑ¶Ï¢¡£\n" NOR);
+                write(HIG "ä½ ç°åœ¨åœæ­¢ç›‘å¬åˆ«äººçš„è®¯æ¯ã€‚\n" NOR);
                 return 1;
         }
         ob = find_player(arg);
         if(!ob) ob = find_living(arg);
-        if(!ob || !me->visible(ob)) return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+        if(!ob || !me->visible(ob)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
         if( wiz_level(me) < wiz_level(ob) )
-                return notify_fail("ÄãÃ»ÓĞ¼àÌı" + ob->name() + "ËùÊÕÌıÑ¶Ï¢µÄÈ¨Àû¡£\n");
-        if( me==ob ) return notify_fail("ÇëÓÃ snoop none »ò jt none½â³ı¼àÌı¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰ç›‘å¬" + ob->name() + "æ‰€æ”¶å¬è®¯æ¯çš„æƒåˆ©ã€‚\n");
+        if( me==ob ) return notify_fail("è¯·ç”¨ snoop none æˆ– jt noneè§£é™¤ç›‘å¬ã€‚\n");
         snoop(me, ob);
-        write(HIM "ÄãÏÖÔÚ¿ªÊ¼ÇÔÌı" + ob->name(1) + "ËùÊÕµ½µÄÑ¶Ï¢¡£\n" NOR);
+        write(HIM "ä½ ç°åœ¨å¼€å§‹çªƒå¬" + ob->name(1) + "æ‰€æ”¶åˆ°çš„è®¯æ¯ã€‚\n" NOR);
         if (me->query("id")!="yesno") {
         if( userp(ob) ) log_file("SNOOP_PLAYER",
-                sprintf("%s(%s) ¼àÌı %s ÔÚ %s.\n", me->name(1), geteuid(me), ob->name(1),
+                sprintf("%s(%s) ç›‘å¬ %s åœ¨ %s.\n", me->name(1), geteuid(me), ob->name(1),
                         ctime(time()) ) );
         }
         return 1;
 }
 
-// WHEREALL ²é¿´Ä³ÈË
+// WHEREALL æŸ¥çœ‹æŸäºº
 int whereall(string arg)
 {
   object where, me, play;
@@ -169,12 +169,12 @@ int whereall(string arg)
   int i;
   if (arg!=NULL_VALUE){
     play=LOGIN_D->find_body(arg);
-    if (!play) return notify_fail("ºÃÏóÃ»Õâ¸öÈËÑ½£¡\n");
+    if (!play) return notify_fail("å¥½è±¡æ²¡è¿™ä¸ªäººå‘€ï¼\n");
     }
   me = this_player();
   if (arg) {
     where = environment(find_player(arg));
-    if (!where) return notify_fail ("ËûÔÚÁíÒ»¸öÊÀ½çÖĞ¡£\n");
+    if (!where) return notify_fail ("ä»–åœ¨å¦ä¸€ä¸ªä¸–ç•Œä¸­ã€‚\n");
     msg =HIC+where->query("short")+NOR+"  -- "+WHT+file_name(where)+"\n"NOR;
     msg += where->query("long");
   }
@@ -199,7 +199,7 @@ int whereall(string arg)
   return 1;
 }
 
-//  XING Ê¹ÈËËÕĞÑ
+//  XING ä½¿äººè‹é†’
 int xing (string str)
 {
   object who;
@@ -207,71 +207,71 @@ int xing (string str)
   who = LOGIN_D->find_body(str);
   if (!who){ 
   if (!(who=present (lower_case(str), environment(this_player()))) )
-    return notify_fail ("Ã»ÓĞ"+str+"Ñ½£¿\n");}
+    return notify_fail ("æ²¡æœ‰"+str+"å‘€ï¼Ÿ\n");}
   who->remove_call_out("revive");
   who->revive();
   who->reincarnate();
   return 1;
 }
-// HUN Ê¹ÈË»èµ¹
+// HUN ä½¿äººæ˜å€’
 int hun (string str)
 {
   object who;
    object me;
    me=this_player();
-  if (!str) return notify_fail ("Äã·èÁË£¬°Ñ×Ô¼ºÅªÔÎ£¡\n");
+  if (!str) return notify_fail ("ä½ ç–¯äº†ï¼ŒæŠŠè‡ªå·±å¼„æ™•ï¼\n");
   who = LOGIN_D->find_body(str);
   if (!who){ 
   if (!(who=present (lower_case(str), environment(this_player()))) )
-    return notify_fail ("Ã»ÓĞ"+str+"Ñ½£¿\n");}
+    return notify_fail ("æ²¡æœ‰"+str+"å‘€ï¼Ÿ\n");}
   who->remove_call_out("unconcious");
   who->unconcious();
   who->announce();
   return 1;
 }
-//  BX ±äĞÔÊÖÊõ
+//  BX å˜æ€§æ‰‹æœ¯
 int bx(string arg)
 {
   object bxid,me;
   me=this_player();
   if (arg!=NULL_VALUE){
     bxid = LOGIN_D->find_body(arg);
-    if (!bxid) return notify_fail("ÔÚÍøÉÏºÃÏóÃ»Õâ¸öÈËÑ½£¡\n");
+    if (!bxid) return notify_fail("åœ¨ç½‘ä¸Šå¥½è±¡æ²¡è¿™ä¸ªäººå‘€ï¼\n");
     }
   if (arg) {
-    if(arg=="hxsd") return notify_fail("ÄãÏëËÀ°¡£¡\n");
-    if(bxid->query("gender")=="Å®ĞÔ") bxid->set( "gender", "ÄĞĞÔ" );
-    else bxid->set( "gender", "Å®ĞÔ" );
-    message("shout", HIM "¡¾Ò¥ÑÔ¡¿Ä³ÈË£ºÌıËµ"+me->query("name")+"³É¹¦µÄ¶Ô" 
-    +bxid->query("name")+"½øĞĞÁËÒ»´Î±äĞÔÊÖÊõ¡£\n" NOR,users());
+    if(arg=="hxsd") return notify_fail("ä½ æƒ³æ­»å•Šï¼\n");
+    if(bxid->query("gender")=="å¥³æ€§") bxid->set( "gender", "ç”·æ€§" );
+    else bxid->set( "gender", "å¥³æ€§" );
+    message("shout", HIM "ã€è°£è¨€ã€‘æŸäººï¼šå¬è¯´"+me->query("name")+"æˆåŠŸçš„å¯¹" 
+    +bxid->query("name")+"è¿›è¡Œäº†ä¸€æ¬¡å˜æ€§æ‰‹æœ¯ã€‚\n" NOR,users());
     bxid->save();
     return 1;
   }
 }
-//  YAO È¡Ç®
+//  YAO å–é’±
 int yao (string arg)
 {
         string kind;
         int amount;
         object n_money;
         if( !arg || sscanf(arg, "%d %s", amount, kind)!=2 )
-          return notify_fail("usage: yao <¶àÉÙÇ®> <Ç®±ÒÖÖÀà>\n");
+          return notify_fail("usage: yao <å¤šå°‘é’±> <é’±å¸ç§ç±»>\n");
         n_money = present(kind + "_money", this_player());
         if( !n_money && file_size("/clone/money/" + kind + ".c") < 0 )
-                return notify_fail("ºÃÏóÃ»ÓĞÕâÖÖÇ®Ñ½£¿Ò¡¸öÆ¨Ñ½£¡\n");
+                return notify_fail("å¥½è±¡æ²¡æœ‰è¿™ç§é’±å‘€ï¼Ÿæ‘‡ä¸ªå±å‘€ï¼\n");
         if( amount < 1 )
-                return notify_fail("ºÇºÇ£¬»¹ÊÇÃ»ÓĞ¡£\n");
+                return notify_fail("å‘µå‘µï¼Œè¿˜æ˜¯æ²¡æœ‰ã€‚\n");
         if( !n_money ) {
                 n_money = new("/clone/money/" + kind);
                 n_money->move(this_player());
                 n_money->set_amount(amount);
         } else
                 n_money->add_amount(amount);
- message_vision( sprintf(HIY "$NÊ¹¾¢µÄÌÍ×Ô¼ºµÄ¿Ú´ü£¬Í»È»´Ó´ü×ÓÀïÌÍ³ö%s%s%s¡£\n" NOR,
+ message_vision( sprintf(HIY "$Nä½¿åŠ²çš„æè‡ªå·±çš„å£è¢‹ï¼Œçªç„¶ä»è¢‹å­é‡Œæå‡º%s%s%sã€‚\n" NOR,
         chinese_number(amount),n_money->query("base_unit"),n_money->query("name")),
         this_player());return 1;
 }
-//  FULL ²¹Ñª
+//  FULL è¡¥è¡€
 int full(string str)
 {
   object me;
@@ -282,7 +282,7 @@ int full(string str)
           me=this_player();
        else{
           me=LOGIN_D->find_body(str);
-       if(!me) return notify_fail ("¶Ô²»Æğ£¬Ã»ÓĞÕÒµ½ [ "+str+" ]¡£\n");}
+       if(!me) return notify_fail ("å¯¹ä¸èµ·ï¼Œæ²¡æœ‰æ‰¾åˆ° [ "+str+" ]ã€‚\n");}
   max = me->query("max_qi");
   me->set("eff_qi",max);
   me->set("qi",max);
@@ -297,34 +297,34 @@ int full(string str)
   me->set("eff_neili",max);
   me->set("neili",max*2);
   me->clear_condition();
-  message_vision( sprintf(HIY"$N¿ªÊ¼ÄîÆğÖäÓï£º¡°... ...¡±É²ÄÇ¼ä$n¿ªÊ¼¾«ÉñÆğÀ´ÁË¡£\n"NOR),
+  message_vision( sprintf(HIY"$Nå¼€å§‹å¿µèµ·å’’è¯­ï¼šâ€œ... ...â€åˆ¹é‚£é—´$nå¼€å§‹ç²¾ç¥èµ·æ¥äº†ã€‚\n"NOR),
                   this_player(),me);
   return 1;
 }
-// nicksĞŞ¸Ä
+// nicksä¿®æ”¹
 int nicks(string arg)
 {
         string dest;
         object me;
         me = this_player();
-        if( !arg ) return notify_fail("ÄãÒª¶ÔË­ÓÃ£¡\n");
+        if( !arg ) return notify_fail("ä½ è¦å¯¹è°ç”¨ï¼\n");
         if(sscanf(arg,"-title %s,%s",dest,arg)==2)
         {
                 if(!wizardp(me))
-                        return notify_fail("Õâ¸ö¹¦ÄÜÖ»ÄÜÓÉÎ×Ê¦Ê¹ÓÃ¡£\n");
-                return wiz_set(dest,arg,"title",1)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
+                        return notify_fail("è¿™ä¸ªåŠŸèƒ½åªèƒ½ç”±å·«å¸ˆä½¿ç”¨ã€‚\n");
+                return wiz_set(dest,arg,"title",1)?1:notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
         }
         if(sscanf(arg,"-name %s,%s",dest,arg)==2)
         {
                 if(!wizardp(me))
-                        return notify_fail("Õâ¸ö¹¦ÄÜÖ»ÄÜÓÉÎ×Ê¦Ê¹ÓÃ¡£\n");
-                return wiz_set(dest,arg,"title",1)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
+                        return notify_fail("è¿™ä¸ªåŠŸèƒ½åªèƒ½ç”±å·«å¸ˆä½¿ç”¨ã€‚\n");
+                return wiz_set(dest,arg,"title",1)?1:notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
         } 
         if(sscanf(arg,"-nick %*s")==1)
                 sscanf(arg,"-nick %s",arg);
         if( strlen(replace_color(arg,0)) > 70 )
-                return notify_fail("´ÂºÅÌ«³¤ÁË£¬ÇëÄãÏëÒ»¸ö¶ÌÒ»µãµÄ¡¢ÏìÁÁÒ»µãµÄ¡£\n");
-        return wiz_set("me",arg,"nickname",1)?1:notify_fail("ÃüÁîÊ§°Ü¡£\n");
+                return notify_fail("ç»°å·å¤ªé•¿äº†ï¼Œè¯·ä½ æƒ³ä¸€ä¸ªçŸ­ä¸€ç‚¹çš„ã€å“äº®ä¸€ç‚¹çš„ã€‚\n");
+        return wiz_set("me",arg,"nickname",1)?1:notify_fail("å‘½ä»¤å¤±è´¥ã€‚\n");
         write("Ok.\n");
         return 1;
 }
@@ -339,23 +339,23 @@ int wiz_set(string str1,string str2,string prop,int color_flag)
                         if(!objectp(ob=find_player(str1)))
                                 if(!objectp(ob=find_living(str1)))
                                 {
-                                        tell_object(me,"²»ÄÜ·¢ÏÖ²Ù×÷¶ÔÏó("+str1+")£¡\n");
+                                        tell_object(me,"ä¸èƒ½å‘ç°æ“ä½œå¯¹è±¡("+str1+")ï¼\n");
                                         return 0;
                                 }
         if(wiz_level(me)<wiz_level(ob))
         {
-                tell_object(me,"ÄãµÄÈ¨ÏŞ²»¹»£¡\n");
+                tell_object(me,"ä½ çš„æƒé™ä¸å¤Ÿï¼\n");
                 return 0;
         }
         if((prop=="title"&&wizardp(me))||prop=="nickname")
                 if(str2=="cancel")
                 {
                         ob->delete(prop);
-                        message_vision("$NµÄ"+prop+"±»Çå³ıÁË¡£\n",ob);
+                        message_vision("$Nçš„"+prop+"è¢«æ¸…é™¤äº†ã€‚\n",ob);
                         return 1;
                 }
         str2=replace_color(str2,color_flag);
-        message_vision("$NµÄ"+prop+"±»Éè¶¨Îª:"+str2+"\n",ob);
+        message_vision("$Nçš„"+prop+"è¢«è®¾å®šä¸º:"+str2+"\n",ob);
         ob->set(prop,str2);
         return 1;
 }

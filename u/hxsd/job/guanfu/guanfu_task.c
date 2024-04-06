@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-		tell_object(me, HIY "Զ���������������Ŀ���ƺ���Ҫ�뿪��ԭһ����������ʧ�ܡ�\n" NOR);
+		tell_object(me, HIY "远处传来三声响箭，目标似乎将要离开中原一带，你任务失败。\n" NOR);
                 me->delete_temp("guanfu_target");
                 me->delete_temp("guanfu_time");
 	        me->clear_condition("guanfu_task");

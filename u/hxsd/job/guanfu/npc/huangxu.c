@@ -1,13 +1,13 @@
-// huangxu daoren »ÆĞëµÀÈË
+// huangxu daoren é»„é¡»é“äºº
 inherit NPC;
  
 void create()
 {
-	set_name("»ÆĞëµÀÈË", ({ "huangxu daoren", "daoren" }));
+	set_name("é»„é¡»é“äºº", ({ "huangxu daoren", "daoren" }));
 //	set("nickname", "");
 	set("long", 
-        "Îäµ±µÄÅÑÍ½£¬ÎªÈË¼éÕ©£¬³£³£¸ÉĞ©»µÊÂ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "æ­¦å½“çš„å›å¾’ï¼Œä¸ºäººå¥¸è¯ˆï¼Œå¸¸å¸¸å¹²äº›åäº‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen", -1000);

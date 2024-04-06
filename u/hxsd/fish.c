@@ -5,18 +5,18 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÊÉÈËÓã", ({ "fish", "yu" }) );
-	set("race", "Ò°ÊÞ");
+	set_name("å™¬äººé±¼", ({ "fish", "yu" }) );
+	set("race", "é‡Žå…½");
 	set("age", 3);
-	set("long", "ÕâÊÇÒ»Ö»ÉíÐÎ²¢²»ºÜ´óµÄÓã£¬»ëÉí¸²ÂúÑ¤ÀöµÄÁÛÆ¬£¬\n"
-	    "Ò»¿Ú·æÀûµÄÑÀ³Ý£¬Õý»¢ÊÓµ¢µ¢µÄ¿´×ÅÄã\n");
+	set("long", "è¿™æ˜¯ä¸€åªèº«å½¢å¹¶ä¸å¾ˆå¤§çš„é±¼ï¼Œæµ‘èº«è¦†æ»¡ç»šä¸½çš„é³žç‰‡ï¼Œ\n"
+	    "ä¸€å£é”‹åˆ©çš„ç‰™é½¿ï¼Œæ­£è™Žè§†è€½è€½çš„çœ‹ç€ä½ \n");
 	set("attitude", "aggressive");
 
         set("max_qi",1000);
 	set("str", 26);
 	set("cor", 30);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "¸¹²¿", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è…¹éƒ¨", "å°¾å·´" }) );
 
 	set("verbs", ({ "bite" }) );
 
@@ -32,7 +32,7 @@ void create()
 void die()
 {
 	object ob;
-	message_vision("$N¿ÚÖÐÍÂ³öÒ»¿ÅÒ¹Ã÷Öé£¬¶ÇÆ¤ÍùÉÏÒ»·­£¬$NËÀÁË¡£\n", this_object());
+	message_vision("$Nå£ä¸­åå‡ºä¸€é¢—å¤œæ˜Žç ï¼Œè‚šçš®å¾€ä¸Šä¸€ç¿»ï¼Œ$Næ­»äº†ã€‚\n", this_object());
 	ob = new("/tmp/mccc/tan/item/zhenzhu");
 	ob->move(environment(this_object()));
 	destruct(this_object());

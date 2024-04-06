@@ -2,14 +2,14 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name(HIG"Êß²Ë"NOR, ({ "xian cai" , "cai"}) );
+        set_name(HIG"è”¬èœ"NOR, ({ "xian cai" , "cai"}) );
         set_weight(50); 
         set("no_give",1);
         set("no_put",1);        if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑĞÂÏÊµÄÊß²Ë¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæ–°é²œçš„è”¬èœã€‚\n");
                 set("value", 1);
         }
 }

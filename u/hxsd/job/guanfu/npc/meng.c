@@ -1,14 +1,14 @@
-//  meng ÃÏÕıÅô
+//  meng å­Ÿæ­£é¹
  
 inherit NPC;
  
 void create()
 {
-	set_name("ÃÏÕıÅô", ({ "meng zhengpeng", "meng" }));
-	set("nickname", "Îå·ïµ¶ÕÆÃÅ");
+	set_name("å­Ÿæ­£é¹", ({ "meng zhengpeng", "meng" }));
+	set("nickname", "äº”å‡¤åˆ€æŒé—¨");
 	set("long", 
-        "Îå·ïµ¶µÄÕÆÃÅ£¬Ò»Éíµ¶·¨´«ËµÉõÎªÁËµÃ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "äº”å‡¤åˆ€çš„æŒé—¨ï¼Œä¸€èº«åˆ€æ³•ä¼ è¯´ç”šä¸ºäº†å¾—ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 52);
 	set("attitude", "peaceful");
 	set("shen", -5000);

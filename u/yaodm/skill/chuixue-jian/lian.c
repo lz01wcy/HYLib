@@ -15,16 +15,16 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("º®Ìì´µÑ©½£·¨¡¸Á¬¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å¯’å¤©å¹é›ªå‰‘æ³•ã€Œè¿žã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if((int)me->query_skill("chuixue-jian", 1) < 80)
-                return notify_fail("ÄãµÄº®Ìì´µÑ©½£·¨µÈ¼¶²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡ºÌìÍâ·ÉÏÉ¡»£¡\n");
+                return notify_fail("ä½ çš„å¯’å¤©å¹é›ªå‰‘æ³•ç­‰çº§ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Žå¤©å¤–é£žä»™ã€ï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
-        msg = HIY "$NÊ¹³öº®Ìì´µÑ©½£·¨¡¸Á¬¡¹×Ö¾÷£¬ÕÐÊ½¶¸È»±ä¿ì¡£\n";
+        msg = HIY "$Nä½¿å‡ºå¯’å¤©å¹é›ªå‰‘æ³•ã€Œè¿žã€å­—è¯€ï¼Œæ‹›å¼é™¡ç„¶å˜å¿«ã€‚\n";
 
         if( random(me->query("combat_exp")) >(int)target->query("combat_exp")/4 )
         {
@@ -32,7 +32,7 @@ int perform(object me, object target)
                 if(attack_time < 1)
                         attack_time = 1;
 
-                msg += CYN " ½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR;
+                msg += CYN " ç»“æžœ$pè¢«$Pæ”»äº†ä¸ªæŽªæ‰‹ä¸åŠï¼\n" NOR;
                 for(i = 0; i < attack_time; i++){
                         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0);
                         }
@@ -43,7 +43,7 @@ int perform(object me, object target)
         else
         {
 
-                msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓÐÉÏµ±¡£\n" NOR;
+                msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
                 me->start_busy(4);
         }
         message_vision(msg, me, target);

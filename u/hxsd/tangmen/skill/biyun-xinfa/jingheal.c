@@ -5,23 +5,23 @@
 int exert(object me, object target)
 {
 	if ( !wizardp(this_player()) )
-		return notify_fail("ÄãÎÞÈ¨½øÐÐ¾«µÄÖÎÁÆ£¡\n");
+		return notify_fail("ä½ æ— æƒè¿›è¡Œç²¾çš„æ²»ç–—ï¼\n");
 
 	if( !target )
-		return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+		return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ï¼\n");
 
 	if( (int)me->query("max_neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 150 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	message_vision(
-		HIG "$N×øÁËÏÂÀ´ÔËÆðÄÚ¹¦£¬½«ÊÖÕÆÌùÔÚ$n±³ÐÄ£¬»º»ºµØ½«ÕæÆøÊäÈë$nÌåÄÚ....\n\n"
-		"¹ýÁË²»¾Ã£¬$N¶îÍ·ÉÏÃ°³ö¶¹´óµÄº¹Öé£¬$nÍÂ³öÒ»¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºìÈó¶àÁË¡£\n" NOR,
+		HIG "$Nåäº†ä¸‹æ¥è¿èµ·å†…åŠŸï¼Œå°†æ‰‹æŽŒè´´åœ¨$nèƒŒå¿ƒï¼Œç¼“ç¼“åœ°å°†çœŸæ°”è¾“å…¥$nä½“å†…....\n\n"
+		"è¿‡äº†ä¸ä¹…ï¼Œ$Né¢å¤´ä¸Šå†’å‡ºè±†å¤§çš„æ±—ç ï¼Œ$nåå‡ºä¸€å£ç˜€è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥çº¢æ¶¦å¤šäº†ã€‚\n" NOR,
 		me, target );
 
 	target->receive_curing("jing", 10 + (int)me->query_skill("force")/3 );
