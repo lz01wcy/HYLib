@@ -1,20 +1,20 @@
-[33m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-[44;33m¡¾º£ÑóIIÂ·¾¶½éÉÜ¡¿                                            [2;37;0m
-[33m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[2;37;0m
+[33mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[44;33mã€æµ·æ´‹IIè·¯å¾„ä»‹ç»ã€‘                                            [2;37;0m
+[33mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[2;37;0m
 
 1.  gc-gm #16 w;ne;eu;se;eu;n;#3 nu;#2 wu;n;w;nw;n;#3 nu;wu;wu;nu;#2 wu;su;eu;#2 sd;s;s;su;#2     sw;s;e;se;qian tan;ci brick;zhan brick;d;n;   gm-gc s;tang coffin;niu lock;e;s;s;s;e;out;
 2.  gc-gb e;e;e;n;e;n;w;e;n;w;e;n;w;e;n;open door;en;e;
     gb-gc w;out;s;s;w;w;w
 3.  gc-hs #7 w;#2 n;nw;#6 n;#5 e;se;#2 su;#2 eu;su;#2 eu;#4 su;eu;n;n;   hs-gc s;s;wd;#4 nd;#2     wd;nd;#2 wd;#2 nd;nw;#5 w;#6 s;se;#2 s;#7 e;
-4.  gc-sl enter dong;say ÌìÌÃÓĞÂ·Äã²»×ßÑ½
+4.  gc-sl enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€
     ;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;eu;nu;nu;nu;n
     sl-gc s;#3 sd;wd;w;#3 sd;ed;#2 sd;e;e;#5 n;nw;nw;#4 w;s;e;e;give 1 silver to ma     fu;rideyz;w;w;s
-5.  gc-tls enter dong;say ÌìÌÃÓĞÂ·Äã²»×ßÑ½;d;a;#3 sw;out;w;#5 n;nw;n;ne;e   tls-gc w;sw;s;se;#5     s;e;enter dong;#3 ne;u;out;#3 w;s;w;give 1 silver to ma fu;rideyz;w;w;s
+5.  gc-tls enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;a;#3 sw;out;w;#5 n;nw;n;ne;e   tls-gc w;sw;s;se;#5     s;e;enter dong;#3 ne;u;out;#3 w;s;w;give 1 silver to ma fu;rideyz;w;w;s
 6.  gc-wd #7 s;w;nw;w;sw;w;se;s;w;w;wu;wu;w;#4 su;sd;su;sd;#4 su;s  wd-gc n;#4 nd;nu;nd;nu;#4     nd;e;ed;ed;e;e;n;nw;e;ne;e;se;e;#7 n
 7.  gc-xy  #7 s;e;e;s;w;w xy-gc  e;e;e;e;n;w;#7 n
 8.  gc-xx  n;e;e;give 1 silver to ma fu;rideyl;s;se;wu;n;   xx-gc  s;ed;nw;n;give 1 silver to ma      fu;rideyz;w;w;s;
 9.  gc-qz  #16 w;ne;eu;se;eu;n;#3 nu;#2 wu;nu;nu;n;w;nw;n;#5 nu;se;eu;su;e;eu;   qz-gc     w;wd;w;nd;wd;nw;#5 sd;s;se;e;s;sd;sd;#2 ed;#3 sd;s;wd;nw;wd;sw;#16 e
-10. gc-mr¶É¿Ú n;e;e;give 1 silver to ma fu;ridesz;e;#6 s;sw;e;e;se;s;qu mr   mr¶É¿Ú-gc      n;nw;w;w;ne;n;n;n;n;n;n;w;give 1 silver to ma fu;rideyz;w;w;s;
+10. gc-mræ¸¡å£ n;e;e;give 1 silver to ma fu;ridesz;e;#6 s;sw;e;e;se;s;qu mr   mræ¸¡å£-gc      n;nw;w;w;ne;n;n;n;n;n;n;w;give 1 silver to ma fu;rideyz;w;w;s;
 11. gc-mj #9 w;nw;#5 w;nu;wd;#5 w;n;w;n;w;n;w;n;w;#3 w    mj-gc  #4 e;s;e;s;e;s;#6 e;eu;sd;#5      e;se;#9 e
 12. gc-kl #9 w;nw;#5 w;nu;wd;#5 w;n;w;n;w;n;w;n;w;wu;w;w;wu;su;w;nw;w;nu;eu;#3 su;#6 s;su
     kl-gc nd;#6 n;#3 nd;wd;sd;e;se;e;nd;ed;e;e;ed;e;s;e;s;e;s;#6 e;eu;sd;#5 e;se;#9 e
@@ -23,251 +23,251 @@
 15. gc-ljg n;e;e;give 1 silver to ma fu;rideyl;s;se;wu;n;nu;wu;wu;nu;zou tiesuo;eu;n;n;
     ljg-gc s;s;wd;sd;sd;ed;ed;sd;s;ed;nw;n;give 1 silver to ma fu;rideyz;w;w;s;
 16. gc-bt  n;e;e;give 1 silver to ma fu;rideyl;s;se;wu;n;nd;s;s;   bt-gc  n;n;su;s;ed;nw;n;give 1 silver to ma fu;rideyz;w;w;s;
-17. gc-sld  n;e;e;give 1 silver to ma fu;ridebj;w;w;n;#4 e;se;se;s;s;s;s;e;ask chuanfu about ³öº£;give chuanfu 1 gold;#wait 12000;n;kan bush;n;n;e;n;n;n;     sld-gc s;s;s;w;s;s;s;en chuan;#wait 12000;w;n;n;n;n;nw;nw;w;w;w;w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
-18. gc-thd #5 e;se;s;#3 e;ask chuanfu about ³öº£;give chuanfu 1 gold;#wait 12000;#10 s   thd-gc #10 n;en chuan;#wait 12000;#3 w;n;nw;#5 w
+17. gc-sld  n;e;e;give 1 silver to ma fu;ridebj;w;w;n;#4 e;se;se;s;s;s;s;e;ask chuanfu about å‡ºæµ·;give chuanfu 1 gold;#wait 12000;n;kan bush;n;n;e;n;n;n;     sld-gc s;s;s;w;s;s;s;en chuan;#wait 12000;w;n;n;n;n;nw;nw;w;w;w;w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
+18. gc-thd #5 e;se;s;#3 e;ask chuanfu about å‡ºæµ·;give chuanfu 1 gold;#wait 12000;#10 s   thd-gc #10 n;en chuan;#wait 12000;#3 w;n;nw;#5 w
 19. gc-mingzong   n;e;e;give 1 silver to ma fu;rideem;e;e;ne;w;nw;#5 w;#5 s;wu;wu;nd;wu;wu;s;wu;    mizong-gc ed;n;ed;ed;su;ed;ed;#5 n;#5 e;se;e;sw;w;w;give 1 silver to ma fu;rideyz;w;w;s;
 20  gc-riyue   n;e;e;give 1 silver to ma fu;ridebj;w;w;n;#7 w;sw;w;w;w;n;wd;dujiang;#6 wu  riyue-gc  #6 ed;dujiang;eu;s;e;e;e;ne;#7 e;s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
 21. gc-yunlong n;e;e;give 1 silver to ma fu;ridebj;w;w;n;w;s;w;knock floor 3;enter hole  yunlong-gc n;e;n;e;give 1 silver to ma fu;rideyz;w;w;s;
-22. gc-¼ÎĞË  #5 e;se;s;e;e;  ¼ÎĞË-gc w;w;n;nw;#5 w
-23. gc-ÈªÖİ  n;e;e;give 1 silver to ma fu;ridefs;n;n;#5 e;ne;ne;ne;e;e;e;  ÈªÖİ-gc #3 w;sw;sw;sw;#5 w;s;s;give 1 silver to ma fu;rideyz;w;w;s;
-24. gc-Çà³Ç   n;e;e;give 1 silver to ma fu;rideem;e;e;ne;w;nw;w;w;w;n;nw;w;n;n;n;n;w;n;n;n;    Çà³Ç-gc   s;s;s;e;s;s;s;e;se;s;e;e;e;se;e;sw;w;w;give 1 silver to ma fu;rideyz;w;w;s;
-25. gc-ºâÉ½ #7 s;su;se;sw;w; ºâÉ½-gc e;ne;nw;nd;#7 n
-26. gc-áÔÉ½ n;e;e;give 1 silver to ma fu;ridebj;w;w;n;#4 e;se;se;#5 s;w;  áÔÉ½-gc  e;#5 n;nw;nw;#4 w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
-27. gc-ºãÉ½ n;e;e;give 1 silver to ma fu;ridebj;w;w;s;s;s;se;sw;se;  ºãÉ½-gc  nw;ne;nw;#3 n;e;e;give 1 silver to ma fu;rideyz;w;w;s;
-28. gc-Ì©É½ #5 e;ne;n;n;n;  Ì©É½-gc #3 s;sw;#5 w
-29. gc-¹éÔÆ×¯ #3 s;#4 e;se;se;se;e;s;s;yell boat    ¹éÔÆ×¯-gc #2 n;w;nw;nw;nw;#4 w;n;n;n;
-30. gc-Íò½Ù¹È n;e;e;give 1 silver to ma fu;ridedl;e;n;e;#8 n;nw;nd;w;   Íò½Ù¹È-gc  e;su;se;#8 s;w;s;w;give 1 silver to ma fu;rideyz;w;w;s;
-31. gc-Ã·×¯ n;e;e;give 1 silver to ma fu;ridehz;w;w;n;n;n;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;   Ã·×¯-gc open gate;s;s;s;ed;e;ne;e;ne;#4 s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
-32. ´óÀíµ½À¥Ã÷ (#7 n;ne;ne;#6 e)
-33. À¥Ã÷µ½´óÀí (#6 w;sw;sw;#7 s)
-34. ÑïÖİµ½¾£ÖŞ (#3 w;sd;#2 w;nw;#wa 2000;#2 wu;wd;sw;#9 w)
-35. ¾£ÖŞµ½ÑïÖİ (#9 e;ne;eu;ed;#wa 2000;ed;se;e;e;nu;e;e;e)
-36. ¾£ÖŞµ½Îäµ±¹ã³¡ (#7 n;nw;w;w;w;wu;su)
-37. À¼ÖİÔÚ ³¤°²Î÷ÃÅ w ed e e e e e  
-ÆäËûµÄ±ÈÈçÀ¥Ã÷µ½¾£ÖŞ ÒòÎªÒª¹ı2¸ö Ç¿µÁ ĞèÒªkill ËùÒÔalias ²»×ö
-³É¶¼ºÍ¾£ÖŞÖ®¼äµÄÂ· ÒòÎªÂ·¸´ÔÓ¶øÇÒ ¹ıÕ»µÀÊ±ºò¼õÆøÑª ËùÒÔ Ò²²»ÔŞ³É×ß
-ÑïÖİ-ÃÉ¹Å
+22. gc-å˜‰å…´  #5 e;se;s;e;e;  å˜‰å…´-gc w;w;n;nw;#5 w
+23. gc-æ³‰å·  n;e;e;give 1 silver to ma fu;ridefs;n;n;#5 e;ne;ne;ne;e;e;e;  æ³‰å·-gc #3 w;sw;sw;sw;#5 w;s;s;give 1 silver to ma fu;rideyz;w;w;s;
+24. gc-é’åŸ   n;e;e;give 1 silver to ma fu;rideem;e;e;ne;w;nw;w;w;w;n;nw;w;n;n;n;n;w;n;n;n;    é’åŸ-gc   s;s;s;e;s;s;s;e;se;s;e;e;e;se;e;sw;w;w;give 1 silver to ma fu;rideyz;w;w;s;
+25. gc-è¡¡å±± #7 s;su;se;sw;w; è¡¡å±±-gc e;ne;nw;nd;#7 n
+26. gc-åµ©å±± n;e;e;give 1 silver to ma fu;ridebj;w;w;n;#4 e;se;se;#5 s;w;  åµ©å±±-gc  e;#5 n;nw;nw;#4 w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
+27. gc-æ’å±± n;e;e;give 1 silver to ma fu;ridebj;w;w;s;s;s;se;sw;se;  æ’å±±-gc  nw;ne;nw;#3 n;e;e;give 1 silver to ma fu;rideyz;w;w;s;
+28. gc-æ³°å±± #5 e;ne;n;n;n;  æ³°å±±-gc #3 s;sw;#5 w
+29. gc-å½’äº‘åº„ #3 s;#4 e;se;se;se;e;s;s;yell boat    å½’äº‘åº„-gc #2 n;w;nw;nw;nw;#4 w;n;n;n;
+30. gc-ä¸‡åŠ«è°· n;e;e;give 1 silver to ma fu;ridedl;e;n;e;#8 n;nw;nd;w;   ä¸‡åŠ«è°·-gc  e;su;se;#8 s;w;s;w;give 1 silver to ma fu;rideyz;w;w;s;
+31. gc-æ¢…åº„ n;e;e;give 1 silver to ma fu;ridehz;w;w;n;n;n;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;   æ¢…åº„-gc open gate;s;s;s;ed;e;ne;e;ne;#4 s;e;e;give 1 silver to ma fu;rideyz;w;w;s;
+32. å¤§ç†åˆ°æ˜†æ˜ (#7 n;ne;ne;#6 e)
+33. æ˜†æ˜åˆ°å¤§ç† (#6 w;sw;sw;#7 s)
+34. æ‰¬å·åˆ°è†æ´² (#3 w;sd;#2 w;nw;#wa 2000;#2 wu;wd;sw;#9 w)
+35. è†æ´²åˆ°æ‰¬å· (#9 e;ne;eu;ed;#wa 2000;ed;se;e;e;nu;e;e;e)
+36. è†æ´²åˆ°æ­¦å½“å¹¿åœº (#7 n;nw;w;w;w;wu;su)
+37. å…°å·åœ¨ é•¿å®‰è¥¿é—¨ w ed e e e e e  
+å…¶ä»–çš„æ¯”å¦‚æ˜†æ˜åˆ°è†æ´² å› ä¸ºè¦è¿‡2ä¸ª å¼ºç›— éœ€è¦kill æ‰€ä»¥alias ä¸åš
+æˆéƒ½å’Œè†æ´²ä¹‹é—´çš„è·¯ å› ä¸ºè·¯å¤æ‚è€Œä¸” è¿‡æ ˆé“æ—¶å€™å‡æ°”è¡€ æ‰€ä»¥ ä¹Ÿä¸èµæˆèµ°
+æ‰¬å·-è’™å¤
 gc {n;e;e;give 1 silver to ma fu;ridebj;give 1 silver to ma fu;rideht;e;s;s;s;nu;nw;nw;n;nw;n;nw}
-ÃÉ¹Å-ÑïÖİ
+è’™å¤-æ‰¬å·
 {se;s;se;s;se;se;sd;n;n;n;w;give 1 silver to ma fu;ridebj;give 1 silver to ma fu;rideyz;w;w;s}
-ÑïÖİ-»Ø×å
+æ‰¬å·-å›æ—
 gc {#9 w;nw;w;w;w;w;w;nu;wd;w;w;w;#wa 2000;ed;nu;wu;n;n;nw;nw;w;n;n;nd;nd}
-»Ø×å-ÑïÖİ
+å›æ—-æ‰¬å·
 {su;su;s;s;e;se;se;s;s;ed;sd;wu;#wa 2000;e;e;e;eu;sd;e;e;e;e;e;se;#9 e}
-ÑïÖİ-Ñà¾©
+æ‰¬å·-ç‡•äº¬
 {n;e;e;give 1 silver to ma fu;ridebj;give 1 silver to ma fu;rideht;#wa 2000;e;s;s;s;e;#4 ne;#8 n}
-Ñà¾©-ÑïÖİ
+ç‡•äº¬-æ‰¬å·
 {#8 s;#4 sw;;w;n;n;n;w;3wa 2000;give 1 silver to ma fu;ridebj;give 1 silver to ma fu;rideyz;w;w;s}
-ÆäËü³£ÓÃalias:
-(ÑïÖİ=ÑïÖİÖĞÑë¹ã³¡)
+å…¶å®ƒå¸¸ç”¨alias:
+(æ‰¬å·=æ‰¬å·ä¸­å¤®å¹¿åœº)
 
-ÑïÖİ-Îäµ±É½½Å
+æ‰¬å·-æ­¦å½“å±±è„š
 go 
 s;s;s;s;s;s;s;w;nw;w;sw;w;se;s;w;w;wu
 back 
 ed;e;e;n;nw;e;ne;e;se;e;#7 n
 
-Îäµ±É½½Å-Îäµ±¹ã³¡
+æ­¦å½“å±±è„š-æ­¦å½“å¹¿åœº
 go 
 wu;w;su;su;su;su;sd;su;sd;su;su;su;su
 back 
 nd;nd;nd;nd;nu;nd;nu;nd;nd;nd;nd;e;ed
 
-ÑïÖİ-ÏåÑôÖĞÑë¹ã³¡
+æ‰¬å·-è¥„é˜³ä¸­å¤®å¹¿åœº
 go 
 #7 s;w;#8 n
 back 
 s;s;s;s;s;s;s;s;e;n;n;n;n;n;n;n
 
-ÑïÖİ-åĞÒ£Çà²İÆº
+æ‰¬å·-é€é¥é’è‰åª
 go 
 #7 s;e;e;s;s;w;w
 back 
 e;e;e;n;w;#7 n
 
-ÑïÖİ-Ø¤°ïÍÁµØÃí
+æ‰¬å·-ä¸å¸®åœŸåœ°åº™
 go 
 e;e;e;n;e;n;w;n;e;n;w;n
 back 
 s;s;w;w;w
 
-ÑïÖİ-Ã÷½ÌÉ½ÃÅ
+æ‰¬å·-æ˜æ•™å±±é—¨
 go 
 w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;nu;#wa 2000;wd;w;w;w;w;w;w;w;n;n;w;w;w;w
 back 
 e;e;e;e;s;s;e;e;e;e;e;e;e;eu;sd;e;e;e;e;e;#wa 2000;se;e;e;e;e;e;e;e;e;e
 
-Ã÷½ÌÉ½ÃÅ-¹âÃ÷¶¥
+æ˜æ•™å±±é—¨-å…‰æ˜é¡¶
 go 
 w;w;wu;wu;#4 nu;enter;#4 nu;n;nu;n
 back 
 s;sd;s;#4 sd;out;#4 sd;ed;ed;e;e
 
-ÑïÖİ-³É¶¼¹ã³¡
+æ‰¬å·-æˆéƒ½å¹¿åœº
 go 
 #7 s;w;nw;w;sw;w;sw;sw;w;s;w;nw;#5 w
 back 
 #5 e;se;e;n;e;ne;ne;e;ne;e;se;e;#7 n
 
-ÑïÖİ-Ñ©É½ËÂÉ½ÃÅ
+æ‰¬å·-é›ªå±±å¯ºå±±é—¨
 go 
 #7 s;w;nw;w;sw;w;sw;sw;w;s;w;nw;#wa 3000;#5 w;#5 s;wu;wu;nd;wu;wu;s;wu
 back 
 s;ed;n;ed;ed;su;ed;ed;#5 n;#5 e;#wa 3000;se;e;n;e;ne;ne;e;ne;e;se;e;#7 n
 
-ÑïÖİ-Ñ©É½Ñªµ¶ÀÏ×æ
+æ‰¬å·-é›ªå±±è¡€åˆ€è€ç¥–
 go 
 #7 s;w;nw;w;sw;w;sw;sw;w;s;w;nw;#wa 2000;#5 w;#5 s;wu;wu;nd;su;wu;wu;su;wu;su;n;su;e;enter
 back 
 out;w;nd;s;nu;ed;nd;ed;ed;ed;n;ed;ed;su;ed;ed;#5 n;#wa 2000;#5 e;se;e;n;e;ne;ne;e;ne;e;se;e;#7 n
 
-ÑïÖİ-ÉÙÁÖËÂÇ°¹ã³¡
+æ‰¬å·-å°‘æ—å¯ºå‰å¹¿åœº
 go 
 n;e;e;give 1 silver to ma fu;ridebj;w;w;n;e;e;e;e;se;se;s;s;s;s;s;s;w;w;#wa 2000;nu;nu;wu;nu;nu;nu;e;eu;nu;nu;nu;n 
 back 
 s;sd;sd;sd;wd;w;sd;sd;sd;ed;sd;sd;e;e;e;#wa 2000;n;n;n;n;n;n;nw;nw;w;w;w;w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s 
 
-ÉÙÁÖËÂÇ°¹ã³¡-½ğ¸Õ·üÄ§È¦
+å°‘æ—å¯ºå‰å¹¿åœº-é‡‘åˆšä¼é­”åœˆ
 go
 e;e;s;e;s;e;n;n;e;w;s
 back
 out;sd;w;e;n;e;s;n;e;w;w;w 
 
-ÑïÖİ-»ªÉ½ÓñÅ®·å
+æ‰¬å·-åå±±ç‰å¥³å³°
 go 
 w;w;w;w;w;w;w;n;n;nw;n;n;n;n;n;n;e;e;e;e;e;se;#wa 2000;su;su;eu;eu;su;eu;eu;su;su;su;su;eu
 back 
 wd;wd;nd;nd;nd;nd;wd;wd;nd;wd;wd;nd;nd;nw;#wa 2000;w;w;w;w;w;s;s;s;s;s;s;se;s;s;e;e;e;e;e;e;e
 
-ÑïÖİ-´óÀíÖĞĞÄ¹ã³¡
+æ‰¬å·-å¤§ç†ä¸­å¿ƒå¹¿åœº
 go 
 s;s;s;s;s;s;s;w;nw;w;sw;w;sw;sw;w;s;sw;sw;sw;sw;s;s;s;s;s;s;s
 back 
 n;n;n;n;n;n;n;ne;ne;ne;ne;n;e;ne;ne;ne;e;ne;e;se;e;n;n;n;n;n;n;n
 
-ÑïÖİ-¹ÅÄ¹
+æ‰¬å·-å¤å¢“
 go 
 #16 w;ne;eu;se;eu;n;#3 nu;#wa 3000;#2 wu;n;w;nw;n;#3 nu;wu;wu;nu;#2 wu;su;eu;#2 sd;s;s;su;#2 sw;s;e;se;qian tan;ci brick;zhan brick;d;n
 back 
 s;tang coffin;niu lock;e;s;s;s;e;out
 
-ÑïÖİ-È«Õæ½Ì
+æ‰¬å·-å…¨çœŸæ•™
 go 
 #16 w;ne;eu;se;eu;n;#wa 2000;#3 nu;#2 wu;nu;nu;n;w;nw;n;#wa 2000;#5 nu;se;eu;su;e;eu
 back 
 w;wd;w;nd;wd;nw;#5 sd;s;#wa 2000;se;e;s;sd;sd;#2 ed;#3 sd;s;#wa 2000;wd;nw;wd;sw;#16 e
 
-ÑïÖİ-ÌúÕÆ¹ã³¡
+æ‰¬å·-é“æŒå¹¿åœº
 go 
 #7 s;w;n;sd;sw;s;sw;sw;w;nw;nu;nu;n;n;nu
 back 
 sd;s;s;sd;sd;se;e;ne;ne;n;ne;nu;s;e;#7 n
 
-ÑïÖİ-¶ğÃ¼ÉñË®âÖ
+æ‰¬å·-å¨¥çœ‰ç¥æ°´åºµ
 go 
 n;e;e;give 1 silver to ma fu;rideem;e;e;su;su;w;sw;w;wu;wu;w;w;wu;wu;wu;wu
 back 
 ed;ed;ed;e;e;ed;ed;e;ne;e;nd;w;w;give 1 silver to ma fu;rideyz;w;w;s
 
-¶ğÃ¼ÉñË®âÖ-¶ğÃ¼½ğ¶¥
+å¨¥çœ‰ç¥æ°´åºµ-å¨¥çœ‰é‡‘é¡¶
 go 
 wu;nw;nw;nu;wu;sw;wu;sw;u;#4 wu;#wa 2000;#3 su;sw;su;se;wu;su;su;enter;s;w;s;e
 back 
 w;n;e;n;out;nd;nd;ed;nw;nd;ne;#3 nd;#wa 2000;#4 ed;d;ne;ed;ne;ed;sd;se;se;ed;ed
 
-ÑïÖİ-ÏÀ¿Íµº
+æ‰¬å·-ä¾ å®¢å²›
 go 
 1. n;e;e;give 1 silver to ma fu;ridefs;n;n;w;s;s;s;s;e;give 5 gold to yu fu;w;w;give e pai to shi zhe;give shan pai to shi zhe
 2. s;s;s;e;se;w;nw;e;s;s;s;#10 su;jump pubu
 3. s;s;e;enter;s;w;s;e;s;w;s;e;s;w;s;e;s;s;enter;w;enter;push pingfeng;s;s;enter
 
-ÑïÖİ-áÔÉ½¾ş¼«ìøÔº
+æ‰¬å·-åµ©å±±å³»æç¦…é™¢
 go
 n;e;e;give 1 silver to ma fu;ridebj;w;w;n;e;e;e;e;se;se;s;s;s;s;s;s;#wa 2000;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ne;nu;nu;nu;nu
 back
 sd;sd;sd;sd;sd;se;sd;se;sd;sd;se;sd;s;s;s;s;e;e;#wa 2000;n;n;n;n;n;n;nw;nw;w;w;w;w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s
 
-ÑïÖİ-Ì©É½ÄÏÌìÃÅ
+æ‰¬å·-æ³°å±±å—å¤©é—¨
 go
 #5 e;ne;n;n;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu
 back 
 sd;sd;sd;sd;sd;sd;wd;sd;sd;sd;s;s;s;sw;#5 w
 
-ÑïÖİ-À¥ÂØ
+æ‰¬å·-æ˜†ä»‘
 go
 w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;nu;#wa 2000;wd;w;w;w;w;w;w;w;n;n;w;wu;w;w;wu;su;w;nw;#wa 2000;w;nu;eu;#3 su;s
 back
 n;#3 nd;wd;sd;e;se;e;nd;ed;e;e;ed;#wa 2000;e;s;s;e;e;e;e;e;e;e;eu;sd;e;e;e;e;e;#wa 2000;se;e;e;e;e;e;e;e;e;e
 
-ÑïÖİ-ÉñÁúµºº£Ì²
+æ‰¬å·-ç¥é¾™å²›æµ·æ»©
 go
-n;e;e;n;e;e;give 1 silver to ma fu;ridebj;w;w;n;e;e;e;e;se;se;s;s;s;s;s;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu
+n;e;e;n;e;e;give 1 silver to ma fu;ridebj;w;w;n;e;e;e;e;se;se;s;s;s;s;s;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu
 back
 w;n;n;n;n;n;nw;nw;w;w;w;w;s;e;e;give 1 silver to ma fu;rideyz;w;w;s
 
-ÑïÖİ-ÔÆÁúÃÅ
+æ‰¬å·-äº‘é¾™é—¨
 go
 n;e;e;give 1 silver to ma fu;ridebj;w;w;n;w;s;w;knock floor 3;enter hole;#3 n;w;n;e;n;n
 back
 n;e;n;e;e;give 1 silver to ma fu;rideyz;w;w;s
 
 
-1.Îäµ±npc:¹ÈĞéµÀ³¤,ËÎÔ¶ÇÅ ,ÒóÀæÍ¤,ÓáÁ«ÖÛ ,ÕÅËÉÏª,ÕÅÈı·á,ÊØÔ°µÀ³¤,ÄªÉù¹È ,Óáá·ÑÒ,ÇåĞéµÀ³¤,ÖÆÏãµÀ³¤,ÕÅ´äÉ½ ,Ğ¡à¶ÂŞ,ÍÁ·Ë,ÍÁ·ËÍ·
-2.Çà³Çnpc: ¼ªÈËÍ¨, ÉêÈË¿¡,ÂŞÈË½Ü,ºéÈËĞÛ ,Óà²×º£,ºîÈËÓ¢ 
-3.ÈªÖİnpc:ÓÎÑ¶,ÒóÀë,³£½ğÅô,Áõ¹úĞù
-4.¼ÎĞËnpc: ÀîÄª³î  
-5.¸£Öİnpc: Ê·ïÚÍ· ,ÁÖÕğÄÏ,½ğµ¶ Íõ·òÈË(Wang furen),Ö£ïÚÍ·,´ŞïÚÍ·,¼ÖÈË´ï ,ÓàÈËÑå ,·½ÈËÖÇ ,ÓÚÈËºÀ ,É³Ìì½­ ,²·³Á
-6. ¶ğÃÄ----£¨ÒÔÇåÒô¸óÎªÆğµã£©
-gc-ÇåÒô¸ó    n;e;e;give 1 silver to ma fu;rideem;give 1 silver to ma fu;rideem;s;d;ne;ed;ne;ed;sd;se
-ÇåÒô¸ó-gc    nw;nu;wu;sw;wu;sw;up;n;give 1 silver to ma fu;rideem;give 1 silver to ma fu;rideyz;w;w;s;
-ÇåÒô¸ó--»ª²ØâÖ  nw;nu;wu;sw;wu;sw;up;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;su;s;enter
-»ª²ØâÖ--ÇåÒô¸ó  out;n;nd;nd;ed;nw;nd;ne;#4 nd;#4 ed;d;ne;ed;ne;ed;sd;se
+1.æ­¦å½“npc:è°·è™šé“é•¿,å®‹è¿œæ¡¥ ,æ®·æ¢¨äº­,ä¿è²èˆŸ ,å¼ æ¾æºª,å¼ ä¸‰ä¸°,å®ˆå›­é“é•¿,è«å£°è°· ,ä¿å²±å²©,æ¸…è™šé“é•¿,åˆ¶é¦™é“é•¿,å¼ ç¿ å±± ,å°å–½ç½—,åœŸåŒª,åœŸåŒªå¤´
+2.é’åŸnpc: å‰äººé€š, ç”³äººä¿Š,ç½—äººæ°,æ´ªäººé›„ ,ä½™æ²§æµ·,ä¾¯äººè‹± 
+3.æ³‰å·npc:æ¸¸è®¯,æ®·ç¦»,å¸¸é‡‘é¹,åˆ˜å›½è½©
+4.å˜‰å…´npc: æè«æ„  
+5.ç¦å·npc: å²é•–å¤´ ,æ—éœ‡å—,é‡‘åˆ€ ç‹å¤«äºº(Wang furen),éƒ‘é•–å¤´,å´”é•–å¤´,è´¾äººè¾¾ ,ä½™äººå½¦ ,æ–¹äººæ™º ,äºäººè±ª ,æ²™å¤©æ±Ÿ ,åœæ²‰
+6. å¨¥åªš----ï¼ˆä»¥æ¸…éŸ³é˜ä¸ºèµ·ç‚¹ï¼‰
+gc-æ¸…éŸ³é˜    n;e;e;give 1 silver to ma fu;rideem;give 1 silver to ma fu;rideem;s;d;ne;ed;ne;ed;sd;se
+æ¸…éŸ³é˜-gc    nw;nu;wu;sw;wu;sw;up;n;give 1 silver to ma fu;rideem;give 1 silver to ma fu;rideyz;w;w;s;
+æ¸…éŸ³é˜--åè—åºµ  nw;nu;wu;sw;wu;sw;up;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;su;s;enter
+åè—åºµ--æ¸…éŸ³é˜  out;n;nd;nd;ed;nw;nd;ne;#4 nd;#4 ed;d;ne;ed;ne;ed;sd;se
  
-¾²Ğş      ÎÔÔÆâÖ              ´Ó»ª²ØâÖ out;s;nd »Øsu;n;enter
-¾²ÏĞ      ÇåÒô¸ó               ¾ÍÊÇµÚÒ»¸öaliasµÄÖÕµã 
-¾²åÈ      ´Ó»ª²ØâÖ             out;nd;nd »Øsu;su;enter
-·½±ÌÁÕ    ÓñÅ®·å               ´ÓÇåÒô¸ó se;ed;ed;ed;su »Ønd;wu;wu;wu;nw
-¾²»Û      Ç§·ğâÖ               ´ÓÇåÒô¸ó sw;s;s;enter »Øout;n;n;ne
-¾²Ğé      »ª²ØâÖ¹ã³¡           ´Ó»ª²ØâÖ s »Øn
-ËÕÃÎÇå    Á«»¨Ê¯               ´ÓÇåÒô¸ó nw;nu;wu;sw;wu;sw;u;wu »Øed;d;ne;ed;ne;ed;sd;se
-ÕÔÁéÖé    Á«»¨Ê¯               ´ÓÇåÒô¸ó nw;nu;wu;sw;wu;sw;u;wu »Øed;d;ne;ed;ne;ed;sd;se 
-ÀîÃ÷Ï¼    »ªÑÏ¶¥               ´ÓÇåÒô¸ó nw;nu;wu;sw;wu;sw;u »Ød;ne;ed;ne;ed;sd;se
-¾²ÕÕ      ÁéÎÄ¸ó               ´ÓÇåÒô¸ó se;ed;s;enter»Ø out;n;wu;nw
-¾²Õæ      ¸£ÊÙâÖ               ´ÓÇåÒô¸ó se;ed;s »Øn;wu;nw
-¾²¿Õ      ÍòÄêâÖ               ´ÓÇåÒô¸ó nw;nu;enter »Øout;sd;se
-¾²·ç      ´¢Îï¼ä               ´Ó»ª²ØâÖ s;su;e;s »Øn;w;nd;n
-¾²µÀ      ²Ø¾­¸ó               ´Ó»ª²ØâÖ s;su;e;s;u »Ød;n;w;nd;n
-¾²ĞÄ      »ª²ØâÖ               µÚ¶ş¸öaliasµÄÖÕµã
-±´½õÒÇ    ´ÓÇåÒô¸ó            nw;nu;wu;sw;wu;sw;u;#4 wu;#3 su;sw;su;se;wu;su;sw;su
-               »Ø                       nd;ne;nd;ed;nw;nd;ne;#3 nd;#4 ed;d;ne;ed;ne;ed;sd;se
+é™ç„      å§äº‘åºµ              ä»åè—åºµ out;s;nd å›su;n;enter
+é™é—²      æ¸…éŸ³é˜               å°±æ˜¯ç¬¬ä¸€ä¸ªaliasçš„ç»ˆç‚¹ 
+é™è¿¦      ä»åè—åºµ             out;nd;nd å›su;su;enter
+æ–¹ç¢§ç³    ç‰å¥³å³°               ä»æ¸…éŸ³é˜ se;ed;ed;ed;su å›nd;wu;wu;wu;nw
+é™æ…§      åƒä½›åºµ               ä»æ¸…éŸ³é˜ sw;s;s;enter å›out;n;n;ne
+é™è™š      åè—åºµå¹¿åœº           ä»åè—åºµ s å›n
+è‹æ¢¦æ¸…    è²èŠ±çŸ³               ä»æ¸…éŸ³é˜ nw;nu;wu;sw;wu;sw;u;wu å›ed;d;ne;ed;ne;ed;sd;se
+èµµçµç     è²èŠ±çŸ³               ä»æ¸…éŸ³é˜ nw;nu;wu;sw;wu;sw;u;wu å›ed;d;ne;ed;ne;ed;sd;se 
+ææ˜éœ    åä¸¥é¡¶               ä»æ¸…éŸ³é˜ nw;nu;wu;sw;wu;sw;u å›d;ne;ed;ne;ed;sd;se
+é™ç…§      çµæ–‡é˜               ä»æ¸…éŸ³é˜ se;ed;s;enterå› out;n;wu;nw
+é™çœŸ      ç¦å¯¿åºµ               ä»æ¸…éŸ³é˜ se;ed;s å›n;wu;nw
+é™ç©º      ä¸‡å¹´åºµ               ä»æ¸…éŸ³é˜ nw;nu;enter å›out;sd;se
+é™é£      å‚¨ç‰©é—´               ä»åè—åºµ s;su;e;s å›n;w;nd;n
+é™é“      è—ç»é˜               ä»åè—åºµ s;su;e;s;u å›d;n;w;nd;n
+é™å¿ƒ      åè—åºµ               ç¬¬äºŒä¸ªaliasçš„ç»ˆç‚¹
+è´é”¦ä»ª    ä»æ¸…éŸ³é˜            nw;nu;wu;sw;wu;sw;u;#4 wu;#3 su;sw;su;se;wu;su;sw;su
+               å›                       nd;ne;nd;ed;nw;nd;ne;#3 nd;#4 ed;d;ne;ed;ne;ed;sd;se
  
 
-7.ÉÙÁÖnpc:Ğş¿à,ĞşÄÑ,³Î¹Û,³ÎĞÄ,³ÎÖª,³ÎÒâ,³ÎÃ÷,³ÎË¼,³Î¾»,³ÎÊ¶,³Î¼á,³ÎÖ¾,³ÎĞĞ,³ÎĞÅ,³Î¼Å,³ÎÁé,³ÎÃğ,³ÎÓû,³ÎºÍ,³ÎÉĞ,»ÛºÏ,»ÛÉ«,»ÛĞé,»Û¹â,»Û½à,»ÛÈç,»Û¿Õ,Çå·¨, ÇåÎŞ±ÈÇğ, ÇåÎª±ÈÇğ,
+7.å°‘æ—npc:ç„è‹¦,ç„éš¾,æ¾„è§‚,æ¾„å¿ƒ,æ¾„çŸ¥,æ¾„æ„,æ¾„æ˜,æ¾„æ€,æ¾„å‡€,æ¾„è¯†,æ¾„åš,æ¾„å¿—,æ¾„è¡Œ,æ¾„ä¿¡,æ¾„å¯‚,æ¾„çµ,æ¾„ç­,æ¾„æ¬²,æ¾„å’Œ,æ¾„å°š,æ…§åˆ,æ…§è‰²,æ…§è™š,æ…§å…‰,æ…§æ´,æ…§å¦‚,æ…§ç©º,æ¸…æ³•, æ¸…æ— æ¯”ä¸˜, æ¸…ä¸ºæ¯”ä¸˜,
 
-8.Ã÷½Ìnpc:ÒóÒ°Íõ,ĞÁÈ»,Ëµ²»µÃ,ÖÜµß,ÅíÓ¨Óñ,ÍØ°Ï,ÒóÎŞ¸£,ÒóÎŞÂ»,ÀîÌìÔ«,ÒóÎŞÊÙ,ÕÅÖĞ,ÀäÇ«,Ğ»Ñ·,ÑîåĞ,ÕÅÎŞ¼É,·¶Ò£,ÒóÌìÕı,Î¤Ò»Ğ¦,ºúÇàÅ£,×¯ï£
+8.æ˜æ•™npc:æ®·é‡ç‹,è¾›ç„¶,è¯´ä¸å¾—,å‘¨é¢ ,å½­è¹ç‰,æ‹“è·‹,æ®·æ— ç¦,æ®·æ— ç¦„,æå¤©å£,æ®·æ— å¯¿,å¼ ä¸­,å†·è°¦,è°¢é€Š,æ¨é€,å¼ æ— å¿Œ,èŒƒé¥,æ®·å¤©æ­£,éŸ¦ä¸€ç¬‘,èƒ¡é’ç‰›,åº„é“®
 
-9.»ªÉ½npc:ÀÍµÂÅµ,ÔÀÁéÉº,ÔÀ²»Èº,Â½´óÓĞ,ÔÀ·òÈË,Ê©´÷×Ó,°«ÀÏÕß,¸ßÀÏÕß,Áîºü³å, ·çÇåÑï,
+9.åå±±npc:åŠ³å¾·è¯º,å²³çµçŠ,å²³ä¸ç¾¤,é™†å¤§æœ‰,å²³å¤«äºº,æ–½æˆ´å­,çŸ®è€è€…,é«˜è€è€…,ä»¤ç‹å†², é£æ¸…æ‰¬,
 
-10.ºâÉ½npc:Â³Á¬ÈÙ,Äª´ó,
+10.è¡¡å±±npc:é²è¿è£,è«å¤§,
 
-11.áÔÉ½npc:ÀÖºñ,¶¡Ãã,ÖÓÕò,µË°ËÄê,¸ß¿ËĞÂ,·Ñ±ò,Â½°Ø,ÌÀÓ¢ğÀ,Íò´óÆ½,×óÀäìø,Ê·µÇ´ï, µÒĞŞ,
-
-
-12.ºãÉ½npc:¶¨¾²Ê¦Ì«,ÒÇÎÄ,ÒÇÖÊ,ÒÇºÍ,ÒÇÇå,¶¨ÒİÊ¦Ì«,ÇØ¾î,Ö£İà,¶¨ÏĞÊ¦Ì«,
+11.åµ©å±±npc:ä¹åš,ä¸å‹‰,é’Ÿé•‡,é‚“å…«å¹´,é«˜å…‹æ–°,è´¹å½¬,é™†æŸ,æ±¤è‹±é¹„,ä¸‡å¤§å¹³,å·¦å†·ç¦…,å²ç™»è¾¾, ç‹„ä¿®,
 
 
-13.Ì©É½npc:µ¥Õı,ÌìÒÒµÀÈË,ÌìËÉµÀÈË,Ìì°ØµÀÈË,³Ù°Ù³Ç,½¨³ıµÀÈË,½­°ÙÊ¤,Óñçá×Ó,ÓñÒô×Ó,Óñíà×Ó,ÌìÃÅµÀÈË,
+12.æ’å±±npc:å®šé™å¸ˆå¤ª,ä»ªæ–‡,ä»ªè´¨,ä»ªå’Œ,ä»ªæ¸…,å®šé€¸å¸ˆå¤ª,ç§¦ç»¢,éƒ‘è¼,å®šé—²å¸ˆå¤ª,
+
+
+13.æ³°å±±npc:å•æ­£,å¤©ä¹™é“äºº,å¤©æ¾é“äºº,å¤©æŸé“äºº,è¿Ÿç™¾åŸ,å»ºé™¤é“äºº,æ±Ÿç™¾èƒœ,ç‰ç‘å­,ç‰éŸ³å­,ç‰ç£¬å­,å¤©é—¨é“äºº,
 ,  
-14.ÌìÁúËÂnpc: ±¾Òò,±¾²Î,¿İÈÙ´óÊ¦,±¾³¾,±¾Ïà,±¾¹Û,
-15.ÁéğÕnpc:¾ÅÒíµÀÈË,ÓàÆÅÆÅ,Ã·½£,À¼½£,ĞéÖñ,ÌìÉ½Í¯ÀÑ
-16.À¥ÂØnpc: ½¯ÌÎ, ¸ßÔò³É,Î÷»ª×Ó,°àÊçæµ,ºÎÌ«³å,ºÎ×ãµÀ,
-17.ÌÒ»¨µºnpc:·ëÄ¬·ç,»ÆÒ©Ê¦,ÇúÁé·ç,Ã·³¬·ç, »ÆÈØ, ³ÌÓ¢,ÖÜ²®Í¨,
-18.¹éÔÆ×¯npc:º«±¦¾Ô,º«Ğ¡Ó¨,ÄÏÏ£ÈÊ,ÕÅ°¢Éú,¿ÂÕò¶ñ,È«½ğ·¢,Öì´Ï, Â½³Ë·ç,
-19.ÉñÁúµºnpc:ĞíÑ©Í¤,Â½¸ßĞù,ÎŞ¸ùµÀ³¤,ºé°²Í¨, ËÕÜõ, ÔÆËØÃ·,ÕÅµ­ÔÂ,Òó½õ, ·½âù,ãå½£ÆÁ,
-20.°×ÍÕÉ½npc:Å·Ñô·æ,»¨»¨¹«×Ó,Ğ¡É½Ôô,É½Ôô,É½ÔôÍ·,
-21.ĞÇËŞÅÉnpc:ÕªĞÇ×Ó,Ê¨ºğ×Ó,°¢×Ï,³ö³¾×Ó,²É»¨×Ó,¶¡´ºÇï
-22.´óÀí³Çnpc:ÎŞÁ¿½£µÜ×Ó,ÉñÅ©°ïµÜ×Ó,ÆÆàÁ,ÆÆÒÉ,
-23.±±¾©npc:°×¹êÊÙ, ÕÂÀÏÈı,×¯·òÈË,Ë«¶ù,ÎèÉßÈË,
-24.ÈÕÔÂ½Ìnpc:Íõ³Ï,»Æ²®Á÷,·¶ËÉ,ÕÔº×,ÕÅ³ËÔÆ,ÕÅ³Ë·ç, ¼Ö²¼,É£ÈıÄï, ÉÏ¹ÙÔÆ, ÈÎÓ¯Ó¯,
-25.ÑïÖİnpc:Ğ¡»ì»ì,¶ÎÓş,ÍĞ²§É®,¿Õ¿Õ¶ù,Ã©Ê®°Ë, Ê·ËÉ, º£¹«¹«,Ğ¡¹ğ×Ó,·â¹­Ó°,
-[33m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[2;37;0m
+14.å¤©é¾™å¯ºnpc: æœ¬å› ,æœ¬å‚,æ¯è£å¤§å¸ˆ,æœ¬å°˜,æœ¬ç›¸,æœ¬è§‚,
+15.çµé¹«npc:ä¹ç¿¼é“äºº,ä½™å©†å©†,æ¢…å‰‘,å…°å‰‘,è™šç«¹,å¤©å±±ç«¥å§¥
+16.æ˜†ä»‘npc: è’‹æ¶›, é«˜åˆ™æˆ,è¥¿åå­,ç­æ·‘å¨´,ä½•å¤ªå†²,ä½•è¶³é“,
+17.æ¡ƒèŠ±å²›npc:å†¯é»˜é£,é»„è¯å¸ˆ,æ›²çµé£,æ¢…è¶…é£, é»„è“‰, ç¨‹è‹±,å‘¨ä¼¯é€š,
+18.å½’äº‘åº„npc:éŸ©å®é©¹,éŸ©å°è¹,å—å¸Œä»,å¼ é˜¿ç”Ÿ,æŸ¯é•‡æ¶,å…¨é‡‘å‘,æœ±èª, é™†ä¹˜é£,
+19.ç¥é¾™å²›npc:è®¸é›ªäº­,é™†é«˜è½©,æ— æ ¹é“é•¿,æ´ªå®‰é€š, è‹èƒ, äº‘ç´ æ¢…,å¼ æ·¡æœˆ,æ®·é”¦, æ–¹æ€¡,æ²å‰‘å±,
+20.ç™½é©¼å±±npc:æ¬§é˜³é”‹,èŠ±èŠ±å…¬å­,å°å±±è´¼,å±±è´¼,å±±è´¼å¤´,
+21.æ˜Ÿå®¿æ´¾npc:æ‘˜æ˜Ÿå­,ç‹®å¼å­,é˜¿ç´«,å‡ºå°˜å­,é‡‡èŠ±å­,ä¸æ˜¥ç§‹
+22.å¤§ç†åŸnpc:æ— é‡å‰‘å¼Ÿå­,ç¥å†œå¸®å¼Ÿå­,ç ´å—”,ç ´ç–‘,
+23.åŒ—äº¬npc:ç™½é¾Ÿå¯¿, ç« è€ä¸‰,åº„å¤«äºº,åŒå„¿,èˆè›‡äºº,
+24.æ—¥æœˆæ•™npc:ç‹è¯š,é»„ä¼¯æµ,èŒƒæ¾,èµµé¹¤,å¼ ä¹˜äº‘,å¼ ä¹˜é£, è´¾å¸ƒ,æ¡‘ä¸‰å¨˜, ä¸Šå®˜äº‘, ä»»ç›ˆç›ˆ,
+25.æ‰¬å·npc:å°æ··æ··,æ®µèª‰,æ‰˜é’µåƒ§,ç©ºç©ºå„¿,èŒ…åå…«, å²æ¾, æµ·å…¬å…¬,å°æ¡‚å­,å°å¼“å½±,
+[33mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[2;37;0m

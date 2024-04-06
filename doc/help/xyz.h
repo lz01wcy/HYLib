@@ -1,2 +1,2 @@
-»·¾³±äÁ¿µÄÉèÖÃ==@==/doc/help/settings
-Î×Ê¦±äÁ¿µÄÉèÖÃ==@==/doc/help/wizsettings
+ç¯å¢ƒå˜é‡çš„è®¾ç½®==@==/doc/help/settings
+å·«å¸ˆå˜é‡çš„è®¾ç½®==@==/doc/help/wizsettings

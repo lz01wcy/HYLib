@@ -1,13 +1,13 @@
-¾ÅÒõÕæ¾­ËÙ³É¾íÄÃ·¨ÌáÊ¾ ×÷Õß£ºsos 
+ä¹é˜´çœŸç»é€Ÿæˆå·æ‹¿æ³•æç¤º ä½œè€…ï¼šsos 
 
-ÏÈÕÒµ½sky swordºÍtulong blade
-µ½Ãğ¾øÊ¦Ì«ÄÇÀï
-ask shitai about ¹ù¾¸
-ask shitai about ÖÜÜÆÈô
-ÔÙÕÒÖÜÜÆÈô
-ask zhou about ÕÅÎŞ¼É
-ask zhou about ¹â´ó¶ğÃ¼
-ÔÙ»ØshitaiÄÇÀï
-ask shitai about ÒĞÌìÍÀÁú
+å…ˆæ‰¾åˆ°sky swordå’Œtulong blade
+åˆ°ç­ç»å¸ˆå¤ªé‚£é‡Œ
+ask shitai about éƒ­é–
+ask shitai about å‘¨èŠ·è‹¥
+å†æ‰¾å‘¨èŠ·è‹¥
+ask zhou about å¼ æ— å¿Œ
+ask zhou about å…‰å¤§å¨¥çœ‰
+å†å›shitaié‚£é‡Œ
+ask shitai about å€šå¤©å± é¾™
 qishi;nod;huzhou
 ok le  

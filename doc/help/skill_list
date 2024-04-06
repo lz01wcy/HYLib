@@ -1,338 +1,338 @@
 
-              ¸÷ÅÉÎä¹¦¼°¾øÕĞ½éÉÜ
+              å„æ´¾æ­¦åŠŸåŠç»æ‹›ä»‹ç»
               ==================
 
-anranxiaohun-zhang  ÷öÈ»Ïû»êÕÆ
-	anranxiaohun-÷öÈ»Ïû»ê
-anying-fuxiang      °µÓ°¸¡Ïã£¬ÌÒ»¨Çá¹¦
-	taohaimangmang  ÌÒº£Ã£Ã£
-array               »ù±¾Õó·¨
-bahuang-gong        °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦£¬ÁéğÕÄÚ¹¦       
-        heal-×ÔÎÒÁÆÉË     powerup-¹¥»÷Á¦±¶Ôö   
-banruo-zhang        °ãÈôÕÆ
-begging             Ø¤°ïÆòÌÖ£¬Ø¤°ï
-beiming-shengong    ±±Ú¤Éñ¹¦£¬åĞÒ£ÄÚ¹¦
-        heal-×ÔÎÒÁÆÉË   maxsuck-ÎüÈ¡µ¤Ôª    neilisuck -ÎüÈ¡ÄÚÁ¦   shield-»¤ÌåÉñ¹¦
-bibo-shengong       ±Ì²¨Éñ¹¦£¬ÌÒ»¨ÄÚ¹¦ 
-        heal-×ÔÎÒÁÆÉË   powerup-¹¥»÷Á¦±¶Ôö  roar-±Ìº£Éú³±Çú
-biye-wu		±ÌÒ¶Ëæ·çÎè
-	 huimeng 	»ØÃÎ
-biyun-xinfa         ±ÌÔÆĞÄ·¨
+anranxiaohun-zhang  é»¯ç„¶æ¶ˆé­‚æŒ
+	anranxiaohun-é»¯ç„¶æ¶ˆé­‚
+anying-fuxiang      æš—å½±æµ®é¦™ï¼Œæ¡ƒèŠ±è½»åŠŸ
+	taohaimangmang  æ¡ƒæµ·èŒ«èŒ«
+array               åŸºæœ¬é˜µæ³•
+bahuang-gong        å…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠåŠŸï¼Œçµé¹«å†…åŠŸ       
+        heal-è‡ªæˆ‘ç–—ä¼¤     powerup-æ”»å‡»åŠ›å€å¢   
+banruo-zhang        èˆ¬è‹¥æŒ
+begging             ä¸å¸®ä¹è®¨ï¼Œä¸å¸®
+beiming-shengong    åŒ—å†¥ç¥åŠŸï¼Œé€é¥å†…åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤   maxsuck-å¸å–ä¸¹å…ƒ    neilisuck -å¸å–å†…åŠ›   shield-æŠ¤ä½“ç¥åŠŸ
+bibo-shengong       ç¢§æ³¢ç¥åŠŸï¼Œæ¡ƒèŠ±å†…åŠŸ 
+        heal-è‡ªæˆ‘ç–—ä¼¤   powerup-æ”»å‡»åŠ›å€å¢  roar-ç¢§æµ·ç”Ÿæ½®æ›²
+biye-wu		ç¢§å¶éšé£èˆ
+	 huimeng 	å›æ¢¦
+biyun-xinfa         ç¢§äº‘å¿ƒæ³•
 	 heal,jingheal,lifeheal,powerup
-blade               »ù±¾µ¶·¨
-buddhism            ìø×ÚĞÄ·¨
-chanchu-bufa        ó¸òÜ²½·¨£¬°×ÍÕÇá¹¦
-checking            µÀÌıÍ¾Ëµ£¬Ø¤°ï
-chousui-zhang       ³éËèÕÆ
-        throw -Ê©¶¾
-chuanyun-tui	      ´©ÔÆÍÈ
-	 shuangjue   ÍÈÕÆË«¾ø
-cibei-dao           ´È±¯µ¶·¨
-claw                »ù±¾×¦·¨
-club                »ù±¾¹÷·¨
-cuff                »ù±¾È­·¨
-dagger              »ù±¾¶Ì±ø
-dagou-bang          ´ò¹·°ô·¨
-        chan-²ø×Ö¾÷
-damo-jian           ´ïÄ¦½£·¨
-        sanjue-´ïÄ¦Èı¾ø½£
-dashou-yin          ÃÜ×Ú´óÊÖÓ¡
-dodge               »ù±¾Çá¹¦
-douzhuanxinyi       ¶·×ªĞÇÒÆ
-	 xingyi	ĞÇÒÆ¶·×ª
-duanjia-sword       ¶Î¼Ò½£
-        jingtian-¾ªÌìÒ»»÷
-duanyun-fu		¶ÏÔÆ¸«
-	 duan		¶ÏÔÆÕ¶
-	 hongtianza	ºäÌìÔÒ
-fanliangyi-dao      ·´Á½ÒÇµ¶·¨
-        sanshen-»ªÔÀÈıÉñ·å
-feifeng-whip        ·É·ï±Ş·¨
-feixing-shu		·ÉĞĞÊõ
-	 huayu	      ÂúÌì»¨Óê
-feiyan-huixiang     ·ÉÑà»ØÏè£¬»ªÉ½Çá¹¦
-	 huiyanfeiwu  »ØÑà·ÉÎè
-fengyun-shou        ·çÔÆÊÖ·¨
-finger              »ù±¾Ö¸·¨
-five-avoid		ÎåĞĞ¶İÊõ
-	 break		Îå¶İ¾øÉ±
-guiyuan-tunafa     ¹éÔªÍÂÄÉ·¨
+blade               åŸºæœ¬åˆ€æ³•
+buddhism            ç¦…å®—å¿ƒæ³•
+chanchu-bufa        èŸ¾èœæ­¥æ³•ï¼Œç™½é©¼è½»åŠŸ
+checking            é“å¬é€”è¯´ï¼Œä¸å¸®
+chousui-zhang       æŠ½é«“æŒ
+        throw -æ–½æ¯’
+chuanyun-tui	      ç©¿äº‘è…¿
+	 shuangjue   è…¿æŒåŒç»
+cibei-dao           æ…ˆæ‚²åˆ€æ³•
+claw                åŸºæœ¬çˆªæ³•
+club                åŸºæœ¬æ£æ³•
+cuff                åŸºæœ¬æ‹³æ³•
+dagger              åŸºæœ¬çŸ­å…µ
+dagou-bang          æ‰“ç‹—æ£’æ³•
+        chan-ç¼ å­—è¯€
+damo-jian           è¾¾æ‘©å‰‘æ³•
+        sanjue-è¾¾æ‘©ä¸‰ç»å‰‘
+dashou-yin          å¯†å®—å¤§æ‰‹å°
+dodge               åŸºæœ¬è½»åŠŸ
+douzhuanxinyi       æ–—è½¬æ˜Ÿç§»
+	 xingyi	æ˜Ÿç§»æ–—è½¬
+duanjia-sword       æ®µå®¶å‰‘
+        jingtian-æƒŠå¤©ä¸€å‡»
+duanyun-fu		æ–­äº‘æ–§
+	 duan		æ–­äº‘æ–©
+	 hongtianza	è½°å¤©ç ¸
+fanliangyi-dao      åä¸¤ä»ªåˆ€æ³•
+        sanshen-åå²³ä¸‰ç¥å³°
+feifeng-whip        é£å‡¤é­æ³•
+feixing-shu		é£è¡Œæœ¯
+	 huayu	      æ»¡å¤©èŠ±é›¨
+feiyan-huixiang     é£ç‡•å›ç¿”ï¼Œåå±±è½»åŠŸ
+	 huiyanfeiwu  å›ç‡•é£èˆ
+fengyun-shou        é£äº‘æ‰‹æ³•
+finger              åŸºæœ¬æŒ‡æ³•
+five-avoid		äº”è¡Œéæœ¯
+	 break		äº”éç»æ€
+guiyuan-tunafa     å½’å…ƒåçº³æ³•
 	 heal
-force               »ù±¾ÄÚ¹¦
-        recover-»Ö¸´Æø    regenerate-»Ö¸´¾«   transfer-ÄÚÁ¦´«ËÍ
-fumo-jian           ·üÄ§½£
-hamagong            ¸òó¡¹¦
-        heal-×ÔÎÒÁÆÉË     powerup-¹¥»÷Á¦±¶Ôö  qudu-Çı¶¾  reserve-¾­Âöµ¹×ª
-hammer              »ù±¾´¸·¨
-hanbing-mianzhang   º®±ùÃàÕÆ
-        xixueqingfu-ÎüÑªÇàòğ
-hand                »ù±¾ÊÖ·¨
-hanxing-bada        º®ĞÇ°Ë´ò
-        lastrisk-¹Â×¢Ò»ÖÀ
-haotian-zhang       ê»ÌìÕÆ
-        ju-Èı»¨¾Û¶¥
-houquan             ºïÈ­
-        zhen-ºïÈ­¡¸Õğ¡¹×Ö¾÷
-huagong-dafa        »¯¹¦´ó·¨£¬ĞÇËŞÄÚ¹¦
-        jinglisuck-ÎüÈ¡¾«Á¦  maxsuck-ÎüÈ¡µ¤Ôª    qisuck-ÎüÈ¡Æø 
-        jingsuck-ÎüÈ¡¾«      neilisuck-ÎüÈ¡ÄÚÁ¦  powerup-¹¥»÷Á¦±¶Ôö
-huaggu-mianzhang    »¯¹ÇÃàÕÆ
-        hua-À±ÊÖ»¯¹Ç
-huashan-ken         »ªÉ½È­·¨
-huashan-sword       »ªÉ½½£·¨
-        jianzhang-½£ÕÆÎåÁ¬»·     feilong-ÌìÍâ·ÉÁú
-huashan-zhangfa     »ªÉ½ÕÆ·¨
-hubo                Ë«ÊÖ»¥²©
-huifeng-jian        »Ø·ç·÷Áø½£·¨
-        mie-Ãğ½£
-hujia-daofa         ºú¼Òµ¶·¨
-huntian-qigong      »ìÌìÆø¹¦£¬Ø¤°ïÄÚ¹¦
-        lifeheal-ÁÆÖÎËûÈË powerup-¹¥»÷Á¦±¶Ôö  shengang-»ìÌìÉñî¸
-hunyuan-yiqi        »ìÔªÒ»Æø£¬ÉÙÁÖÄÚ¹¦
-        heal-×ÔÎÒÁÆÉË     lifeheal-ÁÆÖÎËûÈË   roar-·ğÃÅÊ¨×Óºğ  jingheal
-hunyuan-zhang       »ìÔªÕÆ·¨
-        wuji-»ìÔªÎŞ¼«
-huoyan-dao          »ğÑæµ¶·¨
-        fen-·ÙĞÄÒÔ»ğ
-jinding-zhang       ½ğ¶¥ÃàÕÆ
-        bashi-°ËÊ½ºÏÒ»
-jingang-quan        ´ó½ğ¸ÕÈ­
-        jingang-´ó½ğ¸ÕÉñÍ¨
-jinshe-jian         ½ğÉß½£·¨
-        suo-Ëø½£¾÷
-jinshe-zhang        ½ğÉßÓÎÉíÕÆ
-        fugu-¸½¹Ç²øÉí
-jinshe-jian         ½ğÉß×¶·¨
-        tuwu-½ğÉßÍÂÎí
-jinwu-daofa         ½ğÎÚµ¶·¨
-jinyan-gong         ½ğÑã¹¦£¬È«ÕæÇá¹¦
-jinyu-quan          ½ğÓñÈ­
-jiuyang-shengong    ¾ÅÑôÉñ¹¦
-        jingheal          powerup-¹¥»÷Á¦±¶Ôö    roar-·ğÃÅÊ¨×Óºğ
-jiuyin-zhua		¾ÅÒõ°×¹Ç×¦
-	zhua		Íö»êÒ»»÷
-juehu-shou		ÈıÒõ¾ø»§ÊÖ
-	juehu		¾ø»§
-juemen-gun          ¾øÃÅ¹÷
-kuangfeng-blade	¿ñ·çµ¶·¨
-	 kuang       ¿ñ·ç¶şÊ®Ò»Ê½
-kuangfeng-jian      ¿ñ·ç¿ì½£
-	 kuanglong     ÌìÍâ¿ñÁú
-kuihua-xinfa        ¿û»¨ĞÄ·¨
-        heal-×ÔÎÒÁÆÉË lifeheal roar powerup
-kunlun-zhang		À¥ÂØÕÆ
-	 diezhang    µşÕÆ
-kurong-changong     ¿İÈÙìø¹¦
-        heal-×ÔÎÒÁÆÉË     powerup-¹¥»÷Á¦±¶Ôö  
-lamaism             ÃÜ×ÚĞÄ·¨
-lanhua-shou         À¼»¨·÷Ñ¨ÊÖ
-        fuxue-À¼»¨·÷Ñ¨
-liangyi-jian        Á½ÒÇ½£·¨
-        ren-ÌìµØÍ¬ÈÊ  hebi-ºÏ±Ú
-lingboweibu         Áè²¨Î¢²½£¬åĞÒ£Çá¹¦
-        lingbo-ÂåÉñÁè²¨
-lingshe-zhangfa     ÁéÉßÕÈ·¨
-        shoot-Åç¶¾
-	 saoluoye-¿ñ·çÉ¨ÂäÒ¶
-linji-zhuang        ÁÙ¼ÃÊ®¶ş×¯£¬¶ëáÒÄÚ¹¦
-        lifeheal-ÁÆÖÎËûÈË powerup
-lingyuan-xinfa      ÁéÔªĞÄ·¨
-	 heal  break-ÒÔÈáÆÆ¸Ö  lifeheal
-literate  ¶ÁÊéĞ´×Ö
-liumai-shenjian     ÁùÂöÉñ½£
-	 liumaijingshen  ÁùÂö¾ªÉñ
-liuyang-zhang       ÌìÉ½ÁùÑôÕÆ
-        zhong-ÖÖÉúËÀ·û
-	 jie-½âÉúËÀ·û
-lonely-sword        ¶À¹Â¾Å½£
-        po-×Ü¾÷Ê½         pojian-ÆÆ½£Ê½        podao-ÆÆµ¶Ê½
-        poqiang-ÆÆÇ¹Ê½    pobian-ÆÆ±ŞÊ½        posuo-ÆÆË÷Ê½
-        poanqi-ÆÆ¼ıÊ½     pozhang-ÆÆÕÆÊ½       poqi-ÆÆÆøÊ½ 
-longxiang           ÁúÏó°ãÈô¹¦£¬Ñ©É½ÄÚ¹¦
-        fanchang-èó³ª     powerup-¹¥»÷Á¦±¶Ôö heal lifeheal
-longzhua-gong       Áú×¦¹¦
-luohan-quan         ÂŞººÈ­
-luoying-shenjian    ÂäÓ¢Éñ½£
-luoying-shenzhang   ÂäÓ¢ÉñÕÆ
-	 xuan        Ğş×Ö¾÷
-luoying-xinfa		ÂäÓ¢ĞÄ·¨
+force               åŸºæœ¬å†…åŠŸ
+        recover-æ¢å¤æ°”    regenerate-æ¢å¤ç²¾   transfer-å†…åŠ›ä¼ é€
+fumo-jian           ä¼é­”å‰‘
+hamagong            è›¤èŸ†åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤     powerup-æ”»å‡»åŠ›å€å¢  qudu-é©±æ¯’  reserve-ç»è„‰å€’è½¬
+hammer              åŸºæœ¬é”¤æ³•
+hanbing-mianzhang   å¯’å†°ç»µæŒ
+        xixueqingfu-å¸è¡€é’è 
+hand                åŸºæœ¬æ‰‹æ³•
+hanxing-bada        å¯’æ˜Ÿå…«æ‰“
+        lastrisk-å­¤æ³¨ä¸€æ·
+haotian-zhang       æ˜Šå¤©æŒ
+        ju-ä¸‰èŠ±èšé¡¶
+houquan             çŒ´æ‹³
+        zhen-çŒ´æ‹³ã€Œéœ‡ã€å­—è¯€
+huagong-dafa        åŒ–åŠŸå¤§æ³•ï¼Œæ˜Ÿå®¿å†…åŠŸ
+        jinglisuck-å¸å–ç²¾åŠ›  maxsuck-å¸å–ä¸¹å…ƒ    qisuck-å¸å–æ°” 
+        jingsuck-å¸å–ç²¾      neilisuck-å¸å–å†…åŠ›  powerup-æ”»å‡»åŠ›å€å¢
+huaggu-mianzhang    åŒ–éª¨ç»µæŒ
+        hua-è¾£æ‰‹åŒ–éª¨
+huashan-ken         åå±±æ‹³æ³•
+huashan-sword       åå±±å‰‘æ³•
+        jianzhang-å‰‘æŒäº”è¿ç¯     feilong-å¤©å¤–é£é¾™
+huashan-zhangfa     åå±±æŒæ³•
+hubo                åŒæ‰‹äº’åš
+huifeng-jian        å›é£æ‹‚æŸ³å‰‘æ³•
+        mie-ç­å‰‘
+hujia-daofa         èƒ¡å®¶åˆ€æ³•
+huntian-qigong      æ··å¤©æ°”åŠŸï¼Œä¸å¸®å†…åŠŸ
+        lifeheal-ç–—æ²»ä»–äºº powerup-æ”»å‡»åŠ›å€å¢  shengang-æ··å¤©ç¥ç½¡
+hunyuan-yiqi        æ··å…ƒä¸€æ°”ï¼Œå°‘æ—å†…åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤     lifeheal-ç–—æ²»ä»–äºº   roar-ä½›é—¨ç‹®å­å¼  jingheal
+hunyuan-zhang       æ··å…ƒæŒæ³•
+        wuji-æ··å…ƒæ— æ
+huoyan-dao          ç«ç„°åˆ€æ³•
+        fen-ç„šå¿ƒä»¥ç«
+jinding-zhang       é‡‘é¡¶ç»µæŒ
+        bashi-å…«å¼åˆä¸€
+jingang-quan        å¤§é‡‘åˆšæ‹³
+        jingang-å¤§é‡‘åˆšç¥é€š
+jinshe-jian         é‡‘è›‡å‰‘æ³•
+        suo-é”å‰‘è¯€
+jinshe-zhang        é‡‘è›‡æ¸¸èº«æŒ
+        fugu-é™„éª¨ç¼ èº«
+jinshe-jian         é‡‘è›‡é”¥æ³•
+        tuwu-é‡‘è›‡åé›¾
+jinwu-daofa         é‡‘ä¹Œåˆ€æ³•
+jinyan-gong         é‡‘é›åŠŸï¼Œå…¨çœŸè½»åŠŸ
+jinyu-quan          é‡‘ç‰æ‹³
+jiuyang-shengong    ä¹é˜³ç¥åŠŸ
+        jingheal          powerup-æ”»å‡»åŠ›å€å¢    roar-ä½›é—¨ç‹®å­å¼
+jiuyin-zhua		ä¹é˜´ç™½éª¨çˆª
+	zhua		äº¡é­‚ä¸€å‡»
+juehu-shou		ä¸‰é˜´ç»æˆ·æ‰‹
+	juehu		ç»æˆ·
+juemen-gun          ç»é—¨æ£
+kuangfeng-blade	ç‹‚é£åˆ€æ³•
+	 kuang       ç‹‚é£äºŒåä¸€å¼
+kuangfeng-jian      ç‹‚é£å¿«å‰‘
+	 kuanglong     å¤©å¤–ç‹‚é¾™
+kuihua-xinfa        è‘µèŠ±å¿ƒæ³•
+        heal-è‡ªæˆ‘ç–—ä¼¤ lifeheal roar powerup
+kunlun-zhang		æ˜†ä»‘æŒ
+	 diezhang    å æŒ
+kurong-changong     æ¯è£ç¦…åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤     powerup-æ”»å‡»åŠ›å€å¢  
+lamaism             å¯†å®—å¿ƒæ³•
+lanhua-shou         å…°èŠ±æ‹‚ç©´æ‰‹
+        fuxue-å…°èŠ±æ‹‚ç©´
+liangyi-jian        ä¸¤ä»ªå‰‘æ³•
+        ren-å¤©åœ°åŒä»  hebi-åˆå£
+lingboweibu         å‡Œæ³¢å¾®æ­¥ï¼Œé€é¥è½»åŠŸ
+        lingbo-æ´›ç¥å‡Œæ³¢
+lingshe-zhangfa     çµè›‡æ–æ³•
+        shoot-å–·æ¯’
+	 saoluoye-ç‹‚é£æ‰«è½å¶
+linji-zhuang        ä¸´æµåäºŒåº„ï¼Œå³¨åµ‹å†…åŠŸ
+        lifeheal-ç–—æ²»ä»–äºº powerup
+lingyuan-xinfa      çµå…ƒå¿ƒæ³•
+	 heal  break-ä»¥æŸ”ç ´é’¢  lifeheal
+literate  è¯»ä¹¦å†™å­—
+liumai-shenjian     å…­è„‰ç¥å‰‘
+	 liumaijingshen  å…­è„‰æƒŠç¥
+liuyang-zhang       å¤©å±±å…­é˜³æŒ
+        zhong-ç§ç”Ÿæ­»ç¬¦
+	 jie-è§£ç”Ÿæ­»ç¬¦
+lonely-sword        ç‹¬å­¤ä¹å‰‘
+        po-æ€»è¯€å¼         pojian-ç ´å‰‘å¼        podao-ç ´åˆ€å¼
+        poqiang-ç ´æªå¼    pobian-ç ´é­å¼        posuo-ç ´ç´¢å¼
+        poanqi-ç ´ç®­å¼     pozhang-ç ´æŒå¼       poqi-ç ´æ°”å¼ 
+longxiang           é¾™è±¡èˆ¬è‹¥åŠŸï¼Œé›ªå±±å†…åŠŸ
+        fanchang-æ¢µå”±     powerup-æ”»å‡»åŠ›å€å¢ heal lifeheal
+longzhua-gong       é¾™çˆªåŠŸ
+luohan-quan         ç½—æ±‰æ‹³
+luoying-shenjian    è½è‹±ç¥å‰‘
+luoying-shenzhang   è½è‹±ç¥æŒ
+	 xuan        ç„å­—è¯€
+luoying-xinfa		è½è‹±å¿ƒæ³•
 	 lifeheal  powerup	 
-luoying-zhang       ÂäÓ¢Éñ½£ÕÆ
-mahayana            ´ó³Ë°ãÄù¹¦
-mantian-xing        ÂúÌìĞÇ
-meinv-quan          ÃÀÅ®È­
-        you-¹ÅÄ¹ÓÄ¾Ó
-mingwang-jian       ²»¶¯Ã÷Íõ½£
-murong-daofa		Ä½Èİµ¶·¨
-	 yingzhang    Ó°½£ÕÆ
-murong-jianfa		Ä½Èİ½£·¨
-	 lianhuan	Æß½£Á¬»·Ö¸
-necromancy          ½µ·ü·¨
-nianhua-zhi         Äé»¨Ö¸
-        fuxue-Äé»¨·÷Ñ¨
-parry               »ù±¾ÕĞ¼Ü
-piaoyibu            Æ®Òİ²½·¨
-	 wuguyuehua  Îå¹ÈÔÂ»ª
-pixie-jian          ±ÙĞ°½£·¨
-        cimu-´ÌÄ¿
-	 sanlianci	ÈıÁ¬´Ì
-poison              »ù±¾¶¾¼¼
-poyu-quan           ÆÆÓñÈ­
-        leidong-À×¶¯¾ÅÌì
-pudu-zhang          ÆÕ¶ÉÕÈ·¨
-qianye-shou         Ç§Ò¶ÈçÀ´ÊÖ
-qimen-wuxing        ÆæÃÅÎåĞĞ£¬ÌÒ»¨¾øÑ§
-qingfu-shenfa       ÇàòğÉí·¨
-	ruyingruhuan ÈçÓ°Èç»Ã
-qishang-quan        ÆßÉËÈ­·¨
-      hunpofeiyang  »êÆÇ·ÉÑï
-      youyouhunduan ÓÄÓÄ»ê¶Ï
-qiufeng-chenfa      Çï·ç³¾·¨
-        chan-²ø×Ö¾÷
-quanzhen-jian       È«Õæ½£·¨
-        ding-¶¨ÑôÕë
-	 sanqing     Ò»½£»¯ÈıÇå
-	 tonggui     Í¬¹éÓÚ¾¡
-qufeng              Çı·äÊõ
-riyue-bian          ÈÕÔÂ±Ş·¨
-        chan-²øÈÆ¾÷
-riyue-lun           ÈÕÔÂÂÖ·¨
+luoying-zhang       è½è‹±ç¥å‰‘æŒ
+mahayana            å¤§ä¹˜èˆ¬æ¶…åŠŸ
+mantian-xing        æ»¡å¤©æ˜Ÿ
+meinv-quan          ç¾å¥³æ‹³
+        you-å¤å¢“å¹½å±…
+mingwang-jian       ä¸åŠ¨æ˜ç‹å‰‘
+murong-daofa		æ…•å®¹åˆ€æ³•
+	 yingzhang    å½±å‰‘æŒ
+murong-jianfa		æ…•å®¹å‰‘æ³•
+	 lianhuan	ä¸ƒå‰‘è¿ç¯æŒ‡
+necromancy          é™ä¼æ³•
+nianhua-zhi         æ‹ˆèŠ±æŒ‡
+        fuxue-æ‹ˆèŠ±æ‹‚ç©´
+parry               åŸºæœ¬æ‹›æ¶
+piaoyibu            é£˜é€¸æ­¥æ³•
+	 wuguyuehua  äº”è°·æœˆå
+pixie-jian          è¾Ÿé‚ªå‰‘æ³•
+        cimu-åˆºç›®
+	 sanlianci	ä¸‰è¿åˆº
+poison              åŸºæœ¬æ¯’æŠ€
+poyu-quan           ç ´ç‰æ‹³
+        leidong-é›·åŠ¨ä¹å¤©
+pudu-zhang          æ™®æ¸¡æ–æ³•
+qianye-shou         åƒå¶å¦‚æ¥æ‰‹
+qimen-wuxing        å¥‡é—¨äº”è¡Œï¼Œæ¡ƒèŠ±ç»å­¦
+qingfu-shenfa       é’è èº«æ³•
+	ruyingruhuan å¦‚å½±å¦‚å¹»
+qishang-quan        ä¸ƒä¼¤æ‹³æ³•
+      hunpofeiyang  é­‚é­„é£æ‰¬
+      youyouhunduan å¹½å¹½é­‚æ–­
+qiufeng-chenfa      ç§‹é£å°˜æ³•
+        chan-ç¼ å­—è¯€
+quanzhen-jian       å…¨çœŸå‰‘æ³•
+        ding-å®šé˜³é’ˆ
+	 sanqing     ä¸€å‰‘åŒ–ä¸‰æ¸…
+	 tonggui     åŒå½’äºå°½
+qufeng              é©±èœ‚æœ¯
+riyue-bian          æ—¥æœˆé­æ³•
+        chan-ç¼ ç»•è¯€
+riyue-lun           æ—¥æœˆè½®æ³•
 rouyun-steps   
-	 zong-×İÔÆÊõ
-ruyi-dao            ÈçÒâµ¶
-	 ruyi-ÈçÒâÁ¬»·µ¶
-sanhua-zhang        É¢»¨ÕÆ·¨
-sanyin-wugongzhao   ÈıÒõòÚò¼×¦
-shaolin-shenfa      ÉÙÁÖÉí·¨£¬ÉÙÁÖÇá¹¦
-	yiweidujiang Ò»Î¤¶É½­
-shedao-qigong       ÉßµºÆæ¹¦£¬¿É×ö½£·¨ºÍÕÈ·¨
-        chang-³ªÏÉ·¨      chang2-³ªÏÉ·¨      chang3-³ªÏÉ·¨ºğ×Ö¾ö
-shenghuo-ling       Ê¥»ğÁî·¨
-shenkong-xing       Éí¿ÕĞĞ£¬Ñ©É½Çá¹¦
-	 tianmaxingkong ÌìÂíĞĞ¿Õ
-shenlong-bashi      ÉñÁú°ËÊ½
-	 bada-ÁúĞÎ°Ë´ò
-shenlong-xinfa      ÉñÁúĞÄ·¨£¬ÉßµºÄÚ¹¦ 
+	 zong-çºµäº‘æœ¯
+ruyi-dao            å¦‚æ„åˆ€
+	 ruyi-å¦‚æ„è¿ç¯åˆ€
+sanhua-zhang        æ•£èŠ±æŒæ³•
+sanyin-wugongzhao   ä¸‰é˜´èœˆèš£çˆª
+shaolin-shenfa      å°‘æ—èº«æ³•ï¼Œå°‘æ—è½»åŠŸ
+	yiweidujiang ä¸€éŸ¦æ¸¡æ±Ÿ
+shedao-qigong       è›‡å²›å¥‡åŠŸï¼Œå¯åšå‰‘æ³•å’Œæ–æ³•
+        chang-å”±ä»™æ³•      chang2-å”±ä»™æ³•      chang3-å”±ä»™æ³•å¼å­—å†³
+shenghuo-ling       åœ£ç«ä»¤æ³•
+shenkong-xing       èº«ç©ºè¡Œï¼Œé›ªå±±è½»åŠŸ
+	 tianmaxingkong å¤©é©¬è¡Œç©º
+shenlong-bashi      ç¥é¾™å…«å¼
+	 bada-é¾™å½¢å…«æ‰“
+shenlong-xinfa      ç¥é¾™å¿ƒæ³•ï¼Œè›‡å²›å†…åŠŸ 
 		heal ,powerup
-shenxing-baibian    ÉñĞĞ°Ù±ä
-shexing-diaoshou    ÉßĞÎµóÊÖ
-shigu-bifa          Ê¯¹Ä´òÑ¨±Ê·¨
-six-finger          ÁùÂöÉñ½£
-sougu               ËÑ¹ÇÓ¥×¦¹¦
-        muyeyingyang-ÄÁÒ°Ó¥Ñï
-staff               »ù±¾ÕÈ·¨
-stealing            ÃîÊÖ¿Õ¿Õ
-stick               »ù±¾°ô·¨
-strike              »ù±¾ÕÆ·¨
-sun-finger          Ò»ÑôÖ¸
-        qiankun-Ò»Ö¸Ç¬À¤
-sword               »ù±¾½£·¨
-taiji-dao           Ì«¼«µ¶
-taiji-jian          Ì«¼«½£
-        chan-²ø×Ö¾÷       lian-Á¬×Ö¾÷        sui-Ëæ×Ö¾ö
-taiji-quan          Ì«¼«È­
-        zhen-Õğ×Ö¾÷
-taiji-shengong      Ì«¼«Éñ¹¦£¬Îäµ±ÄÚ¹¦
-        heal-×ÔÎÒÁÆÉË     powerup-¹¥»÷Á¦±¶Ôö
-taixuan-gong        Ì«Ğş¹¦
-	 taixuan -°×Ê×Ì«Ğş
-tanzhi-shentong     µ¯Ö¸ÉñÍ¨
-        jinglie-µ¯Ö¸¾ªÀ×
-taoism              µÀÑ§ĞÄ·¨
-throwing            »ù±¾°µÆ÷
-tiangang-zhi        Ììî¸Ö¸Ñ¨·¨
-        lingkong-Áè¿ÕÖ¸Ñ¨
-tiannan-step        ÌìÄÏ²½·¨£¬¶Î¼ÒÇá¹¦
-tianshan-zhang      ÌìÉ½ÕÈ·¨
-tianyu-qijian       ÌìÓğÆæ½£
-        san-ÌìÅ®É¢»¨
-	 yushijufen--ÓñÊ¯¾ã·Ù
-tiexue-hammer  ÌúÑ©´¸·¨
- 	 fanzhuan  ·´×ªÁ÷ĞÇ
+shenxing-baibian    ç¥è¡Œç™¾å˜
+shexing-diaoshou    è›‡å½¢åˆæ‰‹
+shigu-bifa          çŸ³é¼“æ‰“ç©´ç¬”æ³•
+six-finger          å…­è„‰ç¥å‰‘
+sougu               æœéª¨é¹°çˆªåŠŸ
+        muyeyingyang-ç‰§é‡é¹°æ‰¬
+staff               åŸºæœ¬æ–æ³•
+stealing            å¦™æ‰‹ç©ºç©º
+stick               åŸºæœ¬æ£’æ³•
+strike              åŸºæœ¬æŒæ³•
+sun-finger          ä¸€é˜³æŒ‡
+        qiankun-ä¸€æŒ‡ä¹¾å¤
+sword               åŸºæœ¬å‰‘æ³•
+taiji-dao           å¤ªæåˆ€
+taiji-jian          å¤ªæå‰‘
+        chan-ç¼ å­—è¯€       lian-è¿å­—è¯€        sui-éšå­—å†³
+taiji-quan          å¤ªææ‹³
+        zhen-éœ‡å­—è¯€
+taiji-shengong      å¤ªæç¥åŠŸï¼Œæ­¦å½“å†…åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤     powerup-æ”»å‡»åŠ›å€å¢
+taixuan-gong        å¤ªç„åŠŸ
+	 taixuan -ç™½é¦–å¤ªç„
+tanzhi-shentong     å¼¹æŒ‡ç¥é€š
+        jinglie-å¼¹æŒ‡æƒŠé›·
+taoism              é“å­¦å¿ƒæ³•
+throwing            åŸºæœ¬æš—å™¨
+tiangang-zhi        å¤©ç½¡æŒ‡ç©´æ³•
+        lingkong-å‡Œç©ºæŒ‡ç©´
+tiannan-step        å¤©å—æ­¥æ³•ï¼Œæ®µå®¶è½»åŠŸ
+tianshan-zhang      å¤©å±±æ–æ³•
+tianyu-qijian       å¤©ç¾½å¥‡å‰‘
+        san-å¤©å¥³æ•£èŠ±
+	 yushijufen--ç‰çŸ³ä¿±ç„š
+tiexue-hammer  é“é›ªé”¤æ³•
+ 	 fanzhuan  åè½¬æµæ˜Ÿ
 tiezhang-zhangfa
-	 zhangdao-ÕÆµ¶
-tiyunzong           ÌİÔÆ×İ£¬Îäµ±Çá¹¦
-training            Ô¦ÊŞÊõ
-unarmed             »ù±¾È­½Å
-weituo-gun          Î¤ÍÓ¹÷
-whip                »ù±¾Ë÷·¨
-wuchang-zhang       ÎŞ³£ÕÈ·¨
-wudang-jian         Îäµ±½£·¨
-wudu-bian		Îå¶¾±Ş
-	 judu--¾Û¶¾
-wudu-shenzhang	Îå¶¾ÉñÕÆ
-	 jiedu-½â¶¾
-wuhu-duanmendao     Îå»¢¶ÏÃÅµ¶
-        duan-¶Ï×Ö¾÷
-wuluo-zhang         ÎåÂŞÇáÑÌÕÆ
-wuying-jian  		ÉÙÁÖÎŞÓ°½£
-	 wuying--·ÖÉíÎŞÓ°
-wuyue-blade		Î×ÔÂµ¶·¨
-	 jiao-½Â×Ö¾÷
-wuyun-jianfa        ÎåÔÏÆßÏÒ½£
-wuzhan-mei   		ÎåÕ¹Ã·
-	 wumei		ÎåÃ·ÍÂÈï
-	 yumei       Óê¼¤Ã·»¨°ë°êÏã
-wuzheng-xinfa       ÎŞÕùĞÄ·¨
-xianglong-zhang     ½µÁúÊ®°ËÕÆ
-        xianglong-½µÁú´ó·¨
-	 leiting     À×öªÒ»»÷
-	 kanglongwuhui ¿ºÁúÎŞ»Ú
-xiangmo-chu         ½ğ¸Õ½µÄ§èÆ
-xiantian-qigong     ÏÈÌìÆø¹¦
-        heal-×ÔÁÆ   powerup-ÍşÁ¦±¶Ôö
-xiaowuxiang         Ğ¡ÎŞÏà¹¦£¬Ñ©É½ÄÚ¹¦
-        lifeheal-ÁÆÖÎËûÈË shield-»¤ÌåÉñ¹¦
-xiaoyaoyou          åĞÒ£ÓÎ£¬Ø¤°ïÇá¹¦
-	 canghaiyixiao ²×º£Ò»Ğ¦
-xiuluo-dao          ĞŞÂŞµ¶
-xuanfeng-leg        Ğı·çÉ¨Ò¶ÍÈ
-        kuangfeng-¿ñ·ç¾ø¼¼
-xuantian-zhi        ĞşÌìÎŞÇéÖ¸
-xue-dao             Ñªµ¶
-        shendao-¼ÀÑªÉñµ¶
-yanxing-dao         ÑãĞĞµ¶
-        huanying-ÎŞĞÎ»ÃÓ°
-yijinjing           Ò×½î¾­Éñ¹¦
-        heal-×ÔÁÆ   powerup-ÍşÁ¦±¶Ôö  roar-Ê¨×Óºğ
-yinyun-ziqi        ë³ëµ×ÏÆø
+	 zhangdao-æŒåˆ€
+tiyunzong           æ¢¯äº‘çºµï¼Œæ­¦å½“è½»åŠŸ
+training            é©­å…½æœ¯
+unarmed             åŸºæœ¬æ‹³è„š
+weituo-gun          éŸ¦é™€æ£
+whip                åŸºæœ¬ç´¢æ³•
+wuchang-zhang       æ— å¸¸æ–æ³•
+wudang-jian         æ­¦å½“å‰‘æ³•
+wudu-bian		äº”æ¯’é­
+	 judu--èšæ¯’
+wudu-shenzhang	äº”æ¯’ç¥æŒ
+	 jiedu-è§£æ¯’
+wuhu-duanmendao     äº”è™æ–­é—¨åˆ€
+        duan-æ–­å­—è¯€
+wuluo-zhang         äº”ç½—è½»çƒŸæŒ
+wuying-jian  		å°‘æ—æ— å½±å‰‘
+	 wuying--åˆ†èº«æ— å½±
+wuyue-blade		å·«æœˆåˆ€æ³•
+	 jiao-é“°å­—è¯€
+wuyun-jianfa        äº”éŸµä¸ƒå¼¦å‰‘
+wuzhan-mei   		äº”å±•æ¢…
+	 wumei		äº”æ¢…åè•Š
+	 yumei       é›¨æ¿€æ¢…èŠ±åŠç“£é¦™
+wuzheng-xinfa       æ— äº‰å¿ƒæ³•
+xianglong-zhang     é™é¾™åå…«æŒ
+        xianglong-é™é¾™å¤§æ³•
+	 leiting     é›·éœ†ä¸€å‡»
+	 kanglongwuhui äº¢é¾™æ— æ‚”
+xiangmo-chu         é‡‘åˆšé™é­”æµ
+xiantian-qigong     å…ˆå¤©æ°”åŠŸ
+        heal-è‡ªç–—   powerup-å¨åŠ›å€å¢
+xiaowuxiang         å°æ— ç›¸åŠŸï¼Œé›ªå±±å†…åŠŸ
+        lifeheal-ç–—æ²»ä»–äºº shield-æŠ¤ä½“ç¥åŠŸ
+xiaoyaoyou          é€é¥æ¸¸ï¼Œä¸å¸®è½»åŠŸ
+	 canghaiyixiao æ²§æµ·ä¸€ç¬‘
+xiuluo-dao          ä¿®ç½—åˆ€
+xuanfeng-leg        æ—‹é£æ‰«å¶è…¿
+        kuangfeng-ç‹‚é£ç»æŠ€
+xuantian-zhi        ç„å¤©æ— æƒ…æŒ‡
+xue-dao             è¡€åˆ€
+        shendao-ç¥­è¡€ç¥åˆ€
+yanxing-dao         é›è¡Œåˆ€
+        huanying-æ— å½¢å¹»å½±
+yijinjing           æ˜“ç­‹ç»ç¥åŠŸ
+        heal-è‡ªç–—   powerup-å¨åŠ›å€å¢  roar-ç‹®å­å¼
+yinyun-ziqi        æ°¤æ°²ç´«æ°”
 	 cure,taiji 
-yingzhua-gong       Ó¥×¦¹¦
-yixingbu            ÒâĞĞ²½·¨
-yizhi-chan          Ò»Ö¸ìø
-        jingmo-¾ªÄ§Ò»Ö¸
-yueying-wubu        ÔÂÓ°Îè²½£¬ÁéğÕÇá¹¦
-	 yueguangruying  ÔÂ¹âÈçÓ°
-yujiamu-quan        ½ğ¸Õè¤åÈÄ¸È­
-yunlong-bian        ÔÆÁú±Ş·¨
-        chan-²ø×Ö¾÷
-yunlong-jian        ÔÆÁú½£·¨
-        xian-ÔÆÁúÈıÏÖ
-yunlong-shenfa      ÔÆÁúÉí·¨
-yunlong-shengong    ÔÆÁúÉñ¹¦
-        heal-×ÔÎÒÁÆÉË     powerup-¹¥»÷Á¦±¶Ôö
-yunlong-shou        ÔÆÁúÊÖ
-yunlong-xinfa       ÔÆÁúĞÄ·¨
-yunlong-zhua        ÔÆÁú×¥
-yunu-sword          ÓñÅ®½£·¨
-        wushuang-ÎŞË«ÎŞ¶Ô
-yunv-shenfa         ÓñÅ®Éí·¨
-yunv-sword          ÓñÅ®½£·¨
-        he-Ë«½£ºÏèµ
-yunv-xinfa          ÓñÅ®ĞÄ·¨
-        heal-×ÔÎÒÁÆÉË     roar-÷öÈ»Ïú»êÒ÷      powerup-¹¥»÷Á¦±¶Ôö
-yuxiao-jian         Óñóï½£·¨
-        tianwai-ÌìÍâÇåÒô
-zhaixinggong        ÕªĞÇ¹¦
-zhemei-shou         ÌìÉ½ÕÛÃ·ÊÖ
-        duo-¿ÕÊÖÈë°×ÈĞ
-zhengqijue          ÕıÆø¾÷
-zhongping-qiang     ÖĞÆ½Ç¹
-zhutian-bu          ÖîÌì»¯Éí²½£¬¶ëáÒÇá¹¦
-zimu-zhen 		×ÓÄ¸Õë
-	dinhun	      ¶¨»ê
-	poqizhen     ÆÆÆøÕë
-zixia-shengong      ×ÏÏ¼Éñ¹¦£¬»ªÉ½ÄÚ¹¦
-        heal-×ÔÎÒÁÆÉË     powerup-¹¥»÷Á¦±¶Ôö
-zui-gun             ×í¹÷
-        zuida-×í´ò
+yingzhua-gong       é¹°çˆªåŠŸ
+yixingbu            æ„è¡Œæ­¥æ³•
+yizhi-chan          ä¸€æŒ‡ç¦…
+        jingmo-æƒŠé­”ä¸€æŒ‡
+yueying-wubu        æœˆå½±èˆæ­¥ï¼Œçµé¹«è½»åŠŸ
+	 yueguangruying  æœˆå…‰å¦‚å½±
+yujiamu-quan        é‡‘åˆšç‘œè¿¦æ¯æ‹³
+yunlong-bian        äº‘é¾™é­æ³•
+        chan-ç¼ å­—è¯€
+yunlong-jian        äº‘é¾™å‰‘æ³•
+        xian-äº‘é¾™ä¸‰ç°
+yunlong-shenfa      äº‘é¾™èº«æ³•
+yunlong-shengong    äº‘é¾™ç¥åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤     powerup-æ”»å‡»åŠ›å€å¢
+yunlong-shou        äº‘é¾™æ‰‹
+yunlong-xinfa       äº‘é¾™å¿ƒæ³•
+yunlong-zhua        äº‘é¾™æŠ“
+yunu-sword          ç‰å¥³å‰‘æ³•
+        wushuang-æ— åŒæ— å¯¹
+yunv-shenfa         ç‰å¥³èº«æ³•
+yunv-sword          ç‰å¥³å‰‘æ³•
+        he-åŒå‰‘åˆç’§
+yunv-xinfa          ç‰å¥³å¿ƒæ³•
+        heal-è‡ªæˆ‘ç–—ä¼¤     roar-é»¯ç„¶é”€é­‚åŸ      powerup-æ”»å‡»åŠ›å€å¢
+yuxiao-jian         ç‰ç®«å‰‘æ³•
+        tianwai-å¤©å¤–æ¸…éŸ³
+zhaixinggong        æ‘˜æ˜ŸåŠŸ
+zhemei-shou         å¤©å±±æŠ˜æ¢…æ‰‹
+        duo-ç©ºæ‰‹å…¥ç™½åˆƒ
+zhengqijue          æ­£æ°”è¯€
+zhongping-qiang     ä¸­å¹³æª
+zhutian-bu          è¯¸å¤©åŒ–èº«æ­¥ï¼Œå³¨åµ‹è½»åŠŸ
+zimu-zhen 		å­æ¯é’ˆ
+	dinhun	      å®šé­‚
+	poqizhen     ç ´æ°”é’ˆ
+zixia-shengong      ç´«éœç¥åŠŸï¼Œåå±±å†…åŠŸ
+        heal-è‡ªæˆ‘ç–—ä¼¤     powerup-æ”»å‡»åŠ›å€å¢
+zui-gun             é†‰æ£
+        zuida-é†‰æ‰“

@@ -1,24 +1,24 @@
-¡¾º£ÑóIIµØÍ¼²á¡¿
+ã€æµ·æ´‹IIåœ°å›¾å†Œã€‘
 
-Äã¿ÉÒÔÓÃ help <Ö÷Ìâ> µÃµ½¸ü½øÒ»²½µÄËµÃ÷¡£
+ä½ å¯ä»¥ç”¨ help <ä¸»é¢˜> å¾—åˆ°æ›´è¿›ä¸€æ­¥çš„è¯´æ˜Žã€‚
 
-¡¼map_all¡½    ¡°º£ÑóII¡±µÚÒ»½×¶Î×ÜÍ¼
+ã€–map_allã€—    â€œæµ·æ´‹IIâ€ç¬¬ä¸€é˜¶æ®µæ€»å›¾
 
-¡¼map_bj¡½  ±±¾©µØÍ¼     ¡¼map_sl¡½  ÉÙÁÖËÂµØÍ¼     ¡¼map_tls¡½  ÌìÁúËÂµØÍ¼
-¡¼map_yz¡½  ÑïÖÝµØÍ¼     ¡¼map_wd¡½  Îäµ±É½µØÍ¼     ¡¼map_xss¡½  Ñ©É½ËÂµØÍ¼
-¡¼map_sz¡½  ËÕÖÝµØÍ¼     ¡¼map_em¡½  ¶ëáÒÉ½µØÍ¼     ¡¼map_thd¡½  ÌÒ»¨µºµØÍ¼
-¡¼map_hz¡½  º¼ÖÝµØÍ¼     ¡¼map_qc¡½  Çà³ÇÉ½µØÍ¼     ¡¼map_bts¡½  °×ÍÕÉ½µØÍ¼
-¡¼map_fz¡½  ¸£ÖÝµØÍ¼     ¡¼map_kl¡½  À¥ÂØÉ½µØÍ¼     ¡¼map_ljf¡½  ÁéðÕ·åµØÍ¼
-¡¼map_qz¡½  ÈªÖÝµØÍ¼     ¡¼map_es¡½  ¶«ÔÀÌ©É½Í¼     ¡¼map_sld¡½  ÉñÁúµºµØÍ¼
-¡¼map_cd¡½  ³É¶¼µØÍ¼     ¡¼map_ws¡½  Î÷ÔÀ»ªÉ½Í¼     ¡¼map_yzw¡½  Ñà×ÓÎëµØÍ¼
-¡¼map_jx¡½  ¼ÎÐËµØÍ¼     ¡¼map_ss¡½  ÄÏÔÀºâÉ½Í¼     ¡¼map_hsc¡½  »ªÉ½´åµØÍ¼
-¡¼map_ny¡½  ÄÏÑôµØÍ¼     ¡¼map_ns¡½  ±±ÔÀºãÉ½Í¼     ¡¼map_xxh¡½  ÐÇËÞº£µØÍ¼
-¡¼map_fs¡½  ·ðÉ½µØÍ¼     ¡¼map_cs¡½  ÖÐÔÀáÔÉ½Í¼     ¡¼map_xkd¡½  ÏÀ¿ÍµºµØÍ¼
-¡¼map_dl¡½  ´óÀíµØÍ¼     ¡¼map_hh¡½  »ÆºÓ¾ÅÇúÍ¼     ¡¼map_xyl¡½  åÐÒ£ÁÖµØÍ¼
-¡¼map_lz¡½  ÁéÖÝµØÍ¼
-¡¼map_xy¡½  Î÷ÓòµØÍ¼
-¡¼map_gw¡½  ¹ØÍâµØÍ¼
+ã€–map_bjã€—  åŒ—äº¬åœ°å›¾     ã€–map_slã€—  å°‘æž—å¯ºåœ°å›¾     ã€–map_tlsã€—  å¤©é¾™å¯ºåœ°å›¾
+ã€–map_yzã€—  æ‰¬å·žåœ°å›¾     ã€–map_wdã€—  æ­¦å½“å±±åœ°å›¾     ã€–map_xssã€—  é›ªå±±å¯ºåœ°å›¾
+ã€–map_szã€—  è‹å·žåœ°å›¾     ã€–map_emã€—  å³¨åµ‹å±±åœ°å›¾     ã€–map_thdã€—  æ¡ƒèŠ±å²›åœ°å›¾
+ã€–map_hzã€—  æ­å·žåœ°å›¾     ã€–map_qcã€—  é’åŸŽå±±åœ°å›¾     ã€–map_btsã€—  ç™½é©¼å±±åœ°å›¾
+ã€–map_fzã€—  ç¦å·žåœ°å›¾     ã€–map_klã€—  æ˜†ä»‘å±±åœ°å›¾     ã€–map_ljfã€—  çµé¹«å³°åœ°å›¾
+ã€–map_qzã€—  æ³‰å·žåœ°å›¾     ã€–map_esã€—  ä¸œå²³æ³°å±±å›¾     ã€–map_sldã€—  ç¥žé¾™å²›åœ°å›¾
+ã€–map_cdã€—  æˆéƒ½åœ°å›¾     ã€–map_wsã€—  è¥¿å²³åŽå±±å›¾     ã€–map_yzwã€—  ç‡•å­åžåœ°å›¾
+ã€–map_jxã€—  å˜‰å…´åœ°å›¾     ã€–map_ssã€—  å—å²³è¡¡å±±å›¾     ã€–map_hscã€—  åŽå±±æ‘åœ°å›¾
+ã€–map_nyã€—  å—é˜³åœ°å›¾     ã€–map_nsã€—  åŒ—å²³æ’å±±å›¾     ã€–map_xxhã€—  æ˜Ÿå®¿æµ·åœ°å›¾
+ã€–map_fsã€—  ä½›å±±åœ°å›¾     ã€–map_csã€—  ä¸­å²³åµ©å±±å›¾     ã€–map_xkdã€—  ä¾ å®¢å²›åœ°å›¾
+ã€–map_dlã€—  å¤§ç†åœ°å›¾     ã€–map_hhã€—  é»„æ²³ä¹æ›²å›¾     ã€–map_xylã€—  é€é¥æž—åœ°å›¾
+ã€–map_lzã€—  çµå·žåœ°å›¾
+ã€–map_xyã€—  è¥¿åŸŸåœ°å›¾
+ã€–map_gwã€—  å…³å¤–åœ°å›¾
 
-¡¼map_dalie¡½  ´óÀí³Ç¶«µØÍ¼                     ¡¼map_dalis¡½  ´óÀí³ÇÄÏµØÍ¼     
-¡¼map_daliw¡½  ´óÀí³ÇÎ÷µØÍ¼                     ¡¼map_dalin¡½  ´óÀí³Ç±±µØÍ¼     
+ã€–map_dalieã€—  å¤§ç†åŸŽä¸œåœ°å›¾                     ã€–map_dalisã€—  å¤§ç†åŸŽå—åœ°å›¾     
+ã€–map_daliwã€—  å¤§ç†åŸŽè¥¿åœ°å›¾                     ã€–map_dalinã€—  å¤§ç†åŸŽåŒ—åœ°å›¾     
 

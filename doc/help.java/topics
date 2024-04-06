@@ -1,34 +1,34 @@
-¡¾¡°ÏÀ¿ÍÐÐ¡±ËµÃ÷ÎÄ¼þ¡¿
-(1996.1.27.°æ)
+ã€â€œä¾ å®¢è¡Œâ€è¯´æ˜Žæ–‡ä»¶ã€‘
+(1996.1.27.ç‰ˆ)
 
-Èç¹ûÄã¾õµÃÓÐÊ²Ã´µØ·½ÓÐ´íÎó£¬ÇëÓÃÁôÑÔ°å¸æËßÎ×Ê¦¡£
-Äã¿ÉÒÔÓÃ
+å¦‚æžœä½ è§‰å¾—æœ‰ä»€ä¹ˆåœ°æ–¹æœ‰é”™è¯¯ï¼Œè¯·ç”¨ç•™è¨€æ¿å‘Šè¯‰å·«å¸ˆã€‚
+ä½ å¯ä»¥ç”¨
 
-help <Ö÷Ìâ> 
+help <ä¸»é¢˜> 
 
-µÃµ½¸ü½øÒ»²½µÄËµÃ÷¡£
+å¾—åˆ°æ›´è¿›ä¸€æ­¥çš„è¯´æ˜Žã€‚
 
-ÒÔÏÂÊÇËµÃ÷ÎÄ¼þµÄÖ÷Ìâ¡£
+ä»¥ä¸‹æ˜¯è¯´æ˜Žæ–‡ä»¶çš„ä¸»é¢˜ã€‚
 
-¡¼ÓÎÏ·¸Å¿ö¡½
-intro       ¡°ÏÀ¿ÍÐÐ¡±¼ò½é¡£ÐÂÊÖ±Ø¶Á£¡
-map         ¡°ÏÀ¿ÍÐÐ¡±µÚÒ»½×¶Î×ÜÍ¼
-mapdetail   ¡°ÏÀ¿ÍÐÐ¡±µÚÒ»½×¶Î·ÖÍ¼
-cmds        ³£ÓÃÖ¸Áî
-newbie      ÐÂÊÖÖ¸ÄÏ
-rules       ÓÎÏ·¹æÔò£¬²»¿É²»¿´£¡
-settings    »·¾³±äÁ¿ÉèÖÃ¡£
-setup       ÓÎÏ·ÖÆ¶ÈÖÐ¸÷ÏîÊýÖµÓëÏà¹ØµÄÒâÒåºÍÉè¶¨¡£
-wizcmds     Î×Ê¦ÃüÁî
-wizrules    Î×Ê¦¹æÔò¡£
-wizsettings Î×Ê¦»·¾³±äÁ¿ÉèÖÃ
+ã€–æ¸¸æˆæ¦‚å†µã€—
+intro       â€œä¾ å®¢è¡Œâ€ç®€ä»‹ã€‚æ–°æ‰‹å¿…è¯»ï¼
+map         â€œä¾ å®¢è¡Œâ€ç¬¬ä¸€é˜¶æ®µæ€»å›¾
+mapdetail   â€œä¾ å®¢è¡Œâ€ç¬¬ä¸€é˜¶æ®µåˆ†å›¾
+cmds        å¸¸ç”¨æŒ‡ä»¤
+newbie      æ–°æ‰‹æŒ‡å—
+rules       æ¸¸æˆè§„åˆ™ï¼Œä¸å¯ä¸çœ‹ï¼
+settings    çŽ¯å¢ƒå˜é‡è®¾ç½®ã€‚
+setup       æ¸¸æˆåˆ¶åº¦ä¸­å„é¡¹æ•°å€¼ä¸Žç›¸å…³çš„æ„ä¹‰å’Œè®¾å®šã€‚
+wizcmds     å·«å¸ˆå‘½ä»¤
+wizrules    å·«å¸ˆè§„åˆ™ã€‚
+wizsettings å·«å¸ˆçŽ¯å¢ƒå˜é‡è®¾ç½®
 
-¡¼ÃÅÅÉ½éÉÜ¡½
-shaolin     ÉÙÁÖÅÉ½éÉÜ
-wudang      Îäµ±ÅÉ½éÉÜ
+ã€–é—¨æ´¾ä»‹ç»ã€—
+shaolin     å°‘æž—æ´¾ä»‹ç»
+wudang      æ­¦å½“æ´¾ä»‹ç»
 
-¡¼¸½ÊôÓÎÏ·½éÉÜ¡½
-pig_cmds    ¹°ÖíµÄÓÐ¹ØÃüÁî¡£
-pig_rules   ¹°Öí¹æÔò¡£
+ã€–é™„å±žæ¸¸æˆä»‹ç»ã€—
+pig_cmds    æ‹±çŒªçš„æœ‰å…³å‘½ä»¤ã€‚
+pig_rules   æ‹±çŒªè§„åˆ™ã€‚
 
 
