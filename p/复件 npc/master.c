@@ -1,15 +1,15 @@
-// mu-ren.c Ä¾ÈË
+// mu-ren.c æœ¨äºº
 #include <ansi.h>
 inherit NPC;
 //inherit F_CLEAN_UP;
 
 void create()
 {
-	set_name(HIY"´úÀí½ÌÍ·"NOR, ({ "jiaolian" }) );
+	set_name(HIY"ä»£ç†æ•™å¤´"NOR, ({ "jiaolian" }) );
    set("no_get",1);
-	set("gender", "ÄĞĞÔ" );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "Ò»¸öÃÅÅÉ½ÌÍ·¡£\n");
+	set("long", "ä¸€ä¸ªé—¨æ´¾æ•™å¤´ã€‚\n");
 	set("attitude", "heroism");
 
 	set_temp("no_kill", 1);
@@ -65,13 +65,13 @@ int do_recover()
 
 
 	if ( wizardp(ob)) 
-		return notify_fail("ÄãÊÇWIZ,Ã»ÓĞÕâ¸ö×Ê¸ñ£¡\n");;
+		return notify_fail("ä½ æ˜¯WIZ,æ²¡æœ‰è¿™ä¸ªèµ„æ ¼ï¼\n");;
 
 	if ( ob->query("combat_exp") < 3000000 ) 
-		return notify_fail("ÄãµÄ¾­Ñé²»¹»,Ã»ÓĞÕâ¸ö×Ê¸ñ£¡\n");;
+		return notify_fail("ä½ çš„ç»éªŒä¸å¤Ÿ,æ²¡æœ‰è¿™ä¸ªèµ„æ ¼ï¼\n");;
 
 	if ( ob->query("score") < 5000 ) 
-		return notify_fail("ÄãµÄ½­ºúÔÄÀú²»¹»,Ã»ÓĞÕâ¸ö×Ê¸ñ£¡\n");;
+		return notify_fail("ä½ çš„æ±Ÿèƒ¡é˜…å†ä¸å¤Ÿ,æ²¡æœ‰è¿™ä¸ªèµ„æ ¼ï¼\n");;
 	
 	if ( mapp(skill_status = me->query_skills()) ) {
 		skill_status = me->query_skills();
@@ -147,7 +147,7 @@ int do_recover()
 		me->set("neili",     hp_status["neili"]);
 		me->set("jiali",     hp_status["jiali"]);
 		me->set("combat_exp",hp_status["combat_exp"]);
-	write("×´Ì¬¸´ÔªÍê±Ï¡£\n");
+	write("çŠ¶æ€å¤å…ƒå®Œæ¯•ã€‚\n");
 	return 1;
 }
 

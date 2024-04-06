@@ -1,17 +1,17 @@
-//table.c Êá×±Ì¨
+//table.c æ¢³å¦†å°
 inherit ITEM;
 void create()
 {
-        set_name("´óÏä×Ó", ({ "bigbox" , "big box", "box"}) );
+        set_name("å¤§ç®±å­", ({ "bigbox" , "big box", "box"}) );
         set_weight(5000);
         set_max_encumbrance(8000000);
         set("no_shown", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("no_get", 1);
-                set("long", "ÕâÊÇÒ»¸ö´óÏä×Ó¡£\n");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªå¤§ç®±å­ã€‚\n");
                 set("value", 0);
         }
 }

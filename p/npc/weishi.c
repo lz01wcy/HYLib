@@ -2,10 +2,10 @@
 inherit NPC;
 void create()
 {
-   set_name(HIG"°ï»áÎÀÊ¿"NOR,({"wei shi"}));
+   set_name(HIG"å¸®ä¼šå«å£«"NOR,({"wei shi"}));
    set("no_get",1);
-   set("gender","ÄĞĞÔ");
-   set("long","±£ÎÀ°ïÅÉµÄÒ»¸öÎÀÊ¿!\n");
+   set("gender","ç”·æ€§");
+   set("long","ä¿å«å¸®æ´¾çš„ä¸€ä¸ªå«å£«!\n");
    set("mingwang",2000);
    set("combat_exp",500000);
       
@@ -42,7 +42,7 @@ void greeting(object ob)
 { 
   if (!ob||environment(ob)!=environment())  return;
   if (ob->query("banghui")!=query("banghui"))   {
-  command("say Äã¾¡È»ÔÚÕâÀï¶¯ÊÖ?");
+  command("say ä½ å°½ç„¶åœ¨è¿™é‡ŒåŠ¨æ‰‹?");
     kill_ob(ob);
     return;
    }
