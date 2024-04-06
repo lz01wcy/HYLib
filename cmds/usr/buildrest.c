@@ -15,24 +15,24 @@ int main(object me, string arg)
 	object gold;
         seteuid(getuid());
         if(!arg || sscanf(arg,"%s %s",dir,stitle) != 2)
-	return notify_fail("Ö¸Áî¸ñÊ½£º¡¡buildrest north ÌìµØ¸óĞİÏ¢ÊÒ \n");
+	return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šã€€buildrest north å¤©åœ°é˜ä¼‘æ¯å®¤ \n");
 	if(me->query("family/privs") != -1) 
-	return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+	return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 	if((int)me->query("score") < SCORE_COST)
-	return notify_fail("ÄãµÄ½­ºşÔÄÀú²»¹»"+chinese_number(SCORE_COST)+
-	"µã¡£\n");
+	return notify_fail("ä½ çš„æ±Ÿæ¹–é˜…å†ä¸å¤Ÿ"+chinese_number(SCORE_COST)+
+	"ç‚¹ã€‚\n");
         if((int)me->query("combat_exp") < MIN_EXP)
-        return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»¹»"+chinese_number(MIN_EXP)+
-        "µã¡£\n");
+        return notify_fail("ä½ çš„å®æˆ˜ç»éªŒä¸å¤Ÿ"+chinese_number(MIN_EXP)+
+        "ç‚¹ã€‚\n");
 	gold = present("gold_money",me);
-	if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+	if(!gold) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < GOLD_COST)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ"+chinese_number(GOLD_COST)+"Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰"+chinese_number(GOLD_COST)+"ä¸¤é‡‘å­ã€‚\n");
 	 env = environment(me);
        if((int)me->query("rest_room") > 0)
-		return notify_fail("Äã²»¿ÉÔÙ½¨ĞİÏ¢ÊÒÁË£¡\n");
+		return notify_fail("ä½ ä¸å¯å†å»ºä¼‘æ¯å®¤äº†ï¼\n");
 if(!env->query("owner") && (string)env->query("owner") != (string) me->query("id"))
-        return notify_fail("Äã²»¿ÉÔÚÕâ½¨ĞİÏ¢ÊÒ£¡\n");
+        return notify_fail("ä½ ä¸å¯åœ¨è¿™å»ºä¼‘æ¯å®¤ï¼\n");
 		if(check_legal_name(stitle))
 	 me->edit( (: enter_desc , me,gold, stitle, dir :) );
 	return 1;
@@ -56,7 +56,7 @@ string *direc= ({"north", "south", "east", "west", "northup",
 	env = environment(me);
 	if(env->query("exits/"+dir))
 		{
-		tell_object(me,"Õâ¸ö·½ÏòÒÑ¾­ÓĞ·¿ÎİÁË£¡\n");
+		tell_object(me,"è¿™ä¸ªæ–¹å‘å·²ç»æœ‰æˆ¿å±‹äº†ï¼\n");
 		return;
 		}
 // I think by now, we should checked all conditions,
@@ -67,7 +67,7 @@ string *direc= ({"north", "south", "east", "west", "northup",
 	}
 	else
 	{
-	tell_object(me,"ÄãÒªÍùÄÄ¸ö·½Ïò½¨£¿\n");
+	tell_object(me,"ä½ è¦å¾€å“ªä¸ªæ–¹å‘å»ºï¼Ÿ\n");
 	return;
 	}
 }
@@ -76,16 +76,16 @@ int check_legal_name(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 2) || (strlen(name) > 20 ) ) {
-                write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö±ØĞëÊÇÒ»µ½Ê®¸öÖĞÎÄ×Ö¡£\n");
+                write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡åå­—å¿…é¡»æ˜¯ä¸€åˆ°åä¸ªä¸­æ–‡å­—ã€‚\n");
                 return 0;
         }
         while(i--) {
                 if( name[i]<=' ' ) {
-                        write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡åå­—ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                         return 0;
                 }
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬Ãû×Ö±ØĞèÊÇÖĞÎÄ¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œåå­—å¿…éœ€æ˜¯ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }
@@ -96,17 +96,17 @@ int check_legal_long(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 60) || (strlen(name) > 200 ) ) {
-                write("¶Ô²»Æğ£¬ÖĞÎÄÃèÊö±ØĞëÊÇÈıÊ®µ½Ò»°Ù¸öÖĞÎÄ×Ö¡£\n");
+                write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡æè¿°å¿…é¡»æ˜¯ä¸‰ååˆ°ä¸€ç™¾ä¸ªä¸­æ–‡å­—ã€‚\n");
                 return 0;
         }
         while(i--) {
 		if(name[i]==' ' || name[i] == '\n') continue;
                 if( name[i]<' ' ) {
-                        write("¶Ô²»Æğ£¬ÖĞÎÄÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡æè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                         return 0;
                 }
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬ÃèÊö±ØĞèÊÇÖĞÎÄ¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œæè¿°å¿…éœ€æ˜¯ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }
@@ -116,8 +116,8 @@ int check_legal_long(string name)
 int help (object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: buildrest <Ñ¶Ï¢>
-ÓÃÀ´¸ø×Ô¼ºµÄ°ïÅÉ¼ÓÒ»¼äĞİÏ¢ÊÒ 
+æŒ‡ä»¤æ ¼å¼: buildrest <è®¯æ¯>
+ç”¨æ¥ç»™è‡ªå·±çš„å¸®æ´¾åŠ ä¸€é—´ä¼‘æ¯å®¤ 
 
 HELP
 	);

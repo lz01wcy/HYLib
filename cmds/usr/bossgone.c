@@ -6,19 +6,19 @@ int main(object me, string arg)
 	string msg;
 	me->delete_temp("block_msg/all");
 	write(CLR);
-	write("ÏÀ¿ÍÐÐ¸æËßÄã£ºÔËÆøÈçºÎ£¿±»×¥×¡ÁËÂð£¿¹þ¹þ£¡\n");
-//message("channel:chat", GRN"¡¾¾¯Áå¡¿"+me->name(1)+"µÃÒâÑóÑóµØ´ò¿ªÆÁÄ»£¬¿´×ÅÀÏ°åÔÚÃÅÍâÏûÊ§£º°Ý°ÝÁËÄúÄÄ¡£\n"NOR,users());
+	write("ä¾ å®¢è¡Œå‘Šè¯‰ä½ ï¼šè¿æ°”å¦‚ä½•ï¼Ÿè¢«æŠ“ä½äº†å—ï¼Ÿå“ˆå“ˆï¼\n");
+//message("channel:chat", GRN"ã€è­¦é“ƒã€‘"+me->name(1)+"å¾—æ„æ´‹æ´‹åœ°æ‰“å¼€å±å¹•ï¼Œçœ‹ç€è€æ¿åœ¨é—¨å¤–æ¶ˆå¤±ï¼šæ‹œæ‹œäº†æ‚¨å“ªã€‚\n"NOR,users());
 	return 1;
 }
 
 int help(object me)
 {
      write(@HELP
-Ö¸Áî¸ñÊ½: bossgone  
+æŒ‡ä»¤æ ¼å¼: bossgone  
 
-Õâ¸öÖ¸ÁîÈÃÄã(Íæ¼Ò)ÔÚÀÏ°å×ßºó»Ö¸´Õý³£ÏÀ¿ÍÐÐÓÎÏ·¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ (çŽ©å®¶)åœ¨è€æ¿èµ°åŽæ¢å¤æ­£å¸¸ä¾ å®¢è¡Œæ¸¸æˆã€‚
 
-ÓÐ¹ØÖ¸Áî£ºboss
+æœ‰å…³æŒ‡ä»¤ï¼šboss
 HELP
     );
     return 1;

@@ -1,4 +1,4 @@
-// Ò£¿ØËæ´Ó (by xbd)
+// é¥æ§éšä» (by xbd)
 
 #include <ansi.h>
 
@@ -18,16 +18,16 @@ int main(object me, string arg)
 	int i, flag = 0;
 
 	if (!me->query("guard/flag"))
-		return notify_fail("Æ¾ÄãÏÖÔÚµÄÌõ¼ş£¬»¹Ã»ÓĞ×Ê¸ñÓµÓĞËæ´ÓÄØ£¡\n");
+		return notify_fail("å‡­ä½ ç°åœ¨çš„æ¡ä»¶ï¼Œè¿˜æ²¡æœ‰èµ„æ ¼æ‹¥æœ‰éšä»å‘¢ï¼\n");
 	
 	if (!me->query("guard/active"))
-		return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞÊÕ¹ıËæ´Ó£¬Èç¹ûĞèÒªµÄ»°£¬¿ÉÒÔµ½ÎŞÃû¾ÓÊ¿ÄÇÀïÈ¥ÒªÒ»¸ö£¡\n");
+		return notify_fail("ä½ ç°åœ¨è¿˜æ²¡æœ‰æ”¶è¿‡éšä»ï¼Œå¦‚æœéœ€è¦çš„è¯ï¼Œå¯ä»¥åˆ°æ— åå±…å£«é‚£é‡Œå»è¦ä¸€ä¸ªï¼\n");
 
 	if (!(ob = me->query_temp("guard_ob")))
-		return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞÕÙ»½Ëæ´ÓÄØ£¡\n");
+		return notify_fail("ä½ ç°åœ¨è¿˜æ²¡æœ‰å¬å”¤éšä»å‘¢ï¼\n");
 
 	if (!arg || arg == "")
-		return notify_fail("ÄãÏëÒ£¿ØËı×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ æƒ³é¥æ§å¥¹åšä»€ä¹ˆï¼Ÿ\n");
 
 	if ((sscanf(arg, "%s %s", type, cmd) < 2 ))
 		type = arg;
@@ -38,21 +38,21 @@ int main(object me, string arg)
 			break;
 		}
 	if (!flag)
-		return notify_fail("ÄãÏëÒ£¿ØËı×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ æƒ³é¥æ§å¥¹åšä»€ä¹ˆï¼Ÿ\n");
 
 	if (me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
 	if (me->query("neili") < 500)
-		return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦£¬ÎŞ·¨Ê©Õ¹ÌìĞÄÍ¨£¡\n");
+		return notify_fail("ä»¥ä½ ç°åœ¨çš„å†…åŠ›ï¼Œæ— æ³•æ–½å±•å¤©å¿ƒé€šï¼\n");
 	if (me->query("jing") < 200)
-		return notify_fail("ÒÔÄãÏÖÔÚµÄ¾«Æø£¬ÎŞ·¨Ê©Õ¹ÌìĞÄÍ¨£¡\n");
+		return notify_fail("ä»¥ä½ ç°åœ¨çš„ç²¾æ°”ï¼Œæ— æ³•æ–½å±•å¤©å¿ƒé€šï¼\n");
 	if (ob->query("neili") < 500)
-		return notify_fail("ÒÔËıÏÖÔÚµÄÄÚÁ¦£¬ÎŞ·¨±»Äã¸ĞÓ¦£¡\n");
+		return notify_fail("ä»¥å¥¹ç°åœ¨çš„å†…åŠ›ï¼Œæ— æ³•è¢«ä½ æ„Ÿåº”ï¼\n");
 	if (ob->query("jing") < 200)
-		return notify_fail("ÒÔËıÏÖÔÚµÄ¾«Æø£¬ÎŞ·¨±»Äã¸ĞÓ¦£¡\n");
+		return notify_fail("ä»¥å¥¹ç°åœ¨çš„ç²¾æ°”ï¼Œæ— æ³•è¢«ä½ æ„Ÿåº”ï¼\n");
 
-	message_vision(HIM"$N±ÕÄ¿Ú¤Ë¼£¬ÊÔÍ¼ÒÔÒâÄîºÍ$nÏàÍ¨¡£\n"NOR, me, ob);
+	message_vision(HIM"$Né—­ç›®å†¥æ€ï¼Œè¯•å›¾ä»¥æ„å¿µå’Œ$nç›¸é€šã€‚\n"NOR, me, ob);
 	me->start_busy(3);
 	me->add("neili", -500);
 	me->add("jing", - 200);
@@ -64,23 +64,23 @@ int main(object me, string arg)
 
 void do_control(object me, object ob, string cmd)
 {
-	message_vision(HIG"½¥½¥µÄ£¬$NµÄĞÄÉñÓë$nÏàºÏ£¬ÖÕÓÚ´ïµ½ÌìĞÄÍ¨µÄ¾³½ç£¡\n"NOR, me, ob);
-	message_vision(HIG"$NËÆºõÊÜµ½ÁË$nµÄ¸ĞÕÙ£¬Á³ÉÏÍ¸Â¶³öÒ»Ë¿ÉñÃØµÄĞ¦Èİ£¡\n"NOR, ob, me);
+	message_vision(HIG"æ¸æ¸çš„ï¼Œ$Nçš„å¿ƒç¥ä¸$nç›¸åˆï¼Œç»ˆäºè¾¾åˆ°å¤©å¿ƒé€šçš„å¢ƒç•Œï¼\n"NOR, me, ob);
+	message_vision(HIG"$Nä¼¼ä¹å—åˆ°äº†$nçš„æ„Ÿå¬ï¼Œè„¸ä¸Šé€éœ²å‡ºä¸€ä¸ç¥ç§˜çš„ç¬‘å®¹ï¼\n"NOR, ob, me);
 	ob->add("neili", -500);
 	ob->add("jing", - 200);
 	exec(ob, me);
 	ob->force_me(cmd);
 //	me->force_me(cmd);
 	exec(me, ob);
-	message_vision(HIG"$NµÄĞÄÉñÒ»É¢£¬³¤³¤µÄÓõ³öÒ»¿ÚÆø¡£\n"NOR, me, ob);
+	message_vision(HIG"$Nçš„å¿ƒç¥ä¸€æ•£ï¼Œé•¿é•¿çš„åå‡ºä¸€å£æ°”ã€‚\n"NOR, me, ob);
 }
 
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : zhaohuan
+æŒ‡ä»¤æ ¼å¼ : zhaohuan
  
-Õâ¸öÖ¸Áî¿ÉÒÔÓÃÀ´ÕÙ»½ÄãµÄËæ´Ó¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥ç”¨æ¥å¬å”¤ä½ çš„éšä»ã€‚
  
 HELP
     );

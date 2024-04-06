@@ -14,11 +14,11 @@ int main(object me, string arg)
         int i;
         mapping skl;
 
-        if(!arg) return notify_fail("你要恢复谁的数据?\n");
+        if(!arg) return notify_fail("浣犺鎭㈠璋佺殑鏁版嵁?\n");
         obj = present(arg, environment(me));
         if(!obj) obj = present(arg, me);
         if(!obj) obj = find_player(arg);
-        if(!obj) return notify_fail("找不到指定的人。\n");
+        if(!obj) return notify_fail("鎵句笉鍒版寚瀹氱殑浜恒�俓n");
         obj->clear_condition();
         obj->set("shen", 10*(int)obj->query("shen") /9);
         obj->set("combat_exp", 50*(int)obj->query("combat_exp") / 49);
@@ -37,9 +37,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-指令格式 : restoredata username 
+鎸囦护鏍煎紡 : restoredata username 
  
-用于恢复玩家数据。慎用！
+鐢ㄤ簬鎭㈠鐜╁鏁版嵁銆傛厧鐢紒
  
 HELP
     );

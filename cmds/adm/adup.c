@@ -16,15 +16,15 @@ int main(object me, string arg)
 
 	dir = resolve_path(me->query("cwd"), arg);
  
-        return notify_fail("�������Ŀǰ�����š�\n");
+        return notify_fail("这个命令目前不开放。\n");
 	if( file_size(dir)==-2 && dir[strlen(dir)-1] != '/' ) dir += 
 "/";
 		file = get_dir(dir, -1);
 	if( !sizeof(file) ) {
 		if (file_size(dir) == -2) return 
-notify_fail("Ŀ¼�ǿյġ�\n");
+notify_fail("目录是空的。\n");
 	else
-		return notify_fail("û�����Ŀ¼��\n");
+		return notify_fail("没有这个目录。\n");
 	}
 
 	i = sizeof(file);
@@ -33,7 +33,7 @@ notify_fail("Ŀ¼�ǿյġ�\n");
 	if (file[i][1]==-2) file[i][0] += "/";
 
 	}
-	write("Ŀ¼��" + dir + "\n");
+	write("目录：" + dir + "\n");
 
 	reset_eval_cost();
 	if (sizeof(file))
@@ -45,7 +45,7 @@ notify_fail("Ŀ¼�ǿյġ�\n");
 		  else if (file[i][1]==-2) call_other(__FILE__,"main", 
 me,dir+file[i][0]);
 		}
-	else write("û���κε�����\n");
+	else write("没有任何档案。\n");
 	reset_eval_cost();
 	write("\n");
 
@@ -65,8 +65,8 @@ int updatefile(object me,string file)
 	if (obj = find_object(file)) {
 		if( obj==environment(me) ) {
 			if( file_name(obj)==VOID_OB )
-		return notify_fail("�㲻���� VOID_OB 
-�����±��� VOID_OB��\n");
+		return notify_fail("你不能在 VOID_OB 
+里重新编译 VOID_OB。\n");
 	inv = all_inventory(obj);
 	i = sizeof(inv);
 	while(i--)
@@ -77,18 +77,18 @@ int updatefile(object me,string file)
 }
 	if (obj)
 		return 
-notify_fail("�޷�����ɳ�ʽ�롣\n");
+notify_fail("无法清除旧程式码。\n");
 
-	write("���±��� " + file + "��");
+	write("重新编译 " + file + "：");
 	err = catch( call_other(file, "???") );
 	if (err)
-		printf( "��������\n%s\n", err );
+		printf( "发生错误：\n%s\n", err );
 	else {
-		write("�ɹ���\n");
-// file1�����ļ�������Դ�ļ�ɾ��
+		write("成功！\n");
+// file1记忆文件名，将源文件删除
              file1 = file;
 		rm(file);
-		write_file(file1,"�������Ͳ�Ҫ��");
+		write_file(file1,"看不懂就不要看");
 if( (i=sizeof(inv)) && (obj = find_object(file))) {
 		while(i--)
 			if( inv[i] && userp(inv[i]) ) inv[i]->move(obj, 1);
@@ -99,17 +99,17 @@ if( (i=sizeof(inv)) && (obj = find_object(file))) {
 int help(object me)
 {
 write(@HELP
-ָ���ʽ: adup [<·����>]
+指令格式: adup [<路径名>]
 
-��Ŀ¼�����е���Ŀ¼�����
-�, ���û��ָ��Ŀ¼, 
-��ʹ�õ�ǰĿ¼
+将目录下所有的子目录及档
+, 如果没有指定目录, 
+则使用当前目录
 
 
-����:
+范例:
 adup /adm 
-�Ὣ����λ춸�/admĿ¼�µĵ
-����������.
+会将所有位於根/adm目录下的
+蛋副嘁敫新.
 
 HELP
 );

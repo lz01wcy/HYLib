@@ -8,14 +8,14 @@ int main(object me, string arg)
 
 	seteuid(geteuid(this_player(1)));
 	//add by jackyboy 98/12/10
-	//вХж╧╡╩©и╤а╣дд©б╪╨мнд╪Ч╠╩отй╬ЁЖю╢║ё
+	//И≤╩Ф╜╒Д╦█Е▐╞Х╞╩Г └Г⌡╝Е╫∙Е▓▄Ф√┤Д╩╤Х╒╚Ф≤╬Г╓╨Е┤╨Ф²╔Ц─┌
 
 	if( !arg )
 		arg = user_path(me->query("id"));
 	dir = resolve_path(me->query("cwd"), arg);
-	if(file_size(dir)!=-2) return notify_fail("ц╩спуБ╦Жд©б╪║ё\n");
+	if(file_size(dir)!=-2) return notify_fail("Ф╡║Ф°┴Х©≥Д╦╙Г⌡╝Е╫∙Ц─┌\n");
 	if(dir[strlen(dir)-1]!='/') dir += "/";
-	write("╦д╠Д╣╠г╟д©б╪н╙ё╨"+dir+"\n");
+	write("Ф■╧Е▐≤Е╫⌠Е┴█Г⌡╝Е╫∙Д╦╨О╪ "+dir+"\n");
 	me->set("cwd", dir);
 	return 1;	
 }
@@ -23,9 +23,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-ж╦аН╦Яй╫ : cd <всд©б╪цШ>, cd .. , and cd
+Ф▄┤Д╩╓Ф═╪Е╪▐ : cd <Е╜░Г⌡╝Е╫∙Е░█>, cd .. , and cd
 
-╫╚д©г╟╡н©╪╣дд©б╪рфжаж╦╤╗╣двсд©б╪╩Р╩ь╣╫иор╩жВд©б╪; рЮ©иж╠╫с╩ь╣╫вт╪╨╧╓вВд©б╪║ё
+Е╟├Г⌡╝Е┴█Е▐┌Х─┐Г └Г⌡╝Е╫∙Г╖╩Х┤ЁФ▄┤Е╝ Г └Е╜░Г⌡╝Е╫∙Ф┬√Е⌡·Е┬╟Д╦┼Д╦─Д╦╩Г⌡╝Е╫∙; Д╨╕Е▐╞Г⌡╢Ф▌╔Е⌡·Е┬╟Х┤╙Е╥╠Е╥╔Д╫°Г⌡╝Е╫∙Ц─┌
 HELP
 	);
 	return 1;

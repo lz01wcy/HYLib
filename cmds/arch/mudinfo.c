@@ -2,7 +2,7 @@
 inherit F_CLEAN_UP;
 
 #define SCALE   (1.0/10.0)
-#define STATUS  "ÏµÍ³º¯Êý¿â¸ÄÐ´ÖÐ"
+#define STATUS  "ç³»ç»Ÿå‡½æ•°åº“æ”¹å†™ä¸­"
 
 string memory_expression(int m);
 
@@ -19,50 +19,50 @@ int main() {
         r = rusage();
         value = SCALE * (r["utime"] + r["stime"]) / uptime();
 
-        write(HIG"        .__________ Ïµ Í³ ×Ê Ñ¶ __________.\n"NOR);
-        write(HIW"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n");
-        write(" Mud µÄÊ¶±ðÃû³Æ£º  " + MUD_NAME + ".\n");
-        write(" ½çÃæÏµÍ³µÄ°æ±¾£º  " + __VERSION__ + "\n");
-        write(" ÏµÍ³º¯Êý¿â°æ±¾£º  H.Y.I.I Mudlib Ver 2.0\n");
-        printf(" CPU Ê¹ÓÃ°Ù·Ö±È£º  %f %% ±»Õâ¸ö Mud Ê¹ÓÃÖÐ.\n", value );
-        write(" CPU µÄ¸ºµ£×´¿ö£º  " + query_load_average() + ".\n");
-        printf(" ¹²Ê¹ÓÃµÄ¼ÇÒäÌå£º  %s bytes.\n", memory_expression(memory_info()) );
-        write(" ÏßÉÏÊ¹ÓÃÕß×ÜÊý£º  " + sizeof( users() ) + "  ¸öÈËÔÚÏßÉÏ.\n");
-        write(" ÔØÈëÉúÎïµÄ×ÜÊý£º  " + sizeof( livings() ) + "  ¸ö±»¼¤»î.\n");
-        write(" ×¢²áÊ¹ÓÃÕß×ÜÊý£º  " + count_ppls() + "  ¸öÈËÔÚÔÚ±¾ Mud ×¢²á.\n");
-        write(" ÔØÈëµÄÎï¼þ×ÜÊý£º  " + sizeof( objects() ) + " ¸öÎï¼þ.\n");
-        write(" Á¬ÐøÖ´ÐÐµÄÊ±¼ä£º  " + CHINESE_D->chinese_period(uptime()) + "\n");
+        write(HIG"        .__________ ç³» ç»Ÿ èµ„ è®¯ __________.\n"NOR);
+        write(HIW"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
+        write(" Mud çš„è¯†åˆ«åç§°ï¼š  " + MUD_NAME + ".\n");
+        write(" ç•Œé¢ç³»ç»Ÿçš„ç‰ˆæœ¬ï¼š  " + __VERSION__ + "\n");
+        write(" ç³»ç»Ÿå‡½æ•°åº“ç‰ˆæœ¬ï¼š  H.Y.I.I Mudlib Ver 2.0\n");
+        printf(" CPU ä½¿ç”¨ç™¾åˆ†æ¯”ï¼š  %f %% è¢«è¿™ä¸ª Mud ä½¿ç”¨ä¸­.\n", value );
+        write(" CPU çš„è´Ÿæ‹…çŠ¶å†µï¼š  " + query_load_average() + ".\n");
+        printf(" å…±ä½¿ç”¨çš„è®°å¿†ä½“ï¼š  %s bytes.\n", memory_expression(memory_info()) );
+        write(" çº¿ä¸Šä½¿ç”¨è€…æ€»æ•°ï¼š  " + sizeof( users() ) + "  ä¸ªäººåœ¨çº¿ä¸Š.\n");
+        write(" è½½å…¥ç”Ÿç‰©çš„æ€»æ•°ï¼š  " + sizeof( livings() ) + "  ä¸ªè¢«æ¿€æ´».\n");
+        write(" æ³¨å†Œä½¿ç”¨è€…æ€»æ•°ï¼š  " + count_ppls() + "  ä¸ªäººåœ¨åœ¨æœ¬ Mud æ³¨å†Œ.\n");
+        write(" è½½å…¥çš„ç‰©ä»¶æ€»æ•°ï¼š  " + sizeof( objects() ) + " ä¸ªç‰©ä»¶.\n");
+        write(" è¿žç»­æ‰§è¡Œçš„æ—¶é—´ï¼š  " + CHINESE_D->chinese_period(uptime()) + "\n");
                         ob = filter_array( livings(),
                                 (: $1->is_character() && !userp($1) && clonep($1) :) );
-         printf(" ¹²ÓÐ %d ¸ö NPC Îï¼þ¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ª NPC ç‰©ä»¶ã€€\n", sizeof(ob));
                         o = filter_array( livings(),
                                 (: $1->is_character() && !userp($1) && !query_heart_beat($1) && clonep($1):) );
-         printf(" ¹²ÓÐ %d ¸ö NPC Îï¼þÎÞÐÄÌø¡¡\n", sizeof(o));
+         printf(" å…±æœ‰ %d ä¸ª NPC ç‰©ä»¶æ— å¿ƒè·³ã€€\n", sizeof(o));
                          ob = objects( (: $1->is_fighting() :) );
                         o = filter_array( livings(),
                                 (: $1->is_character() && userp($1) && !query_heart_beat($1) :) );
-         printf(" ¹²ÓÐ %d ¸ö Íæ¼Ò ÎÞÐÄÌø¡¡\n", sizeof(o));
+         printf(" å…±æœ‰ %d ä¸ª çŽ©å®¶ æ— å¿ƒè·³ã€€\n", sizeof(o));
                          ob = objects( (: $1->is_fighting() :) );
 
-         printf(" ¹²ÓÐ %d ¸öÈËÎïÕýÔÚÕ½¶·×´Ì¬¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªäººç‰©æ­£åœ¨æˆ˜æ–—çŠ¶æ€ã€€\n", sizeof(ob));
                         ob = objects( (: $1->is_killing() && $1->is_fighting() :) );
-         printf(" ¹²ÓÐ %d ¸öÈËÎïÕýÔÚÐÔÃüÏà²«µÄÕ½¶·×´Ì¬¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªäººç‰©æ­£åœ¨æ€§å‘½ç›¸æçš„æˆ˜æ–—çŠ¶æ€ã€€\n", sizeof(ob));
                         ob = objects( (: $1->is_killing() :) );
-         printf(" ¹²ÓÐ %d ¸öÈËÎïÕýºÍÆäËûÈËÎï»¥Ïà³ðºÞ¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªäººç‰©æ­£å’Œå…¶ä»–äººç‰©äº’ç›¸ä»‡æ¨ã€€\n", sizeof(ob));
                         ob = objects( (: query_heart_beat :) );
-         printf(" ¹²ÓÐ %d ¸öÎï¼þµÄ heart beat ÎªÓÐÐ§×´Ì¬¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªç‰©ä»¶çš„ heart beat ä¸ºæœ‰æ•ˆçŠ¶æ€ã€€\n", sizeof(ob));
                         ob = objects( (: virtualp :) );
-         printf(" ¹²ÓÐ %d ¸öÐéÄâÎï¼þ¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªè™šæ‹Ÿç‰©ä»¶ã€€\n", sizeof(ob));
                         ob = objects( (: function_exists("create_door", $1) :) );
-         printf(" ¹²ÓÐ %d ¸ö·¿¼ä¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªæˆ¿é—´ã€€\n", sizeof(ob));
                         if( !find_object(ROOM) ) ROOM->foo();
                         ob = objects( (: inherits(ROOM, $1) :) );
-         printf(" ¹²ÓÐ %d ¸öÎï¼þ¼Ì³Ð±ê×¼·¿¼ä¡¡\n", sizeof(ob));
+         printf(" å…±æœ‰ %d ä¸ªç‰©ä»¶ç»§æ‰¿æ ‡å‡†æˆ¿é—´ã€€\n", sizeof(ob));
                         if( !find_object(F_EQUIP) ) F_EQUIP->foo();
                         ob = objects( (: inherits(F_EQUIP, $1) :) );
-         printf(" ¹²ÓÐ %d ¸öÎï¼þ¼Ì³Ð±ê×¼×°±¸¡¡\n", sizeof(ob));
-        write(HIG"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);        
-        write(" Mud ÏÖÔÚµÄ×´Ì¬£º  " + STATUS + ".\n");
+         printf(" å…±æœ‰ %d ä¸ªç‰©ä»¶ç»§æ‰¿æ ‡å‡†è£…å¤‡ã€€\n", sizeof(ob));
+        write(HIG"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);        
+        write(" Mud çŽ°åœ¨çš„çŠ¶æ€ï¼š  " + STATUS + ".\n");
         return 1;
 }
 
@@ -96,9 +96,9 @@ int count_ppls()
 int help() {
 
    write(@HELP
-Ö¸Áî¸ñÊ½£ºmudinfo
+æŒ‡ä»¤æ ¼å¼ï¼šmudinfo
 
-Õâ¸öÖ¸Áî½«»áÏÔÊ¾ÓÐ¹ØÕâ¸ö Mud µÄÒ»Ð©ÏµÍ³×ÊÑ¶¡£
+è¿™ä¸ªæŒ‡ä»¤å°†ä¼šæ˜¾ç¤ºæœ‰å…³è¿™ä¸ª Mud çš„ä¸€äº›ç³»ç»Ÿèµ„è®¯ã€‚
 
 HELP
         );

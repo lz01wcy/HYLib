@@ -1,5 +1,5 @@
 // summon command..
-//ĞÇĞÇ2000/4/9
+//æ˜Ÿæ˜Ÿ2000/4/9
 inherit F_CLEAN_UP;
 #include <ansi.h>
 int main(object me, string str)
@@ -9,30 +9,30 @@ string wiz_status;
 	int i;
 	if (!str) return notify_fail("<Syntax>: Summon <player id>\n");
 	ob = LOGIN_D->find_body(str);
-	if (!ob) return notify_fail("ß×... ÓĞÕâ¸öÈËÂğ?\n");
+	if (!ob) return notify_fail("å’¦... æœ‰è¿™ä¸ªäººå—?\n");
 	// moving
-	tell_room(environment(ob),"Ìì¿ÕÖĞÉì³öÒ»Ö»´óÊÖ°Ñ"+
-	(string)ob->query("name")+"×¥ÁËÆğÀ´, È»áá²»¼ûÁË.\n", ob);
-	tell_object(ob,"Ò»Ö»ÊÖ°ÑÄã×¥ÁËÆğÀ´, ÄãÑÛÇ°Ò»ÕóºÚ....\n");
+	tell_room(environment(ob),"å¤©ç©ºä¸­ä¼¸å‡ºä¸€åªå¤§æ‰‹æŠŠ"+
+	(string)ob->query("name")+"æŠ“äº†èµ·æ¥, ç„¶å¾Œä¸è§äº†.\n", ob);
+	tell_object(ob,"ä¸€åªæ‰‹æŠŠä½ æŠ“äº†èµ·æ¥, ä½ çœ¼å‰ä¸€é˜µé»‘....\n");
 	ob->move(environment(me));
 wiz_status = SECURITY_D->get_status(me);
 	if( userp(me) && wizardp(me))
-message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "SUMMONÁË" + 
-                  ob->query("name")+HIC"!"NOR"¡£\n", users());
-        tell_object(me, "Äã°Ñ"+(string)ob->query("name")+"×¥µ½ÄãµÄÃæÇ°.\n");
-	tell_object(ob,".... ĞÑÀ´Ê±·¢ÏÖÊÇ"+(string)me->query("name")+
-	"°ÑÄãÅª¹ıÀ´µÄ.\n");
-	tell_room(environment(ob),(string)ob->query("name")+"Í»È»³öÏÖ"+
-	"ÔÚÄãÑÛÇ°\n",({me,ob}));
+message("channel:chat", HIC"ã€ç©å®¶ç›‘ç£ã€‘"+me->name() + "SUMMONäº†" + 
+                  ob->query("name")+HIC"!"NOR"ã€‚\n", users());
+        tell_object(me, "ä½ æŠŠ"+(string)ob->query("name")+"æŠ“åˆ°ä½ çš„é¢å‰.\n");
+	tell_object(ob,".... é†’æ¥æ—¶å‘ç°æ˜¯"+(string)me->query("name")+
+	"æŠŠä½ å¼„è¿‡æ¥çš„.\n");
+	tell_room(environment(ob),(string)ob->query("name")+"çªç„¶å‡ºç°"+
+	"åœ¨ä½ çœ¼å‰\n",({me,ob}));
 
-//´Ó´Ë´¦¿ªÊ¼ÊÇ¼ÇÂ¼	
+//ä»æ­¤å¤„å¼€å§‹æ˜¯è®°å½•	
         log_file("cmds/summon",
-		sprintf("%s(%s) summon %s(%s) on %s¡£\n",
-		me->name(1), //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÈËÃû
-		geteuid(me), //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄID
+		sprintf("%s(%s) summon %s(%s) on %sã€‚\n",
+		me->name(1), //è®°å½•ä½¿ç”¨å‘½ä»¤çš„äººå
+		geteuid(me), //è®°å½•ä½¿ç”¨å‘½ä»¤çš„ID
 		ob->name(1),
 		geteuid(ob),
-		ctime(time()) ) ); //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÊ±¼ä
+		ctime(time()) ) ); //è®°å½•ä½¿ç”¨å‘½ä»¤çš„æ—¶é—´
 	// ok ..
 	return 1;
 }
@@ -40,9 +40,9 @@ message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "SUMMONÁË" +
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : summon <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : summon <æŸäºº>
 
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)½«Ä³ÈË×¥µ½ÄãÃæÇ°¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )å°†æŸäººæŠ“åˆ°ä½ é¢å‰ã€‚
 HELP
     );
     return 1;

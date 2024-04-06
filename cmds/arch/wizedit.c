@@ -3,7 +3,7 @@
 // Kenny@Broken.History (6/18/1996)
 
 inherit F_CLEAN_UP;
-inherit F_VI;                           // ¼Ì³Ğ±à¼­¹¦ÄÜ
+inherit F_VI;                           // ç»§æ‰¿ç¼–è¾‘åŠŸèƒ½
 
 int file_exists(string file);
 
@@ -12,12 +12,12 @@ int main(object me, string arg)
         string file, oldfile;
         object ob;
 
-if( 1 ) return notify_fail("´ËÃüÁîÒÑ¾­È¡Ïû£¬ÇëÔÚ±¾»úÉÏĞ´ºÃ³ÌĞò£¬MAIL HXSD!\n");
-        if (in_edit(me)) return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ±à¼­Æ÷ÁË¡£\n");
-        if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºme <µµÃû>|<Îï¼şÃû>\n");
+if( 1 ) return notify_fail("æ­¤å‘½ä»¤å·²ç»å–æ¶ˆï¼Œè¯·åœ¨æœ¬æœºä¸Šå†™å¥½ç¨‹åºï¼ŒMAIL HXSD!\n");
+        if (in_edit(me)) return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨ç¼–è¾‘å™¨äº†ã€‚\n");
+        if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šme <æ¡£å>|<ç‰©ä»¶å>\n");
 
         seteuid(geteuid(me));
-        file = resolve_path(me->query("cwd"), arg); // È¡µÃµµÃû
+        file = resolve_path(me->query("cwd"), arg); // å–å¾—æ¡£å
         if (!file_exists(file)) // check virtual object
         {
                 string *path=explode(file, "/");
@@ -25,15 +25,15 @@ if( 1 ) return notify_fail("´ËÃüÁîÒÑ¾­È¡Ïû£¬ÇëÔÚ±¾»úÉÏĞ´ºÃ³ÌĞò£¬MAIL HXSD!\n");
                 file = "/"+implode(path[0..<2], "/")+"/_"+path[<1];
         }
         if (!file_exists(file))
-        {       // ĞÂµµ
-                ob = present(arg, me);  // ¼ì²éÉíÉÏµÄÎï¼ş
-                if (!ob) ob = present(arg, environment(me)); // ¼ì²é·¿¼äÀïµÄÎï¼ş
+        {       // æ–°æ¡£
+                ob = present(arg, me);  // æ£€æŸ¥èº«ä¸Šçš„ç‰©ä»¶
+                if (!ob) ob = present(arg, environment(me)); // æ£€æŸ¥æˆ¿é—´é‡Œçš„ç‰©ä»¶
                 if (ob && me->visible(ob))
-                        file = base_name(ob) + ".c"; // È¡µÃÎï¼şµÄµµÃû
+                        file = base_name(ob) + ".c"; // å–å¾—ç‰©ä»¶çš„æ¡£å
                 else    file = oldfile;
         }
 
-        start_edit(file);               // ºô½Ğ±à¼­Æ÷£¬¿ªÊ¼±à¼­
+        start_edit(file);               // å‘¼å«ç¼–è¾‘å™¨ï¼Œå¼€å§‹ç¼–è¾‘
         return 1;
 } // main()
 
@@ -46,11 +46,11 @@ int file_exists(string file)
 int  help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºme <µµÃû>|<Îï¼şÃû>
+æŒ‡ä»¤æ ¼å¼ï¼šme <æ¡£å>|<ç‰©ä»¶å>
 
-ÀûÓÃ´ËÒ»Ö¸Áî¿ÉÖ±½ÓÔÚÏßÉÏ±à¼­µµ°¸£¬ÏêÏ¸ËµÃ÷Çë¿´±à¼­Æ÷ÄÚµÄÏßÉÏ¸¨ÖúËµÃ÷¡£
+åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤å¯ç›´æ¥åœ¨çº¿ä¸Šç¼–è¾‘æ¡£æ¡ˆï¼Œè¯¦ç»†è¯´æ˜è¯·çœ‹ç¼–è¾‘å™¨å†…çš„çº¿ä¸Šè¾…åŠ©è¯´æ˜ã€‚
 
-Ïà¹ØÖ¸Áî£ºedit¡¢update¡£
+ç›¸å…³æŒ‡ä»¤ï¼šeditã€updateã€‚
 HELP
                 );
         return 1;

@@ -8,44 +8,44 @@ int main(object me, string arg)
 {
 
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
 /*    if(me->query("combat_exp") < 500000)
 {
 me->delete_temp("combat_yield");
-        return notify_fail("ÄãµÄÎäÑ§ĞŞÎª²»¹»ÄãÕâÑù!!\n");
+        return notify_fail("ä½ çš„æ­¦å­¦ä¿®ä¸ºä¸å¤Ÿä½ è¿™æ ·!!\n");
 }*/
 	if( !arg ){
              if(me->query_temp("combat_yield")){
                   me->delete_temp("combat_yield");
-                  tell_object(me, "Äã¾ö¶¨´ò¼ÜÊ±»¹ÊÖ·´»÷¡£\n");
+                  tell_object(me, "ä½ å†³å®šæ‰“æ¶æ—¶è¿˜æ‰‹åå‡»ã€‚\n");
 me->start_busy(1);
                   }
              else{
     if(me->is_fighting()) 
     {
-        return notify_fail("ÄãÒÑ¾­ÔÚ´òÁË£¡Ã»°ì·¨ÔÙ¾ö¶¨´ò²»»¹ÊÖÁË£¡\n");
+        return notify_fail("ä½ å·²ç»åœ¨æ‰“äº†ï¼æ²¡åŠæ³•å†å†³å®šæ‰“ä¸è¿˜æ‰‹äº†ï¼\n");
     }
                   me->set_temp("combat_yield", 1);
-                  tell_object(me, "Äã¾ö¶¨´ò¼ÜÊ±´ò²»»¹ÊÖ¡£\n");
+                  tell_object(me, "ä½ å†³å®šæ‰“æ¶æ—¶æ‰“ä¸è¿˜æ‰‹ã€‚\n");
                   }
              }
 
         else if( arg == "yes"){ 
     if(me->is_fighting()) 
     {
-        return notify_fail("ÄãÒÑ¾­ÔÚ´òÁË£¡Ã»°ì·¨ÔÙ¾ö¶¨´ò²»»¹ÊÖÁË£¡\n");
+        return notify_fail("ä½ å·²ç»åœ¨æ‰“äº†ï¼æ²¡åŠæ³•å†å†³å®šæ‰“ä¸è¿˜æ‰‹äº†ï¼\n");
     }
                   me->set_temp("combat_yield", 1);
-                  tell_object(me, "Äã¾ö¶¨´ò¼ÜÊ±´ò²»»¹ÊÖ¡£\n");
+                  tell_object(me, "ä½ å†³å®šæ‰“æ¶æ—¶æ‰“ä¸è¿˜æ‰‹ã€‚\n");
                   }
         else if( arg == "no"){
                   me->delete_temp("combat_yield");
 me->start_busy(1);
-                  tell_object(me, "Äã¾ö¶¨´ò¼ÜÊ±»¹ÊÖ·´»÷¡£\n");
+                  tell_object(me, "ä½ å†³å®šæ‰“æ¶æ—¶è¿˜æ‰‹åå‡»ã€‚\n");
                   }
 
-        else return notify_fail("Äã¾ö¶¨´ò¼Ü»¹ÊÖ(yield no)»¹ÊÇ²»»¹ÊÖ(yield yes)£¿\n");
+        else return notify_fail("ä½ å†³å®šæ‰“æ¶è¿˜æ‰‹(yield no)è¿˜æ˜¯ä¸è¿˜æ‰‹(yield yes)ï¼Ÿ\n");
 
 	return 1;
 }
@@ -53,9 +53,9 @@ me->start_busy(1);
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : yield <yes | no>
+æŒ‡ä»¤æ ¼å¼ : yield <yes | no>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¾ö¶¨´ò¼ÜÊ±ÊÇ·ñ»¹ÊÖ·´»÷¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å†³å®šæ‰“æ¶æ—¶æ˜¯å¦è¿˜æ‰‹åå‡»ã€‚
  
 HELP
     );

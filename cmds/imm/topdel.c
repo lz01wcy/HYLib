@@ -10,11 +10,11 @@ int main(object me, string arg)
 	seteuid(geteuid(me));
 	
 	if (!arg||sscanf(arg,"%s %s",type,player)!=2)
-		return notify_fail("Ö¸Áî¸ñÊ½ : topdel <ÀàĞÍ> <Íæ¼ÒID>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ : topdel <ç±»å‹> <ç©å®¶ID>\n");
 		
 	if( ob = new("/clone/topten/magic-rice") )
 		ob->del_one(player,type);
-		else return notify_fail("toptenµÄmagic-rice³öÎÊÌâÁË\n");
+		else return notify_fail("toptençš„magic-riceå‡ºé—®é¢˜äº†\n");
 
 	return 1;
 }
@@ -22,11 +22,11 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : topdel <ÀàĞÍ> <Íæ¼ÒID>
+æŒ‡ä»¤æ ¼å¼ : topdel <ç±»å‹> <ç©å®¶ID>
 
-×¢Òâ:<ÀàĞÍ>ÇëÓÃ B1,B2,B3...
-ÔÙ½²Ëü¼¸¾ä,ÒòÎªÖ»ÓĞµ±ÓĞÈË×ßÀ´init()µÄÊ±ºò,Ëû²Å»á¸üĞÂ°ñÉÏµÄÄÚÈİ,
-ËùÒÔtopdelÍê,ÒªÔÙ´Î×ßµ½topboard,ÈÃËûinit¾ÍÊÇÁË,²»È»¿´µ½µÄ¿ÉÄÜÊÇ¾ÉµÄ,Ã»±ä
+æ³¨æ„:<ç±»å‹>è¯·ç”¨ B1,B2,B3...
+å†è®²å®ƒå‡ å¥,å› ä¸ºåªæœ‰å½“æœ‰äººèµ°æ¥init()çš„æ—¶å€™,ä»–æ‰ä¼šæ›´æ–°æ¦œä¸Šçš„å†…å®¹,
+æ‰€ä»¥topdelå®Œ,è¦å†æ¬¡èµ°åˆ°topboard,è®©ä»–initå°±æ˜¯äº†,ä¸ç„¶çœ‹åˆ°çš„å¯èƒ½æ˜¯æ—§çš„,æ²¡å˜
 HELP
     );
     return 1;

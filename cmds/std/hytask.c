@@ -4,15 +4,15 @@ int main(object me, string str)
 {
 	string output;
         if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
         me->add("jing",-20);
         me->start_busy(2);
 
-    output = HIR"¡ï "HIW"ĞÇÔÂ´«Ææ"HIR" ¡ï"HIG" ÉñÊé°ñ\n" NOR; 
-    output += ""HIW"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR"";   
+    output = HIR"â˜… "HIW"æ˜Ÿæœˆä¼ å¥‡"HIR" â˜…"HIG" ç¥ä¹¦æ¦œ\n" NOR; 
+    output += ""HIW"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR"";   
     output += TASK_D->dyn_quest_list();  
-    output += ""HIW"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIG" º£ÑóII"HIW" ©¤©¤©¤©¤\n\n"NOR""; 
+    output += ""HIW"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIG" æµ·æ´‹II"HIW" â”€â”€â”€â”€\n\n"NOR""; 
 
 	me->start_more(output);
 	return 1;
@@ -21,10 +21,10 @@ int main(object me, string str)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: hytask
-Ïà¹ØÎÄ¼ş: help tasks
+æŒ‡ä»¤æ ¼å¼: hytask
+ç›¸å…³æ–‡ä»¶: help tasks
 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÄ¿Ç°µÄËùÓĞÉñÊé.
+è¿™ä¸ªæŒ‡ä»¤æ˜¯ç”¨æ¥å¾—çŸ¥ç›®å‰çš„æ‰€æœ‰ç¥ä¹¦.
 
 HELP
 	);

@@ -13,23 +13,23 @@ int main(object me, string arg)
         int lvl = 0;
 
         if (me->is_busy())
-                return notify_fail("��������æ���ء�\n");
+                return notify_fail("你现在正忙着呢。\n");
 
         if (! arg)
-                return notify_fail("ָ���ʽ��detach <����>\n");
+                return notify_fail("指令格式：detach <对象>\n");
 
         if (! (ob = present(arg, environment(me))) ||
             ! ob->is_character())
-                return notify_fail("�����˭�Ͼ�ʦͽ��ϵ��?\n");
+                return notify_fail("你想和谁断绝师徒关系？?\n");
 
         if (! living(ob))
-                return notify_fail("������Ȱ�" + ob->name() + "Ū�ѡ�\n");
+                return notify_fail("你必须先把" + ob->name() + "弄醒。\n");
 
         if (me->query_temp("pending/detach") != ob)
         {
-                write(HIR "����Ĵ����" + ob->name(1) + "˵��Ҫ�뿪ʦ����������"
-                      "���뿪�ˣ��㽫��ʧȥ���еĸ߼��书Ŷ��\n" NOR);
-                write(YEL "�����������˾��ģ�����������һ��������\n" NOR);
+                write(HIR "你真的打算和" + ob->name(1) + "说你要离开师门吗？倘若真"
+                      "的离开了，你将会失去所有的高级武功哦！\n" NOR);
+                write(YEL "如果你真的下了决心，就请再输入一次这个命令。\n" NOR);
                 me->set_temp("pending/detach", ob);
                 me->start_busy(1);
                 return 1;
@@ -39,18 +39,18 @@ int main(object me, string arg)
 	{
                 if (ob->query("family/family_name") == me->query("family/family_name"))
                 {
-                    message_vision("\n$N���һ������$n����ʲ��ʲô����Ҫ����ʦ�ţ�"
-                                   "���¿ɵ�����ʦ��ȥ��\n", ob, me);
+                    message_vision("\n$N大吃一惊，对$n道：什，什么？你要脱离师门？"
+                                   "这事可得找你师傅去。\n", ob, me);
                     return 1;
                 }
         }
 
-        message_vision("\n$N��$n����һ��ͷ������ʦ������... ��������ʦ�š�\n", me, ob);
+        message_vision("\n$N向$n磕了一个头，道：师父！我... 我想脱离师门。\n", me, ob);
         if (intp(me->query("family/beggarlvl")) &&
             (int)me->query("family/beggarlvl") > 0)
                 lvl = me->query("family/beggarlvl"); 
         me->set_temp("pending/detach", 1);
-        tell_object(ob, me->name() + "������ʦ�š�\n");
+        tell_object(ob, me->name() + "想脱离师门。\n");
         ob->attempt_detach(me);
         if (lvl) me->set("gaibang/beggarlvl", lvl); 
         return 1;
@@ -59,14 +59,14 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : detach|tuoli <����>
+指令格式 : detach|tuoli <对象>
  
-���ָ�������������ʦ����������ʦ�ţ���Ϊһ��Ĵ����ɲ�Ը���
-����ʦ���ˣ�������������Ͷ�������ɣ���ð��չ������ʦ�ţ�Ȼ
-��һ������ʦ�ţ�ʦ����׷��������ѧ���ı�����ѧ����׷�ز�������
-�书��֪ʶ�����ܵ��κ�Ӱ�졣
+这个指令能让你向你的师傅请求脱离师门，因为一般的大门派不愿意接
+收判师的人，所以如果你想改投其他门派，最好按照规矩脱离师门，然
+而一旦脱离师门，师傅将追回你所有学到的本门秘学，并追回部分其他
+武功，知识不会受到任何影响。
 
-��ο����ָ�� expell
+请参考相关指令 expell
 HELP );
         return 1;
 }

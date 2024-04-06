@@ -9,33 +9,33 @@ object *enemy;
    seteuid(getuid());
         
 	if(!present("mostaff",me) && !present("shenstaff",me))
-		return notify_fail("Ö»ÄÜÍ¨¹ýÉñÕÈ»òÄ§ÕÈ²ÅÄÜÕÙ»½»¤·¨¡£\n");
+		return notify_fail("åªèƒ½é€šè¿‡ç¥žæ–æˆ–é­”æ–æ‰èƒ½å¬å”¤æŠ¤æ³•ã€‚\n");
 		if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀïÃ»ÓÐÈË´ò¶·£¡\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰äººæ‰“æ–—ï¼\n");
    //last 0 means do not show position.
 
    if( (int)me-> query_temp("number") > 1 )
-     return notify_fail("ÄãÖ»ÄÜÕÙ»½Á½Î»»¤·¨!\n");
+     return notify_fail("ä½ åªèƒ½å¬å”¤ä¸¤ä½æŠ¤æ³•!\n");
    if (me->query("jing")<100) 
-	return notify_fail("Äã¾«²»¹»!!\n");
+	return notify_fail("ä½ ç²¾ä¸å¤Ÿ!!\n");
    if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("Äã¸ÕÕÐ¹ý»¤·¨!!\n");
+        return notify_fail("ä½ åˆšæ‹›è¿‡æŠ¤æ³•!!\n");
 
 
    me->save();
 
 
-   message_vision("Ö»Ìý$N´óºÈÒ»Éù£º×óÓÒ»¤·¨ºÎÔÚ£¡£¡£¡£¡\n", me);
+   message_vision("åªå¬$Nå¤§å–ä¸€å£°ï¼šå·¦å³æŠ¤æ³•ä½•åœ¨ï¼ï¼ï¼ï¼\n", me);
    hufa = new(HUFA_FILE);
    hufa->move(environment(me));
-   	 hufa->set_name(me->query("name")+"µÄ×ó»¤·¨",({"dizi"}));
+   	 hufa->set_name(me->query("name")+"çš„å·¦æŠ¤æ³•",({"dizi"}));
    hufa->set("combat_exp",me->query("combat_exp")/2);
    hufa->set("possessed", me);
    hufa->show(me);
 
    hufa = new(HUFA_FILE);
    hufa->move(environment(me));
-	 hufa->set_name(me->query("name")+"µÄÓÒ»¤·¨",({"dizi"}));
+	 hufa->set_name(me->query("name")+"çš„å³æŠ¤æ³•",({"dizi"}));
    hufa->set("combat_exp",me->query("combat_exp")/2);
    hufa->set("possessed", me);
 
@@ -65,11 +65,11 @@ object *enemy;
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½: alert 
+æŒ‡ä»¤æ ¼å¼: alert 
  
-ÉíÎªÎäÁÖÕýÐ°Á½ÅÉµÄÃËÖ÷£¬¿ÉÒÔÓÃÕÙ»½Á½Ãû»¤·¨À´±£»¤×Ô¼º¡£
-¿ÉÓÃwhisper¶Ô×Ô¼ºµÄ»¤·¨ÏÂÃüÁî¡£ÀýÈç£¬Èç¹ûÄãµÄ»¤·¨½Ðaaa-zuo£¬ÓÃ
-whisper aaa-zuo kill xiao er¼´¿ÉÃüÁîËûÉ±µêÐ¡¶þ¡£
+èº«ä¸ºæ­¦æž—æ­£é‚ªä¸¤æ´¾çš„ç›Ÿä¸»ï¼Œå¯ä»¥ç”¨å¬å”¤ä¸¤åæŠ¤æ³•æ¥ä¿æŠ¤è‡ªå·±ã€‚
+å¯ç”¨whisperå¯¹è‡ªå·±çš„æŠ¤æ³•ä¸‹å‘½ä»¤ã€‚ä¾‹å¦‚ï¼Œå¦‚æžœä½ çš„æŠ¤æ³•å«aaa-zuoï¼Œç”¨
+whisper aaa-zuo kill xiao erå³å¯å‘½ä»¤ä»–æ€åº—å°äºŒã€‚
 
 HELP
     );

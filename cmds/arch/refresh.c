@@ -6,13 +6,13 @@ int main(object me)
         object *ob_list;
         int i;
 	  if( !wizardp(me) )
-		return notify_fail("Íæ¼Ò²»ÄÜÊ¹ÓÃ´ËÃüÁîÀ´´ÓĞÂ·Ö²¼Ê¹Ãü£¡:(\n");
-	  message("system",HIR "ÖØĞÂ·Ö²¼ËùÓĞÊ¹Ãü¡£¡£¡£"NOR,users()); 
+		return notify_fail("ç©å®¶ä¸èƒ½ä½¿ç”¨æ­¤å‘½ä»¤æ¥ä»æ–°åˆ†å¸ƒä½¿å‘½ï¼:(\n");
+	  message("system",HIR "é‡æ–°åˆ†å¸ƒæ‰€æœ‰ä½¿å‘½ã€‚ã€‚ã€‚"NOR,users()); 
            ob_list = children("/quest/shenshu/npc/man2");
                 for(i=0; i<sizeof(ob_list); i++) 
                 if(environment(ob_list[i]))
                 {
-		message_vision("$NĞ¦ÁËĞ¦Ëµ£º¶«Î÷ÒÑ¾­µ½ÊÖ£¬ÈÎÎñÍê³É£¬³·ÁË£¡\n",ob_list[i]);
+		message_vision("$Nç¬‘äº†ç¬‘è¯´ï¼šä¸œè¥¿å·²ç»åˆ°æ‰‹ï¼Œä»»åŠ¡å®Œæˆï¼Œæ’¤äº†ï¼\n",ob_list[i]);
                     ob_list[i]->move(VOID_OB);
                         destruct(ob_list[i]);
                }
@@ -21,7 +21,7 @@ int main(object me)
                 for(i=0; i<sizeof(ob_list); i++) 
                 if(environment(ob_list[i]))
                 {
-		message_vision("$NĞ¦ÁËĞ¦Ëµ£º¶«Î÷ÒÑ¾­µ½ÊÖ£¬ÈÎÎñÍê³É£¬³·ÁË£¡\n",ob_list[i]);
+		message_vision("$Nç¬‘äº†ç¬‘è¯´ï¼šä¸œè¥¿å·²ç»åˆ°æ‰‹ï¼Œä»»åŠ¡å®Œæˆï¼Œæ’¤äº†ï¼\n",ob_list[i]);
                     ob_list[i]->move(VOID_OB);
                         destruct(ob_list[i]);
                }
@@ -296,7 +296,7 @@ int main(object me)
                         ob_list[i]->move(VOID_OB);destruct(ob_list[i]);
                }
 	  TASK_D->init_dynamic_quest(1);
-	  message("system",HIG "¡£¡£¡£Ê¹ÃüÖØĞÂ·Ö²¼Íê±Ï\n"NOR,users()); 
+	  message("system",HIG "ã€‚ã€‚ã€‚ä½¿å‘½é‡æ–°åˆ†å¸ƒå®Œæ¯•\n"NOR,users()); 
           return 1;
 	}
         	
@@ -304,7 +304,7 @@ int main(object me)
 {
   write(@HELP
 
-refresh ÃüÁîÊÇÓÃÀ´ÖØĞÂ²¼ËùÓĞ£¨Íê³ÉºÍÃ»Íê³É£©µÄÊ¹Ãü£¨£ô£á£ó£ë£ó£©
+refresh å‘½ä»¤æ˜¯ç”¨æ¥é‡æ–°å¸ƒæ‰€æœ‰ï¼ˆå®Œæˆå’Œæ²¡å®Œæˆï¼‰çš„ä½¿å‘½ï¼ˆï½”ï½ï½“ï½‹ï½“ï¼‰
 
 HELP
     );

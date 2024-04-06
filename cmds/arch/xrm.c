@@ -3,39 +3,39 @@
 inherit F_CLEAN_UP;
 int help();
 int rmDir(string );
-static int flag; //ÅĞ¶ÏÊÇ·ñÖÕÖ¹µİ¹éµ÷ÓÃ£¬²¢ÏŞÖÆµİ¹é²ãÊı(Ö»ÔÊĞíµÍÓÚ16²ãµÄµ÷ÓÃ)
+static int flag; //åˆ¤æ–­æ˜¯å¦ç»ˆæ­¢é€’å½’è°ƒç”¨ï¼Œå¹¶é™åˆ¶é€’å½’å±‚æ•°(åªå…è®¸ä½äº16å±‚çš„è°ƒç”¨)
 
 int main(object me, string file)
 {
 	seteuid(geteuid(me));
-	write("X rm ÃüÁî v0.1  \nWrite By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1\n"+
-		"Ö÷Ò³£ºhttp://mud.yn.cninfo.net/jackyboy\nÓÊ¼ş£ºjackyboy@126.com\n");
-    if (!file) return notify_fail("ÄãÒªÉ¾³ıÄÇ¸öµµ°¸?\n");
+	write("X rm å‘½ä»¤ v0.1  \nWrite By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1\n"+
+		"ä¸»é¡µï¼šhttp://mud.yn.cninfo.net/jackyboy\né‚®ä»¶ï¼šjackyboy@126.com\n");
+    if (!file) return notify_fail("ä½ è¦åˆ é™¤é‚£ä¸ªæ¡£æ¡ˆ?\n");
 	file=resolve_path(me->query("cwd"),file);
 	log_file("cmds/xrm.log",
-	sprintf("%s(%s) É¾³ı %s on %s\n",
-	me->name(1),   //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÈËÃû
-	geteuid(me),   //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄID
-	file,          //¼ÇÂ¼É¾³ıµÄÎÄ¼şÂ·¾¶
-	ctime(time()) ) ); //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÊ±¼ä
+	sprintf("%s(%s) åˆ é™¤ %s on %s\n",
+	me->name(1),   //è®°å½•ä½¿ç”¨å‘½ä»¤çš„äººå
+	geteuid(me),   //è®°å½•ä½¿ç”¨å‘½ä»¤çš„ID
+	file,          //è®°å½•åˆ é™¤çš„æ–‡ä»¶è·¯å¾„
+	ctime(time()) ) ); //è®°å½•ä½¿ç”¨å‘½ä»¤çš„æ—¶é—´
 	flag=0;
 	switch(file_size(file))
 	{
 		case -1:
-			write("¶Ô²»Æğ£¬ÄãÎŞÈ¨É¾³ıÕâ¸öÄ¿Â¼(»òÎÄ¼ş)¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œä½ æ— æƒåˆ é™¤è¿™ä¸ªç›®å½•(æˆ–æ–‡ä»¶)ã€‚\n");
 			break;
 		case -2:
-			write("É¾³ıÄ¿Â¼(ÎÄ¼ş)ÖĞ...\n");
+			write("åˆ é™¤ç›®å½•(æ–‡ä»¶)ä¸­...\n");
 			if(rmDir(file)==0)
-				write("É¾³ıÊ§°Ü¡£\n");
+				write("åˆ é™¤å¤±è´¥ã€‚\n");
 			else
-				write("É¾³ı³É¹¦¡£\n");
+				write("åˆ é™¤æˆåŠŸã€‚\n");
 			break;
 		default:
 			if(rm(file) )
-				write("É¾³ıÍê³É¡£\n");
+				write("åˆ é™¤å®Œæˆã€‚\n");
 			else
-				write("ÄãÃ»ÓĞÉ¾³ıÕâ¸öµµ°¸µÄÈ¨Àû¡£\n");
+				write("ä½ æ²¡æœ‰åˆ é™¤è¿™ä¸ªæ¡£æ¡ˆçš„æƒåˆ©ã€‚\n");
 	}
 	return 1;
 }
@@ -49,32 +49,32 @@ int rmDir(string file)
 	switch(file_size(file))
 	{
 		case -1 : 
-			flag=16;//ÉèÖÃ³ö´íÖĞ¶Ï
-			write("²¿·ÖÎÄ¼şÎŞÈ¨É¾³ı£¬´íÎó£¡\n");
+			flag=16;//è®¾ç½®å‡ºé”™ä¸­æ–­
+			write("éƒ¨åˆ†æ–‡ä»¶æ— æƒåˆ é™¤ï¼Œé”™è¯¯ï¼\n");
 			return 0;
 			break;
 		case -2 :
-			//É¾³ı´ËÄ¿Â¼ÏÂµÄÎÄ¼şºÍÄ¿Â¼
+			//åˆ é™¤æ­¤ç›®å½•ä¸‹çš„æ–‡ä»¶å’Œç›®å½•
 			if(file[sizeof(file)]!='/')
 				file=file+"/";
 			foreach(tmp in get_dir(file))
 			{
 				if(!rmDir(file+tmp))
 				{
-					flag=16;//ÖĞ¶Ï£¬ÒòÎªÉ¾³ı³ö´í
+					flag=16;//ä¸­æ–­ï¼Œå› ä¸ºåˆ é™¤å‡ºé”™
 					return 0;
 				}
 			}
 			if(!rmdir(file))
 			{
-				flag=16;//ÖĞ¶Ï£¬ÒòÎªÉ¾³ı³ö´í
+				flag=16;//ä¸­æ–­ï¼Œå› ä¸ºåˆ é™¤å‡ºé”™
 				return 0;
 			}
 			break;
 		default :
 			if(!rm(file))
 			{
-				flag=16;//ÖĞ¶Ï£¬ÒòÎªÉ¾³ı³ö´í
+				flag=16;//ä¸­æ–­ï¼Œå› ä¸ºåˆ é™¤å‡ºé”™
 				return 0;
 			}
 			break;
@@ -86,15 +86,15 @@ int help()
 {
   write(@HELP
 
-X rm ÃüÁî v0.1
+X rm å‘½ä»¤ v0.1
 Write By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1
-Ö÷Ò³£ºhttp://mud.yn.cninfo.net/jackyboy
-ÓÊ¼ş£ºjackyboy@126.com
+ä¸»é¡µï¼šhttp://mud.yn.cninfo.net/jackyboy
+é‚®ä»¶ï¼šjackyboy@126.com
 
 
-Ö¸Áî¸ñÊ½ : xrm <µµÃû>
-´ËÖ¸Áî¿ÉÈÃÄãÉ¾³ıÓĞÈ¨ĞŞ¸ÄµÄµµ°¸£¬¿ÉÒÔÉ¾³ı´øÄ¿Â¼µÄµµ°¸¡£
-×¢Òâ£º´ËÃüÁî±È½ÏÎ£ÏÕ£¬ÇëĞ¡ĞÄÊ¹ÓÃ¡£
+æŒ‡ä»¤æ ¼å¼ : xrm <æ¡£å>
+æ­¤æŒ‡ä»¤å¯è®©ä½ åˆ é™¤æœ‰æƒä¿®æ”¹çš„æ¡£æ¡ˆï¼Œå¯ä»¥åˆ é™¤å¸¦ç›®å½•çš„æ¡£æ¡ˆã€‚
+æ³¨æ„ï¼šæ­¤å‘½ä»¤æ¯”è¾ƒå±é™©ï¼Œè¯·å°å¿ƒä½¿ç”¨ã€‚
 HELP
     );
     return 1;

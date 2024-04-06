@@ -14,7 +14,7 @@ int main(object me)
 	{
 		if( inv[i]->query_temp("owner") == me->query("id") )
 		{
-			message_vision("$NºÜ´È±¯µØ°Ñ$n·ÅÀë£¬ÈÎÆä»Ø¹é×ÔÈ»ÁË¡£\n", me, inv[i]);
+			message_vision("$Nå¾ˆæ…ˆæ‚²åœ°æŠŠ$næ”¾ç¦»ï¼Œä»»å…¶å›å½’è‡ªç„¶äº†ã€‚\n", me, inv[i]);
 			inv[i]->delete_temp("owner");
 			inv[i]->delete_temp("ownername");
 			j=1;
@@ -22,7 +22,7 @@ int main(object me)
 		i++;
 	}
 	if (j == 0)
-		message_vision("$NÏë·ÅÉú£¬¿ÉÊÇÃ»É¶¿É·ÅµÄ¡£\n", me);
+		message_vision("$Næƒ³æ”¾ç”Ÿï¼Œå¯æ˜¯æ²¡å•¥å¯æ”¾çš„ã€‚\n", me);
 	
 	return 1;
 }
@@ -30,9 +30,9 @@ int main(object me)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : release
+æŒ‡ä»¤æ ¼å¼ : release
 
-´ËÖ¸Áî¿ÉÓÃÓÚÈÃÄ³¶¯Îï½áÊøÖ÷Å«×´Ì¬£¬½«¶¯Îï·ÅÀë¡£
+æ­¤æŒ‡ä»¤å¯ç”¨äºè®©æŸåŠ¨ç‰©ç»“æŸä¸»å¥´çŠ¶æ€ï¼Œå°†åŠ¨ç‰©æ”¾ç¦»ã€‚
 
 HELP
 	);

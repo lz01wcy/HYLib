@@ -24,7 +24,7 @@ allset=({ "brief", "no_accept", "no_teach", "wimpy", "combatd",
      "kill_msg" });
 
 allwizset=({ "brief", "no_accept", "no_teach", "wimpy", "combatd",
-     "prompt", "time_format", "public", "¶ÁÒ¥ÑÔ", "invisibility", "immortal", 
+     "prompt", "time_format", "public", "è¯»è°£è¨€", "invisibility", "immortal", 
      "msg_home", "msg_min", "msg_mout", "msg_clone", "msg_dest", "no_tell","friendtalk","save_me",
      "kill_msg" });
 
@@ -33,9 +33,9 @@ allwizset=({ "brief", "no_accept", "no_teach", "wimpy", "combatd",
 	env = me->query("env");
  
 	if( !arg || arg=="" ) {
-		write("ÄãÄ¿Ç°Éè¶¨µÄ»·¾³±äÊıÓĞ£º\n");
+		write("ä½ ç›®å‰è®¾å®šçš„ç¯å¢ƒå˜æ•°æœ‰ï¼š\n");
 		if( !mapp(env) || !sizeof(env) )
-			write("\tÃ»ÓĞÉè¶¨ÈÎºÎ»·¾³±äÊı¡£\n");
+			write("\tæ²¡æœ‰è®¾å®šä»»ä½•ç¯å¢ƒå˜æ•°ã€‚\n");
 		else {
 			terms = keys(env);
 			for(i=0; i<sizeof(terms); i++)
@@ -68,21 +68,21 @@ allwizset=({ "brief", "no_accept", "no_teach", "wimpy", "combatd",
  	
 	if( term && term!="" ) {
 		if( mapp(env) && undefinedp(env[term]) && sizeof(env) >= MAX_ENV_VARS )
-			return notify_fail("ÄãÉèµÄ»·¾³±äÊıÌ«¶àÁË£¬ÇëÏÈÓÃ unset É¾µô¼¸¸ö°É¡£\n");
+			return notify_fail("ä½ è®¾çš„ç¯å¢ƒå˜æ•°å¤ªå¤šäº†ï¼Œè¯·å…ˆç”¨ unset åˆ æ‰å‡ ä¸ªå§ã€‚\n");
 	   data0 = data;	// save string* data 
 	   sscanf(data, "%d", data);
 
         if((!wizardp(me) && (member_array(term, allset) == -1)) || ( wizardp(me) && (member_array(term, allwizset) == -1)) )
-                return notify_fail(HIR + BLINK"Ã»ÓĞÕâ¸ö»·¾³±äÊı¿ÉÒÔÈÃÄãÉè¶¨£¬ÇëÓÃ help settings ²éÕÒ¿ÉÒÔÉè¶¨µÄ»·¾³±äÊı¡£\n"NOR);
+                return notify_fail(HIR + BLINK"æ²¡æœ‰è¿™ä¸ªç¯å¢ƒå˜æ•°å¯ä»¥è®©ä½ è®¾å®šï¼Œè¯·ç”¨ help settings æŸ¥æ‰¾å¯ä»¥è®¾å®šçš„ç¯å¢ƒå˜æ•°ã€‚\n"NOR);
 
         if((wiz_level(me) == 0) && (member_array(term, wiz_only) != -1))
-              return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜÓÃÕâ¸öÉè¶¨¡£\n");
+              return notify_fail("åªæœ‰å·«å¸ˆèƒ½ç”¨è¿™ä¸ªè®¾å®šã€‚\n");
 
-	if(data == data0) 		// if data is ×Ö·û´® 
+	if(data == data0) 		// if data is å­—ç¬¦ä¸² 
 	         me->set("env/" + term, data + NOR);
-	   else  me->set("env/" + term, data);		// is Êı×Ö 
+	   else  me->set("env/" + term, data);		// is æ•°å­— 
  	 
-	  printf("Éè¶¨»·¾³±äÊı£º%s = %O%s\n", term, data,NOR);
+	  printf("è®¾å®šç¯å¢ƒå˜æ•°ï¼š%s = %O%s\n", term, data,NOR);
 	   return 1;
 	}
 	return help();
@@ -91,15 +91,15 @@ allwizset=({ "brief", "no_accept", "no_teach", "wimpy", "combatd",
 int help()
 {
 	write(@TEXT
-Ö¸Áî¸ñÊ½£ºset <±äÊıÃû> [<±äÊıÖµ>]
+æŒ‡ä»¤æ ¼å¼ï¼šset <å˜æ•°å> [<å˜æ•°å€¼>]
  
-Õâ¸öÖ¸ÁîÈÃÄãÉè¶¨Ò»Ğ©»·¾³±äÊı£¬²»¼Ó²ÎÊıÊ±»áÏÔÊ¾ÄãÄ¿Ç°Éè¶¨µÄ»·¾³±äÊı£¬²»Ö¸¶¨
-±äÊıÖµ£¬ÔòÄÚ¶¨ÖµÎª "YES"¡£±äÊıÖµÈôÎª×Ö·û´®£¬¿É²ÎÕÕ nick ±ä»¯ÑÕÉ«.
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è®¾å®šä¸€äº›ç¯å¢ƒå˜æ•°ï¼Œä¸åŠ å‚æ•°æ—¶ä¼šæ˜¾ç¤ºä½ ç›®å‰è®¾å®šçš„ç¯å¢ƒå˜æ•°ï¼Œä¸æŒ‡å®š
+å˜æ•°å€¼ï¼Œåˆ™å†…å®šå€¼ä¸º "YES"ã€‚å˜æ•°å€¼è‹¥ä¸ºå­—ç¬¦ä¸²ï¼Œå¯å‚ç…§ nick å˜åŒ–é¢œè‰².
 for example : set msg_min, msg_mout, msg_home , etc.
  
-È¡Ïû±äÊıÉè¶¨ÇëÓÃ unset Ö¸Áî¡£
+å–æ¶ˆå˜æ•°è®¾å®šè¯·ç”¨ unset æŒ‡ä»¤ã€‚
  
-ÖÁì¶ÓĞÄÄĞ©»·¾³±äÊı¿ÉÒÔÉè¶¨£¬Çë¼û help settings¡£
+è‡³æ–¼æœ‰å“ªäº›ç¯å¢ƒå˜æ•°å¯ä»¥è®¾å®šï¼Œè¯·è§ help settingsã€‚
 TEXT
 	);
 	return 1;

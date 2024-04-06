@@ -5,21 +5,21 @@ int main(object me, string arg)
 {
 	int wimpy;
 //	if(me->query("class") != "bandit")
-//		return notify_fail("ÃûÃÅÕıÅÉµÄÈË²»¿ÉÒÔ×°ËÀ£¡\n");
+//		return notify_fail("åé—¨æ­£æ´¾çš„äººä¸å¯ä»¥è£…æ­»ï¼\n");
         seteuid(getuid());
 	if (me->query("combat_exp",1)> 800000)
-		return notify_fail("ÄãÕâÃ´´óÈË£¬×°ËÀÃ»ÓÃµÄ!\n");
+		return notify_fail("ä½ è¿™ä¹ˆå¤§äººï¼Œè£…æ­»æ²¡ç”¨çš„!\n");
 
         if( !me->is_fighting() )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ£¬²»ĞèÒª¼Ù×°ËÀ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ï¼Œä¸éœ€è¦å‡è£…æ­»ã€‚\n");
 	if (me->is_busy() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ!\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢!\n");
 
 	wimpy = (int)me->query("env/wimpy");
-	message_vision("$N²Ò½ĞÒ»Éù£¬Ò»Í·ÔÔµ¹ÔÚµØÏÂ¡£\n$NËÀÁË¡£\n",me);
+	message_vision("$Næƒ¨å«ä¸€å£°ï¼Œä¸€å¤´æ ½å€’åœ¨åœ°ä¸‹ã€‚\n$Næ­»äº†ã€‚\n",me);
 	me->set_temp("disable_inputs",1);
 	me->set_temp("block_msg/all",1);
-	me->disable_player(HIG "<¼ÙËÀÖĞ>" NOR);
+	me->disable_player(HIG "<å‡æ­»ä¸­>" NOR);
 //        me->set("no_get",1);
         me->remove_all_killer();
 	me->remove_all_enemy();
@@ -41,7 +41,7 @@ void remove_jiasi(object me, int wimpy)
 	me->enable_player();
 	me->delete_temp("block_msg/all");
 	me->set("env/wimpy",wimpy);
-   	message_vision("$NÔÚµØÉÏÇÄÇÄµØ·­ÁË¸öÉí£¬Ğ¡ĞÄÒíÒíµØÕö¿ªÁËÑÛ¡£\n",me);
+   	message_vision("$Nåœ¨åœ°ä¸Šæ‚„æ‚„åœ°ç¿»äº†ä¸ªèº«ï¼Œå°å¿ƒç¿¼ç¿¼åœ°çå¼€äº†çœ¼ã€‚\n",me);
 	if (env)
 	{
 		while (env->is_character() && environment(env))
@@ -57,9 +57,9 @@ void remove_jiasi(object me, int wimpy)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : jiasi
-ÈÃÄãÔÚÕ½¶·ÖĞ×°ËÀ£¬´´ÔìÌÓÉúµÄ»ú»á¡£
-ÃûÃÅÕıÅÉµÄÈË²»¿ÉÒÔ×°ËÀ¡£
+æŒ‡ä»¤æ ¼å¼ : jiasi
+è®©ä½ åœ¨æˆ˜æ–—ä¸­è£…æ­»ï¼Œåˆ›é€ é€ƒç”Ÿçš„æœºä¼šã€‚
+åé—¨æ­£æ´¾çš„äººä¸å¯ä»¥è£…æ­»ã€‚
 
 HELP
         );

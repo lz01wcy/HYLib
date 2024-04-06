@@ -34,28 +34,28 @@ int main(object me, string arg)
 	string str, *dirs, describe;
 	env = environment(me);
 	if( !env )
-		return notify_fail("ÄãµÄËÄÖÜ»ÒÃÉÃÉµØÒ»Æ¬£¬Ê²Ã´Ò²Ã»ÓĞ¡£\n");
+		return notify_fail("ä½ çš„å››å‘¨ç°è’™è’™åœ°ä¸€ç‰‡ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n");
 	if( !env->query("exits") )
-		return notify_fail("ÄãµÄËÄÖÜÃ»ÓĞÃ÷ÏÔµÄ³ö¿Ú¡£\n");
+		return notify_fail("ä½ çš„å››å‘¨æ²¡æœ‰æ˜æ˜¾çš„å‡ºå£ã€‚\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 	if( me->is_fighting() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 	if( mapp(exits = env->query("exits")) ) {
 		dirs = sort_array(keys(exits), 1);
 		for(i=0; i<sizeof(dirs); i++)
 			if( (int)env->query_door(dirs[i], "status") & DOOR_CLOSED )
 				dirs[i] = 0;
 		dirs -= ({ 0 });
-	} else return notify_fail("ÕâÀïÃ»ÓĞÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£\n");
+	} else return notify_fail("è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜æ˜¾çš„å‡ºè·¯ã€‚\n");
 	if( sizeof(dirs)==0 )
-		return notify_fail("ÕâÀïÃ»ÓĞÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜æ˜¾çš„å‡ºè·¯ã€‚\n");
         me->start_busy(2);
-	str = sprintf( CYN"ÕâÀïÊÇ"HIR"%s"CYN"£¬¹²ÓĞ%s¸ö³ö¿Ú£¬·Ö±ğÍ¨Íù£º\n"NOR,
+	str = sprintf( CYN"è¿™é‡Œæ˜¯"HIR"%s"CYN"ï¼Œå…±æœ‰%sä¸ªå‡ºå£ï¼Œåˆ†åˆ«é€šå¾€ï¼š\n"NOR,
 		env->query("short"),
 		chinese_number(sizeof(dirs)));
-	str += "©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥\n\n";
+	str += "â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”\n\n";
 
        if( env->query("exits/northup") && !(int)env->query_door("northup", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/northup"))) room = load_object(env->query("exits/northup"));
@@ -115,26 +115,26 @@ int main(object me, string arg)
 	str += "\n";
 
 	if( (env->query("exits/northwest")&&!(int)env->query_door("northwest", "status") & DOOR_CLOSED) )
-	str += "                £Ü"; else str += "                  ";
+	str += "                ï¼¼"; else str += "                  ";
 
 	if( (env->query("exits/northup")&&!(int)env->query_door("northup", "status") & DOOR_CLOSED)
 	|| (env->query("exits/northdown")&&!(int)env->query_door("northdown", "status") & DOOR_CLOSED)
 	|| (env->query("exits/north")&&!(int)env->query_door("north", "status") & DOOR_CLOSED) )
-	str += "          ©§          "; else  str += "                      ";
+	str += "          â”ƒ          "; else  str += "                      ";
 
 	if( (env->query("exits/northeast")&&!(int)env->query_door("northeast", "status") & DOOR_CLOSED) )
-	str += "£¯\n"; else str += "\n";
+	str += "ï¼\n"; else str += "\n";
 
 	if( (env->query("exits/northwest")&&!(int)env->query_door("northwest", "status") & DOOR_CLOSED) )
-	str += "                  £Ü"; else str += "                    ";
+	str += "                  ï¼¼"; else str += "                    ";
 
 	if( (env->query("exits/northup")&&!(int)env->query_door("northup", "status") & DOOR_CLOSED)
 	|| (env->query("exits/northdown")&&!(int)env->query_door("northdown", "status") & DOOR_CLOSED)
 	|| (env->query("exits/north")&&!(int)env->query_door("north", "status") & DOOR_CLOSED) )
-	str += "        ©§        "; else str += "                  ";
+	str += "        â”ƒ        "; else str += "                  ";
 
 	if( (env->query("exits/northeast")&&!(int)env->query_door("northeast", "status") & DOOR_CLOSED) )
-	str += "£¯\n"; else str += "\n";
+	str += "ï¼\n"; else str += "\n";
 }
 
        if( env->query("exits/westup") && !(int)env->query_door("westup", "status") & DOOR_CLOSED ) {
@@ -147,7 +147,7 @@ int main(object me, string arg)
 	} else str += "                    ";
 
 	if( (env->query("exits/northwest")&&!(int)env->query_door("northwest", "status") & DOOR_CLOSED) )
-	str += "£Ü"; else str += "  ";
+	str += "ï¼¼"; else str += "  ";
 
        if( env->query("exits/up") && !(int)env->query_door("up", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/up"))) room = load_object(env->query("exits/up"));
@@ -159,7 +159,7 @@ int main(object me, string arg)
 	} else str += "              ";
 
 	if( (env->query("exits/northeast")&&!(int)env->query_door("northeast", "status") & DOOR_CLOSED) )
-	str += "£¯"; else str += "  ";
+	str += "ï¼"; else str += "  ";
 
        if( env->query("exits/eastup") && !(int)env->query_door("eastup", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/eastup"))) room = load_object(env->query("exits/eastup"));
@@ -169,13 +169,13 @@ int main(object me, string arg)
 	str += describe+"\n";
 	} else str += "\n";
 
-// ÉÏ°ëÉíÖÆ×÷Íê³É¡£
+// ä¸ŠåŠèº«åˆ¶ä½œå®Œæˆã€‚
 
        if( env->query("exits/west") && !(int)env->query_door("west", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/west"))) room = load_object(env->query("exits/west"));
 	describe = room->query("short")+"(W)";
 	str += sprintf("%"+(15+color_len(describe))+"s",describe);
-	str += " ©¥©¥©¥ ";
+	str += " â”â”â” ";
 	} else str += "                      ";
 
 	describe = env->query("short")+"";
@@ -187,11 +187,11 @@ int main(object me, string arg)
        if( env->query("exits/east") && !(int)env->query_door("east", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/east"))) room = load_object(env->query("exits/east"));
 	describe = room->query("short")+"(E)";
-	str += " ©¥©¥©¥ ";
+	str += " â”â”â” ";
 	str += describe+"\n";
 	} else str += "\n";
 
-// ÖĞ¼ä²¿·ÖÖÆ×÷Íê³É¡£
+// ä¸­é—´éƒ¨åˆ†åˆ¶ä½œå®Œæˆã€‚
 
        if( env->query("exits/westdown") && !(int)env->query_door("westdown", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/westdown"))) room = load_object(env->query("exits/westdown"));
@@ -203,7 +203,7 @@ int main(object me, string arg)
 	} else str += "                    ";
 
 	if( (env->query("exits/southwest")&&!(int)env->query_door("southwest", "status") & DOOR_CLOSED) )
-	str += "£¯"; else str += "  ";
+	str += "ï¼"; else str += "  ";
 
        if( env->query("exits/down") && !(int)env->query_door("down", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/down"))) room = load_object(env->query("exits/down"));
@@ -215,7 +215,7 @@ int main(object me, string arg)
 	} else str += "              ";
 
 	if( (env->query("exits/southeast")&&!(int)env->query_door("southeast", "status") & DOOR_CLOSED) )
-	str += "£Ü"; else str += "  ";
+	str += "ï¼¼"; else str += "  ";
 
        if( env->query("exits/eastdown") && !(int)env->query_door("eastdown", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/eastdown"))) room = load_object(env->query("exits/eastdown"));
@@ -232,26 +232,26 @@ int main(object me, string arg)
 	|| (env->query("exits/southeast")&&!(int)env->query_door("southeast", "status") & DOOR_CLOSED) )
 {
 	if( (env->query("exits/southwest")&&!(int)env->query_door("southwest", "status") & DOOR_CLOSED) )
-	str += "                  £¯"; else str += "                    ";
+	str += "                  ï¼"; else str += "                    ";
 
 	if( (env->query("exits/southup")&&!(int)env->query_door("southup", "status") & DOOR_CLOSED)
 	|| (env->query("exits/southdown")&&!(int)env->query_door("southdown", "status") & DOOR_CLOSED)
 	|| (env->query("exits/south")&&!(int)env->query_door("south", "status") & DOOR_CLOSED) )
-	str += "        ©§        "; else str += "                  ";
+	str += "        â”ƒ        "; else str += "                  ";
 
 	if( (env->query("exits/southeast")&&!(int)env->query_door("southeast", "status") & DOOR_CLOSED) )
-	str += "£Ü\n"; else str += "\n";
+	str += "ï¼¼\n"; else str += "\n";
 
 	if( (env->query("exits/southwest")&&!(int)env->query_door("southwest", "status") & DOOR_CLOSED) )
-	str += "                £¯"; else str += "                  ";
+	str += "                ï¼"; else str += "                  ";
 
 	if( (env->query("exits/southup")&&!(int)env->query_door("southup", "status") & DOOR_CLOSED)
 	|| (env->query("exits/southdown")&&!(int)env->query_door("southdown", "status") & DOOR_CLOSED)
 	|| (env->query("exits/south")&&!(int)env->query_door("south", "status") & DOOR_CLOSED) )
-	str += "          ©§          "; else  str += "                      ";
+	str += "          â”ƒ          "; else  str += "                      ";
 
 	if( (env->query("exits/southeast")&&!(int)env->query_door("southeast", "status") & DOOR_CLOSED) )
-	str += "£Ü\n"; else str += "\n";
+	str += "ï¼¼\n"; else str += "\n";
 
 	str += "\n";
 }
@@ -305,22 +305,22 @@ int main(object me, string arg)
 	str += describe+"\n";
 	}
 
-// ÏÂÌå²¿·ÖÍê³É£¬ÏÂÃæÊÇÌØÊâ²¿·Ö¡£
+// ä¸‹ä½“éƒ¨åˆ†å®Œæˆï¼Œä¸‹é¢æ˜¯ç‰¹æ®Šéƒ¨åˆ†ã€‚
 
 	str += "\n";
 
        if( env->query("exits/enter") && !(int)env->query_door("enter", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/enter"))) room = load_object(env->query("exits/enter"));
 	describe = room->query("short")+"(Enter)";
-	str += "ÀïÃæ£º"+describe+"\n";
+	str += "é‡Œé¢ï¼š"+describe+"\n";
 	}
        if( env->query("exits/out") && !(int)env->query_door("out", "status") & DOOR_CLOSED ) {
        if( !room = find_object(env->query("exits/out"))) room = load_object(env->query("exits/out"));
 	describe = room->query("short")+"(Out)";
-	str += "ÍâÃæ£º"+describe+"\n";
+	str += "å¤–é¢ï¼š"+describe+"\n";
 	}
 
-// ÏÂÃæÊÇ×îÌØÊâ²¿·Ö¡£
+// ä¸‹é¢æ˜¯æœ€ç‰¹æ®Šéƒ¨åˆ†ã€‚
 
 	if( mapp(exits = env->query("exits")) ) {
 		dirs = sort_array(keys(exits), 1);
@@ -334,11 +334,11 @@ int main(object me, string arg)
 	&& dirs[i] != "out" ) {
        if( !room = find_object(env->query("exits/"+dirs[i]))) room = load_object(env->query("exits/"+dirs[i]));
 	describe = room->query("short")+"("+capitalize(dirs[i])+")";
-	str += "³ö¿Ú£º"+describe+"\n";}
+	str += "å‡ºå£ï¼š"+describe+"\n";}
 	}
 
 
-	str += "©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥ "HIW"HY2 "NOR"©¥©¥\n";
+	str += "â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â” "HIW"HY2 "NOR"â”â”\n";
 	write(str);
 	return 1;
 }
@@ -346,9 +346,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : place
+æŒ‡ä»¤æ ¼å¼ : place
 
-°ïÖúÄãÁË½âËÄÖÜµÄµØÀí¡£
+å¸®åŠ©ä½ äº†è§£å››å‘¨çš„åœ°ç†ã€‚
 HELP
 	);
 	return 1;

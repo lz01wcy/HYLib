@@ -1,5 +1,5 @@
-//Map here¹¦ÄÜ  By JackyBoy 1999/11/19
-//ÓÉÓÚÑÏÖØÓ°ÏìËÙ¶È£¨µİ¹éµ÷ÓÃµ¼ÖÂ£¡£©£¬ËùÒÔ½øĞĞ´ËÃüÁîµÄÊ¹ÓÃÓ¦¸Ã¼õÉÙÍæ¼ÒµÄ¾«Á¦»òÕßÆøÏ¢
+//Map hereåŠŸèƒ½  By JackyBoy 1999/11/19
+//ç”±äºä¸¥é‡å½±å“é€Ÿåº¦ï¼ˆé€’å½’è°ƒç”¨å¯¼è‡´ï¼ï¼‰ï¼Œæ‰€ä»¥è¿›è¡Œæ­¤å‘½ä»¤çš„ä½¿ç”¨åº”è¯¥å‡å°‘ç©å®¶çš„ç²¾åŠ›æˆ–è€…æ°”æ¯
 #include <ansi.h>
 #define MaxX 7
 #define MaxY 30
@@ -64,23 +64,23 @@ void realtime_map(object me,object env)
                 map_room2=alldirs["enter"];
                 if(alldirs["enter"]!="          "){
                         map_room2=alldirs["enter"];
-                        jiantou=HIR+"¡Ä"+NOR;
+                        jiantou=HIR+"âˆ§"+NOR;
                         }
                 if(alldirs["up"]!="          "){
                         map_room2=alldirs["up"];
-                        jiantou=HIC+"¡ş"+NOR;
+                        jiantou=HIC+"ã€“"+NOR;
                         }
                 if(alldirs["northdown"]!="          "){
                         map_room2=alldirs["northdown"];
-                        jiantou="¡ı";
+                        jiantou="â†“";
                         }
                 if(alldirs["northup"]!="          "){
                         map_room2=alldirs["northup"];
-                        jiantou="¡ü";
+                        jiantou="â†‘";
                         }
                 if(alldirs["north"]!="          "){
                         map_room2=alldirs["north"];
-                        jiantou="£ü";
+                        jiantou="ï½œ";
                         }
                 map_room=map_room2;
                 for(i=0;i<(10-strlen(map_room2))/2;i++)
@@ -92,21 +92,21 @@ void realtime_map(object me,object env)
                 alldirs["northwest"],map_room,alldirs["northeast"]);
                 
                 printf("                        %s   %s   %s\n",
-                alldirs["northwest"]=="          " ? "  ":"£Ü",
+                alldirs["northwest"]=="          " ? "  ":"ï¼¼",
                 jiantou,
-                alldirs["northeast"]=="          " ? "  ":"£¯");
+                alldirs["northeast"]=="          " ? "  ":"ï¼");
                 
                 jiantou="  ";
                 map_room2=alldirs["westdown"];
                 if(map_room2!="          ")
-                                jiantou="¡ú";
+                                jiantou="â†’";
                 if(alldirs["left"]!="          "){
                         map_room2=alldirs["left"];
-                        jiantou="¡´";
+                        jiantou="ã€ˆ";
                         }
                 if(alldirs["westup"]!="          "){
                         map_room2=alldirs["westup"];
-                        jiantou="¡û";
+                        jiantou="â†";
                         }
                 if(alldirs["west"]!="          "){
                         map_room2=alldirs["west"];
@@ -129,14 +129,14 @@ void realtime_map(object me,object env)
                 jiantou="  ";
                 map_room2=alldirs["eastup"];
                 if(map_room2!="          ")
-                                jiantou="¡ú";
+                                jiantou="â†’";
                 if(alldirs["right"]!="          "){
                         map_room2=alldirs["right"];
-                        jiantou="¡µ";
+                        jiantou="ã€‰";
                         }
                 if(alldirs["eastdown"]!="          "){
                         map_room2=alldirs["eastdown"];
-                        jiantou="¡û";
+                        jiantou="â†";
                         }
                 if(alldirs["east"]!="          "){
                         map_room2=alldirs["east"];
@@ -149,24 +149,24 @@ void realtime_map(object me,object env)
                 map_room2=alldirs["out"];
                 if(alldirs["out"]!="          "){
                         map_room2=alldirs["out"];
-                        jiantou=HIR+"¡Å"+NOR;
+                        jiantou=HIR+"âˆ¨"+NOR;
                         }
                 if(alldirs["down"]!="          "){
                         map_room2=alldirs["down"];
-                        jiantou=HIC+"¡ş"+NOR;
+                        jiantou=HIC+"ã€“"+NOR;
                         }
                 
                 if(alldirs["southdown"]!="          "){
                                 map_room2=alldirs["southdown"];
-                                jiantou="¡ü";
+                                jiantou="â†‘";
                                 }
                 if(alldirs["southup"]!="          "){
                         map_room2=alldirs["southup"];
-                        jiantou="¡ı";
+                        jiantou="â†“";
                         }
                 if(alldirs["south"]!="          "){
                         map_room2=alldirs["south"];
-                        jiantou="£ü";
+                        jiantou="ï½œ";
                         }
                 map_room=map_room2;
                 for(i=0;i<(10-strlen(map_room2))/2;i++)
@@ -175,9 +175,9 @@ void realtime_map(object me,object env)
                                 map_room =" "+map_room;
                         }
                 printf("                        %s   %s   %s\n",
-                alldirs["southwest"]=="          " ? "  ":"£¯",
+                alldirs["southwest"]=="          " ? "  ":"ï¼",
                 jiantou,
-                alldirs["southeast"]=="          " ? "  ":"£Ü");
+                alldirs["southeast"]=="          " ? "  ":"ï¼¼");
                 printf("             %10s  %-10s  %-10s\n",
                 alldirs["southwest"],map_room,alldirs["southeast"]);
                 
@@ -233,26 +233,26 @@ int main(object me, string arg)
 	string tmp,fname,*dirs;
 mapping dir;
     if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
     if (me->is_busy()) 
-        return notify_fail("ÄãÕıÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£çƒ­é—¹ç€å‘¢!\n");
     if (me->query("neili")<800)
-	return notify_fail("ÄãµÄÄÚÁ¦²»×ã!\n");
+	return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³!\n");
     if (me->is_busy())
-    return notify_fail("ÄãÕıÃ¦×ÅÄØ!\n");
+    return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
     if(me->query("qi")<40)
-		return notify_fail("ÄãµÄÌåÁ¦²»Ì«ºÃÁË£¬ÏÈĞİÏ¢Ò»ÏÂ°É£¡\n");
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤ªå¥½äº†ï¼Œå…ˆä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
 	me->add("qi",-20);
-    if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR
+    if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR
 ||environment(me)->query("magicroom"))
 {
 	if(arg)
 	{
-		//ÔÊĞíÔÚÖ¸¶¨·¶Î§ÄÚ×Ô¶¨Òå·¿¼äËÑË÷·¶Î§£¡
+		//å…è®¸åœ¨æŒ‡å®šèŒƒå›´å†…è‡ªå®šä¹‰æˆ¿é—´æœç´¢èŒƒå›´ï¼
 		arg=lower_case(arg);
 		sscanf(arg,"%*sx=%d%*s",X);
 		sscanf(arg,"%*sy=%d%*s",Y);
@@ -264,7 +264,7 @@ mapping dir;
 		fname=replace_string(fname, "/d/migong/lev", "");
 		fname=replace_string(fname, "/dong/", "");
 		fname=replace_string(fname, "dong", "");
-	tmp="¼´Ê±µØÍ¼  v1.0\nËùÔÚ·¿¼ä£º"+fname+"""\n";
+	tmp="å³æ—¶åœ°å›¾  v1.0\næ‰€åœ¨æˆ¿é—´ï¼š"+fname+"""\n";
 	m=allocate(2*X+1);
 	rfile=({});
 	for(i=0;i<2*X+1;i++)
@@ -275,7 +275,7 @@ mapping dir;
 	}
 	where=environment(me);
 	if(!objectp(where))
-		return notify_fail("¶Ô²»Æğ£¬²»ÖªµÀÄãµ½µ×ÔÚÄÄÀïÑ½£¡ÕÒÎ×Ê¦°É£¡\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼Œä¸çŸ¥é“ä½ åˆ°åº•åœ¨å“ªé‡Œå‘€ï¼æ‰¾å·«å¸ˆå§ï¼\n");
 	draw_room((2*X+1)/2,(2*Y+1)/2,where);
 	for(i=0;i<2*Y+1;i++)
 	{
@@ -285,7 +285,7 @@ mapping dir;
 				tmp+="        ";
 			else
 			{
-				//Èç¹û´ËÏîÎª¿Õ£¬²¢ÇÒ´ËÊ±jÎªÅ¼ÊıÁĞ£¬ÔòÊä³ö¿Õ¸ñ
+				//å¦‚æœæ­¤é¡¹ä¸ºç©ºï¼Œå¹¶ä¸”æ­¤æ—¶jä¸ºå¶æ•°åˆ—ï¼Œåˆ™è¾“å‡ºç©ºæ ¼
 				if(m[j][i]==" "&&!(j%2))
 					tmp+="  ";
 				else
@@ -295,7 +295,7 @@ mapping dir;
 				{
 					tmp+=m[j][i];
 					//if(!(i%2)&&!(j%2))
-					if(m[j][i]!="©¤")
+					if(m[j][i]!="â”€")
 						for(int d=8-sizeof(clean_color(m[j][i]));d>0;d--)
 							tmp+=" ";
 				}
@@ -325,7 +325,7 @@ if (random(6)==0)
 }	
 else 
 {
-        message_vision(HIG "$NÕâÀï²»ÄÜÊ¹ÓÃ!\n" NOR, me);
+        message_vision(HIG "$Nè¿™é‡Œä¸èƒ½ä½¿ç”¨!\n" NOR, me);
 	return 1;
 }
 }
@@ -338,7 +338,7 @@ object find_room(string path)
 	return 0;
 }
 
-//¡û¡ü¡ú¡ı¨I¨J¨K¨L
+//â†â†‘â†’â†“IJKL
 int draw_path(int x,int y,string direc)
 {
 	string str;
@@ -346,21 +346,21 @@ int draw_path(int x,int y,string direc)
 	switch(direc)
 	{
 		case "south":
-		case "north":str="   ©¦   ";break;
+		case "north":str="   â”‚   ";break;
 		case "southdown":
-		case "northup":str="   ¡ü   ";break;
+		case "northup":str="   â†‘   ";break;
 		case "southup":
-		case "northdown":str="   ¡ı   ";break;
+		case "northdown":str="   â†“   ";break;
 		case "east":
-		case "west":str="©¤";break;
+		case "west":str="â”€";break;
 		case "eastup":
-		case "westdown":str="¡ú";break;
+		case "westdown":str="â†’";break;
 		case "westup":
-		case "eastdown":str="¡û";break;
+		case "eastdown":str="â†";break;
 		case "southeast":
-		case "northwest":str="¨J";break;
+		case "northwest":str="J";break;
 		case "shothwest":
-		case "northeast":str="¨I";break;
+		case "northeast":str="I";break;
 		default:
 			return 0;
 	}
@@ -374,7 +374,7 @@ int draw_path(int x,int y,string direc)
 		xx--;
 	if(x+xx<0||y+yy<0||x+xx>2*X||y+yy>2*Y)
 		return 0;
-	//write("ÉèÖÃµÚ "+(x+xx)+ " "+(y+yy)+" Ïî\n");
+	//write("è®¾ç½®ç¬¬ "+(x+xx)+ " "+(y+yy)+" é¡¹\n");
 	m[x+xx][y+yy]=str;
 	return 1;
 }
@@ -389,8 +389,8 @@ int draw_room(int x,int y,object room)
 	reset_eval_cost();
 	if(x<0||y<0||!objectp(room)||x>2*X||y>2*Y)
 		return 0;
-	name=clean_color(room->query("short"));//ÇóÈ¡ÎŞÑÕÉ«µÄ·¿¼äshortÃèÊö
-	//write("×ø±ê£º"+x+" / "+ y+ "´¦Àí "+name+" ÎÄ¼şÃû£º"+base_name(room)+"\n");
+	name=clean_color(room->query("short"));//æ±‚å–æ— é¢œè‰²çš„æˆ¿é—´shortæè¿°
+	//write("åæ ‡ï¼š"+x+" / "+ y+ "å¤„ç† "+name+" æ–‡ä»¶åï¼š"+base_name(room)+"\n");
 	rfile=rfile + ({ base_name(room) });
 	dir=room->query("exits");
 	if(!mapp(dir)||sizeof(dir)<1)
@@ -410,7 +410,7 @@ int draw_room(int x,int y,object room)
 		if(!draw_path(x,y,dirs[i])||(xx==0&&yy==0))
 			nst=1;
 		nroom=find_room(dir[dirs[i]]);
-		//±ÜÃâÖØ¸´µ÷ÓÃ
+		//é¿å…é‡å¤è°ƒç”¨
 		if(!objectp(nroom)||nst)
 			continue;
 		fname=file_name(nroom);
@@ -423,7 +423,7 @@ int draw_room(int x,int y,object room)
 	}
 	if(strlen(name)>8)
 		name=name[0..7];
-	if(strlen(name)<7)//¶Ô²»×ã4¸öºº×ÖµÄ·¿¼äÃû½øĞĞ¾ÓÖĞ´¦Àí
+	if(strlen(name)<7)//å¯¹ä¸è¶³4ä¸ªæ±‰å­—çš„æˆ¿é—´åè¿›è¡Œå±…ä¸­å¤„ç†
 	{
 		int d=8-strlen(name);
 		if(d%2)
@@ -447,17 +447,17 @@ int draw_room(int x,int y,object room)
 int help()
 {
 	write(@HELP
-	¼´Ê±µØÍ¼ v1.0 (Write By JackyBoy 99/11/20)
-	ÃüÁîÓÃ·¨£ºmap [x=1-7] [y=1-30]
-±¾ÃüÁî°ïÖúÍæ¼ÒÁË½âÖÜÎ§µÄ·¿¼äµØÍ¼µÄ·Ö²¼×´¿ö£¬²¢±êÖ¾³ö·¿¼äÖ®¼äµÄÁ¬½ÓÇé¿ö¡£
-ÀíÂÛÉÏ½²£¬¸ÃÃüÁîÓ¦¸ÃÄÜÍêÈ«ÕıÈ·µØ·´Ó¦µØÍ¼£¬µ«ÊÇÓÉÓÚÎ×Ê¦Éè¼ÆµØÍ¼²»¹æ·¶µÈ¶à
-ÖÖÔ­Òò£¨±ÈÈçÃÔ¹¬¡¢ÓĞ²»¹æ·¶³ö¿Ú±ÈÈçenterÖ®ÀàµÄ£¬·¿¼äÖ®¼äÎŞ·¨Ë«Ïò¹ØÁªµÈ£©£¬
-µ¼ÖÂµØÍ¼¿ÉÄÜÔÚÏÔÊ¾Ê±ÓëĞĞ×ß·½ÏòÉÏÓĞÒ»¶¨Çø±ğ£¬ÉõÖÁ»á³öÏÖ×ßÒ»²½Â·£¬µØÍ¼¾ÍÍê
-È«±äÑùµÄÇé¿ö¡£±ÈÈç£¬·¿¼äA¿ÉÒÔ´Ósouth×ßµ½B·¿¼ä£¬µ«ÊÇB·¿¼ä×ßnorthÈ´×ßµ½C·¿
-¼ä£¬ÕâÊ±ÔÚAÓÃ¸ÃÃüÁîÓëÔÚBÓÃ¸ÃÃüÁîĞ§¹ûÍêÈ«²»Ò»Ñù£¡
-´ËÍâ£¬Á¬½Ó±êÖ¾ÖĞ¼ıÍ·ËùÖ¸·½ÏòµØÊÆ¸ü¸ß£¬ÓĞ²»¹æ·¶³ö¿ÚµÄ·¿¼äÒÔ»ÆÉ«±êÖ¾£¬ÄãËù
-´¦µÄ·¿¼äÒÔÉÁË¸À´±êÖ¾£¡
-±¾ÃüÁîÄ¬ÈÏÒÔx=7,y=10 µÄµØÍ¼´óĞ¡ÏÔÊ¾£¬Äã¿ÉÒÔÔÚÃüÁîĞĞÊÖ¶¯Ö¸¶¨µØÍ¼´óĞ¡¡£
+	å³æ—¶åœ°å›¾ v1.0 (Write By JackyBoy 99/11/20)
+	å‘½ä»¤ç”¨æ³•ï¼šmap [x=1-7] [y=1-30]
+æœ¬å‘½ä»¤å¸®åŠ©ç©å®¶äº†è§£å‘¨å›´çš„æˆ¿é—´åœ°å›¾çš„åˆ†å¸ƒçŠ¶å†µï¼Œå¹¶æ ‡å¿—å‡ºæˆ¿é—´ä¹‹é—´çš„è¿æ¥æƒ…å†µã€‚
+ç†è®ºä¸Šè®²ï¼Œè¯¥å‘½ä»¤åº”è¯¥èƒ½å®Œå…¨æ­£ç¡®åœ°ååº”åœ°å›¾ï¼Œä½†æ˜¯ç”±äºå·«å¸ˆè®¾è®¡åœ°å›¾ä¸è§„èŒƒç­‰å¤š
+ç§åŸå› ï¼ˆæ¯”å¦‚è¿·å®«ã€æœ‰ä¸è§„èŒƒå‡ºå£æ¯”å¦‚enterä¹‹ç±»çš„ï¼Œæˆ¿é—´ä¹‹é—´æ— æ³•åŒå‘å…³è”ç­‰ï¼‰ï¼Œ
+å¯¼è‡´åœ°å›¾å¯èƒ½åœ¨æ˜¾ç¤ºæ—¶ä¸è¡Œèµ°æ–¹å‘ä¸Šæœ‰ä¸€å®šåŒºåˆ«ï¼Œç”šè‡³ä¼šå‡ºç°èµ°ä¸€æ­¥è·¯ï¼Œåœ°å›¾å°±å®Œ
+å…¨å˜æ ·çš„æƒ…å†µã€‚æ¯”å¦‚ï¼Œæˆ¿é—´Aå¯ä»¥ä»southèµ°åˆ°Bæˆ¿é—´ï¼Œä½†æ˜¯Bæˆ¿é—´èµ°northå´èµ°åˆ°Cæˆ¿
+é—´ï¼Œè¿™æ—¶åœ¨Aç”¨è¯¥å‘½ä»¤ä¸åœ¨Bç”¨è¯¥å‘½ä»¤æ•ˆæœå®Œå…¨ä¸ä¸€æ ·ï¼
+æ­¤å¤–ï¼Œè¿æ¥æ ‡å¿—ä¸­ç®­å¤´æ‰€æŒ‡æ–¹å‘åœ°åŠ¿æ›´é«˜ï¼Œæœ‰ä¸è§„èŒƒå‡ºå£çš„æˆ¿é—´ä»¥é»„è‰²æ ‡å¿—ï¼Œä½ æ‰€
+å¤„çš„æˆ¿é—´ä»¥é—ªçƒæ¥æ ‡å¿—ï¼
+æœ¬å‘½ä»¤é»˜è®¤ä»¥x=7,y=10 çš„åœ°å›¾å¤§å°æ˜¾ç¤ºï¼Œä½ å¯ä»¥åœ¨å‘½ä»¤è¡Œæ‰‹åŠ¨æŒ‡å®šåœ°å›¾å¤§å°ã€‚
 HELP);
 	return 1;
 }

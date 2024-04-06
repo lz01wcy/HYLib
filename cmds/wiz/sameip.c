@@ -25,13 +25,13 @@ int main(object me, string arg)
 	}
 	if(!ob=find_player(arg))
 	{
-	msg = "º¬ÓĞ£¼"+arg+"£¾IPµÄÍæ¼ÒµÄÑ¶Ï¢£º\n";
+	msg = "å«æœ‰ï¼œ"+arg+"ï¼IPçš„ç©å®¶çš„è®¯æ¯ï¼š\n";
 	subip=arg;
 	}
 	else
 	{
 	subip=query_ip_number(ob);
-	msg="º¬ÓĞ£¼"+subip+"£¾IPµÄÍæ¼ÒµÄÑ¶Ï¢£º\n";
+	msg="å«æœ‰ï¼œ"+subip+"ï¼IPçš„ç©å®¶çš„è®¯æ¯ï¼š\n";
 	}
 	ob_list = filter_array(users(),"select_user",this_object(),subip);
         for(i=0;i<sizeof(ob_list);i++)
@@ -55,8 +55,8 @@ else return 1;
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½: sameip <id/arg/none>
-ÈÃÄã²ì¿´ÓĞ¹ØÒ»¸öIPµÄËùÓĞÔÚÏßÍæ¼Ò¡£
+æŒ‡ä»¤æ ¼å¼: sameip <id/arg/none>
+è®©ä½ å¯Ÿçœ‹æœ‰å…³ä¸€ä¸ªIPçš„æ‰€æœ‰åœ¨çº¿ç©å®¶ã€‚
 
 HELP
    );

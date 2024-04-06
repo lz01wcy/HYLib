@@ -21,35 +21,35 @@ int skill, skill_basic,intx;
 //        int i;
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
+                return notify_fail("ä¸´é˜µç£¨æªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
 
  if( !arg ) return (__DIR__"enable")->main(me, arg);
 
  if( !stringp(skillname = me->query_skill_mapped(arg)) )
- return notify_fail("ÄãÖ»ÄÜÁ·Ï°ÓÃ enable Ö¸¶¨µÄÌØÊâ¼¼ÄÜ¡£\n");
+ return notify_fail("ä½ åªèƒ½ç»ƒä¹ ç”¨ enable æŒ‡å®šçš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 
       //here add something.....
         if(check_valid_create(skillname)==0)
-                return notify_fail("Õâ²»ÊÇÄã´´½¨µÄ¹¦·òÑ½£¿\n");
+                return notify_fail("è¿™ä¸æ˜¯ä½ åˆ›å»ºçš„åŠŸå¤«å‘€ï¼Ÿ\n");
 
         skill_basic = me->query_skill(arg, 1);
         skill = me->query_skill(skillname, 1);
 
 write("here \n");
         if( skill < 1 )
-                return notify_fail("ÄãºÃÏñ»¹Ã»ÓĞÑ§¹ıÕâÏî¼¼ÄÜ°É£¿×îºÃÏÈÈ¥Çë½Ì±ğÈË
-¡£\n");
+                return notify_fail("ä½ å¥½åƒè¿˜æ²¡æœ‰å­¦è¿‡è¿™é¡¹æŠ€èƒ½å§ï¼Ÿæœ€å¥½å…ˆå»è¯·æ•™åˆ«äºº
+ã€‚\n");
         if( skill_basic < 1 )
-                return notify_fail("Äã¶ÔÕâ·½ÃæµÄ¼¼ÄÜ»¹ÊÇÒ»ÇÏ²»Í¨£¬×îºÃ´ÓÏÈ´Ó»ù±¾
-Ñ§Æğ¡£\n");
+                return notify_fail("ä½ å¯¹è¿™æ–¹é¢çš„æŠ€èƒ½è¿˜æ˜¯ä¸€çªä¸é€šï¼Œæœ€å¥½ä»å…ˆä»åŸºæœ¬
+å­¦èµ·ã€‚\n");
         if( skill_basic/2 <= skill/3 )
-             return notify_fail("ÄãµÄ»ù±¾¹¦»ğºòÎ´µ½£¬±ØĞëÏÈ´òºÃ»ù´¡²ÅÄÜ¼ÌĞøÌá
-¸ß¡£\n");
+             return notify_fail("ä½ çš„åŸºæœ¬åŠŸç«å€™æœªåˆ°ï¼Œå¿…é¡»å…ˆæ‰“å¥½åŸºç¡€æ‰èƒ½ç»§ç»­æ
+é«˜ã€‚\n");
 
-        notify_fail("ÄãÏÖÔÚ²»ÄÜÁ·Ï°ÕâÏî¼¼ÄÜ¡£\n");
+        notify_fail("ä½ ç°åœ¨ä¸èƒ½ç»ƒä¹ è¿™é¡¹æŠ€èƒ½ã€‚\n");
         if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
 intx=(int)me->query_int();
@@ -62,8 +62,8 @@ gin_cost = gin_cost+2;
         }
 
         if( (int)me->query("learned_points") >= (int)me->query("potential") )
-                return notify_fail("ÄãµÄÇ±ÄÜÒÑ¾­·¢»Óµ½¼«ÏŞÁË£¬Ã»ÓĞ°ì·¨ÔÙ³É³¤ÁË¡£\n");
-        printf("Äã¿ªÊ¼ÓÃĞÄË¼¿¼ÓĞ¹Ø¡¸%s¡¹µÄÒÉÎÊ¡£\n", 
+                return notify_fail("ä½ çš„æ½œèƒ½å·²ç»å‘æŒ¥åˆ°æé™äº†ï¼Œæ²¡æœ‰åŠæ³•å†æˆé•¿äº†ã€‚\n");
+        printf("ä½ å¼€å§‹ç”¨å¿ƒæ€è€ƒæœ‰å…³ã€Œ%sã€çš„ç–‘é—®ã€‚\n", 
                 to_chinese(skillname));
 
 
@@ -82,13 +82,13 @@ gin_cost = gin_cost+2;
 //sigh
 
                 &&      skill * skill * skill / 10 > (int)me->query("combat_exp") ) {
-                        printf("Ò²ĞíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬Äã¶Ô%sµÄ»Ø´ğ×ÜÊÇÎŞ·¨Áì»á¡£\n", ob->name() );
+                        printf("ä¹Ÿè®¸æ˜¯ç¼ºä¹å®æˆ˜ç»éªŒï¼Œä½ å¯¹%sçš„å›ç­”æ€»æ˜¯æ— æ³•é¢†ä¼šã€‚\n", ob->name() );
                 } else {
                         if(skill_name = SKILL_D(skillname)->query_skill_name(skill))
-                                printf("Äã¾­¹ıÓÃĞÄË¼¿¼£¬¶Ô¡¸%s¡¹ÕâÒ»ÕĞËÆºõÓĞĞ©ĞÄµÃ¡£\n",
+                                printf("ä½ ç»è¿‡ç”¨å¿ƒæ€è€ƒï¼Œå¯¹ã€Œ%sã€è¿™ä¸€æ‹›ä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n",
                                         skill_name);
                         else
-                                printf("Äã¾­¹ıÓÃĞÄË¼¿¼£¬ËÆºõÓĞĞ©ĞÄµÃ¡£\n");
+                                printf("ä½ ç»è¿‡ç”¨å¿ƒæ€è€ƒï¼Œä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n");
 
                         me->add("learned_points", 1);
 
@@ -99,7 +99,7 @@ gin_cost = gin_cost+2;
                 }
         } else {
                 gin_cost = me->query("jing");
-                write("Äã½ñÌìÌ«ÀÛÁË£¬½á¹ûÊ²Ã´Ò²Ã»ÓĞÑ§µ½¡£\n");
+                write("ä½ ä»Šå¤©å¤ªç´¯äº†ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡æœ‰å­¦åˆ°ã€‚\n");
         }
 
         me->receive_damage("jing", gin_cost );
@@ -110,9 +110,9 @@ gin_cost = gin_cost+2;
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : selfthinking <¼¼ÄÜ>
+æŒ‡ä»¤æ ¼å¼ : selfthinking <æŠ€èƒ½>
 
-ÆäËûÏà¹ØÖ¸Áî : createskill,selfpractice
+å…¶ä»–ç›¸å…³æŒ‡ä»¤ : createskill,selfpractice
  
 HELP
         );

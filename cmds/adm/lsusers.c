@@ -9,8 +9,8 @@ int main(object me, string arg)
         object ob,obj;
 
         seteuid(getuid());
-//        message("system", "\n ÕûÀíÍæ¼Ò´¢´æµµÖĞ£¬ÇëÉÔºò....\n" NOR, users());
-//        write("´¦ÀíÖĞ£º\n");
+//        message("system", "\n æ•´ç†ç©å®¶å‚¨å­˜æ¡£ä¸­ï¼Œè¯·ç¨å€™....\n" NOR, users());
+//        write("å¤„ç†ä¸­ï¼š\n");
         dir = get_dir(DATA_DIR + "login/");
         str="\n";
         ob=new("/clone/misc/player");
@@ -21,26 +21,26 @@ int main(object me, string arg)
                 for(j=0; j<sizeof(ppls); j++) {
                         if( sscanf(ppls[j], "%s.o", name)==1 ){
                                 if( (string)SECURITY_D->get_status(name)!="(player)" ){
-                                    write("ÅÅ³ıÎ×Ê¦"+name+"\n");
+                                    write("æ’é™¤å·«å¸ˆ"+name+"\n");
                                         continue;
                                 }
                                 if (!ob->new_object(name))  continue;
                                   obj=present("thousand-gold",ob);
-        str+=sprintf("%-8s(%-8s),ÉÏÏß%-4dÌì\n",ob->name(),name,ob->query("mud_age")/86400);                                
+        str+=sprintf("%-8s(%-8s),ä¸Šçº¿%-4då¤©\n",ob->name(),name,ob->query("mud_age")/86400);                                
                         num++;
-        str2 = sprintf("\nÄ¿Ç°±¾ÓÎÏ·¹²ÓĞ%dÃûÍæ¼Ò\n",num);
+        str2 = sprintf("\nç›®å‰æœ¬æ¸¸æˆå…±æœ‰%dåç©å®¶\n",num);
                         }
                 }
         }
         destruct(ob);
-        message("system", "\n ÕûÀíÍê±Ï!\n", users());
+        message("system", "\n æ•´ç†å®Œæ¯•!\n", users());
         me->start_more(str+str2);
         return 1;
 }
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºlistusers
+æŒ‡ä»¤æ ¼å¼ï¼šlistusers
 
 HELP
         );

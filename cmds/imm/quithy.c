@@ -10,7 +10,7 @@ void do_quit(object, object);
 void create() 
 {
 	seteuid(getuid());
-	set("channel_id", "ÀëÏßÖ¸Áî");
+	set("channel_id", "ç¦»çº¿æŒ‡ä»¤");
 }
 
 int main(object me, string arg)
@@ -19,7 +19,7 @@ int main(object me, string arg)
 	int flag = 0;
 
 	if (me->query_temp("quit"))
-		return notify_fail("ÕıÔÚÍË³ö¹ı³ÌÖĞ£¬ÇëÉÔºò¡£\n");
+		return notify_fail("æ­£åœ¨é€€å‡ºè¿‡ç¨‹ä¸­ï¼Œè¯·ç¨å€™ã€‚\n");
 	link_ob = me->query_temp("link_ob");
 
 	// We might be called on a link_dead player, so check this.
@@ -27,7 +27,7 @@ int main(object me, string arg)
 
 		// Are we possessing in others body ?
 		if( link_ob->is_character() ) {
-			write("ÄãµÄ»êÆÇ»Øµ½" + link_ob->name(1) + "µÄÉíÉÏ¡£\n");
+			write("ä½ çš„é­‚é­„å›åˆ°" + link_ob->name(1) + "çš„èº«ä¸Šã€‚\n");
 			exec(link_ob, me);
 			link_ob->setup();
 			return 1;
@@ -35,16 +35,16 @@ int main(object me, string arg)
 	}
 
 	if( LOGIN_D->get_madlock()) 
-		return notify_fail("Ê±¿ÕÒÑ¾­·â±Õ£¬Ã»ÓĞÈËÄÜ¹»ÍË³öÕâ¸öÊ±¿ÕÁË¡£\n");
-//	if( me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å×öÆäËûÊÂ£¬²»ÄÜÍË³öÓÎÏ·£¡\n");
+		return notify_fail("æ—¶ç©ºå·²ç»å°é—­ï¼Œæ²¡æœ‰äººèƒ½å¤Ÿé€€å‡ºè¿™ä¸ªæ—¶ç©ºäº†ã€‚\n");
+//	if( me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€åšå…¶ä»–äº‹ï¼Œä¸èƒ½é€€å‡ºæ¸¸æˆï¼\n");
 	if (me->query_temp("sleeped")) me->set("marks/insleeping",1);
 
 //	if( me->over_encumbranced() )
-//		return notify_fail("ÉíÉÏ´øµÄ¶«Î÷Ì«¶àÁË£¬Àë²»¿ªÓÎÏ·ÁË¡£\n");
+//		return notify_fail("èº«ä¸Šå¸¦çš„ä¸œè¥¿å¤ªå¤šäº†ï¼Œç¦»ä¸å¼€æ¸¸æˆäº†ã€‚\n");
 
 	if (interactive(me) && query_idle(me) < 10) {
-//		if( me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å×öÆäËûÊÂ£¬²»ÄÜÍË³öÓÎÏ·£¡\n");
-//		if( me->is_fighting()) return notify_fail("ÄãÏÖÔÚÕıÔÚÕ½¶·£¬²»ÄÜÍË³öÓÎÏ·£¡\n");
+//		if( me->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€åšå…¶ä»–äº‹ï¼Œä¸èƒ½é€€å‡ºæ¸¸æˆï¼\n");
+//		if( me->is_fighting()) return notify_fail("ä½ ç°åœ¨æ­£åœ¨æˆ˜æ–—ï¼Œä¸èƒ½é€€å‡ºæ¸¸æˆï¼\n");
 	} else flag = 1;
 
 //	if (!environment(me)->query("no_save") && !me->is_ghost()) me->set("startroom", base_name(environment(me)));
@@ -52,10 +52,10 @@ int main(object me, string arg)
 	me->set_temp("quit", 1);
 //        me->set_temp("no_kill", 1);
         me->set_temp("disable_inputs",1);
-	CHANNEL_D->do_channel(this_object(), "sys", NOR + me->short() + HIR " ×¼±¸Àë¿ªÓÎÏ·ÁË¡£");
+	CHANNEL_D->do_channel(this_object(), "sys", NOR + me->short() + HIR " å‡†å¤‡ç¦»å¼€æ¸¸æˆäº†ã€‚");
 //	if (!flag && !wizardp(me) && !environment(me)->query("valid_startroom")) {
 	if (!flag && !wizardp(me)) {
-		write("ÕıÔÚÍË³öÓÎÏ· ,µµ°¸±£´æÖĞ......\n");
+		write("æ­£åœ¨é€€å‡ºæ¸¸æˆ ,æ¡£æ¡ˆä¿å­˜ä¸­......\n");
 		call_out("do_quit", 15, me, link_ob);
 
 	} else do_quit(me, link_ob);
@@ -75,10 +75,10 @@ void do_quit(object me, object link_ob)
 			if( !inv[i]->query_autoload() )
 				DROP_CMD->do_drop(me, inv[i]);
 	}
-	write("»¶Ó­ÏÂ´ÎÔÙÀ´£¡\n");
-	message("system", me->name() + "Àë¿ªÓÎÏ·¡£\n", environment(me), me);
+	write("æ¬¢è¿ä¸‹æ¬¡å†æ¥ï¼\n");
+	message("system", me->name() + "ç¦»å¼€æ¸¸æˆã€‚\n", environment(me), me);
 
-	CHANNEL_D->do_channel(this_object(), "sys", NOR + me->short(1) + HIR " Àë¿ªÓÎÏ·ÁË¡£");
+	CHANNEL_D->do_channel(this_object(), "sys", NOR + me->short(1) + HIR " ç¦»å¼€æ¸¸æˆäº†ã€‚");
 
 	if (link_ob) {
 		link_ob->set("last_on", time());
@@ -93,12 +93,12 @@ void do_quit(object me, object link_ob)
 	&& (i = (me->query("combat_exp") - me->query_temp("temp_exp")) * 60
 		/ (me->query("mud_age") - me->query_temp("mud_age"))) > 100)
 		log_file("static/EXP",
-			sprintf("%s ÉÏ´Î¾­Ñé£º%d£¬±¾´Î¾­Ñé£º%d£¬Æ½¾ù£º%d/min\n",
+			sprintf("%s ä¸Šæ¬¡ç»éªŒï¼š%dï¼Œæœ¬æ¬¡ç»éªŒï¼š%dï¼Œå¹³å‡ï¼š%d/min\n",
 				geteuid(me), me->query_temp("temp_exp"),
 				me->query("combat_exp"), i));
 
 	CHANNEL_D->do_channel(this_object(), "sys",
-		me->name() + "(" + me->query("id") + ")Àë¿ªÓÎÏ·ÁË¡£±¾´ÎÁ¬Ïß¾­ÑéÔö³¤"+i+"¡£\n");
+		me->name() + "(" + me->query("id") + ")ç¦»å¼€æ¸¸æˆäº†ã€‚æœ¬æ¬¡è¿çº¿ç»éªŒå¢é•¿"+i+"ã€‚\n");
 
 	me->set_temp("quit", 0);
 //        me->set_temp("no_kill", 0);
@@ -110,9 +110,9 @@ void do_quit(object me, object link_ob)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : quit
+æŒ‡ä»¤æ ¼å¼ : quit
 
-µ±ÄãÏëÔİÊ±Àë¿ªÊ±, ¿ÉÀûÓÃ´ËÒ»Ö¸Áî¡£
+å½“ä½ æƒ³æš‚æ—¶ç¦»å¼€æ—¶, å¯åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤ã€‚
 HELP
     );
     return 1;

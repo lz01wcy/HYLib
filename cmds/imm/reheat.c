@@ -7,16 +7,16 @@ int main()
 {
 	object me=this_player();
         if (query_heart_beat(me)){
-        write("ÏÖÔÚÄãµÄĞÄÌøÕı³£!!\n");
+        write("ç°åœ¨ä½ çš„å¿ƒè·³æ­£å¸¸!!\n");
 //        return 0;
-//        tell_object(me,"ÏÖÔÚÄãµÄĞÄÌøÕı³£"¡£\n"NOR);
+//        tell_object(me,"ç°åœ¨ä½ çš„å¿ƒè·³æ­£å¸¸"ã€‚\n"NOR);
 }
 else
 {
 	me->set_heart_beat(1);
 	me->set_temp("netdead",0);
-        write("»Ö¸´ĞÄÌøÍê±Õ!!\n");
-//        tell_object(me,"»Ö¸´ĞÄÌøÍê±Õ.!"¡£\n"NOR);
+        write("æ¢å¤å¿ƒè·³å®Œé—­!!\n");
+//        tell_object(me,"æ¢å¤å¿ƒè·³å®Œé—­.!"ã€‚\n"NOR);
 }
 	return 1;
 }
@@ -24,9 +24,9 @@ else
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: where <Íæ¼ÒµÄ ID>
+æŒ‡ä»¤æ ¼å¼: where <ç©å®¶çš„ ID>
 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÍæ¼ÒÄ¿Ç°ËùÔÚµÄÎ»ÖÃ.
+è¿™ä¸ªæŒ‡ä»¤æ˜¯ç”¨æ¥å¾—çŸ¥ç©å®¶ç›®å‰æ‰€åœ¨çš„ä½ç½®.
 
 HELP
 	);

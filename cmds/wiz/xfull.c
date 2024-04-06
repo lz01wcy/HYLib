@@ -13,12 +13,12 @@ string wiz_status;
     if( !str || str == "")
         obj = me;
     else if ( !obj = present(str,environment(me)))
-        return notify_fail("¶ÔÏó´íÎó: ÕÒ²»µ½"+str+"\n");
+        return notify_fail("å¯¹è±¡é”™è¯¯: æ‰¾ä¸åˆ°"+str+"\n");
     
         size=sizeof(filter_array(all_inventory(me), (: ! $1->query("equipped") :)));
         size2=sizeof(filter_array(all_inventory(me), (: ! $1->query("equipped") :)));
-//         printf(" ¹²ÓĞ %d ¸ö µÀ¾ß¡¡\n", size);
-//         printf(" ¹²ÓĞ %d ¸ö µÀ¾ß¡¡\n", size2);
+//         printf(" å…±æœ‰ %d ä¸ª é“å…·ã€€\n", size);
+//         printf(" å…±æœ‰ %d ä¸ª é“å…·ã€€\n", size2);
 
 	inv = all_inventory(obj);
 	while( i < sizeof(inv) && i >= 0 )
@@ -33,7 +33,7 @@ string wiz_status;
 
         if (ob)
         {
-                message_vision("$NÒ»Í·´Ó$nÉÏÃæÔÔÁËÏÂÀ´£¡\n",
+                message_vision("$Nä¸€å¤´ä»$nä¸Šé¢æ ½äº†ä¸‹æ¥ï¼\n",
                               obj, ob);
                 obj->delete_temp("is_riding");
                 ob->delete_temp("is_rided_by");
@@ -43,10 +43,10 @@ string wiz_status;
 wiz_status = SECURITY_D->get_status(me);
 	if( wiz_status != "(admin)" && wiz_status != "(arch)" 
 	&& userp(me) && wizardp(me) && obj!=me)
-message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "ÍêÈ«»Ö¸´ÁË" + 
-                  obj->query("name")+HIC"µÄËùÓĞÊôĞÔ!"NOR"¡£\n", users());
+message("channel:chat", HIC"ã€ç©å®¶ç›‘ç£ã€‘"+me->name() + "å®Œå…¨æ¢å¤äº†" + 
+                  obj->query("name")+HIC"çš„æ‰€æœ‰å±æ€§!"NOR"ã€‚\n", users());
 
-    tell_object(obj,HIR + this_player()->query("name") + "(" + this_player()->query("id")+ ")ÎªÄãµÄÉíÌå»Ö¸´µ½ÁË×î¼Ñ×´Ì¬¡£\n"NOR);
+    tell_object(obj,HIR + this_player()->query("name") + "(" + this_player()->query("id")+ ")ä¸ºä½ çš„èº«ä½“æ¢å¤åˆ°äº†æœ€ä½³çŠ¶æ€ã€‚\n"NOR);
     obj->set("eff_qi",obj->query("max_qi"));
     obj->set("qi",obj->query("max_qi"));
     obj->set("eff_jing",obj->query("max_jing"));
@@ -57,16 +57,16 @@ message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "ÍêÈ«»Ö¸´ÁË" +
     obj->set("water",obj->max_water_capacity()*2);
 if (!obj->query_condition("killer"))
     obj->clear_condition();
-    write(HIR"»Ö¸´³É¹¦¡£!!!\n"NOR);
+    write(HIR"æ¢å¤æˆåŠŸã€‚!!!\n"NOR);
     return 1;
 }
 
 int help(object obj)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : xfull <¶ÔÏó>
+æŒ‡ä»¤æ ¼å¼ : xfull <å¯¹è±¡>
 
-ÀûÓÃ´ËÖ¸Áî¿ÉÍêÈ«»Ö¸´ÉúÎïµÄ×´Ì¬¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯å®Œå…¨æ¢å¤ç”Ÿç‰©çš„çŠ¶æ€ã€‚
 HELP
     );
     return 1;

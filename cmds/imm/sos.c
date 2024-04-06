@@ -1,4 +1,4 @@
-//[xiaojl 1999/11/20 ÎäÁÖ´ºÇï]
+//[xiaojl 1999/11/20 æ­¦æ—æ˜¥ç§‹]
 
 #define SOS_DIR       "/data/sos/"
 #define SOS_FILENAME  "sos"
@@ -33,9 +33,9 @@ void done_post(object me, mapping note, string text)
         }
     else
         notes += ({ note });
-    tell_object(me, HIM "Çó¾ÈÍê±Ï¡£ÄãµÄĞÅÏ¢ÒÑ¾­±»¼Óµ½Î×Ê¦Í¨Öª¶ÓÁĞÀï¡£\n");
-    tell_object(me, HIM "Î×Ê¦ÕıÔÚ´¦ÀíÆäËûÍæ¼Ò£¬ÇëµÈ´ı¡£\n");
-    tell_object(me, HIM "Äã¿ÉÒÔÏÈÃ¦Äã×Ô¼ºµÄÊÂÇé£¬¹ıÒ»¶ÎÊ±¼äºó¿ÉÒÔÓÃsos read²é¿´ÊÇ·ñ±»½â¾ö¡£\n" NOR);
+    tell_object(me, HIM "æ±‚æ•‘å®Œæ¯•ã€‚ä½ çš„ä¿¡æ¯å·²ç»è¢«åŠ åˆ°å·«å¸ˆé€šçŸ¥é˜Ÿåˆ—é‡Œã€‚\n");
+    tell_object(me, HIM "å·«å¸ˆæ­£åœ¨å¤„ç†å…¶ä»–ç©å®¶ï¼Œè¯·ç­‰å¾…ã€‚\n");
+    tell_object(me, HIM "ä½ å¯ä»¥å…ˆå¿™ä½ è‡ªå·±çš„äº‹æƒ…ï¼Œè¿‡ä¸€æ®µæ—¶é—´åå¯ä»¥ç”¨sos readæŸ¥çœ‹æ˜¯å¦è¢«è§£å†³ã€‚\n" NOR);
     save();
     return;
 }
@@ -46,10 +46,10 @@ void list_bug(object me)
     int i;
     string str,s;
     if (sizeof(notes)<1) {
-        write("Ã»ÈË·¢³ö sos Çó¾ÈĞÅºÅ¡£\n");
+        write("æ²¡äººå‘å‡º sos æ±‚æ•‘ä¿¡å·ã€‚\n");
         return;
     } 
-    s = sprintf("Íæ¼ÒÒÑ¾­·¢³öµÄ sos ÁĞ±íÈçÏÂ:\n"
+    s = sprintf("ç©å®¶å·²ç»å‘å‡ºçš„ sos åˆ—è¡¨å¦‚ä¸‹:\n"
                 "==------------------------------------------------------------------==\n");
     for( i = 0; i<sizeof(notes); i++){
         str = sprintf("%d) %-50s %10s %s \n",
@@ -64,7 +64,7 @@ void do_read(object me, int i)
 {
     string s;
     if( i > sizeof(notes) || i < 1) {
-        write("ÎŞ´Ë±àºÅ!!\n");
+        write("æ— æ­¤ç¼–å·!!\n");
         return;
     }
     s = sprintf("%d) %-50s %10s %s\n"
@@ -87,16 +87,16 @@ int search_id(string id)
 int do_solve(object me, int i)
 {
     if( i > sizeof(notes) || i < 1) {
-        write("ÎŞ´Ë±àºÅ!!\n");
+        write("æ— æ­¤ç¼–å·!!\n");
         return 0;
     } 
     if ( notes[i-1]["solve"]!="" ) {
-        write(notes[i-1]["solve"]+"ÒÑ¾­±êÖ¾À²!\n");
+        write(notes[i-1]["solve"]+"å·²ç»æ ‡å¿—å•¦!\n");
         return 1;
     }
     notes[i-1]["solve"] = me->query("id");
     save();
-    write("¸Ã sos ĞÅÏ¢ÒÑ±êÖ¾Îª½â¾ö¡£\n");
+    write("è¯¥ sos ä¿¡æ¯å·²æ ‡å¿—ä¸ºè§£å†³ã€‚\n");
     return 1;
 }
 
@@ -113,15 +113,15 @@ int main(object me, string arg)
     restore();
     if (!arg) {
         if(!wiz_level(me)){
-            tell_object(me, HIM "ÄãÕıÔÚ" HIY MUD_NAME HIM "ÀïĞÁ¿àµØÍÚ×ÅÄà°Í£¬Í»È»·¢ÏÖÒ»Ö»´ó¸öµÄ³ô³æÏòÄãÅÀÀ´¡£\n" NOR);
-            tell_object(me, HIM "Äã¸Ï½ôÏòÎ×Ê¦ÃÇ·¢³ö½ô¼±Çó¾ÈĞÅºÅ£º£Ó£Ï£Ó£¡£¡£¡\n" NOR);
+            tell_object(me, HIM "ä½ æ­£åœ¨" HIY MUD_NAME HIM "é‡Œè¾›è‹¦åœ°æŒ–ç€æ³¥å·´ï¼Œçªç„¶å‘ç°ä¸€åªå¤§ä¸ªçš„è‡­è™«å‘ä½ çˆ¬æ¥ã€‚\n" NOR);
+            tell_object(me, HIM "ä½ èµ¶ç´§å‘å·«å¸ˆä»¬å‘å‡ºç´§æ€¥æ±‚æ•‘ä¿¡å·ï¼šï¼³ï¼¯ï¼³ï¼ï¼ï¼\n" NOR);
             where = environment(me);
             if (!where) 
-                s=sprintf("%s(%s)Çó¾È",
+                s=sprintf("%s(%s)æ±‚æ•‘",
                         (string)me->name(),
                         (string)me->query("id"));
             else
-                s=sprintf("%s(%s)ÔÚ%s(%s)Çó¾È",
+                s=sprintf("%s(%s)åœ¨%s(%s)æ±‚æ•‘",
                         (string)me->name(),
                         (string)me->query("id"),
                         (string)where->query("short"),
@@ -140,13 +140,13 @@ int main(object me, string arg)
     } 
 
     if( sscanf(arg, "%s %s", s, arg1) == 2 ) {
-        if( !wiz_level(me) ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
-        if ( s != "solve" ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
+        if( !wiz_level(me) ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
+        if ( s != "solve" ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
         if ( arg1 =="all" ) {
-           if( !(i = sizeof(notes)) ) return notify_fail("Ã»ÈË·¢³ösosÇó¾ÈĞÅºÅ¡£\n");
+           if( !(i = sizeof(notes)) ) return notify_fail("æ²¡äººå‘å‡ºsosæ±‚æ•‘ä¿¡å·ã€‚\n");
            for( ; i > 0; i-- ) 
                notes[i-1]["solve"] = me->query("id");
-           write("ËùÓĞµÄ sos ĞÅÏ¢ÒÑ¾­±êÖ¾Îª½â¾öÁË¡£\n");
+           write("æ‰€æœ‰çš„ sos ä¿¡æ¯å·²ç»æ ‡å¿—ä¸ºè§£å†³äº†ã€‚\n");
            return 1;
         }
         i = search_id(arg1);
@@ -156,8 +156,8 @@ int main(object me, string arg)
         }
     }
     if( sscanf(arg, "%s %d", s, arg2) == 2 ) {
-        if( !wiz_level(me) ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
-        if ( s != "solve" ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
+        if( !wiz_level(me) ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
+        if ( s != "solve" ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
         do_solve( me, arg2 ); 
         return 1;
     }
@@ -165,22 +165,22 @@ int main(object me, string arg)
     switch(arg){
         case "read":       
             if( !(i = sizeof(notes)) )
-                return notify_fail("»¹Ã»ÓĞÈË×ö¹ı sos ºô½Ğ£¡\n");
+                return notify_fail("è¿˜æ²¡æœ‰äººåšè¿‡ sos å‘¼å«ï¼\n");
             else {
                 i = search_id( me->query("id") );
                 do_read(me,i);
             }
             break;
         case "list":
-            if( !wiz_level(me) ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
+            if( !wiz_level(me) ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
             list_bug(me);
             break;
         case "pack":
-            if( !wiz_level(me) ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
-            if( !(i = sizeof(notes)) ) return notify_fail("Ã»ÈË·¢³ö sos Çó¾ÈĞÅºÅ¡£\n");
+            if( !wiz_level(me) ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
+            if( !(i = sizeof(notes)) ) return notify_fail("æ²¡äººå‘å‡º sos æ±‚æ•‘ä¿¡å·ã€‚\n");
             for( ; i > 0; i-- ) 
                 if( "" != notes[i-1]["solve"] ) {
-                    printf("%sµÄ sos Çó¾ÈÒÑ±»É¾³ı£¡\n", notes[i-1]["author"]);
+                    printf("%sçš„ sos æ±‚æ•‘å·²è¢«åˆ é™¤ï¼\n", notes[i-1]["author"]);
                     if( sizeof(notes) == 1 ) notes = ({});
                     else if(i==1) notes = notes[1..sizeof(notes)-1];
                     else if( i == sizeof(notes) ) notes = notes[0..sizeof(notes)-2];
@@ -189,20 +189,20 @@ int main(object me, string arg)
             save();
             break;
         case "solve":
-            if( !wiz_level(me) ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
-            return notify_fail("¸ñÊ½: sos solve <±àºÅ»òÍæ¼Òid>\n");
+            if( !wiz_level(me) ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
+            return notify_fail("æ ¼å¼: sos solve <ç¼–å·æˆ–ç©å®¶id>\n");
             break;
         default:
-            if( !wiz_level(me) ) return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
+            if( !wiz_level(me) ) return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
             if( sscanf(arg, "%d", i) == 1 )
                 do_read( me, i );
             else if( sscanf( arg, "%s", str ) == 1 ) {
                 i = search_id(str);
-                if( i == 0 ) return notify_fail("ÎŞ´ËÍæ¼Ò·¢³öµÄ sos ĞÅÏ¢£¡\n");
+                if( i == 0 ) return notify_fail("æ— æ­¤ç©å®¶å‘å‡ºçš„ sos ä¿¡æ¯ï¼\n");
                 do_read( me, i );
             }
     }
-    else return notify_fail("¸ñÊ½²»¶Ô£¬¾ßÌåÊ¹ÓÃ·½·¨Çë²ÎÔÄ help sos \n");
+    else return notify_fail("æ ¼å¼ä¸å¯¹ï¼Œå…·ä½“ä½¿ç”¨æ–¹æ³•è¯·å‚é˜… help sos \n");
     return 1;
 }
 
@@ -210,28 +210,28 @@ int help(object me)
 {
         if (!wiz_level(me) )
         write(@HELP
-Ö¸Áî¸ñÊ½ : 
+æŒ‡ä»¤æ ¼å¼ : 
            sos
            sos read
-Õâ¸öÖ¸Áî¿ÉÒÔÔÚÏµÍ³³öÏÖbugÊ±À´ÏòÎ×Ê¦ÇóÖú¡£
-ÊäÈë¸ÃÃüÁîºó£¬ÏµÍ³½«ÌáÊ¾ÄãÊäÈë¶Ô bug µÄÃèÊö¡£Íæ¼ÒÔÚÕâÀïÓ¦¸Ã½« bug
-³öÏÖµÄÇé¿öºÍÏµÍ³µÄÌáÊ¾¾¡Á¿ÏêÏ¸µØ½øĞĞËµÃ÷£¬ÒÔ±ãÎ×Ê¦ĞŞ¸Ä¸Ã bug¡£
-Ã¿¸öÍæ¼ÒÖ»ÄÜÌùÒ»Ìõ sos£¬ĞÂµÄ sos ½«¸²¸ÇÒÔÇ°µÄÊäÈë¡£
-¿ÉÒÔÓÃ sos read ÔÄ¶Á×Ô¼ºÌù³öµÄ sos¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åœ¨ç³»ç»Ÿå‡ºç°bugæ—¶æ¥å‘å·«å¸ˆæ±‚åŠ©ã€‚
+è¾“å…¥è¯¥å‘½ä»¤åï¼Œç³»ç»Ÿå°†æç¤ºä½ è¾“å…¥å¯¹ bug çš„æè¿°ã€‚ç©å®¶åœ¨è¿™é‡Œåº”è¯¥å°† bug
+å‡ºç°çš„æƒ…å†µå’Œç³»ç»Ÿçš„æç¤ºå°½é‡è¯¦ç»†åœ°è¿›è¡Œè¯´æ˜ï¼Œä»¥ä¾¿å·«å¸ˆä¿®æ”¹è¯¥ bugã€‚
+æ¯ä¸ªç©å®¶åªèƒ½è´´ä¸€æ¡ sosï¼Œæ–°çš„ sos å°†è¦†ç›–ä»¥å‰çš„è¾“å…¥ã€‚
+å¯ä»¥ç”¨ sos read é˜…è¯»è‡ªå·±è´´å‡ºçš„ sosã€‚
 HELP
     );
         else 
 write(@HELP
-Ö¸Áî¸ñÊ½ : 
+æŒ‡ä»¤æ ¼å¼ : 
            sos
-           sos <ºÅÂë»òÍæ¼Òid>
+           sos <å·ç æˆ–ç©å®¶id>
            sos list
            sos pack
-           sos solve <ºÅÂë»òÍæ¼Òid>
-Õâ¸öÖ¸Áî¿ÉÒÔ¸¨ÖúÎ×Ê¦´¦ÀíÍæ¼ÒÌá³öµÄ bug ÁĞ±í¡£sos ºÍ sos list µÄ¹¦ÄÜÒ»Ñù£¬
-¶¼ÊÇ½«ËùÓĞµÄ bug ĞÅÏ¢½øĞĞÁĞ±í¡£´ø²ÎÊıµÄ sos ÃüÁî£¬¸ù¾İ²ÎÊıµÄ²»Í¬£¬½«ÏÔÊ¾
-¶ÔÓ¦ºÅÂë»ò¶ÔÓ¦Íæ¼ÒµÄ bug µÄÏêÏ¸ĞÅÏ¢¡£sos solveÓÃÀ´±êÖ¾Ä³¸öbugÒÑ¾­±»½â¾öÁË¡£
-sos pack ½«É¾³ıËùÓĞÒÑ¾­±êÖ¾Îª½â¾öÁËµÄ bug¡£
+           sos solve <å·ç æˆ–ç©å®¶id>
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è¾…åŠ©å·«å¸ˆå¤„ç†ç©å®¶æå‡ºçš„ bug åˆ—è¡¨ã€‚sos å’Œ sos list çš„åŠŸèƒ½ä¸€æ ·ï¼Œ
+éƒ½æ˜¯å°†æ‰€æœ‰çš„ bug ä¿¡æ¯è¿›è¡Œåˆ—è¡¨ã€‚å¸¦å‚æ•°çš„ sos å‘½ä»¤ï¼Œæ ¹æ®å‚æ•°çš„ä¸åŒï¼Œå°†æ˜¾ç¤º
+å¯¹åº”å·ç æˆ–å¯¹åº”ç©å®¶çš„ bug çš„è¯¦ç»†ä¿¡æ¯ã€‚sos solveç”¨æ¥æ ‡å¿—æŸä¸ªbugå·²ç»è¢«è§£å†³äº†ã€‚
+sos pack å°†åˆ é™¤æ‰€æœ‰å·²ç»æ ‡å¿—ä¸ºè§£å†³äº†çš„ bugã€‚
 HELP
     );
     return 1;

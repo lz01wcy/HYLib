@@ -9,14 +9,14 @@ int main(object me, string arg)
 if (me->query("combat_exp") < 2000 )
 {
         if ( ((int)time() - (int)me->query_temp("say_time")) < 1 )
-        return notify_fail("ÓĞ»°ºÃºÃËµÅ¶¡£Ö»ÓĞ¾­Ñé´óÓÚ2000,²ÅÄÜÎŞÏŞÖÆÊ¹ÓÃ\n");
+        return notify_fail("æœ‰è¯å¥½å¥½è¯´å“¦ã€‚åªæœ‰ç»éªŒå¤§äº2000,æ‰èƒ½æ— é™åˆ¶ä½¿ç”¨\n");
 if ( strlen(arg)>40)
-return notify_fail("ÄãËµÄÇÃ´¶à»°×öÊ²Ã´! ÏëË¢ÆÁ?Ö»ÓĞ¾­Ñé´óÓÚ2000,²ÅÄÜÎŞÏŞÖÆÊ¹ÓÃ\n");
+return notify_fail("ä½ è¯´é‚£ä¹ˆå¤šè¯åšä»€ä¹ˆ! æƒ³åˆ·å±?åªæœ‰ç»éªŒå¤§äº2000,æ‰èƒ½æ— é™åˆ¶ä½¿ç”¨\n");
 
 }
 	if (!arg) {
-		write("Äã×ÔÑÔ×ÔÓï²»ÖªµÀÔÚËµĞ©Ê²Ã´¡£\n");
-		message("sound", me->name() + "×ÔÑÔ×ÔÓï²»ÖªµÀÔÚËµĞ©Ê²Ã´¡£\n",
+		write("ä½ è‡ªè¨€è‡ªè¯­ä¸çŸ¥é“åœ¨è¯´äº›ä»€ä¹ˆã€‚\n");
+		message("sound", me->name() + "è‡ªè¨€è‡ªè¯­ä¸çŸ¥é“åœ¨è¯´äº›ä»€ä¹ˆã€‚\n",
 			environment(me), me);
 		return 1;
 	}
@@ -24,8 +24,8 @@ return notify_fail("ÄãËµÄÇÃ´¶à»°×öÊ²Ã´! ÏëË¢ÆÁ?Ö»ÓĞ¾­Ñé´óÓÚ2000,²ÅÄÜÎŞÏŞÖÆÊ¹ÓÃ\n
 		arg = replace_string(arg, " ", " ... ") + " ...";
 	}
                      me->set_temp("say_time", time());
-	write( CYN "ÄãËµµÀ£º" + arg + "\n" NOR);
-	message("sound", CYN + me->name() + "ËµµÀ£º" +  arg + "\n" NOR,
+	write( CYN "ä½ è¯´é“ï¼š" + arg + "\n" NOR);
+	message("sound", CYN + me->name() + "è¯´é“ï¼š" +  arg + "\n" NOR,
 		environment(me), me);
 
 	// The mudlib interface of say
@@ -37,11 +37,11 @@ return notify_fail("ÄãËµÄÇÃ´¶à»°×öÊ²Ã´! ÏëË¢ÆÁ?Ö»ÓĞ¾­Ñé´óÓÚ2000,²ÅÄÜÎŞÏŞÖÆÊ¹ÓÃ\n
 int help (object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: say <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼: say <è®¯æ¯>
  
-Ëµ»°£¬ËùÓĞ¸úÄãÔÚÍ¬Ò»¸ö·¿¼äµÄÈË¶¼»áÌıµ½ÄãËµµÄ»°¡£
+è¯´è¯ï¼Œæ‰€æœ‰è·Ÿä½ åœ¨åŒä¸€ä¸ªæˆ¿é—´çš„äººéƒ½ä¼šå¬åˆ°ä½ è¯´çš„è¯ã€‚
  
-×¢: ±¾Ö¸Áî¿ÉÓÃ ' È¡´ú.
+æ³¨: æœ¬æŒ‡ä»¤å¯ç”¨ ' å–ä»£.
  
 HELP
 	);

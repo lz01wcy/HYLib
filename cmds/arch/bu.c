@@ -11,86 +11,86 @@ mapping my;
 string *sname, *mname, *pname;
 
     if( !str || str == "")
-        return notify_fail("ÄãÒª¸øË­×ªÉú?\n");
+        return notify_fail("ä½ è¦ç»™è°è½¬ç”Ÿ?\n");
 
     if ( !obj = present(str,environment(me)))
-        return notify_fail("ÕâÀïÃ»ÓĞ"+str+"\n");
+        return notify_fail("è¿™é‡Œæ²¡æœ‰"+str+"\n");
     
     if ( !userp(obj))
-        return notify_fail("Õâ²»ÊÇÍæ¼Ò°¡?\n");
+        return notify_fail("è¿™ä¸æ˜¯ç©å®¶å•Š?\n");
 
 //    if ( obj->query("zhuanshen"))
-//        return notify_fail("´ËÈËÒÑ¾­×ªÉú¹ıÁË!\n");
+//        return notify_fail("æ­¤äººå·²ç»è½¬ç”Ÿè¿‡äº†!\n");
 
 //    if ( (int)obj->query("combat_exp") < 5000000)
-//        return notify_fail("´ËÈËÃ»ÓĞ×Ê¸ñ×ªÉú!\n");
+//        return notify_fail("æ­¤äººæ²¡æœ‰èµ„æ ¼è½¬ç”Ÿ!\n");
 
 
 if (obj->query("str") <25)
 {
 obj->set("str",25);
-message_vision(HIB"$NµÄÏÈÌì±ÛÁ¦Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIB"$Nçš„å…ˆå¤©è‡‚åŠ›å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query("int") <25)
 {
 obj->set("int",25);
-message_vision(HIC"$NµÄÏÈÌìÎòĞÔÔö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIC"$Nçš„å…ˆå¤©æ‚Ÿæ€§å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query("con") <25)
 {
 obj->set("con",25);
-message_vision(HIY"$NµÄÏÈÌì¸ù¹ÇÔö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIY"$Nçš„å…ˆå¤©æ ¹éª¨å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query("dex") <25)
 {
 obj->set("dex",25);
-message_vision(HIG"$NµÄÏÈÌìÉí·¨Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIG"$Nçš„å…ˆå¤©èº«æ³•å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query("kar") <30)
 {
 obj->set("kar",30);
-message_vision(HIC"$NµÄÏÈÌì±ÛÁ¦Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIC"$Nçš„å…ˆå¤©è‡‚åŠ›å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query("per") <30)
 {
 obj->set("per",30);
-message_vision(HIB"$NµÄÏÈÌìÈİÃ²Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIB"$Nçš„å…ˆå¤©å®¹è²Œå¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query_skill("unarmed",1)<250)
 {
   obj->set_skill("unarmed",250);
-message_vision(HIM"$NµÄ»ù±¾¸ñ¶·Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIM"$Nçš„åŸºæœ¬æ ¼æ–—å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query_skill("parry",1)<250)
 {
  obj->set_skill("parry",250);
-message_vision(HIM"$NµÄ»ù±¾ÕĞ¼ÜÔö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIM"$Nçš„åŸºæœ¬æ‹›æ¶å¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query_skill("dodge",1)<250)
 {
   obj->set_skill("dodge",250);
-message_vision(HIM"$NµÄ»ù±¾Çá¹¦Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIM"$Nçš„åŸºæœ¬è½»åŠŸå¢åŠ äº†ï¼\n"NOR, obj);
 
 }
 if (obj->query_skill("force",1)<250)
 {
   obj->set_skill("force",250);
-message_vision(HIM"$NµÄ»ù±¾ÄÚ¹¦Ôö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIM"$Nçš„åŸºæœ¬å†…åŠŸå¢åŠ äº†ï¼\n"NOR, obj);
 }
 if (obj->query_skill("literate",1)<250)
 {
   obj->set_skill("literate",250);
-message_vision(HIM"$NµÄ¶ÁÊéĞ´×ÖÔö¼ÓÁË£¡\n"NOR, obj);
+message_vision(HIM"$Nçš„è¯»ä¹¦å†™å­—å¢åŠ äº†ï¼\n"NOR, obj);
 }
         obj->set("combat_exp", 2500000);
         obj->add("potential",500000);
-        message_vision(HIR"$N»ñµÃÁË2500000¾­ÑéºÍ500000Ç±ÄÜ!\n"NOR, obj);
+        message_vision(HIR"$Nè·å¾—äº†2500000ç»éªŒå’Œ500000æ½œèƒ½!\n"NOR, obj);
         obj->set("max_neili", 800);
-        message_vision(HIR"$N»ñµÃÁË800µãÄÚÁ¦ÉÏÏŞ!\n"NOR, obj);
+        message_vision(HIR"$Nè·å¾—äº†800ç‚¹å†…åŠ›ä¸Šé™!\n"NOR, obj);
 
         obj->set("mud_age",400000);
         obj->save();
-    write(HIR"²¹³¥½áÊø!\n"NOR);
+    write(HIR"è¡¥å¿ç»“æŸ!\n"NOR);
 
     return 1;
 }
@@ -98,12 +98,12 @@ message_vision(HIM"$NµÄ¶ÁÊéĞ´×ÖÔö¼ÓÁË£¡\n"NOR, obj);
 int help(object obj)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : zhuanshen <¶ÔÏó>
+æŒ‡ä»¤æ ¼å¼ : zhuanshen <å¯¹è±¡>
 
-ÀûÓÃ´ËÖ¸Áî¿ÉÎªÍæ¼Ò½øĞĞ×ªÉú¡£Íæ¼Ò×ªÉúºó
-¾­ÑéÎª300K,Ç±ÄÜÎª100K,ËùÓĞÊôĞÔ³ËÁ½±¶
-(ÉÏÏŞ50).18Ëê¿ªÊ¼£¬Ô­ÓĞÎä¹¦È«²¿ÏûÊ§¡£
-µ«Ô­ÓĞµ±ÆÌµÀ¾ß£¬×ÔÔìÎäÆ÷£¬ºêÎï£¬È«²¿±£´æ¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯ä¸ºç©å®¶è¿›è¡Œè½¬ç”Ÿã€‚ç©å®¶è½¬ç”Ÿå
+ç»éªŒä¸º300K,æ½œèƒ½ä¸º100K,æ‰€æœ‰å±æ€§ä¹˜ä¸¤å€
+(ä¸Šé™50).18å²å¼€å§‹ï¼ŒåŸæœ‰æ­¦åŠŸå…¨éƒ¨æ¶ˆå¤±ã€‚
+ä½†åŸæœ‰å½“é“ºé“å…·ï¼Œè‡ªé€ æ­¦å™¨ï¼Œå®ç‰©ï¼Œå…¨éƒ¨ä¿å­˜ã€‚
 HELP
     );
     return 1;

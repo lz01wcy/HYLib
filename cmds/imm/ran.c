@@ -26,16 +26,16 @@ int main(object me, string arg)
 		
 	}
 	for (j=0;j<10;j++) 
-		printf("%d : ¸öÊıÎª %d\n",j,a[j]);
+		printf("%d : ä¸ªæ•°ä¸º %d\n",j,a[j]);
 	return 1;
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : ran <number>
+æŒ‡ä»¤æ ¼å¼ : ran <number>
 
-ÓÃ´¦ : ²âÊÔËæ»úº¯ÊıµÄ·Ö²¼¡£
+ç”¨å¤„ : æµ‹è¯•éšæœºå‡½æ•°çš„åˆ†å¸ƒã€‚
 HELP
      );
      return 1;

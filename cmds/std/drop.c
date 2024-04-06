@@ -1,5 +1,5 @@
 // drop.c
-// ĞÇĞÇ2000/6/14ĞŞÕıbug
+// æ˜Ÿæ˜Ÿ2000/6/14ä¿®æ­£bug
 
 inherit F_CLEAN_UP;
 #include <ansi.h>
@@ -13,30 +13,30 @@ int main(object me, string arg)
 	int i, amount;
 	string item;
 string wiz_status;
-	if(!arg) return notify_fail("ÄãÒª¶ªÏÂÊ²Ã´¶«Î÷£¿\n");
+	if(!arg) return notify_fail("ä½ è¦ä¸¢ä¸‹ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if(sscanf(arg, "%d %s", amount, item)==2) {
 		if( !objectp(obj = present(item, me)) )
-			return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+			return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 		if( stringp(obj->query("no_drop")) )
 			return notify_fail( (string)obj->query("no_drop") );
         if (userp(me) && !query_heart_beat(me))
         {
          "/cmds/usr/quithy"->main(me);
-         write("ÓÉÓÚÄãÃ»ÓĞĞÄÌø£¬ÇëÖØĞÂµÇÂ½!!\n");
+         write("ç”±äºä½ æ²¡æœ‰å¿ƒè·³ï¼Œè¯·é‡æ–°ç™»é™†!!\n");
         }
         if( me->is_busy() )
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜ¶ª¶«Î÷£¡\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ä¸¢ä¸œè¥¿ï¼\n");
       if( !environment(me) )
-        return notify_fail("ÕâÀï²»×¼ÈÓ¶«Î÷¡£\n");
+        return notify_fail("è¿™é‡Œä¸å‡†æ‰”ä¸œè¥¿ã€‚\n");
 
       if( environment(me)->query("no_drop1") )
-        return notify_fail("ÕâÀï²»×¼ÈÓ¶«Î÷¡£\n");
+        return notify_fail("è¿™é‡Œä¸å‡†æ‰”ä¸œè¥¿ã€‚\n");
 
 		if( amount < 1 )
-			return notify_fail("¶«Î÷µÄÊıÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+			return notify_fail("ä¸œè¥¿çš„æ•°é‡è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
 		if( amount > obj->query_amount() )
-			return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+			return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
 		else if( amount == (int)obj->query_amount() )
 			return do_drop(me, obj);
 		else {
@@ -57,7 +57,7 @@ string wiz_status;
 	}
 
 	if(!objectp(obj = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	return do_drop(me, obj);
 }
 
@@ -68,51 +68,51 @@ string wiz_status;
 	mixed no_drop;
 
 	if( obj->query_temp("is_rided_by") == me->query("id"))
-		return notify_fail( obj->name() + "²»ÊÇÕı±»ÄãÆï×Å¡£\n");
+		return notify_fail( obj->name() + "ä¸æ˜¯æ­£è¢«ä½ éª‘ç€ã€‚\n");
         if( obj->query("weapon_prop") && me->is_exert() &&
             obj == me->query_temp("weapon"))
-                 return notify_fail("ÄãÕıÔÚÊ¹ÓÃ"+me->query_exert()+"£¬ÎŞ·¨¶ªÏÂ"+obj->name()+"¡£\n");
+                 return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨"+me->query_exert()+"ï¼Œæ— æ³•ä¸¢ä¸‹"+obj->name()+"ã€‚\n");
         if( obj->query("weapon_prop") && me->is_perform() &&
             obj == me->query_temp("weapon"))
-                 return notify_fail("ÄãÕıÔÚÊ¹ÓÃ"+me->query_perform()+"£¬ÎŞ·¨¶ªÏÂ"+obj->name()+"¡£\n");
+                 return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨"+me->query_perform()+"ï¼Œæ— æ³•ä¸¢ä¸‹"+obj->name()+"ã€‚\n");
 
 	if( no_drop = obj->query("no_drop") )
-		return notify_fail( stringp(no_drop) ? no_drop : "ÕâÑù¶«Î÷²»ÄÜËæÒâ¶ªÆú¡£\n");
+		return notify_fail( stringp(no_drop) ? no_drop : "è¿™æ ·ä¸œè¥¿ä¸èƒ½éšæ„ä¸¢å¼ƒã€‚\n");
 	inv = all_inventory(environment(me));  
         if (sizeof(inv)>49)
-            return notify_fail("µØÉÏÒÑ¾­ÄÇÃ´¶à¶«Î÷ÁË£¬ÄãÏë¸ÉÂï£¿\n");
+            return notify_fail("åœ°ä¸Šå·²ç»é‚£ä¹ˆå¤šä¸œè¥¿äº†ï¼Œä½ æƒ³å¹²å˜›ï¼Ÿ\n");
 
 /*        if( me->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜ¶ª¶«Î÷£¡\n");*/
+                return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ä¸¢ä¸œè¥¿ï¼\n");*/
 	if( no_drop = environment(me)->query("no_drop") )
-		return notify_fail( stringp(no_drop) ? no_drop : "ÕâÀï¶«Î÷¶ªÆúÏÂÈ¥Ò²¿´²»¼û¡£\n");
+		return notify_fail( stringp(no_drop) ? no_drop : "è¿™é‡Œä¸œè¥¿ä¸¢å¼ƒä¸‹å»ä¹Ÿçœ‹ä¸è§ã€‚\n");
 
 if (userp(obj) &&
 !environment(me)->query("no_fight"))
-                        return notify_fail("Òª·ÅÏÂ»èÁËµÄÍæ¼Ò£¬µÃÕÒÒ»¸ö°²È«µÄµØ·½£¡\n");
+                        return notify_fail("è¦æ”¾ä¸‹æ˜äº†çš„ç©å®¶ï¼Œå¾—æ‰¾ä¸€ä¸ªå®‰å…¨çš„åœ°æ–¹ï¼\n");
 
 	wiz_status = SECURITY_D->get_status(me);
 	if( wiz_status != "(admin)" 
 	&& userp(me) && wizardp(me))
-message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "ÈÓÏÂÁË" + 
-                  obj->query("name")+HIC"!"NOR"¡£\n", users());
+message("channel:chat", HIC"ã€ç©å®¶ç›‘ç£ã€‘"+me->name() + "æ‰”ä¸‹äº†" + 
+                  obj->query("name")+HIC"!"NOR"ã€‚\n", users());
 
 	if (obj->move(environment(me))) {
 		if( obj->is_character() )
  if (!me->is_ghost())
 {
-			message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
-}else 			message_vision("$n´Ó$NÉíÉÏµôÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
+			message_vision("$Nå°†$nä»èƒŒä¸Šæ”¾äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
+}else 			message_vision("$nä»$Nèº«ä¸Šæ‰äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
 		else {
-			message_vision( sprintf("$N¶ªÏÂÒ»%s$n¡£\n",	obj->query("unit")),
+			message_vision( sprintf("$Nä¸¢ä¸‹ä¸€%s$nã€‚\n",	obj->query("unit")),
 				me, obj );
 			if( !obj->query("value") && !obj->value() ) {
-				write("ÒòÎªÕâÑù¶«Î÷²¢²»ÖµÇ®£¬ËùÒÔÈËÃÇ²¢²»»á×¢Òâµ½ËüµÄ´æÔÚ¡£\n");
+				write("å› ä¸ºè¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼é’±ï¼Œæ‰€ä»¥äººä»¬å¹¶ä¸ä¼šæ³¨æ„åˆ°å®ƒçš„å­˜åœ¨ã€‚\n");
 				destruct(obj);
 			}
 /*			if( obj->query("id")=="coin" && !userp(obj)
 			&& obj->query("money_id")=="coin" ) {
-				write("ÒòÎªÕâÑù¶«Î÷²¢²»ÖµÇ®£¬ËùÒÔÈËÃÇ²¢²»»á×¢Òâµ½ËüµÄ´æÔÚ¡£\n");
+				write("å› ä¸ºè¿™æ ·ä¸œè¥¿å¹¶ä¸å€¼é’±ï¼Œæ‰€ä»¥äººä»¬å¹¶ä¸ä¼šæ³¨æ„åˆ°å®ƒçš„å­˜åœ¨ã€‚\n");
 				destruct(obj);
 			}*/
 
@@ -126,9 +126,9 @@ message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "ÈÓÏÂÁË" +
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : drop <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : drop <ç‰©å“åç§°>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¶ªÏÂÄãËùĞ¯´øµÄÎïÆ·.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ ä¸¢ä¸‹ä½ æ‰€æºå¸¦çš„ç‰©å“.
  
 HELP
     );

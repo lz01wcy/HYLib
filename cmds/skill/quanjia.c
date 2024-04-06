@@ -15,54 +15,54 @@ int main(object me, string arg)
 	
 	seteuid(getuid());
         if (me->is_busy())
-             return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+             return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
-        if ((!(myfam = me->query("family"))||myfam["family_name"] != "¶ëáÒÅÉ"))
-        return notify_fail("Ö»ÓĞ¶ëáÒÅÉ²ÅÄÜÓÃ¶ÉÊÀ¼ÃÈË£¡\n");
+        if ((!(myfam = me->query("family"))||myfam["family_name"] != "å³¨åµ‹æ´¾"))
+        return notify_fail("åªæœ‰å³¨åµ‹æ´¾æ‰èƒ½ç”¨æ¸¡ä¸–æµäººï¼\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀïÃ»ÓĞÈË´ò¶·£¡\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰äººæ‰“æ–—ï¼\n");
 
 	if( me->query_temp("dushi") )
-		return notify_fail("ÄãÒÑ¾­ÔÚÈ°ÈË¼Ò°Õ¶·ÁË£¡\n");
+		return notify_fail("ä½ å·²ç»åœ¨åŠäººå®¶ç½¢æ–—äº†ï¼\n");
 
 	if( !arg || sscanf(arg, "%s stop", who)!=1 ) return
-		notify_fail("Ö¸Áî¸ñÊ½£ºpersuade|quanjia <ÈËÎï> stop\n");
+		notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špersuade|quanjia <äººç‰©> stop\n");
 
 	victim = present(who, environment(me));
 
-	if( !victim || victim == me) return notify_fail("ÄãÏëÕÒµÄ¶ÔÏó²»ÔÚÕâÀï¡£\n");
+	if( !victim || victim == me) return notify_fail("ä½ æƒ³æ‰¾çš„å¯¹è±¡ä¸åœ¨è¿™é‡Œã€‚\n");
 
 	if( !living(victim) || !objectp(victim))
-		return notify_fail("ÄãÒªÈ°Ë­°Õ¶·£¿\n");
+		return notify_fail("ä½ è¦åŠè°ç½¢æ–—ï¼Ÿ\n");
 
 	if( !victim->is_fighting() )
-		return notify_fail("ÈË¼ÒÃ»ÔÚ´ò¶·°¡£¿\n");
+		return notify_fail("äººå®¶æ²¡åœ¨æ‰“æ–—å•Šï¼Ÿ\n");
 
-  	        if(victim->query("race")=="Ò°ÊŞ") 
-		return notify_fail("ËüÌı²»¶®ÈË»°£¿\n");
+  	        if(victim->query("race")=="é‡å…½") 
+		return notify_fail("å®ƒå¬ä¸æ‡‚äººè¯ï¼Ÿ\n");
 
-	if ((vtfam = victim->query("family")) && vtfam["family_name"] == "¶ëáÒÅÉ" )
-		return notify_fail("Äã²»ÄÜÏò±¾ÅÉµÄÊ¹ÓÃ¶ÉÊÀ¼ÃÈË£¡\n");
+	if ((vtfam = victim->query("family")) && vtfam["family_name"] == "å³¨åµ‹æ´¾" )
+		return notify_fail("ä½ ä¸èƒ½å‘æœ¬æ´¾çš„ä½¿ç”¨æ¸¡ä¸–æµäººï¼\n");
 
 	if( !wizardp(me) && wizardp(victim) )
-		return notify_fail("Íæ¼Ò²»ÄÜÈ°Î×Ê¦°Õ¶·¡£\n");
+		return notify_fail("ç©å®¶ä¸èƒ½åŠå·«å¸ˆç½¢æ–—ã€‚\n");
 
 	if( me->is_fighting() )
-                return notify_fail("Ò»±ß´ò¼ÜÒ»±ßÈ°±ğÈË°Õ¶·£¿ÄãÕæÊÇĞéÎ±µ½¼ÒÁË£¡\n");
+                return notify_fail("ä¸€è¾¹æ‰“æ¶ä¸€è¾¹åŠåˆ«äººç½¢æ–—ï¼Ÿä½ çœŸæ˜¯è™šä¼ªåˆ°å®¶äº†ï¼\n");
 
 
 	sp = (int)me->query_skill("persuading",1) + (int)me->query("kar") * 5;
 	if( sp < 1 ) sp = 1;
 	dp = (int)victim->query("jing");
 
-	tell_object(me, "ÄãÒ¡Ò¡ÁËÍ·£¬ÂıÂıµØÏò" + victim->name() + "×ß¹ıÈ¥£¬Ë«ÊÖºÏÊ®£¬¿ªÊ¼ÄîËĞ·ğ¾­"
+	tell_object(me, "ä½ æ‘‡æ‘‡äº†å¤´ï¼Œæ…¢æ…¢åœ°å‘" + victim->name() + "èµ°è¿‡å»ï¼ŒåŒæ‰‹åˆåï¼Œå¼€å§‹å¿µè¯µä½›ç»"
 			+ "...\n\n");
-	tell_object(victim, me->name() + "Ò¡Ò¡ÁËÍ·ÏòÄãÂıÂı×ß¹ıÀ´£¬Ë«ÊÖºÏÊ®£¬ËµµÀ£ºÎÒ·ğ´È±¯ÆÕ¶È¶ÉÖÚÉú, »¹Çë" + RANK_D->query_respect(victim) + "°Õ¶·, ÃâÔö×ïÄõ°É ...£¡\n\n");
+	tell_object(victim, me->name() + "æ‘‡æ‘‡äº†å¤´å‘ä½ æ…¢æ…¢èµ°è¿‡æ¥ï¼ŒåŒæ‰‹åˆåï¼Œè¯´é“ï¼šæˆ‘ä½›æ…ˆæ‚²æ™®åº¦æ¸¡ä¼—ç”Ÿ, è¿˜è¯·" + RANK_D->query_respect(victim) + "ç½¢æ–—, å…å¢ç½ªå­½å§ ...ï¼\n\n");
 
-	message("vision", "Ö»¼û" + me->name() + "Ò¡Ò¡ÁËÍ·£¬ÂıÂıµØÏò" 
-		+ victim->name() + "×ß¹ıÈ¥£¬\n³öË«ÊÖºÏÊ®£¬ËµµÀ: Çë"
-		+ RANK_D->query_respect(victim) + "£¬Í£ÊÖ°É ...\n\n", environment(me), ({ me, victim }) );
+	message("vision", "åªè§" + me->name() + "æ‘‡æ‘‡äº†å¤´ï¼Œæ…¢æ…¢åœ°å‘" 
+		+ victim->name() + "èµ°è¿‡å»ï¼Œ\nå‡ºåŒæ‰‹åˆåï¼Œè¯´é“: è¯·"
+		+ RANK_D->query_respect(victim) + "ï¼Œåœæ‰‹å§ ...\n\n", environment(me), ({ me, victim }) );
 
 	me->set_temp("dushi", 1);
 	call_out( "compelete_dushi", 3, me, victim, ob, sp, dp);
@@ -81,7 +81,7 @@ private void compelete_dushi(object me, object victim, object ob, int sp, int dp
 if (!victim) return;
 if (!me) return;
 	if( environment(victim) != environment(me) ) {
-		tell_object(me, "Ì«¿ÉÏ§ÁË£¬ÄãÒªÕÒµÄÈËÒÑ¾­×ßÁË¡£\n");
+		tell_object(me, "å¤ªå¯æƒœäº†ï¼Œä½ è¦æ‰¾çš„äººå·²ç»èµ°äº†ã€‚\n");
 		return;
 	}
 
@@ -91,21 +91,21 @@ victim->remove_all_killer();
 		victim->remove_all_enemy(1);
 //		victim ->remove_all_enemy();
 victim->remove_all_killer();
-		tell_object(me, victim->name() + "µÍÍ·ÏëÁËÒ»»á£¬ÓÖ¿´ÁË¿´Äã£¬Ò¡Ò¡Í·£¬Ì¾ÁË¿ÚÆø£¬Í£Ö¹ÁË´ò¶·¡£\n");
-		tell_object(victim, "ÄãÌıÁËÖ®ºó£¬ĞÄÖĞ²»¾õÒ»½ô£¬²»ÔÙÏë¼ÌĞø´òÏÂÈ¥ÁË¡£\n");
+		tell_object(me, victim->name() + "ä½å¤´æƒ³äº†ä¸€ä¼šï¼Œåˆçœ‹äº†çœ‹ä½ ï¼Œæ‘‡æ‘‡å¤´ï¼Œå¹äº†å£æ°”ï¼Œåœæ­¢äº†æ‰“æ–—ã€‚\n");
+		tell_object(victim, "ä½ å¬äº†ä¹‹åï¼Œå¿ƒä¸­ä¸è§‰ä¸€ç´§ï¼Œä¸å†æƒ³ç»§ç»­æ‰“ä¸‹å»äº†ã€‚\n");
 
 		me->improve_skill("persuading", 2 * random(me->query("int")));
 		if(((int)me->query("learned_points") + 120) > (int)me->query("potential"))
 	if( userp(victim) && query_ip_name(victim)==query_ip_name(me) )
 {
-			message_vision(victim->name() + "ºİºİµØµÉÁË$NÒ»ÑÛ£¬ÄãÎÒ¹ØÏµÕâÃ´ºÃ£¬²»ÒªÈ°ÎÒÁË£¬$NÌ¾ÁË¿ÚÆø×ªÉí×ß¿ªÁË¡£\n", me);
+			message_vision(victim->name() + "ç‹ ç‹ åœ°çªäº†$Nä¸€çœ¼ï¼Œä½ æˆ‘å…³ç³»è¿™ä¹ˆå¥½ï¼Œä¸è¦åŠæˆ‘äº†ï¼Œ$Nå¹äº†å£æ°”è½¬èº«èµ°å¼€äº†ã€‚\n", me);
 			return;
 }
 exp=10+random(40);
 pot=8+random(25);
-	   tell_object(me,HIW"Äã»ñµÃÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(me,HIW"ä½ è·å¾—äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 		me->add("potential",pot);
 		me->add("combat_exp",exp);
@@ -115,7 +115,7 @@ pot=8+random(25);
 	else 
 	{
 		if( random(sp) > dp/2 ) {
-			message_vision(victim->name() + "ºİºİµØµÉÁË$NÒ»ÑÛ£¬ºÈµÀ£ºÎÒ¶¼¿ìÈÃÈË¸ø´òËÀÁË£¬ÄÜ°Õ¶·Âğ! $NÌ¾ÁË¿ÚÆø×ªÉí×ß¿ªÁË¡£\n", me);
+			message_vision(victim->name() + "ç‹ ç‹ åœ°çªäº†$Nä¸€çœ¼ï¼Œå–é“ï¼šæˆ‘éƒ½å¿«è®©äººç»™æ‰“æ­»äº†ï¼Œèƒ½ç½¢æ–—å—! $Nå¹äº†å£æ°”è½¬èº«èµ°å¼€äº†ã€‚\n", me);
 			
 			return;
 		}
@@ -124,15 +124,15 @@ pot=8+random(25);
                                switch(random(3)) 
                                {
                                        case 0:
-                                               message_vision(HIY"Ö»¼û$n¶Ô×Å$N²»Ğ¼µØÆ²Æ²×ì£ºÄÄÁ¹¿ìÄÄ´ı×ÅÈ¥£¬ÉÙ¹ÜÏĞÊÂ£¡\n"NOR, me, victim);
+                                               message_vision(HIY"åªè§$nå¯¹ç€$Nä¸å±‘åœ°æ’‡æ’‡å˜´ï¼šå“ªå‡‰å¿«å“ªå¾…ç€å»ï¼Œå°‘ç®¡é—²äº‹ï¼\n"NOR, me, victim);
                                                me->start_busy(2);                              
                                                break;
                                        case 1:
-                                               message_vision(CYN"$n¶Ô$NÀí¶¼²»Àí£¡\n"NOR, me, victim);                                
+                                               message_vision(CYN"$nå¯¹$Nç†éƒ½ä¸ç†ï¼\n"NOR, me, victim);                                
                                                me->start_busy(2);
                                                break;
                                        case 2:
-                                               message_vision(HIR"Ö»¼û$n¶ñºİºİµÄÂîµÀ:¶à¹ÜÏĞÊÂ¶à³ÔÆ¨£¬Ğİ×ß¿´ÕĞ!!\n"NOR, me, victim);
+                                               message_vision(HIR"åªè§$næ¶ç‹ ç‹ çš„éª‚é“:å¤šç®¡é—²äº‹å¤šåƒå±ï¼Œä¼‘èµ°çœ‹æ‹›!!\n"NOR, me, victim);
                                                me->start_busy(22);                              
                                                break; 
                                }
@@ -142,28 +142,28 @@ pot=8+random(25);
                                switch(random(4))
                                {
                                        case 0:
-                                               message_vision(HIY"Ö»¼û$n¶Ô×Å$N²»Ğ¼µØÆ²Æ²×ì£ºÄÄÁ¹¿ìÄÄ´ı×ÅÈ¥£¬ÉÙ¹ÜÏĞÊÂ£¡\n"NOR, me, victim);
+                                               message_vision(HIY"åªè§$nå¯¹ç€$Nä¸å±‘åœ°æ’‡æ’‡å˜´ï¼šå“ªå‡‰å¿«å“ªå¾…ç€å»ï¼Œå°‘ç®¡é—²äº‹ï¼\n"NOR, me, victim);
                                                me->start_busy(2);                              
                                                break;
                                        case 1:
-                                               message_vision(CYN"$n¶Ô$NÀí¶¼²»Àí£¡\n"NOR, me, victim);                                
+                                               message_vision(CYN"$nå¯¹$Nç†éƒ½ä¸ç†ï¼\n"NOR, me, victim);                                
                                                me->start_busy(2);
                                                break;
                                        case 2:
-                                               message_vision(HIY"Ö»¼û$n¶ñºİºİµÄÂîµÀ:¶à¹ÜÏĞÊÂ¶à³ÔÆ¨£¬Ğİ×ß¿´ÕĞ!!\n"NOR, me, victim);
+                                               message_vision(HIY"åªè§$næ¶ç‹ ç‹ çš„éª‚é“:å¤šç®¡é—²äº‹å¤šåƒå±ï¼Œä¼‘èµ°çœ‹æ‹›!!\n"NOR, me, victim);
                                                me->start_busy(22);                              
                                                
                                                break; 
                                        case 3:
-                                               message_vision(HIR"Ö»¼û$n¶ñºİºİµÄÂîµÀ:¶à¹ÜÏĞÊÂ¶à³ÔÆ¨£¬Ğİ×ß¿´ÕĞ!!\n"NOR, me, victim);
+                                               message_vision(HIR"åªè§$næ¶ç‹ ç‹ çš„éª‚é“:å¤šç®¡é—²äº‹å¤šåƒå±ï¼Œä¼‘èµ°çœ‹æ‹›!!\n"NOR, me, victim);
                                                me->start_busy(22);                              
                                                break;            
                                }
                        }
 	
-		tell_object(me, victim->name() + "Å¤¹ıÍ·È¥£¬¶ÔÄãÀí¶¼²»Àí¡£\n");
-		tell_object(victim, "ÄãÅ¤¹ıÍ·È¥£¬¶Ô" + me->name() + "Àí¶¼²»Àí¡£\n");
-		message("vision", victim->name() + "Å¤¹ıÍ·È¥£¬¶Ô" + me->name() + "Àí¶¼²»Àí¡£\n", 
+		tell_object(me, victim->name() + "æ‰­è¿‡å¤´å»ï¼Œå¯¹ä½ ç†éƒ½ä¸ç†ã€‚\n");
+		tell_object(victim, "ä½ æ‰­è¿‡å¤´å»ï¼Œå¯¹" + me->name() + "ç†éƒ½ä¸ç†ã€‚\n");
+		message("vision", victim->name() + "æ‰­è¿‡å¤´å»ï¼Œå¯¹" + me->name() + "ç†éƒ½ä¸ç†ã€‚\n", 
 			environment(me), ({ me, victim }) );
 
 	}
@@ -172,7 +172,7 @@ pot=8+random(25);
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : persuade | quanjia <Ä³ÈË> stop
+æŒ‡ä»¤æ ¼å¼ : persuade | quanjia <æŸäºº> stop
 
 HELP
     );

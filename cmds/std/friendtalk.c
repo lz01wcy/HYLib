@@ -12,12 +12,12 @@ int main(object me,string arg)
         mapping friends;
 
         if(me->query("chblk_on"))
-                return notify_fail("ÄãµÄÆµµÀ±»¹ØÁË£¡\n");
+                return notify_fail("ä½ çš„é¢‘é“è¢«å…³äº†ï¼\n");
         friends = me->query("friends");
         if(!friends
         || !mapp(friends)
         || (sizeof(friends) == 0))
-                return notify_fail("ÄãÃ»ÓĞÈÎºÎµÄÅóÓÑ£¡\n");
+                return notify_fail("ä½ æ²¡æœ‰ä»»ä½•çš„æœ‹å‹ï¼\n");
         ob=users();
         i = sizeof(ob);
         while (i--) {
@@ -33,17 +33,17 @@ int main(object me,string arg)
                 }
         }
         if(!stringp(outarg = arg))
-                outarg = "£®£®£®£®£®";  
+                outarg = "ï¼ï¼ï¼ï¼ï¼";  
         if(!me)
-              return notify_fail("Äã²»ÔÚ£¡\n");
+              return notify_fail("ä½ ä¸åœ¨ï¼\n");
         if(!target)
-              return notify_fail("ÄãµÄÅóÓÑ²»ÔÚ£¬»òÉèÖÃÁË²»ÔÊĞífriendtalk£¡\n");
+              return notify_fail("ä½ çš„æœ‹å‹ä¸åœ¨ï¼Œæˆ–è®¾ç½®äº†ä¸å…è®¸friendtalkï¼\n");
 
-        message("vision", HBMAG "¡¾ºÃÓÑÆµµÀ¡¿" + 
+        message("vision", HBMAG "ã€å¥½å‹é¢‘é“ã€‘" + 
         me->query("name") + "(" + capitalize(me->query("id")) + ")" + 
-        "£º" + outarg + "\n" NOR, target);      
-       tell_object(me,HBMAG "¡¾ºÃÓÑÆµµÀ¡¿" +me->query("name") + "(" + capitalize(me->query("id")) + ")" +
-"£º" + outarg + "\n" NOR);
+        "ï¼š" + outarg + "\n" NOR, target);      
+       tell_object(me,HBMAG "ã€å¥½å‹é¢‘é“ã€‘" +me->query("name") + "(" + capitalize(me->query("id")) + ")" +
+"ï¼š" + outarg + "\n" NOR);
         return 1;
 }
 
@@ -66,9 +66,9 @@ int is_friend(object me, string id)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : friendtalk ÄÚÈİ
-Óë×Ô¼ºµÄÅóÓÑÍ¨¹ı¡¾ºÃÓÑÆµµÀ¡¿½²»°
-Èç¹û²»ÏëÌıµÄ»°¿ÉÒÔÓÃset friendtalk 1À´¹Ø±Õ¡£
+æŒ‡ä»¤æ ¼å¼ : friendtalk å†…å®¹
+ä¸è‡ªå·±çš„æœ‹å‹é€šè¿‡ã€å¥½å‹é¢‘é“ã€‘è®²è¯
+å¦‚æœä¸æƒ³å¬çš„è¯å¯ä»¥ç”¨set friendtalk 1æ¥å…³é—­ã€‚
 
 HELP
     );

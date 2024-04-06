@@ -8,26 +8,26 @@ int main(object me, string arg)
 {
 	object ob;
 
-	if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºlead <Ä³ÈË>¡£\n");
+	if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlead <æŸäºº>ã€‚\n");
 
 
 	if( !objectp(ob = present(arg, environment(me))) )
-		return notify_fail("ÕâÀïÃ»ÓĞ " + arg + "¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰ " + arg + "ã€‚\n");
 
 	if( !ob->is_character() )
-		return notify_fail("Ê²Ã´£¿Ïë´øÁì...." + ob->name() + "£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿæƒ³å¸¦é¢†...." + ob->name() + "ï¼Ÿ\n");
 
 	if( ob==me )
-		return notify_fail("´øÁì×Ô¼º£¿\n");
+		return notify_fail("å¸¦é¢†è‡ªå·±ï¼Ÿ\n");
 	if (me == ob->query_leader())
-          	return notify_fail( ob->name() + "ÒÑ¾­¸ú×ÅÄãÁË¡£\n");
+          	return notify_fail( ob->name() + "å·²ç»è·Ÿç€ä½ äº†ã€‚\n");
 
-	message_vision("\n$N¶Ô×Å$nËµµÀ£º¸ú×ÅÎÒ×ß°É£¬ÎÒ´øÄãÈ¥¸öµØ·½¡£\n" , me , ob );
+	message_vision("\n$Nå¯¹ç€$nè¯´é“ï¼šè·Ÿç€æˆ‘èµ°å§ï¼Œæˆ‘å¸¦ä½ å»ä¸ªåœ°æ–¹ã€‚\n" , me , ob );
 
-	write( YEL +"\nÄã±ØĞëµÈ¶Ô·½Í¬Òâ²ÅÄÜÁì×Å¶Ô·½×ß¡£\n" NOR );
+	write( YEL +"\nä½ å¿…é¡»ç­‰å¯¹æ–¹åŒæ„æ‰èƒ½é¢†ç€å¯¹æ–¹èµ°ã€‚\n" NOR );
 	
-        tell_object( ob, YEL + "\nÈç¹ûÄãÔ¸Òâ¸úËæ" + me->name() + "Ò»ÆğĞĞ¶¯,Çë¼üÈë follow " 
-		+ me->query("id") + " ÃüÁî¡£\n" NOR );
+        tell_object( ob, YEL + "\nå¦‚æœä½ æ„¿æ„è·Ÿéš" + me->name() + "ä¸€èµ·è¡ŒåŠ¨,è¯·é”®å…¥ follow " 
+		+ me->query("id") + " å‘½ä»¤ã€‚\n" NOR );
 
 	return 1;
 }
@@ -35,9 +35,9 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : lead [<ÉúÎï>]
+æŒ‡ä»¤æ ¼å¼ : lead [<ç”Ÿç‰©>]
  
-Õâ¸öÖ¸ÁîÈÃÄãÒªÇóÄ³ÈË»òÉúÎï¸úÄã×ß¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è¦æ±‚æŸäººæˆ–ç”Ÿç‰©è·Ÿä½ èµ°ã€‚
  
 HELP
 );

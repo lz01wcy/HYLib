@@ -10,8 +10,8 @@ int main(object me, string str)
 
         if( !me->query_condition("f_condi") )
         {
-                write(HIY"Äã¿ÚÖÐÄîÄîÓÐ´Ê,ÄÇß×ßäßèÎû...\n"NOR);
-                tell_object(me,"ÄãÖ»¾õÉñÇåÆøË¬£¬¹þ¹þ£¡\n");
+                write(HIY"ä½ å£ä¸­å¿µå¿µæœ‰è¯,é‚£å’¦å’ªå“žå˜»...\n"NOR);
+                tell_object(me,"ä½ åªè§‰ç¥žæ¸…æ°”çˆ½ï¼Œå“ˆå“ˆï¼\n");
 
                 fw = (int)me->max_food_capacity();
                 me->set("food", fw);
@@ -28,7 +28,7 @@ int main(object me, string str)
         }
         else
         {
-                tell_object(me,"Ou¡£¡£Äã´òÁË¸ö±¥àÃ¡£¡£¡£Ou...Ou...\n");
+                tell_object(me,"Ouã€‚ã€‚ä½ æ‰“äº†ä¸ªé¥±å—ã€‚ã€‚ã€‚Ou...Ou...\n");
 
                 fw = (int)me->max_food_capacity();
                 me->set("food",fw);

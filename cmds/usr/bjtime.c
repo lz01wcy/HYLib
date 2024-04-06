@@ -22,10 +22,10 @@ int main(int i)
 	d = ltime[LT_MDAY];
 	mo = ltime[LT_MON]+1;
 	y = ltime[LT_YEAR];
-	time = "Äê";
+	time = "å¹´";
 	
 	if(intp(i)){
-	      write("ÉÏ´Îµ±»úÔ­Òò£º\n");
+	      write("ä¸Šæ¬¡å½“æœºåŸå› ï¼š\n");
 	      write(read_file("/log/static/LASTCRASH"));
 	}
 	
@@ -33,13 +33,13 @@ int main(int i)
 		time = chinese_number(y%10) + time;
 		y /= 10;
 	}
-	time += chinese_number(mo) + "ÔÂ";
-	time += chinese_number(d) + "ÈÕ";
-	time += chinese_number(h) + "Ê±";
-	time += chinese_number(m) + "·Ö";
-	time += chinese_number(s) + "Ãë";
+	time += chinese_number(mo) + "æœˆ";
+	time += chinese_number(d) + "æ—¥";
+	time += chinese_number(h) + "æ—¶";
+	time += chinese_number(m) + "åˆ†";
+	time += chinese_number(s) + "ç§’";
 
-	write("\nÏÖÔÚÊÇ±±¾©Ê±¼ä" + time + "¡£\n");
+	write("\nç°åœ¨æ˜¯åŒ—äº¬æ—¶é—´" + time + "ã€‚\n");
 
 	t = uptime();
 	s = t % 60;		t /= 60;
@@ -47,14 +47,14 @@ int main(int i)
 	h = t % 24;		t /= 24;
 	d = t;
 
-	if(d) time = chinese_number(d) + "Ìì";
+	if(d) time = chinese_number(d) + "å¤©";
 	else time = "";
 
-	if(h) time += chinese_number(h) + "Ğ¡Ê±";
-	if(m) time += chinese_number(m) + "·Ö";
-	time += chinese_number(s) + "Ãë";
+	if(h) time += chinese_number(h) + "å°æ—¶";
+	if(m) time += chinese_number(m) + "åˆ†";
+	time += chinese_number(s) + "ç§’";
 
-	write(CHINESE_MUD_NAME + "ÒÑ¾­Ö´ĞĞÁË" + time + "¡£\n");
+	write(CHINESE_MUD_NAME + "å·²ç»æ‰§è¡Œäº†" + time + "ã€‚\n");
 	
 	return 1;
 }
@@ -62,8 +62,8 @@ int main(int i)
 int help(object me)
 {
 	write(
-"Ö¸Áî¸ñÊ½ : uptime\n\n"
-"Õâ¸öÖ¸Áî¸æËßÄú¡¸" MUD_NAME "¡¹Äà°ÍÓÎÏ·ÒÑ¾­Á¬ĞøÖ´ĞĞÁË¶à¾Ã¡£\n"
+"æŒ‡ä»¤æ ¼å¼ : uptime\n\n"
+"è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰æ‚¨ã€Œ" MUD_NAME "ã€æ³¥å·´æ¸¸æˆå·²ç»è¿ç»­æ‰§è¡Œäº†å¤šä¹…ã€‚\n"
     );
     return 1;
 }

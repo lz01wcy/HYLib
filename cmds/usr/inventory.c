@@ -24,13 +24,13 @@ int main(object me, string arg)
 
 	inv = all_inventory(ob);
 	if( !sizeof(inv) ) {
-		write((ob==me)? "Ä¿Ç°ÄãÉíÉÏÃ»ÓÐÈÎºÎ¶«Î÷¡£\n"
-			: ob->name() + "ÉíÉÏÃ»ÓÐÐ¯´øÈÎºÎ¶«Î÷¡£\n");
+		write((ob==me)? "ç›®å‰ä½ èº«ä¸Šæ²¡æœ‰ä»»ä½•ä¸œè¥¿ã€‚\n"
+			: ob->name() + "èº«ä¸Šæ²¡æœ‰æºå¸¦ä»»ä½•ä¸œè¥¿ã€‚\n");
 		return 1;
 	}
 
-	output = sprintf("%sÉíÉÏ´øÖøÏÂÁÐÕâÐ©¶«Î÷(¸ºÖØ %d%%)£º\n",
-		(ob==me)? "Äã": ob->name(),
+	output = sprintf("%sèº«ä¸Šå¸¦è‘—ä¸‹åˆ—è¿™äº›ä¸œè¥¿(è´Ÿé‡ %d%%)ï¼š\n",
+		(ob==me)? "ä½ ": ob->name(),
 		(int)ob->query_encumbrance() * 100 / (int)ob->query_max_encumbrance());
 
 	muti = filter_array(inv,(: !$1->is_character()&&!$1->query("equipped")&&!$1->query_amount() :));
@@ -74,8 +74,8 @@ string inventory_desc(object ob,object me)
 	return sprintf("%s%s\n",
 		ob->query("equipped")?
 			((ob == me->query_temp("secondary_weapon"))?
-			HIC "¡ð" NOR:
-			HIC "¡õ" NOR):
+			HIC "â—‹" NOR:
+			HIC "â–¡" NOR):
 			"  ",
 		ob->short()
 	);
@@ -84,15 +84,15 @@ string inventory_desc(object ob,object me)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: inventory
+æŒ‡ä»¤æ ¼å¼: inventory
  
-¿ÉÁÐ³öÄãÄ¿Ç°ÉíÉÏËùÐ¯´øµÄËùÓÐÎïÆ·¡£
+å¯åˆ—å‡ºä½ ç›®å‰èº«ä¸Šæ‰€æºå¸¦çš„æ‰€æœ‰ç‰©å“ã€‚
 
-"¡õ" ±ê¼ÇËµÃ÷´ËÎïÆ·ÎªÄãÒÑ¾­×°±¸
-     µÄ±øÆ÷»òÕßÒÑ´©´÷µÄ»¤¼×¡£
-"¡ð" ±ê¼ÇËµÃ÷´Ë±øÆ÷×°±¸ÓÚÄãµÄ×óÊÖ¡£
+"â–¡" æ ‡è®°è¯´æ˜Žæ­¤ç‰©å“ä¸ºä½ å·²ç»è£…å¤‡
+     çš„å…µå™¨æˆ–è€…å·²ç©¿æˆ´çš„æŠ¤ç”²ã€‚
+"â—‹" æ ‡è®°è¯´æ˜Žæ­¤å…µå™¨è£…å¤‡äºŽä½ çš„å·¦æ‰‹ã€‚
 
-×¢ : ´ËÖ¸Áî¿ÉÒÔ " i " ´úÌæ¡£
+æ³¨ : æ­¤æŒ‡ä»¤å¯ä»¥ " i " ä»£æ›¿ã€‚
  
 HELP
 );

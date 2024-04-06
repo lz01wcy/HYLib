@@ -11,8 +11,8 @@ int main(object me, string str)
 
     ob_list = users();
     ob_list = sort_array(users(), "sort_user", this_object());
-    str = HIG" Íæ¼Ò     ID     ¸½¼Ó·ÀÓùÁ¦     ¸½¼ÓÉ±ÉËÁ¦              ³ÌĞò       \n"NOR;
-    str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+    str = HIG" ç©å®¶     ID     é™„åŠ é˜²å¾¡åŠ›     é™„åŠ æ€ä¼¤åŠ›              ç¨‹åº       \n"NOR;
+    str += "â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n";
     for(i=0; i<sizeof(ob_list); i++)
     {
         ob = ob_list[i];
@@ -27,8 +27,8 @@ int main(object me, string str)
     if (!where) str += sprintf("\n"NOR);
        else str += sprintf(HIC"%s\n"NOR, file_name(where));
     }
-    str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
-    str = sprintf("%s¹²ÓĞ %d Î»Ê¹ÓÃÕßÁ¬ÏßÖĞ¡£\n", str, sizeof(ob_list));
+    str += "â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•\n";
+    str = sprintf("%så…±æœ‰ %d ä½ä½¿ç”¨è€…è¿çº¿ä¸­ã€‚\n", str, sizeof(ob_list));
     me->start_more(str);
     return 1;
 }
@@ -45,9 +45,9 @@ int sort_user(object ob1, object ob2)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºwho2
+æŒ‡ä»¤æ ¼å¼ï¼šwho2
 
-Íæ¼ÒĞÅÏ¢²éÑ¯¡£
+ç©å®¶ä¿¡æ¯æŸ¥è¯¢ã€‚
 HELP
         );
         return 1;

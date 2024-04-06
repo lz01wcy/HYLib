@@ -14,37 +14,37 @@ int main(object me, string arg)
 	seteuid(getuid());
 
 //        if( me->is_fighting() )
-//                return notify_fail("Ò»±ß´ò¼ÜÒ»±ßÑ±ÊŞ£¿ÄãÕæÊÇ»îÄåÁË£¡\n");
+//                return notify_fail("ä¸€è¾¹æ‰“æ¶ä¸€è¾¹é©¯å…½ï¼Ÿä½ çœŸæ˜¯æ´»è…»äº†ï¼\n");
         if ( me->query_skill("training",1) < 10 )
-		return notify_fail("ÄãµÄÔ¦ÊŞÊõ»¹²»´¿Êì£¬ÎŞ·¨ÑµÁ·Ò°ÊŞ£¡\n");
+		return notify_fail("ä½ çš„é©­å…½æœ¯è¿˜ä¸çº¯ç†Ÿï¼Œæ— æ³•è®­ç»ƒé‡å…½ï¼\n");
 	if ( !arg )
-		return notify_fail("ÄãÒªÑµÁ·Ê²Ã´Ò°ÊŞ£¿\n");
+		return notify_fail("ä½ è¦è®­ç»ƒä»€ä¹ˆé‡å…½ï¼Ÿ\n");
 	if( !objectp(ob = present(arg, environment(me)) ))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâÖ»Ò°ÊŞ°É£¿\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™åªé‡å…½å§ï¼Ÿ\n");
 	if (userp(ob)) 
-		return notify_fail("ÈË¼ÒÒ²ÊÇÍæ¼Ò£¬Äã¸ãÊ²Ã´¸ã°¡£¿\n");
-	if (ob->query("race") != "Ò°ÊŞ") 
-		return notify_fail("Õâ²»ÊÇÒ°ÊŞ£¬ÄãÔÎÍ·ÁË°É£¿\n");
+		return notify_fail("äººå®¶ä¹Ÿæ˜¯ç©å®¶ï¼Œä½ æä»€ä¹ˆæå•Šï¼Ÿ\n");
+	if (ob->query("race") != "é‡å…½") 
+		return notify_fail("è¿™ä¸æ˜¯é‡å…½ï¼Œä½ æ™•å¤´äº†å§ï¼Ÿ\n");
 //        if( ob->is_fighting() )
-//                return notify_fail(ob->name() + "ÕıÔÚ´ò¼Ü£¬Ã»¿ÕÀíÄã£¡\n");
+//                return notify_fail(ob->name() + "æ­£åœ¨æ‰“æ¶ï¼Œæ²¡ç©ºç†ä½ ï¼\n");
         if( ob->query_temp("owner") &&
            ( ob->query_temp("owner") == me->query("id") ))
-                return notify_fail(ob->name() + "¾ÍÊÇÄãÑ±·ş¹ıµÄ£¬Äã»¹ÕÛÌÚ¸öÉ¶¾¢¶ùÄØ£¡\n");
+                return notify_fail(ob->name() + "å°±æ˜¯ä½ é©¯æœè¿‡çš„ï¼Œä½ è¿˜æŠ˜è…¾ä¸ªå•¥åŠ²å„¿å‘¢ï¼\n");
         if( ob->query_temp("owner") &&
            ( ob->query_temp("owner") != me->query("id") ))
-                return notify_fail(ob->name() + "Ôç±»ÈË¼ÒÑ±·şÁË£¬Äã»¹ÕÛÌÚ¸öÉ¶¾¢¶ùÄØ£¡\n");
+                return notify_fail(ob->name() + "æ—©è¢«äººå®¶é©¯æœäº†ï¼Œä½ è¿˜æŠ˜è…¾ä¸ªå•¥åŠ²å„¿å‘¢ï¼\n");
 	if ( ob == me )
-		return notify_fail("ÄãÃ»ÕâÃ´±¿°É£¬°Ñ×Ô¼º²»µ±ÈË£¿\n");
+		return notify_fail("ä½ æ²¡è¿™ä¹ˆç¬¨å§ï¼ŒæŠŠè‡ªå·±ä¸å½“äººï¼Ÿ\n");
 	if (!living(ob)) 
-		return notify_fail("ÕâÖ»Ò°ÊŞÔÎµ¹ÁË£¬ÄãÔõÄÜÑµµÃËü¶¯ÄØ£¿\n");
+		return notify_fail("è¿™åªé‡å…½æ™•å€’äº†ï¼Œä½ æ€èƒ½è®­å¾—å®ƒåŠ¨å‘¢ï¼Ÿ\n");
 
 	cost = me->query("max_jing")/(me->query_skill("training",1)/10) - 10;
 
 if (cost <10) cost=10;
 	if ( me->query("jing") <= cost )
-		return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨ÑµÁ·Ò°ÊŞ¡£\n");
+		return notify_fail("ç°åœ¨ä½ å¤ªç´¯äº†ï¼Œæ— æ³•è®­ç»ƒé‡å…½ã€‚\n");
 
-	message_vision("Ö»¼û$N³å×Å"+ob->name()+"ÊÖ½ÅÂÒ°Ú£¬¿ÚÖĞËÆ¶ÔËüÇáÇáÏ¸Óï¡£\n\n",me);
+	message_vision("åªè§$Nå†²ç€"+ob->name()+"æ‰‹è„šä¹±æ‘†ï¼Œå£ä¸­ä¼¼å¯¹å®ƒè½»è½»ç»†è¯­ã€‚\n\n",me);
 
 	sp = me->query_skill("training",1) + me->query("int");
 	dp = ob->query("combat_exp")/100;
@@ -52,11 +52,11 @@ if (cost <10) cost=10;
 	if ( random(sp) < random(dp)/2 )
 	{
 		ob->kill_ob(me);
-		return notify_fail( "ÄãÔ¦ÊŞÊõ²»¾«£¬ÄÇ¶«Î÷Ò°ĞÔ²»ãı£¬³å×ÅÄã¾Í´ÜÁË¹ıÀ´£¡\n");
+		return notify_fail( "ä½ é©­å…½æœ¯ä¸ç²¾ï¼Œé‚£ä¸œè¥¿é‡æ€§ä¸æ³¯ï¼Œå†²ç€ä½ å°±çªœäº†è¿‡æ¥ï¼\n");
 	}
 
 	me->receive_damage("jing", cost );
-	message_vision("¶ÙÊ±"+ob->name()+"³å×Å$NÒ¡ÁËÒ¡Î²°Í£¬ºÜÎÂÑ±µÄÑù×Ó¡£\n\n",me);
+	message_vision("é¡¿æ—¶"+ob->name()+"å†²ç€$Næ‘‡äº†æ‘‡å°¾å·´ï¼Œå¾ˆæ¸©é©¯çš„æ ·å­ã€‚\n\n",me);
 
 	train_level = me->query_skill("training", 1);
 	if ( (int)me->query("combat_exp") > (train_level*train_level*train_level)/10)
@@ -68,18 +68,18 @@ if (cost <10) cost=10;
 	ob->remove_all_enemy();
 	ob->set_temp("owner",me->query("id"));
 	ob->set_temp("ownername",me->query("name"));
-        if( (strsrch(ob->query("name"), "Âí") >= 0) ||
-           ( strsrch(ob->query("name"), "Â¿") >= 0) ||
-           ( strsrch(ob->query("name"), "Ââ") >= 0) ||
-           ( strsrch(ob->query("name"), "ÍÕ") >= 0) ||
-           ( strsrch(ob->query("name"), "Å£") >= 0) ||
-           ( strsrch(ob->query("name"), "Ïó") >= 0) ||
-           ( strsrch(ob->query("name"), "Ê¨") >= 0) ||
-           ( strsrch(ob->query("name"), "»¢") >= 0) ||
-           ( strsrch(ob->query("name"), "±ª") >= 0) ||
-           ( strsrch(ob->query("name"), "Â¹") >= 0) ||
-           ( strsrch(ob->query("name"), "öè") >= 0) ||
-           ( strsrch(ob->query("name"), "µñ") >= 0))
+        if( (strsrch(ob->query("name"), "é©¬") >= 0) ||
+           ( strsrch(ob->query("name"), "é©´") >= 0) ||
+           ( strsrch(ob->query("name"), "éª¡") >= 0) ||
+           ( strsrch(ob->query("name"), "é©¼") >= 0) ||
+           ( strsrch(ob->query("name"), "ç‰›") >= 0) ||
+           ( strsrch(ob->query("name"), "è±¡") >= 0) ||
+           ( strsrch(ob->query("name"), "ç‹®") >= 0) ||
+           ( strsrch(ob->query("name"), "è™") >= 0) ||
+           ( strsrch(ob->query("name"), "è±¹") >= 0) ||
+           ( strsrch(ob->query("name"), "é¹¿") >= 0) ||
+           ( strsrch(ob->query("name"), "é²¨") >= 0) ||
+           ( strsrch(ob->query("name"), "é›•") >= 0))
            ob->set("ridable",1);
 	me->remove_all_enemy();
 	return 1;
@@ -88,22 +88,22 @@ if (cost <10) cost=10;
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : train <¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : train <åŠ¨ç‰©>
 
-´ËÖ¸Áî¿ÉÓÃÓÚÑ±»¯Ä³¶¯Îï¡£¶ÔÓÚÒÑ¾­Ñ±·şµÄ¶¯Îï£¬¿ÉÒÔ½øĞĞÏÂÊöÖ¸Áî£º
+æ­¤æŒ‡ä»¤å¯ç”¨äºé©¯åŒ–æŸåŠ¨ç‰©ã€‚å¯¹äºå·²ç»é©¯æœçš„åŠ¨ç‰©ï¼Œå¯ä»¥è¿›è¡Œä¸‹è¿°æŒ‡ä»¤ï¼š
 
-»ù±¾Ö¸Áî£º
-        come <¶¯ÎïÃû>:                  ÈÃ¶¯Îï¸úËæÖ÷ÈËĞĞ¶¯¡£
-        stay:                           Í£Ö¹¶¯ÎïµÄ¸úËæ×´Ì¬¡£
-        attack <Ä³ÈË>:                  ÈÃ¶¯Îï¹¥»÷µĞÈË¡£
-        stop <¶¯ÎïÃû>:                  ÈÃ¶¯ÎïÍ£Ö¹¶ÔÈËµÄ¹¥»÷¡£
-        release:                        ½áÊøÖ÷Å«×´Ì¬£¬½«¶¯Îï·ÅÀë¡£
+åŸºæœ¬æŒ‡ä»¤ï¼š
+        come <åŠ¨ç‰©å>:                  è®©åŠ¨ç‰©è·Ÿéšä¸»äººè¡ŒåŠ¨ã€‚
+        stay:                           åœæ­¢åŠ¨ç‰©çš„è·ŸéšçŠ¶æ€ã€‚
+        attack <æŸäºº>:                  è®©åŠ¨ç‰©æ”»å‡»æ•Œäººã€‚
+        stop <åŠ¨ç‰©å>:                  è®©åŠ¨ç‰©åœæ­¢å¯¹äººçš„æ”»å‡»ã€‚
+        release:                        ç»“æŸä¸»å¥´çŠ¶æ€ï¼Œå°†åŠ¨ç‰©æ”¾ç¦»ã€‚
 
-ÌØÊâÖ¸Áî£º£¨Ö»¶ÔÄ³Ğ©¶¯ÎïÊÊÓÃ£©
-        qi(ride) <¶¯ÎïÃû>:              Æï£¬ÈçÆïÂí£¬»¢£¬µñ£¬öèµÈ¡£
-        xia(unride) <¶¯ÎïÃû>:           ÏÂ£¬Àë¿ª×øÆï¡£
-        wei(feed) <¶¯ÎïÃû>:             Ìæ¶¯ÎïÎ¹Ê³¡£
-        yin <¶¯ÎïÃû>:                   ¸ø¶¯ÎïÒûË®¡£
+ç‰¹æ®ŠæŒ‡ä»¤ï¼šï¼ˆåªå¯¹æŸäº›åŠ¨ç‰©é€‚ç”¨ï¼‰
+        qi(ride) <åŠ¨ç‰©å>:              éª‘ï¼Œå¦‚éª‘é©¬ï¼Œè™ï¼Œé›•ï¼Œé²¨ç­‰ã€‚
+        xia(unride) <åŠ¨ç‰©å>:           ä¸‹ï¼Œç¦»å¼€åéª‘ã€‚
+        wei(feed) <åŠ¨ç‰©å>:             æ›¿åŠ¨ç‰©å–‚é£Ÿã€‚
+        yin <åŠ¨ç‰©å>:                   ç»™åŠ¨ç‰©é¥®æ°´ã€‚
 
 HELP
 	);

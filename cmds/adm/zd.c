@@ -12,14 +12,14 @@ void init()
 
 void create()
 {
-       set_name("·´ÒþÐÎµ¼µ¯", ({"fdaodan"}));
+       set_name("åéšå½¢å¯¼å¼¹", ({"fdaodan"}));
        if (clonep())
                set_default_object(__FILE__);
        else {
                set("long",
-               "ÕâÊÇÎ×Ê¦×¨ÓÃµÄ·´ÒþÐÎµ¼µ¯£¬×¨ÃÅ¶Ô¸¶ÄÇÐ©°®ÒþÉíµÄÎ×Ê¦\n");
+               "è¿™æ˜¯å·«å¸ˆä¸“ç”¨çš„åéšå½¢å¯¼å¼¹ï¼Œä¸“é—¨å¯¹ä»˜é‚£äº›çˆ±éšèº«çš„å·«å¸ˆ\n");
                set("value", 0);
-               set("unit", "Ã¶");
+               set("unit", "æžš");
                set("no_get", 0);
                set("no_drop", 0);
        }
@@ -37,18 +37,18 @@ int do_send(string target)
        if(!(conc = find_player(target)))
              if(!(conc = find_living(target)))
              {
-                   write("Ã»ÓÐÕâ¸öÈË»òÉúÎï¡£\n");
+                   write("æ²¡æœ‰è¿™ä¸ªäººæˆ–ç”Ÿç‰©ã€‚\n");
                    return 1;
              }
 
-       message_vision(HIR "·´ÒþÐÎµ¼µ¯ÉäÏò$n¡£\n" NOR, me, conc);
+       message_vision(HIR "åéšå½¢å¯¼å¼¹å°„å‘$nã€‚\n" NOR, me, conc);
 
        me->move(environment(conc));
 
-       message_vision(HIR "$N·ÉÁË¹ýÀ´£¬ºäµØÒ»ÉùÕ¨¿ª¡£\n" NOR, me);
+       message_vision(HIR "$Né£žäº†è¿‡æ¥ï¼Œè½°åœ°ä¸€å£°ç‚¸å¼€ã€‚\n" NOR, me);
 
-       conc->set_temp("last_damage_from", "±»" + me->name() + "Õ¨");
-       CHANNEL_D->do_channel(this_object(), "rumor", sprintf("%s±»·´ÒþÐÎµ¼µ¯Õ¨³öÁËÔ­ÐÎ¡£", conc->name(1)));
+       conc->set_temp("last_damage_from", "è¢«" + me->name() + "ç‚¸");
+       CHANNEL_D->do_channel(this_object(), "rumor", sprintf("%sè¢«åéšå½¢å¯¼å¼¹ç‚¸å‡ºäº†åŽŸå½¢ã€‚", conc->name(1)));
 
        conc->set("invisibility",10);  
        conc->set("env/invisibility",0);

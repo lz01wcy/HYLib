@@ -23,19 +23,19 @@ int main(object me, string arg)
     if (who == "rumor")
     {
 		CHANNEL_D->set_block(who, 0);
-		CHANNEL_D->do_channel(me, "sys", "ҥ��Ƶ���������\n");
+		CHANNEL_D->do_channel(me, "sys", "谣言频道ｏｋａｙ！\n");
         return 1;
     }
 	
     if (who == "chat")
     {
 		CHANNEL_D->set_block(who, 0);
-		CHANNEL_D->do_channel(me, "sys", "����Ƶ���������\n");
+		CHANNEL_D->do_channel(me, "sys", "聊天频道ｏｋａｙ！\n");
         return 1;
     }
 	
 	ob = LOGIN_D->find_body(who);
-	if (!ob) return notify_fail("����˲��ڣ�\n");
+	if (!ob) return notify_fail("这个人不在！\n");
 	
 	if (ch_name == ""||ch_name == " "||ch_name == "all")
 	{		
@@ -45,7 +45,7 @@ int main(object me, string arg)
 			ob->delete("chblk_rumor");
 		if ((int)ob->query("chblk_chat"))
 			ob->delete("chblk_chat");
-		tell_object(me, (string)ob->query("name")+"��Ƶ�������ˡ�\n");
+		tell_object(me, (string)ob->query("name")+"的频道被打开了。\n");
 	} else if (ch_name == "rumor")
 	{
 		if ((int)ob->query("chblk_on"))
@@ -57,7 +57,7 @@ int main(object me, string arg)
 		if ((int)ob->query("chblk_rumor"))
 			ob->delete("chblk_rumor");
 			
-		tell_object(me, (string)ob->query("name")+"��ҥ��Ƶ�������ˡ�\n");
+		tell_object(me, (string)ob->query("name")+"的谣言频道被打开了。\n");
 	} else if (ch_name == "chat")
 	{
 		if ((int)ob->query("chblk_on"))
@@ -69,7 +69,7 @@ int main(object me, string arg)
 		if ((int)ob->query("chblk_chat"))
 			ob->delete("chblk_chat");
 			
-		tell_object(me, (string)ob->query("name")+"������Ƶ�������ˡ�\n");
+		tell_object(me, (string)ob->query("name")+"的聊天频道被打开了。\n");
 	} else 
 	{
 		return notify_fail("<Syntax>: unchblk <player id> <channel name>\n");
@@ -81,11 +81,11 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : unchblk <ĳ��> <Ƶ����>
+指令格式 : unchblk <某人> <频道名>
 
-�������ĳ�˵�Ƶ�������û��Ƶ�����ʹ����кϷ�Ƶ����
-<ĳ��>��Ҳ������Ƶ������
-<Ƶ����> ������rumor �� chat 
+此命令将打开某人的频道。如果没有频道名就打开所有合法频道。
+<某人>　也可以是频道名。
+<频道名> 可以是rumor 或 chat 
 
 HELP
     );

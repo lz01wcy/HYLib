@@ -19,75 +19,75 @@ int main(object me, string arg)
         if (userp(me) && !query_heart_beat(me))
         {
          "/cmds/usr/quithy"->main(me);
-         write("ÓÉÓÚÄãÃ»ÓĞĞÄÌø£¬ÇëÖØĞÂµÇÂ½!!\n");
+         write("ç”±äºä½ æ²¡æœ‰å¿ƒè·³ï¼Œè¯·é‡æ–°ç™»é™†!!\n");
         }
       if( environment(me)->query("no_get") )
-        return notify_fail("ÕâÀï²»×¼¼ñ¶«Î÷¡£\n");
+        return notify_fail("è¿™é‡Œä¸å‡†æ¡ä¸œè¥¿ã€‚\n");
 
-	if( !arg ) return notify_fail("ÄãÒª¼ñÆğÊ²÷á¶«Î÷£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦æ¡èµ·ä»€éº½ä¸œè¥¿ï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 
 	// Check if a container is specified.
 	if( sscanf(arg, "%s from %s", arg, from)==2 ) {
 		env = present(from, me);
 		if(!env) env = present(from, environment(me));
-		if(!env) return notify_fail("ÄãÕÒ²»µ½ " + from + " ÕâÑù¶«Î÷¡£\n");
+		if(!env) return notify_fail("ä½ æ‰¾ä¸åˆ° " + from + " è¿™æ ·ä¸œè¥¿ã€‚\n");
         if( env->query_temp("no_kill") 
         && env->query("pubmaster"))
-        return notify_fail("´ËÈË²»ÄÜget£¡\n");
+        return notify_fail("æ­¤äººä¸èƒ½getï¼\n");
 
         if (userp(env) && !query_heart_beat(env))
         {
-         write("ÄãÏë×öÊ²Ã´£¡\n");
-        return notify_fail("´ËÈËÎŞĞÄÌø£¡\n");
+         write("ä½ æƒ³åšä»€ä¹ˆï¼\n");
+        return notify_fail("æ­¤äººæ— å¿ƒè·³ï¼\n");
         }
         if (userp(env) && env->query_temp("netdead"))
         {
-         write("ÄãÏë×öÊ²Ã´£¡\n");
-        return notify_fail("´ËÈËÎŞĞÄÌø£¡\n");
+         write("ä½ æƒ³åšä»€ä¹ˆï¼\n");
+        return notify_fail("æ­¤äººæ— å¿ƒè·³ï¼\n");
         }
 
 	if( (env->query("no_get_from") || living(env) ) 
 			&& (wiz_level(me) <= wiz_level(env)))
-			return notify_fail("ÄãµÄÎ×Ê¦µÈ¼¶±ØĞë±È¶Ô·½¸ß£¬²ÅÄÜËÑÉí¡£\n");
+			return notify_fail("ä½ çš„å·«å¸ˆç­‰çº§å¿…é¡»æ¯”å¯¹æ–¹é«˜ï¼Œæ‰èƒ½æœèº«ã€‚\n");
 	if( userp(env) && query_ip_name(env)==query_ip_name(me) )
-			return notify_fail("ÏàÍ¬IPÖ®¼ä£¬²»ÔÊĞíËÑÉí¡£\n");
+			return notify_fail("ç›¸åŒIPä¹‹é—´ï¼Œä¸å…è®¸æœèº«ã€‚\n");
 
 
 	if( (env->query("no_get_from") || living(env) ) 
 	&& wiz_status != "(admin)" && wiz_status != "(arch)" && wiz_status != "(wizard)")
-		return notify_fail("Ö»ÓĞ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜËÑÉí¡£\n");
+		return notify_fail("åªæœ‰ (wizard) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½æœèº«ã€‚\n");
 
 	} else env = environment(me);
 
 	// Check if a certain amount is specified.
 	if(sscanf(arg, "%d %s", amount, item)==2) {
 		if( !objectp(obj = present(item, env)) )
-			return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+			return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if (userp(obj) && !query_heart_beat(obj))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if (userp(obj) && !userp(me))
-		return notify_fail("NPC²»ÄÜ±³ÈË¡£\n");
+		return notify_fail("NPCä¸èƒ½èƒŒäººã€‚\n");
 
         if (userp(env) && env->query_temp("netdead"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if( obj->query_temp("no_kill") 
         && obj->query("pubmaster"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if( obj->query_temp("no_kill")
         && obj->query("pubmaster") )
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
 
 		if( !obj->query_amount() )
-			return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ªÄÃ×ß¡£\n");
+			return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†å¼€æ‹¿èµ°ã€‚\n");
 		if( amount < 1 )
-			return notify_fail("¶«Î÷µÄ¸öÊıÖÁÉÙÊÇÒ»¸ö¡£\n");
+			return notify_fail("ä¸œè¥¿çš„ä¸ªæ•°è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
 		if( amount > obj->query_amount() )
-			return notify_fail("ÕâÀïÃ»ÓĞÄÇ÷á¶àµÄ" + obj->name() + "¡£\n");
+			return notify_fail("è¿™é‡Œæ²¡æœ‰é‚£éº½å¤šçš„" + obj->name() + "ã€‚\n");
                 if (me->query("combat_exp") <1000 
                       && userp(obj))
-                      return notify_fail("Ö»ÓĞ¾­Ñé´óÓÚ1000²ÅÄÜ±³Íæ¼Ò¡£Ä¿Ç°Äã»¹±³²»¶¯¡£\n");
+                      return notify_fail("åªæœ‰ç»éªŒå¤§äº1000æ‰èƒ½èƒŒç©å®¶ã€‚ç›®å‰ä½ è¿˜èƒŒä¸åŠ¨ã€‚\n");
 		else if( amount == (int)obj->query_amount() ) {
 			return do_get(me, obj);
 		} else {
@@ -103,79 +103,79 @@ int main(object me, string arg)
 
 	// Check if we are makeing a quick get.
 	if(arg=="all") {
-		if( me->is_fighting() )	return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ£¡Ö»ÄÜÒ»´ÎÄÃÒ»Ñù¡£\n");
-		if( !env->query_max_encumbrance() )	return notify_fail("ÄÇ²»ÊÇÈİÆ÷¡£\n");
+		if( me->is_fighting() )	return notify_fail("ä½ è¿˜åœ¨æˆ˜æ–—ä¸­ï¼åªèƒ½ä¸€æ¬¡æ‹¿ä¸€æ ·ã€‚\n");
+		if( !env->query_max_encumbrance() )	return notify_fail("é‚£ä¸æ˜¯å®¹å™¨ã€‚\n");
         if( env->is_tree() )
-             return notify_fail("ÕâÊÇ¸øĞÂÊÖ»îÃüÓÃµÄ£¬»¹ÊÇ²»ÒªÌ«Ì°ĞÄÁË°É£\n");
+             return notify_fail("è¿™æ˜¯ç»™æ–°æ‰‹æ´»å‘½ç”¨çš„ï¼Œè¿˜æ˜¯ä¸è¦å¤ªè´ªå¿ƒäº†å§\n");
         if (!userp(me) && env->is_character())
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
         if (!userp(me) && userp(env))
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
         if (userp(env) && !query_heart_beat(env))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if (userp(env) && env->query_temp("netdead"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
 
- if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR)
+ if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR)
 {
 if (!userp(env) && env->is_character())
-        return notify_fail("ÃÔ¹¬µÄÑı¾«ÄãÒªÁË×öÊ²Ã´!\n");
+        return notify_fail("è¿·å®«çš„å¦–ç²¾ä½ è¦äº†åšä»€ä¹ˆ!\n");
 }
 		inv = all_inventory(env);
 		if( !sizeof(inv) )
         {
             if( env->is_tree() )
-               return notify_fail("Ê÷ÉÏÊ²Ã´Ò²Ã»ÓĞÁË¡£\n");
-			return notify_fail("ÄÇÀïÃæÃ»ÓĞÈÎºÎ¶«Î÷¡£\n");
+               return notify_fail("æ ‘ä¸Šä»€ä¹ˆä¹Ÿæ²¡æœ‰äº†ã€‚\n");
+			return notify_fail("é‚£é‡Œé¢æ²¡æœ‰ä»»ä½•ä¸œè¥¿ã€‚\n");
         }
 
 		for(i=0; i<sizeof(inv); i++) {
 			if( inv[i]->is_character() || inv[i]->query("no_get") ) continue;
 			do_get(me, inv[i]);
 		}
-		write("¼ñºÃÁË¡£\n");
+		write("æ¡å¥½äº†ã€‚\n");
 		return 1;
 	}
 if (userp(env)) env->save();
 if (userp(me)) me->save();
 	if( !objectp(obj = present(arg, env)) || living(obj) )
-		return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ é™„è¿‘æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
         if (!userp(me) && obj->is_character())
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
         if (!userp(me) && userp(obj))
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
         if (userp(obj) && !query_heart_beat(obj))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if (userp(obj) && obj->query_temp("netdead"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
 
- if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR)
+ if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR)
 {
 if (!userp(obj) && obj->is_character())
-        return notify_fail("ÃÔ¹¬µÄÑı¾«ÄãÒªÁË×öÊ²Ã´!\n");
+        return notify_fail("è¿·å®«çš„å¦–ç²¾ä½ è¦äº†åšä»€ä¹ˆ!\n");
 }
 	if( obj->query("no_get") )
-		return notify_fail("Õâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("è¿™ä¸ªä¸œè¥¿æ‹¿ä¸èµ·æ¥ã€‚\n");
         if( obj->query("winner") )
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if( obj->query_temp("no_kill") 
         && obj->query("pubmaster"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if( obj->query_temp("no_kill")
         && obj->query("pubmaster"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if (!userp(me) && obj->is_character())
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
         if (!userp(me) && userp(obj))
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
 
 
 	return do_get(me, obj);  
@@ -195,28 +195,28 @@ int do_get(object me, object obj)
         
         if( obj->query_temp("no_kill") 
         && obj->query("pubmaster"))
-		return notify_fail("´ËÈËÄÃ²»ÆğÀ´¡£\n");
+		return notify_fail("æ­¤äººæ‹¿ä¸èµ·æ¥ã€‚\n");
         if (!userp(me) && obj->is_character())
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
         if (!userp(me) && userp(obj))
-        return notify_fail("NPC°áÈË×öÊ²Ã´!\n");
+        return notify_fail("NPCæ¬äººåšä»€ä¹ˆ!\n");
 
-       if( userp(obj) && environment(obj)->query("short")=="¹Ø¿Ú" )
-        return notify_fail("ÕâÀï²»×¼±³Íæ¼Ò¡£\n");
-       if( userp(obj) && environment(obj)->query("short")=="Æ½¶¨Öİ" )
-        return notify_fail("ÕâÀï²»×¼±³Íæ¼Ò¡£\n");
-       if( userp(obj) && environment(obj)->query("short")=="ĞşÔÀÃÅ" )
-        return notify_fail("ÕâÀï²»×¼±³Íæ¼Ò¡£\n");
+       if( userp(obj) && environment(obj)->query("short")=="å…³å£" )
+        return notify_fail("è¿™é‡Œä¸å‡†èƒŒç©å®¶ã€‚\n");
+       if( userp(obj) && environment(obj)->query("short")=="å¹³å®šå·" )
+        return notify_fail("è¿™é‡Œä¸å‡†èƒŒç©å®¶ã€‚\n");
+       if( userp(obj) && environment(obj)->query("short")=="ç„å²³é—¨" )
+        return notify_fail("è¿™é‡Œä¸å‡†èƒŒç©å®¶ã€‚\n");
 	if( userp(obj) && query_ip_name(obj)==query_ip_name(me) )
-	return notify_fail("Äã²»ÄÜ±³¸ºIPÏàÍ¬µÄÍæ¼ÒµÄÉíÌå¡£\n");
- if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR)
+	return notify_fail("ä½ ä¸èƒ½èƒŒè´ŸIPç›¸åŒçš„ç©å®¶çš„èº«ä½“ã€‚\n");
+ if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR)
 {
 if (!userp(obj) && obj->is_character())
-        return notify_fail("ÃÔ¹¬µÄÑı¾«ÄãÒªÁË×öÊ²Ã´!\n");
+        return notify_fail("è¿·å®«çš„å¦–ç²¾ä½ è¦äº†åšä»€ä¹ˆ!\n");
 }
 		// If we try to save someone from combat, take the risk :P
 	} else {
@@ -229,31 +229,31 @@ if (!userp(obj) && obj->is_character())
 			:), me);
 		if( sizeof(guard) )
 			return notify_fail( guard[0]->name() 
-				+ "ÕıÊØÔÚ" + obj->name() + "Ò»ÅÔ£¬·ÀÖ¹ÈÎºÎÈËÄÃ×ß¡£\n");
+				+ "æ­£å®ˆåœ¨" + obj->name() + "ä¸€æ—ï¼Œé˜²æ­¢ä»»ä½•äººæ‹¿èµ°ã€‚\n");
 	}
 
 	if( obj->query("equipped") ) equipped = 1;
         obs = filter_array(all_inventory(me), (: ! $1->query("equipped") :));
         if (sizeof(obs) >= 40 &&
             ! obj->can_combine_to(me))
-                return notify_fail("ÄãÉíÉÏµÄ¶«Î÷ÊµÔÚÊÇÌ«¶àÁË£¬Ã»·¨ÔÙÄÃ¶«Î÷ÁË¡£\n");
+                return notify_fail("ä½ èº«ä¸Šçš„ä¸œè¥¿å®åœ¨æ˜¯å¤ªå¤šäº†ï¼Œæ²¡æ³•å†æ‹¿ä¸œè¥¿äº†ã€‚\n");
 
 	if( obj->move(me) ) {
 		if( me->is_fighting() ) me->start_busy(1);
 		if( obj->is_character() )
-			message_vision( "$N½«$n·öÁËÆğÀ´±³ÔÚ±³ÉÏ¡£\n", me, obj );
+			message_vision( "$Nå°†$næ‰¶äº†èµ·æ¥èƒŒåœ¨èƒŒä¸Šã€‚\n", me, obj );
 		else
                  if(obj->query("dynamic_quest") || obj->query("dynamic_questjia"))
 {
-message("channel:chat", HIC"¡¾ÉñÊéĞÅÏ¢¡¿"GRN + me->query("name")+"µÃµ½"+HIR"ÉñÊé:" + obj->query("name")+HIG"À²£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€ç¥ä¹¦ä¿¡æ¯ã€‘"GRN + me->query("name")+"å¾—åˆ°"+HIR"ç¥ä¹¦:" + obj->query("name")+HIG"å•¦ï¼\n"NOR,users() );
 }
-			message_vision( sprintf("$N%sÒ»%s$n¡£\n", 
+			message_vision( sprintf("$N%sä¸€%s$nã€‚\n", 
                 
-				old_env==environment(me)? "¼ñÆğ":
+				old_env==environment(me)? "æ¡èµ·":
 					(old_env->is_character() ?
-						"´Ó" + old_env->name() + "ÉíÉÏ" + (equipped? "³ıÏÂ" : "ËÑ³ö"):
-                    (old_env->is_tree() ? "´Ó" + old_env->name() +"ÉÏÕªÏÂ" :
-						"´Ó" + old_env->name() + "ÖĞÄÃ³ö") ),
+						"ä»" + old_env->name() + "èº«ä¸Š" + (equipped? "é™¤ä¸‹" : "æœå‡º"):
+                    (old_env->is_tree() ? "ä»" + old_env->name() +"ä¸Šæ‘˜ä¸‹" :
+						"ä»" + old_env->name() + "ä¸­æ‹¿å‡º") ),
 				obj->query("unit")), me, obj );
 if (userp(old_env)) old_env->save();
 if (userp(me)) me->save();
@@ -268,9 +268,9 @@ if (userp(me) && userp(old_env))
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : get <ÎïÆ·Ãû³Æ> [from <ÈİÆ÷Ãû>]
+æŒ‡ä»¤æ ¼å¼ : get <ç‰©å“åç§°> [from <å®¹å™¨å>]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¼ñÆğµØÉÏ»òÈİÆ÷ÄÚµÄÄ³ÑùÎïÆ·.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æ¡èµ·åœ°ä¸Šæˆ–å®¹å™¨å†…çš„æŸæ ·ç‰©å“.
  
 HELP
     );

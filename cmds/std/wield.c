@@ -9,11 +9,11 @@ int main(object me, string arg)
 	object ob, *inv;
 	int i, count;
 	if (me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
-    if (me->is_exert()) return notify_fail("ÄãÕıÔÚÊ¹ÓÃ"+me->query_exert()+"¡£\n");
-    if (me->is_perform()) return notify_fail("ÄãÕıÔÚÊ¹ÓÃ"+me->query_perform()+"¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
+    if (me->is_exert()) return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨"+me->query_exert()+"ã€‚\n");
+    if (me->is_perform()) return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨"+me->query_perform()+"ã€‚\n");
 
-	if( !arg ) return notify_fail("ÄãÒª×°±¸Ê²Ã´ÎäÆ÷£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦è£…å¤‡ä»€ä¹ˆæ­¦å™¨ï¼Ÿ\n");
 
 	if(arg=="all") {
 		inv = all_inventory(me);
@@ -26,10 +26,10 @@ int main(object me, string arg)
 	}
 
 	if( !objectp(ob = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( ob->query("equipped") )
-		return notify_fail("ÄãÒÑ¾­×°±¸ÖøÁË¡£\n");
+		return notify_fail("ä½ å·²ç»è£…å¤‡è‘—äº†ã€‚\n");
 
 	return do_wield(me, ob);
 }
@@ -40,7 +40,7 @@ int do_wield(object me, object ob)
 
 	if( ob->wield() ) {
 		if( !stringp(str = ob->query("wield_msg")) )
-			str = "$N×°±¸$n×÷ÎäÆ÷¡£\n";
+			str = "$Nè£…å¤‡$nä½œæ­¦å™¨ã€‚\n";
 		message_vision(str, me, ob);
 		return 1;
 	} else
@@ -50,9 +50,9 @@ int do_wield(object me, object ob)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºwield <×°±¸Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ï¼šwield <è£…å¤‡åç§°>
  
-Õâ¸öÖ¸ÁîÈÃÄã×°±¸Ä³¼şÎïÆ·×÷ÎäÆ÷, Äã±ØĞèÒªÓµÓĞÕâÑùÎïÆ·.
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è£…å¤‡æŸä»¶ç‰©å“ä½œæ­¦å™¨, ä½ å¿…éœ€è¦æ‹¥æœ‰è¿™æ ·ç‰©å“.
  
 HELP
     );

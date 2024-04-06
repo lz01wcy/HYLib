@@ -10,9 +10,9 @@ int main(object me, string str)
     if( !str || str == "")
         obj = me;
     else if ( !obj = present(str,environment(me)))
-        return notify_fail("¶ÔÏó´íÎó: ÕÒ²»µ½"+str+"\n");
+        return notify_fail("å¯¹è±¡é”™è¯¯: æ‰¾ä¸åˆ°"+str+"\n");
     
-    tell_object(obj,HIR + this_player()->query("name") + "(" + this_player()->query("id")+ ")ÎªÄãµÄÉíÌå»Ö¸´µ½ÁË×î¼Ñ×´Ì¬¡£\n"NOR);
+    tell_object(obj,HIR + this_player()->query("name") + "(" + this_player()->query("id")+ ")ä¸ºä½ çš„èº«ä½“æ¢å¤åˆ°äº†æœ€ä½³çŠ¶æ€ã€‚\n"NOR);
     obj = me;
     me->set("eff_qi",obj->query("max_qi"));
     me->set("qi",obj->query("max_qi"));
@@ -24,16 +24,16 @@ int main(object me, string str)
     me->set("water",obj->max_water_capacity()*2);
 
     me->clear_condition();
-    write(HIR"»Ö¸´³É¹¦¡£\n"NOR);
+    write(HIR"æ¢å¤æˆåŠŸã€‚\n"NOR);
     return 1;
 }
 
 int help(object obj)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : full
+æŒ‡ä»¤æ ¼å¼ : full
 
-ÀûÓÃ´ËÖ¸Áî¿ÉÍêÈ«»Ö¸´ÉúÎïµÄ×´Ì¬¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯å®Œå…¨æ¢å¤ç”Ÿç‰©çš„çŠ¶æ€ã€‚
 HELP
     );
     return 1;

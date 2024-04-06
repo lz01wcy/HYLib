@@ -13,7 +13,7 @@ int main(object me) {
         // time is in msec, convert to sec
         x = (info["utime"] + info["stime"])/1000;
         fraction = x / uptime();    
-        str = sprintf("Ä¿Ç°CPUÊ¹ÓÃÂÊÎª£º"WHT"%2.2f%%", fraction * 100);
-        write( str+"/100%¡£\n"NOR);
+        str = sprintf("ç›®å‰CPUä½¿ç”¨ç‡ä¸ºï¼š"WHT"%2.2f%%", fraction * 100);
+        write( str+"/100%ã€‚\n"NOR);
         return 1;
 }

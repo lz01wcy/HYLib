@@ -8,7 +8,7 @@ int main(object me, string arg)
  
 	seteuid(geteuid(me));
 	if (!arg || sscanf(arg, "%s %s", src, dst)!=2 ) return
-		notify_fail("Ö¸Áî¸ñÊ½: cp <Ô­µµÃû> <Ä¿±êµµÃû> \n");
+		notify_fail("æŒ‡ä»¤æ ¼å¼: cp <åŸæ¡£å> <ç›®æ ‡æ¡£å> \n");
 
 	src = resolve_path(me->query("cwd"), src);
 	dst = resolve_path(me->query("cwd"), dst);
@@ -18,29 +18,29 @@ int main(object me, string arg)
 		dst += "/" + dirs[sizeof(dirs)-1];
 	}
  
-       //¸ø¶«Î÷¼ÇÂ¼µ½/log/cmds/cp   ĞÇĞÇ(lywin)
+       //ç»™ä¸œè¥¿è®°å½•åˆ°/log/cmds/cp   æ˜Ÿæ˜Ÿ(lywin)
 	log_file("cmds/cp",
-	sprintf("%s(%s) cpÒ»¸ö(%s) µ½ (%s) on %s\n",
-	me->name(),  //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÈËÃû
-	geteuid(me), //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄID
-	src,   //¼ÇÂ¼Ô´ÎÄ¼ş
-	dst,  //¼ÇÂ¼Ä¿µÄÎÄ¼ş
-	ctime(time()) ) ); //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÊ±¼ä
+	sprintf("%s(%s) cpä¸€ä¸ª(%s) åˆ° (%s) on %s\n",
+	me->name(),  //è®°å½•ä½¿ç”¨å‘½ä»¤çš„äººå
+	geteuid(me), //è®°å½•ä½¿ç”¨å‘½ä»¤çš„ID
+	src,   //è®°å½•æºæ–‡ä»¶
+	dst,  //è®°å½•ç›®çš„æ–‡ä»¶
+	ctime(time()) ) ); //è®°å½•ä½¿ç”¨å‘½ä»¤çš„æ—¶é—´
 
 
 	if( cp(src, dst) )
 		write("Ok.\n");
 	else
-		write("ÄãÃ»ÓĞ×ã¹»µÄ¶ÁĞ´È¨Àû¡£\n");
+		write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„è¯»å†™æƒåˆ©ã€‚\n");
 	return 1;
 }
  
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : cp <Ô­µµÃû> <Ä¿±êµµÃû>
+æŒ‡ä»¤æ ¼å¼ : cp <åŸæ¡£å> <ç›®æ ‡æ¡£å>
  
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)¿½±´µµ°¸¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )æ‹·è´æ¡£æ¡ˆã€‚
 HELP
     );
     return 1;

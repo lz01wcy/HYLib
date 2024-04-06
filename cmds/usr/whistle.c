@@ -9,11 +9,11 @@ int main(object me, string arg)
 	int i;
 	string id,name;
 	string file;
-	if(me->query("jing")<50) return notify_fail("Äã¾«Æø²»¹»¡£\n");
-	if(me->is_busy()) return notify_fail("ÄãÏÖÔÚ²»¿ÉÒÔ´µ¿ÚÉÚ¡£\n");
-	if(me->is_ghost()) return notify_fail("¹í»ê²»¿ÉÒÔ´µ¿ÚÉÚ¡£\n");
-	if(!me->query("marks/pet")) return notify_fail("ÄãÃ»ÓĞ×Ô¼ºµÄ³èÎï¡£\n");
-        write("ÄãÇáÇáµØ´µÁËÉù¿ÚÉÚ£®£®£®\n");
+	if(me->query("jing")<50) return notify_fail("ä½ ç²¾æ°”ä¸å¤Ÿã€‚\n");
+	if(me->is_busy()) return notify_fail("ä½ ç°åœ¨ä¸å¯ä»¥å¹å£å“¨ã€‚\n");
+	if(me->is_ghost()) return notify_fail("é¬¼é­‚ä¸å¯ä»¥å¹å£å“¨ã€‚\n");
+	if(!me->query("marks/pet")) return notify_fail("ä½ æ²¡æœ‰è‡ªå·±çš„å® ç‰©ã€‚\n");
+        write("ä½ è½»è½»åœ°å¹äº†å£°å£å“¨ï¼ï¼ï¼\n");
 //	if(environment(me)->query("NONPC")) return 1;
 	file = me->query_save_file();
 	file += ".pet.o";
@@ -37,7 +37,7 @@ int main(object me, string arg)
 	}
 	me->add("jing",-50);
         if (present(pet, me))
-        return notify_fail("Äã²»ÊÇÕıÆï×ÅÂğ?\n");
+        return notify_fail("ä½ ä¸æ˜¯æ­£éª‘ç€å—?\n");
 	if(pet && environment(pet) != environment(me) 
 	&& time() - (int)pet->query("deathstamp") > 1200
 	&& !pet->is_fighting())
@@ -72,7 +72,7 @@ if ((int)pet->query_skill("puyaogedou") < 200)
 pet->set_skill("puyaogedou", (int)me->query_skill("force")*2/3);
 }
 	pet->delele("is_rided_by");
-	message_vision("$N²»Öª´ÓÄÄÀï´Üµ½$nÃæÇ°£®\n",pet,me);	
+	message_vision("$Nä¸çŸ¥ä»å“ªé‡Œçªœåˆ°$né¢å‰ï¼\n",pet,me);	
 // let pet be our protector
 	if(me->is_fighting())
 	{
@@ -94,7 +94,7 @@ pet->set_skill("puyaogedou", (int)me->query_skill("force")*2/3);
 	else
 		if (pet) 
 	{pet->save();
-        message_vision("$NÒ»ÉÁ¾Í²»¼ûÁË¡£\n",pet);
+        message_vision("$Nä¸€é—ªå°±ä¸è§äº†ã€‚\n",pet);
 	pet->delele("is_rided_by");
 	destruct(pet);
 	}
@@ -103,9 +103,9 @@ pet->set_skill("puyaogedou", (int)me->query_skill("force")*2/3);
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : whistle
+æŒ‡ä»¤æ ¼å¼ : whistle
 
-Ïê½âÇë¿´°ïÖúÎÄ¼şÖĞµÄ¡¶³èÎïÆª¡·
+è¯¦è§£è¯·çœ‹å¸®åŠ©æ–‡ä»¶ä¸­çš„ã€Šå® ç‰©ç¯‡ã€‹
 HELP
         );
         return 1;

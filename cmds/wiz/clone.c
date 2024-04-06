@@ -4,7 +4,7 @@ inherit F_DBASE;
 void create() 
 {
         seteuid(getuid());
-        set("channel_id", "¸´ÖÆ¾«Áé(clone)");
+        set("channel_id", "å¤åˆ¶ç²¾çµ(clone)");
 }
 
 int main(object me, string arg)
@@ -19,7 +19,7 @@ string wiz_status;
     filecoin="/clone/money/coin.c";
 
     if ( !arg )
-        return notify_fail("Ö¸Áî¸ñÊ½: clone <ÊÂÎï> <¸öÊı> \n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼: clone <äº‹ç‰©> <ä¸ªæ•°> \n");
     if (sscanf(arg, "%s %d", file, times) != 2)
     {
         file = arg;
@@ -28,61 +28,61 @@ string wiz_status;
         seteuid( geteuid(me) );
         if (!file) file = me->query("cwf");
         if (!file)
-                return notify_fail("ÄãÒª¸´ÖÆÊ²÷áÎï¼ş£¿\n");
+                return notify_fail("ä½ è¦å¤åˆ¶ä»€éº½ç‰©ä»¶ï¼Ÿ\n");
 
         file = resolve_path(me->query("cwd"), file);
         if( sscanf(file, "%*s.c") != 1 ) file += ".c";
         me->set("cwf", file);
 
         if( file_size(file) < 0 )
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸(" + file + ")¡£\n");
+                return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆ(" + file + ")ã€‚\n");
 
         if( !find_object(file) ) {
                 err = catch(call_other(file, "???"));
                 if (err) {
-                        write("ÔØÈëÊ§°Ü£º" + err + "\n");
+                        write("è½½å…¥å¤±è´¥ï¼š" + err + "\n");
                         return 1;
                 }
         }
 
         err = catch(obj = new(file));
         if (err) {
-                write("¸´ÖÆÊ§°Ü£º" + err + "\n");
+                write("å¤åˆ¶å¤±è´¥ï¼š" + err + "\n");
                 return 1;
         }
         
          if ((!(file==filegold) && !(file==filesilver) &&
                  !(file==filecoin)) && (times>10))
         {
-                return notify_fail("STOP£¡STOP£¡×î¶àÖ»ÄÜ¸´ÖÆ10¸öµ¥Î»£¡\n");
+                return notify_fail("STOPï¼STOPï¼æœ€å¤šåªèƒ½å¤åˆ¶10ä¸ªå•ä½ï¼\n");
         }
         else
                 if (times>100)
                 {
-                return notify_fail("ÄãÕæÊÇ²ÆÃÔĞÄÇÏ£¬½ğÇ®×î¶àÖ»ÄÜ¸´ÖÆ100¸öµ¥Î»!\n");
+                return notify_fail("ä½ çœŸæ˜¯è´¢è¿·å¿ƒçªï¼Œé‡‘é’±æœ€å¤šåªèƒ½å¤åˆ¶100ä¸ªå•ä½!\n");
                 }          
 
 if (obj->query("no_clone") && wiz_level(me)<wiz_level("(arch)"))        
                 {
-                return notify_fail("Õâ¸ö¶«Î÷²»ÄÜ±»¸´ÖÆ!\n");
+                return notify_fail("è¿™ä¸ªä¸œè¥¿ä¸èƒ½è¢«å¤åˆ¶!\n");
                 }          
 
         if( !stringp(msg = me->query("env/msg_clone")) )
-                msg = "Ö»¼û$NÉìÊÖÁè¿ÕÒ»Ö¸£¬±ä³öÁË$n¡£\n";
-        str = me->query("name") + "(" + me->query("id") + ")¸´ÖÆÁË" + 
-                times + "¸ö" + obj->query("name")
-                + "(" + obj->query("id") + ")    " + ctime(time())+ "  ¡£\n";
+                msg = "åªè§$Nä¼¸æ‰‹å‡Œç©ºä¸€æŒ‡ï¼Œå˜å‡ºäº†$nã€‚\n";
+        str = me->query("name") + "(" + me->query("id") + ")å¤åˆ¶äº†" + 
+                times + "ä¸ª" + obj->query("name")
+                + "(" + obj->query("id") + ")    " + ctime(time())+ "  ã€‚\n";
         write_file("/log/cmds/clone", str);  
 	wiz_status = SECURITY_D->get_status(me);
 	if( wiz_status != "(admin)" && wiz_status != "(arch)"
 	&& userp(me))
-message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "¸´ÖÆÁË" + 
-                  times + "¸ö"+obj->query("name")+HIC"!"NOR"¡£\n", users());
+message("channel:chat", HIC"ã€ç©å®¶ç›‘ç£ã€‘"+me->name() + "å¤åˆ¶äº†" + 
+                  times + "ä¸ª"+obj->query("name")+HIC"!"NOR"ã€‚\n", users());
 
         CHANNEL_D->do_channel(this_object(),"sys",me->query("name")+
-                "("+me->query("id")+")¸´ÖÆÁË" + 
-                  times + "¸ö" + obj->query("name")
-                  + "(" + base_name(obj) + ")  ¡£\n");
+                "("+me->query("id")+")å¤åˆ¶äº†" + 
+                  times + "ä¸ª" + obj->query("name")
+                  + "(" + base_name(obj) + ")  ã€‚\n");
 
 
   if (!obj->is_character()){
@@ -90,7 +90,7 @@ message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "¸´ÖÆÁË" +
          obj = new(file);
          obj->move(me);
     }
-                write(times + "¸ö" +obj->query("name") + "¸´ÖÆ³É¹¦£¬·ÅÔÚÄãµÄÎïÆ·À¸¡£\n");
+                write(times + "ä¸ª" +obj->query("name") + "å¤åˆ¶æˆåŠŸï¼Œæ”¾åœ¨ä½ çš„ç‰©å“æ ã€‚\n");
         message_vision(msg + "\n", me, obj);
                 return 1;
         }
@@ -98,10 +98,10 @@ message("channel:chat", HIC"¡¾Íæ¼Ò¼à¶½¡¿"+me->name() + "¸´ÖÆÁË" +
           obj=new(file);
           obj->move(environment(me));
    }
-                write(times + "¸ö" + obj->query("name") + "¸´ÖÆ³É¹¦£¬·ÅÔÚÕâ¸ö·¿¼ä¡£\n");
+                write(times + "ä¸ª" + obj->query("name") + "å¤åˆ¶æˆåŠŸï¼Œæ”¾åœ¨è¿™ä¸ªæˆ¿é—´ã€‚\n");
         message_vision(msg + "\n", me, obj);
                 return 1;
 
         destruct(obj);
-        return notify_fail("ÎŞ·¨¸´ÖÆ²»ÄÜÒÆ¶¯µÄÎï¼ş(" + file + ")¡£\n");
+        return notify_fail("æ— æ³•å¤åˆ¶ä¸èƒ½ç§»åŠ¨çš„ç‰©ä»¶(" + file + ")ã€‚\n");
 }

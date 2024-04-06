@@ -4,13 +4,13 @@
 
 inherit F_CLEAN_UP;
 
-// ÄæĞòÅÅÁĞ(´Ó¸ßµ½µÍ)
+// é€†åºæ’åˆ—(ä»é«˜åˆ°ä½)
 int sort_family(string f1, string f2, mapping fame)
 {
         return fame[f2] - fame[f1];
 }
 
-// ÄæĞòÅÅÁĞ(´Ó¸ßµ½µÍ)
+// é€†åºæ’åˆ—(ä»é«˜åˆ°ä½)
 int sort_league(string f1, string f2, mapping fame)
 {
         return fame[f2] - fame[f1];
@@ -32,8 +32,8 @@ int main(object me, string arg)
                 fam = keys(fame) - ({ 0 });
                 fam = sort_array(fam, (: sort_family :), fame);
         
-                msg = WHT "Ä¿Ç°½­ºşÉÏËùÓĞÃûÃÅ´óÅÉµÄÉùÍû×´¿ö\n" NOR
-                      HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg = WHT "ç›®å‰æ±Ÿæ¹–ä¸Šæ‰€æœ‰åé—¨å¤§æ´¾çš„å£°æœ›çŠ¶å†µ\n" NOR
+                      HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
                 for (i = 0; i < sizeof(fam); i++)
                 {
                         delta = fame[fam[i]] - last[fam[i]];
@@ -44,8 +44,8 @@ int main(object me, string arg)
                                        delta, NOR);
                 }
         
-                msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR
-                       WHT "Ò»¹²ÊÇ" + chinese_number(i) + "¸öÃÅÅÉ¡£\n" NOR;
+                msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR
+                       WHT "ä¸€å…±æ˜¯" + chinese_number(i) + "ä¸ªé—¨æ´¾ã€‚\n" NOR;
         }
         //write(t);
         //write(t2);
@@ -56,10 +56,10 @@ int main(object me, string arg)
 int help(object me)
 {
    	write(@HELP
-Ö¸Áî¸ñÊ½: top [family | league]
+æŒ‡ä»¤æ ¼å¼: top [family | league]
 
-²é¿´Ä¿Ç°½­ºşÉÏ´óÃÅÅÉ»òÊÇÖøÃû½áÒåÍ¬ÃËµÄÅÅÃû×´¿öºÍÏà±ÈÈ¥Äê±ä»¯
-µÄ³Ì¶È¡£
+æŸ¥çœ‹ç›®å‰æ±Ÿæ¹–ä¸Šå¤§é—¨æ´¾æˆ–æ˜¯è‘—åç»“ä¹‰åŒç›Ÿçš„æ’åçŠ¶å†µå’Œç›¸æ¯”å»å¹´å˜åŒ–
+çš„ç¨‹åº¦ã€‚
 HELP );
    	return 1;
 }

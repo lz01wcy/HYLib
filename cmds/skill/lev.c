@@ -3,18 +3,18 @@
 string gettof(object me, object obj);
 string tough_level(int power);
 string *tough_level_desc = ({
-"²»¿°Ò»»÷","ºÁ²»×ãÂÇ","²»ÖªËùÒÔ","ÐÂÑ§Õ§Á·","ÃãÃãÇ¿Ç¿",
-"³õ¿úÃÅ¾¶","³õ³öÃ©Â®","ÂÔÖªÒ»¶þ","ÆÕÆÕÍ¨Í¨","Æ½Æ½µ­µ­",
-"Æ½µ­ÎÞÆæ","´ÖÍ¨Æ¤Ã«","°ëÉú²»Êì","ÂíÂí»¢»¢","ÂÔÓÐÐ¡³É",
-"ÒÑÓÐÐ¡³É","½¥Èë¼Ñ¾³","µÇÌÃÈëÊÒ","»ÓÈ÷×ÔÈç","ÈÚ»á¹áÍ¨", 
-"ÐÄÁìÉñ»á","Â¯»ð´¿Çà","ÁËÈ»ì¶ÐØ","ÂÔÓÐ´ó³É","ÒÑÓÐ´ó³É",
-"»íÈ»¹áÍ¨","³öÀà°ÎÝÍ","ÎÞ¿ÉÆ¥µÐ","¼¼¹ÚÈºÐÛ","ÉñºõÆä¼¼",
-"³öÉñÈë»¯","·ÇÍ¬·²Ïì","°ÁÊÓÈºÐÛ","µÇ·åÔì¼«","ÎÞÓëÂ×±È",
-"ËùÏòÅûÃÒ","Ò»´ú×ÚÊ¦","¾«Éî°ÂÃî","Éñ¹¦¸ÇÊÀ","¾ÙÊÀÎÞË«",
-"¾ªÊÀº§Ë×","º³Ìì¶¯µØ","Õð¹Åîå½ñ","³¬·²ÈëÊ¥","ÍþÕòå¾Óî",
-"¿ÕÇ°¾øºó","ÌìÈËºÏÒ»","Éî²Ø²»Â¶","ºáÉ¨½­ºþ","Éî²»¿É²â",
-"Íþ²»¿Éµ²","¼¼¾ªËÄ×ù","Ç¿¾øÌìÏÂ","ÍþÕòÎäÁÖ","Ç°ÎÞ¹ÅÈË",
-"·µè±¹éÕæ","¶À²½ÌìÏÂ","¿õ¹Å¾øÂ×","ÌìÏÂÎÞµÐ","ÌìÏÂµÚÒ»",
+"ä¸å ªä¸€å‡»","æ¯«ä¸è¶³è™‘","ä¸çŸ¥æ‰€ä»¥","æ–°å­¦ä¹ç»ƒ","å‹‰å‹‰å¼ºå¼º",
+"åˆçª¥é—¨å¾„","åˆå‡ºèŒ…åº","ç•¥çŸ¥ä¸€äºŒ","æ™®æ™®é€šé€š","å¹³å¹³æ·¡æ·¡",
+"å¹³æ·¡æ— å¥‡","ç²—é€šçš®æ¯›","åŠç”Ÿä¸ç†Ÿ","é©¬é©¬è™Žè™Ž","ç•¥æœ‰å°æˆ",
+"å·²æœ‰å°æˆ","æ¸å…¥ä½³å¢ƒ","ç™»å ‚å…¥å®¤","æŒ¥æ´’è‡ªå¦‚","èžä¼šè´¯é€š", 
+"å¿ƒé¢†ç¥žä¼š","ç‚‰ç«çº¯é’","äº†ç„¶æ–¼èƒ¸","ç•¥æœ‰å¤§æˆ","å·²æœ‰å¤§æˆ",
+"è±ç„¶è´¯é€š","å‡ºç±»æ‹”èƒ","æ— å¯åŒ¹æ•Œ","æŠ€å† ç¾¤é›„","ç¥žä¹Žå…¶æŠ€",
+"å‡ºç¥žå…¥åŒ–","éžåŒå‡¡å“","å‚²è§†ç¾¤é›„","ç™»å³°é€ æž","æ— ä¸Žä¼¦æ¯”",
+"æ‰€å‘æŠ«é¡","ä¸€ä»£å®—å¸ˆ","ç²¾æ·±å¥¥å¦™","ç¥žåŠŸç›–ä¸–","ä¸¾ä¸–æ— åŒ",
+"æƒŠä¸–éª‡ä¿—","æ’¼å¤©åŠ¨åœ°","éœ‡å¤é“„ä»Š","è¶…å‡¡å…¥åœ£","å¨é•‡å¯°å®‡",
+"ç©ºå‰ç»åŽ","å¤©äººåˆä¸€","æ·±è—ä¸éœ²","æ¨ªæ‰«æ±Ÿæ¹–","æ·±ä¸å¯æµ‹",
+"å¨ä¸å¯æŒ¡","æŠ€æƒŠå››åº§","å¼ºç»å¤©ä¸‹","å¨é•‡æ­¦æž—","å‰æ— å¤äºº",
+"è¿”ç’žå½’çœŸ","ç‹¬æ­¥å¤©ä¸‹","æ—·å¤ç»ä¼¦","å¤©ä¸‹æ— æ•Œ","å¤©ä¸‹ç¬¬ä¸€",
 });
 string tough_level(int power)
 {
@@ -51,18 +51,18 @@ string gettof(object me, object ob)
 int main(object me,string arg)
 {	string lev;
 	string msg="\n\n"+
-BLU"\t  ²»¿°Ò»»÷  "NOR+BLU"  ºÁ²»×ãÂÇ  "NOR+BLU"  ²»ÖªËùÒÔ  "NOR+BLU"  ÐÂÑ§Õ§Á·  "NOR+BLU"  ÃãÃãÇ¿Ç¿  \n"NOR+
-BLU"\t  ³õ¿úÃÅ¾¶  "NOR+BLU"  ³õ³öÃ©Â®  "NOR+BLU"  ÂÔÖªÒ»¶þ  "NOR+BLU"  ÆÕÆÕÍ¨Í¨  "NOR+BLU"  Æ½Æ½µ­µ­  \n"NOR+
-HIB"\t  Æ½µ­ÎÞÆæ  "NOR+HIB"  ´ÖÍ¨Æ¤Ã«  "NOR+HIB"  °ëÉú²»Êì  "NOR+HIB"  ÂíÂí»¢»¢  "NOR+HIB"  ÂÔÓÐÐ¡³É  \n"NOR+
-HIB"\t  ÒÑÓÐÐ¡³É  "NOR+HIB"  ½¥Èë¼Ñ¾³  "NOR+HIB"  µÇÌÃÈëÊÒ  "NOR+HIB"  »ÓÈ÷×ÔÈç  "NOR+HIB"  ÈÚ»á¹áÍ¨  \n"NOR+ 
-CYN"\t  ÐÄÁìÉñ»á  "NOR+CYN"  Â¯»ð´¿Çà  "NOR+CYN"  ÁËÈ»ì¶ÐØ  "NOR+CYN"  ÂÔÓÐ´ó³É  "NOR+CYN"  ÒÑÓÐ´ó³É  \n"NOR+
-CYN"\t  »íÈ»¹áÍ¨  "NOR+CYN"  ³öÀà°ÎÝÍ  "NOR+CYN"  ÎÞ¿ÉÆ¥µÐ  "NOR+CYN"  ¼¼¹ÚÈºÐÛ  "NOR+CYN"  ÉñºõÆä¼¼  \n"NOR+
-HIC"\t  ³öÉñÈë»¯  "NOR+HIC"  ·ÇÍ¬·²Ïì  "NOR+HIC"  °ÁÊÓÈºÐÛ  "NOR+HIC"  µÇ·åÔì¼«  "NOR+HIC"  ÎÞÓëÂ×±È  \n"NOR+
-HIC"\t  ËùÏòÅûÃÒ  "NOR+HIC"  Ò»´ú×ÚÊ¦  "NOR+HIC"  ¾«Éî°ÂÃî  "NOR+HIC"  Éñ¹¦¸ÇÊÀ  "NOR+HIC"  ¾ÙÊÀÎÞË«  \n"NOR+
-HIR"\t  ¾ªÊÀº§Ë×  "NOR+HIR"  º³Ìì¶¯µØ  "NOR+HIR"  Õð¹Åîå½ñ  "NOR+HIR"  ³¬·²ÈëÊ¥  "NOR+HIR"  ÍþÕòå¾Óî  \n"NOR+
-HIR"\t  ¿ÕÇ°¾øºó  "NOR+HIR"  ÌìÈËºÏÒ»  "NOR+HIR"  Éî²Ø²»Â¶  "NOR+HIR"  ºáÉ¨½­ºþ  "NOR+HIR"  Éî²»¿É²â  \n"NOR+
-HIY"\t  Íþ²»¿Éµ²  "NOR+HIY"  ¼¼¾ªËÄ×ù  "NOR+HIY"  Ç¿¾øÌìÏÂ  "NOR+HIY"  ÍþÕòÎäÁÖ  "NOR+HIY"  Ç°ÎÞ¹ÅÈË  \n"NOR+
-HIY"\t  ·µè±¹éÕæ  "NOR+HIY"  ¶À²½ÌìÏÂ  "NOR+HIY"  ¿õ¹Å¾øÂ×  "NOR+HIY"  ÌìÏÂÎÞµÐ  "NOR+HIY"  ÌìÏÂµÚÒ»  "NOR+"\n\n";
+BLU"\t  ä¸å ªä¸€å‡»  "NOR+BLU"  æ¯«ä¸è¶³è™‘  "NOR+BLU"  ä¸çŸ¥æ‰€ä»¥  "NOR+BLU"  æ–°å­¦ä¹ç»ƒ  "NOR+BLU"  å‹‰å‹‰å¼ºå¼º  \n"NOR+
+BLU"\t  åˆçª¥é—¨å¾„  "NOR+BLU"  åˆå‡ºèŒ…åº  "NOR+BLU"  ç•¥çŸ¥ä¸€äºŒ  "NOR+BLU"  æ™®æ™®é€šé€š  "NOR+BLU"  å¹³å¹³æ·¡æ·¡  \n"NOR+
+HIB"\t  å¹³æ·¡æ— å¥‡  "NOR+HIB"  ç²—é€šçš®æ¯›  "NOR+HIB"  åŠç”Ÿä¸ç†Ÿ  "NOR+HIB"  é©¬é©¬è™Žè™Ž  "NOR+HIB"  ç•¥æœ‰å°æˆ  \n"NOR+
+HIB"\t  å·²æœ‰å°æˆ  "NOR+HIB"  æ¸å…¥ä½³å¢ƒ  "NOR+HIB"  ç™»å ‚å…¥å®¤  "NOR+HIB"  æŒ¥æ´’è‡ªå¦‚  "NOR+HIB"  èžä¼šè´¯é€š  \n"NOR+ 
+CYN"\t  å¿ƒé¢†ç¥žä¼š  "NOR+CYN"  ç‚‰ç«çº¯é’  "NOR+CYN"  äº†ç„¶æ–¼èƒ¸  "NOR+CYN"  ç•¥æœ‰å¤§æˆ  "NOR+CYN"  å·²æœ‰å¤§æˆ  \n"NOR+
+CYN"\t  è±ç„¶è´¯é€š  "NOR+CYN"  å‡ºç±»æ‹”èƒ  "NOR+CYN"  æ— å¯åŒ¹æ•Œ  "NOR+CYN"  æŠ€å† ç¾¤é›„  "NOR+CYN"  ç¥žä¹Žå…¶æŠ€  \n"NOR+
+HIC"\t  å‡ºç¥žå…¥åŒ–  "NOR+HIC"  éžåŒå‡¡å“  "NOR+HIC"  å‚²è§†ç¾¤é›„  "NOR+HIC"  ç™»å³°é€ æž  "NOR+HIC"  æ— ä¸Žä¼¦æ¯”  \n"NOR+
+HIC"\t  æ‰€å‘æŠ«é¡  "NOR+HIC"  ä¸€ä»£å®—å¸ˆ  "NOR+HIC"  ç²¾æ·±å¥¥å¦™  "NOR+HIC"  ç¥žåŠŸç›–ä¸–  "NOR+HIC"  ä¸¾ä¸–æ— åŒ  \n"NOR+
+HIR"\t  æƒŠä¸–éª‡ä¿—  "NOR+HIR"  æ’¼å¤©åŠ¨åœ°  "NOR+HIR"  éœ‡å¤é“„ä»Š  "NOR+HIR"  è¶…å‡¡å…¥åœ£  "NOR+HIR"  å¨é•‡å¯°å®‡  \n"NOR+
+HIR"\t  ç©ºå‰ç»åŽ  "NOR+HIR"  å¤©äººåˆä¸€  "NOR+HIR"  æ·±è—ä¸éœ²  "NOR+HIR"  æ¨ªæ‰«æ±Ÿæ¹–  "NOR+HIR"  æ·±ä¸å¯æµ‹  \n"NOR+
+HIY"\t  å¨ä¸å¯æŒ¡  "NOR+HIY"  æŠ€æƒŠå››åº§  "NOR+HIY"  å¼ºç»å¤©ä¸‹  "NOR+HIY"  å¨é•‡æ­¦æž—  "NOR+HIY"  å‰æ— å¤äºº  \n"NOR+
+HIY"\t  è¿”ç’žå½’çœŸ  "NOR+HIY"  ç‹¬æ­¥å¤©ä¸‹  "NOR+HIY"  æ—·å¤ç»ä¼¦  "NOR+HIY"  å¤©ä¸‹æ— æ•Œ  "NOR+HIY"  å¤©ä¸‹ç¬¬ä¸€  "NOR+"\n\n";
     
 
 	if(!arg)
@@ -93,18 +93,18 @@ HIY"\t  ·µè±¹éÕæ  "NOR+HIY"  ¶À²½ÌìÏÂ  "NOR+HIY"  ¿õ¹Å¾øÂ×  "NOR+HIY"  ÌìÏÂÎÞµÐ 
 
 
 /*write(
-BLU"\t\t²»¿°Ò»»÷ ºÁ²»×ãÂÇ ²»ÖªËùÒÔ ÐÂÑ§Õ§Á· ÃãÃãÇ¿Ç¿\n"NOR+
-BLU"\t\t³õ¿úÃÅ¾¶ ³õ³öÃ©Â® ÂÔÖªÒ»¶þ ÆÕÆÕÍ¨Í¨ Æ½Æ½µ­µ­\n"NOR+
-HIB"\t\tÆ½µ­ÎÞÆæ ´ÖÍ¨Æ¤Ã« °ëÉú²»Êì ÂíÂí»¢»¢ ÂÔÓÐÐ¡³É\n"NOR+
-HIB"\t\tÒÑÓÐÐ¡³É ½¥Èë¼Ñ¾³ µÇÌÃÈëÊÒ »ÓÈ÷×ÔÈç ÈÚ»á¹áÍ¨\n"NOR+ 
-CYN"\t\tÐÄÁìÉñ»á Â¯»ð´¿Çà ÁËÈ»ì¶ÐØ ÂÔÓÐ´ó³É ÒÑÓÐ´ó³É\n"NOR+
-CYN"\t\t»íÈ»¹áÍ¨ ³öÀà°ÎÝÍ ÎÞ¿ÉÆ¥µÐ ¼¼¹ÚÈºÐÛ ÉñºõÆä¼¼\n"NOR+
-HIC"\t\t³öÉñÈë»¯ ·ÇÍ¬·²Ïì °ÁÊÓÈºÐÛ µÇ·åÔì¼« ÎÞÓëÂ×±È\n"NOR+
-HIC"\t\tËùÏòÅûÃÒ Ò»´ú×ÚÊ¦ ¾«Éî°ÂÃî Éñ¹¦¸ÇÊÀ ¾ÙÊÀÎÞË«\n"NOR+
-HIR"\t\t¾ªÊÀº§Ë× º³Ìì¶¯µØ Õð¹Åîå½ñ ³¬·²ÈëÊ¥ ÍþÕòå¾Óî\n"NOR+
-HIR"\t\t¿ÕÇ°¾øºó ÌìÈËºÏÒ» Éî²Ø²»Â¶ ºáÉ¨½­ºþ Éî²»¿É²â\n"NOR+
-HIR"\t\tÍþ²»¿Éµ² ¼¼¾ªËÄ×ù Ç¿¾øÌìÏÂ ÍþÕòÎäÁÖ Ç°ÎÞ¹ÅÈË\n"NOR+          
-HIY"\t\t·µè±¹éÕæ ¶À²½ÌìÏÂ ¿õ¹Å¾øÂ× ÌìÏÂÎÞµÐ ÌìÏÂµÚÒ»\n\n\n"NOR
+BLU"\t\tä¸å ªä¸€å‡» æ¯«ä¸è¶³è™‘ ä¸çŸ¥æ‰€ä»¥ æ–°å­¦ä¹ç»ƒ å‹‰å‹‰å¼ºå¼º\n"NOR+
+BLU"\t\tåˆçª¥é—¨å¾„ åˆå‡ºèŒ…åº ç•¥çŸ¥ä¸€äºŒ æ™®æ™®é€šé€š å¹³å¹³æ·¡æ·¡\n"NOR+
+HIB"\t\tå¹³æ·¡æ— å¥‡ ç²—é€šçš®æ¯› åŠç”Ÿä¸ç†Ÿ é©¬é©¬è™Žè™Ž ç•¥æœ‰å°æˆ\n"NOR+
+HIB"\t\tå·²æœ‰å°æˆ æ¸å…¥ä½³å¢ƒ ç™»å ‚å…¥å®¤ æŒ¥æ´’è‡ªå¦‚ èžä¼šè´¯é€š\n"NOR+ 
+CYN"\t\tå¿ƒé¢†ç¥žä¼š ç‚‰ç«çº¯é’ äº†ç„¶æ–¼èƒ¸ ç•¥æœ‰å¤§æˆ å·²æœ‰å¤§æˆ\n"NOR+
+CYN"\t\tè±ç„¶è´¯é€š å‡ºç±»æ‹”èƒ æ— å¯åŒ¹æ•Œ æŠ€å† ç¾¤é›„ ç¥žä¹Žå…¶æŠ€\n"NOR+
+HIC"\t\tå‡ºç¥žå…¥åŒ– éžåŒå‡¡å“ å‚²è§†ç¾¤é›„ ç™»å³°é€ æž æ— ä¸Žä¼¦æ¯”\n"NOR+
+HIC"\t\tæ‰€å‘æŠ«é¡ ä¸€ä»£å®—å¸ˆ ç²¾æ·±å¥¥å¦™ ç¥žåŠŸç›–ä¸– ä¸¾ä¸–æ— åŒ\n"NOR+
+HIR"\t\tæƒŠä¸–éª‡ä¿— æ’¼å¤©åŠ¨åœ° éœ‡å¤é“„ä»Š è¶…å‡¡å…¥åœ£ å¨é•‡å¯°å®‡\n"NOR+
+HIR"\t\tç©ºå‰ç»åŽ å¤©äººåˆä¸€ æ·±è—ä¸éœ² æ¨ªæ‰«æ±Ÿæ¹– æ·±ä¸å¯æµ‹\n"NOR+
+HIR"\t\tå¨ä¸å¯æŒ¡ æŠ€æƒŠå››åº§ å¼ºç»å¤©ä¸‹ å¨é•‡æ­¦æž— å‰æ— å¤äºº\n"NOR+          
+HIY"\t\tè¿”ç’žå½’çœŸ ç‹¬æ­¥å¤©ä¸‹ æ—·å¤ç»ä¼¦ å¤©ä¸‹æ— æ•Œ å¤©ä¸‹ç¬¬ä¸€\n\n\n"NOR
 );
 	
 

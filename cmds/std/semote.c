@@ -14,7 +14,7 @@ int main(object me, string arg)
         string *e, out="";
         int i,j = 0;
 	if( (int)me->query("jing") < 50 )
-		return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 	if( !wizardp(me) )
 		me->receive_damage("jing", 50);
 
@@ -43,7 +43,7 @@ int checksemote(object me, string arg)
         e = sort_array(EMOTE_D->query_all_emote(), 1);
         str="";
 	if( (int)me->query("jing") < 50 )
-		return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 	if( !wizardp(me) )
 		me->receive_damage("jing", 50);
 
@@ -51,7 +51,7 @@ int checksemote(object me, string arg)
         {
                 for(i=0; i<sizeof(e); i++)
                 {
-                        str += sprintf("%s%s\n%s\n","EmoteÃû³Æ£º",e[i],EMOTE_D->query_emote(e[i])["others_target"] );
+                        str += sprintf("%s%s\n%s\n","Emoteåç§°ï¼š",e[i],EMOTE_D->query_emote(e[i])["others_target"] );
                 }
         }
         else
@@ -60,7 +60,7 @@ int checksemote(object me, string arg)
                 {
                         if ( arg==e[i] )
                         {
-                                str=sprintf("%s%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n","EmoteÃû³Æ£º",e[i],
+                                str=sprintf("%s%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n","Emoteåç§°ï¼š",e[i],
                                 emote["myself"], emote["others"], emote["myself_self"],
                                 emote["others_self"], emote["myself_target"], emote["target"],
                                 emote["others_target"] );
@@ -69,7 +69,7 @@ int checksemote(object me, string arg)
                         }
                         if (arg==e[i][0..sizeof(arg)-1])
                         {
-                                str += sprintf("%s%s\n%s%s\n","EmoteÃû³Æ£º",e[i],"ÄÚÈİ£º",EMOTE_D->query_emote(e[i])["others_target"] );
+                                str += sprintf("%s%s\n%s%s\n","Emoteåç§°ï¼š",e[i],"å†…å®¹ï¼š",EMOTE_D->query_emote(e[i])["others_target"] );
                                 count ++;
                         }
                 }
@@ -91,7 +91,7 @@ int femote(object me,string arg)
         int i,count,k;
         count = 0;
 	if( (int)me->query("jing") < 50 )
-		return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 	if( !wizardp(me) )
 		me->receive_damage("jing", 50);
 
@@ -107,7 +107,7 @@ int femote(object me,string arg)
                         msg = emote[ loop[j] ];
                         if( msg && strsrch(msg, arg) != -1 )
                         {
-                                str += sprintf("Emote Ãû: %s\n¶¯×÷: %s\n", e[i], msg);
+                                str += sprintf("Emote å: %s\nåŠ¨ä½œ: %s\n", e[i], msg);
                                 k ++;
                         }
                 }
@@ -117,7 +117,7 @@ int femote(object me,string arg)
         }
 
         if(  str == "" )
-                return notify_fail(MUD_NAME" ÖĞÎŞ·ûºÏ²éÑ¯Ìõ¼ş["+ arg +"]µÄ Emote.\n");
+                return notify_fail(MUD_NAME" ä¸­æ— ç¬¦åˆæŸ¥è¯¢æ¡ä»¶["+ arg +"]çš„ Emote.\n");
         else
         {
                 flag = 0;
@@ -128,27 +128,27 @@ int femote(object me,string arg)
 int show(object me,string str,string arg,int count)
 {
 	if( (int)me->query("jing") < 50 )
-		return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 	if( !wizardp(me) )
 		me->receive_damage("jing", 50);
 
         str =
-    		"\n²ÎÊı" + arg + "µÄ²éÑ¯½á¹û£º"
+    		"\nå‚æ•°" + arg + "çš„æŸ¥è¯¢ç»“æœï¼š"
                 "\n---------------------------------------------------------------\n"
                 + str;
-        str = replace_string(str, "$n", "(¶Ô·½)");
+        str = replace_string(str, "$n", "(å¯¹æ–¹)");
         str = replace_string(str, "$N", me->name(1));
-        str = replace_string(str, "$P", "Äã");
-        str = replace_string(str, "$p", "(Ëû/Ëı)");
+        str = replace_string(str, "$P", "ä½ ");
+        str = replace_string(str, "$p", "(ä»–/å¥¹)");
         str = replace_string(str, "$S", RANK_D->query_self(me));
         str = replace_string(str, "$s", RANK_D->query_self_rude(me));
-        str = replace_string(str, "$R", "(¶Ô·½µÄ´ÖÂ³³Æºô");
-        str = replace_string(str, "$r", "(¶Ô·½µÄ´ÖÂ³³Æºô)");
-        str = replace_string(str, "$C", "(×Ô¼ºµÄÄØ³Æ)");
-        str = replace_string(str, "$c", "(¶Ô·½µÄÄØ³Æ)");
+        str = replace_string(str, "$R", "(å¯¹æ–¹çš„ç²—é²ç§°å‘¼");
+        str = replace_string(str, "$r", "(å¯¹æ–¹çš„ç²—é²ç§°å‘¼)");
+        str = replace_string(str, "$C", "(è‡ªå·±çš„å‘¢ç§°)");
+        str = replace_string(str, "$c", "(å¯¹æ–¹çš„å‘¢ç§°)");
 
         str += "---------------------------------------------------------------\n";
-        flag?str += sprintf("ÔÚ%sÖĞ£¬ÒÔ[%s]¿ªÍ·µÄ Emote ¹²ÓĞ %d ¸ö¡£\n",MUD_NAME, arg, count ):str += sprintf("ÔÚ%sÖĞ£¬º¬ÓĞ[%s]µÄ emote ¹²ÓĞ %d ¸ö¡£\n",MUD_NAME, arg, count );
+        flag?str += sprintf("åœ¨%sä¸­ï¼Œä»¥[%s]å¼€å¤´çš„ Emote å…±æœ‰ %d ä¸ªã€‚\n",MUD_NAME, arg, count ):str += sprintf("åœ¨%sä¸­ï¼Œå«æœ‰[%s]çš„ emote å…±æœ‰ %d ä¸ªã€‚\n",MUD_NAME, arg, count );
         me->start_more(str);
         return 1;
 }
@@ -156,10 +156,10 @@ int show(object me,string str,string arg,int count)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : semote [ÖĞÓ¢ÎÄ]
+æŒ‡ä»¤æ ¼å¼ : semote [ä¸­è‹±æ–‡]
 
-Õâ¸öÖ¸Áî²»¼Ó²ÎÊıÊ±¿ÉÒÔÁĞ³öÄ¿Ç°ËùÄÜÊ¹ÓÃµÄEmote£¬
-¼ÓÉÏ²ÎÊıºó£¬¿ÉÒÔËÑË÷ÒÔ²ÎÊıÎª¿ªÍ·»òº¬ÓĞ¸Ã²ÎÊıµÄEmote¡£
+è¿™ä¸ªæŒ‡ä»¤ä¸åŠ å‚æ•°æ—¶å¯ä»¥åˆ—å‡ºç›®å‰æ‰€èƒ½ä½¿ç”¨çš„Emoteï¼Œ
+åŠ ä¸Šå‚æ•°åï¼Œå¯ä»¥æœç´¢ä»¥å‚æ•°ä¸ºå¼€å¤´æˆ–å«æœ‰è¯¥å‚æ•°çš„Emoteã€‚
 
 HELP
     );

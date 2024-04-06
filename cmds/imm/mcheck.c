@@ -14,7 +14,7 @@ int main(object me, string arg)
 {
         int i, j, count = 0;
         object *lob, obj, *obs;
-        string ip, tmp, str = HIR"\n  ¡­¡­ ¼ì²é¶àÖØµÇÂ¼(ML) ¡­¡­ "NOR;
+        string ip, tmp, str = HIR"\n  â€¦â€¦ æ£€æŸ¥å¤šé‡ç™»å½•(ML) â€¦â€¦ "NOR;
 	mixed groups;
      	int ip1,ip2,ip3,ip4,n,myip,yourip;
     	string arg1;
@@ -27,10 +27,10 @@ int main(object me, string arg)
 	if( stringp(arg) ){
 		if( objectp(obj = LOGIN_D->find_body(arg)) && me->visible(obj) && interactive(obj)){
 			arg = query_ip_number(obj);
-			tmp = "\n"+ obj->name(1) +"("+ obj->query("id") +")\nIP£º"+ arg +"\nPort£º["+query_ip_rport(obj)+"]\n";
-			tmp += "Ä¿Ç°ºÍ´ËÈË´ÓÏàÍ¬IPÁ¬ÈëµÄÍæ¼ÒÓĞ£º\n\t";
+			tmp = "\n"+ obj->name(1) +"("+ obj->query("id") +")\nIPï¼š"+ arg +"\nPortï¼š["+query_ip_rport(obj)+"]\n";
+			tmp += "ç›®å‰å’Œæ­¤äººä»ç›¸åŒIPè¿å…¥çš„ç©å®¶æœ‰ï¼š\n\t";
 		}
-		else tmp = "\nÄ¿Ç°Í¨¹ı " + arg + " Á¬ÈëµÄÍæ¼ÒÓĞ£º\n\t";
+		else tmp = "\nç›®å‰é€šè¿‡ " + arg + " è¿å…¥çš„ç©å®¶æœ‰ï¼š\n\t";
  		n=sscanf(arg,"%d.%d.%d.%d",ip1,ip2,ip3,ip4);
 		myip = (ip1<<24)+(ip2<<16)+(ip3<<8)+ip4;
 		while(i--){
@@ -53,7 +53,7 @@ int main(object me, string arg)
 	}
 	
 	groups = unique_array(obs, (: query_ip_number($1) :));
-	if ( !sizeof(groups) ) return notify_fail(HIR"\n  ¡­¡­ Íê±Ï ¡­¡­ \n"NOR);
+	if ( !sizeof(groups) ) return notify_fail(HIR"\n  â€¦â€¦ å®Œæ¯• â€¦â€¦ \n"NOR);
 	
 	for(i = 0; i < sizeof(groups); i++) {
 		if( sizeof( groups[i])  <= 1)  
@@ -61,7 +61,7 @@ int main(object me, string arg)
 		obs = groups[i];
 		lob = obs->query_temp("link_ob") - ({0});
 		ip = query_ip_number(obs[0]);
-		tmp = sprintf("\n"HIY"%-16s"WHT" ¡ú "NOR, ip);
+		tmp = sprintf("\n"HIY"%-16s"WHT" â†’ "NOR, ip);
 		for( j = 0; j < sizeof(obs); j++ ){
 			if( j > 0 && j % 4 == 0 ) tmp += "\n\t\t    ";
 			tmp += sprintf("%-16s", obs[j]->query("id")+"("+ query_ip_rport(obs[j])+")");
@@ -83,7 +83,7 @@ int main(object me, string arg)
 	                j++;
 	        }
 	 	if (j > 1) arg += "(" +tmp+") ";
-	        if( arg != "" ) str += HIG"\n\t\t    ¿ÚÁîÏàÍ¬µÄÓĞ£º"+arg+NOR;
+	        if( arg != "" ) str += HIG"\n\t\t    å£ä»¤ç›¸åŒçš„æœ‰ï¼š"+arg+NOR;
 	        lob = sort_array(lob, (:strcmp($1->query("email"), $2->query("email")):));
 	        count = sizeof(lob);
 	        ip = j = 0;
@@ -99,10 +99,10 @@ int main(object me, string arg)
 	                j++;
 	        }
 	        if (j > 1) arg += "(" +tmp+") ";
-	        if( arg != "" ) str += HIC"\n\t\t    EmailÏàÍ¬µÄÓĞ£º"+arg+NOR;
+	        if( arg != "" ) str += HIC"\n\t\t    Emailç›¸åŒçš„æœ‰ï¼š"+arg+NOR;
 	}
 
-        str += HIR"\n  ¡­¡­ Íê±Ï ¡­¡­ \n"NOR;
+        str += HIR"\n  â€¦â€¦ å®Œæ¯• â€¦â€¦ \n"NOR;
         me->start_more(str);
         return 1;
 }
@@ -110,13 +110,13 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºmcheck [ip|Ä³ÈË]
+æŒ‡ä»¤æ ¼å¼ï¼šmcheck [ip|æŸäºº]
 
-Àı£º
-	mcheck 61.137.155.126   -> ÁĞ³ö´Ó´ËipÁ¬ÈëµÄÍæ¼Ò¡£
-	mcheck 61.137.   	-> ÁĞ³ö´Ó´Ëip·¶Î§ÄÚÁ¬ÈëµÄÍæ¼Ò¡£
-	mcheck snowman		-> ÁĞ³öºÍ´ÎÍæ¼ÒÏàÍ¬ipµÄÆäËüÍæ¼Ò¡£
-	mcheck			-> ÁĞ³öËùÓĞÏàÍ¬ipµÄÁĞ±í£¬¸½´øÏàÍ¬ email£¬ passwdÁĞ±í¡£
+ä¾‹ï¼š
+	mcheck 61.137.155.126   -> åˆ—å‡ºä»æ­¤ipè¿å…¥çš„ç©å®¶ã€‚
+	mcheck 61.137.   	-> åˆ—å‡ºä»æ­¤ipèŒƒå›´å†…è¿å…¥çš„ç©å®¶ã€‚
+	mcheck snowman		-> åˆ—å‡ºå’Œæ¬¡ç©å®¶ç›¸åŒipçš„å…¶å®ƒç©å®¶ã€‚
+	mcheck			-> åˆ—å‡ºæ‰€æœ‰ç›¸åŒipçš„åˆ—è¡¨ï¼Œé™„å¸¦ç›¸åŒ emailï¼Œ passwdåˆ—è¡¨ã€‚
 	
 HELP
         );

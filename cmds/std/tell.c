@@ -20,28 +20,28 @@ object *ob;
 
 //	if( sscanf(target, "%s@%s", target, mud)==2 ) {
 //		GTELL->send_gtell(mud, target, me, msg);
-//		write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n");
+//		write("ç½‘è·¯è®¯æ¯å·²é€å‡ºï¼Œå¯èƒ½è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›åº”ã€‚\n");
 //		return 1;
 //	}
 
 	obj = find_player(target);
-	if(!obj || !me->visible(obj)) return notify_fail("Ã»ÓĞÕâ¸öÈË....¡£\n");
-	if(obj == me) return notify_fail("¸æËß×Ô¼º£¿\n");
-	if (!interactive(obj)) return notify_fail("Õâ¸öÈË¶ÏÏßÁË¡£\n");
-	if (!living(obj)) return notify_fail("Õâ¸öÈËÏÖÔÚÎŞ·¨Ìı¼ûÄãµÄ»°¡£\n");
+	if(!obj || !me->visible(obj)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäºº....ã€‚\n");
+	if(obj == me) return notify_fail("å‘Šè¯‰è‡ªå·±ï¼Ÿ\n");
+	if (!interactive(obj)) return notify_fail("è¿™ä¸ªäººæ–­çº¿äº†ã€‚\n");
+	if (!living(obj)) return notify_fail("è¿™ä¸ªäººç°åœ¨æ— æ³•å¬è§ä½ çš„è¯ã€‚\n");
 	if (!wizardp(me) && obj->query_temp("pigging_seat"))
-		return notify_fail("ÕıÔÚ¹°ÖíµÄÈËÌı²»µ½ÇÄÇÄ»°¡­¡­¡£\n");
+		return notify_fail("æ­£åœ¨æ‹±çŒªçš„äººå¬ä¸åˆ°æ‚„æ‚„è¯â€¦â€¦ã€‚\n");
 
 	if (!wizardp(me) && obj->query("env/no_tell")=="all" + NOR)
-		return notify_fail("Õâ¸öÈË²»ÏëÌıÄãÂŞàÂÀ²¡£\n");
+		return notify_fail("è¿™ä¸ªäººä¸æƒ³å¬ä½ ç½—å—¦å•¦ã€‚\n");
 	if (!wizardp(me) && obj->query("env/no_tell")=="ALL" + NOR)
-		return notify_fail("Õâ¸öÈË²»ÏëÌıÄãÂŞàÂÀ²¡£\n");
+		return notify_fail("è¿™ä¸ªäººä¸æƒ³å¬ä½ ç½—å—¦å•¦ã€‚\n");
 	if (!wizardp(me) && obj->query("env/no_tell")==me->query("id") + NOR)
-		return notify_fail("Õâ¸öÈË²»ÏëÌıÄãÂŞàÂÀ²¡£\n");
+		return notify_fail("è¿™ä¸ªäººä¸æƒ³å¬ä½ ç½—å—¦å•¦ã€‚\n");
 	if (!wizardp(me) && obj->query_temp("pigging_seat"))
-		return notify_fail("ÕıÔÚ¹°ÖíµÄÈËÌı²»µ½ÇÄÇÄ»°¡­¡­¡£\n");
+		return notify_fail("æ­£åœ¨æ‹±çŒªçš„äººå¬ä¸åˆ°æ‚„æ‚„è¯â€¦â€¦ã€‚\n");
         if ( ((int)time() - (int)me->query("tell_time")) < 1 )
-        return notify_fail("ÓĞ»°ºÃºÃËµÅ¶¡£\n");
+        return notify_fail("æœ‰è¯å¥½å¥½è¯´å“¦ã€‚\n");
 if (me->query("combat_exp") < 100000 && strsrch(msg,"0")>=0 || strsrch(msg,"1")>=0 || strsrch(msg,"2")>=0 || strsrch(msg,"3")>=0
 || strsrch(msg,"4")>=0 || strsrch(msg,"5")>=0 || strsrch(msg,"6")>=0 || strsrch(msg,"7")>=0 
 || strsrch(msg,"8")>=0 || strsrch(msg,"9")>=0 )
@@ -49,21 +49,21 @@ if (me->query("combat_exp") < 100000 && strsrch(msg,"0")>=0 || strsrch(msg,"1")>
         if( me->query("combat_exp") < 100000 && sscanf( msg, "%s.%s.%s.%s",ia,ib,ic,id) && strlen(ia)>=1  && strlen(ib)>=1
          && strlen(ic)>=1 && strlen(id)>=1 && strlen(msg)>=10
          && !wizardp(me))
-        return notify_fail("×ö¹ã¸æ²»ºÃ°É£¬ÄÇÊÇÃ»ÓĞµÀµÂµÄÊÂ!\n");
+        return notify_fail("åšå¹¿å‘Šä¸å¥½å§ï¼Œé‚£æ˜¯æ²¡æœ‰é“å¾·çš„äº‹!\n");
 }
 
 
-        write(HIG "Äã¸æËß" + obj->name(1) + "£º" + msg + "\n" NOR);
-        tell_object(obj, sprintf( HIG "%s¸æËßÄã£º%s\n" NOR,
+        write(HIG "ä½ å‘Šè¯‰" + obj->name(1) + "ï¼š" + msg + "\n" NOR);
+        tell_object(obj, sprintf( HIG "%så‘Šè¯‰ä½ ï¼š%s\n" NOR,
 		me->name(1)+"("+me->query("id")+")", msg));
                      me->set("tell_time", time());
 //	CHANNEL_D->do_channel( this_object(), "adm", 
-//		sprintf("%s¸æËß%s£º%s¡£",me->name(1),obj->name(1),msg) );
+//		sprintf("%så‘Šè¯‰%sï¼š%sã€‚",me->name(1),obj->name(1),msg) );
 //        ob=users();
         ob = filter_array(children(USER_OB),(: userp($1) && wizardp($1) :));
 if (!wizardp(me) && query_ip_name(obj)!=query_ip_name(me))
 {
-message("channel:snp", HIB"¡¾ÇÔÌı¡¿"+me->query("name")+"¸æËß"+obj->query("name")+"£º"+msg+"\n"NOR, ob);
+message("channel:snp", HIB"ã€çªƒå¬ã€‘"+me->query("name")+"å‘Šè¯‰"+obj->query("name")+"ï¼š"+msg+"\n"NOR, ob);
 }
 	obj->set_temp("reply", me->query("id"));
 	return 1;
@@ -75,10 +75,10 @@ int remote_tell(string cname, string from, string mud, string to, string msg)
 
 	if( ob = find_player(to) ) {
 		if( cname )
-			tell_object(ob, sprintf(HIG "%s(%s@%s)¸æËßÄã£º%s\n" NOR,
+			tell_object(ob, sprintf(HIG "%s(%s@%s)å‘Šè¯‰ä½ ï¼š%s\n" NOR,
 				cname, capitalize(from), mud, msg ));
 		else
-			tell_object(ob, sprintf(HIG "%s@%s ¸æËßÄã£º%s\n" NOR,
+			tell_object(ob, sprintf(HIG "%s@%s å‘Šè¯‰ä½ ï¼š%s\n" NOR,
 				capitalize(from), mud, msg ));
 		ob->set_temp("reply", from + "@" + mud);
 		return 1;
@@ -89,11 +89,11 @@ int remote_tell(string cname, string from, string mud, string to, string msg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºtell <Ä³ÈË> <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼štell <æŸäºº> <è®¯æ¯>
 
-Äã¿ÉÒÔÓÃÕâ¸öÖ¸ÁîºÍÆäËûµØ·½µÄÊ¹ÓÃÕßËµ»°¡£
+ä½ å¯ä»¥ç”¨è¿™ä¸ªæŒ‡ä»¤å’Œå…¶ä»–åœ°æ–¹çš„ä½¿ç”¨è€…è¯´è¯ã€‚
 
-ÆäËûÏà¹ØÖ¸Áî£ºreply
+å…¶ä»–ç›¸å…³æŒ‡ä»¤ï¼šreply
 HELP
 	);
 	return 1;

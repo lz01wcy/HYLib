@@ -1,12 +1,12 @@
-// ��ȫϵͳv0.1 Write By JackyBoy@CuteRabbit Studio for CCTX & SDXL
-// ע�⣺
-// �������������ȷ������Ȩ�޵�����²ſ�����ȷʹ�ã�һ��Ȩ�޷�������ͻ����ϵͳ�޷�����
-// ��ʱ��ֻ���ֶ����Ĵ洢�ļ�������û���ɾ�����ļ��ſ����ٴ�������
-// ���ԣ�����ֻ�п��Ե�¼�������û��ſ���ʹ�øð�ȫϵͳ������
-// ��Ȼ�������ṩ��������Ȩ�����÷��������ǽ���Ҫ��һ��ԭ����ϵͳ�İ�ȫ����
-// ��д�ڣ�1999/7/14
-// 7/15�޸ģ���Ȩ�������޸�Ϊ����һ�����ö����Ȩ��
-// ���ӣ�access add trusted_read kungfu/skill "(player)"
+// 安全系统v0.1 Write By JackyBoy@CuteRabbit Studio for CCTX & SDXL
+// 注意：
+// 本程序必须在正确分配了权限的情况下才可以正确使用，一旦权限分配出错就会造成系统无法启动
+// 此时，只有手动更改存储文件里的设置或者删除该文件才可以再次启动！
+// 所以，必须只有可以登录主机的用户才可以使用该安全系统！！！
+// 虽然本程序提供了最灵活的权限设置方法，但是建议要留一份原来的系统的安全设置
+// 初写于：1999/7/14
+// 7/15修改：将权限设置修改为可以一次设置多个有权者
+// 例子：access add trusted_read kungfu/skill "(player)"
 
 #undef SECURITY_D
 #define SECURITY_D "/adm/daemons/securd"
@@ -19,9 +19,9 @@ int main(object me, string arg)
 	
 	if( me!=this_player(1) ) return 0;
 	if( wiz_level(me)<wiz_level("admin"))
-		return notify_fail("����Ȩʹ�ø����\n");
+		return notify_fail("你无权使用该命令！\n");
 //	if(1)
-//		return notify_fail("�������һ�㲻���ţ�\n");
+//		return notify_fail("这个命令一般不开放！\n");
 
 	if(!arg||arg=="print")
 		arg="print all";
@@ -37,26 +37,26 @@ int main(object me, string arg)
 			if(sscanf(arg,"add %s %s",type,acc)!=2)
 			{
 				if(sscanf(arg,"del %s %s",type,acc)!=2)
-					return notify_fail("�������\n��ʽΪ��access print|wizlist|modify [����] [��ȡ����]\n");
+					return notify_fail("命令错误！\n格式为：access print|wizlist|modify [类型] [存取设置]\n");
 				else
 					op="del";
 			}
 			else
 				op="add";
-			//��Ҫ��acc�������file��access_user
+			//还要从acc里分析出file和access_user
 			if(sscanf(acc,"%s %s",acc,user)!=2)
-				return notify_fail("��ȡ���Ʊ����������\n");
+				return notify_fail("存取控制表项输入错误！\n");
 		}
 		else
 			op="print";
 	}
 	else
 	{
-		//������ʦ����ע���������ϸ���ģ����Է�����������ʦ������ǧ������������
+		//设置巫师级别！注意这是无严格检查的，可以非在线提升巫师，所以千万不能提升错误！
 		seteuid(geteuid());
 		if( !(SECURITY_D->set_status(user, acc)) )
-			return notify_fail("�޸�ʧ�ܡ�\n");
-		message_vision("$N��"+user+"��Ȩ�޸�Ϊ " + acc + " ��\n", me);
+			return notify_fail("修改失败。\n");
+		message_vision("$N将"+user+"的权限改为 " + acc + " 。\n", me);
 		return 1;
 	}
 	if(op=="print")
@@ -64,10 +64,10 @@ int main(object me, string arg)
 	else
 	{
 		user=replace_string(user,"\"","");
-		//Ӧ�ý�user�޸�Ϊstring*����������һ��������У�
+		//应该将user修改为string*，这样可以一次输入多行！
 		tmp=explode(user,",");
-		write("�ֽ��"+sizeof(tmp)+"��!\n");
-		(SECURITY_D->modify_access_list(me,op,type,acc,tmp))?write("�ɹ�!\n"):write("ʧ��!\n");
+		write("分解得"+sizeof(tmp)+"项!\n");
+		(SECURITY_D->modify_access_list(me,op,type,acc,tmp))?write("成功!\n"):write("失败!\n");
 	}
 	return 1;
 }
@@ -79,19 +79,19 @@ int help()
 {
 write(@HELP
 
-Ȩ�޹���ָ�
+权限管理指令。
 
-ָ���ʽ : 
-�г�Ȩ�޷��������access print [����] 
-�г���Ϸ��ʦ��  ��access wizlist
-���û�������ʦ  ��access set �û�ID Ȩ�޼���
-����Ȩ�޷����  ��access add ���� �ļ� ��Ȩ��
-ɾ��Ȩ�޷�����access del ���� �ļ� ��Ȩ��
-��������Ϊtrusted_read,trusted_write,exclude_read,exclude_write�ĸ�֮һ
-��Ȩ����һ����ļ��ļ�����߾�ȷ��UID�����飬��ʽ���£�
-jackyboy����(admin)����"jackyboy"����jackyboy,(admin)����"(admin)","jackyboy"
-���ö��ŷָ�ÿ����Ȩ�ߣ��������ſ��Ժ��Բ��ƣ�����ֱ����Ȩ��ĳ����ʹ�ø��˵�ID
-������һ����ʦ�������ƣ�����(admin)��ע�⣬���Ų����٣�
+指令格式 : 
+列出权限分配情况：access print [类型] 
+列出游戏巫师表  ：access wizlist
+设置或提升巫师  ：access set 用户ID 权限级别
+设置权限分配表  ：access add 类型 文件 有权者
+删除权限分配表项：access del 类型 文件 有权者
+其中类型为trusted_read,trusted_write,exclude_read,exclude_write四个之一
+有权者是一组该文件的级别或者精确的UID的数组，格式如下：
+jackyboy或者(admin)或者"jackyboy"或者jackyboy,(admin)或者"(admin)","jackyboy"
+它用逗号分隔每个有权者，至于引号可以忽略不计！对于直接授权给某人则使用该人的ID
+否则是一个巫师级别名称，比如(admin)，注意，括号不能少！
 
 HELP
     );

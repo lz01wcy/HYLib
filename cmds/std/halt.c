@@ -7,43 +7,43 @@ int main(object me, string arg)
         object ob;
 	if( arg && wizardp(me) ) {
 		ob = present(arg, environment(me));
-		if( !ob ) return notify_fail("Ã»ÓĞÕâ¸öÉúÎï¡£\n");
-		if( !ob->is_fighting() ) return notify_fail(ob->name()+"ÏÖÔÚ²»Ã¦¡£\n");
+		if( !ob ) return notify_fail("æ²¡æœ‰è¿™ä¸ªç”Ÿç‰©ã€‚\n");
+		if( !ob->is_fighting() ) return notify_fail(ob->name()+"ç°åœ¨ä¸å¿™ã€‚\n");
 		ob->remove_all_enemy();
-                message_vision("\n$NÓÃÎ×Ê¦µÄÉñÁ¦Í£Ö¹ÁË$nµÄÕ½¶·¡£\n", me, ob);
+                message_vision("\n$Nç”¨å·«å¸ˆçš„ç¥åŠ›åœæ­¢äº†$nçš„æˆ˜æ–—ã€‚\n", me, ob);
 		return 1;
 	}
 
         if (me->query_condition("killer") && userp(me)) {
-            message_vision("$NÄãÕıÔÚ±»Í¨¼­£¬ÄÄÀïÅÜ?\n", me);
-			return notify_fail("ÄãÌÓÅÜÊ§°Ü¡£\n");
+            message_vision("$Nä½ æ­£åœ¨è¢«é€šè¾‘ï¼Œå“ªé‡Œè·‘?\n", me);
+			return notify_fail("ä½ é€ƒè·‘å¤±è´¥ã€‚\n");
 		}
 
-    if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR)
-			return notify_fail("Õâ¸öµØ·½µ½´¦ÊÇÂ·£¬ÄãÏòÄÄÀïÌÓÄØ!\n");
+    if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR)
+			return notify_fail("è¿™ä¸ªåœ°æ–¹åˆ°å¤„æ˜¯è·¯ï¼Œä½ å‘å“ªé‡Œé€ƒå‘¢!\n");
 if( environment(me)->query("magicroom"))
-			return notify_fail("Õâ¸öµØ·½µ½´¦ÊÇÂ·£¬ÄãÏòÄÄÀïÌÓÄØ!\n");
+			return notify_fail("è¿™ä¸ªåœ°æ–¹åˆ°å¤„æ˜¯è·¯ï¼Œä½ å‘å“ªé‡Œé€ƒå‘¢!\n");
         if (me->query_condition("huaxunshan") || me->query_condition("shaolin_song")|| me->query_condition("lingjiu_song")) {
-            message_vision("$NÄãÕıÔÚ×öÈÎÎñ²»ÄÜÂÒÅÜ,ÉíÉÏ¸ºÓĞÖØÔğ£¡\n", me);
-			return notify_fail("ÄãÌÓÅÜÊ§°Ü¡£\n");
+            message_vision("$Nä½ æ­£åœ¨åšä»»åŠ¡ä¸èƒ½ä¹±è·‘,èº«ä¸Šè´Ÿæœ‰é‡è´£ï¼\n", me);
+			return notify_fail("ä½ é€ƒè·‘å¤±è´¥ã€‚\n");
 		}
         if (present("letter", me)||present("biao",me)||present("prize",me)){
-            message_vision("$NÄãÉíÉÏÓĞÖØÒªµÄÈÎÎñÎïÆ·,²»ÄÜÂÒÌÓ£¡\n", me);
-			return notify_fail("ÄãÌÓÅÜÊ§°Ü¡£\n");
+            message_vision("$Nä½ èº«ä¸Šæœ‰é‡è¦çš„ä»»åŠ¡ç‰©å“,ä¸èƒ½ä¹±é€ƒï¼\n", me);
+			return notify_fail("ä½ é€ƒè·‘å¤±è´¥ã€‚\n");
 		}
 //        if ((int)me->query_temp("pending/exercise") != 0 && me->is_fighting()) {
-//	        message_vision("$N°ÑÕıÔÚÔËĞĞµÄÕæÆøÇ¿ĞĞÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆğÀ´¡£\n", me);
+//	        message_vision("$NæŠŠæ­£åœ¨è¿è¡Œçš„çœŸæ°”å¼ºè¡Œå‹å›ä¸¹ç”°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
 //                me->start_busy(3);
 //		me->interrupt_me();
 //	}
 
 	if (!me->is_busy() && me->is_fighting()) {
 		me->remove_all_enemy();
-                message_vision("\n$NÉíĞĞÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£\n", me); 
+                message_vision("\n$Nèº«è¡Œå‘åä¸€è·ƒï¼Œè·³å‡ºæˆ˜åœˆä¸æ‰“äº†ã€‚\n", me); 
 if (me->query("combat_exp") >1000000)
 {
                 me->start_busy(random(2));
@@ -51,22 +51,22 @@ if (me->query("combat_exp") >1000000)
 		return 1;
 	}
 	else if ((int)me->query_temp("biguan") != 0) {
-	        message_vision("$NÔÚ±Õ¹ØÖĞÍ¾Í»È»¸´³ö£¬Õ¾ÁËÆğÀ´¡£\n", me);
+	        message_vision("$Nåœ¨é—­å…³ä¸­é€”çªç„¶å¤å‡ºï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
                 me->start_busy(0);
                 me->set_temp("biguan", 0);
 		me->interrupt_me();
                 me->force_me("quit");
 	}
 //	else if ((int)me->query_temp("pending/exercise") != 0) {
-//	        message_vision("$N°ÑÕıÔÚÔËĞĞµÄÕæÆøÇ¿ĞĞÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆğÀ´¡£\n", me);
+//	        message_vision("$NæŠŠæ­£åœ¨è¿è¡Œçš„çœŸæ°”å¼ºè¡Œå‹å›ä¸¹ç”°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
 //		me->interrupt_me();
 //	}
 	else if (!me->is_busy()) 
-		return notify_fail("ÄãÏÖÔÚ²»Ã¦¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸å¿™ã€‚\n");
 	else if ((int)me->query_temp("pending/respirate") != 0)
 		me->interrupt_me();
 	me->interrupt_me();
-        if (me->is_busy()) write("ÄãÏÖÔÚºÜÃ¦£¬Í£²»ÏÂÀ´¡£\n");
+        if (me->is_busy()) write("ä½ ç°åœ¨å¾ˆå¿™ï¼Œåœä¸ä¸‹æ¥ã€‚\n");
 	return 1;
 }
 

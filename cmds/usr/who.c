@@ -34,26 +34,26 @@ mixed main(object me, string arg, int remote)
 					&&	option[i][0]=='@' ) {
 						RWHO_Q->send_rwho_q(option[i][1..sizeof(option[i])],
 							me, opt_long);
-						write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬ÇëÉÔºò¡£\n");
+						write("ç½‘è·¯è®¯æ¯å·²é€å‡ºï¼Œè¯·ç¨å€™ã€‚\n");
 						return 1;
 					}
 */
-					return notify_fail("Ö¸Áî¸ñÊ½£ºwho [-l|-i|-w|-p]\n");
+					return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwho [-l|-i|-w|-p]\n");
 			}
 	}
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕý´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
         me->start_busy(1);
 	if( opt_long && !wizardp(me)) {
 		if( (int)me->query("jing") < 50 )
-			return notify_fail("ÄãµÄ¾«ÉñÌ«²îÁË£¬Ã»ÓÐ°ì·¨µÃÖªËùÓÐÍæ¼ÒµÄÏêÏ¸×ÊÁÏ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥žå¤ªå·®äº†ï¼Œæ²¡æœ‰åŠžæ³•å¾—çŸ¥æ‰€æœ‰çŽ©å®¶çš„è¯¦ç»†èµ„æ–™ã€‚\n");
 		me->receive_damage("jing", 50);
 	}
 
-    str = HIG"¡ò " + MUD_NAME + "\n"NOR;
-        str += HIG"\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+    str = HIG"â—Ž " + MUD_NAME + "\n"NOR;
+        str += HIG"\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
 //	ob = filter_array(objects(), (: userp :));
 	ob = filter_array(children(USER_OB),(: userp :));
 	if (opt_party)
@@ -93,13 +93,13 @@ ppl_cnt++;
 			if (!wiz_level(list[i]) && fname != list[i]->query("family/family_name")) {
 			    fname = list[i]->query("family/family_name");
 			    if (count % 5) str += "\n";
-			    str += sprintf(HIY "%-10s" NOR, (fname?fname:"ÆÕÍ¨°ÙÐÕ") + "£º");
+			    str += sprintf(HIY "%-10s" NOR, (fname?fname:"æ™®é€šç™¾å§“") + "ï¼š");
 			    count = 1;
 ppl_cnt++;
 			}
 			if (!wcnt && wiz_level(list[i])) {
 			    if (count % 5) str += "\n";
-			    str += sprintf(HIR "%-10s" NOR, "Î×Ê¦£º");
+			    str += sprintf(HIR "%-10s" NOR, "å·«å¸ˆï¼š");
 			    wcnt = 1;
 			    count = 1;
 ppl_cnt++;
@@ -109,7 +109,7 @@ ppl_cnt++;
 				str += "          ";
 ppl_cnt++;
 			}
-if (list[i]->query("gender")=="Å®ÐÔ")
+if (list[i]->query("gender")=="å¥³æ€§")
                         str = sprintf("%s%s%-9s"NOR"%s",
 				str,
 				interactive(list[i])?(query_idle(list[i]) > 120?HIM "+":" "):HIG "*",
@@ -117,7 +117,7 @@ if (list[i]->query("gender")=="Å®ÐÔ")
 				++count%5 ? "": "\n"
 
 			);
-else if (list[i]->query("gender")=="ÄÐÐÔ")
+else if (list[i]->query("gender")=="ç”·æ€§")
                         str = sprintf("%s%s%-9s"NOR"%s",
 				str,
 				interactive(list[i])?(query_idle(list[i]) > 120?HIM "+":" "):HIG "*",
@@ -144,8 +144,8 @@ ppl_cnt++;
 		}
 		if( count%5 ) str += "\n";
 	}
-	str += HIG"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
-	str = sprintf(""HIG"%s"HIG"ÓÐ %d "HIG"Î»Íæ¼ÒÁ¬ÏßÖÐ£¬%d "HIG"Î»Íæ¼Ò¶ÏÏßÖÐ£¬ÏµÍ³¸ºµ££º%s"HIG"\n* ±íÊ¾¶ÏÏßÖÐ  + ±íÊ¾·¢´ôÖÐ"NOR"", str, ppl_cnt,
+	str += HIG"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
+	str = sprintf(""HIG"%s"HIG"æœ‰ %d "HIG"ä½çŽ©å®¶è¿žçº¿ä¸­ï¼Œ%d "HIG"ä½çŽ©å®¶æ–­çº¿ä¸­ï¼Œç³»ç»Ÿè´Ÿæ‹…ï¼š%s"HIG"\n* è¡¨ç¤ºæ–­çº¿ä¸­  + è¡¨ç¤ºå‘å‘†ä¸­"NOR"", str, ppl_cnt,
 		cnt, query_load_average());
 
 //	if( remote ) return str;
@@ -177,16 +177,16 @@ int sort_user(object ob1, object ob2)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : who [-l|-i|-w|-p]
+æŒ‡ä»¤æ ¼å¼ : who [-l|-i|-w|-p]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁÐ³öËùÓÐÔÚÏßÉÏµÄÍæ¼Ò¼°ÆäµÈ¼¶¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åˆ—å‡ºæ‰€æœ‰åœ¨çº¿ä¸Šçš„çŽ©å®¶åŠå…¶ç­‰çº§ã€‚
 
--l Ñ¡ÏîÁÐ³ö½Ï³¤µÄÑ¶Ï¢¡£
--i Ö»ÁÐ³öÍæ¼ÒµÄÓ¢ÎÄ´úºÅ¡£
--p Ö»ÁÐ³öÍ¬ÃÅµÄÍæ¼Ò¡£
--w Ö»ÁÐ³öÏßÉÏËùÓÐµÄÎ×Ê¦¡£
+-l é€‰é¡¹åˆ—å‡ºè¾ƒé•¿çš„è®¯æ¯ã€‚
+-i åªåˆ—å‡ºçŽ©å®¶çš„è‹±æ–‡ä»£å·ã€‚
+-p åªåˆ—å‡ºåŒé—¨çš„çŽ©å®¶ã€‚
+-w åªåˆ—å‡ºçº¿ä¸Šæ‰€æœ‰çš„å·«å¸ˆã€‚
 
-Ïà¹ØÖ¸Áî£º finger
+ç›¸å…³æŒ‡ä»¤ï¼š finger
 HELP
 	);
 	return 1;

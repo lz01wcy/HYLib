@@ -11,23 +11,23 @@ int main(object me, string arg)
 {
 	object obj, *inv, weapon;
 
-	if( !arg ) return notify_fail("ÄãÒª¿³Ë­µÄÍ·£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦ç è°çš„å¤´ï¼Ÿ\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon")) ||
 		((string)weapon->query("skill_type") != "sword" &&
 		 (string)weapon->query("skill_type") != "blade"))
-		return notify_fail("Äã²»ÓÃµ¶½£ÄÄÀï¿³µÃ¶¯£¡\n");
+		return notify_fail("ä½ ä¸ç”¨åˆ€å‰‘å“ªé‡Œç å¾—åŠ¨ï¼\n");
 
 	if(!objectp(obj = present(arg, environment(me))))
-		return notify_fail("ÄãÖ»ÄÜ¿³Ê¬ÌåµÄÍ·¡£\n");
+		return notify_fail("ä½ åªèƒ½ç å°¸ä½“çš„å¤´ã€‚\n");
 
 	if(userp(obj) || living(obj) )
-		return notify_fail("ÄÇ»¹ÊÇ»îµÄ£¡ÏÈÉ±ÁË²ÅÄÜ¿³Í·£¡\n");
+		return notify_fail("é‚£è¿˜æ˜¯æ´»çš„ï¼å…ˆæ€äº†æ‰èƒ½ç å¤´ï¼\n");
 
-	if( me->is_fighting() )	return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ£¡»¹Ïë¿³ÈË¼ÒµÄÍ·£¿\n");
+	if( me->is_fighting() )	return notify_fail("ä½ è¿˜åœ¨æˆ˜æ–—ä¸­ï¼è¿˜æƒ³ç äººå®¶çš„å¤´ï¼Ÿ\n");
 
 	return do_kan(me, obj, weapon);
 }
@@ -40,20 +40,20 @@ int do_kan(object me, object obj, object weapon)
 	if( !obj ) return 0;
 	if (obj->query("kantou") == 1)
 	{
-		message_vision( "$NÊÇ¸öÎŞÍ·Ê¬¡£\n", obj );
+		message_vision( "$Næ˜¯ä¸ªæ— å¤´å°¸ã€‚\n", obj );
 		return 1;
 	}
 	newname = obj->query("name");
-	if(strsrch(newname, "¸¯ÀÃµÄÊ¬Ìå") >= 0)
+	if(strsrch(newname, "è…çƒ‚çš„å°¸ä½“") >= 0)
 	{
-		message_vision( "¸¯Ê¬»¹¿³¸öÉ¶¾¢Ñ½¡£\n", obj );
+		message_vision( "è…å°¸è¿˜ç ä¸ªå•¥åŠ²å‘€ã€‚\n", obj );
 		return 1;
 	}
-	if(strsrch(newname, "Ê¬Ìå") >= 0)
-		newname = replace_string(newname, "Ê¬Ìå", "Í·Â­");
+	if(strsrch(newname, "å°¸ä½“") >= 0)
+		newname = replace_string(newname, "å°¸ä½“", "å¤´é¢…");
 	else
 	{
-		message_vision(obj->query("name")+"ÓĞÊ²Ã´Í·¿É¿³µÄ¡£\n", obj );
+		message_vision(obj->query("name")+"æœ‰ä»€ä¹ˆå¤´å¯ç çš„ã€‚\n", obj );
 		return 1;
 	}
 	newob = new("/clone/misc/head");
@@ -64,11 +64,11 @@ int do_kan(object me, object obj, object weapon)
 	}
 
 	if( me->is_fighting() ) me->start_busy(1);
-	message_vision( "$N»ÓÆğ"+weapon->query("name")+"½«$nµÄÄÔ´ü¿³ÁËÏÂÀ´¡£\n", me, obj );
+	message_vision( "$NæŒ¥èµ·"+weapon->query("name")+"å°†$nçš„è„‘è¢‹ç äº†ä¸‹æ¥ã€‚\n", me, obj );
 	obj->set("kantou", 1);
 	newname = obj->query("name");
-	if(strsrch(newname, "Ê¬Ìå") >= 0)
-		newname = replace_string(newname, "Ê¬Ìå", "ÎŞÍ·Ê¬Ìå");
+	if(strsrch(newname, "å°¸ä½“") >= 0)
+		newname = replace_string(newname, "å°¸ä½“", "æ— å¤´å°¸ä½“");
 	obj->set("name", newname);
 	return 1;
 }
@@ -76,9 +76,9 @@ int do_kan(object me, object obj, object weapon)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : kantou <Ê¬ÌåÃû³Æ>
+æŒ‡ä»¤æ ¼å¼ : kantou <å°¸ä½“åç§°>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¿³ÏÂµØÉÏËÀÕßµÄÍ·Â­.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ ç ä¸‹åœ°ä¸Šæ­»è€…çš„å¤´é¢….
  
 HELP
     );

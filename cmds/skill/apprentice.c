@@ -12,45 +12,45 @@ int main(object me, string arg)
 	string *skname;
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( !arg ) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºapprentice | bai [cancel]|<¶ÔÏó>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šapprentice | bai [cancel]|<å¯¹è±¡>\n");
 
 	if( arg=="cancel" ) {
 		old_app = me->query_temp("pending/apprentice");
 		if( !objectp(old_app) )
-			return notify_fail("ÄãÏÖÔÚ²¢Ã»ÓĞ°İÈÎºÎÈËÎªÊ¦µÄÒâË¼¡£\n");
-		write("Äã¸Ä±äÖ÷Òâ²»Ïë°İ" + old_app->name() + "ÎªÊ¦ÁË¡£\n");
-		tell_object(old_app, me->name() + "¸Ä±äÖ÷Òâ²»Ïë°İÄãÎªÊ¦ÁË¡£\n");
+			return notify_fail("ä½ ç°åœ¨å¹¶æ²¡æœ‰æ‹œä»»ä½•äººä¸ºå¸ˆçš„æ„æ€ã€‚\n");
+		write("ä½ æ”¹å˜ä¸»æ„ä¸æƒ³æ‹œ" + old_app->name() + "ä¸ºå¸ˆäº†ã€‚\n");
+		tell_object(old_app, me->name() + "æ”¹å˜ä¸»æ„ä¸æƒ³æ‹œä½ ä¸ºå¸ˆäº†ã€‚\n");
 		me->delete_temp("pending/apprentice");
 		return 1;
 	}
 
 	if( !(ob = present(arg, environment(me)))
 	||	!ob->is_character() )
-		return notify_fail("ÄãÏë°İË­ÎªÊ¦£¿\n");
+		return notify_fail("ä½ æƒ³æ‹œè°ä¸ºå¸ˆï¼Ÿ\n");
 
 	if( !living(ob) ) 
-		return notify_fail("Äã±ØĞëÏÈ°Ñ" + ob->name() + "ÅªĞÑ¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆæŠŠ" + ob->name() + "å¼„é†’ã€‚\n");
 
 	if( ob==me ) 
-		return notify_fail("°İ×Ô¼ºÎªÊ¦£¿ºÃÖ÷Òâ....²»¹ıÃ»ÓĞÓÃ¡£\n");
+		return notify_fail("æ‹œè‡ªå·±ä¸ºå¸ˆï¼Ÿå¥½ä¸»æ„....ä¸è¿‡æ²¡æœ‰ç”¨ã€‚\n");
 
 	if( me->is_apprentice_of(ob) ) {
-		message_vision("$N¹§¹§¾´¾´µØÏò$n¿ÄÍ·Çë°²£¬½ĞµÀ£º¡¸Ê¦¸¸£¡¡¹\n", me, ob);
+		message_vision("$Næ­æ­æ•¬æ•¬åœ°å‘$nç£•å¤´è¯·å®‰ï¼Œå«é“ï¼šã€Œå¸ˆçˆ¶ï¼ã€\n", me, ob);
 		return 1;
 	}
 
 	if( !mapp( ob->query("family") ) )
-		return notify_fail(ob->name() + "¼È²»Êôì¶ÈÎºÎÃÅÅÉ£¬Ò²Ã»ÓĞ¿ªÉ½Á¢ÅÉ£¬²»ÄÜ°İÊ¦¡£\n");
+		return notify_fail(ob->name() + "æ—¢ä¸å±æ–¼ä»»ä½•é—¨æ´¾ï¼Œä¹Ÿæ²¡æœ‰å¼€å±±ç«‹æ´¾ï¼Œä¸èƒ½æ‹œå¸ˆã€‚\n");
 	 if( userp(ob) && (int) ob->query("family/privs") != -1 )
-                return notify_fail("²»ÊÇÕÆÃÅÈË²»¿ÉÊÕÍ½£®\n");
+                return notify_fail("ä¸æ˜¯æŒé—¨äººä¸å¯æ”¶å¾’ï¼\n");
         if((string)me->query("family/family_name") ==
            (string)ob->query("family/family_name"))
         if((int)me->query("family/generation") <=
            (int)ob->query("family/generation"))
-                return notify_fail(ob->name()+"µÄ±²·Ö²¢²»±ÈÄã¸ß£¡\n");
+                return notify_fail(ob->name()+"çš„è¾ˆåˆ†å¹¶ä¸æ¯”ä½ é«˜ï¼\n");
 
 	// If the target is willing to recruit us already, we do it.
 
@@ -58,12 +58,12 @@ int main(object me, string arg)
 		if( (string)me->query("family/family_name") != (string)ob->query("family/family_name") ) {
           if (!userp(ob) && me->query("combat_exp")>500000)
           {
-              message_vision("$N¾­ÑéÌ«¸ßÁË£¬²»ÄÜ¸ÄÍ¶$nÃÅÏÂ£¡£¡\n\n",me,ob);
+              message_vision("$Nç»éªŒå¤ªé«˜äº†ï¼Œä¸èƒ½æ”¹æŠ•$né—¨ä¸‹ï¼ï¼\n\n",me,ob);
               return 0;
           }
 			message_vision(
-				"$N¾ö¶¨±³ÅÑÊ¦ÃÅ£¬¸ÄÍ¶Èë$nÃÅÏÂ£¡£¡\n\n"
-				"$N¹òÁËÏÂÀ´Ïò$n¹§¹§¾´¾´µØ¿ÄÁËËÄ¸öÏìÍ·£¬½ĞµÀ£º¡¸Ê¦¸¸£¡¡¹\n\n",
+				"$Nå†³å®šèƒŒå›å¸ˆé—¨ï¼Œæ”¹æŠ•å…¥$né—¨ä¸‹ï¼ï¼\n\n"
+				"$Nè·ªäº†ä¸‹æ¥å‘$næ­æ­æ•¬æ•¬åœ°ç£•äº†å››ä¸ªå“å¤´ï¼Œå«é“ï¼šã€Œå¸ˆçˆ¶ï¼ã€\n\n",
 				me, ob);
 			me->set("score", 0);
 			me->apply_condition("psgc",800);
@@ -71,15 +71,15 @@ int main(object me, string arg)
 		me->delete("mpgx");
 		} else
 			message_vision(
-				"$N¾ö¶¨°İ$nÎªÊ¦¡£\n\n"
-				"$N¹òÁËÏÂÀ´Ïò$n¹§¹§¾´¾´µØ¿ÄÁËËÄ¸öÏìÍ·£¬½ĞµÀ£º¡¸Ê¦¸¸£¡¡¹\n\n",
+				"$Nå†³å®šæ‹œ$nä¸ºå¸ˆã€‚\n\n"
+				"$Nè·ªäº†ä¸‹æ¥å‘$næ­æ­æ•¬æ•¬åœ°ç£•äº†å››ä¸ªå“å¤´ï¼Œå«é“ï¼šã€Œå¸ˆçˆ¶ï¼ã€\n\n",
 				me, ob);
 		ob->recruit_apprentice(me);
 		ob->delete_temp("pending/recruit");
 
-		tell_object(ob, "¹§Ï²ÄãĞÂÊÕÁËÒ»ÃûµÜ×Ó£¡\n");
+		tell_object(ob, "æ­å–œä½ æ–°æ”¶äº†ä¸€åå¼Ÿå­ï¼\n");
 		family = me->query("family");
-		printf("¹§Ï²Äú³ÉÎª%sµÄµÚ%s´úµÜ×Ó¡£\n", 
+		printf("æ­å–œæ‚¨æˆä¸º%sçš„ç¬¬%sä»£å¼Ÿå­ã€‚\n", 
 			me->query("family/family_name"),
 			chinese_number( me->query("family/generation")));
 		return 1;
@@ -87,16 +87,16 @@ int main(object me, string arg)
 	} else {
 		old_app = me->query_temp("pending/apprentice");
 		if( ob==old_app )
-			return notify_fail("ÄãÏë°İ" + ob->name() + "ÎªÊ¦£¬µ«ÊÇ¶Ô·½»¹Ã»ÓĞ´ğÓ¦¡£\n");
+			return notify_fail("ä½ æƒ³æ‹œ" + ob->name() + "ä¸ºå¸ˆï¼Œä½†æ˜¯å¯¹æ–¹è¿˜æ²¡æœ‰ç­”åº”ã€‚\n");
 		else if( objectp(old_app) ) {
-			write("Äã¸Ä±äÖ÷Òâ²»Ïë°İ" + old_app->name() + "ÎªÊ¦ÁË¡£\n");
-			tell_object(old_app, me->name() + "¸Ä±äÖ÷Òâ²»Ïë°İÄãÎªÊ¦ÁË¡£\n");
+			write("ä½ æ”¹å˜ä¸»æ„ä¸æƒ³æ‹œ" + old_app->name() + "ä¸ºå¸ˆäº†ã€‚\n");
+			tell_object(old_app, me->name() + "æ”¹å˜ä¸»æ„ä¸æƒ³æ‹œä½ ä¸ºå¸ˆäº†ã€‚\n");
 		}
 
-		message_vision("$NÏëÒª°İ$nÎªÊ¦¡£\n", me, ob);
+		message_vision("$Næƒ³è¦æ‹œ$nä¸ºå¸ˆã€‚\n", me, ob);
 		me->set_temp("pending/apprentice", ob );
 		if( userp(ob) ) {
-			tell_object(ob, YEL "Èç¹ûÄãÔ¸ÒâÊÕ" + me->name() + "ÎªµÜ×Ó£¬ÓÃ recruit Ö¸Áî¡£\n" NOR);
+			tell_object(ob, YEL "å¦‚æœä½ æ„¿æ„æ”¶" + me->name() + "ä¸ºå¼Ÿå­ï¼Œç”¨ recruit æŒ‡ä»¤ã€‚\n" NOR);
 		} else 
 			ob->attempt_apprentice(me);
 		return 1;
@@ -107,17 +107,17 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : apprentice|bai [cancel]|<¶ÔÏó>
+æŒ‡ä»¤æ ¼å¼ : apprentice|bai [cancel]|<å¯¹è±¡>
  
-Õâ¸öÖ¸ÁîÄÜÈÃÄã°İÄ³ÈËÎªÊ¦£¬Èç¹û¶Ô·½Ò²´ğÓ¦ÒªÊÕÄãÎªÍ½µÄ»°£¬¾Í»áÁ¢¼´ĞĞ
-°İÊ¦Ö®Àñ£¬·ñÔòÒªµÈµ½¶Ô·½ÓÃ recruit Ö¸ÁîÊÕÄãÎªµÜ×Ó²ÅÄÜÕıÊ½°İÊ¦¡£
+è¿™ä¸ªæŒ‡ä»¤èƒ½è®©ä½ æ‹œæŸäººä¸ºå¸ˆï¼Œå¦‚æœå¯¹æ–¹ä¹Ÿç­”åº”è¦æ”¶ä½ ä¸ºå¾’çš„è¯ï¼Œå°±ä¼šç«‹å³è¡Œ
+æ‹œå¸ˆä¹‹ç¤¼ï¼Œå¦åˆ™è¦ç­‰åˆ°å¯¹æ–¹ç”¨ recruit æŒ‡ä»¤æ”¶ä½ ä¸ºå¼Ÿå­æ‰èƒ½æ­£å¼æ‹œå¸ˆã€‚
 
-Çë×¢ÒâÄãÒÑ¾­ÓĞÁËÊ¦¸¸£¬ÓÖ±³ÅÑÊ¦ÃÅÍ¶Èë±ğÈËÃÅÏÂ£¬ËùÓĞ¼¼ÄÜ»á¼õ°ë£¬²¢ÇÒ
-ÆÀ¼Û»á½µµ½Áã¡£
+è¯·æ³¨æ„ä½ å·²ç»æœ‰äº†å¸ˆçˆ¶ï¼ŒåˆèƒŒå›å¸ˆé—¨æŠ•å…¥åˆ«äººé—¨ä¸‹ï¼Œæ‰€æœ‰æŠ€èƒ½ä¼šå‡åŠï¼Œå¹¶ä¸”
+è¯„ä»·ä¼šé™åˆ°é›¶ã€‚
 
-Èç¹û¶ÔÄãµÄÊ¦¸¸Ê¹ÓÃÕâ¸öÖ¸Áî£¬»á±ä³ÉÏòÊ¦¸¸Çë°²¡£
+å¦‚æœå¯¹ä½ çš„å¸ˆçˆ¶ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ï¼Œä¼šå˜æˆå‘å¸ˆçˆ¶è¯·å®‰ã€‚
  
-Çë²Î¿¼Ïà¹ØÖ¸Áî expell¡¢recruit
+è¯·å‚è€ƒç›¸å…³æŒ‡ä»¤ expellã€recruit
 HELP
         );
         return 1;

@@ -17,9 +17,9 @@ string wiz_status;
                 if(!friends 
                 || !mapp(friends)
                 ||  (sizeof(friends) == 0))
-                        return notify_fail("Äã»¹Ã»ÓĞÅóÓÑÄØ£¡\n");
+                        return notify_fail("ä½ è¿˜æ²¡æœ‰æœ‹å‹å‘¢ï¼\n");
                 f_ids = keys(friends);
-                write("ÄãÏÖÔÚµÄÅóÓÑÓĞ£º\n");
+                write("ä½ ç°åœ¨çš„æœ‹å‹æœ‰ï¼š\n");
                 str = "";
                 for(i=0;i<sizeof(f_ids);i++)
                 {
@@ -28,8 +28,8 @@ string wiz_status;
                         str += "  "+friends[f_ids[i]]+"("+f_ids[i]+")    ";
         if( wiz_status != "(admin)")
 {
-                        str += "×´Ì¬:" + (find_player(f_ids[i])? "ÔÚÏß\n":"ÀëÏß\n");
-} else                         str += "×´Ì¬:" + (find_player(f_ids[i])? "ÀëÏß\n":"ÀëÏß\n");
+                        str += "çŠ¶æ€:" + (find_player(f_ids[i])? "åœ¨çº¿\n":"ç¦»çº¿\n");
+} else                         str += "çŠ¶æ€:" + (find_player(f_ids[i])? "ç¦»çº¿\n":"ç¦»çº¿\n");
                 }
                 write(str);
                 return 1;
@@ -39,43 +39,43 @@ string wiz_status;
                 if(s1 == "-a")
                 {
                         if(!objectp(ob = find_player(s2)))
-                                return notify_fail("Ã»Õâ¸öÈË£¡\n");
+                                return notify_fail("æ²¡è¿™ä¸ªäººï¼\n");
        wiz_status = SECURITY_D->get_status(s2);
         if( wiz_status == "(admin)")
-                                return notify_fail("Ã»Õâ¸öÈË£¡\n");
+                                return notify_fail("æ²¡è¿™ä¸ªäººï¼\n");
 
                         if(me->query("id") == s2)
-                                return notify_fail("Ã»Õâ¸ö±ØÒª°É£¡\n");
+                                return notify_fail("æ²¡è¿™ä¸ªå¿…è¦å§ï¼\n");
                         if(me->query("friends/"+s2))
-                        return notify_fail(ob->query("name")+"ÒÑ¾­ÊÇÄãµÄÅóÓÑÁË£¡\n");
+                        return notify_fail(ob->query("name")+"å·²ç»æ˜¯ä½ çš„æœ‹å‹äº†ï¼\n");
                         me->set("friends/"+s2,ob->query("name"));
-                        write("Äã½«"+ob->query("name")+"¼ÓÈëºÃÓÑÃûµ¥£¡\n");
+                        write("ä½ å°†"+ob->query("name")+"åŠ å…¥å¥½å‹åå•ï¼\n");
                         if(living(ob))
-                        tell_object(ob,me->query("name")+"°ÑÄã¼ÓÈëËûµÄºÃÓÑÃûµ¥£¡\n");
+                        tell_object(ob,me->query("name")+"æŠŠä½ åŠ å…¥ä»–çš„å¥½å‹åå•ï¼\n");
                         return 1;
                 }
                 else if(s1 == "-d")
                 {
                         if(!objectp(ob = find_player(s2)))
-                                return notify_fail("Ã»Õâ¸öÈË£¡\n");
+                                return notify_fail("æ²¡è¿™ä¸ªäººï¼\n");
        wiz_status = SECURITY_D->get_status(s2);
         if( wiz_status == "(admin)")
-                                return notify_fail("Ã»Õâ¸öÈË£¡\n");
+                                return notify_fail("æ²¡è¿™ä¸ªäººï¼\n");
                         if(!me->query("friends/"+s2))
-                        return notify_fail("ÄãÃ»Õâ¸öÅóÓÑ£¡\n");
+                        return notify_fail("ä½ æ²¡è¿™ä¸ªæœ‹å‹ï¼\n");
                         me->delete("friends/"+s2);
-                        write("Äã°Ñ"+ob->query("name")+"´ÓºÃÓÑÃûµ¥ÖĞÈ¥µôÁË£¡\n");
+                        write("ä½ æŠŠ"+ob->query("name")+"ä»å¥½å‹åå•ä¸­å»æ‰äº†ï¼\n");
                         return 1;
                 }
                 else if(s1 == "-delall")
                 {
                         me->delete("friends");
-                        write("Äã°ÑËùÓĞµÄºÃÓÑ´ÓÃûµ¥ÖĞÈ¥µôÁË£¡\n");
+                        write("ä½ æŠŠæ‰€æœ‰çš„å¥½å‹ä»åå•ä¸­å»æ‰äº†ï¼\n");
                         return 1;
                 }
 
         }
-        write("ÓÃ·¨:friend [-a|-d|-delall] name\n");
+        write("ç”¨æ³•:friend [-a|-d|-delall] name\n");
         return 1;
 } 
 
@@ -84,9 +84,9 @@ int help(object me)
         string desc_dx, desc_fali, desc_exp;
 
         write(@HELP
-Ö¸Áî¸ñÊ½ : friend [-a|-d] [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : friend [-a|-d] [<æŸäºº>]
 
-ÓÃÕâ¸öÃüÁî¿ÉÒÔÈÃÄã²é¿´»ò¼Ó,¼õºÃÓÑ¡£
+ç”¨è¿™ä¸ªå‘½ä»¤å¯ä»¥è®©ä½ æŸ¥çœ‹æˆ–åŠ ,å‡å¥½å‹ã€‚
 HELP
     );
     return 1;

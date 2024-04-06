@@ -8,25 +8,25 @@ int main(object me)
 	int count,a,exp,pot;
  object obj,maxpot;
     if( me->is_busy() )
-	return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+	return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
     if( me->is_fighting() )
-        return notify_fail("ÄãÕı´òµÃÈÈÄÖÄØ!¡£\n");
+        return notify_fail("ä½ æ­£æ‰“å¾—çƒ­é—¹å‘¢!ã€‚\n");
 
-    if( (int)me->query("jing") < 70 ) return notify_fail("ÄãµÄ¾«²»¹»£¡\n");
-    if( (int)me->query("qi") < 70 ) return notify_fail("ÄãµÄ¾«²»¹»£¡\n");
+    if( (int)me->query("jing") < 70 ) return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿï¼\n");
+    if( (int)me->query("qi") < 70 ) return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿï¼\n");
 
-    if( !me->query_temp("roomjob") ) return notify_fail("ÄãÃ»ÓĞÕâ¸öÈÎÎñ°¡£¡\n");
+    if( !me->query_temp("roomjob") ) return notify_fail("ä½ æ²¡æœ‰è¿™ä¸ªä»»åŠ¡å•Šï¼\n");
 
-    //if( !me->query_condition("roomjob") ) return notify_fail("ÄãÕâ¸öÈÎÎñÒÑ¾­¹ıÆÚÁË£¡\n");
+    //if( !me->query_condition("roomjob") ) return notify_fail("ä½ è¿™ä¸ªä»»åŠ¡å·²ç»è¿‡æœŸäº†ï¼\n");
 
     if (environment(me)->query("short") !=me->query_temp("roomjob"))
      {
-         tell_object(me,HIR"ºÃÏñÊÇ½ĞÄãµ½"+me->query_temp("roomjob")+"È¥´ÌÌ½Çé±¨µÄ°É£¡\n"NOR);
+         tell_object(me,HIR"å¥½åƒæ˜¯å«ä½ åˆ°"+me->query_temp("roomjob")+"å»åˆºæ¢æƒ…æŠ¥çš„å§ï¼\n"NOR);
           return 1;
      }
 
 
-    msg = GRN "$NÓë¸½½üµÄ½­ºşÈËÎï£¬»ìÔÚÒ»Æğ£¬ËµÁËÒ»»á°Ñ"+environment(me)->query("short")+GRN"ÕâÀï·¢ÉúµÄÊÂµÄÇé¿ö´óÖÂÁË½âÁË£¡\n" NOR;
+    msg = GRN "$Nä¸é™„è¿‘çš„æ±Ÿæ¹–äººç‰©ï¼Œæ··åœ¨ä¸€èµ·ï¼Œè¯´äº†ä¸€ä¼šæŠŠ"+environment(me)->query("short")+GRN"è¿™é‡Œå‘ç”Ÿçš„äº‹çš„æƒ…å†µå¤§è‡´äº†è§£äº†ï¼\n" NOR;
 
 if( !environment(me)->query("no_fight"))
 {
@@ -36,14 +36,14 @@ if (random(30)==1 && me->query("combat_exp") > 2000000)
 obj=new("/quest/menpaijob/shenlong/menggu"); 
 obj->move(environment(me));
 obj->do_copy(me,maxpot,2);
-obj->set("title",HIY"Ñ²Âß¹Ù±ø"NOR);
+obj->set("title",HIY"å·¡é€»å®˜å…µ"NOR);
 obj->set("usename",me->query("name"));
 me->start_busy(1);
-message_vision(HIY"¸½½ü×ßÀ´Ò»ÃûºÜĞ×ºİµÄÑ²Âß¹Ù±ø£¡\n"NOR, obj);
-message_vision(HIR"$NËµµÀ: ÄãÕâ¸öÑıÈË¾¹¸Ò´òÌ½µØ·½¾üÕş£¬ÎÒÌØÀ´ÏûÃğÄãÕâµÈÑıÈË£¡\n"NOR, obj);
+message_vision(HIY"é™„è¿‘èµ°æ¥ä¸€åå¾ˆå‡¶ç‹ çš„å·¡é€»å®˜å…µï¼\n"NOR, obj);
+message_vision(HIR"$Nè¯´é“: ä½ è¿™ä¸ªå¦–äººç«Ÿæ•¢æ‰“æ¢åœ°æ–¹å†›æ”¿ï¼Œæˆ‘ç‰¹æ¥æ¶ˆç­ä½ è¿™ç­‰å¦–äººï¼\n"NOR, obj);
 me->kill_ob(obj);
 obj->kill_ob(me);
-return notify_fail("ÏÈ°ÑÕâ¶ñ¹Ù±øÏûÃğÔÙËµ°É£¿\n");
+return notify_fail("å…ˆæŠŠè¿™æ¶å®˜å…µæ¶ˆç­å†è¯´å§ï¼Ÿ\n");
 }
 }
 me->apply_condition("roomjob",0);
@@ -58,9 +58,9 @@ exp=(int)a/10+10;
 pot=(int)exp*2/3+10;
 	me->add("combat_exp",exp);
 	me->add("potential",pot);
-        tell_object(me, me->query("family/family_name")+"ÔÚ½­ºşÉÏµÄÍşÍûÊÇ" + chinese_number(a) + "¡£\n" NOR);
-        tell_object(me,  "ÄãµÄ¾­ÑéÔö³¤ÁË" + chinese_number(exp) + "¡£Ç±ÄÜÔö³¤ÁË"+chinese_number(pot) +
-                         "¡£\n" NOR);
+        tell_object(me, me->query("family/family_name")+"åœ¨æ±Ÿæ¹–ä¸Šçš„å¨æœ›æ˜¯" + chinese_number(a) + "ã€‚\n" NOR);
+        tell_object(me,  "ä½ çš„ç»éªŒå¢é•¿äº†" + chinese_number(exp) + "ã€‚æ½œèƒ½å¢é•¿äº†"+chinese_number(pot) +
+                         "ã€‚\n" NOR);
 
 }
 exp=30+random(100)+(int)me->query_temp("menpaijob")/2;
@@ -69,9 +69,9 @@ pot=30+random(100)+(int)me->query_temp("menpaijob")/3;
         me->add("combat_exp",exp);
         me->add("potential",pot);
     message_vision(msg, me);
-    msg = GRN "$NµÄ¾­ÑéÔö¼ÓÁË" + chinese_number(exp) + "£¡\n" NOR;
+    msg = GRN "$Nçš„ç»éªŒå¢åŠ äº†" + chinese_number(exp) + "ï¼\n" NOR;
     message_vision(msg, me);
-    msg = GRN "$NµÄÇ±ÄÜÔö¼ÓÁË" + chinese_number(pot) + "£¡\n" NOR;    
+    msg = GRN "$Nçš„æ½œèƒ½å¢åŠ äº†" + chinese_number(pot) + "ï¼\n" NOR;    
     message_vision(msg, me);
     me->set("quest", 0);
     me->start_busy(8);
@@ -83,9 +83,9 @@ pot=30+random(100)+(int)me->query_temp("menpaijob")/3;
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : hubo
+æŒ‡ä»¤æ ¼å¼ : hubo
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÔÚÈÎÎñÖĞ£¬À´´ÌÌ½Çé±¨µÄ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ åœ¨ä»»åŠ¡ä¸­ï¼Œæ¥åˆºæ¢æƒ…æŠ¥çš„ã€‚
  
 HELP
     );

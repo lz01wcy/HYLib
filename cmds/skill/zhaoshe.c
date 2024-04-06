@@ -5,26 +5,26 @@ int main(object me, string arg)
 	object soldier;
 	int zhaosheshu,yangsheshu, exp, MAX_GUARD;
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬ÎŞ·¨ºô»½¸½½üµÄÉß¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ— æ³•å‘¼å”¤é™„è¿‘çš„è›‡ã€‚\n");
         if( !me->is_fighting() )
-        return notify_fail("ºÃÏóÃ»ÓĞÈËÒªÉ±Äã£¡\n");
+        return notify_fail("å¥½è±¡æ²¡æœ‰äººè¦æ€ä½ ï¼\n");
 	if((int)me->query("neili")< 50)
-	return notify_fail("ÄãµÄÄÚÁ¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„å†…åŠ›å¤ªå·®äº†ï¼\n");
 	if((int)me->query("combat_exp")< 100000)
-	return notify_fail("ÄãµÄ¾­Ñé²»¹»£¡\n");
+	return notify_fail("ä½ çš„ç»éªŒä¸å¤Ÿï¼\n");
         if( me->is_busy() )
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");   
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");   
 	zhaosheshu = (int)me->query_skill("zhaosheshu");
 	yangsheshu = (int)me->query_skill("yangsheshu");
 	exp = (int)me->query("combat_exp");
 	if(zhaosheshu < 10 || yangsheshu < 10)
-	return notify_fail("ÄãÕĞÉßÖ®ÊõºÍÑøÉßÖ®¼¼Ì«²îÁË£¬Ã»ÓĞÉß¹ıÀ´£¡\n");	
+	return notify_fail("ä½ æ‹›è›‡ä¹‹æœ¯å’Œå…»è›‡ä¹‹æŠ€å¤ªå·®äº†ï¼Œæ²¡æœ‰è›‡è¿‡æ¥ï¼\n");	
 	MAX_GUARD = zhaosheshu * yangsheshu / 5000 + 1;
         if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("Äã¸ÕÕĞ¹ıÉß.\n");
+        return notify_fail("ä½ åˆšæ‹›è¿‡è›‡.\n");
 
 	if( me->query_temp("max_guard") > 30 )
-                return notify_fail("ÒÔÄãÏÖÔÚµÄÄÜÁ¦£¬ÄãÒÑ¾­Ã»ÓĞÄÜÁ¦¿ØÖÆ¸ü¶àµÄÉßÁË£¡\n");
+                return notify_fail("ä»¥ä½ ç°åœ¨çš„èƒ½åŠ›ï¼Œä½ å·²ç»æ²¡æœ‰èƒ½åŠ›æ§åˆ¶æ›´å¤šçš„è›‡äº†ï¼\n");
 	seteuid(getuid());
         me->add("neili",-50);
 	soldier= new("clone/misc/jinshe");
@@ -52,19 +52,19 @@ int main(object me, string arg)
         me->add_temp("max_guard",1);
 //        me->remove_all_killer();
 	me->apply_condition("zdizi_busy",3);
-	message_vision(HIR "\n$N·¢³öÒ»Éù¹Ö½Ğ £¡\n" NOR, me);	
-	message_vision(HIR "\n$N´Ó¸½½ü×êÁË³öÀ´£¡\n" NOR, soldier);
+	message_vision(HIR "\n$Nå‘å‡ºä¸€å£°æ€ªå« ï¼\n" NOR, me);	
+	message_vision(HIR "\n$Nä»é™„è¿‘é’»äº†å‡ºæ¥ï¼\n" NOR, soldier);
 	return 1;
 }
 
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºalert
+æŒ‡ä»¤æ ¼å¼ï¼šalert
  
-Õâ¸öÖ¸ÁîÈÃ»áÓÃÉßµÄµÜ×Óºô»½ËùÑøµÄ½ğÉßÀ´±£»¤×Ô¼º¡£
-ÄÜ·ñÕĞºô³ö½ğÉß£¬ºô³ö½ğÉßË®Æ½µÄ¸ßµÍ¾ÍÒª¿´×Ô¼º
-µÄË®Æ½ÁË¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä¼šç”¨è›‡çš„å¼Ÿå­å‘¼å”¤æ‰€å…»çš„é‡‘è›‡æ¥ä¿æŠ¤è‡ªå·±ã€‚
+èƒ½å¦æ‹›å‘¼å‡ºé‡‘è›‡ï¼Œå‘¼å‡ºé‡‘è›‡æ°´å¹³çš„é«˜ä½å°±è¦çœ‹è‡ªå·±
+çš„æ°´å¹³äº†ã€‚
  
 HELP
     );

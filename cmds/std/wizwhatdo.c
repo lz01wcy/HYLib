@@ -13,24 +13,24 @@ int main(object me, string arg)
 
         mission = explode(read_file("/adm/daemons/wizmission"), "\n");
         list = sort_array(SECURITY_D->query_wizlist(), (: level :));
-        str = HIG"¡ò " + HIM MUD_NAME + HIG"Ä¿Ç°¹²ÓĞ " + sizeof(list) + " Î»Î×Ê¦£º\n"NOR;
-        str +=HIW"¡Ô"+HIC"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"+HIW"¡Ô\n"NOR;
+        str = HIG"â— " + HIM MUD_NAME + HIG"ç›®å‰å…±æœ‰ " + sizeof(list) + " ä½å·«å¸ˆï¼š\n"NOR;
+        str +=HIW"â‰¡"+HIC"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"+HIW"â‰¡\n"NOR;
         for(int i=0; i<sizeof(list); i++, j++) {
                 if (hood != wizhood(list[i])) {
                         hood = wizhood(list[i]);
                         switch (hood) { 
-                                case "(admin)": str +=HIY"\n¡¾ admin ¡¿\n"NOR;j=0;break;
-                                case "(hufa)": if(j%3!=0) str += "\n";str +=HIG"\n¡¾ hufa ¡¿\n"NOR;j=0;break;
- case "(arch)": if(j%3!=0) str += "\n";str +=HIM"\n¡¾ arch ¡¿\n"NOR;j=0;break;
-  case "(wizard)": if(j%3!=0) str += "\n";str +=HIC"\n¡¾ wizard  ¡¿\n"NOR;j=0;break;
- case "(wiz)": if(j%3!=0) str += "\n";str +=HIC"\n¡¾ wiz ¡¿\n"NOR;j=0;break;
-   case "(apprentice)": if(j%3!=0) str += "\n";str +=HIC"\n¡¾ apprentice  ¡¿\n"NOR;j=0;break;
-case "(immortal)": if(j%3!=0) str += "\n";str +=HIC"\n¡¾ immortal ¡¿\n"NOR;j=0;break;  
+                                case "(admin)": str +=HIY"\nã€ admin ã€‘\n"NOR;j=0;break;
+                                case "(hufa)": if(j%3!=0) str += "\n";str +=HIG"\nã€ hufa ã€‘\n"NOR;j=0;break;
+ case "(arch)": if(j%3!=0) str += "\n";str +=HIM"\nã€ arch ã€‘\n"NOR;j=0;break;
+  case "(wizard)": if(j%3!=0) str += "\n";str +=HIC"\nã€ wizard  ã€‘\n"NOR;j=0;break;
+ case "(wiz)": if(j%3!=0) str += "\n";str +=HIC"\nã€ wiz ã€‘\n"NOR;j=0;break;
+   case "(apprentice)": if(j%3!=0) str += "\n";str +=HIC"\nã€ apprentice  ã€‘\n"NOR;j=0;break;
+case "(immortal)": if(j%3!=0) str += "\n";str +=HIC"\nã€ immortal ã€‘\n"NOR;j=0;break;  
                       }
                 }
                 str += sprintf("%-2s%s %c", list[i], get_mission( list[i] ), (j%3==2) ? '\n' : ' ');
         }
-        str +=HIW"\n\n¡Ô"+HIC"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"+HIY"¾ŞĞÇÄàÌÁ"+HIC"©¤©¤©¤©¤©¤"+HIW"¡Ô\n"NOR;
+        str +=HIW"\n\nâ‰¡"+HIC"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"+HIY"å·¨æ˜Ÿæ³¥å¡˜"+HIC"â”€â”€â”€â”€â”€"+HIW"â‰¡\n"NOR;
 
         me->start_more(str);
         return 1;
@@ -52,15 +52,15 @@ string get_mission( string wiz)
                         wname, wmin)!=2 ) continue;
                 if(wname==wiz) return wmin;
         }
-        return "(ÈÎÎñÎ´¶¨)";
+        return "(ä»»åŠ¡æœªå®š)";
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : wizlist
+æŒ‡ä»¤æ ¼å¼ : wizlist
 
-ÓÃÍ¾ : ÁĞ³öÄ¿Ç°ËùÓĞµÄÎ×Ê¦Ãûµ¥¼°Î×Ê¦µ±Ç°ÈÎÎñ¡£
+ç”¨é€” : åˆ—å‡ºç›®å‰æ‰€æœ‰çš„å·«å¸ˆåå•åŠå·«å¸ˆå½“å‰ä»»åŠ¡ã€‚
 HELP
      );
      return 1;

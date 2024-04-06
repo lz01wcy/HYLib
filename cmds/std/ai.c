@@ -9,65 +9,65 @@ int main(object me, string arg)
     object obj, old_target, where = environment(me);
 
     if (me->query("age") < 17)
-         return notify_fail("ÄãÁ¬Ê®ÆßËê¶¼Ã»µ½£¬¾ÍÑ§»µ°¡£¡\n");
+         return notify_fail("ä½ è¿åä¸ƒå²éƒ½æ²¡åˆ°ï¼Œå°±å­¦åå•Šï¼\n");
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
 
     if (me->query("mud_age")-me->query("marks/makelove") < 180)
-         return notify_fail("Ò»ÌìÄÚÁ¬ĞøÕâÑùºÜÉËÔªÆøµÄ£¬Äã¾ÍĞİÏ¢Ò»»á°É¡£\n");
+         return notify_fail("ä¸€å¤©å†…è¿ç»­è¿™æ ·å¾ˆä¼¤å…ƒæ°”çš„ï¼Œä½ å°±ä¼‘æ¯ä¸€ä¼šå§ã€‚\n");
 
     if ( !(where->query("sleep_room"))|| (where->query("no_sleep_room")) )
-         return notify_fail("×öÕâÖÖÊÂµ±È»ĞèÒªÒ»¸ö°²È«µÄµØ·½¡£\n");
+         return notify_fail("åšè¿™ç§äº‹å½“ç„¶éœ€è¦ä¸€ä¸ªå®‰å…¨çš„åœ°æ–¹ã€‚\n");
 
     if (!arg || !objectp(obj = present(arg, environment(me))))
-         return notify_fail("ÄãÏÖÔÚºÜ³å¶¯£¬¿ÉÊÇÒ»µãÕŞ¶¼Ã»ÓĞ¡£\n");
+         return notify_fail("ä½ ç°åœ¨å¾ˆå†²åŠ¨ï¼Œå¯æ˜¯ä¸€ç‚¹è¾™éƒ½æ²¡æœ‰ã€‚\n");
 
-    if (me->query("gender") =="ÎŞĞÔ")
-         return notify_fail("ÄãÁ¬ÄÇ¸ö¹¤¾ß¶¼Ã»ÓĞ£¬»¹Ïë¸ÉºÃÊÂ£¿\n");
+    if (me->query("gender") =="æ— æ€§")
+         return notify_fail("ä½ è¿é‚£ä¸ªå·¥å…·éƒ½æ²¡æœ‰ï¼Œè¿˜æƒ³å¹²å¥½äº‹ï¼Ÿ\n");
 
-    if(obj==me) return notify_fail("Äã×Ô¼º½â¾ö£¿ÄÇ¾ÍÃ»±ØÒªÕâÃ´Âé·³Âï¡£\n");
+    if(obj==me) return notify_fail("ä½ è‡ªå·±è§£å†³ï¼Ÿé‚£å°±æ²¡å¿…è¦è¿™ä¹ˆéº»çƒ¦å˜›ã€‚\n");
     if(query_ip_name(obj)==query_ip_name(me))
-         return notify_fail("Äã×Ô¼º½â¾ö£¿ÄÇ¾ÍÃ»±ØÒªÕâÃ´Âé·³Âï¡£\n");
+         return notify_fail("ä½ è‡ªå·±è§£å†³ï¼Ÿé‚£å°±æ²¡å¿…è¦è¿™ä¹ˆéº»çƒ¦å˜›ã€‚\n");
 
     if (obj->query("age") < 17)
-         return notify_fail("ÈË¼ÒÊ®ÆßËê¶¼Ã»µ½£¬ÄãÏëº¦ÈË°¡£¡\n");
+         return notify_fail("äººå®¶åä¸ƒå²éƒ½æ²¡åˆ°ï¼Œä½ æƒ³å®³äººå•Šï¼\n");
 
     if (userp(obj) && obj->query("mud_age")-obj->query("marks/makelove") < 180)
-         return notify_fail("Ò»ÌìÄÚÁ¬ĞøÕâÑùºÜÉËÔªÆøµÄ£¬ÈÃ"+obj->query("name")+"ĞİÏ¢Ò»»á°É¡£\n");
+         return notify_fail("ä¸€å¤©å†…è¿ç»­è¿™æ ·å¾ˆä¼¤å…ƒæ°”çš„ï¼Œè®©"+obj->query("name")+"ä¼‘æ¯ä¸€ä¼šå§ã€‚\n");
 
     if (obj->query("gender") == me->query("gender"))
-         return notify_fail("ÄãĞÄÖĞ´óº°£º¿ÉÏ§£¡¶Ô·½ÉúÀí½á¹¹¾ÓÈ»ºÍÄãÒ»Ñù¡£\n");
+         return notify_fail("ä½ å¿ƒä¸­å¤§å–Šï¼šå¯æƒœï¼å¯¹æ–¹ç”Ÿç†ç»“æ„å±…ç„¶å’Œä½ ä¸€æ ·ã€‚\n");
 
-    if (!obj->is_character()) return notify_fail("ÍÛ£¬ËÀµÄ¶«Î÷¶¼²»·Å¹ı°¡¡£\n");
+    if (!obj->is_character()) return notify_fail("å“‡ï¼Œæ­»çš„ä¸œè¥¿éƒ½ä¸æ”¾è¿‡å•Šã€‚\n");
 
     if (!living(obj) )
-         return notify_fail(obj->name() + "µÄÑù×ÓÄãÃ»¿´µ½£¿¸É´àÇ¿¼éµÃÁË¡£\n");
+         return notify_fail(obj->name() + "çš„æ ·å­ä½ æ²¡çœ‹åˆ°ï¼Ÿå¹²è„†å¼ºå¥¸å¾—äº†ã€‚\n");
 
     if (userp(obj) && (object)obj->query_temp("pending/ai")!=me )
     {
-         message_vision("\n$N¶ÔÖø$nËµµÀ£ºÎÒµÄ°®ÈË£¬ÎÒ...ÎÒÏëºÍÄãÀ§¾õ.\n\n",me,obj);
+         message_vision("\n$Nå¯¹è‘—$nè¯´é“ï¼šæˆ‘çš„çˆ±äººï¼Œæˆ‘...æˆ‘æƒ³å’Œä½ å›°è§‰.\n\n",me,obj);
          if( objectp(old_target = me->query_temp("pending/ai")) )
              tell_object(old_target,YEL+me->name()
-                    + "ºöÈ»¶ÔÄãÃ»Ê²Ã´ĞËÈ¤ÁË¡£\n"NOR);
+                    + "å¿½ç„¶å¯¹ä½ æ²¡ä»€ä¹ˆå…´è¶£äº†ã€‚\n"NOR);
          me->set_temp("pending/ai", obj);
-         tell_object(obj, YEL"Èç¹ûÄã½ÓÊÜ¶Ô·½°®¸§£¬ÇëÄãÒ²¶Ô" + me->name() 
-             + "("+(string)me->query("id")+")"+ "ÏÂÒ»´Î ai Ö¸Áî¡£\n" NOR);
+         tell_object(obj, YEL"å¦‚æœä½ æ¥å—å¯¹æ–¹çˆ±æŠšï¼Œè¯·ä½ ä¹Ÿå¯¹" + me->name() 
+             + "("+(string)me->query("id")+")"+ "ä¸‹ä¸€æ¬¡ ai æŒ‡ä»¤ã€‚\n" NOR);
 
-         write(YEL "¶Ô·½ÊÇÍæ¼Ò¿ØÖÆµÄÈËÎï£¬Äã±ØĞëµÈ¶Ô·½Í¬Òâ²ÅÄÜ¸ÉÄÇÊÂ¡£\n" NOR);
+         write(YEL "å¯¹æ–¹æ˜¯ç©å®¶æ§åˆ¶çš„äººç‰©ï¼Œä½ å¿…é¡»ç­‰å¯¹æ–¹åŒæ„æ‰èƒ½å¹²é‚£äº‹ã€‚\n" NOR);
          return 1;
     }
 
     if (!userp(obj) && ( random(10)!=2)) 
     {
-         message_vision("\n$n¶Ô$NÅ­Ä¿ÏàÏò: ÄãÔõ÷áÄÜÕâÑù£¿Ë¦Í·¾Í×ßÁË¡£\n",me,obj);
+         message_vision("\n$nå¯¹$Næ€’ç›®ç›¸å‘: ä½ æ€éº½èƒ½è¿™æ ·ï¼Ÿç”©å¤´å°±èµ°äº†ã€‚\n",me,obj);
          destruct(obj);
          return 1;
     } else
     {
-         message_vision("\n$NºÍ$nÔÆÓêÒ»·¬£¬Çú¾¡ÎÂÈá£¬ÎŞËù²»ÖÁ¡£\n",me,obj);
+         message_vision("\n$Nå’Œ$näº‘é›¨ä¸€ç•ªï¼Œæ›²å°½æ¸©æŸ”ï¼Œæ— æ‰€ä¸è‡³ã€‚\n",me,obj);
          obj->start_busy(3);
          me->start_busy(3);
-         message_vision("Ğí¾ÃĞí¾Ã£¬$NºÍ$nÕûÒÂÀíÃæ£¬¾«Éñ´óÕñ¡£\n\n", me,obj);
+         message_vision("è®¸ä¹…è®¸ä¹…ï¼Œ$Nå’Œ$næ•´è¡£ç†é¢ï¼Œç²¾ç¥å¤§æŒ¯ã€‚\n\n", me,obj);
 
          me->add("eff_jing",-5);
          me->add("jing",-10);
@@ -101,12 +101,12 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : ai <ÈËÎï>
+æŒ‡ä»¤æ ¼å¼ : ai <äººç‰©>
 
-Õâ¸öÖ¸ÁîÈÃÄãÏòÒ»¸öÈËÎï½øĞĞ°®¸§£¬»áÏûºÄ¾«Á¦£¬È´¿ÉÒÔ²¹³äÄãµÄÌåÁ¦£¬
-Ôö³¤¾­Ñé£¬µ«ÊÇÓĞĞí¶à×´¿öÄãµÄÒªÇó»á±»¾Ü¾ø¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ å‘ä¸€ä¸ªäººç‰©è¿›è¡Œçˆ±æŠšï¼Œä¼šæ¶ˆè€—ç²¾åŠ›ï¼Œå´å¯ä»¥è¡¥å……ä½ çš„ä½“åŠ›ï¼Œ
+å¢é•¿ç»éªŒï¼Œä½†æ˜¯æœ‰è®¸å¤šçŠ¶å†µä½ çš„è¦æ±‚ä¼šè¢«æ‹’ç»ã€‚
 
-ÆäËûÏà¹ØÖ¸Áî: qiangjian
+å…¶ä»–ç›¸å…³æŒ‡ä»¤: qiangjian
 
 HELP
     );

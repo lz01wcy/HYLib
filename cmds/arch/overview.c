@@ -10,80 +10,80 @@ int main(object me, string arg)
         switch(arg) {
                 case "user":
                         ob = users();
-                        printf("¹²ÓĞ %d ¸öÊ¹ÓÃÕßÎï¼ş¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªä½¿ç”¨è€…ç‰©ä»¶ã€€\n", sizeof(ob));
                         break;
                 case "living":
                         ob = livings();
-                        printf("¹²ÓĞ %d ¸öÉúÎï(º¬Ê¹ÓÃÕß)Îï¼ş¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªç”Ÿç‰©(å«ä½¿ç”¨è€…)ç‰©ä»¶ã€€\n", sizeof(ob));
                         break;
                 case "char":
                         ob = objects( (: $1->is_character() && !clonep($1) :) );
-                        printf("¹²ÓĞ %d ÖÖÈËÎïÎï¼ş master copy ±»ÔØÈë¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ç§äººç‰©ç‰©ä»¶ master copy è¢«è½½å…¥ã€€\n", sizeof(ob));
                         break;
                 case "npc":
                         ob = filter_array( livings(),
                                 (: $1->is_character() && !userp($1) && clonep($1) :) );
-                        printf("¹²ÓĞ %d ¸ö NPC Îï¼ş¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ª NPC ç‰©ä»¶ã€€\n", sizeof(ob));
                         break;
                 case "combat":
                         ob = objects( (: $1->is_fighting() :) );
-                        printf("¹²ÓĞ %d ¸öÈËÎïÕıÔÚÕ½¶·×´Ì¬¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªäººç‰©æ­£åœ¨æˆ˜æ–—çŠ¶æ€ã€€\n", sizeof(ob));
                         break;
                 case "kill":
                         ob = objects( (: $1->is_killing() && $1->is_fighting() :) );
-                        printf("¹²ÓĞ %d ¸öÈËÎïÕıÔÚĞÔÃüÏà²«µÄÕ½¶·×´Ì¬¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªäººç‰©æ­£åœ¨æ€§å‘½ç›¸æçš„æˆ˜æ–—çŠ¶æ€ã€€\n", sizeof(ob));
                         break;
                 case "hunt":
                         ob = objects( (: $1->is_killing() :) );
-                        printf("¹²ÓĞ %d ¸öÈËÎïÕıºÍÆäËûÈËÎï»¥Ïà³ğºŞ¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªäººç‰©æ­£å’Œå…¶ä»–äººç‰©äº’ç›¸ä»‡æ¨ã€€\n", sizeof(ob));
                         break;
                 case "heart beat":
                         ob = objects( (: query_heart_beat :) );
-                        printf("¹²ÓĞ %d ¸öÎï¼şµÄ heart beat ÎªÓĞĞ§×´Ì¬¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªç‰©ä»¶çš„ heart beat ä¸ºæœ‰æ•ˆçŠ¶æ€ã€€\n", sizeof(ob));
                         break;
                 case "virtual":
                         ob = objects( (: virtualp :) );
-                        printf("¹²ÓĞ %d ¸öĞéÄâÎï¼ş¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªè™šæ‹Ÿç‰©ä»¶ã€€\n", sizeof(ob));
                         break;
                 case "room":
                         ob = objects( (: function_exists("create_door", $1) :) );
-                        printf("¹²ÓĞ %d ¸ö·¿¼ä¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªæˆ¿é—´ã€€\n", sizeof(ob));
                         break;
                 case "special room":
                         // inherits won't work if master copy got cleaned up.
                         if( !find_object(ROOM) ) ROOM->foo();
                         ob = objects( (: inherits(ROOM, $1) :) );
-                        printf("¹²ÓĞ %d ¸öÎï¼ş¼Ì³Ğ±ê×¼·¿¼ä¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªç‰©ä»¶ç»§æ‰¿æ ‡å‡†æˆ¿é—´ã€€\n", sizeof(ob));
                         break;
                 case "equip":
                         // inherits won't work if master copy got cleaned up.
                         if( !find_object(F_EQUIP) ) F_EQUIP->foo();
                         ob = objects( (: inherits(F_EQUIP, $1) :) );
-                        printf("¹²ÓĞ %d ¸öÎï¼ş¼Ì³Ğ±ê×¼×°±¸¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªç‰©ä»¶ç»§æ‰¿æ ‡å‡†è£…å¤‡ã€€\n", sizeof(ob));
                         break;
                 case "object":
                         ob = objects();
-                        printf("¹²ÓĞ %d ¸öÎï¼ş±»ÔØÈë¡¡\n", sizeof(ob));
+                        printf("å…±æœ‰ %d ä¸ªç‰©ä»¶è¢«è½½å…¥ã€€\n", sizeof(ob));
                         break;
                 default:
-                        return notify_fail("Ö¸Áî¸ñÊ½£ºoverview <topic>\n");
+                        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šoverview <topic>\n");
         }
         m = 0;
         i = sizeof(ob);
         while(i--)
                 m += memory_info(ob[i]);
-        printf("×Ü¹²Ê¹ÓÃ %d bytes ¼ÇÒäÌå¡¡\n", m);
+        printf("æ€»å…±ä½¿ç”¨ %d bytes è®°å¿†ä½“ã€€\n", m);
         if( sizeof(ob) )
-                printf("Æ½¾ùÃ¿¸öÎï¼şÊ¹ÓÃ %d bytes ¼ÇÒäÌå¡¡\n", m / sizeof(ob));
+                printf("å¹³å‡æ¯ä¸ªç‰©ä»¶ä½¿ç”¨ %d bytes è®°å¿†ä½“ã€€\n", m / sizeof(ob));
         return 1;
 }
 
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºoverview <Ö÷Ìâ>
+æŒ‡ä»¤æ ¼å¼ï¼šoverview <ä¸»é¢˜>
 
-Ö÷Ìâ:
+ä¸»é¢˜:
 
 user
 living

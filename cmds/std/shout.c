@@ -8,29 +8,29 @@ int main(object me, string arg)
 	if( !wizardp(me) )
 {
 if (me->query("neili") <4000)
-		return notify_fail("ÄãµÄÄÚÁ¦²»×ã¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ã€‚\n");
 if (me->query("combat_exp") < 2000000)
-		return notify_fail("ÄãµÄ¾­Ñé²»×ã²»×ã¡£\n");
+		return notify_fail("ä½ çš„ç»éªŒä¸è¶³ä¸è¶³ã€‚\n");
 if (me->query_condition("killer"))
- return notify_fail("ÄãÊÇÍ¨¼­·¸£¬²»ÄÜÈç´Ë¡£\n");
+ return notify_fail("ä½ æ˜¯é€šè¾‘çŠ¯ï¼Œä¸èƒ½å¦‚æ­¤ã€‚\n");
 if (me->is_busy())
- return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+ return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 me->add("neili",-1000);
 me->start_busy(12);
 }
 
-	if (!arg) return notify_fail("ÄãÏëÒª´ó½ĞÊ²Ã´£¿\n");
-        shout(HIW + me->name() + "×İÉù³¤Ğ¥£º" + arg + "\n" + NOR);
-        write(HIW +"Äã×İÉù³¤Ğ¥£º" + arg + "\n" + NOR);
+	if (!arg) return notify_fail("ä½ æƒ³è¦å¤§å«ä»€ä¹ˆï¼Ÿ\n");
+        shout(HIW + me->name() + "çºµå£°é•¿å•¸ï¼š" + arg + "\n" + NOR);
+        write(HIW +"ä½ çºµå£°é•¿å•¸ï¼š" + arg + "\n" + NOR);
 	return 1;
 }
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : shout <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ : shout <è®¯æ¯>
  
-Õâ¸öÖ¸ÁîÈÃÄã½« <Ñ¶Ï¢> ´«ËÍ³öÈ¥, ËùÓĞÕıÔÚÓÎÏ·ÖĞµÄÈË¶¼
-»áÌı¼ûÄãµÄ»°.
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ å°† <è®¯æ¯> ä¼ é€å‡ºå», æ‰€æœ‰æ­£åœ¨æ¸¸æˆä¸­çš„äººéƒ½
+ä¼šå¬è§ä½ çš„è¯.
  
 see also : tune
 HELP

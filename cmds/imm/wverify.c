@@ -1,28 +1,28 @@
 // verify.c
 // Modified by snowman@SJ 16/03/2000
 
-/* ÏĞÀ´ÎŞÁÄ£¬Ğ´ÁË¸ö²éÑ¯Îä¹¦µÄÃüÁî¡£¸öÈË±È½ÏÏ²»¶ÓĞ¿ò¼ÜµÄÍ¼ĞÎ£¬¸÷Î»¶à°üº­¡£
-   PS: ÔÚÃ»ÓĞÓÅ»¯¹ı ansi ÏÔÊ¾µÄOSÀï£¬´øÑÕÉ«µÄ¿ò¼Ü»áÂÒĞòÅÅÁĞ£¬È¥µôcodeÀïµÄ¸öansi color¾ÍĞĞÁË¡£
+/* é—²æ¥æ— èŠï¼Œå†™äº†ä¸ªæŸ¥è¯¢æ­¦åŠŸçš„å‘½ä»¤ã€‚ä¸ªäººæ¯”è¾ƒå–œæ¬¢æœ‰æ¡†æ¶çš„å›¾å½¢ï¼Œå„ä½å¤šåŒ…æ¶µã€‚
+   PS: åœ¨æ²¡æœ‰ä¼˜åŒ–è¿‡ ansi æ˜¾ç¤ºçš„OSé‡Œï¼Œå¸¦é¢œè‰²çš„æ¡†æ¶ä¼šä¹±åºæ’åˆ—ï¼Œå»æ‰codeé‡Œçš„ä¸ªansi colorå°±è¡Œäº†ã€‚
    
-	ÓÃ verify xxx.yyy ÊÇ call yyy ÎÄ¼şÀïµÄ int help(object me)£¬¿ÉÒÔ°´ÕÕÆäËü
-	command µÄhelp()À´Ğ´¡£
-   ±¾ÏëÔÙ¼ÓµãÆäËü¹¦ÄÜµÄ£¬µ«¾õµÃ¹ıÓÚ»¨ÉÚÁË·´¶ø²»ºÃ£¬¾ÍÕâÑù°É¡£
-   ¸½Ì«¼«È­µÄhelp()ÒÔ×ö²Î¿¼£º
+	ç”¨ verify xxx.yyy æ˜¯ call yyy æ–‡ä»¶é‡Œçš„ int help(object me)ï¼Œå¯ä»¥æŒ‰ç…§å…¶å®ƒ
+	command çš„help()æ¥å†™ã€‚
+   æœ¬æƒ³å†åŠ ç‚¹å…¶å®ƒåŠŸèƒ½çš„ï¼Œä½†è§‰å¾—è¿‡äºèŠ±å“¨äº†åè€Œä¸å¥½ï¼Œå°±è¿™æ ·å§ã€‚
+   é™„å¤ªææ‹³çš„help()ä»¥åšå‚è€ƒï¼š
 
 int help(object me)
 {
-	write(WHT"\nÌ«¼«È­£º"NOR"\n");
+	write(WHT"\nå¤ªææ‹³ï¼š"NOR"\n");
 	write(@HELP
-	Ì«¼«È­£¬ÎªËÎÄ©Ôª³õÎäµ±ÕÅÈı·áÕæÈËËù´´£¬ºÏµÀ¼ÒÖ®Ëµ£¬³åĞé×ÔÈ»£¬Ö÷ÒÔÂı
-	´ò¿ì£¬ÒÔ¾²ÖÆ¶¯£¬áá·¢ÖÆÈË£¬ÎŞÎªÖÁĞéÖ®ÄîµÄÉÏ³ËÎäÑ§¡£È­³öÊ±Ë«ÊÖÔ²×ª£¬
-	Ã¿Ò»ÕĞ¶¼º¬×ÅÌ«¼«Ê½µÄÒõÑô±ä»¯£¬¾«Î¢°ÂÃî£¬ÊµÊÇ¿ª±ÙÁËÎäÑ§ÖĞ´ÓËùÎ´ÓĞµÄ
-	ĞÂÌìµØ¡£¾÷ÇÏÎª¡¸ĞéÁé¶¥¾¢¡¢º­ĞØ°Î±³¡¢ËÉÑü´¹ÍÎ¡¢³Á¼ç×¹Öâ¡¹Ê®Áù¸ö×Ö£¬
-	´¿ÒÔÒâĞĞ£¬×î¼ÉÓÃÁ¦¡£ĞÎÉñºÏÒ»£¬ÊÇÕâÂ·È­·¨µÄÒªÖ¼¡£
-	Ì«¼«È­¾¢Ê×ÒªÔÚËÆËÉ·ÇËÉ£¬½«Õ¹Î´Õ¹£¬¾¢¶ÏÒâ²»¶Ï£¬Æä½ÓÁ¦´òÁ¦ÎªÎäÁÖÒ»¾ø¡£
+	å¤ªææ‹³ï¼Œä¸ºå®‹æœ«å…ƒåˆæ­¦å½“å¼ ä¸‰ä¸°çœŸäººæ‰€åˆ›ï¼Œåˆé“å®¶ä¹‹è¯´ï¼Œå†²è™šè‡ªç„¶ï¼Œä¸»ä»¥æ…¢
+	æ‰“å¿«ï¼Œä»¥é™åˆ¶åŠ¨ï¼Œå¾Œå‘åˆ¶äººï¼Œæ— ä¸ºè‡³è™šä¹‹å¿µçš„ä¸Šä¹˜æ­¦å­¦ã€‚æ‹³å‡ºæ—¶åŒæ‰‹åœ†è½¬ï¼Œ
+	æ¯ä¸€æ‹›éƒ½å«ç€å¤ªæå¼çš„é˜´é˜³å˜åŒ–ï¼Œç²¾å¾®å¥¥å¦™ï¼Œå®æ˜¯å¼€è¾Ÿäº†æ­¦å­¦ä¸­ä»æ‰€æœªæœ‰çš„
+	æ–°å¤©åœ°ã€‚è¯€çªä¸ºã€Œè™šçµé¡¶åŠ²ã€æ¶µèƒ¸æ‹”èƒŒã€æ¾è…°å‚è‡€ã€æ²‰è‚©å è‚˜ã€åå…­ä¸ªå­—ï¼Œ
+	çº¯ä»¥æ„è¡Œï¼Œæœ€å¿Œç”¨åŠ›ã€‚å½¢ç¥åˆä¸€ï¼Œæ˜¯è¿™è·¯æ‹³æ³•çš„è¦æ—¨ã€‚
+	å¤ªææ‹³åŠ²é¦–è¦åœ¨ä¼¼æ¾éæ¾ï¼Œå°†å±•æœªå±•ï¼ŒåŠ²æ–­æ„ä¸æ–­ï¼Œå…¶æ¥åŠ›æ‰“åŠ›ä¸ºæ­¦æ—ä¸€ç»ã€‚
 	
-	ÒªÇó£º	ë³ëµ×ÏÆøµÈ¼¶ 100 ÒÔÉÏ£»
-		ÄÚÁ¦ 500 ÒÔÉÏ£»      
-		ÓĞÕÅÈı·áÇ×´«È­ÕĞ¡£
+	è¦æ±‚ï¼š	æ°¤æ°²ç´«æ°”ç­‰çº§ 100 ä»¥ä¸Šï¼›
+		å†…åŠ› 500 ä»¥ä¸Šï¼›      
+		æœ‰å¼ ä¸‰ä¸°äº²ä¼ æ‹³æ‹›ã€‚
 HELP
 	);
 	return 1;
@@ -35,39 +35,39 @@ HELP
 inherit F_CLEAN_UP;
 
 string *skill_level_desc = ({
-        BLU "²»¿°Ò»»÷" NOR,BLU "ºÁ²»×ãÂÇ" NOR,BLU "²»×ã¹Ò³İ" NOR,BLU "³õÑ§Õ§Á·" NOR,BLU "ÃãÃãÇ¿Ç¿" NOR,
-        HIB "³õ¿úÃÅ¾¶" NOR,HIB "³õ³öÃ©Â®" NOR,HIB "ÂÔÖªÒ»¶ş" NOR,HIB "ÆÕÆÕÍ¨Í¨" NOR,HIB "Æ½Æ½µ­µ­" NOR,
-        CYN "Æ½µ­ÎŞÆæ" NOR,CYN "´ÖÍ¨Æ¤Ã«" NOR,CYN "°ëÉú²»Êì" NOR,CYN "ÂíÂí»¢»¢" NOR,CYN "ÂÔÓĞĞ¡³É" NOR,
-        HIC "ÒÑÓĞĞ¡³É" NOR,HIC "º×Á¢¼¦Èº" NOR,HIC "¼İÇá¾ÍÊì" NOR,HIC "Çà³öÓÚÀ¶" NOR,HIC "ÈÚ»á¹áÍ¨" NOR,
-        GRN "ĞÄÁìÉñ»á" NOR,GRN "Â¯»ğ´¿Çà" NOR,GRN "ÁËÈ»ÓÚĞØ" NOR,GRN "ÂÔÓĞ´ó³É" NOR,GRN "ÒÑÓĞ´ó³É" NOR,
-        YEL "»íÈ»¹áÍ¨" NOR,YEL "³öÀà°ÎİÍ" NOR,YEL "ÎŞ¿ÉÆ¥µĞ" NOR,YEL "¼¼¹ÚÈºĞÛ" NOR,YEL "ÉñºõÆä¼¼" NOR,
-        HIY "³öÉñÈë»¯" NOR,HIY "·ÇÍ¬·²Ïì" NOR,HIY "°ÁÊÓÈºĞÛ" NOR,HIY "µÇ·åÔì¼«" NOR,HIY "ÎŞÓëÂ×±È" NOR,
-        RED "ËùÏòÅûÃÒ" NOR,RED "Ò»´ú×ÚÊ¦" NOR,RED "¾«Éî°ÂÃî" NOR,RED "Éñ¹¦¸ÇÊÀ" NOR,RED "¾ÙÊÀÎŞË«" NOR,
-        WHT "¾ªÊÀº§Ë×" NOR,WHT "º³Ìì¶¯µØ" NOR,WHT "Õğ¹Åîå½ñ" NOR,WHT "³¬·²ÈëÊ¥" NOR,WHT "ÍşÕòå¾Óî" NOR,
-        HIW "¿ÕÇ°¾øºó" NOR,HIW "ÌìÈËºÏÒ»" NOR,MAG "Éî²Ø²»Â¶" NOR,HIM "Éî²»¿É²â" NOR,HIR "·µè±¹éÕæ" NOR
+        BLU "ä¸å ªä¸€å‡»" NOR,BLU "æ¯«ä¸è¶³è™‘" NOR,BLU "ä¸è¶³æŒ‚é½¿" NOR,BLU "åˆå­¦ä¹ç»ƒ" NOR,BLU "å‹‰å‹‰å¼ºå¼º" NOR,
+        HIB "åˆçª¥é—¨å¾„" NOR,HIB "åˆå‡ºèŒ…åº" NOR,HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,HIB "æ™®æ™®é€šé€š" NOR,HIB "å¹³å¹³æ·¡æ·¡" NOR,
+        CYN "å¹³æ·¡æ— å¥‡" NOR,CYN "ç²—é€šçš®æ¯›" NOR,CYN "åŠç”Ÿä¸ç†Ÿ" NOR,CYN "é©¬é©¬è™è™" NOR,CYN "ç•¥æœ‰å°æˆ" NOR,
+        HIC "å·²æœ‰å°æˆ" NOR,HIC "é¹¤ç«‹é¸¡ç¾¤" NOR,HIC "é©¾è½»å°±ç†Ÿ" NOR,HIC "é’å‡ºäºè“" NOR,HIC "èä¼šè´¯é€š" NOR,
+        GRN "å¿ƒé¢†ç¥ä¼š" NOR,GRN "ç‚‰ç«çº¯é’" NOR,GRN "äº†ç„¶äºèƒ¸" NOR,GRN "ç•¥æœ‰å¤§æˆ" NOR,GRN "å·²æœ‰å¤§æˆ" NOR,
+        YEL "è±ç„¶è´¯é€š" NOR,YEL "å‡ºç±»æ‹”èƒ" NOR,YEL "æ— å¯åŒ¹æ•Œ" NOR,YEL "æŠ€å† ç¾¤é›„" NOR,YEL "ç¥ä¹å…¶æŠ€" NOR,
+        HIY "å‡ºç¥å…¥åŒ–" NOR,HIY "éåŒå‡¡å“" NOR,HIY "å‚²è§†ç¾¤é›„" NOR,HIY "ç™»å³°é€ æ" NOR,HIY "æ— ä¸ä¼¦æ¯”" NOR,
+        RED "æ‰€å‘æŠ«é¡" NOR,RED "ä¸€ä»£å®—å¸ˆ" NOR,RED "ç²¾æ·±å¥¥å¦™" NOR,RED "ç¥åŠŸç›–ä¸–" NOR,RED "ä¸¾ä¸–æ— åŒ" NOR,
+        WHT "æƒŠä¸–éª‡ä¿—" NOR,WHT "æ’¼å¤©åŠ¨åœ°" NOR,WHT "éœ‡å¤é“„ä»Š" NOR,WHT "è¶…å‡¡å…¥åœ£" NOR,WHT "å¨é•‡å¯°å®‡" NOR,
+        HIW "ç©ºå‰ç»å" NOR,HIW "å¤©äººåˆä¸€" NOR,MAG "æ·±è—ä¸éœ²" NOR,HIM "æ·±ä¸å¯æµ‹" NOR,HIR "è¿”ç’å½’çœŸ" NOR
 });
 
 string *knowledge_level_desc = ({
-	BLU "ĞÂÑ§Õ§ÓÃ" NOR,BLU "³õ¿úÃÅ¾¶" NOR,HIB "ÂÔÖªÒ»¶ş" NOR,HIB "°ëÉú²»Êì" NOR,
-	CYN "ÂíÂí»¢»¢" NOR,CYN "ÒÑÓĞĞ¡³É" NOR,HIC "ÈÚ»á¹áÍ¨" NOR,HIC "ĞÄÁìÉñ»á" NOR,
-	GRN "ÁËÈ»ì¶ĞØ" NOR,GRN "ÒÑÓĞ´ó³É" NOR,YEL "·ÇÍ¬·²Ïì" NOR,YEL "¾ÙÊÀÎŞË«" NOR,
-	HIY "Õğ¹Åîå½ñ" NOR,RED "ÎŞÓëÂ×±È" NOR,WHT "³¬·²ÈëÊ¥" NOR,HIW "¿ÕÇ°¾øºó" NOR,
+	BLU "æ–°å­¦ä¹ç”¨" NOR,BLU "åˆçª¥é—¨å¾„" NOR,HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,HIB "åŠç”Ÿä¸ç†Ÿ" NOR,
+	CYN "é©¬é©¬è™è™" NOR,CYN "å·²æœ‰å°æˆ" NOR,HIC "èä¼šè´¯é€š" NOR,HIC "å¿ƒé¢†ç¥ä¼š" NOR,
+	GRN "äº†ç„¶æ–¼èƒ¸" NOR,GRN "å·²æœ‰å¤§æˆ" NOR,YEL "éåŒå‡¡å“" NOR,YEL "ä¸¾ä¸–æ— åŒ" NOR,
+	HIY "éœ‡å¤é“„ä»Š" NOR,RED "æ— ä¸ä¼¦æ¯”" NOR,WHT "è¶…å‡¡å…¥åœ£" NOR,HIW "ç©ºå‰ç»å" NOR,
 });
 
 
 mapping valid_type = ([
-"unarmed":      "È­½Å",
-"claw":         "×¦¹¦","cuff":         "È­¹¦",
-"finger":       "Ö¸¹¦","strike":       "ÕÆ¹¦",
-"hand":         "ÊÖ¹¦","leg":          "ÍÈ¹¦",
-"sword":        "½£·¨","blade":        "µ¶·¨",	
-"dagger":       "Ø°·¨","brush":        "±Ê·¨",		
-"spear":        "Ç¹·¨","hook":         "¹³·¨",		
-"stick":        "°ô·¨","staff":        "ÕÈ·¨",		
-"club" :        "¹÷·¨","throwing":     "°µÆ÷",		
-"whip":         "±Ş·¨","axe":          "¸«·¨",
-"hammer":       "´¸·¨","force":        "ÄÚ¹¦",	
-"dodge":        "Çá¹¦","parry":        "ÕĞ¼Ü",	
+"unarmed":      "æ‹³è„š",
+"claw":         "çˆªåŠŸ","cuff":         "æ‹³åŠŸ",
+"finger":       "æŒ‡åŠŸ","strike":       "æŒåŠŸ",
+"hand":         "æ‰‹åŠŸ","leg":          "è…¿åŠŸ",
+"sword":        "å‰‘æ³•","blade":        "åˆ€æ³•",	
+"dagger":       "åŒ•æ³•","brush":        "ç¬”æ³•",		
+"spear":        "æªæ³•","hook":         "é’©æ³•",		
+"stick":        "æ£’æ³•","staff":        "æ–æ³•",		
+"club" :        "æ£æ³•","throwing":     "æš—å™¨",		
+"whip":         "é­æ³•","axe":          "æ–§æ³•",
+"hammer":       "é”¤æ³•","force":        "å†…åŠŸ",	
+"dodge":        "è½»åŠŸ","parry":        "æ‹›æ¶",	
 ]);
 
 string skill_level(string, int);
@@ -98,49 +98,49 @@ int main(object me, string arg)
 
         seteuid(getuid());
 
-        if(!arg) return notify_fail("Ö¸Áî¸ñÊ½ : verify [Îä¹¦Ãû³Æ].[?|ÌØÊâ¼¼ÄÜ]\n");
+        if(!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : verify [æ­¦åŠŸåç§°].[?|ç‰¹æ®ŠæŠ€èƒ½]\n");
 	
 	sscanf(arg, "%s.%s", arg, str);
 		
 //	if(!me->query_skill(arg, 1)) 
-//		return notify_fail("ÄãÒª²é¶ÔÊ²Ã´¼¼ÄÜ£¿\n");
+//		return notify_fail("ä½ è¦æŸ¥å¯¹ä»€ä¹ˆæŠ€èƒ½ï¼Ÿ\n");
 	
 	if(file_size(SKILL_D(arg)+".c") < 1)
-		return notify_fail("´íÎó£¡ÄãÒª²é¶Ô¼¼ÄÜÎÄ¼şÒÑ¾­ÏûÊ§£¬ÇëÍ¨ÖªÎ×Ê¦¡£\n");
+		return notify_fail("é”™è¯¯ï¼ä½ è¦æŸ¥å¯¹æŠ€èƒ½æ–‡ä»¶å·²ç»æ¶ˆå¤±ï¼Œè¯·é€šçŸ¥å·«å¸ˆã€‚\n");
 	
 	if( stringp(str) ){
-		// ¸ñÊ½ verify xxx.? ÊÇ²éÑ¯´ËskillµÄ°ïÖú¡£
-		// verify xxx.yyy ÊÇ²éÑ¯ yyy µÄ°ïÖú¡£
+		// æ ¼å¼ verify xxx.? æ˜¯æŸ¥è¯¢æ­¤skillçš„å¸®åŠ©ã€‚
+		// verify xxx.yyy æ˜¯æŸ¥è¯¢ yyy çš„å¸®åŠ©ã€‚
 		if( str == "?" ){
-			notify_fail("¶Ô²»Æğ£¬¡¸"+to_chinese(arg)+"¡¹Ä¿Ç°»¹Ã»ÓĞÏêÏ¸µÄ°ïÖúËµÃ÷¡£\n");
+			notify_fail("å¯¹ä¸èµ·ï¼Œã€Œ"+to_chinese(arg)+"ã€ç›®å‰è¿˜æ²¡æœ‰è¯¦ç»†çš„å¸®åŠ©è¯´æ˜ã€‚\n");
 			return SKILL_D(arg)->help(me);
 		}
 		else if( stringp(exert = SKILL_D(arg)->exert_function_file("")) && file_size(exert + str +".c") > 0){
-			notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"ÄÚ¹¦·½ÃæµÄ¡¸"+str+"¡¹¹¦ÄÜÃ»ÓĞÏêÏ¸µÄËµÃ÷¡£\n");
+			notify_fail("å¯¹ä¸èµ·ï¼Œ"+to_chinese(arg)+"å†…åŠŸæ–¹é¢çš„ã€Œ"+str+"ã€åŠŸèƒ½æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜ã€‚\n");
 			return (exert + str)->help(me);
 		}
 		else if( stringp(exert = SKILL_D(arg)->perform_action_file("")) && file_size(exert + str +".c") > 0){
-			notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"Íâ¹¦·½ÃæµÄ¡¸"+str+"¡¹¹¦ÄÜÃ»ÓĞÏêÏ¸µÄËµÃ÷¡£\n");
+			notify_fail("å¯¹ä¸èµ·ï¼Œ"+to_chinese(arg)+"å¤–åŠŸæ–¹é¢çš„ã€Œ"+str+"ã€åŠŸèƒ½æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜ã€‚\n");
 			return (exert + str)->help(me);
 		}
-		return notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"Ã»ÓĞ¡¸"+str+"¡¹ÕâÏî¹¦ÄÜ¡£\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼Œ"+to_chinese(arg)+"æ²¡æœ‰ã€Œ"+str+"ã€è¿™é¡¹åŠŸèƒ½ã€‚\n");
 	}
 	
 	lrn = me->query_learned();
         if( !mapp(lrn) ) lrn = ([]);
         
-	str = sprintf("\n©°%-24s©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´\n", HIW"¡¾"+to_chinese(arg)+"¹¦ÄÜ±í¡¿"NOR);
+	str = sprintf("\nâ”Œ%-24sâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n", HIW"ã€"+to_chinese(arg)+"åŠŸèƒ½è¡¨ã€‘"NOR);
 	
-	str = replace_string(str, "  ", "©¤");
-	str += sprintf("©¦"HIY"µÈ¼¶"NOR"£º  %s %3d/%6d\t      "HIY"Àà±ğ"NOR"£º  %-15s%9s  \n",skill_level(SKILL_D(arg)->type(), 
+	str = replace_string(str, "  ", "â”€");
+	str += sprintf("â”‚"HIY"ç­‰çº§"NOR"ï¼š  %s %3d/%6d\t      "HIY"ç±»åˆ«"NOR"ï¼š  %-15s%9s  \n",skill_level(SKILL_D(arg)->type(), 
 			me->query_skill(arg, 1)), me->query_skill(arg, 1), 
-			(int)lrn[arg], SKILL_D(arg)->type(), "©¦");	
+			(int)lrn[arg], SKILL_D(arg)->type(), "â”‚");	
 	
 	if(SKILL_D(arg)->type() != "martial"
 	|| member_array(arg, keys(valid_type))!=-1) 
-		return notify_fail(str+"©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n");
+		return notify_fail(str+"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
 		
-	str += "©¦\t\t\t\t\t\t\t\t    ©¦\n";
+	str += "â”‚\t\t\t\t\t\t\t\t    â”‚\n";
 	sk = load_object(SKILL_D(arg));
 	
 	exert = skill_enables(sk);
@@ -159,10 +159,10 @@ int main(object me, string arg)
 	
 	if(j && j > 0){
 		if( i )
-			str = str + "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
-		str += "©¦"HIY"ÄÚ¹¦·½Ãæ(exert + )"NOR"£º\t\t\t\t\t\t    ";
+			str = str + "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
+		str += "â”‚"HIY"å†…åŠŸæ–¹é¢(exert + )"NOR"ï¼š\t\t\t\t\t\t    ";
 		for(i=0; i < j; i++){
-			if (i % 4 == 0) str += "©¦\n©¦\t";
+			if (i % 4 == 0) str += "â”‚\nâ”‚\t";
 			str += sprintf("%-14s ",YEL+replace_string(file[i], ".c", "")+NOR);
 			if ( i > j-2 ){
 				switch(i%4){
@@ -173,7 +173,7 @@ int main(object me, string arg)
 				}
                         }
 		}
-		str += "©¦\n";
+		str += "â”‚\n";
 		j = 0;
 	}
 	
@@ -187,10 +187,10 @@ int main(object me, string arg)
 	
 	if(j && j > 0){
 		if( i )
-			str = str + "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
-		str += "©¦"HIY"Íâ¹¦·½Ãæ(perform + )"NOR"£º\t\t\t\t\t    ";
+			str = str + "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
+		str += "â”‚"HIY"å¤–åŠŸæ–¹é¢(perform + )"NOR"ï¼š\t\t\t\t\t    ";
 		for(i=0; i < j; i++){
-			if (i % 4 == 0) str += "©¦\n©¦\t";
+			if (i % 4 == 0) str += "â”‚\nâ”‚\t";
 			str += sprintf("%-14s ",WHT+replace_string(file[i], ".c", "")+NOR);
 			if ( i > j-2 ){
 				switch(i%4){
@@ -201,9 +201,9 @@ int main(object me, string arg)
 				}
                         }
 		}
-		str += "©¦\n";
+		str += "â”‚\n";
 	}
-	str += "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n";
+	str += "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n";
         write(str);
         return 1;
 }
@@ -223,10 +223,10 @@ string skill_enables(object sk)
 	j = sizeof(skills);
 	if( !j || j < 1)
 		return "";
-	str = "©¦"HIY"ÌØÊâ¼¼ÄÜ"NOR"£º\t\t\t\t\t\t\t    ";
+	str = "â”‚"HIY"ç‰¹æ®ŠæŠ€èƒ½"NOR"ï¼š\t\t\t\t\t\t\t    ";
 		
 	for(i=0; i < j; i++) {
-		if (i % 4 == 0) str += "©¦\n©¦\t";
+		if (i % 4 == 0) str += "â”‚\nâ”‚\t";
 		str += sprintf("%-14s ", HIC+valid_type[skills[i]]+"("+skills[i]+")"NOR);
 		if ( i > j-2 ){
 			switch(i%4){
@@ -237,7 +237,7 @@ string skill_enables(object sk)
 			}
                 }
 	}
-	str += "©¦\n";
+	str += "â”‚\n";
 	return str;
 }
 
@@ -261,21 +261,21 @@ string skill_level(string type, int level)
 
 int help(object me)
 {
-	write("\nÖ¸Áî¸ñÊ½ : verify [Îä¹¦Ãû³Æ].[¾øÕĞÃû³Æ | ?]\n");
+	write("\næŒ‡ä»¤æ ¼å¼ : verify [æ­¦åŠŸåç§°].[ç»æ‹›åç§° | ?]\n");
 	write(@HELP
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã²éÑ¯´ËÏî¼¼ÄÜµÄ¹¦ÄÜºÍÊı¾İ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æŸ¥è¯¢æ­¤é¡¹æŠ€èƒ½çš„åŠŸèƒ½å’Œæ•°æ®ã€‚
 
-ÌØÊâ¼¼ÄÜ±íÊ¾¿ÉÒÔ enable µÄ¼¼ÄÜ£¬Èç£º
-	(Çá¹¦¡¢ÕĞ¼Ü¡¢¹÷·¨¡¢ÕÈ·¨) ±íÊ¾£º´ËÎä¹¦¿ÉÒÔÓÃ×÷Çá¹¦£¬ÕĞ¼Ü£¬¹÷·¨£¬ÕÈ·¨µÈ¡£
+ç‰¹æ®ŠæŠ€èƒ½è¡¨ç¤ºå¯ä»¥ enable çš„æŠ€èƒ½ï¼Œå¦‚ï¼š
+	(è½»åŠŸã€æ‹›æ¶ã€æ£æ³•ã€æ–æ³•) è¡¨ç¤ºï¼šæ­¤æ­¦åŠŸå¯ä»¥ç”¨ä½œè½»åŠŸï¼Œæ‹›æ¶ï¼Œæ£æ³•ï¼Œæ–æ³•ç­‰ã€‚
 
-ÄÚ¹¦·½ÃæÏÔÊ¾¿ÉÔËÓÃ(exert)µÄÄÚ¹¦¡£
+å†…åŠŸæ–¹é¢æ˜¾ç¤ºå¯è¿ç”¨(exert)çš„å†…åŠŸã€‚
 
-Íâ¹¦·½ÃæÏÔÊ¾¿ÉÊ¹ÓÃ(perform)µÄÍâ¹¦£¬¾øÕĞµÈ¡£
+å¤–åŠŸæ–¹é¢æ˜¾ç¤ºå¯ä½¿ç”¨(perform)çš„å¤–åŠŸï¼Œç»æ‹›ç­‰ã€‚
 
-Èç¹ûÄÚ¹¦»òÍâ¹¦µÄ¾øÕĞÓĞ°ïÖú½éÉÜ£¬¿ÉÓÃ verify skill.pfm µÄĞÎÊ½À´²é¿´¡£
-Èç£º 	verify taiji-quan.dongjing  ²é¿´¶¯¾²¾ö
-	verify yinyun-ziqi.yinyun   ²é¿´ë³ëµÄÚ¾Û
-	verify taiji-quan.?	    ²é¿´Ì«¼«È­
+å¦‚æœå†…åŠŸæˆ–å¤–åŠŸçš„ç»æ‹›æœ‰å¸®åŠ©ä»‹ç»ï¼Œå¯ç”¨ verify skill.pfm çš„å½¢å¼æ¥æŸ¥çœ‹ã€‚
+å¦‚ï¼š 	verify taiji-quan.dongjing  æŸ¥çœ‹åŠ¨é™å†³
+	verify yinyun-ziqi.yinyun   æŸ¥çœ‹æ°¤æ°²å†…èš
+	verify taiji-quan.?	    æŸ¥çœ‹å¤ªææ‹³
 
 
 Snowman@SJ 06/04/1999

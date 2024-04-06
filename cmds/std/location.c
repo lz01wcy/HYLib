@@ -5,12 +5,12 @@
 inherit F_CLEAN_UP;
 
 string *place_desc = ({
-	"¿Íµê" ,
-	"ÎäÃí" ,
-	"ÖĞĞÄ¹ã³¡" ,
-	"ÇàÊ¯´óµÀ" ,
-	"É½Â·" ,
-	"´óæäµÀ"
+	"å®¢åº—" ,
+	"æ­¦åº™" ,
+	"ä¸­å¿ƒå¹¿åœº" ,
+	"é’çŸ³å¤§é“" ,
+	"å±±è·¯" ,
+	"å¤§é©¿é“"
 });
 int main(object me, string arg)
 {
@@ -25,50 +25,50 @@ int main(object me, string arg)
 int maxpot;	        
 	seteuid(getuid());
 
-        if ( (!(fam = me->query("family")) || fam["family_name"] != "ÌÒ»¨µº") && !wizardp(me) )
-		return notify_fail("Ö»ÓĞÌÒ»¨µºµÜ×Ó²ÅÄÜ´òÌ½±ğÈËµÄËùÔÚ£¡\n");
+        if ( (!(fam = me->query("family")) || fam["family_name"] != "æ¡ƒèŠ±å²›") && !wizardp(me) )
+		return notify_fail("åªæœ‰æ¡ƒèŠ±å²›å¼Ÿå­æ‰èƒ½æ‰“æ¢åˆ«äººçš„æ‰€åœ¨ï¼\n");
 
 	if( (lvl = (int)me->query_skill("count", 1)) < 10 )
-		return notify_fail("ÄãµÄÒõÑô°ËØÔÉĞÎ´´¿Êì£¬ÎŞ·¨ÁË½â±ğÈËµÄËùÔÚ£¡\n");
+		return notify_fail("ä½ çš„é˜´é˜³å…«å¦å°šæœªçº¯ç†Ÿï¼Œæ— æ³•äº†è§£åˆ«äººçš„æ‰€åœ¨ï¼\n");
 
 
 	if( ((int)me->query_skill("bibo-shengong", 1)) < 10 )
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦ÉĞÎ´´¿Êì£¡\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸå°šæœªçº¯ç†Ÿï¼\n");
 		
 if (!environment(me))
-                return notify_fail("²»ÒªÓ°Ïì±ğÈË£¬»¹ÊÇÕÒÒ»¸ö±ğµÄµØ·½°É¡£\n");
+                return notify_fail("ä¸è¦å½±å“åˆ«äººï¼Œè¿˜æ˜¯æ‰¾ä¸€ä¸ªåˆ«çš„åœ°æ–¹å§ã€‚\n");
         if (environment(me)->query("sleep_room"))
-                return notify_fail("²»ÒªÓ°Ïì±ğÈË£¬»¹ÊÇÕÒÒ»¸ö±ğµÄµØ·½°É¡£\n");
+                return notify_fail("ä¸è¦å½±å“åˆ«äººï¼Œè¿˜æ˜¯æ‰¾ä¸€ä¸ªåˆ«çš„åœ°æ–¹å§ã€‚\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
        if( environment(me)->query("no_beg") ||
        environment(me)->query("no_fight") ||
        environment(me)->query("no_steal")) 
-          return notify_fail(HIY"\n²»ÒªÓ°Ïì±ğÈË£¬»¹ÊÇÕÒÒ»¸ö±ğµÄµØ·½°É¡£\n"NOR);
+          return notify_fail(HIY"\nä¸è¦å½±å“åˆ«äººï¼Œè¿˜æ˜¯æ‰¾ä¸€ä¸ªåˆ«çš„åœ°æ–¹å§ã€‚\n"NOR);
 
         if (me->is_busy()
         || me->query_temp("pending/exercising")
         || me->query_temp("exit_blocked"))
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if ( !arg )
-		return notify_fail("ÄãÒª´òÌıË­µÄËùÔÚ£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬è°çš„æ‰€åœ¨ï¼Ÿ\n");
 
         if ( present(arg, environment(me)) )
-		return notify_fail("ÄãÒª´òÌıµÄÈË¾ÍÔÚ±ßÉÏ£¬ÄãÓĞÎÊÌâ°É£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬çš„äººå°±åœ¨è¾¹ä¸Šï¼Œä½ æœ‰é—®é¢˜å§ï¼Ÿ\n");
 
 	ob = find_player(arg);
 	if (!ob) ob = find_living(arg);
-	if (!ob) return notify_fail("ÄãÒª´òÌıË­µÄËùÔÚ£¿\n");
+	if (!ob) return notify_fail("ä½ è¦æ‰“å¬è°çš„æ‰€åœ¨ï¼Ÿ\n");
         if( !wizardp(me) && wizardp(ob) ) 
-		return notify_fail("ÄãÒª´òÌıË­µÄËùÔÚ£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬è°çš„æ‰€åœ¨ï¼Ÿ\n");
 
 	if ( ob == me )
-		return notify_fail("ÄãÃ»Õâ÷á±¿°É£¬Òª±ğÈË¸æËßÄã×Ô¼ºµÄËùÔÚ£¿\n");
-	if ( me->query("jing") <= 60 )		return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨È¥´òÌı±ğÈËµÄËùÔÚ¡£\n");
-if ( me->query("qi") <= 60 )		return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨È¥´òÌı±ğÈËµÄËùÔÚ¡£\n");
+		return notify_fail("ä½ æ²¡è¿™éº½ç¬¨å§ï¼Œè¦åˆ«äººå‘Šè¯‰ä½ è‡ªå·±çš„æ‰€åœ¨ï¼Ÿ\n");
+	if ( me->query("jing") <= 60 )		return notify_fail("ç°åœ¨ä½ å¤ªç´¯äº†ï¼Œæ— æ³•å»æ‰“å¬åˆ«äººçš„æ‰€åœ¨ã€‚\n");
+if ( me->query("qi") <= 60 )		return notify_fail("ç°åœ¨ä½ å¤ªç´¯äº†ï¼Œæ— æ³•å»æ‰“å¬åˆ«äººçš„æ‰€åœ¨ã€‚\n");
 
-	message_vision(CYN"$NÄÃÆğÒ»Ö»Ìú°ËØÔÆÁĞÄÄıÆø£¬Ä´Ö¸ÒÀ´ÎÆşÏòÌú°ËØÔÉÏ×Ó¡¢³ó¡¢Òú¡¢Ã®¡¢³½¡¢ËÈ¡¢Îç¡¢Î´¡¢Éê¡¢ÓÏ¡¢Ğç¡¢º¥\n¸÷¸ö·½Î»£¬Ï¸ĞÄÍÆËãÆğÀ´¡­¡­\n\n\n"NOR, me);
+	message_vision(CYN"$Næ‹¿èµ·ä¸€åªé“å…«å¦å±å¿ƒå‡æ°”ï¼Œæ‹‡æŒ‡ä¾æ¬¡æå‘é“å…«å¦ä¸Šå­ã€ä¸‘ã€å¯…ã€å¯ã€è¾°ã€å·³ã€åˆã€æœªã€ç”³ã€é…‰ã€æˆŒã€äº¥\nå„ä¸ªæ–¹ä½ï¼Œç»†å¿ƒæ¨ç®—èµ·æ¥â€¦â€¦\n\n\n"NOR, me);
 	busy_time = 30 - lvl/10;
 	if(busy_time < 8) busy_time = 8;
 	if(busy_time > 20) busy_time = 20;
@@ -82,235 +82,235 @@ if (random(40)==1 && me->query("combat_exp") > 1000000)
 obj=new("/quest/menpaijob/shenlong/menggu"); 
 obj->move(environment(me));
 obj->do_copy(me,maxpot,2);
-obj->set("title",HIY"Ñ²Âß¹Ù±ø"NOR);
+obj->set("title",HIY"å·¡é€»å®˜å…µ"NOR);
 obj->set("usename",me->query("name"));
 me->start_busy(1);
-message_vision(HIY"¸½½ü×ßÀ´Ò»ÃûºÜĞ×ºİµÄÑ²Âß¹Ù±ø£¡\n"NOR, obj);
-message_vision(HIR"$NËµµÀ: ÄãÕâ¸öÑıÈË¾¹¸Ò»óÖÚ£¬ÎÒÌØÀ´ÏûÃğÄãÕâµÈÑıÈË£¡\n"NOR, obj);
+message_vision(HIY"é™„è¿‘èµ°æ¥ä¸€åå¾ˆå‡¶ç‹ çš„å·¡é€»å®˜å…µï¼\n"NOR, obj);
+message_vision(HIR"$Nè¯´é“: ä½ è¿™ä¸ªå¦–äººç«Ÿæ•¢æƒ‘ä¼—ï¼Œæˆ‘ç‰¹æ¥æ¶ˆç­ä½ è¿™ç­‰å¦–äººï¼\n"NOR, obj);
 me->kill_ob(obj);
 obj->kill_ob(me);
-return notify_fail("ÏÈ°ÑÕâ¶ñ¹Ù±øÏûÃğÔÙËµ°É£¿\n");
+return notify_fail("å…ˆæŠŠè¿™æ¶å®˜å…µæ¶ˆç­å†è¯´å§ï¼Ÿ\n");
 }
 }
-	message_vision(HIG"Ö»¼û$NÅÌÏ¥×øÏÂ£¬Ë«ÊÖÄÚÎÕ£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬ºöÈ»Á³Â¶Î¢Ğ¦: ÓĞÁË!\n\n"NOR,me);
+	message_vision(HIG"åªè§$Nç›˜è†åä¸‹ï¼ŒåŒæ‰‹å†…æ¡ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œå¿½ç„¶è„¸éœ²å¾®ç¬‘: æœ‰äº†!\n\n"NOR,me);
 
 	sp = me->query_skill("count",1)*10 + me->query("jing");
 	dp = ob->query("kar")*5 + ob->query("jing")*2;
 	
 	if ( random(sp) < random(dp)/2 )
 {
-		write(HIR"Äãéé¾«½ßÂÇÍÆËãÁË°ëÉÎ£¬È´·¢ÏÖÒ»ÎŞËùµÃ¡­¡­ \n"NOR);
+		write(HIR"ä½ æ®šç²¾ç«­è™‘æ¨ç®—äº†åŠæ™Œï¼Œå´å‘ç°ä¸€æ— æ‰€å¾—â€¦â€¦ \n"NOR);
 		me->set("jing", 20);
                 me->improve_skill("count",random((int)me->query_int()));
-		return notify_fail( HIY"ÄãÓÖÍÇÈ»×øÏÂ£¬Ò¡ÁËÒ¡Í·£¬ËµµÀ£º²»¶ÔµÄ£¡\n"NOR);
+		return notify_fail( HIY"ä½ åˆé¢“ç„¶åä¸‹ï¼Œæ‘‡äº†æ‘‡å¤´ï¼Œè¯´é“ï¼šä¸å¯¹çš„ï¼\n"NOR);
 }
 
 
 	where = environment(ob);
-	if (!where) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÄÀïÒ®...\n");
+	if (!where) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨å“ªé‡Œè€¶...\n");
 	if( !(where = environment(ob)) )
-	        return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÇÀïÒ®...\n");
+	        return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨é‚£é‡Œè€¶...\n");
 
         if( !wizardp(me) && wizardp(ob) ) 
-		return notify_fail("´óµ¨£¡¾¹ÏëÄ±º¦Î×Ê¦£¡\n");
+		return notify_fail("å¤§èƒ†ï¼ç«Ÿæƒ³è°‹å®³å·«å¸ˆï¼\n");
 
 
 //random(sp) < random(dp)
 	if ( random(sp) > random(dp) )
 	{
 		if (strsrch(file_name(where), "city4") >= 0)
-                tell_object(me,    ob->name()+"ÏÖÔÚÔÚ³¤°²³Ç£¡\n"NOR);
+                tell_object(me,    ob->name()+"ç°åœ¨åœ¨é•¿å®‰åŸï¼\n"NOR);
 		if (strsrch(file_name(where), "city") >= 0)
-                tell_object(me,    ob->name()+"ÏÖÔÚÔÚÑïÖİ£¡\n"NOR);
+                tell_object(me,    ob->name()+"ç°åœ¨åœ¨æ‰¬å·ï¼\n"NOR);
 		if (strsrch(file_name(where), "city3") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ³É¶¼³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æˆéƒ½åŸï¼\n");
 		else if (strsrch(file_name(where), "city2") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ±±¾©³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åŒ—äº¬åŸï¼\n");
 		else if (strsrch(file_name(where), "city") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÑïÖİ³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ‰¬å·åŸï¼\n");
 		else if (strsrch(file_name(where), "dali") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ´óÀí³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å¤§ç†åŸï¼\n");
 		else if (strsrch(file_name(where), "death") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚµØÓüÀï£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åœ°ç‹±é‡Œï¼\n");
 		else if (strsrch(file_name(where), "emei") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¶ëÃ¼É½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å³¨çœ‰å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "foshan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ·ğÉ½Õò£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ä½›å±±é•‡ï¼\n");
 		else if (strsrch(file_name(where), "fuzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¸£Öİ³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç¦å·åŸï¼\n");
 		else if (strsrch(file_name(where), "gaibang") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚØ¤°ïÀï£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ä¸å¸®é‡Œï¼\n");
 		else if (strsrch(file_name(where), "guanwai") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¹ØÍâ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å…³å¤–ï¼\n");
 		else if (strsrch(file_name(where), "hangzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚº¼Öİ³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ­å·åŸï¼\n");
 		else if (strsrch(file_name(where), "heimuya") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚºÚÄ¾ÑÂÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é»‘æœ¨å´–ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "hengshan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚºãÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ’å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "henshan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚºâÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨è¡¡å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "henshan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚºâÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨è¡¡å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "huanggon") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»Ê¹¬´óÄÚÀï£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨çš‡å®«å¤§å†…é‡Œï¼\n");
 		else if (strsrch(file_name(where), "huashan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»ªÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åå±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "lingjiu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÁéğÕ·åÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨çµé¹«å³°ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "mingjiao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÀ¥ÂØÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ˜†ä»‘å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "qingcheng") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÇà³ÇÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é’åŸå±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "quanzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÈªÖİ³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ³‰å·åŸï¼\n");
 		else if (strsrch(file_name(where), "shaolin") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÉÙÁÖËÂÀï£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å°‘æ—å¯ºé‡Œï¼\n");
 		else if (strsrch(file_name(where), "shenlong") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÉñÁúµºÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç¥é¾™å²›ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "songshan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚáÔÉ½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åµ©å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "suzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚËÕÖİ³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨è‹å·åŸï¼\n");
 		else if (strsrch(file_name(where), "taishan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÌ©É½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ³°å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "taohua") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÌÒ»¨µº£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ¡ƒèŠ±å²›ï¼\n");
 		else if (strsrch(file_name(where), "tianlongsi") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÌìÁúËÂÀï£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å¤©é¾™å¯ºé‡Œï¼\n");
 		else if (strsrch(file_name(where), "village") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»ªÉ½´å£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åå±±æ‘ï¼\n");
 		else if (strsrch(file_name(where), "wudang") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÎäµ±É½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ­¦å½“å±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "xiakedao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÏÀ¿ÍµºÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ä¾ å®¢å²›ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "xiaoyao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚåĞÒ£ÅÉÀï£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é€é¥æ´¾é‡Œï¼\n");
 		else if (strsrch(file_name(where), "xingxiu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚĞÇËŞº££¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ˜Ÿå®¿æµ·ï¼\n");
 		else if ((strsrch(file_name(where), "xuedao") >= 0) ||
 		   (strsrch(file_name(where), "xueshan") >= 0))
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ´óÑ©É½ÉÏ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å¤§é›ªå±±ä¸Šï¼\n");
 		else if (strsrch(file_name(where), "yanziwu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÑà×ÓÎë£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç‡•å­åï¼\n");
 		else if (strsrch(file_name(where), "gumu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÖÕÄÏÉ½£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç»ˆå—å±±ï¼\n");
 		else if (strsrch(file_name(where), "meizhuang") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÃ·×¯£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ¢…åº„ï¼\n");
 		else if (strsrch(file_name(where), "wanjiegu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÍò½Ù¹È£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ä¸‡åŠ«è°·ï¼\n");
 		else if (strsrch(file_name(where), "hg") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»Ê¹¬´óÄÚ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨çš‡å®«å¤§å†…ï¼\n");
 		else if (strsrch(file_name(where), "nio") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÅ£¼Ò´å£¡\n");			
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç‰›å®¶æ‘ï¼\n");			
 		else if (strsrch(file_name(where), "feihu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ´³Íõ±¦²Ø£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é—¯ç‹å®è—ï¼\n");
 		else if (strsrch(file_name(where), "wuguan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÏåÑôÎä¹İ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨è¥„é˜³æ­¦é¦†ï¼\n");
 		else if (strsrch(file_name(where), "village") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»ªÉ½´å£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åå±±æ‘ï¼\n");
 		else if (strsrch(file_name(where), "wanjiegu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÍò½Ù¹È£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ä¸‡åŠ«è°·ï¼\n");
 		else if (strsrch(file_name(where), "pingan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÆ½°²³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å¹³å®‰åŸï¼\n");
 		else if (strsrch(file_name(where), "taohuacun") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÌÒ»¨´å£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ¡ƒèŠ±æ‘ï¼\n");
 		else if (strsrch(file_name(where), "lingxiao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÁèÏö³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å‡Œéœ„åŸï¼\n");
 		else if (strsrch(file_name(where), "wudujiao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÎå¶¾½Ì£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨äº”æ¯’æ•™ï¼\n");
 		else if (strsrch(file_name(where), "jqg") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¾øÇé¹È£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç»æƒ…è°·ï¼\n");
 		else if (strsrch(file_name(where), "sdxl") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ½£Ä§¶À¹ÂÇó°ÜÄ¹£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å‰‘é­”ç‹¬å­¤æ±‚è´¥å¢“ï¼\n");
 		else if (strsrch(file_name(where), "fairyland") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÀ¥ÂØ¸½½üµÄºìÃ·É½×¯£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ˜†ä»‘é™„è¿‘çš„çº¢æ¢…å±±åº„ï¼\n");
 		else if (strsrch(file_name(where), "changcheng") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ±±¾©ÒÔ±±³¤³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åŒ—äº¬ä»¥åŒ—é•¿åŸï¼\n");
 		else if (strsrch(file_name(where), "jyguan") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÀ¼ÖİÒÔ±±¼ÎÓø¹Ø£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å…°å·ä»¥åŒ—å˜‰å³ªå…³ï¼\n");
 		else if (strsrch(file_name(where), "lanzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÀ¼Öİ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å…°å·ï¼\n");
 		else if (strsrch(file_name(where), "yanjing") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÑà¾©£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç‡•äº¬ï¼\n");
 		else if (strsrch(file_name(where), "jingzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¾£Öİ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨è†å·ï¼\n");
 		else if (strsrch(file_name(where), "kunming") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÀ¥Ã÷£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ˜†æ˜ï¼\n");
 		else if (strsrch(file_name(where), "ruzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÈêÖİ³Ç£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ±å·åŸï¼\n");
 		else if (strsrch(file_name(where), "lingshedao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÁéÉßµº£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨çµè›‡å²›ï¼\n");
 		else if (strsrch(file_name(where), "qianjin") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ±±¾©Ç§½ğÂ¥£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨åŒ—äº¬åƒé‡‘æ¥¼ï¼\n");
 		else if (strsrch(file_name(where), "menggu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÃÉ¹Å²İÔ­£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨è’™å¤è‰åŸï¼\n");
 		else if (strsrch(file_name(where), "yinju") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÒ»µÆ´óÊ¦¾Ó£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ä¸€ç¯å¤§å¸ˆå±…ï¼\n");
 		else if (strsrch(file_name(where), "huizhu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»Ø×å²¿Âä£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å›æ—éƒ¨è½ï¼\n");
 		else if (strsrch(file_name(where), "tiezhang") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÌúÕÆÃÅ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é“æŒé—¨ï¼\n");
 		else if (strsrch(file_name(where), "kunlun") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÀ¥ÂØÉ½£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ˜†ä»‘å±±ï¼\n");
 		else if (strsrch(file_name(where), "baituo") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ°×ÍÕÉ½£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨ç™½é©¼å±±ï¼\n");
 		else if (strsrch(file_name(where), "binghuodao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ±ù»ğµº£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å†°ç«å²›ï¼\n");
 		else if (strsrch(file_name(where), "gaochang") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¸ß²ıÃÔ¹¬£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é«˜æ˜Œè¿·å®«ï¼\n");
 		else if (strsrch(file_name(where), "gumu") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ¹ÅÄ¹ÅÉ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨å¤å¢“æ´¾ï¼\n");
 		else if (strsrch(file_name(where), "heimuya") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚºÚÄ¾ÑÂ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é»‘æœ¨å´–ï¼\n");
 		else if (strsrch(file_name(where), "huanghe") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚ»ÆºÓ¾ÅÇú£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é»„æ²³ä¹æ›²ï¼\n");
 		else if (strsrch(file_name(where), "lingzhou") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÁéÖİ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨çµå·ï¼\n");
 		else if (strsrch(file_name(where), "meizhuang") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÃ·×¯£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ¢…åº„ï¼\n");
 		else if (strsrch(file_name(where), "mingjiao") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚÃ÷½Ì£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨æ˜æ•™ï¼\n");
 		else if (strsrch(file_name(where), "heimuya") >= 0)
-			tell_object(me,    ob->name()+"µÄ´ó¸ÅÎ»ÖÃÔÚºÚÄ¾ÑÂ£¡\n");
+			tell_object(me,    ob->name()+"çš„å¤§æ¦‚ä½ç½®åœ¨é»‘æœ¨å´–ï¼\n");
 
-		else return notify_fail( ob->name()+"ÏÖÔÚÔÚÄ³¸öµØ·½µÄ"+where->query("short")+"¸½½ü£¡\n");
+		else return notify_fail( ob->name()+"ç°åœ¨åœ¨æŸä¸ªåœ°æ–¹çš„"+where->query("short")+"é™„è¿‘ï¼\n");
 	}
 	if (random(10)>7)
 	{
 if (userp(ob))
 {
                 if( (random(lvl/4)) < ob->query("kar") )
-                tell_object(ob, HIB"Äã¸Ğ¾õĞÄÉñ²»¶¨£¬ËÆºõÓĞÈËÔÚ°µÖĞ¿úÊÓ×ÅÄã......\n"NOR);
+                tell_object(ob, HIB"ä½ æ„Ÿè§‰å¿ƒç¥ä¸å®šï¼Œä¼¼ä¹æœ‰äººåœ¨æš—ä¸­çª¥è§†ç€ä½ ......\n"NOR);
 }
 b1=random(30)+12;
 b2=random(20)+9;
-           tell_object(me,HIW"Äã»ñµÃÁË£º\n" + 
-                       chinese_number(b1) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(b2) + "µãÇ±ÄÜ\n"+
+           tell_object(me,HIW"ä½ è·å¾—äº†ï¼š\n" + 
+                       chinese_number(b1) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(b2) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 me->add("combat_exp", b1);
 me->add("potential", b2);
 
-		printf("%sÏÖÔÚÔÚ%s¡£\n",
+		printf("%sç°åœ¨åœ¨%sã€‚\n",
 		(string)ob->name(), place_desc[random(sizeof(place_desc))]);
 		return 1;
 	}
 if (userp(ob))
 {
                 if( (random(lvl/4)) < ob->query("kar") )
-                tell_object(ob, HIB"Äã¸Ğ¾õĞÄÉñ²»¶¨£¬ËÆºõÓĞÈËÔÚ°µÖĞ¿úÊÓ×ÅÄã......\n"NOR);
+                tell_object(ob, HIB"ä½ æ„Ÿè§‰å¿ƒç¥ä¸å®šï¼Œä¼¼ä¹æœ‰äººåœ¨æš—ä¸­çª¥è§†ç€ä½ ......\n"NOR);
 }
 b1=random(30)+12;
 b2=random(20)+9;
-           tell_object(me,HIW"Äã»ñµÃÁË£º\n" + 
-                       chinese_number(b1) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(b2) + "µãÇ±ÄÜ\n"+
+           tell_object(me,HIW"ä½ è·å¾—äº†ï¼š\n" + 
+                       chinese_number(b1) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(b2) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 me->add("combat_exp", b1);
 me->add("potential", b2);
 
-	printf("%sÏÖÔÚÔÚ%s¡£\n",
+	printf("%sç°åœ¨åœ¨%sã€‚\n",
 		(string)ob->name(),
 		(string)where->query("short"));
 	return 1;
@@ -319,9 +319,9 @@ me->add("potential", b2);
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: location <Íæ¼ÒµÄ ID>
+æŒ‡ä»¤æ ¼å¼: location <ç©å®¶çš„ ID>
 
-Õâ¸öÖ¸ÁîÊÇÌÒ»¨µºµÜ×ÓÓÃÀ´µÃÖªÍæ¼ÒÄ¿Ç°ËùÔÚµÄÎ»ÖÃ.
+è¿™ä¸ªæŒ‡ä»¤æ˜¯æ¡ƒèŠ±å²›å¼Ÿå­ç”¨æ¥å¾—çŸ¥ç©å®¶ç›®å‰æ‰€åœ¨çš„ä½ç½®.
 
 HELP
 	);

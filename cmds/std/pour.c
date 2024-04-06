@@ -12,25 +12,25 @@ int main(object me, string arg)
 	object obj, dest, *inv, obj2;
 	int i, amount, poisontime;
 
-	if(!arg) return notify_fail("ÄãÒªÏÂÊ²Ã´¶¾£¿\n");
+	if(!arg) return notify_fail("ä½ è¦ä¸‹ä»€ä¹ˆæ¯’ï¼Ÿ\n");
 
 	if( sscanf(arg, "%s in %s", item, target)!=2 )
-		return notify_fail("ÄãÒªÍùÄÄÀïÏÂ¶¾£¿\n");
+		return notify_fail("ä½ è¦å¾€å“ªé‡Œä¸‹æ¯’ï¼Ÿ\n");
 
 	dest = present(target, me);
-	if( !dest) return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+	if( !dest) return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( !objectp(obj = present(item, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	if( !obj->query("pour_type"))
-		return notify_fail("Õâ²»ÊÇ¶¾Ò©°¡¡£\n");
+		return notify_fail("è¿™ä¸æ˜¯æ¯’è¯å•Šã€‚\n");
 
 	if( dest->query("liquid/remaining") < 1 )
 	{
-		tell_object(me, "ÀïÃæÒ»µãºÈµÄ¶¼Ã»ÓĞÊÇ²»ÄÜÏÂ¶¾µÄ¡£\n");
+		tell_object(me, "é‡Œé¢ä¸€ç‚¹å–çš„éƒ½æ²¡æœ‰æ˜¯ä¸èƒ½ä¸‹æ¯’çš„ã€‚\n");
 		return 1;
 	}
-	message_vision( sprintf("$N½«Ò»%s%sÍµÍµÈ÷½ø%s¡£\n",
+	message_vision( sprintf("$Nå°†ä¸€%s%så·å·æ´’è¿›%sã€‚\n",
 		obj->query("unit"), obj->name(), dest->name()), me );
 	poisontime = (int)(me->query_skill("poison",1)/5);
 	poison = obj->query("pour_type");
@@ -43,10 +43,10 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : pour <¶¾Æ·Ãû³Æ> in <Ä³ÈİÆ÷>
+æŒ‡ä»¤æ ¼å¼ : pour <æ¯’å“åç§°> in <æŸå®¹å™¨>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³Ñù¶¾Æ··Å½øÒ»¸öÈİÆ÷£¬µ±È»£¬Ê×ÏÈÄãÒªÓµÓĞÕâÑùÎïÆ·¡£
-ÈİÆ÷ÀïÓĞºÈµÄ¶«Î÷¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å°†æŸæ ·æ¯’å“æ”¾è¿›ä¸€ä¸ªå®¹å™¨ï¼Œå½“ç„¶ï¼Œé¦–å…ˆä½ è¦æ‹¥æœ‰è¿™æ ·ç‰©å“ã€‚
+å®¹å™¨é‡Œæœ‰å–çš„ä¸œè¥¿ã€‚
 HELP
     );
     return 1;

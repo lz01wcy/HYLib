@@ -15,7 +15,7 @@ int main(object me,string arg)
         int loop, size, total,count=0;
     
         if( !find_object(DNS_MASTER) )
-                return notify_fail("ÍøÂ·¾«Áé²¢Ã»ÓĞ±»ÔØÈë¡£\n");
+                return notify_fail("ç½‘è·¯ç²¾çµå¹¶æ²¡æœ‰è¢«è½½å…¥ã€‚\n");
 
         //      Obtain mapping containing mud data
         mud_list = (mapping)DNS_MASTER->query_muds();
@@ -23,7 +23,7 @@ int main(object me,string arg)
         mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
 
         if(!mud_list)
-                return notify_fail( MUD_NAME + "Ä¿Ç°²¢Ã»ÓĞ¸úÍøÂ·ÉÏÆäËû Mud È¡µÃÁªÏµ¡£\n");
+                return notify_fail( MUD_NAME + "ç›®å‰å¹¶æ²¡æœ‰è·Ÿç½‘è·¯ä¸Šå…¶ä»– Mud å–å¾—è”ç³»ã€‚\n");
 
         //      Get list of all mud names within name server
         muds = keys( mud_list ) - ({ "DEFAULT" });
@@ -38,48 +38,48 @@ int main(object me,string arg)
                if(arg!="all"&&arg && arg!="") {
                        arg = htonn(arg);
                if(!mapp( mud_list[arg] )) {
-                        write(MUD_NAME + "²¢Ã»ÓĞºÍÕâ¸ö Mud È¡µÃÁªÏµ¡£\n");
+                        write(MUD_NAME + "å¹¶æ²¡æœ‰å’Œè¿™ä¸ª Mud å–å¾—è”ç³»ã€‚\n");
                         return 1;
                 }
                       
-              printf("\n¡ºÓĞ¹Ø %s µÄµ±Ç°×ÊÁÏ¡»\n"
-                                "¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô\n"
-                                "¡ºÖĞÎÄÃû³Æ¡»"WHT"  %s\n"NOR
-                                "¡º Óï  ÑÔ ¡»"WHT"  %s\n"NOR
-                                "¡º °æ  ±¾ ¡»"WHT"  %s\n"NOR
-                                "¡º MudOS  ¡»"WHT"  %s\n"NOR
-                                "¡º Mudlib ¡»"WHT"  %s\n"NOR
-                                "¡º Ö÷  »ú ¡»"WHT"  %s\n"NOR
-                                "¡º ¶Ë  ¿Ú ¡»"WHT"  %s\n"NOR
-                                "¡º ×´  Ì¬ ¡»"WHT"  %s\n"NOR
-                                "¡ºÔÚÏßÍæ¼Ò¡»"YEL"  %s\n"NOR
-                                "¡ºµ±µØÊ±¼ä¡»"WHT"  %s\n"NOR
-                                "¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô\n\n",
+              printf("\nã€æœ‰å…³ %s çš„å½“å‰èµ„æ–™ã€\n"
+                                "â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡\n"
+                                "ã€ä¸­æ–‡åç§°ã€"WHT"  %s\n"NOR
+                                "ã€ è¯­  è¨€ ã€"WHT"  %s\n"NOR
+                                "ã€ ç‰ˆ  æœ¬ ã€"WHT"  %s\n"NOR
+                                "ã€ MudOS  ã€"WHT"  %s\n"NOR
+                                "ã€ Mudlib ã€"WHT"  %s\n"NOR
+                                "ã€ ä¸»  æœº ã€"WHT"  %s\n"NOR
+                                "ã€ ç«¯  å£ ã€"WHT"  %s\n"NOR
+                                "ã€ çŠ¶  æ€ ã€"WHT"  %s\n"NOR
+                                "ã€åœ¨çº¿ç©å®¶ã€"YEL"  %s\n"NOR
+                                "ã€å½“åœ°æ—¶é—´ã€"WHT"  %s\n"NOR
+                                "â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡\n\n",
                                 mud_list[arg]["NAME"],
                                 undefinedp(mud_list[arg]["MUDNAME"])?
-                                "²»Ïê":mud_list[arg]["MUDNAME"],
+                                "ä¸è¯¦":mud_list[arg]["MUDNAME"],
                                 undefinedp(mud_list[arg]["ENCODING"])?
-                                "²»Ïê":(mud_list[arg]["ENCODING"]=="GB"?"¼òÌåºº×Ö":"·±Ìåºº×Ö"),
+                                "ä¸è¯¦":(mud_list[arg]["ENCODING"]=="GB"?"ç®€ä½“æ±‰å­—":"ç¹ä½“æ±‰å­—"),
                                 undefinedp(mud_list[arg]["VERSION"])?
-                                "²»Ïê":mud_list[arg]["VERSION"],
+                                "ä¸è¯¦":mud_list[arg]["VERSION"],
                                 undefinedp(mud_list[arg]["DRIVER"])?
-                                "²»Ïê":mud_list[arg]["DRIVER"],
+                                "ä¸è¯¦":mud_list[arg]["DRIVER"],
                                 undefinedp(mud_list[arg]["MUDLIB"])?
-                                "²»Ïê":mud_list[arg]["MUDLIB"],
+                                "ä¸è¯¦":mud_list[arg]["MUDLIB"],
                                 mud_list[arg]["HOSTADDRESS"],
                                 mud_list[arg]["PORT"],
                                 mud_list[arg]["_dns_no_contact"]<1?
-                                "Á¬Ïß":"¶Ï¿ª",
+                                "è¿çº¿":"æ–­å¼€",
                                 undefinedp(mud_list[arg]["USERS"])?
-                                "²»Ïê":mud_list[arg]["USERS"],
+                                "ä¸è¯¦":mud_list[arg]["USERS"],
                                 undefinedp(mud_list[arg]["TIME"])?
-                                "²»Ïê":mud_list[arg]["TIME"],
+                                "ä¸è¯¦":mud_list[arg]["TIME"],
                                 );
                 return 1;
         }
         output = 
-YEL+"Mud                  ÖĞÎÄÃû³Æ                ¹ú¼ÊÍøÂ·Î»Ö·     ²ººÅ  ÈËÊı\n"+NOR+
-HIC+"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
+YEL+"Mud                  ä¸­æ–‡åç§°                å›½é™…ç½‘è·¯ä½å€     åŸ å·  äººæ•°\n"+NOR+
+HIC+"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
         //      Loop through mud list and store one by one
         for(loop = 0, size = sizeof(muds); loop<size; loop++) {
 
@@ -118,23 +118,23 @@ HIC+"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
                 if(!undefinedp(mud_list[muds[loop]]["USERS"]))
                                 output+=sprintf("  %-4s", mud_list[muds[loop]]["USERS"] );
                 else
-                                output+=sprintf("  ¡ª¡ª", mud_list[muds[loop]]["USERS"] );
+                                output+=sprintf("  â€•â€•", mud_list[muds[loop]]["USERS"] );
 
                 output +=NOR"\n";
                 total ++;
         }
         //      Display dumped mudlist output through user's more pager
-output+=HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
-        output += sprintf("¹²ÓĞ "HIG"%d"NOR" ¸ö "YEL"Mud"NOR" Óë"+MUD_NAME+"Á¬Ïß¡£\n"NOR,total==0?0:total-1);
+output+=HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
+        output += sprintf("å…±æœ‰ "HIG"%d"NOR" ä¸ª "YEL"Mud"NOR" ä¸"+MUD_NAME+"è¿çº¿ã€‚\n"NOR,total==0?0:total-1);
         this_player()->start_more( output );
 
         return 1;
 }
 int help()
 {
-        write("\nÖ¸Áî¸ñÊ½£ºmudlist            ÁĞ³öÄ¿Ç°ËùÓĞÁ¬ÏßÖĞµÄ Mud¡£\n"
-                "          mudlist <MudÃû³Æ>  ÁĞ³öÖ¸¶¨ Mud µÄĞÅÏ¢¡£\n"
-                "          mudlist all        ÁĞ³öÄ¿Ç°ËùÓĞÁ¬ÏßÖĞµÄ Mud¡£\n\n"
+        write("\næŒ‡ä»¤æ ¼å¼ï¼šmudlist            åˆ—å‡ºç›®å‰æ‰€æœ‰è¿çº¿ä¸­çš„ Mudã€‚\n"
+                "          mudlist <Mudåç§°>  åˆ—å‡ºæŒ‡å®š Mud çš„ä¿¡æ¯ã€‚\n"
+                "          mudlist all        åˆ—å‡ºç›®å‰æ‰€æœ‰è¿çº¿ä¸­çš„ Mudã€‚\n\n"
         );
         return 1;
 }

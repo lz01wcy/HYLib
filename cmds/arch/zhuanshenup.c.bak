@@ -11,19 +11,19 @@ mapping my;
 string *sname, *mname, *pname;
 
     if( !str || str == "")
-        return notify_fail("ÄãÒª¸øË­×ªÉú?\n");
+        return notify_fail("ä½ è¦ç»™è°è½¬ç”Ÿ?\n");
 
     if ( !obj = present(str,environment(me)))
-        return notify_fail("ÕâÀïÃ»ÓĞ"+str+"\n");
+        return notify_fail("è¿™é‡Œæ²¡æœ‰"+str+"\n");
     
     if ( !userp(obj))
-        return notify_fail("Õâ²»ÊÇÍæ¼Ò°¡?\n");
+        return notify_fail("è¿™ä¸æ˜¯ç©å®¶å•Š?\n");
 
     if ( !obj->query("zhuanshen"))
-        return notify_fail("´ËÈËÃ»¾­¹ıÒ»×ª!\n");
+        return notify_fail("æ­¤äººæ²¡ç»è¿‡ä¸€è½¬!\n");
 
     if ( (int)obj->query("combat_exp") < 8000000)
-        return notify_fail("´ËÈËÃ»ÓĞ×Ê¸ñ×ªÉú!\n");
+        return notify_fail("æ­¤äººæ²¡æœ‰èµ„æ ¼è½¬ç”Ÿ!\n");
 
 
     obj->set("eff_qi",obj->query("max_qi"));
@@ -35,14 +35,14 @@ string *sname, *mname, *pname;
     obj->set("food",obj->max_food_capacity());
     obj->set("water",obj->max_water_capacity());
     obj->clear_condition();
-if (mapp(skill_status = obj->query_skills()))//ÅĞ¶Ï×Ô¼ºÊÇ·ñÓĞ¹¦·ò£¬ÈçÓĞ½«ÓÃÕâ¸öº¯ÊıÈ«²¿É¾³ı
+if (mapp(skill_status = obj->query_skills()))//åˆ¤æ–­è‡ªå·±æ˜¯å¦æœ‰åŠŸå¤«ï¼Œå¦‚æœ‰å°†ç”¨è¿™ä¸ªå‡½æ•°å…¨éƒ¨åˆ é™¤
 {
 skill_status = obj->query_skills();
-sname = keys(skill_status);//´«»ØËùÓĞ×Ô¼ºµÄ¹¦·òÕóÁĞ
+sname = keys(skill_status);//ä¼ å›æ‰€æœ‰è‡ªå·±çš„åŠŸå¤«é˜µåˆ—
 
 temp = sizeof(skill_status);
 for (i = 0; i < temp; i++)
-obj->delete_skill(sname[i]);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
+obj->delete_skill(sname[i]);//åˆ é™¤è‡ªå·±æ‰€æœ‰åŠŸå¤«
 }
 		obj->map_skill("unarmed");
 		obj->map_skill("hammer");
@@ -112,7 +112,7 @@ obj->delete_skill(sname[i]);//É¾³ı×Ô¼ºËùÓĞ¹¦·ò
         }
 
         obj->set("betrayer",0);
-        obj->set("title","ÆÕÍ¨°ÙĞÕ");
+        obj->set("title","æ™®é€šç™¾å§“");
         obj->set("class","0");
         obj->set("score",0);
         obj->set("shen",0);
@@ -147,8 +147,8 @@ obj->delete("last_getzhen");
         obj->set("weiwang",0);
         obj->set("mud_age",400000);
         obj->save();
-    write(HIR"×ªÉú³É¹¦,ÇëÖØĞÂµÇÂ½!\n"NOR);
-tell_object(obj,HIR"×ªÉú³É¹¦,ÇëÖØĞÂµÇÂ½!\n"NOR);
+    write(HIR"è½¬ç”ŸæˆåŠŸ,è¯·é‡æ–°ç™»é™†!\n"NOR);
+tell_object(obj,HIR"è½¬ç”ŸæˆåŠŸ,è¯·é‡æ–°ç™»é™†!\n"NOR);
     "/cmds/usr/quit"->main(obj);
 
     return 1;
@@ -157,12 +157,12 @@ tell_object(obj,HIR"×ªÉú³É¹¦,ÇëÖØĞÂµÇÂ½!\n"NOR);
 int help(object obj)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : zhuanshen <¶ÔÏó>
+æŒ‡ä»¤æ ¼å¼ : zhuanshen <å¯¹è±¡>
 
-ÀûÓÃ´ËÖ¸Áî¿ÉÎªÍæ¼Ò½øĞĞ×ªÉú¡£Íæ¼Ò×ªÉúºó
-¾­ÑéÎª300K,Ç±ÄÜÎª100K,ËùÓĞÊôĞÔ³ËÁ½±¶
-(ÉÏÏŞ50).18Ëê¿ªÊ¼£¬Ô­ÓĞÎä¹¦È«²¿ÏûÊ§¡£
-µ«Ô­ÓĞµ±ÆÌµÀ¾ß£¬×ÔÔìÎäÆ÷£¬ºêÎï£¬È«²¿±£´æ¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯ä¸ºç©å®¶è¿›è¡Œè½¬ç”Ÿã€‚ç©å®¶è½¬ç”Ÿå
+ç»éªŒä¸º300K,æ½œèƒ½ä¸º100K,æ‰€æœ‰å±æ€§ä¹˜ä¸¤å€
+(ä¸Šé™50).18å²å¼€å§‹ï¼ŒåŸæœ‰æ­¦åŠŸå…¨éƒ¨æ¶ˆå¤±ã€‚
+ä½†åŸæœ‰å½“é“ºé“å…·ï¼Œè‡ªé€ æ­¦å™¨ï¼Œå®ç‰©ï¼Œå…¨éƒ¨ä¿å­˜ã€‚
 HELP
     );
     return 1;

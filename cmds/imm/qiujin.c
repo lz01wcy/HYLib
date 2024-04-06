@@ -12,11 +12,11 @@ int main(object me,string arg)
 	object criminal;
 	
 	if(!arg || arg=="" || sscanf(arg, "%s %d %s", id, howlong,reason)!=3)
-		return notify_fail("Ö¸Áî¸ñÊ½ : qiujin <Ä³ÈË> <Ê±¼ä> <Ô­Òò>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ : qiujin <æŸäºº> <æ—¶é—´> <åŸå› >\n");
 		
 	criminal = find_player(id);
-	if (!criminal) return notify_fail("Ã»ÓĞÕâ¸öÈË\n");
-	if (wizardp(criminal)) return notify_fail("Î×Ê¦ÓĞÎÊÌâ£¬»¹ÊÇ¸ø´óÉñÃÇ±¨¸æ°É¡£\n");
+	if (!criminal) return notify_fail("æ²¡æœ‰è¿™ä¸ªäºº\n");
+	if (wizardp(criminal)) return notify_fail("å·«å¸ˆæœ‰é—®é¢˜ï¼Œè¿˜æ˜¯ç»™å¤§ç¥ä»¬æŠ¥å‘Šå§ã€‚\n");
 	
 	wizname = me->query("name") + "("+me->query("id")+")";
 	criname = criminal->query("name") + "("+criminal->query("id")+")";
@@ -25,7 +25,7 @@ int main(object me,string arg)
 	
 	criminal->set("qiushi/howlong",howlong);
 	
-	result = sprintf("%sÒòÎª£¨%s£©½«%s¹ØÈëÇôÊÒ%d·ÖÖÓ\n",
+	result = sprintf("%så› ä¸ºï¼ˆ%sï¼‰å°†%så…³å…¥å›šå®¤%dåˆ†é’Ÿ\n",
 			wizname,reason,criname,howlong);
 			
 	criminal->set("qiushi/temp",result);
@@ -37,12 +37,12 @@ int main(object me,string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : qiujin <Ä³ÈË> <Ê±¼ä> <Ô­Òò>
+æŒ‡ä»¤æ ¼å¼ : qiujin <æŸäºº> <æ—¶é—´> <åŸå› >
 
-Ê±¼äÒÔ·ÖÖÓÎªµ¥Î»£¬Èç¹ûÎª0Ôò±íÊ¾²»×Ô¶¯·Å³ö£¬ÇëÉ÷ÓÃ¡£
-Ô­ÒòÒ»¶¨ÒªÏêÏ¸Ğ´¡£
+æ—¶é—´ä»¥åˆ†é’Ÿä¸ºå•ä½ï¼Œå¦‚æœä¸º0åˆ™è¡¨ç¤ºä¸è‡ªåŠ¨æ”¾å‡ºï¼Œè¯·æ…ç”¨ã€‚
+åŸå› ä¸€å®šè¦è¯¦ç»†å†™ã€‚
 
-Àı×Ó	qiujin tryid 60 chatË¢ÆÁ
+ä¾‹å­	qiujin tryid 60 chatåˆ·å±
 HELP	);
 	return 1;
 }

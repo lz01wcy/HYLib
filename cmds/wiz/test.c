@@ -8,7 +8,7 @@ int main(object me, string arg)
 if (!arg) return notify_fail("<Syntax>: test <id>\n");
 
 	ob = present(arg, environment(me));
-	if (!ob) return notify_fail("ß×... ÓĞÕâ¸öÈËÂğ?\n");
+	if (!ob) return notify_fail("å’¦... æœ‰è¿™ä¸ªäººå—?\n");
 //	SKILL_D("celestial")->hit_ob(me, ob, 50, 20);
 	COMBAT_D->do_attack(me, ob, me->query_temp("weapon"), 0);
     printf("wizard level: %d   status: %s\n", wiz_level(ob), wizhood(ob));
@@ -18,9 +18,9 @@ if (!arg) return notify_fail("<Syntax>: test <id>\n");
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : test <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : test <æŸäºº>
 
-ÓÃÀ´²âÊÔÎä¹¦¼¼ÄÜµÄÇ¿Èõ¡£
+ç”¨æ¥æµ‹è¯•æ­¦åŠŸæŠ€èƒ½çš„å¼ºå¼±ã€‚
 HELP
     );
     return 1;

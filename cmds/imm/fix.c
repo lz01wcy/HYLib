@@ -52,16 +52,16 @@ if (me->query_temp("apply/constitution")<0)
 me->set_temp("apply/constitution",0);
 }
 
-    write(HIR"»Ö¸´×´Ì¬³É¹¦¡£ÇëÓÃSCORE²é¿´¡£\n"NOR);
+    write(HIR"æ¢å¤çŠ¶æ€æˆåŠŸã€‚è¯·ç”¨SCOREæŸ¥çœ‹ã€‚\n"NOR);
     return 1;
 }
 
 int help(object obj)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : fix
+æŒ‡ä»¤æ ¼å¼ : fix
 
-ÀûÓÃ´ËÖ¸Áî¿ÉÍêÈ«»Ö¸´Íæ¼ÒµÄ³õÊ¼µÄ×´Ì¬¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯å®Œå…¨æ¢å¤ç©å®¶çš„åˆå§‹çš„çŠ¶æ€ã€‚
 HELP
     );
     return 1;

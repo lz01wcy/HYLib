@@ -20,65 +20,65 @@ int i;
 		ob = present(arg, environment(me));
 		if (!ob) ob = find_player(arg);
 		if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
 	} else
-		return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
+		return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹åˆ«äººçš„çŠ¶æ€ã€‚\n");
 if (ob->query("jingli") <0)
 ob->set("jingli",0);
     i=(ceil(pow(ob->query("combat_exp")*10.0, 0.333333)) + 100)*500;	
 	my = ob->query_entire_dbase();
-    printf(HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR);
-    printf(HIW"  ¡¤ ¾« Æø ¡¤ %s%4d/ %4d %s(%3d%%)" + HIW"    ¡¤ ¾« Á¦ ¡¤ %s%4d / %4d (+%d)\n" NOR,
+    printf(HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR);
+    printf(HIW"  ãƒ» ç²¾ æ°” ãƒ» %s%4d/ %4d %s(%3d%%)" + HIW"    ãƒ» ç²¾ åŠ› ãƒ» %s%4d / %4d (+%d)\n" NOR,
 		status_color(my["jing"], my["eff_jing"]), my["jing"], my["eff_jing"],
 		status_color(my["eff_jing"], my["max_jing"]),	my["eff_jing"] * 100 / my["max_jing"],
 		status_color(my["jingli"], my["max_jingli"]),	my["jingli"], my["max_jingli"],
 		my["jiajing"] );
-    printf(HIW"  ¡¤ Æø Ñª ¡¤ %s%4d/ %4d %s(%3d%%)" + HIW"    ¡¤ ÄÚ Á¦ ¡¤ %s%4d / %4d (+%d)\n" NOR,
+    printf(HIW"  ãƒ» æ°” è¡€ ãƒ» %s%4d/ %4d %s(%3d%%)" + HIW"    ãƒ» å†… åŠ› ãƒ» %s%4d / %4d (+%d)\n" NOR,
 		status_color(my["qi"], my["eff_qi"]), my["qi"], my["eff_qi"],
 		status_color(my["eff_qi"], my["max_qi"]), my["eff_qi"] * 100 / my["max_qi"],
 		status_color(my["neili"], my["max_neili"]), my["neili"], my["max_neili"],
 		my["jiali"] );
-    write(sprintf("  %s %s%10d    " NOR HIW"       ¡¤ÄÚÁ¦ÉÏÏŞ¡¤¤ %s%d / %d    \n" NOR,
-                my["shen"] < 0?HIR"¡¤ ìå Æø ¡¤":HIC"¡¤ Õı Æø ¡¤", HIW,
+    write(sprintf("  %s %s%10d    " NOR HIW"       ãƒ»å†…åŠ›ä¸Šé™ãƒ» %s%d / %d    \n" NOR,
+                my["shen"] < 0?HIR"ãƒ» æˆ¾ æ°” ãƒ»":HIC"ãƒ» æ­£ æ°” ãƒ»", HIW,
                 (my["shen"] < 0?-1:1) * my["shen"],
                 HIC,
             ob->query_skill("force")*12 + (ob->query("szj/passed")?ob->query_skill("shenzhao-jing",1)*4:0),
         ob->query_skill("force")*15 + (ob->query("szj/passed")?ob->query_skill("shenzhao-jing",1)*4:0)));
 
-//    printf(" Éñ¡¡£º %s%4d
-        if(my["food"]*100/ob->max_food_capacity()>100) str=HIC+"ºÜ±¥";
-        else if(my["food"]*100/ob->max_food_capacity()>90) str=HIG+"Õı³£";
-        else if(my["food"]*100/ob->max_food_capacity()>60) str=HIY+"È±Ê³";        
-		else if(my["food"]*100/ob->max_food_capacity()>30) str=CYN+"È±Ê³";
-        else if(my["food"]*100/ob->max_food_capacity()>10) str=HIR+"È±Ê³";
-        else str=RED+"¼¢¶ö";
-    printf(HIW"  ¡º Ê³ Îï ¡» %s%4d/ %4d[%4s] " HIW "     ¡º Ç± ÄÜ ¡» %s%d %sÉÏÏŞ[%d]\n" NOR,
+//    printf(" ç¥ã€€ï¼š %s%4d
+        if(my["food"]*100/ob->max_food_capacity()>100) str=HIC+"å¾ˆé¥±";
+        else if(my["food"]*100/ob->max_food_capacity()>90) str=HIG+"æ­£å¸¸";
+        else if(my["food"]*100/ob->max_food_capacity()>60) str=HIY+"ç¼ºé£Ÿ";        
+		else if(my["food"]*100/ob->max_food_capacity()>30) str=CYN+"ç¼ºé£Ÿ";
+        else if(my["food"]*100/ob->max_food_capacity()>10) str=HIR+"ç¼ºé£Ÿ";
+        else str=RED+"é¥¥é¥¿";
+    printf(HIW"  ã€ é£Ÿ ç‰© ã€ %s%4d/ %4d[%4s] " HIW "     ã€ æ½œ èƒ½ ã€ %s%d %sä¸Šé™[%d]\n" NOR,
         status_color(my["food"], ob->max_food_capacity()),
         my["food"], ob->max_food_capacity(),str,
         HIY,
         (int)ob->query("potential") - (int)ob->query("learned_points"),
         HIW,i);
-        if(my["water"]*100/ob->max_water_capacity()>100) str=HIC+"ºÜ±¥";
-        else if(my["water"]*100/ob->max_water_capacity()>90) str=HIG+"Õı³£";
-        else if(my["water"]*100/ob->max_water_capacity()>60) str=HIY+"È±Ë®";
-        else if(my["water"]*100/ob->max_water_capacity()>30) str=CYN+"È±Ë®";
-        else if(my["water"]*100/ob->max_water_capacity()>10) str=HIR+"È±Ë®";
-        else str=RED+"¼¢¿Ê";
-    printf(HIW"  ¡º Òû Ë® ¡» %s%4d/ %4d[%4s] " HIW "     ¡º ¾­ Ñé ¡» %s%d\n" NOR,
+        if(my["water"]*100/ob->max_water_capacity()>100) str=HIC+"å¾ˆé¥±";
+        else if(my["water"]*100/ob->max_water_capacity()>90) str=HIG+"æ­£å¸¸";
+        else if(my["water"]*100/ob->max_water_capacity()>60) str=HIY+"ç¼ºæ°´";
+        else if(my["water"]*100/ob->max_water_capacity()>30) str=CYN+"ç¼ºæ°´";
+        else if(my["water"]*100/ob->max_water_capacity()>10) str=HIR+"ç¼ºæ°´";
+        else str=RED+"é¥¥æ¸´";
+    printf(HIW"  ã€ é¥® æ°´ ã€ %s%4d/ %4d[%4s] " HIW "     ã€ ç» éªŒ ã€ %s%d\n" NOR,
         status_color(my["water"], ob->max_water_capacity()),
         my["water"], ob->max_water_capacity(),str,
         HIM,
         my["combat_exp"] );
 if ( (int)me->query_condition("bonze_drug" ) > 0 || (int)me->query_condition("putizi_drug" ) > 0)
-    	write(HIC"  ¡º ÁéÒ©Ò©ĞÔ ¡»:ÉĞÔÚ     \n"); 
+    	write(HIC"  ã€ çµè¯è¯æ€§ ã€:å°šåœ¨     \n"); 
 else
-    	write(HIC"  ¡º ÁéÒ©Ò©ĞÔ ¡»:ÎŞ       \n"); 
+    	write(HIC"  ã€ çµè¯è¯æ€§ ã€:æ—        \n"); 
 
 if ( (int)me->query_condition("medicine" ) > 0)
-    	write(HIG"  ¡º ÆÕÍ¨Ò©ĞÔ ¡»:ÉĞÔÚ      \n"); 
+    	write(HIG"  ã€ æ™®é€šè¯æ€§ ã€:å°šåœ¨      \n"); 
 else
-    	write(HIG"  ¡º ÆÕÍ¨Ò©ĞÔ ¡»:ÎŞ        \n"); 
-	    printf(HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤º£ Ñó II©¤©¤©¤"HIC"¡Ô\n"NOR);
+    	write(HIG"  ã€ æ™®é€šè¯æ€§ ã€:æ—         \n"); 
+	    printf(HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€æµ· æ´‹ IIâ”€â”€â”€"HIC"â‰¡\n"NOR);
 	return 1;
 }
  
@@ -99,10 +99,10 @@ string status_color(int current, int max)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : hp
-           hp <¶ÔÏóÃû³Æ>                   (Î×Ê¦×¨ÓÃ)
+æŒ‡ä»¤æ ¼å¼ : hp
+           hp <å¯¹è±¡åç§°>                   (å·«å¸ˆä¸“ç”¨)
  
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã(Äã)»òÖ¸¶¨¶ÔÏó(º¬¹ÖÎï)µÄ¾«, Æø, ÉñÊıÖµ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºä½ (ä½ )æˆ–æŒ‡å®šå¯¹è±¡(å«æ€ªç‰©)çš„ç²¾, æ°”, ç¥æ•°å€¼ã€‚
  
 see also : score
 HELP

@@ -5,37 +5,37 @@
 inherit F_CLEAN_UP;
 
 mapping valid_types = ([
-	"unarmed":	"È­½Å",
-	"sword":	"½£·¨",
-	"hammer":     "´¸·¨",
-	"blade":	"µ¶·¨",
-	"stick":	"°ô·¨",
-	"staff":	"ÕÈ·¨",
-	"club" :        "¹÷·¨",
-"spear" :        "Ç¹·¨",
-	"throwing":	"°µÆ÷",
-	"force":	"ÄÚ¹¦",
-	"parry":	"ÕĞ¼Ü",
-	"dodge":	"Çá¹¦",
-	"magic":	"·¨Êõ",
-	"spells":	"Ä§·¨",
-        "leg":	"ÍÈ·¨",
+	"unarmed":	"æ‹³è„š",
+	"sword":	"å‰‘æ³•",
+	"hammer":     "é”¤æ³•",
+	"blade":	"åˆ€æ³•",
+	"stick":	"æ£’æ³•",
+	"staff":	"æ–æ³•",
+	"club" :        "æ£æ³•",
+"spear" :        "æªæ³•",
+	"throwing":	"æš—å™¨",
+	"force":	"å†…åŠŸ",
+	"parry":	"æ‹›æ¶",
+	"dodge":	"è½»åŠŸ",
+	"magic":	"æ³•æœ¯",
+	"spells":	"é­”æ³•",
+        "leg":	"è…¿æ³•",
 	
-	"axe":	"¸«·¨",
-	"move":	"ĞĞ¶¯",
-	"array":	"Õó·¨",
-	"whip":     "±Ş·¨",
-	"lingfa":  "Áî·¨",
+	"axe":	"æ–§æ³•",
+	"move":	"è¡ŒåŠ¨",
+	"array":	"é˜µæ³•",
+	"whip":     "é­æ³•",
+	"lingfa":  "ä»¤æ³•",
 
 //	shaolin skills
 
-	"finger":   "Ö¸·¨",
-	"hand":     "ÊÖ·¨",
-	"cuff":     "È­·¨",
-	"claw":     "×¦·¨",
-	"strike":   "ÕÆ·¨",
+	"finger":   "æŒ‡æ³•",
+	"hand":     "æ‰‹æ³•",
+	"cuff":     "æ‹³æ³•",
+	"claw":     "çˆªæ³•",
+	"strike":   "æŒæ³•",
 
-//	"club":     "¹÷·¨",
+//	"club":     "æ£æ³•",
 ]);
 
 int main(object me, string arg)
@@ -49,10 +49,10 @@ int main(object me, string arg)
 	if( !arg ) {
 		map = me->query_skill_map();
 		if( !mapp(map) || sizeof(map)==0 )
-			return notify_fail("ÄãÏÖÔÚÃ»ÓĞÊ¹ÓÃÈÎºÎÌØÊâ¼¼ÄÜ¡£\n");
+			return notify_fail("ä½ ç°åœ¨æ²¡æœ‰ä½¿ç”¨ä»»ä½•ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 
 		skill = keys(valid_types);
-		write("ÒÔÏÂÊÇÄãÄ¿Ç°Ê¹ÓÃÖĞµÄÌØÊâ¼¼ÄÜ¡£\n");
+		write("ä»¥ä¸‹æ˜¯ä½ ç›®å‰ä½¿ç”¨ä¸­çš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 		for (i=0; i<sizeof(skill); i++) {
 			if( undefinedp(valid_types[skill[i]]) ) {
 				map_delete(map, skill[i]);
@@ -104,12 +104,12 @@ if (!undefinedp(map[skill[i]]) && me->query_skill(map[skill[i]],1)<=0)
 		me->prepare_skill("claw");	
 		me->prepare_skill("strike");	
                 me->reset_action();
-return notify_fail(HIR"ÄãµÄÎä¹¦ÓĞÎÊÌâ!ÇëÖØĞÂenableËùÓĞÎä¹¦\n"NOR);
+return notify_fail(HIR"ä½ çš„æ­¦åŠŸæœ‰é—®é¢˜!è¯·é‡æ–°enableæ‰€æœ‰æ­¦åŠŸ\n"NOR);
 }
 			modify = me->query_temp("apply/" + skill[i]);
-			printf("  %-20s£º %-20s  ÓĞĞ§µÈ¼¶£º%s%3d\n" NOR, 
+			printf("  %-20sï¼š %-20s  æœ‰æ•ˆç­‰çº§ï¼š%s%3d\n" NOR, 
 				valid_types[skill[i]] + " (" + skill[i] + ")",
-				undefinedp(map[skill[i]]) ? "ÎŞ" : to_chinese(map[skill[i]]),
+				undefinedp(map[skill[i]]) ? "æ— " : to_chinese(map[skill[i]]),
 				(modify==0 ? "" : (modify>0 ? HIC : HIR)),
 				me->query_skill(skill[i]));
 		}
@@ -117,7 +117,7 @@ return notify_fail(HIR"ÄãµÄÎä¹¦ÓĞÎÊÌâ!ÇëÖØĞÂenableËùÓĞÎä¹¦\n"NOR);
 	}
 
 	if( arg=="?" ) {
-		write("ÒÔÏÂÊÇ¿ÉÒÔÊ¹ÓÃÌØÊâ¼¼ÄÜµÄÖÖÀà£º\n");
+		write("ä»¥ä¸‹æ˜¯å¯ä»¥ä½¿ç”¨ç‰¹æ®ŠæŠ€èƒ½çš„ç§ç±»ï¼š\n");
 		skill = sort_array(keys(valid_types), (: strcmp :) );
 		for(i=0; i<sizeof(skill); i++) {
 			printf("  %s (%s)\n", valid_types[skill[i]], skill[i] );
@@ -126,32 +126,32 @@ return notify_fail(HIR"ÄãµÄÎä¹¦ÓĞÎÊÌâ!ÇëÖØĞÂenableËùÓĞÎä¹¦\n"NOR);
 	}
 
 	if( sscanf(arg, "%s %s", ski, map_to)!=2 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºenable|jifa [<¼¼ÄÜÖÖÀà> <¼¼ÄÜÃû³Æ>|none]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenable|jifa [<æŠ€èƒ½ç§ç±»> <æŠ€èƒ½åç§°>|none]\n");
 
 	if( undefinedp(valid_types[ski]) )
-		return notify_fail("Ã»ÓĞÕâ¸ö¼¼ÄÜÖÖÀà£¬ÓÃ enable ? ¿ÉÒÔ²é¿´ÓĞÄÄĞ©ÖÖÀà¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªæŠ€èƒ½ç§ç±»ï¼Œç”¨ enable ? å¯ä»¥æŸ¥çœ‹æœ‰å“ªäº›ç§ç±»ã€‚\n");
 
 	if( map_to=="none" ) {
 if (ski=="force")
 {
 if (me->query_temp("powerup"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("linji"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("yun_riyue"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("yun_yinyang"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
         if( (int)me->query_temp("powerupxtg") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÏÈÌì´ó·¨ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨å…ˆå¤©å¤§æ³•äº†ã€‚\n");
         if( (int)me->query_temp("poweruptxg") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÔËÌ«Ğş¹¦ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨è¿å¤ªç„åŠŸäº†ã€‚\n");
         if( (int)me->query_temp("powerupkh") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÔË¿û»¨ÎŞµĞ¹¦ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨è¿è‘µèŠ±æ— æ•ŒåŠŸäº†ã€‚\n");
         if(me->query_temp("wdpowerup") )
-        return notify_fail("ÄãÏÖÔÚÕıÔÚÊ¹ÓÃ¡¸Îå¶¾Éñ¹¦¡¹µÄ¾ø¼¼£¬ÇëÔÚÕı³£×´Ì¬ÏÂ·ÅÆúÎä¹¦!\n"); 
+        return notify_fail("ä½ ç°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œäº”æ¯’ç¥åŠŸã€çš„ç»æŠ€ï¼Œè¯·åœ¨æ­£å¸¸çŠ¶æ€ä¸‹æ”¾å¼ƒæ­¦åŠŸ!\n"); 
         if ((int)me->query_temp("shield"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË»¤ÌåÉñ¹¦ÖĞÁË£¬ÇëÔÚÕı³£×´Ì¬ÏÂ·ÅÆúÎä¹¦!\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿æŠ¤ä½“ç¥åŠŸä¸­äº†ï¼Œè¯·åœ¨æ­£å¸¸çŠ¶æ€ä¸‹æ”¾å¼ƒæ­¦åŠŸ!\n");
 
 }
 		me->map_skill(ski);
@@ -159,49 +159,49 @@ return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
 		write("Ok.\n");
 		return 1;
 	} else if( map_to==ski ) {
-		write("¡¸" + to_chinese(ski) + "¡¹ÊÇËùÓĞ" + valid_types[ski] + "µÄ»ù´¡£¬²»ĞèÒª enable¡£\n");
+		write("ã€Œ" + to_chinese(ski) + "ã€æ˜¯æ‰€æœ‰" + valid_types[ski] + "çš„åŸºç¡€ï¼Œä¸éœ€è¦ enableã€‚\n");
 		return 1;
 	}
 
 	if( !me->query_skill(map_to, 1) )
-		return notify_fail("Äã²»»áÕâÖÖ¼¼ÄÜ¡£\n");
+		return notify_fail("ä½ ä¸ä¼šè¿™ç§æŠ€èƒ½ã€‚\n");
 
 //	if( !me->query_skill(ski, 1) )
-//		return notify_fail("ÄãÁ¬¡¸" + to_chinese(ski) + "¡¹¶¼Ã»Ñ§»á£¬¸ü±ğÌá"
-//			+ to_chinese(map_to) + "ÁË¡£\n");
+//		return notify_fail("ä½ è¿ã€Œ" + to_chinese(ski) + "ã€éƒ½æ²¡å­¦ä¼šï¼Œæ›´åˆ«æ"
+//			+ to_chinese(map_to) + "äº†ã€‚\n");
 
 	if( !SKILL_D(map_to)->valid_enable(ski) )
-		return notify_fail("Õâ¸ö¼¼ÄÜ²»ÄÜµ±³ÉÕâÖÖÓÃÍ¾¡£\n");
+		return notify_fail("è¿™ä¸ªæŠ€èƒ½ä¸èƒ½å½“æˆè¿™ç§ç”¨é€”ã€‚\n");
 
 	
 	if( ski=="magic" ) {
-		write("Äã¸ÄÓÃÁíÒ»ÖÖ·¨ÊõÏµ£¬¾«Á¦±ØĞëÖØĞÂ¶ÍÁ·¡£\n");
+		write("ä½ æ”¹ç”¨å¦ä¸€ç§æ³•æœ¯ç³»ï¼Œç²¾åŠ›å¿…é¡»é‡æ–°é”»ç»ƒã€‚\n");
 		me->set("jingli", 0);
 		me->receive_damage("jing", 0);
 	} 
 	else if( ski=="force" ) {
 if (me->query_temp("powerup"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("powerup"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("linji"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("yun_riyue"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
 if (me->query_temp("yun_yinyang"))
-return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
+return notify_fail("è¿™ä¸ªå†…åŠŸä½ ä¸æ˜¯è¿˜ç”¨ç€å—?\n");
         if( (int)me->query_temp("powerupxtg") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÏÈÌì´ó·¨ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨å…ˆå¤©å¤§æ³•äº†ã€‚\n");
         if( (int)me->query_temp("poweruptxg") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÔËÌ«Ğş¹¦ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨è¿å¤ªç„åŠŸäº†ã€‚\n");
         if( (int)me->query_temp("powerupkh") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÔË¿û»¨ÎŞµĞ¹¦ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨è¿è‘µèŠ±æ— æ•ŒåŠŸäº†ã€‚\n");
         if(me->query_temp("wdpowerup") )
-        return notify_fail("ÄãÏÖÔÚÕıÔÚÊ¹ÓÃ¡¸Îå¶¾Éñ¹¦¡¹µÄ¾ø¼¼£¬ÇëÔÚÕı³£×´Ì¬ÏÂ·ÅÆúÎä¹¦!\n"); 
+        return notify_fail("ä½ ç°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œäº”æ¯’ç¥åŠŸã€çš„ç»æŠ€ï¼Œè¯·åœ¨æ­£å¸¸çŠ¶æ€ä¸‹æ”¾å¼ƒæ­¦åŠŸ!\n"); 
         if ((int)me->query_temp("shield"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË»¤ÌåÉñ¹¦ÖĞÁË£¬ÇëÔÚÕı³£×´Ì¬ÏÂ·ÅÆúÎä¹¦!\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿æŠ¤ä½“ç¥åŠŸä¸­äº†ï¼Œè¯·åœ¨æ­£å¸¸çŠ¶æ€ä¸‹æ”¾å¼ƒæ­¦åŠŸ!\n");
 
-		write("Äã¸ÄÓÃÁíÒ»ÖÖÄÚ¹¦£¬ÄÚÁ¦±ØĞëÖØĞÂ¶ÍÁ·¡£\n");
+		write("ä½ æ”¹ç”¨å¦ä¸€ç§å†…åŠŸï¼Œå†…åŠ›å¿…é¡»é‡æ–°é”»ç»ƒã€‚\n");
 		me->set("neili", 0);
 		me->receive_damage("qi", 0);
 	}
@@ -214,12 +214,12 @@ return notify_fail("Õâ¸öÄÚ¹¦Äã²»ÊÇ»¹ÓÃ×ÅÂğ?\n");
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : enable|jifa [<¼¼ÄÜÖÖÀà> <¼¼ÄÜÃû³Æ> | none]
+æŒ‡ä»¤æ ¼å¼ : enable|jifa [<æŠ€èƒ½ç§ç±»> <æŠ€èƒ½åç§°> | none]
            enable|jifa ?
 
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨ËùÒªÓÃµÄ¼¼ÄÜ£¬ĞèÖ¸Ã÷¼¼ÄÜÖÖÀàºÍ¼¼ÄÜÃû³Æ¡£Èç¹û²»¼Ó²Î
-ÊıÔò»áÏÔÊ¾³ö¼¼ÄÜÖÖÀà¼°ÄãÄ¿Ç°ËùÊ¹ÓÃµÄ¼¼ÄÜÃû³Æ £¬Èç¹û¼ÓÒ»¸ö£¿»áÁĞ³ö
-ËùÓĞÄÜÊ¹ÓÃÌØÊâ¼¼ÄÜµÄ¼¼ÄÜÖÖÀà¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŒ‡å®šæ‰€è¦ç”¨çš„æŠ€èƒ½ï¼Œéœ€æŒ‡æ˜æŠ€èƒ½ç§ç±»å’ŒæŠ€èƒ½åç§°ã€‚å¦‚æœä¸åŠ å‚
+æ•°åˆ™ä¼šæ˜¾ç¤ºå‡ºæŠ€èƒ½ç§ç±»åŠä½ ç›®å‰æ‰€ä½¿ç”¨çš„æŠ€èƒ½åç§° ï¼Œå¦‚æœåŠ ä¸€ä¸ªï¼Ÿä¼šåˆ—å‡º
+æ‰€æœ‰èƒ½ä½¿ç”¨ç‰¹æ®ŠæŠ€èƒ½çš„æŠ€èƒ½ç§ç±»ã€‚
  
 HELP
         );

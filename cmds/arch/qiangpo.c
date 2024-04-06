@@ -14,14 +14,14 @@ int main(object me, string arg)
 	me = this_player();
 
 	if( !arg || sscanf(arg, "%s to %s", dest, cmd) != 2 )
-		return notify_fail("Ö¸Áî¸ñÊ½: qiangpo <Ä³ÈË> to <Ö¸Áî>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼: qiangpo <æŸäºº> to <æŒ‡ä»¤>\n");
 //	if (!ob = get_object( dest ) )	
 	if( !objectp(ob = present(dest, environment(me))))
-		return notify_fail("ÕÒ²»µ½" + dest + "¡£\n");
+		return notify_fail("æ‰¾ä¸åˆ°" + dest + "ã€‚\n");
 	if( !living(ob) )
-		return notify_fail("Õâ¸öÎï¼ş²»ÄÜÖ´ĞĞÃüÁî¡£\n");
+		return notify_fail("è¿™ä¸ªç‰©ä»¶ä¸èƒ½æ‰§è¡Œå‘½ä»¤ã€‚\n");
 	if( userp(ob) && wiz_level(me) <= wiz_level(ob) )
-		return notify_fail("ÄãÃ»ÓĞÇ¿ÖÆ" + ob->name() + "Ö´ĞĞÖ¸ÁîµÄÈ¨Á¦¡£\n///");
+		return notify_fail("ä½ æ²¡æœ‰å¼ºåˆ¶" + ob->name() + "æ‰§è¡ŒæŒ‡ä»¤çš„æƒåŠ›ã€‚\n///");
 //	if( userp(ob) )
 //		log_file("force_player", sprintf("[%s] %s forces %s to %s\n",  
 //			ctime(time()), geteuid(me), geteuid(ob), cmd));
@@ -31,9 +31,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@Help
- Ö¸Áî¸ñÊ½: qiangpo <Ä³ÈË> to <Ö¸Áî>
+ æŒ‡ä»¤æ ¼å¼: qiangpo <æŸäºº> to <æŒ‡ä»¤>
 
- Ç¿ÆÈÄ³ÈË×öÄ³ÊÂ, µ«ÄãµÄÎ×Ê¦µÈ¼¶±ØĞë±È¶Ô·½¸ß¡£
+ å¼ºè¿«æŸäººåšæŸäº‹, ä½†ä½ çš„å·«å¸ˆç­‰çº§å¿…é¡»æ¯”å¯¹æ–¹é«˜ã€‚
 Help
 	);
 	return 1;

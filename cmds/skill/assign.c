@@ -4,38 +4,38 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
 	object who;
-	if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½ : assign <id>");
+	if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ : assign <id>");
 	if(me->query("family/privs") != -1) 
-	return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+	return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
         if(!objectp(who = present(arg, environment(me))) 
 	|| !living(who)
 	|| !userp(who)
 	|| me == who)
-        return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+        return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");
 	if(who->query("family/family_name") != me->query("family/family_name"))
-	return notify_fail( who->query("name") + "²¢²»ÊÇ" + 
-	me->query("family/family_name") + "µÄÒ»·İ×Ó¡£\n");
+	return notify_fail( who->query("name") + "å¹¶ä¸æ˜¯" + 
+	me->query("family/family_name") + "çš„ä¸€ä»½å­ã€‚\n");
 	if((int)me->query("family/generation") >= (int)who->
 	query("family/generation"))
 	return notify_fail(who->query("name") +
-	"µÄ±²·İ±ØĞë±ÈÄãµÍ£¡\n");
+	"çš„è¾ˆä»½å¿…é¡»æ¯”ä½ ä½ï¼\n");
 	if((int)who->query("score") < SCORE_COST)
-	return notify_fail( who->query("name") + "µÄÆÀ¼Û²»¹»"+
-	chinese_number(SCORE_COST)+"µã¡£\n");
+	return notify_fail( who->query("name") + "çš„è¯„ä»·ä¸å¤Ÿ"+
+	chinese_number(SCORE_COST)+"ç‚¹ã€‚\n");
         who->assign_apprentice((string)me->query("family/title"),-1);
-	me->assign_apprentice("Ç°ÈÎ"+(string)me->query("family/title"),0);
+	me->assign_apprentice("å‰ä»»"+(string)me->query("family/title"),0);
 	who->add("score",-SCORE_COST);
-	message_vision(sprintf("$N½«%sÖ®Î»´«¸ø$n¡£\n",who->query("family/title")),me,who);
+	message_vision(sprintf("$Nå°†%sä¹‹ä½ä¼ ç»™$nã€‚\n",who->query("family/title")),me,who);
 
 	return 1;
 }
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : assign <id>
+æŒ‡ä»¤æ ¼å¼ : assign <id>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´«ÈÃÒ»°ïÖ®Ö÷µÄµØÎ»¸øÁíÍâµÄÈËÎï¡£
-µ±È»£¬ÕâÎ»Íæ¼ÒĞèÒªÓĞÒ»¶¨µÄ×ö°ïÖ÷ÏÈÌáÌõ¼ş¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ ä¼ è®©ä¸€å¸®ä¹‹ä¸»çš„åœ°ä½ç»™å¦å¤–çš„äººç‰©ã€‚
+å½“ç„¶ï¼Œè¿™ä½ç©å®¶éœ€è¦æœ‰ä¸€å®šçš„åšå¸®ä¸»å…ˆææ¡ä»¶ã€‚
 HELP
         );
         return 1;

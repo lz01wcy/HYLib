@@ -15,43 +15,43 @@ int main(object me, string info)
         string msg,command,msg1;
         object weapon;
         if( !info ) return help();
-        if (strsrch(info, "¡¾") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "¡¿") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "ÏÉ×Ó") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "·ç¶ù") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "Î×Ê¦") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "ÌìÉñ") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "¸æËß") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
-        if (strsrch(info, "»Ø´ð") > 0)
-                return notify_fail("ÃèÊöÀï³öÏÖÁË·Ç·¨×Ö·û£¡\n");
+        if (strsrch(info, "ã€") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "ã€‘") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "ä»™å­") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "é£Žå„¿") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "å·«å¸ˆ") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "å¤©ç¥ž") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "å‘Šè¯‰") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
+        if (strsrch(info, "å›žç­”") > 0)
+                return notify_fail("æè¿°é‡Œå‡ºçŽ°äº†éžæ³•å­—ç¬¦ï¼\n");
         if( !(me->query("jia/make")))
-                return notify_fail("ÄãÃ»ÓÐ×ÔÖÆµÄ±øÆ÷£¡\n");
+                return notify_fail("ä½ æ²¡æœ‰è‡ªåˆ¶çš„å…µå™¨ï¼\n");
 sscanf(info ,"%s %s" ,command ,msg1);
 if (command=="-n")
 {
 	if( (strlen(info) < 6) || (strlen(info) > 20 ) ) 
-                return notify_fail("Çë×¢ÒâÒ»ÏÂ×ÖÊý£¡\n");
-        if( (strsrch(info, "¡¡") >= 0))
-                return notify_fail("Çë×¢ÒâÒ»ÏÂ×ÖÊý£¡\n");
+                return notify_fail("è¯·æ³¨æ„ä¸€ä¸‹å­—æ•°ï¼\n");
+        if( (strsrch(info, "ã€€") >= 0))
+                return notify_fail("è¯·æ³¨æ„ä¸€ä¸‹å­—æ•°ï¼\n");
 }
 else
 {
         if (strsrch(info, "$N") < 0)
-                return notify_fail("ÃèÊöÀïÒªÓÐ$N±íÊ¾Äã×Ô¼º£¡\n");
+                return notify_fail("æè¿°é‡Œè¦æœ‰$Nè¡¨ç¤ºä½ è‡ªå·±ï¼\n");
         if (strsrch(info, "$WEAPON$") < 0)
-                return notify_fail("ÃèÊöÀïÒª´ø$WEAPON$±íÊ¾ÄãµÄ±øÆ÷£¡\n");
+                return notify_fail("æè¿°é‡Œè¦å¸¦$WEAPON$è¡¨ç¤ºä½ çš„å…µå™¨ï¼\n");
 }
 
         weapon = present( "my "+(me->query("jia/id")), me );
         if( !objectp(weapon))
-                return notify_fail("ÄãµÄ±øÆ÷²»ÔÚÉí±ß£¡\n");
+                return notify_fail("ä½ çš„å…µå™¨ä¸åœ¨èº«è¾¹ï¼\n");
         sscanf(info ,"%s %s" ,command ,msg1);
         switch(command)
         {
@@ -71,8 +71,8 @@ else
                         weapon->set("unequip_msg",msg+"\n");
                         break;
                 default :
-                        return notify_fail("ÃèÊöÉèÖÃÊ§°Ü£¬ÇëÑ¡Ôñ¾ßÌå²ÎÊý¡£ÏêÏ¸Çë
-¿´°ïÖúÎÄ¼þ¡£\n");
+                        return notify_fail("æè¿°è®¾ç½®å¤±è´¥ï¼Œè¯·é€‰æ‹©å…·ä½“å‚æ•°ã€‚è¯¦ç»†è¯·
+çœ‹å¸®åŠ©æ–‡ä»¶ã€‚\n");
         }
         write("Ok.\n");
         return 1;
@@ -136,29 +136,29 @@ string creat_info(string msg1,int flag)
 
 int help()
 {
-        string  f=RED+"¡ï"+NOR;
+        string  f=RED+"â˜…"+NOR;
         write(
-"Ö¸Áî¸ñÊ½ : setjmsg -w|-u <¾ßÌåÃèÊö>\n"
+"æŒ‡ä»¤æ ¼å¼ : setjmsg -w|-u <å…·ä½“æè¿°>\n"
 +"\n"
-+f+"Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÎª×Ô¼ºµÄÎäÆ÷¼ÓÈë×°±¸ÒÔ¼°Ð¶ÏÂÊ±µÄÃèÊö\n"
-+"    ÓïÑÔ¡£\n"
-+"    -n : ÎäÆ÷Ãû×ÖÉè¶¨¡£\n"
-+"    -w : ½«ºóÐøÎÄ×Ö×÷Îª±øÆ÷×°±¸Ê±µÄÃèÊöÓïÑÔ¡£\n"
-+"    -u : ½«ºóÐøÎÄ×Ö×÷ÎªÐ¶ÏÂ±øÆ÷Ê±µÄÃèÊöÓïÑÔ¡£\n"
++f+"è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ ä¸ºè‡ªå·±çš„æ­¦å™¨åŠ å…¥è£…å¤‡ä»¥åŠå¸ä¸‹æ—¶çš„æè¿°\n"
++"    è¯­è¨€ã€‚\n"
++"    -n : æ­¦å™¨åå­—è®¾å®šã€‚\n"
++"    -w : å°†åŽç»­æ–‡å­—ä½œä¸ºå…µå™¨è£…å¤‡æ—¶çš„æè¿°è¯­è¨€ã€‚\n"
++"    -u : å°†åŽç»­æ–‡å­—ä½œä¸ºå¸ä¸‹å…µå™¨æ—¶çš„æè¿°è¯­è¨€ã€‚\n"
 +"\n"
-+f+"ÄãÈç¹ûÏ£ÍûÔÚÃèÊöÖÐÊ¹ÓÃ ANSI µÄ¿ØÖÆ×ÖÔª¸Ä±äÑÕÉ«£¬\n"
-+"    ¿ÉÒÔÓÃÒÔÏÂµÄ¿ØÖÆ×Ö´®£º\n"
++f+"ä½ å¦‚æžœå¸Œæœ›åœ¨æè¿°ä¸­ä½¿ç”¨ ANSI çš„æŽ§åˆ¶å­—å…ƒæ”¹å˜é¢œè‰²ï¼Œ\n"
++"    å¯ä»¥ç”¨ä»¥ä¸‹çš„æŽ§åˆ¶å­—ä¸²ï¼š\n"
 +"\n"
-+"$BLK$ - ºÚÉ«    $NOR$ - Õý³£É«   $RED$ - ºìÉ«    $HIR$ - ÁÁºìÉ«\n"
-+"$GRN$ - ÂÌÉ«    $HIG$ - ÁÁÂÌÉ«   $YEL$ - ÍÁ»ÆÉ«  $HIY$ - »ÆÉ«\n"
-+"$BLU$ - ÉîÀ¶É«  $HIB$ - À¶É«     $MAG$ - Ç³×ÏÉ«  $HIM$ - ·ÛºìÉ«\n"
-+"$CYN$ - À¶ÂÌÉ«  $HIC$ - ÌìÇàÉ«   $WHT$ - Ç³»ÒÉ«  $HIW$ - °×É«\n"
-+"ÆäÖÐÏµÍ³×Ô¶¯»áÔÚ×Ö´®Î²¶Ë¼ÓÒ»¸ö $NOR$¡£\n"
++"$BLK$ - é»‘è‰²    $NOR$ - æ­£å¸¸è‰²   $RED$ - çº¢è‰²    $HIR$ - äº®çº¢è‰²\n"
++"$GRN$ - ç»¿è‰²    $HIG$ - äº®ç»¿è‰²   $YEL$ - åœŸé»„è‰²  $HIY$ - é»„è‰²\n"
++"$BLU$ - æ·±è“è‰²  $HIB$ - è“è‰²     $MAG$ - æµ…ç´«è‰²  $HIM$ - ç²‰çº¢è‰²\n"
++"$CYN$ - è“ç»¿è‰²  $HIC$ - å¤©é’è‰²   $WHT$ - æµ…ç°è‰²  $HIW$ - ç™½è‰²\n"
++"å…¶ä¸­ç³»ç»Ÿè‡ªåŠ¨ä¼šåœ¨å­—ä¸²å°¾ç«¯åŠ ä¸€ä¸ª $NOR$ã€‚\n"
 +"\n"
-+f+"ÔÚÃèÐ´ÖÐÊ¹ÓÃ$N´úÌæ×Ô¼º£»Ê¹ÓÃ$WEAPON$´úÌæ±øÆ÷Ãû³Æ¡£\n"
++f+"åœ¨æå†™ä¸­ä½¿ç”¨$Nä»£æ›¿è‡ªå·±ï¼›ä½¿ç”¨$WEAPON$ä»£æ›¿å…µå™¨åç§°ã€‚\n"
 +"\n"
-+f+"×¢ÒâÈç¹ûÔÚ±øÆ÷Ãû³Æºó»¹ÓÐÃèÐ´ÎÄ×ÖÄÇÃ´ÐèÒª´ÓÐÂ¶¨ÒåÑÕÉ«\n"
-+"    ·ñÔò°´Ä¬ÐíÑÕÉ«´¦Àí¡£\n"
++f+"æ³¨æ„å¦‚æžœåœ¨å…µå™¨åç§°åŽè¿˜æœ‰æå†™æ–‡å­—é‚£ä¹ˆéœ€è¦ä»Žæ–°å®šä¹‰é¢œè‰²\n"
++"    å¦åˆ™æŒ‰é»˜è®¸é¢œè‰²å¤„ç†ã€‚\n"
 
         );
         return 1;

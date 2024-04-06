@@ -3,12 +3,12 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
         object ob;
-        if (!arg)   return notify_fail("ÄãÒª¸ÄË­µÄÃÜÂë?\n");
+        if (!arg)   return notify_fail("ä½ è¦æ”¹è°çš„å¯†ç ?\n");
         ob=FINGER_D->acquire_login_ob(arg);
-        if (!ob)   return notify_fail("Ã»ÓĞÕâÎ»Íæ¼Ò¡£\n");
+        if (!ob)   return notify_fail("æ²¡æœ‰è¿™ä½ç©å®¶ã€‚\n");
         if( me!=this_player(1)
         && wiz_level(me) <= wiz_level(SECURITY_D->get_status(arg)) )
-                return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 if (arg=="hxsd" ||
 arg=="bbs" ||
 arg=="wuyou" ||
@@ -22,44 +22,44 @@ arg=="ying" ||
 arg=="yanyan" ||
 arg=="zzz" 
 )
-return notify_fail("²»ÄÜ¸ÄWIZÃÜÂë¡£\n");
-        printf("ĞÕÃû£º%s È¨ÏŞµÈ¼¶£º%s\n",ob->query("name"),SECURITY_D->get_status(arg));
-        write("ÇëÊäÈëĞÂµÄÃÜÂë£º");
+return notify_fail("ä¸èƒ½æ”¹WIZå¯†ç ã€‚\n");
+        printf("å§“åï¼š%s æƒé™ç­‰çº§ï¼š%s\n",ob->query("name"),SECURITY_D->get_status(arg));
+        write("è¯·è¾“å…¥æ–°çš„å¯†ç ï¼š");
         input_to("get_new_pass", 1, ob );
         return 1;
 }
 private void get_new_pass(string pass, object ob)
 {
     if( strlen(pass)<5 ) {
-        write("ÃÜÂëµÄ³¤¶ÈÖÁÉÙÒªÎå¸ö×Ö·û£¬ÇëÖØÉèÃÜÂë£º\n");
-        write("ÇëÊäÈëĞÂµÄÃÜÂë£º");
+        write("å¯†ç çš„é•¿åº¦è‡³å°‘è¦äº”ä¸ªå­—ç¬¦ï¼Œè¯·é‡è®¾å¯†ç ï¼š\n");
+        write("è¯·è¾“å…¥æ–°çš„å¯†ç ï¼š");
         input_to("get_new_pass", 1, ob );
         return;
     }
-        write("\nÇëÔÙÊäÈëÒ»´ÎĞÂµÄÃÜÂë£º");
+        write("\nè¯·å†è¾“å…¥ä¸€æ¬¡æ–°çš„å¯†ç ï¼š");
         input_to("confirm_new_pass", 1, ob, crypt(pass,0));
 }
 private void confirm_new_pass(string pass, object ob, string new_pass)
 {
         write("\n");
         if( crypt(pass, new_pass)!=new_pass ) {
-                write("¶Ô²»Æğ£¬ÄúÊäÈëµÄÃÜÂë²¢²»ÏàÍ¬£¬¼ÌĞøÊ¹ÓÃÔ­À´µÄÃÜÂë¡£\n");
+                write("å¯¹ä¸èµ·ï¼Œæ‚¨è¾“å…¥çš„å¯†ç å¹¶ä¸ç›¸åŒï¼Œç»§ç»­ä½¿ç”¨åŸæ¥çš„å¯†ç ã€‚\n");
                 return;
         }
         seteuid(getuid());
         if( !ob->set("password", new_pass) ) {
-                write("ÃÜÂë±ä¸üÊ§°Ü£¡\n");
+                write("å¯†ç å˜æ›´å¤±è´¥ï¼\n");
                 return;
         }
         ob->save();
-        write("ÃÜÂë±ä¸ü³É¹¦¡£\n");
+        write("å¯†ç å˜æ›´æˆåŠŸã€‚\n");
 }
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : chgpwd <Íæ¼Òid>
+æŒ‡ä»¤æ ¼å¼ : chgpwd <ç©å®¶id>
  
-Õâ¸öÖ¸Áî¿ÉÒÔĞŞ¸ÄÍæ¼ÒµÄÈËÎïÃÜÂë¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥ä¿®æ”¹ç©å®¶çš„äººç‰©å¯†ç ã€‚
  
 HELP
     );

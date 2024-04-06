@@ -10,30 +10,30 @@ string skill_level(string, int);
 string skill_enables(object sk);
 int sort_skill(string file);
 mapping valid_type = ([
-        "array":        "Õó·¨",
-        "axe":          "¸«·¨",
-        "blade":        "µ¶·¨",
-        "claw":         "×¦·¨",
-        "club" :        "¹÷·¨",
-        "cuff":         "È­·¨",
-        "dagger":       "¶Ì±ø",
-        "dodge":        "Çá¹¦",
-        "finger":       "Ö¸·¨",
-        "force":        "ÄÚ¹¦",
-        "hammer":       "´¸·¨",
-        "hand":         "ÊÖ·¨",
-        "hook":         "¹³·¨",
-        "leg":          "ÍÈ·¨",
-        "magic":        "·¨Êõ",
-        "parry":        "ÕĞ¼Ü",
-        "spear":        "Ç¹·¨",
-        "staff":        "ÕÈ·¨",
-        "stick":        "°ô·¨",
-        "strike":       "ÕÆ·¨",
-        "sword":        "½£·¨",
-        "throwing":     "°µÆ÷",
-        "unarmed":      "È­½Å",
-        "whip":         "±Ş·¨",
+        "array":        "é˜µæ³•",
+        "axe":          "æ–§æ³•",
+        "blade":        "åˆ€æ³•",
+        "claw":         "çˆªæ³•",
+        "club" :        "æ£æ³•",
+        "cuff":         "æ‹³æ³•",
+        "dagger":       "çŸ­å…µ",
+        "dodge":        "è½»åŠŸ",
+        "finger":       "æŒ‡æ³•",
+        "force":        "å†…åŠŸ",
+        "hammer":       "é”¤æ³•",
+        "hand":         "æ‰‹æ³•",
+        "hook":         "é’©æ³•",
+        "leg":          "è…¿æ³•",
+        "magic":        "æ³•æœ¯",
+        "parry":        "æ‹›æ¶",
+        "spear":        "æªæ³•",
+        "staff":        "æ–æ³•",
+        "stick":        "æ£’æ³•",
+        "strike":       "æŒæ³•",
+        "sword":        "å‰‘æ³•",
+        "throwing":     "æš—å™¨",
+        "unarmed":      "æ‹³è„š",
+        "whip":         "é­æ³•",
 ]);
 
 
@@ -45,31 +45,31 @@ int main(object me, string arg)
 	mapping lrn;
 	mixed *cmds;
 
-// ²»´ø²ÎÊı£¬ÔòÏÔÊ¾°ïÖúÖ÷²Ëµ¥
+// ä¸å¸¦å‚æ•°ï¼Œåˆ™æ˜¾ç¤ºå¸®åŠ©ä¸»èœå•
 	if( !arg )
 	{
 //		cat(HELP_DIR + "help/topics");
 		me->start_more(read_file(HELP_DIR + "help/topics"));
 		return 1;
 	}
-// ²ÎÊıÎªhere£¬ÏÔÊ¾±¾µØËùÔÚµØÖ·µÄ°ïÖú
+// å‚æ•°ä¸ºhereï¼Œæ˜¾ç¤ºæœ¬åœ°æ‰€åœ¨åœ°å€çš„å¸®åŠ©
 	if( arg == "here")
 	{
 		file = file_name(environment(me));
 		if( sscanf(file, "/d/%s/%s", here, here1) != 2)
-			return notify_fail("Õâ¸öµØ·½Ã»ÓĞ°ïÖúËµÃ÷¡£\n");
+			return notify_fail("è¿™ä¸ªåœ°æ–¹æ²¡æœ‰å¸®åŠ©è¯´æ˜ã€‚\n");
 		else
 		{
-// ÑïÖİÄ¿Â¼Îªcity£¬ÌØ±ğÁĞ³ö
+// æ‰¬å·ç›®å½•ä¸ºcityï¼Œç‰¹åˆ«åˆ—å‡º
 			if( here == "city") arg = "yangzhou";
 			else arg = here;
 		}
 	}
-// ÃüÁî°ïÖú£¬ÔòÈ¡ /cmds/Ä¿Â¼ÏÂµÄÃüÁîÎÄ¼şµÄ×Ô´ø°ïÖú
+// å‘½ä»¤å¸®åŠ©ï¼Œåˆ™å– /cmds/ç›®å½•ä¸‹çš„å‘½ä»¤æ–‡ä»¶çš„è‡ªå¸¦å¸®åŠ©
 	if( arg == "cmds")
 	{
 		cmds = get_dir("/cmds/usr/");
-		write(HIC"¡¼ÓÃ»§ÏµÍ³ÃüÁî¡½\n"NOR);
+		write(HIC"ã€–ç”¨æˆ·ç³»ç»Ÿå‘½ä»¤ã€—\n"NOR);
 		w = 0;
 		for ( i = 0; i < sizeof(cmds); i++)
 		{
@@ -90,7 +90,7 @@ int main(object me, string arg)
 		}
 		write("\n");
 		cmds = get_dir("/cmds/std/");
-		write(HIC"¡¼½»Á÷Ì½ÏÕÃüÁî¡½\n"NOR);
+		write(HIC"ã€–äº¤æµæ¢é™©å‘½ä»¤ã€—\n"NOR);
 		w = 0;
 		for ( i = 0; i < sizeof(cmds); i++)
 		{
@@ -111,7 +111,7 @@ int main(object me, string arg)
 		}
 		write("\n");
 		cmds = get_dir("/cmds/skill/");
-		write(HIC"¡¼Îä¹¦¼¼ÄÜÃüÁî¡½\n"NOR);
+		write(HIC"ã€–æ­¦åŠŸæŠ€èƒ½å‘½ä»¤ã€—\n"NOR);
 		w = 0;
 		for ( i = 0; i < sizeof(cmds); i++)
 		{
@@ -131,18 +131,18 @@ int main(object me, string arg)
 			}
 		}
 		write("\n");
-		write(HIY"ÇëÓÃhelp <ÃüÁîÃû> ²é¿´ÏêÏ¸ËµÃ÷¡£\n"NOR);
+		write(HIY"è¯·ç”¨help <å‘½ä»¤å> æŸ¥çœ‹è¯¦ç»†è¯´æ˜ã€‚\n"NOR);
 		return 1;
 	}
 // Else, try if a command name is specified.
 	seteuid(getuid());
 	if( stringp(file = me->find_command(arg)) )
 	{
-		notify_fail("ÓĞÕâ¸öÖ¸Áî´æÔÚ£¬µ«ÊÇ²¢Ã»ÓĞÏêÏ¸µÄËµÃ÷ÎÄ¼ş¡£\n");
+		notify_fail("æœ‰è¿™ä¸ªæŒ‡ä»¤å­˜åœ¨ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
 		return file->help(me);
 	}
 
-// ²éÕÒ°ïÖúÎÄ¼şµÄÂ·¾¶
+// æŸ¥æ‰¾å¸®åŠ©æ–‡ä»¶çš„è·¯å¾„
 	if( pointerp(search = me->query("help_search_path")) )
 	{
 		i = sizeof(search);
@@ -167,54 +167,54 @@ int main(object me, string arg)
 			return 1;
 		}
 	}
-// Îä¹¦°ïÖúÎÄ¼ş
+// æ­¦åŠŸå¸®åŠ©æ–‡ä»¶
 	sscanf(arg, "%s.%s", arg, str);
 	if(file_size(SKILL_D(arg)+".c") < 1)
-		return notify_fail("Ã»ÓĞÕë¶ÔÕâÏîÖ÷ÌâµÄËµÃ÷ÎÄ¼ş¡£\n");
+		return notify_fail("æ²¡æœ‰é’ˆå¯¹è¿™é¡¹ä¸»é¢˜çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
 	
-// Îä¹¦¾øÕĞ°ïÖúÎÄ¼ş
+// æ­¦åŠŸç»æ‹›å¸®åŠ©æ–‡ä»¶
 	if( stringp(str) )
 	{
 		if( stringp(exert = SKILL_D(arg)->exert_function_file("")) &&
 			file_size(exert + str +".c") > 0)
 		{
-			notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"ÄÚ¹¦·½ÃæµÄ¡¸"+str+"¡¹¹¦ÄÜÃ»ÓĞÏêÏ¸µÄËµÃ÷¡£\n");
+			notify_fail("å¯¹ä¸èµ·ï¼Œ"+to_chinese(arg)+"å†…åŠŸæ–¹é¢çš„ã€Œ"+str+"ã€åŠŸèƒ½æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜ã€‚\n");
 			return (exert + str)->help(me);
 		}
 		else
 		if( stringp(exert = SKILL_D(arg)->perform_action_file("")) &&
 			file_size(exert + str +".c") > 0)
 		{
-			notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"Íâ¹¦·½ÃæµÄ¡¸"+str+"¡¹¹¦ÄÜÃ»ÓĞÏêÏ¸µÄËµÃ÷¡£\n");
+			notify_fail("å¯¹ä¸èµ·ï¼Œ"+to_chinese(arg)+"å¤–åŠŸæ–¹é¢çš„ã€Œ"+str+"ã€åŠŸèƒ½æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜ã€‚\n");
 			return (exert + str)->help(me);
 		}
-		return notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"Ã»ÓĞ¡¸"+str+"¡¹ÕâÏî¹¦ÄÜ¡£\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼Œ"+to_chinese(arg)+"æ²¡æœ‰ã€Œ"+str+"ã€è¿™é¡¹åŠŸèƒ½ã€‚\n");
 	}
 	if(!SKILL_D(arg)->help(me))
 	{
-		write(HIY"\nÖ¸¶¨Îä¼¼Ã»ÓĞÏêÏ¸°ïÖúËµÃ÷¡£\n"NOR);
+		write(HIY"\næŒ‡å®šæ­¦æŠ€æ²¡æœ‰è¯¦ç»†å¸®åŠ©è¯´æ˜ã€‚\n"NOR);
 	}
 
 	lrn = me->query_learned();
 	if( !mapp(lrn) ) lrn = ([]);
 
-	str = sprintf("\n©°©¤©¤©¤©¤%s",HIW"¡¾"YEL+to_chinese(arg)+HIW"    ¹¦ÄÜ±í¡¿"NOR);
-	str += sprintf("©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤");
+	str = sprintf("\nâ”Œâ”€â”€â”€â”€%s",HIW"ã€"YEL+to_chinese(arg)+HIW"    åŠŸèƒ½è¡¨ã€‘"NOR);
+	str += sprintf("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
 	for (k=18-strlen(to_chinese(arg)); k>0; k--)
 	{
-		str += sprintf("©¤");
+		str += sprintf("â”€");
 		k--;
 	}
-	str += sprintf("©´\n");
+	str += sprintf("â”\n");
 
-	str = replace_string(str, "  ", "©¤");
-//	str += sprintf("©¦"HIY"Ä¿Ç°µÈ¼¶"NOR"£º     %3d/%6d              "HIY "Îä¹¦Àà±ğ"NOR"£º  %-4s%9s\n", me->query_skill(arg, 1), (int)lrn[arg], SKILL_D(arg)->type()=="knowledge" ? "ÖªÊ¶":"Îä¼¼", "©¦");
-	str += sprintf("©¦"HIY"Ä¿Ç°µÈ¼¶"NOR"£º     %3d/%6d              "HIY "Îä¹¦Àà±ğ"NOR"£º  %-4s%9s\n", me->query_skill(arg, 1), (int)lrn[arg], SKILL_D(arg)->type()=="knowledge" ? "ÖªÊ¶" : SKILL_D(arg)->martialtype()=="skill" ? "Îä¼¼" : SKILL_D(arg)->martialtype()=="dodge" ? "Çá¹¦" : "ÄÚ¹¦" , "©¦");
+	str = replace_string(str, "  ", "â”€");
+//	str += sprintf("â”‚"HIY"ç›®å‰ç­‰çº§"NOR"ï¼š     %3d/%6d              "HIY "æ­¦åŠŸç±»åˆ«"NOR"ï¼š  %-4s%9s\n", me->query_skill(arg, 1), (int)lrn[arg], SKILL_D(arg)->type()=="knowledge" ? "çŸ¥è¯†":"æ­¦æŠ€", "â”‚");
+	str += sprintf("â”‚"HIY"ç›®å‰ç­‰çº§"NOR"ï¼š     %3d/%6d              "HIY "æ­¦åŠŸç±»åˆ«"NOR"ï¼š  %-4s%9s\n", me->query_skill(arg, 1), (int)lrn[arg], SKILL_D(arg)->type()=="knowledge" ? "çŸ¥è¯†" : SKILL_D(arg)->martialtype()=="skill" ? "æ­¦æŠ€" : SKILL_D(arg)->martialtype()=="dodge" ? "è½»åŠŸ" : "å†…åŠŸ" , "â”‚");
 
 	if(SKILL_D(arg)->type() != "martial" ||
 		member_array(arg, keys(valid_type))!=-1) 
-		return notify_fail(str+"©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n");
-	str+="©¦                                                              ©¦\n";
+		return notify_fail(str+"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+	str+="â”‚                                                              â”‚\n";
 	sk = load_object(SKILL_D(arg));
 
 	exert = skill_enables(sk);
@@ -236,15 +236,15 @@ int main(object me, string arg)
 	
 	if(j && j > 0)
 	{
-		if( i ) str = str +"©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
-		str += "©¦"HIM"ÄÚ¹¦·½Ãæ"NOR"£º                                                    ©¦\n";
-		str += "©¦"HIC"(exert + )";
+		if( i ) str = str +"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
+		str += "â”‚"HIM"å†…åŠŸæ–¹é¢"NOR"ï¼š                                                    â”‚\n";
+		str += "â”‚"HIC"(exert + )";
 		for(i=0; i < j; i++){
 			if (i % 4 == 0)
 			{
 				for (k = 52-templen; k >0; k--)
 					str += " ";
-				str += "©¦\n©¦          ";
+				str += "â”‚\nâ”‚          ";
 				templen = 0;
 			}
 			str += sprintf("%-14s ",YEL+replace_string(skfile[i], ".c", "")+NOR);
@@ -252,7 +252,7 @@ int main(object me, string arg)
 		}
 		for (k = 52-templen; k >0; k--)
 			str += " ";
-		str += "©¦\n";
+		str += "â”‚\n";
 		j = 0;
 	}
 	
@@ -267,15 +267,15 @@ int main(object me, string arg)
 	if(j && j > 0)
 	{
 		if( i )
-			str = str +"©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n";
-		str += "©¦"HIY"Íâ¹¦·½Ãæ"NOR"£º                                                    ©¦\n";
-		str += "©¦"HIC"(perform+)"NOR;
+			str = str +"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
+		str += "â”‚"HIY"å¤–åŠŸæ–¹é¢"NOR"ï¼š                                                    â”‚\n";
+		str += "â”‚"HIC"(perform+)"NOR;
 		for(i=0; i < j; i++){
 			if (i % 4 == 0)
 			{
 				for (k = 52-templen; k >0; k--)
 					str += " ";
-				str += "©¦\n©¦          ";
+				str += "â”‚\nâ”‚          ";
 				templen = 0;
 			}
 			str += sprintf("%s ",WHT+replace_string(skfile[i], ".c", "")+NOR);
@@ -283,9 +283,9 @@ int main(object me, string arg)
 		}
 		for (k = 52-templen; k >0; k--)
 			str += " ";
-		str += "©¦\n";
+		str += "â”‚\n";
 	}
-	str += "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n";
+	str += "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n";
 	write(str);
 	return 1;
 }
@@ -305,15 +305,15 @@ string skill_enables(object sk)
 	j = sizeof(skills);
 	if( !j || j < 1)
 		return "";
-	str = "©¦"HIY"ÌØÊâ¼¼ÄÜ"NOR"£º                                                    ©¦\n";
-	str += "©¦"HIC"(enable+ )"NOR;
+	str = "â”‚"HIY"ç‰¹æ®ŠæŠ€èƒ½"NOR"ï¼š                                                    â”‚\n";
+	str += "â”‚"HIC"(enable+ )"NOR;
 	templen = 0;
 	for(i=0; i < j; i++) {
 		if (i % 4 == 0)
 		{
 			for (k = 52-templen; k >0; k--)
 				str += " ";
-			str += "©¦\n©¦          ";
+			str += "â”‚\nâ”‚          ";
 			templen = 0;
 		}
 		str += sprintf("%s ", valid_type[skills[i]]+"("+skills[i]+")");
@@ -323,7 +323,7 @@ string skill_enables(object sk)
 	{
 		str += " ";
 	}
-	str += "©¦\n";
+	str += "â”‚\n";
 	return str;
 }
 int sort_skill(string file)
@@ -347,13 +347,13 @@ int help(object me)
 {
 	write(@HELP
 
-Ö¸Áî¸ñÊ½£ºhelp <Ö÷Ìâ>              ÀıÈç£º> help cmds
-          help <Îä¹¦Ãû>            ÀıÈç£º> help force
-          help <º¯ÊıÃû³Æ>()        ÀıÈç£º> help call_out()
-          help here                ÏÔÊ¾ËùÔÚµØÓòµÄ½éÉÜ
+æŒ‡ä»¤æ ¼å¼ï¼šhelp <ä¸»é¢˜>              ä¾‹å¦‚ï¼š> help cmds
+          help <æ­¦åŠŸå>            ä¾‹å¦‚ï¼š> help force
+          help <å‡½æ•°åç§°>()        ä¾‹å¦‚ï¼š> help call_out()
+          help here                æ˜¾ç¤ºæ‰€åœ¨åœ°åŸŸçš„ä»‹ç»
 
-    Õâ¸öÖ¸ÁîÌá¹©ÄãÕë¶ÔÄ³Ò»Ö÷ÌâµÄÏêÏ¸ËµÃ÷ÎÄ¼ş£¬ÈôÊÇ²»Ö¸¶¨Ö÷Ìâ£¬
-ÔòÌá¹©ÄãÓĞ¹ØÖ÷ÌâµÄÎÄ¼ş¡£
+    è¿™ä¸ªæŒ‡ä»¤æä¾›ä½ é’ˆå¯¹æŸä¸€ä¸»é¢˜çš„è¯¦ç»†è¯´æ˜æ–‡ä»¶ï¼Œè‹¥æ˜¯ä¸æŒ‡å®šä¸»é¢˜ï¼Œ
+åˆ™æä¾›ä½ æœ‰å…³ä¸»é¢˜çš„æ–‡ä»¶ã€‚
 
 HELP
 	);

@@ -10,31 +10,31 @@ int main(object me, string arg)
 	object ob,*newob;
 
 	if( !arg || sscanf(arg, "%s %s", dest, msg)!=2 )
-		return notify_fail("ÄãÒª¶ÔË­¶úÓïĞ©Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°è€³è¯­äº›ä»€ä¹ˆï¼Ÿ\n");
 
 	ob = present(dest, environment(me));
 	if( !ob || !ob->is_character() )
-		return notify_fail("ÄãÒª¶ÔË­¶úÓï£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°è€³è¯­ï¼Ÿ\n");
 
-	if(!ob || !me->visible(ob)) return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
-	if(ob == me) return notify_fail("¸æËß×Ô¼º£¿\n");
-	if (!interactive(ob)) return notify_fail("Õâ¸öÈË¶ÏÏßÁË¡£\n");
-	if (!living(ob)) return notify_fail("Õâ¸öÈËÏÖÔÚÎŞ·¨Ìı¼ûÄãµÄ»°¡£\n");
+	if(!ob || !me->visible(ob)) return notify_fail("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
+	if(ob == me) return notify_fail("å‘Šè¯‰è‡ªå·±ï¼Ÿ\n");
+	if (!interactive(ob)) return notify_fail("è¿™ä¸ªäººæ–­çº¿äº†ã€‚\n");
+	if (!living(ob)) return notify_fail("è¿™ä¸ªäººç°åœ¨æ— æ³•å¬è§ä½ çš„è¯ã€‚\n");
 
         if ( ((int)time() - (int)me->query("tell_time")) < 1 )
-        return notify_fail("ÓĞ»°ºÃºÃËµÅ¶¡£\n");
+        return notify_fail("æœ‰è¯å¥½å¥½è¯´å“¦ã€‚\n");
 
-	write( GRN "ÄãÔÚ" + ob->name() + "µÄ¶ú±ßÇÄÉùËµµÀ£º" + msg + "\n" NOR);
-	tell_room( environment(me), me->name() + "ÔÚ" + ob->name()
-		+ "¶ú±ßĞ¡ÉùµØËµÁËĞ©»°¡£\n", ({ me, ob }) );
+	write( GRN "ä½ åœ¨" + ob->name() + "çš„è€³è¾¹æ‚„å£°è¯´é“ï¼š" + msg + "\n" NOR);
+	tell_room( environment(me), me->name() + "åœ¨" + ob->name()
+		+ "è€³è¾¹å°å£°åœ°è¯´äº†äº›è¯ã€‚\n", ({ me, ob }) );
 	if( !userp(ob) ) ob->relay_whisper(me, msg);
 	else
-		tell_object( ob, GRN + me->name() + "ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º" + msg + "\n" NOR);
+		tell_object( ob, GRN + me->name() + "åœ¨ä½ çš„è€³è¾¹æ‚„å£°è¯´é“ï¼š" + msg + "\n" NOR);
                      me->set("tell_time", time());
         newob = filter_array(children(USER_OB),(: userp($1) && wizardp($1) :));
 if (!wizardp(me) && query_ip_name(ob)!=query_ip_name(me))
 {
-message("channel:snp", HIB"¡¾ÇÔÌı¡¿"+me->query("name")+"¸æËß"+ob->query("name")+"£º"+msg+"\n"NOR, newob);
+message("channel:snp", HIB"ã€çªƒå¬ã€‘"+me->query("name")+"å‘Šè¯‰"+ob->query("name")+"ï¼š"+msg+"\n"NOR, newob);
 }
 
 	return 1;
@@ -43,9 +43,9 @@ message("channel:snp", HIB"¡¾ÇÔÌı¡¿"+me->query("name")+"¸æËß"+ob->query("name")+
 int help(object me)
 {
 	write( @TEXT
-Ö¸Áî¸ñÊ½£ºwhisper <Ä³ÈË> <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼šwhisper <æŸäºº> <è®¯æ¯>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÓÃÀ´ºÍÍ¬Ò»·¿¼äÖĞµÄÈË¶úÓï£¬°üÀ¨ NPC ÔÚÄÚ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥ç”¨æ¥å’ŒåŒä¸€æˆ¿é—´ä¸­çš„äººè€³è¯­ï¼ŒåŒ…æ‹¬ NPC åœ¨å†…ã€‚
 TEXT
 	);
 	return 1;

@@ -9,19 +9,19 @@ int main(object me, string arg)
 	object obj, old_target;
 
 	if(me->query("age") < 15)
-		return notify_fail("Ğ¡º¢×ÓÒ»±ßÍæ¶ùÈ¥¡£\n");
+		return notify_fail("å°å­©å­ä¸€è¾¹ç©å„¿å»ã€‚\n");
 
 	if(!arg || !objectp(obj = present(arg, environment(me))))
-		return notify_fail("ÄãÏëºÍË­½á°İ£¿\n");
+		return notify_fail("ä½ æƒ³å’Œè°ç»“æ‹œï¼Ÿ\n");
 
 	if( !obj->is_character() )
-		return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇÉúÎï¡£\n");
+		return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯ç”Ÿç‰©ã€‚\n");
 
 	if( !userp(obj) )
-		return notify_fail("ÄãÖ»ÄÜºÍÍæ¼Ò°İ°Ñ×Ó¡£\n");
+		return notify_fail("ä½ åªèƒ½å’Œç©å®¶æ‹œæŠŠå­ã€‚\n");
 
 	if( !living(obj) )
-		return notify_fail("àÅ...Äã»¹ÊÇÏÈ°Ñ"+obj->name()+"ÅªĞÑ°É¡£\n");
+		return notify_fail("å—¯...ä½ è¿˜æ˜¯å…ˆæŠŠ"+obj->name()+"å¼„é†’å§ã€‚\n");
 
 if (me->query("jiebai"))
 {
@@ -31,25 +31,25 @@ me->delete("jiebei");
 }
 }
 	if (me->query("jiebai") && strsrch(me->query("jiebai"), obj->query("id")+">") >= 0)
-		return notify_fail("ÄãÒÑ¾­ºÍÈË¼Ò½á°İ¹ıÁË¡£\n");
+		return notify_fail("ä½ å·²ç»å’Œäººå®¶ç»“æ‹œè¿‡äº†ã€‚\n");
 
 	if(obj==me)
-		return notify_fail("Äã²»ÄÜºÍ×Ô¼º½á°İ¡£\n");
+		return notify_fail("ä½ ä¸èƒ½å’Œè‡ªå·±ç»“æ‹œã€‚\n");
 
 	if( userp(obj) && (object)obj->query_temp("pending/jiebai")!=me ) {
-		message_vision("\n$N¶ÔÖø$nËµµÀ£º" 
+		message_vision("\n$Nå¯¹è‘—$nè¯´é“ï¼š" 
 			+ RANK_D->query_self(me) 
-			+ me->name() + "£¬¶Ô"
-			+ RANK_D->query_respect(obj) + "ĞÄÒÇÒÑ¾Ã£¬Ô¸±Ë´ËÉúËÀÓë¹²£¬¸Îµ¨ÏàÕÕ£¡\n\n", me, obj);
+			+ me->name() + "ï¼Œå¯¹"
+			+ RANK_D->query_respect(obj) + "å¿ƒä»ªå·²ä¹…ï¼Œæ„¿å½¼æ­¤ç”Ÿæ­»ä¸å…±ï¼Œè‚èƒ†ç›¸ç…§ï¼\n\n", me, obj);
 		if( objectp(old_target = me->query_temp("pending/jiebai")) )
-			tell_object(old_target, RED + me->name() + "È¡ÏûÁËºÍÄã½á°İµÄÄîÍ·¡£\n" NOR);
+			tell_object(old_target, RED + me->name() + "å–æ¶ˆäº†å’Œä½ ç»“æ‹œçš„å¿µå¤´ã€‚\n" NOR);
 		me->set_temp("pending/jiebai", obj);
-		tell_object(obj, YEL "Èç¹ûÄãÔ¸ÒâºÍ¶Ô·½½áÎªÒìĞÔ¹ÇÈâ£¬ÇëÄãÒ²¶Ô" + me->name() + "("+(string)me->query("id")+")"+ "ÏÂÒ»´Î jiebai Ö¸Áî¡£\n" NOR);
-		write(RED "¶Ô·½±ØĞëÍ¬Òâ²ÅÄÜ½á°İ¡£ÄãµÈ×Å°É¡£\n" NOR);
+		tell_object(obj, YEL "å¦‚æœä½ æ„¿æ„å’Œå¯¹æ–¹ç»“ä¸ºå¼‚æ€§éª¨è‚‰ï¼Œè¯·ä½ ä¹Ÿå¯¹" + me->name() + "("+(string)me->query("id")+")"+ "ä¸‹ä¸€æ¬¡ jiebai æŒ‡ä»¤ã€‚\n" NOR);
+		write(RED "å¯¹æ–¹å¿…é¡»åŒæ„æ‰èƒ½ç»“æ‹œã€‚ä½ ç­‰ç€å§ã€‚\n" NOR);
 		return 1;
 	}
 
-	message_vision("\n$N¶Ô×Å$n¸ßÉùËµµÀ£º²»ÇóÍ¬ÄêÍ¬ÔÂÍ¬ÈÕÉú£¬µ«Ô¸Í¬ÄêÍ¬ÔÂÍ¬ÈÕËÀ£¡\n\n", me, obj);
+	message_vision("\n$Nå¯¹ç€$né«˜å£°è¯´é“ï¼šä¸æ±‚åŒå¹´åŒæœˆåŒæ—¥ç”Ÿï¼Œä½†æ„¿åŒå¹´åŒæœˆåŒæ—¥æ­»ï¼\n\n", me, obj);
 	me->delete_temp("pending/jiebai");
 	if(!me->query("jiebai"))
 		me->set("jiebai", obj->query("id")+">");
@@ -66,9 +66,9 @@ me->delete("jiebei");
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : jiebai <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : jiebai <æŸäºº>
  
-Õâ¸öÖ¸ÁîÓÃÀ´ºÍ±ğÈËµÄ½á°İ£¬µ±È»¶Ô·½±ØĞëÒ²Í¬Òâ¡£
+è¿™ä¸ªæŒ‡ä»¤ç”¨æ¥å’Œåˆ«äººçš„ç»“æ‹œï¼Œå½“ç„¶å¯¹æ–¹å¿…é¡»ä¹ŸåŒæ„ã€‚
 
 HELP
     );

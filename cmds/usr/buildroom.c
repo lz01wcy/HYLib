@@ -15,29 +15,29 @@ int main(object me, string arg)
 	object gold;
         seteuid(getuid());
         if(!arg || sscanf(arg,"%s %s",dir,stitle) != 2)
-	return notify_fail("Ö¸Áî¸ñÊ½£º¡¡buildroom north ÌìµØ¸ó×ÜÌ³ \n");
+	return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šã€€buildroom north å¤©åœ°é˜æ€»å› \n");
 	if(me->query("family/privs") != -1) 
-	return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+	return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 	if((int)me->query("score") < SCORE_COST)
-	return notify_fail("ÄãµÄ½­ºşÔÄÀú²»¹»"+chinese_number(SCORE_COST)+
-	"µã¡£\n");
+	return notify_fail("ä½ çš„æ±Ÿæ¹–é˜…å†ä¸å¤Ÿ"+chinese_number(SCORE_COST)+
+	"ç‚¹ã€‚\n");
         if((int)me->query("combat_exp") < MIN_EXP)
-        return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»¹»"+chinese_number(MIN_EXP)+
-        "µã¡£\n");
+        return notify_fail("ä½ çš„å®æˆ˜ç»éªŒä¸å¤Ÿ"+chinese_number(MIN_EXP)+
+        "ç‚¹ã€‚\n");
 	gold = present("gold_money",me);
-	if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+	if(!gold) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < GOLD_COST)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ"+chinese_number(GOLD_COST)+"Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰"+chinese_number(GOLD_COST)+"ä¸¤é‡‘å­ã€‚\n");
 	if((int)me->query("created_room") > 0)
-	return notify_fail("Äã²»¿ÉÔÙ½¨·¿ÁË£¡\n");
+	return notify_fail("ä½ ä¸å¯å†å»ºæˆ¿äº†ï¼\n");
         env = environment(me);
        if(!env->query("owner") && (string)env->query("owner") != "public" 
 	&& (string)env->query("owner") != (string) me->query("id"))
-        return notify_fail("Äã²»¿ÉÔÚÕâ½¨·¿£¡\n");
+        return notify_fail("ä½ ä¸å¯åœ¨è¿™å»ºæˆ¿ï¼\n");
 	if((string)env->query("type") == "zheng" && me->query("shen") < 0)
-        return notify_fail("ÄãÒ»¸öĞ°Ä§ÍâµÀÏëÔÚÕâÀïÔì·¿×Ó£¿ÕÒËÀ°¡£¡\n");
+        return notify_fail("ä½ ä¸€ä¸ªé‚ªé­”å¤–é“æƒ³åœ¨è¿™é‡Œé€ æˆ¿å­ï¼Ÿæ‰¾æ­»å•Šï¼\n");
 	if((string)env->query("type") == "xie" && me->query("shen") > 0)
-        return notify_fail("ÄãÒ»¸öÕıÅÉÈËÊ¿ÏëÔÚÕâÀïÔì·¿×Ó£¿ÕÒËÀ°¡£¡\n");
+        return notify_fail("ä½ ä¸€ä¸ªæ­£æ´¾äººå£«æƒ³åœ¨è¿™é‡Œé€ æˆ¿å­ï¼Ÿæ‰¾æ­»å•Šï¼\n");
 
 	if(check_legal_name(stitle))
 	 me->edit( (: enter_desc , me,gold, stitle, dir :) );
@@ -62,7 +62,7 @@ string *direc= ({"north", "south", "east", "west", "northup",
 	env = environment(me);
 	if(env->query("exits/"+dir))
 		{
-		tell_object(me,"Õâ¸ö·½ÏòÒÑ¾­ÓĞ·¿ÎİÁË£¡\n");
+		tell_object(me,"è¿™ä¸ªæ–¹å‘å·²ç»æœ‰æˆ¿å±‹äº†ï¼\n");
 		return;
 		}
 // I think by now, we should checked all conditions,
@@ -73,7 +73,7 @@ string *direc= ({"north", "south", "east", "west", "northup",
 	}
 	else
 	{
-	tell_object(me,"ÄãÒªÍùÄÄ¸ö·½Ïò½¨£¿\n");
+	tell_object(me,"ä½ è¦å¾€å“ªä¸ªæ–¹å‘å»ºï¼Ÿ\n");
 	return;
 	}
 }
@@ -82,16 +82,16 @@ int check_legal_name(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 2) || (strlen(name) > 40 ) ) {
-                write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö±ØĞëÊÇÒ»µ½¶şÊ®¸öÖĞÎÄ×Ö¡£\n");
+                write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡åå­—å¿…é¡»æ˜¯ä¸€åˆ°äºŒåä¸ªä¸­æ–‡å­—ã€‚\n");
                 return 0;
         }
         while(i--) {
                 if( name[i]<=' ' ) {
-                        write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡åå­—ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                         return 0;
                 }
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬Ãû×Ö±ØĞèÊÇÖĞÎÄ¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œåå­—å¿…éœ€æ˜¯ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }
@@ -102,17 +102,17 @@ int check_legal_long(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 120) || (strlen(name) > 600 ) ) {
-                write("¶Ô²»Æğ£¬ÖĞÎÄÃèÊö±ØĞëÊÇÁùÊ®µ½Èı°Ù¸öÖĞÎÄ×Ö¡£\n");
+                write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡æè¿°å¿…é¡»æ˜¯å…­ååˆ°ä¸‰ç™¾ä¸ªä¸­æ–‡å­—ã€‚\n");
                 return 0;
         }
         while(i--) {
 		if(name[i]==' ' || name[i] == '\n') continue;
                 if( name[i]<' ' ) {
-                        write("¶Ô²»Æğ£¬ÖĞÎÄÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œä¸­æ–‡æè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                         return 0;
                 }
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬ÃèÊö±ØĞèÊÇÖĞÎÄ¡£\n");
+                        write("å¯¹ä¸èµ·ï¼Œæè¿°å¿…éœ€æ˜¯ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }
@@ -121,8 +121,8 @@ int check_legal_long(string name)
 int help (object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: buildroom <Ñ¶Ï¢>
-¸ø×Ô¼ºµÄ°ïÅÉÔì·¿×Ó¡£
+æŒ‡ä»¤æ ¼å¼: buildroom <è®¯æ¯>
+ç»™è‡ªå·±çš„å¸®æ´¾é€ æˆ¿å­ã€‚
 
 HELP
 	);

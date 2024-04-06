@@ -6,7 +6,7 @@
 int main(object me, string arg)
 {
 if (me->query("combat_exp") <5000)
-        return notify_fail("Ö»ÓÐ¾­Ñé>5000²ÅÄÜÊ¹ÓÃÕâ¸öÃüÁî!\n");
+        return notify_fail("åªæœ‰ç»éªŒ>5000æ‰èƒ½ä½¿ç”¨è¿™ä¸ªå‘½ä»¤!\n");
 
 	me->edit( (: call_other, this_object(), ({ "do_to", me, arg }) :) );
 	return 1;
@@ -22,26 +22,26 @@ void do_to(object me, string arg, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : to <Ö¸Áî>
+æŒ‡ä»¤æ ¼å¼ : to <æŒ‡ä»¤>
 
-¿ÉÒÔÒ»´ÎÊä³ö¶àÐÐÒÔÉÏµÄÎÄ×Ö, <Ö¸Áî>Í¨³£ÊÇÊä³öÑ¶Ï¢µÄÖ¸ÁîÈç
-say , tell , describe , chat , reple ........µÈ¡£
-·¶Àý : 
+å¯ä»¥ä¸€æ¬¡è¾“å‡ºå¤šè¡Œä»¥ä¸Šçš„æ–‡å­—, <æŒ‡ä»¤>é€šå¸¸æ˜¯è¾“å‡ºè®¯æ¯çš„æŒ‡ä»¤å¦‚
+say , tell , describe , chat , reple ........ç­‰ã€‚
+èŒƒä¾‹ : 
  to say
- ½áÊøÀë¿ªÓÃ '.'£¬È¡ÏûÊäÈëÓÃ '~q'£¬Ê¹ÓÃÄÚ½¨ÁÐ±à¼­Æ÷ÓÃ '~e'¡£
- ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
- ¶«·½Éñ½Ì½ÌÖ÷ : °²ÄáÏ¯ÂåÌØ¶û
- ½ÌÖ÷´ó·òÈËôß·¢´ô²¿²¿³¤ : Elon
- ½ÌÖ÷Ð¡ÀÏÆÅôßÃþÓã²¿²¿³¤ : ÃÎÒäÈá
- ´óµÜ×Óôß´ò»ì²¿²¿³¤ : ·ç»ðÑªÎè
+ ç»“æŸç¦»å¼€ç”¨ '.'ï¼Œå–æ¶ˆè¾“å…¥ç”¨ '~q'ï¼Œä½¿ç”¨å†…å»ºåˆ—ç¼–è¾‘å™¨ç”¨ '~e'ã€‚
+ â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•â€•
+ ä¸œæ–¹ç¥žæ•™æ•™ä¸» : å®‰å°¼å¸­æ´›ç‰¹å°”
+ æ•™ä¸»å¤§å¤«äººæš¨å‘å‘†éƒ¨éƒ¨é•¿ : Elon
+ æ•™ä¸»å°è€å©†æš¨æ‘¸é±¼éƒ¨éƒ¨é•¿ : æ¢¦å¿†æŸ”
+ å¤§å¼Ÿå­æš¨æ‰“æ··éƒ¨éƒ¨é•¿ : é£Žç«è¡€èˆž
  .
 
-Êä³öµ½Ó©Ä»ÉÏµÄ½á¹ûÔòÊÇ :
+è¾“å‡ºåˆ°è¤å¹•ä¸Šçš„ç»“æžœåˆ™æ˜¯ :
 
-ÄãËµµÀ£º¶«·½Éñ½Ì½ÌÖ÷ : °²ÄáÏ¯ÂåÌØ¶û
-½ÌÖ÷´ó·òÈËôß·¢´ô²¿²¿³¤ : Elon
-½ÌÖ÷Ð¡ÀÏÆÅôßÃþÓã²¿²¿³¤ : ÃÎÒäÈá
-´óµÜ×Óôß´ò»ì²¿²¿³¤ : ·ç»ðÑªÎè
+ä½ è¯´é“ï¼šä¸œæ–¹ç¥žæ•™æ•™ä¸» : å®‰å°¼å¸­æ´›ç‰¹å°”
+æ•™ä¸»å¤§å¤«äººæš¨å‘å‘†éƒ¨éƒ¨é•¿ : Elon
+æ•™ä¸»å°è€å©†æš¨æ‘¸é±¼éƒ¨éƒ¨é•¿ : æ¢¦å¿†æŸ”
+å¤§å¼Ÿå­æš¨æ‰“æ··éƒ¨éƒ¨é•¿ : é£Žç«è¡€èˆž
 HELP
     );
     return 1;

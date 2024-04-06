@@ -1,5 +1,5 @@
 // jiangli.c
-// ½±Àø·¢ÏÖbugµÄÍæ¼Ò
+// å¥–åŠ±å‘ç°bugçš„ç©å®¶
 // idea@yqyl
 
 inherit F_CLEAN_UP;
@@ -12,21 +12,21 @@ int main(object me,string arg)
 	int i;
 	
 	if( !arg || arg=="" || sscanf(arg, "%s for %s", id, reason)!=2)
-		return notify_fail("Ö¸Áî¸ñÊ½£ºjiangli <Íæ¼Òid> for <¼òÒª½éÉÜbug>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šjiangli <ç©å®¶id> for <ç®€è¦ä»‹ç»bug>\n");
 
 	player = find_player(id);
-	if (!player) return notify_fail("Ã»ÓĞÕâ¸öÈË\n");
-	if (wizardp(player)) return notify_fail("²»ÄÜ½±ÀøÎ×Ê¦\n");
+	if (!player) return notify_fail("æ²¡æœ‰è¿™ä¸ªäºº\n");
+	if (wizardp(player)) return notify_fail("ä¸èƒ½å¥–åŠ±å·«å¸ˆ\n");
 	i=random(3);
 	switch (i)
 	{
 		case 0:
 			player->add("combat_exp", 400);
-			present="¾­Ñé 400";
+			present="ç»éªŒ 400";
 			break;
 		case 1:
 			player->add("potential",200);
-			present="Ç±ÄÜ 200";
+			present="æ½œèƒ½ 200";
 			break;
 		case 2:
 			gold = new("/clone/money/gold");
@@ -35,11 +35,11 @@ int main(object me,string arg)
 			present="2 gold";
 			break;
 	}
-	tell_object(player,HBRED""+me->query("name")+"½±Àø¸øÄã"+present+"£¡\n"NOR);
-	write(HBRED"Äã½±Àø"+player->query("name")+present+"£¡\n"NOR);
+	tell_object(player,HBRED""+me->query("name")+"å¥–åŠ±ç»™ä½ "+present+"ï¼\n"NOR);
+	write(HBRED"ä½ å¥–åŠ±"+player->query("name")+present+"ï¼\n"NOR);
 	
 	log_file("jiangli",
-		sprintf("%s(%s) ½±Àø %s(%s) %s ÒòÎª %s  on %s\n",
+		sprintf("%s(%s) å¥–åŠ± %s(%s) %s å› ä¸º %s  on %s\n",
 		me->name(1),
 		geteuid(me),
 		player->name(1),
@@ -55,12 +55,12 @@ int main(object me,string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : jiangli <Íæ¼Òid> for <¼òÒª½éÉÜbug>
+æŒ‡ä»¤æ ¼å¼ : jiangli <ç©å®¶id> for <ç®€è¦ä»‹ç»bug>
 
-±¾ÃüÁî¸øÓë·¢ÏÖĞ¡bug(³ÌĞò´íÎó--³ÌĞòÊ§Îó,ÇÒÃ»Ôì³É¾Ş´óËğÊ§µÄ)
-µÄplayerÒÔ½±Àø.×¢ÒâÇëÉ÷ÓÃ±¾ÃüÁî,Èç¹ûbugÎÊÌâ²»Ã÷È·,¾­ÇëÊ¾ÌÖ
-ÂÛÔÙ¾ö¶¨
-Àı×Ó	jiangli tryid for ·¢ÏÖtree´íÎó
+æœ¬å‘½ä»¤ç»™ä¸å‘ç°å°bug(ç¨‹åºé”™è¯¯--ç¨‹åºå¤±è¯¯,ä¸”æ²¡é€ æˆå·¨å¤§æŸå¤±çš„)
+çš„playerä»¥å¥–åŠ±.æ³¨æ„è¯·æ…ç”¨æœ¬å‘½ä»¤,å¦‚æœbugé—®é¢˜ä¸æ˜ç¡®,ç»è¯·ç¤ºè®¨
+è®ºå†å†³å®š
+ä¾‹å­	jiangli tryid for å‘ç°treeé”™è¯¯
 HELP	);
 	return 1;
 }

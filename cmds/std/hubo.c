@@ -8,21 +8,21 @@ int main(object me)
 	int count;
 
     if( me->is_busy() )
-	return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÊ¹ÓÃ¡¸Ë«ÊÖ»¥²©Ö®Êõ¡¹¡£\n");
+	return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ä½¿ç”¨ã€ŒåŒæ‰‹äº’åšä¹‹æœ¯ã€ã€‚\n");
     if (!me->query_skill("hubo",1))
-       return notify_fail("Äã²»»á¡¸Ë«ÊÖ»¥²©Ö®Êõ¡¹¡£\n");
+       return notify_fail("ä½ ä¸ä¼šã€ŒåŒæ‰‹äº’åšä¹‹æœ¯ã€ã€‚\n");
     if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-       return notify_fail("ÄãÖ»ÓĞ¿ÕÊÖ²ÅÄÜÓÃ¡¸Ë«ÊÖ»¥²©Ö®Êõ¡¹¡£\n");
+       return notify_fail("ä½ åªæœ‰ç©ºæ‰‹æ‰èƒ½ç”¨ã€ŒåŒæ‰‹äº’åšä¹‹æœ¯ã€ã€‚\n");
     if (me->query("int")> 24)
-       return notify_fail("Äã²»ÄÜÊ¹ÓÃ¡¸Ë«ÊÖ»¥²©Ö®Êõ¡¹¡£\n");
+       return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨ã€ŒåŒæ‰‹äº’åšä¹‹æœ¯ã€ã€‚\n");
     if( !me->is_fighting() )
-        return notify_fail("¡¸Ë«ÊÖ»¥²©Ö®Êõ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€ŒåŒæ‰‹äº’åšä¹‹æœ¯ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
-    if( (int)me->query("jing") < 70 ) return notify_fail("ÄãµÄ¾«²»¹»£¡\n");
+    if( (int)me->query("jing") < 70 ) return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿï¼\n");
     if( (int)me->query("neili") < 350 )
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-    msg = HIY "$NÆ½ĞÄ¾²Æø£¬ÁéÌ¨¿ÕÃ÷£¬Ê¹³ö¡¸Ë«ÊÖ»¥²©Ö®Êõ¡¹£¬Ë«ÊÖÍ¬Ê±³öÕĞ£¡\n" NOR;
+    msg = HIY "$Nå¹³å¿ƒé™æ°”ï¼Œçµå°ç©ºæ˜ï¼Œä½¿å‡ºã€ŒåŒæ‰‹äº’åšä¹‹æœ¯ã€ï¼ŒåŒæ‰‹åŒæ—¶å‡ºæ‹›ï¼\n" NOR;
 
     message_vision(msg, me);
     count = (40 - (int)me->query("int")) / 5 + (int)me->query_skill("hubo") / 30 ;
@@ -36,7 +36,7 @@ int main(object me)
 	ob = me->select_opponent();
         if(!ob || (environment(ob) != environment(me))) 
         {
-            message_vision(CYN "$NÍ»È»ĞÄÖĞÒ»ÂÒ£¬ÒÑ²»ÄÜ¼ÌĞøË«ÊÖ»¥²©£¡\n" NOR, me);
+            message_vision(CYN "$Nçªç„¶å¿ƒä¸­ä¸€ä¹±ï¼Œå·²ä¸èƒ½ç»§ç»­åŒæ‰‹äº’åšï¼\n" NOR, me);
 			break;
         }
 	COMBAT_D->do_attack(me, ob, me->query_temp("weapon"), 0);
@@ -52,9 +52,9 @@ int main(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : hubo
+æŒ‡ä»¤æ ¼å¼ : hubo
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÔÚ¶ÔµĞÊ±Ê¹ÓÃË«ÊÖ»¥²©Ö®Êõ,¿ìËÙ³öÕĞ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ åœ¨å¯¹æ•Œæ—¶ä½¿ç”¨åŒæ‰‹äº’åšä¹‹æœ¯,å¿«é€Ÿå‡ºæ‹›ã€‚
  
 HELP
     );

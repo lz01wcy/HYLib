@@ -99,7 +99,7 @@ int main(object me, string arg)
 				}
 			}
 			if (i==sizeof(dirs))
-				return notify_fail(HIG"ÕâÀï²»ÄÜ²é¿´µØÍ¼£¬Çëµ½ÊÒÍâ¡£\n"NOR);
+				return notify_fail(HIG"è¿™é‡Œä¸èƒ½æŸ¥çœ‹åœ°å›¾ï¼Œè¯·åˆ°å®¤å¤–ã€‚\n"NOR);
 		}
 		name = clean_color(environment(me)->query("short"));
 		if( file_size("/doc/map/" + file)>0 ) 
@@ -112,7 +112,7 @@ int main(object me, string arg)
 				return 1;
 			}
 		}
-		return notify_fail(HIY"ÔİÊ±»¹Ã»ÓĞ¿ª·ÅÕâÀïµÄµØÍ¼²éÑ¯¡£\n"NOR);
+		return notify_fail(HIY"æš‚æ—¶è¿˜æ²¡æœ‰å¼€æ”¾è¿™é‡Œçš„åœ°å›¾æŸ¥è¯¢ã€‚\n"NOR);
 	}
 	else
 	{
@@ -125,7 +125,7 @@ int main(object me, string arg)
 				return 1;
 			}
 		}
-		return notify_fail(HIR"Ã»ÓĞÄãÖ¸¶¨µÄµØÍ¼²éÑ¯¡£Çëmap map²éÑ¯µØÍ¼²á¡£\n"NOR);
+		return notify_fail(HIR"æ²¡æœ‰ä½ æŒ‡å®šçš„åœ°å›¾æŸ¥è¯¢ã€‚è¯·map mapæŸ¥è¯¢åœ°å›¾å†Œã€‚\n"NOR);
 	}
 }
 string clean_color(string arg)
@@ -153,37 +153,37 @@ string clean_color(string arg)
 
 string make_color(string map)
 {
-	map = replace_string(map, "¡ï", HIR"¡ï"NOR);
-	map = replace_string(map, "¡Ö", HIC"¡Ö"NOR);
-	map = replace_string(map, "¡«", HIC"¡«"NOR);
-	map = replace_string(map, "¡Ä", HIG"¡Ä"NOR);
-	map = replace_string(map, "¦×", GRN"¦×"NOR);
-	map = replace_string(map, "¡â", HIR"¡â"NOR);
-	map = replace_string(map, "¡À", HIM"¡À"NOR);
-	map = replace_string(map, "£«", HIG"£«"NOR);
-	map = replace_string(map, "¡à", YEL"¡à"NOR);
-	map = replace_string(map, "¡Ë", YEL"¡Ë"NOR);
-	map = replace_string(map, "¡Õ", HIW"¡Õ"NOR);
-	map = replace_string(map, "£ª", MAG"£ª"NOR);
-	map = replace_string(map, "¡ª", HIY"¡ª"NOR);
-	map = replace_string(map, "£ü", HIY"£ü"NOR);
-	map = replace_string(map, "£Ü", HIY"£Ü"NOR);
-	map = replace_string(map, "£¯", HIY"£¯"NOR);
-	map = replace_string(map, "¡ü", HIY"¡ü"NOR);
-	map = replace_string(map, "¡ı", HIY"¡ı"NOR);
-	map = replace_string(map, "¡ú", HIY"¡ú"NOR);
-	map = replace_string(map, "¡û", HIY"¡û"NOR);
-	map = replace_string(map, "©¤", HIY"©¤"NOR);
-	map = replace_string(map, "©¦", HIY"©¦"NOR);
-	map = replace_string(map, "©à", HIY"©à"NOR);
-	map = replace_string(map, "©°", HIY"©°"NOR);
-	map = replace_string(map, "©´", HIY"©´"NOR);
-	map = replace_string(map, "©¸", HIY"©¸"NOR);
-	map = replace_string(map, "©¼", HIY"©¼"NOR);
-	map = replace_string(map, "©Ğ", HIY"©Ğ"NOR);
-	map = replace_string(map, "©Ø", HIY"©Ø"NOR);
-	map = replace_string(map, "©À", HIY"©À"NOR);
-	map = replace_string(map, "©È", HIY"©È"NOR);
+	map = replace_string(map, "â˜…", HIR"â˜…"NOR);
+	map = replace_string(map, "â‰ˆ", HIC"â‰ˆ"NOR);
+	map = replace_string(map, "ï½", HIC"ï½"NOR);
+	map = replace_string(map, "âˆ§", HIG"âˆ§"NOR);
+	map = replace_string(map, "Ïˆ", GRN"Ïˆ"NOR);
+	map = replace_string(map, "â™€", HIR"â™€"NOR);
+	map = replace_string(map, "Â±", HIM"Â±"NOR);
+	map = replace_string(map, "ï¼‹", HIG"ï¼‹"NOR);
+	map = replace_string(map, "âˆ´", YEL"âˆ´"NOR);
+	map = replace_string(map, "âˆ·", YEL"âˆ·"NOR);
+	map = replace_string(map, "â‰Œ", HIW"â‰Œ"NOR);
+	map = replace_string(map, "ï¼Š", MAG"ï¼Š"NOR);
+	map = replace_string(map, "â€•", HIY"â€•"NOR);
+	map = replace_string(map, "ï½œ", HIY"ï½œ"NOR);
+	map = replace_string(map, "ï¼¼", HIY"ï¼¼"NOR);
+	map = replace_string(map, "ï¼", HIY"ï¼"NOR);
+	map = replace_string(map, "â†‘", HIY"â†‘"NOR);
+	map = replace_string(map, "â†“", HIY"â†“"NOR);
+	map = replace_string(map, "â†’", HIY"â†’"NOR);
+	map = replace_string(map, "â†", HIY"â†"NOR);
+	map = replace_string(map, "â”€", HIY"â”€"NOR);
+	map = replace_string(map, "â”‚", HIY"â”‚"NOR);
+	map = replace_string(map, "â”¼", HIY"â”¼"NOR);
+	map = replace_string(map, "â”Œ", HIY"â”Œ"NOR);
+	map = replace_string(map, "â”", HIY"â”"NOR);
+	map = replace_string(map, "â””", HIY"â””"NOR);
+	map = replace_string(map, "â”˜", HIY"â”˜"NOR);
+	map = replace_string(map, "â”¬", HIY"â”¬"NOR);
+	map = replace_string(map, "â”´", HIY"â”´"NOR);
+	map = replace_string(map, "â”œ", HIY"â”œ"NOR);
+	map = replace_string(map, "â”¤", HIY"â”¤"NOR);
 	map = replace_string(map, "-", HIY"-"NOR);
 	map = replace_string(map, "~", HIC"~"NOR);
 	map = replace_string(map, "|", HIC"|"NOR);
@@ -191,21 +191,21 @@ string make_color(string map)
 	map = replace_string(map, "*", GRN"@"NOR);
 	map = replace_string(map, "<", GRN"<");
 	map = replace_string(map, ">", ">"NOR);
-	map = replace_string(map, "¡¾", YEL"¡¾");
-	map = replace_string(map, "¡¿", "¡¿"NOR);
-	map = replace_string(map, "¡¼", CYN"¡¼"NOR);
-	map = replace_string(map, "¡½", CYN"¡½"NOR);
+	map = replace_string(map, "ã€", YEL"ã€");
+	map = replace_string(map, "ã€‘", "ã€‘"NOR);
+	map = replace_string(map, "ã€–", CYN"ã€–"NOR);
+	map = replace_string(map, "ã€—", CYN"ã€—"NOR);
 	return map;
 }
 
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºmap <²ÎÁ¿>
+æŒ‡ä»¤æ ¼å¼ï¼šmap <å‚é‡>
 
-    Õâ¸öÖ¸ÁîÓÃÀ´ÏÔÊ¾Ö¸¶¨µÄµØÍ¼¡£µØÍ¼²á£¬ÇëÓÃmap map²éÑ¯¡£
-    ²»´ø²ÎÊı»ò´øµÄ²ÎÊıÊÇhere£¬ÔòÏÔÊ¾ÄãËùÔÚµØµÄµØÍ¼¡£ÁÁºìÉ«±íÊ¾ÄãËù
-´¦Ö®µØ¡£
+    è¿™ä¸ªæŒ‡ä»¤ç”¨æ¥æ˜¾ç¤ºæŒ‡å®šçš„åœ°å›¾ã€‚åœ°å›¾å†Œï¼Œè¯·ç”¨map mapæŸ¥è¯¢ã€‚
+    ä¸å¸¦å‚æ•°æˆ–å¸¦çš„å‚æ•°æ˜¯hereï¼Œåˆ™æ˜¾ç¤ºä½ æ‰€åœ¨åœ°çš„åœ°å›¾ã€‚äº®çº¢è‰²è¡¨ç¤ºä½ æ‰€
+å¤„ä¹‹åœ°ã€‚
 
 HELP
 	);

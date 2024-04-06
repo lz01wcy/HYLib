@@ -11,11 +11,11 @@ int main(object me, string arg)
 {
 	if( !arg ) {
 		if( (int)me->query("jing") < 50 )
-			return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ã€‚\n");
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 //                if( !FINGER_D->query_only_ip())
-//			return notify_fail("ÏÖÔÚÍøÂçÓÐÎÊÌâ£¬²»ÄÜÊ¹ÓÃfinger¡£\n");
+//			return notify_fail("çŽ°åœ¨ç½‘ç»œæœ‰é—®é¢˜ï¼Œä¸èƒ½ä½¿ç”¨fingerã€‚\n");
 		if( !wizardp(me) )
 			me->receive_damage("jing", 50);
         me->start_busy(1);
@@ -23,11 +23,11 @@ int main(object me, string arg)
 
 	} else {
           if (arg=="hxsd" && !wizardp(me))
-	return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ¡£\n");
+	return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ã€‚\n");
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 		if( (int)me->query("jing") < 15 )
-			return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ã€‚\n");
 		if( !wizardp(me) )
 			me->receive_damage("jing", 15);
         me->start_busy(1);
@@ -39,10 +39,10 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : finger [Ê¹ÓÃÕßÐÕÃû]
+æŒ‡ä»¤æ ¼å¼ : finger [ä½¿ç”¨è€…å§“å]
  
-Õâ¸öÖ¸Áî, Èç¹ûÃ»ÓÐÖ¸¶¨Ê¹ÓÃÕßÐÕÃ÷, »áÏÔÊ¾³öËùÓÐÕýÔÚÏßÉÏÍæ¼Ò
-µÄÁ¬Ïß×ÊÁÏ. ·´Ö®, Ôò¿ÉÏÔÊ¾ÓÐ¹ØÄ³¸öÍæ¼ÒµÄÁ¬Ïß, È¨ÏÞµÈ×ÊÁÏ.
+è¿™ä¸ªæŒ‡ä»¤, å¦‚æžœæ²¡æœ‰æŒ‡å®šä½¿ç”¨è€…å§“æ˜Ž, ä¼šæ˜¾ç¤ºå‡ºæ‰€æœ‰æ­£åœ¨çº¿ä¸ŠçŽ©å®¶
+çš„è¿žçº¿èµ„æ–™. åä¹‹, åˆ™å¯æ˜¾ç¤ºæœ‰å…³æŸä¸ªçŽ©å®¶çš„è¿žçº¿, æƒé™ç­‰èµ„æ–™.
  
 see also : who
 HELP

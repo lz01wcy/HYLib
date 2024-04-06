@@ -37,7 +37,7 @@ inherit F_CLEAN_UP;
         "cuff",
         "claw",
         "strike",
-//      "club":     "¹÷·¨",
+//      "club":     "æ£æ³•",
 
 //added by maxim
 //	"music",
@@ -88,9 +88,9 @@ string *spe_skill_unarmeddodge=({
      "force" : ({"10"}),
     "dodge" : ({"10"}),
     "parry": ({"10"}),
-    "damage_type" : ({"ğöÉË"}),
+    "damage_type" : ({"ç˜€ä¼¤"}),
     "lvl" : ({"10"}),
-    "skill_name" : ({"ºá¿Õ³öÊÀ"}),
+    "skill_name" : ({"æ¨ªç©ºå‡ºä¸–"}),
     "skill_total_num" : ({"0"}),
     "skill_en_name" : ({" "}),
     "skill_ch_name" : ({" "}),
@@ -125,9 +125,9 @@ int main(object me, string arg)
 //3. arg is the skillname player want to create
 //all create skill will be write as a log file
 //so wizard can know what is the player's skill
-//Ö¸Áî¸ñÊ½£ºcreateskill foliage_unarmed ÕĞÊ½Êı
-//1)check if the exp is enough to the ÕĞÊ½Êı
-//2)check if the ÕĞÊ½ have been enough
+//æŒ‡ä»¤æ ¼å¼ï¼šcreateskill foliage_unarmed æ‹›å¼æ•°
+//1)check if the exp is enough to the æ‹›å¼æ•°
+//2)check if the æ‹›å¼ have been enough
 //3)ask player to input the skill_spe_name
 //4)ask player to input the action
 //so let's do it!
@@ -141,12 +141,12 @@ spe_skill_name="";
 spe_skillnum=0;
 
 if(!arg)
-    return notify_fail("Ö¸Áî¸ñÊ½£ºcreatskill Îä¹¦»ù±¾¼¼ÄÜ Îä¹¦Ó¢ÎÄÃû×Ö Îä¹¦ÖĞÎÄÃû×Ö µÚ¼¸ÕĞ\n");
+    return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcreatskill æ­¦åŠŸåŸºæœ¬æŠ€èƒ½ æ­¦åŠŸè‹±æ–‡åå­— æ­¦åŠŸä¸­æ–‡åå­— ç¬¬å‡ æ‹›\n");
 if( sscanf(arg, "%s %s %s %d", skill_base_name,skill_en_name,skill_ch_name,skill_num)!=4)
-    return notify_fail("Ö¸Áî¸ñÊ½£ºcreatskill Îä¹¦»ù±¾¼¼ÄÜ Îä¹¦Ó¢ÎÄÃû×Ö Îä¹¦ÖĞÎÄÃû×Ö µÚ¼¸ÕĞ\n");
+    return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcreatskill æ­¦åŠŸåŸºæœ¬æŠ€èƒ½ æ­¦åŠŸè‹±æ–‡åå­— æ­¦åŠŸä¸­æ–‡åå­— ç¬¬å‡ æ‹›\n");
 
 //if (!wizardp(me) )
-//    return notify_fail("´ËÏµÍ³Ôİ²»¿ª·Å£¬²âÊÔÖĞ!\n");
+//    return notify_fail("æ­¤ç³»ç»Ÿæš‚ä¸å¼€æ”¾ï¼Œæµ‹è¯•ä¸­!\n");
 //write("to see the skillnum is:"+skill_num+"\n");
 
 skill_en_name=lower_case(skill_en_name);
@@ -154,7 +154,7 @@ skill_en_name=lower_case(skill_en_name);
 spe_skill_basename=skill_base_name;
 
 if(check_legal_basename(skill_base_name)==0)
-    return notify_fail("ÄãÊäÈëµÄ»ù±¾¼¼ÄÜ²»´æÔÚ¡£\n");
+    return notify_fail("ä½ è¾“å…¥çš„åŸºæœ¬æŠ€èƒ½ä¸å­˜åœ¨ã€‚\n");
 
 if(check_legal_id(skill_en_name)==0)
                return 1;             
@@ -174,46 +174,46 @@ spe_skill["skill_ch_name"]=skill_ch_name;
 //write(spe_skill["skill_ch_name"]+"\n");
 
 //so player can change the Chinese skill name when he begin to create
-//only 1 ÕĞ
+//only 1 æ‹›
 if( skill_num!=1 
     && get_header_skillchname(spe_skill["skill_en_name"])!=skill_ch_name)
-    return notify_fail("ÄãÊäÈëµÄÖĞÎÄÎä¹¦Ãû³ÆºÍËùÑ¡µÄÓ¢ÎÄÎä¹¦´úºÅÓĞÃ¬¶Ü¡£\n");
+    return notify_fail("ä½ è¾“å…¥çš„ä¸­æ–‡æ­¦åŠŸåç§°å’Œæ‰€é€‰çš„è‹±æ–‡æ­¦åŠŸä»£å·æœ‰çŸ›ç›¾ã€‚\n");
 
 if( skill_num!=1 
     && get_header_skillbasename(spe_skill["skill_en_name"])!=skill_base_name)
-    return notify_fail("ÄãÊäÈëµÄ»ù±¾¼¼ÄÜÃûºÍËùÑ¡µÄÓ¢ÎÄÎä¹¦´úºÅÓĞÃ¬¶Ü¡£\n");
+    return notify_fail("ä½ è¾“å…¥çš„åŸºæœ¬æŠ€èƒ½åå’Œæ‰€é€‰çš„è‹±æ–‡æ­¦åŠŸä»£å·æœ‰çŸ›ç›¾ã€‚\n");
 
 
 //here is important
 if((int)me->query("skillmaxim")!=0
         && sizeof(keys(me->query("skillmaxim/"))) >3 )
-    return notify_fail("Äã×î¶àÖ»ÄÜ´´½¨ÈıÖÖ¸ß¼¶¹¦·ò¡£\n");
+    return notify_fail("ä½ æœ€å¤šåªèƒ½åˆ›å»ºä¸‰ç§é«˜çº§åŠŸå¤«ã€‚\n");
 
 
 switch( check_owner_skill(me,spe_skill["skill_en_name"])){
         case 2:
-    return notify_fail("Õâ¸ö¹¦·òÔÚ½­ºşÖĞÒÑ¾­´æÔÚ£¬ÄãÎŞ·¨ÔÙÓĞ´´ĞÂ¡£\n");
+    return notify_fail("è¿™ä¸ªåŠŸå¤«åœ¨æ±Ÿæ¹–ä¸­å·²ç»å­˜åœ¨ï¼Œä½ æ— æ³•å†æœ‰åˆ›æ–°ã€‚\n");
        break;
         case 0: //this is right
          break;
         case 1:
-    return notify_fail("ÄãÄ¿Ç°Ö»ÄÜÕë¶ÔÕâ¸ö»ù±¾¼¼ÄÜ´´½¨Ò»¸ö¹¦·ò¡£\n");
+    return notify_fail("ä½ ç›®å‰åªèƒ½é’ˆå¯¹è¿™ä¸ªåŸºæœ¬æŠ€èƒ½åˆ›å»ºä¸€ä¸ªåŠŸå¤«ã€‚\n");
         default:
-        return notify_fail("ÇëºÍÎ×Ê¦ÁªÏµ£¬Ëù´´¹¦·ò²»¶Ô¡£\n");
+        return notify_fail("è¯·å’Œå·«å¸ˆè”ç³»ï¼Œæ‰€åˆ›åŠŸå¤«ä¸å¯¹ã€‚\n");
     }
 
 if(skill_num < 1)
-       return notify_fail("ÄãĞèÒª´ÓµÚÒ»ÕĞ¿ªÊ¼´´½¨¡£\n");
+       return notify_fail("ä½ éœ€è¦ä»ç¬¬ä¸€æ‹›å¼€å§‹åˆ›å»ºã€‚\n");
 
 if((int)me->query("combat_exp") < 9000000)
-       return notify_fail("ÄãµÄ¾­ÑéÖµ»¹²»¹»¡£\n");
+       return notify_fail("ä½ çš„ç»éªŒå€¼è¿˜ä¸å¤Ÿã€‚\n");
 
 if((int)me->query("combat_exp") < (skill_num-1)*150000+1000000)
-       return notify_fail("ÄãµÄ¾­ÑéÖµ»¹²»¹»¡£\n");
+       return notify_fail("ä½ çš„ç»éªŒå€¼è¿˜ä¸å¤Ÿã€‚\n");
 
 if((int)me->query_skill(spe_skill_name)!=0
      && (int)me->query_skill(spe_skill_name) < (skill_num-1)*8)
-       return notify_fail("ÄãÒÑ¾­ÓĞµÄÕĞÊ½»¹²»¹»ÊìÁ·£¬ÏÖÌá¸ßËüÃÇ£¬È»ºóÔÚÏëĞÂÕĞ°É¡£¡\n");
+       return notify_fail("ä½ å·²ç»æœ‰çš„æ‹›å¼è¿˜ä¸å¤Ÿç†Ÿç»ƒï¼Œç°æé«˜å®ƒä»¬ï¼Œç„¶ååœ¨æƒ³æ–°æ‹›å§ã€‚\n");
     
 //write("!!!to see skill num is:"+skill_num+"\n");
 
@@ -222,15 +222,15 @@ skill_num_result=(check_skillnum_exist(me,spe_skill["skill_en_name"],skill_num))
 //write("see the skill_num:"+skill_num_result);
 
 if(skill_num_result > 1) {
-      write("\rÇë¸øÕĞÊ½Æğ¸öÃû×Ö(²»Òª´ËÊ±¶ÏÏß£¬·ñÔòÓÀÔ¶ÎŞ·¨ÔÙÕıÈ·´´½¨):");
+      write("\rè¯·ç»™æ‹›å¼èµ·ä¸ªåå­—(ä¸è¦æ­¤æ—¶æ–­çº¿ï¼Œå¦åˆ™æ°¸è¿œæ— æ³•å†æ­£ç¡®åˆ›å»º):");
                    }
 else if(skill_num_result==1) {
 //here always set to 1 if create again
-      write("ÄãÏÖÔÚ¿ªÊ¼´´½¨"+skill_ch_name+"("+spe_skill_name+")"+"µÄµÚÒ»ÕĞ.\n");
-      write("\rÇë¸øÕĞÊ½Æğ¸öÃû×Ö(²»Òª´ËÊ±¶ÏÏß£¬·ñÔòÓÀÔ¶ÎŞ·¨ÔÙÕıÈ·´´½¨):");
+      write("ä½ ç°åœ¨å¼€å§‹åˆ›å»º"+skill_ch_name+"("+spe_skill_name+")"+"çš„ç¬¬ä¸€æ‹›.\n");
+      write("\rè¯·ç»™æ‹›å¼èµ·ä¸ªåå­—(ä¸è¦æ­¤æ—¶æ–­çº¿ï¼Œå¦åˆ™æ°¸è¿œæ— æ³•å†æ­£ç¡®åˆ›å»º):");
                          }
 else 
-        return notify_fail("ÄãËùÒª´´½¨¹¦·òµÄÕĞÊ½ÊıÓĞÎó¡£\n");
+        return notify_fail("ä½ æ‰€è¦åˆ›å»ºåŠŸå¤«çš„æ‹›å¼æ•°æœ‰è¯¯ã€‚\n");
 
 spe_skillnum=skill_num;
 
@@ -326,7 +326,7 @@ write_file(SKILL_D(skill_en_name),"\n"+"// ZHAOSHI : 0");
 void get_zhaoshi_ch_name(string yn, object ob)
 {
  if( yn=="" ) {
-      write("\rÇë¸øÕĞÊ½Æğ¸öÃû×Ö(²»Òª´ËÊ±¶ÏÏß£¬·ñÔòÓÀÔ¶ÎŞ·¨ÔÚÕıÈ·´´½¨):");
+      write("\rè¯·ç»™æ‹›å¼èµ·ä¸ªåå­—(ä¸è¦æ­¤æ—¶æ–­çº¿ï¼Œå¦åˆ™æ°¸è¿œæ— æ³•åœ¨æ­£ç¡®åˆ›å»º):");
         input_to( (: get_zhaoshi_ch_name :), ob );
         return;
        }
@@ -342,18 +342,18 @@ void get_zhaoshi_ch_name(string yn, object ob)
 */
 
  if( !check_legal_name(yn) ) {
-        write("ÕĞÊ½Ãû³Æ£º");
+        write("æ‹›å¼åç§°ï¼š");
         input_to( (: get_zhaoshi_ch_name :), ob );
         return;
            }
 //then get action
-//here init the skill ÕĞÊ½
+//here init the skill æ‹›å¼
   spe_skill["skill_name"]=yn;
 
-write(HIR"\nÃèÊöÖĞ²»ÄÜ³öÏÖ¿ØÖÆ·û£¬²»È»½«É¾³ı!\n"NOR);
-write("\nÏëÏóÒ»ÏÂÄãºÍĞ¡Óã¶ùµÄ´ò¶·£¬(¸ßÊÖÖ¸ÄÏ:±ØĞëÒªÓĞÄãºÍĞ¡Óã¶ù×ÖÑù³öÏÖ!)\n");
-write("\nÄãÇ°ÍÈÌß³ö£¬ºóÍÈ½Å¼âµãµØ£¬Ò»Ê½¡¸ºá¿Õ³öÊÀ¡¹£¬¶şÕÆÖ±³ö£¬¹¥ÏòĞ¡Óã¶ùµÄÉÏÖĞÏÂÈıÂ·\n");
-write("Äã×İÉíÒ»Ô¾£¬ÊÖÖĞÎäÆ÷Ò»ÕĞ¡¸½ğ¹âĞºµØ¡¹¶Ô×¼Ğ¡Óã¶ùµÄÄ³²¿Î»Ğ±Ğ±´Ì³öÒ»½£\n");
+write(HIR"\næè¿°ä¸­ä¸èƒ½å‡ºç°æ§åˆ¶ç¬¦ï¼Œä¸ç„¶å°†åˆ é™¤!\n"NOR);
+write("\næƒ³è±¡ä¸€ä¸‹ä½ å’Œå°é±¼å„¿çš„æ‰“æ–—ï¼Œ(é«˜æ‰‹æŒ‡å—:å¿…é¡»è¦æœ‰ä½ å’Œå°é±¼å„¿å­—æ ·å‡ºç°!)\n");
+write("\nä½ å‰è…¿è¸¢å‡ºï¼Œåè…¿è„šå°–ç‚¹åœ°ï¼Œä¸€å¼ã€Œæ¨ªç©ºå‡ºä¸–ã€ï¼ŒäºŒæŒç›´å‡ºï¼Œæ”»å‘å°é±¼å„¿çš„ä¸Šä¸­ä¸‹ä¸‰è·¯\n");
+write("ä½ çºµèº«ä¸€è·ƒï¼Œæ‰‹ä¸­æ­¦å™¨ä¸€æ‹›ã€Œé‡‘å…‰æ³»åœ°ã€å¯¹å‡†å°é±¼å„¿çš„æŸéƒ¨ä½æ–œæ–œåˆºå‡ºä¸€å‰‘\n");
 
   input_to("get_zhaoshi_ch_action", 1, ob);
 
@@ -368,23 +368,23 @@ if(check_action_name(yn)==0)
 }
 if(CHINESE_D->check_length(yn) > 160)
 {
- write(HIR"ÃèÊöÌ«³¤¡£\n"NOR);
+ write(HIR"æè¿°å¤ªé•¿ã€‚\n"NOR);
  input_to( (: get_zhaoshi_ch_action :), ob );
  return;
 }
 
 if(CHINESE_D->check_control(yn))
 {
- write(HIR"ÄãµÄÎä¹¦ÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n"NOR);
+ write(HIR"ä½ çš„æ­¦åŠŸæè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n"NOR);
  input_to( (: get_zhaoshi_ch_action :), ob );
  return;
 }
  if( yn=="" ) {
-write(HIR"\nÃèÊöÖĞ²»ÄÜ³öÏÖ¿ØÖÆ·û£¬²»È»½«É¾³ı!\n"NOR);
-write("\n×¢Òâ£¬Ò»¶¨ÒªĞ´ÉÏÃèÊö£¨²»È»ÊÇ·Ç·¨ÕĞÊ½£¬»á±»É¾³ı)Ğ´Íêºó£¬¿ÕĞĞ´ò¶şÏÂ»Ø³µ¡£\n");
-write("\nÏëÏóÒ»ÏÂÄãºÍĞ¡Óã¶ùµÄ´ò¶·£¬(¸ßÊÖÖ¸ÄÏ:±ØĞëÒªÓĞÄãºÍĞ¡Óã¶ù×ÖÑù³öÏÖ!)\n");
-write("\nÄãÇ°ÍÈÌß³ö£¬ºóÍÈ½Å¼âµãµØ£¬Ò»Ê½¡¸ºá¿Õ³öÊÀ¡¹£¬¶şÕÆÖ±³ö£¬¹¥ÏòĞ¡Óã¶ùµÄÉÏÖĞÏÂÈıÂ·\n");
-write("Äã×İÉíÒ»Ô¾£¬ÊÖÖĞÎäÆ÷Ò»ÕĞ¡¸½ğ¹âĞºµØ¡¹¶Ô×¼Ğ¡Óã¶ùµÄÄ³²¿Î»Ğ±Ğ±´Ì³öÒ»½£\n");
+write(HIR"\næè¿°ä¸­ä¸èƒ½å‡ºç°æ§åˆ¶ç¬¦ï¼Œä¸ç„¶å°†åˆ é™¤!\n"NOR);
+write("\næ³¨æ„ï¼Œä¸€å®šè¦å†™ä¸Šæè¿°ï¼ˆä¸ç„¶æ˜¯éæ³•æ‹›å¼ï¼Œä¼šè¢«åˆ é™¤)å†™å®Œåï¼Œç©ºè¡Œæ‰“äºŒä¸‹å›è½¦ã€‚\n");
+write("\næƒ³è±¡ä¸€ä¸‹ä½ å’Œå°é±¼å„¿çš„æ‰“æ–—ï¼Œ(é«˜æ‰‹æŒ‡å—:å¿…é¡»è¦æœ‰ä½ å’Œå°é±¼å„¿å­—æ ·å‡ºç°!)\n");
+write("\nä½ å‰è…¿è¸¢å‡ºï¼Œåè…¿è„šå°–ç‚¹åœ°ï¼Œä¸€å¼ã€Œæ¨ªç©ºå‡ºä¸–ã€ï¼ŒäºŒæŒç›´å‡ºï¼Œæ”»å‘å°é±¼å„¿çš„ä¸Šä¸­ä¸‹ä¸‰è·¯\n");
+write("ä½ çºµèº«ä¸€è·ƒï¼Œæ‰‹ä¸­æ­¦å™¨ä¸€æ‹›ã€Œé‡‘å…‰æ³»åœ°ã€å¯¹å‡†å°é±¼å„¿çš„æŸéƒ¨ä½æ–œæ–œåˆºå‡ºä¸€å‰‘\n");
  input_to( (: get_zhaoshi_ch_action :), ob );
  return;
  }
@@ -397,7 +397,7 @@ write("Äã×İÉíÒ»Ô¾£¬ÊÖÖĞÎäÆ÷Ò»ÕĞ¡¸½ğ¹âĞºµØ¡¹¶Ô×¼Ğ¡Óã¶ùµÄÄ³²¿Î»Ğ±Ğ±´Ì³öÒ»½£\n");
         }
 */
 
-//here init the skill ÕĞÊ½
+//here init the skill æ‹›å¼
   spe_skill["action"]=yn;
 //finish write the file
  finish_write_skill(ob);
@@ -444,25 +444,25 @@ spe_skill["force"]=30+spe_skillnum*30;
 
 switch(spe_skill_basename){
   case "unarmed":
-spe_skill["damage_type"]="ğöÉË";
+spe_skill["damage_type"]="ç˜€ä¼¤";
   break;
   case "sword":
   case "spear":
-spe_skill["damage_type"]="´ÌÉË";
+spe_skill["damage_type"]="åˆºä¼¤";
   break;
   case "blade":
-spe_skill["damage_type"]="¸îÉË";
+spe_skill["damage_type"]="å‰²ä¼¤";
   break;
   case "strike":
-spe_skill["damage_type"]="ÄÚÉË";
+spe_skill["damage_type"]="å†…ä¼¤";
   break;
   case "music":
   case "rube":
   case "piano":
-spe_skill["damage_type"]="ÒôÀÖ";
+spe_skill["damage_type"]="éŸ³ä¹";
   break;
  default:
-spe_skill["damage_type"]="ğöÉË";
+spe_skill["damage_type"]="ç˜€ä¼¤";
   break;
  }
 
@@ -494,23 +494,23 @@ spe_skill["parry"]=20+spe_skillnum*20;
 spe_skill["lvl"]=spe_skillnum-1;
 
    
-//here replace Äã and Ğ¡Óã¶ù to ....
+//here replace ä½  and å°é±¼å„¿ to ....
 if(CHINESE_D->check_length(spe_skill["action"]) > 160)
 {
- write(HIR"ÃèÊöÌ«³¤¡£\n"NOR);
+ write(HIR"æè¿°å¤ªé•¿ã€‚\n"NOR);
  return;
 }
 
 if(CHINESE_D->check_control(spe_skill["action"]))
 {
- write(HIR"ÄãµÄÎä¹¦ÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n"NOR);
+ write(HIR"ä½ çš„æ­¦åŠŸæè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n"NOR);
  return;
 }
 
  spe_skill["action"]= replace_string(spe_skill["action"], "'"," ");
- spe_skill["action"]= replace_string(spe_skill["action"], "Äã","$N");
-  spe_skill["action"]= replace_string(spe_skill["action"], "Ğ¡Óã¶ù","$n");               
-  spe_skill["action"]= replace_string(spe_skill["action"], "Ä³²¿Î»","$l");              
+ spe_skill["action"]= replace_string(spe_skill["action"], "ä½ ","$N");
+  spe_skill["action"]= replace_string(spe_skill["action"], "å°é±¼å„¿","$n");               
+  spe_skill["action"]= replace_string(spe_skill["action"], "æŸéƒ¨ä½","$l");              
 if(spe_skill_basename=="sword"
          || spe_skill_basename=="blade"
          || spe_skill_basename=="rube"
@@ -518,7 +518,7 @@ if(spe_skill_basename=="sword"
          || spe_skill_basename=="piano"
          || spe_skill_basename=="whip"
       ) 
-  spe_skill["action"]= replace_string(spe_skill["action"], "ÎäÆ÷","$w");
+  spe_skill["action"]= replace_string(spe_skill["action"], "æ­¦å™¨","$w");
   
  
 action="\n([\n"
@@ -590,13 +590,13 @@ for(i=0;i < sizeof(list2);i++) {
 //now only a few be created,so the end is zhaoshi : 0
   if(spe_skillnum==1) {
       if(sscanf(list[sizeof(list)-1],"// ZHAOSHI :%d",before_skillnum)!=1){
-             write("¿ÉÄÜ³öÏÖÒì³£ÁË£¬Èç²»ÄÜ½â¾öÇëÍ¨ÖªÎ×Ê¦¡£\n");
+             write("å¯èƒ½å‡ºç°å¼‚å¸¸äº†ï¼Œå¦‚ä¸èƒ½è§£å†³è¯·é€šçŸ¥å·«å¸ˆã€‚\n");
             return;
            }
        }
   else {
   if(sscanf(list[sizeof(list)-1-SPE_PRA_LINES],"// ZHAOSHI :%d",before_skillnum)!=1){
-             write("¿ÉÄÜ³öÏÖÒì³£ÁË£¬Èç²»ÄÜ½â¾ö¿ÉÍ¨ÖªÎ×Ê¦¡£\n");
+             write("å¯èƒ½å‡ºç°å¼‚å¸¸äº†ï¼Œå¦‚ä¸èƒ½è§£å†³å¯é€šçŸ¥å·«å¸ˆã€‚\n");
                     return;
                   }
            }
@@ -659,12 +659,12 @@ int check_legal_id(string id)
  i = strlen(id);
 
  if( (strlen(id) < 3) || (strlen(id) > 12 ) ) {
- write("ÄãµÄÎä¹¦´úºÅ±ØĞëÊÇ 3 µ½ 12 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+ write("ä½ çš„æ­¦åŠŸä»£å·å¿…é¡»æ˜¯ 3 åˆ° 12 ä¸ªè‹±æ–‡å­—æ¯ã€‚\n");
  return 0;
  }
  while(i--)
  if( id[i]<'a' || id[i]>'z' ) {
- write("ÄãµÄÎä¹¦´úºÅÖ»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+ write("ä½ çš„æ­¦åŠŸä»£å·åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
                         return 0;
                 }
 
@@ -676,22 +676,22 @@ int check_legal_name(string name)
  int i;
  i = strlen(name);
  if( (strlen(name) < 2) || (strlen(name) > 12 ) ) {
-      write("Îä¹¦µÄÖĞÎÄÃû³Æ±ØĞëÊÇ 1 µ½ 6 ¸öÖĞÎÄ×Ö¡£\n");
+      write("æ­¦åŠŸçš„ä¸­æ–‡åç§°å¿…é¡»æ˜¯ 1 åˆ° 6 ä¸ªä¸­æ–‡å­—ã€‚\n");
  return 0;
  }
  while(i--) {
       if( name[i]<=' ' ) {
- write("ÄãµÄÎä¹¦ÖĞÎÄÃû³Ç²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+ write("ä½ çš„æ­¦åŠŸä¸­æ–‡ååŸä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
  return 0;
  }
   if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("ÄãµÄÎä¹¦ÖĞÎÄÃûÒªÓÃ¡¸ÖĞÎÄ¡¹!\n");
+                        write("ä½ çš„æ­¦åŠŸä¸­æ–‡åè¦ç”¨ã€Œä¸­æ–‡ã€!\n");
                         return 0;
                 }
         }
 
         if( member_array(name,banned_name)!=-1 ) {
-                write("ÄãµÄÎä¹¦ÖĞÎÄÃû³Æ»áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\n");
+                write("ä½ çš„æ­¦åŠŸä¸­æ–‡åç§°ä¼šé€ æˆå…¶ä»–äººçš„å›°æ‰°ã€‚\n");
                 return 0;
         }
         return 1;
@@ -706,7 +706,7 @@ int check_legal_name(string name)
 //4:// owner exp
 //5:// owner gender
 //6:// skill Chinese name
-//7:// skill ĞÔÖÊ of unarmed or sword or blade....etc
+//7:// skill æ€§è´¨ of unarmed or sword or blade....etc
 //8://
 //9
 //10
@@ -793,18 +793,18 @@ int check_action_name(string yn)
 
                 if(CHINESE_D->check_control(yn))
 {
- write("ÄãµÄÎä¹¦ÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+ write("ä½ çš„æ­¦åŠŸæè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
  return 0;
 }
 		if(CHINESE_D->check_length(yn) > 160)
 {
- write("ÄãµÄÎä¹¦ÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+ write("ä½ çš„æ­¦åŠŸæè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
  return 0;
  }
 
  while(i--) {
       if( yn[i]<=' ' ) {
- write("ÄãµÄÎä¹¦ÃèÊö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+ write("ä½ çš„æ­¦åŠŸæè¿°ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
  return 0;
  }
 }
@@ -814,20 +814,20 @@ int check_action_name(string yn)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºcreatskill Îä¹¦»ù±¾¼¼ÄÜ Îä¹¦Ó¢ÎÄÃû×Ö Îä¹¦ÖĞÎÄÃû×Ö µÚ¼¸ÕĞ
-ÀıÈç£ºcreatskill unarmed mytest ÎÒµÄÕÆ·¨ 1
+æŒ‡ä»¤æ ¼å¼ï¼šcreatskill æ­¦åŠŸåŸºæœ¬æŠ€èƒ½ æ­¦åŠŸè‹±æ–‡åå­— æ­¦åŠŸä¸­æ–‡åå­— ç¬¬å‡ æ‹›
+ä¾‹å¦‚ï¼šcreatskill unarmed mytest æˆ‘çš„æŒæ³• 1
  
-ÕâÊÇÓÃÀ´´´½¨×Ô¼º·ç¸ñÎä¹¦µÄÖ¸Áî£¬Ëæ×Å¾­ÑéÖµµÄÔö³¤£¬Ëù¿ÉÒÔÊµÏÖµÄÕĞÊ½
-Ô½À´Ô½¶à£¬ÕĞÊ½µÄÍşÁ¦Ò²Ô½À´Ô½´ó¡£
-Íæ¼ÒÔö¼ÓÕĞÊ½µÄÊìÁ·³Ì¶ÈµÄ·½Ê½ÊÇÊ¹ÓÃÁ½¸ö×¨ÓÃÖ¸Áî£º
-selfpractice,ÓÃpracticeÒ²¿ÉÒÔ£¬µ«ÊÇÄÑ¶È»á¼Ó´ó¡£
-selfthinking ÀàËÆÓÚ selflearn ºÍ learn
+è¿™æ˜¯ç”¨æ¥åˆ›å»ºè‡ªå·±é£æ ¼æ­¦åŠŸçš„æŒ‡ä»¤ï¼Œéšç€ç»éªŒå€¼çš„å¢é•¿ï¼Œæ‰€å¯ä»¥å®ç°çš„æ‹›å¼
+è¶Šæ¥è¶Šå¤šï¼Œæ‹›å¼çš„å¨åŠ›ä¹Ÿè¶Šæ¥è¶Šå¤§ã€‚
+ç©å®¶å¢åŠ æ‹›å¼çš„ç†Ÿç»ƒç¨‹åº¦çš„æ–¹å¼æ˜¯ä½¿ç”¨ä¸¤ä¸ªä¸“ç”¨æŒ‡ä»¤ï¼š
+selfpractice,ç”¨practiceä¹Ÿå¯ä»¥ï¼Œä½†æ˜¯éš¾åº¦ä¼šåŠ å¤§ã€‚
+selfthinking ç±»ä¼¼äº selflearn å’Œ learn
 
-ÓÉÓÚÊÇ×Ô¼ºÃşË÷ÕĞÊ½£¬ËùÒÔÄÑ¶ÈÒª´óĞ©¡£Íæ¼ÒÖ»ÄÜĞŞ¸Äµ±Ç°µÄÕĞÊ½£¬¶ÔÒÔÇ°µÄ
-ÕĞÊ½ÎŞ·¨¸Ä¶¯¡£ËùÒÔÍæ¼ÒÒªÊÂÏÈ¹æ»®ºÃ6-7ÕĞ£¬±ßÁ·±ßĞŞ¸Ä£¬ÒÔÃâµ½Ê±ºîÎŞ·¨
-¸Ä¶¯ÒÔÇ°µÄ»ù±¾ÕĞÊ½¡£
+ç”±äºæ˜¯è‡ªå·±æ‘¸ç´¢æ‹›å¼ï¼Œæ‰€ä»¥éš¾åº¦è¦å¤§äº›ã€‚ç©å®¶åªèƒ½ä¿®æ”¹å½“å‰çš„æ‹›å¼ï¼Œå¯¹ä»¥å‰çš„
+æ‹›å¼æ— æ³•æ”¹åŠ¨ã€‚æ‰€ä»¥ç©å®¶è¦äº‹å…ˆè§„åˆ’å¥½6-7æ‹›ï¼Œè¾¹ç»ƒè¾¹ä¿®æ”¹ï¼Œä»¥å…åˆ°æ—¶ä¾¯æ— æ³•
+æ”¹åŠ¨ä»¥å‰çš„åŸºæœ¬æ‹›å¼ã€‚
 
-¿ÉÒÔÀûÓÃµÄ»ù±¾¹¦·òÓĞ£º
+å¯ä»¥åˆ©ç”¨çš„åŸºæœ¬åŠŸå¤«æœ‰ï¼š
  unarmed,
  sword,
  blade,
@@ -839,20 +839,20 @@ selfthinking ÀàËÆÓÚ selflearn ºÍ learn
  cuff ,
  claw ,
  strike,
-×¢Òâ:
-ÕĞÊ½µÄÓ¢ÎÄÃû³ÆºóÃæ½«±»¼ÓÉÏ»ù±¾¼¼ÄÜµÄ¼¸¸ö±êÊ¶£¬Íæ¼ÒÒªÊÂÏÈÏëºÃ£¬Ò»µ©
-¿ªÊ¼´´½¨ÔòÎŞ·¨ËæÒâ¸Ä¶¯Ó¢ÎÄÃû³Æ¡£
-ÕĞÊ½ÃèÊöÖĞ²»Òª¼ÓÈë¿ØÖÆ×Ö·û¡£
-Íæ¼Ò×î¶àÖ»ÄÜ´´½¨ÈıÖÖ¸ß¼¶¹¦·ò¡£
-ÒÔºó¿ÉÄÜ»áÔö¼ÓchangeskillnameÖ¸Áî£¬ÓÃÀ´¸Ä¶¯ÒÑ¾­´´½¨ºÃµÄÎä¹¦µÄÓ¢ÎÄ
-Ãû³Æ£¬µ«Ä¿Ç°²»ÄÜ¡£
+æ³¨æ„:
+æ‹›å¼çš„è‹±æ–‡åç§°åé¢å°†è¢«åŠ ä¸ŠåŸºæœ¬æŠ€èƒ½çš„å‡ ä¸ªæ ‡è¯†ï¼Œç©å®¶è¦äº‹å…ˆæƒ³å¥½ï¼Œä¸€æ—¦
+å¼€å§‹åˆ›å»ºåˆ™æ— æ³•éšæ„æ”¹åŠ¨è‹±æ–‡åç§°ã€‚
+æ‹›å¼æè¿°ä¸­ä¸è¦åŠ å…¥æ§åˆ¶å­—ç¬¦ã€‚
+ç©å®¶æœ€å¤šåªèƒ½åˆ›å»ºä¸‰ç§é«˜çº§åŠŸå¤«ã€‚
+ä»¥åå¯èƒ½ä¼šå¢åŠ changeskillnameæŒ‡ä»¤ï¼Œç”¨æ¥æ”¹åŠ¨å·²ç»åˆ›å»ºå¥½çš„æ­¦åŠŸçš„è‹±æ–‡
+åç§°ï¼Œä½†ç›®å‰ä¸èƒ½ã€‚
 
-ÕĞÊ½ÃèÊöÖĞµÄ£º
-Ğ¡Óã¶ù£¬Äã£¬Ä³²¿Î»£¬ÎäÆ÷´øÓĞÆÕ±éĞÔ£¬½«À´¿ÉÒÔÓÃÀ´¶Ô¸¶¸÷ÖÖ²»Í¬µĞÈË¡£
+æ‹›å¼æè¿°ä¸­çš„ï¼š
+å°é±¼å„¿ï¼Œä½ ï¼ŒæŸéƒ¨ä½ï¼Œæ­¦å™¨å¸¦æœ‰æ™®éæ€§ï¼Œå°†æ¥å¯ä»¥ç”¨æ¥å¯¹ä»˜å„ç§ä¸åŒæ•Œäººã€‚
 
-ÕĞÊ½µÄÃèÊö²»Òª´øÓĞ¶Ô×Ô¼º»ò¶ÔÊÖ×´Ì¬µÄÃèĞ´£¬²»Òª²»¸ºÔğµÄÂÒĞ´¡£
-Î×Ê¦½«¼ì²éÍæ¼ÒËù´´½¨µÄ¹¦·ò£¬Èç²»·ûºÏ¹æ¶¨£¬½«±»É¾³ı¡£
-×ÔÖÆÎä¹¦£¬ĞèÒª2MÒÔÉÏµÄ¾­Ñé  
+æ‹›å¼çš„æè¿°ä¸è¦å¸¦æœ‰å¯¹è‡ªå·±æˆ–å¯¹æ‰‹çŠ¶æ€çš„æå†™ï¼Œä¸è¦ä¸è´Ÿè´£çš„ä¹±å†™ã€‚
+å·«å¸ˆå°†æ£€æŸ¥ç©å®¶æ‰€åˆ›å»ºçš„åŠŸå¤«ï¼Œå¦‚ä¸ç¬¦åˆè§„å®šï¼Œå°†è¢«åˆ é™¤ã€‚
+è‡ªåˆ¶æ­¦åŠŸï¼Œéœ€è¦2Mä»¥ä¸Šçš„ç»éªŒ  
 
 HELP
 );

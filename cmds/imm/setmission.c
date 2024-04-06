@@ -12,9 +12,9 @@ int main(object me, string arg)
         string *wmission;
         if( me!=this_player(1) ) return 0;
         if( !arg || sscanf(arg, "%s %s", arg, mission)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºsetmission <Ê¹ÓÃÕß> (Ä¿Ç°ÈÎÎñ)\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šsetmission <ä½¿ç”¨è€…> (ç›®å‰ä»»åŠ¡)\n");
         if( !objectp(ob = present(arg, environment(me))) || !userp(ob) )
-                return notify_fail("ÄãÖ»ÄÜ¸Ä±äµ±Ç°Ê¹ÓÃÕßµÄÈÎÎñ¡£\n");
+                return notify_fail("ä½ åªèƒ½æ”¹å˜å½“å‰ä½¿ç”¨è€…çš„ä»»åŠ¡ã€‚\n");
         mission = replace_color( mission, 1);
         wmission = explode(read_file("/adm/daemons/wizmission"), "\n");
         for(i=0; i<sizeof(wmission); i++) {
@@ -28,7 +28,7 @@ int main(object me, string arg)
         for( file = "", i=0; i<sizeof(wmission); i++) file += wmission[i] + "\n";
         if(!flag) write_file("/adm/daemons/wizmission", ob->query("id") + " " + mission + "\n", 0);
         else      write_file("/adm/daemons/wizmission", file, 1);
-        message_vision("$N½«$nµÄ¹¤×÷ÈÎÎñ¸ÄÎª " + mission + " ¡£\n", me, ob);
+        message_vision("$Nå°†$nçš„å·¥ä½œä»»åŠ¡æ”¹ä¸º " + mission + " ã€‚\n", me, ob);
         return 1;
 }
         
@@ -58,8 +58,8 @@ string replace_color(string arg,int flag)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : setmission <Ä³ÈË> 
-ÌìÉñ×¨ÓÃÃüÁî¡£
+æŒ‡ä»¤æ ¼å¼ : setmission <æŸäºº> 
+å¤©ç¥ä¸“ç”¨å‘½ä»¤ã€‚
 HELP
         );
         return 1;

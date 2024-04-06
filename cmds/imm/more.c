@@ -8,23 +8,23 @@ int main(object me, string arg)
 	object ob;
 
 	seteuid(geteuid(me));
-	if (!arg) return notify_fail("Ö¸Áî¸ñÊ½ : more <µµÃû>|<Îï¼şÃû> \n");
+	if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : more <æ¡£å>|<ç‰©ä»¶å> \n");
 	file = resolve_path(me->query("cwd"), arg);
 if( sscanf(file, "/log/%*s") ) 
-return notify_fail("logÄ¿Â¼ÏÂÎÄ¼ş£¬Çë²»ÒªËæ±ã²é¿´!!\n");
+return notify_fail("logç›®å½•ä¸‹æ–‡ä»¶ï¼Œè¯·ä¸è¦éšä¾¿æŸ¥çœ‹!!\n");
 
-	//¼ÇÂ¼²é¿´µÄÎÄ¼ş/log/cmds/more   É½Ã¨(adx)
+	//è®°å½•æŸ¥çœ‹çš„æ–‡ä»¶/log/cmds/more   å±±çŒ«(adx)
 	log_file("cmds/more",
 	sprintf("%s(%s) more %s on %s\n",
-	me->name(1), //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÈËÃû
-	geteuid(me), //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄID
-	file,        //¼ÇÂ¼¶ÁÈ¡ÎÄ¼şµÄÂ·¾¶
-	ctime(time()) ) ); //¼ÇÂ¼Ê¹ÓÃÃüÁîµÄÊ±¼ä
+	me->name(1), //è®°å½•ä½¿ç”¨å‘½ä»¤çš„äººå
+	geteuid(me), //è®°å½•ä½¿ç”¨å‘½ä»¤çš„ID
+	file,        //è®°å½•è¯»å–æ–‡ä»¶çš„è·¯å¾„
+	ctime(time()) ) ); //è®°å½•ä½¿ç”¨å‘½ä»¤çš„æ—¶é—´
 
 	if( file_size(file) < 0 ) {
 		ob = present(arg, me);
 		if( !ob ) ob = present(arg, environment(me));
-		if( !ob ) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+		if( !ob ) return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 		file = base_name(ob) + ".c";
 	}
 	me->start_more( read_file(file));
@@ -34,7 +34,7 @@ return notify_fail("logÄ¿Â¼ÏÂÎÄ¼ş£¬Çë²»ÒªËæ±ã²é¿´!!\n");
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : topten rich <Îï¼şÃû>
+æŒ‡ä»¤æ ¼å¼ : topten rich <ç‰©ä»¶å>
 HELP
     );
     return 1;

@@ -15,7 +15,7 @@ int main(object me, string arg)
 	string id,password;
 	string wiz_status;
 	if(!arg||sscanf(arg,"%s %s",id,password)!=2)
-		return notify_fail("ÓÃ·¨:xpasswd ID ĞÂÃÜÂë\n´Ë²Ù×÷ÈİÒ×Ëğº¦Íæ¼ÒÀûÒæ£¬Äã±ØĞëÏÈµ÷²éÇå³ş£¡\n");
+		return notify_fail("ç”¨æ³•:xpasswd ID æ–°å¯†ç \næ­¤æ“ä½œå®¹æ˜“æŸå®³ç©å®¶åˆ©ç›Šï¼Œä½ å¿…é¡»å…ˆè°ƒæŸ¥æ¸…æ¥šï¼\n");
 
 if (id=="hxsd" ||
 id=="yaodm" ||
@@ -23,7 +23,7 @@ id=="guaf" ||
 id=="keinxin" ||
 id=="yqh" 
 )
-return notify_fail("²»ÄÜ¸ÄWIZÃÜÂë¡£\n");
+return notify_fail("ä¸èƒ½æ”¹WIZå¯†ç ã€‚\n");
 	ob=find_player(id);
 	if(!ob)
 	{
@@ -31,15 +31,15 @@ return notify_fail("²»ÄÜ¸ÄWIZÃÜÂë¡£\n");
         ob->set("id",id);
 	
 //        if( (string)SECURITY_D->get_status(ob)=="(player)")
-//        	return notify_fail("²»ÄÜ¸ÄWIZÃÜÂë¡£\n");
+//        	return notify_fail("ä¸èƒ½æ”¹WIZå¯†ç ã€‚\n");
         if( !ob->restore() )
-        	return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò°¡¡£\n");
+        	return notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶å•Šã€‚\n");
 	        else
 		{                                    
            ob->set("password",crypt(password,0));
-           tell_object(me, "Íæ¼Ò" + ob->query("id") + "("+ob->query("name")
-                + ")µÄÃÜÂëÒÑ¾­¸ü¸ÄÎª£º"+password+"¡£\n");
-           log_file( "changepw.log", sprintf("%s %s(%s)ĞŞ¸ÄÁË%s(%s)µÄÃÜÂë",
+           tell_object(me, "ç©å®¶" + ob->query("id") + "("+ob->query("name")
+                + ")çš„å¯†ç å·²ç»æ›´æ”¹ä¸ºï¼š"+password+"ã€‚\n");
+           log_file( "changepw.log", sprintf("%s %s(%s)ä¿®æ”¹äº†%s(%s)çš„å¯†ç ",
                 ctime(time()), me->query("name"), me->query("id"),
                 ob->query("name"), ob->query("id")));
            ob->save();
@@ -52,12 +52,12 @@ return notify_fail("²»ÄÜ¸ÄWIZÃÜÂë¡£\n");
 	{
 		link_ob->set("password",crypt(password,0));
 		link_ob->save();
-		tell_object(me, "Íæ¼Ò" + ob->query("id") + "("+ob->query("name")
-			+ "µÄÃÜÂëÒÑ¾­¸ü¸ÄÎª£º"+password+"¡£\n");
+		tell_object(me, "ç©å®¶" + ob->query("id") + "("+ob->query("name")
+			+ "çš„å¯†ç å·²ç»æ›´æ”¹ä¸ºï¼š"+password+"ã€‚\n");
 		return 1;
 	}
 	else
-		return notify_fail("´íÎó¡£ÎŞ·¨½øĞĞĞŞ¸Ä¡£\n");
+		return notify_fail("é”™è¯¯ã€‚æ— æ³•è¿›è¡Œä¿®æ”¹ã€‚\n");
 	return 1;
 }
 
@@ -65,9 +65,9 @@ return notify_fail("²»ÄÜ¸ÄWIZÃÜÂë¡£\n");
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : xpasswd ID ĞÂÃÜÂë
+æŒ‡ä»¤æ ¼å¼ : xpasswd ID æ–°å¯†ç 
 
-Õâ¸öÖ¸Áî¿ÉÒÔĞŞ¸ÄÍæ¼ÒµÄÃÜÂë£¬Çë½÷É÷Ê¹ÓÃ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥ä¿®æ”¹ç©å®¶çš„å¯†ç ï¼Œè¯·è°¨æ…ä½¿ç”¨ã€‚
 
 HELP
     );

@@ -5,58 +5,58 @@
 inherit F_CLEAN_UP;
 
 string *skill_level_desc = ({
-        BLU "³õÑ§Õ§Á·" NOR,
-        BLU "³õ¿úÃÅ¾¶" NOR,
-        BLU "´ÖÍ¨Æ¤Ã«" NOR,
-        HIB "ÂÔÖªÒ»¶ş" NOR,
-        HIB "°ëÉú²»Êì" NOR,
-        HIB "ÂíÂí»¢»¢" NOR,
-        YEL "ÂÔÓĞĞ¡³É" NOR,
-        YEL "ÒÑÓĞĞ¡³É" NOR,
-        YEL "½¥Èë¼Ñ¾³" NOR,
-        HIY "¼İÇá¾ÍÊì" NOR,
-        HIY "ÁËÈ»ÓÚĞØ" NOR,
-        HIY "³öÀà°ÎİÍ" NOR,
-        MAG "ÂÔÓĞ´ó³É" NOR,
-        MAG "ÒÑÓĞ´ó³É" NOR,
-        MAG "ĞÄÁìÉñ»á" NOR,
-        HIM "ÉñºõÆä¼¼" NOR,
-        HIM "³öÉñÈë»¯" NOR,
-        HIM "»íÈ»¹áÍ¨" NOR,
-        RED "µÇ·åÔì¼«" NOR,
-        RED "¼¼¹ÚÈºĞÛ" NOR,
-        RED "¾ÙÊÀÎŞË«" NOR,
-        HIR "Ò»´ú×ÚÊ¦" NOR,
-        HIR "Õğ¹Åîå½ñ" NOR,
-        HIR "°ÁÊÓÈºĞÛ" NOR,
-        WHT "ËùÏòÅûÃÒ" NOR,
-        WHT "¾ªÊÀº§Ë×" NOR,
-        HIW "ÎŞ¿ÉÆ¥µĞ" NOR,
-        HIW "¶À²½ÌìÏÂ" NOR,
-        HIY "Éî²»"HIR"¿É²â" NOR,
-        HIC "·µÆÓ" HIW "¹éÕæ" NOR, 
-        HIY "Ìì" HIC "ÏÂ" HIW "ÎŞ" HIR "µĞ" NOR
+        BLU "åˆå­¦ä¹ç»ƒ" NOR,
+        BLU "åˆçª¥é—¨å¾„" NOR,
+        BLU "ç²—é€šçš®æ¯›" NOR,
+        HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+        HIB "åŠç”Ÿä¸ç†Ÿ" NOR,
+        HIB "é©¬é©¬è™è™" NOR,
+        YEL "ç•¥æœ‰å°æˆ" NOR,
+        YEL "å·²æœ‰å°æˆ" NOR,
+        YEL "æ¸å…¥ä½³å¢ƒ" NOR,
+        HIY "é©¾è½»å°±ç†Ÿ" NOR,
+        HIY "äº†ç„¶äºèƒ¸" NOR,
+        HIY "å‡ºç±»æ‹”èƒ" NOR,
+        MAG "ç•¥æœ‰å¤§æˆ" NOR,
+        MAG "å·²æœ‰å¤§æˆ" NOR,
+        MAG "å¿ƒé¢†ç¥ä¼š" NOR,
+        HIM "ç¥ä¹å…¶æŠ€" NOR,
+        HIM "å‡ºç¥å…¥åŒ–" NOR,
+        HIM "è±ç„¶è´¯é€š" NOR,
+        RED "ç™»å³°é€ æ" NOR,
+        RED "æŠ€å† ç¾¤é›„" NOR,
+        RED "ä¸¾ä¸–æ— åŒ" NOR,
+        HIR "ä¸€ä»£å®—å¸ˆ" NOR,
+        HIR "éœ‡å¤é“„ä»Š" NOR,
+        HIR "å‚²è§†ç¾¤é›„" NOR,
+        WHT "æ‰€å‘æŠ«é¡" NOR,
+        WHT "æƒŠä¸–éª‡ä¿—" NOR,
+        HIW "æ— å¯åŒ¹æ•Œ" NOR,
+        HIW "ç‹¬æ­¥å¤©ä¸‹" NOR,
+        HIY "æ·±ä¸"HIR"å¯æµ‹" NOR,
+        HIC "è¿”æœ´" HIW "å½’çœŸ" NOR, 
+        HIY "å¤©" HIC "ä¸‹" HIW "æ— " HIR "æ•Œ" NOR
 });
 
 string *knowledge_level_desc = ({
-        BLU "ĞÂÑ§Õ§ÓÃ" NOR,
-        BLU "³õ¿úÃÅ¾¶" NOR,
-        HIB "ÂÔÖªÒ»¶ş" NOR,
-        HIB "Æ½µ­ÎŞÆæ" NOR,
-        YEL "°ëÉú²»Êì" NOR,
-        YEL "ÂíÂí»¢»¢" NOR,
-        HIY "ÒÑÓĞĞ¡³É" NOR,
-        HIY "ĞÄÁìÉñ»á" NOR,
-        MAG "ÁËÈ»ÓÚĞØ" NOR,
-        HIM "ÒÑÓĞ´ó³É" NOR,
-        RED "»íÈ»¹áÍ¨" NOR,
-        HIR "³öÀà°ÎİÍ" NOR,
-        CYN "¼¼¹ÚÈºĞÛ" NOR,
-        HIC "Ò»´ú×ÚÊ¦" NOR,
-        HIW "¾ÙÊÀÎŞË«" NOR,
-        HIC "Õğ¹Å" HIW "îå½ñ" NOR,  
-        HIY "Éî²»" HIR "¿É²â" NOR,
-        HIY "Ìì" HIC "ÏÂ" HIW "ÎŞ" HIR "µĞ" NOR
+        BLU "æ–°å­¦ä¹ç”¨" NOR,
+        BLU "åˆçª¥é—¨å¾„" NOR,
+        HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+        HIB "å¹³æ·¡æ— å¥‡" NOR,
+        YEL "åŠç”Ÿä¸ç†Ÿ" NOR,
+        YEL "é©¬é©¬è™è™" NOR,
+        HIY "å·²æœ‰å°æˆ" NOR,
+        HIY "å¿ƒé¢†ç¥ä¼š" NOR,
+        MAG "äº†ç„¶äºèƒ¸" NOR,
+        HIM "å·²æœ‰å¤§æˆ" NOR,
+        RED "è±ç„¶è´¯é€š" NOR,
+        HIR "å‡ºç±»æ‹”èƒ" NOR,
+        CYN "æŠ€å† ç¾¤é›„" NOR,
+        HIC "ä¸€ä»£å®—å¸ˆ" NOR,
+        HIW "ä¸¾ä¸–æ— åŒ" NOR,
+        HIC "éœ‡å¤" HIW "é“„ä»Š" NOR,  
+        HIY "æ·±ä¸" HIR "å¯æµ‹" NOR,
+        HIY "å¤©" HIC "ä¸‹" HIW "æ— " HIR "æ•Œ" NOR
 });
 
 string skill_level(string, int);
@@ -76,52 +76,52 @@ int main(object me, string arg)
 		if( living(all[i]) && !userp(all[i]) ) man = all[i];
 	}
 
-        if ( (!(fam = me->query("family")) || fam["family_name"] != "Ø¤°ï") )
-		return notify_fail("Ö»ÓĞÆòØ¤²ÅÄÜ´òÌ½±ğÈËµÄ¼¼ÄÜ£¡\n");
+        if ( (!(fam = me->query("family")) || fam["family_name"] != "ä¸å¸®") )
+		return notify_fail("åªæœ‰ä¹ä¸æ‰èƒ½æ‰“æ¢åˆ«äººçš„æŠ€èƒ½ï¼\n");
 
 	if ( !objectp(man) )
-		return notify_fail("ÖÜÎ§Ã»ÈËÄÜ°ïÄãÈ¥ÁË½â±ğÈËµÄ¼¼ÄÜ£¡\n");
+		return notify_fail("å‘¨å›´æ²¡äººèƒ½å¸®ä½ å»äº†è§£åˆ«äººçš„æŠ€èƒ½ï¼\n");
 
         if ( me->query_skill("checking",1) < 10 )
-		return notify_fail("ÄãµÄ´òÌ½±¾ÁìÉĞÎ´´¿Êì£¬ÎŞ·¨ÁË½â±ğÈËµÄ¼¼ÄÜ£¡\n");
+		return notify_fail("ä½ çš„æ‰“æ¢æœ¬é¢†å°šæœªçº¯ç†Ÿï¼Œæ— æ³•äº†è§£åˆ«äººçš„æŠ€èƒ½ï¼\n");
 
 	if ( !arg )
-		return notify_fail("ÄãÒª´òÌıË­µÄ¼¼ÄÜ£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬è°çš„æŠ€èƒ½ï¼Ÿ\n");
 
         if ( present(arg, environment(me)) )
-		return notify_fail("ÄãÒª´òÌıµÄÈË¾ÍÔÚ±ßÉÏ£¬ÔÚÕâÀïÎÊ²»´óÍ×µ±°É£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬çš„äººå°±åœ¨è¾¹ä¸Šï¼Œåœ¨è¿™é‡Œé—®ä¸å¤§å¦¥å½“å§ï¼Ÿ\n");
 
 	ob = find_player(arg);
 	if (!ob) ob = find_living(arg);
-	if (!ob) return notify_fail("ÄãÒª´òÌıË­µÄ¼¼ÄÜ£¿\n");
-if (wizardp(ob)) return notify_fail("ÄãÒª´òÌıË­µÄ¼¼ÄÜ£¿\n");
+	if (!ob) return notify_fail("ä½ è¦æ‰“å¬è°çš„æŠ€èƒ½ï¼Ÿ\n");
+if (wizardp(ob)) return notify_fail("ä½ è¦æ‰“å¬è°çš„æŠ€èƒ½ï¼Ÿ\n");
 	if ( ob == me )
-		return notify_fail("ÄãÃ»Õâ÷á±¿°É£¬Òª±ğÈË¸æËßÄã×Ô¼ºµÄ¼¼ÄÜ£¿\n");
+		return notify_fail("ä½ æ²¡è¿™éº½ç¬¨å§ï¼Œè¦åˆ«äººå‘Šè¯‰ä½ è‡ªå·±çš„æŠ€èƒ½ï¼Ÿ\n");
 
 	cost = me->query("max_jing")/(me->query_skill("checking",1)/10) - 10;
 
 	if ( me->query("jing") <= cost )
-		return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨È¥´òÌı±ğÈËµÄ¼¼ÄÜ¡£\n");
+		return notify_fail("ç°åœ¨ä½ å¤ªç´¯äº†ï¼Œæ— æ³•å»æ‰“å¬åˆ«äººçš„æŠ€èƒ½ã€‚\n");
 
-	tell_object(me, "Äã×ßÉÏÇ°È¥£¬Ğ¡ĞÄÒíÒíµØÏò" + man->name() + "´òÌı¹ØÓÚ" + ob->name() + "µÄÇé¿ö ...\n\n");
-	message("vision", "Ö»¼û" + me->name() + "Åã×ÅĞ¦Á³¸ú" + man->name() + "Ëµ×Å»°£¬ºÃÏóÔÚ´òÌıĞ©Ê²Ã´¡£\n\n", 
+	tell_object(me, "ä½ èµ°ä¸Šå‰å»ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘" + man->name() + "æ‰“å¬å…³äº" + ob->name() + "çš„æƒ…å†µ ...\n\n");
+	message("vision", "åªè§" + me->name() + "é™ªç€ç¬‘è„¸è·Ÿ" + man->name() + "è¯´ç€è¯ï¼Œå¥½è±¡åœ¨æ‰“å¬äº›ä»€ä¹ˆã€‚\n\n", 
 		environment(me), ({ me, man }) );
 
 	sp = me->query_skill("checking")*10 + me->query("kar")*5 + me->query("jing") + man->query("jing");
 	dp = ob->query("kar")*5 + ob->query("jing")*2;
 	
 	if ( random(sp) < random(dp) || ob->query("id") == "princess")
-		return notify_fail( man->name() + "Ò¡ÁËÒ¡Í·£¬ËµµÀ£ºÕâÊÂÎÒ¿É²»Çå³ş£¬"
-		 	+ RANK_D->query_respect(me) + "»¹ÊÇÈ¥Ïò±ğÈË´òÌıÒ»ÏÂ°É£¡\n");
+		return notify_fail( man->name() + "æ‘‡äº†æ‘‡å¤´ï¼Œè¯´é“ï¼šè¿™äº‹æˆ‘å¯ä¸æ¸…æ¥šï¼Œ"
+		 	+ RANK_D->query_respect(me) + "è¿˜æ˜¯å»å‘åˆ«äººæ‰“å¬ä¸€ä¸‹å§ï¼\n");
 
 	me->receive_damage("jing", cost );
 
 	skl = ob->query_skills();
 	if(!sizeof(skl)) {
-		write( man->name() + "¸æËßÄã£º " + ob->name() + "Ä¿Ç°²¢Ã»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ¡£\n");
+		write( man->name() + "å‘Šè¯‰ä½ ï¼š " + ob->name() + "ç›®å‰å¹¶æ²¡æœ‰å­¦ä¼šä»»ä½•æŠ€èƒ½ã€‚\n");
 		return 1;
 	}
-	write( man->name() + "¸æËßÄã£º " + ob->name() +"Ä¿Ç°ËùÑ§¹ıµÄ¼¼ÄÜ£º\n\n");
+	write( man->name() + "å‘Šè¯‰ä½ ï¼š " + ob->name() +"ç›®å‰æ‰€å­¦è¿‡çš„æŠ€èƒ½ï¼š\n\n");
 	sname  = sort_array( keys(skl), (: strcmp :) );
 	
 	map = ob->query_skill_map();
@@ -135,7 +135,7 @@ if (wizardp(ob)) return notify_fail("ÄãÒª´òÌıË­µÄ¼¼ÄÜ£¿\n");
 
 	printf("%s%s%-40s" NOR " - %-10s %3d/%5d\n", 
 		(lrn[sname[i]] >= (skl[sname[i]]+1) * (skl[sname[i]]+1)) ? HIM : "",
-		(member_array(sname[i], mapped)==-1? "  ": "¡õ"),
+		(member_array(sname[i], mapped)==-1? "  ": "â–¡"),
 		to_chinese(sname[i]) + " (" + sname[i] + ")",
 		skill_level(SKILL_D(sname[i])->type(), skl[sname[i]]),
 		skl[sname[i]], (int)lrn[sname[i]],
@@ -171,13 +171,13 @@ string skill_level(string type, int level)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : check|dating [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : check|dating [<æŸäºº>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´òÌı±ğÈËËùÑ§¹ıµÄ¼¼ÄÜ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æ‰“å¬åˆ«äººæ‰€å­¦è¿‡çš„æŠ€èƒ½ã€‚
 
-ÄãÒ²¿ÉÒÔÖ¸¶¨Ò»¸öºÍÄãÓĞÊ¦Í½¹ØÏµµÄ¶ÔÏó£¬ÓÃ skills|cha ¿ÉÒÔ²éÖª¶Ô·½µÄ¼¼ÄÜ×´¿ö¡£
+ä½ ä¹Ÿå¯ä»¥æŒ‡å®šä¸€ä¸ªå’Œä½ æœ‰å¸ˆå¾’å…³ç³»çš„å¯¹è±¡ï¼Œç”¨ skills|cha å¯ä»¥æŸ¥çŸ¥å¯¹æ–¹çš„æŠ€èƒ½çŠ¶å†µã€‚
 
-´ËÃüÁîÎªØ¤°ïµÜ×Ó×¨ÓÃ£¬²¢ĞèÑ§Ï°ÏàÓ¦µÄ¼¼ÄÜ¡£
+æ­¤å‘½ä»¤ä¸ºä¸å¸®å¼Ÿå­ä¸“ç”¨ï¼Œå¹¶éœ€å­¦ä¹ ç›¸åº”çš„æŠ€èƒ½ã€‚
 
 HELP
     );

@@ -19,26 +19,26 @@ int main(object me, string arg)
 
 	if (((int)me->query("age")<18) && !wizardp(me)	)
 	{
-		return notify_fail("�������Ƕ�Ϸ��С����һ����ȥ��\n");
+		return notify_fail("民主不是儿戏！小孩子一边玩去！\n");
 	}
 	if (((int)me->query("combat_exp")<500000) && !wizardp(me)	)
 	{
-		return notify_fail("�������Ƕ�Ϸ����ľ��鲻�㣡\n");
+		return notify_fail("民主不是儿戏！你的经验不足！\n");
 	}
 
 	if ((int)me->query("xkx_jail"))
 	{
-		return notify_fail("�㻹������ʵʵ��������˵�ɣ�\n");
+		return notify_fail("你还是老老实实做完牢再说吧！\n");
 	}
 
 	if ((int)me->query("vote/deprived"))
 	{
-		return notify_fail("�����𵱳���Ū������������ͶƱȨ���£�׷��Ī����\n");
+		return notify_fail("你想起当初玩弄民主、被剥夺投票权的事，追悔莫急。\n");
 	}
 
     if (!arg || sscanf(arg, "%s %s", act_name, victim_name) != 2)
     {
-		return notify_fail("����ʥ��һƱ��Ҫ������˲���Ͷ��\n");
+		return notify_fail("这神圣的一票，要想清楚了才能投。\n");
     }
     
 /**
@@ -48,18 +48,18 @@ int main(object me, string arg)
 	} else 
 	{
 		victim = LOGIN_D->find_body(victim_name);
-		if (!victim) return notify_fail("��ҪͶ˭��Ʊ��\n");
+		if (!victim) return notify_fail("你要投谁的票？\n");
 	}	
 **/	
 	victim = LOGIN_D->find_body(victim_name);
-	if (!victim) return notify_fail("��ҪͶ˭��Ʊ��\n");
-	if (wizardp(victim)) return notify_fail("��ҪͶ˭��Ʊ��\n");
+	if (!victim) return notify_fail("你要投谁的票？\n");
+	if (wizardp(victim)) return notify_fail("你要投谁的票？\n");
 
 
 		
 	if( !stringp(file = (string)"/cmds/std/vote/"+act_name)
 		|| file_size(file + ".c") <= 0 )
-			return 	notify_fail("��ҪͶƱ��ʲô��\n");
+			return 	notify_fail("你要投票干什么？\n");
 	
 	if ( !(file_ob = find_object(file)) ) file_ob = load_object(file);
 	
@@ -67,7 +67,7 @@ int main(object me, string arg)
 	{
 		if ((int)me->query("vote/abuse")> 50)
 		{
-			write( HIG "����Ϊ����ͶƱ��ͶƱȨ�������ˣ�\n" NOR);
+			write( HIG "你因为胡乱投票，投票权被剥夺了！\n" NOR);
 
 //			me->set("xkx_jail", 1);
 			me->set("vote/deprived", 1);
@@ -108,19 +108,19 @@ int valid_voters(object me)
 int help(object me)
 {
 write(@HELP
-ָ���ʽ : vote <����> <ĳ��> 
+指令格式 : vote <动议> <某人> 
 
-�����������ĳ�˲�ȡ�ж����ɴ��ͶƱ��������������������û���˸��飬
-ͶƱ���Զ�ȡ������ǰ����������<����>��
+此命令提议对某人采取行动，由大家投票决定。可是如果五分钟内没有人附议，
+投票会自动取消。当前可以有如下<动议>：
 
-chblk:   �ر�ĳ�˽�̸Ƶ��������Ʊ���ϵļ򵥶���ͬ�⡣
-unchblk: ��ĳ�˽�̸Ƶ��������Ʊ���ϵ�����֮һƱ��ͬ�⡣
-jail:    ��ĳ���ͽ�����������Ʊ���ϵļ򵥶���ͬ�⡣
-unjail:  ��ĳ�˷ų�����������Ʊ���ϵļ򵥶���ͬ�⡣
+chblk:   关闭某人交谈频道，需三票以上的简单多数同意。
+unchblk: 打开某人交谈频道，需三票以上的三分之一票数同意。
+jail:    将某人送进监狱，需三票以上的简单多数同意。
+unjail:  将某人放出监狱，需三票以上的简单多数同意。
 
-ע�⣺ͶƱ����ʹ���κβ�ͬIP����ĺϷ�ID�������������ͶƱ����ɧ����
-����ң��򽫵��¼��72Сʱ����PURGE�������ͽ䣬���Ҵ˳ͽ佫������ ID
-������������С��ʹ��ͶƱȨ��
+注意：投票可以使用任何不同IP区域的合法ID，但是如果利用投票恶意骚扰其
+它玩家，则将导致监禁72小时或是PURGE的严厉惩戒，并且此惩戒将波及该 ID
+的所有人物，务必小心使用投票权。
 HELP
     );
     return 1;
@@ -128,7 +128,7 @@ HELP
 
 /**
 future motion (not implemented yet):
-eject: ����ĳ�ˣ�����Ʊ���ϵļ򵥶���ͬ�⡣
-robot: ����ĳ���ǻ����ˣ���������˸��飬����ϵͳ��ѵ�������ߡ�
-jail: ��ĳ���ͽ�����������Ʊ���ϵļ򵥶���ͬ�⡣
+eject: 驱逐某人，需三票以上的简单多数同意。
+robot: 怀疑某人是机器人，如果有五人附议，则由系统审训被怀疑者。
+jail: 将某人送进监狱，需三票以上的简单多数同意。
 **/

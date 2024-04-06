@@ -1,5 +1,5 @@
 // mudage.c
-//[xiaojl 1999/11/20 º£ÑóII]
+//[xiaojl 1999/11/20 æµ·æ´‹II]
 inherit F_CLEAN_UP;
 
 int main(object me, string arg)
@@ -17,11 +17,11 @@ int main(object me, string arg)
         day = age % 30;
         mon = age / 30;
         
-        out_str = (mon? chinese_number(mon)+"ÔÂ":"")
-                + (day? chinese_number(day)+"Ìì":"")
-                + (hrs? chinese_number(hrs)+"Ğ¡Ê±":"");
+        out_str = (mon? chinese_number(mon)+"æœˆ":"")
+                + (day? chinese_number(day)+"å¤©":"")
+                + (hrs? chinese_number(hrs)+"å°æ—¶":"");
         
-       write("ÄãÒÑ¾­ÔÚ¡¶º£ÑóII¡·µÄÊÀ½çÀïÉú»îÁË" + out_str + "ÁË¡£\n");
+       write("ä½ å·²ç»åœ¨ã€Šæµ·æ´‹IIã€‹çš„ä¸–ç•Œé‡Œç”Ÿæ´»äº†" + out_str + "äº†ã€‚\n");
         return 1;
 }
 

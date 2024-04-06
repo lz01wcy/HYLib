@@ -15,10 +15,10 @@ int main(object me, string arg)
 	
 	wiz_status = SECURITY_D->get_status(me);
 	if( wiz_status != "(admin)" && wiz_status != "(arch)" )
-		return notify_fail("Ö»ÓĞ (arch) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÖØĞÂÆô¶¯" + MUD_NAME + "\n");
+		return notify_fail("åªæœ‰ (arch) ä»¥ä¸Šçš„å·«å¸ˆæ‰èƒ½é‡æ–°å¯åŠ¨" + MUD_NAME + "\n");
 
         message("system",
-                HIW     "\t\t¡¾º£ÑóII¡¿½«ÔÚÎå·ÖÖÓºóÖØĞÂÆô¶¯£¡Çë¾¡¿ì´æµµ(save)£¡\n\n" NOR,
+                HIW     "\t\tã€æµ·æ´‹IIã€‘å°†åœ¨äº”åˆ†é’Ÿåé‡æ–°å¯åŠ¨ï¼è¯·å°½å¿«å­˜æ¡£(save)ï¼\n\n" NOR,
                 users() );
         call_out("countdown", 60, 5);
 
@@ -30,12 +30,12 @@ private void countdown(int min)
 	min--;
 	if( min ) {
 		message("system",
-                        HIR     "\t\t¡¾º£ÑóII¡¿½«ÔÚ" + chinese_number(min) + "·ÖÖÓºóÖØĞÂÆô¶¯£¡Çë¾¡¿ì´æµµ(save)£¡\n\n"NOR,
+                        HIR     "\t\tã€æµ·æ´‹IIã€‘å°†åœ¨" + chinese_number(min) + "åˆ†é’Ÿåé‡æ–°å¯åŠ¨ï¼è¯·å°½å¿«å­˜æ¡£(save)ï¼\n\n"NOR,
 			users() );
 		call_out("countdown", 60, min);
 	} else {
 		message("system",
-                        HIW "\t\t¡¾º£ÑóII¡¿ÖØĞÂÆô¶¯¡£¡£¡£ÇëÉÔºòÔÙµÇÂ½£¡\n"NOR,
+                        HIW "\t\tã€æµ·æ´‹IIã€‘é‡æ–°å¯åŠ¨ã€‚ã€‚ã€‚è¯·ç¨å€™å†ç™»é™†ï¼\n"NOR,
 			users() );
 		call_out("do_shutdown", 3+random(8));
 	}
@@ -48,7 +48,7 @@ private void do_shutdown()
 	string id;
 	j=0;
 	seteuid(getuid());
-/*	set("channel_id", "´æÅÌ¾«Áé"); // Õâ¶Î´æÅÌµÄ´úÂë¿´ÉÏÈ¥¾Í²»´óË³ÑÛ£¬¿Ï¶¨Ğ´µÄ²»Ì«ºÃ£¬µ«Ì«ÍíÁËÎÒ¾Í²»¸ÄËüÁË
+/*	set("channel_id", "å­˜ç›˜ç²¾çµ"); // è¿™æ®µå­˜ç›˜çš„ä»£ç çœ‹ä¸Šå»å°±ä¸å¤§é¡ºçœ¼ï¼Œè‚¯å®šå†™çš„ä¸å¤ªå¥½ï¼Œä½†å¤ªæ™šäº†æˆ‘å°±ä¸æ”¹å®ƒäº†
 	ob=users();
 	i=sizeof(ob);
 	for( i=0;i<sizeof(ob);i++) {
@@ -57,9 +57,9 @@ private void do_shutdown()
 	if(!environment(ob[i]) )        continue;
 	if( !objectp(link_ob = ob[i]->query_temp("link_ob")) ) continue;
 	if( (int)link_ob->save() && (int)ob[i]->save() ) j = 1;
-	else CHANNEL_D->do_channel( this_object(), "sys", ob[i]->query("name")+"µµ°¸×Ô¶¯´æÅÌÊ§°Ü¡£");
+	else CHANNEL_D->do_channel( this_object(), "sys", ob[i]->query("name")+"æ¡£æ¡ˆè‡ªåŠ¨å­˜ç›˜å¤±è´¥ã€‚");
 	}
-	CHANNEL_D->do_channel( this_object(), "sys", "µµ°¸×Ô¶¯´æÅÌ³É¹¦¡£");*/
+	CHANNEL_D->do_channel( this_object(), "sys", "æ¡£æ¡ˆè‡ªåŠ¨å­˜ç›˜æˆåŠŸã€‚");*/
 	shutdown(0);
 	return;
 }
@@ -67,9 +67,9 @@ private void do_shutdown()
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: reboot
+æŒ‡ä»¤æ ¼å¼: reboot
  
-ÖØĞÂÆğ¶¯ÓÎÏ·, ÏµÍ³»á¿ªÊ¼µ¹Êı¼ÆÊ±, Îå·ÖÖÓááÖØĞÂÆğ¶¯¡£
+é‡æ–°èµ·åŠ¨æ¸¸æˆ, ç³»ç»Ÿä¼šå¼€å§‹å€’æ•°è®¡æ—¶, äº”åˆ†é’Ÿå¾Œé‡æ–°èµ·åŠ¨ã€‚
  
 HELP
 );
