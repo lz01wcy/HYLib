@@ -1,0 +1,252 @@
+[MUD]MUDLIB详解/MUDOS运行流程/最小MUDLIB/mud文件结构
+https://www.cnblogs.com/cfas/p/5842963.html 
+
+现在大部分中文MUD都是在东方故事(esII)基础上发展起来的，其目录结构基本一样， 
+也有个别MUD为了标新立异对个别目录换了个名字以示不同，但其实质没有什么变化。 
+这个做的最可恶的是xkx，把一个好好的daemon目录换成了一个不土不洋的kungfu， 
+里边却还是skill,condition这些洋名，简直让人faint！我实在看不出这种修改有什么好处， 
+除了添麻烦（xkx对一些命令的汉化，什么cha,du...也是如此）。不过， 
+也有一些是为了系统更合理而修改的。 
+对MUDLIB目录的解释已经有许多版本了，基本也没什么区别，下边是我的解释， 
+以我自己整理的一份MUDLIB为基础，如果有目录不同的地方适当贯通就是了。 
+
+/adm 这里是最基本，最底层的程序，是整个MUD的控制枢纽。 
+这个目录只有admin权限可以修改。 
+/adm/daemons 守护程序目录。守护程序是指游戏中频繁调用的控制类程序， 
+MUD里各种基本功能都是由这些程序控制的。这些程序一般在游戏一启动就自动载入内存。 
+按照unix下文件命名习惯，这里的程序多以d.c结尾， 
+比如combatd.c就是控制战斗的程序。另外由于这些程序调用非常频繁， 
+一般都做了宏定义（查看/include/globals.h)，例如/adm/daemons/combatd.c 
+定义为COMBAT_D，在其它程序里可以适用这些宏定义代替这些文件名。 
+/adm/etc 系统配置目录，此目录定义为CONFIG_DIR 这里放的是游戏的系统文档文件， 
+比如游戏的欢迎画面，巫师列表，BAN掉的IP记录等。 
+/adm/obj 这里只有两个文件，但却是整个MUD最重要的东西。 
+master.c：这是MudOS主控物件，也就是整个MUD的总司令。 
+simul_efun.c:防真函数加载精灵，这是MUD启动时第一个要载入的东西。 
+所谓efun，是指系统函数，也就是mudos中定义的函数。 
+这些函数不必做任何说明可以在MUD的任何程序里直接调用， 
+而且由于他们是预先定义的，也就是mudos早已经知道他们是做什么的， 
+所以比其它在MUDLIB里定义的函数执行效率要高。但他们的缺点是修改非常不方便， 
+对任何一个efun函数的修改必须重新编译mudos才能生效。因此， 
+在MUDLIB中又有了防真函数的定义，也就是simul_efun， 
+这些函数的作用跟efun完全一样，不同的是他们定义在UDLIB中，可以随时修改， 
+但必须重新启动游戏才能生效。 
+顺便讲一下一个MUD启动的过程，MUD启动的初始化过程分以下几步： 
+1.载入防真函数simul_efun 
+2.载入主控物件master，这里是调用master的create()函数将其载入内存。 
+3.载入需要预先载入的守护程序，这里调用master的preload()函数， 
+需要预先载入的文件定义在/adm/etc/preload里。 
+4.MUD进入多用户状态，允许玩家登录。 
+以上过程必须正确无误的执行完，否则游戏无法正确启动。 
+master.c和simul_efun.c这两个文件只能在游戏启动时由mudos自动载入， 
+不可以在游戏中用update的方法载入，而且这两个物件也不 
+允许非ROOT权限的物件摧毁（destruct)它，因为他们的摧毁就等于游戏关闭 。 
+/adm/simul_efun 防真函数目录，这里放的是定义各类防真函数的文件， 
+这些文件由SIMUL_EFUN_OB(也就是/adm/obj/simul_efun)来载入内存。 
+
+/cmds 游戏命令目录，这里放的是游戏中可以使用的各种命令， 
+只有admin才可以修改这个目录 
+/cmds/adm 只有天神(admin)可以使用的命令 
+/cmds/arch 只有大巫师(arch)以上才可以使用的命令 
+/cmds/wiz 只有巫师(wizard)以上才可以使用的命令 
+/cmds/app 只有巫师学徒(wizard)以上才可以使用的命令 
+/cmds/imm 只有荣誉玩家(immortal)以上才可以使用的命令 
+/cmds/usr 只有普通玩家(player)以上才可以使用的命令 
+/cmds/std 所有生物(npc and player)都可以使用的命令命令目录采用子集格式， 
+权限高的命令完全包含权限低的命令，比如天神可以使用所有游戏命令， 
+普通玩家只能使用/cmds/usr和/cmds/std目录下的命令。 
+
+/data 游戏数据目录，只有arch以上权限才可以修改这个目录 
+/data/board 各个留言板的数据 
+/data/login 玩家登录数据 
+/data/user 玩家档案，呵呵，这里记录的是每个玩家的所有劳动成果 
+/data/npc 一些特殊npc的数据，比如商店老板 
+/data/daemon 重要的系统数据，比如emote词，英汉翻译词典 
+/data/mail 玩家信件 
+
+/feature 标准继承函数。只有admin才可以对这个目录进行修改这些函数是非常重要的， 
+是MUD里各种物件，包括玩家，NPC，物品，房间等的各种功能的标准定义， 
+这些函数反映了整个MUD的与众不同之处，一个好的MUDLIB必然要对这些函数进行优化。 
+而要设计新的程序，必须对这个目录所有文件有所了解。 
+
+/obj 系统物件，这是经常在MUD里被调用的各种物件。 
+这个目录下的物件被复制后跟调用他的物件具有相同的euid， 
+也就是说具有相同的权限，所以，这里的一个npc如果经admin编译后复制出来， 
+也具有了admin权限。这点非常重要，有些物件必须具有跟玩家相同的euid才能正常使用 
+，比如符纸。而出于安全考虑，这个目录下的物件不可以随便复制。 
+只有arch以上才可以修改此目录。 
+/obj/board 游戏中各个留言板 
+/obj/npc 一些特殊的NPC 
+/obj/sheet 各种符纸 
+/obj/weapons 兵器 
+/obj/misc 其它乱七八糟的东西，比如信箱等 
+
+/quest 游戏里各种任务quest的文件，此目录需要wizard以上权限才可以修改 
+
+/binaries 文件编译过程生成的二进制文件，此目录ROOT权限才可以修改 
+
+/d 区域目录，游戏的地图门派和NPC存放的地方。此目录wizard以上权限可以修改。 
+这里是整个MUDLIB最简单最常用的东西，也是玩家可以直接接触到的东西。 
+玩家所呆的任何一个房间都应该对应这个目录下的一个文件， 
+房间里每个NPC也都对应一个文件。这个目录下存在许多子目录， 
+分别对应游戏的不同区域(domain)。 
+/d/domain/npc 该区域中的npc 
+/d/domain/npc/obj 该区域中npc身上的物品 
+/d/domain/obj 该区域中的物品 
+
+/data_bak 档案备份目录，保存需要备份的重要数据。admin可以修改 
+
+/include 头文件目录，只有admin可以修改。这里放的是游戏中各个文件所需要的头文件， 
+其中以下几个特别重要： 
+globals.h:全局定义的头文件，这是一个特殊的头文件， 
+他不需要在任何一个文件里被调用，但是这里定义的所有变量可以在任何一个文件里直接使用。 
+这里一般用来定义非常重要的或者许多地方需要调用 
+的变量。对这个文件的修改必须重新启动游戏才可以生效。command.h: 
+这里定义的是各个权限等级所能够使用的命令目录，所以，除了admin， 
+应该绝对禁止任何人修改此文件。 
+/include/race 种族的头文件 
+/include/net 网络功能的头文件 
+
+/open 系统临时目录，ftp登陆目录，任何人都具有写权限。 
+
+/questobj FY3的task专门目录，存放各个task物品文件。wizard以上权限可以修改。 
+
+/u 巫师工作目录，存放各个巫师开发过程的半成品。 
+这里的子目录名只能为各个巫师的euid， 
+而只有对应euid的人才有对相应目录的修改权限。比如一个目录是lion， 
+那么只有lion这个ID或者比lion权限高的人 
+才可以修改它下边的内容。 
+
+/clone 物品目录，存放游戏中需要经常复制的各种物品，wizard以上权限可以写。 
+这个目录下的物品一般被其他地方复制(clone)出来，但他们的euid是固定的， 
+不会随调用它的物件的不同而改变，这就是这个目录和/obj目录的最大不同。 
+此目录arch以上等级可以修改 
+/clone/armor 装备 
+/clone/drug 药品 
+/clone/fruit 水果，水果跟食物的不同是吃了可以同时加食物和饮水， 
+而且有些水果具有养颜美容之功效。 
+/clone/liquid 容器，象酒袋茶壶一类 
+/clone/money 顾名思义，人见人爱的东西 
+/clone/user 玩家物件，包括login.c(link_ob)和user.c(body)， 
+此目录只有admin可以修改 
+/clone/books 各种秘籍 
+/clone/food 吃的 
+/clone/gift 各种礼物，一般是好东东 
+/clone/weapon 兵器 
+/clone/misc 其他杂物，比如尸体，头颅。 
+
+/daemon 呵呵，这个目录为什么叫这个名字我一直没明白，看下边的说明吧。 
+此目录只有arch以上可以修改。 
+/daemon/skill 游戏中所有的技能 
+/daemon/condition 人物各种状态，比如中毒，恢复等。 
+/daemon/class 这个应该理解为“组织”或“工会”，是ESII从外国MUD里保留下来的东西， 
+不过随着中文MUD的发展，工会的概念逐渐被淡化，其含义已经跟以前完全不同， 
+现在他的意思有点象“身份”，比如道士，和尚，喇嘛，官兵，老百姓。。。。 
+个人有个人的身份。很多情况下，这个跟门派类似，但又不完全相同。 
+这里存放的是各种不同身份的人所具有的特殊东西， 
+不过现在一般用来存放各种特殊技能的特殊用法（perform) 
+
+/doc 文档。 游戏中的各种文本文件，arch以上可以修改 
+/doc/help 各种帮助文件 
+/doc/efuns 各种系统函数的用法 
+/doc/story 各种背景故事 
+
+/log 系统日记，记录游戏过程各种重要事件，是巫师处理纠纷和剔除bug的主要依据来源。 
+一个好的巫师应该养成经常看系统日记的习惯。本目录只有ROOT权限可以修改。 
+
+/p 玩家目录，这个目录下内容玩家具有写的权限。主要存放需要玩家修改的内容， 
+比如玩家房间，自创武功等。 
+
+/std 标准对象目录，游戏中各种标准物件， 
+只有admin可以修改游戏里其他物件都需要继承这里的相应文件。 
+/std/armor 装备物品的标准继承，比如衣服，盔甲等 
+/std/board 留言板 
+/std/char 生物的标准继承，MUD里的生物包含两种：玩家(player)和非玩家( 
+npc)他们都需要继承/std/char/char.c这个对象， 
+他们与其他物件的区别是具有心跳(heartbeat)。 
+/std/drug 药品的标准继承，其实这个现在一般不用了，这部分功能都放到了 
+/feature的相应文件里，保留这个是为了跟旧的系统兼容。 
+/std/item 物品的标准继承 
+/std/room 房间的标准继承 
+有人曾问房间和物品到底有什么区别？说实话，这个问题还真不好说， 
+这两个物件基本结构差不多，也没有什么可以区分的特征。 
+现在的常用判断方法是房间是没有环境(environment)的，但也不是所有物品 
+（包括生物）都有环境，所以，呵呵，这个问题还有待MUD程序的进一步完善， 
+现在基本上无法判断。 
+/std/skill 技能的标准继承 
+/std/weapon 武器的标准继承 
+/std/misc 其他物件，比如钱，符纸。 
+值得注意的是，/std这个目录跟一般MUDLIB的结构不太一样， 
+一般MUDLIB并没有如此归类存放，大家可以根据自己的认识加以判断。 
+
+以上是根据我的理解对各个目录的解释，未必是权威的说法， 
+只是为了让大家有所认识，如果有什么错误请指正。 
+作为刚入门的新巫师，准确理解各个目录的作用是非常重要的， 
+必须知道哪个目录下的东西是做什么的，哪个目录你可以去改，哪个目录你不能动。 
+一般来说，要成为一个合格的巫师，至少要花半月时间来“读”程序， 
+了解整个MUDLIB的结构，了解各个文件的作用 
+（未必要完全看懂，但至少应该知道他是干什么的）， 
+这样不至于再以后的程序开放过程中不知道什么功能该如何实现，从而走许多弯路。 
+当你了解了整个MUDLIB后就可以试着自己写程序了， 
+一般你只能在自己的工作目录里写东西。刚开始不妨试着写一个简单的房间， 
+然后试着写一个简单的npc，然后试着把这个npc放到这个房间里。。。。。。 
+这样逐渐提高，你很快就成为一个合格的巫师了。
+参考资料：烈火西游 http://218.200.132.6:6666/list.asp?id=248
+
+ 
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+mudos运行流程
+
+今天我看了站上的一些文章，加上查看原程序，把mudos启动后，程序运行的流程搞清楚了。小弟觉得只要有一个好的mudos，就可写出新的mudlib 框架。我拿用户连接来解释程序的运行流程。
+
+在config.xxx文件中指出了master和global两个文件，这是十分重要的文件。
+mudos启动后会加载上述两个文件（其它文件也有，但上述文件为主要 ）
+进入内存，mudos中定义了一些特殊的函数，例如create()、init()等等， 
+这些函数都是在特定事件中由mudos自动调用的。
+当用户在port口请求连接的时候：
+——mudos自动调用master.c中的connect()函数
+——然后connect()函数调用 LOGIN_OB这个物件，［而LOGIN_OB是个物件常量，在global.h中定义LOGIN_OB 的值是"/clone/user/login.c"，也就是说connect()调用了login.c这个物件］
+——在login.c中有一些特殊函数，如果按照用户正确登陆的流程，mudos自动调用login.c中logon()这个特殊函数。
+——在logon()中由调用LOGIN_D这一物件常量，LOGIN_D在global.h文件中所定义的值是"/adm/daemons/logind"，
+——于是 mudos又把logind.c调入内存并运行。
+
+我们一般认为mudos在编译前在它的设置文件中定义了用户login的程序 路径及文件名，
+编译后路径和文件名不可改，在用户连入的时候，mudos根据 路径自动启动用户登陆程序。
+其实非也，mudos只是一个对mud进行低级支持 的程序。
+
+我们可以利用mudos，完全抛弃已有的mudlib框架，进行新的创作。
+这样 才能使中国的mud种类走向多样化。
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－＝
+
+最小Mudib有多大？
+
+这个最小的是说能驱动MUDOS,能成功Connected.
+现在以网上下载的单机专用MUDOS和其配制的config.cfg为标准说明:
+先找一个单独的MUDOS运行,需要配置文件,加载config.cfg...运行后提示:open log/debug.log file failed.OK,根椐配置我们建目录:/log,再运行,现在提示:The simul_efun file adm/obj/simul_efun.c was not loaded.OK,我们建目录:/adm/obj,并在obj目录中建一个空文件simul_efun.c,再运行,现在是:adm/obj/simul_efun.c line 0: Cannot ＃i nclude globals.h
+adm/obj/simul_efun.c line 1: parse error
+No error handler for error: *Error in loading object '/adm/obj/simul_efun'
+program: (none), object: (none), ..file: (none)
+The simul_efun (/adm/obj/simul_efun) and master (/adm/obj/master) objects must be loadable.
+看来现要config.h文件,根椐配置文件,我们建一个目录:/include,并在此目录中加一个空文件globals.h,再运行:The master file /adm/obj/master was not loaded.,现在我们在obj目录中建一个空文件master.运行:No function get_root_uid() in master object; possibly the mudlib doesn't want PACKAGE_UIDS to be defined.看来空的master.c不行了,我们在master.c中加上如下语句:string get_root_uid() { return "Root"; }
+string get_bb_uid() { return "Backbone"; }
+string creator_file(string file) { return "Root"; },现在再运行,OK,MUDOS成功跑起来了.
+
+但现在用zMUD连线connected后就lose了,怎么办,现在在master.c中加一如下语句:object connect(int port)
+{
+     object ob;
+
+     ob = new(__DIR__"user.c");
+     return ob;
+}.同时在master.c相同目录中新建一个空文件user.c,现在运行mudos,并连线,成功...
+
+      现在看看一共用了哪些文件和目录?
+1. /log
+2. /adm/obj/simul_efun.c
+3. /include/globals.h
+4. /adm/obj/master.c
+5. /adm/obj/user.c
+
+其中只有master.c中有内容,其它的都是空的,这5个加起来有多大?237字节,怎么样?

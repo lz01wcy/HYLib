@@ -1,0 +1,69 @@
+一个mud的deamons(海洋2)
+
+aliasd 命令别名工具
+autorebootd 自动重启
+autosaved 自动保存
+backupd 自动备份
+band ban人工具
+bgift 好像是个boss掉落工具
+brd 似乎是创建地图的工具
+channeld 频道 不同角色的玩家交流的频道
+chard 创建角色?
+chinesed 中文工具 包括数字转汉字 从字典文件中进行技能名转汉字等
+combatd 战斗工具 包括战斗的文本描述模板 计算技能强度 执行工具动作 进行血量核算 自动战斗 战斗后奖励核算等
+commandd 命令工具 似乎是查找命令并执行的
+convertd 转码工具
+cpud cpu工具
+cron 定时工具
+dynamicd 动态地图工具
+emoted 表情工具
+eventd 事件工具
+familyd 门派工具 维护声望/仇人之类
+fingerd 在线人数之类的?
+ftpd ftp工具?
+fubend 副本工具
+gb_b5d gb2312转big5
+giftnew 一些杀怪掉落相关的
+inquiryd 使npc更健谈
+jobd 一个叫做江湖浩劫的任务工具
+languaged 也是转码相关的
+logind 登录/创建角色相关
+memoryd 内存工具 自动清理无用变量
+moneyd 金钱工具
+msgd 新闻工具
+natured 天气工具 还有许多任务相关
+new_cron 新的定时工具
+pigd 拱猪游戏
+profiled 统计工具?
+questd 一个找怪/找物的任务
+rankd 根据角色的门派/性别/经验生成称号
+scheduled 日程工具 没理解 但是似乎最重要的心跳是在这里的
+securd 角色权限管理? 目录权限管理
+skilld 技能工具 调整技能的id 数值等
+statusd 状态工具 统计角色经验潜能增加速度的?
+stockd 股票系统 边玩游戏边炒股是吧?
+storyd 故事系统 也是定时触发
+taskd 也是任务系统
+taskdstart 加载了taskd
+tengaoshou 定时进行玩家排名统计
+tenrichman 定时进行玩家排名统计
+timed 一个时间系统
+updated 更新角色 
+virtuald 返回虚拟对象?
+vrm_server 虚拟的随机迷宫创造器
+weapond 武器相关 包括攻击动作文本描述模板 打落武器 破坏武器 武器喂毒等
+whod 全服玩家等相关
+race/ 不同种族的初始化相关
+event/ 不同的几种自然景观事件
+network/ mud网络协议相关
+
+实际上可以看得出 mud这种形式的项目 代码在很长的时间跨度上 由许多人参与维护 参与者的水平也有不同 导致代码是比较杂乱的
+有一部分只能算作是utils 一些供人使用的工具类
+另外各种任务放在了许多文件中 结果很杂乱
+一个文件中 既有天气功能 也有任务功能 模块化也不是很好
+
+logind 是极其重要的功能模块
+combatd 是战斗系统核心
+cron timed scheduled等时间工具与各种系统关系密切
+securd和commandd工具与命令执行和命令鉴权关系密切
+virtuald vrm_server dynamicd与动态地图关系密切
