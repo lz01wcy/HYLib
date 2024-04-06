@@ -1,3 +1,3 @@
-º£ÑóIIÉÏ´Îµ±»úÊÇÔÚ£ºThu Jun 09 02:25:04 2005£¬Ô­Òò£ºFATAL: Object 0x3386990 /kungfu/skill/jinwu-blade ref count 0, but not destructed (from free_svalue).
+æµ·æ´‹IIä¸Šæ¬¡å½“æœºæ˜¯åœ¨ï¼šThu Jun 09 02:25:04 2005ï¼ŒåŸå› ï¼šFATAL: Object 0x3386990 /kungfu/skill/jinwu-blade ref count 0, but not destructed (from free_svalue).
 
-this_player: clone/user/user#534192 ("ÓĞ°µÏãÓ¯Ğä(biluo)") biluo
+this_player: clone/user/user#534192 ("æœ‰æš—é¦™ç›ˆè¢–(biluo)") biluo

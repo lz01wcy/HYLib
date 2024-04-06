@@ -1,17 +1,17 @@
-死亡人物0某人
-死亡人物9897某人
-死亡人物97某人
-死亡人物00某人
+姝讳骸浜虹墿0鏌愪汉
+姝讳骸浜虹墿9897鏌愪汉
+姝讳骸浜虹墿97鏌愪汉
+姝讳骸浜虹墿00鏌愪汉
 kungfu/condition/psgc.c line 745: Type of returned value doesn't match function return type ( int vs void )
-死亡人物00某人
-死亡人物00某人
-死亡人物00某人
-死亡人物00某人
-死亡人物00某人
-死亡人物98某人
-死亡人物798某人
+姝讳骸浜虹墿00鏌愪汉
+姝讳骸浜虹墿00鏌愪汉
+姝讳骸浜虹墿00鏌愪汉
+姝讳骸浜虹墿00鏌愪汉
+姝讳骸浜虹墿00鏌愪汉
+姝讳骸浜虹墿98鏌愪汉
+姝讳骸浜虹墿798鏌愪汉
 clone/topten/topten.c line 267: Undefined variable 'pks_topten'
-死亡人物764某人
+姝讳骸浜虹墿764鏌愪汉
 clone/family/menshen.c line 33: Undefined variable 'CHAT_ROOM'
 clone/family/menshen1.c line 33: Undefined variable 'CHAT_ROOM'
 quest/menpai/teamjob.c line 465: Reserved type name unexpected.
