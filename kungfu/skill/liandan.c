@@ -9,10 +9,10 @@ void skill_improved(object me)
 
 int valid_learn(object me)
 {
-	return notify_fail("炼丹之技只能通过炼丹来提高。\n");
+	return notify_fail("鐐间腹涔嬫妧鍙兘閫氳繃鐐间腹鏉ユ彁楂樸�俓n");
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("炼丹之技只能通过炼丹来提高。\n");
+	return notify_fail("鐐间腹涔嬫妧鍙兘閫氳繃鐐间腹鏉ユ彁楂樸�俓n");
 }

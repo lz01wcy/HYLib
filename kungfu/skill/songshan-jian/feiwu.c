@@ -13,32 +13,32 @@ int perform(object me, object target)
         ||  !target->is_character()
         ||  !me->is_fighting(target) 
         || !living(target))
-                return notify_fail("·ÉÎè¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é£èˆæ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("songshan-jian", 1) < 120 )
-                return notify_fail("ÄãµÄáÔÉ½½£·¨¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„åµ©å±±å‰‘æ³•åŠŸåŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
 
         if( (int)me->query_skill("sword", 1) < 120 )
-                return notify_fail("ÄãµÄ»ù±¾½£·¨¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å‰‘æ³•åŠŸåŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
         if( (int)me->query_skill("songshan-qigong", 1) < 120 )
-                return notify_fail("ÄãµÄÄÚ¹¦¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸåŠŸåŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
                 
         if( (int)me->query("max_neili") < 1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
         if( (int)me->query("neili") < 500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
         if (me->query_skill_mapped("force") != "songshan-qigong")
-                return notify_fail("ÄãÓÃÊ²Ã´Îª»ù´¡À´Ê¹áÔÉ½½£¾ø¼¼Ã´?\n");
+                return notify_fail("ä½ ç”¨ä»€ä¹ˆä¸ºåŸºç¡€æ¥ä½¿åµ©å±±å‰‘ç»æŠ€ä¹ˆ?\n");
         if (!objectp(weapon = me->query_temp("weapon")) || weapon->query("skill_type") != "sword"
             || me->query_skill_mapped("sword") != "songshan-jian")
-                return notify_fail("ÄãÊ¹µÃÁËáÔÉ½½£¾ø¼¼Ã´?\n");
+                return notify_fail("ä½ ä½¿å¾—äº†åµ©å±±å‰‘ç»æŠ€ä¹ˆ?\n");
 
         if( me->query_temp("ss_feiwu") )
-                return notify_fail("Äã¸ÕÊ¹Íê¡¸·ÉÎè¡¹£¬Ä¿Ç°ÆøÑª·­Ó¿£¬ÎŞ·¨ÔÙ´ÎÔËÓÃ£¡\n");
+                return notify_fail("ä½ åˆšä½¿å®Œã€Œé£èˆã€ï¼Œç›®å‰æ°”è¡€ç¿»æ¶Œï¼Œæ— æ³•å†æ¬¡è¿ç”¨ï¼\n");
         
         me->add("neili", -300);
         me->add("jing", -40);
-        message_vision(BLU "\n$NÍ»È»³¤Ğ¥Ò»Éù£¬¾Ù½£Í¦´Ì£¬ÔÚ°ë¿ÕÖĞ»®³öµÀµÀ½£¹â£¬¿ÕÖĞÆø¾¢¼¤µ´£¬ÕóÕóº®ÆøÏò$n±¼Ï®¶øÈ¥£¡\n" NOR,me, target);
+        message_vision(BLU "\n$Nçªç„¶é•¿å•¸ä¸€å£°ï¼Œä¸¾å‰‘æŒºåˆºï¼Œåœ¨åŠç©ºä¸­åˆ’å‡ºé“é“å‰‘å…‰ï¼Œç©ºä¸­æ°”åŠ²æ¿€è¡ï¼Œé˜µé˜µå¯’æ°”å‘$nå¥”è¢­è€Œå»ï¼\n" NOR,me, target);
 
         me->set_temp("ss_feiwu", 2); 
         me->add_temp("apply/damage", me->query_skill("songshan-jian", 1)/3);
@@ -81,6 +81,6 @@ void remove_effect(object me)
 {
         if (!me) return;
         me->delete_temp("ss_feiwu");
-        tell_object(me, HIG"\nÄã¾­¹ıÒ»¶ÎÊ±¼äµ÷ÆøÑøÏ¢£¬ÓÖ¿ÉÒÔÊ¹ÓÃ¡¸·ÉÎè¡¹ÁË¡£\n"NOR); 
+        tell_object(me, HIG"\nä½ ç»è¿‡ä¸€æ®µæ—¶é—´è°ƒæ°”å…»æ¯ï¼Œåˆå¯ä»¥ä½¿ç”¨ã€Œé£èˆã€äº†ã€‚\n"NOR); 
 }
 

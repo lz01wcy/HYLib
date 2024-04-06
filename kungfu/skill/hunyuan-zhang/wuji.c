@@ -1,4 +1,4 @@
-// wuji.c »ìÔªÎŞ¼«
+// wuji.c æ··å…ƒæ— æ
  
 #include <ansi.h>
 #include <skill.h>
@@ -20,25 +20,25 @@ int perform(object me)
 	skill = me->query_skill("hunyuan-zhang",1);
 	extra = me->query_skill("poyu-quan",1);
 	if( !(me->is_fighting() ))
-		return notify_fail("¡¸»ìÔªÎŞ¼«¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œæ··å…ƒæ— æã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
 	if (objectp(weapon = me->query_temp("weapon")))
-		return notify_fail("ÄãÊ¹ÓÃÁËÎäÆ÷¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨äº†æ­¦å™¨ã€‚\n");
 
 	if( skill < 60)
-		return notify_fail("ÄãµÄ¡¸»ìÔªÕÆ¡¹µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸»ìÔªÎŞ¼«¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œæ··å…ƒæŒã€ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œæ··å…ƒæ— æã€ï¼\n");
 
 	if( extra < 60)
-		return notify_fail("ÄãµÄ¡¸ÆÆÓñÈ­¡¹µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸»ìÔªÎŞ¼«¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œç ´ç‰æ‹³ã€ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œæ··å…ƒæ— æã€ï¼\n");
 	
 	if( me->query("neili") < 150 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸»ìÔªÎŞ¼«¡¹£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œæ··å…ƒæ— æã€ï¼\n");
  	me->add_temp("apply/attack",extra);
 	me->add_temp("apply/damage",skill);
 
-	msg = YEL "$NÇ±ÔË¡¸»ìÔªÕÆ¡¹£¬Ë«ÕÆĞ®×ÅÒşÒşµÄ·çÀ×Ö®ÉùÏò$n»÷È¥¡£"NOR;
+	msg = YEL "$Næ½œè¿ã€Œæ··å…ƒæŒã€ï¼ŒåŒæŒæŒŸç€éšéšçš„é£é›·ä¹‹å£°å‘$nå‡»å»ã€‚"NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg = CYN "$N°µÊ¹¡¸ÆÆÓñÈ­¡¹£¬Ë«È­Ğ®×ÅÓÄÓÄµÄºôĞ¥Ö®ÉùÏò$n»÷È¥¡£"NOR;
+	msg = CYN "$Næš—ä½¿ã€Œç ´ç‰æ‹³ã€ï¼ŒåŒæ‹³æŒŸç€å¹½å¹½çš„å‘¼å•¸ä¹‹å£°å‘$nå‡»å»ã€‚"NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->start_busy(1);
 	me->add_temp("apply/attack",-extra);

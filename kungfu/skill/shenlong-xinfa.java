@@ -1,4 +1,4 @@
-// shenlong-xinfa.c 神龙心法
+// shenlong-xinfa.c 绁為緳蹇冩硶
 
 inherit SKILL;
 
@@ -8,5 +8,5 @@ string type() { return "knowledge"; }
 
 int practice_skill(object me)
 {	
-    return notify_fail("神龙心法只能靠学(learn)来提高。\n");
+    return notify_fail("绁為緳蹇冩硶鍙兘闈犲(learn)鏉ユ彁楂樸�俓n");
 }

@@ -12,16 +12,16 @@ string ask_ling();
 
 void create()
 {
-	set_name("ÑîåĞ", ({"yang xiao","yang","xiao",}));
+	set_name("æ¨é€", ({"yang xiao","yang","xiao",}));
 	set("long",
-        "ËûÊÇÒ»Î»ÖĞÄêÊéÉú£¬Éí´©°×²¼³¤ÅÛ¡£\n"
-        "ËûÏàÃ²¿¡ÑÅ£¬Ö»ÊÇË«Ã¼ÂÔÏòÏÂ´¹£¬×ì±ßÂ¶³ö¼¸ÌõÉîÉîµÄÖåÎÆ£¬²»ÃâÂÔ´øË¥ÀÏÆà¿à\n"
-        "Ö®Ïà¡£Ëû²»ÑÔ²»¶¯£¬ÉñÉ«Ä®È»£¬ËÆºõĞÄ³ÛÔ¶·½£¬ÕıÔÚÏëÊ²Ã´ÊÂÇé¡£\n"
+        "ä»–æ˜¯ä¸€ä½ä¸­å¹´ä¹¦ç”Ÿï¼Œèº«ç©¿ç™½å¸ƒé•¿è¢ã€‚\n"
+        "ä»–ç›¸è²Œä¿Šé›…ï¼Œåªæ˜¯åŒçœ‰ç•¥å‘ä¸‹å‚ï¼Œå˜´è¾¹éœ²å‡ºå‡ æ¡æ·±æ·±çš„çš±çº¹ï¼Œä¸å…ç•¥å¸¦è¡°è€å‡„è‹¦\n"
+        "ä¹‹ç›¸ã€‚ä»–ä¸è¨€ä¸åŠ¨ï¼Œç¥è‰²æ¼ ç„¶ï¼Œä¼¼ä¹å¿ƒé©°è¿œæ–¹ï¼Œæ­£åœ¨æƒ³ä»€ä¹ˆäº‹æƒ…ã€‚\n"
 	);
 
-	set("title",HIG "Ã÷½Ì" HIR "¹âÃ÷×óÊ¹" NOR);
+	set("title",HIG "æ˜æ•™" HIR "å…‰æ˜å·¦ä½¿" NOR);
 	set("level",11);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	
 	set("age", 42);
@@ -78,17 +78,17 @@ void create()
 	set_temp("apply/armor", 660);
 	set("inquiry", 
 	([
-		"¹âÃ÷Ê¥»ğÕó"  : (: ask_me :),
-		"Ã÷½ÌÊ¥»ğÕó"  : (: ask_me :),
-		"Ê¥»ğÕó"      : (: ask_me :),
-		"ÌúÑæÁî"      : (: ask_ling :)
+		"å…‰æ˜åœ£ç«é˜µ"  : (: ask_me :),
+		"æ˜æ•™åœ£ç«é˜µ"  : (: ask_me :),
+		"åœ£ç«é˜µ"      : (: ask_me :),
+		"é“ç„°ä»¤"      : (: ask_ling :)
 	]));
 
 	set("chat_chance_combat", 20);
 	set("chat_msg_combat", ({
 		(: command("perform qianlibingfeng") :),
 	}) );
-	create_family("Ã÷½Ì",34, "¹âÃ÷×óÊ¹");
+	create_family("æ˜æ•™",34, "å…‰æ˜å·¦ä½¿");
 	setup();
 
         carry_object("/d/mingjiao/obj/baipao")->wear();
@@ -111,7 +111,7 @@ void init()
 
 void attempt_apprentice(object ob)
 {
-	command("say ÎÒ²»ÊÕÍ½µÄ£¬ÄãÕÒ¸÷Î»·¨ÍõÈ¥¡£");
+	command("say æˆ‘ä¸æ”¶å¾’çš„ï¼Œä½ æ‰¾å„ä½æ³•ç‹å»ã€‚");
 	return 0;
 }
 
@@ -122,8 +122,8 @@ string ask_ling()
 	object ob;
 	int i;
 	
-	if ( !(party = this_player()->query("party")) || party["party_name"] != HIG "Ã÷½Ì" NOR )
-		return RANK_D->query_respect(this_player()) + "Óë±¾½ÌËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+	if ( !(party = this_player()->query("party")) || party["party_name"] != HIG "æ˜æ•™" NOR )
+		return RANK_D->query_respect(this_player()) + "ä¸æœ¬æ•™ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	skl = this_player()->query_skills();
 	sname  = sort_array( keys(skl), (: strcmp :) );
@@ -132,14 +132,14 @@ string ask_ling()
 	{
 		if (skl[sname[i]] < 30) 
 		return RANK_D->query_respect(this_player()) + 
-		"¹¦Á¦²»¹»£¬²»ÄÜÁìÈ¡ÌúÑæÁî¡£";
+		"åŠŸåŠ›ä¸å¤Ÿï¼Œä¸èƒ½é¢†å–é“ç„°ä»¤ã€‚";
 	}
 
 	ob = new("d/mingjiao/obj/tieyanling");
 	ob->move(this_player());
-	message_vision("$NÒªµÃÒ»ÃæÌúÑæÁî¡£\n",this_player());
+	message_vision("$Nè¦å¾—ä¸€é¢é“ç„°ä»¤ã€‚\n",this_player());
 
-	return "ºÃ°É£¬Æ¾ÕâÃæÌúÑæÁî£¬Äã¿É×ÔÓÉÏòÄãµÄ×ğ³¤ÌôÕ½¡£";
+	return "å¥½å§ï¼Œå‡­è¿™é¢é“ç„°ä»¤ï¼Œä½ å¯è‡ªç”±å‘ä½ çš„å°Šé•¿æŒ‘æˆ˜ã€‚";
 
 }
 

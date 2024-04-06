@@ -11,23 +11,23 @@ object weapon;
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("[31mÐ¡Àî·Éµ¶[37mÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("[31må°æŽé£žåˆ€[37måªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if((int) me->query_skill("feidao",1) <= 300)
-		return notify_fail("ÄãµÄ·Éµ¶¾ø¼¼»¹²»¹»¾«´¿£¬²»ÄÜ·¢³öÐ¡Àî·Éµ¶¡£\n");
+		return notify_fail("ä½ çš„é£žåˆ€ç»æŠ€è¿˜ä¸å¤Ÿç²¾çº¯ï¼Œä¸èƒ½å‘å‡ºå°æŽé£žåˆ€ã€‚\n");
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "throwing")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-200);
        if(userp(me) && !((int)(me->query("max_qi")/me->query("qi"))>=3))
-             return notify_fail("Äã»¹Ã»ÊÜÖØÉË£¬Ìå»á²»µ½ÉúÓëËÀµÄÄÇÖÖ¾³½ç¡£\n");
+             return notify_fail("ä½ è¿˜æ²¡å—é‡ä¼¤ï¼Œä½“ä¼šä¸åˆ°ç”Ÿä¸Žæ­»çš„é‚£ç§å¢ƒç•Œã€‚\n");
 
         if( (int)me->query("neili") < 300  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         me->add("neili",-200);
-	message_vision(RED"$NÄ¿²»×ª¾¦µØ¶¢×Å$n£¬×¼±¸·¢³öÖÂÃüÒ»»÷¡£\n"NOR,me,target);
+	message_vision(RED"$Nç›®ä¸è½¬ç›åœ°ç›¯ç€$nï¼Œå‡†å¤‡å‘å‡ºè‡´å‘½ä¸€å‡»ã€‚\n"NOR,me,target);
         me->start_call_out( (: call_other, __FILE__, "kill_him", me, 
 target :), random(5)+5);
 	me->start_busy(5);
@@ -39,8 +39,8 @@ void kill_him(object me, object target)
 	if(me->is_fighting() && target->is_fighting() &&
 	environment(me) == environment(target))
 	{
-msg = HIY "$NÊ¹³ö·Éµ¶¾ø¼¼ÖÐÀýÎÞÐé·¢µÄ" + HIR "Ð¡Àî·Éµ¶" +HIY "£¬$nÖ»¾õµÃÑÛÇ°Ò»»¨£¬ÑÊºíÒÑ±»¶Ô´©¶ø¹ý£¡£¡£¡" ;
-msg +=  "\nÒ»¹ÉÑª¼ýÅçÓ¿¶ø³ö£®£®$nµÄÑÛ¾¦ËÀÓã°ãµÄÍ»ÁË³öÀ´£®£®\n" NOR;
+msg = HIY "$Nä½¿å‡ºé£žåˆ€ç»æŠ€ä¸­ä¾‹æ— è™šå‘çš„" + HIR "å°æŽé£žåˆ€" +HIY "ï¼Œ$nåªè§‰å¾—çœ¼å‰ä¸€èŠ±ï¼Œå’½å–‰å·²è¢«å¯¹ç©¿è€Œè¿‡ï¼ï¼ï¼" ;
+msg +=  "\nä¸€è‚¡è¡€ç®­å–·æ¶Œè€Œå‡ºï¼Žï¼Ž$nçš„çœ¼ç›æ­»é±¼èˆ¬çš„çªäº†å‡ºæ¥ï¼Žï¼Ž\n" NOR;
 
 	message_vision(msg, me, target);
 if (target->query("qi") > 30000)

@@ -11,14 +11,14 @@ string ask_me();
 
 void create()
 {
-        set_name("ºúÒÝÖ®", ({ "hu yizhi", "hu", "yizhi" }));
-        set("gender", "ÄÐÐÔ");
-        set("nickname", HIR "ÃÀµ¶Íõ" NOR);
-        set("character", "¹âÃ÷ÀÚÂä");
+        set_name("èƒ¡é€¸ä¹‹", ({ "hu yizhi", "hu", "yizhi" }));
+        set("gender", "ç”·æ€§");
+        set("nickname", HIR "ç¾Žåˆ€çŽ‹" NOR);
+        set("character", "å…‰æ˜Žç£Šè½");
         set("age", 37);
         set("long", @LONG
-ÕâÈËºú×ÓÀ­²ê£¬Í·ÉÏ¹ü×ÅÒ»Î§°×½í£¬½ÅÏÂÌß×Å
-Ò»Ë«ÍÏÐ¬£¬È«È»Ò»¸±ÏçÅ©Ä£Ñù¡£
+è¿™äººèƒ¡å­æ‹‰ç¢´ï¼Œå¤´ä¸Šè£¹ç€ä¸€å›´ç™½å·¾ï¼Œè„šä¸‹è¸¢ç€
+ä¸€åŒæ‹–éž‹ï¼Œå…¨ç„¶ä¸€å‰¯ä¹¡å†œæ¨¡æ ·ã€‚
 LONG);
         set("attitude", "peaceful");
         set("str", 36);
@@ -64,13 +64,13 @@ LONG);
         prepare_skill("strike", "tianchang-strike");
         prepare_skill("cuff",   "hujia-quan");
 
-        create_family("¹ØÍâºú¼Ò", 13, "¸ßÊÖ");
+        create_family("å…³å¤–èƒ¡å®¶", 13, "é«˜æ‰‹");
 
         set("inquiry", ([
 
-                "ÃÀµ¶Íõ"   : "ÃÀµ¶ÍõÒÑ¾­ËÀÁË£¬»¹ÌáËû×öÉõ£¿",
-                "³ÂÔ²Ô²"   : "°¦£¡ÎÒÒ²Ã»ÄÜºÍËýËµÉÏ¼¸¾ä»°¡£",
-                "³ÂÔ°Ô°"   : "°¦£¡ÎÒÒ²Ã»ÄÜºÍËýËµÉÏ¼¸¾ä»°¡£",
+                "ç¾Žåˆ€çŽ‹"   : "ç¾Žåˆ€çŽ‹å·²ç»æ­»äº†ï¼Œè¿˜æä»–åšç”šï¼Ÿ",
+                "é™ˆåœ†åœ†"   : "å”‰ï¼æˆ‘ä¹Ÿæ²¡èƒ½å’Œå¥¹è¯´ä¸Šå‡ å¥è¯ã€‚",
+                "é™ˆå›­å›­"   : "å”‰ï¼æˆ‘ä¹Ÿæ²¡èƒ½å’Œå¥¹è¯´ä¸Šå‡ å¥è¯ã€‚",
         ]));
 
         set("chat_chance_combat", 120);
@@ -98,29 +98,29 @@ string ask_me()
         object ob, me;
 
         me = this_player();
-        if (me->query("family/family_name") != "¹ØÍâºú¼Ò")
-                return "ÕâÊÇÔÚÏÂÉÃ³¤µÄ±¾ÊÂ£¬ÄãÒª²»Òª½ÏÁ¿½ÏÁ¿£¿\n";
+        if (me->query("family/family_name") != "å…³å¤–èƒ¡å®¶")
+                return "è¿™æ˜¯åœ¨ä¸‹æ“…é•¿çš„æœ¬äº‹ï¼Œä½ è¦ä¸è¦è¾ƒé‡è¾ƒé‡ï¼Ÿ\n";
 
-        return "ºÜºÃ... ºÜºÃ... ¼ÈÈ»ÊÇºú¼ÒµÜ×Ó£¬ÓÐÃ»ÓÐÐËÈ¤Ñ§Ñ§ÎÒµÄ°ÙÊ¤µ¶·¨£¿";
+        return "å¾ˆå¥½... å¾ˆå¥½... æ—¢ç„¶æ˜¯èƒ¡å®¶å¼Ÿå­ï¼Œæœ‰æ²¡æœ‰å…´è¶£å­¦å­¦æˆ‘çš„ç™¾èƒœåˆ€æ³•ï¼Ÿ";
 }
 
 int recognize_apprentice(object ob, string skill)
 {
-        if (ob->query("family/family_name") != "¹ØÍâºú¼Ò")
+        if (ob->query("family/family_name") != "å…³å¤–èƒ¡å®¶")
         {
-                command("say ÏëÍµÑ§ÎÒÃÇºú¼Ò¾ø¼¼£¿ºÙºÙ...");
+                command("say æƒ³å·å­¦æˆ‘ä»¬èƒ¡å®¶ç»æŠ€ï¼Ÿå˜¿å˜¿...");
                 return -1;
         }
 
         if (skill != "baisheng-daofa")
         {
-                command("say ÎÒÖ»´«Äã°ÙÊ¤µ¶·¨£¬ÆäËû»¹ÊÇÕÒÄãÊ¦¸µÈ¥Ñ§°É¡£");
+                command("say æˆ‘åªä¼ ä½ ç™¾èƒœåˆ€æ³•ï¼Œå…¶ä»–è¿˜æ˜¯æ‰¾ä½ å¸ˆå‚…åŽ»å­¦å§ã€‚");
                 return -1;
         }
 
         if (! ob->query_temp("can_learn/huyizhi/baisheng-daofa"))
         {
-                command("say ºÃ£¡Äã¿´Çå³þÁË£¡");
+                command("say å¥½ï¼ä½ çœ‹æ¸…æ¥šäº†ï¼");
                 ob->set_temp("can_learn/huyizhi/baisheng-daofa", 1);
         }
 

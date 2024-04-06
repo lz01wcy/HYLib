@@ -1,4 +1,4 @@
-//ruyi.c ÈçÒâÁ¬»·µ¶
+//ruyi.c å¦‚æ„è¿žçŽ¯åˆ€
 
 #include <ansi.h>
 #include <skill.h>
@@ -20,20 +20,20 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸ÈçÒâÁ¬»·µ¶¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¦‚æ„è¿žçŽ¯åˆ€ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "blade")
-                return notify_fail("¡¸ÈçÒâÁ¬»·µ¶¡¹±ØÐëÓÃµ¶²ÅÄÜÊ©Õ¹¡£\n");
+                return notify_fail("ã€Œå¦‚æ„è¿žçŽ¯åˆ€ã€å¿…é¡»ç”¨åˆ€æ‰èƒ½æ–½å±•ã€‚\n");
 
         if( (int)me->query_skill("ruyi-dao", 1) < 60 )
-                return notify_fail("ÄãµÄ¡¸ÈçÒâµ¶·¨¡¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÈçÒâÁ¬»·µ¶¡¹¡£\n");
+                return notify_fail("ä½ çš„ã€Œå¦‚æ„åˆ€æ³•ã€ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œå¦‚æ„è¿žçŽ¯åˆ€ã€ã€‚\n");
 
         if( (int)me->query_skill("beiming-shengong", 1) < 60 )
-                return notify_fail("ÄãµÄ¡¸±±Ú¤Éñ¹¦¡¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÈçÒâÁ¬»·µ¶¡¹¡£\n");
+                return notify_fail("ä½ çš„ã€ŒåŒ—å†¥ç¥žåŠŸã€ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œå¦‚æ„è¿žçŽ¯åˆ€ã€ã€‚\n");
 
         if( (int)me->query("neili") < 400  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         skill = me->query_skill("ruyi-dao");
 	extra = me->query_skill("ruyi-dao",1) / 20;
@@ -41,25 +41,25 @@ int perform(object me, object target)
 me->set_temp("ruyi");
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-        msg = HIY "$NÒ»Éù³¤Ð¦£¬Ö»¾õÊÀÊÂÈçÒâ£¬ºÀÆøÂúÐØ£¬ÄÄ¹ÜÊ²Ã´ÊÇ·ÇÈÙÈè£¬·´ÊÖÒ»µ¶¿³³ö£¡\n"NOR;
+        msg = HIY "$Nä¸€å£°é•¿ç¬‘ï¼Œåªè§‰ä¸–äº‹å¦‚æ„ï¼Œè±ªæ°”æ»¡èƒ¸ï¼Œå“ªç®¡ä»€ä¹ˆæ˜¯éžè£è¾±ï¼Œåæ‰‹ä¸€åˆ€ç å‡ºï¼\n"NOR;
         me->add("neili", -200);
         
        	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	        msg = HIB"$Nµ¶·ç¹ý´¦£¬ÒâÓÌÎ´¾¡£¬·´ÊÖÓÖÊÇÒ»µ¶£¡\n"NOR;
+	        msg = HIB"$Nåˆ€é£Žè¿‡å¤„ï¼Œæ„çŠ¹æœªå°½ï¼Œåæ‰‹åˆæ˜¯ä¸€åˆ€ï¼\n"NOR;
        
        	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR"$NÉíËæµ¶×ª£¬Ë³ÊÖÓÖÊÇÒ»µ¶£¡\n"NOR;
+        msg = HIR"$Nèº«éšåˆ€è½¬ï¼Œé¡ºæ‰‹åˆæ˜¯ä¸€åˆ€ï¼\n"NOR;
              	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 if( (int)me->query_skill("ruyi-dao", 1) > 200 )
 {
-        msg = HIG"$NÉíËæµ¶×ª£¬Ë³ÊÖÔÙÊÇÒ»µ¶£¡\n"NOR;
+        msg = HIG"$Nèº«éšåˆ€è½¬ï¼Œé¡ºæ‰‹å†æ˜¯ä¸€åˆ€ï¼\n"NOR;
        	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIC"$NÉíËæµ¶×ª£¬Ë³ÊÖ×îºóÒ»µ¶£¡\n"NOR;
+        msg = HIC"$Nèº«éšåˆ€è½¬ï¼Œé¡ºæ‰‹æœ€åŽä¸€åˆ€ï¼\n"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 }
-        msg = HIW"$NÉíÐÎÔÙ×ª£¬ÈçÒâÒ»µ¶ÓÖ»Ø×ª»ØÀ´£¡\n"NOR;
+        msg = HIW"$Nèº«å½¢å†è½¬ï¼Œå¦‚æ„ä¸€åˆ€åˆå›žè½¬å›žæ¥ï¼\n"NOR;
              	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
        me->start_busy(2);

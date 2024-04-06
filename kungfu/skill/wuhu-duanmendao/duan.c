@@ -13,25 +13,25 @@ int perform(object me, object target)
  if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("Îå»¢¶ÏÃÅµ¶¡¸¶Ï¡¹×Ö¾öÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("äº”è™æ–­é—¨åˆ€ã€Œæ–­ã€å­—å†³åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "blade")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 250 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("blade") < 60 ||
 	    me->query_skill_mapped("blade") != "wuhu-duanmendao")
-		return notify_fail("ÄãµÄ¡¸Îå»¢¶ÏÃÅµ¶¡¹»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸¶Ï¡¹×Ö¾ö£¡\n");
+		return notify_fail("ä½ çš„ã€Œäº”è™æ–­é—¨åˆ€ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œæ–­ã€å­—å†³ï¼\n");
 
-	msg = HIY "$NÃÍÈ»·üµØ£¬Ê¹³öµØÌÃµ¶¶Ï×Ö¾ö£¬¶ÙÊ±Ò»Æ¬À¶¹âÖ±ÏòÇ°¹öÈ¥£¡" NOR;
+	msg = HIY "$NçŒ›ç„¶ä¼åœ°ï¼Œä½¿å‡ºåœ°å ‚åˆ€æ–­å­—å†³ï¼Œé¡¿æ—¶ä¸€ç‰‡è“å…‰ç›´å‘å‰æ»šå»ï¼" NOR;
 	message_vision(msg,me,target);
 	j = random(7)+1;
 	for(i=1;i<=j;i++)
 	{
-	msg =  BLU "µÚ"+chinese_number(i)+"µ¶" NOR;
+	msg =  BLU "ç¬¬"+chinese_number(i)+"åˆ€" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	}
 

@@ -1,4 +1,4 @@
-// zhua.c  ¾ÅÒõ°×¹Ç×¦¡¸Íö»êÒ»»÷¡¹
+// zhua.c  ä¹é˜´ç™½éª¨çˆªã€Œäº¡é­‚ä¸€å‡»ã€
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -15,19 +15,19 @@ int perform(object me, object target)
     extra = me->query_skill("jiuyin-zhua",1);
     if( !target ) target = offensive_target(me);
     if( !target || !target->is_character() || !me->is_fighting(target) )
-        return notify_fail("¡¸Íö»êÒ»»÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€Œäº¡é­‚ä¸€å‡»ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if( (int)me->query("shen", 1) > 0)
-        return notify_fail("ÄãÊÇÏÀÒåµÀÈËÊ¿£¬Ôõ÷áÄÜ¡¸Íö»êÒ»»÷¡¹ÕâÖÖÒõ¶¾Îä¹¦¡£\n");
+        return notify_fail("ä½ æ˜¯ä¾ ä¹‰é“äººå£«ï¼Œæ€éº½èƒ½ã€Œäº¡é­‚ä¸€å‡»ã€è¿™ç§é˜´æ¯’æ­¦åŠŸã€‚\n");
 
     if( (int)me->query_skill("jiuyin-zhua", 1) < 85 )
-        return notify_fail("ÄãµÄ¾ÅÒõ°×¹Ç×¦²»¹»æµÊì£¬»¹Ê¹²»³ö¡¸Íö»êÒ»»÷¡¹¡£\n");
+        return notify_fail("ä½ çš„ä¹é˜´ç™½éª¨çˆªä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜ä½¿ä¸å‡ºã€Œäº¡é­‚ä¸€å‡»ã€ã€‚\n");
 
     if( (int)me->query_skill("force", 1) < 85 )
-        return notify_fail("ÄãµÄÄÚ¹¦ĞÄ·¨»ğºò²»¹»£¬Ê¹ÓÃ¡¸Íö»êÒ»»÷¡¹»áÕğÉË×Ô¼ºµÄ¾­Âö¡£\n");
+        return notify_fail("ä½ çš„å†…åŠŸå¿ƒæ³•ç«å€™ä¸å¤Ÿï¼Œä½¿ç”¨ã€Œäº¡é­‚ä¸€å‡»ã€ä¼šéœ‡ä¼¤è‡ªå·±çš„ç»è„‰ã€‚\n");
         me->add_temp("apply/attack",extra*2);
 	 me->add_temp("apply/damage",extra*2);
-    msg = HIR "$NÍ»È»½«Ë«ÕÆ±ä×¦ºÏÓÚĞØÇ°£¬È»ºóÏó·ç³µ°ã¼±×ªÊıÈ¦£¬¶øºóÊ©Õ¹³ö¡¸Íö»êÒ»»÷¡¹£¬Ë«×¦ÏòÍâÒ»·­£¬ËæºóÈÆ×Å$n¼²×ªÊıÈ¦£¬ÓÖ»Øµ½Ô­µØ¡£"NOR;
+    msg = HIR "$Nçªç„¶å°†åŒæŒå˜çˆªåˆäºèƒ¸å‰ï¼Œç„¶åè±¡é£è½¦èˆ¬æ€¥è½¬æ•°åœˆï¼Œè€Œåæ–½å±•å‡ºã€Œäº¡é­‚ä¸€å‡»ã€ï¼ŒåŒçˆªå‘å¤–ä¸€ç¿»ï¼Œéšåç»•ç€$nç–¾è½¬æ•°åœˆï¼Œåˆå›åˆ°åŸåœ°ã€‚"NOR;
 
     COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->start_busy(2);

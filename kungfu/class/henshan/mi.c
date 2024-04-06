@@ -1,12 +1,12 @@
-// mi.c Ã×ÎªÒå
+// mi.c ç±³ä¸ºä¹‰
 // Last Modified by ahda on Sep.1 2001
 inherit NPC;
 inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("Ã×ÎªÒå", ({ "mi weiyi", "mi", "weiyi" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("ç±³ä¸ºä¹‰", ({ "mi weiyi", "mi", "weiyi" }) );
+	set("gender", "ç”·æ€§");
 	set("class", "swordsman");
 	set("age", 25);
 	set("attitude", "peaceful");
@@ -54,7 +54,7 @@ void create()
 		(: exert_function, "powerup" :),
 	}) );
 
-	create_family("ºâÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("è¡¡å±±æ´¾", 14, "å¼Ÿå­");
 	setup();
 
 	carry_object(__DIR__"xijian")->wield();
@@ -63,6 +63,6 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	command("say ÈëÎÒÃÅÀ´£¬¶¨Ðë¹â´óÎÒºâÉ½Ò»ÅÉ¡£");
+	command("say å…¥æˆ‘é—¨æ¥ï¼Œå®šé¡»å…‰å¤§æˆ‘è¡¡å±±ä¸€æ´¾ã€‚");
 	command("recruit " + ob->query("id"));
 }

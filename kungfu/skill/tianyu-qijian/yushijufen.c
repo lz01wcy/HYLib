@@ -13,33 +13,33 @@ int perform(object me, object target)
 if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸ÓñÊ¯¾ã·Ù¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€ŒçŽ‰çŸ³ä¿±ç„šã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query_skill("tianyu-qijian", 1) < 180 )
-		return notify_fail("ÄãµÄÌìÓðÆæ½£²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡£\n");
+		return notify_fail("ä½ çš„å¤©ç¾½å¥‡å‰‘ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€‚\n");
 
 	if(((int)me->query_skill("bahuang-gong", 1) < 40 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 40 ))
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿå¨´ç†Ÿã€‚\n");
 
        if(!( me->query("eff_qi")<100||(int)(me->query("max_qi")/me->query("eff_qi"))>=2.5))
-             return notify_fail("Äã»¹Ã»ÊÜÖØÉË£¬²»ÒªÊ¹ÓÃÓñÊ¯¾ã·Ù¡£\n");
+             return notify_fail("ä½ è¿˜æ²¡å—é‡ä¼¤ï¼Œä¸è¦ä½¿ç”¨çŽ‰çŸ³ä¿±ç„šã€‚\n");
 
 	if(((int)me->query_skill("bahuang-gong", 1) < 100 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 100 ))
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦ÊµÔÚÌ«²î£¬Ã»·¨ÓÃ¡¸ÓñÊ¯¾ã·Ù¡¹¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸå®žåœ¨å¤ªå·®ï¼Œæ²¡æ³•ç”¨ã€ŒçŽ‰çŸ³ä¿±ç„šã€ã€‚\n");
 
 	if( (int)me->query("max_neili", 1) < 1500 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÓñÊ¯¾ã·Ù¡¹¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€ŒçŽ‰çŸ³ä¿±ç„šã€ã€‚\n");
 			
-	msg = RED "$NÔ¾³öÊýÕÉ£¬ÉñÉ«ÄýÖØ£¬Ò»ÕÐ[ÓñÊ¯¾ã·Ù]Ïë¸ú$nÍ¬¹éÓÚ¾¡£¡\n"NOR;
+	msg = RED "$Nè·ƒå‡ºæ•°ä¸ˆï¼Œç¥žè‰²å‡é‡ï¼Œä¸€æ‹›[çŽ‰çŸ³ä¿±ç„š]æƒ³è·Ÿ$nåŒå½’äºŽå°½ï¼\n"NOR;
 	
 if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¬»èËÀ¹ýÈ¥£¡\n" NOR;
+		msg += "ç»“æžœ$pè¢«$Pæ”»äº†ä¸ªæŽªæ‰‹ä¸åŠï¼Œæ˜æ­»è¿‡åŽ»ï¼\n" NOR;
 if (target->query("qi") > 50000)
 {
 target->add("qi",-35000);
@@ -47,11 +47,11 @@ target->add("eff_qi",-35000);
 }else target->unconcious();
 if (random(10) == 1)
                 {
-		msg += "$P×Ô¼ºÒ²ÓÉÓÚÓÃÁ¦¹ý¶È£¬»èËÀ¹ýÈ¥£¡\n" NOR;
+		msg += "$Pè‡ªå·±ä¹Ÿç”±äºŽç”¨åŠ›è¿‡åº¦ï¼Œæ˜æ­»è¿‡åŽ»ï¼\n" NOR;
                 me->unconcious();
                 }
 	} else {
-		msg += "¿ÉÊÇ$p»¹ÊÇ¶ã¹ýÁË$PµÄ×îºóÒ»»÷£¡£¡\n" NOR;
+		msg += "å¯æ˜¯$pè¿˜æ˜¯èº²è¿‡äº†$Pçš„æœ€åŽä¸€å‡»ï¼ï¼\n" NOR;
 		me->start_busy(3);
 	}
 	message_vision(msg, me, target);

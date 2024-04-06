@@ -1,4 +1,4 @@
-// leidong À×¶¯¾ÅÌì
+// leidong é›·åŠ¨ä¹å¤©
 // by winder 98.12
 
 #include <ansi.h>
@@ -12,25 +12,25 @@ int perform(object me)
 	int skill, count, count1;
 
 	if( (int)me->query_temp("leidong") ) 
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
       if( me->query_temp("wudui") )
-      return notify_fail("ÄãÕýÔÚÊ¹ÓÃÎÞË«ÎÞ¶Ô¡£\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨æ— åŒæ— å¯¹ã€‚\n");
 
 	if( !me->is_fighting() )
-		return notify_fail("À×¶¯¾ÅÌìÖ»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("é›·åŠ¨ä¹å¤©åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	count = me->query_str();
 	skill = (int)me->query_skill("poyu-quan",1);
 	if( skill < 200  ) 
-		return notify_fail("ÄãµÄÆÆÓñÈ­ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç ´çŽ‰æ‹³ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
       if (me->query_skill("zixia-shengong", 1)<50)
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»ðºòÎ´µ½£¬£¡\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç«å€™æœªåˆ°ï¼Œï¼\n");
 
 	me->add("neili", -400);
-	message_combatd( HIM "$NÉîÉîÎüÁËÒ»¿ÚÆø£¬Á³ÉÏ¶ÙÊ±×ÏÆø´óÊ¢£¬³öÊÖÔ½À´Ô½ÖØ£¡\n" NOR, me);
+	message_combatd( HIM "$Næ·±æ·±å¸äº†ä¸€å£æ°”ï¼Œè„¸ä¸Šé¡¿æ—¶ç´«æ°”å¤§ç››ï¼Œå‡ºæ‰‹è¶Šæ¥è¶Šé‡ï¼\n" NOR, me);
 
 	count = me->query("str") + (int)(skill/10);
 	count1 = skill/12;
@@ -62,7 +62,7 @@ if ((int)me->query_skill("poyu-quan",1) <200)
         me->add_temp("apply/strength",-amount1);
         me->add_temp("apply/dexerity",-amount1);
 		me->delete_temp("leidong");
-		tell_object(me, CYN"ÄãµÄÀ×¶¯¾ÅÌìÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n"NOR);
+		tell_object(me, CYN"ä½ çš„é›·åŠ¨ä¹å¤©è¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ã€‚\n"NOR);
 		me->start_busy(4);
 	}
 }

@@ -21,10 +21,10 @@ int update_condition(object me, int duration) {
     me->apply_condition("qx_snake_poison", duration - 1);
     if (me) {
         message_vision(BLU
-        "$NµÄÉíÌå·¢³ö¹îÒìÉ«µÄÀ¶¹â£¬»ìÉí¾­ÂöÌÛÍ´ÓûÁÑ,Å¤½á³É¹ÖÒìµÄÈâ½î.\n"
+        "$Nçš„èº«ä½“å‘å‡ºè¯¡å¼‚è‰²çš„è“å…‰ï¼Œæ··èº«ç»è„‰ç–¼ç—›æ¬²è£‚,æ‰­ç»“æˆæ€ªå¼‚çš„è‚‰ç­‹.\n"
         NOR, me);
         tell_object(me, HIR
-        "ÄãÖÐµÄÆßÐÞÉß¶¾·¢×÷ÁË£¡\n"
+        "ä½ ä¸­çš„ä¸ƒä¿®è›‡æ¯’å‘ä½œäº†ï¼\n"
         NOR );
     }
     if (duration < 1) return 0;

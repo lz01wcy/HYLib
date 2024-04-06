@@ -1,4 +1,4 @@
-// fuxue.c  ¡¸Äé»¨·÷Ñ¨¡¹
+// fuxue.c  ã€Œæ‹ˆèŠ±æ‹‚ç©´ã€
 // modified by Venus Oct.1997
 #include <ansi.h>
 
@@ -10,35 +10,35 @@ int perform(object me, object target)
     if( !target ) target = offensive_target(me);
 
     if( target->is_busy() )
-       return notify_fail(target->name() + "Ä¿Ç°ÕıÉµã¶ã¶µØ´ôÁ¢ÔÚÄÇ¶ù£¬ÕıÊÇ¹¥»÷µÄºÃ»ú»á!\n");
+       return notify_fail(target->name() + "ç›®å‰æ­£å‚»æ„£æ„£åœ°å‘†ç«‹åœ¨é‚£å„¿ï¼Œæ­£æ˜¯æ”»å‡»çš„å¥½æœºä¼š!\n");
 
     if( (int)me->query_str() < 25 )
-       return notify_fail("ÄãµÄ±ÛÁ¦Ì«Ğ¡£¬Ê¹²»³ö¡¸Äé»¨·÷Ñ¨¡¹¡£\n");
+       return notify_fail("ä½ çš„è‡‚åŠ›å¤ªå°ï¼Œä½¿ä¸å‡ºã€Œæ‹ˆèŠ±æ‹‚ç©´ã€ã€‚\n");
 
     if( (int)me->query_skill("hunyuan-yiqi", 1) < 90 )
-       return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦»ğºò²»¹»£¬²»»áÊ¹ÓÃ¡¸Äé»¨·÷Ñ¨¡¹ ¡£\n");
+       return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸç«å€™ä¸å¤Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œæ‹ˆèŠ±æ‹‚ç©´ã€ ã€‚\n");
 
     if( (int)me->query_skill("finger") < 90 )
-       return notify_fail("ÄãµÄÖ¸·¨»òÔòÄé»¨Ö¸²»¹»ÊìÁ·£¬²»»áÊ¹ÓÃÄé»¨·÷Ñ¨\n");
+       return notify_fail("ä½ çš„æŒ‡æ³•æˆ–åˆ™æ‹ˆèŠ±æŒ‡ä¸å¤Ÿç†Ÿç»ƒï¼Œä¸ä¼šä½¿ç”¨æ‹ˆèŠ±æ‹‚ç©´\n");
 
     if( (int)me->query("neili") < 100 )
-       return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹³ö¡¸Äé»¨·÷Ñ¨¡¹¡£\n");
+       return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿å‡ºã€Œæ‹ˆèŠ±æ‹‚ç©´ã€ã€‚\n");
 
     msg = HIC "
-$N»º»º½«ÓÒÊÖÖĞÖ¸ºÍÊ³Ö¸ÄóÂ££¬ĞÎ³ÉÄé»¨Ö¸ĞÎ£¬Ëæ¼´»Ã×÷Ò»µÀ»ÒÓ°µç¹â»ğÊ¯°ãµØ·÷Ïò$n¡£\n
+$Nç¼“ç¼“å°†å³æ‰‹ä¸­æŒ‡å’Œé£ŸæŒ‡ææ‹¢ï¼Œå½¢æˆæ‹ˆèŠ±æŒ‡å½¢ï¼Œéšå³å¹»ä½œä¸€é“ç°å½±ç”µå…‰ç«çŸ³èˆ¬åœ°æ‹‚å‘$nã€‚\n
 "NOR;
     me->start_busy(random(1));
 
     if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/4
 ) {
    msg += HIC"
-ÊÂ³öÖèÈ»£¬$nÓû±Ü²»ÄÜ£¬±»$N·÷ÖĞ´óÑ¨£¬Á¢Ê±Ä¾µÉ¿Ú´ô£¬²»ÄÜ¶¯µ¯£¡\n"NOR;
+äº‹å‡ºéª¤ç„¶ï¼Œ$næ¬²é¿ä¸èƒ½ï¼Œè¢«$Næ‹‚ä¸­å¤§ç©´ï¼Œç«‹æ—¶æœ¨çªå£å‘†ï¼Œä¸èƒ½åŠ¨å¼¹ï¼\n"NOR;
  target->start_busy( (int)me->query_skill("nianhua-zhi") / 15 + 1);
     me->add("neili",-30);
     } else
     {
        me->start_busy(1);
-       msg += HIG"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Ôç¾ÍÉÁÔÚÁËÒ»±ß¡£\n"NOR;
+       msg += HIG"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œæ—©å°±é—ªåœ¨äº†ä¸€è¾¹ã€‚\n"NOR;
     }
     message_combatd(msg, me, target);
     return 1;

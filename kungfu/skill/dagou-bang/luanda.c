@@ -1,4 +1,4 @@
-// sanqing.c Ò»½£»¯ÈýÇå
+// sanqing.c ä¸€å‰‘åŒ–ä¸‰æ¸…
 
 #include <ansi.h>
 #include <skill.h>
@@ -18,62 +18,62 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸ÂÒ´ò¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¹±æ‰“ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "staff")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "staff")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query("neili") < 300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
         if( (int)me->query_skill("dagou-bang",1) < 80 )
-                return notify_fail("ÄãµÄÄãµÄ´ò¹·°ô·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÂÒ´ò¡¹£¡\n");
+                return notify_fail("ä½ çš„ä½ çš„æ‰“ç‹—æ£’æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œä¹±æ‰“ã€ï¼\n");
 
         if (me->query_skill("huntian-qigong", 1)<70)
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»ðºòÎ´µ½£¬£¡\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç«å€™æœªåˆ°ï¼Œï¼\n");
 
-        msg = YEL "$NÐÄÖÐÒ»¼±,Ã»Í·Ã»ÄÔµÄÏòÇ°Ãæ´òÁË³öÈ¥,µ«ÕýÊÇ´ò¹·°ô·¨µÄ¾«ÒªÖ®ËùÔÚ£¡\n" NOR;
-        msg+= HIR"$NÅ­ºÈÒ»Éù£¬ºá¹ý"+ weapon->name()+HIG"Ò»´î£¬½èÊÆÔ¾Æð£¬ÈËÎ´ÖÁ£¬°ôÏÈµ½£¬ÁèÐéÏÂ»÷£¬Á¬Ê©ÈýÏÂÉ±ÊÖ£¡\n" NOR;
+        msg = YEL "$Nå¿ƒä¸­ä¸€æ€¥,æ²¡å¤´æ²¡è„‘çš„å‘å‰é¢æ‰“äº†å‡ºåŽ»,ä½†æ­£æ˜¯æ‰“ç‹—æ£’æ³•çš„ç²¾è¦ä¹‹æ‰€åœ¨ï¼\n" NOR;
+        msg+= HIR"$Næ€’å–ä¸€å£°ï¼Œæ¨ªè¿‡"+ weapon->name()+HIG"ä¸€æ­ï¼Œå€ŸåŠ¿è·ƒèµ·ï¼Œäººæœªè‡³ï¼Œæ£’å…ˆåˆ°ï¼Œå‡Œè™šä¸‹å‡»ï¼Œè¿žæ–½ä¸‰ä¸‹æ€æ‰‹ï¼\n" NOR;
         message_vision(msg, me);
 
         me->add_temp("apply/attack", (int)me->query_skill("dagou-bang",1));
         me->add_temp("apply/damage", (int)me->query_skill("dagou-bang",1)/2);
-       msg = WHT  "$N×ª¹ý"+ weapon->name()+HIG"£¬Ë¢Ë¢Ë¢Á¬½øÈý°ô£¬°ô·¨¿ì½ÝÎÞÂ×£¬¶¼ÊÇ´ò¹·°ô·¨ÖÐµÄÉ±ÕÐ£¡" NOR;
+       msg = WHT  "$Nè½¬è¿‡"+ weapon->name()+HIG"ï¼Œåˆ·åˆ·åˆ·è¿žè¿›ä¸‰æ£’ï¼Œæ£’æ³•å¿«æ·æ— ä¼¦ï¼Œéƒ½æ˜¯æ‰“ç‹—æ£’æ³•ä¸­çš„æ€æ‹›ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 if ( (int)me->query_skill("dagou-bang",1) > 120 )
 {
-       msg = WHT  "Á¬½øÈý°ô£¡" NOR;
+       msg = WHT  "è¿žè¿›ä¸‰æ£’ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 target->receive_wound("qi", random(me->query_skill("dagou-bang",1)));
 }
-        msg = HIC  "$NÍ»È»·É³ö"+ weapon->name()+HIG"£¬Ó­ÃæÅüÏò$n£¬Õâ°ôÁ¬´ÁÈýÏÂ£¬¾¹ÔÚö®Ê±Ö®¼ä·Öµã$pÐØ¿ÚÈý´¦´óÑ¨£¡" NOR;
+        msg = HIC  "$Nçªç„¶é£žå‡º"+ weapon->name()+HIG"ï¼Œè¿Žé¢åŠˆå‘$nï¼Œè¿™æ£’è¿žæˆ³ä¸‰ä¸‹ï¼Œç«Ÿåœ¨éœŽæ—¶ä¹‹é—´åˆ†ç‚¹$pèƒ¸å£ä¸‰å¤„å¤§ç©´ï¼" NOR;
              	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 if ( (int)me->query_skill("dagou-bang",1) > 220 )
 {
-       msg = HIC  "Á¬´ÁÈýÏÂ£¡" NOR;
+       msg = HIC  "è¿žæˆ³ä¸‰ä¸‹ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 target->receive_wound("qi", random(me->query_skill("dagou-bang",1)));
 }
 
-        msg = RED "$Nºá°ô»Ó³ö£¬±äÊØÎª¹¥£¬·¢»Ó³ö´ò¹·°ô·¨ÖÐµÄ¹¥ÊÖ£¬Á¬½øÁËÈý¼ÇÉ±ÕÐ£¡" NOR;
+        msg = RED "$Næ¨ªæ£’æŒ¥å‡ºï¼Œå˜å®ˆä¸ºæ”»ï¼Œå‘æŒ¥å‡ºæ‰“ç‹—æ£’æ³•ä¸­çš„æ”»æ‰‹ï¼Œè¿žè¿›äº†ä¸‰è®°æ€æ‹›ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 if ( (int)me->query_skill("dagou-bang",1) > 299 )
 {
-       msg = RED  "Èý¼ÇÉ±ÕÐ£¡" NOR;
+       msg = RED  "ä¸‰è®°æ€æ‹›ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 if ( (int)me->query_skill("dagou-bang",1) > 350  && me->query_skill_mapped("force") == "huntian-qigong")
 {
 
-        msg = RED "µÚÒ»ÕÐ $Nºá°ô»Ó³ö£¬Ê¹³öÁË·â×Ö¾ö£¡" NOR;
+        msg = RED "ç¬¬ä¸€æ‹› $Næ¨ªæ£’æŒ¥å‡ºï¼Œä½¿å‡ºäº†å°å­—å†³ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED "µÚ¶þÕÐ $Nºá°ô»Ó³ö£¬Ê¹³öÁË×ª×Ö¾ö£¡" NOR;
+        msg = RED "ç¬¬äºŒæ‹› $Næ¨ªæ£’æŒ¥å‡ºï¼Œä½¿å‡ºäº†è½¬å­—å†³ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED "µÚÈýÕÐ $Nºá°ô»Ó³ö£¬Ê¹³öÁË°è×Ö¾ö£¡£¡" NOR;
+        msg = RED "ç¬¬ä¸‰æ‹› $Næ¨ªæ£’æŒ¥å‡ºï¼Œä½¿å‡ºäº†æ‹Œå­—å†³ï¼ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 }
 target->receive_wound("qi", random(me->query_skill("dagou-bang",1)));

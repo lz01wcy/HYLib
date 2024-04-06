@@ -1,4 +1,4 @@
-// leiting.c  ÅÅÔÆÍÆÊÖ¡¸À×öªÒ»»÷¡¹
+// leiting.c  æ’äº‘æ¨æ‰‹ã€Œé›·éœ†ä¸€å‡»ã€
 
 #include <ansi.h>
 #include <combat.h>
@@ -14,21 +14,21 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸À×öªÒ»»÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé›·éœ†ä¸€å‡»ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("paiyun-shou", 1) < 100)
-                return notify_fail("ÄãµÄÅÅÔÆÍÆÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸À×öªÒ»»÷¡¹¡£\n");
+                return notify_fail("ä½ çš„æ’äº‘æ¨æ‰‹ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œé›·éœ†ä¸€å‡»ã€ã€‚\n");
 
         if (objectp(me->query_temp("weapon")))
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸À×öªÒ»»÷¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œé›·éœ†ä¸€å‡»ã€ï¼\n");
 
         if ((int)me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸À×öªÒ»»÷¡¹¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œé›·éœ†ä¸€å‡»ã€ã€‚\n");
 
         if ((int)me->query("neili") < 500)
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸À×öªÒ»»÷¡¹¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œé›·éœ†ä¸€å‡»ã€ã€‚\n");
 
-        msg = HIG "$N" HIG "½«ÕæÆøÄıÓÚË«ÕÆ£¬Ò»ÉùÅ­ºÈ£¬Ë«±ÛÃÍÈ»·¢¾¢£¬Ïò$n" HIG "ÍÆ³ö¡£\n" NOR;
+        msg = HIG "$N" HIG "å°†çœŸæ°”å‡äºåŒæŒï¼Œä¸€å£°æ€’å–ï¼ŒåŒè‡‚çŒ›ç„¶å‘åŠ²ï¼Œå‘$n" HIG "æ¨å‡ºã€‚\n" NOR;
 
         ap = (int)me->query_skill("paiyun-shou", 1) +
              (int)me->query_skill("force") +
@@ -47,13 +47,13 @@ int perform(object me, object target)
                 damage += random(damage);
     target->add("qi",-damage+100);
 		target->add("eff_qi",-damage+100);
-                msg += HIR "$n" HIR "ÉÁ±Ü²»¼°£¬ÕıÖĞÇ°ĞØ£¬"
-                                           HIR "Ö»Ìı¡°àØ¡±µÄÒ»Éù£¬$n"
-                                           HIR "¿ñÍÂÒ»¿ÚÏÊÑª£¬Éí×ÓÈçÖ½º×°ãÏòºó·É³ö¡£\n" NOR;
+                msg += HIR "$n" HIR "é—ªé¿ä¸åŠï¼Œæ­£ä¸­å‰èƒ¸ï¼Œ"
+                                           HIR "åªå¬â€œå˜­â€çš„ä¸€å£°ï¼Œ$n"
+                                           HIR "ç‹‚åä¸€å£é²œè¡€ï¼Œèº«å­å¦‚çº¸é¹¤èˆ¬å‘åé£å‡ºã€‚\n" NOR;
                 me->start_busy(2); 
         } else
-        {       msg += HIC "¿ÉÊÇ$p" HIC "ÔçÓĞ·À±¸£¬" HIC 
-                       "¼±ÍËÒ»²½£¬±Ü¿ªÁË$P" HIC "ÕâÒ»»÷¡£\n"NOR;
+        {       msg += HIC "å¯æ˜¯$p" HIC "æ—©æœ‰é˜²å¤‡ï¼Œ" HIC 
+                       "æ€¥é€€ä¸€æ­¥ï¼Œé¿å¼€äº†$P" HIC "è¿™ä¸€å‡»ã€‚\n"NOR;
                 me->start_busy(2); 
         }
         message_vision(msg, me, target);

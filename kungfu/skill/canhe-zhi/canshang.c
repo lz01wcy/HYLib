@@ -1,5 +1,5 @@
 // Code of JHSH
-// canshang.c ¶¯¾²Èç²ÎÉÌ
+// canshang.c åŠ¨é™å¦‚å‚å•†
 //Sure 2001.5
 
 #include <ansi.h>
@@ -17,48 +17,48 @@ int perform( object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("²ÎÉÌÖ¸Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ£¡\n");
+                return notify_fail("å‚å•†æŒ‡åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ï¼\n");
 
         if( me->query_temp("canshang") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ²ÎÉÌÖ¸·¨ÁË£¡\n");
+                return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨å‚å•†æŒ‡æ³•äº†ï¼\n");
 
         if( objectp(me->query_temp("weapon")) )
-                        return notify_fail("²ÎÉÌÖ¸ĞèÒªÄã¿ÕÊÖ²ÅÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("å‚å•†æŒ‡éœ€è¦ä½ ç©ºæ‰‹æ‰èƒ½æ–½å±•ï¼\n");
 
         if( me->query_skill_mapped("finger") != "canhe-zhi" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄ²¢·Ç²ÎºÏÖ¸£¬²»ÄÜÊ©Õ¹²ÎÉÌÖ¸·¨£¡\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¹¶éå‚åˆæŒ‡ï¼Œä¸èƒ½æ–½å±•å‚å•†æŒ‡æ³•ï¼\n");
 
 
 
         if( me->query_skill("force") < 140 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»µ½£¬ÎŞ·¨Ê©Õ¹Ä½Èİ¼Ò´«¾øÑ§£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸åˆ°ï¼Œæ— æ³•æ–½å±•æ…•å®¹å®¶ä¼ ç»å­¦ï¼\n");
 
         if( me->query_int() < 22 )
-                return notify_fail("ÄãµÄÎòĞÔÌ«²î£¬²»ÄÜÊ©Õ¹¹ÃËÕÄ½Èİ¼Ò´«¾øÑ§£¡\n");
+                return notify_fail("ä½ çš„æ‚Ÿæ€§å¤ªå·®ï¼Œä¸èƒ½æ–½å±•å§‘è‹æ…•å®¹å®¶ä¼ ç»å­¦ï¼\n");
 
         if( (lvl=me->query_skill("finger")) < 100 )
-                return notify_fail("²ÎÉÌÖ¸·¨ĞèÒª¾«ÉîµÄÖ¸Á¦·½ÄÜ×àĞ§£¡\n");
+                return notify_fail("å‚å•†æŒ‡æ³•éœ€è¦ç²¾æ·±çš„æŒ‡åŠ›æ–¹èƒ½å¥æ•ˆï¼\n");
 
         if( me->query("neili") <= lvl*3/2 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ãÒÔÊ¹ÓÃÄ½Èİ¾øÑ§²ÎÉÌÖ¸·¨£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ä»¥ä½¿ç”¨æ…•å®¹ç»å­¦å‚å•†æŒ‡æ³•ï¼\n");
 
         if( me->query("jing") < lvl )
-                return notify_fail("ÄãµÄ¾«Á¦²»×ãÒÔÊ¹ÓÃÄ½Èİ¾øÑ§²ÎÉÌÖ¸·¨£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ä»¥ä½¿ç”¨æ…•å®¹ç»å­¦å‚å•†æŒ‡æ³•ï¼\n");
 
         if( (int)me->query_temp("powerupxtg") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÏÈÌì´ó·¨ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨å…ˆå¤©å¤§æ³•äº†ã€‚\n");
         if( (int)me->query_temp("poweruptxg") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÔËÌ«Ğş¹¦ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨è¿å¤ªç„åŠŸäº†ã€‚\n");
         if( (int)me->query_temp("powerupkh") ) return
-            notify_fail("ÄãÒÑ¾­ÔÚÔË¿û»¨ÎŞµĞ¹¦ÁË¡£\n");
+            notify_fail("ä½ å·²ç»åœ¨è¿è‘µèŠ±æ— æ•ŒåŠŸäº†ã€‚\n");
         if( (int)me->query_temp("jiuyin/powerup") )
-        	return notify_fail("ÄãÒÑ¾­ÔÚÔË¾ÅÒõÕæ¹¦ÖĞÁË¡£\n");
+        	return notify_fail("ä½ å·²ç»åœ¨è¿ä¹é˜´çœŸåŠŸä¸­äº†ã€‚\n");
         if( (int)me->query_temp("hslj/powerup") )
-        	return notify_fail("ÄãÒÑ¾­ÔÚÔËÍò·¨¹é×ÚÖĞÁË¡£\n");
+        	return notify_fail("ä½ å·²ç»åœ¨è¿ä¸‡æ³•å½’å®—ä¸­äº†ã€‚\n");
         skill = me->query_skill("force");
 
-        message_vision(HIM "$N" HIM "¿ÚÖĞÄ¬Äî¡°¶¯¾²Èç²ÎÉÌ¡±£¬ĞÄËæÒâ×ª£¬¾¢¸úÁ¦·¢¡£Ö»ÌıµÃÄÚÁ¦ÆÆ¿ÕÖ®ÉùßÚßÚ×÷Ïì£¡\n"
-        +"ÄÚÁ¦»¯×÷Ò»¹É½£ÆøÖ±±¼$n" HIM "ÉäÈ¥£¡\n" NOR, me, target);
+        message_vision(HIM "$N" HIM "å£ä¸­é»˜å¿µâ€œåŠ¨é™å¦‚å‚å•†â€ï¼Œå¿ƒéšæ„è½¬ï¼ŒåŠ²è·ŸåŠ›å‘ã€‚åªå¬å¾—å†…åŠ›ç ´ç©ºä¹‹å£°å‘²å‘²ä½œå“ï¼\n"
+        +"å†…åŠ›åŒ–ä½œä¸€è‚¡å‰‘æ°”ç›´å¥”$n" HIM "å°„å»ï¼\n" NOR, me, target);
         str = me->query_str()/2;
         dex = me->query_dex()/3;
         
@@ -83,6 +83,6 @@ void end_perform( object me, int str, int dex)
         me->add_temp("apply/dexerity", -dex);
         me->delete_temp("canshang");
 
-        tell_object(me, HIY "Äã»º»ºÊÕ×¡ÉíĞÎ£¬ÇáÓõÒ»¿ÚÆø£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+        tell_object(me, HIY "ä½ ç¼“ç¼“æ”¶ä½èº«å½¢ï¼Œè½»åä¸€å£æ°”ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR);
 }
 

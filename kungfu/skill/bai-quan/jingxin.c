@@ -11,13 +11,13 @@ int perform(object me, object target) {
     int gin, jing, sen, eff_gin, eff_jing, eff_sen;
     if (!target) target = me;
     if (me->is_fighting())
-        return notify_fail("［静心法］不能在战斗中使用。\n");
+        return notify_fail("锛婚潤蹇冩硶锛戒笉鑳藉湪鎴樻枟涓娇鐢ㄣ�俓n");
     if (target != me)
-        return notify_fail("［静心法］只能对自己使用。\n");
+        return notify_fail("锛婚潤蹇冩硶锛藉彧鑳藉鑷繁浣跨敤銆俓n");
     lvl = random((int) me->query_skill("bai-quan", 1));
 
     msg = YEL
-    "$N静气平声，踏踏实实地施展了一趟白家拳。\n"
+    "$N闈欐皵骞冲０锛岃笍韪忓疄瀹炲湴鏂藉睍浜嗕竴瓒熺櫧瀹舵嫵銆俓n"
     NOR;
     gin = (int) me->query("qi");
     jing = (int) me->query("jing");

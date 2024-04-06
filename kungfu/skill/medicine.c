@@ -1,4 +1,4 @@
-// medicine.c ¼ÃÊÀÖ®Êõ
+// medicine.c æµä¸–ä¹‹æœ¯
 // Last Modified by winder on Jun. 10 2000
 
 #include <ansi.h>
@@ -19,7 +19,7 @@ int valid_learn(object me)
 	lvl = (int)me->query_skill("medicine", 1);
 
 	if( (int)me->query("age") < 16 )
-		return notify_fail("ÄãµÄÄê¼ÍÌ«Çá£¬ÎŞ·¨ĞŞÏ°¼ÃÊÀÖ®Êõ¡£\n");
+		return notify_fail("ä½ çš„å¹´çºªå¤ªè½»ï¼Œæ— æ³•ä¿®ä¹ æµä¸–ä¹‹æœ¯ã€‚\n");
 
 	if (!me->query("medicine"))
 	{
@@ -33,27 +33,27 @@ int valid_learn(object me)
 		}
 	}
 	if (lvl > 29 && me->query("medicine") == 1  && me->query("kar") <= 28) 
-		return notify_fail("ÏŞÓÚÌì×Ê£¬ÄãÖ»ÄÜĞŞÏ°Õâ¸ö³Ì¶ÈÁË¡£½ñºó»¹ÊÇÅ¬Á¦Á·¹¦£¬×ÔÇó¶à¸£°É¡£\n");
+		return notify_fail("é™äºå¤©èµ„ï¼Œä½ åªèƒ½ä¿®ä¹ è¿™ä¸ªç¨‹åº¦äº†ã€‚ä»Šåè¿˜æ˜¯åŠªåŠ›ç»ƒåŠŸï¼Œè‡ªæ±‚å¤šç¦å§ã€‚\n");
 	else return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("¼ÃÊÀÖ®ÊõÖ»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+	return notify_fail("æµä¸–ä¹‹æœ¯åªèƒ½é å­¦ä¹ æ¥æé«˜ã€‚\n");
 }
 int help(object me)
 {
-	write(HIC"\n¼ÃÊÀÖ®Êõ£º"NOR"\n");
+	write(HIC"\næµä¸–ä¹‹æœ¯ï¼š"NOR"\n");
 	write(@HELP
 
-    åĞÒ£ÅÉ×æÊ¦åĞÒ£×ÓÑ§¾¿ÌìÈË£¬ĞØÖĞËùÑ§°üÂŞÍòÏó¡£Ëû¹²´«ÏÂÆß
-ÃÅ¾øÒÕ£ºÈÆÁºÇÙÒÕ (luteplaying)¡¢ÎÆèÒÊÖÌ¸ (goplaying)¡¢ÆÃÄ«
-µ¤Çà(painting)¡¢¼ÃÊÀÖ®Êõ(medicine)¡¢ÍÁÄ¾»ú¹Ø(construction)¡¢
-Ô°ÒÕİª»¨(horticulture)¡¢ÀæÔ°¾ÉÒÕ(dramaturgy)¡£
-    ¾«Í¨¼ÃÊÀÖ®Êõ£¬¿ÉÒÔ²ÉÒ©Á¶µ¤¡¢Á·¹¦ÖÎ²¡¡£Çëhelp medical¡£
+    é€é¥æ´¾ç¥–å¸ˆé€é¥å­å­¦ç©¶å¤©äººï¼Œèƒ¸ä¸­æ‰€å­¦åŒ…ç½—ä¸‡è±¡ã€‚ä»–å…±ä¼ ä¸‹ä¸ƒ
+é—¨ç»è‰ºï¼šç»•æ¢ç´è‰º (luteplaying)ã€çº¹æ°æ‰‹è°ˆ (goplaying)ã€æ³¼å¢¨
+ä¸¹é’(painting)ã€æµä¸–ä¹‹æœ¯(medicine)ã€åœŸæœ¨æœºå…³(construction)ã€
+å›­è‰ºè³èŠ±(horticulture)ã€æ¢¨å›­æ—§è‰º(dramaturgy)ã€‚
+    ç²¾é€šæµä¸–ä¹‹æœ¯ï¼Œå¯ä»¥é‡‡è¯ç‚¼ä¸¹ã€ç»ƒåŠŸæ²»ç—…ã€‚è¯·help medicalã€‚
 
-	Ñ§Ï°ÒªÇó£º
-		ÎŞ¡£µ«Ìì¸³²ÅÆøÏŞÖÆÁË¶Ô¸ü¸ßÉî¾³½çµÄÅ¬Á¦
+	å­¦ä¹ è¦æ±‚ï¼š
+		æ— ã€‚ä½†å¤©èµ‹æ‰æ°”é™åˆ¶äº†å¯¹æ›´é«˜æ·±å¢ƒç•Œçš„åŠªåŠ›
 HELP
 	);
 	return 1;

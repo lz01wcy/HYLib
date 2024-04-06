@@ -1,13 +1,13 @@
-// daotong.c µÀÍ¯
+// daotong.c é“ç«¥
 
 inherit NPC;
 
 void create()
 {
-	set_name("µÀÍ¯", ({ "daotong", "dao", "tong" }));
+	set_name("é“ç«¥", ({ "daotong", "dao", "tong" }));
 	set("long", 
-		"ËûÊÇÎäµ±É½µÄÐ¡µÀÍ¯¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"ä»–æ˜¯æ­¦å½“å±±çš„å°é“ç«¥ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 16);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -64,7 +64,7 @@ set_skill("strike", 60);
                 (: perform_action, "sword.lian" :),
                 (: perform_action, "sword.lian" :),                
         }) );
-	create_family("Îäµ±ÅÉ", 5, "µÜ×Ó");
+	create_family("æ­¦å½“æ´¾", 5, "å¼Ÿå­");
 
 	setup();
 		carry_object("/clone/weapon/changjian")->wield();

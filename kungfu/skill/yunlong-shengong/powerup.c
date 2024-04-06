@@ -10,10 +10,10 @@ int exert(object me, object target)
 {
 	int skill;
 
-	if( target != me ) return notify_fail("你只能用云龙神功提升自己的战斗力。\n");
+	if( target != me ) return notify_fail("浣犲彧鑳界敤浜戦緳绁炲姛鎻愬崌鑷繁鐨勬垬鏂楀姏銆俓n");
 
-	if( (int)me->query("neili") < 100 ) return notify_fail("你的内力不够。\n");
-        if( (int)me->query_temp("powerup")) return notify_fail("你已经在运功中了。\n");
+	if( (int)me->query("neili") < 100 ) return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
+        if( (int)me->query_temp("powerup")) return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
 	skill = me->query_skill("force");
 
@@ -21,7 +21,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
 	message_combatd(
-        HIR "$N长吸一口气，运起云龙神功已将全身潜力尽数提起！\n" NOR, me);
+        HIR "$N闀垮惛涓�鍙ｆ皵锛岃繍璧蜂簯榫欑鍔熷凡灏嗗叏韬綔鍔涘敖鏁版彁璧凤紒\n" NOR, me);
 
 	me->add_temp("apply/attack", skill/3);
 	me->add_temp("apply/damage", skill/3);
@@ -44,5 +44,5 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/damage", -skill/3);
    me->add_temp("apply/defense", -skill/3);
 	me->delete_temp("powerup");
-    tell_object(me, "你的云龙神功运行完毕，将内力收回丹田。\n");}
+    tell_object(me, "浣犵殑浜戦緳绁炲姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");}
 }

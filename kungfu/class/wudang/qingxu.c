@@ -1,4 +1,4 @@
-// qingxu.c ÇåÐé
+// qingxu.c æ¸…è™š
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-        set_name("ÇåÐéµÀ³¤", ({ "qingxu daozhang", "qingxu","daozhang" }));
+        set_name("æ¸…è™šé“é•¿", ({ "qingxu daozhang", "qingxu","daozhang" }));
         set("long",
-                "Ëû¾ÍÊÇËÎÔ¶ÇÅµÄµÜ×ÓÇåÐéµÀ³¤¡£\n"
-                "Ëû½ñÄêÈýÊ®°ËËê£¬Ö÷¹ÜÎäµ±ÅÉºóÉ½µÄË×ÊÂ¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯å®‹è¿œæ¡¥çš„å¼Ÿå­æ¸…è™šé“é•¿ã€‚\n"
+                "ä»–ä»Šå¹´ä¸‰åå…«å²ï¼Œä¸»ç®¡æ­¦å½“æ´¾åŽå±±çš„ä¿—äº‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -47,7 +47,7 @@ void create()
         map_skill("parry", "wudang-jian");
         map_skill("sword", "wudang-jian");
 
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
         set("class", "taoist");
 
         setup();
@@ -58,15 +58,15 @@ void attempt_apprentice(object ob)
 {
         if ((int)ob->query("guarded") < 1) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "Äã¶ÔÎÒÎäµ±ÅÉ¾¡ÁË¶àÉÙÐÄÁ¦£¬ÓÐ¼¸·ÖÖÒÐÄÄØ£¿");
+                        "ä½ å¯¹æˆ‘æ­¦å½“æ´¾å°½äº†å¤šå°‘å¿ƒåŠ›ï¼Œæœ‰å‡ åˆ†å¿ å¿ƒå‘¢ï¼Ÿ");
                 return;
         }
         if ((int)ob->query("shen") < 0) {
-                command("say ÎÒÎäµ±ÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ­¦å½“ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬Æ¶µÀ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œè´«é“å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }

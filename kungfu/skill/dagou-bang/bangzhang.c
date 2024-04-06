@@ -1,4 +1,4 @@
-// bangzhang°ôÕÆË«¾ø
+// bangzhangæ£’æŒåŒç»
 
 #include <ansi.h>
 #include <skill.h>
@@ -18,66 +18,66 @@ int perform(object me, object target)
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "staff")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ ç°åœ¨æ²¡ç©ºï¼ï¼\n");
 
 	if( (int)me->query("neili") < 2000  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÕâÃÅ¾øÑ§Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("è¿™é—¨ç»å­¦åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query("neili") < me->query("max_neili")/7+200 ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
        if( !wizardp(me) &&(int)me->query_skill("xianglong-zhang", 1) < 500 )
-		return notify_fail("ÄãµÄ±¾ÃÅÍâ¹¦²»¹»!²»ÄÜ¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å¤–åŠŸä¸å¤Ÿ!ä¸èƒ½è´¯é€šä½¿ç”¨ï¼\n");
 
        if( !wizardp(me) &&(int)me->query_skill("dagou-bang", 1) < 500 )
-		return notify_fail("ÄãµÄ±¾ÃÅÍâ¹¦²»¹»!²»ÄÜ¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å¤–åŠŸä¸å¤Ÿ!ä¸èƒ½è´¯é€šä½¿ç”¨ï¼\n");
 
 	if(!wizardp(me) && (int)me->query_skill("huntian-qigong", 1) < 500 )
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»¸ß!²»ÄÜ¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿé«˜!ä¸èƒ½è´¯é€šä½¿ç”¨ï¼\n");
 
 	if(!wizardp(me) && (int)me->query_skill("jiuyin-zhengong", 1) )
-		return notify_fail("ÄãµÄÔÓÑ§Ì«¶à£¬ÎŞ·¨¶Ô±¾ÃÅÎä¹¦¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æ‚å­¦å¤ªå¤šï¼Œæ— æ³•å¯¹æœ¬é—¨æ­¦åŠŸè´¯é€šä½¿ç”¨ï¼\n");
 
         if (!wizardp(me) && !me->query("guard/flag"))
-		return notify_fail("ÄãµÄ½­ºş¾­Ñé»¹²»¹»£¬ÎŞ·¨¶Ô±¾ÃÅÎä¹¦¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æ±Ÿæ¹–ç»éªŒè¿˜ä¸å¤Ÿï¼Œæ— æ³•å¯¹æœ¬é—¨æ­¦åŠŸè´¯é€šä½¿ç”¨ï¼\n");
 
         if (!wizardp(me) && !me->query("guard/ok"))
-		return notify_fail("Äã»¹Ã»ÓĞÍ¨¹ı»ªÉ½ÂÛ½£! ÎŞ·¨¶Ô±¾ÃÅÎä¹¦¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ è¿˜æ²¡æœ‰é€šè¿‡åå±±è®ºå‰‘! æ— æ³•å¯¹æœ¬é—¨æ­¦åŠŸè´¯é€šä½¿ç”¨ï¼\n");
 
         if ( !wizardp(me) && me->query_skill_mapped("force") != "huntian-qigong")
-                return notify_fail("²»Ê¹ÓÃ±¾ÃÅÄÚ¹¦£¬ÈçºÎÊ¹ÓÃ±¾ÃÅ¾øÑ§!\n");
+                return notify_fail("ä¸ä½¿ç”¨æœ¬é—¨å†…åŠŸï¼Œå¦‚ä½•ä½¿ç”¨æœ¬é—¨ç»å­¦!\n");
 
-        msg = HBWHT "$N¹áÍ¨Ø¤°ïÎäÑ§£¬Ê¹³öÁËØ¤°ïµÄ¾øÑ§Ö®¾«Ëè£¡\n" NOR;
+        msg = HBWHT "$Nè´¯é€šä¸å¸®æ­¦å­¦ï¼Œä½¿å‡ºäº†ä¸å¸®çš„ç»å­¦ä¹‹ç²¾é«“ï¼\n" NOR;
 	me->add("neili", -me->query("max_neili")/7);
         message_vision(msg, me, target);      
         extra = me->query_skill("xianglong-zhang",1);
-        msg = YEL "$NĞÄÖĞÒ»¼±,Ã»Í·Ã»ÄÔµÄÏòÇ°Ãæ´òÁË³öÈ¥,µ«ÕıÊÇ´ò¹·°ô·¨µÄ¾«ÒªÖ®ËùÔÚ£¡\n" NOR;
-        msg+= HIR"$NÅ­ºÈÒ»Éù£¬ºá¹ı"+ weapon->name()+HIG"Ò»´î£¬½èÊÆÔ¾Æğ£¬ÈËÎ´ÖÁ£¬°ôÏÈµ½£¬ÁèĞéÏÂ»÷£¬Á¬Ê©ÈıÏÂÉ±ÊÖ£¡\n" NOR;
+        msg = YEL "$Nå¿ƒä¸­ä¸€æ€¥,æ²¡å¤´æ²¡è„‘çš„å‘å‰é¢æ‰“äº†å‡ºå»,ä½†æ­£æ˜¯æ‰“ç‹—æ£’æ³•çš„ç²¾è¦ä¹‹æ‰€åœ¨ï¼\n" NOR;
+        msg+= HIR"$Næ€’å–ä¸€å£°ï¼Œæ¨ªè¿‡"+ weapon->name()+HIG"ä¸€æ­ï¼Œå€ŸåŠ¿è·ƒèµ·ï¼Œäººæœªè‡³ï¼Œæ£’å…ˆåˆ°ï¼Œå‡Œè™šä¸‹å‡»ï¼Œè¿æ–½ä¸‰ä¸‹æ€æ‰‹ï¼\n" NOR;
         message_vision(msg, me);
 if (random(3)==0) target->start_busy(3);
         me->add_temp("apply/attack", (int)me->query_skill("dagou-bang",1));
         me->add_temp("apply/damage", (int)me->query_skill("dagou-bang",1)/2);
-       msg = WHT  "$N×ª¹ı"+ weapon->name()+HIG"£¬Ë¢Ë¢Ë¢Á¬½øÈı°ô£¬°ô·¨¿ì½İÎŞÂ×£¬¶¼ÊÇ´ò¹·°ô·¨ÖĞµÄÉ±ÕĞ£¡" NOR;
+       msg = WHT  "$Nè½¬è¿‡"+ weapon->name()+HIG"ï¼Œåˆ·åˆ·åˆ·è¿è¿›ä¸‰æ£’ï¼Œæ£’æ³•å¿«æ·æ— ä¼¦ï¼Œéƒ½æ˜¯æ‰“ç‹—æ£’æ³•ä¸­çš„æ€æ‹›ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
                 target->receive_wound("qi",random((int)me->query_skill("dagou-bang",1)));
-        msg = HIC  "$NÍ»È»·É³ö"+ weapon->name()+HIG"£¬Ó­ÃæÅüÏò$n£¬Õâ°ôÁ¬´ÁÈıÏÂ£¬¾¹ÔÚö®Ê±Ö®¼ä·Öµã$pĞØ¿ÚÈı´¦´óÑ¨£¡" NOR;
+        msg = HIC  "$Nçªç„¶é£å‡º"+ weapon->name()+HIG"ï¼Œè¿é¢åŠˆå‘$nï¼Œè¿™æ£’è¿æˆ³ä¸‰ä¸‹ï¼Œç«Ÿåœ¨éœæ—¶ä¹‹é—´åˆ†ç‚¹$pèƒ¸å£ä¸‰å¤„å¤§ç©´ï¼" NOR;
              	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
                 target->receive_wound("qi",random((int)me->query_skill("dagou-bang",1)));
-        msg = RED "$Nºá°ô»Ó³ö£¬±äÊØÎª¹¥£¬·¢»Ó³ö´ò¹·°ô·¨ÖĞµÄ¹¥ÊÖ£¬Á¬½øÁËÈı¼ÇÉ±ÕĞ£¡" NOR;
+        msg = RED "$Næ¨ªæ£’æŒ¥å‡ºï¼Œå˜å®ˆä¸ºæ”»ï¼Œå‘æŒ¥å‡ºæ‰“ç‹—æ£’æ³•ä¸­çš„æ”»æ‰‹ï¼Œè¿è¿›äº†ä¸‰è®°æ€æ‹›ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = RED "µÚÒ»ÕĞ $Nºá°ô»Ó³ö£¬Ê¹³öÁË·â×Ö¾ö£¡" NOR;
+        msg = RED "ç¬¬ä¸€æ‹› $Næ¨ªæ£’æŒ¥å‡ºï¼Œä½¿å‡ºäº†å°å­—å†³ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED "µÚ¶şÕĞ $Nºá°ô»Ó³ö£¬Ê¹³öÁË×ª×Ö¾ö£¡" NOR;
+        msg = RED "ç¬¬äºŒæ‹› $Næ¨ªæ£’æŒ¥å‡ºï¼Œä½¿å‡ºäº†è½¬å­—å†³ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = RED "µÚÈıÕĞ $Nºá°ô»Ó³ö£¬Ê¹³öÁË°è×Ö¾ö£¡£¡" NOR;
+        msg = RED "ç¬¬ä¸‰æ‹› $Næ¨ªæ£’æŒ¥å‡ºï¼Œä½¿å‡ºäº†æ‹Œå­—å†³ï¼ï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 
@@ -89,23 +89,23 @@ if (random(3)==0) target->start_busy(3);
 	         me->add_temp("apply/damage", extra);
 	me->add("neili", -1000);
 weapon->unequip();
-		 msg = YEL "$NË«ÕÆÆ½Æ½Ìáµ½ĞØÇ°£¬ÉñÉ«³ÁÖØµÄ»º»ºÊ©³ö½µÁúÊ®°ËÕÆµÄ×îºóÒ»ÕĞ¡¸"+HIY"¿º"NOR+HIC"Áú"NOR+HIW"ÎŞ"NOR+HIR"»Ú"NOR+YEL"¡¹Ò»ÕĞ°ËÊ½ÍÆÏò$n£¡" NOR;
+		 msg = YEL "$NåŒæŒå¹³å¹³æåˆ°èƒ¸å‰ï¼Œç¥è‰²æ²‰é‡çš„ç¼“ç¼“æ–½å‡ºé™é¾™åå…«æŒçš„æœ€åä¸€æ‹›ã€Œ"+HIY"äº¢"NOR+HIC"é¾™"NOR+HIW"æ— "NOR+HIR"æ‚”"NOR+YEL"ã€ä¸€æ‹›å…«å¼æ¨å‘$nï¼" NOR;
        	         message_vision(msg, me, target);                
-	 msg =  HIC  "µÚÒ»Ê½£¡$NÓÒÕÆÒ»Ê½¡¸ÁúÏÖÓÚÒ°¡¹£¬ÓÂÃÍÎŞ±ÈµØÅüÏò$n£¡" NOR;
+	 msg =  HIC  "ç¬¬ä¸€å¼ï¼$Nå³æŒä¸€å¼ã€Œé¾™ç°äºé‡ã€ï¼Œå‹‡çŒ›æ— æ¯”åœ°åŠˆå‘$nï¼" NOR;
 	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR  "µÚ¶şÊ½£¡$NË«ÕÆÊ©³öÒ»Ê½¡¸ºèÁúÔÚÂ½¡¹£¬ÒşÒşÔ¼Ô¼´ø×ÅÕÆ·çÅÄÏò$n£¡" NOR;
+        msg = HIR  "ç¬¬äºŒå¼ï¼$NåŒæŒæ–½å‡ºä¸€å¼ã€Œé¸¿é¾™åœ¨é™†ã€ï¼Œéšéšçº¦çº¦å¸¦ç€æŒé£æ‹å‘$nï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIB  "µÚÈıÊ½£¡$N×óÕÆÓùĞØ£¬ÓÒÕÆÒ»Ê½¡¸Ç±Áú³öº£¡¹»º»ºÍÆÏò$n£¡" NOR;
+        msg = HIB  "ç¬¬ä¸‰å¼ï¼$Nå·¦æŒå¾¡èƒ¸ï¼Œå³æŒä¸€å¼ã€Œæ½œé¾™å‡ºæµ·ã€ç¼“ç¼“æ¨å‘$nï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "µÚËÄÊ½£¡$NÊ¹³ö¡¸ÁúÔ¾ÔÚÌì¡¹£¬Ïò$nµÄÁ¬ÅÄÊıÕÆ£¡" NOR;
+        msg = HIY  "ç¬¬å››å¼ï¼$Nä½¿å‡ºã€Œé¾™è·ƒåœ¨å¤©ã€ï¼Œå‘$nçš„è¿æ‹æ•°æŒï¼" NOR;
              	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIG "µÚÎåÊ½£¡$NË«ÕÆÒ»Ê½¡¸Ë«ÁúÏ·Ë®¡¹Ò»Ç°Ò»ºó°´Ïò$nµÄĞØÇ°£¡" NOR;
+        msg = HIG "ç¬¬äº”å¼ï¼$NåŒæŒä¸€å¼ã€ŒåŒé¾™æˆæ°´ã€ä¸€å‰ä¸€åæŒ‰å‘$nçš„èƒ¸å‰ï¼" NOR;
               COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg = HIM  "µÚÁùÊ½£¡$NÉíĞÎ×ª¶¯£¬Ê¹³ö¡¸ÇçÌìÁùÁú¡¹Ïò$nÁ¬´òÁùÏÂ£¡" NOR;
+	msg = HIM  "ç¬¬å…­å¼ï¼$Nèº«å½¢è½¬åŠ¨ï¼Œä½¿å‡ºã€Œæ™´å¤©å…­é¾™ã€å‘$nè¿æ‰“å…­ä¸‹ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = YEL  "µÚÆßÊ½£¡$N½ÅÏÂÒ»×ª£¬Í»È»ÆÛµ½$nÉíÇ°£¬Ò»Ê½¡¸ÁúÕ½ÓÚÒ°¡¹Ö±ÅÄÏò$nÃæÃÅ" NOR;
+        msg = YEL  "ç¬¬ä¸ƒå¼ï¼$Nè„šä¸‹ä¸€è½¬ï¼Œçªç„¶æ¬ºåˆ°$nèº«å‰ï¼Œä¸€å¼ã€Œé¾™æˆ˜äºé‡ã€ç›´æ‹å‘$né¢é—¨" NOR;
              	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIW "µÚ°ËÊ½£¡$NÍ»È»·ÉÆğ£¬Ë«ÕÆ¾Ó¸ßÁÙÏÂ×îºóÒ»Ê½¡¸ÁúĞ¥¾ÅÌì¡¹È«Á¦ÅÄÏò$n£¡" NOR;
+        msg = HIW "ç¬¬å…«å¼ï¼$Nçªç„¶é£èµ·ï¼ŒåŒæŒå±…é«˜ä¸´ä¸‹æœ€åä¸€å¼ã€Œé¾™å•¸ä¹å¤©ã€å…¨åŠ›æ‹å‘$nï¼" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
         me->add_temp("apply/strength", -extra/3);
@@ -115,8 +115,8 @@ weapon->unequip();
 		)
 	 {
 
- msg = HIR"ÄãÒ§½ôÑÀ¹Ø£¬Ë«ÕÆ»¤Éí£¬ĞÄÖĞÄ¬Äî½µÁúÊ®°ËÕÆµÄ¿Ú¾÷!"+HIY"¿º"NOR+HIC"Áú"NOR+HIW"ÎŞ"NOR+HIR"»Ú!!"NOR+" ";
-                msg += RED"\n½á¹û¡¸ºä¡¹µØÒ»Éù£¬$nÈ«ÉíÆøÑªµ¹Á÷£¬¿ÚÖĞÏÊÑª¿ñÅç¶ø³ö£¡\n"NOR;
+ msg = HIR"ä½ å’¬ç´§ç‰™å…³ï¼ŒåŒæŒæŠ¤èº«ï¼Œå¿ƒä¸­é»˜å¿µé™é¾™åå…«æŒçš„å£è¯€!"+HIY"äº¢"NOR+HIC"é¾™"NOR+HIW"æ— "NOR+HIR"æ‚”!!"NOR+" ";
+                msg += RED"\nç»“æœã€Œè½°ã€åœ°ä¸€å£°ï¼Œ$nå…¨èº«æ°”è¡€å€’æµï¼Œå£ä¸­é²œè¡€ç‹‚å–·è€Œå‡ºï¼\n"NOR;
                 target->receive_damage("qi",(int)me->query_skill("xianglong-zhang",1)*5);
                 target->receive_wound("qi",(int)me->query_skill("xianglong-zhang",1)*3);
 		target->receive_wound("jing", 10 + random(200));

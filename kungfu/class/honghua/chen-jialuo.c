@@ -1,5 +1,5 @@
 // Last Modified by winder on Sep. 12 2001
-// chen-jialuo.c ³Â¼ÒÂå
+// chen-jialuo.c é™ˆå®¶æ´›
 #include <ansi.h>
 inherit NPC;
 inherit F_MASTER;
@@ -9,11 +9,11 @@ int count=1;
 
 void create()
 {
-	set_name("³Â¼ÒÂå", ({ "chen jialuo", "chen" }));
-	set("title", HIR"ºì»¨»á"HIG"×Ü¶æÖ÷"NOR);
-	set("nickname", HIY"ÓñÃæÉñÁú"NOR);
-	set("long","Ëû¾ÍÊÇÌìÏÂÎÅÃûµÄºì»¨»áµÄ×Ü¶æÖ÷³Â¼ÒÂå¡£\nÉí´©Ò»¼ş¸É¸É¾»¾»µÄÇàÉ«³¤ÅÛ¡£\nËûÒ»¸±Ä£ÑùÖ±ÊÇ¸ö¸»¹óÈË¼ÒµÄæı¿ã×ÓµÜ£¬·á×ËÈçÓñ£¬Ä¿ÀÊËÆĞÇ£¬Éñ²É·ÉÑï£¬Æø¶ÈÏĞÑÅ£¬ÍÂÊôË¹ÎÄ¡£·şÊÎÙ²È»ÊÇ¸ö¹ó½é¹«×Ó¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("é™ˆå®¶æ´›", ({ "chen jialuo", "chen" }));
+	set("title", HIR"çº¢èŠ±ä¼š"HIG"æ€»èˆµä¸»"NOR);
+	set("nickname", HIY"ç‰é¢ç¥é¾™"NOR);
+	set("long","ä»–å°±æ˜¯å¤©ä¸‹é—»åçš„çº¢èŠ±ä¼šçš„æ€»èˆµä¸»é™ˆå®¶æ´›ã€‚\nèº«ç©¿ä¸€ä»¶å¹²å¹²å‡€å‡€çš„é’è‰²é•¿è¢ã€‚\nä»–ä¸€å‰¯æ¨¡æ ·ç›´æ˜¯ä¸ªå¯Œè´µäººå®¶çš„çº¨è£¤å­å¼Ÿï¼Œä¸°å§¿å¦‚ç‰ï¼Œç›®æœ—ä¼¼æ˜Ÿï¼Œç¥é‡‡é£æ‰¬ï¼Œæ°”åº¦é—²é›…ï¼Œåå±æ–¯æ–‡ã€‚æœé¥°ä¿¨ç„¶æ˜¯ä¸ªè´µä»‹å…¬å­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 22);
 	set("shen_type", 1);
 	set("str", 68);
@@ -69,18 +69,18 @@ void create()
 	set_temp("apply/armor",500);
 	set_temp("apply/damage",500);
 	set("inquiry", ([
-		"ºì»¨»á" : (: ask_me :),
+		"çº¢èŠ±ä¼š" : (: ask_me :),
 	]));
-	set("chat_chance", 5);	 // Ëæ»ú¶¯×÷¸ÅÂÊ 25%
+	set("chat_chance", 5);	 // éšæœºåŠ¨ä½œæ¦‚ç‡ 25%
 	set("chat_msg", ({
-		"³Â¼ÒÂåÌ¾ÁËÒ»¿ÚÆøµÀ£º°¦....Ïë²»µ½Ç¬Â¡¾¹ÊÇÎÒĞÖµÜ£¬Õâ¿ÉÈçºÎÊÇºÃ£¿\n",
-		"³Â¼ÒÂåºŞÉùËµµÀ£ºÎÒÃÇººÈËµÄ½­É½£¬Ò»¶¨Òª´ÓÂúÇåÊÖÖĞ¶á»ØÀ´¡£\n",
-		"³Â¼ÒÂåËµµÀ£ºÕâÎ»ĞÖµÜ£¬¿ÉÒª¼ÓÈëÎÒÃÇºì»¨»áÂğ£¿\n",
+		"é™ˆå®¶æ´›å¹äº†ä¸€å£æ°”é“ï¼šå”‰....æƒ³ä¸åˆ°ä¹¾éš†ç«Ÿæ˜¯æˆ‘å…„å¼Ÿï¼Œè¿™å¯å¦‚ä½•æ˜¯å¥½ï¼Ÿ\n",
+		"é™ˆå®¶æ´›æ¨å£°è¯´é“ï¼šæˆ‘ä»¬æ±‰äººçš„æ±Ÿå±±ï¼Œä¸€å®šè¦ä»æ»¡æ¸…æ‰‹ä¸­å¤ºå›æ¥ã€‚\n",
+		"é™ˆå®¶æ´›è¯´é“ï¼šè¿™ä½å…„å¼Ÿï¼Œå¯è¦åŠ å…¥æˆ‘ä»¬çº¢èŠ±ä¼šå—ï¼Ÿ\n",
 	}) );
 	set("no_get",1);
-	set("chat_chance_combat", 90); // Õ½¶·ÖĞËæ»ú¶¯×÷¸ÅÂÊ
+	set("chat_chance_combat", 90); // æˆ˜æ–—ä¸­éšæœºåŠ¨ä½œæ¦‚ç‡
 	set("chat_msg_combat", ({
-		"³Â¼ÒÂåËµµÀ£ºÄã¸ÒÈÇÎÒ£¬×·µ½ÌìÑÄº£½ÇÎÒ¶¼ÒªÉ±ÁËÄã£¡\n",
+		"é™ˆå®¶æ´›è¯´é“ï¼šä½ æ•¢æƒ¹æˆ‘ï¼Œè¿½åˆ°å¤©æ¶¯æµ·è§’æˆ‘éƒ½è¦æ€äº†ä½ ï¼\n",
 				(: command("unwield changjian") :),
 		(: perform_action, "sword.beng" :),
 		(: perform_action, "sword.kuangda" :),
@@ -92,7 +92,7 @@ void create()
 		(: exert_function, "recover" :),
 		(: exert_function, "powerup" :),
 	}) );
-	create_family("ºì»¨»á", 2, "×Ü¶æÖ÷");
+	create_family("çº¢èŠ±ä¼š", 2, "æ€»èˆµä¸»");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
@@ -104,11 +104,11 @@ void attempt_apprentice(object ob)
 {
 	if ((int)ob->query("shen") < 50000)
 	{
-		command( "say ºì»¨»áÖĞ½ÔÊÇ¸Ò×÷¸Òµ±µÄºÃºº×Ó£¬ÄãÕâĞ¡ÔôÒ²Ïë»ì½øÀ´Ã´£¿");
-		command("say ÏëÒª¼ÓÈëºì»¨»á"+RANK_D->query_respect(ob) + "ÄãÏÈÈ¥É±¼¸¸öÇå¹·ÔÙËµ£¡");
+		command( "say çº¢èŠ±ä¼šä¸­çš†æ˜¯æ•¢ä½œæ•¢å½“çš„å¥½æ±‰å­ï¼Œä½ è¿™å°è´¼ä¹Ÿæƒ³æ··è¿›æ¥ä¹ˆï¼Ÿ");
+		command("say æƒ³è¦åŠ å…¥çº¢èŠ±ä¼š"+RANK_D->query_respect(ob) + "ä½ å…ˆå»æ€å‡ ä¸ªæ¸…ç‹—å†è¯´ï¼");
 		return;
 	}
-	command("say ÔÚÏÂ¶Ô"+RANK_D->query_respect(ob)+"ÒÑÊÇÉñ½»ÒÑ¾Ã£¬´Ó½ñ¶øºóÔÛÃÇ¾ÍÊÇÒ»¼ÒÈËÁË£¡");
+	command("say åœ¨ä¸‹å¯¹"+RANK_D->query_respect(ob)+"å·²æ˜¯ç¥äº¤å·²ä¹…ï¼Œä»ä»Šè€Œåå’±ä»¬å°±æ˜¯ä¸€å®¶äººäº†ï¼");
 	command("recruit " + ob->query("id"));
 }
 
@@ -126,9 +126,9 @@ void init()
 	if((int)ob->query("shen") < -1000 &&
 		ob->query("family/master_id")=="chen jialuo")
 	{
-		command( "chat "+ob->query("name")+"£¡ÄãÕâµÈĞ°¶ñ¼éÕ©Ö®Í½£¬ºì»¨»áÆñÄÜÔÙÈİÄã£¡\n");
+		command( "chat "+ob->query("name")+"ï¼ä½ è¿™ç­‰é‚ªæ¶å¥¸è¯ˆä¹‹å¾’ï¼Œçº¢èŠ±ä¼šå²‚èƒ½å†å®¹ä½ ï¼\n");
 		command("expell "+ ob->query("id"));
-		this_player()->set("title","ºì»¨»á" + RED + "ÆúÍ½" NOR);
+		this_player()->set("title","çº¢èŠ±ä¼š" + RED + "å¼ƒå¾’" NOR);
 	}
 	add_action("do_say", "say");
         add_action("do_qiecuo","qiecuo");
@@ -139,9 +139,9 @@ void greeting(object me)
        
        	mapping myfam;
 	myfam = (mapping)me->query("family");
-	if((myfam["family_name"] == "ºì»¨»á")&&(!me->query_skill("honghua-shengong",1))&&(me->query("combat_exp")>500000))
+	if((myfam["family_name"] == "çº¢èŠ±ä¼š")&&(!me->query_skill("honghua-shengong",1))&&(me->query("combat_exp")>500000))
         {
-                command("say Äã¾¹¸Ò·ÅÆú±¾ÃÅĞÄ·¨£¡´ÓÎÒÕâÀï¹ö³öÈ¥°É£¡");
+                command("say ä½ ç«Ÿæ•¢æ”¾å¼ƒæœ¬é—¨å¿ƒæ³•ï¼ä»æˆ‘è¿™é‡Œæ»šå‡ºå»å§ï¼");
                 command("expell " + me->query("id"));
         }
         
@@ -151,25 +151,25 @@ int do_say(string arg)
 {
 	if( !arg || arg=="" ) return 0;
  
-	if( arg=="ÇàÒ¶ºì»¨°×Á«Åº") 
+	if( arg=="é’å¶çº¢èŠ±ç™½è²è—•") 
 	{
-		write("³Â¼ÒÂåËµµÀ£ºÌìÏÂÓ¢ĞÛÊÇÒ»¼Ò¡£\n");
-		message("vision", "³Â¼ÒÂåµÍÉùµÀ£ºÔ­À´ÊÇ×Ô¼ÒµÜĞÖ£¬²»ÖªÓĞºÎ¼û½Ì£¿\n", this_player());
+		write("é™ˆå®¶æ´›è¯´é“ï¼šå¤©ä¸‹è‹±é›„æ˜¯ä¸€å®¶ã€‚\n");
+		message("vision", "é™ˆå®¶æ´›ä½å£°é“ï¼šåŸæ¥æ˜¯è‡ªå®¶å¼Ÿå…„ï¼Œä¸çŸ¥æœ‰ä½•è§æ•™ï¼Ÿ\n", this_player());
 		set("inquiry", ([
-			"ºì»¨Áî" : (: ask_ling :),
+			"çº¢èŠ±ä»¤" : (: ask_ling :),
 		]));
 	}
 }
 string ask_me()
 {
-	return RANK_D->query_respect(this_player())+ "£¬ÎÒºì»¨»áÄËÌìÏÂµÚÒ»´ó°ï£¬×¨ÓëÇå¹·×÷¶Ô£¬¹ş...¹ş...";
+	return RANK_D->query_respect(this_player())+ "ï¼Œæˆ‘çº¢èŠ±ä¼šä¹ƒå¤©ä¸‹ç¬¬ä¸€å¤§å¸®ï¼Œä¸“ä¸æ¸…ç‹—ä½œå¯¹ï¼Œå“ˆ...å“ˆ...";
 }
 string ask_ling()
 {
 	object ob,me;
 
-	if (count == 0) return "ºì»¨ÁîÒÑ¾­´«³öÈ¥ÁË£¡\n";
-	message_vision(HIR"³Â¼ÒÂåËµµÀ£º¡°ÏëÒªºì»¨ÁîÂğ£¿£¬ÏÈ½ÓÎÒÈıÕĞ£¡\n"NOR,this_player());
+	if (count == 0) return "çº¢èŠ±ä»¤å·²ç»ä¼ å‡ºå»äº†ï¼\n";
+	message_vision(HIR"é™ˆå®¶æ´›è¯´é“ï¼šâ€œæƒ³è¦çº¢èŠ±ä»¤å—ï¼Ÿï¼Œå…ˆæ¥æˆ‘ä¸‰æ‹›ï¼\n"NOR,this_player());
 	ob = this_object();
 	me = this_player();
 	COMBAT_D->do_attack(ob, me, query_temp("weapon") );
@@ -186,9 +186,9 @@ string ask_ling()
 		ob = new(__DIR__"obj/honghua-ling");
 		ob->move(this_player());
 		count=0;
-		message_vision(HIY"³Â¼ÒÂå½»¸ø$NÒ»Ö§ºì»¨Áî£¡\n"NOR, me);
-		return "ºÃ£¬ÕâÊÇºì»¨Áî£¬ĞÖµÜÄãÒªºÃºÃ±£¹Ü£¡\n";
+		message_vision(HIY"é™ˆå®¶æ´›äº¤ç»™$Nä¸€æ”¯çº¢èŠ±ä»¤ï¼\n"NOR, me);
+		return "å¥½ï¼Œè¿™æ˜¯çº¢èŠ±ä»¤ï¼Œå…„å¼Ÿä½ è¦å¥½å¥½ä¿ç®¡ï¼\n";
 	}
-	else return "ÄãÕâÑùÎä¹¦ÔõÄÜÕÆ¹Üºì»¨Áî£¿";	
+	else return "ä½ è¿™æ ·æ­¦åŠŸæ€èƒ½æŒç®¡çº¢èŠ±ä»¤ï¼Ÿ";	
 }
 

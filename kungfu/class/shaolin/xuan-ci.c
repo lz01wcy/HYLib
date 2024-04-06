@@ -7,19 +7,19 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Ğş´È´óÊ¦", ({
+	set_name("ç„æ…ˆå¤§å¸ˆ", ({
 		"xuanci dashi",
 		"xuanci",
 		"dashi",
 	}));
 	set("long",
-		"ËûÊÇÒ»Î»°×Ğë°×Ã¼µÄÀÏÉ®£¬Éí´©Ò»Ï®½ğË¿ĞåºìôÂôÄ¡£\n"
-		"ËûÉí²ÄÂÔÏÔØşÙÍ£¬µ«È´ÂúÃæºì¹â£¬Ä¿ÔÌ´ÈĞ¦£¬ÏÔµÃÉñÍêÆø×ã¡£\n"
+		"ä»–æ˜¯ä¸€ä½ç™½é¡»ç™½çœ‰çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¢­é‡‘ä¸ç»£çº¢è¢ˆè£Ÿã€‚\n"
+		"ä»–èº«æç•¥æ˜¾ä½å»ï¼Œä½†å´æ»¡é¢çº¢å…‰ï¼Œç›®è•´æ…ˆç¬‘ï¼Œæ˜¾å¾—ç¥å®Œæ°”è¶³ã€‚\n"
 	);
 
 
-	set("nickname", "ÉÙÁÖËÂ·½ÕÉ");
-	set("gender", "ÄĞĞÔ");
+	set("nickname", "å°‘æ—å¯ºæ–¹ä¸ˆ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -71,7 +71,7 @@ set_skill("yijinjing",200);
 	prepare_skill("finger", "nianhua-zhi");
 	prepare_skill("strike", "sanhua-zhang");
 
-	create_family("ÉÙÁÖÅÉ", 36, "µÜ×Ó");
+	create_family("å°‘æ—æ´¾", 36, "å¼Ÿå­");
 
 	setup();
 
@@ -89,32 +89,32 @@ void attempt_apprentice(object ob)
 
 	name = ob->query("name");
 
-	if (!(ob_fam = ob->query("family")) || ob_fam["family_name"] != "ÉÙÁÖÅÉ")
+	if (!(ob_fam = ob->query("family")) || ob_fam["family_name"] != "å°‘æ—æ´¾")
 	{
-		command("say " + RANK_D->query_respect(ob) + "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿");
+		command("say " + RANK_D->query_respect(ob) + "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ");
 		return;
 	}
 
-	if ( (string)ob->query("class")!="bonze" && ob_fam["family_name"] == "ÉÙÁÖÅÉ") 
+	if ( (string)ob->query("class")!="bonze" && ob_fam["family_name"] == "å°‘æ—æ´¾") 
 	{
-		command("say " + RANK_D->query_respect(ob) + "ÊÇË×¼ÒµÜ×Ó£¬²»ÄÜÔÚËÂÄÚÑ§ÒÕ¡£");
+		command("say " + RANK_D->query_respect(ob) + "æ˜¯ä¿—å®¶å¼Ÿå­ï¼Œä¸èƒ½åœ¨å¯ºå†…å­¦è‰ºã€‚");
 		return;
 	}
 
 	if ( ob_fam["generation"] <= my_fam["generation"] )
 	{
-		command("say " + RANK_D->query_respect(ob) + "£¬Æ¶É®ÄÄÀï¸Òµ± !");
+		command("say " + RANK_D->query_respect(ob) + "ï¼Œè´«åƒ§å“ªé‡Œæ•¢å½“ !");
 		return;
 	}
 
-	if ( ob_fam["generation"] == (my_fam["generation"] + 1) && name[0..1] == "³Î")
+	if ( ob_fam["generation"] == (my_fam["generation"] + 1) && name[0..1] == "æ¾„")
 	{
-		command("say " + ob_fam["master_name"] + "µÄÍ½µÜÔõ÷áÅÜµ½ÎÒÕâ¶ùÀ´ÁË£¬¹ş¹ş¹ş !");
+		command("say " + ob_fam["master_name"] + "çš„å¾’å¼Ÿæ€éº½è·‘åˆ°æˆ‘è¿™å„¿æ¥äº†ï¼Œå“ˆå“ˆå“ˆ !");
 		command("recruit " + ob->query("id"));
 	}
 	else
 	{
-		command("say " + RANK_D->query_respect(ob) + "£¬Äã±²·İ²»ºÏ£¬²»ÄÜÔ½¼¶°İÊ¦¡£");
+		command("say " + RANK_D->query_respect(ob) + "ï¼Œä½ è¾ˆä»½ä¸åˆï¼Œä¸èƒ½è¶Šçº§æ‹œå¸ˆã€‚");
 		return;
 	}
 

@@ -1,4 +1,4 @@
-// renmu-daofa È¼Ä¾µ¶·¨
+// renmu-daofa ç‡ƒæœ¨åˆ€æ³•
 // by snowman@SJ 05/12/1999
 
 #include <ansi.h>
@@ -15,45 +15,45 @@ int perform(object me, object target)
         if( !target
          || !target->is_character()
          || !me->is_fighting(target) )
-                return notify_fail("¡¸·ÙÎÒ¡¹¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç„šæˆ‘ã€æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!weapon || weapon->query("skill_type") != "blade"
            || me->query_skill_mapped("blade") != "ranmu-daofa")
-                return notify_fail("ÄãÏÖÔÚÎÞ·¨Ê¹³ö¡¸·ÙÎÒ¡¹¾ø¼¼£¡\n");
+                return notify_fail("ä½ çŽ°åœ¨æ— æ³•ä½¿å‡ºã€Œç„šæˆ‘ã€ç»æŠ€ï¼\n");
 
                 
         if(me->query_skill("ranmu-daofa", 1) < 150 )
-                return notify_fail("ÄãµÄÈ¼Ä¾µ¶·¨»ðºò²»¹»£¬Ê¹²»³ö¡¸·ÙÎÒ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„ç‡ƒæœ¨åˆ€æ³•ç«å€™ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œç„šæˆ‘ã€ç»æŠ€ã€‚\n");
 
         if(me->query_skill("blade", 1) < 150 )
-                return notify_fail("ÄãµÄ»ù±¾¹¦»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸·ÙÎÒ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠŸè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œç„šæˆ‘ã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_skill("yijinjing", 1) < 120 )
-                return notify_fail("ÄãµÄÒ×½î¾­µÈ¼¶²»¹»£¬Ê¹²»³ö¡¸·ÙÎÒ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„æ˜“ç­‹ç»ç­‰çº§ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œç„šæˆ‘ã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_str() < 30)
-                return notify_fail("ÄãµÄëöÁ¦»¹²»¹»Ç¿¾¢£¬Ê¹²»³ö¡¸·ÙÎÒ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„è†‚åŠ›è¿˜ä¸å¤Ÿå¼ºåŠ²ï¼Œä½¿ä¸å‡ºã€Œç„šæˆ‘ã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_int() < 30)
-                return notify_fail("Ã»ÓÐ´óÖÇ»Û´ó°ãÈô£¬ÊÇÊ¹²»³ö¡¸·ÙÎÒ¡¹¾ø¼¼µÄ¡£\n");
+                return notify_fail("æ²¡æœ‰å¤§æ™ºæ…§å¤§èˆ¬è‹¥ï¼Œæ˜¯ä½¿ä¸å‡ºã€Œç„šæˆ‘ã€ç»æŠ€çš„ã€‚\n");
  
         if ( me->query_skill_mapped("force") != "yijinjing")
-                return notify_fail("Ã»ÓÐÒ×½î¾­×÷Îª¸ù»ù£¬ÊÇÎÞ·¨Ê¹³ö¡¸·ÙÎÒ¡¹¾ø¼¼µÄ£¡\n"); 
+                return notify_fail("æ²¡æœ‰æ˜“ç­‹ç»ä½œä¸ºæ ¹åŸºï¼Œæ˜¯æ— æ³•ä½¿å‡ºã€Œç„šæˆ‘ã€ç»æŠ€çš„ï¼\n"); 
 
         if(me->query_temp("ranmu")) 
-                return notify_fail("ÄãÏÖÔÚÕýÔÚÊ¹ÓÃ¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n"); 
+                return notify_fail("ä½ çŽ°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n"); 
 
         if (me->query_temp("fumo"))
-                return notify_fail("ÄãÏÖÔÚÕýÔÚÊ¹ÓÃ¡¸½ð¸Õ·üÄ§¡¹Éñ¹¦¡£\n"); 
+                return notify_fail("ä½ çŽ°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œé‡‘åˆšä¼é­”ã€ç¥žåŠŸã€‚\n"); 
 
         if (me->query("max_neili") < 1000)
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
         if (me->query("neili") < 650)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if (me->query("jing") < 200)
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 
         me->add("neili", -600);
         me->add("jingli", -100);        
@@ -76,10 +76,10 @@ int perform(object me, object target)
         if (random (3)==0 && w2 
         && !w2->query("ownmake")
         ) {
-           	message_vision(HIY"\nÖ»Ìý¡°ßÇßÇ¡±¼¸Éù£¬$NÊÖÖÐµÄ$n"HIY"ÔÚÐÜÐÜ»ðÑæÖÐÁÑ³ÉÁËËéÆ¬£¡\n"NOR,me,weapon);
+           	message_vision(HIY"\nåªå¬â€œå’”å’”â€å‡ å£°ï¼Œ$Næ‰‹ä¸­çš„$n"HIY"åœ¨ç†Šç†Šç«ç„°ä¸­è£‚æˆäº†ç¢Žç‰‡ï¼\n"NOR,me,weapon);
            	w2->unequip();
            	w2->move(environment(target));
-           	w2->set("name", "ËéÁÑµÄ" + weapon->query("name"));
+           	w2->set("name", "ç¢Žè£‚çš„" + weapon->query("name"));
            	w2->set("value", 49);
            	w2->set("weapon_prop", 0);
            	target->reset_action();

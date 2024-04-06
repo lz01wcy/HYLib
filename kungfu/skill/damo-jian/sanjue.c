@@ -1,4 +1,4 @@
-// sanjue.c  ´ïÄ¦½£ [´ïÄ¦Èı¾ø½£]
+// sanjue.c  è¾¾æ‘©å‰‘ [è¾¾æ‘©ä¸‰ç»å‰‘]
 #include <ansi.h>
 #include <skill.h>
 #include <weapon.h>
@@ -15,28 +15,28 @@ int perform(object me, object target)
 if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸´ïÄ¦Èı¾ø½£¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¾¾æ‘©ä¸‰ç»å‰‘ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if((int)me->query_skill("hunyuan-yiqi",1) < 60)
-		return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦µÄĞŞÎª²»¹», ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
+		return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸçš„ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€ !\n");
 	if((int)me->query_skill("sword") < 135)
-		return notify_fail("ÄãµÄ½£·¨ĞŞÎª²»¹»£¬ Ä¿Ç°²»ÄÜÊ¹ÓÃ´ïÄ¦Èı¾ø½£! \n");
+		return notify_fail("ä½ çš„å‰‘æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œ ç›®å‰ä¸èƒ½ä½¿ç”¨è¾¾æ‘©ä¸‰ç»å‰‘! \n");
 	weapon = me->query_temp("weapon");
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 	
 	extra = me->query_skill("damo-jian",1) / 20;
 	extra += me->query_skill("damo-jian",1) /20;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 
-	msg = HIG "$NÊ¹³ö´ïÄ¦½£µÄ¾ø¼¼¡¸´ïÄ¦Èı¾ø½£¡¹£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;     
+	msg = HIG "$Nä½¿å‡ºè¾¾æ‘©å‰‘çš„ç»æŠ€ã€Œè¾¾æ‘©ä¸‰ç»å‰‘ã€ï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;     
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIC  "$NÉíĞÎ¼Ó¿ì£¬·´ÊÖÓÖÊÇÒ»½££¡ \n" NOR;
+	 msg =  HIC  "$Nèº«å½¢åŠ å¿«ï¼Œåæ‰‹åˆæ˜¯ä¸€å‰‘ï¼ \n" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIC  "$NÉíĞÎÄæ×ª£¬³¯×Å$nÓÖÊÇÒ»½££¡ \n" NOR;
+	msg =  HIC  "$Nèº«å½¢é€†è½¬ï¼Œæœç€$nåˆæ˜¯ä¸€å‰‘ï¼ \n" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

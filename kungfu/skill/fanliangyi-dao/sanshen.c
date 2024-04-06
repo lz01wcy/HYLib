@@ -1,4 +1,4 @@
-// sanshen.c »ªÔÀÈıÉñ·å
+// sanshen.c åå²³ä¸‰ç¥å³°
 
 #include <ansi.h>
 #include <skill.h>
@@ -15,32 +15,32 @@ int perform(object me, object target)
  	if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸»ªÔÀÈıÉñ·å¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œåå²³ä¸‰ç¥å³°ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "blade")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("zixia-shengong",1) < 80 )
-		return notify_fail("ÄãµÄ×ÏÏ¼Éñ¹¦¹¦Á¦²»×ã£¡\n");
+		return notify_fail("ä½ çš„ç´«éœç¥åŠŸåŠŸåŠ›ä¸è¶³ï¼\n");
 
 	if( (int)me->query_skill("blade") < 50 ||
 	    me->query_skill_mapped("blade") != "fanliangyi-dao")
-		return notify_fail("ÄãµÄ¡¸·´Á½ÒÇµ¶·¨¡¹»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸»ªÔÀÈıÉñ·å¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œåä¸¤ä»ªåˆ€æ³•ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œåå²³ä¸‰ç¥å³°ã€ï¼\n");
 
-	msg = RED "$NÊ¹³ö»ªÉ½ÅÉ¾ø¼¼¡¸»ªÔÀÈıÉñ·å¡¹£¬Éí·¨Í»µØ±äµÃÒì³£Áé¶¯Æ®ºö£¡" NOR;
+	msg = RED "$Nä½¿å‡ºåå±±æ´¾ç»æŠ€ã€Œåå²³ä¸‰ç¥å³°ã€ï¼Œèº«æ³•çªåœ°å˜å¾—å¼‚å¸¸çµåŠ¨é£˜å¿½ï¼" NOR;
 	message_vision(msg, me, target);          
 
-	msg =  YEL  "ÓñÅ®·å£¡ " NOR;
+	msg =  YEL  "ç‰å¥³å³°ï¼ " NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-	msg =  YEL  "³¯Ñô·å£¡ " NOR;
+	msg =  YEL  "æœé˜³å³°ï¼ " NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-	msg =  YEL  "Á«»¨·å£¡ " NOR;
+	msg =  YEL  "è²èŠ±å³°ï¼ " NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 	me->add("neili", -50);

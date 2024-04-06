@@ -9,12 +9,12 @@ int update_condition(object me, int duration) {
     if (duration < 1) return 0;
     if (!living(me)) {
         message("vision", me->name() + HIG
-        "Æà²ÒµØºßÁËÒ»Éù¡£\n", environment(me), me);
+        "å‡„æƒ¨åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
     } else {
         tell_object(me, HIB
-        "ºöÈ»Ò»¹Éº®Á÷¼Ð×ÅÒ»Õó×ÆÈÈÓ¿ÉÏÐÄÀ´£¬ÄãÖÐµÄÉúËÀ·û·¢×÷ÁË£¡\n"
+        "å¿½ç„¶ä¸€è‚¡å¯’æµå¤¹ç€ä¸€é˜µç¼çƒ­æ¶Œä¸Šå¿ƒæ¥ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å‘ä½œäº†ï¼\n"
         NOR );
-        message("vision", me->name() + "Í»È»µ¹ÔÚµØÉÏ£¬Ë«ÊÖÔÚÉíÉÏÒ»ÕóÂÒ×¥¡£\n",
+        message("vision", me->name() + "çªç„¶å€’åœ¨åœ°ä¸Šï¼ŒåŒæ‰‹åœ¨èº«ä¸Šä¸€é˜µä¹±æŠ“ã€‚\n",
                 me);
     }
 

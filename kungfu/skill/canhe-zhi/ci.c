@@ -1,4 +1,4 @@
-// ci.c canhe-zhi perform ´Ì×Ö¾÷
+// ci.c canhe-zhi perform åˆºå­—è¯€
 // by leontt 1/5/2000
 // modified by darken to reduce busy time
 
@@ -16,42 +16,42 @@ int perform(object me, object target)
       if( !target ) target = offensive_target(me);
      
       if( !target || !me->is_fighting(target) )
-          return notify_fail("¡¸´Ì×Ö¾÷¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+          return notify_fail("ã€Œåˆºå­—è¯€ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
              
       if( objectp(me->query_temp("weapon")) )
-          return notify_fail("Äã±ØĞë¿ÕÊÖÊ¹ÓÃ¡¸´Ì×Ö¾÷¡¹£¡\n");
+          return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ä½¿ç”¨ã€Œåˆºå­—è¯€ã€ï¼\n");
           
       if( target->is_busy() )
-          return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+          return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
       
       if( (int)me->query_skill("canhe-zhi",1) < 100 )
-          return notify_fail("ÄãµÄ²ÎºÏÖ¸²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸´Ì×Ö¾÷¡¹£¡\n");
+          return notify_fail("ä½ çš„å‚åˆæŒ‡ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œåˆºå­—è¯€ã€ï¼\n");
 
       if( (int)me->query_skill("shenyuan-gong",1) < 100 )
-          return notify_fail("ÄãµÄÉñÔª¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸´Ì×Ö¾÷¡¹£¡\n");  
+          return notify_fail("ä½ çš„ç¥å…ƒåŠŸç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œåˆºå­—è¯€ã€ï¼\n");  
       
       if( (int)me->query_str() < 30 )
-          return notify_fail("ÄãµÄ±ÛÁ¦²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸´Ì×Ö¾÷¡¹£¡\n");
+          return notify_fail("ä½ çš„è‡‚åŠ›ä¸å¤Ÿå¼ºï¼Œä¸èƒ½ä½¿ç”¨ã€Œåˆºå­—è¯€ã€ï¼\n");
       
       if( (int)me->query("max_neili") < 1000 )
-          return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸´Ì×Ö¾÷¡¹£¡\n");
+          return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œåˆºå­—è¯€ã€ï¼\n");
       
       if( (int)me->query("neili") < 300 )
-          return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨Ê¹ÓÃ³ö¡¸´Ì×Ö¾÷¡¹£¡\n");   
+          return notify_fail("ä½ çš„å†…åŠ›å¤ªå°‘äº†ï¼Œæ— æ³•ä½¿ç”¨å‡ºã€Œåˆºå­—è¯€ã€ï¼\n");   
                                                                                  
       if (me->query_skill_prepared("finger") != "canhe-zhi"
        || me->query_skill_mapped("finger") != "canhe-zhi")
-          return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸´Ì×Ö¾÷¡¹½øĞĞ¹¥»÷¡£\n");                                                                                 
+          return notify_fail("ä½ ç°åœ¨æ— æ³•ä½¿ç”¨ã€Œåˆºå­—è¯€ã€è¿›è¡Œæ”»å‡»ã€‚\n");                                                                                 
       
       if( me->query_temp("ci"))
-          return notify_fail("ÄãÕıÔÚÊ¹ÓÃ²ÎºÏÖ¸µÄÌØÊâ¹¥»÷¡¸´Ì×Ö¾÷¡¹£¡\n");
+          return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å‚åˆæŒ‡çš„ç‰¹æ®Šæ”»å‡»ã€Œåˆºå­—è¯€ã€ï¼\n");
        
-      msg = HIC"$NÍ»È»Ò»ÕÆÅÄÔÚ×Ô¼ºµÄµ¤ÌïÉÏ¼¤µ´È«ÉíµÄÄÚÁ¦ĞÎ³ÉÒ»¹É¡¸"HIR"½£Æø"HIC"¡¹£¬´ÓÓÒÊÖÄ´Ö¸¼¤Éä¶ø³ö£¬´ÌÏò$nµÄ¼ç²¿¡£\n" NOR;
+      msg = HIC"$Nçªç„¶ä¸€æŒæ‹åœ¨è‡ªå·±çš„ä¸¹ç”°ä¸Šæ¿€è¡å…¨èº«çš„å†…åŠ›å½¢æˆä¸€è‚¡ã€Œ"HIR"å‰‘æ°”"HIC"ã€ï¼Œä»å³æ‰‹æ‹‡æŒ‡æ¿€å°„è€Œå‡ºï¼Œåˆºå‘$nçš„è‚©éƒ¨ã€‚\n" NOR;
       message_vision(msg, me, target);   
-//      me->start_perform(4,"¡¸´Ì×Ö¾÷¡¹");                                                                
+//      me->start_perform(4,"ã€Œåˆºå­—è¯€ã€");                                                                
       if(random(me->query("combat_exp"))>target->query("combat_exp")/4){
     
-        msg = RED"$nµÄ¼ç¹Ø½ÚÒ»Ëá£¬Ë«±ÛÁ¢Ê±Ê§È¥Öª¾õ£¬¶¯µ¯²»µÃ¡£\n"NOR;
+        msg = RED"$nçš„è‚©å…³èŠ‚ä¸€é…¸ï¼ŒåŒè‡‚ç«‹æ—¶å¤±å»çŸ¥è§‰ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n"NOR;
       
         message_vision(msg, me, target); 
       
@@ -64,7 +64,7 @@ int perform(object me, object target)
         me->query_skill("finger")/20+2);
       }
       else {
-        msg = HIM"$nÔçÒÑ¿´³öÁË$NµÄÆóÍ¼£¬×İÉíÒ»Ô¾£¬Ãô½İµØ¶ã¹ıÁË$NµÄÕâÒ»ÕĞ£¡\n"NOR;          
+        msg = HIM"$næ—©å·²çœ‹å‡ºäº†$Nçš„ä¼å›¾ï¼Œçºµèº«ä¸€è·ƒï¼Œæ•æ·åœ°èº²è¿‡äº†$Nçš„è¿™ä¸€æ‹›ï¼\n"NOR;          
         message_vision(msg, me, target);                                        
         me->start_busy(random(2)+1);                          
         me->add("neili", - 50);
@@ -76,5 +76,5 @@ void remove_effect(object me, int improve)
 {
       me->add_temp("apply/dexerity", - improve);
       me->delete_temp("ci");
-//    tell_object(me, HIR"Äã¡¸´Ì×Ö¾÷¡¹ÓÃÍê, ÔËÆøÒ»ÖÜÁ³É«ºÃÁËĞí¶à¡£\n"NOR);
+//    tell_object(me, HIR"ä½ ã€Œåˆºå­—è¯€ã€ç”¨å®Œ, è¿æ°”ä¸€å‘¨è„¸è‰²å¥½äº†è®¸å¤šã€‚\n"NOR);
 }

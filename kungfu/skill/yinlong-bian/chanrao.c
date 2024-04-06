@@ -14,43 +14,43 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("²øÈÆ¾÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¼ ç»•è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if(me->query_skill("yinlong-bian",1) < 100)
-                return notify_fail("ÄãµÄ¾ÅÒõÒøÁú±Þ»¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ²øÈÆ¾÷¡£\n");
+                return notify_fail("ä½ çš„ä¹é˜´é“¶é¾™éž­è¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ç¼ ç»•è¯€ã€‚\n");
 
         if( !weapon 
         ||      weapon->query("skill_type") != "whip"
         ||      me->query_skill_mapped("whip") != "yinlong-bian" ) 
-                return notify_fail("ÄãÏÖÔÚÎÞ·¨Ê¹ÓÃ²øÈÆ¾÷¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ— æ³•ä½¿ç”¨ç¼ ç»•è¯€ã€‚\n");
 
         if( me->query("neili") < 1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if( target->is_busy() )
-        return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+        return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 
-	msg = HIG "$NÊ¹³ö²øÈÆ¾÷£¬±Þ×ÓÒ»»ÓÏò$nµÄË«ÍÈ¾íÈ¥£¡\n";
+	msg = HIG "$Nä½¿å‡ºç¼ ç»•è¯€ï¼Œéž­å­ä¸€æŒ¥å‘$nçš„åŒè…¿å·åŽ»ï¼\n";
 
         me->start_busy(random(2)+1);
         if((random(me->query("combat_exp")) > target->query("combat_exp")/3) 
           )
         {
-		msg += HIY "½á¹û$p±»$PÒ»¾í£¬Á½ÌõÍÈ±»½á½áÊµÊµµÄÀ¦ÆðÀ´£¬ÔÚµØÉÏÎÞ·¨ÅÀÆð¡£\n" NOR;
+		msg += HIY "ç»“æžœ$pè¢«$Pä¸€å·ï¼Œä¸¤æ¡è…¿è¢«ç»“ç»“å®žå®žçš„æ†èµ·æ¥ï¼Œåœ¨åœ°ä¸Šæ— æ³•çˆ¬èµ·ã€‚\n" NOR;
                 target->start_busy(2);
 		target->add_temp("apply/dodge", -skill/3);
 		target->add_temp("apply/parry", -skill/3);
 		target->add_temp("apply/armor", -skill/3);
 		me->set_temp("jiuyin/chan", 1);
-	        me->start_perform(1, "²øÈÆ¾÷");
+	        me->start_perform(1, "ç¼ ç»•è¯€");
 		remove_call_out("check_fight");
 	        call_out("check_fight", 1, me, target, weapon, skill);
 		remove_call_out("remove_effect");
 	        call_out("remove_effect", skill/20, me, target, weapon, skill);
         } 
         else {
-                msg += HIW "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ²øÈÆ¾÷£¬Éí×ÓÒ»Ô¾±ã¶ã¿ªÁË¡£\n" NOR;
-	        me->start_perform(8, "²øÈÆ¾÷");
+                msg += HIW "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ç¼ ç»•è¯€ï¼Œèº«å­ä¸€è·ƒä¾¿èº²å¼€äº†ã€‚\n" NOR;
+	        me->start_perform(8, "ç¼ ç»•è¯€");
                 me->start_busy(2);
         }
         message_vision(msg, me, target);
@@ -98,9 +98,9 @@ int check_fight(object me, object target, object weapon, int skill)
            }           
 
        target->start_busy(2);
-       me->start_perform(3, "²øÈÆ¾÷");
+       me->start_perform(3, "ç¼ ç»•è¯€");
        if (!random(3) && me->query_skill("jiuyin-zhengong", 1) > 150) {
-	   message_vision(HIB"$N³Ã×Å$nÊÖÃ¦½ÅÂÒÖ®¼Ê£¬ÃÍÈ»¹¥³öÒ»ÕÐ¡£\n"NOR, me, target);
+	   message_vision(HIB"$Nè¶ç€$næ‰‹å¿™è„šä¹±ä¹‹é™…ï¼ŒçŒ›ç„¶æ”»å‡ºä¸€æ‹›ã€‚\n"NOR, me, target);
 	   me->add_temp("apply/attack", skill);
 	   me->add_temp("apply/damage", skill*2);
 	   neili = me->query("neili");
@@ -123,7 +123,7 @@ void remove_effect(object me, object target, object weapon, int skill)
 	if (!me->query_temp("jiuyin/chan")) return;
         me->delete_temp("jiuyin/chan");
 	if (!target) return;
-	message_vision(HIW"$nË«ÍÈÂÔÒ»ÓÃ¾¢£¬ÕõÍÑÁË"+weapon->name()+"µÄÊø¸¿£¬´ÓµØÉÏÅÀÁËÆðÀ´¡£\n"NOR, me, target);
+	message_vision(HIW"$nåŒè…¿ç•¥ä¸€ç”¨åŠ²ï¼ŒæŒ£è„±äº†"+weapon->name()+"çš„æŸç¼šï¼Œä»Žåœ°ä¸Šçˆ¬äº†èµ·æ¥ã€‚\n"NOR, me, target);
 	target->add_temp("apply/dodge", skill/3);
 	target->add_temp("apply/parry", skill/3);
 	target->add_temp("apply/armor", skill/3);

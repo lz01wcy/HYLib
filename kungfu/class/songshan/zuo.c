@@ -8,9 +8,9 @@ string ask_book();
 string ask_book1();
 void create()
 {
-	set_name("×óÀäìø", ({ "zuo lengchan", "zuo" }) );
-	set("title", HIR"ÎåÔÀ½£ÅÉÃËÖ÷"HIY"áÔÉ½ÅÉµÚÊ®ÈıÕÆÃÅ"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("å·¦å†·ç¦…", ({ "zuo lengchan", "zuo" }) );
+	set("title", HIR"äº”å²³å‰‘æ´¾ç›Ÿä¸»"HIY"åµ©å±±æ´¾ç¬¬åä¸‰æŒé—¨"NOR);
+	set("gender", "ç”·æ€§");
 	set("class", "swordsman");
 	set("age", 55);
 	set("attitude", "peaceful");
@@ -90,14 +90,14 @@ void create()
 		(: exert_function, "powerup" :),
 	}) );
 	set("inquiry",([
-		"ÃØ¼®"	     : (: ask_book :),
-		"ÕÆÆ×"	     : (: ask_book :),
-		"´óáÔÑôÕÆÆ×" : (: ask_book :),
-		"½£Æ×"	     : (: ask_book1 :),
-		"áÔÉ½½£Æ×"   : (: ask_book1 :),
+		"ç§˜ç±"	     : (: ask_book :),
+		"æŒè°±"	     : (: ask_book :),
+		"å¤§åµ©é˜³æŒè°±" : (: ask_book :),
+		"å‰‘è°±"	     : (: ask_book1 :),
+		"åµ©å±±å‰‘è°±"   : (: ask_book1 :),
 	]));
 
-	create_family("áÔÉ½ÅÉ", 13, "ÕÆÃÅ");
+	create_family("åµ©å±±æ´¾", 13, "æŒé—¨");
 	setup();
 
 carry_object(__DIR__"kuojian")->wield();
@@ -110,7 +110,7 @@ void init()
 }
 void attempt_apprentice(object ob)
 {
-	command("say ÎÒÅÉÎªÎåÔÀÃËÖ÷£¡ÈëÎÒÃÅÀ´£¬¶¨Ğë¹â´óÎÒáÔÉ½Ò»ÅÉ¡£");
+	command("say æˆ‘æ´¾ä¸ºäº”å²³ç›Ÿä¸»ï¼å…¥æˆ‘é—¨æ¥ï¼Œå®šé¡»å…‰å¤§æˆ‘åµ©å±±ä¸€æ´¾ã€‚");
 	command("recruit " + ob->query("id"));
 }
 
@@ -118,28 +118,28 @@ string ask_book()
 {
 	object ob;
 	
-	if (this_player()->query("family/family_name")!="áÔÉ½ÅÉ")
+	if (this_player()->query("family/family_name")!="åµ©å±±æ´¾")
 		return RANK_D->query_respect(this_player()) +
-		"Óë±¾ÅÉºÁÎŞ¹Ï¸ğ£¬ÎÒÅÉµÄÎä¹¦µä¼®¿É²»ÄÜ½»¸øÄã¡£";
-	if (query("book_count") < 1) return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄÃØ¼®²»ÔÚ´Ë´¦¡£";
+		"ä¸æœ¬æ´¾æ¯«æ— ç“œè‘›ï¼Œæˆ‘æ´¾çš„æ­¦åŠŸå…¸ç±å¯ä¸èƒ½äº¤ç»™ä½ ã€‚";
+	if (query("book_count") < 1) return "ä½ æ¥æ™šäº†ï¼Œæœ¬æ´¾çš„ç§˜ç±ä¸åœ¨æ­¤å¤„ã€‚";
 	add("book_count", -1);
 	ob = new(__DIR__"songyang-zhangpu");
 	ob->move(this_player());
-	command("rumor "+this_player()->query("name")+"ÄÃµ½´óáÔÑôÕÆÆ×À²¡£\n");
-	return "ºÃ°É£¬Õâ±¾¡¸´óáÔÑôÕÆÆ×¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+	command("rumor "+this_player()->query("name")+"æ‹¿åˆ°å¤§åµ©é˜³æŒè°±å•¦ã€‚\n");
+	return "å¥½å§ï¼Œè¿™æœ¬ã€Œå¤§åµ©é˜³æŒè°±ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
 }
 
 string ask_book1()
 {
 	object ob;
 	
-	if (this_player()->query("family/family_name")!="áÔÉ½ÅÉ")
+	if (this_player()->query("family/family_name")!="åµ©å±±æ´¾")
 		return RANK_D->query_respect(this_player()) +
-		"Óë±¾ÅÉºÁÎŞ¹Ï¸ğ£¬ÎÒÅÉµÄÎä¹¦µä¼®¿É²»ÄÜ½»¸øÄã¡£";
-	if (query("book_count1") < 1) return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄÃØ¼®²»ÔÚ´Ë´¦¡£";
+		"ä¸æœ¬æ´¾æ¯«æ— ç“œè‘›ï¼Œæˆ‘æ´¾çš„æ­¦åŠŸå…¸ç±å¯ä¸èƒ½äº¤ç»™ä½ ã€‚";
+	if (query("book_count1") < 1) return "ä½ æ¥æ™šäº†ï¼Œæœ¬æ´¾çš„ç§˜ç±ä¸åœ¨æ­¤å¤„ã€‚";
 	add("book_count1", -1);
 	ob = new(__DIR__"sword_book4");
 	ob->move(this_player());
-	command("rumor "+this_player()->query("name")+"ÄÃµ½áÔÉ½½£Æ×À²¡£\n");
-	return "ºÃ°É£¬Õâ±¾¡¸áÔÉ½½£Æ×¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+	command("rumor "+this_player()->query("name")+"æ‹¿åˆ°åµ©å±±å‰‘è°±å•¦ã€‚\n");
+	return "å¥½å§ï¼Œè¿™æœ¬ã€Œåµ©å±±å‰‘è°±ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
 }

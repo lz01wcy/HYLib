@@ -1,4 +1,4 @@
-// jingang.c ½ğ¸ÕÓ¡
+// jingang.c é‡‘åˆšå°
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,17 +17,17 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸½ğ¸ÕÓ¡¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé‡‘åˆšå°ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("dashou-yin", 1);
 
         if (skill < 100)
-                return notify_fail("ÄãµÄ´óÊÖÓ¡ĞŞÎª²»¹», ²»ÄÜÊ¹ÓÃ¡¸½ğ¸ÕÓ¡¡¹£¡\n");
+                return notify_fail("ä½ çš„å¤§æ‰‹å°ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œé‡‘åˆšå°ã€ï¼\n");
 
         if (me->query("neili") < 150)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸½ğ¸ÕÓ¡¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œé‡‘åˆšå°ã€ï¼\n");
 
-        msg = HIY "$N" HIY "ÃæÈİ×¯ÖØ£¬ÉìÊÖÅÄ³ö£¬ÕıÊÇÃÜ×Ú¾øÑ§¡¸½ğ¸ÕÓ¡¡¹¡£\n" NOR;
+        msg = HIY "$N" HIY "é¢å®¹åº„é‡ï¼Œä¼¸æ‰‹æ‹å‡ºï¼Œæ­£æ˜¯å¯†å®—ç»å­¦ã€Œé‡‘åˆšå°ã€ã€‚\n" NOR;
 
         ap = me->query_skill("hand", 1) / 2 + skill;
 
@@ -42,13 +42,13 @@ int perform(object me, object target)
                 damage = 150 + skill / 2 + random(skill / 2);
    target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg += HIR "½á¹û$p" HIR "ÕĞ¼Ü²»¼°£¬±»$P" HIR
-                                           "ÕâÒ»ÏÂ´òµÃÆßÇÏÉúÑÌ£¬ÍÂÑªÁ¬Á¬¡£\n" NOR;
+                msg += HIR "ç»“æœ$p" HIR "æ‹›æ¶ä¸åŠï¼Œè¢«$P" HIR
+                                           "è¿™ä¸€ä¸‹æ‰“å¾—ä¸ƒçªç”ŸçƒŸï¼Œåè¡€è¿è¿ã€‚\n" NOR;
         } else
         {
                 me->add("neili",-40);
-                msg += CYN "¿ÉÊÇ$p" CYN "²»»Å²»Ã¦£¬ÇÉÃîµÄ¼Ü¿ªÁË$P"
-                       CYN "µÄ½ğ¸ÕÓ¡¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "ä¸æ…Œä¸å¿™ï¼Œå·§å¦™çš„æ¶å¼€äº†$P"
+                       CYN "çš„é‡‘åˆšå°ã€‚\n" NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

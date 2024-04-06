@@ -8,10 +8,10 @@ int do_join(string arg);
 
 void create()
 {
-	set_name("ÕÅµ­ÔÂ", ({ "zhang danyue", "zhang"}));
-	set("title", HIY"ÉñÁú½Ì"BLU"ºÚÁúÊ¹"NOR);
-	set("long", "ÕâÊÇÒ»¸öºÚÒÂ´óºº, Á³É«´ó±ä, Éí×Ó·¢²ü, ËÆºõ¿Ö¾åÒÑ¼«.\n" );
-	set("gender", "ÄÐÐÔ");
+	set_name("å¼ æ·¡æœˆ", ({ "zhang danyue", "zhang"}));
+	set("title", HIY"ç¥žé¾™æ•™"BLU"é»‘é¾™ä½¿"NOR);
+	set("long", "è¿™æ˜¯ä¸€ä¸ªé»‘è¡£å¤§æ±‰, è„¸è‰²å¤§å˜, èº«å­å‘é¢¤, ä¼¼ä¹Žææƒ§å·²æž.\n" );
+	set("gender", "ç”·æ€§");
 	set("age", 44);
 	set("str", 35);
 	set("dex", 20);
@@ -41,17 +41,17 @@ void create()
 	map_skill("unarmed", "xianglong-zhang");
 	map_skill("parry", "xianglong-zhang");
 
-	create_family("ÉñÁú½Ì",2,"µÜ×Ó");
+	create_family("ç¥žé¾™æ•™",2,"å¼Ÿå­");
 
 	set("neili", 1000); 
 	set("max_neili", 1000);
 	set("jiali", 100);
         set("inquiry", ([
-		"ÉñÁú½Ì" :  "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"Èë½Ì" :  "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"ºé°²Í¨" :  "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ÐÄ²ÅºÃ¡£\n",
-		"½ÌÖ÷" :  "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ÐÄ²ÅºÃ¡£\n",
-		"¿ÚºÅ" : "ÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥!\n",
+		"ç¥žé¾™æ•™" :  "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥žé¾™æ•™çš„(join shenlongjiao).\n",
+		"å…¥æ•™" :  "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥žé¾™æ•™çš„(join shenlongjiao).\n",
+		"æ´ªå®‰é€š" :  "æ•™ä¸»è„¾æ°”ä¸å¥½,è¦è®¨ä»–æ¬¢å¿ƒæ‰å¥½ã€‚\n",
+		"æ•™ä¸»" :  "æ•™ä¸»è„¾æ°”ä¸å¥½,è¦è®¨ä»–æ¬¢å¿ƒæ‰å¥½ã€‚\n",
+		"å£å·" : "ä¸‡å¹´ä¸è€!æ°¸äº«ä»™ç¦!å¯¿ä¸Žå¤©é½!æ–‡æ­¦ä»åœ£!\n",
 	]) );
 	setup();
 	carry_object("/clone/misc/cloth")->wear();
@@ -89,7 +89,7 @@ void greeting(object ob)
 
 void attempt_apprentice(object ob)
 {
-	command("say Äã×ß¿ª! ±ð·³ÎÒ! ");
+	command("say ä½ èµ°å¼€! åˆ«çƒ¦æˆ‘! ");
 	return;
 }
 #include "/kungfu/class/shenlong/shenlong.h"; 

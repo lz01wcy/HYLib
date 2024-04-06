@@ -1,5 +1,5 @@
 // Last Modified by winder on May. 29 2001
-// shaolin-leg.c ÉÙÁÖµ¯ÍÈ ÓëÉÙÁÖÄÏÈ­»¥±¸
+// shaolin-leg.c å°‘æ—å¼¹è…¿ ä¸å°‘æ—å—æ‹³äº’å¤‡
 
 #include <ansi.h>
 inherit SKILL;
@@ -7,29 +7,29 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([	"action" : "$NÒ»Ê½"BLU"¡¸ÂäÑàÊ½¡¹"NOR"£¬ÓÒÍÈÖ§µØ£¬×óÍÈ»­»¡£¬Ö±Ìß$nµÄÍ·²¿",
+([	"action" : "$Nä¸€å¼"BLU"ã€Œè½ç‡•å¼ã€"NOR"ï¼Œå³è…¿æ”¯åœ°ï¼Œå·¦è…¿ç”»å¼§ï¼Œç›´è¸¢$nçš„å¤´éƒ¨",
 	"lvl"    : 0,
-	"skill_name" : "ÂäÑàÊ½"
+	"skill_name" : "è½ç‡•å¼"
 ]),
-([	"action" : "$NÉíĞÎÒ»ÉÁ£¬ÒÑ´Ó$nÉí±ßÂÓ¹ı£¬ÓÒ×ã·´Ìß£¬ÕıÊÇÒ»ÕĞ"HIW"¡¸¸§Æ½Ê½¡¹"NOR"£¬õßÏò$nµÄ±³ĞÄ",
+([	"action" : "$Nèº«å½¢ä¸€é—ªï¼Œå·²ä»$nèº«è¾¹æ è¿‡ï¼Œå³è¶³åè¸¢ï¼Œæ­£æ˜¯ä¸€æ‹›"HIW"ã€ŒæŠšå¹³å¼ã€"NOR"ï¼Œè¸¹å‘$nçš„èƒŒå¿ƒ",
 	"lvl"    : 20,
-	"skill_name" : "¸§Æ½Ê½"
+	"skill_name" : "æŠšå¹³å¼"
 ]),
-([	"action" : "$NÉíÌå°ë¶×£¬ÓÒ×ã»­³ö¸ö°ëÔ²£¬Ê¹³ö"HIC"¡¸×·ÔÂÊ½¡¹"NOR"£¬É¨Ïò$nµÄÏ¥²¿",
+([	"action" : "$Nèº«ä½“åŠè¹²ï¼Œå³è¶³ç”»å‡ºä¸ªåŠåœ†ï¼Œä½¿å‡º"HIC"ã€Œè¿½æœˆå¼ã€"NOR"ï¼Œæ‰«å‘$nçš„è†éƒ¨",
 	"lvl"    : 40,
-	"skill_name" : "×·ÔÂÊ½"
+	"skill_name" : "è¿½æœˆå¼"
 ]),
-([	"action" : "$NÉÏÉíÎ¢²à£¬×ó×ãÙ¿µØµ¯³ö£¬ÌßÏò$nµÄÍ·²¿£¬ñÉ²¿£¬ÕıÊÇÒ»Ê½"GRN"¡¸Á¬»·Ê½¡¹"NOR"",
+([	"action" : "$Nä¸Šèº«å¾®ä¾§ï¼Œå·¦è¶³å€åœ°å¼¹å‡ºï¼Œè¸¢å‘$nçš„å¤´éƒ¨ï¼Œè£†éƒ¨ï¼Œæ­£æ˜¯ä¸€å¼"GRN"ã€Œè¿ç¯å¼ã€"NOR"",
 	"lvl"    : 60,
-	"skill_name" : "Á¬»·Ê½"
+	"skill_name" : "è¿ç¯å¼"
 ]),
-([	"action" : "$NÓÒ×ã¶ÀÁ¢£¬×ó×ãËæÉíĞÎ·´×ªºáÉ¨£¬ÓÖ×ó×ãÁ¢¶¨£¬ÓÒ×ãºáÉ¨ÏòÇ°£¬Ò»ÕĞ"HIG"¡¸É¨Ò¶Ê½¡¹"NOR"£¬ÌßÏò$nµÄ$l",
+([	"action" : "$Nå³è¶³ç‹¬ç«‹ï¼Œå·¦è¶³éšèº«å½¢åè½¬æ¨ªæ‰«ï¼Œåˆå·¦è¶³ç«‹å®šï¼Œå³è¶³æ¨ªæ‰«å‘å‰ï¼Œä¸€æ‹›"HIG"ã€Œæ‰«å¶å¼ã€"NOR"ï¼Œè¸¢å‘$nçš„$l",
 	"lvl"    : 80,
-	"skill_name" : "É¨Ò¶Ê½"
+	"skill_name" : "æ‰«å¶å¼"
 ]),
-([	"action" : "$NÔ¾ÆğÔÚ°ë¿Õ£¬Ë«×ãÂÒÎè£¬´øÆğÎŞÊı¾¢·ç£¬"HIY"¡¸ÅÌÁúÊ½¡¹"NOR"£¡Ñ¸½İÎŞÂ×µØ¾íÏò$n",
+([	"action" : "$Nè·ƒèµ·åœ¨åŠç©ºï¼ŒåŒè¶³ä¹±èˆï¼Œå¸¦èµ·æ— æ•°åŠ²é£ï¼Œ"HIY"ã€Œç›˜é¾™å¼ã€"NOR"ï¼è¿…æ·æ— ä¼¦åœ°å·å‘$n",
 	"lvl"    : 100,
-	"skill_name" : "ÅÌÁúÊ½"
+	"skill_name" : "ç›˜é¾™å¼"
 ]),
 });
 
@@ -39,17 +39,17 @@ int valid_combine(string combo) { return combo=="shaolin-cuff"; }
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Ñ§ÉÙÁÖµ¯ÍÈÊ±ÊÖÀï²»ÄÜÄÃÎäÆ÷¡£\n");
+		return notify_fail("å­¦å°‘æ—å¼¹è…¿æ—¶æ‰‹é‡Œä¸èƒ½æ‹¿æ­¦å™¨ã€‚\n");
 	if ((int)me->query_skill("zhanzhuang-gong", 1) < 1)
-		return notify_fail("ÄãµÄÕ¾×®¹¦»ğºò²»¹»£¬ÎŞ·¨Ñ§ÉÙÁÖµ¯ÍÈ¡£\n");
+		return notify_fail("ä½ çš„ç«™æ¡©åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦å°‘æ—å¼¹è…¿ã€‚\n");
 	return 1;
 }
 int practice_skill(object me)
 {
 	if ((int)me->query("qi") < 30)
-		return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÉÙÁÖµ¯ÍÈ¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒå°‘æ—å¼¹è…¿ã€‚\n");
 	me->receive_damage("qi", 20);
 	me->add("neili", -10);
 	return 1;
@@ -76,17 +76,17 @@ mapping query_action(object me, object weapon)
 	for(i = ttl; i > 0; i--)
 		if(lvl > action[i-1]["lvl"])
 		{
-			seq = i; /* »ñµÃÕĞÊıĞòºÅÉÏÏŞ */
+			seq = i; /* è·å¾—æ‹›æ•°åºå·ä¸Šé™ */
 			break;
 		}
-	seq = random(seq);       /* Ñ¡Ôñ³öÊÖÕĞÊıĞòºÅ */
+	seq = random(seq);       /* é€‰æ‹©å‡ºæ‰‹æ‹›æ•°åºå· */
 	return ([
 		"action"      : action[seq]["action"],
 		"dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
 		"parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
 		"damage"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
 		"force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
-		"damage_type" : random(2) ? "ÄÚÉË" : "ğöÉË",
+		"damage_type" : random(2) ? "å†…ä¼¤" : "ç˜€ä¼¤",
 	]);
 }
 int learn_bonus() { return 30; }
@@ -96,13 +96,13 @@ int power_point(object me) { return 1.0; }
 
 int help(object me)
 {
-	write(HIC"\nÉÙÁÖµ¯ÍÈ£º"NOR"\n");
+	write(HIC"\nå°‘æ—å¼¹è…¿ï¼š"NOR"\n");
 	write(@HELP
 
-    µ¯ÍÈÊÇÄÏÉÙÁÖÈëÃÅÍÈ·¨£¬×¢ÖØÍÈ·¨Á·Ï°¡£
+    å¼¹è…¿æ˜¯å—å°‘æ—å…¥é—¨è…¿æ³•ï¼Œæ³¨é‡è…¿æ³•ç»ƒä¹ ã€‚
 
-	Ñ§Ï°ÒªÇó£º
-		Õ¾×®¹¦
+	å­¦ä¹ è¦æ±‚ï¼š
+		ç«™æ¡©åŠŸ
 HELP
 	);
 	return 1;

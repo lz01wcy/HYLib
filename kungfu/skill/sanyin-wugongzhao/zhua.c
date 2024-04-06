@@ -1,11 +1,11 @@
-// zhua.c ÈýÒõ¶¾×¦
+// zhua.c ä¸‰é˜´æ¯’çˆª
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-#define ZHUA "¡¸" HIG "ÈýÒõ¶¾×¦" NOR "¡¹"
+#define ZHUA "ã€Œ" HIG "ä¸‰é˜´æ¯’çˆª" NOR "ã€"
 
 string final(object me, object target);
 
@@ -20,30 +20,30 @@ int perform(object me, object target)
 	if (! target) target = offensive_target(me);
 
 	if (! target || ! me->is_fighting(target))
-		return notify_fail(ZHUA "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail(ZHUA "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if ((int)me->query_skill("sanyin-wugongzhao", 1) < 180)
-		return notify_fail("ÄãµÄÈýÒõòÚò¼×¦²»¹»æµÊì£¬ÎÞ·¨Ê¹ÓÃ" ZHUA "¡£\n");
+		return notify_fail("ä½ çš„ä¸‰é˜´èœˆèš£çˆªä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿ç”¨" ZHUA "ã€‚\n");
 	if ((int)me->query_skill("huagong-dafa", 1) < 50)
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì£¬ÎÞ·¨Ê¹ÓÃ" ZHUA "¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿ç”¨" ZHUA "ã€‚\n");
 
 
         if (me->query("neili") < 150)
-                return notify_fail("ÄãÕæÆø²»×ã£¬ÎÞ·¨Ê©Õ¹" ZHUA "¡£\n");
+                return notify_fail("ä½ çœŸæ°”ä¸è¶³ï¼Œæ— æ³•æ–½å±•" ZHUA "ã€‚\n");
  
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-	msg = HIR "$N" HIR "Í»È»Ò»Éù¹Ö½Ð£¬ÝëµÄÃæ³àÈçÑª£¬Ëæ¼´ÊÖÍóÒ»¶¶£¬×¥Ïò$n"
-              HIR "µÄÒªº¦¡£\n" NOR;
+	msg = HIR "$N" HIR "çªç„¶ä¸€å£°æ€ªå«ï¼Œè“¦çš„é¢èµ¤å¦‚è¡€ï¼Œéšå³æ‰‹è…•ä¸€æŠ–ï¼ŒæŠ“å‘$n"
+              HIR "çš„è¦å®³ã€‚\n" NOR;
 
         ap = me->query("combat_exp");
         dp = target->query("combat_exp");
 	if (ap  + random(ap) > dp)
         {
                 damage = me->query_skill("sanyin-wugongzhao",1)*2  + random(me->query_skill("claw",1));
-        msg += HIR "$p" HIR "¾ª»ÅÊ§´ë£¬Á¬Ã¦ºóÍË£¬È»¶øÃ»"
-               "ÄÜ±Ü¿ª£¬±»$P" HIR "ÕâÒ»×¦×¥µÃÏÊÑªÁÜÀì£¡\n" NOR;
+        msg += HIR "$p" HIR "æƒŠæ…Œå¤±æŽªï¼Œè¿žå¿™åŽé€€ï¼Œç„¶è€Œæ²¡"
+               "èƒ½é¿å¼€ï¼Œè¢«$P" HIR "è¿™ä¸€çˆªæŠ“å¾—é²œè¡€æ·‹æ¼“ï¼\n" NOR;
         if (target->query("qi") > damage)
         {
         target->add("qi",-damage);
@@ -55,8 +55,8 @@ int perform(object me, object target)
                 me->start_busy(2);
 	} else
         {
-		msg += HIR "²»¹ý$p" HIR "¿´ÆÆÁË$P" HIR "µÄÕÐÊ½£¬"
-                       "ÄýÉñÕÐ¼Ü£¬µ²×¡ÁË$P" HIR "µÄ¶¾ÕÐ¡£\n" NOR;
+		msg += HIR "ä¸è¿‡$p" HIR "çœ‹ç ´äº†$P" HIR "çš„æ‹›å¼ï¼Œ"
+                       "å‡ç¥žæ‹›æž¶ï¼ŒæŒ¡ä½äº†$P" HIR "çš„æ¯’æ‹›ã€‚\n" NOR;
 		me->start_busy(2);
 	}
 	message_combatd(msg, me, target);

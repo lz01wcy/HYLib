@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/baoxiang.c  ±¦Ïó
+// /kungfu/class/xueshan/baoxiang.c  å®è±¡
 // by secret
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("±¦Ïó", ({ "bao xiang", "bao", "xiang" }));
+        set_name("å®è±¡", ({ "bao xiang", "bao", "xiang" }));
         set("long",@LONG
-Ò»¸ö¼«¸ß¼«ÊİµÄÉ®ÈË£¬Á©ÑÛĞ×Ã¢ËÄÉä¡£´ËÈËÔÚÑªµ¶ÀÏ×æÃÅÏÂ£¬×îÊÇĞÄºİÊÖÀ±¡£
+ä¸€ä¸ªæé«˜æç˜¦çš„åƒ§äººï¼Œä¿©çœ¼å‡¶èŠ’å››å°„ã€‚æ­¤äººåœ¨è¡€åˆ€è€ç¥–é—¨ä¸‹ï¼Œæœ€æ˜¯å¿ƒç‹ æ‰‹è¾£ã€‚
 LONG
         );
-        set("title",HIR"Ñªµ¶ÃÅµÚÎå´úµÜ×Ó"NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIR"è¡€åˆ€é—¨ç¬¬äº”ä»£å¼Ÿå­"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -48,7 +48,7 @@ LONG
         map_skill("parry", "xue-dao");
         map_skill("blade", "xue-dao");
 
-        create_family("Ñ©É½ËÂ", 5, "µÜ×Ó");
+        create_family("é›ªå±±å¯º", 5, "å¼Ÿå­");
         set("class", "bonze");
 
         setup();
@@ -60,24 +60,24 @@ LONG
 
 void attempt_apprentice(object ob)
 {
-        if ((string)ob->query("gender") != "ÄĞĞÔ")
+        if ((string)ob->query("gender") != "ç”·æ€§")
         {
-                command("say ÎÒ²»ÊÕÅ®Í½µÜ¡£\n");
+                command("say æˆ‘ä¸æ”¶å¥³å¾’å¼Ÿã€‚\n");
                 return;
         }
         if (ob->query("shen") > 0)
         {
-                command("say ÎÒÕıÏëÕÒÄãÃÇÏÀÒåµÀµÄ»ŞÆø¡£\n");
+                command("say æˆ‘æ­£æƒ³æ‰¾ä½ ä»¬ä¾ ä¹‰é“çš„æ™¦æ°”ã€‚\n");
                 this_object()->kill_ob(ob);
                 return;
         }
         if ((int)ob->query_skill("longxiang", 1) < 30)
         {
-                command("say ÈëÎÒÑªµ¶ÃÅ£¬ĞŞÏ°ÁúÏó¹¦·¨ÊÇÊ×ÒªµÄ¡£\n");
+                command("say å…¥æˆ‘è¡€åˆ€é—¨ï¼Œä¿®ä¹ é¾™è±¡åŠŸæ³•æ˜¯é¦–è¦çš„ã€‚\n");
                 return;
         }
         command("haha");
         command("recruit " + ob->query("id"));
 
-        ob->set("title", HIR "Ñªµ¶ÃÅµÚÁù´úµÜ×Ó" NOR);
+        ob->set("title", HIR "è¡€åˆ€é—¨ç¬¬å…­ä»£å¼Ÿå­" NOR);
 }

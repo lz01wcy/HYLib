@@ -1,4 +1,4 @@
-// honghua-ling.c ºì»¨Áî
+// honghua-ling.c çº¢èŠ±ä»¤
 // Last Modified by winder on Sep. 12 2001
 
 #include <ansi.h>
@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIR"ºì»¨Áî"NOR, ({ "honghua ling","ling"}) );
+	set_name(HIR"çº¢èŠ±ä»¤"NOR, ({ "honghua ling","ling"}) );
 	set_weight(100);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö§");
-		set("long", HIG"ÕâÊÇÒ»¿éÂÌÓÍÓÍµÄÖñÅÆ£¬ÉÏÊéºì»¨ÁîÈı¸ö´ó×Ö£¬ÊÇºì»¨»áÖÁ¸ßÎŞÉÏµÄÁîÅÆ¡£\n"NOR);
+		set("unit", "æ”¯");
+		set("long", HIG"è¿™æ˜¯ä¸€å—ç»¿æ²¹æ²¹çš„ç«¹ç‰Œï¼Œä¸Šä¹¦çº¢èŠ±ä»¤ä¸‰ä¸ªå¤§å­—ï¼Œæ˜¯çº¢èŠ±ä¼šè‡³é«˜æ— ä¸Šçš„ä»¤ç‰Œã€‚\n"NOR);
 		set("value", 8000);
 		set("material", "iron");
 	}

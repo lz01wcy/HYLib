@@ -6,8 +6,8 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("ÌìËÉµÀÈË", ({ "tiansong daoren", "daoren", "tiansong" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("å¤©æ¾é“äºº", ({ "tiansong daoren", "daoren", "tiansong" }) );
+	set("gender", "ç”·æ€§");
 	set("class", "taoist");
 	set("age", 45);
 	set("attitude", "peaceful");
@@ -51,7 +51,7 @@ void create()
 		(: exert_function, "recover" :),
 	}) );
 
-	create_family("Ì©É½ÅÉ", 13, "µÜ×Ó");
+	create_family("æ³°å±±æ´¾", 13, "å¼Ÿå­");
 	setup();
 
 	carry_object(__DIR__"houjian")->wield();
@@ -76,19 +76,19 @@ void greeting(object ob)
 	string family;
 
 	family=(string)ob->query("family/family_name");
-	if(family!="Ì©É½ÅÉ")
-		command("say "+RANK_D->query_respect(ob)+ "²»ÒªÔÚÌ©É½ÉÏÂÒ×ª¡£");
+	if(family!="æ³°å±±æ´¾")
+		command("say "+RANK_D->query_respect(ob)+ "ä¸è¦åœ¨æ³°å±±ä¸Šä¹±è½¬ã€‚");
 	else
-		command("say "+ob->query("name")+"Òª¶à¼ÓÅ¬Á¦£¬Îª±¾ÅÉÕù¹â°¡¡£");
+		command("say "+ob->query("name")+"è¦å¤šåŠ åŠªåŠ›ï¼Œä¸ºæœ¬æ´¾äº‰å…‰å•Šã€‚");
 }
 
 void attempt_apprentice(object ob)
 {
 	if((int)ob->query("shen")<10000)
-		command("say ÎÒÌ©É½ÅÉµÜ×Ó¶¼ÊÇÐÐÏÀÕÌÒåÖ®±²£¬"+ RANK_D->query_respect(ob)+"»¹×öµÄ²»¹»°¡¡£");
+		command("say æˆ‘æ³°å±±æ´¾å¼Ÿå­éƒ½æ˜¯è¡Œä¾ ä»—ä¹‰ä¹‹è¾ˆï¼Œ"+ RANK_D->query_respect(ob)+"è¿˜åšçš„ä¸å¤Ÿå•Šã€‚");
 	else
 	{
-		command("say ºÃ°¡£¬ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+		command("say å¥½å•Šï¼Œé‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
 		command("recruit " + ob->query("id") );
 	}
 }

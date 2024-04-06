@@ -9,24 +9,24 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÃ÷Óñ¹¦»Ö¸´×Ô¼ºµÄÆøÑª¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨æ˜ŽçŽ‰åŠŸæ¢å¤è‡ªå·±çš„æ°”è¡€ã€‚\n");
 
         if ((int)me->query("neili") < 1000)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼");
 
         if ((int)me->query_skill("mingyu-gong", 1) < 160)
-                return notify_fail("ÄãµÄÃ÷Óñ¹¦µÈ¼¶²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ˜ŽçŽ‰åŠŸç­‰çº§ä¸å¤Ÿã€‚\n");
          if((int)me->query_skill("bingxue-xinfa",1) < 150)
-                return notify_fail("ÄãµÄ±ùÑ©ÐÄ·¨ÐÞÎª²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n"); 
         if ((int)me->query_temp("qizu"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("mingyu-gong");
 
         me->add("neili", -100);
 
-        message_combatd(HIC "$N" HIC "ÔËÆð¡¸Æø×ã¡¹Ææ¹¦£¬"
-                        "ÑÛÖÐÉÁ¹ýÒ»Æ¬ÇàÃ¢£¬Ëæ¼´»Ö¸´Õý³£\n" NOR, me);
+        message_combatd(HIC "$N" HIC "è¿èµ·ã€Œæ°”è¶³ã€å¥‡åŠŸï¼Œ"
+                        "çœ¼ä¸­é—ªè¿‡ä¸€ç‰‡é’èŠ’ï¼Œéšå³æ¢å¤æ­£å¸¸\n" NOR, me);
 
         me->set_temp("qizu", 1);
 

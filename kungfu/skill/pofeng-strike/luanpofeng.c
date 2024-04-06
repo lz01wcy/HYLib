@@ -13,19 +13,19 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÂÒÆÃ·ç£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»ä¹±æ³¼é£Žï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon"))
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-100);
 
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("pofeng-strike",1) / 10;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = HIR  "$NË«ÕÆÑªºì£¬ÎåÖ¸ÕÀ¿ª£¬ÎÞÊýµÀÕÆ·çÆÆ¿Õ¶ø³ö£¬ÒþÒþ´ø×ÅÀ×ÉùÑ¸¼²ÎÞ±ÈµØ»÷Ïò$n£¡" NOR;
+	msg = HIR  "$NåŒæŽŒè¡€çº¢ï¼Œäº”æŒ‡ç»½å¼€ï¼Œæ— æ•°é“æŽŒé£Žç ´ç©ºè€Œå‡ºï¼Œéšéšå¸¦ç€é›·å£°è¿…ç–¾æ— æ¯”åœ°å‡»å‘$nï¼" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

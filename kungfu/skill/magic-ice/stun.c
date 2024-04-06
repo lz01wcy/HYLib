@@ -1,4 +1,4 @@
-// ÉÁµçÊõ
+// é—ªç”µæœ¯
 
 #include <ansi.h>
 
@@ -15,15 +15,15 @@ int thunderspell(object me, object target)
 
 	spells = me->query_skill("spells");
 	if((int)me->query("neili")< 1100)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
-        msg = HIM"   ºä(***¡ú)Â¡  \n"NOR;
-        msg += HIC"\nÒ»µÀ¿ñÀ×¹¥ÆÆÌì¿Õ´òÏò$n"HIC"!!\n"NOR;
+        msg = HIM"   è½°(***â†’)éš†  \n"NOR;
+        msg += HIC"\nä¸€é“ç‹‚é›·æ”»ç ´å¤©ç©ºæ‰“å‘$n"HIC"!!\n"NOR;
 
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp")/3)
         {
                 damage = (int)me->query_skill("magic-ice", 1);
-//¶ÔÆøÊôĞÔÄ¿±êÎŞ×÷ÓÃ
+//å¯¹æ°”å±æ€§ç›®æ ‡æ— ä½œç”¨
        if ((int)target->query("magicgift")==3)
 {
 damagic=800+damage;
@@ -31,7 +31,7 @@ damagic=800+damage;
 damagic=800+damage;
                 target->receive_wound("qi", damagic);
 }
-//¶ÔÍÁÊôĞÔÄ¿±êÇ¿´ó
+//å¯¹åœŸå±æ€§ç›®æ ‡å¼ºå¤§
 else  if ((int)target->query("magicgift")==4)
 {
 damagic=2800+damage*5;
@@ -46,13 +46,13 @@ target->receive_damage("qi", 900+damage*3);
 target->receive_wound("qi", 900+damage);
 }
 
-        msg += HIR"$n"HIR"µÄ¸½½üÒ»Æ¬µçÉÁÀ×Ãù!!\n"NOR;
+        msg += HIR"$n"HIR"çš„é™„è¿‘ä¸€ç‰‡ç”µé—ªé›·é¸£!!\n"NOR;
                 target->start_busy(1);
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
         } else
         {
-        msg += HIG"$n"HIG"·ÉÉíÔ¾Æğ£¬ÌÓ¹ıÁËÒ»ÄÑ¡£\n"NOR;
+        msg += HIG"$n"HIG"é£èº«è·ƒèµ·ï¼Œé€ƒè¿‡äº†ä¸€éš¾ã€‚\n"NOR;
 		message_combatd(msg, me, target);
         }
 
@@ -66,7 +66,7 @@ if (target->query("neili") < 1)target->set("neili",1);
 if (target->query("max_neili") < 1)target->set("max_neili",0);
 me->add("neili",-450);
 if (wizardp(me))
-tell_object(me, "»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "åŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 
 	return 1;
 	
@@ -79,27 +79,27 @@ int perform(object me, object target)
 	int	i;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIC"¡¸¿ñÀ×Êõ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIC"ã€Œç‹‚é›·æœ¯ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 3000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõĞ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°ç©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-ice",1)< 400)
-	return notify_fail("ÄãµÄÆøÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ°”ç³»é­”æ³•å¤ªå·®äº†ï¼\n");
 
 
-	msg = HIC "$N"HIC"ÓÃÊÖÔÚÌì¿Õ»®ÁËÒ»¸öÎåÃ¢ĞÇ£¬¿ÚÖĞà«à«µØÄîÖøÖäÎÄ£¬\n" NOR;
-       msg += HIC"$N"HIC"Äîµ½ Ö¥£®°¬·ò£®»ùË¹£¬±³¸º×ÅÉñÁéÖ®Ñª¡¢ÃËÔ¼ºÍ¼ÀÌ³£¬ÎÒÒÔÊ¥ÁéÖ®ÃûÃüÁîÂäÀ×°É!!\n"NOR;
-       msg += HIC"$N"HIC"Äîµ½  ºğ½Ğ°É£¬À×µÄ¾«Áé°¡£¬´©Í¸°É£¬ÉÏÌìµÄÉÁµç°¡!\n"NOR;
-       msg += HIC"$N"HIC"Äîµ½  ³äÂú¶·Ö¾µÄÈË£¬Æ¾×ÅÊÖÖĞÖ®½££¬°ÑÎÒËùÓĞµÄ·ßÅ­¶¼·¢Ğ¹³öÀ´°É£¡£¡£¡£¡£¡!\n"NOR;
-       msg += HIC"Í»È»±äµÃÆáºÚµÄÌì¿Õ£¬¶Ô×Å$n"HIC"Ëù´¦µÄµØ·½ÂäÏÂÁË´óÁ¿µÄ¿ñÀ×£¡\n"NOR;
-       msg += HIR"  ¡¸¿ñÀ×Êõ¡¹ \n"NOR;
+	msg = HIC "$N"HIC"ç”¨æ‰‹åœ¨å¤©ç©ºåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œ\n" NOR;
+       msg += HIC"$N"HIC"å¿µåˆ° èŠï¼è‰¾å¤«ï¼åŸºæ–¯ï¼ŒèƒŒè´Ÿç€ç¥çµä¹‹è¡€ã€ç›Ÿçº¦å’Œç¥­å›ï¼Œæˆ‘ä»¥åœ£çµä¹‹åå‘½ä»¤è½é›·å§!!\n"NOR;
+       msg += HIC"$N"HIC"å¿µåˆ°  å¼å«å§ï¼Œé›·çš„ç²¾çµå•Šï¼Œç©¿é€å§ï¼Œä¸Šå¤©çš„é—ªç”µå•Š!\n"NOR;
+       msg += HIC"$N"HIC"å¿µåˆ°  å……æ»¡æ–—å¿—çš„äººï¼Œå‡­ç€æ‰‹ä¸­ä¹‹å‰‘ï¼ŒæŠŠæˆ‘æ‰€æœ‰çš„æ„¤æ€’éƒ½å‘æ³„å‡ºæ¥å§ï¼ï¼ï¼ï¼ï¼!\n"NOR;
+       msg += HIC"çªç„¶å˜å¾—æ¼†é»‘çš„å¤©ç©ºï¼Œå¯¹ç€$n"HIC"æ‰€å¤„çš„åœ°æ–¹è½ä¸‹äº†å¤§é‡çš„ç‹‚é›·ï¼\n"NOR;
+       msg += HIR"  ã€Œç‹‚é›·æœ¯ã€ \n"NOR;
 	message_vision(msg, me,target);
 	env = environment(me);
         inv = all_inventory(env);

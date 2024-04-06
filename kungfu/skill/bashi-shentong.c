@@ -1,4 +1,4 @@
-// bashi-shentong.c °ËÊ¶ÉñÍ¨
+// bashi-shentong.c å…«è¯†ç¥žé€š
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -13,7 +13,7 @@ int valid_learn(object me)
 {
     if( (int)me->query_skill("buddhism",1) < 10
     ||(int)me->query_skill("buddhism",1) <= (int)me->query_skill("bashi-shentong",1) )
-    return notify_fail("ÄãµÄ·ð·¨ÐÞÎª»¹²»¹»¸ßÉî£¬ÎÞ·¨Ñ§Ï°°ËÊ¶ÉñÍ¨¡£\n");
+    return notify_fail("ä½ çš„ä½›æ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ å…«è¯†ç¥žé€šã€‚\n");
     return 1;
 }
 
@@ -27,20 +27,20 @@ int practice_skill(object me)
     object bug;
 
     if( (int)me->query("jingli") < 10)
-    return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 
     if( (int)me->query("jing") < 35 )
-   return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ¡£\n");
+   return notify_fail("ä½ çš„ç²¾ç¥žæ— æ³•é›†ä¸­ã€‚\n");
 
     me->add("jingli", -5);
     me->receive_damage("jing", 30);
 
-    message_vision(HIY"$N±ÕÄ¿ÄýÉñ£¬ÉñÓÎÌ«Ðé£¬¿ªÊ¼ÑÐÏ°°ËÊ¶ÉñÍ¨¡­¡­\n"NOR,me);
+    message_vision(HIY"$Né—­ç›®å‡ç¥žï¼Œç¥žæ¸¸å¤ªè™šï¼Œå¼€å§‹ç ”ä¹ å…«è¯†ç¥žé€šâ€¦â€¦\n"NOR,me);
     if( random((int)me->query("jing")) < 10)
     {
-    tell_object(me,HIC"Í»È»£¡Ò»Õó¿ñ·ç¹ÎÀ´£¬½«ÄãµÄÔªÉñ´µÂäÔÆÍ·£¡ÍÛ¡«ÍÛ¡ÖÍÛ£¡\n"NOR);
-    tell_room(environment(me),HIY"Ìì¿ÕÖÐºöÈ»¡°à²¡±µØÂäÏÂÀ´Ò»ÍÅÎïÊÂ£¬ÓÖºÃÏóÊ²
-Ã´¶¼Ã»ÓÐ£¬È´¼û"+me->query("name")+"¿ªÊ¼¿ÚÍÂ°×Ä­ÁË¡£ \n"NOR,me);
+    tell_object(me,HIC"çªç„¶ï¼ä¸€é˜µç‹‚é£Žåˆ®æ¥ï¼Œå°†ä½ çš„å…ƒç¥žå¹è½äº‘å¤´ï¼å“‡ï½žå“‡â‰ˆå“‡ï¼\n"NOR);
+    tell_room(environment(me),HIY"å¤©ç©ºä¸­å¿½ç„¶â€œå—–â€åœ°è½ä¸‹æ¥ä¸€å›¢ç‰©äº‹ï¼Œåˆå¥½è±¡ä»€
+ä¹ˆéƒ½æ²¡æœ‰ï¼Œå´è§"+me->query("name")+"å¼€å§‹å£åç™½æ²«äº†ã€‚ \n"NOR,me);
     me->unconcious();
     return 0;
     }

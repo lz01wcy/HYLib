@@ -1,4 +1,4 @@
-// po.c ¡¸×Ü¾÷Ê½¡¹
+// po.c ã€Œæ€»è¯€å¼ã€
 
 #include <ansi.h>
 inherit F_SSERVER;
@@ -14,54 +14,54 @@ int perform(object me)
 
 //        if(me->query("family/master_id") != "feng qingyang"
 //        && userp(me))
-//           return notify_fail("Äã²»ÊÇ·çÇåÑïµÄµÜ×Ó£¬²»ÄÜÊ¹ÓÃ¾øÕĞ£¡\n");
+//           return notify_fail("ä½ ä¸æ˜¯é£æ¸…æ‰¬çš„å¼Ÿå­ï¼Œä¸èƒ½ä½¿ç”¨ç»æ‹›ï¼\n");
 
      if( (int)me->query_skill("zixia-shengong",1)<100)
-            return notify_fail("¶À¹Â¾Å½£±ØĞëÅäºÏ×ÏÏ¼Éñ¹¦¡£\n");
+            return notify_fail("ç‹¬å­¤ä¹å‰‘å¿…é¡»é…åˆç´«éœç¥åŠŸã€‚\n");
        if (((int)me->query_skill("huashan-sword", 1)+150) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄ½£×Ú»ªÉ½½£·¨Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„å‰‘å®—åå±±å‰‘æ³•å¤ªä½äº†ã€‚\n");
        if (((int)me->query_skill("kuangfeng-jian", 1)+150) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄÆø×Ú¿ñ·ç¿ì½£Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æ°”å®—ç‹‚é£å¿«å‰‘å¤ªä½äº†ã€‚\n");
        if (((int)me->query_skill("poyu-quan", 1)+200) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄÆÆÓñÈ­Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„ç ´ç‰æ‹³å¤ªä½äº†ã€‚\n");
        if (((int)me->query_skill("hunyuan-zhang", 1)+200) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄ»ìÔªÕÆÌ«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æ··å…ƒæŒå¤ªä½äº†ã€‚\n");
        if (((int)me->query_skill("feiyan-huixiang", 1)+200) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄ·ÉÑà»ØÏèÌ«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„é£ç‡•å›ç¿”å¤ªä½äº†ã€‚\n");
        if (((int)me->query_skill("huashan-neigong", 1)+200) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄ½£×ÚÄÚ¹¦Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„å‰‘å®—å†…åŠŸå¤ªä½äº†ã€‚\n");
        if (((int)me->query_skill("zixia-shengong", 1)+200) < (int)me->query_skill("lonely-sword", 1))
-               return notify_fail("ÄãµÄÆø×ÚÄÚ¹¦Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æ°”å®—å†…åŠŸå¤ªä½äº†ã€‚\n");
 
 
         if( me->is_fighting() )
-           return notify_fail("¡¸×Ü¾÷Ê½¡¹²»ÄÜÔÚÕ½¶·ÖĞÑİÁ·¡£\n");
+           return notify_fail("ã€Œæ€»è¯€å¼ã€ä¸èƒ½åœ¨æˆ˜æ–—ä¸­æ¼”ç»ƒã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-           return notify_fail("Äã±ØĞëÏÈÈ¥ÕÒÒ»°Ñ½£¡£\n");
+           return notify_fail("ä½ å¿…é¡»å…ˆå»æ‰¾ä¸€æŠŠå‰‘ã€‚\n");
 
         if (environment(me)->query("sleep_room"))
-                return notify_fail("ÎÔÊÒ²»ÄÜÁ·¹¦£¬»áÓ°Ïì±ğÈËĞİÏ¢¡£\n");
+                return notify_fail("å§å®¤ä¸èƒ½ç»ƒåŠŸï¼Œä¼šå½±å“åˆ«äººä¼‘æ¯ã€‚\n");
 
 
        if( environment(me)->query("no_beg") &&
        environment(me)->query("no_fight") &&
        environment(me)->query("no_steal")) 
-          return notify_fail(HIY"\n²»ÒªÓ°Ïì±ğÈË£¬»¹ÊÇÕÒÒ»¸ö±ğµÄµØ·½°É¡£\n"NOR);
+          return notify_fail(HIY"\nä¸è¦å½±å“åˆ«äººï¼Œè¿˜æ˜¯æ‰¾ä¸€ä¸ªåˆ«çš„åœ°æ–¹å§ã€‚\n"NOR);
 
         if( !skill || (skill < 20))
-           return notify_fail("ÄãµÄ¶À¹Â¾Å½£µÈ¼¶²»¹», ²»ÄÜÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+           return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½æ¼”ç»ƒã€Œæ€»è¯€å¼ã€ï¼\n");
 
         if( me->query("neili") < 170 )
-           return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞÁ¦ÆøÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+           return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠ›æ°”æ¼”ç»ƒã€Œæ€»è¯€å¼ã€ï¼\n");
         if( me->query("qi") < 170 )
-           return notify_fail("ÄãµÄÌåÁ¦²»¹»£¬Ã»ÓĞÁ¦ÆøÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+           return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠ›æ°”æ¼”ç»ƒã€Œæ€»è¯€å¼ã€ï¼\n");
         if( me->query("jing") < 170 )
-           return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬Ã»ÓĞÁ¦ÆøÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+           return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠ›æ°”æ¼”ç»ƒã€Œæ€»è¯€å¼ã€ï¼\n");
 
         if( me->query("jing") < -jing_cost )
-           return notify_fail("ÄãÏÖÔÚÌ«ÀÛÁË£¬ÎŞ·¨¼¯ÖĞ¾«ÉñÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+           return notify_fail("ä½ ç°åœ¨å¤ªç´¯äº†ï¼Œæ— æ³•é›†ä¸­ç²¾ç¥æ¼”ç»ƒã€Œæ€»è¯€å¼ã€ï¼\n");
 
 if (
 	me->query_skill("xuantie-sword",1)
@@ -84,13 +84,13 @@ me->query_skill("tianyu-qijian",1)    ||
 me->query_skill("murong-jianfa",1)   ||
 me->query_skill("yuxiao-jian",1)   
 )
-       return notify_fail("Äã²»·ÅÆú±ğµÄ½£·¨ÔõÄÜÁìÎò¶À¹Â¾Å½£ÎŞ½£Ê¤ÓĞ½£µÄ¾øÕĞ£¿£¡\n");
+       return notify_fail("ä½ ä¸æ”¾å¼ƒåˆ«çš„å‰‘æ³•æ€èƒ½é¢†æ‚Ÿç‹¬å­¤ä¹å‰‘æ— å‰‘èƒœæœ‰å‰‘çš„ç»æ‹›ï¼Ÿï¼\n");
 
         exp= (int)me->query("combat_exp");
         if( skill*skill*skill/10>exp )
-           return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»¹»£¬ÎŞ·¨Ìå»á¡¸×Ü¾÷Ê½¡¹£¡\n");
+           return notify_fail("ä½ çš„å®æˆ˜ç»éªŒä¸å¤Ÿï¼Œæ— æ³•ä½“ä¼šã€Œæ€»è¯€å¼ã€ï¼\n");
 
-        msg=HIG"$NÊ¹³ö¶À¹Â¾Å½£Ö®¡¸×Ü¾÷Ê½¡¹£¬½«ÊÖÖĞ"+weapon->name()+HIG"ËæÒâ»ÓÎè»÷´Ì¡£\n"NOR;
+        msg=HIG"$Nä½¿å‡ºç‹¬å­¤ä¹å‰‘ä¹‹ã€Œæ€»è¯€å¼ã€ï¼Œå°†æ‰‹ä¸­"+weapon->name()+HIG"éšæ„æŒ¥èˆå‡»åˆºã€‚\n"NOR;
         message_combatd(msg, me);
 if (jing_cost < 40) jing_cost=40;
         me->add("qi", -70);
@@ -108,7 +108,7 @@ if (jing_cost < 40) jing_cost=40;
         else
            me->improve_skill("lonely-sword",10+random((int)me->query("int")*8-9));
 
-        msg = MAG"$PµÄ¡¸¶À¹Â¾Å½£¡¹½ø²½ÁË£¡\n"NOR;
+        msg = MAG"$Pçš„ã€Œç‹¬å­¤ä¹å‰‘ã€è¿›æ­¥äº†ï¼\n"NOR;
         me->start_busy(1);
         message_combatd(msg, me);
         return 1;

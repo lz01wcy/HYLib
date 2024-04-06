@@ -14,46 +14,46 @@ int perform(object me, object target) {
 
     if (!objectp(weapon = me->query_temp("weapon"))
         || (string) weapon->query("skill_type") != "blade")
-        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
     if (!target
         || !me->is_fighting(target))
-        return notify_fail("¡¸·ÉÑãËæ·çÈÐ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€Œé£žé›éšé£Žåˆƒã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if ((int) me->query_skill("linji-zhuang", 1) < 150)
-        return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ·ÉÑãËæ·çÈÐ¡£\n");
+        return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨é£žé›éšé£Žåˆƒã€‚\n");
 
     if ((int) me->query_skill("linji-zhuang", 1) < 120)
-        return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯»ðºòÌ«Ç³¡£\n");
+        return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ç«å€™å¤ªæµ…ã€‚\n");
 
     if (me->query_skill("bagua-dao", 1) < 140)
-        return notify_fail("ÄãµÄ°ËØÔµ¶·¨ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹¡£\n");
+        return notify_fail("ä½ çš„å…«å¦åˆ€æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•ã€‚\n");
 
     if (me->query_skill_mapped("blade") != "bagua-dao")
-        return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ËØÔµ¶·¨£¬ÄÑÒÔÊ©Õ¹¡£\n");
+        return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å…«å¦åˆ€æ³•ï¼Œéš¾ä»¥æ–½å±•ã€‚\n");
 
 
     if ((int) me->query_skill("bagua-zhang") < 150)
-        return notify_fail("ÄãµÄ°ËØÔÕÆ»ðºòÌ«Ç³¡£\n");
+        return notify_fail("ä½ çš„å…«å¦æŽŒç«å€™å¤ªæµ…ã€‚\n");
 
     if ((int) me->query("neili") < 500)
-        return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬²»ÄÜÊ¹ÓÃ·ÉÑãËæ·çÈÐ£¡\n");
+        return notify_fail("ä½ çŽ°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨é£žé›éšé£Žåˆƒï¼\n");
 
     if ((int) me->query("max_neili") < 2000)
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ·ÉÑãËæ·çÈÐ£¡\n");
+        return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨é£žé›éšé£Žåˆƒï¼\n");
 
     message_vision(HIY
-    "$NÍ»È»°ÑÊÖÖÐ" + weapon->query("name") + "ÍùÉÏÒ»ÈÓ£¡\n"
+    "$Nçªç„¶æŠŠæ‰‹ä¸­" + weapon->query("name") + "å¾€ä¸Šä¸€æ‰”ï¼\n"
     NOR, me, target);
     message_vision(HIR
-    "$N¿´$nÒ»Õú£¬Á¢¿ÌÊ¹³öÒ»ÕÐËÄÏóÕÆµÄ¾øÑ§¡°Æ®Ñ©´©ÔÆÕÆ¡±£¡\n"
+    "$Nçœ‹$nä¸€æ€”ï¼Œç«‹åˆ»ä½¿å‡ºä¸€æ‹›å››è±¡æŽŒçš„ç»å­¦â€œé£˜é›ªç©¿äº‘æŽŒâ€ï¼\n"
     NOR, me, target);
     me->add_temp("apply/dexerity", me->query_skill("dodge") / 20);
     if (random(me->query_skill("dodge")) > target->query_skill("dodge") / 2) {
         target->receive_damage("qi", me->query_skill("bagua-zhang") * 3);
         target->receive_wound("qi", me->query_skill("bagua-zhang") * 3);
         message_vision(HIY
-        "$nÒ»Êèºö£¬±»$NÖØÖØµÄ»÷ÖÐ£¡\n"
+        "$nä¸€ç–å¿½ï¼Œè¢«$Né‡é‡çš„å‡»ä¸­ï¼\n"
         NOR, me, target);
         p = (int) target->query("qi") * 100 / (int) target->query("max_qi");
         msg = "( $n" + eff_status_msg(p) + " )\n";
@@ -65,7 +65,7 @@ int perform(object me, object target) {
         message(msg, me, target);
     }
     message_vision(HIR
-    "\n$N½ÓÁË¿ÕÖÐÂäÏÂÀ´µÄµ¶£¬à§à§Á¬ÅüÎåµ¶£¡\n"
+    "\n$NæŽ¥äº†ç©ºä¸­è½ä¸‹æ¥çš„åˆ€ï¼Œå”°å”°è¿žåŠˆäº”åˆ€ï¼\n"
     NOR, me, target);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0);
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0);

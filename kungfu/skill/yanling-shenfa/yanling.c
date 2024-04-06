@@ -12,32 +12,32 @@ int perform(object me, object target)
       if( !target ) target = offensive_target(me);
      
       if( !target || !me->is_fighting(target) )
-      return notify_fail("¡¸Áé¶¯ÈçÑà¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+      return notify_fail("ã€ŒçµåŠ¨å¦‚ç‡•ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
              
       
       if( (int)me->query_skill("yanling-shenfa",1) < 120 )
-                return notify_fail("ÄãµÄÑàÁéÉí·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Áé¶¯ÈçÑà¡¹£¡\n");
+                return notify_fail("ä½ çš„ç‡•çµèº«æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€ŒçµåŠ¨å¦‚ç‡•ã€ï¼\n");
 
       if( (int)me->query_dex() < 20 )
-                return notify_fail("ÄãµÄÉí·¨Ì«µÍ£¬²»ÄÜÊ¹ÓÃ¡¸Áé¶¯ÈçÑà¡¹£¡\n");
+                return notify_fail("ä½ çš„èº«æ³•å¤ªä½Žï¼Œä¸èƒ½ä½¿ç”¨ã€ŒçµåŠ¨å¦‚ç‡•ã€ï¼\n");
 
       if (me->query_skill("shenyuan-gong", 1)<50)
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»ðºòÎ´µ½£¬£¡\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç«å€™æœªåˆ°ï¼Œï¼\n");
 
       
       if( (int)me->query_skill("dodge",1) < 150 )
-                return notify_fail("ÄãµÄ»ù±¾Çá¹¦Ì«²î£¬ÉíÌå±¿×¾£¬²»ÄÜÊ¹ÓÃ¡¸Áé¶¯ÈçÑà¡¹£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬è½»åŠŸå¤ªå·®ï¼Œèº«ä½“ç¬¨æ‹™ï¼Œä¸èƒ½ä½¿ç”¨ã€ŒçµåŠ¨å¦‚ç‡•ã€ï¼\n");
       
       if( (int)me->query("neili") < 400 )
-      return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎÞ·¨Ê¹ÓÃ³ö¡¸Áé¶¯ÈçÑà¡¹£¡\n");   
+      return notify_fail("ä½ çš„å†…åŠ›å¤ªå°‘äº†ï¼Œæ— æ³•ä½¿ç”¨å‡ºã€ŒçµåŠ¨å¦‚ç‡•ã€ï¼\n");   
     
       if (me->query_skill_mapped("dodge") != "yanling-shenfa")
-               return notify_fail("ÄãÏÖÔÚ¼¤·¢µÄÇáÉíÊýÊ¹ÓÃ¡¸Áé¶¯ÈçÑà¡¹¾ø¼¼¡£\n");                                                                                 
+               return notify_fail("ä½ çŽ°åœ¨æ¿€å‘çš„è½»èº«æ•°ä½¿ç”¨ã€ŒçµåŠ¨å¦‚ç‡•ã€ç»æŠ€ã€‚\n");                                                                                 
       if( me->query_temp("yanling")   )
-      return notify_fail("ÄãÕýÔÚÊ¹ÓÃÑàÁéÉí·¨µÄÌØÊâ·ÀÓù¡¸Áé¶¯ÈçÑà¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ç‡•çµèº«æ³•çš„ç‰¹æ®Šé˜²å¾¡ã€ŒçµåŠ¨å¦‚ç‡•ã€ï¼\n");
        
-     msg = HIG"$NÍ»È»ÉîÎüÒ»¿ÚÆø£¬Í»È»Ö®¼ä°Î¸ßÊýÕÉ£¬ÉýÊÆ¸Õ¾¡£¬ÓÖÊÇÒ»¸ö·­Éí£¬" +
-               "ÉíÌåÓÖÉÏÉýÕÉÐí£¬²ÅÓÐÈçÒ»Ö»Áé¶¯µÄÑà×Ó£¡\n" NOR;
+     msg = HIG"$Nçªç„¶æ·±å¸ä¸€å£æ°”ï¼Œçªç„¶ä¹‹é—´æ‹”é«˜æ•°ä¸ˆï¼Œå‡åŠ¿åˆšå°½ï¼Œåˆæ˜¯ä¸€ä¸ªç¿»èº«ï¼Œ" +
+               "èº«ä½“åˆä¸Šå‡ä¸ˆè®¸ï¼Œæ‰æœ‰å¦‚ä¸€åªçµåŠ¨çš„ç‡•å­ï¼\n" NOR;
       
       message_vision(msg, me, target); 
       improve = (int)me->query_dex() * 2;
@@ -53,7 +53,7 @@ void remove_effect(object me, int improve)
 {
       me->add_temp("apply/dodge", - improve);
       me->delete_temp("yanling");
-      tell_object(me, HIR"ÄãÉ¢È¥µ¤ÌïÄý¾ÛµÄÄÚÁ¦£¬»ìÉí¾­ÂöÕæÆøÁ÷¶¯£¬Æø¶¨ÉñÏÐ£¬¾«ÉñÞÄÞÄ¡£\n"NOR);
-      tell_room(environment(me), HIW + me->name()+"È«Éí¹ÇÍ·Ò»ÕóÇáÏì£¬É¢È¥ÁË»ìÉíµÄ¹¦Á¦¡£\n" NOR,  ({ me }));
+      tell_object(me, HIR"ä½ æ•£åŽ»ä¸¹ç”°å‡èšçš„å†…åŠ›ï¼Œæ··èº«ç»è„‰çœŸæ°”æµåŠ¨ï¼Œæ°”å®šç¥žé—²ï¼Œç²¾ç¥žå¼ˆå¼ˆã€‚\n"NOR);
+      tell_room(environment(me), HIW + me->name()+"å…¨èº«éª¨å¤´ä¸€é˜µè½»å“ï¼Œæ•£åŽ»äº†æ··èº«çš„åŠŸåŠ›ã€‚\n" NOR,  ({ me }));
     
 }

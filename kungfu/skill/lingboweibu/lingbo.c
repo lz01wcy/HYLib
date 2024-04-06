@@ -1,4 +1,4 @@
-// lingbo.c  ÂåÉñÁè²¨
+// lingbo.c  æ´›ç¥å‡Œæ³¢
 
 #include <ansi.h>
 
@@ -11,35 +11,35 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("ÄãÒ»¸öÈËÌøÉõÃ´£¿\n");
+                return notify_fail("ä½ ä¸€ä¸ªäººè·³ç”šä¹ˆï¼Ÿ\n");
 
-        if( me->query("gender") == "ÎŞĞÔ")
-                return notify_fail(HIY "Ò»¸ö¹«¹«£¬Âú³¡ÂÒÌø£¬ĞßÒ²²»Ğß£¿\n" NOR);
+        if( me->query("gender") == "æ— æ€§")
+                return notify_fail(HIY "ä¸€ä¸ªå…¬å…¬ï¼Œæ»¡åœºä¹±è·³ï¼Œç¾ä¹Ÿä¸ç¾ï¼Ÿ\n" NOR);
 
         if((int)me->query_skill("beiming-shengong",1) < 100)
-                return notify_fail(HIY "ÄãµÄ±±Ú¤Éñ¹¦ĞŞÎª²»¹»¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„åŒ—å†¥ç¥åŠŸä¿®ä¸ºä¸å¤Ÿã€‚\n" NOR);
 
         if((int)me->query_skill("lingboweibu",1) < 100)
-                return notify_fail(HIY "ÄãµÄÁè²¨Î¢²½²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„å‡Œæ³¢å¾®æ­¥ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ ç°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
 
-        if( me->query("gender") == "ÄĞĞÔ")
+        if( me->query("gender") == "ç”·æ€§")
                {msg = YEL
-"$NÌáÆğÕæÆø£¬ÒâÌ¬Æ®Òİ,Ò»ÕĞÂäÉñÁè²¨,ÈçÈëÎŞÈËÖ®¾³£¡\n" NOR;}
+"$Næèµ·çœŸæ°”ï¼Œæ„æ€é£˜é€¸,ä¸€æ‹›è½ç¥å‡Œæ³¢,å¦‚å…¥æ— äººä¹‹å¢ƒï¼\n" NOR;}
         else   {msg = YEL 
-"$NÌáÆğÕæÆø£¬Ê©Õ¹Áè²¨Î¢²½£¬·ÂÈçÂåÉñÔÙÉú£¬ÏÉÅ®ÏÂ·²£¡\n" NOR;}
+"$Næèµ·çœŸæ°”ï¼Œæ–½å±•å‡Œæ³¢å¾®æ­¥ï¼Œä»¿å¦‚æ´›ç¥å†ç”Ÿï¼Œä»™å¥³ä¸‹å‡¡ï¼\n" NOR;}
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-                msg += HIW "½á¹û$p±»$PµÄÎè²½ÏÅµÃÄ¿µÉ¿Ú´ô£¡\n" NOR;
+                msg += HIW "ç»“æœ$pè¢«$Pçš„èˆæ­¥å“å¾—ç›®çªå£å‘†ï¼\n" NOR;
                 target->start_busy(6);
                 me->add("neili", -100);
                        } else {
-                msg +=  "$pÖ»ÊÇÃãÇ¿µÄÌÓÁË¿ªÈ¥¡£\n";
+                msg +=  "$påªæ˜¯å‹‰å¼ºçš„é€ƒäº†å¼€å»ã€‚\n";
                 me->add("neili", -100);
                 me->start_busy(2);
         }

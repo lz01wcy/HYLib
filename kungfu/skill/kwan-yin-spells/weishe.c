@@ -7,41 +7,41 @@ int perform(object me, object target)
         int cps, skill, myexp,tarexp; 
 	
 //	if( !target ) target = offensive_target(me);
-        if( !target ) return notify_fail("ÄãÒªÍşÉåË­£¿\n");	
+        if( !target ) return notify_fail("ä½ è¦å¨æ…‘è°ï¼Ÿ\n");	
 	myexp = (int)me->query("combat_exp");
 	tarexp = (int)target->query("combat_exp");
 	cps = (int)target->query("cps");
 	skill=(int)me->query_skill("kwan-yin-spells",1);
 	
 	if( skill < 160 )
-		return notify_fail("ÄãµÄ¹ÛÒôÁù×ÖÃ÷Öä²»¹»£¬²»ÄÜÊ¹ÓÃÍşÉå£¡\n");
+		return notify_fail("ä½ çš„è§‚éŸ³å…­å­—æ˜å’’ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨å¨æ…‘ï¼\n");
 
 	if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞ²»ÄÜÊ¹ÓÃ¡¸ÍşÉå¡¹¡£\n");
+                return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ä½¿ç”¨ã€Œå¨æ…‘ã€ã€‚\n");
         if( me->query("weishe/timer")+300 > time())
-        	return notify_fail("ÍşÉåºÜºÄ·ÑÌåÁ¦£¬Äã»¹ÊÇĞİÏ¢Ò»ÏÂ°É¡£\n");
+        	return notify_fail("å¨æ…‘å¾ˆè€—è´¹ä½“åŠ›ï¼Œä½ è¿˜æ˜¯ä¼‘æ¯ä¸€ä¸‹å§ã€‚\n");
         	
 //        if( !target ) target = offensive_target(me);
 	if( me==target)
-                return notify_fail("²»ÄÜÍşÉå×Ô¼º¡£\n"); 
+                return notify_fail("ä¸èƒ½å¨æ…‘è‡ªå·±ã€‚\n"); 
         if( (int)me->query("neili") < 100 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n"); 
                 
         if( !me->is_fighting() && !target->is_fighting() &&
  		environment(me) == environment(target))
  	{
  		weapon=target->query_temp("weapon");
  		if(objectp(weapon)){
- 			message_vision(HIR"$N¶Ô×Å$n´óºÈÒ»ÉùµÀ£º»¹²»·ÅÏÂÊÖÖĞµÄÎäÆ÷£¬ÊøÊÖ¾ÍÇÜ£¡¸ü´ıºÎÊ±£¿£¡\n"NOR,me,target);
+ 			message_vision(HIR"$Nå¯¹ç€$nå¤§å–ä¸€å£°é“ï¼šè¿˜ä¸æ”¾ä¸‹æ‰‹ä¸­çš„æ­¦å™¨ï¼ŒæŸæ‰‹å°±æ“’ï¼æ›´å¾…ä½•æ—¶ï¼Ÿï¼\n"NOR,me,target);
  			if(myexp+random(myexp/2) < tarexp/2)
- 				message_vision(HIC"$N¶Ô$nÀäĞ¦Ò»ÉùµÀ£ºÕâÑùµÄµñ³æĞ¡¼¼£¬Ò²À´ÏÅÎÒ£¿\n"NOR,target,me);
+ 				message_vision(HIC"$Nå¯¹$nå†·ç¬‘ä¸€å£°é“ï¼šè¿™æ ·çš„é›•è™«å°æŠ€ï¼Œä¹Ÿæ¥å“æˆ‘ï¼Ÿ\n"NOR,target,me);
  			else {
- 				message_vision(WHT"$N±»$nµÄÕóÊÆËùÉå£¬²»ÓÉ×ÔÖ÷µÄ·ÅÏÂÁËÊÖÖĞµÄÎäÆ÷¡£\n"NOR,target,me);
+ 				message_vision(WHT"$Nè¢«$nçš„é˜µåŠ¿æ‰€æ…‘ï¼Œä¸ç”±è‡ªä¸»çš„æ”¾ä¸‹äº†æ‰‹ä¸­çš„æ­¦å™¨ã€‚\n"NOR,target,me);
  				weapon->unequip();
  			}
  		me->add("neili", -100);
  		me->set("weishe/timer",time());
- 		}else return notify_fail("¶Ô·½Ã»ÓĞÓÃÎäÆ÷£¬²»ĞèÒªÊ¹ÓÃÍşÉå£¡\n");
+ 		}else return notify_fail("å¯¹æ–¹æ²¡æœ‰ç”¨æ­¦å™¨ï¼Œä¸éœ€è¦ä½¿ç”¨å¨æ…‘ï¼\n");
 	}
 	me->start_busy(1);
         return 1;

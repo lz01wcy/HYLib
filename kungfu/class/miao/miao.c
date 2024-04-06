@@ -14,16 +14,16 @@ inherit F_MASTER;
 void create() 
 { 
         object ob; 
-        set_name("���˷�", ({ "miao renfeng", "miao", "renfeng" })); 
-        set("gender", "����"); 
-        set("nickname", YEL "�����" NOR); 
-        set("title", "��������޵���"); 
+        set_name("苗人凤", ({ "miao renfeng", "miao", "renfeng" })); 
+        set("gender", "男性"); 
+        set("nickname", YEL "金面佛" NOR); 
+        set("title", "打遍天下无敌手"); 
         set("age", 48); 
         set("long", @LONG 
-�����Ǻųƴ�������޵��ֵġ���������� 
-�ֻ������ɫ͸�ƣ��ƺ�������һ�㵭���� 
-��ֽ�������ĸߴ���࣬��֫�޳���ȴ��ȫȻ 
-����ƪ�������˳��档 
+他就是号称打遍天下无敌手的「金面佛」苗人 
+凤。只见他脸色透黄，似乎蒙上了一层淡淡的 
+金纸。他身材高大魁梧，四肢修长，却是全然 
+不修篇幅，令人称奇。 
 LONG ); 
         set("attitude", "friendly"); 
         set("shen_type", 1); 
@@ -76,12 +76,12 @@ LONG );
            
 
          
-        //create_family("��ԭ���", 6, "����"); 
-        create_family("�������", 7, "����"); 
+        //create_family("中原苗家", 6, "传人"); 
+        create_family("关外胡家", 7, "友人"); 
         set("inquiry", ([ 
 
-                "���ҵ���" : "���ҵ��������ҵ���Ӻ����ִ�ϰ�ã����澫���ޱȡ�", 
-                "��һ��"   : "���������˼��˶���ɱ�������������ź�������", 
+                "胡家刀法" : "胡家刀法乃是我当年从胡世兄处习得，当真精妙无比。", 
+                "胡一刀"   : "当年我中了奸人毒计杀害了他，令我遗憾终生！", 
         ])); 
         
         set("chat_chance_combat", 99); 
@@ -147,31 +147,31 @@ void attempt_apprentice(object ob)
 
 
         
-        if (ob->name(1) == "���˷�") 
+        if (ob->name(1) == "苗人凤") 
         { 
                 command("hmm"); 
-                command("say ����ôҲȡ������֣�"); 
+                command("say 你怎么也取这个名字？"); 
                 return; 
         } 
         
-        if (ob->name(1) == "������") 
+        if (ob->name(1) == "苗若兰") 
         { 
                 command("hmm"); 
-                command("say ��Ͳ��ܻ���������֣�"); 
+                command("say 你就不能换个别的名字？"); 
                 return; 
         } 
         
-        if (ob->name(1) == "�����" || ob->name(1) == "������") 
+        if (ob->name(1) == "苗鬼凤" || ob->name(1) == "苗人龙") 
         { 
                 command("hmm"); 
-                command("say �㰲��Ҫ���������ǲ��ǣ�"); 
+                command("say 你安心要和我作对是不是？"); 
                 return; 
         } 
         
         command("sigh"); 
         command("recruit " + ob->query("id")); 
-        command("say �ұ��Ѵ��㲻��ͽ�ܣ��������������硢�����ҵķ�������ƽϢ��"); 
-        command("say �������洫��ʮ������ҽ������Ҵ�ʧ����δ��̫����Т��"); 
+        command("say 我本已打算不收徒弟，让我田家与胡、苗、范三家的纷争得以平息。"); 
+        command("say 可是这祖传三十七势苗家剑就在我处失传，未免太过不孝。"); 
         return; 
 } 
  
@@ -182,30 +182,30 @@ int recognize_apprentice(object me, string skill)
         if ((int)me->query("shen") < 0) 
         {
                 command("sigh"); 
-                command("say ����������а·���ҿɲ��ܽ�����ҽ���"); 
+                command("say 你怎能走上邪路？我可不能教你苗家剑。"); 
                 return -1; 
         }
         
         if (me->query("combat_exp",1)<=400000)
         {
-                command("say ���ʱ����̫ǳ�������ȴ�û�����˵�ɡ�");
+                command("say 你此时功力太浅，还是先打好基础再说吧。");
                 return -1;
         }
 
         if (skill != "miaojia-jian" && skill != "sword")
         {
-                command("say ��ֻ���������������ҽ�������ľͲ�Ҫ�������ˣ�"); 
+                command("say 我只教你基本剑法和苗家剑法，别的就不要来烦我了！"); 
                 return -1;
         }
 
         if (me->query_skill(skill, 1) >= 400) 
         {
-               command("say ���ˣ��Ҿͽ��㵽����ɣ��书����" 
-                       "Ҫ���Լ����о����ǣ�"); 
+               command("say 够了！我就教你到这里吧，武功还是" 
+                       "要靠自己多研究才是！"); 
                return -1; 
         }
         
-        command("say ���ڵ��������˼��˶���ɱ���˺�һ���������ź����������ϣ��Ҿʹ�����ҽ�����"); 
+        command("say 看在当年我中了奸人毒计杀害了胡一刀，令我遗憾终生的事上，我就传你苗家剑法。"); 
         return 1;
 }
         

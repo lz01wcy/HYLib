@@ -10,15 +10,15 @@ int exert(object me)
 	nh = (int)me->query_skill("linji-zhuang", 1);
 
 	if ((int)me->query_skill("linji-zhuang", 1) < 300)
-		return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < (int)me->query("max_neili")/3 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
-	write(RED"ÄãÎåÐÄÏòÌì£¬ÔËÐÐÈÕÔÂ¶þ×¯£¬ÒæÆøÉýÑô£¬ÒæÒõÇ±Ñô£¬
-Éý½µ·´Õý£¬ÌìµØ¶þÆø½»Ì©ÓÚÉí£¬²¢ÅäºÏ¶ëáÒ¾ÅÑô¹¦¡£Ãð¾øÖ®¼ä¶ÙÊ±´óÆð!\n"NOR);
+	write(RED"ä½ äº”å¿ƒå‘å¤©ï¼Œè¿è¡Œæ—¥æœˆäºŒåº„ï¼Œç›Šæ°”å‡é˜³ï¼Œç›Šé˜´æ½œé˜³ï¼Œ
+å‡é™åæ­£ï¼Œå¤©åœ°äºŒæ°”äº¤æ³°äºŽèº«ï¼Œå¹¶é…åˆå³¨åµ‹ä¹é˜³åŠŸã€‚ç­ç»ä¹‹é—´é¡¿æ—¶å¤§èµ·!\n"NOR);
 
-	message_vision(HIR"Ö»¼û$NÁ³ÉÏºì¹âÊ±ÒþÊ±ÏÖ¡£¾¢ÆøËÄÒç£¡£¡\n"NOR, me);
+	message_vision(HIR"åªè§$Nè„¸ä¸Šçº¢å…‰æ—¶éšæ—¶çŽ°ã€‚åŠ²æ°”å››æº¢ï¼ï¼\n"NOR, me);
 me->set("qi",me->query("max_qi")*3);
 me->set("eff_qi",me->query("max_qi")*3);
 me->set("jing",me->query("max_jing")*3);

@@ -16,24 +16,24 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÂúÌì»¨ÓêÖ»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("æ»¡å¤©èŠ±é›¨åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
 	     || (string)weapon->query("skill_type") != "throwing")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query_skill("feixing-shu", 1) < 150 )
-                return notify_fail("ÄãµÄ·ÉÐÇÊõ²»¹»æµÊì£¬²»»áÊ¹ÓÃÂúÌì»¨Óê¡£\n");
+                return notify_fail("ä½ çš„é£žæ˜Ÿæœ¯ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨æ»¡å¤©èŠ±é›¨ã€‚\n");
         if( (int)me->query_skill("huagong-dafa", 1) < 150 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÂúÌì»¨Óê¡£\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨æ»¡å¤©èŠ±é›¨ã€‚\n");
 	 if( (int)me->query_skill("throwing",1) <150 )
-		  return notify_fail("ÄãµÄ°µÆ÷Í¶ÖÀ²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÂúÌì»¨Óê¡£\n");
+		  return notify_fail("ä½ çš„æš—å™¨æŠ•æŽ·ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨æ»¡å¤©èŠ±é›¨ã€‚\n");
 
         if( (int)me->query("neili") < 500 )
-                return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿäº†ã€‚\n");
 weapon = me->query_temp("weapon");
 
-        msg=HIR"Ö»ÌýÒ»¹É¾¢·ç´Ó$NµÄÓÒ²à·¢³ö£¬$NÊÖÖÐµÄ"+weapon->name()+HIR"ÈçÑÌÓê°ãÏò$nÁýÕÖ¹ýÈ¥£¡\n"NOR;
+        msg=HIR"åªå¬ä¸€è‚¡åŠ²é£Žä»Ž$Nçš„å³ä¾§å‘å‡ºï¼Œ$Næ‰‹ä¸­çš„"+weapon->name()+HIR"å¦‚çƒŸé›¨èˆ¬å‘$nç¬¼ç½©è¿‡åŽ»ï¼\n"NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);

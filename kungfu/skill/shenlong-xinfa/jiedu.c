@@ -1,4 +1,4 @@
-// jiedu.c ½âÎå¶¾ÉñÕÆ
+// jiedu.c è§£äº”æ¯’ç¥æŒ
 // By Kayin @ CuteRabbit Studio 99-4-16 15:19 new
 #include <ansi.h>
 
@@ -10,22 +10,22 @@ int exert(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() )
-                return notify_fail("ÄãÒª¸øË­½â¶¾¡£\n");
+                return notify_fail("ä½ è¦ç»™è°è§£æ¯’ã€‚\n");
 
         if( (int)me->query_skill("shenlong-xinfa", 1) < 90 )
-                return notify_fail("ÄãµÄÉñÁúĞÄ·¨²»¹»æµÊì£¬²»ÄÜ½â¶¾¡£\n");
+                return notify_fail("ä½ çš„ç¥é¾™å¿ƒæ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½è§£æ¯’ã€‚\n");
 
 if (!userp(target))
-	return notify_fail("¶Ô·½²»½ÓÊÜÄãµÄÒ½ÁÆ¡£\n");
+	return notify_fail("å¯¹æ–¹ä¸æ¥å—ä½ çš„åŒ»ç–—ã€‚\n");
 
 if (!userp(me))
-	return notify_fail("¶Ô·½²»½ÓÊÜÄãµÄÒ½ÁÆ¡£\n");
+	return notify_fail("å¯¹æ–¹ä¸æ¥å—ä½ çš„åŒ»ç–—ã€‚\n");
         if( (int)me->query("neili", 1) < 500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜ½â¶¾¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½è§£æ¯’ã€‚\n");
         if( me->is_fighting() )
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
         if( me->is_busy() )
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");                
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");                
         me->add("neili", -300);
 me->start_busy(5);
         target->apply_condition("snake_poison", 0);
@@ -39,7 +39,7 @@ me->start_busy(5);
         target->apply_condition("xiezi_poison", 0);
         target->apply_condition("snake_poison", 0);
         target->apply_condition("zhizhu_poison", 0);
-        msg = HIW "$NÊ¹³öÉíÁúĞÄ·¨½â¶¾µÄÊÖ·¨Îª$nÍÆÄÃ¡£½Ó×Å¸ø$n·şÏÂÒ»Á£½âÒ©.\n"NOR;
+        msg = HIW "$Nä½¿å‡ºèº«é¾™å¿ƒæ³•è§£æ¯’çš„æ‰‹æ³•ä¸º$næ¨æ‹¿ã€‚æ¥ç€ç»™$næœä¸‹ä¸€ç²’è§£è¯.\n"NOR;
 
         message_vision(msg, me, target);
         return 1;

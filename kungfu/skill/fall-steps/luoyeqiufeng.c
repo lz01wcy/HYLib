@@ -8,22 +8,22 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	extra = me->query_skill("fall-steps",1);
-	if ( extra < 90) return notify_fail("ÄãµÄ£ÛÇï·ç²½£Ý»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 90) return notify_fail("ä½ çš„ï¼»ç§‹é£Žæ­¥ï¼½è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÂäÒ¶Çï·ç£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»è½å¶ç§‹é£Žï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if(target->is_busy())
-		return notify_fail(target->name()+"ÒÑ¾­ÊÖÃ¦½ÅÂÒÁË£¡\n");
-	message_vision("$N½ÅÌ¤°Ë·½£¬ÉíÐÐÈçÇï·çÖÐµÄÂäÒ¶£¬Æ®Ãì²»¶¨£¡\n",me,target);
+		return notify_fail(target->name()+"å·²ç»æ‰‹å¿™è„šä¹±äº†ï¼\n");
+	message_vision("$Nè„šè¸å…«æ–¹ï¼Œèº«è¡Œå¦‚ç§‹é£Žä¸­çš„è½å¶ï¼Œé£˜æ¸ºä¸å®šï¼\n",me,target);
 	if(random((int)me->query("combat_exp"))+(int)me->query("combat_exp")/4 > (int)target->query("combat_exp")/2)
 	{
-	message_vision("½á¹û$N±»ÈÅµÃÑÛ»¨ÁÊÂÒ£¬½ÓÓ¦²»Ï¾£¡\n",target);
+	message_vision("ç»“æžœ$Nè¢«æ‰°å¾—çœ¼èŠ±æ½¦ä¹±ï¼ŒæŽ¥åº”ä¸æš‡ï¼\n",target);
 	target->start_busy(3);
 	}
 	else{
-	msg = "¿ÉÏ§$N¿´³öÁË$nµÄÉí·¨£¬ÏòÄãÑ¸È»¹¥»÷£¡";
+	msg = "å¯æƒœ$Nçœ‹å‡ºäº†$nçš„èº«æ³•ï¼Œå‘ä½ è¿…ç„¶æ”»å‡»ï¼";
 	COMBAT_D->do_attack(target,me, target->query_temp("weapon"),TYPE_REGULAR,msg);	
 	}
 	return 1;

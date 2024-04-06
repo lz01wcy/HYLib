@@ -1,4 +1,4 @@
-// lingxi.c ÁéÏ¬Ò»Ö¸
+// lingxi.c çµçŠ€ä¸€æŒ‡
 
 #include <ansi.h>
 
@@ -15,42 +15,42 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("ÁéÏ¬Ò»Ö¸Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("çµçŠ€ä¸€æŒ‡åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("tanzhi-shentong", 1) < 100 )
-		return notify_fail("ÄãµÄµ¯Ö¸ÉñÍ¨²»¹»æµÊì£¬ÎŞ·¨Ê¹ÓÃÁéÏ¬Ò»Ö¸¡£\n");
+		return notify_fail("ä½ çš„å¼¹æŒ‡ç¥é€šä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿ç”¨çµçŠ€ä¸€æŒ‡ã€‚\n");
 
 	weapon = me->query_temp("weapon");
-	if (weapon) return notify_fail("ÁéÏ¬Ò»Ö¸Ğë¿ÕÊÖÊ¹ÓÃ¡£\n");
+	if (weapon) return notify_fail("çµçŠ€ä¸€æŒ‡é¡»ç©ºæ‰‹ä½¿ç”¨ã€‚\n");
 
 	if ( (int)me->query("neili") < 400)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃÁéÏ¬Ò»Ö¸¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨çµçŠ€ä¸€æŒ‡ã€‚\n");
 
-	msg = CYN "$NË«ÊÖÒ»Ç°Ò»ºó£¬»º»ºÉì³ö£¬ÖĞÖ¸Í»µØÒ»µ¯£¬Á½µÀ¾¢·ç»ã³ÉÒ»¹É£¬¡°ßĞßĞ¡±ÓĞÉù£¬Ö±Ï®$nÇ°ĞØ¡£\n";
+	msg = CYN "$NåŒæ‰‹ä¸€å‰ä¸€åï¼Œç¼“ç¼“ä¼¸å‡ºï¼Œä¸­æŒ‡çªåœ°ä¸€å¼¹ï¼Œä¸¤é“åŠ²é£æ±‡æˆä¸€è‚¡ï¼Œâ€œå’å’â€æœ‰å£°ï¼Œç›´è¢­$nå‰èƒ¸ã€‚\n";
 
 	damage = (int)me->query_skill("tanzhi-shentong", 1) + (int)me->query_skill("bibo-shengong", 1) + 100;
 	damage += random(damage);
 	damage = damage + 300;
 	if (random(me->query("combat_exp")) > (int)target->query("combat_exp") / 3) {
-		msg += "$n¶ãÉÁ²»¼°£¬¡°àÛ¡±µØÒ»Éù£¬±»Ö¸¾¢»÷ÖĞÇ°ĞØ£¡\n";
+		msg += "$nèº²é—ªä¸åŠï¼Œâ€œå™—â€åœ°ä¸€å£°ï¼Œè¢«æŒ‡åŠ²å‡»ä¸­å‰èƒ¸ï¼\n";
 		target->receive_damage("qi", damage);
 		target->receive_wound("qi", damage);
                 p = (int)target->query("qi") * 100 / (int)target->query("max_qi");
-		msg += RED "$nĞØ¿ÚÒ»Õó¾ŞÍ´£¬´ó½Ğµ¹µØ£¡\n" ;
-//                msg += damage_msg(damage, "´ÌÉË");
+		msg += RED "$nèƒ¸å£ä¸€é˜µå·¨ç—›ï¼Œå¤§å«å€’åœ°ï¼\n" ;
+//                msg += damage_msg(damage, "åˆºä¼¤");
 //                msg += "( $n" + eff_status_msg(p) + " )\n";
 	} 
 	else if (random(me->query("combat_exp")) > (int)target->query("combat_exp") * 2 / 3) {
-		msg += "$nÏòÅÔ±ßÒ»ÉÁ£¬ÈÃ¹ıÁË¾¢·ç£¬Ã»Ïëµ½Õâ¹ÉÖ¸¾¢¾¹È»ÓĞ»ØÁ¦£¬´Ó$n±³ºóµ¹×ª»ØÀ´£¬Õı´ÌÖĞ$pµÄºó±³¡£\n";
+		msg += "$nå‘æ—è¾¹ä¸€é—ªï¼Œè®©è¿‡äº†åŠ²é£ï¼Œæ²¡æƒ³åˆ°è¿™è‚¡æŒ‡åŠ²ç«Ÿç„¶æœ‰å›åŠ›ï¼Œä»$nèƒŒåå€’è½¬å›æ¥ï¼Œæ­£åˆºä¸­$pçš„åèƒŒã€‚\n";
 		target->receive_damage("qi", damage / 2);
 		target->receive_wound("qi", damage / 2);
                 p = (int)target->query("qi") * 100 / (int)target->query("max_qi");
-		msg += RED "$n¾õµÄĞØ¿ÚÓĞµãÍ´£¡\n" ;
-//                msg += damage_msg(damage, "´ÌÉË");
+		msg += RED "$nè§‰çš„èƒ¸å£æœ‰ç‚¹ç—›ï¼\n" ;
+//                msg += damage_msg(damage, "åˆºä¼¤");
 //              msg += "( $n" + eff_status_msg(p) + " )\n";
 	}
 	else {
-		msg += "$nÏòÅÔ±ßÒ»ÉÁ£¬ÈÃ¹ıÁË¾¢·ç£¬È´ºöÈ»·¢¾õÕâ¹ÉÖ¸¾¢¾¹È»ÓĞ»ØÁ¦£¬´ÒÃ¦ÖĞÖ»ºÃÒ»¸öÇ°ÆË²Å¿°¿°¶ã¹ı£¬Ä£ÑùÀÇ±·Ö®¼«¡£\n" NOR;
+		msg += "$nå‘æ—è¾¹ä¸€é—ªï¼Œè®©è¿‡äº†åŠ²é£ï¼Œå´å¿½ç„¶å‘è§‰è¿™è‚¡æŒ‡åŠ²ç«Ÿç„¶æœ‰å›åŠ›ï¼ŒåŒ†å¿™ä¸­åªå¥½ä¸€ä¸ªå‰æ‰‘æ‰å ªå ªèº²è¿‡ï¼Œæ¨¡æ ·ç‹¼ç‹ˆä¹‹æã€‚\n" NOR;
 	}
 	message_vision(msg, me, target);
 	me->add("neili", -300);

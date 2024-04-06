@@ -1,4 +1,4 @@
-// xuantian-force.c ÐþÌìÉñ¹¦
+// xuantian-force.c çŽ„å¤©ç¥žåŠŸ
 // modified by Venus Oct.1997
 
 inherit FORCE;
@@ -13,21 +13,21 @@ int valid_learn(object me)
 
 
     if ( me->query("class") == "bonze" )
-   return notify_fail("Ñô¶¥ÌìË«Ã¼½ôËø£¬²»·¢Ò»Éù£¬¿´À´ÊÇ²»Ïë½ÌÄã¡£\n
+   return notify_fail("é˜³é¡¶å¤©åŒçœ‰ç´§é”ï¼Œä¸å‘ä¸€å£°ï¼Œçœ‹æ¥æ˜¯ä¸æƒ³æ•™ä½ ã€‚\n
 ");
 
     if ( (int)me->query_skill("force",1) < 10 )
-   return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»¡£\n");
+   return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
     if (lvl > 10 && (int)me->query("shen") < t * 100)
-   return notify_fail("ÄãµÄÏÀÒåÕýÆøÌ«µÍÁË¡£\n");
+   return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½Žäº†ã€‚\n");
 
     return 1;
 }
 
 int practice_skill(object me)
 {
-    return notify_fail("ÐþÌìÉñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+    return notify_fail("çŽ„å¤©ç¥žåŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

@@ -1,4 +1,4 @@
-// duo.c ¿ÕÊÖ¶á°×ÈĞ
+// duo.c ç©ºæ‰‹å¤ºç™½åˆƒ
 
 #include <ansi.h>
 
@@ -18,29 +18,29 @@ int perform(object me, object target)
       skill = me->query_skill("tianchang-strike",1);
 
       if( !(me->is_fighting() ))
-              return notify_fail("¿ÕÊÖ¶á°×ÈĞÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("ç©ºæ‰‹å¤ºç™½åˆƒåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
       if (objectp(weapon2 = me->query_temp("weapon")))
-              return notify_fail("Äã±ØĞë¿ÕÊÖ¡£\n");
+              return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ã€‚\n");
 
       if (!objectp(weapon = target->query_temp("weapon")))
-         return notify_fail("¶Ô·½Ã»ÓĞ±øÈĞ£¬Äã²»ÓÃµ£ĞÄ¡£\n");
+         return notify_fail("å¯¹æ–¹æ²¡æœ‰å…µåˆƒï¼Œä½ ä¸ç”¨æ‹…å¿ƒã€‚\n");
 
       if( skill < 100)
-              return notify_fail("ÄãµÄÌì³¥ÕÆ·¨µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¿ÕÊÖ¶á°×ÈĞ£¡\n");
+              return notify_fail("ä½ çš„å¤©å¿æŒæ³•ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ç©ºæ‰‹å¤ºç™½åˆƒï¼\n");
 
 	if ((int)me->query_skill("lengyue-shengong", 1)<100)
-		return notify_fail("ÄãµÄÀäÔÂÉñ¹¦»ğºò²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†·æœˆç¥åŠŸç«å€™ä¸å¤Ÿã€‚\n");
 
 
 
 	if( me->query("neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃ¿ÕÊÖÕÛÃ·£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ç©ºæ‰‹æŠ˜æ¢…ï¼\n");
 
         if( !living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬»¹¶áÊ²Ã´£¬È¥¼ñºÃÁË£¡\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œè¿˜å¤ºä»€ä¹ˆï¼Œå»æ¡å¥½äº†ï¼\n");
 
-	message_vision(CYN"\n$NÉÁµç°ãÉì³öÓÒÊÖ£¬³ò×¼$nÎä¹¦ÆÆÕÀÖ®´¦£¬×¥Ïò$nÊÖÖĞµÄ"+weapon->query("name")+CYN"¡£\n\n"NOR,me,target);
+	message_vision(CYN"\n$Né—ªç”µèˆ¬ä¼¸å‡ºå³æ‰‹ï¼Œç…å‡†$næ­¦åŠŸç ´ç»½ä¹‹å¤„ï¼ŒæŠ“å‘$næ‰‹ä¸­çš„"+weapon->query("name")+CYN"ã€‚\n\n"NOR,me,target);
 
 	exp1 = me->query("combat_exp");
 	exp2 = target->query("combat_exp");
@@ -53,7 +53,7 @@ int perform(object me, object target)
 
 	if (exp1 < exp2/3)
 	{
-		message_vision("Ë­Öª$nÂ¶³ö´ËÆÆÕÀÄËÊÇÓÕµĞ£¬Ò»¸ö±äÕĞ·´¶øÏò$NÃÍ¹¥¶øÖÁ¡£\n",me,target);
+		message_vision("è°çŸ¥$néœ²å‡ºæ­¤ç ´ç»½ä¹ƒæ˜¯è¯±æ•Œï¼Œä¸€ä¸ªå˜æ‹›åè€Œå‘$NçŒ›æ”»è€Œè‡³ã€‚\n",me,target);
 		me->start_busy(1+random(3));
 		me->add("neili",-50);
 		COMBAT_D->do_attack(target,me,me->query_temp("weapon"));
@@ -62,25 +62,25 @@ int perform(object me, object target)
 
 	if (exp1 > random(exp2))
 	{
-	message_vision(HIR"$nÑÛ¾¦Ò»»¨£¬ÊÖÖĞ"+weapon->query("name")+HIR"ÒÑ±»$N·´ÊÖ×¥µ½¡£\n\n"NOR,me,target);
+	message_vision(HIR"$nçœ¼ç›ä¸€èŠ±ï¼Œæ‰‹ä¸­"+weapon->query("name")+HIR"å·²è¢«$Nåæ‰‹æŠ“åˆ°ã€‚\n\n"NOR,me,target);
 		comb1 = str1*neili1*skill1;
 		comb2 = str2*neili2*skill2;
 	
 		if (comb1 > comb2 * 3/5 )
 		{
-			message_vision(HIW"$nÖ»¾õÒ»¹Éº®Æø×Ô"+weapon->query("name")+HIW"´«ÁË¹ıÀ´£¬Õû¸öÊÖ±ÛÒ»Õó±ùÁ¹£¬ÊÖÖĞ"+weapon->query("name")+HIW"ÍÑÊÖ¶ø³ö£¡\n"NOR,me,target);
+			message_vision(HIW"$nåªè§‰ä¸€è‚¡å¯’æ°”è‡ª"+weapon->query("name")+HIW"ä¼ äº†è¿‡æ¥ï¼Œæ•´ä¸ªæ‰‹è‡‚ä¸€é˜µå†°å‡‰ï¼Œæ‰‹ä¸­"+weapon->query("name")+HIW"è„±æ‰‹è€Œå‡ºï¼\n"NOR,me,target);
 			weapon->move(environment(me));
 			me->add("neili",-50);
 			return 1;
 		}
-			message_vision(HIW"$NÄ¬ÔËÀäÔÂº®Æø£¬´ß¶¯º®ÀäÕæÆø×¢Èë"+weapon->query("name")+HIW"£¬$n¼û×´¸Ï½ô´ß¶¯ÌåÄÚÕæÆøÓëÆäÏà¿¹¡£\n\n"NOR,me,target);
-			message_vision(HIG"$NÖ»¾õ$nÊÖÖĞµÄ"+weapon->query("name")+HIG"´«À´Ò»ÕóÑ×ÈÈµÄÆø¾¢£¬½«×Ô¼ºµÄÀäÔÂº®ÆøÏûåôÓÚÎŞĞÎ£¬Ö»ºÃ·ÅÊÖ£¬Æ®ÉíÍË¿ª¡£\n"NOR,me,target);
+			message_vision(HIW"$Né»˜è¿å†·æœˆå¯’æ°”ï¼Œå‚¬åŠ¨å¯’å†·çœŸæ°”æ³¨å…¥"+weapon->query("name")+HIW"ï¼Œ$nè§çŠ¶èµ¶ç´§å‚¬åŠ¨ä½“å†…çœŸæ°”ä¸å…¶ç›¸æŠ—ã€‚\n\n"NOR,me,target);
+			message_vision(HIG"$Nåªè§‰$næ‰‹ä¸­çš„"+weapon->query("name")+HIG"ä¼ æ¥ä¸€é˜µç‚çƒ­çš„æ°”åŠ²ï¼Œå°†è‡ªå·±çš„å†·æœˆå¯’æ°”æ¶ˆå¼­äºæ— å½¢ï¼Œåªå¥½æ”¾æ‰‹ï¼Œé£˜èº«é€€å¼€ã€‚\n"NOR,me,target);
 			me->start_busy(1+random(2));
 			me->add("neili",-150);
 			return 1;
 
 	}
-	message_vision("¿ÉÊÇ$nµÄ¿´ÆÆÁË$NµÄÆóÍ¼£¬Á¢¿Ì²ÉÈ¡ÊØÊÆ£¬Æ®Éí¶ã¿ª$NµÄ¹¥»÷¡£\n",me,target);
+	message_vision("å¯æ˜¯$nçš„çœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œç«‹åˆ»é‡‡å–å®ˆåŠ¿ï¼Œé£˜èº«èº²å¼€$Nçš„æ”»å‡»ã€‚\n",me,target);
 	me->add("neili",-50);
 	me->start_busy(1+random(2));
 	return 1;

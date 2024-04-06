@@ -12,53 +12,53 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕÐ¡¸ÁéÉß¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œçµè›‡ã€ï¼Ÿ\n");
                 
         if(!me->is_fighting())
-                return notify_fail("¡¸ÁéÉß¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ£¡\n");
+                return notify_fail("ã€Œçµè›‡ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
         if((int)me->query("max_neili") < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
           if((int)me->query("neili") < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
         if((int)me->query("jing") < 200 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
          if((int)me->query_skill("snow-zhang",1) < 150)
-                return notify_fail("ÄãµÄ·ÉÑ©Ó³Ã·ÕÆÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„é£žé›ªæ˜ æ¢…æŽŒä¿®ä¸ºä¸å¤Ÿã€‚\n");
          if((int)me->query_skill("hanshan-strike",1) < 150)
-                return notify_fail("ÄãµÄº®É½ÕÆ·¨ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å¯’å±±æŽŒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n");
          if((int)me->query_skill("doom-hand",1) < 150)
-                return notify_fail("ÄãµÄº®ÌìÉñÊÖÐÞÎª²»¹»¡£\n");                                
+                return notify_fail("ä½ çš„å¯’å¤©ç¥žæ‰‹ä¿®ä¸ºä¸å¤Ÿã€‚\n");                                
          if((int)me->query_skill("snowwhip",1) < 150)
-                return notify_fail("ÄãµÄº®Ñ©±Þ·¨ÐÞÎª²»¹»¡£\n");   
+                return notify_fail("ä½ çš„å¯’é›ªéž­æ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n");   
 
          if((int)me->query_skill("bingxue-xinfa",1) < 150)
-                return notify_fail("ÄãµÄ±ùÑ©ÐÄ·¨ÐÞÎª²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n"); 
 
         if((int)me->query_skill("snowwhip", 1) < 100)
-                return notify_fail("ÄãµÄº®Ñ©±Þ·¨²»¹»ÊìÁ·£¬Ê¹ÓÃÕâÒ»ÕÐ»áÓÐÀ§ÄÑ£¡\n");
+                return notify_fail("ä½ çš„å¯’é›ªéž­æ³•ä¸å¤Ÿç†Ÿç»ƒï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
 
           if(me->query_temp("no_snake"))
-                        return notify_fail("¿´Äã´óº¹ÁÜÀìµÄÑù×Ó£¬µÈ»á¶ùÔÙÓÃ°É£¡\n");
+                        return notify_fail("çœ‹ä½ å¤§æ±—æ·‹æ¼“çš„æ ·å­ï¼Œç­‰ä¼šå„¿å†ç”¨å§ï¼\n");
 
         me->delete("env/brief_message");
         target->delete("env/brief_message");
-message_vision(HIC"\n$NÊÖÖÐ±ÞÉÒºöÈ»Ì§Æð£¬ÈçÁéÉßÖ®Ê×à¿Ïò$n\n"NOR,me,target);
+message_vision(HIC"\n$Næ‰‹ä¸­éž­æ¢¢å¿½ç„¶æŠ¬èµ·ï¼Œå¦‚çµè›‡ä¹‹é¦–å—«å‘$n\n"NOR,me,target);
 me->set_temp("SS_perform", 7);  
         if (random(3)==0) target->start_busy(3);
-               msg =  HIC  "µÚÒ»±Þ º®ÐÇµãµã£¡" NOR;
+               msg =  HIC  "ç¬¬ä¸€éž­ å¯’æ˜Ÿç‚¹ç‚¹ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-                msg = HIC "µÚ¶þ±Þ º®·çÆðÙâ£¡" NOR;
+                msg = HIC "ç¬¬äºŒéž­ å¯’é£Žèµ·å…®ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-                msg = HIC "µÚÈý±Þ ÂþÌì·ÉÑ©£¡" NOR;
+                msg = HIC "ç¬¬ä¸‰éž­ æ¼«å¤©é£žé›ªï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-                msg = HIC "µÚËÄ±Þ Ñ©»¨ôæôæ£¡" NOR;
+                msg = HIC "ç¬¬å››éž­ é›ªèŠ±ç¿©ç¿©ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-                msg = HIC "µÚÎå±Þ »ýÑ©Èý³ß£¡" NOR;
+                msg = HIC "ç¬¬äº”éž­ ç§¯é›ªä¸‰å°ºï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-                msg = HIC "µÚÁù±Þ ¿ñ·çÖèÑ©£¡" NOR;
+                msg = HIC "ç¬¬å…­éž­ ç‹‚é£Žéª¤é›ªï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-                msg = HIC "µÚÆß±Þ ·çÑ©½»¼Ó£¡" NOR;
+                msg = HIC "ç¬¬ä¸ƒéž­ é£Žé›ªäº¤åŠ ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->delete_temp("SS_perform");
         me->receive_damage("jing", 50);

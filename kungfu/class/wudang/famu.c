@@ -1,13 +1,13 @@
-//famu.c Îäµ±·¥Ä¾µÀÊ¿
+//famu.c æ­¦å½“ä¼æœ¨é“å£«
 
 inherit NPC;
 
 void create()
 {
-        set_name("·¥Ä¾µÀÊ¿", ({ "famu", "fa mu"}));
+        set_name("ä¼æœ¨é“å£«", ({ "famu", "fa mu"}));
         set("long",
-                "ËûÊÇÎäµ±É½µÄ·¥Ä¾µÀÊ¿¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–æ˜¯æ­¦å½“å±±çš„ä¼æœ¨é“å£«ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -34,7 +34,7 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 5);
 
-        create_family("Îäµ±ÅÉ", 4, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 4, "å¼Ÿå­");
 
         setup();
 

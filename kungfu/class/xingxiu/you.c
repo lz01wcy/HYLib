@@ -10,12 +10,12 @@ int auto_kill();
        
 void create()  
 {  
-        set_name("��̹֮", ({ "you tanzhi", "you"}));  
-        set("nickname", "����");  
+        set_name("游坦之", ({ "you tanzhi", "you"}));  
+        set("nickname", "铁丑");  
         set("long",   
-                      "����һ��������͹͹��һ��죬һ��ڣ����Ǵ��˺ۺۣ�\n"  
-                      "������ã���ª�ɲ��Ѽ����޲���Ȼ��\n");  
-        set("gender", "����");  
+                      "此人一张脸凹凹凸凸，一块红，一块黑，满是创伤痕痕，\n"  
+                      "五官糜烂，丑陋可怖已极，无不骇然。\n");  
+        set("gender", "男性");  
         set("age", 25);  
         set("attitude", "peaceful");  
 //        set("shen_type", -1);  
@@ -89,7 +89,7 @@ map_skill("parry", "bingpo-blade");
 	set("auto_perform",1);
 
  /*       set("inquiry", ([  
-               "�׽" : (: ask_book :),
+               "易筋经" : (: ask_book :),
                                 
                       ]));  
 */              
@@ -101,7 +101,7 @@ void init()
 {
         if(this_player()->query_temp("azi/killer",1))
         {
-                say("��̹֮���һ�����������"+RANK_D->query_rude(this_player())+"����Ȼ��ɱ�˰��Ϲ���Ҹ���ƴ�ˣ�����\n");
+                say("游坦之大叫一声：“好你个"+RANK_D->query_rude(this_player())+"，居然想杀了阿紫姑娘，我跟你拼了！！”\n");
 //                cp_npc(this_player(),this_object());
                 //copy_status() 1.5*exp 1*neili 1*jingli
                 kill_ob(this_player());
@@ -131,12 +131,12 @@ void check_azi()
                         {   
                                 who->kill_ob(player);
                                 player->fight_ob(who); 
-                                tell_object(player,"��̹֮��ŭ������������Ѱ��Ϲ����˳���������ȥ���ɣ���\n");
+                                tell_object(player,"游坦之大怒：“狗贼，你把阿紫姑娘伤成这样，你去死吧！”\n");
                         }
                         else 
                         {
                                 who->set_leader(player);
-                                tell_object(player,"��̹֮�����е�������Ҫ�Ѱ��Ϲ����������ȥ����Ѱ��Ϲ��ﻹ���ң�����ɱ(kill)���ң�Ҫ��Ȼ�Ҿ��Բ���������Ѱ��Ϲ�����ߣ���\n");
+                                tell_object(player,"游坦之大声叫道：“你要把阿紫姑娘带到哪里去？快把阿紫姑娘还给我！除非杀(kill)了我，要不然我绝对不会允许你把阿紫姑娘带走！”\n");
                                 call_out("auto_kill",10);
                         }
                 }
@@ -145,7 +145,7 @@ void check_azi()
         }
         else  
         {
-                tell_object(me,"��̹֮��������Ҫȥ�Ұ��Ϲ����\n");
+                tell_object(me,"游坦之道：“我要去找阿紫姑娘。”\n");
                 call_out("destruct_ob",1);
         }
        
@@ -189,16 +189,16 @@ void die()
         player = this_object()->query_last_damage_from();
         if ( objectp( player ) ) 
         {
-        message("vision","��̹֮��Ŀ����֮������ͻȻ����������Ѫ��
-���Ͼ�Ȼ¶����һ˿�����Ц�ݣ������þ�����
-���е����������ڻ����ĵ�����ȥ��\n",environment(player));
-        message("vision","��̹֮���һ�������ˣ�\n",environment(player));
+        message("vision","游坦之面目狰狞之极，手突然扬起，满是鲜血的
+脸上居然露出了一丝诡异的笑容，这下用尽了他
+所有的力气，终于缓缓的倒了下去。\n",environment(player));
+        message("vision","游坦之大叫一声，死了！\n",environment(player));
 
-        tell_object(player,"����������̹֮��ʬ�壬�����ؿڴ��м�����������æ�������˳�����\n");
+        tell_object(player,"你搜了搜游坦之的尸体，发现胸口处有件东西，你连忙把它掏了出来。\n");
         ob=new("/d/xingxiu/obj/book.c");
         ob->set("my_owner",player);
         ob->move(player);
-        tell_object(player,"����ϸһ��ԭ����һ���顣\n");
+        tell_object(player,"你仔细一看原来是一本书。\n");
         if(!objectp(corpse = present("xiao feng",environment())) || !living(corpse) )
         {
                 player->delete_temp("azi/killer2",1);
@@ -213,22 +213,22 @@ void die()
  
 int accept_object(object me, object ob) 
 {        
-        if((string)ob->query("name")=="����"||(string)ob->query("id") == "a zi")    
+        if((string)ob->query("name")=="阿紫"||(string)ob->query("id") == "a zi")    
         {
         if((int)ob->query("eff_qi") < (int)ob->query("max_qi")) 
         { 
                  ob->kill_ob(me);
                  ob->set_leader(me);
                  me->fight_ob(ob);
-                return notify_fail("��Ѱ����˳�������ӣ���ȥ���ɣ�\n"); 
+                return notify_fail("你把阿紫伤成这个样子，你去死吧！\n"); 
         }
         
         else {  
                         //give some bonus and return, you disappear 
-                        tell_object(ob,"����̫лл��!\n"); 
+                        tell_object(ob,"真是太谢谢你!\n"); 
                         } 
         } 
-        else return notify_fail("����ʲô������ǲ�ң�");
+        else return notify_fail("你拿什么东西消遣我！");
                   
 }
 
@@ -237,12 +237,12 @@ int accept_kill(object me)
         object who;
         if(!me->query_temp("azi/killer",1) && !me->query_temp("azi/killer2",1) )
         {
-        command("say " + "�����а��֣������ߣ�\n");
+        command("say " + "臭贼有帮手！咱们走！\n");
         
         who=find_living("a zi");
                 if(who)
                 {
-                        message("vision","��̹֮ץס���ϵĸ첲��һ������Ҳ�Ƶ�ȥ�ˡ�\n",environment(me));
+                        message("vision","游坦之抓住阿紫的胳膊，一纵身飞也似的去了。\n",environment(me));
                         
                         me->delete_temp("azi/killer",1);
                         me->delete_temp("azi/killer2",1);
@@ -258,12 +258,12 @@ int accept_fight(object me)
 {
         if(!me->query_temp("azi/killer",1) || !me->query_temp("azi/killer2",1) )
         {
-        tell_object(me,"��̹֮˵�������ҿ�û��˼�����棡��\n");
+        tell_object(me,"游坦之说道：“我可没心思和你玩！”\n");
         return 0;
         }
         else
         {
-        tell_object(me,"��̹֮ŭ��������Ȼ����ô����Ͷ̥���Ҿͳ�ȫ�㣡��\n");
+        tell_object(me,"游坦之怒道：“既然你这么急着投胎，我就成全你！”\n");
         kill_ob(me);
         return 1;
         }

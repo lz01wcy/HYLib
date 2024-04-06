@@ -1,4 +1,4 @@
-// hua.c  »¯¹¦´ó·¨ Ö® ¡°»¯¡±×Ö¾÷
+// hua.c  åŒ–åŠŸå¤§æ³• ä¹‹ â€œåŒ–â€å­—è¯€
 // by Bbadboy
 
 #include <ansi.h>
@@ -14,26 +14,26 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("×îÎÂÈáµÄÒ»½£Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æœ€æ¸©æŸ”çš„ä¸€å‰‘åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_temp("sucked") )
-                return notify_fail("Äã¸Õ¸ÕÔË¹ı×îÎÂÈáµÄÒ»½£!\n");
+                return notify_fail("ä½ åˆšåˆšè¿è¿‡æœ€æ¸©æŸ”çš„ä¸€å‰‘!\n");
 
         if((int)me->query_skill("chixin-qingchang-jian", 1) < 150)
-                return notify_fail("ÄãµÄ³ÕĞÄÇé³¤½£µÈ¼¶²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç—´å¿ƒæƒ…é•¿å‰‘ç­‰çº§ä¸å¤Ÿï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon")) 
         || (string)weapon->query("skill_type") != "sword")
-                  return notify_fail("¡¸ÎÂÈáÒ»½£¡¹¿ªÊ¼Ê±±ØĞëÓĞ½£ÔÚÊÖ£¡\n");
+                  return notify_fail("ã€Œæ¸©æŸ”ä¸€å‰‘ã€å¼€å§‹æ—¶å¿…é¡»æœ‰å‰‘åœ¨æ‰‹ï¼\n");
 
 
         if( (int)me->query("neili",1) < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if( (int)target->query("max_neili") <= 100 )
-                return notify_fail( target->name() + "ËûÒÑ¾­Ã»ÓĞÈÎºÎÄÚÁ¦ÁË£¡\n");
+                return notify_fail( target->name() + "ä»–å·²ç»æ²¡æœ‰ä»»ä½•å†…åŠ›äº†ï¼\n");
 
-          message_vision( HIR "$NÍ»È»ÑÛÉñ±äµÃ¼«ÆäÎÂÈá£¬ÊÖÖĞ±¦½£ÇáÇáµÄÍùÇ°Ò»ËÍ£¬½£ÈĞÏò$nµÄ²»ÖªÊ²Ã´²¿Î»Æ®È¥£¡\n" NOR,
+          message_vision( HIR "$Nçªç„¶çœ¼ç¥å˜å¾—æå…¶æ¸©æŸ”ï¼Œæ‰‹ä¸­å®å‰‘è½»è½»çš„å¾€å‰ä¸€é€ï¼Œå‰‘åˆƒå‘$nçš„ä¸çŸ¥ä»€ä¹ˆéƒ¨ä½é£˜å»ï¼\n" NOR,
                 me, target );
 
         attackp = me->query_skill("force", 1) + me->query_skill("chixin-qingchang-jian", 1) + me->query_skill("sword", 1) / 2;
@@ -43,12 +43,12 @@ int perform(object me, object target)
 
         if( attackp / 2 + random(attackp) > defendp || !living(target) )
         {
-                  message_vision(HIY "$pÒ»Ê±ÄÑÒÔÉÁ±Ü£¬Ö»µÃ»ÅÂÒÓÃË«ÊÖ½«½£ÈĞÒ»¼Ğ,Ë«ÊÖµÇÊ±Èç±»Õ³×¡Ò»°ãµÄ½ôÌùÔÚ½£ÈĞÉÏ¡£¡£\n" NOR, me, target );
-                tell_object(me, HIB "Äã¼û" + target->name() + "Èç´Ë£¬µ±¼´ÔËÆğ±±Ú¤Éñ¹¦£¬½«¶Ô·½ÄÚÁ¦¾¡ÊıÎüÀ´¡£¡£...\n" NOR);
-                 message_vision(HIY "$pËÆºõÏëËµÊ²Ã´£¬¿ÉÊÇÈ«ÉíÎŞÁ¦£¬ÏÖ³ö¼«ÆäÍ´¿àµÄ±íÇé£¬Ë«ÊÖÈ´ÓÖ³éÍÑ²»¿ª¡£¡±\n" NOR, me, target );
+                  message_vision(HIY "$pä¸€æ—¶éš¾ä»¥é—ªé¿ï¼Œåªå¾—æ…Œä¹±ç”¨åŒæ‰‹å°†å‰‘åˆƒä¸€å¤¹,åŒæ‰‹ç™»æ—¶å¦‚è¢«ç²˜ä½ä¸€èˆ¬çš„ç´§è´´åœ¨å‰‘åˆƒä¸Šã€‚ã€‚\n" NOR, me, target );
+                tell_object(me, HIB "ä½ è§" + target->name() + "å¦‚æ­¤ï¼Œå½“å³è¿èµ·åŒ—å†¥ç¥åŠŸï¼Œå°†å¯¹æ–¹å†…åŠ›å°½æ•°å¸æ¥ã€‚ã€‚...\n" NOR);
+                 message_vision(HIY "$pä¼¼ä¹æƒ³è¯´ä»€ä¹ˆï¼Œå¯æ˜¯å…¨èº«æ— åŠ›ï¼Œç°å‡ºæå…¶ç—›è‹¦çš„è¡¨æƒ…ï¼ŒåŒæ‰‹å´åˆæŠ½è„±ä¸å¼€ã€‚â€\n" NOR, me, target );
                 tell_object(
-                        target, HIB "µ«¾õÊÖÕÆÖĞÎ¢Î¢Ò»Á¹£¬ÄÚÁ¦Ô´Ô´²»¾øµÄË³×Å¶Ô·½$w²»×¡ÍùÍâÓ¿È¥¡££¬\n" + 
-                        "µÇÊ±ĞÄÖĞÒ»¾ª£¬È«È»Ìá²»ÆğÕæÆøÊÕÁ¦£¬Ö»µÃÈÎ¶Ô·½ÎüÈ¡ÌåÄÚÄÚÁ¦¡£¡£¡£\n" 
+                        target, HIB "ä½†è§‰æ‰‹æŒä¸­å¾®å¾®ä¸€å‡‰ï¼Œå†…åŠ›æºæºä¸ç»çš„é¡ºç€å¯¹æ–¹$wä¸ä½å¾€å¤–æ¶Œå»ã€‚ï¼Œ\n" + 
+                        "ç™»æ—¶å¿ƒä¸­ä¸€æƒŠï¼Œå…¨ç„¶æä¸èµ·çœŸæ°”æ”¶åŠ›ï¼Œåªå¾—ä»»å¯¹æ–¹å¸å–ä½“å†…å†…åŠ›ã€‚ã€‚ã€‚\n" 
                         NOR);
 
                 if( !target->is_killing(me) ) me->kill_ob(target);
@@ -66,7 +66,7 @@ int perform(object me, object target)
         }
         else
         {       
-                message_vision(HIY "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Ñ¸ËÙµØ±Ü¿ªÁËÕâÒ»½£¡£\n" NOR, me, target);
+                message_vision(HIY "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œè¿…é€Ÿåœ°é¿å¼€äº†è¿™ä¸€å‰‘ã€‚\n" NOR, me, target);
                 me->start_busy(4);
                 call_out("del_sucked", 17, me);
         }

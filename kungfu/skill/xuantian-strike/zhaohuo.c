@@ -9,19 +9,19 @@ int perform(object me, object target)
 	object soldier,weapon;
 	int zhaosheshu,yangsheshu, exp, MAX_GUARD;
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬ÎŞ·¨ÓÃÄÚÁ¦µã»ğ");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ— æ³•ç”¨å†…åŠ›ç‚¹ç«");
         if( !me->is_fighting() )
-        return notify_fail("ºÃÏóÃ»ÓĞÈËÒªÉ±Äã£¡\n");
+        return notify_fail("å¥½è±¡æ²¡æœ‰äººè¦æ€ä½ ï¼\n");
 	if((int)me->query("neili")< 300)
-	return notify_fail("ÄãµÄÄÚÁ¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„å†…åŠ›å¤ªå·®äº†ï¼\n");
 	zhaosheshu = (int)me->query_skill("huagang-dafa");
 	yangsheshu = (int)me->query_skill("xuantian-strike");
 	exp = (int)me->query("combat_exp");
 //	if(huagang-dafa < 10 || chousui-zhang < 10)
-//	return notify_fail("ÄãĞÇËŞÎä¹¦Ì«²î£¬ÄÚÁ¦²»×ãÒÔÕĞ»ğÑæ£¡\n");	
+//	return notify_fail("ä½ æ˜Ÿå®¿æ­¦åŠŸå¤ªå·®ï¼Œå†…åŠ›ä¸è¶³ä»¥æ‹›ç«ç„°ï¼\n");	
 	MAX_GUARD = zhaosheshu * yangsheshu / 5000 + 1;
 	if( me->query_temp("max_guard") > MAX_GUARD )
-                return notify_fail("ÒÔÄãÏÖÔÚµÄÄÜÁ¦£¬ÄãÒÑ¾­Ã»ÓĞÄÜÁ¦¿ØÖÆ¸ü¶àµÄ»ğÑæÁË£¡\n");
+                return notify_fail("ä»¥ä½ ç°åœ¨çš„èƒ½åŠ›ï¼Œä½ å·²ç»æ²¡æœ‰èƒ½åŠ›æ§åˆ¶æ›´å¤šçš„ç«ç„°äº†ï¼\n");
 	seteuid(getuid());
 	me->add("neili",-150);
 	soldier= new("d/xingxiu/obj/huoyan");
@@ -30,7 +30,7 @@ int perform(object me, object target)
 //        soldier->set("possessed", me);
         me->add_temp("max_guard",1);
 //        me->remove_all_killer();
-	message_vision(RED "\n$NÓÃÈ«ÉíµÄÄÚÁ¦×¢ÈëµØÉÏ£¡¶Ô×ÅµØÉÏÒ»Ö¸..\n" NOR, me);	
-	message_vision(RED "\n$NÉÕÁËÆğÀ´£¡\n" NOR, soldier);
+	message_vision(RED "\n$Nç”¨å…¨èº«çš„å†…åŠ›æ³¨å…¥åœ°ä¸Šï¼å¯¹ç€åœ°ä¸Šä¸€æŒ‡..\n" NOR, me);	
+	message_vision(RED "\n$Nçƒ§äº†èµ·æ¥ï¼\n" NOR, soldier);
 	return 1;
 }

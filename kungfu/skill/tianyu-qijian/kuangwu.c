@@ -10,47 +10,47 @@ int perform(object me, object target)
         int extra;
         object weapon;
         extra = me->query_skill("tianyu-qijian",1);
-        if ( extra < 200) return notify_fail("ÄãµÄÌìÓðÆæ½£»¹²»¹»´¿Êì£¡\n");
+        if ( extra < 200) return notify_fail("ä½ çš„å¤©ç¾½å¥‡å‰‘è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
         if( !target ) target = offensive_target(me);
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£ÛÌìÓð¿ñÎè£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»å¤©ç¾½ç‹‚èˆžï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if ((int)me->query("neili")<450)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n"); 
 	if(((int)me->query_skill("bahuang-gong", 1) < 160 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 160 ))
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿå¨´ç†Ÿã€‚\n");
 
         me->add("neili",-350);
         weapon = me->query_temp("weapon");
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 if (!me) return 0;
 if (!target) return 0;
-        message_vision(HIM"$NÊ¹³öÌìÓðÆæ½£ÖÐµÄ¾øÕÐ£ÛÌìÓð¿ñÎè£Ý£¬Ò»ÕÐÁ¬»·Áù½££¬ÊÖÖÐµÄ"+weapon->name()+"ÉÁµç°ãÏò$n¹¥³öµÚÒ»½££¡\n\n" NOR,me,target);        
+        message_vision(HIM"$Nä½¿å‡ºå¤©ç¾½å¥‡å‰‘ä¸­çš„ç»æ‹›ï¼»å¤©ç¾½ç‹‚èˆžï¼½ï¼Œä¸€æ‹›è¿žçŽ¯å…­å‰‘ï¼Œæ‰‹ä¸­çš„"+weapon->name()+"é—ªç”µèˆ¬å‘$næ”»å‡ºç¬¬ä¸€å‰‘ï¼\n\n" NOR,me,target);        
 	extra = me->query_skill("tianyu-qijian",1) / 10;
 	extra += me->query_skill("tianyu-qijian",1) /10;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
         COMBAT_D->do_attack(me,target, weapon); 
-        message_vision(HIR"µÚ¶þ½££¡\n" NOR,me,target);
+        message_vision(HIR"ç¬¬äºŒå‰‘ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me,target, weapon);
-        message_vision(HIC"µÚÈý½££¡\n" NOR,me,target);
+        message_vision(HIC"ç¬¬ä¸‰å‰‘ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me,target, weapon);
-        message_vision(HIY"µÚËÄ½££¡\n" NOR,me,target);
+        message_vision(HIY"ç¬¬å››å‰‘ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me,target, weapon);
-        message_vision(HIG"µÚÎå½££¡\n" NOR,me,target);
+        message_vision(HIG"ç¬¬äº”å‰‘ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me,target, weapon);
-        message_vision(HIM"µÚÁù½££¡\n" NOR,me,target);
+        message_vision(HIM"ç¬¬å…­å‰‘ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me,target, weapon);
-        message_vision(HIW"×îºóÒ»½££¡\n" NOR,me,target);
+        message_vision(HIW"æœ€åŽä¸€å‰‘ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me,target, weapon);
         if (me->query("combat_exp")> target->query("combat_exp")/3 )
         {                
-        msg = HIC "Ò»µÀÉúËÀ·û"+HIM+"´òÖÐ$nµÄÉíÉÏ,$nÖ»¾õµÃÉË¿ÚÒ»Àä£¡\n"NOR;   
+        msg = HIC "ä¸€é“ç”Ÿæ­»ç¬¦"+HIM+"æ‰“ä¸­$nçš„èº«ä¸Š,$nåªè§‰å¾—ä¼¤å£ä¸€å†·ï¼\n"NOR;   
                 message_vision(msg, me, target);
 		target->apply_condition("ss_poison", 35);
                 if (!target->is_busy())
@@ -58,7 +58,7 @@ if (!target) return 0;
         }
         if (random(me->query_skill("dodge")) > target->query_skill("dodge") / 3)
         {                
-        msg = HIY "Ò»µÀÉúËÀ·û"+HIM+"´òÖÐ$nµÄÉíÉÏ,$nÖ»¾õµÃÉË¿ÚÒ»Àä£¡\n"NOR;   
+        msg = HIY "ä¸€é“ç”Ÿæ­»ç¬¦"+HIM+"æ‰“ä¸­$nçš„èº«ä¸Š,$nåªè§‰å¾—ä¼¤å£ä¸€å†·ï¼\n"NOR;   
                 message_vision(msg, me, target);
 		target->apply_condition("ss_poison", 35);
                 if (!target->is_busy())
@@ -66,7 +66,7 @@ if (!target) return 0;
         }
         if (random(me->query_skill("force")) > target->query_skill("force") / 3)
         {                
-        msg = HIR "Ò»µÀÉúËÀ·û"+HIM+"´òÖÐ$nµÄÉíÉÏ,$nÖ»¾õµÃÉË¿ÚÒ»Àä£¡\n"NOR;   
+        msg = HIR "ä¸€é“ç”Ÿæ­»ç¬¦"+HIM+"æ‰“ä¸­$nçš„èº«ä¸Š,$nåªè§‰å¾—ä¼¤å£ä¸€å†·ï¼\n"NOR;   
                 message_vision(msg, me, target);
 		target->apply_condition("ss_poison", 35);
                 if (!target->is_busy())
@@ -74,7 +74,7 @@ if (!target) return 0;
         }
        
         
-        message_vision(WHT"$NÁ¬³öÆß½££¬½á¹û$n±»¹¥ÁË¸öÊÖÃ¦½ÅÂÒ£¡\n" NOR,me,target);
+        message_vision(WHT"$Nè¿žå‡ºä¸ƒå‰‘ï¼Œç»“æžœ$nè¢«æ”»äº†ä¸ªæ‰‹å¿™è„šä¹±ï¼\n" NOR,me,target);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);
 

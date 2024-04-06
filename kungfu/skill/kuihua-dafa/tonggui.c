@@ -1,4 +1,4 @@
-// gonggui.c  Í¬¹éÓÚ¾¡
+// gonggui.c  åŒå½’äºå°½
 
 #include <ansi.h>
 
@@ -16,28 +16,28 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Í¬¹éÓÚ¾¡Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åŒå½’äºå°½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query_skill("kuihua-dafa", 1) < 150 )
-                return notify_fail("ÄãµÄ¿û»¨´ó·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Í¬¹éÓÚ¾¡¡¹¡£\n");
+                return notify_fail("ä½ çš„è‘µèŠ±å¤§æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€ŒåŒå½’äºå°½ã€ã€‚\n");
 
         
        if( me->query("eff_qi")<100|| !((int)(me->query("max_qi")/me->query("qi"))>=3.5))
-             return notify_fail("Äã»¹Ã»ÊÜÖØÉË£¬²»ÒªÊ¹ÓÃ¿û»¨´ó·¨¡£\n");
+             return notify_fail("ä½ è¿˜æ²¡å—é‡ä¼¤ï¼Œä¸è¦ä½¿ç”¨è‘µèŠ±å¤§æ³•ã€‚\n");
 
         if( (int)me->query("neili") < 300  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query_temp("kui_tong") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
 if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-        msg = HIY "$N·¢·èËÆµÄ³åÁËÉÏÀ´" + HIR "Î¨ÎÒ¿û»¨" +HIY "£¬$nÖ»¾õµÃÑÛÇ°Ò»»¨£¬ÑÊºíÒÑ±»½£·æ´©¹ı£¡£¡£¡" ;
-        msg +=  HIW"\nÒ»¹ÉÑª¼ıÅçÓ¿¶ø³ö£®£®$nµÄÈ«Éí¾­Âö¾¡¶Ï£®£®\n" NOR;
+        msg = HIY "$Nå‘ç–¯ä¼¼çš„å†²äº†ä¸Šæ¥" + HIR "å”¯æˆ‘è‘µèŠ±" +HIY "ï¼Œ$nåªè§‰å¾—çœ¼å‰ä¸€èŠ±ï¼Œå’½å–‰å·²è¢«å‰‘é”‹ç©¿è¿‡ï¼ï¼ï¼" ;
+        msg +=  HIW"\nä¸€è‚¡è¡€ç®­å–·æ¶Œè€Œå‡ºï¼ï¼$nçš„å…¨èº«ç»è„‰å°½æ–­ï¼ï¼\n" NOR;
 
 	message_vision(msg, me, target);
 
@@ -48,8 +48,8 @@ target->add("eff_qi",-25000);
 }else target->unconcious();
 	COMBAT_D->report_status(target);
 	} else {
-                msg = HIY "$N·¢·èËÆµÄ³åÁËÉÏÀ´" + HIR "Î¨ÎÒ¿û»¨" +HIY "£¬$nÖ»¾õµÃÑÛÇ°Ò»»¨£¡£¡£¡" ;
-		msg += HIG"¿ÉÊÇ$p»¹ÊÇ¶ã¹ıÁË$PµÄ×îºóÒ»»÷£¡£¡\n" NOR;
+                msg = HIY "$Nå‘ç–¯ä¼¼çš„å†²äº†ä¸Šæ¥" + HIR "å”¯æˆ‘è‘µèŠ±" +HIY "ï¼Œ$nåªè§‰å¾—çœ¼å‰ä¸€èŠ±ï¼ï¼ï¼" ;
+		msg += HIG"å¯æ˜¯$pè¿˜æ˜¯èº²è¿‡äº†$Pçš„æœ€åä¸€å‡»ï¼ï¼\n" NOR;
 		me->start_busy(3);
                 message_vision(msg, me, target);
 	}

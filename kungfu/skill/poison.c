@@ -1,4 +1,4 @@
-// poison.c »ù±¾¶¾¼¼
+// poison.c åŸºæœ¬æ¯’æŠ€
 // Modified by Java Mar.1998
 inherit SKILL;
 
@@ -9,15 +9,15 @@ int valid_learn(object me)
     mapping myfam;
     myfam = (mapping)me->query("family");
         if (!myfam)
-return notify_fail("Äã²»ÊÇÐÇËÞ£¬»òÎå¶¾½ÌµÜ×Ó£¬²»ÄÜÐÞÁ¶¶¾¼¼¡£\n");
-    if (!myfam || (myfam["family_name"] != "ÐÇËÞÅÉ") && (myfam["family_name"] != "Îå¶¾½Ì"))
-       return notify_fail("Äã²»ÊÇÐÇËÞ£¬»òÎå¶¾½ÌµÜ×Ó£¬²»ÄÜÐÞÁ¶¶¾¼¼¡£\n");
+return notify_fail("ä½ ä¸æ˜¯æ˜Ÿå®¿ï¼Œæˆ–äº”æ¯’æ•™å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç‚¼æ¯’æŠ€ã€‚\n");
+    if (!myfam || (myfam["family_name"] != "æ˜Ÿå®¿æ´¾") && (myfam["family_name"] != "äº”æ¯’æ•™"))
+       return notify_fail("ä½ ä¸æ˜¯æ˜Ÿå®¿ï¼Œæˆ–äº”æ¯’æ•™å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç‚¼æ¯’æŠ€ã€‚\n");
 
     if ((me->query_skill("taoism",1) > 1) ||
         (me->query_skill("mahayana",1) > 1) ||
         (me->query_skill("buddhism",1) > 1))
-        return notify_fail("¹þ¹þ£¡"+RANK_D->query_respect(me)
-      +"ÒÑ¾­Ñ§ÁËÃûÃÅÕýÅÉµÄÐÄ·¨£¬ÔõÃ´È´À´Ñ§ÄãÃÇ²»³ÜµÄ¶¾¼¼£¿\n");
+        return notify_fail("å“ˆå“ˆï¼"+RANK_D->query_respect(me)
+      +"å·²ç»å­¦äº†åé—¨æ­£æ´¾çš„å¿ƒæ³•ï¼Œæ€Žä¹ˆå´æ¥å­¦ä½ ä»¬ä¸è€»çš„æ¯’æŠ€ï¼Ÿ\n");
 
     return 1;
 }
@@ -26,7 +26,7 @@ void skill_improved(object me)
     mapping myfam;
     myfam = (mapping)me->query("family");
         if (!myfam)
-return notify_fail("Äã²»ÊÇÐÇËÞ£¬»òÎå¶¾½ÌµÜ×Ó£¬²»ÄÜÐÞÁ¶¶¾¼¼¡£\n");
+return notify_fail("ä½ ä¸æ˜¯æ˜Ÿå®¿ï¼Œæˆ–äº”æ¯’æ•™å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç‚¼æ¯’æŠ€ã€‚\n");
     if ((me->query_skill("poison",1) == 50) ||
         (me->query_skill("poison",1) == 60) ||
         (me->query_skill("poison",1) == 70) ||
@@ -34,10 +34,10 @@ return notify_fail("Äã²»ÊÇÐÇËÞ£¬»òÎå¶¾½ÌµÜ×Ó£¬²»ÄÜÐÞÁ¶¶¾¼¼¡£\n");
         (me->query_skill("poison",1) == 90) ||
         (me->query_skill("poison",1) >= 100))
     {
-if (myfam["family_name"] == "ÐÇËÞÅÉ")
+if (myfam["family_name"] == "æ˜Ÿå®¿æ´¾")
 {
         me->apply_condition("poison_sandu",300);
-        tell_object(me, "ÄãÌåÄÚµÄ¶¾ÖÊ¿ªÊ¼·´ÊÉ×ÔÉíÁË£¬µÃÕÒÈËÉ¢¶¾ÁË¡£\n");
+        tell_object(me, "ä½ ä½“å†…çš„æ¯’è´¨å¼€å§‹åå™¬è‡ªèº«äº†ï¼Œå¾—æ‰¾äººæ•£æ¯’äº†ã€‚\n");
 }
     }
 }

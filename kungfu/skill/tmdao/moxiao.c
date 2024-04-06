@@ -1,5 +1,5 @@
 
-// moxiao Ä§Ð¦
+// moxiao é­”ç¬‘
 // 99.2.1  by Bless
 
 #include <ansi.h>
@@ -14,40 +14,40 @@ if( !target ) target = offensive_target(me);
 
 if( !target || !target->is_character()|| !me->is_fighting(target) )
 
- return notify_fail("¡¸Ä§Ð¦»÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+ return notify_fail("ã€Œé­”ç¬‘å‡»ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "blade")
-        return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô\n");
+        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹\n");
 
-    if (me->query("family/family_name") != "ÈÕÔÂÉñ½Ì" )
-        return notify_fail("Äã²»ÊÇÈÕÔÂÉñ½ÌµÜ×Ó£¬²»ÄÜÊ¹ÓÃÕâÏî¾ø¼¼£¡\n");
+    if (me->query("family/family_name") != "æ—¥æœˆç¥žæ•™" )
+        return notify_fail("ä½ ä¸æ˜¯æ—¥æœˆç¥žæ•™å¼Ÿå­ï¼Œä¸èƒ½ä½¿ç”¨è¿™é¡¹ç»æŠ€ï¼\n");
 if ( (int)me->query_int() < 30 )
- return notify_fail("ÄãµÄÏÈÌì²»×ã£¬²»ÄÜÁìÎò¡¸Ä§Ð¦Æß»÷¡¹£¡£\n");
+ return notify_fail("ä½ çš„å…ˆå¤©ä¸è¶³ï¼Œä¸èƒ½é¢†æ‚Ÿã€Œé­”ç¬‘ä¸ƒå‡»ã€ï¼\n");
 
 
 if( (int)me->query_skill("tmdao", 1) < 199 )
- return notify_fail("ÄãµÄÌìÄ§µ¶·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Ä§Ð¦»÷¡¹¾ø¼¼¡£\n");
+ return notify_fail("ä½ çš„å¤©é­”åˆ€æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œé­”ç¬‘å‡»ã€ç»æŠ€ã€‚\n");
 
 if( (int)me->query_skill("tmdafa", 1) < 101 )
- return notify_fail("ÄãµÄÌìÄ§´ó·¨²»¹»Éîºñ£¬²»»áÊ¹ÓÃ¡¸Ä§Ð¦»÷¡¹¾ø¼¼¡£\n");
+ return notify_fail("ä½ çš„å¤©é­”å¤§æ³•ä¸å¤Ÿæ·±åŽšï¼Œä¸ä¼šä½¿ç”¨ã€Œé­”ç¬‘å‡»ã€ç»æŠ€ã€‚\n");
 
 if( (int)me->query("neili")<500)
- return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸Ä§Ð¦»÷¡¹¾ø¼¼¡£\n");
+ return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé­”ç¬‘å‡»ã€ç»æŠ€ã€‚\n");
 
 if( (time()-(int)me->query_temp("last_perform_time"))<
   me->query_temp("last_perform_busy") )
- return notify_fail("ÄãµÄÄÚÁ¦ÔË×ªµÄÃ»ÓÐÕâÃ´¿ì¡£\n");
+ return notify_fail("ä½ çš„å†…åŠ›è¿è½¬çš„æ²¡æœ‰è¿™ä¹ˆå¿«ã€‚\n");
 me->set_temp("last_perform_time",time());
 me->set_temp("last_perform_busy",3);
 
 /* */ if(random(2)==1) {
 /* */ i=8;
-  message_vision(YEL+"\n$N"+RED+"Òõ²à²à³¤Ð¦ÊýÉù£¬ÌìÄ§µ¶·¨½ÓÁ¬³öÕÐ¡£\n"NOR,me);
+  message_vision(YEL+"\n$N"+RED+"é˜´ä¾§ä¾§é•¿ç¬‘æ•°å£°ï¼Œå¤©é­”åˆ€æ³•æŽ¥è¿žå‡ºæ‹›ã€‚\n"NOR,me);
 }
 else {
 /* */ i=7;
- message_vision(YEL+"\n$N"+RED+"Òõ²à²à³¤Ð¦ÊýÉù£¬ÌìÄ§µ¶·¨½ÓÁ¬³öÕÐ¡£\n"NOR,me);
+ message_vision(YEL+"\n$N"+RED+"é˜´ä¾§ä¾§é•¿ç¬‘æ•°å£°ï¼Œå¤©é­”åˆ€æ³•æŽ¥è¿žå‡ºæ‹›ã€‚\n"NOR,me);
 }
 
 	extra = me->query_skill("tmdao",1) / 15;

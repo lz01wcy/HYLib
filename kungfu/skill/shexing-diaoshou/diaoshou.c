@@ -15,32 +15,32 @@ int perform(object me, object target)
         if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸µóÊÖÉßÐÎ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œåˆæ‰‹è›‡å½¢ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
                if( objectp(me->query_temp("weapon")) )
-              return notify_fail("Äã±ØÐë¿ÕÊÖÊ¹ÓÃ¡¸µóÊÖÉßÐÎ¡¹£¡\n");
+              return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ä½¿ç”¨ã€Œåˆæ‰‹è›‡å½¢ã€ï¼\n");
      
         if( (int)me->query_skill("shexing-diaoshou", 1) < 200 )
-                return notify_fail("ÄãµÄ¹¦·ò²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³ö¡¸µóÊÖÉßÐÎ¡¹¡£\n");
+                return notify_fail("ä½ çš„åŠŸå¤«ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•æ–½å±•å‡ºã€Œåˆæ‰‹è›‡å½¢ã€ã€‚\n");
        
 	if ((int)me->query_skill("hamagong", 1) < 20)
-		return notify_fail("ÄãµÄ¸òó¡¹¦»ðºò²»¹»¡£\n");
+		return notify_fail("ä½ çš„è›¤èŸ†åŠŸç«å€™ä¸å¤Ÿã€‚\n");
 
         if ( (int)me->query("max_neili") < 500)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê©Õ¹³ö¡¸µóÊÖÉßÐÎ¡¹¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºã€Œåˆæ‰‹è›‡å½¢ã€ã€‚\n");
         if ( (int)me->query("neili") < 100)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹³ö¡¸µóÊÖÉßÐÎ¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºã€Œåˆæ‰‹è›‡å½¢ã€ã€‚\n");
 	          me->add_temp("apply/strength", extra/4);
                  me->add_temp("apply/attack", extra);
 me->set_temp("noauto",1);
 	me->add("neili", -100);
-		 msg = YEL "$NÈ­ÕÐÈôÒþÈôÏÖ£¬ÈôÓÐÈôÎÞ£¬ÉñÉ«¹ÖÒìµÄ»º»ºµ«ÓÖÊ²Ã´Ææ¹ÖµÄ´òÏò$n£¡" NOR;
+		 msg = YEL "$Næ‹³æ‹›è‹¥éšè‹¥çŽ°ï¼Œè‹¥æœ‰è‹¥æ— ï¼Œç¥žè‰²æ€ªå¼‚çš„ç¼“ç¼“ä½†åˆä»€ä¹ˆå¥‡æ€ªçš„æ‰“å‘$nï¼" NOR;
        	         message_vision(msg, me, target);                
-	 msg =  HIC  "$NÏò$n×ó±ß´òÀ´£¬µ«Í»È»´òÏò$nÓÒ±ß£¡" NOR;
+	 msg =  HIC  "$Nå‘$nå·¦è¾¹æ‰“æ¥ï¼Œä½†çªç„¶æ‰“å‘$nå³è¾¹ï¼" NOR;
 	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR  "$NÏò$nÓÒ±ß´òÀ´£¬µ«Í»È»´òÏò$n×ó±ß£¡" NOR;
+        msg = HIR  "$Nå‘$nå³è¾¹æ‰“æ¥ï¼Œä½†çªç„¶æ‰“å‘$nå·¦è¾¹ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIB  "$NÏò$nÉÏ±ß´òÀ´£¬µ«Í»È»´òÏò$nÏÂ±ß£¡" NOR;
+        msg = HIB  "$Nå‘$nä¸Šè¾¹æ‰“æ¥ï¼Œä½†çªç„¶æ‰“å‘$nä¸‹è¾¹ï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 me->delete_temp("noauto");
         me->add_temp("apply/strength", -extra/4);

@@ -1,4 +1,4 @@
-// zuijiu.c °ËÏÉ×í¾Æ
+// zuijiu.c å…«ä»™é†‰é…’
 
 #include <ansi.h>
 
@@ -10,7 +10,7 @@ int perform(object me, object target)
          if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("°ËÏÉ×í¾ÆÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å…«ä»™é†‰é…’åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
         drunk = me->query_condition("drunk");
@@ -21,13 +21,13 @@ int perform(object me, object target)
         skill = (int)me->query_skill("zui-gun") / 15;
 
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¡\n");     
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸è¶³ï¼\n");     
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
         message_vision(
-    GRN "Ö»¼û$NÅç³öÒ»¿Ú¾ÆÆø£¬Ò»Ê½¡¸°ËÏÉ×í¾Æ¡¹£¬Î§×Å$nÒ»Ò¡Ò»°ÚµØ×ß¶¯×Å¡£\n" NOR, me, target);
+    GRN "åªè§$Nå–·å‡ºä¸€å£é…’æ°”ï¼Œä¸€å¼ã€Œå…«ä»™é†‰é…’ã€ï¼Œå›´ç€$nä¸€æ‘‡ä¸€æ‘†åœ°èµ°åŠ¨ç€ã€‚\n" NOR, me, target);
 
         me->start_busy(1);
         me->add("neili", -200);
@@ -35,18 +35,18 @@ int perform(object me, object target)
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 &&
             drunk > limit/4) {
                  message_vision(
-    HIR " $N½ÅÏÂÈ´ÊÇ°µº¬°ËØÔ£¬²½²½½ô±Æ£¬Ê¹µÃ$n°­ÊÖ°­½ÅÄÑÒÔ³öÕÐ£¡\n" NOR, me, target);
+    HIR " $Nè„šä¸‹å´æ˜¯æš—å«å…«å¦ï¼Œæ­¥æ­¥ç´§é€¼ï¼Œä½¿å¾—$nç¢æ‰‹ç¢è„šéš¾ä»¥å‡ºæ‹›ï¼\n" NOR, me, target);
                 target->start_busy( skill/zui + 2);
         } 
         else if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 &&
             drunk > limit/2) {
                  message_vision(
-    HIR " È´¼û$N½ÅÏÂ°µº¬°ËØÔ£¬²½²½½ô±Æ£¬Ê¹µÃ$n°­ÊÖ°­½ÅÄÑÒÔ³öÕÐ£¡\n" NOR, me, target);
+    HIR " å´è§$Nè„šä¸‹æš—å«å…«å¦ï¼Œæ­¥æ­¥ç´§é€¼ï¼Œä½¿å¾—$nç¢æ‰‹ç¢è„šéš¾ä»¥å‡ºæ‹›ï¼\n" NOR, me, target);
                 target->start_busy( skill/zui + 4);
         }
         else {
           message_vision(
-    CYN "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÕÐÊý£¬Ïòºó×ÝÁË¿ªÈ¥¡£\n" NOR, me, target);
+    CYN "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„æ‹›æ•°ï¼Œå‘åŽçºµäº†å¼€åŽ»ã€‚\n" NOR, me, target);
           me->start_busy(2);
         }
         target->add_temp("zui_baxian", 1);

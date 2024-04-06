@@ -5,32 +5,32 @@
 int exert(object me, object target)
 {
 	if( !target || target == me)
-		return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÖÎÁÆ£¿\n");
+		return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°æ²»ç–—ï¼Ÿ\n");
 
 	if( me->is_fighting() || target->is_fighting() || !living(target))
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÖÎÁÆ£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸæ²»ç–—ï¼\n");
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ðÈË! \n");
+		return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
 	if( (int)me->query("max_neili") < 1000 )
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
         if( !target->query_condition("dashouyin"))
-                return notify_fail("¶Ô·½²¢Ã»ÖÐ´óÊÖÓ¡ÄÚÉË£¬Äã²»ÓÃÎªËûÈËÁÆÉË¡£\n");
+                return notify_fail("å¯¹æ–¹å¹¶æ²¡ä¸­å¤§æ‰‹å°å†…ä¼¤ï¼Œä½ ä¸ç”¨ä¸ºä»–äººç–—ä¼¤ã€‚\n");
 
 //        if( (int)me->query_skill("medicine", 1) < 40 )
-//                return notify_fail("Äã±¾²ÝÊõÀíµÄµÈ¼¶²»¹»£¬ÎÞ·¨ÎªËûÈËÁÆÉË¡£\n");
+//                return notify_fail("ä½ æœ¬è‰æœ¯ç†çš„ç­‰çº§ä¸å¤Ÿï¼Œæ— æ³•ä¸ºä»–äººç–—ä¼¤ã€‚\n");
         if( (int)me->query_skill("longxiang", 1) < 80 )
-                return notify_fail("ÄãÄÚ¹¦µÈ¼¶²»¹»£¬ÎÞ·¨ÎªËûÈËÁÆÉË¡£\n");
+                return notify_fail("ä½ å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œæ— æ³•ä¸ºä»–äººç–—ä¼¤ã€‚\n");
 
 	if( (int)target->query("eff_qi") >= (int)target->query("max_qi") / 2 )
-		return notify_fail( target->name()+"ÏÖÔÚÊÜÉË²»ÊÇºÜÖØ£¬Äã×îºÃÔÙ¹Û²ìÒ»ÏÂ£¡\n");
+		return notify_fail( target->name()+"çŽ°åœ¨å—ä¼¤ä¸æ˜¯å¾ˆé‡ï¼Œä½ æœ€å¥½å†è§‚å¯Ÿä¸€ä¸‹ï¼\n");
 
 	else {message_vision(
-                HIY "$N¿ÚÄîÃÜ×Ú·üÄ§ÕæÑÔ£¬½«ÊÖÕÆÌùÔÚ$n±³ÐÄ£¬»º»ºµØ½«ÕæÆøÊäÈë$nÌåÄÚ......\n"
-                   "$nËæ¼´ÍÂ³öÒ»¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºìÈó¶àÁË£¬ÉËÊÆÓÐÁËºÜ´óµÄºÃ×ª¡£\n" NOR,
+                HIY "$Nå£å¿µå¯†å®—ä¼é­”çœŸè¨€ï¼Œå°†æ‰‹æŽŒè´´åœ¨$nèƒŒå¿ƒï¼Œç¼“ç¼“åœ°å°†çœŸæ°”è¾“å…¥$nä½“å†…......\n"
+                   "$néšå³åå‡ºä¸€å£ç˜€è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥çº¢æ¶¦å¤šäº†ï¼Œä¼¤åŠ¿æœ‰äº†å¾ˆå¤§çš„å¥½è½¬ã€‚\n" NOR,
 		me, target );
 	}
 	target->receive_curing("qi", 10 + (int)me->query_skill("force")/2 );

@@ -1,4 +1,4 @@
-// ÉÁµçÊõ
+// é—ªç”µæœ¯
 
 #include <ansi.h>
 
@@ -15,21 +15,21 @@ int thunderspell(object me, object target)
 
 	spells = me->query_skill("spells");
 	if((int)me->query("neili")< 500)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
-        msg = HIC"   $NÉíÓ°ÔÚ$nÃæÇ°ÏûÊ§ÁË!  \n"NOR;
+        msg = HIC"   $Nèº«å½±åœ¨$né¢å‰æ¶ˆå¤±äº†!  \n"NOR;
 
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp"))
         {
 
-        msg += HIC"$n"HIC"Í»È»·¢ÏÖ$N²»¼ûÁË£¬Ö»ºÃÍ£ÏÂÁË¹¥ÊÆ!!\n"NOR;
+        msg += HIC"$n"HIC"çªç„¶å‘ç°$Nä¸è§äº†ï¼Œåªå¥½åœä¸‹äº†æ”»åŠ¿!!\n"NOR;
                 target->remove_all_enemy();
                 me->remove_all_enemy();
 		message_combatd(msg, me, target);
 //		COMBAT_D->report_status(target);
         } else
         {
-        msg += HIC"$n"HIC"Ë«Ä¿Ò»ÉÁ£¬Ê¶ÆÆÁËÄãµÄÒşÉíÊõ!\n"NOR;
+        msg += HIC"$n"HIC"åŒç›®ä¸€é—ªï¼Œè¯†ç ´äº†ä½ çš„éšèº«æœ¯!\n"NOR;
 		message_combatd(msg, me, target);
         }
 me->add("neili",-150);
@@ -45,28 +45,28 @@ int perform(object me, object target)
 	int	i;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIC"¡¸ÒşÉíÊõ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIC"ã€Œéšèº«æœ¯ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 500)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõĞ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°ç©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-ice",1)< 100)
-	return notify_fail("ÄãµÄÆøÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ°”ç³»é­”æ³•å¤ªå·®äº†ï¼\n");
 
        if ((int)me->query_condition("inv_busy"))  
-       return notify_fail("Äã²ÅÓÃ¹ıÒşÉíÊõ£¡Òª¹ıÒ»»á²ÅÄÜÓÃ£¡\n");
+       return notify_fail("ä½ æ‰ç”¨è¿‡éšèº«æœ¯ï¼è¦è¿‡ä¸€ä¼šæ‰èƒ½ç”¨ï¼\n");
 
 
 
-	msg = HIC "$N"HIC"ÉíĞÎÒ»ÉÁ£¬¿ÚÖĞà«à«µØÄîÖøÖäÎÄ£¬\n" NOR;
-       msg += HIC"$NµÄ¶¯×÷Í»È»±äµÄÂıÁËÏÂÀ´£¬ÔÚÌìÀ¶É«µÄ¹âÃ¢ÏÂ, $NµÄÉíÌåÂıÂı±äÍ¸Ã÷ÆğÀ´£¡\n"NOR;
-       msg += HIC"  ¡¸ÒşÉíÊõ¡¹ \n"NOR;
+	msg = HIC "$N"HIC"èº«å½¢ä¸€é—ªï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œ\n" NOR;
+       msg += HIC"$Nçš„åŠ¨ä½œçªç„¶å˜çš„æ…¢äº†ä¸‹æ¥ï¼Œåœ¨å¤©è“è‰²çš„å…‰èŠ’ä¸‹, $Nçš„èº«ä½“æ…¢æ…¢å˜é€æ˜èµ·æ¥ï¼\n"NOR;
+       msg += HIC"  ã€Œéšèº«æœ¯ã€ \n"NOR;
 	message_vision(msg, me,target);
 	env = environment(me);
         inv = all_inventory(env);

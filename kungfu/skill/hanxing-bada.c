@@ -1,77 +1,77 @@
-//hanxing-bada.c º®ĞÇ°Ë´ò
+//hanxing-bada.c å¯’æ˜Ÿå…«æ‰“
 inherit SKILL;
 
 mapping *action = ({
-        ([      "action":"$NÊ¹Ò»ÕĞ¡¸ÔÉĞÇÕ§ÏÖ¡¹£¬ÊÖÖĞ$w¼²Éä$nµÄ$l",
+        ([      "action":"$Nä½¿ä¸€æ‹›ã€Œé™¨æ˜Ÿä¹ç°ã€ï¼Œæ‰‹ä¸­$wç–¾å°„$nçš„$l",
                 "force": 120,
                 "dodge": 20,
                 "damage":390,
                 "lvl" : 0,
-                "skill_name" : "ÔÉĞÇÕ§ÏÖ",
-                "damage_type":  "´ÌÉË",
+                "skill_name" : "é™¨æ˜Ÿä¹ç°",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$NÊ¹³ö¡¸ÓñöÀ»÷¿Õ¡¹£¬Ë«ÊÖÏÂ³Á$w¶¸µÄÏòÉÏ·É³öÖ±Ï®$nµÄ$l",
+        ([      "action":"$Nä½¿å‡ºã€Œç‰éš¼å‡»ç©ºã€ï¼ŒåŒæ‰‹ä¸‹æ²‰$wé™¡çš„å‘ä¸Šé£å‡ºç›´è¢­$nçš„$l",
                 "force": 125,
                 "dodge":  20,
                 "damage": 350,
                 "lvl" : 10,
-                "skill_name": "ÓñöÀ»÷¿Õ",
-                "damage_type":  "´ÌÉË",
+                "skill_name": "ç‰éš¼å‡»ç©º",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$NÒ»ÕĞ¡¸Äºö°³Á³Á¡¹£¬³¤ĞäÒ»»Ó£¬ÊÖÖĞ$w´ÓÒ¸ÏÂ¼¤Éä$nµÄ$l",
+        ([      "action":"$Nä¸€æ‹›ã€Œæš®éœ­æ²‰æ²‰ã€ï¼Œé•¿è¢–ä¸€æŒ¥ï¼Œæ‰‹ä¸­$wä»è…‹ä¸‹æ¿€å°„$nçš„$l",
                 "force":135,
                 "dodge": 30,
                 "damage":340,
                 "lvl" : 20,
-                "skill_name": "Äºö°³Á³Á",
-                "damage_type":  "´ÌÉË",
+                "skill_name": "æš®éœ­æ²‰æ²‰",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$NÊÖÖĞ$wÒ»Ê½¡¸³¤µçÁÑ¿Õ¡¹£¬$w»Ã×÷Ò»µÀ°×¹âÖ±±¼$nµÄ$l",
+        ([      "action":"$Næ‰‹ä¸­$wä¸€å¼ã€Œé•¿ç”µè£‚ç©ºã€ï¼Œ$wå¹»ä½œä¸€é“ç™½å…‰ç›´å¥”$nçš„$l",
                 "force":140,
                 "dodge": 40,
                 "damage":360,
                 "lvl" : 30,
-                "skill_name": "³¤µçÁÑ¿Õ",
-                "damage_type":  "´ÌÉË",
+                "skill_name": "é•¿ç”µè£‚ç©º",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$N×İÉíÒ»Ô¾£¬ÊÖÖĞ$wÒ»ÕĞ¡¸²ÔÁúÈëº£¡¹ÉäÏò$nµÄ$l",
+        ([      "action":"$Nçºµèº«ä¸€è·ƒï¼Œæ‰‹ä¸­$wä¸€æ‹›ã€Œè‹é¾™å…¥æµ·ã€å°„å‘$nçš„$l",
                 "force":150,
                 "dodge": 40,
                 "damage": 370,
                 "lvl" : 40,
-                "skill_name":"²ÔÁúÈëº£",
-                "damage_type":  "´ÌÉË",
+                "skill_name":"è‹é¾™å…¥æµ·",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$NÊÖ¿Û$w,Æ¾¿ÕÒ»Ö¸£¬Ò»ÕĞ¡¸°ÍÉ½Ò¹Óê¡¹È÷Ïò$nµÄ$l",
+        ([      "action":"$Næ‰‹æ‰£$w,å‡­ç©ºä¸€æŒ‡ï¼Œä¸€æ‹›ã€Œå·´å±±å¤œé›¨ã€æ´’å‘$nçš„$l",
                 "force":160,
                 "dodge": 20,
                 "damage":350,
                 "lvl" : 50,
-                "skill_name": "°ÍÉ½Ò¹Óê",
-                "damage_type":  "´ÌÉË",
+                "skill_name": "å·´å±±å¤œé›¨",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$NÉíĞÎÒ»»Î£¬Ê¹Ò»ÕĞ¡¸åçĞÇºá¿Õ¡¹$wÍÑÊÖ¶ø³ö£¬Ï®Ïò$nµÄ$l",
+        ([      "action":"$Nèº«å½¢ä¸€æ™ƒï¼Œä½¿ä¸€æ‹›ã€Œå½—æ˜Ÿæ¨ªç©ºã€$wè„±æ‰‹è€Œå‡ºï¼Œè¢­å‘$nçš„$l",
                 "force":220,
                 "dodge": 120,
                 "damage":360,
                 "lvl" : 60,
-                "skill_name": "åçĞÇºá¿Õ",
-                "damage_type":  "´ÌÉË",
+                "skill_name": "å½—æ˜Ÿæ¨ªç©º",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
-        ([      "action":"$NÉíĞÎÒ»×ªÊÖÖĞ$wÊ¹Ò»ÕĞ¡¸ºóŞÄÉäÈÕ¡¹»­³öÒ»µÀ¹â»¡Ï®Ïò$nµÄ$l",
+        ([      "action":"$Nèº«å½¢ä¸€è½¬æ‰‹ä¸­$wä½¿ä¸€æ‹›ã€Œåå¼ˆå°„æ—¥ã€ç”»å‡ºä¸€é“å…‰å¼§è¢­å‘$nçš„$l",
                 "force":270,
                 "dodge": 130,
                 "damage":360,
                 "lvl" : 100,
-                "skill_name": "ºóôàÉäÈÕ",
-                "damage_type":  "´ÌÉË",
+                "skill_name": "åç¾¿å°„æ—¥",
+                "damage_type":  "åˆºä¼¤",
                 "post_action":  (: call_other, WEAPON_D, "throw_weapon" :),
         ]),
 });
@@ -81,10 +81,10 @@ int valid_learn(object me)
         object ob;
 
         if( (int)me->query("max_neili") < 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞ°ì·¨Á·º®ĞÇ°Ë´ò¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•ç»ƒå¯’æ˜Ÿå…«æ‰“ã€‚\n");
        if( !(ob = me->query_temp("weapon"))
         ||      (string)ob->query("skill_type") != "throwing" )
-                return notify_fail("Äã±ØĞëÏÈÕÒÒ»Ğ©·ÉïÚÖ®ÀàµÄ¶«Î÷²ÅÄÜÁ·°µÆ÷¡£\n");
+                return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€äº›é£é•–ä¹‹ç±»çš„ä¸œè¥¿æ‰èƒ½ç»ƒæš—å™¨ã€‚\n");
         return 1;
 }
 
@@ -113,11 +113,11 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( (int)me->query("qi") < 30 ||(int)me->query("neili") < 3 )
-                return notify_fail("ÄãµÄÄÚÁ¦»òÆø²»¹»£¬Ã»ÓĞ°ì·¨Á·Ï°º®ĞÇ°Ë´ò¡£\n")
+                return notify_fail("ä½ çš„å†…åŠ›æˆ–æ°”ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•ç»ƒä¹ å¯’æ˜Ÿå…«æ‰“ã€‚\n")
 ;
         me->receive_damage("qi", 30);
         me->add("neili", -3);
-        //write("Äã°´ÖøËùÑ§Á·ÁËÒ»±éº®ĞÇ°Ë´ò¡£\n");
+        //write("ä½ æŒ‰è‘—æ‰€å­¦ç»ƒäº†ä¸€éå¯’æ˜Ÿå…«æ‰“ã€‚\n");
         return 1;
 }
 

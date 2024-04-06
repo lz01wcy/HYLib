@@ -7,22 +7,22 @@ int exert(object me, object target)
 	int con1, con2, con3;
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐÔË¹¦Çý¶¾£¿ÕÒËÀÂð£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸé©±æ¯’ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if( (int)me->query("neili") < 50 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-		return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+		return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
 	if ((int)me->query_skill("biyun-xinfa", 1) < 250)
-		return notify_fail("ÄãµÄ±ÌÔÆÐÄ·¨ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
 if (!userp(target))
-	return notify_fail("¶Ô·½²»½ÓÊÜÄãµÄÒ½ÁÆ¡£\n");
+	return notify_fail("å¯¹æ–¹ä¸æŽ¥å—ä½ çš„åŒ»ç–—ã€‚\n");
 
 if (!userp(me))
-	return notify_fail("¶Ô·½²»½ÓÊÜÄãµÄÒ½ÁÆ¡£\n");
+	return notify_fail("å¯¹æ–¹ä¸æŽ¥å—ä½ çš„åŒ»ç–—ã€‚\n");
 
 		if (target->query_condition("scorpion_poison"))
         target->clear_condition("scorpion_poison");
@@ -131,9 +131,9 @@ if (!userp(me))
 		if (target->query_condition("qx_snake_poison"))
 	target->clear_condition("qx_snake_poison");
 }      
-	write( HIB "ÄãÔËÆðÌÆÃÅµÄ±ÌÔÆÐÄ·¨£¬ÍÂ³öÁËÒ»¿Ú±ÌÉ«µÄÑªÒ¹!!½â¿ªÁËÉíÉÏµÄ¶¾£¡!\n" NOR);
+	write( HIB "ä½ è¿èµ·å”é—¨çš„ç¢§äº‘å¿ƒæ³•ï¼Œåå‡ºäº†ä¸€å£ç¢§è‰²çš„è¡€å¤œ!!è§£å¼€äº†èº«ä¸Šçš„æ¯’ï¼!\n" NOR);
 		message("vision", 
-	HIB+me->name()+"ÍÂ³öÁËÒ»¿Ú±ÌÉ«µÄÑªÒ¹!!\n" NOR,
+	HIB+me->name()+"åå‡ºäº†ä¸€å£ç¢§è‰²çš„è¡€å¤œ!!\n" NOR,
 		environment(me), me);
 
 	me->add("neili", -50);

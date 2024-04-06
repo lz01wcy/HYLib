@@ -9,15 +9,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name("Ğ»Ñ·", ({"xie xun", "xie", "xun", }));
+	set_name("è°¢é€Š", ({"xie xun", "xie", "xun", }));
 	set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ıÎ°Òì³£µÄµÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÂúÍ·»Æ·¢£¬Íş·çÁİÁİ£¬ÕæÈçÌìÉñÒ»°ã£¬Ö»ÊÇÁ½Ö»ÑÛ¾¦²¢²»Õö¿ª¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æé­ä¼Ÿå¼‚å¸¸çš„çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•¿è¢ã€‚\n"
+        "ä»–æ»¡å¤´é»„å‘ï¼Œå¨é£å‡›å‡›ï¼ŒçœŸå¦‚å¤©ç¥ä¸€èˆ¬ï¼Œåªæ˜¯ä¸¤åªçœ¼ç›å¹¶ä¸çå¼€ã€‚\n"
 	);
 
-	set("title",HIG "Ã÷½Ì" HIY "½ğÃ«Ê¨Íõ" NOR);
+	set("title",HIG "æ˜æ•™" HIY "é‡‘æ¯›ç‹®ç‹" NOR);
 	set("level",9);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 
 	set("age", 63);
@@ -75,7 +75,7 @@ void create()
 
 
 	}) );
-	create_family("Ã÷½Ì",34, "·¨Íõ");
+	create_family("æ˜æ•™",34, "æ³•ç‹");
 	setup();
     	carry_object("/d/mingjiao/obj/baipao")->wear();
 }
@@ -106,10 +106,10 @@ int accept_object(object who, object ob)
         if ((string)ob->query("id")=="yi xin") {
             if(!query("qk_trigger")) {
 		qkbook = new("/clone/book/qiankun_book");
-		say("Ğ»Ñ·ËµµÀ£ºĞ»Ğ»ÄãÖÕÓÚÈÃÎÒÖªµÀÁËÑô½ÌÖ÷µÄÏÂÂä£¬ÎÒÎŞÒÔ³êĞ»£¬ÕâÕÅÑòÆ¤¾ÍÁÄ±íĞ»Òâ°É¡£\n"
-"Ğ»Ñ·°Ñ" + qkbook->query("name") + "½»¸øÁË" + who->query("name") + "¡£\n");
+		say("è°¢é€Šè¯´é“ï¼šè°¢è°¢ä½ ç»ˆäºè®©æˆ‘çŸ¥é“äº†é˜³æ•™ä¸»çš„ä¸‹è½ï¼Œæˆ‘æ— ä»¥é…¬è°¢ï¼Œè¿™å¼ ç¾Šçš®å°±èŠè¡¨è°¢æ„å§ã€‚\n"
+"è°¢é€ŠæŠŠ" + qkbook->query("name") + "äº¤ç»™äº†" + who->query("name") + "ã€‚\n");
 		qkbook->move(who);
-		command("rumor "+who->query("name")+"ÄÃµ½Ç¬À¤´óÅ²ÒÆĞÄ·¨ÁË¡£\n");
+		command("rumor "+who->query("name")+"æ‹¿åˆ°ä¹¾å¤å¤§æŒªç§»å¿ƒæ³•äº†ã€‚\n");
                 set("qk_trigger", 1);
             }
 	}

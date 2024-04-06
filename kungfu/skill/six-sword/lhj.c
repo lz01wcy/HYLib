@@ -8,31 +8,31 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
         extra = me->query_skill("six-sword",1);
-       if ( extra < 50) return notify_fail("ÄãµÄÁùÒõ×·»ê½£·¨»¹²»¹»´¿Êì£¡\n");
+       if ( extra < 50) return notify_fail("ä½ çš„å…­é˜´è¿½é­‚å‰‘æ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 
         if((int)me->query("neili") < 500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬²»ÄÜÊ¹ÓÃ£¡\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
                 weapon = me->query_temp("weapon");
         if (!weapon || weapon->query("skill_type") != "sword"       )
-                return notify_fail("ÄãÊÖÀïÃ»ÓÐ½££¬ÎÞ·¨Ê¹ÓÃ£¡\n");                
+                return notify_fail("ä½ æ‰‹é‡Œæ²¡æœ‰å‰‘ï¼Œæ— æ³•ä½¿ç”¨ï¼\n");                
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("£ÛÁ¬»·½££ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»è¿žçŽ¯å‰‘ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
-msg = HIR "$N¾çÁÒµØ¶¶¶¯×ÅÊÖÖÐµÄ"+ weapon->name() + HIR"Ò»´ÎÏò$nÁ¬Ðø¹¥³ö¡ºÁù¡»¡ºÒõ¡»¡º×·¡»¡º»ê¡»ËÄÁ¬½££¡£¡\n\n" NOR;
+msg = HIR "$Nå‰§çƒˆåœ°æŠ–åŠ¨ç€æ‰‹ä¸­çš„"+ weapon->name() + HIR"ä¸€æ¬¡å‘$nè¿žç»­æ”»å‡ºã€Žå…­ã€ã€Žé˜´ã€ã€Žè¿½ã€ã€Žé­‚ã€å››è¿žå‰‘ï¼ï¼\n\n" NOR;
 	message_vision(msg,me,target);
 if (extra>200) extra=200;
         me->add_temp("apply/damage",extra);
         me->add_temp("apply/attack",extra);
-        msg = ""+ weapon->name()+ "" + HIW"ÏóÒ»ÌõÒøÉßÒ»°ãÖ±´ÌÏò$n£¡"NOR;
+        msg = ""+ weapon->name()+ "" + HIW"è±¡ä¸€æ¡é“¶è›‡ä¸€èˆ¬ç›´åˆºå‘$nï¼"NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = ""+ weapon->name()+ "" + HIY"»¯×÷Ò»Æ¬½ð¹âÆ½ÏûÏò$n£¡"NOR;
+        msg = ""+ weapon->name()+ "" + HIY"åŒ–ä½œä¸€ç‰‡é‡‘å…‰å¹³æ¶ˆå‘$nï¼"NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = ""+ weapon->name()+ "" + HIC"ºöÒþºöÏÖ·´ÁÃÏò$n£¡"NOR;
+        msg = ""+ weapon->name()+ "" + HIC"å¿½éšå¿½çŽ°åæ’©å‘$nï¼"NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = ""+ weapon->name()+ "" + HIG"ÓÌÈçÊ§È¥¿ØÖÆÒ»°ãºáÉ¨Ïò$n£¡"NOR;
+        msg = ""+ weapon->name()+ "" + HIG"çŠ¹å¦‚å¤±åŽ»æŽ§åˆ¶ä¸€èˆ¬æ¨ªæ‰«å‘$nï¼"NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/damage",-extra);
         me->add_temp("apply/attack",-extra);

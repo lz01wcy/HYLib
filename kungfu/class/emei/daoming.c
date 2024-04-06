@@ -1,13 +1,13 @@
-// daoming.c µÀÃ÷
+// daoming.c é“æ˜
 
 inherit NPC;
 
 void create()
 {
-        set_name("µÀÃ÷Ğ¡Ê¦¸¸", ({ "daoming","xiaoshifu",}));
+        set_name("é“æ˜å°å¸ˆçˆ¶", ({ "daoming","xiaoshifu",}));
         set("long",
-                "ËûÊÇ¶ëáÒ±¨¹úËÂÂ¥µÄĞ¡ºÍÉĞ¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–æ˜¯å³¨åµ‹æŠ¥å›½å¯ºæ¥¼çš„å°å’Œå°šã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 16);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -34,7 +34,7 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 5);
 
-        create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
         setup();
 
@@ -53,5 +53,5 @@ void init()
 void greeting(object ob)
 {
      if( !ob || environment(ob) != environment() ) return;
-     say( "µÀÃ÷Ğ¡Ê¦¸¸ÇáÉùËµµÀ£º»¶Ó­À´±£¹úËÂ²Ø¾­Â¥¡£ÄúÒª¶Á¾­ÊéÂğ£¿\n");
+     say( "é“æ˜å°å¸ˆçˆ¶è½»å£°è¯´é“ï¼šæ¬¢è¿æ¥ä¿å›½å¯ºè—ç»æ¥¼ã€‚æ‚¨è¦è¯»ç»ä¹¦å—ï¼Ÿ\n");
 }

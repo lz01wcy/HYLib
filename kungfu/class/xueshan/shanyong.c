@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/shanyong.c  ÉÆÓÂ
+// /kungfu/class/xueshan/shanyong.c  å–„å‹‡
 // by secret
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÉÆÓÂ", ({ "shan yong", "shan", "yong" }));
+        set_name("å–„å‹‡", ({ "shan yong", "shan", "yong" }));
         set("long",@LONG
-Ò»¸öÅÖÅÖµÄÎ÷²ØÉ®ÈË£¬Ãæ´øĞ¦Èİ£¬È´³£¸ÉĞ¦Àï²Øµ¶µÄÊÂ¡£
+ä¸€ä¸ªèƒ–èƒ–çš„è¥¿è—åƒ§äººï¼Œé¢å¸¦ç¬‘å®¹ï¼Œå´å¸¸å¹²ç¬‘é‡Œè—åˆ€çš„äº‹ã€‚
 LONG
         );
-        set("title",HIR"Ñªµ¶ÃÅµÚÎå´úµÜ×Ó"NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIR"è¡€åˆ€é—¨ç¬¬äº”ä»£å¼Ÿå­"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -48,7 +48,7 @@ LONG
         map_skill("parry", "xue-dao");
         map_skill("blade", "xue-dao");
 
-        create_family("Ñ©É½ËÂ", 5, "µÜ×Ó");
+        create_family("é›ªå±±å¯º", 5, "å¼Ÿå­");
         set("class", "bonze");
 
         setup();
@@ -58,13 +58,13 @@ LONG
 
 void attempt_apprentice(object ob)
 {
-        if ((string)ob->query("gender") != "ÄĞĞÔ")
+        if ((string)ob->query("gender") != "ç”·æ€§")
         {
-                command("say ÎÒ²»ÊÕÅ®Í½µÜ¡£\n");
+                command("say æˆ‘ä¸æ”¶å¥³å¾’å¼Ÿã€‚\n");
                 return;
         }
         command("haha");
         command("recruit " + ob->query("id"));
 
-        ob->set("title", HIR "Ñªµ¶ÃÅµÚÁù´úµÜ×Ó" NOR);
+        ob->set("title", HIR "è¡€åˆ€é—¨ç¬¬å…­ä»£å¼Ÿå­" NOR);
 }

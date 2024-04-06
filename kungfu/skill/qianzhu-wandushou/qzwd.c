@@ -1,4 +1,4 @@
-// qianzhu-wandushou.c Ç§ÖëÍò¶¾
+// qianzhu-wandushou.c åƒè››ä¸‡æ¯’
 #include <ansi.h>
 #include <combat.h>
 inherit F_SSERVER;
@@ -13,26 +13,26 @@ object weapon = me->query_temp("weapon");
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ç§ÖëÍò¶¾Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("åƒè››ä¸‡æ¯’åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 //	if((int)me->query_skill("duji",1) < 100)
-//		return notify_fail("Äã¶¾¼¼Ì«µÍ,²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼!\n");
+//		return notify_fail("ä½ æ¯’æŠ€å¤ªä½,ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€!\n");
 
 //	if((int)me->query_skill("wudu-shengong",1) < 80)
-//		return notify_fail("ÄãÎå¶¾Éñ¹¦µÄ¹¦Á¦²»¹»²»ÄÜÊ¹ÓÃÇ§ÖëÍò¶¾!\n");
+//		return notify_fail("ä½ äº”æ¯’ç¥åŠŸçš„åŠŸåŠ›ä¸å¤Ÿä¸èƒ½ä½¿ç”¨åƒè››ä¸‡æ¯’!\n");
 
 	if((int)me->query_skill("qianzhu-wandushou",1) < 150)
-		return notify_fail("ÄãµÄÇ§ÖëÍò¶¾ÊÖĞŞÎª²»¹»,»¹²»ÄÜÊ¹ÓÃÇ§ÖëÍò¶¾µÄ¾ø¼¼!\n");
+		return notify_fail("ä½ çš„åƒè››ä¸‡æ¯’æ‰‹ä¿®ä¸ºä¸å¤Ÿ,è¿˜ä¸èƒ½ä½¿ç”¨åƒè››ä¸‡æ¯’çš„ç»æŠ€!\n");
 
 	if((int)me->query("max_neili") < 700)
-		return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹», ²»ÄÜÊ¹ÓÃÇ§ÖëÍò¶¾! \n");
+		return notify_fail("ä½ å†…åŠ›ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨åƒè››ä¸‡æ¯’! \n");
 
 	if((int)me->query("neili") < 300)
-		return notify_fail("ÄãÄÚÁ¦²»¹», ²»ÄÜÊ¹ÓÃÇ§ÖëÍò¶¾! \n");
-if (me->query("family/family_name") == "Îå¶¾½Ì"
+		return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨åƒè››ä¸‡æ¯’! \n");
+if (me->query("family/family_name") == "äº”æ¯’æ•™"
 &&(int)me->query("neili") < 500)
-return notify_fail("ÄãÄÚÁ¦²»¹», ²»ÄÜÊ¹ÓÃÇ§ÖëÍò¶¾! \n");
-if ( me->query("family/family_name") == "Îå¶¾½Ì"
+return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨åƒè››ä¸‡æ¯’! \n");
+if ( me->query("family/family_name") == "äº”æ¯’æ•™"
 && !objectp(me->query_temp("weapon")) 
 )
 {
@@ -42,7 +42,7 @@ if (!rlevel) rlevel=10;
 	{
 	me->add_temp("apply/attack", (rlevel*2));	
 	me->add_temp("apply/damage", (rlevel*4));
-        msg = HIB "$NÔËÆğÎå¶¾Éñ¹¦,Í·¶¥ºÚÆøÕôÌÚ£¬Ò»ÕÆÅüÁË³öÀ´£¡\n" NOR;
+        msg = HIB "$Nè¿èµ·äº”æ¯’ç¥åŠŸ,å¤´é¡¶é»‘æ°”è’¸è…¾ï¼Œä¸€æŒåŠˆäº†å‡ºæ¥ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -(rlevel*2));	
 	me->add_temp("apply/damage", -(rlevel*4));
@@ -51,17 +51,17 @@ if (!rlevel) rlevel=10;
 me->start_busy(2);
 me->add("neili",-40*i);
 }
-	msg = HIR "$NÒ»ÉùÄüĞ¦·ÉÉí×İÆğ£¬Áè¿ÕÒ»Ö¸Ïò$nµÄÃ¼ĞÄµãÈ¥¡£\n";
+	msg = HIR "$Nä¸€å£°ç‹ç¬‘é£èº«çºµèµ·ï¼Œå‡Œç©ºä¸€æŒ‡å‘$nçš„çœ‰å¿ƒç‚¹å»ã€‚\n";
 	message_vision(msg, me, target);
 
 	if( random(me->query_skill("qianzhu-wandushou",1)) > random((int)target->query_skill("dodge",1)* 2 / 3 )) {
-		msg = HIR"Ö»¼ûÒ»ÂÆºÚÆø´Ó$NµÄÖ¸¼âÍ¸³ö£¬Ö»Ò»ÉÁ¾ÍÃ»Èë$nµÄÃ¼ĞÄ£¡\n" NOR;
+		msg = HIR"åªè§ä¸€ç¼•é»‘æ°”ä»$Nçš„æŒ‡å°–é€å‡ºï¼Œåªä¸€é—ªå°±æ²¡å…¥$nçš„çœ‰å¿ƒï¼\n" NOR;
 	       message_vision(msg, me, target);
              if(target->query_skill("hunyuan-yiqi",1)>me->query_skill("qianzhu-wandushou",1)*12/10&&random(2)==0){             
-		msg = RED"$NºöÈ»¾õµÃÖ¸Á¦±»Ò»ÍÅÎŞĞÎµÄ¾¢Á¦°ü¹ü×Å£¬½ô½Ó×ÅÖ»Ìı\n
-$nÒ»Éù´óºÈ£¬$N¶ÙÊ±ÈçÒ»¸ùµ¾²İ°ã±»Å×ÏòÔ¶´¦¡£\n" NOR;
+		msg = RED"$Nå¿½ç„¶è§‰å¾—æŒ‡åŠ›è¢«ä¸€å›¢æ— å½¢çš„åŠ²åŠ›åŒ…è£¹ç€ï¼Œç´§æ¥ç€åªå¬\n
+$nä¸€å£°å¤§å–ï¼Œ$Né¡¿æ—¶å¦‚ä¸€æ ¹ç¨»è‰èˆ¬è¢«æŠ›å‘è¿œå¤„ã€‚\n" NOR;
 	       message_vision(msg, me, target);
-		msg = RED"$PÖ»¾õµÃÒ»¹ÉÈçÉ½µÄ¾¢Á¦Ë³Ö¸¼âÃÍ¹¥¹ıÀ´£¬Ö»¾õµÃÈ«Éí¶¾Æø¿ñ´Ü¡£\nºöÈ»ĞØ¿ÚÒ»Í´£¬²»ÓÉ¡°ÍÛ¡±µÄÒ»ÉùÍÂ³öÒ»¿ÚºÚÑª£¡\n" NOR;
+		msg = RED"$Påªè§‰å¾—ä¸€è‚¡å¦‚å±±çš„åŠ²åŠ›é¡ºæŒ‡å°–çŒ›æ”»è¿‡æ¥ï¼Œåªè§‰å¾—å…¨èº«æ¯’æ°”ç‹‚çªœã€‚\nå¿½ç„¶èƒ¸å£ä¸€ç—›ï¼Œä¸ç”±â€œå“‡â€çš„ä¸€å£°åå‡ºä¸€å£é»‘è¡€ï¼\n" NOR;
 	       message_vision(msg, me);
               damage=(int)me->query_skill("qianzhu-wandushou",1)
                      +(int)me->query_skill("wudu-shengong",1);
@@ -71,7 +71,7 @@ $nÒ»Éù´óºÈ£¬$N¶ÙÊ±ÈçÒ»¸ùµ¾²İ°ã±»Å×ÏòÔ¶´¦¡£\n" NOR;
               me->start_busy(2);
               }    
               else{
-		msg = HIR"$n²»ÓÉÒ»Éù²Òº¿Ë¤µ¹ÔÚµØ£¬ÉíÌåÒÑÍ´¿àµÃòéËõ³ÉÒ»ÍÅ£¡\n" NOR;
+		msg = HIR"$nä¸ç”±ä¸€å£°æƒ¨åšæ‘”å€’åœ¨åœ°ï¼Œèº«ä½“å·²ç—›è‹¦å¾—èœ·ç¼©æˆä¸€å›¢ï¼\n" NOR;
 	       message_vision(msg, me, target);
               damage=(int)me->query_skill("duji",1)
                     +(int)me->query_skill("qianzhu-wandushou",1)
@@ -89,14 +89,14 @@ $nÒ»Éù´óºÈ£¬$N¶ÙÊ±ÈçÒ»¸ùµ¾²İ°ã±»Å×ÏòÔ¶´¦¡£\n" NOR;
 	       target->apply_condition("chanchu_poison",
 		        (int)target->query_condition("chanchu_poison") + 50 );
 		me->add("neili", -100);
-if ( me->query("family/family_name") != "Îå¶¾½Ì")
+if ( me->query("family/family_name") != "äº”æ¯’æ•™")
 {
              target->start_busy(3);
 }
              }
 	} 
        else {
-		msg = HIG "¿ÉÊÇ$nÔçÓĞ×¼±¸£¬Ò»¸öÀÁÂ¿´ò¹ö£¬¿°¿°¶ã¹ıÁËÕâÒ»ÕĞ¡£\n" NOR;
+		msg = HIG "å¯æ˜¯$næ—©æœ‰å‡†å¤‡ï¼Œä¸€ä¸ªæ‡’é©´æ‰“æ»šï¼Œå ªå ªèº²è¿‡äº†è¿™ä¸€æ‹›ã€‚\n" NOR;
 		me->start_busy(4);
 	       message_vision(msg, me, target);
 		me->add("neili", -100);

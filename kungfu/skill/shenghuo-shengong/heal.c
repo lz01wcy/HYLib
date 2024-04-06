@@ -5,21 +5,21 @@
 int exert(object me, object target)
 {
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆÉË£¿ÕÒËÀÂð£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if ((int)me->query_skill("shenghuo-shengong", 1) < 30)
-		return notify_fail("ÄãµÄÊ¥»ðÉñ¹¦ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åœ£ç«ç¥žåŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("neili") < 50 ) 
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("eff_qi") == (int)me->query("max_qi"))
-		return notify_fail("ÄãÏÖÔÚÃ»ÓÐÊÜÈÎºÎÉË¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰å—ä»»ä½•ä¼¤ã€‚\n");
 
 	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 7 )
-		return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+		return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
-	write( HIW "ÄãË«ÊÖ×Å·ÉÑæ×´ÔËÆð"+HIR" Ê¥»ðÉñ¹¦"+HIW" ÁÆÉË¡£\n" NOR);
+	write( HIW "ä½ åŒæ‰‹ç€é£žç„°çŠ¶è¿èµ·"+HIR" åœ£ç«ç¥žåŠŸ"+HIW" ç–—ä¼¤ã€‚\n" NOR);
 	message("vision",
-		HIW + me->name() +HIW "Ë«ÊÖ×Å·ÉÑæ×´ÔËÆð"+HIR" Ê¥»ðÉñ¹¦ "+HIW"ÁÆÉË¡£\n" NOR,
+		HIW + me->name() +HIW "åŒæ‰‹ç€é£žç„°çŠ¶è¿èµ·"+HIR" åœ£ç«ç¥žåŠŸ "+HIW"ç–—ä¼¤ã€‚\n" NOR,
 		environment(me), me);
 
 	me->receive_curing("qi", 10 + (int)me->query_skill("force")/5 );

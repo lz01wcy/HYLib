@@ -8,11 +8,11 @@ int do_join(string arg);
 
 void create()
 {
-	set_name("ÊÝÍ·ÍÓ", ({ "shou toutuo", "shou" ,"toutuo"}));
-	set("title", HIY"ÉñÁú½Ì"NOR"ÓÒ»¤·¨");
-	set("nickname",HIR "ÁÉ¶«ÊÝ×ðÕß" NOR);
-	set("long", "ÕâÍ·ÍÓÉí²ÄÆæ°«, ¶øÇÒÅÖµÃ³öÆæ, Õû¸öÈË¾Í»îÍÑÍÑÊÇÒ»¸ö´ó¶¬¹Ï.\n¹âÁïÁïµÄÄÔ´üÉÏµÉ×ÅÒ»¶ÔÍ­Áå´óÑÛ, Ñù×Ó·Ç³£»¬»ü.\n" );
-	set("gender", "ÄÐÐÔ");
+	set_name("ç˜¦å¤´é™€", ({ "shou toutuo", "shou" ,"toutuo"}));
+	set("title", HIY"ç¥žé¾™æ•™"NOR"å³æŠ¤æ³•");
+	set("nickname",HIR "è¾½ä¸œç˜¦å°Šè€…" NOR);
+	set("long", "è¿™å¤´é™€èº«æå¥‡çŸ®, è€Œä¸”èƒ–å¾—å‡ºå¥‡, æ•´ä¸ªäººå°±æ´»è„±è„±æ˜¯ä¸€ä¸ªå¤§å†¬ç“œ.\nå…‰æºœæºœçš„è„‘è¢‹ä¸Šçžªç€ä¸€å¯¹é“œé“ƒå¤§çœ¼, æ ·å­éžå¸¸æ»‘ç¨½.\n" );
+	set("gender", "ç”·æ€§");
 	set("age", 44);
 	set("str", 35);
 	set("dex", 20);
@@ -46,7 +46,7 @@ void create()
 	prepare_skill("hand", "shenlong-bashi");
 	prepare_skill("strike", "huagu-mianzhang");
 
-	create_family("ÉñÁú½Ì",2,"µÜ×Ó");
+	create_family("ç¥žé¾™æ•™",2,"å¼Ÿå­");
 
 	set_temp("apply/attack", 50);
 	set_temp("apply/defense", 50);
@@ -56,11 +56,11 @@ void create()
 	set("max_neili", 1000);
 	set("jiali", 100);
         set("inquiry", ([
-		"ÉñÁú½Ì" :  "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"Èë½Ì" :  "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"ºé°²Í¨" :  "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ÐÄ²ÅºÃ¡£\n",
-		"½ÌÖ÷" :  "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ÐÄ²ÅºÃ¡£\n",
-		"¿ÚºÅ" : "ÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥!\n",
+		"ç¥žé¾™æ•™" :  "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥žé¾™æ•™çš„(join shenlongjiao).\n",
+		"å…¥æ•™" :  "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥žé¾™æ•™çš„(join shenlongjiao).\n",
+		"æ´ªå®‰é€š" :  "æ•™ä¸»è„¾æ°”ä¸å¥½,è¦è®¨ä»–æ¬¢å¿ƒæ‰å¥½ã€‚\n",
+		"æ•™ä¸»" :  "æ•™ä¸»è„¾æ°”ä¸å¥½,è¦è®¨ä»–æ¬¢å¿ƒæ‰å¥½ã€‚\n",
+		"å£å·" : "ä¸‡å¹´ä¸è€!æ°¸äº«ä»™ç¦!å¯¿ä¸Žå¤©é½!æ–‡æ­¦ä»åœ£!\n",
 	]) );
 	setup();
 	carry_object("/clone/misc/cloth")->wear();
@@ -74,15 +74,15 @@ void init()
 
 void attempt_apprentice(object ob)
 {
-	if (ob->query("party/party_name") != HIY "ÉñÁú½Ì" NOR ) {
-		command("say Äã²»ÊÇ±¾½Ì½ÌÖÚ, ÏëÀ´ÕÒËÀ°¡!");
+	if (ob->query("party/party_name") != HIY "ç¥žé¾™æ•™" NOR ) {
+		command("say ä½ ä¸æ˜¯æœ¬æ•™æ•™ä¼—, æƒ³æ¥æ‰¾æ­»å•Š!");
 		return;
 	}
 	if ((int)ob->query("shen") > 0  ) {
-		command("say ÎÒÉñÁú½ÌÓëÊÀ¸ô¾ø£¬ÏòÀ´²»ÓëÄúÕâÖÖ°×µÀÈËÎï´ò½»µÀ£¬ÄúÇë»Ø°É£¡");
+		command("say æˆ‘ç¥žé¾™æ•™ä¸Žä¸–éš”ç»ï¼Œå‘æ¥ä¸ä¸Žæ‚¨è¿™ç§ç™½é“äººç‰©æ‰“äº¤é“ï¼Œæ‚¨è¯·å›žå§ï¼");
 		return;
 	}
-	command("say ºÜºÃ£¬ºÜºÃ¡£");
+	command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ã€‚");
 	command("recruit " + ob->query("id"));
 }
 #include "/kungfu/class/shenlong/shenlong.h"; 

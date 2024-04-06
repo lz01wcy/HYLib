@@ -8,7 +8,7 @@ void skill_improved(object me)
 
         s = me->query_skill("move", 1);
         if( s%10==9 && (int)me->query("agi") < s/5) {
-                tell_object(me, HIW "由於你勤练轻功，你的速度提高了。\n" NOR);
+                tell_object(me, HIW "鐢辨柤浣犲嫟缁冭交鍔燂紝浣犵殑閫熷害鎻愰珮浜嗐�俓n" NOR);
                 me->add("agi", 2);
         }
 }

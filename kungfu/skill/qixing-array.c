@@ -12,7 +12,7 @@ int form_array(object leader)
 
 	member = leader->query_team();
 	if( sizeof(member) > 7 )
-		return notify_fail("北斗七星阵最多七人，多一个都不行。\n");
-	message_vision( HIG "$N率领众人四下站定方位，组成了「北斗七星阵」！\n" NOR, leader);
+		return notify_fail("鍖楁枟涓冩槦闃垫渶澶氫竷浜猴紝澶氫竴涓兘涓嶈銆俓n");
+	message_vision( HIG "$N鐜囬浼椾汉鍥涗笅绔欏畾鏂逛綅锛岀粍鎴愪簡銆屽寳鏂椾竷鏄熼樀銆嶏紒\n" NOR, leader);
 	return 1;
 }

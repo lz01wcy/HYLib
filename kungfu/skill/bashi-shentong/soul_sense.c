@@ -1,4 +1,4 @@
-// soul_sense.c ÁéÊ¶ÉñÍ¨
+// soul_sense.c çµè¯†ç¥é€š
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ int conjure(object me, object target)
     int skill;
 
     if( me->query_temp("apply/astral_vision") )
-   return notify_fail("ÄãÒÑ¾­Ê©Õ¹¹ıÁéÊ¶ÁË¡£\n");
+   return notify_fail("ä½ å·²ç»æ–½å±•è¿‡çµè¯†äº†ã€‚\n");
 
     if( (int)me->query("jingli") < 30 )
-   return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+   return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 
     skill = me->query_skill("magic");
 
@@ -21,9 +21,9 @@ int conjure(object me, object target)
     me->receive_damage("jing", 5);
 
     message_vision(
-   HIC "$NÎ¢Ò»ÄıÉñ£¬Ê©Õ¹¡¸ÁéÊ¶¡¹Ö®Êõ¡£\n" NOR, me);
-    tell_room(environment(me),HIY+ me->query("name")+"Ë«ÊÖºÏÎª½£Ö¸ÔÚÑÛÇ°ÂıÂı
-À­¿ª£¬Ë«ÑÛ¾¹±äÎª½ğ»ÆÉ«£¬·Â·ğÄÜ¶´´©Ò»ÇĞ£¡\n"NOR);
+   HIC "$Nå¾®ä¸€å‡ç¥ï¼Œæ–½å±•ã€Œçµè¯†ã€ä¹‹æœ¯ã€‚\n" NOR, me);
+    tell_room(environment(me),HIY+ me->query("name")+"åŒæ‰‹åˆä¸ºå‰‘æŒ‡åœ¨çœ¼å‰æ…¢æ…¢
+æ‹‰å¼€ï¼ŒåŒçœ¼ç«Ÿå˜ä¸ºé‡‘é»„è‰²ï¼Œä»¿ä½›èƒ½æ´ç©¿ä¸€åˆ‡ï¼\n"NOR);
     me->add_temp("apply/astral_vision", 1);
     me->start_call_out( (: call_other, __FILE__, "remove_effect", me :), skill);
     if( me->is_fighting() ) me->start_busy(1);
@@ -34,6 +34,6 @@ int conjure(object me, object target)
 void remove_effect(object me)
 {
     me->add_temp("apply/astral_vision", -1);
-    tell_object(me, HIC"ÄãµÄÁéÊ¶Ê§Ğ§ÁË¡£\n"NOR);
+    tell_object(me, HIC"ä½ çš„çµè¯†å¤±æ•ˆäº†ã€‚\n"NOR);
 }
 

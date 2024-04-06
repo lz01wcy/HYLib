@@ -1,4 +1,4 @@
-// maze.c ÆæÃÅ°ËØÔÃÔÕó
+// maze.c å¥‡é—¨å…«å¦è¿·é˜µ
 
 #include <ansi.h>
 
@@ -17,29 +17,29 @@ object target;
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÆæÃÅÎå×ªÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¥‡é—¨äº”è½¬åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query("neili") < 80  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query_skill("qimen-wuxing",1) < 250  ) 
-		return notify_fail("ÄãµÄÆæÃÅÎåĞĞ²»¹»¡£\n");
+		return notify_fail("ä½ çš„å¥‡é—¨äº”è¡Œä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_temp("thd/maze") > 2 ) 
-		return notify_fail("ÄãµÄÄÜÁ¦Ö»ÄÜ²¼Èı¸öÃÔÕó¡£\n");
+		return notify_fail("ä½ çš„èƒ½åŠ›åªèƒ½å¸ƒä¸‰ä¸ªè¿·é˜µã€‚\n");
 
 if (!userp(target))
-		return notify_fail("Ö»ÄÜ¶ÔÍæ¼ÒÊ¹ÓÃ!\n");
+		return notify_fail("åªèƒ½å¯¹ç©å®¶ä½¿ç”¨!\n");
 	skill = me->query_skill("qimen-wuxing", 1);
 	me->add("neili", -580);
-        msg = HIG "$NÁ³ÉÏÇàÆø´óÊ¢£¬½ÅÏÂ»º»º²È×Å¾Å¹¬°ËØÔ·½Î»£¬Í·¶¥Ã°³öÌÚÌÚ°×Æø£¬";
-        msg += "ËÄÃæÒşÒş´«À´³±Ó¿Ö®Éù£¬±ÌÌÎĞş¹¦ÒÑ·¢»Óµ½¼«ÖÂ£¡\n"NOR;
+        msg = HIG "$Nè„¸ä¸Šé’æ°”å¤§ç››ï¼Œè„šä¸‹ç¼“ç¼“è¸©ç€ä¹å®«å…«å¦æ–¹ä½ï¼Œå¤´é¡¶å†’å‡ºè…¾è…¾ç™½æ°”ï¼Œ";
+        msg += "å››é¢éšéšä¼ æ¥æ½®æ¶Œä¹‹å£°ï¼Œç¢§æ¶›ç„åŠŸå·²å‘æŒ¥åˆ°æè‡´ï¼\n"NOR;
 
 	message_vision(
-	HIC "$NÒ»±ß×÷Õ½£¬Ò»±ßÀûÓÃÖÜÎ§µÄÊ¯¿é¡¢Ê÷Ö¦µÈ²¼ÁËÒ»¸ö¼òµ¥µÄÕó¡£\n" NOR, me);
+	HIC "$Nä¸€è¾¹ä½œæˆ˜ï¼Œä¸€è¾¹åˆ©ç”¨å‘¨å›´çš„çŸ³å—ã€æ ‘æç­‰å¸ƒäº†ä¸€ä¸ªç®€å•çš„é˜µã€‚\n" NOR, me);
 if (random(me->query("combat_exp")) > target->query("combat_exp")/4)
 {
 	message_vision(
-	HIC "$NĞÄÖĞÒ»ÃÔ£¬Ö»¾õÌÚÔÆÒ»°ã£¬²»Öª×ßµ½ÄÄÀïÈ¥ÁË!\n" NOR, target);
+	HIC "$Nå¿ƒä¸­ä¸€è¿·ï¼Œåªè§‰è…¾äº‘ä¸€èˆ¬ï¼Œä¸çŸ¥èµ°åˆ°å“ªé‡Œå»äº†!\n" NOR, target);
 	if (random(12)==0)
 	target->move("/d/sdxl/linhai5");
 	else if (random(12)==1)
@@ -71,7 +71,7 @@ if (random(me->query("combat_exp")) > target->query("combat_exp")/4)
 }
 else 
 	message_vision(
-	HIC "$N´ó³ÔÒ»¾ª£¬ÖªµÀÆäÖĞÀúº¦£¬Ô¶Ô¶Ìø³öÁËÃÔÕó¡£\n" NOR, me);
+	HIC "$Nå¤§åƒä¸€æƒŠï¼ŒçŸ¥é“å…¶ä¸­å†å®³ï¼Œè¿œè¿œè·³å‡ºäº†è¿·é˜µã€‚\n" NOR, me);
 	target->start_busy(6);
 	if( me->is_fighting() ) me->start_busy(2);
 

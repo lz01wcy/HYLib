@@ -5,7 +5,7 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return
-notify_fail("¼ÞÒÂÉñ¹¦Ö»ÄÜ´ÓÑ§ÖÐÔö¼ÓÊìÁ·¶È¡£\n");
+notify_fail("å«è¡£ç¥žåŠŸåªèƒ½ä»Žå­¦ä¸­å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 int effective_level() { return 12;}
@@ -30,7 +30,7 @@ void skill_improved(object me)
   && (me->query_skill("force",1)/6 < me->query_skill("jiayiforce",1)))
 	{
                 tell_object(me,
-                        HIR "\nÄãÌåÄÚÕæÆøÕñµ´£¬Ò»¹ÉÆøÁ÷×ßÈë²æµÀ£¬°¡£¡£¡....\n\n" NOR); 
+                        HIR "\nä½ ä½“å†…çœŸæ°”æŒ¯è¡ï¼Œä¸€è‚¡æ°”æµèµ°å…¥å‰é“ï¼Œå•Šï¼ï¼....\n\n" NOR); 
                 me->set_skill("jiayiqoforce",s/2);
                 me->unconcious();
 		me->set("qi",me->query("max_qi"));

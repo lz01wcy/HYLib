@@ -1,4 +1,4 @@
-// shield.c »¤ÌåÉñ¹¦
+// shield.c æŠ¤ä½“ç¥åŠŸ
 
 #include <ansi.h>
 
@@ -13,30 +13,30 @@ int exert(object me, object target)
 	int t = i/40;
 
         if( target != me ) 
-                return notify_fail("ÄãÖ»ÄÜÓÃÁúÏó°ãÈô¹¦À´ÔË»¤ÌåÉñ¹¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨é¾™è±¡èˆ¬è‹¥åŠŸæ¥è¿æŠ¤ä½“ç¥åŠŸã€‚\n");
 
         if( (int)me->query("neili") < 100  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("longxiang") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
         if( (int)me->query_temp("shielded") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
         if( (int)me->query_temp("powerup") ) 
-                return notify_fail("ÄãÕıÔÚÓÃ±ğµÄ¹¦·¨¡£\n");
+                return notify_fail("ä½ æ­£åœ¨ç”¨åˆ«çš„åŠŸæ³•ã€‚\n");
 
         if( (int)me->query_skill("longxiang", 1) < 20)
-                return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦»ğºî²»¹»£¡\n");
+                return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸç«ä¾¯ä¸å¤Ÿï¼\n");
 
         skill = me->query_skill("longxiang");
         me->add("neili", -100);
 
 	message_vision(
-	HIR"$N¿ÚÖĞÄ¬Äî´óÃ÷Áù×ÖÕæÑÔ£¬ÊÖ½áÄ¦ÀûÖ§Ìì·ßÅ­Ó¡£¬ÔËÆğ"+t+"Áú"+t+"ÏóÖ®Á¦£¡\n" +
-	HIW"$N½ÅÏÂÉ°Ê¯ÏÂÏİ£¬åáÈ»³öÏÖÁËÒ»¸ö´ó¿Ó£¡\n"
+	HIR"$Nå£ä¸­é»˜å¿µå¤§æ˜å…­å­—çœŸè¨€ï¼Œæ‰‹ç»“æ‘©åˆ©æ”¯å¤©æ„¤æ€’å°ï¼Œè¿èµ·"+t+"é¾™"+t+"è±¡ä¹‹åŠ›ï¼\n" +
+	HIW"$Nè„šä¸‹ç ‚çŸ³ä¸‹é™·ï¼Œé½ç„¶å‡ºç°äº†ä¸€ä¸ªå¤§å‘ï¼\n"
 	NOR, me);
         message_vision(
-        MAG "$N³¤ÎüÒ»¿ÚÆø£¬ÔËÆğ»¤ÌåÉñ¹¦£¬ÉíÉÏÒÂÉÀ»º»ºÕÇÆğ£¬Ò»¹ÉÕæÁ÷±éÁ÷È«Éí¡£\n" NOR, me);
+        MAG "$Né•¿å¸ä¸€å£æ°”ï¼Œè¿èµ·æŠ¤ä½“ç¥åŠŸï¼Œèº«ä¸Šè¡£è¡«ç¼“ç¼“æ¶¨èµ·ï¼Œä¸€è‚¡çœŸæµéæµå…¨èº«ã€‚\n" NOR, me);
 
         me->add_temp("apply/armor",  skill/2);
         me->add_temp("apply/defense",  skill/2);
@@ -57,5 +57,5 @@ void remove_effect(object me, int amount)
         me->add_temp("apply/defense",  -skill/2);
         me->delete_temp("shielded");
         me->delete_temp("longxiang");
-        tell_object(me, "ÄãµÄ»¤ÌåÉñ¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        tell_object(me, "ä½ çš„æŠ¤ä½“ç¥åŠŸè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 }

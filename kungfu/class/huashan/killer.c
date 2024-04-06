@@ -2,12 +2,12 @@
 inherit NPC;
 
 string *nm1_jp =({
-"ÃÉÃæ"
+"è’™é¢"
 });
 
     
 string *nm2_jp =({
-"ÈË",
+"äºº",
 });
 
 void create()
@@ -17,12 +17,12 @@ string weapon;
         int myskill;
    int i = random(sizeof(nm1_jp));
         me=this_player();
-    set_name(HIB "ÃÉÃæÈË" NOR, ({ me->query("id")+"-mengmian"}));
+    set_name(HIB "è’™é¢äºº" NOR, ({ me->query("id")+"-mengmian"}));
 
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
 
 	set("long",
-		"Õâ¼Ò»ïºÚ½íÃÉÃæ£¬Ë«íø¾ùÓÐÉ±Æø£¬Ê±²»Ê±µÍ³ÁµØÒõÐ¦¡£\n");
+		"è¿™å®¶ä¼™é»‘å·¾è’™é¢ï¼ŒåŒçœ¸å‡æœ‰æ€æ°”ï¼Œæ—¶ä¸æ—¶ä½Žæ²‰åœ°é˜´ç¬‘ã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
   set("max_qi",500+random(1890));
@@ -99,7 +99,7 @@ if (random(20)>15)
         set_temp("apply/armor", 200);
         set_temp("apply/damage", 200);
 }
-       create_family("ÈÕÔÂÉñ½Ì",3,"µÜ×Ó");	
+       create_family("æ—¥æœˆç¥žæ•™",3,"å¼Ÿå­");	
         weapon = random(2)?"/clone/weapon/gangdao":"/clone/weapon/changjian";
         setup();
 
@@ -116,7 +116,7 @@ void hunting()
 {
 object ob=this_object();
 if (!ob) return;
-command("say µØÐÎÒÑ¾­²é¿´ÍêÁË£¬¿ÉÒÔÏò½ÌÖ÷½»´ýÁË!");
+command("say åœ°å½¢å·²ç»æŸ¥çœ‹å®Œäº†ï¼Œå¯ä»¥å‘æ•™ä¸»äº¤å¾…äº†!");
 destruct(ob);
 }
 
@@ -129,12 +129,12 @@ void die()
         me = query_temp("last_damage_from");
         
 if (!me) return;
-        message_vision(WHT"$N²Ò½ÐÒ»Éù£¬µ¹µØ¶øÍö£¡¡£\n"NOR,ob,me);
+        message_vision(WHT"$Næƒ¨å«ä¸€å£°ï¼Œå€’åœ°è€Œäº¡ï¼ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-        if(me->query("family/family_name") == "»ªÉ½ÅÉ" 
+        if(me->query("family/family_name") == "åŽå±±æ´¾" 
         && this_object()->query_temp("owner/id") == me->query("id")        )   {
-        message("vision", me->name() + HIC"ÓÉÓÚ³É¹¦µÄÏûÃðÁËÄ§½ÌÌ½×Ó,Ôö¼ÓÁË230¾­ÑéºÍ130Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->name() + HIC"ç”±äºŽæˆåŠŸçš„æ¶ˆç­äº†é­”æ•™æŽ¢å­,å¢žåŠ äº†230ç»éªŒå’Œ130æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",230);
         me->add("potential",130);
         }

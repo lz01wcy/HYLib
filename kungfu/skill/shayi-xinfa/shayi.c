@@ -1,4 +1,4 @@
-//É±Òâ exert shayi
+//æ€æ„ exert shayi
 
 #include <ansi.h>
 void remove_effect(object me);
@@ -6,50 +6,50 @@ void remove_effect(object me);
 int exert(object me)
 {    
       if( (int)me->query_skill("shayi-xinfa", 1) < 180 )
-                return notify_fail("ÄãµÄÉ±ÒâĞÄ·¨ĞŞÎª²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸É±Òâ¡¹£¡\n");
+                return notify_fail("ä½ çš„æ€æ„å¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œæ€æ„ã€ï¼\n");
 
       if (me->query_skill_mapped("force") != "shayi-xinfa")
-                return notify_fail("ÆäËüÄÚ¹¦ÓĞ¡¸É±Òâ¡¹£¿\n");
+                return notify_fail("å…¶å®ƒå†…åŠŸæœ‰ã€Œæ€æ„ã€ï¼Ÿ\n");
         if( (int)me->query_temp("shayi") ) 
-                return notify_fail(HIR"ÄãÒÑ¾­ÔÚÊ¹ÓÃÉ±ÒâÁË¡£\n");
+                return notify_fail(HIR"ä½ å·²ç»åœ¨ä½¿ç”¨æ€æ„äº†ã€‚\n");
 
         if( (int)me->query_temp("qzj_tong") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÍ¬¹é½£ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŒå½’å‰‘äº†ã€‚\n");
       if( me->query_temp("fumo")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃ´ó½ğ¸ÕÈ­µÄÌØÊâ¹¥»÷¡¸½ğ¸Õ·üÄ§¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å¤§é‡‘åˆšæ‹³çš„ç‰¹æ®Šæ”»å‡»ã€Œé‡‘åˆšä¼é­”ã€ï¼\n");
       if( me->query_temp("jingang")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃ´ó½ğ¸ÕÈ­µÄÌØÊâ¹¥»÷¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å¤§é‡‘åˆšæ‹³çš„ç‰¹æ®Šæ”»å‡»ã€Œå¤§é‡‘åˆšç¥é€šã€ï¼\n");
       if( me->query_temp("fanzhen")   )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸½ğ¸Õ²»»µÌåÉñ¹¦¡¹£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œé‡‘åˆšä¸åä½“ç¥åŠŸã€ï¼\n");
 
         if( me->query_temp("yuxiao/tianwu") )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸·ï»ËÌìÎè¡¹ĞÄ·¨£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œå‡¤å‡°å¤©èˆã€å¿ƒæ³•ï¼\n");
 
         if((int)me->query_temp("tzzf") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÕÆµ¶µÄÔË¹¦ÖĞ¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨æŒåˆ€çš„è¿åŠŸä¸­ã€‚\n");
         if ((int)me->query_temp("shield"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË»¤ÌåÉñ¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿æŠ¤ä½“ç¥åŠŸä¸­äº†ã€‚\n");
        if(me->query_temp("wdpowerup") )
-       return notify_fail("ÄãÏÖÔÚÕıÔÚÊ¹ÓÃ¡¸Îå¶¾Éñ¹¦¡¹µÄ¾ø¼¼¡£\n"); 
+       return notify_fail("ä½ ç°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œäº”æ¯’ç¥åŠŸã€çš„ç»æŠ€ã€‚\n"); 
        if(me->query_temp("zhuihun/lpf")) 
-       return notify_fail("ÄãÕıÔÚÊ¹ÓÃÎå¶¾×·»ê¹³Ö®¡¸ÂÒÅû·ç¡¹\n"); 
+       return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨äº”æ¯’è¿½é­‚é’©ä¹‹ã€Œä¹±æŠ«é£ã€\n"); 
 
        if(me->query_temp("anran")) 
-       return notify_fail("ÄãÏÖÔÚÕıÔÚÊ¹ÓÃ¡¸÷öÈ»¡¹¾ø¼¼¡£\n"); 
+       return notify_fail("ä½ ç°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œé»¯ç„¶ã€ç»æŠ€ã€‚\n"); 
 
  
       if( (int)me->query("neili") < 600 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨Ê¹ÓÃ³öÉ±Òâ£¡\n");   
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªå°‘äº†ï¼Œæ— æ³•ä½¿ç”¨å‡ºæ€æ„ï¼\n");   
     
       if( (int)me->query("max_neili") < 2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÕâÃ´²î£¬»¹ÏëÊ¹ÓÃÉ±Òâ£¿\n");   
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºè¿™ä¹ˆå·®ï¼Œè¿˜æƒ³ä½¿ç”¨æ€æ„ï¼Ÿ\n");   
                                                                                 
       if( me->query_temp("shenzu")   )
-                return notify_fail("ÄãÕıÔÚÔËÓÃÉñ×ãÁË£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ç¥è¶³äº†ï¼\n");
         if( (int)me->query_temp("shayi") ) 
-                return notify_fail(HIR"ÄãÒÑ¾­ÔÚÊ¹ÓÃÉ±ÒâÁË¡£\n");
+                return notify_fail(HIR"ä½ å·²ç»åœ¨ä½¿ç”¨æ€æ„äº†ã€‚\n");
 
-      message_vision(HIR"\n$NÑÛÉñ±äµÃÁèÀ÷£¬ËÄÖÜÉ±ÒâËÄÆğ£¡¾¡Ïñ±äÁËÒ»¸öÈËËÆµÄ£¡£¡\n\n" NOR, me);
+      message_vision(HIR"\n$Nçœ¼ç¥å˜å¾—å‡Œå‰ï¼Œå››å‘¨æ€æ„å››èµ·ï¼å°½åƒå˜äº†ä¸€ä¸ªäººä¼¼çš„ï¼ï¼\n\n" NOR, me);
       me->start_busy(2);
       me->set_temp("shayi",1); 
       me->add_temp("apply/attack", me->query_skill("shayi-xinfa", 1)/3); 
@@ -65,6 +65,6 @@ void remove_effect(object me)
       me->delete_temp("shayi");
       me->add_temp("apply/attack", -me->query_skill("shayi-xinfa", 1)/3); 
       me->add_temp("apply/damage", -me->query_skill("shayi-xinfa", 1)/3);
-      message_vision(HIG"\n$NÑÛÉñ²»ÔÚÄÇÃ´ÁèÀ÷ÁË£¬»Ö¸´ÁËÔ­À´µÄÑù×Ó¡£\n"NOR, me);    
+      message_vision(HIG"\n$Nçœ¼ç¥ä¸åœ¨é‚£ä¹ˆå‡Œå‰äº†ï¼Œæ¢å¤äº†åŸæ¥çš„æ ·å­ã€‚\n"NOR, me);    
       }
 }

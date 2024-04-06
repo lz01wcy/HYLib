@@ -1,4 +1,4 @@
-// jingsng.c ½ð¸ÕÈ­ ´ó½ð¸ÕÉñÍ¨
+// jingsng.c é‡‘åˆšæ‹³ å¤§é‡‘åˆšç¥žé€š
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,26 +16,26 @@ int perform(object me, object target)
 	int d_count, count, qi, maxqi, skill;
 
 	if( (int)me->query_temp("jingang") ) 
-		return notify_fail(HIG"ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+		return notify_fail(HIG"ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 	if( (int)me->query_temp("powerup"))
-		return notify_fail(HIG"ÄãÒÑ¾­ÔËÆðÄÚ¹¦¼ÓÁ¦ÁË£¬Ã»ÓÐ¸ü¶àµÄÄÚÁ¦Ê¹ÓÃ´ó½ð¸ÕÉñÍ¨¡£\n"NOR);
+		return notify_fail(HIG"ä½ å·²ç»è¿èµ·å†…åŠŸåŠ åŠ›äº†ï¼Œæ²¡æœ‰æ›´å¤šçš„å†…åŠ›ä½¿ç”¨å¤§é‡‘åˆšç¥žé€šã€‚\n"NOR);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸´ó½ð¸ÕÉñÍ¨¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå¤§é‡‘åˆšç¥žé€šã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("hunyuan-yiqi", 1) < 60)
-		return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦µÄÐÞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ´ó½ð¸ÕÉñÍ¨! \n");
+		return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸçš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨å¤§é‡‘åˆšç¥žé€š! \n");
 
 	if( (int)me->query_skill("cuff") < 150 )
-		return notify_fail("ÄãµÄÈ­·¨»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ´ó½ð¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ çš„æ‹³æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨å¤§é‡‘åˆšç¥žé€šï¼\n");
 
 	if( me->query_skill_mapped("cuff") != "jingang-quan") 
-		return notify_fail("ÄãÃ»ÓÐ¼¤·¢½ð¸ÕÈ­£¬ÎÞ·¨Ê¹ÓÃ´ó½ð¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é‡‘åˆšæ‹³ï¼Œæ— æ³•ä½¿ç”¨å¤§é‡‘åˆšç¥žé€šï¼\n");
 	
-	msg = HIY "$NÊ¹³ö´ó½ð¸ÕÈ­µÄ¾ø¼¼¡¸´ó½ð¸ÕÉñÍ¨¡¹£¬±ÛÁ¦¶¸È»Ôö¼Ó£¡\n" NOR;
+	msg = HIY "$Nä½¿å‡ºå¤§é‡‘åˆšæ‹³çš„ç»æŠ€ã€Œå¤§é‡‘åˆšç¥žé€šã€ï¼Œè‡‚åŠ›é™¡ç„¶å¢žåŠ ï¼\n" NOR;
 	
 	qi = me->query("qi");
 	maxqi = me->query("max_qi");
@@ -55,7 +55,7 @@ int perform(object me, object target)
 		me->add("neili", -150);
 	}
 	else{
-		msg = HIR "$NÆ´¾¡±ÏÉú¹¦Á¦Ê¹³öÁË´ó½ð¸ÕÈ­µÄÖÕ¼«¾ø¼¼, È«Éí¹Ç÷ÀÒ»Õó±¬Ïì, ÓûÓëµÐÈËÍ¬¹éÓÚ¾¡!\n" NOR;
+		msg = HIR "$Næ‹¼å°½æ¯•ç”ŸåŠŸåŠ›ä½¿å‡ºäº†å¤§é‡‘åˆšæ‹³çš„ç»ˆæžç»æŠ€, å…¨èº«éª¨éª¼ä¸€é˜µçˆ†å“, æ¬²ä¸Žæ•ŒäººåŒå½’äºŽå°½!\n" NOR;
 		message_combatd(msg, me, target);
 		me->add_temp("str", count * 9);
 		me->set_temp("jingang", 1);
@@ -68,7 +68,7 @@ int perform(object me, object target)
 		me->set("neili",0);
 		me->add("max_neili",-10);
 
-		msg = HIR "$NÓÃ¾¡ÁË×îºóÒ»µãÆøÁ¦, Åç³öÒ»¿ÚÏÊÑª, Ò»Í·ÔÔµ¹ÔÚµØ!\n" NOR;
+		msg = HIR "$Nç”¨å°½äº†æœ€åŽä¸€ç‚¹æ°”åŠ›, å–·å‡ºä¸€å£é²œè¡€, ä¸€å¤´æ ½å€’åœ¨åœ°!\n" NOR;
 		message_combatd(msg, me, target);
 
 		me->set("jing",0);
@@ -89,7 +89,7 @@ void remove_effect(object me, int aamount, int damount)
 		me->add_temp("str", -aamount);
 		me->add_temp("dex", damount);
 		me->delete_temp("jingang");
-		tell_object(me, HIY "ÄãµÄ´ó½ð¸ÕÉñÍ¨ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+		tell_object(me, HIY "ä½ çš„å¤§é‡‘åˆšç¥žé€šè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ã€‚\n" NOR);
 		me->start_busy(2);
 	}
 }

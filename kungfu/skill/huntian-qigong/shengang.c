@@ -1,4 +1,4 @@
-// shengang.c »ìÌìÆø¹¦»ìÌìÉñî¸
+// shengang.c æ··å¤©æ°”åŠŸæ··å¤©ç¥žç½¡
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,18 +16,18 @@ int exert(object me, object target)
 	int d_count, count, qi, maxqi, skill;
 
 	if( (int)me->query_temp("shengang") ) 
-		return notify_fail(HIG"ÄãÒÑ¾­ÔÚÔË»ìÌìÉñî¸ÁË¡£\n");
+		return notify_fail(HIG"ä½ å·²ç»åœ¨è¿æ··å¤©ç¥žç½¡äº†ã€‚\n");
 
 	if( !me->is_fighting() )
-    	return notify_fail("¡¸»ìÌìÉñî¸¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+    	return notify_fail("ã€Œæ··å¤©ç¥žç½¡ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("force") < 150)
-		return notify_fail("ÄãµÄ»ìÌìÆø¹¦µÄÐÞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ»ìÌìÉñî¸! \n");
-//±ØÐëÓÐ±øÆ÷¡£¼Ó±øÆ÷ÍþÁ¦
-	msg = HIY "$NÊ¹³ö»ìÌìÆø¹¦¡¸»ìÌìÉñî¸¡¹£¬½«ÕæÆø¹á×¢µ½ÊÖÐÄ£¡\n" NOR;
+		return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸçš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨æ··å¤©ç¥žç½¡! \n");
+//å¿…é¡»æœ‰å…µå™¨ã€‚åŠ å…µå™¨å¨åŠ›
+	msg = HIY "$Nä½¿å‡ºæ··å¤©æ°”åŠŸã€Œæ··å¤©ç¥žç½¡ã€ï¼Œå°†çœŸæ°”è´¯æ³¨åˆ°æ‰‹å¿ƒï¼\n" NOR;
 
 	qi = me->query("qi");
 	maxqi = me->query("max_qi");
@@ -45,7 +45,7 @@ int exert(object me, object target)
 		me->add("neili", -150);
 	}
 	else{
-		msg = HIR "$NÆ´¾¡±ÏÉú¹¦Á¦ÏëÌáÆð»ìÌìÉñî¸£¬µ«×Ô¼ºÊÜÉËÌ«ÖØ£¬Ã»ÄÜ³É¹¦!\n" NOR;
+		msg = HIR "$Næ‹¼å°½æ¯•ç”ŸåŠŸåŠ›æƒ³æèµ·æ··å¤©ç¥žç½¡ï¼Œä½†è‡ªå·±å—ä¼¤å¤ªé‡ï¼Œæ²¡èƒ½æˆåŠŸ!\n" NOR;
 	}
 //	if(userp(target)) target->fight_ob(me);
 //	else if( !target->is_killing(me) ) target->kill_ob(me);
@@ -58,7 +58,7 @@ void remove_effect(object me, int amount)
 	{
 		me->add_temp("apply/damage", - amount);
 		me->delete_temp("shengang");
-		tell_object(me, HIY "ÄãµÄ»ìÌìÉñî¸ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+		tell_object(me, HIY "ä½ çš„æ··å¤©ç¥žç½¡è¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ã€‚\n" NOR);
 		me->start_busy(2);
 	}
 }

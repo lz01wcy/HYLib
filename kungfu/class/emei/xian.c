@@ -1,4 +1,4 @@
-// xian.c ¾²ÏĞÊ¦Ì«
+// xian.c é™é—²å¸ˆå¤ª
 // Modified By That Oct.1997
 #include <command.h>
 #include <ansi.h>
@@ -9,19 +9,19 @@ string ask_for_join();
 
 void create()
 {
-        set_name("¾²ÏĞÊ¦Ì«", ({ "jingxian shitai","jingxian","shitai"}));
+        set_name("é™é—²å¸ˆå¤ª", ({ "jingxian shitai","jingxian","shitai"}));
         set("long",
-           "ËıÊÇÒ»Î»ÖĞÄê³ö¼ÒµÀ¹Ã£¬Éí´©µÀÅÛ£¬Õı¶Ë×øÔÚÆÑÍÅÉÏ£¬Ã¼Ä¿Ö®¼äÓĞÒ»¹ÉÏéºÍÖ®Æø¡£\n");
-        set("gender", "Å®ĞÔ");
+           "å¥¹æ˜¯ä¸€ä½ä¸­å¹´å‡ºå®¶é“å§‘ï¼Œèº«ç©¿é“è¢ï¼Œæ­£ç«¯ååœ¨è’²å›¢ä¸Šï¼Œçœ‰ç›®ä¹‹é—´æœ‰ä¸€è‚¡ç¥¥å’Œä¹‹æ°”ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("shen_type", 1);
         set("shen", 10000);
         set("class", "bonze");
         set("inquiry",([
-                "Ìê¶È"  : (: ask_for_join :),
-                "³ö¼Ò"  : (: ask_for_join :),
-                "»¹Ë×"  : "¶ëáÒµÜ×Ó£¬²»ÄÜ»¹Ë×¡£ÄãÕÒÕÆÃÅÊ¦Ì«°É¡£",
+                "å‰ƒåº¦"  : (: ask_for_join :),
+                "å‡ºå®¶"  : (: ask_for_join :),
+                "è¿˜ä¿—"  : "å³¨åµ‹å¼Ÿå­ï¼Œä¸èƒ½è¿˜ä¿—ã€‚ä½ æ‰¾æŒé—¨å¸ˆå¤ªå§ã€‚",
         ]));
 
         set("str", 30);
@@ -90,7 +90,7 @@ set_temp("huifeng/jue",1);
                 (: exert_function, "juemie" :), 
         }) );
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object("/d/city/obj/gangdao")->wield();
@@ -105,21 +105,21 @@ void attempt_apprentice(object ob)
 {
    if( (string)ob->query("class")!="bonze" )
    {
-      command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕË×¼ÒµÜ×Ó¡£Ê©Ö÷ÈôÏëÑ§ÒÕ¿ÉÈ¥ÕÒÎÒË×¼ÒÊ¦ÃÃ¡£");
+      command ("say é˜¿å¼¥é™€ä½›ï¼è´«å°¼ä¸æ”¶ä¿—å®¶å¼Ÿå­ã€‚æ–½ä¸»è‹¥æƒ³å­¦è‰ºå¯å»æ‰¾æˆ‘ä¿—å®¶å¸ˆå¦¹ã€‚");
       return;
    }
-   if( (string)ob->query("gender") != "Å®ĞÔ" )
+   if( (string)ob->query("gender") != "å¥³æ€§" )
    {
-      command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕÄĞµÜ×Ó¡£Ê©Ö÷ÈôÏëÑ§ÒÕ¿ÉÈ¥ÕÒÎÒË×¼ÒÊ¦ÃÃ¡£");
+      command ("say é˜¿å¼¥é™€ä½›ï¼è´«å°¼ä¸æ”¶ç”·å¼Ÿå­ã€‚æ–½ä¸»è‹¥æƒ³å­¦è‰ºå¯å»æ‰¾æˆ‘ä¿—å®¶å¸ˆå¦¹ã€‚");
       return;
    }
    if ((int)ob->query("shen") < 100)
    {
-      command("say " + RANK_D->query_respect(ob) + "ÄãĞĞÏÀÕÌÒåÖ®ÊÂ»¹×öµÄ²»¹»¡£");
+      command("say " + RANK_D->query_respect(ob) + "ä½ è¡Œä¾ ä»—ä¹‰ä¹‹äº‹è¿˜åšçš„ä¸å¤Ÿã€‚");
       return;
    }
-   command("say °¢ÃÖÍÓ·ğ£¬ÉÆÔÕ£¡ÉÆÔÕ£¡ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
-   command("say Ï£ÍûÄãÄÜÒÔ´È±¯Ö®ĞÄ£¬ÒÔÖÇ»ÛÖ®Á¦£¬Å¬Á¦ĞĞÉÆ£¬¼Ã¶ÈÖÚÉú¡£");
+   command("say é˜¿å¼¥é™€ä½›ï¼Œå–„å“‰ï¼å–„å“‰ï¼å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
+   command("say å¸Œæœ›ä½ èƒ½ä»¥æ…ˆæ‚²ä¹‹å¿ƒï¼Œä»¥æ™ºæ…§ä¹‹åŠ›ï¼ŒåŠªåŠ›è¡Œå–„ï¼Œæµåº¦ä¼—ç”Ÿã€‚");
    command("recruit " + ob->query("id"));
 }
 #include "tobebonze.h"

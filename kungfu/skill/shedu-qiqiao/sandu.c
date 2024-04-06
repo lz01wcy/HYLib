@@ -1,5 +1,5 @@
 
-// sandu.c Îå¶¾½ÌÊ©¶¾´ó·¨
+// sandu.c äº”æ¯’æ•™æ–½æ¯’å¤§æ³•
 
 #include <ansi.h>
 
@@ -37,34 +37,34 @@ int level;
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-            return notify_fail("¡¸"+HIR"Ê©¶¾"NOR+"¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+            return notify_fail("ã€Œ"+HIR"æ–½æ¯’"NOR+"ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ðÈË! \n");
+		return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
 //	if( !userp(target) || wizardp(target) )
-//		return notify_fail("Ê©¶¾Ö»ÄÜ¶ÔÍæ¼ÒÊ¹ÓÃ¡£\n");
+//		return notify_fail("æ–½æ¯’åªèƒ½å¯¹çŽ©å®¶ä½¿ç”¨ã€‚\n");
 
 
          if( (int)me->query_skill("wudu-shengong",1) < 100 )
-                return notify_fail("ÄãµÄÎå¶¾Éñ¹¦ÐÞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„äº”æ¯’ç¥žåŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
          if( (int)me->query_skill("poison",1) < 100 )
-                return notify_fail("ÄãµÄ»ù±¾¶¾¹¦ÐÞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ¯’åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("shedu-qiqiao", 1) < 100 )
-		return notify_fail("ÄãµÄÉß¶¾ÆæÇÉ»¹²»¹»æµÊì, ²»ÄÜ´òÉß !\n");
+		return notify_fail("ä½ çš„è›‡æ¯’å¥‡å·§è¿˜ä¸å¤Ÿå¨´ç†Ÿ, ä¸èƒ½æ‰“è›‡ !\n");
         level=(int)me->query_skill("duji", 1);
 if (!level) level=10;
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-	msg = HIM "Ö»¼û$N´Ó»³ÖÐ£¬ÄÃ³öÒ»´ó°ü²»ÖªµÀÊÇÊ²Ã´¶«Î÷µÄÒ©·Û£¬Ò»°ÑÈöÏò$nµÄÖÜÉí!\n";
+	msg = HIM "åªè§$Nä»Žæ€€ä¸­ï¼Œæ‹¿å‡ºä¸€å¤§åŒ…ä¸çŸ¥é“æ˜¯ä»€ä¹ˆä¸œè¥¿çš„è¯ç²‰ï¼Œä¸€æŠŠæ’’å‘$nçš„å‘¨èº«!\n";
 
 	me->start_busy(1);
 	if( random( (int)me->query("combat_exp",1))+ level*100
           > target->query("combat_exp")/3  ) {
-		msg += HIR"$nÃ»ÓÐ·À·¶£¬È«ÉíÉÏÏÂ±»ÈöÁËÒ»¸öÕý×Å£¡\n" NOR;
+		msg += HIR"$næ²¡æœ‰é˜²èŒƒï¼Œå…¨èº«ä¸Šä¸‹è¢«æ’’äº†ä¸€ä¸ªæ­£ç€ï¼\n" NOR;
             me->add("neili",-300);
 		me->start_busy(2);
             //if (!target->is_busy())
@@ -96,7 +96,7 @@ if (me->query_skill("duji",1) > 200)
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
 	} else {
-		msg += "$p¼±ÌáÄÚÁ¦·ÜÁ¦Ò»Õð£¬½«$NÈö³öµÄ¶¾·ÛÐ¶ÔÚÁËÉíÅÔ!\n" NOR;
+		msg += "$pæ€¥æå†…åŠ›å¥‹åŠ›ä¸€éœ‡ï¼Œå°†$Næ’’å‡ºçš„æ¯’ç²‰å¸åœ¨äº†èº«æ—!\n" NOR;
 		me->start_busy(1);
             me->add("neili",-300);
 		message_combatd(msg, me, target);

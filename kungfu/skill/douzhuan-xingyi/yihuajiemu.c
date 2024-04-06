@@ -1,4 +1,4 @@
-// zhong.c ÒÆ»¨½ÓÄ¾
+// zhong.c ç§»èŠ±æ¥æœ¨
 
 #include <ansi.h>
 
@@ -12,24 +12,24 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-	return notify_fail("ÒÆ»¨½ÓÄ¾Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+	return notify_fail("ç§»èŠ±æ¥æœ¨åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»×¼´ò¼Ü¡£\n");
+		return notify_fail("è¿™é‡Œä¸å‡†æ‰“æ¶ã€‚\n");
 
 	if( !target || !target->is_character() )
-		return notify_fail("ÒÆ»¨½ÓÄ¾Ö»ÄÜÔÚ¶ÔÊÖÉíÉÏÊ¹ÓÃ¡£\n");
+		return notify_fail("ç§»èŠ±æ¥æœ¨åªèƒ½åœ¨å¯¹æ‰‹èº«ä¸Šä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("douzhuan-xingyi",1)<80)
-	return notify_fail("ÄãµÄĞÇÒÆ¶·×ª²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÒÆ»¨½ÓÄ¾¡¹¡£\n");
+	return notify_fail("ä½ çš„æ˜Ÿç§»æ–—è½¬ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç§»èŠ±æ¥æœ¨ã€ã€‚\n");
 
 	if( (int)me->query_skill("yanling-shenfa",1)<80)
-	return notify_fail("ÄãµÄÑàÁéÉí·¨²»¹»Ãô½İ£¬²»ÄÜÊ¹ÓÃ¡¸ÒÆ»¨½ÓÄ¾¡¹¡£\n");
+	return notify_fail("ä½ çš„ç‡•çµèº«æ³•ä¸å¤Ÿæ•æ·ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç§»èŠ±æ¥æœ¨ã€ã€‚\n");
 
 	if( (int)me->query_skill("shenyuan-gong",1)<100)
-	return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÒÆ»¨½ÓÄ¾¡¹¡£\n");
+	return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œç§»èŠ±æ¥æœ¨ã€ã€‚\n");
 
-	msg = HIC "$N°Ñ$nÈ«ÉíµÄ¾¢Á¦,Ë³×ÅÆøÎ»´ò»ØÁË$n×ÔÉí¡£\n";
+	msg = HIC "$NæŠŠ$nå…¨èº«çš„åŠ²åŠ›,é¡ºç€æ°”ä½æ‰“å›äº†$nè‡ªèº«ã€‚\n";
 
 	me->start_busy(2);
         skill = (int)me->query_skill("douzhuan-xingyi", 1);
@@ -47,61 +47,61 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage);
                 target->receive_wound("qi", damage/2);
                 me->add("neili", -damage);
-		msg += HIG"½«$nµÄÄÚÁ¦È«Êı·´»÷»ØÈ¥£¡\n" NOR;
+		msg += HIG"å°†$nçš„å†…åŠ›å…¨æ•°åå‡»å›å»ï¼\n" NOR;
                 
                 if( damage < 20 )
-                        msg += HIR"½á¹û$nÊÜµ½$NµÄÄÚÁ¦·´Õğ£¬ÃÆºßÒ»Éù¡£\n"NOR;
+                        msg += HIR"ç»“æœ$nå—åˆ°$Nçš„å†…åŠ›åéœ‡ï¼Œé—·å“¼ä¸€å£°ã€‚\n"NOR;
         	else if( damage < 40 )
-                        msg += HIC"½á¹û$n±»$NÒÔÄÚÁ¦·´Õğ£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n"NOR;
+                        msg += HIC"ç»“æœ$nè¢«$Nä»¥å†…åŠ›åéœ‡ï¼Œã€Œå˜¿ã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n"NOR;
         	else if( damage < 80 )
-                        msg += HIG"½á¹û$n±»$NÒÔÄÚÁ¦Ò»Õğ£¬ĞØ¿ÚÓĞÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n"NOR;
+                        msg += HIG"ç»“æœ$nè¢«$Nä»¥å†…åŠ›ä¸€éœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿é€€äº†äº”å…­æ­¥ï¼\n"NOR;
                 else
-                        msg += HIY"½á¹û$n±»$NµÄÄÚÁ¦Ò»Õğ£¬ÑÛÇ°Ò»ºÚ£¬ÏóÒ»À¦µ¾²İÒ»Ñù·É³öÈ¥ºÃ¼¸ÕÉÔ¶£¡\n"NOR;
+                        msg += HIY"ç»“æœ$nè¢«$Nçš„å†…åŠ›ä¸€éœ‡ï¼Œçœ¼å‰ä¸€é»‘ï¼Œè±¡ä¸€æ†ç¨»è‰ä¸€æ ·é£å‡ºå»å¥½å‡ ä¸ˆè¿œï¼\n"NOR;
                 
         }
         else 
         {
-                msg += CYN"¿ÉÊÇ$nÄÚÁ¦Éîºñ£¬Ë¿ºÁ²»ÎªËù¶¯¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$nå†…åŠ›æ·±åšï¼Œä¸æ¯«ä¸ä¸ºæ‰€åŠ¨ã€‚\n"NOR;
 		me->add("neili", -100);
         }
         message_vision(msg, me, target);
 
         if ( (random(me->query("neili",1)) > 2*target->query("neili",1)/3 ) && ( r_lvl > random(5) ) )
         {
-                write( CYN"¹ş¹ş£¬³É¹¦ÁË£¡\n"NOR);
+                write( CYN"å“ˆå“ˆï¼ŒæˆåŠŸäº†ï¼\n"NOR);
 
 		if( target == victim)
 		{
-		tell_object(target, HIC"ÄãÉí²»ÓÉ¼º£¬×Ô¼º³ÉÃûµÄ¾øÕĞÈ«²¿»÷Ïò×Ô¼º£¡\n"NOR);
-		message("vision", CYN"\n" + target->name() + "ºöÈ»ÈçÖĞÄ§Ò»°ã£¬ÕĞÕĞ»÷Ïò×Ô¼º£¡\n\n"NOR, environment(me), target);
+		tell_object(target, HIC"ä½ èº«ä¸ç”±å·±ï¼Œè‡ªå·±æˆåçš„ç»æ‹›å…¨éƒ¨å‡»å‘è‡ªå·±ï¼\n"NOR);
+		message("vision", CYN"\n" + target->name() + "å¿½ç„¶å¦‚ä¸­é­”ä¸€èˆ¬ï¼Œæ‹›æ‹›å‡»å‘è‡ªå·±ï¼\n\n"NOR, environment(me), target);
 		for(i = 0; i < r_lvl; i++)
 if (!target->query("hunmi"))
 {
 			COMBAT_D->do_attack(target, victim, target->query_temp("weapon") );
 }
-else 		message("vision", CYN"\n" + target->name() + "ÒÑ¾­¿ì²»ĞĞÁË£¬´ò²»¶¯ÁË£¡\n\n"NOR, environment(me), target);
+else 		message("vision", CYN"\n" + target->name() + "å·²ç»å¿«ä¸è¡Œäº†ï¼Œæ‰“ä¸åŠ¨äº†ï¼\n\n"NOR, environment(me), target);
 		}
 
 		else
 		{
-		tell_object(target, CYN"ÄãÉí²»ÓÉ¼¸£¬Ïò" + victim->name() + "ÆËÈ¥£¡\n"NOR);
-		message("vision", CYN"\n" + target->name() + "ºöÈ»Ïò" + victim->name() +"ÆËÈ¥£¡\n\n"NOR, environment(me), ({target, victim}) );
-		tell_object(victim, CYN"\n" + target->name() + "ºöÈ»ÏòÄãÆËÀ´£¡\n\n"NOR);
+		tell_object(target, CYN"ä½ èº«ä¸ç”±å‡ ï¼Œå‘" + victim->name() + "æ‰‘å»ï¼\n"NOR);
+		message("vision", CYN"\n" + target->name() + "å¿½ç„¶å‘" + victim->name() +"æ‰‘å»ï¼\n\n"NOR, environment(me), ({target, victim}) );
+		tell_object(victim, CYN"\n" + target->name() + "å¿½ç„¶å‘ä½ æ‰‘æ¥ï¼\n\n"NOR);
 
 if (!target->query("hunmi"))
 {
 		COMBAT_D->do_attack(target, victim, target->query_temp("weapon") );
 }
-else 		message("vision", CYN"\n" + target->name() + "ÒÑ¾­¿ì²»ĞĞÁË£¬´ò²»¶¯ÁË£¡\n\n"NOR, environment(me), target);
+else 		message("vision", CYN"\n" + target->name() + "å·²ç»å¿«ä¸è¡Œäº†ï¼Œæ‰“ä¸åŠ¨äº†ï¼\n\n"NOR, environment(me), target);
 		if( random(me->query("combat_exp")) > (int)victim->query("combat_exp")/2 )		
 		{
 			if( !victim->is_killing(target) ) victim->fight_ob(target);
 		}
 		else
 		{
-		tell_object(victim, HIW"ÄãÒ»¶¨Éñ£¬Ô­À´ÊÇ" + me->name() + "ÔÚµ·¹í£¡\n"NOR);
-		tell_object(target, HIW"»¹ºÃ£¬ĞÒ¿÷" + victim->name() + "¾­ÑéÀÏµ½£¬Ã»ÓĞÉÏµ±¡£\n"NOR);
-		write( HIG "²»ºÃ£¬±»" + victim->name() + "·¢¾õÁË£¡\n"NOR);
+		tell_object(victim, HIW"ä½ ä¸€å®šç¥ï¼ŒåŸæ¥æ˜¯" + me->name() + "åœ¨æ£é¬¼ï¼\n"NOR);
+		tell_object(target, HIW"è¿˜å¥½ï¼Œå¹¸äº" + victim->name() + "ç»éªŒè€åˆ°ï¼Œæ²¡æœ‰ä¸Šå½“ã€‚\n"NOR);
+		write( HIG "ä¸å¥½ï¼Œè¢«" + victim->name() + "å‘è§‰äº†ï¼\n"NOR);
 		if( !victim->is_killing(me) ) me->kill_ob(victim);
 		}
 
@@ -111,8 +111,8 @@ else 		message("vision", CYN"\n" + target->name() + "ÒÑ¾­¿ì²»ĞĞÁË£¬´ò²»¶¯ÁË£¡\n\
 	}
 	else
 	{
-		write( HIM"¿ÉÏ§Ã»³É¹¦¡£\n"NOR);
-		tell_object(target, HIM"ÄãÇ¿ÓÃĞÄÉñ£¬ÖÕÓÚ¿ØÖÆ×¡×Ô¼º¡£\n"NOR);
+		write( HIM"å¯æƒœæ²¡æˆåŠŸã€‚\n"NOR);
+		tell_object(target, HIM"ä½ å¼ºç”¨å¿ƒç¥ï¼Œç»ˆäºæ§åˆ¶ä½è‡ªå·±ã€‚\n"NOR);
 		me->add("neili", -100);
 	}
 

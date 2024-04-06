@@ -18,46 +18,46 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail( "¶áÃüÒøÁúÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ\n");
+                return notify_fail( "å¤ºå‘½é“¶é¾™åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨\n");
 
 
         if (! objectp(weapon = me->query_temp("weapon")) ||
               (string)weapon->query("skill_type") != "whip")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 
         if (me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸¶áÃüÒøÁú¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸçš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¤ºå‘½é“¶é¾™ã€ï¼\n");
 
         if (me->query_skill("yinlong-whip", 1) < 150)
-                return notify_fail("ÄãµÄÒøÁú±ŞĞŞÎª²»¹»£¬Ä¿Ç°²»ÄÜÊ¹ÓÃ¡¸¶áÃüÒøÁú¡¹£¡\n");
+                return notify_fail("ä½ çš„é“¶é¾™é­ä¿®ä¸ºä¸å¤Ÿï¼Œç›®å‰ä¸èƒ½ä½¿ç”¨ã€Œå¤ºå‘½é“¶é¾™ã€ï¼\n");
 
         if (me->query("neili") < 500)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸¶áÃüÒøÁú¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œå¤ºå‘½é“¶é¾™ã€ï¼\n");
 
         if (me->query_skill_mapped("whip") != "yinlong-whip")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÒøÁú±Ş£¬²»ÄÜÊ¹ÓÃ¡¸¶áÃüÒøÁú¡¹£¡\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é“¶é¾™é­ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¤ºå‘½é“¶é¾™ã€ï¼\n");
 
-        msg = HIB "Í»È»Ö®¼ä£¬" HIB "$N" HIB "ÉíĞÎÒ»ÉÁÒ»»Î£¬¼²ÍËÊıÕÉ,"+ weapon->name() +
-              HIB "´ÓÓÒ¼ç¼±Ë¦Ïòºó£¬¶¸µØ"
-              HIB "±ŞÍ·»÷Ïò\n" HIB "$n" HIB "ÃæÃÅ¡£" HIB "$N" HIB "±¾À´Óë"
-              HIB "$n" HIB "Ïà¸ôÊ®ÕÉÓĞÓà,µ«"+ weapon->name() +
-              HIB "Ëµµ½±ãµ½£¬ÕıÈçÌì"
-              HIB "Íâ\nÓÎÁú£¬Ê¸½Ã¶øÖÁ¡££¡\n" NOR;
+        msg = HIB "çªç„¶ä¹‹é—´ï¼Œ" HIB "$N" HIB "èº«å½¢ä¸€é—ªä¸€æ™ƒï¼Œç–¾é€€æ•°ä¸ˆ,"+ weapon->name() +
+              HIB "ä»å³è‚©æ€¥ç”©å‘åï¼Œé™¡åœ°"
+              HIB "é­å¤´å‡»å‘\n" HIB "$n" HIB "é¢é—¨ã€‚" HIB "$N" HIB "æœ¬æ¥ä¸"
+              HIB "$n" HIB "ç›¸éš”åä¸ˆæœ‰ä½™,ä½†"+ weapon->name() +
+              HIB "è¯´åˆ°ä¾¿åˆ°ï¼Œæ­£å¦‚å¤©"
+              HIB "å¤–\næ¸¸é¾™ï¼ŒçŸ¢çŸ«è€Œè‡³ã€‚ï¼\n" NOR;
 
         ap = me->query_skill("whip");
         dp = target->query_skill("parry");
         attack_time = 6;
         if (ap / 2 + random(ap * 2) > dp || !living(target))
         {
-                msg += HIR "½á¹û$p" HIR "±»$P" HIR
-                       "¹¥ÁË¸ö´ëÊÖ²»¼°£¬Ä¿½Ó²»Ï¾£¬Æ£ÓÚ±¼Ãü£¡\n" NOR;
+                msg += HIR "ç»“æœ$p" HIR "è¢«$P" HIR
+                       "æ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼Œç›®æ¥ä¸æš‡ï¼Œç–²äºå¥”å‘½ï¼\n" NOR;
                 count = ap / 10;
                 me->add_temp("apply/attack", count);
                 attack_time += random(ap / 60);
         } else
         {
-                msg += HIC "$n" HIC "¼û$N" HIC "±ŞÊÆºİÀ±£¬ĞÄÏÂÁİÈ»£¬ÄıÉñÓ¦¸¶¡£\n" NOR;
+                msg += HIC "$n" HIC "è§$N" HIC "é­åŠ¿ç‹ è¾£ï¼Œå¿ƒä¸‹å‡›ç„¶ï¼Œå‡ç¥åº”ä»˜ã€‚\n" NOR;
                 count = 0;
         }
 

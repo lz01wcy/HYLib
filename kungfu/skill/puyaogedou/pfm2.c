@@ -1,4 +1,4 @@
-// Î²°ÍÒ¡Ò¡
+// å°¾å·´æ‘‡æ‘‡
 
 #include <ansi.h>
 
@@ -14,21 +14,21 @@ int perform(object me, object target)
 	
 extra = me->query_skill("puyaogedou");
 	if( (int)me->query_skill("puyaogedou", 1) < 40 )
-		return notify_fail("Äã²»»áÊ¹ÓÃ¼Ó·ÀÎÀÁ¦¡£\n");
+		return notify_fail("ä½ ä¸ä¼šä½¿ç”¨åŠ é˜²å«åŠ›ã€‚\n");
 
 if(me->is_busy())
-		return notify_fail("ÄãÏÖÌ«Ã¦£¬ÓÃ²»³ö¾ø¼¼£¡£¡\n");
+		return notify_fail("ä½ çŽ°å¤ªå¿™ï¼Œç”¨ä¸å‡ºç»æŠ€ï¼ï¼\n");
         if( me->query("up1") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ çŽ°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
         if( me->query("pfm2") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ çŽ°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
 		
 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÎ²°ÍÒ¡Ò¡£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å°¾å·´æ‘‡æ‘‡ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	
 me->add_temp("apply/attack",extra);
 me->add_temp("apply/damage",extra*2);
@@ -36,21 +36,21 @@ me->add_temp("apply/damage",extra*2);
 	
 weapon = me->query_temp("weapon");
 	
-msg = HIY  "$NÊ¹³öÁú×å±ØÉ±¾ø¼¼£ÛÆËÒ§¼ô£Ý,Ò»ÏÂ×Ó±©Å¬ÆðÀ´£¡\n" NOR;
+msg = HIY  "$Nä½¿å‡ºé¾™æ—å¿…æ€ç»æŠ€ï¼»æ‰‘å’¬å‰ªï¼½,ä¸€ä¸‹å­æš´åŠªèµ·æ¥ï¼\n" NOR;
 	message_vision(msg,me,target);
-	msg = HIC  "Ò»ÆË" NOR;
+	msg = HIC  "ä¸€æ‰‘" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR  "¶þÒ§£¡£¡" NOR;
+        msg = HIR  "äºŒå’¬ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIW  "Èý¼ô£¡£¡£¡" NOR;
+        msg = HIW  "ä¸‰å‰ªï¼ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 if (me->query("up1")==2)
 {
-	msg = HIC  "ÔÙÆË" NOR;
+	msg = HIC  "å†æ‰‘" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR  "ÔÙÒ§£¡£¡" NOR;
+        msg = HIR  "å†å’¬ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIW  "×îºóÒ»¼ô£¡£¡£¡" NOR;
+        msg = HIW  "æœ€åŽä¸€å‰ªï¼ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 target->apply_condition("ill_dongshang",30 );
 target->apply_condition("ill_fashao",30 );

@@ -21,20 +21,20 @@ int exert(object me, object target) {
     }
 
     if (!me->is_fighting(target))
-        return notify_fail("ÄãÖ»ÄÜÓÃº®Æø¹¥»÷Õ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+        return notify_fail("ä½ åªèƒ½ç”¨å¯’æ°”æ”»å‡»æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ã€‚\n");
 
     if (me->query_skill("lengyue-shengong", 1) < 150)
-        return notify_fail("ÄãµÄÀäÔÂÉñ¹¦»ğºò²»¹»£¬ÎŞ·¨ÔËÓÃº®Æø¡£\n");
+        return notify_fail("ä½ çš„å†·æœˆç¥åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨å¯’æ°”ã€‚\n");
 
     if ((int) me->query("neili") < 1000)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»!");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿ!");
 
     msg = HIW
     "$N"
     HIW
-    "Ä¬ÔËÀäÔÂÉñ¹¦£¬Ò»¹Éº®ÆøÓ­ÃæÆËÏò$n"
+    "é»˜è¿å†·æœˆç¥åŠŸï¼Œä¸€è‚¡å¯’æ°”è¿é¢æ‰‘å‘$n"
     HIW
-    "£¬ËÄÖÜµÇÊ±Ñ©»¨Æ®Æ®¡£\n"
+    "ï¼Œå››å‘¨ç™»æ—¶é›ªèŠ±é£˜é£˜ã€‚\n"
     NOR;
 
     ap = me->query_skill("force") + me->query("level") * 20 +
@@ -56,16 +56,16 @@ int exert(object me, object target) {
         msg += HIG
         "$n"
         HIG
-        "ºöÈ»¾õµÃÒ»ÕóÍ¸¹Çº®Òâ£¬ö®Ê±¼ä"
-        "»ëÉíµÄÑªÒº¼¸ºõ¶¼ÒªÄı¹ÌÁË¡£\n"
+        "å¿½ç„¶è§‰å¾—ä¸€é˜µé€éª¨å¯’æ„ï¼Œéœæ—¶é—´"
+        "æµ‘èº«çš„è¡€æ¶²å‡ ä¹éƒ½è¦å‡å›ºäº†ã€‚\n"
         NOR;
         target->start_busy(1);
     } else
         msg += HIY
     "$n"
     HIY
-    "¸Ğµ½Ò»Õóº®Òâ×ÔĞÄµ×·ºÆğ£¬Á¬Ã¦"
-    "ÔË¶¯µÖ¿¹£¬¿°¿±ÎŞÊÂ¡£\n"
+    "æ„Ÿåˆ°ä¸€é˜µå¯’æ„è‡ªå¿ƒåº•æ³›èµ·ï¼Œè¿å¿™"
+    "è¿åŠ¨æŠµæŠ—ï¼Œå ªå‹˜æ— äº‹ã€‚\n"
     NOR;
 
     message_combatd(msg, me, target);

@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÎŞ¸ùµÀ³¤", ( { "wugen daozhang", "wugen","daozhang" }) );
-	set("title", HIY"ÉñÁú½Ì"HIR"³àÁúÊ¹"NOR);
-	set("gender", "ÄĞĞÔ" );
+	set_name("æ— æ ¹é“é•¿", ( { "wugen daozhang", "wugen","daozhang" }) );
+	set("title", HIY"ç¥é¾™æ•™"HIR"èµ¤é¾™ä½¿"NOR);
+	set("gender", "ç”·æ€§" );
 	set("age", 55);
 	set("long",
-	      "ÕâÊÇ¸öÎåÊ®À´ËêµÄºÚĞëµÀ³¤,ÏàÃ²ÍşÎä,ÑÛÖĞÂÔ´øÉ±Æø¡£\n"
+	      "è¿™æ˜¯ä¸ªäº”åæ¥å²çš„é»‘é¡»é“é•¿,ç›¸è²Œå¨æ­¦,çœ¼ä¸­ç•¥å¸¦æ€æ°”ã€‚\n"
 	     );
 
 	set("int", 30);
@@ -50,14 +50,14 @@ void create()
 	map_skill("parry", "huashan-jianfa");
 	map_skill("sword", "huashan-jianfa");
 
-	create_family("ÉñÁú½Ì",2,"µÜ×Ó");
+	create_family("ç¥é¾™æ•™",2,"å¼Ÿå­");
 
 	set("inquiry", ([
-		"ÉñÁú½Ì" :  "\nÒ»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"ºé°²Í¨" :  "\n½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-		"½ÌÖ÷" :  "\n½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-		"Èë½Ì" :  "\nÒ»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-		"¿ÚºÅ" : "\nÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥!\n",
+		"ç¥é¾™æ•™" :  "\nä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾™æ•™çš„(join shenlongjiao).\n",
+		"æ´ªå®‰é€š" :  "\næ•™ä¸»è„¾æ°”ä¸å¥½,è¦è®¨ä»–æ¬¢å¿ƒæ‰å¥½ã€‚\n",
+		"æ•™ä¸»" :  "\næ•™ä¸»è„¾æ°”ä¸å¥½,è¦è®¨ä»–æ¬¢å¿ƒæ‰å¥½ã€‚\n",
+		"å…¥æ•™" :  "\nä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾™æ•™çš„(join shenlongjiao).\n",
+		"å£å·" : "\nä¸‡å¹´ä¸è€!æ°¸äº«ä»™ç¦!å¯¿ä¸å¤©é½!æ–‡æ­¦ä»åœ£!\n",
 	]));
 	setup();
         carry_object("/d/city/obj/duanjian")->wield();
@@ -95,7 +95,7 @@ void greeting(object ob)
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕÍ½!");
+        command("say æˆ‘ä¸æ”¶å¾’!");
 	return;
 }
 #include "/kungfu/class/shenlong/shenlong.h"; 

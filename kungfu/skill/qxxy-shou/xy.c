@@ -6,7 +6,7 @@
 #include <combat.h>
 #include "/kungfu/skill/eff_msg.h";
 
-#define CANHE "¡¸" HIW "²ÎºÏ½£Æø" NOR "¡¹"
+#define CANHE "ã€Œ" HIW "å‚åˆå‰‘æ°”" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -21,26 +21,26 @@ int perform(object me, object target)
 
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(CANHE "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(CANHE "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (objectp(me->query_temp("weapon")))
-                return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ" CANHE "¡£\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨" CANHE "ã€‚\n");
 
         if (clv = (int)me->query_skill("qxxy-shou", 1) < 180)
-                return notify_fail("ÄãµÄÆßÐÇÐÇÒÆÊÖÐÞÎªÓÐÏÞ£¬ÄÑÒÔÊ©Õ¹" CANHE "¡£\n");
+                return notify_fail("ä½ çš„ä¸ƒæ˜Ÿæ˜Ÿç§»æ‰‹ä¿®ä¸ºæœ‰é™ï¼Œéš¾ä»¥æ–½å±•" CANHE "ã€‚\n");
 
         
         if ((int)me->query_skill("force") < 320)
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎªÌ«²î£¬ÄÑÒÔÊ©Õ¹" CANHE "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºå¤ªå·®ï¼Œéš¾ä»¥æ–½å±•" CANHE "ã€‚\n");
 
         if ((int)me->query("max_neili") < 6000)
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" CANHE "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" CANHE "ã€‚\n");
 
         if ((int)me->query("neili") < 900)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" CANHE "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" CANHE "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
         damage = me->query_skill("qxxy-shou");
         slv = target->query_skill("six-finger", 1);
@@ -48,20 +48,20 @@ int perform(object me, object target)
         ap = me->query_skill("hand");
         dp = target->query_skill("dodge");
 
-        msg = HIW "Ö»¼û$N" HIW "Ê®Ö¸·ÖÌ¯£¬ö®Ê±ÆÆ¿ÕÉùÖèÏì£¬Êý¹É½£ÆøÖÁÖ¸¼â¼¤"
-              "Éä¶ø³ö£¬³¯$n" HIW "¾¶Ö±±¼È¥£¡\n" NOR;
+        msg = HIW "åªè§$N" HIW "åæŒ‡åˆ†æ‘Šï¼ŒéœŽæ—¶ç ´ç©ºå£°éª¤å“ï¼Œæ•°è‚¡å‰‘æ°”è‡³æŒ‡å°–æ¿€"
+              "å°„è€Œå‡ºï¼Œæœ$n" HIW "å¾„ç›´å¥”åŽ»ï¼\n" NOR;
 
         me->start_busy(3);
 
         if (slv >= 140 
             && random(5) == 0 
-            && slv >= clv - 60 // Èç¹û²ÎºÏÖ¸µÈ¼¶±ÈÁùÂöÉñ½£µÈ¼¶¸ß60¼¶ÒÔÉÏÈ¡ÏûÌØÊâÐ§¹û
+            && slv >= clv - 60 // å¦‚æžœå‚åˆæŒ‡ç­‰çº§æ¯”å…­è„‰ç¥žå‰‘ç­‰çº§é«˜60çº§ä»¥ä¸Šå–æ¶ˆç‰¹æ®Šæ•ˆæžœ
             &&! target->is_busy()
             && target->query_skill_prepared("finger") == "six-finger")
         {
-                msg += HIY "\nµ«¼û$n" HIY "Ð±Ð±Ò»Ö¸µã³ö£¬Ö¸³öÈç·ç£¬½£Æø×Ýºá£¬àÍÈ»"
-                       "×÷Ïì£¬¾¹½«$N" HIY "µÄ½£ÆøÈ«²¿ÕÛ»Ø£¬·´Ïò×Ô¼ºÉäÈ¥£¡\n" NOR +
-                       HIR "ÄãÌýµ½¡¸àÍÀ²¡¹Ò»ÉùÇáÏì£¬Á³ÉÏ¾¹½¦µ½Ò»Ð©ÑªµÎ£¡\n" NOR;
+                msg += HIY "\nä½†è§$n" HIY "æ–œæ–œä¸€æŒ‡ç‚¹å‡ºï¼ŒæŒ‡å‡ºå¦‚é£Žï¼Œå‰‘æ°”çºµæ¨ªï¼Œå—¤ç„¶"
+                       "ä½œå“ï¼Œç«Ÿå°†$N" HIY "çš„å‰‘æ°”å…¨éƒ¨æŠ˜å›žï¼Œåå‘è‡ªå·±å°„åŽ»ï¼\n" NOR +
+                       HIR "ä½ å¬åˆ°ã€Œå—¤å•¦ã€ä¸€å£°è½»å“ï¼Œè„¸ä¸Šç«Ÿæº…åˆ°ä¸€äº›è¡€æ»´ï¼\n" NOR;
 
                 me->receive_wound("qi", slv / 3 + random(slv / 4));
                 p = (int)me->query("qi") * 100 / (int)me->query("max_qi");
@@ -73,13 +73,13 @@ int perform(object me, object target)
 target->add("qi",-damage*2);
 target->add("eff_qi",-damage);
 
-                        msg +=HIR "\n¶ÙÊ±Ö»Ìý¡°àÍÀ²¡±µÄÒ»Éù£¬$n" HIR
-                                           "¶ãÉÁ²»¼°£¬½£Æø¶ÙÊ±´©ÐØ¶ø¹ý£¬´ø³öÒ»Åî"
-                                           "ÑªÓê¡£\n" NOR;     
+                        msg +=HIR "\né¡¿æ—¶åªå¬â€œå—¤å•¦â€çš„ä¸€å£°ï¼Œ$n" HIR
+                                           "èº²é—ªä¸åŠï¼Œå‰‘æ°”é¡¿æ—¶ç©¿èƒ¸è€Œè¿‡ï¼Œå¸¦å‡ºä¸€è“¬"
+                                           "è¡€é›¨ã€‚\n" NOR;     
         } else
         {
-                msg += CYN "\n$n" CYN "¼û$N" CYN "À´ÊÆÐÚÓ¿£¬¼±Ã¦·ÉÉíÒ»Ô¾¶ø"
-                       "Æð£¬±Ü¿ªÁËÕâÒ»»÷¡£\n" NOR;
+                msg += CYN "\n$n" CYN "è§$N" CYN "æ¥åŠ¿æ±¹æ¶Œï¼Œæ€¥å¿™é£žèº«ä¸€è·ƒè€Œ"
+                       "èµ·ï¼Œé¿å¼€äº†è¿™ä¸€å‡»ã€‚\n" NOR;
         }
 
         ap = me->query_skill("hand");
@@ -87,13 +87,13 @@ target->add("eff_qi",-damage);
 
         if (slv >= 160 
             && random(8) == 0 
-            && slv >= clv - 60  // Èç¹û²ÎºÏÖ¸µÈ¼¶±ÈÁùÂöÉñ½£µÈ¼¶¸ß60¼¶ÒÔÉÏÈ¡ÏûÌØÊâÐ§¹û
+            && slv >= clv - 60  // å¦‚æžœå‚åˆæŒ‡ç­‰çº§æ¯”å…­è„‰ç¥žå‰‘ç­‰çº§é«˜60çº§ä»¥ä¸Šå–æ¶ˆç‰¹æ®Šæ•ˆæžœ
             &&! target->is_busy() 
             && target->query_skill_prepared("finger") == "six-finger")
         {
-                msg += HIY "\nºö¼û$n" HIY "×óÊÖÐ¡Ö¸Ò»Éì£¬Ò»ÕÐ¡¸ÉÙÔó½£¡¹ÖÁÖ¸¼âÍ¸³ö"
-                       "£¬ÕæÆø¹Äµ´£¬ÇáÁéÑ¸ËÙ£¬¶Ù½«$N" HIY "½£Æø±Æ»Ø£¡\n" NOR + HIR
-                       "ÄãÌýµ½¡¸àÍÀ²¡¹Ò»ÉùÇáÏì£¬Á³ÉÏ¾¹½¦µ½Ò»Ð©ÑªµÎ£¡\n" NOR;
+                msg += HIY "\nå¿½è§$n" HIY "å·¦æ‰‹å°æŒ‡ä¸€ä¼¸ï¼Œä¸€æ‹›ã€Œå°‘æ³½å‰‘ã€è‡³æŒ‡å°–é€å‡º"
+                       "ï¼ŒçœŸæ°”é¼“è¡ï¼Œè½»çµè¿…é€Ÿï¼Œé¡¿å°†$N" HIY "å‰‘æ°”é€¼å›žï¼\n" NOR + HIR
+                       "ä½ å¬åˆ°ã€Œå—¤å•¦ã€ä¸€å£°è½»å“ï¼Œè„¸ä¸Šç«Ÿæº…åˆ°ä¸€äº›è¡€æ»´ï¼\n" NOR;
 
                 me->receive_wound("qi", slv / 2 + random(slv / 4));
                 p = (int)me->query("qi") * 100 / (int)me->query("max_qi");
@@ -106,14 +106,14 @@ target->add("eff_qi",-damage);
 target->add("qi",-damage*2);
 target->add("eff_qi",-damage);
 
-                        msg +=HIR "\nÖ»Ìý$n" HIR "Ò»Éù²Òº¿£¬±»$N" HIR
-                                           "µÄ½£Æø´ÌÖÐÁËÒªº¦£¬ÑªÈâÄ£ºý£¬ÏÊÑª±ÅÁ÷²»"
-                                           "Ö¹¡£\n" NOR;     
+                        msg +=HIR "\nåªå¬$n" HIR "ä¸€å£°æƒ¨åšŽï¼Œè¢«$N" HIR
+                                           "çš„å‰‘æ°”åˆºä¸­äº†è¦å®³ï¼Œè¡€è‚‰æ¨¡ç³Šï¼Œé²œè¡€è¿¸æµä¸"
+                                           "æ­¢ã€‚\n" NOR;     
 
         } else
         {
-                msg += CYN "\n$n" CYN "¼û$N" CYN "À´ÊÆÐÚÓ¿£¬¼±Ã¦·ÉÉíÒ»Ô¾¶ø"
-                       "Æð£¬±Ü¿ªÁËÕâÒ»»÷¡£\n" NOR;
+                msg += CYN "\n$n" CYN "è§$N" CYN "æ¥åŠ¿æ±¹æ¶Œï¼Œæ€¥å¿™é£žèº«ä¸€è·ƒè€Œ"
+                       "èµ·ï¼Œé¿å¼€äº†è¿™ä¸€å‡»ã€‚\n" NOR;
         }
 
         ap = me->query_skill("hand");
@@ -121,13 +121,13 @@ target->add("eff_qi",-damage);
 
         if (slv >= 180 
             && random(10) == 0 
-            && slv >= clv - 50  // Èç¹û²ÎºÏÖ¸µÈ¼¶±ÈÁùÂöÉñ½£µÈ¼¶¸ß50¼¶ÒÔÉÏÈ¡ÏûÌØÊâÐ§¹û
+            && slv >= clv - 50  // å¦‚æžœå‚åˆæŒ‡ç­‰çº§æ¯”å…­è„‰ç¥žå‰‘ç­‰çº§é«˜50çº§ä»¥ä¸Šå–æ¶ˆç‰¹æ®Šæ•ˆæžœ
             &&! target->is_busy()
             && target->query_skill_prepared("finger") == "six-finger")
         {
-                msg += HIY "\n¿Éµç¹â»ðÊ¯Ö®¼ä£¬$n" HIY "ÃÍÈ»·­ÕÆ£¬ÓÒÊÖ¶¸È»Ì½³ö£¬ÖÐ"
-                       "Ö¸¡¸ÖÐ³å½£¡¹Ïò$N" HIY "Ò»Êú£¬µÇ½«²ÎºÏ½£Æø»¯ÓÚÎÞÐÎ£¡\n" NOR
-                       + HIR "ÄãÌýµ½¡¸àÍÀ²¡¹Ò»ÉùÇáÏì£¬Á³ÉÏ¾¹½¦µ½Ò»Ð©ÑªµÎ£¡\n" NOR;
+                msg += HIY "\nå¯ç”µå…‰ç«çŸ³ä¹‹é—´ï¼Œ$n" HIY "çŒ›ç„¶ç¿»æŽŒï¼Œå³æ‰‹é™¡ç„¶æŽ¢å‡ºï¼Œä¸­"
+                       "æŒ‡ã€Œä¸­å†²å‰‘ã€å‘$N" HIY "ä¸€ç«–ï¼Œç™»å°†å‚åˆå‰‘æ°”åŒ–äºŽæ— å½¢ï¼\n" NOR
+                       + HIR "ä½ å¬åˆ°ã€Œå—¤å•¦ã€ä¸€å£°è½»å“ï¼Œè„¸ä¸Šç«Ÿæº…åˆ°ä¸€äº›è¡€æ»´ï¼\n" NOR;
 
                 me->receive_wound("qi", slv / 2 + random(slv / 2));
                 p = (int)me->query("qi") * 100 / (int)me->query("max_qi");
@@ -140,32 +140,32 @@ target->add("eff_qi",-damage);
 target->add("qi",-damage*2);
 target->add("eff_qi",-damage);
 
-                        msg +=HIR "\n$n" HIR "·ÜÁ¦ÕÐ¼Ü£¬ÈÔÊÇ²»µÐ£¬$N"
-                                           "µÄ" HIR "ÎÞÐÎ½£ÆøÒÑÍ¸Ìå¶øÈë£¬ÏÊÑª·ÉÉä"
-                                           "£¬ÎÞÁ¦ÔÙÕ½¡£\n" NOR;     
+                        msg +=HIR "\n$n" HIR "å¥‹åŠ›æ‹›æž¶ï¼Œä»æ˜¯ä¸æ•Œï¼Œ$N"
+                                           "çš„" HIR "æ— å½¢å‰‘æ°”å·²é€ä½“è€Œå…¥ï¼Œé²œè¡€é£žå°„"
+                                           "ï¼Œæ— åŠ›å†æˆ˜ã€‚\n" NOR;     
         } else
         {
-                msg += CYN "\n$n" CYN "¼û$N" CYN "À´ÊÆÐÚÓ¿£¬¼±Ã¦·ÉÉíÒ»Ô¾¶ø"
-                       "Æð£¬±Ü¿ªÁËÕâÒ»»÷¡£\n" NOR;
+                msg += CYN "\n$n" CYN "è§$N" CYN "æ¥åŠ¿æ±¹æ¶Œï¼Œæ€¥å¿™é£žèº«ä¸€è·ƒè€Œ"
+                       "èµ·ï¼Œé¿å¼€äº†è¿™ä¸€å‡»ã€‚\n" NOR;
         }
         me->add("neili", -400 - random(100));
         message_combatd(msg, me, target);
 if ((int)me->query_skill("qxxy-shou", 1)> 320)
 {
 if (random(3)==0) target->start_busy(3);
-        msg = MAG "$NÄ¬ÔËÉñÔªÉñ¹¦£¬½«ÄÚÁ¦¾ÛÓÚÊÖÖ¸£¬Æ½Æ½µ­µ­ºÁÎÞ»¨ÇÎµØµãÏò$nµÄëþÖÐÑ¨" NOR;
+        msg = MAG "$Né»˜è¿ç¥žå…ƒç¥žåŠŸï¼Œå°†å†…åŠ›èšäºŽæ‰‹æŒ‡ï¼Œå¹³å¹³æ·¡æ·¡æ¯«æ— èŠ±ä¿åœ°ç‚¹å‘$nçš„è†»ä¸­ç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = YEL "$NÁ½ÕÆÊúºÏ£¬ÕÆÐÄÎ¢Ðé£¬ÈçÁ«»¨Ö®¿ª·Å£¬½Ó×ÅË«ÊÖÊ³Ö¸ÇáÇáÒ»µ¯£¬Á½¹ÉÖ¸·çÍ¬Ê±Ï®Ïò$n" NOR;
+        msg = YEL "$Nä¸¤æŽŒç«–åˆï¼ŒæŽŒå¿ƒå¾®è™šï¼Œå¦‚èŽ²èŠ±ä¹‹å¼€æ”¾ï¼ŒæŽ¥ç€åŒæ‰‹é£ŸæŒ‡è½»è½»ä¸€å¼¹ï¼Œä¸¤è‚¡æŒ‡é£ŽåŒæ—¶è¢­å‘$n" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = WHT "$NÁè¿ÕÐéµãÊýÖ¸£¬ÊýµÀÖ¸·çºÏ³ÉÒ»¹É½£Æø£¬Ö±Ïò$n¹¥È¥"NOR;
+        msg = WHT "$Nå‡Œç©ºè™šç‚¹æ•°æŒ‡ï¼Œæ•°é“æŒ‡é£Žåˆæˆä¸€è‚¡å‰‘æ°”ï¼Œç›´å‘$næ”»åŽ»"NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg =RED "$N»º»º¾ÙÊÖ£¬ÎåÖ¸ÏÈÊÇ»þÕÅ£¬ÔÙ»º»ºÂ£Ö¸ºÏÈ­£¬ö®Ê±Éú³öÆøÄýºÓÔÀ°ãµÄ½£Æø¿ñÑï" NOR;
+        msg =RED "$Nç¼“ç¼“ä¸¾æ‰‹ï¼Œäº”æŒ‡å…ˆæ˜¯ç®•å¼ ï¼Œå†ç¼“ç¼“æ‹¢æŒ‡åˆæ‹³ï¼ŒéœŽæ—¶ç”Ÿå‡ºæ°”å‡æ²³å²³èˆ¬çš„å‰‘æ°”ç‹‚æ‰¬" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = HIR "$NÖ¸·çÏ¬Àû£¬ËÆÒ»µÀÎÞÐÎ½£Æø£¬½«$nÁýÕÖÓÚÄÚ£¬$nÖ»¾õÐØ¿ÚÒ»Í´£¬È«ÉíÕæÆø¿ñÐº¶ø³ö" NOR;
+        msg = HIR "$NæŒ‡é£ŽçŠ€åˆ©ï¼Œä¼¼ä¸€é“æ— å½¢å‰‘æ°”ï¼Œå°†$nç¬¼ç½©äºŽå†…ï¼Œ$nåªè§‰èƒ¸å£ä¸€ç—›ï¼Œå…¨èº«çœŸæ°”ç‹‚æ³»è€Œå‡º" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 }
         return 1;

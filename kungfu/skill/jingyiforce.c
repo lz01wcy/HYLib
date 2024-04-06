@@ -9,7 +9,7 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return 
-notify_fail("净衣心法只能用学的，或是从运用(exert)中增加熟练度。\n");
+notify_fail("鍑�琛ｅ績娉曞彧鑳界敤瀛︾殑锛屾垨鏄粠杩愮敤(exert)涓鍔犵啛缁冨害銆俓n");
 }
 
 string exert_function_file(string func)

@@ -13,14 +13,14 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÌìÄ§Ê½£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å¤©é­”å¼ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	extra = me->query_skill("tmquan",1) ;
-	if(extra < 80 ) return notify_fail("ÄãµÄ£ÛÈçÒâµØÄ§Á¬»·°ËÕÆ£Ý²»¹»ÊìÁ·£¡\n");
-	msg = HIR "\n$NË«±Û±©³¤£¬Ò»ÕÐ£ÛÌìÄ§Ê½£Ý£¬Ë«ÊÖÂ£Ïò$n£¡" NOR;
+	if(extra < 80 ) return notify_fail("ä½ çš„ï¼»å¦‚æ„åœ°é­”è¿žçŽ¯å…«æŽŒï¼½ä¸å¤Ÿç†Ÿç»ƒï¼\n");
+	msg = HIR "\n$NåŒè‡‚æš´é•¿ï¼Œä¸€æ‹›ï¼»å¤©é­”å¼ï¼½ï¼ŒåŒæ‰‹æ‹¢å‘$nï¼" NOR;
 	if(random((int)me->query("combat_exp")) >= (int)target->query("combat_exp")/2 || random(8)==0)
 	{
 	message_vision(msg+"\n",me,target);
-	message_vision( HIC "$N¶ãÉÁ²»¼°£¬È«ÉíÕý±»ÕÆÓ°ÕÖ×¡£¡ Ò»¹ÉÇàÆø´Ó$N¶¥ÃÅÅçÓ¿¶ø³ö£¡\n" NOR,target);
+	message_vision( HIC "$Nèº²é—ªä¸åŠï¼Œå…¨èº«æ­£è¢«æŽŒå½±ç½©ä½ï¼ ä¸€è‚¡é’æ°”ä»Ž$Né¡¶é—¨å–·æ¶Œè€Œå‡ºï¼\n" NOR,target);
 	target->receive_wound("jing",extra*2);
 	me->receive_heal("jing",extra*2);
 COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 1);

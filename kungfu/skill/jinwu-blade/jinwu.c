@@ -1,10 +1,10 @@
 ///NOV.13.2000 by lucas
-// jinwu.c ½ðÎÚ¶éµØ
+// jinwu.c é‡‘ä¹Œå •åœ°
 
 /*
-ÓÉÓÚÅü¶Ï¶Ô·½ÎäÆ÷µÄ¹¦ÄÜÊÇÕâ¸öperform×î´óµÄÍþÁ¦£¬µ«ÎªÁË±£³Ö¶À¹Â¾Å½£ÔÚ
-ÕâÒ»·½ÃæµÄµÚÒ»µØÎ»£¬ÌØµØ¶Ô·¢»ÓÕâÒ»ÍþÁ¦µÄÌõ¼þ£¬ÔÚ³ÌÐòÖÐ×öÁËÈçÏÂÏÞÖÆ
-Ï£ÍûÒÔºóµÄÎ×Ê¦²»Òª¸ü¸ÄÕâÐ©Éè¶¨£¬±Ï¾¹ÔÚweaponÎä¹¦ÖÐ£¬²»ÄÜ³¬Ô½lonely-swordµÄµØÎ»¡£
+ç”±äºŽåŠˆæ–­å¯¹æ–¹æ­¦å™¨çš„åŠŸèƒ½æ˜¯è¿™ä¸ªperformæœ€å¤§çš„å¨åŠ›ï¼Œä½†ä¸ºäº†ä¿æŒç‹¬å­¤ä¹å‰‘åœ¨
+è¿™ä¸€æ–¹é¢çš„ç¬¬ä¸€åœ°ä½ï¼Œç‰¹åœ°å¯¹å‘æŒ¥è¿™ä¸€å¨åŠ›çš„æ¡ä»¶ï¼Œåœ¨ç¨‹åºä¸­åšäº†å¦‚ä¸‹é™åˆ¶
+å¸Œæœ›ä»¥åŽçš„å·«å¸ˆä¸è¦æ›´æ”¹è¿™äº›è®¾å®šï¼Œæ¯•ç«Ÿåœ¨weaponæ­¦åŠŸä¸­ï¼Œä¸èƒ½è¶…è¶Šlonely-swordçš„åœ°ä½ã€‚
 */
 
 #include <ansi.h>
@@ -27,27 +27,27 @@ int attack_time,i;
 
 
         if( !(me->is_fighting() ))
-            return notify_fail("¡¸"+HIR"½ðÎÚ¶éµØ"NOR+"¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+            return notify_fail("ã€Œ"+HIR"é‡‘ä¹Œå •åœ°"NOR+"ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "blade")
-            return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+            return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( skill < 100)
-            return notify_fail("ÄãµÄ½ðÎÚµ¶·¨µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸"+HIR"½ðÎÚ¶éµØ"NOR+"¡¹£¡\n");
+            return notify_fail("ä½ çš„é‡‘ä¹Œåˆ€æ³•ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œ"+HIR"é‡‘ä¹Œå •åœ°"NOR+"ã€ï¼\n");
         if(me->query_skill("bingxue-xinfa",1)<100)
-            return notify_fail("ÄãµÄ±ùÑ©ÐÄ·¨µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸"+HIR"½ðÎÚ¶éµØ"NOR+"¡¹£¡\n");
+            return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œ"+HIR"é‡‘ä¹Œå •åœ°"NOR+"ã€ï¼\n");
  
 
         if( me->query("neili") < 700 )
-            return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸"+HIR"½ðÎÚ¶éµØ"NOR+"¡¹£¡\n");
+            return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œ"+HIR"é‡‘ä¹Œå •åœ°"NOR+"ã€ï¼\n");
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/4 ) {
 attack_time = random((int)me->query_skill("jinwu-blade", 1) / 30);
 me->start_busy(2);
 if (attack_time > 9 ) attack_time=9;
         for(i = 0; i < attack_time; i++){
-         msg = HIR "$N°ÑÊÖÉÏµÄ¸Öµ¶Îè³ÉÁË"+HIW"Ñ©»¨"+HIR"Ò»°ã£¬Í»È»´ÓÑ©»¨ÖÐÅü³öÒ»µ¶À´£¡\n" NOR;
+         msg = HIR "$NæŠŠæ‰‹ä¸Šçš„é’¢åˆ€èˆžæˆäº†"+HIW"é›ªèŠ±"+HIR"ä¸€èˆ¬ï¼Œçªç„¶ä»Žé›ªèŠ±ä¸­åŠˆå‡ºä¸€åˆ€æ¥ï¼\n" NOR;
 me->set_temp("noauto",1);
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 me->delete_temp("noauto");
@@ -55,7 +55,7 @@ me->add("neili",-50);
           }
 }
         msg = HIY
-    "$N×ÝÉíÔ¾Æð,Ê¹³ö"+HIR"¡¸½ðÎÚ¶éµØ¡¹"NOR+""+HIY"£¬»ÓÎè"NOR""+weapon->name()+""NOR+HIY"´Ó°ë¿ÕÖÐ»Óµ¶Ö±ÅüÏÂÀ´£¬\nµ¶·æÀëµØÉÐÓÐÊý³ß£¬µØÏÂÒÑÊÇ³¾É³·ÉÑï£¬°Ü²ÝÂäÒ¶±»µ¶·ç¼¤µÃÍÅÍÅ¶øÎè£¬\n½«$nÌÓ¶ÝÍË±ÜµÄ¿ÕÏ¶·âµÄÑÏÑÏÊµÊµ¡£\n"NOR;
+    "$Nçºµèº«è·ƒèµ·,ä½¿å‡º"+HIR"ã€Œé‡‘ä¹Œå •åœ°ã€"NOR+""+HIY"ï¼ŒæŒ¥èˆž"NOR""+weapon->name()+""NOR+HIY"ä»ŽåŠç©ºä¸­æŒ¥åˆ€ç›´åŠˆä¸‹æ¥ï¼Œ\nåˆ€é”‹ç¦»åœ°å°šæœ‰æ•°å°ºï¼Œåœ°ä¸‹å·²æ˜¯å°˜æ²™é£žæ‰¬ï¼Œè´¥è‰è½å¶è¢«åˆ€é£Žæ¿€å¾—å›¢å›¢è€Œèˆžï¼Œ\nå°†$né€ƒéé€€é¿çš„ç©ºéš™å°çš„ä¸¥ä¸¥å®žå®žã€‚\n"NOR;
         message_combatd(msg, me, target);
 
         ap = random(me->query("combat_exp") + skill*5);
@@ -66,7 +66,7 @@ me->add("neili",-50);
         {
             if(userp(me))
                  me->add("neili",-250);
-            msg = HIC"$n±ÜÎÞ¿É±Ü,Ö»¾õÒ»¹É¸ÕÃÍÖ®¼«µÄ¾¢·çÆËÃæ¶øÀ´£¬Ê¹ÈËÖ±ÓûÖÏÏ¢¡£\n$n¼«Á¦ºóÍË¸ôµ²£¬È´Ö»¼û"NOR""+weapon->name()+""HIC"µ¶¹âÒ»ÉÁ£¬ºÁ²»Í£Ï¢£¬Ò»µ¶ÕýÖÐÃæÃÅ¡£\n"NOR;
+            msg = HIC"$né¿æ— å¯é¿,åªè§‰ä¸€è‚¡åˆšçŒ›ä¹‹æžçš„åŠ²é£Žæ‰‘é¢è€Œæ¥ï¼Œä½¿äººç›´æ¬²çª’æ¯ã€‚\n$næžåŠ›åŽé€€éš”æŒ¡ï¼Œå´åªè§"NOR""+weapon->name()+""HIC"åˆ€å…‰ä¸€é—ªï¼Œæ¯«ä¸åœæ¯ï¼Œä¸€åˆ€æ­£ä¸­é¢é—¨ã€‚\n"NOR;
             qi_wound = (int)me->query_skill("jinwu-blade",1)+(int)me->query_skill("blade",1)+(int)me->query_str()*10;
             qi_wound = random(qi_wound*2);
 // if(qi_wound > target->query("qi")) qi_wound = 100; ?  damage limit is wrong (by xbd)
@@ -86,18 +86,18 @@ target->apply_condition("xuanming_poison",50);
 
        objectp(weapon2 = target->query_temp("weapon"));
 
-         if(me->query("str")>=20                                 //ÏÈÌì±ÛÁ¦±ØÐë²»Ð¡ÓÚÓÚ20
+         if(me->query("str")>=20                                 //å…ˆå¤©è‡‚åŠ›å¿…é¡»ä¸å°äºŽäºŽ20
        && objectp(weapon2 = target->query_temp("weapon"))
-       && me->query_str() >= 45                                 //ºóÌì±ÛÁ¦±ØÐë²»Ð¡ÓÚ45
-       && me->query("max_neili") > 2500                        //×î´óÄÚÁ¦±ØÐë´óÓÚ2800
-       && !me->query("betrayer")                               //±ØÐëÃ»ÅÑ¹ýÊ¦
-       && (me->query("neili") - me->query("max_neili")) > 300  //ÏÖÓÐÄÚÁ¦±ØÐë±È×î´óÄÚÁ¦¶à300£¬ÓÉÓÚÔÚÉÏÃæ»á¼õµô550£¬Êµ¼Ê±ØÐë´óÓÚ550
-       && skill > 200                                           //±ùÑ©ÐÄ·¨±ØÐë´óÓÚ200¼¶
-       && skill1 > 200                                          //»ù±¾È­½Å±ØÐë´óÓÚ200¼¶
-       && skill2 > 200                                          //Ñ©É½½£·¨±ØÐë´óÓÚ200¼¶
-       && skill3 > 200                                          //½ðÎÚµ¶·¨±ØÐë´óÓÚ200¼¶
-       && skill4 > 200                                          //»ù±¾µ¶·¨±ØÐë´óÓÚ200¼¶
-       && !weapon2->query("no_drop")                           //ÏÂÃæÕâÐ©ÊÇÈ·±£Éñ±ø¼°×ÔÖýÎäÆ÷²»±»¿³¶Ï
+       && me->query_str() >= 45                                 //åŽå¤©è‡‚åŠ›å¿…é¡»ä¸å°äºŽ45
+       && me->query("max_neili") > 2500                        //æœ€å¤§å†…åŠ›å¿…é¡»å¤§äºŽ2800
+       && !me->query("betrayer")                               //å¿…é¡»æ²¡å›è¿‡å¸ˆ
+       && (me->query("neili") - me->query("max_neili")) > 300  //çŽ°æœ‰å†…åŠ›å¿…é¡»æ¯”æœ€å¤§å†…åŠ›å¤š300ï¼Œç”±äºŽåœ¨ä¸Šé¢ä¼šå‡æŽ‰550ï¼Œå®žé™…å¿…é¡»å¤§äºŽ550
+       && skill > 200                                           //å†°é›ªå¿ƒæ³•å¿…é¡»å¤§äºŽ200çº§
+       && skill1 > 200                                          //åŸºæœ¬æ‹³è„šå¿…é¡»å¤§äºŽ200çº§
+       && skill2 > 200                                          //é›ªå±±å‰‘æ³•å¿…é¡»å¤§äºŽ200çº§
+       && skill3 > 200                                          //é‡‘ä¹Œåˆ€æ³•å¿…é¡»å¤§äºŽ200çº§
+       && skill4 > 200                                          //åŸºæœ¬åˆ€æ³•å¿…é¡»å¤§äºŽ200çº§
+       && !weapon2->query("no_drop")                           //ä¸‹é¢è¿™äº›æ˜¯ç¡®ä¿ç¥žå…µåŠè‡ªé“¸æ­¦å™¨ä¸è¢«ç æ–­
        && !weapon2->query("no_get") 
        && !weapon2->query("no_put")
        && !weapon2->query("no_beg")
@@ -111,16 +111,16 @@ target->apply_condition("xuanming_poison",50);
             if(inv[equip]->query("weapon_prop") && ((string)inv[equip]->query("equipped")=="wielded"))
 
 		{
-msg += HIW "$NÁ¦µÀÎ´¾¡£¬ÊÖÖÐµ¶ÊÆ²»¾ø£¬Á¬´ø$nÊÖÉÏ"NOR""+inv[equip]->query("name")+HIW"Ò»ÆðÅü¶Ï¡£\nÖ»Ìýµ±µÄÒ»Éù£¬$nÊÖÉÏµÄ"NOR""+inv[equip]->query("name")+HIW"ÒÑ±»Åü³ÉÁ½°ë£¬µôÔÚÁËµØÉÏ£¡\n"NOR;
+msg += HIW "$NåŠ›é“æœªå°½ï¼Œæ‰‹ä¸­åˆ€åŠ¿ä¸ç»ï¼Œè¿žå¸¦$næ‰‹ä¸Š"NOR""+inv[equip]->query("name")+HIW"ä¸€èµ·åŠˆæ–­ã€‚\nåªå¬å½“çš„ä¸€å£°ï¼Œ$næ‰‹ä¸Šçš„"NOR""+inv[equip]->query("name")+HIW"å·²è¢«åŠˆæˆä¸¤åŠï¼ŒæŽ‰åœ¨äº†åœ°ä¸Šï¼\n"NOR;
         message_combatd(msg, me,target);
 
 			inv[equip]->unwield();
 			inv[equip]->reset_action();
 			inv[equip]->move(environment(target));
-			inv[equip]->set("name", "¶ÏµôµÄ"+ inv[equip]->query("name") );
+			inv[equip]->set("name", "æ–­æŽ‰çš„"+ inv[equip]->query("name") );
 			inv[equip]->set("value", 0);
 			inv[equip]->set("weapon_prop", 0);
-			inv[equip]->set("long", "Ò»°ÑÆÆÀÃÎäÆ÷£¬´ÓÖÐ¶Ï¿ª£¬ÆÆ¿ÚÕûÆë£¬¿´À´ÊÇ±»¸ßÊÖÒ»µ¶Åü¿ªµÄ¡£\n");
+			inv[equip]->set("long", "ä¸€æŠŠç ´çƒ‚æ­¦å™¨ï¼Œä»Žä¸­æ–­å¼€ï¼Œç ´å£æ•´é½ï¼Œçœ‹æ¥æ˜¯è¢«é«˜æ‰‹ä¸€åˆ€åŠˆå¼€çš„ã€‚\n");
 			}
 		}
 
@@ -131,7 +131,7 @@ msg += HIW "$NÁ¦µÀÎ´¾¡£¬ÊÖÖÐµ¶ÊÆ²»¾ø£¬Á¬´ø$nÊÖÉÏ"NOR""+inv[equip]->query("name")
         {
             if(userp(me))
                  me->add("neili",-100);
-            msg = HIW"¿ÉÊÇ$nÇáÇáÍùÅÔ±ßÒ»ÉÁ,±Õ¹ýÁË$NÕâ±ØÉ±µÄÒ»µ¶¡£\n"NOR;
+            msg = HIW"å¯æ˜¯$nè½»è½»å¾€æ—è¾¹ä¸€é—ª,é—­è¿‡äº†$Nè¿™å¿…æ€çš„ä¸€åˆ€ã€‚\n"NOR;
             me->start_busy(2);
 }
 

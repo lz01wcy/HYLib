@@ -1,4 +1,4 @@
-// da.c ´òÉß´òÆß´ç
+// da.c æ‰“è›‡æ‰“ä¸ƒå¯¸
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,50 +16,50 @@ int perform(object me, object target)
 	weapon = me->query_temp("weapon");
 
         if( !target )
-		return notify_fail("ÄãÒª´òÄÄÌõÉß£¿\n");
+		return notify_fail("ä½ è¦æ‰“å“ªæ¡è›‡ï¼Ÿ\n");
 
-        if ( target->query("race")!="Ò°ÊÞ")
-                return notify_fail("¿´Çå³þÐ©£¬ÄÇ²»ÊÇÉß£¬ÄãÏ¹¸ãÊ²Ã´£¿\n");
+        if ( target->query("race")!="é‡Žå…½")
+                return notify_fail("çœ‹æ¸…æ¥šäº›ï¼Œé‚£ä¸æ˜¯è›‡ï¼Œä½ çžŽæžä»€ä¹ˆï¼Ÿ\n");
 
-	if( strsrch(target->query("name"), "Éß")<0)
-                return notify_fail("¿´Çå³þÐ©£¬ÄÇ²»ÊÇÉß£¬ÄãÏ¹¸ãÊ²Ã´£¿\n");		
+	if( strsrch(target->query("name"), "è›‡")<0)
+                return notify_fail("çœ‹æ¸…æ¥šäº›ï¼Œé‚£ä¸æ˜¯è›‡ï¼Œä½ çžŽæžä»€ä¹ˆï¼Ÿ\n");		
 	if( target->query("owner"))
-                return notify_fail("¿´Çå³þÐ©£¬ÄÇ²»ÊÇÉß£¬ÄãÏ¹¸ãÊ²Ã´£¿\n");		
+                return notify_fail("çœ‹æ¸…æ¥šäº›ï¼Œé‚£ä¸æ˜¯è›‡ï¼Œä½ çžŽæžä»€ä¹ˆï¼Ÿ\n");		
                 
          if( (int)me->query_skill("wudu-shengong",1) < 10 )
-                return notify_fail("ÄãµÄÎå¶¾Éñ¹¦ÐÞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„äº”æ¯’ç¥žåŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
         if( !living(target) )
-                return notify_fail("ÄÇÌõÉßÔÝÊ±²»»á¶¯µ¯ÁË£¬Äã²»±ØÔÙ´òÁË¡£\n");
+                return notify_fail("é‚£æ¡è›‡æš‚æ—¶ä¸ä¼šåŠ¨å¼¹äº†ï¼Œä½ ä¸å¿…å†æ‰“äº†ã€‚\n");
 
 	if( (int)me->query_skill("shedu-qiqiao", 1) < 20 )
-		return notify_fail("ÄãµÄÉß¶¾ÆæÇÉ»¹²»¹»æµÊì, ²»ÄÜ´òÉß !\n");
+		return notify_fail("ä½ çš„è›‡æ¯’å¥‡å·§è¿˜ä¸å¤Ÿå¨´ç†Ÿ, ä¸èƒ½æ‰“è›‡ !\n");
 
 	if( (int)me->query_skill("force") < 30 )
-		return notify_fail("ÄãµÄÄÚ¹¦µÄÐÞÎª²»¹», ²»ÄÜ´òÉß !\n");
+		return notify_fail("ä½ çš„å†…åŠŸçš„ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½æ‰“è›‡ !\n");
 
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( weapon )
-                msg = HIG "\n$NÎè¶¯ÊÖÖÐµÄ" + weapon->name() + "£¬³¯×Å" +
-                      target->name() + "µÄÆß´ç´òÁË¹ýÈ¥¡£\n" NOR;
+                msg = HIG "\n$NèˆžåŠ¨æ‰‹ä¸­çš„" + weapon->name() + "ï¼Œæœç€" +
+                      target->name() + "çš„ä¸ƒå¯¸æ‰“äº†è¿‡åŽ»ã€‚\n" NOR;
         else
-                msg = HIG "\n$NÉì³öË«Ö¸£¬Ñ¸õÒÎÞ±ÈµÄ³¯×Å" +
-                      target->name() + "µÄÆß´çµãÁË¹ýÈ¥¡£\n" NOR;
+                msg = HIG "\n$Nä¼¸å‡ºåŒæŒ‡ï¼Œè¿…è·»æ— æ¯”çš„æœç€" +
+                      target->name() + "çš„ä¸ƒå¯¸ç‚¹äº†è¿‡åŽ»ã€‚\n" NOR;
 
         lvl = (int) me->query_skill("shedu-qiqiao", 1) +
               (int) me->query_skill("dodge");
         lvl = lvl * lvl / 10 * lvl;
         if( lvl / 2 + random(lvl) > (int) target->query("combat_exp") )
         {
-                msg += HIM "¡°Å¾¡±µÄÕý´òÔÚ" + target->name() + "µÄÆß´çÉÏ¡£\n";
+                msg += HIM "â€œå•ªâ€çš„æ­£æ‰“åœ¨" + target->name() + "çš„ä¸ƒå¯¸ä¸Šã€‚\n";
                 lvl = (int) me->query_skill("force");
                 lvl = lvl * 13 / 10;
                 lvl = lvl * lvl / 10 * lvl;
                 if ( lvl / 2 + random(lvl) > (int) target->query("combat_exp") )
                 {
-                        msg += HIM + target->name() + "Éí×ÓÇáÇá»Î¶¯¼¸ÏÂ£¬¾Í²»ÔÙ¶¯µ¯¡£\n" + NOR;
+                        msg += HIM + target->name() + "èº«å­è½»è½»æ™ƒåŠ¨å‡ ä¸‹ï¼Œå°±ä¸å†åŠ¨å¼¹ã€‚\n" + NOR;
                         message_vision(msg, me);
    if (target->query("qi") > 30000)
 {
@@ -68,14 +68,14 @@ target->add("eff_qi",-25000);
 }else target->unconcious();
                 } else
                 {
-                        msg += HIW + "ÄÄÀïÏëµ½" + target->name() + "°¤ÁËÕâÒ»»÷£¬"
-                               "¾¹È»ÈôÎÞÆäÊÂ£¡£¡£¡\n\n" + NOR;
+                        msg += HIW + "å“ªé‡Œæƒ³åˆ°" + target->name() + "æŒ¨äº†è¿™ä¸€å‡»ï¼Œ"
+                               "ç«Ÿç„¶è‹¥æ— å…¶äº‹ï¼ï¼ï¼\n\n" + NOR;
                         message_vision(msg, me);
                         target->kill_ob(me);
                 }
         } else
         {
-                msg += HIW "È»¶ø" + target->name() + "Éí×ÓÒ»ÉÁ£¬¶ãÁË¹ýÈ¥¡£\n\n" NOR;
+                msg += HIW "ç„¶è€Œ" + target->name() + "èº«å­ä¸€é—ªï¼Œèº²äº†è¿‡åŽ»ã€‚\n\n" NOR;
                 message_vision(msg, me);
                 target->kill_ob(me);
         }

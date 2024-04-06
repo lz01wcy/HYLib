@@ -1,4 +1,4 @@
-//ÍÂÎí
+//åé›¾
 
 #include <ansi.h>
 
@@ -20,14 +20,14 @@ if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
 		
-return notify_fail("ÍÂÎíÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+return notify_fail("åé›¾åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
-  msg = HIR "$N´óºğÒ»Éù£¡\n" NOR;
+  msg = HIR "$Nå¤§å¼ä¸€å£°ï¼\n" NOR;
     	message_combatd(
-        HIW "Ö»¼û$N"HIW"¿ÚÒ»ÕÅ£¬Ò»ÍÅ°×É«¾ŞÈÈµÄÅ¨Îí¾¶Ö±ÅçÏò$n!\n" NOR, me, target);
+        HIW "åªè§$N"HIW"å£ä¸€å¼ ï¼Œä¸€å›¢ç™½è‰²å·¨çƒ­çš„æµ“é›¾å¾„ç›´å–·å‘$n!\n" NOR, me, target);
 	
    if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-message_combatd(HIR "$n"HIW"Ò»ÏÂÉ¶Ò²¿´²»ÇåÁË,Ö»µÃ²ÉÈ¡ÊØÊ½£¬²»¸ÒÍı¶¯£¡\n" NOR, me, target);
+message_combatd(HIR "$n"HIW"ä¸€ä¸‹å•¥ä¹Ÿçœ‹ä¸æ¸…äº†,åªå¾—é‡‡å–å®ˆå¼ï¼Œä¸æ•¢å¦„åŠ¨ï¼\n" NOR, me, target);
 target->apply_condition("ill_dongshang",10 );
 target->apply_condition("ill_fashao",10 );
 target->apply_condition("ill_kesou",10 );
@@ -47,7 +47,7 @@ else
 {
     if( (int)me->query("qi") > (int)me->query("eff_qi") ) me->set("qi", (int)me->query("eff_qi"));
       if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += HIR "$nÒ»ÏÂÉ¶Ò²¿´²»ÇåÁË,Ö»µÃ²ÉÈ¡ÊØÊ½£¬²»¸ÒÍı¶¯£¡\n" NOR;
+                msg += HIR "$nä¸€ä¸‹å•¥ä¹Ÿçœ‹ä¸æ¸…äº†,åªå¾—é‡‡å–å®ˆå¼ï¼Œä¸æ•¢å¦„åŠ¨ï¼\n" NOR;
             target->start_busy(3);           
 target->apply_condition("ill_dongshang",10 );
 target->apply_condition("ill_fashao",10 );
@@ -55,11 +55,11 @@ target->apply_condition("ill_kesou",10 );
 target->apply_condition("ill_shanghan",10 );
 target->apply_condition("ill_zhongshu",10 );
             } else {
-                msg += HIY"¿ÉÊÇ$p¿´ÆÆÁË$NµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += HIY"å¯æ˜¯$pçœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(random(2));
         }
         message_combatd(msg, me, target);
-message_combatd(HIC "$n"HIC"ÉíĞÎÒ»ÉÁ£¬Ô¾³öÁËÅ¨ÎíµÄ¹¥»÷·¶Î§£¡\n" NOR, me, target);
+message_combatd(HIC "$n"HIC"èº«å½¢ä¸€é—ªï¼Œè·ƒå‡ºäº†æµ“é›¾çš„æ”»å‡»èŒƒå›´ï¼\n" NOR, me, target);
     me->start_busy(1); 	
 }
 

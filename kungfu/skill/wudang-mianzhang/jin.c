@@ -1,4 +1,4 @@
-// jin.c Îäµ±ÃàÕÆÖ®¾¢Á¦
+// jin.c æ­¦å½“ç»µæŒä¹‹åŠ²åŠ›
 // By lius 99/8
 
 #include <ansi.h>
@@ -12,30 +12,30 @@ int perform(object me, object target)
         if( !target
         || !target->is_character()
         || !me->is_fighting(target) )
-                return notify_fail("ÃàÕÆ¾¢Á¦Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");       
+                return notify_fail("ç»µæŒåŠ²åŠ›åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");       
         if( objectp(me->query_temp("weapon")) )
-               return notify_fail("ÏÈ·ÅÏÂÊÖÖĞµÄÎäÆ÷ÔÙËµ°É£¡\n");
+               return notify_fail("å…ˆæ”¾ä¸‹æ‰‹ä¸­çš„æ­¦å™¨å†è¯´å§ï¼\n");
         if((int)me->query_skill("strike", 1) < 120 )
-                return notify_fail("ÄãµÄ»ù±¾ÕÆ·¨Ì«µÍ£¬ÎŞ·¨Ê¹ÓÃÃàÕÆÖ®¾¢Á¦¡£\n");  
+                return notify_fail("ä½ çš„åŸºæœ¬æŒæ³•å¤ªä½ï¼Œæ— æ³•ä½¿ç”¨ç»µæŒä¹‹åŠ²åŠ›ã€‚\n");  
         if((int)me->query_skill("wudang-mianzhang", 1) < 120 )
-                return notify_fail("ÄãµÄÃàÕÆ»¹²»¹»æµÊì£¬²»ÄÜÊ¹³öÃàÕÆÖ®¾¢Á¦¡£\n");
+                return notify_fail("ä½ çš„ç»µæŒè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿å‡ºç»µæŒä¹‹åŠ²åŠ›ã€‚\n");
         if ( me->query_skill_mapped("parry") != "wudang-mianzhang")
-                return notify_fail("Äã²»Ê¹ÓÃÃàÕÆ£¬ÓÖÆñÄÜÊ¹µÃÃàÕÆÖ®¾¢Á¦£¿£¡\n");   
+                return notify_fail("ä½ ä¸ä½¿ç”¨ç»µæŒï¼Œåˆå²‚èƒ½ä½¿å¾—ç»µæŒä¹‹åŠ²åŠ›ï¼Ÿï¼\n");   
         if ( me->query_skill_mapped("unarmed") != "wudang-mianzhang")
-                return notify_fail("Äã²»Ê¹ÓÃÃàÕÆ£¬ÓÖÆñÄÜÊ¹µÃÃàÕÆÖ®¾¢Á¦£¿£¡\n");   
+                return notify_fail("ä½ ä¸ä½¿ç”¨ç»µæŒï¼Œåˆå²‚èƒ½ä½¿å¾—ç»µæŒä¹‹åŠ²åŠ›ï¼Ÿï¼\n");   
 
         if( (int)me->query("max_neili", 1) < 500 )
-                return notify_fail("ÄãÄÚÁ¦ĞŞÎªÌ«Ç³£¬ÎŞ·¨ÔË¾¢ÉËµĞ£¡\n");                
+                return notify_fail("ä½ å†…åŠ›ä¿®ä¸ºå¤ªæµ…ï¼Œæ— æ³•è¿åŠ²ä¼¤æ•Œï¼\n");                
         if( (int)me->query("neili", 1) < 1000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬²»ÄÜ·¢³öÃàÕÆÖ®¾¢Á¦¡£\n");
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œä¸èƒ½å‘å‡ºç»µæŒä¹‹åŠ²åŠ›ã€‚\n");
         if( (int)me->query("shen", 1) < 50000 )
-                return notify_fail("ÄãÏÖÔÚĞ°ÆøÃÔĞÄ£¬ÆñÄÜÁì»áµÀ¼ÒºÆÈ»Ö®È­Àí£¿£¿\n");
+                return notify_fail("ä½ ç°åœ¨é‚ªæ°”è¿·å¿ƒï¼Œå²‚èƒ½é¢†ä¼šé“å®¶æµ©ç„¶ä¹‹æ‹³ç†ï¼Ÿï¼Ÿ\n");
         if(userp(me) && (int)me->query_skill("taiji-shengong", 1) < 120 )
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦µÈ¼¶²»¹»£¬²»ÄÜÓ¦ÓÃÃàÕÆÖ®¾¢Á¦¡£\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½åº”ç”¨ç»µæŒä¹‹åŠ²åŠ›ã€‚\n");
         if(userp(me) && (int)me->query_skill("taoism", 1) < 100 )
-                return notify_fail("Á·È­ÏÈĞŞĞÄ£¬Äã¶ÔµÀÑ§ĞÄ·¨µÄÁìÎò²»¹»£¬ÊÇ²»ÄÜÁìÎòÃàÕÆÖ®¾¢Á¦µÄ¡£\n");
+                return notify_fail("ç»ƒæ‹³å…ˆä¿®å¿ƒï¼Œä½ å¯¹é“å­¦å¿ƒæ³•çš„é¢†æ‚Ÿä¸å¤Ÿï¼Œæ˜¯ä¸èƒ½é¢†æ‚Ÿç»µæŒä¹‹åŠ²åŠ›çš„ã€‚\n");
         if(userp(me) && me->query_skill_mapped("force") != "taiji-shengong")
-                return notify_fail("ÄãµÄÄÚ¹¦ĞÄ·¨²»¶Ô£¬·¢»Ó²»³öÃàÕÆ¾¢Á¦Ö®Íş¡£\n");                                                                                     
+                return notify_fail("ä½ çš„å†…åŠŸå¿ƒæ³•ä¸å¯¹ï¼Œå‘æŒ¥ä¸å‡ºç»µæŒåŠ²åŠ›ä¹‹å¨ã€‚\n");                                                                                     
         
   i=me->query_skill("strike",1)+me->query_skill("wudang-mianzhang",1)+me->query_skill("force",1);
   j=target->query_skill("parry",1)+target->query_skill("dodge",1)+target->query_skill("force",1);
@@ -45,27 +45,27 @@ int perform(object me, object target)
      if ( z > 13 ) z = 13;
      k = random(z) + 4;
 
-        message_vision(HIY"$NË«ÕÆÈçÓÎÉß£¬Æ®Òİ²»¶¨£¬ÒÔÈıÊ®ÁùÂ·Ãà¾¢ÖĞµÄ"MAG"[ ×ê ]"HIY"×Ö¾÷£¬´Ó$nµÄÆÆÕÀÖĞÖ±²å¶ø½ø¡£\n"NOR,me, target);
+        message_vision(HIY"$NåŒæŒå¦‚æ¸¸è›‡ï¼Œé£˜é€¸ä¸å®šï¼Œä»¥ä¸‰åå…­è·¯ç»µåŠ²ä¸­çš„"MAG"[ é’» ]"HIY"å­—è¯€ï¼Œä»$nçš„ç ´ç»½ä¸­ç›´æ’è€Œè¿›ã€‚\n"NOR,me, target);
          me->add("neili", -500);
          me->start_busy(3);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
 	 if ( me->is_fighting(target) && me->query_skill("wudang-mianzhang", 1) > 140 && k > 3 ){
-	 message_vision(MAG"$NĞÄÖĞÄ¬Äî¡°²»ÕĞ²»¼Ü£¬Ë³ÊÆ¶øÏÂ¡£¡±ÕÆÕÆ½ôÌù$n¹Ø½Ú£¬ÕĞÕĞËø"HIG"[ ÄÃ ]"MAG"¶Ô·½ÂöÃÅ£¬
-$n¶ÙÊ±±»±ÆµÃÊÖÃ¦½ÅÂÒ¡£\n"NOR,me, target);
+	 message_vision(MAG"$Nå¿ƒä¸­é»˜å¿µâ€œä¸æ‹›ä¸æ¶ï¼Œé¡ºåŠ¿è€Œä¸‹ã€‚â€æŒæŒç´§è´´$nå…³èŠ‚ï¼Œæ‹›æ‹›é”"HIG"[ æ‹¿ ]"MAG"å¯¹æ–¹è„‰é—¨ï¼Œ
+$né¡¿æ—¶è¢«é€¼å¾—æ‰‹å¿™è„šä¹±ã€‚\n"NOR,me, target);
 	  if (!target->is_busy())
 	  target->start_busy(5);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
        }
 	 if ( me->is_fighting(target) && !me->query_temp("mz_jin") && me->query_skill("wudang-mianzhang", 1) > 160 && k > 6 ){
-	 message_vision(HIG"$NÂş²»¾­ĞÄµÄ¶«»÷Ò»È­£¬Î÷ÅüÒ»ÕÆ£¬$nÒ»¸öÉíÓ°¾¹±»ÄãÕâÈôÓĞÈôÎŞ£¬ËÆĞé»¹ÊµµÄÂşÌìÕÆÓ°Ëù"WHT"[ ·â ]"HIG"×¡£¬
-¿ÕÓĞÒ»Éí¹¦Á¦Ò²ÎŞ·¨Ê©Õ¹¡£\n"NOR,me, target);
+	 message_vision(HIG"$Næ¼«ä¸ç»å¿ƒçš„ä¸œå‡»ä¸€æ‹³ï¼Œè¥¿åŠˆä¸€æŒï¼Œ$nä¸€ä¸ªèº«å½±ç«Ÿè¢«ä½ è¿™è‹¥æœ‰è‹¥æ— ï¼Œä¼¼è™šè¿˜å®çš„æ¼«å¤©æŒå½±æ‰€"WHT"[ å° ]"HIG"ä½ï¼Œ
+ç©ºæœ‰ä¸€èº«åŠŸåŠ›ä¹Ÿæ— æ³•æ–½å±•ã€‚\n"NOR,me, target);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
 	  me->set_temp("mz_jin", 1);
         target->start_call_out((: call_other, __FILE__, "remove_effect", target :),i/6);
         }
 	 if ( me->is_fighting(target) && me->query_skill("wudang-mianzhang", 1) > 180 && k > 10 ){
-	 message_vision(WHT"$N¼û$n¶·Ö¾ÒÑÊ§£¬ÃÅ»§´ó¿ª£¬µ±ÏÂÔÙ²»ÓÌÔ¥£¬Ë«ÕÆÒ»ºÏ£¬ÄÚ¾¢ÍâÍÂ£¬"RED"[ Õğ ]"WHT"×Ö¾÷³öÊÖ£¬ÒÑÎªÈıÊ®ÁùÂ·Ãà¾¢
-»®ÏÂÁËÒ»¸öÍêÃÀµÄ¾äºÅ¡£\n"NOR,me, target);        
+	 message_vision(WHT"$Nè§$næ–—å¿—å·²å¤±ï¼Œé—¨æˆ·å¤§å¼€ï¼Œå½“ä¸‹å†ä¸çŠ¹è±«ï¼ŒåŒæŒä¸€åˆï¼Œå†…åŠ²å¤–åï¼Œ"RED"[ éœ‡ ]"WHT"å­—è¯€å‡ºæ‰‹ï¼Œå·²ä¸ºä¸‰åå…­è·¯ç»µåŠ²
+åˆ’ä¸‹äº†ä¸€ä¸ªå®Œç¾çš„å¥å·ã€‚\n"NOR,me, target);        
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
 		damage = i/3;	
 		damage = damage/2 + random(damage);		

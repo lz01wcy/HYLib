@@ -1,4 +1,4 @@
-// daode-jing.c µÀµÂ¾­
+// daode-jing.c é“å¾·ç»
 #include <ansi.h>
 
 inherit SKILL;
@@ -14,29 +14,29 @@ int valid_learn(object me)
     lvl = (int)me->query_skill("daode-jing", 1);
 
 	if (!me->query("jiuyin/full") && !me->query("jiuyin/shang") && !me->query("jiuyin/emei"))
-		return notify_fail("ÄãÊÔÍ¼Ñ§Ï°µÀµÂ¾­£¬µ«ËÆºõºÁÎŞ½øÕ¹¡£\n");
+		return notify_fail("ä½ è¯•å›¾å­¦ä¹ é“å¾·ç»ï¼Œä½†ä¼¼ä¹æ¯«æ— è¿›å±•ã€‚\n");
 	if (!me->query("jiuyin/full") && !me->query("jiuyin/shang") && me->query("jiuyin/emei") && lvl > 100)
-		return notify_fail("ÄãÊÔÍ¼Ñ§Ï°µÀµÂ¾­£¬µ«ËÆºõºÁÎŞ½øÕ¹¡£\n");
+		return notify_fail("ä½ è¯•å›¾å­¦ä¹ é“å¾·ç»ï¼Œä½†ä¼¼ä¹æ¯«æ— è¿›å±•ã€‚\n");
 
     if( (int)me->query("shen") < 0 )
-   return notify_fail("ÄãµÄĞ°ÆøÌ«ÖØ£¬ÎŞ·¨ĞŞÁ¶µÀµÂ¾­¡£\n");
+   return notify_fail("ä½ çš„é‚ªæ°”å¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼é“å¾·ç»ã€‚\n");
 
-    if(me->query("gender") == "ÎŞĞÔ" && lvl > 339)
-   return notify_fail("Äã¸ÕÌıÒ»»á¶ù£¬±ã¾õĞÄÖÇÃÔºı£¬Ô­À´ÄãÃ»ÓĞÑô¸ÕÖ®Æø£¬ÎŞ·¨Áì»áÀïÃæµÄÒõÑô±ä»¯Ö®µÀ¡£\n");
+    if(me->query("gender") == "æ— æ€§" && lvl > 339)
+   return notify_fail("ä½ åˆšå¬ä¸€ä¼šå„¿ï¼Œä¾¿è§‰å¿ƒæ™ºè¿·ç³Šï¼ŒåŸæ¥ä½ æ²¡æœ‰é˜³åˆšä¹‹æ°”ï¼Œæ— æ³•é¢†ä¼šé‡Œé¢çš„é˜´é˜³å˜åŒ–ä¹‹é“ã€‚\n");
 
     return 1;
 }
 
 int practice_skill(object me)
 {
-    return notify_fail("µÀµÂ¾­Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+    return notify_fail("é“å¾·ç»åªèƒ½é å­¦ä¹ æ¥æé«˜ã€‚\n");
 }
 
 
 void skill_improved(object me)
 {
 	if (me->query_skill("daode-jing", 1) > 200) {
-		tell_object(me,HIW"\nÄã½«µÀµÂ¾­ÓëËùÑ§µÄÎäÑ§Ïà»¥²ÎÕÕ£¬Í»È»·¢¾õ¾ÅÒõ°×¹Ç×¥ºÍ´ßĞÄÕÆ¾¡È»ÁíÓĞÒ»·¬ÌìµØ£¡\n\n"NOR);
+		tell_object(me,HIW"\nä½ å°†é“å¾·ç»ä¸æ‰€å­¦çš„æ­¦å­¦ç›¸äº’å‚ç…§ï¼Œçªç„¶å‘è§‰ä¹é˜´ç™½éª¨æŠ“å’Œå‚¬å¿ƒæŒå°½ç„¶å¦æœ‰ä¸€ç•ªå¤©åœ°ï¼\n\n"NOR);
 if (me->query_skill("jiuyin-baiguzhua", 1) > 200)
 {
 		if (me->query_skill("jiuyin-baiguzhua", 1) > me->query_skill("jiuyin-shenzhua", 1))

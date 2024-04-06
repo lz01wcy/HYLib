@@ -10,17 +10,17 @@ int perform(object me, object target) {
     string msg;
     int extra, exp_bonus;
     extra = me->query_skill("enmeiryu", 1);
-    if (extra < 50) return notify_fail("ÄãÂ½°ÂÔ²Ã÷Á÷È­ÊõµÄĞŞÎª²»¹»£¬ÎŞ·¨Ê¹³öÎŞ¿Õ²¨µÄ¾øÕĞ¡£\n");
+    if (extra < 50) return notify_fail("ä½ é™†å¥¥åœ†æ˜æµæ‹³æœ¯çš„ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿å‡ºæ— ç©ºæ³¢çš„ç»æ‹›ã€‚\n");
 
     if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-        return notify_fail("Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+        return notify_fail("åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
     if ((int) me->query("neili") < 300)
-        return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
     if (!target) target = offensive_target(me);
     if (!target
         || !target->is_character()
         || !me->is_fighting(target))
-        return notify_fail("ÎŞ¿Õ²¨Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("æ— ç©ºæ³¢åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     extra = me->query_skill("enmeiryu", 1);
     exp_bonus = me->query("combat_exp") / 1000 * extra / 4000;
     extra = extra + exp_bonus;
@@ -29,39 +29,39 @@ int perform(object me, object target) {
         me->add_temp("apply/attack", extra);
         me->add_temp("apply/damage", extra);
         msg = HIR
-        "$NÓÆµØÆÛ½ü$n£¬Ë«È­ÌùÔÚ$nµÄÒÂ·şÉÏ£¬ÔÚË«È­½Ó´¥ÉíÌåµÄÒ»Ë²¼äÊ¹³öÁËÂ½°ÂÔ²Ã÷Á÷µÄÃØ°ÂÒå¡¸ÎŞ¿Õ²¨¡¹. \n"
+        "$Næ‚ åœ°æ¬ºè¿‘$nï¼ŒåŒæ‹³è´´åœ¨$nçš„è¡£æœä¸Šï¼Œåœ¨åŒæ‹³æ¥è§¦èº«ä½“çš„ä¸€ç¬é—´ä½¿å‡ºäº†é™†å¥¥åœ†æ˜æµçš„ç§˜å¥¥ä¹‰ã€Œæ— ç©ºæ³¢ã€. \n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
         msg = HIR
-        "ÎŞ¿Õ²¨¶·²¨! "
+        "æ— ç©ºæ³¢æ–—æ³¢! "
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
         msg = HIR
-        "ÎŞ¿Õ²¨»µ²¨! \n"
+        "æ— ç©ºæ³¢åæ³¢! \n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
         msg = HIR
-        "ÎŞ¿Õ²¨ÆÆ²¨! \n"
-        NOR;
-        COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
-
-
-        msg = HIR
-        "ÎŞ¿Õ²¨Ãğ²¨! \n"
+        "æ— ç©ºæ³¢ç ´æ³¢! \n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
 
         msg = HIR
-        "ÎŞ¿Õ²¨»Ù²¨! \n"
+        "æ— ç©ºæ³¢ç­æ³¢! \n"
+        NOR;
+        COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
+
+
+        msg = HIR
+        "æ— ç©ºæ³¢æ¯æ³¢! \n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
         msg = HIR
-        "ÎŞ¿Õ²¨ÁÒ²¨! \n"
+        "æ— ç©ºæ³¢çƒˆæ³¢! \n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -74,13 +74,13 @@ int perform(object me, object target) {
 
 
     message_vision(CYN
-    "$NÓÆµØÆÛ½ü$n£¬Ë«È­ÌùÔÚ$nµÄÒÂ·şÉÏ£¬ÔÚ$nµÄ¶ú±ßÇáÉùËµ£º\n"
+    "$Næ‚ åœ°æ¬ºè¿‘$nï¼ŒåŒæ‹³è´´åœ¨$nçš„è¡£æœä¸Šï¼Œåœ¨$nçš„è€³è¾¹è½»å£°è¯´ï¼š\n"
     HIR
-    "¡°ÎÒÒªÓÃÄãµÄÑª°ÑÔÂÁÁÈ¾ºì£¡¡±¡£ \n"
+    "â€œæˆ‘è¦ç”¨ä½ çš„è¡€æŠŠæœˆäº®æŸ“çº¢ï¼â€ã€‚ \n"
     HIG
     "
-    ¡¸»¢³h¡¹£¡$n¿´ÆÆÁË$NÕâÒ»ÕĞ¡£
-    $nÇáÇÉµØ½«ÉíÌå³¯ÅÔ±ßÒÆÁËÒ»´ç£¬¿°¿°¶ã¹ıÁË$NÕâÒ»»÷¡£ \n
+    ã€Œè™hã€ï¼$nçœ‹ç ´äº†$Nè¿™ä¸€æ‹›ã€‚
+    $nè½»å·§åœ°å°†èº«ä½“æœæ—è¾¹ç§»äº†ä¸€å¯¸ï¼Œå ªå ªèº²è¿‡äº†$Nè¿™ä¸€å‡»ã€‚ \n
     "NOR,me,target);
     me->start_busy(2);
     call_out("begin_perform", 4, me, target);
@@ -97,14 +97,14 @@ int begin_perform(object me, object target) {
         else target->start_busy(10);
 
         message_vision(HIR
-        "$NÍ»È»¾õµÃĞØ¿ÚÒ»Õó¾ŞÍ´£¬½Ó×ÅÑÛÇ°Ò»ºÚ¡£ \n"
+        "$Nçªç„¶è§‰å¾—èƒ¸å£ä¸€é˜µå·¨ç—›ï¼Œæ¥ç€çœ¼å‰ä¸€é»‘ã€‚ \n"
         NOR, target);
         if (environment(me) == environment(target)) {
             tell_object(target, HIR
-            "ÄãÉñÖÇ»Ğã±Ö®¼Ê£¬¶ú±ßÒşÔ¼´«À´" + me->query("name") + "µÄ»°£º¡°ÎŞ¿Õ²¨ÊÇ¶ã²»µôµÄ£¡¡±\n"
+            "ä½ ç¥æ™ºææƒšä¹‹é™…ï¼Œè€³è¾¹éšçº¦ä¼ æ¥" + me->query("name") + "çš„è¯ï¼šâ€œæ— ç©ºæ³¢æ˜¯èº²ä¸æ‰çš„ï¼â€\n"
             NOR);
             tell_object(me, HIC
-            "ÄãÔÚ" + target->query("name") + "µÄ¶ú±ßÇáÉùËµµÀ£º¡°ÎŞ¿Õ²¨ÊÇ¶ã²»µôµÄ£¡¡±\n"
+            "ä½ åœ¨" + target->query("name") + "çš„è€³è¾¹è½»å£°è¯´é“ï¼šâ€œæ— ç©ºæ³¢æ˜¯èº²ä¸æ‰çš„ï¼â€\n"
             NOR);
         }
     }

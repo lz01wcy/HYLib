@@ -9,33 +9,33 @@ int perform(object me, object target)
 	int orforce;
 	object weapon;
 	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
 	extra = me->query_skill("longzhua-gong");
        if( (int)me->query_skill("longzhua-gong", 1) < 100 )
-		return notify_fail("ÄãµÄÁú×¦¹¦²»¹»æµÊì!\n");
+		return notify_fail("ä½ çš„é¾™çˆªåŠŸä¸å¤Ÿå¨´ç†Ÿ!\n");
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¸Èý×¦¹¦¡¹Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("ã€Œä¸‰çˆªåŠŸã€åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¡\n");     
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸è¶³ï¼\n");     
 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÈý×¦£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»ä¸‰çˆªï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 //	me->add("force_factor",extra/3);
 //	orforce = (int) me->query("force");
 //	me->add("force",extra/3*100);
 	me->add_temp("apply/attack",extra);me->add_temp("apply/damage",extra*2);
 
 	weapon = me->query_temp("weapon");
-	msg = HIY  "$NÊ¹³öÁú×¦¹¦¶À²½ÌìÏÂµÄ£ÛÈý×¦£Ý£¬ÉíÐÎ¼Ó¿ì£¡\n" NOR;
+	msg = HIY  "$Nä½¿å‡ºé¾™çˆªåŠŸç‹¬æ­¥å¤©ä¸‹çš„ï¼»ä¸‰çˆªï¼½ï¼Œèº«å½¢åŠ å¿«ï¼\n" NOR;
 	message_vision(msg,me,target);
-	msg = HIB  "×ó¹¥£¬µÚÒ»×¦-£¡" NOR;
+	msg = HIB  "å·¦æ”»ï¼Œç¬¬ä¸€çˆª-ï¼" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIC  "ÓÒ¹¥£¬µÚ¶þ×¦---£¡£¡" NOR;
+        msg = HIC  "å³æ”»ï¼Œç¬¬äºŒçˆª---ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIG  "Ô¾Æð£¬µÚÈý×¦------£¡£¡£¡" NOR;
+        msg = HIG  "è·ƒèµ·ï¼Œç¬¬ä¸‰çˆª------ï¼ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 //	me->set("force_factor",0);
 //	/me->set("force", orforce);

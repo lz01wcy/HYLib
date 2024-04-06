@@ -1,4 +1,4 @@
-// light_sense.c ¹âÊ¶ÉñÍ¨
+// light_sense.c å…‰è¯†ç¥žé€š
 // Modified by Venus Oct.1997
 // astral_vision.c
 
@@ -11,22 +11,22 @@ int conjure(object me, object target)
     object *ob;
     int i, skill, damage;
     if(me->query("jing")<10)
-   return notify_fail("ÄãµÄ¾«Éñ²»×ã£¡\n");
+   return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼\n");
     if( (int)me->query("jingli") < 50 )
-   return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+   return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
     skill = me->query_skill("magic");
     damage=0;
     me->add("jingli", - 50);
     me->receive_damage("jing", 10);
     if( random(me->query("jingli"))<150)
-   {tell_room(environment(me),me->query("name")+"ß´ß´¹¾¹¾ÄîÁË¼¸¾ä£¬
-µ«Ê²Ã´Ò²Ã»·¢Éú¡­¡­\n",me);
-    tell_object(me,"ÄãÊ§°ÜÁË¡£\n");
+   {tell_room(environment(me),me->query("name")+"å½å½å’•å’•å¿µäº†å‡ å¥ï¼Œ
+ä½†ä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿâ€¦â€¦\n",me);
+    tell_object(me,"ä½ å¤±è´¥äº†ã€‚\n");
    return 1;
    }
-    message_vision(HIB "$NÉýÈë°ë¿ÕÖÐ£¬Ê©Õ¹³ö¡°¹âÊ¶¡±Ö®Êõ£¡£¡"NOR+
-    "¡£\n", me);
-    tell_room(environment(me),me->query("name")+"È«ÉíÉä³ö´ÌÑÛµÄ¹âÃ¢¡£¡£¡£\n"
+    message_vision(HIB "$Nå‡å…¥åŠç©ºä¸­ï¼Œæ–½å±•å‡ºâ€œå…‰è¯†â€ä¹‹æœ¯ï¼ï¼"NOR+
+    "ã€‚\n", me);
+    tell_room(environment(me),me->query("name")+"å…¨èº«å°„å‡ºåˆºçœ¼çš„å…‰èŠ’ã€‚ã€‚ã€‚\n"
 );
     ob = all_inventory(environment(me));
     if(sizeof(ob)==0) return 1;
@@ -39,9 +39,9 @@ int conjure(object me, object target)
       ob[i]->receive_damage("qi", damage);
       ob[i]->receive_wound("jing", damage/2);
       ob[i]->receive_wound("qi", damage/2);
-      tell_room(environment(me),ob[i]->query("name")+"µÄÈ«ÉíÃ°
-³öÁË¹ö¹öÅ¨ÑÌ£¡Ïó¸öµãÈ¼µÄ»ð°Ñ£¡\n",ob[i]);
-      tell_object(ob[i], "Äã¾õµÃ»ëÉíÏó±»ËºËéÁË°ãµÄ¾çÍ´¡£¡£\n")
+      tell_room(environment(me),ob[i]->query("name")+"çš„å…¨èº«å†’
+å‡ºäº†æ»šæ»šæµ“çƒŸï¼è±¡ä¸ªç‚¹ç‡ƒçš„ç«æŠŠï¼\n",ob[i]);
+      tell_object(ob[i], "ä½ è§‰å¾—æµ‘èº«è±¡è¢«æ’•ç¢Žäº†èˆ¬çš„å‰§ç—›ã€‚ã€‚\n")
 ;
       if( !ob[i]->is_killing(me) ) ob[i]->kill_ob(me);
      }

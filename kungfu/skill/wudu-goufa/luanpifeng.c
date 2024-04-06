@@ -1,4 +1,4 @@
-// luanpifeng.c ÂÒÅû·ç 
+// luanpifeng.c ä¹±æŠ«é£ 
 // by snowman@SJ 30/09/1999
 
 #include <ansi.h>
@@ -14,48 +14,48 @@ int perform(object me, object target)
     if( !target ) target = offensive_target(me);
      
     if( !target || !me->is_fighting(target))
-                return notify_fail("¡¸ÂÒÅû·ç¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¹±æŠ«é£ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     
     
  	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("¡¸ÂÒÅû·ç¡¹¿ªÊ¼Ê±±ØĞëÄÃ×ÅÒ»°Ñ½££¡\n");
+		return notify_fail("ã€Œä¹±æŠ«é£ã€å¼€å§‹æ—¶å¿…é¡»æ‹¿ç€ä¸€æŠŠå‰‘ï¼\n");
      
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
         if( (int)me->query_skill("wudu-shengong",1) < 50 )
-                return notify_fail("ÄãµÄÎå¶¾Éñ¹¦ĞŞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„äº”æ¯’ç¥åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("sword",1) < 50 ||
 	    me->query_skill_mapped("sword") != "wudu-goufa")
-		return notify_fail("ÄãµÄÎå¶¾¹³·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃÂÒÅû·ç£¡\n");
+		return notify_fail("ä½ çš„äº”æ¯’é’©æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ä¹±æŠ«é£ï¼\n");
 
 	if( (int)me->query_skill("wudu-goufa",1) < 50 )
-		return notify_fail("ÄãµÄÎå¶¾¹³·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃÂÒÅû·ç£¡\n");
+		return notify_fail("ä½ çš„äº”æ¯’é’©æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ä¹±æŠ«é£ï¼\n");
         if( me->query_temp("yuxiao/tianwu") )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸·ï»ËÌìÎè¡¹ĞÄ·¨£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œå‡¤å‡°å¤©èˆã€å¿ƒæ³•ï¼\n");
 
         if( (int)me->query_temp("liuyun") ) 
-                return notify_fail(HIG"ÄãÒÑ¾­ÔÚÄ¬ÔËÁ÷ÔÆË®ĞäÉñ¹¦ÁË¡£\n");
+                return notify_fail(HIG"ä½ å·²ç»åœ¨é»˜è¿æµäº‘æ°´è¢–ç¥åŠŸäº†ã€‚\n");
 
         if( (int)me->query_temp("qzj_tong") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÍ¬¹é½£ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŒå½’å‰‘äº†ã€‚\n");
       if( me->query_temp("fumo")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃ´ó½ğ¸ÕÈ­µÄÌØÊâ¹¥»÷¡¸½ğ¸Õ·üÄ§¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å¤§é‡‘åˆšæ‹³çš„ç‰¹æ®Šæ”»å‡»ã€Œé‡‘åˆšä¼é­”ã€ï¼\n");
       if( me->query_temp("jingang")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃ´ó½ğ¸ÕÈ­µÄÌØÊâ¹¥»÷¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å¤§é‡‘åˆšæ‹³çš„ç‰¹æ®Šæ”»å‡»ã€Œå¤§é‡‘åˆšç¥é€šã€ï¼\n");
       if( me->query_temp("fanzhen")   )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸½ğ¸Õ²»»µÌåÉñ¹¦¡¹£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œé‡‘åˆšä¸åä½“ç¥åŠŸã€ï¼\n");
 
         if((int)me->query_temp("tzzf") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÕÆµ¶µÄÔË¹¦ÖĞ¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨æŒåˆ€çš„è¿åŠŸä¸­ã€‚\n");
 
     if ( (int)me->query_temp("zhuihun/lpf") ) 
-        return notify_fail("ÄãÕıÔÚÊ¹ÓÃÎå¶¾×·»ê¹³Ö®¡¸ÂÒÅû·ç¡¹¡£\n");
+        return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨äº”æ¯’è¿½é­‚é’©ä¹‹ã€Œä¹±æŠ«é£ã€ã€‚\n");
 
-    message_vision(HIY "\n$N½«·¢½á½â¿ª£¬ÅûÍ·É¢·¢£¬Á³É«Í»È»±ä°×£¬ÊÖÖĞµÄ"+weapon->name()+"Ò²¸ú×Å¾çÁÒ¶¶¶¯×Å£¡
-Í»È»$PÒ»Éù¿ñº¿£¬ÈçÉñ¿Ş¹íºÅËÆµÄÀ÷Ğ¥Ïì×ÔÌìµØ£¬·¢·èËÆµÄ½«Îå¶¾×·»ê¹³¿ñÂÒÊ¹³ö£¡\n"NOR, me);                 
+    message_vision(HIY "\n$Nå°†å‘ç»“è§£å¼€ï¼ŒæŠ«å¤´æ•£å‘ï¼Œè„¸è‰²çªç„¶å˜ç™½ï¼Œæ‰‹ä¸­çš„"+weapon->name()+"ä¹Ÿè·Ÿç€å‰§çƒˆæŠ–åŠ¨ç€ï¼
+çªç„¶$Pä¸€å£°ç‹‚åšï¼Œå¦‚ç¥å“­é¬¼å·ä¼¼çš„å‰å•¸å“è‡ªå¤©åœ°ï¼Œå‘ç–¯ä¼¼çš„å°†äº”æ¯’è¿½é­‚é’©ç‹‚ä¹±ä½¿å‡ºï¼\n"NOR, me);                 
     
     skill = me->query_skill("wudu-goufa", 1);
     
@@ -69,7 +69,7 @@ int perform(object me, object target)
     	me->set_temp("ryb_fumo", 1);
 	me->set_temp("zhuihun/lpf",1);
 me->start_busy(3);
-//	me->start_perform(1, "ÂÒÅû·ç");
+//	me->start_perform(1, "ä¹±æŠ«é£");
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me:), skill/3 );
         return 1;
 }
@@ -81,7 +81,7 @@ int remove_effect(object me)
 //        me->add_temp("apply/dodge", - (me->query_skill("wudu-goufa", 1)/4));
         me->delete_temp("zhuihun/lpf");
         if(living(me))
-        	message_vision(HIG "\n$N´ó¿Ú´ó¿ÚµØ´­Æø£¬ÕĞÊıÒ²½¥½¥»Ö¸´Õı³££¬¿´À´ÊÇÏûºÄÁË²»ÉÙµÄÆøÁ¦£¡\n\n" NOR, me);
+        	message_vision(HIG "\n$Nå¤§å£å¤§å£åœ°å–˜æ°”ï¼Œæ‹›æ•°ä¹Ÿæ¸æ¸æ¢å¤æ­£å¸¸ï¼Œçœ‹æ¥æ˜¯æ¶ˆè€—äº†ä¸å°‘çš„æ°”åŠ›ï¼\n\n" NOR, me);
 
         return 0;
 }

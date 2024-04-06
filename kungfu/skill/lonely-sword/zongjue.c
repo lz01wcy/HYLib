@@ -1,4 +1,4 @@
-// pojian.c ¶À¹Â¾Å½£¡¸×Ü¾÷Ê½¡¹
+// pojian.c ç‹¬å­¤ä¹å‰‘ã€Œæ€»è¯€å¼ã€
 // qfy July 5, 1996.
 
 #include <ansi.h>
@@ -14,40 +14,40 @@ int perform(object me, object target)
 //{
 //        if(my_fam["master_id"] != "feng qingyang"
 //        && userp(me))
-//           return notify_fail("Äã²»ÊÇ·çÇåÑïµÄµÜ×Ó£¬²»ÄÜÊ¹ÓÃ¡¸×Ü¾÷Ê½¡¹¡£\n");
+//           return notify_fail("ä½ ä¸æ˜¯é£æ¸…æ‰¬çš„å¼Ÿå­ï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ€»è¯€å¼ã€ã€‚\n");
 //}
      if( (int)me->query_skill("zixia-shengong",1)<100)
-            return notify_fail("¶À¹Â¾Å½£±ØĞëÅäºÏ×ÏÏ¼Éñ¹¦¡£\n");
+            return notify_fail("ç‹¬å­¤ä¹å‰‘å¿…é¡»é…åˆç´«éœç¥åŠŸã€‚\n");
 
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("×Ü¾÷Ê½Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ€»è¯€å¼åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
                 
         if( (int)me->query_skill("lonely-sword", 1) < 150 || (int)me->query("max_neili") < 500 )
-                return notify_fail("ÄãµÄ¶À¹Â¾Å½£»òÄÚÁ¦ĞŞÎª²»¹»£¬»¹Î´Ñ§³É¡¸×Ü¾÷Ê½¡¹¡£\n");
+                return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘æˆ–å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œè¿˜æœªå­¦æˆã€Œæ€»è¯€å¼ã€ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( me->query("neili") <= 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-        msg = CYN "$N¿úÆÆ$nÕĞÊ½µÄÆÆÕÀ£¬Ê¹³ö¶À¹Â¾Å½£¡¸×Ü¾÷Ê½¡¹£¬ËæÊÖÒ»½£Ãîµ½µßºÁ¡£\n";
+        msg = CYN "$Nçª¥ç ´$næ‹›å¼çš„ç ´ç»½ï¼Œä½¿å‡ºç‹¬å­¤ä¹å‰‘ã€Œæ€»è¯€å¼ã€ï¼Œéšæ‰‹ä¸€å‰‘å¦™åˆ°é¢ æ¯«ã€‚\n";
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
             if( !weapon = target->query_temp("weapon") ) {
              switch (random(2)) {
              case 0:
-                msg += HIR"$pÒâÍâÖ®Óà£¬ÉÁ±ÜÎŞ´Ó£¬¾ªº§ÖĞÁ¬ÖĞÊı½£ÊÜÉË¡£\n" NOR; 
+                msg += HIR"$pæ„å¤–ä¹‹ä½™ï¼Œé—ªé¿æ— ä»ï¼ŒæƒŠéª‡ä¸­è¿ä¸­æ•°å‰‘å—ä¼¤ã€‚\n" NOR; 
                 target->add("eff_qi",-(random((int)me->query_skill("lonely-sword"))*2));
                 break;
              case 1:
-                msg += HIY"$p¾ªº§ÄªÃ÷£¬Óû±Ü²»ÄÜ£¬±»$P´ÌÖĞµ¤Ìï£¬¹¦Á¦ÊÜËğ¡£\n" NOR;
+                msg += HIY"$pæƒŠéª‡è«æ˜ï¼Œæ¬²é¿ä¸èƒ½ï¼Œè¢«$Påˆºä¸­ä¸¹ç”°ï¼ŒåŠŸåŠ›å—æŸã€‚\n" NOR;
                 target->add("neili",-(random((int)me->query_skill("lonely-sword"))*2));
                 break;
              }
@@ -55,14 +55,14 @@ int perform(object me, object target)
             else {
              switch (random(2)) {
              case 0:
-                msg += HIW"$pÄªÃ÷ÆäÃî£¬°ÙË¼²»½âÎªºÎ$PËæÒâÒ»½£¾¹ÄÜÈç´ËÉñÃî£¬Ö»ºÃ·ÅÆú"+weapon->query("name")+"¡£\n" NOR;
+                msg += HIW"$pè«æ˜å…¶å¦™ï¼Œç™¾æ€ä¸è§£ä¸ºä½•$Péšæ„ä¸€å‰‘ç«Ÿèƒ½å¦‚æ­¤ç¥å¦™ï¼Œåªå¥½æ”¾å¼ƒ"+weapon->query("name")+"ã€‚\n" NOR;
 if (!weapon->query("ownmake"))
 {
                 weapon->move(environment(me));
 }
                 break;
              case 1:
-                msg += HIM"$p¾ªº§ÄªÃ÷£¬Óû±Ü²»ÄÜ£¬±»$P´ÌÖĞµ¤Ìï£¬¹¦Á¦ÊÜËğ¡£\n" NOR;
+                msg += HIM"$pæƒŠéª‡è«æ˜ï¼Œæ¬²é¿ä¸èƒ½ï¼Œè¢«$Påˆºä¸­ä¸¹ç”°ï¼ŒåŠŸåŠ›å—æŸã€‚\n" NOR;
                 target->add("neili",-(random((int)me->query_skill("lonely-sword"))*2));
                 break;
              }
@@ -70,7 +70,7 @@ if (!weapon->query("ownmake"))
            target->start_busy( (int)me->query_skill("lonely-sword") / 50+1 );
         } 
         else {
-                msg += HIC"$pËäÈ»¿´ÆÆÁË$PµÄ½£Â·£¬¼¸¾­¼èÄÑ·½ÄÜ»¹ÕĞµ²¿ª¡£\n" NOR;
+                msg += HIC"$pè™½ç„¶çœ‹ç ´äº†$Pçš„å‰‘è·¯ï¼Œå‡ ç»è‰°éš¾æ–¹èƒ½è¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR;
                 me->start_busy(1 + random(3));
         }
         message_vision(msg, me, target);

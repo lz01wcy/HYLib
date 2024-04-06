@@ -1,4 +1,4 @@
-// xuan.c  ÂäÓ¢ÉñÕÆ¡¸Ğş¡¹×Ö¾÷
+// xuan.c  è½è‹±ç¥æŒã€Œç„ã€å­—è¯€
 // modified by Venus Oct.1997
 #include <ansi.h>
 
@@ -11,15 +11,15 @@ int perform(object me, object target)
     if( !target ) target = offensive_target(me);
 
     if( !target || !target->is_character() || !me->is_fighting(target) )
-        return notify_fail("ÉñÕÆÏ®µĞÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ç¥æŒè¢­æ•Œåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if( (int)me->query_skill("luoying-shenzhang", 1) < 30 )
-        return notify_fail("ÄãµÄÂäÓ¢ÉñÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Ğş¡¹×Ö¾÷¡£\n");
+        return notify_fail("ä½ çš„è½è‹±ç¥æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç„ã€å­—è¯€ã€‚\n");
 
     if( (int)me->query_skill("luoying-xinfa", 1) < 30 )
-        return notify_fail("ÄãµÄÂäÓ¢ĞÄ·¨²»¹»¸ß£¬²»ÄÜÓÃÀ´Ï®»÷µĞÈË¡£\n");
+        return notify_fail("ä½ çš„è½è‹±å¿ƒæ³•ä¸å¤Ÿé«˜ï¼Œä¸èƒ½ç”¨æ¥è¢­å‡»æ•Œäººã€‚\n");
 
-    msg = HIG "$NÄ¬ÔËÂäÓ¢ĞÄ·¨£¬Ê¹³öÂäÓ¢ÉñÕÆ¡¸Ğş¡¹×Ö¾÷£¬´Ó°ë¿ÕÖĞÈö³öÒ»Æ¬ÕÆÓ°±ÆÏò$n¡£\n"NOR;
+    msg = HIG "$Né»˜è¿è½è‹±å¿ƒæ³•ï¼Œä½¿å‡ºè½è‹±ç¥æŒã€Œç„ã€å­—è¯€ï¼Œä»åŠç©ºä¸­æ’’å‡ºä¸€ç‰‡æŒå½±é€¼å‘$nã€‚\n"NOR;
 
     if (random(me->query_skill("force")) > target->query_skill("force")/3 )
     {
@@ -33,15 +33,15 @@ int perform(object me, object target)
         target->receive_wound("qi", damage/3);
         me->add("neili", -damage/5);
 
-        if ( damage < 40 ) msg += HIY"½á¹û$NÊÜµ½$nµÄÄÚÁ¦·´Õğ£¬ËäÈ»»÷ÖĞ$N£¬×Ô¼ºÈ´ÃÆºßÒ»ÉùÏòºóÍËÁËÁ½²½¡£\n"NOR;
-        else if( damage < 80 ) msg += RED"½á¹û$N±»$nÒÔÄÚÁ¦·´Õğ£¬ĞØ¿ÚÓĞÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n"NOR;
-        else msg += HIR"$nÃ£È»²»ÖªËù´ë£¬½á¹û±»$NÒ»ÕÆ»÷ÖĞÇ°ĞØ£¬$nÑÛÇ°Ò»ºÚ£¬±»»÷·É³öÁ½ÕÉĞí£¡£¡£¡\n"NOR;
+        if ( damage < 40 ) msg += HIY"ç»“æœ$Nå—åˆ°$nçš„å†…åŠ›åéœ‡ï¼Œè™½ç„¶å‡»ä¸­$Nï¼Œè‡ªå·±å´é—·å“¼ä¸€å£°å‘åé€€äº†ä¸¤æ­¥ã€‚\n"NOR;
+        else if( damage < 80 ) msg += RED"ç»“æœ$Nè¢«$nä»¥å†…åŠ›åéœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿é€€äº†äº”å…­æ­¥ï¼\n"NOR;
+        else msg += HIR"$nèŒ«ç„¶ä¸çŸ¥æ‰€æªï¼Œç»“æœè¢«$Nä¸€æŒå‡»ä¸­å‰èƒ¸ï¼Œ$nçœ¼å‰ä¸€é»‘ï¼Œè¢«å‡»é£å‡ºä¸¤ä¸ˆè®¸ï¼ï¼ï¼\n"NOR;
 	message_combatd(msg, me, target);
 	COMBAT_D->report_status(target);
     } else
     {
         me->start_busy(1);
-        msg += HIG"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Ôç¾ÍÉÁÔÚÁËÒ»±ß¡£\n"NOR;
+        msg += HIG"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œæ—©å°±é—ªåœ¨äº†ä¸€è¾¹ã€‚\n"NOR;
 	message_combatd(msg, me, target);
     }
 //    if(userp(target)) target->fight_ob(me);

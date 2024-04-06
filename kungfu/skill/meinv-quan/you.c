@@ -1,4 +1,4 @@
-// you.c ÃÀÅ®È­-¹ÅÄ¹ÓÄ¾Ó
+// you.c ç¾å¥³æ‹³-å¤å¢“å¹½å±…
 
 #include <ansi.h>
 #include <skill.h>
@@ -15,21 +15,21 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¹ÅÄ¹ÓÄ¾ÓÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤å¢“å¹½å±…åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã±ØĞëÏÈ·ÅÏÂÊÖÖĞµÄ±øÆ÷£¡\n");
+                return notify_fail("ä½ å¿…é¡»å…ˆæ”¾ä¸‹æ‰‹ä¸­çš„å…µå™¨ï¼\n");
 
         if( (int)me->query_skill("meinv-quan", 1) < 50 )
-                return notify_fail("ÄãµÄÃÀÅ®È­¼¶±ğ²»¹»£¬²»»áÊ¹ÓÃ¹ÅÄ¹ÓÄ¾Ó¡£\n");
+                return notify_fail("ä½ çš„ç¾å¥³æ‹³çº§åˆ«ä¸å¤Ÿï¼Œä¸ä¼šä½¿ç”¨å¤å¢“å¹½å±…ã€‚\n");
 
         if( (int)me->query_skill("yunv-xinfa", 1) < 40 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ·¨»¹Î´æµÊì£¬²»ÄÜÀûÓÃÉñ¹¦ÉËµĞ¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒæ³•è¿˜æœªå¨´ç†Ÿï¼Œä¸èƒ½åˆ©ç”¨ç¥åŠŸä¼¤æ•Œã€‚\n");
 
         if( (int)me->query("neili", 1) < 150 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¹ÅÄ¹ÓÄ¾Ó¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨å¤å¢“å¹½å±…ã€‚\n");
 
-        msg = RED "$NÓÒÊÖÖ§ÒÃ£¬×óĞäÇáÇá»Ó³ö£¬³¤Ì¾Ò»Éù£¬Ê¹³ö¡¸¹ÅÄ¹ÓÄ¾Ó¡¹£¬Á³ÏÖ¼ÅÁÈÖ®Òâ¡£"NOR;
+        msg = RED "$Nå³æ‰‹æ”¯é¢ï¼Œå·¦è¢–è½»è½»æŒ¥å‡ºï¼Œé•¿å¹ä¸€å£°ï¼Œä½¿å‡ºã€Œå¤å¢“å¹½å±…ã€ï¼Œè„¸ç°å¯‚å¯¥ä¹‹æ„ã€‚"NOR;
 
          COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
          COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);

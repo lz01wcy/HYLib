@@ -1,11 +1,11 @@
 // THIS IS PLAYER'S OWN SKILL (write by maxim@nju_fengxue)
 // xiaoyaozi
-// åÐÒ£
-// ´óÀíÕòÄÏÍõ¸®¼ÒÅ«
+// é€é¥
+// å¤§ç†é•‡å—çŽ‹åºœå®¶å¥´
 // 2894450
-// ÄÐÐÔ
+// ç”·æ€§
 // unarmed
-// ÈçÀ´ÉñÕÆ
+// å¦‚æ¥ç¥žæŽŒ
 
 
 

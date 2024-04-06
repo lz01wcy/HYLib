@@ -1,4 +1,4 @@
-// xixueqingfu.c ÎüÑªÇàòğ
+// xixueqingfu.c å¸è¡€é’è 
  
 #include <ansi.h>
 #include <combat.h> 
@@ -16,21 +16,21 @@ int perform(object me)
 	skill = me->query_skill("hanbing-mianzhang",1);
 
 	if( !(me->is_fighting() ))
-		return notify_fail("¡¸ÎüÑªÇàòğ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå¸è¡€é’è ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
  	if( (int)me->query("neili", 1) < 300 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÎüÑªÇàòğ¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¸è¡€é’è ã€ã€‚\n");
 
 	if (objectp(weapon = me->query_temp("weapon")))
-		return notify_fail("ÄãÊ¹ÓÃÁËÎäÆ÷¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨äº†æ­¦å™¨ã€‚\n");
 
 	if( skill < 60)
-		return notify_fail("ÄãµÄ¡¸º®±ùÃàÕÆ¡¹µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸ÎüÑªÇàòğ¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œå¯’å†°ç»µæŒã€ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œå¸è¡€é’è ã€ï¼\n");
 
 	if( me->query_skill("dodge",1) < 150 )
-		return notify_fail("ÄãµÄÇá¹¦²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸ÎüÑªÇàòğ¡¹£¡\n");
+		return notify_fail("ä½ çš„è½»åŠŸä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œå¸è¡€é’è ã€ï¼\n");
  
-	msg = HIC "$NÍ»È»ÈçÍ¬¡¸ÎüÑªÇàòğ¡¹£¬ÆÛ½ü$nµÄÉíÇ°£¬ÕÅ×ì±ãÏò$nµÄÑÊºíÒ§È¥¡£\n"NOR;
+	msg = HIC "$Nçªç„¶å¦‚åŒã€Œå¸è¡€é’è ã€ï¼Œæ¬ºè¿‘$nçš„èº«å‰ï¼Œå¼ å˜´ä¾¿å‘$nçš„å’½å–‰å’¬å»ã€‚\n"NOR;
 	message_combatd(msg, me, target );
  if ((int)me->query_skill("jiuyang-shengong",1) > 50)
 {
@@ -39,11 +39,11 @@ int perform(object me)
         me->add_temp("apply/attack", extra);    
         me->add_temp("apply/damage", extra);
 
-        msg =  HIR "µÚÒ»Ò§\n" NOR;
+        msg =  HIR "ç¬¬ä¸€å’¬\n" NOR;
         COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-        msg =  HIR "µÚ¶şÒ§\n" NOR;
+        msg =  HIR "ç¬¬äºŒå’¬\n" NOR;
         COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-        msg =  HIR "µÚÈıÒ§\n" NOR;
+        msg =  HIR "ç¬¬ä¸‰å’¬\n" NOR;
         COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
         me->add_temp("apply/attack", -extra);    
         me->add_temp("apply/damage", -extra);
@@ -58,7 +58,7 @@ int perform(object me)
 		if(userp(me))
 			me->add("neili",-200);
 
-		msg = HIG "$nÖ»¾õµÃÑÊºíÒ»Õó¾çÍ´£¬$NÕıÔÚ¿ñÎü$nµÄÏÊÑª£¡\n"NOR;
+		msg = HIG "$nåªè§‰å¾—å’½å–‰ä¸€é˜µå‰§ç—›ï¼Œ$Næ­£åœ¨ç‹‚å¸$nçš„é²œè¡€ï¼\n"NOR;
 		neili_wound = 500 + random(skill);
 		if(neili_wound > target->query("qi"))
 			neili_wound = target->query("qi");
@@ -76,7 +76,7 @@ int perform(object me)
 	}
 	else
 	{
-		msg = HIG "Ö»¼û$n²»»Å²»Ã¦£¬ÇáÇáÒ»ÉÁ£¬¶ã¹ıÁË$NµÄÀû³İ£¡\n"NOR;
+		msg = HIG "åªè§$nä¸æ…Œä¸å¿™ï¼Œè½»è½»ä¸€é—ªï¼Œèº²è¿‡äº†$Nçš„åˆ©é½¿ï¼\n"NOR;
 		if(userp(me))
 			me->add("neili",-100);
 		me->start_busy(2);

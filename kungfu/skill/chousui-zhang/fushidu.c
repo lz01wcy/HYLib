@@ -1,4 +1,4 @@
-// ¸¯Ê¬¶¾
+// è…å°¸æ¯’
 #include <ansi.h>
 #include <combat.h>
 
@@ -14,31 +14,31 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸¸¯Ê¬¶¾¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè…å°¸æ¯’ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 weapon = me->query_temp("weapon");
 	if( objectp(me->query_temp("weapon")) 
 	&& (string)weapon->query("skill_type") != "staff")
-		return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃÕâ¸ö¾ø¼¼£¡\n");		
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨è¿™ä¸ªç»æŠ€ï¼\n");		
 
         if( (int)me->query_skill("chousui-zhang", 1) < 220 )
-                return notify_fail("ÄãµÄĞÇËŞ¶¾ÕÆ»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸¸¯Ê¬¶¾¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„æ˜Ÿå®¿æ¯’æŒè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œè…å°¸æ¯’ã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_skill("huagong-dafa",1) < 120 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸¸¯Ê¬¶¾¡¹¡£\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œè…å°¸æ¯’ã€ã€‚\n");
         if((int)me->query_skill("poison",1)<120)
-           return notify_fail("Äã»ı¶¾²»¹»ÎŞ·¨Ê¹ÓÃ¸¯Ê¬¶¾¡£\n"); 
+           return notify_fail("ä½ ç§¯æ¯’ä¸å¤Ÿæ— æ³•ä½¿ç”¨è…å°¸æ¯’ã€‚\n"); 
            co=present("corpse",me);       
         if (!co)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÊ¬Ìå£¬ÈçºÎÊ¹ÓÃ¸¯Ê¬¶¾!\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰å°¸ä½“ï¼Œå¦‚ä½•ä½¿ç”¨è…å°¸æ¯’!\n");
 
                                                                          
 
         if( (int)me->query("max_neili") < 1000) 
-                return notify_fail("ÄãÄÚÁ¦Ì«Èõ£¬Ê¹²»³ö¡¸¸¯Ê¬¶¾¡¹¡£\n");      
+                return notify_fail("ä½ å†…åŠ›å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œè…å°¸æ¯’ã€ã€‚\n");      
 
         if( (int)me->query("neili") < 300)
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸¸¯Ê¬¶¾¡¹¡£\n");
-       message_vision(BLU"\n$NÒ»ÉùÒõĞ¦£¬ÓÒÊÖÍ»³ö£¬Ğ®ÆğÒ»¾ßÊ¬ÌåÖÀ³ö£¬Ò»¹ÉËÀÓãÀÃÈâµÄ³ôÆøÃÖÂşËÄÖÜ£¬ÎÅÕßÓûÅ»£¡\n"NOR,me);
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œè…å°¸æ¯’ã€ã€‚\n");
+       message_vision(BLU"\n$Nä¸€å£°é˜´ç¬‘ï¼Œå³æ‰‹çªå‡ºï¼ŒæŒŸèµ·ä¸€å…·å°¸ä½“æ·å‡ºï¼Œä¸€è‚¡æ­»é±¼çƒ‚è‚‰çš„è‡­æ°”å¼¥æ¼«å››å‘¨ï¼Œé—»è€…æ¬²å‘•ï¼\n"NOR,me);
        call_out("destroying", 1, co);
 //         if (!target->is_killing(me))
 //me->kill_ob(target);
@@ -47,16 +47,16 @@ weapon = me->query_temp("weapon");
        if(random(me->query("combat_exp")) > (int)target->query("combat_exp")/5*3&&
             me->query_str() > (int)target->query_str()/3*2) 
       { 
-       message_vision(HIB"\n$n¼û´Ë¹ÖÒìµÄÕĞÊı£¬ÊÖ×ãÎŞ´ë£¬¶ãÉÁÎŞ¼°£¬Ö»¼ûÉ¢·¢×Å¶ñ³ôµÄÊ¬Ìå£¬Õı»÷ÔÚ×Ô¼ºÉíÉÏ¡£\n"NOR, me, target);
-       target->set_temp("last_damage_from", "¸¯Ê¬¶¾ÈëÄÔ");
+       message_vision(HIB"\n$nè§æ­¤æ€ªå¼‚çš„æ‹›æ•°ï¼Œæ‰‹è¶³æ— æªï¼Œèº²é—ªæ— åŠï¼Œåªè§æ•£å‘ç€æ¶è‡­çš„å°¸ä½“ï¼Œæ­£å‡»åœ¨è‡ªå·±èº«ä¸Šã€‚\n"NOR, me, target);
+       target->set_temp("last_damage_from", "è…å°¸æ¯’å…¥è„‘");
        target->unconcious();
        return 1;  
         }
         else if(random(me->query("combat_exp")) > (int)target->query("combat_exp")/4&&
           me->query_str() > (int)target->query_str()/2) 
         {
-          message_vision(HIB"\n$n ¼ûÊÂ²»ºÃ£¬Á¬Ã¦×İÉíÖ±Æğ£¬¸¯Ê¬´ÓÉíÏÂÂÓ¹ı£¬Ã»ÓĞ´òÖĞ¡£\n"NOR,me,target);
-          tell_object(target,HIB"\n ÄãËäÈ»¼°Ê±±Ü¿ªÁË¶¾Ê¬£¬µ«Ò»¹ÉĞÈ³ôÆøÈë±Ç£¬ÄãÒÑÖĞÁË¾ç¶¾ÁË¡£\n"NOR);
+          message_vision(HIB"\n$n è§äº‹ä¸å¥½ï¼Œè¿å¿™çºµèº«ç›´èµ·ï¼Œè…å°¸ä»èº«ä¸‹æ è¿‡ï¼Œæ²¡æœ‰æ‰“ä¸­ã€‚\n"NOR,me,target);
+          tell_object(target,HIB"\n ä½ è™½ç„¶åŠæ—¶é¿å¼€äº†æ¯’å°¸ï¼Œä½†ä¸€è‚¡è…¥è‡­æ°”å…¥é¼»ï¼Œä½ å·²ä¸­äº†å‰§æ¯’äº†ã€‚\n"NOR);
 // no condition fs_poison, change to xx_poison (by xbd)
 	 target->apply_condition("x2_sandu",20);
 	 target->apply_condition("sanpoison",20);
@@ -70,8 +70,8 @@ target->apply_condition("fire_poison",60);
         target->start_busy(1);
         return 1;
       }
-       message_vision(HIB"\n$n ĞØÓĞ³ÉÖñ£¬Ò»Éù³¤Ğ¥£¬Ë«ÕÆÁ¬»·Åü³ö£¬°Ñ¶¾Ê¬¶¾Æøµ´ÏòÀ´Â·¡£\n"NOR,me,target);
-       tell_object(me,HIB"\n ²»ºÃ£¬¶¾Ê¬·´µ¯ÏòÄã,ÄãËäÈ»¶ã¿ª£¬µ«¶¾ÆøÒ²ÇÖÈëÄãµÄÉíÌå¡£\n"NOR);
+       message_vision(HIB"\n$n èƒ¸æœ‰æˆç«¹ï¼Œä¸€å£°é•¿å•¸ï¼ŒåŒæŒè¿ç¯åŠˆå‡ºï¼ŒæŠŠæ¯’å°¸æ¯’æ°”è¡å‘æ¥è·¯ã€‚\n"NOR,me,target);
+       tell_object(me,HIB"\n ä¸å¥½ï¼Œæ¯’å°¸åå¼¹å‘ä½ ,ä½ è™½ç„¶èº²å¼€ï¼Œä½†æ¯’æ°”ä¹Ÿä¾µå…¥ä½ çš„èº«ä½“ã€‚\n"NOR);
 // no condition fs_poison, change to xx_poison (by xbd)
                  me->apply_condition("xx_poison", random(3) + 
            (me->query_skill("poison", 1)/10) +

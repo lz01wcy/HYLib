@@ -15,36 +15,36 @@ int perform(object me, object target)
 
 	        if (!target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIW"¡¸±ùÖ®Ê¸¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIW"ã€Œå†°ä¹‹çŸ¢ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 1000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõĞ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°ç©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-water",1)< 250)
-	return notify_fail("ÄãµÄË®ÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ°´ç³»é­”æ³•å¤ªå·®äº†ï¼\n");
 
 
 	extra = me->query_skill("spells",1) / 40;
 	extra += me->query_skill("magic-water",1) /40;
  	if (extra> 33) extra = 33;
         i = extra/4;
-        msg = HIW "$N"HIW"¿ÚÖĞ¸ßÒ÷ÁËÒ»¶ÎÁËÖäÎÄ.$N"HIW"µÄÉÏ¿ÕĞÎ³ÉÁË"+chinese_number(i)+"µÀ±ùÖ®Ê¸.\n"NOR;
-        msg += HIW"$N"HIW"Äîµ½ Ú¤Íõ°¡£¬ÁîËùÓĞÖÁ¸ßÎŞÉÏµÄÁ¦Á¿¼¯ÓÚÎÒÉí! ±ùºÓ°¡£¬¿ñ±¼°É!!!\n"NOR;
-        msg += HIW"$N"HIW"ÑïÆğÁËÊÖ,ËùÓĞµÄ"HIW"±ùÖ®Ê¸"NOR","HIW"È«²¿¶Ô×¼ÁË$n"HIW"·¢Éä¶øÈ¥!\n"NOR;
+        msg = HIW "$N"HIW"å£ä¸­é«˜åŸäº†ä¸€æ®µäº†å’’æ–‡.$N"HIW"çš„ä¸Šç©ºå½¢æˆäº†"+chinese_number(i)+"é“å†°ä¹‹çŸ¢.\n"NOR;
+        msg += HIW"$N"HIW"å¿µåˆ° å†¥ç‹å•Šï¼Œä»¤æ‰€æœ‰è‡³é«˜æ— ä¸Šçš„åŠ›é‡é›†äºæˆ‘èº«! å†°æ²³å•Šï¼Œç‹‚å¥”å§!!!\n"NOR;
+        msg += HIW"$N"HIW"æ‰¬èµ·äº†æ‰‹,æ‰€æœ‰çš„"HIW"å†°ä¹‹çŸ¢"NOR","HIW"å…¨éƒ¨å¯¹å‡†äº†$n"HIW"å‘å°„è€Œå»!\n"NOR;
         message_vision(msg, me, target);
 	for(i=0;i<extra/4;i++)
 	{
-        msg = WHT"    µÚ"+chinese_number(i+1)+"µÀ"HIW"±ùÖ®Ê¸!\n"NOR;
-        msg += HIW"     ¡ú* "NOR;
+        msg = WHT"    ç¬¬"+chinese_number(i+1)+"é“"HIW"å†°ä¹‹çŸ¢!\n"NOR;
+        msg += HIW"     â†’* "NOR;
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp")/2)
         {
                 damage = (int)me->query_skill("magic-water", 1);
-//¶ÔË®ÊôĞÔÄ¿±êÎŞ×÷ÓÃ
+//å¯¹æ°´å±æ€§ç›®æ ‡æ— ä½œç”¨
        if ((int)target->query("magicgift")==2)
 {
 damagic=80+damage;
@@ -67,11 +67,11 @@ target->receive_damage("qi", 200+damage);
 target->receive_wound("qi", 200+damage/2);
 }
 
-        msg += HIW"\n  $n"HIW"Ã»·¨¶ã±Ü£¬±»±ùÖ®Ê¸Õ¨µÃ·ÉÁËÆğÀ´£¡\n"NOR;
+        msg += HIW"\n  $n"HIW"æ²¡æ³•èº²é¿ï¼Œè¢«å†°ä¹‹çŸ¢ç‚¸å¾—é£äº†èµ·æ¥ï¼\n"NOR;
 		message_combatd(msg, me, target);
         } else
         {
-        msg += HIW"\n  $p"HIW"·ÉÉíÔ¾Æğ£¬½á¹û±ùÖ®Ê¸ÔÚ$p"HIW"ÉíÏÂ±¬Õ¨¡£\n"NOR;
+        msg += HIW"\n  $p"HIW"é£èº«è·ƒèµ·ï¼Œç»“æœå†°ä¹‹çŸ¢åœ¨$p"HIW"èº«ä¸‹çˆ†ç‚¸ã€‚\n"NOR;
 		message_combatd(msg, me, target);
         }
 
@@ -79,7 +79,7 @@ target->receive_wound("qi", 200+damage/2);
 	i = extra/4;
 		COMBAT_D->report_status(target);
 if (wizardp(me))
-tell_object(me, "»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "åŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 if (target->query("qi") < 1)target->set("qi",0);
 if (target->query("eff_qi") < 1)target->set("eff_qi",0);
 if (target->query("max_qi") < 1)target->set("max_qi",0);                

@@ -1,4 +1,4 @@
-// ji.c ¼²µç
+// ji.c ç–¾ç”µ
 
 #include <ansi.h>
 
@@ -20,33 +20,33 @@ int perform(object me, object target)
 
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸¼²µç¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç–¾ç”µã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill_prepared("claw") != "yunlong-zhua")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃÄıÑªÉñ×¦£¬ÎŞ·¨Ê©Õ¹¡¸¼²µç¡¹¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰å‡†å¤‡ä½¿ç”¨å‡è¡€ç¥çˆªï¼Œæ— æ³•æ–½å±•ã€Œç–¾ç”µã€ã€‚\n");
 
         skill = me->query_skill("yunlong-zhua", 1);
  	if( (int)me->query_skill("yunlong-shengong", 1) < 150 )
-		return notify_fail("ÄãµÄÔÆÁúÉñ¹¦²»¹»¸ß¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™ç¥åŠŸä¸å¤Ÿé«˜ã€‚\n");
         if (skill < 250)
-                return notify_fail("ÄãµÄÄıÑªÉñ×¦ĞŞÎªÓĞÏŞ£¬ÎŞ·¨Ê¹ÓÃ¡¸¼²µç¡¹£¡\n");
+                return notify_fail("ä½ çš„å‡è¡€ç¥çˆªä¿®ä¸ºæœ‰é™ï¼Œæ— æ³•ä½¿ç”¨ã€Œç–¾ç”µã€ï¼\n");
 
         if (me->query_skill("force") < 250)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸¼²µç¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•ã€Œç–¾ç”µã€ï¼\n");
 
         if (me->query("max_neili") < 2000)
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÃ»ÓĞ´ïµ½ÄÇ¸ö¾³½ç£¬ÎŞ·¨ÔË×ªÄÚÁ¦ĞÎ³É¡¸¼²µç¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºæ²¡æœ‰è¾¾åˆ°é‚£ä¸ªå¢ƒç•Œï¼Œæ— æ³•è¿è½¬å†…åŠ›å½¢æˆã€Œç–¾ç”µã€ï¼\n");
 
         if (me->query("neili",1) < 500)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÏÖÔÚÎŞ·¨Ê©Õ¹¡¸¼²µç¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œç°åœ¨æ— æ³•æ–½å±•ã€Œç–¾ç”µã€ï¼\n");
 
         if (me->query_temp("weapon"))
-                return notify_fail("Äã±ØĞëÊÇ¿ÕÊÖ²ÅÄÜÊ©Õ¹¡¸¼²µç¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»æ˜¯ç©ºæ‰‹æ‰èƒ½æ–½å±•ã€Œç–¾ç”µã€ï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "ÑöÌìÒ»Éù³¤Ğ¥£¬·ÉÉíÔ¾Æğ£¬Ë«×¦»Ã³öÂşÌì×¦Ó°£¬ÆøÊÆ»Öºë£¬\nÍğÈç¼²µçÒ»°ãÁıÕÖ$n" HIR "¸÷´¦ÒªÑ¨£¡\n" NOR;
+        msg = HIR "$N" HIR "ä»°å¤©ä¸€å£°é•¿å•¸ï¼Œé£èº«è·ƒèµ·ï¼ŒåŒçˆªå¹»å‡ºæ¼«å¤©çˆªå½±ï¼Œæ°”åŠ¿æ¢å¼˜ï¼Œ\nå®›å¦‚ç–¾ç”µä¸€èˆ¬ç¬¼ç½©$n" HIR "å„å¤„è¦ç©´ï¼\n" NOR;
 
         message_combatd(msg, me, target);
 

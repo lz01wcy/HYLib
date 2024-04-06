@@ -1,4 +1,4 @@
-// goplaying.c ÎÆèÒÊÖÌ¸
+// goplaying.c çº¹æ°æ‰‹è°ˆ
 // Last Modified by winder on Jun. 10 2000
 
 #include <ansi.h>
@@ -22,19 +22,19 @@ int valid_learn(object me)
 	lvl = (int)me->query_skill("goplaying", 1);
 
 	if ( me->query("int") < 24 && me->query_int() < 32)
-	return notify_fail("ÇÙÆåÊé»­ÄËÊÇ¼«Æä·çÑÅÖ®ÊÂ£¬" +RANK_D->query_respect(me)+"ËÆºõÌ«¹ıÓÚË×ÆøÁËĞ©¡£\n");
+	return notify_fail("ç´æ£‹ä¹¦ç”»ä¹ƒæ˜¯æå…¶é£é›…ä¹‹äº‹ï¼Œ" +RANK_D->query_respect(me)+"ä¼¼ä¹å¤ªè¿‡äºä¿—æ°”äº†äº›ã€‚\n");
 
 	if( (int)me->query("shen") < -10000 )
-	return notify_fail("ÄãÉ±ÈËÈçÂé£¬ÌÈÈô²»ÄÜÏÈÆ½Ï¢ÁËĞÄÍ·Ä§Äî£¬ÄÄÀïÓÖ»áÓĞĞÄË¼µ¯ÇÙÏÂÆå£¿\n");
+	return notify_fail("ä½ æ€äººå¦‚éº»ï¼Œå€˜è‹¥ä¸èƒ½å…ˆå¹³æ¯äº†å¿ƒå¤´é­”å¿µï¼Œå“ªé‡Œåˆä¼šæœ‰å¿ƒæ€å¼¹ç´ä¸‹æ£‹ï¼Ÿ\n");
 
 	if (lvl > 129 && me->query("kar") <= 29  )
-		return notify_fail("ÏŞÓÚÌì×Ê£¬ÄãÖ»ÄÜĞŞÏ°Õâ¸ö³Ì¶ÈÁË¡£\n");
+		return notify_fail("é™äºå¤©èµ„ï¼Œä½ åªèƒ½ä¿®ä¹ è¿™ä¸ªç¨‹åº¦äº†ã€‚\n");
 	else return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("ÎÆèÒÊÖÌ¸Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+	return notify_fail("çº¹æ°æ‰‹è°ˆåªèƒ½é å­¦ä¹ æ¥æé«˜ã€‚\n");
 }
 void init()
 {
@@ -50,24 +50,24 @@ int do_play(string arg)
 	{
 		if ( (me->query_skill("art", 1) < 40) )
 		{
-			message_vision("$N°Ú³öÒ»ÕÅÆåÅÌ£¬ÏëÑĞ¾¿Î§Æå£¬È´×Ü¾õµÃĞÄ·³ÒâÂÒ£¬¶¨²»ÏÂÉñÀ´¡£\n", me);
+			message_vision("$Næ‘†å‡ºä¸€å¼ æ£‹ç›˜ï¼Œæƒ³ç ”ç©¶å›´æ£‹ï¼Œå´æ€»è§‰å¾—å¿ƒçƒ¦æ„ä¹±ï¼Œå®šä¸ä¸‹ç¥æ¥ã€‚\n", me);
 			me->receive_damage("jing", random(20) );
 			me->receive_damage("qi", random(20) );
 			return 1;
 		}
 		if ( me->query_skill("art", 1) >100 )
 		{
-			message_vision("$N°Ú³öÒ»ÕÅÆåÅÌ£¬Ö»¾õÆåÃæ²¼¾Ö¾¡ÔÚ³ïá¢Ö»Ö®ÖĞ£¬ÎŞÃÜ¿ÉÑĞ¡£\n", me);
+			message_vision("$Næ‘†å‡ºä¸€å¼ æ£‹ç›˜ï¼Œåªè§‰æ£‹é¢å¸ƒå±€å°½åœ¨ç­¹å¹„åªä¹‹ä¸­ï¼Œæ— å¯†å¯ç ”ã€‚\n", me);
 			return 1;
 		}
 
 		me->receive_damage("jing", 10);
 		me->receive_damage("qi", 10);
 		me->improve_skill("art", (int)me->query_int()/4 + (int)me->query_skill("art", 1)/10);
-		tell_object(me, "Äã°Ú³öÒ»ÕÅÆåÅÌ£¬ÑĞ¾¿ÆğÎ§ÆåÀ´£¬Ö»¾õµÃĞÄÆ½ÆøºÍ£¬ºÜ¿ì¾Í·Â·ğÈë¶¨ÁË¡£\n");
+		tell_object(me, "ä½ æ‘†å‡ºä¸€å¼ æ£‹ç›˜ï¼Œç ”ç©¶èµ·å›´æ£‹æ¥ï¼Œåªè§‰å¾—å¿ƒå¹³æ°”å’Œï¼Œå¾ˆå¿«å°±ä»¿ä½›å…¥å®šäº†ã€‚\n");
 
-		message_vision("Ö»¼û" + me->query("name") +
-		"ÑÅĞË´ó·¢£¬¾¹´òÆğÆåÆ×À´£¬¶ÔÍâ½ç·Â·ğ²»ÎÅ²»ÎÊ£¬Ò»¸±Äª²â¸ßÉîµÄÄ£Ñù¡£\n",
+		message_vision("åªè§" + me->query("name") +
+		"é›…å…´å¤§å‘ï¼Œç«Ÿæ‰“èµ·æ£‹è°±æ¥ï¼Œå¯¹å¤–ç•Œä»¿ä½›ä¸é—»ä¸é—®ï¼Œä¸€å‰¯è«æµ‹é«˜æ·±çš„æ¨¡æ ·ã€‚\n",
 		environment(me), ({me}) );
 
 	}
@@ -76,16 +76,16 @@ int do_play(string arg)
 
 int help(object me)
 {
-	write(HIC"\nÎÆèÒÊÖÌ¸£º"NOR"\n");
+	write(HIC"\nçº¹æ°æ‰‹è°ˆï¼š"NOR"\n");
 	write(@HELP
 
-    åĞÒ£ÅÉ×æÊ¦åĞÒ£×ÓÑ§¾¿ÌìÈË£¬ĞØÖĞËùÑ§°üÂŞÍòÏó¡£Ëû¹²´«ÏÂÆß
-ÃÅ¾øÒÕ£ºÈÆÁºÇÙÒÕ (luteplaying)¡¢ÎÆèÒÊÖÌ¸ (goplaying)¡¢ÆÃÄ«
-µ¤Çà(painting)¡¢¼ÃÊÀÖ®Êõ(medicine)¡¢ÍÁÄ¾»ú¹Ø(construction)¡¢
-Ô°ÒÕİª»¨(horticulture)¡¢ÀæÔ°¾ÉÒÕ(dramaturgy)¡£
+    é€é¥æ´¾ç¥–å¸ˆé€é¥å­å­¦ç©¶å¤©äººï¼Œèƒ¸ä¸­æ‰€å­¦åŒ…ç½—ä¸‡è±¡ã€‚ä»–å…±ä¼ ä¸‹ä¸ƒ
+é—¨ç»è‰ºï¼šç»•æ¢ç´è‰º (luteplaying)ã€çº¹æ°æ‰‹è°ˆ (goplaying)ã€æ³¼å¢¨
+ä¸¹é’(painting)ã€æµä¸–ä¹‹æœ¯(medicine)ã€åœŸæœ¨æœºå…³(construction)ã€
+å›­è‰ºè³èŠ±(horticulture)ã€æ¢¨å›­æ—§è‰º(dramaturgy)ã€‚
 
-	Ñ§Ï°ÒªÇó£º
-		ÎŞ¡£µ«Ìì¸³²ÅÆøÏŞÖÆÁË¶Ô¸ü¸ßÉî¾³½çµÄÅ¬Á¦
+	å­¦ä¹ è¦æ±‚ï¼š
+		æ— ã€‚ä½†å¤©èµ‹æ‰æ°”é™åˆ¶äº†å¯¹æ›´é«˜æ·±å¢ƒç•Œçš„åŠªåŠ›
 HELP
 	);
 	return 1;

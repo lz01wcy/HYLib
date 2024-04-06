@@ -8,23 +8,23 @@ int exert(object me)
         nh = (int)me->query_skill("linji-zhuang");
         improve = nh * 3 / 2;
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐÔË¹¦£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
         if (me->is_busy() )
-        return notify_fail("ÄãÕýÃ¦×ÅÄÄ£¡\n");
+        return notify_fail("ä½ æ­£å¿™ç€å“ªï¼\n");
 
         if ((int)me->query_skill("linji-zhuang", 1) < 120)
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("neili") < 120 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
         
       if( me->query_temp("yun_yinyang")   )
-                return notify_fail("ÄãÕýÔÚÔËÓÃÁÙ¼ÃÊ®¶þ×¯µÄ¡¸ÒõÑô¡¹×Ö¾ö£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ä¸´æµŽåäºŒåº„çš„ã€Œé˜´é˜³ã€å­—å†³ï¼\n");
 
-        write(HIW"Äã°µÔËÒõÑôÁ½×¯£¬ÎüÈ¡ÒõÑôÁ½Æø£¬¾Û¾«³ÉÁ¦£¬¶Ù¾õÆøÁ¦±¶Ôö¡£\n"NOR, me);
+        write(HIW"ä½ æš—è¿é˜´é˜³ä¸¤åº„ï¼Œå¸å–é˜´é˜³ä¸¤æ°”ï¼Œèšç²¾æˆåŠ›ï¼Œé¡¿è§‰æ°”åŠ›å€å¢žã€‚\n"NOR, me);
 
-        message_vision(HIW"Ö»¼û$NÉÔÏÔÆ£·¦£¬µ«×ªË²¼ä±ã¾«Éñ¶¶ËÓ¡£\n"NOR,me);
+        message_vision(HIW"åªè§$Nç¨æ˜¾ç–²ä¹ï¼Œä½†è½¬çž¬é—´ä¾¿ç²¾ç¥žæŠ–æ“žã€‚\n"NOR,me);
 
         me->add("eff_jing", improve );
         me->add("jing", improve);
@@ -43,5 +43,5 @@ void remove_effect(object me, int improve)
       me->add("max_qi", - improve);
       me->add("eff_jingli", - improve);
       me->delete_temp("yun_yinyang");
-      tell_object(me, HIR"ÄãµÄÁÙ¼ÃÊ®¶þ×¯¡¸ÒõÑô¡¹×Ö¾öÔË¹¦Íê±Ï£¬¿´ÆðÀ´ÄãÁ³É«ºÃ¶àÁË¡£\n"NOR);
+      tell_object(me, HIR"ä½ çš„ä¸´æµŽåäºŒåº„ã€Œé˜´é˜³ã€å­—å†³è¿åŠŸå®Œæ¯•ï¼Œçœ‹èµ·æ¥ä½ è„¸è‰²å¥½å¤šäº†ã€‚\n"NOR);
 }

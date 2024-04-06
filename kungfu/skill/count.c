@@ -14,15 +14,15 @@ int valid_learn(object me)
 
         mapping myfam;
         myfam = (mapping)me->query("family");
-        if(!myfam || myfam["family_name"] != "ÌÒ»¨µº"|| myfam["master_id"] != "huang yaoshi")
-                return notify_fail("Ö»ÓĞ»ÆÒ©Ê¦µÄµÜ×Ó²ÅÄÜÑ§ÒõÑô°ËØÔ¡£\n");
+        if(!myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›"|| myfam["master_id"] != "huang yaoshi")
+                return notify_fail("åªæœ‰é»„è¯å¸ˆçš„å¼Ÿå­æ‰èƒ½å­¦é˜´é˜³å…«å¦ã€‚\n");
         if( (int)me->query_skill("literate",1) < 50 )
-                return notify_fail("ÄãµÄ¶ÁÊéĞ´×ÖÌ«µÍ£¬Ã»ÓĞ°ì·¨Ñ§ÒõÑô°ËØÔ¡£\n");
+                return notify_fail("ä½ çš„è¯»ä¹¦å†™å­—å¤ªä½ï¼Œæ²¡æœ‰åŠæ³•å­¦é˜´é˜³å…«å¦ã€‚\n");
 
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÒõÑô°ËØÔÖ»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("é˜´é˜³å…«å¦åªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }

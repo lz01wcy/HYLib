@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/samu.c  ÈøÄ¾»î·ğ
+// /kungfu/class/xueshan/samu.c  è¨æœ¨æ´»ä½›
 // by secret
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÈøÄ¾»î·ğ", ({ "samu huofo", "huofo", "samu" }));
+        set_name("è¨æœ¨æ´»ä½›", ({ "samu huofo", "huofo", "samu" }));
         set("long",@LONG
-ÈøÄ¾»î·ğÊÇÑ©É½ËÂÓĞµÀµÄ¸ßÉ®£¬¶Ô·ğ·¨ÓĞ¾«ÉîµÄÑĞ¾¿¡£
-ËûÉí´©Ò»¼ş»ÆÉ«ôÂôÄ£¬Í·´øÉ®Ã±¡£Ò»¸±ÈôÓĞËùË¼µÄÑù×Ó¡£
+è¨æœ¨æ´»ä½›æ˜¯é›ªå±±å¯ºæœ‰é“çš„é«˜åƒ§ï¼Œå¯¹ä½›æ³•æœ‰ç²¾æ·±çš„ç ”ç©¶ã€‚
+ä»–èº«ç©¿ä¸€ä»¶é»„è‰²è¢ˆè£Ÿï¼Œå¤´å¸¦åƒ§å¸½ã€‚ä¸€å‰¯è‹¥æœ‰æ‰€æ€çš„æ ·å­ã€‚
 LONG
         );
-        set("title", HIY "»î·ğ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title", HIY "æ´»ä½›" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -51,7 +51,7 @@ LONG
         map_skill("sword", "mingwang-jian");
 
 
-        create_family("Ñ©É½ËÂ", 3, "»î·ğ");
+        create_family("é›ªå±±å¯º", 3, "æ´»ä½›");
         set("class", "bonze");
 
         setup();
@@ -65,37 +65,37 @@ LONG
 void attempt_apprentice(object ob)
 {
 
-        if ((string)ob->query("gender") != "ÄĞĞÔ") {
-                command("say ĞŞÏ°ÃÜ×ÚÄÚ¹¦ĞèÒª´¿ÑôÖ®Ìå¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "»¹ÊÇÇë»Ø°É£¡");
+        if ((string)ob->query("gender") != "ç”·æ€§") {
+                command("say ä¿®ä¹ å¯†å®—å†…åŠŸéœ€è¦çº¯é˜³ä¹‹ä½“ã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "è¿˜æ˜¯è¯·å›å§ï¼");
                 return;
         }
 
         if ((string)ob->query("class") != "bonze") {
-                command("say ÎÒ·ğÃÅµÄÇå¹æ½äÂÉÉõ¶à¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "»¹ÊÇÇë»Ø°É£¡");
+                command("say æˆ‘ä½›é—¨çš„æ¸…è§„æˆ’å¾‹ç”šå¤šã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "è¿˜æ˜¯è¯·å›å§ï¼");
                 return;
         }
 
-        if ((string)ob->query("family/family_name") != "Ñ©É½ËÂ")        {
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "¼È·Ç±¾ËÂµÜ×Ó£¬»¹ÊÇÇë»Ø°É£¡");
+        if ((string)ob->query("family/family_name") != "é›ªå±±å¯º")        {
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "æ—¢éæœ¬å¯ºå¼Ÿå­ï¼Œè¿˜æ˜¯è¯·å›å§ï¼");
                 return;
         }
 
         if ((int)ob->query_skill("lamaism", 1) < 60) {
-                command("say ÈëÎÒÑ©É½ËÂ£¬ĞŞÏ°ÃÜ×ÚĞÄ·¨ÊÇÊ×ÒªµÄ¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸Ã¶à¶à×êÑĞ±¾ÃÅµÄĞÄ·¨£¿");
+                command("say å…¥æˆ‘é›ªå±±å¯ºï¼Œä¿®ä¹ å¯†å®—å¿ƒæ³•æ˜¯é¦–è¦çš„ã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åº”è¯¥å¤šå¤šé’»ç ”æœ¬é—¨çš„å¿ƒæ³•ï¼Ÿ");
                 return;
         }
 
         command("smile");
         command("nod");
-        command("say Äã¾ÍËæÎÒÑ§Ï°·ğ·¨°É£¡");
+        command("say ä½ å°±éšæˆ‘å­¦ä¹ ä½›æ³•å§ï¼");
         command("recruit " + ob->query("id"));
 
-        ob->set("title", HIY"´óÀ®Âï"NOR);
+        ob->set("title", HIY"å¤§å–‡å˜›"NOR);
 }

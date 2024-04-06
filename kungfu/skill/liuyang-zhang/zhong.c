@@ -1,4 +1,4 @@
-// zhong.c ÖÖÉúËÀ·û
+// zhong.c ç§ç”Ÿæ­»ç¬¦
 
 #include <ansi.h>
 
@@ -11,34 +11,34 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»×¼´ò¼Ü¡£\n");
+		return notify_fail("è¿™é‡Œä¸å‡†æ‰“æ¶ã€‚\n");
 
         if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸ÉúËÀ·û¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç”Ÿæ­»ç¬¦ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( !target || !target->is_character() )
-		return notify_fail("ÉúËÀ·ûÖ»ÄÜÖÖÔÚ¶ÔÊÖÉíÉÏ¡£\n");
+		return notify_fail("ç”Ÿæ­»ç¬¦åªèƒ½ç§åœ¨å¯¹æ‰‹èº«ä¸Šã€‚\n");
 
 	if(((int)me->query_skill("bahuang-gong", 1) < 40 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 40 ))
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì£¬²»ÄÜÖÖÉúËÀ·û¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ç§ç”Ÿæ­»ç¬¦ã€‚\n");
 
 	if (me->query("neili")<200)
-		return notify_fail("ÄãÕæÆø²»×ã¡£\n");
+		return notify_fail("ä½ çœŸæ°”ä¸è¶³ã€‚\n");
 
 	if( (int)me->query_skill("liuyang-zhang", 1) < 40 )
-		return notify_fail("ÄãµÄÌìÉ½ÁùÑôÕÆ²»¹»æµÊì£¬²»ÄÜÖÖÉúËÀ·û¡£\n");
+		return notify_fail("ä½ çš„å¤©å±±å…­é˜³æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ç§ç”Ÿæ­»ç¬¦ã€‚\n");
 
 
-	msg = CYN "$N»¯Ë®Îª±ù£¬ÄıÓÚÕÆÖĞ£¬ÇáÆ®Æ®µØÅÄÏò$n¡£\n";
+	msg = CYN "$NåŒ–æ°´ä¸ºå†°ï¼Œå‡äºæŒä¸­ï¼Œè½»é£˜é£˜åœ°æ‹å‘$nã€‚\n";
 
 	me->start_busy(1);
 
  if (random(me->query("combat_exp")) > target->query("combat_exp") / 3)
  {
-		msg += CYN " ½á¹û$p±»$P¹¥ÁË¸öÕı×Å£¡\n" NOR;
+		msg += CYN " ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæ­£ç€ï¼\n" NOR;
 		target->receive_damage("qi",(int)me->query_skill("bahuang-gong",1));
 		target->receive_wound("qi",155 + random( (int)me->query_skill("liuyang-zhang",1)));
 		target->receive_wound("jing", 10);
@@ -48,7 +48,7 @@ int perform(object me, object target)
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
 	} else {
-		msg += "¿ÉÊÇ$p¼±Ã¦ÉÁÔÚÒ»ÅÔ£¬¶ãÁË¿ªÈ¥¡£\n" NOR;
+		msg += "å¯æ˜¯$pæ€¥å¿™é—ªåœ¨ä¸€æ—ï¼Œèº²äº†å¼€å»ã€‚\n" NOR;
 		me->start_busy(2);
 		message_combatd(msg, me, target);
 	}

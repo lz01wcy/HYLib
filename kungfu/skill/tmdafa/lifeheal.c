@@ -12,25 +12,25 @@ int exert(object me, object target)
 
         if( !target )
 
-                return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
 
 
         if( me->is_fighting() || target->is_fighting())
 
-                return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË£¡\n");
+                return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ï¼\n");
 
 
 
         if( (int)me->query("max_neili") < 300 )
 
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 
 
         if( (int)me->query("neili") < 150 )
 
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 
 
@@ -38,15 +38,15 @@ int exert(object me, object target)
 
                 return notify_fail( target->name() +
 
-                        "ÒÑ¾­ÊÜÉË¹ýÖØ£¬¾­ÊÜ²»ÆðÄãµÄÕæÆøÕðµ´£¡\n");
+                        "å·²ç»å—ä¼¤è¿‡é‡ï¼Œç»å—ä¸èµ·ä½ çš„çœŸæ°”éœ‡è¡ï¼\n");
 
 
 
         message_vision(
 
-                HIY "$NÔËÆðÄÚÁ¦£¬ÕæÆø»º»ºÔÚ$nÌåÄÚÁ÷¶¯£¬Ò»¹É°×Æø½«$NºÍ$nÁýÕÖÆðÀ´....\n\n"
+                HIY "$Nè¿èµ·å†…åŠ›ï¼ŒçœŸæ°”ç¼“ç¼“åœ¨$nä½“å†…æµåŠ¨ï¼Œä¸€è‚¡ç™½æ°”å°†$Nå’Œ$nç¬¼ç½©èµ·æ¥....\n\n"
 
-                "¹ýÁË²»¾Ã£¬°×ÆøÂýÂýÉ¢È¥£¬$nÉËÊÆ¿´ÆðÀ´ºÃ¶àÁË¡£\n" NOR,
+                "è¿‡äº†ä¸ä¹…ï¼Œç™½æ°”æ…¢æ…¢æ•£åŽ»ï¼Œ$nä¼¤åŠ¿çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n" NOR,
 
                 me, target );
 

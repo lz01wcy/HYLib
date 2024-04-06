@@ -10,10 +10,10 @@ int exert(object me, object target)
 		return 0;
 	if(me->query_temp("sld/wudi")==1) {
 		me->set_temp("sld/shougong",1);
-		message_vision(CYN"$N缓缓收回内力，眼中的红光慢慢暗淡下来。\n"NOR,me);
+		message_vision(CYN"$N缂撶紦鏀跺洖鍐呭姏锛岀溂涓殑绾㈠厜鎱㈡參鏆楁贰涓嬫潵銆俓n"NOR,me);
 	}
 	else	{
-		return notify_fail("你现在无法收功。\n");
+		return notify_fail("浣犵幇鍦ㄦ棤娉曟敹鍔熴�俓n");
 	}
 
 	return 1;

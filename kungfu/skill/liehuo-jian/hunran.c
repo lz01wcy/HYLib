@@ -10,26 +10,26 @@ int perform(object me, object target)
 	object weapon;
 	if( !target ) target = offensive_target(me);
         if ((int)me->query_skill("jiuyang-shengong", 1) < 20)
-                return notify_fail("ÄãµÄ¾ÅÑôÉñ¹¦»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„ä¹é˜³ç¥žåŠŸç«å€™å¤ªæµ…ã€‚\n");
 
 if((int)me->query_skill("liehuo-jian",1) < 50)
-		return notify_fail("ÄãµÄ½£·¨ÐÞÎª²»¹», ²»ÄÜÊ¹ÓÃ¡¸»ìÈ»Ò»½£¡¹£¡\n");if((int)me->query("neili") < 200 )
+		return notify_fail("ä½ çš„å‰‘æ³•ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œæ··ç„¶ä¸€å‰‘ã€ï¼\n");if((int)me->query("neili") < 200 )
 	if((int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-			return notify_fail("ÄãÃ»ÓÐ×°±¸ÎäÆ÷¡£\n");
+			return notify_fail("ä½ æ²¡æœ‰è£…å¤‡æ­¦å™¨ã€‚\n");
 
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û»ìÈ»Ò»½££ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»æ··ç„¶ä¸€å‰‘ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("liehuo-jian",1)/2;
 	me->add_temp("apply/attack", (extra*2));	
 	me->add_temp("apply/damage", (extra*2));
         me->add_temp("apply/strength", extra);
-	msg = HIR "$N´í²½ÉÏÇ°£¬ÊÖÖÐ"+ weapon->name() +HIR"µÄÒ»Ê½£Û»ìÈ»Ò»½££Ý£¬½£Ã¢ÈôÓÐÈôÎÞµØÏò$n»ÓÈ¥£¡"NOR;
+	msg = HIR "$Né”™æ­¥ä¸Šå‰ï¼Œæ‰‹ä¸­"+ weapon->name() +HIR"çš„ä¸€å¼ï¼»æ··ç„¶ä¸€å‰‘ï¼½ï¼Œå‰‘èŠ’è‹¥æœ‰è‹¥æ— åœ°å‘$næŒ¥åŽ»ï¼"NOR;
        	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -(extra*2));
 	me->add_temp("apply/damage", -(extra*2));

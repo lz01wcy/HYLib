@@ -11,15 +11,15 @@ string ask_me();
 
 void create()
 {
-	set_name("·¶Ò£", ({"fan yao","fan","yao",}));
+	set_name("èŒƒé¥", ({"fan yao","fan","yao",}));
 	set("long",
-        "ËûÊÇÒ»Î»´ø·¢ĞŞĞĞµÄÍ·ÍÓ£¬Éí´©°×²¼³¤ÅÛ¡£\n"
-        "ËûµÄÁ³ÉÏÆßÆß°Ë°ËµÄÈ«ÊÇÉË°Ì£¬¼òÖ±¿´²»³ö±¾À´ÃæÄ¿ÁË¡£\n"
+        "ä»–æ˜¯ä¸€ä½å¸¦å‘ä¿®è¡Œçš„å¤´é™€ï¼Œèº«ç©¿ç™½å¸ƒé•¿è¢ã€‚\n"
+        "ä»–çš„è„¸ä¸Šä¸ƒä¸ƒå…«å…«çš„å…¨æ˜¯ä¼¤ç–¤ï¼Œç®€ç›´çœ‹ä¸å‡ºæœ¬æ¥é¢ç›®äº†ã€‚\n"
 	);
 
-	set("title",HIG "Ã÷½Ì" HIR "¹âÃ÷ÓÒÊ¹" NOR);
+	set("title",HIG "æ˜æ•™" HIR "å…‰æ˜å³ä½¿" NOR);
 	set("level",11);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
@@ -71,9 +71,9 @@ void create()
 	map_skill("parry", "nianhua-zhi");
 
 	set("inquiry", ([
-		"¹âÃ÷Ê¥»ğÕó"  : (: ask_me :),
-		"Ã÷½ÌÊ¥»ğÕó"  : (: ask_me :),
-		"Ê¥»ğÕó"      : (: ask_me :)
+		"å…‰æ˜åœ£ç«é˜µ"  : (: ask_me :),
+		"æ˜æ•™åœ£ç«é˜µ"  : (: ask_me :),
+		"åœ£ç«é˜µ"      : (: ask_me :)
 	]));
 
 	set("chat_chance_combat", 20);
@@ -81,7 +81,7 @@ void create()
 		(: prepare_skill("finger", "nianhua-zhi") :),
 		(: prepare_skill("strike", "sanhua-zhang") :),
 	}) );
-	create_family("Ã÷½Ì",34, "¹âÃ÷ÓÒÊ¹");
+	create_family("æ˜æ•™",34, "å…‰æ˜å³ä½¿");
 	set_temp("apply/attack", 200);
 	set_temp("apply/defense", 200);
 	set_temp("apply/damage", 660);
@@ -108,7 +108,7 @@ void init()
 
 void attempt_apprentice(object ob)
 {
-	command("say ÎÒ²»ÊÕÍ½µÄ£¬ÄãÕÒ¸÷Î»·¨ÍõÈ¥¡£");
+	command("say æˆ‘ä¸æ”¶å¾’çš„ï¼Œä½ æ‰¾å„ä½æ³•ç‹å»ã€‚");
 	return 0;
 }
 

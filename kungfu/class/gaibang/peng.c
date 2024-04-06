@@ -8,14 +8,14 @@ void consider();
 
 void create()
 {
-	set_name("ÅíÓĞ¾´", ({"peng youjing", "peng", "youjing"}));
-	set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
-	set("nickname", "ÕÆ²§ÁúÍ·");
-	set("gender", "ÄĞĞÔ");
+	set_name("å½­æœ‰æ•¬", ({"peng youjing", "peng", "youjing"}));
+	set("title", "ä¸å¸®ä¹è¢‹é•¿è€");
+	set("nickname", "æŒé’µé¾™å¤´");
+	set("gender", "ç”·æ€§");
 	set("age", 50);
 	set("long", 
-		"ÅíÓĞ¾´ÊÇØ¤°ïÖĞ¾»ÒÂÅÉµÄÊ×Áì£¬ÒÂ×Å¸É¾»»ªÀö£¬²»Ïó½Ğ»¯×Ó¡£\n"
-		"ËûÁ³ÉÏ¹Ò×Å´ÈÏéµÄĞ¦Èİ£¬Ò»Ë«ÑÛ¾¦ÓĞÉãÈËĞÄÆÇµÄÁ¦Á¿¡£\n");
+		"å½­æœ‰æ•¬æ˜¯ä¸å¸®ä¸­å‡€è¡£æ´¾çš„é¦–é¢†ï¼Œè¡£ç€å¹²å‡€åä¸½ï¼Œä¸è±¡å«åŒ–å­ã€‚\n"
+		"ä»–è„¸ä¸ŠæŒ‚ç€æ…ˆç¥¥çš„ç¬‘å®¹ï¼Œä¸€åŒçœ¼ç›æœ‰æ‘„äººå¿ƒé­„çš„åŠ›é‡ã€‚\n");
 
 	set("attitude", "peaceful");
         set("class", "beggar");
@@ -38,25 +38,25 @@ void create()
 	set_skill("fengmo-zhang",150);
 	set_skill("liuhe-zhang",150);
 	set_skill("strike",90);
-	set_skill("force", 90); // »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 90); // »ìÌìÆø¹¦
-	set_skill("unarmed", 85); // »ù±¾È­½Å
-	set_skill("xianglong-zhang", 80); // ½µÁúÊ®°ËÕÆ
-	set_skill("dodge", 95); // »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 85); // åĞÒ£ÓÎ
-	set_skill("parry", 90); // »ù±¾ÕĞ¼Ü
-	set_skill("staff", 90); // »ù±¾¹÷ÕÈ
+	set_skill("force", 90); // åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 90); // æ··å¤©æ°”åŠŸ
+	set_skill("unarmed", 85); // åŸºæœ¬æ‹³è„š
+	set_skill("xianglong-zhang", 80); // é™é¾™åå…«æŒ
+	set_skill("dodge", 95); // åŸºæœ¬èº²é—ª
+	set_skill("xiaoyaoyou", 85); // é€é¥æ¸¸
+	set_skill("parry", 90); // åŸºæœ¬æ‹›æ¶
+	set_skill("staff", 90); // åŸºæœ¬æ£æ–
 	
 	map_skill("force", "huntian-qigong");
 	map_skill("unarmed", "xianglong-zhang");
 	map_skill("dodge", "xiaoyaoyou");
 	
-	create_family("Ø¤°ï", 18, "¾Å´ü³¤ÀÏ");
+	create_family("ä¸å¸®", 18, "ä¹è¢‹é•¿è€");
 	setup();
 }
 
 void attempt_apprentice(object ob)
 {
-	command("say ÀÏ·ò²»ÊÕÍ½µÜ£¬" + RANK_D->query_respect(ob) + "»¹ÊÇÇë»Ø°É¡£");
+	command("say è€å¤«ä¸æ”¶å¾’å¼Ÿï¼Œ" + RANK_D->query_respect(ob) + "è¿˜æ˜¯è¯·å›å§ã€‚");
 }
 #include "/kungfu/class/gaibang/gaibang.h"

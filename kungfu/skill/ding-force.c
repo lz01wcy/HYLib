@@ -1,4 +1,4 @@
-// ding-force.c 小丁气功
+// ding-force.c 灏忎竵姘斿姛
 
 inherit FORCE;
 
@@ -12,7 +12,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-	return notify_fail("小丁气功只能跟小丁学来增加熟练度。\n");
+	return notify_fail("灏忎竵姘斿姛鍙兘璺熷皬涓佸鏉ュ鍔犵啛缁冨害銆俓n");
 }
 
 

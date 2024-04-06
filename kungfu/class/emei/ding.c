@@ -1,13 +1,13 @@
-// ding.c ¶¡Ãô¾ı
+// ding.c ä¸æ•å›
 
 inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("¶¡Ãô¾ı", ({ "ding minjun","ding","minjun"}));
+        set_name("ä¸æ•å›", ({ "ding minjun","ding","minjun"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£ÊÇÌìÏÂ×î¶ñĞÄ£¬ÎŞÀµµÄÈË¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚æ˜¯å¤©ä¸‹æœ€æ¶å¿ƒï¼Œæ— èµ–çš„äººã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", -2);
@@ -78,7 +78,7 @@ set_temp("huifeng/jue",1);
                 (: exert_function, "tiandi" :),                                
                 (: exert_function, "juemie" :), 
         }) );
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -100,20 +100,20 @@ void init()
 void greeting(object ob)
 {
           if( !ob || environment(ob) != environment() ) return;
-          command("chat " + ob->query("name")+"ÎÒºÃÏ²»¶Äã°¡£¡\n");
+          command("chat " + ob->query("name")+"æˆ‘å¥½å–œæ¬¢ä½ å•Šï¼\n");
 }
 int do_hit(string arg)
 {
-          command("chat "+this_player()->query("name")+"Òª·ÇÀñÎÒÁË£¡\n");
+          command("chat "+this_player()->query("name")+"è¦éç¤¼æˆ‘äº†ï¼\n");
           return 1;
 }
 int do_kill(string arg)
 {
-          command("chat "+this_player()->query("name")+"Õâ¸ö»ìµ°ÒªÇ¿¼éÎÒÁË£¡¿ìÀ´ÈËÄÄ£¡\n");
+          command("chat "+this_player()->query("name")+"è¿™ä¸ªæ··è›‹è¦å¼ºå¥¸æˆ‘äº†ï¼å¿«æ¥äººå“ªï¼\n");
           return 1;
 }
 int accept_fight(object me)
 {
-          command("chat "+this_player()->query("name")+"ÒªÇ¿¼éÎÒÁË£¬¾ÈÃü°¡£¡\n");
+          command("chat "+this_player()->query("name")+"è¦å¼ºå¥¸æˆ‘äº†ï¼Œæ•‘å‘½å•Šï¼\n");
           return 0;
 }

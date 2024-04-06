@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-#define XUAN "¡¸" HIW "Ì«Ðþ¼¤¾¢" NOR "¡¹"
+#define XUAN "ã€Œ" HIW "å¤ªçŽ„æ¿€åŠ²" NOR "ã€"
  
 int perform(object me, object target)
 {
@@ -17,37 +17,37 @@ int perform(object me, object target)
 
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(XUAN "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(XUAN "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         
 	if ((int)me->query("neili") < 800)
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹" XUAN "£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•" XUAN "ï¼\n");
 
         if (me->query("max_neili") < 5000)
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª»¹²»×ãÒÔÊ¹³ö" XUAN "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºè¿˜ä¸è¶³ä»¥ä½¿å‡º" XUAN "ã€‚\n");
 
 	if ((int)me->query_skill("force") < 300)
-		return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" XUAN "£¡\n");
+		return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" XUAN "ï¼\n");
 
 	if ((lvl = (int)me->query_skill("taixuan-gong", 1)) < 240)
-		return notify_fail("ÄãµÄÌ«Ðþ¹¦»¹²»¹»ÊìÁ·£¬ÎÞ·¨Ê¹ÓÃ" XUAN "£¡\n");
+		return notify_fail("ä½ çš„å¤ªçŽ„åŠŸè¿˜ä¸å¤Ÿç†Ÿç»ƒï¼Œæ— æ³•ä½¿ç”¨" XUAN "ï¼\n");
 
         if ((int)me->query_skill("literate", 1)> 5 )
-                return notify_fail("Äã¾õµÃÌ«ÐþÉñ¹¦Éî°ÂÖ®¼«£¬Ò»Ê±¼äÄÑÒÔÁì»á¡£\n");
+                return notify_fail("ä½ è§‰å¾—å¤ªçŽ„ç¥žåŠŸæ·±å¥¥ä¹‹æžï¼Œä¸€æ—¶é—´éš¾ä»¥é¢†ä¼šã€‚\n");
                 
              weapon = me->query_temp("weapon");
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ£¡\n");	
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ï¼\n");	
 
              if (me->query_skill_mapped("unarmed") != "taixuan-gong"
                  || me->query_skill_prepared("unarmed" != "taixuan-gong"))
-                       return notify_fail("ÄãÃ»ÓÐ×¼±¸Ì«Ðþ¹¦£¬ÎÞ·¨Ê¹ÓÃ" XUAN "¡£\n");
+                       return notify_fail("ä½ æ²¡æœ‰å‡†å¤‡å¤ªçŽ„åŠŸï¼Œæ— æ³•ä½¿ç”¨" XUAN "ã€‚\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-	msg = HIW "\nö®Ê±¼ä$N" HIW "Ö»¾õË¼Ð÷¿ñÓ¿£¬µ±¼´±ÕÉÏË«ÑÛ£¬ÔÙ²»Àí²Ç$n"
-              HIW "ÈçºÎÕÐ¼Ü£¬Ö»¹ÜÊ©ÕÐ¹¥³ö£¡\n´ËÊ±ÏÀ¿ÍµºÊ¯±ÚÉÏµÄÇ§°ÙÖÖÕÐ"
-              "Ê½£¬×ªÑÛÒÑ´Ó$N" HIW "ÐÄµ×´«ÏòÊÖ×ã£¬¾¡ÊýÏò$n" HIW "Ï®È¥£¡\n" NOR;
+	msg = HIW "\néœŽæ—¶é—´$N" HIW "åªè§‰æ€ç»ªç‹‚æ¶Œï¼Œå½“å³é—­ä¸ŠåŒçœ¼ï¼Œå†ä¸ç†ç¬$n"
+              HIW "å¦‚ä½•æ‹›æž¶ï¼Œåªç®¡æ–½æ‹›æ”»å‡ºï¼\næ­¤æ—¶ä¾ å®¢å²›çŸ³å£ä¸Šçš„åƒç™¾ç§æ‹›"
+              "å¼ï¼Œè½¬çœ¼å·²ä»Ž$N" HIW "å¿ƒåº•ä¼ å‘æ‰‹è¶³ï¼Œå°½æ•°å‘$n" HIW "è¢­åŽ»ï¼\n" NOR;
 
 	message_vision(msg, me, target);
 	me->add("neili", -600);

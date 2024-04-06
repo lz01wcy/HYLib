@@ -12,7 +12,7 @@ void skill_improved(object me)
 
 	s = me->query_skill("strategy", 1);
         if( s%10==9 && (int)me->query("dex") < s/5) {
-		tell_object(me, HIW "由於你的勤学兵法，你的勇气增加了。\n" NOR);
+		tell_object(me, HIW "鐢辨柤浣犵殑鍕ゅ鍏垫硶锛屼綘鐨勫媷姘斿鍔犱簡銆俓n" NOR);
 		me->add("dex", 2);
 	}
 }

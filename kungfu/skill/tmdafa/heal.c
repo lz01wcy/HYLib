@@ -12,31 +12,31 @@ int exert(object me, object target)
 
         if( me->is_fighting() )
 
-                return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆÉË£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 
 
         if ((int)me->query_skill("tmdafa", 1) < 20)
 
-                return notify_fail("ÄãµÄÌìÄ§´ó·¨ÐÞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„å¤©é­”å¤§æ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("neili") < 50 ) // - (int)me->query("max_neili") < 50 )
 
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 
 
         if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
 
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
 
 
-        write( HIW "ÄãÄ¬ÔËÄÚÁ¦£¬Ò»¹ÉÅ¯Á÷Í¸±éÈ«Éí£¬ÊÜÉËÎÉÂÒµÄÄÚÏ¢Ñ¸ËÙÆ½¸´¡£\n" NOR);
+        write( HIW "ä½ é»˜è¿å†…åŠ›ï¼Œä¸€è‚¡æš–æµé€éå…¨èº«ï¼Œå—ä¼¤ç´Šä¹±çš„å†…æ¯è¿…é€Ÿå¹³å¤ã€‚\n" NOR);
 
         message("vision",
 
-                HIW + me->name() + "Ô­ÏÈ»ìÂÒµÄÆøÏ¢ÂýÂýµØÆ½¸´ÁË£¬¿´À´ÉËÊÆºÃÁË²»ÉÙ¡£\n" NOR,
+                HIW + me->name() + "åŽŸå…ˆæ··ä¹±çš„æ°”æ¯æ…¢æ…¢åœ°å¹³å¤äº†ï¼Œçœ‹æ¥ä¼¤åŠ¿å¥½äº†ä¸å°‘ã€‚\n" NOR,
 
                 environment(me), me);
 

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define YIN "¡¸" HIR "ÒõÑôÄ¥" NOR "¡¹"
+#define YIN "ã€Œ" HIR "é˜´é˜³ç£¨" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -16,35 +16,35 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(YIN "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(YIN "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail(YIN "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(YIN "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("tiezhang-zhangfa", 1) < 220)
-                return notify_fail("ÄãÌúÕÆÕÆ·¨»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" YIN "¡£\n");
+                return notify_fail("ä½ é“æŽŒæŽŒæ³•ç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" YIN "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "tiezhang-zhangfa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÌúÕÆÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" YIN "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é“æŽŒæŽŒæ³•ï¼Œéš¾ä»¥æ–½å±•" YIN "ã€‚\n");
 
         if (me->query_skill_prepared("strike") != "tiezhang-zhangfa")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸ÌúÕÆÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" YIN "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰å‡†å¤‡é“æŽŒæŽŒæ³•ï¼Œéš¾ä»¥æ–½å±•" YIN "ã€‚\n");
 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" YIN "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" YIN "ã€‚\n");
 
         if ((int)me->query("max_neili") < 3500)
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" YIN "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" YIN "ã€‚\n");
 
         if ((int)me->query("neili") < 500)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" YIN "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”ä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" YIN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ê©³öÌúÕÆ¾ø¼¼¡¸" HIR "ÒõÑôÄ¥"
-              HIW "¡¹£¬×óÕÆ²»×Å°ëµãÁ¦µÀ£¬Ð¯×ÅÒõº®¾¢Ïò$n"
-              HIW "·÷È¥¡£\n" NOR;  
+        msg = HIW "$N" HIW "æ–½å‡ºé“æŽŒç»æŠ€ã€Œ" HIR "é˜´é˜³ç£¨"
+              HIW "ã€ï¼Œå·¦æŽŒä¸ç€åŠç‚¹åŠ›é“ï¼Œæºç€é˜´å¯’åŠ²å‘$n"
+              HIW "æ‹‚åŽ»ã€‚\n" NOR;  
 
         ap = me->query_skill("tiezhang-zhangfa") + me->query("str") * 6;
         dp = target->query_skill("parry") + target->query("con") * 5;
@@ -56,17 +56,17 @@ int perform(object me, object target)
                 target->add("qi",-damage);
 		target->add("eff_qi",-damage);
 target->apply_condition("tiezhang_yin",50);
-                msg +=HIW "ö®ÄÇ¼ä$n" HIW "ÒÑ±»$N" HIW "Òõº®ÕÆ¾¢·÷ÖÐÒª"
-               "º¦£¬²»ÓÉµÃ»ëÉíÒ»²ü£¬ÄÑÊÜÖ®¼«¡£\n" NOR;
+                msg +=HIW "éœŽé‚£é—´$n" HIW "å·²è¢«$N" HIW "é˜´å¯’æŽŒåŠ²æ‹‚ä¸­è¦"
+               "å®³ï¼Œä¸ç”±å¾—æµ‘èº«ä¸€é¢¤ï¼Œéš¾å—ä¹‹æžã€‚\n" NOR;
 
         } else
         {
-                msg += CYN "$n" CYN "¼û$N" CYN "ÕÆ³öÈç·ç£¬ÐÄÖª"
-                       "´ËÕÐºó×Å¼«ÊÇÁèÀ÷£¬µ±¼´Ð±ÌøÉÁ¿ª¡£\n" NOR;
+                msg += CYN "$n" CYN "è§$N" CYN "æŽŒå‡ºå¦‚é£Žï¼Œå¿ƒçŸ¥"
+                       "æ­¤æ‹›åŽç€æžæ˜¯å‡ŒåŽ‰ï¼Œå½“å³æ–œè·³é—ªå¼€ã€‚\n" NOR;
         }
 
-        msg += HIR "\n½ô½Ó×Å$N" HIR "ÓÒÕÆÒ»Õñ£¬ÕÆ·ç¹ý´¦£¬¾¹Ï¯"
-               "¾íÆðÒ»¹ÉÈÈÀË£¬Ïò$n" HIR "ÐØÇ°ÃÍÈ»ÅÄÂä¡£\n" NOR;  
+        msg += HIR "\nç´§æŽ¥ç€$N" HIR "å³æŽŒä¸€æŒ¯ï¼ŒæŽŒé£Žè¿‡å¤„ï¼Œç«Ÿå¸­"
+               "å·èµ·ä¸€è‚¡çƒ­æµªï¼Œå‘$n" HIR "èƒ¸å‰çŒ›ç„¶æ‹è½ã€‚\n" NOR;  
 
         if (ap / 2 + random(ap) > dd)
         {
@@ -74,12 +74,12 @@ target->apply_condition("tiezhang_yin",50);
                          target->add("qi",-damage);
 		target->add("eff_qi",-damage);
 target->apply_condition("tiezhang_yang",50);
-                msg +=HIR "Ö»ÌýàÍµÄÒ»Éù£¬$N" HIR "ÓÒÕÆÈç»÷°Ü¸ï£¬ÕýÖÐ"
-               "$n" HIR "ÐØ¿Ú£¬Õð¶ÏÁËÊý¸ùÀß¹Ç¡£\n" NOR;
+                msg +=HIR "åªå¬å—¤çš„ä¸€å£°ï¼Œ$N" HIR "å³æŽŒå¦‚å‡»è´¥é©ï¼Œæ­£ä¸­"
+               "$n" HIR "èƒ¸å£ï¼Œéœ‡æ–­äº†æ•°æ ¹è‚‹éª¨ã€‚\n" NOR;
         } else
         {
-                msg += CYN "$n" CYN "ºöÎÅºôÐ¥Éù´óÖÁ£¬ÑÛ¼û$N" CYN
-                       "ÕÆÊÆÈçºç£¬¼±Ã¦×ÝÔ¾¶ã±Ü¿ªÀ´¡£\n" NOR;
+                msg += CYN "$n" CYN "å¿½é—»å‘¼å•¸å£°å¤§è‡³ï¼Œçœ¼è§$N" CYN
+                       "æŽŒåŠ¿å¦‚è™¹ï¼Œæ€¥å¿™çºµè·ƒèº²é¿å¼€æ¥ã€‚\n" NOR;
         }
         me->start_busy(3);
         me->add("neili", -400);

@@ -8,22 +8,22 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	extra = me->query_skill("meng-steps",1);
-	if ( extra < 50) return notify_fail("ÄãµÄ£Û»ÃÃÎ²½·¨£Ý»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 50) return notify_fail("ä½ çš„ï¼»å¹»æ¢¦æ­¥æ³•ï¼½è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û»ÃÓ°Ç§ÖØ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å¹»å½±åƒé‡ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if(target->is_busy())
-		return notify_fail(target->name()+"ÒÑ¾­ÊÖÃ¦½ÅÂÒÁË£¡\n");
-	message_vision( HIR "$NµÄÉíÓ°Í»È»Ò»±äÊ®¡¢Ê®±ä°Ù¡¢°Ù±äÇ§£¬$nÔç±»$NµÄÇ§ÖØ»ÃÓ°Î§×¡£¡\n" NOR ,me,target);
+		return notify_fail(target->name()+"å·²ç»æ‰‹å¿™è„šä¹±äº†ï¼\n");
+	message_vision( HIR "$Nçš„èº«å½±çªç„¶ä¸€å˜åã€åå˜ç™¾ã€ç™¾å˜åƒï¼Œ$næ—©è¢«$Nçš„åƒé‡å¹»å½±å›´ä½ï¼\n" NOR ,me,target);
 	if(random((int)me->query("combat_exp"))+(int)me->query("combat_exp")/4 > (int)target->query("combat_exp")/2)
 	{
-	message_vision(HIW "½á¹û$NÄ¿Ñ£Éñ³Ú£¬ÐÄ¾ªÈâÌø£¡\n"NOR,target);
+	message_vision(HIW "ç»“æžœ$Nç›®çœ©ç¥žå¼›ï¼Œå¿ƒæƒŠè‚‰è·³ï¼\n"NOR,target);
 	target->start_busy(3);
 	}
 	else{
-	message_vision("½á¹û$N²¢²»»ÅÕÅ£¡\n",target);
+	message_vision("ç»“æžœ$Nå¹¶ä¸æ…Œå¼ ï¼\n",target);
 	me->start_busy(2);
 	}
 	return 1;

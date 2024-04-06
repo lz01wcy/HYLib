@@ -1,4 +1,4 @@
-// guxu.c ¹ÈĞé
+// guxu.c è°·è™š
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-	set_name("¹ÈĞéµÀ³¤", ({ "guxu daozhang", "guxu" }));
+	set_name("è°·è™šé“é•¿", ({ "guxu daozhang", "guxu" }));
 	set("long", 
-		"Ëû¾ÍÊÇÓáÁ«ÖÛµÄµÜ×Ó¹ÈĞéµÀ³¤¡£\n"
-		"Ëû½ñÄêËÄÊ®Ëê£¬Ö÷¹ÜÎäµ±ÅÉµÄË×ÊÂ¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–å°±æ˜¯ä¿è²èˆŸçš„å¼Ÿå­è°·è™šé“é•¿ã€‚\n"
+		"ä»–ä»Šå¹´å››åå²ï¼Œä¸»ç®¡æ­¦å½“æ´¾çš„ä¿—äº‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 40);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -47,12 +47,12 @@ void create()
 	map_skill("parry", "taiji-jian");
 	map_skill("sword", "taiji-jian");
 
-	create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+	create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
 	set("class", "taoist");
 
 	set("inquiry", 
 		([
-			"µÀµÂ¾­" : (: ask_me :),
+			"é“å¾·ç»" : (: ask_me :),
 		]));
                                 
 	set("book_count", 1);
@@ -65,16 +65,16 @@ void attempt_apprentice(object ob)
 {
 //        if ((int)ob->query("guarded") < 1) {
 //                command("say " + RANK_D->query_respect(ob) +
-//                        "Äã¶ÔÎÒÎäµ±ÅÉ¾¡ÁË¶àÉÙĞÄÁ¦£¬ÓĞ¼¸·ÖÖÒĞÄÄØ£¿");
+//                        "ä½ å¯¹æˆ‘æ­¦å½“æ´¾å°½äº†å¤šå°‘å¿ƒåŠ›ï¼Œæœ‰å‡ åˆ†å¿ å¿ƒå‘¢ï¼Ÿ");
 //                return;
 //        }
 	if ((int)ob->query("shen") < 0) {
-		command("say ÎÒÎäµ±ÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-		command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+		command("say æˆ‘æ­¦å½“ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æä¸¥ã€‚");
+		command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
 		return;
 	}
-	command("say ºÃ°É£¬Æ¶µÀ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œè´«é“å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 }
 
@@ -84,13 +84,13 @@ string ask_me()
         object ob;
 
         if (!(fam = this_player()->query("family")) 
-	    || fam["family_name"] != "Îäµ±ÅÉ")
+	    || fam["family_name"] != "æ­¦å½“æ´¾")
                 return RANK_D->query_respect(this_player()) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄµÀµÂÕæ¾­²»ÔÚ´Ë´¦¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œæœ¬æ´¾çš„é“å¾·çœŸç»ä¸åœ¨æ­¤å¤„ã€‚";
         add("book_count", -1);
         ob = new("/clone/book/daodejing-ii");
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾¡¸µÀµÂ¾­¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+        return "å¥½å§ï¼Œè¿™æœ¬ã€Œé“å¾·ç»ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
 }

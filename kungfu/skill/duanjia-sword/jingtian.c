@@ -1,4 +1,4 @@
-// duanjia-sword.c  ¶Î¼Ò½£ ¾ªÌìÒ»»÷
+// duanjia-sword.c  æ®µå®¶å‰‘ æƒŠå¤©ä¸€å‡»
 
 #include <ansi.h>
 
@@ -12,22 +12,22 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("¡¸¾ªÌìÒ»»÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€ŒæƒŠå¤©ä¸€å‡»ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 		
 	if( (int)me->query_skill("duanjia-sword", 1) < 70 )
-		return notify_fail("ÄãµÄ¶Î¼Ò½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡£\n");
+		return notify_fail("ä½ çš„æ®µå®¶å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€‚\n");
 	                        
 	if( (int)me->query_skill("kurong-changong", 1) < 70 )
-		return notify_fail("ÄãµÄ¿ÝÈÙìø¹¦ÐÞÎª²»¹»¸ß¡£\n");
+		return notify_fail("ä½ çš„æž¯è£ç¦…åŠŸä¿®ä¸ºä¸å¤Ÿé«˜ã€‚\n");
 			
 	if( (int)me->query("neili") < 300 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸¾ªÌìÒ»»÷¡¹¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€ŒæƒŠå¤©ä¸€å‡»ã€ã€‚\n");
 			
-        msg = HIM "$NÒ»Ô¾¶øÆð"NOR"£¬"HIM"ÊÖÍóÒ»¶¶"NOR"£¬"HIM"Íì³öÒ»¸ö"YEL"ÃÀÀö"HIM"µÄ½£»¨"NOR"£¬"HIM"·ÉÏò$n"NOR"¡£\n"NOR;
+        msg = HIM "$Nä¸€è·ƒè€Œèµ·"NOR"ï¼Œ"HIM"æ‰‹è…•ä¸€æŠ–"NOR"ï¼Œ"HIM"æŒ½å‡ºä¸€ä¸ª"YEL"ç¾Žä¸½"HIM"çš„å‰‘èŠ±"NOR"ï¼Œ"HIM"é£žå‘$n"NOR"ã€‚\n"NOR;
 
 	if (random(me->query_skill("force")) > target->query_skill("force")/4 )
 	{
@@ -39,14 +39,14 @@ int perform(object me, object target)
 		target->receive_damage("qi", damage);
 		target->receive_wound("qi", damage/2);
 		me->add("neili", -300);
-                msg += HIW"Ö»¼û$NÈË½£ºÏÒ»"NOR"£¬"HIW"´©Ïò$n"NOR","HIW"$nÖ»¾õÒ»¹ÉÈÈÁ÷´©"HIR"ÐÄ"HIW"¶ø¹ý"NOR"£¬"HIW"ºíÍ·Ò»Ìð"NOR"£¬"HIR"ÏÊÑª"HIW"¿ñÅç¶ø³ö£¡\n"NOR;;
+                msg += HIW"åªè§$Näººå‰‘åˆä¸€"NOR"ï¼Œ"HIW"ç©¿å‘$n"NOR","HIW"$nåªè§‰ä¸€è‚¡çƒ­æµç©¿"HIR"å¿ƒ"HIW"è€Œè¿‡"NOR"ï¼Œ"HIW"å–‰å¤´ä¸€ç”œ"NOR"ï¼Œ"HIR"é²œè¡€"HIW"ç‹‚å–·è€Œå‡ºï¼\n"NOR;;
                 me->start_busy(1);
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
 
 	} else 
 	{
-		msg += NOR"¿ÉÊÇ$nÃÍµØÏò±ßÉÏÒ»Ô¾,Ìø³öÁË$NµÄ¹¥»÷·¶Î§¡£\n"NOR;
+		msg += NOR"å¯æ˜¯$nçŒ›åœ°å‘è¾¹ä¸Šä¸€è·ƒ,è·³å‡ºäº†$Nçš„æ”»å‡»èŒƒå›´ã€‚\n"NOR;
 		me->add("neili", -100);
                 me->start_busy(1);
 		message_combatd(msg, me, target);

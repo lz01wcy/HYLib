@@ -11,35 +11,35 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ö»ÓÐÔÚ´ò¶·ÖÐ²ÅÄÜÊ¹ÓÃ!\n");
+                return notify_fail("åªæœ‰åœ¨æ‰“æ–—ä¸­æ‰èƒ½ä½¿ç”¨!\n");
 
 
 
         if((int)me->query_skill("bingxue-xinfa",1) < 100)
-                return notify_fail(HIY "ÄãµÄ±ùÑ©ÐÄ·¨ÐÞÎª²»¹»¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n" NOR);
 
          if((int)me->query_skill("snowstep",1) < 100)
-                return notify_fail(HIY "ÄãµÄÃ·Ñ©Æ®Ïã²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„æ¢…é›ªé£˜é¦™ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
 
-        if( me->query("gender") == "ÄÐÐÔ")
+        if( me->query("gender") == "ç”·æ€§")
                {msg = HIW
-"$NÈçÁøÐõ°ãÇáÇáÆ®Æð¡£ËÄÃæ°Ë·½¶¼ÊÇ$NµÄÓ°×Ó,ÐéÐéÊµÊµ,²»ÖªÄÄ¸ö²ÅÊÇÕæµÄ¡£\n" NOR;}
+"$Nå¦‚æŸ³çµ®èˆ¬è½»è½»é£˜èµ·ã€‚å››é¢å…«æ–¹éƒ½æ˜¯$Nçš„å½±å­,è™šè™šå®žå®ž,ä¸çŸ¥å“ªä¸ªæ‰æ˜¯çœŸçš„ã€‚\n" NOR;}
         else   {msg = HIY 
-"$NÈçÁøÐõ°ãÇáÇáÆ®Æð¡£ËÄÃæ°Ë·½¶¼ÊÇ$NµÄÓ°×Ó,ÐéÐéÊµÊµ,²»ÖªÄÄ¸ö²ÅÊÇÕæµÄ¡£\n" NOR;}
+"$Nå¦‚æŸ³çµ®èˆ¬è½»è½»é£˜èµ·ã€‚å››é¢å…«æ–¹éƒ½æ˜¯$Nçš„å½±å­,è™šè™šå®žå®ž,ä¸çŸ¥å“ªä¸ªæ‰æ˜¯çœŸçš„ã€‚\n" NOR;}
 
         if( (random(me->query("combat_exp"))+(int)me->query_skill("snowstep",1)*800) > (int)target->query("combat_exp")/2 ) {
-                msg += HIR "½á¹û$p±»$PµÄ¶¯×÷ÏÅµÃÄ¿µÉ¿Ú´ô£¡\n" NOR;
+                msg += HIR "ç»“æžœ$pè¢«$Pçš„åŠ¨ä½œå“å¾—ç›®çžªå£å‘†ï¼\n" NOR;
 target->start_busy( (int)me->query_skill("snowstep",1) / 50+2);
 //                target->start_busy(6);
                 me->add("neili", -100);
                        } else {
-                msg +=  "$pÖ»ÊÇÃãÇ¿µÄÌÓÁË¿ªÈ¥¡£\n";
+                msg +=  "$påªæ˜¯å‹‰å¼ºçš„é€ƒäº†å¼€åŽ»ã€‚\n";
                 me->add("neili", -100);
                 me->start_busy(2);
         }

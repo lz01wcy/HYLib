@@ -13,26 +13,26 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("³ªÏÉ·¨Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("å”±ä»™æ³•åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("shedao-qigong", 1) < 100 )
-		return notify_fail("ÄãµÄÉßµºÆæ¹¦²»¹»æµÊì£¬²»»áÊ¹ÓÃ³ªÏÉ·¨¡£\n");
+		return notify_fail("ä½ çš„è›‡å²›å¥‡åŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨å”±ä»™æ³•ã€‚\n");
 
 	if ((int)me->query_skill("shenlong-xinfa",1) < 10)
-		return notify_fail("ÄãµÄÉñÁúÐÄ·¨»ðºò²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç¥žé¾™å¿ƒæ³•ç«å€™ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 300 )
-		return notify_fail("ÄãÒÑ¾­³ªµÃ¾«Æ£Á¦½ß,ÄÚÁ¦²»¹»ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»å”±å¾—ç²¾ç–²åŠ›ç«­,å†…åŠ›ä¸å¤Ÿäº†ã€‚\n");
 
 	if( (int)me->query_temp("chang") > 4 )
-		return notify_fail("ÄãÒÑ¾­³ªµÃÌ«¾ÃÁË,²»ÄÜÔÙ³ªÁË¡£\n");
+		return notify_fail("ä½ å·²ç»å”±å¾—å¤ªä¹…äº†,ä¸èƒ½å†å”±äº†ã€‚\n");
 
 	skill = me->query_skill("force");
 
 	me->add("neili", -200);
 
 	message_combatd(
-        HIR "Ö»Ìý$N¿ÚÖÐÄîÄîÓÐ´Ê£¬Çê¿ÌÖ®¼äÎä¹¦´ó½ø£¡\n" NOR, me);
+        HIR "åªå¬$Nå£ä¸­å¿µå¿µæœ‰è¯ï¼Œé¡·åˆ»ä¹‹é—´æ­¦åŠŸå¤§è¿›ï¼\n" NOR, me);
 
 	me->add_temp("apply/attack", 20);
 	me->add_temp("apply/dodge", 20);

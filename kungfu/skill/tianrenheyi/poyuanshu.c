@@ -1,4 +1,4 @@
-// holywordÆÆÔªÊõ
+// holywordç ´å…ƒæœ¯
 
 #include <ansi.h>
 
@@ -14,21 +14,21 @@ int thunderspell(object me, object target)
         int damagic;
 
 	if((int)me->query("neili")< 1100)
-	return notify_fail("ÄãµÄÄÚÁ¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„å†…åŠ›å¤ªå·®äº†ï¼\n");
 
-        msg = HIC"$NºßÈ»ÀäĞ¦£¬Ò»¹ÉĞı·ç½«$nµÄÕĞÊıÈ«²¿»¯½â! \n"NOR;
+        msg = HIC"$Nå“¼ç„¶å†·ç¬‘ï¼Œä¸€è‚¡æ—‹é£å°†$nçš„æ‹›æ•°å…¨éƒ¨åŒ–è§£! \n"NOR;
 
         if ( userp(target) || random(me->query("combat_exp"))>(int)target->query("combat_exp"))
         {
 
-       msg += HIC"$nµÄÄÚÁ¦ÓĞÈçÊ¯³Á´óº£!ÍêÈ«ÏûÊ§ÁË! \n"NOR;
+       msg += HIC"$nçš„å†…åŠ›æœ‰å¦‚çŸ³æ²‰å¤§æµ·!å®Œå…¨æ¶ˆå¤±äº†! \n"NOR;
                 if (!target->is_busy())
                 target->start_busy(2);
                 target->set("neili",10);
 		message_combatd(msg, me, target);
         } else
         {
-        msg += HIC"$n"HIC"Ë«Ä¿Ò»ÉÁ£¬Ê¶ÆÆÁËÄãµÄÆÆÔªÊõ!\n"NOR;
+        msg += HIC"$n"HIC"åŒç›®ä¸€é—ªï¼Œè¯†ç ´äº†ä½ çš„ç ´å…ƒæœ¯!\n"NOR;
 		message_combatd(msg, me, target);
         }
 me->add("neili",-150);
@@ -44,22 +44,22 @@ int perform(object me, object target)
 	int	i;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIY"¡¸ÆÆÔªÊõ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIY"ã€Œç ´å…ƒæœ¯ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
 //      if( !me->query("zhuanbest",1))
-//        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+//        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
        if( me->query_condition("tianrenheyi"))
-        return notify_fail("ÄãµÄÄîÁ¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„å¿µåŠ›ä¸è¶³ï¼\n");
 
        if( !me->query("4zhuan") && !me->query("5zhuan"))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
        if( me->query("zhuanfinal/5") !=1 )
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
-	msg = HIR "$N"HIR"È«Éí¹Ç½Ú±¬Ïì£¬Ë«±Û±©³¤Êı³ß£¬ÕÆÔµÃÍµØÏò$nµÄÌìÁéÅÄÁËÏÂÈ¥£¡\n" NOR;
-       msg += HIR"$N"HIR"Éí·¨¶¸È»¼Ó¿ì£¬ÓÒÕÆÖ±³ö£¬ÃÍµØ¶Ô×¼$nµÄëşÖĞ´óÑ¨°´ÁËÉÏÈ¥\n"NOR;
+	msg = HIR "$N"HIR"å…¨èº«éª¨èŠ‚çˆ†å“ï¼ŒåŒè‡‚æš´é•¿æ•°å°ºï¼ŒæŒç¼˜çŒ›åœ°å‘$nçš„å¤©çµæ‹äº†ä¸‹å»ï¼\n" NOR;
+       msg += HIR"$N"HIR"èº«æ³•é™¡ç„¶åŠ å¿«ï¼Œå³æŒç›´å‡ºï¼ŒçŒ›åœ°å¯¹å‡†$nçš„è†»ä¸­å¤§ç©´æŒ‰äº†ä¸Šå»\n"NOR;
 	message_vision(msg, me,target);
 	env = environment(me);
         inv = all_inventory(env);

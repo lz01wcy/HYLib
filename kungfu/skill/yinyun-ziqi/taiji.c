@@ -1,4 +1,4 @@
-// Ì«¼«È­PFM
+// å¤ªææ‹³PFM
 // snowman
 #include <ansi.h>
 
@@ -7,34 +7,34 @@ int remove_effect(object me);
 int exert(object me)
 {
         if( !me->is_fighting() || !living(me))
-                return notify_fail("¡¸Ì«¼«¡¹Ö»ÄÜÔÚÕ½¶·ÖĞµÄÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¤ªæã€åªèƒ½åœ¨æˆ˜æ–—ä¸­çš„ä½¿ç”¨ã€‚\n");
 
         if(objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÔËÓÃ¡¸Ì«¼«¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½è¿ç”¨ã€Œå¤ªæã€ï¼\n");
         if(me->query_temp("taiji"))        
-                return notify_fail("¡¸Ì«¼«¡¹Ö®ÒâÃàÃà²»¾ø£¬ÄãÒÑ¾­ÔÚ·¢»ÓËüµÄÍşÁ¦ÁË¡£\n");  
+                return notify_fail("ã€Œå¤ªæã€ä¹‹æ„ç»µç»µä¸ç»ï¼Œä½ å·²ç»åœ¨å‘æŒ¥å®ƒçš„å¨åŠ›äº†ã€‚\n");  
         if((int)me->query_skill("taiji-quan", 1) < 100 )
-                return notify_fail("ÄãµÄÌ«¼«È­²»¹»æµÊì£¬»¹²»ÄÜÁì»á¡¸Ì«¼«¡¹Ö®¾÷ÇÏ¡£\n");
+                return notify_fail("ä½ çš„å¤ªææ‹³ä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜ä¸èƒ½é¢†ä¼šã€Œå¤ªæã€ä¹‹è¯€çªã€‚\n");
         if (me->query_skill_prepared("cuff") != "taiji-quan"
            || me->query_skill_mapped("cuff") != "taiji-quan")
-                return notify_fail("Äã±ØĞëÊ¹ÓÃÌ«¼«È­À´Ê©Õ¹¡¸Ì«¼«¡¹¡£\n");   
+                return notify_fail("ä½ å¿…é¡»ä½¿ç”¨å¤ªææ‹³æ¥æ–½å±•ã€Œå¤ªæã€ã€‚\n");   
         if( (int)me->query("max_neili", 1) < 1200 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÌ«Èõ£¬·¢»Ó²»³ö¡¸Ì«¼«¡¹µÄÓÅÊÆ¡£\n");                
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºå¤ªå¼±ï¼Œå‘æŒ¥ä¸å‡ºã€Œå¤ªæã€çš„ä¼˜åŠ¿ã€‚\n");                
         if( (int)me->query("neili", 1) < 500 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬·¢»Ó²»³ö¡¸Ì«¼«¡¹µÄÍşÁ¦¡£\n");
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œå‘æŒ¥ä¸å‡ºã€Œå¤ªæã€çš„å¨åŠ›ã€‚\n");
         if(userp(me) && (int)me->query_skill("yinyun-ziqi", 1) < 100 )
-                return notify_fail("ÄãµÄë³ëµ×ÏÆøµÈ¼¶²»¹»¸ß£¬·¢»Ó²»³ö¡¸Ì«¼«¡¹µÄÍşÁ¦¡£\n");
+                return notify_fail("ä½ çš„æ°¤æ°²ç´«æ°”ç­‰çº§ä¸å¤Ÿé«˜ï¼Œå‘æŒ¥ä¸å‡ºã€Œå¤ªæã€çš„å¨åŠ›ã€‚\n");
         if(userp(me) && (int)me->query_skill("taoism", 1) < 100 )
-                return notify_fail("Äã¶ÔµÀÑ§ĞÄ·¨µÄÁìÎò²»¹»£¬·¢»Ó²»³ö¡¸Ì«¼«¡¹ÄÇÔ²×ª²»¶ÏµÄÕæÒâ¡£\n");
+                return notify_fail("ä½ å¯¹é“å­¦å¿ƒæ³•çš„é¢†æ‚Ÿä¸å¤Ÿï¼Œå‘æŒ¥ä¸å‡ºã€Œå¤ªæã€é‚£åœ†è½¬ä¸æ–­çš„çœŸæ„ã€‚\n");
         if(userp(me) && me->query_skill_mapped("force") != "yinyun-ziqi")
-                return notify_fail("ÄãµÄÄÚ¹¦²»¶Ô£¬¸ù±¾²»ÄÜ·¢»Ó³ö¡¸Ì«¼«¡¹µÄÓÅÊÆ¡£\n");                                                                                     
+                return notify_fail("ä½ çš„å†…åŠŸä¸å¯¹ï¼Œæ ¹æœ¬ä¸èƒ½å‘æŒ¥å‡ºã€Œå¤ªæã€çš„ä¼˜åŠ¿ã€‚\n");                                                                                     
         if (userp(me) && me->query_skill_mapped("parry") != "taiji-quan")
-                return notify_fail("Ì«¼«È­µÄ¡¸Ì«¼«¡¹¾÷ÇÏ±ØĞëÔÚ¼¤·¢ÕĞ¼ÜµÄÇé¿öÏÂ²ÅÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤ªææ‹³çš„ã€Œå¤ªæã€è¯€çªå¿…é¡»åœ¨æ¿€å‘æ‹›æ¶çš„æƒ…å†µä¸‹æ‰èƒ½ä½¿ç”¨ã€‚\n");
         if(me->query("jiali"))
-                return notify_fail("¡¸Ì«¼«¡¹½²¾¿ÓÃÒâ²»ÓÃÁ¦£¬Ì«¼«Ô²×ª£¬ÎŞÊ¹¶Ï¾ø¡£ÄãÈç´ËÓÃÁ¦£¬ÊÇÎŞ·¨·¢»Ó³öËüµÄÍşÁ¦µÄ¡£\n");
-        message_vision("$N»º»ºÒÆ¶¯£¬Ë«ÊÖÏÂ´¹£¬ÊÖ±³ÏòÍâ£¬ÊÖÖ¸Î¢Êæ£¬Á½×ã·Ö¿ªÆ½ĞĞ£¬½Ó×ÅÁ½±ÛÂıÂıÌáÆğÖÁĞØÇ°£¬×ó±Û°ë»·£¬
-ÕÆÓëÃæ¶Ô³ÉÒõÕÆ£¬ÓÒÕÆ·­¹ı³ÉÑôÕÆ£¬µ«¼û$PË«ÊÖÔ²×ª£¬Ã¿Ò»ÕĞ¶¼º¬×ÅÌ«¼«Ê½µÄÒõÑô±ä»¯£¬¾«Î¢°ÂÃî£¡\n",me);
-        tell_object(me, CYN"\nÄãÄ¬ÔËÉñ¹¦£¬Ë«ÊÖ×ÔÈ»»Ó¶¯£¬ÓëÍòÎïºÏÒ»£¬½«Ì«¼«È­"RED"¡¸È­Òâ¡¹"CYN"·¢»ÓµÃÁÜÀì¾¡ÖÂ£¡\n\n"NOR);
+                return notify_fail("ã€Œå¤ªæã€è®²ç©¶ç”¨æ„ä¸ç”¨åŠ›ï¼Œå¤ªæåœ†è½¬ï¼Œæ— ä½¿æ–­ç»ã€‚ä½ å¦‚æ­¤ç”¨åŠ›ï¼Œæ˜¯æ— æ³•å‘æŒ¥å‡ºå®ƒçš„å¨åŠ›çš„ã€‚\n");
+        message_vision("$Nç¼“ç¼“ç§»åŠ¨ï¼ŒåŒæ‰‹ä¸‹å‚ï¼Œæ‰‹èƒŒå‘å¤–ï¼Œæ‰‹æŒ‡å¾®èˆ’ï¼Œä¸¤è¶³åˆ†å¼€å¹³è¡Œï¼Œæ¥ç€ä¸¤è‡‚æ…¢æ…¢æèµ·è‡³èƒ¸å‰ï¼Œå·¦è‡‚åŠç¯ï¼Œ
+æŒä¸é¢å¯¹æˆé˜´æŒï¼Œå³æŒç¿»è¿‡æˆé˜³æŒï¼Œä½†è§$PåŒæ‰‹åœ†è½¬ï¼Œæ¯ä¸€æ‹›éƒ½å«ç€å¤ªæå¼çš„é˜´é˜³å˜åŒ–ï¼Œç²¾å¾®å¥¥å¦™ï¼\n",me);
+        tell_object(me, CYN"\nä½ é»˜è¿ç¥åŠŸï¼ŒåŒæ‰‹è‡ªç„¶æŒ¥åŠ¨ï¼Œä¸ä¸‡ç‰©åˆä¸€ï¼Œå°†å¤ªææ‹³"RED"ã€Œæ‹³æ„ã€"CYN"å‘æŒ¥å¾—æ·‹æ¼“å°½è‡´ï¼\n\n"NOR);
         me->start_busy(1);
         me->set_temp("taiji", 1);
         me->add_temp("apply/parry", me->query_skill("taiji-quan", 1)/3);
@@ -72,7 +72,7 @@ int check_fight(object me)
         else if (userp(me) && (me->query_skill_mapped("cuff") != "taiji-quan" 
                 || me->query_skill_mapped("parry") != "taiji-quan"
                 || me->query_temp("weapon"))){
-                  message_vision(HIY"$NÊ¹ÍêÒ»Ê½Ì«¼«È­£¬Í»È»±äÕĞ£¬¾¹È»ÊÇÍêÈ«²»Í¬µÄÕĞÊı£¡\n"NOR,me);
+                  message_vision(HIY"$Nä½¿å®Œä¸€å¼å¤ªææ‹³ï¼Œçªç„¶å˜æ‹›ï¼Œç«Ÿç„¶æ˜¯å®Œå…¨ä¸åŒçš„æ‹›æ•°ï¼\n"NOR,me);
                   me->start_busy(1);
                   me->add_temp("apply/parry", -me->query_skill("taiji-quan", 1)/3);
                   me->delete_temp("taiji");
@@ -86,7 +86,7 @@ int remove_effect(object me)
 {
    string msg;
    msg = "/kungfu/skill/taiji-quan"->query_skill_name(me->query_skill("taiji-quan", 1));
-   message_vision(CYN "\n$NÊ¹µ½"+msg+"¶øºÏÌ«¼«£¬Ë«ÊÖ±§ÁË¸öÌ«¼«Ê½µÄÔ²È¦£¬Éñ¶¨ÆøÏĞµÄÕ¾ÔÚµ±µØ¡£\n\n"NOR, me);
+   message_vision(CYN "\n$Nä½¿åˆ°"+msg+"è€Œåˆå¤ªæï¼ŒåŒæ‰‹æŠ±äº†ä¸ªå¤ªæå¼çš„åœ†åœˆï¼Œç¥å®šæ°”é—²çš„ç«™åœ¨å½“åœ°ã€‚\n\n"NOR, me);
    me->add_temp("apply/parry", -me->query_skill("taiji-quan", 1)/3);
    me->delete_temp("taiji");
    me->delete_temp("stopped");

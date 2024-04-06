@@ -7,12 +7,12 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration) {
     if (duration < 1) return 0;
     if (!living(me)) {
-        message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+        message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
     } else {
         tell_object(me, HIB
-        "ºöÈ»Ò»Õó´Ì¹ÇµÄÆæº®Ï®À´£¬ÄãÖÐµÄÐÇËÞÕÆ¶¾·¢×÷ÁË£¡\n"
+        "å¿½ç„¶ä¸€é˜µåˆºéª¨çš„å¥‡å¯’è¢­æ¥ï¼Œä½ ä¸­çš„æ˜Ÿå®¿æŽŒæ¯’å‘ä½œäº†ï¼\n"
         NOR );
-        message("vision", me->name() + "µÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬ÑÀ¹Ø¸ñ¸ñµØÏìÁËÆðÀ´¡£\n",
+        message("vision", me->name() + "çš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œç‰™å…³æ ¼æ ¼åœ°å“äº†èµ·æ¥ã€‚\n",
                 environment(me), me);
     }
     me->receive_wound("qi", 25 + random(10));

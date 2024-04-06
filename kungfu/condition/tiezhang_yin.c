@@ -6,17 +6,17 @@ inherit F_CLEAN_UP;
 
 string name() { return "tiezhang_yin"; }
 
-string chinese_name() { return "ÌúÕÆÒõº®¾¢"; }
+string chinese_name() { return "é“æŒé˜´å¯’åŠ²"; }
 
 
 int update_condition(object me, int duration) {
     if (duration < 1) return 0;
 
     message("vision", me->name() + HIB
-    "ÃæÉ«²Ò°×£¬×ìÆ¤ÎÚ×Ï£¬Àä²»¶¡´òÁËÒ»¸öº®Õ½¡£\n"
+    "é¢è‰²æƒ¨ç™½ï¼Œå˜´çš®ä¹Œç´«ï¼Œå†·ä¸ä¸æ‰“äº†ä¸€ä¸ªå¯’æˆ˜ã€‚\n"
     NOR, environment(me), me);
     tell_object(me, HIB
-    "Äã¸Ğµ½ĞØ¿Ú´¦´«À´ÕóÕó´ÌÍ´£¬È«ÉíÑªÒº¾¹ËÆÒªÄı½á×¡Ò»°ã\n"
+    "ä½ æ„Ÿåˆ°èƒ¸å£å¤„ä¼ æ¥é˜µé˜µåˆºç—›ï¼Œå…¨èº«è¡€æ¶²ç«Ÿä¼¼è¦å‡ç»“ä½ä¸€èˆ¬\n"
     NOR );
     me->add("qi", -me->query("qi") / 7);
     if (!me->is_busy())

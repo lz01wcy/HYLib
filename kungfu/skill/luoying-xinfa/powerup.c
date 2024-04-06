@@ -11,12 +11,12 @@ int exert(object me, object target)
     int skill;
 
     if( target != me ) return
-notify_fail("你只能用落英心法提升自己的战斗力。\n");
+notify_fail("浣犲彧鑳界敤钀借嫳蹇冩硶鎻愬崌鑷繁鐨勬垬鏂楀姏銆俓n");
 
     if( (int)me->query("neili") < 100 ) return
-notify_fail("你的内力不够。\n");
+notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
     if( (int)me->query_temp("powerup") ) return
-notify_fail("你已经在运功中了。\n");
+notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
     skill = me->query_skill("force");
 
@@ -25,7 +25,7 @@ notify_fail("你已经在运功中了。\n");
     me->receive_damage("qi",0)
       ;
 
-    message_vision( HIC "$N微一凝神，运起落英心法，全身衣裳烈烈做响，眼中精光四射，很是摄人。\n" NOR, me );
+    message_vision( HIC "$N寰竴鍑濈锛岃繍璧疯惤鑻卞績娉曪紝鍏ㄨ韩琛ｈ３鐑堢儓鍋氬搷锛岀溂涓簿鍏夊洓灏勶紝寰堟槸鎽勪汉銆俓n" NOR, me );
 
 
     me->add_temp("apply/attack", skill/3);
@@ -47,6 +47,6 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/attack", -skill/3);
    me->add_temp("apply/dodge", -skill/3);
     me->delete_temp("powerup");
-    tell_object(me, "你的落英心法运行完毕，将内力收回丹田。\n");
+    tell_object(me, "浣犵殑钀借嫳蹇冩硶杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }
 

@@ -1,4 +1,4 @@
-// duo.c Ê¥»ğÁî·¨¡¸ÎüÑæ¡¹Áî
+// duo.c åœ£ç«ä»¤æ³•ã€Œå¸ç„°ã€ä»¤
 
 #include <ansi.h>
 
@@ -16,26 +16,26 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ê¥»ğÁî·¨¡¸ÎüÑæ¡¹ÁîÖ»ÓĞÔÚÕ½¶·ÖĞÊ©ÓÃ¡£\n");
+		return notify_fail("åœ£ç«ä»¤æ³•ã€Œå¸ç„°ã€ä»¤åªæœ‰åœ¨æˆ˜æ–—ä¸­æ–½ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if (!objectp(weapon = target->query_temp("weapon")))
-		return notify_fail("¶Ô·½ÊÖÖĞÃ»ÓĞÎäÆ÷£¬ÄãÊ¹³öÕâÕĞ¡¸ÎüÑæÁî¡¹ºó×Ô¾õÏó¸öÉµ¹Ï¡£\n");
+		return notify_fail("å¯¹æ–¹æ‰‹ä¸­æ²¡æœ‰æ­¦å™¨ï¼Œä½ ä½¿å‡ºè¿™æ‹›ã€Œå¸ç„°ä»¤ã€åè‡ªè§‰è±¡ä¸ªå‚»ç“œã€‚\n");
 
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 		
 	if( (int)me->query_skill("shenghuo-ling", 1) < 50 )
-		return notify_fail("ÄãµÄÊ¥»ğÁî·¨²»¹»æµÊì£¬Ê¹²»³ö¡¸ÎüÑæ¡¹Áî¡£\n");
+		return notify_fail("ä½ çš„åœ£ç«ä»¤æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œå¸ç„°ã€ä»¤ã€‚\n");
 
 	if (me->query("neili")<100)
-		return notify_fail("ÄãÕæÆø²»×ã¡£\n");
+		return notify_fail("ä½ çœŸæ°”ä¸è¶³ã€‚\n");
 
-	msg = HIY"$NÊ¹³öÊ¥»ğÁî·¨¡¸ÎüÑæ¡¹Áî£¬Á¬µİÊı¸ö¹í÷È°ãµÄÕĞÊ½Ïò$nµÄÊÖÍó²øÈÆ¡£\n"NOR;
+	msg = HIY"$Nä½¿å‡ºåœ£ç«ä»¤æ³•ã€Œå¸ç„°ã€ä»¤ï¼Œè¿é€’æ•°ä¸ªé¬¼é­…èˆ¬çš„æ‹›å¼å‘$nçš„æ‰‹è…•ç¼ ç»•ã€‚\n"NOR;
 
 	me->start_busy(1);
 
@@ -46,16 +46,16 @@ int perform(object me, object target)
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/iDuo ) {
 
-		msg += HIR"$n¶ÙÊ±¾õµÃË«ÊÖÔË×÷²»Áé£¬ºöÈ»ÊÖÍóÒ»Âé£¬ÊÖÖĞ";
+		msg += HIR"$né¡¿æ—¶è§‰å¾—åŒæ‰‹è¿ä½œä¸çµï¼Œå¿½ç„¶æ‰‹è…•ä¸€éº»ï¼Œæ‰‹ä¸­";
 		msg += weapon->name();
-		msg += "¾¹È»²»Ò×¶ø·É£¡\n";
-		msg += "Ï¸¿´Ê±£¬ÒÑ±»$NÊÕÄÉÈëÁË»³ÖĞ£¬²¢ÈÓÔÚµØÉÏ£¡\n"NOR;
+		msg += "ç«Ÿç„¶ä¸æ˜“è€Œé£ï¼\n";
+		msg += "ç»†çœ‹æ—¶ï¼Œå·²è¢«$Næ”¶çº³å…¥äº†æ€€ä¸­ï¼Œå¹¶æ‰”åœ¨åœ°ä¸Šï¼\n"NOR;
 
 		target->start_busy(2);
                 weapon->move(environment(me));
 //		weapon->move(me);
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
           me->start_busy(2);         
 	}
 

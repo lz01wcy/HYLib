@@ -12,7 +12,7 @@ void skill_improved(object me)
 
 	s = me->query_skill("leadership", 1);
         if( s%10==9 && (int)me->query("per") < s/5) {
-		tell_object(me, HIW "由於你的勤学用人之技，你的魅力提高了。\n" NOR);
+		tell_object(me, HIW "鐢辨柤浣犵殑鍕ゅ鐢ㄤ汉涔嬫妧锛屼綘鐨勯瓍鍔涙彁楂樹簡銆俓n" NOR);
 		me->add("per", 2);
 	}
 }

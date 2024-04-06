@@ -10,20 +10,20 @@ int perform(object me, object target)
        if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("[Æß×Ó¸ÖïÚ]Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("[ä¸ƒå­é’¢é•–]åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if( (int)me->query_skill("biyun-xinfa", 1) < 60 )
-                return notify_fail("ÄãµÄ±ÌÔÆÐÄ·¨²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¸å¤Ÿé«˜ã€‚\n");
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "throwing")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 		
         if( (int)me->query("neili", 1) < 400 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ã€‚\n");
 
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("zimu-zhen",1);
-	if ( extra < 200) return notify_fail("ÄãµÄÌÆÃÅ°µÆ÷»¹²»¹»´¿Êì£¡\n");
-	msg = GRN  "$NÊ¹³öÌÆÃÅ°µÆ÷ÖÐµÄÆß×Ó¸ÖïÚ£¬»÷Ïò$n" NOR;
+	if ( extra < 200) return notify_fail("ä½ çš„å”é—¨æš—å™¨è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
+	msg = GRN  "$Nä½¿å‡ºå”é—¨æš—å™¨ä¸­çš„ä¸ƒå­é’¢é•–ï¼Œå‡»å‘$n" NOR;
 	message_vision(msg,me,target);
 	me->add_temp("apply/attack",extra/4);
 	me->add_temp("apply/damage",extra/3);
@@ -31,7 +31,7 @@ int perform(object me, object target)
 	lmt = random(l)+5;
 	for(i=1;i<=lmt;i++)
 	{
-	msg =  BLU "µÚ"+chinese_number(i)+"ïÚ-->" NOR;
+	msg =  BLU "ç¬¬"+chinese_number(i)+"é•–-->" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	}
 if (extra > 200)

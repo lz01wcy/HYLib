@@ -12,28 +12,28 @@ int perform(object me, object target)
       if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ö»ÓÐÔÚÕ¾¶·ÖÐ²ÅÄÜÊ¹ÓÃ£¡\n");
+                return notify_fail("åªæœ‰åœ¨ç«™æ–—ä¸­æ‰èƒ½ä½¿ç”¨ï¼\n");
 
 
 	if( (int)me->query_skill("qiulinshiye", 1) < 60 )
-                return notify_fail("ÄãµÄÇïÁÖÊ°Ò¶²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„ç§‹æž—æ‹¾å¶ä¸å¤Ÿé«˜ã€‚\n");
 
 	if( (int)me->query_skill("biyun-xinfa", 1) < 60 )
-                return notify_fail("ÄãµÄ±ÌÔÆÐÄ·¨²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¸å¤Ÿé«˜ã€‚\n");
 
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ã€‚\n");
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
     
         if (me->query_skill_mapped("dodge") != "qiulinshiye")
-                return notify_fail("ÄãÏÖÔÚ¼¤·¢µÄÇáÉí²»ÊÇÇïÁÖÊ°Ò¶¡£\n");                                                                                 
+                return notify_fail("ä½ çŽ°åœ¨æ¿€å‘çš„è½»èº«ä¸æ˜¯ç§‹æž—æ‹¾å¶ã€‚\n");                                                                                 
       if( me->query_temp("tmwu")   )
-      return notify_fail("ÄãÕýÔÚÊ¹ÓÃÇïÁÖÊ°Ò¶µÄÌØÊâ·ÀÓù¡¸Îí¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ç§‹æž—æ‹¾å¶çš„ç‰¹æ®Šé˜²å¾¡ã€Œé›¾ã€ï¼\n");
        
-     msg = HIW"$NÉíÐÎÈçÖñÒ¶·ÉÎè£¬Ëæ·çÈÆ×ÅÈ¦³öÕÐÆ®¶¯£¬" +
-               "ºÃÏóÒª»÷ÖÐ£¬È´ÈôÎÞÎï¡£Éí·¨ÈçÃÎÈçÎí£¡\n" NOR;
+     msg = HIW"$Nèº«å½¢å¦‚ç«¹å¶é£žèˆžï¼Œéšé£Žç»•ç€åœˆå‡ºæ‹›é£˜åŠ¨ï¼Œ" +
+               "å¥½è±¡è¦å‡»ä¸­ï¼Œå´è‹¥æ— ç‰©ã€‚èº«æ³•å¦‚æ¢¦å¦‚é›¾ï¼\n" NOR;
       
       me->start_busy(1);
       message_vision(msg, me, target); 
@@ -54,7 +54,7 @@ void remove_effect(object me, int improve)
       me->add_temp("apply/defense", - improve);
       
       me->delete_temp("tmwu");
-      tell_object(me, HIC"ÄãÉ¢È¥µ¤ÌïÄý¾ÛµÄÄÚÁ¦£¬»ìÉí¾­ÂöÕæÆøÁ÷¶¯£¬Æø¶¨ÉñÏÐ£¬¾«ÉñÞÄÞÄ¡£\n"NOR);
-      tell_room(environment(me), HIG + me->name()+"È«Éí¹ÇÍ·Ò»ÕóÇáÏì£¬É¢È¥ÁË»ìÉíµÄ¹¦Á¦¡£\n" NOR,  ({ me }));
+      tell_object(me, HIC"ä½ æ•£åŽ»ä¸¹ç”°å‡èšçš„å†…åŠ›ï¼Œæ··èº«ç»è„‰çœŸæ°”æµåŠ¨ï¼Œæ°”å®šç¥žé—²ï¼Œç²¾ç¥žå¼ˆå¼ˆã€‚\n"NOR);
+      tell_room(environment(me), HIG + me->name()+"å…¨èº«éª¨å¤´ä¸€é˜µè½»å“ï¼Œæ•£åŽ»äº†æ··èº«çš„åŠŸåŠ›ã€‚\n" NOR,  ({ me }));
     
 }

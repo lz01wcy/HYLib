@@ -1,4 +1,4 @@
-// feng-qingyang.c ·çÇåÑï
+// feng-qingyang.c é£æ¸…æ‰¬
 #include <ansi.h>
 inherit NPC;
 inherit F_MASTER;
@@ -6,20 +6,20 @@ string ask_me();
 
 void create()
 {
-set_name("·çÇåÑï", ({ "feng qingyang", "qingyang", "feng" }) );
-        set("gender", "ÄĞĞÔ");
+set_name("é£æ¸…æ‰¬", ({ "feng qingyang", "qingyang", "feng" }) );
+        set("gender", "ç”·æ€§");
         set("age", 70);
         set("class", "swordsman");
         set("long",
-"·çÇåÑïÄËµ±½ñÎäÁÖÒ»Î»²»ÊÀ³öµÄ¸ßÈË£¬ÉîµÃ¶À¹Â¾Å½£¾«Ëè£¬Ò»±ú³¤½£\n"
-"Éñ³ö¹íÃ»£¬º±·êµĞÊÖ\n");
+"é£æ¸…æ‰¬ä¹ƒå½“ä»Šæ­¦æ—ä¸€ä½ä¸ä¸–å‡ºçš„é«˜äººï¼Œæ·±å¾—ç‹¬å­¤ä¹å‰‘ç²¾é«“ï¼Œä¸€æŸ„é•¿å‰‘\n"
+"ç¥å‡ºé¬¼æ²¡ï¼Œç½•é€¢æ•Œæ‰‹\n");
         set("attitude", "peaceful");
         set("combat_exp", 2000000);
         set("score", 200000);
         set("shen_type", 1);
 
-        create_family("»ªÉ½ÅÉ", 12, "µÜ×Ó");
-        assign_apprentice("µÜ×Ó", 0);
+        create_family("åå±±æ´¾", 12, "å¼Ÿå­");
+        assign_apprentice("å¼Ÿå­", 0);
 
         set("str", 30);
         set("int", 30);
@@ -63,7 +63,7 @@ set_name("·çÇåÑï", ({ "feng qingyang", "qingyang", "feng" }) );
         map_skill("dodge", "feiyan-huixiang");
 
         set("inquiry", ([
-                "¶À¹Â¾Å½£½£Æ×" : (: ask_me :),
+                "ç‹¬å­¤ä¹å‰‘å‰‘è°±" : (: ask_me :),
         ]));
         set("book_count", 1);
         setup();
@@ -85,21 +85,21 @@ void greeting(object ob)
 {
    if ((string)ob->query("family/master_id")==(string)this_object()->query("id"))
    {
-      say( "·çÇåÑïÎ¢Ğ¦µÀ£º¡°¹ÔÍ½¶ù£¬Äã»ØÀ´À²£¡¡±\n");
+      say( "é£æ¸…æ‰¬å¾®ç¬‘é“ï¼šâ€œä¹–å¾’å„¿ï¼Œä½ å›æ¥å•¦ï¼â€\n");
       call_out("goway",15,ob);
    }
    else if  ((int)ob->query("marks/feng-qingyang")==2)
        {
-           say( "·çÇåÑïÒ»Á³Ğ¦Òâ£º¡°¶àĞ»Äã¾ÈÁËĞ¡Í½!¡±\n");
-           say( "·çÇåÑïËµµÀ£º¡°Èç¹û²»ÏÓÆúÀÏ·ò±¾ÊÂµÍÎ¢£¬¾Í´«Äã¼¸ÊÖÈçºÎ£¿¡±\n");
+           say( "é£æ¸…æ‰¬ä¸€è„¸ç¬‘æ„ï¼šâ€œå¤šè°¢ä½ æ•‘äº†å°å¾’!â€\n");
+           say( "é£æ¸…æ‰¬è¯´é“ï¼šâ€œå¦‚æœä¸å«Œå¼ƒè€å¤«æœ¬äº‹ä½å¾®ï¼Œå°±ä¼ ä½ å‡ æ‰‹å¦‚ä½•ï¼Ÿâ€\n");
            command("recruit " + ob->query("id") );
            ob->delete("marks/feng-qingyang",0);
            call_out("goout",20,ob);
        }
         else
        {
-            say(HIC"·çÇåÑïÁ³ÏÖÅ­Èİ£º¡°ÀÏ·òÉúÆ½²»¼ûÍâ¿Í£¬Ë­ÈÃÄãµ½ÕâÀïÀ´µÄ£¿¡±\n"NOR);
-            message_vision(HIC"·çÇåÑïÒ»Ğä°Ñ$N·÷µ½»ªÉ½½ÅÏÂÈ¥ÁË¡£\n"NOR,ob);
+            say(HIC"é£æ¸…æ‰¬è„¸ç°æ€’å®¹ï¼šâ€œè€å¤«ç”Ÿå¹³ä¸è§å¤–å®¢ï¼Œè°è®©ä½ åˆ°è¿™é‡Œæ¥çš„ï¼Ÿâ€\n"NOR);
+            message_vision(HIC"é£æ¸…æ‰¬ä¸€è¢–æŠŠ$Næ‹‚åˆ°åå±±è„šä¸‹å»äº†ã€‚\n"NOR,ob);
             ob->move("/d/huashan/path1");
         }
 }
@@ -125,7 +125,7 @@ int goway(object ob){
       }
 }
 void goout(object ob){
-    message_vision("·çÇåÑï´óĞäÒ»»Ó£¬Æ®È»Àë$N¶øÈ¥.\n",ob);
+    message_vision("é£æ¸…æ‰¬å¤§è¢–ä¸€æŒ¥ï¼Œé£˜ç„¶ç¦»$Nè€Œå».\n",ob);
     destruct(this_object());
 }
 
@@ -136,8 +136,8 @@ string ask_me()
     me = this_player();
     if ((string)me->query("family/master_id")==(string)this_object()->query("id"))
     {
-         if (query("book_count") < 1) return "ÄãÀ´ÍíÁË£¬¶À¹Â¾Å½£½£Æ×²»ÔÚ´Ë´¦¡£";
-         if ((int)me->query("marks/ls-book")==1) return "ÄãÒÑ¾­È¡¹ıÒ»±¾¶À¹Â¾Å½£½£Æ×ÁË¡£";
+         if (query("book_count") < 1) return "ä½ æ¥æ™šäº†ï¼Œç‹¬å­¤ä¹å‰‘å‰‘è°±ä¸åœ¨æ­¤å¤„ã€‚";
+         if ((int)me->query("marks/ls-book")==1) return "ä½ å·²ç»å–è¿‡ä¸€æœ¬ç‹¬å­¤ä¹å‰‘å‰‘è°±äº†ã€‚";
          switch (random(10))
          {
               case 0:
@@ -145,11 +145,11 @@ string ask_me()
                    add("book_count", -1);
                    ob = new(__DIR__"ls_book");
                    ob->move(me);
-                   return "ºÃ°É£¬Õâ±¾¡¸¶À¹Â¾Å½£½£Æ×¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+                   return "å¥½å§ï¼Œè¿™æœ¬ã€Œç‹¬å­¤ä¹å‰‘å‰‘è°±ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
               default:
-                   return "¡¸¶À¹Â¾Å½£½£Æ×¡¹£¿Õâ¶«Î÷Ê§´«ºÜ¾ÃÁË¡£";
+                   return "ã€Œç‹¬å­¤ä¹å‰‘å‰‘è°±ã€ï¼Ÿè¿™ä¸œè¥¿å¤±ä¼ å¾ˆä¹…äº†ã€‚";
          }
     }
-    else return RANK_D->query_respect(this_player()) + "²»ÊÇÎÒµÄÍ½µÜ°É£¿";
+    else return RANK_D->query_respect(this_player()) + "ä¸æ˜¯æˆ‘çš„å¾’å¼Ÿå§ï¼Ÿ";
 }
 

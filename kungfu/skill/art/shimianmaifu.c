@@ -1,4 +1,4 @@
-// newpfm.c À¥ÂØÇÙÒôÈÅµĞ
+// newpfm.c æ˜†ä»‘ç´éŸ³æ‰°æ•Œ
 
 #include <ansi.h>
 
@@ -13,29 +13,29 @@ int perform(object me, object target) {
     if (!target
         || !target->is_character()
         || !me->is_fighting(target))
-        return notify_fail("[Ê®ÃæÂñ·ü]Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("[åé¢åŸ‹ä¼]åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if (target->is_busy())
-        return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+        return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
     if ((int) me->query("neili", 1) < 300)
-        return notify_fail("ÄãµÄÄÚÁ¦²»×ã!\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³!\n");
 
     if ((int) me->query_skill("art", 1) < 100)
-        return notify_fail("ÄãµÄÇÙ¼¼²»×ãÒÔµ¯×àÈç´Ë¸ßÉîµÄÇú×Ó\n");
+        return notify_fail("ä½ çš„ç´æŠ€ä¸è¶³ä»¥å¼¹å¥å¦‚æ­¤é«˜æ·±çš„æ›²å­\n");
 
     msg = HIW
-    "$N´ß¶¯ÄÚÁ¦,Ò»Çú[Ê®ÃæÂñ·ü]»º»º×à³ö,ÆóÍ¼Íß½â$nµÄ¹¥ÊÆ¡£\n";
+    "$Nå‚¬åŠ¨å†…åŠ›,ä¸€æ›²[åé¢åŸ‹ä¼]ç¼“ç¼“å¥å‡º,ä¼å›¾ç“¦è§£$nçš„æ”»åŠ¿ã€‚\n";
     lev = (int) me->query_skill("art", 1);
     me->add("neili", -140);
     if (random(me->query("combat_exp")) + (lev * 300) > target->query("combat_exp") / 2) {
         msg += GRN
-        " ½á¹û$p±»$PÇÙÒôËù»ó,Ö»¾õ½øÒ²²»ÊÇ,ÍËÒ²²»ÊÇ,´¦´¦Âñ·ü,¶ÙÊ±·½´ç´óÂÒ\n"
+        " ç»“æœ$pè¢«$Pç´éŸ³æ‰€æƒ‘,åªè§‰è¿›ä¹Ÿä¸æ˜¯,é€€ä¹Ÿä¸æ˜¯,å¤„å¤„åŸ‹ä¼,é¡¿æ—¶æ–¹å¯¸å¤§ä¹±\n"
         NOR;
         target->start_busy((int) me->query_skill("art", 1) / 50 + 2);
     } else {
         msg += HIR
-        "¿ÉÊÇ$pÄÚÁ¦Éîºñ,²»Îª$PµÄÇÙÉùËù¶¯,È«ÉñÓ¦¶Ô×ÔÈç¡£\n"
+        "å¯æ˜¯$på†…åŠ›æ·±åš,ä¸ä¸º$Pçš„ç´å£°æ‰€åŠ¨,å…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n"
         NOR;
         me->start_busy(2);
     }

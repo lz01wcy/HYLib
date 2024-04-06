@@ -9,27 +9,27 @@ int perform(object me, object target)
         my_exp=me->query("combat_exp");
         
         
-        if(extra<60) return notify_fail("ÄãµÄ¹ÛÒôÁù×ÖÃ÷Öä²»¹»ÊìÁ·¡£\n");
+        if(extra<60) return notify_fail("ä½ çš„è§‚éŸ³å…­å­—æ˜Žå’’ä¸å¤Ÿç†Ÿç»ƒã€‚\n");
         
         if( !target ) target = offensive_target(me);
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÕâÖÖÕæÑÔÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("è¿™ç§çœŸè¨€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
                 
         if( me==target)
-                return notify_fail("ÕæÑÔ·¨Êõ²»ÄÜÓÃÔÚ×Ô¼ºÉíÉÏ¡£\n"); 
+                return notify_fail("çœŸè¨€æ³•æœ¯ä¸èƒ½ç”¨åœ¨è‡ªå·±èº«ä¸Šã€‚\n"); 
         if( (int)me->query("neili") < 200 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n"); 
         message_vision(
-                HIR "$NÉí¡¢¿Ú¡¢ÒâÓë·ð³ÉÎªÒ»Ìå£¬ÃæÉ«×¯ÖØ£¬³ÁÉùÄîµÀ¡°††¡±£¡ \n"NOR,
+                HIR "$Nèº«ã€å£ã€æ„ä¸Žä½›æˆä¸ºä¸€ä½“ï¼Œé¢è‰²åº„é‡ï¼Œæ²‰å£°å¿µé“â€œâ€ï¼ \n"NOR,
                         me, target );
         
         extra=extra*extra*100;
         
         if(my_exp/2+random(my_exp)*3/2+random(extra)>target->query("combat_exp"))
         {
-                message_vision(RED"$nÖ»¾õµÃÐÄÍ·ºÃÏó±»ÖØ´¸Ò»»÷£¬Áé»êËÆºõÒªÀëÇÏ¶øÈ¥¡£ \n\n"NOR,me,target);
+                message_vision(RED"$nåªè§‰å¾—å¿ƒå¤´å¥½è±¡è¢«é‡é”¤ä¸€å‡»ï¼Œçµé­‚ä¼¼ä¹Žè¦ç¦»çªè€ŒåŽ»ã€‚ \n\n"NOR,me,target);
                 damage=30 + (int)me->query_skill("magic") + random((int)me->query_skill("magic"));
                 if (damage>target->query("jing")) damage=target->query("jing")/2;
                 target->receive_wound("jing", damage);
@@ -37,7 +37,7 @@ int perform(object me, object target)
                 //COMBAT_D->win_lose_check(me,target,1);
         }
         else
-                message_vision(RED"$nÖ»¾õµÃÐÄÍ·Ò»½ô£¬¼±Ã¦ÄýÆø»¤ÐÄ¡£ \n"NOR,me,target); 
+                message_vision(RED"$nåªè§‰å¾—å¿ƒå¤´ä¸€ç´§ï¼Œæ€¥å¿™å‡æ°”æŠ¤å¿ƒã€‚ \n"NOR,me,target); 
 		me->add("neili", -100);
         
         me->start_busy(2);

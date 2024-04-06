@@ -1,4 +1,4 @@
-// fuxue.c Äé»¨Ö¸ ¡¸Äé»¨·÷Ñ¨¡¹
+// fuxue.c æ‹ˆèŠ±æŒ‡ ã€Œæ‹ˆèŠ±æ‹‚ç©´ã€
 
 #include <ansi.h>
 
@@ -13,34 +13,34 @@ int perform(object me, object target)
         if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸Äé»¨·÷Ñ¨¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œæ‹ˆèŠ±æ‹‚ç©´ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if((int)me->query_str() < 25)
-		return notify_fail("Äã±ÛÁ¦²»¹»,²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼!\n");
+		return notify_fail("ä½ è‡‚åŠ›ä¸å¤Ÿ,ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€!\n");
 
 	if((int)me->query_skill("hunyuan-yiqi",1) < 100)
-		return notify_fail("Äã»ìÔªÒ»Æø¹¦µÄ¹¦Á¦²»¹»²»ÄÜÊ¹ÓÃÄé»¨·÷Ñ¨!\n");
+		return notify_fail("ä½ æ··å…ƒä¸€æ°”åŠŸçš„åŠŸåŠ›ä¸å¤Ÿä¸èƒ½ä½¿ç”¨æ‹ˆèŠ±æ‹‚ç©´!\n");
 
 	if((int)me->query_skill("finger") < 100)
-		return notify_fail("ÄãµÄÖ¸·¨ĞŞÎª²»¹»,Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÄé»¨·÷Ñ¨¾ø¼¼!\n");
+		return notify_fail("ä½ çš„æŒ‡æ³•ä¿®ä¸ºä¸å¤Ÿ,ç›®å‰è¿˜ä¸èƒ½ä½¿ç”¨æ‹ˆèŠ±æ‹‚ç©´ç»æŠ€!\n");
 
 	if((int)me->query("neili") < 300)
-		return notify_fail("ÄãÄÚÁ¦ÏÖÔÚ²»¹», ²»ÄÜÊ¹ÓÃÄé»¨·÷Ñ¨! \n");
+		return notify_fail("ä½ å†…åŠ›ç°åœ¨ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨æ‹ˆèŠ±æ‹‚ç©´! \n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
-	msg = HIY "$NÊ¹³öÄé»¨Ö¸¾ø¼¼¡¸Äé»¨·÷Ñ¨¡¹£¬ÕÖ×¡ÁË$nµÄÈ«ÉíÒªÑ¨, Ê¹$n¶¯µ¯²»µÃ¡£\n";
+	msg = HIY "$Nä½¿å‡ºæ‹ˆèŠ±æŒ‡ç»æŠ€ã€Œæ‹ˆèŠ±æ‹‚ç©´ã€ï¼Œç½©ä½äº†$nçš„å…¨èº«è¦ç©´, ä½¿$nåŠ¨å¼¹ä¸å¾—ã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp") / 2 )
 	{
-		msg +=  HIG "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°! \n" NOR;
+		msg +=  HIG "ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæªæ‰‹ä¸åŠ! \n" NOR;
 		target->start_busy( (int)me->query_skill("nianhua-zhi",1) / 50 + 2);
 		me->add("neili", -100);
 	}
 	else
 	{
-		msg += HIM "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+		msg += HIM "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
 		me->start_busy(4);
 	}
 	message_combatd(msg, me, target);

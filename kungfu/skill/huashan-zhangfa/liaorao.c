@@ -1,4 +1,4 @@
-// pfm ÑÌÎíçÔÈÆ liaorao 
+// pfm çƒŸé›¾ç¼­ç»• liaorao 
 #include <ansi.h>
 inherit F_SSERVER;
 int perform(object me, object target)
@@ -8,30 +8,30 @@ int perform(object me, object target)
         if( !target
          || !target->is_character()
          || !me->is_fighting(target))
-           return notify_fail("Ç£ÖÆ¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+           return notify_fail("ç‰µåˆ¶æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if((int)me->query_dex() < 25)
-           return notify_fail("ÄãµÄÉí·¨²»¹»,²»ÄÜÊ¹ÓÃÑÌÎíçÔÈÆ¾ø¼¼!\n");
+           return notify_fail("ä½ çš„èº«æ³•ä¸å¤Ÿ,ä¸èƒ½ä½¿ç”¨çƒŸé›¾ç¼­ç»•ç»æŠ€!\n");
          if( (int)me->query_skill("huashan-zhangfa", 1) < 80 )
-                return notify_fail("ÄãµÄ»ªÉ½ÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ»ìÔªÎŞ¼«£¡\n");
+                return notify_fail("ä½ çš„åå±±æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨æ··å…ƒæ— æï¼\n");
                                 
         if( (int)me->query_skill("zixia-shengong", 1) < 80 )
-                return notify_fail("ÄãµÄ×ÏÏ¼Éñ¹¦²»¹»¸ß£¬²»ÄÜÓÃ³ö»ìÔªÎŞ¼«ÉËµĞ¡£\n");
+                return notify_fail("ä½ çš„ç´«éœç¥åŠŸä¸å¤Ÿé«˜ï¼Œä¸èƒ½ç”¨å‡ºæ··å…ƒæ— æä¼¤æ•Œã€‚\n");
         if((int)me->query("max_neili") < 400)
-           return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÉĞÇ·»ğºò¡£\n");  
+           return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºå°šæ¬ ç«å€™ã€‚\n");  
         if((int)me->query("neili") < 300)
-           return notify_fail("ÄãÄÚÁ¦ÏÖÔÚ²»¹», ²»ÄÜÊ¹ÓÃÑÌÎíçÔÈÆ¾ø¼¼! \n");
+           return notify_fail("ä½ å†…åŠ›ç°åœ¨ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨çƒŸé›¾ç¼­ç»•ç»æŠ€! \n");
         if( target->is_busy() )
-           return notify_fail( target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
-        msg = HIM"\n$NÃæ´øÎ¢Ğ¦£¬Ä¿²»Ğ±ÊÓ£¬³öÕÆÈçĞĞÔÆÁ÷Ë®°ãÏòºóĞ±Åü£¬¸ú×ÅÓÒÕÆÏòºóĞ±Åü£¬Èç´ËÁ¬³öÎåÕÆ£¬\n"+
-                 "Ò»¹ÉÒõÈáµÄÕÆÁ¦ÕÖ×¡ÁË$nµÄÈ«ÉíÒªÑ¨¡£\n"NOR;
+           return notify_fail( target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
+        msg = HIM"\n$Né¢å¸¦å¾®ç¬‘ï¼Œç›®ä¸æ–œè§†ï¼Œå‡ºæŒå¦‚è¡Œäº‘æµæ°´èˆ¬å‘åæ–œåŠˆï¼Œè·Ÿç€å³æŒå‘åæ–œåŠˆï¼Œå¦‚æ­¤è¿å‡ºäº”æŒï¼Œ\n"+
+                 "ä¸€è‚¡é˜´æŸ”çš„æŒåŠ›ç½©ä½äº†$nçš„å…¨èº«è¦ç©´ã€‚\n"NOR;
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp") / 2 ){
-           msg +=  HIY"½á¹û$pÖ»¾õÑÛÇ°Ò»ÕóÑÌÎíçÔÈÆ£¬±»$P³ÃÊÆµãÖĞÒªÑ¨! \n"NOR;
+           msg +=  HIY"ç»“æœ$påªè§‰çœ¼å‰ä¸€é˜µçƒŸé›¾ç¼­ç»•ï¼Œè¢«$Pè¶åŠ¿ç‚¹ä¸­è¦ç©´! \n"NOR;
            target->start_busy((int)me->query_skill("huashan-zhangfa",1) / 50 + 3);
            me->add("neili",-100);
            me->add("jing",-10);
            }
            else{
-           msg += HIC"$pÁ³É«Ò»±ä£¬´óºÈÒ»ÉùÍùºóÒ»×İ£¬$PÎåÕÆÂä¿Õ£¬ÉíĞÎÎªÖ®Ò»ÖÍ¡£\n"NOR; 
+           msg += HIC"$pè„¸è‰²ä¸€å˜ï¼Œå¤§å–ä¸€å£°å¾€åä¸€çºµï¼Œ$Päº”æŒè½ç©ºï¼Œèº«å½¢ä¸ºä¹‹ä¸€æ»ã€‚\n"NOR; 
            me->add("neili",-100);
            me->add("jing",-10);
            me->start_busy(2);

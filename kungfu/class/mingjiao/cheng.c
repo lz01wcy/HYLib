@@ -1,14 +1,14 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// cheng.c Ёию╔
+// cheng.c Ф┬░Ф≤├
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ёию╔",({"cheng kun","cheng","kun"}));
-        set("long", "кШ╬мйгЁию╔║ё\n");
+        set_name("Ф┬░Ф≤├",({"cheng kun","cheng","kun"}));
+        set("long", "Д╩√Е╟╠Ф≤╞Ф┬░Ф≤├Ц─┌\n");
         set("age", 60);
         set("attitude", "aggressive");
         set("class", "bonze");
@@ -50,7 +50,7 @@ void create()
                 (: command("perform finger.huanyin") :),
 
         }) );
-        	create_family("иыажеи", 37, "╣эвс");
+        	create_family("Е╟▒Ф·≈Ф╢╬", 37, "Е╪÷Е╜░");
         prepare_skill("finger", "huanyin-zhi");
  	set_temp("apply/attack",150);
 	set_temp("apply/defense",150);
@@ -90,7 +90,7 @@ int accept_object(object who, object ob)
 	}
 	who->add_temp("learn_timeb",i);
 
-      message_vision("Ёию╔╤т$Nк╣╣юё╨╪хх╩дЦЁопдоКя╖нр╣днД╧╕ё╛нр╬мЁих╚Ёих╚дЦ╟и║ё\n",who);
+      message_vision("Ф┬░Ф≤├Е╞╧$NХ╞╢И│⌠О╪ Ф≈╒Г└╤Д╫═Х╞ Е©┐Ф┐ЁЕ╜╕Ф┬▒Г └Ф╜╕Е┼÷О╪▄Ф┬▒Е╟╠Ф┬░Е┘╗Ф┬░Е┘╗Д╫═Е░╖Ц─┌\n",who);
 
 	return 1;
 }

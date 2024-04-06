@@ -4,14 +4,14 @@
 #include <combat.h>
 inherit F_SSERVER;
 string* buwei = ({
-        "ÓÒÊÖÖâ²¿",
-        "ÊÖÍó",
-        "×óÊÖ¹Ø½Ú",
-        "¾±²¿",
-        "¼ç²¿¹Ø½Ú",
-        "±³ÐÄÒªÑ¨",
-        "Ï¥¹Ø½Ú",
-        "ÃüÃÅ"
+        "å³æ‰‹è‚˜éƒ¨",
+        "æ‰‹è…•",
+        "å·¦æ‰‹å…³èŠ‚",
+        "é¢ˆéƒ¨",
+        "è‚©éƒ¨å…³èŠ‚",
+        "èƒŒå¿ƒè¦ç©´",
+        "è†å…³èŠ‚",
+        "å‘½é—¨"
 });
 int perform(object me, object target)
 {
@@ -29,28 +29,28 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ºÏÆøµÀ.ÇÜÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åˆæ°”é“.æ“’åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("ºÏÆøµÀ.ÇÜ±ØÐë¿ÕÊÖ¡£\n");
+                return notify_fail("åˆæ°”é“.æ“’å¿…é¡»ç©ºæ‰‹ã€‚\n");
        if( (int)me->query("max_neili") < 200 )
-      return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+      return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 	extra = me->query_skill("aikido",1)/10;
-	if(extra <= 3 ) return notify_fail("ÄãµÄ£ÛºÏÆøµÀ£Ý²»¹»ÊìÁ·£¡\n");
+	if(extra <= 3 ) return notify_fail("ä½ çš„ï¼»åˆæ°”é“ï¼½ä¸å¤Ÿç†Ÿç»ƒï¼\n");
      if ((int)me->query_skill("shayi-xinfa", 1) < 30)
-   return notify_fail("ÄãµÄÉ±ÒâÐÄ·¨»ðºò²»¹»¡£\n");
+   return notify_fail("ä½ çš„æ€æ„å¿ƒæ³•ç«å€™ä¸å¤Ÿã€‚\n");
                
 	if( (int)me->query("neili") < 200  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
-        msg = HIG "$NË«Ã¼Ò»Ñï£¬Ò»´íÉíÓÃ¶·È»¼ä×¥×¡ÁË$nµÄ"+bw+"È»ºó¶Ô"+bw+"ËÀÃüµÄÒ»Å¤£¡!\n";
+        msg = HIG "$NåŒçœ‰ä¸€æ‰¬ï¼Œä¸€é”™èº«ç”¨æ–—ç„¶é—´æŠ“ä½äº†$nçš„"+bw+"ç„¶åŽå¯¹"+bw+"æ­»å‘½çš„ä¸€æ‰­ï¼!\n";
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += HIR " ½á¹û$p±»$PÅ¤µÄ²Ò½Ð²»Ö¹£¬¿´À´ÉËµÄ²»Çå£¡\n" NOR;
+                msg += HIR " ç»“æžœ$pè¢«$Pæ‰­çš„æƒ¨å«ä¸æ­¢ï¼Œçœ‹æ¥ä¼¤çš„ä¸æ¸…ï¼\n" NOR;
 if (userp(target))
                 target->add("qi",-target->query("qi")/10);
 else            target->add("qi",-extra*20);
         } else {
-                msg += HIC"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Õõ¿ªÁË$PµÄÇÜÄÃ¡£\n"NOR NOR;
+                msg += HIC"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼ŒæŒ£å¼€äº†$Pçš„æ“’æ‹¿ã€‚\n"NOR NOR;
         }
         message_combatd(msg, me, target);
                 me->start_busy(2);

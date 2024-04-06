@@ -1,63 +1,63 @@
-//sougu.c ËÑ¹ÇÓ¥×¦¹¦
+//sougu.c æœéª¨é¹°çˆªåŠŸ
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "\n$NË«±ÛÒ»Â££¬×ó×¦Ö±¹¥$nÏÂÅÌ£¬ÓÒ×¦È´Ğ®·çÀ×Ö®ÊÆÍÆÏò$nÑü¼ä£¬Ò»ĞéÒ»Êµ£¬ÕıÊÇÒ»ÕĞ¡¸ÍÆ×¦Ê½¡¹",
+([	"action" : "\n$NåŒè‡‚ä¸€æ‹¢ï¼Œå·¦çˆªç›´æ”»$nä¸‹ç›˜ï¼Œå³çˆªå´æŒŸé£é›·ä¹‹åŠ¿æ¨å‘$nè…°é—´ï¼Œä¸€è™šä¸€å®ï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œæ¨çˆªå¼ã€",
 	"force" : 170,
 	"dodge" : 5,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"lvl" : 0,
 	"damage" : 215,
-	"skill_name" : "ÍÆ×¦Ê½"
+	"skill_name" : "æ¨çˆªå¼"
 ]),
-([	"action" : "\n$NÉíĞÎ¶¸Æğ£¬ÈçĞÛÓ¥»÷ÈÕ°ã¡°Ù¿¡±µØ´Ó$nÍ·¶¥Ô½¹ı£¬Ê¹Ò»ÕĞ¡¸¸Ç×¦Ê½¡¹Ë«×¦¼²Ïò$nÄÔºó»÷ÏÂ",
+([	"action" : "\n$Nèº«å½¢é™¡èµ·ï¼Œå¦‚é›„é¹°å‡»æ—¥èˆ¬â€œå€â€åœ°ä»$nå¤´é¡¶è¶Šè¿‡ï¼Œä½¿ä¸€æ‹›ã€Œç›–çˆªå¼ã€åŒçˆªç–¾å‘$nè„‘åå‡»ä¸‹",
 	"force" : 190,
 	"dodge" : 20,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"damage" : 225,
 	"lvl" : 5,
-	"skill_name" : "¸Ç×¦Ê½"
+	"skill_name" : "ç›–çˆªå¼"
 ]),
-([	"action" : "\n$N¾ÍµØÒ»¹ö£¬Í»È»µ½ÁË$nÉíÇ°£¬Ê¹Ò»ÕĞ¡¸ÌÍ×¦Ê½¡¹£¬ÓÒ×¦Ö±±¼$nĞ¡¸¹",
+([	"action" : "\n$Nå°±åœ°ä¸€æ»šï¼Œçªç„¶åˆ°äº†$nèº«å‰ï¼Œä½¿ä¸€æ‹›ã€Œæçˆªå¼ã€ï¼Œå³çˆªç›´å¥”$nå°è…¹",
 	"force" : 215,
 	"dodge" : 20,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"damage" : 235,
 	"lvl" : 10,
-	"skill_name" : "ÌÍ×¦Ê½"
+	"skill_name" : "æçˆªå¼"
 ]),
-([	"action" : "\n$N×ó×¦»¤ĞØ£¬ÓÒ×¦Äı¾¢ºó·¢£¬Ò»ÕĞ¡¸ÍĞ×¦Ê½¡¹£¬»º»ºÍĞÏò$nµÄ$l",
+([	"action" : "\n$Nå·¦çˆªæŠ¤èƒ¸ï¼Œå³çˆªå‡åŠ²åå‘ï¼Œä¸€æ‹›ã€Œæ‰˜çˆªå¼ã€ï¼Œç¼“ç¼“æ‰˜å‘$nçš„$l",
 	"force" : 245,
 	"dodge" : 5,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"damage" : 225 ,
 	"lvl" : 20,
-	"skill_name" : "ÍĞ×¦Ê½"
+	"skill_name" : "æ‰˜çˆªå¼"
 ]),
-([	"action" : "\n$NÉíĞÎ¹îÒì£¬¼²ËÙÇ°ÆË£¬Ê¹Ò»ÕĞ¡¸ÁÃ×¦Ê½¡¹£¬Ö±ÁÃ$nñÉ²¿",
+([	"action" : "\n$Nèº«å½¢è¯¡å¼‚ï¼Œç–¾é€Ÿå‰æ‰‘ï¼Œä½¿ä¸€æ‹›ã€Œæ’©çˆªå¼ã€ï¼Œç›´æ’©$nè£†éƒ¨",
 	"force" : 280,
 	"dodge" : 25,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"damage" : 255,
 	"lvl" : 35,
-	"skill_name" : "ÁÃ×¦Ê½"
+	"skill_name" : "æ’©çˆªå¼"
 ]),
-([	"action" : "\n$NÉíĞÎÆ®ºö£¬¶¸È»×ªµ½$nÉíºó£¬Ò»ÕĞ¡¸Ëø×¦Ê½¡¹£¬Ë«×¦Ö±Ïò$nÑÊºí²åÏÂ",
+([	"action" : "\n$Nèº«å½¢é£˜å¿½ï¼Œé™¡ç„¶è½¬åˆ°$nèº«åï¼Œä¸€æ‹›ã€Œé”çˆªå¼ã€ï¼ŒåŒçˆªç›´å‘$nå’½å–‰æ’ä¸‹",
 	"force" : 320,
 	"dodge" : 35,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"damage" : 265,
 	"lvl" : 60,
-	"skill_name" : "Ëø×¦Ê½"
+	"skill_name" : "é”çˆªå¼"
 ]),
-([	"action" : "\n$NÒ»ÉùÀ÷Ğ¥£¬ÉíĞÎ°ÎÆğ£¬Ê¹³ö¡¸Ç§×¦Ê½¡¹£¬ÓÉ°ë¿ÕÅÌĞıÏÂ»÷£¬$n¶Ù¾õÂşÌì×¦Ó°£¬ÕÖÏòÈ«ÉíËÀÑ¨",
+([	"action" : "\n$Nä¸€å£°å‰å•¸ï¼Œèº«å½¢æ‹”èµ·ï¼Œä½¿å‡ºã€Œåƒçˆªå¼ã€ï¼Œç”±åŠç©ºç›˜æ—‹ä¸‹å‡»ï¼Œ$né¡¿è§‰æ¼«å¤©çˆªå½±ï¼Œç½©å‘å…¨èº«æ­»ç©´",
 	"force" : 365,
 	"dodge" : 40,
-	"damage_type" : "×¥ÉË",
+	"damage_type" : "æŠ“ä¼¤",
 	"damage" : 295,
 	"lvl" : 85,
-	"skill_name" : "Ç§×¦Ê½"
+	"skill_name" : "åƒçˆªå¼"
 ])
 });
 
@@ -66,9 +66,9 @@ int valid_combine(string combo) { return combo=="hanbing-mianzhang"; }
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Á·ËÑ¹ÇÓ¥×¦¹¦±ØĞë¿ÕÊÖ¡£\n");
+		return notify_fail("ç»ƒæœéª¨é¹°çˆªåŠŸå¿…é¡»ç©ºæ‰‹ã€‚\n");
 	if ((int)me->query("max_neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Ñ§ËÑ¹ÇÓ¥×¦¹¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•å­¦æœéª¨é¹°çˆªåŠŸã€‚\n");
 	return 1;
 }
 
@@ -92,9 +92,9 @@ mapping query_action(object ob, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query("qi") < 30)
-		return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ó¥×¦¹¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒé¹°çˆªåŠŸã€‚\n");
 	me->receive_damage("qi", 25);
 	me->add("neili", -5);
 	return 1;
@@ -117,7 +117,7 @@ if (random(8)==0 && level2>=300 && (me->query_skill_mapped("force") == "jiuyang-
 j = -damage/2; 
 j = 0;
 if (damage2> 5000)	damage2=5000;
-msg = HIC+"$NÔËÆğ¾ÅÑôÉñ¹¦ È«ÉíÄÚÁ¦±¬·¢£¬¸¡ÏÖ³öÒ»²ã¸ÕÃÍµÄ¾¢Æø! !" +NOR;
+msg = HIC+"$Nè¿èµ·ä¹é˜³ç¥åŠŸ å…¨èº«å†…åŠ›çˆ†å‘ï¼Œæµ®ç°å‡ºä¸€å±‚åˆšçŒ›çš„åŠ²æ°”! !" +NOR;
            message_vision(msg, me, ob);
 if ( me->is_busy())
 {

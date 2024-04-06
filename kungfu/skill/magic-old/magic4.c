@@ -1,4 +1,4 @@
-// ÉÁµçÊõ
+// é—ªç”µæœ¯
 
 #include <ansi.h>
 
@@ -9,22 +9,22 @@ int thunderspell(object me, object obj)
 	int	kee, damage, spells;
 
         if ((int)me->query_skill("magic-old", 1) < 100)
-                return notify_fail(WHT"ÄãµÄ¹Å´úÄ§·¨²»¹»æµÊì£¬»¹Ê¹²»³ö¡¸ÁúÆÆÕ¶¡¹¡£\n"NOR);
-	message_vision(YEL "\nÒ»¸ö¾Ş´óµÄ³å»÷²¨Ïò$N"YEL"µÄÉíÉÏ´òÀ´£¬\n" NOR, obj);
+                return notify_fail(WHT"ä½ çš„å¤ä»£é­”æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜ä½¿ä¸å‡ºã€Œé¾™ç ´æ–©ã€ã€‚\n"NOR);
+	message_vision(YEL "\nä¸€ä¸ªå·¨å¤§çš„å†²å‡»æ³¢å‘$N"YEL"çš„èº«ä¸Šæ‰“æ¥ï¼Œ\n" NOR, obj);
 //	obj->receive_damage("jing", 0, me);
 	spells = me->query_skill("spells");
 //me->start_busy(0);
 	if(obj->is_ghost()==1) {
-		message_vision(RED "$N"RED"²Ò½ĞÁËÒ»Éù£¬»¯ÎªÁË»Ò½ı£¡\n" NOR, obj);
+		message_vision(RED "$N"RED"æƒ¨å«äº†ä¸€å£°ï¼ŒåŒ–ä¸ºäº†ç°çƒ¬ï¼\n" NOR, obj);
 		obj->die();
 		return 1;
 	}
 	if(obj->is_zombie()==1) {
-		message_vision(RED "$N"RED"²Ò½ĞÁËÒ»Éù£¬»¯ÎªÁËÒ»Ì²ÑªË®£¡\n" NOR, obj);
+		message_vision(RED "$N"RED"æƒ¨å«äº†ä¸€å£°ï¼ŒåŒ–ä¸ºäº†ä¸€æ»©è¡€æ°´ï¼\n" NOR, obj);
 		obj->die();
 		return 1;
 	}
-	if(obj->query("race")=="Ò°ÊŞ") {
+	if(obj->query("race")=="é‡å…½") {
 //		kar = obj->query("qi");
 //		spi = obj->query("jing");
                 damage = (int)me->query_skill("magic-old", 5);
@@ -32,7 +32,7 @@ int thunderspell(object me, object obj)
 //		damage = (31 - spi)*(spells/4)*(random(31-kar)+1)+100;
 		if(damage <= 20) damage = 10;
 		if(damage != 0) {
-			message_vision(RED "$N"RED"µÄÈ«Éí¶¼±»´òÖĞÁË£¡\n" NOR, obj);
+			message_vision(RED "$N"RED"çš„å…¨èº«éƒ½è¢«æ‰“ä¸­äº†ï¼\n" NOR, obj);
   		            obj->receive_damage("qi", damage*2);
                             obj->receive_wound("qi", damage/2);               		    
                		obj->receive_damage("jing", damage/4);
@@ -47,7 +47,7 @@ int thunderspell(object me, object obj)
                 		me->kill_ob(obj);
         		}
 		} else 
-			message_vision(RED "µ«±»$N"RED"¶ã¹ıÁË£¡\n" NOR, obj);
+			message_vision(RED "ä½†è¢«$N"RED"èº²è¿‡äº†ï¼\n" NOR, obj);
 		return 1;
 	}
 //	kar = obj->query("qi");
@@ -58,7 +58,7 @@ int thunderspell(object me, object obj)
 	if(damage < 0) damage = 10;
 	if(damage > 3000) damage = 3000;
 	if(random(2)==1) {
-		message_vision(RED "$N"RED"µÄÈ«Éí¶¼±»´òÖĞÁË\n" NOR, obj);
+		message_vision(RED "$N"RED"çš„å…¨èº«éƒ½è¢«æ‰“ä¸­äº†\n" NOR, obj);
 		obj->receive_damage("qi", damage*2);
                 obj->receive_wound("qi", damage);               		    
  		COMBAT_D->report_status(obj);
@@ -72,7 +72,7 @@ int thunderspell(object me, object obj)
                		me->kill_ob(obj);
        		}
 	} else 
-			message_vision(RED "µ«±»$N"RED"¶ã¹ıÁË£¡\n" NOR, obj);
+			message_vision(RED "ä½†è¢«$N"RED"èº²è¿‡äº†ï¼\n" NOR, obj);
 	return 1;
 	
 }
@@ -84,34 +84,34 @@ int perform(object me)
 	int	i;
 
 	if((int)me->query_skill("spells") < 200 )
-		return notify_fail("ÄãµÄ·¨Êõ²»¹»¸ß£¡\n");
+		return notify_fail("ä½ çš„æ³•æœ¯ä¸å¤Ÿé«˜ï¼\n");
 
 	if((int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
 
 	if((int)me->query("qi") < 500 )
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿï¼\n");
 
 	if((int)me->query("jing") < 100 )
-		return notify_fail("ÄãµÄ¾«ÉñÃ»ÓĞ°ì·¨ÓĞĞ§¼¯ÖĞ£¡\n");
+		return notify_fail("ä½ çš„ç²¾ç¥æ²¡æœ‰åŠæ³•æœ‰æ•ˆé›†ä¸­ï¼\n");
 
 	me->add("neili", -500);
 	me->receive_damage("jing", 40);
 if ((int)me->query("qi")+6000 < (int)me->query("eff_qi")) 
 {
-message_vision(HIW "\n¾Ş´óµÄÖäÓïÉù¹ıºó,$N"HIW"È«ÉíÁıÕÖ×ÅÊ¥½àµÄ¹âÃ¢£¬È«ÉíµÄÉËºÃÏñºÃ¶àÁË£¡\n" NOR, me);
+message_vision(HIW "\nå·¨å¤§çš„å’’è¯­å£°è¿‡å,$N"HIW"å…¨èº«ç¬¼ç½©ç€åœ£æ´çš„å…‰èŠ’ï¼Œå…¨èº«çš„ä¼¤å¥½åƒå¥½å¤šäº†ï¼\n" NOR, me);
 me->receive_heal("qi", random(2000)+2000);
 me->receive_heal("jing", random(2000)+1000);
 }
 if ((int)me->query("eff_qi")+6000 < (int)me->query("max_qi")) 
 {
-message_vision(HIW "\n¾Ş´óµÄÖäÓïÉù¹ıºó,$N"HIW"È«ÉíÁıÕÖ×ÅÊ¥½àµÄ¹âÃ¢£¬È«ÉíµÄÉËºÃÏñºÃ¶àÁË£¡\n" NOR, me);
+message_vision(HIW "\nå·¨å¤§çš„å’’è¯­å£°è¿‡å,$N"HIW"å…¨èº«ç¬¼ç½©ç€åœ£æ´çš„å…‰èŠ’ï¼Œå…¨èº«çš„ä¼¤å¥½åƒå¥½å¤šäº†ï¼\n" NOR, me);
 me->add("eff_qi", random(3000)+3000);
 }
-	msg = YEL "$N"YEL"½Å²ÈÎåÃ¢ĞÇ£¬Ë«ÊÖÎÕ³É·üÄ§Ó¡£¬¿ÚÖĞà«à«µØÄîÖøÖäÎÄ£¬\n" NOR;
-       msg += RED"$N"RED"Äîµ½ ±È»Æ»è»¹Òª»èà³µÄ¶«Î÷,±ÈÑªÒº»¹ÒªÏÊºìµÄ¶«Î÷...\n"NOR;
-       msg += RED"$N"RED"¼ÌĞøÄîµ½ ³öÏÖÔÚÊ±¼äÖ®Á÷  °Ñµ²ÔÚÎÒÃæÇ°Ò»ÇĞÓŞ²»¿É¼°µÄÊÂÎï´İ»Ù...\n"NOR;
-       msg += HIR"$N"HIR"´ó½ĞÒ»Éù  ÁúÆÆÕ¶!!  ¾Ş´óµÄµÄ³å»÷²¨Ö±ÏòËÄÖÜ·ÉÈ¥£¬ÄÜÁ¿´óµÄ¿ÉÅÂ.£¡\n"NOR;
+	msg = YEL "$N"YEL"è„šè¸©äº”èŠ’æ˜Ÿï¼ŒåŒæ‰‹æ¡æˆä¼é­”å°ï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œ\n" NOR;
+       msg += RED"$N"RED"å¿µåˆ° æ¯”é»„æ˜è¿˜è¦æ˜å–‘çš„ä¸œè¥¿,æ¯”è¡€æ¶²è¿˜è¦é²œçº¢çš„ä¸œè¥¿...\n"NOR;
+       msg += RED"$N"RED"ç»§ç»­å¿µåˆ° å‡ºç°åœ¨æ—¶é—´ä¹‹æµ  æŠŠæŒ¡åœ¨æˆ‘é¢å‰ä¸€åˆ‡æ„šä¸å¯åŠçš„äº‹ç‰©æ‘§æ¯...\n"NOR;
+       msg += HIR"$N"HIR"å¤§å«ä¸€å£°  é¾™ç ´æ–©!!  å·¨å¤§çš„çš„å†²å‡»æ³¢ç›´å‘å››å‘¨é£å»ï¼Œèƒ½é‡å¤§çš„å¯æ€•.ï¼\n"NOR;
 	message_vision(msg, me);
 	env = environment(me);
         inv = all_inventory(env);

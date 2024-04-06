@@ -1,14 +1,14 @@
-// bei.c ±´½õÒÇ
+// bei.c è´é”¦ä»ª
 
 inherit NPC;
 inherit F_MASTER;
 int ask_for_ji();
 void create()
 {
-        set_name("±´½õÒÇ", ({ "bei jinyi","bei","jinyi"}));
+        set_name("è´é”¦ä»ª", ({ "bei jinyi","bei","jinyi"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 21);
         set("attitude", "peaceful");
         set("class", "fighter");
@@ -27,8 +27,8 @@ void create()
         set("jingli", 1500);
         set("max_jingli", 1500);
         set("inquiry",([
-            "ÒĞÌì½£"  : "Ê¦¸¸°ÑËı½»¸ø¼ÍÊ¦æ¢ÁË¡£",
-            "¼ÍÏşÜ½"  : (: ask_for_ji :),
+            "å€šå¤©å‰‘"  : "å¸ˆçˆ¶æŠŠå¥¹äº¤ç»™çºªå¸ˆå§Šäº†ã€‚",
+            "çºªæ™“èŠ™"  : (: ask_for_ji :),
         ]));
 
         set("combat_exp", 150000);
@@ -53,7 +53,7 @@ void create()
         map_skill("sword","huifeng-jian");
         map_skill("parry","huifeng-jian");
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -64,19 +64,19 @@ void attempt_apprentice(object ob)
 {
 
         if ((int)ob->query("shen") < 0) {
-                command("say ÎÒ¶ëáÒÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘å³¨åµ‹ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æä¸¥ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 int ask_for_ji()
 {
     object ob;
     ob = this_player();
-    tell_object(ob,"±´½õÒÇËµµÀ£º¼ÍÏşÜ½ÔÚÉáÉíÑÂÄØ¡£Ëı¾ÍÊÇÏë²»¿ª¡£àË£¡\n"); 
+    tell_object(ob,"è´é”¦ä»ªè¯´é“ï¼šçºªæ™“èŠ™åœ¨èˆèº«å´–å‘¢ã€‚å¥¹å°±æ˜¯æƒ³ä¸å¼€ã€‚å—¨ï¼\n"); 
     ob->set("marks/ji",1);
     return 1;
 }

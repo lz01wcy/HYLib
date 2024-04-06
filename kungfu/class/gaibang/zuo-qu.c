@@ -5,12 +5,12 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("×óÈ«", ({"zuo quan", "zuo", "quan"}));
-	set("title", "Ø¤°ïÆß´üµÜ×Ó");
-	set("gender", "ÄÐÐÔ");
+	set_name("å·¦å…¨", ({"zuo quan", "zuo", "quan"}));
+	set("title", "ä¸å¸®ä¸ƒè¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long", 
-		"ÕâÊÇÎ»ºÀË¬´ó·½µÄØ¤°ïÆß´üµÜ×Ó£¬¿´À´ÊÇ¸ö±±µØºÀ½Ü¡£\n");
+		"è¿™æ˜¯ä½è±ªçˆ½å¤§æ–¹çš„ä¸å¸®ä¸ƒè¢‹å¼Ÿå­ï¼Œçœ‹æ¥æ˜¯ä¸ªåŒ—åœ°è±ªæ°ã€‚\n");
 	set("attitude", "peaceful");
         set("beggarlvl",7);
         set("class", "beggar");
@@ -41,14 +41,14 @@ void create()
 	map_skill("unarmed", "xianglong-zhang");
 	map_skill("dodge", "xiaoyaoyou");
 	
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 	setup();
 }
 
 void attempt_apprentice(object ob)
 {
-	if( ob->query("gender") != "ÄÐÐÔ") return;
-	command("say ºÃ°É£¬Ï£ÍûÄãÄÜºÃºÃÑ§Ï°±¾ÃÅÎä¹¦£¬½«À´ÎªØ¤°ïÕùÒ»¿ÚÆø£¡¡£");
+	if( ob->query("gender") != "ç”·æ€§") return;
+	command("say å¥½å§ï¼Œå¸Œæœ›ä½ èƒ½å¥½å¥½å­¦ä¹ æœ¬é—¨æ­¦åŠŸï¼Œå°†æ¥ä¸ºä¸å¸®äº‰ä¸€å£æ°”ï¼ã€‚");
 	command("recruit " + ob->query("id"));
 }
 #include "/kungfu/class/gaibang/gaibang.h"

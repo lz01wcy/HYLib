@@ -1,4 +1,4 @@
-// wugou.c ÌìÏÂÎŞ³£
+// wugou.c å¤©ä¸‹æ— å¸¸
 // shang 97/6
 
 #include <ansi.h>
@@ -13,26 +13,26 @@ int perform(object me, object target)
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "staff")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 2000 )
-		return notify_fail("ÄãÄÚÁ¦²»ĞÛºñ²»ÄÜÊ¹ÓÃÌìÏÂÎŞ³£¹¥»÷¡£\n");
+		return notify_fail("ä½ å†…åŠ›ä¸é›„åšä¸èƒ½ä½¿ç”¨å¤©ä¸‹æ— å¸¸æ”»å‡»ã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×ã¹»µÄÄÚÁ¦Ê¹ÓÃÌìÏÂÎŞ³£¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ²¡æœ‰è¶³å¤Ÿçš„å†…åŠ›ä½¿ç”¨å¤©ä¸‹æ— å¸¸ã€‚\n");
 
         if ((int)me->query("jing") < 100)
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×ã¹»µÄ¾«Á¦Ê¹ÓÃÌìÏÂÎŞ³£¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ²¡æœ‰è¶³å¤Ÿçš„ç²¾åŠ›ä½¿ç”¨å¤©ä¸‹æ— å¸¸ã€‚\n");
 
         if( (int)me->query_skill("wuchang-zhang", 1) < 200 )
-                return notify_fail("ÄãµÄÎŞ³£ÕÈ·¨»ğºî»¹Ã»µ½£¬ÌìÏÂÎŞ³£Ê¹²»³öÀ´¡£\n");
+                return notify_fail("ä½ çš„æ— å¸¸æ–æ³•ç«ä¾¯è¿˜æ²¡åˆ°ï¼Œå¤©ä¸‹æ— å¸¸ä½¿ä¸å‡ºæ¥ã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+		return notify_fail("åœ¨è¿™é‡Œä¸èƒ½æ”»å‡»ä»–äººã€‚\n");
 
 
 	if( !me->is_fighting())
-		return notify_fail("Äã²»ÔÚ´ò¼Ü£¬ÓÃÕâ¸ö×öÊ²Ã´?\n");
+		return notify_fail("ä½ ä¸åœ¨æ‰“æ¶ï¼Œç”¨è¿™ä¸ªåšä»€ä¹ˆ?\n");
 
 
 	skill = me->query_skill("wuchang-zhang", 1);
@@ -42,7 +42,7 @@ int perform(object me, object target)
 
 	me->start_busy(2);
 	message_vision(
-		HIY "$NÊ¹³ö¡¸ÌìÏÂÎŞ³£¡¹µÄ×îºóÒ»ÕĞ£¬ÊÀ¼ä½ÔÎŞ³££¬¡£\n" NOR, me);
+		HIY "$Nä½¿å‡ºã€Œå¤©ä¸‹æ— å¸¸ã€çš„æœ€åä¸€æ‹›ï¼Œä¸–é—´çš†æ— å¸¸ï¼Œã€‚\n" NOR, me);
 
 	ob = all_inventory(environment(me));
 	for(i=0; i<sizeof(ob); i++) {
@@ -57,7 +57,7 @@ int perform(object me, object target)
 		if( damage > 2000 ) damage = 2001;
 		ob[i]->receive_damage("qi", damage , me);
 		ob[i]->receive_damage("jing", damage / 4 , me);
-		tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»ÕóÕÈÓê£¬°¤ÁË²»ÉÙÏÂ¡£\n");	
+		tell_object(ob[i], "ä½ è§‰å¾—çœ¼å‰ä¸€é˜µæ–é›¨ï¼ŒæŒ¨äº†ä¸å°‘ä¸‹ã€‚\n");	
 	        		if( !me->is_killing(ob[i]) )
 			me->fight_ob(ob[i]);
 

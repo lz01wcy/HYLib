@@ -1,13 +1,13 @@
-// xiaoyaoyou.c åÐÒ£ÓÎ
+// xiaoyaoyou.c é€é¥æ¸¸
 // modified by Venus Oct.1997
 // written by Xiang
 
 inherit SKILL;
 
 string *dodge_msg = ({
-    "$nÒ»¸ö¡¸òßòÑµãË®¡¹£¬¶ã¹ýÁË$NÕâÒ»ÕÐ¡£\n",
-    "$nÉíÐÎÏòºóÒ»×Ý£¬Ê¹³öÒ»ÕÐ¡¸Ï¸ÐØÇÉ·­ÔÆ¡¹£¬±Ü¹ýÁË$NµÄ¹¥»÷¡£\n",
-    "$nÊ¹³ö¡¸Ðé»³Èô¹È¡¹£¬Ç¡ºÃ¶ã¹ýÁË$NµÄ¹¥ÊÆ¡£\n"
+    "$nä¸€ä¸ªã€Œèœ»èœ“ç‚¹æ°´ã€ï¼Œèº²è¿‡äº†$Nè¿™ä¸€æ‹›ã€‚\n",
+    "$nèº«å½¢å‘åŽä¸€çºµï¼Œä½¿å‡ºä¸€æ‹›ã€Œç»†èƒ¸å·§ç¿»äº‘ã€ï¼Œé¿è¿‡äº†$Nçš„æ”»å‡»ã€‚\n",
+    "$nä½¿å‡ºã€Œè™šæ€€è‹¥è°·ã€ï¼Œæ°å¥½èº²è¿‡äº†$Nçš„æ”»åŠ¿ã€‚\n"
 });
 
 int valid_enable(string usage)
@@ -25,7 +25,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
     if( (int)me->query("qi") < 40 )
-   return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·åÐÒ£ÓÎ¡£\n");
+   return notify_fail("ä½ çš„ä½“åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒé€é¥æ¸¸ã€‚\n");
     me->receive_damage("qi", 30);
     return 1;
 }

@@ -14,44 +14,44 @@ int perform(object me, object target)
 
 //        if(me->query("family/master_id") != "feng qingyang"
 //        && userp(me))
-//           return notify_fail("Äã²»ÊÇ·çÇåÑïµÄµÜ×Ó£¬²»ÄÜÊ¹ÓÃ¾øÕĞ£¡\n");
+//           return notify_fail("ä½ ä¸æ˜¯é£æ¸…æ‰¬çš„å¼Ÿå­ï¼Œä¸èƒ½ä½¿ç”¨ç»æ‹›ï¼\n");
      if( (int)me->query_skill("zixia-shengong",1)<100)
-            return notify_fail("¶À¹Â¾Å½£±ØĞëÅäºÏ×ÏÏ¼Éñ¹¦¡£\n");
+            return notify_fail("ç‹¬å­¤ä¹å‰‘å¿…é¡»é…åˆç´«éœç¥åŠŸã€‚\n");
 
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÒÔÕĞÆÆÕĞÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ä»¥æ‹›ç ´æ‹›åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-			return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+			return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query_skill("lonely-sword", 1) < 200 )
-		return notify_fail("ÄãµÄ¶À¹Â¾Å½£²»¹»æµÊì£¬²»»áÊ¹ÓÃÒÔÕĞÆÆÕĞ¡£\n");
+		return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ä»¥æ‹›ç ´æ‹›ã€‚\n");
 
 	if( (int)me->query("neili") < 300 )
-		return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+		return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿäº†ã€‚\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
 	skill = me->query_skill("lonely-sword", 1);
 
 	me->add("neili", -200);
 	target->receive_damage("qi", (int)skill/ 3);
-	message_combatd(HIC "$NËæÊÖ¼¸ÕĞÏò$n´ÌÀ´,Ò»¿´Ö»ÏÂ¾¡È«ÊÇ´ÌÏò$nÎä¹¦µÄÈõµã
-$nĞÄÖĞÒ»»Å.....²»ÓÉµÄ·¢³öµÄ¹Ö½ĞÉù¡£\n"NOR,me,target);
+	message_combatd(HIC "$Néšæ‰‹å‡ æ‹›å‘$nåˆºæ¥,ä¸€çœ‹åªä¸‹å°½å…¨æ˜¯åˆºå‘$næ­¦åŠŸçš„å¼±ç‚¹
+$nå¿ƒä¸­ä¸€æ…Œ.....ä¸ç”±çš„å‘å‡ºçš„æ€ªå«å£°ã€‚\n"NOR,me,target);
     if (random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 )
     {
 	message_combatd(
-        HIR "$NÊÖÖĞµÄ½£·¢³öÎŞÊıµÀµÄ½£Æø,Ò»µÀÒ»µÀµÄ½£ÆøÏò$n´ÌÈ¥£¡\n" NOR, me, target);
+        HIR "$Næ‰‹ä¸­çš„å‰‘å‘å‡ºæ— æ•°é“çš„å‰‘æ°”,ä¸€é“ä¸€é“çš„å‰‘æ°”å‘$nåˆºå»ï¼\n" NOR, me, target);
 	target->start_busy(1);
     if (random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 )
     {
 	target->set_temp("block_msg/all",1);
 	message_combatd(
-        HIR "$nÁ½ÑÛÒ»ºÚ£¬$nÉ¶Ò²¿´²»¼ûÁË£¡\n" NOR, me, target);
+        HIR "$nä¸¤çœ¼ä¸€é»‘ï¼Œ$nå•¥ä¹Ÿçœ‹ä¸è§äº†ï¼\n" NOR, me, target);
     }
 	damage = (int)me->query_skill("lonely-sword", 1);
 	damage = damage + random(damage);
@@ -63,9 +63,9 @@ $nĞÄÖĞÒ»»Å.....²»ÓÉµÄ·¢³öµÄ¹Ö½ĞÉù¡£\n"NOR,me,target);
     } else
     {
 	message_combatd(
-        HIR "$NÊÖÖĞµÄ½£·¢³öÎŞÊıµÀµÄ½£Æø,Ò»µÀÒ»µÀµÄ½£ÆøÏò$n´ÌÈ¥£¡\n" NOR, me, target);
+        HIR "$Næ‰‹ä¸­çš„å‰‘å‘å‡ºæ— æ•°é“çš„å‰‘æ°”,ä¸€é“ä¸€é“çš„å‰‘æ°”å‘$nåˆºå»ï¼\n" NOR, me, target);
         me->start_busy(3);
-        msg = HIY"$pÇé¼±ÖÇÉú£¬ÏòºóÒ»Ìø...ÌÓ³öÁË½£ÆøµÄ·¶Î§¡£\n"NOR;
+        msg = HIY"$pæƒ…æ€¥æ™ºç”Ÿï¼Œå‘åä¸€è·³...é€ƒå‡ºäº†å‰‘æ°”çš„èŒƒå›´ã€‚\n"NOR;
         message_combatd(msg, me, target);
     }
     if(!target->is_fighting(me)) target->fight_ob(me);
@@ -78,9 +78,9 @@ void tuwu_end(object me, object target)
 if (target)
 {
 	target->enable_player();
-	message_combatd("$NÄ¨ÁËÄ¨ÂúÁ³µÄ"HIR"ÏÊÑª"NOR"£¬ÖÕÓÚÕö¿ªÁËÑÛ¡£\n", target);
+	message_combatd("$NæŠ¹äº†æŠ¹æ»¡è„¸çš„"HIR"é²œè¡€"NOR"ï¼Œç»ˆäºçå¼€äº†çœ¼ã€‚\n", target);
 	target->set_temp("block_msg/all", 0);
 }
-	write(HIR"ÄãÖÕÓÚÄ¨µôÁËÂúÁ³µÄÏÊÑª£¬¿´µ½ÁËÖÜÎ§µÄÇé¾°¡£\n"NOR);
+	write(HIR"ä½ ç»ˆäºæŠ¹æ‰äº†æ»¡è„¸çš„é²œè¡€ï¼Œçœ‹åˆ°äº†å‘¨å›´çš„æƒ…æ™¯ã€‚\n"NOR);
 	return;
 }

@@ -12,23 +12,23 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÊ®ÀïÃÔÎí£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»åé‡Œè¿·é›¾ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
 
         me->add("neili",-200);
 
 	myexp = (int) me->query("combat_exp");
 	yourexp = (int) target->query("combat_exp");
 	lvl = (int) me->query_skill("unarmed") / 10 + 1;
-	msg = HIR "$NÊ¹³öÔÆÎíÕÆ·¨ÖĞµÄ£ÛÊ®ÀïÃÔÎí£İ£¬Ë«ÕÆ»ÓÎè£¬ÕÆÓ°ÃÜ²¼£¬²ã²ã»÷Ïò$n£¡" NOR;
+	msg = HIR "$Nä½¿å‡ºäº‘é›¾æŒæ³•ä¸­çš„ï¼»åé‡Œè¿·é›¾ï¼½ï¼ŒåŒæŒæŒ¥èˆï¼ŒæŒå½±å¯†å¸ƒï¼Œå±‚å±‚å‡»å‘$nï¼" NOR;
 	if( random(myexp * lvl) > yourexp )
 	{
 		message_vision(msg + "\n", me, target);
-		msg = "½á¹û$n±»$N¹¥ÁË¸öÊÖÃ¦½ÅÂÒ£¡\n";
+		msg = "ç»“æœ$nè¢«$Næ”»äº†ä¸ªæ‰‹å¿™è„šä¹±ï¼\n";
 		message_vision(msg, me, target);
 		target->start_busy(4);
 	}

@@ -10,22 +10,22 @@ int perform(object me, object target)
         
 
         extra=me->query_skill("kwan-yin-spells",1);
-        if(extra<120) return notify_fail("ÄãµÄ¹ÛÒôÁù×ÖÃ÷ÖäµÄµÈ¼¶»¹²»¹»¸ßÉî¡£\n");
+        if(extra<120) return notify_fail("ä½ çš„è§‚éŸ³å…­å­—æ˜Žå’’çš„ç­‰çº§è¿˜ä¸å¤Ÿé«˜æ·±ã€‚\n");
         
         if( !target )
-                return notify_fail("ÄãÒªÓÃÕæÑÔÎªË­ÁÆÉË£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸè¨€ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
         //if( !userp(target) )
-        //        return notify_fail("ÄãÒªÓÃÕæÑÔÎªË­ÁÆÉË£¿\n");
+        //        return notify_fail("ä½ è¦ç”¨çœŸè¨€ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
                 
         if( me==target)
-                return notify_fail("ÕæÑÔ·¨Êõ²»ÄÜÓÃÔÚ×Ô¼ºÉíÉÏ¡£\n"); 
+                return notify_fail("çœŸè¨€æ³•æœ¯ä¸èƒ½ç”¨åœ¨è‡ªå·±èº«ä¸Šã€‚\n"); 
         if( (int)me->query("neili") < 1200 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");
         
-        message_vision(HIC "$NÃæ³ÊÎÞÏÞò¯³Ïã¿ã½Ö®É«¡£Ë«ÊÖºÏÊ®ÆíÔ¸£¬µÍÉù¶Ô$nÄîµÀ£º¡°ßä¡± \n\n"NOR
-        HIM"Ò»ÂÖÉñÊ¥µÄ¹â²ÊÁýÕÖÔÚ$NÖÜÎ§£¬$NÃæÏÖÆÕ¶ÈÖÚÉúµÄ´È±¯Ö®É«£¬·¨Á¦Ô´Ô´ 
-²»¾øÁ÷Èë$nÌåÄÚ¡£ \n"NOR,me, target );
+        message_vision(HIC "$Né¢å‘ˆæ— é™è™”è¯šæ†§æ†¬ä¹‹è‰²ã€‚åŒæ‰‹åˆåç¥ˆæ„¿ï¼Œä½Žå£°å¯¹$nå¿µé“ï¼šâ€œå’ªâ€ \n\n"NOR
+        HIM"ä¸€è½®ç¥žåœ£çš„å…‰å½©ç¬¼ç½©åœ¨$Nå‘¨å›´ï¼Œ$Né¢çŽ°æ™®åº¦ä¼—ç”Ÿçš„æ…ˆæ‚²ä¹‹è‰²ï¼Œæ³•åŠ›æºæº 
+ä¸ç»æµå…¥$nä½“å†…ã€‚ \n"NOR,me, target );
         
         for( i = 0; i < sizeof(gifts); i++ )
         {
@@ -38,7 +38,7 @@ int perform(object me, object target)
         }
  
    //     target->clear_condition();
-        message_vision(HIR"$n¸Ðµ½ÌåÄÚÉú»ú²ª²ª£¬¶ø$NµÄÃæÉ«È´½¥½¥¿ÝÎ®¡£¡£¡£\n"NOR,me,target);
+        message_vision(HIR"$næ„Ÿåˆ°ä½“å†…ç”Ÿæœºå‹ƒå‹ƒï¼Œè€Œ$Nçš„é¢è‰²å´æ¸æ¸æž¯èŽã€‚ã€‚ã€‚\n"NOR,me,target);
         me->unconcious();
         me->set("neili",0);
         //me->set("force",0);

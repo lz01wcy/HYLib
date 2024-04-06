@@ -8,23 +8,23 @@ int perform(object me, object target)
         object env, *inv, *myteam;
 
         if((int) me->query_skill("kwan-yin-spells",1) < 150)
-                return notify_fail("ÄãµÄÕæÑÔ·¨ÊõĞŞÎª²»¹»¸ßÉî£¡\n");
+                return notify_fail("ä½ çš„çœŸè¨€æ³•æœ¯ä¿®ä¸ºä¸å¤Ÿé«˜æ·±ï¼\n");
         if (!me->is_fighting())
-                return notify_fail("¡°…Ë¡±Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("â€œæ•æ•è’èŒ‰è°¡è•‰åˆ†æƒºè¤‚è°©\n");
                         
         lvl = (int) me->query_skill("magic");
         bonus = (me->query("combat_exp")-4000000)/15000;
         if (bonus<0) bonus=0;
         if (bonus>200) bonus = 200; 
         if( me->query("neili") < (300 - bonus) )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
         if( me->query("jing") <= 200 )
-                return notify_fail("ÄãµÄÉñ²»¹»£¡\n"); 
+                return notify_fail("ä½ çš„ç¥ä¸å¤Ÿï¼\n"); 
         me->add("neili", bonus-300);
         me->receive_damage("jing", 100);
         
-        message_vision(HIW "$NÓÒÊÖÓÚĞØÇ°Õ¹³ÉÁ«»¨Ö®×´£¬×óÊÖÕÛÍóÏòÉÏÊÆÈôÁ«Ì¨£¬³ÁÓÚÓÒÊÖÏÂ£¬ÃæÈİËà¾²ÄîµÀ£º¡°…Ë¡± \n" NOR, me);
-        message_vision(HIY "£®£®£®Ö»¼û$NË«ÊÖÒ»Ë²¼ä·¢³ö±ÈÌ«Ñô»¹ÒªÒ«ÑÛµÄ¹âÃ¢£¡£¡£¡\n" NOR, me); 
+        message_vision(HIW "$Nå³æ‰‹äºèƒ¸å‰å±•æˆè²èŠ±ä¹‹çŠ¶ï¼Œå·¦æ‰‹æŠ˜è…•å‘ä¸ŠåŠ¿è‹¥è²å°ï¼Œæ²‰äºå³æ‰‹ä¸‹ï¼Œé¢å®¹è‚ƒé™å¿µé“ï¼šâ€œæ• \n" NOR, me);
+        message_vision(HIY "ï¼ï¼ï¼åªè§$NåŒæ‰‹ä¸€ç¬é—´å‘å‡ºæ¯”å¤ªé˜³è¿˜è¦è€€çœ¼çš„å…‰èŠ’ï¼ï¼ï¼\n" NOR, me); 
         env = environment(me);
         inv = all_inventory(env); 
         for(i=0; i<sizeof(inv); i++) {
@@ -45,17 +45,17 @@ int bbqthem(object me, object obj)
         spells = spells+ random(spells*2);
         if(obj->query("combat_exp")>random(me->query("combat_exp")/100*spells))
         {
-                message_vision(HIB"$NÁ¬Ã¦×ª¹ıÍ·È¥£¬²»¿´$n¡£\n"NOR,obj,me);
+                message_vision(HIB"$Nè¿å¿™è½¬è¿‡å¤´å»ï¼Œä¸çœ‹$nã€‚\n"NOR,obj,me);
                 //obj->kill_ob(me);
                 //me->kill_ob(obj);
                 return 1;
         }
         if(userp(obj))
         {
-                tell_object(obj,HIW"ÄãÖ»¾õµÃÑÛÇ°°×Ã£Ã£µÄÒ»Æ¬£¬Ê²Ã´¶¼¿´²»µ½ÁË¡£¡£¡£\n"NOR);
+                tell_object(obj,HIW"ä½ åªè§‰å¾—çœ¼å‰ç™½èŒ«èŒ«çš„ä¸€ç‰‡ï¼Œä»€ä¹ˆéƒ½çœ‹ä¸åˆ°äº†ã€‚ã€‚ã€‚\n"NOR);
                 obj->set_temp("block_msg/all",1);
                 obj->start_busy(5);
-                message_vision(CYN"$NÍ´¿àµØÎæ×¡ÑÛ¾¦£¬Ö±ÔÚµØÉÏ´ò¹ö¡£\n"NOR,obj);
+                message_vision(CYN"$Nç—›è‹¦åœ°æ‚ä½çœ¼ç›ï¼Œç›´åœ¨åœ°ä¸Šæ‰“æ»šã€‚\n"NOR,obj);
                 call_out ("recover",10, obj);
         }
         else
@@ -67,14 +67,14 @@ int bbqthem(object me, object obj)
                         call_out ("busy_recover",12, busy_num, obj);
                         }
                 obj->start_busy(3+random(2));
-                message_vision(CYN"$NÍ´¿àµØÎæ×¡ÑÛ¾¦£¬Ö±ÔÚµØÉÏ´ò¹ö¡£\n"NOR,obj);
+                message_vision(CYN"$Nç—›è‹¦åœ°æ‚ä½çœ¼ç›ï¼Œç›´åœ¨åœ°ä¸Šæ‰“æ»šã€‚\n"NOR,obj);
         }
         return 1;
 }  
 int recover (object obj)
 {
         obj->delete_temp("block_msg/all");
-        tell_object(obj, HIG"ÂıÂıÂıÂıµÄ£¬ÄãµÄÑÛ¾¦¿ªÊ¼¿ÉÒÔ·Ö±æÖÜÎ§µÄÊÂÎïÁË¡£\n" NOR);
+        tell_object(obj, HIG"æ…¢æ…¢æ…¢æ…¢çš„ï¼Œä½ çš„çœ¼ç›å¼€å§‹å¯ä»¥åˆ†è¾¨å‘¨å›´çš„äº‹ç‰©äº†ã€‚\n" NOR);
         return 1;
 }        
 int busy_recover (int busy_num, object obj)

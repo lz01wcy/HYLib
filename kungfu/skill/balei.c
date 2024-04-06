@@ -1,10 +1,10 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-    "$nÒ»¸ö¡¼¿ª¡½²½£¬¶ã¹ýÁË$NÕâÒ»ÕÐ¡£\n",
-    "$nÒ»¸ö¡¼±Á¡½²½£¬±Ü¹ýÁË$NµÄ¹¥»÷¡£\n",
-    "$nÒ»¸ö¡¼Ö±¡½²½£¬ÔÚÇ§¾ûÒ»·¢¼ä¶ã¹ýÁË$NµÄ¹¥ÊÆ¡£\n",
-    "$nÒ»¸ö¡¼Á¢¡½²½£¬äìÈ÷µØ±ÜÁË¿ªÈ¥¡£\n"
+    "$nä¸€ä¸ªã€–å¼€ã€—æ­¥ï¼Œèº²è¿‡äº†$Nè¿™ä¸€æ‹›ã€‚\n",
+    "$nä¸€ä¸ªã€–ç»·ã€—æ­¥ï¼Œé¿è¿‡äº†$Nçš„æ”»å‡»ã€‚\n",
+    "$nä¸€ä¸ªã€–ç›´ã€—æ­¥ï¼Œåœ¨åƒé’§ä¸€å‘é—´èº²è¿‡äº†$Nçš„æ”»åŠ¿ã€‚\n",
+    "$nä¸€ä¸ªã€–ç«‹ã€—æ­¥ï¼Œæ½‡æ´’åœ°é¿äº†å¼€åŽ»ã€‚\n"
 });
 
 int valid_enable(string usage)
@@ -22,7 +22,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
     if( (int)me->query("kee") < 40 )
-   return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·°ÅÀÙ¡£\n");
+   return notify_fail("ä½ çš„ä½“åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒèŠ­è•¾ã€‚\n");
     if (me->query_skill("balei", 1) < 30)
    me->receive_damage("kee", 10);
     else if (me->query_skill("balei", 1) < 60)

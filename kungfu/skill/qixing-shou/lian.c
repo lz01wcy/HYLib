@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define LIAN "¡¸" HIR "ÖØÑôÁ¬»·ÕÆ" NOR "¡¹"
+#define LIAN "ã€Œ" HIR "é‡é˜³è¿žçŽ¯æŽŒ" NOR "ã€"
 
 inherit F_SSERVER;
  
@@ -20,27 +20,27 @@ int perform(object me, object target)
         }
 
 	if (! target || ! me->is_fighting(target))
-		return notify_fail(LIAN "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail(LIAN "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
 	if (objectp(me->query_temp("weapon")))
-                return notify_fail(LIAN "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(LIAN "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
 
         if ((int)me->query_skill("qixing-shou", 1) < 150)
-                return notify_fail("ÄãÆßÐÇ·ÖÌìÊÖ²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" LIAN "¡£\n");
+                return notify_fail("ä½ ä¸ƒæ˜Ÿåˆ†å¤©æ‰‹ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" LIAN "ã€‚\n");
 
 
 	if ((int)me->query_skill("force") < 120)
-		return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" LIAN "¡£\n");
+		return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" LIAN "ã€‚\n");
 
 	if ((int)me->query("neili") < 100)
-		return notify_fail("ÄãÄ¿Ç°µÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" LIAN "¡£\n");
+		return notify_fail("ä½ ç›®å‰çš„çœŸæ°”ä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" LIAN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-	msg = HIY "$N" HIY "´óºÈÒ»Éù£¬Ê©³ö¡¸" HIR "ÖØÑôÁ¬»·ÕÆ" HIY "¡¹£¬¶Ù"
-              "Ê±Ë«ÕÆ·×·É£¬Ïò$n" HIY "ÃÍ¹¥¶øÈ¥¡£\n" NOR;
+	msg = HIY "$N" HIY "å¤§å–ä¸€å£°ï¼Œæ–½å‡ºã€Œ" HIR "é‡é˜³è¿žçŽ¯æŽŒ" HIY "ã€ï¼Œé¡¿"
+              "æ—¶åŒæŽŒçº·é£žï¼Œå‘$n" HIY "çŒ›æ”»è€ŒåŽ»ã€‚\n" NOR;
 	message_combatd(msg, me, target);
 	me->add("neili", -80);
 

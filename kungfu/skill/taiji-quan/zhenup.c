@@ -1,11 +1,11 @@
-// zhen.c Ì«¼«È­¡¸Õğ¡¹×Ö¾÷
+// zhen.c å¤ªææ‹³ã€Œéœ‡ã€å­—è¯€
 // snowman
 #include <ansi.h>
 
 inherit F_SSERVER;
 
 #include "/kungfu/skill/eff_msg.h";
-string *taiji_msg = ({"Ê®×ÖÊÖ","Èç·âËÆ±Õ","°áÀ¹´·","Ò°Âí·Ö××","Ğ±·ÉÊÆ","ÔÆÊÖ","Âí²½¿¿","ÉÁÍ¨±Û"});
+string *taiji_msg = ({"åå­—æ‰‹","å¦‚å°ä¼¼é—­","æ¬æ‹¦æ¶","é‡é©¬åˆ†é¬ƒ","æ–œé£åŠ¿","äº‘æ‰‹","é©¬æ­¥é ","é—ªé€šè‡‚"});
 
 int perform(object me, object target)
 {
@@ -16,16 +16,16 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) || !living(target) )
-                return notify_fail("Éñ¹¦ÕğµĞÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¥åŠŸéœ‡æ•Œåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 //        if(!me->query_temp("taiji"))
-//                return notify_fail("Ì«¼«È­½²¾¿¾¢¶ÏÒâ²»¶Ï£¬ÄãÃ»ÓĞÔËÓÃ¡¸Ì«¼«¡¹£¬ÓÖÈçºÎÄÜÊ¹ÓÃ¡¸Õğ¡¹×Ö¾÷£¿\n");
+//                return notify_fail("å¤ªææ‹³è®²ç©¶åŠ²æ–­æ„ä¸æ–­ï¼Œä½ æ²¡æœ‰è¿ç”¨ã€Œå¤ªæã€ï¼Œåˆå¦‚ä½•èƒ½ä½¿ç”¨ã€Œéœ‡ã€å­—è¯€ï¼Ÿ\n");
         if( (int)me->query("neili", 1) < 1000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬Ç¿ÆÈÊ¹ÓÃ¡¸Õğ¡¹×Ö¾÷Ö»»áÉËµ½Äã×Ô¼º£¡\n");                   
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œå¼ºè¿«ä½¿ç”¨ã€Œéœ‡ã€å­—è¯€åªä¼šä¼¤åˆ°ä½ è‡ªå·±ï¼\n");                   
         if( me->query_temp("weapon"))
-                return notify_fail("ÄãÏÈ·ÅÏÂÊÖÖĞµÄÎäÆ÷ÔÙËµ°É£¿£¡\n");                   
+                return notify_fail("ä½ å…ˆæ”¾ä¸‹æ‰‹ä¸­çš„æ­¦å™¨å†è¯´å§ï¼Ÿï¼\n");                   
           
-        msg = CYN "\nÍ»È»£¬$NÒ»ÕĞ¡¸"+taiji_msg[random(sizeof(taiji_msg))]+"¡¹£¬Ë«ÊÖ×óÓÒÁ¬»­£¬Ò»¸öÔ²È¦ÒÑ½«$nÌ××¡£¬Ì«¼«È­µÄ"RED"¡¸Õğ¡¹"CYN"×Ö¾÷Ëæ¼´Ê¹³ö£¡\n"NOR;
+        msg = CYN "\nçªç„¶ï¼Œ$Nä¸€æ‹›ã€Œ"+taiji_msg[random(sizeof(taiji_msg))]+"ã€ï¼ŒåŒæ‰‹å·¦å³è¿ç”»ï¼Œä¸€ä¸ªåœ†åœˆå·²å°†$nå¥—ä½ï¼Œå¤ªææ‹³çš„"RED"ã€Œéœ‡ã€"CYN"å­—è¯€éšå³ä½¿å‡ºï¼\n"NOR;
         
         force = me->query_skill("force") + target->query_skill("force");
 
@@ -37,7 +37,7 @@ int perform(object me, object target)
                        me->add("neili", -force/2);
                        target->add("jing", -force/10);
                        target->add("neili", -force/2);
-                       msg += HIY"Ö»Ìı¡¸Å¾¡¹µÄÒ»Éù£¬$pºÍ$PÁ½ÈËÄÚÁ¦ÏàÆ´ÏàÅö£¬¸÷×ÔÍËÁË¼¸²½¡£\n"NOR;
+                       msg += HIY"åªå¬ã€Œå•ªã€çš„ä¸€å£°ï¼Œ$på’Œ$Pä¸¤äººå†…åŠ›ç›¸æ‹¼ç›¸ç¢°ï¼Œå„è‡ªé€€äº†å‡ æ­¥ã€‚\n"NOR;
                        message_vision(msg, me, target);
                        return 1;
                        }
@@ -60,18 +60,18 @@ int perform(object me, object target)
                 me->add("neili", -(damage/4));
                 me->add("jing", -50);
                 if(damage > 1000)
-                   msg += "Ì«¼«Ö®ÒâÁ¬Ãà²»¶Ï£¬ÓĞÈç×ÔÈ¥ĞĞ¿Õ£¬Ò»¸öÔ²È¦Î´Íê£¬µÚ¶ş¸öÔ²È¦ÒÑÉú£¬¿¦À®Ò»Ïì£¬$pÒ»´¦¹ÇÍ·±»½Ê¶Ï£¡\n";
+                   msg += "å¤ªæä¹‹æ„è¿ç»µä¸æ–­ï¼Œæœ‰å¦‚è‡ªå»è¡Œç©ºï¼Œä¸€ä¸ªåœ†åœˆæœªå®Œï¼Œç¬¬äºŒä¸ªåœ†åœˆå·²ç”Ÿï¼Œå–€å–‡ä¸€å“ï¼Œ$pä¸€å¤„éª¨å¤´è¢«ç»æ–­ï¼\n";
                 if(damage > 2000)
-                   msg += "$NºŞËû´õ¶¾£¬¡¸Õğ¡¹×Ö¾÷Ê¹³öÊ±Á¬Ãà²»¶Ï£¬¸ú×Å¿¦¿¦¿¦¼¸Éù£¬$pÈ«Éí¸÷´¦¹ÇÍ·Ò²±»Ò»Ò»½Ê¶Ï£¡\n";
+                   msg += "$Næ¨ä»–æ­¹æ¯’ï¼Œã€Œéœ‡ã€å­—è¯€ä½¿å‡ºæ—¶è¿ç»µä¸æ–­ï¼Œè·Ÿç€å–€å–€å–€å‡ å£°ï¼Œ$på…¨èº«å„å¤„éª¨å¤´ä¹Ÿè¢«ä¸€ä¸€ç»æ–­ï¼\n";
                 p = (int)target->query("qi")*100/(int)target->query("max_qi");
-                msg += damage_msg(damage, "ÕğÉË");
+                msg += damage_msg(damage, "éœ‡ä¼¤");
                 msg += "( $n"+eff_status_msg(p)+" )\n";       
                 } 
         else{
                 me->start_busy(3);
                 me->add("jing", -25);
                 me->add("neili", -300);
-                msg += HIY"$pÒ»¿´²»¶Ô£¬ÂíÉÏÒ»Õó¼±¹¥£¬$PµÇÊ±ÊÖÃ¦½ÅÂÒ£¬ÔÙÒ²À´²»¼°³öÕĞ£¡\n"NOR;
+                msg += HIY"$pä¸€çœ‹ä¸å¯¹ï¼Œé©¬ä¸Šä¸€é˜µæ€¥æ”»ï¼Œ$Pç™»æ—¶æ‰‹å¿™è„šä¹±ï¼Œå†ä¹Ÿæ¥ä¸åŠå‡ºæ‹›ï¼\n"NOR;
              }
         message_vision(msg, me, target);
         return 1;

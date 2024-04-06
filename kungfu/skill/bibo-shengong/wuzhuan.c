@@ -1,4 +1,4 @@
-// maze.c ÆæÃÅ°ËØÔÃÔÕó
+// maze.c å¥‡é—¨å…«å¦è¿·é˜µ
 
 #include <ansi.h>
 
@@ -17,26 +17,26 @@ int exert(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÆæÃÅÎå×ªÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¥‡é—¨äº”è½¬åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (me->query_temp("thd/mazed")) 
-		return notify_fail("ÄãÕýÔÚÏÝÈë±ðÈË²¼µÄÃÔÕóÖÐ¡£\n");
+		return notify_fail("ä½ æ­£åœ¨é™·å…¥åˆ«äººå¸ƒçš„è¿·é˜µä¸­ã€‚\n");
 
 	if( (int)me->query("neili") < 80  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query_skill("qimen-wuxing") < 80  ) 
-		return notify_fail("ÄãµÄÆæÃÅÎåÐÐ²»¹»¡£\n");
+		return notify_fail("ä½ çš„å¥‡é—¨äº”è¡Œä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_temp("thd/maze") ) 
-		return notify_fail("ÄãÒÑ¾­²¼ÁËÒ»¸öÃÔÕóÁË¡£\n");
+		return notify_fail("ä½ å·²ç»å¸ƒäº†ä¸€ä¸ªè¿·é˜µäº†ã€‚\n");
 
 	skill = me->query_skill("qimen-wuxing", 1);
 	me->add("neili", -80);
-        msg = HIG "$NÁ³ÉÏÇàÆø´óÊ¢£¬½ÅÏÂ»º»º²È×Å¾Å¹¬°ËØÔ·½Î»£¬Í·¶¥Ã°³öÌÚÌÚ°×Æø£¬";
-        msg += "ËÄÃæÒþÒþ´«À´³±Ó¿Ö®Éù£¬±ÌÌÎÐþ¹¦ÒÑ·¢»Óµ½¼«ÖÂ£¡\n"NOR;
+        msg = HIG "$Nè„¸ä¸Šé’æ°”å¤§ç››ï¼Œè„šä¸‹ç¼“ç¼“è¸©ç€ä¹å®«å…«å¦æ–¹ä½ï¼Œå¤´é¡¶å†’å‡ºè…¾è…¾ç™½æ°”ï¼Œ";
+        msg += "å››é¢éšéšä¼ æ¥æ½®æ¶Œä¹‹å£°ï¼Œç¢§æ¶›çŽ„åŠŸå·²å‘æŒ¥åˆ°æžè‡´ï¼\n"NOR;
 
 	message_vision(
-	HIC "$NÒ»±ß×÷Õ½£¬Ò»±ßÀûÓÃÖÜÎ§µÄÊ¯¿é¡¢Ê÷Ö¦µÈ²¼ÁËÒ»¸ö¼òµ¥µÄÕó£¬¿´À´µÐÈËÔÝÊ±¼äÄÚÄÑÒÔ´òµ½$PÁË¡£\n" NOR, me);
+	HIC "$Nä¸€è¾¹ä½œæˆ˜ï¼Œä¸€è¾¹åˆ©ç”¨å‘¨å›´çš„çŸ³å—ã€æ ‘æžç­‰å¸ƒäº†ä¸€ä¸ªç®€å•çš„é˜µï¼Œçœ‹æ¥æ•Œäººæš‚æ—¶é—´å†…éš¾ä»¥æ‰“åˆ°$Päº†ã€‚\n" NOR, me);
 
 	me->add_temp("apply/damage", skill/5);
 	me->add_temp("apply/attack", skill/5);
@@ -67,12 +67,12 @@ void remove_effect(object me, object target, int count, int skill)
 		me->add_temp("apply/dodge", - (skill/6));
 		me->delete_temp("thd/maze");
         if (target && me->is_fighting(target)) {
-			tell_object(me, "Äã²¼µÄÃÔÕóÒÑ¾­±»" + target->name() + "ÆÆ»µÁË¡£\n");
+			tell_object(me, "ä½ å¸ƒçš„è¿·é˜µå·²ç»è¢«" + target->name() + "ç ´åäº†ã€‚\n");
 			if (userp(target) && living(target))
-				tell_object(target, me->name() + "¶ÔÄã²¼µÄÃÔÕóÒÑ¾­±»ÄãÊ¶ÆÆÁË¡£\n");
+				tell_object(target, me->name() + "å¯¹ä½ å¸ƒçš„è¿·é˜µå·²ç»è¢«ä½ è¯†ç ´äº†ã€‚\n");
 		}
 		else {
-			tell_object(me, "Äã²¼µÄÃÔÕóÒÑ¾­Ê§Ð§ÁË¡£\n");
+			tell_object(me, "ä½ å¸ƒçš„è¿·é˜µå·²ç»å¤±æ•ˆäº†ã€‚\n");
 		}
 	}
 	if (objectp(target))

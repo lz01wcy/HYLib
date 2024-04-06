@@ -12,25 +12,25 @@ int perform(object me, object target)
       if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ö»ÓÐÔÚÕ¾¶·ÖÐ²ÅÄÜÊ¹ÓÃ£¡\n");
+                return notify_fail("åªæœ‰åœ¨ç«™æ–—ä¸­æ‰èƒ½ä½¿ç”¨ï¼\n");
 
 
         if((int)me->query_skill("guiyuan-tunafa",1) < 100)
-                return notify_fail(HIY "ÄãµÄ¹éÔªÍÂÄÉ·¨ÐÞÎª²»¹»¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„å½’å…ƒåçº³æ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n" NOR);
 
          if((int)me->query_skill("shuishangpiao",1) < 100)
-                return notify_fail(HIY "ÄãµÄË®ÉÏÆ¯²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„æ°´ä¸Šæ¼‚ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
     
         if (me->query_skill_mapped("dodge") != "shuishangpiao")
-                return notify_fail("ÄãÏÖÔÚ¼¤·¢µÄÇáÉí²»ÊÇ¡¸Ë®ÉÏÆ¯¡¹¾ø¼¼¡£\n");                                                                                 
+                return notify_fail("ä½ çŽ°åœ¨æ¿€å‘çš„è½»èº«ä¸æ˜¯ã€Œæ°´ä¸Šæ¼‚ã€ç»æŠ€ã€‚\n");                                                                                 
       if( me->query_temp("piao")   )
-      return notify_fail("ÄãÕýÔÚÊ¹ÓÃË®ÉÏÆ¯µÄÌØÊâ·ÀÓù¡¸Ë®ÉÏÆ¯¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨æ°´ä¸Šæ¼‚çš„ç‰¹æ®Šé˜²å¾¡ã€Œæ°´ä¸Šæ¼‚ã€ï¼\n");
        
-     msg = HIW"$NÍ»È»ÉîÎüÒ»¿ÚÆø£¬ÉíÌåºöÈ»ÈáÈôÎÞ¹Ç£¬×óÓÒÒ¡°Ú" +
-               "Ò»ÕÐ¡¸ÀðÓãµ¹´©²¨¡¹£¬·´´Ü³öÕÉÓà£¡\n" NOR;
+     msg = HIW"$Nçªç„¶æ·±å¸ä¸€å£æ°”ï¼Œèº«ä½“å¿½ç„¶æŸ”è‹¥æ— éª¨ï¼Œå·¦å³æ‘‡æ‘†" +
+               "ä¸€æ‹›ã€Œé²¤é±¼å€’ç©¿æ³¢ã€ï¼Œåçªœå‡ºä¸ˆä½™ï¼\n" NOR;
       
       message_vision(msg, me, target); 
       improve = (int)me->query_dex() * 2;
@@ -48,7 +48,7 @@ void remove_effect(object me, int improve)
       me->add_temp("apply/dodge", - improve);
       me->add_temp("apply/defense", - improve);
       me->delete_temp("piao");
-      tell_object(me, HIC"ÄãÉ¢È¥µ¤ÌïÄý¾ÛµÄÄÚÁ¦£¬»ìÉí¾­ÂöÕæÆøÁ÷¶¯£¬Æø¶¨ÉñÏÐ£¬¾«ÉñÞÄÞÄ¡£\n"NOR);
-      tell_room(environment(me), HIG + me->name()+"È«Éí¹ÇÍ·Ò»ÕóÇáÏì£¬É¢È¥ÁË»ìÉíµÄ¹¦Á¦¡£\n" NOR,  ({ me }));
+      tell_object(me, HIC"ä½ æ•£åŽ»ä¸¹ç”°å‡èšçš„å†…åŠ›ï¼Œæ··èº«ç»è„‰çœŸæ°”æµåŠ¨ï¼Œæ°”å®šç¥žé—²ï¼Œç²¾ç¥žå¼ˆå¼ˆã€‚\n"NOR);
+      tell_room(environment(me), HIG + me->name()+"å…¨èº«éª¨å¤´ä¸€é˜µè½»å“ï¼Œæ•£åŽ»äº†æ··èº«çš„åŠŸåŠ›ã€‚\n" NOR,  ({ me }));
     
 }

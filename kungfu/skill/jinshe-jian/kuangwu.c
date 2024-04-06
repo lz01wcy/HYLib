@@ -18,47 +18,47 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸½ðÉß¿ñÎè¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé‡‘è›‡ç‹‚èˆžã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!weapon || weapon->query("skill_type") != "sword"
         || me->query_skill_mapped("sword") != "jinshe-jian")
-                return notify_fail("Äã±ØÐëÔÚÊ¹ÓÃ½£Ê±²ÅÄÜÊ¹³ö¡¸½ðÉß¿ñÎè¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»åœ¨ä½¿ç”¨å‰‘æ—¶æ‰èƒ½ä½¿å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ï¼\n");
 
         if(me->query_skill("jinshe-jian", 1) < 120 )
-                return notify_fail("ÄãµÄ½ðÉß½£·¨»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡å‰‘æ³•è¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ç»æŠ€ã€‚\n");
 
         if(me->query_skill("jinshe-zhang", 1) < 120 )
-                return notify_fail("ÄãµÄ½ðÉßÓÎÉíÕÆ»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡æ¸¸èº«æŽŒè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_skill("force") < 170 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_str() < 27)
-                return notify_fail("ÄãµÄëöÁ¦»¹²»¹»Ç¿¾¢£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„è†‚åŠ›è¿˜ä¸å¤Ÿå¼ºåŠ²ï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_dex() < 27)
-                return notify_fail("ÄãµÄÉí·¨»¹²»¹»Ñ¸ÃÍ£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•è¿˜ä¸å¤Ÿè¿…çŒ›ï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ç»æŠ€ã€‚\n");
 
 //        if(me->query_skill_mapped("strike") != "jinshe-zhang")
-//                return notify_fail("¡¸½ðÉß¿ñÎè¡¹ÐèÒªÊ¹ÓÃ½ðÉßÓÎÉíÕÆ¡£\n");                                                                                 
+//                return notify_fail("ã€Œé‡‘è›‡ç‹‚èˆžã€éœ€è¦ä½¿ç”¨é‡‘è›‡æ¸¸èº«æŽŒã€‚\n");                                                                                 
 
         if( (int)me->query("max_neili") < 800 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¡£\n");      
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ã€‚\n");      
 
         if( (int)me->query("neili") < 500 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ã€‚\n");
 
         if( (int)me->query("jing") < 100 )
-                return notify_fail("ÄãÏÖÔÚ¾«Ì«Èõ£¬Ê¹²»³ö¡¸½ðÉß¿ñÎè¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ç²¾å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œé‡‘è›‡ç‹‚èˆžã€ã€‚\n");
 
-        msg = HIY"\nÍ»È»$NÈÆ×Å$n¿ìËÙ±¼×ß£¬ÃÍÈ»»÷³öÁ½½£Ò»ÕÆ£¬ÆëÆëÖ¸Ïò$n£¡\n\n"NOR;
+        msg = HIY"\nçªç„¶$Nç»•ç€$nå¿«é€Ÿå¥”èµ°ï¼ŒçŒ›ç„¶å‡»å‡ºä¸¤å‰‘ä¸€æŽŒï¼Œé½é½æŒ‡å‘$nï¼\n\n"NOR;
 
         me->add_temp("apply/strength", z);
         me->add_temp("apply/attack", j); 
         me->add_temp("apply/damage", j); 
         if(1==1){
           me->set_temp("jsj", 1);
-          msg = HIR"\n$NÊÖÖÐ½£Á¬»®Êý½££¬±Æ³öµÀµÀ½ð¹â£¬½£¹âÖÐ$N»¯ÉíÎª¶þ£¬ÕÆ½£Æë³ö£¬Ö±Ö¸$n£¡\n\n"NOR;
+          msg = HIR"\n$Næ‰‹ä¸­å‰‘è¿žåˆ’æ•°å‰‘ï¼Œé€¼å‡ºé“é“é‡‘å…‰ï¼Œå‰‘å…‰ä¸­$NåŒ–èº«ä¸ºäºŒï¼ŒæŽŒå‰‘é½å‡ºï¼Œç›´æŒ‡$nï¼\n\n"NOR;
           }
 
         message_vision(msg, me, target);
@@ -67,21 +67,21 @@ int perform(object me, object target)
         me->add("neili", -100);
         me->add("jing", -10); 
         if(me->query_temp("jsj"))
-          message_vision(HIY"                                                                     ¡ù¡ù  ½ð  ¡ù¡ù\n"NOR,me);       
+          message_vision(HIY"                                                                     â€»â€»  é‡‘  â€»â€»\n"NOR,me);       
 
         weapon->unequip(); 
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
         me->add("neili", -100);  
         me->add("jing", -10);
         if(me->query_temp("jsj"))
-          message_vision(HIY"                                                                     ¡ù¡ù  Éß  ¡ù¡ù\n"NOR,me);
+          message_vision(HIY"                                                                     â€»â€»  è›‡  â€»â€»\n"NOR,me);
 
         weapon->wield();
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
         me->add("neili", -100);  
         me->add("jing", -10);
         if(me->query_temp("jsj"))
-          message_vision(HIY"                                                                     ¡ù¡ù  ¿ñ  ¡ù¡ù\n"NOR,me);
+          message_vision(HIY"                                                                     â€»â€»  ç‹‚  â€»â€»\n"NOR,me);
 
         if(me->query_temp("jsj"))
         {          
@@ -89,7 +89,7 @@ int perform(object me, object target)
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
         me->add("neili", -50);  
         me->add("jing", -5);
-        message_vision(HIY"                                                                     ¡ù¡ù  Îè  ¡ù¡ù\n"NOR,me);        
+        message_vision(HIY"                                                                     â€»â€»  èˆž  â€»â€»\n"NOR,me);        
         weapon->wield();               
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 2);
         me->delete_temp("jsj");

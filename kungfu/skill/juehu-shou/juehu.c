@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define JUEHU "¡¸" HIR "¾ø»§Éñ×¥" NOR "¡¹"
+#define JUEHU "ã€Œ" HIR "ç»æˆ·ç¥æŠ“" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -18,30 +18,30 @@ int perform(object me, object target)
 
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(JUEHU "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(JUEHU "åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (objectp(me->query_temp("weapon")))
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ" JUEHU "¡£\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨" JUEHU "ã€‚\n");
         if( (int)me->query_skill("taiji-shengong", 1) < 180 )
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦¹¦Á¦Ì«Ç³ÁË¡£\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸåŠŸåŠ›å¤ªæµ…äº†ã€‚\n");
         if (userp(me) && me->query("shen") < 10000)
-                return notify_fail(HIC "\nÄã¶ñÄî¶ÙÉú£¬¸ÕÏëÊ©Õ¹¶¾ÕĞ£¬¿ÉÍ»È»Ïëµ½µ±³õÓáÁ«ÖÛ"
-                                   "µÄÒ»·¬¸æ½ë£¬²»µÃ²»ÖĞÍ¾·ÅÆúÁË¹¥»÷¡£\n" NOR);
+                return notify_fail(HIC "\nä½ æ¶å¿µé¡¿ç”Ÿï¼Œåˆšæƒ³æ–½å±•æ¯’æ‹›ï¼Œå¯çªç„¶æƒ³åˆ°å½“åˆä¿è²èˆŸ"
+                                   "çš„ä¸€ç•ªå‘Šè¯«ï¼Œä¸å¾—ä¸ä¸­é€”æ”¾å¼ƒäº†æ”»å‡»ã€‚\n" NOR);
 
         if ((int)me->query_skill("juehu-shou", 1) < 120)
-                return notify_fail("ÄãµÄ»¢×¦¾ø»§ÊÖ²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" JUEHU "¡£\n");
+                return notify_fail("ä½ çš„è™çˆªç»æˆ·æ‰‹ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" JUEHU "ã€‚\n");
 
         if (me->query_skill_mapped("claw") != "juehu-shou")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢»¢×¦¾ø»§ÊÖ£¬ÄÑÒÔÊ©Õ¹" JUEHU "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘è™çˆªç»æˆ·æ‰‹ï¼Œéš¾ä»¥æ–½å±•" JUEHU "ã€‚\n");
 
         if (me->query_skill_mapped("parry") != "juehu-shou")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃ»¢×¦¾ø»§ÊÖ£¬ÎŞ·¨Ê¹ÓÃ" JUEHU "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰å‡†å¤‡ä½¿ç”¨è™çˆªç»æˆ·æ‰‹ï¼Œæ— æ³•ä½¿ç”¨" JUEHU "ã€‚\n");
 
         if (me->query("neili") < 300)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" JUEHU "¡£\n");
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" JUEHU "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 	extra = me->query_skill("juehu-shou",1) / 20;
 	extra += me->query_skill("taiji-shengong",1) /20;
 a=extra/3;
@@ -50,15 +50,15 @@ if (a> 6) a=6;
 	me->add_temp("apply/damage", extra);
 	for(i=0;i<a;i++)
 	{
-         msg = HIR "$NË«×¦»¯³öÂşÌì×¦Ó°£¬ÏòµÄÒªº¦×¥È¥µÚ"+(i+1)+"×¦£¡\n"NOR;
+         msg = HIR "$NåŒçˆªåŒ–å‡ºæ¼«å¤©çˆªå½±ï¼Œå‘çš„è¦å®³æŠ“å»ç¬¬"+(i+1)+"çˆªï¼\n"NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	}
 	i = extra/4;
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);
 me->add("neili", - 50 * i);      
-        message_vision(HIM "$N" HIM "´óºÈÒ»Éù£¬±äÕÆÎª×¦£¬Ë«×¦»¯³öÂşÌì×¦Ó°£¬Èç¿ñ·çÖèÓêÒ»°ãÏò$n\n"
-                     "µÄÒªº¦×¥È¥£¡"NOR,
+        message_vision(HIM "$N" HIM "å¤§å–ä¸€å£°ï¼Œå˜æŒä¸ºçˆªï¼ŒåŒçˆªåŒ–å‡ºæ¼«å¤©çˆªå½±ï¼Œå¦‚ç‹‚é£éª¤é›¨ä¸€èˆ¬å‘$n\n"
+                     "çš„è¦å®³æŠ“å»ï¼"NOR,
                      me, target);
 
         if (random(me->query_skill("unarmed")) > target->query_skill("parry") / 2)
@@ -70,13 +70,13 @@ me->add("neili", - 50 * i);
 target->add("qi",-damage);
 target->add("eff_qi",-damage);
 msg =  "\n"NOR;
-	msg += RED HIR "½á¹û$p" HIR "Ò»Éù²Òº¿£¬Ã»ÄÜÕĞ¼Ü×¡$P"
-                                           HIR "ÁèÀ÷µÄ¹¥ÊÆ£¬±»×¥µÃÆ¤Èâ·ÖÀë£¬ÏÊÑª·É½¦£¡\n" NOR;
-if (random(6)==0 && target->query("gender")=="ÄĞĞÔ" && target->query("qi") < 200
+	msg += RED HIR "ç»“æœ$p" HIR "ä¸€å£°æƒ¨åšï¼Œæ²¡èƒ½æ‹›æ¶ä½$P"
+                                           HIR "å‡Œå‰çš„æ”»åŠ¿ï¼Œè¢«æŠ“å¾—çš®è‚‰åˆ†ç¦»ï¼Œé²œè¡€é£æº…ï¼\n" NOR;
+if (random(6)==0 && target->query("gender")=="ç”·æ€§" && target->query("qi") < 200
 && me->query_skill("juehu-shou",1)> 350)
 {
-message_vision(HIY"\n$nÒªº¦´¦¾¡È»Ó²ÉúÉú±»$NËºÁËÏÂÀ´£¡ÕæÊÇÆ¤Èâ·ÖÀë£¬ÏÊÑª·É½¦\n" NOR, me,target);
-target->set("gender","ÎŞĞÔ");
+message_vision(HIY"\n$nè¦å®³å¤„å°½ç„¶ç¡¬ç”Ÿç”Ÿè¢«$Næ’•äº†ä¸‹æ¥ï¼çœŸæ˜¯çš®è‚‰åˆ†ç¦»ï¼Œé²œè¡€é£æº…\n" NOR, me,target);
+target->set("gender","æ— æ€§");
 }
                 me->add("neili", -400);
 if ((int)me->query("shen") > 0)
@@ -87,8 +87,8 @@ if ((int)me->query("shen") > 0)
 	        me->add("neili", -400);
 if ((int)me->query("shen") > 0)
         	me->add("shen", -5000);
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$N"
-                       CYN "µÄÆóÍ¼£¬¶ã¿ªÁËÕâÕĞÉ±×Å¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$N"
+                       CYN "çš„ä¼å›¾ï¼Œèº²å¼€äº†è¿™æ‹›æ€ç€ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

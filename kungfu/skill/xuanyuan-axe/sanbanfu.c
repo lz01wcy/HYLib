@@ -8,33 +8,33 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
         extra = me->query_skill("xuanyuan-axe",1);
-        if ( extra < 30) return notify_fail("ÄãµÄÐùÔ¯¸«·¨»¹²»¹»´¿Êì£¡\n");
+        if ( extra < 30) return notify_fail("ä½ çš„è½©è¾•æ–§æ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
         	
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÈý°å¸«£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»ä¸‰æ¿æ–§ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "axe")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
     if( (int)me->query_skill("guiyuan-tunafa", 1) < 50 )
-	return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»¹Î´Á·³É£¬²»ÄÜÊ¹ÓÃ£¡\n");
+	return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸè¿˜æœªç»ƒæˆï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
 
     if( (int)me->query("neili") < 600 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	weapon = me->query_temp("weapon");
     extra=extra/3;
 if (extra> 200) extra=200;    
 	me->add_temp("apply/attack",extra);
-	msg = HIY  "$NÊ¹³öÎò³¹²¨·ç¸«·¨ÖÐµÄ£ÛÈý°å¸«£Ý£¬Ò»ÕÐÁ¬»·Èý¸«£¬ÊÖÖÐµÄ"+ weapon->name()+  "ÅüÉ½°ãÏò$n¿³³öµÚÒ»¸«£¡" NOR;
+	msg = HIY  "$Nä½¿å‡ºæ‚Ÿå½»æ³¢é£Žæ–§æ³•ä¸­çš„ï¼»ä¸‰æ¿æ–§ï¼½ï¼Œä¸€æ‹›è¿žçŽ¯ä¸‰æ–§ï¼Œæ‰‹ä¸­çš„"+ weapon->name()+  "åŠˆå±±èˆ¬å‘$nç å‡ºç¬¬ä¸€æ–§ï¼" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "µÚ¶þ¸«£¡" NOR;
+        msg = HIY  "ç¬¬äºŒæ–§ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "µÚÈý¸«£¡" NOR;
+        msg = HIY  "ç¬¬ä¸‰æ–§ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/attack",-extra);
 	me->add("neili",-50);

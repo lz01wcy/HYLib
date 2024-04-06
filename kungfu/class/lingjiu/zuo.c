@@ -13,14 +13,14 @@ mixed ask_me();
 
 void create()
 {
-        set_name("×ó×ÓÄÂ", ({ "zuo zimu", "zuo", "zimu"}));
-        set("gender", "ÄÐÐÔ");
-        set("title", "ÎÞÁ¿½£ÅÉ¶«×ÚÕÆÃÅ");
+        set_name("å·¦å­ç©†", ({ "zuo zimu", "zuo", "zimu"}));
+        set("gender", "ç”·æ€§");
+        set("title", "æ— é‡å‰‘æ´¾ä¸œå®—æŽŒé—¨");
         set("age", 54);
         set("long", @LONG
-Õâ¾ÍÊÇÎÞÁ¿½£ÅÉ¶«×ÚÕÆÃÅ×ó×ÓÄÂ£¬Ö»¼ûËûÎåÊ®
-¶àËêÄê¼Í£¬Éí×ÅÇàÉÀ£¬×÷ÈåÉú´ò°ç¡£ËûÑü¼äÅå
-ÓÐÒ»±ú³¤½££¬Ïë±Ø½£·¨×ÅÊµÁËµÃ¡£
+è¿™å°±æ˜¯æ— é‡å‰‘æ´¾ä¸œå®—æŽŒé—¨å·¦å­ç©†ï¼Œåªè§ä»–äº”å
+å¤šå²å¹´çºªï¼Œèº«ç€é’è¡«ï¼Œä½œå„’ç”Ÿæ‰“æ‰®ã€‚ä»–è…°é—´ä½©
+æœ‰ä¸€æŸ„é•¿å‰‘ï¼Œæƒ³å¿…å‰‘æ³•ç€å®žäº†å¾—ã€‚
 LONG );
         set("attitude", "peaceful");
         set("str", 30);
@@ -64,11 +64,11 @@ set("pubmaster",1);
         prepare_skill("strike", "liuyang-zhang");
 
         set("inquiry", ([
-                "ÐéÖñ×Ó"   : "ËûÊÇÎÒÃÇÁéðÕ¹¬ÐÂµÄÖ÷¹«£¬ÎÒÃÇÈ«²¿ÌýËûºÅÁî¡£",
-                "ÐéÖñ"     : "ËûÊÇÎÒÃÇÁéðÕ¹¬ÐÂµÄÖ÷¹«£¬ÎÒÃÇÈ«²¿ÌýËûºÅÁî¡£",
+                "è™šç«¹å­"   : "ä»–æ˜¯æˆ‘ä»¬çµé¹«å®«æ–°çš„ä¸»å…¬ï¼Œæˆ‘ä»¬å…¨éƒ¨å¬ä»–å·ä»¤ã€‚",
+                "è™šç«¹"     : "ä»–æ˜¯æˆ‘ä»¬çµé¹«å®«æ–°çš„ä¸»å…¬ï¼Œæˆ‘ä»¬å…¨éƒ¨å¬ä»–å·ä»¤ã€‚",
         ]));
 
-        create_family("ÎÞÁ¿½£ÅÉ", 22, "¶«×ÚÕÆÃÅ");
+        create_family("æ— é‡å‰‘æ´¾", 22, "ä¸œå®—æŽŒé—¨");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -85,9 +85,9 @@ set("pubmaster",1);
 
 int recognize_apprentice(object ob, string skill)
 {
-        if (ob->query("family/family_name") != "ÁéðÕ¹¬" && ob->query("family/family_name") != "åÐÒ£ÅÉ")
+        if (ob->query("family/family_name") != "çµé¹«å®«" && ob->query("family/family_name") != "é€é¥æ´¾")
         {
-                command("say ÄãÎÒËØ²»ÏàÊ¶£¬ºÎÌ¸µÃÉÏ¡°Ö¸½Ì¡±¶þ×Ö£¿");
+                command("say ä½ æˆ‘ç´ ä¸ç›¸è¯†ï¼Œä½•è°ˆå¾—ä¸Šâ€œæŒ‡æ•™â€äºŒå­—ï¼Ÿ");
                 return 0;
         }
 
@@ -95,7 +95,7 @@ int recognize_apprentice(object ob, string skill)
 
         if (! ob->query_temp("can_learn/zuozimu"))
         {
-                command("say ¼ÈÈ»¸óÏÂÊÇÖ÷¹«ÉíÅÔµÄÈË£¬ÎÒÒ²¾Í¹§¾´²»Èç´ÓÃüÁË¡£");
+                command("say æ—¢ç„¶é˜ä¸‹æ˜¯ä¸»å…¬èº«æ—çš„äººï¼Œæˆ‘ä¹Ÿå°±æ­æ•¬ä¸å¦‚ä»Žå‘½äº†ã€‚");
                 ob->set_temp("can_learn/zuozimu", 1);
         }
         return 1;
@@ -106,10 +106,10 @@ int recognize_apprentice(object ob, string skill)
 
 void attempt_apprentice(object ob)
 {
-if (ob->query("family/family_name") == "ÁéðÕ¹¬")
+if (ob->query("family/family_name") == "çµé¹«å®«")
 {
         command("nod2");
-        command("say ÄÇÄãÒÔºó¾Í¸ú×ÅÎÒºÃÁË¡£");
+        command("say é‚£ä½ ä»¥åŽå°±è·Ÿç€æˆ‘å¥½äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 }

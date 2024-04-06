@@ -5,7 +5,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHE "¡¸" HIC "ÕÛÃ·Ê½" NOR "¡¹"
+#define ZHE "ã€Œ" HIC "æŠ˜æ¢…å¼" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -24,30 +24,30 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(ZHE "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(ZHE "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
         if (objectp(weapon = me->query_temp("weapon")))
-                return notify_fail(ZHE "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(ZHE "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         skill = me->query_skill("zhemei-shou", 1);
 
         if (skill < 80)
-                return notify_fail("ÄãµÄÕÛÃ·ÊÖµÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" ZHE "¡£\n");
+                return notify_fail("ä½ çš„æŠ˜æ¢…æ‰‹ç­‰çº§ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" ZHE "ã€‚\n");
 
         if (me->query_skill("force") < 120)
-                return notify_fail("ÄãÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" ZHE "¡£\n");
+                return notify_fail("ä½ å†…åŠŸç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" ZHE "ã€‚\n");
 
         if (me->query("neili") < 200)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" ZHE "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" ZHE "ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "ºÏåÐÒ£ÕÛÃ·ÊÖÖî¶à±ä»¯ÎªÒ»Ê½£¬ËæÊÖÇáÇá»Ó³ö£¬ÐéÐé"
-              "ÊµÊµÁýÕÖ$n" HIC "È«ÉíÖî´¦ÒªÑ¨¡£\n" NOR;
+        msg = HIC "$N" HIC "åˆé€é¥æŠ˜æ¢…æ‰‹è¯¸å¤šå˜åŒ–ä¸ºä¸€å¼ï¼Œéšæ‰‹è½»è½»æŒ¥å‡ºï¼Œè™šè™š"
+              "å®žå®žç¬¼ç½©$n" HIC "å…¨èº«è¯¸å¤„è¦ç©´ã€‚\n" NOR;
  
         ap = me->query_skill("hand");
         dp = target->query_skill("parry");
@@ -56,13 +56,13 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 me->add("neili", -50);
-                msg += HIR "$n" HIR "ÐÄÍ·Ò»²ü£¬Ïë²»³öÆÆ½âÖ®·¨£¬¼±Ã¦ºó"
-                      "ÍËÊý²½£¬Ò»Ê±¼äÎÞ·¨·´»÷¡£\n" NOR;
+                msg += HIR "$n" HIR "å¿ƒå¤´ä¸€é¢¤ï¼Œæƒ³ä¸å‡ºç ´è§£ä¹‹æ³•ï¼Œæ€¥å¿™åŽ"
+                      "é€€æ•°æ­¥ï¼Œä¸€æ—¶é—´æ— æ³•åå‡»ã€‚\n" NOR;
                 target->start_busy(ap / 100 + 2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "µÄ¿´ÆÆÁË$P" CYN "µÄÆóÍ¼£¬Ë¿"
-                      "ºÁ²»ÎªËù¶¯£¬ÈÃ$P" CYN "µÄÐéÕÐÃ»ÓÐÆðµÃÈÎºÎ×÷ÓÃ¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çš„çœ‹ç ´äº†$P" CYN "çš„ä¼å›¾ï¼Œä¸"
+                      "æ¯«ä¸ä¸ºæ‰€åŠ¨ï¼Œè®©$P" CYN "çš„è™šæ‹›æ²¡æœ‰èµ·å¾—ä»»ä½•ä½œç”¨ã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

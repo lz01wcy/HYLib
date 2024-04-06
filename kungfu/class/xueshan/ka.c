@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/gelunbu.c  ¸ğÂ×²¼
+// /kungfu/class/xueshan/gelunbu.c  è‘›ä¼¦å¸ƒ
 // by secret
 
 #include <ansi.h>
@@ -8,15 +8,15 @@ inherit F_MASTER;
 string ask_fashi();
 void create()
 {
-        set_name("¿¨ÄÚÅæ°Í", ({ "kaneiba", "kaneiba" }));
+        set_name("å¡å†…æ²›å·´", ({ "kaneiba", "kaneiba" }));
         set("long",@LONG
-¿¨ÄÚÅæ°ÍÊÇÑ©É½ËÂÖĞ»¤ËÂÉ®±øµÄ¸±Í·Áì¡£Í¬Ê±Ïò±¾ËÂµÚ×Ó´«ÊÚÎä¹¦¡£
-Éí´©Ò»¼şºÚÉ«ôÂôÄ£¬Í·´øÉ®Ã±¡£
+å¡å†…æ²›å·´æ˜¯é›ªå±±å¯ºä¸­æŠ¤å¯ºåƒ§å…µçš„å‰¯å¤´é¢†ã€‚åŒæ—¶å‘æœ¬å¯ºç¬¬å­ä¼ æˆæ­¦åŠŸã€‚
+èº«ç©¿ä¸€ä»¶é»‘è‰²è¢ˆè£Ÿï¼Œå¤´å¸¦åƒ§å¸½ã€‚
 LONG
         );
-        set("title", HIY "À®Âï" NOR);
-        set("nickname", HIG "É®±øÍ·Áì" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title", HIY "å–‡å˜›" NOR);
+        set("nickname", HIG "åƒ§å…µå¤´é¢†" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "heroism");
         set("shen_type", -1);
@@ -56,7 +56,7 @@ LONG
         map_skill("unarmed","yujiamu-quan");
 
 
-        create_family("Ñ©É½ËÂ", 5, "À®Âï");
+        create_family("é›ªå±±å¯º", 5, "å–‡å˜›");
         set("class", "bonze");
 
         setup();
@@ -72,20 +72,20 @@ LONG
 void attempt_apprentice(object ob)
 {
 
-        if ((string)ob->query("gender") != "ÄĞĞÔ") {
-                command("say ĞŞÏ°ÃÜ×ÚÄÚ¹¦ĞèÒª´¿ÑôÖ®Ìå¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "»¹ÊÇÇë»Ø°É£¡");
+        if ((string)ob->query("gender") != "ç”·æ€§") {
+                command("say ä¿®ä¹ å¯†å®—å†…åŠŸéœ€è¦çº¯é˜³ä¹‹ä½“ã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "è¿˜æ˜¯è¯·å›å§ï¼");
                 return;
         }
 
-        command("say ÎÒ¾Í´«ÄãÒ»Ğ©Îä¹¦°É£¡");
+        command("say æˆ‘å°±ä¼ ä½ ä¸€äº›æ­¦åŠŸå§ï¼");
         command("recruit " + ob->query("id"));
 
         if((string)ob->query("class") != "bonze")       {
-                ob->set("title","Ñ©É½ÅÉË×¼ÒµÜ×Ó");
+                ob->set("title","é›ªå±±æ´¾ä¿—å®¶å¼Ÿå­");
         }
         else    {
-                ob->set("title",HIY"Ğ¡À®Âï"NOR);
+                ob->set("title",HIY"å°å–‡å˜›"NOR);
         }
 }

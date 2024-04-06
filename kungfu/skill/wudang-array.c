@@ -12,8 +12,8 @@ int form_array(object leader)
 
 	member = leader->query_team();
 	if( sizeof(member) > 4 )
-		return notify_fail("ËÄÏóÁ½ÒÇÕó×î¶à4ÈË£¬¶àÒ»¸ö¶¼²»ĞĞ¡£\n");
-	message_vision( HIG "$NÂÊÁìÖÚÈË·ÖËÄÏóÕ¾¶¨·½Î»£¬×é³ÉÁË¡¸ËÄÏóÁ½ÒÇÕó¡¹£¡\n" NOR, leader);
+		return notify_fail("å››è±¡ä¸¤ä»ªé˜µæœ€å¤š4äººï¼Œå¤šä¸€ä¸ªéƒ½ä¸è¡Œã€‚\n");
+	message_vision( HIG "$Nç‡é¢†ä¼—äººåˆ†å››è±¡ç«™å®šæ–¹ä½ï¼Œç»„æˆäº†ã€Œå››è±¡ä¸¤ä»ªé˜µã€ï¼\n" NOR, leader);
 	return 1;
 }
 string perform_action_file(string action)

@@ -1,4 +1,4 @@
-//Attach µØ¾«¸½Éí
+//Attach åœ°ç²¾é™„èº«
 #include <ansi.h>
 
 inherit F_SSERVER;
@@ -10,30 +10,30 @@ int perform(object me, object target)
 
         if (!target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(YEL"¡¸c¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(YEL"ã€Œcã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 600)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõÐ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°çŽ©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-earth",1)< 200)
-	return notify_fail("ÄãµÄÍÁÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„åœŸç³»é­”æ³•å¤ªå·®äº†ï¼\n");
 
 if (target->is_busy())
-return notify_fail("ÏÖÔÚÕýÊÇÓÃ¹¥»÷µÐÈËµÄÊ±ºò°¡£¡\n");
+return notify_fail("çŽ°åœ¨æ­£æ˜¯ç”¨æ”»å‡»æ•Œäººçš„æ—¶å€™å•Šï¼\n");
                 me->start_busy(1);
-        msg = YEL "$N"YEL"¿ÚÖÐÇáÇáÒ÷³ªÆðÁËÖäÎÄ..\n"NOR;
-        msg += YEL"$N"YEL"Äîµ½£¬´óµØµÄ¾«Áé°¡£¬ÒÔ¹Å´úµÄÆõÔ¼Îª»ù´¡£¬ÇëÂÄÐÐÄÇÒåÎñ°É£¬\n"NOR;
-        msg += YEL"$N"YEL"Äîµ½£¬¸¯Ê¬°¡£¬º¡¹Ç°¡£¬È«¶¼³öÀ´°É£¬´ÓµØÃæ³¤³öÀ´µÄ¶«Î÷¶¼¸¯ÀÃ×¹Âä£¬»Ø¹é´óµØ£¡£¡£¡£¡¡±£¬\n"NOR;
-        msg += YEL"$N"YEL"´ó½ÐÒ»Éù  µØ¾«¸½Éí!!  ,$n"YEL"µÄ½ÅÏÂ³öÏÖÁËÎÞÊýµÄÊÖ×¥×¡ÁË$n.£¡\n"NOR;
+        msg = YEL "$N"YEL"å£ä¸­è½»è½»åŸå”±èµ·äº†å’’æ–‡..\n"NOR;
+        msg += YEL"$N"YEL"å¿µåˆ°ï¼Œå¤§åœ°çš„ç²¾çµå•Šï¼Œä»¥å¤ä»£çš„å¥‘çº¦ä¸ºåŸºç¡€ï¼Œè¯·å±¥è¡Œé‚£ä¹‰åŠ¡å§ï¼Œ\n"NOR;
+        msg += YEL"$N"YEL"å¿µåˆ°ï¼Œè…å°¸å•Šï¼Œéª¸éª¨å•Šï¼Œå…¨éƒ½å‡ºæ¥å§ï¼Œä»Žåœ°é¢é•¿å‡ºæ¥çš„ä¸œè¥¿éƒ½è…çƒ‚å è½ï¼Œå›žå½’å¤§åœ°ï¼ï¼ï¼ï¼â€ï¼Œ\n"NOR;
+        msg += YEL"$N"YEL"å¤§å«ä¸€å£°  åœ°ç²¾é™„èº«!!  ,$n"YEL"çš„è„šä¸‹å‡ºçŽ°äº†æ— æ•°çš„æ‰‹æŠ“ä½äº†$n.ï¼\n"NOR;
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp")/3)
         {
                 damage = (int)me->query_skill("magic-earth", 1);
-//¶ÔÍÁÊôÐÔÄ¿±êÎÞ×÷ÓÃ
+//å¯¹åœŸå±žæ€§ç›®æ ‡æ— ä½œç”¨
        if ((int)target->query("magicgift")==4)
 {
 target->start_busy(2);
@@ -42,7 +42,7 @@ damagic=damage;
 damagic=damage;
                 target->receive_wound("qi", damagic);
 }
-//¶ÔÆøÊôÐÔÄ¿±êÇ¿´ó
+//å¯¹æ°”å±žæ€§ç›®æ ‡å¼ºå¤§
 else  if ((int)target->query("magicgift")==3)
 {
 target->start_busy(8);
@@ -59,12 +59,12 @@ target->receive_wound("qi", damage);
 target->start_busy(3);
 }
 
-        msg += HIR"$n"HIR"´ó³ÔÒ»¾ª£¬¸øÏÅµÄ¶¯µ¯²»µÃ!!\n"NOR;
+        msg += HIR"$n"HIR"å¤§åƒä¸€æƒŠï¼Œç»™å“çš„åŠ¨å¼¹ä¸å¾—!!\n"NOR;
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
         } else
         {
-        msg += HIY"$n"HIY"·ÉÉíÔ¾Æð£¬ÌÓ¹ýÁËÒ»ÄÑ¡£\n"NOR;
+        msg += HIY"$n"HIY"é£žèº«è·ƒèµ·ï¼Œé€ƒè¿‡äº†ä¸€éš¾ã€‚\n"NOR;
 		message_combatd(msg, me, target);
                 me->start_busy(3);
         }

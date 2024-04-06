@@ -1,16 +1,16 @@
 // Last Modified by winder on Sep. 12 2001
-// yang.c Ñî³ÉĞ­
+// yang.c æ¨æˆå
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("Ñî³ÉĞ­", ({ "yang chengxie", "yang","chengxie" }));
-	set("title", HIR"ºì»¨»á"HIG"°Ëµ±¼Ò"NOR);
-	set("nickname", CYN "ÌúËş" NOR);
-	set("long","ËûÓÖ·ÊÓÖ¸ß£¬ÉÆÊ¹¸Ö±Ş£¬±ŞÉíÉõÊÇ´ÖÖØ£¬¿´Ä£ÑùÉÙËµÒ²ÓĞÈıÊ®À´½ï¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¨æˆå", ({ "yang chengxie", "yang","chengxie" }));
+	set("title", HIR"çº¢èŠ±ä¼š"HIG"å…«å½“å®¶"NOR);
+	set("nickname", CYN "é“å¡”" NOR);
+	set("long","ä»–åˆè‚¥åˆé«˜ï¼Œå–„ä½¿é’¢é­ï¼Œé­èº«ç”šæ˜¯ç²—é‡ï¼Œçœ‹æ¨¡æ ·å°‘è¯´ä¹Ÿæœ‰ä¸‰åæ¥æ–¤ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("class", "fighter");
 	set("age", 26);
 	set("attitude", "friendly");
@@ -55,7 +55,7 @@ void create()
 		(: exert_function, "regenerate" :),
 		(: exert_function, "recover" :),
 	}) );
-	create_family("ºì»¨»á", 2, "µÜ×Ó");
+	create_family("çº¢èŠ±ä¼š", 2, "å¼Ÿå­");
 
  	setup();
 	carry_object("/clone/misc/cloth")->wear();

@@ -1,4 +1,4 @@
-// ruying ÆßĞÇ¾Û»á
+// ruying ä¸ƒæ˜Ÿèšä¼š
 // campsun
 
 #include <ansi.h>
@@ -12,42 +12,42 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸ÆßĞÇ¾Û»á¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¸ƒæ˜Ÿèšä¼šã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
       if( objectp(me->query_temp("weapon")) )
-      return notify_fail("Äã±ØĞë¿ÕÊÖÊ¹ÓÃ¡¸½ğ¸Õ·üÄ§¡¹£¡\n");
+      return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ä½¿ç”¨ã€Œé‡‘åˆšä¼é­”ã€ï¼\n");
       
       if( (int)me->query_skill("jingang-quan",1) < 200 )
-      return notify_fail("ÄãµÄ´ó½ğ¸ÕÈ­²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸½ğ¸Õ·üÄ§¡¹£¡\n");
+      return notify_fail("ä½ çš„å¤§é‡‘åˆšæ‹³ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œé‡‘åˆšä¼é­”ã€ï¼\n");
       
       if( (int)me->query_skill("yijinjing",1) < 230 )
-      return notify_fail("ÄãµÄÒ×½î¾­µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸½ğ¸Õ·üÄ§¡¹£¡\n");  
+      return notify_fail("ä½ çš„æ˜“ç­‹ç»ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œé‡‘åˆšä¼é­”ã€ï¼\n");  
       
       if(me->query_skill_mapped("force") != "yijinjing")
-                return notify_fail("ÄãÃ»ÓĞÔËÓÃÒ×½î¾­ÄÚ¹¦£¬ÎŞ·¨Ê¹ÓÃ¡¸½ğ¸Õ·üÄ§¡¹½øĞĞ¹¥»÷¡£\n"); 
+                return notify_fail("ä½ æ²¡æœ‰è¿ç”¨æ˜“ç­‹ç»å†…åŠŸï¼Œæ— æ³•ä½¿ç”¨ã€Œé‡‘åˆšä¼é­”ã€è¿›è¡Œæ”»å‡»ã€‚\n"); 
 
 if( (int)me->query_skill("buddhism", 1) < 180 )
-                return notify_fail("ÄãµÄìø×ÚĞÄ·¨µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÆßĞÇ¾Û»á¡¹¡£\n");
+                return notify_fail("ä½ çš„ç¦…å®—å¿ƒæ³•ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¸ƒæ˜Ÿèšä¼šã€ã€‚\n");
         
 if( (int)me->query_str() < 28 )
-                return notify_fail("ÄãµÄ±ÛÁ¦²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸ÆßĞÇ¾Û»á¡¹¡£\n");
+                return notify_fail("ä½ çš„è‡‚åŠ›ä¸å¤Ÿå¼ºï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¸ƒæ˜Ÿèšä¼šã€ã€‚\n");
 
       
 
         if( (int)me->query("neili") < 1200 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÆßĞÇ¾Û»á¡¹¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¸ƒæ˜Ÿèšä¼šã€ã€‚\n");
 
-        msg = HIR "$NË«È­Á¬»·£¬Ë²Ï¢¼äÁ¬³öÆßÈ­£¬·Ö»÷$nÈ«Éí£¬ÕıÊÇ´ó½ğ¸ÕÈ­¾ø¼¼¡¸ÆßĞÇ¾Û»á¡¹¡£\n" NOR;
+        msg = HIR "$NåŒæ‹³è¿ç¯ï¼Œç¬æ¯é—´è¿å‡ºä¸ƒæ‹³ï¼Œåˆ†å‡»$nå…¨èº«ï¼Œæ­£æ˜¯å¤§é‡‘åˆšæ‹³ç»æŠ€ã€Œä¸ƒæ˜Ÿèšä¼šã€ã€‚\n" NOR;
 
         message_vision(msg, me, target);
 
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 1); 
-              msg = HIR "$NÒ»È­¼È³ö£¬ÉíĞÎÒ»×ª£¬ÉÁÖÁ$n×ó²à£¬Ë«È­²¢¾Ù£¬Í¬Ê±´òµ½¡£\n" NOR;
+              msg = HIR "$Nä¸€æ‹³æ—¢å‡ºï¼Œèº«å½¢ä¸€è½¬ï¼Œé—ªè‡³$nå·¦ä¾§ï¼ŒåŒæ‹³å¹¶ä¸¾ï¼ŒåŒæ—¶æ‰“åˆ°ã€‚\n" NOR;
         message_vision(msg, me, target);
               COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 1);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 1);
               
-              msg= HIR "$NË«È­ÊÆÈô±©·çÖèÓê£¬Á¬»÷$n¼ç¡¢±Û¡¢ĞØ¡¢±³¸÷¸ö²¿Î»£¬¿ìµÃÄÑÒÔĞÎÈİ¡£\n" NOR;
+              msg= HIR "$NåŒæ‹³åŠ¿è‹¥æš´é£éª¤é›¨ï¼Œè¿å‡»$nè‚©ã€è‡‚ã€èƒ¸ã€èƒŒå„ä¸ªéƒ¨ä½ï¼Œå¿«å¾—éš¾ä»¥å½¢å®¹ã€‚\n" NOR;
         message_vision(msg, me, target);
               COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 1);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 1);

@@ -1,4 +1,4 @@
- // ÈÌÊõµÄ¿ñÉ±Êõ,ÔÚ¶ÌÊ±¼äÄÚ´ó·ù¶ÈµØÌá¸ßÁ¦Á¿,µ«ÊÇ²»ÄÜperform.
+ // å¿æœ¯çš„ç‹‚æ€æœ¯,åœ¨çŸ­æ—¶é—´å†…å¤§å¹…åº¦åœ°æé«˜åŠ›é‡,ä½†æ˜¯ä¸èƒ½perform.
 #include <ansi.h> 
 inherit F_SSERVER;
 int exert(object me, object target)
@@ -9,18 +9,18 @@ int exert(object me, object target)
         
         
         if ( (int) me->query_skill("ninjitsu",1) <= 150)
-                return notify_fail("ÄãÈÌÊõ²»¹»¸ß£¡\n");
+                return notify_fail("ä½ å¿æœ¯ä¸å¤Ÿé«˜ï¼\n");
         
         if( target != me ) 
-                return notify_fail("ÄãÖ»ÄÜ½«£Û¿ñÉ±£İÓÃÔÚ×Ô¼ºµÄÉíÉÏ¡£\n");       
+                return notify_fail("ä½ åªèƒ½å°†ï¼»ç‹‚æ€ï¼½ç”¨åœ¨è‡ªå·±çš„èº«ä¸Šã€‚\n");       
                 
         if(me->query_temp("ninjitsu_berserk")) 
-                return notify_fail("ÄãµÄÁ¦Á¿ÒÑ¾­ÌáÉıµ½×î´óÏŞ¶È£¬ÎŞ·¨¼ÌĞøÌáÉıÁË¡£\n");
+                return notify_fail("ä½ çš„åŠ›é‡å·²ç»æå‡åˆ°æœ€å¤§é™åº¦ï¼Œæ— æ³•ç»§ç»­æå‡äº†ã€‚\n");
         
         if( me->query("neili") < 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
         if( me->query("qi") <= 150 )
-                return notify_fail("ÄãµÄ¾«²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿï¼\n");
     
         me->add("neili", -300);
         me->receive_damage("qi", 150);
@@ -29,8 +29,8 @@ int exert(object me, object target)
         me->add_temp("apply/strength",extra);
         me->set_temp("ninjitsu_berserk",1);
 
-        message_vision(HIR "$N¿ñºğÒ»Éù£¬ÑÛÖĞËÆÒªµÎ³öÑªÀ´.\n"NOR,me);
-        tell_object(me,WHT"    ÄãÖ»¾õÕæÆøÔÚÖÜÉíÓÎ×ß,ÎŞ´¦·¢Ğ¹£®£®£®\n" NOR, me);
+        message_vision(HIR "$Nç‹‚å¼ä¸€å£°ï¼Œçœ¼ä¸­ä¼¼è¦æ»´å‡ºè¡€æ¥.\n"NOR,me);
+        tell_object(me,WHT"    ä½ åªè§‰çœŸæ°”åœ¨å‘¨èº«æ¸¸èµ°,æ— å¤„å‘æ³„ï¼ï¼ï¼\n" NOR, me);
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me ,extra:), extra*4);
         if( me->is_fighting() ) me->start_busy(2);
         return 1; 
@@ -40,5 +40,5 @@ void remove_effect(object me,int extra)
         me->add_temp("apply/strength", -extra);
 
         me->delete_temp("ninjitsu_berserk");
-        tell_object(me, HIG"ÄãÖÕÓÚÂıÂıµØÆ½¾²ÏÂÀ´\n"NOR);
+        tell_object(me, HIG"ä½ ç»ˆäºæ…¢æ…¢åœ°å¹³é™ä¸‹æ¥\n"NOR);
 }  

@@ -1,4 +1,4 @@
-// qingkundanuoyi.c Ç¬À¤´óÅ²ÒÆ
+// qingkundanuoyi.c ä¹¾å¤å¤§æŒªç§»
 // modified by Venus Jan.1998
 
 inherit SKILL;
@@ -10,16 +10,16 @@ string type() { return "knowledge"; }
 int valid_learn(object me)
 {
    if( (int)me->query("shen") < 0 )
-   return notify_fail("ÄãµÄĞ°ÆøÌ«ÖØ£¬ÎŞ·¨ĞŞÁ¶Ç¬À¤´óÅ²ÒÆ¡£\n");
+   return notify_fail("ä½ çš„é‚ªæ°”å¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼ä¹¾å¤å¤§æŒªç§»ã€‚\n");
 
-   if(me->query("gender") == "ÎŞĞÔ")
-   return notify_fail("Äã¸ÕÌıÒ»»á¶ù£¬±ã¾õĞÄÖÇÃÔºı£¬Ô­À´ÄãÃ»ÓĞÑô¸ÕÖ®
-Æø£¬ÎŞ·¨Áì»áÀïÃæµÄÇ¬À¤ÒõÑô±ä»¯Ö®µÀ¡£\n");
+   if(me->query("gender") == "æ— æ€§")
+   return notify_fail("ä½ åˆšå¬ä¸€ä¼šå„¿ï¼Œä¾¿è§‰å¿ƒæ™ºè¿·ç³Šï¼ŒåŸæ¥ä½ æ²¡æœ‰é˜³åˆšä¹‹
+æ°”ï¼Œæ— æ³•é¢†ä¼šé‡Œé¢çš„ä¹¾å¤é˜´é˜³å˜åŒ–ä¹‹é“ã€‚\n");
 
    return 1;
 }
 
 int practice_skill(object me)
 {
-    return notify_fail("Ç¬À¤´óÅ²ÒÆÖ»ÄÜÑ§Ï°µÃÀ´¡£\n");
+    return notify_fail("ä¹¾å¤å¤§æŒªç§»åªèƒ½å­¦ä¹ å¾—æ¥ã€‚\n");
 }

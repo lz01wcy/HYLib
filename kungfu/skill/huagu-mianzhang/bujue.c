@@ -1,4 +1,4 @@
-// mmbj.c ÃàÃà²»¾ø
+// mmbj.c ç»µç»µä¸ç»
 
 #include <ansi.h>
 
@@ -15,21 +15,21 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸ÃàÃà²»¾ø¡¹Ö»ÄÜÔÚÕ½¶·Ê±ÓÃ£¡\n");
+                return notify_fail("ã€Œç»µç»µä¸ç»ã€åªèƒ½åœ¨æˆ˜æ–—æ—¶ç”¨ï¼\n");
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÓÃ¡¸ÃàÃà²»¾ø¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ç”¨ã€Œç»µç»µä¸ç»ã€ï¼\n");
         if( (skill=(int)me->query_skill("huagu-mianzhang", 1)) < 100 )
-                return notify_fail("ÄãµÄ»¯¹ÇÃàÕÆ»¹²»¹»ÊìÁ·£¬²»ÄÜÊ¹ÓÃ£¡\n");
+                return notify_fail("ä½ çš„åŒ–éª¨ç»µæŒè¿˜ä¸å¤Ÿç†Ÿç»ƒï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
 	cs = skill / 50;
 	if(cs>4)
 		cs=4;
         if((int)me->query("neili")<100)
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬²»ÄÜÓÃ¡¸ÃàÃà²»¾ø¡¹£¡\n");       
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›ä¸è¶³ï¼Œä¸èƒ½ç”¨ã€Œç»µç»µä¸ç»ã€ï¼\n");       
 	if( (int)me->query_skill("shenlong-xinfa",1) < 100  )
-		return notify_fail("ÄãµÄÉñÁúĞÄ·¨¹¦Á¦²»¹»£¬ÎŞ·¨Ê©ÓÃ¡£\n");
+		return notify_fail("ä½ çš„ç¥é¾™å¿ƒæ³•åŠŸåŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½ç”¨ã€‚\n");
         if( me->query_temp("mmbj"))
-                return notify_fail("ÄãÕıÔÚÊ¹ÓÃ¡¸ÃàÃà²»¾ø¡¹ÄØ£¡\n");     
-        msg = HIY "\n$NºöÈ»ÃÍÒ»ÎüÆø£¬Ë«ÕÆÒ»Á¢£¬Ïò$pÇáÇáµØÅÄ³ö£¡\n"NOR; 
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ã€Œç»µç»µä¸ç»ã€å‘¢ï¼\n");     
+        msg = HIY "\n$Nå¿½ç„¶çŒ›ä¸€å¸æ°”ï¼ŒåŒæŒä¸€ç«‹ï¼Œå‘$pè½»è½»åœ°æ‹å‡ºï¼\n"NOR; 
 	message_vision(msg, me, target);
 	target->start_busy(1);
 	jl=me->query("jiali");

@@ -1,4 +1,4 @@
-// xin.c ¾²ĞÄÊ¦Ì«
+// xin.c é™å¿ƒå¸ˆå¤ª
 // Modified by That Oct.1997
 #include <command.h>
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾²ĞÄÊ¦Ì«", ({ "jingxin shitai","jingxin","shitai"}));
+        set_name("é™å¿ƒå¸ˆå¤ª", ({ "jingxin shitai","jingxin","shitai"}));
         set("long",
-      "ËıÊÇÒ»Î»ÖĞÄê³ö¼ÒµÀ¹Ã£¬µÀ¹Ú¸ßÂ££¬´ÈÃ¼ÉÆÄ¿¡£\n");
-        set("gender", "Å®ĞÔ");
+      "å¥¹æ˜¯ä¸€ä½ä¸­å¹´å‡ºå®¶é“å§‘ï¼Œé“å† é«˜æ‹¢ï¼Œæ…ˆçœ‰å–„ç›®ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -84,7 +84,7 @@ set_temp("huifeng/jue",1);
         }) );
 
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object("/d/city/obj/gangdao")->wield();
@@ -92,7 +92,7 @@ set_temp("huifeng/jue",1);
 }
 void attempt_apprentice(object ob)
 {
-    command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕµÜ×Ó¡£\n");
-    command ("say ÄãÈôÏë¼ÌĞøÑ§¶ëáÒÅÉµÄ¹¦·ò£¬»¹ÊÇÈ¥ÕÒÎÒË×¼ÒÊ¦ÃÃ°É¡£\n");
+    command ("say é˜¿å¼¥é™€ä½›ï¼è´«å°¼ä¸æ”¶å¼Ÿå­ã€‚\n");
+    command ("say ä½ è‹¥æƒ³ç»§ç»­å­¦å³¨åµ‹æ´¾çš„åŠŸå¤«ï¼Œè¿˜æ˜¯å»æ‰¾æˆ‘ä¿—å®¶å¸ˆå¦¹å§ã€‚\n");
     return;
 }

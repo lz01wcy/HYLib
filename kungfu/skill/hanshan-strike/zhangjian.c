@@ -9,21 +9,21 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£ÛÕÆ½££ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»æŽŒå‰‘ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail( "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail( "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
         extra = me->query_skill("hanshan-strike",1) ;
-        if( extra < 90) return notify_fail("ÄãµÄ£Ûº®É½ÕÆ·¨£Ý»¹²»¹»ÊìÁ·£¡\n");
+        if( extra < 90) return notify_fail("ä½ çš„ï¼»å¯’å±±æŽŒæ³•ï¼½è¿˜ä¸å¤Ÿç†Ÿç»ƒï¼\n");
         
         bonus=extra/3;
          if((int)me->query_skill("bingxue-xinfa",1) < 150)
-                return notify_fail("ÄãµÄ±ùÑ©ÐÄ·¨ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
          if((int)me->query_skill("snow-zhang",1) < 150)
-                return notify_fail("ÄãµÄ·ÉÑ©Ó³Ã·ÕÆÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„é£žé›ªæ˜ æ¢…æŽŒä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
          if((int)me->query_skill("hanshan-strike",1) < 50)
-                return notify_fail("ÄãµÄÕâÃÅÎä¹¦ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„è¿™é—¨æ­¦åŠŸä¿®ä¸ºä¸å¤Ÿã€‚\n");
         
         exp_bonus= me->query("combat_exp")/1000*extra/5000;
         if (exp_bonus>extra) exp_bonus=extra;
@@ -34,23 +34,23 @@ int perform(object me, object target)
         
         me->add_temp("apply/attack", bonus);
         me->add_temp("apply/damage", bonus);
-        msg = HIM  "$NË«ÕÆ»¥Ïà½»´í£¬Í»Ò»×ÝÉí£¬Ë«ÊÖ»¯ÕÆÎª½£¼²Ïò$n"NOR+HIM"Ï÷È¥£¡" NOR;
+        msg = HIM  "$NåŒæŽŒäº’ç›¸äº¤é”™ï¼Œçªä¸€çºµèº«ï¼ŒåŒæ‰‹åŒ–æŽŒä¸ºå‰‘ç–¾å‘$n"NOR+HIM"å‰ŠåŽ»ï¼" NOR;
         if (random(3)==0) target->start_busy(3);
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "$NÒ»²àÉí£¬Ò»Öâ×²Ïò$n"NOR+HIY"µÄÃæÃÅ£¡" NOR;
+        msg = HIY  "$Nä¸€ä¾§èº«ï¼Œä¸€è‚˜æ’žå‘$n"NOR+HIY"çš„é¢é—¨ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         if (extra>110) {
-        msg = HIW  "$NÓÖÒ»·´Éí£¬Ë«ÕÆ¼±Ïò$n"NOR+HIW"¿³È¥£¡" NOR;
+        msg = HIW  "$Nåˆä¸€åèº«ï¼ŒåŒæŽŒæ€¥å‘$n"NOR+HIW"ç åŽ»ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         }
         if (extra>150) {
-        msg = HIR  "$N×óÊÖºáÐØ£¬ÓÒÊÖºöÒ»ÁÁÕÆ£¬ÐîÁ¦ÒÑ¾ÃµÄ£ÛÕÆ½££ÝÆÆ¿ÕÏò$n"NOR+HIR"´ÌÈ¥£¡" NOR;
+        msg = HIR  "$Nå·¦æ‰‹æ¨ªèƒ¸ï¼Œå³æ‰‹å¿½ä¸€äº®æŽŒï¼Œè“„åŠ›å·²ä¹…çš„ï¼»æŽŒå‰‘ï¼½ç ´ç©ºå‘$n"NOR+HIR"åˆºåŽ»ï¼" NOR;
         me->add_temp("apply/attack", bonus);
         me->add_temp("apply/damage", bonus);
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 if (random(2)==0 ) 
 {
-        message_vision( MAG "$N±»ÕÆ·¨²úÉúµÄ»ÃÏóËùÃÔ»ó,ÏÔµÃÁ½ÑÛÃÔÃ£...£¬ °éËæ×ÅÖØÖØµÄÒ»ÉùÃÆºß£¬Ò»¹ÉÑªÆø´Ó¶¥ÃÅÅçÓ¿¶ø³ö£¡\n" NOR,target);
+        message_vision( MAG "$Nè¢«æŽŒæ³•äº§ç”Ÿçš„å¹»è±¡æ‰€è¿·æƒ‘,æ˜¾å¾—ä¸¤çœ¼è¿·èŒ«...ï¼Œ ä¼´éšç€é‡é‡çš„ä¸€å£°é—·å“¼ï¼Œä¸€è‚¡è¡€æ°”ä»Žé¡¶é—¨å–·æ¶Œè€Œå‡ºï¼\n" NOR,target);
         target->receive_wound("qi",bonus*8);
 }
         me->add_temp("apply/attack", -bonus);

@@ -1,4 +1,4 @@
-// qiangdao.c Ç¿µÁ
+// qiangdao.c å¼ºç›—
 // lag.2000/3/17
 
 inherit NPC;
@@ -10,11 +10,11 @@ void create()
         int myskill;
         me=this_player();
         myskill=me->query_skill("force");
-        set_name(HIC "À¥ÂØÅÉÅÑÍ½Í·Ä¿" NOR, ({ me->query("id")+"-pantu"}));
-        set("title",me->query("name")+"¶¨ÏÂµÄ");
-        set("gender", "ÄĞĞÔ");
+        set_name(HIC "æ˜†ä»‘æ´¾å›å¾’å¤´ç›®" NOR, ({ me->query("id")+"-pantu"}));
+        set("title",me->query("name")+"å®šä¸‹çš„");
+        set("gender", "ç”·æ€§");
         set("age", 28);
-        set("long", "ËûÊÇÒ»¸öÀ¥ÂØÅÉÅÑÍ½¡£\n");
+        set("long", "ä»–æ˜¯ä¸€ä¸ªæ˜†ä»‘æ´¾å›å¾’ã€‚\n");
         
         set("attitude", "peaceful");
         set("qi", me->query("max_qi")* 4 / 5);
@@ -85,7 +85,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "À¥ÂØÅÉÅÑÍ½Í·Ä¿×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "æ˜†ä»‘æ´¾å›å¾’å¤´ç›®é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -104,8 +104,8 @@ if (!me) return;
 
 if (me)
 {
-        message_vision(HIR "\nÀ¥ÂØÅÉÅÑÍ½Í·Ä¿µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n" NOR,me);
-        message_vision(HIG "\nÄã´ÓÅÑÍ½µÄÉíÉÏÕÒµ½ÁËÆæÒ©¡£\n" NOR,me);
+        message_vision(HIR "\næ˜†ä»‘æ´¾å›å¾’å¤´ç›®å€’åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰äº†å‡ ä¸‹å°±æ­»äº†ã€‚\n" NOR,me);
+        message_vision(HIG "\nä½ ä»å›å¾’çš„èº«ä¸Šæ‰¾åˆ°äº†å¥‡è¯ã€‚\n" NOR,me);
         if (me->query("kill_kunlun") == 1 && this_object()->query_temp("owner/id") == me->query("id")) {
                zhi=new(__DIR__"zhi");
                zhi->set("byname",me->query("name"));
@@ -114,8 +114,8 @@ if (me)
                 }
 
         corpse = new("/clone/misc/corpse");
-        corpse->set("name",HIW "À¥ÂØÅÉÅÑÍ½Í·Ä¿µÄÊ¬Ìå" NOR);
-        corpse->set("long","ËûÊÇÒ»¸öÔø¾­ÎŞ¶ñ²»×öµÄÀ¥ÂØÅÉÅÑÍ½Í·Ä¿£¬\nÈ»¶ø£¬ËûÒÑ¾­ËÀÁË£¬Ê£ÏÂÒ»¾ß³óÂªµÄÊ¬Ìå¡£\n");
+        corpse->set("name",HIW "æ˜†ä»‘æ´¾å›å¾’å¤´ç›®çš„å°¸ä½“" NOR);
+        corpse->set("long","ä»–æ˜¯ä¸€ä¸ªæ›¾ç»æ— æ¶ä¸åšçš„æ˜†ä»‘æ´¾å›å¾’å¤´ç›®ï¼Œ\nç„¶è€Œï¼Œä»–å·²ç»æ­»äº†ï¼Œå‰©ä¸‹ä¸€å…·ä¸‘é™‹çš„å°¸ä½“ã€‚\n");
         corpse->move(environment(this_object()));
         corpse->set_max_encumbrance(1000);        
         me->add("MKS", 1);

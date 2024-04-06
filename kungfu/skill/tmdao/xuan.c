@@ -21,46 +21,46 @@ int perform(object me, object target)
 	
 	 if( !target ) target = offensive_target(me);
          if( !target || !target->is_character() || !me->is_fighting(target) )
- 	      return notify_fail("¡¸Ñ£µ¶¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+ 	      return notify_fail("ã€Œçœ©åˆ€ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         
  	
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "blade")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         
         if( !(weapon = me->query_temp("weapon"))
         ||      (string)weapon->query("skill_type") != "blade" )
-        return notify_fail("ÄãÊÖÖÐÃ»ÓÐ×°±¸µ¶ÀàÎäÆ÷£¡\n");
+        return notify_fail("ä½ æ‰‹ä¸­æ²¡æœ‰è£…å¤‡åˆ€ç±»æ­¦å™¨ï¼\n");
         if( (int)me->query("neili")<500)
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ£¡\n"NOR);
+        return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ï¼\n"NOR);
 
 
           if (uptime() - me->query_temp("last_pf_time") < 2 )
-          return notify_fail("³öÆæ²ÅÄÜÖÁÊ¤¡£\n");
-         //ÓÃ±ùµ¶¼Ó2ÕÐ
+          return notify_fail("å‡ºå¥‡æ‰èƒ½è‡³èƒœã€‚\n");
+         //ç”¨å†°åˆ€åŠ 2æ‹›
          count = 2;
          
            
          
 	if( (int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿäº†ï¼\n");
 
 	if( (int)me->query_skill("blade") < 160 ||
 	    me->query_skill_mapped("blade") != "tmdao")
-		return notify_fail("ÄãµÄ¡¸»ù±¾µ¶·¨¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸Ñ£µ¶¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€ŒåŸºæœ¬åˆ€æ³•ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œçœ©åˆ€ã€ï¼\n");
         
         if( (int)me->query_skill("tmdao") < 160 )
-            return notify_fail("ÄãµÄ¡¸ÌìÄ§µ¶¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸Ñ£µ¶¡¹£¡\n");
+            return notify_fail("ä½ çš„ã€Œå¤©é­”åˆ€ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œçœ©åˆ€ã€ï¼\n");
 	
-        msg = HIW "$NÃÍÈ»½«µ¶ÉíÒ»ºá£¬Ã÷»Î»ÎµÄµ¶ÉíÔÚÈÕ¹âÏÂ·´ÉäÒ»Æ¬°×¹â,Ö±Éä$nµÄÃæÃÅ£¡\n" NOR;
+        msg = HIW "$NçŒ›ç„¶å°†åˆ€èº«ä¸€æ¨ªï¼Œæ˜Žæ™ƒæ™ƒçš„åˆ€èº«åœ¨æ—¥å…‰ä¸‹åå°„ä¸€ç‰‡ç™½å…‰,ç›´å°„$nçš„é¢é—¨ï¼\n" NOR;
         message_vision(msg, me, target);
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 )	
-	 {  msg = HIW "$NÖ»¾õÒ»µÀÑ£¹â´ÌµÃË«ÑÛÊ²Ã´¶¼¿´²»¼ûÁË£¬$n¼û×´´óÏ²Á¬ÐøÎåµ¶£¬´ÓÎå¸ö²»Í¬µÄ·½Ïò¿³À´£¡\n" NOR;	
+	 {  msg = HIW "$Nåªè§‰ä¸€é“çœ©å…‰åˆºå¾—åŒçœ¼ä»€ä¹ˆéƒ½çœ‹ä¸è§äº†ï¼Œ$nè§çŠ¶å¤§å–œè¿žç»­äº”åˆ€ï¼Œä»Žäº”ä¸ªä¸åŒçš„æ–¹å‘ç æ¥ï¼\n" NOR;	
 	    message_vision(msg, target,me);
 	     extra = me->query_skill("tmdao",1) / 50;
 	    if(extra>4) extra = 4 ; target->start_busy(extra + count);
 	  }else{
-	       msg = "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬ÍùÅÔÒ»ÉÁ¶ãÁË¹ýÈ¥¡£\n" NOR;
+	       msg = "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œå¾€æ—ä¸€é—ªèº²äº†è¿‡åŽ»ã€‚\n" NOR;
 	       message_vision(msg, me, target);
                 me->set_temp("last_pf_time",uptime());
                me->start_busy(1+random(3));

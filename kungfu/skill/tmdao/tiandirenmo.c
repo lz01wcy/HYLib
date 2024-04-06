@@ -8,39 +8,39 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	extra = me->query_skill("tmdao",1);
-	if ( extra < 190) return notify_fail("ÄãµÄÌìÄ§µ¶»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 190) return notify_fail("ä½ çš„å¤©é­”åˆ€è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 	dodskill = (string) me->query_skill_mapped("dodge");
 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÌìµØÈËÄ§£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å¤©åœ°äººé­”ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !(weapon = me->query_temp("weapon"))
         ||      (string)weapon->query("skill_type") != "blade" )
-        return notify_fail("ÄãÊÖÖÐÃ»ÓÐ×°±¸µ¶ÀàÎäÆ÷£¡\n");
+        return notify_fail("ä½ æ‰‹ä¸­æ²¡æœ‰è£…å¤‡åˆ€ç±»æ­¦å™¨ï¼\n");
         if( (int)me->query("neili")<500)
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ£¡\n"NOR);
+        return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ï¼\n"NOR);
 
 
 	weapon = me->query_temp("weapon");
-	msg = HIY  "$NÉñÆø¹áÍ¨£¬½«ÌìµØÈËÄ§Á¬»·°ËÊ½Ò»ÆøºÇ³É£¡\nÍòÄ§³õÐÑ£¡" NOR;
+	msg = HIY  "$Nç¥žæ°”è´¯é€šï¼Œå°†å¤©åœ°äººé­”è¿žçŽ¯å…«å¼ä¸€æ°”å‘µæˆï¼\nä¸‡é­”åˆé†’ï¼" NOR;
 	me->set_temp("action_flag", 1);
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "Ä§ÑæÍòÕÉ£¡" NOR;
+        msg = HIY  "é­”ç„°ä¸‡ä¸ˆï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "Ä§¹âÕ§ÏÖ£¡" NOR;
+        msg = HIY  "é­”å…‰ä¹çŽ°ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "ÌìÄ§¶À×ð£¡" NOR;
+        msg = HIY  "å¤©é­”ç‹¬å°Šï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "ÍòÈÐÌìÄ§£¡" NOR;
+        msg = HIY  "ä¸‡åˆƒå¤©é­”ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "ÌìÄ§»ØÌì£¡" NOR;
+        msg = HIY  "å¤©é­”å›žå¤©ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "ÌìÄ§ÆßÏÖ£¡" NOR;
+        msg = HIY  "å¤©é­”ä¸ƒçŽ°ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "ÍòÄ§¹é×Ú£¡" NOR;
+        msg = HIY  "ä¸‡é­”å½’å®—ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 me->delete_temp("action_flag");
 	me->add("neili", -350);

@@ -9,33 +9,33 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() )
-		return notify_fail(HIY"ÄãÒªÎªË­Ê¹ÓÃÁÆ¶¾Êõ£¿\n"NOR);
+		return notify_fail(HIY"ä½ è¦ä¸ºè°ä½¿ç”¨ç–—æ¯’æœ¯ï¼Ÿ\n"NOR);
 
        if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 	
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨Ê¹ÓÃ£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•ä½¿ç”¨ï¼\n");
 		
 	if((int)me->query("neili")< 600)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 	
 	if((int)me->query_skill("magic-light",1)< 350)
-	return notify_fail("ÄãµÄ¹âÃ÷Ä§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„å…‰æ˜Žé­”æ³•å¤ªå·®äº†ï¼\n");
 
 	if((int)target->query("qi") > (int)target->query("max_qi")-50)
-	return notify_fail("Ä¿±êÏÖÔÚ²»ÐèÒªÊ¹ÓÃÁÆ¶¾Êõ£¡\n");
+	return notify_fail("ç›®æ ‡çŽ°åœ¨ä¸éœ€è¦ä½¿ç”¨ç–—æ¯’æœ¯ï¼\n");
 
-	msg = HIY "$N"HIY"¿ÚÖÐÇáÇáÒ÷³ªÆðÁËÖäÎÄ.$N"HIY"µÄÉíÉÏ²¼ÂúÒ»²ãÓ©¹â.\n"NOR;
-        msg += HIY"$N"HIY"Äîµ½ ¹âÖ®Éñ°¡£¬¸øÎÒÁ¦Á¿£¬ÕÕÁÁÎÒµÄÁé»ê°É£¡£¡\n"NOR;
-	msg += HIY "$NÉì¿ªË«±Û£¬ÉñÊ¥µÄ¹âÃ÷Ö®»ð×¢Èë$nµÄÌåÄÚ¡£\n";
-	msg += HIG "¹âÃ÷Ö®»ðÊ¹$nÈ«Éí¶¾ËØÒ»É¨¶ø¹â!\¡£\n";
+	msg = HIY "$N"HIY"å£ä¸­è½»è½»åŸå”±èµ·äº†å’’æ–‡.$N"HIY"çš„èº«ä¸Šå¸ƒæ»¡ä¸€å±‚è¤å…‰.\n"NOR;
+        msg += HIY"$N"HIY"å¿µåˆ° å…‰ä¹‹ç¥žå•Šï¼Œç»™æˆ‘åŠ›é‡ï¼Œç…§äº®æˆ‘çš„çµé­‚å§ï¼ï¼\n"NOR;
+	msg += HIY "$Nä¼¸å¼€åŒè‡‚ï¼Œç¥žåœ£çš„å…‰æ˜Žä¹‹ç«æ³¨å…¥$nçš„ä½“å†…ã€‚\n";
+	msg += HIG "å…‰æ˜Žä¹‹ç«ä½¿$nå…¨èº«æ¯’ç´ ä¸€æ‰«è€Œå…‰!\ã€‚\n";
 	me->add("neili",-500);
 	me->start_busy(2);
 	if((int)target->query("qi") < (int)target->query("max_qi")+(int)target->query("max_qi")/8)
         {
-	msg += HIG "¹âÃ÷Ö®»ðÊ¹$nÉíÉÏµÄÉËÉÙÁËÒ»µã!\¡£\n";
+	msg += HIG "å…‰æ˜Žä¹‹ç«ä½¿$nèº«ä¸Šçš„ä¼¤å°‘äº†ä¸€ç‚¹!\ã€‚\n";
         target->add("qi",target->query("eff_qi")/10);
         target->add("eff_qi",target->query("eff_qi")/10);
 if (target->query("qi") > target->query("max_qi")+1800)
@@ -45,7 +45,7 @@ target->set("eff_qi",target->query("max_qi"));
         }
 	if((int)target->query("jing") < (int)target->query("max_jing")+(int)target->query("max_jing")/8)
         {
-	msg += HIG "¹âÃ÷Ö®»ðÊ¹$nµÄ¾«ÉñÒ»Õñ!\¡£\n";
+	msg += HIG "å…‰æ˜Žä¹‹ç«ä½¿$nçš„ç²¾ç¥žä¸€æŒ¯!\ã€‚\n";
         target->add("jing",target->query("eff_jing")/10);
         target->add("eff_jing",target->query("eff_jing")/10);
 if (target->query("jing") > target->query("max_jing")+1800)

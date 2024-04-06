@@ -10,28 +10,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸×Ýºá¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œçºµæ¨ªã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
                 
         if ((int)me->query_skill("six-finger", 1) < 120)
-                return notify_fail("ÄãµÄÁùÂöÉñ½£»ðºò²»¹»£¬²»»áÊ¹ÓÃ¡¸×Ýºá¡¹¡£\n");
+                return notify_fail("ä½ çš„å…­è„‰ç¥žå‰‘ç«å€™ä¸å¤Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œçºµæ¨ªã€ã€‚\n");
 
         if (me->query("neili") < 100)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹¡¸×Ýºá¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•ã€Œçºµæ¨ªã€ã€‚\n");
 
         if (me->query_temp("weapon"))
-                return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÊ©Õ¹¡¸×Ýºá¡¹¡£\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½æ–½å±•ã€Œçºµæ¨ªã€ã€‚\n");
         if ((int)me->query_skill("kurong-changong",1) < 100)
-            return notify_fail("ÄãµÄ¿ÝÈÙìø¹¦Ì«µÍ¡£\n");
+            return notify_fail("ä½ çš„æž¯è£ç¦…åŠŸå¤ªä½Žã€‚\n");
         if (me->query_skill_mapped("finger") != "six-finger")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÁùÂöÉñ½££¬ÎÞ·¨Ê©Õ¹¡¸×Ýºá¡¹¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å…­è„‰ç¥žå‰‘ï¼Œæ— æ³•æ–½å±•ã€Œçºµæ¨ªã€ã€‚\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "Ö»¼û$N" HIW "Ò»ÉùÇáÐ¦£¬Ê®Ö¸·×µ¯£¬½£ÆøÈç±¼£¬Á¬ÃàÎÞ¾¡µÄÂÆÂÆ½£Æø»íÈ»¹áÏò$n" HIW "£¡\n" NOR;
+        msg = HIW "åªè§$N" HIW "ä¸€å£°è½»ç¬‘ï¼ŒåæŒ‡çº·å¼¹ï¼Œå‰‘æ°”å¦‚å¥”ï¼Œè¿žç»µæ— å°½çš„ç¼•ç¼•å‰‘æ°”è±ç„¶è´¯å‘$n" HIW "ï¼\n" NOR;
 
         ap = me->query_skill("six-finger", 1) +
              me->query_skill("finger", 1) / 2;
@@ -39,12 +39,12 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "±»Õâ×Ýºá½»´íµÄ½£Æø±ÆµÃÊÖÃ¦½ÅÂÒ£¬Ó¦½Ó²»Ï¾£¡\n" NOR;
+                msg += HIR "ç»“æžœ$p" HIR "è¢«è¿™çºµæ¨ªäº¤é”™çš„å‰‘æ°”é€¼å¾—æ‰‹å¿™è„šä¹±ï¼Œåº”æŽ¥ä¸æš‡ï¼\n" NOR;
                 target->start_busy(ap / 50 + 3);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "²¢²»»ÅÕÅ£¬ÔËÆðÄÚ¹¦½«$P"
-                       CYN "µÄ½£Æø¾¡Êý»¯½â¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "å¹¶ä¸æ…Œå¼ ï¼Œè¿èµ·å†…åŠŸå°†$P"
+                       CYN "çš„å‰‘æ°”å°½æ•°åŒ–è§£ã€‚\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);

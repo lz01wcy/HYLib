@@ -1,4 +1,4 @@
-// zhuiming.c    ÉñÁú×·ÃüÍÈ
+// zhuiming.c    ç¥é¾™è¿½å‘½è…¿
 // 98.9.18  by Aug    99.9.11 changed by aug
 
 #include <ansi.h>
@@ -13,26 +13,26 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character()|| !me->is_fighting(target) )
-                return notify_fail("¡¸ÉñÁú×·ÃüÍÈ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç¥é¾™è¿½å‘½è…¿ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("shenlong-tuifa", 1) < 150 )
-                return notify_fail("ÄãµÄÉñÁúÍÈ·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÉñÁú×·ÃüÍÈ¡¹¡£\n");
+                return notify_fail("ä½ çš„ç¥é¾™è…¿æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç¥é¾™è¿½å‘½è…¿ã€ã€‚\n");
 
         if( (int)me->query_skill("shenlong-xinfa", 1) < 150 )
-                return notify_fail("ÄãµÄÉñÁúĞÄ·¨²»¹»Éîºñ£¬²»»áÊ¹ÓÃ¡¸ÉñÁú×·ÃüÍÈ¡¹¡£\n");
+                return notify_fail("ä½ çš„ç¥é¾™å¿ƒæ³•ä¸å¤Ÿæ·±åšï¼Œä¸ä¼šä½¿ç”¨ã€Œç¥é¾™è¿½å‘½è…¿ã€ã€‚\n");
 
         if( (int)me->query("neili") < 1000)
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃÉñÁú×·ÃüÍÈ¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ç¥é¾™è¿½å‘½è…¿ã€‚\n");
 
         if ( me->query_temp("weapon")) 
-                return notify_fail("ÄãÄÃ×Å±øÆ÷ÎŞ·¨Ê¹ÓÃÉñÁú×·ÃüÍÈ¡£\n");
+                return notify_fail("ä½ æ‹¿ç€å…µå™¨æ— æ³•ä½¿ç”¨ç¥é¾™è¿½å‘½è…¿ã€‚\n");
 
 
         if ( (int)me->query_temp("zhuiming/time") > 0)
-                return notify_fail("ÄãÕıÔÚÊ¹ÓÃÉñÁú×·ÃüÍÈÄØ¡£\n");
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ç¥é¾™è¿½å‘½è…¿å‘¢ã€‚\n");
 
         if( me->query_skill_mapped("force") != "shenlong-xinfa")
-                return notify_fail("ÄãÏÖÔÚËùÊ¹ÓÃµÄÄÚ¹¦Í¬ÉñÁúĞÄ·¨ÏòµÖ´¥£¬²»ÄÜÊ¹ÓÃ¡¸ÉñÁú×·ÃüÍÈ¡¹¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ‰€ä½¿ç”¨çš„å†…åŠŸåŒç¥é¾™å¿ƒæ³•å‘æŠµè§¦ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¥é¾™è¿½å‘½è…¿ã€ã€‚\n");
 
 //      me->start_busy(TICKTIME);
         me->add("neili" , -200);
@@ -43,7 +43,7 @@ int perform(object me, object target)
         me->set_temp("no_fight", 1);
         me->add_temp("apply/dodge",me->query_skill("dodge", 1)/5);
 //        me->apply_condition("no_perform", 100);
-        message_vision(HIY+"\n$N"+HIY+"¶¸È»³¤Ğ¥Ò»Éù£¬Ë«ÍÈ·É¿ìµÄÒÆĞĞ»»Î»£¬È´²»·¢Ò»ÍÈ£¬ËÆºõÔÚ»ı¾ÛÄÚÁ¦ÒÔÊ¹³ö¾ø¼¼£­£­ÉñÁú×·ÃüÍÈ£¡\n\n"NOR,me);
+        message_vision(HIY+"\n$N"+HIY+"é™¡ç„¶é•¿å•¸ä¸€å£°ï¼ŒåŒè…¿é£å¿«çš„ç§»è¡Œæ¢ä½ï¼Œå´ä¸å‘ä¸€è…¿ï¼Œä¼¼ä¹åœ¨ç§¯èšå†…åŠ›ä»¥ä½¿å‡ºç»æŠ€ï¼ï¼ç¥é¾™è¿½å‘½è…¿ï¼\n\n"NOR,me);
                 
         call_out("exam1",TICKTIME,me,target);
 
@@ -63,21 +63,21 @@ void exam1(object me , object target )
 //                me->clear_condition("no_perform");
                 me->delete_temp("zhuiming");
                 me->delete_temp("no_fight");
-                me->start_perform(3,"¡¸ÉñÁú×·ÃüÍÈ¡¹");
-                tell_object(me,"Äã¾ö¶¨²»ÓÃÉñÁúÍÈ·¨¹¥»÷£¬¡¸ÉñÁú×·ÃüÍÈ¡¹Ò²×Ô¶¯½â³ı¡£\n");
+                me->start_perform(3,"ã€Œç¥é¾™è¿½å‘½è…¿ã€");
+                tell_object(me,"ä½ å†³å®šä¸ç”¨ç¥é¾™è…¿æ³•æ”»å‡»ï¼Œã€Œç¥é¾™è¿½å‘½è…¿ã€ä¹Ÿè‡ªåŠ¨è§£é™¤ã€‚\n");
                 return;
         }
         if( target 
          && me->is_fighting(target)
          && (times < 38)
          && me->query_temp("zhuiming")){
-                str = HIY+"\n$N"+HIY+"ÒÑ¾­¾ÛÆø"+CHINESE_D->chinese_number(times)+"ÃëÖÓ£¬$NË«ÍÈ¿ìËÙµÄÒÆ¶¯¾íÆğÒ»ÍÅÍÅ»ÆÍÁ£¬ËÆºõÔÚ½ÅÏÂ¾Û¼¯ÆğÒ»ÍÅ";
-                if( times < 10)  str +="Ğ¡Ğ¡µÄÆøÍÅ¡£"NOR;
-                  else if( times < 20) str +="³äÂúÕæÆøµÄÆøÍÅ¡£"NOR;
-                      else if( times < 30) str +="ÕıÔÚ²»¶Ï±ä´óµÄ´óÆøÍÅ£¡"NOR;
-                         else str +="ÏÔÊ¾×Å±ÆÈË·æÃ¢µÄ¾Ş´óÆøÍÅ£¡"NOR;
+                str = HIY+"\n$N"+HIY+"å·²ç»èšæ°”"+CHINESE_D->chinese_number(times)+"ç§’é’Ÿï¼Œ$NåŒè…¿å¿«é€Ÿçš„ç§»åŠ¨å·èµ·ä¸€å›¢å›¢é»„åœŸï¼Œä¼¼ä¹åœ¨è„šä¸‹èšé›†èµ·ä¸€å›¢";
+                if( times < 10)  str +="å°å°çš„æ°”å›¢ã€‚"NOR;
+                  else if( times < 20) str +="å……æ»¡çœŸæ°”çš„æ°”å›¢ã€‚"NOR;
+                      else if( times < 30) str +="æ­£åœ¨ä¸æ–­å˜å¤§çš„å¤§æ°”å›¢ï¼"NOR;
+                         else str +="æ˜¾ç¤ºç€é€¼äººé”‹èŠ’çš„å·¨å¤§æ°”å›¢ï¼"NOR;
                 message_vision(str+"\n",me);
-                message_vision(HIY+"\n$N"+HIR+"Äã·É¿ì¹¥³ö¶şÍÈ¡£\n"NOR,me);
+                message_vision(HIY+"\n$N"+HIR+"ä½ é£å¿«æ”»å‡ºäºŒè…¿ã€‚\n"NOR,me);
 me->add_temp("apply/attack",100);
 me->add_temp("apply/damage",200);
 		COMBAT_D->do_attack(me, target,0, 1); 
@@ -88,11 +88,11 @@ me->add_temp("apply/damage",-200);
                 call_out("exam1",TICKTIME,me,target);
         }
         else {
-                message_vision(HIY+"\n$N"+HIY+"ÂıÂıÊÕ»Ø¾Û¼¯µÄÄÚÁ¦¡£\n"NOR,me);
+                message_vision(HIY+"\n$N"+HIY+"æ…¢æ…¢æ”¶å›èšé›†çš„å†…åŠ›ã€‚\n"NOR,me);
                 me->add_temp("apply/dodge",-me->query_temp("zhuiming/dodge"));
 //                me->clear_condition("no_perform");
                 me->delete_temp("zhuiming");
                 me->delete_temp("no_fight");
-                me->start_perform(3,"¡¸ÉñÁú×·ÃüÍÈ¡¹");
+                me->start_perform(3,"ã€Œç¥é¾™è¿½å‘½è…¿ã€");
         }
 }

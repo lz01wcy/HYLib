@@ -9,34 +9,34 @@ int perform(object me, object target)
 	int orforce;
 	object weapon;
 	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
 	extra = me->query_skill("luohan-quan");
        if( (int)me->query_skill("luohan-quan", 1) < 100 )
-		return notify_fail("ÄãµÄÂÞººÈ­²»¹»æµÊì!\n");
+		return notify_fail("ä½ çš„ç½—æ±‰æ‹³ä¸å¤Ÿå¨´ç†Ÿ!\n");
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¸ÂÞºº¡¹Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("ã€Œç½—æ±‰ã€åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¡\n");     
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸è¶³ï¼\n");     
 
 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÂÞºº£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»ç½—æ±‰ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 //	me->add("force_factor",extra/3);
 //	orforce = (int) me->query("force");
 //	me->add("force",extra/3*100);
 	me->add_temp("apply/attack",extra);me->add_temp("apply/damage",extra*2);
 
 	weapon = me->query_temp("weapon");
-	msg = HIY  "$NÊ¹³ö¶À²½ÌìÏÂµÄ£ÛÂÞººÈ­£Ý£¬Ò»ÕÐ[½ðÉíÂÞºº]´ò³öÁËµÚÒ»Ê½£¡\n" NOR;
+	msg = HIY  "$Nä½¿å‡ºç‹¬æ­¥å¤©ä¸‹çš„ï¼»ç½—æ±‰æ‹³ï¼½ï¼Œä¸€æ‹›[é‡‘èº«ç½—æ±‰]æ‰“å‡ºäº†ç¬¬ä¸€å¼ï¼\n" NOR;
 	message_vision(msg,me,target);
-	msg = HIB  "µÚÒ»È­------Ð®É½³¬º££¡" NOR;
+	msg = HIB  "ç¬¬ä¸€æ‹³------æŒŸå±±è¶…æµ·ï¼" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIC  "µÚ¶þÈ­------Ð®É½³¬º££¡£¡" NOR;
+        msg = HIC  "ç¬¬äºŒæ‹³------æŒŸå±±è¶…æµ·ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIG  "µÚÈýÈ­------ÈýÈëµØÓü£¡£¡£¡" NOR;
+        msg = HIG  "ç¬¬ä¸‰æ‹³------ä¸‰å…¥åœ°ç‹±ï¼ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 //	me->set("force_factor",0);
 //	me->set("force", orforce);

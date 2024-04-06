@@ -1,5 +1,5 @@
 //Cracked by Kafei
-//hengshan.c ºãÉ½Éñ·å½£ by maco
+//hengshan.c æ’å±±ç¥å³°å‰‘ by maco
 
 #include <ansi.h>
 
@@ -16,33 +16,33 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸ºãÉ½Éñ·å¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œæ’å±±ç¥å³°ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_temp("hengshan") )
-                return notify_fail("ÄãÒÑ¾­Ê¹³ö¡¸ºãÉ½Éñ·å¡¹ÁË£¡\n");
+                return notify_fail("ä½ å·²ç»ä½¿å‡ºã€Œæ’å±±ç¥å³°ã€äº†ï¼\n");
 
         weapon = me->query_temp("weapon");
         if( !objectp(weapon) || weapon->query("skill_type") != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÈçºÎÄÜÊ©Õ¹¡¸ºãÉ½Éñ·å¡¹£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œå¦‚ä½•èƒ½æ–½å±•ã€Œæ’å±±ç¥å³°ã€ï¼Ÿ\n");
 
         if( me->query_skill("dodge") < 100 )
-                return notify_fail("ÄãµÄÇá¹¦ĞŞÎªÎ´µ½£¬ÄÑÒÔÊ©Õ¹¡¸ºãÉ½Éñ·å¡¹µÄ±ä»ÃÖ®´¦£¡\n");
+                return notify_fail("ä½ çš„è½»åŠŸä¿®ä¸ºæœªåˆ°ï¼Œéš¾ä»¥æ–½å±•ã€Œæ’å±±ç¥å³°ã€çš„å˜å¹»ä¹‹å¤„ï¼\n");
 
         if( me->query_skill("sword") < 100 )
-                return notify_fail("ÄãÔÚ½£·¨ÉÏµÄÔìÒè²»×ãÒÔÊ¹³ö¡¸ºãÉ½Éñ·å¡¹£¡\n");
+                return notify_fail("ä½ åœ¨å‰‘æ³•ä¸Šçš„é€ è¯£ä¸è¶³ä»¥ä½¿å‡ºã€Œæ’å±±ç¥å³°ã€ï¼\n");
 
         if( me->query("neili") <= 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹¡¸ºãÉ½Éñ·å¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿæ–½å±•ã€Œæ’å±±ç¥å³°ã€ï¼\n");
 
         skill = me->query_skill("sword");
 
 	if(random(target->query_skill("parry"))>skill) {
-        message_vision(HIW "\n$NÒâÓûÊ¹³ö¡¸ºãÉ½Éñ·å¡¹£¬µ«ÊÇ$nÑÏ¼Ó½ä±¸£¬È«ÉíÃÅ»§£¬ÎŞ²»ÊØ±¸ôë½÷£¬ÄÑÒÔ×àĞ§£¡\n" NOR, me, target);
+        message_vision(HIW "\n$Næ„æ¬²ä½¿å‡ºã€Œæ’å±±ç¥å³°ã€ï¼Œä½†æ˜¯$nä¸¥åŠ æˆ’å¤‡ï¼Œå…¨èº«é—¨æˆ·ï¼Œæ— ä¸å®ˆå¤‡ç¶¦è°¨ï¼Œéš¾ä»¥å¥æ•ˆï¼\n" NOR, me, target);
 	me->start_busy(2);
 
 	}
 	else{
-        message_vision(HIG "\nµ«¼ûº®¹â¶¸ÉÁ£¬$NÊÖÖĞ"+weapon->query("name")+HIC"Ô½Ê¹Ô½¿ì£¬ÓĞÈçºãÉ½µÄ¸ßµÍ²»Æ½µÄÆæ·å£¬ÕıÊÇ"+HIR"¡¸ºãÉ½Éñ·å¡¹"NOR+HIC"£¡\n" NOR, me, target);
+        message_vision(HIG "\nä½†è§å¯’å…‰é™¡é—ªï¼Œ$Næ‰‹ä¸­"+weapon->query("name")+HIC"è¶Šä½¿è¶Šå¿«ï¼Œæœ‰å¦‚æ’å±±çš„é«˜ä½ä¸å¹³çš„å¥‡å³°ï¼Œæ­£æ˜¯"+HIR"ã€Œæ’å±±ç¥å³°ã€"NOR+HIC"ï¼\n" NOR, me, target);
 	if (random(3)==0) target->start_busy(2);
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
@@ -68,29 +68,29 @@ if (!me) return;
         if ( me->query_temp("hengshan")  ) {
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword") {
-                tell_object(me, "\nÄãÊÖÖĞÃ»ÓĞ³Ö½££¬¡¸ºãÉ½Éñ·å¡¹µÄ¹¥ÊÆ±ã¼´Íß½â£¡\n" NOR);
+                tell_object(me, "\nä½ æ‰‹ä¸­æ²¡æœ‰æŒå‰‘ï¼Œã€Œæ’å±±ç¥å³°ã€çš„æ”»åŠ¿ä¾¿å³ç“¦è§£ï¼\n" NOR);
 		me->delete_temp("hengshan");
                 return;
            }
 
 
            else if ( weapon->query("weapon_prop") == 0 ) {
-                tell_object(me, "\nÄãµÄ"+weapon->name()+"ÒÑ»Ù£¬ÎŞ·¨³ÖĞø¡¸ºãÉ½Éñ·å¡¹µÄ¹¥ÊÆ£¡\n\n" NOR);
+                tell_object(me, "\nä½ çš„"+weapon->name()+"å·²æ¯ï¼Œæ— æ³•æŒç»­ã€Œæ’å±±ç¥å³°ã€çš„æ”»åŠ¿ï¼\n\n" NOR);
 		me->delete_temp("hengshan");
                 return;
            }
            else if ( (int)me->query("neili") < 400  ) {
-                tell_object(me, "\nÄãµÄÄÚÁ¦ºó¼Ì²»×ã£¬ÄÑÒÔ³ÖĞø¡¸ºãÉ½Éñ·å¡¹µÄÍşÁ¦£¬ù£ºÃÊÕ»º½£ÕĞ¡£\n\n" NOR);
+                tell_object(me, "\nä½ çš„å†…åŠ›åç»§ä¸è¶³ï¼Œéš¾ä»¥æŒç»­ã€Œæ’å±±ç¥å³°ã€çš„å¨åŠ›ï¼Œï¼šæª¬æ ˆèˆªï¼µå°\n\n" NOR);
 		me->delete_temp("hengshan");
                 return;
            }
            else if ( me->query_skill_mapped("sword") != "hengshan-jian" ) {
-                tell_object(me, "\nÄã×ª¶øÊ©Õ¹ÆäËû½£·¨£¬ÎŞ·¨ÔÙÒÔ¡¸ºãÉ½Éñ·å¡¹¹¥µĞ£¡\n\n" NOR);
+                tell_object(me, "\nä½ è½¬è€Œæ–½å±•å…¶ä»–å‰‘æ³•ï¼Œæ— æ³•å†ä»¥ã€Œæ’å±±ç¥å³°ã€æ”»æ•Œï¼\n\n" NOR);
 		me->delete_temp("hengshan");
                 return;
            }
            else if (!me->is_fighting()) {
-                tell_object(me,  "\nÄãÏÖÔÚÃ»ÓĞºÍÈË¹ıÕĞ£¬µ±ÏÂÊÕ»ØÁË¡¸ºãÉ½Éñ·å¡¹µÄ¹¥ÊÆ¡£\n\n" NOR);
+                tell_object(me,  "\nä½ ç°åœ¨æ²¡æœ‰å’Œäººè¿‡æ‹›ï¼Œå½“ä¸‹æ”¶å›äº†ã€Œæ’å±±ç¥å³°ã€çš„æ”»åŠ¿ã€‚\n\n" NOR);
 		me->delete_temp("hengshan");
                 return;
            }
@@ -104,7 +104,7 @@ void remove_effect(object me, int amount)
 {
 if (!me) return;
         if ( me->query_temp("hengshan") ) {
-                message_vision(HIW"\n$N½£ÕĞ½¥»º£¬ÒÑ½«Ò»Ì×¡¸ºãÉ½Éñ·å¡¹Ê¹Íê£¡\n" NOR, me);
+                message_vision(HIW"\n$Nå‰‘æ‹›æ¸ç¼“ï¼Œå·²å°†ä¸€å¥—ã€Œæ’å±±ç¥å³°ã€ä½¿å®Œï¼\n" NOR, me);
         me->delete_temp("hengshan");
         }
 }

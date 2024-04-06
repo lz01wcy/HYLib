@@ -1,5 +1,5 @@
-// shield.c 小无相功护体神功
-// Designed by secret(秘密)
+// shield.c 灏忔棤鐩稿姛鎶や綋绁炲姛
+// Designed by secret(绉樺瘑)
 //
 
 #include <ansi.h>
@@ -13,23 +13,23 @@ int exert(object me, object target)
 	int skill;
 
 	if( target != me ) 
-		return notify_fail("你只能用小无相功来提升自己的防御力。\n");
+		return notify_fail("浣犲彧鑳界敤灏忔棤鐩稿姛鏉ユ彁鍗囪嚜宸辩殑闃插尽鍔涖�俓n");
 
 	if( (int)me->query("neili") < 100  ) 
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 
 	if( (int)me->query_skill("xiaowuxiang",1) < 40  ) 
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 
 	if( (int)me->query_temp("shield") ) 
-		return notify_fail("你已经在运功中了。\n");
+		return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
 	skill = me->query_skill("xiaowuxiang");
 	me->add("neili", -100);
 	me->receive_damage("qi", 0);
 
 	message_combatd(
-	HIW "$N双手平举过顶，运起小无相功，全身笼罩在劲气之中！\n" NOR, me);
+	HIW "$N鍙屾墜骞充妇杩囬《锛岃繍璧峰皬鏃犵浉鍔燂紝鍏ㄨ韩绗肩僵鍦ㄥ姴姘斾箣涓紒\n" NOR, me);
 
 	me->add_temp("apply/armor", skill*2);
 	me->set_temp("shield", 1);
@@ -45,5 +45,5 @@ void remove_effect(object me, int amount)
 {
 	me->add_temp("apply/armor", - amount);
 	me->delete_temp("shield");
-	tell_object(me, "你的小无相功运行完毕，将内力收回丹田。\n");
+	tell_object(me, "浣犵殑灏忔棤鐩稿姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }

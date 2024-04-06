@@ -11,15 +11,15 @@ int perform(object me, object target)
         object weapon;
         
          extra = me->query_skill("music",1);
-        if ( extra < 30) return notify_fail("ÄãµÄÇÙµÀ»¹²»¹»´¿Êì£¡\n");
+        if ( extra < 30) return notify_fail("ä½ çš„ç´é“è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
                 
         dodskill = (string) me->query_skill_mapped("dodge");
 
     if( (int)me->query_skill("xuantian-wuji", 1) < 50 )
-	return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»¹Î´Á·³É£¬²»ÄÜÊ¹ÓÃ£¡\n");
+	return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸè¿˜æœªç»ƒæˆï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
 
     if( (int)me->query("neili") < 600 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         
                 
         basic = extra/40 + tmp/40;
@@ -29,25 +29,25 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£ÛÑþÇÙÆßÏÒ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»ç‘¶ç´ä¸ƒå¼¦ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
                 
         weapon = me->query_temp("weapon");
-        msg = HIR"$N ÑöÌì³¤Ð¥ Ò»ÏÒÎª»ÆÖÓ£¬ÈýÏÒÎª¹¬µ÷¡£Îåµ÷ÎªÂý½Ç£¡Ð¥ÉùÕðÌì£¡\n"NOR;
+        msg = HIR"$N ä»°å¤©é•¿å•¸ ä¸€å¼¦ä¸ºé»„é’Ÿï¼Œä¸‰å¼¦ä¸ºå®«è°ƒã€‚äº”è°ƒä¸ºæ…¢è§’ï¼å•¸å£°éœ‡å¤©ï¼\n"NOR;
         message_vision(msg, me, target);
         if(random((int)target->query("combat_exp")) < (int)me->query("combat_exp"))
    {
-                message_vision("½á¹û$NÄ¿µÉ¿Ú´ô£¬²»ÖªÈçºÎÕÐ¼Ü£¡\n",target);
+                message_vision("ç»“æžœ$Nç›®çžªå£å‘†ï¼Œä¸çŸ¥å¦‚ä½•æ‹›æž¶ï¼\n",target);
 				if (!target->is_busy()) 
                             target->start_busy(5);
 
-                        msg = HIY"³¤Ð¥ÉùÖÐ£¬$NÁè¿ÕÏÂ»÷£¬½Ó×ÅÓÖ½èÁ¦ÉÏÔ¾£¡\n"NOR;
+                        msg = HIY"é•¿å•¸å£°ä¸­ï¼Œ$Nå‡Œç©ºä¸‹å‡»ï¼ŒæŽ¥ç€åˆå€ŸåŠ›ä¸Šè·ƒï¼\n"NOR;
                         message_vision(msg, me, target);
                 me->add_temp("apply/attack",100);
                 me->add_temp("apply/damage",2000);
                 for(i=0;i<basic;i++)
                 {
                         if (me->is_busy()) continue;
-              msg=HIG"ÑþÇÙÆßÏÒ µÚ"+(i+1)+"Ê½"NOR;
+              msg=HIG"ç‘¶ç´ä¸ƒå¼¦ ç¬¬"+(i+1)+"å¼"NOR;
               COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
  me->add("neili",-50);
@@ -58,7 +58,7 @@ int perform(object me, object target)
 
         }
         else{
-                message_vision("µ«ÊÇ$NÒÑ¾­¿´ÆÆ$nµÄ¹¥Ê½£¬$n´¦´¦ÊÜÖÆ£¡\n",target,me);
+                message_vision("ä½†æ˜¯$Nå·²ç»çœ‹ç ´$nçš„æ”»å¼ï¼Œ$nå¤„å¤„å—åˆ¶ï¼\n",target,me);
                 me->start_busy(2);
               
                 

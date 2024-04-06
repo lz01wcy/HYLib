@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define YING "¡¸" MAG "ÎÞÓ°ÕÆ" NOR "¡¹"
+#define YING "ã€Œ" MAG "æ— å½±æŽŒ" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,39 +12,39 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(YING "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(YING "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
                 
         if ((int)me->query_skill("tiezhang-zhangfa", 1) < 100)
-                return notify_fail("ÄãµÄÌúÕÆÕÆ·¨»¹²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" YING "¡£\n");
+                return notify_fail("ä½ çš„é“æŽŒæŽŒæ³•è¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" YING "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "tiezhang-zhangfa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÌúÕÆÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" YING "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é“æŽŒæŽŒæ³•ï¼Œéš¾ä»¥æ–½å±•" YING "ã€‚\n");
 
         if (me->query_skill_prepared("strike") != "tiezhang-zhangfa")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓÐ×¼±¸Ê¹ÓÃÌúÕÆÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" YING "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰å‡†å¤‡ä½¿ç”¨é“æŽŒæŽŒæ³•ï¼Œéš¾ä»¥æ–½å±•" YING "ã€‚\n");
 
         if (me->query("neili") < 100)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹¡¸ÎÞÓ°ÕÆ¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•ã€Œæ— å½±æŽŒã€ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = MAG "Ö»¼û$N" MAG "Ë«ÕÆ¼±ËÙÔË×ª£¬Ê¹³öÌúÕÆÕÆ·¨¾ø¼¼¡¸ÎÞÓ°ÕÆ¡¹£¬ÕÆÓ°ÐéÐéÊµ"
-              "Êµ£¬ºÁÎÞÕÂÀíµÄÅÄÏò$n" MAG "£¡\n" NOR;
+        msg = MAG "åªè§$N" MAG "åŒæŽŒæ€¥é€Ÿè¿è½¬ï¼Œä½¿å‡ºé“æŽŒæŽŒæ³•ç»æŠ€ã€Œæ— å½±æŽŒã€ï¼ŒæŽŒå½±è™šè™šå®ž"
+              "å®žï¼Œæ¯«æ— ç« ç†çš„æ‹å‘$n" MAG "ï¼\n" NOR;
 
         me->add("neili", -80);
         if (random(me->query_skill("tiezhang-zhangfa")) > (int)target->query_skill("force") / 3)
         {
-                msg += HIR "½á¹û$p" HIR "ÍêÈ«×ÁÄ¥²»Í¸$P" HIR "¾«ÃîµÄÕÆ·¨£¬¹¥ÊÆ¶ÙÊ±»º"
-                       "ÖÍ¡£\n" NOR;
+                msg += HIR "ç»“æžœ$p" HIR "å®Œå…¨ç¢ç£¨ä¸é€$P" HIR "ç²¾å¦™çš„æŽŒæ³•ï¼Œæ”»åŠ¿é¡¿æ—¶ç¼“"
+                       "æ»žã€‚\n" NOR;
                 target->start_busy((int)me->query_skill("tiezhang-zhangfa") / 50 + 3);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "²¢Ã»ÉÏµ±£¬Ó²ÉúÉú¸ñ¿ªÁË$P"
-                       CYN "Õâ¼¸ÕÆ¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "å¹¶æ²¡ä¸Šå½“ï¼Œç¡¬ç”Ÿç”Ÿæ ¼å¼€äº†$P"
+                       CYN "è¿™å‡ æŽŒã€‚\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);

@@ -1,4 +1,4 @@
-// jianzhang.c  ½£ÕÆÎåÁ¬»·
+// jianzhang.c  å‰‘æŒäº”è¿ç¯
 #include <ansi.h>
 #include <skill.h>
 #include <weapon.h>
@@ -13,40 +13,40 @@ int perform(object me, object target)
   if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸½£ÕÆÎåÁ¬»·¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå‰‘æŒäº”è¿ç¯ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸½£ÕÆÎåÁ¬»·¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå‰‘æŒäº”è¿ç¯ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("¡¸½£ÕÆÎåÁ¬»·¡¹¿ªÊ¼Ê±±ØĞëÄÃ×ÅÒ»°Ñ½££¡\n");
+		return notify_fail("ã€Œå‰‘æŒäº”è¿ç¯ã€å¼€å§‹æ—¶å¿…é¡»æ‹¿ç€ä¸€æŠŠå‰‘ï¼\n");
 
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("zixia-shengong",1) < 50 )
-		return notify_fail("ÄãµÄ×ÏÏ¼Éñ¹¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„ç´«éœç¥åŠŸä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("sword",1) < 50 ||
 	    me->query_skill_mapped("sword") != "huashan-sword")
-		return notify_fail("ÄãµÄ»ªÉ½½£·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ çš„åå±±å‰‘æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨å‰‘æŒäº”è¿ç¯ï¼\n");
 	extra = me->query_skill("huashan-sword",1) / 10;
 	extra += me->query_skill("huashan-sword",1) /10;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 
-	msg = HIY "$NÊ¹³ö»ªÉ½ÅÉ¾ø¼¼¡¸½£ÕÆÎåÁ¬»·¡¹£¬Éí·¨¶¸È»¼Ó¿ì¡£µÚÒ»½££¡" NOR;
+	msg = HIY "$Nä½¿å‡ºåå±±æ´¾ç»æŠ€ã€Œå‰‘æŒäº”è¿ç¯ã€ï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ã€‚ç¬¬ä¸€å‰‘ï¼" NOR;
 	
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  YEL  "µÚ¶şÕÆ£¡ " NOR;
+	 msg =  YEL  "ç¬¬äºŒæŒï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  YEL  "µÚÈı½££¡ " NOR;
+	 msg =  YEL  "ç¬¬ä¸‰å‰‘ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  YEL  "µÚËÄÕÆ£¡ " NOR;
+	 msg =  YEL  "ç¬¬å››æŒï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  YEL  "µÚÎå½££¡ " NOR;
+	msg =  YEL  "ç¬¬äº”å‰‘ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

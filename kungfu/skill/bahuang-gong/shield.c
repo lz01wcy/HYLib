@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// shield.c °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ»¤ÌåÉñ¹¦
+// shield.c å…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠæŠ¤ä½“ç¥åŠŸ
 
 #include <ansi.h>
 
@@ -14,23 +14,23 @@ int exert(object me, object target)
 	int skill;
 
 	if (target != me)
-		return notify_fail("ÄãÖ»ÄÜÓÃ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğÀ´ÌáÉı×Ô¼ºµÄ·ÀÓùÁ¦¡£\n");
+		return notify_fail("ä½ åªèƒ½ç”¨å…«è’å…­åˆå”¯æˆ‘ç‹¬å°Šæ¥æå‡è‡ªå·±çš„é˜²å¾¡åŠ›ã€‚\n");
 
 	if ((int)me->query("neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if ((int)me->query_skill("bahuang-gong", 1) < 50)
-		return notify_fail("ÄãµÄ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğĞŞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å…«è’å…­åˆå”¯æˆ‘ç‹¬å°Šä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if ((int)me->query_temp("shield"))
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
 	skill = me->query_skill("force");
 	me->add("neili", -100);
 	me->receive_damage("qi", 0);
 
-	message_combatd(HIW "$N" HIW "Éí×ÓÒ»»Î£¬ÒÂĞäÒ»²¨²¨µÄ"
-                        "²»×¡¼¤µ´£¬¾¢Æø±ÆÈË£¡\n" NOR, me);
+	message_combatd(HIW "$N" HIW "èº«å­ä¸€æ™ƒï¼Œè¡£è¢–ä¸€æ³¢æ³¢çš„"
+                        "ä¸ä½æ¿€è¡ï¼ŒåŠ²æ°”é€¼äººï¼\n" NOR, me);
 
 	me->add_temp("apply/armor", skill / 2);
  me->add_temp("apply/dodge", 88);
@@ -50,6 +50,6 @@ void remove_effect(object me, int amount)
         	me->add_temp("apply/armor", -amount);
         	me->add_temp("apply/dodge", -88);
         	me->delete_temp("shield");
-        	tell_object(me, "ÄãµÄ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        	tell_object(me, "ä½ çš„å…«è’å…­åˆå”¯æˆ‘ç‹¬å°Šè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

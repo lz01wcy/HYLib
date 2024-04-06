@@ -1,4 +1,4 @@
-// gaibang.h for fight and get ÇàÖñÁî
+// gaibang.h for fight and get é’ç«¹ä»¤
 
 int accept_object(object ob, object obj)
 {
@@ -7,12 +7,12 @@ int accept_object(object ob, object obj)
         mapping my_fam  = me->query("family");
         mapping ob_fam  = ob->query("family");
 
-        if (!my_fam || (my_fam["family_name"] != "Ø¤°ï"))
-                return notify_fail("ÄãÄÄÀïÀ´µÄÇàÖñÁî£¿\n");
+        if (!my_fam || (my_fam["family_name"] != "ä¸å¸®"))
+                return notify_fail("ä½ å“ªé‡Œæ¥çš„é’ç«¹ä»¤ï¼Ÿ\n");
 
         if ( ob->query_temp("have_cloth") && present("po bu", ob) )
         {
-                command("say Äã²»ÊÇÒÑ¾­ÓĞÆÆ²¼Ã´?");
+                command("say ä½ ä¸æ˜¯å·²ç»æœ‰ç ´å¸ƒä¹ˆ?");
                 return 0;
         }
 
@@ -33,41 +33,41 @@ int accept_object(object ob, object obj)
             ((ob->query("beggarlvl") >= 7) &&
              (ob->query("combat_exp") <= 30000)))
         {
-             command("say ¾ÍÄãÄÇµãÅ§Ë®£¿ÎÒ¿´¾ÍËãÁË°É¡£\n");
+             command("say å°±ä½ é‚£ç‚¹è„“æ°´ï¼Ÿæˆ‘çœ‹å°±ç®—äº†å§ã€‚\n");
              return 1;
         }
         if (((ob->query("beggarlvl") == 0) &&
-             (me->query("title") == "Ø¤°ïÒ»´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®ä¸€è¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 1) &&
-             (me->query("title") == "Ø¤°ï¶ş´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®äºŒè¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 2) &&
-             (me->query("title") == "Ø¤°ïÈı´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®ä¸‰è¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 3) &&
-             (me->query("title") == "Ø¤°ïËÄ´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®å››è¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 4) &&
-             (me->query("title") == "Ø¤°ïÎå´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®äº”è¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 5) &&
-             (me->query("title") == "Ø¤°ïÁù´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®å…­è¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 6) &&
-             (me->query("title") == "Ø¤°ïÆß´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®ä¸ƒè¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 7) &&
-             (me->query("title") == "Ø¤°ï°Ë´üµÜ×Ó")) ||
+             (me->query("title") == "ä¸å¸®å…«è¢‹å¼Ÿå­")) ||
             ((ob->query("beggarlvl") == 8) &&
-             (me->query("title") == "Ø¤°ï¾Å´ü³¤ÀÏ")))
+             (me->query("title") == "ä¸å¸®ä¹è¢‹é•¿è€")))
         {
           if((obj->query("id") == "qingzhu ling")
             && !ob->query_temp("have_cloth"))
           {
              ob->set_temp("fight_ok",1);
-             command("say ºÃ£¬¼ÈÈ»ÒÑÓĞÇàÖñÁî£¬ÄÇ¾Í¿´ÄãµÄÔËÆøÁË¡£\n");
+             command("say å¥½ï¼Œæ—¢ç„¶å·²æœ‰é’ç«¹ä»¤ï¼Œé‚£å°±çœ‹ä½ çš„è¿æ°”äº†ã€‚\n");
              remove_call_out("destroying");
              call_out("destroying", 1, me, obj);
              return 1;
           }
        }
        command("smile");
-       command("say Éı´üµ±È»Ö»Éı²»½µ¡£ÌøÉıÒ²ÊÇ²»ĞĞµÄ¡£\n");
-       command("say Õâ¶«Î÷Ò²Ã»ÓÃÁË¡£\n");
+       command("say å‡è¢‹å½“ç„¶åªå‡ä¸é™ã€‚è·³å‡ä¹Ÿæ˜¯ä¸è¡Œçš„ã€‚\n");
+       command("say è¿™ä¸œè¥¿ä¹Ÿæ²¡ç”¨äº†ã€‚\n");
        command("drop " + obj->query("id"));
        return 0;
 }
@@ -111,8 +111,8 @@ int checking(object me, object ob)
 
         if (( (int)me->query("qi")*100 / my_max_qi) <= 50 )
         {
-                command("say ´óÒ¯½ñÌìĞÄÇéºÃ£¬ËãÄãÔËÆø¡£ÄÃÕâ¿éÆÆ²¼ÕÒ¼ò³¤ÀÏÈ¥ !\n");
-                message_vision("$N½»¸ø$nÒ»¿éÆÆ²¼¡£\n", me, ob);
+                command("say å¤§çˆ·ä»Šå¤©å¿ƒæƒ…å¥½ï¼Œç®—ä½ è¿æ°”ã€‚æ‹¿è¿™å—ç ´å¸ƒæ‰¾ç®€é•¿è€å» !\n");
+                message_vision("$Näº¤ç»™$nä¸€å—ç ´å¸ƒã€‚\n", me, ob);
                 ob->set("newtitle",me->query("title"));
                 ob->set_temp("have_cloth",1);
                 obj=new("kungfu/class/gaibang/obj/po-bu");
@@ -122,8 +122,8 @@ int checking(object me, object ob)
 
         if (( (int)ob->query("qi")*100 / his_max_qi) < 50 )
         {
-                command("say ¿´À´" + RANK_D->query_respect(ob) +
-                "ÏëÉı´ü£¿Ò²²»¿´¿´×Ô¼Ò³¤ÁË¼¸¸ùÃ« !\n");
+                command("say çœ‹æ¥" + RANK_D->query_respect(ob) +
+                "æƒ³å‡è¢‹ï¼Ÿä¹Ÿä¸çœ‹çœ‹è‡ªå®¶é•¿äº†å‡ æ ¹æ¯› !\n");
                 return 1;
         }
         return 1;

@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define RUO "¡¸" HIG "¿ÕÃ÷ÈôÐþ" NOR "¡¹"
+#define RUO "ã€Œ" HIG "ç©ºæ˜Žè‹¥çŽ„" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -13,35 +13,35 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(RUO "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(RUO "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 
         if ((level = me->query_skill("kongming-quan", 1)) < 100)
-                return notify_fail("ÄãµÄ¿ÕÃ÷È­²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" RUO "¡£\n");
+                return notify_fail("ä½ çš„ç©ºæ˜Žæ‹³ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" RUO "ã€‚\n");
 
 
         if ((int)me->query("neili", 1) < 100)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆøÌ«Èõ£¬ÄÑÒÔÊ©Õ¹" RUO "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”å¤ªå¼±ï¼Œéš¾ä»¥æ–½å±•" RUO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-	msg = WHT "$N" WHT "Ê¹³ö¿ÕÃ÷È­¡¸" HIG "¿ÕÃ÷ÈôÐþ" NOR + WHT "¡¹£¬Ë«ÊÖ"
-              "ÍÌÍÂ²»¶¨£¬ÔË×ªÈçÒâ£¬ÊÔÍ¼ÈÅÂÒ$n" WHT "µÄ¹¥ÊÆ¡£\n" NOR;
+	msg = WHT "$N" WHT "ä½¿å‡ºç©ºæ˜Žæ‹³ã€Œ" HIG "ç©ºæ˜Žè‹¥çŽ„" NOR + WHT "ã€ï¼ŒåŒæ‰‹"
+              "åžåä¸å®šï¼Œè¿è½¬å¦‚æ„ï¼Œè¯•å›¾æ‰°ä¹±$n" WHT "çš„æ”»åŠ¿ã€‚\n" NOR;
 
         me->add("neili", -50);
         if (random(level) > (int)target->query_skill("parry", 1) / 3)
         {
-		msg += HIR "½á¹û$n" HIR "±»$N" HIR "µÄÈ­ÕÐËùÇ£ÖÆ£¬ÕÐ¼Ü"
-                       "²»µü£¬È«È»ÎÞ·¨·´»÷£¡\n" NOR;
+		msg += HIR "ç»“æžœ$n" HIR "è¢«$N" HIR "çš„æ‹³æ‹›æ‰€ç‰µåˆ¶ï¼Œæ‹›æž¶"
+                       "ä¸è¿­ï¼Œå…¨ç„¶æ— æ³•åå‡»ï¼\n" NOR;
 		target->start_busy(level / 16 + 3);
 	} else
         {
-		msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÆóÍ¼£¬Õò¶¨Óâ"
-                       "ºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+		msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„ä¼å›¾ï¼Œé•‡å®šé€¾"
+                       "æ’ï¼Œå…¨ç¥žåº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
 		me->start_busy(2);
 	}
 	message_combatd(msg, me, target);

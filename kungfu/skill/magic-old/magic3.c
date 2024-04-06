@@ -9,28 +9,28 @@ int perform(object me, object target)
 
         spells = me->query_skill("spells");
         if(spells < 30 )
-                return notify_fail("你的法术不够高！\n");
+                return notify_fail("浣犵殑娉曟湳涓嶅楂橈紒\n");
 
 	if( !me->is_fighting() )
-		return notify_fail("只有战斗中才能召唤天将！\n");
+		return notify_fail("鍙湁鎴樻枟涓墠鑳藉彫鍞ゅぉ灏嗭紒\n");
 	
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("你的法力不够了！\n");
+		return notify_fail("浣犵殑娉曞姏涓嶅浜嗭紒\n");
 
 	if( (int)me->query("jing") < 60 )
-		return notify_fail("你的精神无法集中！\n");
+		return notify_fail("浣犵殑绮剧鏃犳硶闆嗕腑锛乗n");
         if( me->query_temp("max_guard") > MAX_GUARD )
-		return notify_fail("你已经召唤太多天兵鬼卒了！\n");
+		return notify_fail("浣犲凡缁忓彫鍞ゅお澶氬ぉ鍏甸鍗掍簡锛乗n");
         if (present("yin long",environment(me)))
-		return notify_fail("你已经召唤过了！\n");
+		return notify_fail("浣犲凡缁忓彫鍞よ繃浜嗭紒\n");
 
-	message_vision(HIM"$N"HIM"喃喃地念了几句咒语！！\n", me);
+	message_vision(HIM"$N"HIM"鍠冨杻鍦板康浜嗗嚑鍙ュ拻璇紒锛乗n", me);
 
 	me->add("qi", -20);
 	me->receive_damage("jing", 20);
 
 	if( random(me->query("max_jing")) < 100 ) {
-		message("vision", "但是什麽也没有发生。\n", environment(me));
+		message("vision", "浣嗘槸浠�楹戒篃娌℃湁鍙戠敓銆俓n", environment(me));
 		return 1;
 	}
 
@@ -39,7 +39,7 @@ int perform(object me, object target)
 		soldier = new("/d/migong/lev15/npc/lev4");
 	else
 		soldier = new("/d/migong/lev15/npc/lev4");
-message_vision(HIB"$N"HIB"咒语过后,一条巨大的火龙出现了！！\n", me);
+message_vision(HIB"$N"HIB"鍜掕杩囧悗,涓�鏉″法澶х殑鐏緳鍑虹幇浜嗭紒锛乗n", me);
 	soldier->move(environment(me));
 	soldier->invocation(me, spells);
 	soldier->set("possessed", me);

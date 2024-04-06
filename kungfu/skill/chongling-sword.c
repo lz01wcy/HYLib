@@ -5,56 +5,56 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "name":    "Ò»¼ûÖÓÇé",
-        "action":      "$NÊ¹Ò»ÕÐ¡¸Ò»¼ûÖÓÇé¡¹£¬ÊÖÖÐ$w½£¹â±©³¤£¬Ïò$nµÄ$l´ÌÈ¥",
+([      "name":    "ä¸€è§é’Ÿæƒ…",
+        "action":      "$Nä½¿ä¸€æ‹›ã€Œä¸€è§é’Ÿæƒ…ã€ï¼Œæ‰‹ä¸­$wå‰‘å…‰æš´é•¿ï¼Œå‘$nçš„$låˆºåŽ»",
         "dodge":   50,
         "damage":      170,
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "name":    "Á½Ð¡ÎÞ²Â",
-        "action":      "$N½£ËæÉí×ª£¬Ò»ÕÐ¡¸Á½Ð¡ÎÞ²Â¡¹ÕÖÏò$nµÄ$l",
+([      "name":    "ä¸¤å°æ— çŒœ",
+        "action":      "$Nå‰‘éšèº«è½¬ï¼Œä¸€æ‹›ã€Œä¸¤å°æ— çŒœã€ç½©å‘$nçš„$l",
         "dodge":   -70,
         "damage":      20,
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "name":    "²ÔËÉÓ­¿Í",
-        "action":      "$NÎè¶¯$w£¬Ò»ÕÐ¡¸²ÔËÉÓ­¿Í¡¹Ð®ÖøÎÞÊý½£¹â´ÌÏò$nµÄ$l",
+([      "name":    "è‹æ¾è¿Žå®¢",
+        "action":      "$NèˆžåŠ¨$wï¼Œä¸€æ‹›ã€Œè‹æ¾è¿Žå®¢ã€æŒŸè‘—æ— æ•°å‰‘å…‰åˆºå‘$nçš„$l",
         "dodge":   -40,
         "damage":      90,
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "name":    "ÏôÊ·³ËÁú",
-        "action":      "$NÊÖÖÐ$wÁúÒ÷Ò»Éù£¬¼À³ö¡¸ÏôÊ·³ËÁú¡¹Íù$nµÄ$l´Ì³öÊý½£",
+([      "name":    "è§å²ä¹˜é¾™",
+        "action":      "$Næ‰‹ä¸­$wé¾™åŸä¸€å£°ï¼Œç¥­å‡ºã€Œè§å²ä¹˜é¾™ã€å¾€$nçš„$låˆºå‡ºæ•°å‰‘",
         "dodge":   -40,
         "damage":      40,
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "name":    "½ðÓñÂúÌÃ",
-        "action":      "$NÊÖÖÐ$w½£¹â±©³¤£¬Ò»ÕÐ¡¸½ðÓñÂúÌÃ¡¹Íù$n$l´ÌÈ¥",
+([      "name":    "é‡‘çŽ‰æ»¡å ‚",
+        "action":      "$Næ‰‹ä¸­$wå‰‘å…‰æš´é•¿ï¼Œä¸€æ‹›ã€Œé‡‘çŽ‰æ»¡å ‚ã€å¾€$n$låˆºåŽ»",
         "dodge":   60,
         "damage":      120,
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "name":    "ÄÑÉáÄÑ·Ö",
-        "action":      "$NÊÖÖÐ$w»¯³ÉÒ»µÀ¹â»¡£¬Ö±Ö¸$n$l£¬Ò»ÕÐ¡¸ÄÑÉáÄÑ·Ö¡¹·¢³ö»¢ÏøÁúÒ÷´ÌÈ¥",
+([      "name":    "éš¾èˆéš¾åˆ†",
+        "action":      "$Næ‰‹ä¸­$wåŒ–æˆä¸€é“å…‰å¼§ï¼Œç›´æŒ‡$n$lï¼Œä¸€æ‹›ã€Œéš¾èˆéš¾åˆ†ã€å‘å‡ºè™Žå“®é¾™åŸåˆºåŽ»",
         "dodge":   -60,
         "damage":      150,
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
 });
 
 int valid_learn(object me)
 {
     object ob;
-//   if( (string)me->query("gender") != "Å®ÐÔ" )
-//   return notify_fail("¾ÅÒõ³àÁ¶½£·¨ÊÇÖ»ÓÐÅ®×Ó²ÅÄÜÁ·µÄÎä¹¦¡£\n");
+//   if( (string)me->query("gender") != "å¥³æ€§" )
+//   return notify_fail("ä¹é˜´èµ¤ç‚¼å‰‘æ³•æ˜¯åªæœ‰å¥³å­æ‰èƒ½ç»ƒçš„æ­¦åŠŸã€‚\n");
     if( (int)me->query("max_neili") < 50 )
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓÐ°ì·¨Á·³åÁé½£·¨¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠžæ³•ç»ƒå†²çµå‰‘æ³•ã€‚\n");
    if( (string)me->query_skill_mapped("force")!= "zixia-shengong")
-        return notify_fail("³åÁé½£·¨±ØÐëÅäºÏ×ÏÏ¼Éñ¹¦²ÅÄÜÁ·¡£\n");
+        return notify_fail("å†²çµå‰‘æ³•å¿…é¡»é…åˆç´«éœžç¥žåŠŸæ‰èƒ½ç»ƒã€‚\n");
     if( !(ob = me->query_temp("weapon"))
     ||      (string)ob->query("skill_type") != "sword" )
-        return notify_fail("Äã±ØÐëÏÈÕÒÒ»°Ñ½£²ÅÄÜÁ·½£·¨¡£\n");
+        return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æŠŠå‰‘æ‰èƒ½ç»ƒå‰‘æ³•ã€‚\n");
 
     return 1;
 }
@@ -73,11 +73,11 @@ int practice_skill(object me)
 {
     if( (int)me->query("qi") < 30
     ||      (int)me->query("neili") < 5 )
-        return notify_fail("ÄãµÄÄÚÁ¦»òÆø²»¹»£¬Ã»ÓÐ°ì·¨Á·Ï°³åÁé½£·¨¡£\n")
+        return notify_fail("ä½ çš„å†…åŠ›æˆ–æ°”ä¸å¤Ÿï¼Œæ²¡æœ‰åŠžæ³•ç»ƒä¹ å†²çµå‰‘æ³•ã€‚\n")
 ;
     me->receive_damage("qi", 30);
     me->add("neili", -5);
-    //write("Äã°´ÖøËùÑ§Á·ÁËÒ»±é³åÁé½£·¨¡£\n");
+    //write("ä½ æŒ‰è‘—æ‰€å­¦ç»ƒäº†ä¸€éå†²çµå‰‘æ³•ã€‚\n");
     return 1;
 }
 
@@ -90,7 +90,7 @@ void skill_improved(object me)
 {
     if( (int)me->query_skill("nine-moon-sword", 1)  % 10 == 0 ) {
    tell_object(me,
-      RED "\nÄãÍ»È»¾õµÃÒ»¹ÉÒõÆø³åÉÏÐÄÍ·£¬Ö»¾õµÃÏëÉ±ÈË....\n\n"NOR);
+      RED "\nä½ çªç„¶è§‰å¾—ä¸€è‚¡é˜´æ°”å†²ä¸Šå¿ƒå¤´ï¼Œåªè§‰å¾—æƒ³æ€äºº....\n\n"NOR);
    me->add("bellicosity", 2000);
     } else
    me->add("bellicosity", 200);

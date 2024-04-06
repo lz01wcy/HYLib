@@ -6,9 +6,9 @@ void skill_improved(object me)
 {}
 int valid_learn(object me)
 {
-	return notify_fail("ÄãÖ»ÓĞÍ¨¹ıÓÃbiguan´òÍ¨ÈÎ¶½¶şÂö¡£²Å»áÕâÃÅ¹¦·ò.\n");
+	return notify_fail("ä½ åªæœ‰é€šè¿‡ç”¨biguanæ‰“é€šä»»ç£äºŒè„‰ã€‚æ‰ä¼šè¿™é—¨åŠŸå¤«.\n");
 }
 int practice_skill(object me)
 {
-	return notify_fail("ÄãÖ»ÓĞÍ¨¹ıÓÃbiguan´òÍ¨ÈÎ¶½¶şÂö¡£²Å»áÕâÃÅ¹¦·ò¡£\n");
+	return notify_fail("ä½ åªæœ‰é€šè¿‡ç”¨biguanæ‰“é€šä»»ç£äºŒè„‰ã€‚æ‰ä¼šè¿™é—¨åŠŸå¤«ã€‚\n");
 }

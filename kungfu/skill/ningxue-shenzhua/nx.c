@@ -1,5 +1,5 @@
 // 
-// nx.c ÄıÑªÉñ×¥
+// nx.c å‡è¡€ç¥æŠ“
 // by secret
  
 #include <ansi.h>
@@ -19,21 +19,21 @@ int perform(object me)
         skill = me->query_skill("ningxue-shenzhua",1);
 
 	if( !(me->is_fighting() ))
-                return notify_fail("¡¸ÄıÑªÉñ×¥¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå‡è¡€ç¥æŠ“ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
 if ( (int)me->query_int() < 35 )
- return notify_fail("ÄãµÄÏÈÌì²»×ã£¬²»ÄÜÁìÎò¡¸ÄıÑªÉñ×¥¡¹£¡£\n");
+ return notify_fail("ä½ çš„å…ˆå¤©ä¸è¶³ï¼Œä¸èƒ½é¢†æ‚Ÿã€Œå‡è¡€ç¥æŠ“ã€ï¼\n");
 	if (objectp(weapon = me->query_temp("weapon")))
-                return notify_fail("ÄıÑªÉñ×¥±ØĞë¿ÕÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å‡è¡€ç¥æŠ“å¿…é¡»ç©ºæ‰‹ä½¿ç”¨ã€‚\n");
 
 
         if( skill < 150)
-                return notify_fail("ÄãµÄ¡¸ÄıÑªÉñ×¥¡¹µÈ¼¶²»¹», ²»ÄÜÊ¹³ö¡¸ÄıÑªÉñ×¥¡¹£¡\n");
+                return notify_fail("ä½ çš„ã€Œå‡è¡€ç¥æŠ“ã€ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿å‡ºã€Œå‡è¡€ç¥æŠ“ã€ï¼\n");
 
         if( me->query("neili") < 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃÄıÑªÉñ×¥£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨å‡è¡€ç¥æŠ“ï¼\n");
  
-        msg = HIC "$NÄıÉñ¾ÛÆø£¬Ê¹³öÒ»ÕĞ¡¸ÄıÑªÉñ×¥¡¹£¬Ïò$nµÄĞØ¿Ú×¥È¥¡£\n"NOR;
+        msg = HIC "$Nå‡ç¥èšæ°”ï¼Œä½¿å‡ºä¸€æ‹›ã€Œå‡è¡€ç¥æŠ“ã€ï¼Œå‘$nçš„èƒ¸å£æŠ“å»ã€‚\n"NOR;
 
 	message_vision(msg, me, target);
 
@@ -43,7 +43,7 @@ if ( (int)me->query_int() < 35 )
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 )
          {
-                msg = HIG "$nÖ»¾õµÃÑÛÇ°Ò»ºÚ£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»¿ÚÏÊÑª£¡\n"NOR;
+                msg = HIG "$nåªè§‰å¾—çœ¼å‰ä¸€é»‘ï¼Œâ€œå“‡â€çš„ä¸€å£°å–·å‡ºä¸€å£é²œè¡€ï¼\n"NOR;
 
                 neili_wound = 1000 + random(skill);
 		if(neili_wound > target->query("neili"))
@@ -57,7 +57,7 @@ if ( (int)me->query_int() < 35 )
 	        target->add("eff_qi",-qi_wound/2);
                 me->start_busy(random(4)+1);
         } else {
-                msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬ÌÓ³öÁË$PµÄÒ»×¥¡£\n" NOR;
+                msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œé€ƒå‡ºäº†$Pçš„ä¸€æŠ“ã€‚\n" NOR;
                 me->start_busy(3);
         }
 	}

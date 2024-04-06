@@ -9,34 +9,34 @@ int perform(object me, object target)
         extra=me->query_skill("kwan-yin-spells",1);
         
 
-        if(extra<120) return notify_fail("ÄãµÄ¹ÛÒôÁù×ÖÃ÷Öä²»¹»ÊìÁ·¡£\n");      
+        if(extra<120) return notify_fail("ä½ çš„è§‚éŸ³å…­å­—æ˜Žå’’ä¸å¤Ÿç†Ÿç»ƒã€‚\n");      
         if( (int)me->query("neili") < 100 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");                
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");                
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦£¡\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ï¼\n");
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐÎÞ·¨Ê¹ÓÃÉñÓÎÌ«Ðé£¡\n");
+                return notify_fail("æˆ˜æ–—ä¸­æ— æ³•ä½¿ç”¨ç¥žæ¸¸å¤ªè™šï¼\n");
         if( me->is_ghost())
-                return notify_fail("¹í»êÎÞ·¨Ê¹ÓÃÉñÓÎÌ«Ðé£¡\n");
+                return notify_fail("é¬¼é­‚æ— æ³•ä½¿ç”¨ç¥žæ¸¸å¤ªè™šï¼\n");
         if (domain_file(file_name(environment(me)))=="eren2")
-                return notify_fail("´ËµØ²»ÄÜÊ¹ÓÃÊ±¿Õ×ª»»¡£\n");
+                return notify_fail("æ­¤åœ°ä¸èƒ½ä½¿ç”¨æ—¶ç©ºè½¬æ¢ã€‚\n");
         if(environment(me)->query("no_fly")||environment(me)->query("no_death_penalty")
                 || environment(me)->query("no_fly"))
-                return notify_fail("´ËµØ²»ÄÜÊ¹ÓÃÊ±¿Õ×ª»»¡£\n");  
+                return notify_fail("æ­¤åœ°ä¸èƒ½ä½¿ç”¨æ—¶ç©ºè½¬æ¢ã€‚\n");  
 
 if( !environment(me)->query("no_fight"))
-return notify_fail("Ö»ÓÐ°²È«µØµã²ÅÄÜÊ¹ÓÃÊ±¿Õ×ª»»¡£\n");  
+return notify_fail("åªæœ‰å®‰å…¨åœ°ç‚¹æ‰èƒ½ä½¿ç”¨æ—¶ç©ºè½¬æ¢ã€‚\n");  
 
-if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR
+if(environment(me)->query("short")==BLU"å±±æ´ž"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´ž"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´ž"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´ž"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´ž"NOR
        ||environment(me)->query("magicroom"))
-return notify_fail("Ö»ÓÐ°²È«µØµã²ÅÄÜÊ¹ÓÃÊ±¿Õ×ª»»¡£\n");           
+return notify_fail("åªæœ‰å®‰å…¨åœ°ç‚¹æ‰èƒ½ä½¿ç”¨æ—¶ç©ºè½¬æ¢ã€‚\n");           
         me->add("neili", -50);
         me->start_busy(1);
-        message_vision( HIR "$NÇá±ÕË«ÑÛ£¬Ë«ÊÖºÏÒ»£¬¿Úºô·ðºÅ£º¡°¶Ý£¡¡±£¬Ò»µÀ·ð¹â´Ó$NÕÆ¼ä·É³ö£¬¶ÝÈëµØÏÂ¡£\n" NOR, me);
+        message_vision( HIR "$Nè½»é—­åŒçœ¼ï¼ŒåŒæ‰‹åˆä¸€ï¼Œå£å‘¼ä½›å·ï¼šâ€œéï¼â€ï¼Œä¸€é“ä½›å…‰ä»Ž$NæŽŒé—´é£žå‡ºï¼Œéå…¥åœ°ä¸‹ã€‚\n" NOR, me);
         room = environment(me);
         marktime=1500+random((me->query_skill("kwan-yin-spells",1)-80)*100);
         me->set_temp("timemark",base_name(room));

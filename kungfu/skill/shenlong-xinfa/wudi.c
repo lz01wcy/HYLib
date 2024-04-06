@@ -13,29 +13,29 @@ int exert(object me, object target)
 	string s;
 
 	/*if( target != me )
-		return notify_fail("ÄãÖ»ÄÜÓÃÉñÁúÐÄ·¨À´ÌáÉý×Ô¼ºµÄÕ½¶·Á¦¡£\n");*/
+		return notify_fail("ä½ åªèƒ½ç”¨ç¥žé¾™å¿ƒæ³•æ¥æå‡è‡ªå·±çš„æˆ˜æ–—åŠ›ã€‚\n");*/
 
         if(  !me->is_fighting() )
-                return notify_fail("Ö»ÓÐÔÚ´ò¶·ÖÐ²ÅÄÜÊ¹ÓÃ!\n");
+                return notify_fail("åªæœ‰åœ¨æ‰“æ–—ä¸­æ‰èƒ½ä½¿ç”¨!\n");
                 
 	if( (int)me->query_skill("shenlong-xinfa",1) < 100  )
-		return notify_fail("ÄãµÄÉñÁúÐÄ·¨¹¦Á¦²»¹»£¬ÎÞ·¨Ê©ÓÃ¡¸ÎÞµÐ¡¹´ó·¨¡£\n");
+		return notify_fail("ä½ çš„ç¥žé¾™å¿ƒæ³•åŠŸåŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½ç”¨ã€Œæ— æ•Œã€å¤§æ³•ã€‚\n");
 
-	if( (int)me->query("neili") < 600  ) return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
-	if( me->is_busy()  ) return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+	if( (int)me->query("neili") < 600  ) return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
+	if( me->is_busy()  ) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 	if( (int)me->query("eff_qi")<me->query("max_qi")/2) 
 	{
 		if((int)me->query_temp("sld/wudi")==0)
-			return notify_fail("ÄãÏÖÔÚÊÜÉË¹ýÖØ£¬²»ÄÜÊ¹ÓÃ¡¸ÎÞµÐ¡¹´ó·¨¡£\n");
+			return notify_fail("ä½ çŽ°åœ¨å—ä¼¤è¿‡é‡ï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ— æ•Œã€å¤§æ³•ã€‚\n");
 	}
 
 	skill = me->query_skill("force");
 	switch((int)me->query_temp("sld/wudi")) {
-		case 2:return notify_fail("ÄãÒÑ¾­·¢»ÓÁËÄãµÄ×î´óÇ±Á¦¡£\n");
-		case 0: 	if( (int)me->query("neili") < 600  ) return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		case 2:return notify_fail("ä½ å·²ç»å‘æŒ¥äº†ä½ çš„æœ€å¤§æ½œåŠ›ã€‚\n");
+		case 0: 	if( (int)me->query("neili") < 600  ) return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 			me->add("neili", -400);
 			me->set_temp("wdneili",0);
-			s=HIR"$N´óÉù½ÐµÀ£º¡°ºé½ÌÖ÷ÉñÍ¨¹ã´ó£¬ÎÒ½ÌÕ½ÎÞ²»Ê¤£¬¹¥ÎÞ²»¿Ë£¬ÎÞ¼á²»´Ý£¬ÎÞµÐ²»ÆÆ£¬\nµÐÈËÍû·çÅûÃÒ£¬ÌÓÖ®Ø²Ø²£¡¡±£¬Ë«ÑÛÍ»È»Ã°³öÒ»Ë¿ºì¹â£¬ËÆºõÍ»È»Ôö¼ÓÁË¹¦Á¦£¡\n"NOR;
+			s=HIR"$Nå¤§å£°å«é“ï¼šâ€œæ´ªæ•™ä¸»ç¥žé€šå¹¿å¤§ï¼Œæˆ‘æ•™æˆ˜æ— ä¸èƒœï¼Œæ”»æ— ä¸å…‹ï¼Œæ— åšä¸æ‘§ï¼Œæ— æ•Œä¸ç ´ï¼Œ\næ•Œäººæœ›é£ŽæŠ«é¡ï¼Œé€ƒä¹‹å¤­å¤­ï¼â€ï¼ŒåŒçœ¼çªç„¶å†’å‡ºä¸€ä¸çº¢å…‰ï¼Œä¼¼ä¹Žçªç„¶å¢žåŠ äº†åŠŸåŠ›ï¼\n"NOR;
 			me->set_temp("sld/wudi", 1);
 
 			qi=me->query("max_qi");
@@ -48,12 +48,12 @@ int exert(object me, object target)
 			me->start_call_out( (: call_other, __FILE__, "remove_effect", me, skill:), 40);
 			
 			break;
-		case 1:	if( (int)me->query("max_neili") < 1000  ) return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		case 1:	if( (int)me->query("max_neili") < 1000  ) return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 			me->add("max_neili",-5);
 			s=
-RED"$N·¢·è°ãµÄ½ÐµÀ£º¡°ºé½ÌÖ÷ÉñÍ¨»¤ÓÓ£¬ÖÚµÜ×ÓÓÂÆø°Ù±¶£¬ÒÔÒ»µ±°Ù£¬ÒÔ°Ùµ±Íò¡£
-ºé½ÌÖ÷ÉñÄ¿Èçµç£¬ÖòÕÕËÄ·½¡£ÎÒµÜ×ÓÉ±µÐ»¤½Ì£¬ºé½ÌÖ÷Ç×¼ÓÌá°Î£¬ÉýÈÎÊ¥Ö°¡£
-ÎÒ½ÌµÜ×Ó»¤½Ì¶øËÀ£¬Í¬ÉýÌìÌÃ£¡¡±£¬Í»È»Åç³öÒ»¿ÚÏÊÑª£¬ËÆºõÒÑ¾­Íü¼ÇÁËÉËÍ´£¡\n"NOR;
+RED"$Nå‘ç–¯èˆ¬çš„å«é“ï¼šâ€œæ´ªæ•™ä¸»ç¥žé€šæŠ¤ä½‘ï¼Œä¼—å¼Ÿå­å‹‡æ°”ç™¾å€ï¼Œä»¥ä¸€å½“ç™¾ï¼Œä»¥ç™¾å½“ä¸‡ã€‚
+æ´ªæ•™ä¸»ç¥žç›®å¦‚ç”µï¼Œçƒ›ç…§å››æ–¹ã€‚æˆ‘å¼Ÿå­æ€æ•ŒæŠ¤æ•™ï¼Œæ´ªæ•™ä¸»äº²åŠ ææ‹”ï¼Œå‡ä»»åœ£èŒã€‚
+æˆ‘æ•™å¼Ÿå­æŠ¤æ•™è€Œæ­»ï¼ŒåŒå‡å¤©å ‚ï¼â€ï¼Œçªç„¶å–·å‡ºä¸€å£é²œè¡€ï¼Œä¼¼ä¹Žå·²ç»å¿˜è®°äº†ä¼¤ç—›ï¼\n"NOR;
 			me->set_temp("sld/wudi", 2);			
 			me->delete_temp("wdneili");
 			me->set("eff_qi",me->query("max_qi"));
@@ -92,7 +92,7 @@ void remove_effect(object me, int amount )
 	}
 	if ( (int)me->query_temp("sld/wudi")>0 ) {
 		if( ((me->query("neili")-me->query_temp("wdneili",1))<100) || (me->query_temp("sld/shougong")>0) )	{
-			message_vision(HIR"$NºÃÏóÐéÍÑÁËÒ»Ñù£¬Í»È»¿åÁËÏÂÀ´£¡\n"NOR,me);		
+			message_vision(HIR"$Nå¥½è±¡è™šè„±äº†ä¸€æ ·ï¼Œçªç„¶åž®äº†ä¸‹æ¥ï¼\n"NOR,me);		
 			
 			me->add("neili",-me->query_temp("wdneili",1));
 			if(me->query("neili")<0)
@@ -110,7 +110,7 @@ void remove_effect(object me, int amount )
 			me->delete_temp("wdneili");
 		}
 		else {
-			message_vision(HIR"$N´óÉù½ÐµÀ£º¡°ºé½ÌÖ÷ÉñÍ¨¹ã´ó£¬ÎÒ½ÌÕ½ÎÞ²»Ê¤£¬¹¥ÎÞ²»¿Ë£¬ÎÞ¼á²»´Ý£¬ÎÞµÐ²»ÆÆ£¬\nµÐÈËÍû·çÅûÃÒ£¬ÌÓÖ®Ø²Ø²£¡¡±£¬Ë«ÑÛÍ»È»Ã°³öÒ»Ë¿ºì¹â£¡\n"NOR,me);
+			message_vision(HIR"$Nå¤§å£°å«é“ï¼šâ€œæ´ªæ•™ä¸»ç¥žé€šå¹¿å¤§ï¼Œæˆ‘æ•™æˆ˜æ— ä¸èƒœï¼Œæ”»æ— ä¸å…‹ï¼Œæ— åšä¸æ‘§ï¼Œæ— æ•Œä¸ç ´ï¼Œ\næ•Œäººæœ›é£ŽæŠ«é¡ï¼Œé€ƒä¹‹å¤­å¤­ï¼â€ï¼ŒåŒçœ¼çªç„¶å†’å‡ºä¸€ä¸çº¢å…‰ï¼\n"NOR,me);
 
 			me->add_temp("wdneili",100);
 			me->add("eff_qi",50);
@@ -132,7 +132,7 @@ void remove_effect2(object me, int amount)
 		me->add("max_qi",-me->query("max_qi")/4);
 		return;
 	}
-	message_vision(RED"$NÐÄÉñÒ»ËÉ£¬ÔÙÒ²Ö§³Ö²»Ö÷£¡\n"NOR,me);		
+	message_vision(RED"$Nå¿ƒç¥žä¸€æ¾ï¼Œå†ä¹Ÿæ”¯æŒä¸ä¸»ï¼\n"NOR,me);		
 	
 	me->add_temp("apply/attack", - amount/3);
 	me->add_temp("apply/defense",- amount/4);		

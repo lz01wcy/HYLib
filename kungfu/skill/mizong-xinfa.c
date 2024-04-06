@@ -1,4 +1,4 @@
-// mizong-xinfa.c ÃÜ×ÚĞÄ·¨
+// mizong-xinfa.c å¯†å®—å¿ƒæ³•
 // by secret
 
 inherit SKILL;
@@ -9,5 +9,5 @@ string type() { return "knowledge"; }
 
 int practice_skill(object me)
 {	
-        return notify_fail("ÃÜ×ÚĞÄ·¨Ö»ÄÜÍ¨¹ıÑ§Ï°(learn)À´Ìá¸ß!\n");
+        return notify_fail("å¯†å®—å¿ƒæ³•åªèƒ½é€šè¿‡å­¦ä¹ (learn)æ¥æé«˜!\n");
 }

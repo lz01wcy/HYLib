@@ -20,17 +20,17 @@ int exert(object me, object target)
 
         if( target != me ) 
 
-                return notify_fail("ÄãÖ»ÄÜÓÃÌìÄ§´ó·¨À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å¤©é­”å¤§æ³•æ¥æå‡è‡ªå·±çš„æˆ˜æ–—åŠ›ã€‚\n");
 
 
 
         if( (int)me->query("neili") < 100  ) 
 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query_temp("powerup") ) 
 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
 
 
@@ -44,9 +44,9 @@ int exert(object me, object target)
 
         message_vision(
 
-        HIY "$NÔËÆğÌìÄ§´ó·¨£¬È«Éí¹Ç÷Àß·àÏ×÷Ïì£¬¼¡ÈâêÚÕÅ£¬ÌåĞÎ"
+        HIY "$Nè¿èµ·å¤©é­”å¤§æ³•ï¼Œå…¨èº«éª¨éª¼å»å˜ä½œå“ï¼Œè‚Œè‚‰è´²å¼ ï¼Œä½“å½¢"
 
-            "±©ÕÇ½ü°ë£¬È«Éí·¢³ö½ğÉ«ºÀ¹â¡£\n" NOR, me);
+            "æš´æ¶¨è¿‘åŠï¼Œå…¨èº«å‘å‡ºé‡‘è‰²è±ªå…‰ã€‚\n" NOR, me);
 
 
 
@@ -84,7 +84,7 @@ void remove_effect(object me, int amount)
 
         me->delete_temp("powerup");
 
-        tell_object(me, "ÄãµÄÌìÄ§´ó·¨ÔËĞĞÍê±Ï£¬È«Éí½îÈâ»º»º»Ö¸´Ô­Ñù¡£\n");
+        tell_object(me, "ä½ çš„å¤©é­”å¤§æ³•è¿è¡Œå®Œæ¯•ï¼Œå…¨èº«ç­‹è‚‰ç¼“ç¼“æ¢å¤åŸæ ·ã€‚\n");
 
 }
 

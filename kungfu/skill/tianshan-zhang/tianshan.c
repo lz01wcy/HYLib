@@ -1,4 +1,4 @@
-// jianzhang.c  ÌìÉ½Ææ·å
+// jianzhang.c  å¤©å±±å¥‡å³°
 #include <ansi.h>
 #include <skill.h>
 #include <weapon.h>
@@ -12,61 +12,61 @@ int perform(object me, object target)
   if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸ÌìÉ½Ææ·å¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå¤©å±±å¥‡å³°ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "staff")
-            return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+            return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸ÌìÉ½Ææ·å¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¤©å±±å¥‡å³°ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("huagong-dafa",1) < 60 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨¹¦Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•åŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("staff",1) < 200 ||
 	    me->query_skill_mapped("staff") != "tianshan-zhang")
-		return notify_fail("ÄãµÄÌìÉ½ÕÈ·¨»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃÌìÉ½Ææ·å£¡\n");
+		return notify_fail("ä½ çš„å¤©å±±æ–æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨å¤©å±±å¥‡å³°ï¼\n");
 
-	msg = HIY "$NÊ¹³öÌìÉ½ÅÉ¾ø¼¼¡¸ÌìÉ½Ææ·å¡¹£¬Éí·¨¶¸È»¼Ó¿ì¡£ÍòÔÀ³¯×Ú£¡" NOR;
+	msg = HIY "$Nä½¿å‡ºå¤©å±±æ´¾ç»æŠ€ã€Œå¤©å±±å¥‡å³°ã€ï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ã€‚ä¸‡å²³æœå®—ï¼" NOR;
 	
         extra = me->query_skill("tianshan-zhang",1) / 10;
         extra += me->query_skill("huagong-dafa",1) /10;
         me->add_temp("apply/attack", extra);    
         me->add_temp("apply/damage", extra*2);
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIB  "        ^^Óñ½øÌì³Ø£¡^^       " NOR;
+	 msg =  HIB  "        ^^çŽ‰è¿›å¤©æ± ï¼^^       " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  RED  "      ^^^^É½·çÁÝÙý£¡^^^^  " NOR;
+	 msg =  RED  "      ^^^^å±±é£Žå‡›å†½ï¼^^^^  " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIM  "    ^^^^^^¿ªÃÅ¼ûÉ½£¡^^^^^ " NOR;
+	 msg =  HIM  "    ^^^^^^å¼€é—¨è§å±±ï¼^^^^^ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIC  "^^^^^^^^^^^ÌìÉ½Ñ©±À£¡^^^^^^^^^^^ " NOR;
+	msg =  HIC  "^^^^^^^^^^^å¤©å±±é›ªå´©ï¼^^^^^^^^^^^ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/attack", -extra);    
         me->add_temp("apply/damage", -extra*2);
         if (me->query_skill("tianshan-zhang",1) > 250)
         {
-        message_vision(HIY"$NµÄÕÈÍ·£¬Ã°³öÁËÂÌ¹â$n±»ÂÌ¹âÉ¨ÖÐ£¬È«Éí²»ÓÉÒ»Õð!\n"NOR,me,target);
+        message_vision(HIY"$Nçš„æ–å¤´ï¼Œå†’å‡ºäº†ç»¿å…‰$nè¢«ç»¿å…‰æ‰«ä¸­ï¼Œå…¨èº«ä¸ç”±ä¸€éœ‡!\n"NOR,me,target);
         target->apply_condition("xx_poison",60);
         target->apply_condition("corpse_poison",60);
-	 msg =  HIR  "¡¸¸¯Ê¬¶¾¡¹" NOR;
+	 msg =  HIR  "ã€Œè…å°¸æ¯’ã€" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         target->apply_condition("x2_sandu",60);
-	 msg =  HIR  "¡¸¶¾É°ÕÆ¡¹" NOR;
+	 msg =  HIR  "ã€Œæ¯’ç ‚æŽŒã€" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         target->apply_condition("sanpoison",60);
-	 msg =  HIR  "¡¸ÎÞÐÎ¶¾¡¹" NOR;
+	 msg =  HIR  "ã€Œæ— å½¢æ¯’ã€" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add("neili", -150);
         if (random(me->query("combat_exp")) >target->query("combat_exp")/2)
         {
-       	 msg =  HIR  "¡¸ÈýÐ¦åÐÒ£É¢¡¹" NOR;
+       	 msg =  HIR  "ã€Œä¸‰ç¬‘é€é¥æ•£ã€" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        message_vision(HIR"$NÍ»È»¹ÖÒìµÄÒ»Ð¦£¬$n¾¡È»¸ú×ÅÐ¦ÁËÐ¦!\n"NOR,me,target);
+        message_vision(HIR"$Nçªç„¶æ€ªå¼‚çš„ä¸€ç¬‘ï¼Œ$nå°½ç„¶è·Ÿç€ç¬‘äº†ç¬‘!\n"NOR,me,target);
         target->apply_condition("sanxiao_poison",6);
         me->add("neili", -50);
         }

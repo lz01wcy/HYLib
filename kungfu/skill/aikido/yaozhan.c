@@ -11,28 +11,28 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÑüÕ¶£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»è…°æ–©ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("ÑüÕ¶±ØÐë¿ÕÊÖ¡£\n");
+                return notify_fail("è…°æ–©å¿…é¡»ç©ºæ‰‹ã€‚\n");
 if( (int)me->query("max_neili") < 200 )
-      return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+      return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 	if( (int)me->query("neili") < 200  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     if ((int)me->query_skill("shayi-xinfa", 1) < 30)
-   return notify_fail("ÄãµÄÉ±ÒâÐÄ·¨»ðºò²»¹»¡£\n");
+   return notify_fail("ä½ çš„æ€æ„å¿ƒæ³•ç«å€™ä¸å¤Ÿã€‚\n");
 
 	extra = me->query_skill("aikido",1)/10;
-	if(extra <= 3 ) return notify_fail("ÄãµÄ£ÛºÏÆøµÀ£Ý²»¹»ÊìÁ·£¡\n");
-	msg = HIR "$NÍ»È»ÈÆµ½$nÉíºó£¬ÓÒÏ¥ÃÍÈ»ÉÏ¶¥£¬Ë«ÊÖÍ¬Ê±×¥Ïò$n£¬ÆóÍ¼½«$nµÄºóÑü¿Ä¶Ï£¡" NOR;
+	if(extra <= 3 ) return notify_fail("ä½ çš„ï¼»åˆæ°”é“ï¼½ä¸å¤Ÿç†Ÿç»ƒï¼\n");
+	msg = HIR "$Nçªç„¶ç»•åˆ°$nèº«åŽï¼Œå³è†çŒ›ç„¶ä¸Šé¡¶ï¼ŒåŒæ‰‹åŒæ—¶æŠ“å‘$nï¼Œä¼å›¾å°†$nçš„åŽè…°ç£•æ–­ï¼" NOR;
         weapon = me->query_temp("weapon");
 	me->add_temp("apply/damage",extra*4);
 	me->add_temp("apply/attack",extra*2);
         message_combatd(msg, me, target);
-	 msg =  RED  "¡¸ ÓÒÏ¥ÃÍÈ»ÉÏ¶¥! ¡¹£¡ " NOR;	
+	 msg =  RED  "ã€Œ å³è†çŒ›ç„¶ä¸Šé¡¶! ã€ï¼ " NOR;	
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  RED  "¡¸ Ë«ÊÖÍ¬Ê±ÇÜÄÃ! ¡¹£¡ " NOR;	
+	 msg =  RED  "ã€Œ åŒæ‰‹åŒæ—¶æ“’æ‹¿! ã€ï¼ " NOR;	
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  RED  "¡¸ ºóÑü¿Ä¶ÏÇÜÄÃ! ¡¹£¡ " NOR;	
+	 msg =  RED  "ã€Œ åŽè…°ç£•æ–­æ“’æ‹¿! ã€ï¼ " NOR;	
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add_temp("apply/damage",-extra*4);
         me->add_temp("apply/attack",-extra*2);

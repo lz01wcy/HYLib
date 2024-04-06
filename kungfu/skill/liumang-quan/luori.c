@@ -8,36 +8,36 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
         extra = me->query_skill("liumang-quan",1);
-	if ( extra < 100) return notify_fail("ÄãµÄÁ÷Ã¥ÉñÈ­»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 100) return notify_fail("ä½ çš„æµæ°“ç¥žæ‹³è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÂäÈÕ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»è½æ—¥ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     if( (int)me->query("neili", 1) < 600 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬²»ÄÜÊ¹ÓÃ£¡\n");	
+		return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");	
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Õâ¸öÎä¹¦Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("è¿™ä¸ªæ­¦åŠŸåªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
 extra=extra/3;
 if (extra> 200) extra=200;
 	me->add_temp("apply/attack",extra);
 	me->add_temp("apply/damage",extra*2);
 	weapon = me->query_temp("weapon");
 	if (random(3)==0) target->start_busy(3);
-	msg = HIR  "$NÑöÌì·¢³öÒ»Éù³¤Ð¦£¬Ê¹³öÂäÈÕÉñÈ­ÖÐµÄ£ÛÂäÈÕ£Ý£¬\n" NOR;
-	msg += HIR   "¾ÍËÆ²ÓÀÃÎÞ±ÈµÄÏ¦Ñô£¬¶ÙÊ±¼äÌìµØÒàÎªÖ®±äÉ«£¡\n" NOR;
+	msg = HIR  "$Nä»°å¤©å‘å‡ºä¸€å£°é•¿ç¬‘ï¼Œä½¿å‡ºè½æ—¥ç¥žæ‹³ä¸­çš„ï¼»è½æ—¥ï¼½ï¼Œ\n" NOR;
+	msg += HIR   "å°±ä¼¼ç¿çƒ‚æ— æ¯”çš„å¤•é˜³ï¼Œé¡¿æ—¶é—´å¤©åœ°äº¦ä¸ºä¹‹å˜è‰²ï¼\n" NOR;
 	          message_vision(msg,me,target);
-        msg = HIC "\n   ³¤ \n" NOR;
+        msg = HIC "\n   é•¿ \n" NOR;
 	  COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY "\n            ºÓ\n" NOR;
+        msg = HIY "\n            æ²³\n" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIW "\n                    Âä\n" NOR;
+        msg = HIW "\n                    è½\n" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR "\n                            ÈÕ\n" NOR;
+        msg = HIR "\n                            æ—¥\n" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIB "\n                                    Ô²\n" NOR;
+        msg = HIB "\n                                    åœ†\n" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/attack",-extra);
 	  me->add_temp("apply/damage",-extra*2);

@@ -6,13 +6,13 @@ void consider();
 
 void create()
 {
-    set_name("»ÆÈØ", ({"huang rong", "huang", "rong"}));
-    set("title", "ÌÒ»¨µºÖ÷¶ÀÉú°®Å®");
-    set("gender", "Å®ÐÔ");
+    set_name("é»„è“‰", ({"huang rong", "huang", "rong"}));
+    set("title", "æ¡ƒèŠ±å²›ä¸»ç‹¬ç”Ÿçˆ±å¥³");
+    set("gender", "å¥³æ€§");
     set("age", 18);
 	set("long", 
-        "ÕâÊÇÌÒ»¨µºÖ÷µÄ¶ÀÉúÅ®¶ù¡£ÓÉÓÚµºÖ÷·òÈËÔçËÀ£¬µºÖ÷¶ÔÕâ¸öÅ®¶ù±¸¼ÓÌÛ°®¡£\n"
-        "ËýÉúÐÔÌøÍÑ·ÉÑï£¬Ï²»¶ËÄ´¦ÂÒÅÜ¡£\n");
+        "è¿™æ˜¯æ¡ƒèŠ±å²›ä¸»çš„ç‹¬ç”Ÿå¥³å„¿ã€‚ç”±äºŽå²›ä¸»å¤«äººæ—©æ­»ï¼Œå²›ä¸»å¯¹è¿™ä¸ªå¥³å„¿å¤‡åŠ ç–¼çˆ±ã€‚\n"
+        "å¥¹ç”Ÿæ€§è·³è„±é£žæ‰¬ï¼Œå–œæ¬¢å››å¤„ä¹±è·‘ã€‚\n");
 
 	set("attitude", "peaceful");
 	
@@ -47,7 +47,7 @@ void create()
     map_skill("dodge"  , "anying-fuxiang");
     map_skill("sword"  , "luoying-shenjian") ;
 	
-    create_family("ÌÒ»¨µº", 2, "µÜ×Ó");
+    create_family("æ¡ƒèŠ±å²›", 2, "å¼Ÿå­");
 	setup();
     carry_object(__DIR__"obj/ruanwei")->wear();
     carry_object(__DIR__"obj/shudai")->wear();
@@ -62,7 +62,7 @@ init()
         ::init();
         if (interactive(ob = this_player()) && !is_fighting()) {
 		myfam = (mapping)ob->query("family");
-        if ((!myfam || myfam["family_name"] != "ÌÒ»¨µº") &&
+        if ((!myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›") &&
 			(!wizardp(ob))) {
 			remove_call_out("saying");
 			call_out("saying",2,ob);
@@ -74,15 +74,15 @@ void saying(object ob)
 {
     if (!ob || environment(ob) != environment())
         return;
-    if ((string)ob->query("gender") == "ÄÐÐÔ")
-        message_vision("\n»ÆÈØÃæÏÖ¾ªÆæÖ®É«£¬´òÁ¿ÁË$NÒ»ÑÛ£¬Ëµµ½£º¡°ÄãÊÇÊ²Ã´ÈË£¬"
-        "¾¹¸ÒÂÒ´³ÎÒµÄ¹ë·¿£¿\nÔÙ²»¹ö³öÈ¥£¬¿´ÎÒÔõÃ´ÕûÄã£¡¡±\n", ob);
+    if ((string)ob->query("gender") == "ç”·æ€§")
+        message_vision("\né»„è“‰é¢çŽ°æƒŠå¥‡ä¹‹è‰²ï¼Œæ‰“é‡äº†$Nä¸€çœ¼ï¼Œè¯´åˆ°ï¼šâ€œä½ æ˜¯ä»€ä¹ˆäººï¼Œ"
+        "ç«Ÿæ•¢ä¹±é—¯æˆ‘çš„é—ºæˆ¿ï¼Ÿ\nå†ä¸æ»šå‡ºåŽ»ï¼Œçœ‹æˆ‘æ€Žä¹ˆæ•´ä½ ï¼â€\n", ob);
     else
-        message_vision("\n»ÆÈØ¿´ÁË¿´$N£¬Ëµµ½£º¡°ºÃ¾ÃÃ¿ÉúÈËÀ´¹ýÁË£¬"
-        "²»ÖªÕâÎ»½ã½ã¿ÉÓÐÎÒ¾¸¸ç¸çµÄÏûÏ¢£¿\n", ob);
+        message_vision("\né»„è“‰çœ‹äº†çœ‹$Nï¼Œè¯´åˆ°ï¼šâ€œå¥½ä¹…æ¯ç”Ÿäººæ¥è¿‡äº†ï¼Œ"
+        "ä¸çŸ¥è¿™ä½å§å§å¯æœ‰æˆ‘é–å“¥å“¥çš„æ¶ˆæ¯ï¼Ÿ\n", ob);
 }
 
 void attempt_apprentice(object ob)
 {
-    command("say ÎÒÄê¼ÍÕâÃ´Ð¡¾ÍÊÕÍ½µÜ£¬Æñ²»ÈÃÈËÐ¦µô´óÑÀ£¡");
+    command("say æˆ‘å¹´çºªè¿™ä¹ˆå°å°±æ”¶å¾’å¼Ÿï¼Œå²‚ä¸è®©äººç¬‘æŽ‰å¤§ç‰™ï¼");
 }

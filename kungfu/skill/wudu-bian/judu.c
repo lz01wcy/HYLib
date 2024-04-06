@@ -1,4 +1,4 @@
-//Îå¶¾±Ş·¨  ¾Û¶¾
+//äº”æ¯’é­æ³•  èšæ¯’
 
 #include <ansi.h>
 
@@ -13,21 +13,21 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÄãÖ»ÄÜÔÚÕ¾¶·ÖĞ²ÅÄÜ¾Û¶¾¡£\n");
+		return notify_fail("ä½ åªèƒ½åœ¨ç«™æ–—ä¸­æ‰èƒ½èšæ¯’ã€‚\n");
 
 	if( (int)me->query_skill("wudu-bian",1) < 60 
 		||(int)me->query_skill("wudu-xinfa",1) < 50 )
-		return notify_fail("ÄãµÄÎå¶¾ĞÄ·¨¹¦Á¦Ì«Ç³£¬ÎŞ·¨¾Û¶¾£¡\n");
+		return notify_fail("ä½ çš„äº”æ¯’å¿ƒæ³•åŠŸåŠ›å¤ªæµ…ï¼Œæ— æ³•èšæ¯’ï¼\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "ÒÑ¾­ÊÖÃ¦½ÅÂÒÁË£¬²»ĞèÒªÔÚÓÃ¶¾ÁË¡£\n");
+		return notify_fail(target->name() + "å·²ç»æ‰‹å¿™è„šä¹±äº†ï¼Œä¸éœ€è¦åœ¨ç”¨æ¯’äº†ã€‚\n");
 	me->start_busy(1);
-	msg = BLU "$NÄ¬ÔËÄÚÁ¦£¬½«¶¾ÆøÔËÓÚ±ŞÉÏ£¬Ö»¼ûÒ»¹ÉÀ¶É«µÄÎíÆøÕÖ×¡ÁË³¤±Ş¡£\n";
+	msg = BLU "$Né»˜è¿å†…åŠ›ï¼Œå°†æ¯’æ°”è¿äºé­ä¸Šï¼Œåªè§ä¸€è‚¡è“è‰²çš„é›¾æ°”ç½©ä½äº†é•¿é­ã€‚\n";
 
 	if  ( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 
 	    && random(me->query_skill("wudu-xinfa",1)) >20) 
 	{
-		msg += "$p´ë²»¼°·À£¬²»ÓÉÉíÈ¾¶¾Æø¡£\n" NOR;
+		msg += "$pæªä¸åŠé˜²ï¼Œä¸ç”±èº«æŸ“æ¯’æ°”ã€‚\n" NOR;
 	    target->receive_damage("qi",(int)me->query_skill("wudu-xinfa",1));
             target->receive_wound("qi",15 + random(10));
             target->receive_wound("jing", 10);
@@ -36,7 +36,7 @@ int perform(object me, object target)
 			target->start_busy(1 + random(2)); 
 		
 	} else {
-		msg += "¿ÉÊÇ$p¿´³öÁË$PµÄ¶¾¼Æ£¬Á¢¿ÌÆÁ×¡ºôÎü£¬Ã»ÓĞÖĞ¶¾¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹å‡ºäº†$Pçš„æ¯’è®¡ï¼Œç«‹åˆ»å±ä½å‘¼å¸ï¼Œæ²¡æœ‰ä¸­æ¯’ã€‚\n" NOR;
 		
 	}
 	message_vision(msg, me, target);

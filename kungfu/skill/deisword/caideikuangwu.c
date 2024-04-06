@@ -8,25 +8,25 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	extra = me->query_skill("deisword",1);
-	if ( extra < 50) return notify_fail("ÄãµÄµûÁµ»¨½£·¨»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 50) return notify_fail("ä½ çš„è¶æ‹èŠ±å‰‘æ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û²Êµû¿ñÎè£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å½©è¶ç‹‚èˆžï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-200);
 
 	weapon = me->query_temp("weapon");
-	msg = HIY  "$NÊ¹³öµûÁµ»¨½£·¨ÖÐµÄ£Û²Êµû¿ñÎè£Ý£¬Ò»ÕÐÁ¬»·Èý½££¬ÊÖÖÐµÄ"+ weapon->name()+  "ÉÁµç°ãÏò$n¹¥³öµÚÒ»½££¡" NOR;
+	msg = HIY  "$Nä½¿å‡ºè¶æ‹èŠ±å‰‘æ³•ä¸­çš„ï¼»å½©è¶ç‹‚èˆžï¼½ï¼Œä¸€æ‹›è¿žçŽ¯ä¸‰å‰‘ï¼Œæ‰‹ä¸­çš„"+ weapon->name()+  "é—ªç”µèˆ¬å‘$næ”»å‡ºç¬¬ä¸€å‰‘ï¼" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-       msg = HIY  "µÚ¶þ½££¡" NOR;
+       msg = HIY  "ç¬¬äºŒå‰‘ï¼" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-       msg = HIY  "µÚÈý½££¡" NOR;
+       msg = HIY  "ç¬¬ä¸‰å‰‘ï¼" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 	me->start_busy(2);

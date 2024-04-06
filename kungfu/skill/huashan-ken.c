@@ -1,34 +1,34 @@
-// huashan-ken.c »ªÉ½È­·¨
+// huashan-ken.c åŽå±±æ‹³æ³•
 // Modified by Venus Oct.1997
 
 inherit SKILL;
 
 mapping *action = ({
-    ([  "action":      "$NÊ¹Ò»ÕÐ¡¸ÔÆÀïÇ¬À¤¡¹×óÈ­»÷³ö£¬²»µÈÕÐÊ½Ê¹ÀÏ£¬ÓÒÈ­ÒÑ´Ó×óÈ­Ö®µ×´©³ö£¬¶Ô×¼$nµÄ$l¡¸ºô¡¹µØÒ»È­",
+    ([  "action":      "$Nä½¿ä¸€æ‹›ã€Œäº‘é‡Œä¹¾å¤ã€å·¦æ‹³å‡»å‡ºï¼Œä¸ç­‰æ‹›å¼ä½¿è€ï¼Œå³æ‹³å·²ä»Žå·¦æ‹³ä¹‹åº•ç©¿å‡ºï¼Œå¯¹å‡†$nçš„$lã€Œå‘¼ã€åœ°ä¸€æ‹³",
             "dodge":   -40,
             "parry":   40,
-            "damage_type":  "ðöÉË"
+            "damage_type":  "ç˜€ä¼¤"
     ]),
-    ([  "action":      "$N×óÈ­Í»È»ÕÅ¿ª£¬È­¿ª±äÕÆ£¬Ö±»÷»¯ÎªºáÉ¨£¬Ò»ÕÐ¡¸ÎíÀï¿´»¨¡¹±ãÍù$nµÄ$lÕÐºô¹ýÈ¥",
+    ([  "action":      "$Nå·¦æ‹³çªç„¶å¼ å¼€ï¼Œæ‹³å¼€å˜æŽŒï¼Œç›´å‡»åŒ–ä¸ºæ¨ªæ‰«ï¼Œä¸€æ‹›ã€Œé›¾é‡Œçœ‹èŠ±ã€ä¾¿å¾€$nçš„$læ‹›å‘¼è¿‡åŽ»",
             "dodge":   -30,
             "parry":   30,
-            "damage_type":  "ðöÉË"
+            "damage_type":  "ç˜€ä¼¤"
     ]),
-    ([  "action":      "$NÁ½ÊÖ»¢¿ÚÏà¶Ô£¬ÍùÄÚÒ»È¦£¬Ò»ÕÐ¡¸½ð¹ÄÆëÃù¡¹Íù$nµÄ$l»÷³ö",
+    ([  "action":      "$Nä¸¤æ‰‹è™Žå£ç›¸å¯¹ï¼Œå¾€å†…ä¸€åœˆï¼Œä¸€æ‹›ã€Œé‡‘é¼“é½é¸£ã€å¾€$nçš„$lå‡»å‡º",
             "dodge":   -30,
             "parry":   30,
-            "damage_type":  "ðöÉË"
+            "damage_type":  "ç˜€ä¼¤"
     ]),
-    ([  "action":      "$N²½ÂÄÒ»³Á£¬×óÈ­Ðé»ÎÒ»ÕÐ£¬ÓÒÈ­Ê¹³ö¡¸Ã·»¨ÅªÓ°¡¹»÷Ïò$n$l",
+    ([  "action":      "$Næ­¥å±¥ä¸€æ²‰ï¼Œå·¦æ‹³è™šæ™ƒä¸€æ‹›ï¼Œå³æ‹³ä½¿å‡ºã€Œæ¢…èŠ±å¼„å½±ã€å‡»å‘$n$l",
             "dodge":   -30,
             "parry":   30,
-            "damage_type":  "ðöÉË"
+            "damage_type":  "ç˜€ä¼¤"
     ]),
 });
 
 int valid_learn(object me) {
     if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-        return notify_fail("Á·»ªÉ½È­·¨±ØÐë¿ÕÊÖ¡£\n");
+        return notify_fail("ç»ƒåŽå±±æ‹³æ³•å¿…é¡»ç©ºæ‰‹ã€‚\n");
     return 1;
 }
 
@@ -42,7 +42,7 @@ mapping query_action(object me, object weapon) {
 
 int practice_skill(object me) {
     if ((int) me->query("qi") < 30)
-        return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ÐÝÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+        return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
     me->receive_damage("qi", 30);
     return 1;
 }

@@ -12,40 +12,40 @@ int perform(object me, object target)
 	int	i,exp;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIC"¡¸ÕÙ»½ÌìÄ§Éñ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIC"ã€Œå¬å”¤å¤©é­”ç¥žã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 4000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõÐ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°çŽ©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-ice",1)< 600)
-	return notify_fail("ÄãµÄÆøÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ°”ç³»é­”æ³•å¤ªå·®äº†ï¼\n");
         spells = me->query_skill("spells");
         if(spells < 30 )
-                return notify_fail("ÄãµÄ·¨Êõ²»¹»¸ß£¡\n");
+                return notify_fail("ä½ çš„æ³•æœ¯ä¸å¤Ÿé«˜ï¼\n");
 
 	if( !me->is_fighting() )
-		return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜÕÙ»½ÌìÄ§Éñ£¡\n");
+		return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½å¬å”¤å¤©é­”ç¥žï¼\n");
 	
         if (present("tian moshen",environment(me)))
-		return notify_fail("Ö»ÄÜÈç»½Ò»Î»ÌìÄ§ÉñÎªÄã×öÕ½£¡\n");
+		return notify_fail("åªèƒ½å¦‚å”¤ä¸€ä½å¤©é­”ç¥žä¸ºä½ åšæˆ˜ï¼\n");
         
         if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("ÕÙ»½Êõ¿É²»ÄÜÒ»Ììµ½ÍíÓÃ!\n");
+        return notify_fail("å¬å”¤æœ¯å¯ä¸èƒ½ä¸€å¤©åˆ°æ™šç”¨!\n");
 	
-	message_vision(HIC"$N"HIC"ÓÃÊÖÔÚÌì¿Õ»®ÁËÒ»¸öÎåÃ¢ÐÇ£¬¿ÚÖÐà«à«µØÄîÖøÖäÎÄ\n", me,target);
-	message_vision(HIC"$NÄîµ½£¬Ñ£Ä¿µÄÅùö¨£¬½«»÷ËéÒ»ÇÐÓÞ´ÀµÄ×èµ²¡­¡­\n", me,target);
-	message_vision(HIC"$NÄîµ½£¬ÆÆ¿Õ¶øÈ¥µÄ¹âÖ®³¤Ã¬£¬½«´Ì´©ÎÞ±ßµÄºÚ°µ¡­¡­\n", me,target);
-	message_vision(HIC"$NÄîµ½£¬É³À­Ë¹£¬´óÆøºÍ´óµØµÄ¾«Áé£¬¶¼°´¹ÅÀÏÆõÔ¼À´ÂÄÐÐÒåÎñ°É£¡£¡£¡£¡ \n", me,target);
-	message_vision(HIC"$NÄîµ½£¬³ä³âÓÚÌìµØÖ®¼äµÄ¾«ÁéßÏ£¬¸ù¾Ý¹ÅÀÏµÄÆõÔ¼£¬Õ¹ÏÖÄãÃÇµÄÁ¦Á¿°É£¡£¡£¡£¡£¡\n", me,target);
-	message_vision(HIC"$NÄîµ½£¬ÇëÕ¹ÏÖÄúÐÛ×³µÄÉí×Ë°É £¡\n", me,target);
-	message_vision(HIC"$NÄîµ½£¬°é×ÅÄÇÂúÌìÂäÀ× £¡\n", me,target);
-	message_vision(HIC"$NÄîµ½£¬³öÏÖ°É£¬É³À­Ë¹!!! \n", me,target);
+	message_vision(HIC"$N"HIC"ç”¨æ‰‹åœ¨å¤©ç©ºåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡\n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œçœ©ç›®çš„éœ¹é›³ï¼Œå°†å‡»ç¢Žä¸€åˆ‡æ„šè ¢çš„é˜»æŒ¡â€¦â€¦\n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œç ´ç©ºè€ŒåŽ»çš„å…‰ä¹‹é•¿çŸ›ï¼Œå°†åˆºç©¿æ— è¾¹çš„é»‘æš—â€¦â€¦\n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œæ²™æ‹‰æ–¯ï¼Œå¤§æ°”å’Œå¤§åœ°çš„ç²¾çµï¼Œéƒ½æŒ‰å¤è€å¥‘çº¦æ¥å±¥è¡Œä¹‰åŠ¡å§ï¼ï¼ï¼ï¼ \n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œå……æ–¥äºŽå¤©åœ°ä¹‹é—´çš„ç²¾çµå‘¦ï¼Œæ ¹æ®å¤è€çš„å¥‘çº¦ï¼Œå±•çŽ°ä½ ä»¬çš„åŠ›é‡å§ï¼ï¼ï¼ï¼ï¼\n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œè¯·å±•çŽ°æ‚¨é›„å£®çš„èº«å§¿å§ ï¼\n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œä¼´ç€é‚£æ»¡å¤©è½é›· ï¼\n", me,target);
+	message_vision(HIC"$Nå¿µåˆ°ï¼Œå‡ºçŽ°å§ï¼Œæ²™æ‹‰æ–¯!!! \n", me,target);
  
 
 	me->add("neili", -2000);
@@ -53,7 +53,7 @@ me->start_busy(3);
 	seteuid(getuid());
 
 soldier =new("/clone/magic/iceman");
-message_vision(HIC"$N"HIC"ÖäÓï¹ýºó,Ò»Ìõ¸ö¾Þ´óµÄÌìÄ§Éñ³öÏÖÁË£¡£¡\n", me,target);
+message_vision(HIC"$N"HIC"å’’è¯­è¿‡åŽ,ä¸€æ¡ä¸ªå·¨å¤§çš„å¤©é­”ç¥žå‡ºçŽ°äº†ï¼ï¼\n", me,target);
 	soldier->move(environment(me));
 if (userp(me))
 {

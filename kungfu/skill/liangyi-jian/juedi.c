@@ -1,4 +1,4 @@
-// juedi.c ¾øµØ·êÉú
+// juedi.c ç»åœ°é€¢ç”Ÿ
 // 1997.9.2   csy
 
 #include <ansi.h>
@@ -13,32 +13,32 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-        return notify_fail("¾øµØ·êÉúÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ç»åœ°é€¢ç”Ÿåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
                 
     if( (int)me->query_skill("liangyi-jian",1)<180)
-    return notify_fail("ÄãµÄÕıÁ½ÒÇ½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸¾øµØ·êÉú¡¹¡£\n");
+    return notify_fail("ä½ çš„æ­£ä¸¤ä»ªå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç»åœ°é€¢ç”Ÿã€ã€‚\n");
      if( (int)me->query_skill("xuantian-wuji",1)<80)
-        return notify_fail("ÄãµÄĞşÌìÎŞ¼«¹¦²»¹»Éîºñ£¬²»»áÊ¹ÓÃ¡¸¾øµØ·êÉú¡¹¡£\n"); 
+        return notify_fail("ä½ çš„ç„å¤©æ— æåŠŸä¸å¤Ÿæ·±åšï¼Œä¸ä¼šä½¿ç”¨ã€Œç»åœ°é€¢ç”Ÿã€ã€‚\n"); 
                         
     if( (int)me->query("neili",1)<500)
-    return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸¾øµØ·êÉú¡¹¡£\n");
+    return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç»åœ°é€¢ç”Ÿã€ã€‚\n");
  if (random(2)==0) target->start_busy(2);
     if( (int)me->query_skill("art", 1) > 120 )
     {
-    msg = HIC"$n¿´µ½½£¹âÆ«×ó£¬¼²²àÉíÓÒ×ª£¬µ«Ö»ÕâÒ»É²£¬½£¹âÉ²Ê±Ï®ÏòÓÒÊ×£¡"NOR;
+    msg = HIC"$nçœ‹åˆ°å‰‘å…‰åå·¦ï¼Œç–¾ä¾§èº«å³è½¬ï¼Œä½†åªè¿™ä¸€åˆ¹ï¼Œå‰‘å…‰åˆ¹æ—¶è¢­å‘å³é¦–ï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIG"$n¿´µ½½£¹âÆ«ÓÒ£¬¼²²àÉí×ó×ª£¬µ«Ö»ÕâÒ»É²£¬½£¹âÉ²Ê±Ï®Ïò×óÊ×£¡"NOR;
+    msg = HIG"$nçœ‹åˆ°å‰‘å…‰åå³ï¼Œç–¾ä¾§èº«å·¦è½¬ï¼Œä½†åªè¿™ä¸€åˆ¹ï¼Œå‰‘å…‰åˆ¹æ—¶è¢­å‘å·¦é¦–ï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIY"$n¿´µ½½£¹âÆ«ÉÏ£¬¼²²àÉíÏÂ×ª£¬µ«Ö»ÕâÒ»É²£¬½£¹âÉ²Ê±Ï®ÏòÏÂÉí£¡"NOR;
+    msg = HIY"$nçœ‹åˆ°å‰‘å…‰åä¸Šï¼Œç–¾ä¾§èº«ä¸‹è½¬ï¼Œä½†åªè¿™ä¸€åˆ¹ï¼Œå‰‘å…‰åˆ¹æ—¶è¢­å‘ä¸‹èº«ï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIR"$n¿´µ½½£¹âÆ«ÏÂ£¬¼²²àÉíÉÏ×ª£¬µ«Ö»ÕâÒ»É²£¬½£¹âÉ²Ê±Ï®ÏòÉÏÉí£¡"NOR;
+    msg = HIR"$nçœ‹åˆ°å‰‘å…‰åä¸‹ï¼Œç–¾ä¾§èº«ä¸Šè½¬ï¼Œä½†åªè¿™ä¸€åˆ¹ï¼Œå‰‘å…‰åˆ¹æ—¶è¢­å‘ä¸Šèº«ï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add("neili", -200);
     }
                         
- msg=HIY "$NÒÂÉÀÎŞ·ç×Ô¶¯£¬Ê¹³öÀ¥ÂØÅÉÁ½ÒÇ½£·¨ÖĞµÄÕğÉ½¾ø¼¼¡¸¾øµØ·êÉú¡¹¡£\n"
-HIG "É²ÄÇ¼äÌì»èµØ°µ£¬·ÉÉ³×ßÊ¯£¬ÎŞÊı½£Ó°Ïò$nµÄÈ«ÉíÒªº¦»ò´Ì£¬»ò¿³£¬»òÅü¶øÈ¥¡£\n" NOR;
+ msg=HIY "$Nè¡£è¡«æ— é£è‡ªåŠ¨ï¼Œä½¿å‡ºæ˜†ä»‘æ´¾ä¸¤ä»ªå‰‘æ³•ä¸­çš„éœ‡å±±ç»æŠ€ã€Œç»åœ°é€¢ç”Ÿã€ã€‚\n"
+HIG "åˆ¹é‚£é—´å¤©æ˜åœ°æš—ï¼Œé£æ²™èµ°çŸ³ï¼Œæ— æ•°å‰‘å½±å‘$nçš„å…¨èº«è¦å®³æˆ–åˆºï¼Œæˆ–ç ï¼Œæˆ–åŠˆè€Œå»ã€‚\n" NOR;
 
         if (random(me->query("neili")) > target->query("neili")/3 )
 {
@@ -51,16 +51,16 @@ HIG "É²ÄÇ¼äÌì»èµØ°µ£¬·ÉÉ³×ßÊ¯£¬ÎŞÊı½£Ó°Ïò$nµÄÈ«ÉíÒªº¦»ò´Ì£¬»ò¿³£¬»òÅü¶øÈ¥¡£\n" N
         target->receive_damage("qi",random(damage)+200);
         target->receive_wound("qi",damage*2+200);
         me->add("neili",-damage/5);
-        if( damage < 20 ) msg += HIY"½á¹û$n±»$N´ÌÖĞÁËÒ»½££¬ÃÆºßÒ»Éù¡£\n"NOR;
+        if( damage < 20 ) msg += HIY"ç»“æœ$nè¢«$Nåˆºä¸­äº†ä¸€å‰‘ï¼Œé—·å“¼ä¸€å£°ã€‚\n"NOR;
 else
-if( damage < 55 ) msg += HIY"½á¹û$n±»$NÁ¬´ÌÁ½½££¬¡¸°¡¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n"NOR;
-else if( damage < 80 ) msg += RED"½á¹û$n±»$NÖØÖØµÄÁ¬¿³Êı½££¬ÓĞÈçÊÜµ½Êı¼ÇÀ×»÷Ò»°ã£¬Á¬ÍËÁËÎåÁù²½£¡\n"NOR;
-else msg += HIR"½á¹û$n±»$NµÄ¡¸¾øµØ·êÉú¡¹½£Í¸Ç°ĞÄ£¬ÑÛÇ°Ò»ºÚ£¬Éí×ÓÏòºó·É³öÕÉĞí£¡£¡\n"NOR;
+if( damage < 55 ) msg += HIY"ç»“æœ$nè¢«$Nè¿åˆºä¸¤å‰‘ï¼Œã€Œå•Šã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n"NOR;
+else if( damage < 80 ) msg += RED"ç»“æœ$nè¢«$Né‡é‡çš„è¿ç æ•°å‰‘ï¼Œæœ‰å¦‚å—åˆ°æ•°è®°é›·å‡»ä¸€èˆ¬ï¼Œè¿é€€äº†äº”å…­æ­¥ï¼\n"NOR;
+else msg += HIR"ç»“æœ$nè¢«$Nçš„ã€Œç»åœ°é€¢ç”Ÿã€å‰‘é€å‰å¿ƒï¼Œçœ¼å‰ä¸€é»‘ï¼Œèº«å­å‘åé£å‡ºä¸ˆè®¸ï¼ï¼\n"NOR;
 }
 else
 {
          me->start_busy(2);
-                msg += CYN"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n"NOR;
 }
         message_vision(msg, me, target);
 

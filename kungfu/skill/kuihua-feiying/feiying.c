@@ -1,4 +1,4 @@
-// feiying.c ¿û»¨·ÉÓ°Êõ
+// feiying.c è‘µèŠ±é£å½±æœ¯
 
 #include <ansi.h>
 
@@ -12,25 +12,25 @@ int perform(object me, object target)
 
         if( !target ) target = me;
         if(!me->is_fighting())
-                return notify_fail("¿û»¨·ÉÓ°ÊõÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("è‘µèŠ±é£å½±æœ¯åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         
         if( (int)me->query("neili") < 500  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query("jing") < 200  ) 
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("feiying") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÓÃ¿û»¨·ÉÓ°ÊõÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿ç”¨è‘µèŠ±é£å½±æœ¯äº†ã€‚\n");
         if( (int)me->query_skill("pixie-jian", 1) < 120 )
-                return notify_fail("ÄãµÄ±ÙĞ°½£·¨»¹Ã»Á·³É£¬ÎŞ·¨Ê¹ÓÃ¿û»¨·ÉÓ°Êõ¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªå‰‘æ³•è¿˜æ²¡ç»ƒæˆï¼Œæ— æ³•ä½¿ç”¨è‘µèŠ±é£å½±æœ¯ã€‚\n");
         if( (int)me->query_dex() < 30  )
-                return notify_fail("ÄãµÄÉí·¨Ì«µÍ£¬²»ÄÜÊ¹ÓÃ¿û»¨·ÉÓ°Êõ¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•å¤ªä½ï¼Œä¸èƒ½ä½¿ç”¨è‘µèŠ±é£å½±æœ¯ã€‚\n");
        
 	if( (int)me->query_skill("kuihua-feiying", 1) < 50 )
-		return notify_fail("ÄãµÄ¿û»¨·ÉÓ°Êõ²»¹»æµÊì¡£\n");
+		return notify_fail("ä½ çš„è‘µèŠ±é£å½±æœ¯ä¸å¤Ÿå¨´ç†Ÿã€‚\n");
 
 	if( (int)me->query_skill("kuihua-xinfa", 1) < 60 )
-		return notify_fail("ÄãµÄ¿û»¨ĞÄ·¨²»¹»æµÊì¡£\n");
+		return notify_fail("ä½ çš„è‘µèŠ±å¿ƒæ³•ä¸å¤Ÿå¨´ç†Ÿã€‚\n");
 
         skill = me->query_skill("kuihua-feiying") / 3;
         skill = skill + me->query_skill("pixie-jian");
@@ -40,8 +40,8 @@ int perform(object me, object target)
         me->receive_damage("qi", 50);
 
         message_vision(
-        MAG "Ö»¼û$NÑÛÖĞÇà¹âÒ»ÉÁ£¬Æ¾¿Õ·ÉÉıÀëµØ³ßÓà£¬ÉíĞÎÆ®¸¡²»¶¨£¬¾ÍÈçÓ°×ÓÒ»°ã¡£\n" NOR, me);
-        tell_object(me, MAG "ÄãÄ¬ÔË¿û»¨·ÉÓ°Êõ£¬ÄÚ¾¢ÍâĞ¹£¬½«ÉíÌåÆ¾¿ÕÌ§ÁËÆğÀ´¡£\n" NOR);
+        MAG "åªè§$Nçœ¼ä¸­é’å…‰ä¸€é—ªï¼Œå‡­ç©ºé£å‡ç¦»åœ°å°ºä½™ï¼Œèº«å½¢é£˜æµ®ä¸å®šï¼Œå°±å¦‚å½±å­ä¸€èˆ¬ã€‚\n" NOR, me);
+        tell_object(me, MAG "ä½ é»˜è¿è‘µèŠ±é£å½±æœ¯ï¼Œå†…åŠ²å¤–æ³„ï¼Œå°†èº«ä½“å‡­ç©ºæŠ¬äº†èµ·æ¥ã€‚\n" NOR);
 
         me->add_temp("apply/dodge", skill);
         me->set_temp("feiying", 1);
@@ -57,6 +57,6 @@ void remove_effect(object me, int amount)
 {
         me->add_temp("apply/dodge", - amount);
         me->delete_temp("feiying");
-        tell_object(me, MAG "ÄãÒ»±é¿û»¨·ÉÓ°ÊõÒÑ¾­Ê¹Íê£¬Éí·¨ÓÖ»Ö¸´Õı³£¡£\n" NOR);
+        tell_object(me, MAG "ä½ ä¸€éè‘µèŠ±é£å½±æœ¯å·²ç»ä½¿å®Œï¼Œèº«æ³•åˆæ¢å¤æ­£å¸¸ã€‚\n" NOR);
 }
 

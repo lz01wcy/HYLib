@@ -1,11 +1,11 @@
 // THIS IS PLAYER'S OWN SKILL (write by maxim@nju_fengxue)
 // taotao
-// ÌÕÌÕ
-// ´óÀíÕòÄÏÍõ¸®¼ÒÅ«
+// é™¶é™¶
+// å¤§ç†é•‡å—çŽ‹åºœå®¶å¥´
 // 1000853
-// ÄÐÐÔ
+// ç”·æ€§
 // sword
-// É±ÈËÈçÂé½£·¨
+// æ€äººå¦‚éº»å‰‘æ³•
 
 
 
@@ -20,21 +20,21 @@ mapping *action = ({
 // ZHAOSHI :0
 
 ([
-"action" :"$NÃæÂ¶Ð×Ïà£¬×ÝÉíÒ»Ô¾·´ÊÖÒ»ÕÐ¡¸ÐÄºÝÊÖÀ±¡¹¶Ô×¼$nµÄ$sÑ¸ËÙ´Ì³öÈý½£",
+"action" :"$Né¢éœ²å‡¶ç›¸ï¼Œçºµèº«ä¸€è·ƒåæ‰‹ä¸€æ‹›ã€Œå¿ƒç‹ æ‰‹è¾£ã€å¯¹å‡†$nçš„$sè¿…é€Ÿåˆºå‡ºä¸‰å‰‘",
 "force" :60,
 "dodge" :40,
-"damage_type": "´ÌÉË",
+"damage_type": "åˆºä¼¤",
 "lvl" : 1,
-"skill_name" : "ÐÄºÝÊÖÀ±"
+"skill_name" : "å¿ƒç‹ æ‰‹è¾£"
 ]),
  });
 // ZHAOSHI :1
 int valid_learn(object me)
 {
 object weapon; if (!objectp(weapon = me->query_temp("weapon"))
-     || (string)weapon->query("skill_type") != "sword") return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+     || (string)weapon->query("skill_type") != "sword") return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("max_neili") < 50 )
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·"+"É±ÈËÈçÂé½£·¨"+"¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒ"+"æ€äººå¦‚éº»å‰‘æ³•"+"ã€‚\n");
 	return 1;
 }
 int valid_enable(string usage) { return usage=="sword" || usage=="parry"; }
@@ -55,10 +55,10 @@ mapping query_action(object me, object weapon)
 }
 int practice_skill(object me)
 {
-object weapon; if (!objectp(weapon = me->query_temp("weapon")) || (string)weapon->query("skill_type") != "sword") return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");	if( (int)me->query("qi") < 25 )
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ÐÝÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+object weapon; if (!objectp(weapon = me->query_temp("weapon")) || (string)weapon->query("skill_type") != "sword") return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");	if( (int)me->query("qi") < 25 )
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
 	if( (int)me->query("neili") < 3 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ÐÝÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
 	me->receive_damage("qi", 25);
 	me->add("neili", -3);
 	return 1;

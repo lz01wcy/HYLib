@@ -17,24 +17,24 @@ int perform(object me)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¶áÃü´ßÐÄÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤ºå‘½å‚¬å¿ƒåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon"))
-                return notify_fail("Äã±ØÐëÊÇ¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¶áÃü´ßÐÄ£¡\n");
+                return notify_fail("ä½ å¿…é¡»æ˜¯ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨å¤ºå‘½å‚¬å¿ƒï¼\n");
  
         lvl = me->query_skill("huixin-strike", 1);
 
         if (lvl < 120)
-                return notify_fail("ÄãµÄ¶ëáÒ´ßÐÄÕÆ»¹²»¹»´¿Êì£¡\n");
+                return notify_fail("ä½ çš„å³¨åµ‹å‚¬å¿ƒæŽŒè¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 
         if (me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºòÌ«µÍ£¬ÎÞ·¨Ê¹³ö¶áÃü´ßÐÄ¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™å¤ªä½Žï¼Œæ— æ³•ä½¿å‡ºå¤ºå‘½å‚¬å¿ƒã€‚\n");
 
         if (me->query("neili") < 800)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê¹³ö¶áÃü´ßÐÄ¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿å‡ºå¤ºå‘½å‚¬å¿ƒã€‚\n");
  
-        msg = HIR "$N" HIR "¾ÛÆøÓÚÕÆ£¬ÑöÌìÒ»Éù¿ñÐ¥£¬É²ÄÇ¼äË«ÕÆ½»´í£¬Ò»ÕÐ"
-                  "¡¸¶áÃü´ßÐÄ¡¹´ø×ÅÒõ¶¾ÄÚ¾¢Ö±¹á$n" HIR "£¡\n"NOR;
+        msg = HIR "$N" HIR "èšæ°”äºŽæŽŒï¼Œä»°å¤©ä¸€å£°ç‹‚å•¸ï¼Œåˆ¹é‚£é—´åŒæŽŒäº¤é”™ï¼Œä¸€æ‹›"
+                  "ã€Œå¤ºå‘½å‚¬å¿ƒã€å¸¦ç€é˜´æ¯’å†…åŠ²ç›´è´¯$n" HIR "ï¼\n"NOR;
 
         ap = me->query_skill("strike") + lvl;
         dp = target->query_skill("parry");
@@ -48,14 +48,14 @@ int perform(object me)
 target->apply_condition("cuixin_zhang",35 );
    target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg += HIR "Ö»Ìý$n" HIR "²Ò½ÐÒ»Éù£¬Ö»¸ÐÁ½¶úºä"
-               "Ãù£¬Ä¿²»ÊÓÎï£¬Åç³öÒ»´ó¿ÚÏÊÑª£¬ÈíÈíÌ±µ¹¡£\n" NOR;
+                msg += HIR "åªå¬$n" HIR "æƒ¨å«ä¸€å£°ï¼Œåªæ„Ÿä¸¤è€³è½°"
+               "é¸£ï¼Œç›®ä¸è§†ç‰©ï¼Œå–·å‡ºä¸€å¤§å£é²œè¡€ï¼Œè½¯è½¯ç˜«å€’ã€‚\n" NOR;
 
         me->start_busy(2);
         }
     else
         {
-        msg += HIY "$p¼û$PÀ´ÊÆÐÚÓ¿£¬¼±Ã¦×ÝÉíÒ»Ô¾¶øÆð£¬¶ã¿ªÁËÕâÖÂÃüµÄÒ»»÷£¡\n" NOR;
+        msg += HIY "$pè§$Pæ¥åŠ¿æ±¹æ¶Œï¼Œæ€¥å¿™çºµèº«ä¸€è·ƒè€Œèµ·ï¼Œèº²å¼€äº†è¿™è‡´å‘½çš„ä¸€å‡»ï¼\n" NOR;
         me->add("neili", -300);
         me->start_busy(3);
         }

@@ -15,13 +15,13 @@ void init()
 int valid_learn(object me) 
 {
         if( (int)me->query("int") > 24 )
-           return  notify_fail("ÄãµÄÌìĞÔ²»ÊÊºÏÑ§Ï°Ë«ÊÖ»¥²©Ö®Êõ!\n" ) ;
-//        if( me->query("gender") != "ÄĞĞÔ" )
-//           return  notify_fail("ÄãÖ»ÄÜÏòÖÜ²®Í¨Ñ§Ï°Ë«ÊÖ»¥²©Ö®Êõ!\n" ) ;
+           return  notify_fail("ä½ çš„å¤©æ€§ä¸é€‚åˆå­¦ä¹ åŒæ‰‹äº’åšä¹‹æœ¯!\n" ) ;
+//        if( me->query("gender") != "ç”·æ€§" )
+//           return  notify_fail("ä½ åªèƒ½å‘å‘¨ä¼¯é€šå­¦ä¹ åŒæ‰‹äº’åšä¹‹æœ¯!\n" ) ;
 	return 1;
 }
 void do_hubo ( string arg )
 {
-    write( "ÄãÈ«Éí·ÅËÉ£¬×øÏÂÀ´¿ªÊ¼ÔË¹¦ÁÆÉË¡£\n" );
+    write( "ä½ å…¨èº«æ”¾æ¾ï¼Œåä¸‹æ¥å¼€å§‹è¿åŠŸç–—ä¼¤ã€‚\n" );
     return ;
 }

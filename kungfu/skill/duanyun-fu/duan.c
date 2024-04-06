@@ -1,4 +1,4 @@
-//duan.c -¶áÃüÈı¸«Ö®¡¸¶ÏÔÆÕ¶¡¹
+//duan.c -å¤ºå‘½ä¸‰æ–§ä¹‹ã€Œæ–­äº‘æ–©ã€
 // Modified by Venus Oct.1997
 #include <ansi.h>
 #include <combat.h>
@@ -13,33 +13,33 @@ object weapon;
 
     if( !target ) target = offensive_target(me);
     if( !target||!target->is_character()||!me->is_fighting(target) )
-    return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡¸¶ÏÔÆÕ¶¡¹¡£\n");
+    return notify_fail("ä½ åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€Œæ–­äº‘æ–©ã€ã€‚\n");
 extra = me->query_skill("duanyun-fu",1);
 
     if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "axe")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
     if( (int)me->query_skill("guiyuan-tunafa", 1) < 50 )
-	return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»¹Î´Á·³É£¬²»ÄÜÊ¹ÓÃ£¡\n");
+	return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸè¿˜æœªç»ƒæˆï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
 
     if( (int)me->query_skill("duanyun-fu",1) < 70)
-    return notify_fail("ÄãÄ¿Ç°¹¦Á¦»¹Ê¹²»³ö¡¸¶ÏÔÆÕ¶¡¹¡£\n");
+    return notify_fail("ä½ ç›®å‰åŠŸåŠ›è¿˜ä½¿ä¸å‡ºã€Œæ–­äº‘æ–©ã€ã€‚\n");
     if( (int)me->query("neili") < 400 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     me->add("neili", -100);
-msg = HIC"$NÍ»È»±©ºÈÒ»Éù£¬½«ÊÖÖĞ¾Ş¸«Ğ±ÏòÉÏ¾ÙÆğ£¬È»ºóÔÚ°ë¿ÕÖĞ»®³öÒ»
-µÀÔ²»¡£¬Ëæ¼´¾¶Ö±Ğ±ÏÂÕ¶Ïò$n£¡ÕâÒ»Ë²¼ä£¬$nÖ»¾õµÃºôÎü¶¼Í£Ö¹ÁË£¡\n"NOR;
+msg = HIC"$Nçªç„¶æš´å–ä¸€å£°ï¼Œå°†æ‰‹ä¸­å·¨æ–§æ–œå‘ä¸Šä¸¾èµ·ï¼Œç„¶ååœ¨åŠç©ºä¸­åˆ’å‡ºä¸€
+é“åœ†å¼§ï¼Œéšå³å¾„ç›´æ–œä¸‹æ–©å‘$nï¼è¿™ä¸€ç¬é—´ï¼Œ$nåªè§‰å¾—å‘¼å¸éƒ½åœæ­¢äº†ï¼\n"NOR;
         me->add_temp("apply/attack", 80);    
         me->add_temp("apply/damage", 500);
 if (random(2)==0) target->start_busy(2);
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-msg = HIC"$NÌøÆğ½«ÊÖÖĞ¾Ş¸«Ğ±ÏòÉÏ¾ÙÆğ£¬ÔÚ°ë¿ÕÖĞ»®³öÒ»
-µÀÔ²»¡£¬Ëæ¼´¾¶Ö±Ğ±ÏÂÕ¶Ïò$n£¡\n"NOR;
+msg = HIC"$Nè·³èµ·å°†æ‰‹ä¸­å·¨æ–§æ–œå‘ä¸Šä¸¾èµ·ï¼Œåœ¨åŠç©ºä¸­åˆ’å‡ºä¸€
+é“åœ†å¼§ï¼Œéšå³å¾„ç›´æ–œä¸‹æ–©å‘$nï¼\n"NOR;
 
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-msg = HIC"$N×ªÉí½«ÊÖÖĞ¾Ş¸«Ğ±ÏòÉÏ¾ÙÆğ£¬ÔÚ°ë¿ÕÖĞ»®³öÒ»
-µÀÔ²»¡£¬Ëæ¼´¾¶Ö±Ğ±ÏÂÕ¶Ïò$n£¡\n"NOR;
+msg = HIC"$Nè½¬èº«å°†æ‰‹ä¸­å·¨æ–§æ–œå‘ä¸Šä¸¾èµ·ï¼Œåœ¨åŠç©ºä¸­åˆ’å‡ºä¸€
+é“åœ†å¼§ï¼Œéšå³å¾„ç›´æ–œä¸‹æ–©å‘$nï¼\n"NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/attack", -80);    
         me->add_temp("apply/damage", -500);

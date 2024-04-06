@@ -1,10 +1,10 @@
 //Cracked by Kafei
-//ruhe.c ������ by maco
+//ruhe.c 岱宗如何 by maco
 /*
-��һ�п������̩ɽ�ɽ����������ľ��գ�Ҫּ�������ֽ��У�
-�������ֵ����������ֲ�ס��ָ���㣬����ǵ���������λ���书
-���ɡ����γ��̡����д�С���Լ��չ����ոߵ͵ȵȣ����㼫Ϊ��
-����һ����׼��ͦ���������޲��еġ�
+这一招可算得是泰山派剑法中最高深的绝艺，要旨不在右手剑招，
+而在左手的算数。左手不住屈指计算，算的是敌人所处方位、武功
+门派、身形长短、兵刃大小，以及日光所照高低等等，计算极为繁
+复，一经算准，挺剑击出，无不中的。
 */
 #include <ansi.h>
 
@@ -20,26 +20,26 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("�������Ρ�ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("「岱宗如何」只能对战斗中的对手使用。\n");
 
         if( me->query_temp("ruhe") )
-                return notify_fail("���Ѿ����ԡ������Ρ�������γ����ˣ�\n");
+                return notify_fail("你已经在以「岱宗如何」计算如何出招了！\n");
 
         weapon = me->query_temp("weapon");
         if( !objectp(weapon) || weapon->query("skill_type") != "sword" )
-                return notify_fail("�������޽�����ʹ�ԡ������Ρ����㹥�أ�Ҳ�޷�������\n");
+                return notify_fail("你手中无剑，即使以「岱宗如何」计算攻守，也无法出击。\n");
 
         if( me->query_skill("sword") < 100 )
-                return notify_fail("���ڽ����ϵ����費����ʹ���������Ρ���\n");
+                return notify_fail("你在剑法上的造诣不足以使出「岱宗如何」！\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("�������������\n");
+                return notify_fail("你的内力不够！\n");
         if( me->query("jing") <= 200 )
-                return notify_fail("��ľ�������\n");
+                return notify_fail("你的精不够！\n");
 
         skill = me->query_skill("taishan-sword");
 
-        message_vision(YEL"\nֻ��$N����"+weapon->query("name")+YEL"бָ���£�������ָ������ָ���������ǡ������Ρ���Ҫּ��\n" NOR, me, target);
+        message_vision(YEL"\n只见$N右手"+weapon->query("name")+YEL"斜指而下，左手五指正在屈指而数，正是「岱宗如何」的要旨。\n" NOR, me, target);
 	me->set_temp("ruhe_count", 1);	
         me->add_temp("apply/attack", skill*2);
         me->add_temp("apply/dodge", skill);
@@ -69,7 +69,7 @@ return;
 
 	if ( me->query_temp("ruhe_finish")  ) {
 		me->set_temp("ruhe_hit",1);
-                message_vision(HIW"\n$N�������𽣾����Ѿ������������Ρ��ļ��㡣\n" NOR, me);
+                message_vision(HIW"\n$N左手捏起剑诀，已经结束「岱宗如何」的计算。\n" NOR, me);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);
@@ -82,7 +82,7 @@ return;
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword") {
-                tell_object(me, "\n�������޽�����������ȥҲ����Ȼ������ֹͣ�������Ρ��ļ��㡣\n" NOR);
+                tell_object(me, "\n你手中无剑，继续算下去也是枉然，５猛Ｖ埂羔纷谌绾巍沟募扑恪\n" NOR);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);
@@ -91,7 +91,7 @@ return;
            }
 
            else if ( weapon->query("weapon_prop") == 0 ) {
-                tell_object(me, "\n���"+weapon->name()+"�ѻ٣���������ȥҲ����Ȼ������ֹͣ�������Ρ��ļ��㡣\n" NOR);
+                tell_object(me, "\n你的"+weapon->name()+"已毁，继续算下去也是枉然，５猛Ｖ埂羔纷谌绾巍沟募扑恪\n" NOR);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);
@@ -99,7 +99,7 @@ return;
                 return;
            }
            else if ( (int)me->query("jing") < 200  ) {
-                tell_object(me, "\n�㰵�����񲻼̣����Լ����ԡ������Ρ����㣬����ֹͣ������\n\n" NOR);
+                tell_object(me, "\n你暗觉精神不继，难以继续以「岱宗如何」计算，：猛Ｖ辜剖。\n\n" NOR);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);
@@ -107,7 +107,7 @@ return;
                 return;
            }
            else if ( me->query_skill_mapped("sword") != "taishan-sword" ) {
-                tell_object(me, "\n��ת��ʩչ�����������������ԡ������Ρ����㡣\n\n" NOR);
+                tell_object(me, "\n你转而施展其他剑法，不能再以「岱宗如何」计算。\n\n" NOR);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);
@@ -115,7 +115,7 @@ return;
                 return;
            }
            else if (!me->is_fighting()) {
-                tell_object(me,  "\n������û�к��˹��У���ȻҲ�����ԡ������Ρ������ˡ�\n\n" NOR);
+                tell_object(me,  "\n你现在没有和人过招，自然也不用以「岱宗如何」计算了。\n\n" NOR);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);
@@ -124,10 +124,10 @@ return;
            }
 	   else {
         msg = ({
-		"$N���ִ�һ�����壬�ն���ȭ��\n",
-		"$N��Ĵָ������ζ�ʳָ��������ָȫչ����������Ĵָ����ʳָ��������ָ��\n",
-		"$N���ֲ�ס��ָ���㣬����"+weapon->name()+"����ڶ���\n",
-		"$N������ָ��ס�������ƺ��ڼ�����Ŀ��\n",
+		"$N左手从一数到五，握而成拳。\n",
+		"$N将拇指伸出，次而食指，终至五指全展，跟着又屈拇指而屈食指，再屈中指。\n",
+		"$N左手不住屈指计算，右手"+weapon->name()+"轻轻摆动。\n",
+		"$N左手五指不住伸屈，似乎在计算数目。\n",
 		});
 	message_vision(msg[random(sizeof(msg))], me,target);
 	me->add_temp("ruhe_count",1);	
@@ -145,7 +145,7 @@ void remove_effect(object me)
         skill = me->query_skill("taishan-sword");
         if ( me->query_temp("ruhe") ) {
 		me->set_temp("ruhe_hit",1);
-                message_vision(HIW"\n$N�������𽣾����Ѿ������������Ρ��ļ��㡣\n" NOR, me);
+                message_vision(HIW"\n$N左手捏起剑诀，已经结束「岱宗如何」的计算。\n" NOR, me);
         	me->add_temp("apply/attack", -skill*2);
         	me->add_temp("apply/dodge", -skill);
         	me->add_temp("apply/parry", -skill);

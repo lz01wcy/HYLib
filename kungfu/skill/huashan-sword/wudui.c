@@ -1,4 +1,4 @@
-// wudui.c ÎŞË«ÎŞ¶Ô
+// wudui.c æ— åŒæ— å¯¹
 
 #include <ansi.h>
 
@@ -13,39 +13,39 @@ int perform(object me, object target, int improve)
       if( !target ) target = offensive_target(me);
      
       if( !target || !me->is_fighting(target) )
-      return notify_fail("ÎŞË«ÎŞ¶ÔÖ»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+      return notify_fail("æ— åŒæ— å¯¹åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-//      if( (string)me->query("gender") != "Å®ĞÔ" )
-//      return notify_fail("Ö»ÓĞÅ®µÜ×Ó²ÅÄÜÓÃ³öÎŞË«ÎŞ¶Ô¡£\n");	
+//      if( (string)me->query("gender") != "å¥³æ€§" )
+//      return notify_fail("åªæœ‰å¥³å¼Ÿå­æ‰èƒ½ç”¨å‡ºæ— åŒæ— å¯¹ã€‚\n");	
 
       if (!weapon || weapon->query("skill_type") != "sword"
        || me->query_skill_mapped("sword") != "huashan-sword")
-      return notify_fail("ÄãÊÖÀïÃ»ÓĞ½££¬ÎŞ·¨Ê¹ÓÃÎŞË«ÎŞ¶Ô£¡\n");             
+      return notify_fail("ä½ æ‰‹é‡Œæ²¡æœ‰å‰‘ï¼Œæ— æ³•ä½¿ç”¨æ— åŒæ— å¯¹ï¼\n");             
 
       if( (int)me->query_skill("huashan-sword",1) < 100 )
-      return notify_fail("ÄãµÄ»ªÉ½½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÎŞË«ÎŞ¶Ô£¡\n");
+      return notify_fail("ä½ çš„åå±±å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨æ— åŒæ— å¯¹ï¼\n");
       
       if( (int)me->query_skill("sword",1) < 100 )
-      return notify_fail("ÄãµÄ»ù±¾½£·¨µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃÎŞË«ÎŞ¶Ô£¡\n");  
+      return notify_fail("ä½ çš„åŸºæœ¬å‰‘æ³•ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨æ— åŒæ— å¯¹ï¼\n");  
 
       if( (int)me->query_skill("zixia-shengong", 1) < 60 )
-      return notify_fail("ÄãµÄ×ÏÏ¼Éñ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃÎŞË«ÎŞ¶Ô£¡\n");
+      return notify_fail("ä½ çš„ç´«éœç¥åŠŸç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨æ— åŒæ— å¯¹ï¼\n");
       if (me->query_skill_mapped("force") != "zixia-shengong")
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦²»¶Ô¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å†…åŠŸä¸å¯¹ã€‚\n");
       if( (int)me->query("max_neili") < 800 )
-      return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃÎŞË«ÎŞ¶Ô£¡\n");
+      return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨æ— åŒæ— å¯¹ï¼\n");
 	if( (int)me->query_temp("leidong") ) 
-		return notify_fail("ÄãÒÑ¾­ÔÚÔËÀ×¶¯¾ÅÌìÖĞÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿é›·åŠ¨ä¹å¤©ä¸­äº†ã€‚\n");
 
       
       if( (int)me->query("neili") < 500 )
-      return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨Ê¹ÓÃ³öÎŞË«ÎŞ¶Ô£¡\n");   
+      return notify_fail("ä½ çš„å†…åŠ›å¤ªå°‘äº†ï¼Œæ— æ³•ä½¿ç”¨å‡ºæ— åŒæ— å¯¹ï¼\n");   
 
       if( me->query_temp("wudui") )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃÎŞË«ÎŞ¶Ô¡£\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨æ— åŒæ— å¯¹ã€‚\n");
                                                                                  
-      message_vision(HIC"\n$NÍ»È»Ê¹³ö»ªÉ½¾ø¼¼£¬Ò»Ê½¡°ÎŞË«ÎŞ¶Ô£¬ÄşÊ½Ò»½£¡±£¬Ö»¼û$NÍ¦½£
-Ö±³ö£¬½£Ê½Èçºç£¬àÍàÍÖ®Éù´ó×÷£¬ÁèÀ÷¾øÂ×£¬½£Á¦ÒÑ½«$nÈ«ÉíÁıÕÖ¡£\n"NOR, me,target);
+      message_vision(HIC"\n$Nçªç„¶ä½¿å‡ºåå±±ç»æŠ€ï¼Œä¸€å¼â€œæ— åŒæ— å¯¹ï¼Œå®å¼ä¸€å‰‘â€ï¼Œåªè§$NæŒºå‰‘
+ç›´å‡ºï¼Œå‰‘å¼å¦‚è™¹ï¼Œå—¤å—¤ä¹‹å£°å¤§ä½œï¼Œå‡Œå‰ç»ä¼¦ï¼Œå‰‘åŠ›å·²å°†$nå…¨èº«ç¬¼ç½©ã€‚\n"NOR, me,target);
       me->start_busy(2);
       me->add_temp("apply/strength", improve);
       me->add_temp("apply/attack", improve);

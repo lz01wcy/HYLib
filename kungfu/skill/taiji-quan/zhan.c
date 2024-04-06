@@ -1,4 +1,4 @@
-// zhen.c Ì«¼«È­¡¸Õ³¡¹×Ö¾÷
+// zhen.c å¤ªææ‹³ã€Œç²˜ã€å­—è¯€
 // snowman
 #include <ansi.h>
 
@@ -12,19 +12,19 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) || !living(target))
-                return notify_fail("¡¸Õ³¡¹×Ö¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç²˜ã€å­—è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 //        if(!me->query_temp("taiji"))
-//                return notify_fail("Ì«¼«È­¾«ÒªÔÚÓÚ½«Õ¹Î´Õ¹£¬ÄãÃ»ÓĞÔËÓÃ¡¸Ì«¼«¡¹£¬ÓÖÈçºÎÄÜÊ¹ÓÃ¡¸Õ³¡¹×Ö¾÷£¿\n");
+//                return notify_fail("å¤ªææ‹³ç²¾è¦åœ¨äºå°†å±•æœªå±•ï¼Œä½ æ²¡æœ‰è¿ç”¨ã€Œå¤ªæã€ï¼Œåˆå¦‚ä½•èƒ½ä½¿ç”¨ã€Œç²˜ã€å­—è¯€ï¼Ÿ\n");
         if( (int)me->query("neili", 1) < 500 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬Ç¿ĞĞÊ¹ÓÃ¡¸Õ³¡¹ÊÇ·¢»Ó²»ÁËËüµÄÍşÁ¦µÄ£¡\n");                   
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œå¼ºè¡Œä½¿ç”¨ã€Œç²˜ã€æ˜¯å‘æŒ¥ä¸äº†å®ƒçš„å¨åŠ›çš„ï¼\n");                   
         if( me->query_temp("weapon"))
-                return notify_fail("ÄãÏÈ·ÅÏÂÊÖÖĞµÄÎäÆ÷ÔÙËµ°É£¿£¡\n");     
+                return notify_fail("ä½ å…ˆæ”¾ä¸‹æ‰‹ä¸­çš„æ­¦å™¨å†è¯´å§ï¼Ÿï¼\n");     
         if( target->is_busy())
-                return notify_fail("¶Ô·½Õı×Ô¹Ë²»Ï¾ÄØ£¬Äã²»Ã¦Ê¹ÓÃ¡¸Õ³¡¹×Ö¾÷¡£\n");   
+                return notify_fail("å¯¹æ–¹æ­£è‡ªé¡¾ä¸æš‡å‘¢ï¼Œä½ ä¸å¿™ä½¿ç”¨ã€Œç²˜ã€å­—è¯€ã€‚\n");   
                 
-        msg = CYN "\n$NÒ»ÕĞÒ»Ê½½Ú½Ú¹á´®£¬Èç³¤½­´óºÓ£¬"RED"¡¸Õ³¡¹"CYN"ÔÚ$nÉíÉÏ£¬Ò»¸öÔ²È¦¸ú×ÅÒ»¸öÔ²È¦£¬
-´óÈ¦¡¢Ğ¡È¦¡¢Æ½È¦¡¢Á¢È¦¡¢ÕıÈ¦¡¢Ğ±È¦£¬Ò»¸ö¸öÌ«¼«Ô²È¦·¢³ö£¬Á¬Ãà²»¶Ï£¬ÌÏÌÏ²»¾ø£¡\n"NOR;
+        msg = CYN "\n$Nä¸€æ‹›ä¸€å¼èŠ‚èŠ‚è´¯ä¸²ï¼Œå¦‚é•¿æ±Ÿå¤§æ²³ï¼Œ"RED"ã€Œç²˜ã€"CYN"åœ¨$nèº«ä¸Šï¼Œä¸€ä¸ªåœ†åœˆè·Ÿç€ä¸€ä¸ªåœ†åœˆï¼Œ
+å¤§åœˆã€å°åœˆã€å¹³åœˆã€ç«‹åœˆã€æ­£åœˆã€æ–œåœˆï¼Œä¸€ä¸ªä¸ªå¤ªæåœ†åœˆå‘å‡ºï¼Œè¿ç»µä¸æ–­ï¼Œæ»”æ»”ä¸ç»ï¼\n"NOR;
         
         if(random(me->query("combat_exp")) > target->query("combat_exp")/2){
                 damage = (int)me->query_skill("taiji-quan", 1)/20; 
@@ -33,14 +33,14 @@ int perform(object me, object target)
                 target->start_busy(damage);
                 me->add("neili", -(damage*20));
                 me->add("jing", -20);
-                msg += HIR"Õâ×óÈ¦ÓÒÈ¦µÇÊ±±ãÌ×µÃ$pµøµø×²×²£¬Éí²»ÓÉÖ÷µÄÁ¢×ã²»ÎÈ£¬ÓÌÈçÖĞ¾Æ»èÃÔ£¡\n"NOR;       
+                msg += HIR"è¿™å·¦åœˆå³åœˆç™»æ—¶ä¾¿å¥—å¾—$pè·Œè·Œæ’æ’ï¼Œèº«ä¸ç”±ä¸»çš„ç«‹è¶³ä¸ç¨³ï¼ŒçŠ¹å¦‚ä¸­é…’æ˜è¿·ï¼\n"NOR;       
                 } 
         else{
                 target->start_busy(2);
                 me->start_busy(3);
                 me->add("jing", -15);
                 me->add("neili", -100);
-                msg += HIY"$pÖ»¾õÔÚ$PÌ«¼«È­ÁıÕÖÖ®ÏÂ£¬ÎŞ¿ÉµÖÓù£¬Ö»µÃÖ»µÃÔË¾¢ÓÚ×ã£¬Æ®È»ÉÁ¿ª¡£\n"NOR;
+                msg += HIY"$påªè§‰åœ¨$På¤ªææ‹³ç¬¼ç½©ä¹‹ä¸‹ï¼Œæ— å¯æŠµå¾¡ï¼Œåªå¾—åªå¾—è¿åŠ²äºè¶³ï¼Œé£˜ç„¶é—ªå¼€ã€‚\n"NOR;
              }
         message_vision(msg, me, target);
         return 1;

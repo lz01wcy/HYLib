@@ -1,4 +1,4 @@
-// suodi.c ·ÉÌìÓù½£Á÷.³­ÈĞÖ¹ÈĞ
+// suodi.c é£å¤©å¾¡å‰‘æµ.æŠ„åˆƒæ­¢åˆƒ
 
 #include <ansi.h>
 
@@ -15,36 +15,36 @@ int extra;
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÎŞÓ°½ÅÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ— å½±è„šåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¸ÎŞÓ°½Å¡¹¿ªÊ¼Ê±²»ÄÜÄÃ×Å±øÆ÷£¡\n");
+		return notify_fail("ã€Œæ— å½±è„šã€å¼€å§‹æ—¶ä¸èƒ½æ‹¿ç€å…µå™¨ï¼\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("bibo-shengong",1) < 50 )
-		return notify_fail("ÄãµÄ±Ì²¨Éñ¹¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„ç¢§æ³¢ç¥åŠŸä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("luoying-zhang",1) < 100 ||
 	    me->query_skill("xuanfeng-leg",1) < 100)
-		return notify_fail("ÄãµÄÍÈÕÆ¹¦·ò»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃÎŞÓ°½Å£¡\n");   
+		return notify_fail("ä½ çš„è…¿æŒåŠŸå¤«è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨æ— å½±è„šï¼\n");   
         if (me->query_skill_mapped("unarmed") != "xuanfeng-leg")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ğı·çÉ¨Ò¶ÍÈ£¬ÄÑÒÔÊ©Õ¹¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘æ—‹é£æ‰«å¶è…¿ï¼Œéš¾ä»¥æ–½å±•ã€‚\n");
 	if( (int)me->query("neili") < 200  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	extra = me->query_skill("xuanfeng-leg",1) / 10;
 	extra += me->query_skill("luoying-zhang",1) /20;
          attack_time = (int)me->query_skill("xuanfeng-leg", 1) / 30;
         if (attack_time< 2)attack_time=2;
         if (attack_time> 12)attack_time=12;
-        msg = HIC "$N¸ß¸ßÔ¾Æğ£¬Ë«ÍÈÁ¬»·£¬ÎŞÓ°ÎŞ×Ù¡£\n";
+        msg = HIC "$Né«˜é«˜è·ƒèµ·ï¼ŒåŒè…¿è¿ç¯ï¼Œæ— å½±æ— è¸ªã€‚\n";
 if (!target->is_busy() && random(6)==0 ) target->start_busy(2);
         message_combatd(msg, me, target);
   
         for(i = 0; i < attack_time; i++){
-         msg =  HIC "µÚ"+chinese_number(i+1)+"½Å!" NOR;
+         msg =  HIC "ç¬¬"+chinese_number(i+1)+"è„š!" NOR;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra*2);
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);

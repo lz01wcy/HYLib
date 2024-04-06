@@ -5,7 +5,7 @@
 int update_condition(object me, int duration) {
     object ob;
     if (duration < 1) {
-        tell_object(me, "ÄãµÄÄîÁ¦ÒÑ¾­ÔÊÂúÁËÈ«Éí£¡\n");
+        tell_object(me, "ä½ çš„å¿µåŠ›å·²ç»å…æ»¡äº†å…¨èº«ï¼\n");
         return 0;
     }
     me->apply_condition("tiandiheyi", duration - 1);

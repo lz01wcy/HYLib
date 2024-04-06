@@ -8,24 +8,24 @@ int exert(object me)
 	skill = (int)me->query_skill("linji-zhuang",1);
 
 	if (me->query_temp("linji/con"))
-		return notify_fail("ÄãÒÑ¾­ÔÚÔËÁúº××¯ÁË£¡\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿é¾™é¹¤åº„äº†ï¼\n");
 
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔËÁúº××¯£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿é¾™é¹¤åº„ï¼\n");
 
 	if( (int)me->query("neili") < 300)
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_skill("linji-zhuang",1) < 90)
-		return notify_fail("ÄãµÄÁÙ¼Ã×¯¼¶±ð²»¹»¡£\n");
+		return notify_fail("ä½ çš„ä¸´æµŽåº„çº§åˆ«ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-		return notify_fail( "ÒÑ¾­ÊÜÉË¹ýÖØ£¬ÎÞ·¨ÔË¹¦£¡\n");
+		return notify_fail( "å·²ç»å—ä¼¤è¿‡é‡ï¼Œæ— æ³•è¿åŠŸï¼\n");
 
 	message_vision(
-HIR "$N×øÁËÏÂÀ´ÔËÆðÁúº××¯£¬°ÑÈ«ÉíÉÏÏÂÅÄ´òÁËÒ»±é£¬¾õµÃÈ«Éí³äÂúÁ¦Á¿£¬....\n"
-"¾ÍÏë·¢Ð¹³öÈ¥£¬ºÍË­¹ý¹ýÕÐÒ»Ñù¡£\n" NOR, me );
+HIR "$Nåäº†ä¸‹æ¥è¿èµ·é¾™é¹¤åº„ï¼ŒæŠŠå…¨èº«ä¸Šä¸‹æ‹æ‰“äº†ä¸€éï¼Œè§‰å¾—å…¨èº«å……æ»¡åŠ›é‡ï¼Œ....\n"
+"å°±æƒ³å‘æ³„å‡ºåŽ»ï¼Œå’Œè°è¿‡è¿‡æ‹›ä¸€æ ·ã€‚\n" NOR, me );
 //	me->apply_condition("linji_longhe", (int)skill/20);
 	me->add("neili", -300);
 	me->add("eff_jing", -15);
@@ -42,8 +42,8 @@ void remove_effect(object me)
  	int skill;
 	skill = (int)me->query_skill("linji-zhuang",1);
 		tell_object(me, 
-HIB "ºöÈ»Äã¾õµÃÈ«ÉíÀÁÑóÑóµÄ£¬Á¬¸öÐ¡Ö¸Í·Ò²²»Ïë¶¯ÁË£¬Ô­À´ÄãµÄ
-Áúº××¯ÊÕ¹¦ÁË£¡\n" NOR );
+HIB "å¿½ç„¶ä½ è§‰å¾—å…¨èº«æ‡’æ´‹æ´‹çš„ï¼Œè¿žä¸ªå°æŒ‡å¤´ä¹Ÿä¸æƒ³åŠ¨äº†ï¼ŒåŽŸæ¥ä½ çš„
+é¾™é¹¤åº„æ”¶åŠŸäº†ï¼\n" NOR );
         me->add_temp("apply/constitution",-skill/20);
 		me->delete_temp("linji/con");
 }

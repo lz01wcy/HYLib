@@ -1,9 +1,9 @@
-// yunkai.c ÔÆ¿ªÎíãØ
+// yunkai.c äº‘å¼€é›¾é˜–
 // Last Modified by winder on Sep. 12 2001
 
 #include <ansi.h>
 inherit F_SSERVER;
-#define PNAME "¡¸ÔÆ¿ªÎíãØ¡¹"
+#define PNAME "ã€Œäº‘å¼€é›¾é˜–ã€"
 int perform(object me,object target)
 {
 	string msg;
@@ -22,10 +22,10 @@ int perform(object me,object target)
 	if( !target || !target->is_character() || target == me ||	
 	  	!me->is_fighting(target) ||
   	!living(target) || target->query_temp("noliving") )
-		return notify_fail(PNAME"Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail(PNAME"åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 		
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ"PNAME"£¡\n");
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨"PNAME"ï¼\n");
 		
 	fskill = "honghua-shengong";
 	bskill = "hand";
@@ -33,15 +33,15 @@ int perform(object me,object target)
 
 
 	if( (int)me->query_skill(fskill, 1) < 60 )
-		return notify_fail("ÄãµÄ"+to_chinese(fskill)+"µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ"+PNAME+"¡£\n");
+		return notify_fail("ä½ çš„"+to_chinese(fskill)+"ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨"+PNAME+"ã€‚\n");
 	if( (int)me->query_skill(sskill, 1) < 60 )
-		return notify_fail("ÄãµÄ"+to_chinese(sskill)+"µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ"+PNAME+"¡£\n");
+		return notify_fail("ä½ çš„"+to_chinese(sskill)+"ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨"+PNAME+"ã€‚\n");
 	if( me->query("max_neili") < 200 )
-		return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÎŞ·¨Ê¹"PNAME"£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿"PNAME"ï¼\n");
 	if( me->query("neili") < 150 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨ÔËÓÃ"PNAME"£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨"PNAME"ï¼\n");
  
-	msg = HIC "$N"HIC"Ç±ÔË¡¸ÔÆ¿ªÎíãØ¡¹£¬Ë«ÕÆĞ®×ÅÕóÕóµÄ·çÀ×Ö®ÉùÏò$n"HIC"»÷È¥¡£\n"NOR;
+	msg = HIC "$N"HIC"æ½œè¿ã€Œäº‘å¼€é›¾é˜–ã€ï¼ŒåŒæŒæŒŸç€é˜µé˜µçš„é£é›·ä¹‹å£°å‘$n"HIC"å‡»å»ã€‚\n"NOR;
 	message_combatd(msg, me, target);
 	skill = me->query_skill(bskill, 1);
  
@@ -50,7 +50,7 @@ int perform(object me,object target)
 	if( dp < 1 ) dp = 1;
 	if( random(ap) > dp )
 	{
-		msg=HIR"$n"HIR"Ö»¾õµÃĞØÇ°Ò»Õó¾çÍ´£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»¿ÚÏÊÑª£¡\n"NOR;
+		msg=HIR"$n"HIR"åªè§‰å¾—èƒ¸å‰ä¸€é˜µå‰§ç—›ï¼Œâ€œå“‡â€çš„ä¸€å£°å–·å‡ºä¸€å£é²œè¡€ï¼\n"NOR;
 		neili_wound = 600 + random(skill);
 		qi_wound = neili_wound * 3;
 		if(qi_wound > target->query("qi"))
@@ -66,7 +66,7 @@ int perform(object me,object target)
 	}
 	else
 	{
-		msg = HIG"Ö»¼û$n²»»Å²»Ã¦£¬ÇáÇáÒ»ÉÁ£¬¶ã¹ıÁË$NµÄ±ØÉ±Ò»»÷£¡\n"NOR;
+		msg = HIG"åªè§$nä¸æ…Œä¸å¿™ï¼Œè½»è½»ä¸€é—ªï¼Œèº²è¿‡äº†$Nçš„å¿…æ€ä¸€å‡»ï¼\n"NOR;
 		if(userp(me)) me->add("neili",-100);
 		me->start_busy(4);
 	}
@@ -74,21 +74,21 @@ int perform(object me,object target)
 
 	return 1;
 }
-string name() {return replace_string(replace_string(PNAME,"¡¸",""),"¡¹","");}
+string name() {return replace_string(replace_string(PNAME,"ã€Œ",""),"ã€","");}
 
 int help(object me)
 {
-	write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"Ö®"+name()+WHT"£º"NOR"\n");
+	write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"ä¹‹"+name()+WHT"ï¼š"NOR"\n");
 	write(@HELP
 
-	Ê¹ÓÃ¹¦Ğ§£º
-		ÉËº¦¶Ô·½ÆøÑªºÍÄÚÁ¦
+	ä½¿ç”¨åŠŸæ•ˆï¼š
+		ä¼¤å®³å¯¹æ–¹æ°”è¡€å’Œå†…åŠ›
 
-	³öÊÖÒªÇó£º
-		ºì»¨Éñ¹¦60¼¶
-		±¼À×ÊÖ60¼¶
-		ÄÚÁ¦ĞŞÎª200
-		ÄÚÁ¦150
+	å‡ºæ‰‹è¦æ±‚ï¼š
+		çº¢èŠ±ç¥åŠŸ60çº§
+		å¥”é›·æ‰‹60çº§
+		å†…åŠ›ä¿®ä¸º200
+		å†…åŠ›150
 HELP
 	);
 	return 1;

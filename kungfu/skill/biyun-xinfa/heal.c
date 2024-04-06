@@ -5,19 +5,19 @@
 int exert(object me, object target)
 {
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆÉË£¿ÕÒËÀÂð£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if ((int)me->query_skill("biyun-xinfa", 1) < 30)
-		return notify_fail("ÄãµÄ±ÌÔÆÐÄ·¨ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("neili") < 50 ) // - (int)me->query("max_neili") < 50 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-		return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+		return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
-	write( HIG "ÄãÔËÆð±ÌÔÆÐÄ·¨£¬Á³ÉÏÂÓ¹ýÒ»Ë¿ÂÌÉ«¡£\n" NOR);
+	write( HIG "ä½ è¿èµ·ç¢§äº‘å¿ƒæ³•ï¼Œè„¸ä¸ŠæŽ è¿‡ä¸€ä¸ç»¿è‰²ã€‚\n" NOR);
 	message("vision",
-		HIG + me->name() + "ÍÂ³öÒ»¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£\n" NOR,
+		HIG + me->name() + "åå‡ºä¸€å£ç˜€è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n" NOR,
 		environment(me), me);
 
 	me->receive_curing("qi", 10 + (int)me->query_skill("force")/5 );

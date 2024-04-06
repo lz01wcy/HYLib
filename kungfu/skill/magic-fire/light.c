@@ -9,26 +9,26 @@ int perform(object me, object target)
 	object fire,weapon;
 	int zhaosheshu,yangsheshu, exp, MAX_GUARD;
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬ÎŞ·¨ÕÙ»½Ä§·¨»ğÑæ");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ— æ³•å¬å”¤é­”æ³•ç«ç„°");
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 	if((int)me->query("neili")< 300)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 	if((int)me->query_skill("magic-fire",1)< 50)
-	return notify_fail("ÄãµÄ»ğÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„ç«ç³»é­”æ³•å¤ªå·®äº†ï¼\n");
         if (present("fire", me))
-        return notify_fail("ÄãÒÑ¾­ÕÙ»½Ä§·¨»ğÑæÁË£¡\n");
+        return notify_fail("ä½ å·²ç»å¬å”¤é­”æ³•ç«ç„°äº†ï¼\n");
         if (me->query("neili") < 400)
-        return notify_fail("ÄãµÄ·¨Á¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼\n");
          if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
 	me->add("neili",-150);
 	me->start_busy(2);
 	fire= new("/clone/magic/fire");
 	fire->move(me);
 
-	message_vision(RED "\n$N×óÊÖÒ»ÕÅ [³öÀ´°ÉÑ×Ö®Á¦Á¿!] Ò»ÍÅÄ§·¨»ğÑæ, Æ¯¸¡ÔÚÁË$NµÄÇ°·½!!\n" NOR, me);	
-	message_vision(RED "\n$NµÄÁ¦Á¿Ê¹ËÄÖÜÒ»ÏÂ×ÓÁÁÁËÆğÀ´!\n" NOR, fire);
+	message_vision(RED "\n$Nå·¦æ‰‹ä¸€å¼  [å‡ºæ¥å§ç‚ä¹‹åŠ›é‡!] ä¸€å›¢é­”æ³•ç«ç„°, æ¼‚æµ®åœ¨äº†$Nçš„å‰æ–¹!!\n" NOR, me);	
+	message_vision(RED "\n$Nçš„åŠ›é‡ä½¿å››å‘¨ä¸€ä¸‹å­äº®äº†èµ·æ¥!\n" NOR, fire);
 	return 1;
 }

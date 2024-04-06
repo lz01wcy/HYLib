@@ -10,18 +10,18 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	extra = me->query_skill("biyun-xinfa",1);
-	if ( extra < 50) return notify_fail("ÄãµÄ£Û±ÌÔÆÐÄ·¨£Ý»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 50) return notify_fail("ä½ çš„ï¼»ç¢§äº‘å¿ƒæ³•ï¼½è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÓêÎí£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»é›¨é›¾ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if(target->is_busy())
-		return notify_fail(target->name()+"ÒÑ¾­ÃÔÊ§·½Ïò£¡\n");
-	message_vision( HIY "$N×óÊÖÍù$nÒ»»Ó£¬ÌÆÃÅµÄÓêÎí·¢ÁË³öÈ¥£¡\n" NOR ,me,target);
+		return notify_fail(target->name()+"å·²ç»è¿·å¤±æ–¹å‘ï¼\n");
+	message_vision( HIY "$Nå·¦æ‰‹å¾€$nä¸€æŒ¥ï¼Œå”é—¨çš„é›¨é›¾å‘äº†å‡ºåŽ»ï¼\n" NOR ,me,target);
 	if(random((int)target->query("combat_exp")) < (int)me->query("combat_exp"))
 	{
-	message_vision("½á¹û$N±»ÓêÎíÈöµÄ²»Öª·½Ïò£¡\n",target);
+	message_vision("ç»“æžœ$Nè¢«é›¨é›¾æ’’çš„ä¸çŸ¥æ–¹å‘ï¼\n",target);
             target->apply_condition("ill_dongshang",55);
             target->apply_condition("ill_fashao", 55);
             target->apply_condition("ill_kesou", 55);
@@ -30,7 +30,7 @@ int perform(object me, object target)
 	target->start_busy(5);
 	}
 	else{
-	msg = "¿ÉÏ§$N¿´³öÁË$nµÄÓêÎí£¬ÏòÄãÑ¸È»¹¥»÷£¡";
+	msg = "å¯æƒœ$Nçœ‹å‡ºäº†$nçš„é›¨é›¾ï¼Œå‘ä½ è¿…ç„¶æ”»å‡»ï¼";
 	me->start_busy(1);
 	COMBAT_D->do_attack(target,me, target->query_temp("weapon"),TYPE_REGULAR,msg);	
 	}

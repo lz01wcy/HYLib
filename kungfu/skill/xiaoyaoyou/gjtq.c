@@ -12,20 +12,20 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û¹·¼±ÌøÇ½£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»ç‹—æ€¥è·³å¢™ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
                if( objectp(me->query_temp("weapon")) )
-              return notify_fail("Äã±ØÐë¿ÕÊÖÊ¹ÓÃ£¡\n");
+              return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ä½¿ç”¨ï¼\n");
               
         if ( (int)me->query("max_neili") < 2000)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if ( (int)me->query("neili") < 1500)
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("xiaoyaoyou",1) / 20;
-		 msg = YEL "$NÁè¿ÕÒ»Ìø£¬ÉíÐÎÈç±»±Æ¼±µÄÒ°¹·£¬Ë«½ÅÒ»Ç°Ò»ºó£¬ºÝÃüµØÏò$nÌß³ö£¡" NOR;
+		 msg = YEL "$Nå‡Œç©ºä¸€è·³ï¼Œèº«å½¢å¦‚è¢«é€¼æ€¥çš„é‡Žç‹—ï¼ŒåŒè„šä¸€å‰ä¸€åŽï¼Œç‹ å‘½åœ°å‘$nè¸¢å‡ºï¼" NOR;
     COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);   
 if (extra>200) extra=200;
 
@@ -35,7 +35,7 @@ a=extra/2;
 if (a> 12) a=12;
 	for(i=0;i<a;i++)
 	{
-	msg = HIR  "$NÉíËæÒâ×ª£¬ÇáÇáÒ»×ÝÌß³öµÚ"+chinese_number(i+1)+ "½Å£¡" NOR;
+	msg = HIR  "$Nèº«éšæ„è½¬ï¼Œè½»è½»ä¸€çºµè¸¢å‡ºç¬¬"+chinese_number(i+1)+ "è„šï¼" NOR;
 	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add("neili", - 30);
 	}

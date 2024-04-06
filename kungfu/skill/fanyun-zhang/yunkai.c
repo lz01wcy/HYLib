@@ -1,4 +1,4 @@
-// yunkai.c ÔÆ¿ªÎíãØ
+// yunkai.c äº‘å¼€é›¾é˜–
 
 #include <ansi.h>
  
@@ -16,18 +16,18 @@ int perform(object me)
 	skill = me->query_skill("fanyun-zhang",1);
 
 	if( !(me->is_fighting() ))
-		return notify_fail("¡¸ÔÆ¿ªÎíãØ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œäº‘å¼€é›¾é˜–ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
 	if (objectp(weapon = me->query_temp("weapon")))
-		return notify_fail("ÄãÊ¹ÓÃÁËÎäÆ÷¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨äº†æ­¦å™¨ã€‚\n");
 
 	if( skill < 80)
-		return notify_fail("ÄãµÄ¡¸·­ÔÆÕÆ¡¹µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸ÔÆ¿ªÎíãØ¡¹£¡\n");
+		return notify_fail("ä½ çš„ã€Œç¿»äº‘æŒã€ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œäº‘å¼€é›¾é˜–ã€ï¼\n");
 
 	if( me->query("neili") < 250 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸ÔÆ¿ªÎíãØ¡¹£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œäº‘å¼€é›¾é˜–ã€ï¼\n");
  
-	msg = HIC "$NÇ±ÔË¡¸ÔÆ¿ªÎíãØ¡¹£¬Ë«ÕÆĞ®×ÅÕóÕóµÄ·çÀ×Ö®ÉùÏò$n»÷È¥¡£\n"NOR;
+	msg = HIC "$Næ½œè¿ã€Œäº‘å¼€é›¾é˜–ã€ï¼ŒåŒæŒæŒŸç€é˜µé˜µçš„é£é›·ä¹‹å£°å‘$nå‡»å»ã€‚\n"NOR;
 	message_vision(msg, me, target);
  
 	ap = me->query("combat_exp") + skill*2;
@@ -39,7 +39,7 @@ int perform(object me)
 		if(userp(me))
 			me->add("neili",-200);
 
-		msg = HIG "$nÖ»¾õµÃĞØÇ°Ò»Õó¾çÍ´£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»¿ÚÏÊÑª£¡\n"NOR;
+		msg = HIG "$nåªè§‰å¾—èƒ¸å‰ä¸€é˜µå‰§ç—›ï¼Œâ€œå“‡â€çš„ä¸€å£°å–·å‡ºä¸€å£é²œè¡€ï¼\n"NOR;
 		neili_wound = 100 + random(skill);
 		if(neili_wound > target->query("neili"))
 			neili_wound = target->query("neili");
@@ -55,7 +55,7 @@ int perform(object me)
 	}
 	else
 	{
-		msg = HIG "Ö»¼û$n²»»Å²»Ã¦£¬ÇáÇáÒ»ÉÁ£¬¶ã¹ıÁË$NµÄ±ØÉ±Ò»»÷£¡\n"NOR;
+		msg = HIG "åªè§$nä¸æ…Œä¸å¿™ï¼Œè½»è½»ä¸€é—ªï¼Œèº²è¿‡äº†$Nçš„å¿…æ€ä¸€å‡»ï¼\n"NOR;
 		if(userp(me))
 			me->add("neili",-200);
 		me->start_busy(4);

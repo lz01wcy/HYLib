@@ -1,4 +1,4 @@
-// shihou.c Ê¨ºð×Ó
+// shihou.c ç‹®å¼å­
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,12 +7,12 @@ string ask_me();
 
 void create()
 {
-	set_name("Ê¨ºð×Ó", ({ "shihou zi", "shihou" }));
-	set("nickname", "ÐÇËÞÅÉ¶þÊ¦ÐÖ");
+	set_name("ç‹®å¼å­", ({ "shihou zi", "shihou" }));
+	set("nickname", "æ˜Ÿå®¿æ´¾äºŒå¸ˆå…„");
 	set("long", 
-		"Ëû¾ÍÊÇ¶¡´ºÇïµÄ¶þµÜ×ÓÊ¨ºð×Ó¡£\n"
-		"ËûÈýÊ®¶àËê£¬Ê¨±ÇÀ«¿Ú£¬Ò»Íû¶øÖª²»ÊÇÖÐÍÁÈËÊ¿¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"ä»–å°±æ˜¯ä¸æ˜¥ç§‹çš„äºŒå¼Ÿå­ç‹®å¼å­ã€‚\n"
+		"ä»–ä¸‰åå¤šå²ï¼Œç‹®é¼»é˜”å£ï¼Œä¸€æœ›è€ŒçŸ¥ä¸æ˜¯ä¸­åœŸäººå£«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 32);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -53,7 +53,7 @@ void create()
 	prepare_skill("strike", "chousui-zhang");
 	prepare_skill("claw", "sanyin-wugongzhao");
 
-	create_family("ÐÇËÞÅÉ", 2, "µÜ×Ó");
+	create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
 	setup();
   	//carry_object("/clone/weapon/gangzhang")->wield();
@@ -61,6 +61,6 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 }

@@ -1,4 +1,4 @@
-// renmu-daofa È¼Ä¾µ¶·¨
+// renmu-daofa ç‡ƒæœ¨åˆ€æ³•
 // by hunthu 
 
 #include <ansi.h>
@@ -18,41 +18,41 @@ int perform(object me, string arg)
       if( !target ) target = offensive_target(me);
 
       if( !target || !me->is_fighting(target) )
-           return notify_fail("¡¸·ÙÐÄ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+           return notify_fail("ã€Œç„šå¿ƒã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!weapon || weapon->query("skill_type") != "blade"
        || me->query_skill_mapped("blade") != "ranmu-daofa")
-           return notify_fail("ÄãÏÖÔÚÎÞ·¨Ê¹³ö¡¸·ÙÐÄ¡¹¾ø¼¼£¡\n");
+           return notify_fail("ä½ çŽ°åœ¨æ— æ³•ä½¿å‡ºã€Œç„šå¿ƒã€ç»æŠ€ï¼\n");
 
 
         if(me->query_skill("ranmu-daofa", 1) < 160 )
-                return notify_fail("ÄãµÄÈ¼Ä¾µ¶·¨»ðºò²»¹»£¬Ê¹²»³ö¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„ç‡ƒæœ¨åˆ€æ³•ç«å€™ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n");
 
         if(me->query_skill("blade", 1) < 140 )
-                return notify_fail("ÄãµÄ»ù±¾¹¦»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠŸè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_skill("force") < 200 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬Ê¹²»³ö¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_str() < 30)
-                return notify_fail("ÄãµÄëöÁ¦»¹²»¹»Ç¿¾¢£¬Ê¹²»³ö¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„è†‚åŠ›è¿˜ä¸å¤Ÿå¼ºåŠ²ï¼Œä½¿ä¸å‡ºã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n");
 
         if( (int)me->query_dex() < 30)
-                return notify_fail("ÄãµÄÉí·¨»¹²»¹»Ñ¸ÃÍ£¬Ê¹²»³ö¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•è¿˜ä¸å¤Ÿè¿…çŒ›ï¼Œä½¿ä¸å‡ºã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n");
  
        if(me->query_skill("yijinjing", 1) < 170 )   
-                return notify_fail("ÄãµÄÒ×½î¾­ÐÞÎª²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n");  
+                return notify_fail("ä½ çš„æ˜“ç­‹ç»ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n");  
 
        if(me->query_temp("ranmu")) 
-       return notify_fail("ÄãÏÖÔÚÕýÔÚÊ¹ÓÃ¡¸·ÙÐÄ¡¹¾ø¼¼¡£\n"); 
+       return notify_fail("ä½ çŽ°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œç„šå¿ƒã€ç»æŠ€ã€‚\n"); 
 
        if (me->query_temp("fumo"))
-        return notify_fail("ÄãÏÖÔÚÕýÔÚÊ¹ÓÃ¡¸½ð¸Õ·üÄ§¡¹Éñ¹¦¡£\n"); 
+        return notify_fail("ä½ çŽ°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œé‡‘åˆšä¼é­”ã€ç¥žåŠŸã€‚\n"); 
 
         if (me->query("neili") < 800)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if (me->query("jing") < 400)
-        return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili", -500);
         me->add("jing", -300);
         me->add_temp("apply/strength", z);
@@ -60,7 +60,7 @@ int perform(object me, string arg)
         me->add_temp("apply/damage", j);
         me->set_temp("ranmu", 1);
         call_out("check_fight", 1, me, z, j, i);
-        message_vision(HIR"$Nµ¥ÕÆºÏÒ¾£¬Í»È»±¬ºðÒ»Éù£¬ÔËÆð·ðÃÅÖÁÉÏ½ð¸Õ·üÄ§¹¦£¬\nÊÖÖÐµÄµ¶¶ÙÊ±»¯×÷Ò»ÍÅ»ðÑæ£¬¼¤µ´µÄÖËÁ÷½«$nÍÅÍÅÎ§×¡£¡\n"NOR,me,target);
+        message_vision(HIR"$Nå•æŽŒåˆæ–ï¼Œçªç„¶çˆ†å¼ä¸€å£°ï¼Œè¿èµ·ä½›é—¨è‡³ä¸Šé‡‘åˆšä¼é­”åŠŸï¼Œ\næ‰‹ä¸­çš„åˆ€é¡¿æ—¶åŒ–ä½œä¸€å›¢ç«ç„°ï¼Œæ¿€è¡çš„ç‚™æµå°†$nå›¢å›¢å›´ä½ï¼\n"NOR,me,target);
         return 1;
 }
 
@@ -71,8 +71,8 @@ void remove_effect(object me, int j, int z, object weapon)
     me->add_temp("apply/attack", -j);
         me->add_temp("apply/damage", -j);
     me->delete_temp("ranmu");
-    tell_object(me, HIR"Äã¡¸·ÙÐÄ¡¹¾ø¼¼ÔËÐÐÍê±Ï£¬Æø»Øµ¤Ìï");
-    tell_object(me, "¡£\n" NOR);
+    tell_object(me, HIR"ä½ ã€Œç„šå¿ƒã€ç»æŠ€è¿è¡Œå®Œæ¯•ï¼Œæ°”å›žä¸¹ç”°");
+    tell_object(me, "ã€‚\n" NOR);
 }
 
 void check_fight(object me, int z, int j, int i)
@@ -94,7 +94,7 @@ string msg;
 if (! target) target = offensive_target(me);
 if (target && random(6)==0)
 {
-msg = HIR "ÌÏÌìÁÒÑæ£¬Ô¡»ð÷è÷ë£¡\n"NOR;
+msg = HIR "æ»”å¤©çƒˆç„°ï¼Œæµ´ç«éº’éºŸï¼\n"NOR;
 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 }
     call_out("check_fight", 1, me, z, j, i-1);

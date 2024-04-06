@@ -1,4 +1,4 @@
-// tianlei.c ÌúÕÆ--ÄıÑªÉñ×¥
+// tianlei.c é“æŒ--å‡è¡€ç¥æŠ“
 
 #include <ansi.h>
 #include <combat.h>
@@ -15,24 +15,24 @@ int extra;
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÄıÑªÉñ×¥Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å‡è¡€ç¥æŠ“åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(me->query_temp("weapon")) )
-		return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃÄıÑªÉñ×¥£¡\n");
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨å‡è¡€ç¥æŠ“ï¼\n");
 
         if( (int)me->query_skill("yunlong-zhua", 1) < 199 )
-		return notify_fail("ÄãµÄÄıÑªÉñ×¥»¹Î´Á·³É£¬²»ÄÜÊ¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„å‡è¡€ç¥æŠ“è¿˜æœªç»ƒæˆï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
 
         if (me->query_skill("yunlong-shengong", 1)<70)
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»ğºòÎ´µ½£¬£¡\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç«å€™æœªåˆ°ï¼Œï¼\n");
 
         if( (int)me->query("neili", 1) < 600 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬²»ÄÜÊ¹ÓÃÄıÑªÉñ×¥£¡\n");	
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›ä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨å‡è¡€ç¥æŠ“ï¼\n");	
 
 	if( (int)me->query_skill("yunlong-zhua", 1) < 119 )
-		return notify_fail("ÄãµÄÔÆÁú×¥²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÄıÑªÉñ×¥¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™æŠ“ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨å‡è¡€ç¥æŠ“ã€‚\n");
 
-    msg = RED "\n$N°ÑÈ«ÉíµÄ¾¢Á¦×¢ÈëË«ÕÆ,¸ß¸ßÔ¾Æğ£¬**ÄıÑªÉñ×¥**£¬Ò»×¥×¥À´£¬ÊÆ²»¿Éµ²£¡\n"NOR;
+    msg = RED "\n$NæŠŠå…¨èº«çš„åŠ²åŠ›æ³¨å…¥åŒæŒ,é«˜é«˜è·ƒèµ·ï¼Œ**å‡è¡€ç¥æŠ“**ï¼Œä¸€æŠ“æŠ“æ¥ï¼ŒåŠ¿ä¸å¯æŒ¡ï¼\n"NOR;
 		message_vision(msg, me, target);
 
     if( (int)me->query_skill("yunlong-shengong", 1) > 200 )
@@ -41,13 +41,13 @@ int extra;
 	extra += me->query_skill("yunlong-zhua",1) /15;
 	me->add_temp("apply/attack", 80);	
 	me->add_temp("apply/damage", extra);
-    msg = HIC"×óÒ»×¦£¡"NOR;
+    msg = HIC"å·¦ä¸€çˆªï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIG"ÓÒÒ»×¦£¡"NOR;
+    msg = HIG"å³ä¸€çˆªï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIY"ÉÏÒ»×¦£¡"NOR;
+    msg = HIY"ä¸Šä¸€çˆªï¼"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIR"ÏÂÒ»×¦!"NOR;
+    msg = HIR"ä¸‹ä¸€çˆª!"NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 target->apply_condition("zhua_poison",10);
 	me->add_temp("apply/attack", -80);	
@@ -56,14 +56,14 @@ target->apply_condition("zhua_poison",10);
 }
 	if( weapon = target->query_temp("weapon") ){
         if( random(me->query("str")) > (int)target->query("str")*3/4 ) {  
-    msg += HIM"\n$pÖ»¾õµÃ»ëÉíÒ»ÈÈ£¬ÊÖÕÆ»¢¿Ú¾ŞÍ´£¬ÊÖÖĞ"
-                + target->query_temp("weapon")->query("name") + "ÍÑÊÖ¶ø³ö¡£\n" NOR;
+    msg += HIM"\n$påªè§‰å¾—æµ‘èº«ä¸€çƒ­ï¼Œæ‰‹æŒè™å£å·¨ç—›ï¼Œæ‰‹ä¸­"
+                + target->query_temp("weapon")->query("name") + "è„±æ‰‹è€Œå‡ºã€‚\n" NOR;
 		message_vision(msg, me, target);
 		(
 		target->query_temp("weapon"))->move(environment(target));
 		target->start_busy(2);
 	} else {
-    msg += HIY"\n$pÎ£¼±ÖĞÍ»È»·üµØ·­¹ö¶ø³ö£¬±Ü¹ıÁËÕâÖÂÃüÒ»»÷£¬ÒÑÏÅµÃÁ³É«²Ô°×£¡\n" NOR;
+    msg += HIY"\n$på±æ€¥ä¸­çªç„¶ä¼åœ°ç¿»æ»šè€Œå‡ºï¼Œé¿è¿‡äº†è¿™è‡´å‘½ä¸€å‡»ï¼Œå·²å“å¾—è„¸è‰²è‹ç™½ï¼\n" NOR;
 		message_vision(msg, me, target);
 	}
 	me->start_busy(1);
@@ -83,15 +83,15 @@ target->apply_condition("zhua_poison",10);
 		target->receive_damage("qi", damage);
 		target->receive_wound("qi", damage);
 		
-		if( damage < 300 ) msg += HIY"\n½á¹û$nÁ³É«Ò»ÏÂ±äµÃ²Ò°×£¬»è»è³Á³Á½ÓÁ¬ÍËÁËºÃ¼¸²½£¡\n"NOR;
-        	else if( damage < 400 ) msg += HIY"\n½á¹ûÖØÖØµØ»÷ÖĞ£¬$n¡¸ÍÛ¡¹µØÒ»ÉùÍÂ³öÒ»¿ÚÏÊÑª£¡\n"NOR;
-        	else if( damage < 500 ) msg += RED"\n½á¹û¡¸ºä¡¹µØÒ»Éù£¬$nÈ«ÉíÆøÑªµ¹Á÷£¬¿ÚÖĞÏÊÑª¿ñÅç¶ø³ö£¡\n"NOR;
-        	else msg += HIR"\n½á¹ûÖ»Ìı¼û¼¸Éù¿¦¿¦ÇáÏì£¬$nÒ»Éù²Ò½Ğ£¬ÏñÌ²ÈíÄà°ãËúÁËÏÂÈ¥£¡£¡\n"NOR;
+		if( damage < 300 ) msg += HIY"\nç»“æœ$nè„¸è‰²ä¸€ä¸‹å˜å¾—æƒ¨ç™½ï¼Œæ˜æ˜æ²‰æ²‰æ¥è¿é€€äº†å¥½å‡ æ­¥ï¼\n"NOR;
+        	else if( damage < 400 ) msg += HIY"\nç»“æœé‡é‡åœ°å‡»ä¸­ï¼Œ$nã€Œå“‡ã€åœ°ä¸€å£°åå‡ºä¸€å£é²œè¡€ï¼\n"NOR;
+        	else if( damage < 500 ) msg += RED"\nç»“æœã€Œè½°ã€åœ°ä¸€å£°ï¼Œ$nå…¨èº«æ°”è¡€å€’æµï¼Œå£ä¸­é²œè¡€ç‹‚å–·è€Œå‡ºï¼\n"NOR;
+        	else msg += HIR"\nç»“æœåªå¬è§å‡ å£°å–€å–€è½»å“ï¼Œ$nä¸€å£°æƒ¨å«ï¼Œåƒæ»©è½¯æ³¥èˆ¬å¡Œäº†ä¸‹å»ï¼ï¼\n"NOR;
 		
 	} else 
 	{
 		me->start_busy(1);
-    msg += HIY"\n$pÎ£¼±ÖĞÍ»È»·üµØ·­¹ö¶ø³ö£¬±Ü¹ıÁËÕâÖÂÃüÒ»»÷£¬ÒÑÏÅµÃÁ³É«²Ô°×£¡\n" NOR;
+    msg += HIY"\n$på±æ€¥ä¸­çªç„¶ä¼åœ°ç¿»æ»šè€Œå‡ºï¼Œé¿è¿‡äº†è¿™è‡´å‘½ä¸€å‡»ï¼Œå·²å“å¾—è„¸è‰²è‹ç™½ï¼\n" NOR;
 	}
 	message_vision(msg, me, target);
 

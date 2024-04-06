@@ -7,16 +7,16 @@ int perform(object me, object target)
 {
         int skill;
         if( target != me ) return 
-	notify_fail("你只能将［莫无尘］用在自己的身上。\n");
+	notify_fail("浣犲彧鑳藉皢锛昏帿鏃犲皹锛界敤鍦ㄨ嚜宸辩殑韬笂銆俓n");
         if( (int)me->query("neili") < 100 )     return
-        notify_fail("你的内力不够。\n");
+        notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
         if( (int)me->query_temp("wuchen") ) return 
-	notify_fail("你已经在施展［莫无尘］了。\n");
+	notify_fail("浣犲凡缁忓湪鏂藉睍锛昏帿鏃犲皹锛戒簡銆俓n");
 	skill = me->query_skill("nodust-steps",1);
-	if(skill < 150) return notify_fail("你的无尘步太差了！\n");
+	if(skill < 150) return notify_fail("浣犵殑鏃犲皹姝ュお宸簡锛乗n");
 	 me->add("neili", -100);
         message_vision( HIR
-"$N轻身一跃，使出无尘步法中的［莫无尘］，身影随风，无处不在！\n" NOR, me);
+"$N杞昏韩涓�璺冿紝浣垮嚭鏃犲皹姝ユ硶涓殑锛昏帿鏃犲皹锛斤紝韬奖闅忛锛屾棤澶勪笉鍦紒\n" NOR, me);
         me->add_temp("apply/dodge", skill/7);
         me->set_temp("wuchen", 1);
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me, 
@@ -29,6 +29,6 @@ void remove_effect(object me, int amount)
 {
         me->add_temp("apply/dodge", - amount);
         me->delete_temp("wuchen");
-        tell_object(me, "你的［莫无尘］施展完毕，身行稳定了下来。\n");
+        tell_object(me, "浣犵殑锛昏帿鏃犲皹锛芥柦灞曞畬姣曪紝韬绋冲畾浜嗕笅鏉ャ�俓n");
 }
  

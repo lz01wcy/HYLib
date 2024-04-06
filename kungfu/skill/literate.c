@@ -10,7 +10,7 @@ void skill_improved(object me)
 int valid_learn(object me)
 {
 //   if ( me->query("class") != "bonze" )
-//      return notify_fail("你现在不能学习读书写字。\n");
+//      return notify_fail("浣犵幇鍦ㄤ笉鑳藉涔犺涔﹀啓瀛椼�俓n");
     return 1;
 }
 

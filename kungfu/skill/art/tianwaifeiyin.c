@@ -1,4 +1,4 @@
-// tianwaifeiyin.c ÌìÍâ·ÉÒô
+// tianwaifeiyin.c å¤©å¤–é£éŸ³
 #include <ansi.h>
 #include <skill.h>
 #include <weapon.h>
@@ -11,26 +11,26 @@ int perform(object me, object target) {
     int i, skill, damage;
 
     if ((int) me->query("neili") < 500)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     if (me->query_skill("art", 1) < 100)
-        return notify_fail("ÄãµÄÇÙÊõ²»¹»¡£\n");
+        return notify_fail("ä½ çš„ç´æœ¯ä¸å¤Ÿã€‚\n");
     if (me->query_skill("xuantian-wuji", 1) < 100)
-        return notify_fail("ÄãµÄĞşÌìÎŞ¼«¹¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„ç„å¤©æ— æåŠŸä¸å¤Ÿã€‚\n");
 //	if (! present("gu zheng", me))
-//		return notify_fail("Äãµ¯Ê²Ã´£¿\n"); 
+//		return notify_fail("ä½ å¼¹ä»€ä¹ˆï¼Ÿ\n"); 
     skill = me->query_skill("force");
 
     me->add("neili", -500);
     me->receive_damage("qi", 10);
 
     if (environment(me)->query("no_fight"))
-        return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+        return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
     me->receive_damage("qi", 10);
 
     me->start_busy(3);
     message_combatd(
             HIY
-    "$N°Ú³öÁËÒ»ÕÅ¹Åóİ£¬½üµØ¶ø×ø£¬¾²¾²µØ½«Ò»Çú¡¸ÌìÍâ·ÉÒô¡¹µ¯ÁËÆğÀ´£¬Ò»Ê±¼ä£¬Íò¾ßêÍÒô£¬ÖÜÎ§µÄÈË¶¼³Á¾²ÔÚÒ»Æ¬ÇÙÒôÖ®ÖĞ£¡\n"
+    "$Næ‘†å‡ºäº†ä¸€å¼ å¤ç­ï¼Œè¿‘åœ°è€Œåï¼Œé™é™åœ°å°†ä¸€æ›²ã€Œå¤©å¤–é£éŸ³ã€å¼¹äº†èµ·æ¥ï¼Œä¸€æ—¶é—´ï¼Œä¸‡å…·æ™–éŸ³ï¼Œå‘¨å›´çš„äººéƒ½æ²‰é™åœ¨ä¸€ç‰‡ç´éŸ³ä¹‹ä¸­ï¼\n"
     NOR, me);
 
     ob = all_inventory(environment(me));
@@ -42,7 +42,7 @@ int perform(object me, object target) {
         if (!ob[i]->is_character() || ob[i]->is_corpse()) continue;
         if (ob[i]->query_temp("no_kill") > 0) {
             tell_object(ob[i], HIC
-            "ÄãÖ»¾õÌıµÃĞÄ¿õÉñâù£¬ÎŞ±ÈÊæÌ¹......\n"
+            "ä½ åªè§‰å¬å¾—å¿ƒæ—·ç¥æ€¡ï¼Œæ— æ¯”èˆ’å¦......\n"
             NOR);
             ob[i]->add("jing", 1);
             continue;
@@ -50,7 +50,7 @@ int perform(object me, object target) {
 
         if (ob[i]->query("shen") > 0) {
             tell_object(ob[i], HIC
-            "ÄãÖ»¾õÌıµÃĞÄ¿õÉñâù£¬ÎŞ±ÈÊæÌ¹......\n"
+            "ä½ åªè§‰å¬å¾—å¿ƒæ—·ç¥æ€¡ï¼Œæ— æ¯”èˆ’å¦......\n"
             NOR);
             ob[i]->add("jing", 1);
             continue;
@@ -74,7 +74,7 @@ int perform(object me, object target) {
             if (!ob[i]->is_killing(me))
                 ob[i]->fight_ob(me);
             tell_object(ob[i], HIR
-            "ÄãÖ»¾õÌıµÃĞÄ·³ÒâÂÒ£¬ÆøÑªÒ»Õó·­ÌÚ£¬Äæ×ªµ½µ¤Ìï......\n"
+            "ä½ åªè§‰å¬å¾—å¿ƒçƒ¦æ„ä¹±ï¼Œæ°”è¡€ä¸€é˜µç¿»è…¾ï¼Œé€†è½¬åˆ°ä¸¹ç”°......\n"
             NOR);
         }
     }

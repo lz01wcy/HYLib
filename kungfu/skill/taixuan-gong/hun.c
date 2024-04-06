@@ -3,7 +3,7 @@
  
 inherit F_SSERVER;
 
-#define HUN "¡¸" HIW "»ìÌìÒ»Æø" NOR "¡¹"
+#define HUN "ã€Œ" HIW "æ··å¤©ä¸€æ°”" NOR "ã€"
 
 string final(object me, object target, int damage);
 
@@ -17,32 +17,32 @@ int perform(object me, object target)
         if (! target)target = me->select_opponent();
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HUN "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HUN "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail(HUN "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(HUN "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if (me->query_skill("taixuan-gong", 1) < 200)
-                return notify_fail("ÄãµÄÌ«Ðþ¹¦»¹²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" HUN "¡£\n");
+                return notify_fail("ä½ çš„å¤ªçŽ„åŠŸè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" HUN "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "taixuan-gong")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓÐ¼¤·¢Ì«Ðþ¹¦ÎªÈ­½Å£¬ÄÑÒÔÊ©Õ¹" HUN "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰æ¿€å‘å¤ªçŽ„åŠŸä¸ºæ‹³è„šï¼Œéš¾ä»¥æ–½å±•" HUN "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "taixuan-gong")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓÐ¼¤·¢Ì«Ðþ¹¦ÎªÄÚ¹¦£¬ÄÑÒÔÊ©Õ¹" HUN "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰æ¿€å‘å¤ªçŽ„åŠŸä¸ºå†…åŠŸï¼Œéš¾ä»¥æ–½å±•" HUN "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "taixuan-gong")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓÐ×¼±¸Ê¹ÓÃÌ«Ðþ¹¦£¬ÄÑÒÔÊ©Õ¹" HUN "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰å‡†å¤‡ä½¿ç”¨å¤ªçŽ„åŠŸï¼Œéš¾ä»¥æ–½å±•" HUN "ã€‚\n");
         if ((int)me->query_skill("literate", 1)> 5 )
-                return notify_fail("Äã¾õµÃÌ«ÐþÉñ¹¦Éî°ÂÖ®¼«£¬Ò»Ê±¼äÄÑÒÔÁì»á¡£\n");
+                return notify_fail("ä½ è§‰å¾—å¤ªçŽ„ç¥žåŠŸæ·±å¥¥ä¹‹æžï¼Œä¸€æ—¶é—´éš¾ä»¥é¢†ä¼šã€‚\n");
         if (me->query("neili") < 600)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹" HUN "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUN "ã€‚\n");
  
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "\n$N" HIG "Ë«ÊÖºÏÊ®£¬Ë«Ä¿Î¢±Õ£¬Ì«Ðþ°ÂÒå×ÔÐÄµ×Ó¿³ö£¬\nÃÍÈ»¼ä£¬$N"
-              HIG "Ë«ÊÖÏòÇ°ÍÆ³ö£¬Ò»¹ÉÇ¿¾¢µÄÆøÁ÷Ï®Ïò$n " HIG "¡£\n" NOR;
+        msg = HIG "\n$N" HIG "åŒæ‰‹åˆåï¼ŒåŒç›®å¾®é—­ï¼Œå¤ªçŽ„å¥¥ä¹‰è‡ªå¿ƒåº•æ¶Œå‡ºï¼Œ\nçŒ›ç„¶é—´ï¼Œ$N"
+              HIG "åŒæ‰‹å‘å‰æŽ¨å‡ºï¼Œä¸€è‚¡å¼ºåŠ²çš„æ°”æµè¢­å‘$n " HIG "ã€‚\n" NOR;
  
         ap = me->query_skill("taixuan-gong", 1) * 2 + me->query("con") * 10 +
              me->query_skill("unarmed", 1);
@@ -54,8 +54,8 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) < dp)
         {
-                msg += HIY "È»¶ø$n" HIY "È«Á¦µÖµ²£¬ÖÕÓÚ½«$N" HIY
-                       "·¢³öµÄÆøÁ÷µ²×¡¡£\n" NOR;
+                msg += HIY "ç„¶è€Œ$n" HIY "å…¨åŠ›æŠµæŒ¡ï¼Œç»ˆäºŽå°†$N" HIY
+                       "å‘å‡ºçš„æ°”æµæŒ¡ä½ã€‚\n" NOR;
 	        me->start_busy(2);
         } else
         {
@@ -66,10 +66,10 @@ int perform(object me, object target)
                             random(me->query_skill("taixuan-gong", 1))), me);
         target->receive_damage("qi", damage);
         target->receive_wound("qi", damage/2);
-               msg +=HIR "$n" HIR "¼±Ã¦·ÉÉíºóÍË£¬¿ÉÊÇÆøÁ÷Éä"
-                "µÃ¸ü¿ì£¬Ö»Ìý$p" HIR "Ò»Éù²Ò½Ð£¬\nÒ»¹ÉÆø"
-                "Á÷ÒÑ¾­Í¸Ìå¶ø¹ý£¬ÏÊÑª·É½¦£¡\n$n" HIR "¶Ù"
-                "¾õ¾«Á¦»ÁÉ¢£¬ÎÞ·¨¼¯ÖÐ¡£\n" NOR;
+               msg +=HIR "$n" HIR "æ€¥å¿™é£žèº«åŽé€€ï¼Œå¯æ˜¯æ°”æµå°„"
+                "å¾—æ›´å¿«ï¼Œåªå¬$p" HIR "ä¸€å£°æƒ¨å«ï¼Œ\nä¸€è‚¡æ°”"
+                "æµå·²ç»é€ä½“è€Œè¿‡ï¼Œé²œè¡€é£žæº…ï¼\n$n" HIR "é¡¿"
+                "è§‰ç²¾åŠ›æ¶£æ•£ï¼Œæ— æ³•é›†ä¸­ã€‚\n" NOR;
 
         }
                 if (random(3) == 1 && ! target->is_busy())

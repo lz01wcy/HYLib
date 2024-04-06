@@ -1,4 +1,4 @@
-// wen-tailai.c ÎÄÌ©À´
+// wen-tailai.c æ–‡æ³°æ¥
 // Last Modified by winder on Sep. 12 2001
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÎÄÌ©À´", ({ "wen tailai", "wen", "tailai" }));
-	set("title", HIR"ºì»¨»á"HIG"ËÄµ±¼Ò"NOR);
-	set("nickname", HIM"±¼À×ÊÖ"NOR);
-	set("long","ËûÊÇºì»¨»áµÄËÄµ±¼Ò£¬Éí´©Ò»¼şÇàÉ«³¤ÉÀ¡£\nËûÄê¼ÍºÃÏñÔÚÈıÊ®ÉÏÏÂ£¬Éí²ÄÊ®·Ö»±Îà£¬Ë«ÊÖÇà½îÍ»³ö£¬²¼ÂúÁËÀÏ¼ë¡£Ê®ÎåËêÆğÀËµ´½­ºş£¬ÊÖÕÆÏÂ²»Öª»÷±Ğ¹ı¶àÉÙÉñ¼é¾Şí­¡¢Ğ×Í½¶ñ°Ô¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ–‡æ³°æ¥", ({ "wen tailai", "wen", "tailai" }));
+	set("title", HIR"çº¢èŠ±ä¼š"HIG"å››å½“å®¶"NOR);
+	set("nickname", HIM"å¥”é›·æ‰‹"NOR);
+	set("long","ä»–æ˜¯çº¢èŠ±ä¼šçš„å››å½“å®¶ï¼Œèº«ç©¿ä¸€ä»¶é’è‰²é•¿è¡«ã€‚\nä»–å¹´çºªå¥½åƒåœ¨ä¸‰åä¸Šä¸‹ï¼Œèº«æååˆ†æ§æ¢§ï¼ŒåŒæ‰‹é’ç­‹çªå‡ºï¼Œå¸ƒæ»¡äº†è€èŒ§ã€‚åäº”å²èµ·æµªè¡æ±Ÿæ¹–ï¼Œæ‰‹æŒä¸‹ä¸çŸ¥å‡»æ¯™è¿‡å¤šå°‘ç¥å¥¸å·¨æ†ã€å‡¶å¾’æ¶éœ¸ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("class", "swordman");
 	set("age", 32);
 	set("attitude", "peaceful");
@@ -56,7 +56,7 @@ void create()
 		(: exert_function, "recover" :),
 	}) );
 
-	create_family("ºì»¨»á", 2, "µÜ×Ó");
+	create_family("çº¢èŠ±ä¼š", 2, "å¼Ÿå­");
 	setup();
 	carry_object("/d/wudang/obj/bluecloth")->wear();
 }
@@ -70,9 +70,9 @@ void init()
 	if((int)ob->query("shen") < -1000 &&
 		ob->query("family/master_id")=="wen tailai")
 	{
-		command( "chat "+ob->query("name")+"£¡ÄãÕâµÈĞ°¶ñ¼éÕ©Ö®Í½£¬ÎÒÆñÄÜÈÔÊÇÄãµÄÊ¦¸¸¡£\n");
+		command( "chat "+ob->query("name")+"ï¼ä½ è¿™ç­‰é‚ªæ¶å¥¸è¯ˆä¹‹å¾’ï¼Œæˆ‘å²‚èƒ½ä»æ˜¯ä½ çš„å¸ˆçˆ¶ã€‚\n");
 		command("expell "+ ob->query("id"));
-		this_player()->set("title","ºì»¨»á" + RED + "ÆúÍ½" NOR);
+		this_player()->set("title","çº¢èŠ±ä¼š" + RED + "å¼ƒå¾’" NOR);
 	}
 }
 
@@ -80,11 +80,11 @@ void attempt_apprentice(object ob)
 {
 	if ((int)ob->query("shen") < 5000)
 	{
-		command("say ÎÒºì»¨»áÊÕÍ½¼«ÑÏ¡£");
-		command("say ÕâÎ»" + RANK_D->query_respect(ob) + "Æ½Ê±»¹Òª¶à×öÒ»Ğ©ĞĞÏÀÕÌÒåÖ®ÊÂ£¡");
+		command("say æˆ‘çº¢èŠ±ä¼šæ”¶å¾’æä¸¥ã€‚");
+		command("say è¿™ä½" + RANK_D->query_respect(ob) + "å¹³æ—¶è¿˜è¦å¤šåšä¸€äº›è¡Œä¾ ä»—ä¹‰ä¹‹äº‹ï¼");
 		return;
 	}
-	command("say ºÃ£¬ÄãÕâ¸öÄêÇàÈË»¹²»´í£¬ÎÒÊÕÏÂÄãÁË£¡");
+	command("say å¥½ï¼Œä½ è¿™ä¸ªå¹´é’äººè¿˜ä¸é”™ï¼Œæˆ‘æ”¶ä¸‹ä½ äº†ï¼");
 	command("recruit " + ob->query("id"));
 }
 

@@ -1,4 +1,4 @@
-// chan.c Çï·ç³¾·¨ ²ø×Ö¾÷
+// chan.c ç§‹é£Žå°˜æ³• ç¼ å­—è¯€
 
 #include <ansi.h>
 
@@ -13,29 +13,29 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ç£ÖÆ¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç‰µåˆ¶æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»¸ß£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿé«˜ï¼\n");
 
 	if( (int)me->query_skill("qiufeng-chenfa", 1) < 60)
-		return notify_fail("ÄãÇï·ç³¾·¨µÄÐÞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ²ø×Ö¾÷! \n");
+		return notify_fail("ä½ ç§‹é£Žå°˜æ³•çš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ç¼ å­—è¯€! \n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "whip")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 
-	msg = CYN "$NÊ¹³öÇï·ç³¾·¨¡¸²ø¡¹×Ö¾÷£¬·÷³¾Á¬»ÓÆóÍ¼°Ñ$nµÄÈ«Éí²ø×¡¡£\n";
+	msg = CYN "$Nä½¿å‡ºç§‹é£Žå°˜æ³•ã€Œç¼ ã€å­—è¯€ï¼Œæ‹‚å°˜è¿žæŒ¥ä¼å›¾æŠŠ$nçš„å…¨èº«ç¼ ä½ã€‚\n";
 
 	me->start_busy(1);
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°¡£\n" NOR;
+		msg += "ç»“æžœ$pè¢«$Pæ”»äº†ä¸ªæŽªæ‰‹ä¸åŠã€‚\n" NOR;
 		target->start_busy( (int)me->query_skill("qiufeng-chenfa") / 60 + 2);
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓÐÉÏµ±¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
 		me->start_busy(4);
 	}
 	message_combatd(msg, me, target);

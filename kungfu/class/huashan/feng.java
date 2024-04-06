@@ -1,16 +1,16 @@
-// feng.c ·çÇåÑï
+// feng.c é£Žæ¸…æ‰¬
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-	set_name("·çÇåÑï", ({ "feng qingyang", "feng", "qingyang" }));
-//	set("nickname", "´óÊ¦ÐÖ");
+	set_name("é£Žæ¸…æ‰¬", ({ "feng qingyang", "feng", "qingyang" }));
+//	set("nickname", "å¤§å¸ˆå…„");
 	set("long", 
-"Ëû¾ÍÊÇ»ªÉ½½£×ÚµÄ³¤ÀÏ·çÇåÑï¡£ËûÉí²ÄÊÝ³¤£¬Ã¼Óî¼äÒ»Ö±ÁýÕÖ×ÅÒ»¹Éµ­µ­µÄÓÇÉË\n"
-"ÉñÉ«£¬ÏÔÈ»¶Ôµ±ÄêµÄ½£×ÚÆø×ÚÖ®ÕùÒ»Ö±ÄÑÒÔÍü»³¡£\n");
-	set("gender", "ÄÐÐÔ");
+"ä»–å°±æ˜¯åŽå±±å‰‘å®—çš„é•¿è€é£Žæ¸…æ‰¬ã€‚ä»–èº«æç˜¦é•¿ï¼Œçœ‰å®‡é—´ä¸€ç›´ç¬¼ç½©ç€ä¸€è‚¡æ·¡æ·¡çš„å¿§ä¼¤\n"
+"ç¥žè‰²ï¼Œæ˜¾ç„¶å¯¹å½“å¹´çš„å‰‘å®—æ°”å®—ä¹‹äº‰ä¸€ç›´éš¾ä»¥å¿˜æ€€ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 68);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -54,7 +54,7 @@ void create()
 	map_skill("blade", "fanliangyi-dao");
 	map_skill("strike", "hunyuan-zhang");
 
-	create_family("»ªÉ½ÅÉ", 12, "µÜ×Ó");
+	create_family("åŽå±±æ´¾", 12, "å¼Ÿå­");
 
 	set("chat_chance_combat", 60);
 	set("chat_msg_combat", ({
@@ -78,63 +78,63 @@ void attempt_apprentice(object ob)
 	temp = read_file("/kungfu/class/huashan/FENG", 1, 1);
 	student_num = atoi(temp);
 
-	line = "·çÇåÑïËµµÀ£º¡°ÎÒÏÖÔÚ¹²ÓÐ" + temp + "¸öÍ½µÜ¡£¡±\n";
+	line = "é£Žæ¸…æ‰¬è¯´é“ï¼šâ€œæˆ‘çŽ°åœ¨å…±æœ‰" + temp + "ä¸ªå¾’å¼Ÿã€‚â€\n";
 	write(line);
 
     if ( ob->query("int") < 10)
     {
-        command("say Ò²²»ÖªµÀÄãÊÇÕæ´ÏÃ÷»¹ÊÇ¼Ù´ÏÃ÷£¬¿ÉÊÇ×Ü¾÷ÈýÇ§×ÖÄã±³²»ÏÂÀ´¡£");
+        command("say ä¹Ÿä¸çŸ¥é“ä½ æ˜¯çœŸèªæ˜Žè¿˜æ˜¯å‡èªæ˜Žï¼Œå¯æ˜¯æ€»è¯€ä¸‰åƒå­—ä½ èƒŒä¸ä¸‹æ¥ã€‚");
         command("sigh");
         return;
     }
 	if ( student_num == 3)
 	{
-		command("say ÄãÀ´ÍíÁË£¬ÎÒÒÑ¾­ÊÕÁËÈý¸öÍ½µÜÁË¡£");
+		command("say ä½ æ¥æ™šäº†ï¼Œæˆ‘å·²ç»æ”¶äº†ä¸‰ä¸ªå¾’å¼Ÿäº†ã€‚");
 		return;
 	}
 
 	if ((string)ob->query("family/family_name") != "" &&
-	    (string)ob->query("family/family_name") != "»ªÉ½ÅÉ")
+	    (string)ob->query("family/family_name") != "åŽå±±æ´¾")
 	{
-		command("say " + RANK_D->query_respect(ob) + "¼ÈÈ»ÒÑÓÐÃûÊ¦Ö¸µã£¬ºÎ±ØÓÖÀ´°ÝÀÏÐàÄØ£¿");
+		command("say " + RANK_D->query_respect(ob) + "æ—¢ç„¶å·²æœ‰åå¸ˆæŒ‡ç‚¹ï¼Œä½•å¿…åˆæ¥æ‹œè€æœ½å‘¢ï¼Ÿ");
 		return;
 	}
 
     if (((int)ob->query_skill("sword",1) < 80) || ((int)ob->query_skill("huashan-sword",1) < 80))
 	{
-		command("say ÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ»ªÉ½½£·¨»¹Ã»Ñ§µ½¼Ò°É¡£");
+		command("say æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„åŽå±±å‰‘æ³•è¿˜æ²¡å­¦åˆ°å®¶å§ã€‚");
 		return;
 	}
     if (((int)ob->query_skill("force",1) < 80) || ((int)ob->query_skill("zixia-shengong",1) < 80))
 	{
-		command("say ÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ×ÏÏ¼Éñ¹¦»¹Ã»Ñ§µ½¼Ò°É¡£");
+		command("say æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„ç´«éœžç¥žåŠŸè¿˜æ²¡å­¦åˆ°å®¶å§ã€‚");
 		return;
 	}
     if (((int)ob->query_skill("dodge",1) < 80) || ((int)ob->query_skill("feiyan-huixiang",1) < 80))
 	{
-        command("say ÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ·ÉÑà»ØÏè»¹Ã»Ñ§µ½¼Ò°É¡£");
+        command("say æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„é£žç‡•å›žç¿”è¿˜æ²¡å­¦åˆ°å®¶å§ã€‚");
 		return;
 	}
     if ( (int)ob->query_skill("literate",1) < 100)
 	{
-		command("say ÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ¶ÁÊéÊ¶×Ö»¹Ã»Ñ§µ½¼Ò°É¡£");
+		command("say æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„è¯»ä¹¦è¯†å­—è¿˜æ²¡å­¦åˆ°å®¶å§ã€‚");
 		return;
 	}
 
     if ((int)ob->query("shen") < 50000)
 	{
-		command("say ÎÒ»ªÉ½ÅÉÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-		command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+		command("say æˆ‘åŽå±±æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+		command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
 		return;
 	}
 
     if ((int)ob->query_int() < 20) {
-		command("say ÒÀÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ×ÊÖÊËÆºõ²»ÊÊºÏÑ§ÎÒ¶À¹Â¾Å½££¿");
+		command("say ä¾æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„èµ„è´¨ä¼¼ä¹Žä¸é€‚åˆå­¦æˆ‘ç‹¬å­¤ä¹å‰‘ï¼Ÿ");
 		return;
 	}
 
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 	if((string)ob->query("class") != "swordsman")
 		ob->set("class", "swordsman");

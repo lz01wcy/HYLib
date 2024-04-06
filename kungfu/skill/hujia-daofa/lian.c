@@ -14,31 +14,31 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ºú¼Òµ¶·¨µ¶µ¶ÏàÁ¬Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("èƒ¡å®¶åˆ€æ³•åˆ€åˆ€ç›¸è¿åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "blade")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query_skill("hujia-daofa", 1) < 50 )
-		return notify_fail("ÄãµÄºú¼Òµ¶·¨²»¹»æµÊì£¬²»ÄÜÓÃµ¶µ¶ÏàÁ¬¡£\n");
+		return notify_fail("ä½ çš„èƒ¡å®¶åˆ€æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ç”¨åˆ€åˆ€ç›¸è¿ã€‚\n");
 
 	if( (int)me->query("neili") < 400  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	me->delete_temp("lianhuan");
 	extra = me->query_skill("hujia-daofa",1) / 35;
 	extra += me->query_skill("hujia-daofa",1) /35;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = HIR  "$NÒ»Ò§ÑÀ£¬ÊÖÉÏ¶¯×÷¼Ó¿ì£¬Í¬Ê±Ê¹³ö£Ûºú¼Òµ¶·¨ÖĞ£İµÄµ¶µ¶ÏàÁ¬£¬ÊÖÖĞµÄ"+ weapon->name() +" Ò»µ¶Á¬×ÅÒ»µ¶£¬ÉÁµç°ãµÄ»÷Ïò$n£¡" NOR;
+	msg = HIR  "$Nä¸€å’¬ç‰™ï¼Œæ‰‹ä¸ŠåŠ¨ä½œåŠ å¿«ï¼ŒåŒæ—¶ä½¿å‡ºï¼»èƒ¡å®¶åˆ€æ³•ä¸­ï¼½çš„åˆ€åˆ€ç›¸è¿ï¼Œæ‰‹ä¸­çš„"+ weapon->name() +" ä¸€åˆ€è¿ç€ä¸€åˆ€ï¼Œé—ªç”µèˆ¬çš„å‡»å‘$nï¼" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-	msg =  HIR "ÔÚÒ»Æ¬µ¶¹âÖĞ£¬Ò»µ¶ÅüÁË¹ıÀ´\n" NOR;
+	msg =  HIR "åœ¨ä¸€ç‰‡åˆ€å…‰ä¸­ï¼Œä¸€åˆ€åŠˆäº†è¿‡æ¥\n" NOR;
         message_vision(msg, me, target);
 
 	for(i=0;i<extra/5;i++)
 	{
-	msg = HIY "$NÒ§½ôÑÀ¹Ø£¬Ò»µ¶ÓÖÅüÁË¹ıÀ´£¡\n" NOR;
+	msg = HIY "$Nå’¬ç´§ç‰™å…³ï¼Œä¸€åˆ€åˆåŠˆäº†è¿‡æ¥ï¼\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	}
         i = extra/5;

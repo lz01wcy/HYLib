@@ -1,4 +1,4 @@
-// wushuang.c  ÎŞË«ÎŞ¶Ô
+// wushuang.c  æ— åŒæ— å¯¹
 
 #include <ansi.h>
 
@@ -12,24 +12,24 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("ÎŞË«ÎŞ¶ÔÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æ— åŒæ— å¯¹åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 		
 	if( (int)me->query_skill("wushuang-jian", 1) < 150 )
-		return notify_fail("ÄãµÄÎŞË«½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÎŞË«ÎŞ¶Ô¡¹¡£\n");
+		return notify_fail("ä½ çš„æ— åŒå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œæ— åŒæ— å¯¹ã€ã€‚\n");
 			
 			
 	if( (int)me->query("neili", 1) < 300 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÎŞË«ÎŞ¶Ô¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ— åŒæ— å¯¹ã€ã€‚\n");
 
-// ´ËÀà busy + attack pfm ÔõÃ´ÄÜÃ»ÓĞÏŞÖÆ£¿ºÜÈİÒ×Ôì³ÉÁ¬É±£¡ (by xbd)			
+// æ­¤ç±» busy + attack pfm æ€ä¹ˆèƒ½æ²¡æœ‰é™åˆ¶ï¼Ÿå¾ˆå®¹æ˜“é€ æˆè¿æ€ï¼ (by xbd)			
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°ÕıÊÖÃ¦½ÅÂÒ£¬Äã¾¡¹Ü·ÅÊÖ½ø¹¥°É£¡\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£æ‰‹å¿™è„šä¹±ï¼Œä½ å°½ç®¡æ”¾æ‰‹è¿›æ”»å§ï¼\n");
 
-	msg = CYN "$NÎ¢Î¢Ò»Ğ¦£¬ÃÍÎüÒ»¿ÚÆø,ÓûÊ¹³öÒÔÆøÔ¦½£¾ø¼¼¹¥»÷$n¡£\n"NOR;
+	msg = CYN "$Nå¾®å¾®ä¸€ç¬‘ï¼ŒçŒ›å¸ä¸€å£æ°”,æ¬²ä½¿å‡ºä»¥æ°”é©­å‰‘ç»æŠ€æ”»å‡»$nã€‚\n"NOR;
 
 	if( !target->is_killing(me) ) me->kill_ob(target);
 
@@ -44,11 +44,11 @@ int perform(object me, object target)
 		target->receive_damage("qi", damage);
 		target->receive_wound("qi", damage/3);
 		me->add("neili", -damage);
-		msg += HIR"Ö»¼û$NÊÖÖĞ½£¹â»Ã×÷Ò»Ìõ½ğÁú,ÌÚ¿Õ¶øÆğ,Ù¿µÄÕÖÏò$n,\n$nÖ»¾õÒ»¹É´óÁ¦ÆÌÌì¸ÇµØ°ãÑ¹À´,µÇÊ±ÑÛÇ°Ò»»¨£¬Á½¶úºäÃù,ÍÛµÄÅç³öÒ»¿ÚÏÊÑª£¡£¡\n"NOR;
+		msg += HIR"åªè§$Næ‰‹ä¸­å‰‘å…‰å¹»ä½œä¸€æ¡é‡‘é¾™,è…¾ç©ºè€Œèµ·,å€çš„ç½©å‘$n,\n$nåªè§‰ä¸€è‚¡å¤§åŠ›é“ºå¤©ç›–åœ°èˆ¬å‹æ¥,ç™»æ—¶çœ¼å‰ä¸€èŠ±ï¼Œä¸¤è€³è½°é¸£,å“‡çš„å–·å‡ºä¸€å£é²œè¡€ï¼ï¼\n"NOR;
 		me->start_busy(2);
 	} else 
 	{
-		msg += CYN"¿ÉÊÇ$pÃÍµØÏòÇ°Ò»Ô¾,Ìø³öÁË$PµÄ¹¥»÷·¶Î§¡£\n"NOR;
+		msg += CYN"å¯æ˜¯$pçŒ›åœ°å‘å‰ä¸€è·ƒ,è·³å‡ºäº†$Pçš„æ”»å‡»èŒƒå›´ã€‚\n"NOR;
 		me->add("neili", -100);
 		me->start_busy(4);
 	}

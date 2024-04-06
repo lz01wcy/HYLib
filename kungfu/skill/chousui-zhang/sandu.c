@@ -1,4 +1,4 @@
-// sandu.c ³éËèÕÆÉ¢¶¾
+// sandu.c æŠ½é«“æŒæ•£æ¯’
 // By Yzuo 97.04
 
 #include <ansi.h>
@@ -13,35 +13,35 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ê©¶¾Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æ–½æ¯’åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( !target || !target->is_character() )
-		return notify_fail("Ê©¶¾Ö»ÄÜ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æ–½æ¯’åªèƒ½å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if( !(int)me->query_condition("poison_sandu"))
-		return notify_fail("ÄãÏÖÔÚÃ»¶¾¿ÉÉ¢¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ²¡æ¯’å¯æ•£ã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+		return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
 //	if( !userp(target) || wizardp(target) )
-//		return notify_fail("É¢¶¾Ö»ÄÜ¶ÔÍæ¼ÒÊ¹ÓÃ¡£\n");
+//		return notify_fail("æ•£æ¯’åªèƒ½å¯¹ç©å®¶ä½¿ç”¨ã€‚\n");
 
 	if( (int)target->query("combat_exp") < (int)me->query("combat_exp") )
-		return notify_fail("¶ÔÕâÈËÉ¢¶¾ÊÇÃ»ÓÃµÄ¡£\n");
+		return notify_fail("å¯¹è¿™äººæ•£æ¯’æ˜¯æ²¡ç”¨çš„ã€‚\n");
 
 	if( (int)me->query_skill("huagong-dafa", 1) < 40 )
-		return notify_fail("ÄãµÄ»¯¹¦´ó·¨²»¹»æµÊì£¬²»ÄÜÉ¢¶¾¡£\n");
+		return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½æ•£æ¯’ã€‚\n");
 
 	if( (int)me->query_skill("chousui-zhang", 1) < 40 )
-		return notify_fail("ÄãµÄ³éËèÕÆ²»¹»æµÊì£¬²»ÄÜÉ¢¶¾¡£\n");
+		return notify_fail("ä½ çš„æŠ½é«“æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½æ•£æ¯’ã€‚\n");
 
-	msg = GRN "Ö»ÌıµÃ$NµÄ¹Ç½Ú¸ñ¸ñ×÷Ïì£¬$NµÄÊÖÃÍµØ³¤ÁË°ë³ß£¬¾ÓÈ»Ò»°Ñ×¥×¡$nÊÖ
-Íó£¬½«¶¾ÖÊÔËÓÚÊÖĞÄ£¬Ô´Ô´²»¶Ï´«Èë$nÌåÄÚ¡£\n";
+	msg = GRN "åªå¬å¾—$Nçš„éª¨èŠ‚æ ¼æ ¼ä½œå“ï¼Œ$Nçš„æ‰‹çŒ›åœ°é•¿äº†åŠå°ºï¼Œå±…ç„¶ä¸€æŠŠæŠ“ä½$næ‰‹
+è…•ï¼Œå°†æ¯’è´¨è¿äºæ‰‹å¿ƒï¼Œæºæºä¸æ–­ä¼ å…¥$nä½“å†…ã€‚\n";
 
 	me->start_busy(1);
 	if( random( (int)me->query_skill("chousui-zhang",1))
           > random(target->query_skill("dodge") ) ) {
-		msg += CYN " ½á¹û$pÎŞÁ¦ÕõÔú£¬$PµÄ±¾ÉíÒõ¶¾²»¶ÏÉ¢Èë$nÌåÄÚ£¡\n" NOR;
+		msg += CYN " ç»“æœ$pæ— åŠ›æŒ£æ‰ï¼Œ$Pçš„æœ¬èº«é˜´æ¯’ä¸æ–­æ•£å…¥$nä½“å†…ï¼\n" NOR;
             target->receive_damage("qi",20);
             target->receive_wound("qi",15 + random(10));
 	 target->apply_condition("xx_sandu",20);
@@ -54,7 +54,7 @@ int perform(object me, object target)
 		COMBAT_D->report_status(target);
 
 	} else {
-		msg += "¿ÉÊÇ$p¼±ÌáÄÚÁ¦·ÜÁ¦Ò»Õğ£¬½«$NµÄÊÖÕğÁË¿ªÈ¥¡£\n" NOR;
+		msg += "å¯æ˜¯$pæ€¥æå†…åŠ›å¥‹åŠ›ä¸€éœ‡ï¼Œå°†$Nçš„æ‰‹éœ‡äº†å¼€å»ã€‚\n" NOR;
 		me->start_busy(3);
 		message_combatd(msg, me, target);
 	}

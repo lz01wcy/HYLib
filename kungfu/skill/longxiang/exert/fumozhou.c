@@ -11,7 +11,7 @@ void remove_effect(object me)
       me->add_temp("apply/strength", -me->query_skill("longxiang", 1)/6);
       me->add_temp("apply/dexerity", -me->query_skill("longxiang", 1)/6);
       me->delete_temp("mz_lx");
-      tell_object(me,HIR"ÄãµÄ¡¸½µÑý·üÄ§Öä¡¹ÔË¹¦Íê±Ï£¬¸Ðµ½ÄÚ¾¢½¥½¥ÏûÍË¡£\n"NOR);
+      tell_object(me,HIR"ä½ çš„ã€Œé™å¦–ä¼é­”å’’ã€è¿åŠŸå®Œæ¯•ï¼Œæ„Ÿåˆ°å†…åŠ²æ¸æ¸æ¶ˆé€€ã€‚\n"NOR);
       }
 }
 void check_fight(object me)
@@ -33,27 +33,27 @@ int exert(object me)
       int i, z;
 
       if( (int)me->query_skill("longxiang",1) < 120 )
-          return notify_fail("ÐèÒªÓÐµÚÁù²ãÒÔÉÏµÄÁúÏó°ãÈô¹¦£¬²ÅÄÜÔËÓÃ¡¸½µÑý·üÄ§Öä¡¹£¡\n"); 
+          return notify_fail("éœ€è¦æœ‰ç¬¬å…­å±‚ä»¥ä¸Šçš„é¾™è±¡èˆ¬è‹¥åŠŸï¼Œæ‰èƒ½è¿ç”¨ã€Œé™å¦–ä¼é­”å’’ã€ï¼\n"); 
       if( (int)me->query_skill("lamaism",1) < 120 )
-          return notify_fail("ÄãµÄÃÜ×ÚÐÄ·¨²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸½µÑý·üÄ§Öä¡¹£¡\n");      
+          return notify_fail("ä½ çš„å¯†å®—å¿ƒæ³•ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œé™å¦–ä¼é­”å’’ã€ï¼\n");      
       if( !me->is_fighting() )
-          return notify_fail("¡¸½µÑý·üÄ§Öä¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+          return notify_fail("ã€Œé™å¦–ä¼é­”å’’ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
       if (me->query_temp("weapon"))
-           return notify_fail("¡¸½µÑý·üÄ§Öä¡¹ÄÃ×ÅÎäÆ÷ÊÇÊ¹²»³öÀ´µÄ£¡\n");
+           return notify_fail("ã€Œé™å¦–ä¼é­”å’’ã€æ‹¿ç€æ­¦å™¨æ˜¯ä½¿ä¸å‡ºæ¥çš„ï¼\n");
       if( (int)me->query("neili") < 800 || (int)me->query("max_neili")<1200  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
       if( (int)me->query_temp("mz_lx") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
       if(me->query_temp("honglian"))        
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃ¡¸ºìÁ«»ð¡¹¡£\n");  
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ã€Œçº¢èŽ²ç«ã€ã€‚\n");  
       if(me->query_temp("combat_yield"))
-           return notify_fail("Å¶¡£¡£¡£ÄãÏÖÔÚÕý´ò²»»¹ÊÖÄØ¡£\n");
+           return notify_fail("å“¦ã€‚ã€‚ã€‚ä½ çŽ°åœ¨æ­£æ‰“ä¸è¿˜æ‰‹å‘¢ã€‚\n");
 
       i = me->query_skill("longxiang", 1)/6;
       z = me->query_skill("lamaism")/3;
       me->add("neili", -500);
 
-      message_vision(HIR "\n$NÍ½È»Áè¿ÕÔ¾Æð£¬Ë«±ÛÏòÉÏÉìÕ¹£¬¿ÚÖÐà«à«ÄîÆð¡¸½µÑý·üÄ§Öä¡¹£¬ÄÚÁ¦ÐÚÓ¿¶øÖÁ£¬Ò»²ãÒ»²ãµÄ¼ÓÇ¿£¡\n\n" NOR, me);
+      message_vision(HIR "\n$Nå¾’ç„¶å‡Œç©ºè·ƒèµ·ï¼ŒåŒè‡‚å‘ä¸Šä¼¸å±•ï¼Œå£ä¸­å–ƒå–ƒå¿µèµ·ã€Œé™å¦–ä¼é­”å’’ã€ï¼Œå†…åŠ›æ±¹æ¶Œè€Œè‡³ï¼Œä¸€å±‚ä¸€å±‚çš„åŠ å¼ºï¼\n\n" NOR, me);
       me->add_temp("apply/strength", i);
       me->add_temp("apply/dexerity", i);
       me->set_temp("mz_lx", 1);

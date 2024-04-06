@@ -5,7 +5,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define JI "¡¸" HIY "°ãÈô¼«" NOR "¡¹"
+#define JI "ã€Œ" HIY "èˆ¬è‹¥æ" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -21,39 +21,39 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(JI "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(JI "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail(JI "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(JI "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("longxiang", 1) < 300)
-                return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" JI "¡£\n");
+                return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" JI "ã€‚\n");
 
         if (me->query("max_neili") < 5000)
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" JI "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" JI "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "longxiang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁúÏó°ãÈô¹¦ÎªÈ­½Å£¬ÄÑÒÔÊ©Õ¹" JI "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é¾™è±¡èˆ¬è‹¥åŠŸä¸ºæ‹³è„šï¼Œéš¾ä»¥æ–½å±•" JI "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "longxiang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁúÏó°ãÈô¹¦ÎªÄÚ¹¦£¬ÄÑÒÔÊ©Õ¹" JI "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é¾™è±¡èˆ¬è‹¥åŠŸä¸ºå†…åŠŸï¼Œéš¾ä»¥æ–½å±•" JI "ã€‚\n");
 
 
 
         if (me->query("neili") < 800)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" JI "¡£\n");
+                return notify_fail("ä½ ç°åœ¨çš„çœŸæ°”ä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" JI "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
         layer = me->query_skill("longxiang", 1) / 30;
 
         if (layer > 13) layer = 13;
 
-        msg = HIY "$N" HIY "ÔË×ªÁúÏó°ãÈô¹¦µÚ" + chinese_number(layer) + "²ã"
-              "¹¦Á¦£¬Ë«È­Ğ¯×Å¡º" HIR "Ê®ÁúÊ®Ïó" HIY "¡»Ö®Á¦³¯$n" HIY "±À»÷"
-              "\n¶ø³ö£¬È­·æ¹ı´¦£¬¾¹¾íÆğÍòÀï³¾°££¬ÕıÊÇÃÜ×Ú¾øÑ§¡¸" HIW "°ãÈô"
-              "¼«" HIY "¡¹¡£\n" NOR;
+        msg = HIY "$N" HIY "è¿è½¬é¾™è±¡èˆ¬è‹¥åŠŸç¬¬" + chinese_number(layer) + "å±‚"
+              "åŠŸåŠ›ï¼ŒåŒæ‹³æºç€ã€" HIR "åé¾™åè±¡" HIY "ã€ä¹‹åŠ›æœ$n" HIY "å´©å‡»"
+              "\nè€Œå‡ºï¼Œæ‹³é”‹è¿‡å¤„ï¼Œç«Ÿå·èµ·ä¸‡é‡Œå°˜åŸƒï¼Œæ­£æ˜¯å¯†å®—ç»å­¦ã€Œ" HIW "èˆ¬è‹¥"
+              "æ" HIY "ã€ã€‚\n" NOR;
 
         ap = me->query_skill("unarmed") + me->query_skill("force"); 
         dp = target->query_skill("parry") + target->query_skill("force"); 
@@ -67,17 +67,17 @@ int perform(object me, object target)
                         target->add_temp("apply/armor", -shd);
                         target->delete_temp("shield");
 
-                        msg += HIW "$N" HIW "î¸ÆøÓ¿ÖÁ£¬¾¹È»¼¤Æğ²ã²ãÆøÀË£¬¶ÙÊ±½«$n"
-                               HIW "µÄ»¤ÌåÕæÆø´İ»ÙµÃµ´È»ÎŞ´æ£¡\n" NOR;
+                        msg += HIW "$N" HIW "ç½¡æ°”æ¶Œè‡³ï¼Œç«Ÿç„¶æ¿€èµ·å±‚å±‚æ°”æµªï¼Œé¡¿æ—¶å°†$n"
+                               HIW "çš„æŠ¤ä½“çœŸæ°”æ‘§æ¯å¾—è¡ç„¶æ— å­˜ï¼\n" NOR;
                 }
                 jia = me->query("jiali");
 
                 damage = 150+me->query_skill("unarmed");
    target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg += HIR "$n" HIR "²»¼°ÉÁ±Ü£¬¶Ù±»$N" HIR
-                                               "Ë«È­»÷¸öÕıÖĞ£¬°ãÈôî¸¾¢ÆÆÌå¶øÈë£¬¾¡"
-                                               "ÉËÈı½¹ÁùÂö¡£\n" NOR;
+                msg += HIR "$n" HIR "ä¸åŠé—ªé¿ï¼Œé¡¿è¢«$N" HIR
+                                               "åŒæ‹³å‡»ä¸ªæ­£ä¸­ï¼Œèˆ¬è‹¥ç½¡åŠ²ç ´ä½“è€Œå…¥ï¼Œå°½"
+                                               "ä¼¤ä¸‰ç„¦å…­è„‰ã€‚\n" NOR;
 
                 me->start_busy(3);
                 me->add("neili", -800);
@@ -85,8 +85,8 @@ int perform(object me, object target)
         {
                 me->start_busy(3);
                 me->add("neili", -500);
-                msg += CYN "¿ÉÊÇ$p" CYN "Ê¶ÆÆÁË$P"
-                       CYN "ÕâÒ»ÕĞ£¬Ğ±Ğ±Ò»Ô¾±Ü¿ª¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "è¯†ç ´äº†$P"
+                       CYN "è¿™ä¸€æ‹›ï¼Œæ–œæ–œä¸€è·ƒé¿å¼€ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

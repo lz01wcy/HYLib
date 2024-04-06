@@ -13,25 +13,25 @@ int perform(object me, object target)
         ||  !target->is_character()
         ||  !me->is_fighting(target) 
         || !living(target))
-                return notify_fail("¡¸Èı»·Ì×ÔÂ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¸‰ç¯å¥—æœˆã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if( (int)me->query_skill("taiji-jian", 1) < 120 )
-                return notify_fail("ÄãµÄÌ«¼«½£·¨¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„å¤ªæå‰‘æ³•åŠŸåŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
 
         if( (int)me->query_skill("sword", 1) < 120 )
-                return notify_fail("ÄãµÄ»ù±¾½£·¨¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å‰‘æ³•åŠŸåŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
 
         if( (int)me->query_skill("taiji-shengong", 1) < 120 )
-                return notify_fail("ÄãµÄÄÚ¹¦¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸåŠŸåŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
                 
         if( (int)me->query("max_neili") < 1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªæµ…ï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
         if( (int)me->query("neili") < 500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œåˆ«åšæ¢¦äº†ã€‚\n");
         if (me->query_skill_mapped("force") != "taiji-shengong")
-                return notify_fail("ÄãÓÃÊ²Ã´ÎªÄÚ¹¦»ù´¡À´Ê¹¡¸Èı»·Ì×ÔÂ¡¹?\n");
+                return notify_fail("ä½ ç”¨ä»€ä¹ˆä¸ºå†…åŠŸåŸºç¡€æ¥ä½¿ã€Œä¸‰ç¯å¥—æœˆã€?\n");
         if (!objectp(weapon = me->query_temp("weapon")) || weapon->query("skill_type") != "sword"
             || me->query_skill_mapped("sword") != "taiji-jian")
-                return notify_fail("ÄãÊ¹µÃÁË¡¸Èı»·Ì×ÔÂ¡¹Ã´?\n");
+                return notify_fail("ä½ ä½¿å¾—äº†ã€Œä¸‰ç¯å¥—æœˆã€ä¹ˆ?\n");
                  
         me->add("neili", -100);
         me->add("jing", -40);
@@ -48,6 +48,6 @@ if( me->is_fighting() ) me->start_busy(2);
         me->add_temp("apply/damage", -j);   
         me->start_busy(2);
            me->delete_temp("tjj/sanhuan"); 
-//        me->start_perform(4, "¡¸Èı»·Ì×ÔÂ¡¹");
+//        me->start_perform(4, "ã€Œä¸‰ç¯å¥—æœˆã€");
         return 1;
 }

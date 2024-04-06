@@ -15,24 +15,24 @@ int perform(object me, object target1,object target2)
 
 	if(me->is_busy())
 
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
 
 	if( (int)me->query_skill("tiexian-quan", 1) < 150 )
-		return notify_fail("ÄãµÄ´ËÏîÎä¹¦»¹²»µ½¼Ò¡£\n");
+		return notify_fail("ä½ çš„æ­¤é¡¹æ­¦åŠŸè¿˜ä¸åˆ°å®¶ã€‚\n");
 
 	if( (int)me->query_skill("unarmed") < 60 ||
 
 	    me->query_skill_mapped("unarmed") != "tiexian-quan")
 
-		return notify_fail(HIW "ÄãµÄ¡¸ÌúÏßÈ­¡¹»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸Ð¡Å²ÒÆ¡¹£¡\n"NOR);
+		return notify_fail(HIW "ä½ çš„ã€Œé“çº¿æ‹³ã€è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œå°æŒªç§»ã€ï¼\n"NOR);
 
 	enemy=me->query_enemy();
 
-        if (sizeof(enemy)<2) return notify_fail("Äã±ØÐëÍ¬Ê±ºÍÁ½¸öÒÔÉÏµÄµÐÊÖÕ½¶·²ÅÄÜÊ¹ÓÃÐ¡Å²ÒÆ£¡\n");
+        if (sizeof(enemy)<2) return notify_fail("ä½ å¿…é¡»åŒæ—¶å’Œä¸¤ä¸ªä»¥ä¸Šçš„æ•Œæ‰‹æˆ˜æ–—æ‰èƒ½ä½¿ç”¨å°æŒªç§»ï¼\n");
 
-        if( !target1 && target2) return notify_fail("Äã±ØÐëÍ¬Ê±Ö¸¶¨Á½¸ö¶ÔÊÖ\n");
+        if( !target1 && target2) return notify_fail("ä½ å¿…é¡»åŒæ—¶æŒ‡å®šä¸¤ä¸ªå¯¹æ‰‹\n");
 
-        if( !target2 && target1) return notify_fail("Äã±ØÐëÍ¬Ê±Ö¸¶¨Á½¸ö¶ÔÊÖ\n");
+        if( !target2 && target1) return notify_fail("ä½ å¿…é¡»åŒæ—¶æŒ‡å®šä¸¤ä¸ªå¯¹æ‰‹\n");
 
 	if(!target1 && !target2)
 
@@ -50,13 +50,13 @@ int perform(object me, object target1,object target2)
 
 	||	!me->is_fighting(target1) || !me->is_fighting(target2))
 
-		return notify_fail(HIW "£ÛÐ¡Å²ÒÆ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+		return notify_fail(HIW "ï¼»å°æŒªç§»ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
-	if (me->query("neili")<=350) return notify_fail(HIW "ÄãµÄÄÚÁ¦²»×ã£¬ÎÞ·¨´ø¶¯µÐÈË¹¥ÊÆ£¡\n"NOR);
+	if (me->query("neili")<=350) return notify_fail(HIW "ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•å¸¦åŠ¨æ•Œäººæ”»åŠ¿ï¼\n"NOR);
 
         me->add("neili",-300);
 
-        message_vision(HIR "\n$NÊ¹³öä½»¨½£ÅÉµÄ²»´«Ö®ÃØ¡¸Ð¡Å²ÒÆ¡¹\n\n"NOR,me);
+        message_vision(HIR "\n$Nä½¿å‡ºæµ£èŠ±å‰‘æ´¾çš„ä¸ä¼ ä¹‹ç§˜ã€Œå°æŒªç§»ã€\n\n"NOR,me);
 
         me->start_busy(2);
 
@@ -69,7 +69,7 @@ int perform(object me, object target1,object target2)
 
         {
 
-          message_vision(HIY "$NÉìÊÖ´ø¶¯$nµÄ¹¥ÊÆ£¬Ê¹Ö®¹¥Ïò"+target2->name()+"£¡\n" NOR,me,target1);
+          message_vision(HIY "$Nä¼¸æ‰‹å¸¦åŠ¨$nçš„æ”»åŠ¿ï¼Œä½¿ä¹‹æ”»å‘"+target2->name()+"ï¼\n" NOR,me,target1);
 
           COMBAT_D->do_attack(target1,target2, weapon);  
 
@@ -89,7 +89,7 @@ int perform(object me, object target1,object target2)
 
         {
 
-          message_vision(HIR "µ«$n¿´ÆÆ$NµÄÒâÍ¼£¬³ÃÊÆ·¢¶¯¹¥»÷£¡\n"NOR,me,target1);
+          message_vision(HIR "ä½†$nçœ‹ç ´$Nçš„æ„å›¾ï¼Œè¶åŠ¿å‘åŠ¨æ”»å‡»ï¼\n"NOR,me,target1);
 
           COMBAT_D->do_attack(target1,me,weapon);
 
@@ -102,7 +102,7 @@ int perform(object me, object target1,object target2)
 
         {
 
-          message_vision(HIY "$NÉìÊÖ´ø¶¯$nµÄ¹¥ÊÆ£¬Ê¹Ö®¹¥Ïò"+target1->name()+"£¡\n" NOR,me,target2);
+          message_vision(HIY "$Nä¼¸æ‰‹å¸¦åŠ¨$nçš„æ”»åŠ¿ï¼Œä½¿ä¹‹æ”»å‘"+target1->name()+"ï¼\n" NOR,me,target2);
 
           COMBAT_D->do_attack(target2,target1, weapon);  
 
@@ -116,7 +116,7 @@ int perform(object me, object target1,object target2)
 
         {
 
-          message_vision(HIR "µ«$n¿´ÆÆ$NµÄÒâÍ¼£¬³ÃÊÆ·¢¶¯¹¥»÷£¡\n"NOR,me,target2);
+          message_vision(HIR "ä½†$nçœ‹ç ´$Nçš„æ„å›¾ï¼Œè¶åŠ¿å‘åŠ¨æ”»å‡»ï¼\n"NOR,me,target2);
 
           COMBAT_D->do_attack(target2,me,weapon);
 

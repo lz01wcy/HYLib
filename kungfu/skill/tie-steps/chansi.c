@@ -10,23 +10,23 @@ int perform(object me, object target)
 	string msg;
 	object weapon;
 	skill = me->query_skill("tie-steps",1);
-	if(skill < 100) return notify_fail("ÄãµÄÌúÑªÊ®¶şÊÆÌ«²îÁË£¡\n"); 
+	if(skill < 100) return notify_fail("ä½ çš„é“è¡€åäºŒåŠ¿å¤ªå·®äº†ï¼\n"); 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û²øË¿ÊÆ£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»ç¼ ä¸åŠ¿ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ ç°åœ¨æ²¡ç©ºï¼ï¼\n");
         if( (int)me->query("neili") < 100 )     return
-        notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)target->query_temp("chansi") ) return 
-	notify_fail("ÄãÒÑ¾­ÔÚÊ©Õ¹£Û²øË¿ÊÆ£İÁË¡£\n");
+	notify_fail("ä½ å·²ç»åœ¨æ–½å±•ï¼»ç¼ ä¸åŠ¿ï¼½äº†ã€‚\n");
        	if((int)target->query("combat_exp") < random((int)me->query("combat_exp")*skill/40))
 	{
 		me->add("neili", -100);
         	message_vision( HIR
-		"$NÇáÉíÒ»Ô¾£¬Ê¹³ö£Û²øË¿ÊÆ£İ£¬$nµÄÉíĞÎÊÜÄãµÄÓ°Ïì£¬±äµÄÉúÉ¬ÆğÀ´£¡\n" NOR, me,target);
+		"$Nè½»èº«ä¸€è·ƒï¼Œä½¿å‡ºï¼»ç¼ ä¸åŠ¿ï¼½ï¼Œ$nçš„èº«å½¢å—ä½ çš„å½±å“ï¼Œå˜çš„ç”Ÿæ¶©èµ·æ¥ï¼\n" NOR, me,target);
         	target->add_temp("apply/dodge", -skill/3);
 		target->add_temp("apply/parry",-skill/3);       
         	target->set_temp("chansi", 1);
@@ -36,7 +36,7 @@ int perform(object me, object target)
 	}
 	else
 	{
-		msg = "¿ÉÏ§$N¿´³öÁË$nµÄÉí·¨£¬ÏòÄãÑ¸È»¹¥»÷£¡";
+		msg = "å¯æƒœ$Nçœ‹å‡ºäº†$nçš„èº«æ³•ï¼Œå‘ä½ è¿…ç„¶æ”»å‡»ï¼";
 		COMBAT_D->do_attack(target,me, target->query_temp("weapon"),TYPE_REGULAR,msg);	
         	me->start_busy(1);
 	}
@@ -48,6 +48,6 @@ void remove_effect(object target, int amount)
         target->add_temp("apply/dodge", - amount);
 	target->add_temp("apply/parry",- amount);
         target->delete_temp("chansi");
-        message_vision("$NÖÕÓÚ°ÚÍÑÁË£Û²øË¿ÊÆ£İµÄÓ°Ïì¡£\n",target);
+        message_vision("$Nç»ˆäºæ‘†è„±äº†ï¼»ç¼ ä¸åŠ¿ï¼½çš„å½±å“ã€‚\n",target);
 }
  

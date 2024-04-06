@@ -10,45 +10,45 @@ int perform(object me, object target)
 
         if (!target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIC"¡¸ÉóÅÐÖ®Ê¥À×¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIC"ã€Œå®¡åˆ¤ä¹‹åœ£é›·ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 3000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõÐ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°çŽ©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-ice",1)< 700)
-	return notify_fail("ÄãµÄÆøÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ°”ç³»é­”æ³•å¤ªå·®äº†ï¼\n");
 
-	msg = HIC "$N"HIC"ÓÃÊÖÔÚÌì¿Õ»®ÁËÒ»¸öÎåÃ¢ÐÇ£¬¿ÚÖÐà«à«µØÄîÖøÖäÎÄ£¬\n" NOR;
-       msg += HIC"$N"HIC"Äîµ½ ¼¤Å­ÉñµÄÈËÃÇ£¬½«³ÐÊÜÉÏÌìÎÞÇéµÄÖÆ²Ã¡­¡­\n"NOR;
-msg += HIC"$N"HIC"Äîµ½ ÒÔÌìµØÖîÔªÎªÃû£¬ÕÙ¼¯ËÄ·½Ö®À×£¬Ê®¶þ½çµÄÖîµçÖ®Á¦¹©ÎÒÊ¹»½£¡£¡\n"NOR;
-msg += HIC"$N"HIC"Äîµ½ ÔÚÀ¶É«µÄ»ð£¬°×É«µÄ¹âÖÐ£¬À×µç½áºÏ£¬É¨¾¡Ò»ÇÐÖ®µÐ£¡£¡£¡£¡\n"NOR;
-       msg += HIC"ÔÚÀ¶µÄ¿ÉÅÂµÄÌì¿ÕÖÐ£¬Ò»µÀ"HIY"ÉóÅÐÖ®Ê¥À×"HIC"Ïò$n"HIC"´òÈ¥£¡\n"NOR;
+	msg = HIC "$N"HIC"ç”¨æ‰‹åœ¨å¤©ç©ºåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œ\n" NOR;
+       msg += HIC"$N"HIC"å¿µåˆ° æ¿€æ€’ç¥žçš„äººä»¬ï¼Œå°†æ‰¿å—ä¸Šå¤©æ— æƒ…çš„åˆ¶è£â€¦â€¦\n"NOR;
+msg += HIC"$N"HIC"å¿µåˆ° ä»¥å¤©åœ°è¯¸å…ƒä¸ºåï¼Œå¬é›†å››æ–¹ä¹‹é›·ï¼ŒåäºŒç•Œçš„è¯¸ç”µä¹‹åŠ›ä¾›æˆ‘ä½¿å”¤ï¼ï¼\n"NOR;
+msg += HIC"$N"HIC"å¿µåˆ° åœ¨è“è‰²çš„ç«ï¼Œç™½è‰²çš„å…‰ä¸­ï¼Œé›·ç”µç»“åˆï¼Œæ‰«å°½ä¸€åˆ‡ä¹‹æ•Œï¼ï¼ï¼ï¼\n"NOR;
+       msg += HIC"åœ¨è“çš„å¯æ€•çš„å¤©ç©ºä¸­ï¼Œä¸€é“"HIY"å®¡åˆ¤ä¹‹åœ£é›·"HIC"å‘$n"HIC"æ‰“åŽ»ï¼\n"NOR;
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp")/3)
         {
                 damage = (int)me->query_skill("magic-ice", 1);
-//¶ÔÆøÊôÐÔÄ¿±êÎÞ×÷ÓÃ
+//å¯¹æ°”å±žæ€§ç›®æ ‡æ— ä½œç”¨
        if ((int)target->query("magicgift")==3)
 {
 damagic=2500+damage;
                 target->receive_damage("qi", damagic);
 if (wizardp(me))
-tell_object(me, "\n»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "\nåŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 
 damagic=2000+damage;
                 target->receive_wound("qi", damagic);
 }
-//¶ÔÍÁÊôÐÔÄ¿±êÇ¿´ó
+//å¯¹åœŸå±žæ€§ç›®æ ‡å¼ºå¤§
 else  if ((int)target->query("magicgift")==4)
 {
 damagic=6500+damage*8;
                 target->receive_damage("qi", damagic);
 if (wizardp(me))
-tell_object(me, "\n»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "\nåŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 damagic=6500+damage*4;
                 target->receive_wound("qi", damagic);
 }
@@ -58,18 +58,18 @@ damagic=2000+damage*3;
 target->receive_damage("qi", 2000+damage*3);
 target->receive_wound("qi", 2000+damage*2);
 if (wizardp(me))
-tell_object(me, "\n»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "\nåŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 }
 target->start_busy(1);
 msg += HIC"                                         \n"NOR;
-msg += HIC"¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­  \n"NOR;
-msg += HIC">>>---------¡ï¡ú                     \n"NOR;
-msg += HIC"    >>>------ÉóÅÐÖ®Ê¥À× !  ---->      \n"NOR;
-msg += HIC"                    >>>---------¡ï¡ú \n"NOR;
-msg += HIC"¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­   \n"NOR;
+msg += HIC"â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦  \n"NOR;
+msg += HIC">>>---------â˜…â†’                     \n"NOR;
+msg += HIC"    >>>------å®¡åˆ¤ä¹‹åœ£é›· !  ---->      \n"NOR;
+msg += HIC"                    >>>---------â˜…â†’ \n"NOR;
+msg += HIC"â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦   \n"NOR;
 msg += HIC"                                         \n"NOR;
-        msg += HIR"À×ÉñµÄÁ¦Á¿³öÏÖ!!$nµÄ¸½½ü³ÉÁËÀ×µÄµØÓü!!\n"NOR;
-        msg += HIR"$nÈ«Éí±»ÉÁµçºÍÊ¥À×ÁýÕÖÁË!!\n"NOR;
+        msg += HIR"é›·ç¥žçš„åŠ›é‡å‡ºçŽ°!!$nçš„é™„è¿‘æˆäº†é›·çš„åœ°ç‹±!!\n"NOR;
+        msg += HIR"$nå…¨èº«è¢«é—ªç”µå’Œåœ£é›·ç¬¼ç½©äº†!!\n"NOR;
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
         } else
@@ -79,16 +79,16 @@ damagic=1500+damage;
 damagic=1000+damage;
                 target->receive_wound("qi", damagic);
 if (wizardp(me))
-tell_object(me, "\n»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "\nåŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 msg += HIC"                                         \n"NOR;
-msg += HIC"¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­  \n"NOR;
-msg += HIC">>>---------¡ï¡ú                     \n"NOR;
-msg += HIC"    >>>------ÉóÅÐÖ®Ê¥À× !  ---->      \n"NOR;
-msg += HIC"                    >>>---------¡ï¡ú \n"NOR;
-msg += HIC"¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­   \n"NOR;
+msg += HIC"â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦  \n"NOR;
+msg += HIC">>>---------â˜…â†’                     \n"NOR;
+msg += HIC"    >>>------å®¡åˆ¤ä¹‹åœ£é›· !  ---->      \n"NOR;
+msg += HIC"                    >>>---------â˜…â†’ \n"NOR;
+msg += HIC"â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦â€¦   \n"NOR;
 msg += HIC"                                         \n"NOR;
-        msg += HIC"À×ÉñµÄÁ¦Á¿³öÏÖ!!$nµÄ¸½½ü³ÉÁËÀ×µÄµØÓü!!\n"NOR;
-        msg += HIY"$pÊ¹³öÈ«Á¦£¬µÖ¿¹Ê¥À×£¬µ«»¹ÊÇ¸øÉÁµçºÍÊ¥À×ÁýÕÖÁË¡£\n"NOR;
+        msg += HIC"é›·ç¥žçš„åŠ›é‡å‡ºçŽ°!!$nçš„é™„è¿‘æˆäº†é›·çš„åœ°ç‹±!!\n"NOR;
+        msg += HIY"$pä½¿å‡ºå…¨åŠ›ï¼ŒæŠµæŠ—åœ£é›·ï¼Œä½†è¿˜æ˜¯ç»™é—ªç”µå’Œåœ£é›·ç¬¼ç½©äº†ã€‚\n"NOR;
 		message_combatd(msg, me, target);
         }
 if (target->query("qi") < 1)target->set("qi",0);

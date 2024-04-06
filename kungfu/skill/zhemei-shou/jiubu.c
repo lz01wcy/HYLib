@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// jiubu.c æ≈≤ø Ω
+// jiubu.c ‰πùÈÉ®Âºè
 
 #include <ansi.h>
 #include <combat.h>
@@ -22,25 +22,25 @@ int perform(object me, object target)
 	        target = me->select_opponent();
         }
 	if (! target || ! me->is_fighting(target))
-		return notify_fail("°∏æ≈≤ø Ω°π÷ªƒ‹∂‘’Ω∂∑÷–µƒ∂‘ ÷ π”√°£\n");
+		return notify_fail("„Äå‰πùÈÉ®Âºè„ÄçÂè™ËÉΩÂØπÊàòÊñó‰∏≠ÁöÑÂØπÊâã‰ΩøÁî®„ÄÇ\n");
 
 //        if (userp(me) && ! me->query("can_perform/zhemei-shou/jiubu"))
-//                return notify_fail("ƒ„ªπ√ª”–¡ÏŒÚµΩ’‚∏ˆæ¯’–æ´ª™£¨Œﬁ∑® ©’π°∏æ≈≤ø Ω°π°£\n");
+//                return notify_fail("‰Ω†ËøòÊ≤°ÊúâÈ¢ÜÊÇüÂà∞Ëøô‰∏™ÁªùÊãõÁ≤æÂçéÔºåÊó†Ê≥ïÊñΩÂ±ï„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
                 
 	if ((int)me->query_skill("zhemei-shou", 1) < 120)
-		return notify_fail("ƒ„µƒ’€√∑ ÷∑®≤ªπªÊµ Ï£¨≤ªª· π”√°∏æ≈≤ø Ω°π°£\n");
+		return notify_fail("‰Ω†ÁöÑÊäòÊ¢ÖÊâãÊ≥ï‰∏çÂ§üÂ®¥ÁÜüÔºå‰∏ç‰ºö‰ΩøÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 	                        
 	if ((int)me->query_skill("force") < 200)
-		return notify_fail("ƒ„µƒƒ⁄π¶–ﬁŒ™≤ªπª∏ﬂ£¨ƒ—“‘‘À”√°∏æ≈≤ø Ω°π°£\n");
+		return notify_fail("‰Ω†ÁöÑÂÜÖÂäü‰øÆ‰∏∫‰∏çÂ§üÈ´òÔºåÈöæ‰ª•ËøêÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 			
 	if ((int)me->query("neili") < 100)
-		return notify_fail("ƒ„œ÷‘⁄’Ê∆¯≤ªπª£¨≤ªƒ‹ π”√°∏æ≈≤ø Ω°π°£\n");
+		return notify_fail("‰Ω†Áé∞Âú®ÁúüÊ∞î‰∏çÂ§üÔºå‰∏çËÉΩ‰ΩøÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 
         if (me->query_skill_mapped("hand") != "zhemei-shou")
-                return notify_fail("ƒ„√ª”–º§∑¢ÃÏ…Ω’€√∑ ÷£¨≤ªƒ‹ π”√°∏æ≈≤ø Ω°π°£\n");
+                return notify_fail("‰Ω†Ê≤°ÊúâÊøÄÂèëÂ§©Â±±ÊäòÊ¢ÖÊâãÔºå‰∏çËÉΩ‰ΩøÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 
-	msg = HIC "$N" HIC "À´ ÷–È–È µ µµƒ◊•œÚ$n"
-              HIC "µƒ“™∫¶£¨…Ì∑®ÁŒÁø£¨ ÷ Ω∆ÊÃÿ£¨¡Ó»Àƒ—“‘◊Ω√˛°£\n" NOR;
+	msg = HIC "$N" HIC "ÂèåÊâãËôöËôöÂÆûÂÆûÁöÑÊäìÂêë$n"
+              HIC "ÁöÑË¶ÅÂÆ≥ÔºåË∫´Ê≥ïÁº•ÁºàÔºåÊâãÂºèÂ•áÁâπÔºå‰ª§‰∫∫Èöæ‰ª•ÊçâÊë∏„ÄÇ\n" NOR;
 
         ap = me->query_skill("hand") + me->query("str") * 20;
         dp = target->query_skill("dodge") + target->query("dex") * 20;
@@ -51,14 +51,14 @@ int perform(object me, object target)
 		me->add("neili", -100);
   target->add("qi",-damage*2);
 		target->add("eff_qi",-damage*2);
-                msg += HIR "$p" HIR "“ª∏ˆ…¡±‹≤ªº∞£¨Ω·π˚±ª$P"
-                                           HIR "◊•¡À∏ˆ’˝÷–£¨ªÎ…Ìƒ⁄œ¢≤ª”…µ√“ª÷Õ£¨∆¯—™∑≠”ø°£\n" NOR;
+                msg += HIR "$p" HIR "‰∏Ä‰∏™Èó™ÈÅø‰∏çÂèäÔºåÁªìÊûúË¢´$P"
+                                           HIR "Êäì‰∫Ü‰∏™Ê≠£‰∏≠ÔºåÊµëË∫´ÂÜÖÊÅØ‰∏çÁî±Âæó‰∏ÄÊªûÔºåÊ∞îË°ÄÁøªÊ∂å„ÄÇ\n" NOR;
 
 		me->start_busy(2);
 	} else 
 	{
-		msg += HIC "ø… «$p" HIC "…Ì ÷√ÙΩ›£¨«…√Óµƒ∂„π˝¡À$P"
-                       HIC "µƒπ•ª˜£°\n"NOR;
+		msg += HIC "ÂèØÊòØ$p" HIC "Ë∫´ÊâãÊïèÊç∑ÔºåÂ∑ßÂ¶ôÁöÑË∫≤Ëøá‰∫Ü$P"
+                       HIC "ÁöÑÊîªÂáªÔºÅ\n"NOR;
 		me->add("neili", -50);
 		me->start_busy(3);
 	}

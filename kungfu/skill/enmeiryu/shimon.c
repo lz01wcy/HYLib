@@ -12,22 +12,22 @@ int perform(object me, object target) {
     if (!target
         || !target->is_character()
         || !me->is_fighting(target))
-        return notify_fail("£ÛËÄÃÅ-ÖìÈ¸£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ï¼»å››é—¨-æœ±é›€ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-        return notify_fail("Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+        return notify_fail("åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
     if ((int) me->query("neili") < 300)
-        return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
     if ((int) me->query("qi") * 100 / (int) me->query("max_qi") > 30
         && (int) me->query("eff_qi") * 100 / (int) me->query("max_qi") > 30
             )
-        return notify_fail("»¹²»µ½Ê¹ÕâÕÐµÄÊ±ºò¡£\n");
+        return notify_fail("è¿˜ä¸åˆ°ä½¿è¿™æ‹›çš„æ—¶å€™ã€‚\n");
     extra = me->query_skill("enmeiryu", 1);
-    if (extra <= 200) return notify_fail("ÄãµÄÂ½°ÂÔ²Ã÷Á÷È­Êõ²»¹»ÊìÁ·£¬»¹²»ÄÜ³öËÄÃÅ-ÖìÈ¸£¡\n");
+    if (extra <= 200) return notify_fail("ä½ çš„é™†å¥¥åœ†æ˜Žæµæ‹³æœ¯ä¸å¤Ÿç†Ÿç»ƒï¼Œè¿˜ä¸èƒ½å‡ºå››é—¨-æœ±é›€ï¼\n");
     msg = HIR
-    "$N¿ÚÖÐà«à«ËµµÀ£º¡°Ö»ÓÐÄÇÒ»ÕÐÁË¡£¡±£¬¾øÍûÖÐ$NÊ¹³öÁË×îºóµÄÒ»ÕÐ¡¸ËÄÃÅ.ÖìÈ¸¡¹!$nÒ»Ê±ÒÔÎª×Ô¼ºÑÛ»¨£¬¾ÓÈ»¿´µ½ËÄ¸ö$NµÄÉíÓ°!$nÉíºóµÄÒ»¸ö$NÃÍµØ³åÏò$n£¬ÓÃÏ¥²¿¶¥×¡$nµÄÑü£¬µ¥ÊÖ¾¾×¡$nµÄÍ·£¬ÓÃÁ¦ÏòµØÃæ¿ÄÈ¥£¬Í¬Ê±Öâ²¿»÷Ïò$nµÄÃ¼ÐÄ¡£"
+    "$Nå£ä¸­å–ƒå–ƒè¯´é“ï¼šâ€œåªæœ‰é‚£ä¸€æ‹›äº†ã€‚â€ï¼Œç»æœ›ä¸­$Nä½¿å‡ºäº†æœ€åŽçš„ä¸€æ‹›ã€Œå››é—¨.æœ±é›€ã€!$nä¸€æ—¶ä»¥ä¸ºè‡ªå·±çœ¼èŠ±ï¼Œå±…ç„¶çœ‹åˆ°å››ä¸ª$Nçš„èº«å½±!$nèº«åŽçš„ä¸€ä¸ª$NçŒ›åœ°å†²å‘$nï¼Œç”¨è†éƒ¨é¡¶ä½$nçš„è…°ï¼Œå•æ‰‹æªä½$nçš„å¤´ï¼Œç”¨åŠ›å‘åœ°é¢ç£•åŽ»ï¼ŒåŒæ—¶è‚˜éƒ¨å‡»å‘$nçš„çœ‰å¿ƒã€‚"
     NOR;
     weapon = me->query_temp("weapon");
     extra = extra - 150;
@@ -42,7 +42,7 @@ int perform(object me, object target) {
         else target->start_busy(10);
 
         message_vision(HIR
-        "$NÍ»È»¾õµÃÐØ¿ÚÒ»Õó¾ÞÍ´£¬½Ó×ÅÑÛÇ°Ò»ºÚ¡£ \n"
+        "$Nçªç„¶è§‰å¾—èƒ¸å£ä¸€é˜µå·¨ç—›ï¼ŒæŽ¥ç€çœ¼å‰ä¸€é»‘ã€‚ \n"
         NOR, target);
         me->start_busy(3);
     } else {

@@ -8,7 +8,7 @@ int valid_learn(object me) { return 1; }
 int practice_skill(object me)
 {
         return 
-notify_fail("ÆÅÂÜÃÛ¶àĞÄ¾­Ö»ÄÜÓÃÑ§µÄ£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+notify_fail("å©†èèœœå¤šå¿ƒç»åªèƒ½ç”¨å­¦çš„ï¼Œæˆ–æ˜¯ä»è¿ç”¨(exert)ä¸­å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
  

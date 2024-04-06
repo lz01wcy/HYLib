@@ -11,18 +11,18 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸»ğÇò¡¹¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç«çƒã€æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
       
 	weapon = me->query_temp("weapon");
 	if( objectp(me->query_temp("weapon")) 
 	&& (string)weapon->query("skill_type") != "staff")
-		return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃÕâ¸ö¾ø¼¼£¡\n");		
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨è¿™ä¸ªç»æŠ€ï¼\n");		
 //        if(!objectp(ob = present("huo yan", environment(me))))
-//                return notify_fail("Ã»ÓĞ»ğ¶ÑÔõÃ´Çı¶¯¡¸»ğÇò¡¹½øĞĞ¹¥»÷£¿\n");
+//                return notify_fail("æ²¡æœ‰ç«å †æ€ä¹ˆé©±åŠ¨ã€Œç«çƒã€è¿›è¡Œæ”»å‡»ï¼Ÿ\n");
         if(me->query_temp("pfm_chousui"))
-                return notify_fail("ÄãÕıÔÚÇı¶¯»ğ¶Ñ½øĞĞ¹¥»÷£¡\n");
+                return notify_fail("ä½ æ­£åœ¨é©±åŠ¨ç«å †è¿›è¡Œæ”»å‡»ï¼\n");
 
-       message_vision(HIR"\n$NÀ÷Éù´óºÈ£¬ÕÆÁ¦¼ÓÊ¢£¬»ğÑæÖĞÍ»È»Éú³öÒ»¸ö¶·´óµÄ"RED"»ğÇò"HIR"£¬ÔÚ¿ÕÖĞ¹ÇÂµÂµµÄÑ¸ËÙ×ª¶¯£¡\n\n"NOR,me);
+       message_vision(HIR"\n$Nå‰å£°å¤§å–ï¼ŒæŒåŠ›åŠ ç››ï¼Œç«ç„°ä¸­çªç„¶ç”Ÿå‡ºä¸€ä¸ªæ–—å¤§çš„"RED"ç«çƒ"HIR"ï¼Œåœ¨ç©ºä¸­éª¨ç¢Œç¢Œçš„è¿…é€Ÿè½¬åŠ¨ï¼\n\n"NOR,me);
 
        me->start_busy(2);
        me->add_temp("max_guard",-1);
@@ -58,28 +58,28 @@ int check_pfm(object me, object target)
         me->start_busy(1);
         if(!living(me) || me->is_ghost()) return 1;
         if( i < 180 ){
-                tell_object(me, "Äã·¢ÏÖ×Ô¼ºµÄĞşÌì±ù²ÏÕÆ»¹²»¹»æµÊì£¬ÎŞ·¨Ê¹ÓÃ¡¸»ğÇò¡¹½øĞĞ¹¥»÷¡£\n");
+                tell_object(me, "ä½ å‘ç°è‡ªå·±çš„ç„å¤©å†°èš•æŒè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œç«çƒã€è¿›è¡Œæ”»å‡»ã€‚\n");
                 return 1;
                 }
         if( (int)me->query_skill("huagong-dafa",1) < 180 ){
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºµÄ»¯¹¦´ó·¨ĞŞÎª²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸»ğÇò¡¹½øĞĞ¹¥»÷¡£\n");
+                tell_object(me,"ä½ å‘ç°è‡ªå·±çš„åŒ–åŠŸå¤§æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œç«çƒã€è¿›è¡Œæ”»å‡»ã€‚\n");
                 return 1;
                 }
         if( me->query_skill_mapped("force") != "huagong-dafa"){
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºËùÓÃµÄÄÚ¹¦ÎŞ·¨½øĞĞ¡¸»ğÇò¡¹¹¥»÷¡£\n");
+                tell_object(me,"ä½ å‘ç°è‡ªå·±æ‰€ç”¨çš„å†…åŠŸæ— æ³•è¿›è¡Œã€Œç«çƒã€æ”»å‡»ã€‚\n");
                 return 1;
                 }
         if( (int)me->query("max_neili") < 1500) {
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Çı¶¯¡¸»ğÇò¡¹½øĞĞ¹¥»÷¡£\n");
+                tell_object(me,"ä½ å‘ç°è‡ªå·±å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•é©±åŠ¨ã€Œç«çƒã€è¿›è¡Œæ”»å‡»ã€‚\n");
                 return 1;
                 }
         if(neili < 1500){
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸»ğÇò¡¹½øĞĞ¹¥»÷¡£\n");           
+                tell_object(me,"ä½ å‘ç°è‡ªå·±ç°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œç«çƒã€è¿›è¡Œæ”»å‡»ã€‚\n");           
                 return 1;
                 }           
         if(!target || !me->is_fighting(target) || environment(me)->query("no_fight")
            || environment(me)!=environment(target)){
-           message_vision(HIY"$NÒÂĞäÔÙ·÷£¬½«ÉıÆğµÄ"RED"»ğÇò"HIY"Ñ¹»Ø»ğÑæÖ®ÖĞ¡£\n"NOR,me);
+           message_vision(HIY"$Nè¡£è¢–å†æ‹‚ï¼Œå°†å‡èµ·çš„"RED"ç«çƒ"HIY"å‹å›ç«ç„°ä¹‹ä¸­ã€‚\n"NOR,me);
            return 1;
            }
 
@@ -91,8 +91,8 @@ int check_pfm(object me, object target)
         me->add("neili", -600);
         me->add("jing", -10);
 
-        msg = WHT"\n´ËÊ±$NÁ³ÉÏÒÑÎŞ°ëµãÑªÉ«£¬Ò»¿Ú¿ÚÏÊÑª²»×¡Ïò"RED"»ğÇò"WHT"ÖĞÍÂÈ¥£¬"HIR"»ğÊÆÒ»Ê¢£¬àÍàÍÁ½ÉùÇáÏì£¬
-±¬³ö¼¸¶ä»ğ»¨£¬"RED"»ğÇò"HIR"¶¸È»±ä´óÏò$n¼²³å¹ıÀ´£¡\n"NOR;
+        msg = WHT"\næ­¤æ—¶$Nè„¸ä¸Šå·²æ— åŠç‚¹è¡€è‰²ï¼Œä¸€å£å£é²œè¡€ä¸ä½å‘"RED"ç«çƒ"WHT"ä¸­åå»ï¼Œ"HIR"ç«åŠ¿ä¸€ç››ï¼Œå—¤å—¤ä¸¤å£°è½»å“ï¼Œ
+çˆ†å‡ºå‡ æœµç«èŠ±ï¼Œ"RED"ç«çƒ"HIR"é™¡ç„¶å˜å¤§å‘$nç–¾å†²è¿‡æ¥ï¼\n"NOR;
 
        
        if(random(ap) > dp/4){
@@ -102,12 +102,12 @@ int check_pfm(object me, object target)
                if(me->query_str() > random(target->query_str())){
                   me->start_busy(2);
                   target->start_busy(2);
-                  msg += HIY"ÃÍÁÒ¼ä»ğÇòÎÂ¶Èì­Éı£¬»ğ»¨±ÅÉä£¬Õ¨¿ªÁË$pµÄ»¤¾ß£¡\n" NOR;
+                  msg += HIY"çŒ›çƒˆé—´ç«çƒæ¸©åº¦é£™å‡ï¼Œç«èŠ±è¿¸å°„ï¼Œç‚¸å¼€äº†$pçš„æŠ¤å…·ï¼\n" NOR;
                   for(i=0; i<sizeof(inv); i++)
                      if((string)inv[i]->query("equipped")=="worn" && !inv[i]->query("unique")){
                          inv[i]->unequip();
                          inv[i]->move(environment(target));
-                         inv[i]->set("name", "·ÛËéµÄ" + inv[i]->query("name"));
+                         inv[i]->set("name", "ç²‰ç¢çš„" + inv[i]->query("name"));
                          inv[i]->delete("value");
                          inv[i]->set("armor_prop", 0);
                          }
@@ -123,7 +123,7 @@ int check_pfm(object me, object target)
 target->apply_condition("fire_poison",60);
                   target->apply_condition("xx_poison", random(15) + (me->query_skill("poison", 1)/10) + target->query_condition("xx_poison"));
                   p = (int)target->query("qi")*100/(int)target->query("max_qi");
-                  msg += damage_msg(damage, "ÔÒÉË");
+                  msg += damage_msg(damage, "ç ¸ä¼¤");
                   msg += "( $n"+eff_status_msg(p)+" )\n";
                   me->start_busy(1);
                   target->start_busy(1);               
@@ -131,10 +131,10 @@ target->apply_condition("fire_poison",60);
             else {
                   me->start_busy(2);
                   target->start_busy(2);
-                  msg += HIY"Ö»¼û»ğÇòÃÍÈ»ÉıÎÂ£¬»ğ»¨ËÄ½¦£¬ÈÈÁ¦Ö±Í¸$pµÄ»¤¾ß£¡\n" NOR;
+                  msg += HIY"åªè§ç«çƒçŒ›ç„¶å‡æ¸©ï¼Œç«èŠ±å››æº…ï¼Œçƒ­åŠ›ç›´é€$pçš„æŠ¤å…·ï¼\n" NOR;
                   for(i=0; i<sizeof(inv); i++)
                      if((string)inv[i]->query("equipped")=="worn" && !inv[i]->query("unique")){
-                         inv[i]->set("name", "ËéÁÑµÄ" + inv[i]->query("name"));
+                         inv[i]->set("name", "ç¢è£‚çš„" + inv[i]->query("name"));
                          inv[i]->set("value", 49);
                          if(inv[i]->query("armor_prop/armor"))
                              inv[i]->set("armor_prop/armor", inv[i]->query("armor_prop/armor")/2);
@@ -147,7 +147,7 @@ target->apply_condition("fire_poison",60);
                   target->receive_wound("qi", damage/4, me);            
                   target->apply_condition("xx_poison", random(5) + (me->query_skill("poison", 1)/10) + target->query_condition("xx_poison"));
                   p = (int)target->query("qi")*100/(int)target->query("max_qi");
-                  msg += damage_msg(damage, "ÔÒÉË");
+                  msg += damage_msg(damage, "ç ¸ä¼¤");
                   msg += "( $n"+eff_status_msg(p)+" )\n";
                   me->start_busy(2);
                   target->start_busy(1);
@@ -156,14 +156,14 @@ target->apply_condition("fire_poison",60);
            else {
                   me->start_busy(3);
                   target->start_busy(3);
-                  msg += HIY"»ğÇò¼±ËÙ¹ö¶¯£¬»ğ¹âËÄ½¦£¬ÏÆÆğÕóÕó»ğÑæ×²Ïò$p»³Àï£¡\n" NOR;                  
+                  msg += HIY"ç«çƒæ€¥é€Ÿæ»šåŠ¨ï¼Œç«å…‰å››æº…ï¼Œæ€èµ·é˜µé˜µç«ç„°æ’å‘$pæ€€é‡Œï¼\n" NOR;                  
                   damage = damage * 2;
                   if (damage > 1800) damage = 1800;
                   target->receive_damage("qi", damage, me);
                   target->receive_wound("qi", damage/6, me);                
                   target->apply_condition("xx_poison", 30 + target->query_condition("xx_poison"));
                   p = (int)target->query("qi")*100/(int)target->query("max_qi");
-                  msg += damage_msg(damage, "ÔÒÉË");
+                  msg += damage_msg(damage, "ç ¸ä¼¤");
                   msg += "( $n"+eff_status_msg(p)+" )\n";
                   me->start_busy(2);
                   target->start_busy(1);
@@ -178,7 +178,7 @@ target->apply_condition("fire_poison",60);
                 target->receive_wound("qi", damage/2, me);             
                 target->apply_condition("xx_poison", 30 + target->query_condition("xx_poison"));
                 p = (int)target->query("qi")*100/(int)target->query("max_qi");
-                msg += damage_msg(damage, "ÔÒÉË");
+                msg += damage_msg(damage, "ç ¸ä¼¤");
                 msg += "( $n"+eff_status_msg(p)+" )\n";
                 me->start_busy(2);
                 target->start_busy(1);
@@ -187,11 +187,11 @@ target->apply_condition("fire_poison",60);
      else{
           me->add_temp("max_guard",-1);
         me->start_busy(4);
-        msg += HIY"\n$pÑÛ¿´¾ÍÒª±»´òÖĞ£¬Ã°ËÀÒ»¸ö¡°Ìú°åÇÅ¡±£¬È«Éí×ÔÏ¥¸Ç´¦Ïòºóµ¹È¥£¬¿°¿°±Ü¹ı$w"HIY"£¡\n" NOR;
+        msg += HIY"\n$pçœ¼çœ‹å°±è¦è¢«æ‰“ä¸­ï¼Œå†’æ­»ä¸€ä¸ªâ€œé“æ¿æ¡¥â€ï¼Œå…¨èº«è‡ªè†ç›–å¤„å‘åå€’å»ï¼Œå ªå ªé¿è¿‡$w"HIY"ï¼\n" NOR;
         }
        limbs = target->query("limbs");
        msg = replace_string(msg, "$l", limbs[random(sizeof(limbs))]);
-       msg = replace_string(msg, "$w", RED"»ğÇò"NOR);       
+       msg = replace_string(msg, "$w", RED"ç«çƒ"NOR);       
        message_vision(msg, me, target);
 //me->kill_ob(target);
 //       if(!target->is_killing(me->query("id"))) target->kill_ob(me);

@@ -1,4 +1,4 @@
-// qimen.c ÆæÃÅÓñóï
+// qimen.c å¥‡é—¨ç‰ç®«
 // Created by Darken@sh.SJ
 // Modified by Numa@ln.SJ
 
@@ -17,35 +17,35 @@ int perform(object me, object target)
         if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("¡¸ÆæÃÅÓñóï¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¥‡é—¨ç‰ç®«ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
          || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if((int)me->query_skill("yuxiao-jian",1) < 70 )
-                return notify_fail("ÄãµÄÓñóï½£·¨»¹²»¹»»ğºò£¬Ê¹²»³ö¡¸ÆæÃÅÓñóï¡¹¡£\n");
+                return notify_fail("ä½ çš„ç‰ç®«å‰‘æ³•è¿˜ä¸å¤Ÿç«å€™ï¼Œä½¿ä¸å‡ºã€Œå¥‡é—¨ç‰ç®«ã€ã€‚\n");
 
 
         if((string)me->query_skill_mapped("sword") != "yuxiao-jian" && userp(me))
-                  return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸ÆæÃÅÓñóï¡¹£¡\n");
+                  return notify_fail("ä½ ç°åœ¨æ— æ³•ä½¿ç”¨ã€Œå¥‡é—¨ç‰ç®«ã€ï¼\n");
 
         if((string)me->query_skill_mapped("parry") != "yuxiao-jian" && userp(me))
-                  return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸ÆæÃÅÓñóï¡¹£¡\n");
+                  return notify_fail("ä½ ç°åœ¨æ— æ³•ä½¿ç”¨ã€Œå¥‡é—¨ç‰ç®«ã€ï¼\n");
 
         if( (int)me->query_skill("qimen-wuxing", 1) < 60 )
-                return notify_fail("ÄãµÄÆæÃÅ°ËØÔ²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹³öÆæÃÅÓñóï¡£\n");
+                return notify_fail("ä½ çš„å¥‡é—¨å…«å¦ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•æ–½å±•å‡ºå¥‡é—¨ç‰ç®«ã€‚\n");
         if ((int)me->query_skill("bibo-shengong", 1) < 60)
-                return notify_fail("ÄãµÄ±Ì²¨Éñ¹¦Éú¹¦»ğºò²»¹»£¬ÎŞ·¨Ê©Õ¹³öÆæÃÅÓñóï¡£\n");
+                return notify_fail("ä½ çš„ç¢§æ³¢ç¥åŠŸç”ŸåŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºå¥‡é—¨ç‰ç®«ã€‚\n");
 
         if((int)me->query_temp("yuxiao_lian") )
-               return notify_fail("ÄãÏÖÔÚÒÑ¾­ÔÚÏò¶ÔÊÖÊ¹ÓÃ¡¸ÆæÃÅÓñóï¡¹ÁË¡£\n");
+               return notify_fail("ä½ ç°åœ¨å·²ç»åœ¨å‘å¯¹æ‰‹ä½¿ç”¨ã€Œå¥‡é—¨ç‰ç®«ã€äº†ã€‚\n");
 
         if((int)me->query("neili", 1) < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨Ê¹³ö¡¸ÆæÃÅÓñóï¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªå°‘äº†ï¼Œæ— æ³•ä½¿å‡ºã€Œå¥‡é—¨ç‰ç®«ã€ï¼\n");
                 
         if((int)me->query("jing") < 100 )
-                return notify_fail("ÄãµÄ¾«Á¦Ì«ÉÙÁË£¬ÎŞ·¨Ê¹³ö¡¸ÆæÃÅÓñóï¡¹£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›å¤ªå°‘äº†ï¼Œæ— æ³•ä½¿å‡ºã€Œå¥‡é—¨ç‰ç®«ã€ï¼\n");
 
         attack_time = random((int)me->query_skill("yuxiao-jian", 1) / 30)+2;
 
@@ -53,9 +53,9 @@ int perform(object me, object target)
                attack_time = 1;
         if(attack_time > 4)  attack_time = 4;
 
-        msg = HIG "$NÊÖÖĞ"+weapon->name()+HIG"Á¬´Ì£¬äìÈ÷×ÔÈç£¬ÕĞÕĞ¶¼ÊÇ¹¥ÊÆ£¬Ò»ÕĞ²»´ı$n»¯½â¿ªÈ¥£¬½£ÕĞÒÑÁ¬Ãà¶øÖÁ£¡\n"+
-                  "$N¶«´ÌÒ»½££¬Î÷Ï÷Ò»ÕĞ£¬Á¬³ö"+chinese_number(attack_time)+"ÕĞ£¬ÓëÎäÑ§³£ÀíÍêÈ«Ïà·´¡£\n"+
-                  "$nÓú¶·Óú¾ª£¬ÖÜÉíÒªº¦ËÆÒÑÈ«ÔÚ"+weapon->name()+HIG"ÁıÕÖÖ®ÏÂ£¡\n"NOR;
+        msg = HIG "$Næ‰‹ä¸­"+weapon->name()+HIG"è¿åˆºï¼Œæ½‡æ´’è‡ªå¦‚ï¼Œæ‹›æ‹›éƒ½æ˜¯æ”»åŠ¿ï¼Œä¸€æ‹›ä¸å¾…$nåŒ–è§£å¼€å»ï¼Œå‰‘æ‹›å·²è¿ç»µè€Œè‡³ï¼\n"+
+                  "$Nä¸œåˆºä¸€å‰‘ï¼Œè¥¿å‰Šä¸€æ‹›ï¼Œè¿å‡º"+chinese_number(attack_time)+"æ‹›ï¼Œä¸æ­¦å­¦å¸¸ç†å®Œå…¨ç›¸åã€‚\n"+
+                  "$næ„ˆæ–—æ„ˆæƒŠï¼Œå‘¨èº«è¦å®³ä¼¼å·²å…¨åœ¨"+weapon->name()+HIG"ç¬¼ç½©ä¹‹ä¸‹ï¼\n"NOR;
         message_vision(msg, me, target);
         lvl = random((me->query_skill("yuxiao-jian", 1) + me->query_skill("qimen-wuxing", 1)))/ 4;
 	me->add_temp("apply/attack", lvl/8);	
@@ -78,6 +78,6 @@ void remove_effect(object me, object target)
 {
         me->delete_temp("yuxiao_lian");
         if (me->is_fighting(target) )
-        message_vision(HIC"$nÂıÂı¿´Í¸ÁË$NµÄ¹¥ÊÆ£¬²»ÔÙÊÜÓñóï½£·¨µÄÆæÃÅ½£Â·ÃÔ»ó¡£\n"NOR,me,target);
+        message_vision(HIC"$næ…¢æ…¢çœ‹é€äº†$Nçš„æ”»åŠ¿ï¼Œä¸å†å—ç‰ç®«å‰‘æ³•çš„å¥‡é—¨å‰‘è·¯è¿·æƒ‘ã€‚\n"NOR,me,target);
 }
 

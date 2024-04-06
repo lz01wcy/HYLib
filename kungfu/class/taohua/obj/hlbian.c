@@ -1,21 +1,21 @@
-// ºÚÁú±Ş
+// é»‘é¾™é­
 #include <ansi.h>
 #include <weapon.h>
 inherit WHIP;
 
 void create()
 {
-	set_name(HIB"º£³±²×ÀË±Ş"NOR, ({ "canglang bian", "bian" }));
+	set_name(HIB"æµ·æ½®æ²§æµªé­"NOR, ({ "canglang bian", "bian" }));
 	set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»±úº£³±²×ÀË±Ş£¬¼áÈÍÎŞ±È¡£ÓĞ´óº£µÄÁ¦Á¿¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€æŸ„æµ·æ½®æ²§æµªé­ï¼ŒåšéŸ§æ— æ¯”ã€‚æœ‰å¤§æµ·çš„åŠ›é‡ã€‚\n");
 		set("value", 10000);
 		set("material", "leather");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù¶¶³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¾í»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ–å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nå·å›è…°é—´ã€‚\n");
 	}
 	init_whip(680);
 	setup();

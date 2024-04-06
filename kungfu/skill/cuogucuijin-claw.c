@@ -1,11 +1,11 @@
 // THIS IS PLAYER'S OWN SKILL (write by maxim@nju_fengxue)
 // shazi
-// Ğ¡º£
-// ÌÆÃÅµÚÆß´úµÜ×Ó
+// å°æµ·
+// å”é—¨ç¬¬ä¸ƒä»£å¼Ÿå­
 // 76950540
-// ÄĞĞÔ
+// ç”·æ€§
 // claw
-// ´ì¹Ç´İ½î×¦
+// æŒ«éª¨æ‘§ç­‹çˆª
 
 
 
@@ -20,32 +20,32 @@ mapping *action = ({
 // ZHAOSHI :0
 
 ([
-"action" :"$NÒ»ÊÖ°â×¡$nÉÏëñ£¬Ò»ÊÖ°â×¡ÆäÏÂò¢£¬ÓÃÁ¦Ò»·Ö£¬¼´½«°ÑÏÂ°ÍËºÏÂÀ´¡£",
+"action" :"$Nä¸€æ‰‹æ‰³ä½$nä¸Šè…­ï¼Œä¸€æ‰‹æ‰³ä½å…¶ä¸‹é¢Œï¼Œç”¨åŠ›ä¸€åˆ†ï¼Œå³å°†æŠŠä¸‹å·´æ’•ä¸‹æ¥ã€‚",
 "force" :60,
 "damage" :40,
-"damage_type": "ğöÉË",
+"damage_type": "ç˜€ä¼¤",
 "lvl" : 0,
-"skill_name" : "¡¾µÚÒ»Ê½¡¿"
+"skill_name" : "ã€ç¬¬ä¸€å¼ã€‘"
 ]),
 // ZHAOSHI :1
 
 ([
-"action" :"$NÆËÏò$n£¬Ò»¿ÚÒ§×¡$nµÄºíÁü£¬¡°¿¦àê¡±Ò»Éù£¡$nµÄÊ³¹Ü¡¢Æø¹Ü¡¢Ñª¹ÜÈ«¶¼±»Ò§ÁË³öÀ´¡£",
+"action" :"$Næ‰‘å‘$nï¼Œä¸€å£å’¬ä½$nçš„å–‰å’™ï¼Œâ€œå–€åš“â€ä¸€å£°ï¼$nçš„é£Ÿç®¡ã€æ°”ç®¡ã€è¡€ç®¡å…¨éƒ½è¢«å’¬äº†å‡ºæ¥ã€‚",
 "force" :90,
 "damage" :60,
-"damage_type": "ğöÉË",
+"damage_type": "ç˜€ä¼¤",
 "lvl" : 1,
-"skill_name" : "¡¾µÚ¶şÊ½¡¿"
+"skill_name" : "ã€ç¬¬äºŒå¼ã€‘"
 ]),
 // ZHAOSHI :2
 
 ([
-"action" :"$NÉíĞÎ¼±¶¯£¬ÎåÖ¸ÒÑÈ»²å½ø$nµÄÌìÁé¸Ç£¬¿¦µÄÒ»Éù¾Í°â¿ªÁËÍ·¹Ç£¬Â¶³ö°×ºıºıµÄÄÔ½¬¡£$n°¡µÄÒ»Éù¼¸ºõÍ´ËÀ¹ıÈ¥¡£",
+"action" :"$Nèº«å½¢æ€¥åŠ¨ï¼Œäº”æŒ‡å·²ç„¶æ’è¿›$nçš„å¤©çµç›–ï¼Œå–€çš„ä¸€å£°å°±æ‰³å¼€äº†å¤´éª¨ï¼Œéœ²å‡ºç™½ç³Šç³Šçš„è„‘æµ†ã€‚$nå•Šçš„ä¸€å£°å‡ ä¹ç—›æ­»è¿‡å»ã€‚",
 "force" :120,
 "damage" :80,
-"damage_type": "ğöÉË",
+"damage_type": "ç˜€ä¼¤",
 "lvl" : 2,
-"skill_name" : "¡¾µÚÈıÊ½¡¿"
+"skill_name" : "ã€ç¬¬ä¸‰å¼ã€‘"
 ]),
  });
 // ZHAOSHI :3
@@ -54,7 +54,7 @@ int valid_learn(object me)
 //line number must be same!!!
 //so it is done
 	if( (int)me->query("max_neili") < 50 )
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·"+"´ì¹Ç´İ½î×¦"+"¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒ"+"æŒ«éª¨æ‘§ç­‹çˆª"+"ã€‚\n");
 	return 1;
 }
 int valid_enable(string usage) { return usage== "claw" || usage=="parry"; }
@@ -76,9 +76,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if( (int)me->query("qi") < 25 )
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
 	if( (int)me->query("neili") < 3 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿäº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç»ƒå§ã€‚\n");
 	me->receive_damage("qi", 25);
 	me->add("neili", -3);
 	return 1;

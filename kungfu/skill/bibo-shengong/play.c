@@ -1,4 +1,4 @@
-// play.c ×à¡°±Ìº£³±Éú¡±Çú
+// play.c å¥â€œç¢§æµ·æ½®ç”Ÿâ€æ›²
 
 #include <ansi.h>
 
@@ -11,16 +11,16 @@ int exert(object me, object target)
 	int i, skill, damage;
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+		return notify_fail("åœ¨è¿™é‡Œä¸èƒ½æ”»å‡»ä»–äººã€‚\n");
 
 //	if (!weapon = me->query_temp("weapon"))
-//		return notify_fail("ÄãÒªÓÃÊ²Ã´À´´µ×à£¿\n");
+//		return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆæ¥å¹å¥ï¼Ÿ\n");
 
 //       if (!weapon->id("xiao"))
-//		return notify_fail("ÄãÊÖÀïµÄ±øÆ÷²»ÊÇóï£¡\n");
+//		return notify_fail("ä½ æ‰‹é‡Œçš„å…µå™¨ä¸æ˜¯ç®«ï¼\n");
 
 	if( (int)me->query("neili") < 400 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	skill = me->query_skill("force");
 
@@ -28,7 +28,7 @@ int exert(object me, object target)
 	me->receive_damage("qi", 15);
 
 	me->start_busy(3);
-	message_vision(HIY"$NÄÃ³öÒ»Ö»óï£¬½«óï´Õµ½×ì±ß£¬¿ªÊ¼ÓÄÓÄÑÊÑÊµØ´µ×àÆð¡°±Ìº£³±ÉúÇú¡±À´£¬Çúµ÷ÈçÆüÈçÊö£¬ÈáÃÓÍò¶Ë¡£\n"NOR, me);
+	message_vision(HIY"$Næ‹¿å‡ºä¸€åªç®«ï¼Œå°†ç®«å‡‘åˆ°å˜´è¾¹ï¼Œå¼€å§‹å¹½å¹½å’½å’½åœ°å¹å¥èµ·â€œç¢§æµ·æ½®ç”Ÿæ›²â€æ¥ï¼Œæ›²è°ƒå¦‚æ³£å¦‚è¿°ï¼ŒæŸ”ç³œä¸‡ç«¯ã€‚\n"NOR, me);
 	ob = all_inventory(environment(me));
 	for (i = 0; i < sizeof(ob); i++) {
 		if (!living(ob[i]) || ob[i] == me) continue;
@@ -43,7 +43,7 @@ int exert(object me, object target)
 				ob[i]->receive_damage("jing", damage * 2, me);
 				if( (int)ob[i]->query("neili") < skill * 2)
 					ob[i]->receive_wound("jing", damage, me);
-				tell_object(ob[i], "Äã¾õµÃÃæºì¶ú³à£¬°ÙÂöêÚÕÅ£¬ÐÄìºÒ¡¶¯£¬ºôÎüÒ²±äµÃ¼±´Ù¶øÇÒÀ§ÄÑÁË¡£\n");
+				tell_object(ob[i], "ä½ è§‰å¾—é¢çº¢è€³èµ¤ï¼Œç™¾è„‰è´²å¼ ï¼Œå¿ƒæ—Œæ‘‡åŠ¨ï¼Œå‘¼å¸ä¹Ÿå˜å¾—æ€¥ä¿ƒè€Œä¸”å›°éš¾äº†ã€‚\n");
 		if( !me->is_killing(ob[i]) )
 			me->fight_ob(ob[i]);
 
@@ -52,7 +52,7 @@ int exert(object me, object target)
 			}
 		}
 		else
-			tell_object(ob[i], "ÄãµÄÄê¼ÍÉÐÐ¡£¬ÌýÁËÒ»Õó£¬Ã»ÓÐÊ²Ã´ÌØ±ðµÄ¸ÐÊÜ¡£\n");
+			tell_object(ob[i], "ä½ çš„å¹´çºªå°šå°ï¼Œå¬äº†ä¸€é˜µï¼Œæ²¡æœ‰ä»€ä¹ˆç‰¹åˆ«çš„æ„Ÿå—ã€‚\n");
 	}
 
 	return 1;

@@ -5,10 +5,10 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("ÀÖºñ", ({ "yao hou", "hou", "yao" }) );
-	set("long","Ëû°«°«ÅÖÅÖ£¬ÃæÆ¤»ÆÖ×£¬Ô¼ÄªÎåÊ®À´ËêÄê¼Í£¬Á½Ö»ÊÖÕÆ·Ê·ÊµÄÓÖÐ¡ÓÖºñ¡£\n");
-	set("nickname", "´óÒõÑôÊÖ");
-	set("gender", "ÄÐÐÔ");
+	set_name("ä¹åŽš", ({ "yao hou", "hou", "yao" }) );
+	set("long","ä»–çŸ®çŸ®èƒ–èƒ–ï¼Œé¢çš®é»„è‚¿ï¼Œçº¦èŽ«äº”åæ¥å²å¹´çºªï¼Œä¸¤åªæ‰‹æŽŒè‚¥è‚¥çš„åˆå°åˆåŽšã€‚\n");
+	set("nickname", "å¤§é˜´é˜³æ‰‹");
+	set("gender", "ç”·æ€§");
 	set("class", "swordsman");
 	set("age", 54);
 	set("attitude", "peaceful");
@@ -58,7 +58,7 @@ void create()
 		(: exert_function, "regenerate" :),
 		(: exert_function, "recover" :),
 	}) );
-	create_family("áÔÉ½ÅÉ", 13, "µÜ×Ó");
+	create_family("åµ©å±±æ´¾", 13, "å¼Ÿå­");
 	setup();
 
 carry_object(__DIR__"kuojian")->wield();

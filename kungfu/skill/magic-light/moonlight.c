@@ -9,29 +9,29 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() )
-		return notify_fail(HIY"ÄãÒªÎªË­Ê¹ÓÃÔÂ¹âÊõ£¿\n"NOR);
+		return notify_fail(HIY"ä½ è¦ä¸ºè°ä½¿ç”¨æœˆå…‰æœ¯ï¼Ÿ\n"NOR);
 
        if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 600)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕýÃ¦£¬ÎÞ·¨Ê¹ÓÃÔÂ¹âÊõ");
+        return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ï¼Œæ— æ³•ä½¿ç”¨æœˆå…‰æœ¯");
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 	if((int)me->query("neili")< 1000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 	if((int)me->query_skill("magic-light",1)< 250)
-	return notify_fail("ÄãµÄ¹âÃ÷Ä§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„å…‰æ˜Žé­”æ³•å¤ªå·®äº†ï¼\n");
 
 	if((int)target->query("qi") > (int)target->query("max_qi")-(int)target->query("max_qi")/3)
-	return notify_fail("Ä¿±êÏÖÔÚ²»ÐèÒªÊ¹ÓÃÔÂ¹âÊõ£¡\n");
+	return notify_fail("ç›®æ ‡çŽ°åœ¨ä¸éœ€è¦ä½¿ç”¨æœˆå…‰æœ¯ï¼\n");
 
-	msg = HIY "$NÄî¶¯ÖäÓï ´È°®ÍòÄÜµÄÖ÷£¬ÓÉÄúËùÓÐµÄÁ¦Á¿£¬´ÍÓëÎÒÖØÉú°É£¡£¡¡£\n";
-	msg += HIY "$NÄî¶¯ÖäÓï Äî¶¯ÖäÓï ÐÅ¹âÃ÷Õß£¬µÃÓÀÉú!!£¡¡£\n";
-	msg += HIW "$nµÄÉíÉÏ£¬²¼ÂýÁËÊ¥Ö®ÔÂ¹â£¬ÉíÉÏµÄÉËÇáÁË²»ÉÙ!\¡£\n";
+	msg = HIY "$Nå¿µåŠ¨å’’è¯­ æ…ˆçˆ±ä¸‡èƒ½çš„ä¸»ï¼Œç”±æ‚¨æ‰€æœ‰çš„åŠ›é‡ï¼Œèµä¸Žæˆ‘é‡ç”Ÿå§ï¼ï¼ã€‚\n";
+	msg += HIY "$Nå¿µåŠ¨å’’è¯­ å¿µåŠ¨å’’è¯­ ä¿¡å…‰æ˜Žè€…ï¼Œå¾—æ°¸ç”Ÿ!!ï¼ã€‚\n";
+	msg += HIW "$nçš„èº«ä¸Šï¼Œå¸ƒæ…¢äº†åœ£ä¹‹æœˆå…‰ï¼Œèº«ä¸Šçš„ä¼¤è½»äº†ä¸å°‘!\ã€‚\n";
 	me->add("neili",-500);
 	me->start_busy(2);
 

@@ -1,4 +1,4 @@
-// rong.c »ÆÈØ
+// rong.c é»„è“‰
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,13 +7,13 @@ string ask_chicken();
 
 void create()
 {
-    set_name("»ÆÈØ", ({"huang rong", "huang", "rong"}));
-    set("title", "ÌÒ»¨µºÖ÷¶ÀÉú°®Å®");
-    set("gender", "Å®ĞÔ");
+    set_name("é»„è“‰", ({"huang rong", "huang", "rong"}));
+    set("title", "æ¡ƒèŠ±å²›ä¸»ç‹¬ç”Ÿçˆ±å¥³");
+    set("gender", "å¥³æ€§");
     set("age", 18);
     set("long", 
-        "ÕâÊÇÌÒ»¨µºÖ÷µÄ¶ÀÉúÅ®¶ù¡£ÓÉÓÚµºÖ÷·òÈËÔçËÀ£¬µºÖ÷¶ÔÕâ¸öÅ®¶ù±¸¼ÓÌÛ°®¡£\n"
-        "ËıÉúĞÔÌøÍÑ·ÉÑï£¬Ï²»¶ËÄ´¦ÂÒÅÜ¡£\n");
+        "è¿™æ˜¯æ¡ƒèŠ±å²›ä¸»çš„ç‹¬ç”Ÿå¥³å„¿ã€‚ç”±äºå²›ä¸»å¤«äººæ—©æ­»ï¼Œå²›ä¸»å¯¹è¿™ä¸ªå¥³å„¿å¤‡åŠ ç–¼çˆ±ã€‚\n"
+        "å¥¹ç”Ÿæ€§è·³è„±é£æ‰¬ï¼Œå–œæ¬¢å››å¤„ä¹±è·‘ã€‚\n");
 
     set("attitude", "peaceful");
     set("class", "scholar");
@@ -49,10 +49,10 @@ void create()
     map_skill("dodge"  , "anying-fuxiang");
     map_skill("sword"  , "luoying-shenjian") ;
 	
-    create_family("ÌÒ»¨µº", 2, "µÜ×Ó");
+    create_family("æ¡ƒèŠ±å²›", 2, "å¼Ÿå­");
 
 	set("inquiry", ([
-		"½Ğ»¯¼¦" : (: ask_chicken :)
+		"å«åŒ–é¸¡" : (: ask_chicken :)
 	]) );
 
     setup();
@@ -70,7 +70,7 @@ init()
 	add_action("do_kiss", "kiss");
 	if (interactive(ob = this_player()) && !is_fighting()) {
 		myfam = (mapping)ob->query("family");
-		if ((!myfam || myfam["family_name"] != "ÌÒ»¨µº") &&
+		if ((!myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›") &&
 			(!wizardp(ob)))
 		{
 			remove_call_out("saying");
@@ -85,10 +85,10 @@ int do_kiss ( string arg )
    if( !arg || arg!="rong" )
      return 0;
    
-   if ( (string) ob -> query ("gender") == "ÄĞĞÔ" )
-      command ("say ¾ÈÃü°¡£¡¾ÈÃü°¡£¡"+ ob->query("name") + "Òª·ÇÀñÎÒ£¡\n") ;
+   if ( (string) ob -> query ("gender") == "ç”·æ€§" )
+      command ("say æ•‘å‘½å•Šï¼æ•‘å‘½å•Šï¼"+ ob->query("name") + "è¦éç¤¼æˆ‘ï¼\n") ;
    else
-      message_vision("\n»ÆÈØ¶Ô$NĞ¦µÀ£º¡°ºÃ½ã½ã²»ÒªÕâÑù£¬ÎÒÅÂÑ÷£¡¡±\n", ob);
+      message_vision("\né»„è“‰å¯¹$Nç¬‘é“ï¼šâ€œå¥½å§å§ä¸è¦è¿™æ ·ï¼Œæˆ‘æ€•ç—’ï¼â€\n", ob);
    return 1 ;
 }
 
@@ -96,28 +96,28 @@ void saying(object ob)
 {
     if (!ob || environment(ob) != environment())
         return;
-    if ((string)ob->query("gender") == "ÄĞĞÔ")
-        message_vision("\n»ÆÈØÃæÏÖ¾ªÆæÖ®É«£¬´òÁ¿ÁË$NÒ»ÑÛ£¬Ëµµ½£º¡°ÄãÊÇÊ²Ã´ÈË£¬"
-        "¾¹¸ÒÂÒ´³ÎÒµÄ¹ë·¿£¿\nÔÙ²»¹ö³öÈ¥£¬¿´ÎÒÔõÃ´ÕûÄã£¡¡±\n", ob);
+    if ((string)ob->query("gender") == "ç”·æ€§")
+        message_vision("\né»„è“‰é¢ç°æƒŠå¥‡ä¹‹è‰²ï¼Œæ‰“é‡äº†$Nä¸€çœ¼ï¼Œè¯´åˆ°ï¼šâ€œä½ æ˜¯ä»€ä¹ˆäººï¼Œ"
+        "ç«Ÿæ•¢ä¹±é—¯æˆ‘çš„é—ºæˆ¿ï¼Ÿ\nå†ä¸æ»šå‡ºå»ï¼Œçœ‹æˆ‘æ€ä¹ˆæ•´ä½ ï¼â€\n", ob);
     else
-        message_vision("\n»ÆÈØ¿´ÁË¿´$N£¬Ëµµ½£º¡°ºÃ¾ÃÃ»ÉúÈËÀ´¹ıÁË£¬"
-        "²»ÖªÕâÎ»½ã½ã¿ÉÓĞÎÒ¾¸¸ç¸çµÄÏûÏ¢£¿\n", ob);
+        message_vision("\né»„è“‰çœ‹äº†çœ‹$Nï¼Œè¯´åˆ°ï¼šâ€œå¥½ä¹…æ²¡ç”Ÿäººæ¥è¿‡äº†ï¼Œ"
+        "ä¸çŸ¥è¿™ä½å§å§å¯æœ‰æˆ‘é–å“¥å“¥çš„æ¶ˆæ¯ï¼Ÿ\n", ob);
 }
 
 void attempt_apprentice(object ob)
 {
-    command("say ÎÒÄê¼ÍÕâÃ´Ğ¡¾ÍÊÕÍ½µÜ£¬Æñ²»ÈÃÈËĞ¦µô´óÑÀ£¡");
+    command("say æˆ‘å¹´çºªè¿™ä¹ˆå°å°±æ”¶å¾’å¼Ÿï¼Œå²‚ä¸è®©äººç¬‘æ‰å¤§ç‰™ï¼");
 }
 
 string ask_chicken()
 {
-	if (this_player()->query_temp("marks/¼¦", 1))
-		return "ÄãÕâ¸öÈËÔõÃ´ÕâÃ´·³£¿ÀÏËµ³µéïê¤»°£¡\n";
+	if (this_player()->query_temp("marks/é¸¡", 1))
+		return "ä½ è¿™ä¸ªäººæ€ä¹ˆè¿™ä¹ˆçƒ¦ï¼Ÿè€è¯´è½¦è½±è¾˜è¯ï¼\n";
 	else
 	{
-		say("ÈØ¶ùÉñÍùµØËµ£º½Ğ»¯¼¦¿ÉÊÇº¼ÖİÖøÃûÌØ²ú£¬ÎÒµùµ±Äê·ÑÁËºÃ´óµÄ¾¢²Å¸ãµ½ÁËÖÆ×÷\n"
-			"ËüµÄÃØ·½¡£ÄãÎÊËüÀ´¸ÉÊ²Ã´£¿\n");
-		this_player()->set_temp("marks/¼¦", 1);
-		return "Äã¿ÉÒÔ³öÈ¥ÁË¡£\n";
+		say("è“‰å„¿ç¥å¾€åœ°è¯´ï¼šå«åŒ–é¸¡å¯æ˜¯æ­å·è‘—åç‰¹äº§ï¼Œæˆ‘çˆ¹å½“å¹´è´¹äº†å¥½å¤§çš„åŠ²æ‰æåˆ°äº†åˆ¶ä½œ\n"
+			"å®ƒçš„ç§˜æ–¹ã€‚ä½ é—®å®ƒæ¥å¹²ä»€ä¹ˆï¼Ÿ\n");
+		this_player()->set_temp("marks/é¸¡", 1);
+		return "ä½ å¯ä»¥å‡ºå»äº†ã€‚\n";
 	}
 }

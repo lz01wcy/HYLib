@@ -15,14 +15,14 @@ int perform(object me, object target)
         flag = 0;
         
         if ( extra < 60) 
-                return notify_fail("ÄãµÄÔÀ¼ÒÇ¹·¨»¹²»¹»´¿Êì£¡\n");
+                return notify_fail("ä½ çš„å²³å®¶æžªæ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "club")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         dodskill = (string) me->query_skill_mapped("dodge");
 
@@ -37,13 +37,13 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£ÛÓëÌì±È¸ß£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»ä¸Žå¤©æ¯”é«˜ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         weapon = me->query_temp("weapon");
-        msg = HIR"$NÒÔÊÖÖÐ"NOR+weapon->name()+HIR"µãµØ£¬ÉíÐÎÈçöïÅôÕ¹³á£¬Ò»·É³åÌì£¡\n"NOR;
+        msg = HIR"$Nä»¥æ‰‹ä¸­"NOR+weapon->name()+HIR"ç‚¹åœ°ï¼Œèº«å½¢å¦‚é²²é¹å±•ç¿…ï¼Œä¸€é£žå†²å¤©ï¼\n"NOR;
         message_vision(msg, me, target);
         if(random((int)target->query("combat_exp")) < (int)me->query("combat_exp"))
    {
-                message_vision("½á¹û$NÄ¿µÉ¿Ú´ô£¬²»ÖªÈçºÎÕÐ¼Ü£¡\n",target);
+                message_vision("ç»“æžœ$Nç›®çžªå£å‘†ï¼Œä¸çŸ¥å¦‚ä½•æ‹›æž¶ï¼\n",target);
 
                             target->start_busy(3);
 
@@ -53,7 +53,7 @@ int perform(object me, object target)
                 for(i=0;i<basic;i++)
                 {
                         if (me->is_busy()) continue;
-                        msg = HIY"³¤Ð¦ÉùÖÐ£¬$NÁè¿ÕÏÂ»÷£¬½Ó×ÅÓÖ½èÁ¦ÉÏÔ¾£¡\n"NOR;
+                        msg = HIY"é•¿ç¬‘å£°ä¸­ï¼Œ$Nå‡Œç©ºä¸‹å‡»ï¼ŒæŽ¥ç€åˆå€ŸåŠ›ä¸Šè·ƒï¼\n"NOR;
 
                         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
                         me->add("neili",-30);
@@ -64,7 +64,7 @@ int perform(object me, object target)
                 me->add_temp("apply/damage",-1000);
         }
         else{
-                message_vision("µ«ÊÇ$NÒÑ¾­¿´ÆÆ$nµÄ¹¥Ê½£¬$n´¦´¦ÊÜÖÆ£¡\n",target,me);
+                message_vision("ä½†æ˜¯$Nå·²ç»çœ‹ç ´$nçš„æ”»å¼ï¼Œ$nå¤„å¤„å—åˆ¶ï¼\n",target,me);
                 me->start_busy(2);
                         COMBAT_D->do_attack(target,me,target->query_temp("weapon"),TYPE_REGULAR,msg);
                 

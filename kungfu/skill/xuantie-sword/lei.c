@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// lei.c Ñ¸À×
+// lei.c è¿…é›·
 
 #include <ansi.h>
 #include <combat.h>
@@ -16,7 +16,7 @@ int perform(object me, object target)
         
         /*
         if (userp(me) && ! me->query("can_perform/xuantie-jian/lei"))
-                return notify_fail("ÄãÎ´µÃ¸ßÈËÖ¸µã£¬²»Öª¸ÃÈçºÎÊ©Õ¹¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ æœªå¾—é«˜äººæŒ‡ç‚¹ï¼Œä¸çŸ¥è¯¥å¦‚ä½•æ–½å±•ã€Œè¿…é›·ã€ã€‚\n");
         */
                         
         j = me->query_skill("xuantie-sword", 1);
@@ -27,42 +27,42 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸Ñ¸À×¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¿…é›·ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
        if (!weapon || weapon->query("skill_type") != "sword")
-                return notify_fail("Äã±ØÐëÔÚÊ¹ÓÃ½£Ê±²ÅÄÜÊ¹³ö¡¸Ñ¸À×¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»åœ¨ä½¿ç”¨å‰‘æ—¶æ‰èƒ½ä½¿å‡ºã€Œè¿…é›·ã€ï¼\n");
         if (me->query_skill_mapped("parry") != "xuantie-sword" && userp(me))
-                return notify_fail("ÄãµÄ»ù±¾ÕÐ¼Ü±ØÐëÊÇÐþÌú½£·¨Ê±²ÅÄÜÊ¹³ö¡¸Ñ¸À×¡¹£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ‹›æž¶å¿…é¡»æ˜¯çŽ„é“å‰‘æ³•æ—¶æ‰èƒ½ä½¿å‡ºã€Œè¿…é›·ã€ï¼\n");
 /*        || me->query_skill_mapped("sword") != "xuantie-sword"
                || me->query_skill_mapped("parry") != "xuantie-sword")
-                return notify_fail("Äã±ØÐëÔÚÊ¹ÓÃ½£Ê±²ÅÄÜÊ¹³ö¡¸Ñ¸À×¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»åœ¨ä½¿ç”¨å‰‘æ—¶æ‰èƒ½ä½¿å‡ºã€Œè¿…é›·ã€ï¼\n");
 */
 
         if(me->query_skill("xuantie-sword", 1) < 160 )
-                return notify_fail("ÄãµÄÐþÌú½£·¨»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„çŽ„é“å‰‘æ³•è¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if(me->query_skill("yunv-xinfa", 1) < 160 )
-                return notify_fail("ÄãµÄÅ­º£¿ñÌÎÐÞÎª²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„æ€’æµ·ç‹‚æ¶›ä¿®ä¸ºä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( (int)me->query_skill("force", 1) < 200 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( (int)me->query_str() < 32)
-                return notify_fail("ÄãµÄëöÁ¦»¹²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„è†‚åŠ›è¿˜ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( (int)me->query_dex() < 30)
-                return notify_fail("ÄãµÄÉí·¨»¹²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");                                                                               
+                return notify_fail("ä½ çš„èº«æ³•è¿˜ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");                                                                               
 
         if( (int)me->query("max_neili") < 1800 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");      
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");      
 
         if( (int)me->query("neili") < 900 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n"); 
+                return notify_fail("ä½ çŽ°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n"); 
 
         me->add_temp("apply/defense", z / 6);
         me->add_temp("apply/attack", j / 6); 
  
-        msg = BLU "\n$N½«ÊÖÖÐµÄ"+weapon->name()+"»º»ºÏò$nÒ»Ñ¹£¬ºöÈ»½£¹âÒ»ÉÁ£¬ Ò»½£»ÃÎªÈý½££¬ÍðÈç±¼À×³¸µç¹¥Ïò$n£¡\n\n"NOR;
+        msg = BLU "\n$Nå°†æ‰‹ä¸­çš„"+weapon->name()+"ç¼“ç¼“å‘$nä¸€åŽ‹ï¼Œå¿½ç„¶å‰‘å…‰ä¸€é—ªï¼Œ ä¸€å‰‘å¹»ä¸ºä¸‰å‰‘ï¼Œå®›å¦‚å¥”é›·æŽ£ç”µæ”»å‘$nï¼\n\n"NOR;
         message_combatd(msg, me, target);
         
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));

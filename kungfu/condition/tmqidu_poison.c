@@ -8,34 +8,34 @@ inherit F_CLEAN_UP;
 
 string name() { return "tmqidu_poison"; }
 
-string chinese_name() { return "ÌÆÃÅ´ßÃüÉ¢"; }
+string chinese_name() { return "å”é—¨å‚¬å‘½æ•£"; }
 
 int update_condition(object me, int duration) {
     if (duration < 1) return 0;
 
     message("vision", me->name() + HIB
-    "²Òº¿Ò»Éù£¬Á³É«ÌúÇà£¬È«Éí¾­Âöµ¹Á÷£¬²»×¡µÄ²ü¶¶¡£¡£\n"
+    "æƒ¨åšä¸€å£°ï¼Œè„¸è‰²é“é’ï¼Œå…¨èº«ç»è„‰å€’æµï¼Œä¸ä½çš„é¢¤æŠ–ã€‚ã€‚\n"
     NOR, environment(me), me);
     tell_object(me, HIB
-    "ÄãÖ»¾õÈ«Éí¾­Âöµ¹Á÷£¬È«Éí¼¡Èâ¿ìÒª»µËÀÒ»°ã¡££¡\n"
+    "ä½ åªè§‰å…¨èº«ç»è„‰å€’æµï¼Œå…¨èº«è‚Œè‚‰å¿«è¦åæ­»ä¸€èˆ¬ã€‚ï¼\n"
     NOR );
     if (random(3) == 0 && (int) me->query("qi") < 100000) {
         if (me->query("qi") > me->query("qi") / 2)
             me->set("qi", me->query("qi") / 2);
         tell_object(me, HIG
-        "ÄãµÄÆøÁ¦¼õµÍÁË!\n"
+        "ä½ çš„æ°”åŠ›å‡ä½äº†!\n"
         NOR);
     } else if (random(3) == 1 && (int) me->query("qi") < 100000) {
         if (me->query("jing") > me->query("jing") / 2)
             me->set("jing", me->query("jing") / 2);
         tell_object(me, HIG
-        "ÄãµÄ¾«Á¦¼õµÍÁË!\n"
+        "ä½ çš„ç²¾åŠ›å‡ä½äº†!\n"
         NOR);
     } else {
         if (me->query("neili") > me->query("neili") / 2 && (int) me->query("qi") < 100000)
             me->set("neili", me->query("neili") / 2);
         tell_object(me, HIG
-        "ÄãµÄÄÚÁ¦¼õµÍÁË!\n"
+        "ä½ çš„å†…åŠ›å‡ä½äº†!\n"
         NOR);
     }
     if (!me->is_busy())

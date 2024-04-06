@@ -9,15 +9,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÖÜÆÅÆÅ", ({ "zhou popo", "zhou", "popo" }));
+        set_name("å‘¨å©†å©†", ({ "zhou popo", "zhou", "popo" }));
         set("long", @LONG
-ÓàÆÅÆÅÊÇçÎç¿·åÁéðÕ¹¬ÖÐ¾ÅÌì¾Å²¿ÖÐð½Ìì²¿µÄ
-Ê×Áì¡£ËýÈç½ñÄê¹ý°ë°Ù£¬¸úËæÍ¯ÀÑ¶àÄê£¬³öÉú
-ÈëËÀ£¬±¥¾­·çËª¡£
+ä½™å©†å©†æ˜¯ç¼¥ç¼ˆå³°çµé¹«å®«ä¸­ä¹å¤©ä¹éƒ¨ä¸­é¸¾å¤©éƒ¨çš„
+é¦–é¢†ã€‚å¥¹å¦‚ä»Šå¹´è¿‡åŠç™¾ï¼Œè·Ÿéšç«¥å§¥å¤šå¹´ï¼Œå‡ºç”Ÿ
+å…¥æ­»ï¼Œé¥±ç»é£Žéœœã€‚
 LONG);
-        set("title", "çÎç¿·ìÁéðÕ¹¬");
-        set("nickname", HIW "ð½Ìì²¿Ê×Áì" NOR);
-        set("gender", "Å®ÐÔ");
+        set("title", "ç¼¥ç¼ˆç¼çµé¹«å®«");
+        set("nickname", HIW "é¸¾å¤©éƒ¨é¦–é¢†" NOR);
+        set("gender", "å¥³æ€§");
         set("age", 60);
         set("attitude", "peaceful");
         set("str", 30);
@@ -56,7 +56,7 @@ LONG);
 
         prepare_skill("strike", "liuyang-zhang");
 
-        create_family("ÁéðÕ¹¬", 2, "Ê×Áì");
+        create_family("çµé¹«å®«", 2, "é¦–é¢†");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -85,18 +85,18 @@ void init()
 	
 	if (interactive(ob) 
 	&&  !environment(ob)->query("no_fight")
-	&&  ((fam = ob->query("family")) && fam["family_name"] != "ÁéðÕ¹¬" ))
+	&&  ((fam = ob->query("family")) && fam["family_name"] != "çµé¹«å®«" ))
 	{
 		if (! ob->query_temp("warned")) 
 		{
-		        command("say ×ðÖ÷ÓÐÁî£ºÍâÈË²»µÃ½øÈëÁéðÕ¹¬£¬ËÙËÙÀë¿ª£¡");
+		        command("say å°Šä¸»æœ‰ä»¤ï¼šå¤–äººä¸å¾—è¿›å…¥çµé¹«å®«ï¼Œé€Ÿé€Ÿç¦»å¼€ï¼");
 			ob->set_temp("warned", 1);
 	        } else 
 	        if (ob->query_temp("stay") < 5) 
                         ob->add_temp("stay", 1);
                 else 
                 {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸ÒÉÃ´³ÁéðÕ¹¬£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢æ“…é—¯çµé¹«å®«ï¼ï¼ï¼\n");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}
@@ -106,28 +106,28 @@ void init()
 void attempt_apprentice(object ob)
 {
 
-        if ((string)ob->query("gender") == "ÄÐÐÔ")
+        if ((string)ob->query("gender") == "ç”·æ€§")
         {
                 command("hmm");
-                command("say ×ß¿ª£¬ÁéðÕ¹¬ËØÀ´²»ÊÕÄÐÍ½¡£");
+                command("say èµ°å¼€ï¼Œçµé¹«å®«ç´ æ¥ä¸æ”¶ç”·å¾’ã€‚");
                 return;
         }
 
-        if ((string)ob->query("gender") != "Å®ÐÔ")
+        if ((string)ob->query("gender") != "å¥³æ€§")
         {
                 command("sneer");
-                command("say ÁéðÕ¹¬ÓÖ²»ÊÇ»Ê¹¬£¬ÄãÒ»¸öÌ«¼àÅÜÀ´×öÉõ£¿");
+                command("say çµé¹«å®«åˆä¸æ˜¯çš‡å®«ï¼Œä½ ä¸€ä¸ªå¤ªç›‘è·‘æ¥åšç”šï¼Ÿ");
                 return;
         }
 
         if ((int)ob->query_skill("xiaowuxiang", 1) < 40) 
         {
-                command("say Äã°Ñ±¾ÃÅµÄÐÄ·¨Á¶ºÃÁËÔÙÀ´ÕÒÎÒ¡£");
+                command("say ä½ æŠŠæœ¬é—¨çš„å¿ƒæ³•ç‚¼å¥½äº†å†æ¥æ‰¾æˆ‘ã€‚");
                 return;
         }
 
         command("nod2");
-        command("say ÄÇÄãÒÔºó¾Í¸ú×ÅÎÒ°É¡£");
+        command("say é‚£ä½ ä»¥åŽå°±è·Ÿç€æˆ‘å§ã€‚");
         command("recruit " + ob->query("id"));
 
         if ((string)ob->query("class") != "dancer")

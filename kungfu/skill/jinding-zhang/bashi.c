@@ -1,4 +1,4 @@
-// bashi.c ½ğ¶¥ÃàÕÆ °ËÊ½ºÏÒ»
+// bashi.c é‡‘é¡¶ç»µæŒ å…«å¼åˆä¸€
 
 #include <ansi.h>
 #include <skill.h>
@@ -19,23 +19,23 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !me->is_fighting() )
-                return notify_fail("¡¸°ËÊ½ºÏÒ»¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå…«å¼åˆä¸€ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
         if( (int)target->query_temp("bashi") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
         if( (int)me->query("neili") < 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»¸ß£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿé«˜ï¼\n");
         if( (int)me->query_skill("linji-zhuang", 1) < 40)
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ¹¶ş×¯µÄĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ°ËÊ½ºÏÒ»!\n");
+                return notify_fail("ä½ çš„ä¸´æµä½¿äºŒåº„çš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨å…«å¼åˆä¸€!\n");
         if( (int)me->query_skill("jinding-zhang",1) <100)
-                return notify_fail("ÄãµÄ½ğ¶¥ÃàÕÆµÄ°ËÊ½ĞŞÏ°²»È«£¬ÎŞ·¨Ê¹ÓÃ°ËÊ½ºÏÒ»£¡\n");
+                return notify_fail("ä½ çš„é‡‘é¡¶ç»µæŒçš„å…«å¼ä¿®ä¹ ä¸å…¨ï¼Œæ— æ³•ä½¿ç”¨å…«å¼åˆä¸€ï¼\n");
         if( me->query_skill_mapped("strike") != "jinding-zhang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢½ğ¶¥ÃàÕÆ£¬ÎŞ·¨Ê¹ÓÃ°ËÊ½ºÏÒ»£¡\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é‡‘é¡¶ç»µæŒï¼Œæ— æ³•ä½¿ç”¨å…«å¼åˆä¸€ï¼\n");
         if( me->query_temp("weapon"))
-                return notify_fail("ÄãÏÈ·ÅÏÂÊÖÖĞµÄÎäÆ÷ÔÙËµ°É£¿£¡\n");     
+                return notify_fail("ä½ å…ˆæ”¾ä¸‹æ‰‹ä¸­çš„æ­¦å™¨å†è¯´å§ï¼Ÿï¼\n");     
 
 //        if( !target->is_killing(me) ) target->kill_ob(me);
 
-        msg = HIY "$NÉîÉîÎüÁËÒ»¿ÚÆø£¬ÌáÆğÈ«ÉíµÄ¹¦Á¦ÓÚË«ÕÆ£¬Ö»ÌıµÄ$N¹Ç÷ÀÒ»Õó±¬Ïì£¡\n" NOR;
+        msg = HIY "$Næ·±æ·±å¸äº†ä¸€å£æ°”ï¼Œæèµ·å…¨èº«çš„åŠŸåŠ›äºåŒæŒï¼Œåªå¬çš„$Néª¨éª¼ä¸€é˜µçˆ†å“ï¼\n" NOR;
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3)
         {
                 damage = (int)me->query_skill("linji-zhuang", 1)/2;
@@ -45,13 +45,13 @@ int perform(object me, object target)
                 target->add_temp("apply/attack", -damage/2);
                 target->add_temp("apply/defence", -damage/2);
                 target->add_temp("apply/dodge", -damage/2);
-                msg += HIR "$NÌÚ¿Õ¶øÆğ£¬Ê¹³öÁË¡¸°ËÊ½ºÏÒ»¡¹£¬ÂşÌìµÄÕÆÓ°£¬Æ®ºö²»¶¨µÄÕÖÏò$nÈ«Éí¸÷¸ö²¿Î»£¬\n" NOR;
+                msg += HIR "$Nè…¾ç©ºè€Œèµ·ï¼Œä½¿å‡ºäº†ã€Œå…«å¼åˆä¸€ã€ï¼Œæ¼«å¤©çš„æŒå½±ï¼Œé£˜å¿½ä¸å®šçš„ç½©å‘$nå…¨èº«å„ä¸ªéƒ¨ä½ï¼Œ\n" NOR;
                 me->start_call_out( (: call_other, __FILE__, "remove_effect",target,damage/2, damage/2:), damage/30);
                 me->add("neili",-200);
                 target->start_busy(3);
          }
          else {
-                msg += NOR"¿ÉÊÇ$pÃÍµØÏòÇ°Ò»Ô¾,Ìø³öÁË$PµÄ¹¥»÷·¶Î§¡£\n"NOR;
+                msg += NOR"å¯æ˜¯$pçŒ›åœ°å‘å‰ä¸€è·ƒ,è·³å‡ºäº†$Pçš„æ”»å‡»èŒƒå›´ã€‚\n"NOR;
          }
                 me->start_busy(2);
          message_combatd(msg, me, target);
@@ -66,7 +66,7 @@ if (target)
                target->add_temp("apply/defence", aamount);
                target->add_temp("apply/dodge", damount);
                target->delete_temp("bashi");
-               message_combatd(YEL"$N´ÓÃÍÁÒµÄ¹¥»÷ÖĞ°ÚÍÑÁË³öÀ´£¬Á¬ÍËÊı²½,ÎÈ×¡ÁË½Å²½\n"NOR, target);
+               message_combatd(YEL"$Nä»çŒ›çƒˆçš„æ”»å‡»ä¸­æ‘†è„±äº†å‡ºæ¥ï¼Œè¿é€€æ•°æ­¥,ç¨³ä½äº†è„šæ­¥\n"NOR, target);
 }
 }
 

@@ -12,17 +12,17 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸Î¨ÎÒ¶À×ð¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå”¯æˆ‘ç‹¬å°Šã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
-	msg = RED "$NË«Ä¿¾¡³à£¬¼À³ö¾ÅÒõ°×¹Ç×¦×îºóÒ»Ê½¡¸Î¨ÎÒ¶À×ð¡¹£¬";
+	msg = RED "$NåŒç›®å°½èµ¤ï¼Œç¥­å‡ºä¹é˜´ç™½éª¨çˆªæœ€åŽä¸€å¼ã€Œå”¯æˆ‘ç‹¬å°Šã€ï¼Œ";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR;
+		msg += "ç»“æžœ$pè¢«$Pæ”»äº†ä¸ªæŽªæ‰‹ä¸åŠï¼\n" NOR;
 		target->receive_damage("qi",(int) me->query("max_qi")/2);
 		target->receive_wound("jing", ((int) me->query("max_jing"))/2);
 	} else {
-		msg += "¿ÉÊÇ$p»¹ÊÇ¶ã¹ýÁË$PµÄ×îºóÒ»»÷£¡£¡\n" NOR;
+		msg += "å¯æ˜¯$pè¿˜æ˜¯èº²è¿‡äº†$Pçš„æœ€åŽä¸€å‡»ï¼ï¼\n" NOR;
 	}
 	message_vision(msg, me, target);
         me->unconcious();

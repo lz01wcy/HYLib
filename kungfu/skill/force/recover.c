@@ -7,17 +7,17 @@ int exert(object me, object target)
 	int n, q;
 
 	if (me != target)
-		return notify_fail("ÄãÖ»ÄÜÓÃÄÚ¹¦µ÷ÔÈ×Ô¼ºµÄÆøÏ¢¡£\n");
+		return notify_fail("ä½ åªèƒ½ç”¨å†…åŠŸè°ƒåŒ€è‡ªå·±çš„æ°”æ¯ã€‚\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¡\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
 
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	q = (int)me->query("eff_qi") - (int)me->query("qi");
 	if (q < 10)
-		return notify_fail("ÄãÏÖÔÚÆøÁ¦³äÅæ¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨æ°”åŠ›å……æ²›ã€‚\n");
 	n = 100 * q / me->query_skill("force");
 	if (n < 20)
 		n = 20;
@@ -29,7 +29,7 @@ int exert(object me, object target)
 	me->add("neili", -n);
 	me->receive_heal("qi", q);
 	
-        message_combatd("$NÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£\n", me);
+        message_combatd("$Næ·±æ·±å¸äº†å‡ å£æ°”ï¼Œè„¸è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n", me);
 //        me->start_busy(1);
         if( me->is_fighting() ) me->start_busy(2);
 	

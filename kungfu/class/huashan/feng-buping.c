@@ -1,18 +1,18 @@
-// feng-buping.c  ∑‚≤ª∆Ω
+// feng-buping.c  Â∞Å‰∏çÂπ≥
 inherit NPC;
 inherit F_MASTER;
 #include <ansi.h>
 
 void create()
 {
-        set_name("∑‚≤ª∆Ω", ({ "feng buping", "feng" }) );
-        set("nickname", YEL"øÒ∑ÁøÏΩ£"NOR);
-        set("gender", "ƒ––‘");
+        set_name("Â∞Å‰∏çÂπ≥", ({ "feng buping", "feng" }) );
+        set("nickname", YEL"ÁãÇÈ£éÂø´Ââë"NOR);
+        set("gender", "Áî∑ÊÄß");
         set("class", "swordsman");
-        set("title", "ª™…ΩΩ£◊⁄µ⁄ Æ»˝¥˙µ‹◊”");
+        set("title", "ÂçéÂ±±ÂâëÂÆóÁ¨¨ÂçÅ‰∏â‰ª£ÂºüÂ≠ê");
         set("age", 45);
         set("long",
-                "∑‚≤ª∆Ω «ª™…ΩΩ£◊⁄µ⁄“ª∏ﬂ ÷£¨¬˙¡≥ÏÂ∆¯“ª’≈ª∆ΩπΩπµƒ√Ê∆§°£\n");
+                "Â∞Å‰∏çÂπ≥ÊòØÂçéÂ±±ÂâëÂÆóÁ¨¨‰∏ÄÈ´òÊâãÔºåÊª°ËÑ∏ÊàæÊ∞î‰∏ÄÂº†ÈªÑÁÑ¶ÁÑ¶ÁöÑÈù¢ÁöÆ„ÄÇ\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -63,7 +63,7 @@ void create()
         map_skill("unarmed", "huashan-zhangfa");
         map_skill("dodge", "huashan-shenfa");
 
-        create_family("ª™…Ω≈…", 13, "µ‹◊”");
+        create_family("ÂçéÂ±±Ê¥æ", 13, "ÂºüÂ≠ê");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -74,20 +74,20 @@ void attempt_apprentice(object ob)
 {
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say ¬˝÷¯£¨“ª∏ˆ“ª∏ˆ¿¥°£");
+                        command("say ÊÖ¢ËëóÔºå‰∏Ä‰∏™‰∏Ä‰∏™Êù•„ÄÇ");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say ¿œ∑ÚΩÒÃÏ“—æ≠ ’¡À»˝∏ˆµ‹◊”£¨≤ªœÎ‘Ÿ ’ÕΩ¡À°£");
+                command("say ËÄÅÂ§´‰ªäÂ§©Â∑≤ÁªèÊî∂‰∫Ü‰∏â‰∏™ÂºüÂ≠êÔºå‰∏çÊÉ≥ÂÜçÊî∂Âæí‰∫Ü„ÄÇ");
         }
 }
 
 void do_recruit(object ob)
 {
         if( (int)ob->query("int") < 20 )
-                command("say Œ“ª™…Ω≈…“‘Ω£∑®Œ™÷˜£¨“¿Œ“ø¥"+RANK_D->query_respect(ob)+"≤ª  ∫œ”⁄—ßΩ£∑®°£");
+                command("say ÊàëÂçéÂ±±Ê¥æ‰ª•ÂâëÊ≥ï‰∏∫‰∏ªÔºå‰æùÊàëÁúã"+RANK_D->query_respect(ob)+"‰∏çÈÄÇÂêà‰∫éÂ≠¶ÂâëÊ≥ï„ÄÇ");
         else {
-                command("say ∫√£¨∫√£¨∫√£¨∫‹∫√°£");
+                command("say Â•ΩÔºåÂ•ΩÔºåÂ•ΩÔºåÂæàÂ•Ω„ÄÇ");
                 command("recruit " + ob->query("id") );
         }
 }
@@ -95,7 +95,7 @@ void do_recruit(object ob)
 int recruit_apprentice(object ob)
 {
         if( ::recruit_apprentice(ob) )
-        ob->set("title", "ª™…ΩΩ£◊⁄µ⁄ ÆÀƒ¥˙µ‹◊”");
+        ob->set("title", "ÂçéÂ±±ÂâëÂÆóÁ¨¨ÂçÅÂõõ‰ª£ÂºüÂ≠ê");
 //                ob->set("class", "huashan");
         add("apprentice_availavble", -1);
 }

@@ -13,16 +13,16 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÁ÷Ë®äıäı£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»æµæ°´æ½ºæ½ºï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 	myexp = (int) me->query("combat_exp");
 	yourexp = (int) target->query("combat_exp");
 	lvl = (int) me->query_skill("liuquan-steps") / 10 + 1;
-	msg = HIR "$NÊ¹³öÁ÷Èª²½·¨ÖĞµÄ£ÛÁ÷Ë®äıäı£İ£¬»Ã³öÎŞÊıÉíÓ°£¬Ó°Ó°¹¥Ïò$n£¡" NOR;
+	msg = HIR "$Nä½¿å‡ºæµæ³‰æ­¥æ³•ä¸­çš„ï¼»æµæ°´æ½ºæ½ºï¼½ï¼Œå¹»å‡ºæ— æ•°èº«å½±ï¼Œå½±å½±æ”»å‘$nï¼" NOR;
 	if( random(yourexp) < myexp * lvl)
 	{
 		message_vision(msg + "\n", me, target);
-		msg = "½á¹û$n±»$NÈÅÁË¸öĞÄÉñ²»Äş£¡\n";
+		msg = "ç»“æœ$nè¢«$Næ‰°äº†ä¸ªå¿ƒç¥ä¸å®ï¼\n";
 		message_vision(msg, me, target);
 		qi = (int) target->query("qi");
 		target->receive_damage("qi", qi/10);

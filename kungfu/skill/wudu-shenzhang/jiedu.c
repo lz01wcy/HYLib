@@ -1,4 +1,4 @@
-// jiedu.c ½âÎå¶¾ÉñÕÆ
+// jiedu.c è§£äº”æ¯’ç¥æŒ
 // By Kayin @ CuteRabbit Studio 99-4-16 15:19 new
 #include <ansi.h>
 
@@ -10,27 +10,27 @@ int perform(object me, object target )
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() )
-                return notify_fail("ÄãÒª¸øË­½â¶¾¡£\n");
+                return notify_fail("ä½ è¦ç»™è°è§£æ¯’ã€‚\n");
 
         if( (int)me->query_skill("yunu-xinfa", 1) < 40 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ·¨²»¹»æµÊì£¬²»ÄÜ½âÎå¶¾ÉñÕÆ¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒæ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½è§£äº”æ¯’ç¥æŒã€‚\n");
 
         if( (int)me->query_skill("wudu-shenzhang", 1) < 40 )
-                return notify_fail("ÄãµÄÎå¶¾ÉñÕÆ²»¹»æµÊì£¬²»ÄÜ½âÎå¶¾ÉñÕÆ¡£\n");
+                return notify_fail("ä½ çš„äº”æ¯’ç¥æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½è§£äº”æ¯’ç¥æŒã€‚\n");
 
         if( (int)me->query("neili", 1) < 100 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜ½â¶¾¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½è§£æ¯’ã€‚\n");
                 
         if( target->query_condition("wuduz_poison")< 1)
-        	return notify_fail("ËûÃ»ÓĞÖĞ¶¾¡£\n");
+        	return notify_fail("ä»–æ²¡æœ‰ä¸­æ¯’ã€‚\n");
 if (!userp(target))
-	return notify_fail("¶Ô·½²»½ÓÊÜÄãµÄÒ½ÁÆ¡£\n");
+	return notify_fail("å¯¹æ–¹ä¸æ¥å—ä½ çš„åŒ»ç–—ã€‚\n");
 
 if (!userp(me))
-	return notify_fail("¶Ô·½²»½ÓÊÜÄãµÄÒ½ÁÆ¡£\n");
+	return notify_fail("å¯¹æ–¹ä¸æ¥å—ä½ çš„åŒ»ç–—ã€‚\n");
         me->add("neili", -300);
         target->apply_condition("wuduz_poison", 0);
-        msg = HIW "$NÊ¹³öÎå¶¾ÉñÕÆ½â¶¾µÄÊÖ·¨Îª$nÍÆÄÃ¡£½Ó×Å¸ø$n·şÏÂÒ»Á£½âÒ©.\n"NOR;
+        msg = HIW "$Nä½¿å‡ºäº”æ¯’ç¥æŒè§£æ¯’çš„æ‰‹æ³•ä¸º$næ¨æ‹¿ã€‚æ¥ç€ç»™$næœä¸‹ä¸€ç²’è§£è¯.\n"NOR;
 
         message_vision(msg, me, target);
         return 1;

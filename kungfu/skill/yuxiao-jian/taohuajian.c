@@ -15,36 +15,36 @@ int extra;
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¡¸ÌÒ»¨·ÉÎè¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œæ¡ƒèŠ±é£žèˆžã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if( me->query_skill("bibo-shengong",1) < 150)
-            return notify_fail("ÄãµÄ±Ì²¨Éñ¹¦µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸ÌÒ»¨·ÉÎè¡¹£¡\n");
+            return notify_fail("ä½ çš„ç¢§æ³¢ç¥žåŠŸç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œæ¡ƒèŠ±é£žèˆžã€ï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-            return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+            return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( me->query_skill("yuxiao-jian",1) < 150)
-            return notify_fail("ÄãµÄÓñóï½£·¨µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸ÌÒ»¨·ÉÎè¡¹£¡\n");
+            return notify_fail("ä½ çš„çŽ‰ç®«å‰‘æ³•ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œæ¡ƒèŠ±é£žèˆžã€ï¼\n");
 
         if( me->query("neili") < 400 )
-            return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸ÌÒ»¨·ÉÎè¡¹£¡\n");
+            return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œæ¡ƒèŠ±é£žèˆžã€ï¼\n");
 	extra = me->query_skill("yuxiao-jian",1) / 20;
 	extra += me->query_skill("bibo-shengong",1) /10;
 
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 
-	msg = HIY "$NÊ¹³öÌÒ»¨µº¾ø¼¼¡¸ÌÒ»¨·ÉÎè¡¹£¬Éí·¨¶¸È»¼Ó¿ì¡£ÂäÓ¢çÍ·×£¡" NOR;
+	msg = HIY "$Nä½¿å‡ºæ¡ƒèŠ±å²›ç»æŠ€ã€Œæ¡ƒèŠ±é£žèˆžã€ï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ã€‚è½è‹±ç¼¤çº·ï¼" NOR;
 	
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  YEL  "ÈËÃæÌÒ»¨£¡ " NOR;
+	 msg =  YEL  "äººé¢æ¡ƒèŠ±ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  RED  "Íò»¨ÆëÂä£¡ " NOR;
+	 msg =  RED  "ä¸‡èŠ±é½è½ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  BLU  "ÂþÌì»¨Óê£¡ " NOR;
+	 msg =  BLU  "æ¼«å¤©èŠ±é›¨ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIC  "Âä»¨ÎÞÒâ£¡ " NOR;
+	msg =  HIC  "è½èŠ±æ— æ„ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);	
 	me->add_temp("apply/damage", -extra);
@@ -52,8 +52,8 @@ int extra;
 if ( me->query_skill("yuxiao-jian",1) >230)
 {
         msg = HIG 
-HIG"$NÒ»ÉùÇåÐ¥£¬½£·¢ÇÙÒô£¬ÉîÎüÒ»¿ÚÆø£¬½£¸½ÄÚÁ¦£¬Ò»Ê½¡¸ÌìÍâÇåÒô¡¹£¬"+weapon->name()
-+"ÉÁ¶¯²»Ö¹£¬½£Ó°ÈçÒ¹Ä»°ãÆËÏò$n¡£\n"NOR;
+HIG"$Nä¸€å£°æ¸…å•¸ï¼Œå‰‘å‘ç´éŸ³ï¼Œæ·±å¸ä¸€å£æ°”ï¼Œå‰‘é™„å†…åŠ›ï¼Œä¸€å¼ã€Œå¤©å¤–æ¸…éŸ³ã€ï¼Œ"+weapon->name()
++"é—ªåŠ¨ä¸æ­¢ï¼Œå‰‘å½±å¦‚å¤œå¹•èˆ¬æ‰‘å‘$nã€‚\n"NOR;
 
 	extra = me->query_skill("yuxiao-jian",1) / 5;
 	extra += me->query_skill("bibo-shengong",1) /5;

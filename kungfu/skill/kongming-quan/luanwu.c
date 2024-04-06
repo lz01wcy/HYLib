@@ -1,4 +1,4 @@
-// qunmo.c  ÈºÄ§ÂÒÎè
+// qunmo.c  ç¾¤é­”ä¹±èˆ
 
 #include <ansi.h>
 #include <combat.h>
@@ -16,21 +16,21 @@ int perform(object me,object target)
 	       
         if (!target) target = offensive_target(me);
         if (!target || !me->is_fighting(target))
-                return notify_fail("Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡ºÈºÄ§ÂÒÎè¡»¡£\n");                
+                return notify_fail("åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€ç¾¤é­”ä¹±èˆã€ã€‚\n");                
 
         if (me->query_skill("kongming-quan", 1) < 70)
-                return notify_fail("ÄãµÄ¿ÕÃ÷È­ÉĞ²»´¿Êì»¹ÊÇ²»ÒªÂÒÓÃ¡ºÈºÄ§ÂÒÎè¡»¡£\n");        
+                return notify_fail("ä½ çš„ç©ºæ˜æ‹³å°šä¸çº¯ç†Ÿè¿˜æ˜¯ä¸è¦ä¹±ç”¨ã€ç¾¤é­”ä¹±èˆã€ã€‚\n");        
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡ºÈºÄ§ÂÒÎè¡»£¡\n");  
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€ç¾¤é­”ä¹±èˆã€ï¼\n");  
         if (me->query("neili") < 100)
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬²»ÄÜÊ¹ÓÃÆ´Ãü´ò·¨£¡\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›ä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨æ‹¼å‘½æ‰“æ³•ï¼\n");
         if (me->query_temp("kongming_berserk"))
-                return notify_fail("ÄãÄ¿Ç°ÕıÔÚÊ¹ÓÃ¡ºÈºÄ§ÂÒÎè¡»£¡\n");      
+                return notify_fail("ä½ ç›®å‰æ­£åœ¨ä½¿ç”¨ã€ç¾¤é­”ä¹±èˆã€ï¼\n");      
 
         if ((int)me->query_skill("xiantian-qigong", 1) <  100 )
-                return notify_fail("ÄãµÄÏÈÌìÆø¹¦»ğºò²»µ½¡£\n");
+                return notify_fail("ä½ çš„å…ˆå¤©æ°”åŠŸç«å€™ä¸åˆ°ã€‚\n");
 
-        message_vision(HIR"\n$NÍ»È»Èç³ÕÈç¿ñ£¬»ÓÎè×ÅË«±Û£¬ËÄÖÜÁıÕÖ×ÅÈ­·ç¡£\n"NOR, me);
+        message_vision(HIR"\n$Nçªç„¶å¦‚ç—´å¦‚ç‹‚ï¼ŒæŒ¥èˆç€åŒè‡‚ï¼Œå››å‘¨ç¬¼ç½©ç€æ‹³é£ã€‚\n"NOR, me);
         me->add("neili", -80); 
         me->add("jing", -30);      
         me->set_temp("kongming_berserk", me->query_skill("kongming-quan", 1) / 5);
@@ -46,13 +46,13 @@ if (attack <= 100) attack=100;
 
 
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-	msg =  HIG "¿ÕÃ÷È­ ! ĞéĞéÊµÊµ£¬±ä»¯Äª²â£¡£®£®£®£®\n" NOR;
+	msg =  HIG "ç©ºæ˜æ‹³ ! è™šè™šå®å®ï¼Œå˜åŒ–è«æµ‹ï¼ï¼ï¼ï¼ï¼\n" NOR;
         message_vision(msg, me, target);
 a=extra/3;
 if (a> 12) a=12;
 	for(i=0;i<a;i++)
 	{
-	msg = HIW "$NÒ»È­´ò³ö,ĞéĞéÊµÊµ£¬±ä»¯Äª²â£¡\n" NOR;
+	msg = HIW "$Nä¸€æ‹³æ‰“å‡º,è™šè™šå®å®ï¼Œå˜åŒ–è«æµ‹ï¼\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	}
 	i = extra/4;
@@ -75,7 +75,7 @@ void remove_effect(object me, object target, int attack, int defense)
                 me->add_temp("apply/attack", - attack);
                 me->add_temp("apply/defense", defense);
                 me->delete_temp("kongming_berserk");
-                tell_object(me, "Äã·¢¿ñ°ãµØÂÒ´òÁËÒ»Õóºó£¬¾ö¶¨ÏÈĞªÒ»Ğª¡£\n");
+                tell_object(me, "ä½ å‘ç‹‚èˆ¬åœ°ä¹±æ‰“äº†ä¸€é˜µåï¼Œå†³å®šå…ˆæ­‡ä¸€æ­‡ã€‚\n");
         }
 }
 

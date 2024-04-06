@@ -19,14 +19,14 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¹Â×¢Ò»ÖÀÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å­¤æ³¨ä¸€æŽ·åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "throwing")
-           return notify_fail("Äã±ØÐëÏÈÓÐ°µÆ÷¡£\n");
+           return notify_fail("ä½ å¿…é¡»å…ˆæœ‰æš—å™¨ã€‚\n");
 
         if( s < 60)
-                return notify_fail("ÄãµÄº®ÐÇ°Ë´òÐÞÎªÌ«Ç³¡£\n");
-        msg = CYN "$N¹Â×¢Ò»ÖÀ£¬·¢³öËùÓÐ°µÆ÷¹¥Ïò$n!";
+                return notify_fail("ä½ çš„å¯’æ˜Ÿå…«æ‰“ä¿®ä¸ºå¤ªæµ…ã€‚\n");
+        msg = CYN "$Nå­¤æ³¨ä¸€æŽ·ï¼Œå‘å‡ºæ‰€æœ‰æš—å™¨æ”»å‘$n!";
 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);

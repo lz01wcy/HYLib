@@ -1,43 +1,43 @@
-//  shandian-daofaÉÁµçµ¶·¨
+//  shandian-daofaé—ªç”µåˆ€æ³•
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÉíÓ°±äË«£¬µ¶¹â¸¡¶¯£¬×ªÑÛÒÑÅü³ö9µ¶£¬Ïò$nµÄ$l»ÓÈ¥",
+([      "action" : "$Nèº«å½±å˜åŒï¼Œåˆ€å…‰æµ®åŠ¨ï¼Œè½¬çœ¼å·²åŠˆå‡º9åˆ€ï¼Œå‘$nçš„$læŒ¥åŽ»",
         "force" : 380,
         "dodge" : 10,
         "parry" : 5,
         "damage": 150,
         "lvl" : 0,
-        "skill_name" : "ÉÁµçµ¶·¨",
-        "damage_type" : "¸îÉË"
+        "skill_name" : "é—ªç”µåˆ€æ³•",
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÁè¿ÕÑïµ¶£¬ÈÆ$nÓÎ×ß£¬µ¶·¨Ö®¿ì£¬·ËÒÄËùË¼£¬ÊÖÖÐ$wÒÑ¸îÏò$nµÄÖÜÉí¸÷´¦",
+([      "action" : "$Nå‡Œç©ºæ‰¬åˆ€ï¼Œç»•$næ¸¸èµ°ï¼Œåˆ€æ³•ä¹‹å¿«ï¼ŒåŒªå¤·æ‰€æ€ï¼Œæ‰‹ä¸­$wå·²å‰²å‘$nçš„å‘¨èº«å„å¤„",
         "force" : 430,
         "dodge" : 10,
         "parry" : 10,
         "damage": 200,
         "lvl" : 12,
-        "skill_name" : "ÉÁµçµ¶·¨",
-        "damage_type" : "¸îÉË"
+        "skill_name" : "é—ªç”µåˆ€æ³•",
+        "damage_type" : "å‰²ä¼¤"
 ]),
- ([      "action" : "$NÕÆÖÐ$wÉÔ×÷Ò»¶Ù£¬Ðý¼°ÈçÁ÷ÐÇ»®¿Õ£¬ÉÁµçÅùö¨£¬Ë¢µØÒ»Éù×ÔÉÏ¶øÏÂÏò$nÃÍÅü",
+ ([      "action" : "$NæŽŒä¸­$wç¨ä½œä¸€é¡¿ï¼Œæ—‹åŠå¦‚æµæ˜Ÿåˆ’ç©ºï¼Œé—ªç”µéœ¹é›³ï¼Œåˆ·åœ°ä¸€å£°è‡ªä¸Šè€Œä¸‹å‘$nçŒ›åŠˆ",
         "force" : 540,
         "dodge" : 5,
         "parry" : 5,
         "damage": 125,
         "lvl" : 18,
-        "skill_name" : "ÉÁµçµ¶·¨",
-        "damage_type" : "¸îÉË"
+        "skill_name" : "é—ªç”µåˆ€æ³•",
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÓÒÊÖ·´Ö´µ¶±ú£¬ºáµ¶Ò»Õ¶£¬$wÖ±Ïò$nµÄ¾±ÖÐ»®È¥",
+([      "action" : "$Nå³æ‰‹åæ‰§åˆ€æŸ„ï¼Œæ¨ªåˆ€ä¸€æ–©ï¼Œ$wç›´å‘$nçš„é¢ˆä¸­åˆ’åŽ»",
         "force" : 460,
         "dodge" : 5,
         "parry" : 5,
         "damage": 270,
         "lvl" : 24,
-        "skill_name" : "ÉÁµçµ¶·¨",
-        "damage_type" : "¸îÉË",
+        "skill_name" : "é—ªç”µåˆ€æ³•",
+        "damage_type" : "å‰²ä¼¤",
 ]),
 });
 
@@ -57,9 +57,9 @@ int practice_skill(object me)
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "blade")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         if ((int)me->query("jingli") < 50)
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·ÉÁµçµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒé—ªç”µåˆ€æ³•ã€‚\n");
         me->receive_damage("jingli", 35);
         return 1;
 }

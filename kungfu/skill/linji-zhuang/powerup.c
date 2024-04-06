@@ -6,11 +6,11 @@ int exert(object me, object target)
 {
         int skill;
         if( target != me ) return
-            notify_fail("你只能用临济庄功提升自己的战斗力。\n");
+            notify_fail("浣犲彧鑳界敤涓存祹搴勫姛鎻愬崌鑷繁鐨勬垬鏂楀姏銆俓n");
         if( (int)me->query("neili") < 100 ) return
-            notify_fail("你的内力不够。\n");
+            notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
         if( (int)me->query_temp("powerup") ) return
-            notify_fail("你已经在运功中了。\n");
+            notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
         skill = me->query_skill("force");
 
@@ -19,7 +19,7 @@ int exert(object me, object target)
         me->receive_damage("qi",0);
 
         message_combatd(
-MAG"$N微一凝神，运起临济庄，一声娇喝！\n" NOR, me);
+MAG"$N寰竴鍑濈锛岃繍璧蜂复娴庡簞锛屼竴澹板▏鍠濓紒\n" NOR, me);
 
         me->add_temp("apply/attack", skill/3);
         me->add_temp("apply/dodge", skill/3);
@@ -36,6 +36,6 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/attack", -skill/3);
    me->add_temp("apply/dodge", -skill/3);
         me->delete_temp("powerup");
-        tell_object(me, "你的临济庄运行完毕，将内力收回丹田。\n");
+        tell_object(me, "浣犵殑涓存祹搴勮繍琛屽畬姣曪紝灏嗗唴鍔涙敹鍥炰腹鐢般�俓n");
 }
 

@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(NOR + YEL "½ðÉßÍõ" NOR, ({ "jin she", "jin", "she" }));
-        set("long", YEL "ÕâÊÇÒ»Ìõ¼¸´ç³¤µÄÐ¡Éß£¬Í¨Ìå½ð»Æ¡£\n" NOR);
-	set("race", "Ò°ÊÞ");
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set_name(NOR + YEL "é‡‘è›‡çŽ‹" NOR, ({ "jin she", "jin", "she" }));
+        set("long", YEL "è¿™æ˜¯ä¸€æ¡å‡ å¯¸é•¿çš„å°è›‡ï¼Œé€šä½“é‡‘é»„ã€‚\n" NOR);
+	set("race", "é‡Žå…½");
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 set("verbs", ({ "bite" }) );
         set("age", 15);
         set("str", 30);
@@ -56,8 +56,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		 name() + "Ö¨Ö¨µÄ·¢³öÁË¼¸Éù¹ÖÉù£¡\n\n"
-		+ name() + "×ê½ø¸½½üµÄ²ÝµØ¾ÍÏûÊ§²»¼ûÁË¡£\n" , environment(),
+		 name() + "å±å±çš„å‘å‡ºäº†å‡ å£°æ€ªå£°ï¼\n\n"
+		+ name() + "é’»è¿›é™„è¿‘çš„è‰åœ°å°±æ¶ˆå¤±ä¸è§äº†ã€‚\n" , environment(),
 		this_object() );
         if(objectp(owner=this_object()->query("possessed")))
 		owner->add_temp("max_guard",-1);
@@ -73,7 +73,7 @@ void invocation(object who, int level)
 	set_skill("unarmed", 170 + random(level));
 	set("combat_exp", 100000 + random(level/2*level*level));
 	message("vision",
-		 name() + "Ö¨Ö¨µÄ¹Ö½ÐÁË¼¸Éù,ÍÂÁËÍÂÉàÍ·£¡\n" NOR,
+		 name() + "å±å±çš„æ€ªå«äº†å‡ å£°,åäº†åèˆŒå¤´ï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

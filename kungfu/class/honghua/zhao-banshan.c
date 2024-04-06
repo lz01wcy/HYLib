@@ -1,5 +1,5 @@
 // Last Modified by winder on Sep. 12 2001
-// zhaobanshan.c ÕÔ°ëÉ½
+// zhaobanshan.c èµµåŠå±±
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,11 +7,11 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÕÔ°ëÉ½", ({ "zhao banshan", "zhao", "banshan" }));
-	set("nickname", HIM"Ç§ÊÖÈçÀ´"NOR);
-	set("title", HIR"ºì»¨»á"HIG"Èýµ±¼Ò"NOR);
-	set("long","ËûÊÇºì»¨»áµÄÈýµ±¼Ò£¬\nËûÄê¼ÍºÃÏñÔÚÎåÊ®ÉÏÏÂ£¬ËûÒ»ÕÅÅÖÅÖµÄÁ³£¬Ð¦ÆðÀ´¸øÈËÒ»¸±ºÜ´ÈÏéµÄ¸Ð¾õ¡£\nËûÔ­ÊÇÎÂÖÝÍõÊÏÌ«¼«ÃÅÕÆÃÅ´óµÜ×Ó¡£\nºÀÂõ»í´ï£¬ÐÐÏÀ½­ºþ£¬Ò»ÊÖ°µÆ÷¹¦·òºÍÌ«¼«½£ÉÙÓÐÄÜÆ¥µÐ¡£\nÍÀÁú°ï·çÁ÷ÔÆÉ¢Ö®ºó£¬Í¶Èëºì»¨»á¡£ºÜµÃ±»ºì»¨»áÀÏµ±¼ÒÓÚÍòÍ¤ÉÍÊ¶¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("èµµåŠå±±", ({ "zhao banshan", "zhao", "banshan" }));
+	set("nickname", HIM"åƒæ‰‹å¦‚æ¥"NOR);
+	set("title", HIR"çº¢èŠ±ä¼š"HIG"ä¸‰å½“å®¶"NOR);
+	set("long","ä»–æ˜¯çº¢èŠ±ä¼šçš„ä¸‰å½“å®¶ï¼Œ\nä»–å¹´çºªå¥½åƒåœ¨äº”åä¸Šä¸‹ï¼Œä»–ä¸€å¼ èƒ–èƒ–çš„è„¸ï¼Œç¬‘èµ·æ¥ç»™äººä¸€å‰¯å¾ˆæ…ˆç¥¥çš„æ„Ÿè§‰ã€‚\nä»–åŽŸæ˜¯æ¸©å·žçŽ‹æ°å¤ªæžé—¨æŽŒé—¨å¤§å¼Ÿå­ã€‚\nè±ªè¿ˆè±è¾¾ï¼Œè¡Œä¾ æ±Ÿæ¹–ï¼Œä¸€æ‰‹æš—å™¨åŠŸå¤«å’Œå¤ªæžå‰‘å°‘æœ‰èƒ½åŒ¹æ•Œã€‚\nå± é¾™å¸®é£Žæµäº‘æ•£ä¹‹åŽï¼ŒæŠ•å…¥çº¢èŠ±ä¼šã€‚å¾ˆå¾—è¢«çº¢èŠ±ä¼šè€å½“å®¶äºŽä¸‡äº­èµè¯†ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("class", "swordman");
 	set("age", 52);
 	set("attitude", "peaceful");
@@ -61,7 +61,7 @@ void create()
 		(: exert_function, "recover" :),
 	}) );
 
-	create_family("ºì»¨»á", 2, "µÜ×Ó");
+	create_family("çº¢èŠ±ä¼š", 2, "å¼Ÿå­");
 	setup();
 	carry_object("/clone/misc/cloth")->wear();
         carry_object("/clone/weapon/lianzi")->wield();
@@ -76,9 +76,9 @@ void init()
 	if((int)ob->query("shen") < -1000 &&
 		ob->query("family/master_id")=="zhao banshan")
 	{
-		command( "chat "+ob->query("name")+"£¡ÄãÕâµÈÐ°¶ñ¼éÕ©Ö®Í½£¬ÎÒÆñÄÜÈÔÊÇÄãµÄÊ¦¸¸£¡\n");
+		command( "chat "+ob->query("name")+"ï¼ä½ è¿™ç­‰é‚ªæ¶å¥¸è¯ˆä¹‹å¾’ï¼Œæˆ‘å²‚èƒ½ä»æ˜¯ä½ çš„å¸ˆçˆ¶ï¼\n");
 		command("expell "+ ob->query("id"));
-		this_player()->set("title","ºì»¨»á" + RED + "ÆúÍ½" NOR);
+		this_player()->set("title","çº¢èŠ±ä¼š" + RED + "å¼ƒå¾’" NOR);
 	}
 }
 
@@ -86,11 +86,11 @@ void attempt_apprentice(object ob)
 {
 	if ((int)ob->query("shen") < 10000)
 	{
-		command("say ÎÒºì»¨»áÊÕÍ½¼«ÑÏ¡£");
-		command("say ÕâÎ»" + RANK_D->query_respect(ob) + "Æ½Ê±»¹Òª¶à×öÒ»Ð©ÐÐÏÀÕÌÒåÖ®ÊÂ£¡");
+		command("say æˆ‘çº¢èŠ±ä¼šæ”¶å¾’æžä¸¥ã€‚");
+		command("say è¿™ä½" + RANK_D->query_respect(ob) + "å¹³æ—¶è¿˜è¦å¤šåšä¸€äº›è¡Œä¾ ä»—ä¹‰ä¹‹äº‹ï¼");
 		return;
 	}
-	command("say ºÃ£¬ÄãÕâ¸öÄêÇàÈË»¹²»´í£¬ÎÒÊÕÏÂÄãÁË£¡");
+	command("say å¥½ï¼Œä½ è¿™ä¸ªå¹´é’äººè¿˜ä¸é”™ï¼Œæˆ‘æ”¶ä¸‹ä½ äº†ï¼");
 	command("recruit " + ob->query("id"));
 }
 

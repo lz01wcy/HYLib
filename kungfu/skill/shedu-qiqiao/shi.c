@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define SHI "¡¸" HIR "Íò¶¾ÊÉÌå" NOR "¡¹"
+#define SHI "ã€Œ" HIR "ä¸‡æ¯’å™¬ä½“" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -15,27 +15,27 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(SHI "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(SHI "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦²»¹»»ðºò£¬ÄÑÒÔÊ©Õ¹" SHI "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¸å¤Ÿç«å€™ï¼Œéš¾ä»¥æ–½å±•" SHI "ã€‚\n");
          if( (int)me->query_skill("wudu-shengong",1) < 100 )
-                return notify_fail("ÄãµÄÎå¶¾Éñ¹¦ÐÞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„äº”æ¯’ç¥žåŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
          if( (int)me->query_skill("poison",1) < 100 )
-                return notify_fail("ÄãµÄ»ù±¾¶¾¹¦ÐÞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ¯’åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("shedu-qiqiao", 1) < 100 )
-		return notify_fail("ÄãµÄÉß¶¾ÆæÇÉ»¹²»¹»æµÊì, ²»ÄÜ´òÉß !\n");
+		return notify_fail("ä½ çš„è›‡æ¯’å¥‡å·§è¿˜ä¸å¤Ÿå¨´ç†Ÿ, ä¸èƒ½æ‰“è›‡ !\n");
 
         if (me->query("neili") < 120)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" SHI "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" SHI "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "½«ÌåÄÚÕæÆøÔËÓÚË«ÕÆÖ®¼ä£¬Ö»¼ûË«ÕÆÎ¢Î¢·º³ö×Ï¹â£¬ÃÍ"
-              "µØÅÄÏò$n¡£\n" NOR;
+        msg = HIW "$N" HIW "å°†ä½“å†…çœŸæ°”è¿äºŽåŒæŽŒä¹‹é—´ï¼Œåªè§åŒæŽŒå¾®å¾®æ³›å‡ºç´«å…‰ï¼ŒçŒ›"
+              "åœ°æ‹å‘$nã€‚\n" NOR;
 
         ap = me->query_skill("strike");
         dp = target->query_skill("force");
@@ -46,8 +46,8 @@ int perform(object me, object target)
                 damage = ap / 2 + random(ap / 2);
                                 		target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg +=HIR "Ö»¼û$n" HIR "±»$N" HIR "Ò»ÕÆÅÄÖÐ"
-                "£¬µ¹ÍË¼¸²½£¬È´¼ûÁ³É«ÒÑÎ¢Î¢·ººÚ¡£\n" NOR;
+                msg +=HIR "åªè§$n" HIR "è¢«$N" HIR "ä¸€æŽŒæ‹ä¸­"
+                "ï¼Œå€’é€€å‡ æ­¥ï¼Œå´è§è„¸è‰²å·²å¾®å¾®æ³›é»‘ã€‚\n" NOR;
 	       target->apply_condition("snake_poison",
 		        (int)target->query_condition("snake_poison") + 10 );
 	       target->apply_condition("wugong_poison",
@@ -61,8 +61,8 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "ÑÛÃ÷ÊÖ¿ì£¬²àÉíÒ»Ìø$P"
-                       CYN "ÒÑ¶ã¹ý$NÕâÕÐ¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ¼æ˜Žæ‰‹å¿«ï¼Œä¾§èº«ä¸€è·³$P"
+                       CYN "å·²èº²è¿‡$Nè¿™æ‹›ã€‚\n" NOR;
                 me->start_busy(3);
                 target->start_busy(1);
         }

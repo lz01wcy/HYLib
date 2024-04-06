@@ -1,4 +1,4 @@
-// jiuyin-zhengong.c ¾ÅÒõÕæ¹¦
+// jiuyin-zhengong.c ä¹é˜´çœŸåŠŸ
 #include <ansi.h>
 
 inherit FORCE;
@@ -12,19 +12,19 @@ int valid_learn(object me)
 {
 	int lev = (int)me->query_skill("jiuyin-zhengong", 1);
 	if (!me->query("jiuyin/full") && !me->query("jiuyin/shang") && !me->query("jiuyin/gumu"))
-		return notify_fail("ÄãÊÔÍ¼Ñ§Ï°¾ÅÒõÕæ¹¦£¬µ«ËÆºõºÁÎŞ½øÕ¹¡£\n");
+		return notify_fail("ä½ è¯•å›¾å­¦ä¹ ä¹é˜´çœŸåŠŸï¼Œä½†ä¼¼ä¹æ¯«æ— è¿›å±•ã€‚\n");
 	if (!me->query("jiuyin/full") && !me->query("jiuyin/shang") && me->query("jiuyin/gumu") && lev > 100)
-		return notify_fail("ÄãÊÔÍ¼Ñ§Ï°¾ÅÒõÕæ¹¦£¬µ«ËÆºõºÁÎŞ½øÕ¹¡£\n");
+		return notify_fail("ä½ è¯•å›¾å­¦ä¹ ä¹é˜´çœŸåŠŸï¼Œä½†ä¼¼ä¹æ¯«æ— è¿›å±•ã€‚\n");
 	if ((int)me->query_skill("force", 1) < 200)
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò²»¹»£¬ÎŞ·¨Ñ§Ï°¾ÅÒõÕæ¹¦¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦ä¹ ä¹é˜´çœŸåŠŸã€‚\n");
 	if (lev > 100 && lev > (int)me->query_skill("daode-jing", 1) && (int)me->query_skill("daode-jing", 1) < 200)
-		return notify_fail("ÄãµÄµÀµÂ¾­»ğºò²»¹»£¬Ç¿ĞĞĞŞÁ¶¾ÅÒõÕæ¹¦»áµ¼ÖÂ×ß»ğÈëÄ§¡£\n");
+		return notify_fail("ä½ çš„é“å¾·ç»ç«å€™ä¸å¤Ÿï¼Œå¼ºè¡Œä¿®ç‚¼ä¹é˜´çœŸåŠŸä¼šå¯¼è‡´èµ°ç«å…¥é­”ã€‚\n");
 	return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("¾ÅÒõÕæ¹¦Ö»ÄÜÑĞ¶Á(yandu)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("ä¹é˜´çœŸåŠŸåªèƒ½ç ”è¯»(yandu)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -35,12 +35,12 @@ string exert_function_file(string func)
 mapping exercise_msg(object me)
 {
     return ([
-	"status_msg" : HIB + me->name() + "Ë«ÑÛÎ¢±Õ£¬±»Ò»¹É¾ÅÒõÕæÆøÎ§ÈÆÖø¡£" NOR,
-	"start_my_msg" : HIB"ÄãÅÌÍÈ×øÏÂ£¬Ë«Ä¿Î¢±Õ£¬Ë«ÊÖÕÆĞÄÏàÏò³ÉĞéÎÕÌ«¼«£¬ÌìÈËºÏÒ»£¬Á·ÆøÈëĞé¡£\n"NOR,
-	"start_other_msg" : HIB + me->name() + "ÅÌÍÈ×øÏÂ£¬Ë«Ä¿Î¢±Õ£¬Ë«ÊÖÕÆĞÄÏàÏò³ÉĞéÎÕÌ«¼«¡£Çá·ç´µ¹ı£¬" + me->name() + "ÉíÉÏµÄÒÂÅÛ¾¹È»²»ÎªËù¶¯¡£\n"NOR,
-	"halt_msg" : "$NÖÜÉíÎ¢Î¢²ü¶¯£¬³¤³ö¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n",
-	"end_my_msg" : "Äã½«ÄÚÏ¢ÓÖÔËÁËÒ»¸öĞ¡ÖÜÌì£¬»º»ºµ¼Èëµ¤Ìï£¬Ë«±ÛÒ»Õğ£¬Õ¾ÁËÆğÀ´¡£\n",
-	"end_other_msg" : me->name() + "µÄÁ³ÉÏ¶¸È»Ò»°µ£¬ÓÖÁ¢¿ÌÒşÈ¥¡£Ëæ¼´Ë«±ÛÒ»Õğ£¬Õ¾ÁËÆğÀ´¡£\n"
+	"status_msg" : HIB + me->name() + "åŒçœ¼å¾®é—­ï¼Œè¢«ä¸€è‚¡ä¹é˜´çœŸæ°”å›´ç»•è‘—ã€‚" NOR,
+	"start_my_msg" : HIB"ä½ ç›˜è…¿åä¸‹ï¼ŒåŒç›®å¾®é—­ï¼ŒåŒæ‰‹æŒå¿ƒç›¸å‘æˆè™šæ¡å¤ªæï¼Œå¤©äººåˆä¸€ï¼Œç»ƒæ°”å…¥è™šã€‚\n"NOR,
+	"start_other_msg" : HIB + me->name() + "ç›˜è…¿åä¸‹ï¼ŒåŒç›®å¾®é—­ï¼ŒåŒæ‰‹æŒå¿ƒç›¸å‘æˆè™šæ¡å¤ªæã€‚è½»é£å¹è¿‡ï¼Œ" + me->name() + "èº«ä¸Šçš„è¡£è¢ç«Ÿç„¶ä¸ä¸ºæ‰€åŠ¨ã€‚\n"NOR,
+	"halt_msg" : "$Nå‘¨èº«å¾®å¾®é¢¤åŠ¨ï¼Œé•¿å‡ºå£æ°”ï¼Œç«™äº†èµ·æ¥ã€‚\n",
+	"end_my_msg" : "ä½ å°†å†…æ¯åˆè¿äº†ä¸€ä¸ªå°å‘¨å¤©ï¼Œç¼“ç¼“å¯¼å…¥ä¸¹ç”°ï¼ŒåŒè‡‚ä¸€éœ‡ï¼Œç«™äº†èµ·æ¥ã€‚\n",
+	"end_other_msg" : me->name() + "çš„è„¸ä¸Šé™¡ç„¶ä¸€æš—ï¼Œåˆç«‹åˆ»éšå»ã€‚éšå³åŒè‡‚ä¸€éœ‡ï¼Œç«™äº†èµ·æ¥ã€‚\n"
     ]);
 }
 
@@ -54,6 +54,6 @@ void skill_improved(object me)
              else 
                me->add("jiuyin/gift", 1);
              me->add("max_neili", i); 
-             tell_object(me,HIW"\nËæ×Å¾ÅÒõÕæ¹¦µÄÌá¸ß£¬Äã¸Ğ¾õ×Ô¼ºÄÚÁ¦Ôö¼ÓÁË"+chinese_number(i)+"µã¡£\n"NOR);
+             tell_object(me,HIW"\néšç€ä¹é˜´çœŸåŠŸçš„æé«˜ï¼Œä½ æ„Ÿè§‰è‡ªå·±å†…åŠ›å¢åŠ äº†"+chinese_number(i)+"ç‚¹ã€‚\n"NOR);
          }
 }

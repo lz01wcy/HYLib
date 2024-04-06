@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/shengdi.c  Ê¤ÚĞ
+// /kungfu/class/xueshan/shengdi.c  èƒœè°›
 // by secret
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ê¤ÚĞ", ({ "sheng di", "sheng", "di" }));
+        set_name("èƒœè°›", ({ "sheng di", "sheng", "di" }));
         set("long",@LONG
-ÕâÊÇÒ»¸öÉíĞÎ¿ıÎàµÄÎ÷²ØÉ®ÈË£¬ÉñÉ«ÀäÄ®¡£Îä¹¦ÊÇÍ¬ÃÅÖĞ×î¸ßµÄÒ»ÈË¡£
+è¿™æ˜¯ä¸€ä¸ªèº«å½¢é­æ¢§çš„è¥¿è—åƒ§äººï¼Œç¥è‰²å†·æ¼ ã€‚æ­¦åŠŸæ˜¯åŒé—¨ä¸­æœ€é«˜çš„ä¸€äººã€‚
 LONG
         );
-        set("title",HIR"Ñªµ¶ÃÅµÚÎå´úµÜ×Ó"NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIR"è¡€åˆ€é—¨ç¬¬äº”ä»£å¼Ÿå­"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -48,7 +48,7 @@ LONG
         map_skill("parry", "xue-dao");
         map_skill("blade", "xue-dao");
 
-        create_family("Ñ©É½ËÂ", 5, "µÜ×Ó");
+        create_family("é›ªå±±å¯º", 5, "å¼Ÿå­");
         set("class", "bonze");
 
         setup();
@@ -60,23 +60,23 @@ LONG
 
 void attempt_apprentice(object ob)
 {
-        if ((string)ob->query("gender") != "ÄĞĞÔ")
+        if ((string)ob->query("gender") != "ç”·æ€§")
         {
-                command("say ÎÒ²»ÊÕÅ®Í½µÜ¡£\n");
+                command("say æˆ‘ä¸æ”¶å¥³å¾’å¼Ÿã€‚\n");
                 return;
         }
         if (ob->query("shen") > -50000)
         {
-                command("say ¿´À´ÎÒ»¹ÒªÏÈ½ÌÄãÈçºÎĞÄºİÉ±ÈË¡£\n");
+                command("say çœ‹æ¥æˆ‘è¿˜è¦å…ˆæ•™ä½ å¦‚ä½•å¿ƒç‹ æ€äººã€‚\n");
                 return;
         }
         if ((int)ob->query_skill("longxiang", 1) < 45)
         {
-                command("say ÈëÎÒÑªµ¶ÃÅ£¬ĞŞÏ°ÁúÏó¹¦·¨ÊÇÊ×ÒªµÄ¡£\n");
+                command("say å…¥æˆ‘è¡€åˆ€é—¨ï¼Œä¿®ä¹ é¾™è±¡åŠŸæ³•æ˜¯é¦–è¦çš„ã€‚\n");
                 return;
         }
         command("haha");
         command("recruit " + ob->query("id"));
 
-        ob->set("title", HIR "Ñªµ¶ÃÅµÚÁù´úµÜ×Ó" NOR);
+        ob->set("title", HIR "è¡€åˆ€é—¨ç¬¬å…­ä»£å¼Ÿå­" NOR);
 }

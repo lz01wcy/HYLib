@@ -1,29 +1,29 @@
 #include <ansi.h>
 inherit SKILL;
 mapping *action = ({
-([     "action": HIG"$N½«$w¶¶¶¯³ÉÔ²£¬Ò»Ê½¡¸Ô²×ªÈçÒâ¡¹£¬$wÒÑ½«$n$l²ø×¡"NOR,
+([     "action": HIG"$Nå°†$wæŠ–åŠ¨æˆåœ†ï¼Œä¸€å¼ã€Œåœ†è½¬å¦‚æ„ã€ï¼Œ$wå·²å°†$n$lç¼ ä½"NOR,
        "dodge": 50,
        "damage": 100,
        "force":  300,
        "lvl" : 0,
-       "skill_name" : "Ô²×ªÈçÒâ",
-       "damage_type":  "À­ÉË"
+       "skill_name" : "åœ†è½¬å¦‚æ„",
+       "damage_type":  "æ‹‰ä¼¤"
 ]),
-([     "action": HIW"$NµÄ$wÔÚ$nÉíÅÔÁ¬Á¬½ø»÷£¬ºöÈ»Ò»ÕÐ¡¸ÒøÁú»ØÊ×¡¹´Ó$n$l´¦µ¹¾íÉÏÀ´"NOR,
+([     "action": HIW"$Nçš„$wåœ¨$nèº«æ—è¿žè¿žè¿›å‡»ï¼Œå¿½ç„¶ä¸€æ‹›ã€Œé“¶é¾™å›žé¦–ã€ä»Ž$n$lå¤„å€’å·ä¸Šæ¥"NOR,
        "dodge": 50,
        "damage": 150,
        "force": 400,
        "lvl" : 60,
-       "skill_name" : "ÒøÁú»ØÊ×",
-       "damage_type":  "À­ÉË"
+       "skill_name" : "é“¶é¾™å›žé¦–",
+       "damage_type":  "æ‹‰ä¼¤"
 ]),
-([     "action": HIM"$NÔËÆð¾ÅÒõÕæÆø£¬$w¶¸È»±ä³É±ÊÖ±£¬Ò»Ê½¡¸ÒøÁú³ö¶´¡¹£¬Ïò$nÖ±´Ì¹ýÈ¥"NOR,
+([     "action": HIM"$Nè¿èµ·ä¹é˜´çœŸæ°”ï¼Œ$wé™¡ç„¶å˜æˆç¬”ç›´ï¼Œä¸€å¼ã€Œé“¶é¾™å‡ºæ´žã€ï¼Œå‘$nç›´åˆºè¿‡åŽ»"NOR,
        "dodge": 50,
        "damage": 180,
        "force": 450,
        "lvl" : 90,
-       "skill_name" : "ÒøÁú³ö¶´",
-       "damage_type":  "´ÌÉË"
+       "skill_name" : "é“¶é¾™å‡ºæ´ž",
+       "damage_type":  "åˆºä¼¤"
 ]),
 });
 
@@ -33,12 +33,12 @@ int valid_learn(object me)
 {
        object weapon;
 	if (!me->query("jiuyin/full") && !me->query("jiuyin/xia") && !me->query("jiuyin/emei"))
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÑ§Ï°¾ÅÒõÒøÁú±Þ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ä¸èƒ½å­¦ä¹ ä¹é˜´é“¶é¾™éž­ã€‚\n");
        if( (int)me->query("max_neili") < 1000 )
-               return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»×ã£¬Ã»ÓÐ°ì·¨Á·¾ÅÒõÒøÁú±Þ¡£\n");
+               return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œæ²¡æœ‰åŠžæ³•ç»ƒä¹é˜´é“¶é¾™éž­ã€‚\n");
        if ( !objectp(weapon = me->query_temp("weapon"))
        || ( string)weapon->query("skill_type") != "whip" )
-               return notify_fail("Äã±ØÐëÏÈÕÒÒ»Ìõ±Þ×Ó²ÅÄÜÁ·±Þ·¨¡£\n");
+               return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æ¡éž­å­æ‰èƒ½ç»ƒéž­æ³•ã€‚\n");
        return 1;
 }
 
@@ -62,11 +62,11 @@ mapping query_action(object me)
 int practice_skill(object me)
 {
 	if( (int)me->query_skill("yinlong-bian", 1 ) < 150 )
-		return notify_fail("ÄãÏÖÔÚ²»ÄÜÁ·Ï°¾ÅÒõÒøÁú±Þ¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨ä¸èƒ½ç»ƒä¹ ä¹é˜´é“¶é¾™éž­ã€‚\n");
 	if ((int)me->query("qi") < 100)
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·¾ÅÒõÒøÁú±Þ¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒä¹é˜´é“¶é¾™éž­ã€‚\n");
 	if ((int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·¾ÅÒõÒøÁú±Þ¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹é˜´é“¶é¾™éž­ã€‚\n");
 	me->receive_damage("qi",20);
 	me->add("neili",-20);
 	return 1;
@@ -95,10 +95,10 @@ mixed hit_ob(object me, object victim, int damage)
              if(wp2 > 10) wp2 = 10;
              if( wp > 0 && wp > wp1 && wp > wp2 &&
               random(me->query("str")) > victim->query("str")/2){
-              message_vision(HIY "Ö»Ìý¼û¡¸à§¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖÐµÄ"+weapon1->name()+WHT"ÒÑ¾­±»"+weapon->name()+WHT"¾íÎªÁ½½Ø£¡\n"NOR, victim );
+              message_vision(HIY "åªå¬è§ã€Œå”°ã€åœ°ä¸€å£°è½»å“ï¼Œ$Næ‰‹ä¸­çš„"+weapon1->name()+WHT"å·²ç»è¢«"+weapon->name()+WHT"å·ä¸ºä¸¤æˆªï¼\n"NOR, victim );
                weapon1->unequip();
                weapon1->move(environment(victim));
-               weapon1->set("name", "¶ÏµôµÄ" + weapon1->query("name"));
+               weapon1->set("name", "æ–­æŽ‰çš„" + weapon1->query("name"));
                weapon1->set("value", 49);
                weapon1->set("weapon_prop", 0);
                victim->reset_action();
@@ -108,7 +108,7 @@ mixed hit_ob(object me, object victim, int damage)
                 we2=victim->query_str()+(int)victim->query("jiali")+(int)victim->query_skill("parry")/3;
                 if (random(we1)>random(we2))
               {
- message_vision(HIY "Ö»¼û¡¸ºôºô¡¹Á¬Ïì£¬$NÊÖÖÐµÄ"+weapon1->name()+HIY"ÒÑ¾­±»"+weapon->name()+"¾íÖÐÒ»¸ö°Ñ³Ö²»¶¨ÍÑÊÖ·É³ö£¡\n"NOR, victim );
+ message_vision(HIY "åªè§ã€Œå‘¼å‘¼ã€è¿žå“ï¼Œ$Næ‰‹ä¸­çš„"+weapon1->name()+HIY"å·²ç»è¢«"+weapon->name()+"å·ä¸­ä¸€ä¸ªæŠŠæŒä¸å®šè„±æ‰‹é£žå‡ºï¼\n"NOR, victim );
 if (!victim->is_busy()) victim->start_busy(random(3));
                weapon1->move(environment(victim));
                }

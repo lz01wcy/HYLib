@@ -1,4 +1,4 @@
-//sanzhao.c ¶áÃüÈýÁ¬ÕÐ 
+//sanzhao.c å¤ºå‘½ä¸‰è¿žæ‹› 
 //rama@hx
 #include <combat.h>
 #include <ansi.h>
@@ -7,9 +7,9 @@ inherit F_DBASE;
 inherit F_SSERVER;
 string *limbs =
 ({
-        "Í·¶¥", "¾±²¿", "ÐØ¿Ú", "ºóÐÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-        "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Á½Àß", "×óÁ³", "Ñü¼ä", "Ð¡¸¹",
-        "×óÍÈ", "ÓÒÍÈ", "ÓÒÁ³", "×ó½Å", "ÓÒ½Å", "×ó¶ú", "ÓÒ¶ú"
+        "å¤´é¡¶", "é¢ˆéƒ¨", "èƒ¸å£", "åŽå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+        "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "ä¸¤è‚‹", "å·¦è„¸", "è…°é—´", "å°è…¹",
+        "å·¦è…¿", "å³è…¿", "å³è„¸", "å·¦è„š", "å³è„š", "å·¦è€³", "å³è€³"
 });
 void chkpfm(object me, object target, int amount);
 void remove_effect(object me, object target, int amount);
@@ -23,26 +23,26 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¶áÃüÈýÁ¬ÕÐÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤ºå‘½ä¸‰è¿žæ‹›åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
         
         if (!living(target))
-                return notify_fail("ËûÒÑ¾­ÔÎµ¹ÁË£¬Äã¿ÉÒÔÇáÒ×µØÉ±ÁËËû£¡\n");
+                return notify_fail("ä»–å·²ç»æ™•å€’äº†ï¼Œä½ å¯ä»¥è½»æ˜“åœ°æ€äº†ä»–ï¼\n");
 
 
 
         if( me->query_skill_mapped("force") != "shenlong-xinfa"  )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÉñÁúÐÄ·¨£¬ÎÞ·¨Ê©Õ¹¶áÃüÈýÁ¬ÕÐ£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éžç¥žé¾™å¿ƒæ³•ï¼Œæ— æ³•æ–½å±•å¤ºå‘½ä¸‰è¿žæ‹›ï¼\n");
 
         if( (lvl1=me->query_skill("shenlong-xinfa", 1)) < 150 )
-                return notify_fail("ÄãµÄÉñÁúÐÄ·¨»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹¶áÃüÈýÁ¬ÕÐ£¡\n");
+                return notify_fail("ä½ çš„ç¥žé¾™å¿ƒæ³•ç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•å¤ºå‘½ä¸‰è¿žæ‹›ï¼\n");
 
         if( (lvl2=me->query_skill("diwangquan")) < 200 )
-                return notify_fail("ÄãÕâÃÅÎä¹¦ÐÞÎª²»×ã£¬»¹²»»áÊ¹ÓÃ¶áÃüÈýÁ¬ÕÐ£¡\n");
+                return notify_fail("ä½ è¿™é—¨æ­¦åŠŸä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨å¤ºå‘½ä¸‰è¿žæ‹›ï¼\n");
 
         if( (lvl2 - lvl1) < lvl2 / 4 && lvl1 < 200)
-                return notify_fail("¶áÃüÈýÁ¬ÕÐÐèÒª¸ü¾«Õ¿µÄÎäÒÕ£¡\n");
+                return notify_fail("å¤ºå‘½ä¸‰è¿žæ‹›éœ€è¦æ›´ç²¾æ¹›çš„æ­¦è‰ºï¼\n");
 
         amount = (lvl1+lvl2) / 5;
 
@@ -50,9 +50,9 @@ int perform(object me, object target)
         if ( amount > 200 ) amount = 200;
 
         if( me->query("neili") <= amount*10 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ¶áÃüÈýÁ¬ÕÐ£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨å¤ºå‘½ä¸‰è¿žæ‹›ï¼\n");
         if( me->query("jing") <= amount*5 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃ¶áÃüÈýÁ¬ÕÐ£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨å¤ºå‘½ä¸‰è¿žæ‹›ï¼\n");
 
         if(!me->query_temp("sanxianjian")){
                 me->add_temp("apply/damage", amount*2);
@@ -63,12 +63,12 @@ int perform(object me, object target)
                 me->start_busy(1);
                me->start_call_out( (: call_other, __FILE__, "remove_effect", me, target, amount:), amount/15);
         }
-        message_vision(HIW "$n×¥×¡$NµÄºó¾±£¬Ò»°ÑÌáÆð¡£$N×óÊÖÂýÂý·´×ª£¬ÔÚ$n×óÒ¸µ×É¦ÁËÒ»°Ñ£¬\n$nÉí×ÓÈíÁËÏÂÀ´£¬$N×óÊÖÄÃ×¡$nÒ¸ÏÂ£¬ÓÒÊÖÂýÂý»Ø×ª£¬×¥×¡$nÁì¿Ú£¬»º»º\n¾ÙÆð$nµÄÉí×Ó£¬¹ýÁË×Ô¼ºÍ·¶¥£¬ÏòÍâË¤³ö¡£\n"NOR, me, target);
+        message_vision(HIW "$næŠ“ä½$Nçš„åŽé¢ˆï¼Œä¸€æŠŠæèµ·ã€‚$Nå·¦æ‰‹æ…¢æ…¢åè½¬ï¼Œåœ¨$nå·¦è…‹åº•æ”äº†ä¸€æŠŠï¼Œ\n$nèº«å­è½¯äº†ä¸‹æ¥ï¼Œ$Nå·¦æ‰‹æ‹¿ä½$nè…‹ä¸‹ï¼Œå³æ‰‹æ…¢æ…¢å›žè½¬ï¼ŒæŠ“ä½$né¢†å£ï¼Œç¼“ç¼“\nä¸¾èµ·$nçš„èº«å­ï¼Œè¿‡äº†è‡ªå·±å¤´é¡¶ï¼Œå‘å¤–æ‘”å‡ºã€‚\n"NOR, me, target);
         chkpfm(me, target, amount);
-        message_vision(HIW "$N¸©·üµØÉÏ£¬$nÉìÓÒ×ãÌ¤×¡$NµÄºóÑü£¬$NË«ÍÈÒ»Ëõ£¬ËÆÓû¹ò°Ý£¬\nÓÒ±ÛÈ´ÂýÂýºáÂÓ¶ø³ö£¬Í»È»¼äÒ»¸ö½î¶·£¬Ïò$nµÄ¿èÏÂ×êÈ¥£¬Ö»Ò»×÷ÊÆ\n×óÊÖÒÑ×¥×¡$nÓÒ½Å×ãõ×£¬ÓÒÊÖÏò$nÐ¡¸¹»÷È¥¡£\n"NOR, me, target);
+        message_vision(HIW "$Nä¿¯ä¼åœ°ä¸Šï¼Œ$nä¼¸å³è¶³è¸ä½$Nçš„åŽè…°ï¼Œ$NåŒè…¿ä¸€ç¼©ï¼Œä¼¼æ¬²è·ªæ‹œï¼Œ\nå³è‡‚å´æ…¢æ…¢æ¨ªæŽ è€Œå‡ºï¼Œçªç„¶é—´ä¸€ä¸ªç­‹æ–—ï¼Œå‘$nçš„èƒ¯ä¸‹é’»åŽ»ï¼Œåªä¸€ä½œåŠ¿\nå·¦æ‰‹å·²æŠ“ä½$nå³è„šè¶³è¸ï¼Œå³æ‰‹å‘$nå°è…¹å‡»åŽ»ã€‚\n"NOR, me, target);
         chkpfm(me, target, amount);
         me->set_temp("sxj-c" , 3);
-        message_vision(HIW"$NË«±Û·´ÔÚ±³ºó£¬Í»È»Ë«ÊÖÊ®Ö¸ÍäÆð£¬¸÷³É°ëÇòÖ®ÐÎ£¬Éí×ÓÏòºóÒ»×²\nÊ®Ö¸±ã×¥Ïò$nµÄÐØ²¿£¬$nÏòºóÒ»Ëõ£¬$NÍ»È»Ò»¸öµ¹·­½î¶·£¬Éí×ÓÔ¾Æð\nË«ÍÈÒ»·Ö£¬ÒÑ¿çÔÚ$n¼çÍ·£¬Í¬Ê±Ë«ÊÖ°´Ö¸Ñ¹×¡$nÌ«ÑôÑ¨£¬Ê³Ö¸°´Ã¼£¬ÖÐÖ¸°´ÑÛ£¡\n"NOR, me, target);
+        message_vision(HIW"$NåŒè‡‚ååœ¨èƒŒåŽï¼Œçªç„¶åŒæ‰‹åæŒ‡å¼¯èµ·ï¼Œå„æˆåŠçƒä¹‹å½¢ï¼Œèº«å­å‘åŽä¸€æ’ž\nåæŒ‡ä¾¿æŠ“å‘$nçš„èƒ¸éƒ¨ï¼Œ$nå‘åŽä¸€ç¼©ï¼Œ$Nçªç„¶ä¸€ä¸ªå€’ç¿»ç­‹æ–—ï¼Œèº«å­è·ƒèµ·\nåŒè…¿ä¸€åˆ†ï¼Œå·²è·¨åœ¨$nè‚©å¤´ï¼ŒåŒæ—¶åŒæ‰‹æŒ‰æŒ‡åŽ‹ä½$nå¤ªé˜³ç©´ï¼Œé£ŸæŒ‡æŒ‰çœ‰ï¼Œä¸­æŒ‡æŒ‰çœ¼ï¼\n"NOR, me, target);
         chkpfm(me, target, amount);
         
         
@@ -77,7 +77,7 @@ int perform(object me, object target)
          &&(int)target->query("qi") * 100 /(int)target->query("max_qi") <= 5
          && me->query_temp("sxj-c") == 3)
         {
-                message_vision(HIR "\n$N"+HIR+"ÕâÕÐÄÚ¾¢Ëù×¢£¬Á¦µÀÇ¿ºáÖ®¼«£¬$n±ãÈç±»Áè¿Õ·ÉÀ´µÄÖØ´¸É¨µ½£¬µ±ÏÂÅç³öÒ»¿ÚÏÊÑª£¡£¡\n" NOR, me, target);
+                message_vision(HIR "\n$N"+HIR+"è¿™æ‹›å†…åŠ²æ‰€æ³¨ï¼ŒåŠ›é“å¼ºæ¨ªä¹‹æžï¼Œ$nä¾¿å¦‚è¢«å‡Œç©ºé£žæ¥çš„é‡é”¤æ‰«åˆ°ï¼Œå½“ä¸‹å–·å‡ºä¸€å£é²œè¡€ï¼ï¼\n" NOR, me, target);
                 if (wizardp(me))
                         tell_object(me,HIR"super attack!!\n"NOR);
                 damage=target->query("eff_qi")/2;
@@ -130,8 +130,8 @@ void chkpfm(object me, object target, int amount)
                         target->receive_damage("qi", damage);
                         target->receive_wound("qi", damage/2);
                         if (me->query_temp("sxj-c") == 3)
-                                result = COMBAT_D->damage_msg(damage, "ðöÉË");
-                        else result = COMBAT_D->damage_msg(damage, "ðöÉË");
+                                result = COMBAT_D->damage_msg(damage, "ç˜€ä¼¤");
+                        else result = COMBAT_D->damage_msg(damage, "ç˜€ä¼¤");
                         msg += result;
                         result = COMBAT_D->status_msg((int)target->query("qi") * 100 /
                                 (int)target->query("max_qi"));
@@ -149,10 +149,10 @@ void remove_effect(object me, object target, int amount)
         me->delete_temp("sanxianjian");
         if( me->is_fighting() && living(target))
         {
-                message_vision(HIY "\n$nÂýÂýµÄÊÊÓ¦ÁË$P¶áÃüÈýÁ¬ÕÐµÄÍþÁ¦¡£\n" NOR, me, target);
+                message_vision(HIY "\n$næ…¢æ…¢çš„é€‚åº”äº†$På¤ºå‘½ä¸‰è¿žæ‹›çš„å¨åŠ›ã€‚\n" NOR, me, target);
                 target->set_temp("sxj-t",time());
         }
-        else message_vision(HIY "\n$NÊÕ»ØÄÚ¾¢,ÕÐÊ½Ò²»Ö¸´ÁËÆ½³£¡£\n" NOR, me);
+        else message_vision(HIY "\n$Næ”¶å›žå†…åŠ²,æ‹›å¼ä¹Ÿæ¢å¤äº†å¹³å¸¸ã€‚\n" NOR, me);
         me->add_temp("apply/damage", -amount*2);
         me->add_temp("apply/attack", -amount);
         me->add_temp("apply/dodge", -amount);

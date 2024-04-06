@@ -5,17 +5,17 @@ inherit HAMMER;
 
 void create()
 {
-	set_name(HIC"À×¹«ºä"NOR, ({"leigong hong", "hong", "chui" }) );
+	set_name(HIC"é›·å…¬è½°"NOR, ({"leigong hong", "hong", "chui" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
+		set("unit", "æŸ„");
 		set("value", 100);
 		set("material", "iron");
-		set("long", HIC"À×¹«ºäÎªÒ»±ú°Ë½ÇĞ¡´¸£¬´¸±ú³¤½ö¼°³ß£¬´¸Í·»¹Ã»³£ÈËµÄÈ­Í·´ó¡£\nÇé¿ö½ô¼±Ê±¿ÉÒÔÖÀ(zhi)µĞ¡£\n"NOR);
-		set("wield_msg", HIC"$N½«ÓÒÊÖÉìÈë×óÊÖÒÂĞä£¬Ëæ¼´½«ÊÖÉì³ö£¬ÊÖÖĞÒÑÎÕÁËÒ»±ú°Ë½ÇĞ¡´¸£¡\n"NOR);
-		set("unwield_msg",HIC"$N½«ÊÖÀïĞ¡´¸ÍùĞäÖĞÒ»Èû¾Í²»¼ûÁË¡£\n"NOR);
+		set("long", HIC"é›·å…¬è½°ä¸ºä¸€æŸ„å…«è§’å°é”¤ï¼Œé”¤æŸ„é•¿ä»…åŠå°ºï¼Œé”¤å¤´è¿˜æ²¡å¸¸äººçš„æ‹³å¤´å¤§ã€‚\næƒ…å†µç´§æ€¥æ—¶å¯ä»¥æ·(zhi)æ•Œã€‚\n"NOR);
+		set("wield_msg", HIC"$Nå°†å³æ‰‹ä¼¸å…¥å·¦æ‰‹è¡£è¢–ï¼Œéšå³å°†æ‰‹ä¼¸å‡ºï¼Œæ‰‹ä¸­å·²æ¡äº†ä¸€æŸ„å…«è§’å°é”¤ï¼\n"NOR);
+		set("unwield_msg",HIC"$Nå°†æ‰‹é‡Œå°é”¤å¾€è¢–ä¸­ä¸€å¡å°±ä¸è§äº†ã€‚\n"NOR);
 	}
 	init_hammer(5);
 	setup();
@@ -36,46 +36,46 @@ int do_zhi(string arg)
 	if (environment(this_object())!=me)
 		return 0;
 	if(environment(me)->query("no_fight"))
-		return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+		return notify_fail("è¿™é‡Œç¦æ­¢æˆ˜æ–—ã€‚\n");
 	if( (me->is_busy() ))
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬Ã»µÃÏĞÖÀ¡¸À×¹«ºä¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ï¼Œæ²¡å¾—é—²æ·ã€Œé›·å…¬è½°ã€ã€‚\n");
 	if( !(me->is_fighting() ))
-		return notify_fail("¡¸À×¹«ºä¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œé›·å…¬è½°ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if( !arg )
-		return notify_fail("ÄãÒªÖÀ»÷Ë­£¿\n");
+		return notify_fail("ä½ è¦æ·å‡»è°ï¼Ÿ\n");
 	if( !objectp(obj = present(arg, environment(me)) ))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººï¼\n");
 	if( !obj->is_character() || obj->is_corpse() )
-		return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+		return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 	if( !me->is_fighting(obj) )
-		return notify_fail("¡¸À×¹«ºä¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
-	if( obj == me ) return notify_fail("ÖÀ×Ô¼º£¿±ğÏë²»¿ª°¡¡£\n");
+		return notify_fail("ã€Œé›·å…¬è½°ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
+	if( obj == me ) return notify_fail("æ·è‡ªå·±ï¼Ÿåˆ«æƒ³ä¸å¼€å•Šã€‚\n");
 //	obj = me->select_opponent(); 
 
 	attacklvl = me->query_skill("chengzi18po", 1);
 	parrylvl = obj->query_skill("parry", 1);
 	dodgelvl = obj->query_skill("dodge", 1);
 	if( me->query("neili", 1) < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞÁ¦ÖÀ³öÀ×¹«ºä£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— åŠ›æ·å‡ºé›·å…¬è½°ï¼\n");
 	if( me->query_skill("qingming-xuangong", 1) < 30 )
-		return notify_fail("ÄãµÄÇàÚ¤Ğş¹¦»ğºò²»µ½£¬ÎŞ·¨ÖÀ³öÀ×¹«ºä£¡\n");
+		return notify_fail("ä½ çš„é’å†¥ç„åŠŸç«å€™ä¸åˆ°ï¼Œæ— æ³•æ·å‡ºé›·å…¬è½°ï¼\n");
 	if( attacklvl < 10 )
-		return notify_fail("ÄãµÄ³Ç×ÖÊ®°ËÆÆ»ğºò²»µ½£¬ÎŞ·¨ÖÀÀ×¹«ºä£¡\n");
+		return notify_fail("ä½ çš„åŸå­—åå…«ç ´ç«å€™ä¸åˆ°ï¼Œæ— æ³•æ·é›·å…¬è½°ï¼\n");
 
 	me->add("neili", -200);
-	msg = HIY"$NÊÖÖ¸Ò»Õñ£¬°Ë½ÇÀ×¹«ºäÍÑÊÖ·É³ö£¡\n"NOR;
+	msg = HIY"$Næ‰‹æŒ‡ä¸€æŒ¯ï¼Œå…«è§’é›·å…¬è½°è„±æ‰‹é£å‡ºï¼\n"NOR;
 
 //	if( random(attacklvl) > (int)((parrylvl+dodgelvl)/2))
 		if( attacklvl*3/4 > random(parrylvl+dodgelvl))
 	{
 		inv = all_inventory(obj);
-		msg += HIY"$nÖ»¾õÑÛÇ°Ò»¹É¾¢·çÆËÀ´£¬¡°ºä¡±µÄÒ»Éù£¡"NOR;
+		msg += HIY"$nåªè§‰çœ¼å‰ä¸€è‚¡åŠ²é£æ‰‘æ¥ï¼Œâ€œè½°â€çš„ä¸€å£°ï¼"NOR;
 		for(equip=0; equip<sizeof(inv); equip++)
 		{
 			if( inv[equip]->query("equipped") &&
 				!inv[equip]->query("weapon_prop") )
 			{
-				msg += HIY"$nÒ»Éù²Òºô£¬·ÉÀ´µÄÀ×¹«ºäÕıÔÒÔÚ$NµÄÉíÉÏ£¡£¡\n"NOR;
+				msg += HIY"$nä¸€å£°æƒ¨å‘¼ï¼Œé£æ¥çš„é›·å…¬è½°æ­£ç ¸åœ¨$Nçš„èº«ä¸Šï¼ï¼\n"NOR;
 		obj->receive_damage("qi", ((int)(attacklvl*3)+1000));
 		obj->receive_wound("qi", ((int)(attacklvl*3)+1000));
 		obj->start_busy(3);
@@ -84,7 +84,7 @@ int do_zhi(string arg)
 	}
 	else
 	{
-		msg += HIG "Ö»¼û$n²»»Å²»Ã¦Ò»²àÉí£¬¶ã¹ıÁË·ÉÀ´µÄÀ×¹«ºä£¡\n"NOR;
+		msg += HIG "åªè§$nä¸æ…Œä¸å¿™ä¸€ä¾§èº«ï¼Œèº²è¿‡äº†é£æ¥çš„é›·å…¬è½°ï¼\n"NOR;
 		if(userp(me)) me->add("neili",-400);
 		me->start_busy(4);
 	}

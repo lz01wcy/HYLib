@@ -1,4 +1,4 @@
-// panshi-shengong.c ÅÍÊ¯Éñ¹¦
+// panshi-shengong.c ç£çŸ³ç¥åŠŸ
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>
@@ -17,14 +17,14 @@ int valid_learn(object me)
 {
 
 	if ((int)me->query_skill("force", 1) < 10)
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬»¹²»ÄÜÑ§Ï°ÅÍÊ¯Éñ¹¦¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œè¿˜ä¸èƒ½å­¦ä¹ ç£çŸ³ç¥åŠŸã€‚\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("ÅÍÊ¯Éñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("ç£çŸ³ç¥åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -33,13 +33,13 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-	write(HIM"\nÅÍÊ¯Éñ¹¦£º"NOR"\n");
+	write(HIM"\nç£çŸ³ç¥åŠŸï¼š"NOR"\n");
 	write(@HELP
 
-    Ì©É½ÅÉÄÚ¹¦£¬¾ß×ÔÁÆ¼°ÔË¹¦Ö®ÓÃ¡£
+    æ³°å±±æ´¾å†…åŠŸï¼Œå…·è‡ªç–—åŠè¿åŠŸä¹‹ç”¨ã€‚
 
-	Ñ§Ï°ÒªÇó£º
-		»ù±¾ÄÚ¹¦10¼¶
+	å­¦ä¹ è¦æ±‚ï¼š
+		åŸºæœ¬å†…åŠŸ10çº§
 HELP
 	);
 	return 1;

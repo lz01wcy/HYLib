@@ -1,4 +1,4 @@
-// youlong-shenfa.c ÓÎÁúÉí·¨
+// youlong-shenfa.c æ¸¸é¾™èº«æ³•
 // Last Modified by sir on 10.18.2001
 
 #include <ansi.h>
@@ -7,25 +7,25 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-	"Ö»¼û$nÒ»ÕĞ"HIC"¡¸ÁúÏè¾ÅÌì¡¹"NOR"£¬ÓÒ½ÅÇáÇáµãµØ£¬ÉíÌå¡¸à²¡¹µÄÏòÉÏ±ÊÖ±µØ×İÆğ
-ÕÉÓà£¬¶ã¹ıÁË$NÕâÒ»ÕĞ¡£\n",
-	"$nÒ»¸ö"HIY"¡¸ÁúÓÎËÄº£¡¹"NOR"£¬Ë«±ÛÒ»ÕÅ£¬ĞĞÔÆÁ÷Ë®°ãÏòºó×İ³ö£¬±Ü¿ªÁË$NµÄÁèÀ÷
-¹¥ÊÆ¡£\n",
-	"$nÊ¹³ö"MAG"¡¸ôæÈô¾ªºè¡¹"NOR"£¬ÉíĞÎ²»×¡ÉÁ¶¯£¬ÖÕÓÚ¶ã¹ı$NµÄ¹¥»÷¡£\n",
-	"$nÊ¹³ö"BLU"¡¸ÉñÁúÎŞÓ°¡¹"NOR"£¬$NÑÛÇ°Ò»»¨£¬ÒÑ²»¼û$n×ÙÓ°¡£\n",
+	"åªè§$nä¸€æ‹›"HIC"ã€Œé¾™ç¿”ä¹å¤©ã€"NOR"ï¼Œå³è„šè½»è½»ç‚¹åœ°ï¼Œèº«ä½“ã€Œå—–ã€çš„å‘ä¸Šç¬”ç›´åœ°çºµèµ·
+ä¸ˆä½™ï¼Œèº²è¿‡äº†$Nè¿™ä¸€æ‹›ã€‚\n",
+	"$nä¸€ä¸ª"HIY"ã€Œé¾™æ¸¸å››æµ·ã€"NOR"ï¼ŒåŒè‡‚ä¸€å¼ ï¼Œè¡Œäº‘æµæ°´èˆ¬å‘åçºµå‡ºï¼Œé¿å¼€äº†$Nçš„å‡Œå‰
+æ”»åŠ¿ã€‚\n",
+	"$nä½¿å‡º"MAG"ã€Œç¿©è‹¥æƒŠé¸¿ã€"NOR"ï¼Œèº«å½¢ä¸ä½é—ªåŠ¨ï¼Œç»ˆäºèº²è¿‡$Nçš„æ”»å‡»ã€‚\n",
+	"$nä½¿å‡º"BLU"ã€Œç¥é¾™æ— å½±ã€"NOR"ï¼Œ$Nçœ¼å‰ä¸€èŠ±ï¼Œå·²ä¸è§$nè¸ªå½±ã€‚\n",
 });
 
 int valid_enable(string usage) { return (usage=="dodge") || (usage=="move"); }
 int valid_learn(object me) 
 {      	
 	if( (int)me->query_skill("honghua-shengong", 1) < 10 )
-	return notify_fail("ÄãµÄºì»¨Éñ¹¦²»¹»¾«Êì£¬ÎŞ·¨Áì»áÓÎÁúÉí·¨¡£\n");
+	return notify_fail("ä½ çš„çº¢èŠ±ç¥åŠŸä¸å¤Ÿç²¾ç†Ÿï¼Œæ— æ³•é¢†ä¼šæ¸¸é¾™èº«æ³•ã€‚\n");
 	return 1;
 } 
 int practice_skill(object me)
 {
 	if( (int)me->query("qi") < 30 || (int)me->query("neili") < 6 )
-		return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬ÎŞ·¨Á·Ï°ÓÎÁúÉí·¨¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›å¤ªå·®äº†ï¼Œæ— æ³•ç»ƒä¹ æ¸¸é¾™èº«æ³•ã€‚\n");
 	me->receive_damage("qi", 30);
 	me->add("neili", -6);
 	return 1;
@@ -41,13 +41,13 @@ int power_point(object me) { return 1.3; }
 
 int help(object me)
 {
-	write(HIM"\nÓÎÁúÉí·¨£º"NOR"\n");
+	write(HIM"\næ¸¸é¾™èº«æ³•ï¼š"NOR"\n");
 	write(@HELP
 
-    ºì»¨»áÇá¹¦Éí·¨¡£
+    çº¢èŠ±ä¼šè½»åŠŸèº«æ³•ã€‚
 
-	Ñ§Ï°ÒªÇó£º
-		ºì»¨Éñ¹¦10¼¶
+	å­¦ä¹ è¦æ±‚ï¼š
+		çº¢èŠ±ç¥åŠŸ10çº§
 HELP
 	);
 	return 1;

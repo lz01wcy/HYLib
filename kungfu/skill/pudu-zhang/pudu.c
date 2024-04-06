@@ -12,25 +12,25 @@ int perform(object me, object target)
   if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸ÆÕ¶ÉÌìÏÂ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œæ™®æ¸¡å¤©ä¸‹ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "staff")
-            return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+            return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("staff",1) < 150 ||
 	    me->query_skill_mapped("staff") != "pudu-zhang")
-		return notify_fail("ÄãµÄÆÕ¶ÉÕÈ·¨»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃÆÕ¶ÉÌìÏÂ£¡\n");
+		return notify_fail("ä½ çš„æ™®æ¸¡æ–æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨æ™®æ¸¡å¤©ä¸‹ï¼\n");
 
-	msg = HIY "$N¸ßÒ÷·ðºÅ£¬Ê¹³öÉÙÁÖÅÉ¾ø¼¼¡¸ÆÕ¶ÉÌìÏÂ¡¹£¬µÚÒ»Ê½    ºúÉ®ÍÐ²§£¡" NOR;
+	msg = HIY "$Né«˜åŸä½›å·ï¼Œä½¿å‡ºå°‘æž—æ´¾ç»æŠ€ã€Œæ™®æ¸¡å¤©ä¸‹ã€ï¼Œç¬¬ä¸€å¼    èƒ¡åƒ§æ‰˜é’µï¼" NOR;
 	
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIY  "µÚ¶þÊ½   ´Èº½ÆÕ¶É£¡  " NOR;
+	 msg =  HIY  "ç¬¬äºŒå¼   æ…ˆèˆªæ™®æ¸¡ï¼  " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIB  "µÚÈýÊ½   ÆÕ¶ÉÌìÏÂ£¡  " NOR;
+	 msg =  HIB  "ç¬¬ä¸‰å¼   æ™®æ¸¡å¤©ä¸‹ï¼  " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add("neili", -100);
 	me->start_busy(2);

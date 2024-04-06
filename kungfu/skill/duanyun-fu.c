@@ -1,84 +1,84 @@
-// duanyun-fu.c ¶ÏÔÆ¸«
+// duanyun-fu.c æ–­äº‘æ–§
 // Modified by Venus Oct.1997
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([  "action" : "$NÝëµØÌÚ¿ÕÔ¾Æð£¬Ë«ÊÖ½ôÎÕ$w£¬¶Ô×¼$nµÄÍ·¶¥£¬×ÔÉÏ¶øÏÂµØ¿³ÁËÏÂÈ¥£¬
-Ö»ÔÚ°ë¿ÕÖÐÁôÏÂÒ»ÍÅ¾Þ´óµÄºÚÓ°",
+([  "action" : "$Nè“¦åœ°è…¾ç©ºè·ƒèµ·ï¼ŒåŒæ‰‹ç´§æ¡$wï¼Œå¯¹å‡†$nçš„å¤´é¡¶ï¼Œè‡ªä¸Šè€Œä¸‹åœ°ç äº†ä¸‹åŽ»ï¼Œ
+åªåœ¨åŠç©ºä¸­ç•™ä¸‹ä¸€å›¢å·¨å¤§çš„é»‘å½±",
     "damage": 500,
     "force": 300,
     "dodge" : 50,
-    "damage_type" : "¿³ÉË",
+    "damage_type" : "ç ä¼¤",
     "lvl" : 0,
-    "skill_name" : "¿ªÌì±ÙµØ"
+    "skill_name" : "å¼€å¤©è¾Ÿåœ°"
 ]),
-([  "action" : "$NÍ»È»·¢Ò»Éùº°£¬³åÇ°Á½²½£¬ÊÖÖÐ$wÓÉÏÂ¶øÉÏ·´ÁÃ$nÏÂÈýÂ·£¬$n¼ûµ½
-Ò»µÀµ­»ÆÉ«µÄÆøÓ°±ÆÏò×Ô¼º£¬ÇéÖª²»Ãî£¬¼±Ã¦ÕÐ¼Ü",
+([  "action" : "$Nçªç„¶å‘ä¸€å£°å–Šï¼Œå†²å‰ä¸¤æ­¥ï¼Œæ‰‹ä¸­$wç”±ä¸‹è€Œä¸Šåæ’©$nä¸‹ä¸‰è·¯ï¼Œ$nè§åˆ°
+ä¸€é“æ·¡é»„è‰²çš„æ°”å½±é€¼å‘è‡ªå·±ï¼Œæƒ…çŸ¥ä¸å¦™ï¼Œæ€¥å¿™æ‹›æž¶",
     "damage": 525,
     "force": 300,
     "dodge" : 45,
-    "damage_type" : "¸îÉË",
+    "damage_type" : "å‰²ä¼¤",
     "lvl" : 10,
-    "skill_name" : "Æø³åÏöºº"
+    "skill_name" : "æ°”å†²éœ„æ±‰"
 ]),
-([  "action" : "$NºöÈ»»¢ºðÒ»Éù£¬ÉÁÉíÐ±Ïò×óÇ°·½³å³öÒ»²½£¬ÉíÌåÎ¢»Î£¬ÊÖÖÐ$wÔÚ¿Õ
-ÖÐ»®³öÒ»µÀµ­Ó°£¬¼±ËÙºáÉ¨$nµÄÓÒ¼ç£¬ÆøÊÆÆÈÈË",
+([  "action" : "$Nå¿½ç„¶è™Žå¼ä¸€å£°ï¼Œé—ªèº«æ–œå‘å·¦å‰æ–¹å†²å‡ºä¸€æ­¥ï¼Œèº«ä½“å¾®æ™ƒï¼Œæ‰‹ä¸­$wåœ¨ç©º
+ä¸­åˆ’å‡ºä¸€é“æ·¡å½±ï¼Œæ€¥é€Ÿæ¨ªæ‰«$nçš„å³è‚©ï¼Œæ°”åŠ¿è¿«äºº",
     "damage": 550,
     "force": 300,
     "dodge" : 40,
-    "damage_type" : "¿³ÉË",
+    "damage_type" : "ç ä¼¤",
     "lvl" : 20,
-    "skill_name" : "ºáÉ¨Ç§¾ü"
+    "skill_name" : "æ¨ªæ‰«åƒå†›"
 ]),
-([  "action" : "$NÍ»È»³éÉíÏòÓÒ¹öµ¹£¬Ëæ¼´ÌøÆð£¬¾ÍÔÚÌøÆðµÄÒ»Ë²¼ä£¬ÒÑµ¥±ÛÎÕ×Å$w
-ÔÒÏò$nµÄ×óÀß£¬³öÊÖ¼È¿ìÇÒºÝ",
+([  "action" : "$Nçªç„¶æŠ½èº«å‘å³æ»šå€’ï¼Œéšå³è·³èµ·ï¼Œå°±åœ¨è·³èµ·çš„ä¸€çž¬é—´ï¼Œå·²å•è‡‚æ¡ç€$w
+ç ¸å‘$nçš„å·¦è‚‹ï¼Œå‡ºæ‰‹æ—¢å¿«ä¸”ç‹ ",
     "damage": 590,
     "force": 300,
     "dodge" : 35,
-    "damage_type" : "ÔÒÉË",
+    "damage_type" : "ç ¸ä¼¤",
     "lvl" : 30,
-    "skill_name" : "ÒÔÍËÎª½ø"
+    "skill_name" : "ä»¥é€€ä¸ºè¿›"
 ]),
-([  "action" : "$NË«ÊÖºá¾Ù$w£¬Æ½É¨$nÇ°ÐØ£¬ÕÐÊ½Î´Ê¹ÀÏ¾ÍÒÑ´ò×¡â§È»±äÕÐ£¬¸«¼âÖ±
-×²$nµÄÐ¡¸¹£¬",
+([  "action" : "$NåŒæ‰‹æ¨ªä¸¾$wï¼Œå¹³æ‰«$nå‰èƒ¸ï¼Œæ‹›å¼æœªä½¿è€å°±å·²æ‰“ä½çŒç„¶å˜æ‹›ï¼Œæ–§å°–ç›´
+æ’ž$nçš„å°è…¹ï¼Œ",
     "damage": 530,
     "force": 300,    
     "dodge" : 40,
-    "damage_type" : "ÄÚÉË",
+    "damage_type" : "å†…ä¼¤",
     "lvl" : 42,
-    "skill_name" : "½ð¸«×²ÖÓ"
+    "skill_name" : "é‡‘æ–§æ’žé’Ÿ"
 ]),
-([  "action" : "$N²»¼±²»»ºµØ×ªÉíÎ¢¶×£¬$n¼û$NÂ¶³öÆÆÕÀ£¬¼±Ã¦ÇÀ¹¥£¬È´Í»È»·¢ÏÖ$N
-µÄÉíÌåÒÑ×ª¹ýÀ´£¬ÊÖÖÐ$wÕýÑ¸ÃÍµØÉ¨Ïò×Ô¼ºµÄÏÂÅÌ",
+([  "action" : "$Nä¸æ€¥ä¸ç¼“åœ°è½¬èº«å¾®è¹²ï¼Œ$nè§$Néœ²å‡ºç ´ç»½ï¼Œæ€¥å¿™æŠ¢æ”»ï¼Œå´çªç„¶å‘çŽ°$N
+çš„èº«ä½“å·²è½¬è¿‡æ¥ï¼Œæ‰‹ä¸­$wæ­£è¿…çŒ›åœ°æ‰«å‘è‡ªå·±çš„ä¸‹ç›˜",
     "damage": 680,
     "force": 500,
     "dodge" : 130,
     "parry" : 54,
-    "damage_type" : "¸îÉË",
+    "damage_type" : "å‰²ä¼¤",
     "lvl" : 55,
-    "skill_name" : "»Ø·ç×ªÔÆ"
+    "skill_name" : "å›žé£Žè½¬äº‘"
 ]),
-([  "action" : "$NÉíÐÎÎ¢¶¯£¬¾ÍÔÚÍ¬Ò»Ê±¼ä×ÔÉÏÖÐÏÂ×óÓÒ¿³³öÎå¸«£¬$n¼ûÎå°Ñ$w´Ó²»
-Í¬µÄ·½Î»¿³Ïò×Ô¼º£¬Ò»Ê±¼ä¾¹²»Öª¸ÃÈçºÎÕÐ¼Ü",
+([  "action" : "$Nèº«å½¢å¾®åŠ¨ï¼Œå°±åœ¨åŒä¸€æ—¶é—´è‡ªä¸Šä¸­ä¸‹å·¦å³ç å‡ºäº”æ–§ï¼Œ$nè§äº”æŠŠ$wä»Žä¸
+åŒçš„æ–¹ä½ç å‘è‡ªå·±ï¼Œä¸€æ—¶é—´ç«Ÿä¸çŸ¥è¯¥å¦‚ä½•æ‹›æž¶",
     "damage": 580,
     "dodge" : 125,
     "force": 500,
     "parry" : 66,
-    "damage_type" : "¿³ÉË",
+    "damage_type" : "ç ä¼¤",
     "lvl" : 68,
-    "skill_name" : "Îå¸«¶áÃü"
+    "skill_name" : "äº”æ–§å¤ºå‘½"
 ]),
-([  "action" : "$NÇ°½ÅÃÍµØÍùµØÉÏÒ»¶Ù£¬´óµØÒ²Î¢Î¢Ò»Õð£¬½Ó×Å¾ÙÆð¸«Í·ÔÚÍ·¶¥¼±×ª
-ÊýÈ¦£¬$w¾ÍÒþº¬·çÔÆÖ®ÉùÆ½Ö±¶ø³ÁÎÈµØÏ®Ïò$n£¬$nÎÞÂÛÏòºÎ´¦ÉÁ¶ã£¬
-×Ü¿´¼û¸«¼âÀë×Ô¼º²»µ½Ò»³ß£¬²»ÓÉ´ó¾ªÊ§É«",
+([  "action" : "$Nå‰è„šçŒ›åœ°å¾€åœ°ä¸Šä¸€é¡¿ï¼Œå¤§åœ°ä¹Ÿå¾®å¾®ä¸€éœ‡ï¼ŒæŽ¥ç€ä¸¾èµ·æ–§å¤´åœ¨å¤´é¡¶æ€¥è½¬
+æ•°åœˆï¼Œ$wå°±éšå«é£Žäº‘ä¹‹å£°å¹³ç›´è€Œæ²‰ç¨³åœ°è¢­å‘$nï¼Œ$næ— è®ºå‘ä½•å¤„é—ªèº²ï¼Œ
+æ€»çœ‹è§æ–§å°–ç¦»è‡ªå·±ä¸åˆ°ä¸€å°ºï¼Œä¸ç”±å¤§æƒŠå¤±è‰²",
     "damage": 680,
     "force": 500,
     "parry" : 155,
     "dodge" : 65,
-    "damage_type" : "¿³ÉË",
+    "damage_type" : "ç ä¼¤",
     "lvl" : 80,
-    "skill_name" : "Ò»¸«¶ÏÔÆ"
+    "skill_name" : "ä¸€æ–§æ–­äº‘"
 ])
 });
 
@@ -87,15 +87,15 @@ int valid_enable(string usage) { return usage=="axe" ||  usage=="parry"; }
 int valid_learn(object me)
 {
     if ((int)me->query_skill("force", 1) < 20)
-   return notify_fail("ÄãµÄÄÚ¹¦ÐÄ·¨»ðºò²»¹»£¬ÎÞ·¨Ñ§¶ÏÔÆ¸«¡£\n");
+   return notify_fail("ä½ çš„å†…åŠŸå¿ƒæ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦æ–­äº‘æ–§ã€‚\n");
     if ((int)me->query("max_neili") < 150)
-   return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·¶ÏÔÆ¸«¡£\n");
+   return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒæ–­äº‘æ–§ã€‚\n");
        if (((int)me->query_skill("guiyuan-tunafa", 1)+100) < (int)me->query_skill("duanyun-fu", 1))
-               return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸå¤ªä½Žäº†ã€‚\n");
        if (((int)me->query_skill("shuishangpiao", 1)+100) < (int)me->query_skill("duanyun-fu", 1))
-               return notify_fail("ÄãµÄ±¾ÃÅÇá¹¦Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æœ¬é—¨è½»åŠŸå¤ªä½Žäº†ã€‚\n");
        if (((int)me->query_skill("tiexue-hammer", 1)+100) < (int)me->query_skill("duanyun-fu", 1))
-               return notify_fail("ÄãµÄÌúÑ©´¸·¨Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„é“é›ªé”¤æ³•å¤ªä½Žäº†ã€‚\n");
     return 1;
 }
 
@@ -121,18 +121,18 @@ int practice_skill(object me)
     object weapon;
     if (!objectp(weapon = me->query_temp("weapon"))
     || (string)weapon->query("skill_type") != "axe")
-   return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");    if ((int)me->
+   return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");    if ((int)me->
 query("qi") < 30)
     if ((int)me->query("qi") < 50)
-    return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+    return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½Žäº†ã€‚\n");
     if ((int)me->query("neili") < 20)
-   return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·¶ÏÔÆ¸«¡£\n");
+   return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ–­äº‘æ–§ã€‚\n");
        if (((int)me->query_skill("guiyuan-tunafa", 1)+100) < (int)me->query_skill("duanyun-fu", 1))
-               return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸå¤ªä½Žäº†ã€‚\n");
        if (((int)me->query_skill("shuishangpiao", 1)+100) < (int)me->query_skill("duanyun-fu", 1))
-               return notify_fail("ÄãµÄ±¾ÃÅÇá¹¦Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„æœ¬é—¨è½»åŠŸå¤ªä½Žäº†ã€‚\n");
        if (((int)me->query_skill("tiexue-hammer", 1)+100) < (int)me->query_skill("duanyun-fu", 1))
-               return notify_fail("ÄãµÄÌúÑ©´¸·¨Ì«µÍÁË¡£\n");
+               return notify_fail("ä½ çš„é“é›ªé”¤æ³•å¤ªä½Žäº†ã€‚\n");
 
 
     me->receive_damage("qi", 25);
@@ -154,7 +154,7 @@ string msg;
 
 if (me->query_skill_mapped("force") == "guiyuan-tunafa" && lvl > 300 && random(8)==0)
 {
-                  msg = HIG"$NÉîÎüÒ»¿ÚÆø£¬ÉíÌåÈçÒ»Æ¬ÂäÒ¶Ëæ·çÆ®Îè,$nÍ·Ò»»è£¬²»ÖªËù´ë!\n"NOR;
+                  msg = HIG"$Næ·±å¸ä¸€å£æ°”ï¼Œèº«ä½“å¦‚ä¸€ç‰‡è½å¶éšé£Žé£˜èˆž,$nå¤´ä¸€æ˜ï¼Œä¸çŸ¥æ‰€æŽª!\n"NOR;
 
 victim->start_busy(3);
 
@@ -172,14 +172,14 @@ if (weapon)
         {
         if (!victim->is_busy())
         victim->start_busy(3);
-        return HIR"$N¿ñÎè´ó¸«,$nÎÞ·¨½üÉí£¬Ò²ÎÞ·¨½ø¹¥!!\n"NOR;
+        return HIR"$Nç‹‚èˆžå¤§æ–§,$næ— æ³•è¿‘èº«ï¼Œä¹Ÿæ— æ³•è¿›æ”»!!\n"NOR;
         }
         if( damage_bonus > 30 && random(level2)>60
         && (string)weapon->query("skill_type") == "axe"
         && random(2)==0
         && me->query_skill_mapped("force") == "guiyuan-tunafa") {
         victim->receive_wound("qi", (random(damage_bonus)+150));
-        return HIB"$n±»¸«¿³ÖÐ$lÒªº¦£¬Ñª¼úÁËÒ»µØ!!\n"NOR;
+        return HIB"$nè¢«æ–§ç ä¸­$lè¦å®³ï¼Œè¡€è´±äº†ä¸€åœ°!!\n"NOR;
         }
 }
 }
@@ -199,7 +199,7 @@ if (weapon)
         && random(5)==1
         && (string)weapon->query("skill_type") == "axe"){
  
-            msg = HIC"$n³öÕÐÊ±£¬$N¿ñÎè´ó¸«£¬$nÎÞ·¨½üÉí£¬Ò²ÎÞ·¨½ø¹¥!!\n"NOR;
+            msg = HIC"$nå‡ºæ‹›æ—¶ï¼Œ$Nç‹‚èˆžå¤§æ–§ï¼Œ$næ— æ³•è¿‘èº«ï¼Œä¹Ÿæ— æ³•è¿›æ”»!!\n"NOR;
    if (!ob->is_busy())
              ob->start_busy(3);
 message_vision(msg, me, ob);

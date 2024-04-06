@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// lian.c Á«»¨Ö¸
+// lian.c èŽ²èŠ±æŒ‡
 
 #include <ansi.h>
 #include <combat.h>
@@ -23,59 +23,59 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸Á«»¨Ö¸¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒèŽ²èŠ±æŒ‡ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_skill("canhe-zhi",1) < 200 )
-                return notify_fail("ÄãµÄ²ÎºÏÖ¸»ðºò²»µ½£¬ÎÞ·¨Ê©Õ¹Ä½ÈÝ¼Ò´«¾øÑ§£¡\n");
+                return notify_fail("ä½ çš„å‚åˆæŒ‡ç«å€™ä¸åˆ°ï¼Œæ— æ³•æ–½å±•æ…•å®¹å®¶ä¼ ç»å­¦ï¼\n");
         if ((int)me->query_skill("shenyuan-gong", 1) < 180)
-                return notify_fail("ÄãµÄÉñÔª¹¦»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„ç¥žå…ƒåŠŸç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("murong-daofa", 1) < 180)
-                return notify_fail("ÄãµÄÄ½ÈÝµ¶·¨»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„æ…•å®¹åˆ€æ³•ç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("yanling-shenfa", 1) < 180)
-                return notify_fail("ÄãµÄÑàÁéÉí·¨»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„ç‡•çµèº«æ³•ç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("xingyi-zhang", 1) < 180)
-                return notify_fail("ÄãµÄ¶·×ªÐÇÒÆÕÆ»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„æ–—è½¬æ˜Ÿç§»æŽŒç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("murong-jianfa", 1) < 180)
-                return notify_fail("ÄãµÄÄ½ÈÝ½£·¨»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„æ…•å®¹å‰‘æ³•ç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("qxxy-shou", 1) < 180)
-                return notify_fail("ÄãµÄÆßÐÇÐÇÒÆÊÖ»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„ä¸ƒæ˜Ÿæ˜Ÿç§»æ‰‹ç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("canhe-zhi", 1) < 180)
-                return notify_fail("ÄãµÄ²ÎºÏÖ¸»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„å‚åˆæŒ‡ç«å€™å¤ªæµ…ã€‚\n");
         if ((int)me->query_skill("douzhuan-xingyi", 1) < 180)
-                return notify_fail("ÄãµÄ¶·×ªÐÇÒÆ»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„æ–—è½¬æ˜Ÿç§»ç«å€™å¤ªæµ…ã€‚\n");
 
         skill = me->query_skill("canhe-zhi", 1);
 
         if (skill < 80)
-                return notify_fail("ÄãµÄ²ÎºÏÖ¸ÐÞÎªÓÐÏÞ, ²»ÄÜÊ¹ÓÃ¡¸Á«»¨Ö¸¡¹£¡\n");
+                return notify_fail("ä½ çš„å‚åˆæŒ‡ä¿®ä¸ºæœ‰é™, ä¸èƒ½ä½¿ç”¨ã€ŒèŽ²èŠ±æŒ‡ã€ï¼\n");
 
         if (me->query("neili") < 70)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸Á«»¨Ö¸¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€ŒèŽ²èŠ±æŒ‡ã€ï¼\n");
 
         if (me->query_skill_mapped("finger") != "canhe-zhi")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢²ÎºÏÖ¸, ²»ÄÜÊ¹ÓÃ¡¸Á«»¨Ö¸¡¹£¡\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å‚åˆæŒ‡, ä¸èƒ½ä½¿ç”¨ã€ŒèŽ²èŠ±æŒ‡ã€ï¼\n");
 
-        msg = HIC "$N" HIC "ÎåÖ¸Éì³ö£¬ÍðÈôÒ»¶äÊ¢¿ªµÄÁ«»¨£¬ÇáÆ®Æ®µÄ·÷Ïò$n"
-              HIC "¡£\n" NOR;
+        msg = HIC "$N" HIC "äº”æŒ‡ä¼¸å‡ºï¼Œå®›è‹¥ä¸€æœµç››å¼€çš„èŽ²èŠ±ï¼Œè½»é£˜é£˜çš„æ‹‚å‘$n"
+              HIC "ã€‚\n" NOR;
 
         me->add("neili", -30);
         ap = me->query_skill("finger");
         dp = target->query_skill("dodge");
 	if (ap / 2 + random(ap) > dp)
         {
-		msg += HIR "½á¹û$p" HIR "±»$P"
-                       HIR "±ÆµÃÕÐ¼Ü²»µü£¬ÎÞÏ¾ÅÔ¹Ë¡£\n" NOR;
+		msg += HIR "ç»“æžœ$p" HIR "è¢«$P"
+                       HIR "é€¼å¾—æ‹›æž¶ä¸è¿­ï¼Œæ— æš‡æ—é¡¾ã€‚\n" NOR;
                 target->start_busy(random(4) + 2);
 	} else
         {
-		msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P"
-                       CYN "µÄÆóÍ¼£¬ÇáÇáÒ»Ô¾£¬¶ã¿ªÁËÕâÒ»ÕÐ¡£\n" NOR;
+		msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P"
+                       CYN "çš„ä¼å›¾ï¼Œè½»è½»ä¸€è·ƒï¼Œèº²å¼€äº†è¿™ä¸€æ‹›ã€‚\n" NOR;
                 me->start_busy(2);
 	}
 	message_combatd(msg, me, target);
 
-    msg = HIW "Ö»¼û$N" HIW "ÉíÐÎÒ»Õ¹£¬Éí·¨¶¸È»±äµÃ¹îÒìÎÞ±È£¬¾ÛÁ¦ÓÚÖ¸ÇÄÈ»µã"
-              "³ö£¬Êý¹É½£ÆøÖ±Ï®$n" HIW "ÒªÑ¨¶øÈ¥¡£\n" NOR;  
+    msg = HIW "åªè§$N" HIW "èº«å½¢ä¸€å±•ï¼Œèº«æ³•é™¡ç„¶å˜å¾—è¯¡å¼‚æ— æ¯”ï¼ŒèšåŠ›äºŽæŒ‡æ‚„ç„¶ç‚¹"
+              "å‡ºï¼Œæ•°è‚¡å‰‘æ°”ç›´è¢­$n" HIW "è¦ç©´è€ŒåŽ»ã€‚\n" NOR;  
 
         message_combatd(msg, me, target);
 
@@ -84,28 +84,28 @@ int perform(object me, object target)
         level = me->query_skill("canhe-zhi", 1);
         if (level>200) level=200;
         me->add("apply/attack", 80);
-        msg = MAG "$NÒ»Ö¸µãÏò$nµÄÓÄÃÅÑ¨" NOR;
+        msg = MAG "$Nä¸€æŒ‡ç‚¹å‘$nçš„å¹½é—¨ç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = YEL "$N¶þÖ¸µãÏò$nµÄÕÂÃÅÑ¨" NOR;
+        msg = YEL "$NäºŒæŒ‡ç‚¹å‘$nçš„ç« é—¨ç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = WHT "$NÈýÖ¸µãÏò$nµÄ´óºáÑ¨"NOR;
+        msg = WHT "$Nä¸‰æŒ‡ç‚¹å‘$nçš„å¤§æ¨ªç©´"NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg =RED "$NËÄÖ¸µãÏò$nµÄ×Ï¹¬Ñ¨" NOR;
+        msg =RED "$Nå››æŒ‡ç‚¹å‘$nçš„ç´«å®«ç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = HIR "$NÎåÖ¸µãÏò$nµÄÀäÔ¨Ñ¨" NOR;
+        msg = HIR "$Näº”æŒ‡ç‚¹å‘$nçš„å†·æ¸Šç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = HIC "$NÁùÖ¸µãÏò$nµÄÌì¾®Ñ¨" NOR;
+        msg = HIC "$Nå…­æŒ‡ç‚¹å‘$nçš„å¤©äº•ç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = HIB "$NÆßÖ¸µãÏò$nµÄ¼«ÈªÑ¨" NOR;
+        msg = HIB "$Nä¸ƒæŒ‡ç‚¹å‘$nçš„æžæ³‰ç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
-        msg = GRN "$N°ËÖ¸µãÏò$nµÄÇåÁéÑ¨" NOR;
+        msg = GRN "$Nå…«æŒ‡ç‚¹å‘$nçš„æ¸…çµç©´" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);        
         
         me->add("apply/attack", -80);

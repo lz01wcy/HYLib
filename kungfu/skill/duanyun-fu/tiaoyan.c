@@ -1,4 +1,4 @@
-// tiaoyan.c ¶áÃüÈı¸«Ö®¡¸ÌôÑÛÊ½¡¹
+// tiaoyan.c å¤ºå‘½ä¸‰æ–§ä¹‹ã€ŒæŒ‘çœ¼å¼ã€
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -13,30 +13,30 @@ object weapon;
     if( !target
     ||      !target->is_character()
     ||      !me->is_fighting(target) )
-      return notify_fail("¡¸ÌôÑÛÊ½¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+      return notify_fail("ã€ŒæŒ‘çœ¼å¼ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
     if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "axe")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
     if( (int)me->query_skill("guiyuan-tunafa", 1) < 50 )
-	return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»¹Î´Á·³É£¬²»ÄÜÊ¹ÓÃ£¡\n");
+	return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸè¿˜æœªç»ƒæˆï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¡\n");     
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›ä¸è¶³ï¼\n");     
 
 
     if( target->is_busy() )
-   return notify_fail(target->name() + "ÕıÏóÖ»ÎŞÍ·²ÔÓ¬£¬¿ì·Åµ¨¹¥»÷°É¡£\n");
-    msg = HIG "$NÊ¹³ö¶áÃüÈı¸«Ö®¡¸ÌôÑÛÊ½¡¹£¬¸«¼â¼²Ìô$nË«ÑÛ¡£\n";
+   return notify_fail(target->name() + "æ­£è±¡åªæ— å¤´è‹è‡ï¼Œå¿«æ”¾èƒ†æ”»å‡»å§ã€‚\n");
+    msg = HIG "$Nä½¿å‡ºå¤ºå‘½ä¸‰æ–§ä¹‹ã€ŒæŒ‘çœ¼å¼ã€ï¼Œæ–§å°–ç–¾æŒ‘$nåŒçœ¼ã€‚\n";
 
 //    me->start_busy(1);
     if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3
  ) {
-    msg += "½á¹û$pÖ»¾õµÃÑÛÇ°Ò»ºÚ£¬Ë«ÑÛÒ»Õó¾çÍ´£¬½Ó×ÅÊ²Ã´Ò²¿´²»¼ûÁË¡£\n" NOR;
+    msg += "ç»“æœ$påªè§‰å¾—çœ¼å‰ä¸€é»‘ï¼ŒåŒçœ¼ä¸€é˜µå‰§ç—›ï¼Œæ¥ç€ä»€ä¹ˆä¹Ÿçœ‹ä¸è§äº†ã€‚\n" NOR;
   target->start_busy( (int)me->query_skill("duanyun-fu") / 50 + 3);
  target->add("qi",-((int)me->query_skill("duanyun-fu")*2));
     target->add("eff_qi",-((int)me->query_skill("duanyun-fu")*2));
     } else {
-   msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢¼±Ã¦¶ã¿ªÁË¡£\n" NOR;
+   msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ€¥å¿™èº²å¼€äº†ã€‚\n" NOR;
     me->start_busy(3);
     }
 me->add("neili", -100);

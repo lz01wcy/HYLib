@@ -1,4 +1,4 @@
-// zhuwanli.c ñÒÍòÀï
+// zhuwanli.c è¤šä¸‡é‡Œ
 
 #include <ansi.h>
 inherit NPC;
@@ -10,10 +10,10 @@ int ask_me();
 int ask_for_toushen();
 void create()
 {
-	set_name("ñÒÍòÀï", ({ "zhu wanli", "zhu" }));
-	set("title",  "´óÀí¹ú»¤ÎÀ" );
-	set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»¡£Éí´©»ÆÒÂ£¬Á³ÉÏÓ¢Æø±ÆÈË¡£ÊÖ³ÖÒ»¸ùÌú¸Ë¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("è¤šä¸‡é‡Œ", ({ "zhu wanli", "zhu" }));
+	set("title",  "å¤§ç†å›½æŠ¤å«" );
+	set("long", "ä»–æ˜¯å¤§ç†å›½å››å¤§æŠ¤å«ä¹‹ä¸€ã€‚èº«ç©¿é»„è¡£ï¼Œè„¸ä¸Šè‹±æ°”é€¼äººã€‚æ‰‹æŒä¸€æ ¹é“æ†ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 33);
 	set("class", "officer");
 	set("attitude", "friendly");
@@ -33,9 +33,9 @@ void create()
 	set("score", 100000);
 
 	set("inquiry",([
-		"Í¶Éí"    : (: ask_for_toushen :),
+		"æŠ•èº«"    : (: ask_for_toushen :),
 		"toushen" : (: ask_for_toushen :),
-		"Ö¸µãÎä¹¦" : (: ask_me :),
+		"æŒ‡ç‚¹æ­¦åŠŸ" : (: ask_me :),
 	]));
 
         set_skill("force", 50);
@@ -65,7 +65,7 @@ void create()
 	carry_object(__DIR__"obj/diaogan")->wield();
 	add_money("silver", 10);
 
-	create_family("´óÀí¶Î¼Ò",19,"»¤ÎÀ");
+	create_family("å¤§ç†æ®µå®¶",19,"æŠ¤å«");
 }
 int ask_for_toushen()
 {
@@ -73,26 +73,26 @@ int ask_for_toushen()
 
 	me = this_player();
 
-	if( (string)me->query("gender") == "ÎŞĞÔ")
+	if( (string)me->query("gender") == "æ— æ€§")
 	{
-		command("say ¹«¹«£¿ÎÒÃÇ¸®Àï²»ÊÕ¹«¹«¡£\n");
+		command("say å…¬å…¬ï¼Ÿæˆ‘ä»¬åºœé‡Œä¸æ”¶å…¬å…¬ã€‚\n");
 		return 1;
 	}
 	if( (string)me->query("class") == "bonze")
 	{
-		say( "ñÒÍòÀïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me)
-			+ "£¬³ö¼ÒÈËÄÄ»¹ÄÜÔÙÓĞ¼Ò£¿\n");
+		say( "è¤šä¸‡é‡Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(me)
+			+ "ï¼Œå‡ºå®¶äººå“ªè¿˜èƒ½å†æœ‰å®¶ï¼Ÿ\n");
 		return 1;
 	}
 	if( (int)me->query_str() < 20)
 	{
-		say( "ñÒÍòÀïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me)
-			+ "ÕâÃ´ÎÄÈõ£¬ÔõÃ´ÄÜÔÚ¸®Àï³ĞÖµ£¿\n");
+		say( "è¤šä¸‡é‡Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(me)
+			+ "è¿™ä¹ˆæ–‡å¼±ï¼Œæ€ä¹ˆèƒ½åœ¨åºœé‡Œæ‰¿å€¼ï¼Ÿ\n");
 		return 1;
 	}
-	say( "ñÒÍòÀïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me)
-		+ "¾ÍÎ¯ÇüÄãÏÈÔÚ¸®ÀïÌıÓÃ°É¡£\n");
-	me->set("title","´óÀíÕòÄÏÍõ¸®¼ÒÅ«");
+	say( "è¤šä¸‡é‡Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(me)
+		+ "å°±å§”å±ˆä½ å…ˆåœ¨åºœé‡Œå¬ç”¨å§ã€‚\n");
+	me->set("title","å¤§ç†é•‡å—ç‹åºœå®¶å¥´");
 	return 1;
 }
 #include "/kungfu/class/dali/weishi.h"; 

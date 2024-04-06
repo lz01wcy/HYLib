@@ -1,4 +1,4 @@
-// biye-wu.c ±ÌÒ¶Ëæ·çÎè
+// biye-wu.c ç¢§å¶éšé£èˆ
 #include <ansi.h>
 inherit SKILL;
 string *du=({
@@ -30,53 +30,53 @@ string *du=({
 
 
 mapping *action = ({
-([	"action" : "$NË«ÊÖÑïÆğ£¬ÇáÆ®Æ®Ò»Ê½¡¸Ò¶Âä¡¹£¬ÕÆÈôÂäÒ¶£¬Ïò$nµÄ$lÅÄÈ¥",
+([	"action" : "$NåŒæ‰‹æ‰¬èµ·ï¼Œè½»é£˜é£˜ä¸€å¼ã€Œå¶è½ã€ï¼ŒæŒè‹¥è½å¶ï¼Œå‘$nçš„$læ‹å»",
 	"force" : 60,
         "damage" : 190,
 	"dodge" : 82,
-	"skill_name" : "Ò¶Âä",
+	"skill_name" : "å¶è½",
 	"lvl" : 0,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$N×ó½ÅÎªÖáĞÄ£¬ÓÒ½ÅÒ»Ğı£¬Ë«ÊÖ½»Ìæ»ÓÎè£¬ÈçÖñÒ¶·­·É£¬ÕıÊÇ¡¸Ò¶Îè¡¹£¬Ïò$nµÄ$lÅÄÏÂ",
+([	"action" : "$Nå·¦è„šä¸ºè½´å¿ƒï¼Œå³è„šä¸€æ—‹ï¼ŒåŒæ‰‹äº¤æ›¿æŒ¥èˆï¼Œå¦‚ç«¹å¶ç¿»é£ï¼Œæ­£æ˜¯ã€Œå¶èˆã€ï¼Œå‘$nçš„$læ‹ä¸‹",
 	"force" : 80,
 	"dodge" : 80,
 "damage" : 190,
-	"skill_name" : "Ò¶Îè",
+	"skill_name" : "å¶èˆ",
 	"lvl" : 20,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÉíÌå¸ß¸ßÔ¾Æğ£¬×óÊÖÁ¢ÔÚĞØÇ°£¬ÓÒ±ÛÎ¢Çú£¬Ê¹Ò»ÕĞ¡¸Ò¶Æ®Áã¡¹£¬Ïò$nµÄ$lºÍÃæÃÅ´òÈ¥",
+([	"action" : "$Nèº«ä½“é«˜é«˜è·ƒèµ·ï¼Œå·¦æ‰‹ç«‹åœ¨èƒ¸å‰ï¼Œå³è‡‚å¾®æ›²ï¼Œä½¿ä¸€æ‹›ã€Œå¶é£˜é›¶ã€ï¼Œå‘$nçš„$lå’Œé¢é—¨æ‰“å»",
 	"force" : 100,
 	"dodge" : 82,
 "damage" : 190,
-	"skill_name" : "Ò¶Æ®Áã",
+	"skill_name" : "å¶é£˜é›¶",
 	"lvl" : 40,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÎ¢Ò»ÔË¾¢£¬Ë«ÕÆÇà½î±¬Â¶£¬Ò»Ê½¡¸¿İÒ¶¡¹£¬½«$n»ëÉíÉÏÏÂ¶¼ÁıÕÖÔÚÖØÖØÕÆÓ°Ö®ÖĞ",
+([	"action" : "$Nå¾®ä¸€è¿åŠ²ï¼ŒåŒæŒé’ç­‹çˆ†éœ²ï¼Œä¸€å¼ã€Œæ¯å¶ã€ï¼Œå°†$næµ‘èº«ä¸Šä¸‹éƒ½ç¬¼ç½©åœ¨é‡é‡æŒå½±ä¹‹ä¸­",
 	"force" : 200,
 	"dodge" : 94,
 "damage" : 190,
-	"skill_name" : "¿İÒ¶",
+	"skill_name" : "æ¯å¶",
 	"lvl" : 60,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NË«ÕÆÆ½Ì¯£¬×óÕÆ»º»ºÊÕÖÁ¼ç£¬ÓÒÕÆÃÍÏòÇ°ÍÆ³ö£¬\nÕÆ·ç´ø×ÅÆÆ¿ÕÉù£¬Ò»ÕĞ¡¸µ¯Ö¦¡¹£¬ÈçÖñÖ¦·´µ¯£¬Ö±±¼$nĞÄÎÑ¶øÈ¥",
+([	"action" : "$NåŒæŒå¹³æ‘Šï¼Œå·¦æŒç¼“ç¼“æ”¶è‡³è‚©ï¼Œå³æŒçŒ›å‘å‰æ¨å‡ºï¼Œ\næŒé£å¸¦ç€ç ´ç©ºå£°ï¼Œä¸€æ‹›ã€Œå¼¹æã€ï¼Œå¦‚ç«¹æåå¼¹ï¼Œç›´å¥”$nå¿ƒçªè€Œå»",
 	"force" : 300,
 	"dodge" : 96,
 "damage" : 300,
-	"skill_name" : "µ¯Ö¦",
+	"skill_name" : "å¼¹æ",
 	"lvl" : 80,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÍ»È»ÊÕÕÆ£¬ÓÉ¸¹²¿ÏòÇ°ÏòÉÏÍÆ³ö£¬ÕÆ·çÈçÌÎ£¬Ò»Ê½¡¸Ò¶Èç³±¡¹£¬Ò»Æ¬¾¢·çÖ±±Æ$n",
+([	"action" : "$Nçªç„¶æ”¶æŒï¼Œç”±è…¹éƒ¨å‘å‰å‘ä¸Šæ¨å‡ºï¼ŒæŒé£å¦‚æ¶›ï¼Œä¸€å¼ã€Œå¶å¦‚æ½®ã€ï¼Œä¸€ç‰‡åŠ²é£ç›´é€¼$n",
 	"force" : 500,
 "damage" : 300,
 	"dodge" : 88,
-	"skill_name" : "Ò¶Èç³±",
+	"skill_name" : "å¶å¦‚æ½®",
 	"lvl" : 100,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
 });
 
@@ -85,11 +85,11 @@ int valid_enable(string usage) { return usage=="strike" || usage=="parry"; }
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Á·±ÌÒ¶Ëæ·çÎè±ØĞë¿ÕÊÖ¡£\n");
+		return notify_fail("ç»ƒç¢§å¶éšé£èˆå¿…é¡»ç©ºæ‰‹ã€‚\n");
 	if ((int)me->query_skill("biyun-xinfa", 1) < 30)
-		return notify_fail("ÄãµÄ±ÌÔÆĞÄ·¨»ğºò²»¹»£¬ÎŞ·¨Ñ§±ÌÒ¶Ëæ·çÎè¡£\n");
+		return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦ç¢§å¶éšé£èˆã€‚\n");
 	if ((int)me->query("max_neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·±ÌÒ¶Ëæ·çÎè¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒç¢§å¶éšé£èˆã€‚\n");
 	return 1;
 }
 
@@ -121,9 +121,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query("qi") < 30)
-		return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·±ÌÒ¶Ëæ·çÎè¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒç¢§å¶éšé£èˆã€‚\n");
 	me->receive_damage("qi", 25);
 	me->add("neili", -10);
 	return 1;
@@ -160,7 +160,7 @@ if (random(8)==0 && level>=300 && me->query_skill_mapped("force") == "biyun-xinf
             victim->apply_condition(du[random(sizeof(du))], 25);
             victim->apply_condition(du[random(sizeof(du))], 25);
 if (!victim->is_busy()) victim->start_busy(2);	
- return HIR "$NÍ»È»ÊÕÕÆ£¬È»ºóÑ¸ËÙ·¢ÕÆ! ÕÆÖĞ¾¡È»ÓĞ¶¾É°£¬ÕâÕÆ·ç¾¡È»ÊÇÎåÑÕÁùÉ«µÄ£¡$nÓ²ÆğÍ·Æ¤£¬ÒÔÕÆÓ²½Ó£¡£¡½á¹ûÉíÖĞ¾Ş¶¾£¡!\n";
+ return HIR "$Nçªç„¶æ”¶æŒï¼Œç„¶åè¿…é€Ÿå‘æŒ! æŒä¸­å°½ç„¶æœ‰æ¯’ç ‚ï¼Œè¿™æŒé£å°½ç„¶æ˜¯äº”é¢œå…­è‰²çš„ï¼$nç¡¬èµ·å¤´çš®ï¼Œä»¥æŒç¡¬æ¥ï¼ï¼ç»“æœèº«ä¸­å·¨æ¯’ï¼!\n";
 }
  
 }

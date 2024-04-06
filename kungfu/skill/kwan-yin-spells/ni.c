@@ -7,22 +7,22 @@ int perform(object me, object target)
         int lvl,i;
         object env, *inv;
         if((int) me->query_skill("kwan-yin-spells",1) < 120)
-                return notify_fail("ÄãµÄ¹ÛÒôÁù×ÖÃ÷Öä²»¹»¸ßÉî£¡");
+                return notify_fail("ä½ çš„è§‚éŸ³å…­å­—æ˜Žå’’ä¸å¤Ÿé«˜æ·±ï¼");
         if (!me->is_fighting())
-                return notify_fail("¡°ÄØ¡±Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n"); 
+                return notify_fail("â€œå‘¢â€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n"); 
         lvl = (int) me->query_skill("magic");
         if( me->query("neili") < 200 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿï¼\n");
         if( me->query("max_jing") <= 200 )
-                return notify_fail("ÄãµÄÉñ²»¹»£¡\n"); 
+                return notify_fail("ä½ çš„ç¥žä¸å¤Ÿï¼\n"); 
         if (target==me)
-                        return notify_fail("²»ÒªÃüÁË£¿\n");
+                        return notify_fail("ä¸è¦å‘½äº†ï¼Ÿ\n");
         if (userp(me)) me->add("neili", -200);
         if (userp(me)) me->receive_damage("jing", 200);
         
-        message_vision(WHT"$N³ÁºÈÒ»Éù¡°ÄØ¡±£¬ÓÒÊÖ»¤ÐÄ£¬×óÊÖÆ½Ì¯£¬ö®ÄÇ¼äÈý±¦ÔÚÎÕ£¬ÁéÉñ¹éÒ»£¬ 
-Ö»¼ûµ­µ­µÄ°×¹âÍ¸³öÌåÍâ¡£ \n" NOR, me);
-        message_vision(HIW "£®£®£®$N±»Ò»¹Éµ­µ­µÄ°×ÑÌËù°üÎ§£¡£¡\n" NOR, me);
+        message_vision(WHT"$Næ²‰å–ä¸€å£°â€œå‘¢â€ï¼Œå³æ‰‹æŠ¤å¿ƒï¼Œå·¦æ‰‹å¹³æ‘Šï¼ŒéœŽé‚£é—´ä¸‰å®åœ¨æ¡ï¼Œçµç¥žå½’ä¸€ï¼Œ 
+åªè§æ·¡æ·¡çš„ç™½å…‰é€å‡ºä½“å¤–ã€‚ \n" NOR, me);
+        message_vision(HIW "ï¼Žï¼Žï¼Ž$Nè¢«ä¸€è‚¡æ·¡æ·¡çš„ç™½çƒŸæ‰€åŒ…å›´ï¼ï¼\n" NOR, me);
         if(target) {
                 bbqthem(me, target);
         }
@@ -47,17 +47,17 @@ int bbqthem(object me, object obj)
         
         magic = (int) me->query_skill("magic");        
         
-        message_vision(MAG "\n×ÏÆø´Ó"NOR+"$N"+MAG"µÄÍ·ÉÏÉýÆð£¬ÅÌÐý×Å×¢Èë$nµÄÌåÄÚ£¬\n" NOR, obj,me);
+        message_vision(MAG "\nç´«æ°”ä»Ž"NOR+"$N"+MAG"çš„å¤´ä¸Šå‡èµ·ï¼Œç›˜æ—‹ç€æ³¨å…¥$nçš„ä½“å†…ï¼Œ\n" NOR, obj,me);
         obj->receive_damage("qi", 1, me);
         
         if(obj->is_ghost()==1 && obj->query("combat_exp")<random(me->query("combat_exp"))*10) {
-                message_vision(WHT "$NËæ¼´ÐÎÉñ¾ãÃð£¬ÎÞÓ°ÎÞ×Ù£¡\n" NOR, obj);
+                message_vision(WHT "$Néšå³å½¢ç¥žä¿±ç­ï¼Œæ— å½±æ— è¸ªï¼\n" NOR, obj);
                 me->add("qi",obj->query("qi")/10);
                 obj->die();
                 return 1;
         }
         if(obj->is_zombie()==1 && obj->query("combat_exp")<random(me->query("combat_exp"))*10) {
-                message_vision(WHT "$NÏóÊÇÈ«²¿Éú»ú¶¼±»³é×ßÒ»Ñù£¬Ä¾Í·ËÆµØµ¹ÏÂ£¬»¯ÎªÁËÒ»Ì²ÑªË®£¡\n" NOR, obj);
+                message_vision(WHT "$Nè±¡æ˜¯å…¨éƒ¨ç”Ÿæœºéƒ½è¢«æŠ½èµ°ä¸€æ ·ï¼Œæœ¨å¤´ä¼¼åœ°å€’ä¸‹ï¼ŒåŒ–ä¸ºäº†ä¸€æ»©è¡€æ°´ï¼\n" NOR, obj);
                 me->add("qi",obj->query("qi")/10);
                 obj->die();
                 return 1;

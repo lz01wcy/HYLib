@@ -7,12 +7,12 @@ int valid_learn(object me)
 {
          if (me->query_skill("force", 1) > 9)
                 return 1;
-        return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»¹ÐèÒª½øÒ»²½Ìá¸ß¡£\n");
+        return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸè¿˜éœ€è¦è¿›ä¸€æ­¥æé«˜ã€‚\n");
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÎÞÕùÐÄ·¨Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("æ— äº‰å¿ƒæ³•åªèƒ½ç”¨å­¦(learn)çš„æ¥å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

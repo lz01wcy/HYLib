@@ -8,5 +8,5 @@ string type() { return "knowledge"; }
 
 int practice_skill(object me)
 {	
-	return notify_fail("ÆæÃÅÎåĞĞÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+	return notify_fail("å¥‡é—¨äº”è¡Œèƒ½é å­¦(learn)æ¥æé«˜ã€‚\n");
 }

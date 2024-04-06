@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/fawang.c  ½ğÂÖ·¨Íõ
+// /kungfu/class/xueshan/fawang.c  é‡‘è½®æ³•ç‹
 // by secret
 
 #include <ansi.h>
@@ -9,14 +9,14 @@ inherit F_MASTER;
 void create()
 {
         object ob;
-        set_name("½ğÂÖ·¨Íõ", ({ "jinlun fawang", "fawang", "fawang" }));
+        set_name("é‡‘è½®æ³•ç‹", ({ "jinlun fawang", "fawang", "fawang" }));
         set("long",@LONG
-ËûÊÇÑ©É½ËÂµÄ»¤½Ì·¨Íõ¡£ÔÚÑ©É½ËÂµÄµØÎ»½ö´ÎÓëÕÆÃÅÈËğ¯Ä¦ÖÇ¡£
-Éí´©Ò»¼ş×ÏºìôÂôÄ£¬Í·´øÉ®Ã±¡£
+ä»–æ˜¯é›ªå±±å¯ºçš„æŠ¤æ•™æ³•ç‹ã€‚åœ¨é›ªå±±å¯ºçš„åœ°ä½ä»…æ¬¡ä¸æŒé—¨äººé¸ æ‘©æ™ºã€‚
+èº«ç©¿ä¸€ä»¶ç´«çº¢è¢ˆè£Ÿï¼Œå¤´å¸¦åƒ§å¸½ã€‚
 LONG
         );
-        set("title", HIY "·¨Íõ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title", HIY "æ³•ç‹" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -114,10 +114,10 @@ prepare_skill("hand", "dashou-yin");
 	}) );
 }
 	set("inquiry", ([
-		"Ê®ÈıÁúÏóôÂôÄ" : "ÕâÊÇ±¾ÃÅ·ğ±¦£¬²»ÄÜÇáÒ×¸øÄã£¬ÕâÑù°É°ïÎÒÕÒÒ»¶ä²Øºì»¨°É£¡\n",
+		"åä¸‰é¾™è±¡è¢ˆè£Ÿ" : "è¿™æ˜¯æœ¬é—¨ä½›å®ï¼Œä¸èƒ½è½»æ˜“ç»™ä½ ï¼Œè¿™æ ·å§å¸®æˆ‘æ‰¾ä¸€æœµè—çº¢èŠ±å§ï¼\n",
 	]));
 
-        create_family("Ñ©É½ËÂ", 2, "»¤½Ì·¨Íõ");
+        create_family("é›ªå±±å¯º", 2, "æŠ¤æ•™æ³•ç‹");
         set("class", "bonze");
 
         setup();
@@ -140,39 +140,39 @@ prepare_skill("hand", "dashou-yin");
 void attempt_apprentice(object ob)
 {
 
-        if ((string)ob->query("gender") != "ÄĞĞÔ") {
-                command("say ĞŞÏ°ÃÜ×ÚÄÚ¹¦ĞèÒª´¿ÑôÌå¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "»¹ÊÇÇë»Ø°É£¡");
+        if ((string)ob->query("gender") != "ç”·æ€§") {
+                command("say ä¿®ä¹ å¯†å®—å†…åŠŸéœ€è¦çº¯é˜³ä½“ã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "è¿˜æ˜¯è¯·å›å§ï¼");
                 return;
         }
 
         if ((string)ob->query("class") != "bonze") {
-                command("say ÎÒ·ğÃÅµÄÇå¹æ½äÂÉÉõ¶à¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "»¹ÊÇÇë»Ø°É£¡");
+                command("say æˆ‘ä½›é—¨çš„æ¸…è§„æˆ’å¾‹ç”šå¤šã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "è¿˜æ˜¯è¯·å›å§ï¼");
                 return;
         }
 
-        if ((string)ob->query("family/family_name") != "Ñ©É½ËÂ")        {
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "¼È·Ç±¾ËÂµÜ×Ó£¬»¹ÊÇÇë»Ø°É£¡");
+        if ((string)ob->query("family/family_name") != "é›ªå±±å¯º")        {
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "æ—¢éæœ¬å¯ºå¼Ÿå­ï¼Œè¿˜æ˜¯è¯·å›å§ï¼");
                 return;
                   }
 
         if ((int)ob->query_skill("lamaism", 1) < 80) {
-                command("say ÈëÎÒÑ©É½ËÂ£¬ĞŞÏ°ÃÜ×ÚĞÄ·¨ÊÇÊ×ÒªµÄ¡£");
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸Ã¶à¶à×êÑĞ±¾ÃÅµÄĞÄ·¨£¿");
+                command("say å…¥æˆ‘é›ªå±±å¯ºï¼Œä¿®ä¹ å¯†å®—å¿ƒæ³•æ˜¯é¦–è¦çš„ã€‚");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åº”è¯¥å¤šå¤šé’»ç ”æœ¬é—¨çš„å¿ƒæ³•ï¼Ÿ");
                 return;
         }
 
         command("smile");
         command("nod");
-        command("say Äã¾ÍËæÎÒÑ§Ï°·ğ·¨°É£¡");
+        command("say ä½ å°±éšæˆ‘å­¦ä¹ ä½›æ³•å§ï¼");
         command("recruit " + ob->query("id"));
 
-        ob->set("title", HIY"»î·ğ"NOR);
+        ob->set("title", HIY"æ´»ä½›"NOR);
 }
 int accept_object(object ob, object obj)
 {
@@ -182,7 +182,7 @@ int accept_object(object ob, object obj)
  
        if( !present(obj,ob) )
         { 
-         say("ÄãÓĞÂğ£¿£¿\n");
+         say("ä½ æœ‰å—ï¼Ÿï¼Ÿ\n");
          return 1;
         }  
 
@@ -191,12 +191,12 @@ int accept_object(object ob, object obj)
         if( present("shisan longxiang",this_object()) )
 {
 obj->set("no_get",1);
-command("say Ì«ºÃÁË£¬²Øºì»¨¿ÉÊÇÑ©É½Ò»±¦°¡!");
+command("say å¤ªå¥½äº†ï¼Œè—çº¢èŠ±å¯æ˜¯é›ªå±±ä¸€å®å•Š!");
 command("remove shisan longxiang");
-command("say Õâ¼şÊ®ÈıÁúÏóôÂôÄ¾ÍËÍ¸øÄã»¤·¨Ö®ÓÃ°É¡£");
+command("say è¿™ä»¶åä¸‰é¾™è±¡è¢ˆè£Ÿå°±é€ç»™ä½ æŠ¤æ³•ä¹‹ç”¨å§ã€‚");
 command("give shisan longxiang to "+ob->query("id"));
 }
-else command("say ÀÏÉ®£¬ÉíÎŞ³¤Îï£¬Õæ²»ÖªµÀÔõÃ´Ğ»Ğ»Äã!");
+else command("say è€åƒ§ï¼Œèº«æ— é•¿ç‰©ï¼ŒçœŸä¸çŸ¥é“æ€ä¹ˆè°¢è°¢ä½ !");
         return 1;
 }
 }

@@ -14,19 +14,19 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÌìÍâ·ÉÏÉÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å¤©å¤–é£žä»™åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
-	if (!weapon) return notify_fail("ÌìÍâ·ÉÏÉÖ»ÄÜºÍ·ÉÏÉ½£·¨ÅäºÍ£¡\n");
+	if (!weapon) return notify_fail("å¤©å¤–é£žä»™åªèƒ½å’Œé£žä»™å‰‘æ³•é…å’Œï¼\n");
 	if( (string)weapon->query("skill_type") != "sword" )
-	return notify_fail("ÌìÍâ·ÉÏÉÖ»ÄÜºÍ·ÉÏÉ½£·¨ÅäºÍ£¡\n");
+	return notify_fail("å¤©å¤–é£žä»™åªèƒ½å’Œé£žä»™å‰‘æ³•é…å’Œï¼\n");
 	if ( (string) me->query_skill_mapped("sword") != "feixian-sword")
-	return notify_fail("ÌìÍâ·ÉÏÉÖ»ÄÜºÍ·ÉÏÉ½£·¨ÅäºÍ£¡\n");
+	return notify_fail("å¤©å¤–é£žä»™åªèƒ½å’Œé£žä»™å‰‘æ³•é…å’Œï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-200);
 
 	extra = me->query_skill("feixian-sword",1) / 20;
@@ -34,14 +34,14 @@ int perform(object me, object target)
 
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = RED  "$N½ÅÌ¤£Û·ÉÏÉ²½·¨£Ý£¬Í¬Ê±Ê¹³ö£Û·ÉÏÉ½£·¨ÖÐ£ÝµÄ¾«Ëè£­£­ÌìÍâ·ÉÏÉ£¬ÊÖÖÐµÄ"+ weapon->name() +"»®³öÒ»µÀ³¤ºç£¬ÉÁµç°ãµÄ»÷Ïò$n£¡" NOR;
+	msg = RED  "$Nè„šè¸ï¼»é£žä»™æ­¥æ³•ï¼½ï¼ŒåŒæ—¶ä½¿å‡ºï¼»é£žä»™å‰‘æ³•ä¸­ï¼½çš„ç²¾é«“ï¼ï¼å¤©å¤–é£žä»™ï¼Œæ‰‹ä¸­çš„"+ weapon->name() +"åˆ’å‡ºä¸€é“é•¿è™¹ï¼Œé—ªç”µèˆ¬çš„å‡»å‘$nï¼" NOR;
 
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-	msg =  HIW "½£¹âÒ»ÉÁ£¬ÏûÊ§£®£®£®£®\n" NOR;
+	msg =  HIW "å‰‘å…‰ä¸€é—ªï¼Œæ¶ˆå¤±ï¼Žï¼Žï¼Žï¼Ž\n" NOR;
         message_vision(msg, me, target);
 	for(i=0;i<extra/4;i++)
 	{
-	msg = RED "$NÉíÐÎÍ»×ª£¬Óù½£»Ø·É£¡\n" NOR;
+	msg = RED "$Nèº«å½¢çªè½¬ï¼Œå¾¡å‰‘å›žé£žï¼\n" NOR;
 
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	}

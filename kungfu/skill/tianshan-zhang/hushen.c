@@ -1,4 +1,4 @@
-// chan.c Ì«¼«½£·¨¡¸²ø¡¹×Ö¾÷
+// chan.c å¤ªæå‰‘æ³•ã€Œç¼ ã€å­—è¯€
 
 #include <ansi.h>
 
@@ -13,32 +13,32 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÌìÉ½Ææ·å¡¸»¤Éí¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤©å±±å¥‡å³°ã€ŒæŠ¤èº«ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "staff")
-            return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+            return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
                 
         if( (int)me->query_skill("tianshan-zhang", 1) < 40 )
-                return notify_fail("ÄãµÄÌìÉ½ÕÈ·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸»¤Éí¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤©å±±æ–æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€ŒæŠ¤èº«ã€ã€‚\n");
 
-        msg = HIY "$NÊ¹³öÌìÉ½ÕÈ·¨¡¸»¤Éí¡¹£¬Æ´ÃüµÄÎè¶¯ÊÖÖĞµÄÎäÆ÷£¬°ÑÖÜÉí±£»¤×¡,ÆóÍ¼ÈÅÂÒ$nµÄ¹¥ÊÆ¡£\n";
+        msg = HIY "$Nä½¿å‡ºå¤©å±±æ–æ³•ã€ŒæŠ¤èº«ã€ï¼Œæ‹¼å‘½çš„èˆåŠ¨æ‰‹ä¸­çš„æ­¦å™¨ï¼ŒæŠŠå‘¨èº«ä¿æŠ¤ä½,ä¼å›¾æ‰°ä¹±$nçš„æ”»åŠ¿ã€‚\n";
         me->add("neili",-50);
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += HIG " ½á¹û$p±»$PÄÖ¸öÊÖÃ¦½ÅÂÒ£¬¾ª»ÅÊ§´ë£¬´ôÔÚµ±³¡£¬²»ÖªÈçºÎÓ¦¶Ô£¡\n" NOR;
+                msg += HIG " ç»“æœ$pè¢«$Pé—¹ä¸ªæ‰‹å¿™è„šä¹±ï¼ŒæƒŠæ…Œå¤±æªï¼Œå‘†åœ¨å½“åœºï¼Œä¸çŸ¥å¦‚ä½•åº”å¯¹ï¼\n" NOR;
         target->apply_condition("xx_poison",20);
 	 target->apply_condition("x2_sandu",20);
 	 target->apply_condition("sanpoison",20);
 target->apply_condition("corpse_poison",60);
                 target->start_busy( (int)me->query_skill("tianshan-zhang",1) / 50 + 2 );
         } else {
-                msg += HIR"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += HIR"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

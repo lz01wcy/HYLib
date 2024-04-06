@@ -1,16 +1,16 @@
-// liu.c ÁõÕý·ç
+// liu.c åˆ˜æ­£é£Ž
 // Last Modified by ahda on Sep.1 2001
 inherit NPC;
 inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("ÁõÕý·ç", ({ "liu zhengfeng", "liu" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("åˆ˜æ­£é£Ž", ({ "liu zhengfeng", "liu" }) );
+	set("gender", "ç”·æ€§");
 	set("class", "swordsman");
-	set("long", "Ò»¸öÅÖÀÏÕß¡£âþâþÓÐÀñ£¬±ãÈçÒ»¸ö²ÆÖ÷ÏçÉð£¬ÓÐÐ©Ð¡Ð¡µÄ
-¸»¹óÖ®Æø£¬ÓÖÓÐÐ©ÍÁÆø£¬µ«ÓÐÊ±Í»È»ÏÔ³ö²ª²ªÓ¢Æø£¬²»Ê§
-¸ßÊÖ·ç·¶¡£\n");
+	set("long", "ä¸€ä¸ªèƒ–è€è€…ã€‚æ‚æ‚æœ‰ç¤¼ï¼Œä¾¿å¦‚ä¸€ä¸ªè´¢ä¸»ä¹¡ç»…ï¼Œæœ‰äº›å°å°çš„
+å¯Œè´µä¹‹æ°”ï¼Œåˆæœ‰äº›åœŸæ°”ï¼Œä½†æœ‰æ—¶çªç„¶æ˜¾å‡ºå‹ƒå‹ƒè‹±æ°”ï¼Œä¸å¤±
+é«˜æ‰‹é£ŽèŒƒã€‚\n");
 	set("age", 45);
 	set("attitude", "peaceful");
 	set("per", 19);
@@ -67,7 +67,7 @@ set_skill("luoyan-jian", 250);
 		  set_temp("apply/damage", 200);
 	set_temp("apply/attack",200);
 	set_temp("apply/defense",200);
-	create_family("ºâÉ½ÅÉ", 13, "µÜ×Ó");
+	create_family("è¡¡å±±æ´¾", 13, "å¼Ÿå­");
 	setup();
 
 	carry_object(__DIR__"xijian")->wield();
@@ -78,9 +78,9 @@ void attempt_apprentice(object ob)
 {
 	if ((int)ob->query_skill("huiyan-xinfa",1) < 120 ) 
 	{
-		command("say ÄãµÄ±¾ÃÅÄÚ¹¦ÐÄ·¨»ðºò²»×ã,ÄÑÒÔÁìÂÔ¸ü¸ßÉîµÄÎä¹¦¡£");
+		command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•ç«å€™ä¸è¶³,éš¾ä»¥é¢†ç•¥æ›´é«˜æ·±çš„æ­¦åŠŸã€‚");
 		return;
 	}
-	command("say ÈëÎÒÃÅÀ´£¬¶¨Ðë¹â´óÎÒºâÉ½Ò»ÅÉ¡£");
+	command("say å…¥æˆ‘é—¨æ¥ï¼Œå®šé¡»å…‰å¤§æˆ‘è¡¡å±±ä¸€æ´¾ã€‚");
 	command("recruit " + ob->query("id"));
 }

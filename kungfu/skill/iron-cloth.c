@@ -4,9 +4,9 @@ inherit SKILL;
 #include <ansi.h>
 
 string *absorb_msg = ({
-	"$nÒÑÓÐ×¼±¸£¬²»»Å²»Ã¦µÄÔËÆðÌú²¼ÉÀ¡£\n",
-        "$n±ÕÄ¿ÄýÉñ£¬Æø×ßÈ«Éí£¬»¤ÌåÓ²¹¦´ïµ½áÛ·å×´Ì¬¡£\n",
-        "$n¡¸ºÙ¡¹µÄÒ»Éù£¬²»¶ã²»ÉÁ£¬ÔËÆðÌú²¼ÉÀÓ­Ïò$N£¡\n",
+	"$nå·²æœ‰å‡†å¤‡ï¼Œä¸æ…Œä¸å¿™çš„è¿èµ·é“å¸ƒè¡«ã€‚\n",
+        "$né—­ç›®å‡ç¥žï¼Œæ°”èµ°å…¨èº«ï¼ŒæŠ¤ä½“ç¡¬åŠŸè¾¾åˆ°å·…å³°çŠ¶æ€ã€‚\n",
+        "$nã€Œå˜¿ã€çš„ä¸€å£°ï¼Œä¸èº²ä¸é—ªï¼Œè¿èµ·é“å¸ƒè¡«è¿Žå‘$Nï¼\n",
 });
 
 string query_absorb_msg()

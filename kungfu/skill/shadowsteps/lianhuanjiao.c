@@ -1,4 +1,4 @@
-// mie.c  »Ø·ç·÷Áø½£·¨¡¸Ãğ½£¡¹
+// mie.c  å›é£æ‹‚æŸ³å‰‘æ³•ã€Œç­å‰‘ã€
 
 #include <ansi.h>
 #include <combat.h>
@@ -15,23 +15,23 @@ int perform(object me, object target)
         if (!target ) target = offensive_target(me);
 //        if (!objectp(weapon = me->query_temp("weapon"))
 //        || (string)weapon->query("skill_type") != "sword")
-//                return notify_fail(RED"¿ªÊ²Ã´ÍæĞ¦£¬Ã»×°±¸½£¾ÍÏëÊ¹¡¸ÃÔ×Ù»ÃÓ°Á¬»·½Å¡¹£¿\n"NOR);
+//                return notify_fail(RED"å¼€ä»€ä¹ˆç©ç¬‘ï¼Œæ²¡è£…å¤‡å‰‘å°±æƒ³ä½¿ã€Œè¿·è¸ªå¹»å½±è¿ç¯è„šã€ï¼Ÿ\n"NOR);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸ÃÔ×Ù»ÃÓ°Á¬»·½Å¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¿·è¸ªå¹»å½±è¿ç¯è„šã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if ((int)me->query_skill("shadowsteps", 1) < 80)
-                return notify_fail(WHT"ÄãµÄÃÔ×Ù»ÃÓ°²½²»¹»æµÊì£¬»¹Ê¹²»³ö¡¸ÃÔ×Ù»ÃÓ°Á¬»·½Å¡¹¡£\n"NOR);
+                return notify_fail(WHT"ä½ çš„è¿·è¸ªå¹»å½±æ­¥ä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜ä½¿ä¸å‡ºã€Œè¿·è¸ªå¹»å½±è¿ç¯è„šã€ã€‚\n"NOR);
 
         if ( me->query_temp("weapon"))
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-200);
 
         if ((int)me->query("neili")<200)
         {
-               return notify_fail(HIC"ÄãÏÖÔÚÄÚÁ¦²»¹»£¬Ã»ÄÜ½«¡¸ÃÔ×Ù»ÃÓ°Á¬»·½Å¡¹Ê¹Íê£¡\n"NOR);
+               return notify_fail(HIC"ä½ ç°åœ¨å†…åŠ›ä¸å¤Ÿï¼Œæ²¡èƒ½å°†ã€Œè¿·è¸ªå¹»å½±è¿ç¯è„šã€ä½¿å®Œï¼\n"NOR);
         }
-	msg = HIC  "$NÊ©Õ¹³ö£ÛÃÔ×Ù»ÃÓ°Á¬»·½Å£İ£¬ÉíĞÎ¼«¶ÈĞı×ª£¬Ò»´ÔÈËÓ°ÖĞÍ»È»Ïò$n·É³öÒ»ÍÈ£¡\n" NOR;
+	msg = HIC  "$Næ–½å±•å‡ºï¼»è¿·è¸ªå¹»å½±è¿ç¯è„šï¼½ï¼Œèº«å½¢æåº¦æ—‹è½¬ï¼Œä¸€ä¸›äººå½±ä¸­çªç„¶å‘$né£å‡ºä¸€è…¿ï¼\n" NOR;
                 me->start_busy(2);
                 if (!target->is_busy())
                 target->start_busy(random(2));
@@ -42,7 +42,7 @@ int perform(object me, object target)
                 me->add("neili", -50);
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
-         msg = HIC  "ÈËÓ°ÖĞÓÖ·É³öÒ»ÍÈ£¡\n" NOR;
+         msg = HIC  "äººå½±ä¸­åˆé£å‡ºä¸€è…¿ï¼\n" NOR;
                  me->start_busy(2);
                 if (!target->is_busy())
                 target->start_busy(random(2));
@@ -53,7 +53,7 @@ int perform(object me, object target)
                 me->add("neili", -50);
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
-        msg = HIC  "$NÉíĞÎ½¥ÎÈ£¬·´ÉíÓÖÊÇÒ»ÍÈ£¡\n" NOR;
+        msg = HIC  "$Nèº«å½¢æ¸ç¨³ï¼Œåèº«åˆæ˜¯ä¸€è…¿ï¼\n" NOR;
                   me->start_busy(2);
                 target->start_busy(random(2));
                 damage = (int)me->query_skill("shadowsteps", 1);

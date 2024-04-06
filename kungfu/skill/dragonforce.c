@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥žè¯ä¸–ç•Œãƒ»è¥¿æ¸¸è®°ãƒ»ç‰ˆæœ¬ï¼”ï¼Žï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit FORCE;
@@ -14,24 +14,24 @@ string exert_function_file(string func)
 
 int practice_skill(object me)
 {
-        if( (string)me->query("family/family_name")!="¶«º£Áú¹¬")
-                return notify_fail("Äã·ÇÁú×å£¬ÔÙÁ·ÓÐº¦ÎÞÒæ¡£\n");
+        if( (string)me->query("family/family_name")!="ä¸œæµ·é¾™å®«")
+                return notify_fail("ä½ éžé¾™æ—ï¼Œå†ç»ƒæœ‰å®³æ— ç›Šã€‚\n");
 
         if( !environment(me)->query("dragonforce_practice") )
-                return notify_fail("ÁúÉñÐÄ·¨Ö»ÄÜÔÚÌØÊâµÄ·¨Ì¨ÉÏ²Å¿ÉÁ·¡£\n");
+                return notify_fail("é¾™ç¥žå¿ƒæ³•åªèƒ½åœ¨ç‰¹æ®Šçš„æ³•å°ä¸Šæ‰å¯ç»ƒã€‚\n");
 
    if( (int)me->query_skill("dragonforce",1) >= 200 )
-     return notify_fail("ÄãµÄÁúÉñÐÄ·¨ºÜÄÑÌá¸ßÁË£¬»¹ÊÇÏòÄãÊ¦¸¸Çë½ÌÇë½Ì°É£¡\n");
+     return notify_fail("ä½ çš„é¾™ç¥žå¿ƒæ³•å¾ˆéš¾æé«˜äº†ï¼Œè¿˜æ˜¯å‘ä½ å¸ˆçˆ¶è¯·æ•™è¯·æ•™å§ï¼\n");
 
    if( (int)me->query_temp("dragonforce_practice") < 1 )
-     return notify_fail("ÄãÊÔ×ÅÁ·¹¦£¬¿ÉºÁÎÞ½øÕ¹£¬ÐèÒªÑ±·þ¸ü¶àµÄº£ÊÞÒÔÔö½øÁúÉñÐÄ·¨¡£\n");
+     return notify_fail("ä½ è¯•ç€ç»ƒåŠŸï¼Œå¯æ¯«æ— è¿›å±•ï¼Œéœ€è¦é©¯æœæ›´å¤šçš„æµ·å…½ä»¥å¢žè¿›é¾™ç¥žå¿ƒæ³•ã€‚\n");
 
         if( (int)me->query("kee") < 30 )
-                return notify_fail("ÄãµÄÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ°”ä¸å¤Ÿã€‚\n");
    if( (int)me->query("kee") < 30 )
-                return notify_fail("ÄãµÄÉñ²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç¥žä¸å¤Ÿã€‚\n");
         if( (int)me->query("force") < 10 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿ");
         me->receive_damage("kee", 30);
    me->receive_damage("sen", 30);
         me->add("force", -10);

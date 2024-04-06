@@ -6,9 +6,9 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("ÌìÃÅµÀÈË", ({ "tianmen daoren", "daoren", "tianmen" }) );
-	set("gender", "ÄÐÐÔ");
-	set("title", HIG"Ì©É½ÅÉµÚÊ®Èý´úÕÆÃÅ"NOR);
+	set_name("å¤©é—¨é“äºº", ({ "tianmen daoren", "daoren", "tianmen" }) );
+	set("gender", "ç”·æ€§");
+	set("title", HIG"æ³°å±±æ´¾ç¬¬åä¸‰ä»£æŽŒé—¨"NOR);
 	set("class", "taoist");
 	set("age", 45);
 	set("attitude", "peaceful");
@@ -60,7 +60,7 @@ void create()
 	set_temp("apply/armor",600);
 	set_temp("apply/damage",600);
 	
-	create_family("Ì©É½ÅÉ", 13, "ÕÆÃÅ");
+	create_family("æ³°å±±æ´¾", 13, "æŽŒé—¨");
 	setup();
 
 	carry_object(__DIR__"houjian")->wield();
@@ -86,21 +86,21 @@ void greeting(object ob)
 	string family;
 
 	family=(string)ob->query("family/family_name");
-	if(family!="Ì©É½ÅÉ")
-		command("say "+RANK_D->query_respect(ob)+"ÈôÊÇ¼ÓÈëÎÒÌ©É½ÅÉ£¬±ØÄÜ¹â´ó±¾ÅÉ£¡");
+	if(family!="æ³°å±±æ´¾")
+		command("say "+RANK_D->query_respect(ob)+"è‹¥æ˜¯åŠ å…¥æˆ‘æ³°å±±æ´¾ï¼Œå¿…èƒ½å…‰å¤§æœ¬æ´¾ï¼");
 	else command("nod "+ob->query("id"));
 }
 
 void attempt_apprentice(object ob)
 {
 	if((int)ob->query("shen")<50000)
-	command("say ÎÒÌ©É½ÅÉµÜ×Ó¶¼ÊÇÐÐÏÀÕÌÒåÖ®±²£¬"+RANK_D->query_respect(ob)+"»¹×öµÄ²»¹»°¡¡£");
+	command("say æˆ‘æ³°å±±æ´¾å¼Ÿå­éƒ½æ˜¯è¡Œä¾ ä»—ä¹‰ä¹‹è¾ˆï¼Œ"+RANK_D->query_respect(ob)+"è¿˜åšçš„ä¸å¤Ÿå•Šã€‚");
 	else
 		if((int)ob->query_skill("panshi-shengong",1) < 100)
-			command("say ÄãµÄ±¾ÃÅÐÄ·¨»¹µÃ¶à¶àÁ·Ï°¡£");
+			command("say ä½ çš„æœ¬é—¨å¿ƒæ³•è¿˜å¾—å¤šå¤šç»ƒä¹ ã€‚");
 		else
 		{
-			command("say ºÃ°¡£¬ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+			command("say å¥½å•Šï¼Œé‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
 			command("recruit " + ob->query("id") );
 		}
 }

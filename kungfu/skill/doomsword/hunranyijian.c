@@ -13,19 +13,19 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û»ìÈ»Ò»½££ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»æ··ç„¶ä¸€å‰‘ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-100);
 
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("doomsword",1) / 5;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = HIR  "$N´í²½ÉÏÇ°£¬ÊÖÖÐµÄ"+ weapon->name() +"Ò»Ê½£Û»ìÈ»Ò»½££Ý£¬½£Ã¢ÈôÓÐÈôÎÞµØÏò$n»ÓÈ¥£¡" NOR;
+	msg = HIR  "$Né”™æ­¥ä¸Šå‰ï¼Œæ‰‹ä¸­çš„"+ weapon->name() +"ä¸€å¼ï¼»æ··ç„¶ä¸€å‰‘ï¼½ï¼Œå‰‘èŠ’è‹¥æœ‰è‹¥æ— åœ°å‘$næŒ¥åŽ»ï¼" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

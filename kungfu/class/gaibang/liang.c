@@ -6,14 +6,14 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("Áº³¤ÀÏ", ({"liang zhanglao", "liang", "zhanglao"}));
-	set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
-	set("nickname", "´«¹¦³¤ÀÏ");
-	set("gender", "ÄÐÐÔ");
+	set_name("æ¢é•¿è€", ({"liang zhanglao", "liang", "zhanglao"}));
+	set("title", "ä¸å¸®ä¹è¢‹é•¿è€");
+	set("nickname", "ä¼ åŠŸé•¿è€");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("long", 
-		"Áº³¤ÀÏÊÇØ¤°ï³öµÀ×î¾Ã£¬Îä¹¦×î¸ßµÄ³¤ÀÏ£¬ÔÚÎäÁÖÖÐÏíÃûÒÑ¾Ã¡£\n"
-		"Ø¤°ïÎä¹¦ÏòÀ´½ÏÇ¿£¬½üÀ´Áº³¤ÀÏÒ»Á¦Õû¶Ù£¬¸üÊÇÕôÕôÈÕÉÏ¡£\n");
+		"æ¢é•¿è€æ˜¯ä¸å¸®å‡ºé“æœ€ä¹…ï¼Œæ­¦åŠŸæœ€é«˜çš„é•¿è€ï¼Œåœ¨æ­¦æž—ä¸­äº«åå·²ä¹…ã€‚\n"
+		"ä¸å¸®æ­¦åŠŸå‘æ¥è¾ƒå¼ºï¼Œè¿‘æ¥æ¢é•¿è€ä¸€åŠ›æ•´é¡¿ï¼Œæ›´æ˜¯è’¸è’¸æ—¥ä¸Šã€‚\n");
 
 	set("attitude", "peaceful");
         set("beggarlvl",9);
@@ -56,7 +56,7 @@ void create()
 	set_temp("apply/defense",150);
 	set_temp("apply/armor",500);
 	set_temp("apply/damage",400);
-	create_family("Ø¤°ï", 18, "¾Å´ü³¤ÀÏ");
+	create_family("ä¸å¸®", 18, "ä¹è¢‹é•¿è€");
 	setup();
 }
 
@@ -69,7 +69,7 @@ void init()
         if (interactive(ob = this_player()) && !is_fighting()) 
 	{
 		myfam = (mapping)ob->query("family");
-		if (!myfam || myfam["family_name"] != "Ø¤°ï")
+		if (!myfam || myfam["family_name"] != "ä¸å¸®")
 		{
 			remove_call_out("saying");
 			call_out("saying",1,ob);
@@ -81,30 +81,30 @@ void saying(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
 
-	message_vision("\nÁ»³¤ÀÏ¿´µ½$N´³½øÀ´£¬´óºÈÒ»Éù£ºÄã²»ÊÇØ¤°ïµÜ×Ó£¬¸øÎÒ¹ö³öÈ¥£¡\n\n", ob);
+	message_vision("\nç²±é•¿è€çœ‹åˆ°$Né—¯è¿›æ¥ï¼Œå¤§å–ä¸€å£°ï¼šä½ ä¸æ˜¯ä¸å¸®å¼Ÿå­ï¼Œç»™æˆ‘æ»šå‡ºåŽ»ï¼\n\n", ob);
 	call_out("kicking", 0, ob);	
 }
 
 void kicking(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
-    if (environment(ob)->query("short")=="Ê÷¶´ÏÂ"){
+    if (environment(ob)->query("short")=="æ ‘æ´žä¸‹"){
 	ob->move("/d/gaibang/inhole");
-	message("vision","Ö»Ìý¡°Æ¹¡±µØÒ»Éù£¬" + ob->query("name") +
-		"´ÓÐ¡ÃÅÀï·ÉÁË³öÀ´¡£\n", environment(ob), ob);
+	message("vision","åªå¬â€œä¹’â€åœ°ä¸€å£°ï¼Œ" + ob->query("name") +
+		"ä»Žå°é—¨é‡Œé£žäº†å‡ºæ¥ã€‚\n", environment(ob), ob);
 }
 }
 
 void attempt_apprentice(object ob)
 {
 	if ((int)ob->query("str") < 25) {
-		command("say ÎÒÃÇØ¤°ïµÄÎäÒÕÒ»ÏòÒÔ¸ÕÃÍÎªÖ÷£¬" + 
-		RANK_D->query_respect(ob) + "±ÛÁ¦Ì«Èõ£¬ËÆºõ²»ÒËÑ§Ø¤°ïµÄ¹¦·ò£¿");
+		command("say æˆ‘ä»¬ä¸å¸®çš„æ­¦è‰ºä¸€å‘ä»¥åˆšçŒ›ä¸ºä¸»ï¼Œ" + 
+		RANK_D->query_respect(ob) + "è‡‚åŠ›å¤ªå¼±ï¼Œä¼¼ä¹Žä¸å®œå­¦ä¸å¸®çš„åŠŸå¤«ï¼Ÿ");
 		return;
 	}
 
-	command("say ºÃ°É£¬Ï£Íû" + RANK_D->query_respect(ob) +
-	"ÄÜºÃºÃÑ§Ï°±¾ÃÅÎä¹¦£¬½«À´ÔÚ½­ºþÖÐ´³³öÒ»·¬×÷Îª¡£");
+	command("say å¥½å§ï¼Œå¸Œæœ›" + RANK_D->query_respect(ob) +
+	"èƒ½å¥½å¥½å­¦ä¹ æœ¬é—¨æ­¦åŠŸï¼Œå°†æ¥åœ¨æ±Ÿæ¹–ä¸­é—¯å‡ºä¸€ç•ªä½œä¸ºã€‚");
 	command("recruit " + ob->query("id"));
 }
 #include "/kungfu/class/gaibang/gaibang.h"

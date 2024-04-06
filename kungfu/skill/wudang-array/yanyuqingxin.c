@@ -6,34 +6,34 @@ int perform(object me, object target)
 	string msg;
 	int extra,i;
 	string *style = ({
-HIR"»¨ÓêÆæµû£­£­$NÊÖ³Ö$w£¬Ç°½øÖĞÒ»Õó¼±Öè£¬ÈçÓêµû°ã´ÌÏò$n£¡"NOR,
-HIB"·çÔÆĞĞÌì£­£­$N·´ÊÖÎÕ×¡$w»¯×öÒ»µÀ¾ªºç£¬ÕÖ×¡$nÈ«Éí£¬ÁîÆä¶¯µ¯²»µÃ£¡"NOR,
-HIY"ÓûÇÜ¹Ê×İ£­£­$NÏòÇ°Ò»×İ£¬ÂÔÍË°ë²½£¬Í»È»Ò»¸ö¼±½ø£¬´ø×ÅÊÖÖĞ$wÏò$nÃÍÆË¹ıÈ¥£¡"NOR,
-HIG"ÔÂÓş·ãÇ££­£­$NÍ»Éí£¬»¥»»£¬´Ì½ø£¬$w£¬Æë³ö£¬·Ö´ò$nµÄÁ½´¦Òªº¦£¡"NOR});
+HIR"èŠ±é›¨å¥‡è¶ï¼ï¼$Næ‰‹æŒ$wï¼Œå‰è¿›ä¸­ä¸€é˜µæ€¥éª¤ï¼Œå¦‚é›¨è¶èˆ¬åˆºå‘$nï¼"NOR,
+HIB"é£äº‘è¡Œå¤©ï¼ï¼$Nåæ‰‹æ¡ä½$wåŒ–åšä¸€é“æƒŠè™¹ï¼Œç½©ä½$nå…¨èº«ï¼Œä»¤å…¶åŠ¨å¼¹ä¸å¾—ï¼"NOR,
+HIY"æ¬²æ“’æ•…çºµï¼ï¼$Nå‘å‰ä¸€çºµï¼Œç•¥é€€åŠæ­¥ï¼Œçªç„¶ä¸€ä¸ªæ€¥è¿›ï¼Œå¸¦ç€æ‰‹ä¸­$wå‘$nçŒ›æ‰‘è¿‡å»ï¼"NOR,
+HIG"æœˆèª‰æ«ç‰µï¼ï¼$Nçªèº«ï¼Œäº’æ¢ï¼Œåˆºè¿›ï¼Œ$wï¼Œé½å‡ºï¼Œåˆ†æ‰“$nçš„ä¸¤å¤„è¦å®³ï¼"NOR});
 	object ob,*obs;
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÑÌÓêÇåĞÄ£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»çƒŸé›¨æ¸…å¿ƒï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if(!pointerp(obs=me->query_team()) || !me->is_team_leader())
-		return notify_fail("Ö»ÓĞ¶ÓÎéÁìĞä²Å¿ÉÒÔ·¢¶¯´ËÊ½£¡\n");
+		return notify_fail("åªæœ‰é˜Ÿä¼é¢†è¢–æ‰å¯ä»¥å‘åŠ¨æ­¤å¼ï¼\n");
 	if(me->query_skill_mapped("array") != "wudang-array") 
-		return notify_fail("ÄãµÄ¶ÓÎéÃ»ÓĞÓÃËÄÏóÁ½ÒÇÕó£¡\n");
+		return notify_fail("ä½ çš„é˜Ÿä¼æ²¡æœ‰ç”¨å››è±¡ä¸¤ä»ªé˜µï¼\n");
 	if(me->query_skill("wudang-array",1)<sizeof(obs)*20)
-		return notify_fail("ÄãµÄÕó·¨²»¹»£¡\n");
+		return notify_fail("ä½ çš„é˜µæ³•ä¸å¤Ÿï¼\n");
 	if(sizeof(obs) >=4 )
-		return notify_fail("¶ÓÎé×î¶àËÄ¸öÈË£¡£¡\n");
+		return notify_fail("é˜Ÿä¼æœ€å¤šå››ä¸ªäººï¼ï¼\n");
 	for(i=0;i<sizeof(obs);i++)
 	{
-	if(!obs[i]) return notify_fail("ÄãĞèÒª´ÓĞÂ×éºÏ¶ÓÎé¡£\n");
-	if(environment(obs[i]) != environment(me)) return notify_fail("Äã¶ÓÎé³ÉÔ±²»È«ÔÚÄãÉí±ß¡£\n");
-	if(!obs[i]->query_skill("wudang-array",1)) return notify_fail("Äã¶ÓÎéÖĞÓĞÈË²»»áËÄÏóÁ½ÒÇÕó¡£\n");
-	if(!objectp(ob=obs[i]->query_temp("weapon"))) return notify_fail("ÄãµÄ¶ÓÎéÖĞÓĞÈËÃ»ÓĞ±øÆ÷£¡\n");
-	if(ob->query("skill_type") != "sword") return notify_fail("ÄãµÄ¶ÓÎéÖĞÓĞÈËÃ»ÓĞÓÃ½£·¨£¡\n");
-	if(obs[i]->query_skill_mapped("array") != "wudang-array") return notify_fail("ÄãµÄ¶ÓÎéÖĞÓĞÈËÃ»ÓĞÓÃËÄÏóÁ½ÒÇÕó·¨£¡\n");
+	if(!obs[i]) return notify_fail("ä½ éœ€è¦ä»æ–°ç»„åˆé˜Ÿä¼ã€‚\n");
+	if(environment(obs[i]) != environment(me)) return notify_fail("ä½ é˜Ÿä¼æˆå‘˜ä¸å…¨åœ¨ä½ èº«è¾¹ã€‚\n");
+	if(!obs[i]->query_skill("wudang-array",1)) return notify_fail("ä½ é˜Ÿä¼ä¸­æœ‰äººä¸ä¼šå››è±¡ä¸¤ä»ªé˜µã€‚\n");
+	if(!objectp(ob=obs[i]->query_temp("weapon"))) return notify_fail("ä½ çš„é˜Ÿä¼ä¸­æœ‰äººæ²¡æœ‰å…µå™¨ï¼\n");
+	if(ob->query("skill_type") != "sword") return notify_fail("ä½ çš„é˜Ÿä¼ä¸­æœ‰äººæ²¡æœ‰ç”¨å‰‘æ³•ï¼\n");
+	if(obs[i]->query_skill_mapped("array") != "wudang-array") return notify_fail("ä½ çš„é˜Ÿä¼ä¸­æœ‰äººæ²¡æœ‰ç”¨å››è±¡ä¸¤ä»ªé˜µæ³•ï¼\n");
 	}	
-	message_vision(HIG+"Ö»¼û$NÇáÉí¶øÍË£¬ÓëÖÚÈËÅÅ³ÉËÄÏóÁ½ÒÇÕó·¨£¬ÆóÍ¼ÓÃ[ÑÌÓêÇåĞÄ]À´»÷ÍË$n£¡£¡\n"NOR,me,target);
+	message_vision(HIG+"åªè§$Nè½»èº«è€Œé€€ï¼Œä¸ä¼—äººæ’æˆå››è±¡ä¸¤ä»ªé˜µæ³•ï¼Œä¼å›¾ç”¨[çƒŸé›¨æ¸…å¿ƒ]æ¥å‡»é€€$nï¼ï¼\n"NOR,me,target);
 	for(i=0;i<sizeof(obs);i++)
         {
 	ob=obs[i]->query_temp("weapon");

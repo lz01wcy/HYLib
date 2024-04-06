@@ -10,24 +10,24 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("[Îå¹ÈÔÂ»ª]Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("[äº”è°·æœˆåŽ]åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if((int)me->query_skill("piaoyibu",1) < 60)
-                return notify_fail("ÄãµÄÆ®ÒÝ²½·¨²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail("ä½ çš„é£˜é€¸æ­¥æ³•ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
 
-	msg = BLU"$N·Å¿ªÉíÐÎ£¬½ÅÌ¤Îå¹È£¬ºö¿ìºöÂý£¬ÓÌÈçµ±õ®Ö®Ê½Ò»ÆøºÇ³É£¡\n" NOR;
+	msg = BLU"$Næ”¾å¼€èº«å½¢ï¼Œè„šè¸äº”è°·ï¼Œå¿½å¿«å¿½æ…¢ï¼ŒçŠ¹å¦‚å½“é†ä¹‹å¼ä¸€æ°”å‘µæˆï¼\n" NOR;
         if( me->query("combat_exp") > random((int)target->query("combat_exp")) ) {
-                msg += NOR "½á¹û$p±»$PÈÆµÃ²»ÖªËù´ë£¡\n" NOR;
+                msg += NOR "ç»“æžœ$pè¢«$Pç»•å¾—ä¸çŸ¥æ‰€æŽªï¼\n" NOR;
                 target->start_busy(4);
                 me->add("neili", -100);
                        } else {
-                msg +=  "½á¹û$P×Ô¼ºÈÆÁË¸öÍ·ÔÎÑÛ»¨¡£\n";
+                msg +=  "ç»“æžœ$Pè‡ªå·±ç»•äº†ä¸ªå¤´æ™•çœ¼èŠ±ã€‚\n";
                 me->add("neili", -100);
                 me->start_busy(2);
         }

@@ -1,4 +1,4 @@
-// feilong.c  ¿ñ·ç¿ì½£¡¸ÌìÍâ¿ñÁú¡¹
+// feilong.c  ç‹‚é£å¿«å‰‘ã€Œå¤©å¤–ç‹‚é¾™ã€
 
 #include <ansi.h>
 #include <skill.h>
@@ -15,21 +15,21 @@ int perform(object me, object target)
     if (!target ) target = offensive_target(me);
     if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-        return notify_fail("×°±¸½£²ÅÄÜÊ¹ÓÃ¡¸ÌìÍâ¿ñÁú¡¹\n");
+        return notify_fail("è£…å¤‡å‰‘æ‰èƒ½ä½¿ç”¨ã€Œå¤©å¤–ç‹‚é¾™ã€\n");
     if (!target || !target->is_character() || !me->is_fighting(target) )
-        return notify_fail("¡¸ÌìÍâ¿ñÁú¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ã€Œå¤©å¤–ç‹‚é¾™ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     if ((int)me->query_skill("kuangfeng-jian", 1) < 150 )
-        return notify_fail("Äã¿ñ·ç¿ì½£²»¹»æµÊì£¬Ê¹²»³ö¡¸ÌìÍâ¿ñÁú¡¹¡£\n");
+        return notify_fail("ä½ ç‹‚é£å¿«å‰‘ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œå¤©å¤–ç‹‚é¾™ã€ã€‚\n");
     if ((int)me->query_skill("huashan-neigong", 1) < 120 )
-        return notify_fail("Äã»ªÉ½ÄÚ¹¦»ğºò²»¹»£¬Ê¹²»³ö¡¸ÌìÍâ¿ñÁú¡¹¡£\n");
+        return notify_fail("ä½ åå±±å†…åŠŸç«å€™ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œå¤©å¤–ç‹‚é¾™ã€ã€‚\n");
     if ((int)me->query("max_neili") < 600)
-        return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨ÔË×ãÄÚÁ¦¡£\n");
+        return notify_fail("ä½ å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œæ— æ³•è¿è¶³å†…åŠ›ã€‚\n");
     if ((int)me->query("neili") < 400)
     {
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»£¬Ã»ÄÜ½«¡¸ÌìÍâ¿ñÁú¡¹Ê¹Íê£¡\n");
+        return notify_fail("ä½ ç°åœ¨å†…åŠ›ä¸å¤Ÿï¼Œæ²¡èƒ½å°†ã€Œå¤©å¤–ç‹‚é¾™ã€ä½¿å®Œï¼\n");
     }
     weapon = me->query_temp("weapon");
-msg = HIC "$NĞÄÄîµçÉÁ£¬Ò»ÌáÄÚÁ¦£¬ÀÕÊÖÕÌ½££¬ÔË¾¢ÓÚ±Û£¬ºôµÄÒ»ÉùÏò$nÖÀÁË³öÈ¥£¡"NOR;
+msg = HIC "$Nå¿ƒå¿µç”µé—ªï¼Œä¸€æå†…åŠ›ï¼Œå‹’æ‰‹ä»—å‰‘ï¼Œè¿åŠ²äºè‡‚ï¼Œå‘¼çš„ä¸€å£°å‘$næ·äº†å‡ºå»ï¼"NOR;
    COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
    COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
    COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);

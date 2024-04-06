@@ -3,16 +3,16 @@ inherit SKILL;
 #include "/kungfu/skill/eff_msg.h";
 
 mapping *action = ({
-([      "action" : "$n¶¸È»Å¤ÉíÉÁ¿ª£¬ÈçÒâÌõÓÎÓã°ãµÃ¶ã¹ıÁË$NµÄ¹¥ÊÆ¡£\n",
+([      "action" : "$né™¡ç„¶æ‰­èº«é—ªå¼€ï¼Œå¦‚æ„æ¡æ¸¸é±¼èˆ¬å¾—èº²è¿‡äº†$Nçš„æ”»åŠ¿ã€‚\n",
         "dodge"  : 120
 ]),
-([      "action" : "$nÉí×ÓÒ»°ÎÊıÕÉ£¬½Ó×ÅÏòááÒ»¸ö×ªÕÛ£¬$NÕĞÊı±ãÈ¨ÊıÂä¿Õ¡£\n",
+([      "action" : "$nèº«å­ä¸€æ‹”æ•°ä¸ˆï¼Œæ¥ç€å‘å¾Œä¸€ä¸ªè½¬æŠ˜ï¼Œ$Næ‹›æ•°ä¾¿æƒæ•°è½ç©ºã€‚\n",
         "dodge"  : 130
 ]),
-([      "action" : "$nÍ»È»Éí×ÓÈç¹í÷È°ãÏòáá»¬ĞĞ£¬Ù¿ºöÒÑÔÚÎåÕÉ¿ªÍâ¡£\n",
+([      "action" : "$nçªç„¶èº«å­å¦‚é¬¼é­…èˆ¬å‘å¾Œæ»‘è¡Œï¼Œå€å¿½å·²åœ¨äº”ä¸ˆå¼€å¤–ã€‚\n",
         "dodge"  : 140
 ]),
-([      "action" : "$N¼´½«»÷ÖĞ$n£¬²»ÖªµÀÔõÃ´$nÍ»È»ÏûÊ§£¬³öÏÖÔÚ$Náá·½£¡\n",
+([      "action" : "$Nå³å°†å‡»ä¸­$nï¼Œä¸çŸ¥é“æ€ä¹ˆ$nçªç„¶æ¶ˆå¤±ï¼Œå‡ºç°åœ¨$Nå¾Œæ–¹ï¼\n",
         "dodge"  : 150
 ])
 });
@@ -27,7 +27,7 @@ int valid_enable(string usage){return usage == "dodge";}
 int valid_learn(object me)
 {
 	if (!me->query("jiuyin/full") && !me->query("jiuyin/xia") && !me->query("jiuyin/gumu"))
-		return notify_fail("ÄãÏÖÔÚ²»ÄÜÑ§Ï°¾ÅÒõÉí·¨¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸èƒ½å­¦ä¹ ä¹é˜´èº«æ³•ã€‚\n");
 	return 1;
 }
 
@@ -41,11 +41,11 @@ string query_dodge_msg(object me)
 int practice_skill(object me)
 {
         if( (int)me->query_skill("jiuyin-shenfa", 1 ) < 150 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÁ·Ï°¾ÅÒõÉí·¨¡£\n");
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½ç»ƒä¹ ä¹é˜´èº«æ³•ã€‚\n");
         if( (int)me->query("jing") < 50 )
-                return notify_fail("ÄãµÄ¾«Á¦Ì«²î£¬²»ÄÜÁ·Ï°¾ÅÒõÉí·¨¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›å¤ªå·®ï¼Œä¸èƒ½ç»ƒä¹ ä¹é˜´èº«æ³•ã€‚\n");
         if( (int)me->query("qi") < 60 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«²îÁË£¬²»ÄÜÁ·¾ÅÒõÉí·¨¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒä¹é˜´èº«æ³•ã€‚\n");
 
         me->receive_damage("jing", 35);
         me->receive_damage("qi", 30);
@@ -68,8 +68,8 @@ int ob_hit(object ob, object me, int damage)
          && me->query_temp("jiuyin/fast")){
                 msg =random(2)? HIR + action[random(sizeof(action))]["action"]+NOR :
                                 HIC + action[random(sizeof(action))]["action"]+NOR ; 
-                message_vision(HIY"$NÔÚ¿Ì²»Èİ»ºµÄÒ»Ë²¼ä¶ã¹ıÁË$nµÄ¹¥»÷£¡\n"NOR,me,ob);
-                        msg += "½á¹û$NµÄÁ¦µÀ±»¶ã¿ªÁË£¡\n", 
+                message_vision(HIY"$Nåœ¨åˆ»ä¸å®¹ç¼“çš„ä¸€ç¬é—´èº²è¿‡äº†$nçš„æ”»å‡»ï¼\n"NOR,me,ob);
+                        msg += "ç»“æœ$Nçš„åŠ›é“è¢«èº²å¼€äº†ï¼\n", 
                         j = -(damage+skill*2);
                 message_vision(msg, ob, me);
                 return j;

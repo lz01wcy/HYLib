@@ -5,9 +5,9 @@
 int exert(object me, object target)
 {
 	if ( !wizardp(me)) return 0 ;
-	write( HIY "你全身放松，坐下来开始运功疗伤。\n" NOR);
+	write( HIY "浣犲叏韬斁鏉撅紝鍧愪笅鏉ュ紑濮嬭繍鍔熺枟浼ゃ�俓n" NOR);
 	message("vision",
-		HIY + me->name() + "吐出一口金灿灿的血，脸色立刻恢复了正常。\n" NOR,
+		HIY + me->name() + "鍚愬嚭涓�鍙ｉ噾鐏跨伩鐨勮锛岃劯鑹茬珛鍒绘仮澶嶄簡姝ｅ父銆俓n" NOR,
 		environment(me), me);
 
 	me->set("eff_qi", (int)me->query("max_qi"));

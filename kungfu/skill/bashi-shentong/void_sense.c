@@ -1,4 +1,4 @@
-// void_sense.c ¿ÕÊ¶ÉñÍ¨
+// void_sense.c ç©ºè¯†ç¥é€š
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -8,17 +8,17 @@
 int conjure(object me, object target)
 {
     int     delta;
-    if( target ) return notify_fail("¿ÕÊ¶ÉñÍ¨Ö»ÄÜ¶Ô×Ô¼ºÊ¹ÓÃ¡£\n");
+    if( target ) return notify_fail("ç©ºè¯†ç¥é€šåªèƒ½å¯¹è‡ªå·±ä½¿ç”¨ã€‚\n");
     if( me->query("jingli") < 30 )
-   return notify_fail("ÄãµÄÁéÁ¦²»¹»£¡\n");
+   return notify_fail("ä½ çš„çµåŠ›ä¸å¤Ÿï¼\n");
     me->add("jingli", -30);
     me->receive_damage("jing", 10);
-    message_vision(HIY "$NÅÌÏ¥¶ø×ù£¬Ò»¶¯²»¶¯£¬¿ªÊ¼¾²Ë¼Èë¶¨¡­¡­\n" NOR, me);
+    message_vision(HIY "$Nç›˜è†è€Œåº§ï¼Œä¸€åŠ¨ä¸åŠ¨ï¼Œå¼€å§‹é™æ€å…¥å®šâ€¦â€¦\n" NOR, me);
     if( random(me->query_skill("magic")) > (int)me->query_int() ) {
     if( random(me->query("max_jingli")) < (int)me->query("jingli")/2 )
  {
     me->add("learned_points", 1);
-    write( HIR "ÄãÖ»¾õµÃĞÄĞ÷Ò»Õó·³ÂÒ£¬ÄãµÄÇ±ÄÜ½µµÍÁË£¡\n" NOR);
+    write( HIR "ä½ åªè§‰å¾—å¿ƒç»ªä¸€é˜µçƒ¦ä¹±ï¼Œä½ çš„æ½œèƒ½é™ä½äº†ï¼\n" NOR);
     return 1;
    }
     if( ((int)me->query("potential") - (int)me->query("learned_points")) < 500 )
@@ -27,12 +27,12 @@ int conjure(object me, object target)
    if( delta > 0 )
    {
       me->add("potential", random((int)me->query_con() + (int)me->query_skill("bashi-shentong") )/10);
-      write( HIG "ÄãµÄÇ±ÄÜ»ñµÃÌá¸ßÁË£¡\n" NOR );
+      write( HIG "ä½ çš„æ½œèƒ½è·å¾—æé«˜äº†ï¼\n" NOR );
       return 1;
    }
     }
     }
-    write("µ«ÄãÖ»¾õµÃÒ»ÎŞËù»ñ¡£\n");
+    write("ä½†ä½ åªè§‰å¾—ä¸€æ— æ‰€è·ã€‚\n");
     return 1;
 }
 

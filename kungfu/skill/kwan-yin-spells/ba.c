@@ -10,18 +10,18 @@ int perform(object me, object target)
         extra=me->query_skill("kwan-yin-spells",1);
                         
         if(extra<60)
-                return notify_fail("Äã¹ÛÒôÁù×ÖÃ÷ÖäµÄµÈ¼¶²»¹»¸ß¡£\n");
+                return notify_fail("ä½ è§‚éŸ³å…­å­—æ˜å’’çš„ç­‰çº§ä¸å¤Ÿé«˜ã€‚\n");
                 
         if(target&& me!=target)
-                return notify_fail("Õâ¸öÕæÑÔ·¨ÊõÖ»ÄÜÓÃÔÚ×Ô¼ºÉíÉÏ¡£\n"); 
+                return notify_fail("è¿™ä¸ªçœŸè¨€æ³•æœ¯åªèƒ½ç”¨åœ¨è‡ªå·±èº«ä¸Šã€‚\n"); 
         if( (int)me->query("neili") < 100 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");
         
         if (me->query_temp("shield_force"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË·¨Ö®ÖĞÁË¡£\n");    
+                return notify_fail("ä½ å·²ç»åœ¨è¿æ³•ä¹‹ä¸­äº†ã€‚\n");    
         message_vision(
-        HIW "$NÓÒÊÖ°ÚÔÚĞØÇ°£¬ÖĞÖ¸Î¢Çú£¬Ä´Ö¸´îÔÚÖĞÖ¸²à£¬ÆäÓàÈıÖ¸Õ¹¿ªÈçÁ«»¨³õ·Å£¬ÄîµÀ£º¡°°È¡± \n"
-        CYN "$N»ëÉíÉÏÏÂ½¥½¥·º³öÒ»È¦Ê¥½àµÄ¹â»ª£¬ÁîÈËÄÑÒÔÕıÊÓ¡£\n"NOR     ,
+        HIW "$Nå³æ‰‹æ‘†åœ¨èƒ¸å‰ï¼Œä¸­æŒ‡å¾®æ›²ï¼Œæ‹‡æŒ‡æ­åœ¨ä¸­æŒ‡ä¾§ï¼Œå…¶ä½™ä¸‰æŒ‡å±•å¼€å¦‚è²èŠ±åˆæ”¾ï¼Œå¿µé“ï¼šâ€œå­â€ \n"
+        CYN "$Næµ‘èº«ä¸Šä¸‹æ¸æ¸æ³›å‡ºä¸€åœˆåœ£æ´çš„å…‰åï¼Œä»¤äººéš¾ä»¥æ­£è§†ã€‚\n"NOR     ,
                         me, target ); 
         me->add("neili", -100);
         me->start_busy(2);
@@ -29,7 +29,7 @@ if (extra> 200) extra=200;
         me->add_temp("apply/armor",  1000);
         me->add_temp("apply/defense",  100);
         me->set_temp("shield_force/msg",
-                CYN"$nÉíÉÏµÄ¹â»ªÏûÈÚÁË$NµÄ¹¥ÊÆ¡£\n"NOR);
+                CYN"$nèº«ä¸Šçš„å…‰åæ¶ˆèäº†$Nçš„æ”»åŠ¿ã€‚\n"NOR);
         extra=extra+random(extra);
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me :), extra/3);     
         // 60/3 =20 sec .. too powerful
@@ -40,5 +40,5 @@ void remove_effect(object me)
         me->add_temp("apply/armor",-1000);
          me->add_temp("apply/defense",-100);
         me->delete_temp("shield_force");
-        message_vision(HIW"$NÉíÉÏµÄ¹â»ª½¥½¥ÏûÊ§ÁË¡£\n"NOR,me);
+        message_vision(HIW"$Nèº«ä¸Šçš„å…‰åæ¸æ¸æ¶ˆå¤±äº†ã€‚\n"NOR,me);
 }       

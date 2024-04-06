@@ -1,4 +1,4 @@
-// pili-biao.c Åùö¨ïÚ
+// pili-biao.c éœ¹é›³é•–
 
 #include <ansi.h>
 inherit SKILL;
@@ -32,45 +32,45 @@ string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"",
 
 
 mapping *action = ({
-([      "action" : "$NÊÖÖĞ$wÍÑÊÖ¶ø³ö,Ê¹³öÒ»ÕĞ"+(order[random(13)])+"¡¸»ğÁú·ÉÌÚ¡¹"NOR"£¬´òÏò$nµÄ$l  ",
-        "skill_name" : "»ğÁú·ÉÌÚ",
+([      "action" : "$Næ‰‹ä¸­$wè„±æ‰‹è€Œå‡º,ä½¿å‡ºä¸€æ‹›"+(order[random(13)])+"ã€Œç«é¾™é£è…¾ã€"NOR"ï¼Œæ‰“å‘$nçš„$l  ",
+        "skill_name" : "ç«é¾™é£è…¾",
         "force" : 100,
         "dodge" : 25,
         "parry" : 5,
         "lvl" : 0,
         "damage" : 120,
-        "damage_type" : "´ÌÉË",
+        "damage_type" : "åˆºä¼¤",
 	"post_action":  (: call_other, WEAPON_D, "throw_weapon" :)
 
 ]),
-([      "action" : "$NÉíÌåÒ»²à£¬Ê¹Ò»ÕĞ"+(order[random(13)])+"¡¸»ğÊ÷Òø»¨¡¹"NOR"£¬ÊÖÖĞ$wµ¯Ïò$nµÄ´óÍÈ  ",
-        "skill_name" : "»ğÊ÷Òø»¨",
+([      "action" : "$Nèº«ä½“ä¸€ä¾§ï¼Œä½¿ä¸€æ‹›"+(order[random(13)])+"ã€Œç«æ ‘é“¶èŠ±ã€"NOR"ï¼Œæ‰‹ä¸­$wå¼¹å‘$nçš„å¤§è…¿  ",
+        "skill_name" : "ç«æ ‘é“¶èŠ±",
         "force" : 140,
         "dodge" : 5,
         "parry" : 5,
         "lvl" : 8,
         "damage" : 140,
-        "damage_type" : "´ÌÉË",
+        "damage_type" : "åˆºä¼¤",
 	"post_action":  (: call_other, WEAPON_D, "throw_weapon" :)
 ]),
-([      "action" : "$NÌÚ¿Õ¶øÆğ£¬Ê¹³ö"+(order[random(13)])+"¡¸Åùö¨Ìì½µ¡¹"NOR"£¬ÊÖÖĞ$w·É¿ìµØÉäÏò$nµÄ$l  ",
-        "skill_name" : "Åùö¨Ìì½µ",
+([      "action" : "$Nè…¾ç©ºè€Œèµ·ï¼Œä½¿å‡º"+(order[random(13)])+"ã€Œéœ¹é›³å¤©é™ã€"NOR"ï¼Œæ‰‹ä¸­$wé£å¿«åœ°å°„å‘$nçš„$l  ",
+        "skill_name" : "éœ¹é›³å¤©é™",
         "force" : 180,
         "dodge" : 10,
         "parry" : 5,
         "lvl" : 16,
         "damage" : 160,
-        "damage_type" : "´ÌÉË",
+        "damage_type" : "åˆºä¼¤",
 	"post_action":  (: call_other, WEAPON_D, "throw_weapon" :)
 ]),
-([      "action" : "$NÊ¹³öÒ»ÕĞ"+(order[random(13)])+"¡¸»ğÈçÓêÏÂ¡¹"NOR"£¬$wÈç±©Óê°ãÆËÏò$n  ",
-        "skill_name" : "»ğÈçÓêÏÂ",
+([      "action" : "$Nä½¿å‡ºä¸€æ‹›"+(order[random(13)])+"ã€Œç«å¦‚é›¨ä¸‹ã€"NOR"ï¼Œ$wå¦‚æš´é›¨èˆ¬æ‰‘å‘$n  ",
+        "skill_name" : "ç«å¦‚é›¨ä¸‹",
         "force" : 220,
         "dodge" : 5,
         "parry" : 5,
         "lvl" : 24,
         "damage" : 180,
-        "damage_type" : "´ÌÉË",
+        "damage_type" : "åˆºä¼¤",
 	"post_action":  (: call_other, WEAPON_D, "throw_weapon" :)
 ]),
 });
@@ -80,11 +80,11 @@ int valid_enable(string usage) { return (usage == "throwing") || (usage == "parr
 int valid_learn(object me)
 {
 	if ((int)me->query("max_neili") < 400)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if ((int)me->query_skill("biyun-xinfa", 1) < 80)
-		return notify_fail("ÄãµÄ±ÌÔÆĞÄ·¨»ğºòÌ«Ç³¡£\n");
+		return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ç«å€™å¤ªæµ…ã€‚\n");
 	if ((int)me->query_skill("biye-wu", 1) < 30)
-		return notify_fail("ÄãµÄ±ÌÒ¶Ëæ·çÎè»ğºòÌ«Ç³¡£\n");
+		return notify_fail("ä½ çš„ç¢§å¶éšé£èˆç«å€™å¤ªæµ…ã€‚\n");
 	return 1;
 		
 }
@@ -113,9 +113,9 @@ int practice_skill(object me)
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "throwing")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if ((int)me->query("qi") < 50)
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»£¬Á·²»ÁËÅùö¨ïÚ¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿï¼Œç»ƒä¸äº†éœ¹é›³é•–ã€‚\n");
 	me->receive_damage("qi", 30);
 	return 1;
 }
@@ -145,7 +145,7 @@ if (random(8)==0 && level>=300 && me->query_skill_mapped("force") == "biyun-xinf
             victim->apply_condition(du[random(sizeof(du))], 25);
             victim->apply_condition(du[random(sizeof(du))], 25);
 if (!victim->is_busy()) victim->start_busy(2);	
- return HIR "$NÍ»È»ÊÕÕÆ£¬È»ºóÑ¸ËÙ·¢ÕÆ! ÕÆÖĞ¾¡È»ÓĞ¶¾É°£¬ÕâÕÆ·ç¾¡È»ÊÇÎåÑÕÁùÉ«µÄ£¡$nÓ²ÆğÍ·Æ¤£¬ÒÔÕÆÓ²½Ó£¡£¡½á¹ûÉíÖĞ¾Ş¶¾£¡!\n";
+ return HIR "$Nçªç„¶æ”¶æŒï¼Œç„¶åè¿…é€Ÿå‘æŒ! æŒä¸­å°½ç„¶æœ‰æ¯’ç ‚ï¼Œè¿™æŒé£å°½ç„¶æ˜¯äº”é¢œå…­è‰²çš„ï¼$nç¡¬èµ·å¤´çš®ï¼Œä»¥æŒç¡¬æ¥ï¼ï¼ç»“æœèº«ä¸­å·¨æ¯’ï¼!\n";
 }	
 	
 	weapon=me->query_temp("weapon");
@@ -178,7 +178,7 @@ int ob_hit(object ob, object me, int damage)
         && random(5)==1)
         {
 
-            msg = HIC"$n³öÕĞÊ±£¬Í»È»ËùÓÃµÄÄÚÁ¦Ëæ×ÅÉË¿ÚÁ÷³ö!\n"NOR;
+            msg = HIC"$nå‡ºæ‹›æ—¶ï¼Œçªç„¶æ‰€ç”¨çš„å†…åŠ›éšç€ä¼¤å£æµå‡º!\n"NOR;
             ob->add("neili",-level/2);
             me->add("neili",level/2);
             if ( random(2) == 1){

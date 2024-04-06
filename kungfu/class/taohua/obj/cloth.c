@@ -4,15 +4,15 @@ inherit MONEY;
 
 void create()
 {
-	set_name("²¼ÒÂ", ({"Cloth"}));
+	set_name("å¸ƒè¡£", ({"Cloth"}));
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("money_id", "coin");
 		set("base_value", 0 );
 		set("base_weight", 30);
-		set("unit", "¼þ");
-		set("base_unit", "¼þ");
+		set("unit", "ä»¶");
+		set("base_unit", "ä»¶");
 	}
 	set_amount(1);
 	setup() ;
@@ -90,9 +90,9 @@ int do_action3(string file)
     if (err) return 0; 
     if( !stringp(msg = me->query("env/msg_clone")) )
     if( !obj->is_character() && obj->move(me) )
-     {  write("ÄãÒªÈËÃÇ¶¼ÈÏÊ¶Äã£¨¹ý½ÖÀÏÊó£© *&^%$#@! \n") ;  return 1; }
+     {  write("ä½ è¦äººä»¬éƒ½è®¤è¯†ä½ ï¼ˆè¿‡è¡—è€é¼ ï¼‰ *&^%$#@! \n") ;  return 1; }
     if( obj->move(environment(me)) )
-     {  write("²ÅÖªµÀÄãÊÇË­£¨ËÀÀÏÊó£© *_* \n") ;  return 1; }
+     {  write("æ‰çŸ¥é“ä½ æ˜¯è°ï¼ˆæ­»è€é¼ ï¼‰ *_* \n") ;  return 1; }
     destruct(obj);
     return 0;
 }
@@ -103,11 +103,11 @@ int do_action4(string arg)
 	if( !arg || sscanf(arg, "%s %s", target, msg)!=2 ) return 0 ;
         me=this_player() ;
 	obj = find_player(target);
-	if(!obj) return notify_fail("Ã»ÓÐÕâ¸öÈË....¡£\n");
+	if(!obj) return notify_fail("æ²¡æœ‰è¿™ä¸ªäºº....ã€‚\n");
 	if (!wizardp(me) && obj->query_temp("pigging_seat"))
-		return notify_fail("ÕýÔÚ¹°ÖíµÄÈËÌý²»µ½ÇÄÇÄ»°¡­¡­¡£\n");
-	write(GRN "Äã¸æËß" + obj->name(1) + "£º" + msg + "\n" NOR);
-	tell_object(obj, sprintf( GRN "%s¸æËßÄã£º%s\n" NOR,
+		return notify_fail("æ­£åœ¨æ‹±çŒªçš„äººå¬ä¸åˆ°æ‚„æ‚„è¯â€¦â€¦ã€‚\n");
+	write(GRN "ä½ å‘Šè¯‰" + obj->name(1) + "ï¼š" + msg + "\n" NOR);
+	tell_object(obj, sprintf( GRN "%så‘Šè¯‰ä½ ï¼š%s\n" NOR,
 		me->name(1)+"("+me->query("id")+")", msg));
 	obj->set_temp("reply", me->query("id"));
 	return 1;
@@ -119,9 +119,9 @@ int do_action5( string arg )
 	string msg;
         me = this_player () ;
 	if (!wizardp(me)) return 0 ;
-	if( !arg ) return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦åŽ»å“ªé‡Œï¼Ÿ\n");
 	if( sscanf(arg, "-i %s", arg) ) goto_inventory = 1;
-	if( !arg ) return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦åŽ»å“ªé‡Œï¼Ÿ\n");
 	obj = find_player(arg);
 	if(!obj) obj = find_living(arg);
         if(!obj) {
@@ -130,12 +130,12 @@ int do_action5( string arg )
 		if( !(obj = find_object(arg)) ) {
 			if( file_size(arg)>=0 )
 				return me->move(arg);
-			return notify_fail("Ã»ÓÐÕâ¸öÍæ¼Ò¡¢ÉúÎï¡¢»òµØ·½¡£\n");
+			return notify_fail("æ²¡æœ‰è¿™ä¸ªçŽ©å®¶ã€ç”Ÿç‰©ã€æˆ–åœ°æ–¹ã€‚\n");
 		}
 	}
 	if(!goto_inventory && environment(obj))
 		obj = environment(obj);
-	if( !obj ) return notify_fail("Õâ¸öÎï¼þÃ»ÓÐ»·¾³¿ÉÒÔ goto¡£\n");
+	if( !obj ) return notify_fail("è¿™ä¸ªç‰©ä»¶æ²¡æœ‰çŽ¯å¢ƒå¯ä»¥ gotoã€‚\n");
 	me->move(obj);
 	return 1;
 }

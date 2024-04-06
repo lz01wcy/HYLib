@@ -1,4 +1,4 @@
-// sui.c ¼Ó·ÀÎÀÁ¦
+// sui.c åŠ é˜²å«åŠ›
 
 #include <ansi.h>
 void remove_effect(object me, int a_amount, int d_amount);
@@ -15,21 +15,21 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¼Ó·ÀÎÀÁ¦Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("åŠ é˜²å«åŠ›åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("puyaogedou", 1) < 40 )
-		return notify_fail("Äã²»»áÊ¹ÓÃ¼Ó·ÀÎÀÁ¦¡£\n");
+		return notify_fail("ä½ ä¸ä¼šä½¿ç”¨åŠ é˜²å«åŠ›ã€‚\n");
         if( me->query("up1") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
         if( me->query("pfm3") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
 
 
 	if( (int)me->query_temp("uparmor") ) 
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
 	skill = me->query_skill("puyaogedou");
-	msg = HIB "$N¿ñ½Ğ¼¸Éù£¬ÓÃÎ²°Í»­È¦,Öğ½¥½«ÖÜÉí»¤×¡¡£\n"NOR;
+	msg = HIB "$Nç‹‚å«å‡ å£°ï¼Œç”¨å°¾å·´ç”»åœˆ,é€æ¸å°†å‘¨èº«æŠ¤ä½ã€‚\n"NOR;
 	message_combatd(msg, me, target);
 	me->add_temp("apply/damage", skill/3);
 	me->add_temp("apply/attack", skill/3);
@@ -48,7 +48,7 @@ if (me->query("up1")==2)
 me->add("eff_qi", 100 + (int)me->query_skill("puyaogedou")/4 );
     if( (int)me->query("qi") > (int)me->query("eff_qi") ) me->set("qi", (int)me->query("eff_qi"));
       if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += HIR "$nÒ»ÏÂÉ¶Ò²¿´²»ÇåÁË,Ö»µÃ²ÉÈ¡ÊØÊ½£¬²»¸ÒÍı¶¯£¡\n" NOR;
+                msg += HIR "$nä¸€ä¸‹å•¥ä¹Ÿçœ‹ä¸æ¸…äº†,åªå¾—é‡‡å–å®ˆå¼ï¼Œä¸æ•¢å¦„åŠ¨ï¼\n" NOR;
             target->start_busy(3);           
 target->apply_condition("ill_dongshang",10 );
 target->apply_condition("ill_fashao",10 );
@@ -56,7 +56,7 @@ target->apply_condition("ill_kesou",10 );
 target->apply_condition("ill_shanghan",10 );
 target->apply_condition("ill_zhongshu",10 );
             } else {
-                msg += HIY"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += HIY"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(random(2));
         }
         message_combatd(msg, me, target);
@@ -86,5 +86,5 @@ if (me->query("up1")==2)
 	me->add_temp("apply/dodge", -skill/2);
 }
 	me->delete_temp("uparmor");
-	tell_object(me, HIY "ÄãµÄÒ»ÕóÁ¦ÆøÓÃÍêÁË¡£\n");
+	tell_object(me, HIY "ä½ çš„ä¸€é˜µåŠ›æ°”ç”¨å®Œäº†ã€‚\n");
 }

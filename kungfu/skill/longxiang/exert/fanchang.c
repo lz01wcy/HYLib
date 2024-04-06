@@ -17,29 +17,29 @@ object target;
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
- return notify_fail(RED"ÄãÒª¶ÔË­Ê¹ÓÃ?\n"NOR);
+ return notify_fail(RED"ä½ è¦å¯¹è°ä½¿ç”¨?\n"NOR);
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ðÈË! \n");
+		return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
 	if( !objectp(target) || target->query("id") == "mu ren" )
-		return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+		return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
 
 	if( (int)me->query_skill("longxiang",1) < 50 )
-		return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦¹¦Á¦²»¹»£¬²»ÄÜÄýÉñ¹¥»÷¶Ô·½£¡\n");
+		return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸåŠŸåŠ›ä¸å¤Ÿï¼Œä¸èƒ½å‡ç¥žæ”»å‡»å¯¹æ–¹ï¼\n");
 
 	if( (int)me->query("neili",1) < 50 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃÁúÏó°ãÈô¹¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨é¾™è±¡èˆ¬è‹¥åŠŸã€‚\n");
 //pk
     if(target==me)
-        return notify_fail("ÓÃ suicide Ö¸Áî»á±È½Ï¿ì:P¡£\n");
+        return notify_fail("ç”¨ suicide æŒ‡ä»¤ä¼šæ¯”è¾ƒå¿«:Pã€‚\n");
 if(userp(target) && target->query("combat_exp")/2 > me->query("combat_exp") )
-	return notify_fail("ÄãÏëÒªÉ±´ËÈË£¬µ«Ëû±ÈÄãÇ¿Ì«¶à£¬Äã²»¸Ò¶¯ÊÖ¡£\n");
+	return notify_fail("ä½ æƒ³è¦æ€æ­¤äººï¼Œä½†ä»–æ¯”ä½ å¼ºå¤ªå¤šï¼Œä½ ä¸æ•¢åŠ¨æ‰‹ã€‚\n");
     if( userp(target) && me->query_condition("killer"))
-        return notify_fail("ÄãÒÑ¾­±»Í¨¼­ÁË£¬²»ÒªÔÙÂÒÉ±Íæ¼ÒÁË£¡\n");
+        return notify_fail("ä½ å·²ç»è¢«é€šè¾‘äº†ï¼Œä¸è¦å†ä¹±æ€çŽ©å®¶äº†ï¼\n");
     if( userp(target) && target->query("combat_exp") < me->query("combat_exp") && me->query_condition("killer"))
-        return notify_fail("ÄãÒÑ¾­±»Í¨¼­ÁË£¬²»ÒªÔÙÂÒÉ±Íæ¼ÒÁË£¡\n");
+        return notify_fail("ä½ å·²ç»è¢«é€šè¾‘äº†ï¼Œä¸è¦å†ä¹±æ€çŽ©å®¶äº†ï¼\n");
 //
-	message_combatd(HIW "$NÃæÎÞ±íÇé£¬¸èÉùÈçèó³ª°ã¹áÈë$n¶úÖÐ£¡\n\n" NOR, me, target );
+	message_combatd(HIW "$Né¢æ— è¡¨æƒ…ï¼Œæ­Œå£°å¦‚æ¢µå”±èˆ¬è´¯å…¥$nè€³ä¸­ï¼\n\n" NOR, me, target );
 
 	if( living(target))
 {
@@ -51,8 +51,8 @@ if(userp(target) && target->query("combat_exp")/2 > me->query("combat_exp") )
 	
 	if (( random(sp) > random(dp) ) || !living(target) )
 	{
-		tell_object(target, HIW " ÄãºöÈ»¾õµÃÄÔÖÐÒ»Æ¬¿Õ°×£¬²»ÓÉ×ÔÖ÷µØËæ¸èÉùÎèµ¸ÆðÀ´£¡\n" NOR);
-		tell_object(me, HIB "Äã¿´µ½" + target->name() + "Ëæ×ÅÄãµÄ¸èÉùÊÖÎè×ãµ¸£¬Ê®·Ö¿ÉÐ¦¡£\n" NOR);
+		tell_object(target, HIW " ä½ å¿½ç„¶è§‰å¾—è„‘ä¸­ä¸€ç‰‡ç©ºç™½ï¼Œä¸ç”±è‡ªä¸»åœ°éšæ­Œå£°èˆžè¹ˆèµ·æ¥ï¼\n" NOR);
+		tell_object(me, HIB "ä½ çœ‹åˆ°" + target->name() + "éšç€ä½ çš„æ­Œå£°æ‰‹èˆžè¶³è¹ˆï¼Œååˆ†å¯ç¬‘ã€‚\n" NOR);
 
 		target->receive_damage("jing", 10 + random((int)me->query_skill("longxiang", 1)));
 				
@@ -67,7 +67,7 @@ if(userp(target) && target->query("combat_exp")/2 > me->query("combat_exp") )
 	}
 	else
 	{	
-		message_combatd(HIY "¿ÉÊÇ$p²»Îª$P¸èÉùËù¶¯£¬¶¨Á¦¹ûÈ»²»Í¬·²Ïì£¡\n" NOR, me, target);
+		message_combatd(HIY "å¯æ˜¯$pä¸ä¸º$Pæ­Œå£°æ‰€åŠ¨ï¼Œå®šåŠ›æžœç„¶ä¸åŒå‡¡å“ï¼\n" NOR, me, target);
 		me->start_busy(4);
 	}
 

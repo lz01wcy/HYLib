@@ -9,15 +9,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name("Î¤Ò»Ğ¦", ({"wei yixiao", "wei", "yixiao",}));
+	set_name("éŸ¦ä¸€ç¬‘", ({"wei yixiao", "wei", "yixiao",}));
 	set("long",
-		"Ëû³¤µÃ»îÏóÊÇÒ»Ö»ÇàÒí´óòùòğ¡£\n"
-		"ËûµÄÁ³É«»ÒÆËÆËµÄ¡£\n"
+		"ä»–é•¿å¾—æ´»è±¡æ˜¯ä¸€åªé’ç¿¼å¤§è™è ã€‚\n"
+		"ä»–çš„è„¸è‰²ç°æ‰‘æ‰‘çš„ã€‚\n"
 	);
 
-	set("title",HIG "Ã÷½Ì" HIC "ÇàÒíòğÍõ" NOR);
+	set("title",HIG "æ˜æ•™" HIC "é’ç¿¼è ç‹" NOR);
 	set("level",9);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 
 	set("age", 48);
@@ -65,7 +65,7 @@ void create()
 	set("chat_msg_combat", ({
 		(: command("perform xixueqingfu") :),
 	}) );
-	create_family("Ã÷½Ì",34, "·¨Íõ");
+	create_family("æ˜æ•™",34, "æ³•ç‹");
 	setup();
 
         carry_object("/d/mingjiao/obj/baipao")->wear();

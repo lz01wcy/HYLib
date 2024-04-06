@@ -1,4 +1,4 @@
-// hunpofeiyang.c »êÆÇ·ÉÑï
+// hunpofeiyang.c é­‚é­„é£žæ‰¬
  
 #include <ansi.h>
  
@@ -16,21 +16,21 @@ int perform(object me)
 //	skill = me->query_skill("hunyuan-zhang",1);
 
 	if( !me->is_fighting() )
-	    	return notify_fail("¡¸»êÆÇ·ÉÑï¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+	    	return notify_fail("ã€Œé­‚é­„é£žæ‰¬ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»¸ß£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿé«˜ï¼\n");
 
 	if( (int)me->query_skill("cuff") < 150 )
-		return notify_fail("ÄãµÄÈ­·¨»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ»êÆÇ·ÉÑï£¡\n");
+		return notify_fail("ä½ çš„æ‹³æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨é­‚é­„é£žæ‰¬ï¼\n");
 
 	if( (int)me->query_skill("qishang-quan", 1) < 60)
-		return notify_fail("ÄãÆßÉËÈ­µÄÐÞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ»êÆÇ·ÉÑï! \n");
+		return notify_fail("ä½ ä¸ƒä¼¤æ‹³çš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨é­‚é­„é£žæ‰¬! \n");
 
 	if( me->query_skill_mapped("cuff") != "qishang-quan") 
-		return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÆßÉËÈ­£¬ÎÞ·¨Ê¹ÓÃ»êÆÇ·ÉÑï£¡\n");
+		return notify_fail("ä½ æ²¡æœ‰æ¿€å‘ä¸ƒä¼¤æ‹³ï¼Œæ— æ³•ä½¿ç”¨é­‚é­„é£žæ‰¬ï¼\n");
  
-	msg = HIY "$N´óºÈÒ»Éù£¬Ê¹³öÆßÉËÈ­µÄ¾ø¼¼¡¸»êÆÇ·ÉÑï¡¹£¬Ë«È­ÊÆÈçÀ×öª£¬Ïò$n»÷È¥¡£\n"NOR;
+	msg = HIY "$Nå¤§å–ä¸€å£°ï¼Œä½¿å‡ºä¸ƒä¼¤æ‹³çš„ç»æŠ€ã€Œé­‚é­„é£žæ‰¬ã€ï¼ŒåŒæ‹³åŠ¿å¦‚é›·éœ†ï¼Œå‘$nå‡»åŽ»ã€‚\n"NOR;
 	message_combatd(msg, me, target);
  
 	ap = me->query("combat_exp") + skill * 400;
@@ -42,7 +42,7 @@ int perform(object me)
 		if(userp(me))
 			me->add("neili",-100);
 
-		msg = HIG "$nÖ»¾õµÃÐØÇ°Ò»Õó¾çÍ´£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»¿ÚÏÊÑª£¡\n"NOR;
+		msg = HIG "$nåªè§‰å¾—èƒ¸å‰ä¸€é˜µå‰§ç—›ï¼Œâ€œå“‡â€çš„ä¸€å£°å–·å‡ºä¸€å£é²œè¡€ï¼\n"NOR;
 		neili_wound = 100 + random(skill);
 		if(neili_wound > target->query("neili"))
 			neili_wound = target->query("neili");
@@ -58,7 +58,7 @@ int perform(object me)
 	}
 	else
 	{
-		msg = HIG "Ö»¼û$n²»»Å²»Ã¦£¬ÇáÇáÒ»ÉÁ£¬¶ã¹ýÁË$NµÄ±ØÉ±Ò»»÷£¡\n"NOR;
+		msg = HIG "åªè§$nä¸æ…Œä¸å¿™ï¼Œè½»è½»ä¸€é—ªï¼Œèº²è¿‡äº†$Nçš„å¿…æ€ä¸€å‡»ï¼\n"NOR;
 		if(userp(me))
 			me->add("neili",-100);
 		me->start_busy(4);

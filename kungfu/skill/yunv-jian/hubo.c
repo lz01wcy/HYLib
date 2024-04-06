@@ -19,30 +19,30 @@ int perform(object me, object target)
 
 
         if( !victim || !victim->is_character() || !me->is_fighting(victim) )
-                return notify_fail("Ë«½£ºÍèµ×óÓÒ»¥²«Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åŒå‰‘å’Œç’§å·¦å³äº’æåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
         if(     me->query_skill("yunv-jian",1) < 1 ||
                 me->query_skill("quanzhen-jian",1) < 1 
                 )
-                return notify_fail("±ØĞëÍ¨Ïş²¢±¸ÓĞÓñÅ®½£·¨ÓëÈ«Õæ½£·¨²ÅÄÜË«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("å¿…é¡»é€šæ™“å¹¶å¤‡æœ‰ç‰å¥³å‰‘æ³•ä¸å…¨çœŸå‰‘æ³•æ‰èƒ½åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
 
         if(me->query_skill("quanzhen-jian",1) <120)
-                return notify_fail("ÄãµÄÈ«Õæ½£·¨²»¹»ÊìÁ·£¬²»ÄÜË«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("ä½ çš„å…¨çœŸå‰‘æ³•ä¸å¤Ÿç†Ÿç»ƒï¼Œä¸èƒ½åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
 
         if(me->query_skill("yunv-jian",1) <180)
-                return notify_fail("ÄãµÄÓñÅ®½£·¨²»¹»ÊìÁ·£¬²»ÄÜË«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("ä½ çš„ç‰å¥³å‰‘æ³•ä¸å¤Ÿç†Ÿç»ƒï¼Œä¸èƒ½åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
 
         if( me->query_skill_mapped("force") != "yunv-xinfa" 
                 )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÓñÅ®ĞÄ¾­£¬ÎŞ·¨Ê©Õ¹Ë«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç‰å¥³å¿ƒç»ï¼Œæ— æ³•æ–½å±•åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
 
         if( me->query_skill("yunv-xinfa", 1) < 180 
                 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ¾­»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹Ë«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒç»ç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
         if( !objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword" )
-                return notify_fail("±ØĞë³ÖÓĞË«½£²ÅÄÜºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("å¿…é¡»æŒæœ‰åŒå‰‘æ‰èƒ½å’Œç’§å·¦å³äº’æï¼\n");
 
      inv = all_inventory(me);
      for(count=0, i=0; i<sizeof(inv); i++) {
@@ -54,15 +54,15 @@ int perform(object me, object target)
                    }
      }
         if( me->query("neili") <= 400 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃË«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
         if( me->query("jing") <= 100 )
-                return notify_fail("ÄãµÄ¾«²»¹»Ê¹ÓÃË«½£ºÍèµ×óÓÒ»¥²«£¡\n");
+                return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿä½¿ç”¨åŒå‰‘å’Œç’§å·¦å³äº’æï¼\n");
 
         skill =  ( me->query_skill("yunv-jian",1) + me->query_skill("yunv-jian",1)
                 + me->query_skill("quanzhen-jian",1) +me->query_skill("yunv-xinfa",1) 
                 + me->query_skill("yunv-xinfa")) / 10; 
         message_vision(
-        HIR "$NÍ»È»¼ä×óÊÖ³é³öÁíÒ»°Ñ½££¬Ë«ÊÖÊ¹³ö½ØÈ»²»Í¬µÄ½£·¨£¬ÕıÊÇ×óÓÒ»¥²«¾ø¼¼¡£\n"+HIC"Ö»¼û$NË«½£Ò»½»£¬×óÓÒÊÖÓñÅ®½£·¨ÓëÈ«Õæ½£·¨ÅäºÏµÃÌìÒÂÎŞ·ì£¬¹¥ÊØÖ®ÊÆÃÍÈ»´óÔö£¡\n\n" NOR, me);
+        HIR "$Nçªç„¶é—´å·¦æ‰‹æŠ½å‡ºå¦ä¸€æŠŠå‰‘ï¼ŒåŒæ‰‹ä½¿å‡ºæˆªç„¶ä¸åŒçš„å‰‘æ³•ï¼Œæ­£æ˜¯å·¦å³äº’æç»æŠ€ã€‚\n"+HIC"åªè§$NåŒå‰‘ä¸€äº¤ï¼Œå·¦å³æ‰‹ç‰å¥³å‰‘æ³•ä¸å…¨çœŸå‰‘æ³•é…åˆå¾—å¤©è¡£æ— ç¼ï¼Œæ”»å®ˆä¹‹åŠ¿çŒ›ç„¶å¤§å¢ï¼\n\n" NOR, me);
 
         me->add_temp("apply/attack", skill/2);
         me->add_temp("apply/damage", skill/2);
@@ -74,35 +74,35 @@ int perform(object me, object target)
 
         bei_skill = me->query_skill_mapped("sword");
     me->map_skill("sword", "yunv-jian");
-        message_vision(HIG"ÀË¼£ÌìÑÄ£¡\n" NOR,me,target);
+        message_vision(HIG"æµªè¿¹å¤©æ¶¯ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
     me->map_skill("sword", "quanzhen-jian");
         me->setup();
-        message_vision(HIY"»¨Ç°ÔÂÏÂ£¡\n" NOR,me,target);
+        message_vision(HIY"èŠ±å‰æœˆä¸‹ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
     me->map_skill("sword", "yunv-jian");
         me->setup();
-        message_vision(HIG"¸§ÇÙ°´Ïô£¡\n" NOR,me,target);
+        message_vision(HIG"æŠšç´æŒ‰è§ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
     me->map_skill("sword", "quanzhen-jian");
 
         message_vision(
-        HIR "$N½£ÕĞÓúÀ´Óú¹Ö,¿ÉÊÇ»¥ÏàºôÓ¦£¬À÷º¦É±ÕĞÈ´ÊÇ²ã³ö²»Çî\n" NOR, me);
+        HIR "$Nå‰‘æ‹›æ„ˆæ¥æ„ˆæ€ª,å¯æ˜¯äº’ç›¸å‘¼åº”ï¼Œå‰å®³æ€æ‹›å´æ˜¯å±‚å‡ºä¸ç©·\n" NOR, me);
 
         me->setup();
-        message_vision(HIY"Ğ¡Ô°ÒÕ¾Õ£¡\n" NOR,me,target);
+        message_vision(HIY"å°å›­è‰ºèŠï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
     me->map_skill("sword", "yunv-jian");
         me->setup();
-        message_vision(HIG"Î÷´°Ò¹»°£¡\n" NOR,me,target);
+        message_vision(HIG"è¥¿çª—å¤œè¯ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
     me->map_skill("sword", "quanzhen-jian");
         me->setup();
-        message_vision(HIY"ËÉÏÂ¶ÔŞÄ£¡\n" NOR,me,target);
+        message_vision(HIY"æ¾ä¸‹å¯¹å¼ˆï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
     me->map_skill("sword", "quanzhen-jian");
         me->setup();
-        message_vision(HIG"ÇåÒûĞ¡ôü£¡\n" NOR,me,target);
+        message_vision(HIG"æ¸…é¥®å°é…ï¼\n" NOR,me,target);
         COMBAT_D->do_attack(me, victim, me->query_temp("weapon"));
 
     me->map_skill("sword", bei_skill);
@@ -130,7 +130,7 @@ private int remove_effect(object me, int amount,object weapon)
         me->add_temp("apply/dodge", -skill/2);
         me->delete_temp("hubo");
         message_vision(
-        HIY "\n$NÎüÁËÒ»¿ÚÆø£¬×óÊÖäìÈ÷µØ½«ÊÖ×ãµÄ½£" + HIY "²å»Ø½£ÇÊ£¬ÊÕ»Ø×óÓÒ»¥²«¾ø¼¼£¡\n\n" NOR, me,weapon);
+        HIY "\n$Nå¸äº†ä¸€å£æ°”ï¼Œå·¦æ‰‹æ½‡æ´’åœ°å°†æ‰‹è¶³çš„å‰‘" + HIY "æ’å›å‰‘é˜ï¼Œæ”¶å›å·¦å³äº’æç»æŠ€ï¼\n\n" NOR, me,weapon);
 
         return 0;
 }

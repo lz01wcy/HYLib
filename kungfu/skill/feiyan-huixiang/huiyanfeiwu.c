@@ -10,24 +10,24 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("[»ØÑà·ÉÎè]Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("[å›ç‡•é£èˆ]åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if((int)me->query_skill("feiyan-huixiang",1) < 60)
-                return notify_fail("ÄãµÄ·ÉÑà»ØÏè²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail("ä½ çš„é£ç‡•å›ç¿”ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ ç°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
 
-	msg = YEL"$NÉíÈçÇáÑà£¬ÈÄ×Å$n²»Í£µÄ¼±×ª£¡\n" NOR;
+	msg = YEL"$Nèº«å¦‚è½»ç‡•ï¼Œé¥¶ç€$nä¸åœçš„æ€¥è½¬ï¼\n" NOR;
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += NOR "½á¹û$p±»$PÈÆµÃ²»ÖªËù´ë£¡\n" NOR;
+                msg += NOR "ç»“æœ$pè¢«$Pç»•å¾—ä¸çŸ¥æ‰€æªï¼\n" NOR;
                 target->start_busy( (int)me->query_skill("feiyan-huixiang",1) / 50 + 2 );
                 me->add("neili", -100);
                        } else {
-                msg +=  "½á¹û$P×Ô¼ºÈÆÁË¸öÍ·ÔÎÑÛ»¨¡£\n";
+                msg +=  "ç»“æœ$Pè‡ªå·±ç»•äº†ä¸ªå¤´æ™•çœ¼èŠ±ã€‚\n";
                 me->add("neili", -100);
                 me->start_busy(2);
         }

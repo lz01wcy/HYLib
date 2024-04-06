@@ -11,12 +11,12 @@ int valid_learn(object me)
 
 	for (j = 1; j < i / 10; j++) t*= 2;
 
-//	if ( me->query("gender") == "ÎŞĞÔ" && i > 49)
-//		return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄ»ìÌìÆø¹¦¡£\n");
+//	if ( me->query("gender") == "æ— æ€§" && i > 49)
+//		return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„æ··å¤©æ°”åŠŸã€‚\n");
 
 //	if (i > 10 && ((int)me->query("shen") > t * 100 ||
 //	    (int)me->query("shen") < t * (-100)))
-//		return notify_fail("Ñ§»ìÌìÆø¹¦£¬Òª²»Õı²»Ğ°¡¢ÒàÕıÒàĞ°£¬Äã¿É×öµÃ²»¹»Ñ½£¡\n");
+//		return notify_fail("å­¦æ··å¤©æ°”åŠŸï¼Œè¦ä¸æ­£ä¸é‚ªã€äº¦æ­£äº¦é‚ªï¼Œä½ å¯åšå¾—ä¸å¤Ÿå‘€ï¼\n");
 
 	if (
 	me->query_skill("bahuang-gong",1)
@@ -47,7 +47,7 @@ me->query_skill("biyun-xinfa",1)||
 me->query_skill("bingxue-xinfa",1)||
 me->query_skill("wudu-shengong",1)||
 me->query_skill("guiyuan-tunafa",1) )
-		return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§»ìÌìÆø¹¦£¿£¡\n");
+		return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦æ··å¤©æ°”åŠŸï¼Ÿï¼\n");
 
 	return 1;
 }
@@ -55,18 +55,18 @@ me->query_skill("guiyuan-tunafa",1) )
 
 int practice_skill(object me)
 {
-	return notify_fail("»ìÌìÆø¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("æ··å¤©æ°”åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 mapping exercise_msg(object me)
 {
   return ([
-    "status_msg" : HIW + me->name()+"Ãæ´øÉñ¹â£¬ÒÂÅÛ·ÉÎè¡£" NOR,
-    "start_my_msg" : "ÄãËæÒâ×øÏÂ£¬Ë«ÊÖÆ½·ÅÔÚË«Ï¥£¬Ä¬Äî¿Ú¾÷£¬¿ªÊ¼ÔËÆğ¶ÀÃÅĞÄ·¨¡£\n",
-    "start_other_msg" : me->name()+"ËæÒâÔÚÄÇÀï×øÏÂ£¬Ë«ÊÖÆ½·ÅÔÚË«Ï¥£¬×ì´½Î¢Î¢²ü¶¯£¬ÉíÉÏµÄÒÂÅÛ¿ªÊ¼¹Ä¶¯ÆğÀ´¡£\n",
-    "halt_msg" : "$NÃæÉ«Ò»³Á£¬Ñ¸ËÙÊÕÆø£¬Õ¾ÁËÆğÀ´¡£\n",
-    "end_my_msg" : "ÄãÎüÆøÈëµ¤Ìï£¬ÕæÆøÔË×ª½¥»º£¬ÂıÂıÊÕ¹¦£¬Ë«ÊÖÌ§Æğ£¬Õ¾ÁËÆğÀ´¡£\n",
-    "end_other_msg" : "Ö»¼û"+me->name()+"Ë«ÊÖÌ§Æğ£¬Õ¾ÁËÆğÀ´£¬ÒÂÅÛÂıÂı´¹ÁËÏÂÀ´¡£\n"
+    "status_msg" : HIW + me->name()+"é¢å¸¦ç¥å…‰ï¼Œè¡£è¢é£èˆã€‚" NOR,
+    "start_my_msg" : "ä½ éšæ„åä¸‹ï¼ŒåŒæ‰‹å¹³æ”¾åœ¨åŒè†ï¼Œé»˜å¿µå£è¯€ï¼Œå¼€å§‹è¿èµ·ç‹¬é—¨å¿ƒæ³•ã€‚\n",
+    "start_other_msg" : me->name()+"éšæ„åœ¨é‚£é‡Œåä¸‹ï¼ŒåŒæ‰‹å¹³æ”¾åœ¨åŒè†ï¼Œå˜´å”‡å¾®å¾®é¢¤åŠ¨ï¼Œèº«ä¸Šçš„è¡£è¢å¼€å§‹é¼“åŠ¨èµ·æ¥ã€‚\n",
+    "halt_msg" : "$Né¢è‰²ä¸€æ²‰ï¼Œè¿…é€Ÿæ”¶æ°”ï¼Œç«™äº†èµ·æ¥ã€‚\n",
+    "end_my_msg" : "ä½ å¸æ°”å…¥ä¸¹ç”°ï¼ŒçœŸæ°”è¿è½¬æ¸ç¼“ï¼Œæ…¢æ…¢æ”¶åŠŸï¼ŒåŒæ‰‹æŠ¬èµ·ï¼Œç«™äº†èµ·æ¥ã€‚\n",
+    "end_other_msg" : "åªè§"+me->name()+"åŒæ‰‹æŠ¬èµ·ï¼Œç«™äº†èµ·æ¥ï¼Œè¡£è¢æ…¢æ…¢å‚äº†ä¸‹æ¥ã€‚\n"
           ]);
 }
 string exert_function_file(string func)

@@ -7,16 +7,16 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ĞéÖñ", ({ "xu zhu", "xu", "zhu" }));
+	set_name("è™šç«¹", ({ "xu zhu", "xu", "zhu" }));
 	set("long",
-	    "ÕâÊÇÒ»¸ö¶şÊ®ÎåÁùËêµÄÄêÇáÈË, Å¨Ã¼´óÑÛ,\n"+
-	    "´ó´óµÄ±Ç×Ó±âÆ½ÏÂËú, ÈİÃ²ÆÄÎª³óÂª. \n"+
-	    "Éí´©Ò»¼ş»ª¹óÑÅÖÂµÄ³¤ÅÛ, µ¹Ê¹Ëû¸üÏÔ¼¸·Ö¾«Éñ.\n"+
-	    "Ëû¾ÍÊÇÌìÉ½Í¯ÀÑµÄ¾ÈÃü¶÷ÈË.\n");
-	set("title", "ÁéğÕ¹¬ÕÆÃÅÈË");
-	set("gender", "ÄĞĞÔ");
+	    "è¿™æ˜¯ä¸€ä¸ªäºŒåäº”å…­å²çš„å¹´è½»äºº, æµ“çœ‰å¤§çœ¼,\n"+
+	    "å¤§å¤§çš„é¼»å­æ‰å¹³ä¸‹å¡Œ, å®¹è²Œé¢‡ä¸ºä¸‘é™‹. \n"+
+	    "èº«ç©¿ä¸€ä»¶åè´µé›…è‡´çš„é•¿è¢, å€’ä½¿ä»–æ›´æ˜¾å‡ åˆ†ç²¾ç¥.\n"+
+	    "ä»–å°±æ˜¯å¤©å±±ç«¥å§¥çš„æ•‘å‘½æ©äºº.\n");
+	set("title", "çµé¹«å®«æŒé—¨äºº");
+	set("gender", "ç”·æ€§");
 	set("age", 26);
-	set("nickname", HIR "ÃÎÀÉ" NOR);
+	set("nickname", HIR "æ¢¦éƒ" NOR);
 	set("shen_type",1);
 	set("attitude", "peaceful");
 
@@ -64,7 +64,7 @@ void create()
 
 	prepare_skill("hand","zhemei-shou");
 	prepare_skill("strike","liuyang-zhang");	
-	create_family("ÁéğÕ¹¬",2, "µÜ×Ó");
+	create_family("çµé¹«å®«",2, "å¼Ÿå­");
         set("chat_chance_combat", 90);
         set("chat_msg_combat", ({
                 (: exert_function, "powerup" :),
@@ -92,18 +92,18 @@ void attempt_apprentice(object ob)
 {
    if ((int)ob->query_skill("bahuang-gong", 1) < 50) 
            {
-		command("say " + RANK_D->query_respect(ob) + "ÊÇ·ñ»¹Ó¦¸Ã¶àÁ·Á·°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦£¿");
+		command("say " + RANK_D->query_respect(ob) + "æ˜¯å¦è¿˜åº”è¯¥å¤šç»ƒç»ƒå…«è’å…­åˆå”¯æˆ‘ç‹¬å°ŠåŠŸï¼Ÿ");
 		return;
 	   }  
-   if ((string)ob->query("gender")=="Å®ĞÔ")
+   if ((string)ob->query("gender")=="å¥³æ€§")
    {
-		message_vision("ĞéÖñ´¹Ä¿³ÁË¼Æ¬¿Ì, ËµµÀ£º¡°ºÃ°É, ÎÒ¾ÍÊÕÏÂÄãÁË¡£¡±\n",ob);
+		message_vision("è™šç«¹å‚ç›®æ²‰æ€ç‰‡åˆ», è¯´é“ï¼šâ€œå¥½å§, æˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚â€\n",ob);
        command("recruit " + ob->query("id"));
 		if((string)ob->query("class") != "dancer")
 			ob->set("class", "dancer");
        return;}
    else
       {
-		message_vision("ĞéÖñµÉ×ÅÄã¿´ÁË°ëÌì,ËµµÀ£º¡°¸óÏÂ²»»áÊÇÏëÀ´ÇÀÎÒµÄÉúÒâ°É?¡±\n",ob);
+		message_vision("è™šç«¹çªç€ä½ çœ‹äº†åŠå¤©,è¯´é“ï¼šâ€œé˜ä¸‹ä¸ä¼šæ˜¯æƒ³æ¥æŠ¢æˆ‘çš„ç”Ÿæ„å§?â€\n",ob);
        return;}
 }

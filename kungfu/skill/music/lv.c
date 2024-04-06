@@ -7,46 +7,46 @@ int perform(object me, object target)
         int extra;
         int tmp;
          extra = me->query_skill("music",1);
-        if ( extra < 180) return notify_fail("ÄãµÄÇÙµÀ»¹²»¹»´¿Êì£¡\n");
+        if ( extra < 180) return notify_fail("ä½ çš„ç´é“è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
                 
         dodskill = (string) me->query_skill_mapped("dodge");
 
     if( (int)me->query_skill("xuantian-wuji", 1) < 50 )
-	return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»¹Î´Á·³É£¬²»ÄÜÊ¹ÓÃ£¡\n");
+	return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸè¿˜æœªç»ƒæˆï¼Œä¸èƒ½ä½¿ç”¨ï¼\n");
 
     if( (int)me->query("neili") < 600 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
                 
         
         if( !target ) target = offensive_target(me);
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£ÛÀÖÂÉÊ®¶þÂÉ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»ä¹å¾‹åäºŒå¾‹ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         tmp=tmp/2;       
         if (extra> 200) extra=200;
         me->add_temp("apply/attack",extra);
         me->add_temp("apply/damage",extra*3);
-    msg = HIW "\n\n$N´óºÈÒ»Éù£¬ºÕÈ»Ê¹³ö¡º--ÀÖÂÉÊ®¶þÂÉ--¡»!!\n$N·¢³ö12µÀÒô²¨ ÓÉ»ºÖÁ¿ìÏò$n"+HIW"Ï®À´£¡\n" NOR;
+    msg = HIW "\n\n$Nå¤§å–ä¸€å£°ï¼Œèµ«ç„¶ä½¿å‡ºã€Ž--ä¹å¾‹åäºŒå¾‹--ã€!!\n$Nå‘å‡º12é“éŸ³æ³¢ ç”±ç¼“è‡³å¿«å‘$n"+HIW"è¢­æ¥ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIR  "¡ï´óÂÀ¡ï¼û¡ïÌ«´Ø¡ï\n" NOR;
+    msg = HIR  "â˜…å¤§å•â˜…è§â˜…å¤ªç°‡â˜…\n" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIM  "¡ï¼ÐÖÓ¡ïÆÆ¡ï¹ÃÏ´¡ï\n" NOR;
+    msg = HIM  "â˜…å¤¹é’Ÿâ˜…ç ´â˜…å§‘æ´—â˜…\n" NOR;
           COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIG  "¡ïÖÐÂÀ¡ï²Î¡ïÞ¨±ö¡ï\n" NOR;
+    msg = HIG  "â˜…ä¸­å•â˜…å‚â˜…è•¤å®¾â˜…\n" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIM  "¡ïÁÖÖÓ¡ï¸½¡ïÒÄÔò¡ï\n" NOR;
+    msg = HIM  "â˜…æž—é’Ÿâ˜…é™„â˜…å¤·åˆ™â˜…\n" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = HIC  "¡ïÄÏÂÀ¡ïÉä¡ïÎÞÉä¡ï\n" NOR;
+    msg = HIC  "â˜…å—å•â˜…å°„â˜…æ— å°„â˜…\n" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-    msg = CYN  "¡ïÓ¦ÖÓ¡ï¸Ï¡ï»ÆÖÓ¡ï\n" NOR;
+    msg = CYN  "â˜…åº”é’Ÿâ˜…èµ¶â˜…é»„é’Ÿâ˜…\n" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIC "\n$N"+HIC"Çá²¦ÇÙÏÒ£¬ÇÙÉùÇåÀö£¬Æ½ÕýÖÐºÍ£¬ÒþÒþÓÐÍõÕßÖ®Òâ£¡\n" NOR;
-		msg += HIC "ºöÌýµÃ¿ÕÖÐÕñÒíÖ®Éù´ó×÷£¬¸÷´¦·ÉÀ´ÎÞÊýÈ¸Äñ£¬»òÖ¹ÐªÊ÷áÛ£¬»òÉÏÏÂ°¿Ïè£¬Ã«ÓðçÍ·×£¬ÎµÎªÆæ¹Û¡£\n\n"NOR;
+        msg = HIC "\n$N"+HIC"è½»æ‹¨ç´å¼¦ï¼Œç´å£°æ¸…ä¸½ï¼Œå¹³æ­£ä¸­å’Œï¼Œéšéšæœ‰çŽ‹è€…ä¹‹æ„ï¼\n" NOR;
+		msg += HIC "å¿½å¬å¾—ç©ºä¸­æŒ¯ç¿¼ä¹‹å£°å¤§ä½œï¼Œå„å¤„é£žæ¥æ— æ•°é›€é¸Ÿï¼Œæˆ–æ­¢æ­‡æ ‘å·…ï¼Œæˆ–ä¸Šä¸‹ç¿±ç¿”ï¼Œæ¯›ç¾½ç¼¤çº·ï¼Œè”šä¸ºå¥‡è§‚ã€‚\n\n"NOR;
         message_vision(msg, me);
  if (random((int)target->query("combat_exp")) < (int)me->query("combat_exp")) {
-            message_vision(HIY"Ò»ÕóÄñ·ïºÍð½µÄÇÙÒô£¬Áî$N"+HIY"Í´¿àµØÎæ×ÅË«¶ú£¬½Å²½Æ¯¸¡£¬ÉñÖÇÒà¿ªÊ¼±äµÃÃÔºý¡£\n"NOR, target); 
+            message_vision(HIY"ä¸€é˜µé¸Ÿå‡¤å’Œé¸¾çš„ç´éŸ³ï¼Œä»¤$N"+HIY"ç—›è‹¦åœ°æ‚ç€åŒè€³ï¼Œè„šæ­¥æ¼‚æµ®ï¼Œç¥žæ™ºäº¦å¼€å§‹å˜å¾—è¿·ç³Šã€‚\n"NOR, target); 
 			target->receive_wound("qi", me->query_skill("music",1)*3+800);
             target->start_busy(3);
 }            

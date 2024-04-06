@@ -1,5 +1,5 @@
 //Cracked by Kafei
-//lianhuan.c  ÁùºÏµ¶Ö®Á¬»·¾÷
+//lianhuan.c  å…­åˆåˆ€ä¹‹è¿žçŽ¯è¯€
 
 #include <ansi.h>
 
@@ -16,27 +16,27 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÁùºÏµ¶Á¬»·¾÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å…­åˆåˆ€è¿žçŽ¯è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("lianhuan") )
-                return notify_fail("ÄãÒÑÔÚÊ¹ÓÃÁùºÏµ¶Á¬»·¾÷ÁË£¡\n");
+                return notify_fail("ä½ å·²åœ¨ä½¿ç”¨å…­åˆåˆ€è¿žçŽ¯è¯€äº†ï¼\n");
 
 	weapon = me->query_temp("weapon");
         if( !objectp(weapon) || weapon->query("skill_type") != "blade" )
-                return notify_fail("ÄãÊÖÖÐÎÞµ¶£¬ÈçºÎÄÜ¹»Ê©Õ¹Á¬»·¾÷£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— åˆ€ï¼Œå¦‚ä½•èƒ½å¤Ÿæ–½å±•è¿žçŽ¯è¯€ï¼Ÿ\n");
 
 
 	if( me->query_skill("blade") < 100 )
-		return notify_fail("ÄãÁùºÏµ¶·¨ÐÞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÁ¬»·¾÷£¡\n");
+		return notify_fail("ä½ å…­åˆåˆ€æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨è¿žçŽ¯è¯€ï¼\n");
 
 	if( me->query("neili") <= 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹Á¬»·¾÷£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿæ–½å±•è¿žçŽ¯è¯€ï¼\n");
 	if( me->query("jing") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê©Õ¹Á¬»·¾÷£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿæ–½å±•è¿žçŽ¯è¯€ï¼\n");
 
  	skill = me->query_skill("blade");
 	
-	message_vision(HIR "\n$N´óºÈÒ»Éù£¬ÊÖÖÐµ¶¹â»ô»ô£¬ÕÐÕÐÁ¬»·£¬¿ìÈçµçÉÁ£¡\n\n" NOR, me, target);
+	message_vision(HIR "\n$Nå¤§å–ä¸€å£°ï¼Œæ‰‹ä¸­åˆ€å…‰éœéœï¼Œæ‹›æ‹›è¿žçŽ¯ï¼Œå¿«å¦‚ç”µé—ªï¼\n\n" NOR, me, target);
 
 	me->set_temp("lianhuan", 1);
 	me->start_call_out( (: call_other, __FILE__, "remove_effect", me :), skill/5);
@@ -51,6 +51,6 @@ void remove_effect(object me, int amount)
 if (me)
 {
         me->delete_temp("lianhuan");
-	tell_object(me, HIR "\nÄãµÄÁ¬»·¾÷ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦»º»ºÊÕ»Øµ¤Ìï¡£\n\n" NOR);
+	tell_object(me, HIR "\nä½ çš„è¿žçŽ¯è¯€è¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›ç¼“ç¼“æ”¶å›žä¸¹ç”°ã€‚\n\n" NOR);
 }
 }

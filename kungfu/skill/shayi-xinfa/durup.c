@@ -7,19 +7,19 @@ int exert(object me, object target)
         object env, *inv;
         
         
-        if(me->query_temp("ninjitsu_durup")) return notify_fail("ÄãÏÖÔÚÒÑ¾­´¦ÔÚ¾«ÉñµÄ¼«¶È¿º·Ü×´Ì¬ÁË¡£\n");
+        if(me->query_temp("ninjitsu_durup")) return notify_fail("ä½ çŽ°åœ¨å·²ç»å¤„åœ¨ç²¾ç¥žçš„æžåº¦äº¢å¥‹çŠ¶æ€äº†ã€‚\n");
         
         lvl = (int) me->query_skill("ninjitsu",1);
                 
         if ( (int) me->query_skill("ninjitsu",1) <= 150)
-                return notify_fail("ÄãÈÌÊõ²»¹»¸ß£¡\n");
+                return notify_fail("ä½ å¿æœ¯ä¸å¤Ÿé«˜ï¼\n");
         if( target != me ) 
-                return notify_fail("ÄãÖ»ÄÜÓÃÔÚ×Ô¼ºµÄÉíÉÏ¡£\n");        
+                return notify_fail("ä½ åªèƒ½ç”¨åœ¨è‡ªå·±çš„èº«ä¸Šã€‚\n");        
             
         if( me->query("neili") < 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
         if( me->query("jing") <= 250 )
-                return notify_fail("ÄãµÄ¾«²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿï¼\n");
         me->add("neili", -300);
         me->receive_damage("jing", 250);
         
@@ -27,7 +27,7 @@ int exert(object me, object target)
         if (extra > 300) extra=300;
         me->add_temp("apply/dexerity",extra);
         me->set_temp("ninjitsu_durup",1);
-        message_vision(HIM "$NµÄÑÛ¹â±äµÃÃÔÀë£¬ËÆºõÒÑ¾­±»Ò»ÖÖÇ¿´óµÄ¾«ÉñÁ¦Á¿Ëù¿ØÖÆ£®£®£®\n" NOR, me);
+        message_vision(HIM "$Nçš„çœ¼å…‰å˜å¾—è¿·ç¦»ï¼Œä¼¼ä¹Žå·²ç»è¢«ä¸€ç§å¼ºå¤§çš„ç²¾ç¥žåŠ›é‡æ‰€æŽ§åˆ¶ï¼Žï¼Žï¼Ž\n" NOR, me);
             
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me ,extra:), lvl/10);
         if( me->is_fighting() ) me->start_busy(2);
@@ -37,6 +37,6 @@ void remove_effect(object me,int extra)
 {
         me->add_temp("apply/dexerity", - extra);
         me->delete_temp("ninjitsu_durup");
-        message_vision(HIW"$NµÄÑÛÉñ»Ö¸´Õý³££¬¿´À´ÒÑ¾­»Øµ½ÁËÇåÐÑ×´Ì¬¡£\n"NOR,me);
+        message_vision(HIW"$Nçš„çœ¼ç¥žæ¢å¤æ­£å¸¸ï¼Œçœ‹æ¥å·²ç»å›žåˆ°äº†æ¸…é†’çŠ¶æ€ã€‚\n"NOR,me);
         
 }     

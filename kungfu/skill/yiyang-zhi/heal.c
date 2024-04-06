@@ -1,51 +1,51 @@
 #include <ansi.h>
 
-#define HEAL "¡¸" HIR "ÆðËÀ»ØÉú" NOR "¡¹"
+#define HEAL "ã€Œ" HIR "èµ·æ­»å›žç”Ÿ" NOR "ã€"
 
 int perform(object me, object target)
 {
         string force;
 
         if ((int)me->query_skill("kurong-changong",1) < 100)
-            return notify_fail("ÄãµÄ¿ÝÈÙìø¹¦Ì«µÍ¡£\n");
+            return notify_fail("ä½ çš„æž¯è£ç¦…åŠŸå¤ªä½Žã€‚\n");
 
         if (! target)
-                return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
        	if(me->query_skill_mapped("force") != "kurong-changong")
-		return notify_fail("Ã»ÓÐ¿ÝÈÙìø¹¦×÷Îª×¼±¸£¬ÎÞ·¨Ê¹³ö£¡\n"); 
+		return notify_fail("æ²¡æœ‰æž¯è£ç¦…åŠŸä½œä¸ºå‡†å¤‡ï¼Œæ— æ³•ä½¿å‡ºï¼\n"); 
 
         if (target == me)
-                return notify_fail(HEAL "Ö»ÄÜ¶Ô±ðÈËÊ©Õ¹¡£\n");
+                return notify_fail(HEAL "åªèƒ½å¯¹åˆ«äººæ–½å±•ã€‚\n");
 
         if (me->is_fighting() || target->is_fighting())
-                return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË¡£\n");
+                return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ã€‚\n");
 
         if ((int)me->query_skill("yiyang-zhi", 1) < 100)
-                return notify_fail("ÄãµÄÒ»ÑôÖ¸¾÷²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" HEAL "¡£\n");
+                return notify_fail("ä½ çš„ä¸€é˜³æŒ‡è¯€ä¸å¤Ÿå¨´ç†Ÿï¼Œéš¾ä»¥æ–½å±•" HEAL "ã€‚\n");
 
 
         if (me->query_skill_mapped("finger") != "yiyang-zhi")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢Ò»ÑôÖ¸£¬ÄÑÒÔÊ©Õ¹" HEAL "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘ä¸€é˜³æŒ‡ï¼Œéš¾ä»¥æ–½å±•" HEAL "ã€‚\n");
 
 
         if ((int)me->query("max_neili") < 1500)
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎªÌ«Ç³£¬ÄÑÒÔÊ©Õ¹" HEAL "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºå¤ªæµ…ï¼Œéš¾ä»¥æ–½å±•" HEAL "ã€‚\n");
 
         if ((int)me->query("neili") < 1000)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" HEAL "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”ä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" HEAL "ã€‚\n");
 
         if ((int)me->query("jing") < 100)
-                return notify_fail("ÄãÏÖÔÚµÄ×´Ì¬²»¼Ñ£¬ÄÑÒÔÊ©Õ¹" HEAL "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„çŠ¶æ€ä¸ä½³ï¼Œéš¾ä»¥æ–½å±•" HEAL "ã€‚\n");
 
         if (target->query("eff_qi") >= target->query("max_qi") &&
             target->query("eff_jing") >= target->query("max_jing"))
-                return notify_fail("¶Ô·½Ã»ÓÐÊÜÉË£¬²»ÐèÒª½ÓÊÜÖÎÁÆ¡£\n");
-force="¿ÝÈÙìø¹¦";
-        message_vision(HIY "\nÖ»¼û$N" HIY "Ä¬Ä¬ÔË×ª" + to_chinese(force) +
-                     HIY "£¬ÉîÉîÎü½øÒ»¿ÚÆø£¬Í·ÉÏÒþÒþÃ°³ö°×Îí£¬¶¸È»Ê©Õ¹¿ª\n"
-                     "Ò»ÑôÖ¸¾÷£¬ÒÔ´¿ÑôÖ¸Á¦Ë²Ê±µã±éÁË$n" HIY "È«ÉíÆßÊ®¶þ\n"
-                     "´¦´óÑ¨¡£¹ýµÃÒ»»á£¬±ã¼ûµÃ$n" HIY "¡°ÍÛ¡±µÄÒ»ÏÂÍÂ³ö\n"
-                     "¼¸¿ÚðöÑª£¬Á³É«µÇÊ±¿´ÆðÀ´ºìÈó¶àÁË¡£\n" NOR, me, target);
+                return notify_fail("å¯¹æ–¹æ²¡æœ‰å—ä¼¤ï¼Œä¸éœ€è¦æŽ¥å—æ²»ç–—ã€‚\n");
+force="æž¯è£ç¦…åŠŸ";
+        message_vision(HIY "\nåªè§$N" HIY "é»˜é»˜è¿è½¬" + to_chinese(force) +
+                     HIY "ï¼Œæ·±æ·±å¸è¿›ä¸€å£æ°”ï¼Œå¤´ä¸Šéšéšå†’å‡ºç™½é›¾ï¼Œé™¡ç„¶æ–½å±•å¼€\n"
+                     "ä¸€é˜³æŒ‡è¯€ï¼Œä»¥çº¯é˜³æŒ‡åŠ›çž¬æ—¶ç‚¹éäº†$n" HIY "å…¨èº«ä¸ƒåäºŒ\n"
+                     "å¤„å¤§ç©´ã€‚è¿‡å¾—ä¸€ä¼šï¼Œä¾¿è§å¾—$n" HIY "â€œå“‡â€çš„ä¸€ä¸‹åå‡º\n"
+                     "å‡ å£ç˜€è¡€ï¼Œè„¸è‰²ç™»æ—¶çœ‹èµ·æ¥çº¢æ¶¦å¤šäº†ã€‚\n" NOR, me, target);
 
         me->add("neili", -800);
         me->receive_damage("qi", 100);
@@ -73,8 +73,8 @@ target->clear_condition("cuixin_zhang");
            || (int)target->query_condition("yyz_damage"))
         {
                 target->clear_condition("yyz_damage");
-                tell_object(target, HIC "\nÄãÖ»¾õÌåÄÚ²Ð´æµÄÒ»ÑôÖ¸Ö¸¾¢ÂýÂý"
-                                    "ÏûÍË£¬¸Ð¾õºÃ¶àÁË¡£\n" NOR);
+                tell_object(target, HIC "\nä½ åªè§‰ä½“å†…æ®‹å­˜çš„ä¸€é˜³æŒ‡æŒ‡åŠ²æ…¢æ…¢"
+                                    "æ¶ˆé€€ï¼Œæ„Ÿè§‰å¥½å¤šäº†ã€‚\n" NOR);
         }
 
          if (target->query("qi") >= 10000)
@@ -96,7 +96,7 @@ target->clear_condition("cuixin_zhang");
         if (! target->is_busy())
                 target->stary_busy(3);
 
-        message_vision("\n$N±ÕÄ¿Ú¤×ø£¬¿ªÊ¼ÔË¹¦µ÷Ï¢¡£\n", me);
+        message_vision("\n$Né—­ç›®å†¥åï¼Œå¼€å§‹è¿åŠŸè°ƒæ¯ã€‚\n", me);
         me->start_busy(5);
         return 1;
 }

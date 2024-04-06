@@ -1,4 +1,4 @@
-// powerup.c 太极神功加力
+// powerup.c 澶瀬绁炲姛鍔犲姏
 
 #include <ansi.h>
 
@@ -10,17 +10,17 @@ int exert(object me, object target)
 {
    int skill;
    if( target != me )
-   return notify_fail("你只能用太极神功来提升自己的战斗力。\n");
+   return notify_fail("浣犲彧鑳界敤澶瀬绁炲姛鏉ユ彁鍗囪嚜宸辩殑鎴樻枟鍔涖�俓n");
    if( (int)me->query("neili") < 150  )
-   return notify_fail("你的内力不够。\n");
+   return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
    if( (int)me->query_temp("powerup") )
-   return notify_fail("你已经在运功中了。\n");
+   return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
    skill = me->query_skill("force");
    me->add("neili", -100);
    me->receive_damage("qi", 0);
    message_combatd(
-   HIY "$N微一凝神，运起太极神功，全身灌满真气，衣裳无风自舞，气势迫人。\n" NOR,me);
+   HIY "$N寰竴鍑濈锛岃繍璧峰お鏋佺鍔燂紝鍏ㄨ韩鐏屾弧鐪熸皵锛岃。瑁虫棤椋庤嚜鑸烇紝姘斿娍杩汉銆俓n" NOR,me);
    me->add_temp("apply/attack", skill/3);
    me->add_temp("apply/dodge", skill/3);
    me->set_temp("powerup", 1);
@@ -37,6 +37,6 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/attack", -skill/3);
    me->add_temp("apply/dodge", -skill/3);
    me->delete_temp("powerup");
-   tell_object(me, "你的太极神功运行完毕，将内力收回丹田。\n");
+   tell_object(me, "浣犵殑澶瀬绁炲姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }
 

@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// jiutian.c æ≈ÃÏ Ω
+// jiutian.c ‰πùÂ§©Âºè
 
 #include <ansi.h>
 #include <combat.h>
@@ -23,18 +23,18 @@ int perform(object me, object target)
                 target = me->select_opponent();
         }
         if (! target || ! me->is_fighting(target))
-                return notify_fail("°∏æ≈ÃÏ Ω°π÷ªƒ‹∂‘’Ω∂∑÷–µƒ∂‘ ÷ π”√°£\n");
+                return notify_fail("„Äå‰πùÂ§©Âºè„ÄçÂè™ËÉΩÂØπÊàòÊñó‰∏≠ÁöÑÂØπÊâã‰ΩøÁî®„ÄÇ\n");
 
         if ((int)me->query_skill("liuyang-zhang", 1) < 120)
-                return notify_fail("ƒ„µƒ¡˘—Ù’∆∑®≤ªπªÊµ Ï£¨≤ªª· π”√°∏æ≈ÃÏ Ω°π°£\n");
+                return notify_fail("‰Ω†ÁöÑÂÖ≠Èò≥ÊéåÊ≥ï‰∏çÂ§üÂ®¥ÁÜüÔºå‰∏ç‰ºö‰ΩøÁî®„Äå‰πùÂ§©Âºè„Äç„ÄÇ\n");
                                 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ƒ„µƒƒ⁄π¶–ﬁŒ™≤ªπª∏ﬂ£¨ƒ—“‘‘À”√°∏æ≈ÃÏ Ω°π°£\n");
+                return notify_fail("‰Ω†ÁöÑÂÜÖÂäü‰øÆ‰∏∫‰∏çÂ§üÈ´òÔºåÈöæ‰ª•ËøêÁî®„Äå‰πùÂ§©Âºè„Äç„ÄÇ\n");
                         
         if ((int)me->query("neili") < 300)
-                return notify_fail("ƒ„œ÷‘⁄’Ê∆¯≤ªπª£¨≤ªƒ‹ π”√°∏æ≈ÃÏ Ω°π°£\n");
+                return notify_fail("‰Ω†Áé∞Âú®ÁúüÊ∞î‰∏çÂ§üÔºå‰∏çËÉΩ‰ΩøÁî®„Äå‰πùÂ§©Âºè„Äç„ÄÇ\n");
                         
-        msg = HIC "$N" HIC "À´’∆“ª’Ò£¨ªØ≥ˆ¬˙ÃÏ’∆”∞£¨Õ≈Õ≈¡˝’÷◊°$n" HIC "£°\n" NOR;
+        msg = HIC "$N" HIC "ÂèåÊéå‰∏ÄÊåØÔºåÂåñÂá∫Êª°Â§©ÊéåÂΩ±ÔºåÂõ¢Âõ¢Á¨ºÁΩ©‰Ωè$n" HIC "ÔºÅ\n" NOR;
 
         ap = me->query_skill("strike"); 
         dp = target->query_skill("parry"); 
@@ -44,14 +44,14 @@ int perform(object me, object target)
                 damage = me->query_skill("strike");
    target->add("qi",-damage*2);
 		target->add("eff_qi",-damage*2);
-                msg += HIR "$p" HIR "ŒﬁƒŒ£¨÷ªƒ‹”≤µ≤“ª’–£¨Ω·π˚±ª$P"
-                                           HIR "’µ√¡¨ÕÀ ˝≤Ω£¨Õ¬—™≤ª÷π£°\n" NOR;
+                msg += HIR "$p" HIR "Êó†Â•àÔºåÂè™ËÉΩÁ°¨Êå°‰∏ÄÊãõÔºåÁªìÊûúË¢´$P"
+                                           HIR "ÈúáÂæóËøûÈÄÄÊï∞Ê≠•ÔºåÂêêË°Ä‰∏çÊ≠¢ÔºÅ\n" NOR;
 
                 me->start_busy(2);
         } else
         {
-                msg += HIC "ø… «$p" HIC "«ø‘Àƒ⁄¡¶£¨”≤…˙…˙µƒµ≤◊°$P"
-                       HIC "’‚“ª’∆£¨√ª”– ‹µΩ»Œ∫Œ…À∫¶£°\n"NOR;
+                msg += HIC "ÂèØÊòØ$p" HIC "Âº∫ËøêÂÜÖÂäõÔºåÁ°¨ÁîüÁîüÁöÑÊå°‰Ωè$P"
+                       HIC "Ëøô‰∏ÄÊéåÔºåÊ≤°ÊúâÂèóÂà∞‰ªª‰Ωï‰º§ÂÆ≥ÔºÅ\n"NOR;
                 me->add("neili", -50);
                 me->start_busy(3);
         }

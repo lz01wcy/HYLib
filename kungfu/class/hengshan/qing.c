@@ -6,9 +6,9 @@ inherit F_MASTER;
 #include <command.h>
 void create()
 {
-	set_name("ÒÇÇå", ({ "yi qing", "qing" }) );
-	set("long", "ËýÊÇÒ»Î»ÖÐÄêÅ®Äá£¬´ÈÃ¼ÉÆÄ¿¡£\n");
-	set("gender", "Å®ÐÔ");
+	set_name("ä»ªæ¸…", ({ "yi qing", "qing" }) );
+	set("long", "å¥¹æ˜¯ä¸€ä½ä¸­å¹´å¥³å°¼ï¼Œæ…ˆçœ‰å–„ç›®ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("class", "bonze");
 	set("age", 35);
 	set("attitude", "peaceful");
@@ -59,7 +59,7 @@ void create()
 	}) );
 
 
-	create_family("ºãÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("æ’å±±æ´¾", 14, "å¼Ÿå­");
 	setup();
 
 	carry_object("/clone/weapon/changjian")->wield();
@@ -68,24 +68,24 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	if ((int)ob->query("combat_exp") > 310000 && ob->query("family/family_name")!="ºãÉ½ÅÉ")
+	if ((int)ob->query("combat_exp") > 310000 && ob->query("family/family_name")!="æ’å±±æ´¾")
 	{
-		command("say ÎÒºãÉ½ÅÉ×¢ÖØÇåÐÞ£¬¶ÔµÜ×ÓÒªÇóÄÜÈÌÊÜ¼ÅÄ¯¡£");
-		command("say ÔÚ½­ºþÔÄÀú·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"¾­Àú·á¸»£¬ÊÇ·ñÄÜÔÚºãÉ½ÐÞµÀ£¿");
+		command("say æˆ‘æ’å±±æ´¾æ³¨é‡æ¸…ä¿®ï¼Œå¯¹å¼Ÿå­è¦æ±‚èƒ½å¿å—å¯‚å¯žã€‚");
+		command("say åœ¨æ±Ÿæ¹–é˜…åŽ†æ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"ç»åŽ†ä¸°å¯Œï¼Œæ˜¯å¦èƒ½åœ¨æ’å±±ä¿®é“ï¼Ÿ");
 		return;
 	}
 	if ((int)ob->query("shen") < 0) {
-		command("say ÎÒºãÉ½ÄËÊÇÌÃÌÃÎåÔÀ½£ÅÉÖ®Ò»£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-		command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+		command("say æˆ‘æ’å±±ä¹ƒæ˜¯å ‚å ‚äº”å²³å‰‘æ´¾ä¹‹ä¸€ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+		command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
 		return;
 	}
-	if (ob->query("gender") != "Å®ÐÔ") 
+	if (ob->query("gender") != "å¥³æ€§") 
 	{
-		command("say ÎÒºãÉ½Ö»ÊÕÅ®Í½¡£");		
+		command("say æˆ‘æ’å±±åªæ”¶å¥³å¾’ã€‚");		
 		return;
 	}
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 }

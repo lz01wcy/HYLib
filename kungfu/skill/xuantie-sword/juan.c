@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// juan.c ¾í×Ö¾÷
+// juan.c å·å­—è¯€
 
 #include <ansi.h>
 
@@ -20,29 +20,29 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¾í×Ö¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å·å­—è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (! objectp(weapon = me->query_temp("weapon")) ||
             (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if ((int)me->query_skill("xuantie-sword", 1) < 70)
-                return notify_fail("ÄãµÄĞşÌú½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¾í×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„ç„é“å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨å·å­—è¯€ã€‚\n");
 
         if ((int)me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬²»ÄÜÊ¹ÓÃ¾í×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨å·å­—è¯€ã€‚\n");
 
         if ((int)me->query("neili") < 100 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¾í×Ö¾÷¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨å·å­—è¯€ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "xuantie-sword")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ĞşÌú½£·¨£¬²»ÄÜÊ©Õ¹¾í×Ö¾÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘ç„é“å‰‘æ³•ï¼Œä¸èƒ½æ–½å±•å·å­—è¯€ã€‚\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$NÒ»¶¶ÊÖÖĞµÄ" + weapon->name() + HIY "£¬×ÔÏÂ¶øÉÏµÄ³¯$n"
-              HIY "¾íÁË¹ıÈ¥£¬ÇúÇúÕÛÕÛ£¬±ä»¯ÎŞ³££¡\n" NOR;
+        msg = HIY "$Nä¸€æŠ–æ‰‹ä¸­çš„" + weapon->name() + HIY "ï¼Œè‡ªä¸‹è€Œä¸Šçš„æœ$n"
+              HIY "å·äº†è¿‡å»ï¼Œæ›²æ›²æŠ˜æŠ˜ï¼Œå˜åŒ–æ— å¸¸ï¼\n" NOR;
 
         ap = me->query_skill("sword");
         dp = target->query_skill("dodge");
@@ -51,11 +51,11 @@ int perform(object me, object target)
         {
                 target->start_busy(ap / 100 + 2);
                 me->add("neili", -50);
-                msg += YEL "$p" YEL "Á¬Ã¦½ßÁ¦ÕĞ¼Ü£¬Ò»Ê±ÎŞÏ¾·´»÷¡£\n" NOR;
+                msg += YEL "$p" YEL "è¿å¿™ç«­åŠ›æ‹›æ¶ï¼Œä¸€æ—¶æ— æš‡åå‡»ã€‚\n" NOR;
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÆóÍ¼£¬Ğ±Ô¾±Ü¿ªÁË$P"
-                       CYN "µÄ¹¥»÷¡£\n"NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„ä¼å›¾ï¼Œæ–œè·ƒé¿å¼€äº†$P"
+                       CYN "çš„æ”»å‡»ã€‚\n"NOR;
                 me->add("neili", -25);
                 me->start_busy(2);
         }

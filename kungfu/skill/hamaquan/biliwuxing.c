@@ -11,30 +11,30 @@ int perform(object me, object target)
 	int extra;
 	object weapon,ob;
 	if(me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
 	extra = me->query_skill("hamaquan",1);
         if( !target ) target = offensive_target(me);
 if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸Åùö¨ÎÞÐÎ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œéœ¹é›³æ— å½¢ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¸Åùö¨ÎÞÐÎ¡¹Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("ã€Œéœ¹é›³æ— å½¢ã€åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
        
 	 if( (int)me->query("neili") < 100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
         if( (int)me->query_skill("hamaquan",1) < 20 )
-                return notify_fail("ÄãµÄ¸òó¡È­»ðºò²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸Åùö¨ÎÞÐÎ¡¹£¡\n");
+                return notify_fail("ä½ çš„è›¤èŸ†æ‹³ç«å€™ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œéœ¹é›³æ— å½¢ã€ï¼\n");
 
         if( (int)me->query_skill("force",1) < 100 )
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸Åùö¨ÎÞÐÎ¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œéœ¹é›³æ— å½¢ã€ï¼\n");
 	me->add_temp("apply/attack",extra/2);
 	me->add_temp("apply/damage",extra/2);
 	weapon = me->query_temp("weapon");
 
-        msg = BLU "$N½Å²È¸òó¡²½£¬ÂäÉíÓÚÕÉ³ßÍâ£¬ÉÔ×÷Í£¶Ù£¬Í»È»ÎÕÈ­ÆËÏò$n£¬ÓÌÈç²ÔÌìÅùö¨À×öªÖ®Ê½£¡" NOR;
+        msg = BLU "$Nè„šè¸©è›¤èŸ†æ­¥ï¼Œè½èº«äºŽä¸ˆå°ºå¤–ï¼Œç¨ä½œåœé¡¿ï¼Œçªç„¶æ¡æ‹³æ‰‘å‘$nï¼ŒçŠ¹å¦‚è‹å¤©éœ¹é›³é›·éœ†ä¹‹å¼ï¼" NOR;
 	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/attack",-extra/2);
 	 me->add_temp("apply/damage",-extra/2);

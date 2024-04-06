@@ -1,4 +1,4 @@
-//xunlei.c Ñ¸À×½£
+//xunlei.c è¿…é›·å‰‘
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,26 +16,26 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸Ñ¸À×½£¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¿…é›·å‰‘ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if(me->query_temp("xunlei_yushi"))
-		return notify_fail("Äã½£ÊÆÎ´¾¡£¬²»ÄÜÔÙÊ©Õ¹¡¸Ñ¸À×½£¡¹£¡\n");
+		return notify_fail("ä½ å‰‘åŠ¿æœªå°½ï¼Œä¸èƒ½å†æ–½å±•ã€Œè¿…é›·å‰‘ã€ï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query("neili") < 800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 	
 	if( (int)me->query_skill("yunlong-jian", 1) < 200 )
-		return notify_fail("ÄãµÄÔÆÁú½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃÑ¸À×½£¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨è¿…é›·å‰‘ã€‚\n");
 	                        
 	if( (int)me->query_skill("yunlong-shengong", 1) < 150 )
-		return notify_fail("ÄãµÄÔÆÁúÉñ¹¦²»¹»¸ß¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™ç¥åŠŸä¸å¤Ÿé«˜ã€‚\n");
 			
 
-        msg = HIR "\n$NÊÖÖĞ"+weapon->query("name")+HIR"½£¼âÖ¸Ïò×Ô¼ºĞØ¿Ú£¬½£±úĞ±Ğ±ÏòÍâ£¬¹ÖÒìÖ®¼«£¬¾¹ËÆ»Ø½£×ÔãŞÒ»°ã£¡\n\n" NOR;
+        msg = HIR "\n$Næ‰‹ä¸­"+weapon->query("name")+HIR"å‰‘å°–æŒ‡å‘è‡ªå·±èƒ¸å£ï¼Œå‰‘æŸ„æ–œæ–œå‘å¤–ï¼Œæ€ªå¼‚ä¹‹æï¼Œç«Ÿä¼¼å›å‰‘è‡ªæˆ•ä¸€èˆ¬ï¼\n\n" NOR;
         message_vision(msg, me,target);
 	me->start_busy(1);
         ob = me->select_opponent();
@@ -62,7 +62,7 @@ int extra;
 
 
         if (!me->query_temp("weapon")) {
-                tell_object(me,  "\nÄãµÄÎäÆ÷Ã»ÁË¡£\n\n" NOR);
+                tell_object(me,  "\nä½ çš„æ­¦å™¨æ²¡äº†ã€‚\n\n" NOR);
                 return;
         }
 
@@ -75,46 +75,46 @@ int extra;
         if ( me->query_temp("xunlei")  ) {
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword") {
-                tell_object(me, "\nÄãÊÖÖĞÎŞ½££¬µ±ÏÂÍ£Ö¹ÁËÑ¸À×½£µÄ¼ÜÊÆ¡£\n" NOR);
+                tell_object(me, "\nä½ æ‰‹ä¸­æ— å‰‘ï¼Œå½“ä¸‹åœæ­¢äº†è¿…é›·å‰‘çš„æ¶åŠ¿ã€‚\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
            else if ( weapon->query("weapon_prop") == 0 ) {
-                tell_object(me, "\nÄãµÄ"+weapon->name()+"ÒÑ»Ù£¬ÎŞ·¨³ÖĞøÑ¸À×½£µÄ¹¥ÊÆ£¡\n\n" NOR);
+                tell_object(me, "\nä½ çš„"+weapon->name()+"å·²æ¯ï¼Œæ— æ³•æŒç»­è¿…é›·å‰‘çš„æ”»åŠ¿ï¼\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
            else if ( (int)me->query("neili") < 200  ) {
-                tell_object(me, "\nÄãµÄÄÚÁ¦ºó¼Ì²»×ã£¬²»µÃ²»Í£Ö¹Ñ¸À×½£µÄ¹¥ÊÆ£¡\n\n" NOR);
+                tell_object(me, "\nä½ çš„å†…åŠ›åç»§ä¸è¶³ï¼Œä¸å¾—ä¸åœæ­¢è¿…é›·å‰‘çš„æ”»åŠ¿ï¼\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
            else if ( me->query_skill_mapped("sword") != "yunlong-jian" ) {
-                tell_object(me, HIR "\nÄã×ª¶øÊ©Õ¹ÆäËû½£·¨£¬ÎŞ·¨ÔÙÒÔÑ¸À×½£¹¥µĞ£¡\n\n" NOR);
+                tell_object(me, HIR "\nä½ è½¬è€Œæ–½å±•å…¶ä»–å‰‘æ³•ï¼Œæ— æ³•å†ä»¥è¿…é›·å‰‘æ”»æ•Œï¼\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
            else if ( me->is_busy() ) {
-                tell_object(me, HIR "\nÄãÏÖÔÚ¶¯×÷²»¹»Áé»î£¬ÎŞ·¨¼ÌĞøÎ¬³ÖÑ¸À×½£¹¥ÊÆ£¡\n\n" NOR);
+                tell_object(me, HIR "\nä½ ç°åœ¨åŠ¨ä½œä¸å¤Ÿçµæ´»ï¼Œæ— æ³•ç»§ç»­ç»´æŒè¿…é›·å‰‘æ”»åŠ¿ï¼\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
            else if (!me->is_fighting()) {
-                tell_object(me,  "\nÄãÏÖÔÚÃ»ÓĞºÍÈË¹ıÕĞ£¬µ±ÏÂÊÕ»ØÁËÑ¸À×½£µÄ¹¥ÊÆ¡£\n\n" NOR);
+                tell_object(me,  "\nä½ ç°åœ¨æ²¡æœ‰å’Œäººè¿‡æ‹›ï¼Œå½“ä¸‹æ”¶å›äº†è¿…é›·å‰‘çš„æ”»åŠ¿ã€‚\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
            else if (!target) {
-                tell_object(me,  "\nÄãÏÖÔÚÃ»ÓĞºÍÈË¹ıÕĞ£¬µ±ÏÂÊÕ»ØÁËÑ¸À×½£µÄ¹¥ÊÆ¡£\n\n" NOR);
+                tell_object(me,  "\nä½ ç°åœ¨æ²¡æœ‰å’Œäººè¿‡æ‹›ï¼Œå½“ä¸‹æ”¶å›äº†è¿…é›·å‰‘çš„æ”»åŠ¿ã€‚\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
 	   else{
 
-        if ( me->query_temp("xunlei") ==4 )message_vision(HIY"\n$N×İÉí½üÇ°£¬"+weapon->name()+HIY"¶¸È»ÍäÍäµ¯³ö£¬½£¼âÖ±´Ì$n£¬³öÕĞÖ®¿ìÕæÄËÎªÈÎºÎ½£·¨Ëù²»¼°£¡\n" NOR, me,target);
-        if ( me->query_temp("xunlei") ==3 )message_vision(HIW"\n$NÉìÖ¸ÔÚ"+weapon->name()+HIW"ÉÏÒ»µ¯£¬½£ÉùÎËÎË£¬ÓĞÈôÁúÒ÷£¬"+weapon->name()+HIW"²ü´¦£¬½£·æÀ´ÊÆÉñÃîÎŞ·½£¡\n" NOR, me,target);
-        if ( me->query_temp("xunlei") ==2 )message_vision(HIG"\n$N¶¸È»¼ä´óºÈÒ»Éù£¬"+weapon->name()+HIG"ÉÏº®¹âÉÁ¶¯£¬ºÈµÀ£º¡¸"+target->name()+HIG"£¬¿ÉĞ¡ĞÄÁË£¡¡¹\n" NOR, me,target);
-        if ( me->query_temp("xunlei") ==1 )message_vision(HIR"\nù£¼û$NËæÊÖ»Ó½££¬"+weapon->name()+HIR"²ü´¦£¬Ç°ºó×óÓÒ£¬Ë²Ï¢Ö®¼äÒÑ¹¥³öÁËËÄËÄÒ»Ê®ÁùÕĞ£¡\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==4 )message_vision(HIY"\n$Nçºµèº«è¿‘å‰ï¼Œ"+weapon->name()+HIY"é™¡ç„¶å¼¯å¼¯å¼¹å‡ºï¼Œå‰‘å°–ç›´åˆº$nï¼Œå‡ºæ‹›ä¹‹å¿«çœŸä¹ƒä¸ºä»»ä½•å‰‘æ³•æ‰€ä¸åŠï¼\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==3 )message_vision(HIW"\n$Nä¼¸æŒ‡åœ¨"+weapon->name()+HIW"ä¸Šä¸€å¼¹ï¼Œå‰‘å£°å—¡å—¡ï¼Œæœ‰è‹¥é¾™åŸï¼Œ"+weapon->name()+HIW"é¢¤å¤„ï¼Œå‰‘é”‹æ¥åŠ¿ç¥å¦™æ— æ–¹ï¼\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==2 )message_vision(HIG"\n$Né™¡ç„¶é—´å¤§å–ä¸€å£°ï¼Œ"+weapon->name()+HIG"ä¸Šå¯’å…‰é—ªåŠ¨ï¼Œå–é“ï¼šã€Œ"+target->name()+HIG"ï¼Œå¯å°å¿ƒäº†ï¼ã€\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==1 )message_vision(HIR"\nï¼œ$Néšæ‰‹æŒ¥å‰‘ï¼Œ"+weapon->name()+HIR"é¢¤å¤„ï¼Œå‰åå·¦å³ï¼Œç¬æ¯ä¹‹é—´å·²æ”»å‡ºäº†å››å››ä¸€åå…­æ‹›ï¼\n" NOR, me,target);
 	extra = me->query_skill("yunlong-jian",1) / 13;
 	extra += me->query_skill("yunlong-jian",1) /13;
 	me->add_temp("apply/attack", extra);	
@@ -126,13 +126,13 @@ if (!target->is_busy() && random(3)==1)
 	target->start_busy(2);
 }
 
-        message_vision(HIW"×óÒ»½££¡\n" NOR,me,target);     
+        message_vision(HIW"å·¦ä¸€å‰‘ï¼\n" NOR,me,target);     
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
-        message_vision(HIC"ÓÒÒ»½££¡\n" NOR,me,target);     
+        message_vision(HIC"å³ä¸€å‰‘ï¼\n" NOR,me,target);     
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
-        message_vision(HIR"ÉÏÒ»½££¡\n" NOR,me,target);     
+        message_vision(HIR"ä¸Šä¸€å‰‘ï¼\n" NOR,me,target);     
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
-        message_vision(HIG"ÏÂÒ»½££¡\n" NOR,me,target);     
+        message_vision(HIG"ä¸‹ä¸€å‰‘ï¼\n" NOR,me,target);     
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);
@@ -149,17 +149,17 @@ if (!target->is_busy() && random(3)==1)
         }
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword") {
-                tell_object(me, "\nÄãÊÖÖĞÎŞ½££¬µ±ÏÂÍ£Ö¹ÁËÑ¸À×½£µÄ¼ÜÊÆ¡£\n" NOR);
+                tell_object(me, "\nä½ æ‰‹ä¸­æ— å‰‘ï¼Œå½“ä¸‹åœæ­¢äº†è¿…é›·å‰‘çš„æ¶åŠ¿ã€‚\n" NOR);
 		me->delete_temp("xunlei");
                 return;
            }
         if (!target) {
-                tell_object(me,  "\nÄãÏÖÔÚÃ»ÓĞºÍÈË¹ıÕĞ£¬µ±ÏÂÊÕ»ØÁËÑ¸À×½£µÄ¹¥ÊÆ¡£\n\n" NOR);
+                tell_object(me,  "\nä½ ç°åœ¨æ²¡æœ‰å’Œäººè¿‡æ‹›ï¼Œå½“ä¸‹æ”¶å›äº†è¿…é›·å‰‘çš„æ”»åŠ¿ã€‚\n\n" NOR);
 		me->delete_temp("xunlei");
                 return;
         }
 }
-        message_vision(HIY "\n$NË³ÊÆÈ¦×ªÊÖÖĞ"+weapon->name()+HIY"£¬Ò»Ê®ÁùÊÖ¡¸Ñ¸À×½£¡¹ÒÑÈ»¾¡ÊıÊ¹³ö£¡\n" NOR, me, weapon);
+        message_vision(HIY "\n$Né¡ºåŠ¿åœˆè½¬æ‰‹ä¸­"+weapon->name()+HIY"ï¼Œä¸€åå…­æ‰‹ã€Œè¿…é›·å‰‘ã€å·²ç„¶å°½æ•°ä½¿å‡ºï¼\n" NOR, me, weapon);
 	me->start_busy(2);
 	me->delete_temp("xunlei");
         call_out("xunlei_end", 3, me);
@@ -174,6 +174,6 @@ void xunlei_end(object me, object target)
 	me->delete_temp("xunlei");
 	me->delete_temp("xunlei_yushi");
         if ( me->query_temp("xunlei")  ) {
-        tell_object(me, HIR "\nÄã°µ×Ôµ÷Ï¢£¬½¥½¥Æ½¸´ÌÚÓ¿µÄÕæÆø¡£\n\n" NOR);
+        tell_object(me, HIR "\nä½ æš—è‡ªè°ƒæ¯ï¼Œæ¸æ¸å¹³å¤è…¾æ¶Œçš„çœŸæ°”ã€‚\n\n" NOR);
 	}
 }

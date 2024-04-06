@@ -10,40 +10,40 @@ int perform(object me, object target)
 	int zhaosheshu,yangsheshu, exp, MAX_GUARD;
 	string startroom;
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬ÎŞ·¨ÕÙÊ¹ÓÃ»Ø³ÇÊõ");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ— æ³•å¬ä½¿ç”¨å›åŸæœ¯");
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 	if((int)me->query("neili")< 300)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 	if((int)me->query_skill("magic-earth",1)< 50)
-	return notify_fail("ÄãµÄÍÁÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„åœŸç³»é­”æ³•å¤ªå·®äº†ï¼\n");
         if (me->query("neili") < 400)
-        return notify_fail("ÄãµÄ·¨Á¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„æ³•åŠ›ä¸è¶³ï¼\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
         if (me->is_busy()) 
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
 
 	if( environment(me)->query("outdoors")=="12gong" )
-		return notify_fail("ÔÚ12¹¬ÄÚ²»ÔÊĞíÊ¹ÓÃ»Ø³ÇÊõ¡£\n");
+		return notify_fail("åœ¨12å®«å†…ä¸å…è®¸ä½¿ç”¨å›åŸæœ¯ã€‚\n");
 
-   if(environment(me)->query("short")==BLU"É½¶´"NOR
-       ||environment(me)->query("short")==WHT"ÖÓÈéÊ¯¶´"NOR
-       ||environment(me)->query("short")==YEL"ÑÒ¶´"NOR
-       ||environment(me)->query("short")==RED"ÈÛÑÒ¶´"NOR
-       ||environment(me)->query("short")==CYN"Ê¯¶´"NOR)
-	return notify_fail("Ö»ÓĞÔÚ±È½Ï°²È«µÄµØ·½²ÅÄÜÊ¹ÓÃ»Ø³ÇÊõ¡£\n");
+   if(environment(me)->query("short")==BLU"å±±æ´"NOR
+       ||environment(me)->query("short")==WHT"é’Ÿä¹³çŸ³æ´"NOR
+       ||environment(me)->query("short")==YEL"å²©æ´"NOR
+       ||environment(me)->query("short")==RED"ç†”å²©æ´"NOR
+       ||environment(me)->query("short")==CYN"çŸ³æ´"NOR)
+	return notify_fail("åªæœ‰åœ¨æ¯”è¾ƒå®‰å…¨çš„åœ°æ–¹æ‰èƒ½ä½¿ç”¨å›åŸæœ¯ã€‚\n");
 
         if( !environment(me)->query("no_fight") )
-		return notify_fail("Ö»ÓĞÔÚ±È½Ï°²È«µÄµØ·½²ÅÄÜÊ¹ÓÃ»Ø³ÇÊõ¡£\n");
+		return notify_fail("åªæœ‰åœ¨æ¯”è¾ƒå®‰å…¨çš„åœ°æ–¹æ‰èƒ½ä½¿ç”¨å›åŸæœ¯ã€‚\n");
         startroom = me->query("startroom");
         if( !me->query("startroom") )
-		return notify_fail("ÇëÏÈÈ·¶¨ÄãÒªÈ¥µÄÄ¿±ê°É!\n");
+		return notify_fail("è¯·å…ˆç¡®å®šä½ è¦å»çš„ç›®æ ‡å§!\n");
 	me->add("neili",-150);
 
-	message_vision(YEL "\n$NÔÚµØÉÏ»®ÁËÒ»¸öÎåÃ¢ĞÇ£¬¿ÚÖĞà«à«µØÄîÖøÖäÎÄ!!\n" NOR, me);	
-	message_vision(YEL "\n$NÕ¾ÔÚµÄµØÉÏ³öÏÖÁË¾Ş´óµÄ¹âÃ¢£¬°Ñ$N°üÎ§ÁË!\n" NOR, me);
-        message_vision(YEL "\n$NÔÚ¹âÃ¢ÖĞ£¬ÏûÊ§²»¼ûÁË!\n" NOR, me);
+	message_vision(YEL "\n$Nåœ¨åœ°ä¸Šåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡!!\n" NOR, me);	
+	message_vision(YEL "\n$Nç«™åœ¨çš„åœ°ä¸Šå‡ºç°äº†å·¨å¤§çš„å…‰èŠ’ï¼ŒæŠŠ$NåŒ…å›´äº†!\n" NOR, me);
+        message_vision(YEL "\n$Nåœ¨å…‰èŠ’ä¸­ï¼Œæ¶ˆå¤±ä¸è§äº†!\n" NOR, me);
         me->move(startroom);
 	me->start_busy(3);
 	return 1;

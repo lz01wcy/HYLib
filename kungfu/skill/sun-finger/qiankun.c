@@ -1,4 +1,4 @@
-// qiankun.c Ò»ÑôÖ¸ ¡¸Ò»Ö¸Ç¬À¤¡¹
+// qiankun.c ä¸€é˜³æŒ‡ ã€Œä¸€æŒ‡ä¹¾å¤ã€
 
 #include <ansi.h>
 
@@ -11,40 +11,40 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
         if( !me->is_fighting() )
-           return notify_fail("¡¸Ò»Ö¸Ç¬À¤¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+           return notify_fail("ã€Œä¸€æŒ‡ä¹¾å¤ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if((int)me->query_str() < 28)
-		return notify_fail("Äã±ÛÁ¦²»¹»,²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼!\n");
+		return notify_fail("ä½ è‡‚åŠ›ä¸å¤Ÿ,ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€!\n");
 
 	if((int)me->query_skill("kurong-changong",1) < 90)
-		return notify_fail("Äã¿İÈÙìø¹¦µÄ¹¦Á¦²»¹»²»ÄÜÊ¹ÓÃÒ»Ö¸Ç¬À¤!\n");
+		return notify_fail("ä½ æ¯è£ç¦…åŠŸçš„åŠŸåŠ›ä¸å¤Ÿä¸èƒ½ä½¿ç”¨ä¸€æŒ‡ä¹¾å¤!\n");
 
 	if((int)me->query_skill("sun-finger",1) < 90)
-		return notify_fail("ÄãµÄÒ»ÑôÖ¸ĞŞÎª²»¹»,Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÒ»Ö¸Ç¬À¤¾ø¼¼!\n");
+		return notify_fail("ä½ çš„ä¸€é˜³æŒ‡ä¿®ä¸ºä¸å¤Ÿ,ç›®å‰è¿˜ä¸èƒ½ä½¿ç”¨ä¸€æŒ‡ä¹¾å¤ç»æŠ€!\n");
 
 	if((int)me->query("max_neili") < 850)
-		return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹», ²»ÄÜÊ¹ÓÃÒ»Ö¸Ç¬À¤! \n");
+		return notify_fail("ä½ å†…åŠ›ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ä¸€æŒ‡ä¹¾å¤! \n");
 
 	if((int)me->query("neili") < 200)
-		return notify_fail("ÄãÄÚÁ¦ÏÖÔÚ²»¹», ²»ÄÜÊ¹ÓÃÒ»Ö¸Ç¬À¤! \n");
+		return notify_fail("ä½ å†…åŠ›ç°åœ¨ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ä¸€æŒ‡ä¹¾å¤! \n");
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸Ò»Ö¸Ç¬À¤¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¸€æŒ‡ä¹¾å¤ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
-	msg = CYN "$NÊ¹³öÒ»ÑôÖ¸¾ø¼¼¡¸Ò»Ö¸Ç¬À¤¡¹£¬ÕÖ×¡$nµÄÈ«ÉíÒªÑ¨, ÆóÍ¼Ê¹$n¶¯µ¯²»µÃ¡£\n"NOR;
+	msg = CYN "$Nä½¿å‡ºä¸€é˜³æŒ‡ç»æŠ€ã€Œä¸€æŒ‡ä¹¾å¤ã€ï¼Œç½©ä½$nçš„å…¨èº«è¦ç©´, ä¼å›¾ä½¿$nåŠ¨å¼¹ä¸å¾—ã€‚\n"NOR;
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 )
         {
-		msg +=   "½á¹û$n±»$N¹¥ÁË¸ö´ëÊÖ²»¼°! Ò»Ê±²»ÄÜ¶¯µ¯! \n";
+		msg +=   "ç»“æœ$nè¢«$Næ”»äº†ä¸ªæªæ‰‹ä¸åŠ! ä¸€æ—¶ä¸èƒ½åŠ¨å¼¹! \n";
 		target->start_busy( (int)me->query_skill("sun-finger",1) / 50 + 4);
 		me->add("neili", -200);
 	}
 	else
 	{
-		msg += "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n";
+		msg += "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n";
 		me->start_busy(3);
 		me->add("neili", -200);
 

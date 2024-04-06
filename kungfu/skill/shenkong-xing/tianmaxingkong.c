@@ -10,24 +10,24 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("[ÌìÂíÐÐ¿Õ]Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("[å¤©é©¬è¡Œç©º]åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if((int)me->query_skill("shenkong-xing",1) < 60)
-                return notify_fail("ÄãµÄÉí¿ÕÐÐ²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail("ä½ çš„èº«ç©ºè¡Œä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ï¼\n");
 
-	msg = "$N£¡Ê¹³öÉí¿ÕÐÐ£¬ÉíÐÎ»Ø×ª£¬ÈçÌìÂíÔ¾¿Õ¶øÐÐ£¬Ïò$n¹¥È¥£¡\n" NOR;
+	msg = "$Nï¼ä½¿å‡ºèº«ç©ºè¡Œï¼Œèº«å½¢å›žè½¬ï¼Œå¦‚å¤©é©¬è·ƒç©ºè€Œè¡Œï¼Œå‘$næ”»åŽ»ï¼\n" NOR;
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += NOR "½á¹û$p±»$PÈÆµÃ²»ÖªËù´ë£¡\n" NOR;
+                msg += NOR "ç»“æžœ$pè¢«$Pç»•å¾—ä¸çŸ¥æ‰€æŽªï¼\n" NOR;
                 target->start_busy(4);
                 me->add("neili", -100);
                        } else {
-                msg +=  "½á¹û$P×Ô¼ºÈÆÁË¸öÍ·ÔÎÑÛ»¨¡£\n";
+                msg +=  "ç»“æžœ$Pè‡ªå·±ç»•äº†ä¸ªå¤´æ™•çœ¼èŠ±ã€‚\n";
                 me->add("neili", -100);
                 me->start_busy(2);
         }

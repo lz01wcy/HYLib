@@ -7,18 +7,18 @@ int perform(object me, object target)
 {
         int skill;
         if( target != me ) return 
-	notify_fail("ÄãÖ»ÄÜ½«£ÛÌ«Ğé°Ù»Ã£İÓÃÔÚ×Ô¼ºµÄÉíÉÏ¡£\n");
-       if( (string)me->query("gender") != "Å®ĞÔ" )
-                return notify_fail("£ÛÌ«Ğé°Ù»Ã£İÊÇÖ»ÓĞÅ®×Ó²ÅÄÜÁ·µÄ¹¦·ò¡£\n");
+	notify_fail("ä½ åªèƒ½å°†ï¼»å¤ªè™šç™¾å¹»ï¼½ç”¨åœ¨è‡ªå·±çš„èº«ä¸Šã€‚\n");
+       if( (string)me->query("gender") != "å¥³æ€§" )
+                return notify_fail("ï¼»å¤ªè™šç™¾å¹»ï¼½æ˜¯åªæœ‰å¥³å­æ‰èƒ½ç»ƒçš„åŠŸå¤«ã€‚\n");
         if( (int)me->query("neili") < 100 )     return
-        notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( (int)me->query_temp("taixu") ) return 
-	notify_fail("ÄãÒÑ¾­ÔÚÊ©Õ¹£ÛÌ«Ğé°Ù»Ã£İÁË¡£\n");
+	notify_fail("ä½ å·²ç»åœ¨æ–½å±•ï¼»å¤ªè™šç™¾å¹»ï¼½äº†ã€‚\n");
 	skill = me->query_skill("ghosty-steps",1);
-	if(skill < 100) return notify_fail("ÄãµÄÌ«Ğé»Ã²½Ì«²îÁË£¡\n");
+	if(skill < 100) return notify_fail("ä½ çš„å¤ªè™šå¹»æ­¥å¤ªå·®äº†ï¼\n");
 	 me->add("neili", -100);
         message_vision( HIR
-"$NÇáĞ¥Ò»Éù£¬Ê¹³öÌ«Ğé»Ã²½ÖĞµÄ£ÛÌ«Ğé°Ù»Ã£İ£¬Õû¸öÉíĞĞºöÒşºöÏÖ£¬Æ®ç¿²»¶¨£¡\n" NOR, me);
+"$Nè½»å•¸ä¸€å£°ï¼Œä½¿å‡ºå¤ªè™šå¹»æ­¥ä¸­çš„ï¼»å¤ªè™šç™¾å¹»ï¼½ï¼Œæ•´ä¸ªèº«è¡Œå¿½éšå¿½ç°ï¼Œé£˜ç¼ˆä¸å®šï¼\n" NOR, me);
         me->add_temp("apply/dodge", skill/7);
         me->set_temp("taixu", 1);
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me, 
@@ -31,6 +31,6 @@ void remove_effect(object me, int amount)
 {
         me->add_temp("apply/dodge", - amount);
         me->delete_temp("taixu");
-        tell_object(me, "ÄãµÄ£ÛÌ«Ğé°Ù»Ã£İÊ©Õ¹Íê±Ï£¬ÉíĞĞÎÈ¶¨ÁËÏÂÀ´¡£\n");
+        tell_object(me, "ä½ çš„ï¼»å¤ªè™šç™¾å¹»ï¼½æ–½å±•å®Œæ¯•ï¼Œèº«è¡Œç¨³å®šäº†ä¸‹æ¥ã€‚\n");
 }
  

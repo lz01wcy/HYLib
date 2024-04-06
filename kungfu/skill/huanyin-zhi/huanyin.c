@@ -1,4 +1,4 @@
-// huanyin.c »ÃÒõÉñÖ¸
+// huanyin.c å¹»é˜´ç¥æŒ‡
 
 #include <ansi.h>
 #include <combat.h>
@@ -13,34 +13,34 @@ int perform(object me, object target)
 
         if (! target) target = offensive_target(me);
         if (! target || ! me->is_fighting(target))
-                return notify_fail("»ÃÒõÉñÖ¸Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¹»é˜´ç¥æŒ‡åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if (environment(me)->query("no_fight"))
-                return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+                return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
         if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
         if (! target || ! target->is_character())
-                return notify_fail("»ÃÒõÉñÖ¸Ö»ÄÜ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¹»é˜´ç¥æŒ‡åªèƒ½å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->query("not_living"))
-                return notify_fail("¿´Çå³ş£¬ÄÇ²»ÊÇ»îÈË¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šï¼Œé‚£ä¸æ˜¯æ´»äººã€‚\n");
 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ãÒÔÊ©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸è¶³ä»¥æ–½å±•å¹»é˜´ç¥æŒ‡ã€‚\n");
 
         if ((int)me->query_skill("huanyin-zhi", 1) < 150)
-                return notify_fail("ÄãµÄ»ÃÒõÖ¸·¨ĞŞÎª²»¹»£¬ÏÖÔÚ»¹ÎŞ·¨Ê©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ çš„å¹»é˜´æŒ‡æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œç°åœ¨è¿˜æ— æ³•æ–½å±•å¹»é˜´ç¥æŒ‡ã€‚\n");
 
         if (me->query_skill_mapped("finger") != "huanyin-zhi")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢»ÃÒõÖ¸·¨£¬ÎŞ·¨Ê©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å¹»é˜´æŒ‡æ³•ï¼Œæ— æ³•æ–½å±•å¹»é˜´ç¥æŒ‡ã€‚\n");
 
         if (me->query("neili") < 400)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÏÖÔÚÎŞ·¨Ê©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œç°åœ¨æ— æ³•æ–½å±•å¹»é˜´ç¥æŒ‡ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "ÉîÉîµÄÎüÁËÒ»¿ÚÆø£¬»º»ºµÄ´Ì"
-              "³öÒ»Ö¸£¬Ğ®´ıÒ»¹Éº®Æø±ÆÏò$n" HIG "¡£\n" NOR;
+        msg = HIG "$N" HIG "æ·±æ·±çš„å¸äº†ä¸€å£æ°”ï¼Œç¼“ç¼“çš„åˆº"
+              "å‡ºä¸€æŒ‡ï¼ŒæŒŸå¾…ä¸€è‚¡å¯’æ°”é€¼å‘$n" HIG "ã€‚\n" NOR;
 
         ap = me->query_skill("finger");
         dp = target->query_skill("parry");
@@ -51,16 +51,16 @@ int perform(object me, object target)
                 me->add("neili", -300);
        target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg += HIG "$p" HIG "¼±Ã¦ºóÍË£¬È»¶øÕâÖ¸ºÎµÈĞşÃî£¬Õı"
-                                           "ºÃµãÖĞ$p" HIG "ĞØÇ°£¬$p" HIG "²»½û´òÁËÒ»¸öÀä"
-                                           "Õ½¡£\n" NOR;
+                msg += HIG "$p" HIG "æ€¥å¿™åé€€ï¼Œç„¶è€Œè¿™æŒ‡ä½•ç­‰ç„å¦™ï¼Œæ­£"
+                                           "å¥½ç‚¹ä¸­$p" HIG "èƒ¸å‰ï¼Œ$p" HIG "ä¸ç¦æ‰“äº†ä¸€ä¸ªå†·"
+                                           "æˆ˜ã€‚\n" NOR;
                 target->apply_condition("huanyin_poison",18);
                 me->add("neili", -320);
                 me->start_busy(2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "ÔË×ãÄÚÁ¦£¬ÒÔÉîºñµÄÄÚ¹¦"
-                       "»¯½âÁËÕâÒ»Ö¸µÄÒõº®ÄÚÁ¦¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "è¿è¶³å†…åŠ›ï¼Œä»¥æ·±åšçš„å†…åŠŸ"
+                       "åŒ–è§£äº†è¿™ä¸€æŒ‡çš„é˜´å¯’å†…åŠ›ã€‚\n" NOR;
                 me->start_busy(4);
                 me->add("neili", -80);
         }

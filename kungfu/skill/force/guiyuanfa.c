@@ -5,37 +5,37 @@
 int exert(object me, object target)
 {
     if ((!target))
-		return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+		return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸç–—ä¼¤ï¼\n");
 
 
         if (!wizardp(me) && !me->query("guard/flag"))
-		return notify_fail("ÄãµÄ½­ºþ¾­Ñé»¹²»¹»£¬ÎÞ·¨¶Ô±¾ÃÅÎä¹¦¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æ±Ÿæ¹–ç»éªŒè¿˜ä¸å¤Ÿï¼Œæ— æ³•å¯¹æœ¬é—¨æ­¦åŠŸè´¯é€šä½¿ç”¨ï¼\n");
 
         if (!wizardp(me) && !me->query("guard/ok"))
-		return notify_fail("Äã»¹Ã»ÓÐÍ¨¹ý»ªÉ½ÂÛ½£! ÎÞ·¨¶Ô±¾ÃÅÎä¹¦¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ è¿˜æ²¡æœ‰é€šè¿‡åŽå±±è®ºå‰‘! æ— æ³•å¯¹æœ¬é—¨æ­¦åŠŸè´¯é€šä½¿ç”¨ï¼\n");
 
 	if ((int)me->query_skill("force", 1) < 300)
-		return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("max_neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 150 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)target->query("eff_qi") >= (int)target->query("max_qi") 
 	&& (int)target->query("eff_jing") >= (int)target->query("max_jing"))
-		return notify_fail( target->name() + "²¢Î´ÊÜÉË£¡\n");
+		return notify_fail( target->name() + "å¹¶æœªå—ä¼¤ï¼\n");
 
 	if(!wizardp(me) && (int)me->query_skill("jiuyin-zhengong", 1) )
-		return notify_fail("ÄãµÄÔÓÑ§Ì«¶à£¬ÎÞ·¨¶Ô±¾ÃÅÎä¹¦¹áÍ¨Ê¹ÓÃ£¡\n");
+		return notify_fail("ä½ çš„æ‚å­¦å¤ªå¤šï¼Œæ— æ³•å¯¹æœ¬é—¨æ­¦åŠŸè´¯é€šä½¿ç”¨ï¼\n");
 		
 	message_combatd(
-		HIG "$N×øÁËÏÂÀ´ÔËÆðÄÚ¹¦£¬½«ÊÖÕÆÌùÔÚ$n±³ÐÄ£¬¹áÍ¨ËùÑ§µÄÄÚ¹¦ÎäÑ§¿ªÊ¼ÔË¹¦ÁÆÉË....\n\n"
-		"¹ýÁË²»¾Ã£¬$N¶îÍ·ÉÏÃ°³ö¶¹´óµÄº¹Öé£¬$nÍÂ³öÒ»¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºìÈó¶àÁË¡£\n" NOR,
+		HIG "$Nåäº†ä¸‹æ¥è¿èµ·å†…åŠŸï¼Œå°†æ‰‹æŽŒè´´åœ¨$nèƒŒå¿ƒï¼Œè´¯é€šæ‰€å­¦çš„å†…åŠŸæ­¦å­¦å¼€å§‹è¿åŠŸç–—ä¼¤....\n\n"
+		"è¿‡äº†ä¸ä¹…ï¼Œ$Né¢å¤´ä¸Šå†’å‡ºè±†å¤§çš„æ±—ç ï¼Œ$nåå‡ºä¸€å£ç˜€è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥çº¢æ¶¦å¤šäº†ã€‚\n" NOR,
 		me, target );
 
 	target->receive_curing("qi", 60 + (int)me->query_skill("force")/3 );

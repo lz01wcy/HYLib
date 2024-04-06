@@ -9,12 +9,12 @@ void greeting(object);
 void init();
 void create()
 {
-	set_name("Ã·½£", ({ "mei jian", "mei"}));
+	set_name("æ¢…å‰‘", ({ "mei jian", "mei"}));
 	set("long",
-	    "ÕâÊÇ¸öÈİÃ²æ¯ºÃµÄÅ®×Ó, ¹Ï×ÓÁ³µ°,\n"+
-	    "ÑÛÈçµãÆá, ÇåĞã¾øË×.\n"+
-	    "Äã×Ü¾õµÃÔÚÄÄ¼û¹ıËı.\n");
-	set("gender", "Å®ĞÔ");
+	    "è¿™æ˜¯ä¸ªå®¹è²Œå§£å¥½çš„å¥³å­, ç“œå­è„¸è›‹,\n"+
+	    "çœ¼å¦‚ç‚¹æ¼†, æ¸…ç§€ç»ä¿—.\n"+
+	    "ä½ æ€»è§‰å¾—åœ¨å“ªè§è¿‡å¥¹.\n");
+	set("gender", "å¥³æ€§");
 	set("age", 18);
 	set("shen_type",1);
 	set("attitude", "peaceful");
@@ -79,7 +79,7 @@ void create()
                 (: perform_action, "sword.yushijufen" :),
                 (: perform_action, "dodge.yueguangruying" :),                
         }));
-	create_family("ÁéğÕ¹¬",3,"µÜ×Ó");
+	create_family("çµé¹«å®«",3,"å¼Ÿå­");
 	setup();
 	carry_object("/d/lingjiu/obj/qingyi")->wear();
         carry_object("/d/lingjiu/obj/doupeng")->wear();
@@ -100,29 +100,29 @@ void init()
 }
 void greeting(object ob)
 {
-       if ((string)ob->query("family/family_name") == "ÁéğÕ¹¬") 
+       if ((string)ob->query("family/family_name") == "çµé¹«å®«") 
              {
-               message_vision("Ã·½£³å×Å$NµãµãÍ·£¬Î¢Î¢Ğ¦ÁËĞ¦¡£\n",ob);
+               message_vision("æ¢…å‰‘å†²ç€$Nç‚¹ç‚¹å¤´ï¼Œå¾®å¾®ç¬‘äº†ç¬‘ã€‚\n",ob);
                return;
               }
         if (!(string)ob->query("family/family_name"))
              {
-               message_vision("Ã·½£³å×Å$NÎ¢Ğ¦Ëµ£ºÄãÊÇÀ´°İÊ¦µÄ°É£¬°İÎÒ°É¡£\n",ob);
+               message_vision("æ¢…å‰‘å†²ç€$Nå¾®ç¬‘è¯´ï¼šä½ æ˜¯æ¥æ‹œå¸ˆçš„å§ï¼Œæ‹œæˆ‘å§ã€‚\n",ob);
                return;
               }
 }
 
 void attempt_apprentice(object ob)
 {
-   if ((string)ob->query("gender")=="Å®ĞÔ")
+   if ((string)ob->query("gender")=="å¥³æ€§")
    {
-		message_vision("Ã·½£´¹Ä¿³ÁË¼Æ¬¿Ì, ËµµÀ£º¡°ºÃ°É, ÎÒ¾ÍÊÕÏÂÄãÁË¡£¡±\n",ob);
+		message_vision("æ¢…å‰‘å‚ç›®æ²‰æ€ç‰‡åˆ», è¯´é“ï¼šâ€œå¥½å§, æˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚â€\n",ob);
        command("recruit " + ob->query("id"));
 		if((string)ob->query("class") != "dancer")
 			ob->set("class", "dancer");
        return;}
    else
       {
-		message_vision("Ã·½£µÉ×ÅÄã¿´ÁË°ëÌì,ËµµÀ£º¡°¸óÏÂÊÇ·ñ¸ÃÈ¥×ö×öÊÖÊõ?¡±\n",ob);
+		message_vision("æ¢…å‰‘çªç€ä½ çœ‹äº†åŠå¤©,è¯´é“ï¼šâ€œé˜ä¸‹æ˜¯å¦è¯¥å»åšåšæ‰‹æœ¯?â€\n",ob);
        return;}
 }

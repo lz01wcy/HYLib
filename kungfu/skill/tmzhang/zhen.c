@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHEN "��" HIW "��豹���" NOR "��"
+#define ZHEN "「" HIW "反璞归真" NOR "」"
 
 inherit F_SSERVER;
 
@@ -16,33 +16,33 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(ZHEN "ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail(ZHEN "只能对战斗中的对手使用。\n");
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon")) 
-                return notify_fail(ZHEN "ֻ�ܿ���ʹ�á�\n");
+                return notify_fail(ZHEN "只能空手使用。\n");
 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("���ڹ���Ϊ����������ʩչ" ZHEN "��\n");
+                return notify_fail("你内功修为不够，难以施展" ZHEN "。\n");
 
         if ((int)me->query("max_neili") < 3600)
-                return notify_fail("��������Ϊ����������ʩչ" ZHEN "��\n");
+                return notify_fail("你内力修为不够，难以施展" ZHEN "。\n");
 
         if ((int)me->query_skill("tmzhang", 1) < 220)
-                return notify_fail("��ħ�Ʒ���򲻹�������ʩչ" ZHEN "��\n");
+                return notify_fail("天魔掌法火候不够，难以施展" ZHEN "。\n");
 
         if (me->query_skill_mapped("strike") != "tmzhang")
-                return notify_fail("��û�м�����ħ�Ʒ�������ʩչ" ZHEN "��\n");
+                return notify_fail("你没有激发天魔掌法，难以施展" ZHEN "。\n");
 
 
 
         if ((int)me->query("neili") < 500)
-                return notify_fail("��������������������ʩչ" ZHEN "��\n");
+                return notify_fail("你现在真气不够，难以施展" ZHEN "。\n");
 
         if (! living(target))
-                return notify_fail("�Է����Ѿ������ˣ��ò�����ô�����ɣ�\n");
+                return notify_fail("对方都已经这样了，用不着这么费力吧？\n");
 
-        msg = HIW "��Ȼ��$N" HIW "ʩ����" HIY "�" HIW "���־���˫����$n"
-              HIW "ƽƽ��ȥ��������ʵ�޻������ް�㻨�ɿ��ԡ�\n" NOR;  
+        msg = HIW "陡然间$N" HIW "施出「" HIY "璞" HIW "」字诀，双掌向$n"
+              HIW "平平推去，招数朴实无华，毫无半点花巧可言。\n" NOR;  
 
 
         ap = (int)me->query("combat_exp");
@@ -53,18 +53,18 @@ int perform(object me, object target)
                 damage = me->query_skill("tmzhang",1) + random(me->query_skill("tmzhang",1) / 2)+ 500;
                 target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg +=HIR "$n" HIR "���Ʋ�͸������ʵ��$N" HIR
-                                           "˫������$p" HIR "ǰ�أ������꿦�ꡱ��"
-                                           "�����������߹ǡ�\n" NOR;
+                msg +=HIR "$n" HIR "勘破不透掌中虚实，$N" HIR
+                                           "双掌正中$p" HIR "前胸，“喀嚓喀嚓”接"
+                                           "连断了数根肋骨。\n" NOR;
         } else
         {
-                msg += CYN "$n" CYN "��$N" CYN "�������ƷǷ�������"
-                       "�����мܣ�����������Ծ������\n" NOR;
+                msg += CYN "$n" CYN "见$N" CYN "这掌来势非凡，不敢"
+                       "轻易招架，当即飞身纵跃闪开。\n" NOR;
         }
 
-        msg += HIW "\n������$N" HIW "���С�" HIY "��" HIW "���־�����"
-               "ʱֻ��$N" HIW "˫�Ʒ׷ɣ�����������Ӱ����$n" HIW "����"
-               "�˷���\n"NOR;
+        msg += HIW "\n紧接着$N" HIW "变招「" HIY "真" HIW "」字诀，霎"
+               "时只见$N" HIW "双掌纷飞，化出漫天掌影笼罩$n" HIW "四面"
+               "八方。\n"NOR;
         message_combatd(msg, me, target);
 
 

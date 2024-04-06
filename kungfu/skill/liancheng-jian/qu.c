@@ -13,43 +13,43 @@ int perform(object me, object target)
 
     if( !target ) target = offensive_target(me);
 if( !target || !target->is_character() || !me->is_fighting(target) )
-return notify_fail("È¥½£ÊÆÖ»ÄÜÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+return notify_fail("åŽ»å‰‘åŠ¿åªèƒ½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	if( (int)me->query("neili", 1) < 400 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ã€‚\n");
 
 if(me->query_skill("liancheng-jian")<30)
-return notify_fail("ÄãµÄÁ¬³Ç½£·¨²»¹»æµÊì£¬²»ÄÜÊ©ÓÃ¡¸È¥¡¹×Ö¾ö¡£\n");
+return notify_fail("ä½ çš„è¿žåŸŽå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½æ–½ç”¨ã€ŒåŽ»ã€å­—å†³ã€‚\n");
 if (!objectp(weapon = target->query_temp("weapon")))
-return notify_fail("¶ÔÊÖ²¢Ã»ÓÐÊ¹ÓÃÎäÆ÷¡£\n");
+return notify_fail("å¯¹æ‰‹å¹¶æ²¡æœ‰ä½¿ç”¨æ­¦å™¨ã€‚\n");
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 me->add("neili",-100);
-msg =  HIW"$NÇåÐ¥Ò»Éù£¬¶¶Ö±ÊÖÖÐµÄ±øÈÐ£¬ÒÔÁ¬³Ç½£·¨µÄ¡¸È¥¡¹×Ö¾öË³ÊÆ´îÉÏÁË$nµÄ±øÆ÷£¡\n"NOR;
+msg =  HIW"$Næ¸…å•¸ä¸€å£°ï¼ŒæŠ–ç›´æ‰‹ä¸­çš„å…µåˆƒï¼Œä»¥è¿žåŸŽå‰‘æ³•çš„ã€ŒåŽ»ã€å­—å†³é¡ºåŠ¿æ­ä¸Šäº†$nçš„å…µå™¨ï¼\n"NOR;
 if( !target->is_killing(me) ) me->kill_ob(target);
 me->start_busy(2);
 if( random( (int)me->query("combat_exp",1))
 > target->query("combat_exp") /3 )  {
-msg +=HIY"Ö»ÌýµÃÒ»Õó½ðÌú½»ÃùÖ®Éù£¬½á¹û$pµÄ±øÈÐ±»$PÊÖÖÐµÄ±øÆ÷Ò»Á¬Ò»´ø£¬Ô¶Ô¶µØ·ÉÁË¿ªÈ¥£¡\n" NOR;
+msg +=HIY"åªå¬å¾—ä¸€é˜µé‡‘é“äº¤é¸£ä¹‹å£°ï¼Œç»“æžœ$pçš„å…µåˆƒè¢«$Pæ‰‹ä¸­çš„å…µå™¨ä¸€è¿žä¸€å¸¦ï¼Œè¿œè¿œåœ°é£žäº†å¼€åŽ»ï¼\n" NOR;
 obj=target->query_temp("weapon");
 obj->move(environment(me));
 message_vision(msg, me, target);
-msg = HIR  "$NÒ»µÃÊÖ£¬ÂíÉÏ½Ó×Å¼¸½££¬ÉÁµç°ãµÄ»÷Ïò$n£¡" NOR;
-msg = HIW  "ÉÏÒ»½££¡" NOR;
+msg = HIR  "$Nä¸€å¾—æ‰‹ï¼Œé©¬ä¸ŠæŽ¥ç€å‡ å‰‘ï¼Œé—ªç”µèˆ¬çš„å‡»å‘$nï¼" NOR;
+msg = HIW  "ä¸Šä¸€å‰‘ï¼" NOR;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-msg = HIG  "ÏÂÒ»½££¡" NOR;
+msg = HIG  "ä¸‹ä¸€å‰‘ï¼" NOR;
 COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-msg = HIY  "×óÒ»½££¡" NOR;
+msg = HIY  "å·¦ä¸€å‰‘ï¼" NOR;
 COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-msg = HIC  "ÓÒÒ»½££¡" NOR;
+msg = HIC  "å³ä¸€å‰‘ï¼" NOR;
 COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);	
 	me->add_temp("apply/damage", -extra);
 //destruct(obj);
 } else {
-msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓÐÉÏµ±¡£\n" NOR;
+msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
 me->start_busy(2);
 message_vision(msg, me, target);
 }

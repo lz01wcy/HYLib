@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(NOR + RED "ÑÛ¾µÍõÉß" NOR, ({ "yanjing wangshe", "yanjing",
+        set_name(NOR + RED "çœ¼é•œçŽ‹è›‡" NOR, ({ "yanjing wangshe", "yanjing",
                                               "wangshe", "she" }));
-        set("long", RED "ÕâÊÇÒ»ÌõÎå²Ê°ßìµµÄÑÛ¾µÍõÉß£¬¶¾ÐÔÎªÍòÉßÖ®×î¡£\n" NOR);
-	set("race", "Ò°ÊÞ");
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("long", RED "è¿™æ˜¯ä¸€æ¡äº”å½©æ–‘æ–“çš„çœ¼é•œçŽ‹è›‡ï¼Œæ¯’æ€§ä¸ºä¸‡è›‡ä¹‹æœ€ã€‚\n" NOR);
+	set("race", "é‡Žå…½");
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 set("verbs", ({ "bite" }) );
         set("age", 3);
         set("str", 35);
@@ -50,8 +50,8 @@ void leave()
 {
 	object owner;
 	message("vision",
-		 name() + "Ö¨Ö¨µÄ·¢³öÁË¼¸Éù¹ÖÉù£¡\n\n"
-		+ name() + "×ê½ø¸½½üµÄ²ÝµØ¾ÍÏûÊ§²»¼ûÁË¡£\n" , environment(),
+		 name() + "å±å±çš„å‘å‡ºäº†å‡ å£°æ€ªå£°ï¼\n\n"
+		+ name() + "é’»è¿›é™„è¿‘çš„è‰åœ°å°±æ¶ˆå¤±ä¸è§äº†ã€‚\n" , environment(),
 		this_object() );
         if(objectp(owner=this_object()->query("possessed")))
 		owner->add_temp("max_guard",-1);
@@ -67,7 +67,7 @@ void invocation(object who, int level)
 	set_skill("unarmed", 170 + random(level));
 	set("combat_exp", 100000 + random(level/2*level*level));
 	message("vision",
-		 name() + "Ö¨Ö¨µÄ¹Ö½ÐÁË¼¸Éù,ÍÂÁËÍÂÉàÍ·£¡\n" NOR,
+		 name() + "å±å±çš„æ€ªå«äº†å‡ å£°,åäº†åèˆŒå¤´ï¼\n" NOR,
 		environment(), this_object() );
 	enemy = who->query_enemy();
 	i = sizeof(enemy);

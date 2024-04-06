@@ -1,6 +1,6 @@
 
-// diansha.c  µãÉ±
-//¹ØÔª,Ì´ÖĞ,¼ç¾®,Ì«Ñô,Æøº£,°Ù»ã,¸¹½á,Ó¿Èª,´ó×µ
+// diansha.c  ç‚¹æ€
+//å…³å…ƒ,æª€ä¸­,è‚©äº•,å¤ªé˜³,æ°”æµ·,ç™¾æ±‡,è…¹ç»“,æ¶Œæ³‰,å¤§æ¤
 #include <ansi.h>
 
 inherit F_SSERVER;
@@ -9,42 +9,42 @@ int perform(object me, object target)
         int ap,dp,damage;
         object ob;
         string msg;
-        string *order = ({"¹ØÔªÑ¨", "Ì´ÖĞÑ¨", "¼ç¾®Ñ¨", "Ì«ÑôÑ¨", "Æøº£Ñ¨", "°Ù»ãÑ¨","¸¹½áÑ¨","Ó¿ÈªÑ¨","´ó×µÑ¨"});
+        string *order = ({"å…³å…ƒç©´", "æª€ä¸­ç©´", "è‚©äº•ç©´", "å¤ªé˜³ç©´", "æ°”æµ·ç©´", "ç™¾æ±‡ç©´","è…¹ç»“ç©´","æ¶Œæ³‰ç©´","å¤§æ¤ç©´"});
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-        return notify_fail(RED"¡¼µãÉ±¡½Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n"NOR);
+        return notify_fail(RED"ã€–ç‚¹æ€ã€—åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n"NOR);
 
-    if (me->query("family/family_name") != "ÈÕÔÂÉñ½Ì" )
-        return notify_fail("Äã²»ÊÇÈÕÔÂÉñ½ÌµÜ×Ó£¬²»ÄÜÊ¹ÓÃÕâÏî¾ø¼¼£¡\n");
+    if (me->query("family/family_name") != "æ—¥æœˆç¥æ•™" )
+        return notify_fail("ä½ ä¸æ˜¯æ—¥æœˆç¥æ•™å¼Ÿå­ï¼Œä¸èƒ½ä½¿ç”¨è¿™é¡¹ç»æŠ€ï¼\n");
         
         if( !(ob = me->query_temp("weapon"))
         ||      (string)ob->query("skill_type") != "sword" )
-        return notify_fail("ÄãÊÖÖĞÃ»ÓĞ×°±¸½£ÀàÎäÆ÷£¡\n");
+        return notify_fail("ä½ æ‰‹ä¸­æ²¡æœ‰è£…å¤‡å‰‘ç±»æ­¦å™¨ï¼\n");
 
         if ( (int)me->query_int() < 30 )
-        return notify_fail("ÄãµÄÏÈÌì²»×ã£¬²»ÄÜÁìÎòÌìÄ§½£µÄ¾«ËèÕĞÊ½"RED"¡¼µãÉ±¡½£¡\n"NOR);
+        return notify_fail("ä½ çš„å…ˆå¤©ä¸è¶³ï¼Œä¸èƒ½é¢†æ‚Ÿå¤©é­”å‰‘çš„ç²¾é«“æ‹›å¼"RED"ã€–ç‚¹æ€ã€—ï¼\n"NOR);
 
         if( (int)me->query_skill("tmjian",1)<199)
-        return notify_fail("ÄãµÄÌìÄ§½£·¨²»¹»æµÊì£¬»¹ÎŞ·¢Áì»á"RED"¡¼µãÉ±¡½£¡\n"NOR);
+        return notify_fail("ä½ çš„å¤©é­”å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜æ— å‘é¢†ä¼š"RED"ã€–ç‚¹æ€ã€—ï¼\n"NOR);
                                 
         if( (int)me->query_skill("tmdafa", 1)<70)
-        return notify_fail("ÄãµÄÌìÄ§´ó·¨¹¦Á¦²»¹»£¬ÎŞ·¨Ê¹ÓÃ"RED"¡¼µãÉ±¡½£¡\n"NOR);
+        return notify_fail("ä½ çš„å¤©é­”å¤§æ³•åŠŸåŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨"RED"ã€–ç‚¹æ€ã€—ï¼\n"NOR);
 
         if( (int)me->query("neili")<500)
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ"RED"¡¼µãÉ±¡½£¡\n"NOR);
+        return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨"RED"ã€–ç‚¹æ€ã€—ï¼\n"NOR);
 
         if( (time()-(int)me->query_temp("last_perform_time"))<
                 me->query_temp("last_perform_busy") )
-                return notify_fail("ÄãµÄÄÚÁ¦ÔË×ªµÄÃ»ÓĞÕâÃ´¿ì¡£\n");     
+                return notify_fail("ä½ çš„å†…åŠ›è¿è½¬çš„æ²¡æœ‰è¿™ä¹ˆå¿«ã€‚\n");     
 
         me->set_temp("last_perform_time",time());
         me->set_temp("last_perform_busy",2);
         me->set_temp("last_perform_busy",4);
 
-        msg=YEL"\n\nÖ»¼û$NË«Ä¿Ò»ÖÍ£¬ÃæÉÏÉÁ¹ıÒ»ÕóÒì²Ê£¬Éí·¨Í»È»¼Ó¿ì£¬ÈçÓ°ËæĞÎ£¬õåÉí¶øÉÏ£¡\n"NOR;
+        msg=YEL"\n\nåªè§$NåŒç›®ä¸€æ»ï¼Œé¢ä¸Šé—ªè¿‡ä¸€é˜µå¼‚å½©ï¼Œèº«æ³•çªç„¶åŠ å¿«ï¼Œå¦‚å½±éšå½¢ï¼Œè¹‚èº«è€Œä¸Šï¼\n"NOR;
 
-        msg+=YEL"Ëæ×ÅÒ»ÉùÆàÀ÷µÄ³¤Ğ¥£¬$NÊÖÖĞ±¦½£ÕÀ¿ª¶ä¶ä½£»¨£¬ÃÍµØÕÖÏò$nÈ«Éí¸÷´¦ÃüÃÅ´óÑ¨£¡\n\n"NOR;
+        msg+=YEL"éšç€ä¸€å£°å‡„å‰çš„é•¿å•¸ï¼Œ$Næ‰‹ä¸­å®å‰‘ç»½å¼€æœµæœµå‰‘èŠ±ï¼ŒçŒ›åœ°ç½©å‘$nå…¨èº«å„å¤„å‘½é—¨å¤§ç©´ï¼\n\n"NOR;
 
         me->add("neili",-random(500));
 
@@ -61,17 +61,17 @@ int perform(object me, object target)
 
       if(damage<0)    damage=300;
       if(damage>6600) damage=6600;
-      msg+=RED"$n¾ª½ĞÒ»Éù£¬"+HIY+(order[random(7)])+NOR+RED+"²¿Î»Ñª»¨·É½¦,\n"NOR;
+      msg+=RED"$næƒŠå«ä¸€å£°ï¼Œ"+HIY+(order[random(7)])+NOR+RED+"éƒ¨ä½è¡€èŠ±é£æº…,\n"NOR;
       switch(random(2))
       {
          case 1:
            {
-               msg+=RED"$n¡°ÍÛ¡±µØÒ»¿ÚÏÊÑª´Ó¿ÚÖĞÅç³ö£¡\n"NOR;
+               msg+=RED"$nâ€œå“‡â€åœ°ä¸€å£é²œè¡€ä»å£ä¸­å–·å‡ºï¼\n"NOR;
                target->reset_action();
  break;
            }
          default:
-      msg+=RED"$nÉíĞÎÒ»Õğ, Ò»¹ÉÏÊÑª´Ó¿ÚÖĞÅç³ö,Ö±ÅçÏò$N,µ«¼û$NÍ·Ò»Íá,ÇáËÉµÄ¶ãÁË¹ıÈ¥£¡£¡\n"NOR;
+      msg+=RED"$nèº«å½¢ä¸€éœ‡, ä¸€è‚¡é²œè¡€ä»å£ä¸­å–·å‡º,ç›´å–·å‘$N,ä½†è§$Nå¤´ä¸€æ­ª,è½»æ¾çš„èº²äº†è¿‡å»ï¼ï¼\n"NOR;
                target->reset_action();
       }
          switch(random(2))
@@ -95,7 +95,7 @@ int perform(object me, object target)
         else 
            {
   me->start_busy(3);
-                msg+=CYN"$pÀäĞ¦Ò»Éù£¬ÉíĞÎĞé»Î¼¸ÏÂÉÁÁË¿ªÈ¥£¡\n"NOR;
+                msg+=CYN"$på†·ç¬‘ä¸€å£°ï¼Œèº«å½¢è™šæ™ƒå‡ ä¸‹é—ªäº†å¼€å»ï¼\n"NOR;
            }
 
         message_vision(msg, me, target);

@@ -14,39 +14,39 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¿û»¨ÉñÕÆÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("è‘µèŠ±ç¥žæŽŒåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¸¿û»¨ÉñÕÆ¡¹Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("ã€Œè‘µèŠ±ç¥žæŽŒã€åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
 
 	if( (int)me->query("neili") < 400  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
-    if ( (string)me->query("gender")=="Å®ÐÔ" )
-        return notify_fail("Å®×Ó²»ÄÜÓÃ.\n");
+    if ( (string)me->query("gender")=="å¥³æ€§" )
+        return notify_fail("å¥³å­ä¸èƒ½ç”¨.\n");
 
-   if ( (string)me->query("gender")=="ÄÐÐÔ" )
-        return notify_fail("Äã±ØÐëÏÈ×Ô¹¬,²ÅÄÜÓÃ.\n");
+   if ( (string)me->query("gender")=="ç”·æ€§" )
+        return notify_fail("ä½ å¿…é¡»å…ˆè‡ªå®«,æ‰èƒ½ç”¨.\n");
 	if( (int)me->query_skill("kuihua-feiying", 1) < 50 )
-		return notify_fail("ÄãµÄ¿û»¨·ÉÓ°Êõ²»¹»æµÊì£¬²»ÄÜÓÃ¿û»¨ÉñÕÆ¡£\n");
+		return notify_fail("ä½ çš„è‘µèŠ±é£žå½±æœ¯ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ç”¨è‘µèŠ±ç¥žæŽŒã€‚\n");
 
 	if( (int)me->query_skill("kuihua-xinfa", 1) < 60 )
-		return notify_fail("ÄãµÄ¿û»¨ÐÄ·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¿û»¨ÉñÕÆ¡£\n");
+		return notify_fail("ä½ çš„è‘µèŠ±å¿ƒæ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨è‘µèŠ±ç¥žæŽŒã€‚\n");
 
 	extra = me->query_skill("kuihua-feiying",1) / 20;
 	extra += me->query_skill("kuihua-xinfa",1) /20;
 	me->add_temp("apply/attack", (extra*2));	
 	me->add_temp("apply/damage", (extra*2));
-	msg = HIR  "$NÔËÆð£Û¿û»¨ÐÄ·¨£Ý£¬Í¬Ê±Ê¹³ö£Û¿û»¨ÉñÕÆ£ÝËÀÃüµÄ´òÏò$n£¡" NOR;
+	msg = HIR  "$Nè¿èµ·ï¼»è‘µèŠ±å¿ƒæ³•ï¼½ï¼ŒåŒæ—¶ä½¿å‡ºï¼»è‘µèŠ±ç¥žæŽŒï¼½æ­»å‘½çš„æ‰“å‘$nï¼" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIW "$NµÄÈËÓ°±ä³ÉÁË¼¸¸ö£¬£®£®£®£®\n" NOR;
+	msg =  HIW "$Nçš„äººå½±å˜æˆäº†å‡ ä¸ªï¼Œï¼Žï¼Žï¼Žï¼Ž\n" NOR;
         message_vision(msg, me, target);
 a=extra/3;
 if (a> 10) a=10;
 me->set_temp("action_flag", 1);
 	for(i=0;i<a;i++)
 	{
-	msg = HIC "ÔÚ$nµÄÉíÅÔ³öÏÖÒ»¸öÈËÓ°£¬Ò»ÕÆÏò$n´òÁË¹ýÈ¥£¡\n" NOR;
+	msg = HIC "åœ¨$nçš„èº«æ—å‡ºçŽ°ä¸€ä¸ªäººå½±ï¼Œä¸€æŽŒå‘$næ‰“äº†è¿‡åŽ»ï¼\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	}
 me->delete_temp("action_flag");

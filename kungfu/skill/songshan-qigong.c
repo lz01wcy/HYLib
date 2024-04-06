@@ -1,4 +1,4 @@
-// songshan-qigong.c 嵩山气功
+// songshan-qigong.c 宓╁北姘斿姛
 
 inherit FORCE;
 
@@ -7,7 +7,7 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
        if ((int)me->query_skill("force", 1) < 10)
-               return notify_fail("你的基本内功火候还不够。\n");
+               return notify_fail("浣犵殑鍩烘湰鍐呭姛鐏�欒繕涓嶅銆俓n");
 
        return 1;
 }
@@ -15,7 +15,7 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
        if ((int)me->query("jing") < 50)
-		return notify_fail("你的精力不够练嵩山气功。\n");
+		return notify_fail("浣犵殑绮惧姏涓嶅缁冨旦灞辨皵鍔熴�俓n");
        me->receive_damage("jing", 30);
        return 1;
 }

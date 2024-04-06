@@ -1,4 +1,4 @@
-// ningxue-shenzhua.c ÄıÑªÉñ×¥
+// ningxue-shenzhua.c å‡è¡€ç¥æŠ“
 
 #include <ansi.h>
 
@@ -6,45 +6,45 @@ inherit SKILL;
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 
 mapping *action = ({
-([      "action": "$NË«ÕÆÆ½Æ½Ìáµ½ĞØÇ°£¬ÉñÉ«³ÁÖØµÄ»º»ºÊ©³ö"+(order[random(13)])+"¡¸²ÔÁúÌ½×¦¡¹"NOR"×¥Ïò$nµÄ$l",
+([      "action": "$NåŒæŒå¹³å¹³æåˆ°èƒ¸å‰ï¼Œç¥è‰²æ²‰é‡çš„ç¼“ç¼“æ–½å‡º"+(order[random(13)])+"ã€Œè‹é¾™æ¢çˆªã€"NOR"æŠ“å‘$nçš„$l",
         "dodge": 10,
         "parry": 50,
         "force": 100,
         "damage": 100,
         "lvl" : 0,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NÍ»È»ÉíĞÎ·ÉÆğ£¬Ë«ÊÖ¾Ó¸ßÁÙÏÂÒ»ÕĞ"+(order[random(13)])+"¡¸·ÉÓ¥²¦ÍÃ¡¹"NOR"×¥Ïò$nµÄ$l",
+([      "action": "$Nçªç„¶èº«å½¢é£èµ·ï¼ŒåŒæ‰‹å±…é«˜ä¸´ä¸‹ä¸€æ‹›"+(order[random(13)])+"ã€Œé£é¹°æ‹¨å…”ã€"NOR"æŠ“å‘$nçš„$l",
         "dodge": 15,
         "parry": 50,
         "force": 150,
         "damage": 200,
         "lvl" : 20,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NÓÒÊÖÒ»ÕĞ"+(order[random(13)])+"¡¸ºÚ»¢ÌÍĞÄ¡¹"NOR"£¬Ñ¸½İÎŞ±ÈµØ×¥Ïò$nµÄ$l",
+([      "action": "$Nå³æ‰‹ä¸€æ‹›"+(order[random(13)])+"ã€Œé»‘è™æå¿ƒã€"NOR"ï¼Œè¿…æ·æ— æ¯”åœ°æŠ“å‘$nçš„$l",
         "dodge": 10,
         "parry": 50,
         "force": 200,
         "damage": 300,
         "lvl" : 40,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NË«ÊÖÊ©³öÒ»ÕĞ"+(order[random(13)])+"¡¸Ì©É½Ñ¹¶¥¡¹"NOR"£¬ÒşÒş´ø×Å·çÉù×¥Ïò$nµÄ$l",
+([      "action": "$NåŒæ‰‹æ–½å‡ºä¸€æ‹›"+(order[random(13)])+"ã€Œæ³°å±±å‹é¡¶ã€"NOR"ï¼Œéšéšå¸¦ç€é£å£°æŠ“å‘$nçš„$l",
         "dodge": 10,
         "parry": 50,
         "force": 200,
         "damage": 400,
         "lvl" : 100,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$N×óÊÖ¾Û³É»¢×¦×´£¬ÓÒÊÖÒ»ÕĞ"+(order[random(13)])+"¡¸ÄıÑªÉñ×¥¡¹"NOR"»º»º×¥Ïò$nµÄ$l",
+([      "action": "$Nå·¦æ‰‹èšæˆè™çˆªçŠ¶ï¼Œå³æ‰‹ä¸€æ‹›"+(order[random(13)])+"ã€Œå‡è¡€ç¥æŠ“ã€"NOR"ç¼“ç¼“æŠ“å‘$nçš„$l",
         "dodge": 10,
         "parry": 50,
         "force": 300,
         "damage": 400,
         "lvl" : 200,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€ä¼¤"
 ]),
 });
 
@@ -53,9 +53,9 @@ int valid_enable(string usage) { return usage=="claw" ||  usage=="parry" ||  usa
 int valid_learn(object me)
 {
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("Á·ÄıÑªÉñ×¥±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç»ƒå‡è¡€ç¥æŠ“å¿…é¡»ç©ºæ‰‹ã€‚\n");
         if ((int)me->query("max_neili") < 100)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·ÄıÑªÉñ×¥¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒå‡è¡€ç¥æŠ“ã€‚\n");
         return 1;
 }
 
@@ -67,11 +67,11 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if ((int)me->query("jing") < 100)
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·´ËÎä¹¦¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒæ­¤æ­¦åŠŸã€‚\n");
         if ((int)me->query("qi") < 100)
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·´ËÎä¹¦¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒæ­¤æ­¦åŠŸã€‚\n");
         if ((int)me->query("neili") < 100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·´ËÎä¹¦¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ­¤æ­¦åŠŸã€‚\n");
         me->receive_damage("qi", 50);
         me->receive_damage("jing", 50);
         me->add("neili", -50);
@@ -84,15 +84,15 @@ string perform_action_file(string action)
 }
 
 string *parry_msg = ({
-        "Ö»Ìı¼û"+(order[random(13)])+"¡¸ïÏ¡¹"NOR"Ò»Éù£¬±»$p¸ñ¿ªÁË¡£\n",
-        "½á¹û"+(order[random(13)])+"¡¸µ±¡¹"NOR"µØÒ»Éù±»$pµ²¿ªÁË¡£\n",
-        "µ«ÊÇ±»$nÓÃÊÖÖĞ$v¼Ü¿ª¡£\n",
-        "µ«ÊÇ$nÉí×ÓÒ»²à£¬ÓÃÊÖÖĞ$v¸ñ¿ª¡£\n",
+        "åªå¬è§"+(order[random(13)])+"ã€Œé”µã€"NOR"ä¸€å£°ï¼Œè¢«$pæ ¼å¼€äº†ã€‚\n",
+        "ç»“æœ"+(order[random(13)])+"ã€Œå½“ã€"NOR"åœ°ä¸€å£°è¢«$pæŒ¡å¼€äº†ã€‚\n",
+        "ä½†æ˜¯è¢«$nç”¨æ‰‹ä¸­$væ¶å¼€ã€‚\n",
+        "ä½†æ˜¯$nèº«å­ä¸€ä¾§ï¼Œç”¨æ‰‹ä¸­$væ ¼å¼€ã€‚\n",
 });
 
 string *unarmed_parry_msg = ({
-        "µ«ÊÇ±»$p¸ñ¿ªÁË¡£\n",
-        "½á¹û±»$pµ²¿ªÁË¡£\n",
+        "ä½†æ˜¯è¢«$pæ ¼å¼€äº†ã€‚\n",
+        "ç»“æœè¢«$pæŒ¡å¼€äº†ã€‚\n",
 });
 
 string query_parry_msg(object weapon)

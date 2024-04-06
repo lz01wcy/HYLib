@@ -1,4 +1,4 @@
-// hua.c »¯¹ÇÃàÕÆ
+// hua.c åŒ–éª¨ç»µæŒ
 
 #include <ansi.h>
 
@@ -12,44 +12,44 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+		return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
 
 	if( !target || !target->is_character() )
-		return notify_fail("À±ÊÖ»¯¹ÇÖ»ÄÜ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("è¾£æ‰‹åŒ–éª¨åªèƒ½å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( target->query_temp("huagu")>3)
-		return notify_fail("¶ÔÊÖÒÑ¾­ÖĞÁË²»ÉÙÀ±ÊÖ»¯¹ÇÁË£¬ÄãÔÙ´òÒ²Ã»ÓÃÁË¡£\n");
+		return notify_fail("å¯¹æ‰‹å·²ç»ä¸­äº†ä¸å°‘è¾£æ‰‹åŒ–éª¨äº†ï¼Œä½ å†æ‰“ä¹Ÿæ²¡ç”¨äº†ã€‚\n");
 
 
 	if( (int)me->query_skill("shenlong-xinfa", 1) < 50 )
-		return notify_fail("ÄãµÄÉñÁúĞÄ·¨²»¹»æµÊì£¬²»ÄÜ»¯¹Ç¡£\n");
+		return notify_fail("ä½ çš„ç¥é¾™å¿ƒæ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½åŒ–éª¨ã€‚\n");
 
 	if( (int)me->query_skill("huagu-mianzhang", 1) < 40 )
-		return notify_fail("ÄãµÄ»¯¹ÇÃàÕÆ²»¹»æµÊì£¬²»ÄÜ»¯¹Ç¡£\n");
+		return notify_fail("ä½ çš„åŒ–éª¨ç»µæŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½åŒ–éª¨ã€‚\n");
 
 	if( (int)me->query("neili", 1) < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜ»¯¹Ç¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½åŒ–éª¨ã€‚\n");
 
         me->add("neili", -100);
 
-	msg = MAG "$NÕÆ³öÈç·çÇáÇáÂäÔÚ$n¼çÍ·ÉÏ¡£\n"NOR;
+	msg = MAG "$NæŒå‡ºå¦‚é£è½»è½»è½åœ¨$nè‚©å¤´ä¸Šã€‚\n"NOR;
 
 	me->start_busy(2);
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) 
 {
-		msg += MAG "½á¹ûÖ»ÌıÆËµÄÒ»Éù£¬$p±»$PÒ»ÕÆÅÄÖĞ£¡\n" NOR;
-		msg += MAG "$pÖ»¾õµÃÈ«ÉíÅ¯ÑóÑóµÄ£¬¸Ğµ½ÓĞµãÇáÆ®ÎŞÁ¦Çá¡£\n" NOR;
+		msg += MAG "ç»“æœåªå¬æ‰‘çš„ä¸€å£°ï¼Œ$pè¢«$Pä¸€æŒæ‹ä¸­ï¼\n" NOR;
+		msg += MAG "$påªè§‰å¾—å…¨èº«æš–æ´‹æ´‹çš„ï¼Œæ„Ÿåˆ°æœ‰ç‚¹è½»é£˜æ— åŠ›è½»ã€‚\n" NOR;
 		target->add_temp("apply/attack", -extra/5);
 		target->add_temp("apply/dodge", -extra/5);
 		target->add_temp("apply/defense", -extra/5);
 		target->add_temp("huagu",1);
         target->apply_condition("snake_poison",10);
         target->apply_condition("cold_poison",10);
-		msg += HIB "ºöÈ»Ò»¹Éº®ÆøÓÅËÆ±ù¼ı£¬Ñ­×ÅÊÖ±Û£¬Ñ¸ËÙÎŞÂ×µÄÉäÈë$pĞØÌÅ\n" NOR;
+		msg += HIB "å¿½ç„¶ä¸€è‚¡å¯’æ°”ä¼˜ä¼¼å†°ç®­ï¼Œå¾ªç€æ‰‹è‡‚ï¼Œè¿…é€Ÿæ— ä¼¦çš„å°„å…¥$pèƒ¸è†›\n" NOR;
                 me->start_call_out( (: call_other, __FILE__, "remove_effect",target,extra/5, extra/5:), extra/5);
 }
 	 else {
-		msg += CYN"¿ÉÊÇ$p¼±Ã¦ÉÁÔÚÒ»ÅÔ£¬¶ãÁË¿ªÈ¥¡£\n" NOR;
+		msg += CYN"å¯æ˜¯$pæ€¥å¿™é—ªåœ¨ä¸€æ—ï¼Œèº²äº†å¼€å»ã€‚\n" NOR;
 		me->start_busy(3);
 	}
 
@@ -65,6 +65,6 @@ if (target)
 		target->add_temp("apply/dodge", aamount);
 		target->add_temp("apply/defense", aamount);
 target->start_busy(3);
-               message_combatd(YEL"$N´ÓÃÍÁÒµÄ¹¥»÷ÖĞ°ÚÍÑÁË³öÀ´£¬Á¬ÍËÊı²½,ÎÈ×¡ÁË½Å²½\n"NOR, target);
+               message_combatd(YEL"$Nä»çŒ›çƒˆçš„æ”»å‡»ä¸­æ‘†è„±äº†å‡ºæ¥ï¼Œè¿é€€æ•°æ­¥,ç¨³ä½äº†è„šæ­¥\n"NOR, target);
 }
 }

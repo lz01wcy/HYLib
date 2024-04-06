@@ -1,4 +1,4 @@
-// fuxue.c Äé»¨Ö¸ ¡¸Äé»¨µãÑ¨¡¹
+// fuxue.c æ‹ˆèŠ±æŒ‡ ã€Œæ‹ˆèŠ±ç‚¹ç©´ã€
 
 #include <ansi.h>
 
@@ -13,37 +13,37 @@ int perform(object me, object target)
         if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸Äé»¨µãÑ¨¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œæ‹ˆèŠ±ç‚¹ç©´ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if((int)me->query_str() < 25)
-		return notify_fail("Äã±ÛÁ¦²»¹»,²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼!\n");
+		return notify_fail("ä½ è‡‚åŠ›ä¸å¤Ÿ,ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€!\n");
 
         if((int)me->query_skill("canhe-zhi",1) < 100)
-		return notify_fail("Äã²ÎºÏÖ¸µÄ¹¦Á¦²»¹»²»ÄÜÊ¹ÓÃÄé»¨µãÑ¨!\n");
+		return notify_fail("ä½ å‚åˆæŒ‡çš„åŠŸåŠ›ä¸å¤Ÿä¸èƒ½ä½¿ç”¨æ‹ˆèŠ±ç‚¹ç©´!\n");
 
 	if((int)me->query_skill("finger") < 100)
-		return notify_fail("ÄãµÄÖ¸·¨ĞŞÎª²»¹»,Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÄé»¨µãÑ¨¾ø¼¼!\n");
+		return notify_fail("ä½ çš„æŒ‡æ³•ä¿®ä¸ºä¸å¤Ÿ,ç›®å‰è¿˜ä¸èƒ½ä½¿ç”¨æ‹ˆèŠ±ç‚¹ç©´ç»æŠ€!\n");
 
 	if((int)me->query("neili") < 300)
-		return notify_fail("ÄãÄÚÁ¦ÏÖÔÚ²»¹», ²»ÄÜÊ¹ÓÃÄé»¨µãÑ¨! \n");
+		return notify_fail("ä½ å†…åŠ›ç°åœ¨ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨æ‹ˆèŠ±ç‚¹ç©´! \n");
 
         if (me->query_skill("shenyuan-gong", 1)<70)
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»ğºòÎ´µ½£¬£¡\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç«å€™æœªåˆ°ï¼Œï¼\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
-	msg = HIG "$NÊ¹³ö²ÎºÏÖ¸¾ø¼¼¡¸Äé»¨µãÑ¨¡¹£¬Ò»Ö¸Ïò$nµÄÈ«ÉíÒªÑ¨µãÈ¥, Ê¹$n¶¯µ¯²»µÃ¡£\n";
+	msg = HIG "$Nä½¿å‡ºå‚åˆæŒ‡ç»æŠ€ã€Œæ‹ˆèŠ±ç‚¹ç©´ã€ï¼Œä¸€æŒ‡å‘$nçš„å…¨èº«è¦ç©´ç‚¹å», ä½¿$nåŠ¨å¼¹ä¸å¾—ã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp") / 3 )
 	{
-		msg +=  HIG "½á¹û$p±»$PµãÖĞÁË¼¸¸öÑ¨Î»! \n" NOR;
+		msg +=  HIG "ç»“æœ$pè¢«$Pç‚¹ä¸­äº†å‡ ä¸ªç©´ä½! \n" NOR;
 		target->start_busy( (int)me->query_skill("canhe-zhi",1) / 50 + 3);
 		me->add("neili", -100);
 	}
 	else
 	{
-		msg += HIM "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+		msg += HIM "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
                 me->start_busy(2);
 	}
 	message_combatd(msg, me, target);

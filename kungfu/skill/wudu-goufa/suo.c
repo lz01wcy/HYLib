@@ -1,4 +1,4 @@
-// suo.c  ½ğ¹³Ëø»ê
+// suo.c  é‡‘é’©é”é­‚
 // by star
 #include <ansi.h>
 #include <skill.h>
@@ -17,27 +17,27 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸½ğ¹³Ëø»ê¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œé‡‘é’©é”é­‚ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
        if( !target || !target->is_character() || !me->is_fighting(target) )
-              return notify_fail("¡¸½ğ¹³Ëø»ê¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("ã€Œé‡‘é’©é”é­‚ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
  	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("¡¸½ğ¹³Ëø»ê¡¹¿ªÊ¼Ê±±ØĞëÄÃ×ÅÒ»°Ñ½££¡\n");
+		return notify_fail("ã€Œé‡‘é’©é”é­‚ã€å¼€å§‹æ—¶å¿…é¡»æ‹¿ç€ä¸€æŠŠå‰‘ï¼\n");
      
 	if( (int)me->query("neili") < 100 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
         if( (int)me->query_skill("wudu-shengong",1) < 50 )
-                return notify_fail("ÄãµÄÎå¶¾Éñ¹¦ĞŞÎª»¹²»¹»£¡\n");
+                return notify_fail("ä½ çš„äº”æ¯’ç¥åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("sword",1) < 50 ||
 	    me->query_skill_mapped("sword") != "wudu-goufa")
-		return notify_fail("ÄãµÄÎå¶¾¹³·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ½ğ¹³Ëø»ê£¡\n");
+		return notify_fail("ä½ çš„äº”æ¯’é’©æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨é‡‘é’©é”é­‚ï¼\n");
 
 	if( (int)me->query_skill("wudu-goufa",1) < 50 )
-		return notify_fail("ÄãµÄÎå¶¾¹³·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ½ğ¹³Ëø»ê£¡\n");
+		return notify_fail("ä½ çš„äº”æ¯’é’©æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨é‡‘é’©é”é­‚ï¼\n");
  	if (!objectp(weapon = target->query_temp("weapon"))
  	&&(int)me->query_skill("wudu-goufa",1) >150 )
 {
@@ -45,61 +45,61 @@ int perform(object me, object target)
 	extra = me->query_skill("wudu-goufa",1) / 3;
         me->add_temp("apply/attack", extra);
         me->add_temp("apply/damage", extra);
-         msg = HIY "ÌìĞ«²ØÕë£¡\n" NOR;
+         msg = HIY "å¤©èè—é’ˆï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "½ğÉß²øÍó£¡\n" NOR;
+         msg = HIY "é‡‘è›‡ç¼ è…•ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "Éñó¸¾Å±ä£¡\n" NOR;
+         msg = HIY "ç¥èŸ¾ä¹å˜ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "Íò¶¾ÖÁ×ğ! \n" NOR;
+         msg = HIY "ä¸‡æ¯’è‡³å°Š! \n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "ÁéÉßÍÂĞÅ£¡\n" NOR;
+         msg = HIY "çµè›‡åä¿¡ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "ÕÅÑÀÎè×¦£¡\n" NOR;
+         msg = HIY "å¼ ç‰™èˆçˆªï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
         me->add_temp("apply/attack", -extra);
         me->add_temp("apply/damage", -extra);
             me->add("neili",-200);
             me->start_busy(3);
-return notify_fail(HIR"¶Ô·½ÊÖÖĞ²¢Ã»ÓĞ±øÆ÷£¡ÄãÖ»ÄÜÍ£Ö¹ÁË¹¥»÷\n"NOR);
+return notify_fail(HIR"å¯¹æ–¹æ‰‹ä¸­å¹¶æ²¡æœ‰å…µå™¨ï¼ä½ åªèƒ½åœæ­¢äº†æ”»å‡»\n"NOR);
 }
  	if (!objectp(weapon = target->query_temp("weapon")))
-		return notify_fail("¶Ô·½ÊÖÖĞ²¢Ã»ÓĞ±øÆ÷£¡\n");
+		return notify_fail("å¯¹æ–¹æ‰‹ä¸­å¹¶æ²¡æœ‰å…µå™¨ï¼\n");
 
        weapon=target->query_temp("weapon");
        myweapon=me->query_temp("weapon");
 	extra = me->query_skill("wudu-goufa",1) / 3;
         me->add_temp("apply/attack", extra);
         me->add_temp("apply/damage", extra);
-         msg = HIY "ÌìĞ«²ØÕë£¡\n" NOR;
+         msg = HIY "å¤©èè—é’ˆï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "½ğÉß²øÍó£¡\n" NOR;
+         msg = HIY "é‡‘è›‡ç¼ è…•ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "Éñó¸¾Å±ä£¡\n" NOR;
+         msg = HIY "ç¥èŸ¾ä¹å˜ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "Íò¶¾ÖÁ×ğ! \n" NOR;
+         msg = HIY "ä¸‡æ¯’è‡³å°Š! \n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "ÁéÉßÍÂĞÅ£¡\n" NOR;
+         msg = HIY "çµè›‡åä¿¡ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-         msg = HIY "ÕÅÑÀÎè×¦£¡\n" NOR;
+         msg = HIY "å¼ ç‰™èˆçˆªï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
         me->add_temp("apply/attack", -extra);
         me->add_temp("apply/damage", -extra);
 //message_vision(msg, me,target);
- 	message_vision(HIR "\n$NĞé»ÎÒ»ÕĞ£¬ÊÖÖĞ"+myweapon->query("name")+"ºöµÄÒ»³Á£¬¹³¼âÒÑ´îÔÚ$nµÄ"+weapon ->query("name")+HIR"ÉÏ£¡\n" NOR,me,target);
+ 	message_vision(HIR "\n$Nè™šæ™ƒä¸€æ‹›ï¼Œæ‰‹ä¸­"+myweapon->query("name")+"å¿½çš„ä¸€æ²‰ï¼Œé’©å°–å·²æ­åœ¨$nçš„"+weapon ->query("name")+HIR"ä¸Šï¼\n" NOR,me,target);
        skill = target->query_skill("parry",1);             // 32
        myskill = me->query_skill("wudu-goufa",1);
        if(random(myskill) < random(skill/2)||me->query("max_neili") <random(target->query("max_neili"))){
-	     msg = HIY "¿ÉÊÇ$nÔçÓĞ×¼±¸£¬¼±Ã¦ÊÕÕĞÌø¿ª£¡\n" NOR;
+	     msg = HIY "å¯æ˜¯$næ—©æœ‰å‡†å¤‡ï¼Œæ€¥å¿™æ”¶æ‹›è·³å¼€ï¼\n" NOR;
             message_vision(msg, me,target);
             me->start_busy(3);
             me->add("neili",-200);
             return 1; 
        }
  
-	msg = HIR "Ö»¼û$NË³ÊÆÒ»½Ê£¬µÍºÈÒ»Éù£º¡°ÈöÊÖ£¡¡±$nÖ»¾õµÃ»¢¿ÚÒ»Õó¾ŞÍ´£¬\nÊÖÖĞ"+weapon->query("name")+HIR"µ±à¥Ò»ÉùµôÔÚµØÉÏ£¡\n" NOR;
+	msg = HIR "åªè§$Né¡ºåŠ¿ä¸€ç»ï¼Œä½å–ä¸€å£°ï¼šâ€œæ’’æ‰‹ï¼â€$nåªè§‰å¾—è™å£ä¸€é˜µå·¨ç—›ï¼Œ\næ‰‹ä¸­"+weapon->query("name")+HIR"å½“å•·ä¸€å£°æ‰åœ¨åœ°ä¸Šï¼\n" NOR;
        message_vision(msg,me,target);
-	msg = "$N¹ş¹şÒ»Ğ¦£¬µÃÀí²»ÈÄÈË£¬ÕĞÕĞ½ø±Æ£¡\n" NOR;
+	msg = "$Nå“ˆå“ˆä¸€ç¬‘ï¼Œå¾—ç†ä¸é¥¶äººï¼Œæ‹›æ‹›è¿›é€¼ï¼\n" NOR;
        message_vision(msg, me,ob);
 	me->clean_up_enemy();
 	ob = me->select_opponent();
@@ -115,7 +115,7 @@ return notify_fail(HIR"¶Ô·½ÊÖÖĞ²¢Ã»ÓĞ±øÆ÷£¡ÄãÖ»ÄÜÍ£Ö¹ÁË¹¥»÷\n"NOR);
                         (int)target->query_condition("xiezi_poison") + 50 );
                target->apply_condition("chanchu_poison",
                         (int)target->query_condition("chanchu_poison") + 50 );
-	msg = HIY"$NÊ¹³öÁËÎå¶¾´ó·¨£¬$nÖ»¾õµÃÉË´¦Ò»Õó·¢Âé£¬ËÆºõÖĞ¶¾ÁË¡£\n" NOR;
+	msg = HIY"$Nä½¿å‡ºäº†äº”æ¯’å¤§æ³•ï¼Œ$nåªè§‰å¾—ä¼¤å¤„ä¸€é˜µå‘éº»ï¼Œä¼¼ä¹ä¸­æ¯’äº†ã€‚\n" NOR;
        message_vision(msg, me,ob);
 }
 	me->add("neili", -300);

@@ -1,7 +1,7 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è¯ä¸–ç•Œãƒ»è¥¿æ¸¸è®°ãƒ»ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
-// seashentong.c ¡¾±Ìº£ÉñÍ¨¡¿
+// seashentong.c ã€ç¢§æµ·ç¥é€šã€‘
 inherit SKILL;
 
 int valid_enable(string usage) { return usage=="spells"; }
@@ -12,7 +12,7 @@ int valid_learn(object me)
         ||      (int)me->query_skill("spells", 1) <=
 (int)me->query_skill("seashentong", 1) )
                 return
-notify_fail("ÄãµÄ·¨ÊõĞŞÎª»¹²»¹»¸ßÉî£¬ÎŞ·¨Ñ§Ï°±Ìº£ÉñÍ¨¡£\n");
+notify_fail("ä½ çš„æ³•æœ¯ä¿®ä¸ºè¿˜ä¸å¤Ÿé«˜æ·±ï¼Œæ— æ³•å­¦ä¹ ç¢§æµ·ç¥é€šã€‚\n");
         return 1;
 }
 

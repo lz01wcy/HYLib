@@ -13,19 +13,19 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("³ªÏÉ·¨Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("å”±ä»™æ³•åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("shedao-qigong", 1) < 100 )
-		return notify_fail("ÄãµÄÉßµºÆæ¹¦²»¹»æµÊì£¬²»»áÊ¹ÓÃ³ªÏÉ·¨ºğ×Ö¾ö¡£\n");
+		return notify_fail("ä½ çš„è›‡å²›å¥‡åŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨å”±ä»™æ³•å¼å­—å†³ã€‚\n");
 
 	if ((int)me->query_skill("shenlong-xinfa",1) < 10)
-		return notify_fail("ÄãµÄÉñÁúĞÄ·¨»ğºò²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç¥é¾™å¿ƒæ³•ç«å€™ä¸å¤Ÿã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+		return notify_fail("åœ¨è¿™é‡Œä¸èƒ½æ”»å‡»ä»–äººã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãÒÑ¾­³ªµÃ¾«Æ£Á¦½ß,ÄÚÁ¦²»¹»ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»å”±å¾—ç²¾ç–²åŠ›ç«­,å†…åŠ›ä¸å¤Ÿäº†ã€‚\n");
 
 
 	neili = me->query("eff_neili");
@@ -36,10 +36,10 @@ int perform(object me, object target)
 	me->start_busy(3);
 
 	message_combatd(
-		HIY "$NÉîÉîµØÎüÒ»àíÆø£¬ºöÈ»ÑöÌì³¤Ğ¥£¬¸ßÉù¿ñ½Ğ£º²»ËÀÉñÁú£¬Î¨ÎÒ²»°Ü£¡\n" NOR, me);
+		HIY "$Næ·±æ·±åœ°å¸ä¸€å›—æ°”ï¼Œå¿½ç„¶ä»°å¤©é•¿å•¸ï¼Œé«˜å£°ç‹‚å«ï¼šä¸æ­»ç¥é¾™ï¼Œå”¯æˆ‘ä¸è´¥ï¼\n" NOR, me);
 
 		if( neili/2 + random(neili/2) < (int)target->query("neili")/15) 
-		return notify_fail("µĞÈËµÄÄÚÁ¦±ÈÄã¸ß³öÌ«¶à,ÉË²»ÁË£¡\n");
+		return notify_fail("æ•Œäººçš„å†…åŠ›æ¯”ä½ é«˜å‡ºå¤ªå¤š,ä¼¤ä¸äº†ï¼\n");
 		
 		damage = (neili - (int)target->query("max_neili")) / 15;
 		if( damage > 0 ) {
@@ -48,13 +48,13 @@ int perform(object me, object target)
 			target->receive_wound("jing", damage/2);
 			target->receive_wound("qi", damage);
 		message_combatd(
-		HIR "$NÖ»¾õÄÔÖĞÒ»Õó¾çÍ´£¬½ğĞÇÂÒÃ°£¬ÓÌÈçÓĞÍòÌõ½ğÁúÔÚÑÛÇ°Îè¶¯¡£\n" NOR, target);
+		HIR "$Nåªè§‰è„‘ä¸­ä¸€é˜µå‰§ç—›ï¼Œé‡‘æ˜Ÿä¹±å†’ï¼ŒçŠ¹å¦‚æœ‰ä¸‡æ¡é‡‘é¾™åœ¨çœ¼å‰èˆåŠ¨ã€‚\n" NOR, target);
 		COMBAT_D->report_status(target);
 		}
 		else
 		{
 		message_combatd(
-		HIR "$NÖ»¾õÄÔÖĞÎ¢Í´£¬ËÆºõÊÜÁËÒ»µãÇáÉË¡£\n" NOR, target);
+		HIR "$Nåªè§‰è„‘ä¸­å¾®ç—›ï¼Œä¼¼ä¹å—äº†ä¸€ç‚¹è½»ä¼¤ã€‚\n" NOR, target);
 		target->receive_damage("jing", 30 );
 		target->receive_damage("qi", 30 );
 		target->receive_wound("qi", 30);

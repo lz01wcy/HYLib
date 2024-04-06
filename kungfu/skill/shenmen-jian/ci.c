@@ -15,7 +15,7 @@ int perform(object me)
 
         if (! objectp(weapon = me->query_temp("weapon")) ||
             (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if (! target)
         {
@@ -26,20 +26,20 @@ int perform(object me)
         skill = me->query_skill("shenmen-jian", 1);
 
         if( !(me->is_fighting() ))
-                return notify_fail("ÉñÃÅ´ÌÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¥é—¨åˆºåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon2 = target->query_temp("weapon")))
-                return notify_fail("¶Ô·½Ã»ÓĞÊ¹ÓÃ±øÆ÷£¬ÄãÓÃÁËÉñÃÅ´ÌÒ²Ã»ÓÃ¡£\n");
+                return notify_fail("å¯¹æ–¹æ²¡æœ‰ä½¿ç”¨å…µå™¨ï¼Œä½ ç”¨äº†ç¥é—¨åˆºä¹Ÿæ²¡ç”¨ã€‚\n");
 
         if( skill < 160)
-                return notify_fail("ÄãµÄÉñÃÅÊ®Èı½£µÈ¼¶²»¹», ÎŞ·¨Ê©Õ¹ÉñÃÅ´Ì¡£\n");
+                return notify_fail("ä½ çš„ç¥é—¨åä¸‰å‰‘ç­‰çº§ä¸å¤Ÿ, æ— æ³•æ–½å±•ç¥é—¨åˆºã€‚\n");
 
         if( me->query("neili") < 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê©Õ¹ÉñÃÅ´Ì£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•ç¥é—¨åˆºï¼\n");
 
-        msg = HIY "Í»È»$N" HIY "Ò»ÉùÀäºß£¬ÊÖÖĞ" +weapon->name()+ NOR + HIY
-                  "ÖĞ¹¥Ö±½ø£¬Ö±´Ì$nÄÃ×ÅµÄ" +weapon2->name()+ NOR + HIY"µÄ"
-                  "ÊÖÍó¡£\n" NOR;
+        msg = HIY "çªç„¶$N" HIY "ä¸€å£°å†·å“¼ï¼Œæ‰‹ä¸­" +weapon->name()+ NOR + HIY
+                  "ä¸­æ”»ç›´è¿›ï¼Œç›´åˆº$næ‹¿ç€çš„" +weapon2->name()+ NOR + HIY"çš„"
+                  "æ‰‹è…•ã€‚\n" NOR;
         message_combatd(msg, me, target);
 
         ap = (int)me->query_skill("sword", 1);
@@ -49,8 +49,8 @@ int perform(object me)
         {
                 if (userp(me))
                 me->add("neili", -120);
-                msg = HIR "$nÖ»¾õÊÖÍóÒ»Õó´ÌÍ´£¬ÊÖÖĞ" +weapon2->name()+ NOR + HIR
-                      "ÔÙÒ²×½ÄÃ²»×¡£¬ÍÑÊÖ¶ø·É£¡\n" NOR;
+                msg = HIR "$nåªè§‰æ‰‹è…•ä¸€é˜µåˆºç—›ï¼Œæ‰‹ä¸­" +weapon2->name()+ NOR + HIR
+                      "å†ä¹Ÿæ‰æ‹¿ä¸ä½ï¼Œè„±æ‰‹è€Œé£ï¼\n" NOR;
                 me->start_busy(2);
                 if (! target->is_busy())
                 target->start_busy(5);
@@ -60,8 +60,8 @@ int perform(object me)
         {
                 if(userp(me))
                 me->add("neili", -40);
-                msg = CYN "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬½«ÊÖÖĞ±øÈĞ»ÓÎèµÃÃÜ²»Í¸·ç£¬µ²¿ªÁË$N" CYN 
-                      "µÄ±øÆ÷¡£\n"NOR;
+                msg = CYN "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œå°†æ‰‹ä¸­å…µåˆƒæŒ¥èˆå¾—å¯†ä¸é€é£ï¼ŒæŒ¡å¼€äº†$N" CYN 
+                      "çš„å…µå™¨ã€‚\n"NOR;
                 me->start_busy(4);
         }
         message_combatd(msg, me, target);

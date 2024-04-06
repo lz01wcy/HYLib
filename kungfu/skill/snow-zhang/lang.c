@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define LANG "¡¸" HIM "¾ªÌÎº§ÀË" NOR "¡¹"
+#define LANG "ã€Œ" HIM "æƒŠæ¶›éª‡æµª" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -17,27 +17,27 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(LANG "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(LANG "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail(LANG "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(LANG "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
    if( (int)me->query_skill("bingxue-xinfa", 1) < 100 )
-   return notify_fail("ÄãµÄ±ùÑ©ÐÄ·¨»ðºò²»¹»£¬Ê¹²»³ö¡¸"+HIW"ÑÌÑ©´ºÃ·"NOR+"¡¹¡£\n");
+   return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ç«å€™ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œ"+HIW"çƒŸé›ªæ˜¥æ¢…"NOR+"ã€ã€‚\n");
 
     if( (int)me->query_skill("snow-zhang", 1) < 100 )
-   return notify_fail("ÄãµÄ·ÉÑ©Ó³Ã·ÕÆ²»¹»ÊìÁ·£¬²»»áÊ¹ÓÃ¡¸"+HIW"ÑÌÑ©´ºÃ·"NOR+"¡¹¡£\n");
+   return notify_fail("ä½ çš„é£žé›ªæ˜ æ¢…æŽŒä¸å¤Ÿç†Ÿç»ƒï¼Œä¸ä¼šä½¿ç”¨ã€Œ"+HIW"çƒŸé›ªæ˜¥æ¢…"NOR+"ã€ã€‚\n");
 
         if ((int)me->query("max_neili") < 3000)
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»×ã£¬ÎÞ·¨Ê©Õ¹" LANG "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œæ— æ³•æ–½å±•" LANG "ã€‚\n");
 
         if ((int)me->query("neili") < 800)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹" LANG "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•" LANG "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "\n$N" HIW "Ä¬ÔËÐþÚ¤Éñ¹¦£¬Õ¹³ö¾øÕÐ¡¸" HIM "¾ªÌÎº§ÀË" HIW "¡¹£¬ÃÍÈ»¼äÆÛÉí"
-              "ÏòÇ°£¬Ë«ÕÆÆë³ö£¬ÕÆ·çÒõº®ÎÞ±È£¬ÕÆÎ´µ½£¬·çÏÈÖÁ£¬Ë²Ï¢¼äË«ÕÆÒÑÅÄÏò$n" HIW "£¡\n"NOR;  
+        msg = HIW "\n$N" HIW "é»˜è¿çŽ„å†¥ç¥žåŠŸï¼Œå±•å‡ºç»æ‹›ã€Œ" HIM "æƒŠæ¶›éª‡æµª" HIW "ã€ï¼ŒçŒ›ç„¶é—´æ¬ºèº«"
+              "å‘å‰ï¼ŒåŒæŽŒé½å‡ºï¼ŒæŽŒé£Žé˜´å¯’æ— æ¯”ï¼ŒæŽŒæœªåˆ°ï¼Œé£Žå…ˆè‡³ï¼Œçž¬æ¯é—´åŒæŽŒå·²æ‹å‘$n" HIW "ï¼\n"NOR;  
 
         lvl = me->query_skill("snow-zhang", 1);
 
@@ -46,9 +46,9 @@ int perform(object me, object target)
 
         me->start_busy(4);
 
-        // µÚÒ»ÕÆ
+        // ç¬¬ä¸€æŽŒ
 
-        msg += HIM "\n$N" HIM "ÓÒÕÆÏòÄÚÒ»×ª£¬ºöÓÖÏòÇ°£¬ÃÍÈ»¼äÖ±Ï®$n" HIM "ÃæÃÅ¡£\n" NOR;
+        msg += HIM "\n$N" HIM "å³æŽŒå‘å†…ä¸€è½¬ï¼Œå¿½åˆå‘å‰ï¼ŒçŒ›ç„¶é—´ç›´è¢­$n" HIM "é¢é—¨ã€‚\n" NOR;
         if (ap / 2 + random(ap) > dp)
         { 
                 damage = ap + random(ap / 2);
@@ -56,18 +56,18 @@ int perform(object me, object target)
         target->apply_condition("xuanming_poison",50);
         target->receive_wound("jing", target->query("jing")/5);
         target->receive_damage("jing", target->query("jing")/6);
-                msg += HIR "$n" HIR "ÕýÓûÉÁ¶ã£¬È´¼û$N" HIR "Í»È»ÈÆµ½$p" HIR "Éíºó£¬$n" HIR "ÐÄÖÐÒ»"
-                   "¾ª£¬±³ºóÖÐÕÆ£¬¶Ù¾õ¼¹Áº´¦Ò»¹Éº®ÆøÉýÆð£¬¾¡ËðÈý½¹ÁùÂö¡£\n" NOR;
+                msg += HIR "$n" HIR "æ­£æ¬²é—ªèº²ï¼Œå´è§$N" HIR "çªç„¶ç»•åˆ°$p" HIR "èº«åŽï¼Œ$n" HIR "å¿ƒä¸­ä¸€"
+                   "æƒŠï¼ŒèƒŒåŽä¸­æŽŒï¼Œé¡¿è§‰è„Šæ¢å¤„ä¸€è‚¡å¯’æ°”å‡èµ·ï¼Œå°½æŸä¸‰ç„¦å…­è„‰ã€‚\n" NOR;
                                            
         } else
         {
-                msg += HIY "$n" HIY "¿´¼û$N" HIY "À´ÊÆÐÚÓ¿£¬¼±Ã¦ÌáÆøÔ¾¿ª¡£\n" NOR;
+                msg += HIY "$n" HIY "çœ‹è§$N" HIY "æ¥åŠ¿æ±¹æ¶Œï¼Œæ€¥å¿™ææ°”è·ƒå¼€ã€‚\n" NOR;
                 me->add("neili", -180);
         }
         message_vision(msg, me, target);
          
-        // µÚ¶þÕÆ
-        msg = HIM "\n$N" HIM "³¤ÊæÒ»¿ÚÆø£¬×óÕÆ½ô¸ú¶ø³ö£¬·çµ½ÕÆµ½£¬ÕýÅÄÏò$n" HIM "ÐØ¿Ú¡£\n" NOR;
+        // ç¬¬äºŒæŽŒ
+        msg = HIM "\n$N" HIM "é•¿èˆ’ä¸€å£æ°”ï¼Œå·¦æŽŒç´§è·Ÿè€Œå‡ºï¼Œé£Žåˆ°æŽŒåˆ°ï¼Œæ­£æ‹å‘$n" HIM "èƒ¸å£ã€‚\n" NOR;
         if (ap / 2 + random(ap) > dp)
         { 
                 damage = ap + random(ap / 2);
@@ -77,12 +77,12 @@ int perform(object me, object target)
         target->apply_condition("xuanming_poison",50);
        target->receive_wound("qi", target->query("qi")/5);
         target->receive_damage("qi", target->query("qi")/6);
-                msg += HIR "$n" HIR "µ«¼û$N" HIR "ÓÒÕÆÒÑ¹¥³ö£¬ÕýÓû·´»÷¡£Í»È»¼äÐØ¿ÚÒ»Õð£¬²»½û°µ°µ"
-               "½Ð¿à£¬¶Ù¸ÐÐØ¿Ú´¦Ò»¹Éº®ÆøÉýÆð£¬¾¡ËðÈý½¹ÁùÂö¡£\n" NOR;
+                msg += HIR "$n" HIR "ä½†è§$N" HIR "å³æŽŒå·²æ”»å‡ºï¼Œæ­£æ¬²åå‡»ã€‚çªç„¶é—´èƒ¸å£ä¸€éœ‡ï¼Œä¸ç¦æš—æš—"
+               "å«è‹¦ï¼Œé¡¿æ„Ÿèƒ¸å£å¤„ä¸€è‚¡å¯’æ°”å‡èµ·ï¼Œå°½æŸä¸‰ç„¦å…­è„‰ã€‚\n" NOR;
                                            
         } else
         {
-                msg += HIY "$n" HIY "¿´¼û$N" HIY "À´ÊÆÐÚÓ¿£¬¼±Ã¦ÌáÆøÔ¾¿ª¡£\n" NOR;
+                msg += HIY "$n" HIY "çœ‹è§$N" HIY "æ¥åŠ¿æ±¹æ¶Œï¼Œæ€¥å¿™ææ°”è·ƒå¼€ã€‚\n" NOR;
                 me->add("neili", -180);
         }
         message_vision(msg, me, target);

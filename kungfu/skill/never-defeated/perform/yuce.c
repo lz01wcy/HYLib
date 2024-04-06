@@ -16,33 +16,33 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("Óù²ß¾÷Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¾¡ç­–è¯€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
 //       if( !me->query("zhuanbest",1))
-//        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+//        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
        if( !me->query("4zhuan") && !me->query("5zhuan"))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
         if ((skill = me->query_skill("never-defeated", 1)) < 100)
-                return notify_fail("ÄãµÄ²»°ÜÉñ¹¦»ðºò²»¹»£¬²»»áÊ©Õ¹Óù²ß¾÷¡£\n");
+                return notify_fail("ä½ çš„ä¸è´¥ç¥žåŠŸç«å€™ä¸å¤Ÿï¼Œä¸ä¼šæ–½å±•å¾¡ç­–è¯€ã€‚\n");
 
         if ((int)me->query("neili") < 150)
-                return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿäº†ã€‚\n");
 
         if (! objectp(weapon = me->query_temp("weapon")))
-                return notify_fail("Äã±ØÐëÊÖ³Ö±øÈÐ²ÅÄÜÊ©Õ¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»æ‰‹æŒå…µåˆƒæ‰èƒ½æ–½å±•ï¼\n");
                 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
         me->add("neili", -120);
         //weapon->add_amount(-1);
 
-        msg = HIC "$N" HIC "ÊÖÖ¸Ò»ºÏÒ»µ¯£¬Ö»ÌýºôÐ¥ÆÆ¿ÕÉùÆð£¬ÓÐÈôÁúÒ÷£¬Ò»" +
-             weapon->query("unit") + weapon->name() + HIC "ÈçòÔÁú°ã" +
-             "´òÏò$n" HIC "¡£\n" NOR;
+        msg = HIC "$N" HIC "æ‰‹æŒ‡ä¸€åˆä¸€å¼¹ï¼Œåªå¬å‘¼å•¸ç ´ç©ºå£°èµ·ï¼Œæœ‰è‹¥é¾™åŸï¼Œä¸€" +
+             weapon->query("unit") + weapon->name() + HIC "å¦‚è›Ÿé¾™èˆ¬" +
+             "æ‰“å‘$n" HIC "ã€‚\n" NOR;
 
         me->start_busy(3);
         my_exp = me->query("combat_exp") + skill * skill / 10 * skill;
@@ -57,7 +57,7 @@ if (me->query("zhuanfinal/4") ==1 && random(2)==0)
                 me->add("eff_qi",me->query("max_qi")/8);
                 if (me->query("qi") < me->query("max_qi") )
 
-	msg += HIY"$NÊ¹ÓÃÁËÃîÏÉ¾ö!!$NÈ«ÉíµÄÉËºÃÁËºÜ¶à!\n"NOR;
+	msg += HIY"$Nä½¿ç”¨äº†å¦™ä»™å†³!!$Nå…¨èº«çš„ä¼¤å¥½äº†å¾ˆå¤š!\n"NOR;
 }
 else
 if (me->query("zhuanfinal/5") ==1 && random(2)==0)
@@ -66,27 +66,27 @@ if (me->is_busy() )
 me->start_busy(1);
 if (!target->is_busy() )
 target->start_busy(2);
-	msg += HIY"$NÊ¹ÓÃÁË¶¯ÏÉ¾ö!!$NÍ»È»¶¯×÷ÓÖ¿ìÁË!\n"NOR;
+	msg += HIY"$Nä½¿ç”¨äº†åŠ¨ä»™å†³!!$Nçªç„¶åŠ¨ä½œåˆå¿«äº†!\n"NOR;
 }
 else
 if (me->query("zhuanfinal/6") ==1 && random(2)==0)
 {
                 if (me->query("neili") < me->query("max_neili") )
                 me->add("neili", me->query("max_neili") / 8);
-	msg += HIY"$NÊ¹ÓÃÁËÒøÏÉ¾ö!!$NÍ»È»ÄÚÁ¦»Ö¸´ÁË!\n"NOR;
+	msg += HIY"$Nä½¿ç”¨äº†é“¶ä»™å†³!!$Nçªç„¶å†…åŠ›æ¢å¤äº†!\n"NOR;
 }
                 damage=target->query("qi")/2;
                 target->add("qi",-damage);
 		target->add("eff_qi",-damage);
-                msg +=HIR + "Ö»¼ûÄÇ" + weapon->name() + HIR "È¥ÊÆÇ¡ÈçÉñ¹âÉÁµç£¡$n"
-                       HIR + "²»¼°ÉÁ±Ü£¬±»´òÁË¸öÕýÖÐ£¬²Ò½ÐÒ»"
-                       "Éù£¬ÍËÁË¼¸²½¡£\n" NOR;
+                msg +=HIR + "åªè§é‚£" + weapon->name() + HIR "åŽ»åŠ¿æ°å¦‚ç¥žå…‰é—ªç”µï¼$n"
+                       HIR + "ä¸åŠé—ªé¿ï¼Œè¢«æ‰“äº†ä¸ªæ­£ä¸­ï¼Œæƒ¨å«ä¸€"
+                       "å£°ï¼Œé€€äº†å‡ æ­¥ã€‚\n" NOR;
                message_vision(msg, me, target);
         } else
         {
 
-                msg += CYN "¿ÉÊÇ$p" CYN "¼±Ã¦Ò»ÉÁ£¬¶ã¹ýÁË$P" HIG "·¢³öµÄ" +
-                       weapon->name() + CYN "¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "æ€¥å¿™ä¸€é—ªï¼Œèº²è¿‡äº†$P" HIG "å‘å‡ºçš„" +
+                       weapon->name() + CYN "ã€‚\n" NOR;
                 message_vision(msg, me, target);
         }
 

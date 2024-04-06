@@ -9,15 +9,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name("ÒóÌìÕı", ({"yin tianzheng", "yin", "tianzheng", }));
+	set_name("æ®·å¤©æ­£", ({"yin tianzheng", "yin", "tianzheng", }));
 	set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ıÎàµÄÍºÀÏÕß£¬Éí´©Ò»¼ş°×É«³¤ÅÛ¡£\n"
-        "Ëû³¤Ã¼Ê¤Ñ©£¬´¹ÏÂÑÛ½Ç£¬±Ç×Ó¹³Çú£¬ÓÌÈçÓ¥×ì¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æé­æ¢§çš„ç§ƒè€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½è‰²é•¿è¢ã€‚\n"
+        "ä»–é•¿çœ‰èƒœé›ªï¼Œå‚ä¸‹çœ¼è§’ï¼Œé¼»å­é’©æ›²ï¼ŒçŠ¹å¦‚é¹°å˜´ã€‚\n"
 	);
                                                           
-	set("title",HIG "Ã÷½Ì" HIW "°×Ã¼Ó¥Íõ" NOR);
+	set("title",HIG "æ˜æ•™" HIW "ç™½çœ‰é¹°ç‹" NOR);
 	set("level",9);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 
 	set("age", 72);
@@ -68,7 +68,7 @@ void create()
 	set("chat_msg_combat", ({
 		(: command("perform muyeyingyang") :),
 	}) );
-	create_family("Ã÷½Ì",34, "·¨Íõ");
+	create_family("æ˜æ•™",34, "æ³•ç‹");
 	set_temp("apply/attack", 200);
 	set_temp("apply/defense", 200);
 	set_temp("apply/damage", 660);

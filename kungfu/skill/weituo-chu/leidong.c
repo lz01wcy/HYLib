@@ -13,44 +13,44 @@ int extra;string msg;
         if( !target
          || !target->is_character()
          || !me->is_fighting(target) )
-                return notify_fail("���׶����졹ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("「雷动九天」只能对战斗中的对手使用。\n");
 
         if( !objectp(weapon = me->query_temp("weapon"))
          || weapon->query("skill_type") != "club" )
-                return notify_fail("�������޹����������á��׶����졹����\n");
+                return notify_fail("你手中无棍，怎能运用「雷动九天」？！\n");
 
         if( me->query_temp("sl_leidong"))
-                return notify_fail("���ʹ�꡸�׶����졹��Ŀǰ��Ѫ��ӿ���޷��ٴ����ã�\n");
+                return notify_fail("你刚使完「雷动九天」，目前气血翻涌，无法再次运用！\n");
 
         if( me->query_temp("fumo"))
-                return notify_fail("������ʹ�ô���ȭ�����⹥������շ�ħ����\n");
+                return notify_fail("你正在使用大金刚拳的特殊攻击「金刚伏魔」！\n");
 
 
         if((int)me->query_skill("weituo-chu", 1) < 150
          ||(int)me->query_skill("weituo-chu", 1) < 150
          ||(int)me->query_str() <=30 )
-                return notify_fail("����Ϊ����������δ�������׶����졹��\n");
+                return notify_fail("你修为还不够，还未能领悟「雷动九天」！\n");
 
         if( me->query_skill("yijinjing", 1) < 150 )
-                return notify_fail("����ڹ���Ϊ���δ����ʩչֻ���˼�������\n");
+                return notify_fail("你的内功修为火候未到，施展只会伤及自身！\n");
 
         if( me->query_skill_mapped("force") != "yijinjing")
-                return notify_fail("�����õ��ڹ��롸�׶����졹�ķ���㣣�\n");
+                return notify_fail("你所用的内功与「雷动九天」心法相悖！\n");
 
         if (me->query_skill_mapped("club") != "weituo-chu"
          )
-                return notify_fail("�������޷�ʹ�á��׶����졹���й�����\n");
+                return notify_fail("你现在无法使用「雷动九天」进行攻击。\n");
 
         if( me->query("max_neili") <= 2000 )
-                return notify_fail("���������Ϊ���㣬����������ʩչ���׶����졹��\n");
+                return notify_fail("你的内力修为不足，劲力不足以施展「雷动九天」！\n");
 
         if( me->query("neili") <= 600 )
-                return notify_fail("�����������������������ʩչ���׶����졹��\n");
+                return notify_fail("你的内力不够，劲力不足以施展「雷动九天」！\n");
 
         if( me->query("jing") <= 200 )
-                return notify_fail("��ľ������ޣ�������ʩչ���׶����졹��\n");
+                return notify_fail("你的精力有限，不足以施展「雷动九天」！\n");
 
-        message_vision(BLU"\nͻȻ$N���һ�������׶����졹����ɫ৵ı��ͨ�죬�뷢�Էɣ���������"+weapon->name()+BLU"���У����ˡ���һ��������"HIW"��������"BLU"��\n" NOR, me);
+        message_vision(BLU"\n突然$N大喝一声：「雷动九天」，面色唰的变得通红，须发皆飞，真气溶入"+weapon->name()+BLU"当中，“嗡”的一声，发出"HIW"闪闪光亮"BLU"！\n" NOR, me);
 
         if(userp(me)){
            me->add("neili", -300);
@@ -71,13 +71,13 @@ int extra;string msg;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 target->start_busy(2);
-	msg = HIR  "�ף�\n" NOR;     
+	msg = HIR  "雷！\n" NOR;     
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIR  "  ���� \n" NOR;
+	msg =  HIR  "  动！ \n" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIR  "    �ţ� \n" NOR;
+	msg =  HIR  "    九！ \n" NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  HIR  "      �죡 \n" NOR;
+	msg =  HIR  "      天！ \n" NOR;
 if (!target->is_busy())
 {
 	target->start_busy(1);
@@ -87,7 +87,7 @@ if (!target->is_busy())
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);
         call_out("remove_effect", 1,  me, weapon, skill);
-        me->start_perform(5, "���׶����졹");
+        me->start_perform(5, "「雷动九天」");
         return 1;
 }
 
@@ -105,7 +105,7 @@ void remove_effect(object me,object weapon,int count)
           me->add_temp("apply/strength", -i);
           me->delete_temp("sl_leidong");
 	if (weapon)
-		message_vision(HIY"\n$Nһ�ס��׶����졹ʹ�꣬����"NOR+weapon->name()+HIY"�ϵĹ�â����Ҳ��ʧ�ˡ�\n"NOR, me);
+		message_vision(HIY"\n$N一套「雷动九天」使完，手中"NOR+weapon->name()+HIY"上的光芒渐渐也消失了。\n"NOR, me);
           return;
         }
         else {
@@ -117,9 +117,9 @@ int help(object me)
 {
         write(
 @HELP
-�׶�����
-       �Ƿ����񹦣���Τ���Ƶ����⹥������һ�������ڹ�ע���������������У�
-       ն����ħ���޼᲻�ݣ������ނ������Ƿ��ŵ�һ�ȵķ�ħ�񹦡�
+雷动九天
+       是佛门神功－－韦陀杵的特殊攻击，将一身佛门内功注入手中所用禅杖中，
+       斩妖伏魔，无坚不摧，刚猛无，乃是佛门第一等的伏魔神功。
 HELP
         );
         return 1;

@@ -1,4 +1,4 @@
-// yan.c Óáá·ÑÒ
+// yan.c ä¿žå²±å²©
 
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Óáá·ÑÒ", ({ "yu daiyan", "yu" }));
-        set("nickname", "Îäµ±ÈýÏÀ");
+        set_name("ä¿žå²±å²©", ({ "yu daiyan", "yu" }));
+        set("nickname", "æ­¦å½“ä¸‰ä¾ ");
         set("long",
-                "Ëû¾ÍÊÇÕÅÈý·áµÄ×î²»ÐÒµÄµÜ×Ó¡¢Îäµ±ÆßÏÀÖ®ÈýµÄÓáá·ÑÒ¡£\n"
-                "Éí´©Ò»¼þ¸É¸É¾»¾»µÄÇà²¼³¤ÉÀ¡£\n"
-                "Ëû²»¹ýÈýÊ®³öÍ·Äê¼Í£¬Ë«ÍÈ²Ð·Ï£¬ÕÅÕæÈËÃüËûÖ÷³ÖÕæÎä½£Õó¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯å¼ ä¸‰ä¸°çš„æœ€ä¸å¹¸çš„å¼Ÿå­ã€æ­¦å½“ä¸ƒä¾ ä¹‹ä¸‰çš„ä¿žå²±å²©ã€‚\n"
+                "èº«ç©¿ä¸€ä»¶å¹²å¹²å‡€å‡€çš„é’å¸ƒé•¿è¡«ã€‚\n"
+                "ä»–ä¸è¿‡ä¸‰åå‡ºå¤´å¹´çºªï¼ŒåŒè…¿æ®‹åºŸï¼Œå¼ çœŸäººå‘½ä»–ä¸»æŒçœŸæ­¦å‰‘é˜µã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 31);
         set("attitude", "peaceful");
         set("class", "swordsman");
@@ -78,11 +78,11 @@ set_skill("strike", 150);
 	set("chat_chance", 1);
 
         set("chat_msg", ({
-            "Óáá·ÑÒËµµÀ£ºÕæÎä½£ÕóÊÇ¶÷Ê¦µÄÐÄÑª¡£",
-            "Óáá·ÑÒÑöÌìÌ¾µÀ£ºÄÄÎ»Î×Ê¦ÄÜÖÎºÃÎÒµÄÍÈ£¬ÎÒÒ²ÇëÑ¼×¯Ò»¶Ù¡£"
+            "ä¿žå²±å²©è¯´é“ï¼šçœŸæ­¦å‰‘é˜µæ˜¯æ©å¸ˆçš„å¿ƒè¡€ã€‚",
+            "ä¿žå²±å²©ä»°å¤©å¹é“ï¼šå“ªä½å·«å¸ˆèƒ½æ²»å¥½æˆ‘çš„è…¿ï¼Œæˆ‘ä¹Ÿè¯·é¸­åº„ä¸€é¡¿ã€‚"
         }));
 
-         create_family("Îäµ±ÅÉ", 2, "µÜ×Ó");
+         create_family("æ­¦å½“æ´¾", 2, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -103,21 +103,21 @@ void init()
 void greeting(object ob)
 {
    int i;
-   if (environment(ob)->query("short")=="ÄÏÑÒ¹¬¸ßÌ¨"){
+   if (environment(ob)->query("short")=="å—å²©å®«é«˜å°"){
 if (!ob) return;
    if (((int)ob->query_skill("taiji-shengong", 1) == 0))
    {
-      message_vision(CYN"Ê®ÈýµÜ×Ó¶Ô$NÆëÉùºÈµÀ£ºÄãÕâ¸öÐ°Ä§ÍâµÀ£¬¸ÒÀ´ÕæÎä½£Õó£¿\n\n"NOR,ob);
+      message_vision(CYN"åä¸‰å¼Ÿå­å¯¹$Né½å£°å–é“ï¼šä½ è¿™ä¸ªé‚ªé­”å¤–é“ï¼Œæ•¢æ¥çœŸæ­¦å‰‘é˜µï¼Ÿ\n\n"NOR,ob);
       ob->set("qi",30);
 //      if ((int)ob->query("combat_exp") <2000) ob->set("combat_exp",1);
 //         else ob->add("combat_exp",-1000);
-      message_vision(CYN"ÕæÎä½£Õó¶ÙÊ±Æô¶¯£¬¸ßÌ¨ÉÏ½£Æø×Ýºá£¬°Ñ$NÎ§ÔÚÖÐÑë¡£\n"NOR,ob);
-      message_vision(CYN"Ê®Èý¿Ú³¤½£Æë³ö£¬ÔÚ$NÉíÉÏ»®³öÁËÊ®ÈýµÀ¿Ú×Ó£¬ÏÊÑªÁÜÀì¡£\n"NOR,ob);
-      say(CYN"\n\nÓáá·ÑÒÁ³ÏÖÅ­ÈÝ£º¡°Ð°Ä§ÍâµÀ£¬Ò²¸Ò´³ÕæÎä½£Õó£¡¡±\n");
-      message_vision("Óáá·ÑÒ¾Ó¸ßÁÙÏÂ£¬ÆðÊÖÒ»ÕÆ°Ñ$NÅüÂä¸ßÌ¨¡£\n\n\n"NOR,ob);
+      message_vision(CYN"çœŸæ­¦å‰‘é˜µé¡¿æ—¶å¯åŠ¨ï¼Œé«˜å°ä¸Šå‰‘æ°”çºµæ¨ªï¼ŒæŠŠ$Nå›´åœ¨ä¸­å¤®ã€‚\n"NOR,ob);
+      message_vision(CYN"åä¸‰å£é•¿å‰‘é½å‡ºï¼Œåœ¨$Nèº«ä¸Šåˆ’å‡ºäº†åä¸‰é“å£å­ï¼Œé²œè¡€æ·‹æ¼“ã€‚\n"NOR,ob);
+      say(CYN"\n\nä¿žå²±å²©è„¸çŽ°æ€’å®¹ï¼šâ€œé‚ªé­”å¤–é“ï¼Œä¹Ÿæ•¢é—¯çœŸæ­¦å‰‘é˜µï¼â€\n");
+      message_vision("ä¿žå²±å²©å±…é«˜ä¸´ä¸‹ï¼Œèµ·æ‰‹ä¸€æŽŒæŠŠ$NåŠˆè½é«˜å°ã€‚\n\n\n"NOR,ob);
       ob->unconcious();
       ob->move("/d/wudang/nanyangong");
-      CHANNEL_D->do_channel(this_object(),"chat",sprintf("%s Ë½´³ÕæÎä½£Õó£¬ÄîÆä³É³¤²»Ò×£¬ÔÝÃâÒ»ËÀ£¡",ob->name(1)));
+      CHANNEL_D->do_channel(this_object(),"chat",sprintf("%s ç§é—¯çœŸæ­¦å‰‘é˜µï¼Œå¿µå…¶æˆé•¿ä¸æ˜“ï¼Œæš‚å…ä¸€æ­»ï¼",ob->name(1)));
    }
 }
 }
@@ -126,21 +126,21 @@ void attempt_apprentice(object me)
 {
         if ((int)me->query("guarded") < 3) {
                 command("say " + RANK_D->query_respect(me) +
-                        "Äã¶ÔÎÒÎäµ±ÅÉ¾¡ÁË¶àÉÙÐÄÁ¦£¬ÓÐ¼¸·ÖÖÒÐÄÄØ£¿");
+                        "ä½ å¯¹æˆ‘æ­¦å½“æ´¾å°½äº†å¤šå°‘å¿ƒåŠ›ï¼Œæœ‰å‡ åˆ†å¿ å¿ƒå‘¢ï¼Ÿ");
                 return;
         }
         if ((int)me->query_skill("taiji-shengong", 1) < 30) {
-                command("say ÎÒÎäµ±ÅÉÄËÄÚ¼ÒÎä¹¦£¬×îÖØÊÓÄÚ¹¦ÐÄ·¨¡£");
+                command("say æˆ‘æ­¦å½“æ´¾ä¹ƒå†…å®¶æ­¦åŠŸï¼Œæœ€é‡è§†å†…åŠŸå¿ƒæ³•ã€‚");
                 command("say " + RANK_D->query_respect(me) +
-                        "ÊÇ·ñ»¹Ó¦¸ÃÔÚÌ«¼«Éñ¹¦ÉÏ¶àÏÂµã¹¦·ò£¿");
+                        "æ˜¯å¦è¿˜åº”è¯¥åœ¨å¤ªæžç¥žåŠŸä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
                 return;
         }
         if ((int)me->query("shen") < 1000) {
-                command("say ÎÒÎäµ±ÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(me) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ­¦å½“ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(me) +
+                        "æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + me->query("id"));
 }

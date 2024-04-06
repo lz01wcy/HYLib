@@ -1,5 +1,5 @@
 // Last Modified by winder on Sep. 12 2001
-// wuchen.c ÎŞ³¾µÀ³¤
+// wuchen.c æ— å°˜é“é•¿
 
 #include <ansi.h>
 inherit NPC;
@@ -7,11 +7,11 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÎŞ³¾µÀ³¤", ({ "wuchen daozhang", "wuchen" }));
-	set("title", HIR"ºì»¨»á"HIG"¶şµ±¼Ò"NOR);
-	set("nickname", HIB"×·»ê¶áÃü½£"NOR);
-	set("long", "ËûÊÇºì»¨»á×øµÚ¶ş°Ñ½»ÒÎµÄÎŞ³¾µÀ³¤£¬\nºì»¨»áÖĞÊıËû½£·¨×îºÃ£¬\nËûÄê¼ÍºÃÏñÔÚËÄÊ®Ëê×óÓÒ£¬ÉíĞÎÊİÏ÷£¬ò¢ÏÂºúĞëÎŞ·ç×Ô¶¯£¬Á³ÉÏ±íÇé²»Å­×ÔÍş¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ— å°˜é“é•¿", ({ "wuchen daozhang", "wuchen" }));
+	set("title", HIR"çº¢èŠ±ä¼š"HIG"äºŒå½“å®¶"NOR);
+	set("nickname", HIB"è¿½é­‚å¤ºå‘½å‰‘"NOR);
+	set("long", "ä»–æ˜¯çº¢èŠ±ä¼šåç¬¬äºŒæŠŠäº¤æ¤…çš„æ— å°˜é“é•¿ï¼Œ\nçº¢èŠ±ä¼šä¸­æ•°ä»–å‰‘æ³•æœ€å¥½ï¼Œ\nä»–å¹´çºªå¥½åƒåœ¨å››åå²å·¦å³ï¼Œèº«å½¢ç˜¦å‰Šï¼Œé¢Œä¸‹èƒ¡é¡»æ— é£è‡ªåŠ¨ï¼Œè„¸ä¸Šè¡¨æƒ…ä¸æ€’è‡ªå¨ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("class", "taoist");
 	set("age", 44);
 	set("attitude", "peaceful");
@@ -53,7 +53,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-	create_family("ºì»¨»á", 2, "µÜ×Ó");
+	create_family("çº¢èŠ±ä¼š", 2, "å¼Ÿå­");
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
 	carry_object("/d/wudang/obj/greyrobe")->wear();
@@ -67,9 +67,9 @@ void init()
 	if((int)ob->query("shen") < -1000 &&
 		ob->query("family/master_id")=="wuchen daozhang")
 	{
-		command( "chat "+ob->query("name")+"£¡ÄãÕâµÈĞ°¶ñ¼éÕ©Ö®Í½£¬ÎÒºì»¨»áÆñÄÜÈİÄã£¡\n");
+		command( "chat "+ob->query("name")+"ï¼ä½ è¿™ç­‰é‚ªæ¶å¥¸è¯ˆä¹‹å¾’ï¼Œæˆ‘çº¢èŠ±ä¼šå²‚èƒ½å®¹ä½ ï¼\n");
 		command("expell "+ ob->query("id"));
-		this_player()->set("title","ºì»¨»á" + RED + "ÆúÍ½" NOR);
+		this_player()->set("title","çº¢èŠ±ä¼š" + RED + "å¼ƒå¾’" NOR);
 	}
 }
 
@@ -77,11 +77,11 @@ void attempt_apprentice(object ob)
 {
 	if ((int)ob->query("shen") < 10000)
 	{
-		command("say ºß£¡");
-		command("say ÕâÎ»" + RANK_D->query_respect(ob) + "ÎªÈËÖ®µÀËÆºõ²»ÔõÃ´Ñù£¡");
+		command("say å“¼ï¼");
+		command("say è¿™ä½" + RANK_D->query_respect(ob) + "ä¸ºäººä¹‹é“ä¼¼ä¹ä¸æ€ä¹ˆæ ·ï¼");
 		return;
 	}
-	command("say ²»´í£¬²»´í£¬ÎÒ¾ÍÊÕÏÂÄãÁË£¡");
+	command("say ä¸é”™ï¼Œä¸é”™ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ï¼");
 	command("recruit " + ob->query("id"));
 }
 

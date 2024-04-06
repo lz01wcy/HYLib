@@ -1,4 +1,4 @@
-// mie.c  »Ø·ç·÷Áø½£·¨¡¸Ãğ½£¡¹
+// mie.c  å›é£æ‹‚æŸ³å‰‘æ³•ã€Œç­å‰‘ã€
 
 #include <ansi.h>
 
@@ -12,24 +12,24 @@ int perform(object me, object target)
         if (!target ) target = offensive_target(me);
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-                return notify_fail(RED"¿ªÊ²Ã´ÍæĞ¦£¬Ã»×°±¸½£¾ÍÏëÊ¹¡¸½£ÉñÒ»Ğ¦¡¹£¿\n"NOR);
+                return notify_fail(RED"å¼€ä»€ä¹ˆç©ç¬‘ï¼Œæ²¡è£…å¤‡å‰‘å°±æƒ³ä½¿ã€Œå‰‘ç¥ä¸€ç¬‘ã€ï¼Ÿ\n"NOR);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸½£ÉñÒ»Ğ¦¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå‰‘ç¥ä¸€ç¬‘ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if ((int)me->query_skill("softsword", 1) < 100)
-                return notify_fail(WHT"ÄãµÄ»Ø·ç·÷Áø½£·¨²»¹»æµÊì£¬»¹Ê¹²»³ö¡¸½£ÉñÒ»Ğ¦¡¹¡£\n"NOR);
+                return notify_fail(WHT"ä½ çš„å›é£æ‹‚æŸ³å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜ä½¿ä¸å‡ºã€Œå‰‘ç¥ä¸€ç¬‘ã€ã€‚\n"NOR);
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if (me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
         if ((int)me->query("neili")<200)
         {
-               return notify_fail(HIC"ÄãÏÖÔÚÄÚÁ¦²»¹»£¬Ã»ÄÜ½«¡¸Ãğ½£¡¹Ê¹Íê£¡\n"NOR);
+               return notify_fail(HIC"ä½ ç°åœ¨å†…åŠ›ä¸å¤Ÿï¼Œæ²¡èƒ½å°†ã€Œç­å‰‘ã€ä½¿å®Œï¼\n"NOR);
         }
-	msg = HIR  "$NÊÖÖĞ"+ weapon->name() +"µÄ½£Ã¢É¢·¢³öÈôÓĞÈôÎŞµÄÇ³Ğ¦£®£®£®" NOR;
-	msg +=  HIW "½£¹âÒ»ÉÁ£¬ÏûÊ§£®£®£®£®\n" NOR;
+	msg = HIR  "$Næ‰‹ä¸­"+ weapon->name() +"çš„å‰‘èŠ’æ•£å‘å‡ºè‹¥æœ‰è‹¥æ— çš„æµ…ç¬‘ï¼ï¼ï¼" NOR;
+	msg +=  HIW "å‰‘å…‰ä¸€é—ªï¼Œæ¶ˆå¤±ï¼ï¼ï¼ï¼\n" NOR;
                 me->start_busy(2);
                 if (!target->is_busy())
                 target->start_busy(random(2));

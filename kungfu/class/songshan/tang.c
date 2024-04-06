@@ -5,9 +5,9 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("ÌÀÓ¢ðÀ", ({ "tang yinghu", "yinghu", "tang" }) );
-	set("long", "ËûÊÇáÔÉ½ÅÉÕÆÃÅÈËµÄÆßÊ¦µÜ£¬ÕÆÃÅÈËµÄµÃÁ¦ÖúÊÖ¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("æ±¤è‹±é¹„", ({ "tang yinghu", "yinghu", "tang" }) );
+	set("long", "ä»–æ˜¯åµ©å±±æ´¾æŽŒé—¨äººçš„ä¸ƒå¸ˆå¼Ÿï¼ŒæŽŒé—¨äººçš„å¾—åŠ›åŠ©æ‰‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("class", "swordsman");
 	set("age", 45);
 	set("attitude", "peaceful");
@@ -56,7 +56,7 @@ void create()
 		(: exert_function, "regenerate" :),
 		(: exert_function, "recover" :),
 	}) );
-	create_family("áÔÉ½ÅÉ", 13, "µÜ×Ó");
+	create_family("åµ©å±±æ´¾", 13, "å¼Ÿå­");
 	setup();
 carry_object(__DIR__"kuojian")->wield();
 	carry_object(__DIR__"obj/yellow-cloth")->wear();

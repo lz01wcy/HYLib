@@ -3,25 +3,25 @@
 #include <ansi.h>
 inherit SKILL;
 mapping *action = ({
-       ([     "name":             "Æ½´Ì",
-              "action":		"$NÆ½ÎÕ$w£¬Ğ®ÖøÉÁÉÁ³àºì½£¹â´ÌÏò$nµÄ$l",
+       ([     "name":             "å¹³åˆº",
+              "action":		"$Nå¹³æ¡$wï¼ŒæŒŸè‘—é—ªé—ªèµ¤çº¢å‰‘å…‰åˆºå‘$nçš„$l",
               "dodge":            20,
               "damage":           50,
-              "damage_type":      "´ÌÉË"
+              "damage_type":      "åˆºä¼¤"
 	]),
-       ([     "name":             "Í»´Ì",
-              "action":		"$N½«$wĞ±Ïò×ó±ß£¬Ëæ×ÅÌ¤²½Éù£¬Íù$nµÄ$l¿ñ´ÌÊı½£",
+       ([     "name":             "çªåˆº",
+              "action":		"$Nå°†$wæ–œå‘å·¦è¾¹ï¼Œéšç€è¸æ­¥å£°ï¼Œå¾€$nçš„$lç‹‚åˆºæ•°å‰‘",
               "dodge":            10,
               "parry" :           30,
               "damage":           150,
-              "damage_type":	"´ÌÉË"
+              "damage_type":	"åˆºä¼¤"
 	]),
-       ([     "name":             "ÉÁÍ»´Ì",
-		"action":		"$N²àÉíÆ½ÎÕ$w£¬½£¼âÏÂ³Á¶øºóÇã£¬ÒÔÉÁµçÖ®ÊÆ´ÌÏò$nµÄ$l",
+       ([     "name":             "é—ªçªåˆº",
+		"action":		"$Nä¾§èº«å¹³æ¡$wï¼Œå‰‘å°–ä¸‹æ²‰è€Œåå€¾ï¼Œä»¥é—ªç”µä¹‹åŠ¿åˆºå‘$nçš„$l",
               "dodge":            50,
               "parry":            100,
               "damage":           200,
-              "damage_type":      "´ÌÉË"
+              "damage_type":      "åˆºä¼¤"
 	]),
 });
 
@@ -30,11 +30,11 @@ int valid_learn(object me)
 	object ob;
 
 	if( (int)me->query("max_neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞ°ì·¨Ñ§"RED"ÑªÒÂ½£·¨"NOR"¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•å­¦"RED"è¡€è¡£å‰‘æ³•"NOR"ã€‚\n");
 
 	if( !(ob = me->query_temp("weapon"))
 	||	(string)ob->query("skill_type") != "sword" )
-		return notify_fail("Äã±ØĞëÏÈÕÒÒ»°Ñ½£²ÅÄÜÁ·½£·¨¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æŠŠå‰‘æ‰èƒ½ç»ƒå‰‘æ³•ã€‚\n");
 
 	return 1;
 }
@@ -53,10 +53,10 @@ int practice_skill(object me)
 {
 	if( (int)me->query("jing") < 30
 	||	(int)me->query("neili") < 5 )
-		return notify_fail("ÄãµÄÄÚÁ¦»òÆø²»¹»£¬Ã»ÓĞ°ì·¨Á·Ï°"RED"ÑªÒÂ½£·¨"NOR"¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›æˆ–æ°”ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•ç»ƒä¹ "RED"è¡€è¡£å‰‘æ³•"NOR"ã€‚\n");
 	me->receive_damage("jing", 30);
 	me->add("neili", -5);
-	//write("Äã°´ÖøËùÑ§Á·ÁËÒ»±é"RED"ÑªÒÂ½£·¨"NOR"¡£\n");
+	//write("ä½ æŒ‰è‘—æ‰€å­¦ç»ƒäº†ä¸€é"RED"è¡€è¡£å‰‘æ³•"NOR"ã€‚\n");
 	return 1;
 }
 

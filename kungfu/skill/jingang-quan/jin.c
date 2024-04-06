@@ -1,4 +1,4 @@
-// jingsng.c ½ğ¸ÕÈ­ ´ó½ğ¸ÕÉñÍ¨
+// jingsng.c é‡‘åˆšæ‹³ å¤§é‡‘åˆšç¥é€š
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,60 +16,60 @@ int perform(object me, object target)
 	int d_count, count, qi, maxqi, skill;
 
 	if( !me->is_fighting() )
-    	return notify_fail("¡¸´ó½ğ¸ÕÉñÍ¨¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+    	return notify_fail("ã€Œå¤§é‡‘åˆšç¥é€šã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
       if( !target ) target = offensive_target(me);
         if( (int)me->query_temp("liuyun") ) 
-                return notify_fail(HIG"ÄãÒÑ¾­ÔÚÄ¬ÔËÁ÷ÔÆË®ĞäÉñ¹¦ÁË¡£\n");
+                return notify_fail(HIG"ä½ å·²ç»åœ¨é»˜è¿æµäº‘æ°´è¢–ç¥åŠŸäº†ã€‚\n");
 
         if( (int)me->query_temp("qzj_tong") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÍ¬¹é½£ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿åŒå½’å‰‘äº†ã€‚\n");
 
         if((int)me->query_temp("tzzf") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÕÆµ¶µÄÔË¹¦ÖĞ¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨æŒåˆ€çš„è¿åŠŸä¸­ã€‚\n");
         if( me->query_temp("yuxiao/tianwu") )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸·ï»ËÌìÎè¡¹ĞÄ·¨£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œå‡¤å‡°å¤©èˆã€å¿ƒæ³•ï¼\n");
        if(me->query_temp("anran")) 
-       return notify_fail("ÄãÏÖÔÚÕıÔÚÊ¹ÓÃ¡¸÷öÈ»¡¹¾ø¼¼¡£\n"); 
+       return notify_fail("ä½ ç°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œé»¯ç„¶ã€ç»æŠ€ã€‚\n"); 
        if(me->query_temp("wdpowerup") )
-       return notify_fail("ÄãÏÖÔÚÕıÔÚÊ¹ÓÃ¡¸Îå¶¾Éñ¹¦¡¹µÄ¾ø¼¼¡£\n"); 
+       return notify_fail("ä½ ç°åœ¨æ­£åœ¨ä½¿ç”¨ã€Œäº”æ¯’ç¥åŠŸã€çš„ç»æŠ€ã€‚\n"); 
        if(me->query_temp("zhuihun/lpf")) 
-       return notify_fail("ÄãÕıÔÚÊ¹ÓÃÎå¶¾×·»ê¹³Ö®¡¸ÂÒÅû·ç¡¹\n"); 
+       return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨äº”æ¯’è¿½é­‚é’©ä¹‹ã€Œä¹±æŠ«é£ã€\n"); 
 
       if( me->query_temp("fumo")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃ´ó½ğ¸ÕÈ­µÄÌØÊâ¹¥»÷¡¸½ğ¸Õ·üÄ§¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å¤§é‡‘åˆšæ‹³çš„ç‰¹æ®Šæ”»å‡»ã€Œé‡‘åˆšä¼é­”ã€ï¼\n");
       if( me->query_temp("jingang")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃ´ó½ğ¸ÕÈ­µÄÌØÊâ¹¥»÷¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å¤§é‡‘åˆšæ‹³çš„ç‰¹æ®Šæ”»å‡»ã€Œå¤§é‡‘åˆšç¥é€šã€ï¼\n");
       if( me->query_temp("fanzhen")   )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸½ğ¸Õ²»»µÌåÉñ¹¦¡¹£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œé‡‘åˆšä¸åä½“ç¥åŠŸã€ï¼\n");
 	if( (int)me->query_temp("zuida") ) 
-		return notify_fail(HIG"ÄãÄÚÏ¢·­¹öÔÚ°ËÏÉ×í´òÖĞ£¬Ò»Ê±Ìá²»ÆğÒ×½î¾­Éñ¹¦¡£\n"NOR);
+		return notify_fail(HIG"ä½ å†…æ¯ç¿»æ»šåœ¨å…«ä»™é†‰æ‰“ä¸­ï¼Œä¸€æ—¶æä¸èµ·æ˜“ç­‹ç»ç¥åŠŸã€‚\n"NOR);
 
       if( !target || !me->is_fighting(target) )
-      return notify_fail("¡¸´ó½ğ¸ÕÉñÍ¨¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+      return notify_fail("ã€Œå¤§é‡‘åˆšç¥é€šã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
              
       if( objectp(me->query_temp("weapon")) )
-      return notify_fail("Äã±ØĞë¿ÕÊÖÊ¹ÓÃ¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¡\n");
+      return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ä½¿ç”¨ã€Œå¤§é‡‘åˆšç¥é€šã€ï¼\n");
 
     if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»¸ß£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿé«˜ï¼\n");
 
 	if( (int)me->query_skill("hunyuan-yiqi", 1) < 60)
-		return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦µÄĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ´ó½ğ¸ÕÉñÍ¨! \n");
+		return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸçš„ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨å¤§é‡‘åˆšç¥é€š! \n");
 
 	if( (int)me->query_skill("cuff") < 150 )
-		return notify_fail("ÄãµÄÈ­·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ çš„æ‹³æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨å¤§é‡‘åˆšç¥é€šï¼\n");
 
 	if( me->query_skill_mapped("cuff") != "jingang-quan") 
-		return notify_fail("ÄãÃ»ÓĞ¼¤·¢½ğ¸ÕÈ­£¬ÎŞ·¨Ê¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é‡‘åˆšæ‹³ï¼Œæ— æ³•ä½¿ç”¨å¤§é‡‘åˆšç¥é€šï¼\n");
 	
 //        if( me->query_temp("apply/strength", 1) > 1 )
-//                return notify_fail("Äã»¹ÔÚÊ¹ÓÃÌ«Ğş¹¦Ò»ÀàµÄ¹¦·ò£¬²»ÄÜÊ¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+//                return notify_fail("ä½ è¿˜åœ¨ä½¿ç”¨å¤ªç„åŠŸä¸€ç±»çš„åŠŸå¤«ï¼Œä¸èƒ½ä½¿ç”¨å¤§é‡‘åˆšç¥é€šï¼\n");
        
 //        if( me->query_temp("apply/dexerity", 1) > 1 )
-//                return notify_fail("Äã»¹ÔÚÊ¹ÓÃÌ«Ğş¹¦Ò»ÀàµÄ¹¦·ò£¬²»ÄÜÊ¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+//                return notify_fail("ä½ è¿˜åœ¨ä½¿ç”¨å¤ªç„åŠŸä¸€ç±»çš„åŠŸå¤«ï¼Œä¸èƒ½ä½¿ç”¨å¤§é‡‘åˆšç¥é€šï¼\n");
 
 	
-    msg = HIY "$NÊ¹³ö´ó½ğ¸ÕÈ­µÄ¾ø¼¼¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¬±ÛÁ¦¶¸È»Ôö¼Ó£¡\n" NOR;
+    msg = HIY "$Nä½¿å‡ºå¤§é‡‘åˆšæ‹³çš„ç»æŠ€ã€Œå¤§é‡‘åˆšç¥é€šã€ï¼Œè‡‚åŠ›é™¡ç„¶å¢åŠ ï¼\n" NOR;
 	
 	qi = me->query("qi");
 	maxqi = me->query("max_qi");
@@ -80,7 +80,7 @@ int perform(object me, object target)
 	if(qi > (maxqi * 0.1))
 	{	
 	if( (int)me->query_temp("jingang") ) 
-		return notify_fail(HIG"ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+		return notify_fail(HIG"ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
     	message_vision(msg, me, target);
 		
@@ -93,7 +93,7 @@ int perform(object me, object target)
     	return 1;
 	}
 	else{
-		msg = HIR "$NÆ´¾¡±ÏÉú¹¦Á¦Ê¹³öÁË´ó½ğ¸ÕÈ­µÄÖÕ¼«¾ø¼¼, È«Éí¹Ç÷ÀÒ»Õó±¬Ïì, ÓûÓëµĞÈËÍ¬¹éÓÚ¾¡!\n" NOR;
+		msg = HIR "$Næ‹¼å°½æ¯•ç”ŸåŠŸåŠ›ä½¿å‡ºäº†å¤§é‡‘åˆšæ‹³çš„ç»ˆæç»æŠ€, å…¨èº«éª¨éª¼ä¸€é˜µçˆ†å“, æ¬²ä¸æ•ŒäººåŒå½’äºå°½!\n" NOR;
 		message_vision(msg, me, target);
 		me->add_temp("apply/strength", count);	
 		me->add_temp("apply/dexerity", d_count);
@@ -105,7 +105,7 @@ int perform(object me, object target)
 		COMBAT_D->do_attack(me, ob, me->query_temp("weapon"), 0);
 		COMBAT_D->do_attack(me, ob, me->query_temp("weapon"), 0);
 		COMBAT_D->do_attack(me, ob, me->query_temp("weapon"), 0);		
-		msg = HIR "$NÓÃ¾¡ÁË×îºóÒ»µãÆøÁ¦, Åç³öÒ»¿ÚÏÊÑª, Ò»Í·ÔÔµ¹ÔÚµØ!\n" NOR;
+		msg = HIR "$Nç”¨å°½äº†æœ€åä¸€ç‚¹æ°”åŠ›, å–·å‡ºä¸€å£é²œè¡€, ä¸€å¤´æ ½å€’åœ¨åœ°!\n" NOR;
 		message_vision(msg, me, target);
 		me->add("neili", -300);
 		return 1;
@@ -122,6 +122,6 @@ void remove_effect(object me, int aamount, int damount)
 		me->add_temp("apply/strength", -count);	
 		me->add_temp("apply/dexerity", -d_count);
 		me->delete_temp("jingang");
-		tell_object(me, HIY "ÄãµÄ´ó½ğ¸ÕÉñÍ¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+		tell_object(me, HIY "ä½ çš„å¤§é‡‘åˆšç¥é€šè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR);
 	}
 }

@@ -1,4 +1,4 @@
-//mahayana.c  ´ó³ËÄùÅÍ¹¦
+//mahayana.c  å¤§ä¹˜æ¶…ç£åŠŸ
 inherit SKILL;
 
 void create() { seteuid(getuid()); }
@@ -7,19 +7,19 @@ int valid_learn(object me)
 {
     mapping myfam;
     myfam = (mapping)me->query("family");
-    if (!myfam || (myfam["family_name"] != "¶ëáÒÅÉ"))
-       return notify_fail("Äã²»ÊÇ¶ëáÒµÜ×Ó£¬²»ÄÜĞŞÁ¶´ó³ËÄùÅÍ¹¦¡£\n");
+    if (!myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾"))
+       return notify_fail("ä½ ä¸æ˜¯å³¨åµ‹å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç‚¼å¤§ä¹˜æ¶…ç£åŠŸã€‚\n");
 
     if ((int)me->query("shen") < 0 )
-       return notify_fail("ÄãµÄĞ°ÆøÌ«ÖØ£¬ÎŞ·¨ĞŞÁ¶´ó³ËÄùÅÍ¹¦¡£\n");
+       return notify_fail("ä½ çš„é‚ªæ°”å¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼å¤§ä¹˜æ¶…ç£åŠŸã€‚\n");
 
     if(me->query("class") == "taoist")
-       return notify_fail("¹ş¹ş£¡"+RANK_D->query_respect(me)
-                   +"µ±ÁËÅ£±Ç×Ó£¬ÔõÃ´È´À´Ñ§´ó³ËÄùÅÍ¹¦£¿\n");
+       return notify_fail("å“ˆå“ˆï¼"+RANK_D->query_respect(me)
+                   +"å½“äº†ç‰›é¼»å­ï¼Œæ€ä¹ˆå´æ¥å­¦å¤§ä¹˜æ¶…ç£åŠŸï¼Ÿ\n");
     return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("´ó³ËÄùÅÍ¹¦Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("å¤§ä¹˜æ¶…ç£åŠŸåªèƒ½é å­¦ä¹ æ¥æé«˜ã€‚\n");
 }

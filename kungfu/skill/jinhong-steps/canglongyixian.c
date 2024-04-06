@@ -12,12 +12,12 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û²ÔÁúÕ§ÏÖ£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»è‹é¾™ä¹ç°ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("jinhong-steps",1) / 5;
 	me->add_temp("apply/attack", extra);	
-	msg = HIR  "$N½ÅÏÂÒ»×ª£¬Í»È»ÉíĞÎ·ÉÆğ£¬Ë«½ÅÈç½ÃÁú°ãÌÚ¿ÕÒ»¾í£¬ÃÍµØÏò$nÌß³ö£¡" NOR;
-	COMBAT_D->do_attack(me,target, 0, TYPE_REGULAR,msg,"ğöÉË");
+	msg = HIR  "$Nè„šä¸‹ä¸€è½¬ï¼Œçªç„¶èº«å½¢é£èµ·ï¼ŒåŒè„šå¦‚çŸ«é¾™èˆ¬è…¾ç©ºä¸€å·ï¼ŒçŒ›åœ°å‘$nè¸¢å‡ºï¼" NOR;
+	COMBAT_D->do_attack(me,target, 0, TYPE_REGULAR,msg,"ç˜€ä¼¤");
 	me->add_temp("apply/attack", -extra);
 	me->start_busy(1);
 	return 1;

@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// gu.c ¹Â×¢Ò»ÖÀ
+// gu.c å­¤æ³¨ä¸€æ·
 
 #include <ansi.h>
 
@@ -19,18 +19,18 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸¹Â×¢Ò»ÖÀ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå­¤æ³¨ä¸€æ·ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸¹Â×¢Ò»ÖÀ¡¹£¡\n");              
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œå­¤æ³¨ä¸€æ·ã€ï¼\n");              
 
         if( (int)me->query_skill("huixin-strike", 1) < 60 )
-                return notify_fail("ÄãµÄ¶ëáÒ´ßĞÄÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸¹Â×¢Ò»ÖÀ¡¹!\n");
+                return notify_fail("ä½ çš„å³¨åµ‹å‚¬å¿ƒæŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œå­¤æ³¨ä¸€æ·ã€!\n");
 
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸¹Â×¢Ò»ÖÀ¡¹!\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå­¤æ³¨ä¸€æ·ã€!\n");
 
-        msg = CYN "$NÄ¬ÔËÉñ¹¦£¬Ê¹³ö¡¸"RED"¹Â×¢Ò»ÖÀ"CYN"¡¹£¬Ë«ÕÆÆ½ÍÆ¹¥Ïò$n¡£\n"NOR;
+        msg = CYN "$Né»˜è¿ç¥åŠŸï¼Œä½¿å‡ºã€Œ"RED"å­¤æ³¨ä¸€æ·"CYN"ã€ï¼ŒåŒæŒå¹³æ¨æ”»å‘$nã€‚\n"NOR;
 
         ap = me->query_skill("strike");
         dp = target->query_skill("force");
@@ -45,19 +45,19 @@ int perform(object me, object target)
                 me->add("neili", -150);
 
                 if( damage < 40 )
-                        msg += HIY"½á¹û$n±»$NË«ÕÆ´òÔÚĞØ¿Ú£¬ÃÆºßÒ»Éù¡£\n"NOR;
+                        msg += HIY"ç»“æœ$nè¢«$NåŒæŒæ‰“åœ¨èƒ¸å£ï¼Œé—·å“¼ä¸€å£°ã€‚\n"NOR;
                 else if( damage < 80 )
-                        msg += HIY"½á¹û$n±»$NÒÔË«ÕÆ´òÔÚĞØ¿Ú£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n"NOR;
+                        msg += HIY"ç»“æœ$nè¢«$Nä»¥åŒæŒæ‰“åœ¨èƒ¸å£ï¼Œã€Œå˜¿ã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n"NOR;
                 else if( damage < 160 )
-                        msg += RED"½á¹û$n±»$NÒÔË«ÕÆ´òÔÚĞØ¿Ú£¬ÓĞÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n"NOR;
+                        msg += RED"ç»“æœ$nè¢«$Nä»¥åŒæŒæ‰“åœ¨èƒ¸å£ï¼Œæœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿é€€äº†äº”å…­æ­¥ï¼\n"NOR;
                 else
-                        msg += HIR"½á¹û$n±»$NµÄË«ÕÆ´òÔÚĞØ¿Ú£¬ÑÛÇ°Ò»ºÚ£¬ÏóÒ»À¦µ¾²İÒ»Ñù·É³öÈ¥ºÃ¼¸ÕÉÔ¶£¡\n"NOR;
+                        msg += HIR"ç»“æœ$nè¢«$Nçš„åŒæŒæ‰“åœ¨èƒ¸å£ï¼Œçœ¼å‰ä¸€é»‘ï¼Œè±¡ä¸€æ†ç¨»è‰ä¸€æ ·é£å‡ºå»å¥½å‡ ä¸ˆè¿œï¼\n"NOR;
                 
         }
         else 
         {
                 me->start_busy(1 + random(2));
-                msg += CYN"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬ÉíĞÎÒ»×ª£¬·´ÕÆ»Ø»÷¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œèº«å½¢ä¸€è½¬ï¼ŒåæŒå›å‡»ã€‚\n"NOR;
         }
         message_combatd(msg, me, target);
 

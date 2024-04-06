@@ -14,34 +14,34 @@ int perform(object me, object target)
         ||  !target->is_character()
         ||  !me->is_fighting(target) 
         ||  !living(target))
-                return notify_fail("����ָ�ὣ��ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("「绕指柔剑」只能对战斗中的对手使用。\n");
 
         if( (int)me->query_skill("raozhi-roujian", 1) < 200 )
-                return notify_fail("���̫����������̫ǳ�ˡ�\n");
+                return notify_fail("你的太极剑法功力太浅了。\n");
         if(me->query_temp("tjj/raozhi"))
-                return notify_fail("������ʹ�á���ָ�ὣ����\n");
+                return notify_fail("你正在使用「绕指柔剑」。\n");
 
         if( (int)me->query_skill("sword", 1) < 200 )
-                return notify_fail("��Ļ�����������̫ǳ�ˡ�\n");
+                return notify_fail("你的基本剑法功力太浅了。\n");
         if( (int)me->query_skill("taiji-shengong", 1) < 180 )
-                return notify_fail("��ı����ڹ�����̫ǳ�ˡ�\n");
+                return notify_fail("你的本门内功功力太浅了。\n");
         if( (int)me->query("neili") < 500 )
-                return notify_fail("�������������\n");
+                return notify_fail("你的真气不够。\n");
         if (!objectp(weapon = me->query_temp("weapon")) ||        weapon->query("skill_type") != "sword" ||
             me->query_skill_mapped("sword") != "raozhi-roujian")
-                return notify_fail("��ʹ���ˡ���ָ�ὣ��ô?\n");
+                return notify_fail("你使得了「绕指柔剑」么?\n");
                  
         me->add("neili", -300-random(100));
         me->add_temp("apply/sword", i);
         me->add_temp("apply/attack", 50);
         me->add_temp("apply/damage", 300);
         me->set_temp("tjj/raozhi",i);
-        message_vision(HIR"$Nʩչ����ָ�ὣ�����г���������һ�����ߣ��������磬������\n"NOR, me);
-         msg = HIG "$N��ת���棬�������ݳ�һ����\n"NOR;
+        message_vision(HIR"$N施展出绕指柔剑，手中长剑竟成了一条软蛇，弯曲自如，攻势奇诡！\n"NOR, me);
+         msg = HIG "$N逆转剑锋，从右弯剌出一剑！\n"NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-         msg = HIY "$N��ת���棬�������ݳ�һ����\n"NOR;
+         msg = HIY "$N逆转剑锋，从左弯剌出一剑！\n"NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-         msg = HIR "$N��ת���棬������ݳ�һ����\n"NOR;
+         msg = HIR "$N逆转剑锋，最后弯剌出一剑！\n"NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
         call_out("remove_effect", 1, me, i/5);
@@ -61,7 +61,7 @@ void remove_effect(object me, int count)
         me->add_temp("apply/attack", -50);
         me->add_temp("apply/damage", -300);
            me->delete_temp("tjj/raozhi");
-           message_vision(HIR"$N����������ֹͣ����ָ�ὣ��\n"NOR, me);
+           message_vision(HIR"$N收起内力，停止了绕指柔剑。\n"NOR, me);
            return;
         }
         call_out("remove_effect", 1 , me, count -1);

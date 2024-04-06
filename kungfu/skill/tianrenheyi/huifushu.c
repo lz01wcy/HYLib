@@ -9,31 +9,31 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() )
-		return notify_fail(HIY"ÄãÒªÎªË­Ê¹ÓÃ»Ö¸´Êõ£¿\n"NOR);
+		return notify_fail(HIY"ä½ è¦ä¸ºè°ä½¿ç”¨æ¢å¤æœ¯ï¼Ÿ\n"NOR);
 
 //       if( !me->query("zhuanbest",1))
-//        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+//        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
        if( me->query_condition("tianrenheyi"))
-        return notify_fail("ÄãµÄÄîÁ¦²»×ã£¡\n");
+        return notify_fail("ä½ çš„å¿µåŠ›ä¸è¶³ï¼\n");
 
        if( !me->query("4zhuan") && !me->query("5zhuan"))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
        if( me->query("zhuanfinal/3") !=1 )
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if( userp(target) && target!=me && query_ip_name(target)==query_ip_name(me) )
-	return notify_fail("Äã²»ÄÜ¶Ô×Ô¼ºµÄÈËÓÃÕâ¸ö¼¼Êõ¡£\n");
+	return notify_fail("ä½ ä¸èƒ½å¯¹è‡ªå·±çš„äººç”¨è¿™ä¸ªæŠ€æœ¯ã€‚\n");
 
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕýÃ¦£¬ÎÞ·¨Ê¹ÓÃ»Ö¸´Êõ");
+        return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ï¼Œæ— æ³•ä½¿ç”¨æ¢å¤æœ¯");
 
 	if((int)target->query("qi") > (int)target->query("max_qi")-(int)target->query("max_qi")/3)
-	return notify_fail("Ä¿±êÏÖÔÚ²»ÐèÒªÊ¹ÓÃ»Ö¸´Êõ£¡\n");
+	return notify_fail("ç›®æ ‡çŽ°åœ¨ä¸éœ€è¦ä½¿ç”¨æ¢å¤æœ¯ï¼\n");
 
-	msg = HIY "$N·ÅÉù³¤Ì¾£¬ö®ÄÇ¼ä£¬ÉíÉÏµÄÉËÔÚÄÚÁ¦µÄ×÷ÓÃÏÂ£¬ºÃÁËºÜ¶à!!\n";
-	msg += HIY "$NÎüÈ¡ÒõÑôÁ½Æø£¬¾Û¾«³ÉÁ¦£¬¶Ù¾õÆøÁ¦±¶Ôö¡£\n";
+	msg = HIY "$Næ”¾å£°é•¿å¹ï¼ŒéœŽé‚£é—´ï¼Œèº«ä¸Šçš„ä¼¤åœ¨å†…åŠ›çš„ä½œç”¨ä¸‹ï¼Œå¥½äº†å¾ˆå¤š!!\n";
+	msg += HIY "$Nå¸å–é˜´é˜³ä¸¤æ°”ï¼Œèšç²¾æˆåŠ›ï¼Œé¡¿è§‰æ°”åŠ›å€å¢žã€‚\n";
 	me->start_busy(2);
 
 	if((int)target->query("qi") < (int)target->query("max_qi")+(int)target->query("max_qi")/3)

@@ -9,31 +9,31 @@ int perform(object me, object target)
         if( !target
          || !target->is_character()
          || !me->is_fighting(target) )
-                return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃÐþÒõ¾÷¡£\n");
+                return notify_fail("ä½ åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨çŽ„é˜´è¯€ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         if( (int)me->query_skill("xuanyin-jian", 1) < 120 )
-                return notify_fail("ÄãµÄÐþÒõ½£·¨²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÐþÒõ¾÷¡£\n");
+                return notify_fail("ä½ çš„çŽ„é˜´å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•æ–½å±•å‡ºçŽ„é˜´è¯€ã€‚\n");
         if ((int)me->query_skill("jiuyin-zhengong", 1) < 100)
-                return notify_fail("ÄãµÄ¾ÅÒõÕæ¹¦»ðºò²»¹»£¬ÎÞ·¨Ê©Õ¹³öÐþÒõ¾÷¡£\n");
+                return notify_fail("ä½ çš„ä¹é˜´çœŸåŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºçŽ„é˜´è¯€ã€‚\n");
         if ((int)me->query_skill("jiuyin-shenfa", 1) < 120)
-                return notify_fail("ÄãµÄ¾ÅÒõÉí·¨»ðºò²»¹»£¬ÎÞ·¨Ê©Õ¹³öÐþÒõ¾÷¡£\n");
+                return notify_fail("ä½ çš„ä¹é˜´èº«æ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºçŽ„é˜´è¯€ã€‚\n");
         if ( (int)me->query("max_neili") < 2000)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê©Õ¹³öÐþÒõ¾÷¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºçŽ„é˜´è¯€ã€‚\n");
         if ( (int)me->query("neili") < 800)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹³öÐþÒõ¾÷¡£\n");
-        message_vision(HIB"$NÊ¹³ö¾ÅÒõ¡¸ÐþÒõ¾÷¡¹£¬Ñ¸½ÝÎÞ±ÈµÄ¹¥Ïò$n£¡\n"NOR,me, target);
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•å‡ºçŽ„é˜´è¯€ã€‚\n");
+        message_vision(HIB"$Nä½¿å‡ºä¹é˜´ã€ŒçŽ„é˜´è¯€ã€ï¼Œè¿…æ·æ— æ¯”çš„æ”»å‘$nï¼\n"NOR,me, target);
 
         me->add("neili", -(300 +random(300)) );
-        me->start_perform(2,"¡¸ÐþÒõ¾÷¡¹");
+        me->start_perform(2,"ã€ŒçŽ„é˜´è¯€ã€");
 
-        message_vision(HIB"$NÁ¬³öÊý½££¬Ò»½£±ÈÒ»½£ÁèÀû£¡\n"NOR,me);
+        message_vision(HIB"$Nè¿žå‡ºæ•°å‰‘ï¼Œä¸€å‰‘æ¯”ä¸€å‰‘å‡Œåˆ©ï¼\n"NOR,me);
 	if (random(lvl) > target->query_skill("parry", 1) / 3) {
-		message_vision(HIB"$NÁ¬Á¬ááÍË£¬·ÀÊØÉÐÓÐÀ§ÄÑ£¬¸ü±ðËµ¹¥»÷ÁË¡£\n"NOR,target);
+		message_vision(HIB"$Nè¿žè¿žå¾Œé€€ï¼Œé˜²å®ˆå°šæœ‰å›°éš¾ï¼Œæ›´åˆ«è¯´æ”»å‡»äº†ã€‚\n"NOR,target);
 	        target->start_busy(lvl / 50);
-	        me->start_perform(7, "¡¸ÐþÒõ¾÷¡¹");
+	        me->start_perform(7, "ã€ŒçŽ„é˜´è¯€ã€");
 		me->add("neili", -300);
 	}
         me->add_temp("apply/attack",lvl/2);

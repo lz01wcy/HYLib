@@ -1,4 +1,4 @@
-// dragon ÁúÆÆÕ¶
+// dragon é¾™ç ´æ–©
 
 #include <ansi.h>
 
@@ -15,15 +15,15 @@ int thunderspell(object me, object target)
 
 	spells = me->query_skill("spells");
 	if((int)me->query("neili")< 1100)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
-        msg = BLK"   ºä¡ñ¡ð¡þ¡ù¡ï  \n"NOR;
-        msg += BLK"\nÒ»¸ö¾Þ´óµÄºÚÉ«³å»÷²¨Ïò$N"BLK"µÄÉíÉÏ´òÀ´£¬!!\n"NOR;
+        msg = BLK"   è½°â—â—‹ã€“â€»â˜…  \n"NOR;
+        msg += BLK"\nä¸€ä¸ªå·¨å¤§çš„é»‘è‰²å†²å‡»æ³¢å‘$N"BLK"çš„èº«ä¸Šæ‰“æ¥ï¼Œ!!\n"NOR;
 
         if ( random(me->query("combat_exp"))>(int)target->query("combat_exp")/3)
         {
                 damage = (int)me->query_skill("magic-dark", 1);
-//¶ÔºÚ°µÊôÐÔÄ¿±êÎÞ×÷ÓÃ
+//å¯¹é»‘æš—å±žæ€§ç›®æ ‡æ— ä½œç”¨
        if ((int)target->query("magicgift")==5)
 {
 damagic=1200+damage;
@@ -31,7 +31,7 @@ damagic=1200+damage;
 damagic=1200+damage;
                 target->receive_wound("qi", damagic);
 }
-//¶Ô¹âÊôÐÔÄ¿±êÇ¿´ó
+//å¯¹å…‰å±žæ€§ç›®æ ‡å¼ºå¤§
 else  if ((int)target->query("magicgift")==6)
 {
 damagic=3600+damage*5;
@@ -46,14 +46,14 @@ target->receive_damage("qi", 800+damage*3);
 target->receive_wound("qi", 800+damage);
 }
 
-        msg += HIR"$n"HIR"µÄ¸½½ü³ÉÎªÁËÒ»Æ¬»ðº£!!\n"NOR;
+        msg += HIR"$n"HIR"çš„é™„è¿‘æˆä¸ºäº†ä¸€ç‰‡ç«æµ·!!\n"NOR;
                 if (!target->is_busy())
                 target->start_busy(1);
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
         } else
         {
-        msg += HIB"$n"HIB"·ÉÉíÔ¾Æð£¬ÌÓ¹ýÁËÒ»ÄÑ¡£\n"NOR;
+        msg += HIB"$n"HIB"é£žèº«è·ƒèµ·ï¼Œé€ƒè¿‡äº†ä¸€éš¾ã€‚\n"NOR;
 		message_combatd(msg, me, target);
         }
 
@@ -67,7 +67,7 @@ if (target->query("neili") < 1)target->set("neili",1);
 if (target->query("max_neili") < 1)target->set("max_neili",0);
 me->add("neili",-450);
 if (wizardp(me))
-tell_object(me, "»ù±¾É±ÉËÎª"+damagic+"µã¡£\n" NOR);
+tell_object(me, "åŸºæœ¬æ€ä¼¤ä¸º"+damagic+"ç‚¹ã€‚\n" NOR);
 
 	return 1;
 	
@@ -80,26 +80,26 @@ int perform(object me, object target)
 	int	i;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIB"¡¸ÁúÆÆÕ¶¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIB"ã€Œé¾™ç ´æ–©ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 3000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõÐ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°çŽ©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-dark",1)< 550)
-	return notify_fail("ÄãµÄºÚ°µÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„é»‘æš—é­”æ³•å¤ªå·®äº†ï¼\n");
 
 
-	msg = BLK "$N"BLK"ÓÃÊÖÔÚÌì¿Õ»®ÁËÒ»¸öÎåÃ¢ÐÇ£¬¿ÚÖÐà«à«µØÄîÖøÖäÎÄ£¬\n" NOR;
-       msg += BLK"$N"BLK"Äîµ½ ±È»Æ»è»¹Òª»èà³µÄ¶«Î÷,±ÈÑªÒº»¹ÒªÏÊºìµÄ¶«Î÷...\n"NOR;
-       msg += BLK"$N"BLK"Äîµ½ ³öÏÖÔÚÊ±¼äÖ®Á÷  °Ñµ²ÔÚÎÒÃæÇ°Ò»ÇÐÓÞ²»¿É¼°µÄÊÂÎï´Ý»Ù...\n"NOR;
-       msg += BLK"$N"BLK"´ó½ÐÒ»Éù  ÁúÆÆÕ¶!!  ¾Þ´óµÄµÄ³å»÷²¨Ö±ÏòËÄÖÜ·ÉÈ¥£¬ÄÜÁ¿´óµÄ¿ÉÅÂ£¡£¡\n"NOR;
-       msg += HIB"  ¡¸ÁúÆÆÕ¶¡¹ \n"NOR;
+	msg = BLK "$N"BLK"ç”¨æ‰‹åœ¨å¤©ç©ºåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œ\n" NOR;
+       msg += BLK"$N"BLK"å¿µåˆ° æ¯”é»„æ˜è¿˜è¦æ˜å–‘çš„ä¸œè¥¿,æ¯”è¡€æ¶²è¿˜è¦é²œçº¢çš„ä¸œè¥¿...\n"NOR;
+       msg += BLK"$N"BLK"å¿µåˆ° å‡ºçŽ°åœ¨æ—¶é—´ä¹‹æµ  æŠŠæŒ¡åœ¨æˆ‘é¢å‰ä¸€åˆ‡æ„šä¸å¯åŠçš„äº‹ç‰©æ‘§æ¯...\n"NOR;
+       msg += BLK"$N"BLK"å¤§å«ä¸€å£°  é¾™ç ´æ–©!!  å·¨å¤§çš„çš„å†²å‡»æ³¢ç›´å‘å››å‘¨é£žåŽ»ï¼Œèƒ½é‡å¤§çš„å¯æ€•ï¼ï¼\n"NOR;
+       msg += HIB"  ã€Œé¾™ç ´æ–©ã€ \n"NOR;
 	message_vision(msg, me,target);
 	env = environment(me);
         inv = all_inventory(env);

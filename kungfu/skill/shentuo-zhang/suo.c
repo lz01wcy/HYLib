@@ -5,7 +5,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define SUO "¡¸" CYN "Ñ©ËøÇ§É½" NOR "¡¹"
+#define SUO "ã€Œ" CYN "é›ªé”åƒå±±" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -25,26 +25,26 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(SUO "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(SUO "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail(SUO "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(SUO "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("shentuo-zhang", 1) < 150)
-                return notify_fail("ÄãÉñÍÕÑ©É½ÕÆ»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" SUO "¡£\n");
+                return notify_fail("ä½ ç¥žé©¼é›ªå±±æŽŒç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" SUO "ã€‚\n");
 
         if (me->query_skill_mapped("strike") != "shentuo-zhang")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÉñÍÕÑ©É½ÕÆ£¬ÄÑÒÔÊ©Õ¹" SUO "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘ç¥žé©¼é›ªå±±æŽŒï¼Œéš¾ä»¥æ–½å±•" SUO "ã€‚\n");
 
 
         if ((int)me->query("neili", 1) < 200)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" SUO "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”ä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" SUO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Ò»ÉùÀäÐ¦£¬ÕÆÊÆÒ»»º£¬Ò»ÕÐ¡¸Ñ©ËøÇ§É½¡¹£¬ÕÆÉÏÒõ¾¢ÈçÅ­"
-              "ÌÎÐÚÓ¿£¬»º»ºÍÆÏò$n¡£\n" NOR;
+        msg = HIR "$N" HIR "ä¸€å£°å†·ç¬‘ï¼ŒæŽŒåŠ¿ä¸€ç¼“ï¼Œä¸€æ‹›ã€Œé›ªé”åƒå±±ã€ï¼ŒæŽŒä¸Šé˜´åŠ²å¦‚æ€’"
+              "æ¶›æ±¹æ¶Œï¼Œç¼“ç¼“æŽ¨å‘$nã€‚\n" NOR;
         me->add("neili", -20);
 
         ap =  me->query_skill("strike");
@@ -54,23 +54,23 @@ int perform(object me, object target)
         {
                 damage = me->query_skill("strike");
                 
-                pmsg = HIR "ö®Ê±Ö»Ìý¡¸¿¦àê¡¹Ò»Éù´àÏì£¬$n" HIR "µÄ"
-                        "ÐØ¿ÚÀß¹Ç¾¹È»¶ÏÁË¼¸¸ù¡£\n" NOR;
+                pmsg = HIR "éœŽæ—¶åªå¬ã€Œå–€åš“ã€ä¸€å£°è„†å“ï¼Œ$n" HIR "çš„"
+                        "èƒ¸å£è‚‹éª¨ç«Ÿç„¶æ–­äº†å‡ æ ¹ã€‚\n" NOR;
 
 target->add("qi",-damage*2);
 target->add("eff_qi",-damage);
 target->apply_condition("snake_poison",10);
 target->apply_condition("chanchu_poison",10);
 
-                        msg +=HIR "ö®Ê±Ö»Ìý¡¸¿¦àê¡¹Ò»Éù´àÏì£¬$n" HIR "µÄ"
-                        "ÐØ¿ÚÀß¹Ç¾¹È»¶ÏÁË¼¸¸ù¡£\n" NOR;
+                        msg +=HIR "éœŽæ—¶åªå¬ã€Œå–€åš“ã€ä¸€å£°è„†å“ï¼Œ$n" HIR "çš„"
+                        "èƒ¸å£è‚‹éª¨ç«Ÿç„¶æ–­äº†å‡ æ ¹ã€‚\n" NOR;
                                                    
                 me->start_busy(1);
                 me->add("neili", -50);
         } else 
         {
-                msg += CYN "¿ÉÊÇ$n" CYN "¿´ÆÆÁË$P"
-                       CYN "µÄÆóÍ¼£¬ÉíÐÎ¼±¶¯£¬¶ã¿ªÁËÕâÒ»ÕÆ¡£\n"NOR;
+                msg += CYN "å¯æ˜¯$n" CYN "çœ‹ç ´äº†$P"
+                       CYN "çš„ä¼å›¾ï¼Œèº«å½¢æ€¥åŠ¨ï¼Œèº²å¼€äº†è¿™ä¸€æŽŒã€‚\n"NOR;
                 me->start_busy(3);
                 me->add("neili", -100);
         }

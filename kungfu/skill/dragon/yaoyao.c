@@ -1,4 +1,4 @@
-// Î²°ÍÒ¡Ò¡
+// å°¾å·´æ‘‡æ‘‡
 
 #include <ansi.h>
 
@@ -14,14 +14,14 @@ int perform(object me, object target)
 	
 extra = me->query_skill("dragon");
 if(me->is_busy())
-		return notify_fail("ÄãÏÖÌ«Ã¦£¬ÓÃ²»³ö¾ø¼¼£¡£¡\n");
+		return notify_fail("ä½ çŽ°å¤ªå¿™ï¼Œç”¨ä¸å‡ºç»æŠ€ï¼ï¼\n");
 		
 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÎ²°ÍÒ¡Ò¡£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å°¾å·´æ‘‡æ‘‡ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	
 me->add_temp("apply/attack",extra*3);
 me->add_temp("apply/damage",extra*3);
@@ -29,21 +29,21 @@ me->add_temp("apply/damage",extra*3);
 	
 weapon = me->query_temp("weapon");
 	
-msg = HIY  "$N"HIY"¾Þ´óÎÞ±ÈµÄÉíÇû¿ªÊ¼¾ÞÁÒµÄ»Î¶¯,Ç¿´óµÄÁúÎ²Á¬Á¬Ë¦¶¯£¡\n" NOR;
+msg = HIY  "$N"HIY"å·¨å¤§æ— æ¯”çš„èº«èº¯å¼€å§‹å·¨çƒˆçš„æ™ƒåŠ¨,å¼ºå¤§çš„é¾™å°¾è¿žè¿žç”©åŠ¨ï¼\n" NOR;
 	message_vision(msg,me,target);
-	msg = HIC  " Ò¡£¡ÁúÎ²Ïò$nÉÏÉíÍ»´Ì¶øÀ´!" NOR;
+	msg = HIC  " æ‘‡ï¼é¾™å°¾å‘$nä¸Šèº«çªåˆºè€Œæ¥!" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIC  "ÔÙÒ¡£¡£¡ÁúÎ²¶Ô×Å$nÏÂÉíºáÉ¨¶ø¹ý!" NOR;
+        msg = HIC  "å†æ‘‡ï¼ï¼é¾™å°¾å¯¹ç€$nä¸‹èº«æ¨ªæ‰«è€Œè¿‡!" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIC  "×îºóÒ»Ò¡£¡£¡£¡ÁúÎ²¶Ô×Å$nÈ«ÉíÑ¹ÁËÏÂÀ´!" NOR;
+        msg = HIC  "æœ€åŽä¸€æ‘‡ï¼ï¼ï¼é¾™å°¾å¯¹ç€$nå…¨èº«åŽ‹äº†ä¸‹æ¥!" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 
-	msg = HIC  "ÔÙÆË" NOR;
+	msg = HIC  "å†æ‰‘" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR  "ÔÙÒ§£¡£¡" NOR;
+        msg = HIR  "å†å’¬ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIW  "×îºóÒ»¼ô£¡£¡£¡" NOR;
+        msg = HIW  "æœ€åŽä¸€å‰ªï¼ï¼ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 target->apply_condition("ill_dongshang",30 );
 target->apply_condition("ill_fashao",30 );

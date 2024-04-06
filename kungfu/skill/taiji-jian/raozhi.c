@@ -12,34 +12,34 @@ int perform(object me, object target)
         ||  !target->is_character()
         ||  !me->is_fighting(target) 
         ||  !living(target))
-                return notify_fail("¡¸ÈÆÖ¸Èá½£¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç»•æŒ‡æŸ”å‰‘ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         if( (int)me->query_skill("taiji-jian", 1) < 200 )
-                return notify_fail("ÄãµÄÌ«¼«½£·¨¹¦Á¦Ì«Ç³ÁË¡£\n");
+                return notify_fail("ä½ çš„å¤ªæå‰‘æ³•åŠŸåŠ›å¤ªæµ…äº†ã€‚\n");
         if( (int)me->query_skill("sword", 1) < 200 )
-                return notify_fail("ÄãµÄ»ù±¾½£·¨¹¦Á¦Ì«Ç³ÁË¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å‰‘æ³•åŠŸåŠ›å¤ªæµ…äº†ã€‚\n");
         if( (int)me->query_skill("taiji-shengong", 1) < 200 )
-                return notify_fail("ÄãµÄÄÚ¹¦¹¦Á¦Ì«Ç³ÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸåŠŸåŠ›å¤ªæµ…äº†ã€‚\n");
         if( (int)me->query("max_neili") < 3000 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Ç³ÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªæµ…äº†ã€‚\n");
         if( (int)me->query("neili") < 1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
         if( me->query_temp("tjj/raozhi"))
-                return notify_fail("ÄãµÄÒÑ¾­ÕıÔÚÓÃÁË¡£\n");
+                return notify_fail("ä½ çš„å·²ç»æ­£åœ¨ç”¨äº†ã€‚\n");
 
         if (me->query_skill_mapped("force") != "taiji-shengong")
-                return notify_fail("ÄãÓÃÊ²Ã´ÎªÄÚ¹¦»ù´¡À´Ê¹¡¸ÈÆÖ¸Èá½£¡¹£¿\n");
+                return notify_fail("ä½ ç”¨ä»€ä¹ˆä¸ºå†…åŠŸåŸºç¡€æ¥ä½¿ã€Œç»•æŒ‡æŸ”å‰‘ã€ï¼Ÿ\n");
         if (!objectp(weapon = me->query_temp("weapon")) ||        weapon->query("skill_type") != "sword" ||
             me->query_skill_mapped("sword") != "taiji-jian")
-                return notify_fail("ÄãÊ¹µÃÁË¡¸ÈÆÖ¸Èá½£¡¹Ã´?\n");
+                return notify_fail("ä½ ä½¿å¾—äº†ã€Œç»•æŒ‡æŸ”å‰‘ã€ä¹ˆ?\n");
                  
         me->add("neili", -300-random(100));
         me->add_temp("apply/sword", i);
         me->add_temp("apply/damage", i);
         me->set_temp("tjj/raozhi",i);
 me->start_busy(3);
-        message_vision(HIR"$NÊ©Õ¹³öÈÆÖ¸Èá½££¬ÊÖÖĞ³¤½£¾¹³ÉÁËÒ»ÌõÈíÉß£¬ÍäÇú×ÔÈç£¬¹¥ÊÆÆæ¹î£¡\n"NOR, me);
+        message_vision(HIR"$Næ–½å±•å‡ºç»•æŒ‡æŸ”å‰‘ï¼Œæ‰‹ä¸­é•¿å‰‘ç«Ÿæˆäº†ä¸€æ¡è½¯è›‡ï¼Œå¼¯æ›²è‡ªå¦‚ï¼Œæ”»åŠ¿å¥‡è¯¡ï¼\n"NOR, me);
         call_out("remove_effect", 1, me, i/5);
-//        me->start_perform(999, "¡¸ÈÆÖ¸Èá½£¡¹");
+//        me->start_perform(999, "ã€Œç»•æŒ‡æŸ”å‰‘ã€");
         return 1;
 }
 
@@ -56,7 +56,7 @@ void remove_effect(object me, int count)
            me->add_temp("apply/damage", -i);
            me->delete_temp("tjj/raozhi");
 //           me->start_perform(0);
-           message_vision(HIR"$NÊÕÆğÄÚÁ¦£¬Í£Ö¹ÁËÈÆÖ¸Èá½£¡£\n"NOR, me);
+           message_vision(HIR"$Næ”¶èµ·å†…åŠ›ï¼Œåœæ­¢äº†ç»•æŒ‡æŸ”å‰‘ã€‚\n"NOR, me);
            return;
         }
         call_out("remove_effect", 1 , me, count -1);

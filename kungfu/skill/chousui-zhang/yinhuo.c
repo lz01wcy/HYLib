@@ -11,19 +11,19 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸Òø»ð¡¹¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé“¶ç«ã€æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
       
 	weapon = me->query_temp("weapon");
 	if( objectp(me->query_temp("weapon")) 
 	&& (string)weapon->query("skill_type") != "staff")
-		return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÊ¹ÓÃÕâ¸ö¾ø¼¼£¡\n");		
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨è¿™ä¸ªç»æŠ€ï¼\n");		
 //        if(!objectp(ob = present("huo yan", environment(me))))
-//                return notify_fail("Ã»ÓÐ»ð¶ÑÔõÃ´Çý¶¯¡¸Òø»ð¡¹½øÐÐ¹¥»÷£¿\n");
+//                return notify_fail("æ²¡æœ‰ç«å †æ€Žä¹ˆé©±åŠ¨ã€Œé“¶ç«ã€è¿›è¡Œæ”»å‡»ï¼Ÿ\n");
         if(me->query_temp("pfm_chousui"))
-                return notify_fail("ÄãÕýÔÚÇý¶¯»ð¶Ñ½øÐÐ¹¥»÷£¡\n");
+                return notify_fail("ä½ æ­£åœ¨é©±åŠ¨ç«å †è¿›è¡Œæ”»å‡»ï¼\n");
 
-       message_vision(YEL"\n$NÒÂÐäÒ»·÷£¬Ò»¹É¾¢ÆøÖ±ÉäÈë"HIR"»ðÑæ"YEL"Ö®ÖÐ¡£´ÓÖÐÓÖ·Ö³öÒ»µÀÏ¸Ï¸µÄ"WHT"Òø»ð"YEL"£¬±ãËÆÒ»Ìõ"WHT"ÒøÉ«³¤Éß"YEL"
-ºáÎÔ¿Õ¼Ê£¬ÇáÇá°Ú¶¯£¬ÑÕÉ«ÓÖÊÇÏÊÑÞ£¬ÓÖÊÇ¹îÒì£¬"RED"¹âÃ¢"YEL"ÉÁË¸²»¶¨£¡\n"NOR,me);
+       message_vision(YEL"\n$Nè¡£è¢–ä¸€æ‹‚ï¼Œä¸€è‚¡åŠ²æ°”ç›´å°„å…¥"HIR"ç«ç„°"YEL"ä¹‹ä¸­ã€‚ä»Žä¸­åˆåˆ†å‡ºä¸€é“ç»†ç»†çš„"WHT"é“¶ç«"YEL"ï¼Œä¾¿ä¼¼ä¸€æ¡"WHT"é“¶è‰²é•¿è›‡"YEL"
+æ¨ªå§ç©ºé™…ï¼Œè½»è½»æ‘†åŠ¨ï¼Œé¢œè‰²åˆæ˜¯é²œè‰³ï¼Œåˆæ˜¯è¯¡å¼‚ï¼Œ"RED"å…‰èŠ’"YEL"é—ªçƒä¸å®šï¼\n"NOR,me);
           me->add_temp("max_guard",-1);
        me->start_busy(2);
        me->set_temp("pfm_chousui", 1);
@@ -47,28 +47,28 @@ int check_pfm(object me, object target)
         me->start_busy(1);
         if(!living(me) || me->is_ghost()) return 1;
         if( i < 140 ){
-                tell_object(me, "Äã·¢ÏÖ×Ô¼ºµÄÐÇËÞ¶¾ÕÆ»¹²»¹»æµÊì£¬ÎÞ·¨Ê¹ÓÃ¡¸Òø»ð¡¹½øÐÐ¹¥»÷¡£\n");
+                tell_object(me, "ä½ å‘çŽ°è‡ªå·±çš„æ˜Ÿå®¿æ¯’æŽŒè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œé“¶ç«ã€è¿›è¡Œæ”»å‡»ã€‚\n");
                 return 1;
                 }
         if( (int)me->query_skill("huagong-dafa",1) < 140 ){
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºµÄ»¯¹¦´ó·¨ÐÞÎª²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸Òø»ð¡¹½øÐÐ¹¥»÷¡£\n");
+                tell_object(me,"ä½ å‘çŽ°è‡ªå·±çš„åŒ–åŠŸå¤§æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œé“¶ç«ã€è¿›è¡Œæ”»å‡»ã€‚\n");
                 return 1;
                 }
         if( me->query_skill_mapped("force") != "huagong-dafa"){
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºËùÓÃµÄÄÚ¹¦ÎÞ·¨½øÐÐ¡¸Òø»ð¡¹¹¥»÷¡£\n");
+                tell_object(me,"ä½ å‘çŽ°è‡ªå·±æ‰€ç”¨çš„å†…åŠŸæ— æ³•è¿›è¡Œã€Œé“¶ç«ã€æ”»å‡»ã€‚\n");
                 return 1;
                 }
         if( (int)me->query("max_neili") < 1200) {
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Çý¶¯¡¸Òø»ð¡¹½øÐÐ¹¥»÷¡£\n");
+                tell_object(me,"ä½ å‘çŽ°è‡ªå·±å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•é©±åŠ¨ã€Œé“¶ç«ã€è¿›è¡Œæ”»å‡»ã€‚\n");
                 return 1;
                 }
         if(neili < 900){
-                tell_object(me,"Äã·¢ÏÖ×Ô¼ºÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸Òø»ð¡¹½øÐÐ¹¥»÷¡£\n");           
+                tell_object(me,"ä½ å‘çŽ°è‡ªå·±çŽ°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œé“¶ç«ã€è¿›è¡Œæ”»å‡»ã€‚\n");           
                 return 1;
                 }
         if(!living(target) || !target || !me->is_fighting(target) || environment(me)->query("no_fight")
            || environment(me)!=environment(target)){
-           message_vision(HIY"$NÒÂÐäÔÙ·÷£¬½«ÉýÆðµÄ"WHT"Òø»ð"HIY"Ñ¹»Ø»ðÑæÖ®ÖÐ¡£\n"NOR,me);
+           message_vision(HIY"$Nè¡£è¢–å†æ‹‚ï¼Œå°†å‡èµ·çš„"WHT"é“¶ç«"HIY"åŽ‹å›žç«ç„°ä¹‹ä¸­ã€‚\n"NOR,me);
            return 1;
            }
 
@@ -79,30 +79,30 @@ int check_pfm(object me, object target)
         me->add("neili", -300);
         me->add("jing", -10);
 
-        msg = YEL"\nÍ»È»»ðÑæÖÐÉýÆð"GRN"ÂÌÉ«¹í»ð"YEL"£¬´ËÊ±"WHT"Òø»ð"YEL"Ù¿µØËõ»Ø£¬¸ú×ÅÓÖÏò$n$lÉäÈ¥£¬Á¦µÀ¼«ÃÍ£¬È¥ÊÆÆæ¿ì£¡\n"NOR;        
+        msg = YEL"\nçªç„¶ç«ç„°ä¸­å‡èµ·"GRN"ç»¿è‰²é¬¼ç«"YEL"ï¼Œæ­¤æ—¶"WHT"é“¶ç«"YEL"å€åœ°ç¼©å›žï¼Œè·Ÿç€åˆå‘$n$lå°„åŽ»ï¼ŒåŠ›é“æžçŒ›ï¼ŒåŽ»åŠ¿å¥‡å¿«ï¼\n"NOR;        
 
        
        if(random(ap) > dp/4){
          if(objectp(wep = target->query_temp("weapon"))){     
-            msg += HIY"¿´ÄÇÒø»ðÀ´µÃÑ¸ÃÍÎÞ³££¬±ÜÎÞ¿É±Ü£¬Ö»µÃ°ÑÊÖÖÐÎäÆ÷¾ÙÆðÀ´Ó²µ²£¡\n" NOR;
+            msg += HIY"çœ‹é‚£é“¶ç«æ¥å¾—è¿…çŒ›æ— å¸¸ï¼Œé¿æ— å¯é¿ï¼Œåªå¾—æŠŠæ‰‹ä¸­æ­¦å™¨ä¸¾èµ·æ¥ç¡¬æŒ¡ï¼\n" NOR;
             if(me->query("neili") < target->query("neili")*2){
                    me->start_busy(2);
-                   msg += HIY"½á¹ûÖ»ÌýÒ»Éù´óÏì£¬$w"HIY"ÔÚ$W"HIY"ÉÏ×²³öÎÞÊý·É»¨£¬ËÄÉ¢½¦¿ª£¡\n" NOR;
+                   msg += HIY"ç»“æžœåªå¬ä¸€å£°å¤§å“ï¼Œ$w"HIY"åœ¨$W"HIY"ä¸Šæ’žå‡ºæ— æ•°é£žèŠ±ï¼Œå››æ•£æº…å¼€ï¼\n" NOR;
                    }
             else if(me->query("neili") > target->query("neili")*4){
                    if(wep->query("rigidity") >= 1){
                       me->start_busy(2);
                       target->start_busy(2);
                       wep->move(environment(target));
-                      msg += HIW"½á¹ûÖ»Ìý¡°àÔ¡±µÄÒ»Éù£¬ÔÚ$w"HIW"µÄÃÍÁÒ×²»÷ÏÂ£¬$n»¢¿ÚÕðÁÑ£¬$W"HIW"ÍÑÊÖ·É³ö£¡\n" NOR;
+                      msg += HIW"ç»“æžœåªå¬â€œå˜£â€çš„ä¸€å£°ï¼Œåœ¨$w"HIW"çš„çŒ›çƒˆæ’žå‡»ä¸‹ï¼Œ$nè™Žå£éœ‡è£‚ï¼Œ$W"HIW"è„±æ‰‹é£žå‡ºï¼\n" NOR;
                       }
                    else{
                       me->start_busy(2);
                       target->start_busy(2);
-                      msg += HIW"½á¹ûÖ»Ìý¡°Å¾¡±µÄÒ»Éù¾ÞÏì£¬$nÊÖÖÐ"+wep->name()+HIW"±»$w"HIW"´ò¶Ï£¬ËéÆ¬ËÄÉ¢½¦Âä£¡\n" NOR;
+                      msg += HIW"ç»“æžœåªå¬â€œå•ªâ€çš„ä¸€å£°å·¨å“ï¼Œ$næ‰‹ä¸­"+wep->name()+HIW"è¢«$w"HIW"æ‰“æ–­ï¼Œç¢Žç‰‡å››æ•£æº…è½ï¼\n" NOR;
                       wep->unequip();
                       wep->move(environment(target));
-                      wep->set("name", "¶ÏµôµÄ" + wep->query("name"));
+                      wep->set("name", "æ–­æŽ‰çš„" + wep->query("name"));
                       wep->set("value", 49);
                       wep->set("weapon_prop", 0);
                       target->reset_action();
@@ -112,13 +112,13 @@ int check_pfm(object me, object target)
                    if(wep->query("rigidity") >= 1){
                       me->start_busy(2);
                       target->start_busy(2);
-                      msg += HIY"½á¹ûÖ»ÌýÒ»Éù´óÏì£¬$wÔÚ$WÉÏ×²³öÎÞÊý·É»¨£¬ËÄÉ¢½¦¿ª£¡\n" NOR;
+                      msg += HIY"ç»“æžœåªå¬ä¸€å£°å¤§å“ï¼Œ$wåœ¨$Wä¸Šæ’žå‡ºæ— æ•°é£žèŠ±ï¼Œå››æ•£æº…å¼€ï¼\n" NOR;
                       }
                    else{
                       me->start_busy(2);
                       target->start_busy(2);
                       wep->move(environment(target));
-                      msg += HIW"½á¹ûÖ»Ìý¡°àÔ¡±µÄÒ»Éù£¬ÔÚ$w"HIW"µÄÃÍÁÒ×²»÷ÏÂ£¬$n»¢¿ÚÕðÁÑ£¬$W"HIW"ÍÑÊÖ·É³ö£¡\n" NOR;
+                      msg += HIW"ç»“æžœåªå¬â€œå˜£â€çš„ä¸€å£°ï¼Œåœ¨$w"HIW"çš„çŒ›çƒˆæ’žå‡»ä¸‹ï¼Œ$nè™Žå£éœ‡è£‚ï¼Œ$W"HIW"è„±æ‰‹é£žå‡ºï¼\n" NOR;
                       }
                   }
             msg = replace_string(msg, "$W", wep->name());
@@ -133,7 +133,7 @@ target->apply_condition("fire_poison",60);
 	 target->apply_condition("sanpoison",20);
                 target->apply_condition("xx_poison", random(13) + (me->query_skill("poison", 1)/10) + target->query_condition("xx_poison"));
                 p = (int)target->query("qi")*100/(int)target->query("max_qi");
-                msg += damage_msg(damage, "´ÌÉË");
+                msg += damage_msg(damage, "åˆºä¼¤");
                 msg += "( $n"+eff_status_msg(p)+" )\n";
                 me->start_busy(2);
                 target->start_busy(2);
@@ -141,11 +141,11 @@ target->apply_condition("fire_poison",60);
         }
         else{
           me->start_busy(3);
-          msg += HIY"\n$pÈ«Á¦ÏòÓÒÒ»¹ö£¬ÄÇ$w"HIY"¿°¿°²Á¼ç¶ø¹ý£¬¶ËµÄÊÇÐ×ÏÕÎÞ±È£¡\n" NOR;
+          msg += HIY"\n$på…¨åŠ›å‘å³ä¸€æ»šï¼Œé‚£$w"HIY"å ªå ªæ“¦è‚©è€Œè¿‡ï¼Œç«¯çš„æ˜¯å‡¶é™©æ— æ¯”ï¼\n" NOR;
           }
        limbs = target->query("limbs");
        msg = replace_string(msg, "$l", limbs[random(sizeof(limbs))]);
-       msg = replace_string(msg, "$w", WHT"Òø»ð"NOR);   
+       msg = replace_string(msg, "$w", WHT"é“¶ç«"NOR);   
 //me->kill_ob(target);
 //       if(!target->is_killing(me->query("id"))) target->kill_ob(me);    
        message_vision(msg, me, target);

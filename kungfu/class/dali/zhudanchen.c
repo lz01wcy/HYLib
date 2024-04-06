@@ -1,4 +1,4 @@
-// zhudanchen.c Öìµ¤³¼
+// zhudanchen.c æœ±ä¸¹è‡£
 
 #include <ansi.h>
 inherit NPC;
@@ -9,10 +9,10 @@ string clear_title(string arg);
 int ask_me();
 void create()
 {
-	set_name("Öìµ¤³¼", ({ "zhu danchen", "zhu" }));
-	set("title",  "´óÀí»¤ÎÀ" );
-	set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»¡£Ò»¸±ÊéÉúËáÁïÁïµÄ´ò°çĞĞÍ·¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æœ±ä¸¹è‡£", ({ "zhu danchen", "zhu" }));
+	set("title",  "å¤§ç†æŠ¤å«" );
+	set("long", "ä»–æ˜¯å¤§ç†å›½å››å¤§æŠ¤å«ä¹‹ä¸€ã€‚ä¸€å‰¯ä¹¦ç”Ÿé…¸æºœæºœçš„æ‰“æ‰®è¡Œå¤´ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 40);
 	set("class", "officer");
 	set("attitude", "friendly");
@@ -53,14 +53,14 @@ void create()
 	prepare_skill("cuff", "jinyu-quan");
 
 	set("inquiry", ([
-		"Ö¸µãÎä¹¦" : (: ask_me :),
+		"æŒ‡ç‚¹æ­¦åŠŸ" : (: ask_me :),
 	]));
 	setup();
 	carry_object("/d/dali/npc/obj/junfu")->wear();
 	carry_object("/clone/weapon/changjian")->wield();
 	add_money("silver", 10);
 
-	create_family("´óÀí¶Î¼Ò",19,"»¤ÎÀ");
+	create_family("å¤§ç†æ®µå®¶",19,"æŠ¤å«");
 }
 
 #include "/kungfu/class/dali/weishi.h"; 

@@ -1,4 +1,4 @@
-// powerup.c ÁúÏà¹¦¼ÓÁ¦
+// powerup.c é¾™ç›¸åŠŸåŠ åŠ›
 
 #include <ansi.h>
 inherit F_CLEAN_UP;
@@ -10,16 +10,16 @@ int exert(object me, object target)
 	int skill;
 
 	if( target != me )
-		return notify_fail("ÄãÖ»ÄÜÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+		return notify_fail("ä½ åªèƒ½æå‡è‡ªå·±çš„æˆ˜æ–—åŠ›ã€‚\n");
 	if( (int)me->query("neili")<200)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query_temp("powerup"))
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
 	skill = me->query_skill("force");
 
 	message_vision(
-	HIR "$N´óºÈÒ»Éù£¬È«Éí¹Ç÷À½Ú½Ú±©Ïì£¬Ò»¹ÉÑ¸ÃÍµÄî¸ÆøÏòËÄÖÜÀ©É¢¿ªÀ´£¡\n" NOR, me);
+	HIR "$Nå¤§å–ä¸€å£°ï¼Œå…¨èº«éª¨éª¼èŠ‚èŠ‚æš´å“ï¼Œä¸€è‚¡è¿…çŒ›çš„ç½¡æ°”å‘å››å‘¨æ‰©æ•£å¼€æ¥ï¼\n" NOR, me);
 
 	me->add_temp("apply/attack", skill/3);
 	me->add_temp("apply/dodge", skill/3);
@@ -43,6 +43,6 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/attack", -skill/3);
    me->add_temp("apply/dodge", -skill/3);
 		me->delete_temp("powerup");
-		tell_object(me, "ÄãµÄÁúÏó°ãÈô¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+		tell_object(me, "ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 	}
 }

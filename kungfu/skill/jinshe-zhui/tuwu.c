@@ -14,20 +14,20 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("½ğÉßÍÂÎíÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("é‡‘è›‡åé›¾åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
             || (string)weapon->query("id") != "jinshe zhui")
-           return notify_fail("ÄãÃ»ÓÃ½ğÉß×¶£¬²»ÄÜÊ¹ÓÃ¾øÕĞ£¡\n");
+           return notify_fail("ä½ æ²¡ç”¨é‡‘è›‡é”¥ï¼Œä¸èƒ½ä½¿ç”¨ç»æ‹›ï¼\n");
 
 	if( (int)me->query_skill("jinshe-zhui", 1) < 100 )
-		return notify_fail("ÄãµÄ½ğÉß×¶·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ½ğÉßÍÂÎí¡£\n");
+		return notify_fail("ä½ çš„é‡‘è›‡é”¥æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨é‡‘è›‡åé›¾ã€‚\n");
 
 	if( (int)me->query("neili") < 300 )
-		return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+		return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿäº†ã€‚\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
 	skill = me->query_skill("jinshe-zhui", 1);
 
@@ -38,8 +38,8 @@ int perform(object me, object target)
        random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 )
     {
 	message_combatd(
-        HIY "Ö»ÌıÒ»Õó¿ñ·çÉ¨Ò¶°ãµÄÉùÏìÖĞ£¬$NÊÖÖĞµÄ"YEL"½ğÉß×¶"HIY"ÉÁ³ö¶áÄ¿µÄ¹âÃ¢£¬ÉÁÒ«µÃ
-$nÑÛÃ°½ğ»¨£¬¡°½ğÉßÍÂÎí¡±£¡³ıÁËÑÛÇ°Ò»ÖØÖØµÄÎíÆøÍâ£¬$nÉ¶Ò²¿´²»¼ûÁË£¡\n" NOR, me, target);
+        HIY "åªå¬ä¸€é˜µç‹‚é£æ‰«å¶èˆ¬çš„å£°å“ä¸­ï¼Œ$Næ‰‹ä¸­çš„"YEL"é‡‘è›‡é”¥"HIY"é—ªå‡ºå¤ºç›®çš„å…‰èŠ’ï¼Œé—ªè€€å¾—
+$nçœ¼å†’é‡‘èŠ±ï¼Œâ€œé‡‘è›‡åé›¾â€ï¼é™¤äº†çœ¼å‰ä¸€é‡é‡çš„é›¾æ°”å¤–ï¼Œ$nå•¥ä¹Ÿçœ‹ä¸è§äº†ï¼\n" NOR, me, target);
 	target->set_temp("block_msg/all",1);
 	call_out("tuwu_end", (int) skill/30, me, target);
 	target->start_busy(me->query_skill("jinshe-zhui",1)/40+2);
@@ -47,9 +47,9 @@ $nÑÛÃ°½ğ»¨£¬¡°½ğÉßÍÂÎí¡±£¡³ıÁËÑÛÇ°Ò»ÖØÖØµÄÎíÆøÍâ£¬$nÉ¶Ò²¿´²»¼ûÁË£¡\n" NOR, me, t
     } else
     {
 	message_combatd(
-        HIY "Ö»ÌıÒ»Õó¿ñ·çÉ¨Ò¶°ãµÄÉùÏìÖĞ£¬$NÊÖÖĞµÄ"YEL"½ğÉß×¶"HIY"ÉÁ³ö¶áÄ¿µÄ¹âÃ¢£¬ÉÁÒ«µÃ
-$nÑÛÃ°½ğ»¨£¬¡°½ğÉßÍÂÎí¡±£¡³ıÁËÑÛÇ°Ò»ÖØÖØµÄÎíÆøÍâ£¬$nÉ¶Ò²¿´²»¼ûÁË£¡\n" NOR, me, target);
-        msg= HIY"$pÇé¼±ÖÇÉú£¬ÓÃ½£ÆøÆÈ¿ªÁË$PµÄÎíÆø¡£\n"NOR;
+        HIY "åªå¬ä¸€é˜µç‹‚é£æ‰«å¶èˆ¬çš„å£°å“ä¸­ï¼Œ$Næ‰‹ä¸­çš„"YEL"é‡‘è›‡é”¥"HIY"é—ªå‡ºå¤ºç›®çš„å…‰èŠ’ï¼Œé—ªè€€å¾—
+$nçœ¼å†’é‡‘èŠ±ï¼Œâ€œé‡‘è›‡åé›¾â€ï¼é™¤äº†çœ¼å‰ä¸€é‡é‡çš„é›¾æ°”å¤–ï¼Œ$nå•¥ä¹Ÿçœ‹ä¸è§äº†ï¼\n" NOR, me, target);
+        msg= HIY"$pæƒ…æ€¥æ™ºç”Ÿï¼Œç”¨å‰‘æ°”è¿«å¼€äº†$Pçš„é›¾æ°”ã€‚\n"NOR;
         me->start_busy(2);
         message_combatd(msg, me, target);
     }
@@ -63,9 +63,9 @@ void tuwu_end(object me, object target)
 if (target)
 {
 	target->enable_player();
-	message_combatd("$NÄ¨ÁËÄ¨ÂúÁ³µÄ"HIR"ÏÊÑª"NOR"£¬ÖÕÓÚÕö¿ªÁËÑÛ¡£\n", target);
+	message_combatd("$NæŠ¹äº†æŠ¹æ»¡è„¸çš„"HIR"é²œè¡€"NOR"ï¼Œç»ˆäºçå¼€äº†çœ¼ã€‚\n", target);
 	target->set_temp("block_msg/all", 0);
 }
-	write(HIR"ÄãÖÕÓÚÄ¨µôÁËÂúÁ³µÄÏÊÑª£¬¿´µ½ÁËÖÜÎ§µÄÇé¾°¡£\n"NOR);
+	write(HIR"ä½ ç»ˆäºæŠ¹æ‰äº†æ»¡è„¸çš„é²œè¡€ï¼Œçœ‹åˆ°äº†å‘¨å›´çš„æƒ…æ™¯ã€‚\n"NOR);
 	return;
 }

@@ -13,19 +13,19 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÌìÀ×Ò»»÷£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å¤©é›·ä¸€å‡»ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "whip")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	extra = me->query_skill("thunderwhip",1) / 5;
-	if( extra <=10) return notify_fail("ÄãµÄÌìÀ×ÆÆ»¹²»¹»ÊìÁ·£¡\n");
+	if( extra <=10) return notify_fail("ä½ çš„å¤©é›·ç ´è¿˜ä¸å¤Ÿç†Ÿç»ƒï¼\n");
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = HIR  "$NÁ¦¹à±ÞÉÒ£¬ÊÖÖÐµÄ"+weapon->query("name")+"£¢°È£¢µÄÒ»Éù£¬ÏóÌõ¶¾Áú°ãÏò$n×êÈ¥£¡" NOR;
+	msg = HIR  "$NåŠ›çŒéž­æ¢¢ï¼Œæ‰‹ä¸­çš„"+weapon->query("name")+"ï¼‚å­ï¼‚çš„ä¸€å£°ï¼Œè±¡æ¡æ¯’é¾™èˆ¬å‘$né’»åŽ»ï¼" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

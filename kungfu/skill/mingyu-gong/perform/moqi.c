@@ -21,35 +21,35 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡ºÄ§ÆøÑªÉ±¡»Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Žé­”æ°”è¡€æ€ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
   
         if( me->query_skill("mingyu-gong", 1) < 500 )
-                return notify_fail("ÄãµÄÃ÷Óñ¹¦¹¦Á¦²»×ã¡£ \n");
+                return notify_fail("ä½ çš„æ˜ŽçŽ‰åŠŸåŠŸåŠ›ä¸è¶³ã€‚ \n");
             if((int)me->query_skill("bingxue-xinfa",1) < 150)
-                return notify_fail("ÄãµÄ±ùÑ©ÐÄ·¨ÐÞÎª²»¹»¡£\n");        
+                return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n");        
         if( me->query_skill("force", 1) < 500 )
-                return notify_fail("ÄãµÄÄÚ¹¦²»¹»ºÃ¡£ \n");
+                return notify_fail("ä½ çš„å†…åŠŸä¸å¤Ÿå¥½ã€‚ \n");
         
         if(me->query("neili") < 1000)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         
         if (me->query_skill_mapped("force") != "mingyu-gong") 
-                return notify_fail("ÄãÏÖÔÚÃ»ÓÐ¼¤·¢Ã÷Óñ¹¦ÎªÄÚ¹¦£¬ÄÑÒÔÊ©Õ¹¡ºÄ§ÆøÑªÉ±¡»¡£\n"); 
+                return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰æ¿€å‘æ˜ŽçŽ‰åŠŸä¸ºå†…åŠŸï¼Œéš¾ä»¥æ–½å±•ã€Žé­”æ°”è¡€æ€ã€ã€‚\n"); 
    
-        msg = HIY "$N×Ô²Ð¼ºÉí£¬ÒÔÑªÆø×ª»»³ÉÉ±Æø¡£\n
-            ¡­¡­$NÉíÉÏ·¢³öÒ»¹ÉÇ¿´óµÄÉ±Æø¡­¡­\n
-    ¡ö$NÉíÉÏÉ±ÆøÖð½¥µØ¾Û¼¯ÔÚË«ÊÖ,ÔÚË«ÊÖÉÏÐÎ³ÉÁ½ÍÅÄ§Æø¡ö\n
-            $NÙ¿µØ´óºÈÒ»Éù£­£­Ä§ Æø Ñª É±£­£­\n\n" NOR;
+        msg = HIY "$Nè‡ªæ®‹å·±èº«ï¼Œä»¥è¡€æ°”è½¬æ¢æˆæ€æ°”ã€‚\n
+            â€¦â€¦$Nèº«ä¸Šå‘å‡ºä¸€è‚¡å¼ºå¤§çš„æ€æ°”â€¦â€¦\n
+    â– $Nèº«ä¸Šæ€æ°”é€æ¸åœ°èšé›†åœ¨åŒæ‰‹,åœ¨åŒæ‰‹ä¸Šå½¢æˆä¸¤å›¢é­”æ°”â– \n
+            $Nå€åœ°å¤§å–ä¸€å£°ï¼ï¼é­” æ°” è¡€ æ€ï¼ï¼\n\n" NOR;
 
         ap = me->query_skill("force"); 
         dp = target->query_skill("force"); 
         
         if (ap / 2 + random(ap) > dp)  
         {
-                msg += HIR BLINK "$NÍ»È»ºíÍ·Ò»¶¯¡«¡«¡¡Ö»¼û$N¿ÚÖÐÅç³öÒ»µÀÑªÖùÍù$nÉäÈ¥¡«¡«\n
-´ËÄËÄ§ÆøÉ±Ö®
-            ×îÖÕÉ±ÕÐ ¡ºÄ§ Ñª Æø É±¡»\n\n
-$nÔâµ½Ç°ËùÎ´ÓÐµÄ´ò»÷,µ«$NÒ²ÊÜÉË²»Çá¡£\n" NOR;
+                msg += HIR BLINK "$Nçªç„¶å–‰å¤´ä¸€åŠ¨ï½žï½žã€€åªè§$Nå£ä¸­å–·å‡ºä¸€é“è¡€æŸ±å¾€$nå°„åŽ»ï½žï½ž\n
+æ­¤ä¹ƒé­”æ°”æ€ä¹‹
+            æœ€ç»ˆæ€æ‹› ã€Žé­” è¡€ æ°” æ€ã€\n\n
+$né­åˆ°å‰æ‰€æœªæœ‰çš„æ‰“å‡»,ä½†$Nä¹Ÿå—ä¼¤ä¸è½»ã€‚\n" NOR;
 
                 damage =  me->query_skill("force");
                 damage *= 3;
@@ -64,13 +64,13 @@ $nÔâµ½Ç°ËùÎ´ÓÐµÄ´ò»÷,µ«$NÒ²ÊÜÉË²»Çá¡£\n" NOR;
         }
         else if( random(4) > 2 )
         {
-                msg += HIR BLINK"$NÕæÆøËù×ª»»µÄÉ±Æø²»¹»´ó,¶ÔµÐÈËºÁÎÞÓ°Ïì¡£\n" NOR;
+                msg += HIR BLINK"$NçœŸæ°”æ‰€è½¬æ¢çš„æ€æ°”ä¸å¤Ÿå¤§,å¯¹æ•Œäººæ¯«æ— å½±å“ã€‚\n" NOR;
                 me->receive_wound("qi", me->query("qi")*1/100);
                 me->add("neili",-200);  
         }
         else
         {
-                msg += HIR BLINK"$nÊÜµ½Ç¿´óµÄÉ±ÆøÉËº¦£¬¶¯µ¯²»µÃ¡£\n" NOR;
+                msg += HIR BLINK"$nå—åˆ°å¼ºå¤§çš„æ€æ°”ä¼¤å®³ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n" NOR;
                 me->receive_wound("qi", me->query("qi")* 1 /100);
                 target->receive_damage("qi", (int)me->query_skill("mingyu-gong", 1)*2);
                 

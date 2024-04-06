@@ -1,4 +1,4 @@
-// lingxiao.c Ììî¸Ö¸Ñ¨·¨ ¡¸Áè¿ÕÖ¸Ñ¨¡¹
+// lingxiao.c å¤©ç½¡æŒ‡ç©´æ³• ã€Œå‡Œç©ºæŒ‡ç©´ã€
 
 #include <ansi.h>
 
@@ -12,36 +12,36 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÁè¿ÕÖ¸Ñ¨£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å‡Œç©ºæŒ‡ç©´ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
 	if((int)me->query_str() < 25)
-		return notify_fail("Äã±ÛÁ¦²»¹»,²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼!\n");
+		return notify_fail("ä½ è‡‚åŠ›ä¸å¤Ÿ,ä¸èƒ½ä½¿ç”¨è¿™ä¸€ç»æŠ€!\n");
 
 	if((int)me->query_skill("linji-zhuang",1) < 100)
-		return notify_fail("ÄãÁÙ¼ÃÊ®¶ş×¯µÄ¹¦Á¦²»¹»²»ÄÜÊ¹ÓÃÁè¿ÕÖ¸Ñ¨!\n");
+		return notify_fail("ä½ ä¸´æµåäºŒåº„çš„åŠŸåŠ›ä¸å¤Ÿä¸èƒ½ä½¿ç”¨å‡Œç©ºæŒ‡ç©´!\n");
 
 	if((int)me->query_skill("finger") < 100)
-		return notify_fail("ÄãµÄÖ¸·¨ĞŞÎª²»¹»,Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÁè¿ÕÖ¸Ñ¨¾ø¼¼!\n");
+		return notify_fail("ä½ çš„æŒ‡æ³•ä¿®ä¸ºä¸å¤Ÿ,ç›®å‰è¿˜ä¸èƒ½ä½¿ç”¨å‡Œç©ºæŒ‡ç©´ç»æŠ€!\n");
 
 	if((int)me->query("neili") < 300)
-		return notify_fail("ÄãÄÚÁ¦ÏÖÔÚ²»¹», ²»ÄÜÊ¹ÓÃÁè¿ÕÖ¸Ñ¨! \n");
+		return notify_fail("ä½ å†…åŠ›ç°åœ¨ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨å‡Œç©ºæŒ‡ç©´! \n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
 	msg = 
-YEL "$NÊ¹³öÌìî¸Ö¸Ñ¨·¨¾ø¼¼¡¸Áè¿ÕÖ¸Ñ¨¡¹£¬»Ø¹ıÉíÀ´£¬±³ºó¾¹ËÆÉúÁËÑÛ¾¦Ò»°ã£¬×ó
-ÊÖÊ³ÖĞ¶şÖ¸Ïò$n½ÓÁ¬´ÁÈ¥£¬Ò»Á¬ÆßÖ¸£¬È«ÊÇ¶ÔÏò$nµÄÍ·Á³ÓëÇ°ĞØÖØÑ¨¡£\n";
+YEL "$Nä½¿å‡ºå¤©ç½¡æŒ‡ç©´æ³•ç»æŠ€ã€Œå‡Œç©ºæŒ‡ç©´ã€ï¼Œå›è¿‡èº«æ¥ï¼ŒèƒŒåç«Ÿä¼¼ç”Ÿäº†çœ¼ç›ä¸€èˆ¬ï¼Œå·¦
+æ‰‹é£Ÿä¸­äºŒæŒ‡å‘$næ¥è¿æˆ³å»ï¼Œä¸€è¿ä¸ƒæŒ‡ï¼Œå…¨æ˜¯å¯¹å‘$nçš„å¤´è„¸ä¸å‰èƒ¸é‡ç©´ã€‚\n";
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 )
 	{
-		msg +=  NOR "½á¹û$p±»$PÖ¸Á¦µãÖĞ¼¸´¦Ñ¨µÀ! \n" ;
+		msg +=  NOR "ç»“æœ$pè¢«$PæŒ‡åŠ›ç‚¹ä¸­å‡ å¤„ç©´é“! \n" ;
 		target->start_busy( (int)me->query_skill("tiangang-zhi",1) / 50 + 2);
 		me->add("neili", -100);
 	}
 	else
 	{
-		msg += NOR "$pÇé¼±ÖÇÉú£¬ºİÁ¦Ò»Ô¾£¬ÍË³öÀÏÔ¶¡£\n";
+		msg += NOR "$pæƒ…æ€¥æ™ºç”Ÿï¼Œç‹ åŠ›ä¸€è·ƒï¼Œé€€å‡ºè€è¿œã€‚\n";
 		me->start_busy(2);
 	}
 	message_combatd(msg, me, target);

@@ -1,4 +1,4 @@
-// chan.c Ì«¼«½£·¨¡¸²ø¡¹×Ö¾÷
+// chan.c å¤ªæå‰‘æ³•ã€Œç¼ ã€å­—è¯€
 
 #include <ansi.h>
 
@@ -13,29 +13,29 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-        return notify_fail("Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query("up1") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
         if( me->query("pfm1") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
 
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
                 
         if( (int)me->query_skill("puyaogedou", 1) < 40 )
-                return notify_fail("ÄãµÄµÈ¼¶²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÍÂÎí¡¹\n");
+                return notify_fail("ä½ çš„ç­‰çº§ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œåé›¾ã€\n");
         if( me->query("up1") < 1 )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃ´Ëpfm.\n");
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½ä½¿ç”¨æ­¤pfm.\n");
 
 
-        msg = HIG "Ö»¼û$N¿ÚÒ»ÕÅ£¬Ò»ÍÅÖØÖØµÄÅ¨ÎíÅçÏò$n¡£\n"NOR;
+        msg = HIG "åªè§$Nå£ä¸€å¼ ï¼Œä¸€å›¢é‡é‡çš„æµ“é›¾å–·å‘$nã€‚\n"NOR;
 
 if (me->query("up1")==1)
 {
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += HIR "$nÒ»ÏÂÉ¶Ò²¿´²»ÇåÁË,Ö»µÃ²ÉÈ¡ÊØÊ½£¬²»¸ÒÍı¶¯£¡\n" NOR;
+                msg += HIR "$nä¸€ä¸‹å•¥ä¹Ÿçœ‹ä¸æ¸…äº†,åªå¾—é‡‡å–å®ˆå¼ï¼Œä¸æ•¢å¦„åŠ¨ï¼\n" NOR;
             target->start_busy(6);           
 target->apply_condition("ill_dongshang",10 );
 target->apply_condition("ill_fashao",10 );
@@ -43,7 +43,7 @@ target->apply_condition("ill_kesou",10 );
 target->apply_condition("ill_shanghan",10 );
 target->apply_condition("ill_zhongshu",10 );
             } else {
-                msg += HIY"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += HIY"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(random(2));
         }
         message_combatd(msg, me, target);
@@ -51,7 +51,7 @@ target->apply_condition("ill_zhongshu",10 );
 if (me->query("up1")==2)
 {
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/4 ) {
-                msg += HIR "$nÒ»ÏÂÉ¶Ò²¿´²»ÇåÁË,Ö»µÃ²ÉÈ¡ÊØÊ½£¬²»¸ÒÍı¶¯£¡\n" NOR;
+                msg += HIR "$nä¸€ä¸‹å•¥ä¹Ÿçœ‹ä¸æ¸…äº†,åªå¾—é‡‡å–å®ˆå¼ï¼Œä¸æ•¢å¦„åŠ¨ï¼\n" NOR;
 target->apply_condition("ill_dongshang",30 );
 target->apply_condition("ill_fashao",30 );
 target->apply_condition("ill_kesou",30 );
@@ -59,7 +59,7 @@ target->apply_condition("ill_shanghan",30 );
 target->apply_condition("ill_zhongshu",30 );
             target->start_busy(8);           
             } else {
-                msg += HIY"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += HIY"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(random(2));
         }
         message_combatd(msg, me, target);

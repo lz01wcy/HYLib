@@ -1,4 +1,4 @@
-// summon ’ŸªΩÃÏ π
+// summon Âè¨Âî§Â§©‰Ωø
 #include <ansi.h>
 inherit F_SSERVER;
 #define MAX_GUARD 15
@@ -12,41 +12,41 @@ int perform(object me, object target)
 	int	i,exp;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIY"°∏’ŸªΩÃÏ π°π÷ªƒ‹∂‘’Ω∂∑÷–µƒ∂‘ ÷ π”√°£\n"NOR);
+                return notify_fail(HIY"„ÄåÂè¨Âî§Â§©‰Ωø„ÄçÂè™ËÉΩÂØπÊàòÊñó‰∏≠ÁöÑÂØπÊâã‰ΩøÁî®„ÄÇ\n"NOR);
 
         if( !me->query("zhuanbest",1))
-        return notify_fail("ƒ„√ª”–◊ ∏Ò π”√’‚œÓººƒ‹£°\n");
+        return notify_fail("‰Ω†Ê≤°ÊúâËµÑÊ†º‰ΩøÁî®ËøôÈ°πÊäÄËÉΩÔºÅ\n");
 
 	if((int)me->query("neili")< 4000)
-	return notify_fail("ƒ„µƒ∑®¡¶Ã´≤Ó¡À£°\n");
+	return notify_fail("‰Ω†ÁöÑÊ≥ïÂäõÂ§™Â∑Æ‰∫ÜÔºÅ\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("ƒß∑®≤ª «”√¿¥∂‘∏∂»ı–°ÕÊº“µƒ£°\n");
+	return notify_fail("È≠îÊ≥ï‰∏çÊòØÁî®Êù•ÂØπ‰ªòÂº±Â∞èÁé©ÂÆ∂ÁöÑÔºÅ\n");
 	
 	if((int)me->query_skill("magic-light",1)< 650)
-	return notify_fail("ƒ„µƒπ‚√˜ƒß∑®Ã´≤Ó¡À£°\n");
+	return notify_fail("‰Ω†ÁöÑÂÖâÊòéÈ≠îÊ≥ïÂ§™Â∑Æ‰∫ÜÔºÅ\n");
         spells = me->query_skill("spells");
         if(spells < 30 )
-                return notify_fail("ƒ„µƒ∑® ı≤ªπª∏ﬂ£°\n");
+                return notify_fail("‰Ω†ÁöÑÊ≥ïÊúØ‰∏çÂ§üÈ´òÔºÅ\n");
 
 	if( !me->is_fighting() )
-		return notify_fail("÷ª”–’Ω∂∑÷–≤≈ƒ‹’ŸªΩ’ŸªΩÃÏ π£°\n");
+		return notify_fail("Âè™ÊúâÊàòÊñó‰∏≠ÊâçËÉΩÂè¨Âî§Âè¨Âî§Â§©‰ΩøÔºÅ\n");
 	
         if (present("light angel",environment(me)))
-		return notify_fail("÷ªƒ‹»ÁªΩ“ª∏ˆ’ŸªΩÃÏ πŒ™ƒ„◊ˆ’Ω£°\n");
+		return notify_fail("Âè™ËÉΩÂ¶ÇÂî§‰∏Ä‰∏™Âè¨Âî§Â§©‰Ωø‰∏∫‰Ω†ÂÅöÊàòÔºÅ\n");
         
         if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("’ŸªΩ ıø…≤ªƒ‹“ªÃÏµΩÕÌ”√!\n");
+        return notify_fail("Âè¨Âî§ÊúØÂèØ‰∏çËÉΩ‰∏ÄÂ§©Âà∞ÊôöÁî®!\n");
 	
-	message_vision(HIY"$N"HIY"”√ ÷‘⁄ÃÏø’ªÆ¡À“ª∏ˆŒÂ√¢–«£¨ø⁄÷–‡´‡´µÿƒÓ÷¯÷‰Œƒ\n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨≥„ÃÏ π£¨÷«ÃÏ π£¨◊˘ÃÏ π£¨÷˜ÃÏ π£¨¡¶ÃÏ π! \n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨ƒ‹ÃÏ π£¨»®ÃÏ π£¨¥ÛÃÏ π£¨ÃÏ π£¨»˝Ω◊æ≈ÃÏ π∞°!\n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨ÃÏ∑£÷Æ ±“—æ≠µΩ¿¥£¨«Î¥Õ∏¯Œ“√Ê«∞µƒµ–»À”¿æ√µƒªŸ√∞…£°£°£°£°£°£°\n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨“°µ¥”⁄æ√‘∂”ÎŒﬁœﬁ÷Æº‰À˘”––ƒ÷Æ∏˘‘¥∞°! \n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨À˘”–¥Ê‘⁄”⁄¥Àµƒπ‚√˜÷Æª—◊∞°£°\n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨«ÎΩ´≥¡ÀØ”⁄Œ“¡ÈªÍ…Ó¥¶µƒ’‚∏ˆ¡¶¡ø£°\n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨¥”Œﬁœﬁ’ŸªΩµΩ¥À÷˙Œ““ª±€÷Æ¡¶∞…£°£°£° £°\n", me,target);
-	message_vision(HIY"$N"HIY"ƒÓµΩ£¨≥ˆœ÷∞…£¨æ¸ÃÏ π √◊Â»¿’ !!! \n", me,target);
+	message_vision(HIY"$N"HIY"Áî®ÊâãÂú®Â§©Á©∫Âàí‰∫Ü‰∏Ä‰∏™‰∫îËäíÊòüÔºåÂè£‰∏≠ÂñÉÂñÉÂú∞ÂøµËëóÂííÊñá\n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåÁÇΩÂ§©‰ΩøÔºåÊô∫Â§©‰ΩøÔºåÂ∫ßÂ§©‰ΩøÔºå‰∏ªÂ§©‰ΩøÔºåÂäõÂ§©‰Ωø! \n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåËÉΩÂ§©‰ΩøÔºåÊùÉÂ§©‰ΩøÔºåÂ§ßÂ§©‰ΩøÔºåÂ§©‰ΩøÔºå‰∏âÈò∂‰πùÂ§©‰ΩøÂïä!\n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåÂ§©ÁΩö‰πãÊó∂Â∑≤ÁªèÂà∞Êù•ÔºåËØ∑ËµêÁªôÊàëÈù¢ÂâçÁöÑÊïå‰∫∫Ê∞∏‰πÖÁöÑÊØÅÁÅ≠ÂêßÔºÅÔºÅÔºÅÔºÅÔºÅÔºÅ\n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåÊëáËç°‰∫é‰πÖËøú‰∏éÊó†Èôê‰πãÈó¥ÊâÄÊúâÂøÉ‰πãÊ†πÊ∫êÂïä! \n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåÊâÄÊúâÂ≠òÂú®‰∫éÊ≠§ÁöÑÂÖâÊòé‰πãÁÅ´ÁÇéÂïäÔºÅ\n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåËØ∑Â∞ÜÊ≤âÁù°‰∫éÊàëÁÅµÈ≠ÇÊ∑±Â§ÑÁöÑËøô‰∏™ÂäõÈáèÔºÅ\n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞Ôºå‰ªéÊó†ÈôêÂè¨Âî§Âà∞Ê≠§Âä©Êàë‰∏ÄËáÇ‰πãÂäõÂêßÔºÅÔºÅÔºÅ ÔºÅ\n", me,target);
+	message_vision(HIY"$N"HIY"ÂøµÂà∞ÔºåÂá∫Áé∞ÂêßÔºåÂÜõÂ§©‰Ωø Á±≥Ëø¶Âãí !!! \n", me,target);
  
 
 	me->add("neili", -2500);
@@ -54,7 +54,7 @@ me->start_busy(3);
 	seteuid(getuid());
 
 soldier =new("/clone/magic/lightman");
-message_vision(HIY"$N"HIY"÷‰”Ôπ˝∫Û,æ¸ÃÏ π √◊Â»¿’ !!!≥ˆœ÷¡À£°£°\n", me,target);
+message_vision(HIY"$N"HIY"ÂííËØ≠ËøáÂêé,ÂÜõÂ§©‰Ωø Á±≥Ëø¶Âãí !!!Âá∫Áé∞‰∫ÜÔºÅÔºÅ\n", me,target);
 	soldier->move(environment(me));
 if (userp(me))
 {

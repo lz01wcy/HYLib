@@ -1,13 +1,13 @@
-// lu.c Â³Á¬ÈÙ
+// lu.c é²è¿è£
 // Last Modified by ahda on Sep.1 2001
 inherit NPC;
 inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("Â³Á¬ÈÙ", ({ "lu lianrong", "lu", "lianrong" }) );
-	set("nickname", HIY"½ğÑÛµñ"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("é²è¿è£", ({ "lu lianrong", "lu", "lianrong" }) );
+	set("nickname", HIY"é‡‘çœ¼é›•"NOR);
+	set("gender", "ç”·æ€§");
 	set("class", "swordsman");
 	set("age", 45);
 	set("attitude", "peaceful");
@@ -54,7 +54,7 @@ void create()
 		(: exert_function, "powerup" :),
 	}) );
 
-	create_family("ºâÉ½ÅÉ", 13, "µÜ×Ó");
+	create_family("è¡¡å±±æ´¾", 13, "å¼Ÿå­");
 	setup();
 
 	carry_object(__DIR__"xijian")->wield();

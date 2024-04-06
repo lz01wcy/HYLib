@@ -1,4 +1,4 @@
-// reserve.c 轻身
+// reserve.c 杞昏韩
 
 #include <ansi.h>
 
@@ -13,18 +13,18 @@ int perform(object me, object target)
 	string msg;
 
 	if( (int)me->query_temp("xianglong") ) 
-		return notify_fail("你已经在运功中了。\n");
+		return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 	if( !me->is_fighting() )
-		return notify_fail("降龙大法只能在战斗中使用。\n");
+		return notify_fail("闄嶉緳澶ф硶鍙兘鍦ㄦ垬鏂椾腑浣跨敤銆俓n");
 
         if (me->query_skill("huntian-qigong", 1)<70)
-                return notify_fail("你的本门内功火候未到，！\n");
+                return notify_fail("浣犵殑鏈棬鍐呭姛鐏�欐湭鍒帮紝锛乗n");
 
 	if( (int)me->query("neili") < 300  ) 
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 
        skill = me->query_skill("xianglong-zhang",1);
-	message_combatd( HIR "$N深吸一口气，运起降龙大法，结果越战越勇！\n" NOR, me);
+	message_combatd( HIR "$N娣卞惛涓�鍙ｆ皵锛岃繍璧烽檷榫欏ぇ娉曪紝缁撴灉瓒婃垬瓒婂媷锛乗n" NOR, me);
 
 	me->set_temp("xianglong", 1);
 
@@ -47,5 +47,5 @@ int skill;
 	me->add_temp("apply/attack", -d_amount);
 	me->add_temp("apply/dodge", -d_amount);
 	me->delete_temp("xianglong");
-	tell_object(me, CYN "你的降龙大法运行完毕，将内力收回丹田。\n");
+	tell_object(me, CYN "浣犵殑闄嶉緳澶ф硶杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }

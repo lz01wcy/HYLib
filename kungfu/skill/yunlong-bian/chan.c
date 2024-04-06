@@ -1,4 +1,4 @@
-// chan.c ÔÆÁú±Þ·¨ ²ø×Ö¾÷
+// chan.c äº‘é¾™éž­æ³• ç¼ å­—è¯€
 
 #include <ansi.h>
 
@@ -12,29 +12,29 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ç£ÖÆ¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç‰µåˆ¶æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("yunlong-bian",1) < 50)
-		return notify_fail("ÄãµÄ¡¸ÔÆÁú±Þ·¨¡¹¹¦Á¦Ì«Ç³£¬Ê¹²»ÁË¡¸²ø¡¹×Ö¾÷£¡\n");
+		return notify_fail("ä½ çš„ã€Œäº‘é¾™éž­æ³•ã€åŠŸåŠ›å¤ªæµ…ï¼Œä½¿ä¸äº†ã€Œç¼ ã€å­—è¯€ï¼\n");
 
 	if( (int)me->query_skill("yunlong-shengong", 1) < 50 )
-		return notify_fail("ÄãµÄÔÆÁúÉñ¹¦²»¹»¸ß£¬²»ÄÜÓÃÀ´·´ÕðÉËµÐ¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™ç¥žåŠŸä¸å¤Ÿé«˜ï¼Œä¸èƒ½ç”¨æ¥åéœ‡ä¼¤æ•Œã€‚\n");
 
     if (!weapon || weapon->query("skill_type") != "whip")
-        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¡\n");     
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸è¶³ï¼\n");     
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
 
-	msg = CYN "$NÊ¹³öÔÆÁú±Þ·¨¡¸²ø¡¹×Ö¾÷£¬Á¬»Ó³¤±ÞÆóÍ¼°Ñ$nµÄÈ«Éí²ø×¡¡£\n";
+	msg = CYN "$Nä½¿å‡ºäº‘é¾™éž­æ³•ã€Œç¼ ã€å­—è¯€ï¼Œè¿žæŒ¥é•¿éž­ä¼å›¾æŠŠ$nçš„å…¨èº«ç¼ ä½ã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°\n" NOR;
+		msg += "ç»“æžœ$pè¢«$Pæ”»äº†ä¸ªæŽªæ‰‹ä¸åŠ\n" NOR;
 		target->start_busy( (int)me->query_skill("yunlong-bian") / 50 + 2);
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓÐÉÏµ±¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
 		me->start_busy(2);
 	}
 me->add("neili", -100);

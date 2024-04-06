@@ -1,4 +1,4 @@
-//·çÀ× fenglei.c 
+//é£Žé›· fenglei.c 
 
 #include <ansi.h>
 #include <skill.h>
@@ -24,30 +24,30 @@ i = (int)me->query_skill("duanjia-jianfa", 1)  /10;
 	 if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸·çÀ×ËÄ»÷¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œé£Žé›·å››å‡»ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  
 	if (!weapon || weapon->query("skill_type") != "sword"
        || me->query_skill_mapped("sword") != "duanjia-jianfa")
-      return notify_fail("ÊÖÖÐÎÞ½£,ÄãÔõÃ´Ê¹µÃ³ö¡¸·çÀ×ËÄ»÷¡¹£¡\n");
+      return notify_fail("æ‰‹ä¸­æ— å‰‘,ä½ æ€Žä¹ˆä½¿å¾—å‡ºã€Œé£Žé›·å››å‡»ã€ï¼\n");
 
     if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
          
 	if( (int)me->query_skill("duanjia-jianfa",1) < 100 ||
 	    me->query_skill_mapped("sword") != "duanjia-jianfa")
-		return notify_fail("ÄãµÄ¶Î¼Ò½£·¨»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸·çÀ×ËÄ»÷¡¹¾ø¼¼£¡\n");
+		return notify_fail("ä½ çš„æ®µå®¶å‰‘æ³•è¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œé£Žé›·å››å‡»ã€ç»æŠ€ï¼\n");
 
- message_vision(BLU"\n $N³¤Ð¦Ò»Éù£¬½£½»×óÊÖ£¬õåÉí¶øÉÏ£¬Ê©Õ¹¡¸·çÀ×ËÄ»÷¡¹¾ø¼¼,ÊÔÍ¼¿ìËÙ»÷ÉË$n \n"NOR, me,target);
+ message_vision(BLU"\n $Né•¿ç¬‘ä¸€å£°ï¼Œå‰‘äº¤å·¦æ‰‹ï¼Œè¹‚èº«è€Œä¸Šï¼Œæ–½å±•ã€Œé£Žé›·å››å‡»ã€ç»æŠ€,è¯•å›¾å¿«é€Ÿå‡»ä¼¤$n \n"NOR, me,target);
       COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add("neili",-300); 
       me->add("jingli",-200); 
     me->add_temp("apply/attack", i);
     me->add_temp("apply/dodge", i);
-	 msg =  HIY  "$NÎÕ½£Ö±ÉÏ£¬¶Ô×Å$n¾ÍÊÇÒ»½££¡\n" NOR;
+	 msg =  HIY  "$Næ¡å‰‘ç›´ä¸Šï¼Œå¯¹ç€$nå°±æ˜¯ä¸€å‰‘ï¼\n" NOR;
 	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "$N½Å²ÈÁ÷ÐÇ²½£¬´í²½¶øÇ°£¬»Ðã±Ö®¼äÒÑµ½$nÃæÇ°£¡\n" NOR;
+        msg = HIY  "$Nè„šè¸©æµæ˜Ÿæ­¥ï¼Œé”™æ­¥è€Œå‰ï¼Œææƒšä¹‹é—´å·²åˆ°$né¢å‰ï¼\n" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIY  "$NÁ¢Éí¶øÆð£¬Ò»º×³åÌì£¬Ò»ÕÐ[·ç»ðÀ×µç]ÉÁµç°ãÅüÏò$n£¡ \n" NOR;
+        msg = HIY  "$Nç«‹èº«è€Œèµ·ï¼Œä¸€é¹¤å†²å¤©ï¼Œä¸€æ‹›[é£Žç«é›·ç”µ]é—ªç”µèˆ¬åŠˆå‘$nï¼ \n" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
        me->start_busy(5);
       me->add_temp("apply/dodge", -i);

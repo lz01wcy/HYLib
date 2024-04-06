@@ -12,27 +12,27 @@ int perform(object me, object target)
       if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ö»ÓĞÔÚÕ¾¶·ÖĞ²ÅÄÜÊ¹ÓÃ£¡\n");
+                return notify_fail("åªæœ‰åœ¨ç«™æ–—ä¸­æ‰èƒ½ä½¿ç”¨ï¼\n");
 
 
        if((int)me->query_skill("bingxue-xinfa",1) < 100)
-                return notify_fail(HIY "ÄãµÄ±ùÑ©ĞÄ·¨ĞŞÎª²»¹»¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿã€‚\n" NOR);
 
          if((int)me->query_skill("snowstep",1) < 100)
-                return notify_fail(HIY "ÄãµÄÃ·Ñ©Æ®Ïã²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail(HIY "ä½ çš„æ¢…é›ªé£˜é¦™ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ ç°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ ç°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
     
         if (me->query_skill_mapped("dodge") != "snowstep")
-                return notify_fail("ÄãÏÖÔÚ¼¤·¢µÄÇáÉí²»ÊÇ¡¸Ñ©Îè¡¹¾ø¼¼¡£\n");                                                                                 
+                return notify_fail("ä½ ç°åœ¨æ¿€å‘çš„è½»èº«ä¸æ˜¯ã€Œé›ªèˆã€ç»æŠ€ã€‚\n");                                                                                 
       if( me->query_temp("piao")   )
-      return notify_fail("ÄãÕıÔÚÊ¹ÓÃÑ©Îè£¡\n");
+      return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨é›ªèˆï¼\n");
        
-     msg = HIW"$NÈçÁøĞõ°ãÇáÇáÆ®Æğ¡£ËÄÃæ°Ë·½¶¼ÊÇ$NµÄÓ°×Ó,ÈçÍ¬ÂúÌìÑ©Îè£¡\n" NOR;
+     msg = HIW"$Nå¦‚æŸ³çµ®èˆ¬è½»è½»é£˜èµ·ã€‚å››é¢å…«æ–¹éƒ½æ˜¯$Nçš„å½±å­,å¦‚åŒæ»¡å¤©é›ªèˆï¼\n" NOR;
       
       message_vision(msg, me, target); 
       improve = (int)me->query_dex() * 2;
@@ -51,7 +51,7 @@ void remove_effect(object me, int improve)
       me->add_temp("apply/dodge", - improve);
       me->add_temp("apply/defense",- improve);
       me->delete_temp("piao");
-      tell_object(me, HIW"ÄãÉ¢È¥µ¤ÌïÄı¾ÛµÄÄÚÁ¦£¬ÉíĞÎÓÖÕı³£ÏÂÀ´¡£\n"NOR);
-      tell_room(environment(me), HIW + me->name()+"¶¯×÷Ô½À´Ô½Âı£¬É¢È¥ÁË»ìÉíµÄ¹¦Á¦¡£\n" NOR,  ({ me }));
+      tell_object(me, HIW"ä½ æ•£å»ä¸¹ç”°å‡èšçš„å†…åŠ›ï¼Œèº«å½¢åˆæ­£å¸¸ä¸‹æ¥ã€‚\n"NOR);
+      tell_room(environment(me), HIW + me->name()+"åŠ¨ä½œè¶Šæ¥è¶Šæ…¢ï¼Œæ•£å»äº†æ··èº«çš„åŠŸåŠ›ã€‚\n" NOR,  ({ me }));
     
 }

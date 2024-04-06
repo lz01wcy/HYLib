@@ -16,23 +16,23 @@ int perform(object me)
         skill = me->query_skill("xueshan-sword",1);
 
         if( !(me->is_fighting() ))
-            return notify_fail("¡¸"+HIW"ÍòÃ·Æ®Áã"NOR+"¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+            return notify_fail("ã€Œ"+HIW"ä¸‡æ¢…é£˜é›¶"NOR+"ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-            return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+            return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( skill < 80)
-            return notify_fail("ÄãµÄÑ©É½½£·¨ĞŞÎª²»¹», ²»ÄÜÊ¹ÓÃ¡¸"+HIW"ÍòÃ·Æ®Áã"NOR+"¡¹£¡\n");  
+            return notify_fail("ä½ çš„é›ªå±±å‰‘æ³•ä¿®ä¸ºä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œ"+HIW"ä¸‡æ¢…é£˜é›¶"NOR+"ã€ï¼\n");  
         if( (int)me->query_skill("bingxue-xinfa",1) < 80 )
-                return notify_fail("ÄãµÄ±ùÑ©ĞÄ·¨²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸"+HIW"ÍòÃ·Æ®Áã"NOR+"¡¹£¡\n");
+                return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œ"+HIW"ä¸‡æ¢…é£˜é›¶"NOR+"ã€ï¼\n");
 
         if( me->query("neili") < 200 )
-            return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸"+HIW"ÍòÃ·Æ®Áã"NOR+"¡¹£¡\n");
+            return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œ"+HIW"ä¸‡æ¢…é£˜é›¶"NOR+"ã€ï¼\n");
 
         msg = HIW 
-    "$N³¤Ğ¥Ò»Éù,Ê¹³ö¡¸ÍòÃ·Æ®Áã¡¹,ÊÖÖĞ±øÆ÷¼²¾í,ÏÆÆğÍò¶äÑ©»¨ÏòÇ°ÆÌÌì¸ÇµØµÄÈöÈ¥¡£\n"
-    "ÔÚ°×Ã£Ã£µÄÒ»Æ¬ÖĞ,ºöÈ»³öÏÖÍò¶äÃ·»¨ĞÎ½£»¨,´©Í¸Ñ©Ä»,³¯ËÄÃæ°Ë·½¿ñÉä¶ø³ö¡£\n" NOR;
+    "$Né•¿å•¸ä¸€å£°,ä½¿å‡ºã€Œä¸‡æ¢…é£˜é›¶ã€,æ‰‹ä¸­å…µå™¨ç–¾å·,æ€èµ·ä¸‡æœµé›ªèŠ±å‘å‰é“ºå¤©ç›–åœ°çš„æ’’å»ã€‚\n"
+    "åœ¨ç™½èŒ«èŒ«çš„ä¸€ç‰‡ä¸­,å¿½ç„¶å‡ºç°ä¸‡æœµæ¢…èŠ±å½¢å‰‘èŠ±,ç©¿é€é›ªå¹•,æœå››é¢å…«æ–¹ç‹‚å°„è€Œå‡ºã€‚\n" NOR;
         message_combatd(msg, me, target);
 
         ap = random(me->query("combat_exp") + skill*5);
@@ -44,9 +44,9 @@ int perform(object me)
             if(userp(me))
                  me->add("neili",-150); 
         msg = HIC 
-    "ÎŞÊıÃ·»¨¹â»ª,»Ã³öµÀµÀ½£Æø,½«$nÈ«ÉíÉÏÏÂÕÖµÃÑÏÑÏÊµÊµ¡£$nÉíÔÚÆäÖĞ,\n"
-    "Ö»¾õ½£¹âÊøÊø,ÔÚ×Ô¼ºÉíÉÏË¿Ë¿»®¹ı,Ò»Ê±È«Éí¾çÍ´,ÏÊÑª·É½¦µÃµ½´¦¶¼ÊÇ¡£ÈçÍ¬Áè³ÙÖ®ĞÌ,\n"
-    "²Ò²»¿°ÑÔ¡£\n" NOR; 
+    "æ— æ•°æ¢…èŠ±å…‰å,å¹»å‡ºé“é“å‰‘æ°”,å°†$nå…¨èº«ä¸Šä¸‹ç½©å¾—ä¸¥ä¸¥å®å®ã€‚$nèº«åœ¨å…¶ä¸­,\n"
+    "åªè§‰å‰‘å…‰æŸæŸ,åœ¨è‡ªå·±èº«ä¸Šä¸ä¸åˆ’è¿‡,ä¸€æ—¶å…¨èº«å‰§ç—›,é²œè¡€é£æº…å¾—åˆ°å¤„éƒ½æ˜¯ã€‚å¦‚åŒå‡Œè¿Ÿä¹‹åˆ‘,\n"
+    "æƒ¨ä¸å ªè¨€ã€‚\n" NOR; 
         COMBAT_D->report_status(target);
             qi_wound = (int)me->query_skill("xueshan-sword",1)+(int)me->query_skill("sword",1);
             qi_wound = qi_wound/2 + random(qi_wound);
@@ -69,14 +69,14 @@ target->apply_condition("xuanming_poison",50);
         {
             if(userp(me))
                  me->add("neili",-100);
-            msg = "¿ÉÊÇ$nÇá½İµØÍùÅÔ±ßÒ»ÉÁ£¬±Ü¹ıÁËÕâÒ»½£¡£\n"NOR;
+            msg = "å¯æ˜¯$nè½»æ·åœ°å¾€æ—è¾¹ä¸€é—ªï¼Œé¿è¿‡äº†è¿™ä¸€å‰‘ã€‚\n"NOR;
             me->start_busy(2);
         }
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/4 ) {
          attack_time = random((int)me->query_skill("xueshan-sword", 1) / 30);
         if (attack_time > 9 ) attack_time=9;
         for(i = 0; i < attack_time; i++){
-         msg = HIW "$NÔÚÂşÂşÑ©»¨ÖĞ£¬Ò»¼¼Ã·»¨´ÌÁË³öÀ´£¡\n" NOR;
+         msg = HIW "$Nåœ¨æ¼«æ¼«é›ªèŠ±ä¸­ï¼Œä¸€æŠ€æ¢…èŠ±åˆºäº†å‡ºæ¥ï¼\n" NOR;
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
                         }
         me->start_busy(2);

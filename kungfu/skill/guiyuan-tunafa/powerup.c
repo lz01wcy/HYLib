@@ -1,4 +1,4 @@
-// powerup.c 玄天无极加力
+// powerup.c 鐜勫ぉ鏃犳瀬鍔犲姏
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -12,19 +12,19 @@ int exert(object me, object target)
     int skill;
 
     if( target != me )
-        return notify_fail("你只能用归元吐纳法来提升自己的战斗力。\n");
+        return notify_fail("浣犲彧鑳界敤褰掑厓鍚愮撼娉曟潵鎻愬崌鑷繁鐨勬垬鏂楀姏銆俓n");
 
     if( (int)me->query("neili") < 100  )
-        return notify_fail("你的内力不够。\n");
+        return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
     if( (int)me->query_temp("powerup") )
-        return notify_fail("你已经在运功中了。\n");
+        return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
     skill = me->query_skill("force");
     me->add("neili", -100);
     me->receive_damage("qi", 0);
 
     message_combatd(
-HIC "$N微一凝神，运起归元吐纳法，全身骨节发出一阵爆豆般的声响。\n" NOR, me);
+HIC "$N寰竴鍑濈锛岃繍璧峰綊鍏冨悙绾虫硶锛屽叏韬鑺傚彂鍑轰竴闃电垎璞嗚埇鐨勫０鍝嶃�俓n" NOR, me);
 
     me->add_temp("apply/attack", skill/3);
     me->add_temp("apply/dodge", skill/4);
@@ -44,6 +44,6 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/attack", -skill/3);
    me->add_temp("apply/dodge", -skill/4);
     me->delete_temp("powerup");
-    tell_object(me, "你的归元吐纳法运行完毕，将内力收回丹田。\n");
+    tell_object(me, "浣犵殑褰掑厓鍚愮撼娉曡繍琛屽畬姣曪紝灏嗗唴鍔涙敹鍥炰腹鐢般�俓n");
 }
 

@@ -10,21 +10,21 @@ int perform(object me, object target)
 	int lvl;
 	if( !target ) target = me;
 	if(!me->is_fighting() )
-		return notify_fail("£Û³éÉí·¨£İÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»æŠ½èº«æ³•ï¼½åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 	if( target != me)
-		return notify_fail("£Û³éÉí·¨£İÖ»ÄÜ¶Ô×Ô¼ºÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»æŠ½èº«æ³•ï¼½åªèƒ½å¯¹è‡ªå·±ä½¿ç”¨ã€‚\n");
 	if( (int)me->query("neili") < 500  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         me->add("neili",-140);
-	msg = YEL "$NĞé»ÎÒ»ÕĞ£¬×İÉíÏòÍâÌø¿ª£¬ÆóÍ¼±Ü¿ªµĞÈËµÄ¹¥ÊÆ£¬\n" NOR;
+	msg = YEL "$Nè™šæ™ƒä¸€æ‹›ï¼Œçºµèº«å‘å¤–è·³å¼€ï¼Œä¼å›¾é¿å¼€æ•Œäººçš„æ”»åŠ¿ï¼Œ\n" NOR;
 	lvl = (int)me->query_skill("dodge",1);
 	me->add_temp("apply/attack",lvl);
         message_vision(msg, me);
-	msg = HIR  "ÉÏÒ»³éÉí£¡" NOR;
+	msg = HIR  "ä¸Šä¸€æŠ½èº«ï¼" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-       msg = HIR  "ÏÂÒ»³éÉí£¡" NOR;
+       msg = HIR  "ä¸‹ä¸€æŠ½èº«ï¼" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-       msg = HIR  "×îºóÔÙÒ»³éÉí£¡" NOR;
+       msg = HIR  "æœ€åå†ä¸€æŠ½èº«ï¼" NOR;
        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
 	me->add_temp("apply/attack",-lvl);

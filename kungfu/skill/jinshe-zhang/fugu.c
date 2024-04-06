@@ -1,4 +1,4 @@
-// fugu.c ½ğÉßÓÎÉíÕÆ-¸½¹Ç²øÉí
+// fugu.c é‡‘è›‡æ¸¸èº«æŒ-é™„éª¨ç¼ èº«
 
 #include <ansi.h>
 #include <skill.h>
@@ -15,22 +15,22 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¸½¹Ç²øÉíÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é™„éª¨ç¼ èº«åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_temp("weapon"))
-                return notify_fail("Äã²»ÊÇ¿ÕÊÖ£¬²»ÄÜÊ¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯ç©ºæ‰‹ï¼Œä¸èƒ½ä½¿ç”¨é™„éª¨ç¼ èº«ã€‚\n");
 
         if( (int)me->query_skill("jinshe-zhang", 1) < 100 )
-                return notify_fail("ÄãµÄ½ğÉßÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨é™„éª¨ç¼ èº«ã€‚\n");
 
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨é™„éª¨ç¼ èº«ã€‚\n");
 
-        msg = YEL "$N´óºÈÒ»Éù£¬²øÉí¶øÉÏ×óÊÖÒ»Ì½µó×¡$nÊÖÍó£¬ÓÒÕÆÃÍÏÂÉ±ÊÖ£¡"NOR;
+        msg = YEL "$Nå¤§å–ä¸€å£°ï¼Œç¼ èº«è€Œä¸Šå·¦æ‰‹ä¸€æ¢åˆä½$næ‰‹è…•ï¼Œå³æŒçŒ›ä¸‹æ€æ‰‹ï¼"NOR;
               COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = YEL  "Ö»¼û$N×óÊÖ²»Í££¬ÈçÒ»Ìõ¶¾Éß´®Ïò$n£¡" NOR;
+        msg = YEL  "åªè§$Nå·¦æ‰‹ä¸åœï¼Œå¦‚ä¸€æ¡æ¯’è›‡ä¸²å‘$nï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = YEL  "$NÁ³Ä¿ÕøÄü£¬ÂÔÏÔ³Õ´ô£¬Ò»ÕĞ[ÒıÉß³ö¶¯]Ë«ÕÆ·è¿ñµØ´òÏò$n£¡" NOR;
+        msg = YEL  "$Nè„¸ç›®ç‹°ç‹ï¼Œç•¥æ˜¾ç—´å‘†ï¼Œä¸€æ‹›[å¼•è›‡å‡ºåŠ¨]åŒæŒç–¯ç‹‚åœ°æ‰“å‘$nï¼" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->start_busy(4);
         return 1;

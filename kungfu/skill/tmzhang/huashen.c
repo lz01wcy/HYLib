@@ -7,71 +7,71 @@ int perform(object me, object target)
 {
         int extra;
        if ( me->query_con()< 30 )
-            return notify_fail(RED"ÄãÏÈÌì²»×ã,Ç¿ÐÐÔË¹¦»áº¦ÁË×Ô¼º!\n"NOR);
-    if (me->query("family/family_name") != "ÈÕÔÂÉñ½Ì" )
-        return notify_fail("Äã²»ÊÇÈÕÔÂÉñ½ÌµÜ×Ó£¬²»ÄÜÊ¹ÓÃÕâÏî¾ø¼¼£¡\n");
+            return notify_fail(RED"ä½ å…ˆå¤©ä¸è¶³,å¼ºè¡Œè¿åŠŸä¼šå®³äº†è‡ªå·±!\n"NOR);
+    if (me->query("family/family_name") != "æ—¥æœˆç¥žæ•™" )
+        return notify_fail("ä½ ä¸æ˜¯æ—¥æœˆç¥žæ•™å¼Ÿå­ï¼Œä¸èƒ½ä½¿ç”¨è¿™é¡¹ç»æŠ€ï¼\n");
         
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("¡¼»¯ÉíÇ§Íò¡½Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");		
+		return notify_fail("ã€–åŒ–èº«åƒä¸‡ã€—åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");		
 
         extra = me->query_skill("tmzhang",1);
-        if ( extra < 70) return notify_fail(RED"ÄãµÄ¡¼ÌìÄ§ÕÆ¡½»¹²»¹»´¿Êì£¡\n"NOR);
+        if ( extra < 70) return notify_fail(RED"ä½ çš„ã€–å¤©é­”æŽŒã€—è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n"NOR);
 
         if( !target ) target = offensive_target(me);
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail(HIR"¡¼»¯ÉíÇ§Íò¡½"+NOR+"Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"+NOR);
+                return notify_fail(HIR"ã€–åŒ–èº«åƒä¸‡ã€—"+NOR+"åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"+NOR);
        if( me->query("tmzhang")<100 )
          {
                 if(target->is_busy())
-                        return notify_fail(target->name()+"ÒÑ¾­ÊÖÃ¦½ÅÂÒÁË£¡\n");
-                message_vision(HIY"\n$N½Å²ÈÁ¬»·£¬ÈçÌìÄ§¿ñÎè£¬Ò»Ê±¼ä£¬½«$n°üÎ§ÔÚÇ§°ÙË«ÕÆÓ°ÖÐ£¡\n\n"+NOR,me,target);
+                        return notify_fail(target->name()+"å·²ç»æ‰‹å¿™è„šä¹±äº†ï¼\n");
+                message_vision(HIY"\n$Nè„šè¸©è¿žçŽ¯ï¼Œå¦‚å¤©é­”ç‹‚èˆžï¼Œä¸€æ—¶é—´ï¼Œå°†$nåŒ…å›´åœ¨åƒç™¾åŒæŽŒå½±ä¸­ï¼\n\n"+NOR,me,target);
                 if(random((int)target->query("combat_exp")/3) < (int)me->query("combat_exp"))
                 {
-                        message_vision(HIR"Ö»¼û"+target->query("name")+"ËÄÖÜ¾ÍÏóÓÐÇ§°ÙÖ»"HIY"Ä§"HIC"Ó°"HIM"ÔÚ"HIG"·É"HIB"Îè"HIY",\n
-                              ½á¹û$N±»ÈÅµÃÑÛ»¨ÁÊÂÒ£¬½ÓÓ¦²»Ï¾£¡ÊÖ½Å¶ÙÊ±ÂýÁËÏÂÀ´.\n"NOR,target);
+                        message_vision(HIR"åªè§"+target->query("name")+"å››å‘¨å°±è±¡æœ‰åƒç™¾åª"HIY"é­”"HIC"å½±"HIM"åœ¨"HIG"é£ž"HIB"èˆž"HIY",\n
+                              ç»“æžœ$Nè¢«æ‰°å¾—çœ¼èŠ±æ½¦ä¹±ï¼ŒæŽ¥åº”ä¸æš‡ï¼æ‰‹è„šé¡¿æ—¶æ…¢äº†ä¸‹æ¥.\n"NOR,target);
                         target->start_busy(5);
                 }
                 else
                 {
-                        message_vision(HIY"½á¹û$N×Ô¼ºÅªÁË¸öÍ·ÔÎÑÛ»¨£¡ÊÖ½Å¶ÙÊ±ÂýÁËÏÂÀ´.\n"+NOR,me);
+                        message_vision(HIY"ç»“æžœ$Nè‡ªå·±å¼„äº†ä¸ªå¤´æ™•çœ¼èŠ±ï¼æ‰‹è„šé¡¿æ—¶æ…¢äº†ä¸‹æ¥.\n"+NOR,me);
                         me->start_busy(2);
                   }
          }
       if( (me->query("tmzhang")<200)&&(me->query("tmzhang")>100) )            
          {
                 if(target->is_busy())
-                        return notify_fail(target->name()+"ÒÑ¾­ÊÖÃ¦½ÅÂÒÁË£¡\n");
-                message_vision(HIY"\n$N½Å²ÈÁ¬»·£¬ÈçÌìÄ§¿ñÎè£¬Ò»Ê±¼ä£¬½«$n°üÎ§ÔÚÇ§°ÙË«ÕÆÓ°ÖÐ£¡\n\n"+NOR,me,target);
+                        return notify_fail(target->name()+"å·²ç»æ‰‹å¿™è„šä¹±äº†ï¼\n");
+                message_vision(HIY"\n$Nè„šè¸©è¿žçŽ¯ï¼Œå¦‚å¤©é­”ç‹‚èˆžï¼Œä¸€æ—¶é—´ï¼Œå°†$nåŒ…å›´åœ¨åƒç™¾åŒæŽŒå½±ä¸­ï¼\n\n"+NOR,me,target);
                 if(random((int)target->query("combat_exp")/2) < (int)me->query("combat_exp"))
                 {
-                        message_vision(HIR"Ö»¼û"+target->query("name")+"ËÄÖÜ¾ÍÏóÓÐÇ§°ÙÖ»"HIY"Ä§"HIC"Ó°"HIM"ÔÚ"HIG"·É"HIB"Îè"HIY",\n
-                              ½á¹û$N±»ÈÅµÃÑÛ»¨ÁÊÂÒ£¬½ÓÓ¦²»Ï¾£¡ÊÖ½Å¶ÙÊ±ÂýÁËÏÂÀ´..\n"NOR,target);
+                        message_vision(HIR"åªè§"+target->query("name")+"å››å‘¨å°±è±¡æœ‰åƒç™¾åª"HIY"é­”"HIC"å½±"HIM"åœ¨"HIG"é£ž"HIB"èˆž"HIY",\n
+                              ç»“æžœ$Nè¢«æ‰°å¾—çœ¼èŠ±æ½¦ä¹±ï¼ŒæŽ¥åº”ä¸æš‡ï¼æ‰‹è„šé¡¿æ—¶æ…¢äº†ä¸‹æ¥..\n"NOR,target);
                         target->start_busy(5);
                 }
                 else
                 {
-                        message_vision(HIY"½á¹û$N×Ô¼ºÅªÁË¸öÍ·ÔÎÑÛ»¨£¡ÊÖ½Å¶ÙÊ±ÂýÁËÏÂÀ´..\n"+NOR,me);
+                        message_vision(HIY"ç»“æžœ$Nè‡ªå·±å¼„äº†ä¸ªå¤´æ™•çœ¼èŠ±ï¼æ‰‹è„šé¡¿æ—¶æ…¢äº†ä¸‹æ¥..\n"+NOR,me);
                         me->start_busy(2);
                }
                  }
           if( me->query("tmzhang")>200 )            
          {
                 if(target->is_busy())
-                        return notify_fail(target->name()+"ÒÑ¾­ÊÖÃ¦½ÅÂÒÁË£¡\n");
-                message_vision(HIY"\n$N½Å²ÈÁ¬»·£¬ÈçÌìÄ§¿ñÎè£¬Ò»Ê±¼ä£¬½«$n°üÎ§ÔÚÇ§°ÙË«ÕÆÓ°ÖÐ£¡\n\n"+NOR,me,target);
+                        return notify_fail(target->name()+"å·²ç»æ‰‹å¿™è„šä¹±äº†ï¼\n");
+                message_vision(HIY"\n$Nè„šè¸©è¿žçŽ¯ï¼Œå¦‚å¤©é­”ç‹‚èˆžï¼Œä¸€æ—¶é—´ï¼Œå°†$nåŒ…å›´åœ¨åƒç™¾åŒæŽŒå½±ä¸­ï¼\n\n"+NOR,me,target);
                 if(random((int)target->query("combat_exp")) < (int)me->query("combat_exp"))
 
                 {
-                        message_vision(HIR"Ö»¼û"+target->query("name")+"ËÄÖÜ¾ÍÏóÓÐÇ§°ÙÖ»"HIY"Ä§"HIC"Ó°"HIM"ÔÚ"HIG"·É"HIB"Îè"HIY",\n
-                              ½á¹û$N±»ÈÅµÃÑÛ»¨ÁÊÂÒ£¬½ÓÓ¦²»Ï¾£¡ÊÖ½Å¶ÙÊ±ÂýÁËÏÂÀ´...\n"NOR,target);
+                        message_vision(HIR"åªè§"+target->query("name")+"å››å‘¨å°±è±¡æœ‰åƒç™¾åª"HIY"é­”"HIC"å½±"HIM"åœ¨"HIG"é£ž"HIB"èˆž"HIY",\n
+                              ç»“æžœ$Nè¢«æ‰°å¾—çœ¼èŠ±æ½¦ä¹±ï¼ŒæŽ¥åº”ä¸æš‡ï¼æ‰‹è„šé¡¿æ—¶æ…¢äº†ä¸‹æ¥...\n"NOR,target);
 
                         target->start_busy(6);
                 }
                 else
                 {
-                        message_vision(HIY"½á¹û$N×Ô¼ºÅªÁË¸öÍ·ÔÎÑÛ»¨£¡ÊÖ½Å¶ÙÊ±ÂýÁËÏÂÀ´...\n"+NOR,me);
+                        message_vision(HIY"ç»“æžœ$Nè‡ªå·±å¼„äº†ä¸ªå¤´æ™•çœ¼èŠ±ï¼æ‰‹è„šé¡¿æ—¶æ…¢äº†ä¸‹æ¥...\n"+NOR,me);
                         me->start_busy(2);
                }
                  }

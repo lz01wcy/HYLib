@@ -1,4 +1,4 @@
-// san.c  ÌìÅ®É¢»¨
+// san.c  å¤©å¥³æ•£èŠ±
 
 #include <ansi.h>
 #include <skill.h>
@@ -18,33 +18,33 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("¡¸ÌìÅ®É¢»¨¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå¤©å¥³æ•£èŠ±ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query_skill("tianyu-qijian", 1) < 50 )
-		return notify_fail("ÄãµÄÌìÓğÆæ½£²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡£\n");
+		return notify_fail("ä½ çš„å¤©ç¾½å¥‡å‰‘ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€‚\n");
 
 	if(((int)me->query_skill("bahuang-gong", 1) < 50 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 50 ))
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦ÊµÔÚÌ«²î£¬Ã»·¨ÓÃ¡¸ÌìÅ®É¢»¨¡¹¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸå®åœ¨å¤ªå·®ï¼Œæ²¡æ³•ç”¨ã€Œå¤©å¥³æ•£èŠ±ã€ã€‚\n");
 
 	if( (int)me->query("neili", 1) < 300 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÌìÅ®É¢»¨¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¤©å¥³æ•£èŠ±ã€ã€‚\n");
 			
-	msg = CYN "$NÄıÉñÏ¢Æø£¬ÊÖÍó¼²¶¶£¬Íì³öÇ§Íò¸ö½£»¨£¬ÆÌÌì¸ÇµØ·ÉÏò$n¡£"NOR;
+	msg = CYN "$Nå‡ç¥æ¯æ°”ï¼Œæ‰‹è…•ç–¾æŠ–ï¼ŒæŒ½å‡ºåƒä¸‡ä¸ªå‰‘èŠ±ï¼Œé“ºå¤©ç›–åœ°é£å‘$nã€‚"NOR;
 	extra = me->query_skill("tianyu-qijian",1) / 15;
 	extra += me->query_skill("tianyu-qijian",1) /15;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
 
-        message_vision(HIR"ÉÏÒ»¶ä½£»¨£¡\n" NOR,me,target);
+        message_vision(HIR"ä¸Šä¸€æœµå‰‘èŠ±ï¼\n" NOR,me,target);
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        message_vision(HIG"ÏÂÒ»¶ä½£»¨£¡£¡\n" NOR,me,target);
+        message_vision(HIG"ä¸‹ä¸€æœµå‰‘èŠ±ï¼ï¼\n" NOR,me,target);
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        message_vision(HIY"×îºóÒ»¶ä½£»¨£¡£¡£¡\n" NOR,me,target);
+        message_vision(HIY"æœ€åä¸€æœµå‰‘èŠ±ï¼ï¼ï¼\n" NOR,me,target);
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);

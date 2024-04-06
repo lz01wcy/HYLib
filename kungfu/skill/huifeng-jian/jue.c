@@ -10,25 +10,25 @@ int perform(object me)
         int i;
 
         if(!me->is_fighting() )
-                return notify_fail("¾ø½£Ö»ÄÜÔÚ¶ÔÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ç»å‰‘åªèƒ½åœ¨å¯¹æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("linji-zhuang",1) < 150 )
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯²»¹»»ðºò£¬Ê¹²»³ö¾ø½£¡£\n");  
+                return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ä¸å¤Ÿç«å€™ï¼Œä½¿ä¸å‡ºç»å‰‘ã€‚\n");  
 
         if( (int)me->query_skill("huifeng-jian",1) < 150 )
-                return notify_fail("ÄãµÄ»Ø·ç·÷Áø½£²»¹»»ðºò£¬Ê¹²»³ö¾ø½£¡£\n");  
+                return notify_fail("ä½ çš„å›žé£Žæ‹‚æŸ³å‰‘ä¸å¤Ÿç«å€™ï¼Œä½¿ä¸å‡ºç»å‰‘ã€‚\n");  
 
         if( me->query_temp("huifeng/jue"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨äº†ã€‚\n");
 
         if( (int)me->query("jing", 1) < 100 )
-                return notify_fail("ÄãÏÖÔÚ¾«²»¹»¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ç²¾ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("neili", 1) < 500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›ä¸å¤Ÿã€‚\n");
 
-        msg = HIW"$NÉîÎüÒ»¿ÚÆø£¬ÔËÆð¶ëáÒ¾ÅÑô¹¦Ê¹³ö¡°¾ø½£¡±£¡\n"NOR;
-        msg+= HIW"$N¶¸È»ÆøÊÆ´óÔö£¡\n"NOR;
+        msg = HIW"$Næ·±å¸ä¸€å£æ°”ï¼Œè¿èµ·å³¨åµ‹ä¹é˜³åŠŸä½¿å‡ºâ€œç»å‰‘â€ï¼\n"NOR;
+        msg+= HIW"$Né™¡ç„¶æ°”åŠ¿å¤§å¢žï¼\n"NOR;
         me->add("neili", -400);
         me->add("jing", -50);
         me->start_busy(1+random(2));
@@ -38,7 +38,7 @@ int perform(object me)
         me->add_temp("apply/sword", i);
         me->add_temp("apply/dodge", i);
         me->set_temp("huifeng/jue", 1);
-               msg+= HIY"$NµÄÃð½£¡¢¾ø½£»¥ÏàÅäºÏ£¬ÍþÁ¦´óÔö£¡\n"NOR;
+               msg+= HIY"$Nçš„ç­å‰‘ã€ç»å‰‘äº’ç›¸é…åˆï¼Œå¨åŠ›å¤§å¢žï¼\n"NOR;
                me->add_temp("apply/attack",(i*4));
                me->add_temp("apply/damage",(i*2));
                me->add_temp("apply/defence", (i*3));
@@ -59,6 +59,6 @@ if (!me) return;
                me->add_temp("apply/damage",-(i*2));
                me->add_temp("apply/defence", -(i*3));
                me->add_temp("apply/armor", -(i*2));
-        message_vision(HIW"$N¾ø½£ÔËÊ¹Íê±Ï£¬»Ö¸´ÁËÆ½³£µÄ¹¥»÷¡£\n"NOR, me);
+        message_vision(HIW"$Nç»å‰‘è¿ä½¿å®Œæ¯•ï¼Œæ¢å¤äº†å¹³å¸¸çš„æ”»å‡»ã€‚\n"NOR, me);
 }
 

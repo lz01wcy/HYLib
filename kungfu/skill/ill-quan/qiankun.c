@@ -9,20 +9,20 @@ int perform(object me, object target1, object target2) {
     int extra;
     object weapon;
     if (me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+        return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
     extra = me->query_skill("ill-quan", 1);
-    if (extra < 50) return notify_fail("ÄãµÄ²¡Î¬Ä¦È­»¹²»¹»´¿Êì£¡\n");
+    if (extra < 50) return notify_fail("ä½ çš„ç—…ç»´æ‘©æ‹³è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 
     if (me->query_temp("weapon"))
-        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
     if ((int) me->query("neili") < 500)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
     me->add("neili", -100);
 
     enemy = me->query_enemy();
-    if (sizeof(enemy) < 2) return notify_fail("Äã±ØÐëÍ¬Ê±ºÍÁ½¸öÒÔÉÏµÄµÐÊÖÕ½¶·²ÅÄÜÊ¹ÓÃÇ¬À¤Å²ÒÆ£¡\n");
-    if (!target1 && target2) return notify_fail("Äã±ØÐëÍ¬Ê±Ö¸¶¨Á½¸ö¶ÔÊÖ\n");
-    if (!target2 && target1) return notify_fail("Äã±ØÐëÍ¬Ê±Ö¸¶¨Á½¸ö¶ÔÊÖ\n");
+    if (sizeof(enemy) < 2) return notify_fail("ä½ å¿…é¡»åŒæ—¶å’Œä¸¤ä¸ªä»¥ä¸Šçš„æ•Œæ‰‹æˆ˜æ–—æ‰èƒ½ä½¿ç”¨ä¹¾å¤æŒªç§»ï¼\n");
+    if (!target1 && target2) return notify_fail("ä½ å¿…é¡»åŒæ—¶æŒ‡å®šä¸¤ä¸ªå¯¹æ‰‹\n");
+    if (!target2 && target1) return notify_fail("ä½ å¿…é¡»åŒæ—¶æŒ‡å®šä¸¤ä¸ªå¯¹æ‰‹\n");
     if (!target1 && !target2) {
         target1 = enemy[0];
         target2 = enemy[1];
@@ -30,33 +30,33 @@ int perform(object me, object target1, object target2) {
     if (!target1 || !target2
         || !target1->is_character() || !target2->is_character()
         || !me->is_fighting(target1) || !me->is_fighting(target2))
-        return notify_fail("£ÛÇ¬À¤Å²ÒÆ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
-    if (me->query("neili") <= 100) return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎÞ·¨´ø¶¯µÐÈË¹¥ÊÆ£¡\n");
+        return notify_fail("ï¼»ä¹¾å¤æŒªç§»ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
+    if (me->query("neili") <= 100) return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•å¸¦åŠ¨æ•Œäººæ”»åŠ¿ï¼\n");
     me->add("neili", -100);
-    message_vision("$NÊ¹³ö²¡Î¬Ä¦È­µÄ²»´«Ö®ÃØ¡¸Ç¬À¤Å²ÒÆ¡¹\n", me);
+    message_vision("$Nä½¿å‡ºç—…ç»´æ‘©æ‹³çš„ä¸ä¼ ä¹‹ç§˜ã€Œä¹¾å¤æŒªç§»ã€\n", me);
     me->start_busy(2);
     weapon = target1->query_temp("weapon");
     if (random(me->query("combat_exp") * (extra / 30 + 1)) > target1->query("combat_exp")) {
         message_vision(HIY
-        "$NÉìÊÖ´ø¶¯$nµÄ¹¥ÊÆ£¬Ê¹Ö®¹¥Ïò" + target2->name() + "£¡\n"
+        "$Nä¼¸æ‰‹å¸¦åŠ¨$nçš„æ”»åŠ¿ï¼Œä½¿ä¹‹æ”»å‘" + target2->name() + "ï¼\n"
         NOR, me, target1);
         COMBAT_D->do_attack(target1, target2, weapon);
         target1->receive_damage("jing", 0, me);
         target1->start_busy(1);
     } else {
-        message_vision("µ«$n¿´ÆÆ$NµÄÒâÍ¼£¬³ÃÊÆ·¢¶¯¹¥»÷£¡\n", me, target1);
+        message_vision("ä½†$nçœ‹ç ´$Nçš„æ„å›¾ï¼Œè¶åŠ¿å‘åŠ¨æ”»å‡»ï¼\n", me, target1);
         COMBAT_D->do_attack(target1, me, weapon);
     }
     weapon = target2->query_temp("weapon");
     if (random(me->query("combat_exp") * (extra / 30 + 1)) > target2->query("combat_exp")) {
         message_vision(HIY
-        "$NÉìÊÖ´ø¶¯$nµÄ¹¥ÊÆ£¬Ê¹Ö®¹¥Ïò" + target1->name() + "£¡\n"
+        "$Nä¼¸æ‰‹å¸¦åŠ¨$nçš„æ”»åŠ¿ï¼Œä½¿ä¹‹æ”»å‘" + target1->name() + "ï¼\n"
         NOR, me, target2);
         COMBAT_D->do_attack(target2, target1, weapon);
         target2->receive_damage("jing", 0, me);
         target2->start_busy(1);
     } else {
-        message_vision("µ«$n¿´ÆÆ$NµÄÒâÍ¼£¬³ÃÊÆ·¢¶¯¹¥»÷£¡\n", me, target2);
+        message_vision("ä½†$nçœ‹ç ´$Nçš„æ„å›¾ï¼Œè¶åŠ¿å‘åŠ¨æ”»å‡»ï¼\n", me, target2);
         COMBAT_D->do_attack(target2, me, weapon);
     }
     return 1;

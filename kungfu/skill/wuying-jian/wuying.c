@@ -1,4 +1,4 @@
-//À´È¥ÈôÎŞĞÎ wuying.c
+//æ¥å»è‹¥æ— å½¢ wuying.c
 // by godzilla 99.03.06
 
 #include <ansi.h>
@@ -23,23 +23,23 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸·ÖÉíÎŞÓ°¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œåˆ†èº«æ— å½±ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-                return notify_fail("¡¸·ÖÉíÎŞÓ°¡¹±ØĞëÓÃ½£²ÅÄÜÊ©Õ¹¡£\n");
+                return notify_fail("ã€Œåˆ†èº«æ— å½±ã€å¿…é¡»ç”¨å‰‘æ‰èƒ½æ–½å±•ã€‚\n");
 
         if( (int)me->query_skill("wuying-jian", 1) < 150 )
-                return notify_fail("ÄãµÄ¡¸ÉÙÁÖÎŞÓ°½£¡¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸·ÖÉíÎŞÓ°¡¹¡£\n");
+                return notify_fail("ä½ çš„ã€Œå°‘æ—æ— å½±å‰‘ã€ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œåˆ†èº«æ— å½±ã€ã€‚\n");
 
 //        if (me->query_skill_mapped("force") != "yijinjing")
-//                return notify_fail("ÄãµÄÄÚ¹¦ÖĞÎŞÒ×½î¾­¡£\n");
+//                return notify_fail("ä½ çš„å†…åŠŸä¸­æ— æ˜“ç­‹ç»ã€‚\n");
 
 	if( (int)me->query_skill("yijinjing", 1) < 100 )
-		return notify_fail("ÄãµÄÒ×½î¾­²»¹»æµÊì¡£\n");
+		return notify_fail("ä½ çš„æ˜“ç­‹ç»ä¸å¤Ÿå¨´ç†Ÿã€‚\n");
 
         if( (int)me->query("neili") < 400  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         skill = me->query_skill("wuying-jian");
 	extra = me->query_skill("wuying-jian",1) / 10;
@@ -47,23 +47,23 @@ int perform(object me, object target)
 	me->add_temp("apply/attack", 80);	
 	me->add_temp("apply/damage", (extra*5));
 
-        msg = HIG "$NÉíĞĞÍ»±ä£¬Ë²¼äÓÌÈç·Ö³öÎŞÊıÉíÓ°ÉÁµç°ãµÄÏò$n¹¥È¥£¡\n"NOR;
+        msg = HIG "$Nèº«è¡Œçªå˜ï¼Œç¬é—´çŠ¹å¦‚åˆ†å‡ºæ— æ•°èº«å½±é—ªç”µèˆ¬çš„å‘$næ”»å»ï¼\n"NOR;
         message_vision(msg, me, target);
 
         me->add("neili", -200);
 
-        msg = HIR"VVÀ´×Ö¾ö£¡\n"NOR;
+        msg = HIR"VVæ¥å­—å†³ï¼\n"NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR,msg);
-        msg = HIY"VVVVÈ¥×Ö¾ö£¡\n"NOR;
+        msg = HIY"VVVVå»å­—å†³ï¼\n"NOR;
         
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR,msg);
-        msg = HIG"VVVVVVÈô×Ö¾ö£¡\n"NOR;
+        msg = HIG"VVVVVVè‹¥å­—å†³ï¼\n"NOR;
         
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR,msg);
-        msg = HIB"VVVVVVVVÎŞ×Ö¾ö£¡\n"NOR;
+        msg = HIB"VVVVVVVVæ— å­—å†³ï¼\n"NOR;
         
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR,msg);
-        msg = HIW"VVVVVVVVVVĞÎ×Ö¾ö£¡\n"NOR;
+        msg = HIW"VVVVVVVVVVå½¢å­—å†³ï¼\n"NOR;
        
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR,msg);
 

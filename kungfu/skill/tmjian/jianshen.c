@@ -13,13 +13,13 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£Û½£Éñ£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»å‰‘ç¥žï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !(weapon = me->query_temp("weapon"))
         ||      (string)weapon->query("skill_type") != "sword" )
-        return notify_fail("ÄãÊÖÖÐÃ»ÓÐ×°±¸½£ÀàÎäÆ÷£¡\n");
+        return notify_fail("ä½ æ‰‹ä¸­æ²¡æœ‰è£…å¤‡å‰‘ç±»æ­¦å™¨ï¼\n");
         if( (int)me->query("neili")<500)
-        return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ£¡\n"NOR);
+        return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ï¼\n"NOR);
         
 	weapon = me->query_temp("weapon");
 	extra = me->query_skill("tmjian",1) / 4;
@@ -27,14 +27,14 @@ int perform(object me, object target)
 	if (extra> 200) extra=200;
 	me->add_temp("apply/attack", extra*2);	
 	me->add_temp("apply/damage", extra*2);
-	msg = HIR  "$NÊ¹³ö£ÛÔ²ÔÂÉñµ¶Õ¶£ÝÖÐµÄÎÞÉÏ¾ø¼¼£­£­½£Éñ£¡"+ weapon->name() +"»®×ÅÆæÒìµÄ»¡Ïß£¬¼±Õ¶$n£¡" NOR;
+	msg = HIR  "$Nä½¿å‡ºï¼»åœ†æœˆç¥žåˆ€æ–©ï¼½ä¸­çš„æ— ä¸Šç»æŠ€ï¼ï¼å‰‘ç¥žï¼"+ weapon->name() +"åˆ’ç€å¥‡å¼‚çš„å¼§çº¿ï¼Œæ€¥æ–©$nï¼" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	lv=extra/8;
 	if (lv > 8) lv=8;
 	me->set_temp("action_flag", 1);
 	for(i=0;i<lv;i++)
 	{
-	msg = CYN "µÚ"+(i+1)+"½££¡$NÓù¼¼ÈçÉñ£¬½£Æø×Ýºá£¡\n" NOR;
+	msg = CYN "ç¬¬"+(i+1)+"å‰‘ï¼$Nå¾¡æŠ€å¦‚ç¥žï¼Œå‰‘æ°”çºµæ¨ªï¼\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	me->add("neili",-30);
 	}

@@ -1,5 +1,5 @@
-// jiao.c Î×ÔÂµ¶·¨¡¸½Â¡¹×Ö¾÷
-// jackiÓÚ1997.7.25
+// jiao.c å·«æœˆåˆ€æ³•ã€Œé“°ã€å­—è¯€
+// jackiäº1997.7.25
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,15 +16,15 @@ int perform(object me, object target)
     if( !target
     ||      !target->is_character()
     ||      !me->is_fighting(target) )
-   return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡¸½Â×Ö¾÷¡¹¡£\n");
+   return notify_fail("ä½ åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€Œé“°å­—è¯€ã€ã€‚\n");
 
     if( target->is_busy() )
-   return notify_fail(target->name() + "Ä¿Ç°ÕıÆ£ÓÚÕĞ¼Ü£¬¼Ó½ô¹¥»÷°É¢¦\n");
+   return notify_fail(target->name() + "ç›®å‰æ­£ç–²äºæ‹›æ¶ï¼ŒåŠ ç´§æ”»å‡»å§\n");
 
     if( (int)me->query_skill("wuyue-blade", 1) < 50 )
-   return notify_fail("ÄãµÄÎ×ÔÂµ¶·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¡¸½Â¡¹×Ö¾÷¡£\n");
+   return notify_fail("ä½ çš„å·«æœˆåˆ€æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œé“°ã€å­—è¯€ã€‚\n");
 	
-    msg = CYN "$N´óºÈÒ»Éù£¬Õ¹¿ªÎ×ÔÂµ¶·¨¡¸½Â¡¹×Ö¾÷£¬Á¬µİÊı¸ö¼±ÕĞÆóÍ¼½ÂËé$nµÄ±øÈĞ¡£\n";
+    msg = CYN "$Nå¤§å–ä¸€å£°ï¼Œå±•å¼€å·«æœˆåˆ€æ³•ã€Œé“°ã€å­—è¯€ï¼Œè¿é€’æ•°ä¸ªæ€¥æ‹›ä¼å›¾é“°ç¢$nçš„å…µåˆƒã€‚\n";
     me->start_busy(2);
 
     if (target->query_temp("weapon") ||
@@ -35,27 +35,27 @@ int perform(object me, object target)
     if( random(me->query("combat_exp")) >
    (int)target->query("combat_exp")/2 ) {
     if( target_w->weight() > 2 * random(my_w->weight()) ) {
-   msg += "½á¹û$pÊÖÖĞµÄ$w±»$PÇ¿Á¦Ò»½Â£¬ÔÙÒ²°ÑÎÕ²»×¡£¬Á¢¼´ÍÑÊÖ·É³ö£¡\n" NOR;
+   msg += "ç»“æœ$pæ‰‹ä¸­çš„$wè¢«$På¼ºåŠ›ä¸€é“°ï¼Œå†ä¹ŸæŠŠæ¡ä¸ä½ï¼Œç«‹å³è„±æ‰‹é£å‡ºï¼\n" NOR;
     target_w->unequip();
     target_w->move(environment(target));
     target->reset_action();
    me->start_busy(2);
 }
-   msg += "½á¹û$pÊÖÖĞµÄ±øÈĞ±»$PµÄÇ¿Á¦Ò»»÷½ÂÁË¸ö·ÛËé£¡\n" NOR;
+   msg += "ç»“æœ$pæ‰‹ä¸­çš„å…µåˆƒè¢«$Pçš„å¼ºåŠ›ä¸€å‡»é“°äº†ä¸ªç²‰ç¢ï¼\n" NOR;
     target_w->unequip();
     target_w->move(environment(target));
-    target_w->set("name", target_w->query("name") + "µÄËéÆ¬");
+    target_w->set("name", target_w->query("name") + "çš„ç¢ç‰‡");
     target_w->set("value", 0);
     target_w->set("weapon_prop", 0);
     target->reset_action();
    me->start_busy(2);
     } else {
-   msg += "¿ÉÊÇ$pÍ¨¹ıÇÉÃîµÄÕĞ¼Ü£¬²¢Ã»ÓĞÈÃ$PµÄ¼ÆÄ±µÃ³Ñ¡£\n" NOR;
+   msg += "å¯æ˜¯$pé€šè¿‡å·§å¦™çš„æ‹›æ¶ï¼Œå¹¶æ²¡æœ‰è®©$Pçš„è®¡è°‹å¾—é€ã€‚\n" NOR;
    me->start_busy(2);
 	 }
     message_combatd(msg, me, target);
     return 1;
     }
-    return notify_fail(target->name() + "Ä¿Ç°ÊÇ¿ÕÊÖ£¬ÄãÏë½ÂÊ²Ã´£¿\n");
+    return notify_fail(target->name() + "ç›®å‰æ˜¯ç©ºæ‰‹ï¼Œä½ æƒ³é“°ä»€ä¹ˆï¼Ÿ\n");
 }
 

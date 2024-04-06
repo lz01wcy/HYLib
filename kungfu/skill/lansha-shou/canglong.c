@@ -1,4 +1,4 @@
- // silencer@fengyun ²ÔÁúÕ§ÏÖ ÃüÖĞÊ±£¬NPC, players ²»ÄÜ pfm,
+ // silencer@fengyun è‹é¾™ä¹ç° å‘½ä¸­æ—¶ï¼ŒNPC, players ä¸èƒ½ pfm,
 #include <ansi.h>
 #include <combat.h>
 inherit F_SSERVER;
@@ -9,30 +9,30 @@ int perform(object me, object target)
 
         lvl= me->query_skill("lansha-shou",1);
         if (lvl<80)
-                return notify_fail("ÄãµÄÀ¶É°ÊÖ»¹²»¹»ÊìÁ·\n");         
+                return notify_fail("ä½ çš„è“ç ‚æ‰‹è¿˜ä¸å¤Ÿç†Ÿç»ƒ\n");         
         
         if( !target ) target = offensive_target(me);
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£Û²ÔÁúÕ§ÏÖ£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»è‹é¾™ä¹ç°ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     if( (int)me->query("neili") < 600 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail( "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");        
+                return notify_fail( "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");        
                 if (extra> 200) extra=200;
         
         extra = me->query_skill("lansha-shou",1);
         me->add_temp("apply/attack", extra);    
-        msg = HIR  "$N"+HIR"½ÅÏÂÒ»×ª£¬Í»È»ÉíĞÎ·ÉÆğ£¬Ë«½ÅÈç½ÃÁú°ãÌÚ¿ÕÒ»¾í£¬ÃÍµØÏò$n"+HIR"Ìß³ö£¡" NOR;
+        msg = HIR  "$N"+HIR"è„šä¸‹ä¸€è½¬ï¼Œçªç„¶èº«å½¢é£èµ·ï¼ŒåŒè„šå¦‚çŸ«é¾™èˆ¬è…¾ç©ºä¸€å·ï¼ŒçŒ›åœ°å‘$n"+HIR"è¸¢å‡ºï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
         me->add_temp("apply/attack", -extra);
         me->add("neili",-200);
                  me->start_busy(2);
         if (me->query_skill("lansha-shou",1)>188 && random(3)==0 ) {
                 target->receive_wound("qi",(extra*5+300));
-                message_vision(RED"$n"+RED"Ò»Éù²Ò½Ğ£¬±»$N"+RED"ÌßµÃ¿ñÅçÏÊÑª¡£\n\n"NOR,me,target);
+                message_vision(RED"$n"+RED"ä¸€å£°æƒ¨å«ï¼Œè¢«$N"+RED"è¸¢å¾—ç‹‚å–·é²œè¡€ã€‚\n\n"NOR,me,target);
         }               
         
         my_exp=me->query("combat_exp");
@@ -46,7 +46,7 @@ int perform(object me, object target)
                         
         if ((lvl+1)*random(my_exp)>your_exp) {  
                 if (!target->query_temp("till_death/lockup")) {
-                        message_vision(HIW"$N"+HIW"ÁèÀ÷µÄÍÈ·çÉ¨¹ı£¬$n"+HIW"Ö»¾õĞØÃÆÆøÖÍ£¬Ò»¿ÚÕæÆø¾¹Ìá²»ÉÏÀ´¡£\n"NOR,me,target);
+                        message_vision(HIW"$N"+HIW"å‡Œå‰çš„è…¿é£æ‰«è¿‡ï¼Œ$n"+HIW"åªè§‰èƒ¸é—·æ°”æ»ï¼Œä¸€å£çœŸæ°”ç«Ÿæä¸ä¸Šæ¥ã€‚\n"NOR,me,target);
                         target->start_busy(5);
                         target->receive_wound("qi",(extra*3));
                         duration = 10+ random(lvl*2);
@@ -56,10 +56,10 @@ int perform(object me, object target)
                 }
                 if (me->query_skill("lansha-shou",1)>149 && !target->is_busy()) {
                                         target->start_busy(3);
-                                        message_vision(HIY"$N"+HIY"½Å²½õÔõÄ£¬Ë«ÊÖÎæ×ÅÇ°ĞØ,ËÆÕ¾Á¢²»ÎÈ¡£\n"NOR,target);
+                                        message_vision(HIY"$N"+HIY"è„šæ­¥è¸‰è·„ï¼ŒåŒæ‰‹æ‚ç€å‰èƒ¸,ä¼¼ç«™ç«‹ä¸ç¨³ã€‚\n"NOR,target);
                 } else if (me->query_skill("lansha-shou",1)>99 && !target->is_busy()) {
                                                 target->start_busy(3);
-                        message_vision(HIY"$N"+HIY"½Å²½õÔõÄ£¬Ë«ÊÖÎæ×ÅÇ°ĞØ,ËÆÕ¾Á¢²»ÎÈ¡£\n"NOR,target);   
+                        message_vision(HIY"$N"+HIY"è„šæ­¥è¸‰è·„ï¼ŒåŒæ‰‹æ‚ç€å‰èƒ¸,ä¼¼ç«™ç«‹ä¸ç¨³ã€‚\n"NOR,target);   
                 }
         }
         
@@ -68,5 +68,5 @@ int perform(object me, object target)
 void remove_effect(object target)
 {
         target->delete_temp("till_death/lockup");
-        tell_object(target,HIG"ÄãÉîÎüÒ»¿ÚÆø£¬ÕæÆøÁ÷×ªÈç³£¡£\n"NOR);
+        tell_object(target,HIG"ä½ æ·±å¸ä¸€å£æ°”ï¼ŒçœŸæ°”æµè½¬å¦‚å¸¸ã€‚\n"NOR);
 }     

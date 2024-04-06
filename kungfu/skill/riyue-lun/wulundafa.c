@@ -14,42 +14,42 @@ int perform(object me, object target)
   if( !target ) target = offensive_target(me);
 
 	if( !me->is_fighting() )
-		return notify_fail("¡¸ÎåÂÖ´ó·¨¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œäº”è½®å¤§æ³•ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
  
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "hammer")
-		return notify_fail("¡¸ÎåÂÖ´ó·¨¡¹ÓÃµÄ±øÆ÷²»ÊÇÕâ¸ö£¡\n");
+		return notify_fail("ã€Œäº”è½®å¤§æ³•ã€ç”¨çš„å…µå™¨ä¸æ˜¯è¿™ä¸ªï¼\n");
 	if((int)me->query_skill("force") < 160 )
-		return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬Ê¹²»³ö¡¸ÎåÂÖ´ó·¨¡¹¾ø¼¼¡£\n");
+		return notify_fail("ä½ çš„å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œäº”è½®å¤§æ³•ã€ç»æŠ€ã€‚\n");
 
 	if(me->query_skill_mapped("force") != "longxiang")
-		return notify_fail("Ã»ÓĞÁúÏó°ãÈô¹¦×÷Îª¸ù»ù£¬ÊÇÎŞ·¨Ê¹³ö¡¸ÎåÂÖ´ó·¨¡¹¾ø¼¼µÄ£¡\n"); 
+		return notify_fail("æ²¡æœ‰é¾™è±¡èˆ¬è‹¥åŠŸä½œä¸ºæ ¹åŸºï¼Œæ˜¯æ— æ³•ä½¿å‡ºã€Œäº”è½®å¤§æ³•ã€ç»æŠ€çš„ï¼\n"); 
 	if( (int)me->query("neili") < 300 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("riyue-lun",1) < 150 )
-		return notify_fail("ÄãµÄÈÕÔÂÂÖ·¨²»¹»£¡\n");
+		return notify_fail("ä½ çš„æ—¥æœˆè½®æ³•ä¸å¤Ÿï¼\n");
 	if( !target ) target = offensive_target(me);
 
 	if( !target
 	  ||!target->is_character()
 	  ||!me->is_fighting(target) 
 	  ||!living(target))
-		return notify_fail("¡¸ÎåÂÖ´ó·¨¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œäº”è½®å¤§æ³•ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	extra = me->query_skill("riyue-lun",1) / 6;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = HIY "$N×İÔ¾ÍËáá£¬Á¢Ê±ÎØÎØ¡¢ÎËÎË¡¢ºäºäÖ®Éù´ó×÷£¬½ğ¹âÉÁÉÁ£¬Òø¹âË¸Ë¸£¬ÎåÖ»ÂÖ×Ó´ÓÎå¸ö²»Í¬·½Î»·ÉÏ®³öÀ´£¡" NOR;
+	msg = HIY "$Nçºµè·ƒé€€å¾Œï¼Œç«‹æ—¶å‘œå‘œã€å—¡å—¡ã€è½°è½°ä¹‹å£°å¤§ä½œï¼Œé‡‘å…‰é—ªé—ªï¼Œé“¶å…‰çƒçƒï¼Œäº”åªè½®å­ä»äº”ä¸ªä¸åŒæ–¹ä½é£è¢­å‡ºæ¥ï¼" NOR;
 	
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIC  "ÒøÂÖ»Ø×ª£¡ " NOR;
+	 msg =  HIC  "é“¶è½®å›è½¬ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  HIR  "ÌúÂÖ»Ø×ª£¡ " NOR;
+	 msg =  HIR  "é“è½®å›è½¬ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	 msg =  YEL  "Í­ÂÖ»Ø×ª£¡ " NOR;
+	 msg =  YEL  "é“œè½®å›è½¬ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-	msg =  BLU   "ÎıÂÖ»Ø×ª£¡ " NOR;
+	msg =  BLU   "é”¡è½®å›è½¬ï¼ " NOR;
 	 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	me->add_temp("apply/attack", -extra);
 	me->add_temp("apply/damage", -extra);
@@ -66,11 +66,11 @@ if (me->query_skill("necromancy",1) > 200)
 			target_w->unequip();
 			target_w->reset_action();
 			target_w->move(environment(target));
-			target_w->set("name", target_w->query("name") + "µÄËéÆ¬");
+			target_w->set("name", target_w->query("name") + "çš„ç¢ç‰‡");
 			target_w->set("value", 0);
 			target_w->set("weapon_prop", 0);
-			target_w->set("long", "Ò»¶ÑÆÆËéÎïÊÂ£¬ºÃÏóÊÇ±øÆ÷ËéÆ¬¡£\n");
-        message_vision(RED"\n$NÌıµ½¡¸¶£µ±¡¹£¬Ò»Éù±øÈĞÆÆËéµÄÉùÒô£¬×Ô¼ºµÄ±øÆ÷ËéÆ¬½¦ÁËÒ»µØ£¡£¡\n"NOR,target);
+			target_w->set("long", "ä¸€å †ç ´ç¢ç‰©äº‹ï¼Œå¥½è±¡æ˜¯å…µå™¨ç¢ç‰‡ã€‚\n");
+        message_vision(RED"\n$Nå¬åˆ°ã€Œå®å½“ã€ï¼Œä¸€å£°å…µåˆƒç ´ç¢çš„å£°éŸ³ï¼Œè‡ªå·±çš„å…µå™¨ç¢ç‰‡æº…äº†ä¸€åœ°ï¼ï¼\n"NOR,target);
 
 		}
 	}
@@ -88,14 +88,14 @@ if (me->query_skill("xiaowuxiang",1) > 200)
 			if( inv[equip]->query("equipped") &&
 				!inv[equip]->query("weapon_prop") )
 			{
-message_vision(RED"\n$NÎÅµ½Ò»¹É½¹Î¶£¬·¢ÏÖÉíÉÏµÄ"+inv[equip]->query("name")+HIR"ÒÑ±»ÉÕµÃ²ĞÆÆ²»¿°£¬µôÔÚÁËµØÉÏ£¡\n"NOR,target);
+message_vision(RED"\n$Né—»åˆ°ä¸€è‚¡ç„¦å‘³ï¼Œå‘ç°èº«ä¸Šçš„"+inv[equip]->query("name")+HIR"å·²è¢«çƒ§å¾—æ®‹ç ´ä¸å ªï¼Œæ‰åœ¨äº†åœ°ä¸Šï¼\n"NOR,target);
 			inv[equip]->unequip();
 			inv[equip]->reset_action();
 			inv[equip]->move(environment(target));
-			inv[equip]->set("name", inv[equip]->query("name") + "µÄËéÆ¬");
+			inv[equip]->set("name", inv[equip]->query("name") + "çš„ç¢ç‰‡");
 			inv[equip]->set("value", 0);
 			inv[equip]->set("armor_prop", 0);
-			inv[equip]->set("long", "Ò»¶ÑÆÆËéÎïÊÂ£¬ºÃÏóÊÇ²¼Æ¬ÌúÆ¬Ê²Ã´µÄ¡£\n");
+			inv[equip]->set("long", "ä¸€å †ç ´ç¢ç‰©äº‹ï¼Œå¥½è±¡æ˜¯å¸ƒç‰‡é“ç‰‡ä»€ä¹ˆçš„ã€‚\n");
 			}
 		}
 	}

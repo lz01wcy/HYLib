@@ -5,11 +5,11 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-	set_name("°«ÀÏÕß", ({ "ai laozhe", "ai" }));
-	set("title", HIG"»ªÉ½µÚÊ®¶þ´ú³¤ÀÏ"NOR);
+	set_name("çŸ®è€è€…", ({ "ai laozhe", "ai" }));
+	set("title", HIG"åŽå±±ç¬¬åäºŒä»£é•¿è€"NOR);
 	set("long", 
-"Ëû¾ÍÊÇ»ªÉ½µÄ³¤ÀÏ°«ÀÏÕß¡£Ò»ÕÅÑÏËàÍþÑÏµÄÁ³£¬Íû¶øÉúÎ·¡£\n");
-	set("gender", "ÄÐÐÔ");
+"ä»–å°±æ˜¯åŽå±±çš„é•¿è€çŸ®è€è€…ã€‚ä¸€å¼ ä¸¥è‚ƒå¨ä¸¥çš„è„¸ï¼Œæœ›è€Œç”Ÿç•ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 66);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -52,7 +52,7 @@ void create()
 	map_skill("sword", "huashan-sword");
 	map_skill("strike", "hunyuan-zhang");
 
-	create_family("»ªÉ½ÅÉ", 12, "µÜ×Ó");
+	create_family("åŽå±±æ´¾", 12, "å¼Ÿå­");
 
 	set("chat_chance_combat", 60);
 	set("chat_msg_combat", ({
@@ -72,32 +72,32 @@ void attempt_apprentice(object ob)
 	string line;
 
 	if ((string)ob->query("family/family_name") != "" &&
-	    (string)ob->query("family/family_name") != "»ªÉ½ÅÉ")
+	    (string)ob->query("family/family_name") != "åŽå±±æ´¾")
 	{
-		command("say " + RANK_D->query_respect(ob) + "¼ÈÈ»ÒÑÓÐÃûÊ¦Ö¸µã£¬ºÎ±ØÓÖÀ´°ÝÀÏÐàÄØ£¿");
+		command("say " + RANK_D->query_respect(ob) + "æ—¢ç„¶å·²æœ‰åå¸ˆæŒ‡ç‚¹ï¼Œä½•å¿…åˆæ¥æ‹œè€æœ½å‘¢ï¼Ÿ");
 		return;
 	}
 
         if (((int)ob->query_skill("force",1) < 80) || ((int)ob->query_skill("zixia-shengong",1) < 80))
 	{
-		command("say ÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ×ÏÏ¼Éñ¹¦»¹Ã»Ñ§µ½¼Ò°É¡£");
+		command("say æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„ç´«éœžç¥žåŠŸè¿˜æ²¡å­¦åˆ°å®¶å§ã€‚");
 		return;
 	}
         if (((int)ob->query_skill("dodge",1) < 80) || ((int)ob->query_skill("feiyan-huixiang",1) < 80))
 	{
-                command("say ÎÒ¿´" + RANK_D->query_respect(ob) + "µÄ·ÉÑà»ØÏè»¹Ã»Ñ§µ½¼Ò°É¡£");
+                command("say æˆ‘çœ‹" + RANK_D->query_respect(ob) + "çš„é£žç‡•å›žç¿”è¿˜æ²¡å­¦åˆ°å®¶å§ã€‚");
 		return;
 	}
 
         if ((int)ob->query("shen") < 50000)
 	{
-		command("say ÎÒ»ªÉ½ÅÉÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-		command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+		command("say æˆ‘åŽå±±æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+		command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
 		return;
 	}
 
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 	if((string)ob->query("class") != "fighter")
 		ob->set("class", "fighter");

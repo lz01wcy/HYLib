@@ -1,4 +1,4 @@
-// diezhang.c (À¥ÂØÕÆ·¨)  perform À¥É½µşÕÆ
+// diezhang.c (æ˜†ä»‘æŒæ³•)  perform æ˜†å±±å æŒ
 // cck 21/8/97
 //cool 981010
 #include <ansi.h>
@@ -16,33 +16,33 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("¡¸À¥É½µşÕÆ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œæ˜†å±±å æŒã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( objectp( me->query_temp("weapon")) )
-		return notify_fail("Ö»ÓĞ¿ÕÊÖ²ÅÄÜÊ©Õ¹¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("åªæœ‰ç©ºæ‰‹æ‰èƒ½æ–½å±•ã€Œæ˜†å±±å æŒã€ã€‚\n");
 
 	if( (int)me->query_skill("kunlun-zhang", 1) < 30 )
-		return notify_fail("ÄãµÄÕÆ·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("ä½ çš„æŒæ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œæ˜†å±±å æŒã€ã€‚\n");
 
 	if( (int)me->query_skill("xuantian-wuji", 1) < 140 )
-		return notify_fail("ÄãµÄĞşÌìÎŞ¼«¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("ä½ çš„ç„å¤©æ— æåŠŸç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ˜†å±±å æŒã€ã€‚\n");
 
 	if( (int)me->query_str() < 26 )
-		return notify_fail("ÄãµÄëöÁ¦²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("ä½ çš„è†‚åŠ›ä¸å¤Ÿå¼ºï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ˜†å±±å æŒã€ã€‚\n");
 
 	if( arg <= 1 )
-		return notify_fail("ÖÁÉÙÒªÓĞÁ½ÕĞ²Å¿É×é³É¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("è‡³å°‘è¦æœ‰ä¸¤æ‹›æ‰å¯ç»„æˆã€Œæ˜†å±±å æŒã€ã€‚\n");
    if(me->query_skill_mapped("force") != "xuantian-wuji" )
-	return notify_fail("ÄãÃ»ÓĞÓÃĞşÌìÎŞ¼«¡£\n");
+	return notify_fail("ä½ æ²¡æœ‰ç”¨ç„å¤©æ— æã€‚\n");
 	if( (int)me->query("max_neili", 1) < 1500 )
-		return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("ä½ å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ˜†å±±å æŒã€ã€‚\n");
 
 	if( (int)me->query("neili", 1) < 200 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸À¥É½µşÕÆ¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œæ˜†å±±å æŒã€ã€‚\n");
 
 	if( (int)me->query("neili", 1) < 100 * arg )
-		return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦Ê©Õ¹²»ÁËÄÇÃ´¶àÕĞ¡£\n");
-	message_vision(HIG"$NÉîÎüÒ»¿ÚÆø£¬´óºÈÒ»Éù£¬Á¬Ğø»÷³ö"HIW+ chinese_number(arg) +HIG"ÕÆ£¬ºóÕĞÍÆ×ÅÇ°ÕĞ£¬ÕÆÁ¦µşºÏÔÚÒ»ÆğÆËÏò$n£¡\n\n"NOR, me, target);
+		return notify_fail("ä½ ç°åœ¨çš„å†…åŠ›æ–½å±•ä¸äº†é‚£ä¹ˆå¤šæ‹›ã€‚\n");
+	message_vision(HIG"$Næ·±å¸ä¸€å£æ°”ï¼Œå¤§å–ä¸€å£°ï¼Œè¿ç»­å‡»å‡º"HIW+ chinese_number(arg) +HIG"æŒï¼Œåæ‹›æ¨ç€å‰æ‹›ï¼ŒæŒåŠ›å åˆåœ¨ä¸€èµ·æ‰‘å‘$nï¼\n\n"NOR, me, target);
     if( random(me->query("combat_exp")) > target->query("combat_exp")/4 )
 	{
 	limbs = target->query("limbs");
@@ -51,10 +51,10 @@ int perform(object me, object target)
 	  message_vision(
 		replace_string(HIG+
 	  SKILL_D("kunlun-zhang")->query_action(me, me->query_temp("weapon"))["action"],
-		"$l", limbs[random(sizeof(limbs))]) + "£¡\n"NOR, me, target);
+		"$l", limbs[random(sizeof(limbs))]) + "ï¼\n"NOR, me, target);
 	  damage = damage+200+random(400);
         p = (int)target->query("qi")*100/(int)target->query("max_qi");
-	msg = damage_msg(damage, "ÄÚÉË");
+	msg = damage_msg(damage, "å†…ä¼¤");
        msg += "( $n"+eff_status_msg(p)+" )\n\n";
 if (damage >1250) damage =1250;
 	target->receive_damage("qi", damage);
@@ -70,7 +70,7 @@ if (damage >1250) damage =1250;
     else {
 	me->start_busy(3);
     me->add("neili", -200);
-    msg =HIY"\n$nÉíĞÍ¼±ËÙºóÍË£¬Ë³×ÅÕÆ·ç¾ÍÊÆÒ»Ìø£¬¶ã¿ªÁËÕâ¹¥»÷¡£\n" NOR;
+    msg =HIY"\n$nèº«å‹æ€¥é€Ÿåé€€ï¼Œé¡ºç€æŒé£å°±åŠ¿ä¸€è·³ï¼Œèº²å¼€äº†è¿™æ”»å‡»ã€‚\n" NOR;
   message_vision(msg, me, target);
        	}
  

@@ -11,26 +11,26 @@ int perform(object me, object target)
 
     if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "blade")
-      return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+      return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
       if( !target || !me->is_fighting(target) )
-      return notify_fail("¡¸»ÃÓ°¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+      return notify_fail("ã€Œå¹»å½±ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
     if ((int)me->query_skill("hujia-daofa", 1) < 100 )
-        return notify_fail("ÄãµÄºú¼Òµ¶·¨µÈ¼¶²»¹»£¬²»ÄÜºô»½¹í»ê£¡\n");    
+        return notify_fail("ä½ çš„èƒ¡å®¶åˆ€æ³•ç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½å‘¼å”¤é¬¼é­‚ï¼\n");    
     if ((int)me->query_skill("blade", 1) < 100 )
-        return notify_fail("ÄãµÄ»ù±¾µ¶·¨¼«²»¹»æµÊì£¬²»ÄÜºô»½³öÄãµÄ»ÃÓ°£¡\n");    
+        return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æžä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½å‘¼å”¤å‡ºä½ çš„å¹»å½±ï¼\n");    
     if ((int)me->query("neili") < 300 )
-        return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬²»ÄÜºô»½»ÃÓ°£¡\n");
+        return notify_fail("ä½ çŽ°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä¸èƒ½å‘¼å”¤å¹»å½±ï¼\n");
     me->add("neili", -100);        
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-    message_vision(HIY"$NÇ°ºóÓÎ×ß£¬ÉíÐÎÉÁ¶¯£¬ÊÖÖÐ¸Öµ¶Ô½Ê¹Ô½¿ì£¬»ÃÆðÎÞÊýµ¶¹â»¯³öÊý¸öÉíÐÎ¡£
-$n±»´Ëºú¼Òµ¶·¨Ö®¡¸ÎÞÐÎ»ÃÓ°¡¹ËùÃÔ»ó£¬ÊÖ×ãÎÞ´ë£¬²»ÖªÄÄ¸ö$NÊÇÕæ£¬ÄÄ¸öÊÇ¼Ù¡£\n"NOR, me, target);
+    message_vision(HIY"$Nå‰åŽæ¸¸èµ°ï¼Œèº«å½¢é—ªåŠ¨ï¼Œæ‰‹ä¸­é’¢åˆ€è¶Šä½¿è¶Šå¿«ï¼Œå¹»èµ·æ— æ•°åˆ€å…‰åŒ–å‡ºæ•°ä¸ªèº«å½¢ã€‚
+$nè¢«æ­¤èƒ¡å®¶åˆ€æ³•ä¹‹ã€Œæ— å½¢å¹»å½±ã€æ‰€è¿·æƒ‘ï¼Œæ‰‹è¶³æ— æŽªï¼Œä¸çŸ¥å“ªä¸ª$Næ˜¯çœŸï¼Œå“ªä¸ªæ˜¯å‡ã€‚\n"NOR, me, target);
     target->start_busy(6);
     skill = me->query_skill("hujia-daofa", 1)/3;
     return 1;
         } else {
-   message_vision(HIR"¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR,me,target);
+   message_vision(HIR"å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥žåº”å¯¹è‡ªå¦‚ã€‚\n" NOR,me,target);
            me->start_busy(2);
     return 1;
         }

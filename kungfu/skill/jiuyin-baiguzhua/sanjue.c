@@ -1,4 +1,4 @@
-// sanjue ¾ÅÒõÈı¾ø×¦
+// sanjue ä¹é˜´ä¸‰ç»çˆª
 
 #include <ansi.h>
 #include <combat.h> 
@@ -14,22 +14,22 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸¾ÅÒõÈı¾ø×¦¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¹é˜´ä¸‰ç»çˆªã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
         if( me->query_temp("weapon"))
-                return notify_fail("ÄãÄÃ×ÅÎäÆ÷ÔõÃ´ÄÜÊ¹ÓÃ¡¸¾ÅÒõÈı¾ø×¦¡¹£¡\n");   
+                return notify_fail("ä½ æ‹¿ç€æ­¦å™¨æ€ä¹ˆèƒ½ä½¿ç”¨ã€Œä¹é˜´ä¸‰ç»çˆªã€ï¼\n");   
         if( skill < 150 )
-                return notify_fail("ÄãµÄ¾ÅÒõ°×¹Ç×¦»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸¾ÅÒõÈı¾ø×¦¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„ä¹é˜´ç™½éª¨çˆªè¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä½¿ä¸å‡ºã€Œä¹é˜´ä¸‰ç»çˆªã€ç»æŠ€ã€‚\n");
         if ( skill < 200 ) i = 3;
         if ( skill < 300 ) i = 3;
         else i = 3;
         if ( me->query_skill_mapped("claw") != "jiuyin-baiguzhua" )
-               return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸¾ÅÒõÈı¾ø×¦¡¹£¡\n");
+               return notify_fail("ä½ ç°åœ¨æ— æ³•ä½¿ç”¨ã€Œä¹é˜´ä¸‰ç»çˆªã€ï¼\n");
         if( (int)me->query("max_neili") < 500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬Ê¹²»³ö¡¸¾ÅÒõÈı¾ø×¦¡¹¡£\n");      
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œä¹é˜´ä¸‰ç»çˆªã€ã€‚\n");      
         if( (int)me->query("neili") < 1100 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸¾ÅÒõÈı¾ø×¦¡¹¡£\n");
-        me->start_perform(2, "¾ÅÒõÈı¾ø×¦");
-        message_vision(RED"\n$NÍ»È»¹Ö½ĞÒ»Éù£¬È«Éí¹Ç÷ÀÈç±¬¶¹°ãàèÅ¾×÷Ïì£¬ÊÖ±ÛÍ»È»±©ÕÇÈı³ß£¡\n"NOR,me);
+                return notify_fail("ä½ ç°åœ¨çœŸæ°”å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œä¹é˜´ä¸‰ç»çˆªã€ã€‚\n");
+        me->start_perform(2, "ä¹é˜´ä¸‰ç»çˆª");
+        message_vision(RED"\n$Nçªç„¶æ€ªå«ä¸€å£°ï¼Œå…¨èº«éª¨éª¼å¦‚çˆ†è±†èˆ¬å™¼å•ªä½œå“ï¼Œæ‰‹è‡‚çªç„¶æš´æ¶¨ä¸‰å°ºï¼\n"NOR,me);
         me->add_temp("apply/strength",str/i);
         me->add_temp("apply/dexerity",dex/i);
         me->add("neili", -600);

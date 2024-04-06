@@ -3,9 +3,9 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$nÒ»ÕĞ¡¸ÇáÑÌçÎç¿¡¹ÇáÇáÇÉÇÉµØ±ÜÁË¿ªÈ¥¡£\n",
-        "Ö»¼û$nÉíÓ°Ò»»Î£¬Ò»Ê½¡¸ÇàÔÆÖ±ÉÏ¡¹ÔçÒÑ±ÜÔÚÆß³ßÖ®Íâ¡£\n",
-        "$nÊ¹³ö¡¸Áè¿Õ·É¶É¡¹£¬ÇáÇáËÉËÉµØÉÁ¹ı¡£\n",
+        "$nä¸€æ‹›ã€Œè½»çƒŸç¼¥ç¼ˆã€è½»è½»å·§å·§åœ°é¿äº†å¼€å»ã€‚\n",
+        "åªè§$nèº«å½±ä¸€æ™ƒï¼Œä¸€å¼ã€Œé’äº‘ç›´ä¸Šã€æ—©å·²é¿åœ¨ä¸ƒå°ºä¹‹å¤–ã€‚\n",
+        "$nä½¿å‡ºã€Œå‡Œç©ºé£æ¸¡ã€ï¼Œè½»è½»æ¾æ¾åœ°é—ªè¿‡ã€‚\n",
 });
 
 int valid_enable(string usage)
@@ -16,7 +16,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if( (int)me->query("max_neili") < 150 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞ°ì·¨Á·ÎŞ³¾²½·¨¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•ç»ƒæ— å°˜æ­¥æ³•ã€‚\n");
 
         return 1;
 }
@@ -30,7 +30,7 @@ int practice_skill(object me)
 {
         if( (int)me->query("qi") < 30
         ||      (int)me->query("neili") < 3 )
-                return notify_fail("ÄãµÄÆø»òÄÚÁ¦²»¹»£¬²»ÄÜÁ·ÎŞ³¾²½·¨¡£\n");
+                return notify_fail("ä½ çš„æ°”æˆ–å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ç»ƒæ— å°˜æ­¥æ³•ã€‚\n");
         me->receive_damage("qi", 30);
         me->add("neili", -3);
         return 1;

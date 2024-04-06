@@ -9,25 +9,25 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() )
-		return notify_fail("你要解谁的生死符？\n");
+		return notify_fail("浣犺瑙ｈ皝鐨勭敓姝荤锛焅n");
 
 	if(((int)me->query_skill("bahuang-gong", 1) < 40 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 40 ))
-		return notify_fail("你的本门内功不够娴熟，不能解生死符。\n");
+		return notify_fail("浣犵殑鏈棬鍐呭姛涓嶅濞寸啛锛屼笉鑳借В鐢熸绗︺�俓n");
 
 	if( (int)me->query_skill("liuyang-zhang", 1) < 20 )
-		return notify_fail("你的天山六阳掌不够娴熟，不能解生死符。\n");
+		return notify_fail("浣犵殑澶╁北鍏槼鎺屼笉澶熷ù鐔燂紝涓嶈兘瑙ｇ敓姝荤銆俓n");
 
 	if (!objectp(obj=present("jiudai", me)))
-           return notify_fail("你身上没有酒袋，不能化冰为水。\n");
+           return notify_fail("浣犺韩涓婃病鏈夐厭琚嬶紝涓嶈兘鍖栧啺涓烘按銆俓n");
 
 	if (me->query("neili")<200)
-		return notify_fail("你真气不足。\n");
+		return notify_fail("浣犵湡姘斾笉瓒炽�俓n");
 
        if (!target->query_condition("ss_poison"))
-            return notify_fail("目标没有中生死符。\n");
+            return notify_fail("鐩爣娌℃湁涓敓姝荤銆俓n");
 
-	msg = CYN "$N拍向$n，化冰为水解了生死符。\n";
+	msg = CYN "$N鎷嶅悜$n锛屽寲鍐颁负姘磋В浜嗙敓姝荤銆俓n";
 	me->add("neili",-200);
 	me->start_busy(2);
 	 target->apply_condition("ss_poison", 0);

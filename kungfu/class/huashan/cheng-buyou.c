@@ -1,17 +1,17 @@
-// cheng-buyou.c  ³É²»ÓÇ
+// cheng-buyou.c  æˆä¸å¿§
 inherit NPC;
 inherit F_MASTER;
 #include <ansi.h>
 
 void create()
 {
-        set_name("³É²»ÓÇ", ({ "cheng buyou", "cheng" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("æˆä¸å¿§", ({ "cheng buyou", "cheng" }) );
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
-        set("title", "»ªÉ½½£×ÚµÚÊ®Èı´úµÜ×Ó");
+        set("title", "åå±±å‰‘å®—ç¬¬åä¸‰ä»£å¼Ÿå­");
         set("age", 41);
         set("long",
-                "Ò»¸ö°×¾»ÃæÆ¤µÄ°«×Ó£¬¿ÉÒ²²»ÄÜĞ¡¿´Ëû¡£\n");
+                "ä¸€ä¸ªç™½å‡€é¢çš®çš„çŸ®å­ï¼Œå¯ä¹Ÿä¸èƒ½å°çœ‹ä»–ã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -60,7 +60,7 @@ void create()
         map_skill("unarmed", "huashan-zhangfa");
         map_skill("dodge", "huashan-shenfa");
 
-        create_family("»ªÉ½ÅÉ½£×Ú", 13, "µÜ×Ó");
+        create_family("åå±±æ´¾å‰‘å®—", 13, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -82,10 +82,10 @@ void init()
 void greeting(object ob)
 {
         if(ob->query("family/master_id") != "yue buqun")
-              say ("³É²»ÓÇËµ£ºÕâÎ»"+RANK_D->query_respect(ob) + "£¬À´Í¶ÎÒ½£×Ú°É¡£\n");
+              say ("æˆä¸å¿§è¯´ï¼šè¿™ä½"+RANK_D->query_respect(ob) + "ï¼Œæ¥æŠ•æˆ‘å‰‘å®—å§ã€‚\n");
         else
         {
-              message_vision("³É²»ÓÇÒ»¼û$N¾Í´óÅ­£ºÎÒ×îÌÖÑáÎ±¾ı×ÓµÄÍ½µÜÁË¡£\n", ob);
+              message_vision("æˆä¸å¿§ä¸€è§$Nå°±å¤§æ€’ï¼šæˆ‘æœ€è®¨åŒä¼ªå›å­çš„å¾’å¼Ÿäº†ã€‚\n", ob);
               this_object()->kill_ob(ob);
         }
         return;
@@ -93,6 +93,6 @@ void greeting(object ob)
 
 void attempt_apprentice(object ob)
 {
-        command("say ÀÏ·ò´Ó²»ÊÕÍ½£¬ÄãÕÒÎÒ·âÊ¦ĞÖºÃÁË¡£");
+        command("say è€å¤«ä»ä¸æ”¶å¾’ï¼Œä½ æ‰¾æˆ‘å°å¸ˆå…„å¥½äº†ã€‚");
 }
 

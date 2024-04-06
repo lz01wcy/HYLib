@@ -1,4 +1,4 @@
-// cure.c¾ø»§ÊÖÁÆ
+// cure.cç»æˆ·æ‰‹ç–—
 
 #include <ansi.h>
 // inherit F_CLEAN_UP;
@@ -8,55 +8,55 @@ int exert(object me, string arg)
 	object ob;
 
         ob = present(arg, environment(me));
-        if (!userp(ob)) return notify_fail("ÄãÒª°ïË­ÔË¹¦ÁÆÉËÑ½£¡\n");
+        if (!userp(ob)) return notify_fail("ä½ è¦å¸®è°è¿åŠŸç–—ä¼¤å‘€ï¼\n");
         if (!ob) ob = find_player(arg);
         if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("ÄãÒª°ïË­ÔË¹¦ÁÆÉËÑ½£¡\n");
+        if (!ob) return notify_fail("ä½ è¦å¸®è°è¿åŠŸç–—ä¼¤å‘€ï¼\n");
 
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞ²»ÄÜ¾²ÏÂĞÄÁÆÉË£¡\n");
+                return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½é™ä¸‹å¿ƒç–—ä¼¤ï¼\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
   
         if ((int)me->query_skill("yinyun-ziqi", 1) < 120)
-                return notify_fail("ÄãµÄë³ëµ×ÏÆøĞŞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ°¤æ°²ç´«æ°”ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
         if ((int)me->query_skill("taoism", 1) < 140)
-                return notify_fail("ÄãµÄµÀ¼ÒĞÄ·¨ĞŞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„é“å®¶å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("eff_jing") < (int)me->query("max_jing") / 2 )
-                return notify_fail("Äã×ÔÉí¾«ÔªĞéÈõ£¬ÎŞ·¨ÔËÓÃÕæÆø£¡\n");
+                return notify_fail("ä½ è‡ªèº«ç²¾å…ƒè™šå¼±ï¼Œæ— æ³•è¿ç”¨çœŸæ°”ï¼\n");
 
     if( ob==me ) {
         if( (int)me->query_condition("juehu_hurt") <= 0 )
-                return notify_fail("Äã²¢Ã»ÓĞÊÜÉË£¡\n");
+                return notify_fail("ä½ å¹¶æ²¡æœ‰å—ä¼¤ï¼\n");
         if( (int)me->query_skill("taoism",1)<150 )
-                return notify_fail("ÄãµÀ¼ÒĞŞÎª²»¹»Ìæ×Ô¼ºÁÆÉË£¡\n");
+                return notify_fail("ä½ é“å®¶ä¿®ä¸ºä¸å¤Ÿæ›¿è‡ªå·±ç–—ä¼¤ï¼\n");
 
-        write( HIW "ÄãÅÌÏ¥´ò×ø£¬ÒâÊØµ¤Ìï£¬¿ªÊ¼¾ß½áÈ«ÉíÕæÆø´òÍ¨»ãÒõÑ¨¡£\n" NOR);
+        write( HIW "ä½ ç›˜è†æ‰“åï¼Œæ„å®ˆä¸¹ç”°ï¼Œå¼€å§‹å…·ç»“å…¨èº«çœŸæ°”æ‰“é€šæ±‡é˜´ç©´ã€‚\n" NOR);
         message("vision",
-                HIR + me->name() + "ÅÌÏ¥´ò×ø£¬Á³É«Ô½À´Ô½ºì£¬´óº¹ÁÜÀì¡£\n" NOR,
+                HIR + me->name() + "ç›˜è†æ‰“åï¼Œè„¸è‰²è¶Šæ¥è¶Šçº¢ï¼Œå¤§æ±—æ·‹æ¼“ã€‚\n" NOR,
                 environment(me), me);
         if(me->query("neili",1)< 1400||me->query("jingli",1)<700)
-        {write(RED "ÄãÍ»È»ĞÄÌø¼ÓËÙ£¬ºôÎüÀ§ÄÑ£¬ÌåÄÚÕæÆø¶ÙÊ±Ê§¿Ø£¬ÉíÌå½©Ó²µØµ¹ÔÚµØÉÏ¡£\n" NOR);
+        {write(RED "ä½ çªç„¶å¿ƒè·³åŠ é€Ÿï¼Œå‘¼å¸å›°éš¾ï¼Œä½“å†…çœŸæ°”é¡¿æ—¶å¤±æ§ï¼Œèº«ä½“åƒµç¡¬åœ°å€’åœ¨åœ°ä¸Šã€‚\n" NOR);
          me->start_busy(10);
          me->add("max_neili",-20);
          me->set("neili",1);
          me->set("jingli",1);
-         write(HIY "Ô­À´ÄãÌåÁ¦²»Ö§£¬ÔË¹¦×ß»ğÈëÄ§!\n"NOR);
+         write(HIY "åŸæ¥ä½ ä½“åŠ›ä¸æ”¯ï¼Œè¿åŠŸèµ°ç«å…¥é­”!\n"NOR);
          message("vision",
-                HIY + me->name() + "Á³É«´ó±ä£¬ËÄÖ«½©Ó²£¬Ò»Í·µ¹ÔÚµØÉÏ£¬³öÆø¶àÎüÆøÉÙ¡£\n" NOR,
+                HIY + me->name() + "è„¸è‰²å¤§å˜ï¼Œå››è‚¢åƒµç¡¬ï¼Œä¸€å¤´å€’åœ¨åœ°ä¸Šï¼Œå‡ºæ°”å¤šå¸æ°”å°‘ã€‚\n" NOR,
                 environment(me), me);
          }
         else
-        {write(RED "Äãµ¤ÌïÕæÆøÔ½¾ÛÔ½¶à£¬¸Ğ¾õÔ½À´Ô½ÈÈ£¬Ñ¨µÀÖ®´¦ÓĞÈçµ¶¸î¡£\n°¡--!Äã´ó½ĞÒ»Éù£¬È«Éí¾­ÂöÖÕÓÚ´òÍ¨£¬µ¤ÌïÅ¯ÑóÑóµÄÉõÊÇÊÜÓÃ!\n" NOR);
+        {write(RED "ä½ ä¸¹ç”°çœŸæ°”è¶Šèšè¶Šå¤šï¼Œæ„Ÿè§‰è¶Šæ¥è¶Šçƒ­ï¼Œç©´é“ä¹‹å¤„æœ‰å¦‚åˆ€å‰²ã€‚\nå•Š--!ä½ å¤§å«ä¸€å£°ï¼Œå…¨èº«ç»è„‰ç»ˆäºæ‰“é€šï¼Œä¸¹ç”°æš–æ´‹æ´‹çš„ç”šæ˜¯å—ç”¨!\n" NOR);
          message("vision",
-                RED + me->name() + "°¡--!ÍÂ³öÒ»¿ÚĞÈÑª£¬Á³É«Ò²ºìÈóÆğÀ´£¬Á½ÑÛ¾«¹âËÄÉä£¬²»¿É±ÆÊÓ¡£\n" NOR,
+                RED + me->name() + "å•Š--!åå‡ºä¸€å£è…¥è¡€ï¼Œè„¸è‰²ä¹Ÿçº¢æ¶¦èµ·æ¥ï¼Œä¸¤çœ¼ç²¾å…‰å››å°„ï¼Œä¸å¯é€¼è§†ã€‚\n" NOR,
                 environment(me), me);
          me->clear_condition("juehu_hurt");
-         if (me->query("genderbak")== "ÄĞĞÔ")
-             me->set("gender","ÄĞĞÔ");
+         if (me->query("genderbak")== "ç”·æ€§")
+             me->set("gender","ç”·æ€§");
 
          me->start_busy(3);
          me->set("neili",1);
@@ -68,31 +68,31 @@ int exert(object me, string arg)
      else
      {
 	if( (int)arg->query_condition("juehu_hurt") <= 0 )
-            return notify_fail(ob->query("name")+"²¢Ã»ÓĞÊÜÉË£¡\n");
+            return notify_fail(ob->query("name")+"å¹¶æ²¡æœ‰å—ä¼¤ï¼\n");
 
-        message_vision(HIY"$N°ÑÕÆĞÄ·ÅÔÚ$nµÄ°Ù»ãÑ¨ÉÏ£¬ÔËÆğÈıÎ¶Õæ»ğÀ´Çı³ıÒõº®Ö®¶¾!\n"NOR,me,ob);
+        message_vision(HIY"$NæŠŠæŒå¿ƒæ”¾åœ¨$nçš„ç™¾æ±‡ç©´ä¸Šï¼Œè¿èµ·ä¸‰å‘³çœŸç«æ¥é©±é™¤é˜´å¯’ä¹‹æ¯’!\n"NOR,me,ob);
         if(me->query("neili",1)< 1300||me->query("jingli",1)<650)
-        {write(RED "ÄãÍ»È»ĞÄÌø¼ÓËÙ£¬ºôÎüÀ§ÄÑ£¬ÌåÄÚÕæÆø¶ÙÊ±Ê§¿Ø£¬ÉíÌå½©Ó²µØµ¹ÔÚµØÉÏ¡£\n" NOR);
+        {write(RED "ä½ çªç„¶å¿ƒè·³åŠ é€Ÿï¼Œå‘¼å¸å›°éš¾ï¼Œä½“å†…çœŸæ°”é¡¿æ—¶å¤±æ§ï¼Œèº«ä½“åƒµç¡¬åœ°å€’åœ¨åœ°ä¸Šã€‚\n" NOR);
          me->start_busy(10);
          me->add("max_neili",-15);
          me->add("max_jingli",-10);
          me->set("jingli",1);
          me->set("neili",1);
-         write(HIY "Ô­À´ÄãÌåÁ¦²»Ö§£¬ÔË¹¦×ß»ğÈëÄ§!\n"NOR);
-         tell_object(ob, RED "ÄãºöÈ»¸Ğµ½ÓÉÍ·¶¥´«ÈëµÄÕæÆøËÄ´¦ÂÒ´Ú£¬µ¤ÌïÕóÍ´£¬ÄÑ¹ıÓûÍÂ¡£\n" NOR );
+         write(HIY "åŸæ¥ä½ ä½“åŠ›ä¸æ”¯ï¼Œè¿åŠŸèµ°ç«å…¥é­”!\n"NOR);
+         tell_object(ob, RED "ä½ å¿½ç„¶æ„Ÿåˆ°ç”±å¤´é¡¶ä¼ å…¥çš„çœŸæ°”å››å¤„ä¹±è¹¿ï¼Œä¸¹ç”°é˜µç—›ï¼Œéš¾è¿‡æ¬²åã€‚\n" NOR );
          message("vision",
-                HIY + me->name() + "Á³É«´ó±ä£¬ËÄÖ«½©Ó²£¬Ò»Í·µ¹ÔÚµØÉÏ£¬³öÆø¶àÎüÆøÉÙ¡£\n" NOR,
+                HIY + me->name() + "è„¸è‰²å¤§å˜ï¼Œå››è‚¢åƒµç¡¬ï¼Œä¸€å¤´å€’åœ¨åœ°ä¸Šï¼Œå‡ºæ°”å¤šå¸æ°”å°‘ã€‚\n" NOR,
                 environment(me), me);
          ob->add("max_jingli",-5);
          ob->unconcious();
          }
         else
-        {write(RED "ÄãÖğ½¥¼ÓÁ¦£¬ÕæÆøÈë°Ù»ã£¬¹ıÈÎ¶½£¬¾Ûµ¤Ìï£¬Ö±³å»ãÒõÑ¨¡£\n"NOR);
-         tell_object(ob, RED "Äã¸Ğµ½Ò»¹ÉÈÈÀËÓÉ°Ù»ã½øÈë£¬¹ıÈÎ¶½£¬¾Ûµ¤Ìï£¬Ö±³å»ãÒõ´óÑ¨¡£È«ÉíÔïÈÈÄÑµ±£¬\nÔ­ÏÈµÄÒõº®Ö®¿à¶ÙÊ±¼õÈõ!\n"NOR );
+        {write(RED "ä½ é€æ¸åŠ åŠ›ï¼ŒçœŸæ°”å…¥ç™¾æ±‡ï¼Œè¿‡ä»»ç£ï¼Œèšä¸¹ç”°ï¼Œç›´å†²æ±‡é˜´ç©´ã€‚\n"NOR);
+         tell_object(ob, RED "ä½ æ„Ÿåˆ°ä¸€è‚¡çƒ­æµªç”±ç™¾æ±‡è¿›å…¥ï¼Œè¿‡ä»»ç£ï¼Œèšä¸¹ç”°ï¼Œç›´å†²æ±‡é˜´å¤§ç©´ã€‚å…¨èº«ç‡¥çƒ­éš¾å½“ï¼Œ\nåŸå…ˆçš„é˜´å¯’ä¹‹è‹¦é¡¿æ—¶å‡å¼±!\n"NOR );
          ob->clear_condition("juehu_hurt");
-         if (ob->query("genderbak")== "ÄĞĞÔ")
-             ob->set("gender","ÄĞĞÔ");
-         message_vision(RED"$N°¡--!ÍÂ³öÒ»¿ÚĞÈºìµÄÑª£¬Á³É«»Ö¸´ÁËºìÈó¡£\n"NOR, ob);
+         if (ob->query("genderbak")== "ç”·æ€§")
+             ob->set("gender","ç”·æ€§");
+         message_vision(RED"$Nå•Š--!åå‡ºä¸€å£è…¥çº¢çš„è¡€ï¼Œè„¸è‰²æ¢å¤äº†çº¢æ¶¦ã€‚\n"NOR, ob);
          ob->add("max_jingli",-5);
          me->start_busy(3);
          me->set("jingli",1);

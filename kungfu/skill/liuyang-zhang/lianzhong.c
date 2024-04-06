@@ -1,4 +1,4 @@
-// zhong.c ÖÖÉúËÀ·û
+// zhong.c ç§ç”Ÿæ­»ç¬¦
 
 #include <ansi.h>
 #include <skill.h>
@@ -17,35 +17,35 @@ int perform(object me, object target)
         if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸Á¬ÖÖÉúËÀ·û¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¿ç§ç”Ÿæ­»ç¬¦ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï²»×¼´ò¼Ü¡£\n");
+		return notify_fail("è¿™é‡Œä¸å‡†æ‰“æ¶ã€‚\n");
 
 	if( !target || !target->is_character() )
-		return notify_fail("Á¬ÖÖÉúËÀ·ûÖ»ÄÜÖÖÔÚ¶ÔÊÖÉíÉÏ¡£\n");
+		return notify_fail("è¿ç§ç”Ÿæ­»ç¬¦åªèƒ½ç§åœ¨å¯¹æ‰‹èº«ä¸Šã€‚\n");
 
 	if(((int)me->query_skill("bahuang-gong", 1) < 200 ) &&
 	   ((int)me->query_skill("beiming-shengong", 1) < 200 ))
-		return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì£¬²»ÄÜÁ¬ÖÖÉúËÀ·û¡£\n");
+		return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½è¿ç§ç”Ÿæ­»ç¬¦ã€‚\n");
 
 	if (me->query("neili")<200)
-		return notify_fail("ÄãÕæÆø²»×ã¡£\n");
+		return notify_fail("ä½ çœŸæ°”ä¸è¶³ã€‚\n");
 
 	if( (int)me->query_skill("liuyang-zhang", 1) < 200 )
-		return notify_fail("ÄãµÄÌìÉ½ÁùÑôÕÆ²»¹»æµÊì£¬²»ÄÜÁ¬ÖÖÉúËÀ·û¡£\n");
+		return notify_fail("ä½ çš„å¤©å±±å…­é˜³æŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½è¿ç§ç”Ÿæ­»ç¬¦ã€‚\n");
 
 
         me->add_temp("apply/strength", extra/4);
         me->add_temp("apply/attack", 80);
 	me->add_temp("apply/damage", 380);
-	msg = BLU "$N»¯Ë®Îª±ù£¬ÄıÓÚÕÆÖĞ£¬Ë«Ö¸Ò»µ¯£¬ÊÖÉÏ¼¸µÀÇà¹â¼±ËÙÉäÏò$n¡£\n";
+	msg = BLU "$NåŒ–æ°´ä¸ºå†°ï¼Œå‡äºæŒä¸­ï¼ŒåŒæŒ‡ä¸€å¼¹ï¼Œæ‰‹ä¸Šå‡ é“é’å…‰æ€¥é€Ÿå°„å‘$nã€‚\n";
 COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg =  HIW  "$N×óÖ¸Ò»µ¯£¬"HIG"µÚÒ»µÀÉúËÀ·û"HIW"Ïò$n×ó±ß´òÀ´£¡" NOR;
+        msg =  HIW  "$Nå·¦æŒ‡ä¸€å¼¹ï¼Œ"HIG"ç¬¬ä¸€é“ç”Ÿæ­»ç¬¦"HIW"å‘$nå·¦è¾¹æ‰“æ¥ï¼" NOR;
 	        COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIB  "$NÓÒÖ¸Ò»µ¯£¬"HIG"µÚ¶şµÀÉúËÀ·û"HIB"Ïò$nÓÒ±ß´òÀ´! " NOR;
+        msg = HIB  "$Nå³æŒ‡ä¸€å¼¹ï¼Œ"HIG"ç¬¬äºŒé“ç”Ÿæ­»ç¬¦"HIB"å‘$nå³è¾¹æ‰“æ¥! " NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = CYN  "$NÁè¿ÕÔ¾Æğ,"HIG"µÚÈıµÀÉúËÀ·û"CYN"Ïò$nÉÏÃæ´òÀ´!" NOR;
+        msg = CYN  "$Nå‡Œç©ºè·ƒèµ·,"HIG"ç¬¬ä¸‰é“ç”Ÿæ­»ç¬¦"CYN"å‘$nä¸Šé¢æ‰“æ¥!" NOR;
                COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 
         me->add_temp("apply/strength", -extra/4);
@@ -56,7 +56,7 @@ COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 	
  if (random(me->query("combat_exp")) > target->query("combat_exp") / 3)
  {
-		msg = HIG " ½á¹û$p±»$P¹¥ÁË¸öÕı×Å£¡ÉíÉÏÖĞÁË¼¸µÀÉúËÀ·û\n" NOR;
+		msg = HIG " ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæ­£ç€ï¼èº«ä¸Šä¸­äº†å‡ é“ç”Ÿæ­»ç¬¦\n" NOR;
 		target->receive_damage("qi",(int)me->query_skill("bahuang-gong",1));
 		target->receive_wound("qi",155 + random( (int)me->query_skill("liuyang-zhang",1)));
 		target->receive_wound("jing", 10 + random(50));
@@ -66,7 +66,7 @@ COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
 	} else {
-		msg += "¿ÉÊÇ$p¼±Ã¦ÉÁÔÚÒ»ÅÔ£¬¶ãÁË¿ªÈ¥¡£\n" NOR;
+		msg += "å¯æ˜¯$pæ€¥å¿™é—ªåœ¨ä¸€æ—ï¼Œèº²äº†å¼€å»ã€‚\n" NOR;
 		me->start_busy(2);
 		message_combatd(msg, me, target);
 	}

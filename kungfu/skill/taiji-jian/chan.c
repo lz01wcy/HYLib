@@ -1,4 +1,4 @@
-// chan.c Ì«¼«½£·¨¡¸²ø¡¹×Ö¾÷
+// chan.c å¤ªæå‰‘æ³•ã€Œç¼ ã€å­—è¯€
 
 #include <ansi.h>
 
@@ -13,31 +13,31 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Ì«¼«½£·¨¡¸²ø¡¹×Ö¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤ªæå‰‘æ³•ã€Œç¼ ã€å­—è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§\n");
                 
         if( (int)me->query_skill("taiji-jian", 1) < 40 )
-                return notify_fail("ÄãµÄÌ«¼«½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸²ø¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„å¤ªæå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç¼ ã€å­—è¯€ã€‚\n");
 
         if (me->query_skill("taiji-shengong", 1)<40)
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦»ğºòÎ´µ½£¬£¡\n");
+                return notify_fail("ä½ çš„æœ¬é—¨å†…åŠŸç«å€™æœªåˆ°ï¼Œï¼\n");
 
 	if( (int)me->query("neili") < 100  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
-        msg = HIG "$NÊ¹³öÌ«¼«½£·¨¡¸²ø¡¹×Ö¾÷£¬½£ÒâÈ¦×ª£¬Á¬Ãà²»¾ø£¬Á¬µİÊı¸öĞéÕĞÆóÍ¼ÈÅÂÒ$nµÄ¹¥ÊÆ¡£\n";
+        msg = HIG "$Nä½¿å‡ºå¤ªæå‰‘æ³•ã€Œç¼ ã€å­—è¯€ï¼Œå‰‘æ„åœˆè½¬ï¼Œè¿ç»µä¸ç»ï¼Œè¿é€’æ•°ä¸ªè™šæ‹›ä¼å›¾æ‰°ä¹±$nçš„æ”»åŠ¿ã€‚\n";
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += HIR " ½á¹û$p±»$PÄÖ¸öÊÖÃ¦½ÅÂÒ£¬¾ª»ÅÊ§´ë£¬´ôÔÚµ±³¡£¬²»ÖªÈçºÎÓ¦¶Ô£¡\n" NOR;
+                msg += HIR " ç»“æœ$pè¢«$Pé—¹ä¸ªæ‰‹å¿™è„šä¹±ï¼ŒæƒŠæ…Œå¤±æªï¼Œå‘†åœ¨å½“åœºï¼Œä¸çŸ¥å¦‚ä½•åº”å¯¹ï¼\n" NOR;
                 target->start_busy( (int)me->query_skill("taiji-jian",1) / 50 + 1 );
         } else {
-                msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Õò¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œé•‡å®šé€¾æ’ï¼Œå…¨ç¥åº”å¯¹è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

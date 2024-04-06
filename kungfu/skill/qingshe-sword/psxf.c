@@ -8,27 +8,27 @@ int perform(object me, object target)
 	int extra;
 	object weapon;
 	extra = me->query_skill("qingshe-sword",1);
-	if ( extra < 70) return notify_fail("ÄãµÄ[ÕâÃÅÎä¹¦]»¹²»¹»´¿Êì£¡\n");
+	if ( extra < 70) return notify_fail("ä½ çš„[è¿™é—¨æ­¦åŠŸ]è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
         if (!objectp(weapon = me->query_temp("weapon"))
                 || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( !target ) target = offensive_target(me);
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("£ÛÆ¼Ë®Ïà·ê£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ï¼»èæ°´ç›¸é€¢ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 if (extra>=200) extra=200;
 me->add_temp("apply/damage", extra);
 me->add_temp("apply/attack", extra/10);
-	msg =  HIW "$N´óºÈÒ»Éù£ºÆ¼--Ë®--Ïà--·ê£¡\n"+HIR "Æ¼---ÊÖÖÐµÄ"+ weapon->name()+ HIR "ÈçÁéÉß°ãµÄÏò$n¿³È¥£¡" NOR;
+	msg =  HIW "$Nå¤§å–ä¸€å£°ï¼šè--æ°´--ç›¸--é€¢ï¼\n"+HIR "è---æ‰‹ä¸­çš„"+ weapon->name()+ HIR "å¦‚çµè›‡èˆ¬çš„å‘$nç åŽ»ï¼" NOR;
 	COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-        msg = HIR "Ë®---Ö»¼û"+ weapon->name()+ HIR"ËÆÓÐÁéÐÔ£¬»®Ïò$nµÄ×ó¼ç£¡" NOR;
+        msg = HIR "æ°´---åªè§"+ weapon->name()+ HIR"ä¼¼æœ‰çµæ€§ï¼Œåˆ’å‘$nçš„å·¦è‚©ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-     msg =  HIR "Ïà---$NÁè¿ÕÒ»Åü£¬"+ weapon->name()+ HIR"»ð¹âËÄÆð£¬Ï÷Ïò$nµÄÐØ¿Ú£¡" NOR;
+     msg =  HIR "ç›¸---$Nå‡Œç©ºä¸€åŠˆï¼Œ"+ weapon->name()+ HIR"ç«å…‰å››èµ·ï¼Œå‰Šå‘$nçš„èƒ¸å£ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
-   msg = HIR "·ê---$NÍ¼ÇîØ°ÏÖ£¬¾Ó¸ßÁÙÏÂ£¬ÊÖÖÐ"+ weapon->name()+ HIR"³¯$nµÄ´óÍÈÅüÈ¥£¡" NOR;
+   msg = HIR "é€¢---$Nå›¾ç©·åŒ•çŽ°ï¼Œå±…é«˜ä¸´ä¸‹ï¼Œæ‰‹ä¸­"+ weapon->name()+ HIR"æœ$nçš„å¤§è…¿åŠˆåŽ»ï¼" NOR;
         COMBAT_D->do_attack(me,target, me->query_temp("weapon"),TYPE_REGULAR,msg);
 me->add_temp("apply/damage", -extra);
 me->add_temp("apply/attack", -extra/10);

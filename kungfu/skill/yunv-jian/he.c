@@ -1,4 +1,4 @@
-// he.c ÓñÅ®½£-Ë«½£ºÏèµ
+// he.c ç‰å¥³å‰‘-åŒå‰‘åˆç’§
 
 #include <ansi.h>
 #include <skill.h>
@@ -16,30 +16,30 @@ int attack_time,i;
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ë«½£ºÏèµÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åŒå‰‘åˆç’§åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query_skill("yunv-xinfa", 1) < 80 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃË«½£ºÏèµ¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒæ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨åŒå‰‘åˆç’§ã€‚\n");
 
         if( (int)me->query_skill("yunv-jian", 1) < 80 )
-                return notify_fail("ÄãµÄÓñÅ®½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃË«½£ºÏèµ¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨åŒå‰‘åˆç’§ã€‚\n");
 
         if( (int)me->query_skill("quanzhen-jian", 1) < 50 )
-                return notify_fail("ÄãµÄÈ«Õæ½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃË«½£ºÏèµ¡£\n");
+                return notify_fail("ä½ çš„å…¨çœŸå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨åŒå‰‘åˆç’§ã€‚\n");
 
         if( (int)me->query("neili", 1) < 400 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃË«½£ºÏèµ¡£\n");
+                return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨åŒå‰‘åˆç’§ã€‚\n");
 
-        message_vision(HIR "$NÇåĞ¥Ò»Éù£¬ÔËÆğÓñÅ®ËØĞÄÄÚ¾÷£¬½«ÄÚÁ¦Ô´Ô´²»¶ÏµØ×¢Èë"+(me->query_temp("weapon"))->query("name")+ HIR "£¬Éí·¨Ò²Í»È»¼Ó¿ì£¡\n\n" NOR, me);        
-message_vision(HIR "$N×óÊÖÒÔÈ«Õæ½£·¨½£Òâ£¬ÓÒÊÖ»¯ÓñÅ®½£·¨½£ÕĞ£¬Ë«½£ºÏèµÍ¬Ê±´Ì³ö¡£\n\n" NOR, me);        
+        message_vision(HIR "$Næ¸…å•¸ä¸€å£°ï¼Œè¿èµ·ç‰å¥³ç´ å¿ƒå†…è¯€ï¼Œå°†å†…åŠ›æºæºä¸æ–­åœ°æ³¨å…¥"+(me->query_temp("weapon"))->query("name")+ HIR "ï¼Œèº«æ³•ä¹Ÿçªç„¶åŠ å¿«ï¼\n\n" NOR, me);        
+message_vision(HIR "$Nå·¦æ‰‹ä»¥å…¨çœŸå‰‘æ³•å‰‘æ„ï¼Œå³æ‰‹åŒ–ç‰å¥³å‰‘æ³•å‰‘æ‹›ï¼ŒåŒå‰‘åˆç’§åŒæ—¶åˆºå‡ºã€‚\n\n" NOR, me);        
 
     if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2
  ) {
-    msg = HIC"½á¹û$pÖ»¾õÁ½ÑÛÒ»ºÚ£¬²»ÄÜÆÆ½âÕâÃ´¹ÖµÄÎä¹¦£¬ÕĞÊ½´óÂÒ¡£\n" NOR;
+    msg = HIC"ç»“æœ$påªè§‰ä¸¤çœ¼ä¸€é»‘ï¼Œä¸èƒ½ç ´è§£è¿™ä¹ˆæ€ªçš„æ­¦åŠŸï¼Œæ‹›å¼å¤§ä¹±ã€‚\n" NOR;
         message_vision(msg, me, target);
  target->start_busy( (int)me->query_skill("yunv-jian") / 50 + 3);
      } 
@@ -50,7 +50,7 @@ attack_time = random((int)me->query_skill("yunv-jian", 1) / 30);
 me->start_busy(2);
 if (attack_time > 9 ) attack_time=9;
         for(i = 0; i < attack_time; i++){
-         msg = HIR "$N±ä»»ÕĞÊ½´Ì³öµÚ"+(i+1)+"½£À´!! \n" NOR;
+         msg = HIR "$Nå˜æ¢æ‹›å¼åˆºå‡ºç¬¬"+(i+1)+"å‰‘æ¥!! \n" NOR;
 me->set_temp("noauto",1);
        COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 me->delete_temp("noauto");

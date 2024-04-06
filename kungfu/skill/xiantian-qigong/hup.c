@@ -1,11 +1,11 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// hup.c ÎåÆø³¯Ôª
+// hup.c äº”æ°”æœå…ƒ
 
 #include <ansi.h>
 
-#define HUP "¡¸" HIR "ÎåÆø³¯Ôª" NOR "¡¹"
+#define HUP "ã€Œ" HIR "äº”æ°”æœå…ƒ" NOR "ã€"
 
 inherit F_CLEAN_UP;
 
@@ -20,13 +20,13 @@ int exert(object me, object target)
 
 
         if ((int)me->query_skill("xiantian-qigong", 1) < 200)
-                return notify_fail("ÄãÏÈÌì¹¦²»¹»Éîºñ£¬ÄÑÒÔÊ©Õ¹" HUP "¡£\n");
+                return notify_fail("ä½ å…ˆå¤©åŠŸä¸å¤Ÿæ·±åšï¼Œéš¾ä»¥æ–½å±•" HUP "ã€‚\n");
 
         if ((int)me->query("max_neili") < 1000) 
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" HUP "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œéš¾ä»¥æ–½å±•" HUP "ã€‚\n");
 
         if ((int)me->query("neili") < 200) 
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUP "¡£\n");
+                return notify_fail("ä½ ç°åœ¨çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUP "ã€‚\n");
 
         my = me->query_entire_dbase();
         if ((rp = (my["max_qi"] - my["eff_qi"])) < 1)
@@ -36,8 +36,8 @@ int exert(object me, object target)
                 rp = my["max_qi"] / 10;
 
         skill = me->query_skill("force");
-        msg = HIW "$N" HIW "»º»ºÍÂ³öÒ»¿ÚÆø£¬¶ÙÊ±ÆøÂöÍ¨³©£¬Á³É«½¥½¥µÄ±ä"
-              "µÃÆ½ºÍ¡£\n" NOR;
+        msg = HIW "$N" HIW "ç¼“ç¼“åå‡ºä¸€å£æ°”ï¼Œé¡¿æ—¶æ°”è„‰é€šç•…ï¼Œè„¸è‰²æ¸æ¸çš„å˜"
+              "å¾—å¹³å’Œã€‚\n" NOR;
         message_combatd(msg, me);
 
         neili_cost = rp + 100;

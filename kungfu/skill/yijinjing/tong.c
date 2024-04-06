@@ -1,4 +1,4 @@
-// shield.c Ò×½î¾­ Ò»ÆøÍ¨°ËÂö
+// shield.c æ˜“ç­‹ç» ä¸€æ°”é€šå…«è„‰
 
 #include <ansi.h>
 
@@ -13,30 +13,30 @@ int exert(object me, object target)
 
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÒ×½î¾­À´¼¤·¢Ò»ÆøÍ¨°ËÂö \n");
+                return notify_fail("ä½ åªèƒ½ç”¨æ˜“ç­‹ç»æ¥æ¿€å‘ä¸€æ°”é€šå…«è„‰ \n");
 
         if ((skill = (int)me->query_skill("yijinjing", 1)) < 100)
-                return notify_fail("ÄãµÄÒ×½î¾­µÈ¼¶²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ˜“ç­‹ç»ç­‰çº§ä¸å¤Ÿã€‚\n");
 
         if ((int)me->query("eff_qi")*120/(int)me->query("max_qi") > 80)
-                return notify_fail("ÄãÉËÊÆºÜÇá£¬ÎŞ·¨¼¤ÀøÒ×½î¾­ÖÁ¸ß¾øÑ§¡£\n");
+                return notify_fail("ä½ ä¼¤åŠ¿å¾ˆè½»ï¼Œæ— æ³•æ¿€åŠ±æ˜“ç­‹ç»è‡³é«˜ç»å­¦ã€‚\n");
 
         //if ((int)me->query("eff_qi")*100/(int)me->query("max_qi") < 10)
-        //        return notify_fail("ÄãÄÚÉËÌ«ÖØ£¬ÎŞ·¨¼¤ÀøÒ×½î¾­ÖÁ¸ß¾øÑ§¡£\n");
+        //        return notify_fail("ä½ å†…ä¼¤å¤ªé‡ï¼Œæ— æ³•æ¿€åŠ±æ˜“ç­‹ç»è‡³é«˜ç»å­¦ã€‚\n");
 
         if ((int)me->query("neili") < skill*5 ||
             (int)me->query("max_neili") < 500)
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
         me->add("neili", -skill*5);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIM "$N" HIM "Ä¬ÄîÒ×½î¾­µÄ¿Ú¾÷: "
-                            "ÔªÆø,Æø´æÓÚÄÚ,·ÅÓÚÍâ¡£"
-                            "Ò×½î,ÔĞ»³ÓÚÏ¢,ÊæÓÚÖ§....\n"
-                        HIW "Ò»¹ÉÏêºÍµÄ°×É«î¸Æø×ÔÍ·¶¥Ñ¸ËÙ"
-                        HIW "ÓÎ±é" HIW "$N" HIW "µÄÆæ¾­°ËÂö£¡\n"
-                        HIR "ÄãµÄÄÚÉËÉ²ÄÇ¼ä´óÎªºÃ×ª£¡£¡\n" NOR, me);
+        message_combatd(HIM "$N" HIM "é»˜å¿µæ˜“ç­‹ç»çš„å£è¯€: "
+                            "å…ƒæ°”,æ°”å­˜äºå†…,æ”¾äºå¤–ã€‚"
+                            "æ˜“ç­‹,å­•æ€€äºæ¯,èˆ’äºæ”¯....\n"
+                        HIW "ä¸€è‚¡è¯¦å’Œçš„ç™½è‰²ç½¡æ°”è‡ªå¤´é¡¶è¿…é€Ÿ"
+                        HIW "æ¸¸é" HIW "$N" HIW "çš„å¥‡ç»å…«è„‰ï¼\n"
+                        HIR "ä½ çš„å†…ä¼¤åˆ¹é‚£é—´å¤§ä¸ºå¥½è½¬ï¼ï¼\n" NOR, me);
 
         me->add("max_neili", -1);
 

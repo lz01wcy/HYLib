@@ -1,4 +1,4 @@
-// azi.c °¢×Ï
+// azi.c é˜¿ç´«
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,12 +7,12 @@ string ask_me();
 
 void create()
 {
-	set_name("°¢×Ï", ({ "azi" }));
-	set("nickname", "ÐÇËÞÅÉÐ¡Ê¦ÃÃ");
+	set_name("é˜¿ç´«", ({ "azi" }));
+	set("nickname", "æ˜Ÿå®¿æ´¾å°å¸ˆå¦¹");
 	set("long", 
-		"Ëý¾ÍÊÇ¶¡´ºÇïµÜ×Ó°¢×Ï¡£\n"
-		"ËýÈÝÑÕÇÎÀö£¬¿ÉÑÛÉñÖÐ×ÜÊÇÍ¸³öÒ»¹ÉÐ°Æø¡£\n");
-	set("gender", "Å®ÐÔ");
+		"å¥¹å°±æ˜¯ä¸æ˜¥ç§‹å¼Ÿå­é˜¿ç´«ã€‚\n"
+		"å¥¹å®¹é¢œä¿ä¸½ï¼Œå¯çœ¼ç¥žä¸­æ€»æ˜¯é€å‡ºä¸€è‚¡é‚ªæ°”ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 15);
 	set("attitude", "peaceful");
 	set("class", "fighter");
@@ -53,7 +53,7 @@ void create()
 	prepare_skill("strike", "chousui-zhang");
 	prepare_skill("claw", "sanyin-wugongzhao");
 
-	create_family("ÐÇËÞÅÉ", 2, "µÜ×Ó");
+	create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/xingxiu/obj/xxqingxin-san");
@@ -62,6 +62,6 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 }

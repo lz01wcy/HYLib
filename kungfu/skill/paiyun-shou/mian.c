@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// mian √‡√‡≤ªæ¯
+// mian ÁªµÁªµ‰∏çÁªù
 
 
 #include <ansi.h>
@@ -17,23 +17,23 @@ int perform(object me, object target)
                         
         if( !target ) target = offensive_target(me);
         if( !target || !me->is_fighting(target) )
-                return notify_fail("°∏√‡√‡≤ªæ¯°π÷ªƒ‹‘⁄’Ω∂∑÷–∂‘∂‘ ÷ π”√°£\n");
+                return notify_fail("„ÄåÁªµÁªµ‰∏çÁªù„ÄçÂè™ËÉΩÂú®ÊàòÊñó‰∏≠ÂØπÂØπÊâã‰ΩøÁî®„ÄÇ\n");
                 
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail(" π”√°∏√‡√‡≤ªæ¯°π ±±ÿ–Îø’ ÷£°\n");
+                return notify_fail("‰ΩøÁî®„ÄåÁªµÁªµ‰∏çÁªù„ÄçÊó∂ÂøÖÈ°ªÁ©∫ÊâãÔºÅ\n");
                 
         if( (int)me->query_skill("paiyun-shou", 1) < 120 )
-                return notify_fail("ƒ„µƒ≈≈‘∆Õ∆ ÷≤ªπªÊµ Ï£¨≤ªª· π”√°∏√‡√‡≤ªæ¯°π°£\n");
+                return notify_fail("‰Ω†ÁöÑÊéí‰∫ëÊé®Êâã‰∏çÂ§üÂ®¥ÁÜüÔºå‰∏ç‰ºö‰ΩøÁî®„ÄåÁªµÁªµ‰∏çÁªù„Äç„ÄÇ\n");
                 
         if( (int)me->query("max_neili") < 1100 )
-                return notify_fail("ƒ„œ÷‘⁄ƒ⁄¡¶–ﬁŒ™≤ªπª£¨≤ªƒ‹ π”√°∏√‡√‡≤ªæ¯°π°£\n");
+                return notify_fail("‰Ω†Áé∞Âú®ÂÜÖÂäõ‰øÆ‰∏∫‰∏çÂ§üÔºå‰∏çËÉΩ‰ΩøÁî®„ÄåÁªµÁªµ‰∏çÁªù„Äç„ÄÇ\n");
                 
         if( (int)me->query("neili") < 500 )
-                return notify_fail("ƒ„œ÷‘⁄ƒ⁄¡¶Ã´»ı£¨≤ªƒ‹ π”√°∏√‡√‡≤ªæ¯°π°£\n");
+                return notify_fail("‰Ω†Áé∞Âú®ÂÜÖÂäõÂ§™Âº±Ôºå‰∏çËÉΩ‰ΩøÁî®„ÄåÁªµÁªµ‰∏çÁªù„Äç„ÄÇ\n");
                 
         if( me->query_skill_prepared("hand") != "paiyun-shou"
         ||  me->query_skill_mapped("hand") != "paiyun-shou")
-                return notify_fail("ƒ„±ÿ–Î»´√Ê‘À”√≈≈‘∆Õ∆ ÷£¨≤≈ƒ‹ π”√°∏√‡√‡≤ªæ¯°π°£\n");
+                return notify_fail("‰Ω†ÂøÖÈ°ªÂÖ®Èù¢ËøêÁî®Êéí‰∫ëÊé®ÊâãÔºåÊâçËÉΩ‰ΩøÁî®„ÄåÁªµÁªµ‰∏çÁªù„Äç„ÄÇ\n");
 
                 
         i = (me->query_skill("paiyun-shou", 1)/5);
@@ -54,7 +54,7 @@ int perform(object me, object target)
         {
                 y = 3;
         }
-        msg = HIY "$N∫ˆ»ª…ÌÀÊ’∆∆£¨À´’∆»¶∂Ø£¨À∆–È∂¯ µ£¨À∆»·∂¯∏’°£“ª’∆≈ƒ≥ˆ£¨µ⁄∂˛’∆Ω”ı‡∂¯÷¡£¨“ª¡¨"+chinese_number(y)+"’∆£¨∆‰“‚»Á≈≈‘∆πˆπˆ°£\n" NOR;
+        msg = HIY "$NÂøΩÁÑ∂Ë∫´ÈöèÊéåËµ∑ÔºåÂèåÊéåÂúàÂä®Ôºå‰ººËôöËÄåÂÆûÔºå‰ººÊüîËÄåÂàö„ÄÇ‰∏ÄÊéåÊãçÂá∫ÔºåÁ¨¨‰∫åÊéåÊé•Ë∏µËÄåËá≥Ôºå‰∏ÄËøû"+chinese_number(y)+"ÊéåÔºåÂÖ∂ÊÑèÂ¶ÇÊéí‰∫ëÊªöÊªö„ÄÇ\n" NOR;
         message_combatd(msg, me, target);
         me->add_temp("apply/attack", i);
         me->add_temp("apply/damage", i);

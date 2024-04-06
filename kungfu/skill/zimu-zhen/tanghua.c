@@ -10,24 +10,24 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("[ÌÆ»¨]Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("[å”èŠ±]åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 	if( (int)me->query_skill("biyun-xinfa", 1) < 60 )
-                return notify_fail("ÄãµÄ±ÌÔÆÐÄ·¨²»¹»¸ß£¬²»ÄÜÔËÓÃ¡¸Óê¼¤Ã·»¨°ë°êÏã¡¹¡£\n");
+                return notify_fail("ä½ çš„ç¢§äº‘å¿ƒæ³•ä¸å¤Ÿé«˜ï¼Œä¸èƒ½è¿ç”¨ã€Œé›¨æ¿€æ¢…èŠ±åŠç“£é¦™ã€ã€‚\n");
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "throwing")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         if( (int)me->query("neili", 1) < 300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸Óê¼¤Ã·»¨°ë°êÏã¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›¨æ¿€æ¢…èŠ±åŠç“£é¦™ã€ã€‚\n");
 
 extra = me->query_skill("zimu-zhen",1) / 3;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra*5);
-msg = RED "$N×óÊÖÒ»Ñï£¬ÌÆÃÅ¶ÀÃÅ°µÆ÷----Ò»¶äÁîÈËÎÅ·çÉ¥µ¨µÄÌÆ»¨³¯$n·¢ÁË³öÈ¥¡£\n" NOR;
+msg = RED "$Nå·¦æ‰‹ä¸€æ‰¬ï¼Œå”é—¨ç‹¬é—¨æš—å™¨----ä¸€æœµä»¤äººé—»é£Žä¸§èƒ†çš„å”èŠ±æœ$nå‘äº†å‡ºåŽ»ã€‚\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-msg = HIG "ÌÆ>---->\n" NOR;
+msg = HIG "å”>---->\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-msg = HIC "»¨>------->\n" NOR;
+msg = HIC "èŠ±>------->\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
         target->apply_condition("tmqidu_poison", 60);

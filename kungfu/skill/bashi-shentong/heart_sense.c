@@ -1,4 +1,4 @@
-// heart_sense.c ĞÄÊ¶ÉñÍ¨
+// heart_sense.c å¿ƒè¯†ç¥é€š
 // Modified by Venus Oct.1997
 
 #include <ansi.h>
@@ -8,14 +8,14 @@
 int conjure(object me, object target)
 {
     if( !target || !target->is_character() )
-      return notify_fail("ÄãÒª¶ÔË­Ê¹ÓÃĞÄÊ¶ÉñÍ¨£¿\n");
+      return notify_fail("ä½ è¦å¯¹è°ä½¿ç”¨å¿ƒè¯†ç¥é€šï¼Ÿ\n");
     if( target->is_corpse() )
-      return notify_fail("À´²»¼°ÁË£¬Ö»ÓĞ»îÈË²ÅÄÜ¾ÈĞÑ¡£\n");
+      return notify_fail("æ¥ä¸åŠäº†ï¼Œåªæœ‰æ´»äººæ‰èƒ½æ•‘é†’ã€‚\n");
 
-    if( (int)me->query("jingli") < 50 ) return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+    if( (int)me->query("jingli") < 50 ) return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
        me->add("jingli", -50);
        me->receive_damage("jing", 30);
-       message_vision( HIY "$NÒ»ÊÖ·ÅÔÚ$nµÄÌìÁé¸ÇÉÏ£¬Ò»ÊÖÌùÔÚ$nµÄááĞÄ£¬±ÕÉÏÑÛ¾¦Ê¹ÓÃĞÄÊ¶÷ ...\n" NOR,me, target );
+       message_vision( HIY "$Nä¸€æ‰‹æ”¾åœ¨$nçš„å¤©çµç›–ä¸Šï¼Œä¸€æ‰‹è´´åœ¨$nçš„å¾Œå¿ƒï¼Œé—­ä¸Šçœ¼ç›ä½¿ç”¨å¿ƒè¯† ...\n" NOR,me, target );
     if( random(me->query("max_jingli")) > 100 )
        target->revive();
     else

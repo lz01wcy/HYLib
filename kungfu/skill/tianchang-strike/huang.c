@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// huang.c µØÀÏÌì»Ä
+// huang.c åœ°è€å¤©è’
 
 #include <ansi.h>
 #include <combat.h>
@@ -22,27 +22,27 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸µØÀÏÌì»Ä¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œåœ°è€å¤©è’ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("weapon"))
-                return notify_fail("±ØĞë¿ÕÊÖ²ÅÄÜÊ©Õ¹¡¸µØÀÏÌì»Ä¡¹¡£\n");
+                return notify_fail("å¿…é¡»ç©ºæ‰‹æ‰èƒ½æ–½å±•ã€Œåœ°è€å¤©è’ã€ã€‚\n");
 
         if (me->query_skill_mapped("strike") != "tianchang-strike")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ìì³¥ÕÆ·¨£¬ÎŞ·¨Ê©Õ¹¡¸µØÀÏÌì»Ä¡¹¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å¤©å¿æŒæ³•ï¼Œæ— æ³•æ–½å±•ã€Œåœ°è€å¤©è’ã€ã€‚\n");
 
         skill = me->query_skill("tianchang-strike", 1);
 
         if (skill < 100)
-                return notify_fail("ÄãµÄÌì³¥ÕÆ·¨ĞŞÎªÓĞÏŞ£¬²»ÄÜÊ¹ÓÃ¡¸µØÀÏÌì»Ä¡¹£¡\n");
+                return notify_fail("ä½ çš„å¤©å¿æŒæ³•ä¿®ä¸ºæœ‰é™ï¼Œä¸èƒ½ä½¿ç”¨ã€Œåœ°è€å¤©è’ã€ï¼\n");
 
         if (me->query("neili") < 150)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸µØÀÏÌì»Ä¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ã€Œåœ°è€å¤©è’ã€ï¼\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "¡°àë¡±µÄÒ»ÉùÕğºÈ£¬ÌáÆğÕÆÀ´£¬Ö»¼ûÕÆĞÄÒ»Æ¬Ñªºì£¬Ù¿µÄÁè¿ÕÅÄ³ö£¬"
-              HIR "Ò»¹ÉÈÈ·çµÇÊ±Ï®Ïò$n" HIR "µÄĞØÇ°´óÑ¨¡£\n" NOR;
+        msg = HIR "$N" HIR "â€œåš¯â€çš„ä¸€å£°éœ‡å–ï¼Œæèµ·æŒæ¥ï¼Œåªè§æŒå¿ƒä¸€ç‰‡è¡€çº¢ï¼Œå€çš„å‡Œç©ºæ‹å‡ºï¼Œ"
+              HIR "ä¸€è‚¡çƒ­é£ç™»æ—¶è¢­å‘$n" HIR "çš„èƒ¸å‰å¤§ç©´ã€‚\n" NOR;
 
         ap = me->query_skill("strike",1);
         dp = target->query_skill("parry",1);
@@ -55,15 +55,15 @@ int perform(object me, object target)
                 		target->add("qi",-damage);
 		target->add("eff_qi",-damage/2);
                 me->add("neili", -150);
-		msg +=                     HIR "$n" HIR "Ò»Ê±¼äÖ»¾õµÃÆøÑªÉÏÓ¿£¬»ë"
-                                           "ÉíÈçÔâ»ğ·Ù£¬ÆøÏ¢´óÂÒ£¬²»ÓÉµÃÍÂÁËÒ»¿Ú"
-                                           "ÏÊÑª¡£\n" NOR;
+		msg +=                     HIR "$n" HIR "ä¸€æ—¶é—´åªè§‰å¾—æ°”è¡€ä¸Šæ¶Œï¼Œæµ‘"
+                                           "èº«å¦‚é­ç«ç„šï¼Œæ°”æ¯å¤§ä¹±ï¼Œä¸ç”±å¾—åäº†ä¸€å£"
+                                           "é²œè¡€ã€‚\n" NOR;
 
         } else
         {
                 me->add("neili",-50);
-                msg += HIC "È»¶ø$n" HIC "ÄÚ¹¦ÉîÕ¿£¬Ë¿ºÁ²»Îª$N"
-                       HIC "µÄÕÆ·çËù¶¯£¬ÈôÎŞÆäÊÂ" NOR;
+                msg += HIC "ç„¶è€Œ$n" HIC "å†…åŠŸæ·±æ¹›ï¼Œä¸æ¯«ä¸ä¸º$N"
+                       HIC "çš„æŒé£æ‰€åŠ¨ï¼Œè‹¥æ— å…¶äº‹" NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

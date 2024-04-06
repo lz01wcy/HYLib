@@ -1,9 +1,9 @@
-// yi.c °Ù»¨´íÒ×
+// yi.c ç™¾èŠ±é”™æ˜“
 
 #include <ansi.h>
 #include <combat.h>
 
-#define YI "¡¸" HIW "°Ù»¨´íÒ×" NOR "¡¹"
+#define YI "ã€Œ" HIW "ç™¾èŠ±é”™æ˜“" NOR "ã€"
 
 inherit F_SSERVER;
  
@@ -22,33 +22,33 @@ int perform(object me, object target)
 
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(YI "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(YI "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail(YI "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(YI "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
                 
         if (me->query("max_neili") < 3000)
-                return notify_fail("ÄãµÄÄÚÁ¦µÄĞŞÎª²»¹»£¬ÏÖÔÚÎŞ·¨Ê¹ÓÃ" YI "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›çš„ä¿®ä¸ºä¸å¤Ÿï¼Œç°åœ¨æ— æ³•ä½¿ç”¨" YI "ã€‚\n");
 
         if ((int)me->query_skill("force") < 280)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ã£¬ÎŞ·¨Ê¹ÓÃ" YI "¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸è¶³ï¼Œæ— æ³•ä½¿ç”¨" YI "ã€‚\n");
 
         if ((int)me->query_skill("baihua-cuoquan", 1) < 150)
-                return notify_fail("ÄãµÄ°Ù»¨´íÈ­»ğºò²»¹»£¬ÎŞ·¨Ê¹ÓÃ" YI "¡£\n");
+                return notify_fail("ä½ çš„ç™¾èŠ±é”™æ‹³ç«å€™ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨" YI "ã€‚\n");
  	if( (int)me->query_skill("yunlong-shengong", 1) < 100 )
-		return notify_fail("ÄãµÄÔÆÁúÉñ¹¦²»¹»¸ß¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™ç¥åŠŸä¸å¤Ÿé«˜ã€‚\n");
         if (me->query_skill_prepared("unarmed") != "baihua-cuoquan")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃ°Ù»¨´íÈ­£¬ÎŞ·¨Ê¹ÓÃ" YI "¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ²¡æœ‰å‡†å¤‡ä½¿ç”¨ç™¾èŠ±é”™æ‹³ï¼Œæ— æ³•ä½¿ç”¨" YI "ã€‚\n");
 
         if ((int)me->query("neili") < 500)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ" YI "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨" YI "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "´óºÈÒ»Éù£¬Ë«ÕÆ·×·É£¬ÇÜÄÃÊÖÖĞ¼Ğ×ÅÓ¥×¦¹¦£¬×óÊÖ²é"
-              "È­£¬ÓÒÊÖÃàÕÆ¡£\n¹¥³öÈ¥ÊÇ°ËØÔÕÆ£¬ÊÕ»ØÊ±ÒÑÊÇÌ«¼«È­£¬\nÖî¼ÒÔÓ³Â£¬"
-              "ºÁÎŞ¹æÂÉ£¬ÆÌÌì¸ÇµØÏò$n" HIW "¿ñÓ¿¶øÈ¥¡£\n" NOR;
+        msg = HIW "$N" HIW "å¤§å–ä¸€å£°ï¼ŒåŒæŒçº·é£ï¼Œæ“’æ‹¿æ‰‹ä¸­å¤¹ç€é¹°çˆªåŠŸï¼Œå·¦æ‰‹æŸ¥"
+              "æ‹³ï¼Œå³æ‰‹ç»µæŒã€‚\næ”»å‡ºå»æ˜¯å…«å¦æŒï¼Œæ”¶å›æ—¶å·²æ˜¯å¤ªææ‹³ï¼Œ\nè¯¸å®¶æ‚é™ˆï¼Œ"
+              "æ¯«æ— è§„å¾‹ï¼Œé“ºå¤©ç›–åœ°å‘$n" HIW "ç‹‚æ¶Œè€Œå»ã€‚\n" NOR;
 
         ap = me->query_skill("unarmed") + me->query("str") * 10;
         dp = target->query_skill("parry") + target->query("dex") * 10;
@@ -56,12 +56,12 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 count = ap / 12;
-                msg += HIR "$n" HIR "Ö»¼û$P" HIR "ÔËÈ­Èç±¼£¬¿ìÈ­çÍ·×µİ³ö£¬"
-                       "¶Ù¸ĞÍ·ÔÎÄ¿Ñ££¬²»Öª¸ÃÈçºÎµÖµ²¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè§$P" HIR "è¿æ‹³å¦‚å¥”ï¼Œå¿«æ‹³ç¼¤çº·é€’å‡ºï¼Œ"
+                       "é¡¿æ„Ÿå¤´æ™•ç›®çœ©ï¼Œä¸çŸ¥è¯¥å¦‚ä½•æŠµæŒ¡ã€‚\n" NOR;
         } else
         {
-                msg += HIY "$n" HIY "Ö»¼û$p" HIY "ÔËÈ­Èç±¼£¬¿ìÈ­çÍ·×µİ³ö£¬"
-                       "Á¬Ã¦Õñ×÷¾«ÉñÃãÇ¿µÖµ²¡£\n" NOR;
+                msg += HIY "$n" HIY "åªè§$p" HIY "è¿æ‹³å¦‚å¥”ï¼Œå¿«æ‹³ç¼¤çº·é€’å‡ºï¼Œ"
+                       "è¿å¿™æŒ¯ä½œç²¾ç¥å‹‰å¼ºæŠµæŒ¡ã€‚\n" NOR;
                 count = 0;
         }
 

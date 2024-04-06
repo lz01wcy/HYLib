@@ -10,20 +10,20 @@ int perform(object me, object target) {
     string msg;
     int extra;
     extra = me->query_skill("enmeiryu", 1);
-    if (extra < 100) return notify_fail("��½��Բ����ȭ������Ϊ�������޷�ʹ���ϵ������ŵľ��С�\n");
+    if (extra < 100) return notify_fail("你陆奥圆明流拳术的修为不够，无法使出紫电四连脚的绝招。\n");
 
     if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-        return notify_fail("ֻ�ܿ���ʩչ��\n");
+        return notify_fail("只能空手施展。\n");
     if ((int) me->query("neili") < 300)
-        return notify_fail("�������������\n");
+        return notify_fail("你的真气不够！\n");
     if (!target) target = offensive_target(me);
     if (!target
         || !target->is_character()
         || !me->is_fighting(target))
-        return notify_fail("�ϵ�������ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+        return notify_fail("紫电四连脚只能对战斗中的对手使用。\n");
     extra = me->query_skill("enmeiryu", 1) / 3;
     message_vision(HIY
-    "$NͻȻһЦ��������$n����ǰһ�Σ�Ծ����һ�ࡣ$nһʱ�޷�����$N����Ӱ�� ���ϵ������ţ��� \n", me, target);
+    "$N突然一笑，右手在$n的眼前一晃，跃向另一侧。$n一时无法看清$N的身影。 「紫电四连脚！」 \n", me, target);
     begin_perform(me, target, 4, extra);
     me->add("neili", -100);
     return 1;
@@ -32,16 +32,16 @@ int perform(object me, object target) {
 
 string *perform_msg = ({
     HIY
-    "$N�����ڵ���һ�ţ����岻��˼����ٴε���˫�ŵ���$n��ϥ�ؽڡ�\n"
+    "$N单手在地上一撑，身体不可思议地再次弹起，双脚蹬向$n的膝关节。\n"
     NOR,
             HIY
-    "$N��������֮�ƣ��ٴ�ת��������Ѹ�ײ����ڶ�֮�ƣ�ɨ��$n�ľ�����\n"
+    "$N借着下落之势，再次转身，脚以迅雷不及掩耳之势，扫向$n的颈部。\n"
     NOR,
             HIY
-    "$N�߸�Ծ�𣬿���һ��š������Ȼ�Խ������͵���$n��ͷ��ն��������\n"
+    "$N高高跃起，空中一个拧腰，居然以脚作刀猛地自$n的头顶斩了下来。\n"
     NOR,
             HIY
-    "$N�͵شӲ���Ծ��$n������$n��֪����֮ʱ��һ����������$n�����š�\n"
+    "$N猛地从侧面跃向$n，趁着$n不知所措之时，一个高踢踹向$n的面门。\n"
     NOR,
 });
 

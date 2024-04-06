@@ -22,26 +22,26 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸Õò»êÎè¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé•‡é­‚èˆã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
  
         if (! objectp(weapon = me->query_temp("weapon")) ||
             (string)weapon->query("skill_type") != "staff")
-                return notify_fail("ÊÖÖĞÕÈ»¹Ê¹Ê²Ã´¡¸Õò»êÎè¡¹£¡\n");
+                return notify_fail("æ‰‹ä¸­æ–è¿˜ä½¿ä»€ä¹ˆã€Œé•‡é­‚èˆã€ï¼\n");
 
         if ((int)me->query("neili") < 200)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
 
         if ((int)me->query_skill("staff",1) < 100)
-                return notify_fail("ÄãµÄ»ù±¾ÕÈ·¨»ğºò²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ–æ³•ç«å€™ä¸å¤Ÿï¼\n");
 
         if ((int)me->query_skill("xiangmo-chu", 1) < 100)
-                return notify_fail("ÄãµÄ½ğ¸ÕÕò»êÎèèÆ»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸Õò»êÎè¡¹£¡\n");
+                return notify_fail("ä½ çš„é‡‘åˆšé•‡é­‚èˆæµè¿˜ä¸åˆ°å®¶ï¼Œæ— æ³•ä½¿ç”¨ã€Œé•‡é­‚èˆã€ï¼\n");
 
         if (me->query_skill_mapped("staff") != "xiangmo-chu")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢½ğ¸ÕÕò»êÎèèÆ£¬ÎŞ·¨Ê¹ÓÃ¡¸Õò»êÎè¡¹£¡\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘é‡‘åˆšé•‡é­‚èˆæµï¼Œæ— æ³•ä½¿ç”¨ã€Œé•‡é­‚èˆã€ï¼\n");
 
-        msg = HIW "$N" HIW "Ê©Õ¹³öÕò»êÎèèÆµÄ¾«ÃîÕĞÊ½¡¸Õò»êÎè¡¹£¬Ö»¼û" + weapon->name() +
-              HIW "ÍÌÍÌÍÂÍÂ£¬±ä»¯Äª²â£¬ÁıÕÖÁË$n" HIW "ÖÜÉíÒªº¦£¡\n" NOR;
+        msg = HIW "$N" HIW "æ–½å±•å‡ºé•‡é­‚èˆæµçš„ç²¾å¦™æ‹›å¼ã€Œé•‡é­‚èˆã€ï¼Œåªè§" + weapon->name() +
+              HIW "ååååï¼Œå˜åŒ–è«æµ‹ï¼Œç¬¼ç½©äº†$n" HIW "å‘¨èº«è¦å®³ï¼\n" NOR;
 
 
         message_combatd(msg, me, target);

@@ -12,30 +12,30 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("£Û¿ñ·ç¿ì½££İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ï¼»ç‹‚é£å¿«å‰‘ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (me->query_skill("kuangfeng-jian",1) < 150 )
         ||      (me->query_skill("huashan-neigong",1) < 150 ) ) 
-                return  notify_fail("ÄãµÄ¹¦·ò»¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ¿ñ·ç¿ì½£¡£\n");
+                return  notify_fail("ä½ çš„åŠŸå¤«è¿˜ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ç‹‚é£å¿«å‰‘ã€‚\n");
 
         if( !weapon 
         ||      weapon->query("skill_type") != "sword"
         ||      me->query_skill_mapped("sword") != "kuangfeng-jian" ) 
-                return  notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¿ñ·ç¿ì½£¡£\n");
+                return  notify_fail("ä½ ç°åœ¨æ— æ³•ä½¿ç”¨ç‹‚é£å¿«å‰‘ã€‚\n");
 
         if( me->query("neili") < 1300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( me->query("jing") < 500 )
-                return notify_fail("ÄãµÄ¾«²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿã€‚\n");
       if( me->query_temp("kuangfeng"))
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¿ñ·ç¿ì½£ÁË£¡\n"); 
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ç‹‚é£å¿«å‰‘äº†ï¼\n"); 
 
 
-        me->start_perform(7,"¿ñ·ç¿ì½£");
-        msg = HIG "$NÑöÌìÒ»ÉùÇåĞ¥£¬Ğ±ĞĞ¶øÇ°£¬" + weapon->name() + HIG"ºáÏ÷Ö±»÷£¬Ñ¸½İÎŞ±È£¬Î´µ½ÎåÁùÕĞ£¬½£ÊÆÖĞÒÑ·¢³öÒşÒş·çÉù¡£\n"NOR;
+        me->start_perform(7,"ç‹‚é£å¿«å‰‘");
+        msg = HIG "$Nä»°å¤©ä¸€å£°æ¸…å•¸ï¼Œæ–œè¡Œè€Œå‰ï¼Œ" + weapon->name() + HIG"æ¨ªå‰Šç›´å‡»ï¼Œè¿…æ·æ— æ¯”ï¼Œæœªåˆ°äº”å…­æ‹›ï¼Œå‰‘åŠ¿ä¸­å·²å‘å‡ºéšéšé£å£°ã€‚\n"NOR;
 
   me->set_temp("kuangfeng", 20);
-// busy ÔÚ¸÷¸ö callout Á¬ĞøÔö¼Ó
+// busy åœ¨å„ä¸ª callout è¿ç»­å¢åŠ 
         me->start_busy(2);
         message_vision(msg, me, target);
         call_out("attack_1",3);
@@ -62,7 +62,7 @@ if (!target) return;
       me->add("apply/attack",-100);
       me->add("apply/parry",-100);
 
-      message_vision(HIG"\n$N½£ÕĞÒ»½£¿ìËÆÒ»½££¬Ëù¼¤ÆğµÄ·çÉùÒ²Ô½À´Ô½Ç¿£¡\n"NOR, me, target);
+      message_vision(HIG"\n$Nå‰‘æ‹›ä¸€å‰‘å¿«ä¼¼ä¸€å‰‘ï¼Œæ‰€æ¿€èµ·çš„é£å£°ä¹Ÿè¶Šæ¥è¶Šå¼ºï¼\n"NOR, me, target);
       me->start_busy(2);
       call_out("attack_2",3); } else
       call_out("finish",1);
@@ -87,7 +87,7 @@ if (!target) return;
       me->add("apply/attack",-100);
       me->add("apply/parry",-100);
 
-      message_vision(HIG"\n$N½£·æÉÏËù·¢³öµÄÒ»¹É¾¢Æø½¥½¥À©Õ¹£¡\n"NOR, me, target);
+      message_vision(HIG"\n$Nå‰‘é”‹ä¸Šæ‰€å‘å‡ºçš„ä¸€è‚¡åŠ²æ°”æ¸æ¸æ‰©å±•ï¼\n"NOR, me, target);
       me->start_busy(2);
       call_out("attack_3",3);} else
       call_out("finish",1);
@@ -112,7 +112,7 @@ if (!target) return;
       me->add("apply/attack",-100);
       me->add("apply/parry",-100);
 
-      message_vision(HIG"\nÅÔ¹ÛÖÚÈËÖ»¾õº®Æø±ÆÈË£¬Á³ÉÏ¡¢ÊÖÉÏ±»¼²·ç¹ÎµÃÒşÒşÉúÌÛ£¬²»ÓÉ×ÔÖ÷µÄºóÍË£¡\n"NOR, me, target);
+      message_vision(HIG"\næ—è§‚ä¼—äººåªè§‰å¯’æ°”é€¼äººï¼Œè„¸ä¸Šã€æ‰‹ä¸Šè¢«ç–¾é£åˆ®å¾—éšéšç”Ÿç–¼ï¼Œä¸ç”±è‡ªä¸»çš„åé€€ï¼\n"NOR, me, target);
       me->start_busy(2);
       call_out("attack_4",3);} else
       call_out("finish",1);
@@ -137,7 +137,7 @@ if (!target) return;
       me->add("apply/attack",-100);
       me->add("apply/parry",-100);
 
-      message_vision(HIG"\n¸½½üÖÚÈËÉíÉÏµÄÒÂ´ø±»½£Æø±ÆµÃÏòÍâÆ®Ñï£¬½£ÉÏËù·¢µÄ·çÉùÉĞÓĞ½¥½¥Ôö´óÖ®ÊÆ¡££¡\n"NOR, me, target);
+      message_vision(HIG"\né™„è¿‘ä¼—äººèº«ä¸Šçš„è¡£å¸¦è¢«å‰‘æ°”é€¼å¾—å‘å¤–é£˜æ‰¬ï¼Œå‰‘ä¸Šæ‰€å‘çš„é£å£°å°šæœ‰æ¸æ¸å¢å¤§ä¹‹åŠ¿ã€‚ï¼\n"NOR, me, target);
       me->start_busy(2);
       call_out("attack_5",3);} else
       call_out("finish",1);
@@ -162,7 +162,7 @@ if (!target) return;
       me->add("apply/attack",-100);
       me->add("apply/parry",-100);
 
-         message_vision(HIG"ÅÔ¹ÛÖÚÈË²»ÓÉ×ÔÖ÷µÄºóÍË£¬Î§ÔÚÏà¶·Á½ÈËÉíÖÜµÄÈ¦×Ó½¥½¥À©´ó£¡\n"NOR, me, target);
+         message_vision(HIG"æ—è§‚ä¼—äººä¸ç”±è‡ªä¸»çš„åé€€ï¼Œå›´åœ¨ç›¸æ–—ä¸¤äººèº«å‘¨çš„åœˆå­æ¸æ¸æ‰©å¤§ï¼\n"NOR, me, target);
       me->start_busy(1);
       call_out("finish",1);} else
       call_out("finish",1);
@@ -174,6 +174,6 @@ void finish()
 if (!me) return;
 
  me->delete_temp("kuangfeng");
-      message_vision(HIY"$NÕâ¡°¿ñ·ç¿ì½£¡±Î¯Êµ¿ì¼«£¬Ò»°ÙÁã°ËÕĞÆ¬¿Ì¼ä±ãÒÑÊ¹Íê¡£\n"NOR, me);
+      message_vision(HIY"$Nè¿™â€œç‹‚é£å¿«å‰‘â€å§”å®å¿«æï¼Œä¸€ç™¾é›¶å…«æ‹›ç‰‡åˆ»é—´ä¾¿å·²ä½¿å®Œã€‚\n"NOR, me);
 }
 

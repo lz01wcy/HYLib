@@ -10,31 +10,31 @@ int perform(object me, object target)
         object weapon;
         if( !target ) target = offensive_target(me);
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸ÐÞÂÞÈý¾øµ¶¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
         weapon = me->query_temp("weapon");
         if (!weapon || weapon->query("skill_type") != "blade"
            || me->query_skill_mapped("blade") != "xiuluo-dao")
-                return notify_fail("Äã±ØÐëÊ¹ÓÃÔÚµ¶Ê±²ÅÄÜÊ¹³ö¡¸ÐÞÂÞÈý¾øµ¶¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»ä½¿ç”¨åœ¨åˆ€æ—¶æ‰èƒ½ä½¿å‡ºã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ï¼\n");
 
         if( (int)me->query_skill("xiuluo-dao", 1) < 80 )
-                return notify_fail("ÄãµÄÐÞÂÞµ¶²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÐÞÂÞÈý¾øµ¶¡¹¡£\n");
+                return notify_fail("ä½ çš„ä¿®ç½—åˆ€ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ã€‚\n");
 
         if( (int)me->query_skill("yijinjing", 1) < 60 )
-                return notify_fail("ÄãµÄÒ×½î¾­ÄÚ¹¦ÐÞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÐÞÂÞÈý¾øµ¶¡¹¡£\n");
+                return notify_fail("ä½ çš„æ˜“ç­‹ç»å†…åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ã€‚\n");
 
         if( (int)me->query_dex() < 30 )
-                return notify_fail("ÄãµÄÉí·¨Ì«µÍ£¬²»ÄÜÊ¹ÓÃ¡¸ÐÞÂÞÈý¾øµ¶¡¹¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•å¤ªä½Žï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ã€‚\n");
 
 //        if (me->query_skill_mapped("force") != "yijinjing")
-//                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÐÞÂÞÈý¾øµ¶¡¹¡£\n");
+//                return notify_fail("ä½ çš„å†…åŠŸç­‰çº§ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ã€‚\n");
 
         if( (int)me->query("neili", 1) < 400 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÐÞÂÞÈý¾øµ¶¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ã€‚\n");
         if((int)me->query("jing",1)<200)
-               return notify_fail("ÄãÏÖÔÚ¾«Á¦Ì«ÉÙ£¬²»ÄÜÊ¹ÓÃ¡¸ÐÞÂÞÈý¾øµ¶¡¹¡£\n");
+               return notify_fail("ä½ çŽ°åœ¨ç²¾åŠ›å¤ªå°‘ï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¿®ç½—ä¸‰ç»åˆ€ã€ã€‚\n");
         i = (me->query_skill("xiuluo-dao", 1)/6);
-        msg = RED "$N¸ßÐú·ðºÅ£¬ÉíÐÎÈçÒ¶°ã·ÉÎè£¬Ñ¸½ÝÈç·É°ã·¢³öÈýµ¶¡£\n"NOR;
-        msg1=HIY"$NÒ»Éù³¤Ð¥£¬Éí·¨½¥½¥»ºÂýÏÂÀ´¡£\n"NOR;
+        msg = RED "$Né«˜å–§ä½›å·ï¼Œèº«å½¢å¦‚å¶èˆ¬é£žèˆžï¼Œè¿…æ·å¦‚é£žèˆ¬å‘å‡ºä¸‰åˆ€ã€‚\n"NOR;
+        msg1=HIY"$Nä¸€å£°é•¿å•¸ï¼Œèº«æ³•æ¸æ¸ç¼“æ…¢ä¸‹æ¥ã€‚\n"NOR;
         me->add_temp("apply/strength", i);
         me->add_temp("apply/attack", i); 
         message_vision(msg, me, target);

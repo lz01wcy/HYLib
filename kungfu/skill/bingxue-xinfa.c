@@ -1,4 +1,4 @@
-// bingxue-xinfa.c  冰雪心法
+// bingxue-xinfa.c  鍐伴洩蹇冩硶
 // By lucas
 
 inherit FORCE;
@@ -12,7 +12,7 @@ int valid_learn(object me)
         skl = me->query_skills();
         sname = keys(skl);
         if ((int)me->query_skill("force", 1) < 10)
-               return notify_fail("你的基本内功火候还不够，还不能学习冰雪心法。\n");
+               return notify_fail("浣犵殑鍩烘湰鍐呭姛鐏�欒繕涓嶅锛岃繕涓嶈兘瀛︿範鍐伴洩蹇冩硶銆俓n");
 
 	if (
 	me->query_skill("bahuang-gong",1)
@@ -42,14 +42,14 @@ me->query_skill("zixia-shengong",1)||
 me->query_skill("wudu-shengong",1)||
 me->query_skill("biyun-xinfa",1)||
 me->query_skill("huashan-neigong",1))
-                return notify_fail("你不先散了别派内功，怎能学冰雪心法？！\n");
+                return notify_fail("浣犱笉鍏堟暎浜嗗埆娲惧唴鍔燂紝鎬庤兘瀛﹀啺闆績娉曪紵锛乗n");
 
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("冰雪心法只能用学(learn)的来增加熟练度。\n");
+        return notify_fail("鍐伴洩蹇冩硶鍙兘鐢ㄥ(learn)鐨勬潵澧炲姞鐔熺粌搴︺�俓n");
 }
 
 string exert_function_file(string func)

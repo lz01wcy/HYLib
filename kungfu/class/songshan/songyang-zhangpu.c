@@ -1,4 +1,4 @@
-// songyang-zhangpu.c ´óáÔÑôÕÆÆ×
+// songyang-zhangpu.c å¤§åµ©é˜³æŒè°±
 // Last Modified by Winder on Jul. 15 2001
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name(RED"´óáÔÑôÕÆÆ×" NOR, ({ "songyang zhangpu","zhangpu", }));
+	set_name(RED"å¤§åµ©é˜³æŒè°±" NOR, ({ "songyang zhangpu","zhangpu", }));
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit","±¾");
-		set("long","ÕâÊÇÒ»ÕÅÂéÖ½Ğ¡²á£¬ÉÏÃæºÃÏó»¹ÓĞÒ»Ğ©Ğ¡ÈË»ÓÎèÈ­½ÅµÄÍ¼ĞÎ¡£\n",
+		set("unit","æœ¬");
+		set("long","è¿™æ˜¯ä¸€å¼ éº»çº¸å°å†Œï¼Œä¸Šé¢å¥½è±¡è¿˜æœ‰ä¸€äº›å°äººæŒ¥èˆæ‹³è„šçš„å›¾å½¢ã€‚\n",
 	 );
 	 set("value", 0);
 	 set("material", "paper");

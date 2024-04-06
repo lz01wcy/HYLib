@@ -1,4 +1,4 @@
-// /kungfu/class/xueshan/xuedao.c  Ñªµ¶ÀÏ×æ
+// /kungfu/class/xueshan/xuedao.c  è¡€åˆ€è€ç¥–
 // by secret
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ inherit F_MASTER;
 string ask_for_quit();
 void create()
 {
-        set_name("Ñªµ¶ÀÏ×æ", ({ "xuedao laozu", "xue dao", "laozu" }));
+        set_name("è¡€åˆ€è€ç¥–", ({ "xuedao laozu", "xue dao", "laozu" }));
         set("long",@LONG
-ÕâÀ®ÂïÉí×Å»ÆÅÛ£¬Äê¼Í¼«ÀÏ£¬¼âÍ·Ï÷¶ú£¬Á³ÉÏ¶¼ÊÇÖåÎÆ¡£Ëû¾ÍÊÇÑªµ¶ÃÅµÚËÄ´úÕÆÃÅ¡£
+è¿™å–‡å˜›èº«ç€é»„è¢ï¼Œå¹´çºªæè€ï¼Œå°–å¤´å‰Šè€³ï¼Œè„¸ä¸Šéƒ½æ˜¯çš±çº¹ã€‚ä»–å°±æ˜¯è¡€åˆ€é—¨ç¬¬å››ä»£æŒé—¨ã€‚
 LONG
         );
-        set("title",HIR"Ñªµ¶ÃÅµÚËÄ´úÕÆÃÅ"NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIR"è¡€åˆ€é—¨ç¬¬å››ä»£æŒé—¨"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 85);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -62,7 +62,7 @@ LONG
                 (: exert_function, "fanchang" :),                
 	}) );
         set("inquiry",([
-                "»¹Ë×"  :  (: ask_for_quit :),
+                "è¿˜ä¿—"  :  (: ask_for_quit :),
         ]));
 
         set_temp("apply/attack", 300);
@@ -70,7 +70,7 @@ LONG
         set_temp("apply/armor", 500);
         set_temp("apply/damage", 250);
 
-        create_family("Ñ©É½ËÂ", 4, "µÜ×Ó");
+        create_family("é›ªå±±å¯º", 4, "å¼Ÿå­");
         set("class", "bonze");
 
         setup();
@@ -82,32 +82,32 @@ LONG
 
 void attempt_apprentice(object ob)
 {
-        if ((string)ob->query("gender") != "ÄĞĞÔ")
+        if ((string)ob->query("gender") != "ç”·æ€§")
         {
-                command("say ÎÒ²»ÊÕÅ®Í½µÜ¡£\n");
+                command("say æˆ‘ä¸æ”¶å¥³å¾’å¼Ÿã€‚\n");
                 return;
         }
-        if ((string)ob->query("family/family_name") != "Ñ©É½ËÂ")
+        if ((string)ob->query("family/family_name") != "é›ªå±±å¯º")
         {
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "¼È·Ç±¾ÃÅµÜ×Ó£¬»¹ÊÇÇë»Ø°É£¡\n");
+                command("say è¿™ä½" + RANK_D->query_respect(ob) +
+                        "æ—¢éæœ¬é—¨å¼Ÿå­ï¼Œè¿˜æ˜¯è¯·å›å§ï¼\n");
                 return;
         }
         if ((int)ob->query("shen") > -100000)
         {
-                command("say ÄãÊÇ²»ÊÇÏò×ÅÏÀÒåµÀ£¬Á¬É±ÈË¶¼²»»á£¡\n");
+                command("say ä½ æ˜¯ä¸æ˜¯å‘ç€ä¾ ä¹‰é“ï¼Œè¿æ€äººéƒ½ä¸ä¼šï¼\n");
                 return;
         }
         if ((int)ob->query_skill("longxiang", 1) < 60)
         {
-                command("say ÈëÎÒÑªµ¶ÃÅ£¬ĞŞÏ°ÁúÏó¹¦·¨ÊÇÊ×ÒªµÄ¡£\n");
+                command("say å…¥æˆ‘è¡€åˆ€é—¨ï¼Œä¿®ä¹ é¾™è±¡åŠŸæ³•æ˜¯é¦–è¦çš„ã€‚\n");
                 return;
         }
         command("haha");
         command("nod");
         command("recruit " + ob->query("id"));
 
-        ob->set("title", HIR "Ñªµ¶ÃÅµÚÎå´úµÜ×Ó" NOR);
+        ob->set("title", HIR "è¡€åˆ€é—¨ç¬¬äº”ä»£å¼Ÿå­" NOR);
 }
 
 string ask_for_quit()
@@ -117,25 +117,25 @@ string ask_for_quit()
     me = this_player();
 
     myfam = (mapping)me->query("family");
-    if (!myfam || (myfam["family_name"] != "Ñ©É½ËÂ")) 
-        return ("ÄãºÍÑ©É½ËÂÃ»ÓĞÔ¨Ô´£¬ÎÒ²»¸Ò¸øÄã»¹Ë×¡£\n");
+    if (!myfam || (myfam["family_name"] != "é›ªå±±å¯º")) 
+        return ("ä½ å’Œé›ªå±±å¯ºæ²¡æœ‰æ¸Šæºï¼Œæˆ‘ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚\n");
     if (me->query("combat_exp")< 1000000)
-        return ("Äã¾ÍÕâµã±¾ÊÂ£¬ÎÒ¿É²»¸Ò¸øÄã»¹Ë×¡£\n");
+        return ("ä½ å°±è¿™ç‚¹æœ¬äº‹ï¼Œæˆ‘å¯ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚\n");
 
     if ((int)me->query_skill("lamaism", 1) < 180) 
-                command("say ÄãĞŞÏ°µÄÃÜ×ÚĞÄ·¨²»×ã,ÎÒ¿É²»¸Ò¸øÄã»¹Ë×¡£");
+                command("say ä½ ä¿®ä¹ çš„å¯†å®—å¿ƒæ³•ä¸è¶³,æˆ‘å¯ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚");
 
     if ((int)me->query_skill("longxiang", 1) < 180) 
-                command("say ÄãĞŞÏ°µÄÁúÏó°ãÈô¹¦²»×ã,ÎÒ¿É²»¸Ò¸øÄã»¹Ë×¡£");
+                command("say ä½ ä¿®ä¹ çš„é¾™è±¡èˆ¬è‹¥åŠŸä¸è¶³,æˆ‘å¯ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚");
 
     if (me->query("combat_exp")< 1000000)
-        return ("Äã¾ÍÕâµã±¾ÊÂ£¬ÎÒ¿É²»¸Ò¸øÄã»¹Ë×¡£\n");
+        return ("ä½ å°±è¿™ç‚¹æœ¬äº‹ï¼Œæˆ‘å¯ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚\n");
 
     if( (string)me->query("class")!="bonze" )
-        return "ÄãÒÑ¾­ÊÇË×¼ÒÈËÁË¡£\n";
+        return "ä½ å·²ç»æ˜¯ä¿—å®¶äººäº†ã€‚\n";
 
-        command ("say ÄãÒ»ĞÄÒª»¹Ë×£¬¿´À´ºÍÎÒÊÇÍ¬µÀÖĞÈË¡£\n");
+        command ("say ä½ ä¸€å¿ƒè¦è¿˜ä¿—ï¼Œçœ‹æ¥å’Œæˆ‘æ˜¯åŒé“ä¸­äººã€‚\n");
         command ("haha");
-        command ("say ÒÔºó×òÃÇÓĞ¾ÆÍ¬³Ô£¬ÓĞÅ®ÈËÒ»Æğ¡£¡£¡£¡£¡£¡£\n");
+        command ("say ä»¥åæ˜¨ä»¬æœ‰é…’åŒåƒï¼Œæœ‰å¥³äººä¸€èµ·ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n");
         me->set("class", "xueshan");
 }

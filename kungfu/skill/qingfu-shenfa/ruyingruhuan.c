@@ -10,27 +10,27 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("[ÈçÓ°Èç»Ã]Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("[å¦‚å½±å¦‚å¹»]åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if((int)me->query_skill("qingfu-shenfa",1) < 50)
-                return notify_fail("ÄãµÄÇàòðÉí·¨²»¹»ÊìÁ·¡£\n" NOR);
+                return notify_fail("ä½ çš„é’è èº«æ³•ä¸å¤Ÿç†Ÿç»ƒã€‚\n" NOR);
 
         if((int)me->query("neili") < 400)
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" HIY);
+                return notify_fail(HIY "ä½ çŽ°åœ¨çœŸæ°”ä¸è¶³ã€‚\n" HIY);
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "ÒÑ¾­ºÜÃ¦ÁË£¡\n");
+                return notify_fail(target->name() + "å·²ç»å¾ˆå¿™äº†ï¼\n");
 
-	msg = YEL"$N³¤¿Õ¶øÆð£¬»¯×÷Ò»Ö»Çàòð£¬Ê©Õ¹¹îÒìµÄÉí·¨³¯$n·ÉÈ¥£¡\n" NOR;
+	msg = YEL"$Né•¿ç©ºè€Œèµ·ï¼ŒåŒ–ä½œä¸€åªé’è ï¼Œæ–½å±•è¯¡å¼‚çš„èº«æ³•æœ$né£žåŽ»ï¼\n" NOR;
 
 if ((int)me->query_skill("jiuyang-shengong",1) > 50)
 {
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-                msg += NOR "½á¹û$p±»$PÈÆµÃ²»ÖªËù´ë£¡\n" NOR;
+                msg += NOR "ç»“æžœ$pè¢«$Pç»•å¾—ä¸çŸ¥æ‰€æŽªï¼\n" NOR;
                 target->start_busy( (int)me->query_skill("qingfu-shenfa",1) / 50 + 4 );
                 me->add("neili", -100);
                        } else {
-                msg +=  "½á¹û$P×Ô¼ºÈÆÁË¸öÍ·ÔÎÑÛ»¨¡£\n";
+                msg +=  "ç»“æžœ$Pè‡ªå·±ç»•äº†ä¸ªå¤´æ™•çœ¼èŠ±ã€‚\n";
                 me->add("neili", -100);
 if ((int)me->query_skill("jiuyang-shengong",1) > 50)
                 me->start_busy(2);
@@ -40,11 +40,11 @@ else                me->start_busy(4);
 }
 else
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-                msg += NOR "½á¹û$p±»$PÈÆµÃ²»ÖªËù´ë£¡\n" NOR;
+                msg += NOR "ç»“æžœ$pè¢«$Pç»•å¾—ä¸çŸ¥æ‰€æŽªï¼\n" NOR;
                 target->start_busy(5);
                 me->add("neili", -100);
                        } else {
-                msg +=  "½á¹û$P×Ô¼ºÈÆÁË¸öÍ·ÔÎÑÛ»¨¡£\n";
+                msg +=  "ç»“æžœ$Pè‡ªå·±ç»•äº†ä¸ªå¤´æ™•çœ¼èŠ±ã€‚\n";
                 me->add("neili", -100);
 if ((int)me->query_skill("jiuyang-shengong",1) > 50)
                 me->start_busy(2);

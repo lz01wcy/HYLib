@@ -9,19 +9,19 @@ int perform(object me, object target)
 	object fire,weapon;
 	int zhaosheshu,yangsheshu, exp, MAX_GUARD;
         if ( me->is_busy() )
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬ÎŞ·¨ÕÙ»½ÓùÍÁÆæÊõ");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼Œæ— æ³•å¬å”¤å¾¡åœŸå¥‡æœ¯");
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓĞ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 	if((int)me->query("neili")< 300)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 	if((int)me->query_skill("magic-earth",1)< 250)
-	return notify_fail("ÄãµÄÍÁÏµÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„åœŸç³»é­”æ³•å¤ªå·®äº†ï¼\n");
         if ((int)me->query("magicgift")==4)
-        return notify_fail("ÄãÒÑ¾­Ê¹ÓÃÓùÍÁÆæÊõÁË£¡\n");
+        return notify_fail("ä½ å·²ç»ä½¿ç”¨å¾¡åœŸå¥‡æœ¯äº†ï¼\n");
 	me->add("neili",-250);
 	me->start_busy(2);
         me->set("magicgift",4);
-	message_vision(YEL "\n$NÄî¶¯ÖäÓï ÎŞ¾¡µÄ´óµØ£¬Õ¹ÏÖÄãµÄÁ¦Á¿£¬»ìãçÖ®Îï£¬°ÑËùÓĞµÄÒ»ÇĞ¶¼»¯ÎªÎÒµÄ¶ÜÅÆ°É£¡£¡£¡£¡!\n" NOR, me);	
-	message_vision(YEL "\n$NµÄÖÜÎ§³öÀ´ÁËÎŞĞÎµÄ´óµØÖ®»¤¶Ü!\n" NOR, me);
+	message_vision(YEL "\n$Nå¿µåŠ¨å’’è¯­ æ— å°½çš„å¤§åœ°ï¼Œå±•ç°ä½ çš„åŠ›é‡ï¼Œæ··æ²Œä¹‹ç‰©ï¼ŒæŠŠæ‰€æœ‰çš„ä¸€åˆ‡éƒ½åŒ–ä¸ºæˆ‘çš„ç›¾ç‰Œå§ï¼ï¼ï¼ï¼!\n" NOR, me);	
+	message_vision(YEL "\n$Nçš„å‘¨å›´å‡ºæ¥äº†æ— å½¢çš„å¤§åœ°ä¹‹æŠ¤ç›¾!\n" NOR, me);
 	return 1;
 }

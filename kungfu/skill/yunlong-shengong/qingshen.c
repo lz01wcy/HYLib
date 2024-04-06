@@ -1,4 +1,4 @@
-// reserve.c ÇáÉí
+// reserve.c è½»èº«
 
 #include <ansi.h>
 
@@ -13,16 +13,16 @@ int exert(object me, object target)
 	string msg;
 
 	if( (int)me->query_skill("yunlong-shengong", 1) < 100 )
-		return notify_fail("ÄãµÄÔÆÁúÉñ¹¦²»¹»æµÊì£¬²»»áÇáÉí¡£\n");
+		return notify_fail("ä½ çš„äº‘é¾™ç¥žåŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šè½»èº«ã€‚\n");
 
 	if( (int)me->query("neili") < 200  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_temp("yl_dzjm") ) 
-		return notify_fail("ÄãÒÑ¾­ÓÃÁËÇáÉíÁË¡£\n");
+		return notify_fail("ä½ å·²ç»ç”¨äº†è½»èº«äº†ã€‚\n");
 
 	skill = me->query_skill("yunlong-shengong",1);
-	msg = HIR  "$N¸ß¸ßÌøÆð£¬ÔËÆðÔÆÁúÉñ¹¦£¬¶ÙÊ±ÄÚÏ¢°µÉú£¬Çá¹¦´óÔö¡£\n"NOR;
+	msg = HIR  "$Né«˜é«˜è·³èµ·ï¼Œè¿èµ·äº‘é¾™ç¥žåŠŸï¼Œé¡¿æ—¶å†…æ¯æš—ç”Ÿï¼Œè½»åŠŸå¤§å¢žã€‚\n"NOR;
 	message_combatd(msg, me, target);
 
 	me->add_temp("apply/attack", skill/5);
@@ -44,5 +44,5 @@ int skill;
 	me->add_temp("apply/attack", -skill/5);
 	me->add_temp("apply/dodge", -skill/2);
 	me->delete_temp("yl_dzjm");
-	tell_object(me, HIR "ÄãµÄÄÚÏ¢²»¹»£¬Ö»ºÃÒ»Ô¾¶øÆð£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+	tell_object(me, HIR "ä½ çš„å†…æ¯ä¸å¤Ÿï¼Œåªå¥½ä¸€è·ƒè€Œèµ·ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ã€‚\n");
 }

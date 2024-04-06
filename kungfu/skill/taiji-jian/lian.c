@@ -14,34 +14,34 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ì«¼«½£·¨¡¸Á¬¡¹×Ö¾÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å¤ªæžå‰‘æ³•ã€Œè¿žã€å­—è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
 	if( (int)me->query("neili") < 400  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_skill("taiji-jian", 1) < 50 )
-		return notify_fail("ÄãµÄÌ«¼«½£·¨²»¹»æµÊì£¬²»ÄÜÓÃ¡¸Á¬¡¹×Ö¾÷¡£\n");
+		return notify_fail("ä½ çš„å¤ªæžå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ç”¨ã€Œè¿žã€å­—è¯€ã€‚\n");
 
 	if( (int)me->query_skill("taiji-shengong", 1) < 60 )
-		return notify_fail("ÄãµÄÌ«¼«Éñ¹¦²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¡¸Á¬¡¹×Ö¾÷¡£\n");
+		return notify_fail("ä½ çš„å¤ªæžç¥žåŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œè¿žã€å­—è¯€ã€‚\n");
 
 	extra = me->query_skill("taiji-jian",1) / 20;
 	extra += me->query_skill("taiji-shengong",1) /20;
 	me->add_temp("apply/attack", extra);	
 	me->add_temp("apply/damage", extra);
-	msg = HIR  "$NÔËÆð£ÛÌ«¼«Éñ¹¦£Ý£¬Í¬Ê±Ê¹³ö£ÛÌ«¼«½£·¨ÖÐ£ÝµÄ¡¸Á¬¡¹×Ö¾÷£¬ÊÖÖÐµÄ"+ weapon->name() +" Ò»ÕÐÁ¬×ÅÒ»ÕÐ»­ÆðÈ¦À´£¬ÉÁµç°ãµÄ»÷Ïò$n£¡" NOR;
+	msg = HIR  "$Nè¿èµ·ï¼»å¤ªæžç¥žåŠŸï¼½ï¼ŒåŒæ—¶ä½¿å‡ºï¼»å¤ªæžå‰‘æ³•ä¸­ï¼½çš„ã€Œè¿žã€å­—è¯€ï¼Œæ‰‹ä¸­çš„"+ weapon->name() +" ä¸€æ‹›è¿žç€ä¸€æ‹›ç”»èµ·åœˆæ¥ï¼Œé—ªç”µèˆ¬çš„å‡»å‘$nï¼" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
-	msg =  HIW "½£¹âÒ»ÉÁ£¬ÏûÊ§£®£®£®£®\n" NOR;
+	msg =  HIW "å‰‘å…‰ä¸€é—ªï¼Œæ¶ˆå¤±ï¼Žï¼Žï¼Žï¼Ž\n" NOR;
         message_vision(msg, me, target);
 a=extra/3;
 if (a> 16) a=16;
 	for(i=0;i<a;i++)
 	{
-	msg = HIY "$NÓÃ½£»­ÁËÒ»¸öÈ¦£¬Ò»½£ÓÖÁ¬ÁËÉÏÀ´£¡\n" NOR;
+	msg = HIY "$Nç”¨å‰‘ç”»äº†ä¸€ä¸ªåœˆï¼Œä¸€å‰‘åˆè¿žäº†ä¸Šæ¥ï¼\n" NOR;
 	COMBAT_D->do_attack(me,target, weapon, TYPE_REGULAR,msg);
 	}
 	i = extra/4;

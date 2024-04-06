@@ -12,41 +12,41 @@ int perform(object me, object target)
 	int	i,exp;
 	if( !target ) target = offensive_target(me);
         if (!target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIB"¡¸ÕÙ»½¶ñÄ§¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n"NOR);
+                return notify_fail(HIB"ã€Œå¬å”¤æ¶é­”ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n"NOR);
 
         if( !me->query("zhuanbest",1))
-        return notify_fail("ÄãÃ»ÓÐ×Ê¸ñÊ¹ÓÃÕâÏî¼¼ÄÜ£¡\n");
+        return notify_fail("ä½ æ²¡æœ‰èµ„æ ¼ä½¿ç”¨è¿™é¡¹æŠ€èƒ½ï¼\n");
 
 	if((int)me->query("neili")< 4000)
-	return notify_fail("ÄãµÄ·¨Á¦Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„æ³•åŠ›å¤ªå·®äº†ï¼\n");
 
 if (userp(me) && userp(target) && target->query("combat_exp",1) < me->query("combat_exp",1)) 
-	return notify_fail("Ä§·¨²»ÊÇÓÃÀ´¶Ô¸¶ÈõÐ¡Íæ¼ÒµÄ£¡\n");
+	return notify_fail("é­”æ³•ä¸æ˜¯ç”¨æ¥å¯¹ä»˜å¼±å°çŽ©å®¶çš„ï¼\n");
 	
 	if((int)me->query_skill("magic-dark",1)< 650)
-	return notify_fail("ÄãµÄºÚ°µÄ§·¨Ì«²îÁË£¡\n");
+	return notify_fail("ä½ çš„é»‘æš—é­”æ³•å¤ªå·®äº†ï¼\n");
         spells = me->query_skill("spells");
         if(spells < 30 )
-                return notify_fail("ÄãµÄ·¨Êõ²»¹»¸ß£¡\n");
+                return notify_fail("ä½ çš„æ³•æœ¯ä¸å¤Ÿé«˜ï¼\n");
 
 	if( !me->is_fighting() )
-		return notify_fail("Ö»ÓÐÕ½¶·ÖÐ²ÅÄÜÕÙ»½¶ñÄ§£¡\n");
+		return notify_fail("åªæœ‰æˆ˜æ–—ä¸­æ‰èƒ½å¬å”¤æ¶é­”ï¼\n");
 	
         if (present("dark angel",environment(me)))
-		return notify_fail("Ö»ÄÜÈç»½Ò»¸ö¶ñÄ§ÎªÄã×öÕ½£¡\n");
+		return notify_fail("åªèƒ½å¦‚å”¤ä¸€ä¸ªæ¶é­”ä¸ºä½ åšæˆ˜ï¼\n");
         
         if ((int)me->query_condition("zdizi_busy"))  
-        return notify_fail("ÕÙ»½Êõ¿É²»ÄÜÒ»Ììµ½ÍíÓÃ!\n");
+        return notify_fail("å¬å”¤æœ¯å¯ä¸èƒ½ä¸€å¤©åˆ°æ™šç”¨!\n");
 	
-	message_vision(HIB"$N"HIB"ÓÃÊÖÔÚÌì¿Õ»®ÁËÒ»¸öÎåÃ¢ÐÇ£¬¿ÚÖÐà«à«µØÄîÖøÖäÎÄ\n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬»½µØµÄÎåÃ¢£¬ÕÙ»½Ë®µÄÎåÃ¢£¬ÕÙ»½»ðµÄÎåÃ¢£¬ÕÙ»½·çµÄÎåÃ¢! \n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬Î°´óµÄÍõÉñ°¡£¬ÔÚÎÒÖÜÎ§ÕÕÒ«ÎåÃ¢ÐÇµÄ¹âÃ¢°É!\n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬´ÓÉÏÌìµÄÎåÃ¢ÖÐ´ÍÓèÎÒÁ¦Á¿°É£¡£¡£¡\n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬Í³ÓùËÄ½çµÄºÚ°µÖ®Íõ°¡! \n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬ÊÀÉÏËùÓÐºÚ°µµÄÖ÷ÈË°¡ £¡\n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬ÇëÕ¹ÏÖÄúÐÛ×³µÄÉí×Ë°É £¡\n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬°é×ÅÄÇ¾Þ´óµÄºÚ¶´ £¡\n", me,target);
-	message_vision(HIB"$N"HIB"Äîµ½£¬³öÏÖ°É£¬×¹ÌìÊ¹ Â·Î÷·¨!!! \n", me,target);
+	message_vision(HIB"$N"HIB"ç”¨æ‰‹åœ¨å¤©ç©ºåˆ’äº†ä¸€ä¸ªäº”èŠ’æ˜Ÿï¼Œå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡\n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œå”¤åœ°çš„äº”èŠ’ï¼Œå¬å”¤æ°´çš„äº”èŠ’ï¼Œå¬å”¤ç«çš„äº”èŠ’ï¼Œå¬å”¤é£Žçš„äº”èŠ’! \n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œä¼Ÿå¤§çš„çŽ‹ç¥žå•Šï¼Œåœ¨æˆ‘å‘¨å›´ç…§è€€äº”èŠ’æ˜Ÿçš„å…‰èŠ’å§!\n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œä»Žä¸Šå¤©çš„äº”èŠ’ä¸­èµäºˆæˆ‘åŠ›é‡å§ï¼ï¼ï¼\n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œç»Ÿå¾¡å››ç•Œçš„é»‘æš—ä¹‹çŽ‹å•Š! \n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œä¸–ä¸Šæ‰€æœ‰é»‘æš—çš„ä¸»äººå•Š ï¼\n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œè¯·å±•çŽ°æ‚¨é›„å£®çš„èº«å§¿å§ ï¼\n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œä¼´ç€é‚£å·¨å¤§çš„é»‘æ´ž ï¼\n", me,target);
+	message_vision(HIB"$N"HIB"å¿µåˆ°ï¼Œå‡ºçŽ°å§ï¼Œå å¤©ä½¿ è·¯è¥¿æ³•!!! \n", me,target);
  
 
 	me->add("neili", -2500);
@@ -54,7 +54,7 @@ me->start_busy(3);
 	seteuid(getuid());
 
 soldier =new("/clone/magic/darkman");
-message_vision(HIB"$N"HIB"ÖäÓï¹ýºó,°µºÚÌìÊ¹Â·Î÷·¨³öÏÖÁË£¡£¡\n", me,target);
+message_vision(HIB"$N"HIB"å’’è¯­è¿‡åŽ,æš—é»‘å¤©ä½¿è·¯è¥¿æ³•å‡ºçŽ°äº†ï¼ï¼\n", me,target);
 	soldier->move(environment(me));
 if (userp(me))
 {

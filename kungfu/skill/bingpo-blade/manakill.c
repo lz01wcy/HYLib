@@ -16,40 +16,40 @@ int perform(object me, object target) {
     if (!target
         || !target->is_character()
         || !me->is_fighting(target))
-        return notify_fail("��ħ��ɱ��ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+        return notify_fail("『魔气杀』只能对战斗中的对手使用。\n");
     if (!objectp(weapon = me->query_temp("weapon")) ||
         (string) weapon->query("skill_type") != "blade")
-        return notify_fail("��ʹ�õ��������ԣ�����ʩչ��\n");
+        return notify_fail("你使用的武器不对，难以施展。\n");
 
     if (me->query_skill("bingpo-blade", 1) < 300)
-        return notify_fail("��ı��ƺ������ɲ��㡣 \n");
+        return notify_fail("你的冰破寒刀技巧不足。 \n");
     if ((int) me->query_skill("huagong-dafa", 1) < 125)
-        return notify_fail("��Ļ����󷨻�򲻹�.\n");
+        return notify_fail("你的化功大法火候不够.\n");
     if (me->query_skill("blade", 1) < 100)
-        return notify_fail("��ĵ��������á� \n");
+        return notify_fail("你的刀法不够好。 \n");
     if (me->query("neili") < 1000)
-        return notify_fail("�������������\n");
+        return notify_fail("你的内力不够。\n");
     //if( target->is_busy() )
-    //   return notify_fail(target->name() + "Ϊ�˶�����ɱ��,Ŀǰ���Թ˲�Ͼ!\n");
+    //   return notify_fail(target->name() + "为了躲避你的杀气,目前正自顾不暇!\n");
     msg = HIY
-    "$N�Բм���,��Ѫ��ת����ɱ����\n
-    ����$N���Ϸ���һ��ǿ���ɱ������\n
-    ��$N����ɱ���𽥵ؾۼ���˫��, ��˫�����γ�����ħ����\n
-    $Nٿ�ش��һ������ħ
-            ��
-    ɱ����\n\n
+    "$N自残己身,以血气转换成杀气。\n
+    ……$N身上发出一股强大的杀气……\n
+    ■$N身上杀气逐渐地聚集在双手, 在双手上形成两团魔气■\n
+    $N倏地大喝一声－－魔
+            气
+    杀－－\n\n
     " NOR;
 
     if (ski_value + 50 < random(max_lv) && me->query("combat_exp") > 2000000) {
         msg += HIR
         BLINK
-        "$NͻȻ��ͷһ��������ֻ��$N�������һ��Ѫ����$n��ȥ����\n
-        ����ħ��ɱ֮
-        ����ɱ�� ��ħ
-                Ѫ
-        ��
-        ɱ��\n\n
-        $n�⵽ǰ��δ�еĴ��, ��$NҲ���˲��ᡣ\n
+        "$N突然喉头一动～～　只见$N口中喷出一道血柱往$n射去～～\n
+        此乃魔气杀之
+        最终杀招 『魔
+                血
+        气
+        杀』\n\n
+        $n遭到前所未有的打击, 但$N也受伤不轻。\n
         " NOR;
         target->start_busy((int) me->query_skill("bingpo-blade") / 60 + 3);
         if (userp(target)) {
@@ -62,7 +62,7 @@ int perform(object me, object target) {
         }
         me->add("neili", -50);
     } else if (ski_value < 20) {
-        msg += "$N������ת����ɱ��������,�Ե��˺���Ӱ�졣\n";
+        msg += "$N真气所转换的杀气不够大,对敌人毫无影响。\n";
         me->receive_damage("qi", me->query("qi") * 1 / 100);
         me->add("neili", -me->query("max_neili") * 3 / 10);
     }
@@ -73,7 +73,7 @@ int perform(object me, object target) {
 
     if (ski_value > 70) {
         msg = HIM
-        "��һ�� ��ħ���޳���\n"
+        "第一招 『魔气无常』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -81,7 +81,7 @@ int perform(object me, object target) {
 
     if (ski_value > 90) {
         msg = HIG
-        "�ڶ��� ����ħɷ��\n"
+        "第二招 『火魔煞神』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -89,7 +89,7 @@ int perform(object me, object target) {
 
     if (ski_value > 100) {
         msg = HIC
-        "������ ���̻�ħ����\n"
+        "第三招 『商魂魔身』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -97,7 +97,7 @@ int perform(object me, object target) {
 
     if (ski_value > 120) {
         msg = HIB
-        "������ ����ħ������\n"
+        "第四招 『剑魔灭世』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -105,7 +105,7 @@ int perform(object me, object target) {
 
     if (ski_value > 140) {
         msg = HIW
-        "������ ����ħ�ƿա�\n"
+        "第五招 『狂魔破空』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -114,14 +114,14 @@ int perform(object me, object target) {
 
     if (ski_value > 160) {
         msg = CYN
-        "������ ��Ⱥħ���衻\n"
+        "第六招 『群魔乱舞』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
     }
 
     if (ski_value > 180) {
         msg = YEL
-        "������ ���켫ħɱ��\n"
+        "第七招 『天极魔杀』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 
@@ -129,7 +129,7 @@ int perform(object me, object target) {
 
     if (ski_value > 200) {
         msg = BLU
-        "�ڰ��� ����ħ�����꡻\n"
+        "第八招 『斗魔无生魂』\n"
         NOR;
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
     }
@@ -137,7 +137,7 @@ int perform(object me, object target) {
     if (ski_value > 300) {
         {
             msg = RED
-            "�ھ��� ����ħ��תҵ��\n"
+            "第九招 『风魔狂转业』\n"
             NOR;
             COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
 

@@ -13,5 +13,5 @@ int valid_learn(object me)
 }
 int practice_skill(object me)
 {
-        return notify_fail("忍术只能用学的。\n");
+        return notify_fail("蹇嶆湳鍙兘鐢ㄥ鐨勩�俓n");
 } 

@@ -11,34 +11,34 @@ int perform(object me, object target)
         extra=me->query_skill("kwan-yin-spells",1);
         
 
-        if(extra<120) return notify_fail("ÄãµÄ¹ÛÒôÁù×ÖÃ÷Öä²»¹»ÊìÁ·¡£\n");      
+        if(extra<120) return notify_fail("ä½ çš„è§‚éŸ³å…­å­—æ˜å’’ä¸å¤Ÿç†Ÿç»ƒã€‚\n");      
         if( (int)me->query("neili") < 100 )
-                return notify_fail("ÄãµÄ·¨Á¦²»¹»¡£\n");                
+                return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿã€‚\n");                
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦£¡\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ï¼\n");
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞÎŞ·¨Ê¹ÓÃ°ãÈô²¨ÂŞÃÜÖä£¡\n");
+                return notify_fail("æˆ˜æ–—ä¸­æ— æ³•ä½¿ç”¨èˆ¬è‹¥æ³¢ç½—å¯†å’’ï¼\n");
         if( me->is_ghost())
-                return notify_fail("¹í»êÎŞ·¨Ê¹ÓÃ°ãÈô²¨ÂŞÃÜÖä£¡\n");
+                return notify_fail("é¬¼é­‚æ— æ³•ä½¿ç”¨èˆ¬è‹¥æ³¢ç½—å¯†å’’ï¼\n");
         if( !(roomname=me->query_temp("timemark")))
-                return notify_fail("ÄãÃ»ÓĞÉè¶¨¶İÈëµã¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è®¾å®šéå…¥ç‚¹ã€‚\n");
         if( time()>me->query_temp("timemark_time"))
-                return notify_fail("ÄãÉè¶¨µÄ¶İÈëµãÒÑ¾­Ê§Ğ§ÁË¡£\n");
+                return notify_fail("ä½ è®¾å®šçš„éå…¥ç‚¹å·²ç»å¤±æ•ˆäº†ã€‚\n");
         if (domain_file(file_name(environment(me)))=="eren2")
-                return notify_fail("´ËµØ²»ÄÜÊ¹ÓÃ°ãÈô²¨ÂŞÃÜÖä¡£\n");
+                return notify_fail("æ­¤åœ°ä¸èƒ½ä½¿ç”¨èˆ¬è‹¥æ³¢ç½—å¯†å’’ã€‚\n");
         if(environment(me)->query("no_fly")||environment(me)->query("no_death_penalty")
                 || environment(me)->query("no_fly"))
-                return notify_fail("´ËµØ²»ÄÜÊ¹ÓÃ°ãÈô²¨ÂŞÃÜÖä¡£\n");  
+                return notify_fail("æ­¤åœ°ä¸èƒ½ä½¿ç”¨èˆ¬è‹¥æ³¢ç½—å¯†å’’ã€‚\n");  
          
         me->add("neili", -50);
         if( random(mana/5+extra*2) <100)      {
-        message_vision( HIR "$N½ô±ÕË«ÑÛ£¬ÇüÏ¥¶ø×ø£¬µ«ÊÇÓÉÓÚĞÄ»³ÔÓÄî£¬Ê²Ã´¶¼Ã»ÓĞ·¢Éú¡£\n" NOR, me);
-                 return notify_fail("ÄãµÄ£Û°ãÈô²¨ÂŞÃÜÖä£İÊ§°ÜÁË¡£\n");      
+        message_vision( HIR "$Nç´§é—­åŒçœ¼ï¼Œå±ˆè†è€Œåï¼Œä½†æ˜¯ç”±äºå¿ƒæ€€æ‚å¿µï¼Œä»€ä¹ˆéƒ½æ²¡æœ‰å‘ç”Ÿã€‚\n" NOR, me);
+                 return notify_fail("ä½ çš„ï¼»èˆ¬è‹¥æ³¢ç½—å¯†å’’ï¼½å¤±è´¥äº†ã€‚\n");      
                 }
-        message_vision( HIR "$NÅ×¿ªÔÓÄî£¬¿ÚÄî·ğºÅ¡°°ãÈô²¨ÂŞÃÛ¡±£¬Í»È»Ö®¼ä£¬$N¾¹È»ÏûÊ§²»¼û×ÙÓ°¡£\n" NOR, me);
+        message_vision( HIR "$NæŠ›å¼€æ‚å¿µï¼Œå£å¿µä½›å·â€œèˆ¬è‹¥æ³¢ç½—èœœâ€ï¼Œçªç„¶ä¹‹é—´ï¼Œ$Nç«Ÿç„¶æ¶ˆå¤±ä¸è§è¸ªå½±ã€‚\n" NOR, me);
         room = load_object(roomname);
         me->move(room);
-        message( "vision", HIR "\nºöÈ»Ìì¿ÕÒ»Æ¬·ğ¹â£¬"+me->query("name")+"¼İÔÆ¶øÖÁ£¡\n\n" NOR,
+        message( "vision", HIR "\nå¿½ç„¶å¤©ç©ºä¸€ç‰‡ä½›å…‰ï¼Œ"+me->query("name")+"é©¾äº‘è€Œè‡³ï¼\n\n" NOR,
                 room, ({ me }) );
         return 1;
 }   

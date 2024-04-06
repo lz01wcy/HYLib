@@ -6,18 +6,18 @@ inherit ARMOR;
 
 void create()
 {
-    set_name( "Èíâ¬¼×",({ "ruanwei jia","jia", }) );
+    set_name( "è½¯çŒ¬ç”²",({ "ruanwei jia","jia", }) );
     set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else
 	{
-		set("unit", "¼ş");
-        	set("long", "Ò»¼şÇáÆ®Æ®µÄ¡¢ÉúÂú¼âÈñµ¹´ÌµÄ»¤¼×¡£\n");
+		set("unit", "ä»¶");
+        	set("long", "ä¸€ä»¶è½»é£˜é£˜çš„ã€ç”Ÿæ»¡å°–é”å€’åˆºçš„æŠ¤ç”²ã€‚\n");
 		set("material", "copper");
 	        set("value",20000);
-	        set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-	        set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+	        set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+	        set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 	        set("armor_prop/armor", 75);
 	        set("armor_prop/dodge", -5);
 	}

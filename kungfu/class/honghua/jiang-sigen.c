@@ -1,16 +1,16 @@
 // Last Modified by winder on Sep. 12 2001
-// jiang-sigen.c ½¯ËÄ¸ù
+// jiang-sigen.c è’‹å››æ ¹
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("½¯ËÄ¸ù", ({ "jiang sigen", "jiang","sigen" }));
-	set("title", HIR"ºì»¨»á"HIG"Ê®Èýµ±¼Ò"NOR);
-	set("nickname", HIY"Í­Í·öùÓã"NOR);
-	set("long", "Í­Í·öùÓã½¯ËÄ¸ùÔÚ»áÖÐ×øµÚÊ®Èý°Ñ½»ÒÎ£¬±øÆ÷ÊÇÌú½°¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("è’‹å››æ ¹", ({ "jiang sigen", "jiang","sigen" }));
+	set("title", HIR"çº¢èŠ±ä¼š"HIG"åä¸‰å½“å®¶"NOR);
+	set("nickname", HIY"é“œå¤´é³„é±¼"NOR);
+	set("long", "é“œå¤´é³„é±¼è’‹å››æ ¹åœ¨ä¼šä¸­åç¬¬åä¸‰æŠŠäº¤æ¤…ï¼Œå…µå™¨æ˜¯é“æ¡¨ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("class", "fighter");
 	set("age", 21);
 	set("attitude", "friendly");
@@ -52,7 +52,7 @@ void create()
 		(: exert_function, "regenerate" :),
 		(: exert_function, "recover" :),
 	}) );
-	create_family("ºì»¨»á", 2, "µÜ×Ó");
+	create_family("çº¢èŠ±ä¼š", 2, "å¼Ÿå­");
 
  	setup();
 	carry_object("/clone/misc/cloth")->wear();

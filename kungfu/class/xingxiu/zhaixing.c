@@ -1,4 +1,4 @@
-// zhaixing.c ÕªĞÇ×Ó
+// zhaixing.c æ‘˜æ˜Ÿå­
 
 inherit NPC;
 inherit F_MASTER;
@@ -8,12 +8,12 @@ string ask_book();
 
 void create()
 {
-	set_name("ÕªĞÇ×Ó", ({ "zhaixing zi", "zhaixing" }));
-	set("nickname", "ĞÇËŞÅÉ´óÊ¦ĞÖ");
+	set_name("æ‘˜æ˜Ÿå­", ({ "zhaixing zi", "zhaixing" }));
+	set("nickname", "æ˜Ÿå®¿æ´¾å¤§å¸ˆå…„");
 	set("long", 
-		"Ëû¾ÍÊÇ¶¡´ºÇïµÄ´óµÜ×Ó¡¢ĞÇËŞÅÉ´óÊ¦ĞÖÕªĞÇ×Ó¡£\n"
-		"ËûÈıÊ®¶àËê£¬Á³ÅÓÊİÏ÷£¬ÑÛ¹âÖĞÍ¸³öÒ»Ë¿¹ÔìåÖ®Æø¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–å°±æ˜¯ä¸æ˜¥ç§‹çš„å¤§å¼Ÿå­ã€æ˜Ÿå®¿æ´¾å¤§å¸ˆå…„æ‘˜æ˜Ÿå­ã€‚\n"
+		"ä»–ä¸‰åå¤šå²ï¼Œè„¸åºç˜¦å‰Šï¼Œçœ¼å…‰ä¸­é€å‡ºä¸€ä¸ä¹–æˆ¾ä¹‹æ°”ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -57,14 +57,14 @@ void create()
 	prepare_skill("strike", "chousui-zhang");
 	prepare_skill("claw", "sanyin-wugongzhao");
 	set("inquiry", ([
-		"Á¶ĞÄµ¯"    : (: ask_me :),
-		"ÃØ¼®"      : (: ask_book :),
-		"ÌìÉ½Æ÷·¨"  : (: ask_book :),
+		"ç‚¼å¿ƒå¼¹"    : (: ask_me :),
+		"ç§˜ç±"      : (: ask_book :),
+		"å¤©å±±å™¨æ³•"  : (: ask_book :),
 	]));
 	set("dan_count", 1);
 	set("book_count", 1);
 
-	create_family("ĞÇËŞÅÉ", 2, "µÜ×Ó");
+	create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/lianzi")->wield();
@@ -72,7 +72,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 }
 
@@ -81,15 +81,15 @@ string ask_me()
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ĞÇËŞÅÉ")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ˜Ÿå®¿æ´¾")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 	if (query("dan_count") < 1)
-		return "ÄãÀ´ÍíÁË£¬Ã»ÓĞÁ·ĞÄµ¯ÁË¡£";
+		return "ä½ æ¥æ™šäº†ï¼Œæ²¡æœ‰ç»ƒå¿ƒå¼¹äº†ã€‚";
 	add("dan_count", -1);
 	ob = new("/d/xingxiu/obj/lianxindan");
 	ob->move(this_player());
-	return "ÕâĞ©Á·ĞÄµ¯¹»ÄãÓÃµÄÁË°É¡£";
+	return "è¿™äº›ç»ƒå¿ƒå¼¹å¤Ÿä½ ç”¨çš„äº†å§ã€‚";
 }
 
 string ask_book()
@@ -97,13 +97,13 @@ string ask_book()
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ĞÇËŞÅÉ")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ˜Ÿå®¿æ´¾")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 	if (query("book_count") < 1)
-		return "ÄãÀ´ÍíÁË£¬ÏÖÔÚÃ»Ê²Ã´Ê£µÄÁË¡£";
+		return "ä½ æ¥æ™šäº†ï¼Œç°åœ¨æ²¡ä»€ä¹ˆå‰©çš„äº†ã€‚";
 	add("book_count", -1);
 	ob = new("/clone/book/throw_book");
 	ob->move(this_player());
-	return "ºÃ°É£¬Õâ±¾ÊéÄãÄÃ»ØÈ¥ºÃºÃ¿´¿´°É¡£";
+	return "å¥½å§ï¼Œè¿™æœ¬ä¹¦ä½ æ‹¿å›å»å¥½å¥½çœ‹çœ‹å§ã€‚";
 }

@@ -1,4 +1,4 @@
-// yuxiao.c ±Ìº£³±Éú°´Óñóï
+// yuxiao.c ç¢§æµ·æ½®ç”ŸæŒ‰ç‰ç®«
 
 #include <ansi.h>
 
@@ -15,22 +15,22 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("±Ìº£³±Éú°´ÓñóïÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç¢§æµ·æ½®ç”ŸæŒ‰ç‰ç®«åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( (int)me->query_skill("yuxiao-jian", 1) < 80 )
-		return notify_fail("ÄãµÄÓñóï½£·¨²»¹»æµÊì£¬ÎŞ·¨Ê¹ÓÃ±Ìº£³±Éú°´Óñóï¡£\n");
+		return notify_fail("ä½ çš„ç‰ç®«å‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿ç”¨ç¢§æµ·æ½®ç”ŸæŒ‰ç‰ç®«ã€‚\n");
 
 	weapon = me->query_temp("weapon");
 //	if (!weapon || !(weapon->id("xiao")))
-//		return notify_fail("ÄãÊÖÀïµÄ±øÆ÷²»ÊÇóï£¬ÎŞ·¨Ê¹ÓÃ±Ìº£³±Éú°´Óñóï¡£\n");
+//		return notify_fail("ä½ æ‰‹é‡Œçš„å…µå™¨ä¸æ˜¯ç®«ï¼Œæ— æ³•ä½¿ç”¨ç¢§æµ·æ½®ç”ŸæŒ‰ç‰ç®«ã€‚\n");
 
 	if ( (int)me->query("neili") < 120)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃ±Ìº£³±Éú°´Óñóï¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ç¢§æµ·æ½®ç”ŸæŒ‰ç‰ç®«ã€‚\n");
 
-	msg = CYN "$N½«óï´Õµ½×ì±ß£¬´µµÃÁ½ÏÂ£¬´ÓóïÍ²ÀïÍ»È»Éä³öÒ»µÀÇà¹â£¬Ö±ÆË$n¡£\n";
+	msg = CYN "$Nå°†ç®«å‡‘åˆ°å˜´è¾¹ï¼Œå¹å¾—ä¸¤ä¸‹ï¼Œä»ç®«ç­’é‡Œçªç„¶å°„å‡ºä¸€é“é’å…‰ï¼Œç›´æ‰‘$nã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-		msg += "$n¶ãÉÁ²»¼°£¬ÕıÖĞÇ°ĞØ£¡\n";
+		msg += "$nèº²é—ªä¸åŠï¼Œæ­£ä¸­å‰èƒ¸ï¼\n";
 		damage = (int)me->query_skill("yuxiao-jian", 1);
 		damage += random(damage * 2 / 3);
 		if (damage > target->query("neili") / 10)
@@ -38,14 +38,14 @@ int perform(object me, object target)
 		target->receive_damage("qi", damage);
 		target->receive_wound("qi", damage/3);
                 p = (int)target->query("qi") * 100 / (int)target->query("max_qi");
-//                msg += damage_msg(damage, "´ÌÉË");
+//                msg += damage_msg(damage, "åˆºä¼¤");
 //                msg += "( $n" + eff_status_msg(p) + " )\n";
-		if( damage < 100 ) msg += HIY"$nµÄĞØÇ°ÒÂ½óÒÑ¾­ÇÖ³öÁËÏÊÑª¡£\n"NOR;
-        	else if( damage < 200 ) msg += HIR"$nĞØÇ°ÏÖ³öÁËÒ»¸öÓÖ³¤ÓÖÉîµÄÉË¿Ú£¡\n"NOR;
-        	else msg += RED"¾¹È»¶´´©ÁË$nµÄÉíÌå£¬$nÊÖÎæÉË¿Ú£¬¡°ÍÛ¡±µÄÒ»ÉùÍÂ³öÁËÒ»¿ÚÏÊÑª¡£\n"NOR;
+		if( damage < 100 ) msg += HIY"$nçš„èƒ¸å‰è¡£è¥Ÿå·²ç»ä¾µå‡ºäº†é²œè¡€ã€‚\n"NOR;
+        	else if( damage < 200 ) msg += HIR"$nèƒ¸å‰ç°å‡ºäº†ä¸€ä¸ªåˆé•¿åˆæ·±çš„ä¼¤å£ï¼\n"NOR;
+        	else msg += RED"ç«Ÿç„¶æ´ç©¿äº†$nçš„èº«ä½“ï¼Œ$næ‰‹æ‚ä¼¤å£ï¼Œâ€œå“‡â€çš„ä¸€å£°åå‡ºäº†ä¸€å£é²œè¡€ã€‚\n"NOR;
 	} 
 	else {
-		msg += "¿ÉÏ§$nÔçÒÑ·À±¸ÁË$NµÄÕâÕĞ£¬ÏòÅÔ±ßÒ»Ô¾£¬¶ã¿ªÁËÕâ¸ö°µÆ÷£¬µ«¶Ô°µÆ÷À´ÊÆÈç´ËÑ¸ÃÍÒ²²»×Ô½ûµØÂ¶³öÒ»Ë¿¾åÒâ¡£\n" NOR;
+		msg += "å¯æƒœ$næ—©å·²é˜²å¤‡äº†$Nçš„è¿™æ‹›ï¼Œå‘æ—è¾¹ä¸€è·ƒï¼Œèº²å¼€äº†è¿™ä¸ªæš—å™¨ï¼Œä½†å¯¹æš—å™¨æ¥åŠ¿å¦‚æ­¤è¿…çŒ›ä¹Ÿä¸è‡ªç¦åœ°éœ²å‡ºä¸€ä¸æƒ§æ„ã€‚\n" NOR;
 	}
 	message_vision(msg, me, target);
 	me->add("neili", -90);

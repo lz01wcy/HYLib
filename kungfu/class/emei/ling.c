@@ -1,13 +1,13 @@
-// ling.c ÕÔÁéÖé
+// ling.c èµµçµç 
 
 inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("ÕÔÁéÖé", ({ "zhao lingzhu","zhao","lingzhu"}));
+        set_name("èµµçµç ", ({ "zhao lingzhu","zhao","lingzhu"}));
         set("long",
-                "ËýÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£\n");
-        set("gender", "Å®ÐÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -49,7 +49,7 @@ void create()
         map_skill("strike","jinding-zhang");
         map_skill("blade","yanxing-dao");
         map_skill("parry","yanxing-dao");
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object("/d/city/obj/gangdao")->wield();
@@ -60,11 +60,11 @@ void attempt_apprentice(object ob)
 {
 
         if ((int)ob->query("shen") < 0) {
-                command("say ÎÒ¶ëáÒÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘å³¨åµ‹ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }

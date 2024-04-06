@@ -1,4 +1,4 @@
-// transfer.c ×ªÄÚÁ¦
+// transfer.c è½¬å†…åŠ›
 // Modified by Venus Oct.1997
 #include <ansi.h>
 
@@ -7,46 +7,46 @@ int exert(object me, object target)
     int force, trans;
 
     if( query_ip_name(target)==query_ip_name(me))
-       return notify_fail("ÄãÒª½«ÕæÆø´«¸øË­£¿\n");
+       return notify_fail("ä½ è¦å°†çœŸæ°”ä¼ ç»™è°ï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼\n");
         if ( wizardp(me) )
-                return notify_fail("ÄãÊÇÎ×Ê¦£¬Õâ¸ö...¾ÍÃâÁË°É£¡\n");
+                return notify_fail("ä½ æ˜¯å·«å¸ˆï¼Œè¿™ä¸ª...å°±å…äº†å§ï¼\n");
 
         if( me->query_skill("shenzhao-jing", 1) > 100)
-                return notify_fail("ÉñÕÕ¾­µÄÄÚÁ¦£¬ÎŞ·¨´«ËÍ£¡\n");
+                return notify_fail("ç¥ç…§ç»çš„å†…åŠ›ï¼Œæ— æ³•ä¼ é€ï¼\n");
 
 
     if( !target || target==me || !living(target) )
-       return notify_fail("ÄãÒª½«ÕæÆø´«¸øÄÄÎ»£¿\n");
+       return notify_fail("ä½ è¦å°†çœŸæ°”ä¼ ç»™å“ªä½ï¼Ÿ\n");
 
     if( me->query_skill_mapped("force") != target->query_skill_mapped("force") )
-       return notify_fail(target->name()+"ËùÊ¹ÓÃµÄÄÚ¹¦ºÍÄã²»Í¬£¬²»ÄÜ´«ÄÚÁ¦¡£\n");
+       return notify_fail(target->name()+"æ‰€ä½¿ç”¨çš„å†…åŠŸå’Œä½ ä¸åŒï¼Œä¸èƒ½ä¼ å†…åŠ›ã€‚\n");
 
     if( (int)me->query("neili") <= (int)me->query("max_neili")/3 )
-       return notify_fail("ÄãµÄÕæÆø²»×ã¡£\n");
+       return notify_fail("ä½ çš„çœŸæ°”ä¸è¶³ã€‚\n");
 
     if( (int)me->query("max_neili") <= (int)target->query("max_neili") )
-       return notify_fail("ÄãµÄÕæÆø»¹²»ÈçÈË¼Ò¶à£¬´«²»¹ıÈ¥¡£\n");
+       return notify_fail("ä½ çš„çœŸæ°”è¿˜ä¸å¦‚äººå®¶å¤šï¼Œä¼ ä¸è¿‡å»ã€‚\n");
 
     if ((int)target->query("neili")>=(int)target->query("max_neili")*4)
-       return notify_fail("¶Ô·½µÄÕæÆø³äÅæ£¬²»ĞèÒªÄãµÄÕæÆø¡£\n");
+       return notify_fail("å¯¹æ–¹çš„çœŸæ°”å……æ²›ï¼Œä¸éœ€è¦ä½ çš„çœŸæ°”ã€‚\n");
 
     force = me->query("neili") - (me->query("max_neili")/3);
 
-    if( force/2 < 1 ) return notify_fail("ÄãµÄÕæÆø²»×ã¡£\n");
+    if( force/2 < 1 ) return notify_fail("ä½ çš„çœŸæ°”ä¸è¶³ã€‚\n");
     me->add("neili", -force/3 );
     if( (int)me->query("max_neili") <= (int)target->query("max_neili")*5/4 )
        me->add("max_neili", -1);
 
-    message_combatd(HIW"$NÒ»ÕÆÅÄÔÚ$n±³ĞÄ£¬Ë³ÊÆÔËÆø½«ÌåÄÚÕæÆø´«ËÍ¹ıÈ¥¡£\n"NOR, me,target);
+    message_combatd(HIW"$Nä¸€æŒæ‹åœ¨$nèƒŒå¿ƒï¼Œé¡ºåŠ¿è¿æ°”å°†ä½“å†…çœŸæ°”ä¼ é€è¿‡å»ã€‚\n"NOR, me,target);
     target->add("neili", force/2);
 if (random(10)>7)
 {
     me->add("max_neili", -1);
 }
-    write("Ok¡£\n");
-    tell_object(target, HIW "Äã¾õµÃÒ»¹ÉÈÈÆø´Ó"+me->name()+"µÄÊÖÕÆÖĞ´«ÁË¹ıÀ´¡£\n" NOR);
+    write("Okã€‚\n");
+    tell_object(target, HIW "ä½ è§‰å¾—ä¸€è‚¡çƒ­æ°”ä»"+me->name()+"çš„æ‰‹æŒä¸­ä¼ äº†è¿‡æ¥ã€‚\n" NOR);
     return 1;
 }
 

@@ -1,4 +1,4 @@
-// lamaism.c 密宗心法
+// lamaism.c 瀵嗗畻蹇冩硶
 
 inherit SKILL;
 
@@ -9,12 +9,12 @@ string type() { return "knowledge"; }
 int valid_learn(object me)
 {
     if( (int)me->query_skill("taoism",1) > 1 )
-      return notify_fail("你学了牛鼻子的心法，无法修炼密宗心法。\n");
+      return notify_fail("浣犲浜嗙墰榧诲瓙鐨勫績娉曪紝鏃犳硶淇偧瀵嗗畻蹇冩硶銆俓n");
     return 1;
 }
 
 int practice_skill(object me)
 {
-    return notify_fail("密宗心法只能靠学(learn)来提高。\n");
+    return notify_fail("瀵嗗畻蹇冩硶鍙兘闈犲(learn)鏉ユ彁楂樸�俓n");
 }
 

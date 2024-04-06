@@ -6,28 +6,28 @@ int remove_effect(object me);
 int perform(object me)
 {
         if( !me->is_fighting() || !living(me))
-                return notify_fail("¡¸ºìÁ«»ð¡¹Ö»ÄÜÔÚÕ½¶·ÖÐµÄÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œçº¢èŽ²ç«ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­çš„ä½¿ç”¨ã€‚\n");
 
         if(objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÔËÓÃ¡¸ºìÁ«»ð¡¹£¡\n");
+                return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½è¿ç”¨ã€Œçº¢èŽ²ç«ã€ï¼\n");
         if(me->query_temp("honglian"))        
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃ¡¸ºìÁ«»ð¡¹¡£\n");  
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ã€Œçº¢èŽ²ç«ã€ã€‚\n");  
         if(me->query_temp("mz_lx"))        
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃ¡¸½µÑý·üÄ§Öä¡¹¡£\n");  
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨ã€Œé™å¦–ä¼é­”å’’ã€ã€‚\n");  
         if((int)me->query_skill("huoyan-dao", 1) < 180 )
-                return notify_fail("ÄãµÄ»ðÑæµ¶²»¹»æµÊì£¬»¹²»ÄÜÁì»á¡¸ºìÁ«»ð¡¹Ö®¾÷ÇÏ¡£\n");
+                return notify_fail("ä½ çš„ç«ç„°åˆ€ä¸å¤Ÿå¨´ç†Ÿï¼Œè¿˜ä¸èƒ½é¢†ä¼šã€Œçº¢èŽ²ç«ã€ä¹‹è¯€çªã€‚\n");
         if( (int)me->query("max_neili", 1) < 1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎªÌ«Èõ£¬Ê¹²»³ö¡¸ºìÁ«»ð¡¹¡£\n");                
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºå¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œçº¢èŽ²ç«ã€ã€‚\n");                
         if( (int)me->query("neili", 1) < 800 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬Ê¹²»³ö¡¸ºìÁ«»ð¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çœŸæ°”ä¸å¤Ÿï¼Œä½¿ä¸å‡ºã€Œçº¢èŽ²ç«ã€ã€‚\n");
         if(userp(me) && (int)me->query_skill("xiaowuxiang", 1) < 100 )
-                return notify_fail("ÄãµÄÐ¡ÎÞÏà¹¦µÈ¼¶²»¹»¸ß£¬Ê¹²»³ö¡¸ºìÁ«»ð¡¹¡£\n");
+                return notify_fail("ä½ çš„å°æ— ç›¸åŠŸç­‰çº§ä¸å¤Ÿé«˜ï¼Œä½¿ä¸å‡ºã€Œçº¢èŽ²ç«ã€ã€‚\n");
         if(userp(me) && (int)me->query_skill("lamaism", 1) < 150 )
-                return notify_fail("Äã¶ÔÃÜ×ÚÐÄ·¨µÄÁìÎò²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸ºìÁ«»ð¡¹¡£\n");
+                return notify_fail("ä½ å¯¹å¯†å®—å¿ƒæ³•çš„é¢†æ‚Ÿä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ã€Œçº¢èŽ²ç«ã€ã€‚\n");
         if (userp(me) && me->query_skill_mapped("parry") != "huoyan-dao")
-                return notify_fail("¡¸ºìÁ«»ð¡¹±ØÐëÔÚ¼¤·¢ÕÐ¼ÜµÄÇé¿öÏÂ²ÅÄÜÊ¹ÓÃ¡£\n");
-        message_vision(RED"\n$N¼ÀÆð»ðÑæµ¶Ö®¡¸ºìÁ«»ð¡¹¾ø¼¼£¬¾«´¿µÄÄÚÁ¦³ÊºìÉ«»º»ºÓ¿³ö£¬ÓÚÉíÇ°Èý³ßÖ®´¦£¬±ã¼´Í£×¡²»¶¯£¬
-½«ÕâÆ®µ´ÎÞ¶¨µÄÕæÆø¶¨ÔÚ°ë¿Õ£¬ËüËäÊÇÐéÎÞçÎç¿£¬²»¿É×½Ãþ£¬È´ÄÜÉ±ÈËÓÚÎÞÐÎ£¬ÊµÊÇÀ÷º¦²»¹ý£¡\n"NOR,me);
+                return notify_fail("ã€Œçº¢èŽ²ç«ã€å¿…é¡»åœ¨æ¿€å‘æ‹›æž¶çš„æƒ…å†µä¸‹æ‰èƒ½ä½¿ç”¨ã€‚\n");
+        message_vision(RED"\n$Nç¥­èµ·ç«ç„°åˆ€ä¹‹ã€Œçº¢èŽ²ç«ã€ç»æŠ€ï¼Œç²¾çº¯çš„å†…åŠ›å‘ˆçº¢è‰²ç¼“ç¼“æ¶Œå‡ºï¼ŒäºŽèº«å‰ä¸‰å°ºä¹‹å¤„ï¼Œä¾¿å³åœä½ä¸åŠ¨ï¼Œ
+å°†è¿™é£˜è¡æ— å®šçš„çœŸæ°”å®šåœ¨åŠç©ºï¼Œå®ƒè™½æ˜¯è™šæ— ç¼¥ç¼ˆï¼Œä¸å¯æ‰æ‘¸ï¼Œå´èƒ½æ€äººäºŽæ— å½¢ï¼Œå®žæ˜¯åŽ‰å®³ä¸è¿‡ï¼\n"NOR,me);
         me->start_busy(1);
         me->set_temp("honglian", 1);
         me->add("neili", -300);
@@ -66,7 +66,7 @@ int check_fight(object me)
                 else remove_effect(me);
                 }
        else if (userp(me) && (me->query_skill_mapped("strike") != "huoyan-dao" || me->query_skill_mapped("parry") != "huoyan-dao")){
-                  message_vision(HIY"$NÒ»µ¶Åü³ö£¬Í»È»±äÕÐ£¬¾¹È»ÊÇÍêÈ«²»Í¬µÄÕÐÊýÀ´£¡\n"NOR,me);
+                  message_vision(HIY"$Nä¸€åˆ€åŠˆå‡ºï¼Œçªç„¶å˜æ‹›ï¼Œç«Ÿç„¶æ˜¯å®Œå…¨ä¸åŒçš„æ‹›æ•°æ¥ï¼\n"NOR,me);
                   me->add_temp("apply/parry", -me->query_skill("huoyan-dao", 1)/2);
                   me->add_temp("apply/arrmor", -me->query_skill("huoyan-dao", 1)/2);
                   me->delete_temp("honglian");
@@ -81,7 +81,7 @@ int remove_effect(object me)
 {
    string msg;
    msg = "/kungfu/skill/huoyan-dao"->query_skill_name(me->query_skill("huoyan-dao", 1));
-   message_vision(HIY "\n$N»ØÊÖÒ»ÕÐ"+msg+"Ê¹Íê£¬Ë«ÊÖºÏÊ®Á¢ÓÚµ±µØ£¬Ê¾´È±¯Îª»³¡£\n\n"NOR, me);
+   message_vision(HIY "\n$Nå›žæ‰‹ä¸€æ‹›"+msg+"ä½¿å®Œï¼ŒåŒæ‰‹åˆåç«‹äºŽå½“åœ°ï¼Œç¤ºæ…ˆæ‚²ä¸ºæ€€ã€‚\n\n"NOR, me);
    me->add_temp("apply/parry", -me->query_skill("huoyan-dao", 1)/2);
    me->add_temp("apply/armor", -me->query_skill("huoyan-dao", 1)/2);
    me->delete_temp("honglian");

@@ -11,40 +11,40 @@ int perform(object me, object target) {
     object weapon;
     if (!target) target = offensive_target(me);
     extra = me->query_skill("enmeiryu");
-    if (extra < 50) return notify_fail("ÄãµÄÂ½°ÂÔ²Ã÷Á÷È­Êõ»¹²»¹»´¿Êì£¡\n");
+    if (extra < 50) return notify_fail("ä½ çš„é™†å¥¥åœ†æ˜Žæµæ‹³æœ¯è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 
     if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-        return notify_fail("Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+        return notify_fail("åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
     if ((int) me->query("neili") < 300)
-        return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+        return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿï¼\n");
     if (!target) target = offensive_target(me);
     if (!target
         || !target->is_character()
         || !me->is_fighting(target))
-        return notify_fail("£Ûµ´Ä§³ýÑý£ÝÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("ï¼»è¡é­”é™¤å¦–ï¼½åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
     weapon = me->query_temp("weapon");
     extra = me->query_skill("enmeiryu") / 30;
     if (extra > 200) extra = 200;
     me->add_temp("apply/attack", extra);
     me->add_temp("apply/damage", extra);
     msg = HIY
-    "$NÔËÁ¦ÓÚÕÆ£¬Ê¹³ö¾ø¼¼¡¸µ´Ä§³ýÑý¡¹£¬·ÉÉí¼²½ø£¬Ë«ÕÆÆÌÌì¸ÇµØÏò$nµÄÌìÁé¸ÇÅÄÈ¥£¡"
+    "$Nè¿åŠ›äºŽæŽŒï¼Œä½¿å‡ºç»æŠ€ã€Œè¡é­”é™¤å¦–ã€ï¼Œé£žèº«ç–¾è¿›ï¼ŒåŒæŽŒé“ºå¤©ç›–åœ°å‘$nçš„å¤©çµç›–æ‹åŽ»ï¼"
     NOR;
     message_vision(msg, me, target);
     msg = HIY
-    "ÒýÈ¤ÖÚÉú£¡"
+    "å¼•è¶£ä¼—ç”Ÿï¼"
     NOR;
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
     msg = HIY
-    "¸èÎèÑÖÂÞ£¡"
+    "æ­Œèˆžé˜Žç½—ï¼"
     NOR;
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
     msg = HIY
-    "¸¡ÓÎÑªº££¡"
+    "æµ®æ¸¸è¡€æµ·ï¼"
     NOR;
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
     msg = HIY
-    "Çý¹íÓùÄ§£¡"
+    "é©±é¬¼å¾¡é­”ï¼"
     NOR;
     COMBAT_D->do_attack(me, target, me->query_temp("weapon"), TYPE_REGULAR, msg);
     me->add_temp("apply/attack", -extra);

@@ -1,4 +1,4 @@
-// tmdafa.c ��ħ��
+// tmdafa.c 天魔大法
 
 inherit FORCE;
 inherit F_DBASE;
@@ -14,9 +14,9 @@ int valid_learn(object me)
         int t = 1, j;
         for (j = 1; j < i / 10; j++) t*= 2;
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("��Ļ����ڹ�����㣬����ѧ��ħ�󷨡�\n");
+                return notify_fail("你的基本内功火候不足，不能学天魔大法。\n");
         if (i > 10 && (int)me->query("shen") > -50000)
-                return notify_fail("ѧ��ħ�󷨣�Ҫ�ĺ���������������������ò���ѽ��\n");
+                return notify_fail("学天魔大法，要心狠手辣，奸恶歹毒，你可做得不够呀！\n");
 	if (
 	me->query_skill("bahuang-gong",1)
 || me->query_skill("xuantian-wuji",1)
@@ -46,13 +46,13 @@ me->query_skill("huashan-neigong",1)   ||
 me->query_skill("zixia-shengong",1) ||
 me->query_skill("taiji-shengong",1) ||
 me->query_skill("guiyuan-tunafa",1) )
-                return notify_fail("�㲻��ɢ�˱����ڹ�������ѧ��ħ�󷨣���\n");
+                return notify_fail("你不先散了别派内功，怎能学天魔大法？！\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("��ħ��ֻ����ѧ(learn)�������������ȡ�\n");
+        return notify_fail("天魔大法只能用学(learn)的来增加熟练度。\n");
 }
 
 string exert_function_file(string func)

@@ -1,4 +1,4 @@
-// yunv-xinfa.c ÓñÅ®ĞÄ·¨
+// yunv-xinfa.c ç‰å¥³å¿ƒæ³•
 #include <ansi.h>
 inherit FORCE;
 
@@ -7,11 +7,11 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
 
-        if ( me->query("gender") == "ÎŞĞÔ")
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑôÄÑµ÷£¬²»ÄÜĞŞÏ°ÓñÅ®ĞÄ·¨¡£\n");
+        if ( me->query("gender") == "æ— æ€§")
+                return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³éš¾è°ƒï¼Œä¸èƒ½ä¿®ä¹ ç‰å¥³å¿ƒæ³•ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if (
 	me->query_skill("bahuang-gong",1)
@@ -40,24 +40,24 @@ me->query_skill("xuantian-wuji",1)  ||
 me->query_skill("bingxue-xinfa",1)||
 me->query_skill("wudu-shengong",1)||
 me->query_skill("guiyuan-tunafa",1) )
-		return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§ÓñÅ®ĞÄ¾­£¿£¡\n");
+		return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦ç‰å¥³å¿ƒç»ï¼Ÿï¼\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÓñÅ®ĞÄ·¨Ö»ÄÜÓÃÑ§(learn)À´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("ç‰å¥³å¿ƒæ³•åªèƒ½ç”¨å­¦(learn)æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 mapping exercise_msg(object me)
 {
   return ([
-    "status_msg" : HIC + me->name()+"×ËÌ¬ÓÆÑÅ£¬ÉñÌ¬ÇåÀä¡£" NOR,
-    "start_my_msg" : "ÄãÇáÇáµÄÎüÒ»¿ÚÆø£¬±ÕÉÏÑÛ¾¦£¬ÔËÆğÓñÅ®ĞÄ¾­£¬ÄÚÏ¢ÔÚÂöÂçÖĞ¿ªÊ¼ÔË×ª¡£\n",
-    "start_other_msg" : me->name()+"ÉñÌ¬Í»È»¿ªÊ¼±äµÄÇåÀäÎŞ±È£¬¿ÉÊÇ×ËÊÆÓÖ±äµÄÓÆÑÅÒì³£¡£\n",
-    "halt_msg" : "$NÄÚÏ¢Ò»×ª£¬Ñ¸ËÙÊÕÆø£¬Í£Ö¹ÁËÄÚÏ¢µÄÔË×ª¡£\n",
-    "end_my_msg" : "ÄãÂıÂıÊÕÆø£¬¹éÈëµ¤Ìï£¬Õö¿ªÑÛ¾¦£¬ÇáÇáµÄÍÂÁËÒ»¿ÚÆø¡£\n",
-    "end_other_msg" : "Ö»¼û"+me->name()+"Õö¿ªÑÛ¾¦£¬ÇáÇáµÄÍÂ³öÁËÒ»¿ÚÆø£¬ÉñÌ¬»Ö¸´×ÔÈ»¡£\n"
+    "status_msg" : HIC + me->name()+"å§¿æ€æ‚ é›…ï¼Œç¥æ€æ¸…å†·ã€‚" NOR,
+    "start_my_msg" : "ä½ è½»è½»çš„å¸ä¸€å£æ°”ï¼Œé—­ä¸Šçœ¼ç›ï¼Œè¿èµ·ç‰å¥³å¿ƒç»ï¼Œå†…æ¯åœ¨è„‰ç»œä¸­å¼€å§‹è¿è½¬ã€‚\n",
+    "start_other_msg" : me->name()+"ç¥æ€çªç„¶å¼€å§‹å˜çš„æ¸…å†·æ— æ¯”ï¼Œå¯æ˜¯å§¿åŠ¿åˆå˜çš„æ‚ é›…å¼‚å¸¸ã€‚\n",
+    "halt_msg" : "$Nå†…æ¯ä¸€è½¬ï¼Œè¿…é€Ÿæ”¶æ°”ï¼Œåœæ­¢äº†å†…æ¯çš„è¿è½¬ã€‚\n",
+    "end_my_msg" : "ä½ æ…¢æ…¢æ”¶æ°”ï¼Œå½’å…¥ä¸¹ç”°ï¼Œçå¼€çœ¼ç›ï¼Œè½»è½»çš„åäº†ä¸€å£æ°”ã€‚\n",
+    "end_other_msg" : "åªè§"+me->name()+"çå¼€çœ¼ç›ï¼Œè½»è½»çš„åå‡ºäº†ä¸€å£æ°”ï¼Œç¥æ€æ¢å¤è‡ªç„¶ã€‚\n"
           ]);
 }
 string exert_function_file(string func)

@@ -1,4 +1,4 @@
-// powerup.c 先天气功加力
+// powerup.c 鍏堝ぉ姘斿姛鍔犲姏
 
 #include <ansi.h>
 
@@ -10,17 +10,17 @@ int exert(object me, object target)
 {
    int skill;
    if( target != me )
-   return notify_fail("你只能用先天气功来提升自己的战斗力。\n");
+   return notify_fail("浣犲彧鑳界敤鍏堝ぉ姘斿姛鏉ユ彁鍗囪嚜宸辩殑鎴樻枟鍔涖�俓n");
    if( (int)me->query("neili") < 150  )
-   return notify_fail("你的内力不够。\n");
+   return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
    if( (int)me->query_temp("powerup") )
-   return notify_fail("你已经在运功中了。\n");
+   return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
    skill = me->query_skill("force");
    me->add("neili", -100);
    me->receive_damage("qi", 0);
    message_combatd(
-   HIY "$N微一凝神，运起先天气功，足底尘土泛起，全身真气冲关欲出。\n" NOR,me);
+   HIY "$N寰竴鍑濈锛岃繍璧峰厛澶╂皵鍔燂紝瓒冲簳灏樺湡娉涜捣锛屽叏韬湡姘斿啿鍏虫鍑恒�俓n" NOR,me);
    me->add_temp("apply/attack", skill/3);
    me->add_temp("apply/dodge", skill/3);
    me->set_temp("powerup", 1);
@@ -37,7 +37,7 @@ void remove_effect(object me, int amount)
    me->add_temp("apply/attack", -skill/3);
    me->add_temp("apply/dodge", -skill/3);
    me->delete_temp("powerup");
-   tell_object(me, "你的先天气功运行完毕，将内力收回丹田。\n");
+   tell_object(me, "浣犵殑鍏堝ぉ姘斿姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }
 
 

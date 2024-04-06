@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUAN "¡¸" HIM "ÔÆÏ¼»ÃÉú" NOR "¡¹"
+#define HUAN "ã€Œ" HIM "äº‘éœžå¹»ç”Ÿ" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -20,39 +20,39 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HUAN "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HUAN "åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (! objectp(weapon = me->query_temp("weapon")) ||
             (string)weapon->query("skill_type") != "staff")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
 	if( (int)me->query_skill("hamagong", 1) < 100 )
-		return notify_fail("ÄãµÄ¸òó¡¹¦²»¹»æµÊì.\n");
+		return notify_fail("ä½ çš„è›¤èŸ†åŠŸä¸å¤Ÿå¨´ç†Ÿ.\n");
 		
         skill = me->query_skill("lingshe-zhangfa", 1);
 
         if (skill < 120)
-                return notify_fail("ÄãÁéÉßÕÈ·¨µÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ çµè›‡æ–æ³•ç­‰çº§ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         if (me->query_skill("dodge") < 180)
-                return notify_fail("ÄãµÄÇá¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ çš„è½»åŠŸç«å€™ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
  
         if (me->query_skill_mapped("staff") != "lingshe-zhangfa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÁéÉßÕÈ·¨£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘çµè›‡æ–æ³•ï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         if (me->query("neili") < 200)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„çœŸæ°”ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å¯¹æ–¹éƒ½å·²ç»è¿™æ ·äº†ï¼Œç”¨ä¸ç€è¿™ä¹ˆè´¹åŠ›å§ï¼Ÿ\n");
 
         wn = weapon->name();
 
-        message_vision(HIM "\n$N" HIM "ÝëµØÊ©³ö¡¸" HIW "ÔÆÏ¼»ÃÉú\n"
-                     HIM "¡¹¾ø¼¼£¬ÊÖÖÐ" + wn + HIM "ÓÉÒ»±ä¶þ£¬\n"
-                     "ÓÉ¶þ±äËÄ£¬ÓÉËÄ±ä°Ë£¬ÓÉ°Ë±äÊ®Áù¡­¡­¾¹»Ã³ö\n"
-                     "ÎÞÊýÌõÁéÉß" + wn + HIM "¡£ÕÈÓ°²ã²ãµþµþ³¯ËÄÖÜ\n"
-                     "¼²´Ì¶ø³ö£¬ÆóÍ¼·âËø$n" HIM "µÄÍËÂ·¡£\n" NOR,
+        message_vision(HIM "\n$N" HIM "è“¦åœ°æ–½å‡ºã€Œ" HIW "äº‘éœžå¹»ç”Ÿ\n"
+                     HIM "ã€ç»æŠ€ï¼Œæ‰‹ä¸­" + wn + HIM "ç”±ä¸€å˜äºŒï¼Œ\n"
+                     "ç”±äºŒå˜å››ï¼Œç”±å››å˜å…«ï¼Œç”±å…«å˜åå…­â€¦â€¦ç«Ÿå¹»å‡º\n"
+                     "æ— æ•°æ¡çµè›‡" + wn + HIM "ã€‚æ–å½±å±‚å±‚å å æœå››å‘¨\n"
+                     "ç–¾åˆºè€Œå‡ºï¼Œä¼å›¾å°é”$n" HIM "çš„é€€è·¯ã€‚\n" NOR,
                      me, target);
 
         ap = me->query_skill("staff");
@@ -62,8 +62,8 @@ int perform(object me, object target)
         {
                 me->add("neili", -80);
                 damage = 150 + ap / 6 + random(ap / 6);
-        msg = HIR "$p´ó¾ªÊ§É«Ö®ÏÂ½ÓÁ¬±»$P»÷ÖÐÊýÕÈ"
-              "£¬µ±¼´ÌÛÍ´ÄÑµ±£¬";
+        msg = HIR "$på¤§æƒŠå¤±è‰²ä¹‹ä¸‹æŽ¥è¿žè¢«$På‡»ä¸­æ•°æ–"
+              "ï¼Œå½“å³ç–¼ç—›éš¾å½“ï¼Œ";
 target->add("qi",-damage*2);
 target->add("eff_qi",-damage);
 target->apply_condition("snake_poison",10);
@@ -72,15 +72,15 @@ target->apply_condition("qx_snake_poison",20);
         if (random(3) >= 1 && ! target->is_busy())
         {
                 target->start_busy(5);
-                msg += "ÎÞÏ¾·´»÷¡£\n" NOR;
+                msg += "æ— æš‡åå‡»ã€‚\n" NOR;
         } else
-                msg += "¼±Éù³¤ºô¡£\n" NOR;
+                msg += "æ€¥å£°é•¿å‘¼ã€‚\n" NOR;
 
                 me->start_busy(1);
         } else
         {
-                msg = CYN "$n" CYN "´ó¾ªÖ®ÏÂ¼±Ã¦Ô¾¿ªÊý²½£¬·½²Å°ÚÍÑ$N"
-                      CYN "¹÷Ó°µÄ·¶Î§¡£\n" NOR;
+                msg = CYN "$n" CYN "å¤§æƒŠä¹‹ä¸‹æ€¥å¿™è·ƒå¼€æ•°æ­¥ï¼Œæ–¹æ‰æ‘†è„±$N"
+                      CYN "æ£å½±çš„èŒƒå›´ã€‚\n" NOR;
                 me->add("neili", -50);
                 me->start_busy(2);
         }

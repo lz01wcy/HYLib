@@ -14,21 +14,21 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() )
-                return notify_fail("ÕÛÃ·Õ¹Ö»ÄÜ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æŠ˜æ¢…å±•åªèƒ½å¯¹å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
        if( environment(me)->query("no_fight") )
-                       return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ðÈË! \n");
+                       return notify_fail("è¿™é‡Œä¸èƒ½æ”»å‡»åˆ«äºº! \n");
         if( (int)me->query_skill("zhemei-shou", 1) < 80 )
-                return notify_fail("ÄãµÄÕÛÃ·ÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃÕÛÃ·Õ¹¡£\n");
+                return notify_fail("ä½ çš„æŠ˜æ¢…æ‰‹ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨æŠ˜æ¢…å±•ã€‚\n");
 	if( !(me->is_fighting() ))
-		return notify_fail("ÕÛÃ·ÊÖÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æŠ˜æ¢…æ‰‹åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("beiming-shengong", 1) < 120 && (int)me->query_skill("bahuang-gong", 1)<120 )
-                return notify_fail("ÄãµÄ±¾ÅÉÄÚ¹¦²»¹»æµÊì£¬²»»áÊ¹ÓÃÕÛÃ·Õ¹¡£\n");
+                return notify_fail("ä½ çš„æœ¬æ´¾å†…åŠŸä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨æŠ˜æ¢…å±•ã€‚\n");
 
         if( (int)me->query("neili", 1) < 350 || (int)me->query("max_neili",1)<200 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃÕÛÃ·Õ¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨æŠ˜æ¢…å±•ã€‚\n");
 
-        msg = HIC "$NÊÖ·¨Í»È»¼Ó¿ì£¬Ñ¸ËÙÆËÏò$n£¬×¥×¡$nÒ»Ö»ÊÖ±Û£¬ÓÃÁ¦ÍäÕÛ¡£\n"NOR;
+        msg = HIC "$Næ‰‹æ³•çªç„¶åŠ å¿«ï¼Œè¿…é€Ÿæ‰‘å‘$nï¼ŒæŠ“ä½$nä¸€åªæ‰‹è‡‚ï¼Œç”¨åŠ›å¼¯æŠ˜ã€‚\n"NOR;
 
         if( !target->is_fighting(me) ) me->kill_ob(target);
 
@@ -45,14 +45,14 @@ int perform(object me, object target)
                 target->start_busy(6);
                 me->add("neili", -200);
 
-                msg += HIR"½á¹û$nµÄÊÖ±Û±»$NÍäÕÛµÃÎÞ·¨¶¯µ¯£¬Ö»¾õÒ»ÕóÌÛÍ´ÄÑÈÌ¡£\n"NOR;
+                msg += HIR"ç»“æžœ$nçš„æ‰‹è‡‚è¢«$Nå¼¯æŠ˜å¾—æ— æ³•åŠ¨å¼¹ï¼Œåªè§‰ä¸€é˜µç–¼ç—›éš¾å¿ã€‚\n"NOR;
 		message_combatd(msg, me, target);
 		COMBAT_D->report_status(target);
         }
         else
         {
                 me->start_busy(2);
-                msg += CYN"¿ÉÊÇ$pÓÃÁ¦Ò»Õð£¬ÕðÁË¿ªÈ¥¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$pç”¨åŠ›ä¸€éœ‡ï¼Œéœ‡äº†å¼€åŽ»ã€‚\n"NOR;
 		message_combatd(msg, me, target);
 		target->start_busy(1);
         }

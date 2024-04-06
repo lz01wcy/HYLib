@@ -8,27 +8,27 @@ int exert(object me, object target)
 
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞÔË¹¦ÁÆÉË£¿ÕÒËÀÂğ£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬ÄÄÓĞ¿ÕÔË¹¦£¿\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ï¼Œå“ªæœ‰ç©ºè¿åŠŸï¼Ÿ\n");
 
 	if( (int)me->query_skill("baiyun-xinfa", 1) < 20)
-		return notify_fail("ÄãµÄ°×ÔÆĞÄ·¨ĞŞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç™½äº‘å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 50 ) 
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 /*
 	if( (int)me->query("eff_qi") >= (int)me->query("max_qi") )
-		return notify_fail(HIR"ÄãÃ»ÓĞÊÜÉË£¬²»±ØÔËÕæÆøÁÆÉË£¡\n"NOR);
+		return notify_fail(HIR"ä½ æ²¡æœ‰å—ä¼¤ï¼Œä¸å¿…è¿çœŸæ°”ç–—ä¼¤ï¼\n"NOR);
 */
 	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-		return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡\n");
+		return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
-        write( HIW "ÄãÈ«Éí·ÅËÉ£¬×øÏÂÀ´ÔËÆğ°×ÔÆĞÄ·¨¿ªÊ¼ÁÆÉË¡£\n" NOR);
+        write( HIW "ä½ å…¨èº«æ”¾æ¾ï¼Œåä¸‹æ¥è¿èµ·ç™½äº‘å¿ƒæ³•å¼€å§‹ç–—ä¼¤ã€‚\n" NOR);
         message("vision",
-                HIW + me->name() + "×øÏÂÔË¹¦ÁÆÉË£¬Í·¶¥°×ÎíçÔÈÆ£¬°ëÏìºóÍÂ³öÒ»¿Ú×Ç
-Æø£¬ÆøÉ«ÒÑ»Ö¸´Õı³£¡£\n" NOR, environment(me), me);
+                HIW + me->name() + "åä¸‹è¿åŠŸç–—ä¼¤ï¼Œå¤´é¡¶ç™½é›¾ç¼­ç»•ï¼ŒåŠå“ååå‡ºä¸€å£æµŠ
+æ°”ï¼Œæ°”è‰²å·²æ¢å¤æ­£å¸¸ã€‚\n" NOR, environment(me), me);
 
 	me->receive_curing("qi", 10 + (int)me->query_skill("force")/5 );
 	me->add("neili", -50);
@@ -39,15 +39,15 @@ int exert(object me, object target)
 }
 int help(object me)
 {
-	write(WHT"\n°×ÔÆĞÄ·¨Ö®×ÔÁÆ£º"NOR"\n");
+	write(WHT"\nç™½äº‘å¿ƒæ³•ä¹‹è‡ªç–—ï¼š"NOR"\n");
 	write(@HELP
 
-	Ê¹ÓÃ¹¦Ğ§£º
-		Îª×Ô¼ºÁÆÉË
+	ä½¿ç”¨åŠŸæ•ˆï¼š
+		ä¸ºè‡ªå·±ç–—ä¼¤
 
-	³öÊÖÒªÇó£º
-		°×ÔÆĞÄ·¨20¼¶
-	        ÄÚÁ¦50
+	å‡ºæ‰‹è¦æ±‚ï¼š
+		ç™½äº‘å¿ƒæ³•20çº§
+	        å†…åŠ›50
 HELP
 	);
 	return 1;

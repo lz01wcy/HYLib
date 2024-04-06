@@ -1,4 +1,4 @@
-// zong.c¡¸ÈáÔÆ×İ¡¹
+// zong.cã€ŒæŸ”äº‘çºµã€
 // modified by Venus Oct.1997
 #include <ansi.h>
 #include <command.h>
@@ -9,18 +9,18 @@ string msg;
 int extra;
 extra = me->query_skill("rouyun-steps",1);
 if( !me->is_fighting() )
-      return notify_fail("¡¸ÈáÔÆ×İ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+      return notify_fail("ã€ŒæŸ”äº‘çºµã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 if( (int)me->query_skill("rouyun-steps",1) < 50 )
-      return notify_fail("ÄãµÄÈáÔÆ²½·¨²»¹»ÊìÁ·£¡\n");
+      return notify_fail("ä½ çš„æŸ”äº‘æ­¥æ³•ä¸å¤Ÿç†Ÿç»ƒï¼\n");
 if( (int)me->query("jingli") < 50 )
-      return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
-      msg = HIC "$NÉíĞÎ¶¸È»×İÆğ£¬Ê®·ÖÓÅÑÅ£¬Ìì¿ÕÖĞÈ´Æ®ÏÂÒ»¶äÔÆ£¬·Ç³£Ææ¹Ö£¡\n" NOR;
+      return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
+      msg = HIC "$Nèº«å½¢é™¡ç„¶çºµèµ·ï¼Œååˆ†ä¼˜é›…ï¼Œå¤©ç©ºä¸­å´é£˜ä¸‹ä¸€æœµäº‘ï¼Œéå¸¸å¥‡æ€ªï¼\n" NOR;
    me->receive_damage("jing", 10);
    me->add("jingli", -20);
    me->set_temp("no_follow",1);
     if (random(extra)*2>50)
 {
-   msg += HIC"Ô­À´$NÒÑÊ¹³ö¡¸ÈáÔÆ×İ¡¹£¬³ËÔÆ¶øÈ¥ÁË£¡\n"NOR;
+   msg += HIC"åŸæ¥$Nå·²ä½¿å‡ºã€ŒæŸ”äº‘çºµã€ï¼Œä¹˜äº‘è€Œå»äº†ï¼\n"NOR;
     message_combatd(msg, me, target);
     switch( random(3) ) {
     case 0:
@@ -35,7 +35,7 @@ if( (int)me->query("jingli") < 50 )
 }
 	return 1;
 }
-    msg+= HIC"½á¹ûÔÆÓÖÆ®×ßÁË£¡\n"NOR;
+    msg+= HIC"ç»“æœäº‘åˆé£˜èµ°äº†ï¼\n"NOR;
     message_combatd(msg, me, target);
 me->start_busy(2);
 	 return 1;
