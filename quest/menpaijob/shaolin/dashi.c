@@ -8,12 +8,12 @@ int ask_rob();
 
 void create()
 {
-        set_name(HIG"ĞşÄÑ´óÊ¦"NOR, ({ "dashi"}));
+        set_name(HIG"ç„éš¾å¤§å¸ˆ"NOR, ({ "dashi"}));
        set("long",
-                "ĞşÄÑ´óÊ¦¼°µ±½ñµÄÉÙÁÖÃûÉ®,ËûÎä¹¦²»¸ß.\n"
-                "µ«³£ËÄ´¦±¼×ß,ÎªÎäÁÖÖ÷³Ö¹«µÀ¡£\n");
+                "ç„éš¾å¤§å¸ˆåŠå½“ä»Šçš„å°‘æ—ååƒ§,ä»–æ­¦åŠŸä¸é«˜.\n"
+                "ä½†å¸¸å››å¤„å¥”èµ°,ä¸ºæ­¦æ—ä¸»æŒå…¬é“ã€‚\n");
         set("attitude", "friendly");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 68);
         set("per", 40);
         set("no_get", 1);
@@ -47,8 +47,8 @@ set("combat_exp", 2000000);
 	map_skill("strike", "sanhua-zhang");
 	map_skill("parry", "sanhua-zhang");
         set("inquiry", ([
-        "»ØËÂ" : (:ask_huijia:) ,
-        "µ½ËÂ" : (:ask_daojia:) ,
+        "å›å¯º" : (:ask_huijia:) ,
+        "åˆ°å¯º" : (:ask_daojia:) ,
          ]) );
         set("env/wimpy", 40);
         set_temp("apply/attack", 300);
@@ -76,7 +76,7 @@ void leave()
 {
         object ob = this_object();
         if (ob->query("husong") == 0) {
-                message_vision(HIG "´óÊ¦¼ûÎŞÈËÀ´½ÓÓ¦,×Ô¼ºÀë¿ªÁË¡£\n" NOR,this_object());
+                message_vision(HIG "å¤§å¸ˆè§æ— äººæ¥æ¥åº”,è‡ªå·±ç¦»å¼€äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -87,12 +87,12 @@ string ask_huijia()
 object me=this_player();
 object ob = this_object();
 if(me->query("shaolinjob") == 0 )
-return "°¢ÃÖÍÓ·ğ£¡ÎÒ²»ÈÏÊ¶Ê©Ö÷.\n";
+return "é˜¿å¼¥é™€ä½›ï¼æˆ‘ä¸è®¤è¯†æ–½ä¸».\n";
 me->apply_condition("shaolin_song",30);
 set_leader(me);
 me->set("husong",1);
 ob->set("husong",10);
-return "°¢ÃÖÍÓ·ğ£¡Ğ»Ğ»Ê¦Ö¶Ô¸ÒâËÍÎÒ»ØËÂ.\n";
+return "é˜¿å¼¥é™€ä½›ï¼è°¢è°¢å¸ˆä¾„æ„¿æ„é€æˆ‘å›å¯º.\n";
 }
 
 string ask_daojia()
@@ -102,15 +102,15 @@ string ask_daojia()
  ob = this_object();
 me = this_player();
 if(me->query("shaolinjob") == 0 )
-return "°¢ÃÖÍÓ·ğ£¡ÎÒ²»ÈÏÊ¶Ê©Ö÷.\n";
+return "é˜¿å¼¥é™€ä½›ï¼æˆ‘ä¸è®¤è¯†æ–½ä¸».\n";
 if(me->query("husong") == 0 )
-return "°¢ÃÖÍÓ·ğ£¡ÎÒ²»ÈÏÊ¶Ê©Ö÷.\n";
+return "é˜¿å¼¥é™€ä½›ï¼æˆ‘ä¸è®¤è¯†æ–½ä¸».\n";
 
- if( environment(ob)->query("short")=="ÉÙÁÖ¹ã³¡")
+ if( environment(ob)->query("short")=="å°‘æ—å¹¿åœº")
          {
 
           set_leader(0);
-          write("ÖÕÓÚµ½ËÂÀïÁË£¬Ì«Ğ»Ğ»ÄãÁË.\n");
+          write("ç»ˆäºåˆ°å¯ºé‡Œäº†ï¼Œå¤ªè°¢è°¢ä½ äº†.\n");
 pot=880+random(700);
 exp=1080+random(1300);
              me->add("potential",pot);
@@ -118,22 +118,22 @@ exp=1080+random(1300);
              me->set("shaolinjob",0);
 me->set("husong",0);
              me->apply_condition("shaolin_song",0);
-          write("ÄãµÄ¾­ÑéºÍÇ±ÄÜÌá¸ßÁË!!\n");
+          write("ä½ çš„ç»éªŒå’Œæ½œèƒ½æé«˜äº†!!\n");
         call_out("leavet",1);
-	   tell_object(me,HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(me,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
-           return "ÎÒ½øËÂÀï×ö·¨ÊÂÈ¥ÁË.....\n";  
+           return "æˆ‘è¿›å¯ºé‡Œåšæ³•äº‹å»äº†.....\n";  
       }
         else {
-                return "»¹Ã»µ½ËÂÀïÃæÄØ!\n";
+                return "è¿˜æ²¡åˆ°å¯ºé‡Œé¢å‘¢!\n";
         }
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃguard£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨guardï¼\n");
         return 1;
 }
 

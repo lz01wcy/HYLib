@@ -2,9 +2,9 @@ inherit NPC;
 int give_work();
 void create()
 {
-      set_name("ËÎÈ±",({"songque","jiangong","song"}));
-      set("gender","ÄÐÐÔ");
-      set("nickname","¼à¹¤");
+      set_name("å®‹ç¼º",({"songque","jiangong","song"}));
+      set("gender","ç”·æ€§");
+      set("nickname","ç›‘å·¥");
       set("age",40+random(40));
       set("shen_type",-1);
       set("combat_exp",30000+random(400000));
@@ -13,7 +13,7 @@ void create()
       set("inquiry",([
               "work":(:give_work:),
               "job":(:give_work:),
-              "¹¤×÷":(:give_work:),
+              "å·¥ä½œ":(:give_work:),
       ]));
       set_skill("unarmed",115);
       set_skill("parry",115);
@@ -35,10 +35,10 @@ void greeting(object ob)
 {   if(!ob||environment(ob)!=environment()) return;
     if (ob->query_temp("work/kan")==1) return;
        if (ob->query_temp("work/kan")==2)
-             {    command("say °¡,"+ob->query("name")+"ÒÑ¾­¸ÉÍêÁË£¬ÇëÓÃ(say ¸ÉÍêÁË).\n");
+             {    command("say å•Š,"+ob->query("name")+"å·²ç»å¹²å®Œäº†ï¼Œè¯·ç”¨(say å¹²å®Œäº†).\n");
                   return;
              }     
-    command("say ÕâÎ»"+RANK_D->query_respect(ob)+"ÊÇÒªÕÒ¹¤×÷Ã´£¬ÇëÓÃ(ask song about work).\n");
+    command("say è¿™ä½"+RANK_D->query_respect(ob)+"æ˜¯è¦æ‰¾å·¥ä½œä¹ˆï¼Œè¯·ç”¨(ask song about work).\n");
     return;
 }
 int give_work()
@@ -48,19 +48,19 @@ int give_work()
     if (!me||environment(me)!=environment()) return 0;
 
     if (me->query("combat_exp")>500000)
-   {    command("say ÕâµãÐ¡ÊÂÄÄÀï¸ÒÒª´óÒ¯Äú¶¯ÊÖ??\n");
+   {    command("say è¿™ç‚¹å°äº‹å“ªé‡Œæ•¢è¦å¤§çˆ·æ‚¨åŠ¨æ‰‹??\n");
             return 1;
        }
 
     if (me->query_temp("work/kan")==1)
-   {    command("say Äã¸Õ²ÅµÄ»î»¹Ã»¸ÉÍê°É!\n");
+   {    command("say ä½ åˆšæ‰çš„æ´»è¿˜æ²¡å¹²å®Œå§!\n");
             return 1;
        }
     if (me->query_temp("work/kan")==2)
-     {        command("say ÄãµÄ¹¤Ç®»¹Ã»ÁìÄØ£¬ÎÒ¿É²»¸øÄã±£¹Ü!\n");
+     {        command("say ä½ çš„å·¥é’±è¿˜æ²¡é¢†å‘¢ï¼Œæˆ‘å¯ä¸ç»™ä½ ä¿ç®¡!\n");
                return 1;
      }
-    command("say ºÃ!ÄãÕâ¾Íµ½Î÷ÃæµÄËÉÁÖÈ¥·¥Ä¾°É!\n");
+    command("say å¥½!ä½ è¿™å°±åˆ°è¥¿é¢çš„æ¾æž—åŽ»ä¼æœ¨å§!\n");
     me->set_temp("work/kan",1);
     return 1;
 }
@@ -68,19 +68,19 @@ int do_say(string str)
 {   object ob,ob1;
      int money;
     ob=this_player();
-    if (!str||str!="¸ÉÍêÁË") return 0;
+    if (!str||str!="å¹²å®Œäº†") return 0;
     if (ob->query_temp("work/kan")!=2)
-       {    command("say ÏëÀ´Æ­Ç®Ã´£¬ºß!\n");
+       {    command("say æƒ³æ¥éª—é’±ä¹ˆï¼Œå“¼!\n");
              return 0;
         }
     money=1+random(10);
-    command("say ¸ÉµÃºÃ£¬ÕâÊÇÄãµÄ¹¤Ç®.\n");
+    command("say å¹²å¾—å¥½ï¼Œè¿™æ˜¯ä½ çš„å·¥é’±.\n");
     ob1=clone_object("/clone/money/silver");
     ob1->set_amount(money);
     ob1->move(ob);
     ob->start_busy(random(2));
     ob->add("combat_exp",5);
-    message_vision("$NµÝ¸ø$nÒ»Ð©ÒøÁ½!\n",this_object(),ob);
+    message_vision("$Né€’ç»™$nä¸€äº›é“¶ä¸¤!\n",this_object(),ob);
     ob->delete_temp("work/kan");
     return 1;
 } 

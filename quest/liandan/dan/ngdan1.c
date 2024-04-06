@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// puti-zi.c ÆĞÌá×Ó
+// puti-zi.c è©æå­
 
 #include <ansi.h>
 
@@ -14,17 +14,17 @@ void init()
 }
 void create()
 {
-	set_name("ÆĞÌá×Ó", ({"puti zi", "zi"}));
+	set_name("è©æå­", ({"puti zi", "zi"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å¾§Ó¨ÈçÓñµÄÆĞÌá×Ó£¬²É×ÔÁéÉ½·ğ×æ×ùÇ°£¬ÕäÏ¡ÎŞ±È£¬
-ÄËÍòÄêÆĞÌáÊ÷Ö®Êµ£¬¹¦ÄÜ»¯°Ù½Ù£¬¶ÉÇ§ÔÖ£¬ÓëÌìµØÍ¬ÊÙ¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—æ™¶è¹å¦‚ç‰çš„è©æå­ï¼Œé‡‡è‡ªçµå±±ä½›ç¥–åº§å‰ï¼Œçç¨€æ— æ¯”ï¼Œ
+ä¹ƒä¸‡å¹´è©ææ ‘ä¹‹å®ï¼ŒåŠŸèƒ½åŒ–ç™¾åŠ«ï¼Œæ¸¡åƒç¾ï¼Œä¸å¤©åœ°åŒå¯¿ã€‚\n");
 		set("value", 8000);
 		set("medicine", 1);
-                set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("no_drop","è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+                set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 	}
 	setup();
 }
@@ -34,7 +34,7 @@ int do_eat(string arg)
 	int force_limit, neili_limit, force_skill, add_skill, improve;
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	force_limit = me->query_skill("force")*(me->query("con")*2/3);
 	neili_limit = me->query("max_neili");
@@ -43,14 +43,14 @@ int do_eat(string arg)
 	if ( (int)me->query_condition("bonze_drug" ) > 0 )
 	{
 		me->add("max_neili", -(20+random(20)));
-		message_vision(HIR "$NÓÖ³ÔÏÂÒ»¿ÅÆĞÌá×Ó£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(HIR "$Nåˆåƒä¸‹ä¸€é¢—è©æå­ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 	}
 	else if ( neili_limit <= force_limit  )
 	{
 		me->add("max_neili", 20+random(20));
 		me->add("neili", 100);
 
-		message_vision(HIY "$N³ÔÏÂÒ»¿ÅÆĞÌá×Ó£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉºÆµ´ÎŞ±ÈµÄÕæÆøÖ±³å¶¥ÃÅ...\n" NOR, this_player());
+		message_vision(HIY "$Nåƒä¸‹ä¸€é¢—è©æå­ï¼Œé¡¿ç„¶é—´åªè§‰ä¸€è‚¡æµ©è¡æ— æ¯”çš„çœŸæ°”ç›´å†²é¡¶é—¨...\n" NOR, this_player());
 		me->apply_condition("bonze_drug", 100);
 	}
 

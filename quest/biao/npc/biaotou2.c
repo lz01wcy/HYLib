@@ -2,8 +2,8 @@ inherit NPC;
 #include "biaotou.h"
 void create()
 {
-        set_name("ïÚÍ·", ({ "biao tou" }));
-        set("long", "ËûÔ­ÊÇÎäµ±µÜ×Ó£¬ºóÀ´×öÁËïÚÍ·¡£");
+        set_name("é•–å¤´", ({ "biao tou" }));
+        set("long", "ä»–åŸæ˜¯æ­¦å½“å¼Ÿå­ï¼Œåæ¥åšäº†é•–å¤´ã€‚");
         set("age", random(20) + 20);
         set("str", 26);
         set("int", 28);
@@ -43,7 +43,7 @@ void create()
         add_money("gold",2);        set("chat_chance", 30);   
      set("chat_msg", ({
     (: random_move :),
-    "ïÚÍ·à«à«×ÔÓï: ¡°ÏÖÔÚ×ßïÚµÄÊÂ¶ù²»ºÃ×ö°¡£¬½Ù·ËÇ¿µÁµ½´¦¶¼ÊÇ£¬Ò²²»ÖªµÀ¹Ù¼ÒÊÇ³ÔÊ²Ã´µÄ¡£¡±\n",
+    "é•–å¤´å–ƒå–ƒè‡ªè¯­: â€œç°åœ¨èµ°é•–çš„äº‹å„¿ä¸å¥½åšå•Šï¼ŒåŠ«åŒªå¼ºç›—åˆ°å¤„éƒ½æ˜¯ï¼Œä¹Ÿä¸çŸ¥é“å®˜å®¶æ˜¯åƒä»€ä¹ˆçš„ã€‚â€\n",
         (: random_move :)
   } ) ); 
         carry_object("/clone/misc/cloth")->wear();        

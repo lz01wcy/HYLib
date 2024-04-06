@@ -9,15 +9,15 @@ void consider();
 string ask_me();
 void create()
 {
-	set_name("Â³ÓÐ½Å", ({"lu youjiao", "lu", "youjiao"}));
-	set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
-	set("nickname", "ÕÆ°ôÁúÍ·");
-	set("gender", "ÄÐÐÔ");
+	set_name("é²æœ‰è„š", ({"lu youjiao", "lu", "youjiao"}));
+	set("title", "ä¸å¸®ä¹è¢‹é•¿è€");
+	set("nickname", "æŽŒæ£’é¾™å¤´");
+	set("gender", "ç”·æ€§");
         set("beggarlvl",9);
 	set("age", 45);
 	set("long", 
-		"Â³ÓÐ½ÅËäÈ»Îä¹¦Ëã²»µÃ¶¥¼â¸ßÊÖ£¬¿ÉÊÇÔÚ½­ºþÉÏÈ´ÆÄÓÐÉùÍû¡£\n"
-		"ÒòÎªËûÔÚØ¤°ïÖÐÓÐÈÊÓÐÒå£¬ÐÐÊÂ¹âÃ÷ÀÚÂä£¬ÉîµÃºéÆß¹«µÄÆ÷ÖØ¡£\n");
+		"é²æœ‰è„šè™½ç„¶æ­¦åŠŸç®—ä¸å¾—é¡¶å°–é«˜æ‰‹ï¼Œå¯æ˜¯åœ¨æ±Ÿæ¹–ä¸Šå´é¢‡æœ‰å£°æœ›ã€‚\n"
+		"å› ä¸ºä»–åœ¨ä¸å¸®ä¸­æœ‰ä»æœ‰ä¹‰ï¼Œè¡Œäº‹å…‰æ˜Žç£Šè½ï¼Œæ·±å¾—æ´ªä¸ƒå…¬çš„å™¨é‡ã€‚\n");
 	set("attitude", "peaceful");
         set("class", "beggar");
 	set("str", 235);
@@ -39,14 +39,14 @@ void create()
 			set_skill("fengmo-zhang",250);
 	set_skill("liuhe-zhang",250);
 	set_skill("strike",290);
-	set_skill("force", 190); // »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 290); // »ìÌìÆø¹¦
-	set_skill("unarmed", 195); // »ù±¾È­½Å
-	set_skill("xianglong-zhang", 280); // ½µÁúÊ®°ËÕÆ
-	set_skill("dodge", 250); // »ù±¾¶ãÉÁ
-	set_skill("xiaoyaoyou", 250); // åÐÒ£ÓÎ
-	set_skill("parry", 250); // »ù±¾ÕÐ¼Ü
-	set_skill("staff", 255); // »ù±¾¹÷ÕÈ
+	set_skill("force", 190); // åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 290); // æ··å¤©æ°”åŠŸ
+	set_skill("unarmed", 195); // åŸºæœ¬æ‹³è„š
+	set_skill("xianglong-zhang", 280); // é™é¾™åå…«æŽŒ
+	set_skill("dodge", 250); // åŸºæœ¬èº²é—ª
+	set_skill("xiaoyaoyou", 250); // é€é¥æ¸¸
+	set_skill("parry", 250); // åŸºæœ¬æ‹›æž¶
+	set_skill("staff", 255); // åŸºæœ¬æ£æ–
 	set_skill("begging", 250);
 	
 	map_skill("force", "huntian-qigong");
@@ -54,7 +54,7 @@ void create()
 	map_skill("dodge", "xiaoyaoyou");
        set("inquiry",([
                  "job" : (: ask_job :),
-		 "½Ð»¯¼¦" : (: ask_me :),
+		 "å«åŒ–é¸¡" : (: ask_me :),
        ]));
         set("chat_chance_combat", 90);
         set("chat_msg_combat", ({
@@ -69,7 +69,7 @@ void create()
 	set_temp("apply/armor",500);
 	set_temp("apply/damage",400);
         
-	create_family("Ø¤°ï", 18, "¾Å´ü³¤ÀÏ");
+	create_family("ä¸å¸®", 18, "ä¹è¢‹é•¿è€");
 	setup();
 	carry_object("kungfu/class/gaibang/obj/jiaohuaji")->wield();
 }
@@ -77,12 +77,12 @@ void create()
 void attempt_apprentice(object ob)
 {
 	if ( (int)ob->query("int") >= 25 ) {
-		command("say ÎÒÃÇØ¤°ïµÄÎäÒÕÒ»ÏòÒÔ¸ÕÃÍÎªÖ÷£¬" + 
-		RANK_D->query_respect(ob) + "´Ï»Û¹ýÈË£¬ËÆºõ²»ÒËÑ§Ø¤°ïµÄ¹¦·ò£¿");
+		command("say æˆ‘ä»¬ä¸å¸®çš„æ­¦è‰ºä¸€å‘ä»¥åˆšçŒ›ä¸ºä¸»ï¼Œ" + 
+		RANK_D->query_respect(ob) + "èªæ…§è¿‡äººï¼Œä¼¼ä¹Žä¸å®œå­¦ä¸å¸®çš„åŠŸå¤«ï¼Ÿ");
 		return;
 	}
-	command("say ºÃ°É£¬Ï£Íû" + RANK_D->query_respect(ob) +
-	"ÄÜºÃºÃÑ§Ï°±¾ÃÅÎä¹¦£¬½«À´ÔÚ½­ºþÖÐ´³³öÒ»·¬×÷Îª¡£");
+	command("say å¥½å§ï¼Œå¸Œæœ›" + RANK_D->query_respect(ob) +
+	"èƒ½å¥½å¥½å­¦ä¹ æœ¬é—¨æ­¦åŠŸï¼Œå°†æ¥åœ¨æ±Ÿæ¹–ä¸­é—¯å‡ºä¸€ç•ªä½œä¸ºã€‚");
 	command("recruit " + ob->query("id"));
 }
 #include "/kungfu/class/gaibang/gaibang.h"
@@ -92,14 +92,14 @@ string ask_me()
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "Ø¤°ï")
-		return this_player()->query("name") + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ä¸å¸®")
+		return this_player()->query("name") + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
 	if (query("book_count") < 1)
-		return "ÄãÀ´ÍíÁË£¬½Ð»¨¼¦ÒÑ¾­¸ø±ðÈË³ÔÁË!!";
+		return "ä½ æ¥æ™šäº†ï¼Œå«èŠ±é¸¡å·²ç»ç»™åˆ«äººåƒäº†!!";
 	add("book_count", -1);
 	ob = new("kungfu/class/gaibang/obj/jiaohuaji");
 	ob->move(this_player());
-	return "ºé°ïÖ÷£¬¿ÉÊÇ×îÏ²»¶³ÔÕâ¸öµÄ¡£ÄãÄÃÈ¥¸øËûÀÏÈË¼Ò£¬Ëû»áºÜ¸ßÐËµÄ!!";
+	return "æ´ªå¸®ä¸»ï¼Œå¯æ˜¯æœ€å–œæ¬¢åƒè¿™ä¸ªçš„ã€‚ä½ æ‹¿åŽ»ç»™ä»–è€äººå®¶ï¼Œä»–ä¼šå¾ˆé«˜å…´çš„!!";
 }
 
 int hit_ob(object me, object ob, int damage)
@@ -113,6 +113,6 @@ ob->start_busy(12);
         ob->apply_condition("xiezi_poison", 140);
         ob->apply_condition("snake_poison", 140);
         ob->apply_condition("zhizhu_poison", 140);
-        tell_object(ob, HIG "Äã¾õµÃ±»´òÖÐµÄµØ·½Ò»ÕóÂéÑ÷£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«æ‰“ä¸­çš„åœ°æ–¹ä¸€é˜µéº»ç—’ï¼\n" NOR );
 }
 }

@@ -1,4 +1,4 @@
-// 门派武功列表 (by xbd)
+// 闂ㄦ淳姝﹀姛鍒楄〃 (by xbd)
 
 mapping *ps = ({
 	([	"party": "baituo",

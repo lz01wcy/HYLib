@@ -1,6 +1,6 @@
-//yaochu.c Ò©³ú
-//º£ÑóII£¨ÔÆÆğÔÆÂä£©
-//ĞÇĞÇlywin 2000/6/15
+//yaochu.c è¯é”„
+//æµ·æ´‹IIï¼ˆäº‘èµ·äº‘è½ï¼‰
+//æ˜Ÿæ˜Ÿlywin 2000/6/15
 
 #include <ansi.h>
 inherit ITEM;
@@ -12,14 +12,14 @@ void init()
 
 void create()
 {
-	set_name("´óÉ¨Öã", ({"sao zhou", "saozhou"}));
+	set_name("å¤§æ‰«å¸š", ({"sao zhou", "saozhou"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("unit", "æŠŠ");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_put",1);
-		set("long", "ÕâÊÇÒ»°Ñ´óÉ¨Öã£¬Äã¿ÉÒÔÓÃËüÀ´É¨Ñ©£¨saoxue£©¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠå¤§æ‰«å¸šï¼Œä½ å¯ä»¥ç”¨å®ƒæ¥æ‰«é›ªï¼ˆsaoxueï¼‰ã€‚\n");
 		set("value", 0);
 	}
 	setup();
@@ -36,42 +36,42 @@ int maxpot;
 
         if (me->is_busy())
         {
-          tell_object(me,"µÈÄãÃ¦ÍêÁË£¬ÔÙÉ¨°É£¬£¡\n");
+          tell_object(me,"ç­‰ä½ å¿™å®Œäº†ï¼Œå†æ‰«å§ï¼Œï¼\n");
           return 1;
         }
 	if( me->is_fighting() )
         {
-          tell_object(me,"µÈ´òÍêÁË£¬ÔÙÉ¨°É£¬£¡\n");
+          tell_object(me,"ç­‰æ‰“å®Œäº†ï¼Œå†æ‰«å§ï¼Œï¼\n");
           return 1;
         }
 
         if ((me->query("jing") < 100))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖĞ£¬²»¿ÉÒÔÉ¨Ñ©£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œä¸å¯ä»¥æ‰«é›ªï¼\n");
           return 1;
         }
        else
         if ((me->query("neili") < 100 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î£¬²»ÄÜ×ö¹¤£¡\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®ï¼Œä¸èƒ½åšå·¥ï¼\n");
           return 1;
         }
         else
         if ((me->query("qi") < 100 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î£¬²»ÄÜÉ¨Ñ©£¡\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®ï¼Œä¸èƒ½æ‰«é›ªï¼\n");
           return 1;
         }
         else
 	if (environment(me)->query("short") !=me->query_temp("lingxiaojob"))
         {
-          tell_object(me,"²»ÊÇ½ĞÄãµ½ÕâÀïÀ´É¨Ñ©µÄ°É£¡\n");
+          tell_object(me,"ä¸æ˜¯å«ä½ åˆ°è¿™é‡Œæ¥æ‰«é›ªçš„å§ï¼\n");
           return 1;
         }
         else
 	if (!me->query_temp("lingxiao"))
         {
-          tell_object(me,"Ã»½ĞÄãÉ¨Ñ©µÄ°É£¡\n");
+          tell_object(me,"æ²¡å«ä½ æ‰«é›ªçš„å§ï¼\n");
           return 1;
         }
         else
@@ -80,17 +80,17 @@ int maxpot;
         if (random(30)>28 && !environment(me)->query("no_fight")
         && me->query("combat_exp") >800000)
         {
-          tell_object(me,"ºöÈ»£¬¸½½ü³öÀ´Ò»¸ö½­ºş¿Í£¬Ïë¶ÔÄã²»Àû£¡\n");
+          tell_object(me,"å¿½ç„¶ï¼Œé™„è¿‘å‡ºæ¥ä¸€ä¸ªæ±Ÿæ¹–å®¢ï¼Œæƒ³å¯¹ä½ ä¸åˆ©ï¼\n");
                 obj=new(__DIR__"mengbing"); 
 	        obj->do_copy(me,maxpot,1);
-	        obj->set("title",HIY"½­ºş¿Í"NOR);
+	        obj->set("title",HIY"æ±Ÿæ¹–å®¢"NOR);
 	        obj->move(environment(me));
                 obj->kill_ob(me);
                 obj->set("dex",100);
                 me->start_busy(2);
           return 1;
         }
-        message_vision(HIC"$NÄÃÆğ´óÉ¨Öã¿ªÊ¼ÔÚµØÉÏÉ¨ÁËÆğÀ´¡£\n"NOR,me);
+        message_vision(HIC"$Næ‹¿èµ·å¤§æ‰«å¸šå¼€å§‹åœ¨åœ°ä¸Šæ‰«äº†èµ·æ¥ã€‚\n"NOR,me);
         me->add("jing",-me->query("max_jing")/20);
         me->add("qi",-me->query("max_qi")/20);
         me->add("eff_jing",-me->query("max_jing")/20);
@@ -104,7 +104,7 @@ int maxpot;
 
 void destroying(object me)
 {   
-        message_vision(HIG"Ñ©µ¹ÊÇÉ¨ÍêÁË£¬¿ÉÏ§´óÉ¨ÖãÈ´»µÁË¡£\n"NOR,me); 
+        message_vision(HIG"é›ªå€’æ˜¯æ‰«å®Œäº†ï¼Œå¯æƒœå¤§æ‰«å¸šå´åäº†ã€‚\n"NOR,me); 
         me->set_temp("lingxiaook",1);
         destruct(this_object());
 }

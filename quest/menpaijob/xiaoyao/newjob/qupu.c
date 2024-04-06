@@ -4,42 +4,42 @@
 inherit ITEM;
 void create()
 {
-        set_name(YEL "ÇúÆ×" NOR, ({ "qu pu", "pu"}));
+        set_name(YEL "æ›²è°±" NOR, ({ "qu pu", "pu"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "²á");
+                set("unit", "å†Œ");
                 set("long", "
-Ò»²áñÑ¶¤¾«ÃÀµÄÇúÆ×£¬Äã¿ÉÒÔ³ª(chang)ÀïÃæµÄÇú×Ó£º
+ä¸€å†Œè£±é’‰ç²¾ç¾çš„æ›²è°±ï¼Œä½ å¯ä»¥å”±(chang)é‡Œé¢çš„æ›²å­ï¼š
 
-¡¡¡¶ÏãÚ£¡¤ÃúÎÄ¡·(xiangzhong)
-¡¡¡¶¶´ÏÉ¸è¡·(dongxian_ge)
-¡¡¡¶ÂõÚéÌÁ¡¤ÑãÇğ´Ê¡·(maipo_tang)
-¡¡¡¶²¨Ë¹Ğ¡Çú¡·(bosi_xiaoqu)
-¡¡¡¶Ğ¦°Á½­ºş¡·(xiaoao_jianghu)
-¡¡¡¶É½ÆÂÑò¡·(shanpo_yang)
-¡¡¡¶µûÁµ»¨¡·(dielian_hua)
-¡¡¡¶²ÉÉ£×Ó¡·(caisang_zi)
-¡¡¡¶ÎŞË×Äî¡·(wusu_nian)   
-¡¡¡¶¶´ÏÉ¸è¡·(dongxian_ge)
-¡¡¡¶²ÉÉ£×Ó¡·(caisang_zi)
-  ¡¶ÈıÌ¨¡·(san_tai)
-  ¡¶Óù½ÖĞĞ¡·(yujie_xing)
-  ¡¶×í´¹±Ş¡·(zuichui_bian)
-  ¡¶Ë®µ÷¸èÍ·¡·(shuidiao_getou)
-  ¡¶Ô²Ô²Çú¡·(yuanyuan_qu)
-  ¡¶Íûº£³±¡·(wanghai_chao)
-  ¡¶ÎÊÊÀ¼ä  ÇéÎªºÎÎï¡·(wenshi_jian)
-  ¡¶µûÁµ»¨¡·(dielian_hua)
-  ¡¶ÒûÂí³¤³Ç¿ßĞĞ¡·(yinma_changcheng)
-  ¡¶´º½­»¨ÔÂÒ¹¡·(chunjiang_huayueye)
-  ¡¶½«½ø¾Æ¡·(jiangjin_jiu)
-  ¡¶Ğ¦°Á½­ºş¡·(xiaoao_jianghu)
-  ¡¶ÓİÃÀÈË¡·(yu_meiren)
-  ¡¶°×Ñ©¸èËÍÎäÅĞ¹Ù»Ø¾©¡·(baixue_ge)
+ã€€ã€Šé¦™å†¢ãƒ»é“­æ–‡ã€‹(xiangzhong)
+ã€€ã€Šæ´ä»™æ­Œã€‹(dongxian_ge)
+ã€€ã€Šè¿ˆé™‚å¡˜ãƒ»é›ä¸˜è¯ã€‹(maipo_tang)
+ã€€ã€Šæ³¢æ–¯å°æ›²ã€‹(bosi_xiaoqu)
+ã€€ã€Šç¬‘å‚²æ±Ÿæ¹–ã€‹(xiaoao_jianghu)
+ã€€ã€Šå±±å¡ç¾Šã€‹(shanpo_yang)
+ã€€ã€Šè¶æ‹èŠ±ã€‹(dielian_hua)
+ã€€ã€Šé‡‡æ¡‘å­ã€‹(caisang_zi)
+ã€€ã€Šæ— ä¿—å¿µã€‹(wusu_nian)   
+ã€€ã€Šæ´ä»™æ­Œã€‹(dongxian_ge)
+ã€€ã€Šé‡‡æ¡‘å­ã€‹(caisang_zi)
+  ã€Šä¸‰å°ã€‹(san_tai)
+  ã€Šå¾¡è¡—è¡Œã€‹(yujie_xing)
+  ã€Šé†‰å‚é­ã€‹(zuichui_bian)
+  ã€Šæ°´è°ƒæ­Œå¤´ã€‹(shuidiao_getou)
+  ã€Šåœ†åœ†æ›²ã€‹(yuanyuan_qu)
+  ã€Šæœ›æµ·æ½®ã€‹(wanghai_chao)
+  ã€Šé—®ä¸–é—´  æƒ…ä¸ºä½•ç‰©ã€‹(wenshi_jian)
+  ã€Šè¶æ‹èŠ±ã€‹(dielian_hua)
+  ã€Šé¥®é©¬é•¿åŸçªŸè¡Œã€‹(yinma_changcheng)
+  ã€Šæ˜¥æ±ŸèŠ±æœˆå¤œã€‹(chunjiang_huayueye)
+  ã€Šå°†è¿›é…’ã€‹(jiangjin_jiu)
+  ã€Šç¬‘å‚²æ±Ÿæ¹–ã€‹(xiaoao_jianghu)
+  ã€Šè™ç¾äººã€‹(yu_meiren)
+  ã€Šç™½é›ªæ­Œé€æ­¦åˆ¤å®˜å›äº¬ã€‹(baixue_ge)
   
-ÄãÈç¹û¾õµÃ³ªµÃ²»ºÃ£¬¿ÉÒÔÍ£(ting)ÏÂ£¬ÔÙ»ØÈ¥Á·Á·¡£
+ä½ å¦‚æœè§‰å¾—å”±å¾—ä¸å¥½ï¼Œå¯ä»¥åœ(ting)ä¸‹ï¼Œå†å›å»ç»ƒç»ƒã€‚
 \n");
                 set("value", 0);
                 set("material", "silk");
@@ -57,7 +57,7 @@ void init()
 int do_halt()
 {
         if (find_call_out("sing_stage") < 0) return 0;
-        message_vision(HIR"\n$N·¢ÏÖ´ó¼ÒÒ»Á³Í´¿àµÄ±íÇé£¬ŞÏŞÎµØ¿ÈËÔÁËÁ½Éù£¬Í£ÏÂÁËÔëÒô¡£\n"NOR, this_player());
+        message_vision(HIR"\n$Nå‘ç°å¤§å®¶ä¸€è„¸ç—›è‹¦çš„è¡¨æƒ…ï¼Œå°´å°¬åœ°å’³å—½äº†ä¸¤å£°ï¼Œåœä¸‹äº†å™ªéŸ³ã€‚\n"NOR, this_player());
         remove_call_out("sing_stage");
         return 1;
 }
@@ -72,48 +72,48 @@ int do_sing(string arg)
        stage = 0;
        me = this_player();
        ob = this_object();
-       if (find_call_out("sing_stage") >= 0) return notify_fail("ÄãÄÜÍ¬Ê±³ªÁ½Ê×Çú×ÓÂğ£¿\n");
-        if (!arg || arg=="") return notify_fail ("ÄãÏëÎªË­³ªÊ²Ã´°¡£¿\n");
+       if (find_call_out("sing_stage") >= 0) return notify_fail("ä½ èƒ½åŒæ—¶å”±ä¸¤é¦–æ›²å­å—ï¼Ÿ\n");
+        if (!arg || arg=="") return notify_fail ("ä½ æƒ³ä¸ºè°å”±ä»€ä¹ˆå•Šï¼Ÿ\n");
 
         if (sscanf( arg,"%s %s",st1,st2)!=2 )
-           return notify_fail ("chang <Ä³ÈË> <ÇúÃû>\n");
+           return notify_fail ("chang <æŸäºº> <æ›²å>\n");
 
         if (!ob1=present(st1,environment(this_player())))
-          return notify_fail("ÕÒ²»µ½ "+st1+" Õâ¸öÉúÎï.\n");
+          return notify_fail("æ‰¾ä¸åˆ° "+st1+" è¿™ä¸ªç”Ÿç‰©.\n");
 
 if (environment(me)->query("sleep_room"))
-                return notify_fail("ÎÔÊÒÀï³ª¸è£¬»áÓ°Ïì±ğÈËĞİÏ¢¡£\n");
+                return notify_fail("å§å®¤é‡Œå”±æ­Œï¼Œä¼šå½±å“åˆ«äººä¼‘æ¯ã€‚\n");
 
 if( environment(me)->query("no_beg") &&
       environment(me)->query("no_fight") &&
        environment(me)->query("no_steal")) 
-          return notify_fail(HIY"\n²»ÒªÓ°Ïì±ğÈË£¬»¹ÊÇÕÒÒ»¸ö±ğµÄµØ·½°É¡£\n"NOR);
+          return notify_fail(HIY"\nä¸è¦å½±å“åˆ«äººï¼Œè¿˜æ˜¯æ‰¾ä¸€ä¸ªåˆ«çš„åœ°æ–¹å§ã€‚\n"NOR);
 
-        if ( (!( myfam= me->query("family")) || myfam["family_name"] != "åĞÒ£ÅÉ"))
-          return notify_fail("Ö»ÓĞåĞÒ£ÅÉµÜ×Ó²ÅÓĞÕâ¸ö×Ê¸ñ£¡\n");
+        if ( (!( myfam= me->query("family")) || myfam["family_name"] != "é€é¥æ´¾"))
+          return notify_fail("åªæœ‰é€é¥æ´¾å¼Ÿå­æ‰æœ‰è¿™ä¸ªèµ„æ ¼ï¼\n");
 if( !ob1->is_character()
 || !living(ob1))
-return notify_fail("Ö»ÄÜ¶ÔÕı³£ÈËµ¯ÇÙ³ª¸è¡£\n");
+return notify_fail("åªèƒ½å¯¹æ­£å¸¸äººå¼¹ç´å”±æ­Œã€‚\n");
 
-    if (me->query("gender")=="ÄĞĞÔ" && ob1->query("gender") !="Å®ĞÔ" ) 
-          return notify_fail("ÄãÒ»¸ö´óÄĞÈË£¬ÎªÒ»¸ö´óÄĞÈËµ¯ÇÙ³ª¸è?».\n");
-    if (me->query("gender")=="Å®ĞÔ" && ob1->query("gender") !="ÄĞĞÔ" ) 
-          return notify_fail("ÄãÒ»¸ö´ó¹ÃÄï£¬¸ø±ğµÄ¹ÃÄïµ¯ÇÙ³ª¸è?».\n");
+    if (me->query("gender")=="ç”·æ€§" && ob1->query("gender") !="å¥³æ€§" ) 
+          return notify_fail("ä½ ä¸€ä¸ªå¤§ç”·äººï¼Œä¸ºä¸€ä¸ªå¤§ç”·äººå¼¹ç´å”±æ­Œ?.\n");
+    if (me->query("gender")=="å¥³æ€§" && ob1->query("gender") !="ç”·æ€§" ) 
+          return notify_fail("ä½ ä¸€ä¸ªå¤§å§‘å¨˜ï¼Œç»™åˆ«çš„å§‘å¨˜å¼¹ç´å”±æ­Œ?.\n");
 
 song=st2;
 me->set_temp("singn",st1);
-       if(!arg) return notify_fail("ÄãÏë³ªÊ²Ã´£¿\n");
+       if(!arg) return notify_fail("ä½ æƒ³å”±ä»€ä¹ˆï¼Ÿ\n");
         while (i--) if (song == qupu[i]["name"]) break;
-        if (i<0) return notify_fail("ÇúÆ×Àï»¹Ã»ÓĞÄãÏë³ªµÄÇú×Ó¡£\n");
+        if (i<0) return notify_fail("æ›²è°±é‡Œè¿˜æ²¡æœ‰ä½ æƒ³å”±çš„æ›²å­ã€‚\n");
         if(me->is_busy())
-           return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
-        message_vision(HIG"$N¶Ô$nµãÁËµãÍ·¡£\n\n"NOR,me, ob1);
-        message_vision(HIG"$NÄÃÆğ¹ÅÇÙ·ÅÔÚ»³ÖĞÂıÂıµÄ±ßµ¯±ß³ªÁËÆğÀ´£¬ÇÙÉùÇå¶ø²»µ­£¬Ïì¶ø²»Ë×£¬ÁîÈË²»¾õÌÕ×íÆäÖĞ¡£\n\n"NOR,me, ob);
+           return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
+        message_vision(HIG"$Nå¯¹$nç‚¹äº†ç‚¹å¤´ã€‚\n\n"NOR,me, ob1);
+        message_vision(HIG"$Næ‹¿èµ·å¤ç´æ”¾åœ¨æ€€ä¸­æ…¢æ…¢çš„è¾¹å¼¹è¾¹å”±äº†èµ·æ¥ï¼Œç´å£°æ¸…è€Œä¸æ·¡ï¼Œå“è€Œä¸ä¿—ï¼Œä»¤äººä¸è§‰é™¶é†‰å…¶ä¸­ã€‚\n\n"NOR,me, ob);
 if (me->query_temp("singsong"))
 {
 if (qupu[i]["name"]!=me->query_temp("singsong"))
 {
-message_vision(HIW"²»ÊÇ½Ğ$NÁ·Ï°"+me->query_temp("singsong")+"µÄÂğ?\n"NOR, me);
+message_vision(HIW"ä¸æ˜¯å«$Nç»ƒä¹ "+me->query_temp("singsong")+"çš„å—?\n"NOR, me);
 }
 }
       call_out("sing_stage", 2, me, stage, i, sizeof(qupu[i]["context"]));
@@ -134,20 +134,20 @@ if (me->query("combat_exp") >1000000)
 else    call_out("sing_stage", 1, me, ++stage, i, size);
    }
    else {
-         message_vision(HIG"\n¹ıÁËÒ»»á£¬$NÊÖÖĞÇÙÉù½¥»º½¥Çá£¬ËÆºõÁ÷Ë®ãéãéÔ¶È¥£¬ÖÕÓÚ¸èÍêÇúÖÕ£¬¼ÅÈ»ÎŞÉù¡£\n"NOR, me);
+         message_vision(HIG"\nè¿‡äº†ä¸€ä¼šï¼Œ$Næ‰‹ä¸­ç´å£°æ¸ç¼“æ¸è½»ï¼Œä¼¼ä¹æµæ°´æ±©æ±©è¿œå»ï¼Œç»ˆäºæ­Œå®Œæ›²ç»ˆï¼Œå¯‚ç„¶æ— å£°ã€‚\n"NOR, me);
 if (!me)return;
 if (!environment(me)) return;
         if (!ob1=present(me->query_temp("singn"),environment(this_player())))
 {
-message_vision(HIY"Ìı$N¸èµÄÈË×ßÁË£¬¿´À´$NÊÇ°×Ã¦ÁË!\n\n"NOR,me);
-          return notify_fail(HIY"ÌıÄã¸èµÄÈË×ßÁË£¬¿´À´ÄãÊÇ°×Ã¦ÁË.\n"NOR);
+message_vision(HIY"å¬$Næ­Œçš„äººèµ°äº†ï¼Œçœ‹æ¥$Næ˜¯ç™½å¿™äº†!\n\n"NOR,me);
+          return notify_fail(HIY"å¬ä½ æ­Œçš„äººèµ°äº†ï¼Œçœ‹æ¥ä½ æ˜¯ç™½å¿™äº†.\n"NOR);
 }
 if (qupu[i]["name"]==me->query_temp("singsong"))
 {
         if (!ob1=present(me->query_temp("singn"),environment(this_player())))
 {
-message_vision(HIY"Ìı$N¸èµÄÈË×ßÁË£¬¿´À´$NÊÇ°×Ã¦ÁË!\n\n"NOR,me);
-          return notify_fail(HIY"ÌıÄã¸èµÄÈË×ßÁË£¬¿´À´ÄãÊÇ°×Ã¦ÁË.\n"NOR);
+message_vision(HIY"å¬$Næ­Œçš„äººèµ°äº†ï¼Œçœ‹æ¥$Næ˜¯ç™½å¿™äº†!\n\n"NOR,me);
+          return notify_fail(HIY"å¬ä½ æ­Œçš„äººèµ°äº†ï¼Œçœ‹æ¥ä½ æ˜¯ç™½å¿™äº†.\n"NOR);
 }
 b1=ob1->query("per");
 b2=ob1->query("per")*2/3;
@@ -160,9 +160,9 @@ b2=random(b2);
 
 me->add("combat_exp", 12+b1);
 me->add("potential", 8+b2);
-message_vision(HIG"$nÌıÁËºó£¬ĞÄ¿õÉñÒÆ¡£¶Ô$NÎ¢Î¢Ò»Ğ¦!\n\n"NOR,me, ob1);
-message_vision("$NµÄ¾­Ñé¼ÓÁË"+chinese_number(12+b1)+"µã¡£\n", me);
-message_vision("$NµÄÇ±ÄÜ¼ÓÁË"+chinese_number(8+b2)+"µã¡£\n", me);
+message_vision(HIG"$nå¬äº†åï¼Œå¿ƒæ—·ç¥ç§»ã€‚å¯¹$Nå¾®å¾®ä¸€ç¬‘!\n\n"NOR,me, ob1);
+message_vision("$Nçš„ç»éªŒåŠ äº†"+chinese_number(12+b1)+"ç‚¹ã€‚\n", me);
+message_vision("$Nçš„æ½œèƒ½åŠ äº†"+chinese_number(8+b2)+"ç‚¹ã€‚\n", me);
 me->delete_temp("singsong");
 me->delete_temp("singn");
 }

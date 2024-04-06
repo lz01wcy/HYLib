@@ -3,12 +3,12 @@ int ask_me();
 #include <ansi.h>
 void create()
 {
-        set_name("ÊØ³Ç»¤ÎÀ", ({ "hu wei", "wei"}) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("å®ˆåŸŽæŠ¤å«", ({ "hu wei", "wei"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-//      set("title", "Ø¤°ï");
+//      set("title", "ä¸å¸®");
         set("long",
-                "ÕâÎ»ÈËÎïÕýÐ¦ßäßäµØ¿´×ÅÄã¡£\n");
+                "è¿™ä½äººç‰©æ­£ç¬‘å’ªå’ªåœ°çœ‹ç€ä½ ã€‚\n");
         set("combat_exp", 200000);
         set("attitude", "friendly");
         
@@ -29,7 +29,7 @@ void create()
         set_skill("literate",300);
         
         
-        create_family("Ø¤°ï",14,"µÜ×Ó");
+        create_family("ä¸å¸®",14,"å¼Ÿå­");
         setup();
 
         carry_object("/clone/misc/cloth")->wear();
@@ -56,7 +56,7 @@ void init()
         ::init();
           if( interactive(ob = this_player()) && !is_fighting() && this_player()->query_temp("xhjob_start") ) {
                    command("sweat");
-                   write("¿ìÀ´£¬ÎÒ¶¼Ã¦²»¹ýÀ´ÁË¡£¿ìÀ´ÊØ(shouwei)×¡ÕâÀï£¬²»ÄÜÈÃµÐÈËÍ¨¹ý¡£\n");
+                   write("å¿«æ¥ï¼Œæˆ‘éƒ½å¿™ä¸è¿‡æ¥äº†ã€‚å¿«æ¥å®ˆ(shouwei)ä½è¿™é‡Œï¼Œä¸èƒ½è®©æ•Œäººé€šè¿‡ã€‚\n");
               }
 }
 
@@ -69,10 +69,10 @@ int ask_me()
                 me=this_player();
                 family=(mapping)me->query("family");
 
-                if ( !family || family["family_name"]!="Ø¤°ï")      return 0;
+                if ( !family || family["family_name"]!="ä¸å¸®")      return 0;
                 if ( me->query_temp("xhjob_start") || me->query_temp("shouwei") )  {
                 command("poor "+me->query("id"));
-                command("say ºÃ°É£¡"+me->query("name")+"Äã×ß°É¡£");
+                command("say å¥½å§ï¼"+me->query("name")+"ä½ èµ°å§ã€‚");
                 me->add("combat_exp",-(me->query("combat_exp")/1000));
                 me->add("potential",-(me->query("potential")/1000));
                 me->clear_condition("xhquest");

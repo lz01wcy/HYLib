@@ -4,10 +4,10 @@ inherit ROOM;
 int i=0;
 void create ()
 {
-  set ("short", "ËÉÁÖ");
+  set ("short", "æ¾æ—");
   set ("long", @LONG
-Ò»Æ¬ºÃ´óµÄËÉÁÖ,ÓĞ¼¸¸ö¹¤ÈËÕıÓĞÌõ²»ÎÉµØ·¥Ä¾,ÓÖ¾â³ÉÏàÍ¬´óĞ¡µÄ 
-Ä¾ÁÏ,Ò»¶Î¶ÎµÄ¶Ñ³ÉÁËÒ»×ùĞ¡É½,ÕâÀïµÄËÉÄ¾ÊÇ×©Ò¤µÄÖ÷ÒªÈ¼ÁÏ. 
+ä¸€ç‰‡å¥½å¤§çš„æ¾æ—,æœ‰å‡ ä¸ªå·¥äººæ­£æœ‰æ¡ä¸ç´Šåœ°ä¼æœ¨,åˆé”¯æˆç›¸åŒå¤§å°çš„ 
+æœ¨æ–™,ä¸€æ®µæ®µçš„å †æˆäº†ä¸€åº§å°å±±,è¿™é‡Œçš„æ¾æœ¨æ˜¯ç –çª‘çš„ä¸»è¦ç‡ƒæ–™. 
 LONG);
 
   set("outdoors", "jindezheng");
@@ -33,20 +33,20 @@ int do_kan(string str)
 { 
       object me,ob;
       me=this_player();
-    if ((!str)||(str!="wood")) return notify_fail("ÄãÒª¿³Ê²Ã´?\n");
+    if ((!str)||(str!="wood")) return notify_fail("ä½ è¦ç ä»€ä¹ˆ?\n");
     if (!(ob=me->query_temp("weapon"))||(string)ob->query("id")!= "famuaxe")
-         return notify_fail("»¹ÊÇÏÈÈ¥ÕÒ°Ñ¿³Ä¾¸«×Ó°É!\n");
+         return notify_fail("è¿˜æ˜¯å…ˆå»æ‰¾æŠŠç æœ¨æ–§å­å§!\n");
 if( me->query("qi") < 20)
-return notify_fail("Äã¸É²»¶¯»îÁË!\n");
+return notify_fail("ä½ å¹²ä¸åŠ¨æ´»äº†!\n");
 if( me->query("jing") < 20)
-return notify_fail("Äã¸É²»¶¯»îÁË!\n");
+return notify_fail("ä½ å¹²ä¸åŠ¨æ´»äº†!\n");
 
 //   if (!objectp(weapon = me->query_temp("weapon")) || weapon->query("id")!= "famuaxe")
-//	return notify_fail("ÄãÖ»ÄÜÓÃ×¨ÃÅµÄ¿³Ä¾Í·µÄ¸«×Ó£¡\n");
+//	return notify_fail("ä½ åªèƒ½ç”¨ä¸“é—¨çš„ç æœ¨å¤´çš„æ–§å­ï¼\n");
 
     if (me->query_temp("work/kan")==1)
       {   
-          message_vision("$NÂÕÆğ´ó¸«¿³ÆğÊ÷À´!\n",me);
+          message_vision("$NæŠ¡èµ·å¤§æ–§ç èµ·æ ‘æ¥!\n",me);
           i=++i;
           if (i<8)
            {
@@ -56,18 +56,18 @@ return notify_fail("Äã¸É²»¶¯»îÁË!\n");
            }
           me->set_temp("work/kan",2);
           me->start_busy(random(6));
-          message_vision("$N¿´×Å¶ÑµÃ¸ß¸ßµÄËÉ²ñ£¬Óõ³öÒ»¿Ú³¤Æø£¬ÖÕÓÚ¸ÉÍêÁË!\n",me);
+          message_vision("$Nçœ‹ç€å †å¾—é«˜é«˜çš„æ¾æŸ´ï¼Œåå‡ºä¸€å£é•¿æ°”ï¼Œç»ˆäºå¹²å®Œäº†!\n",me);
           i=0;
             return 1;
        }
-     if (me->query_temp("work/kan")==2) return notify_fail("Äã¸Õ°Ñ»î¸ÉÍê£¬»¹ÊÇÏÈÈ¥Áì¹¤Ç®°É!\n");
-     return notify_fail("Äã¾õµÃ»¹ÊÇÓ¦¸ÃÏÈÏò¼à¹¤´ò¸öÕĞºô!\n");
+     if (me->query_temp("work/kan")==2) return notify_fail("ä½ åˆšæŠŠæ´»å¹²å®Œï¼Œè¿˜æ˜¯å…ˆå»é¢†å·¥é’±å§!\n");
+     return notify_fail("ä½ è§‰å¾—è¿˜æ˜¯åº”è¯¥å…ˆå‘ç›‘å·¥æ‰“ä¸ªæ‹›å‘¼!\n");
 }
 int valid_leave(object me, string dir)
 {   object ob;
        ob=present("famuaxe",me);   
     if (dir=="east"&&ob)
-            {   message_vision(HIR+"$N¶ªÏÂÒ»°Ñ´ó¸«Í·£¬×ªÉí×ß³öÁËËÉÁÖ!\n"+NOR,me);
+            {   message_vision(HIR+"$Nä¸¢ä¸‹ä¸€æŠŠå¤§æ–§å¤´ï¼Œè½¬èº«èµ°å‡ºäº†æ¾æ—!\n"+NOR,me);
                 ob->move(environment(me));
                 i=0;
                  return 1;

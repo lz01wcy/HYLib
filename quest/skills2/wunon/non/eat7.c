@@ -1,4 +1,4 @@
-// Ã«Ëñ /clone/eat/food/mao_sun.c
+// æ¯›ç¬‹ /clone/eat/food/mao_sun.c
 // by lala, 1997-12-16
 
 #include <ansi.h>
@@ -9,17 +9,17 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name(GRN"Î÷¹Ï"NOR, ({"xi gua", "xigua","watermelon"}));
+    set_name(GRN"è¥¿ç“œ"NOR, ({"xi gua", "xigua","watermelon"}));
     set_weight(30000);
-    set("long", "Ò»¸öºÜ´óµÄÎ÷¹Ï£¬ºÚ×ÑºìÈ¿£¬ºÙ¡«¡«¿ì³Ô°É£¡");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+    set("long", "ä¸€ä¸ªå¾ˆå¤§çš„è¥¿ç“œï¼Œé»‘ç±½çº¢ç“¤ï¼Œå˜¿ï½ï½å¿«åƒå§ï¼");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
 
 		set("no_put",1);
 
-        set( "unit", "¸ö" );
+        set( "unit", "ä¸ª" );
         set( "value", 600 + random( 500 ) );
         set( "food_remaining", 5 );
         set( "food_supply", 25 );

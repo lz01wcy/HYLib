@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIW"°×ÓñÀÏ»¢"NOR, ({ "tiger" }) );
+    set_name(HIW"ç™½ç‰è€è™"NOR, ({ "tiger" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-	          set("unit", "±¾");
+	          set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»¡£\n");
+            set("long", "ç¥ä¹¦ä¹‹ä¸€ã€‚\n");
           }
 
     setup();

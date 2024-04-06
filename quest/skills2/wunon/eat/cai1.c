@@ -6,10 +6,10 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name(GRN"Êß²Ë"NOR, ({"shu cai", "cai"}));
+    set_name(GRN"è”¬èœ"NOR, ({"shu cai", "cai"}));
     set_weight(5000);
-    set("long", "Ò»ÅÌÉÏºÃµÄÊß²Ë\n");
-    set("unit", "ÅÌ");
+    set("long", "ä¸€ç›˜ä¸Šå¥½çš„è”¬èœ\n");
+    set("unit", "ç›˜");
         set( "value", 2000 );
         set( "food_remaining", 5 );
         set( "food_supply", 25 );

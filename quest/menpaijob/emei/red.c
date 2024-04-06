@@ -3,9 +3,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"Ã÷½ÌÁîÅÆ"NOR, ({"mingjiao ling"}));
-        set("unit", "¿é");
-        set("long", "Ò»¿ì´ÓÃ÷½ÌÊ×ÁìÉíÉÏÇÀÀ´µÄÁîÅÆ¡£\n");
+        set_name(HIR"æ˜æ•™ä»¤ç‰Œ"NOR, ({"mingjiao ling"}));
+        set("unit", "å—");
+        set("long", "ä¸€å¿«ä»æ˜æ•™é¦–é¢†èº«ä¸ŠæŠ¢æ¥çš„ä»¤ç‰Œã€‚\n");
         set("value", 0);
         setup();
 }

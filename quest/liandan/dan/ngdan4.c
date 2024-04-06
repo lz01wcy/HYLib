@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// sheli-zii.c ÉáÀû×Ó
+// sheli-zii.c èˆåˆ©å­
 
 #include <ansi.h>
 
@@ -15,14 +15,14 @@ void init()
 
 void create()
 {
-	set_name("ÉáÀû×Ó", ({"sheli zi", "zi"}));
+	set_name("èˆåˆ©å­", ({"sheli zi", "zi"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å»î·ğ×ø»¯µÄÉáÀû×Ó£¬Ğ¡Ö¸¼â´óĞ¡£¬É«·º»Ò°×£¬ÒşÒşÓĞ±¦¹âÁ÷¶¯¡£\n");
-//		set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-//                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—æ´»ä½›ååŒ–çš„èˆåˆ©å­ï¼Œå°æŒ‡å°–å¤§å°ï¼Œè‰²æ³›ç°ç™½ï¼Œéšéšæœ‰å®å…‰æµåŠ¨ã€‚\n");
+//		set("no_drop","è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+//                set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 		set("value", 8000);
 		set("medicine", 1);
 	}
@@ -36,7 +36,7 @@ int do_eat(string arg)
 
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	add = 10+random(20);
 	
@@ -44,12 +44,12 @@ int do_eat(string arg)
 		me->add("max_jingli", -add);
 		me->add("eff_jingli", -add);
 		me->apply_condition("bonze_drug", 80);
-	message_vision(HIR "$N³ÔÏÂÒ»¿ÅÉáÀû×Ó£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+	message_vision(HIR "$Nåƒä¸‹ä¸€é¢—èˆåˆ©å­ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
 	me->unconcious();
 	destruct(this_object());
 	}
 	else {
-		message_vision(HIY "$N³ÔÏÂÒ»¿ÅÉáÀû×Ó£¬ÓÍÈ»¼äÖ»¾õÄÔ´üÀï×¢½øÁËÒ»ÂÆÇåĞÂÖ®Æø...\n" NOR, this_player());
+		message_vision(HIY "$Nåƒä¸‹ä¸€é¢—èˆåˆ©å­ï¼Œæ²¹ç„¶é—´åªè§‰è„‘è¢‹é‡Œæ³¨è¿›äº†ä¸€ç¼•æ¸…æ–°ä¹‹æ°”...\n" NOR, this_player());
                 me->add("max_jingli", add);
 		me->add("eff_jingli", add);
 		me->apply_condition("bonze_drug", 80);

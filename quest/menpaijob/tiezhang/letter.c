@@ -4,10 +4,10 @@ int consider_lv(object ob,int a);
 void to_rob();
 void create()
 {
-        set_name(HIR"È°½µÊé"NOR, ({"xin", "letter"}));
+        set_name(HIR"åŠé™ä¹¦"NOR, ({"xin", "letter"}));
         set("long",
-               "ÕâÊÇÌúÕÆ°ïÍĞ¸¶ÄãµÄÖØÒªÈ°½µÊé¡£\n");
-        set("unit", "·â");
+               "è¿™æ˜¯é“æŒå¸®æ‰˜ä»˜ä½ çš„é‡è¦åŠé™ä¹¦ã€‚\n");
+        set("unit", "å°");
         set("weight", 5);
         set("no_drop", 1);
         set("no_get", 1);
@@ -31,20 +31,20 @@ int b;
 string targ;
 int exp,pot;
         if (!arg||!ob=present(arg,environment(me)))
-                return notify_fail("ÄãÒª°ÑÈ°½µÊéËÍ¸øË­£¿\n");
+                return notify_fail("ä½ è¦æŠŠåŠé™ä¹¦é€ç»™è°ï¼Ÿ\n");
         targ=ob->query("name");
-if ( targ != me->query("quest/quest") ) return notify_fail("ÕâÊÇËÍ¸ø"+me->query("quest/quest")+"µÄÈ°½µÊé£¬ÄãÔõÃ´ÄÜËæ±ãÂÒ¸øÄØ£¿\n");
+if ( targ != me->query("quest/quest") ) return notify_fail("è¿™æ˜¯é€ç»™"+me->query("quest/quest")+"çš„åŠé™ä¹¦ï¼Œä½ æ€ä¹ˆèƒ½éšä¾¿ä¹±ç»™å‘¢ï¼Ÿ\n");
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
      if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
-        if (userp(ob)) return notify_fail("ÄãÅª´íÈËÁË°É£¿\n"); //Íæ¼Ò¿ÉÄÜÓĞÏàÍ¬ÓÚNPCµÄÃû×Ö
+        if (userp(ob)) return notify_fail("ä½ å¼„é”™äººäº†å§ï¼Ÿ\n"); //ç©å®¶å¯èƒ½æœ‰ç›¸åŒäºNPCçš„åå­—
         if ( (int) me->query("task_time") < time() )
         {
-             return notify_fail(targ+"ÀäÀäµØËµ£º¡°ÄãÀ´ÍíÁË,ÎÒÒÑ¾­ÊÕµ¹±ğÈËËÍÀ´µÄÈ°½µÊéÁË£¡¡±\n");
+             return notify_fail(targ+"å†·å†·åœ°è¯´ï¼šâ€œä½ æ¥æ™šäº†,æˆ‘å·²ç»æ”¶å€’åˆ«äººé€æ¥çš„åŠé™ä¹¦äº†ï¼â€\n");
         }
-        tell_object(me,"Äã°ÑÈ°½µÊé½»¸øÁË"+targ+"¡£\n" NOR );
+        tell_object(me,"ä½ æŠŠåŠé™ä¹¦äº¤ç»™äº†"+targ+"ã€‚\n" NOR );
         if (me->query("tzjob") == 2)        
 {
         i=me->query_skill("force");
@@ -82,8 +82,8 @@ if (me->query("combat_exp") > 8000000)
 obn->set("chat_chance_combat", 40);
 }
         obn->move(environment(me));
-        message_vision("\n" + HIW + "Í»È»Ò»ÌõÈËÓ°Ïò$NÆËÁË¹ıÀ´¡£\n"NOR, me);
-        message_vision("\n" + HIR + "$n¶Ô$N´óºÈÒ»Éù£º¡°ÄãÕâ¸öÌúÕÆ°ïµÄ×ß¹·£¬»¹²»ÊÜËÀ£¡¡±\n"NOR, me, obn);
+        message_vision("\n" + HIW + "çªç„¶ä¸€æ¡äººå½±å‘$Næ‰‘äº†è¿‡æ¥ã€‚\n"NOR, me);
+        message_vision("\n" + HIR + "$nå¯¹$Nå¤§å–ä¸€å£°ï¼šâ€œä½ è¿™ä¸ªé“æŒå¸®çš„èµ°ç‹—ï¼Œè¿˜ä¸å—æ­»ï¼â€\n"NOR, me, obn);
         me->kill_ob(obn);
         me->set("tzjob",1);
         obn->kill_ob(me);
@@ -102,9 +102,9 @@ if (pot > 400) pot=400;
 
         if (me->query("tzjob") == 0)               
 {
-        tell_object(me,HIW""+targ+"Á³ÉÏÒ»Õóºì,Ò»Õó°×µÀ£ºÖªµÀÁË....£¬Äã±»½±ÀøÁË£º\n"
-        +chinese_number(exp)+"µã¾­ÑéÖµ¡£\n"
-        +chinese_number(pot)+"µãÇ±ÄÜ¡£\n\n"NOR);
+        tell_object(me,HIW""+targ+"è„¸ä¸Šä¸€é˜µçº¢,ä¸€é˜µç™½é“ï¼šçŸ¥é“äº†....ï¼Œä½ è¢«å¥–åŠ±äº†ï¼š\n"
+        +chinese_number(exp)+"ç‚¹ç»éªŒå€¼ã€‚\n"
+        +chinese_number(pot)+"ç‚¹æ½œèƒ½ã€‚\n\n"NOR);
         me->add("combat_exp",exp);
         me->add("potential",pot);
         me->set_temp("tufei",0);
@@ -113,7 +113,7 @@ if (pot > 400) pot=400;
         destruct(this_object());
         return 1;
 }
-	message_vision(HIR"ÎÒ²»ÒªÕâ¶«Î÷£¡\n"NOR,me);
+	message_vision(HIR"æˆ‘ä¸è¦è¿™ä¸œè¥¿ï¼\n"NOR,me);
 }
 void go()
 {	
@@ -145,7 +145,7 @@ void to_rob()
 	maxskill=me->query_skill("force");
 if (!maxskill) maxskill=10;
 	maxexp=me->query("combat_exp");
-	message_vision(HIR"ºöÈ»¼äÌø³öÒ»Èº½Ù·Ë£¡\n"NOR,this_object());
+	message_vision(HIR"å¿½ç„¶é—´è·³å‡ºä¸€ç¾¤åŠ«åŒªï¼\n"NOR,this_object());
 	for (i=0;i<=1;i++)
 	{
 
@@ -157,7 +157,7 @@ if (!maxskill) maxskill=10;
                 robber->set_skill("sword",maxskill*1/2);
                 robber->set_skill("parry",maxskill*1/2);        
                 robber->set_skill("dodge",maxskill*1/2);        
-  	        robber->set("title",HIR"½­ÄÏ´óµÁ"NOR);
+  	        robber->set("title",HIR"æ±Ÿå—å¤§ç›—"NOR);
 		 if(objectp(present("biaoshi", environment(this_player()))))
 		{	robber->kill_ob(present("biaoshi",environment(this_player())));
 			present("biaoshi",environment(this_player()))->kill_ob(robber);}

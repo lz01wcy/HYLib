@@ -1,6 +1,6 @@
-//yaochu.c Ò©³ú
-//º£ÑóII£¨ÔÆÆğÔÆÂä£©
-//ĞÇĞÇlywin 2000/6/15
+//yaochu.c è¯é”„
+//æµ·æ´‹IIï¼ˆäº‘èµ·äº‘è½ï¼‰
+//æ˜Ÿæ˜Ÿlywin 2000/6/15
 
 #include <ansi.h>
 inherit ITEM;
@@ -16,15 +16,15 @@ void init()
 
 void create()
 {
-	set_name("Ò©³ú", ({"yao chu", "chu"}));
+	set_name("è¯é”„", ({"yao chu", "chu"}));
         set_temp("workchu", 8);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("unit", "æŠŠ");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_put",1);
-		set("long", "ÕâÊÇÒ»°ÑÆÆÒ©³ú£¬Äã¿ÉÒÔÓÃËüÀ´ÍÚÒ©£¨wayao£©¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠç ´è¯é”„ï¼Œä½ å¯ä»¥ç”¨å®ƒæ¥æŒ–è¯ï¼ˆwayaoï¼‰ã€‚\n");
 		set("value", 0);
 	}
 	setup();
@@ -46,11 +46,11 @@ int filei;
 //location = roomlines[random(sizeof(roomlines))];
 //write location;
 room=environment(me)->query("long");
-filei=strsrch(room,"É½ÖĞ");
-if (filei<=0) filei=strsrch(room,"¸ßÉ½");
-if (filei<=0) filei=strsrch(room,"É­ÁÖ");
-if (filei<=0) filei=strsrch(room,"ÏªË®");
-if (filei<=0) filei=strsrch(room,"²İÔ­");
+filei=strsrch(room,"å±±ä¸­");
+if (filei<=0) filei=strsrch(room,"é«˜å±±");
+if (filei<=0) filei=strsrch(room,"æ£®æ—");
+if (filei<=0) filei=strsrch(room,"æºªæ°´");
+if (filei<=0) filei=strsrch(room,"è‰åŸ");
 
 	if (filei >0 && random(2)==0)
 {
@@ -58,17 +58,17 @@ if (filei<=0) filei=strsrch(room,"²İÔ­");
 }
   	
 	if( file = environment(me)->query("no_fight"))
-		return notify_fail("ÕâÀïµÄÒ©²İÔçÒÑ±»ÈËÍÚ¹âÁË¡£\n");
+		return notify_fail("è¿™é‡Œçš„è¯è‰æ—©å·²è¢«äººæŒ–å…‰äº†ã€‚\n");
 
 if( environment(me)->query("outdoors")=="migong")
-return notify_fail("ÕâÀïµÄÒ©²İÔçÒÑ±»ÈËÍÚ¹âÁË¡£\n");
+return notify_fail("è¿™é‡Œçš„è¯è‰æ—©å·²è¢«äººæŒ–å…‰äº†ã€‚\n");
 
 if( file = environment(me)->query_temp("wayaono"))
-return notify_fail("ÕâÀïµÄÒ©²İÔçÒÑ±»ÈËÍÚ¹âÁË¡£\n");
+return notify_fail("è¿™é‡Œçš„è¯è‰æ—©å·²è¢«äººæŒ–å…‰äº†ã€‚\n");
 
 //tell_object(me,location);
-//if (filei <=0) tell_object(me,"ÎŞÒ©");
-//if (filei >0) tell_object(me,"ÓĞÒ©");
+//if (filei <=0) tell_object(me,"æ— è¯");
+//if (filei >0) tell_object(me,"æœ‰è¯");
 //tell_object(me,filei);
 //        ob1 = new(location);
 //        ob1->move(me);
@@ -76,12 +76,12 @@ return notify_fail("ÕâÀïµÄÒ©²İÔçÒÑ±»ÈËÍÚ¹âÁË¡£\n");
 
         if (me->is_busy())
         {
-          tell_object(me,"µÈÄãÃ¦ÍêÁË£¬ÔÙÍÚ°É£¬£¡\n");
+          tell_object(me,"ç­‰ä½ å¿™å®Œäº†ï¼Œå†æŒ–å§ï¼Œï¼\n");
           return 1;
         }
 	if( me->is_fighting() )
         {
-          tell_object(me,"µÈ´òÍêÁË£¬ÔÙÍÚ°É£¬£¡\n");
+          tell_object(me,"ç­‰æ‰“å®Œäº†ï¼Œå†æŒ–å§ï¼Œï¼\n");
           return 1;
         }
 
@@ -92,31 +92,31 @@ if (environment(me))
         || present("jin she", environment(me))
         || present("fu she", environment(me)))
         {  
-          tell_object(me,"ÏÈ°Ñ¶¾Éß¸Éµô°É£¡\n");
+          tell_object(me,"å…ˆæŠŠæ¯’è›‡å¹²æ‰å§ï¼\n");
           return 1;
         }
 }
         if ((me->query("jing") < 20))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖĞ£¬²»¿ÉÒÔÍÚÒ©£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œä¸å¯ä»¥æŒ–è¯ï¼\n");
           return 1;
         }
         else
         if ((me->query("qi") < 30 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î£¬²»ÄÜÍÚÒ©£¡\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®ï¼Œä¸èƒ½æŒ–è¯ï¼\n");
           return 1;
         }
         else
         if ((int)me->query_condition("skill2_busy"))  
             {
-         tell_object(me,"Äã¸Õ¸Õ²Å¸É¹ı»î,ÒªĞİÏ¢Ò»»áÁË£¡\n");
+         tell_object(me,"ä½ åˆšåˆšæ‰å¹²è¿‡æ´»,è¦ä¼‘æ¯ä¸€ä¼šäº†ï¼\n");
                       return 1;
             }
         else          
 	if (environment(me)->query_temp("wayao1") >= 1)
         {
-        message_vision(HIC"$N»Ó¶¯Ò©³ú¿ªÊ¼ÔÚµØÉÏÍÚÁËÆğÀ´¡£\n"NOR,me);
+        message_vision(HIC"$NæŒ¥åŠ¨è¯é”„å¼€å§‹åœ¨åœ°ä¸ŠæŒ–äº†èµ·æ¥ã€‚\n"NOR,me);
         me->add("jing",-10);
         me->add("qi",-20);
         me->start_busy(8);   
@@ -127,7 +127,7 @@ if (environment(me))
       	else
 	if (environment(me)->query_temp("wayao2") >= 1)
         {
-        message_vision(HIC"$N»Ó¶¯Ò©³ú¿ªÊ¼ÔÚµØÉÏÍÚÁËÆğÀ´¡£\n"NOR,me);
+        message_vision(HIC"$NæŒ¥åŠ¨è¯é”„å¼€å§‹åœ¨åœ°ä¸ŠæŒ–äº†èµ·æ¥ã€‚\n"NOR,me);
         me->add("jing",-20);
         me->add("qi",-30);
         me->start_busy(8);   
@@ -139,9 +139,9 @@ if (environment(me))
 	if (filei >0 )
         {
 if( !file = environment(me)->query("outdoors"))
-return notify_fail("Ö»ÓĞ»§Íâ²ÅÓĞ¿ÉÄÜÓĞÒ©²Å£¬Çëµ½ÊÒÍâÕÒÕÒ°É¡£\n");
+return notify_fail("åªæœ‰æˆ·å¤–æ‰æœ‰å¯èƒ½æœ‰è¯æ‰ï¼Œè¯·åˆ°å®¤å¤–æ‰¾æ‰¾å§ã€‚\n");
 
-        message_vision(HIC"$N»Ó¶¯Ò©³ú¿ªÊ¼ÔÚµØÉÏÍÚÁËÆğÀ´¡£\n"NOR,me);
+        message_vision(HIC"$NæŒ¥åŠ¨è¯é”„å¼€å§‹åœ¨åœ°ä¸ŠæŒ–äº†èµ·æ¥ã€‚\n"NOR,me);
         me->add("jing",-20);
         me->add("qi",-30);
         me->start_busy(8);   
@@ -149,7 +149,7 @@ return notify_fail("Ö»ÓĞ»§Íâ²ÅÓĞ¿ÉÄÜÓĞÒ©²Å£¬Çëµ½ÊÒÍâÕÒÕÒ°É¡£\n");
        	me->stop_busy();
        	return 1;
       	}      	
-        return notify_fail("ÕâÀïµÄÒ©²İÔçÒÑ±»ÈËÍÚ¹âÁË¡£\n");
+        return notify_fail("è¿™é‡Œçš„è¯è‰æ—©å·²è¢«äººæŒ–å…‰äº†ã€‚\n");
 }
 
 int wayao1(object me)
@@ -159,7 +159,7 @@ int wayao1(object me)
 
       if(random(7)<2) 
       {         
-        tell_room(environment(me),HIY"²İ´ÔÖĞÒ»Õó»Î¶¯£¬Í»È»×ê³öÒ»ÌõÉß¡£\n"NOR );
+        tell_room(environment(me),HIY"è‰ä¸›ä¸­ä¸€é˜µæ™ƒåŠ¨ï¼Œçªç„¶é’»å‡ºä¸€æ¡è›‡ã€‚\n"NOR );
         ob=new(she1[random(3)]);
         ob->move(environment(me));
         ob->kill(me);
@@ -169,13 +169,13 @@ int wayao1(object me)
       else
       if (random(7)<3)
       {
-          message_vision(CYN"Ò»·­ÃşË÷ºó£¬²İ´ÔÖĞËÆºõÃ»ÓĞ$NÒªÕÒµÄ¶«Î÷£¬$NÊ§ÍûµÄÌ¾ÁË¿ÚÆø¡£\n"NOR,me);
+          message_vision(CYN"ä¸€ç¿»æ‘¸ç´¢åï¼Œè‰ä¸›ä¸­ä¼¼ä¹æ²¡æœ‰$Nè¦æ‰¾çš„ä¸œè¥¿ï¼Œ$Nå¤±æœ›çš„å¹äº†å£æ°”ã€‚\n"NOR,me);
 
       }
       else
       { 
-        message_vision(HIG"$NÕÒÁË°ëÌì£¬ÖÕÓÚ·¢ÏÖÆäÖĞÒ»Öê²İÃçÓëÆäËüµÄ²İÂÔÓĞ²»Í¬£¬Ğ¡ĞÄÒíÒíµØ¾òÁË³öÀ´¡£\n"NOR,me); 
-//        message_vision(HIG"Ò©²İµ¹ÊÇÍÚµ½ÁË£¬¿ÉÏ§Ò©³úÈ´²»Ğ¡Åö»µÁË¡£\n"NOR,me); 
+        message_vision(HIG"$Næ‰¾äº†åŠå¤©ï¼Œç»ˆäºå‘ç°å…¶ä¸­ä¸€æ ªè‰è‹—ä¸å…¶å®ƒçš„è‰ç•¥æœ‰ä¸åŒï¼Œå°å¿ƒç¿¼ç¿¼åœ°æ˜äº†å‡ºæ¥ã€‚\n"NOR,me); 
+//        message_vision(HIG"è¯è‰å€’æ˜¯æŒ–åˆ°äº†ï¼Œå¯æƒœè¯é”„å´ä¸å°ç¢°åäº†ã€‚\n"NOR,me); 
         ob1 = new( __DIR__ "yaocao1");
         ob1->move(me);
         add_temp("workchu", -1);
@@ -185,7 +185,7 @@ int wayao1(object me)
                 me->start_busy(1);
         if ( query_temp("workchu") < 1)
              {
-    message_vision(HIG"Ò©²İµ¹ÊÇÍÚµ½ÁË£¬¿ÉÏ§Ò©³úÈ´²»Ğ¡Åö»µÁË¡£\n"NOR,me); 
+    message_vision(HIG"è¯è‰å€’æ˜¯æŒ–åˆ°äº†ï¼Œå¯æƒœè¯é”„å´ä¸å°ç¢°åäº†ã€‚\n"NOR,me); 
         destruct(this_object());
              }
       }
@@ -199,7 +199,7 @@ int wayao2(object me)
 
       if(random(7)<2) 
       {         
-        tell_room(environment(me),HIY"²İ´ÔÖĞÒ»Õó»Î¶¯£¬Í»È»×ê³öÒ»ÌõÉß¡£\n"NOR );
+        tell_room(environment(me),HIY"è‰ä¸›ä¸­ä¸€é˜µæ™ƒåŠ¨ï¼Œçªç„¶é’»å‡ºä¸€æ¡è›‡ã€‚\n"NOR );
         ob=new(she2[random(1)]);
         ob->kill(me);
         ob->set_leader(me);
@@ -209,12 +209,12 @@ int wayao2(object me)
       else
       if (random(7)<3)
       {
-          message_vision(CYN"Ò»·­ÃşË÷ºó£¬²İ´ÔÖĞËÆºõÃ»ÓĞ$NÒªÕÒµÄ¶«Î÷£¬$NÊ§ÍûµÄÌ¾ÁË¿ÚÆø¡£\n"NOR,me);
+          message_vision(CYN"ä¸€ç¿»æ‘¸ç´¢åï¼Œè‰ä¸›ä¸­ä¼¼ä¹æ²¡æœ‰$Nè¦æ‰¾çš„ä¸œè¥¿ï¼Œ$Nå¤±æœ›çš„å¹äº†å£æ°”ã€‚\n"NOR,me);
 
       }
       else
       { 
-        message_vision(HIG"$NÕÒÁË°ëÌì£¬ÖÕÓÚ·¢ÏÖÆäÖĞÒ»Öê²İÃçÓëÆäËüµÄ²İÂÔÓĞ²»Í¬£¬Ğ¡ĞÄÒíÒíµØ¾òÁË³öÀ´¡£\n"NOR,me); 
+        message_vision(HIG"$Næ‰¾äº†åŠå¤©ï¼Œç»ˆäºå‘ç°å…¶ä¸­ä¸€æ ªè‰è‹—ä¸å…¶å®ƒçš„è‰ç•¥æœ‰ä¸åŒï¼Œå°å¿ƒç¿¼ç¿¼åœ°æ˜äº†å‡ºæ¥ã€‚\n"NOR,me); 
         ob1 = new(yao1[random(2)]);
         ob1->move(me);
         environment(me)->add_temp("wayao2",-1);
@@ -224,7 +224,7 @@ int wayao2(object me)
         me->start_busy(1);
         if ( query_temp("workchu") < 1)
              {
-    message_vision(HIG"Ò©²İµ¹ÊÇÍÚµ½ÁË£¬¿ÉÏ§Ò©³úÈ´²»Ğ¡Åö»µÁË¡£\n"NOR,me); 
+    message_vision(HIG"è¯è‰å€’æ˜¯æŒ–åˆ°äº†ï¼Œå¯æƒœè¯é”„å´ä¸å°ç¢°åäº†ã€‚\n"NOR,me); 
         destruct(this_object());
              }
       }
@@ -247,7 +247,7 @@ location = roomlines[random(sizeof(roomlines))];
 
       if(random(7)<2 && !wizardp(me)) 
       {         
-        tell_room(environment(me),HIY"²İ´ÔÖĞÒ»Õó»Î¶¯£¬Í»È»×ê³öÒ»ÌõÉß¡£\n"NOR );
+        tell_room(environment(me),HIY"è‰ä¸›ä¸­ä¸€é˜µæ™ƒåŠ¨ï¼Œçªç„¶é’»å‡ºä¸€æ¡è›‡ã€‚\n"NOR );
         ob=new(she2[random(1)]);
         ob->kill(me);
         ob->set_leader(me);
@@ -257,23 +257,23 @@ location = roomlines[random(sizeof(roomlines))];
       else
       if (random(7)<3 && !wizardp(me))
       {
-          message_vision(CYN"Ò»·­ÃşË÷ºó£¬²İ´ÔÖĞËÆºõÃ»ÓĞ$NÒªÕÒµÄ¶«Î÷£¬$NÊ§ÍûµÄÌ¾ÁË¿ÚÆø¡£\n"NOR,me);
+          message_vision(CYN"ä¸€ç¿»æ‘¸ç´¢åï¼Œè‰ä¸›ä¸­ä¼¼ä¹æ²¡æœ‰$Nè¦æ‰¾çš„ä¸œè¥¿ï¼Œ$Nå¤±æœ›çš„å¹äº†å£æ°”ã€‚\n"NOR,me);
 
       }
       else
       { 
-        message_vision(HIG"$NÕÒÁË°ëÌì£¬ÖÕÓÚ·¢ÏÖÔÚÕâÖÜÎ§ÓĞÒ»Ñù¶«Î÷¿ÉÒÔÈëÒ© £¬Ğ¡ĞÄÒíÒíµØÕÒÁË³öÀ´¡£\n"NOR,me); 
+        message_vision(HIG"$Næ‰¾äº†åŠå¤©ï¼Œç»ˆäºå‘ç°åœ¨è¿™å‘¨å›´æœ‰ä¸€æ ·ä¸œè¥¿å¯ä»¥å…¥è¯ ï¼Œå°å¿ƒç¿¼ç¿¼åœ°æ‰¾äº†å‡ºæ¥ã€‚\n"NOR,me); 
         
         ob1 = new(location);
         ob1->move(me);
-        message_vision(HIG"$NÕÒµ½ÁË"+ob1->query("name")+"¡£\n"NOR,me); 
+        message_vision(HIG"$Næ‰¾åˆ°äº†"+ob1->query("name")+"ã€‚\n"NOR,me); 
         environment(me)->set_temp("wayaono",1);
         me->apply_condition("skill2_busy",2+random(1));
         add_temp("workchu", -1);
         me->start_busy(1);
         if ( query_temp("workchu") < 1)
              {
-    message_vision(HIG"Ò©²İµ¹ÊÇÍÚµ½ÁË£¬¿ÉÏ§Ò©³úÈ´²»Ğ¡Åö»µÁË¡£\n"NOR,me); 
+    message_vision(HIG"è¯è‰å€’æ˜¯æŒ–åˆ°äº†ï¼Œå¯æƒœè¯é”„å´ä¸å°ç¢°åäº†ã€‚\n"NOR,me); 
         destruct(this_object());
              }
       }

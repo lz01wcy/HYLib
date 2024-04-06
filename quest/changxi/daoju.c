@@ -1,6 +1,6 @@
-//daoju.c ³ªÏ·ÓÃµÄµÀ¾ß
-//º£ÑóII£¨ÔÆÆğÔÆÂä£©
-//ĞÇĞÇlywin 2000/6/20
+//daoju.c å”±æˆç”¨çš„é“å…·
+//æµ·æ´‹IIï¼ˆäº‘èµ·äº‘è½ï¼‰
+//æ˜Ÿæ˜Ÿlywin 2000/6/20
 
 #include <ansi.h>
 inherit ITEM;
@@ -12,14 +12,14 @@ void init()
 
 void create()
 {
-	set_name("³ªÏ·µÀ¾ß", ({"changxi daoju", "daoju"}));
+	set_name("å”±æˆé“å…·", ({"changxi daoju", "daoju"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("no_drop","²»ÒªÂÒ¶ª£¬ÒªÅâµÄ£¡\n");
+		set("unit", "æŠŠ");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¦èµ”çš„ï¼\n");
 		set("no_put",1);
-		set("long", "ÕâÊÇÒ»Ì×³ªÏ·ÓÃµÄµÀ¾ß£¬Äã¿ÉÒÔÓÃËüÀ´³ªÏ·£¨changxi£©¡£\n");
+		set("long", "è¿™æ˜¯ä¸€å¥—å”±æˆç”¨çš„é“å…·ï¼Œä½ å¯ä»¥ç”¨å®ƒæ¥å”±æˆï¼ˆchangxiï¼‰ã€‚\n");
 		set("value", 0);
 	}
 	setup();
@@ -31,76 +31,76 @@ int do_changxi(string arg)
 
     if (me->is_fighting()) 
         {
-          tell_object(me,"ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+          tell_object(me,"ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
           return 1;
         }
     if(me->is_busy())
         {
-          tell_object(me,"ÄãÕıÃ¦×ÅÄØ!\n");
+          tell_object(me,"ä½ æ­£å¿™ç€å‘¢!\n");
           return 1;
         }
 
         if (me->query_temp("obj/done") >= 1)
         {
-          tell_object(me,"ÄãÒÑ³ªÍêÏ·ÁË£¬»ØÈ¥±¨¸æ°É¡£\n");
+          tell_object(me,"ä½ å·²å”±å®Œæˆäº†ï¼Œå›å»æŠ¥å‘Šå§ã€‚\n");
           return 1;
         }
         else
         if (me->query_temp("obj/changxi") < 1)
         {
-          tell_object(me,"ÏÖÔÚºÃÏñ²»¸ÃÄã³ªÏ·°É£¿\n");
+          tell_object(me,"ç°åœ¨å¥½åƒä¸è¯¥ä½ å”±æˆå§ï¼Ÿ\n");
           return 1;
         }
         else
         if (!environment(me)->query("outdoors"))
         {
-          tell_object(me,"Äã²»¸ÃÔÚÕâ¶ù³ªÏ·°É£¿\n");
+          tell_object(me,"ä½ ä¸è¯¥åœ¨è¿™å„¿å”±æˆå§ï¼Ÿ\n");
           return 1;
         }
         else
         if (me->query_temp("obj/where") != environment(me)->query("outdoors"))
         {
-          tell_object(me,"Äã²»¸ÃÔÚÕâ¶ù³ªÏ·°É£¿\n");
+          tell_object(me,"ä½ ä¸è¯¥åœ¨è¿™å„¿å”±æˆå§ï¼Ÿ\n");
           return 1;
         }
         else
         if (environment(me)->query_temp("changxi") >= 1)
         {
-          tell_object(me,"Õâ¶ù²»¾ÃÇ°ÓĞÈËÀ´³ª¹ıÏ·£¬ÏÖÔÚÔÙ³ªÖ»ÅÂÃ»ÈË»áÌıÁË\n");
+          tell_object(me,"è¿™å„¿ä¸ä¹…å‰æœ‰äººæ¥å”±è¿‡æˆï¼Œç°åœ¨å†å”±åªæ€•æ²¡äººä¼šå¬äº†\n");
           return 1;
         }
         else          
         if ((me->query("jing") < 20))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖĞ£¬²»¿ÉÒÔ±íÑİ£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œä¸å¯ä»¥è¡¨æ¼”ï¼\n");
           return 1;
         }
         else
         if ((me->query("qi") < 30 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î£¬²»ÄÜ±íÑİ£¡\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®ï¼Œä¸èƒ½è¡¨æ¼”ï¼\n");
           return 1;
         }
         else          
 	if (environment(me)->query_temp("changxi") >= 1)
         {
-        tell_object(me,"¸Õ¸Õ²ÅÓĞÈËÀ´Õâ¶ù³ª¹ıÏ·ÁË£¬ÈËÃÇ¶¼²»ÏëÔÙ¿´Ï·¡£\n"NOR,me);
+        tell_object(me,"åˆšåˆšæ‰æœ‰äººæ¥è¿™å„¿å”±è¿‡æˆäº†ï¼Œäººä»¬éƒ½ä¸æƒ³å†çœ‹æˆã€‚\n"NOR,me);
        	return 1;
       	}
       	else
         if (!arg || arg == "" )
         { 
-          tell_object(me,"ÄãÒª½øĞĞÄÄÖÖ±íÑİ£¿
-          ³ªÇú£¨changqu£©£¬Ëé×©£¨suizhuan£©£¬×ßÉşË÷£¨zhou£©£¿\n");
+          tell_object(me,"ä½ è¦è¿›è¡Œå“ªç§è¡¨æ¼”ï¼Ÿ
+          å”±æ›²ï¼ˆchangquï¼‰ï¼Œç¢ç –ï¼ˆsuizhuanï¼‰ï¼Œèµ°ç»³ç´¢ï¼ˆzhouï¼‰ï¼Ÿ\n");
           return 1;
         }
         else
         if ( arg == "changqu" )
         {
           if ((me->query("neili") < 30))
-            return notify_fail("³ªÇú½²¾¿µÄÊÇÄÚÏ¢ÓÆ³¤£¬ÄãµÄÄÚÁ¦²»×ã£¬³ª²»³öºÃÇú¡£\n");
+            return notify_fail("å”±æ›²è®²ç©¶çš„æ˜¯å†…æ¯æ‚ é•¿ï¼Œä½ çš„å†…åŠ›ä¸è¶³ï¼Œå”±ä¸å‡ºå¥½æ›²ã€‚\n");
            
-          message_vision(HIW"$NÇåÁËÇåÔë×Ó£¬ÓÆÓÆµÄ³ªÆğÇú¶ùÀ´¡£\n"NOR,me);          
+          message_vision(HIW"$Næ¸…äº†æ¸…å™ªå­ï¼Œæ‚ æ‚ çš„å”±èµ·æ›²å„¿æ¥ã€‚\n"NOR,me);          
           me->start_busy(8); 
           call_out("changqu",8,me);
           return 1;
@@ -109,9 +109,9 @@ int do_changxi(string arg)
         if ( arg == "suizhuan" )
         {
           if ((me->query_skill("unarmed") < 30))
-            return notify_fail("ÄãµÄÈ­½Å¹¦·ò²»×ã£¬ÄÄÀï´òµÃ¶¯´óÊ¯£¿\n");
+            return notify_fail("ä½ çš„æ‹³è„šåŠŸå¤«ä¸è¶³ï¼Œå“ªé‡Œæ‰“å¾—åŠ¨å¤§çŸ³ï¼Ÿ\n");
             
-          message_vision(HIW"$NÔË¹¦ÓÚ±Û£¬ÓÃÁ¦ÏòÒ»¿é×©Í·ÅüÈ¥¡£\n"NOR,me);          
+          message_vision(HIW"$Nè¿åŠŸäºè‡‚ï¼Œç”¨åŠ›å‘ä¸€å—ç –å¤´åŠˆå»ã€‚\n"NOR,me);          
           me->start_busy(8); 
        	  call_out("changqu",8,me);
        	  return 1;
@@ -120,9 +120,9 @@ int do_changxi(string arg)
         if ( arg == "zhou" )
         {
           if ((me->query_skill("dodge") < 30))
-            return notify_fail("ÒÔÄãÕâÑùµÄÇá¹¦Ò²ÏëÈ¥×ßÉş£¿ÅÂ²»Ò»ÏÂ×Ó¾ÍµôÁËÏÂÀ´¡£\n");
+            return notify_fail("ä»¥ä½ è¿™æ ·çš„è½»åŠŸä¹Ÿæƒ³å»èµ°ç»³ï¼Ÿæ€•ä¸ä¸€ä¸‹å­å°±æ‰äº†ä¸‹æ¥ã€‚\n");
 
-          message_vision(HIW"$NÌøÉÏÁËÒ»¸ùºá¹ÒµÄÉşË÷£¬´ÓÕâÍ·ÏòÄÇÍ·×ßÈ¥¡£\n"NOR,me);          
+          message_vision(HIW"$Nè·³ä¸Šäº†ä¸€æ ¹æ¨ªæŒ‚çš„ç»³ç´¢ï¼Œä»è¿™å¤´å‘é‚£å¤´èµ°å»ã€‚\n"NOR,me);          
           me->start_busy(8); 
        	  call_out("changqu",8,me);
        	  return 1;
@@ -131,7 +131,7 @@ int do_changxi(string arg)
 
 int changqu(object me)
 {
-        message_vision(HIY"$NÒ»Çú³ª±Ï£¬ÅÔ±ßµÄÈË¹ÄÆğÁËÕÆ¡£\n"NOR,me);
+        message_vision(HIY"$Nä¸€æ›²å”±æ¯•ï¼Œæ—è¾¹çš„äººé¼“èµ·äº†æŒã€‚\n"NOR,me);
         me->set_temp("obj/done",1);
         environment(me)->set_temp("changxi",1);        
         return 1;
@@ -139,7 +139,7 @@ int changqu(object me)
 
 int suizhuan(object me)
 {
-        message_vision(HIY"$NÖ»¼ûºÃ´óµÄ¿é×©Í·Ó¦Éù¶øËé£¬ÅÔÈË¿´µÃÕÅ´ó¿ÚËµ²»³ö»°À´¡£\n"NOR,me);
+        message_vision(HIY"$Nåªè§å¥½å¤§çš„å—ç –å¤´åº”å£°è€Œç¢ï¼Œæ—äººçœ‹å¾—å¼ å¤§å£è¯´ä¸å‡ºè¯æ¥ã€‚\n"NOR,me);
         me->set_temp("obj/done",1);
         environment(me)->set_temp("changxi",1); 
         return 1;
@@ -147,7 +147,7 @@ int suizhuan(object me)
 
 int zhou(object me)
 {
-        message_vision(HIY"$N´ÓÉşË÷ÉÏÇáÇáµÄ×ßÁË¹ıÈ¥£¬»ÎÒ²Ã»»ÎÒ»ÏÂ£¬ÅÔÈË¶¼¿´µÃÄ¿µÉ¿Ú´ô¡£\n"NOR,me);
+        message_vision(HIY"$Nä»ç»³ç´¢ä¸Šè½»è½»çš„èµ°äº†è¿‡å»ï¼Œæ™ƒä¹Ÿæ²¡æ™ƒä¸€ä¸‹ï¼Œæ—äººéƒ½çœ‹å¾—ç›®çªå£å‘†ã€‚\n"NOR,me);
         me->set_temp("obj/done",1);
         environment(me)->set_temp("changxi",1); 
         return 1;

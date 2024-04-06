@@ -1,4 +1,4 @@
-// xuantie jian ĞşÌúÖØ½£
+// xuantie jian ç„é“é‡å‰‘
 
 #include <weapon.h>
 #include <ansi.h>
@@ -8,12 +8,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name( HIB"ÖØ½£"NOR,({ "zhong jian", "zhongjian", "jian", "sword"}) );
+        set_name( HIB"é‡å‰‘"NOR,({ "zhong jian", "zhongjian", "jian", "sword"}) );
         set_weight(70000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 3000);
                 set("unique", 1);
 

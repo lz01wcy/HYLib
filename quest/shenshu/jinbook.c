@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIG"½ðÓ¹È«¼¯"NOR, ({ "jin book" }) );
+    set_name(HIG"é‡‘åº¸å…¨é›†"NOR, ({ "jin book" }) );
             set("no_put", 1);
             set("value", 0);
             set("shenshu", 1);
@@ -11,9 +11,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	        
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾ÓÉÉñÊéºÏ²¢³ÉµÄ¾í²á£¬Äã¿ÉÒÔÓÃ(chayue)À´²éÔÄËü¡£ÁíÍâÈç¹ûÄãÓÐ¡£¡£¡£µÄ»°£¬¿ÉÒÔÓÃ(try)ÊÔÊÔ\n");
+            set("long", "ä¸€æœ¬ç”±ç¥žä¹¦åˆå¹¶æˆçš„å·å†Œï¼Œä½ å¯ä»¥ç”¨(chayue)æ¥æŸ¥é˜…å®ƒã€‚å¦å¤–å¦‚æžœä½ æœ‰ã€‚ã€‚ã€‚çš„è¯ï¼Œå¯ä»¥ç”¨(try)è¯•è¯•\n");
           }
 
     setup();
@@ -29,7 +29,7 @@ int do_cha(string arg)
 	int exp,pot,score,i;
 	me =this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª²éÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦æŸ¥ä»€ä¹ˆï¼Ÿ\n");
 
         ob=new(__DIR__"sdan");
         ob->move(me);
@@ -43,7 +43,7 @@ int do_cha(string arg)
         ob->move(me);
         ob=new(__DIR__"sdan");
         ob->move(me);
-message("channel:chat", HIC"¡¾½­ºþ´«ÎÅ¡¿"GRN + me->query("name")+"µÃµ½Áù¿Å"+HIY":" + ob->query("name")+HIG"À²£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€æ±Ÿæ¹–ä¼ é—»ã€‘"GRN + me->query("name")+"å¾—åˆ°å…­é¢—"+HIY":" + ob->query("name")+HIG"å•¦ï¼\n"NOR,users() );
 	destruct(this_object());
 return 1;
 }
@@ -52,23 +52,23 @@ int do_try(string arg)
 	object me,newbook,ob;
 	me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒªÊÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦è¯•ä»€ä¹ˆï¼Ÿ\n");
 
 	newbook =new(__DIR__"bestbook");
 
     if (!(ob = present("gulong book", me))
         )
-	tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
    else{
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( !ob->query("shenshu"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
-        message_vision("$NÊÔ×Å°ÑÁ½±¾×îÇ¿µÄÉñÊéÖØÐÂ×éºÏ³ÉÒ»±¾£¬²»ÁÏ¾¹È»³É¹¦ÁË¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+        message_vision("$Nè¯•ç€æŠŠä¸¤æœ¬æœ€å¼ºçš„ç¥žä¹¦é‡æ–°ç»„åˆæˆä¸€æœ¬ï¼Œä¸æ–™ç«Ÿç„¶æˆåŠŸäº†ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("gulong book",me));
 	destruct(this_object());}return 1;

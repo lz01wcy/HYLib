@@ -8,17 +8,17 @@ void create()
 
 {
 
-	set_name("³¯Í¢ÇÕ·¸", ({ "chaoting qinfan","qinfan" }));
+	set_name("æœå»·é’¦çŠ¯", ({ "chaoting qinfan","qinfan" }));
 
-	set("nickname",HIW "ÌÓ·¸"NOR);
+	set("nickname",HIW "é€ƒçŠ¯"NOR);
 
 	set("long", 
 
-		"ËûÊÇÇ°¶ÎÊ±¼ä´ÓÑïÖİ¼àÓüÀïÔ½Óü³öÀ´µÄÒ»¸öÌÓ·¸¡£\n"
+		"ä»–æ˜¯å‰æ®µæ—¶é—´ä»æ‰¬å·ç›‘ç‹±é‡Œè¶Šç‹±å‡ºæ¥çš„ä¸€ä¸ªé€ƒçŠ¯ã€‚\n"
 
-		"Ëû¿´ÆğÀ´ÂúÁ³µÄ¾ª»ÅÊ§´ë¡£\n");
+		"ä»–çœ‹èµ·æ¥æ»¡è„¸çš„æƒŠæ…Œå¤±æªã€‚\n");
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 
 	set("age", 41);
 
@@ -132,7 +132,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "³¯Í¢ÇÕ·¸×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "æœå»·é’¦çŠ¯é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

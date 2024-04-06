@@ -1,4 +1,4 @@
-// /d/city/npc/shiye.c Öª¸®Ê¦Ò¯
+// /d/city/npc/shiye.c çŸ¥åºœå¸ˆçˆ·
  
 // by dubei update 1997.7.4
 
@@ -7,9 +7,9 @@ inherit NPC;
 int ask_me(object who);
 void create()
 {
-	set_name("Íõ»µË®", ({ "wang huaishui", "wang" }));
-	set("title", "Öª¸®Ê¦Ò¯");
-	set("gender", "ÄĞĞÔ");
+	set_name("ç‹åæ°´", ({ "wang huaishui", "wang" }));
+	set("title", "çŸ¥åºœå¸ˆçˆ·");
+	set("gender", "ç”·æ€§");
 	set("age", 57);
         set("combat_exp", 30000);
         set_skill("unarmed", 50);
@@ -19,7 +19,7 @@ void create()
         set_temp("apply/damage",  20);
 	set("shen", 0);
                 set("inquiry", ([
-                "ÙºÂ»" : (: ask_me :),
+                "ä¿¸ç¦„" : (: ask_me :),
         ]));
 	setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -33,23 +33,23 @@ int ask_me(object who)
         times = (int)me->query("gf_job",1);
 
         if (times<=20){
-        command("say ÄãÃ»Îª³¯Í¢³ö¹ıÊ²÷áÁ¦£¬»¹ÏëÒªÙºÂ»£¿\n");
+        command("say ä½ æ²¡ä¸ºæœå»·å‡ºè¿‡ä»€éº½åŠ›ï¼Œè¿˜æƒ³è¦ä¿¸ç¦„ï¼Ÿ\n");
         return 1;
         }
         if((int)me->query("gf_gives")<(int)me->query("age")) {
         if (!me->query_temp("mark/huilu")  && times<2500){
         command("look " + me->query("id"));
-        command("say ¶¼ÔÚÕâÀï£¬ÄãÄÃÈ¥°É£¡\n");
+        command("say éƒ½åœ¨è¿™é‡Œï¼Œä½ æ‹¿å»å§ï¼\n");
         who->add_money("gold",times/20);
         command("give "+me->query("id")+" gold");
-        write(WHT"Äã¾õµÃÇ®µÄÊıÄ¿ºÃÏó²»´ó¶Ô°¡¡£\n"NOR);
+        write(WHT"ä½ è§‰å¾—é’±çš„æ•°ç›®å¥½è±¡ä¸å¤§å¯¹å•Šã€‚\n"NOR);
         me->set("gf_gives",(int)me->query("age"));
        return 1;
         }
          if (me->query_temp("mark/huilu")  && times<2500){
          command("hehe " + me->query("id"));
-         message_vision("Íõ»µË®µãÍ·¹şÑüµÄËµµÀ£¬ÕâÎ»"+RANK_D->query_respect(me)+"ĞÁ¿àÁË£¬ÕâÊÇÄúµÄ¹ÙÙº£¬"
-"ÒÔºó»¹Íû¶à¶à¹ØÕÕÔÚÏÂ¡£\n",me);
+         message_vision("ç‹åæ°´ç‚¹å¤´å“ˆè…°çš„è¯´é“ï¼Œè¿™ä½"+RANK_D->query_respect(me)+"è¾›è‹¦äº†ï¼Œè¿™æ˜¯æ‚¨çš„å®˜ä¿¸ï¼Œ"
+"ä»¥åè¿˜æœ›å¤šå¤šå…³ç…§åœ¨ä¸‹ã€‚\n",me);
         who->add_money("gold",10+times/10);
         command("give "+me->query("id")+" gold");
         me->delete_temp("mark/huilu");
@@ -58,11 +58,11 @@ int ask_me(object who)
         }
     }
         if (times>2500){
-        command("say ÔÚÏÂ²»¹ıÊÇ¸öÖª¸®Ê¦Ò¯£¬Ôõ÷á»¹¸Ò¸øÄú·¢ÙºÂ»ÄØ£¿\n");
+        command("say åœ¨ä¸‹ä¸è¿‡æ˜¯ä¸ªçŸ¥åºœå¸ˆçˆ·ï¼Œæ€éº½è¿˜æ•¢ç»™æ‚¨å‘ä¿¸ç¦„å‘¢ï¼Ÿ\n");
         command("flatter " + me->query("id"));
         return 1;
         }
-        command("say Ã»µ½Ê±¼äÄØ£¬ÁìÊ²÷áÙºÂ»£¿!\n");
+        command("say æ²¡åˆ°æ—¶é—´å‘¢ï¼Œé¢†ä»€éº½ä¿¸ç¦„ï¼Ÿ!\n");
         return 1;
 }
 int accept_object(object me, object obj)    
@@ -71,22 +71,22 @@ int accept_object(object me, object obj)
         times=me->query("gf_job",1);
 
         if (!me->query("gf_job")){
-        command("say ÎŞÔµÎŞ¹ÊËÍÀñ£¬Ïë»ßÂ¸ÎÒ£¿\n");
+        command("say æ— ç¼˜æ— æ•…é€ç¤¼ï¼Œæƒ³è´¿èµ‚æˆ‘ï¼Ÿ\n");
         return 1;
         }
         if(obj->query("money_id")){
         if(obj->value() >= times*100){
         command("hehe "+me->query("id"));
-        command("whisper "+me->query("id")+" Äã¾Í·ÅĞÄ°É£¬»ØÍ·ÎÒ»áºÃºÃ¹ØÕÕÄãµÄ£¡");
+        command("whisper "+me->query("id")+" ä½ å°±æ”¾å¿ƒå§ï¼Œå›å¤´æˆ‘ä¼šå¥½å¥½å…³ç…§ä½ çš„ï¼");
         me->set_temp("mark/huilu",1);
         return 1;
         }
         else {  
-               command("say ÕâÃ´µãÇ®ÄÜ¸ÉÊ²÷á£¿»¹²»¹»ÎÒÈ¥Ò»´ÎÀö´ºÔºµÄÄØ£¿");
+               command("say è¿™ä¹ˆç‚¹é’±èƒ½å¹²ä»€éº½ï¼Ÿè¿˜ä¸å¤Ÿæˆ‘å»ä¸€æ¬¡ä¸½æ˜¥é™¢çš„å‘¢ï¼Ÿ");
         return 1;
               }
         }
-        command("say ÄÃÕâ¸ö"+obj->name()+"À´¸øÎÒ£¬ÓĞÊ²÷áÓÃ£¿£¡");
+        command("say æ‹¿è¿™ä¸ª"+obj->name()+"æ¥ç»™æˆ‘ï¼Œæœ‰ä»€éº½ç”¨ï¼Ÿï¼");
         return 0;
 }
 void destroy (object obj)

@@ -1,14 +1,14 @@
 // robber1 for dart
-//gemini¸ÄÓÚ2000.4.4 Ê¹µÃ¸´ÖÆÊ±²»²Î¿¼literateµÈ¼¶
+//geminiæ”¹äº2000.4.4 ä½¿å¾—å¤åˆ¶æ—¶ä¸å‚è€ƒliterateç­‰çº§
 
 #include <ansi.h>
 inherit NPC;
 #include "robber.h"
 void create()
 { 
-        set_name(HIW"½Ù·Ë"NOR,({"robber"}));
-        set("title","À¹Â·ÇÀ½Ù");
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIW"åŠ«åŒª"NOR,({"robber"}));
+        set("title","æ‹¦è·¯æŠ¢åŠ«");
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+14);
         
         set("pursuer", 1);

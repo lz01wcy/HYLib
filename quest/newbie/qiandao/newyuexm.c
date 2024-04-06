@@ -1,4 +1,4 @@
-// yue.c ÔÀĞ¡Ãµ
+// yue.c å²³å°ç«
 // lag 2000.5.9
 #include <ansi.h>
 inherit NPC;
@@ -9,9 +9,9 @@ int ask_fail();
 
 void create()
 {
-        set_name("ÔÀĞ¡Ãµ", ({ "yue xiaomei", "yue" }));
-        set("nickname", HIC "ĞÇÔÂ´«ÆæĞ¡½¿Ù»" NOR);
-        set("gender", "Å®ĞÔ");
+        set_name("å²³å°ç«", ({ "yue xiaomei", "yue" }));
+        set("nickname", HIC "æ˜Ÿæœˆä¼ å¥‡å°å¨‡å€©" NOR);
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -67,9 +67,9 @@ void create()
 	map_skill("sword", "taiji-jian");
 
         set("inquiry", ([
-                "ÈÎÎñ" : (: ask_job() :),
+                "ä»»åŠ¡" : (: ask_job() :),
                 "job" : (: ask_job() :),
-                "Ê§°Ü" : (: ask_fail() :),
+                "å¤±è´¥" : (: ask_fail() :),
                 "fail" : (: ask_fail() :),
           ])),
 
@@ -98,7 +98,7 @@ int ask_job()
 
         skl = me->query_skills();
         if ( !skl ) {
-                tell_object(me, "ÄãÈ¥Ñ§Ò»Ğ©±¾ÊÂÏÈ°É£¡\n");
+                tell_object(me, "ä½ å»å­¦ä¸€äº›æœ¬äº‹å…ˆå§ï¼\n");
                 return 1;
                 }
         sname  = sort_array( keys(skl), (: strcmp :) );
@@ -112,40 +112,40 @@ int ask_job()
 
    if(this_object()->is_busy())
 {
-message_vision("ÔÀĞ¡Ãµ¶Ô$NËµµÀ£º¡°ÎÒÕıÃ¦×ÅÄØ£¡¡±\n",me);
+message_vision("å²³å°ç«å¯¹$Nè¯´é“ï¼šâ€œæˆ‘æ­£å¿™ç€å‘¢ï¼â€\n",me);
 return 1;
 }
    if(this_object()->is_fighting())
 {
-message_vision("ÔÀĞ¡Ãµ¶Ô$NËµµÀ£º¡°ÎÒÕıÃ¦×ÅÄØ£¡¡±\n",me);
+message_vision("å²³å°ç«å¯¹$Nè¯´é“ï¼šâ€œæˆ‘æ­£å¿™ç€å‘¢ï¼â€\n",me);
 return 1;
 }
 
 //   if(me->query("potential") > 200000)
 //{
-//message_vision("ÔÀĞ¡Ãµ¶Ô$NËµµÀ£º¡°ÄãµÄÇ±ÄÜÌ«¶àÁË£¬ÎÒ²»ÄÜ¸øÄãÈÎÎñ£¡¡±\n",me);
+//message_vision("å²³å°ç«å¯¹$Nè¯´é“ï¼šâ€œä½ çš„æ½œèƒ½å¤ªå¤šäº†ï¼Œæˆ‘ä¸èƒ½ç»™ä½ ä»»åŠ¡ï¼â€\n",me);
 //return 1;
 //}
            if (me->query("combat_exp") < 80000) {
-                command("say " + RANK_D->query_respect(me) + "É±Ç¿µÁ¿É²»ÊÇÒ»¼şÈİÒ×µÄÊÂÇé£¬Äã»¹ÊÇÁ·¸ß¾­ÑéÔÙÀ´°É");
+                command("say " + RANK_D->query_respect(me) + "æ€å¼ºç›—å¯ä¸æ˜¯ä¸€ä»¶å®¹æ˜“çš„äº‹æƒ…ï¼Œä½ è¿˜æ˜¯ç»ƒé«˜ç»éªŒå†æ¥å§");
                 return 1;
 }
         if (me->query("potential") < 200 || me->query("combat_exp") < 30000) {
-                command("say ÄãÁ¬±¾Ç®¶¼Ã»ÓĞ£¬ÎÒÔõÃ´·ÅĞÄÒªÄãÈ¥É±Ç¿µÁÄØ£¿");
+                command("say ä½ è¿æœ¬é’±éƒ½æ²¡æœ‰ï¼Œæˆ‘æ€ä¹ˆæ”¾å¿ƒè¦ä½ å»æ€å¼ºç›—å‘¢ï¼Ÿ");
                 return 1;
         }
         if (me->query("kill_qiangdao") == 1) {
                 command("kick " + me->query("id"));
-                command("say ÎÒ²»ÊÇ¸øÁËÄãÈÎÎñÁËÂğ£¿");
+                command("say æˆ‘ä¸æ˜¯ç»™äº†ä½ ä»»åŠ¡äº†å—ï¼Ÿ");
                 return 1;
                 }
         else {
                 command("nod" + me->query("id"));
-                command("say " + RANK_D->query_respect(me) + "ÄÜÎªÏÀÂÂÇéÔµ³öÁ¦£¬ÕæÊÇÌ«ºÃÁË¡£");
-                command("say " + me->query("id") + " Ç¿µÁÔÚ¡º" + quest["short"]             + "¡»£¬¿ìÈ¥°É£¡\n" NOR);
+                command("say " + RANK_D->query_respect(me) + "èƒ½ä¸ºä¾ ä¾£æƒ…ç¼˜å‡ºåŠ›ï¼ŒçœŸæ˜¯å¤ªå¥½äº†ã€‚");
+                command("say " + me->query("id") + " å¼ºç›—åœ¨ã€" + quest["short"]             + "ã€ï¼Œå¿«å»å§ï¼\n" NOR);
                 me->set("kill_qiangdao", 1);
-                me->set("quest/quest_type", "É±");
-                me->set("quest/quest", "Ç¿µÁ");
+                me->set("quest/quest_type", "æ€");
+                me->set("quest/quest", "å¼ºç›—");
                 me->set("task_time", time() + 310);
                 this_object()->start_busy(1);
                 ob = new(__DIR__"qiangdao",1);
@@ -172,8 +172,8 @@ string mapa;
         
         if (me->query("kill_qiangdao") == 1) {
                 command("haha");
-                command("say ÄãÕâÉíÊÖÒ²¸ÒÀ´³Í¼é³ı¶ñ£¬¶¼¹ÖĞ¡ÃµÎÒµ±³õ¿´´íÁËÈË,¿ÛÄã80µãPOT.");
-//              command("chat " + me->query("name") + "Ã»ÓĞÕæ¹¦·ò£¬ÖÂÊ¹Ç¿µÁÎ£º¦Ò»·½¡£ÏÖÔÚ·¢Åä" + me->query("name") + "È¥±ß½®£¡");
+                command("say ä½ è¿™èº«æ‰‹ä¹Ÿæ•¢æ¥æƒ©å¥¸é™¤æ¶ï¼Œéƒ½æ€ªå°ç«æˆ‘å½“åˆçœ‹é”™äº†äºº,æ‰£ä½ 80ç‚¹POT.");
+//              command("chat " + me->query("name") + "æ²¡æœ‰çœŸåŠŸå¤«ï¼Œè‡´ä½¿å¼ºç›—å±å®³ä¸€æ–¹ã€‚ç°åœ¨å‘é…" + me->query("name") + "å»è¾¹ç–†ï¼");
  //               command("rumor* sigh");
 if (random(3)==0)
 {

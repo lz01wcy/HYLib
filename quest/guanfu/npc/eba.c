@@ -1,14 +1,14 @@
-//  eba ¶ñ°Ô
+//  eba æ¶éœ¸
  
 inherit NPC;
  
 void create()
 {
-	set_name("¶ñ°Ô", ({ "e ba", "e" }));
+	set_name("æ¶éœ¸", ({ "e ba", "e" }));
 //	set("nickname", "");
 	set("long", 
-        "Ò»¸öÎ£º¦Ò»·½µÄ¶ñ°Ô£¬Ç¿ÄĞ°ÔÅ®£¬ÎŞ¶ñ²»×ö¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸€ä¸ªå±å®³ä¸€æ–¹çš„æ¶éœ¸ï¼Œå¼ºç”·éœ¸å¥³ï¼Œæ— æ¶ä¸åšã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(20) + 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"Ê¯»Ò·Û"NOR, ({ "shi huifeng", "huifeng" }) );
+        set_name(HIW"çŸ³ç°ç²‰"NOR, ({ "shi huifeng", "huifeng" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°üÊ¯»Ò·Û¿ÉÒÔ(sa)¡£\n") ;
-                set("unit", "°ü");
+                set("long", "è¿™æ˜¯ä¸€åŒ…çŸ³ç°ç²‰å¯ä»¥(sa)ã€‚\n") ;
+                set("unit", "åŒ…");
                 set("value", 0);
         }
         setup();
@@ -31,38 +31,38 @@ int do_shot(string arg)
         me = this_player();
 
 
-        if( !arg ) return notify_fail("ÄãÏë¶ÔË­ÈöÊ¯»Ò·Û£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³å¯¹è°æ’’çŸ³ç°ç²‰ï¼Ÿ\n");
 
         if( !objectp(target = present(arg, environment(me))) )
-                return notify_fail("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 
        if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸Ê¯»Ò¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒçŸ³ç°ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !target->is_character() || target->is_corpse() )
-                return notify_fail("¿´Çå³þÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕýÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
         if(userp(target))
-                return notify_fail("²»ÄÜ¶ÔÍæ¼ÒÓÃÕâÃ´ÏÂÁ÷µÄÊÖ·¨¡£\n");
+                return notify_fail("ä¸èƒ½å¯¹çŽ©å®¶ç”¨è¿™ä¹ˆä¸‹æµçš„æ‰‹æ³•ã€‚\n");
 
-        if( (string)this_player()->query("family/family_name")!="ÉñÁú½Ì" ) {
-                message_vision("\n$NÄã²»ÄÜÓÃÕâÖÖÏÂÈýÁ÷µÄÊÖ·¨£¡\n", me);
+        if( (string)this_player()->query("family/family_name")!="ç¥žé¾™æ•™" ) {
+                message_vision("\n$Nä½ ä¸èƒ½ç”¨è¿™ç§ä¸‹ä¸‰æµçš„æ‰‹æ³•ï¼\n", me);
                 return 1;
                 }
-        message_vision(HIR"\n$NÒ»ÉùÇáÐ¦£¬Ò»´ó°üÊ¯»ÒÆÌÌì¸ÇµØµÄÈöÁË³öÀ´!\n"NOR,me,target);
+        message_vision(HIR"\n$Nä¸€å£°è½»ç¬‘ï¼Œä¸€å¤§åŒ…çŸ³ç°é“ºå¤©ç›–åœ°çš„æ’’äº†å‡ºæ¥!\n"NOR,me,target);
         me->start_busy(1) ;
         if( !target->is_killing(me) ) target->kill_ob(me);
         if( random(me->query("combat_exp"))<target->query("combat_exp")/2)
-        message_vision(HIW"\n$n´ó½ÐÒ»Éù£¬ÃÍµÄÒ»¸öºµµØ°Î´ÐÉíÐÐ³åÆðÊýÕÉÀ´¸ß£¬¿°¿°¶ã¹ýÁË$NµÄÊ¯»Ò£¡\n"NOR,me,target);
+        message_vision(HIW"\n$nå¤§å«ä¸€å£°ï¼ŒçŒ›çš„ä¸€ä¸ªæ—±åœ°æ‹”è‘±èº«è¡Œå†²èµ·æ•°ä¸ˆæ¥é«˜ï¼Œå ªå ªèº²è¿‡äº†$Nçš„çŸ³ç°ï¼\n"NOR,me,target);
         else {
-                message_vision(HIW"\n$n¶ãÉÁ²»¼°£¬±»Ê¯»ÒÈöÁËÒ»Éí£¡\n"NOR,me,target);
-                tell_object (target, HIR "\nÄãÖ»¾õµÃÁ³ÉÏÒ»ºÚ£¬Ê²Ã´Ò²¿´²»¼ûÁË!\n"NOR);
+                message_vision(HIW"\n$nèº²é—ªä¸åŠï¼Œè¢«çŸ³ç°æ’’äº†ä¸€èº«ï¼\n"NOR,me,target);
+                tell_object (target, HIR "\nä½ åªè§‰å¾—è„¸ä¸Šä¸€é»‘ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸è§äº†!\n"NOR);
                 target->start_busy (6);
                 }
         destruct(this_object());

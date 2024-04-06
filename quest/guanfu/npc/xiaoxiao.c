@@ -1,14 +1,14 @@
-// jianghu xiaoxiao ½­ºşÏüĞ¡
+// jianghu xiaoxiao æ±Ÿæ¹–å®µå°
 inherit NPC;
  
 void create()
 {
-	set_name("½­ºşÏüĞ¡", ({ "jianghu xiaoxiao", "xiaoxiao" }));
+	set_name("æ±Ÿæ¹–å®µå°", ({ "jianghu xiaoxiao", "xiaoxiao" }));
 //	set("nickname", "");
 	set("long", 
-        "Ò»¸ö¹¦·ò²»ÊÇºÜºÃ£¬µ«ÊÇÒÑ¾­¿ªÊ¼×÷¶ñ½­ºşµÄĞ¡±²¡£\n"
-        " ÉñÌ¬ö»öº£¬ÈÃÈËÌÖÑá¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸€ä¸ªåŠŸå¤«ä¸æ˜¯å¾ˆå¥½ï¼Œä½†æ˜¯å·²ç»å¼€å§‹ä½œæ¶æ±Ÿæ¹–çš„å°è¾ˆã€‚\n"
+        " ç¥æ€é¾Œé¾Šï¼Œè®©äººè®¨åŒã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

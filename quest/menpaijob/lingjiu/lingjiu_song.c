@@ -34,7 +34,7 @@ void zuji(object me)
         obj->set_skill("kuang-jian",maxskill);
         obj->set_skill("sword",maxskill);
         obj->set_skill("parry",maxskill);        
-	 obj->set("title",HIR"ÆßÊ®¶þ¶´µÜ×Ó"NOR);
+	 obj->set("title",HIR"ä¸ƒåäºŒæ´žå¼Ÿå­"NOR);
 	}
 	else
 	{
@@ -47,8 +47,8 @@ void zuji(object me)
 	 }
 	obj->do_copy(maxpot);
 	obj->move(environment(me));
-	obj->set("title",HIR"ÆßÊ®¶þ¶´µÜ×Ó"NOR);
-	message_vision(HIG"\n$N¶Ô×Å$n´ó½ÐÒ»Éù£¬Õâ´ÎÊÇÎÒÃÇµÄ»ú»á£¬É±°¡!¡£\n"NOR,obj,me); 
+	obj->set("title",HIR"ä¸ƒåäºŒæ´žå¼Ÿå­"NOR);
+	message_vision(HIG"\n$Nå¯¹ç€$nå¤§å«ä¸€å£°ï¼Œè¿™æ¬¡æ˜¯æˆ‘ä»¬çš„æœºä¼šï¼Œæ€å•Š!ã€‚\n"NOR,obj,me); 
 	obj->kill_ob(me);
 }
 

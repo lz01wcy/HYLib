@@ -4,12 +4,12 @@ inherit ITEM;
 int j=3;
 void create()
 {
-        set_name("ÃÉ¹Å¾ü¶Ó", ({ "mengurenma"}));
-        set("unit", "Ö»");
+        set_name("è’™å¤å†›é˜Ÿ", ({ "mengurenma"}));
+        set("unit", "åª");
         set_weight(90000000);
         set("long", "
-Ò»Ö»Ô¶µÀ¶øÀ´µÄÃÉ¹Å¾ü¶Ó£¬¿´À´ÓĞ²»ÉÙ¸ßÊÖ¡£ÖĞ¼ä²å
-×ÅÒ»Ãæ´óÆì£¬ËÆºõĞ´×Å¡°ÃÉ¹Å»¤½Ì·¨Íõ¡±¶ş¸ö´ó×Ö¡£¡£¡£\n");
+ä¸€åªè¿œé“è€Œæ¥çš„è’™å¤å†›é˜Ÿï¼Œçœ‹æ¥æœ‰ä¸å°‘é«˜æ‰‹ã€‚ä¸­é—´æ’
+ç€ä¸€é¢å¤§æ——ï¼Œä¼¼ä¹å†™ç€â€œè’™å¤æŠ¤æ•™æ³•ç‹â€äºŒä¸ªå¤§å­—ã€‚ã€‚ã€‚\n");
         set("no_get", 1);
         set("no_drop", 1);
 	 set("no_put",1);
@@ -33,9 +33,9 @@ int do_rob()
 
    if(!living(me)) return 0;
    if(!me->query("kill_gumu")) 
-       return notify_fail("Äãµ¨×Ó²»Ğ¡£¬¾¹¸ÒÔÚÃÉ¹Å´ó¾ü×ö¶Ô£¿\n");
+       return notify_fail("ä½ èƒ†å­ä¸å°ï¼Œç«Ÿæ•¢åœ¨è’™å¤å¤§å†›åšå¯¹ï¼Ÿ\n");
 
-   message_vision(HIY"$NÒ»×İÉí,Ç±ÈëÁË$n !!"+me->name()+"¿ªÊ¼Ç±ÈëÃÉ¹Å´ó¾üÄÚ£¡\n"NOR, me, ob);
+   message_vision(HIY"$Nä¸€çºµèº«,æ½œå…¥äº†$n !!"+me->name()+"å¼€å§‹æ½œå…¥è’™å¤å¤§å†›å†…ï¼\n"NOR, me, ob);
    me->set_temp("xx_rob", 1);
    remove_call_out("make_bs");
    call_out("make_bs", 6, me, ob); 
@@ -64,11 +64,11 @@ if (!present("yuanshuai", room))
       if( obn[i]->is_character() && obn[i]!=me
       && obn[i]->query("id")=="yuanshuai" )
 {
-    message_vision(HIW"ÄãÖÕÓÚ·¢ÏÖÁËÕâ¶ÓÃÉ¾üµÄÒâÍ¼ÁË¡£\n"NOR, me);
+    message_vision(HIW"ä½ ç»ˆäºå‘ç°äº†è¿™é˜Ÿè’™å†›çš„æ„å›¾äº†ã€‚\n"NOR, me);
     destruct(ob);
 }
 
-message_vision(HIG"ÄãÕÒÁË°ëÌì£¬ºÃÏñÃ»ÕÒµ½Ê²Ã´!Ö»ºÃÌÓÁË³öÀ´!!\n"NOR, me);
+message_vision(HIG"ä½ æ‰¾äº†åŠå¤©ï¼Œå¥½åƒæ²¡æ‰¾åˆ°ä»€ä¹ˆ!åªå¥½é€ƒäº†å‡ºæ¥!!\n"NOR, me);
 me->delete("kill_gumu");
 me->delete("kill_gumu");
 me->apply_condition("gumu_busy",0);
@@ -79,7 +79,7 @@ me->move("/d/xiangyang/southgate2");
 
 void aaa(object me)
 {
-       message_vision("$N×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n",me);       
+       message_vision("$Nè½¬è¿‡å‡ ä¸ªå°å±±ä¸˜å°±ä¸è§äº†ã€‚\n",me);       
        destruct(me);
        return;
 }

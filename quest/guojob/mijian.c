@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"¾ü»úÃÜ¼ş"NOR, ({ "mi jian"}));
+        set_name(HIR"å†›æœºå¯†ä»¶"NOR, ({ "mi jian"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·â");
+                set("unit", "å°");
                 set("long",
-                        "Ò»·â¾ü»úÃÜ¼ş,¼ÇÔØ×ÅÏåÑô³ÇÊØ¾üµÄ±øÁ¦²¿Êğ¡£\n");
+                        "ä¸€å°å†›æœºå¯†ä»¶,è®°è½½ç€è¥„é˜³åŸå®ˆå†›çš„å…µåŠ›éƒ¨ç½²ã€‚\n");
                 set("value", 0);
                 set("material", "paper");
 		 
@@ -28,14 +28,14 @@ int do_xiaohui(string arg)
               
 		me=this_player();
         ob=this_object();
-		if(!arg||arg!="mi jian") return notify_fail("ÄãÒªÏú»ÙÊ²Ã´£¿\n");
+		if(!arg||arg!="mi jian") return notify_fail("ä½ è¦é”€æ¯ä»€ä¹ˆï¼Ÿ\n");
         if(ob->query_temp("host")!= me->query("id")
 			||!me->query_condition("zzz_busy")||!me->query_temp("team_count"))
-		return notify_fail("Õâ¼şÊÂºÃÏñºÍÄãÃ»¹ØÏµ°É?\n");
+		return notify_fail("è¿™ä»¶äº‹å¥½åƒå’Œä½ æ²¡å…³ç³»å§?\n");
 		if (!present("mi jian",me) )
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÃÜ¼ş¡£\n"); 
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰å¯†ä»¶ã€‚\n"); 
         //check ok
-		message_vision("$N´Ó»³ÖĞÌÍ³öÒ»Ö»»ğÕÛµãÈ¼ÁËÃÜ¼ş¡£\n"+HIR"Ö»Ìı¡¸ºä¡¹µÄÒ»Éù£¬ÃÜ¼şÔÚ»ğÖĞÂıÂı»¯Îª»Ò½ı ¡£\n"NOR, me);
+		message_vision("$Nä»æ€€ä¸­æå‡ºä¸€åªç«æŠ˜ç‚¹ç‡ƒäº†å¯†ä»¶ã€‚\n"+HIR"åªå¬ã€Œè½°ã€çš„ä¸€å£°ï¼Œå¯†ä»¶åœ¨ç«ä¸­æ…¢æ…¢åŒ–ä¸ºç°çƒ¬ ã€‚\n"NOR, me);
         count=me->query_temp("team_count");
 		if (count<2) count=2;	
         base_exp=1500/count;
@@ -56,9 +56,9 @@ int do_xiaohui(string arg)
 		     pot=exp/3+random(100);
              team[i]->add("potential",pot);
              team[i]->add("combat_exp",exp);
-			 tell_object(team[i],HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+			 tell_object(team[i],HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 			}
 			} 

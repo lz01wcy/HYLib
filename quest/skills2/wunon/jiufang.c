@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ȫ�Ƶ���Ʒ�");
+	set("short", "龙泉酒店造酒房");
 	set("long", @LONG
-����һ����Ȫ�Ƶ���Ʒ������ܶ������߰�������ԭ�ϣ�����
-�������ø��ֲ�����ơ�
+这是一间龙泉酒店造酒房！四周都是乱七八糟的造酒原料，人们
+把在这用各种材料造酒。
 LONG
 	);
 	set("no_clean_up", 0);

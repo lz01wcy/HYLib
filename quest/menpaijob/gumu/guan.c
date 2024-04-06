@@ -5,11 +5,11 @@ int j=3;
 int ask_rob();
 void create()
 {
-        set_name(HIR"ÃÉ¹ÅÔªÊ¦"NOR, ({ "yuanshuai"}));
+        set_name(HIR"è’™å¤å…ƒå¸ˆ"NOR, ({ "yuanshuai"}));
        set("long",
-                "Ò»ÃûÃÉ¹ÅÔªÊ¦¡£\n");
+                "ä¸€åè’™å¤å…ƒå¸ˆã€‚\n");
         set("attitude", "friendly");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("per", 40);
         set("str", 30);
@@ -53,14 +53,14 @@ int do_rob()
    ob = this_object();
    stage = 0;
 	if(environment(me)->query("no_fight"))
-		return notify_fail("ÕâÀï²»Ğí´ò¶·£¡\n");
+		return notify_fail("è¿™é‡Œä¸è®¸æ‰“æ–—ï¼\n");
    if(!living(ob))
-   return notify_fail("Ã»ÓĞÈËÄãÉ±Ë­°¡!!\n"); 
+   return notify_fail("æ²¡æœ‰äººä½ æ€è°å•Š!!\n"); 
    if(objectp(present("fawang", environment(me))))
-   return notify_fail("Õâ¼¸¸öÃÉ¹Å»¤½Ì·¨Íõ¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
+   return notify_fail("è¿™å‡ ä¸ªè’™å¤æŠ¤æ•™æ³•ç‹çœ‹æ¥æ­¦åŠŸä¸å¼±ï¼Œä½ è¿˜æ˜¯å…ˆæ‰“å‘äº†é¢å‰è¿™ä¸ªå†è¯´å§ï¼\n");  
    if(objectp(present("weishi", environment(me))))
-   return notify_fail("Õâ¼¸¸öÃÉ¹Å±ø¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
-   message_vision(HIM"$N¶Ô×Å$nÒ»Éù´ó½Ğ£º"+me->name()+"ÔÚ´Ë£¡ÄãÕâÃÉ¹ÅÔªÊ¦ÄÄÀï×ß??\n"NOR, me, ob);
+   return notify_fail("è¿™å‡ ä¸ªè’™å¤å…µçœ‹æ¥æ­¦åŠŸä¸å¼±ï¼Œä½ è¿˜æ˜¯å…ˆæ‰“å‘äº†é¢å‰è¿™ä¸ªå†è¯´å§ï¼\n");  
+   message_vision(HIM"$Nå¯¹ç€$nä¸€å£°å¤§å«ï¼š"+me->name()+"åœ¨æ­¤ï¼ä½ è¿™è’™å¤å…ƒå¸ˆå“ªé‡Œèµ°??\n"NOR, me, ob);
    me->set_temp("xx_rob", 1);
    me->start_busy(2);
    remove_call_out("make_bs");
@@ -79,7 +79,7 @@ void make_bs(object me, object ob)
 if (me->query("combat_exp") > 6000000)
 {
 	  obj = new(__DIR__"xueshan1");
-	obj->set("title",HIR"ÃÉ¹Å»¤¹ú·¨Íõ"NOR);
+	obj->set("title",HIR"è’™å¤æŠ¤å›½æ³•ç‹"NOR);
 }
 	}
        else
@@ -88,7 +88,7 @@ if (me->query("combat_exp") > 6000000)
 if (me->query("combat_exp") > 6000000)
 {
 	  obj = new(__DIR__"xueshan2");
-	obj->set("title",HIR"ÃÉ¹Å»¤¹ú·¨Íõ"NOR);
+	obj->set("title",HIR"è’™å¤æŠ¤å›½æ³•ç‹"NOR);
 
 }
 	}
@@ -96,11 +96,11 @@ if (me->query("combat_exp") > 6000000)
         if (random(3) == 2)
         {
 	  obj = new(__DIR__"xueshan3");
-	obj->set("title",HIR"ÃÉ¹Å»¤¹ú·¨Íõ"NOR);
+	obj->set("title",HIR"è’™å¤æŠ¤å›½æ³•ç‹"NOR);
 	}
 else{
 obj = new(__DIR__"mengubing");
-obj->set("title",HIG"ÃÉ¹ÅÇ×±ø"NOR);
+obj->set("title",HIG"è’™å¤äº²å…µ"NOR);
 }
          obj->move(environment(me));
 	 obj->do_copy(me);
@@ -114,13 +114,13 @@ if (me->query_skill("jiuyin-zhengong",1) > 300)
 
 	if ( obj->query("id")=="weishi")
 	{
-	obj->set("title",HIG"ÃÉ¹ÅÇ×±ø"NOR);
+	obj->set("title",HIG"è’™å¤äº²å…µ"NOR);
 	}
 	  obj->do_copy(me);
          obj1 = new(__DIR__"mengubing");
          obj1->move(environment(me));
  	  obj1->do_copy(me);
-	obj1->set("title",HIY"ÃÉ¹ÅÇ×±ø"NOR);
+	obj1->set("title",HIY"è’™å¤äº²å…µ"NOR);
           j=j-1;     
           obj->do_copy(me);
 if (me->query_skill("jiuyin-zhengong",1) > 300)
@@ -140,17 +140,17 @@ if (me->query_skill("jiuyin-zhengong",1) > 300)
           me->start_busy(1);
           }
 else {
-        message_vision(HIW"$N¼ûÒÑ¾­ÎŞÈË±£»¤£¬°ÑÃÉ¹ÅÔªÊ¦Ò»µ¶É±ÁË£¡\n"NOR, me);    
+        message_vision(HIW"$Nè§å·²ç»æ— äººä¿æŠ¤ï¼ŒæŠŠè’™å¤å…ƒå¸ˆä¸€åˆ€æ€äº†ï¼\n"NOR, me);    
     if (me->query("kill_gumu") == 1) {
-       message_vision(HIG"$NÎª¹ú³ıº¦,Îä¹¦ÓĞÁË½øÕ¹£¡\n"NOR, me);    
+       message_vision(HIG"$Nä¸ºå›½é™¤å®³,æ­¦åŠŸæœ‰äº†è¿›å±•ï¼\n"NOR, me);    
 exp=660 + random(900);
 pot=440 + random(650);
        me->add("combat_exp",exp);
        me->add("potential",pot);
-   tell_object(me, "Äã±»½±ÀøÁË"+chinese_number(exp)+"µã¾­ÑéÖµ£¡\n"+chinese_number(pot)+"µãÇ±ÄÜ\n");
+   tell_object(me, "ä½ è¢«å¥–åŠ±äº†"+chinese_number(exp)+"ç‚¹ç»éªŒå€¼ï¼\n"+chinese_number(pot)+"ç‚¹æ½œèƒ½\n");
        me->set("kill_gumu",0);
-       write(HIW"ÄãÍê³ÉÁËÈÎÎñ,´óĞ¦¼¸Éù,¸Ã³·ÍËÁË.\n");
-       write(HIR"ÄãÖÕÓÚÌÓ³öÁËÃÉ¹Å¾ü´óÓª.\n"NOR);
+       write(HIW"ä½ å®Œæˆäº†ä»»åŠ¡,å¤§ç¬‘å‡ å£°,è¯¥æ’¤é€€äº†.\n");
+       write(HIR"ä½ ç»ˆäºé€ƒå‡ºäº†è’™å¤å†›å¤§è¥.\n"NOR);
        me->move("/d/xiangyang/southgate2");
        }
        ob->die();
@@ -173,8 +173,8 @@ void kill_ob(object ob)
         set("neili", 8000);
         set("max_neili", 8000);
         ob->start_busy(6);
-        command("say ±¾Ê¦²»»á,Îä¹¦´òÊ²Ã´´ò??");
- message_vision(HIC "ÇëÓÃshayuanshuaiÀ´×ö¡£\n" NOR,ob);
+        command("say æœ¬å¸ˆä¸ä¼š,æ­¦åŠŸæ‰“ä»€ä¹ˆæ‰“??");
+ message_vision(HIC "è¯·ç”¨shayuanshuaiæ¥åšã€‚\n" NOR,ob);
 }
 
 void fight_ob(object ob)
@@ -191,15 +191,15 @@ void fight_ob(object ob)
         set("neili", 8000);
         set("max_neili", 8000);
         ob->start_busy(6);
-        command("say ±¾Ê¦²»»á,Îä¹¦´òÊ²Ã´´ò??");
-        message_vision(HIC "ÇëÓÃshayuanshuaiÀ´×ö¡£\n" NOR,ob);
+        command("say æœ¬å¸ˆä¸ä¼š,æ­¦åŠŸæ‰“ä»€ä¹ˆæ‰“??");
+        message_vision(HIC "è¯·ç”¨shayuanshuaiæ¥åšã€‚\n" NOR,ob);
 }
 
 void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "ÃÉ¹ÅÔªÊ¦ÌÓÁË³öÈ¥£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "è’™å¤å…ƒå¸ˆé€ƒäº†å‡ºå»ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -208,13 +208,13 @@ void leave()
 int do_quit(string arg)
 {
 	if(arg=="roar") {
-        write(this_player()->query("name")+"£¬ÕâÀï²»ÄÜÓÃroar°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œè¿™é‡Œä¸èƒ½ç”¨roarå§ï¼\n");
         return 1;
 	}
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃhalt£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨haltï¼\n");
         return 1;
 }

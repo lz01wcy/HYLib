@@ -1,15 +1,15 @@
-//  ada °¢´ó
+//  ada é˜¿å¤§
 
 #include <ansi.h> 
 inherit NPC;
  
 void create()
 {
-	set_name("°¢´ó", ({ "a da", "a" }));
-	set("nickname", "°Ë±ÛÉñ½£");
+	set_name("é˜¿å¤§", ({ "a da", "a" }));
+	set("nickname", "å…«è‡‚ç¥å‰‘");
 	set("long", 
-        "Ô­Ø¤°ïËÄ´ó³¤ÀÏÖ®Ê×£¬½£ÊõÖ®¾«£¬Ãû¶¯½­ºş£¬¾İËµ³öÊÖ¼«¿ì¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "åŸä¸å¸®å››å¤§é•¿è€ä¹‹é¦–ï¼Œå‰‘æœ¯ä¹‹ç²¾ï¼ŒååŠ¨æ±Ÿæ¹–ï¼Œæ®è¯´å‡ºæ‰‹æå¿«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 66);
 	set("attitude", "peaceful");
 	set("shen", -18000);

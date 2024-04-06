@@ -1,17 +1,17 @@
-// wang.c Íõ¼á
+// wang.c ç‹åš
 #include <ansi.h>;
 inherit NPC;
 //inherit F_SKILL;
 #include "teamjob.c";
 void create()
 {
-	set_name("Íõ¼á", ({ "wang jian", "wang", "jian" }));
-	set("gender", "ÄĞĞÔ");
-	set("title", HIY"ÏåÑôÊØ±¸´ó½«"NOR);
+	set_name("ç‹åš", ({ "wang jian", "wang", "jian" }));
+	set("gender", "ç”·æ€§");
+	set("title", HIY"è¥„é˜³å®ˆå¤‡å¤§å°†"NOR);
 	set("age", 40);
 	set("str", 35);
 	set("dex", 36);
-	set("long", "ÕâÊÇÒ»¸ö´óËÎÏåÑôÊØ±¸Ö÷½«£¬ÂúÁ³Õ÷³¾¡£\n");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªå¤§å®‹è¥„é˜³å®ˆå¤‡ä¸»å°†ï¼Œæ»¡è„¸å¾å°˜ã€‚\n");
 	set("combat_exp", 8000000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");
@@ -34,9 +34,9 @@ void create()
 	set("jiali", 100);
 	set("inquiry", ([
 		 "job"   : (: ask_job :),
-       //  "¹¦ÀÍ"  : (: ask_gonglao :),
+       //  "åŠŸåŠ³"  : (: ask_gonglao :),
          "fangqi": (: ask_fangqi :),
-         "·ÅÆú"  : (: ask_fangqi :),
+         "æ”¾å¼ƒ"  : (: ask_fangqi :),
 		]));
 
 	setup();

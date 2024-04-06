@@ -1,4 +1,4 @@
-// qiu.c Çğ´¦»ú
+// qiu.c ä¸˜å¤„æœº
 // By Lgg,1998.10
 
 #include <ansi.h>
@@ -11,14 +11,14 @@ void thank_dest(object obj,object ob);
 
 void create()
 {
-        set_name("Çğ´¦»ú", ({"qiu chuji", "qiu"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ä¸˜å¤„æœº", ({"qiu chuji", "qiu"}));
+        set("gender", "ç”·æ€§");
         set("age", 36);
         set("class", "taoist");
-        set("nickname",HIM"³¤´º×Ó"NOR);
+        set("nickname",HIM"é•¿æ˜¥å­"NOR);
         set("long",
-                "Ëû¾ÍÊÇ½­ºşÉÏÈË³Æ¡®³¤´º×Ó¡¯µÄÇğ´¦»úÇğÕæÈË£¬Ëû·½Ãæ´ó¶ú£¬\n"
-                "ÂúÃæºì¹â£¬½£Ä¿Ô²Õö£¬Ë«Ã¼Èçµ¶£¬ÏàÃ²ÍşÑÏ£¬Æ½Éú¼²¶ñÈç³ğ¡£\n");
+                "ä»–å°±æ˜¯æ±Ÿæ¹–ä¸Šäººç§°â€˜é•¿æ˜¥å­â€™çš„ä¸˜å¤„æœºä¸˜çœŸäººï¼Œä»–æ–¹é¢å¤§è€³ï¼Œ\n"
+                "æ»¡é¢çº¢å…‰ï¼Œå‰‘ç›®åœ†çï¼ŒåŒçœ‰å¦‚åˆ€ï¼Œç›¸è²Œå¨ä¸¥ï¼Œå¹³ç”Ÿç–¾æ¶å¦‚ä»‡ã€‚\n");
         set("attitude", "heroism");
         set("shen_type",1);
         set("str", 52);
@@ -26,7 +26,7 @@ void create()
         set("con", 50);
         set("dex", 50);
 
-        set("title","È«ÕæÆß×ÓÖ®ËÄ");
+        set("title","å…¨çœŸä¸ƒå­ä¹‹å››");
 
         set("chat_chance_combat", 80);
         set("chat_msg_combat", ({
@@ -53,16 +53,16 @@ void create()
         set("score", 300000);
 
         set_skill("force", 200);
-        set_skill("xiantian-qigong", 350);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 350);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 200);
 set_skill("qixing-jian",280);
 set_skill("qixing-shou",280);
 set_skill("qixing-array",280);
-        set_skill("quanzhen-jian",250);  //È«Õæ½£
+        set_skill("quanzhen-jian",250);  //å…¨çœŸå‰‘
         set_skill("dodge", 250);
-        set_skill("jinyan-gong", 300);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 300);   //é‡‘é›åŠŸ
         set_skill("parry", 200);
-        set_skill("haotian-zhang", 250);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 250);    //æ˜Šå¤©æŒ
         set_skill("literate",200);
         set_skill("strike",200);
         set_skill("taoism",250);
@@ -79,13 +79,13 @@ set_skill("hand", 250);
         set_temp("apply/armor", 200);
         set_temp("apply/damage", 250);
 
-        create_family("È«Õæ½Ì", 2, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 2, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é—¨æ­£å®—ã€‚\n",
 		 "job"  : (: ask_jianxi :),
-		"²ÉÒ©" : (: ask_job :),
+		"é‡‡è¯" : (: ask_job :),
 		"yaojob" : (: ask_job :),
         ]) );
 
@@ -114,13 +114,13 @@ void greeting(object ob)
 if (!ob) return;
         if (interactive(ob) && !environment(ob)->query("no_fight"))
         {
-             if (!(fam = ob->query("family")) || fam["family_name"] != "È«Õæ½Ì")
+             if (!(fam = ob->query("family")) || fam["family_name"] != "å…¨çœŸæ•™")
  {
                 if (ob->query("shen")>-5000) {
-                        command("say ÕâÀïÊÇ±¾½ÌÖØµØ£¬Äã×ß¶¯Ğ¡ĞÄĞ©¡£");
+                        command("say è¿™é‡Œæ˜¯æœ¬æ•™é‡åœ°ï¼Œä½ èµ°åŠ¨å°å¿ƒäº›ã€‚");
                 }
                 else {
-                        command("say ÄãÕâÄ§Í·£¬¾¹¸Ò´³ÈëÎÒÈ«ÕæÖØµØ£¬ÎÒÒ»¶¨ÒªÉ±ÁËÄã£¡");
+                        command("say ä½ è¿™é­”å¤´ï¼Œç«Ÿæ•¢é—¯å…¥æˆ‘å…¨çœŸé‡åœ°ï¼Œæˆ‘ä¸€å®šè¦æ€äº†ä½ ï¼");
                         me->set_leader(ob);
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob);
@@ -135,15 +135,15 @@ if (!ob) return;
 void attempt_apprentice(object ob)
 {
         if ((int)ob->query_skill("xiantian-qigong",1) < 50 ) {
-                command("say ÄãµÄ±¾ÃÅÄÚ¹¦ĞÄ·¨»ğºò²»×ã,ÄÑÒÔÁìÂÔ¸ü¸ßÉîµÄÎä¹¦¡£");
+                command("say ä½ çš„æœ¬é—¨å†…åŠŸå¿ƒæ³•ç«å€™ä¸è¶³,éš¾ä»¥é¢†ç•¥æ›´é«˜æ·±çš„æ­¦åŠŸã€‚");
                 return;
         }
         if ((int)ob->query("shen")<5000) {
-                command("say ĞĞÏÀÕÌÒåÊÇÎÒ±²Ñ§ÎäÈËµÄ»ù±¾Æ·ÖÊ£¬ÄãÈôÄÜ¶à×öĞ©ÏÁÒåÖ®
-ÊÂ£¬ÎÒÒ»¶¨ÊÕÄãÎªÍ½¡£\n");
+                command("say è¡Œä¾ ä»—ä¹‰æ˜¯æˆ‘è¾ˆå­¦æ­¦äººçš„åŸºæœ¬å“è´¨ï¼Œä½ è‹¥èƒ½å¤šåšäº›ç‹­ä¹‰ä¹‹
+äº‹ï¼Œæˆ‘ä¸€å®šæ”¶ä½ ä¸ºå¾’ã€‚\n");
                 return;
         }
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ è¿™ä¸ªå¾’å¼Ÿäº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 
@@ -158,29 +158,29 @@ string ask_job()
 
    if(this_object()->is_busy())
 {
-message_vision("Çğ´¦»ú¶Ô$NËµµÀ£º¡°ÎÒÕıÃ¦×ÅÄØ£¡¡±\n",me);
-				return "µÈ»á£¡\n";
+message_vision("ä¸˜å¤„æœºå¯¹$Nè¯´é“ï¼šâ€œæˆ‘æ­£å¿™ç€å‘¢ï¼â€\n",me);
+				return "ç­‰ä¼šï¼\n";
 }
 
-	  if ( ob->query("family/family_name") != "È«Õæ½Ì" )
-					 return "ÕâÎ»"+RANK_D->query_respect(ob)+"·ÇÎÒÈ«Õæ½ÌµÜ×Ó£¬Æñ¸ÒÀÍ·³¡£\n";
+	  if ( ob->query("family/family_name") != "å…¨çœŸæ•™" )
+					 return "è¿™ä½"+RANK_D->query_respect(ob)+"éæˆ‘å…¨çœŸæ•™å¼Ÿå­ï¼Œå²‚æ•¢åŠ³çƒ¦ã€‚\n";
 
 	  if(job_stat){
 				command("hammer "+ob->query("id"));
-				return "Äã»¹Ã»Íê³ÉÈÎÎñ£¬¾ÍÓÖÏëÒªĞÂµÄ£¿\n";
+				return "ä½ è¿˜æ²¡å®Œæˆä»»åŠ¡ï¼Œå°±åˆæƒ³è¦æ–°çš„ï¼Ÿ\n";
 	  }
 
 
 
 	  command("nod");
-	  command("say ºÃ£¬×î½üÁ¶µ¤ÓÃµÄ²İÒ©¶¼ÓÃÍêÁË£¬ÄãÈ¥É½ÏÂÊ÷ÁÖÀïÈ¥²ÉÒ»Ğ©»ØÀ´¡£");
+	  command("say å¥½ï¼Œæœ€è¿‘ç‚¼ä¸¹ç”¨çš„è‰è¯éƒ½ç”¨å®Œäº†ï¼Œä½ å»å±±ä¸‹æ ‘æ—é‡Œå»é‡‡ä¸€äº›å›æ¥ã€‚");
 	  ob2 = new(__DIR__"obj/yaochu");
 	  ob2->move(me);
 	  ob->set_temp("qz_caiyao",1);
           ob->set_temp("qz/caiyao",1);
 	  command("give yao chu to "+ob->query("id"));
 
-	  return "ÔçÈ¥Ôç»Ø£¬Â·ÉÏÒªĞ¡ĞÄÒ»Ğ©£¡\n";
+	  return "æ—©å»æ—©å›ï¼Œè·¯ä¸Šè¦å°å¿ƒä¸€äº›ï¼\n";
 }
 
 int accept_object(object me, object obj)
@@ -191,29 +191,29 @@ int accept_object(object me, object obj)
 
    if(this_object()->is_busy())
 {
-message_vision("Çğ´¦»ú¶Ô$NËµµÀ£º¡°ÎÒÕıÃ¦×ÅÄØ£¡¡±\n",me);
+message_vision("ä¸˜å¤„æœºå¯¹$Nè¯´é“ï¼šâ€œæˆ‘æ­£å¿™ç€å‘¢ï¼â€\n",me);
 return 0;
 }
 
 if (userp(obj) )
 {
-		  command( "say Äã¸øÎÒÕâ¶«Î÷×öÊ²÷á£¿" );
+		  command( "say ä½ ç»™æˆ‘è¿™ä¸œè¥¿åšä»€éº½ï¼Ÿ" );
 		  return 0;
 }
 if( obj->query("ownmake") )
 {
-		  command( "say Äã¸øÎÒÕâ¶«Î÷×öÊ²÷á£¿" );
+		  command( "say ä½ ç»™æˆ‘è¿™ä¸œè¥¿åšä»€éº½ï¼Ÿ" );
 		  return 0;
 }
 
         if( !obj->query("yaocai") )
 {
-		  command( "say Äã¸øÎÒÕâ¶«Î÷×öÊ²÷á£¿" );
+		  command( "say ä½ ç»™æˆ‘è¿™ä¸œè¥¿åšä»€éº½ï¼Ÿ" );
 		  return 0;
 }
         if( obj->query_temp("byname")!=me->query("id") )
 {
-		  command( "say Õâ¸ö²»ÊÇÄãÕÒµ½µÄ°É£¬ÎÒÒªÄãÕÒµÄ!" );
+		  command( "say è¿™ä¸ªä¸æ˜¯ä½ æ‰¾åˆ°çš„å§ï¼Œæˆ‘è¦ä½ æ‰¾çš„!" );
 		  return 0;
 }
 		  if (
@@ -228,7 +228,7 @@ if( obj->query("ownmake") )
 			)
 			{
 
-			  if ( ob->query("family/family_name") == "È«Õæ½Ì" ) {
+			  if ( ob->query("family/family_name") == "å…¨çœŸæ•™" ) {
 this_object()->start_busy(2);
 					 remove_call_out("reward_dest");
 					 call_out("reward_dest", 0, obj, ob);
@@ -243,7 +243,7 @@ this_object()->start_busy(2);
 		  }
 
 		  command( "hmm" );
-		  command( "say Äã¸øÎÒÕâ¶«Î÷×öÊ²÷á£¿" );
+		  command( "say ä½ ç»™æˆ‘è¿™ä¸œè¥¿åšä»€éº½ï¼Ÿ" );
 
 		  return 0;
 }
@@ -254,7 +254,7 @@ void reward_dest(object obj,object ob)
 	object yaochu = present("yao chu",this_player() );
    if(yaochu)destruct(yaochu);
 	command( "pat "+ob->query("id"));
-	command( "say "+ob->query("name")+"¸ÉµÄ²»´í£¬ÏÂÈ¥ĞİÏ¢Ò»ÏÂ°É£¡\n");
+	command( "say "+ob->query("name")+"å¹²çš„ä¸é”™ï¼Œä¸‹å»ä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
 	if(ob->query_temp("qz_caiyao",1) )
 	{
 		ob->delete_temp("qz_caiyao");
@@ -263,9 +263,9 @@ void reward_dest(object obj,object ob)
 		ob->add("combat_exp",exp);
 		ob->add("potential",exp*2/3);
 		ob->add("herb/times",1);
-              message_vision( "\n$N»ñµÃÁË£º\n"
-                + chinese_number(exp ) + "µãÊµÕ½¾­Ñé£¬\n"
-                + chinese_number(exp*2/3) + "µãÇ±ÄÜ£¬\n" NOR, ob);
+              message_vision( "\n$Nè·å¾—äº†ï¼š\n"
+                + chinese_number(exp ) + "ç‚¹å®æˆ˜ç»éªŒï¼Œ\n"
+                + chinese_number(exp*2/3) + "ç‚¹æ½œèƒ½ï¼Œ\n" NOR, ob);
 	}
 	destruct(obj);
 }
@@ -274,7 +274,7 @@ void reward_dest(object obj,object ob)
 void thank_dest(object obj,object ob)
 {
 	command( "jump");
-	command( "say ÎÒÃÇºÜĞèÒªÕâĞ©Ò©²Ä£¬¶àĞ»À²£¡\n");
+	command( "say æˆ‘ä»¬å¾ˆéœ€è¦è¿™äº›è¯æï¼Œå¤šè°¢å•¦ï¼\n");
 	destruct(obj);
 }
 

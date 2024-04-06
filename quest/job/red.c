@@ -3,9 +3,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"ºì»õ"NOR, ({"prize"}));
-        set("unit", "°ü");
-        set("long", "Ò»°ü´ÓÀ´ÍùïÚ¶ÓÄÇÀïÇÀÀ´µÄºì»õ¡£\n");
+        set_name(HIR"çº¢è´§"NOR, ({"prize"}));
+        set("unit", "åŒ…");
+        set("long", "ä¸€åŒ…ä»æ¥å¾€é•–é˜Ÿé‚£é‡ŒæŠ¢æ¥çš„çº¢è´§ã€‚\n");
         set("value", 0);
         setup();
 }

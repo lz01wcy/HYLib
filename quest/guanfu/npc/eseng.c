@@ -1,14 +1,14 @@
-// eseng ¶ñÉ®
+// eseng æ¶åƒ§
  
 inherit NPC;
  
 void create()
 {
-	set_name("¶ñÉ®", ({ "e seng", "seng" }));
+	set_name("æ¶åƒ§", ({ "e seng", "seng" }));
 //	set("nickname", "");
 	set("long", 
-        "ÉÙÁÖµÄÅÑÉ®£¬¸ÉÁË²»ÉÙ»µÊÂ£¬¾İËµÊ±³£³öÃ»ÔÚÑÌ»¨ÁøÏï¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "å°‘æ—çš„å›åƒ§ï¼Œå¹²äº†ä¸å°‘åäº‹ï¼Œæ®è¯´æ—¶å¸¸å‡ºæ²¡åœ¨çƒŸèŠ±æŸ³å··ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 37);
 	set("attitude", "peaceful");
 	set("shen", -1000);

@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIY"ª∂¿÷”¢–€"NOR, ({ "hlyx" }) );
+    set_name(HIY"Ê¨¢‰πêËã±ÈõÑ"NOR, ({ "hlyx" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-            set("unit", "±æ");
+            set("unit", "Êú¨");
             set("material", "paper");
-            set("long", "…Ò È÷Æ“ª°£\n");
+            set("long", "Á•û‰π¶‰πã‰∏Ä„ÄÇ\n");
           }
 
     setup();

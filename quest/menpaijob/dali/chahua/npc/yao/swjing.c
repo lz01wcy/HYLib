@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// shouwu.c Ê×ÎÚ¾«
+// shouwu.c é¦–ä¹Œç²¾
 
 #include <ansi.h>
 
@@ -13,13 +13,13 @@ void init()
 
 void create()
 {
-	set_name( GRN "Ê×ÎÚ¾«" NOR , ({"shouwu jing", "shouwu"}));
+	set_name( GRN "é¦–ä¹Œç²¾" NOR , ({"shouwu jing", "shouwu"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ã");
-		set("long", "ÕâÊÇÒ»¿Ã³É¾«µÄºÎÊ×ÎÚ£¬ÖÁÉÙÉú³¤ÁË¼¸°ÙÄêÁË£¬ÔçÒÑ³ÉÈËĞÎ£¬ÓĞÆæÃîµÄÒ©Ğ§¡£\n");
+		set("unit", "æ£µ");
+		set("long", "è¿™æ˜¯ä¸€æ£µæˆç²¾çš„ä½•é¦–ä¹Œï¼Œè‡³å°‘ç”Ÿé•¿äº†å‡ ç™¾å¹´äº†ï¼Œæ—©å·²æˆäººå½¢ï¼Œæœ‰å¥‡å¦™çš„è¯æ•ˆã€‚\n");
 		set("yaocao",1);
 		set("value", 500);
 		set("medicine", 1);
@@ -31,12 +31,12 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	me->set("jing", (int)me->query("max_jing"));
 	me->set("eff_jing", (int)me->query("max_jing"));
 	me->set("jingli", (int)me->query("max_jingli"));
         
-	message_vision(HIY "$N³ÔÏÂÒ»¿ÃÊ×ÎÚ¾«£¬Ò©Ğ§Á¢¿ÌÍ¨³¹·Î¸­£¬Ö±´ïËÄÖ«¡£²»½ö¾«Á¦´óÕñ£¬Á¬ÉËÍ´Ò²È«¶¼¸Ğ¾õ²»µ½ÁË¡£\n" NOR, me);
+	message_vision(HIY "$Nåƒä¸‹ä¸€æ£µé¦–ä¹Œç²¾ï¼Œè¯æ•ˆç«‹åˆ»é€šå½»è‚ºè…‘ï¼Œç›´è¾¾å››è‚¢ã€‚ä¸ä»…ç²¾åŠ›å¤§æŒ¯ï¼Œè¿ä¼¤ç—›ä¹Ÿå…¨éƒ½æ„Ÿè§‰ä¸åˆ°äº†ã€‚\n" NOR, me);
 
 	destruct(this_object());
 	return 1;

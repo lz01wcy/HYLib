@@ -3,10 +3,10 @@ inherit ITEM;
 void to_rob();
 void create()
 {
-        set_name(HIR"¾ü»úĞÅ¼ş"NOR, ({"xin", "letter"}));
+        set_name(HIR"å†›æœºä¿¡ä»¶"NOR, ({"xin", "letter"}));
         set("long",
-               "ÕâÊÇ´óÀí¶Î¼ÒÍĞ¸¶ÄãµÄÖØÒªĞÅ¼ş¡£\n");
-        set("unit", "·â");
+               "è¿™æ˜¯å¤§ç†æ®µå®¶æ‰˜ä»˜ä½ çš„é‡è¦ä¿¡ä»¶ã€‚\n");
+        set("unit", "å°");
         set("weight", 5);
         set("no_drop", 1);
         set("no_get", 1);
@@ -28,14 +28,14 @@ string targ;
 int exp,pot;
 int i;
         if (!arg||!ob=present(arg,environment(me)))
-                return notify_fail("ÄãÒª°ÑĞÅËÍ¸øË­£¿\n");
+                return notify_fail("ä½ è¦æŠŠä¿¡é€ç»™è°ï¼Ÿ\n");
         targ=ob->query("name");
-if ( targ != me->query("quest/quest") ) return notify_fail("ÕâÊÇËÍ¸ø"+me->query("quest/quest")+"µÄĞÅ£¬ÄãÔõÃ´ÄÜËæ±ãÂÒ¸øÄØ£¿\n");
-        if (userp(ob)) return notify_fail("ÄãÅª´íÈËÁË°É£¿\n"); //Íæ¼Ò¿ÉÄÜÓĞÏàÍ¬ÓÚNPCµÄÃû×Ö
+if ( targ != me->query("quest/quest") ) return notify_fail("è¿™æ˜¯é€ç»™"+me->query("quest/quest")+"çš„ä¿¡ï¼Œä½ æ€ä¹ˆèƒ½éšä¾¿ä¹±ç»™å‘¢ï¼Ÿ\n");
+        if (userp(ob)) return notify_fail("ä½ å¼„é”™äººäº†å§ï¼Ÿ\n"); //ç©å®¶å¯èƒ½æœ‰ç›¸åŒäºNPCçš„åå­—
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
      if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
   if (random(100)<30&& !environment(this_player())->query("no_fight") )
 	{	
@@ -51,9 +51,9 @@ if ( targ != me->query("quest/quest") ) return notify_fail("ÕâÊÇËÍ¸ø"+me->query(
 
         if ( (int) me->query("task_time") < time() )
         {
-             return notify_fail(targ+"ÀäÀäµØËµ£º¡°ÄãÀ´ÍíÁË,µ¢ÎóÁËÎÒµÄ´óÊÂ£¬Äã»¹ÓĞÁ³À´¼ûÎÒ£¡¡±\n");
+             return notify_fail(targ+"å†·å†·åœ°è¯´ï¼šâ€œä½ æ¥æ™šäº†,è€½è¯¯äº†æˆ‘çš„å¤§äº‹ï¼Œä½ è¿˜æœ‰è„¸æ¥è§æˆ‘ï¼â€\n");
         }
-        tell_object(me,"Äã°ÑĞÅ½»¸øÁË"+targ+"¡£\n" NOR );
+        tell_object(me,"ä½ æŠŠä¿¡äº¤ç»™äº†"+targ+"ã€‚\n" NOR );
         exp=me->query("quest/exp_bonus");
         pot=me->query("quest/pot_bonus");
 i=this_object()->query_temp("tufei");
@@ -64,9 +64,9 @@ if (i>0)
 }
 if (exp > 600) exp=600;
 if (pot > 400) pot=400;
-        tell_object(me,HIW""+targ+"´óÏ²µÀ£º¶àĞ»Äú¼°Ê±ËÍĞÅ¸øÎÒ£¬Äã±»½±ÀøÁË£º\n"
-        +chinese_number(exp)+"µã¾­ÑéÖµ¡£\n"
-        +chinese_number(pot)+"µãÇ±ÄÜ¡£\n\n"NOR);
+        tell_object(me,HIW""+targ+"å¤§å–œé“ï¼šå¤šè°¢æ‚¨åŠæ—¶é€ä¿¡ç»™æˆ‘ï¼Œä½ è¢«å¥–åŠ±äº†ï¼š\n"
+        +chinese_number(exp)+"ç‚¹ç»éªŒå€¼ã€‚\n"
+        +chinese_number(pot)+"ç‚¹æ½œèƒ½ã€‚\n\n"NOR);
         me->add("combat_exp",exp);
         me->add("potential",pot);
         me->set_temp("tufei",0);
@@ -107,7 +107,7 @@ void to_rob()
 	maxskill=(int)me->query_skill("force");
 if (!maxskill) maxskill=10;
 	maxexp=me->query("combat_exp");
-	message_vision(HIR"ºöÈ»¼äÌø³öÒ»Èº½Ù·Ë£¡\n"NOR,this_object());
+	message_vision(HIR"å¿½ç„¶é—´è·³å‡ºä¸€ç¾¤åŠ«åŒªï¼\n"NOR,this_object());
 	for (i=0;i<=1;i++)
 	{
 
@@ -119,14 +119,14 @@ if (!maxskill) maxskill=10;
                 robber->set_skill("sword",maxskill*1/2);
                 robber->set_skill("parry",maxskill*1/2);        
                 robber->set_skill("dodge",maxskill*1/2);        
-  	        robber->set("title",HIR"½­ÄÏ´óµÁ"NOR);
+  	        robber->set("title",HIR"æ±Ÿå—å¤§ç›—"NOR);
 if (random(10)>7 || this_player()->query("combat_exp")>1000000)
 {
                 robber->set_skill("kuang-jian",maxskill*2/3);
                 robber->set_skill("sword",maxskill*2/3);
                 robber->set_skill("parry",maxskill*2/3);        
                 robber->set_skill("dodge",maxskill*2/3);        
-  	        robber->set("title",HIC"½­Ñó´óµÁ"NOR);
+  	        robber->set("title",HIC"æ±Ÿæ´‹å¤§ç›—"NOR);
 }
 		 if(objectp(present("biaoshi", environment(this_player()))))
 		{	robber->kill_ob(present("biaoshi",environment(this_player())));

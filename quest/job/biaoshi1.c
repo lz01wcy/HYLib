@@ -3,14 +3,14 @@ inherit NPC;
 void create()
 {
       string weapon;        
-        set_name("»¤ïÚïÚÊ¦", ({ "biaoshi"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æŠ¤é•–é•–å¸ˆ", ({ "biaoshi"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 25);
         set("str", 33);
         set("con", 26);
         set("int", 20);
         set("dex", 23);
-        set("long", "³¤·çïÚ¾ÖµÄïÚÊ¦¡£\n");
+        set("long", "é•¿é£é•–å±€çš„é•–å¸ˆã€‚\n");
         set("combat_exp", 1080000); 
         set("attitude", "friendly");
         set_skill("unarmed", 80+random(180));
@@ -54,7 +54,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(this_object()->query("name") + "×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(this_object()->query("name") + "é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

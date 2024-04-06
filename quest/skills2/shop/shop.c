@@ -1,16 +1,16 @@
-// zhujia.c Öý¼×·¿
-// ÐÇÐÇlywin 2000/9/2 
+// zhujia.c é“¸ç”²æˆ¿
+// æ˜Ÿæ˜Ÿlywin 2000/9/2 
 
 #include <ansi.h>
 inherit ROOM;
 
  void create()
 {
-        set("short", "Ê¥±øÆ÷ÆÌ");
+        set("short", "åœ£å…µå™¨é“º");
         set("long", @LONG
-ÕâÀïÊÇÈ«¹ú×îºÃµÄ±øÆ÷ÆÌ,ÀïÃæµÄ±øÆ÷È«ÊÇÒ»Á÷µÄ,Æ·ÖÖÓÖÈ«¡£
-²»¹ýÕâÀïµÄÎäÆ÷È«ÊÇ·ÂÖÆÆ·,ËäËµÊÇ·ÂÖÆÆ·,µ«Ò²ÊÇÍþÁ¦¾ß´ó
-ÓÃÆðÀ´µÃÊÖµÄ.
+è¿™é‡Œæ˜¯å…¨å›½æœ€å¥½çš„å…µå™¨é“º,é‡Œé¢çš„å…µå™¨å…¨æ˜¯ä¸€æµçš„,å“ç§åˆå…¨ã€‚
+ä¸è¿‡è¿™é‡Œçš„æ­¦å™¨å…¨æ˜¯ä»¿åˆ¶å“,è™½è¯´æ˜¯ä»¿åˆ¶å“,ä½†ä¹Ÿæ˜¯å¨åŠ›å…·å¤§
+ç”¨èµ·æ¥å¾—æ‰‹çš„.
 LONG
         );
 

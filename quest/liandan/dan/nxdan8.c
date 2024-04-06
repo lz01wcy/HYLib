@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// hulipi.c ºüÀêÆ¤
+// hulipi.c ç‹ç‹¸çš®
 
 #include <ansi.h>
 
@@ -15,13 +15,13 @@ void init()
 
 void create()
 {
-	set_name("ºüÀêÆ¤", ({ "huli pi", "pi" }) );
+	set_name("ç‹ç‹¸çš®", ({ "huli pi", "pi" }) );
         set_weight(1000);
         if( clonep() )
 		set_default_object(__FILE__);
 	else {
-	        set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅÃ«³¤´çĞí£¬ÈáÈí¹â»¬µÄºüÀêÆ¤¡£\n");
+	        set("unit", "å¼ ");
+                set("long", "è¿™æ˜¯ä¸€å¼ æ¯›é•¿å¯¸è®¸ï¼ŒæŸ”è½¯å…‰æ»‘çš„ç‹ç‹¸çš®ã€‚\n");
 	        set("value", 3000);
 	        set("medicine", 1);
 	}
@@ -33,7 +33,7 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         me->add("food", 30);
 
@@ -42,7 +42,7 @@ int do_eat(string arg)
                 me->add("eff_jingli", -1);
                 me->set("jingli", 0);
                 me->apply_condition("medicine", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»ÕÅºüÀêÆ¤£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€å¼ ç‹ç‹¸çš®ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
                 call_out("destroy", 0);
                 return 1;
         }
@@ -55,7 +55,7 @@ int do_eat(string arg)
         me->add("jingli", 300);
         me->apply_condition("medicine", 
         me->query_condition("medicine")+30);
-        message_vision(HIY "$N³ÔÏÂÒ»ÕÅºüÀêÆ¤£¬Ö»¾õÈ«ÉíµÄ¾«Á¦¶¼»Ö¸´ÁË¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€å¼ ç‹ç‹¸çš®ï¼Œåªè§‰å…¨èº«çš„ç²¾åŠ›éƒ½æ¢å¤äº†ã€‚\n" NOR, me);
         call_out("destroy", 0);
         return 1;
 }

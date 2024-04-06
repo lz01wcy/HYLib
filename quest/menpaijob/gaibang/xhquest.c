@@ -4,7 +4,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-		tell_object(me, HIY "ÄãµÄµÄÈÎÎñ½áÊøÁË£¬¿ÉÒÔÈ¥Òª½±ÀøÁË¡£\n" NOR);
+		tell_object(me, HIY "ä½ çš„çš„ä»»åŠ¡ç»“æŸäº†ï¼Œå¯ä»¥åŽ»è¦å¥–åŠ±äº†ã€‚\n" NOR);
                 me->set_temp("xhjob_ok",1);
                 me->apply_condition("xh_busy", 6);
                 me->delete_temp("shouwei");
@@ -42,7 +42,7 @@ void zuji(object me)
         obj->set_skill("blade",maxskill);
         obj->set_skill("parry",maxskill);        
          obj->set("combat_exp",maxexp);
-//	 obj->set("title",HIR"Ìì×ÖÒ»ºÅ"NOR);
+//	 obj->set("title",HIR"å¤©å­—ä¸€å·"NOR);
 	}
 	else
 	{
@@ -55,7 +55,7 @@ void zuji(object me)
 	 }
 	obj->do_copy(maxpot);
 	obj->move(environment(me));
-	message_vision(HIR"\n$N¶Ô×Å$n´ó½ÐÒ»Éù£¬É±°¡!¡£\n"NOR,obj,me); 
+	message_vision(HIR"\n$Nå¯¹ç€$nå¤§å«ä¸€å£°ï¼Œæ€å•Š!ã€‚\n"NOR,obj,me); 
 	obj->kill_ob(me);
 }
 

@@ -4,7 +4,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-		tell_object(me, HIY "ÄãµÄÑ²É½ÈÎÎñµÄÊ±¼ä½áÊøÁË¡£\n" NOR);
+		tell_object(me, HIY "ä½ çš„å·¡å±±ä»»åŠ¡çš„æ—¶é—´ç»“æŸäº†ã€‚\n" NOR);
                 return 0;
 	}
   	 if( duration%2==0 
@@ -38,7 +38,7 @@ void zuji(object me)
         obj->set_skill("kuang-jian",maxskill);
         obj->set_skill("sword",maxskill);
         obj->set_skill("parry",maxskill);        
-	 obj->set("title",HIR"»ªÉ½½£×Ú´óµÜ×Ó"NOR);
+	 obj->set("title",HIR"åŽå±±å‰‘å®—å¤§å¼Ÿå­"NOR);
 	}
 	else
 	{
@@ -51,8 +51,8 @@ void zuji(object me)
 	 }
 	obj->do_copy(maxpot);
 	obj->move(environment(me));
-	obj->set("title",HIR"»ªÉ½½£×ÚµÜ×Ó"NOR);
-	message_vision(HIR"\n$N¶Ô×Å$n´ó½ÐÒ»Éù£¬É±°¡!¡£\n"NOR,obj,me); 
+	obj->set("title",HIR"åŽå±±å‰‘å®—å¼Ÿå­"NOR);
+	message_vision(HIR"\n$Nå¯¹ç€$nå¤§å«ä¸€å£°ï¼Œæ€å•Š!ã€‚\n"NOR,obj,me); 
 	obj->kill_ob(me);
 }
 

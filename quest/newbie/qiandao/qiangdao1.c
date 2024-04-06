@@ -1,4 +1,4 @@
-// qiangdao.c Ç¿µÁ
+// qiangdao.c å¼ºç›—
 // lag.2000/3/17
 
 inherit NPC;
@@ -18,11 +18,11 @@ void create()
         myskill=me->query_skill("sword");
         if (myskill<me->query_skill("parry"))
         myskill=me->query_skill("parry");
-        set_name(HIC "Ç¿µÁ" NOR, ({ me->query("id")+"-qiangdao"}));
-        set("title",me->query("name")+"¶¨ÏÂµÄ");
-        set("gender", "ÄÐÐÔ");
+        set_name(HIC "å¼ºç›—" NOR, ({ me->query("id")+"-qiangdao"}));
+        set("title",me->query("name")+"å®šä¸‹çš„");
+        set("gender", "ç”·æ€§");
         set("age", 28);
-        set("long", "ËûÊÇÒ»¸ö×¨¿¿´ò½ÙÓªÉúµÄÇ¿µÁ¡£\n");
+        set("long", "ä»–æ˜¯ä¸€ä¸ªä¸“é æ‰“åŠ«è¥ç”Ÿçš„å¼ºç›—ã€‚\n");
         
         set("attitude", "peaceful");
         set("qi", me->query("qi"));
@@ -38,7 +38,7 @@ void create()
         set("combat_exp", me->query("combat_exp"));
            set("chat_chance", 80);
                 set("chat_msg", ({
-                "Ç¿µÁ¶ñºÝºÝËµµÀ: ÖªÈ¤µÄ¿ìÁôÏÂÂòÂ·Ç®£¬·ñÔò¾Í±ð¹ÖÀÏ×Ó²»¿ÍÆøÁË£¡\n",
+                "å¼ºç›—æ¶ç‹ ç‹ è¯´é“: çŸ¥è¶£çš„å¿«ç•™ä¸‹ä¹°è·¯é’±ï¼Œå¦åˆ™å°±åˆ«æ€ªè€å­ä¸å®¢æ°”äº†ï¼\n",
                       (: random_move :)
                                                      }) );
         set_skill("dodge", myskill);
@@ -66,7 +66,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "Ç¿µÁ×ê½øÂ·±ßµÄÔÓ²Ý£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "å¼ºç›—é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",10);
@@ -89,13 +89,13 @@ if (!me) return;
         exp = 500 + kar;
         pot = 350 + random(exp);
 
-        message_vision(HIR "\nÇ¿µÁµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n" NOR,me);
+        message_vision(HIR "\nå¼ºç›—å€’åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰Žäº†å‡ ä¸‹å°±æ­»äº†ã€‚\n" NOR,me);
         if (me->query("kill_qiangdao") == 1 && this_object()->query_temp("owner/id") == me->query("id")) {
 
-                message_vision(HIC "\nÓÉÓÚ$N³É¹¦µÄÉ±ËÀÒ»¸öÇ¿µÁ£¬Î×Ê¦¾ö¶¨½±Àø£º\n"
-                + chinese_number(exp / 5) + "µãÊµÕ½¾­Ñé£¬\n"
-                + chinese_number(pot / 5) + "µãÇ±ÄÜ£¬\n"
-                + chinese_number(2) + "µãÆÀ¼Û×÷Îª´ðÐ»¡£\n" NOR, me);
+                message_vision(HIC "\nç”±äºŽ$NæˆåŠŸçš„æ€æ­»ä¸€ä¸ªå¼ºç›—ï¼Œå·«å¸ˆå†³å®šå¥–åŠ±ï¼š\n"
+                + chinese_number(exp / 5) + "ç‚¹å®žæˆ˜ç»éªŒï¼Œ\n"
+                + chinese_number(pot / 5) + "ç‚¹æ½œèƒ½ï¼Œ\n"
+                + chinese_number(2) + "ç‚¹è¯„ä»·ä½œä¸ºç­”è°¢ã€‚\n" NOR, me);
                 me->add("combat_exp", exp / 5);
                 me->add("potential", pot / 5);
                 me->add("score",2);
@@ -104,8 +104,8 @@ if (!me) return;
                 }
 
         corpse = new("/d/city/obj/corpse");
-        corpse->set("name",HIW "Ç¿µÁµÄÊ¬Ìå" NOR);
-        corpse->set("long","ËûÊÇÒ»¸öÔø¾­ÎÞ¶ñ²»×öµÄÇ¿µÁ£¬\nÈ»¶ø£¬ËûÒÑ¾­ËÀÁË£¬Ê£ÏÂÒ»¾ß³óÂªµÄÊ¬Ìå¡£\n");
+        corpse->set("name",HIW "å¼ºç›—çš„å°¸ä½“" NOR);
+        corpse->set("long","ä»–æ˜¯ä¸€ä¸ªæ›¾ç»æ— æ¶ä¸åšçš„å¼ºç›—ï¼Œ\nç„¶è€Œï¼Œä»–å·²ç»æ­»äº†ï¼Œå‰©ä¸‹ä¸€å…·ä¸‘é™‹çš„å°¸ä½“ã€‚\n");
         corpse->move(environment(this_object()));
         corpse->set_max_encumbrance(1000);        
         me->add("MKS", 1);

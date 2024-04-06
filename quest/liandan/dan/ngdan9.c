@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// xiongdan.c ĞÜµ¨
+// xiongdan.c ç†Šèƒ†
 
 #include <ansi.h>
 
@@ -15,13 +15,13 @@ void init()
 
 void create()
 {
-	set_name("ĞÜµ¨", ({ "xiong dan", "dan" }) );
+	set_name("ç†Šèƒ†", ({ "xiong dan", "dan" }) );
         set_weight(1000);
         if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-        	set("long", "ÕâÊÇÒ»¿Å±ÈÈ­Í·»¹´óµÄĞÜµ¨£¬±éÌå·¢³öÎÚºÚµÄÁÁ¹â¡£\n");
+		set("unit", "é¢—");
+        	set("long", "è¿™æ˜¯ä¸€é¢—æ¯”æ‹³å¤´è¿˜å¤§çš„ç†Šèƒ†ï¼Œéä½“å‘å‡ºä¹Œé»‘çš„äº®å…‰ã€‚\n");
 		set("value", 10000);
 		set("medicine", 1);
 	}
@@ -32,7 +32,7 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         me->add("food", 50);
 
         if ( (int)me->query_condition("medicine" ) > 0 ){
@@ -40,7 +40,7 @@ int do_eat(string arg)
                 me->add("eff_jingli", -1);
                 me->set("jingli", 0);
                 me->apply_condition("medicine", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»¿ÅĞÜµ¨£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€é¢—ç†Šèƒ†ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
                 call_out("destroy", 0);
                 return 1;
         }
@@ -53,7 +53,7 @@ int do_eat(string arg)
         me->add("neili", 200);
         me->apply_condition("medicine", 
         me->query_condition("medicine")+30);
-        message_vision(HIY "$N³ÔÏÂÒ»¿ÅĞÜµ¨£¬Ö»¾õµÃµ¤Ìï³äÂúÕæÆø»ìÉíÓĞ¾¢¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€é¢—ç†Šèƒ†ï¼Œåªè§‰å¾—ä¸¹ç”°å……æ»¡çœŸæ°”æ··èº«æœ‰åŠ²ã€‚\n" NOR, me);
 
 //      destruct(this_object());
         call_out("destroy", 0);

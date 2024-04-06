@@ -2,16 +2,16 @@
 inherit RING;
 void create()
 {
-        set_name( "Ç§Äêº®Ìú°åÖ¸", ({ "banzi" }) );
+        set_name( "åƒå¹´å¯’é“æ¿æŒ‡", ({ "banzi" }) );
 	set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸öÇ§Äêº®Ìú°åÖ¸¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªåƒå¹´å¯’é“æ¿æŒ‡ã€‚\n");
  set("value", 2000);
-	        set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»¸ö$n´÷ÔÚÊÖÉÏ¡£\n");
-        	set("unwield_msg", "$N½«ÊÖÉÏµÄ$n²ØÈë»³ÖĞ¡£\n");
+	        set("wield_msg", "$Nä»æ€€ä¸­æ‘¸å‡ºä¸€ä¸ª$næˆ´åœ¨æ‰‹ä¸Šã€‚\n");
+        	set("unwield_msg", "$Nå°†æ‰‹ä¸Šçš„$nè—å…¥æ€€ä¸­ã€‚\n");
 	}
 	init_ring(280);
 	setup();

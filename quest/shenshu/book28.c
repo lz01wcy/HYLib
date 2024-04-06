@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(CYN"ä½»¨Ï´½£Â¼"NOR, ({ "swordlu" }) );
+    set_name(CYN"æµ£èŠ±æ´—å‰‘å½•"NOR, ({ "swordlu" }) );
     set_weight(1);
             set("no_put", 1);
             set("value", 0);
@@ -11,9 +11,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»¡£\n");
+            set("long", "ç¥ä¹¦ä¹‹ä¸€ã€‚\n");
           }
 
     setup();
@@ -36,12 +36,12 @@ int do_zhuang(string arg)
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏÈ°ÑÉíÉÏµÄÈË·ÅÏÂ°É!!\n");
+     				return notify_fail("ä½ å…ˆæŠŠèº«ä¸Šçš„äººæ”¾ä¸‹å§!!\n");
        		
 		}
 
  	if (arg!="gulongbookb")
-	return notify_fail("ÄãÒªºÏ²¢Ê²Ã´£¿\n");
+	return notify_fail("ä½ è¦åˆå¹¶ä»€ä¹ˆï¼Ÿ\n");
 
 	newbook =new(__DIR__"gbook2");
 
@@ -52,17 +52,17 @@ int do_zhuang(string arg)
 !(ob = present("fengling", me)) ||
 !(ob = present("xiesword", me)) 
         )
-	tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
   else {
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
     if(!ob->query("dynamic_quest"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
-        message_vision("$N°Ñ´Ó»³ÖĞ·­³öÆß±¾¹ÅÁú´óÏÀĞ´µÄÉñÊé£¬²¢³ÉÁËÒ»±¾¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+        message_vision("$NæŠŠä»æ€€ä¸­ç¿»å‡ºä¸ƒæœ¬å¤é¾™å¤§ä¾ å†™çš„ç¥ä¹¦ï¼Œå¹¶æˆäº†ä¸€æœ¬ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("fyblade",me));
 	destruct(present("tiger",me));

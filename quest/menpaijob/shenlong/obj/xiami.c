@@ -10,19 +10,19 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("ÏºÃ×", ({ "xiami" }) );
+	set_name("è™¾ç±³", ({ "xiami" }) );
 	set_weight(30000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»ÏºÃ×\n");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("long", "ä¸€åªè™¾ç±³\n");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
 		set("no_put",1);
 	
-		set("unit", "Ö»");
+		set("unit", "åª");
 		set("value", 100);
 		set("food_remaining", 3);
 		set("food_supply", 60);

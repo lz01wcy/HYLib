@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", RED"�軨԰"NOR);
+	set("short", RED"茶花园"NOR);
 	set("long", @LONG
-�⻨԰��ˮ��һ�Ŵ���֮��һ�ԴԻ���ӳˮ���죬����
-��ϼ��һ����ȥ�����Ǻ���ͷ׵Ĳ軨�����ƺ�������������
-�޼�Ʒ��
+这花园在水边一排垂柳之后，一丛丛花树映水而红，灿若
+云霞。一眼望去，都是红白缤纷的茶花，但似乎胡乱生长，并
+无佳品。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */
@@ -40,20 +40,20 @@ int do_get(string arg)
 
 	if (arg=="cha" || arg=="chahua" || arg=="all" || arg=="cha hua") {
 		if (!objectp(ob=present("cha", environment(me)))) {
-			tell_object(me, "����ûʲô��Ʒ�ֵĲ軨ֵ�����ߡ�\n");
+			tell_object(me, "这里没什么好品种的茶花值得挖走。\n");
 			return 1;
 		}
 		if (!objectp(weapon=me->query_temp("weapon"))
 			|| weapon->query("id")!="huachu") {
-			tell_object(me, "��û�г��ֵĹ�������ֲ����軨��\n");
+			tell_object(me, "你没有称手的工具来移植这株茶花！\n");
 			return 1;
 		}
 		if (random(2)==1) {
-			message_vision("$NС���������û�������軨�ĸ���������軨����������\n", me);
+			message_vision("$N小心翼翼地用花锄掘出茶花的根，把整株茶花移了起来。\n", me);
 			ob->move(me);
 		}
 		else {
-			message_vision("$N����ææ���ڲ軨��һ��С�İѸ��ڶ��ˣ��úõ�һ��軨�����ˡ�\n", me);
+			message_vision("$N急急忙忙地挖茶花，一不小心把根挖断了，好好的一株茶花，完了。\n", me);
 			destruct(ob);
 		}
 		return 1;

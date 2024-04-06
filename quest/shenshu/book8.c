@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(BLU"·ÉºüÍâ´«"NOR, ({ "fhwz" }) );
+    set_name(BLU"é£žç‹å¤–ä¼ "NOR, ({ "fhwz" }) );
             set("no_put", 1);
             set("value", 0);
 
@@ -11,9 +11,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-           set("unit", "±¾");
+           set("unit", "æœ¬");
             set("material", "paper");
-                       set("long", "ÉñÊéÖ®Ò»,ÈôÊÇÄÜÕÒÁíÒ»±¾Ñ©É½·Éºü¾ÍÄÜÆ´³É(ping)¡£\n");
+                       set("long", "ç¥žä¹¦ä¹‹ä¸€,è‹¥æ˜¯èƒ½æ‰¾å¦ä¸€æœ¬é›ªå±±é£žç‹å°±èƒ½æ‹¼æˆ(ping)ã€‚\n");
           }
 
     setup();
@@ -36,21 +36,21 @@ int do_ping()
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏÈ°ÑÉíÉÏµÄÈË·ÅÏÂ°É!!\n");
+     				return notify_fail("ä½ å…ˆæŠŠèº«ä¸Šçš„äººæ”¾ä¸‹å§!!\n");
        		
 		}
     if (!(ob = present("xsfh", me)) )
-	tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
  else{
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
     if(!ob->query("dynamic_quest"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
-       message_vision("$N°Ñ´Ó»³ÖÐ·­³öµÄÑ©É½·Éºü£¬ºÍÊÖÖÐµÄ·ÉºüÍâ´«ºÏ²¢³ÉÁËÒ»±¾¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+       message_vision("$NæŠŠä»Žæ€€ä¸­ç¿»å‡ºçš„é›ªå±±é£žç‹ï¼Œå’Œæ‰‹ä¸­çš„é£žç‹å¤–ä¼ åˆå¹¶æˆäº†ä¸€æœ¬ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("xsfh",me));
 	destruct(this_object());}

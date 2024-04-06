@@ -1,5 +1,5 @@
-// liandan2.c Á¶µ¤·¿
-// ĞÇĞÇlywin 2000/6/15 
+// liandan2.c ç‚¼ä¸¹æˆ¿
+// æ˜Ÿæ˜Ÿlywin 2000/6/15 
 
 #include <ansi.h>
 inherit ROOM;
@@ -30,11 +30,11 @@ string *dan10 = ({"/quest/liandan/dan/z-dan","/quest/liandan/dan/n-dan","/clone/
 
  void create()
 {
-        set("short", "Á¶µ¤·¿");
+        set("short", "ç‚¼ä¸¹æˆ¿");
         set("long", @LONG
-ÕâÊÇÆ½Ò»Ö¸Æ½Ê±Á·µ¤µÄµØ·½£¬Ëû°Ñ´ÓËÄ´¦ÊÕ¼¯À´µÄ²İÒ©ÄÃµ½Õâ¶ùÀ´Á·
-³É¸÷ÖÖµ¤Ò©£¬Ò»°ã¶¼Ö»ÄÜÁ·³öĞ©ºÜÆ½³£µÄÒ©£¡µ«ÊÇÓĞÊ±Ò²»áÁ·³öºÜÀûº¦µÄ
-ÁéÒ©À´¡£Äã¿ÉÒÔ°ÑÒ»Ğ©³£¼ûµÄ²İÒ©·Å½ø(putinto)  Ò©Â¯½øĞĞºÏ³É(hecheng) ¡£
+è¿™æ˜¯å¹³ä¸€æŒ‡å¹³æ—¶ç»ƒä¸¹çš„åœ°æ–¹ï¼Œä»–æŠŠä»å››å¤„æ”¶é›†æ¥çš„è‰è¯æ‹¿åˆ°è¿™å„¿æ¥ç»ƒ
+æˆå„ç§ä¸¹è¯ï¼Œä¸€èˆ¬éƒ½åªèƒ½ç»ƒå‡ºäº›å¾ˆå¹³å¸¸çš„è¯ï¼ä½†æ˜¯æœ‰æ—¶ä¹Ÿä¼šç»ƒå‡ºå¾ˆåˆ©å®³çš„
+çµè¯æ¥ã€‚ä½ å¯ä»¥æŠŠä¸€äº›å¸¸è§çš„è‰è¯æ”¾è¿›(putinto)  è¯ç‚‰è¿›è¡Œåˆæˆ(hecheng) ã€‚
 LONG
         );
 
@@ -80,23 +80,23 @@ int do_liandan(object ob)
         object me=this_player(); 
  
         if (!(ob = present("yao cao", this_player())))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÒ©²İ£¬Á¶µÃÁËÊ²Ã´£¿¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¯è‰ï¼Œç‚¼å¾—äº†ä»€ä¹ˆï¼Ÿã€‚\n");
                  
         if ( (int)me->query("jing")<50)
-                return notify_fail("ÄãµÄ¾«Á¦²»×ã£¬ÎŞ·¨Á¶µ¤¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ï¼Œæ— æ³•ç‚¼ä¸¹ã€‚\n");
 
         if ( (int)me->query("qi")<50)
-                return notify_fail("ÄãµÄÌå²»×ã£¬ÎŞ·¨Á¶µ¤¡£\n");
+                return notify_fail("ä½ çš„ä½“ä¸è¶³ï¼Œæ— æ³•ç‚¼ä¸¹ã€‚\n");
 
         if ( (int)me->query("neili")<100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Á¶µ¤¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•ç‚¼ä¸¹ã€‚\n");
     
     	if( me->is_busy() )
-		return notify_fail("ÄãÕıÔÚÃ¦ÄØ!\n");
+		return notify_fail("ä½ æ­£åœ¨å¿™å‘¢!\n");
         
         if ( ob->query("lev") == 1 )
         {
-        message_vision(HIY"$N½«ÆÕÍ¨Ò©²İ·Å½øÂ¯ÖĞ£¬ÅÌÍÈ×öÏÂ£¬µãÆğ»ğÂ¯¿ªÊ¼Á¶µ¤¡£\n"NOR,me); 
+        message_vision(HIY"$Nå°†æ™®é€šè¯è‰æ”¾è¿›ç‚‰ä¸­ï¼Œç›˜è…¿åšä¸‹ï¼Œç‚¹èµ·ç«ç‚‰å¼€å§‹ç‚¼ä¸¹ã€‚\n"NOR,me); 
         destruct(ob);
         me->add("jing",-30);
         me->add("qi",-30);
@@ -108,7 +108,7 @@ int do_liandan(object ob)
         else
         if ( ob->query("lev") == 2 )
         {
-        message_vision(HIR"$N½«Õä¹óÒ©²İ·Å½øÂ¯ÖĞ£¬ÅÌÍÈ×öÏÂ£¬µãÆğ»ğÂ¯¿ªÊ¼Á¶µ¤¡£\n"NOR,me); 
+        message_vision(HIR"$Nå°†çè´µè¯è‰æ”¾è¿›ç‚‰ä¸­ï¼Œç›˜è…¿åšä¸‹ï¼Œç‚¹èµ·ç«ç‚‰å¼€å§‹ç‚¼ä¸¹ã€‚\n"NOR,me); 
         destruct(ob);
         me->add("jing",-50);
         me->add("qi",-50);
@@ -124,8 +124,8 @@ int liandan1(object me)
         object ob;
         if ((int)me->query_skill("liandan", 1) < 30 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan1[random(3)]);
@@ -137,8 +137,8 @@ int liandan1(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 150 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan10[random(39)]);
@@ -149,8 +149,8 @@ int liandan1(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 120 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan9[random(25)]);
@@ -162,8 +162,8 @@ int liandan1(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 80 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan8[random(15)]);
@@ -175,8 +175,8 @@ int liandan1(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 59 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan7[random(2)]);
@@ -188,8 +188,8 @@ int liandan1(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 29 )
         {
-           message_vision(HIY"$N¶ÔÁ¶µ¤ÒÑÓĞ²»ÉÙ¾­Ñé£¬²»»Å²»Ã¦µÄ½«ÄÚÁ¦×¢ÈëÂ¯ÖĞ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"$Nå¯¹ç‚¼ä¸¹å·²æœ‰ä¸å°‘ç»éªŒï¼Œä¸æ…Œä¸å¿™çš„å°†å†…åŠ›æ³¨å…¥ç‚‰ä¸­ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan2[random(2)]);
@@ -205,9 +205,9 @@ int liandan2(object me)
         object ob; 
         if ((int)me->query_skill("liandan", 1) < 30 )
         {
-           message_vision(HIR"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIR"µ«ÕâÒ©²İÄÑÁ¶Ö®¼«£¬»ğÊÆÈÔÊÇ²»×ã£¬$NÖ»ºÃÓÖÒ»´Î±ÆÈëÄÚÁ¦¡£\n"NOR,me); 
-           message_vision(HIR"ÖÕÓÚÁ·³ÉÁéµ¤£¬$N²»½ûËÉÁËÒ»¿ÚÆø¡£\n"NOR,me);
+           message_vision(HIR"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIR"ä½†è¿™è¯è‰éš¾ç‚¼ä¹‹æï¼Œç«åŠ¿ä»æ˜¯ä¸è¶³ï¼Œ$Nåªå¥½åˆä¸€æ¬¡é€¼å…¥å†…åŠ›ã€‚\n"NOR,me); 
+           message_vision(HIR"ç»ˆäºç»ƒæˆçµä¸¹ï¼Œ$Nä¸ç¦æ¾äº†ä¸€å£æ°”ã€‚\n"NOR,me);
            me->add("combat_exp",50+random(30));
            me->add("potential",25+random(10));
            ob=new(dan3[random(3)]);
@@ -219,9 +219,9 @@ int liandan2(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 199 )
         {
-           message_vision(HIW"$N¶ÔÓÚÁ¶µ¤Ö®ÊõÔçÒÑÊÇÌìÈËºÍÒ»¡£\n"NOR,me); 
-           message_vision(HIW"ËäÈ»ÕâÒ©²İ·Ç³£ÄÑÁ¶£¬$NÒ²²»²»½ôÕÅ£¬ÎÈ½¡µØ½«ÄÚÁ¦×¢ÈëÂ¯ÖĞ¡£\n"NOR,me); 
-           message_vision(HIW"$NÖÕÓÚÁ¶³öÁËÒ»¿Å×ãÒÔÃûÕğÌìÏÂµÄÆæÒ©¡£\n"NOR,me);
+           message_vision(HIW"$Nå¯¹äºç‚¼ä¸¹ä¹‹æœ¯æ—©å·²æ˜¯å¤©äººå’Œä¸€ã€‚\n"NOR,me); 
+           message_vision(HIW"è™½ç„¶è¿™è¯è‰éå¸¸éš¾ç‚¼ï¼Œ$Nä¹Ÿä¸ä¸ç´§å¼ ï¼Œç¨³å¥åœ°å°†å†…åŠ›æ³¨å…¥ç‚‰ä¸­ã€‚\n"NOR,me); 
+           message_vision(HIW"$Nç»ˆäºç‚¼å‡ºäº†ä¸€é¢—è¶³ä»¥åéœ‡å¤©ä¸‹çš„å¥‡è¯ã€‚\n"NOR,me);
            me->add("combat_exp",50+random(30));
            me->add("potential",25+random(10));
            ob=new(dan6[random(21)]);
@@ -232,8 +232,8 @@ int liandan2(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 150 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan10[random(39)]);
@@ -245,8 +245,8 @@ int liandan2(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 100 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan9[random(25)]);
@@ -258,9 +258,9 @@ int liandan2(object me)
         else  
         if ((int)me->query_skill("liandan", 1) > 80 )
         {
-           message_vision(HIW"$N¶ÔÓÚÁ¶µ¤Ö®ÊõÔçÒÑÊÇ·Ç³£¾«Í¨¡£\n"NOR,me); 
-           message_vision(HIW"ËäÈ»ÕâÒ©²İ·Ç³£ÄÑÁ¶£¬$NÒ²²»²»½ôÕÅ£¬ÎÈ½¡µØ½«ÄÚÁ¦×¢ÈëÂ¯ÖĞ¡£\n"NOR,me); 
-           message_vision(HIW"²»Ò»»á¶ù¾Í´ó¹¦¸æ³É¡£\n"NOR,me);
+           message_vision(HIW"$Nå¯¹äºç‚¼ä¸¹ä¹‹æœ¯æ—©å·²æ˜¯éå¸¸ç²¾é€šã€‚\n"NOR,me); 
+           message_vision(HIW"è™½ç„¶è¿™è¯è‰éå¸¸éš¾ç‚¼ï¼Œ$Nä¹Ÿä¸ä¸ç´§å¼ ï¼Œç¨³å¥åœ°å°†å†…åŠ›æ³¨å…¥ç‚‰ä¸­ã€‚\n"NOR,me); 
+           message_vision(HIW"ä¸ä¸€ä¼šå„¿å°±å¤§åŠŸå‘Šæˆã€‚\n"NOR,me);
            me->add("combat_exp",50+random(30));
            me->add("potential",25+random(10));
            ob=new(dan5[random(10)]);
@@ -272,9 +272,9 @@ int liandan2(object me)
         else 
         if ((int)me->query_skill("liandan", 1) > 60 )
         {
-           message_vision(HIR"$N¶ÔÓÚÁ¶µ¤Ö®ÊõÔçÒÑÊÇÇá³µÊìÂ·¡£\n"NOR,me); 
-           message_vision(HIR"ËäÈ»ÕâÒ©²İ·Ç³£ÄÑÁ¶£¬$NÒ²²»²»½ôÕÅ£¬ÎÈ½¡µØ½«ÄÚÁ¦×¢ÈëÂ¯ÖĞ¡£\n"NOR,me); 
-           message_vision(HIR"²»Ò»»á¶ù¾Í´ó¹¦¸æ³É¡£\n"NOR,me);
+           message_vision(HIR"$Nå¯¹äºç‚¼ä¸¹ä¹‹æœ¯æ—©å·²æ˜¯è½»è½¦ç†Ÿè·¯ã€‚\n"NOR,me); 
+           message_vision(HIR"è™½ç„¶è¿™è¯è‰éå¸¸éš¾ç‚¼ï¼Œ$Nä¹Ÿä¸ä¸ç´§å¼ ï¼Œç¨³å¥åœ°å°†å†…åŠ›æ³¨å…¥ç‚‰ä¸­ã€‚\n"NOR,me); 
+           message_vision(HIR"ä¸ä¸€ä¼šå„¿å°±å¤§åŠŸå‘Šæˆã€‚\n"NOR,me);
            me->add("combat_exp",50+random(30));
            me->add("potential",25+random(10));
            ob=new(dan4[random(7)]);
@@ -286,8 +286,8 @@ int liandan2(object me)
         else
         if ((int)me->query_skill("liandan", 1) > 30 )
         {
-           message_vision(HIY"Ö»¼ûÂ¯ÖĞ»ğÆøËÆºõ²»×ã£¬$NÁ¬Ã¦½«ÄÚ¹¦±ÆÈëÂ¯ÖĞÖú»ğ¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÁéµ¤ÒÑ³É¡£\n"NOR,me);
+           message_vision(HIY"åªè§ç‚‰ä¸­ç«æ°”ä¼¼ä¹ä¸è¶³ï¼Œ$Nè¿å¿™å°†å†…åŠŸé€¼å…¥ç‚‰ä¸­åŠ©ç«ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿çµä¸¹å·²æˆã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan8[random(15)]);
@@ -300,7 +300,7 @@ int liandan2(object me)
 
 int do_quit(string arg)
 {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄÁ¶µ¤°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„ç‚¼ä¸¹å§ï¼\n");
         return 1;
 }
 
@@ -310,24 +310,24 @@ int do_put(string arg)
 	mixed no_drop;
  object obj;object me;
  me=this_player();
-	if(!arg) return notify_fail("ÄãÒª·ÅÊ²Ã´¶«Î÷µ½Ò©Â¯ÖĞ£¿\n");
+	if(!arg) return notify_fail("ä½ è¦æ”¾ä»€ä¹ˆä¸œè¥¿åˆ°è¯ç‚‰ä¸­ï¼Ÿ\n");
 		if( !objectp(obj = present(arg, me)) )
-			return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+			return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÕıÔÚÃ¦ÄØ!\n");
+		return notify_fail("ä½ æ­£åœ¨å¿™å‘¢!\n");
 
 	
 	if( obj->query_temp("is_rided_by") == me)
-		return notify_fail( obj->name() + "²»ÊÇÕı±»ÄãÆï×Å¡£\n");
+		return notify_fail( obj->name() + "ä¸æ˜¯æ­£è¢«ä½ éª‘ç€ã€‚\n");
 	if( !obj->query("yaocao") )
-		return notify_fail( obj->name() + "ÕâÑù¶«Î÷²»ÄÜºÏ³Éµ¤Ò©¡£\n");
+		return notify_fail( obj->name() + "è¿™æ ·ä¸œè¥¿ä¸èƒ½åˆæˆä¸¹è¯ã€‚\n");
 
 	if( userp(obj) )
-		return notify_fail( obj->name() + "ÕâÑù¶«Î÷²»ÄÜºÏ³Éµ¤Ò©¡£\n");
+		return notify_fail( obj->name() + "è¿™æ ·ä¸œè¥¿ä¸èƒ½åˆæˆä¸¹è¯ã€‚\n");
 
     me->add_temp("liandanyc",1);
-        message_vision("$N½«"+obj->query("name")+"·Å½øÂ¯ÖĞ¡£\n"NOR,me); 
+        message_vision("$Nå°†"+obj->query("name")+"æ”¾è¿›ç‚‰ä¸­ã€‚\n"NOR,me); 
         me->start_busy(2); 
    	destruct(obj);    
 		return 1;
@@ -339,21 +339,21 @@ int do_hc(object ob)
         object me=this_player(); 
  
         if (!me->query_temp("liandanyc"))
-                return notify_fail("ÄãÃ»ÓĞ·ÅÈëÒ©²Ä£¬ºÏ³ÉÊ²Ã´°¡£¿¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ”¾å…¥è¯æï¼Œåˆæˆä»€ä¹ˆå•Šï¼Ÿã€‚\n");
         	if( me->is_busy() )
-		return notify_fail("ÄãÕıÔÚÃ¦ÄØ!\n");
+		return notify_fail("ä½ æ­£åœ¨å¿™å‘¢!\n");
 		         
         if ( (int)me->query("jing")<50)
-                return notify_fail("ÄãµÄ¾«Á¦²»×ã£¬ÎŞ·¨ºÏ³É¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ï¼Œæ— æ³•åˆæˆã€‚\n");
 
         if ( (int)me->query("qi")<50)
-                return notify_fail("ÄãµÄÌå²»×ã£¬ÎŞ·¨ºÏ³É¡£\n");
+                return notify_fail("ä½ çš„ä½“ä¸è¶³ï¼Œæ— æ³•åˆæˆã€‚\n");
 
         if ( (int)me->query("neili")<100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨ºÏ³É¡£\n");
-        message_vision(HIY"$N´ò×ã¾«Éñ ÅÌÍÈ×öÏÂ£¬µãÆğ»ğÂ¯¿ªÊ¼Á¶µ¤¡£\n"NOR,me); 
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•åˆæˆã€‚\n");
+        message_vision(HIY"$Næ‰“è¶³ç²¾ç¥ ç›˜è…¿åšä¸‹ï¼Œç‚¹èµ·ç«ç‚‰å¼€å§‹ç‚¼ä¸¹ã€‚\n"NOR,me); 
 
-        message_vision(HIY"$NÅÌÍÈ×öÏÂ£¬µãÆğ»ğÂ¯¿ªÊ¼ºÏ³Éµ¤Ò©¡£\n"NOR,me); 
+        message_vision(HIY"$Nç›˜è…¿åšä¸‹ï¼Œç‚¹èµ·ç«ç‚‰å¼€å§‹åˆæˆä¸¹è¯ã€‚\n"NOR,me); 
         destruct(ob);
         me->add("jing",-30);
         me->add("qi",-30);
@@ -377,24 +377,24 @@ string location;
 file = read_file("/clone/medicine/yc2ok");
 roomlines = explode(file,"\n");	
 location = roomlines[random(sizeof(roomlines))];
-           message_vision(HIY"$N¶Ô²»»Å²»Ã¦µÄ½«ÄÚÁ¦×¢ÈëÂ¯ÖĞ,¿ªÊ¼ºÏ³Éµ¤Ò©¡£\n"NOR,me); 
-           message_vision(HIY"²»Ò»»á¶ùÒ©Â¯ÖĞµÄµ¤Ò©ÒÑ¾­³ÉĞÎ¡£\n"NOR,me);
+           message_vision(HIY"$Nå¯¹ä¸æ…Œä¸å¿™çš„å°†å†…åŠ›æ³¨å…¥ç‚‰ä¸­,å¼€å§‹åˆæˆä¸¹è¯ã€‚\n"NOR,me); 
+           message_vision(HIY"ä¸ä¸€ä¼šå„¿è¯ç‚‰ä¸­çš„ä¸¹è¯å·²ç»æˆå½¢ã€‚\n"NOR,me);
            me->add("combat_exp",40+random(20));
            me->add("potential",20+random(5));
            ob=new(dan2[random(2)]);
            ob = new(location);
-           //message_vision(HIY"$N"+(int)me->query_temp("liandanyc")+","+(int)ob->query("lev")+"¡£\n"NOR,me); 
+           //message_vision(HIY"$N"+(int)me->query_temp("liandanyc")+","+(int)ob->query("lev")+"ã€‚\n"NOR,me); 
 
 if ((int)me->query_temp("liandanyc") >= (int)ob->query("lev"))
 {
            ob->move(me);
            ob->set("yaocao",1);
-           message_vision(HIY"$NºÏ³ÉµÃµ½ÁË"+ob->query("name")+"¡£\n"NOR,me); 
+           message_vision(HIY"$Nåˆæˆå¾—åˆ°äº†"+ob->query("name")+"ã€‚\n"NOR,me); 
 me->improve_skill("liandan", (int)me->query_skill("liandan", 1));       
 }
 else
 {
-message_vision(HIR"$N·ÅÈëµÄÒ©²Ä¹ıÉÙ£¬ºÏ³ÉÊ§°ÜÁË!\n"NOR,me); 
+message_vision(HIR"$Næ”¾å…¥çš„è¯æè¿‡å°‘ï¼Œåˆæˆå¤±è´¥äº†!\n"NOR,me); 
 destruct(ob);
 }           	
 
@@ -410,12 +410,12 @@ if ((int)me->query_temp("liandanyc") >= (int)ob->query("lev"))
 {
            ob->move(me);
            ob->set("yaocao",1);
-           message_vision(HIY"$NÊ¹ÓÃ¶¾¼¼ºÏ³ÉµÃµ½ÁË"+ob->query("name")+"¡£\n"NOR,me); 
+           message_vision(HIY"$Nä½¿ç”¨æ¯’æŠ€åˆæˆå¾—åˆ°äº†"+ob->query("name")+"ã€‚\n"NOR,me); 
 me->improve_skill("liandan", (int)me->query_skill("liandan", 1));       
 }
 else
 {
-message_vision(HIR"$N·ÅÈëµÄÒ©²Ä¹ıÉÙ£¬ºÏ³ÉÊ§°ÜÁË!\n"NOR,me); 
+message_vision(HIR"$Næ”¾å…¥çš„è¯æè¿‡å°‘ï¼Œåˆæˆå¤±è´¥äº†!\n"NOR,me); 
 destruct(ob);
 }           	
 

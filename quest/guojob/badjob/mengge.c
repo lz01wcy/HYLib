@@ -1,4 +1,4 @@
-// guojing.c ÃÉ¸ç
+// guojing.c è’™å“¥
 inherit NPC;
 #include <ansi.h>
 #include "menggujob.c"
@@ -9,12 +9,12 @@ int job_over(string arg);
 
 void create()
 {
-	set_name("ÃÉ¸ç", ({"meng ge", "mengge", "ge"}));
-	set("nickname", HIR"ÃÉ¹Å´óºº"NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name("è’™å“¥", ({"meng ge", "mengge", "ge"}));
+	set("nickname", HIR"è’™å¤å¤§æ±‰"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 31);
 	set("long", 
-		"ËûÊÇÇ××ÔÀ´¹¥³ÇµÄÃÉ¹Å´óºº£¬ÃæÄ¿ÖĞÍ¸³öÒ»¹ÉÉ±Æø¡£´Ë´Î´ø±øÄÏÀ´£¬ÊÆÈçÆÆÖñ£¬±ø·æ±ÏÂ¶¡£\n");
+		"ä»–æ˜¯äº²è‡ªæ¥æ”»åŸçš„è’™å¤å¤§æ±‰ï¼Œé¢ç›®ä¸­é€å‡ºä¸€è‚¡æ€æ°”ã€‚æ­¤æ¬¡å¸¦å…µå—æ¥ï¼ŒåŠ¿å¦‚ç ´ç«¹ï¼Œå…µé”‹æ¯•éœ²ã€‚\n");
 	set("attitude", "friendly");
 	set_max_encumbrance(100000000);
 	set("per", 40);
@@ -25,13 +25,13 @@ void create()
         set_temp("no_kill",1);
 	set("chat_chance", 1);
 	set("chat_msg", ({
-		"ÃÉ¸çÌ¾ÁË¿ÚÆøµÀ£º¡°ÃÉ¹Å´ó¾ü¾Ã¹¥ÏåÑô²»ÏÂ,¿´À´Òª¿¿ÎäÁÖÈËÊ¿ÎªÎÒÃÇĞ§Á¦ÁË!!\n",
+		"è’™å“¥å¹äº†å£æ°”é“ï¼šâ€œè’™å¤å¤§å†›ä¹…æ”»è¥„é˜³ä¸ä¸‹,çœ‹æ¥è¦é æ­¦æ—äººå£«ä¸ºæˆ‘ä»¬æ•ˆåŠ›äº†!!\n",
 	}));
 
 	set("inquiry", ([
 		 "job"   : (: ask_job :),
                  "fangqi": (: ask_fangqi :),
-                "·ÅÆú"  : (: ask_fangqi :),
+                "æ”¾å¼ƒ"  : (: ask_fangqi :),
 		]));
 
 	set("qi", 8000);

@@ -6,12 +6,12 @@ string ask_daojia();
 int ask_rob();
 void create()
 {
-        set_name(HIG"Ğ¡Å®º¢"NOR, ({ "nuhai"}));
+        set_name(HIG"å°å¥³å­©"NOR, ({ "nuhai"}));
        set("long",
-                "Ò»¸ö³¤µÄ·Ç³£¶ÌĞ¡µÄĞ¡Å®º¢£¬³¤Ïàµ½ÊÇÊ®·ÖĞãÀö.\n"
-                "µ«ÑÛÉñÀïÈ´Â¶³ö¹ÖÒìµÄÉñÉ«¡£\n");
+                "ä¸€ä¸ªé•¿çš„éå¸¸çŸ­å°çš„å°å¥³å­©ï¼Œé•¿ç›¸åˆ°æ˜¯ååˆ†ç§€ä¸½.\n"
+                "ä½†çœ¼ç¥é‡Œå´éœ²å‡ºæ€ªå¼‚çš„ç¥è‰²ã€‚\n");
         set("attitude", "friendly");
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("age", 12);
 	set("no_get", 1);
         set("per", 35);
@@ -37,8 +37,8 @@ set_skill("dodge",400);
 
 	map_skill("force", "bahuang-gong");	        
         set("inquiry", ([
-        "»Ø¹¬" : (:ask_huijia:) ,
-        "µ½¹¬" : (:ask_daojia:) ,
+        "å›å®«" : (:ask_huijia:) ,
+        "åˆ°å®«" : (:ask_daojia:) ,
          ]) );
         set("env/wimpy", 40);
         set_temp("apply/attack", 300);
@@ -67,7 +67,7 @@ void leave()
 {
         object ob = this_object();
         if (ob->query("lingsong") == 0) {
-                message_vision(HIG "Ğ¡Å®º¢¼ûÎŞÈËÀ´½ÓÓ¦,×Ô¼ºÀë¿ªÁË¡£\n" NOR,this_object());
+                message_vision(HIG "å°å¥³å­©è§æ— äººæ¥æ¥åº”,è‡ªå·±ç¦»å¼€äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -78,12 +78,12 @@ string ask_huijia()
 object me=this_player();
 object ob = this_object();
 if(me->query("lingjiujob") == 0 )
-return "ÎÒ¿´ÄãÊÇÎÚÀÏ´óÅÉÀ´µÄÄÇ¼éÏ¸°É¡£¡£¡£\n";
+return "æˆ‘çœ‹ä½ æ˜¯ä¹Œè€å¤§æ´¾æ¥çš„é‚£å¥¸ç»†å§ã€‚ã€‚ã€‚\n";
 me->apply_condition("lingjiu_song",30);
 me->set("lingsong",1);
 set_leader(me);
 ob->set("lingsong",10);
-return "ÄãĞ¡×ÓÈç¹ûËÍÀÏÄï»Ø¹¬£¬»Ø¹¬ºó×ÔÓĞ½±ÉÍ.\n";
+return "ä½ å°å­å¦‚æœé€è€å¨˜å›å®«ï¼Œå›å®«åè‡ªæœ‰å¥–èµ.\n";
 }
 
 string ask_daojia()
@@ -93,15 +93,15 @@ int exp,pot,base_exp;
 ob = this_object();
 me = this_player();
 if(me->query("lingjiujob") == 0 )
-return "ÎÒ¿´ÄãÊÇÎÚÀÏ´óÅÉÀ´µÄÄÇ¼éÏ¸°É¡£¡£¡£\n";
+return "æˆ‘çœ‹ä½ æ˜¯ä¹Œè€å¤§æ´¾æ¥çš„é‚£å¥¸ç»†å§ã€‚ã€‚ã€‚\n";
 if(me->query("lingsong") == 0 )
-return "ÎÒ¿´ÄãÊÇÎÚÀÏ´óÅÉÀ´µÄÄÇ¼éÏ¸°É¡£¡£¡£\n";
+return "æˆ‘çœ‹ä½ æ˜¯ä¹Œè€å¤§æ´¾æ¥çš„é‚£å¥¸ç»†å§ã€‚ã€‚ã€‚\n";
 
- if( environment(ob)->query("short")=="ÁéğÕ°ÙÕÉ½§")
+ if( environment(ob)->query("short")=="çµé¹«ç™¾ä¸ˆæ¶§")
          {
 
           set_leader(0);
-          write("ÖÕÓÚµ½¹¬ÃÅÁË£¬Äã»¤ËÍÓĞ¹¦.\n");
+          write("ç»ˆäºåˆ°å®«é—¨äº†ï¼Œä½ æŠ¤é€æœ‰åŠŸ.\n");
 pot=880+random(800);
 exp=980+random(1300);
              me->add("potential",pot);
@@ -109,22 +109,22 @@ exp=980+random(1300);
              me->set("lingjiujob",0);
 me->set("lingsong",0);
              me->apply_condition("lingjiu_song",0);
-          write("ÄãµÄ¾­ÑéºÍÇ±ÄÜÌá¸ßÁË!!\n");
+          write("ä½ çš„ç»éªŒå’Œæ½œèƒ½æé«˜äº†!!\n");
         call_out("leavet",1);
-	   tell_object(me,HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(me,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
-           return "ÎÒ»Ø¹¬È¥ÁË.....\n";  
+           return "æˆ‘å›å®«å»äº†.....\n";  
       }
         else {
-                return "»¹Ã»µ½ÄØ!ÄãÏë²»¹ÜÁËÂğ?\n";
+                return "è¿˜æ²¡åˆ°å‘¢!ä½ æƒ³ä¸ç®¡äº†å—?\n";
         }
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃguard£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨guardï¼\n");
         return 1;
 }
 

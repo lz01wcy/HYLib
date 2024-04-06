@@ -1,4 +1,4 @@
-// °ÙºÏ /clone/eat/food/bai_he.c
+// ç™¾åˆ /clone/eat/food/bai_he.c
 // by lala, 1997-12-16
 
 inherit ITEM;
@@ -6,17 +6,17 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name( "ÓÈÓã", ({"yu4"}) );
+    set_name( "å°¤é±¼", ({"yu4"}) );
     set_weight( 30000 );
     if ( clonep() )
             set_default_object( __FILE__ );
     else {
         set( "long", @LONG
-Ò»ÌõÓÈÓã£¬ÓªÑø¼«Îª·á¸»£¬¿ÉÒÔÈëÒ©¡£
+ä¸€æ¡å°¤é±¼ï¼Œè¥å…»æä¸ºä¸°å¯Œï¼Œå¯ä»¥å…¥è¯ã€‚
 LONG
         );
-        set( "unit", "Ìõ" );
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+        set( "unit", "æ¡" );
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);

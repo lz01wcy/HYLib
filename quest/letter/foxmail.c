@@ -1,6 +1,6 @@
 #include <ansi.h>
 #define QUEST_LETTER(x) ("/quest/letter/qlist" + x)  
-//ĞÇĞÇ(lywin)2000/4/30ÈÕ¸ÄÇ°±²weixiaobao.c³É´ËĞÅÊ¹£¡²»Ê¤»Ì¿Ö£¡ÇĞÄª¹ÖÖ®£¡
+//æ˜Ÿæ˜Ÿ(lywin)2000/4/30æ—¥æ”¹å‰è¾ˆweixiaobao.cæˆæ­¤ä¿¡ä½¿ï¼ä¸èƒœæƒ¶æï¼åˆ‡è«æ€ªä¹‹ï¼
 inherit NPC;
 inherit F_MASTER;
 
@@ -8,11 +8,11 @@ int time_period(int timep, object me);
 
 void create()
 {
-        set_name(HIW"ĞÅÊ¹"NOR,({"foxmail"}));
-        set("long","ÕâÊÇÒ»¸ö×¨ÃÅÎªÈËËÍĞÅµÄĞÅÊ¹£¬ÎªÈË»ú¾¯ÄÜ¸É£¬½­ºşÈË³ÆÖ®Îª¡°ºüÀê¡±¡£\n");
+        set_name(HIW"ä¿¡ä½¿"NOR,({"foxmail"}));
+        set("long","è¿™æ˜¯ä¸€ä¸ªä¸“é—¨ä¸ºäººé€ä¿¡çš„ä¿¡ä½¿ï¼Œä¸ºäººæœºè­¦èƒ½å¹²ï¼Œæ±Ÿæ¹–äººç§°ä¹‹ä¸ºâ€œç‹ç‹¸â€ã€‚\n");
 
-        set("title",HIG"ºüÀê"NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIG"ç‹ç‹¸"NOR);
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
          set("age", 40);
         set("shen_type", 0);
@@ -30,7 +30,7 @@ void create()
         set("score", 10000);
         set("env/wimpy", 10000);
         set("inquiry", ([
-                "ÈÎÎñ": "ÎÒÕıÔÚ·¢³îÔõÃ´´¦ÀíÕâĞ©ĞÅ¼ş£¬ÄãÀ´µÄÕıºÃ! \n",
+                "ä»»åŠ¡": "æˆ‘æ­£åœ¨å‘æ„æ€ä¹ˆå¤„ç†è¿™äº›ä¿¡ä»¶ï¼Œä½ æ¥çš„æ­£å¥½! \n",
         ]) );
         set("no_get", 1);
 
@@ -52,13 +52,13 @@ int accept_object(object who, object ob)
 {
   if(who->query("combat_exp") > 100000)
         {
-                message_vision("ĞÅÊ¹¶Ô$NËµ£ºÄúÒÑÊÇ³ÉÃûÈËÎïÁË£¬ÕâÖÖĞ¡ÊÂÔõ¸ÒÀÍÄú´ó¼İ£¿£¡\n",who);
+                message_vision("ä¿¡ä½¿å¯¹$Nè¯´ï¼šæ‚¨å·²æ˜¯æˆåäººç‰©äº†ï¼Œè¿™ç§å°äº‹æ€æ•¢åŠ³æ‚¨å¤§é©¾ï¼Ÿï¼\n",who);
                 return 0;
         }
 
         if ((int)who->query_condition("hxsd_busy"))  
             {
-                    message_vision("$N¶Ô×Å$nÒ¡ÁËÒ¡Í·Ëµ£ºÄã×ö±ğµÄÈÎÎñ°ìÊÂ²»Àû,µÈ»áÔÙÀ´!\n", this_object(), who);
+                    message_vision("$Nå¯¹ç€$næ‘‡äº†æ‘‡å¤´è¯´ï¼šä½ åšåˆ«çš„ä»»åŠ¡åŠäº‹ä¸åˆ©,ç­‰ä¼šå†æ¥!\n", this_object(), who);
                     return 1;
             }
 
@@ -66,12 +66,12 @@ int accept_object(object who, object ob)
         {
              if(!who->query("quest") || ( ob->value() < 2000))
              {
-                   message_vision("ÎÒÕıÈ±Ç®ÓÃ£¬¶àĞ»ÄúÁË£¡\n",who);
+                   message_vision("æˆ‘æ­£ç¼ºé’±ç”¨ï¼Œå¤šè°¢æ‚¨äº†ï¼\n",who);
                    return 1;
              }
              else
              {
-message_vision("ĞÅÊ¹Ì¾ÁË¿ÚÆøµÀ£ººÃ°É£¬²»Ïë×ö¾ÍËãÁË,ÎÒÈ¥ÁíÇë¸ßÃ÷¡£\n",who);
+message_vision("ä¿¡ä½¿å¹äº†å£æ°”é“ï¼šå¥½å§ï¼Œä¸æƒ³åšå°±ç®—äº†,æˆ‘å»å¦è¯·é«˜æ˜ã€‚\n",who);
                    who->set("quest",0);
                    who->delete("songxin");
                    who->set_temp("menpaijob",0);
@@ -79,7 +79,7 @@ message_vision("ĞÅÊ¹Ì¾ÁË¿ÚÆøµÀ£ººÃ°É£¬²»Ïë×ö¾ÍËãÁË,ÎÒÈ¥ÁíÇë¸ßÃ÷¡£\n",who);
                    who->apply_condition("hxsd_busy",1+random(4));
                    if (ob = present("xin", this_player()))
                    {
-                   message_vision("ĞÅÊ¹½«ĞÅÊÕÁË»ØÈ¥£¡\n",who);
+                   message_vision("ä¿¡ä½¿å°†ä¿¡æ”¶äº†å›å»ï¼\n",who);
                    destruct(ob);     
                    }
                    return 1;
@@ -104,12 +104,12 @@ int give_quest()
         combatexp = (int) (me->query("combat_exp"));
   if(combatexp < 500)
                 {
-message_vision("ĞÅÊ¹ÇáÃïµÄ¿´ÁË$NÒ»ÑÛËµ£ºÄã¾ÍÕâµã±¾ÊÂ£¿Äã¿É²»ÒªÂ·Ò²²»Ê¶µÃ£¡\n",me);
+message_vision("ä¿¡ä½¿è½»è”‘çš„çœ‹äº†$Nä¸€çœ¼è¯´ï¼šä½ å°±è¿™ç‚¹æœ¬äº‹ï¼Ÿä½ å¯ä¸è¦è·¯ä¹Ÿä¸è¯†å¾—ï¼\n",me);
                   return 0;
           }
   if(combatexp > 100000)
         {
-                message_vision("ĞÅÊ¹¶Ô$NËµ£ºÄúÒÑÊÇ³ÉÃûÈËÎïÁË£¬ÕâÖÖĞ¡ÊÂÔõ¸ÒÀÍÄú´ó¼İ£¿£¡\n",me);
+                message_vision("ä¿¡ä½¿å¯¹$Nè¯´ï¼šæ‚¨å·²æ˜¯æˆåäººç‰©äº†ï¼Œè¿™ç§å°äº‹æ€æ•¢åŠ³æ‚¨å¤§é©¾ï¼Ÿï¼\n",me);
                 return 0;
         }
  
@@ -117,20 +117,20 @@ message_vision("ĞÅÊ¹ÇáÃïµÄ¿´ÁË$NÒ»ÑÛËµ£ºÄã¾ÍÕâµã±¾ÊÂ£¿Äã¿É²»ÒªÂ·Ò²²»Ê¶µÃ£¡\n",me
         if((quest =  me->query("quest")))
         {
                 if( ((int)me->query("task_time")) >  time() ){
-                message_vision("ĞÅÊ¹¶Ô$NËµ£ºÄãµÃ°ÑĞÅ°ïÎÒËÍµ½Ñ½¡£\n", me);
+                message_vision("ä¿¡ä½¿å¯¹$Nè¯´ï¼šä½ å¾—æŠŠä¿¡å¸®æˆ‘é€åˆ°å‘€ã€‚\n", me);
                         return 0;
                 }
         }
-//   ´Ë´¦ÉèÖÃËÍĞÅµÄ¼ä¸ôÊ±¼ä¡£Èç¹û²»ĞèµÈ´ı¿ÉÒÔ½«Ö®¹ØÉÏ£¡Ê¹ËÍĞÅ¿ÉÒÔËæÊ±ËÍ£¡
+//   æ­¤å¤„è®¾ç½®é€ä¿¡çš„é—´éš”æ—¶é—´ã€‚å¦‚æœä¸éœ€ç­‰å¾…å¯ä»¥å°†ä¹‹å…³ä¸Šï¼ä½¿é€ä¿¡å¯ä»¥éšæ—¶é€ï¼
              if (((int)time() - (int)me->query("last_task_time")) < 10)
                  {
-                   message_vision("ĞÅÊ¹¶Ô$NËµ£ºÏÖÔÚÃ»ĞÅ¿ÉÒÔËÍ£¬Äã»¹ÊÇµÈ»áÔÙÀ´°É¡£\n",me);
+                   message_vision("ä¿¡ä½¿å¯¹$Nè¯´ï¼šç°åœ¨æ²¡ä¿¡å¯ä»¥é€ï¼Œä½ è¿˜æ˜¯ç­‰ä¼šå†æ¥å§ã€‚\n",me);
 
                    return 0;
                  }
                 else
                 {
-                   message_vision("ĞÅÊ¹¶Ô$NËµ£ºÄãÀ´µÃÕıºÃ£¬ÎÒÕâ¶ù¸ÕºÃÓĞÒ»ÅúĞÅ¼şÒªËÍ³öÈ¥¡£\n",me);
+                   message_vision("ä¿¡ä½¿å¯¹$Nè¯´ï¼šä½ æ¥å¾—æ­£å¥½ï¼Œæˆ‘è¿™å„¿åˆšå¥½æœ‰ä¸€æ‰¹ä¿¡ä»¶è¦é€å‡ºå»ã€‚\n",me);
 }
 
         for(j= sizeof(levels) - 1 ; j>=0; j--)
@@ -162,15 +162,15 @@ message_vision("ĞÅÊ¹ÇáÃïµÄ¿´ÁË$NÒ»ÑÛËµ£ºÄã¾ÍÕâµã±¾ÊÂ£¿Äã¿É²»ÒªÂ·Ò²²»Ê¶µÃ£¡\n",me
         quest = QUEST_LETTER(tag)->query_quest();
         timep = random(100) + 300;
         time_period(timep, me);
-        tell_object(me, "°ÑĞÅËÍ¸ø¡º" + quest["quest"] + "¡»ÄãµÄÈÎÎñ¾ÍÍê³ÉÁË¡£\n" NOR);
-        message_vision("$N¸øÁË$nÒ»·âĞÅ¡£\n",this_object(),me);
+        tell_object(me, "æŠŠä¿¡é€ç»™ã€" + quest["quest"] + "ã€ä½ çš„ä»»åŠ¡å°±å®Œæˆäº†ã€‚\n" NOR);
+        message_vision("$Nç»™äº†$nä¸€å°ä¿¡ã€‚\n",this_object(),me);
         if (ob = present("xin", this_player()))
          {
-             message_vision("ĞÅÊ¹½«ÒÔÇ°µÄĞÅÊÕÁË»ØÈ¥£¡\n",me);
+             message_vision("ä¿¡ä½¿å°†ä»¥å‰çš„ä¿¡æ”¶äº†å›å»ï¼\n",me);
              destruct(ob);
              letter = new(__DIR__"letter");
              letter->move(me);
-             quest["quest_type"] = "°ÑĞÅËÍ¸ø";
+             quest["quest_type"] = "æŠŠä¿¡é€ç»™";
              quest["exp_bonus"] = quest["exp_bonus"];
              quest["pot_bonus"] = quest["pot_bonus"];
              quest["score"] = 0;
@@ -186,7 +186,7 @@ message_vision("ĞÅÊ¹ÇáÃïµÄ¿´ÁË$NÒ»ÑÛËµ£ºÄã¾ÍÕâµã±¾ÊÂ£¿Äã¿É²»ÒªÂ·Ò²²»Ê¶µÃ£¡\n",me
          {
             letter = new(__DIR__"letter");
             letter->move(me);
-            quest["quest_type"] = "°ÑĞÅËÍ¸ø";
+            quest["quest_type"] = "æŠŠä¿¡é€ç»™";
             quest["exp_bonus"] = quest["exp_bonus"];
             quest["pot_bonus"] = quest["pot_bonus"];
             quest["score"] = 0;
@@ -211,17 +211,17 @@ int time_period(int timep, object me)
         d = t;
 
         if(d)
-                time = chinese_number(d) + "Ìì";
+                time = chinese_number(d) + "å¤©";
 
         else
                 time = "";
         if(h)
-                time += chinese_number(h) + "Ğ¡Ê±";
+                time += chinese_number(h) + "å°æ—¶";
         if(m)
-                time += chinese_number(m) + "·Ö";
-        time += chinese_number(s) + "Ãë";
+                time += chinese_number(m) + "åˆ†";
+        time += chinese_number(s) + "ç§’";
 
-        tell_object(me, HIW "ĞÅÊ¹ËµµÀ£º\nÔÚ" + time + "ÄÚ");
+        tell_object(me, HIW "ä¿¡ä½¿è¯´é“ï¼š\nåœ¨" + time + "å†…");
 
 
                 return 1;

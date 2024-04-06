@@ -7,15 +7,15 @@ int consider_lv(object ob,int a);
 static int i = random(13)+8;
 void create()
 {
-        set_name("´«µ¥", ({ "chuan dan"}));
-        set("long", "Ò»Ð©´«µ¥,ÓÐÁËËüµÄÈÕÔÂµÜ×ÓÒ»°ã¸ºÔðÓÎËµ(youshuo)ÈÎÎñ");
+        set_name("ä¼ å•", ({ "chuan dan"}));
+        set("long", "ä¸€äº›ä¼ å•,æœ‰äº†å®ƒçš„æ—¥æœˆå¼Ÿå­ä¸€èˆ¬è´Ÿè´£æ¸¸è¯´(youshuo)ä»»åŠ¡");
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
                 set("value", 0);
-                set("unit", "Ð©");
+                set("unit", "äº›");
         }
         setup();
 }
@@ -31,50 +31,50 @@ string targ;
 object obj;
 int maxpot,i;
 
-if (!environment(me))  return notify_fail("ÕâÀï²»ÊÇÒªÄã×öÓÎËµµÄµØ·½!\n");
+if (!environment(me))  return notify_fail("è¿™é‡Œä¸æ˜¯è¦ä½ åšæ¸¸è¯´çš„åœ°æ–¹!\n");
 if (me->query_temp("ryjob2/changxi") < 1)
-return notify_fail("Ã»ÈËÏÖÔÚ½ÐÄã×öÕâ¸öÈÎÎñ!\n");
+return notify_fail("æ²¡äººçŽ°åœ¨å«ä½ åšè¿™ä¸ªä»»åŠ¡!\n");
 if (!environment(me)->query("outdoors"))
-return notify_fail("Çëµ½»§ÍâÈË¶àµÄµØ·½×öÓÎËµ!\n");
+return notify_fail("è¯·åˆ°æˆ·å¤–äººå¤šçš„åœ°æ–¹åšæ¸¸è¯´!\n");
 if (environment(me)->query("outdoors") !=me->query_temp("ryjob2/where"))
-return notify_fail("²»ÊÇ½ÐÄãµ½"+me->query_temp("ryjob2/cx")+"È¥×öÓÎËµµÄÂð!\n");
+return notify_fail("ä¸æ˜¯å«ä½ åˆ°"+me->query_temp("ryjob2/cx")+"åŽ»åšæ¸¸è¯´çš„å—!\n");
 if (me->query_temp("ryjob2/done") >= 1)
 {
-        tell_object(me,"ÄãÒÑ×öÍêÓÎËµÁË£¬»ØÈ¥Áì¹¦°É¡£\n");
+        tell_object(me,"ä½ å·²åšå®Œæ¸¸è¯´äº†ï¼Œå›žåŽ»é¢†åŠŸå§ã€‚\n");
          return 1;
 }
 
 
         if (me->is_busy())
         {
-          tell_object(me,"ÄãÕýÃ¦×ÅÄØ£¡\n");
+          tell_object(me,"ä½ æ­£å¿™ç€å‘¢ï¼\n");
           return 1;
         }
 	if( me->is_fighting() )
         {
-          tell_object(me,"µÈ´òÍêÁË£¬ÔÙËµ°É£¬£¡\n");
+          tell_object(me,"ç­‰æ‰“å®Œäº†ï¼Œå†è¯´å§ï¼Œï¼\n");
           return 1;
         }
 
         if ((me->query("jing") < 30))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖÐ£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼\n");
           return 1;
         }
         if ((me->query("qi") < 30 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î!\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®!\n");
           return 1;
         }
 i=random(4);
-message_vision(HIY"\n$NÔÚ"+me->query_temp("ryjob2/cx") + "ÅÉ¸½½ü×öÆðÁËÓÎËµ!\n"NOR,me);
+message_vision(HIY"\n$Nåœ¨"+me->query_temp("ryjob2/cx") + "æ´¾é™„è¿‘åšèµ·äº†æ¸¸è¯´!\n"NOR,me);
 if (i==0)
-message_vision(CYN"\n$NËµ£¬ÄãÃÇÕâÐ©ËùÎ½µÄÃ÷ÃÅÕýÅÉÄÄÀïÎÒÃÇÈÕÔÂÉñ½ÌµÄ¶ÔÊÖ!\n"NOR,me);
+message_vision(CYN"\n$Nè¯´ï¼Œä½ ä»¬è¿™äº›æ‰€è°“çš„æ˜Žé—¨æ­£æ´¾å“ªé‡Œæˆ‘ä»¬æ—¥æœˆç¥žæ•™çš„å¯¹æ‰‹!\n"NOR,me);
 else if (i==1)
-message_vision(RED"\n$NËµ£¬ÈÕÔÂÉñ½ÌÒ»½­ºþ£¬¼°ÖÚÍûËù¹éÒ²!\n"NOR,me);
+message_vision(RED"\n$Nè¯´ï¼Œæ—¥æœˆç¥žæ•™ä¸€æ±Ÿæ¹–ï¼ŒåŠä¼—æœ›æ‰€å½’ä¹Ÿ!\n"NOR,me);
 else if (i==2)
-message_vision(WHT"\n$NËµ£¬ÈÕÔÂÉñ½Ì£¬ÈÕ³ö¶«·½£¬Î¨ÎÒ²»°Ü!\n"NOR,me);
-else message_vision(GRN"\n$NËµ£¬ÈÕÔÂÉñ½Ì£¬Ç§ÇïÍòÔØ£¬Ò»Í³½­ºþ!\n"NOR,me);
+message_vision(WHT"\n$Nè¯´ï¼Œæ—¥æœˆç¥žæ•™ï¼Œæ—¥å‡ºä¸œæ–¹ï¼Œå”¯æˆ‘ä¸è´¥!\n"NOR,me);
+else message_vision(GRN"\n$Nè¯´ï¼Œæ—¥æœˆç¥žæ•™ï¼Œåƒç§‹ä¸‡è½½ï¼Œä¸€ç»Ÿæ±Ÿæ¹–!\n"NOR,me);
 me->add("jing",-10);
 me->add("qi", -5);
 me->start_busy(1);
@@ -86,11 +86,11 @@ if (random(50)==1 && me->query("combat_exp") > 1000000)
 obj=new(__DIR__"menggu"); 
 obj->move(environment(me));
 obj->do_copy(me,maxpot,2);
-obj->set("title",HIM"ÎåÔÀ½£ÅÉ»¤·¨"NOR);
+obj->set("title",HIM"äº”å²³å‰‘æ´¾æŠ¤æ³•"NOR);
 obj->set("usename",me->query("name"));
 me->start_busy(1);
-message_vision(HIR"¸½½üÍ»È»£¬ÉÁ³öÒ»ÈË£¡\n"NOR, obj);
-message_vision(HIR"$NËµµÀ£ºÄ§½ÌÑýÈË£¬¾¡¸ÒÔÚ´ËºúËµ°ËµÀ£¬ÎÒÒªÌæÌìÐÐµÀ£¡\n"NOR, obj);
+message_vision(HIR"é™„è¿‘çªç„¶ï¼Œé—ªå‡ºä¸€äººï¼\n"NOR, obj);
+message_vision(HIR"$Nè¯´é“ï¼šé­”æ•™å¦–äººï¼Œå°½æ•¢åœ¨æ­¤èƒ¡è¯´å…«é“ï¼Œæˆ‘è¦æ›¿å¤©è¡Œé“ï¼\n"NOR, obj);
 me->kill_ob(obj);
 obj->kill_ob(me);
 }
@@ -99,8 +99,8 @@ obj->kill_ob(me);
 if (me->query_temp("ryjob") >i && 
 !me->is_fighting())
 {
-message_vision(HIM"$NµÄÓÎËµ¹¤×÷ºÃÏñ×öµÄºÜºÃ,¸½½üµÄÃÅÅÉÈËÎïºÃÏñ¶Ô×Ô¼ºµÄÃÅÅÉÓÐËùÊ§Íû¡£\n"NOR,me);
-message_vision(HIC"$NÈÎÎñÍê³É£¬°ÑËùÓÐµÄ´«µ¥·¢¸øÁËÖÚÈË¡£\n"NOR,me,ob); 
+message_vision(HIM"$Nçš„æ¸¸è¯´å·¥ä½œå¥½åƒåšçš„å¾ˆå¥½,é™„è¿‘çš„é—¨æ´¾äººç‰©å¥½åƒå¯¹è‡ªå·±çš„é—¨æ´¾æœ‰æ‰€å¤±æœ›ã€‚\n"NOR,me);
+message_vision(HIC"$Nä»»åŠ¡å®Œæˆï¼ŒæŠŠæ‰€æœ‰çš„ä¼ å•å‘ç»™äº†ä¼—äººã€‚\n"NOR,me,ob); 
 me->set_temp("ryjob2/done",1);
 me->start_busy(3);
 call_out("destroying", 0, me);                       

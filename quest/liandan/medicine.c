@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration)
 {
 	if (duration < 1) {
-		tell_object(me, "Äã³ÔµÄÒ©£¬Ò©ÐÔ¹ýÁË£¡\n");
+		tell_object(me, "ä½ åƒçš„è¯ï¼Œè¯æ€§è¿‡äº†ï¼\n");
                 me->delete_temp("apply/attack");
                 me->delete_temp("apply/damage");
                 me->delete_temp("apply/armor");

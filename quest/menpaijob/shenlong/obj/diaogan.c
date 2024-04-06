@@ -2,19 +2,19 @@ inherit ITEM;
 
 void create()
 {
-	set_name("µö¸Ë", ({ "diaoyu gan" }) );
+	set_name("é’“æ†", ({ "diaoyu gan" }) );
 	set_weight(30000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»°Ñµö¸Ë,Äã¿ÉÒÔÍùÉÏ×°(zhuang)Óã¶ü¡£\n");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("long", "ä¸€æŠŠé’“æ†,ä½ å¯ä»¥å¾€ä¸Šè£…(zhuang)é±¼é¥µã€‚\n");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
 		set("no_put",1);
                 set("yuer",1);	
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 100);
 	}
 }
@@ -27,15 +27,15 @@ int do_open(string arg)
     object me=this_player(),ob;
 ob=this_object();
         if( ob->query("yuer"))
-                        return notify_fail("²»ÊÇÒÑ¾­×°ºÃÁËÂğ£¡\n");
+                        return notify_fail("ä¸æ˜¯å·²ç»è£…å¥½äº†å—ï¼\n");
 
         if( me->is_busy() )
-                        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
-    tell_object(me,"Äã´ÓµØÉÏÍÚÁËÒ»µãòÇò¾£¬×°ÔÚÓã¸ËÉÏ¡£\n");
+    tell_object(me,"ä½ ä»åœ°ä¸ŠæŒ–äº†ä¸€ç‚¹èš¯èš“ï¼Œè£…åœ¨é±¼æ†ä¸Šã€‚\n");
 me->start_busy(8);
 ob->set("yuer",1);
         return 1;

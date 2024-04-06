@@ -7,15 +7,15 @@ int consider_lv(object ob,int a);
 static int i = random(13)+8;
 void create()
 {
-        set_name("Ðû´«×ÊÁÏ", ({ "xuanchuan ziliao"}));
-        set("long", "Ò»Ð©Ðû´«×ÊÁÏ,ÓÐÁËËüµÄÔÆÁúµÜ×ÓÒ»°ã¸ºÔðÐû´«(xuanchuan)ÈÎÎñ");
+        set_name("å®£ä¼ èµ„æ–™", ({ "xuanchuan ziliao"}));
+        set("long", "ä¸€äº›å®£ä¼ èµ„æ–™,æœ‰äº†å®ƒçš„äº‘é¾™å¼Ÿå­ä¸€èˆ¬è´Ÿè´£å®£ä¼ (xuanchuan)ä»»åŠ¡");
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
                 set("value", 0);
-                set("unit", "Ð©");
+                set("unit", "äº›");
         }
         setup();
 }
@@ -31,51 +31,51 @@ string targ;
 object obj;
 int maxpot,i;
 
-if (!environment(me))  return notify_fail("ÕâÀï²»ÊÇÒªÄã×öÐû´«µÄµØ·½!\n");
+if (!environment(me))  return notify_fail("è¿™é‡Œä¸æ˜¯è¦ä½ åšå®£ä¼ çš„åœ°æ–¹!\n");
 if (me->query_temp("yljob2/changxi") < 1)
-return notify_fail("Ã»ÈËÏÖÔÚ½ÐÄã×öÕâ¸öÈÎÎñ!\n");
+return notify_fail("æ²¡äººçŽ°åœ¨å«ä½ åšè¿™ä¸ªä»»åŠ¡!\n");
 if (!environment(me)->query("outdoors"))
-return notify_fail("Çëµ½»§ÍâÈË¶àµÄµØ·½×öÐû´«!\n");
+return notify_fail("è¯·åˆ°æˆ·å¤–äººå¤šçš„åœ°æ–¹åšå®£ä¼ !\n");
 if (environment(me)->query("outdoors") !=me->query_temp("yljob2/where"))
-return notify_fail("²»ÊÇ½ÐÄãµ½"+me->query_temp("yljob2/cx")+"È¥×öÐû´«Âð!\n");
+return notify_fail("ä¸æ˜¯å«ä½ åˆ°"+me->query_temp("yljob2/cx")+"åŽ»åšå®£ä¼ å—!\n");
 if (me->query_temp("yljob2/done") >= 1)
 {
-        tell_object(me,"ÄãÒÑ×öÍêÐû´«ÁË£¬»ØÈ¥Áì¹¦°É¡£\n");
+        tell_object(me,"ä½ å·²åšå®Œå®£ä¼ äº†ï¼Œå›žåŽ»é¢†åŠŸå§ã€‚\n");
          return 1;
 }
 
 
         if (me->is_busy())
         {
-          tell_object(me,"ÄãÕýÃ¦×ÅÄØ£¡\n");
+          tell_object(me,"ä½ æ­£å¿™ç€å‘¢ï¼\n");
           return 1;
         }
 	if( me->is_fighting() )
         {
-          tell_object(me,"µÈ´òÍêÁË£¬ÔÙËµ°É£¬£¡\n");
+          tell_object(me,"ç­‰æ‰“å®Œäº†ï¼Œå†è¯´å§ï¼Œï¼\n");
           return 1;
         }
 
         if ((me->query("jing") < 50))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖÐ£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼\n");
           return 1;
         }
         if ((me->query("qi") < 50 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î!\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®!\n");
           return 1;
         }
 
-message_vision(HIY"\n$NÔÚ"+me->query_temp("yljob2/cx") + "×öÆðÁËÐû´«!\n"NOR,me);
+message_vision(HIY"\n$Nåœ¨"+me->query_temp("yljob2/cx") + "åšèµ·äº†å®£ä¼ !\n"NOR,me);
 i=random(4);
 if (i==0)
-message_vision(CYN"\n$NËµ£¬ÎÒµÈ¶¼ÊÇººÈË£¬ÔõÄÜÔÚÂúÈËÍ³Ò±ÏÂÉú»î!\n"NOR,me);
+message_vision(CYN"\n$Nè¯´ï¼Œæˆ‘ç­‰éƒ½æ˜¯æ±‰äººï¼Œæ€Žèƒ½åœ¨æ»¡äººç»Ÿå†¶ä¸‹ç”Ÿæ´»!\n"NOR,me);
 else if (i==1)
-message_vision(RED"\n$NËµ£¬ÂúÈËÔÚÑïÖÝÍÀ³Ç£¬²»ÖªËÀÁË¶àÉÙ°ÙÐÕ!\n"NOR,me);
+message_vision(RED"\n$Nè¯´ï¼Œæ»¡äººåœ¨æ‰¬å·žå± åŸŽï¼Œä¸çŸ¥æ­»äº†å¤šå°‘ç™¾å§“!\n"NOR,me);
 else if (i==2)
-message_vision(WHT"\n$NËµ£¬ÂúÈËÎªÁËÕðÑ¹ººÈË£¬¸ãÎÄ×ÖÓü²»Öªº¦ËÀÁË¶àÉÙÓÐÊ¶Ö®Ê¿!\n"NOR,me);
-else message_vision(GRN"\n$NËµ£¬ÎÒµÈÌìµØ»á£¬±é²¼ÌìµØÖ®¼ä£¬¶¨ÄÜ·´Çå¸´Ã÷!\n"NOR,me);
+message_vision(WHT"\n$Nè¯´ï¼Œæ»¡äººä¸ºäº†éœ‡åŽ‹æ±‰äººï¼Œæžæ–‡å­—ç‹±ä¸çŸ¥å®³æ­»äº†å¤šå°‘æœ‰è¯†ä¹‹å£«!\n"NOR,me);
+else message_vision(GRN"\n$Nè¯´ï¼Œæˆ‘ç­‰å¤©åœ°ä¼šï¼Œéå¸ƒå¤©åœ°ä¹‹é—´ï¼Œå®šèƒ½åæ¸…å¤æ˜Ž!\n"NOR,me);
 me->add("jing",-10);
 me->add("qi", -5);
 me->start_busy(1);
@@ -87,11 +87,11 @@ if (random(50)==1 && me->query("combat_exp") > 1000000)
 obj=new(__DIR__"menggu"); 
 obj->move(environment(me));
 obj->do_copy(me,maxpot,2);
-obj->set("title",HIM"ÇåÍ¢×¦ÑÀ"NOR);
+obj->set("title",HIM"æ¸…å»·çˆªç‰™"NOR);
 obj->set("usename",me->query("name"));
 me->start_busy(1);
-message_vision(HIR"¸½½üÍ»È»£¬ÉÁ³öÒ»ÈË£¡\n"NOR, obj);
-message_vision(HIR"$NËµµÀ£ºÌìµØ»á·´Ôô£¬¿ì¿ìÊÜËÀ£¡\n"NOR, obj);
+message_vision(HIR"é™„è¿‘çªç„¶ï¼Œé—ªå‡ºä¸€äººï¼\n"NOR, obj);
+message_vision(HIR"$Nè¯´é“ï¼šå¤©åœ°ä¼šåè´¼ï¼Œå¿«å¿«å—æ­»ï¼\n"NOR, obj);
 me->kill_ob(obj);
 obj->kill_ob(me);
 }
@@ -100,8 +100,8 @@ obj->kill_ob(me);
 if (me->query_temp("yljob") >i && 
 !me->is_fighting())
 {
-message_vision(HIM"$NµÄÐû´«¹¤×÷ºÃÏñ×öµÄºÜºÃ,¸½½üµÄÖÚÈË¾ù±íÊ¾Ö§³Ö·´Çå¸´Ã÷¡£\n"NOR,me);
-message_vision(HIC"$NÈÎÎñÍê³É£¬°ÑËùÓÐµÄÐû´«×ÊÁÏ·¢¸øÁËÖÚÈË¡£\n"NOR,me,ob); 
+message_vision(HIM"$Nçš„å®£ä¼ å·¥ä½œå¥½åƒåšçš„å¾ˆå¥½,é™„è¿‘çš„ä¼—äººå‡è¡¨ç¤ºæ”¯æŒåæ¸…å¤æ˜Žã€‚\n"NOR,me);
+message_vision(HIC"$Nä»»åŠ¡å®Œæˆï¼ŒæŠŠæ‰€æœ‰çš„å®£ä¼ èµ„æ–™å‘ç»™äº†ä¼—äººã€‚\n"NOR,me,ob); 
 me->set_temp("yljob2/done",1);
 me->start_busy(3);
 call_out("destroying", 0, me);                       

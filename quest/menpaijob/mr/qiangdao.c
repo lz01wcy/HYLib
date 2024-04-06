@@ -1,4 +1,4 @@
-// qiangdao.c Ç¿µÁ
+// qiangdao.c å¼ºç›—
 // lag.2000/3/17
 
 inherit NPC;
@@ -10,11 +10,11 @@ void create()
         int myskill;
         me=this_player();
         myskill=me->query_skill("force");
-        set_name(HIC "¹ÃËÕÄ½ÈİÅÑÍ½" NOR, ({ me->query("id")+"-pantu"}));
-        set("title",me->query("name")+"¶¨ÏÂµÄ");
-        set("gender", "ÄĞĞÔ");
+        set_name(HIC "å§‘è‹æ…•å®¹å›å¾’" NOR, ({ me->query("id")+"-pantu"}));
+        set("title",me->query("name")+"å®šä¸‹çš„");
+        set("gender", "ç”·æ€§");
         set("age", 28);
-        set("long", "ËûÊÇÒ»¸ö¹ÃËÕÄ½ÈİÅÑÍ½¡£\n");
+        set("long", "ä»–æ˜¯ä¸€ä¸ªå§‘è‹æ…•å®¹å›å¾’ã€‚\n");
         
         set("attitude", "peaceful");
         set("qi", me->query("qi")* 4 / 5);
@@ -28,7 +28,7 @@ void create()
         set("per", me->query("per")* 4 / 5);
         set("killer",me->query("id"));
         set("combat_exp", me->query("combat_exp")* 4 / 5);
-// ¼ÓÏÂÃæ5¾äÊÇÈÃÇ¿µÁ×Ô¶¯×ß£¬ÔöÌíÍæ¼Ò×ö»úÆ÷ÈËµÄÀ§ÄÑ£¡-ÌÇÔ²SMILE
+// åŠ ä¸‹é¢5å¥æ˜¯è®©å¼ºç›—è‡ªåŠ¨èµ°ï¼Œå¢æ·»ç©å®¶åšæœºå™¨äººçš„å›°éš¾ï¼-ç³–åœ†SMILE
         set("chat_chance_combat", 30);
         set("chat_msg_combat", ({
                 (: perform_action, "parry.yihuajiemu" :),
@@ -96,7 +96,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "¹ÃËÕÄ½ÈİÅÑÍ½×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "å§‘è‹æ…•å®¹å›å¾’é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -109,8 +109,8 @@ void die()
 
 if (me)
 {
-        message_vision(HIR "\n¹ÃËÕÄ½ÈİÅÑÍ½µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n" NOR,me);
-        message_vision(HIG "\nÄã´ÓÅÑÍ½µÄÉíÉÏÕÒµ½ÁË´óÑà´«¹úÓñçô¡£\n" NOR,me);
+        message_vision(HIR "\nå§‘è‹æ…•å®¹å›å¾’å€’åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰äº†å‡ ä¸‹å°±æ­»äº†ã€‚\n" NOR,me);
+        message_vision(HIG "\nä½ ä»å›å¾’çš„èº«ä¸Šæ‰¾åˆ°äº†å¤§ç‡•ä¼ å›½ç‰çºã€‚\n" NOR,me);
         if (me->query("kill_mr") == 1 && this_object()->query_temp("owner/id") == me->query("id")) {
                zhi=new(__DIR__"zhi");
                zhi->set("byname",me->query("name"));
@@ -119,8 +119,8 @@ if (me)
                 }
 
         corpse = new("/clone/misc/corpse");
-        corpse->set("name",HIW "¹ÃËÕÄ½ÈİÅÑÍ½µÄÊ¬Ìå" NOR);
-        corpse->set("long","ËûÊÇÒ»¸öÔø¾­ÎŞ¶ñ²»×öµÄ¹ÃËÕÄ½ÈİÅÑÍ½£¬\nÈ»¶ø£¬ËûÒÑ¾­ËÀÁË£¬Ê£ÏÂÒ»¾ß³óÂªµÄÊ¬Ìå¡£\n");
+        corpse->set("name",HIW "å§‘è‹æ…•å®¹å›å¾’çš„å°¸ä½“" NOR);
+        corpse->set("long","ä»–æ˜¯ä¸€ä¸ªæ›¾ç»æ— æ¶ä¸åšçš„å§‘è‹æ…•å®¹å›å¾’ï¼Œ\nç„¶è€Œï¼Œä»–å·²ç»æ­»äº†ï¼Œå‰©ä¸‹ä¸€å…·ä¸‘é™‹çš„å°¸ä½“ã€‚\n");
         corpse->move(environment(this_object()));
         corpse->set_max_encumbrance(1000);        
         me->add("MKS", 1);

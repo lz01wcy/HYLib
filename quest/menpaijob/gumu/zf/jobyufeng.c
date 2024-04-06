@@ -1,4 +1,4 @@
-// yufeng.c //���
+// yufeng.c //玉蜂
 // By Lgg,1998.9
 
 #include <ansi.h>
@@ -6,16 +6,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW "�������" NOR, ({"yu feng","feng","bee"}) );
-        set("race", "Ұ��");
+        set_name(HIW "采蜜玉蜂" NOR, ({"yu feng","feng","bee"}) );
+        set("race", "野兽");
         set("age", 8);
-        set("long", "����һֻ��ɫ���۷䣬��ͷ����ͨ�۷��ö࣬\n"
-                    "����ϱ����ü�������֡�\n");
+        set("long", "这是一只玉色的蜜蜂，个头比普通蜜蜂大得多，\n"
+                    "翅膀上被人用尖针刺有字。\n");
 
         set("str", 40);
         set("dex", 100);
 
-        set("limbs", ({ "ͷ��", "����", "���", "β��" }) );
+        set("limbs", ({ "头部", "身体", "翅膀", "尾巴" }) );
         set("verbs", ({ "bite", "poke" }) );
 
 set("eff_qi",500);
@@ -31,8 +31,8 @@ set("max_jing",500);
         set("chat_chance", 5);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-        "�������ͷ��ת��һȦ���ƺ������ⲻ�ǿɲ��۵ĵط����������˵ط����ˡ�\n",
-        "���Χ�����ʻ��ɷ�ͣͣ���ƺ�Ҳ�������ڲ����ϡ�\n",
+        "玉蜂在你头顶转了一圈，似乎发现这不是可采蜜的地方，就嗡嗡嗡地飞走了。\n",
+        "玉蜂围绕着鲜花飞飞停停，似乎也不着重在采蜜上。\n",
          }) );
 //        set("chat_chance_combat", 20);
 //        set("chat_msg_combat", ({
@@ -51,7 +51,7 @@ void hunting()
 object ob=this_object();
 if (this_player())
 {
-message("vision", HIW"�������ͷ��ת��һȦ���ƺ������ⲻ�ǿɲ��۵ĵط����������˵ط����ˡ���\n"NOR, this_player());
+message("vision", HIW"玉蜂在你头顶转了一圈，似乎发现这不是可采蜜的地方，就嗡嗡嗡地飞走了。。\n"NOR, this_player());
 }
 destruct(ob);
 }

@@ -1,16 +1,16 @@
-// shi.c  ∑«‡…Ω
+// shi.c Âè≤ÈùíÂ±±
 #include <ansi.h> 
 inherit NPC;
 string ask_me();
 void create()
 {
-	set_name(" ∑«‡…Ω", ({ "shi qingshan", "shi" }));
-	set("title", "—Ô÷› ÿΩ´");
-	set("gender", "ƒ––‘");
+	set_name("Âè≤ÈùíÂ±±", ({ "shi qingshan", "shi" }));
+	set("title", "Êâ¨Â∑ûÂÆàÂ∞Ü");
+	set("gender", "Áî∑ÊÄß");
 	set("age", 33);
 	set("str", 25);
 	set("dex", 16);
-	set("long", " ∑«‡…Ω‘¯æ≠ «Œ‰µ±…ΩµƒÀ◊º“µ‹◊”£¨≤ª÷™Œ™∫Œ≥‘…œ¡À≥ØÕ¢∑π°£\n");
+	set("long", "Âè≤ÈùíÂ±±ÊõæÁªèÊòØÊ≠¶ÂΩìÂ±±ÁöÑ‰øóÂÆ∂ÂºüÂ≠êÔºå‰∏çÁü•‰∏∫‰ΩïÂêÉ‰∏ä‰∫ÜÊúùÂª∑È•≠„ÄÇ\n");
 	set("combat_exp", 400000);
 	set("shen", 4000);
 	set("attitude", "heroism");
@@ -34,8 +34,8 @@ void create()
 	set_temp("apply/damage", 20);
         set("inquiry", ([
               
-                "Œ™πŸ" : (: ask_me :),
-                "±®–ß≥ØÕ¢" : (: ask_me :),
+                "‰∏∫ÂÆò" : (: ask_me :),
+                "Êä•ÊïàÊúùÂª∑" : (: ask_me :),
        ]));
 	set("max_qi", 1000);
 	set("neili", 1200); 
@@ -49,7 +49,7 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say ¿œ∑Úæ√Œ¥∫ÕΩ≠∫˛»À∂Ø ÷π˝’–¡À£¨ΩÒ»’“≤≤ªœÎ∆∆¿˝°£");
+	command("say ËÄÅÂ§´‰πÖÊú™ÂíåÊ±üÊπñ‰∫∫Âä®ÊâãËøáÊãõ‰∫ÜÔºå‰ªäÊó•‰πü‰∏çÊÉ≥Á†¥‰æã„ÄÇ");
 	return 0;
 }
 string ask_me()
@@ -62,55 +62,55 @@ string ask_me()
        gftimes = (int)ob->query("gf_job",1);
        
        if (gftimes<1)
-       return "’‚Œª"+RANK_D->query_respect(me)+"ªπ√ª”–Œ™≥ØÕ¢≥ˆπ˝¡¶£¨∫ŒÃ∏π¶√˚ƒÿ£ø£°\n"; 
+       return "Ëøô‰Ωç"+RANK_D->query_respect(me)+"ËøòÊ≤°Êúâ‰∏∫ÊúùÂª∑Âá∫ËøáÂäõÔºå‰ΩïË∞àÂäüÂêçÂë¢ÔºüÔºÅ\n"; 
        if (gftimes>=1 && gftimes<50)
-       return "’‚Œª"+RANK_D->query_respect(me)+"ƒø«∞π¶¿Õ≤ªπª£¨ºÃ–¯≈¨¡¶∞…£ø£°\n"; 
+       return "Ëøô‰Ωç"+RANK_D->query_respect(me)+"ÁõÆÂâçÂäüÂä≥‰∏çÂ§üÔºåÁªßÁª≠Âä™ÂäõÂêßÔºüÔºÅ\n"; 
        if (gftimes>=50 && gftimes<100){
        command("nod ");
-       command("say Œ““—Ω´ƒ„µƒπ¶¿Õ±®∏¯¡À±¯≤ø…– È£¨«∞»’±¯≤ø¿¥∫ØÃ·…˝ƒ„Œ™øÏ≤∂°£");
-       me->set_temp("apply/short", ({HIY"æ≈∆∑øÏ≤∂ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "Œ“±≤…Ì∑Í¬“ ¿£¨µ±Œ™π˙º“≥ˆ¡¶£¨Œ™∞Ÿ–’‘Ï∏£∞°£°\n"; 
+       command("say ÊàëÂ∑≤Â∞Ü‰Ω†ÁöÑÂäüÂä≥Êä•Áªô‰∫ÜÂÖµÈÉ®Â∞ö‰π¶ÔºåÂâçÊó•ÂÖµÈÉ®Êù•ÂáΩÊèêÂçá‰Ω†‰∏∫Âø´Êçï„ÄÇ");
+       me->set_temp("apply/short", ({HIY"‰πùÂìÅÂø´Êçï "NOR+me->name()+"("+me->query("id")+")"}));
+       return "ÊàëËæàË∫´ÈÄ¢‰π±‰∏ñÔºåÂΩì‰∏∫ÂõΩÂÆ∂Âá∫ÂäõÔºå‰∏∫ÁôæÂßìÈÄ†Á¶èÂïäÔºÅ\n"; 
        }
        if (gftimes>=100 && gftimes<200){
        command("nod " + me->query("id"));
-       command("say Œ““—Ω´ƒ„µƒπ¶¿Õ±®∏¯¡À±¯≤ø…– È£¨«∞»’±¯≤ø¿¥∫ØÃ·…˝ƒ„Œ™≤∂Õ∑°£");
-       me->set_temp("apply/short", ({HIY"∞À∆∑≤∂Õ∑ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "∫√∫√∏…£¨¿œ∑Ú «≤ªª·ø˜¥˝ƒ„µƒ£°\n";
+       command("say ÊàëÂ∑≤Â∞Ü‰Ω†ÁöÑÂäüÂä≥Êä•Áªô‰∫ÜÂÖµÈÉ®Â∞ö‰π¶ÔºåÂâçÊó•ÂÖµÈÉ®Êù•ÂáΩÊèêÂçá‰Ω†‰∏∫ÊçïÂ§¥„ÄÇ");
+       me->set_temp("apply/short", ({HIY"ÂÖ´ÂìÅÊçïÂ§¥ "NOR+me->name()+"("+me->query("id")+")"}));
+       return "Â•ΩÂ•ΩÂπ≤ÔºåËÄÅÂ§´ÊòØ‰∏ç‰ºö‰∫èÂæÖ‰Ω†ÁöÑÔºÅ\n";
        }
        if (gftimes>=200 && gftimes<500){
        command("pat " + me->query("id"));
-       command("say ’‚Œª"+RANK_D->query_respect(me)+"µƒπ¶¿Õ‘Á“‘¥´±ﬂ¥ÛΩ÷–°œÔ£¨Ãÿ¥ÀÃ·…˝ƒ„Œ™Ã˙≤∂£°");
-       me->set_temp("apply/short", ({HIY"∆ﬂ∆∑Ã˙≤∂ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "’‚Œª"+RANK_D->query_respect(me)+"µƒπ¶¿Õ≤ª–°£¨¿œ∑Úœ¬¥ŒΩ¯æ©£¨“ª∂®“™«◊◊‘Ÿ˜∏Ê±¯≤ø…– È£°\n";
+       command("say Ëøô‰Ωç"+RANK_D->query_respect(me)+"ÁöÑÂäüÂä≥Êó©‰ª•‰º†ËæπÂ§ßË°óÂ∞èÂ∑∑ÔºåÁâπÊ≠§ÊèêÂçá‰Ω†‰∏∫ÈìÅÊçïÔºÅ");
+       me->set_temp("apply/short", ({HIY"‰∏ÉÂìÅÈìÅÊçï "NOR+me->name()+"("+me->query("id")+")"}));
+       return "Ëøô‰Ωç"+RANK_D->query_respect(me)+"ÁöÑÂäüÂä≥‰∏çÂ∞èÔºåËÄÅÂ§´‰∏ãÊ¨°Ëøõ‰∫¨Ôºå‰∏ÄÂÆöË¶Å‰∫≤Ëá™Á¶ÄÂëäÂÖµÈÉ®Â∞ö‰π¶ÔºÅ\n";
        }
        if (gftimes>=500 && gftimes<1000){
        command("thumb " + me->query("id"));
-       me->set_temp("apply/short", ({HIY"¡˘∆∑∂ºÀæ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "’‚Œª"+RANK_D->query_respect(me)+"µƒ≥…º®≤ª–°£¨µ´≤ª“™∫ÕΩ≠∫˛÷–»À¥Úµƒª»»£¨∑Ò‘Ú–›π÷¿œ∑Ú ÷œ¬Œﬁ«È£°\n";
+       me->set_temp("apply/short", ({HIY"ÂÖ≠ÂìÅÈÉΩÂè∏ "NOR+me->name()+"("+me->query("id")+")"}));
+       return "Ëøô‰Ωç"+RANK_D->query_respect(me)+"ÁöÑÊàêÁª©‰∏çÂ∞èÔºå‰ΩÜ‰∏çË¶ÅÂíåÊ±üÊπñ‰∏≠‰∫∫ÊâìÁöÑÁÅ´ÁÉ≠ÔºåÂê¶Âàô‰ºëÊÄ™ËÄÅÂ§´Êâã‰∏ãÊó†ÊÉÖÔºÅ\n";
        }
        if (gftimes>=500 && gftimes<1000){
        command("haha " + me->query("id"));
-       command("say ’‚Œª"+RANK_D->query_respect(me)+"µƒŒ‰π¶≤≈÷«æ˘Œ™∞Ÿ¿ÔÃÙ“ª£¨ºÃ–¯≈¨¡¶∞…£°");
-       me->set_temp("apply/short", ({HIY"ŒÂ∆∑”Œª˜ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "Ã˝Àµ◊ÓΩ¸Ω≠ƒœ≥£”–Ω≠—Û¥Ûµ¡≥ˆ√ª£¨ƒ„»•≤È≤Èø¥£°\n";
+       command("say Ëøô‰Ωç"+RANK_D->query_respect(me)+"ÁöÑÊ≠¶ÂäüÊâçÊô∫Âùá‰∏∫ÁôæÈáåÊåë‰∏ÄÔºåÁªßÁª≠Âä™ÂäõÂêßÔºÅ");
+       me->set_temp("apply/short", ({HIY"‰∫îÂìÅÊ∏∏Âáª "NOR+me->name()+"("+me->query("id")+")"}));
+       return "Âê¨ËØ¥ÊúÄËøëÊ±üÂçóÂ∏∏ÊúâÊ±üÊ¥ãÂ§ßÁõóÂá∫Ê≤°Ôºå‰Ω†ÂéªÊü•Êü•ÁúãÔºÅ\n";
        }
        if (gftimes>=1000 && gftimes<2000){
-       me->set_temp("apply/short", ({HIY"Àƒ∆∑≤ŒΩ´ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "¿œ∑Ú“—∞¸æŸƒ„Œ™≤ŒΩ´£¨“‘∫Ûπ¶√˚¿˚¬ª÷∏»’ø…¥˝£°\n";
+       me->set_temp("apply/short", ({HIY"ÂõõÂìÅÂèÇÂ∞Ü "NOR+me->name()+"("+me->query("id")+")"}));
+       return "ËÄÅÂ§´Â∑≤ÂåÖ‰∏æ‰Ω†‰∏∫ÂèÇÂ∞ÜÔºå‰ª•ÂêéÂäüÂêçÂà©Á¶ÑÊåáÊó•ÂèØÂæÖÔºÅ\n";
        }
        if (gftimes>=2000 && gftimes<2500){
-       me->set_temp("apply/short", ({HIY"»˝∆∑∏±Ω´ "NOR+me->name()+"("+me->query("id")+")"}));
-       return "Ã˝Àµ±¯≤ø…– ÈœÎ“™µ˜ƒ„«∞»•æ©≥«£¨ƒ„“‘∫Û«∞Õæ‘∂¥Û∞°£°\n";
+       me->set_temp("apply/short", ({HIY"‰∏âÂìÅÂâØÂ∞Ü "NOR+me->name()+"("+me->query("id")+")"}));
+       return "Âê¨ËØ¥ÂÖµÈÉ®Â∞ö‰π¶ÊÉ≥Ë¶ÅË∞É‰Ω†ÂâçÂéª‰∫¨ÂüéÔºå‰Ω†‰ª•ÂêéÂâçÈÄîËøúÂ§ßÂïäÔºÅ\n";
        }
        if (gftimes>2500){
-       me->set_temp("apply/short", ({HIY"’˝π˙∫Ó "NOR+me->name()+"("+me->query("id")+")"})); //wiz get it now
-       return "‘ı˜·£¨ƒ„œÎ∞—πŸ◊ˆµƒ±»¿œ∑Úªπ¥Û£ø\n";
-//       return "‘ı˜·£¨ƒ„œÎ∞—πŸ◊ˆµƒ±»¿œ∑Úªπ¥Û£ø\n";
+       me->set_temp("apply/short", ({HIY"Ê≠£ÂõΩ‰æØ "NOR+me->name()+"("+me->query("id")+")"})); //wiz get it now
+       return "ÊÄéÈ∫ΩÔºå‰Ω†ÊÉ≥ÊääÂÆòÂÅöÁöÑÊØîËÄÅÂ§´ËøòÂ§ßÔºü\n";
+//       return "ÊÄéÈ∫ΩÔºå‰Ω†ÊÉ≥ÊääÂÆòÂÅöÁöÑÊØîËÄÅÂ§´ËøòÂ§ßÔºü\n";
        }
 }
 void kill_ob(object me)
 {
-	command("say ¥Ûµ®µÛ√Ò£¨æπ∏“ƒ±∫¶≥ØÕ¢√¸πŸ£ø£°°£\n");
+	command("say Â§ßËÉÜÂàÅÊ∞ëÔºåÁ´üÊï¢Ë∞ãÂÆ≥ÊúùÂª∑ÂëΩÂÆòÔºüÔºÅ„ÄÇ\n");
 //        me->apply_condition("killer", 100);
 	::kill_ob(me);
 }

@@ -3,8 +3,8 @@ inherit NPC;
 void create()
 {
       string weapon;
-        set_name("ÍÁ·Ë", ({ "tufei"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("åœŸåŒª", ({ "tufei"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 25);
         set("no_quest", 1);
         set("str", 33);
@@ -13,7 +13,7 @@ void create()
         set("eff_neili", 8000);
         set("max_neili", 8000);
         set("dex", 23);
-        set("long", "É½Î÷½Ù·Ë¡£\n");
+        set("long", "å±±è¥¿åŠ«åŒªã€‚\n");
         set("combat_exp", 1080000 + random(4000000)); 
        
         set("no_quest", 1);
@@ -78,7 +78,7 @@ void checking(object ob)
                 return;
         }
 
-        command("say "+ob->name()+"£¬°ÑïÚÒøÁôÏÂ£¬·ÅÄã×ßÂ·£¡£¡\n");
+        command("say "+ob->name()+"ï¼ŒæŠŠé•–é“¶ç•™ä¸‹ï¼Œæ”¾ä½ èµ°è·¯ï¼ï¼\n");
         set_leader(ob);
 
 //        kill_ob(ob);
@@ -122,7 +122,7 @@ int heal_up()
 
 void leave()
 {
-        message("vision",HIB+name()+"¼±¼±Ã¦Ã¦µØ×ß¿ªÁË¡£\n" NOR, 
+        message("vision",HIB+name()+"æ€¥æ€¥å¿™å¿™åœ°èµ°å¼€äº†ã€‚\n" NOR, 
                 environment(), this_object() );
         destruct(this_object());
 }

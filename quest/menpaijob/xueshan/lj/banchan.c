@@ -9,18 +9,18 @@ string ask_job();
 
 void create()
 {
-	set_name(HIY"°àìø»î·ğ"NOR, ({
+	set_name(HIY"ç­ç¦…æ´»ä½›"NOR, ({
 		"banchan huofo",
 		"banchan",
 		"huofo",
 	}));
 	set("long",
-"°àìø»î·ğÊÇÑ©É½ËÂÓĞµÀµÄ¸ßÉ®£¬¶Ô·ğ·¨ÓĞ¾«ÉîµÄÑĞ¾¿¡£ \n"+
-"ËûÉí´©Ò»¼ş»ÆÉ«ôÂôÄ£¬Í·´øÉ®Ã±¡£´ÈÃ¼ÉÆÄ¿ËûÉí²ÄÂÔ¸ß£¬\n"+
-"Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓĞÉñ¡£\n"
+"ç­ç¦…æ´»ä½›æ˜¯é›ªå±±å¯ºæœ‰é“çš„é«˜åƒ§ï¼Œå¯¹ä½›æ³•æœ‰ç²¾æ·±çš„ç ”ç©¶ã€‚ \n"+
+"ä»–èº«ç©¿ä¸€ä»¶é»„è‰²è¢ˆè£Ÿï¼Œå¤´å¸¦åƒ§å¸½ã€‚æ…ˆçœ‰å–„ç›®ä»–èº«æç•¥é«˜ï¼Œ\n"+
+"å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥ã€‚\n"
 	);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -59,7 +59,7 @@ set_temp("no_kill",1);
 	prepare_skill("finger", "nianhua-zhi");
 
         set("inquiry", ([
-                "½²¾­" : (: ask_job :),
+                "è®²ç»" : (: ask_job :),
                 "job" : (: ask_job :),
         ]));
 
@@ -74,29 +74,29 @@ string ask_job()
         object obj, place, *inv, me = this_player();
 
         if( is_fighting() || is_busy() )
-                return "ÎÒÕıÃ¦×Å¡£";
-        if( me->query("family/family_name") != "Ñ©É½ËÂ")
-                return "±¾ËÂ£¬Ö»Çë±¾ËÂ¸ßÉ®Ã¿Ìì½²¾­Ëµ·¨¡£";
+                return "æˆ‘æ­£å¿™ç€ã€‚";
+        if( me->query("family/family_name") != "é›ªå±±å¯º")
+                return "æœ¬å¯ºï¼Œåªè¯·æœ¬å¯ºé«˜åƒ§æ¯å¤©è®²ç»è¯´æ³•ã€‚";
         if( (string)me->query("class") != "bonze" )
-                return "°¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Ê©Ö÷²»ÊÇ·ğÃÅµÜ×Ó£¬»¹ÊÇÇë»Ø°É¡£";
+                return "é˜¿å¼¥é™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼æ–½ä¸»ä¸æ˜¯ä½›é—¨å¼Ÿå­ï¼Œè¿˜æ˜¯è¯·å›å§ã€‚";
 
         if( (int)me->query_skill("lamaism", 1) < 50 )
-                return "±¾ËÂÖ»ÑÓÇëÃÜ×ÚĞÄ·¨¸ßÉîµÄÇ°À´½²¾­Ëµ·ğ¡£";
+                return "æœ¬å¯ºåªå»¶è¯·å¯†å®—å¿ƒæ³•é«˜æ·±çš„å‰æ¥è®²ç»è¯´ä½›ã€‚";
 
 
         if( me->query_condition("xsjob") )
-                return RANK_D->query_respect(me) + "ÒÑ¾­ÔÚ½²¾­Ëµ·ğÁË¡£";
+                return RANK_D->query_respect(me) + "å·²ç»åœ¨è®²ç»è¯´ä½›äº†ã€‚";
         if( me->query_temp("xsjob2") )
-                return RANK_D->query_respect(me) + "ÒÑ¾­ÔÚ½²¾­Ëµ·ğÁË¡£";
+                return RANK_D->query_respect(me) + "å·²ç»åœ¨è®²ç»è¯´ä½›äº†ã€‚";
 
         if( me->query_condition("xsjob2") )
-                return RANK_D->query_respect(me) + "¸Õ¸Õ½ø¹ı¾­ÁË£¬ĞİÏ¢Ò»»áÔÙÀ´°É¡£";
+                return RANK_D->query_respect(me) + "åˆšåˆšè¿›è¿‡ç»äº†ï¼Œä¼‘æ¯ä¸€ä¼šå†æ¥å§ã€‚";
 
         command("nod");
 me->set_temp("xsjob2",1);
         me->apply_condition("xsjob", 3 + random(3));
 
 
-        return "Ì«ºÃÁË£¬±¾ËÂÕıĞèÒ»ÃûÍâËÂ¸ßÉ®Ç°À´½²¾­Ëµ·ğ¡£";
+        return "å¤ªå¥½äº†ï¼Œæœ¬å¯ºæ­£éœ€ä¸€åå¤–å¯ºé«˜åƒ§å‰æ¥è®²ç»è¯´ä½›ã€‚";
 }
 

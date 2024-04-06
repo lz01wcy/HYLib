@@ -7,15 +7,15 @@ int consider_lv(object ob,int a);
 static int i = random(13)+8;
 void create()
 {
-        set_name("ÎåÐÐÆì", ({ "wuxing qi"}));
-        set("long", "Ò»ÃæÎåÐÐÆì,ÓÐÁËËüµÄµÜ×ÓÒ»°ã¸ºÔðÐ­Öú(xiezhu)ÈÎÎñ");
+        set_name("äº”è¡Œæ——", ({ "wuxing qi"}));
+        set("long", "ä¸€é¢äº”è¡Œæ——,æœ‰äº†å®ƒçš„å¼Ÿå­ä¸€èˆ¬è´Ÿè´£ååŠ©(xiezhu)ä»»åŠ¡");
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
                 set("value", 0);
-                set("unit", "Ãæ");
+                set("unit", "é¢");
         }
         setup();
 }
@@ -30,41 +30,41 @@ object ob,me=this_player(),obj;
 string targ;
 int maxpot;
 if (!arg||!ob=present(arg,environment(me)))
-               return notify_fail("ÄãÒªÐ­ÖúË­£¿\n");
+               return notify_fail("ä½ è¦ååŠ©è°ï¼Ÿ\n");
 if(!me->query_temp("mj2job"))
-return notify_fail("Äã²»ÄÜÓÃÕâÁîÆì×öÈÎÎñ¡£\n");
+return notify_fail("ä½ ä¸èƒ½ç”¨è¿™ä»¤æ——åšä»»åŠ¡ã€‚\n");
 targ=ob->query("name");
 if (userp(ob))
-return notify_fail("ÄãÏë¸ÉÊ²Ã´!!ÄÇ²»ÊÇÄ¿±ê\n");
+return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆ!!é‚£ä¸æ˜¯ç›®æ ‡\n");
 if ( targ != me->query_temp("mj2job") )
-return notify_fail("ÕâÊÇ½ÐÄãÐ­Öú"+me->query_temp("mj2job")+"µÄÎåÐÐÆì!!\n");
+return notify_fail("è¿™æ˜¯å«ä½ ååŠ©"+me->query_temp("mj2job")+"çš„äº”è¡Œæ——!!\n");
 if (this_object()->query("usename")!=me->query("name"))
-return notify_fail("Õâ²»ÊÇÄãµÄÁîÆì!!\n");
+return notify_fail("è¿™ä¸æ˜¯ä½ çš„ä»¤æ——!!\n");
 
         if (me->is_busy())
         {
-          tell_object(me,"ÄãÕýÃ¦×ÅÄØ£¡\n");
+          tell_object(me,"ä½ æ­£å¿™ç€å‘¢ï¼\n");
           return 1;
         }
 	if( me->is_fighting() )
         {
-          tell_object(me,"µÈ´òÍêÁË£¬ÔÙËµ°É£¬£¡\n");
+          tell_object(me,"ç­‰æ‰“å®Œäº†ï¼Œå†è¯´å§ï¼Œï¼\n");
           return 1;
         }
 
         if ((me->query("jing") < 50))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖÐ£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼\n");
           return 1;
         }
         if ((me->query("qi") < 50 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î!\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®!\n");
           return 1;
         }
 
-message_vision(HIC"\n$NºÍ$nÎªÁË·´¿¹Ôª±ø£¬¿ªÊ¼Å¬Á¦¹¤×÷!\n"NOR,me,ob);
-message_vision(HIG"\n$N±ß¸É»î±ßº°×ÅºÀÂõµÄºÅ×Ó£º¡°·´¿¹Ôª±ø£¬¹âÎÒÊ¥½Ì¡£¡£¡£\n"NOR,me,ob);
+message_vision(HIC"\n$Nå’Œ$nä¸ºäº†åæŠ—å…ƒå…µï¼Œå¼€å§‹åŠªåŠ›å·¥ä½œ!\n"NOR,me,ob);
+message_vision(HIG"\n$Nè¾¹å¹²æ´»è¾¹å–Šç€è±ªè¿ˆçš„å·å­ï¼šâ€œåæŠ—å…ƒå…µï¼Œå…‰æˆ‘åœ£æ•™ã€‚ã€‚ã€‚\n"NOR,me,ob);
                         me->add("jing",-10);
                         me->add("qi", -5);
                         me->start_busy(1);
@@ -76,19 +76,19 @@ if (random(60)==1 && me->query("combat_exp") > 1000000)
 obj=new(__DIR__"menggu"); 
 obj->move(environment(me));
 obj->do_copy(me,maxpot,2);
-obj->set("title",HIC"Ôª±øÌ½×Ó"NOR);
+obj->set("title",HIC"å…ƒå…µæŽ¢å­"NOR);
 obj->set("usename",me->query("name"));
 me->start_busy(1);
-message_vision(HIR"¸½½üÍ»È»£¬ÉÁ³öÒ»ÈË£¡\n"NOR, obj);
-message_vision(HIR"$NËµµÀ£ºÄãµÈË½ÔìÎäÆ÷£¬´ËµÈ´ó×ï£¬»¹²»ÊÜ½µ£¡\n"NOR, obj);
+message_vision(HIR"é™„è¿‘çªç„¶ï¼Œé—ªå‡ºä¸€äººï¼\n"NOR, obj);
+message_vision(HIR"$Nè¯´é“ï¼šä½ ç­‰ç§é€ æ­¦å™¨ï¼Œæ­¤ç­‰å¤§ç½ªï¼Œè¿˜ä¸å—é™ï¼\n"NOR, obj);
 me->kill_ob(obj);
 obj->kill_ob(me);
 }
 }
 if (me->query_temp("mjjob2") >i)
 {
-message_vision(HIW"\n$n¶Ô$NËµºÃÁË,½ñÌìµÄ»îÖÕÓÚ×öºÃÁË£¬ÐÝÏ¢È¥°É¡£\n"NOR,me,ob);
-message_vision(HIG"$NÈÎÎñÍê³É£¬°ÑÁîÆì½»¸øÁË$n¡£\n"NOR,me,ob); 
+message_vision(HIW"\n$nå¯¹$Nè¯´å¥½äº†,ä»Šå¤©çš„æ´»ç»ˆäºŽåšå¥½äº†ï¼Œä¼‘æ¯åŽ»å§ã€‚\n"NOR,me,ob);
+message_vision(HIG"$Nä»»åŠ¡å®Œæˆï¼ŒæŠŠä»¤æ——äº¤ç»™äº†$nã€‚\n"NOR,me,ob); 
         me->set_temp("mjjob2",0);
         me->delete_temp("mjjob2");
 me->start_busy(5);
@@ -102,9 +102,9 @@ int exp,pot;
 if (!me) return;
 exp=60+random(80);
 pot=45+random(50);
-	   tell_object(me,HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(me,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 me->apply_condition("mj2_busy",2);
         me->delete_temp("mj2job");

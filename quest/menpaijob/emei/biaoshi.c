@@ -7,15 +7,15 @@ int do_back(object me);
 void create()
 {
       string weapon;
-        set_name("Ã÷½ÌµÜ×Ó", ({ "mingjiaodizi"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ˜æ•™å¼Ÿå­", ({ "mingjiaodizi"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 25);
         set("no_quest", 1);
         set("str", 33);
         set("con", 26);
         set("int", 20);
         set("dex", 60);
-        set("long", "Ã÷½ÌµÄµÜ×Ó¡£\n");
+        set("long", "æ˜æ•™çš„å¼Ÿå­ã€‚\n");
         set("combat_exp", 1080000 + random(4000000)); 
         set("attitude", "friendly");
         set_skill("force", 50);
@@ -75,8 +75,8 @@ int i,pot,exp;
 	pot= exp*2/3;
 
 	if(objectp(killer = query_temp("last_damage_from")))
-        	tell_object(killer,"Äã±»½±ÀøÁË\n"+chinese_number(exp)+"µãÊµÕ½¾­Ñé\n"
-		+chinese_number(pot)+"µãÇ±ÄÜ\n");
+        	tell_object(killer,"ä½ è¢«å¥–åŠ±äº†\n"+chinese_number(exp)+"ç‚¹å®æˆ˜ç»éªŒ\n"
+		+chinese_number(pot)+"ç‚¹æ½œèƒ½\n");
 if (userp(killer))
 {
 if(killer->query_temp("rob_start")) 
@@ -107,7 +107,7 @@ int do_copy(object me)
       	   do_back(me);
       	   return 0;
       	   }
-        message_vision(HIR"Í»È»´Ó¶ÓÎéºó´Ü³öÒ»¸ö$N£¬¶ş»°²»Ëµ¾ÍÆËÏòÁË$n£¡\n"NOR, ob, me);
+        message_vision(HIR"çªç„¶ä»é˜Ÿä¼åçªœå‡ºä¸€ä¸ª$Nï¼ŒäºŒè¯ä¸è¯´å°±æ‰‘å‘äº†$nï¼\n"NOR, ob, me);
         me->add_temp("biaoshi", 1);
         
         ob->set("combat_exp",me->query("combat_exp") * 3 / 4);
@@ -161,7 +161,7 @@ int do_back(object me)
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "ÏÀ¿Í×ßÁË³öÈ¥£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "ä¾ å®¢èµ°äº†å‡ºå»ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
 }

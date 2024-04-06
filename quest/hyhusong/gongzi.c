@@ -1,11 +1,11 @@
 inherit NPC;
 #include <ansi.h>
-string *npc_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ","ÕÅ","³Â","Áø","·ç","Áõ","ÁÖ", }); 
+string *npc_name = ({ "èµµ","é’±","å­™","æŽ","å‘¨","å´","éƒ‘","çŽ‹","å¼ ","é™ˆ","æŸ³","é£Ž","åˆ˜","æž—", }); 
 void create()
 {
-	set_name(npc_name[random(sizeof(npc_name))]+"¹«×Ó", ({"gong zi","zi","gongzi"}));
-	set("nickname", HIY"¹Ù»Â×ÓµÜ"NOR);
-	set("gender", "ÄÐÐÔ");
+	set_name(npc_name[random(sizeof(npc_name))]+"å…¬å­", ({"gong zi","zi","gongzi"}));
+	set("nickname", HIY"å®˜å®¦å­å¼Ÿ"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 21+random(9));
  	set("attitude", "peaceful");
 	set("per", 20);
@@ -25,14 +25,14 @@ void create()
 	set("combat_exp", 80000);
 	set("score", 200000);
 	 
-	set_skill("dodge", 300);		// »ù±¾ÄÚ¹¦
-	set_skill("force", 100);		// »ù±¾ÄÚ¹¦
-	set_skill("huntian-qigong", 100);	// »ìÌìÆø¹¦
-	set_skill("unarmed", 100);		// »ù±¾È­½Å
-	set_skill("xianglong-zhang", 100);	// ½µÁúÊ®°ËÕÆ
-//	set_skill("dodge", 200);		// »ù±¾¶ãÉÁ
-//	set_skill("xiaoyaoyou", 300);		// åÐÒ£ÓÎ
-	set_skill("parry", 300);		// »ù±¾ÕÐ¼Ü
+	set_skill("dodge", 300);		// åŸºæœ¬å†…åŠŸ
+	set_skill("force", 100);		// åŸºæœ¬å†…åŠŸ
+	set_skill("huntian-qigong", 100);	// æ··å¤©æ°”åŠŸ
+	set_skill("unarmed", 100);		// åŸºæœ¬æ‹³è„š
+	set_skill("xianglong-zhang", 100);	// é™é¾™åå…«æŽŒ
+//	set_skill("dodge", 200);		// åŸºæœ¬èº²é—ª
+//	set_skill("xiaoyaoyou", 300);		// é€é¥æ¸¸
+	set_skill("parry", 300);		// åŸºæœ¬æ‹›æž¶
 	
 	map_skill("force", "huntian-qigong");
 	map_skill("unarmed", "xianglong-zhang");
@@ -79,9 +79,9 @@ int do_finish()
        player->add("combat_exp",exp);
        player->delete_temp("hu_song");
        player->apply_condition("husong_busy",0);
-	   tell_object(player,HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(player,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 	   destruct(ob);
 		return 1;
@@ -106,9 +106,9 @@ int do_finish()
 		     pot=exp/2+random(50);
              team[i]->add("potential",pot);
              team[i]->add("combat_exp",exp);
-			 tell_object(team[i],HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+			 tell_object(team[i],HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 			} 
 		}
@@ -121,7 +121,7 @@ int do_finish()
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃhalt£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ çŽ°åœ¨ä¸èƒ½ç”¨haltï¼\n");
         return 1;
 }
 
@@ -131,7 +131,7 @@ int do_go(string arg)
 {
 	if(objectp(present("killer", environment(this_object()))))
 	{
-        write(this_object()->query("name")+"£¬µÄ¸½½ü»¹ÓÐÉ±ÊÖ£¬Äã²»ÄÜ×ß£¡\n");
+        write(this_object()->query("name")+"ï¼Œçš„é™„è¿‘è¿˜æœ‰æ€æ‰‹ï¼Œä½ ä¸èƒ½èµ°ï¼\n");
         return 1;
 //	obj->kill_ob(present("gong zi",environment(this_player())));
 // 	present("gong zi",environment(this_player()))->kill_ob(obj);

@@ -1,4 +1,4 @@
-// miejue.c Ãğ¾øÊ¦Ì«
+// miejue.c ç­ç»å¸ˆå¤ª
 // Modified by That Oct.1997
 #include <command.h>
 #include <ansi.h>
@@ -14,231 +14,231 @@ int ask_dragon();
 int ask_jiuyin();
 
 mapping *quest = ({
-      (["place":                "´óÀí±±ÃÅ",
+      (["place":                "å¤§ç†åŒ—é—¨",
        "start" :              "/d/dali/northgate",]),  
-      (["place":                "ÑïÖİÃÜÁÖ",
+      (["place":                "æ‰¬å·å¯†æ—",
        "start" :              "/d/city/jiaowai5",]),  
-     (["place":                "¶ëáÒ²İÅï",
+     (["place":                "å³¨åµ‹è‰æ£š",
        "start" :              "/d/emei/caopeng",]),
-     (["place":                "ÑïÖİÎ÷ÃÅ",
+     (["place":                "æ‰¬å·è¥¿é—¨",
        "start" :              "/d/city/ximen",]),
-     (["place":                "Ñ©É½ÍÁÂ·",
+     (["place":                "é›ªå±±åœŸè·¯",
        "start" :              "/d/xueshan/tulu2",]),
-     (["place":                "ËÕÖİÁôÔ°",
+     (["place":                "è‹å·ç•™å›­",
        "start" :              "/d/suzhou/liuyuan",]),
-     (["place":                "ËÕÖİº®É½ËÂ",
+     (["place":                "è‹å·å¯’å±±å¯º",
        "start" :              "/d/suzhou/hanshansi",]),
-     (["place":                "º¼Öİ·ÉÀ´·å",
+     (["place":                "æ­å·é£æ¥å³°",
        "start" :              "/d/hangzhou/feilaifeng",]),
-     (["place":                "º¼Öİ¾»´ÈËÂ",
+     (["place":                "æ­å·å‡€æ…ˆå¯º",
        "start" :              "/d/hangzhou/jingcisi",]),
-     (["place":                "º¼Öİ´äÎ¢Í¤",
+     (["place":                "æ­å·ç¿ å¾®äº­",
        "start" :              "/d/hangzhou/cuiweiting",]),
-     (["place":                "º¼Öİ¾Û¾°Ô°",
+     (["place":                "æ­å·èšæ™¯å›­",
        "start" :              "/d/hangzhou/jujingyuan",]),
-     (["place":                "Ãç½®Ò×Ïª²¿",
+     (["place":                "è‹—ç–†æ˜“æºªéƒ¨",
        "start" :              "/d/dali/yixibu",]),  
-      (["place":                "ÑïÖİÖĞÑë¹ã³¡",
+      (["place":                "æ‰¬å·ä¸­å¤®å¹¿åœº",
        "start" :              "/d/city/guangchang",]),  
-      (["place":                "º¼ÖİÑØºş´óµÀ",
+      (["place":                "æ­å·æ²¿æ¹–å¤§é“",
        "start" :              "/d/hangzhou/dadao1",]), 
-      (["place":                "º¼Öİ¶ÏÇÅ",
+      (["place":                "æ­å·æ–­æ¡¥",
        "start" :              "/d/hangzhou/duanqiao",]), 
-      (["place":                "º¼ÖİÁéÒşËÂ",
+      (["place":                "æ­å·çµéšå¯º",
        "start" :              "/d/hangzhou/lingyinsi",]), 
-      (["place":                "ĞÇËŞº£ÒÁÀç",
+      (["place":                "æ˜Ÿå®¿æµ·ä¼ŠçŠ",
        "start" :              "/d/xingxiu/beijiang",]), 
-      (["place":                "Îäµ±ÈıÌìÃÅ",
+      (["place":                "æ­¦å½“ä¸‰å¤©é—¨",
        "start" :              "/d/wudang/santiangate",]), 
-      (["place":                "¶ëáÒÊ®¶şÅÌ",
+      (["place":                "å³¨åµ‹åäºŒç›˜",
        "start" :              "/d/emei/shierpan3",]), 
-      (["place":                "¶ëáÒÇ§·ğâÖ",
+      (["place":                "å³¨åµ‹åƒä½›åºµ",
        "start" :              "/d/emei/qianfoan",]), 
-      (["place":                "¶ëáÒ¾ÅÊ®¾ÅµÀ¹Õ",
+      (["place":                "å³¨åµ‹ä¹åä¹é“æ‹",
        "start" :              "/d/emei/jsjdg1",]), 
-      (["place":                "Ã÷½ÌºñÍÁÆìÃÅ",
+      (["place":                "æ˜æ•™åšåœŸæ——é—¨",
        "start" :              "/d/mingjiao/htqmen",]), 
-      (["place":                "Ã÷½ÌÁÒ»ğÆìºóÃÅ",
+      (["place":                "æ˜æ•™çƒˆç«æ——åé—¨",
        "start" :              "/d/mingjiao/lhqhoumen",]), 
-      (["place":                "¸£Öİ¶«ÃÅ",
+      (["place":                "ç¦å·ä¸œé—¨",
        "start" :              "/d/fuzhou/dongmen",]), 
-      (["place":                "¸£Öİ±±´ó½Ö",
+      (["place":                "ç¦å·åŒ—å¤§è¡—",
        "start" :              "/d/fuzhou/beidajie",]), 
-      (["place":                "ĞÇËŞº£É³Ä®",
+      (["place":                "æ˜Ÿå®¿æµ·æ²™æ¼ ",
        "start" :              "/d/xingxiu/shamo2",]),
-      (["place":                "ÉÙÁÖËÂÊ¯½×",
+      (["place":                "å°‘æ—å¯ºçŸ³é˜¶",
        "start" :              "/d/shaolin/shijie4",]),
-      (["place":                "ÏåÑôÊ¯½×",
+      (["place":                "è¥„é˜³çŸ³é˜¶",
        "start" :              "/d/xiangyang/walle1",]),
-      (["place":                "»ªÉ½â©áø³î",
+      (["place":                "åå±±çŒ¢ç‹²æ„",
        "start" :              "/d/huashan/husun",]),
-      (["place":                "»ªÉ½ÓñÅ®·å",
+      (["place":                "åå±±ç‰å¥³å³°",
        "start" :              "/d/huashan/yunu",]),
-      (["place":                "Ä½ÈİĞ¡¾¶",
+      (["place":                "æ…•å®¹å°å¾„",
        "start" :              "/d/mr/xiaojing1-2",]),
-      (["place":                "Ä½ÈİÁøÊ÷ÁÖ",
+      (["place":                "æ…•å®¹æŸ³æ ‘æ—",
        "start" :              "/d/mr/liulin",]),
-      (["place":                "´óÀí´óºÍ½Ö",
+      (["place":                "å¤§ç†å¤§å’Œè¡—",
        "start" :              "/d/dali/dahejiewest",]),
-      (["place":                "ËÕÖİ³Ç±±ÃÅ",
+      (["place":                "è‹å·åŸåŒ—é—¨",
        "start" :              "/d/suzhou/beimen",]),
-      (["place":                "ËÕÖİ³ÇĞşÃî¹Û",
+      (["place":                "è‹å·åŸç„å¦™è§‚",
        "start" :              "/d/suzhou/xuanmiao",]),
-      (["place":                "ÉÙÁÖËÂÉ½ÃÅµî",
+      (["place":                "å°‘æ—å¯ºå±±é—¨æ®¿",
        "start" :              "/d/shaolin/smdian",]),
-      (["place":                "ÉÙÁÖËÂ×ßÀÈ",
+      (["place":                "å°‘æ—å¯ºèµ°å»Š",
        "start" :              "/d/shaolin/zoulang7",]),
-      (["place":                "Îäµ±É½Â·",
+      (["place":                "æ­¦å½“å±±è·¯",
        "start" :              "/d/wudang/shanlu3",]),
-      (["place":                "ÉÙÁÖËÂ°ãÈôÌÃ¾Å²¿",
+      (["place":                "å°‘æ—å¯ºèˆ¬è‹¥å ‚ä¹éƒ¨",
        "start" :              "/d/shaolin/banruo9",]),
-      (["place":                "Ñ©É½É½½Å",
+      (["place":                "é›ªå±±å±±è„š",
        "start" :              "/d/xueshan/shanjiao",]),
-      (["place":                "¶ëáÒ¾ÅÀÏ¶´",
+      (["place":                "å³¨åµ‹ä¹è€æ´",
        "start" :              "/d/emei/jiulaodong",]),
-       (["place":                "¶ëáÒ¹ÅµÂÁÖ",
+       (["place":                "å³¨åµ‹å¤å¾·æ—",
        "start" :              "/d/emei/gudelin1",]),
-       (["place":                "º¯¹Å¹Ø",
+       (["place":                "å‡½å¤å…³",
        "start" :              "/d/city4/hanguguan",]),
-       (["place":                "ÖÕÄÏÉ½¿Ú",
+       (["place":                "ç»ˆå—å±±å£",
        "start" :              "/d/city4/zhongnan",]),
-       (["place":                "Ãö½­",
+       (["place":                "é—½æ±Ÿ",
        "start" :              "/d/fuzhou/fzroad8",]),
-       (["place":                "ººË®ÄÏ°¶",
+       (["place":                "æ±‰æ°´å—å²¸",
        "start" :              "/d/shaolin/hanshui1",]),
-       (["place":                "ÖĞÌõÉ½ÃÜÁÖ",
+       (["place":                "ä¸­æ¡å±±å¯†æ—",
        "start" :              "/d/huashan/jzroad5",]),
-       (["place":                "ÌìÉ½½ÅÏÂ",
+       (["place":                "å¤©å±±è„šä¸‹",
        "start" :              "/d/xingxiu/shanjiao",]),
-       (["place":                "»ªÉ½½ÅÏÂ",
+       (["place":                "åå±±è„šä¸‹",
        "start" :              "/d/huashan/path1",]),
-       (["place":                "Æ½¶¨Öİ",
+       (["place":                "å¹³å®šå·",
        "start" :              "/d/heimuya/pingdingzhou",]),
-       (["place":                "ÂÒÊ¯ÆÂ",
+       (["place":                "ä¹±çŸ³å¡",
        "start" :              "/d/heimuya/road1",]),      
-       (["place":                "»ªÉ½´åÄÏ´å¿Ú",
+       (["place":                "åå±±æ‘å—æ‘å£",
        "start":                "/d/village/sexit",]),
-       (["place":                "Ãö¸Ó¹ÅµÀ",
+       (["place":                "é—½èµ£å¤é“",
        "start":                "/d/fuzhou/fzroad7",]),
-       (["place":                "Óñ»Ê¶¥",
+       (["place":                "ç‰çš‡é¡¶",
        "start":               "/d/taishan/yuhuang",]),
-       (["place":                "ÁùÅÌÉ½",
+       (["place":                "å…­ç›˜å±±",
        "start":                "/d/xingxiu/xxroad3",]),
-       (["place":                "ÌìÉ½É½Â·",
+       (["place":                "å¤©å±±å±±è·¯",
        "start":                "/d/xingxiu/tianroad1",]),
-       (["place":                "¼ÎÓø¹Ø",
+       (["place":                "å˜‰å³ªå…³",
        "start":                "/d/xingxiu/jiayuguan",]),
-       (["place":                "Î÷µ¥±±´ó½Ö",
+       (["place":                "è¥¿å•åŒ—å¤§è¡—",
        "start":                "/d/beijing/xidan1",]),
-       (["place":                "°ÍÁê¹ã³¡",
+       (["place":                "å·´é™µå¹¿åœº",
        "start":                "/d/baling/guangchang",]),
-       (["place":                "Íõ¸®¾®´ó½Ö",
+       (["place":                "ç‹åºœäº•å¤§è¡—",
        "start":                "/d/beijing/wangfu2",]),
-       (["place":                "È«Õæ½Ì±®",
+       (["place":                "å…¨çœŸæ•™ç¢‘",
        "start":                "/d/quanzhen/jiaobei",]),
-       (["place":                "ÀÏåıÑÒ",
+       (["place":                "è€å¦ªå²©",
        "start":                "/d/gumu/juyan",]),
-       (["place":                "ÀÏÁúÍ·",
+       (["place":                "è€é¾™å¤´",
        "start":                "/d/guanwai/laolongtou",]),
-       (["place":                "¼ÎĞË³Ç",
+       (["place":                "å˜‰å…´åŸ",
        "start":                "/d/quanzhou/jiaxing",]),
-       (["place":                "ÑïÖİÎ÷ÃÅ",
+       (["place":                "æ‰¬å·è¥¿é—¨",
        "start":                "/d/city/ximen",]),
-       (["place":                "ÏÉÏ¼Áë",
+       (["place":                "ä»™éœå²­",
        "start":                "/d/fuzhou/fzroad1",]),
-       (["place":                "ÄşÔ¶",
+       (["place":                "å®è¿œ",
        "start":                "/d/taishan/yitian",]),
-       (["place":                "Ğ¡ÍÁÎİ",
+       (["place":                "å°åœŸå±‹",
        "start":                "/d/guanwai/tuwu",]),
-       (["place":                "ÏÂ¹Ø³Ç",
+       (["place":                "ä¸‹å…³åŸ",
        "start":                "/d/dali/xiaguan",]),
-       (["place":                "Àî×ÓóäÊ¯ÁÖ",
+       (["place":                "æå­ç®çŸ³æ—",
         "start":                "/d/dali/shilin1",]),
-        (["place":                "´óµşË®ÆÙ²¼",
+        (["place":                "å¤§å æ°´ç€‘å¸ƒ",
         "start":                "/d/dali/dadieshui",]),
-        (["place":                "ÂŞÙ¤µé",
+        (["place":                "ç½—ä¼½ç”¸",
         "start":                "/d/dali/luojiadian",]),
-        (["place":                "Ñô×ÚÕò",
+        (["place":                "é˜³å®—é•‡",
         "start":                "/d/dali/yangzong",]),
-        (["place":                "Ì«ÊÒãÚ",
+        (["place":                "å¤ªå®¤é˜™",
         "start":                "/d/songshan/taishique",]),
-        (["place":                "ÉÙÁÖÊ¯½×",
+        (["place":                "å°‘æ—çŸ³é˜¶",
         "start":                "/d/shaolin/shijie7",]),
-        (["place":                "ÌúÁºÏ¿",
+        (["place":                "é“æ¢å³¡",
         "start":                "/d/songshan/tieliang",]),
-        (["place":                "¾ş¼«ìøÔºÉ½ÃÅ",
+        (["place":                "å³»æç¦…é™¢å±±é—¨",
         "start":                "/d/songshan/junjigate",]),
-        (["place":                "ÉñºÌÔ­",
+        (["place":                "ç¥ç¦¾åŸ",
         "start":                "/d/gumu/shenheyuan",]),
-        (["place":                "ÖÕÄÏÉ½´óĞ£³¡",
+        (["place":                "ç»ˆå—å±±å¤§æ ¡åœº",
         "start":                "/d/gumu/daxiaochang",]),
-        (["place":                "½ğËø¹Ø",
+        (["place":                "é‡‘é”å…³",
         "start":                "/d/huashan/jinsuo",]),
-        (["place":                "Æ½ĞÄÊ¯",
+        (["place":                "å¹³å¿ƒçŸ³",
         "start":                "/d/huashan/pingxinshi",]),
-        (["place":                "Ç§³ß´±",
+        (["place":                "åƒå°ºå¹¢",
         "start":                "/d/huashan/qianchi",]),
-        (["place":                "É½ºéÆÙ²¼",
+        (["place":                "å±±æ´ªç€‘å¸ƒ",
         "start":                "/d/huashan/shanhongpb",]),
-        (["place":                "ÇåÒô¸ó",
+        (["place":                "æ¸…éŸ³é˜",
         "start":                "/d/emei/qingyinge",]),
-        (["place":                "Ê®¶şÅÌ",
+        (["place":                "åäºŒç›˜",
         "start":                "/d/emei/shierpan1",]),
-        (["place":                "¾ÅÀÏ¶´¿Ú",
+        (["place":                "ä¹è€æ´å£",
         "start":                "/d/emei/jldongkou",]),
-        (["place":                "¾ÅÊ®¾ÅµÀ¹Õ",
+        (["place":                "ä¹åä¹é“æ‹",
         "start":                "/d/emei/jsjdg2",]),
-        (["place":                "Ç§·ğâÖ",
+        (["place":                "åƒä½›åºµ",
         "start":                "/d/emei/qianfoan",]),
-        (["place":                "ÖÕÄÏÉ½¿ÕµØ",
+        (["place":                "ç»ˆå—å±±ç©ºåœ°",
         "start":                "/d/gumu/kongdi",]),
-        (["place":                "ÖÕÄÏÉ½Ö÷·å",
+        (["place":                "ç»ˆå—å±±ä¸»å³°",
         "start":                "/d/gumu/zhufeng",]),
-        (["place":                "ĞüÌìÑÂ",
+        (["place":                "æ‚¬å¤©å´–",
         "start":                "/d/mingjiao/shanlu3",]),
-         (["place":                "ÁÒ»ğÆì´óÃÅ",
+         (["place":                "çƒˆç«æ——å¤§é—¨",
         "start":                "/d/mingjiao/lhqmen",]),
-        (["place":                "Ñ©É½ËÂÉ½ÃÅ",
+        (["place":                "é›ªå±±å¯ºå±±é—¨",
         "start":                "/d/xueshan/shanmen",]),
-        (["place":                "ºéË®Æì´óÃÅ",
+        (["place":                "æ´ªæ°´æ——å¤§é—¨",
         "start":                "/d/mingjiao/hsqmen",]),
-        (["place":                "ºéË®Æì´óÃÅ",
+        (["place":                "æ´ªæ°´æ——å¤§é—¨",
         "start":                "/d/mingjiao/hsqmen",]),
-        (["place":                "±±´ó½Ö",
+        (["place":                "åŒ—å¤§è¡—",
         "start":                "/d/mingjiao/hsqmen",]),
-        (["place":                "ÇàÊ¯´óµÀ",
+        (["place":                "é’çŸ³å¤§é“",
         "start":                "/d/wudang/wdroad1",]),
-        (["place":                "¹ØÂåµÀ",
+        (["place":                "å…³æ´›é“",
         "start":                "/d/city4/road1",]),
-        (["place":                "´óæäµÀ",
+        (["place":                "å¤§é©¿é“",
         "start":                "/d/taishan/yidao",]),
-        (["place":                "¹ÙµÀ",
+        (["place":                "å®˜é“",
         "start":                "/d/quanzhen/guandao2",]),
-        (["place":                "¶«½Ö",
+        (["place":                "ä¸œè¡—",
         "start":                "/d/quanzhen/dongjie",]),
-        (["place":                "¸»¼Ò´óÃÅ",
+        (["place":                "å¯Œå®¶å¤§é—¨",
         "start":                "/d/quanzhen/fu-damen",]),
-        (["place":                "É½Â·",
+        (["place":                "å±±è·¯",
         "start":                "/d/quanzhen/shanlu1",]),
-        (["place":                "Ğ¡´å×¯",
+        (["place":                "å°æ‘åº„",
         "start":                "/d/quanzhen/xiaocun",]),
-        (["place":                "ĞÇËŞº£",
+        (["place":                "æ˜Ÿå®¿æµ·",
         "start":                "/d/xingxiu/xxh2",]),
-        (["place":                "ÌìÉ½½ÅÏÂ",
+        (["place":                "å¤©å±±è„šä¸‹",
         "start":                "/d/xingxiu/shanjiao",]),
-        (["place":                "Ë¿³ñÖ®Â·",
+        (["place":                "ä¸ç»¸ä¹‹è·¯",
         "start":                "/d/xingxiu/silk2",]),
-        (["place":                "³¤°²³ÇÎ÷ÃÅ",
+        (["place":                "é•¿å®‰åŸè¥¿é—¨",
         "start":                "/d/city4/westgate",]),
-        (["place":                "³¤°²³Ç¶«ÃÅ",
+        (["place":                "é•¿å®‰åŸä¸œé—¨",
         "start":                "/d/city4/eastgate",]),
-        (["place":                "³Ç¶«ÃÅ",
+        (["place":                "åŸä¸œé—¨",
         "start":                "/d/city4/eastgate",]),
-        (["place":                "ÉÏÌìÌİ",
+        (["place":                "ä¸Šå¤©æ¢¯",
         "start":                "/d/huashan/shangtianti",]),
-        (["place":                "Ê÷ÁÖ",
+        (["place":                "æ ‘æ—",
         "start":                "/d/xiaoyao/shulin3",]),
-        (["place":                "ÄÏ´ó½Ö",
+        (["place":                "å—å¤§è¡—",
         "start":                "/d/xiaoyao/shulin3",]),});    
 
 string ask_for_quit();
@@ -246,10 +246,10 @@ mixed out_master(mixed arg);
 
 void create()
 {
-        set_name("Ãğ¾øÊ¦Ì«", ({ "miejue shitai","miejue","shitai"}));
+        set_name("ç­ç»å¸ˆå¤ª", ({ "miejue shitai","miejue","shitai"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚÈı´úµÜ×Ó£¬ÏÖÈÎ¶ëáÒÅÉÕÆÃÅÈË¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬ä¸‰ä»£å¼Ÿå­ï¼Œç°ä»»å³¨åµ‹æ´¾æŒé—¨äººã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 62);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -275,17 +275,17 @@ set_temp("huifeng/jue",1);
                 (: exert_function, "juemie" :), 
         }) );
         set("inquiry",([
-                "Ìê¶È"  : "Æ¶ÄáÖ»Öª³ıÑıÉ±Ä§£¬²»Ìê¶ÈµÜ×Ó¡£",
-                "³ö¼Ò"  : "Æ¶ÄáÖ»Öª³ıÑıÉ±Ä§£¬²»Ìê¶ÈµÜ×Ó¡£",
-                "»¹Ë×"  :  (: ask_for_quit :),
-		"ÖÜÜÆÈô" : (: ask_zhou :),
-		"¹ù¾¸" : (: ask_guo :),
-		"»ÆÈØ" : (: ask_guo :),
-		"ÒĞÌìÍÀÁú" : (: ask_dragon :),
-		"ÎäÁÖÖÁ×ğ" : (: ask_dragon :),
-		"¾ÅÒõËÙ³ÉÆª" : (: ask_jiuyin :),
-                "³ıÑı" : (: ask_job :),
-                "É±Ä§" : (: ask_job :),
+                "å‰ƒåº¦"  : "è´«å°¼åªçŸ¥é™¤å¦–æ€é­”ï¼Œä¸å‰ƒåº¦å¼Ÿå­ã€‚",
+                "å‡ºå®¶"  : "è´«å°¼åªçŸ¥é™¤å¦–æ€é­”ï¼Œä¸å‰ƒåº¦å¼Ÿå­ã€‚",
+                "è¿˜ä¿—"  :  (: ask_for_quit :),
+		"å‘¨èŠ·è‹¥" : (: ask_zhou :),
+		"éƒ­é–" : (: ask_guo :),
+		"é»„è“‰" : (: ask_guo :),
+		"å€šå¤©å± é¾™" : (: ask_dragon :),
+		"æ­¦æ—è‡³å°Š" : (: ask_dragon :),
+		"ä¹é˜´é€Ÿæˆç¯‡" : (: ask_jiuyin :),
+                "é™¤å¦–" : (: ask_job :),
+                "æ€é­”" : (: ask_job :),
                 "job" : (: ask_job :),
         ]));
 
@@ -371,7 +371,7 @@ else
         prepare_skill("finger", "tiangang-zhi");	
 }
 //        map_skill("magic","bashi-shentong");
-        create_family("¶ëáÒÅÉ", 3, "ÕÆÃÅÈË");
+        create_family("å³¨åµ‹æ´¾", 3, "æŒé—¨äºº");
 	set_temp("apply/attack",190);
 	set_temp("apply/defense",190);
 	set_temp("apply/armor",900);
@@ -392,9 +392,9 @@ void attempt_apprentice(object ob)
    string name, new_name;
    name = ob->query("name");
 
-   if (!(ob_fam = ob->query("family")) || ob_fam["family_name"] != "¶ëáÒÅÉ")
+   if (!(ob_fam = ob->query("family")) || ob_fam["family_name"] != "å³¨åµ‹æ´¾")
    {
-      command("say " + RANK_D->query_respect(ob) + "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿");
+      command("say " + RANK_D->query_respect(ob) + "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ");
       return;
    }
    switch (random(2))
@@ -403,35 +403,35 @@ void attempt_apprentice(object ob)
         default:
            if ((string)ob->query("class")!="bonze" )
            {
-               command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕË×¼ÒµÜ×Ó¡£");
+               command ("say é˜¿å¼¥é™€ä½›ï¼è´«å°¼ä¸æ”¶ä¿—å®¶å¼Ÿå­ã€‚");
                return;
            }
            else
            {
-               command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕµÜ×Ó¡£");
+               command ("say é˜¿å¼¥é™€ä½›ï¼è´«å°¼ä¸æ”¶å¼Ÿå­ã€‚");
                return;
            }
    }
    if ((int)ob->query_skill("mahayana",1)<90||(int)ob->query_skill("linji-zhuang",1)<90)
    {
-      command("say Äã±¾ÃÅµÄ¹¦·òĞŞÎª»¹Ì«µÍ¡£");
+      command("say ä½ æœ¬é—¨çš„åŠŸå¤«ä¿®ä¸ºè¿˜å¤ªä½ã€‚");
       return;
    }
    if ((int)ob->query("shen") < 50000)
    {
-      command("say " + RANK_D->query_respect(ob) + "ÄãĞĞÏÀÕÌÒåÖ®ÊÂ»¹×öµÄ²»¹»¡£");
+      command("say " + RANK_D->query_respect(ob) + "ä½ è¡Œä¾ ä»—ä¹‰ä¹‹äº‹è¿˜åšçš„ä¸å¤Ÿã€‚");
       return;
    }
    if ((string)ob->query("class")=="bonze" )
    {
         name = ob->query("name");
-        new_name = "¾²" + name[2..3];
+        new_name = "é™" + name[2..3];
         ob->set("name", new_name);
-        command("say ´Ó½ñÒÔºóÄãµÄ·¨Ãû½Ğ×ö" + new_name + "£¬¹§Ï²Äã³ÉÎª¶ëáÒµÚËÄ´úµÜ×Ó!");
+        command("say ä»ä»Šä»¥åä½ çš„æ³•åå«åš" + new_name + "ï¼Œæ­å–œä½ æˆä¸ºå³¨åµ‹ç¬¬å››ä»£å¼Ÿå­!");
    }
 
-   command("say °¢ÃÖÍÓ·ğ£¬ÉÆÔÕ£¡ÉÆÔÕ£¡ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
-   command("say Ï£ÍûÄãÄÜÒÔ´È±¯Ö®ĞÄ£¬ÒÔÖÇ»ÛÖ®Á¦£¬Å¬Á¦ĞĞÉÆ£¬¼Ã¶ÈÖÚÉú¡£");
+   command("say é˜¿å¼¥é™€ä½›ï¼Œå–„å“‰ï¼å–„å“‰ï¼å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
+   command("say å¸Œæœ›ä½ èƒ½ä»¥æ…ˆæ‚²ä¹‹å¿ƒï¼Œä»¥æ™ºæ…§ä¹‹åŠ›ï¼ŒåŠªåŠ›è¡Œå–„ï¼Œæµåº¦ä¼—ç”Ÿã€‚");
    command("recruit " + ob->query("id"));
 }
 
@@ -442,14 +442,14 @@ string ask_for_quit()
     me = this_player();
 
     myfam = (mapping)me->query("family");
-    if (!myfam || (myfam["family_name"] != "¶ëáÒÅÉ")) 
-        return ("ÄãºÍ¶ëáÒÃ»ÓĞÔ¨Ô´£¬Æ¶Äá²»¸Ò¸øÄã»¹Ë×¡£\n");
+    if (!myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾")) 
+        return ("ä½ å’Œå³¨åµ‹æ²¡æœ‰æ¸Šæºï¼Œè´«å°¼ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚\n");
     if( (string)me->query("class")!="bonze" )
-        return "°¢ÃÖÍÓ·ğ£¡³ö¼ÒÈË²»´òÚ¿Óï¡£ÄãÒÑ¾­ÊÇË×¼ÒÈËÁË¡£\n";
+        return "é˜¿å¼¥é™€ä½›ï¼å‡ºå®¶äººä¸æ‰“è¯³è¯­ã€‚ä½ å·²ç»æ˜¯ä¿—å®¶äººäº†ã€‚\n";
     me->set_temp("pending/quit_bonze", 1);
-        command ("say °¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡ÄãÒ»ĞÄÒª»¹Ë×£¬ÎÒÒ²²»ÍìÁô¡£\n");
-        command ("say ÎÒ½«·ÏÈ¥Äã²¿·ÖÎä¹¦¡£Çë¹òÏÂ(kneel)ÌıĞû¡£\n");
-        return "Èç¹û²»Ô¸»¹Ë×µÄ£¬¾Í°²ĞÄÔÚ´ËĞŞÁ¶°É¡£\n";
+        command ("say é˜¿å¼¥é™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼ä½ ä¸€å¿ƒè¦è¿˜ä¿—ï¼Œæˆ‘ä¹Ÿä¸æŒ½ç•™ã€‚\n");
+        command ("say æˆ‘å°†åºŸå»ä½ éƒ¨åˆ†æ­¦åŠŸã€‚è¯·è·ªä¸‹(kneel)å¬å®£ã€‚\n");
+        return "å¦‚æœä¸æ„¿è¿˜ä¿—çš„ï¼Œå°±å®‰å¿ƒåœ¨æ­¤ä¿®ç‚¼å§ã€‚\n";
 }
 
 int do_kneel()
@@ -459,22 +459,22 @@ int do_kneel()
     ob = this_object();
     me = this_player();
     myfam = (mapping)me->query("family");
-    if (!myfam || (myfam["family_name"] != "¶ëáÒÅÉ")) 
+    if (!myfam || (myfam["family_name"] != "å³¨åµ‹æ´¾")) 
 {
-        command ("say ÄãºÍ¶ëáÒÃ»ÓĞÔ¨Ô´£¬Æ¶Äá²»¸Ò¸øÄã»¹Ë×¡£\n");
+        command ("say ä½ å’Œå³¨åµ‹æ²¡æœ‰æ¸Šæºï¼Œè´«å°¼ä¸æ•¢ç»™ä½ è¿˜ä¿—ã€‚\n");
 return 1;
 }
     if( (string)me->query("class")!="bonze" )
 {
-        command ("say °¢ÃÖÍÓ·ğ£¡³ö¼ÒÈË²»´òÚ¿Óï¡£ÄãÒÑ¾­ÊÇË×¼ÒÈËÁË¡£\n");
+        command ("say é˜¿å¼¥é™€ä½›ï¼å‡ºå®¶äººä¸æ‰“è¯³è¯­ã€‚ä½ å·²ç»æ˜¯ä¿—å®¶äººäº†ã€‚\n");
 return 1;
 }
     if (!me->query_temp("pending/quit_bonze"))
 {
-        command ("say °¢ÃÖÍÓ·ğ£¬ÄãÏë×öÊ²Ã´°¡£¿\n");
+        command ("say é˜¿å¼¥é™€ä½›ï¼Œä½ æƒ³åšä»€ä¹ˆå•Šï¼Ÿ\n");
 return 1;
 }
-command ("say ºÃ£¬½ÓÏÂÀ´£¬ÎÒ½«·ÏÈ¥£¬Äã±¾ÃÅµÄÎä¹¦¡£\n");
+command ("say å¥½ï¼Œæ¥ä¸‹æ¥ï¼Œæˆ‘å°†åºŸå»ï¼Œä½ æœ¬é—¨çš„æ­¦åŠŸã€‚\n");
 if (me->query_skill("linji-zhuang")>1)
 {
 me->delete_skill("linji-zhuang");
@@ -484,8 +484,8 @@ me->reset_action();
 me->set("class","emei");
 me->delete_temp("pending/quit_bonze");
 }
-message_vision(RED"\n$NÔÚ$nµÄÉíÉÏµãÁË¼¸ÏÂ,$n»ìÉíµÄÁ¦Á¿£¬Ò»ÏÂ×ÓÈ«Ã»ÁË£¡¡£\n"NOR, ob, me);
-command ("say ´ÓÏÖÔÚ¿ªÊ¼£¬Äã¾Í²»ÊÇ³ö¼ÒÈËÁË£¡¡£\n");
+message_vision(RED"\n$Nåœ¨$nçš„èº«ä¸Šç‚¹äº†å‡ ä¸‹,$næ··èº«çš„åŠ›é‡ï¼Œä¸€ä¸‹å­å…¨æ²¡äº†ï¼ã€‚\n"NOR, ob, me);
+command ("say ä»ç°åœ¨å¼€å§‹ï¼Œä½ å°±ä¸æ˜¯å‡ºå®¶äººäº†ï¼ã€‚\n");
 return 1;
 }
 
@@ -494,33 +494,33 @@ int accept_object(object me, object obj)
    object ob=this_object();
    if(!me || environment(me) != environment()) return 0;
    if(!objectp(obj)) return 0;
-   if(!present(obj, me)) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£");        
+   if(!present(obj, me)) return notify_fail("ä½ æ²¡æœ‰è¿™ä»¶ä¸œè¥¿ã€‚");        
    if(userp(obj)){
        command("consider "+(string)me->query("id"));
-       command("say ÄãÄÃ¸ö¿ìËÀµÄÈËÀ´Æ­Æ¶Äá£¿");
+       command("say ä½ æ‹¿ä¸ªå¿«æ­»çš„äººæ¥éª—è´«å°¼ï¼Ÿ");
        return 0;
        }
    if(me->query_temp("emjob2") <2){
        command("consider "+(string)me->query("id"));
-       command("say ÄãÈÎÎñÔõÃ´×öµÄ£¬É±ÁË¼¸¸öµĞÈË£¿");
+       command("say ä½ ä»»åŠ¡æ€ä¹ˆåšçš„ï¼Œæ€äº†å‡ ä¸ªæ•Œäººï¼Ÿ");
        return 0;
        }       
    if(obj->query("id") == "mingjiao ling" && obj->query("owner") == me->query("id")){
        command("nod "+(string)me->query("id"));
-       command("say ¸ÉµÃºÃ£¡\n");
-       message_vision(HIY"$N½«$n"HIY"½ĞÆğÀ´¡£\n"NOR,ob, obj);
+       command("say å¹²å¾—å¥½ï¼\n");
+       message_vision(HIY"$Nå°†$n"HIY"å«èµ·æ¥ã€‚\n"NOR,ob, obj);
        remove_call_out("destroying");
        call_out("destroying", 0, obj, ob, me);                       
        return 1;
        }
    if(obj->query("money_id")) {
        command("pat " + me->query("id"));
-       command("say Æ¶ÄáÎÒÒªÇ®¸ÉÊ²Ã´?");
+       command("say è´«å°¼æˆ‘è¦é’±å¹²ä»€ä¹ˆ?");
        return 0;
        }
 //   if(obj->query("owner") != me->query("id")){
 //       command("hehe "+(string)me->query("id"));
-//       command("say ²»´í°¡£¬µ«Õâ»î¿É²»ÊÇÄã¸ÉµÄ¡£");
+//       command("say ä¸é”™å•Šï¼Œä½†è¿™æ´»å¯ä¸æ˜¯ä½ å¹²çš„ã€‚");
 //       /return 1;
 //       }
 //   else return 0;       
@@ -532,18 +532,18 @@ void destroying(object obj, object ob, object me)
    if(obj) destruct(obj);
    if(!ob) return;
    if(!me || environment(me) != environment()){
-      command("say ß×£¬ÈËÄØ£¿");
+      command("say å’¦ï¼Œäººå‘¢ï¼Ÿ");
       return;
       }
    command("pat "+me->query("id"));
-   message_vision(HIY"$N¶Ô$nËµµÀ£ºÄãÕâ´Î×öµÃ¼«Îª³öÉ«£¡Æ¶Äá¾ÍÖ¸µãÄãÁ½ÊÖ¹¦·ò°É.\n"NOR,ob, me);
+   message_vision(HIY"$Nå¯¹$nè¯´é“ï¼šä½ è¿™æ¬¡åšå¾—æä¸ºå‡ºè‰²ï¼è´«å°¼å°±æŒ‡ç‚¹ä½ ä¸¤æ‰‹åŠŸå¤«å§.\n"NOR,ob, me);
    me->set_temp("robjob_exp", 380+(me->query_temp("biaoshi")*(random(30)+60)));
    me->add("combat_exp", me->query_temp("robjob_exp"));
    me->add("potential", 360+me->query_temp("biaoshi")*60);
   me->add("shen",100);
   me->add("score",10);
-   tell_object(me, "Äã±»½±ÀøÁË"+chinese_number(me->query_temp("robjob_exp"))+"µã¾­ÑéÖµ£¡\n"+chinese_number(200+me->query_temp("biaoshi")*60)+"µãÇ±ÄÜ\n");
-   tell_object(me, "ÄãµÄÏÀÒåÕıÆø±äÇ¿ÁË£¬ÄãÁË½­ºşÔÄÀú±äÇ¿ÁË¡£\n");
+   tell_object(me, "ä½ è¢«å¥–åŠ±äº†"+chinese_number(me->query_temp("robjob_exp"))+"ç‚¹ç»éªŒå€¼ï¼\n"+chinese_number(200+me->query_temp("biaoshi")*60)+"ç‚¹æ½œèƒ½\n");
+   tell_object(me, "ä½ çš„ä¾ ä¹‰æ­£æ°”å˜å¼ºäº†ï¼Œä½ äº†æ±Ÿæ¹–é˜…å†å˜å¼ºäº†ã€‚\n");
 destruct(present("mingjiao ling",ob));
 
 me->delete_temp("emjob2");
@@ -564,14 +564,14 @@ string ask_job()
   exp = me->query("combat_exp"); 
  
     if(ob->query_temp("job_asked") == me->query("id")) 
-            return "²»ÊÇ½ĞÄãÏÈÈ¥ÄÇÀïµÈÎÒÂğ£¿ÔõÃ´»¹ÔÚÕâÀï£¿";
-    if( me->query("family/family_name") != "¶ëáÒÅÉ")
-            return "ÄãÊÇÄÄÀïÀ´µÄ¼éÏ¸£¿";
+            return "ä¸æ˜¯å«ä½ å…ˆå»é‚£é‡Œç­‰æˆ‘å—ï¼Ÿæ€ä¹ˆè¿˜åœ¨è¿™é‡Œï¼Ÿ";
+    if( me->query("family/family_name") != "å³¨åµ‹æ´¾")
+            return "ä½ æ˜¯å“ªé‡Œæ¥çš„å¥¸ç»†ï¼Ÿ";
       if( (int)me->query_skill("linji-zhuang",1) < 50)
-            return "Æ¶ÄáÈÏÎªÄãµÄ±¾ÃÅÄÚ¹¦Ì«²îÁË¡£";
+            return "è´«å°¼è®¤ä¸ºä½ çš„æœ¬é—¨å†…åŠŸå¤ªå·®äº†ã€‚";
 
     if(me->query_condition("emeijob"))
-            return "Æ¶ÄáÏÖÔÚ»¹Ã»ÓĞµÃµ½ÈÎºÎÏûÏ¢£¬ÄãµÈ»á¶ùÔÙÀ´°É¡£";
+            return "è´«å°¼ç°åœ¨è¿˜æ²¡æœ‰å¾—åˆ°ä»»ä½•æ¶ˆæ¯ï¼Œä½ ç­‰ä¼šå„¿å†æ¥å§ã€‚";
 
 
     if(exp>=600000) j=5;
@@ -582,7 +582,7 @@ string ask_job()
   
     me->set_temp("rob_job", 1);
     me->delete_temp("biaoshi");
-    message_vision(CYN"\n$NËµµ½,ÓĞÏûÏ¢ËµÄ§½ÌÓĞÒ»ÅúµÜ×ÓÔÚÃÜÄ±,¶ÔÎÒÅÉ²»Àû¡£\n"NOR, ob, me);
+    message_vision(CYN"\n$Nè¯´åˆ°,æœ‰æ¶ˆæ¯è¯´é­”æ•™æœ‰ä¸€æ‰¹å¼Ÿå­åœ¨å¯†è°‹,å¯¹æˆ‘æ´¾ä¸åˆ©ã€‚\n"NOR, ob, me);
     ob->set_temp("job_asked", me->query("id"));
     ob->set_temp("dest", "emeijob");
     ob->set_temp("start_place", aquest["start"]);
@@ -594,7 +594,7 @@ string ask_job()
     obn->move(aquest["start"]);
     obn->set("arg", ob->query_temp("dest"));
     me->set_temp("rob_start", 1);
-    return "Äã¾ÍÈ¥"+ob->query_temp("place")+"ÏûÃğ(xiaomie)Ä§½Ì¶ÓÎé¡£\n";    
+    return "ä½ å°±å»"+ob->query_temp("place")+"æ¶ˆç­(xiaomie)é­”æ•™é˜Ÿä¼ã€‚\n";    
 }
 
 void init()
@@ -622,7 +622,7 @@ void waiting(object ob, object me)
 {   
     if(!ob || !living(me)) return;
     command("nod "+me->query("id"));
-    command("say ºÃ£¬ÎÒÃÇ¾ÍÔÚÕâÀïµÈ×ÅËûÃÇÀ´°É¡£");
+    command("say å¥½ï¼Œæˆ‘ä»¬å°±åœ¨è¿™é‡Œç­‰ç€ä»–ä»¬æ¥å§ã€‚");
     ob->set_temp("wait_target", 1);
     me->set_temp("wait_target", 1);
     remove_call_out("wait_target");
@@ -635,9 +635,9 @@ void do_back(object me)
         me->delete_temp("start_place");
         me->delete_temp("place");
         me->delete_temp("dest");
-        message_vision("$N×ª¹ıÉ½Çğ£¬¼¸¸öÆğÂä¾Í²»¼ûÁË¡£\n", me);
+        message_vision("$Nè½¬è¿‡å±±ä¸˜ï¼Œå‡ ä¸ªèµ·è½å°±ä¸è§äº†ã€‚\n", me);
         me->move("/d/emei/hcahoudian");  
-        message_vision("$N¼±¼±Ã¦Ã¦µØ×ßÁË¹ıÀ´¡£\n", me);
+        message_vision("$Næ€¥æ€¥å¿™å¿™åœ°èµ°äº†è¿‡æ¥ã€‚\n", me);
         remove_call_out("del_temp");
         call_out("del_temp", 400, me);             
 }
@@ -647,14 +647,14 @@ int wait_target(object ob, object me)
 {
    object obj;
    if(!objectp(present(me, environment(ob)))){
-       message_vision("$NËµµÀ£ºÒ®£¿ÈËÔõÃ´²»¼ûÁË£¿\n", ob);
+       message_vision("$Nè¯´é“ï¼šè€¶ï¼Ÿäººæ€ä¹ˆä¸è§äº†ï¼Ÿ\n", ob);
        remove_call_out("do_back");
        do_back(ob);
        return 1;
        }
    if(!objectp(ob = present("miejue shitai", environment(me)))){ 
-       tell_object(me,"Äã·¢ÏÖÃğ¾øÊ¦Ì«²»¼ûÁË£¬Ö»ºÃ×ªÉíÀë¿ª¡£\n");
-       tell_room(environment(me), me->name()+"Í»È»Ò»Á³Ã£È»µÄ±íÇé£¬¿´À´ÊÇÏëÒªÀë¿ªÁË¡£\n", ({ me }));
+       tell_object(me,"ä½ å‘ç°ç­ç»å¸ˆå¤ªä¸è§äº†ï¼Œåªå¥½è½¬èº«ç¦»å¼€ã€‚\n");
+       tell_room(environment(me), me->name()+"çªç„¶ä¸€è„¸èŒ«ç„¶çš„è¡¨æƒ…ï¼Œçœ‹æ¥æ˜¯æƒ³è¦ç¦»å¼€äº†ã€‚\n", ({ me }));
        me->delete_temp("rob_job");
 //       me->clear_condition("rob_task");
        me->delete_temp("wait_target");
@@ -664,10 +664,10 @@ int wait_target(object ob, object me)
     obj = new(__DIR__"shangdui");
     obj->move(environment(me)); 
     obj->set("arg", ob->query_temp("dest"));
-    message_vision(HIY"\nÖ»ÌıÒ»Õó½Å²½Éù´«À´£¬Ò»¶ÓÃ÷½ÌµÄÈËÂí³öÏÖÔÚÑÛÇ°£¡\n\n"NOR, ob);
-    tell_object(me,"µĞÈËÖÕÓÚ³öÏÖÁË£¡\n"); 
-    message_vision(HIY"$N¶Ô×Å$n´óÉùÃüÁîµÀ£ºÄã¿ìÏûÃğ(xiaomie)Ä§½Ì¶ÓÎé£¬ÎÒÀ´¶Ô¸¶ÆäËûÈË£¡\n"NOR, ob, me); 
-    message_vision("ËµÍê$N¾Í³åÉÏÇ°È¥£¬ºÍ¼¸¸öÃ÷½Ì¸ßÊÖ´ò¶·×·Öğ¿ªÁË¡£\n", ob);   
+    message_vision(HIY"\nåªå¬ä¸€é˜µè„šæ­¥å£°ä¼ æ¥ï¼Œä¸€é˜Ÿæ˜æ•™çš„äººé©¬å‡ºç°åœ¨çœ¼å‰ï¼\n\n"NOR, ob);
+    tell_object(me,"æ•Œäººç»ˆäºå‡ºç°äº†ï¼\n"); 
+    message_vision(HIY"$Nå¯¹ç€$nå¤§å£°å‘½ä»¤é“ï¼šä½ å¿«æ¶ˆç­(xiaomie)é­”æ•™é˜Ÿä¼ï¼Œæˆ‘æ¥å¯¹ä»˜å…¶ä»–äººï¼\n"NOR, ob, me); 
+    message_vision("è¯´å®Œ$Nå°±å†²ä¸Šå‰å»ï¼Œå’Œå‡ ä¸ªæ˜æ•™é«˜æ‰‹æ‰“æ–—è¿½é€å¼€äº†ã€‚\n", ob);   
     remove_call_out("do_back");
     do_back(ob);
     me->delete_temp("wait_target");
@@ -677,18 +677,18 @@ int ask_guo()
 {
     object me=this_player();
     if( me->query("shen") < -10000 ) {
-        command("say ¿´ÄãÒ»ÉíĞ°Æø£¬»¹¸Ò´òÌı¹ù´óÏÀµÄÃûºÅ£¿\n");
+        command("say çœ‹ä½ ä¸€èº«é‚ªæ°”ï¼Œè¿˜æ•¢æ‰“å¬éƒ­å¤§ä¾ çš„åå·ï¼Ÿ\n");
         command("consider "+ me->query("id"));
         return 1;
     }
 
-    command("say ±¾ÅÉµÄ´´ÅÉ×æÊ¦¹ùÅ®ÏÀ£¬ÄËÊÇµ±Äê´óÏÀ¹ù¾¸µÄĞ¡Å®¶ù¡£¹ù´óÏÀµ±ÄêÃûÕğÌìÏÂ£¬ÉúÆ½ÓĞÁ½
-Ïî¾øÒÕ£¬ÆäÒ»ÊÇĞĞ¾ü´òÕÌµÄ±ø·¨£¬Æä¶ş±ãÊÇÎä¹¦¡£¹ù´óÏÀµÄ·òÈË»ÆÈØ»ÆÅ®ÏÀ×îÊÇ´ÏÃ÷»úÖÇ
-£¬ËıÑÛ¼ûÔª±øÊÆ´ó£¬ÏåÑôÖÕ²»¿ÉÊØ£¬Ëû·ò¸¾¶şÈË¾öÒâÒÔËÀ±¨¹ú£¬ÄÇÊÇÖªÆä²»¿É¶øÎªÖ®µÄ³à
-ĞÄ¾«ÖÒ£¬µ«¹ù´óÏÀµÄ¾øÒÕÈç¹û¾Í´ËÊ§´«£¬Æñ²»¿ÉÏ§£¿ºÎ¿öËıÁÏÏëÃÉ¹ÅÈË×İÈ»Ò»Ê±Õ¼µÃÁËÖĞ
-¹ú£¬ÎÒººÈËÖÕ¾¿²»¸ÊÎª÷²×ÓÅ«Á¥¡£ÈÕºóÖĞÔ­ÑªÕ½£¬ÄÇ±ø·¨ºÍÎä¹¦Á½Ïî£¬½«ÓĞ¼«´óµÄÓÃ´¦¡£
-Òò´ËËıÆ¸µÃ¸ßÊÖ½³ÈË£¬½«Ñî¹ıÑî´óÏÀÔùËÍ±¾ÅÉ¹ù×æÊ¦µÄÒ»±úĞşÌúÖØ½£ÈÛÁË£¬ÔÙ¼ÓÒÔÎ÷·½¾«
-½ğ£¬Öı³ÉÁËÒ»±úÍÀÁúµ¶£¬Ò»±úÒĞÌì½£¡£");
+    command("say æœ¬æ´¾çš„åˆ›æ´¾ç¥–å¸ˆéƒ­å¥³ä¾ ï¼Œä¹ƒæ˜¯å½“å¹´å¤§ä¾ éƒ­é–çš„å°å¥³å„¿ã€‚éƒ­å¤§ä¾ å½“å¹´åéœ‡å¤©ä¸‹ï¼Œç”Ÿå¹³æœ‰ä¸¤
+é¡¹ç»è‰ºï¼Œå…¶ä¸€æ˜¯è¡Œå†›æ‰“ä»—çš„å…µæ³•ï¼Œå…¶äºŒä¾¿æ˜¯æ­¦åŠŸã€‚éƒ­å¤§ä¾ çš„å¤«äººé»„è“‰é»„å¥³ä¾ æœ€æ˜¯èªæ˜æœºæ™º
+ï¼Œå¥¹çœ¼è§å…ƒå…µåŠ¿å¤§ï¼Œè¥„é˜³ç»ˆä¸å¯å®ˆï¼Œä»–å¤«å¦‡äºŒäººå†³æ„ä»¥æ­»æŠ¥å›½ï¼Œé‚£æ˜¯çŸ¥å…¶ä¸å¯è€Œä¸ºä¹‹çš„èµ¤
+å¿ƒç²¾å¿ ï¼Œä½†éƒ­å¤§ä¾ çš„ç»è‰ºå¦‚æœå°±æ­¤å¤±ä¼ ï¼Œå²‚ä¸å¯æƒœï¼Ÿä½•å†µå¥¹æ–™æƒ³è’™å¤äººçºµç„¶ä¸€æ—¶å å¾—äº†ä¸­
+å›½ï¼Œæˆ‘æ±‰äººç»ˆç©¶ä¸ç”˜ä¸ºé‘å­å¥´éš¶ã€‚æ—¥åä¸­åŸè¡€æˆ˜ï¼Œé‚£å…µæ³•å’Œæ­¦åŠŸä¸¤é¡¹ï¼Œå°†æœ‰æå¤§çš„ç”¨å¤„ã€‚
+å› æ­¤å¥¹è˜å¾—é«˜æ‰‹åŒ äººï¼Œå°†æ¨è¿‡æ¨å¤§ä¾ èµ é€æœ¬æ´¾éƒ­ç¥–å¸ˆçš„ä¸€æŸ„ç„é“é‡å‰‘ç†”äº†ï¼Œå†åŠ ä»¥è¥¿æ–¹ç²¾
+é‡‘ï¼Œé“¸æˆäº†ä¸€æŸ„å± é¾™åˆ€ï¼Œä¸€æŸ„å€šå¤©å‰‘ã€‚");
 	me->set_temp("jiuyin/emei", 1);
         return 1;
 }
@@ -697,12 +697,12 @@ int ask_zhou()
 {
     object me=this_player();
     if( me->query_temp("jiuyin/emei") >= 1 ) {
-        command("say ÖÜÜÆÈôÊÇÎÒÅÉµÄµÚËÄ´úµÜ×Ó£¬´Ë¿ÌËäÈ»²»¼°ÖÚÎ»Ê¦æ¢£¬ÈÕºóÈ´ÊÇ²»¿ÉÏŞÁ¿¡£");
+        command("say å‘¨èŠ·è‹¥æ˜¯æˆ‘æ´¾çš„ç¬¬å››ä»£å¼Ÿå­ï¼Œæ­¤åˆ»è™½ç„¶ä¸åŠä¼—ä½å¸ˆå§Šï¼Œæ—¥åå´æ˜¯ä¸å¯é™é‡ã€‚");
         me->set_temp("jiuyin/emei", 2 );
         return 1;
     }
-    command("say ÄãÎÊËı×öÊ²Ã´£¿\n");
-    command("say " + me->query("name") + "¶¨È»ÊÇ¿´ÉÏÁËËı£¬ÒªËı¶éÈëÄãµÄì°ÖĞ¡£");
+    command("say ä½ é—®å¥¹åšä»€ä¹ˆï¼Ÿ\n");
+    command("say " + me->query("name") + "å®šç„¶æ˜¯çœ‹ä¸Šäº†å¥¹ï¼Œè¦å¥¹å •å…¥ä½ çš„å½€ä¸­ã€‚");
     command("consider " + me->query("id") );
     return 1;
 }
@@ -712,12 +712,12 @@ int ask_dragon()
     object me=this_player();
     object ob = this_object();
     if( me->query_temp("jiuyin/emei") < 4 ) {
-        command("say ÎÒÅÉµÄÖØ´óÃØÃÜÄãÔõÃ´ÖªµÀÁË£¿ÄÃÃüÀ´£¡");
+        command("say æˆ‘æ´¾çš„é‡å¤§ç§˜å¯†ä½ æ€ä¹ˆçŸ¥é“äº†ï¼Ÿæ‹¿å‘½æ¥ï¼");
         ob->set("neili", 10000);
         ob->kill_ob(me);
         return 1;
     }
-    command("say ¼ÈÈ»ÖÜÜÆÈôÄÑ³É´óÆ÷£¬ÄÇÄã¾Í¸øÎÒÆğ¸öÊÄ°É¡£");
+    command("say æ—¢ç„¶å‘¨èŠ·è‹¥éš¾æˆå¤§å™¨ï¼Œé‚£ä½ å°±ç»™æˆ‘èµ·ä¸ªèª“å§ã€‚");
     me->set_temp("jiuyin/emei", 5 );
     return 1;
 }
@@ -727,32 +727,32 @@ int ask_jiuyin()
 	object me=this_player();
 	object ob=this_object();
 	if (me->query("jiuyin/emei")) {
-if(environment(ob)->query("short")!="»ª²ØâÖºóµî")
+if(environment(ob)->query("short")!="åè—åºµåæ®¿")
 {
-tell_object(me,"ÕâÊÇÊ²Ã´µØ·½£¿£¿ÕâµØ·½²»ÄÜ¸øÄã\n");
+tell_object(me,"è¿™æ˜¯ä»€ä¹ˆåœ°æ–¹ï¼Ÿï¼Ÿè¿™åœ°æ–¹ä¸èƒ½ç»™ä½ \n");
  return 1;
 }
 if(environment(ob)->query("already"))
 {
-tell_object(me,"ÄãÀ´ÍíÁË£¬±ğÈËÒÑ¾­°Ñ¾ÅÒõËÙ³ÉÆªÄÃ×ßÁË!\n");
+tell_object(me,"ä½ æ¥æ™šäº†ï¼Œåˆ«äººå·²ç»æŠŠä¹é˜´é€Ÿæˆç¯‡æ‹¿èµ°äº†!\n");
 return 1;
 }
 
 
 
 		if (present("jiuyin sucheng", me)) {
-			command("say ÎÒ²»ÊÇÒÑ¾­¸øÄãÁËÃ´£¿");
+			command("say æˆ‘ä¸æ˜¯å·²ç»ç»™ä½ äº†ä¹ˆï¼Ÿ");
 			return 1;
 		}
 		if( me->query_skill("xianglong-zhang", 1) > 0)
-        		command("say ½µÁúÊ®°ËÕÆÄãÒÑ¾­Ñ§ÁË£¬Õâ¾í¾ÅÒõËÙ³ÉÆªÄã¾ÍÄÃÈ¥Ñ§°É¡£");
+        		command("say é™é¾™åå…«æŒä½ å·²ç»å­¦äº†ï¼Œè¿™å·ä¹é˜´é€Ÿæˆç¯‡ä½ å°±æ‹¿å»å­¦å§ã€‚");
 		else
-        		command("say ÄãµÄÎäÑ§Â·×ÓÓë½µÁúÊ®°ËÕÆµÄ¸ÕÑô¾¢Á¦²»·û£¬Õâ±¾¾ÅÒõËÙ³ÉÆªÄã¾ÍÄÃÈ¥Ñ§°É¡£");
+        		command("say ä½ çš„æ­¦å­¦è·¯å­ä¸é™é¾™åå…«æŒçš„åˆšé˜³åŠ²åŠ›ä¸ç¬¦ï¼Œè¿™æœ¬ä¹é˜´é€Ÿæˆç¯‡ä½ å°±æ‹¿å»å­¦å§ã€‚");
         	
                 environment(ob)->set("already",1);
 
 		new("/clone/book/jiuyin-sucheng")->move(me);
-		message("channel:rumor", MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+me->query("name")+"ÄÃµ½¾ÅÒõËÙ³ÉÆªÀ²¡£\n"NOR, users());
+		message("channel:rumor", MAG"ã€è°£è¨€ã€‘æŸäººï¼š"+me->query("name")+"æ‹¿åˆ°ä¹é˜´é€Ÿæˆç¯‡å•¦ã€‚\n"NOR, users());
 		return 1;
 	}
 	return 0;

@@ -1,17 +1,17 @@
 // feizei.c
-//ĞÇĞÇ(lywin)2000/5/30ÎªÒ»¸öÈÎÎñÏµÍ³Ğ´´Ënpc
+//æ˜Ÿæ˜Ÿ(lywin)2000/5/30ä¸ºä¸€ä¸ªä»»åŠ¡ç³»ç»Ÿå†™æ­¤npc
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("·ÉÔô",({ "fei zei","fei" }) );
-	set("title",HIY"·ÉÌì¶İµØ"NOR);
-        set("gender", "ÄĞĞÔ" );
+	set_name("é£è´¼",({ "fei zei","fei" }) );
+	set("title",HIY"é£å¤©éåœ°"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 33);
         set("long", 
-"ÕâÊÇÎŞ¶ñ²»×öµÄ·ÉÔô£¬±³ÉÏÓĞÒ»¸öĞ¡Ğ¡°ü¹ü£¬¿´Ñù×ÓÊÇ²ÅÍµÁËÊ²Ã´¶«Î÷ÔÚÊÖ¡£\n");
+"è¿™æ˜¯æ— æ¶ä¸åšçš„é£è´¼ï¼ŒèƒŒä¸Šæœ‰ä¸€ä¸ªå°å°åŒ…è£¹ï¼Œçœ‹æ ·å­æ˜¯æ‰å·äº†ä»€ä¹ˆä¸œè¥¿åœ¨æ‰‹ã€‚\n");
 
 	set("int", 30);
 	set("str", 30);
@@ -65,7 +65,8 @@ void create()
                 (: perform_action, "sword.feilong" :),                
                 (: perform_action, "dodge.huiyanfeiwu" :),                
                 (: exert_function, "powerup" :),
-        }) );
+        }) );
+
         setup();
         carry_object("clone/cloth/cloth")->wear();
         carry_object( __DIR__ "changjian")->wield();
@@ -84,7 +85,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(this_object()->query("name") + "×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(this_object()->query("name") + "é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

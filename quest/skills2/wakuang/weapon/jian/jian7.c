@@ -1,4 +1,4 @@
-// yitian-jian ÒÐÌì½£
+// yitian-jian å€šå¤©å‰‘
 
 #include <weapon.h>
 #include <ansi.h>
@@ -8,12 +8,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC"¿ìÈÐ½£"NOR,({ "kuai jian", "kuaitian", "sword", "jian" }) );
+        set_name(HIC"å¿«åˆƒå‰‘"NOR,({ "kuai jian", "kuaitian", "sword", "jian" }) );
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 2000);
 
  

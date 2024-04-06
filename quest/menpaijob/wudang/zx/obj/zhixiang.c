@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zhixiang.c ÖÆÏãµÀ³¤ 
+// zhixiang.c åˆ¶é¦™é“é•¿ 
 // Marz@XKX, 11/11/96
 // xQin 04/01
 
@@ -16,12 +16,12 @@ int do_say(string);
 
 void create()
 {
-        set_name("ÖÆÏãµÀ³¤", ({ "zhixiang daozhang", "zhixiang", "zhixiang daozhang", "zhixiang", "daozhang" }));
-        set("nickname", "ÖÆÏãµÀ³¤");
+        set_name("åˆ¶é¦™é“é•¿", ({ "zhixiang daozhang", "zhixiang", "zhixiang daozhang", "zhixiang", "daozhang" }));
+        set("nickname", "åˆ¶é¦™é“é•¿");
         set("long",
-                "Ëû¾ÍÊÇ³åÐéµÄÊ¦µÜÁèÐé¡£\n"
-                "ËûËÄÊ®¶àËê£¬Ö°Î»ÖÆÏãµÀ³¤£¬¸ºÔðÖÆÔìÏã»ð£¬¼æÊÕÏã»ðÇ®¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯å†²è™šçš„å¸ˆå¼Ÿå‡Œè™šã€‚\n"
+                "ä»–å››åå¤šå²ï¼ŒèŒä½åˆ¶é¦™é“é•¿ï¼Œè´Ÿè´£åˆ¶é€ é¦™ç«ï¼Œå…¼æ”¶é¦™ç«é’±ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -56,35 +56,35 @@ set("no_get",1);
         map_skill("unarmed", "taiji-quan");
         map_skill("parry", "taiji-quan");
 
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
         set("class", "taoist");
 
         set("inquiry", 
                 ([
-                        "Ïã»ð" : "Ïã»ðÁ·ÖÆ²»Ò×£¬²»ÄÜËæ±ãÓÚÈË£¬ò¯³Ï·îÏ×Õß·½ÄÜµÃÖ®¡£\n",
-                        "½øÏã" : "½øÏã£¿Í¯ÑÔÎÞ¼É£¡Í¯ÑÔÎÞ¼É£¡ÒªËµ¾´Ïã²ÅÊÇ£¡\n",
-                        "¾´Ïã" : "µîÌÃµÄÏã»ðÄÜÃàÑÓ²»¶Ï£¬¶¼ÒòÎªÎÒÎäµ±µÜ×ÓºÍÉ½ÍâÏã¿Í¼°Ê±¾´·î¡£\n",
-                        "ò¯³Ï·îÏ×" : "ò¯³Ï·îÏ×¾ÍÊÇÖ÷¶¯¶à¾èÏ×Ïã»ðÇ®£¬¶à×÷Òå¹¤¡£\n",
-                        "¾´·î" : "¾´·î¾ÍÊÇÖ÷¶¯¶à¾èÏ×Ïã»ðÇ®£¬¶à×÷Òå¹¤¡£\n",
-                        "ËÉÁÖ" : "Îäµ±ËÉÁÖÔÚÉ½ÃÅ¸½½ü¡£\n",
-                        "°ØÁÖ" : "Îäµ±°ØÁÖ¾ÍÔÚÓöÕæ¹¬ºó¡£\n",
-                        "²ÄÁÏ" : "²ÄÁÏ¾ÍÊÇºìËÉºÍÇà°Ø£¬ÎÒÃ¿Ìì¶¼ÒªÅÉÈËÈ¥¿³·¥¡£\n",
+                        "é¦™ç«" : "é¦™ç«ç»ƒåˆ¶ä¸æ˜“ï¼Œä¸èƒ½éšä¾¿äºŽäººï¼Œè™”è¯šå¥‰çŒ®è€…æ–¹èƒ½å¾—ä¹‹ã€‚\n",
+                        "è¿›é¦™" : "è¿›é¦™ï¼Ÿç«¥è¨€æ— å¿Œï¼ç«¥è¨€æ— å¿Œï¼è¦è¯´æ•¬é¦™æ‰æ˜¯ï¼\n",
+                        "æ•¬é¦™" : "æ®¿å ‚çš„é¦™ç«èƒ½ç»µå»¶ä¸æ–­ï¼Œéƒ½å› ä¸ºæˆ‘æ­¦å½“å¼Ÿå­å’Œå±±å¤–é¦™å®¢åŠæ—¶æ•¬å¥‰ã€‚\n",
+                        "è™”è¯šå¥‰çŒ®" : "è™”è¯šå¥‰çŒ®å°±æ˜¯ä¸»åŠ¨å¤šæçŒ®é¦™ç«é’±ï¼Œå¤šä½œä¹‰å·¥ã€‚\n",
+                        "æ•¬å¥‰" : "æ•¬å¥‰å°±æ˜¯ä¸»åŠ¨å¤šæçŒ®é¦™ç«é’±ï¼Œå¤šä½œä¹‰å·¥ã€‚\n",
+                        "æ¾æž—" : "æ­¦å½“æ¾æž—åœ¨å±±é—¨é™„è¿‘ã€‚\n",
+                        "æŸæž—" : "æ­¦å½“æŸæž—å°±åœ¨é‡çœŸå®«åŽã€‚\n",
+                        "ææ–™" : "ææ–™å°±æ˜¯çº¢æ¾å’Œé’æŸï¼Œæˆ‘æ¯å¤©éƒ½è¦æ´¾äººåŽ»ç ä¼ã€‚\n",
                         "job" : (: ask_job :),
-                        "¿³Ê÷" : (: ask_job :),
-                        "·¥Ä¾" : (: ask_job :),
-                        "¹¤×÷" : "ÎÒÕâÀïÃ¿Ìì¶¼ÐèÒªÈËÈ¥¿³Ê÷£¬Èç¹ûÄãÄÜÖ÷¶¯ËÍÐ©¹ýÀ´£¬ÄÇ¸üºÃ¡£\n",
-                        "¸É»î" : "ÎÒÕâÀïÃ¿Ìì¶¼ÐèÒªÈËÈ¥¿³Ê÷£¬Èç¹ûÄãÄÜÖ÷¶¯ËÍÐ©¹ýÀ´£¬ÄÇ¸üºÃ¡£\n",
+                        "ç æ ‘" : (: ask_job :),
+                        "ä¼æœ¨" : (: ask_job :),
+                        "å·¥ä½œ" : "æˆ‘è¿™é‡Œæ¯å¤©éƒ½éœ€è¦äººåŽ»ç æ ‘ï¼Œå¦‚æžœä½ èƒ½ä¸»åŠ¨é€äº›è¿‡æ¥ï¼Œé‚£æ›´å¥½ã€‚\n",
+                        "å¹²æ´»" : "æˆ‘è¿™é‡Œæ¯å¤©éƒ½éœ€è¦äººåŽ»ç æ ‘ï¼Œå¦‚æžœä½ èƒ½ä¸»åŠ¨é€äº›è¿‡æ¥ï¼Œé‚£æ›´å¥½ã€‚\n",
                 ]));
                                 
-        set("wanted", ({ HIR"ºìËÉÊ÷¸É"NOR }));
+        set("wanted", ({ HIR"çº¢æ¾æ ‘å¹²"NOR }));
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                "µÀ³¤ËµµÀ£ºÏã»ðÁ·ÖÆ²»Ò×£¬²»ÄÜËæ±ãÓÚÈË£¬ò¯³Ï·îÏ×Õß·½ÄÜµÃÖ®¡£\n",
-                "µÀ³¤ËµµÀ£ººìËÉºÍÇà°Ø¶¼ÊÇÁ¶ÖÆÏã»ðµÄºÃ²ÄÁÏ¡£\n",
-                "µÀ³¤ËµµÀ£ºÖÆÏã²ÄÁÏÊÇ´ÓÁÖ×ÓÀï¿³·¥¶øÀ´¡£\n",
-                "µÀ³¤ËµµÀ£ºÎäµ±µÄËÉÁÖºÍ°ØÁÖ¶¼³¤ÁË¼¸°ÙÄêÁË£¬»¹Ã»ÓÐÈË×ßÍ¨¹ý¡£\n",
-                "µÀ³¤ËµµÀ£º¿³Ê÷µÄÊ±ºòÒª¶à¼ÓÐ¡ÐÄ£¬ÎÒÅÉ³ö¿³Ê÷µÄµÀÊ¿£¬ÓÐÐ©¾ÍÓÐÈ¥ÎÞ»Ø¡£\n",
+                "é“é•¿è¯´é“ï¼šé¦™ç«ç»ƒåˆ¶ä¸æ˜“ï¼Œä¸èƒ½éšä¾¿äºŽäººï¼Œè™”è¯šå¥‰çŒ®è€…æ–¹èƒ½å¾—ä¹‹ã€‚\n",
+                "é“é•¿è¯´é“ï¼šçº¢æ¾å’Œé’æŸéƒ½æ˜¯ç‚¼åˆ¶é¦™ç«çš„å¥½ææ–™ã€‚\n",
+                "é“é•¿è¯´é“ï¼šåˆ¶é¦™ææ–™æ˜¯ä»Žæž—å­é‡Œç ä¼è€Œæ¥ã€‚\n",
+                "é“é•¿è¯´é“ï¼šæ­¦å½“çš„æ¾æž—å’ŒæŸæž—éƒ½é•¿äº†å‡ ç™¾å¹´äº†ï¼Œè¿˜æ²¡æœ‰äººèµ°é€šè¿‡ã€‚\n",
+                "é“é•¿è¯´é“ï¼šç æ ‘çš„æ—¶å€™è¦å¤šåŠ å°å¿ƒï¼Œæˆ‘æ´¾å‡ºç æ ‘çš„é“å£«ï¼Œæœ‰äº›å°±æœ‰åŽ»æ— å›žã€‚\n",
         }) );
 
         setup();
@@ -115,43 +115,43 @@ int k;
 
         if ( ob->query("job/supervisor") )
         {
-                command("say ÄãµÚÒ»·Ý»î¶ù¶¼Ã»×öÍê¾ÍÏë×öµÚ¶þ·Ý£¿");
+                command("say ä½ ç¬¬ä¸€ä»½æ´»å„¿éƒ½æ²¡åšå®Œå°±æƒ³åšç¬¬äºŒä»½ï¼Ÿ");
 
-                if ( ob->query("job/supervisor") == "ÖÆÏãµÀ³¤") 
+                if ( ob->query("job/supervisor") == "åˆ¶é¦™é“é•¿") 
                 {
                 add_action("do_say", "say");
-                return ("Èç¹ûÄã¸É²»ÁËÎÒÅÉ¸øÄãµÄ»î£¬¿ÉÒÔÖ±½Ó¸úÎÒËµÄã¸É²»ÁË¡£");
+                return ("å¦‚æžœä½ å¹²ä¸äº†æˆ‘æ´¾ç»™ä½ çš„æ´»ï¼Œå¯ä»¥ç›´æŽ¥è·Ÿæˆ‘è¯´ä½ å¹²ä¸äº†ã€‚");
                 }
                 
-                return ("Èç¹ûÄã¸É²»ÁË£¬¿ÉÒÔÖ±½ÓÈ¥¸æËß"+ob->query("job/supervisor"));    
+                return ("å¦‚æžœä½ å¹²ä¸äº†ï¼Œå¯ä»¥ç›´æŽ¥åŽ»å‘Šè¯‰"+ob->query("job/supervisor"));    
         }
 
         if ((int)ob->query_condition("menpai_busy"))  
             {
-                      message_vision("$N¶Ô×Å$nÒ¡ÁËÒ¡Í·Ëµ£ºÄã°ìÊÂ²»Àû,µÈ»áÔÙÀ´!\n", this_object(), ob);
-                return ("ÏÈÈ¥×ö±ðµÄÊÂ°É!");
+                      message_vision("$Nå¯¹ç€$næ‘‡äº†æ‘‡å¤´è¯´ï¼šä½ åŠžäº‹ä¸åˆ©,ç­‰ä¼šå†æ¥!\n", this_object(), ob);
+                return ("å…ˆåŽ»åšåˆ«çš„äº‹å§!");
             }
 
 //        if (query_temp("stock") > 10)
-//                return ("ÄãÀ´ÍíÁË£¬½ñÌìµÄ»î¶ùÎÒ¶¼·ÖÅÉÍêÁË¡£");
+//                return ("ä½ æ¥æ™šäº†ï¼Œä»Šå¤©çš„æ´»å„¿æˆ‘éƒ½åˆ†æ´¾å®Œäº†ã€‚");
 
 //        add_temp("stock", 1);
 
         wanted = query("wanted");
         what = wanted[random(sizeof(wanted))];
 
-        ob->set("job/supervisor", "ÖÆÏãµÀ³¤");
+        ob->set("job/supervisor", "åˆ¶é¦™é“é•¿");
         ob->set("job/object", what);
         ob->set("job/description", what);
         ob->set("job/wage", 3);
         ob->set_temp("apply/short", 
-                ({ HIW"Îäµ±·¥Ä¾¡¡"NOR+ob->query("name")+"("+capitalize(ob->query("id"))+")"}));
+                ({ HIW"æ­¦å½“ä¼æœ¨ã€€"NOR+ob->query("name")+"("+capitalize(ob->query("id"))+")"}));
                                 
 
 //if (1)
 if (random(40)==1)
 {
-        message_vision("ÌýËµËÉÁÖÖÐÓÐ²»Ã÷Éí·ÝµÄÎäÁÖÈËÎïÀ´ºÍÎäµ±ÌôÐÆ£¡Ð¡ÐÄÒ»µã¡£\n", ob);
+        message_vision("å¬è¯´æ¾æž—ä¸­æœ‰ä¸æ˜Žèº«ä»½çš„æ­¦æž—äººç‰©æ¥å’Œæ­¦å½“æŒ‘è¡…ï¼å°å¿ƒä¸€ç‚¹ã€‚\n", ob);
 killer=new(__DIR__"killer",1);
 if ((int)ob->query_skill("force",1) > 10)
 {
@@ -179,8 +179,8 @@ else k=10;
         killer->set_skill("longxiang", k);
         killer->set_skill("huntian-qigong", k);
 }
-        message_vision("ÖÆÏãµÀ³¤¸ßÐË¶Ô$NËµµÀ£ºÀ´µÃÕýºÃ£¬ÕâÀïÕýÈ±ÈËÊÖ£¡\n", ob);
-        return ("ÎÒÐèÒª"+ what +"ÔìÏãÓÃ£¬ÄãÈ¥¸øÎÒ¿³Ð©À´°É£¡\n");
+        message_vision("åˆ¶é¦™é“é•¿é«˜å…´å¯¹$Nè¯´é“ï¼šæ¥å¾—æ­£å¥½ï¼Œè¿™é‡Œæ­£ç¼ºäººæ‰‹ï¼\n", ob);
+        return ("æˆ‘éœ€è¦"+ what +"é€ é¦™ç”¨ï¼Œä½ åŽ»ç»™æˆ‘ç äº›æ¥å§ï¼\n");
 }
 
 int accept_object(object who, object ob)
@@ -193,15 +193,15 @@ int accept_object(object who, object ob)
 
                 if (ob->query("money_id") )     
         {
-                if ((string)(who->query("family/family_name")) == "Îäµ±ÅÉ") 
+                if ((string)(who->query("family/family_name")) == "æ­¦å½“æ´¾") 
                         tell_object(who, 
-                        "µÀ³¤¶ÔÄãÔÞÌ¾µÀ£ºÎäµ±É½Ïã»ð¶¦Ê¢£¬È«¿¿ÏóµÀÐÖÕâÑù¾èÏ×Ïã»ð°¡£¡\n");
+                        "é“é•¿å¯¹ä½ èµžå¹é“ï¼šæ­¦å½“å±±é¦™ç«é¼Žç››ï¼Œå…¨é è±¡é“å…„è¿™æ ·æçŒ®é¦™ç«å•Šï¼\n");
                 else  
                         tell_object(who, 
-                        "µÀ³¤¶ÔÄãÔÞÌ¾µÀ£ºÎäµ±É½Ïã»ð¶¦Ê¢£¬È«¿¿ÏóÄúÕâÑùµÄò¯³ÏÏã¿Í°¡£¡\n");
+                        "é“é•¿å¯¹ä½ èµžå¹é“ï¼šæ­¦å½“å±±é¦™ç«é¼Žç››ï¼Œå…¨é è±¡æ‚¨è¿™æ ·çš„è™”è¯šé¦™å®¢å•Šï¼\n");
 
                 return 1;
-        } else if (  ((string)who->query("job/supervisor") == "ÖÆÏãµÀ³¤")
+        } else if (  ((string)who->query("job/supervisor") == "åˆ¶é¦™é“é•¿")
                         && (string)who->query("job/object") == (string)ob->query("name") )   
         {
                 i = (int)who->query("wdjob/wage");
@@ -215,16 +215,16 @@ if (k>80)k=80;
                 wage->set_amount(k);
                 wage->move(who);
 
-                command("say ÓÐÀÍÕâÎ»"+RANK_D->query_respect(who)+"ÁË¡£");
+                command("say æœ‰åŠ³è¿™ä½"+RANK_D->query_respect(who)+"äº†ã€‚");
                 command("thumb " + who->query("id"));
 if (random(10)<2)
 {
-               message_vision("$NÍ¨¹ýÎªÎäµ±×öÊÂ£¬Ìá¸ßÁË¶ÔÎäµ±µÄÖÒÐÄ¡£\n", who);
+               message_vision("$Né€šè¿‡ä¸ºæ­¦å½“åšäº‹ï¼Œæé«˜äº†å¯¹æ­¦å½“çš„å¿ å¿ƒã€‚\n", who);
                who->add("guarded",1);
 }
-                message_vision("ÖÆÏãµÀ³¤¸ø$N"+chinese_number(k)+"Á½°×Òø×÷Îª¹¤×÷±¨³ê¡£\n", who);
+                message_vision("åˆ¶é¦™é“é•¿ç»™$N"+chinese_number(k)+"ä¸¤ç™½é“¶ä½œä¸ºå·¥ä½œæŠ¥é…¬ã€‚\n", who);
                 j=random(i);
-if ((string)(who->query("family/family_name")) == "Îäµ±ÅÉ") 
+if ((string)(who->query("family/family_name")) == "æ­¦å½“æ´¾") 
 {
 if ((20+j) < 50)
 exp =90;
@@ -234,9 +234,9 @@ if (exp <90 ) exp=90;
 if (exp >350) exp=350;
                 who->add("combat_exp", exp);
                 who->add("potential", exp*2/3);
-                message_vision("$NµÄ¾­Ñé¼ÓÁË"+chinese_number(exp)+"µã¡£\n", who);
-                message_vision("$NµÄÇ±ÄÜ¼ÓÁË"+chinese_number(exp*2/3)+"µã¡£\n", who);
-                message_vision("$NÎäµ±ÖÆÏãÈÎÎñ×öÁË"+chinese_number(l)+"´ÎÁË¡£\n", who);
+                message_vision("$Nçš„ç»éªŒåŠ äº†"+chinese_number(exp)+"ç‚¹ã€‚\n", who);
+                message_vision("$Nçš„æ½œèƒ½åŠ äº†"+chinese_number(exp*2/3)+"ç‚¹ã€‚\n", who);
+                message_vision("$Næ­¦å½“åˆ¶é¦™ä»»åŠ¡åšäº†"+chinese_number(l)+"æ¬¡äº†ã€‚\n", who);
 }
                 who->delete_temp("jobwd");
                 who->delete_temp("apply/short");
@@ -250,14 +250,14 @@ if (exp >350) exp=350;
         } else if( (int)member_array((string)ob->query("name"), (string *)query("wanted")) != -1 )    
         {
                 
-                message_vision("ÖÆÏãµÀ³¤¸ßÐË¶Ô$NËµµÀ£ºÀ´µÃÕýºÃ£¬ÕâÕýÊÇÎÒËùÐèÒªµÄ£¡\n", who);
+                message_vision("åˆ¶é¦™é“é•¿é«˜å…´å¯¹$Nè¯´é“ï¼šæ¥å¾—æ­£å¥½ï¼Œè¿™æ­£æ˜¯æˆ‘æ‰€éœ€è¦çš„ï¼\n", who);
 
     
-                if ( who->query("family/family_name") == "Îäµ±ÅÉ"  )
+                if ( who->query("family/family_name") == "æ­¦å½“æ´¾"  )
                 {
                         if ( random(2) ) 
                         {
-                                tell_object(who, "ÎÒÕâÓÐÐÂÖÆÏã»ðÒ»Ö¦£¬ÄãÄÃÈ¥¹±·î°É¡£\n");
+                                tell_object(who, "æˆ‘è¿™æœ‰æ–°åˆ¶é¦™ç«ä¸€æžï¼Œä½ æ‹¿åŽ»è´¡å¥‰å§ã€‚\n");
                                 who->add("wudang/offerring", -1-random(3));
                                 obn = new(__DIR__"incense");
                                 obn->move(who);
@@ -266,7 +266,7 @@ if (exp >350) exp=350;
                 }
 
                 who->delete_temp("jobwd");
-                command("say ÄãÈç´Ë×ÔÔ¸ÎªÎäµ±Ð§Á¦£¬ÈÕºó±Ø³ÉÎäµ±¶°Áº£¡");
+                command("say ä½ å¦‚æ­¤è‡ªæ„¿ä¸ºæ­¦å½“æ•ˆåŠ›ï¼Œæ—¥åŽå¿…æˆæ­¦å½“æ ‹æ¢ï¼");
                 command("thumb " + who->query("id"));
                 
                 return 1;
@@ -284,13 +284,13 @@ int do_say(string arg)
     who = this_player();
     ob = this_object();
 
-        if ( (string)arg != "¸É²»ÁË") return 0;
+        if ( (string)arg != "å¹²ä¸äº†") return 0;
 
     if ( who->query("job/supervisor") != ob->query("name")) return 0;
 
-    message_vision("$NµÍÉùËµµÀ£ºµÀ³¤·ÖÅÉµÄ»îÎÒ¸É²»ÁË¡­\n", who);
+    message_vision("$Nä½Žå£°è¯´é“ï¼šé“é•¿åˆ†æ´¾çš„æ´»æˆ‘å¹²ä¸äº†â€¦\n", who);
     command("pat "+ who->query("id"));
-    command("say Ã»¹ØÏµ£¬ÏÂ´ËºÃºÃ¸É£¡");
+    command("say æ²¡å…³ç³»ï¼Œä¸‹æ­¤å¥½å¥½å¹²ï¼");
 
 who->apply_condition("menpai_busy",2+random(4));
                 who->delete_temp("jobwd");

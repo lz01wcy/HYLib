@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// /d/changbai/renshen.c ÈË²Î
+// /d/changbai/renshen.c äººå‚
 
 inherit ITEM;
 #include <ansi.h>
@@ -12,12 +12,12 @@ void init()
 }
 void create()
 {
-        set_name("ÈË²Î", ({"ren shen", "shen"}));
+        set_name("äººå‚", ({"ren shen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄ³¤°×É½ÈË²Î¡£\n");
+                set("unit", "æ ª");
+                set("long", "è¿™æ˜¯ä¸€æ ªæ²¾æ»¡å±±æ³¥çš„é•¿ç™½å±±äººå‚ã€‚\n");
                 set("value", 10000);
                 set("medicine", 1);
         }
@@ -28,11 +28,11 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
         if ( (int)me->query_condition("medicine") > 0 ) {
                 me->add("eff_jingli", -1);
                 me->add("max_jingli", -1);
-                message_vision(HIR "$N³ÔÏÂÒ»ÖêÈË²Î£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ğÆø·­ÌÚ£¬Ô­À´·şÊ³Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$Nåƒä¸‹ä¸€æ ªäººå‚ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œç«æ°”ç¿»è…¾ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
                 call_out("destroy", 0);
                 return 1;
         }
@@ -45,7 +45,7 @@ int do_eat(string arg)
         me->add("jingli", 150);
         me->add("neili", 150);
 
-        message_vision(HIG"$N³ÔÏÂÒ»ÖêÈË²Î£¬Ö»¾õµÃ»ëÉíÒ»¹ÉÈÈÆø¶µµ×Ã°ÁËÉÏÀ´ !\n" NOR, me);
+        message_vision(HIG"$Nåƒä¸‹ä¸€æ ªäººå‚ï¼Œåªè§‰å¾—æµ‘èº«ä¸€è‚¡çƒ­æ°”å…œåº•å†’äº†ä¸Šæ¥ !\n" NOR, me);
 
         me->apply_condition("medicine", 
                 this_player()->query_condition("medicine")+30);

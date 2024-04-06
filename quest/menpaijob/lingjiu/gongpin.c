@@ -2,18 +2,18 @@ inherit ITEM;
 
 void create()
 {
-	set_name("¹±Æ·", ({ "gong pin" }) );
+	set_name("è´¡å“", ({ "gong pin" }) );
 	set_weight(30000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ºĞ¹±Æ·¡£\n");
-//		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("long", "ä¸€ç›’è´¡å“ã€‚\n");
+//		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
     	        set("no_steal",1);
 		set("no_put",1);
                 set("yuer",1);	
-		set("unit", "ºĞ");
+		set("unit", "ç›’");
 		set("value", 0);
 	}
 }

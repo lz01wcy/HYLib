@@ -5,12 +5,12 @@ int potential_lv(int exp);
 
 void create()
 {
-        set("short", "²ÉÊ¯³¡");
+        set("short", "é‡‡çŸ³åœº");
         set("long",
-"ÕâÀïÊÇ¸öºÜ´óµÄ²ÉÊ¯³¡£¬¿ÉÒÔÇå³şµÄ¿´¼ûĞíĞí¶à¶àµÄÒÑ¾­²ÉÏÂµÄ´ó´ó
-Ğ¡Ğ¡µÄÑÒÊ¯ÀİÔÚÉ½ÅÔ£¬¼¸¸ö²ÉÊ¯¹¤ÈËÕ¾ÔÚ¾ŞÊ¯ÉÏÓÃÌú´¸ÇÃ´ò×ÅÊ¯Í·£¬»¹ÓĞ
-ºÜ¶àµÄÈË½«Ê¯¿é¿¸ÔÚ¼ç°òÉÏÍùÀïÃæÔËËÍ¡£¾İËµÕâĞ©Ê¯Í·¶¼ÊÇÓÃÀ´ÔÚ½¨Ôì·À
-ÍâµĞµÄ"+HIR+"¡°³ÇÇ½¡±"+NOR+"ËùĞèµÄ¡£\n ");
+"è¿™é‡Œæ˜¯ä¸ªå¾ˆå¤§çš„é‡‡çŸ³åœºï¼Œå¯ä»¥æ¸…æ¥šçš„çœ‹è§è®¸è®¸å¤šå¤šçš„å·²ç»é‡‡ä¸‹çš„å¤§å¤§
+å°å°çš„å²©çŸ³å’åœ¨å±±æ—ï¼Œå‡ ä¸ªé‡‡çŸ³å·¥äººç«™åœ¨å·¨çŸ³ä¸Šç”¨é“é”¤æ•²æ‰“ç€çŸ³å¤´ï¼Œè¿˜æœ‰
+å¾ˆå¤šçš„äººå°†çŸ³å—æ‰›åœ¨è‚©è†€ä¸Šå¾€é‡Œé¢è¿é€ã€‚æ®è¯´è¿™äº›çŸ³å¤´éƒ½æ˜¯ç”¨æ¥åœ¨å»ºé€ é˜²
+å¤–æ•Œçš„"+HIR+"â€œåŸå¢™â€"+NOR+"æ‰€éœ€çš„ã€‚\n ");
         set("no_clean_up", 0);
         set("valid_startroom", 1);
  set("no_fight",1);
@@ -28,7 +28,7 @@ void create()
 
 void init()
 {
-         add_action("do_za","ÔÒ");
+         add_action("do_za","ç ¸");
 }
 
 int do_za(string arg)
@@ -37,30 +37,30 @@ int do_za(string arg)
         int i, bonus;
 
         me=this_player();
-        if( !arg && arg !="Ê¯Í·" && arg !="ju shi" && arg !="shi" ) return notify_fail("ÄãÒªÔÒÊ²Ã´£¿\n");
+        if( !arg && arg !="çŸ³å¤´" && arg !="ju shi" && arg !="shi" ) return notify_fail("ä½ è¦ç ¸ä»€ä¹ˆï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦²»¹ıÀ´ÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ä¸è¿‡æ¥å‘¢ã€‚\n");
 
          if (me->query("combat_exp") >= 100000)
-                  return notify_fail("ÄãÒÑ¾­²»ÄÜÍ¨¹ıÔÒÊ¯À´Ôö¼Ó¾­ÑéÁË¡£\n");
+                  return notify_fail("ä½ å·²ç»ä¸èƒ½é€šè¿‡ç ¸çŸ³æ¥å¢åŠ ç»éªŒäº†ã€‚\n");
         if( !present("hammer", this_player()) ) {
- tell_object(me,"\nÖ»¼ûÄãÂÕÆğ°ÍÕÆºİºİµÄÏò¾ŞÊ¯ÉÏ»÷È¥£¬Ö»Ìı¡°¿¦àê¡±Ò»Éù£¬¾¹ÊÇ¹ÇËéµÄÉùÒô£¬ÕâÊ±Äã·¢ÏÖÖÜÎ§µÄÈËºÃÏó¶¼ÔÚÍµÍµµÄÀÖ£¡\n");
+ tell_object(me,"\nåªè§ä½ æŠ¡èµ·å·´æŒç‹ ç‹ çš„å‘å·¨çŸ³ä¸Šå‡»å»ï¼Œåªå¬â€œå–€åš“â€ä¸€å£°ï¼Œç«Ÿæ˜¯éª¨ç¢çš„å£°éŸ³ï¼Œè¿™æ—¶ä½ å‘ç°å‘¨å›´çš„äººå¥½è±¡éƒ½åœ¨å·å·çš„ä¹ï¼\n");
                 me -> receive_damage ("qi",10) ;
                 me->start_busy(2);
-                return notify_fail("»¹ÊÇ¸Ï½ôÕÒ¸ö¹¤¾ßÀ´°É£¡\n");
+                return notify_fail("è¿˜æ˜¯èµ¶ç´§æ‰¾ä¸ªå·¥å…·æ¥å§ï¼\n");
                 }
 
         if(me->query_temp("stonework")<6) {
-                message_vision(HIY"$N¾ÙÆğÌú´¸£¬ÂÕÔ²ÁË¸ì²²¶Ô×¼Ê¯Í·ºİºİµØÔÒÁËÆğÀ´¡£\n"NOR,me);
+                message_vision(HIY"$Nä¸¾èµ·é“é”¤ï¼ŒæŠ¡åœ†äº†èƒ³è†Šå¯¹å‡†çŸ³å¤´ç‹ ç‹ åœ°ç ¸äº†èµ·æ¥ã€‚\n"NOR,me);
                 i = (int)this_player()->query("str", 1) + random(1000);
                     if(i<250) {
-                        tell_object(me,"Ìú´¸Ò»ÏÂ×Ó±»·´ÕğÆğÀ´£¬ÔÚ¿ÕÖĞ»®ÁËÒ»µÀÃÀÀöµÄ»¡Ïß£¬È»ºó½áÊµµÄÔÒÔÚÁËÄãµÄÆ¨¹ÉÉÏ£¡\n");
+                        tell_object(me,"é“é”¤ä¸€ä¸‹å­è¢«åéœ‡èµ·æ¥ï¼Œåœ¨ç©ºä¸­åˆ’äº†ä¸€é“ç¾ä¸½çš„å¼§çº¿ï¼Œç„¶åç»“å®çš„ç ¸åœ¨äº†ä½ çš„å±è‚¡ä¸Šï¼\n");
                         me -> receive_damage ("qi",10 + random(5));
                         return 1;
                         }
                 me->start_busy(1);
-                tell_object(me,"Å¾àªÒ»Éù£¬Ò»¿éĞ¡ËéÊ¯´Ó¾ŞÊ¯ÉÏµôÁËÏÂÀ´£¬¿´À´ÄãµÄ¹¤·ò»¹ÊÇÃ»ÓĞ°×·ÑÂï£¡\n");
+                tell_object(me,"å•ªå—’ä¸€å£°ï¼Œä¸€å—å°ç¢çŸ³ä»å·¨çŸ³ä¸Šæ‰äº†ä¸‹æ¥ï¼Œçœ‹æ¥ä½ çš„å·¥å¤«è¿˜æ˜¯æ²¡æœ‰ç™½è´¹å˜›ï¼\n");
 me->add_temp("stonework",1);
                 me -> receive_damage ("qi",15 + random(10)) ;
           if (me->query("combat_exp") <= 50000)
@@ -77,13 +77,13 @@ me->add("combat_exp",  1);
                 return 1;
                 } 
                 me->add_temp("stonework",1);
-        return notify_fail(HIW"ÄãÒ»¶¨ºÜÀÛÁË°É£¬¸ÃĞªĞªÁË£¬¿ìÈ¥ÕÒ¼à¹¤½»¹¤ÁË°É¡£\n"NOR);
+        return notify_fail(HIW"ä½ ä¸€å®šå¾ˆç´¯äº†å§ï¼Œè¯¥æ­‡æ­‡äº†ï¼Œå¿«å»æ‰¾ç›‘å·¥äº¤å·¥äº†å§ã€‚\n"NOR);
 }
 
 int valid_leave(object me, string dir)
 {
-        if ( me->query_temp("stonework") && (dir == "east" || dir == "eastup"|| dir == "west") && present("cao liu", environment(me)) && living(present("cao liu", environment(me))) ) {                                                    message_vision(HIM"²ÜÁù´ó½ĞÒ»Éù£º¡°Äã¸øÎÒÕ¾×¡£¬ÒªÏë×ß¾Í°ÑÄãµÄ¹¤×÷ÏÈ½»ÁË£¬µ±ÎÒ²»´æ
-ÔÚÑ½£¡¡±\n"NOR,this_player());
+        if ( me->query_temp("stonework") && (dir == "east" || dir == "eastup"|| dir == "west") && present("cao liu", environment(me)) && living(present("cao liu", environment(me))) ) {                                                    message_vision(HIM"æ›¹å…­å¤§å«ä¸€å£°ï¼šâ€œä½ ç»™æˆ‘ç«™ä½ï¼Œè¦æƒ³èµ°å°±æŠŠä½ çš„å·¥ä½œå…ˆäº¤äº†ï¼Œå½“æˆ‘ä¸å­˜
+åœ¨å‘€ï¼â€\n"NOR,this_player());
                 return notify_fail("");
                 }
         return ::valid_leave(me, dir);

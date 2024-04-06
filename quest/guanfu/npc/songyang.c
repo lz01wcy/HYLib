@@ -1,14 +1,14 @@
-//  songyang ËÎÑï
+//  songyang å®‹æ‰¬
  
 inherit NPC;
  
 void create()
 {
-	set_name("ËÎÑï", ({ "song yang", "song" }));
+	set_name("å®‹æ‰¬", ({ "song yang", "song" }));
 //	set("nickname", "");
 	set("long", 
-        "Ò»¸öÐÐ×ß½­ºþµÄ¶À½Ç´óµÁ£¬Ò»ÉíÇá¹¦ÓÐËùÔìÖ¬¡£\n");
-	set("gender", "ÄÐÐÔ");
+        "ä¸€ä¸ªè¡Œèµ°æ±Ÿæ¹–çš„ç‹¬è§’å¤§ç›—ï¼Œä¸€èº«è½»åŠŸæœ‰æ‰€é€ è„‚ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen", -1000);

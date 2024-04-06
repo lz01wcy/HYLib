@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIR"½£Æø³¤½­"NOR, ({ "jqcjiang" }) );
+    set_name(HIR"å‰‘æ°”é•¿æ±Ÿ"NOR, ({ "jqcjiang" }) );
     set_weight(1);
             set("no_put", 1);
             set("value", 0);
@@ -12,9 +12,9 @@ void create()
 	       
             set("no_put", 1);
             set("value", 0);
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»,ÈôÊÇÄÜÕÒÆëÁ½¹ãºÀ½Ü£¬Ó¢ĞÛºÃºº£¬½­É½Èç»­¾ÍÄÜ(hebing)¡£\n");
+            set("long", "ç¥ä¹¦ä¹‹ä¸€,è‹¥æ˜¯èƒ½æ‰¾é½ä¸¤å¹¿è±ªæ°ï¼Œè‹±é›„å¥½æ±‰ï¼Œæ±Ÿå±±å¦‚ç”»å°±èƒ½(hebing)ã€‚\n");
           }
 
     setup();
@@ -40,25 +40,25 @@ int do_hebing()
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏÈ°ÑÉíÉÏµÄÈË·ÅÏÂ°É!!\n");
+     				return notify_fail("ä½ å…ˆæŠŠèº«ä¸Šçš„äººæ”¾ä¸‹å§!!\n");
        		
 		}
     if (!(ob = present("lghjie", me)) ||
         !(ob = present("heros", me)) ||
         !(ob = present("jsruhua", me)))	
-        tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+        tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
   else{ 
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 
     if(!ob->query("dynamic_quest"))
-	return notify_fail("ÕâÀïÃæÓĞ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 
-      message_vision("$N°Ñ´Ó»³ÖĞ·­³öµÄÁ½¹ãºÀ½Ü,Ó¢ĞÛºÃºº£¬½­É½Èç»­,ºÍÊÖÖĞµÄ½£Æø³¤½­ºÏ²¢³ÉÁËÒ»±¾¡£\n", me);
+      message_vision("$NæŠŠä»æ€€ä¸­ç¿»å‡ºçš„ä¸¤å¹¿è±ªæ°,è‹±é›„å¥½æ±‰ï¼Œæ±Ÿå±±å¦‚ç”»,å’Œæ‰‹ä¸­çš„å‰‘æ°”é•¿æ±Ÿåˆå¹¶æˆäº†ä¸€æœ¬ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("lghjie",me));
 	destruct(present("heros",me));

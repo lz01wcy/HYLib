@@ -1,15 +1,15 @@
 inherit NPC;
 #include <ansi.h>
-string *first_name = ({ "»¨Æ¤", "ÇàÖñ", "ËÄ½Å", "¶ÀÑÛ"});
-string *name_words = ({ "Éß"});
+string *first_name = ({ "èŠ±çš®", "é’ç«¹", "å››è„š", "ç‹¬çœ¼"});
+string *name_words = ({ "è›‡"});
 void create()
 {
         string name;
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))];
         set_name(name,({"du she"}));
-	set("race", "Ò°ÊŞ");
-        set("long", "Ò»ÌõÒ»³ß¶à³¤£¬¹íÍ·¹íÄÔµÄĞ¡Éß¡£\n");
+	set("race", "é‡å…½");
+        set("long", "ä¸€æ¡ä¸€å°ºå¤šé•¿ï¼Œé¬¼å¤´é¬¼è„‘çš„å°è›‡ã€‚\n");
 	set("age", 15);
 	set("max_jing", 600);
 	set("max_qi", 600);
@@ -18,7 +18,7 @@ void create()
 	set("jing", 600);
 	set("qi", 600);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 	set("attitude", "peaceful");
 set("no_get",1);
@@ -69,7 +69,7 @@ int do_finish()
 	return 0;
 	if(player->query_temp("bt2_song")
 	&&ob->query_temp("host")==player->query("id")
-	&&environment(ob)->query("short")=="°×ÍÕÉß³¡")
+	&&environment(ob)->query("short")=="ç™½é©¼è›‡åœº")
 	{
  exp=90+random(90);
  pot=50+random(60);
@@ -82,23 +82,23 @@ if (player->query("combat_exp") <800000)
        player->add("combat_exp",exp);
        player->delete_temp("bt2_song");
 player->add("shen",-50);
-	   tell_object(player,HIG"Äã°ÑÉßËÍµ½ÁËÉß³¡Íê³ÉÁËÈÎÎñ!\n"+
+	   tell_object(player,HIG"ä½ æŠŠè›‡é€åˆ°äº†è›‡åœºå®Œæˆäº†ä»»åŠ¡!\n"+
                        NOR);
 
-	   tell_object(player,HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(player,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 	   destruct(ob);
 		return 1;
 	 }	
-else 	   tell_object(player,HIG"ÄãÏë×öÊ²Ã´!\n"+NOR);
+else 	   tell_object(player,HIG"ä½ æƒ³åšä»€ä¹ˆ!\n"+NOR);
 return 1;
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃhalt£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨haltï¼\n");
         return 1;
 }
 
@@ -113,7 +113,7 @@ if (!me) return 0;
 if (me->is_fighting() && this_player()->query_temp("bt2_song")
 && this_player()->query("id")==me->query_temp("host"))
 {
-write(this_object()->query("name")+"»¹ÔÚºÍÒ§ÈËÄØ£¬ÕâÊÇ×îºÃµÄÄÁÉß»ú»á£¡\n");
+write(this_object()->query("name")+"è¿˜åœ¨å’Œå’¬äººå‘¢ï¼Œè¿™æ˜¯æœ€å¥½çš„ç‰§è›‡æœºä¼šï¼\n");
 return 1;
 }
 
@@ -126,7 +126,7 @@ if (environment(me))
 ob->move(environment(me));
 me->start_busy(1);
 this_player()->start_busy(1);
-write(this_object()->query("name")+"Í»È»Ïò¸½½üµÄÈËÒ§ÁËÉÏÈ¥£¡\n");
+write(this_object()->query("name")+"çªç„¶å‘é™„è¿‘çš„äººå’¬äº†ä¸Šå»ï¼\n");
 me->kill_ob(ob);
 ob->kill_obj(me);
 return 1;
@@ -134,7 +134,7 @@ return 1;
 if (me->is_fighting()&& this_player()->query_temp("bt2_song")
 && this_player()->query("id")==me->query_temp("host"))
 {
-write(this_object()->query("name")+"»¹ÔÚºÍÒ§ÈËÄØ£¬ÕâÊÇ×îºÃµÄÄÁÉß»ú»á£¡\n");
+write(this_object()->query("name")+"è¿˜åœ¨å’Œå’¬äººå‘¢ï¼Œè¿™æ˜¯æœ€å¥½çš„ç‰§è›‡æœºä¼šï¼\n");
 return 1;
 }
 }
@@ -145,6 +145,6 @@ int hit_ob(object me, object ob, int damage)
 	if( random(damage) > (int)ob->query_temp("apply/armor")
 	&&	(int)ob->query_condition("snake_poison") < 10 ) {
 		ob->apply_condition("snake_poison", 20);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è§‰å¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é˜µéº»æœ¨ï¼\n" NOR );
 	}
 }

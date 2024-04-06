@@ -3,11 +3,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-      set("short","¹Ø¿Ú");
+      set("short","å…³å£");
       set("long",@LONG
-ÕâÀï±»ÁÙÊ±´î½¨ÁËÒ»¸ö¹Ø¿¨£¬Ò»¸öÎä½«ÔÚÖ¸»Ó¼¸¸öØ¤°ïµÄµÜ×Ó¶ÔÀ´ÍùÓÎ¿Í
-½øĞĞ¼ì²é£¬°ÙĞÕ¿ÉÒÔ¹ı£¬Íâ×åÈËÔ±Ò»ÂÉ²»ĞíÍ¨¹ı¡£¼¸¸öÍâ×åÈË»¹ÕıÔÚºÍÄÇ
-¸öÎä½«ÀíÂÛ¡£¿´À´£¬ÃÉ¹Å¿ìÒª½ø¹¥ÁË£¬ÕıÔÚ½äÑÏ¡£
+è¿™é‡Œè¢«ä¸´æ—¶æ­å»ºäº†ä¸€ä¸ªå…³å¡ï¼Œä¸€ä¸ªæ­¦å°†åœ¨æŒ‡æŒ¥å‡ ä¸ªä¸å¸®çš„å¼Ÿå­å¯¹æ¥å¾€æ¸¸å®¢
+è¿›è¡Œæ£€æŸ¥ï¼Œç™¾å§“å¯ä»¥è¿‡ï¼Œå¤–æ—äººå‘˜ä¸€å¾‹ä¸è®¸é€šè¿‡ã€‚å‡ ä¸ªå¤–æ—äººè¿˜æ­£åœ¨å’Œé‚£
+ä¸ªæ­¦å°†ç†è®ºã€‚çœ‹æ¥ï¼Œè’™å¤å¿«è¦è¿›æ”»äº†ï¼Œæ­£åœ¨æˆ’ä¸¥ã€‚
 LONG);
         set("valid_startroom",1);
            set("no_dazuo",1);
@@ -22,7 +22,7 @@ LONG);
                 "north"  : "d/xiangyang/southgate2",
                 "east"  : "d/xiangyang/southgate3",
         ]));
-        set("outdoors", "¹Ø¿Ú");
+        set("outdoors", "å…³å£");
 
         setup();
 }
@@ -31,11 +31,11 @@ int valid_leave(object me, string dir)
 {
 
         if (me->query_temp("shouwei"))
-        return notify_fail("ÄãÏÖÔÚÕıÔÚÊØÎÀ£¬²»ÄÜµ½´¦×ß¶¯¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£åœ¨å®ˆå«ï¼Œä¸èƒ½åˆ°å¤„èµ°åŠ¨ã€‚\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
         if (me->is_busy()) 
-        return notify_fail("ÄãÕıÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£çƒ­é—¹ç€å‘¢!\n");
 
 
         return ::valid_leave(me, dir);
@@ -58,15 +58,15 @@ int do_shouwei()
 //        for (i=sizeof(ob); i>5; i--)
 //        {
 //                if (ob[i-1]->query_temp("shouwei"))
-//                return notify_fail("ÕâÀï×î¶àÖ»ÒªÎå¸öÈËÊØ¡£\n");
+//                return notify_fail("è¿™é‡Œæœ€å¤šåªè¦äº”ä¸ªäººå®ˆã€‚\n");
 //        }
 //         if (query("renshu")>=3)
-//              return notify_fail("ÕâÀï×î¶àÖ»ÒªÈı¸öÈËÊØ¡£\n");
+//              return notify_fail("è¿™é‡Œæœ€å¤šåªè¦ä¸‰ä¸ªäººå®ˆã€‚\n");
             if (!(me->query_temp("xhjob_start")))
-                   return notify_fail("ÄãÃ»ÓĞ±»Ö¸ÅÉµ½ÕâÀïÊØÎÀ¡£²»Òª¶à¹ÜÏĞÊÂ£¡\n");
+                   return notify_fail("ä½ æ²¡æœ‰è¢«æŒ‡æ´¾åˆ°è¿™é‡Œå®ˆå«ã€‚ä¸è¦å¤šç®¡é—²äº‹ï¼\n");
             if (me->query_temp("shouwei"))
-                   return notify_fail("ÄãÕıÔÚÊØÎÀ¹Ø¿¨Í¨µÀ¡£\n");
-          message_vision(HIC"$N¶¶ËÓ¾«Éñ£¬¿ªÊ¼´òÁ¿Éí±ßµÄÃ¿Ò»¸öĞĞÈË¡£\n"NOR, me);
+                   return notify_fail("ä½ æ­£åœ¨å®ˆå«å…³å¡é€šé“ã€‚\n");
+          message_vision(HIC"$NæŠ–æ“ç²¾ç¥ï¼Œå¼€å§‹æ‰“é‡èº«è¾¹çš„æ¯ä¸€ä¸ªè¡Œäººã€‚\n"NOR, me);
 
          me->apply_condition("xhquest", 7);
               add("renshu",1);
@@ -75,6 +75,6 @@ int do_shouwei()
 }
 int do_quit(string arg)
 {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄÊØ»¤£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„å®ˆæŠ¤ï¼\n");
         return 1;
 }

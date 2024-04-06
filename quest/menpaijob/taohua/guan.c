@@ -5,11 +5,11 @@ int j=3;
 int ask_rob();
 void create()
 {
-        set_name(HIR"Ì°¹Ù"NOR, ({ "guan"}));
+        set_name(HIR"è´ªå®˜"NOR, ({ "guan"}));
        set("long",
-                "Ò»ÃûÌ°¹Ù¡£\n");
+                "ä¸€åè´ªå®˜ã€‚\n");
         set("attitude", "friendly");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("per", 40);
         set("str", 30);
@@ -48,13 +48,13 @@ int do_rob()
    ob = this_object();
    stage = 0;
 	if(environment(me)->query("no_fight"))
-		return notify_fail("ÕâÀï²»Ğí´ò¶·£¡\n");
+		return notify_fail("è¿™é‡Œä¸è®¸æ‰“æ–—ï¼\n");
    if(!living(ob))
-   return notify_fail("Ã»ÓĞÈËÄãÉ±Ë­°¡!!\n"); 
+   return notify_fail("æ²¡æœ‰äººä½ æ€è°å•Š!!\n"); 
    if(objectp(present("weishi", environment(me))))
-       return notify_fail("Õâ¼¸¸ö´óÄÚ¸ßÊÖ¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
+       return notify_fail("è¿™å‡ ä¸ªå¤§å†…é«˜æ‰‹çœ‹æ¥æ­¦åŠŸä¸å¼±ï¼Œä½ è¿˜æ˜¯å…ˆæ‰“å‘äº†é¢å‰è¿™ä¸ªå†è¯´å§ï¼\n");  
         ob->start_busy(60);
-   message_vision(HIM"$N¶Ô×Å$nÒ»Éù´ó½Ğ£º"+me->name()+"ÔÚ´Ë£¡ÄãÕâÌ°¹ÙÄÄÀï×ß??\n"NOR, me, ob);
+   message_vision(HIM"$Nå¯¹ç€$nä¸€å£°å¤§å«ï¼š"+me->name()+"åœ¨æ­¤ï¼ä½ è¿™è´ªå®˜å“ªé‡Œèµ°??\n"NOR, me, ob);
    me->set_temp("xx_rob", 1);
    me->start_busy(3);
    remove_call_out("make_bs");
@@ -77,18 +77,18 @@ int exp,pot;
           j=j-1;     
           }
 else {
-        message_vision(HIW"$N¼ûÒÑ¾­ÎŞÈË±£»¤£¬°ÑÌ°¹ÙÒ»µ¶É±ÁË£¡\n"NOR, me);    
+        message_vision(HIW"$Nè§å·²ç»æ— äººä¿æŠ¤ï¼ŒæŠŠè´ªå®˜ä¸€åˆ€æ€äº†ï¼\n"NOR, me);    
     if (me->query("taohuajob") == 1) {
-       message_vision(HIG"$NÎªÃ÷³ıº¦,Îä¹¦ÓĞÁË½øÕ¹£¡\n"NOR, me);    
+       message_vision(HIG"$Nä¸ºæ˜é™¤å®³,æ­¦åŠŸæœ‰äº†è¿›å±•ï¼\n"NOR, me);    
 exp=480 + random(700);
 pot=350 + random(400);
        me->add("combat_exp",exp);
        me->add("potential",pot);
        me->set("taohuajob",0);
-tell_object(me,"Äã±»½±ÀøÁË\n"+chinese_number(exp)+"µãÊµÕ½¾­Ñé\n"
-		+chinese_number(pot)+"µãÇ±ÄÜ\n");
-       message_vision(HIW"$N¼ûÒÑ¾­ÎŞÈË±£»¤£¬°ÑÌ°¹ÙÒ»µ¶É±ÁË£¡\n"NOR, me);    
-       message_vision(HIR"$NÒ»ÏÂ×ÓÌø»ØÁË×Ô¼ºµÄ´¬£¬»Ø¹éÔÆ×¯±¨Ï²È¥ÁË!\n"NOR, me);    
+tell_object(me,"ä½ è¢«å¥–åŠ±äº†\n"+chinese_number(exp)+"ç‚¹å®æˆ˜ç»éªŒ\n"
+		+chinese_number(pot)+"ç‚¹æ½œèƒ½\n");
+       message_vision(HIW"$Nè§å·²ç»æ— äººä¿æŠ¤ï¼ŒæŠŠè´ªå®˜ä¸€åˆ€æ€äº†ï¼\n"NOR, me);    
+       message_vision(HIR"$Nä¸€ä¸‹å­è·³å›äº†è‡ªå·±çš„èˆ¹ï¼Œå›å½’äº‘åº„æŠ¥å–œå»äº†!\n"NOR, me);    
        me->move("/d/guiyun/matou");
        }
        ob->die();
@@ -109,8 +109,8 @@ void kill_ob(object ob)
         set("neili", 8000);
         set("max_neili", 8000);
         ob->start_busy(6);
-        command("say ±¾¹Ù²»»á,Îä¹¦´òÊ²Ã´´ò??");
-        message_vision(HIC "ÇëÓÃshaguanÀ´ÇÀ´¬¡£\n" NOR,ob);
+        command("say æœ¬å®˜ä¸ä¼š,æ­¦åŠŸæ‰“ä»€ä¹ˆæ‰“??");
+        message_vision(HIC "è¯·ç”¨shaguanæ¥æŠ¢èˆ¹ã€‚\n" NOR,ob);
 }
 
 void fight_ob(object ob)
@@ -127,15 +127,15 @@ void fight_ob(object ob)
         set("neili", 8000);
         set("max_neili", 8000);
         ob->start_busy(6);
-        command("say ±¾¹Ù²»»á,Îä¹¦´òÊ²Ã´´ò??");
-        message_vision(HIC "ÇëÓÃshaguanÀ´ÇÀ´¬¡£\n" NOR,ob);
+        command("say æœ¬å®˜ä¸ä¼š,æ­¦åŠŸæ‰“ä»€ä¹ˆæ‰“??");
+        message_vision(HIC "è¯·ç”¨shaguanæ¥æŠ¢èˆ¹ã€‚\n" NOR,ob);
 }
 
 void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "Ì°¹ÙÌÓÏÂÁË´¬£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "è´ªå®˜é€ƒä¸‹äº†èˆ¹ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -144,13 +144,13 @@ void leave()
 int do_quit(string arg)
 {
 	if(arg=="roar") {
-        write(this_player()->query("name")+"£¬ÕâÀï²»ÄÜÓÃroar°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œè¿™é‡Œä¸èƒ½ç”¨roarå§ï¼\n");
         return 1;
 	}
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃhalt£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨haltï¼\n");
         return 1;
 }

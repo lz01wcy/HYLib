@@ -6,8 +6,8 @@ int do_copy(object me,int maxpot,int type);
 void create()
 {
       string weapon;
-        set_name("ÃÉ¹Å´óºº", ({ "menggu dahan","dahan"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("è’™å¤å¤§æ±‰", ({ "menggu dahan","dahan"}));
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("str", 23);
         set("con", 26);
@@ -99,7 +99,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(this_object()->query("name") + "×ê½øÂ·±ßµÄÔÓ²İ£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(this_object()->query("name") + "é’»è¿›è·¯è¾¹çš„æ‚è‰ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);

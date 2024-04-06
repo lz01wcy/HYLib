@@ -1,13 +1,13 @@
-// gaiyiming ¸ÇÒ»Ãù
+// gaiyiming ç›–ä¸€é¸£
 inherit NPC;
  
 void create()
 {
-	set_name("¸ÇÒ»Ãù", ({ "gai yiming", "gai" }));
+	set_name("ç›–ä¸€é¸£", ({ "gai yiming", "gai" }));
 //	set("nickname", "");
 	set("long", 
-        "Ò»ÕÅÀ¯»ÆµÄÁ³£¬Ê±³£ÕÒÒ»Ğ©µ¥ÉíµÄĞĞÈËÏÂÊÖµÄĞ¡Ç¿µÁ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸€å¼ èœ¡é»„çš„è„¸ï¼Œæ—¶å¸¸æ‰¾ä¸€äº›å•èº«çš„è¡Œäººä¸‹æ‰‹çš„å°å¼ºç›—ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

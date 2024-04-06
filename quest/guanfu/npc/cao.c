@@ -1,14 +1,14 @@
-//  cao ²Ü»¯´¾
+//  cao æ›¹åŒ–æ·³
  
 inherit NPC;
  
 void create()
 {
-	set_name("²Ü»¯´¾", ({ "cao huachun", "cao" }));
+	set_name("æ›¹åŒ–æ·³", ({ "cao huachun", "cao" }));
 //	set("nickname", "");
 	set("long", 
-        "Ô­ÊÇ³¯Í¢µÄ»Â¹Ù£¬ºóÀ´ÓÉÓÚÌ°ÔßÍ÷·¨£¬±»³¯Í¢²é°ìµÄÊ±ºòÌÓÅÜÁË¡£\n");
-	set("gender", "ÎŞĞÔ");
+        "åŸæ˜¯æœå»·çš„å®¦å®˜ï¼Œåæ¥ç”±äºè´ªèµƒæ‰æ³•ï¼Œè¢«æœå»·æŸ¥åŠçš„æ—¶å€™é€ƒè·‘äº†ã€‚\n");
+	set("gender", "æ— æ€§");
 	set("age", 37);
 	set("attitude", "peaceful");
 	set("shen", -1000);

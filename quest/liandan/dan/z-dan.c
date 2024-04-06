@@ -1,5 +1,5 @@
 // z-dan.c
-// ĞÇĞÇ(lywin)Á¶µ¤ÈÎÎñ¸½ÊôµÀ¾ß
+// æ˜Ÿæ˜Ÿ(lywin)ç‚¼ä¸¹ä»»åŠ¡é™„å±é“å…·
 
 inherit ITEM;
 
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-	set_name("ÕıÆøµ¤", ({"zhengqi dan", "dan"}));
+	set_name("æ­£æ°”ä¸¹", ({"zhengqi dan", "dan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿ÅÕıÆøµ¤¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—æ­£æ°”ä¸¹ã€‚\n");
 		set("value", 5000);
 	}
 	setup();
@@ -27,10 +27,10 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("shen", 1000);
-	message_vision("$N³ÔÏÂÒ»¿ÅÕıÆøµ¤£¬Ö»¾õµÃĞÄÖĞÕıÆø»Øµ´ !\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€é¢—æ­£æ°”ä¸¹ï¼Œåªè§‰å¾—å¿ƒä¸­æ­£æ°”å›è¡ !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

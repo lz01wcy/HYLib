@@ -1,13 +1,13 @@
-//dadi.c ÈÎÎñÊ¹
+//dadi.c ä»»åŠ¡ä½¿
 // [lsg 1999/11/24]
 
 inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIW"Ğş¶É"NOR, ({ "xuan du", "xuan", "du"}));
-        set("title", HIC"ÉÙÁÖ»¤·¨´óÊ¦"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIW"ç„æ¸¡"NOR, ({ "xuan du", "xuan", "du"}));
+        set("title", HIC"å°‘æ—æŠ¤æ³•å¤§å¸ˆ"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 82);
         set("str", 50);
         set("int", 25);
@@ -16,7 +16,7 @@ void create()
         set("dex", 30);
         set("per", 30);
         set("long", 
-"ÉÙÁÖËÂµÄ»¤·¨´óÊ¦£¬ÒÔÏûÃğ¶ñÈËÎªÒÑÈÎ!\n");
+"å°‘æ—å¯ºçš„æŠ¤æ³•å¤§å¸ˆï¼Œä»¥æ¶ˆç­æ¶äººä¸ºå·²ä»»!\n");
         set("combat_exp", 2000000);
         set("shen_type", 1);
 
@@ -27,7 +27,7 @@ void create()
         set("max_neili", 55000);
         set("jiali", 200);
         
-	create_family("ÉÙÁÖÅÉ", 35, "µÜ×Ó");
+	create_family("å°‘æ—æ´¾", 35, "å¼Ÿå­");
 
 	set_skill("force", 150);
 	set_skill("whip", 170);
@@ -107,74 +107,74 @@ int accept_object(object who, object ob)
 
         if (who->query("shen") < 10000)
         {
-                  tell_object(who,"Äã²»ÅäÈ¥½µ·ü¶ñÈË!\n");
+                  tell_object(who,"ä½ ä¸é…å»é™ä¼æ¶äºº!\n");
                    return 0;
         }
 
         if (who->query_condition("jianghu_busy"))
         {
-                  tell_object(who,"Ê©Ö÷ĞİÏ¢Ò»»á!µÈ»áÔÙÀ´°É!\n");
+                  tell_object(who,"æ–½ä¸»ä¼‘æ¯ä¸€ä¼š!ç­‰ä¼šå†æ¥å§!\n");
                    return 0;
         }
 
         if (ob->query("money_id"))
         {
-                  tell_object(who,"Æ¶É®ÒªÇ®ÓĞÊ²Ã´ÓÃ??\n");
+                  tell_object(who,"è´«åƒ§è¦é’±æœ‰ä»€ä¹ˆç”¨??\n");
                    return 0;
         }
         if (ob->query("id")=="renwu shi")
         {
-                  tell_object(who,"´ËÈËÊÇÖĞÁ¢ÈËÊ¿!\n");
+                  tell_object(who,"æ­¤äººæ˜¯ä¸­ç«‹äººå£«!\n");
                    return 0;
         }
         if (ob->query_temp("no_kill"))
         {
-                  tell_object(who,"´ËÈËÊÇÖĞÁ¢ÈËÊ¿!\n");
+                  tell_object(who,"æ­¤äººæ˜¯ä¸­ç«‹äººå£«!\n");
                    return 0;
         }
 
         if( userp(ob) )
         {
-             tell_object(who,"Æ¶É®²»ÄÜ¶É´ËÈË!\n");
+             tell_object(who,"è´«åƒ§ä¸èƒ½æ¸¡æ­¤äºº!\n");
              return 0;
         }
 
 	if( !ob->is_character() ) {
-        tell_object(who,"ÇëÊ©Ö÷²»ÒªºÍÆ¶É®¿ªÍæĞ¦£¡\n");
+        tell_object(who,"è¯·æ–½ä¸»ä¸è¦å’Œè´«åƒ§å¼€ç©ç¬‘ï¼\n");
         return 0;
         }
 
 	if( ob->query_temp("hunby") != who->query("id"))
 	{
-        tell_object(who,"´ËÈËºÃÏñ²»ÊÇÊ©Ö÷½µ·üµÄ£¡\n");
+        tell_object(who,"æ­¤äººå¥½åƒä¸æ˜¯æ–½ä¸»é™ä¼çš„ï¼\n");
         return 0;
         }
 
 	if (ob->query("id") == "corpse")
 	{
-        tell_object(who,"Ê©Ö÷£¬×ï¹ı£¡×ï¹ı¡£¸øÆ¶É®Ò»¸öËÀÈË¸ÉÊ²Ã´?\n");
+        tell_object(who,"æ–½ä¸»ï¼Œç½ªè¿‡ï¼ç½ªè¿‡ã€‚ç»™è´«åƒ§ä¸€ä¸ªæ­»äººå¹²ä»€ä¹ˆ?\n");
         return 0;
         }
 
 	if (ob->query("id") == "skeleton")
 	{
-        tell_object(who,"Ê©Ö÷£¬×ï¹ı£¡×ï¹ı¡£¸øÆ¶É®Ò»¸öËÀÈË¸ÉÊ²Ã´?\n");
+        tell_object(who,"æ–½ä¸»ï¼Œç½ªè¿‡ï¼ç½ªè¿‡ã€‚ç»™è´«åƒ§ä¸€ä¸ªæ­»äººå¹²ä»€ä¹ˆ?\n");
         return 0;
         }
 
 	if (ob->query("shen") > 0)
 	{
-        tell_object(who,"Ê©Ö÷£¬×ï¹ı£¡×ï¹ı¡£Õâ·ÖÃ÷ÊÇÒ»¸öºÃÈË!!\n");
+        tell_object(who,"æ–½ä¸»ï¼Œç½ªè¿‡ï¼ç½ªè¿‡ã€‚è¿™åˆ†æ˜æ˜¯ä¸€ä¸ªå¥½äºº!!\n");
         return 0;
         }
 
 	if (ob->query("combat_exp") <= who->query("combat_exp")+100)
 	{
-        tell_object(who,"Ê©Ö÷£¬´ËÈËºÍÄãÏà±ÈÊµÔÚÊÇ²»×ãÎªµÀ!!\n");
+        tell_object(who,"æ–½ä¸»ï¼Œæ­¤äººå’Œä½ ç›¸æ¯”å®åœ¨æ˜¯ä¸è¶³ä¸ºé“!!\n");
         return 0;
         }
 
-             tell_object(who,"Ê©Ö÷½µ·ü´ËÈËÊµÔÚ¹¦µÂÎŞÁ¿£¬½ÓÏÂÀ´µÄÊÂ¾Í½»¸øÆ¶É®°É£¡\n");
+             tell_object(who,"æ–½ä¸»é™ä¼æ­¤äººå®åœ¨åŠŸå¾·æ— é‡ï¼Œæ¥ä¸‹æ¥çš„äº‹å°±äº¤ç»™è´«åƒ§å§ï¼\n");
              exp = 150 + random(200);
              pot = 100 + random(100);
              score = 10 + random(5);
@@ -198,10 +198,10 @@ if ( who->query("combat_exp") > 1500000 )
              bonus += score;
               who->add("shen", 50);
              who->set("score", bonus);
-             tell_object(who,HIC"¹§Ï²ÄãÓÖ½µ·üÁËÒ»¸ö¶ñÈË£¡\n"NOR);
-             tell_object(who,HIG"Äã±»½±ÀøÁË£º" + chinese_number(exp)
-               + "µãÊµÕ½¾­Ñé£¬\n"+ chinese_number(pot) + "µãÇ±ÄÜ£¬\n"
-               + chinese_number(score)+"µã½­ºşÔÄÀú¡£\n"NOR);
+             tell_object(who,HIC"æ­å–œä½ åˆé™ä¼äº†ä¸€ä¸ªæ¶äººï¼\n"NOR);
+             tell_object(who,HIG"ä½ è¢«å¥–åŠ±äº†ï¼š" + chinese_number(exp)
+               + "ç‚¹å®æˆ˜ç»éªŒï¼Œ\n"+ chinese_number(pot) + "ç‚¹æ½œèƒ½ï¼Œ\n"
+               + chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†ã€‚\n"NOR);
 	if( ob->is_character() ) {
        call_out("destroying", 5,ob);                              
 }

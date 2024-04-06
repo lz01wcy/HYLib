@@ -5,11 +5,11 @@ int j=2;
 int ask_rob();
 void create()
 {
-        set_name(HIM"´ó¸»ÉÌ"NOR, ({ "fu shang"}));
+        set_name(HIM"å¤§å¯Œå•†"NOR, ({ "fu shang"}));
        set("long",
-                "Ò»Ãûµ±´ú¸»ÉÌ£¬³¤µÄ·ÊÍ·´ó¶ú£¬µ«Ëû¸»¿ÉµĞ¹ú¡£\n");
+                "ä¸€åå½“ä»£å¯Œå•†ï¼Œé•¿çš„è‚¥å¤´å¤§è€³ï¼Œä½†ä»–å¯Œå¯æ•Œå›½ã€‚\n");
         set("attitude", "friendly");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 58);
         set("per", 24);
         set("str", 30);
@@ -57,13 +57,13 @@ int do_rob()
    ob = this_object();
    stage = 0;
 if (ob->query_temp("owner/id")!=me->query("id"))
-return notify_fail("ÕâÖÖÊÂÄãÒ²×öµÄ³öÀ´£¡\n");
+return notify_fail("è¿™ç§äº‹ä½ ä¹Ÿåšçš„å‡ºæ¥ï¼\n");
 	if(environment(me)->query("no_fight"))
-		return notify_fail("ÕâÀï²»Ğí´ò¶·£¡\n");
+		return notify_fail("è¿™é‡Œä¸è®¸æ‰“æ–—ï¼\n");
    if(objectp(present("baobiao", environment(me))))
-       return notify_fail("Õâ¼¸¸ö±£ïÚ¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
+       return notify_fail("è¿™å‡ ä¸ªä¿é•–çœ‹æ¥æ­¦åŠŸä¸å¼±ï¼Œä½ è¿˜æ˜¯å…ˆæ‰“å‘äº†é¢å‰è¿™ä¸ªå†è¯´å§ï¼\n");  
         ob->start_busy(60);
-   message_vision(HIM"$N¶Ô×Å$nÒ»Éù´óĞ¦£º"+me->name()+"ÔÚ´Ë£¡ÄãÕâËÀÖíÄÄÀï×ß??\n"NOR, me, ob);
+   message_vision(HIM"$Nå¯¹ç€$nä¸€å£°å¤§ç¬‘ï¼š"+me->name()+"åœ¨æ­¤ï¼ä½ è¿™æ­»çŒªå“ªé‡Œèµ°??\n"NOR, me, ob);
    me->set_temp("xx_rob", 1);
           me->start_busy(3);
    remove_call_out("make_bs");
@@ -85,11 +85,11 @@ void make_bs(object me, object ob)
         ob->start_busy(60);          
           }
 else {
-       message_vision(HIW"$N¼ûÒÑ¾­ÎŞÈË±£»¤£¬°Ñ¸»ÉÌ´ò»èÁË£¡\n"NOR, me);    
+       message_vision(HIW"$Nè§å·²ç»æ— äººä¿æŠ¤ï¼ŒæŠŠå¯Œå•†æ‰“æ˜äº†ï¼\n"NOR, me);    
        ob->unconcious();
 //       me->add("combat_exp",100);
 //       me->add("potential",50);
-       message_vision(HIR"$NºÃÏñ±äÇ¿ÁËÒ»Ğ©£¡\n"NOR, me);    
+       message_vision(HIR"$Nå¥½åƒå˜å¼ºäº†ä¸€äº›ï¼\n"NOR, me);    
        me->delete_temp("rob_start");
        me->delete_temp("xx_rob");
        me->delete_temp("rob_job");
@@ -134,7 +134,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "¸»ÉÌÏòÒ»´¦ÈË¼ÒÌÓ×ßÁË£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "å¯Œå•†å‘ä¸€å¤„äººå®¶é€ƒèµ°äº†ï¼Œä¸è§äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -143,13 +143,13 @@ void leave()
 int do_quit(string arg)
 {
 	if(arg=="roar") {
-        write(this_player()->query("name")+"£¬ÕâÀï²»ÄÜÓÃroar°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œè¿™é‡Œä¸èƒ½ç”¨roarå§ï¼\n");
         return 1;
 	}
 }
 
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃhalt£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨haltï¼\n");
         return 1;
 }

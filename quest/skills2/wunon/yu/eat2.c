@@ -5,14 +5,14 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("Ğ¡»ÆÓã", ({ "yu2" }) );
+	set_name("å°é»„é±¼", ({ "yu2" }) );
 	set_weight(30000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÌõĞ¡»ÆÓã\n");
-		set("unit", "Ìõ");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("long", "ä¸€æ¡å°é»„é±¼\n");
+		set("unit", "æ¡");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);

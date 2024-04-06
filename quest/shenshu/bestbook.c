@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIR"Œﬁ◊÷…Ò È"NOR, ({ "shenshu king" }) );
+    set_name(HIR"Êó†Â≠óÁ•û‰π¶"NOR, ({ "shenshu king" }) );
             set("no_put", 1);
             set("shenshu", 1);
             set("value", 0);
@@ -11,9 +11,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	        
-            set("unit", "±æ");
+            set("unit", "Êú¨");
             set("material", "paper");
-            set("long", "…Ò È÷–µƒ…Ò È£¨ƒ„ø…“‘”√(chayue)¿¥≤È‘ƒÀ¸°£\n");
+            set("long", "Á•û‰π¶‰∏≠ÁöÑÁ•û‰π¶Ôºå‰Ω†ÂèØ‰ª•Áî®(chayue)Êù•Êü•ÈòÖÂÆÉ„ÄÇ\n");
           }
 
     setup();
@@ -28,7 +28,7 @@ int do_cha(string arg)
 	int exp,pot,score,i;
 	me =this_player();
  	if (!id(arg))
-	return notify_fail("ƒ„“™≤È ≤√¥£ø\n");
+	return notify_fail("‰Ω†Ë¶ÅÊü•‰ªÄ‰πàÔºü\n");
 
         ob=new(__DIR__"sdan");
         ob->move(me);
@@ -63,46 +63,46 @@ int do_cha(string arg)
         ob=new(__DIR__"sdan");
         ob->move(me);
 i=random(6);
-message("channel:chat", HIC"°æΩ≠∫˛¥´Œ≈°ø"GRN + me->query("name")+"ÕÍ≥…¡Àæøº´»ŒŒÒ£¨µΩ Æ¡˘ø≈"+HIY":" + ob->query("name")+HIG"¿≤£°\n"NOR,users() );
+message("channel:chat", HIC"„ÄêÊ±üÊπñ‰º†Èóª„Äë"GRN + me->query("name")+"ÂÆåÊàê‰∫ÜÁ©∂ÊûÅ‰ªªÂä°ÔºåÂà∞ÂçÅÂÖ≠È¢ó"+HIY":" + ob->query("name")+HIG"Âï¶ÔºÅ\n"NOR,users() );
 	if (i>4) {
         if ( me->query("per")< 41)
         {
-	me->add("per",1);tell_object(me,HIM"“‘º∞“ªµ„»›√≤°£\n"NOR);
+	me->add("per",1);tell_object(me,HIM"‰ª•Âèä‰∏ÄÁÇπÂÆπË≤å„ÄÇ\n"NOR);
         }
 	}
 	else if (i>3) {
         if ( me->query("dex")< 31)
         {
-	me->add("dex",1);tell_object(me,HIM"“‘º∞“ªµ„…Ì∑®°£\n"NOR);
+	me->add("dex",1);tell_object(me,HIM"‰ª•Âèä‰∏ÄÁÇπË∫´Ê≥ï„ÄÇ\n"NOR);
 	}
 	}
 	else if(i>2)	{
         if ( me->query("str")< 31)
 	{
-	me->add("str",1);tell_object(me,HIC"“‘º∞“ªµ„±€¡¶°£\n"NOR);
+	me->add("str",1);tell_object(me,HIC"‰ª•Âèä‰∏ÄÁÇπËáÇÂäõ„ÄÇ\n"NOR);
 	}
 	}
 	else if(i>1)	{
         if ( me->query("int")< 31)
 	{
-	me->add("int",1);tell_object(me,HIR"“‘º∞“ªµ„ŒÚ–‘°£\n"NOR);
+	me->add("int",1);tell_object(me,HIR"‰ª•Âèä‰∏ÄÁÇπÊÇüÊÄß„ÄÇ\n"NOR);
 	}
 	}
 	else if(i>0)	{
         if ( me->query("con")< 31)
 	{
-	me->add("con",1);tell_object(me,HIM"“‘º∞“ªµ„∏˘π«°£\n"NOR);
+	me->add("con",1);tell_object(me,HIM"‰ª•Âèä‰∏ÄÁÇπÊ†πÈ™®„ÄÇ\n"NOR);
 	}
 	}
 	else {
         if ( me->query("kar")< 41)
 	{
-	me->add("kar",1);tell_object(me,HIM"“‘º∞“ªµ„∏£‘µ°£\n"NOR);
+	me->add("kar",1);tell_object(me,HIM"‰ª•Âèä‰∏ÄÁÇπÁ¶èÁºò„ÄÇ\n"NOR);
 	}
 	}
         ob=new("/clone/box/book/book"+(random(12)+1));
         ob->move(me);
-message("channel:chat", HIC"°æΩ≠∫˛¥´Œ≈°ø"GRN + me->query("name")+"µ√µΩ"+HIR" ß¬‰µƒŒ‰¡÷√‹ºÆ:" + ob->query("name")+HIG"¿≤£°\n"NOR,users() );
+message("channel:chat", HIC"„ÄêÊ±üÊπñ‰º†Èóª„Äë"GRN + me->query("name")+"ÂæóÂà∞"+HIR"Â§±ËêΩÁöÑÊ≠¶ÊûóÂØÜÁ±ç:" + ob->query("name")+HIG"Âï¶ÔºÅ\n"NOR,users() );
 	destruct(this_object());
 return 1;
 }

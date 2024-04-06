@@ -2,13 +2,13 @@
 
 mixed names = ({
         ({
-        "ÖìÈ¸ÍâÃÅ","ÇàÁúÍâÃÅ","°×»¢ÍâÃÅ","ĞşÎäÍâÃÅ",
+        "æœ±é›€å¤–é—¨","é’é¾™å¤–é—¨","ç™½è™å¤–é—¨","ç„æ­¦å¤–é—¨",
         }),
         ({
-         "ËÎ±ø","Á÷Ã¥","Æ«½«","×ô½«","Ğ¡··","ÄĞº¢","¹ùÜ½","ÀÏÏÈÉú",
-         "Ğ¡º¢","ÊéµêÀÏ°å","ÎäÈıÍ¨","Çîºº","Ìú½³","Öì×ÓÁø","µêĞ¡¶ş","ËÎ±ø",
-	 "·®Ò»ÎÌ","¹ùÜ½","¹ùÏå","¼ò½İ","Ê·²®Íş","Ê·¼¾Ç¿","Ê·ÃÏ½İ","Ê·Êå¸Õ",
-	 "Ê·ÖÙÃÍ","Îä¶ØÈå","ÎäĞŞÎÄ","Ò®ÂÉÆë","³ÌÓ¢",
+         "å®‹å…µ","æµæ°“","åå°†","ä½å°†","å°è´©","ç”·å­©","éƒ­èŠ™","è€å…ˆç”Ÿ",
+         "å°å­©","ä¹¦åº—è€æ¿","æ­¦ä¸‰é€š","ç©·æ±‰","é“åŒ ","æœ±å­æŸ³","åº—å°äºŒ","å®‹å…µ",
+	 "æ¨Šä¸€ç¿","éƒ­èŠ™","éƒ­è¥„","ç®€æ·","å²ä¼¯å¨","å²å­£å¼º","å²å­Ÿæ·","å²å”åˆš",
+	 "å²ä»²çŒ›","æ­¦æ•¦å„’","æ­¦ä¿®æ–‡","è€¶å¾‹é½","ç¨‹è‹±",
         }),
         });
 
@@ -22,59 +22,59 @@ string ask_job()
   exp=ob->query("combat_exp");
   if (interactive(ob) && ob->query_temp("menggu_job_target")
       && (int)ob->query_condition("menggu_mission"))  
-       return "ÄãÉÏÒ»´ÎµÄÈÎÎñ»¹Ã»Íê³É!";
+       return "ä½ ä¸Šä¸€æ¬¡çš„ä»»åŠ¡è¿˜æ²¡å®Œæˆ!";
   if (interactive(ob) && !ob->query_temp("menggu_job_target")
       && (int)ob->query_condition("menggu_mission"))  
-       return "Äã°ìÊÂ²»Á¦£¬ÏÈµÈ»á°É¡£";
+       return "ä½ åŠäº‹ä¸åŠ›ï¼Œå…ˆç­‰ä¼šå§ã€‚";
    
     if (interactive(ob) &&
        (int)ob->query_condition("menggu_busy"))  
-       return "ÏÖÔÚÎÒ¿ÉÃ»ÓĞ¸øÄãµÄÈÎÎñ£¬µÈ»áÔÙÀ´°É¡£\n";
+       return "ç°åœ¨æˆ‘å¯æ²¡æœ‰ç»™ä½ çš„ä»»åŠ¡ï¼Œç­‰ä¼šå†æ¥å§ã€‚\n";
 
 if (ob->query_skill("force",1)<100)
-       return "ÎÒ¿´ÄãµÄÎä¹¦»¹²»¹»°¡¡£\n";
+       return "æˆ‘çœ‹ä½ çš„æ­¦åŠŸè¿˜ä¸å¤Ÿå•Šã€‚\n";
 
 if (ob->query("shen")>0)
-       return "ÎÒ¿´Äãµ½ÏñÊÇÒ»¸ö¼éÏ¸¡£\n";
+       return "æˆ‘çœ‹ä½ åˆ°åƒæ˜¯ä¸€ä¸ªå¥¸ç»†ã€‚\n";
 	
 	if(exp<=100000)     
-    return "ÄãµÄÎä¹¦Ì«²îÁË,µÈÁ·Ç¿ÁËÔÙÀ´°É¡£\n";
-    job_type="´ÌÉ±";
+    return "ä½ çš„æ­¦åŠŸå¤ªå·®äº†,ç­‰ç»ƒå¼ºäº†å†æ¥å§ã€‚\n";
+    job_type="åˆºæ€";
    	ob->set_temp("menggu_job_type",job_type);
         
-	if(job_type=="´ÌÉ±")
+	if(job_type=="åˆºæ€")
 	{target = names[1][random(sizeof(names[1]))];
         ob->apply_condition("menggu_mission",30);    
 	ob->set_temp("menggu_job_target", target);
 	ob->set_temp("mgjob", 1);
         newob = new(__DIR__"ling");
         newob->set("long", "
-        ´ÌÉ±Áî
-" + target + "±ØËÀ¡£
-        ´óÔª\n");
+        åˆºæ€ä»¤
+" + target + "å¿…æ­»ã€‚
+        å¤§å…ƒ\n");
         newob->move(ob);
 
-    message_vision(HIW"$N£¬¶Ô$nËµµÀ:ÓĞÏûÏ¢ÓÖÓĞÎäÁÖÈËÊ¿À´ÔöÔ®ÏåÑô,ËûºÃÏñÒªµ½"+target+"£¬ÕâÀï£¬Äã°ÑËûºÍ"+target+"Ò»Æğ¸Éµô!\n"NOR , me,ob);
-     if( (string)this_player()->query("family/family_name")=="ÉñÁú½Ì" ) 
+    message_vision(HIW"$Nï¼Œå¯¹$nè¯´é“:æœ‰æ¶ˆæ¯åˆæœ‰æ­¦æ—äººå£«æ¥å¢æ´è¥„é˜³,ä»–å¥½åƒè¦åˆ°"+target+"ï¼Œè¿™é‡Œï¼Œä½ æŠŠä»–å’Œ"+target+"ä¸€èµ·å¹²æ‰!\n"NOR , me,ob);
+     if( (string)this_player()->query("family/family_name")=="ç¥é¾™æ•™" ) 
 {     
         newob = new(__DIR__"item1");
         newob->move(ob);
-    message_vision(HIW"$N£¬¶Ô$nËµµÀ£ºÌıËµÉñÁú½Ì¶ÔÓÃÊ¯»Ò¶ÔµĞÓĞĞÄµÂ£¬Õâ°üÊ¯»Ò·Û¾Í¸øÄãÁË!\n"NOR , me,ob);
+    message_vision(HIW"$Nï¼Œå¯¹$nè¯´é“ï¼šå¬è¯´ç¥é¾™æ•™å¯¹ç”¨çŸ³ç°å¯¹æ•Œæœ‰å¿ƒå¾·ï¼Œè¿™åŒ…çŸ³ç°ç²‰å°±ç»™ä½ äº†!\n"NOR , me,ob);
 }
-     if( (string)this_player()->query("family/family_name")=="ĞÇËŞÅÉ" ) 
+     if( (string)this_player()->query("family/family_name")=="æ˜Ÿå®¿æ´¾" ) 
 {     
         newob = new(__DIR__"item2");
         newob->move(ob);
-    message_vision(HIW"$N£¬¶Ô$nËµµÀ£ºÌıËµĞÇËŞÅÉ¶ÔÓÃÃÉº¹Ò©¶ÔµĞÓĞĞÄµÂ£¬Õâ°üÃÉº¹Ò©¾Í¸øÄãÁË!\n"NOR , me,ob);
+    message_vision(HIW"$Nï¼Œå¯¹$nè¯´é“ï¼šå¬è¯´æ˜Ÿå®¿æ´¾å¯¹ç”¨è’™æ±—è¯å¯¹æ•Œæœ‰å¿ƒå¾·ï¼Œè¿™åŒ…è’™æ±—è¯å°±ç»™ä½ äº†!\n"NOR , me,ob);
 }
-     if( (string)this_player()->query("family/family_name")=="Ñ©É½ËÂ" ) 
+     if( (string)this_player()->query("family/family_name")=="é›ªå±±å¯º" ) 
 {     
         newob = new(__DIR__"item3");
         newob->move(ob);
-    message_vision(HIW"$N£¬¶Ô$nËµµÀ£ºÌıËµÑ©É½ËÂ¶ÔÓÃÒõÑôºÍºÏÉ¢¶ÔµĞÓĞĞÄµÂ£¬Õâ°üÒõÑôºÍºÏÉ¢¾Í¸øÄãÁË!\n"NOR , me,ob);
+    message_vision(HIW"$Nï¼Œå¯¹$nè¯´é“ï¼šå¬è¯´é›ªå±±å¯ºå¯¹ç”¨é˜´é˜³å’Œåˆæ•£å¯¹æ•Œæœ‰å¿ƒå¾·ï¼Œè¿™åŒ…é˜´é˜³å’Œåˆæ•£å°±ç»™ä½ äº†!\n"NOR , me,ob);
 }
 
-	return "Èç¹ûÊ§°ÜÁË£¬ÎÒÒªÄãµÄÃü!";
+	return "å¦‚æœå¤±è´¥äº†ï¼Œæˆ‘è¦ä½ çš„å‘½!";
 	}
 }
 
@@ -84,7 +84,7 @@ string ask_fangqi()
          object me;
          me = this_player();
          if(me->query_condition("menggu_mission")<=1)
-         return "ÄãÃ»ÓĞÁìÈÎÎñ,ÅÜÕâÀïÏ¹ÈÂÈÂÊ²÷á?";
+         return "ä½ æ²¡æœ‰é¢†ä»»åŠ¡,è·‘è¿™é‡Œçåš·åš·ä»€éº½?";
          me->clear_condition("menggu_mission");
 me->apply_condition("menggu_busy",8);    
 destruct(present("hehe san",me));
@@ -95,33 +95,33 @@ me->delete_temp("menggu_job_target");
 me->delete_temp("menggu_job_type");
 me->delete_temp("mgjob");
 		 me->delete_temp("menggu_job_type");
-         return "ÏÂ´Î²»ÔÊĞíÊ§°Ü!! ¡£";
+         return "ä¸‹æ¬¡ä¸å…è®¸å¤±è´¥!! ã€‚";
 }
 
 int accept_object(object who, object ob,object me)
 {
         if ( ob->query("id") != "corpse") {
-                command("say Äã¸øÎÒÕâ¸ö¸ÉÂğ?");
+                command("say ä½ ç»™æˆ‘è¿™ä¸ªå¹²å—?");
                 return 0;
         }
         if ( !who->query_temp("menggu_job_target") ) {
-                command("say ºÃ°¡£¡²»¹ıÄãµÃÏÈÉêÇëÈÎÎñ¡£");
+                command("say å¥½å•Šï¼ä¸è¿‡ä½ å¾—å…ˆç”³è¯·ä»»åŠ¡ã€‚");
                 return 0;
         }
 
         if( who->query_temp("mgjob")!=3){
-                command("say ÄãÃ»ÓĞ°ÑÎäÁÖÏÀÊ¿¸Éµô»¹À´ÒªÉÍ?");
+                command("say ä½ æ²¡æœ‰æŠŠæ­¦æ—ä¾ å£«å¹²æ‰è¿˜æ¥è¦èµ?");
                 return 0;
         }
 
-        if( who->query_temp("menggu_job_type")=="±£»¤")
+        if( who->query_temp("menggu_job_type")=="ä¿æŠ¤")
 		if (ob->query_temp("must_killby")!= who->query("id")
 			||ob->query("victim_user") )
 		{       command("shake");
-                command("say ÄãÉ±´íÈËÁË¡£");
+                command("say ä½ æ€é”™äººäº†ã€‚");
                 return 0;
         } 
-command("say ×öµÄºÃ!!ÎªÎÒÃÇ´óººÁ¢ÁË´ó¹¦¡£");
+command("say åšçš„å¥½!!ä¸ºæˆ‘ä»¬å¤§æ±‰ç«‹äº†å¤§åŠŸã€‚");
 who->add("combat_exp",220+random(100));
 who->add("shen",-50);
 who->add("potential",150+random(100));

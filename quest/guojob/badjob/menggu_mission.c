@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-		tell_object(me, HIY "你的动作太慢,任务被取消了。\n" NOR);
+		tell_object(me, HIY "浣犵殑鍔ㄤ綔澶參,浠诲姟琚彇娑堜簡銆俓n" NOR);
 
         	 me->delete_temp("menggu_job_target");
                 return 0;

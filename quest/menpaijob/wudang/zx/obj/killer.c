@@ -2,21 +2,21 @@
 inherit NPC;
 
 string *nm1_jp =({
-"ºÚÒÂ","ºìÒÂ","ÂÌÒÂ","°×ÒÂ","»ÆÒÂ",
+"é»‘è¡£","çº¢è¡£","ç»¿è¡£","ç™½è¡£","é»„è¡£",
 });
 
     
 string *nm2_jp =({
-"ÈË",
+"äºº",
 });
 
 void create()
 {
    int i = random(sizeof(nm1_jp));
     set_name(nm1_jp[i]+nm2_jp[random(sizeof(nm2_jp))],({"wl renwo"}));
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
         set("long",
-"Ò»¸öÉí¸ß´óµ«ÂúÁ³ÓÖÊÇÉË°Ì¼ÓºáÈâµÄÎäÁÖÈËÎï¡£\n");
+"ä¸€ä¸ªèº«é«˜å¤§ä½†æ»¡è„¸åˆæ˜¯ä¼¤ç–¤åŠ æ¨ªè‚‰çš„æ­¦æž—äººç‰©ã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
   set("max_qi",500+random(1890));
@@ -96,7 +96,7 @@ void init( )
 void hunting()
 {
 object ob=this_object();
-command("say ÈÎÎñÍê³ÉÁË£¬³·!");
+command("say ä»»åŠ¡å®Œæˆäº†ï¼Œæ’¤!");
 destruct(ob);
 }
 
@@ -109,11 +109,11 @@ void die()
         me = query_temp("last_damage_from");
         
 if (!me) return;
-        message_vision(WHT"$N²Ò½ÐÒ»Éù£¬µ¹µØ¶øÍö£¡¡£\n"NOR,ob,me);
+        message_vision(WHT"$Næƒ¨å«ä¸€å£°ï¼Œå€’åœ°è€Œäº¡ï¼ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-        if(me->query("family/family_name") == "Îäµ±ÅÉ" )   {
-        message("vision", me->name() + HIG"ÓÉÓÚ³É¹¦µÄ±£ÎÀÁËÎäµ±,Ôö¼ÓÁË300¾­ÑéºÍ150Ç±ÄÜ¡£\n"NOR, me);
+        if(me->query("family/family_name") == "æ­¦å½“æ´¾" )   {
+        message("vision", me->name() + HIG"ç”±äºŽæˆåŠŸçš„ä¿å«äº†æ­¦å½“,å¢žåŠ äº†300ç»éªŒå’Œ150æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",300);
         me->add("potential",150);
         }

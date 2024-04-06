@@ -6,17 +6,17 @@ inherit BLADE;
 
 void create()
 {
-        set_name("ÃÉ¹Åµ¶", ({ "menggublade" }) );
+        set_name("è’™å¤åˆ€", ({ "menggublade" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 0);
                 set("material", "iron");
-                set("long", "ÕâÖÖÉÔÎ¢ÓĞµãÍäµÄÃÉ¹Åµ¶£¬£¬·İÁ¿´óÔ¼Ê®½ïÖØ¡£\n");
-                set("wield_msg", "$N³é³öÒ»°ÑÃÉ¹Åµ¶$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("long", "è¿™ç§ç¨å¾®æœ‰ç‚¹å¼¯çš„è’™å¤åˆ€ï¼Œï¼Œä»½é‡å¤§çº¦åæ–¤é‡ã€‚\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠè’™å¤åˆ€$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
         }
         init_blade(35);
         setup();

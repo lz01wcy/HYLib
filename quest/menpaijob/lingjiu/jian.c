@@ -7,10 +7,10 @@ int do_zou(string);
 
 void create()
 {
-  set("short","ÁéðÕ°ÙÕÉ½§");
+  set("short","çµé¹«ç™¾ä¸ˆæ¶§");
   set("long",@LONG
-É½µÀµ½´ËÍ»È»ÏûÊ§£¬ÔÚÄãÃæÇ°ÊÇÒ»ÌõÉ½½§£¬É½½§Ö®ÖÐÔÆÎíçÔÈÆ£¬Äã¸ù
-±¾ÎÞ·¨¿´Çå¶ÔÃæ¡£Ò»ÌõÌúË÷(tiesuo)ÉîÈëÔÆÖÐ£¬ÅÔ±ßÓÐÒ»¿éÊ¯±®(bei)¡£
+å±±é“åˆ°æ­¤çªç„¶æ¶ˆå¤±ï¼Œåœ¨ä½ é¢å‰æ˜¯ä¸€æ¡å±±æ¶§ï¼Œå±±æ¶§ä¹‹ä¸­äº‘é›¾ç¼­ç»•ï¼Œä½ æ ¹
+æœ¬æ— æ³•çœ‹æ¸…å¯¹é¢ã€‚ä¸€æ¡é“ç´¢(tiesuo)æ·±å…¥äº‘ä¸­ï¼Œæ—è¾¹æœ‰ä¸€å—çŸ³ç¢‘(bei)ã€‚
 LONG );
   set("outdoors", "lingjiu");
   set("exits",([
@@ -20,8 +20,8 @@ LONG );
       "quest/menpaijob/lingjiu/yupopo" : 1,
   ]));
   set("item_desc",([
-      "bei" : "¡ºÁéðÕ¹¬¡»ÖØµØ£¬ÉÃÈëÕßËÀ£¡\n" ,
-      "tiesuo" : "ÕâÊÇÍ¨Íù¶ÔÃæµÄ¡°½ÓÌìÇÅ¡±£¬ÄãÒ²Ðí¿ÉÒÔ×ß¹ý(zou)È¥¡£\n" ,
+      "bei" : "ã€Žçµé¹«å®«ã€é‡åœ°ï¼Œæ“…å…¥è€…æ­»ï¼\n" ,
+      "tiesuo" : "è¿™æ˜¯é€šå¾€å¯¹é¢çš„â€œæŽ¥å¤©æ¡¥â€ï¼Œä½ ä¹Ÿè®¸å¯ä»¥èµ°è¿‡(zou)åŽ»ã€‚\n" ,
   ]));
 //  set("no_clean_up", 0);
   setup();
@@ -37,15 +37,15 @@ int do_zou(string arg)
 	object me=this_player(), room;
 
 	if(!arg || arg!="tiesuo")
-		return notify_fail("ÄãÒª×ßÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦èµ°ä»€ä¹ˆï¼Ÿ\n");
 
 	if(!( room = find_object(__DIR__"xianchou")) )
 		room = load_object(__DIR__"xianchou");
 
 	if(!objectp(room))
 		return notify_fail("ERROR:not found 'xianchou.c' \n");
-	message_vision("$N²ÈÉÏÌúË÷£¬Æ®È»¶øÈ¥¡£\n",me);
-//       ¡¡message("vision","ÄãÖ»¼ûÒ»¸öÉíÓ°Æ®È»¶øÀ´¡£\n", room);
+	message_vision("$Nè¸©ä¸Šé“ç´¢ï¼Œé£˜ç„¶è€ŒåŽ»ã€‚\n",me);
+//       ã€€message("vision","ä½ åªè§ä¸€ä¸ªèº«å½±é£˜ç„¶è€Œæ¥ã€‚\n", room);
         me->move(room);
         return 1;
 }

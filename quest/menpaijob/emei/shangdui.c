@@ -4,12 +4,12 @@ inherit ITEM;
 int j=3;
 void create()
 {
-        set_name("Ã÷½Ì¶ÓÎé", ({ "changfeng"}));
-        set("unit", "Ö»");
+        set_name("æ˜æ•™é˜Ÿä¼", ({ "changfeng"}));
+        set("unit", "åª");
         set_weight(90000000);
         set("long", "
-Ò»Ö»Ô¶µÀ¶øÀ´µÄÃ÷½ÌµÜ×Ó£¬¿´À´ÓĞ²»ÉÙ¸ßÊÖ¡£ÖĞ¼ä²å
-×ÅÒ»Ãæ´óÆì£¬ËÆºõĞ´×Å¡°Ã÷½Ì¡±¶ş¸ö´ó×Ö¡£¡£¡£\n");
+ä¸€åªè¿œé“è€Œæ¥çš„æ˜æ•™å¼Ÿå­ï¼Œçœ‹æ¥æœ‰ä¸å°‘é«˜æ‰‹ã€‚ä¸­é—´æ’
+ç€ä¸€é¢å¤§æ——ï¼Œä¼¼ä¹å†™ç€â€œæ˜æ•™â€äºŒä¸ªå¤§å­—ã€‚ã€‚ã€‚\n");
         set("no_get", 1);
         set("no_drop", 1);
 	 set("no_put",1);
@@ -33,11 +33,11 @@ int do_rob()
 
    if(!living(me)) return 0;
    if(!me->query_temp("rob_start")) 
-       return notify_fail("Äãµ¨×Ó²»Ğ¡£¬¾¹¸ÒÔÚÃ÷½Ì×ö¶Ô£¿\n");
+       return notify_fail("ä½ èƒ†å­ä¸å°ï¼Œç«Ÿæ•¢åœ¨æ˜æ•™åšå¯¹ï¼Ÿ\n");
    if(objectp(present("mingjiaodizi", environment(me))))
-       return notify_fail("Ã÷½ÌµÜ×Ó¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
+       return notify_fail("æ˜æ•™å¼Ÿå­çœ‹æ¥æ­¦åŠŸä¸å¼±ï¼Œä½ è¿˜æ˜¯å…ˆæ‰“å‘äº†é¢å‰è¿™ä¸ªå†è¯´å§ï¼\n");  
 
-   message_vision(HIY"$N¶Ô×Å$n´óºğÒ»Éù£º"+me->name()+"ÔÚ´Ë£¡ÄãÃÇÕâĞ©Ä§½ÌµÜ×Ó,ÄÉÃüÀ´£¡\n"NOR, me, ob);
+   message_vision(HIY"$Nå¯¹ç€$nå¤§å¼ä¸€å£°ï¼š"+me->name()+"åœ¨æ­¤ï¼ä½ ä»¬è¿™äº›é­”æ•™å¼Ÿå­,çº³å‘½æ¥ï¼\n"NOR, me, ob);
    me->set_temp("xx_rob", 1);
    me->start_busy(3);
    remove_call_out("make_bs");
@@ -56,26 +56,26 @@ void make_bs(object me, object ob)
  	  obj1->do_copy(me);
           j=j-1;     }
 else {
-       message_vision(HIW"$N¼ûÒÑ¾­ÎŞ»îÈË£¬½«Ã÷½ÌÊ×ÁìÉíÉÏµÄÁîÅÆÄÃÔÚ»³Àï£¡£¡\n"NOR, me);    
+       message_vision(HIW"$Nè§å·²ç»æ— æ´»äººï¼Œå°†æ˜æ•™é¦–é¢†èº«ä¸Šçš„ä»¤ç‰Œæ‹¿åœ¨æ€€é‡Œï¼ï¼\n"NOR, me);    
        ;    
        obj=new(__DIR__"red");
        obj->move(me);
        obj->set("owner", me->query("id"));
        me->add("combat_exp", 200);
        me->add("shen", 100);
-	tell_object(me,"Äã±»½±ÀøÁË\n¶ş°Ùµã¾­ÑéÖµ¡£\n");
+	tell_object(me,"ä½ è¢«å¥–åŠ±äº†\näºŒç™¾ç‚¹ç»éªŒå€¼ã€‚\n");
        me->delete_temp("rob_start");
        me->delete_temp("xx_rob");
        me->delete_temp("rob_job");
        me->delete_temp("j");       
-       message_vision("$N×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n",ob);
+       message_vision("$Nè½¬è¿‡å‡ ä¸ªå°å±±ä¸˜å°±ä¸è§äº†ã€‚\n",ob);
        destruct(ob);
     }
 }
 
 void aaa(object me)
 {
-       message_vision("$N×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n",me);       
+       message_vision("$Nè½¬è¿‡å‡ ä¸ªå°å±±ä¸˜å°±ä¸è§äº†ã€‚\n",me);       
        destruct(me);
        return;
 }

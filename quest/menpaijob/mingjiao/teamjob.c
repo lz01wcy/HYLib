@@ -2,10 +2,10 @@
 int ckiller=3;
 mixed names = ({
         ({
-        "Ã÷½ÌÇ°µî","Ã÷½ÌÎ÷²àµî","Ã÷½Ì¶«²àµî","Ã÷½Ì´óµî","Ã÷½Ì´óµî",
-        "ÌìÎ¢ÌÃ","×ÏÎ¢ÌÃ","ÌìÊÐÌÃ","ÁÒ»ðÆìºóÃÅ","ÁÒ»ðÆì´óÌü",
-        "ÁÒ»ðÆì´óÃÅ","ÁÒ»ðÆìÅÆ·»","¾ÞÄ¾Æì´óÃÅ","Èñ½ðÆì´óÌü","Ã÷½ÌÉ½ÃÅ",                
-//"Ã÷½ÌÉ½ÃÅ",
+        "æ˜Žæ•™å‰æ®¿","æ˜Žæ•™è¥¿ä¾§æ®¿","æ˜Žæ•™ä¸œä¾§æ®¿","æ˜Žæ•™å¤§æ®¿","æ˜Žæ•™å¤§æ®¿",
+        "å¤©å¾®å ‚","ç´«å¾®å ‚","å¤©å¸‚å ‚","çƒˆç«æ——åŽé—¨","çƒˆç«æ——å¤§åŽ…",
+        "çƒˆç«æ——å¤§é—¨","çƒˆç«æ——ç‰ŒåŠ","å·¨æœ¨æ——å¤§é—¨","é”é‡‘æ——å¤§åŽ…","æ˜Žæ•™å±±é—¨",                
+//"æ˜Žæ•™å±±é—¨",
         }),
         });
 
@@ -16,20 +16,20 @@ string ask_jianxi()
 	  guo =this_object();
 	  ob=this_player();
 	  
-        if( ob->query("family/family_name") != "Ã÷½Ì")
-	  return "Äã·ÇÎÒÅÉµÜ×Ó!!";//guo busy time 
+        if( ob->query("family/family_name") != "æ˜Žæ•™")
+	  return "ä½ éžæˆ‘æ´¾å¼Ÿå­!!";//guo busy time 
 	  
 	  if (ob->query_condition("mjtjob2"))
-	  return "ÏÖÔÚÃ»ÓÐÄãµÄÈÎÎñ!";//guo busy time 
+	  return "çŽ°åœ¨æ²¡æœ‰ä½ çš„ä»»åŠ¡!";//guo busy time 
 
 //	  if (guo->query_condition("mingjiaojob"))
-//	  return "ÎÒÃ»ÓÐÊÕµ½ÈÎºÎÏûÏ¢¡£";//guo busy time 
+//	  return "æˆ‘æ²¡æœ‰æ”¶åˆ°ä»»ä½•æ¶ˆæ¯ã€‚";//guo busy time 
 	  
      if(ob->query("combat_exp")<100000)
-      return  "ÄãµÄ¹¦·òÌ«²îÁË¡£";//too low exp
+      return  "ä½ çš„åŠŸå¤«å¤ªå·®äº†ã€‚";//too low exp
 
       if( ob->query_skill("jiuyang-shengong",1) < 50)
-      return  "ÄãµÄ±¾ÃÅÄÚ¹¦Ì«²îÁË¡£";//too low exp      
+      return  "ä½ çš„æœ¬é—¨å†…åŠŸå¤ªå·®äº†ã€‚";//too low exp      
 	  where=names[0][random(15)];
 //	  guo->apply_condition("mingjiaojob",16);
 	  ob->set("mjjob",1);
@@ -37,9 +37,9 @@ string ask_jianxi()
           ckiller=3;
 ob->set_temp("mjtjob",where);ob->apply_condition("mjtjob",24);ob->apply_condition("mjtjob2",16);
 //      call_out("job",80,ob,where,);
-	  return    "ÎÒ¸ÕµÃµ½ÏûÏ¢£¬ÓÐÒ»ÃûÎå´óÃÅÅÉµÄÊ×Áì´øÁËµÜ×ÓÇ°À´¹¥ÎÒÊ¥½Ì¡£\n"+
-		        "          Äã¸Ï¿ìÈ¥"+where+"Éè·À×è½Ø£¬\n"+
-			    "          Îñ±ØÏûÃðµÐÈËµÄÊ×Áì£¬¶à¼ÓÐ¡ÐÄ¡£"; 
+	  return    "æˆ‘åˆšå¾—åˆ°æ¶ˆæ¯ï¼Œæœ‰ä¸€åäº”å¤§é—¨æ´¾çš„é¦–é¢†å¸¦äº†å¼Ÿå­å‰æ¥æ”»æˆ‘åœ£æ•™ã€‚\n"+
+		        "          ä½ èµ¶å¿«åŽ»"+where+"è®¾é˜²é˜»æˆªï¼Œ\n"+
+			    "          åŠ¡å¿…æ¶ˆç­æ•Œäººçš„é¦–é¢†ï¼Œå¤šåŠ å°å¿ƒã€‚"; 
 
 }
 
@@ -50,7 +50,7 @@ void job(object ob,string where,int maxpot)
 if(!ob) return;
 if(environment(ob)->query("short")!=where && ob->query_condition("mingjiaojob"))
 {
-             tell_object(ob, HIY "\nÄã·ÀÊØµÄµØ·½²»¶Ô°É!ÎåÅÉÊ×ÁìÉ±½øÁËÃ÷½Ì£¬ÄãÈÎÎñÊ§°Ü£¡\n" NOR); 
+             tell_object(ob, HIY "\nä½ é˜²å®ˆçš„åœ°æ–¹ä¸å¯¹å§!äº”æ´¾é¦–é¢†æ€è¿›äº†æ˜Žæ•™ï¼Œä½ ä»»åŠ¡å¤±è´¥ï¼\n" NOR); 
 }
      guo->apply_condition("mingjiaojob",0);
      if(environment(ob)->query("short")==where&&ob->query_condition("mingjiaojob"))
@@ -59,7 +59,7 @@ if(environment(ob)->query("short")!=where && ob->query_condition("mingjiaojob"))
 	    {if (random(20)>15)
 			{ obj=new(__DIR__"wudang");   
 	          obj->do_copy(ob,maxpot,3);
-	          obj->set("title",HIY"Îäµ±ÅÉµÜ×Ó"NOR);     
+	          obj->set("title",HIY"æ­¦å½“æ´¾å¼Ÿå­"NOR);     
               obj->move(environment(ob));
               obj->kill_ob(ob);
 			}
@@ -67,14 +67,14 @@ if(environment(ob)->query("short")!=where && ob->query_condition("mingjiaojob"))
 			{
 	  	      obj=new(__DIR__"emei"); 
 		      obj->do_copy(ob,maxpot,1);
-	          obj->set("title",HIG"¶ëáÒÅÉµÜ×Ó"NOR);
+	          obj->set("title",HIG"å³¨åµ‹æ´¾å¼Ÿå­"NOR);
 	          obj->move(environment(ob));
               obj->kill_ob(ob);
 	          obj=new(__DIR__"shaolin");
-	           obj->set("title",HIW"ÉÙÁÖÅÉµÜ×Ó"NOR);
+	           obj->set("title",HIW"å°‘æž—æ´¾å¼Ÿå­"NOR);
 		      if (random(20)>5)
 			  {obj->do_copy(ob,maxpot,2);
-	           obj->set("title",HIW"ÉÙÁÖÅÉµÜ×Ó"NOR);
+	           obj->set("title",HIW"å°‘æž—æ´¾å¼Ÿå­"NOR);
 			  }
 			   else 
                obj->do_copy(ob,maxpot,1);
@@ -87,20 +87,20 @@ if(environment(ob)->query("short")!=where && ob->query_condition("mingjiaojob"))
 	    else 
 		 {if (present("menggu",environment(ob)))
 			{//present menggu dahan,then mission failed
-			 tell_room(environment(ob),HIC"ÃÉ¹Å±ø»Ó»ÓÊÖ£¬ÎåÅÉÊ×ÁìÏÈ×ß¡£\nÎåÅÉÊ×Áì´Ò´ÒÃ¦Ã¦µÄÀë¿ªÁË¡£\n"NOR);
-             tell_object(ob, HIY "\nÎåÅÉÊ×ÁìÉ±½øÁËÃ÷½Ì£¬ÄãÈÎÎñÊ§°Ü£¡\n" NOR); 
+			 tell_room(environment(ob),HIC"è’™å¤å…µæŒ¥æŒ¥æ‰‹ï¼Œäº”æ´¾é¦–é¢†å…ˆèµ°ã€‚\näº”æ´¾é¦–é¢†åŒ†åŒ†å¿™å¿™çš„ç¦»å¼€äº†ã€‚\n"NOR);
+             tell_object(ob, HIY "\näº”æ´¾é¦–é¢†æ€è¿›äº†æ˜Žæ•™ï¼Œä½ ä»»åŠ¡å¤±è´¥ï¼\n" NOR); 
 			}
  	     else{
 				obj=new(__DIR__"jianxi"); 
 				obj->do_copy(ob,maxpot);
-				obj->set("title",HIG"ÎåÅÉÊ×Áì"NOR);
+				obj->set("title",HIG"äº”æ´¾é¦–é¢†"NOR);
                                 obj->set_temp("hostmj",ob->query("id"));
 				obj->move(environment(ob));
-				message_vision(HIY"$N¿ñÐ¦²»ÒÑ£º¾ÍÆ¾ÄãÃÇ¼¸¸öÒ²Ïëµ²×¡ÎÒµÄÈ¥Â·?\n"NOR, obj);
+				message_vision(HIY"$Nç‹‚ç¬‘ä¸å·²ï¼šå°±å‡­ä½ ä»¬å‡ ä¸ªä¹Ÿæƒ³æŒ¡ä½æˆ‘çš„åŽ»è·¯?\n"NOR, obj);
 				obj->kill_ob(ob);
      guo->apply_condition("mingjiaojob",0);
 //				gift=new(__DIR__"mijian");
-//			Ìï	gift->set_temp("host",ob->query("id"));
+//			ç”°	gift->set_temp("host",ob->query("id"));
 //				gift->move(obj);
 				}
 		}

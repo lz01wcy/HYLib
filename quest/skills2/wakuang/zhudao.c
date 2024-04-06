@@ -1,5 +1,5 @@
-// zhujia.c Öı¼×·¿
-// ĞÇĞÇlywin 2000/9/2 
+// zhujia.c é“¸ç”²æˆ¿
+// æ˜Ÿæ˜Ÿlywin 2000/9/2 
 
 #include <ansi.h>
 inherit ROOM;
@@ -7,10 +7,10 @@ int do_zhujia(string arg);
 
  void create()
 {
-        set("short", "Öıµ¶·¿");
+        set("short", "é“¸åˆ€æˆ¿");
         set("long", @LONG
-ÕâÊÇÒ»¸öºÜÆ½³£ÆÕÍ¨µÄÖıµ¶·¿£¡ËÄÖÜ¶¼ÊÇÂÒÆß°ËÔãµÄÍ­Æ¤Ìú¿é£¬ÈËÃÇ
-°Ñ¼ñÀ´µÄ¿óÊ¯ÔÚÕâ¶ùÁ¶»¯ÒÔºóÖıÔì³É¸÷ÖÖÃûµ¶¡£
+è¿™æ˜¯ä¸€ä¸ªå¾ˆå¹³å¸¸æ™®é€šçš„é“¸åˆ€æˆ¿ï¼å››å‘¨éƒ½æ˜¯ä¹±ä¸ƒå…«ç³Ÿçš„é“œçš®é“å—ï¼Œäººä»¬
+æŠŠæ¡æ¥çš„çŸ¿çŸ³åœ¨è¿™å„¿ç‚¼åŒ–ä»¥åé“¸é€ æˆå„ç§ååˆ€ã€‚
 LONG
         );
 
@@ -63,23 +63,23 @@ int do_zhujia(object ob)
              !(ob = present("jing kuang", this_player())) &&
              !(ob = present("xuantie kuang", this_player())) &&
              !(ob = present("han tie", this_player())) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ¿óÊ¯£¬ÈçºÎÖıµ¶£¿\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰çŸ¿çŸ³ï¼Œå¦‚ä½•é“¸åˆ€ï¼Ÿ\n");
                  
         if ( (int)me->query("jing")<100)
-                return notify_fail("ÄãµÄ¾«Á¦²»×ã£¬ÎŞ·¨Öıµ¶¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ï¼Œæ— æ³•é“¸åˆ€ã€‚\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚºÜÃ¦£¡²»ÄÜÖıµ¶£¡\n");
+                return notify_fail("ä½ ç°åœ¨å¾ˆå¿™ï¼ä¸èƒ½é“¸åˆ€ï¼\n");
 
         if ( (int)me->query("qi")<100)
-                return notify_fail("ÄãµÄÌåÁ¦²»×ã£¬ÎŞ·¨Öıµ¶¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸è¶³ï¼Œæ— æ³•é“¸åˆ€ã€‚\n");
 
         if ( (int)me->query("neili")<150)
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Öıµ¶¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•é“¸åˆ€ã€‚\n");
 
-        message_vision(HIY"$NÏÈ½«¿óÊ¯·Å½øÂ¯ÖĞÁ¶»¯³É¿é×´×´¡£\n"NOR,me); 
-        message_vision(HIY"½Ó×Å$NÔÙÄÃ³öÒ»¸ö´ó´¸¿ªÊ¼Öıµ¶¡£\n"NOR,me); 
-        message_vision(HIY"²»Ò»»á¶ù£¡Ò»°Ñ·æÀûµÄµ¶°ÚÔÚÁË$NµÄÃæÇ°¡£\n"NOR,me); 
+        message_vision(HIY"$Nå…ˆå°†çŸ¿çŸ³æ”¾è¿›ç‚‰ä¸­ç‚¼åŒ–æˆå—çŠ¶çŠ¶ã€‚\n"NOR,me); 
+        message_vision(HIY"æ¥ç€$Nå†æ‹¿å‡ºä¸€ä¸ªå¤§é”¤å¼€å§‹é“¸åˆ€ã€‚\n"NOR,me); 
+        message_vision(HIY"ä¸ä¸€ä¼šå„¿ï¼ä¸€æŠŠé”‹åˆ©çš„åˆ€æ‘†åœ¨äº†$Nçš„é¢å‰ã€‚\n"NOR,me); 
         if (me->query("combat_exp")<1000000)
         {
         me->add("combat_exp",20+random(30));
@@ -95,7 +95,7 @@ int do_zhujia(object ob)
         me->add("neili",-100);
         me->start_busy(6); 
 
-        if ( ob->query("name") ==YEL"Í­¿óÊ¯"NOR )
+        if ( ob->query("name") ==YEL"é“œçŸ¿çŸ³"NOR )
         {
         destruct(ob);             
         ob1=new(__DIR__"weapon/dao/dao1");
@@ -107,13 +107,13 @@ int do_zhujia(object ob)
         me->add("work/zhudao", 1);       
         return 1;
         }
-        if ( ob->query("name") ==CYN"Ìú¿óÊ¯"NOR )
+        if ( ob->query("name") ==CYN"é“çŸ¿çŸ³"NOR )
         {
         destruct(ob);             
         if ( b1 < 70 ) 
         {
         me->add("work/zhudao",1);
-        return notify_fail("ÓÉÓÚÄãÖıµ¶Ö®¼¼Ì«µÍ£¬µ¶¸ù±¾²»ÄÜÓÃ£¡\n");
+        return notify_fail("ç”±äºä½ é“¸åˆ€ä¹‹æŠ€å¤ªä½ï¼Œåˆ€æ ¹æœ¬ä¸èƒ½ç”¨ï¼\n");
         }
         ob1=new(__DIR__"weapon/dao/dao2");
         b2 = b1/8;
@@ -124,13 +124,13 @@ int do_zhujia(object ob)
         me->add("work/zhudao", 1);       
         return 1;
         }
-        if ( ob->query("name") ==HIW"Òø¿óÊ¯"NOR )
+        if ( ob->query("name") ==HIW"é“¶çŸ¿çŸ³"NOR )
         {
         destruct(ob);             
         if ( b1 < 150 )
         {
         me->add("work/zhudao",1);
-        return notify_fail("ÓÉÓÚÄãÖıµ¶Ö®¼¼Ì«µÍ£¬µ¶¸ù±¾²»ÄÜÓÃ£¡\n");
+        return notify_fail("ç”±äºä½ é“¸åˆ€ä¹‹æŠ€å¤ªä½ï¼Œåˆ€æ ¹æœ¬ä¸èƒ½ç”¨ï¼\n");
         }
         ob1=new(__DIR__"weapon/dao/dao3");
         b2 = b1/6;
@@ -141,13 +141,13 @@ int do_zhujia(object ob)
         me->add("work/zhudao", 1);       
         return 1;
         }
-        if ( ob->query("name") ==HIY"½ğ¿óÊ¯"NOR )
+        if ( ob->query("name") ==HIY"é‡‘çŸ¿çŸ³"NOR )
         {
         destruct(ob);             
         if ( b1 < 220 )
         {
         me->add("work/zhudao",1);
-        return notify_fail("ÓÉÓÚÄãÖıµ¶Ö®¼¼Ì«µÍ£¬µ¶¸ù±¾²»ÄÜÓÃ£¡\n");
+        return notify_fail("ç”±äºä½ é“¸åˆ€ä¹‹æŠ€å¤ªä½ï¼Œåˆ€æ ¹æœ¬ä¸èƒ½ç”¨ï¼\n");
         }
         ob1=new(__DIR__"weapon/dao/dao4");
         b2 = b1/5;
@@ -158,13 +158,13 @@ int do_zhujia(object ob)
         me->add("work/zhudao", 1);       
         return 1;
         }
-        if ( ob->query("name") ==WHT"ĞşÌú¿óÊ¯"NOR )
+        if ( ob->query("name") ==WHT"ç„é“çŸ¿çŸ³"NOR )
         {
         destruct(ob);             
         if ( b1 < 300 )
         {
         me->add("work/zhudao",1);
-        return notify_fail("ÓÉÓÚÄãÖıµ¶Ö®¼¼Ì«µÍ£¬µ¶¸ù±¾²»ÄÜÓÃ£¡\n");
+        return notify_fail("ç”±äºä½ é“¸åˆ€ä¹‹æŠ€å¤ªä½ï¼Œåˆ€æ ¹æœ¬ä¸èƒ½ç”¨ï¼\n");
         }
         ob1=new(__DIR__"weapon/dao/dao5");
         b2 = b1/4;
@@ -176,13 +176,13 @@ int do_zhujia(object ob)
         return 1;
         }
         else
-        if ( ob->query("name") ==HIG"º®Ìú¿óÊ¯"NOR )
+        if ( ob->query("name") ==HIG"å¯’é“çŸ¿çŸ³"NOR )
         {
         destruct(ob);             
         if ( b1 < 400 )
         {
         me->add("work/zhudao",1);
-        return notify_fail("ÓÉÓÚÄãÖıµ¶Ö®¼¼Ì«µÍ£¬µ¶¸ù±¾²»ÄÜÓÃ£¡\n");
+        return notify_fail("ç”±äºä½ é“¸åˆ€ä¹‹æŠ€å¤ªä½ï¼Œåˆ€æ ¹æœ¬ä¸èƒ½ç”¨ï¼\n");
         }
         ob1=new(__DIR__"weapon/dao/dao6");
         b2 = b1/3;
@@ -194,13 +194,13 @@ int do_zhujia(object ob)
         return 1;
         }
         else
-        if ( ob->query("name") ==HIR"Ç§Äêº®Ìú"NOR )
+        if ( ob->query("name") ==HIR"åƒå¹´å¯’é“"NOR )
         {
         destruct(ob);             
         if ( b1 < 500 )
         {
         me->add("work/zhudao",1);
-        return notify_fail("ÓÉÓÚÄãÖıµ¶Ö®¼¼Ì«µÍ£¬µ¶¸ù±¾²»ÄÜÓÃ£¡\n");
+        return notify_fail("ç”±äºä½ é“¸åˆ€ä¹‹æŠ€å¤ªä½ï¼Œåˆ€æ ¹æœ¬ä¸èƒ½ç”¨ï¼\n");
         }
         ob1=new(__DIR__"weapon/dao/dao7");
         if ( b1 > 1000 )
@@ -219,6 +219,6 @@ int do_zhujia(object ob)
 
 int do_quit(string arg)
 {
-        write(this_player()->query("name")+"£¬°²ĞÄµÄÖıµ¶°É£¡\n");
+        write(this_player()->query("name")+"ï¼Œå®‰å¿ƒçš„é“¸åˆ€å§ï¼\n");
         return 1;
 }

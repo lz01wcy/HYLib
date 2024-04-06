@@ -3,22 +3,22 @@
 inherit SWORD;
 void create()
 {
-        set_name( CYN "ĞşÌú½£" NOR, ({ "xuantiesword" }) );
+        set_name( CYN "ç„é“å‰‘" NOR, ({ "xuantiesword" }) );
         set_weight(100000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("long",
                         
-"Ò»±úÊ®·Ö³ÁÖØµÄÌú½££¬´Ë½£ÊôÌìÏÂÈı¼şÉñ±øÀûÆ÷Ö®Ò»¡£½£Ö÷£ºÑî¹ı¡£\n"
+"ä¸€æŸ„ååˆ†æ²‰é‡çš„é“å‰‘ï¼Œæ­¤å‰‘å±å¤©ä¸‹ä¸‰ä»¶ç¥å…µåˆ©å™¨ä¹‹ä¸€ã€‚å‰‘ä¸»ï¼šæ¨è¿‡ã€‚\n"
 );
                set("weapon_prop/intelligence",2);
  		 set("value", 38000);
 	       
                 set("material", "steel");
-                set("wield_msg", "Ö»ÌıîõµÄÒ»Éù£¬$NÒÑ°Ñ$n×°±¸ÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$nÒÑ¾­ÈëÇÊ¡£\n");
+                set("wield_msg", "åªå¬é“›çš„ä¸€å£°ï¼Œ$Nå·²æŠŠ$nè£…å¤‡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$nå·²ç»å…¥é˜ã€‚\n");
         }
 
         init_sword(500);

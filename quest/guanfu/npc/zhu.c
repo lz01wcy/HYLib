@@ -1,14 +1,14 @@
-//  zhu Öì°²¹ú
+//  zhu æœ±å®‰å›½
  
 inherit NPC;
  
 void create()
 {
-	set_name("Öì°²¹ú", ({ "zhu anguo", "zhu" }));
+	set_name("æœ±å®‰å›½", ({ "zhu anguo", "zhu" }));
 //	set("nickname", "");
 	set("long", 
-        "³¯Í¢×·²¶µÄÒª·¸£¬Ò»Ö±·´¶Ô³¯Í¢¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "æœå»·è¿½æ•çš„è¦çŠ¯ï¼Œä¸€ç›´åå¯¹æœå»·ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 37);
 	set("attitude", "peaceful");
 	set("shen", 1000);

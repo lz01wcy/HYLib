@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIM"Ñ©É½·Éºü"NOR, ({ "xsfh" }) );
+    set_name(HIM"é›ªå±±é£ç‹"NOR, ({ "xsfh" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-           set("unit", "±¾");
+           set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»¡£\n");
+            set("long", "ç¥ä¹¦ä¹‹ä¸€ã€‚\n");
           }
 
     setup();

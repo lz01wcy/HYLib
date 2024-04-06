@@ -1,16 +1,16 @@
-// xiyuan.c ÏåÑôÏ·Ôº 
-// ÐÇÐÇlywin 2000/6/22 
+// xiyuan.c è¥„é˜³æˆé™¢ 
+// æ˜Ÿæ˜Ÿlywin 2000/6/22 
 
 #include <ansi.h>
 inherit ROOM;
 
  void create()
 {
-        set("short", "ÏåÑôÏ·Ôº");
+        set("short", "è¥„é˜³æˆé™¢");
         set("long", @LONG
-Õâ¶ùÊÇÏåÑô×îÓÐÃûµÄ´óÏ·Ôº£¬ÔÚÈ«¹ú¸÷µØÒ²ÓÐºÜ´óµÄÃûÆø£¬ÓÉÕâ¸öÏ·
-Ôº×éÖ¯µÄÏ·°à×Ó³£³£µ½¸÷µØÈ¥½øÐÐ±íÑÝ£¬·Ç³£µÄÊÜºÃÆÀ¡£Äã¿ÉÒÔÔÚÕâ¶ùÏò
-¹ÜÊÂ´òÌýÓÐ¹Ø¹¤×÷µÄÊÂ¡££¨ask guan about job£©
+è¿™å„¿æ˜¯è¥„é˜³æœ€æœ‰åçš„å¤§æˆé™¢ï¼Œåœ¨å…¨å›½å„åœ°ä¹Ÿæœ‰å¾ˆå¤§çš„åæ°”ï¼Œç”±è¿™ä¸ªæˆ
+é™¢ç»„ç»‡çš„æˆç­å­å¸¸å¸¸åˆ°å„åœ°åŽ»è¿›è¡Œè¡¨æ¼”ï¼Œéžå¸¸çš„å—å¥½è¯„ã€‚ä½ å¯ä»¥åœ¨è¿™å„¿å‘
+ç®¡äº‹æ‰“å¬æœ‰å…³å·¥ä½œçš„äº‹ã€‚ï¼ˆask guan about jobï¼‰
 LONG
         );
 

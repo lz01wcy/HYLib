@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("½ÙïÚÇ¿µÁ", ({ "biao robber", "robber" }) );
-        set("long","ÕâÐ©Ç¿µÁÐ¥¾ÛÉ½ÁÖ£¬×¨ÒÔ´ò½ÙïÚÒøÎªÉú¡£\n");
+        set_name("åŠ«é•–å¼ºç›—", ({ "biao robber", "robber" }) );
+        set("long","è¿™äº›å¼ºç›—å•¸èšå±±æž—ï¼Œä¸“ä»¥æ‰“åŠ«é•–é“¶ä¸ºç”Ÿã€‚\n");
 
         set("attitude", "heroism");
 
@@ -55,9 +55,9 @@ void create()
  
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "½ÙïÚÇ¿µÁºÈµÀ£º¿ì¿ì·ÅÏÂïÚÒø£¬ÁôÄãÒ»ÌõÉúÂ·£¡\n",
-                "½ÙïÚÇ¿µÁºÈµÀ£ºß¾£¡´ËÂ·ÊÇÎÒ¿ª£¬´ËÊ÷ÊÇÎÒÔÔ£¬ÒªÏë´Ó´Ë¹ý£¬ÁôÏÂïÚÒøÀ´£¡\n",
-                  "½ÙïÚÇ¿µÁºÈµÀ£ºÀÏ×Ó¿´ÄãÊÇÒªÇ®»¹ÊÇÒªÃü£¡\n"
+                "åŠ«é•–å¼ºç›—å–é“ï¼šå¿«å¿«æ”¾ä¸‹é•–é“¶ï¼Œç•™ä½ ä¸€æ¡ç”Ÿè·¯ï¼\n",
+                "åŠ«é•–å¼ºç›—å–é“ï¼šå‘”ï¼æ­¤è·¯æ˜¯æˆ‘å¼€ï¼Œæ­¤æ ‘æ˜¯æˆ‘æ ½ï¼Œè¦æƒ³ä»Žæ­¤è¿‡ï¼Œç•™ä¸‹é•–é“¶æ¥ï¼\n",
+                  "åŠ«é•–å¼ºç›—å–é“ï¼šè€å­çœ‹ä½ æ˜¯è¦é’±è¿˜æ˜¯è¦å‘½ï¼\n"
         }) );
 
         setup(); 
@@ -88,7 +88,7 @@ void checking(object ob)
                 return;
         }
 
-        command("say "+ob->name()+"£¬°ÑïÚÒøÁôÏÂ£¬·ÅÄã×ßÂ·£¡£¡\n");
+        command("say "+ob->name()+"ï¼ŒæŠŠé•–é“¶ç•™ä¸‹ï¼Œæ”¾ä½ èµ°è·¯ï¼ï¼\n");
         set_leader(ob);
 
         kill_ob(ob);
@@ -189,7 +189,7 @@ int heal_up()
 
 void leave()
 {
-        message("vision",HIB+name()+"¼±¼±Ã¦Ã¦µØ×ß¿ªÁË¡£\n" NOR, 
+        message("vision",HIB+name()+"æ€¥æ€¥å¿™å¿™åœ°èµ°å¼€äº†ã€‚\n" NOR, 
                 environment(), this_object() );
         destruct(this_object());
 }

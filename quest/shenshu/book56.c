@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIC"Æ®Ïã½£Óê"NOR, ({ "pxjy" }) );
+    set_name(HIC"é£˜é¦™å‰‘é›¨"NOR, ({ "pxjy" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»¡£\n");
+            set("long", "ç¥žä¹¦ä¹‹ä¸€ã€‚\n");
           }
 
     setup();

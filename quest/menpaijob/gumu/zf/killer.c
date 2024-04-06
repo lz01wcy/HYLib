@@ -2,12 +2,12 @@
 inherit NPC;
 
 string *nm1_jp =({
-"ºÚÒÂ"
+"é»‘è¡£"
 });
 
     
 string *nm2_jp =({
-"Å®×Ó",
+"å¥³å­",
 });
 
 void create()
@@ -15,10 +15,10 @@ void create()
        object me;
    int i = random(sizeof(nm1_jp));
       me=this_player();
-set_name(HIB "ºÚÒÂÅ®×Ó" NOR, ({ me->query("id")+"-heiyi"}));
-    set("gender", "Å®ÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
+set_name(HIB "é»‘è¡£å¥³å­" NOR, ({ me->query("id")+"-heiyi"}));
+    set("gender", "å¥³æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
         set("long",
-"Ò»¸öµÀ¹Ã×°°çµÄÅ®×Ó¡£\n");
+"ä¸€ä¸ªé“å§‘è£…æ‰®çš„å¥³å­ã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
 set("dex",100);
@@ -101,7 +101,7 @@ void init( )
 void hunting()
 {
 object ob=this_object();
-command("say µØÐÎÒÑ¾­²é¿´ÍêÁË£¬¿ÉÒÔÏòÊ¦¸¸½»´ýÁË!");
+command("say åœ°å½¢å·²ç»æŸ¥çœ‹å®Œäº†ï¼Œå¯ä»¥å‘å¸ˆçˆ¶äº¤å¾…äº†!");
 destruct(ob);
 }
 
@@ -114,11 +114,11 @@ void die()
         me = query_temp("last_damage_from");
         
 if (!me) return;
-        message_vision(WHT"$N²Ò½ÐÒ»Éù£¬µ¹µØ¶øÍö£¡¡£\n"NOR,ob,me);
+        message_vision(WHT"$Næƒ¨å«ä¸€å£°ï¼Œå€’åœ°è€Œäº¡ï¼ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-        if(me->query("family/family_name") == "¹ÅÄ¹ÅÉ" )   {
-        message("vision", me->name() + HIG"ÓÉÓÚ³É¹¦µÄ±£ÎÀÁË¹ÅÄ¹ÅÉ,Ôö¼ÓÁË200¾­ÑéºÍ130Ç±ÄÜ¡£\n"NOR, me);
+        if(me->query("family/family_name") == "å¤å¢“æ´¾" )   {
+        message("vision", me->name() + HIG"ç”±äºŽæˆåŠŸçš„ä¿å«äº†å¤å¢“æ´¾,å¢žåŠ äº†200ç»éªŒå’Œ130æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",200);
         me->add("potential",130);
         me->delete_temp("gumukill");

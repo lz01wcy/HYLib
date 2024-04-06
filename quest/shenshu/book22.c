@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(BLU"·çÔÆµÚÒ»µ¶"NOR, ({ "fyblade" }) );
+    set_name(BLU"é£Žäº‘ç¬¬ä¸€åˆ€"NOR, ({ "fyblade" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	        
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»,ÈôÊÇÄÜÕÒÆë·çÁåÖÐµÄµ¶Éù£¬±ß³ÇÀË×ÓºÍÌìÑÄÃ÷ÔÂµ¶¾ÍÄÜÖØ×é(zu)¡£\n");
+            set("long", "ç¥žä¹¦ä¹‹ä¸€,è‹¥æ˜¯èƒ½æ‰¾é½é£Žé“ƒä¸­çš„åˆ€å£°ï¼Œè¾¹åŸŽæµªå­å’Œå¤©æ¶¯æ˜Žæœˆåˆ€å°±èƒ½é‡ç»„(zu)ã€‚\n");
           }
 
     setup();
@@ -38,24 +38,24 @@ int do_zu()
 		while (sizeinv--)
 		{
        			if (inv[sizeinv]->is_character())  
-     				return notify_fail("ÄãÏÈ°ÑÉíÉÏµÄÈË·ÅÏÂ°É!!\n");
+     				return notify_fail("ä½ å…ˆæŠŠèº«ä¸Šçš„äººæ”¾ä¸‹å§!!\n");
        		
 		}
     if (!(ob = present("fengling", me)) ||
         !(ob = present("bclangzi", me)) ||
         !(ob = present("skyblade", me)))
-	tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
 else {
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
 
     if(!ob->query("dynamic_quest"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
-      message_vision("$N°Ñ´Ó»³ÖÐ·­³öµÄ±ß³ÇÀË×Ó£¬·çÁåÖÐµÄµ¶Éù£¬ÌìÑÄÃ÷ÔÂµ¶£¬ºÍÊÖÖÐµÄÉñµñÏÀÂÂºÏ²¢³ÉÁËÒ»±¾¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+      message_vision("$NæŠŠä»Žæ€€ä¸­ç¿»å‡ºçš„è¾¹åŸŽæµªå­ï¼Œé£Žé“ƒä¸­çš„åˆ€å£°ï¼Œå¤©æ¶¯æ˜Žæœˆåˆ€ï¼Œå’Œæ‰‹ä¸­çš„ç¥žé›•ä¾ ä¾£åˆå¹¶æˆäº†ä¸€æœ¬ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("fengling",me));
 	destruct(present("bclangzi",me));

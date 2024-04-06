@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// baodan.c ±ª×Óµ¨
+// baodan.c è±¹å­èƒ†
 // sdong 08/06/98
 
 #include <ansi.h>
@@ -16,13 +16,13 @@ void init()
 
 void create()
 {
-		  set_name("±ª×Óµ¨", ({ "baozi dan", "dan" }) );
+		  set_name("è±¹å­èƒ†", ({ "baozi dan", "dan" }) );
 		  set_weight(1000);
 		  if( clonep() )
 					 set_default_object(__FILE__);
 		  else {
-					 set("unit", "¿Å");
-					 set("long", CYN"ÕâÊÇÒ»¿ÅÏóÈ­Í·Ò»Ñù´óµÄ±ª×Óµ¨£¬ÓÖºÚÓÖÂÌ¡£\n"NOR);
+					 set("unit", "é¢—");
+					 set("long", CYN"è¿™æ˜¯ä¸€é¢—è±¡æ‹³å¤´ä¸€æ ·å¤§çš„è±¹å­èƒ†ï¼Œåˆé»‘åˆç»¿ã€‚\n"NOR);
 					 set("value", 10000);
 					 set("medicine", 1);
 		  }
@@ -33,7 +33,7 @@ int do_eat(string arg)
 {
         object me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 		  me->add("food", 50);
 
@@ -43,7 +43,7 @@ int do_eat(string arg)
 					 me->add("eff_jingli", -1);
 					 me->set("jingli", 0);
 					 me->apply_condition("medicine", 30);
-					 message_vision(HIR "$N³ÔÏÂÒ»¿Å±ª×Óµ¨£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+					 message_vision(HIR "$Nåƒä¸‹ä¸€é¢—è±¹å­èƒ†ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
 					 call_out("destroy", 0);
 					 return 1;
 		  }
@@ -58,7 +58,7 @@ int do_eat(string arg)
 		  me->add("jingli", 300);
 		  me->apply_condition("medicine",
 		  me->query_condition("medicine")+30);
-		  message_vision(HIY "$NÍÌÏÂÒ»¿Å±ª×Óµ¨£¬Ö»¾õµÃÈ«Éí³äÂúÈÈÆø£¬¶·Ö¾°ºÑï£¬»ìÉíÓĞ¾¢¡£\n" NOR, me);
+		  message_vision(HIY "$Nåä¸‹ä¸€é¢—è±¹å­èƒ†ï¼Œåªè§‰å¾—å…¨èº«å……æ»¡çƒ­æ°”ï¼Œæ–—å¿—æ˜‚æ‰¬ï¼Œæ··èº«æœ‰åŠ²ã€‚\n" NOR, me);
 
 		  remove_call_out("destroy");
 		  call_out("destroy", 0);

@@ -1,5 +1,5 @@
-// yaocao.c Ò©²İ  
-// ĞÇĞÇlywin 2000/6/15
+// yaocao.c è¯è‰  
+// æ˜Ÿæ˜Ÿlywin 2000/6/15
 
 #include <ansi.h>
 inherit ITEM;  
@@ -13,17 +13,17 @@ string location;
 file = read_file("/clone/medicine/yaocainame");
 roomlines = explode(file,"\n");	
 location = roomlines[random(sizeof(roomlines))];
-        //set_name(HIG "Õä¹óÒ©²İ" NOR,({"yao cao", "yao"}));
-set_name(order[random(13)]+"ÆÕÍ¨µÄ"+location+NOR,({"yao cao", "yao"}));
+        //set_name(HIG "çè´µè¯è‰" NOR,({"yao cao", "yao"}));
+set_name(order[random(13)]+"æ™®é€šçš„"+location+NOR,({"yao cao", "yao"}));
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+                set("unit", "æ ª");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_put",1);
 		set("yaocao",1);
 		set("lev",1);
-                set("long", "ÕâÊÇÒ»ÖêÉú³¤ÔÚÃÜÁÖÖĞµÄÎŞÃû²İÒ©£¬Ò»°ãÈË¶¼»áÎóÈÏ³ÉÔÓ²İ¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æ ªç”Ÿé•¿åœ¨å¯†æ—ä¸­çš„æ— åè‰è¯ï¼Œä¸€èˆ¬äººéƒ½ä¼šè¯¯è®¤æˆæ‚è‰ã€‚\n");
              }
         setup();
 }
@@ -40,14 +40,14 @@ int do_eat(string arg)
 {
 	object me = this_player();
 
-	if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if(!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if(!present(this_object(), me))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 	if( me->is_busy() )
-		return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+		return notify_fail("åˆ«æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ«å™ç€äº†ã€‚\n");
 	me->add("food",20);
 	me->add("water",20);
-	write("ÄãÈı¿ÚÁ½¿Ú°Ñ"+this_object()->query("name")+"³ÔÁËÏÂÈ¥¡£\n");
+	write("ä½ ä¸‰å£ä¸¤å£æŠŠ"+this_object()->query("name")+"åƒäº†ä¸‹å»ã€‚\n");
 	destruct(this_object());
 	return 1;
 }

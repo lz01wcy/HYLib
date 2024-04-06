@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("Î÷ÏÄ±ø", ({ "xixiabing", "bing" }));
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
-//        set_name("¶«ÑóÙÁ¿Ü", ({ "wokou", "japan wokou" }) );
+    set_name("è¥¿å¤å…µ", ({ "xixiabing", "bing" }));
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
+//        set_name("ä¸œæ´‹å€­å¯‡", ({ "wokou", "japan wokou" }) );
         set("long",
-"Ò»¸öÉí¸ß´óµ«ÂúÁ³ÓÖÊÇÉË°Ì¼ÓºáÈâµÄÎ÷ÏÄ±ø¡£\n");
+"ä¸€ä¸ªèº«é«˜å¤§ä½†æ»¡è„¸åˆæ˜¯ä¼¤ç–¤åŠ æ¨ªè‚‰çš„è¥¿å¤å…µã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
-	set("nickname",HIC"Î÷ÏÄ¾«±ø"NOR);
+	set("nickname",HIC"è¥¿å¤ç²¾å…µ"NOR);
   set("force_factor",2+random(190));
   set("max_qi",300+random(390));
   set("max_jing",300+random(390));
@@ -33,8 +33,8 @@ void create()
         }) );
         set("chat_chance", 10);
         set("chat_msg", ({
-                "Î÷ÏÄ±øºÈµÀ£ºÉ±°¡µÄ£¡£¡\n",
-                "Î÷ÏÄ±øÐ¦µÀ£ºÕâ´ÎÒ»¶¨ÒªÏûÃðÄÏÂù!\n",
+                "è¥¿å¤å…µå–é“ï¼šæ€å•Šçš„ï¼ï¼\n",
+                "è¥¿å¤å…µç¬‘é“ï¼šè¿™æ¬¡ä¸€å®šè¦æ¶ˆç­å—è›®!\n",
                 (: random_move :),
         }) );
 
@@ -91,16 +91,16 @@ void die()
         
 if (me)
 {
-        message_vision(WHT"$N´ó½ÐÒ»Éù,´óÏÄÍòËê!!µ¹µØ¶øÍö¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå¤§å«ä¸€å£°,å¤§å¤ä¸‡å²!!å€’åœ°è€Œäº¡ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
         if((int)me->query("combat_exp") < 400000)   {
-        message("vision", me->name() + "ÓÉÓÚ³É¹¦µÄ±£ÎÀÁË×æ¹ú,Ôö¼ÓÁË450¾­ÑéºÍ250Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "ç”±äºŽæˆåŠŸçš„ä¿å«äº†ç¥–å›½,å¢žåŠ äº†450ç»éªŒå’Œ250æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",400);
         me->add("potential",250);
         destruct(ob);
         }
-        message("vision", me->name() + "³É¹¦µÄ±£ÎÀÁË×æ¹ú¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸçš„ä¿å«äº†ç¥–å›½ã€‚\n", me);
         me->add("score",2);
         me->add("shen",10);
         destruct(ob);

@@ -7,15 +7,15 @@ int consider_lv(object ob,int a);
 
 void create()
 {
-        set_name("ÁîÅÆ", ({ "lingpai"}));
-        set("long", "´ý¶¨");
+        set_name("ä»¤ç‰Œ", ({ "lingpai"}));
+        set("long", "å¾…å®š");
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
                 set("value", 60);
-                set("unit", "¿é");
+                set("unit", "å—");
         }
         setup();
 }
@@ -29,20 +29,20 @@ int do_shouzhang(string arg)
 object ob=this_object(),me=this_player();
 string targ;
         if (!arg||!ob=present(arg,environment(me)))
-                return notify_fail("ÄãÒª´ÌÉ±Ë­£¿\n");
+                return notify_fail("ä½ è¦åˆºæ€è°ï¼Ÿ\n");
         targ=ob->query("name");
 if (userp(ob))
-return notify_fail("ÄãÏë¸ÉÊ²Ã´!!\n");
+return notify_fail("ä½ æƒ³å¹²ä»€ä¹ˆ!!\n");
         if ( targ != me->query_temp("menggu_job_target") )
-return notify_fail("ÕâÊÇ´ÌÉ±"+me->query_temp("menggu_job_target")+"µÄÁîÅÆ!!\n");
+return notify_fail("è¿™æ˜¯åˆºæ€"+me->query_temp("menggu_job_target")+"çš„ä»¤ç‰Œ!!\n");
 
          if(me->query_condition("menggu_mission")<=1)
-                return notify_fail("Äã²»ÄÜÓÃÕâ¿éÁîÅÆ×öÈÎÎñ¡£\n");
-        if (userp(ob)) return notify_fail("ÄãÅª´íÈËÁË°É£¿\n");
+                return notify_fail("ä½ ä¸èƒ½ç”¨è¿™å—ä»¤ç‰Œåšä»»åŠ¡ã€‚\n");
+        if (userp(ob)) return notify_fail("ä½ å¼„é”™äººäº†å§ï¼Ÿ\n");
 
         if (me->query_temp("mgjob")!=1)
-                return notify_fail("Äã²»ÄÜÓÃÕâ¿éÁîÅÆÈ¥ÊÕÕÊ¡£\n");
-        message_vision(HIG"\n$NÔÚËÄÖÜÂñ·üÁËÏÂÀ´!¡±\n"NOR,me);
+                return notify_fail("ä½ ä¸èƒ½ç”¨è¿™å—ä»¤ç‰ŒåŽ»æ”¶å¸ã€‚\n");
+        message_vision(HIG"\n$Nåœ¨å››å‘¨åŸ‹ä¼äº†ä¸‹æ¥!â€\n"NOR,me);
 	ob->set_temp("must_killby",me->query("id"));
         me->set_temp("mgjob",2);
        call_out("mgjob_1", 5, me, ob);
@@ -77,8 +77,8 @@ int mgjob_1(object me,object ob)
         newob->set_skill("literate", me->query_skill("force")*2/3);
         newob->set("shen",(me->query("combat_exp")/20));
         newob->move(environment(me));
-        message_vision("\n" + HIW + "$N·¢ÏÖÀ´½ÓÍ·µÄÈËÀ´ÁË!\n"NOR, me);
-        message_vision("\n" + HIR + "$N¶Ô$n´óºÈÒ»Éù£º¡°ÄãµÈÓë´óºº×ö¶Ô£¬ÕÒËÀ£¡¡±\n"NOR, me, newob);
+        message_vision("\n" + HIW + "$Nå‘çŽ°æ¥æŽ¥å¤´çš„äººæ¥äº†!\n"NOR, me);
+        message_vision("\n" + HIR + "$Nå¯¹$nå¤§å–ä¸€å£°ï¼šâ€œä½ ç­‰ä¸Žå¤§æ±‰åšå¯¹ï¼Œæ‰¾æ­»ï¼â€\n"NOR, me, newob);
         me->kill_ob(newob);
         newob->kill_ob(me);
         me->kill_ob(ob);

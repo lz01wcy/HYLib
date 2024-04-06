@@ -2,24 +2,24 @@
 inherit NPC;
 
 string *nm1_jp =({
-"½ðÒÁÕË","³É¼ªË¼","´óºÃÉ½","ÈÕ²»Âä","½ðÍõ³¯",
+"é‡‘ä¼Šè´¦","æˆå‰æ€","å¤§å¥½å±±","æ—¥ä¸è½","é‡‘çŽ‹æœ",
 });
 
     
 string *nm2_jp =({
-"ºº",
+"æ±‰",
 });
 
 void create()
 {
    int i = random(sizeof(nm1_jp));
     set_name(nm1_jp[i]+nm2_jp[random(sizeof(nm2_jp))], ({"jianxi"}));
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
         set("long",
-"Ò»¸öÉí¸ß´óµ«ÂúÁ³ÓÖÊÇÉË°Ì¼ÓºáÈâµÄÃÉ¹ÅÈË¡£\n");
+"ä¸€ä¸ªèº«é«˜å¤§ä½†æ»¡è„¸åˆæ˜¯ä¼¤ç–¤åŠ æ¨ªè‚‰çš„è’™å¤äººã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
-	set("nickname",HIR"ÃÉ¹Å¼éÏ¸"NOR);
+	set("nickname",HIR"è’™å¤å¥¸ç»†"NOR);
   set("max_qi",5900+random(1890));
   set("max_jing",3900+random(1890));
   set("max_sen",3900+random(1890));
@@ -102,7 +102,7 @@ void init( )
 void hunting()
 {
 object ob=this_object();
-write(HIW"Ö»Ìý£¬³ÇÍâÈýÉùÁîÏì!ÃÉ¹Å¼éÏ¸Èö³öÁËÏåÑô!\n"NOR);
+write(HIW"åªå¬ï¼ŒåŸŽå¤–ä¸‰å£°ä»¤å“!è’™å¤å¥¸ç»†æ’’å‡ºäº†è¥„é˜³!\n"NOR);
 destruct(ob);
 }
 void die()
@@ -114,10 +114,10 @@ void die()
         
 if (me)
 {
-        message_vision(WHT"$N´ó½ÐÒ»Éù,´óººÍòËê!!µ¹µØ¶øÍö¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå¤§å«ä¸€å£°,å¤§æ±‰ä¸‡å²!!å€’åœ°è€Œäº¡ã€‚\n"NOR,ob,me);
         me->add("score",50);
         if((int)me->query("combat_exp") < 2300000)   {
-        message("vision", me->query("name") + HIG"ÓÉÓÚ³É¹¦µÄ±£ÎÀÁËÏåÑô,Ôö¼ÓÁË200¾­ÑéºÍ100Ç±ÄÜ¡£\n"NOR, me);
+        message("vision", me->query("name") + HIG"ç”±äºŽæˆåŠŸçš„ä¿å«äº†è¥„é˜³,å¢žåŠ äº†200ç»éªŒå’Œ100æ½œèƒ½ã€‚\n"NOR, me);
         me->add("combat_exp",200);
         me->add("potential",100);
 }

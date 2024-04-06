@@ -1,14 +1,14 @@
-// zhike.c Öª¿Í
+// zhike.c çŸ¥å®¢
 
 inherit NPC;
 #include <ansi.h>
 
 void create()
 {
-        set_name(HIM"×óÈý"NOR, ({ "riyue hufa", "hufa" }));
+        set_name(HIM"å·¦ä¸‰"NOR, ({ "riyue hufa", "hufa" }));
         set("long",
-                "ËûÊÇÈÕÔÂÉñ½Ì×ó»¤·¨¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–æ˜¯æ—¥æœˆç¥žæ•™å·¦æŠ¤æ³•ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -44,10 +44,10 @@ void create()
         set_temp("apply/armor", 450);
         set_temp("apply/damage", 100);
 
-        create_family("ÈÕÔÂÉñ½Ì", 3, "×ó»¤·¨");
+        create_family("æ—¥æœˆç¥žæ•™", 3, "å·¦æŠ¤æ³•");
         set("chat_chance",2);
         set("chat_msg", ({
-            "×ó»¤·¨ËµµÀ£º×î½üÓÐ¹Ù±øÀ´×¥ÎÒ½ÌµÜ×Ó£¬ÎÒµÈÒ»¶¨Òª¾«ÐÄ»¤ÎÀ(huwei)£¬²»¿ÉË¿ºÁÐ¸´ù¡£\n"
+            "å·¦æŠ¤æ³•è¯´é“ï¼šæœ€è¿‘æœ‰å®˜å…µæ¥æŠ“æˆ‘æ•™å¼Ÿå­ï¼Œæˆ‘ç­‰ä¸€å®šè¦ç²¾å¿ƒæŠ¤å«(huwei)ï¼Œä¸å¯ä¸æ¯«æ‡ˆæ®†ã€‚\n"
         }));
 
         setup();
@@ -72,10 +72,10 @@ void greeting(object ob)
         mapping myfam;
 
         myfam = (mapping)ob->query("family");
-        if(!myfam || myfam["family_name"] != "ÈÕÔÂÉñ½Ì")
-              say ("×ó»¤·¨ÀäÀäµØËµ£ºÕâÎ»"+RANK_D->query_respect(ob) + "£¬²»ÒªÔÙÍùÀï×ßÁË¡£\n");
+        if(!myfam || myfam["family_name"] != "æ—¥æœˆç¥žæ•™")
+              say ("å·¦æŠ¤æ³•å†·å†·åœ°è¯´ï¼šè¿™ä½"+RANK_D->query_respect(ob) + "ï¼Œä¸è¦å†å¾€é‡Œèµ°äº†ã€‚\n");
         else
-              say ("×ó»¤·¨ÀäÀäµØËµ£ºÕâÎ»"+RANK_D->query_respect(ob) + "£¬½ÌÖ÷ÔÚÕÐ¼¯µÜ×Ó£¬¿ìÉÏÉ½°É¡£\n");
+              say ("å·¦æŠ¤æ³•å†·å†·åœ°è¯´ï¼šè¿™ä½"+RANK_D->query_respect(ob) + "ï¼Œæ•™ä¸»åœ¨æ‹›é›†å¼Ÿå­ï¼Œå¿«ä¸Šå±±å§ã€‚\n");
         return;
 
 }
@@ -88,29 +88,29 @@ int do_volunteer()
         int i;
 
         if(me->query_condition("riyuejob")>0)
-           return notify_fail("×ó»¤·¨¶ÔÄãËµ£ºÄãÏÈÐÝÏ¢Ò»»áÔÙÀ´¡£\n");
+           return notify_fail("å·¦æŠ¤æ³•å¯¹ä½ è¯´ï¼šä½ å…ˆä¼‘æ¯ä¸€ä¼šå†æ¥ã€‚\n");
 
         if (me->query_temp("in_guard")) 
-           return notify_fail("×ó»¤·¨¶ÔÄãËµ£ºÄã×¨ÐÄÊØºÃÆ½¶¨ÖÝ£¬±ðÏë´òÁ½·Ý¹¤¡£\n");
+           return notify_fail("å·¦æŠ¤æ³•å¯¹ä½ è¯´ï¼šä½ ä¸“å¿ƒå®ˆå¥½å¹³å®šå·žï¼Œåˆ«æƒ³æ‰“ä¸¤ä»½å·¥ã€‚\n");
 
-        if( me->query("family/family_name") != "ÈÕÔÂÉñ½Ì")
+        if( me->query("family/family_name") != "æ—¥æœˆç¥žæ•™")
            {
-            message_vision("×ó»¤·¨´óºÈÒ»Éù£ºÄãÊÇÄÄÀïÀ´µÄ£¿ÎÒÃ»¼û¹ýÄã£¡\n", me);
+            message_vision("å·¦æŠ¤æ³•å¤§å–ä¸€å£°ï¼šä½ æ˜¯å“ªé‡Œæ¥çš„ï¼Ÿæˆ‘æ²¡è§è¿‡ä½ ï¼\n", me);
                       return 1;
            }
 
 
         if (me->query_temp("in_guard")) 
-           return notify_fail("×ó»¤·¨¶ÔÄãËµ£ºÄã×¨ÐÄÊØºÃÆ½¶¨ÖÝ£¬±ðÏë´òÁ½·Ý¹¤¡£\n");
+           return notify_fail("å·¦æŠ¤æ³•å¯¹ä½ è¯´ï¼šä½ ä¸“å¿ƒå®ˆå¥½å¹³å®šå·žï¼Œåˆ«æƒ³æ‰“ä¸¤ä»½å·¥ã€‚\n");
 
         ob = users();
         for (i=sizeof(ob); i>2; i--)
         {
                 if (ob[i-1]->query_temp("in_guard"))
-                return notify_fail("×ó»¤·¨¶ÔÄãËµ£ºÒÑ¾­ÓÐÈËÔÚÆ½¶¨ÖÝ»¤·¨ÁË£¬ÄãÒ»»áÔÙÀ´°É¡£\n");
+                return notify_fail("å·¦æŠ¤æ³•å¯¹ä½ è¯´ï¼šå·²ç»æœ‰äººåœ¨å¹³å®šå·žæŠ¤æ³•äº†ï¼Œä½ ä¸€ä¼šå†æ¥å§ã€‚\n");
         }
-        tell_room(environment(me),me->query("name")+"¿ªÊ¼ÔÚÆ½¶¨ÖÝ»¤·¨ÖµÊØ¡£\n");
-	me->set("guard", HIG"ÈÕÔÂ»¤·¨"NOR);
+        tell_room(environment(me),me->query("name")+"å¼€å§‹åœ¨å¹³å®šå·žæŠ¤æ³•å€¼å®ˆã€‚\n");
+	me->set("guard", HIG"æ—¥æœˆæŠ¤æ³•"NOR);
         me->set_temp("in_guard",1); 
         me->save();
         remove_call_out("end_guard");
@@ -126,7 +126,7 @@ void clone_meng(object me)
 	int maxexp;
 	maxskill=me->query_skill("force");
 	maxexp=me->query("combat_exp");
-        tell_room(environment(me),"É½ÏÂÍ»È»³åÉÏÀ´Ò»»ï¹Ù±ø¡£\n");
+        tell_room(environment(me),"å±±ä¸‹çªç„¶å†²ä¸Šæ¥ä¸€ä¼™å®˜å…µã€‚\n");
         ob=new("/quest/menpaijob/riyue/mengmian.c");
         ob->move("/d/heimuya/pingdingzhou");
         ob->set("combat_exp",maxexp);
@@ -137,9 +137,9 @@ void clone_meng(object me)
         ob->set_skill("dodge",maxskill);        
 
 
-	ob->set("title",HIR"¹Ù¸®¾«±ø"NOR);
+	ob->set("title",HIR"å®˜åºœç²¾å…µ"NOR);
 	ob->kill_ob(me);
-	message_vision(HIR"\n$N¶Ô×Å$n´ó½ÐÒ»Éù£¬É±°¡!¡£\n"NOR,ob,me); 
+	message_vision(HIR"\n$Nå¯¹ç€$nå¤§å«ä¸€å£°ï¼Œæ€å•Š!ã€‚\n"NOR,ob,me); 
         ob=new("/quest/menpaijob/riyue/mengmian.c");
         ob->move("/d/heimuya/pingdingzhou");
         ob->set("combat_exp",maxexp);
@@ -150,9 +150,9 @@ void clone_meng(object me)
         ob->set_skill("dodge",maxskill);        
 
 
-	ob->set("title",HIR"¹Ù¸®¾«±ø"NOR);
+	ob->set("title",HIR"å®˜åºœç²¾å…µ"NOR);
 	ob->kill_ob(me);
-	message_vision(HIR"\n$N¶Ô×Å$n´ó½ÐÒ»Éù£¬É±°¡!¡£\n"NOR,ob,me); 
+	message_vision(HIR"\n$Nå¯¹ç€$nå¤§å«ä¸€å£°ï¼Œæ€å•Š!ã€‚\n"NOR,ob,me); 
 
         ob=new("/quest/menpaijob/riyue/mengmian.c");
         ob->move("/d/heimuya/pingdingzhou");
@@ -164,9 +164,9 @@ void clone_meng(object me)
         ob->set_skill("dodge",maxskill);        
 
 
-	ob->set("title",HIG"¹Ù¸®°àÍ·"NOR);
+	ob->set("title",HIG"å®˜åºœç­å¤´"NOR);
 	ob->kill_ob(me);
-	message_vision(HIR"\n$N¶Ô×Å$n´ó½ÐÒ»Éù£¬É±°¡!¡£\n"NOR,ob,me); 
+	message_vision(HIR"\n$Nå¯¹ç€$nå¤§å«ä¸€å£°ï¼Œæ€å•Š!ã€‚\n"NOR,ob,me); 
 
 
         call_out("clone_meng", 100, me);
@@ -180,8 +180,8 @@ void end_guard(object me)
         me->delete_temp("in_guard"); 
         me->save();
         remove_call_out("clone_meng");
-        tell_room(environment(me),me->query("name")+"ÔÚÆ½¶¨ÖÝ»¤·¨ÊØÆÚÒÑÂú¡£\n");
-        tell_object(me,HIG"ÄãÔÚÆ½¶¨ÖÝ»¤·¨ÈÕÆÚÒÑÂú¡£ÄãµÄÎä¹¦Ôö¼ÓÁË!\n");
+        tell_room(environment(me),me->query("name")+"åœ¨å¹³å®šå·žæŠ¤æ³•å®ˆæœŸå·²æ»¡ã€‚\n");
+        tell_object(me,HIG"ä½ åœ¨å¹³å®šå·žæŠ¤æ³•æ—¥æœŸå·²æ»¡ã€‚ä½ çš„æ­¦åŠŸå¢žåŠ äº†!\n");
 }
 void die()
 {

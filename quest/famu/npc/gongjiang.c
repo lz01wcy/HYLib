@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-      set_name("ÉÕÒ¤¹¤",({"gongren","worker"}));
-      set("gender","ÄĞĞÔ");
+      set_name("çƒ§çª‘å·¥",({"gongren","worker"}));
+      set("gender","ç”·æ€§");
       set("age",20+random(40));
       set("shen_type",1);
       set("combat_exp",30000+random(40000));

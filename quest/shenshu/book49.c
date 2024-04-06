@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(RED"Îå¶¾ÌìÊé"NOR, ({ "wdts" }) );
+    set_name(RED"äº”æ¯’å¤©ä¹¦"NOR, ({ "wdts" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»¡£\n");
+            set("long", "ç¥žä¹¦ä¹‹ä¸€ã€‚\n");
           }
 
     setup();

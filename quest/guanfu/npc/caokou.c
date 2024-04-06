@@ -1,14 +1,14 @@
-//  caokou ²İ¿Ü
+//  caokou è‰å¯‡
  
 inherit NPC;
  
 void create()
 {
-	set_name("²İ¿Ü", ({ "cao kou", "cao" }));
+	set_name("è‰å¯‡", ({ "cao kou", "cao" }));
 //	set("nickname", "");
 	set("long", 
-        "Ò»¸öËÄ´¦Á÷´ÜµÄ²İ¿Ü£¬»µÊÂ¸ÉÁË²»ÉÙ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä¸€ä¸ªå››å¤„æµçªœçš„è‰å¯‡ï¼Œåäº‹å¹²äº†ä¸å°‘ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(20) + 25);
 	set("attitude", "peaceful");
 	set("shen", -1000);

@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-      set_name("·¥Ä¾¹¤",({"famu gong","worker"}));
-      set("gender","ÄĞĞÔ");
+      set_name("ä¼æœ¨å·¥",({"famu gong","worker"}));
+      set("gender","ç”·æ€§");
       set("age",20+random(40));
       set("shen_type",1);
       set("combat_exp",30000+random(40000));
@@ -13,9 +13,9 @@ void create()
       set_skill("dodge",15);
       set("chat_chance",3);
       set("chat_msg",({
-                     "·¥Ä¾¹¤ÂÕÆğ´ó¸«¿³ÆğÊ÷À´.\n",
-                     "·¥Ä¾¹¤ÃéÁËÃé¿³µÄÈ±¿Ú£¬Ê¹¾¢Ò»ÍÆ£¬¡®ºä'µÄÒ»Éù£¬Ê÷µ¹ÁË.\n",
-                     "·¥Ä¾¹¤°Ñ¿³ÏÂµÄËÉÄ¾Âë³ÉÒ»¶Ñ¶ù.\n",
+                     "ä¼æœ¨å·¥æŠ¡èµ·å¤§æ–§ç èµ·æ ‘æ¥.\n",
+                     "ä¼æœ¨å·¥ç„äº†ç„ç çš„ç¼ºå£ï¼Œä½¿åŠ²ä¸€æ¨ï¼Œâ€˜è½°'çš„ä¸€å£°ï¼Œæ ‘å€’äº†.\n",
+                     "ä¼æœ¨å·¥æŠŠç ä¸‹çš„æ¾æœ¨ç æˆä¸€å †å„¿.\n",
                }));
       setup();
       carry_object(__DIR__"obj/cloth")->wear();
@@ -34,7 +34,7 @@ void init()
 void greeting(object ob)
 {   if (!ob||environment(ob)!=environment()) return;
     if (ob->query_temp("work/kan")==1)
-       {   command("say ÊÇÀ´¸É»îµÄ°É£¬ÇëÓÃ(kan wood).\n");
+       {   command("say æ˜¯æ¥å¹²æ´»çš„å§ï¼Œè¯·ç”¨(kan wood).\n");
             return;
         }
    else return;

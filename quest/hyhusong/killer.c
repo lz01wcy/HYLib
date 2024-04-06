@@ -7,14 +7,14 @@ int do_back(object me);
 void create()
 {
         string weapon;
-        set_name("É±ÊÖ", ({ "killer"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ€æ‰‹", ({ "killer"}));
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("str", 23);
         set("con", 26);
         set("int", 20);
         set("dex", 23);
-        set("long", "Ò»¸öÂúÁ³ºáÈâµÄ¼Ò»ï¡£\n");
+        set("long", "ä¸€ä¸ªæ»¡è„¸æ¨ªè‚‰çš„å®¶ä¼™ã€‚\n");
         set("combat_exp", 80000 + random(40000)); 
        set("attitude", "friendly");
         set_skill("force", 50);

@@ -1,9 +1,9 @@
 
 #include <ansi.h>
 inherit NPC;
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ","ÕÅ","³Â","Áø","·ç","Áõ","ÁÖ", }); 
-string *name_words = ({ "Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®", });
-string *color_title = ({"[ÌìÉ±ÃÅ]É±ÊÖ","[µØÉ·ÃÅ]É±ÊÖ",});
+string *first_name = ({ "èµµ","é’±","å­™","æ","å‘¨","å´","éƒ‘","ç‹","å¼ ","é™ˆ","æŸ³","é£","åˆ˜","æ—", }); 
+string *name_words = ({ "ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ","å…«","ä¹","å", });
+string *color_title = ({"[å¤©æ€é—¨]æ€æ‰‹","[åœ°ç…é—¨]æ€æ‰‹",});
 
 void create()
 {
@@ -11,9 +11,9 @@ void create()
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))]; 
        set_name(name, ({ "killer", "shashou", "sha shou" }));
-       set("gender", "ÄĞĞÔ");
+       set("gender", "ç”·æ€§");
        set("title", color_title[random(sizeof(color_title))]);
-       set("long", "ÕâÈËÉí´©ºÚÉ«½ô×°£¬ÃæÉÏÃÉ×ÅÒ»¿éºÚ²¼£¬Ö»Â¶³öÒ»Ë«ÑÛ¾¦£¬¾«¹âËÄÉä¡£\n");
+       set("long", "è¿™äººèº«ç©¿é»‘è‰²ç´§è£…ï¼Œé¢ä¸Šè’™ç€ä¸€å—é»‘å¸ƒï¼Œåªéœ²å‡ºä¸€åŒçœ¼ç›ï¼Œç²¾å…‰å››å°„ã€‚\n");
        set("age", random(20)+25);      
 	set("str", 20+random(5));
        set("int",20+random(5));  
@@ -32,8 +32,8 @@ void create()
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
-                "É±ÊÖºÈµÀ£º½ñÌìÀÏ×ÓÓÖÒªÉñÊéÓÖÒªÃü£¡£¡\n",
-                "É±ÊÖĞ¦µÀ£º¿ì°ÑÉñÊé½»³öÀ´£¡ÈÃÄãËÀµÄÍ´¿ìÒ»µã!\n",
+                "æ€æ‰‹å–é“ï¼šä»Šå¤©è€å­åˆè¦ç¥ä¹¦åˆè¦å‘½ï¼ï¼\n",
+                "æ€æ‰‹ç¬‘é“ï¼šå¿«æŠŠç¥ä¹¦äº¤å‡ºæ¥ï¼è®©ä½ æ­»çš„ç—›å¿«ä¸€ç‚¹!\n",
         }) );
 
         set_skill("unarmed", 20+random(200));
@@ -65,7 +65,7 @@ int heal_up()
 void leave()
 {
 	message("vision",
-		 name() + "ËµµÀ£º½ñÌìÊÕ»ñ²»Ğ¡£¬ĞİÏ¢È¥ÁË¡£\n\n",environment(),
+		 name() + "è¯´é“ï¼šä»Šå¤©æ”¶è·ä¸å°ï¼Œä¼‘æ¯å»äº†ã€‚\n\n",environment(),
 		this_object() );
        	destruct(this_object());
 }

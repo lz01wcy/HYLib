@@ -6,8 +6,8 @@ int do_copy(object me,int maxpot,int type);
 void create()
 {
       string weapon;
-        set_name("ÃÉ¹Å´óºº", ({ "menggu dahan","dahan"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("è’™å¤å¤§æ±‰", ({ "menggu dahan","dahan"}));
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("str", 23);
         set("con", 26);

@@ -2,10 +2,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ºìïÚ", ({"hong biao", "biao"}));
+        set_name("çº¢é•–", ({"hong biao", "biao"}));
         set("long",
-               "¸£ÍşïÚ¾ÖµÄºìïÚ\n");
-        set("unit", "·İ");
+               "ç¦å¨é•–å±€çš„çº¢é•–\n");
+        set("unit", "ä»½");
         set("weight", 5);
       }
 

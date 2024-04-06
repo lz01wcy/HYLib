@@ -5,15 +5,15 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("´óÇà²Ë", ({ "big cabbage" }) );
+	set_name("å¤§é’èœ", ({ "big cabbage" }) );
 	set_weight(30000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÌõË®ÁéÁéµÄ´óÇà²Ë\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€æ¡æ°´çµçµçš„å¤§é’èœ\n");
+		set("unit", "ä¸ª");
 		set("value", 250);
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);

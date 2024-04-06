@@ -1,23 +1,23 @@
-//hantie-kuang.c º®Ìú¿óÊ¯  
-// ĞÇĞÇlywin 2000/8/27
+//hantie-kuang.c å¯’é“çŸ¿çŸ³  
+// æ˜Ÿæ˜Ÿlywin 2000/8/27
 
 #include <ansi.h>
 inherit ITEM;  
 void create() 
 {
-        set_name(HIG"º®Ìú¿óÊ¯"NOR,({"han tie", "kuang"}));
+        set_name(HIG"å¯’é“çŸ¿çŸ³"NOR,({"han tie", "kuang"}));
         set_weight(50000);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+                set("unit", "å—");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
 
 		set("no_put",1);
-                set("long", "ÕâÊÇÒ»¿é³ÁÖØµÄº®Ìú¿óÊ¯¡£\n");
+                set("long", "è¿™æ˜¯ä¸€å—æ²‰é‡çš„å¯’é“çŸ¿çŸ³ã€‚\n");
              }
         setup();
 }

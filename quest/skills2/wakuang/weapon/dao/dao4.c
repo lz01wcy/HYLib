@@ -8,16 +8,16 @@ inherit F_UNIQUE;
 void create()
 {
 
-        set_name(RED"´ó¿³µ¶"NOR, ({ "kandao","blade","dao" }));
+        set_name(RED"å¤§ç åˆ€"NOR, ({ "kandao","blade","dao" }));
         set_weight(15000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("rigidity", 5);
                 set("sharpness", 3);
-                set("long", "Ò»±úÈíÈíµÄÃåµ¶£¬µ¶Éí²»×¡²ü¶¯£¬ÍğÈç»îÉßÒ»°ã¡£Òı¹âÍûÈ¥£¬µ¶·æÈ«ÊÇ°µºìÖ®É«¡££¬
-Ñª¹âÒşÒş,¼«ÊÇ¿É²À.\n");
+                set("long", "ä¸€æŸ„è½¯è½¯çš„ç¼…åˆ€ï¼Œåˆ€èº«ä¸ä½é¢¤åŠ¨ï¼Œå®›å¦‚æ´»è›‡ä¸€èˆ¬ã€‚å¼•å…‰æœ›å»ï¼Œåˆ€é”‹å…¨æ˜¯æš—çº¢ä¹‹è‰²ã€‚ï¼Œ
+è¡€å…‰éšéš,ææ˜¯å¯æ€–.\n");
                 set("value", 1000);
                 set("unique", 1);
 

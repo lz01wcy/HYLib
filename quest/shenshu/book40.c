@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(MAG"ÓÄÚ¤ÑªºÓ³µ"NOR, ({ "ghostche" }) );
+    set_name(MAG"å¹½å†¥è¡€æ²³è½¦"NOR, ({ "ghostche" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	         
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»¡£\n");
+            set("long", "ç¥žä¹¦ä¹‹ä¸€ã€‚\n");
           }
 
     setup();

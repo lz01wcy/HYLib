@@ -8,11 +8,11 @@ string ask_workover();
 
 void create()
 {
-        set_name("¼à¹¤", ({ "jian gong", "gong" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç›‘å·¥", ({ "jian gong", "gong" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 28);
         set("long", 
-            "´ËÈËÊÇ²ÉÊ¯³¡µÄ¼à¹¤£¬ËûÕıµÉ×ÅÒ»Ë«Å£Í·´óÑÛ¿´×ÅÄã¡£\n");
+            "æ­¤äººæ˜¯é‡‡çŸ³åœºçš„ç›‘å·¥ï¼Œä»–æ­£çªç€ä¸€åŒç‰›å¤´å¤§çœ¼çœ‹ç€ä½ ã€‚\n");
         set("combat_exp", 10000);
         set("max_jing", 300);
         set("max_qi", 300);
@@ -22,11 +22,11 @@ void create()
         set_temp("apply/damage", 20);
         set("attitude", "friendly");
         set("inquiry", ([
-            "²ÉÊ¯" : "ÕâÀï¾ÍÊÇ²ÉÊ¯³¡£¬ÎÒ¾ÍÊÇÕâÀïµÄ¼à¹¤¡£",
-            "Ê¯Í·" : "ÂúµØµÄÊ¯Í·Äã¿´²»¼ûÑ½£¡",
-            "¹¤¾ß" : (: ask_toy :),
-            "¹¤×÷" : (: ask_work :),
-            "½»¹¤" : (: ask_workover :),
+            "é‡‡çŸ³" : "è¿™é‡Œå°±æ˜¯é‡‡çŸ³åœºï¼Œæˆ‘å°±æ˜¯è¿™é‡Œçš„ç›‘å·¥ã€‚",
+            "çŸ³å¤´" : "æ»¡åœ°çš„çŸ³å¤´ä½ çœ‹ä¸è§å‘€ï¼",
+            "å·¥å…·" : (: ask_toy :),
+            "å·¥ä½œ" : (: ask_work :),
+            "äº¤å·¥" : (: ask_workover :),
        ]) );
 
         setup();
@@ -37,7 +37,7 @@ void create()
 }
 int accept_fight()
 {
-        command("say Ò»±ßÈ¥£¬Ã»¼ûÎÒÕıÃ¦×ÅÄØ£¬ÄÄÁ¹¿ìÄÄ´ô×ÅÈ¥£¡");
+        command("say ä¸€è¾¹å»ï¼Œæ²¡è§æˆ‘æ­£å¿™ç€å‘¢ï¼Œå“ªå‡‰å¿«å“ªå‘†ç€å»ï¼");
         return 0;
 }
 
@@ -46,13 +46,13 @@ string ask_toy()
         object ob;
         
         if(present("hammer" , this_player()))
-                return "ÄãÉíÉÏ²»ÊÇÓĞÂğ£¿»¹ÏëÒª£¬ÊÇ²»ÊÇ´æĞÄµ·µ°À²£¡";
+                return "ä½ èº«ä¸Šä¸æ˜¯æœ‰å—ï¼Ÿè¿˜æƒ³è¦ï¼Œæ˜¯ä¸æ˜¯å­˜å¿ƒæ£è›‹å•¦ï¼";
         if (query("hammer_count") < 1)
-                return "ÎÒÏÖÔÚÊÖÍ·ÉÏÒ²Ã»ÓĞ£¬ÄãÔÙµÈ»á¶ù°É£¡";
+                return "æˆ‘ç°åœ¨æ‰‹å¤´ä¸Šä¹Ÿæ²¡æœ‰ï¼Œä½ å†ç­‰ä¼šå„¿å§ï¼";
         add("hammer_count", -1);
         ob = new("/clone/weapon/hammer");
         ob->move(this_player());
-        return "¼à¹¤ËµµÀ£º¡°½ÓÎÈà¶£¡¡±\n¼à¹¤¸øÁËÄãÒ»°ÑÌú´¸¡£";
+        return "ç›‘å·¥è¯´é“ï¼šâ€œæ¥ç¨³å–½ï¼â€\nç›‘å·¥ç»™äº†ä½ ä¸€æŠŠé“é”¤ã€‚";
 }
 
 string ask_work()
@@ -61,26 +61,26 @@ string ask_work()
         {
                 if ( !this_player()->query("old_title") )
                        this_player()->set("old_title",this_player()->query("title"));
-//                this_player()->set("title",HIY"²ÉÊ¯¹¤"NOR);
+//                this_player()->set("title",HIY"é‡‡çŸ³å·¥"NOR);
                 this_player()->set_temp("stonework",0);
-                return "»¹²»È¥¹¤×÷£¬»¹Ïë²»ÏëÕõÇ®ÁË£¿";
+                return "è¿˜ä¸å»å·¥ä½œï¼Œè¿˜æƒ³ä¸æƒ³æŒ£é’±äº†ï¼Ÿ";
         }
         return RANK_D->query_respect(this_player()) + 
-        "²»ÊÇÓĞ¹¤×÷ÁËÂğ£¿ÄÑµÀÄãÏë²»¸ÉÁË£¿ÄÇÄã¾Í½»¹¤°É£¡";
+        "ä¸æ˜¯æœ‰å·¥ä½œäº†å—ï¼Ÿéš¾é“ä½ æƒ³ä¸å¹²äº†ï¼Ÿé‚£ä½ å°±äº¤å·¥å§ï¼";
 }
 string ask_workover()
 {
         object me, silver;
         me = this_player();
           if(!me->query("old_title"))
-                return "ÄãÕâÊÇÊ²Ã´ÒâË¼£¬ÄãÏë¸ÉÊ²Ã´Ñ½£¿";
+                return "ä½ è¿™æ˜¯ä»€ä¹ˆæ„æ€ï¼Œä½ æƒ³å¹²ä»€ä¹ˆå‘€ï¼Ÿ";
         if(me->query_temp("stonework")<6)
         {
                me->set("title",this_player()->query("old_title"));
                me->delete_temp("stonework");
                me->delete("old_title");
                command("nod " + this_player()->query("id"));
-               return "À´È¥×ÔÓÉ£¬Ëæ±ãÄãÁË£¡²»¹ı¾ÍÊÇÓĞµã¶ù¿ÉÏ§ÁËÄãÕâÑùµÄÒ»¸öºÃÀÍÁ¦£¡\n";
+               return "æ¥å»è‡ªç”±ï¼Œéšä¾¿ä½ äº†ï¼ä¸è¿‡å°±æ˜¯æœ‰ç‚¹å„¿å¯æƒœäº†ä½ è¿™æ ·çš„ä¸€ä¸ªå¥½åŠ³åŠ›ï¼\n";
         }
         else 
         {
@@ -91,7 +91,7 @@ string ask_workover()
         silver->set_amount(random(10)+1);
         silver->move(this_player());
         command("pat " + this_player()->query("id"));
-        return "ÄãÈÎÀÍÈÎÔ¹£¬ÕæÊÇÎÒµÄºÃ°ïÊÖ£¬µ«Ô¸ÕâÀïµÄÈË¶¼ÄÜÏóÄãÕâÑù£¬ÄÇ¾ÍºÃÁË£¡ÕâÊÇÄãÓ¦µÃµÄ£¡\n";
+        return "ä½ ä»»åŠ³ä»»æ€¨ï¼ŒçœŸæ˜¯æˆ‘çš„å¥½å¸®æ‰‹ï¼Œä½†æ„¿è¿™é‡Œçš„äººéƒ½èƒ½è±¡ä½ è¿™æ ·ï¼Œé‚£å°±å¥½äº†ï¼è¿™æ˜¯ä½ åº”å¾—çš„ï¼\n";
         }
 }
 

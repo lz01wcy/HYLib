@@ -7,11 +7,11 @@ int do_leave(object ob);
  
 void create()
 {
-        set("short", "ÃÉ¹Å´ó¾üÕËÄÚ");
+        set("short", "è’™å¤å¤§å†›è´¦å†…");
         set("long", @LONG
-ÃÉ¹Å´ó¾üÕËÄÚÀïÃæÓĞ²»ÉÙÃÉ¹Å±ø,ÔÚÉÌÁ¿×Å,ÈçºÎÏûÃğÎÒ´óËÎ,Äã¿´
-×ÅÕâ°ïÃÉ¹ÅÈË,²»ÓÉµÃĞÄÀï·¢Å¬,ÏëÒª¸ÉµôËûÃÇ,µ«¿´ÉÏÈ¥ËûÃÇÎä¹¦
-ËÆºõ²»Èõ,Èç¹ûÄãÏëÌÓµÄ»°,»¹À´µÄ¼°(leave).
+è’™å¤å¤§å†›è´¦å†…é‡Œé¢æœ‰ä¸å°‘è’™å¤å…µ,åœ¨å•†é‡ç€,å¦‚ä½•æ¶ˆç­æˆ‘å¤§å®‹,ä½ çœ‹
+ç€è¿™å¸®è’™å¤äºº,ä¸ç”±å¾—å¿ƒé‡Œå‘åŠª,æƒ³è¦å¹²æ‰ä»–ä»¬,ä½†çœ‹ä¸Šå»ä»–ä»¬æ­¦åŠŸ
+ä¼¼ä¹ä¸å¼±,å¦‚æœä½ æƒ³é€ƒçš„è¯,è¿˜æ¥çš„åŠ(leave).
 LONG );
  
        set("objects", ([
@@ -35,38 +35,38 @@ int do_leave(object ob)
 {
         ob = this_player();
           if (ob->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
          if (ob->is_fighting() )
-         return notify_fail("ÄãÏÖÔÚÌÓ²»ÁË£¡\n");
-        write(HIW"ÄãÏëÁËÒ»Ïë,¿´À´Á¦Á¿²»×ã´ò²»¹ıÃÉ¹ÅÈË,Ö»ÄÜ³·ÍËÁË.\n");
+         return notify_fail("ä½ ç°åœ¨é€ƒä¸äº†ï¼\n");
+        write(HIW"ä½ æƒ³äº†ä¸€æƒ³,çœ‹æ¥åŠ›é‡ä¸è¶³æ‰“ä¸è¿‡è’™å¤äºº,åªèƒ½æ’¤é€€äº†.\n");
         ob->move("/d/xiangyang/southgate2");
         ob->set("kill_gumu", 0);
         ob->apply_condition("menpai_busy",1+random(8));
-        write(HIR"ÄãÖÕÓÚÌÓ³öÁËÃÉ¹Å¾ü´óÓª.\n"NOR);
+        write(HIR"ä½ ç»ˆäºé€ƒå‡ºäº†è’™å¤å†›å¤§è¥.\n"NOR);
         return 1;
 }
         if(ob->query("kill_gumu") == 0) 
 {
         ob = this_player();
           if (ob->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
          if (ob->is_fighting() )
-         return notify_fail("ÄãÏÖÔÚÌÓ²»ÁË£¡\n");
-        write(HIW"ÄãÍê³ÉÁËÈÎÎñ,´óĞ¦¼¸Éù,¸Ã³·ÍËÁË.\n");
+         return notify_fail("ä½ ç°åœ¨é€ƒä¸äº†ï¼\n");
+        write(HIW"ä½ å®Œæˆäº†ä»»åŠ¡,å¤§ç¬‘å‡ å£°,è¯¥æ’¤é€€äº†.\n");
         ob->move("/d/xiangyang/southgate2");
-        write(HIR"ÄãÖÕÓÚÌÓ³öÁËÃÉ¹Å¾ü´óÓª.\n"NOR);
+        write(HIR"ä½ ç»ˆäºé€ƒå‡ºäº†è’™å¤å†›å¤§è¥.\n"NOR);
         return 1;
 }
         if(!ob->query("kill_gumu")) 
 {
         ob = this_player();
           if (ob->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
          if (ob->is_fighting() )
-         return notify_fail("ÄãÏÖÔÚÌÓ²»ÁË£¡\n");
-        write(HIW"ÄãÍê³ÉÁËÈÎÎñ,´óĞ¦¼¸Éù,¸Ã³·ÍËÁË.\n");
+         return notify_fail("ä½ ç°åœ¨é€ƒä¸äº†ï¼\n");
+        write(HIW"ä½ å®Œæˆäº†ä»»åŠ¡,å¤§ç¬‘å‡ å£°,è¯¥æ’¤é€€äº†.\n");
         ob->move("/d/xiangyang/southgate2");
-        write(HIR"ÄãÖÕÓÚÌÓ³öÁËÃÉ¹Å¾ü´óÓª.\n"NOR);
+        write(HIR"ä½ ç»ˆäºé€ƒå‡ºäº†è’™å¤å†›å¤§è¥.\n"NOR);
         return 1;
 }
 }

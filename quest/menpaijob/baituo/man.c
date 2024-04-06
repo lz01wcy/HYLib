@@ -2,32 +2,32 @@
 int do_walk();
 inherit NPC;
 mapping *data=({
-(["name":"Îä½«",	"id":"wu jiang",	"mw":-1,	]),
-(["name":"É½ÔôÍ·",	"id":"shan zeitou",	"mw":1,	]),
-(["name":"¿Íµê»ï¼Æ",	"id":"huo ji",	"mw":-1,	"weapon":"gangdao",	]),
-(["name":"ÊËÎÀ",	"id":"shi wei",	"mw":1,	"weapon":"changqiang",	]),
-(["name":"Ìú½³",	"id":"tie jiang",	"mw":1,	"weapon":"gangdao",	]),
-(["name":"Á÷Ã¥Í·",	"id":"liumang tou",	"mw":-1,	"weapon":"gangjian",	]),
-(["name":"¹ó¹«×Ó",	"id":"gui gongzi",		"mw":1,	"weapon":"gangjian",	]),
-(["name":"ĞĞÕß",	"id":"xing ze",	"mw":1,	"weapon":"gangdao",]),
-(["name":"ÍÁ·ËÍ·",	"id":"tufei tou",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ï·×Ó",		"id":"xi zi",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"Ì¨ÒÄÉÌ··",	"id":"shang fan",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"½­ºşÒÕÈË",	"id":"yi ren",	"mw":1,	"weapon":"gangjian",]),
-(["name":"¿³ÖñÈË",	"id":"kanzu ren",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"ÁÔÈË",		"id":"lie ren",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"Ì¨ÒÄÁÔÈË",	"id":"old lieren",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÄÁÑòÈË",	"id":"muyang ren",	"mw":1,	"weapon":"gangjian",]),
-(["name":"Å©·ò",	"id":"nong fu",	"mw":1,	"weapon":"gangjian",]),
-(["name":"Æ¤»õÉÌ",	"id":"pihuo sang",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ê¯½³",		"id":"shi jiang",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"µÀÈË",	"id":"dao ren",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÓÎ¿Í",	"id":"you ke",	"mw":1,	"weapon":"gangjian",]),
-(["name":"ÊéÍ¯",	"id":"shu tong",	"mw":1,	"weapon":"gangjian",]),
-(["name":"ÂÌÓª»áÖÚ",	"id":"guan bing",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ô±Íâ",		"id":"yuan wai",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"±ÈÇğ",	"id":"bi qiu",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"Á÷Ã¥",	"id":"liu mang",	"mw":1,	"weapon":"gangjian",]),
+(["name":"æ­¦å°†",	"id":"wu jiang",	"mw":-1,	]),
+(["name":"å±±è´¼å¤´",	"id":"shan zeitou",	"mw":1,	]),
+(["name":"å®¢åº—ä¼™è®¡",	"id":"huo ji",	"mw":-1,	"weapon":"gangdao",	]),
+(["name":"ä»•å«",	"id":"shi wei",	"mw":1,	"weapon":"changqiang",	]),
+(["name":"é“åŒ ",	"id":"tie jiang",	"mw":1,	"weapon":"gangdao",	]),
+(["name":"æµæ°“å¤´",	"id":"liumang tou",	"mw":-1,	"weapon":"gangjian",	]),
+(["name":"è´µå…¬å­",	"id":"gui gongzi",		"mw":1,	"weapon":"gangjian",	]),
+(["name":"è¡Œè€…",	"id":"xing ze",	"mw":1,	"weapon":"gangdao",]),
+(["name":"åœŸåŒªå¤´",	"id":"tufei tou",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"æˆå­",		"id":"xi zi",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"å°å¤·å•†è´©",	"id":"shang fan",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ±Ÿæ¹–è‰ºäºº",	"id":"yi ren",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ç ç«¹äºº",	"id":"kanzu ren",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"çŒäºº",		"id":"lie ren",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"å°å¤·çŒäºº",	"id":"old lieren",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"ç‰§ç¾Šäºº",	"id":"muyang ren",	"mw":1,	"weapon":"gangjian",]),
+(["name":"å†œå¤«",	"id":"nong fu",	"mw":1,	"weapon":"gangjian",]),
+(["name":"çš®è´§å•†",	"id":"pihuo sang",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"çŸ³åŒ ",		"id":"shi jiang",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"é“äºº",	"id":"dao ren",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ¸¸å®¢",	"id":"you ke",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ä¹¦ç«¥",	"id":"shu tong",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ç»¿è¥ä¼šä¼—",	"id":"guan bing",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"å‘˜å¤–",		"id":"yuan wai",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"æ¯”ä¸˜",	"id":"bi qiu",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æµæ°“",	"id":"liu mang",	"mw":1,	"weapon":"gangjian",]),
 });
 
 
@@ -40,7 +40,7 @@ void create()
 
 	set_name(npc["name"],({ npc["id"] }));
 	set("age",20+random(30));
-		set("gender", "ÄĞĞÔ");
+		set("gender", "ç”·æ€§");
 	set("combat_exp",20000);
 	if( weapon)	set_skill("blade",20);
 	set_skill("unarmed",20);
@@ -76,7 +76,7 @@ void leave()
 {
 if(!is_fighting())
 {
-        message("vision",HIB+name()+"¼±¼±Ã¦Ã¦µØ×ß¿ªÁË¡£\n" NOR, 
+        message("vision",HIB+name()+"æ€¥æ€¥å¿™å¿™åœ°èµ°å¼€äº†ã€‚\n" NOR, 
                 environment(), this_object() );
         destruct(this_object());
 } else                 call_out("leave", 10);
@@ -87,7 +87,7 @@ void die()
         object ob, me, corpse;
         
         ob = this_object();
-message_vision("$N¡¸Å¾¡¹µØÒ»Éùµ¹ÔÚµØÉÏ£¬×ì½ÇÒç³ö¼¸Ë¿ÏÊÑª£¬Í´¿àµÄÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n", ob);
+message_vision("$Nã€Œå•ªã€åœ°ä¸€å£°å€’åœ¨åœ°ä¸Šï¼Œå˜´è§’æº¢å‡ºå‡ ä¸é²œè¡€ï¼Œç—›è‹¦çš„æŒ£æ‰äº†å‡ ä¸‹å°±æ­»äº†ã€‚\n", ob);
         destruct(ob);
         return;
 }

@@ -4,11 +4,11 @@ inherit ITEM;
 void to_rob();
 void create()
 {
-        set_name("ïÚ»õ", ({ "prize"}) );
+        set_name("é•–è´§", ({ "prize"}) );
         set_weight(3000);
         set("no_get", 1);
-       set("unit", "·İ");
-	set("long", "Ò»¸ö°ü¹ü£¬ÉÏÃæ»­×Å³¤·çïÚ¾ÖµÄïÚÆì¡£\n");
+       set("unit", "ä»½");
+	set("long", "ä¸€ä¸ªåŒ…è£¹ï¼Œä¸Šé¢ç”»ç€é•¿é£é•–å±€çš„é•–æ——ã€‚\n");
 	set("value", 0);
 	set("no_put",1);
 	set("no_get",1);
@@ -31,12 +31,12 @@ int do_finish()
 	me=this_player();
 	ob=this_object();
        where = environment(me);
-if (!environment(me)) return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
-if (!me)return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+if (!environment(me)) return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
+if (!me)return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ­£å¿™ã€‚\n");
      if (me->is_fighting()) 
-        return notify_fail("ÄãÕı´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 	if(file_name(where) == me->query_temp("end_place"))
 	 {
   if (random(100)<8&& !environment(this_player())->query("no_fight") )
@@ -59,9 +59,9 @@ if (!me)return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
 		  me->add("combat_exp",exp);
 		  me->add("potential",pot);
 		  me->add("shen",100);
-	message_vision(HIC"Í»È»´Ó°µ´¦×ß³öÒ»ÈË³¯$N×ßÀ´£¬$NÎÊµÀ£ºÍòÖØÇ§ÏÕ.\nÄÇÈË´ğ µÀ£º³¤·çÆÆÀË¡£\n$N¼û¶Ô·½¶ÔÉÏÁË°µºÅ£¬±ã°ÑÊÖÖĞµÄïÚ»õ½»¸øÁË¶Ô·½¡£\n"NOR,me);	
-	tell_object(me,"Äã±»½±ÀøÁË\n"+chinese_number(exp)+"µãÊµÕ½¾­Ñé\n"
-				+chinese_number(pot)+"µãÇ±ÄÜ\n");
+	message_vision(HIC"çªç„¶ä»æš—å¤„èµ°å‡ºä¸€äººæœ$Nèµ°æ¥ï¼Œ$Né—®é“ï¼šä¸‡é‡åƒé™©.\né‚£äººç­” é“ï¼šé•¿é£ç ´æµªã€‚\n$Nè§å¯¹æ–¹å¯¹ä¸Šäº†æš—å·ï¼Œä¾¿æŠŠæ‰‹ä¸­çš„é•–è´§äº¤ç»™äº†å¯¹æ–¹ã€‚\n"NOR,me);	
+	tell_object(me,"ä½ è¢«å¥–åŠ±äº†\n"+chinese_number(exp)+"ç‚¹å®æˆ˜ç»éªŒ\n"
+				+chinese_number(pot)+"ç‚¹æ½œèƒ½\n");
 	me->delete_temp("on_biao");
 	me->delete_temp("end_place");
 	me->delete_temp("biao_place");
@@ -72,9 +72,9 @@ if (!me)return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
 		  me->add("combat_exp",exp);
 		  me->add("potential",pot);
 		  me->add("shen",100);
-	message_vision(HIC"Í»È»´Ó°µ´¦×ß³öÒ»ÈË³¯$N×ßÀ´£¬$NÎÊµÀ£ºÍòÖØÇ§ÏÕ.\nÄÇÈË´ğ µÀ£º³¤·çÆÆÀË¡£\n$N¼û¶Ô·½¶ÔÉÏÁË°µºÅ£¬±ã°ÑÊÖÖĞµÄïÚ»õ½»¸øÁË¶Ô·½¡£\n"NOR,me);	
-	tell_object(me,"Äã±»½±ÀøÁË\n"+chinese_number(exp)+"µãÊµÕ½¾­Ñé\n"
-				+chinese_number(pot)+"µãÇ±ÄÜ\n");
+	message_vision(HIC"çªç„¶ä»æš—å¤„èµ°å‡ºä¸€äººæœ$Nèµ°æ¥ï¼Œ$Né—®é“ï¼šä¸‡é‡åƒé™©.\né‚£äººç­” é“ï¼šé•¿é£ç ´æµªã€‚\n$Nè§å¯¹æ–¹å¯¹ä¸Šäº†æš—å·ï¼Œä¾¿æŠŠæ‰‹ä¸­çš„é•–è´§äº¤ç»™äº†å¯¹æ–¹ã€‚\n"NOR,me);	
+	tell_object(me,"ä½ è¢«å¥–åŠ±äº†\n"+chinese_number(exp)+"ç‚¹å®æˆ˜ç»éªŒ\n"
+				+chinese_number(pot)+"ç‚¹æ½œèƒ½\n");
 	me->delete_temp("on_biao");
 	me->delete_temp("end_place");
 	me->delete_temp("biao_place");
@@ -108,7 +108,7 @@ void to_rob()
 	maxskill=me->query_skill("force");
 	maxexp=me->query("combat_exp");
 	
-	message_vision(HIR"ºöÈ»¼äÌø³öÒ»Èº½Ù·Ë£¡\n"NOR,this_object());
+	message_vision(HIR"å¿½ç„¶é—´è·³å‡ºä¸€ç¾¤åŠ«åŒªï¼\n"NOR,this_object());
 	for (i=0;i<=random(2)+1;i++)
 	{
 		robber=new(__DIR__"tufei");
@@ -135,7 +135,7 @@ void to_rob()
 //                robber->set_skill("sword",maxskill*2/3);
 //                robber->set_skill("parry",maxskill*2/3);        
 //                robber->set_skill("dodge",maxskill*2/3);        
-  	        robber->set("title",HIG"½­ÄÏ´óµÁ"NOR);
+  	        robber->set("title",HIG"æ±Ÿå—å¤§ç›—"NOR);
 		 if(objectp(present("biaoshi", environment(this_player()))))
 		{	robber->kill_ob(present("biaoshi",environment(this_player())));
 			present("biaoshi",environment(this_player()))->kill_ob(robber);}
@@ -150,7 +150,7 @@ void to_rob()
 }
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃguard£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨guardï¼\n");
         return 1;
 }
 void aaa(object ob)
@@ -164,7 +164,7 @@ int do_go(string arg)
 {
 	if(objectp(present("tufei", environment(this_object()))))
 	{
-        write(this_object()->query("name")+"£¬µÄ¸½½ü»¹ÓĞÍÁ·Ë£¬Äã²»ÄÜ×ß£¡\n");
+        write(this_object()->query("name")+"ï¼Œçš„é™„è¿‘è¿˜æœ‰åœŸåŒªï¼Œä½ ä¸èƒ½èµ°ï¼\n");
         return 1;
 //	obj->kill_ob(present("gong zi",environment(this_player())));
 // 	present("gong zi",environment(this_player()))->kill_ob(obj);

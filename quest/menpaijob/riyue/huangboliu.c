@@ -8,27 +8,27 @@ inherit F_UNIQUE;
 int do_gongzuo();
 int ask_done();
 mapping *changxi = ({ 
-         ([ "changxi":"°×ÍÕ","where":"baituo"   ]),
-         ([ "changxi":"¶ğÃ¼","where":"emei"  ]),
-         ([ "changxi":"ºãÉ½","where":"hengshan"   ]),   
-         ([ "changxi":"¹ÅÄ¹","where":"gumu" ]),   
-         ([ "changxi":"ºâÉ½","where":"henshan"]),   
-         ([ "changxi":"»ªÉ½","where":"xx"]),   
-         ([ "changxi":"ÁéğÕ","where":"lingjiu"]),   
-         ([ "changxi":"Ã÷½Ì","where":"mingjiao"]),   
-         ([ "changxi":"È«Õæ","where":"quanzhen"]),   
-         ([ "changxi":"ÉÙÁÖ","where":"shaolin"]),   
-         ([ "changxi":"ÌìÁúËÂ","where":"tianlongsi"]),   
-         ([ "changxi":"Îäµ±","where":"wudang"]),   
-         ([ "changxi":"åĞÒ£","where":"xiaoyao"]),   
-         ([ "changxi":"ĞÇËŞº£","where":"xingxiuhai"]),   
-         ([ "changxi":"Ì©É½","where":"taishan"]),   
-         ([ "changxi":"Ñ©É½ËÂ","where":"xueshan"]),   
-         ([ "changxi":"Ä½ÈİÊÀ¼Ò","where":"mr"]),   
-         ([ "changxi":"ÌúÕÆÃÅ","where":"tiezhang"]),            
-         ([ "changxi":"ÁèÏü³Ç","where":"lingxiao"]),            
-         ([ "changxi":"À¥ÂØÉ½","where":"kunlun"]),            
-         ([ "changxi":"Îå¶¾½Ì","where":"wudujiao"]),            
+         ([ "changxi":"ç™½é©¼","where":"baituo"   ]),
+         ([ "changxi":"å¨¥çœ‰","where":"emei"  ]),
+         ([ "changxi":"æ’å±±","where":"hengshan"   ]),   
+         ([ "changxi":"å¤å¢“","where":"gumu" ]),   
+         ([ "changxi":"è¡¡å±±","where":"henshan"]),   
+         ([ "changxi":"åå±±","where":"xx"]),   
+         ([ "changxi":"çµé¹«","where":"lingjiu"]),   
+         ([ "changxi":"æ˜æ•™","where":"mingjiao"]),   
+         ([ "changxi":"å…¨çœŸ","where":"quanzhen"]),   
+         ([ "changxi":"å°‘æ—","where":"shaolin"]),   
+         ([ "changxi":"å¤©é¾™å¯º","where":"tianlongsi"]),   
+         ([ "changxi":"æ­¦å½“","where":"wudang"]),   
+         ([ "changxi":"é€é¥","where":"xiaoyao"]),   
+         ([ "changxi":"æ˜Ÿå®¿æµ·","where":"xingxiuhai"]),   
+         ([ "changxi":"æ³°å±±","where":"taishan"]),   
+         ([ "changxi":"é›ªå±±å¯º","where":"xueshan"]),   
+         ([ "changxi":"æ…•å®¹ä¸–å®¶","where":"mr"]),   
+         ([ "changxi":"é“æŒé—¨","where":"tiezhang"]),            
+         ([ "changxi":"å‡Œå®µåŸ","where":"lingxiao"]),            
+         ([ "changxi":"æ˜†ä»‘å±±","where":"kunlun"]),            
+         ([ "changxi":"äº”æ¯’æ•™","where":"wudujiao"]),            
                    });
 mapping query_changxi()
 {
@@ -37,12 +37,12 @@ mapping query_changxi()
 
 void create()
 {
-	set_name("»Æ²®Á÷", ({ "huang boliu","huang","boliu"}) );
-	set("gender", "ÄĞĞÔ" );
-	set("title", HIB"ÈÕÔÂÉñ½Ì·çÀ×ÌÃÏãÖ÷"NOR);
-	set("nickname", HIW"Òø÷×òÔ"NOR);
+	set_name("é»„ä¼¯æµ", ({ "huang boliu","huang","boliu"}) );
+	set("gender", "ç”·æ€§" );
+	set("title", HIB"æ—¥æœˆç¥æ•™é£é›·å ‚é¦™ä¸»"NOR);
+	set("nickname", HIW"é“¶é«¯è›Ÿ"NOR);
 	set("age", 85);
-	set("long", "Ò»²¿°×Ğë£¬Ö±´¹ÖÁĞØ£¬Éí²Ä¿ıÎàÖ®¼«¡£\n");
+	set("long", "ä¸€éƒ¨ç™½é¡»ï¼Œç›´å‚è‡³èƒ¸ï¼Œèº«æé­æ¢§ä¹‹æã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", 1);
 
@@ -96,14 +96,14 @@ void create()
         set_temp("apply/armor", 800);
         set_temp("apply/damage", 800);
         set("inquiry", ([
-                "ÓÎËµ¹¤×÷" : (: do_gongzuo :),
+                "æ¸¸è¯´å·¥ä½œ" : (: do_gongzuo :),
                 "work"  : (: do_gongzuo :),
                 "done" : (: ask_done    :),
-                "Íê³É" : (: ask_done    :),
-                "½±Àø" : (: ask_done    :),
+                "å®Œæˆ" : (: ask_done    :),
+                "å¥–åŠ±" : (: ask_done    :),
 	]) );
 
-	create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ·çÀ×ÌÃÏãÖ÷");
+	create_family("æ—¥æœˆç¥æ•™",2,"å¼Ÿå­ é£é›·å ‚é¦™ä¸»");
 
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();
@@ -114,20 +114,20 @@ void attempt_apprentice(object ob)
 {
          if (ob->query_int() < 20) {
               command("say " + RANK_D->query_respect(ob) +
-                        "×ß¿ª×ß¿ª£¬ÎÒ²»ÏëºÍÉµ¹ÏËµ»°¡£");
+                        "èµ°å¼€èµ°å¼€ï¼Œæˆ‘ä¸æƒ³å’Œå‚»ç“œè¯´è¯ã€‚");
                 return;
         }
          if (ob->query_dex() < 20) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÉíÊÖ²»½İ£¬»¹ÊÇÁíÇó¸ßÊ¦°É¡£");
+                        "èº«æ‰‹ä¸æ·ï¼Œè¿˜æ˜¯å¦æ±‚é«˜å¸ˆå§ã€‚");
                 return;
         }
         if ((int)ob->query("shen") > -10000) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "Äã»¹²»¹»ĞÄºİÊÖÀ±£¬ÎÒ»¹²»ÄÜÊÕÄã¡£");
+                        "ä½ è¿˜ä¸å¤Ÿå¿ƒç‹ æ‰‹è¾£ï¼Œæˆ‘è¿˜ä¸èƒ½æ”¶ä½ ã€‚");
                 return;
         }
-        command("say ¹ş¹ş£¡ ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+        command("say å“ˆå“ˆï¼ é‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit " + ob->query("id"));
 }
 
@@ -140,24 +140,24 @@ int do_gongzuo()
         
     if( me->query_temp("ryjob2/changxi")>0)
     {
-                tell_object(me,HIW"Äã¿ìÈ¥¹â´óÊ¥½Ì°É£¡\n"NOR);
+                tell_object(me,HIW"ä½ å¿«å»å…‰å¤§åœ£æ•™å§ï¼\n"NOR);
                 return 1;
     } 
         if ((int)me->query_condition("ry2_busy"))  
             {
-                      message_vision("$N¶Ô×Å$nÒ¡ÁËÒ¡Í·Ëµ£ºÄã¸ÕÒª¹ıÈÎÎñ,µÈ»áÔÙÀ´!\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$næ‘‡äº†æ‘‡å¤´è¯´ï¼šä½ åˆšè¦è¿‡ä»»åŠ¡,ç­‰ä¼šå†æ¥!\n", this_object(), me);
                       return 1;
             }
 
-        if( me->query("family/family_name") != "ÈÕÔÂÉñ½Ì")
+        if( me->query("family/family_name") != "æ—¥æœˆç¥æ•™")
            {
-                      message_vision("$N¶Ô×Å$nËµµÀ¡£ÄãÊÇÄÄÀïÀ´µÄ¼éÏ¸£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´é“ã€‚ä½ æ˜¯å“ªé‡Œæ¥çš„å¥¸ç»†ï¼Ÿ\n", this_object(), me);
                       return 1;
             }
 
     changxi = this_object()->query_changxi();
     changxiwhere = changxi["where"];
-    message_vision(HIC"»Æ²®Á÷¶Ô$NËµµÀ£ºÄãÈ¥" + changxi["changxi"] + "È¥¹â´óÎÒÊ¥½Ì£¬ÑïÎÒÊ¥½ÌÖ®Íş£¡\n"NOR,me); 
+    message_vision(HIC"é»„ä¼¯æµå¯¹$Nè¯´é“ï¼šä½ å»" + changxi["changxi"] + "å»å…‰å¤§æˆ‘åœ£æ•™ï¼Œæ‰¬æˆ‘åœ£æ•™ä¹‹å¨ï¼\n"NOR,me); 
         me->set_temp("ryjob2/changxi", 1);
         me->set_temp("ryjob2/where",changxiwhere);
         me->set_temp("ryjob2/cx",changxi["changxi"]);
@@ -165,7 +165,7 @@ int do_gongzuo()
 me->apply_condition("ry2_busy", 2);
         ob=new(__DIR__ "ling");
         ob->move(me);
-    message_vision(HIC"»Æ²®Á÷¶Ô$NËµµÀ£ºÕâĞ©´«µ¥ÄãÄÃÈ¥×öÓÎËµ(youshuo)ÓÃ°É¡£\n"NOR,me); 
+    message_vision(HIC"é»„ä¼¯æµå¯¹$Nè¯´é“ï¼šè¿™äº›ä¼ å•ä½ æ‹¿å»åšæ¸¸è¯´(youshuo)ç”¨å§ã€‚\n"NOR,me); 
         return 1;   
 }
 
@@ -179,31 +179,31 @@ pot=60+random(45);
 
         me = this_player(); 
         
-        if( me->query("family/family_name") != "ÈÕÔÂÉñ½Ì")
+        if( me->query("family/family_name") != "æ—¥æœˆç¥æ•™")
            {
-                      message_vision("$N¶Ô×Å$nËµµÀ¡£ÄãÊÇÄÄÀïÀ´µÄ¼éÏ¸£¿\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nè¯´é“ã€‚ä½ æ˜¯å“ªé‡Œæ¥çš„å¥¸ç»†ï¼Ÿ\n", this_object(), me);
                       return 1;
             }
   
     if( me->query_temp("ryjob2/changxi")< 1)
     {
-                tell_object(me,CYN"ÄãÃ»ÊÂ×öÂğ£¿¡£\n"NOR);
+                tell_object(me,CYN"ä½ æ²¡äº‹åšå—ï¼Ÿã€‚\n"NOR);
                 return 1;
     } 
 
     if( me->query_temp("ryjob2/done")< 1)
     {
-                tell_object(me,HIW"ÎÒÌıËµºÃÏñÓÎËµµÄÄ¿µÄ»¹Ã»ÓĞ´ïµ½£¿¿ìÈ¥ÓÎËµ°É¡£\n"NOR);
+                tell_object(me,HIW"æˆ‘å¬è¯´å¥½åƒæ¸¸è¯´çš„ç›®çš„è¿˜æ²¡æœ‰è¾¾åˆ°ï¼Ÿå¿«å»æ¸¸è¯´å§ã€‚\n"NOR);
                 return 1;
     }
-    message_vision(HIG"»Æ²®Á÷¶Ô$NËµµÀ£º×öµÃ²»´í£¡¹â´óÁËÎÒÊ¥½Ì¡£\n"NOR,me); 
+    message_vision(HIG"é»„ä¼¯æµå¯¹$Nè¯´é“ï¼šåšå¾—ä¸é”™ï¼å…‰å¤§äº†æˆ‘åœ£æ•™ã€‚\n"NOR,me); 
     me->add("combat_exp",exp);
     me->add("potential",pot);
         me->delete_temp("ryjob");
     me->delete_temp("ryjob2");
-	   tell_object(me,HIW"Äã±»½±ÀøÁË£º\n" + 
-                       chinese_number(exp) + "µãÊµÕ½¾­Ñé\n" +
-                       chinese_number(pot) + "µãÇ±ÄÜ\n"+
+	   tell_object(me,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š\n" + 
+                       chinese_number(exp) + "ç‚¹å®æˆ˜ç»éªŒ\n" +
+                       chinese_number(pot) + "ç‚¹æ½œèƒ½\n"+
                        NOR);
 
     return 1;

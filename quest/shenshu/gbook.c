@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIY"¹ÅÁú¾«Ñ¡¼¯"NOR, ({ "gulong book" }) );
+    set_name(HIY"å¤é¾™ç²¾é€‰é›†"NOR, ({ "gulong book" }) );
             set("no_put", 1);
             set("shenshu", 1);
             set("value", 0);
@@ -11,9 +11,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	        
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾ÓÉÉñÊéºÏ²¢³ÉµÄ¾í²á£¬Äã¿ÉÒÔÓÃ(chayue)À´²éÔÄËü¡£\n");
+            set("long", "ä¸€æœ¬ç”±ç¥ä¹¦åˆå¹¶æˆçš„å·å†Œï¼Œä½ å¯ä»¥ç”¨(chayue)æ¥æŸ¥é˜…å®ƒã€‚\n");
           }
 
     setup();
@@ -28,7 +28,7 @@ int do_cha(string arg)
 	int exp,pot,score,i;
 	me =this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª²éÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦æŸ¥ä»€ä¹ˆï¼Ÿ\n");
 
         ob=new(__DIR__"sdan");
         ob->move(me);
@@ -42,7 +42,7 @@ int do_cha(string arg)
         ob->move(me);
         ob=new(__DIR__"sdan");
         ob->move(me);
-message("channel:chat", HIC"¡¾½­ºş´«ÎÅ¡¿"GRN + me->query("name")+"µÃµ½Áù¿Å"+HIY":" + ob->query("name")+HIG"À²£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€æ±Ÿæ¹–ä¼ é—»ã€‘"GRN + me->query("name")+"å¾—åˆ°å…­é¢—"+HIY":" + ob->query("name")+HIG"å•¦ï¼\n"NOR,users() );
 	destruct(this_object());
 return 1;
 }

@@ -7,13 +7,13 @@ int main(object me, string arg)
         int nowtime = time();
         mapping quest;
         if(!(quest =  me->query("quest")))
-               return notify_fail("ÄãÏÖÔÚÃ»ÓĞÈÎºÎÈÎÎñ£¡\n");
-        write("ÄãÏÖÔÚµÄÈÎÎñÊÇ" + quest["quest_type"] + "¡º" + quest["quest"] + "¡»¡£\n");
+               return notify_fail("ä½ ç°åœ¨æ²¡æœ‰ä»»ä½•ä»»åŠ¡ï¼\n");
+        write("ä½ ç°åœ¨çš„ä»»åŠ¡æ˜¯" + quest["quest_type"] + "ã€" + quest["quest"] + "ã€ã€‚\n");
         nowtime = (int) me->query("task_time") - time();
         if( nowtime  > 0 )
                 time_period(nowtime, me);
         else
-                write("µ«ÊÇÄãÒÑ¾­Ã»ÓĞ×ã¹»µÄÊ±¼äÀ´Íê³ÉËüÁË¡£\n");
+                write("ä½†æ˜¯ä½ å·²ç»æ²¡æœ‰è¶³å¤Ÿçš„æ—¶é—´æ¥å®Œæˆå®ƒäº†ã€‚\n");
 
         return 1;
 }
@@ -27,20 +27,20 @@ int time_period(int timep, object me)
         h = t % 24;             t /= 24;
         d = t;
 
-        if(d) time = chinese_number(d) + "Ìì";
+        if(d) time = chinese_number(d) + "å¤©";
         else time = "";
 
-        if(h) time += chinese_number(h) + "Ğ¡Ê±";
-        if(m) time += chinese_number(m) + "·Ö";
-        time += chinese_number(s) + "Ãë";
-        tell_object(me,"Äã»¹ÓĞ" + time + "È¥Íê³ÉËü¡£\n");
+        if(h) time += chinese_number(h) + "å°æ—¶";
+        if(m) time += chinese_number(m) + "åˆ†";
+        time += chinese_number(s) + "ç§’";
+        tell_object(me,"ä½ è¿˜æœ‰" + time + "å»å®Œæˆå®ƒã€‚\n");
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : quest  Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾³öÄãµ±Ç°µÄÈÎÎñ¡£
+æŒ‡ä»¤æ ¼å¼ : quest  è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºå‡ºä½ å½“å‰çš„ä»»åŠ¡ã€‚
 HELP
         );
         return 1;

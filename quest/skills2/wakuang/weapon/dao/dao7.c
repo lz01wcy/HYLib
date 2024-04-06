@@ -8,12 +8,12 @@ inherit F_UNIQUE;
 void create()
 {
 
-        set_name(HIM"ÖØÌú´óµ¶"NOR, ({ "da dao","dadao","dao", "blade" }));
+        set_name(HIM"é‡é“å¤§åˆ€"NOR, ({ "da dao","dadao","dao", "blade" }));
         set_weight(35000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("rigidity", 9);
                 set("sharpness", 9);
 

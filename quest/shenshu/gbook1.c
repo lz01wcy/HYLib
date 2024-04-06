@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIG"¹ÅÁú¾«Ñ¡¼¯ÉÏ²á"NOR, ({ "gulong booka" }) );
+    set_name(HIG"å¤é¾™ç²¾é€‰é›†ä¸Šå†Œ"NOR, ({ "gulong booka" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -11,10 +11,10 @@ void create()
     else {
 	        
             set("shenshu",1);
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("no_put", 1);
             set("material", "paper");
-            set("long", "Ò»±¾ÓÉÉñÊéºÏ²¢³ÉµÄ¾í²á£¬Äã¿ÉÒÔÓÃ(chayue)À´²éÔÄËü¡£ÁíÍâÈç¹ûÄãÓÐ¡£¡£¡£µÄ»°£¬¿ÉÒÔÓÃ(try)ÊÔÊÔ\n");
+            set("long", "ä¸€æœ¬ç”±ç¥žä¹¦åˆå¹¶æˆçš„å·å†Œï¼Œä½ å¯ä»¥ç”¨(chayue)æ¥æŸ¥é˜…å®ƒã€‚å¦å¤–å¦‚æžœä½ æœ‰ã€‚ã€‚ã€‚çš„è¯ï¼Œå¯ä»¥ç”¨(try)è¯•è¯•\n");
           }
 
     setup();
@@ -30,7 +30,7 @@ int do_cha(string arg)
 	int exp,pot,score;
 	me =this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒª²éÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦æŸ¥ä»€ä¹ˆï¼Ÿ\n");
 
 	exp = 8200+random(8000);
 	             pot = exp*2/3;
@@ -38,11 +38,11 @@ int do_cha(string arg)
              me->add("combat_exp",exp);
              me->add("potential",pot);
              me->add("score",score);
-     	      message_vision("$N×ÐÏ¸µØ²éÔÄÁËÒ»±é"+this_object()->query("name")+"¡£\n", me);
-tell_object(me,"Äã±»½±ÀøÁË£º\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã½­ºþÔÄÀú\n");
+     	      message_vision("$Nä»”ç»†åœ°æŸ¥é˜…äº†ä¸€é"+this_object()->query("name")+"ã€‚\n", me);
+tell_object(me,"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+             chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+            chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…åŽ†\n");
 if (random(2)==0)
 {
         corpse=new("/clone/gem/gem");
@@ -53,7 +53,7 @@ if (corpse->query("level") >4
 }
 
 
-message("channel:chat", HIM"¡¾½­ºþÒ¥ÑÔ¡¿ÌýËµ"+me->name() + "Í¨¹ýÉñÊéÈÎÎñÕÒµ½ÁËÒ»¿Å"+corpse->query("name")+HIM"!"NOR"¡£\n", users());
+message("channel:chat", HIM"ã€æ±Ÿæ¹–è°£è¨€ã€‘å¬è¯´"+me->name() + "é€šè¿‡ç¥žä¹¦ä»»åŠ¡æ‰¾åˆ°äº†ä¸€é¢—"+corpse->query("name")+HIM"!"NOR"ã€‚\n", users());
              corpse->move(me);
 }
 
@@ -65,23 +65,23 @@ int do_try(string arg)
 	object me,newbook,ob;
 	me = this_player();
  	if (!id(arg))
-	return notify_fail("ÄãÒªÊÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦è¯•ä»€ä¹ˆï¼Ÿ\n");
 
 	newbook =new(__DIR__"gbook");
 
     if (!(ob = present("gulong bookb", me))
         )
-	tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
    else{
         if( ob->query("ownmake"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( !ob->query("shenshu"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if(userp(ob))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
         if( ob->is_character() || ob->is_corpse() )
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
-        message_vision("$NÊÔ×Å°ÑÉÏÏÂÁ½²áÖØÐÂ×éºÏ³ÉÒ»±¾£¬²»ÁÏ¾¹È»³É¹¦ÁË¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+        message_vision("$Nè¯•ç€æŠŠä¸Šä¸‹ä¸¤å†Œé‡æ–°ç»„åˆæˆä¸€æœ¬ï¼Œä¸æ–™ç«Ÿç„¶æˆåŠŸäº†ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("gulong bookb",me));
 	destruct(this_object());}return 1;

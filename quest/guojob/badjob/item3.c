@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC"ÒõÑôºÍºÏÉ¢"NOR, ({ "hehe san", "san" }) );
+        set_name(HIC"é˜´é˜³å’Œåˆæ•£"NOR, ({ "hehe san", "san" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°üÒõÑôºÍºÏ¿ÉÒÔ(sa)¡£\n") ;
-                set("unit", "°ü");
+                set("long", "è¿™æ˜¯ä¸€åŒ…é˜´é˜³å’Œåˆå¯ä»¥(sa)ã€‚\n") ;
+                set("unit", "åŒ…");
                 set("value", 0);
         }
         setup();
@@ -31,48 +31,48 @@ int do_shot(string arg)
         me = this_player();
 
 
-        if( !arg ) return notify_fail("ÄãÏë¶ÔË­ÈöÒõÑôºÍºÏÉ¢£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³å¯¹è°æ’’é˜´é˜³å’Œåˆæ•£ï¼Ÿ\n");
 
         if( !objectp(target = present(arg, environment(me))) )
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 
        if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-                return notify_fail("¡¸ÒõÑôºÍºÏÉ¢¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé˜´é˜³å’Œåˆæ•£ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !target->is_character() || target->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
         if(userp(target))
-                return notify_fail("²»ÄÜ¶ÔÍæ¼ÒÓÃÕâÃ´ÏÂÁ÷µÄÊÖ·¨¡£\n");
+                return notify_fail("ä¸èƒ½å¯¹ç©å®¶ç”¨è¿™ä¹ˆä¸‹æµçš„æ‰‹æ³•ã€‚\n");
 
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å“ªã€‚\n");
 
-        if( (string)this_player()->query("family/family_name")!="Ñ©É½ËÂ" ) {
-                message_vision("\n$NÄã²»ÄÜÓÃÕâÖÖÏÂÈıÁ÷µÄÊÖ·¨£¡\n", me);
+        if( (string)this_player()->query("family/family_name")!="é›ªå±±å¯º" ) {
+                message_vision("\n$Nä½ ä¸èƒ½ç”¨è¿™ç§ä¸‹ä¸‰æµçš„æ‰‹æ³•ï¼\n", me);
                 return 1;
                 }
-        message_vision(HIR"\n$NÒ»ÉùÇáĞ¦£¬Ò»´ó°üÒõÑôºÍºÏÉ¢ÆÌÌì¸ÇµØµÄÈöÁË³öÀ´!\n"NOR,me,target);
+        message_vision(HIR"\n$Nä¸€å£°è½»ç¬‘ï¼Œä¸€å¤§åŒ…é˜´é˜³å’Œåˆæ•£é“ºå¤©ç›–åœ°çš„æ’’äº†å‡ºæ¥!\n"NOR,me,target);
         me->start_busy(1) ;
         if( !target->is_killing(me) ) target->kill_ob(me);
         if( random(me->query("combat_exp"))<target->query("combat_exp")/2)
-        message_vision(HIW"\n$n´ó½ĞÒ»Éù£¬ÃÍµÄÒ»¸öºµµØ°Î´ĞÉíĞĞ³åÆğÊıÕÉÀ´¸ß£¬¿°¿°¶ã¹ıÁË$NµÄÒõÑôºÍºÏÉ¢£¡\n"NOR,me,target);
+        message_vision(HIW"\n$nå¤§å«ä¸€å£°ï¼ŒçŒ›çš„ä¸€ä¸ªæ—±åœ°æ‹”è‘±èº«è¡Œå†²èµ·æ•°ä¸ˆæ¥é«˜ï¼Œå ªå ªèº²è¿‡äº†$Nçš„é˜´é˜³å’Œåˆæ•£ï¼\n"NOR,me,target);
         else {
-                message_vision(HIW"\n$n¶ãÉÁ²»¼°£¬±»ÒõÑôºÍºÏÉ¢ÈöÁËÒ»Éí£¡\n"NOR,me,target);
-if (target->query("gender")=="Å®ĞÔ")
+                message_vision(HIW"\n$nèº²é—ªä¸åŠï¼Œè¢«é˜´é˜³å’Œåˆæ•£æ’’äº†ä¸€èº«ï¼\n"NOR,me,target);
+if (target->query("gender")=="å¥³æ€§")
 {
                 target->set("qi",target->query("qi")/3);
                 target->set("jing",target->query("jing")/3);
-                tell_object (target, HIR "\nÄãÖ»¾õµÃÈ«Éí·¢ÈÈ£¬ÂíÉÏÒªË¤µ¹ÁË!\n"NOR);
+                tell_object (target, HIR "\nä½ åªè§‰å¾—å…¨èº«å‘çƒ­ï¼Œé©¬ä¸Šè¦æ‘”å€’äº†!\n"NOR);
 }
 else 
 {
                 target->set("qi",target->query("qi")*2/3);
                 target->set("jing",target->query("jing")*2/3);
-                tell_object (target, HIW "\nÄãÖ»¾õµÃÈ«Éí·¢ÈÈ£¬ÂíÉÏÒªË¤µ¹ÁË!\n"NOR);
+                tell_object (target, HIW "\nä½ åªè§‰å¾—å…¨èº«å‘çƒ­ï¼Œé©¬ä¸Šè¦æ‘”å€’äº†!\n"NOR);
 }
 
                 }

@@ -3,507 +3,507 @@ string  zuji(string str);
 int ckiller=4;
 #include <ansi.h>
 mapping *lquest = ({
-        ([      "quest":                "ºöÂ×´ó»¢",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºöÂ×¶ş»¢",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºöÂ×Èı»¢",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºöÂ×ËÄ»¢",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºìÃ«¹í",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Áõ¹úĞù",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Äª´ó",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¼ÍÏşÜ½",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ĞşÊ¦Ì«",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ºÍÊ¦Ì«",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÎÄêÍĞ¡Ê¦Ì«",    "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÎÄÇåĞ¡Ê¦Ì«",    "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ĞÄÊ¦Ì«",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "±´½õÒÇ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ĞşÊ¦Ì«",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²åÈÊ¦Ì«",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÕÔÁéÖé",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÀîÃ÷Ï¼",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²»ÛÊ¦Ì«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ÏĞÊ¦Ì«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ÕÕÊ¦Ì«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¾²ÕæÊ¦Ì«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "·½±ÌÁÕ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÕÅËÉÏª",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÒóÀæÍ¤",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ËÎÔ¶ÇÅ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÓáÁ«ÖÛ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "¹ÈĞéµÀ³¤",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÕÅÈı·á",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÇåĞéµÀ³¤",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":                "ÄªÉù¹È",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÖÓÍò³ğ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¸Ê±¦±¦",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÖÓÁé",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Â½³Ë·ç",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "º«±¦¾Ô",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "º«Ğ¡Ó¨",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¿ÂÕò¶ñ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "È«½ğ·¢",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÅ°¢Éú",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÄÏÏ£ÈÊ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Öì´Ï",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "»ÆÒ©Ê¦",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Óà²×º£",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºîÈËÓ¢",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºéÈËĞÛ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÅÎŞ¼É",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÒóÒ°Íõ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÍØ°Ï",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ĞÁÈ»",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºúÇàÅ£",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÑÕÔ«",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÌÆÑó",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "×¯ï£",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "½ÓÒıÊ¹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¸ßÉ½Íõ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Î×Ê¿",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÔÖ¾¾´",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÒüÖ¾Æ½",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ğ¡ÁúÅ®",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ËïÆÅÆÅ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÁÖ³¯Ó¢",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Æ¤ÇåĞş",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¼§ÇåĞé",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "³ÂÖ¾Òæ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "±¦Ïó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ñªµ¶ÀÏ×æ",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ê¤ÚĞ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ñë×Ú",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "×¿Âê",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÈøÄ¾»î·ğ",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¼ÎÄ¾»î·ğ",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "À­ÕÂ»î·ğ",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¸ğÂ×²¼",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÊÌ´¸",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÉÆÓÂ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "»¨Ìú¸É",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Áõ³Ğ·ç",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ë®á·",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Â½ÌìÊã",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "É½ÔôÍ·",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "»¨»¨¹«×Ó",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Å·Ñô·æ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ğ¡Çà",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "½ÌÁ·",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Àî½ÌÍ·",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¹Ü¼Ò",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÀÏ²Ä",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "°×ÒÂÉÙÅ®",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÅÂè",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "°×ÍÃ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÃÅÎÀ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "À¼½£",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ã·½£",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÓàÆÅÆÅ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¾ÅÒíµÀÈË",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "³ö³¾×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "²É»¨×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¶¡´ºÇï",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "°¢×Ï",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕªĞÇ×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ê¨ºğ×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "½¨³ıµÀÈË",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Óñíà×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÓñÒô×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Óñçá×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "½­°ÙÊ¤",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÌìÃÅµÀÈË",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÔÀ·òÈË",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ê©´÷×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÔÀ²»Èº",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÔÀÁéÉº",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¸ß¸ùÃ÷",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Áº·¢",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¹«Æ½×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÀÍµÂÅµ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Áîºü³å",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ò¶¶şÄï",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÄÏº£öùÉñ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ê¯ÈËÎäÊ¿",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "»Ê¹¬ÎÀÊ¿",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "»Æ²®Á÷",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ò»Æ·ÌÃÎäÊ¿",    "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "·¶ËÉ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÔº×",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÅ³ËÔÆ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÕÅ³Ë·ç",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¼Ö²¼",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÈÕÔÂÉñ½Ì½ÌÍ½",  "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Íõ³Ï",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ğş¿à´óÊ¦",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "³ÎÖ¾",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "É¨µØÉ®",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "»Û¿Õ×ğÕß",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "µÀ¾õìøÊ¦",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ğş´È´óÊ¦",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÇåÉÆ±ÈÇğ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "µÀ¹ûìøÊ¦",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÇåÎŞ±ÈÇğ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÇåÎª±ÈÇğ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Çå·¨±ÈÇğ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ê·µÇ´ï",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "×óÀäìø",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "µÒĞŞ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÌÀÓ¢ğÀ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Íò´óÆ½",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Â½°Ø",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "·Ñ±ò",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÖÓÕò",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¸ß¿ËĞÂ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "µË°ËÄê",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¶¡Ãã",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "Ö£İà",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÇØ¾î",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¶¨ÏĞÊ¦Ì«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "¶¨ÒİÊ¦Ì«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÒÇÇå",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÒÇºÍ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÒÇÖÊ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÑÆ¸¾",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºúì³",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÑÖ»ù",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "½¹ÎÄÆÚ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ºÕ¶ûËÕ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ëøÒ»À×",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-       ([      "quest":                "ÓñÕæ×Ó",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
-        ([      "quest":   "Âí³¬ĞË",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Îä½«",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¹Ù±ø",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¹ù¾¸",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "µêĞ¡¶ş",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÙşÀÏ°å",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÍõÎå",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ç®ÑÛ¿ª",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Âí·ò",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Á÷Ã¥",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Á÷Ã¥Í·",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Öììä",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÑîÓÀ¸£",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÔøÈá",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Æ½Ò»Ö¸",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ò©ÆÌ»ï¼Æ","exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ìú½³",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ìô·ò",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÌË×ÓÊÖ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "º£¹«¹«",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ğ¡¹ğ×Ó",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "³ÌÓñ»·",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ì·ÓÑ¼Í",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "³ÌÒ©·¢",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÑÃÒÛ",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ê·ÇàÉ½",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÓÎ·½µÀÈË","exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "³ÂÓĞµÂ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¼Ò¶¡",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¹Ü¼Ò",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "´ŞÔ±Íâ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "´Şİºİº",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ºìÄï",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "·â¹­Ó°",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÃÛ·ä",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÌÒ»¨´å³¤","exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÌÒ»¨Í¯",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÄĞº¢",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÕÔÃô",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ËïÈı»Ù",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÕÔÒ»ÉË",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ç®¶ş°Ü",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÀîËÄ´İ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÎâÁùÆÆ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÖÜÎåÊä",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Íõ°ËË¥",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ö£ÆßÃğ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ê·ËÉ",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¿Õ¿Õ¶ù",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Î¤Ğ¡±¦",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÌÆéª",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÏãÁâ",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ğ¡»ì»ì",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¹ş°Í¹·",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "ÅÖÍ·ÍÓ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¶ÎÓş",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "°¢ÇìÉ©",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Î¤´º·¼",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "¹ê¹«",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Ã©Ê®°Ë",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":   "Å·Ñô¿Ë",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
-        ([      "quest":                "ÎèÉßÈË", "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "µ¶¿Í",  "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "½£¿Í",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¹Ø°²»ù",  "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀîÁ¦ÊÀ",     "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÍÀÔ×³¡»ï¼Æ",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ğ¡··",       "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¼ÖÀÏÁù",     "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÓÎ¿Í",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÓÎ·½ºÍÉĞ",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ºúÕÆ¹ñ",     "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "½­ºşºÀ¿Í",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¸ßÑå³¬",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ğ¡Á÷Ã¥",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "µØÆ¦",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÕÆ¹ñ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¿Íµê»ï¼Æ",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÎâÁùÆæ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÊİÍ·ÍÓ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÊéÉú",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¹ËÑ×Îä",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÏôÔ¶É½",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "·ëÎı·¶",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ì«¼à",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Âô»¨¹ÃÄï",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÊÌÎÀ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "°×¹êÊÙ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ç®ÀÏ±¾",       "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÍÁ·Ë",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ìô·ò",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¹±ÌÆ²Ö¹úÊ¦",  "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ĞìÌì´¨",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "É£ÈıÄï",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÉòÇà¸Õ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÂíÇàĞÛ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÎâÇàÁÒ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ñ¦Ä½»ª",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¿µ¹ãÁê",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÃÉÃæÈË",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ËÕĞÇºÓ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¹¶¶Á",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ç®Çà½¡",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÅíÁ¬»¢",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Â½¹ÚÓ¢",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ôÃÇ§ÕÉ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "´ä»¨",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "µØ±£",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀîËÄ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "É³Í¨Ìì",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Áº×ÓÎÌ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ºîÍ¨º£",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "´óºº",       "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀÏÕß",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀÏğ±ÆÅ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀÏºÍÉĞ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "³ÌÀÏ°å",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀÖºñ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÌìËÉµÀÈË",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ìì°ØµÀÈË",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "×æÇ§Çï",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "µ¥Õı",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÌìÒÒµÀÈË",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "Ğ¡º¢",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ĞéÍ¨",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ĞéÃ÷",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀîÄª³î",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "¶¨¾²Ê¦Ì«",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÒÇÎÄ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "·ëÌú½³",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÀÏ´¬·ò",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
-        ([      "quest":                "ÕçÓĞÇì",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ê·ïÚÍ·",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "³Â°¢ÆÅ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÀÏ³¯·î",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÌÆÕÆ¹ñ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ğ¡Ôô",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Â³Á¬ÈÙ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÑÀ½«",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "»ÆÕæ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÎÄÌ©À´",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "°¢À­Ä¾º±",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÂòÂôÌá",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "°¢·²Ìá",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "°ÍÒÀ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ºîÔ±Íâ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Áõİ¼",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÁõÇÛ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Áõ·òÈË",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÁõÕı·ç",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Çú·ÇÑÌ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÇúÑó",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Âæ±ù",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ã×ÎªÒå",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ïò´óÄê",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ìï²®¹â",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÒÇÁÕ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "²è²©Ê¿",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Î÷ÏÄ±ø",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Àî¿ÉĞã",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ºúÇìÓà",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÕÅÕÙÖØ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ò®ÂÉÆë",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "»ÆÈØ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÎäÈıÍ¨",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÎäĞŞÎÄ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Öì×ÓÁø",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¹ùÜ½",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ä¾½³",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Æ«½«",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "×ô½«",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ËÎ±ø",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¸ßÀöÉÌ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÊéµêÀÏ°å",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÉêÈË¿¡",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Îä¶ØÈå",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¼ªÈËÍ¨",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÌÆ»±",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Áõºççø",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ïô·É",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "³Âä°",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Áúîı",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÂíÎåµÂ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÕË·¿ÀÏ·ò×Ó",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "±¾²Î",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "±¾Ïà",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "±¾³¾",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "±¾¹Û",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¿İÈÙ´óÊ¦",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "±¾Òò",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÁÔÈË",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Åã´Ó",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¸ßÉıÌ©",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ËØÒÂÎÀÊ¿",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "²ÉËñÈË",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ê¿±ø",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "×åÍ·ÈË",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÊÌ´Ó",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "´óÍÁË¾",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¸èÅ®",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ºÎºìÒ©",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ñ¦ÀÏ°å",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ê¯½³",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "»ÆÒÂÎÀÊ¿",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ñÒÍòÀï",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¸µË¼¹é",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "½õÒÂÎÀÊ¿",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Ì«¼à",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¹¬Å®",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÉñÅ©°ïµÜ×Ó",   "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÎŞÁ¿½£µÜ×Ó",   "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "·ïÒ»Ãù",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "»ÆÒÂÊ¹Õß",   "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "Óæ·ò",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÊİÉÌÈË",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÅÖÉÌÈË",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "·ïÆß",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÕÅ³¯ÌÆ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÕÅ¿µ",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "³£½ğÅô",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÓÎÑ¶",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "²·³Á",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "É³Ìì½­",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¸êÊ²¹ş",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÀÏºÍÉĞ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÁÖÕğÄÏ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "ÓàÈËÑå",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "¼ÖÈË´ï",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "´ŞïÚÍ·",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "°¢±Ì",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "·ëÕı¶«",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
-        ([      "quest":                "°¢Öì",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¿½ä¼¦å¤§è™",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¿½ä¼¦äºŒè™",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¿½ä¼¦ä¸‰è™",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¿½ä¼¦å››è™",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "çº¢æ¯›é¬¼",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "åˆ˜å›½è½©",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è«å¤§",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "çºªæ™“èŠ™",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™ç„å¸ˆå¤ª",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™å’Œå¸ˆå¤ª",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "æ–‡æ™–å°å¸ˆå¤ª",    "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "æ–‡æ¸…å°å¸ˆå¤ª",    "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™å¿ƒå¸ˆå¤ª",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "è´é”¦ä»ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™ç„å¸ˆå¤ª",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™è¿¦å¸ˆå¤ª",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "èµµçµç ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "ææ˜éœ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™æ…§å¸ˆå¤ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™é—²å¸ˆå¤ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™ç…§å¸ˆå¤ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "é™çœŸå¸ˆå¤ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "æ–¹ç¢§ç³",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "å¼ æ¾æºª",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "æ®·æ¢¨äº­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "å®‹è¿œæ¡¥",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "ä¿è²èˆŸ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "è°·è™šé“é•¿",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "å¼ ä¸‰ä¸°",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "æ¸…è™šé“é•¿",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":                "è«å£°è°·",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é’Ÿä¸‡ä»‡",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç”˜å®å®",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é’Ÿçµ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é™†ä¹˜é£",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "éŸ©å®é©¹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "éŸ©å°è¹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æŸ¯é•‡æ¶",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å…¨é‡‘å‘",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¼ é˜¿ç”Ÿ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å—å¸Œä»",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æœ±èª",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é»„è¯å¸ˆ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä½™æ²§æµ·",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¾¯äººè‹±",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ´ªäººé›„",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¼ æ— å¿Œ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ®·é‡ç‹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ‹“è·‹",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è¾›ç„¶",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èƒ¡é’ç‰›",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é¢œå£",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å”æ´‹",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "åº„é“®",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¥å¼•ä½¿",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é«˜å±±ç‹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å·«å£«",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èµµå¿—æ•¬",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å°¹å¿—å¹³",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å°é¾™å¥³",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å­™å©†å©†",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ—æœè‹±",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "çš®æ¸…ç„",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å§¬æ¸…è™š",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é™ˆå¿—ç›Š",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å®è±¡",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è¡€åˆ€è€ç¥–",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èƒœè°›",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¤®å®—",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å“ç›",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è¨æœ¨æ´»ä½›",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å˜‰æœ¨æ´»ä½›",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ‹‰ç« æ´»ä½›",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è‘›ä¼¦å¸ƒ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¾é”¤",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å–„å‹‡",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èŠ±é“å¹²",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "åˆ˜æ‰¿é£",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ°´å²±",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é™†å¤©æŠ’",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å±±è´¼å¤´",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èŠ±èŠ±å…¬å­",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¬§é˜³é”‹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å°é’",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ•™ç»ƒ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ææ•™å¤´",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç®¡å®¶",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è€æ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç™½è¡£å°‘å¥³",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¼ å¦ˆ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç™½å…”",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é—¨å«",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å…°å‰‘",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¢…å‰‘",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä½™å©†å©†",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¹ç¿¼é“äºº",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å‡ºå°˜å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é‡‡èŠ±å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¸æ˜¥ç§‹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é˜¿ç´«",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ‘˜æ˜Ÿå­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‹®å¼å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å»ºé™¤é“äºº",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‰ç£¬å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‰éŸ³å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‰ç‘å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ±Ÿç™¾èƒœ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¤©é—¨é“äºº",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å²³å¤«äºº",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ–½æˆ´å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å²³ä¸ç¾¤",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å²³çµçŠ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é«˜æ ¹æ˜",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¢å‘",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å…¬å¹³å­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "åŠ³å¾·è¯º",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä»¤ç‹å†²",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¶äºŒå¨˜",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å—æµ·é³„ç¥",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "çŸ³äººæ­¦å£«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "çš‡å®«å«å£«",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é»„ä¼¯æµ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¸€å“å ‚æ­¦å£«",    "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èŒƒæ¾",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èµµé¹¤",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¼ ä¹˜äº‘",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å¼ ä¹˜é£",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è´¾å¸ƒ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ—¥æœˆç¥æ•™æ•™å¾’",  "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‹è¯š",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç„è‹¦å¤§å¸ˆ",      "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¾„å¿—",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ‰«åœ°åƒ§",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ…§ç©ºå°Šè€…",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é“è§‰ç¦…å¸ˆ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç„æ…ˆå¤§å¸ˆ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¸…å–„æ¯”ä¸˜",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é“æœç¦…å¸ˆ",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¸…æ— æ¯”ä¸˜",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¸…ä¸ºæ¯”ä¸˜",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ¸…æ³•æ¯”ä¸˜",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å²ç™»è¾¾",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å·¦å†·ç¦…",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‹„ä¿®",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ±¤è‹±é¹„",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¸‡å¤§å¹³",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é™†æŸ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "è´¹å½¬",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é’Ÿé•‡",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é«˜å…‹æ–°",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é‚“å…«å¹´",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä¸å‹‰",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "éƒ‘è¼",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç§¦ç»¢",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å®šé—²å¸ˆå¤ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å®šé€¸å¸ˆå¤ª",        "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä»ªæ¸…",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä»ªå’Œ",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ä»ªè´¨",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "å“‘å¦‡",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èƒ¡æ–",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "é˜åŸº",            "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç„¦æ–‡æœŸ",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "èµ«å°”è‹",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "æ»•ä¸€é›·",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+       ([      "quest":                "ç‰çœŸå­",          "exp_bonus":random(25)+30,"pot_bonus": random(12)+10    ]),
+        ([      "quest":   "é©¬è¶…å…´",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ­¦å°†",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å®˜å…µ",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "éƒ­é–",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "åº—å°äºŒ",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å†¼è€æ¿",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç‹äº”",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é’±çœ¼å¼€",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é©¬å¤«",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æµæ°“",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æµæ°“å¤´",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æœ±ç†¹",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ¨æ°¸ç¦",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ›¾æŸ”",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å¹³ä¸€æŒ‡",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "è¯é“ºä¼™è®¡","exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é“åŒ ",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æŒ‘å¤«",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "è¶Ÿå­æ‰‹",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æµ·å…¬å…¬",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å°æ¡‚å­",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç¨‹ç‰ç¯",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "è°­å‹çºª",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç¨‹è¯å‘",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "è¡™å½¹",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å²é’å±±",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ¸¸æ–¹é“äºº","exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é™ˆæœ‰å¾·",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å®¶ä¸",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç®¡å®¶",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å´”å‘˜å¤–",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å´”èºèº",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "çº¢å¨˜",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å°å¼“å½±",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "èœœèœ‚",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ¡ƒèŠ±æ‘é•¿","exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ¡ƒèŠ±ç«¥",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç”·å­©",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "èµµæ•",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å­™ä¸‰æ¯",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "èµµä¸€ä¼¤",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é’±äºŒè´¥",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æå››æ‘§",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å´å…­ç ´",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å‘¨äº”è¾“",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç‹å…«è¡°",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "éƒ‘ä¸ƒç­",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å²æ¾",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "ç©ºç©ºå„¿",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "éŸ¦å°å®",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å”æ¥ ",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é¦™è±",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å°æ··æ··",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "å“ˆå·´ç‹—",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "èƒ–å¤´é™€",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ®µèª‰",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é˜¿åº†å«‚",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "éŸ¦æ˜¥èŠ³",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "é¾Ÿå…¬",    "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "èŒ…åå…«",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":   "æ¬§é˜³å…‹",  "exp_bonus":random(10)+30,"pot_bonus": random(8)+10  ]),
+        ([      "quest":                "èˆè›‡äºº", "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "åˆ€å®¢",  "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å‰‘å®¢",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å…³å®‰åŸº",  "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æåŠ›ä¸–",     "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å± å®°åœºä¼™è®¡",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å°è´©",       "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è´¾è€å…­",     "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ¸¸å®¢",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ¸¸æ–¹å’Œå°š",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "èƒ¡æŒæŸœ",     "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ±Ÿæ¹–è±ªå®¢",   "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "é«˜å½¦è¶…",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å°æµæ°“",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "åœ°ç—",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æŒæŸœ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å®¢åº—ä¼™è®¡",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å´å…­å¥‡",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ç˜¦å¤´é™€",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ä¹¦ç”Ÿ",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "é¡¾ç‚æ­¦",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è§è¿œå±±",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å†¯é”¡èŒƒ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å¤ªç›‘",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å–èŠ±å§‘å¨˜",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ä¾å«",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ç™½é¾Ÿå¯¿",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "é’±è€æœ¬",       "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "åœŸåŒª",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æŒ‘å¤«",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è´¡å”ä»“å›½å¸ˆ",  "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å¾å¤©å·",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ¡‘ä¸‰å¨˜",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ²ˆé’åˆš",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "é©¬é’é›„",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å´é’çƒˆ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è–›æ…•å",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "åº·å¹¿é™µ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è’™é¢äºº",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è‹æ˜Ÿæ²³",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è‹Ÿè¯»",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "é’±é’å¥",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å½­è¿è™",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "é™†å† è‹±",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è£˜åƒä¸ˆ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ç¿ èŠ±",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "åœ°ä¿",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æå››",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ²™é€šå¤©",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æ¢å­ç¿",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ä¾¯é€šæµ·",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å¤§æ±‰",       "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è€è€…",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è€é¸¨å©†",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è€å’Œå°š",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ç¨‹è€æ¿",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ä¹åš",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å¤©æ¾é“äºº",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å¤©æŸé“äºº",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ç¥–åƒç§‹",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å•æ­£",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å¤©ä¹™é“äºº",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å°å­©",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è™šé€š",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è™šæ˜",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "æè«æ„",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å®šé™å¸ˆå¤ª",    "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ä»ªæ–‡",        "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "å†¯é“åŒ ",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "è€èˆ¹å¤«",      "exp_bonus":random(15)+30,"pot_bonus": random(8)+10   ]),
+        ([      "quest":                "ç”„æœ‰åº†",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å²é•–å¤´",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é™ˆé˜¿å©†",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è€æœå¥‰",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å”æŒæŸœ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å°è´¼",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é²è¿è£",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç‰™å°†",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é»„çœŸ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ–‡æ³°æ¥",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é˜¿æ‹‰æœ¨ç½•",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä¹°å–æ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é˜¿å‡¡æ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å·´ä¾",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä¾¯å‘˜å¤–",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åˆ˜è",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åˆ˜èŠ¹",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åˆ˜å¤«äºº",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åˆ˜æ­£é£",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ›²éçƒŸ",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ›²æ´‹",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "éª†å†°",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç±³ä¸ºä¹‰",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å‘å¤§å¹´",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç”°ä¼¯å…‰",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä»ªç³",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "èŒ¶åšå£«",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è¥¿å¤å…µ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æå¯ç§€",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "èƒ¡åº†ä½™",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¼ å¬é‡",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è€¶å¾‹é½",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é»„è“‰",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ­¦ä¸‰é€š",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ­¦ä¿®æ–‡",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ±å­æŸ³",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "éƒ­èŠ™",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ¨åŒ ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åå°†",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä½å°†",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å®‹å…µ",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é«˜ä¸½å•†",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä¹¦åº—è€æ¿",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç”³äººä¿Š",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ­¦æ•¦å„’",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å‰äººé€š",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å”æ§",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åˆ˜è™¹ç‘›",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è§é£",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é™ˆæµ’",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é¾™é“¨",             "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é©¬äº”å¾·",           "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è´¦æˆ¿è€å¤«å­",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ¬å‚",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ¬ç›¸",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ¬å°˜",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ¬è§‚",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ¯è£å¤§å¸ˆ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æœ¬å› ",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "çŒäºº",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é™ªä»",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é«˜å‡æ³°",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç´ è¡£å«å£«",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é‡‡ç¬‹äºº",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å£«å…µ",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ—å¤´äºº",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä¾ä»",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¤§åœŸå¸",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ­Œå¥³",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä½•çº¢è¯",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è–›è€æ¿",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "çŸ³åŒ ",         "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é»„è¡£å«å£«",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è¤šä¸‡é‡Œ",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å‚…æ€å½’",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é”¦è¡£å«å£«",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¤ªç›‘",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å®«å¥³",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç¥å†œå¸®å¼Ÿå­",   "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ— é‡å‰‘å¼Ÿå­",   "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å‡¤ä¸€é¸£",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é»„è¡£ä½¿è€…",   "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ¸”å¤«",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ç˜¦å•†äºº",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "èƒ–å•†äºº",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å‡¤ä¸ƒ",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¼ æœå”",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¼ åº·",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å¸¸é‡‘é¹",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ¸¸è®¯",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "åœæ²‰",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ²™å¤©æ±Ÿ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æˆˆä»€å“ˆ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è€å’Œå°š",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "æ—éœ‡å—",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "ä½™äººå½¦",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "è´¾äººè¾¾",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å´”é•–å¤´",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é˜¿ç¢§",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "å†¯æ­£ä¸œ",     "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
+        ([      "quest":                "é˜¿æœ±",       "exp_bonus":random(20)+30,"pot_bonus": random(10)+10   ]),
 });
 
 mixed rooms = ({
         ({
-        "ÉÙÁÖ¹ã³¡","Íõ¸®Â·","»ª²ØâÖ","ÓĞËù²»ÎªĞù","×ÏÏö¹¬´óÃÅ",
-        "ÌìÎ¢ÌÃ","ÈÕÔÂÆº","´óÑ©É½É½¹È","ÁùºÍËş","È«Õæ½Ì´óÃÅ", 
-        "Ä¹ÃÅ","ÌÒ»¨É½×¯ÕıÌü","¾ÓÓ¹¹Ø","¶À×ğÌü","ĞÇËŞº£", 
-        "Ñ©É½ËÂÉ½ÃÅ","Ò»Æ·ÌÃ´óÔº","À¥ÂØÅÉÉ½ÃÅ","²ÎºÏ¾Ó","ÎåÖ¸ÌÃ", 
-        "ÖìÈ¸ÍâÃÅ","ÇàÁúÍâÃÅ","°×»¢ÍâÃÅ","ĞşÎäÍâÃÅ","Ìì°²ÃÅ",
-        "ÑïÖİÎä¹İ","¸£ÍşïÚ¾Ö","ĞşÃî¹Û","ÁéÒşËÂ","ÈªÖİÄÏÃÅ",
-        "ÁéÖİÄÏÃÅ","Öî¸ğÁÁµî","ÑÌÓêÂ¥","ÄÏÑô³Ç","·ğÉ½ÄÏÃÅ",                
-        "Éß¹ÇËş","³¤°²ÀÖ·»","ºâÑôÎ÷½Ö","Ï²Öİ³Ç","¸ğÂ³³Ç", 
-        "ÒÁÀç","É½º£¹Ø","ÀÏÁúÍ·","°×Í·É½Ìì³Ø","ÌìÉ½½ÅÏÂ",
-        "Àö´ºÔº","Ó¿ÈªËÂ","ÌıÓêĞù","ÎåÀÏ·å","×Ï½ğ³Ç",
-        "ËÉ·ç¹Û","ÖÕÄÏÉ½½Å","±§×ÓÑÒ","°×ÂíÌ¶","ÉıÏÉ·»",                
-        "¼ÎÓ¦ÃÅ","ĞşÃî¹Û","¾ş¼«ìøÔº","ÏÀÒåÌü","Ïô¼ÒÇÅ", 
-        "ÁèÏöÄÚÃÅ","ÁèÏöµî","ÌÒ»¨½­¶«°¶","Îå¶¾½Ì´óÃÅ","ÌìĞÄÑÒ",
-        "¼ÎÓø¹Ø","Ë¿³ñÖ®Â·","°×Í·É½Ìì³Ø","ºÚ·ç¿Ú","ÁúÃÅ·å",
-        "ÄÏ³Ç","ÍÁÒ¤¹İ","ÏôÈ»¾Ó","ÌúÄ¾Õæ²¿Âä","ÌúÄ¾ÕæÓªÕÊ",
-        "ÃÉ¹Å²İÔ­","»Ø×å²¿Âä","Ğ¡ÏªÁ÷","ËéÒ¶¹ã³¡","Íõ¸®¾®´ó½Ö",
-        "ÌÁ¹Á¿Ú","ÈêÖİ³Ç","ÓÀ¶¨ÃÅ","É½ÔôÎÑ","²İİ®µØ",
-        "³¤°²ÀÖ·»","Ê®×Ö½ÖÍ·","³¤°²³ÇÎ÷ÃÅ","ÀÖ¸®Ê«Éç","ä½»¨Ïª",
-        "ÒøĞÓ¾ÆÂ¥","½ğÅ£Îä¹İ","½õ³Çæä","ÄÏÚ¯µÂ»¯±®","½£´¨Õò",
-        "ÓñĞé¹Û","ĞÇÔÆºşÅÏ","Â³ÍûÕò","Ï²Öİ³Ç","Ì«ºÍ½Ö¿Ú",
-        "¸ğÂ³³Ç","Ê¥ºş","ÍüÓÇ¹È","´óÑ©É½±±Â´","»ªÑÏ¶¥",
-        "ÁèÔÆÌİ","Ê®¶şÅÌ","·ğÉ½Õò½Ö","Ó¢ĞÛ»á¹İ","±±µÛÃí",
-        "¸£ÍşïÚ¾Ö","ÄÏä±Õò","ÏòÑôÏïÀÏÕ¬","ÖÕÄÏÉ½Ö÷·å","º®Ë®Ì¶",
-        "Ì«ºş","ÄÏä±Õò","¾»´ÈËÂ","ºúÇìÓàÌÃ","±£ÊçËş",
-        "·çÀ×ÌÃ","Ê¥¹ÃÌÃ","ÇàÁúÌÃ´óÌü","¹şÈø¿ËÕÊÅñ","Æ½¶¨Öİ",
-        "¼ûĞÔ·å","´ó×ÖÁë","Ğü¿ÕËÂ","ºâÑôÎ÷½Ö","Áõ¸®´óÔº",
-        "ĞşÌ³Ãí","´ò¹È³¡","ÈºÏÉ¹Û","Á«»¨·å","É¯ÂÜÆº",
-        "Îå·ğËÂ","¹ÅÀË","»ÆºÓ°ïÕ¯ÃÅ","»ÆÍÁ¸ßÔ­","Çà³Ç",
-        "ÔÃÀ´¿ÍÕ»","¹éÀ´¿ÍÕ»","±ÌÍ©Ô°²è¹İ","¶¨Ïå¹ã³¡","ÑøĞÄµî",
-        "ÌìÊ¦¶´","ËÉ·ç¹Û","ÈªÖİÄÏÃÅ","¾ÓÓ¹¹Ø","¾ş¼«ìøÔº",
-        "áÔÔÀËÂËş","Íò¾°É½×¯","²×ÀËÍ¤","×Ï½ğâÖ","º®É½ËÂ",
-        "Óñ»Ê¶¥","á·×Ú·»","»ÆÉ½É½ÃÅ","°ãÈôÌ¨","Çå¶¼Ñş³Ø",
-        "À½²×½­ÅÏ","ÂÀ×æâÖ","ÓöÕæ¹¬","×ÏÏö¹¬´óÃÅ","³¯Ìì¹¬",
-        "¹Û¾°Â¥","Çà²Ø¸ßÔ­","°²¸§Ê¹ÑÃÃÅ","ĞşÎäÃÅÍâÃÅ","ÖìÈ¸ÃÅÍâÃÅ",
-        "ÈÕÔÂ¶´","åĞÒ£¶´","Ñ©É½ËÂÉ½ÃÅ","Ñ©É½ËÂÉ½ÃÅ","¹ÛĞÇÌ¨",
-        "²ÎºÏ¾Ó","¹óÑôÊ®×Ö½ÖÍ·","ÑïÖİÎä¹İ","Àö´ºÔº","²İÌÃËÂ",
-        "ÖÕÄÏÉ½½Å","ÆÕ¹âËÂ","ÖØÑô¹¬´óÃÅ","×£ÈÚµî","¸£ÑÏËÂ",
-        "çÎç¿·åÉ½½Å","¶À×ğÌü","¸ßÉ½ºş²´","À¥ÂØÉ½ÃÅ","Ó­·ç¾Æµê",
-        "ÎåÖ¸ÌÃ","ÖĞÖ¸·å","ÎŞÃû·å","Ä´Ö¸·å","Ì«°×¾ÆÂ¥",
-        "Ê¢¾©³ÇÃÅ","ÕÔÍõ¸®","ÂíÒØ³ÇÖĞĞÄ","Áééá¹¬","°ÍÑÕ¿¦À­É½",
-        "¶Ï³¦ÑÂ","¾ÓÓ¹¹Ø","ĞÇĞÇÏ¿","Å¯¸ó","»Ê¹¬ÕıÃÅ",
-        "äìÏæ¹İ","Ï²¸£ÌÃ","Ó­±öÂ¥","ÇôÊÒ","¾»´ÈËÂ",
-        "ÓÀ°²ËÂ","·ØÄ¹ÄÚ²¿","Ï²¸£ÌÃ","Ó­±öÂ¥","»Ø×å²¿Âä",
-        "ÂíÒØ³ÇÖĞĞÄ","ºÏ·Ê¹ã³¡","¾Å½­¹ã³¡","°ÍÁê¹ã³¡","ĞìÖİ¶«ÃÅ",
-        "¼ÃÄÏÑÃÃÅ","Óê»¨Ì¨","ÑÓ¸£ÃÅ","Îä²ıÂëÍ·","½üÈÕ¹ÅÂ¥",
-        "ÔÀÑôÎ÷ÃÅ","°Ë½Ç½Ö","ÎÚÀ­²´±±³ÇÃÅ","¶ÀÖùËÂ","¸ßÀö¶Ä³¡",
-        "³¤É³¹ã³¡","ÄÏ²ı¹ã³¡","¹óÑôÊ®×Ö½ÖÍ·","±Ì¼¦èÊ","ëøÍõ¸ó",
+        "å°‘æ—å¹¿åœº","ç‹åºœè·¯","åè—åºµ","æœ‰æ‰€ä¸ä¸ºè½©","ç´«éœ„å®«å¤§é—¨",
+        "å¤©å¾®å ‚","æ—¥æœˆåª","å¤§é›ªå±±å±±è°·","å…­å’Œå¡”","å…¨çœŸæ•™å¤§é—¨", 
+        "å¢“é—¨","æ¡ƒèŠ±å±±åº„æ­£å…","å±…åº¸å…³","ç‹¬å°Šå…","æ˜Ÿå®¿æµ·", 
+        "é›ªå±±å¯ºå±±é—¨","ä¸€å“å ‚å¤§é™¢","æ˜†ä»‘æ´¾å±±é—¨","å‚åˆå±…","äº”æŒ‡å ‚", 
+        "æœ±é›€å¤–é—¨","é’é¾™å¤–é—¨","ç™½è™å¤–é—¨","ç„æ­¦å¤–é—¨","å¤©å®‰é—¨",
+        "æ‰¬å·æ­¦é¦†","ç¦å¨é•–å±€","ç„å¦™è§‚","çµéšå¯º","æ³‰å·å—é—¨",
+        "çµå·å—é—¨","è¯¸è‘›äº®æ®¿","çƒŸé›¨æ¥¼","å—é˜³åŸ","ä½›å±±å—é—¨",                
+        "è›‡éª¨å¡”","é•¿å®‰ä¹åŠ","è¡¡é˜³è¥¿è¡—","å–œå·åŸ","è‘›é²åŸ", 
+        "ä¼ŠçŠ","å±±æµ·å…³","è€é¾™å¤´","ç™½å¤´å±±å¤©æ± ","å¤©å±±è„šä¸‹",
+        "ä¸½æ˜¥é™¢","æ¶Œæ³‰å¯º","å¬é›¨è½©","äº”è€å³°","ç´«é‡‘åŸ",
+        "æ¾é£è§‚","ç»ˆå—å±±è„š","æŠ±å­å²©","ç™½é©¬æ½­","å‡ä»™åŠ",                
+        "å˜‰åº”é—¨","ç„å¦™è§‚","å³»æç¦…é™¢","ä¾ ä¹‰å…","è§å®¶æ¡¥", 
+        "å‡Œéœ„å†…é—¨","å‡Œéœ„æ®¿","æ¡ƒèŠ±æ±Ÿä¸œå²¸","äº”æ¯’æ•™å¤§é—¨","å¤©å¿ƒå²©",
+        "å˜‰å³ªå…³","ä¸ç»¸ä¹‹è·¯","ç™½å¤´å±±å¤©æ± ","é»‘é£å£","é¾™é—¨å³°",
+        "å—åŸ","åœŸçª‘é¦†","è§ç„¶å±…","é“æœ¨çœŸéƒ¨è½","é“æœ¨çœŸè¥å¸",
+        "è’™å¤è‰åŸ","å›æ—éƒ¨è½","å°æºªæµ","ç¢å¶å¹¿åœº","ç‹åºœäº•å¤§è¡—",
+        "å¡˜æ²½å£","æ±å·åŸ","æ°¸å®šé—¨","å±±è´¼çª","è‰è“åœ°",
+        "é•¿å®‰ä¹åŠ","åå­—è¡—å¤´","é•¿å®‰åŸè¥¿é—¨","ä¹åºœè¯—ç¤¾","æµ£èŠ±æºª",
+        "é“¶æé…’æ¥¼","é‡‘ç‰›æ­¦é¦†","é”¦åŸé©¿","å—è¯å¾·åŒ–ç¢‘","å‰‘å·é•‡",
+        "ç‰è™šè§‚","æ˜Ÿäº‘æ¹–ç•”","é²æœ›é•‡","å–œå·åŸ","å¤ªå’Œè¡—å£",
+        "è‘›é²åŸ","åœ£æ¹–","å¿˜å¿§è°·","å¤§é›ªå±±åŒ—éº“","åä¸¥é¡¶",
+        "å‡Œäº‘æ¢¯","åäºŒç›˜","ä½›å±±é•‡è¡—","è‹±é›„ä¼šé¦†","åŒ—å¸åº™",
+        "ç¦å¨é•–å±€","å—æµ”é•‡","å‘é˜³å··è€å®…","ç»ˆå—å±±ä¸»å³°","å¯’æ°´æ½­",
+        "å¤ªæ¹–","å—æµ”é•‡","å‡€æ…ˆå¯º","èƒ¡åº†ä½™å ‚","ä¿æ·‘å¡”",
+        "é£é›·å ‚","åœ£å§‘å ‚","é’é¾™å ‚å¤§å…","å“ˆè¨å…‹å¸ç¯·","å¹³å®šå·",
+        "è§æ€§å³°","å¤§å­—å²­","æ‚¬ç©ºå¯º","è¡¡é˜³è¥¿è¡—","åˆ˜åºœå¤§é™¢",
+        "ç„å›åº™","æ‰“è°·åœº","ç¾¤ä»™è§‚","è²èŠ±å³°","èèåª",
+        "äº”ä½›å¯º","å¤æµª","é»„æ²³å¸®å¯¨é—¨","é»„åœŸé«˜åŸ","é’åŸ",
+        "æ‚¦æ¥å®¢æ ˆ","å½’æ¥å®¢æ ˆ","ç¢§æ¡å›­èŒ¶é¦†","å®šè¥„å¹¿åœº","å…»å¿ƒæ®¿",
+        "å¤©å¸ˆæ´","æ¾é£è§‚","æ³‰å·å—é—¨","å±…åº¸å…³","å³»æç¦…é™¢",
+        "åµ©å²³å¯ºå¡”","ä¸‡æ™¯å±±åº„","æ²§æµªäº­","ç´«é‡‘åºµ","å¯’å±±å¯º",
+        "ç‰çš‡é¡¶","å²±å®—åŠ","é»„å±±å±±é—¨","èˆ¬è‹¥å°","æ¸…éƒ½ç‘¶æ± ",
+        "æ¾œæ²§æ±Ÿç•”","å•ç¥–åºµ","é‡çœŸå®«","ç´«éœ„å®«å¤§é—¨","æœå¤©å®«",
+        "è§‚æ™¯æ¥¼","é’è—é«˜åŸ","å®‰æŠšä½¿è¡™é—¨","ç„æ­¦é—¨å¤–é—¨","æœ±é›€é—¨å¤–é—¨",
+        "æ—¥æœˆæ´","é€é¥æ´","é›ªå±±å¯ºå±±é—¨","é›ªå±±å¯ºå±±é—¨","è§‚æ˜Ÿå°",
+        "å‚åˆå±…","è´µé˜³åå­—è¡—å¤´","æ‰¬å·æ­¦é¦†","ä¸½æ˜¥é™¢","è‰å ‚å¯º",
+        "ç»ˆå—å±±è„š","æ™®å…‰å¯º","é‡é˜³å®«å¤§é—¨","ç¥èæ®¿","ç¦ä¸¥å¯º",
+        "ç¼¥ç¼ˆå³°å±±è„š","ç‹¬å°Šå…","é«˜å±±æ¹–æ³Š","æ˜†ä»‘å±±é—¨","è¿é£é…’åº—",
+        "äº”æŒ‡å ‚","ä¸­æŒ‡å³°","æ— åå³°","æ‹‡æŒ‡å³°","å¤ªç™½é…’æ¥¼",
+        "ç››äº¬åŸé—¨","èµµç‹åºœ","é©¬é‚‘åŸä¸­å¿ƒ","çµç’å®«","å·´é¢œå–€æ‹‰å±±",
+        "æ–­è‚ å´–","å±…åº¸å…³","æ˜Ÿæ˜Ÿå³¡","æš–é˜","çš‡å®«æ­£é—¨",
+        "æ½‡æ¹˜é¦†","å–œç¦å ‚","è¿å®¾æ¥¼","å›šå®¤","å‡€æ…ˆå¯º",
+        "æ°¸å®‰å¯º","åŸå¢“å†…éƒ¨","å–œç¦å ‚","è¿å®¾æ¥¼","å›æ—éƒ¨è½",
+        "é©¬é‚‘åŸä¸­å¿ƒ","åˆè‚¥å¹¿åœº","ä¹æ±Ÿå¹¿åœº","å·´é™µå¹¿åœº","å¾å·ä¸œé—¨",
+        "æµå—è¡™é—¨","é›¨èŠ±å°","å»¶ç¦é—¨","æ­¦æ˜Œç å¤´","è¿‘æ—¥å¤æ¥¼",
+        "å²³é˜³è¥¿é—¨","å…«è§’è¡—","ä¹Œæ‹‰æ³ŠåŒ—åŸé—¨","ç‹¬æŸ±å¯º","é«˜ä¸½èµŒåœº",
+        "é•¿æ²™å¹¿åœº","å—æ˜Œå¹¿åœº","è´µé˜³åå­—è¡—å¤´","ç¢§é¸¡æ‹","æ»•ç‹é˜",
         }),
         });
 
 mixed names = ({
         ({
-        "ÉÙÁÖ¹ã³¡","Íõ¸®Â·","»ª²ØâÖ","ÓĞËù²»ÎªĞù","×ÏÏö¹¬´óÃÅ",
-        "ÌìÎ¢ÌÃ","ÈÕÔÂÆº","´óÑ©É½É½¹È","ÁùºÍËş","È«Õæ½Ì´óÃÅ", 
-        "Ä¹ÃÅ","ÌÒ»¨É½×¯ÕıÌü","¾ÓÓ¹¹Ø","¶À×ğÌü","ĞÇËŞº£", 
-        "Ñ©É½ËÂÉ½ÃÅ","Ò»Æ·ÌÃ´óÔº","À¥ÂØÅÉÉ½ÃÅ","ÎåÖ¸ÌÃ", "ĞşÃî¹Û",
-        "ÖìÈ¸ÍâÃÅ","ÇàÁúÍâÃÅ","°×»¢ÍâÃÅ","ĞşÎäÍâÃÅ","Ìì°²ÃÅ",
-        "³Â¼ÒÆÌ×Ó","¸£ÍşïÚ¾Ö","ĞşÃî¹Û","ÁéÒşËÂ","ÈªÖİÄÏÃÅ",
-        "ÁéÖİÄÏÃÅ","Öî¸ğÁÁµî","ÑÌÓêÂ¥","ÄÏÑô³Ç","·ğÉ½ÄÏÃÅ",                
-        "Éß¹ÇËş","³¤°²ÀÖ·»","ºâÑôÎ÷½Ö","Ï²Öİ³Ç","¸ğÂ³³Ç", 
-        "ÒÁÀç","É½º£¹Ø","ÀÏÁúÍ·","ÌìÉ½½ÅÏÂ","ÖñÁÖĞ¡Éá",
-        "Àö´ºÔº","Ó¿ÈªËÂ","ÌıÓêĞù","ÎåÀÏ·å","×Ï½ğ³Ç",
-        "ËÉ·ç¹Û","ÖÕÄÏÉ½½Å","±§×ÓÑÒ","°×ÂíÌ¶","ÉıÏÉ·»",                
-        "¼ÎÓ¦ÃÅ","ĞşÃî¹Û","¾ş¼«ìøÔº","ÏÀÒåÌü","Ïô¼ÒÇÅ", 
-        "ÁèÏöÄÚÃÅ","ÁèÏöµî","¶ëáÒÇŞ¹¬","Óæ¼Ò","ÌìĞÄÑÒ",
-        "¼ÎÓø¹Ø","Ë¿³ñÖ®Â·","ºÚ·ç¿Ú","ÁúÃÅ·å","ÇíÑÂÏÂ",
-        "ÄÏ³Ç","ÏôÈ»¾Ó","ÌúÄ¾Õæ²¿Âä","ÌúÄ¾ÕæÓªÕÊ","ºÚ·ç¿Ú",
-        "ÃÉ¹Å²İÔ­","»Ø×å²¿Âä","Ğ¡ÏªÁ÷","ËéÒ¶¹ã³¡","Íõ¸®¾®´ó½Ö",
-        "ÌÁ¹Á¿Ú","ÈêÖİ³Ç","ÓÀ¶¨ÃÅ","²İİ®µØ","´ó¶ÉºÓ±ß",
-        "³¤°²ÀÖ·»","Ê®×Ö½ÖÍ·","³¤°²³ÇÎ÷ÃÅ","ÀÖ¸®Ê«Éç","ä½»¨Ïª",
-        "½ğÅ£Îä¹İ","½õ³Çæä","ÄÏÚ¯µÂ»¯±®","½£´¨Õò","½­ÅÏ",
-        "ÓñĞé¹Û","ĞÇÔÆºşÅÏ","Â³ÍûÕò","Ï²Öİ³Ç","Ì«ºÍ½Ö¿Ú",
-        "¸ğÂ³³Ç","Ê¥ºş","ÍüÓÇ¹È","´óÑ©É½±±Â´","»ªÑÏ¶¥",
-        "ÁèÔÆÌİ","Ê®¶şÅÌ","·ğÉ½Õò½Ö","Ó¢ĞÛ»á¹İ","±±µÛÃí",
-        "¸£ÍşïÚ¾Ö","ÄÏä±Õò","ÏòÑôÏïÀÏÕ¬","ÖÕÄÏÉ½Ö÷·å","º®Ë®Ì¶",
-        "Ì«ºş","ÄÏä±Õò","¾»´ÈËÂ","ºúÇìÓàÌÃ","±£ÊçËş",
-        "·çÀ×ÌÃ","Ê¥¹ÃÌÃ","ÇàÁúÌÃ´óÌü","¹şÈø¿ËÕÊÅñ","Æ½¶¨Öİ",
-        "´ó×ÖÁë","Ğü¿ÕËÂ","ºâÑôÎ÷½Ö","Áõ¸®´óÔº","²èÍ¤",
-        "ĞşÌ³Ãí","´ò¹È³¡","ÈºÏÉ¹Û","Á«»¨·å","É¯ÂÜÆº",
-        "Îå·ğËÂ","¹ÅÀË","»ÆºÓ°ïÕ¯ÃÅ","»ÆÍÁ¸ßÔ­","Çà³Ç",
-        "äôÀ½ÌÃ","¹éÀ´¿ÍÕ»","±ÌÍ©Ô°²è¹İ","¶¨Ïå¹ã³¡","ÑøĞÄµî",
-        "ÌìÊ¦¶´","ËÉ·ç¹Û","ÈªÖİÄÏÃÅ","¾ÓÓ¹¹Ø","¾ş¼«ìøÔº",
-        "áÔÔÀËÂËş","Íò¾°É½×¯","²×ÀËÍ¤","×Ï½ğâÖ","º®É½ËÂ",
-        "Óñ»Ê¶¥","á·×Ú·»","»ÆÉ½É½ÃÅ","°ãÈôÌ¨","¾ÅÁú±Ú",
-        "À½²×½­ÅÏ","ĞşÔÀÃÅ","ÓöÕæ¹¬","×ÏÏö¹¬´óÃÅ","³¯Ìì¹¬",
-        "¹Û¾°Â¥","Çà²Ø¸ßÔ­","°²¸§Ê¹ÑÃÃÅ","ĞşÎäÃÅÍâÃÅ","ÖìÈ¸ÃÅÍâÃÅ",
-        "ÈÕÔÂ¶´","åĞÒ£¶´","Ñ©É½ËÂÉ½ÃÅ","Ñ©É½ËÂÉ½ÃÅ","¹ÛĞÇÌ¨",
-        "ÀæÏãÔ·","¹óÑôÊ®×Ö½ÖÍ·","ÑïÖİÎä¹İ","Àö´ºÔº","²İÌÃËÂ",
-        "ÖÕÄÏÉ½½Å","ÆÕ¹âËÂ","È«Õæ½Ì´óÃÅ","×£ÈÚµî","¸£ÑÏËÂ",
-        "çÎç¿·åÉ½½Å","¶À×ğÌü","À¥ÂØÅÉÉ½ÃÅ","Ó­·ç¾Æµê","¾ªÉñ·å",
-        "ÎåÖ¸ÌÃ","ÖĞÖ¸·å","ÎŞÃû·å","Ä´Ö¸·å","Ì«°×¾ÆÂ¥",
-        "Ê¢¾©³ÇÃÅ","ÕÔÍõ¸®","Áééá¹¬","°ÍÑÕ¿¦À­É½","ĞÇĞÇÏ¿",
-        "¾ÓÓ¹¹Ø","ĞÇĞÇÏ¿","Å¯¸ó","»Ê¹¬ÕıÃÅ","¾ªÉñ·å",
-        "äìÏæ¹İ","Ï²¸£ÌÃ","Ó­±öÂ¥","ÇôÊÒ","¾»´ÈËÂ",
-        "ÓÀ°²ËÂ","·ØÄ¹ÄÚ²¿","Ï²¸£ÌÃ","Ó­±öÂ¥","»Ø×å²¿Âä",
-        "ÂíÒØ³ÇÖĞĞÄ","ºÏ·Ê¹ã³¡","¾Å½­¹ã³¡","°ÍÁê¹ã³¡","ĞìÖİ¶«ÃÅ",
-        "¼ÃÄÏÑÃÃÅ","Óê»¨Ì¨","ÑÓ¸£ÃÅ","Îä²ıÂëÍ·","½üÈÕ¹ÅÂ¥",
-        "ÔÀÑôÎ÷ÃÅ","°Ë½Ç½Ö","ÎÚÀ­²´±±³ÇÃÅ","¶ÀÖùËÂ","¸ßÀö¶Ä³¡",
-        "³¤É³¹ã³¡","ÄÏ²ı¹ã³¡","¹óÑôÊ®×Ö½ÖÍ·","±Ì¼¦èÊ","ëøÍõ¸ó",
+        "å°‘æ—å¹¿åœº","ç‹åºœè·¯","åè—åºµ","æœ‰æ‰€ä¸ä¸ºè½©","ç´«éœ„å®«å¤§é—¨",
+        "å¤©å¾®å ‚","æ—¥æœˆåª","å¤§é›ªå±±å±±è°·","å…­å’Œå¡”","å…¨çœŸæ•™å¤§é—¨", 
+        "å¢“é—¨","æ¡ƒèŠ±å±±åº„æ­£å…","å±…åº¸å…³","ç‹¬å°Šå…","æ˜Ÿå®¿æµ·", 
+        "é›ªå±±å¯ºå±±é—¨","ä¸€å“å ‚å¤§é™¢","æ˜†ä»‘æ´¾å±±é—¨","äº”æŒ‡å ‚", "ç„å¦™è§‚",
+        "æœ±é›€å¤–é—¨","é’é¾™å¤–é—¨","ç™½è™å¤–é—¨","ç„æ­¦å¤–é—¨","å¤©å®‰é—¨",
+        "é™ˆå®¶é“ºå­","ç¦å¨é•–å±€","ç„å¦™è§‚","çµéšå¯º","æ³‰å·å—é—¨",
+        "çµå·å—é—¨","è¯¸è‘›äº®æ®¿","çƒŸé›¨æ¥¼","å—é˜³åŸ","ä½›å±±å—é—¨",                
+        "è›‡éª¨å¡”","é•¿å®‰ä¹åŠ","è¡¡é˜³è¥¿è¡—","å–œå·åŸ","è‘›é²åŸ", 
+        "ä¼ŠçŠ","å±±æµ·å…³","è€é¾™å¤´","å¤©å±±è„šä¸‹","ç«¹æ—å°èˆ",
+        "ä¸½æ˜¥é™¢","æ¶Œæ³‰å¯º","å¬é›¨è½©","äº”è€å³°","ç´«é‡‘åŸ",
+        "æ¾é£è§‚","ç»ˆå—å±±è„š","æŠ±å­å²©","ç™½é©¬æ½­","å‡ä»™åŠ",                
+        "å˜‰åº”é—¨","ç„å¦™è§‚","å³»æç¦…é™¢","ä¾ ä¹‰å…","è§å®¶æ¡¥", 
+        "å‡Œéœ„å†…é—¨","å‡Œéœ„æ®¿","å³¨åµ‹å¯å®«","æ¸”å®¶","å¤©å¿ƒå²©",
+        "å˜‰å³ªå…³","ä¸ç»¸ä¹‹è·¯","é»‘é£å£","é¾™é—¨å³°","ç¼å´–ä¸‹",
+        "å—åŸ","è§ç„¶å±…","é“æœ¨çœŸéƒ¨è½","é“æœ¨çœŸè¥å¸","é»‘é£å£",
+        "è’™å¤è‰åŸ","å›æ—éƒ¨è½","å°æºªæµ","ç¢å¶å¹¿åœº","ç‹åºœäº•å¤§è¡—",
+        "å¡˜æ²½å£","æ±å·åŸ","æ°¸å®šé—¨","è‰è“åœ°","å¤§æ¸¡æ²³è¾¹",
+        "é•¿å®‰ä¹åŠ","åå­—è¡—å¤´","é•¿å®‰åŸè¥¿é—¨","ä¹åºœè¯—ç¤¾","æµ£èŠ±æºª",
+        "é‡‘ç‰›æ­¦é¦†","é”¦åŸé©¿","å—è¯å¾·åŒ–ç¢‘","å‰‘å·é•‡","æ±Ÿç•”",
+        "ç‰è™šè§‚","æ˜Ÿäº‘æ¹–ç•”","é²æœ›é•‡","å–œå·åŸ","å¤ªå’Œè¡—å£",
+        "è‘›é²åŸ","åœ£æ¹–","å¿˜å¿§è°·","å¤§é›ªå±±åŒ—éº“","åä¸¥é¡¶",
+        "å‡Œäº‘æ¢¯","åäºŒç›˜","ä½›å±±é•‡è¡—","è‹±é›„ä¼šé¦†","åŒ—å¸åº™",
+        "ç¦å¨é•–å±€","å—æµ”é•‡","å‘é˜³å··è€å®…","ç»ˆå—å±±ä¸»å³°","å¯’æ°´æ½­",
+        "å¤ªæ¹–","å—æµ”é•‡","å‡€æ…ˆå¯º","èƒ¡åº†ä½™å ‚","ä¿æ·‘å¡”",
+        "é£é›·å ‚","åœ£å§‘å ‚","é’é¾™å ‚å¤§å…","å“ˆè¨å…‹å¸ç¯·","å¹³å®šå·",
+        "å¤§å­—å²­","æ‚¬ç©ºå¯º","è¡¡é˜³è¥¿è¡—","åˆ˜åºœå¤§é™¢","èŒ¶äº­",
+        "ç„å›åº™","æ‰“è°·åœº","ç¾¤ä»™è§‚","è²èŠ±å³°","èèåª",
+        "äº”ä½›å¯º","å¤æµª","é»„æ²³å¸®å¯¨é—¨","é»„åœŸé«˜åŸ","é’åŸ",
+        "æ¼ªæ¾œå ‚","å½’æ¥å®¢æ ˆ","ç¢§æ¡å›­èŒ¶é¦†","å®šè¥„å¹¿åœº","å…»å¿ƒæ®¿",
+        "å¤©å¸ˆæ´","æ¾é£è§‚","æ³‰å·å—é—¨","å±…åº¸å…³","å³»æç¦…é™¢",
+        "åµ©å²³å¯ºå¡”","ä¸‡æ™¯å±±åº„","æ²§æµªäº­","ç´«é‡‘åºµ","å¯’å±±å¯º",
+        "ç‰çš‡é¡¶","å²±å®—åŠ","é»„å±±å±±é—¨","èˆ¬è‹¥å°","ä¹é¾™å£",
+        "æ¾œæ²§æ±Ÿç•”","ç„å²³é—¨","é‡çœŸå®«","ç´«éœ„å®«å¤§é—¨","æœå¤©å®«",
+        "è§‚æ™¯æ¥¼","é’è—é«˜åŸ","å®‰æŠšä½¿è¡™é—¨","ç„æ­¦é—¨å¤–é—¨","æœ±é›€é—¨å¤–é—¨",
+        "æ—¥æœˆæ´","é€é¥æ´","é›ªå±±å¯ºå±±é—¨","é›ªå±±å¯ºå±±é—¨","è§‚æ˜Ÿå°",
+        "æ¢¨é¦™è‹‘","è´µé˜³åå­—è¡—å¤´","æ‰¬å·æ­¦é¦†","ä¸½æ˜¥é™¢","è‰å ‚å¯º",
+        "ç»ˆå—å±±è„š","æ™®å…‰å¯º","å…¨çœŸæ•™å¤§é—¨","ç¥èæ®¿","ç¦ä¸¥å¯º",
+        "ç¼¥ç¼ˆå³°å±±è„š","ç‹¬å°Šå…","æ˜†ä»‘æ´¾å±±é—¨","è¿é£é…’åº—","æƒŠç¥å³°",
+        "äº”æŒ‡å ‚","ä¸­æŒ‡å³°","æ— åå³°","æ‹‡æŒ‡å³°","å¤ªç™½é…’æ¥¼",
+        "ç››äº¬åŸé—¨","èµµç‹åºœ","çµç’å®«","å·´é¢œå–€æ‹‰å±±","æ˜Ÿæ˜Ÿå³¡",
+        "å±…åº¸å…³","æ˜Ÿæ˜Ÿå³¡","æš–é˜","çš‡å®«æ­£é—¨","æƒŠç¥å³°",
+        "æ½‡æ¹˜é¦†","å–œç¦å ‚","è¿å®¾æ¥¼","å›šå®¤","å‡€æ…ˆå¯º",
+        "æ°¸å®‰å¯º","åŸå¢“å†…éƒ¨","å–œç¦å ‚","è¿å®¾æ¥¼","å›æ—éƒ¨è½",
+        "é©¬é‚‘åŸä¸­å¿ƒ","åˆè‚¥å¹¿åœº","ä¹æ±Ÿå¹¿åœº","å·´é™µå¹¿åœº","å¾å·ä¸œé—¨",
+        "æµå—è¡™é—¨","é›¨èŠ±å°","å»¶ç¦é—¨","æ­¦æ˜Œç å¤´","è¿‘æ—¥å¤æ¥¼",
+        "å²³é˜³è¥¿é—¨","å…«è§’è¡—","ä¹Œæ‹‰æ³ŠåŒ—åŸé—¨","ç‹¬æŸ±å¯º","é«˜ä¸½èµŒåœº",
+        "é•¿æ²™å¹¿åœº","å—æ˜Œå¹¿åœº","è´µé˜³åå­—è¡—å¤´","ç¢§é¸¡æ‹","æ»•ç‹é˜",
         }),
         });
 void init()
@@ -553,33 +553,33 @@ string *dir2;
         
                 if(me->query_temp("jobitem"))
         {
-tell_object(me,"\nÈÎÎñÊ¹Ğ¦×ÅËµµ½£¬ÄãÏÈ°Ñ¸Õ²ÅÈÃÄãÕÒµÄ¶«Î÷ÕÒµ½¸øÈË¼Ò°É....¡±\n");
+tell_object(me,"\nä»»åŠ¡ä½¿ç¬‘ç€è¯´åˆ°ï¼Œä½ å…ˆæŠŠåˆšæ‰è®©ä½ æ‰¾çš„ä¸œè¥¿æ‰¾åˆ°ç»™äººå®¶å§....â€\n");
              return 1;
         }
                 if(me->query_temp("roomjob"))
         {
-tell_object(me,"\nÈÎÎñÊ¹Ğ¦×ÅËµµ½£¬ÄãÏÈ°Ñ´ÌÌ½ÈÎÎñ×öºÃ°É....¡±\n");
+tell_object(me,"\nä»»åŠ¡ä½¿ç¬‘ç€è¯´åˆ°ï¼Œä½ å…ˆæŠŠåˆºæ¢ä»»åŠ¡åšå¥½å§....â€\n");
              return 1;
         }
 
 
 
-        //if ((int)me->query_condition("roomjob")){message_vision("$N¶Ô×Å$nÒ¡ÁËÒ¡Í·Ëµ£ºÄã¸Õ½Ó¹ı´ÌÌ½ÈÎÎñ!µÈ»áÔÙÀ´!\n", this_object(), me);return 1;}
+        //if ((int)me->query_condition("roomjob")){message_vision("$Nå¯¹ç€$næ‘‡äº†æ‘‡å¤´è¯´ï¼šä½ åˆšæ¥è¿‡åˆºæ¢ä»»åŠ¡!ç­‰ä¼šå†æ¥!\n", this_object(), me);return 1;}
 
         if( me->query("family/family_name")  !=  this_object()->query("mp"))
            {
-                      message_vision("$N¶Ô×Å$n´óºÈÒ»Éù£º"+this_object()->query("mp")+"µÄµÜ×Ó²ÅÄÜ×öÈÎÎñ¡£ÄãÊÇÄÄÀ´µÄ¼éÏ¸£¿????\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$nå¤§å–ä¸€å£°ï¼š"+this_object()->query("mp")+"çš„å¼Ÿå­æ‰èƒ½åšä»»åŠ¡ã€‚ä½ æ˜¯å“ªæ¥çš„å¥¸ç»†ï¼Ÿ????\n", this_object(), me);
                       return 1;
             }
 
         if ((int)me->query_condition("menpai_busy"))  
             {
-                      message_vision("$N¶Ô×Å$nÒ¡ÁËÒ¡Í·Ëµ£ºÄã°ìÊÂ²»Àû,µÈ»áÔÙÀ´!\n", this_object(), me);
+                      message_vision("$Nå¯¹ç€$næ‘‡äº†æ‘‡å¤´è¯´ï¼šä½ åŠäº‹ä¸åˆ©,ç­‰ä¼šå†æ¥!\n", this_object(), me);
                       return 1;
             }
         if(combatexp<10000)
         {
-tell_object(me,"\nÈÎÎñÊ¹Ğ¦×ÅËµµ½£¬ÄãµÄÎä¹¦»¹²»ĞĞ....¡±\n");
+tell_object(me,"\nä»»åŠ¡ä½¿ç¬‘ç€è¯´åˆ°ï¼Œä½ çš„æ­¦åŠŸè¿˜ä¸è¡Œ....â€\n");
              return 1;
 
         }
@@ -589,7 +589,7 @@ tell_object(me,"\nÈÎÎñÊ¹Ğ¦×ÅËµµ½£¬ÄãµÄÎä¹¦»¹²»ĞĞ....¡±\n");
         {
              if( ((int) me->query("task_time")) >  time() )
              {
-tell_object(me,"ÈÎÎñÊ¹µÉÁËÄãÒ»ÑÛËµµÀ£¬ÎÒ¸Õ²ÅÒªÄã×öµÄÊÂÇéÄØ£¿\n");
+tell_object(me,"ä»»åŠ¡ä½¿çªäº†ä½ ä¸€çœ¼è¯´é“ï¼Œæˆ‘åˆšæ‰è¦ä½ åšçš„äº‹æƒ…å‘¢ï¼Ÿ\n");
                    me->set_temp("menpaijob",0);
                    me->delete_temp("menpaijob");
                    return 0;
@@ -630,21 +630,21 @@ tell_object(me,"ÈÎÎñÊ¹µÉÁËÄãÒ»ÑÛËµµÀ£¬ÎÒ¸Õ²ÅÒªÄã×öµÄÊÂÇéÄØ£¿\n");
         quest = lquest[random(sizeof(lquest))];
         timep = random(100) + 380;
         time_period(timep, me);
-        tell_object(me, "°ÑĞÅËÍ¸ø¡º" + quest["quest"] + "¡»ÄãµÄÈÎÎñ¾ÍÍê³ÉÁË¡£\n" NOR);
-        message_vision("$N¸øÁË$nÒ»·âĞÅ¡£\n",this_object(),me);
+        tell_object(me, "æŠŠä¿¡é€ç»™ã€" + quest["quest"] + "ã€ä½ çš„ä»»åŠ¡å°±å®Œæˆäº†ã€‚\n" NOR);
+        message_vision("$Nç»™äº†$nä¸€å°ä¿¡ã€‚\n",this_object(),me);
         if (ob = present("xin", this_player()))
          {
-             message_vision("ÈÎÎñÊ¹½«ÒÔÇ°µÄĞÅÊÕÁË»ØÈ¥£¡\n",me);
+             message_vision("ä»»åŠ¡ä½¿å°†ä»¥å‰çš„ä¿¡æ”¶äº†å›å»ï¼\n",me);
              me->delete_temp("menpaijob");
              destruct(ob);
              letter = new("/quest/menpai/letter");
-                letter->set("long", "ÕâÊÇÒ»·âĞ´¸ø" +quest["quest"] + 
-                                    "µÄÇ×±ÊĞÅº¯¡£Äã¿ÉÒÔÓÃsongxin <id>À´ËÍ¸ø±ğÈË¡£\n"); 
+                letter->set("long", "è¿™æ˜¯ä¸€å°å†™ç»™" +quest["quest"] + 
+                                    "çš„äº²ç¬”ä¿¡å‡½ã€‚ä½ å¯ä»¥ç”¨songxin <id>æ¥é€ç»™åˆ«äººã€‚\n"); 
                 letter->move(me);
         
 
              letter->move(me);
-             quest["quest_type"] = "°ÑĞÅËÍ¸ø";
+             quest["quest_type"] = "æŠŠä¿¡é€ç»™";
              quest["exp_bonus"] = quest["exp_bonus"];
              quest["pot_bonus"] = quest["pot_bonus"];
              quest["score"] = 0;
@@ -659,10 +659,10 @@ tell_object(me,"ÈÎÎñÊ¹µÉÁËÄãÒ»ÑÛËµµÀ£¬ÎÒ¸Õ²ÅÒªÄã×öµÄÊÂÇéÄØ£¿\n");
          else
          {
             letter = new("/quest/menpai/letter");
-                letter->set("long", "ÕâÊÇÒ»·âĞ´¸ø" + quest["quest"] + 
-                                    "µÄÇ×±ÊĞÅº¯¡£Äã¿ÉÒÔÓÃsongxin <id>À´ËÍ¸ø±ğÈË¡£\n"); 
+                letter->set("long", "è¿™æ˜¯ä¸€å°å†™ç»™" + quest["quest"] + 
+                                    "çš„äº²ç¬”ä¿¡å‡½ã€‚ä½ å¯ä»¥ç”¨songxin <id>æ¥é€ç»™åˆ«äººã€‚\n"); 
             letter->move(me);
-            quest["quest_type"] = "°ÑĞÅËÍ¸ø";
+            quest["quest_type"] = "æŠŠä¿¡é€ç»™";
             quest["exp_bonus"] = quest["exp_bonus"];
             quest["pot_bonus"] = quest["pot_bonus"];
             quest["score"] = 0;
@@ -676,7 +676,7 @@ if (me->query_temp("menpaijob") < 0)
 me->delete_temp("menpaijob");
 me->add_temp("menpaijob",1);
 if (me->query_temp("menpaijob") > 1)
-tell_object(me,"ÄãÒÑ¾­Á¬ĞøÎª±¾ÃÅ×öÁË¡º"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"¡»¸öÈÎÎñÁË¡£\n" NOR);
+tell_object(me,"ä½ å·²ç»è¿ç»­ä¸ºæœ¬é—¨åšäº†ã€"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"ã€ä¸ªä»»åŠ¡äº†ã€‚\n" NOR);
 
             return 1;
          }
@@ -707,7 +707,7 @@ npc = QUESTS_D(tag)->query_quest();
 if (random(2)==1)
 npc = QUESTH_D(tag)->query_quest();
  quest = lquest[random(sizeof(lquest))];
-             quest["quest_type"] = "ÕÒµ½"+item["quest"]+"¸ø";
+             quest["quest_type"] = "æ‰¾åˆ°"+item["quest"]+"ç»™";
              quest["quest"]=npc["quest"];
              quest["exp_bonus"] = 30;
              quest["pot_bonus"] = 30;
@@ -720,23 +720,23 @@ npc = QUESTH_D(tag)->query_quest();
 me->set_temp("jobitem",item["quest"]);
 me->set_temp("jobnpc",npc["quest"]);
 me->apply_condition("roomjob",8);
-tell_object(me,HIC"ÈÎÎñÊ¹ËµµÀ£ºÇë°ïÎÒ°Ñ¡º"HIG+item["quest"]+HIC"¡»ÕÒµ½£¬²¢½»¸ø¡º"HIG+npc["quest"]+HIC"¡»¡£\n" NOR);
+tell_object(me,HIC"ä»»åŠ¡ä½¿è¯´é“ï¼šè¯·å¸®æˆ‘æŠŠã€"HIG+item["quest"]+HIC"ã€æ‰¾åˆ°ï¼Œå¹¶äº¤ç»™ã€"HIG+npc["quest"]+HIC"ã€ã€‚\n" NOR);
 if (me->query_temp("menpaijob") < 0)
 me->delete_temp("menpaijob");
 me->add_temp("menpaijob",1);
 if (me->query_temp("menpaijob") > 1)
-tell_object(me,"ÄãÒÑ¾­Á¬ĞøÎª±¾ÃÅ×öÁË¡º"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"¡»¸öÈÎÎñÁË¡£\n" NOR);
+tell_object(me,"ä½ å·²ç»è¿ç»­ä¸ºæœ¬é—¨åšäº†ã€"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"ã€ä¸ªä»»åŠ¡äº†ã€‚\n" NOR);
 if (me->query_temp("menpaijob") > 3 && random(10)==0)
 {
 me->add("mpgx",1);
-tell_object(me,"Äã×öµÄ²»´í£¡ÄãµÄÃÅÅÉ¹±Ï×¶ÈÔö¼ÓÁË!\n" NOR);
-tell_object(me,"Ä¿Ç°ÎªÖ¹,ÄãµÄÃÅÅÉ¹±Ï×¶ÈÎª¡º"HIC+chinese_number(me->query("mpgx"))+NOR"¡»¡£\n" NOR);
+tell_object(me,"ä½ åšçš„ä¸é”™ï¼ä½ çš„é—¨æ´¾è´¡çŒ®åº¦å¢åŠ äº†!\n" NOR);
+tell_object(me,"ç›®å‰ä¸ºæ­¢,ä½ çš„é—¨æ´¾è´¡çŒ®åº¦ä¸ºã€"HIC+chinese_number(me->query("mpgx"))+NOR"ã€ã€‚\n" NOR);
 }
 if (me->query_temp("menpaijob") > 3 && random(10)==0)
 {
 me->add("mpgx",1);
-tell_object(me,"Äã×öµÄ²»´í£¡ÄãµÄÃÅÅÉ¹±Ï×¶ÈÔö¼ÓÁË!\n" NOR);
-tell_object(me,"Ä¿Ç°ÎªÖ¹,ÄãµÄÃÅÅÉ¹±Ï×¶ÈÎª¡º"HIC+chinese_number(me->query("mpgx"))+NOR"¡»¡£\n" NOR);
+tell_object(me,"ä½ åšçš„ä¸é”™ï¼ä½ çš„é—¨æ´¾è´¡çŒ®åº¦å¢åŠ äº†!\n" NOR);
+tell_object(me,"ç›®å‰ä¸ºæ­¢,ä½ çš„é—¨æ´¾è´¡çŒ®åº¦ä¸ºã€"HIC+chinese_number(me->query("mpgx"))+NOR"ã€ã€‚\n" NOR);
 }
 return 1;
 }
@@ -758,7 +758,7 @@ room=zuji(dir2[1])+local;
         quest = lquest[random(sizeof(lquest))];
         //timep = 300+random(300)+10;
         //time_period(timep, me);
-             quest["quest_type"] = "´ÌÌ½";
+             quest["quest_type"] = "åˆºæ¢";
              quest["quest"]=local;
              quest["exp_bonus"] = 30;
              quest["pot_bonus"] = 30;
@@ -769,21 +769,21 @@ room=zuji(dir2[1])+local;
             me->set("quest_factor", 15);
             me->set("last_task_time", time());
 	  
-	  tell_object(me,HIC"ÈÎÎñÊ¹Ëµ:ÎÒÌıËµÔÚ¡º"HIR+room+HIC"¡»£¬·¢ÉúÁËÒ»Ğ©½­ºşÊÂ¼ş¡£"+
-           "Äã¸Ï¿ìÈ¥¡º"HIR+local+HIC"¡»´ÌÌ½(citan)Ò»ÏÂ°É¡£\n"NOR);
+	  tell_object(me,HIC"ä»»åŠ¡ä½¿è¯´:æˆ‘å¬è¯´åœ¨ã€"HIR+room+HIC"ã€ï¼Œå‘ç”Ÿäº†ä¸€äº›æ±Ÿæ¹–äº‹ä»¶ã€‚"+
+           "ä½ èµ¶å¿«å»ã€"HIR+local+HIC"ã€åˆºæ¢(citan)ä¸€ä¸‹å§ã€‚\n"NOR);
 if (wizardp(me))
-	  tell_object(me,GRN"WIZĞÅÏ¢:´ÌÌ½Î»ÖÃ¡º"YEL+fname+GRN"¡»¡£\n"NOR);
+	  tell_object(me,GRN"WIZä¿¡æ¯:åˆºæ¢ä½ç½®ã€"YEL+fname+GRN"ã€ã€‚\n"NOR);
 
 if (me->query_temp("menpaijob") < 0)
 me->delete_temp("menpaijob");
 me->add_temp("menpaijob",1);
 if (me->query_temp("menpaijob") > 1)
-tell_object(me,"ÄãÒÑ¾­Á¬ĞøÎª±¾ÃÅ×öÁË¡º"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"¡»¸öÈÎÎñÁË¡£\n" NOR);
+tell_object(me,"ä½ å·²ç»è¿ç»­ä¸ºæœ¬é—¨åšäº†ã€"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"ã€ä¸ªä»»åŠ¡äº†ã€‚\n" NOR);
 if (me->query_temp("menpaijob") > 3 && random(10)==0)
 {
 me->add("mpgx",1);
-tell_object(me,"Äã×öµÄ²»´í£¡ÄãµÄÃÅÅÉ¹±Ï×¶ÈÔö¼ÓÁË!\n" NOR);
-tell_object(me,"Ä¿Ç°ÎªÖ¹,ÄãµÄÃÅÅÉ¹±Ï×¶ÈÎª¡º"HIC+chinese_number(me->query("mpgx"))+NOR"¡»¡£\n" NOR);
+tell_object(me,"ä½ åšçš„ä¸é”™ï¼ä½ çš„é—¨æ´¾è´¡çŒ®åº¦å¢åŠ äº†!\n" NOR);
+tell_object(me,"ç›®å‰ä¸ºæ­¢,ä½ çš„é—¨æ´¾è´¡çŒ®åº¦ä¸ºã€"HIC+chinese_number(me->query("mpgx"))+NOR"ã€ã€‚\n" NOR);
 }
 return 1;
 }
@@ -793,21 +793,21 @@ return 1;
         timep = quest["time"];if (!quest["time"]) timep=600;
         timep = timep+360;
         time_period(timep, me);
-        if(quest["quest_type"]=="É±")
-             tell_object(me,"°Ñ¡º"HIR+quest["quest"]+HIC"¡»É±ÁË£¬Ëû¶Ô±¾ÅÉ²»Àû¡£\n" NOR);
+        if(quest["quest_type"]=="æ€")
+             tell_object(me,"æŠŠã€"HIR+quest["quest"]+HIC"ã€æ€äº†ï¼Œä»–å¯¹æœ¬æ´¾ä¸åˆ©ã€‚\n" NOR);
         else
-             tell_object(me,"ÕÒ»Ø¡º"HIG+quest["quest"]+HIC"¡»´ËÎï¶Ô±¾ÅÉÓĞÓÃ¡£\n" NOR);
+             tell_object(me,"æ‰¾å›ã€"HIG+quest["quest"]+HIC"ã€æ­¤ç‰©å¯¹æœ¬æ´¾æœ‰ç”¨ã€‚\n" NOR);
 if (me->query_temp("menpaijob") < 0)
 me->delete_temp("menpaijob");
 me->add_temp("menpaijob",1);
 if (me->query_temp("menpaijob") > 1)
-tell_object(me,"ÄãÒÑ¾­Á¬ĞøÎª±¾ÃÅ×öÁË¡º"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"¡»¸öÈÎÎñÁË¡£\n" NOR);
+tell_object(me,"ä½ å·²ç»è¿ç»­ä¸ºæœ¬é—¨åšäº†ã€"HIC+chinese_number(me->query_temp("menpaijob"))+NOR"ã€ä¸ªä»»åŠ¡äº†ã€‚\n" NOR);
 
 if (me->query_temp("menpaijob") > 3 && random(10)==0)
 {
 me->add("mpgx",1);
-tell_object(me,"Äã×öµÄ²»´í£¡ÄãµÄÃÅÅÉ¹±Ï×¶ÈÔö¼ÓÁË!\n" NOR);
-tell_object(me,"Ä¿Ç°ÎªÖ¹,ÄãµÄÃÅÅÉ¹±Ï×¶ÈÎª¡º"HIC+chinese_number(me->query("mpgx"))+NOR"¡»¡£\n" NOR);
+tell_object(me,"ä½ åšçš„ä¸é”™ï¼ä½ çš„é—¨æ´¾è´¡çŒ®åº¦å¢åŠ äº†!\n" NOR);
+tell_object(me,"ç›®å‰ä¸ºæ­¢,ä½ çš„é—¨æ´¾è´¡çŒ®åº¦ä¸ºã€"HIC+chinese_number(me->query("mpgx"))+NOR"ã€ã€‚\n" NOR);
 }
 
              quest["time"]=300;
@@ -829,14 +829,14 @@ int time_period(int timep, object me)
         h = t % 24;             t /= 24;
         d = t;
 
-        if(d) time = chinese_number(d) + "Ìì";
+        if(d) time = chinese_number(d) + "å¤©";
         else time = "";
 
-        if(h) time += chinese_number(h) + "Ğ¡Ê±";
-        if(m) time += chinese_number(m) + "·Ö";
-        time += chinese_number(s) + "Ãë";
+        if(h) time += chinese_number(h) + "å°æ—¶";
+        if(m) time += chinese_number(m) + "åˆ†";
+        time += chinese_number(s) + "ç§’";
 
-        tell_object(me,HIC "ÈÎÎñÊ¹ËµµÀ£ºÇë°ïÎÒÔÚ" + time + "ÄÚ");
+        tell_object(me,HIC "ä»»åŠ¡ä½¿è¯´é“ï¼šè¯·å¸®æˆ‘åœ¨" + time + "å†…");
         return 1;
 }
 
@@ -851,18 +851,18 @@ int accept_object(object who, object ob)
         	
              if(!who->query("quest") && !who->query_temp("jobitem") && !who->query_temp("roomjob"))
              {
-                  tell_object(who,"Ã»ÕÒµ½£¿ÄãÕæ²î¾¢£¬¿´À´»¹ÊÇÇë±ğµÄµÜ×Ó°ïÃ¦ËãÁË£¡\n");
+                  tell_object(who,"æ²¡æ‰¾åˆ°ï¼Ÿä½ çœŸå·®åŠ²ï¼Œçœ‹æ¥è¿˜æ˜¯è¯·åˆ«çš„å¼Ÿå­å¸®å¿™ç®—äº†ï¼\n");
                    return 1;
              }
        if ( ob->value() < 2000)
              {
-tell_object(who,"ÈÎÎñÊ¹¿´ÁË¿´$P½»ÉÏÀ´µÄÇ®ËµµÀ£¬Ì«ÉÙÁË£¬ÕâÃ´µãÄãÒ²ºÃÒâË¼ÄÃ³öÊÖ£¡\n");
+tell_object(who,"ä»»åŠ¡ä½¿çœ‹äº†çœ‹$Päº¤ä¸Šæ¥çš„é’±è¯´é“ï¼Œå¤ªå°‘äº†ï¼Œè¿™ä¹ˆç‚¹ä½ ä¹Ÿå¥½æ„æ€æ‹¿å‡ºæ‰‹ï¼\n");
                    return 1;
              }
              else
              {
 
-tell_object(who,"ÈÎÎñÊ¹ËµµÀ£¬ºÃ°É£¬Õâ´Î¾ÍËãÁË£¬ÏÂ²»ÎªÀı¡£\n");
+tell_object(who,"ä»»åŠ¡ä½¿è¯´é“ï¼Œå¥½å§ï¼Œè¿™æ¬¡å°±ç®—äº†ï¼Œä¸‹ä¸ä¸ºä¾‹ã€‚\n");
                    who->apply_condition("menpai_busy",8+random(8));who->delete_temp("menpaijob");
                    who->delete_temp("menpaijob");
                    who->set("quest",0);
@@ -875,25 +875,25 @@ tell_object(who,"ÈÎÎñÊ¹ËµµÀ£¬ºÃ°É£¬Õâ´Î¾ÍËãÁË£¬ÏÂ²»ÎªÀı¡£\n");
         }
         if(!(quest = who->query("quest")))
         {
-             tell_object(who,"ÈÎÎñÊ¹ËµµÀ£ºÄãĞã¶ºÁË£¬ÎÒÒªµÄ²»ÊÇÕâ¸ö¡£\n");
+             tell_object(who,"ä»»åŠ¡ä½¿è¯´é“ï¼šä½ ç§€é€—äº†ï¼Œæˆ‘è¦çš„ä¸æ˜¯è¿™ä¸ªã€‚\n");
              return 0;
         }
 
         if( ob->query("name") != quest["quest"])
         {
-        tell_object(who,"ÈÎÎñÊ¹»ğÃ°ÈıÕÉ£ºÕâÊÇÊ²Ã´£¿ÏëÓãÄ¿»ëÖéÑ½£¬ÕæÊÇÆøËÀÀÏ·òÁË£¡\n");
+        tell_object(who,"ä»»åŠ¡ä½¿ç«å†’ä¸‰ä¸ˆï¼šè¿™æ˜¯ä»€ä¹ˆï¼Ÿæƒ³é±¼ç›®æµ‘ç å‘€ï¼ŒçœŸæ˜¯æ°”æ­»è€å¤«äº†ï¼\n");
         return 0;
         }
 
         if ((int) who->query("task_time") < time() )
         {
-             tell_object(who,"ÈÎÎñÊ¹ËµµÀ£º¶Ô²»Æğ£¬Ê±¼ä¹ıÁË£¬±ğµÄµÜ×Ó¸Õ°Ñ»õÎï½Ó×ßÁË£¡\n");
+             tell_object(who,"ä»»åŠ¡ä½¿è¯´é“ï¼šå¯¹ä¸èµ·ï¼Œæ—¶é—´è¿‡äº†ï¼Œåˆ«çš„å¼Ÿå­åˆšæŠŠè´§ç‰©æ¥èµ°äº†ï¼\n");
              destruct(ob);
              return 0;
         }
         else
         {
-             tell_object(who,"ÈÎÎñÊ¹¸ßĞËµØËµµÀ£ºÌ«ºÃÁË£¡ÎÒ¾ÍÊÇÒªÕâ¸ö£¬ÄãÕæÓĞ±¾ÊÂ£¡\n");
+             tell_object(who,"ä»»åŠ¡ä½¿é«˜å…´åœ°è¯´é“ï¼šå¤ªå¥½äº†ï¼æˆ‘å°±æ˜¯è¦è¿™ä¸ªï¼Œä½ çœŸæœ‰æœ¬äº‹ï¼\n");
              exp = 50 + random(100)+(int)who->query_temp("menpaijob")/2;
              pot = 20 + random(30)+(int)who->query_temp("menpaijob")/3;
              score = 12 + random(5);
@@ -909,10 +909,10 @@ tell_object(who,"ÈÎÎñÊ¹ËµµÀ£¬ºÃ°É£¬Õâ´Î¾ÍËãÁË£¬ÏÂ²»ÎªÀı¡£\n");
              bonus = (int) who->query("score");
              bonus += score;
              who->set("score", bonus);
-             tell_object(who,HIW"¹§Ï²ÄãÓÖÍê³ÉÒ»¸öÈÎÎñ£¡\n"NOR);
-             tell_object(who,HIW"Äã±»½±ÀøÁË£º" + chinese_number(exp)
-               + "µãÊµÕ½¾­Ñé£¬\n"+ chinese_number(pot) + "µãÇ±ÄÜ£¬\n"
-               + chinese_number(score)+"µã½­ºşÔÄÀú¡£\n"NOR);
+             tell_object(who,HIW"æ­å–œä½ åˆå®Œæˆä¸€ä¸ªä»»åŠ¡ï¼\n"NOR);
+             tell_object(who,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š" + chinese_number(exp)
+               + "ç‚¹å®æˆ˜ç»éªŒï¼Œ\n"+ chinese_number(pot) + "ç‚¹æ½œèƒ½ï¼Œ\n"
+               + chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…å†ã€‚\n"NOR);
              who->set("quest", 0 );
              return 1;
 }
@@ -930,26 +930,26 @@ int ckiller;
 	  guo =this_object();
 	  ob=this_player();
 	  if ((int)ob->query_temp("menpaijob")<2)
-	  return "¶÷£¬ÏÖÓĞÓĞ¼¸¼şÃÅÅÉÈÎÎñ(quest)ÄãÏÈÍê³ÉÁËÔÙËµ°É¡£";
+	  return "æ©ï¼Œç°æœ‰æœ‰å‡ ä»¶é—¨æ´¾ä»»åŠ¡(quest)ä½ å…ˆå®Œæˆäº†å†è¯´å§ã€‚";
 	  	
-	  destruct(present("mi jian",ob));if (ob->query_condition("mjb2_busy")) return "ÎÒÃ»ÓĞÊÕµ½ÈÎºÎÏûÏ¢¡£";
+	  destruct(present("mi jian",ob));if (ob->query_condition("mjb2_busy")) return "æˆ‘æ²¡æœ‰æ”¶åˆ°ä»»ä½•æ¶ˆæ¯ã€‚";
 	  
       if( ob->query("family/family_name") !=  this_object()->query("mp"))
-      return  "Ö»ÓĞ"+this_object()->query("mp")+"µÄµÜ×Ó²ÅÄÜ×ö´ËÈÎÎñ!";
+      return  "åªæœ‰"+this_object()->query("mp")+"çš„å¼Ÿå­æ‰èƒ½åšæ­¤ä»»åŠ¡!";
       //too low exp
 
 
       if(ob->query("combat_exp")<1500000)
-      return  "ÄãµÄ¹¦·òÌ«²îÁË¡£²»Òª×ÔÑ°ËÀÂ·!";//too low exp
+      return  "ä½ çš„åŠŸå¤«å¤ªå·®äº†ã€‚ä¸è¦è‡ªå¯»æ­»è·¯!";//too low exp
       team=ob->query_team();
       count=sizeof(team);
 	 // write("\n"+sprintf("%d",count));
 	  if(count<=1 && !wizardp(ob))
-      return "¾ÍÄãÒ»¸öÈË?"; //too few people
+      return "å°±ä½ ä¸€ä¸ªäºº?"; //too few people
       if(count>=5 && !wizardp(ob))
-	  return "´ËÊÂ²»ÒËÕÅÑï¡£"; //too many people
+	  return "æ­¤äº‹ä¸å®œå¼ æ‰¬ã€‚"; //too many people
 	  minexp=ob->query("combat_exp");
-	  maxexp=minexp;destruct(present("mi jian",ob));if (ob->query_condition("mjb2_busy")) return "ÎÒÃ»ÓĞÊÕµ½ÈÎºÎÏûÏ¢¡£";
+	  maxexp=minexp;destruct(present("mi jian",ob));if (ob->query_condition("mjb2_busy")) return "æˆ‘æ²¡æœ‰æ”¶åˆ°ä»»ä½•æ¶ˆæ¯ã€‚";
       
 	  for(i=1;i<count;i++)
       { if(team[i]!=0)
@@ -961,7 +961,7 @@ int ckiller;
 	  }
 	  }
 	  if ((maxexp-minexp)>3000000)
-      return "ÄãÃÇµÄÎä¹¦Ïà²îÌ«ĞüÊâ¡£";//exp too far
+      return "ä½ ä»¬çš„æ­¦åŠŸç›¸å·®å¤ªæ‚¬æ®Šã€‚";//exp too far
 
 	  where=names[0][random(sizeof(names[0]))];
 	  guo->apply_condition("mjb_busy",30);
@@ -974,9 +974,9 @@ ckiller=4;
 	  for(i=100;i*i*i/10<=maxexp;i++);
          ob->apply_condition("mptjob",23);
 ob->delete_temp("menpaijob");
-	  return    "ÎÒ¸ÕµÃµ½ÏûÏ¢£¬ÓĞÒ»»ï±ğÅÉµÜ×ÓÓëÎÒÅÉ×÷¶Ô¡£ÅÉ¼éÏ¸ÍµÈ¥ÁËÎÒÅÉµÄ»úÒªÎÄ¼ş\n"+
-		        "ÄãÃÇ¸Ï¿ìÈ¥"+where+"Éè·À×è½Ø£¬°ÑËûÃÇÈ«²¿ÏûÃğ¡£ÇÀµ½ÎÄ¼şºó¾ÍµØÏú»Ù(xiaohui)¡£\n"+
-			    "¿Ï¶¨»áÓĞ²»ÉÙ±ğÅÉµÜ×Ó½ÓÓ¦Ëû£¬¶à¼ÓĞ¡ĞÄ¡£"; 
+	  return    "æˆ‘åˆšå¾—åˆ°æ¶ˆæ¯ï¼Œæœ‰ä¸€ä¼™åˆ«æ´¾å¼Ÿå­ä¸æˆ‘æ´¾ä½œå¯¹ã€‚æ´¾å¥¸ç»†å·å»äº†æˆ‘æ´¾çš„æœºè¦æ–‡ä»¶\n"+
+		        "ä½ ä»¬èµ¶å¿«å»"+where+"è®¾é˜²é˜»æˆªï¼ŒæŠŠä»–ä»¬å…¨éƒ¨æ¶ˆç­ã€‚æŠ¢åˆ°æ–‡ä»¶åå°±åœ°é”€æ¯(xiaohui)ã€‚\n"+
+			    "è‚¯å®šä¼šæœ‰ä¸å°‘åˆ«æ´¾å¼Ÿå­æ¥åº”ä»–ï¼Œå¤šåŠ å°å¿ƒã€‚"; 
 }
 
 void unconcious()
@@ -987,7 +987,7 @@ void unconcious()
 	this_object()->set("eff_jing", this_object()->query("max_jing"));
 	this_object()->set("jing", this_object()->query("max_jing"));
 	this_object()->set("jingli", this_object()->query("eff_jingli"));
-	this_object()->say( "ÈÎÎñÊ¹ÄüĞ¦×ÅËµ£ºÎÒÊÇÎŞµĞ²»ËÀ°æ£¡\n");
+	this_object()->say( "ä»»åŠ¡ä½¿ç‹ç¬‘ç€è¯´ï¼šæˆ‘æ˜¯æ— æ•Œä¸æ­»ç‰ˆï¼\n");
 	this_object()->command("hehe");
 }
 
@@ -1016,11 +1016,11 @@ string location;
 	  who =this_player();
 	  me=this_object();
         if( who->query("family/family_name")  !=  this_object()->query("mp"))
- return    "ÄãÊÇÄÄÀïµÄÈË°¡?"; 	  
+ return    "ä½ æ˜¯å“ªé‡Œçš„äººå•Š?"; 	  
 
 
 if ((int)who->query("mpgx") < 10)
-	  return    "ÄãµÄÃÅÅÉ¹±Ï×¶È²»¹»£¬ÏÖÔÚ¹±Ï×¶ÈÎª:"+chinese_number(who->query("mpgx"))+"¡£"; 	  
+	  return    "ä½ çš„é—¨æ´¾è´¡çŒ®åº¦ä¸å¤Ÿï¼Œç°åœ¨è´¡çŒ®åº¦ä¸º:"+chinese_number(who->query("mpgx"))+"ã€‚"; 	  
 
 
 a=FAMILY_D->query_family_fame(who->query("family/family_name"));
@@ -1031,22 +1031,22 @@ exp=(int)a/10+10;
 pot=(int)exp*2/3+10;
 	who->add("combat_exp",exp);
 	who->add("potential",pot);
-       message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ÎÒÖ¸µãÄã¶şÊÖÎä¹¦°É¡£\n",
+       message_vision("$nå¯¹$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹²å¾—ä¸èµ–ï¼Œæˆ‘æŒ‡ç‚¹ä½ äºŒæ‰‹æ­¦åŠŸå§ã€‚\n",
                        who, me);
-        tell_object(who, who->query("family/family_name")+"ÔÚ½­ºşÉÏµÄÍşÍûÊÇ" + chinese_number(a) + "¡£\n" NOR);
-        tell_object(who,  "ÄãµÄ¾­ÑéÔö³¤ÁË" + chinese_number(exp) + "¡£Ç±ÄÜÔö³¤ÁË"+chinese_number(pot) +
-                         "¡£\n" NOR);
+        tell_object(who, who->query("family/family_name")+"åœ¨æ±Ÿæ¹–ä¸Šçš„å¨æœ›æ˜¯" + chinese_number(a) + "ã€‚\n" NOR);
+        tell_object(who,  "ä½ çš„ç»éªŒå¢é•¿äº†" + chinese_number(exp) + "ã€‚æ½œèƒ½å¢é•¿äº†"+chinese_number(pot) +
+                         "ã€‚\n" NOR);
 
 }
-        message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ĞÁ¿à"
-                       "ÁË£¬ĞĞ×ß½­ºş£¬×ÜÓĞ¸÷Àà¿ªÖ§Ó¦³ê£¬ÕâÀïÓĞĞ©½ğ×Ó£¬Äã¾ÍÄÃÈ¥°É¡£\n",
+        message_vision("$nå¯¹$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹²å¾—ä¸èµ–ï¼Œè¾›è‹¦"
+                       "äº†ï¼Œè¡Œèµ°æ±Ÿæ¹–ï¼Œæ€»æœ‰å„ç±»å¼€æ”¯åº”é…¬ï¼Œè¿™é‡Œæœ‰äº›é‡‘å­ï¼Œä½ å°±æ‹¿å»å§ã€‚\n",
                        who, me);
 
                 ob = new(ob_list[random(sizeof(ob_list))]);
         who->add("mpgx",-10);
         ob->move(who,1);
-        tell_object(who, HIM "Äã»ñµÃÁËÒ»" + ob->query("unit") + ob->name() +
-                        HIM "¡£\n" NOR);
+        tell_object(who, HIM "ä½ è·å¾—äº†ä¸€" + ob->query("unit") + ob->name() +
+                        HIM "ã€‚\n" NOR);
                 ob = new("/clone/money/gold");
         ob->set_amount(10+random(20));
         ob->move(who,1);
@@ -1060,15 +1060,15 @@ if (random(6)==0)
 file = read_file("/clone/medicine/ycgift");
 roomlines = explode(file,"\n");	
 location = roomlines[random(sizeof(roomlines))];
-        message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ĞÁ¿à"
-                       "ÁË£¬ĞĞ×ß½­ºş£¬×ÜÓĞ¸÷ÖÖÎ£ÏÕ£¬ÕâÀïÓĞĞ©ÉËÒ©£¬Äã¾ÍÄÃÈ¥°É¡£\n",
+        message_vision("$nå¯¹$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹²å¾—ä¸èµ–ï¼Œè¾›è‹¦"
+                       "äº†ï¼Œè¡Œèµ°æ±Ÿæ¹–ï¼Œæ€»æœ‰å„ç§å±é™©ï¼Œè¿™é‡Œæœ‰äº›ä¼¤è¯ï¼Œä½ å°±æ‹¿å»å§ã€‚\n",
                        who, me);
            ob = new(location);
 if (ob)
 {
            ob->move(who);
-        tell_object(who, HIM "Äã»ñµÃÁËÒ»" + ob->query("unit") + ob->name() +
-                        HIM "¡£\n" NOR);
+        tell_object(who, HIM "ä½ è·å¾—äº†ä¸€" + ob->query("unit") + ob->name() +
+                        HIM "ã€‚\n" NOR);
 }
 }
 
@@ -1077,32 +1077,32 @@ if (random(8)==0)
 	file = read_file("/clone/medicine/wgift");
 roomlines = explode(file,"\n");	
 location = roomlines[random(sizeof(roomlines))];
-        message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ĞÁ¿à"
-                       "ÁË£¬ĞĞ×ß½­ºş£¬×ÜÒªÓÃ¸÷ÖÖ×°±¸£¬ÕâÀïÓĞĞ©×°±¸£¬Äã¾ÍÄÃÈ¥°É¡£\n",
+        message_vision("$nå¯¹$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹²å¾—ä¸èµ–ï¼Œè¾›è‹¦"
+                       "äº†ï¼Œè¡Œèµ°æ±Ÿæ¹–ï¼Œæ€»è¦ç”¨å„ç§è£…å¤‡ï¼Œè¿™é‡Œæœ‰äº›è£…å¤‡ï¼Œä½ å°±æ‹¿å»å§ã€‚\n",
                        who, me);
            ob = new(location);
 if (ob)
 {
            ob->move(who);
-        tell_object(who, HIM "Äã»ñµÃÁËÒ»" + ob->query("unit") + ob->name() +
-                        HIM "¡£\n" NOR);
+        tell_object(who, HIM "ä½ è·å¾—äº†ä¸€" + ob->query("unit") + ob->name() +
+                        HIM "ã€‚\n" NOR);
 }
 }
 
 if (random(10)==0)
 {
-        message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ĞÁ¿à"
-                       "ÁË£¬ĞĞ×ß½­ºş£¬×ÜÒªÓĞ×ÔÔìÎäÆ÷£¬ÕâÀïÓĞĞ©ÔìÎäÆ÷µÄ±¦Ê¯£¬Äã¾ÍÄÃÈ¥°É¡£\n",
+        message_vision("$nå¯¹$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹²å¾—ä¸èµ–ï¼Œè¾›è‹¦"
+                       "äº†ï¼Œè¡Œèµ°æ±Ÿæ¹–ï¼Œæ€»è¦æœ‰è‡ªé€ æ­¦å™¨ï¼Œè¿™é‡Œæœ‰äº›é€ æ­¦å™¨çš„å®çŸ³ï¼Œä½ å°±æ‹¿å»å§ã€‚\n",
                        who, me);
            ob = new("/clone/gem/gem");
            ob->move(who);
-        tell_object(who, HIM "Äã»ñµÃÁËÒ»" + ob->query("unit") + ob->name() +
-                        HIM "¡£\n" NOR);
+        tell_object(who, HIM "ä½ è·å¾—äº†ä¸€" + ob->query("unit") + ob->name() +
+                        HIM "ã€‚\n" NOR);
 }
         who->save();
 	  
 
-	  return    "ÄãÏÖÔÚµÄÊ¦ÃÅ¹±Ï×¶ÈÎª:"+chinese_number(who->query("mpgx"))+"¡£"; 
+	  return    "ä½ ç°åœ¨çš„å¸ˆé—¨è´¡çŒ®åº¦ä¸º:"+chinese_number(who->query("mpgx"))+"ã€‚"; 
 }
 
 
@@ -1111,516 +1111,516 @@ string  zuji(string str)
 string output;
       	if (str=="baituo")  
 
-	output="°×ÍÕÉ½µÄ";
+	output="ç™½é©¼å±±çš„";
 
 if (str=="binghuodao")  
 
-	output="±ù»ğµºµÄ";
+	output="å†°ç«å²›çš„";
 
 if (str=="city")  
 
-	output="ÑïÖİµÄ";
+	output="æ‰¬å·çš„";
 
 if (str=="city2" || str=="beijing"  || str=="huanggon"  || str=="huanggong" || str=="beihai")  
 
-	output="±±¾©³ÇµÄ";
+	output="åŒ—äº¬åŸçš„";
 
 if (str=="city4" || str=="changan")   
 
-	output="³¤°²³ÇµÄ";
+	output="é•¿å®‰åŸçš„";
 
 if (str=="dali")  
 
-	output="´óÀíµÄ";
+	output="å¤§ç†çš„";
 
 if (str=="emei")  
 
-	output="¶ğÃ¼É½µÄ";
+	output="å¨¥çœ‰å±±çš„";
 
 if (str=="foshan")  
 
-	output="·ğÉ½µÄ";
+	output="ä½›å±±çš„";
 
 if (str=="gaibang")  
 
-	output="Ø¤°ïµÄ";
+	output="ä¸å¸®çš„";
 
 if (str=="gaochang")  
 
-	output="¸ß²ıÃÔ¹¬µÄ";
+	output="é«˜æ˜Œè¿·å®«çš„";
 
 if (str=="guanwai")  
 
-	output="¹ØÍâµÄ";
+	output="å…³å¤–çš„";
 
 if (str=="guiyun")  
 
-	output="¹éÔÆ×¯µÄ";
+	output="å½’äº‘åº„çš„";
 
 if (str=="gumu")  
 
-	output="¹ÅÄ¹ÅÉµÄ";
+	output="å¤å¢“æ´¾çš„";
 
 if (str=="hangzhou")  
 
-	output="º¼ÖİµÄ";
+	output="æ­å·çš„";
 
 if (str=="heimuya")  
 
-	output="ºÚÄ¾ÑÂµÄ";
+	output="é»‘æœ¨å´–çš„";
 
 if (str=="hengshan")  
 
-	output="ºãÉ½µÄ";
+	output="æ’å±±çš„";
 
 if (str=="henshan")  
 
-	output="ºâÉ½µÄ";
+	output="è¡¡å±±çš„";
 
 if (str=="huanghe")  
 
-	output="»ÆºÓ¾ÅÇúµÄ";
+	output="é»„æ²³ä¹æ›²çš„";
 
 if (str=="huashan")  
 
-	output="»ªÉ½µÄ";
+	output="åå±±çš„";
 
 if (str=="jinshe")  
 
-	output="½ğÉßÉ½¶´µÄ";
+	output="é‡‘è›‡å±±æ´çš„";
 
 if (str=="lingjiu")  
 
-	output="ÁéğÕ¹¬µÄ";
+	output="çµé¹«å®«çš„";
 
 if (str=="lingzhou")  
 
-	output="ÁéÖİµÄ";
+	output="çµå·çš„";
 
 if (str=="meizhuang")  
 
-	output="Ã·×¯µÄ";
+	output="æ¢…åº„çš„";
 
 if (str=="mingjiao")  
 
-	output="Ã÷½ÌµÄ";
+	output="æ˜æ•™çš„";
 
 if (str=="qingcheng")  
 
-	output="Çà³ÇÉ½µÄ";
+	output="é’åŸå±±çš„";
 
 if (str=="quanzhen")  
 
-	output="È«ÕæÅÉµÄ";
+	output="å…¨çœŸæ´¾çš„";
 
 if (str=="quanzhou")  
 
-	output="ÈªÖİµÄ";
+	output="æ³‰å·çš„";
 
 if (str=="shaolin")  
 
-	output="ÉÙÁÖËÂµÄ";
+	output="å°‘æ—å¯ºçš„";
 
 if (str=="shenlong")  
 
-	output="ÉñÁúµºµÄ";
+	output="ç¥é¾™å²›çš„";
 
 if (str=="songshan")  
 
-	output="áÔÉ½µÄ";
+	output="åµ©å±±çš„";
 
 if (str=="suzhou")  
 
-	output="ËÕÖİµÄ";
+	output="è‹å·çš„";
 
 if (str=="taishan")  
 
-	output="Ì©É½µÄ";
+	output="æ³°å±±çš„";
 
 if (str=="taohua")  
 
-	output="ÌÒ»¨µºµÄ";
+	output="æ¡ƒèŠ±å²›çš„";
 
 if (str=="tianlongsi")  
 
-	output="ÌìÁúËÂµÄ";
+	output="å¤©é¾™å¯ºçš„";
 
 if (str=="wanjiegu")  
 
-	output="Íò½Ù¹ÈµÄ";
+	output="ä¸‡åŠ«è°·çš„";
 
 if (str=="wudang")  
 
-	output="Îäµ±É½µÄ";
+	output="æ­¦å½“å±±çš„";
 
 if (str=="xiakedao")  
 
-	output="ÏÀ¿ÍµºµÄ";
+	output="ä¾ å®¢å²›çš„";
 
 if (str=="xiangyang")  
 
-	output="ÏåÑô³ÇµÄ";
+	output="è¥„é˜³åŸçš„";
 
 if (str=="xiaoyao")  
 
-	output="åĞÒ£ÁÖµÄ";
+	output="é€é¥æ—çš„";
 
 if (str=="xingxiu")  
 
-	output="ĞÇËŞº£µÄ";
+	output="æ˜Ÿå®¿æµ·çš„";
 
 if (str=="xueshan")  
 
-	output="Ñ©É½ËÂµÄ";
+	output="é›ªå±±å¯ºçš„";
 
 if (str=="xuedao")  
 
-	output="´óÑ©É½µÄ";
+	output="å¤§é›ªå±±çš„";
 
 if (str=="mr")  
 
-	output="Ä½ÈİÊÀ¼ÒµÄ";
+	output="æ…•å®¹ä¸–å®¶çš„";
 
 if (str=="kunlun")  
 
-	output="À¥ÂØÉ½µÄ";
+	output="æ˜†ä»‘å±±çš„";
 
 if (str=="tiezhang")  
 
-	output="ÌúÕÆÃÅµÄ";
+	output="é“æŒé—¨çš„";
 
 if (str=="huizhu")  
 
-	output="»Ø×å²¿ÂäµÄ";
+	output="å›æ—éƒ¨è½çš„";
 
 if (str=="yinju")  
 
-	output="Ò»µÆ´óÊ¦¾ÓµÄ";
+	output="ä¸€ç¯å¤§å¸ˆå±…çš„";
 
 if (str=="menggu")  
 
-	output="ÃÉ¹Å²İÔ­µÄ";
+	output="è’™å¤è‰åŸçš„";
 
 if (str=="qianjin")  
 
-	output="±±¾©Ç§½ğÂ¥µÄ";
+	output="åŒ—äº¬åƒé‡‘æ¥¼çš„";
 
 if (str=="lingshedao")  
 
-	output="ÁéÉßµºµÄ";
+	output="çµè›‡å²›çš„";
 
 if (str=="ruzhou")  
 
-	output="ÈêÖİ³ÇµÄ";
+	output="æ±å·åŸçš„";
 
 if (str=="kunming")  
 
-	output="À¥Ã÷µÄ";
+	output="æ˜†æ˜çš„";
 
 if (str=="jingzhou")  
 
-	output="¾£ÖİµÄ";
+	output="è†å·çš„";
 
 if (str=="yanjing")  
 
-	output="Ñà¾©µÄ";
+	output="ç‡•äº¬çš„";
 
 if (str=="lanzhou" || str=="lanzhouchen")  
 
-	output="À¼ÖİµÄ";
+	output="å…°å·çš„";
 
 if (str=="jyguan")  
 
-	output="À¼ÖİÒÔ±±¼ÎÓø¹ØµÄ";
+	output="å…°å·ä»¥åŒ—å˜‰å³ªå…³çš„";
 
 if (str=="changcheng")  
 
-	output="±±¾©ÒÔ±±³¤³ÇµÄ";
+	output="åŒ—äº¬ä»¥åŒ—é•¿åŸçš„";
 
 if (str=="fairyland")  
 
-	output="À¥ÂØµÄºìÃ·É½×¯";
+	output="æ˜†ä»‘çš„çº¢æ¢…å±±åº„";
 
 if (str=="sdxl")  
 
-	output="½£Ä§¶À¹ÂÇó°ÜÄ¹";
+	output="å‰‘é­”ç‹¬å­¤æ±‚è´¥å¢“";
 
 if (str=="jqg")  
 
-	output="¾øÇé¹È";
+	output="ç»æƒ…è°·";
 
 if (str=="nio")  
 
-	output="Å£¼Ò´åµÄ";
+	output="ç‰›å®¶æ‘çš„";
 
 if (str=="feihu")  
 
-	output="´³Íõ±¦²ØµÄ";
+	output="é—¯ç‹å®è—çš„";
 
 if (str=="wuguan")  
 
-	output="ÏåÑôÎä¹İµÄ";
+	output="è¥„é˜³æ­¦é¦†çš„";
 
 if (str=="village")  
 
-	output="»ªÉ½´åµÄ";
+	output="åå±±æ‘çš„";
 
 if (str=="taohuacun")  
 
-	output="ÌÒ»¨´åµÄ";
+	output="æ¡ƒèŠ±æ‘çš„";
 
 if (str=="pingan")  
 
-	output="Æ½°²³ÇµÄ";
+	output="å¹³å®‰åŸçš„";
 
 if (str=="lingxiao")  
 
-	output="ÁèÏö³ÇµÄ";
+	output="å‡Œéœ„åŸçš„";
 
 if (str=="wudujiao")  
 
-	output="Îå¶¾½ÌµÄ";
+	output="äº”æ¯’æ•™çš„";
 
 if (str=="hj")  
 
-	output="ÌìÉ½¡£²İÔ­µÄ";
+	output="å¤©å±±ã€‚è‰åŸçš„";
 if (str=="dali/yuxu")  
 
-	output="´óÀíÓñĞé¹ÛµÄ";
+	output="å¤§ç†ç‰è™šè§‚çš„";
 if (str=="dali/wuliang")  
 
-	output="´óÀíÎŞÁ¿É½µÄ";
+	output="å¤§ç†æ— é‡å±±çš„";
 if (str=="huanghe/yyd")  
 
-	output="»ÆºÓÏô¸®µÄ";
+	output="é»„æ²³è§åºœçš„";
 if (str=="kaifeng")  
 
-	output="¿ª·â³ÇµÄ";
+	output="å¼€å°åŸçš„";
 if (str=="feitian")  
 
-	output="·ÉÌìÓù½£Á÷µÄ";
+	output="é£å¤©å¾¡å‰‘æµçš„";
 if (str=="japan")  
 
-	output="ÈÕ±¾Éñ»§µÄ";
+	output="æ—¥æœ¬ç¥æˆ·çš„";
 if (str=="tangmen")  
 
-	output="ÌÆÃÅµÄ";
+	output="å”é—¨çš„";
 if (str=="luoyang")  
 
-	output="ÂåÑô³ÇµÄ";
+	output="æ´›é˜³åŸçš„";
 
 if (str=="chengdu" || str=="city3")  
 
-	output="³É¶¼µÄ";
+	output="æˆéƒ½çš„";
 
 if (str=="baihuagu")  
 
-	output="°Ù»¨¹ÈµÄ";
+	output="ç™¾èŠ±è°·çš„";
 
 if (str=="heizhao")  
 
-	output="°Ù»¨¹È¡£ºÚÕÓµÄ";
+	output="ç™¾èŠ±è°·ã€‚é»‘æ²¼çš„";
 
 if (str=="jiaxing")  
 
-	output="¼ÎĞËµÄ";
+	output="å˜‰å…´çš„";
 
 if (str=="shiliang")  
 
-	output="ÎÂ¼Ò×¯µÄ";
+	output="æ¸©å®¶åº„çš„";
 
 if (str=="wuyi")  
 
-	output="ÎäÒÄÉ½ÇøµÄ";
+	output="æ­¦å¤·å±±åŒºçš„";
 
 if (str=="yanping")  
 
-	output="ÑÓÆ½³ÇµÄ";
+	output="å»¶å¹³åŸçš„";
 	
 
 if (str=="jiangling")  
 {
-	output="½­Áê³ÇµÄ";
+	output="æ±Ÿé™µåŸçš„";
 }
 
 if (str=="yueyang")  
 {
-	output="ÔÀÑô³ÇµÄ";	
+	output="å²³é˜³åŸçš„";	
 }
 
 if (str=="qilian")  
 {
-	output="ÆîÁ¬É½µÄ";	
+	output="ç¥è¿å±±çš„";	
 }
 
 if (str=="shouxihu")  
 {
-	output="ÊİÎ÷ºşµÄ";	
+	output="ç˜¦è¥¿æ¹–çš„";	
 }
 
 if (str=="wuxi")  
 {
-	output="ÎŞÎı³ÇµÄ";	
+	output="æ— é”¡åŸçš„";	
 }
 
 if (str=="yixing")  
 {
-	output="ÒËĞË³ÇµÄ";	
+	output="å®œå…´åŸçš„";	
 }
 if (str=="taiwan")  
 {
-	output="Ì¨ÍåµØÇøµÄ";	
+	output="å°æ¹¾åœ°åŒºçš„";	
 }
 if (str=="nanyang")  
 {
-	output="ÄÏÑôµØÇøµÄ";	
+	output="å—é˜³åœ°åŒºçš„";	
 }
 if (str=="nanshaolin")  
 {
-	output="ÄÏÉÙÁÖµØÇøµÄ";	
+	output="å—å°‘æ—åœ°åŒºçš„";	
 }
 
 if (str=="cangzhou")  
 {
-	output="²×ÖİµØÇøµÄ";	
+	output="æ²§å·åœ°åŒºçš„";	
 }
 
 if (str=="tanggu")  
 {
-	output="ÌÁ¹Á³ÇµØÇøµÄ";	
+	output="å¡˜æ²½åŸåœ°åŒºçš„";	
 }
 
 if (str=="yunhe")  
 {
-	output="¾©º¼´óÔËºÓµÄ";	
+	output="äº¬æ­å¤§è¿æ²³çš„";	
 }
 
 if (str=="hainan")  
 {
-	output="º£ÄÏµºµÄ";	
+	output="æµ·å—å²›çš„";	
 }
 
 if (str=="jindezheng")  
 {
-	output="¾°µÂÕòµÄ";	
+	output="æ™¯å¾·é•‡çš„";	
 }
 
 if (str=="yandang")  
 {
-	output="Ñãµ´É½µÄ";	
+	output="é›è¡å±±çš„";	
 }
 
 if (str=="jinling")  
 {
-	output="½ğÁê³ÇµÄ";	
+	output="é‡‘é™µåŸçš„";	
 }
 
 if (str=="sandboy")  
 {
-	output="½­ÄÏÅ©´åµÄ";	
+	output="æ±Ÿå—å†œæ‘çš„";	
 }
 
 if (str=="huangshan")  
 {
-	output="»ÆÉ½µÄ";	
+	output="é»„å±±çš„";	
 }
 
 if (str=="yubifeng")  
 {
-	output="Óñ±Ê·åµÄ";	
+	output="ç‰ç¬”å³°çš„";	
 }
 
 if (str=="quanzhouchen")  
 {
-	output="ÈªÖİ³ÇÄÚµÄ";	
+	output="æ³‰å·åŸå†…çš„";	
 }
 
 if (str=="qingzh")  
 {
-	output="Çà²Ø¸ßÔ­";	
+	output="é’è—é«˜åŸ";	
 }
 
 if (str=="changbaishan" || str=="gaoli")  
 {
-	output="¸ßÀö ³¤°×É½µÄ";	
+	output="é«˜ä¸½ é•¿ç™½å±±çš„";	
 }
 
 if (str=="annan")  
 {
-	output="°²ÄÏ¸½½üµÄ";	
+	output="å®‰å—é™„è¿‘çš„";	
 }
 
 if (str=="taiyuan")  
 {
-	output="Ì«Ô­¸½½üµÄ";	
+	output="å¤ªåŸé™„è¿‘çš„";	
 }
 
 if (str=="hefei")  
 {
-	output="ºÏ·Ê¸½½üµÄ";	
+	output="åˆè‚¥é™„è¿‘çš„";	
 }
 
 if (str=="jiujiang")  
 {
-	output="¾Å½­¸½½üµÄ";	
+	output="ä¹æ±Ÿé™„è¿‘çš„";	
 }
 
 if (str=="baling")  
 {
-	output="°ÍÁê¸½½üµÄ";	
+	output="å·´é™µé™„è¿‘çš„";	
 }
 
 if (str=="xinjiang")  
 {
-	output="ĞÂ½®¸½½üµÄ";	
+	output="æ–°ç–†é™„è¿‘çš„";	
 }
 if (str=="dingxiang")  
 {
-	output="¶¨Ïå¸½½üµÄ";	
+	output="å®šè¥„é™„è¿‘çš„";	
 }
 if (str=="suiye")  
 {
-	output="ËéÒ¶¸½½üµÄ";	
+	output="ç¢å¶é™„è¿‘çš„";	
 }
 
 
 if (str=="mayi")  
 {
-	output="ÂíÒØ±ß½®¸½½üµÄ";	
+	output="é©¬é‚‘è¾¹ç–†é™„è¿‘çš„";	
 }
 if (str=="xuzhou")  
 {
-	output="ĞìÖİ³Ç¸½½üµÄ";	
+	output="å¾å·åŸé™„è¿‘çš„";	
 }
 if (str=="jinan")  
 {
-	output="¼ÃÄÏ³Ç¸½½üµÄ";	
+	output="æµå—åŸé™„è¿‘çš„";	
 }
 if (str=="guizhou")  
 {
-	output="¹óÑô³Ç¸½½üµÄ";	
+	output="è´µé˜³åŸé™„è¿‘çš„";	
 }
 
 if (str=="nanchang")  
 {
-	output="ÄÏ²ı³Ç¸½½üµÄ";	
+	output="å—æ˜ŒåŸé™„è¿‘çš„";	
 }
 
 
 if (str=="changsha")  
 {
-	output="³¤É³³Ç¸½½üµÄ";	
+	output="é•¿æ²™åŸé™„è¿‘çš„";	
 }
 
 
 if (str=="zhongzhou")  
 {
-	output="ÖĞÖİ³Ç¸½½üµÄ";	
+	output="ä¸­å·åŸé™„è¿‘çš„";	
 }
 
 if (str=="xizang" || str=="zangbei")  
 {
-	output="Î÷²Ø»ò²Ø±±¸½½üµÄ";	
+	output="è¥¿è—æˆ–è—åŒ—é™„è¿‘çš„";	
 }
 
 return output;

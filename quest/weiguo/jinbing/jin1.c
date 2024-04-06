@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-    set_name("½ð±ø", ({ "jinbing", "bing" }));
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
+    set_name("é‡‘å…µ", ({ "jinbing", "bing" }));
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
         set("long",
-"Ò»¸öÈ«ÉíÅû¹ÒµÄ½ð±ø¡£\n");
+"ä¸€ä¸ªå…¨èº«æŠ«æŒ‚çš„é‡‘å…µã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
-	set("nickname",HIC"½ð¹úÊ¿±ø"NOR);
+	set("nickname",HIC"é‡‘å›½å£«å…µ"NOR);
   set("force_factor",2+random(190));
   set("max_qi",300+random(390));
   set("max_jing",300+random(390));
@@ -34,8 +34,8 @@ void create()
          }) );
         set("chat_chance", 10);
         set("chat_msg", ({
-                "½ð±øºÈµÀ£ºÉ±°¡µÄ£¡£¡\n",
-                "½ð±øÐ¦µÀ£ºÕâ´ÎÒ»¶¨ÒªÏûÃðÄÏÂù!\n",
+                "é‡‘å…µå–é“ï¼šæ€å•Šçš„ï¼ï¼\n",
+                "é‡‘å…µç¬‘é“ï¼šè¿™æ¬¡ä¸€å®šè¦æ¶ˆç­å—è›®!\n",
                 (: random_move :),
         }) );
 
@@ -92,16 +92,16 @@ void die()
         
 if (me)
 {
-        message_vision(WHT"$N´ó½ÐÒ»Éù,½ð¹úÍòËê!!µ¹µØ¶øÍö¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå¤§å«ä¸€å£°,é‡‘å›½ä¸‡å²!!å€’åœ°è€Œäº¡ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
         if((int)me->query("combat_exp") < 400000)   {
-        message("vision", me->name() + "ÓÉÓÚ³É¹¦µÄ±£ÎÀÁË×æ¹ú,Ôö¼ÓÁË300¾­ÑéºÍ150Ç±ÄÜ¡£\n", me);
+        message("vision", me->name() + "ç”±äºŽæˆåŠŸçš„ä¿å«äº†ç¥–å›½,å¢žåŠ äº†300ç»éªŒå’Œ150æ½œèƒ½ã€‚\n", me);
         me->add("combat_exp",300);
         me->add("potential",150);
         destruct(ob);
         }
-        message("vision", me->name() + "³É¹¦µÄ±£ÎÀÁË×æ¹ú¡£\n", me);
+        message("vision", me->name() + "æˆåŠŸçš„ä¿å«äº†ç¥–å›½ã€‚\n", me);
         me->add("score",2);
         me->add("shen",10);
         destruct(ob);

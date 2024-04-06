@@ -26,7 +26,7 @@ void zuji(object me)
    	if(random(20)>17)
 	{obj=new(__DIR__"skiller"+sprintf("%d",random(3)+1));
 	 maxpot=maxpot+10+random(10);
-	 obj->set("title",HIR"Ìì×ÖÒ»ºÅ"NOR);
+	 obj->set("title",HIR"å¤©å­—ä¸€å·"NOR);
 	}
 	else
 	{ obj=new(__DIR__"killer");
@@ -34,7 +34,7 @@ void zuji(object me)
 	 }
 	obj->do_copy(maxpot);
 	obj->move(environment(me));
-	message_vision(HIR"\n$N¶Ô×Å$n·¢³öÒ»ÕóÒõÐ¦Éù£¬Áî$nÈ«ÉíÉÏÏÂµÄº®Ã«¸ù¸ùÊúÆð£¬²»º®¶øÀõ¡£\n"NOR,obj,me); 
+	message_vision(HIR"\n$Nå¯¹ç€$nå‘å‡ºä¸€é˜µé˜´ç¬‘å£°ï¼Œä»¤$nå…¨èº«ä¸Šä¸‹çš„å¯’æ¯›æ ¹æ ¹ç«–èµ·ï¼Œä¸å¯’è€Œæ —ã€‚\n"NOR,obj,me); 
 //	 if(objectp(present("gong zi", environment(me))))
 //	{	obj->kill_ob(present("gong zi",environment(me)));
 // 	present("gong zi",environment(this_player()))->kill_ob(obj);}

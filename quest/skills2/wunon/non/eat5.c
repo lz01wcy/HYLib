@@ -1,4 +1,4 @@
-// Ã«Ëñ /clone/eat/food/mao_sun.c
+// æ¯›ç¬‹ /clone/eat/food/mao_sun.c
 // by lala, 1997-12-16
 
 #include <ansi.h>
@@ -9,23 +9,23 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name( GRN"Ã«Ëñ"NOR, ({"mao sun","sun"}) );
+    set_name( GRN"æ¯›ç¬‹"NOR, ({"mao sun","sun"}) );
     set_weight( 30000 );
     if ( clonep() )
             set_default_object( __FILE__ );
     else {
         set( "long", @LONG
-±ÌÂÌµÄÃ«Ëñ£¬Ìå´óÈâ·Ê£¬ÏÊÃÀ¿É¿Ú£¬ÊÇÒËĞËµÄÌØ²ú¡£
+ç¢§ç»¿çš„æ¯›ç¬‹ï¼Œä½“å¤§è‚‰è‚¥ï¼Œé²œç¾å¯å£ï¼Œæ˜¯å®œå…´çš„ç‰¹äº§ã€‚
 LONG
         );
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
 
 		set("no_put",1);
 
-        set( "unit", "Ö¦" );
+        set( "unit", "æ" );
         set( "value", 400 + random( 600 ) );
         set( "food_remaining", 5 );
         set( "food_supply", 25 );
@@ -34,5 +34,5 @@ LONG
 
 int do_eat( string arg )
 {
-    return notify_fail("Õâ»¹ÊÇÉúµÄ£¬Ö»ÓĞĞÜÃ¨²Å¿Ï³Ô¡£\n");
+    return notify_fail("è¿™è¿˜æ˜¯ç”Ÿçš„ï¼Œåªæœ‰ç†ŠçŒ«æ‰è‚¯åƒã€‚\n");
 }

@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"ÎåÅÉÁîÆì"NOR, ({ "ling qi"}));
+        set_name(HIG"äº”æ´¾ä»¤æ——"NOR, ({ "ling qi"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
+                set("unit", "é¢");
                 set("long",
-                        "Ò»ÃæÎåÅÉÁîÆì¡£\n");
+                        "ä¸€é¢äº”æ´¾ä»¤æ——ã€‚\n");
                 set("value", 0);
                 set("material", "paper");
 		 

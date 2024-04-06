@@ -14,11 +14,11 @@ string* haiyu = ({
 
 void create()
 {
-        set("short", "ÌìÈ»µÌ°¶");
+        set("short", "å¤©ç„¶å ¤å²¸");
         set("long", @LONG
-Äã×ßµ½Ò»µÀÑÒÊ¯ÌìÈ»ÐÎ³ÉµÄµÌ°¶ÉÏ£¬µÌ°¶Ò»Ö±ÑÓÉìµÄº£µÄÖÐ¼ä£¬¾¡Í·ÓÐÒ»¸öÐ¡
-Íä£¬µ²×¡ÁËÐÚÓ¿µÄº£ÌÎ£¬Ç¡ÇÉÐÎ³ÉÒ»¸öË®Á÷Æ½¾²µÄÉîÌ¶¡£Í¸¹ýÇå³ºµÄº£Ë®£¬Äã¿´¼û
-¼¸Î²º£ÓãÕýÔÚÓÆÏÐµÄÓÎÀ´ÓÎÈ¥¡£
+ä½ èµ°åˆ°ä¸€é“å²©çŸ³å¤©ç„¶å½¢æˆçš„å ¤å²¸ä¸Šï¼Œå ¤å²¸ä¸€ç›´å»¶ä¼¸çš„æµ·çš„ä¸­é—´ï¼Œå°½å¤´æœ‰ä¸€ä¸ªå°
+å¼¯ï¼ŒæŒ¡ä½äº†æ±¹æ¶Œçš„æµ·æ¶›ï¼Œæ°å·§å½¢æˆä¸€ä¸ªæ°´æµå¹³é™çš„æ·±æ½­ã€‚é€è¿‡æ¸…æ¾ˆçš„æµ·æ°´ï¼Œä½ çœ‹è§
+å‡ å°¾æµ·é±¼æ­£åœ¨æ‚ é—²çš„æ¸¸æ¥æ¸¸åŽ»ã€‚
 LONG
         );
         set("exits", ([
@@ -43,27 +43,27 @@ int maxpot;
         me = this_player();
         
         if( me->is_busy() )
-                        return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕý´òµÄÈÈÄÖ×ÅÄØ!\n");
-        if( me->query("family/family_name") != "ÉñÁú½Ì")
-        return notify_fail("ÕâÀïÖ»ÔÊÐíÉñÁúµÜ×ÓµöÓã!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
+        if( me->query("family/family_name") != "ç¥žé¾™æ•™")
+        return notify_fail("è¿™é‡Œåªå…è®¸ç¥žé¾™å¼Ÿå­é’“é±¼!\n");
         if( !me->query_skill("shenlong-xinfa"))
-        return notify_fail("ÄãÃ»ÓÐÉñÁúÐÄ·¨!\n");
+        return notify_fail("ä½ æ²¡æœ‰ç¥žé¾™å¿ƒæ³•!\n");
 
         if ( me->query_temp("fishing",1)==1 )
-                return notify_fail("Äã²»ÊÇÕýÔÚµöÓãÃ´£¿\n");
+                return notify_fail("ä½ ä¸æ˜¯æ­£åœ¨é’“é±¼ä¹ˆï¼Ÿ\n");
 
         if (! (obgan = present("diaoyu gan", me)) )
-                return notify_fail("ÄãÏëÔõÃ´µö£¿ÓÃÊÖÃ´£¿\n");
+                return notify_fail("ä½ æƒ³æ€Žä¹ˆé’“ï¼Ÿç”¨æ‰‹ä¹ˆï¼Ÿ\n");
         if ( me->query_temp("fishing") )
-                return notify_fail("Äã²»ÊÇÕýÔÚµöÓãÃ´£¿\n");
+                return notify_fail("ä½ ä¸æ˜¯æ­£åœ¨é’“é±¼ä¹ˆï¼Ÿ\n");
         if ( ! (obgan->query("yuer")) )
         {
-                message_vision("$N½«ÊÖÖÐµÄ¿ÕµöÓã¹³Å×ÏòË®ÖÐ£¬ÆÄÓÐµ±Äê½ªÌ«¹«Ö®·ç·¶¡£\n", me);
+                message_vision("$Nå°†æ‰‹ä¸­çš„ç©ºé’“é±¼é’©æŠ›å‘æ°´ä¸­ï¼Œé¢‡æœ‰å½“å¹´å§œå¤ªå…¬ä¹‹é£ŽèŒƒã€‚\n", me);
                 return 1;
         }
-        message_vision("$N½«ÊÖÖÐµÄµöÓã¸ËÒ»»Ó£¬µöÏßÔ¶Ô¶µÄË¦½«³öÈ¥£¬ÓãÆ¯¾²¾²µÄÆ¯¸¡ÔÚË®ÖÐ¡£\n", me);       
+        message_vision("$Nå°†æ‰‹ä¸­çš„é’“é±¼æ†ä¸€æŒ¥ï¼Œé’“çº¿è¿œè¿œçš„ç”©å°†å‡ºåŽ»ï¼Œé±¼æ¼‚é™é™çš„æ¼‚æµ®åœ¨æ°´ä¸­ã€‚\n", me);       
         me->start_busy(3);
         me->set_temp("fishing", 1);
 if( !environment(me)->query("no_fight"))
@@ -73,11 +73,11 @@ if (random(40)==1 && me->query("combat_exp") > 1000000)
 obj=new(__DIR__"menggu"); 
 obj->move(environment(me));
 obj->do_copy(me,maxpot,2);
-obj->set("title",HIC"Çå±øÏÈ·æ"NOR);
+obj->set("title",HIC"æ¸…å…µå…ˆé”‹"NOR);
 obj->set("usename",me->query("name"));
 me->start_busy(1);
-message_vision(HIC"´Óº£ÉÏ¿ªÀ´Ò»Ö»Ð¡´¬£¬´¬ÉÏ³åÏÂÒ»ÃûÇå±ø£¡\n"NOR, obj);
-message_vision(HIR"$NËµµÀ£ºÎÒ·îÃü£¬ÇëÀ´ÏûÃðÄãµÈÑýÈË£¡\n"NOR, obj);
+message_vision(HIC"ä»Žæµ·ä¸Šå¼€æ¥ä¸€åªå°èˆ¹ï¼Œèˆ¹ä¸Šå†²ä¸‹ä¸€åæ¸…å…µï¼\n"NOR, obj);
+message_vision(HIR"$Nè¯´é“ï¼šæˆ‘å¥‰å‘½ï¼Œè¯·æ¥æ¶ˆç­ä½ ç­‰å¦–äººï¼\n"NOR, obj);
 me->kill_ob(obj);
 obj->kill_ob(me);
 return 1;
@@ -98,27 +98,27 @@ int exp,pot;
         me = this_player();
         
         if( me->is_busy() )
-                        return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
         if (me->is_fighting()) 
-        return notify_fail("ÄãÕý´òµÄÈÈÄÖ×ÅÄØ!\n");
+        return notify_fail("ä½ æ­£æ‰“çš„çƒ­é—¹ç€å‘¢!\n");
 
         if (! (obgan = present("diaoyu gan", me)) )
-                return notify_fail("ÄãÏëÌ§ÆðÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³æŠ¬èµ·ä»€ä¹ˆï¼Ÿ\n");
         if ( ! me->query_temp("fishing") )
         {
-                 message_vision("Ö»¼û$N°ÑÊÖÖÐµÄÓã¸ËËÄÏÂ»ÓÎèÁË¼¸ÏÂ£¬¾ÍºÃÏóÊÇÔÚ·¢Éñ¾­¡£\n", me);
+                 message_vision("åªè§$NæŠŠæ‰‹ä¸­çš„é±¼æ†å››ä¸‹æŒ¥èˆžäº†å‡ ä¸‹ï¼Œå°±å¥½è±¡æ˜¯åœ¨å‘ç¥žç»ã€‚\n", me);
                   return 1;
         }
         me->delete_temp("fishing");
        if ( ! obgan->query("yuer") )
         {
-                  message_vision("Ö»¼û$N°ÑÊÖÖÐµÄÓã¸ËÃÍµÄÏòÉÏÒ»Ì§£¬µöÏßÇ°ÃæÖ»ÓÐÒ»¸öÁÁ¾§¾§µÄÓã¹³¡£\n", me);
+                  message_vision("åªè§$NæŠŠæ‰‹ä¸­çš„é±¼æ†çŒ›çš„å‘ä¸Šä¸€æŠ¬ï¼Œé’“çº¿å‰é¢åªæœ‰ä¸€ä¸ªäº®æ™¶æ™¶çš„é±¼é’©ã€‚\n", me);
                 return 1;
         }
         obgan->delete("yuer");
         if( ! obgan->query("hasfish") )
         {
-                message_vision("Ö»¼û$N°ÑÊÖÖÐµÄÓã¸ËÃÍµÄÏòÉÏÒ»Ì§£¬µöÏßÇ°Óã¹³ÉÏ´©×Å°ëÌõòÇò¾¡£\n",  me);
+                message_vision("åªè§$NæŠŠæ‰‹ä¸­çš„é±¼æ†çŒ›çš„å‘ä¸Šä¸€æŠ¬ï¼Œé’“çº¿å‰é±¼é’©ä¸Šç©¿ç€åŠæ¡èš¯èš“ã€‚\n",  me);
                 return 1;
         }
         obgan->delete("hasfish");
@@ -132,15 +132,15 @@ int exp,pot;
 //        printf("aftyunum = %d\n", yunum);
         me->delete_temp("canqi");
         obhaiyu = new(__DIR__"obj/" + haiyu[yunum]);
-        message_vision("Ö»¼û$NÊÖÎÕµö¸ÍÓÃÁ¦Ò»Ë¦£¬Ò»Ìõ" + obhaiyu->name()
-                        + "±»µöÁËÉÏÀ´£¡\n", me);
+        message_vision("åªè§$Næ‰‹æ¡é’“ç«¿ç”¨åŠ›ä¸€ç”©ï¼Œä¸€æ¡" + obhaiyu->name()
+                        + "è¢«é’“äº†ä¸Šæ¥ï¼\n", me);
         obhaiyu->move(me);
 exp=32+random(20);    
 pot=28+random(10);    
                         me->add("combat_exp", exp);
                         me->add("potential", pot);
-             tell_object(me,HIW"Äã±»½±ÀøÁË£º" + chinese_number(exp)
-               + "µãÊµÕ½¾­Ñé£¬"+ chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR);
+             tell_object(me,HIW"ä½ è¢«å¥–åŠ±äº†ï¼š" + chinese_number(exp)
+               + "ç‚¹å®žæˆ˜ç»éªŒï¼Œ"+ chinese_number(pot) + "ç‚¹æ½œèƒ½ã€‚\n"NOR);
 me->start_busy(2);
         return 1;       
 }
@@ -158,7 +158,7 @@ if (!me) return 1;
                 return 1;
         if ( ! (obgan->query("yuer")) )
                 return 1;
-        message_vision("Ö»¼û$NµÄÓãÆ¯ÔÚË®ÖÐ¶¯ÁË¼¸ÏÂ£¬ÃÍµÄÏòÏÂÒ»³Á......\n", me);
+        message_vision("åªè§$Nçš„é±¼æ¼‚åœ¨æ°´ä¸­åŠ¨äº†å‡ ä¸‹ï¼ŒçŒ›çš„å‘ä¸‹ä¸€æ²‰......\n", me);
         call_out("piaoup", 2, me);
         obgan->set("hasfish", 1);
         if ( ! me->query_temp("canqi") )
@@ -180,7 +180,7 @@ if (!me) return 1;
                 return 1;
     
         odds = me->query_temp("canqi");
-        message_vision("Ö»¼û$NµÄÓãÆ¯ÔÚË®ÖÐÒ»²ü£¬ÓÖÃÍµÄÏòÉÏÁË¸¡³öÀ´£¡\n", me);
+        message_vision("åªè§$Nçš„é±¼æ¼‚åœ¨æ°´ä¸­ä¸€é¢¤ï¼ŒåˆçŒ›çš„å‘ä¸Šäº†æµ®å‡ºæ¥ï¼\n", me);
         obgan->delete("hasfish");
         if ( random(odds) >= 2)
                 obgan->delete("yuer");

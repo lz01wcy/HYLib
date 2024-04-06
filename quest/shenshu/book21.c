@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name(HIB"Ô²ÔÂÍäµ¶"NOR, ({ "wandao" }) );
+    set_name(HIB"åœ†æœˆå¼¯åˆ€"NOR, ({ "wandao" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,9 +10,9 @@ void create()
             set_default_object(__FILE__);
     else {
 	        
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "ÉñÊéÖ®Ò»,ÈôÊÇÄÜÕÒÈýÉÙÒ¯µÄ½£¾ÍÄÜ(zhuangding)ÁË¡£\n");
+            set("long", "ç¥žä¹¦ä¹‹ä¸€,è‹¥æ˜¯èƒ½æ‰¾ä¸‰å°‘çˆ·çš„å‰‘å°±èƒ½(zhuangding)äº†ã€‚\n");
           }
 
     setup();
@@ -28,11 +28,11 @@ int do_zhuangding()
 	newbook =new(__DIR__"xiebook");
 // if (!present("xiesword",me))
     if (!(ob = present("xiesword",me)) )
-	tell_object(me,"ÊéºÃÏóÃ»Æë.\n");
+	tell_object(me,"ä¹¦å¥½è±¡æ²¡é½.\n");
 else{
     if(!ob->query("dynamic_quest"))
-	return notify_fail("ÕâÀïÃæÓÐ¼Ù»õ°É¡£\n");
-       message_vision("$N°Ñ´Ó»³ÖÐ·­³öÈýÉÙÒ¯µÄ½££¬ºÍÊÖÖÐµÄÔ²ÔÂÍíµ¶ºÏ²¢³ÉÁËÒ»±¾¡£\n", me);
+	return notify_fail("è¿™é‡Œé¢æœ‰å‡è´§å§ã€‚\n");
+       message_vision("$NæŠŠä»Žæ€€ä¸­ç¿»å‡ºä¸‰å°‘çˆ·çš„å‰‘ï¼Œå’Œæ‰‹ä¸­çš„åœ†æœˆæ™šåˆ€åˆå¹¶æˆäº†ä¸€æœ¬ã€‚\n", me);
 	newbook->move(me);
 	destruct(present("xiesword",me));
 	destruct(this_object());}

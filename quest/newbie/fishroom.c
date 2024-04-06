@@ -5,12 +5,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "µöÓãÌ¨");
+        set("short", "é’“é±¼å°");
         set("long", @LONG
-Äã×ß½øÕâÀï£¬ÍÛ£¬ÓÐºÃ¶àµÄÈËÔÚÕâÀïµöÓãÑ½£¡²»Ê±µÄ´«À´ÐË
-·ÜµÄº°½ÐÉù£¬Õâ¿Ï¶¨ÓÖÊÇÓÐË­µöµ½ÁË´óÓã£¬¿´µ½ËûÃÇÃ¦Ã¦ÂµÂµ¡¢
-ÐË·ÜµÄÑù×Ó£¬Äã»¹ÓÐÊ²Ã´ÖµµÃÓÌÔ¥µÄ£¬¸Ï¿ìÊÕÊ°ºÃÄãµÄÓã¸Ü¿ªÊ¼
-µöÓã(diao)°É£¿ÀïÃæÊÇÒ»¼äÐÝÏ¢ÊÒ¡£
+ä½ èµ°è¿›è¿™é‡Œï¼Œå“‡ï¼Œæœ‰å¥½å¤šçš„äººåœ¨è¿™é‡Œé’“é±¼å‘€ï¼ä¸æ—¶çš„ä¼ æ¥å…´
+å¥‹çš„å–Šå«å£°ï¼Œè¿™è‚¯å®šåˆæ˜¯æœ‰è°é’“åˆ°äº†å¤§é±¼ï¼Œçœ‹åˆ°ä»–ä»¬å¿™å¿™ç¢Œç¢Œã€
+å…´å¥‹çš„æ ·å­ï¼Œä½ è¿˜æœ‰ä»€ä¹ˆå€¼å¾—çŠ¹è±«çš„ï¼Œèµ¶å¿«æ”¶æ‹¾å¥½ä½ çš„é±¼æ å¼€å§‹
+é’“é±¼(diao)å§ï¼Ÿé‡Œé¢æ˜¯ä¸€é—´ä¼‘æ¯å®¤ã€‚
 LONG );
         set("exits", ([
 //                "enter" : __DIR__"xiuxi",
@@ -36,75 +36,75 @@ int do_fish(string arg)
         me = this_player();
 
         if (me->query("combat_exp") > 10000) {
-                message_vision(HIG"½­ºþÊ¹ÕßµÄÉíÓ°Í»È»³öÏÖÔÚÒ»ÕóÑÌÎíÖ®ÖÐ¡£\n" +
-            HIR "½­ºþÊ¹Õß³å×Å$N´óºÈ£º³öÈ¥£¬±ðµ·ÂÒ£¬ÕâÃ´´óÁË»¹À´µöÓã£¬ÄãÐß²»ÐßÑ½£¡\n\n\n"NOR,me);
+                message_vision(HIG"æ±Ÿæ¹–ä½¿è€…çš„èº«å½±çªç„¶å‡ºçŽ°åœ¨ä¸€é˜µçƒŸé›¾ä¹‹ä¸­ã€‚\n" +
+            HIR "æ±Ÿæ¹–ä½¿è€…å†²ç€$Nå¤§å–ï¼šå‡ºåŽ»ï¼Œåˆ«æ£ä¹±ï¼Œè¿™ä¹ˆå¤§äº†è¿˜æ¥é’“é±¼ï¼Œä½ ç¾žä¸ç¾žå‘€ï¼\n\n\n"NOR,me);
                     me->move("/d/shaolin/hanshui1");
                      return 1;
                                                } else
-        if ( !arg || ( arg != "Óã" ) ) return 
-                   notify_fail("ÄãÒªµöÊ²Ã´°¡?µöÃü£¿\n");
+        if ( !arg || ( arg != "é±¼" ) ) return 
+                   notify_fail("ä½ è¦é’“ä»€ä¹ˆå•Š?é’“å‘½ï¼Ÿ\n");
         else
 
         if (me->query("qi") < 20 )
-                return notify_fail("Äã¿ìÖ§³Ö²»×¡ÁË£¬ÏÈÐª»á¶ù°É£¡\n");
+                return notify_fail("ä½ å¿«æ”¯æŒä¸ä½äº†ï¼Œå…ˆæ­‡ä¼šå„¿å§ï¼\n");
         else
-                message_vision("$NÄÃ×ÅÒ»°ÑµöÓã¸Ë×øÔÚ´óÊ¯Í·ÉÏµöÆðÓãÀ´¡­¡­¡£\n", me);
+                message_vision("$Næ‹¿ç€ä¸€æŠŠé’“é±¼æ†ååœ¨å¤§çŸ³å¤´ä¸Šé’“èµ·é±¼æ¥â€¦â€¦ã€‚\n", me);
         if (me->is_busy())
-                return notify_fail ("Äã»¹ÊÇÏÈ×°ºÃÓã¶üÔÙËµ°É£¡\n");
+                return notify_fail ("ä½ è¿˜æ˜¯å…ˆè£…å¥½é±¼é¥µå†è¯´å§ï¼\n");
 
                 switch(random(10)) {  
                         case 0 :             
-                             message_vision("$NÒ»Ìá¸Ë£¬µöµ½ÁËÒ»Ìõ"+ HIR "´óÀðÓã"NOR +"£¬¹§Ï²£¬¹§Ï²¡£ \n\n",me);
+                             message_vision("$Nä¸€ææ†ï¼Œé’“åˆ°äº†ä¸€æ¡"+ HIR "å¤§é²¤é±¼"NOR +"ï¼Œæ­å–œï¼Œæ­å–œã€‚ \n\n",me);
                              me->add("potential",15+random(2));
                              me->add("combat_exp",20+random(7));
                              me->add("qi",-15);
                            break;
                         case 1 :
-                             message_vision("$NÃÍÒ»Ìá¸Ë£¬µöµ½ÁË"+ CYN "Ò»¸öÆÆ²ÝÃ±"NOR +"£¬»ÞÆø£¬»ÞÆø¡£  \n",me);
-                             message_vision(HIW "$N¿´×ÅÆÆ²ÝÃ±²»ÓÉµÄ·¢´ôÁË¡£  \n\n" NOR,me);
+                             message_vision("$NçŒ›ä¸€ææ†ï¼Œé’“åˆ°äº†"+ CYN "ä¸€ä¸ªç ´è‰å¸½"NOR +"ï¼Œæ™¦æ°”ï¼Œæ™¦æ°”ã€‚  \n",me);
+                             message_vision(HIW "$Nçœ‹ç€ç ´è‰å¸½ä¸ç”±çš„å‘å‘†äº†ã€‚  \n\n" NOR,me);
                              me->add("qi",-5);
                            break;
                         case 2 :
-                             message_vision("$NÓãÆ¯»Î¶¯£¬$NÐÄÀïÒ»¼±£¬ÃÍµÄÒ»Ìá¸Ë£¬$Nµöµ½ÁË"+ RED "Ò»¼þºìÉ«µÄ¶Ç¶µ¡£ \n"NOR,me);
-                             message_vision(HIB "$NÁ¬Éù½Ðµ½£º»ÞÆø£¬»ÞÆø¡£ \n\n" NOR,me);
+                             message_vision("$Né±¼æ¼‚æ™ƒåŠ¨ï¼Œ$Nå¿ƒé‡Œä¸€æ€¥ï¼ŒçŒ›çš„ä¸€ææ†ï¼Œ$Né’“åˆ°äº†"+ RED "ä¸€ä»¶çº¢è‰²çš„è‚šå…œã€‚ \n"NOR,me);
+                             message_vision(HIB "$Nè¿žå£°å«åˆ°ï¼šæ™¦æ°”ï¼Œæ™¦æ°”ã€‚ \n\n" NOR,me);
                              me->add("qi",-7);
                            break;
                         case 3 :
-                             message_vision("$NÒ»Ìá¸Ë£¬µöµ½ÁËÒ»Ìõ"+ HIC "öóÓã"NOR +"£¬¹§Ï²£¬¹§Ï²¡£ \n\n",me);
+                             message_vision("$Nä¸€ææ†ï¼Œé’“åˆ°äº†ä¸€æ¡"+ HIC "é²¶é±¼"NOR +"ï¼Œæ­å–œï¼Œæ­å–œã€‚ \n\n",me);
                              me->add("potential",3+random(2));
                              me->add("combat_exp",9+random(7));
                              me->add("qi",-6);
                            break;
                         case 4 :
-                             message_vision("$NÒ»Ìá¸Ë£¬µöµ½ÁËÒ»Ìõ"+ HIG "öÙÓã"NOR +"£¬¹§Ï²£¬¹§Ï²¡£ \n\n",me);
+                             message_vision("$Nä¸€ææ†ï¼Œé’“åˆ°äº†ä¸€æ¡"+ HIG "é²‘é±¼"NOR +"ï¼Œæ­å–œï¼Œæ­å–œã€‚ \n\n",me);
                              me->add("potential",11+random(2));
                              me->add("combat_exp",18+random(7));
                              me->add("qi",-12);
                            break;
                         case 5 :
-                             message_vision("$NÒ»Ìá¸Ë£¬µöµ½ÁËÒ»Ìõ²ÝÓã£¬¹§Ï²£¬¹§Ï²¡£ \n\n",me);
+                             message_vision("$Nä¸€ææ†ï¼Œé’“åˆ°äº†ä¸€æ¡è‰é±¼ï¼Œæ­å–œï¼Œæ­å–œã€‚ \n\n",me);
                              me->add("potential",6+random(2));
                              me->add("combat_exp",9+random(7));
                              me->add("qi",-10);
                            break;
                         case 6 :
-                             message_vision("$NÒ»Ìá¸Ë£¬µöµ½ÁËÒ»Ìõ"+ HIB "öàÓã"NOR +"£¬¹§Ï²£¬¹§Ï²¡£ \n\n",me);
+                             message_vision("$Nä¸€ææ†ï¼Œé’“åˆ°äº†ä¸€æ¡"+ HIB "é²Ÿé±¼"NOR +"ï¼Œæ­å–œï¼Œæ­å–œã€‚ \n\n",me);
                              me->add("potential",7+random(2));
                              me->add("combat_exp",8+random(7));
                              me->add("qi",-5);
                            break;
                         case 7 :
-                             message_vision("$NÃÍÒ»Ìá¸Ë£¬µöµ½ÁË"+ WHT "Ò»¸ö·Ï¾ÉµÄË¯´ü"NOR +"£¬»ÞÆø£¬»ÞÆø¡£ \n",me);
-                             message_vision(HIY"$N¿´×Å·Ï¾ÉµÄË¯´ü£¬ÑÛ¾¦Á¢¿ÌºìÁË¡£ \n\n"NOR,me);
+                             message_vision("$NçŒ›ä¸€ææ†ï¼Œé’“åˆ°äº†"+ WHT "ä¸€ä¸ªåºŸæ—§çš„ç¡è¢‹"NOR +"ï¼Œæ™¦æ°”ï¼Œæ™¦æ°”ã€‚ \n",me);
+                             message_vision(HIY"$Nçœ‹ç€åºŸæ—§çš„ç¡è¢‹ï¼Œçœ¼ç›ç«‹åˆ»çº¢äº†ã€‚ \n\n"NOR,me);
                              me->add("qi",-3);
                            break;
                         case 8 :
-                             message_vision("$NÃÍµÄÒ»Ìá¸Ë£¬³¶µÄÌ«¼±ÁË£¬Ïß¶ÏÁË£¬ÓãÅÜÁË£¬¿ÉÏ§£¬¿ÉÏ§¡£ \n",me);
-                             message_vision(HIC "$N²»ÓÉµÄÔÚÐÄÀï´óÂî:¥À¥É¥Ñ¡£ \n\n" NOR,me);
+                             message_vision("$NçŒ›çš„ä¸€ææ†ï¼Œæ‰¯çš„å¤ªæ€¥äº†ï¼Œçº¿æ–­äº†ï¼Œé±¼è·‘äº†ï¼Œå¯æƒœï¼Œå¯æƒœã€‚ \n",me);
+                             message_vision(HIC "$Nä¸ç”±çš„åœ¨å¿ƒé‡Œå¤§éª‚:ãƒ€ãƒ‰ãƒ‘ã€‚ \n\n" NOR,me);
                              me->add("qi",-7);
                            break;
                         default :
-                             message_vision("$NÒ»Ìá¸Ë£¬µöµ½ÁËÒ»Ìõ"+ HIM "ÍÞÍÞÓã"NOR +"£¬¹§Ï²£¬¹§Ï²¡£ \n\n",me);
+                             message_vision("$Nä¸€ææ†ï¼Œé’“åˆ°äº†ä¸€æ¡"+ HIM "å¨ƒå¨ƒé±¼"NOR +"ï¼Œæ­å–œï¼Œæ­å–œã€‚ \n\n",me);
                              me->add("potential",10+random(2));
                              me->add("combat_exp",10+random(7));
                              me->add("qi",-8);

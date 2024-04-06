@@ -1,22 +1,22 @@
-// ying-kuang.c Òø¿óÊ¯
-// ĞÇĞÇlywin 2000/6/15
+// ying-kuang.c é“¶çŸ¿çŸ³
+// æ˜Ÿæ˜Ÿlywin 2000/6/15
 
 #include <ansi.h>
 inherit ITEM;  
 void create() 
 {
-        set_name(HIW"Òø¿óÊ¯"NOR,({"ying kuang", "kuang"}));
+        set_name(HIW"é“¶çŸ¿çŸ³"NOR,({"ying kuang", "kuang"}));
         set_weight(50000);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+                set("unit", "å—");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_put",1);
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
-                set("long", "ÕâÊÇÒ»¿é³ÁÖØµÄÒø¿óÊ¯¡£\n");
+                set("long", "è¿™æ˜¯ä¸€å—æ²‰é‡çš„é“¶çŸ¿çŸ³ã€‚\n");
              }
         setup();
 }

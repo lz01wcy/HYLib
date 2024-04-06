@@ -2,10 +2,10 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR"»õÎï"NOR, ({"huo wu", "huo wu"}));
+        set_name(HIR"è´§ç‰©"NOR, ({"huo wu", "huo wu"}));
         set("long",
-               "ÕâÊÇ³ÂÀÏ°åÒªÄãËÍµÄ»õÎï¡£\n");
-        set("unit", "°ü");
+               "è¿™æ˜¯é™ˆè€æ¿è¦ä½ é€çš„è´§ç‰©ã€‚\n");
+        set("unit", "åŒ…");
         set("weight", 200);
         set("no_steal",1);
         set("no_beg", 1);
@@ -31,19 +31,19 @@ int i;
 string targ;
 int exp,pot;
         if (!arg||!ob=present(arg,environment(me)))
-                return notify_fail("ÄãÒª°Ñ»õÎïËÍ¸øË­£¿\n");
+                return notify_fail("ä½ è¦æŠŠè´§ç‰©é€ç»™è°ï¼Ÿ\n");
         targ=ob->query("name");
-if ( targ != me->query("quest/quest") ) return notify_fail("ÕâÊÇËÍ¸ø"+me->query("quest/quest")+"µÄ»õÎï£¬ÄãÔõÃ´ÄÜËæ±ãÂÒ¸øÄØ£¿\n");
-        if (userp(ob)) return notify_fail("ÄãÅª´íÈËÁË°É£¿\n"); //Íæ¼Ò¿ÉÄÜÓÐÏàÍ¬ÓÚNPCµÄÃû×Ö
+if ( targ != me->query("quest/quest") ) return notify_fail("è¿™æ˜¯é€ç»™"+me->query("quest/quest")+"çš„è´§ç‰©ï¼Œä½ æ€Žä¹ˆèƒ½éšä¾¿ä¹±ç»™å‘¢ï¼Ÿ\n");
+        if (userp(ob)) return notify_fail("ä½ å¼„é”™äººäº†å§ï¼Ÿ\n"); //çŽ©å®¶å¯èƒ½æœ‰ç›¸åŒäºŽNPCçš„åå­—
         if ( (int) me->query("task_time") < time() )
         {
-             return notify_fail(targ+"ÀäÀäµØËµ£º¡°ÄãÀ´ÍíÁË,»µÁËÎÒµÄ´óÊÂ£¡¡±\n");
+             return notify_fail(targ+"å†·å†·åœ°è¯´ï¼šâ€œä½ æ¥æ™šäº†,åäº†æˆ‘çš„å¤§äº‹ï¼â€\n");
         }
-        tell_object(me,"Äã°Ñ»õÎï½»¸øÁË"+targ+"¡£\n" NOR );
+        tell_object(me,"ä½ æŠŠè´§ç‰©äº¤ç»™äº†"+targ+"ã€‚\n" NOR );
         exp=me->query("quest/exp_bonus");
         pot=me->query("quest/pot_bonus");
-        tell_object(me,HIW""+targ+"´óÏ²µÀ£º¶àÐ»Äú¼°Ê±ËÍ»õÎï¸øÎÒ£¬Äã±»½±ÀøÁË£º\n"        +chinese_number(exp)+"µã¾­ÑéÖµ¡£\n"
-        +chinese_number(pot)+"µãÇ±ÄÜ¡£\n\n"NOR);
+        tell_object(me,HIW""+targ+"å¤§å–œé“ï¼šå¤šè°¢æ‚¨åŠæ—¶é€è´§ç‰©ç»™æˆ‘ï¼Œä½ è¢«å¥–åŠ±äº†ï¼š\n"        +chinese_number(exp)+"ç‚¹ç»éªŒå€¼ã€‚\n"
+        +chinese_number(pot)+"ç‚¹æ½œèƒ½ã€‚\n\n"NOR);
         me->add("combat_exp",exp);
         me->add("potential",pot);
         me->set("quest",0);

@@ -7,60 +7,60 @@ void init_creat_job();
 void get_job();
 void do_clone(mapping target);
 mapping *where=({
-        (["party":        "ÉÙÁÖÅÉ",
+        (["party":        "å°‘æ—æ´¾",
         "where" :         "/d/shaolin/guangchang1",]),
-        (["party":      "Îäµ±ÅÉ",
+        (["party":      "æ­¦å½“æ´¾",
         "where" :       "/d/wudang/guangchang",]),
-        (["party":       "ÁéğÕ¹¬",
+        (["party":       "çµé¹«å®«",
         "where" :       "/d/lingjiu/shanjiao",]),
-        (["party":       "»ªÉ½ÅÉ",
+        (["party":       "åå±±æ´¾",
         "where" :       "/d/huashan/qunxianguan",]),
-        (["party":       "Ø¤°ï",
+        (["party":       "ä¸å¸®",
          "where" :       "/d/city/pomiao",]),
-         (["party":       "´óÀí¶ÎÊÏ",
+         (["party":       "å¤§ç†æ®µæ°",
          "where" :       "/d/dali/center",]),
-       (["party":       "¹ÅÄ¹ÅÉ",
+       (["party":       "å¤å¢“æ´¾",
          "where" :       "/d/gumu/shanlu2",]),
-              (["party":       "ĞÇËŞÅÉ",
+              (["party":       "æ˜Ÿå®¿æ´¾",
          "where" :       "/d/xingxiu/xxh2",]),
-               (["party":       "ÉñÁú½Ì",
+               (["party":       "ç¥é¾™æ•™",
          "where" :       "/d/shenlong/dating",]),
-               (["party":       "åĞÒ£ÅÉ",
+               (["party":       "é€é¥æ´¾",
          "where" :       "/d/xiaoyao/qingcaop",]),
-               (["party":       "ÌúÕÆ°ï",
+               (["party":       "é“æŒå¸®",
          "where" :       "/d/tiezhang/wztang",]),
-                (["party":       "À¥ÂØÅÉ",
+                (["party":       "æ˜†ä»‘æ´¾",
          "where" :       "/d/kunlun/guangchang",]),
-               (["party":       "ÌÒ»¨µº",
+               (["party":       "æ¡ƒèŠ±å²›",
          "where" :       "/d/taohua/dating",]),
-              (["party":       "°×ÍÕÉ½×¯",
+              (["party":       "ç™½é©¼å±±åº„",
          "where" :       "/d/baituo/dating",]),
-               (["party":       "Ñ©É½ËÂ",
+               (["party":       "é›ªå±±å¯º",
          "where" :       "/d/xueshan/dadian",]),
-               (["party":       "È«Õæ½Ì",
+               (["party":       "å…¨çœŸæ•™",
          "where" :       "/d/quanzhen/jiaobei",]),
-                (["party":       "¹ÃËÕÄ½Èİ",
+                (["party":       "å§‘è‹æ…•å®¹",
          "where" :       "/d/mr/yanziwu",]),
-                (["party":       "ÁèÏö³Ç",
+                (["party":       "å‡Œéœ„åŸ",
          "where" :       "/d/lingxiao/dadian",]),
-                (["party":       "Îå¶¾½Ì",
+                (["party":       "äº”æ¯’æ•™",
          "where" :       "/d/wudujiao/dating",]),
-                (["party":       "ÌÆÃÅ",
+                (["party":       "å”é—¨",
          "where" :       "/d/tangmen/liujiantang",]),
-                (["party":       "·ÉÌìÓù½£Á÷",
+                (["party":       "é£å¤©å¾¡å‰‘æµ",
          "where" :       "/d/feitian/daochang",]),
 
  });
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "ÈÎÎñ¾«Áé");
+        set("channel_id", "ä»»åŠ¡ç²¾çµ");
         set("id", "JOB");
         init_creat_job();
 }
 void init_creat_job()
 {
-        CHANNEL_D->do_channel( this_object(), "sys", "ºÆ½ÙÈÎÎñ¼ÓÔØ³É¹¦£¡");
+        CHANNEL_D->do_channel( this_object(), "sys", "æµ©åŠ«ä»»åŠ¡åŠ è½½æˆåŠŸï¼");
         remove_call_out("get_job");
   call_out("get_job",1);
 }
@@ -88,9 +88,9 @@ robot = clone_object("/quest/haojie/jobnpc/"+j);
 
 if (robot->query("family/family_name") != target["party"])
 {
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":ÖÚµÜ×ÓÌıÁî!"NOR"¡£\n", users());
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":Ë³ÎÒÕßÉú£¬ÄæÎÒÕßÍö!"NOR"¡£\n", users());
-message("channel:chat", HIC"\n¡¾½­ºşºÆ½Ù¡¿"+robot->query("family/family_name") + ":" + target["party"]+"ÓëÎÒÅÉ×ö¶Ô£¬ÕâÒ»´ÎÊÄ±ØÒªÏûÃğ"+target["party"]+"!"NOR"¡£\n", users());
+message("channel:chat", HIC"\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘"+robot->query("family/family_name") + ":ä¼—å¼Ÿå­å¬ä»¤!"NOR"ã€‚\n", users());
+message("channel:chat", HIC"\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘"+robot->query("family/family_name") + ":é¡ºæˆ‘è€…ç”Ÿï¼Œé€†æˆ‘è€…äº¡!"NOR"ã€‚\n", users());
+message("channel:chat", HIC"\nã€æ±Ÿæ¹–æµ©åŠ«ã€‘"+robot->query("family/family_name") + ":" + target["party"]+"ä¸æˆ‘æ´¾åšå¯¹ï¼Œè¿™ä¸€æ¬¡èª“å¿…è¦æ¶ˆç­"+target["party"]+"!"NOR"ã€‚\n", users());
 write_file(MPFILE,sprintf("%s",
 	robot->query("family/family_name")),1);
 
@@ -106,7 +106,7 @@ c=random(400)+100;
                 killer1=clone_object("/quest/haojie/jobnpc/"+j);
                 killer1->set("hated",target["party"]);
                 if( room = find_object(target["where"]+".c")){
-                        CHANNEL_D->do_channel( this_object(), "sys","²éÕÒ³É¹¦£¬Ä¿Ç°"+killer1->query("name")+"ÔÚ"+file_name(room)+"\n");
+                        CHANNEL_D->do_channel( this_object(), "sys","æŸ¥æ‰¾æˆåŠŸï¼Œç›®å‰"+killer1->query("name")+"åœ¨"+file_name(room)+"\n");
                 killer1=clone_object("/quest/haojie/jobnpc/"+j);
                 killer1->set("hated",target["party"]);
                 killer1->set("combat_exp",a);
@@ -118,7 +118,7 @@ c=random(400)+100;
                 killer1->set("neili",b*2);
                 killer1->move(room);
                 }else if(room = load_object(target["where"]+".c")){
-                        CHANNEL_D->do_channel( this_object(), "sys","²éÕÒ³É¹¦£¬Ä¿Ç°"+killer1->query("name")+"ÔÚ"+file_name(room)+"\n");
+                        CHANNEL_D->do_channel( this_object(), "sys","æŸ¥æ‰¾æˆåŠŸï¼Œç›®å‰"+killer1->query("name")+"åœ¨"+file_name(room)+"\n");
                 killer1=clone_object("/quest/haojie/jobnpc/"+j);
                 killer1->set("hated",target["party"]);
                 killer1->set("combat_exp",a);
@@ -138,7 +138,7 @@ void do_dest(object robot)
 {
         object *obj=users(),ob;
        int i;
-        CHANNEL_D->do_channel(robot, "chat",HIR"ºß£¬Õâ´Î¾ÍÏÈ·ÅÄãÃÇÒ»Âí£¬ÏÂ´ÎÒ»¶¨É±µÃÄãÃÇ¼¦È®²»Áô£¡"NOR);
+        CHANNEL_D->do_channel(robot, "chat",HIR"å“¼ï¼Œè¿™æ¬¡å°±å…ˆæ”¾ä½ ä»¬ä¸€é©¬ï¼Œä¸‹æ¬¡ä¸€å®šæ€å¾—ä½ ä»¬é¸¡çŠ¬ä¸ç•™ï¼"NOR);
         destruct(robot);
         remove_call_out("get_job");
         call_out("get_job",1800);

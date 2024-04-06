@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ïÚÒø", ({ "biao yin", "biao","yin" }) );
+        set_name("é•–é“¶", ({ "biao yin", "biao","yin" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ïä");
-                set("long", "ÕâÊÇÒ»ÏäÁÖ×ÜïÚÍ·ÍĞÄãÔËËÍµÄïÚÒø¡£\n");
+                set("unit", "ç®±");
+                set("long", "è¿™æ˜¯ä¸€ç®±æ—æ€»é•–å¤´æ‰˜ä½ è¿é€çš„é•–é“¶ã€‚\n");
         }
 }
 
@@ -51,15 +51,15 @@ int do_give(string arg)
         me = this_player();
 
         if(!ob=present(target,environment(me)) ) {
-                tell_object(me,"ÄãÏëÒª°ÑïÚÒø½»¸øË­£¿\n");
+                tell_object(me,"ä½ æƒ³è¦æŠŠé•–é“¶äº¤ç»™è°ï¼Ÿ\n");
                 return 1;
         }
         if(ob->query("id")!=query("target") ) {
-                tell_object(me,"Äã²»ÄÜ°ÑÕâÑù¶«Î÷¸øÕâ¸öÈË¡£\n");
+                tell_object(me,"ä½ ä¸èƒ½æŠŠè¿™æ ·ä¸œè¥¿ç»™è¿™ä¸ªäººã€‚\n");
                 return 1;
         }
         if(ob->query_temp("unconcious") ) {
-                tell_object(me,ob->query("name")+"ÒÑ¾­ÎŞ·¨ÊÕÏÂÕâÑù¶«Î÷ÁË¡£\n");
+                tell_object(me,ob->query("name")+"å·²ç»æ— æ³•æ”¶ä¸‹è¿™æ ·ä¸œè¥¿äº†ã€‚\n");
                 return 1;
         }
 /*
@@ -68,23 +68,23 @@ int do_give(string arg)
 
         if(ob->query("id") != "kong kong-er" 
         && base_name(environment(ob)) != ob->query("startroom") ) {
-                tell_object(me, ob->query("name")+"ËµµÀ£ºÄã»¹ÊÇµ½"+home->query("short")+"À´ÕÒÎÒ°É¡£\n");
+                tell_object(me, ob->query("name")+"è¯´é“ï¼šä½ è¿˜æ˜¯åˆ°"+home->query("short")+"æ¥æ‰¾æˆ‘å§ã€‚\n");
                 return 1;
         }
 */
-        message_vision("$NÄÃ³öÒ»ÏäïÚÒø½»¸øÁË"+ob->query("name")+"¡£\n",me);
+        message_vision("$Næ‹¿å‡ºä¸€ç®±é•–é“¶äº¤ç»™äº†"+ob->query("name")+"ã€‚\n",me);
         if((time()-me->query("biao_start"))>me->query("biao_time") ) {
-                message_vision("$NºÜÉúÆøµØ¶Ô$nËµµÀ£ºÕâÃ´µã¶ùÊÂ¶¼°ì²»ºÃ£¬ÕæÃ»ÓÃ£¡\n",
+                message_vision("$Nå¾ˆç”Ÿæ°”åœ°å¯¹$nè¯´é“ï¼šè¿™ä¹ˆç‚¹å„¿äº‹éƒ½åŠä¸å¥½ï¼ŒçœŸæ²¡ç”¨ï¼\n",
                         ob,me);
-                tell_object(me,"ÄãÃ»ÓĞ¼°Ê±°ÑïÚÒøËÍµ½"+ob->query("name")+"µÄÊÖÖĞ£¬ÄãµÄÈÎÎñÊ§°ÜÁË£¡\n");
+                tell_object(me,"ä½ æ²¡æœ‰åŠæ—¶æŠŠé•–é“¶é€åˆ°"+ob->query("name")+"çš„æ‰‹ä¸­ï¼Œä½ çš„ä»»åŠ¡å¤±è´¥äº†ï¼\n");
                 me->set("biao_failed",1);
         }
         else {
                 i=query("amount")/100;
-                tell_object(me,"¹§Ï²Äã³É¹¦µØ½«ïÚÒøËÍµ½ÁË"+ob->query("name")+"µÄÊÖÖĞ¡£\n");
+                tell_object(me,"æ­å–œä½ æˆåŠŸåœ°å°†é•–é“¶é€åˆ°äº†"+ob->query("name")+"çš„æ‰‹ä¸­ã€‚\n");
 
-                message_vision(CYN"$N¶Ô$nĞ¦µÀ£ººÃ£¡ÕâÀïÊÇÒ»³ÉºìÀû£¬ÄãÄÃÈ¥°É¡£\n"NOR,ob,me);
-                msg=sprintf("$NÄÃ³ö%sÁ½Òø×Ó½»¸ø$n¡£\n",chinese_number(i));
+                message_vision(CYN"$Nå¯¹$nç¬‘é“ï¼šå¥½ï¼è¿™é‡Œæ˜¯ä¸€æˆçº¢åˆ©ï¼Œä½ æ‹¿å»å§ã€‚\n"NOR,ob,me);
+                msg=sprintf("$Næ‹¿å‡º%sä¸¤é“¶å­äº¤ç»™$nã€‚\n",chinese_number(i));
                 if(!silver=present("silver",me) ) {
                         silver=new("/clone/money/silver");
                         silver->move(me);
@@ -94,10 +94,10 @@ int do_give(string arg)
                 message_vision(msg,ob,me);
 
                 i=1+random(me->query("kar") ) * 8;
-                tell_object(me,sprintf(WHT"Äã»ñµÃÁË%sµãÕ½¶·¾­Ñé£¡\n"NOR,chinese_number(i*3/2)) );
+                tell_object(me,sprintf(WHT"ä½ è·å¾—äº†%sç‚¹æˆ˜æ–—ç»éªŒï¼\n"NOR,chinese_number(i*3/2)) );
                 me->add("combat_exp",i*2);
                 i=2+random(me->query("kar") ) * 8;
-                tell_object(me,sprintf(WHT"Äã»ñµÃÁË%sµãÇ±ÄÜ£¡\n"NOR,chinese_number(i)) );
+                tell_object(me,sprintf(WHT"ä½ è·å¾—äº†%sç‚¹æ½œèƒ½ï¼\n"NOR,chinese_number(i)) );
                 me->apply_condition("zzz_busy",6);
                 me->add("potential",i*2);
                 me->start_busy(6);
@@ -161,7 +161,7 @@ int do_put(string arg)
         if(sscanf(arg, "%s in %s", biao, bag) != 2)     return 0;
 
         if(present(biao, this_player()) || biao == "all" ) {
-                tell_object(this_player(), "ÄãÒª°ÑïÚÒø·Åµ½ÄÄÀï£¿\n");
+                tell_object(this_player(), "ä½ è¦æŠŠé•–é“¶æ”¾åˆ°å“ªé‡Œï¼Ÿ\n");
                 return 1;
         }
 
@@ -169,6 +169,6 @@ int do_put(string arg)
 }
 int do_guard(string arg)
 {
-        write(this_player()->query("name")+"£¬ÄãÏÖÔÚ²»ÄÜÓÃguard£¡\n");
+        write(this_player()->query("name")+"ï¼Œä½ ç°åœ¨ä¸èƒ½ç”¨guardï¼\n");
         return 1;
 }

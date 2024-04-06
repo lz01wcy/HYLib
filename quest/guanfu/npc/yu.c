@@ -1,14 +1,14 @@
-// yu ÓñÕæ×Ó
+// yu ç‰çœŸå­
  
 inherit NPC;
  
 void create()
 {
-	set_name("ÓñÕæ×Ó", ({ "yu zhenzi", "yu" }));
-//	set("nickname", "°Ë±ÛÉñ½£");
+	set_name("ç‰çœŸå­", ({ "yu zhenzi", "yu" }));
+//	set("nickname", "å…«è‡‚ç¥å‰‘");
 	set("long", 
-        "Ìú½£ÃÅµÄÅÑÍ½£¬¼«ÆäºÃÉ«£¬ËäÊÇÎäÁÖ°ÜÀà£¬µ«ÊÇÒ»Éí¹¦·òÔç¾Í³öÉñÈë»¯¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "é“å‰‘é—¨çš„å›å¾’ï¼Œæå…¶å¥½è‰²ï¼Œè™½æ˜¯æ­¦æ—è´¥ç±»ï¼Œä½†æ˜¯ä¸€èº«åŠŸå¤«æ—©å°±å‡ºç¥å…¥åŒ–ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 66);
 	set("attitude", "peaceful");
 	set("shen", -18000);
@@ -35,14 +35,14 @@ void create()
         }));
 
         set_skill("force", 130);
-        set_skill("xiantian-qigong", 330);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-qigong", 330);    //å…ˆå¤©æ°”åŠŸ
         set_skill("sword", 130);
-        set_skill("quanzhen-jian",130);  //È«Õæ½£
+        set_skill("quanzhen-jian",130);  //å…¨çœŸå‰‘
         set_skill("dodge", 110);
-        set_skill("jinyan-gong", 120);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 120);   //é‡‘é›åŠŸ
         set_skill("parry", 140);
         set_skill("unarmed",150);
-        set_skill("haotian-zhang", 150);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 150);    //æ˜Šå¤©æŒ
         set_skill("literate",100);
         set_skill("strike",120);
         set_skill("taoism",100);

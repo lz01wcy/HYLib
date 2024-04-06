@@ -1,4 +1,4 @@
-// zhenwu-jian.c ÕæÎä½£
+// zhenwu-jian.c çœŸæ­¦å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
@@ -6,14 +6,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIW"ÉßÆ¤½£"NOR, ({"shepi jian", "sword", "shepi"}));
+        set_name(HIW"è›‡çš®å‰‘"NOR, ({"shepi jian", "sword", "shepi"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°ÑºÁ²»ÆğÑÛµÄ¹Å½£,½£Éí²»¹æÔòµÄ»¨ÎÆÉÏËÆºõ»¹´øÓĞĞ©ÌúĞâ,½£·æÉÏ¾ÓÈ»»¹ÓĞ¼¸¸öÈ±¿Ú¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠæ¯«ä¸èµ·çœ¼çš„å¤å‰‘,å‰‘èº«ä¸è§„åˆ™çš„èŠ±çº¹ä¸Šä¼¼ä¹è¿˜å¸¦æœ‰äº›é“é”ˆ,å‰‘é”‹ä¸Šå±…ç„¶è¿˜æœ‰å‡ ä¸ªç¼ºå£ã€‚\n");
                 set("value", 2000);
       
 

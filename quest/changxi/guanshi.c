@@ -1,6 +1,6 @@
-//ÏÀ¿ÍĞĞ100º£Ñó°æII£¨ÔÆÆğÔÆÂä£©
-// guanshi.c ÏåÑôÏ·Ôº¹ÜÊÂ
-//ĞÇĞÇlywin 2000/6/21 
+//ä¾ å®¢è¡Œ100æµ·æ´‹ç‰ˆIIï¼ˆäº‘èµ·äº‘è½ï¼‰
+// guanshi.c è¥„é˜³æˆé™¢ç®¡äº‹
+//æ˜Ÿæ˜Ÿlywin 2000/6/21 
 
 #include <ansi.h>
 #include <command.h>
@@ -10,15 +10,15 @@ int do_gongzuo();
 int ask_done();
 
 mapping *changxi = ({ 
-         ([ "changxi":"ÑïÖİ","where":"city"   ]),
-         ([ "changxi":"±±¾©","where":"beijing"  ]),
-         ([ "changxi":"³É¶¼","where":"chengdu"]),   
-         ([ "changxi":"´óÀí","where":"dali"   ]),   
-         ([ "changxi":"·ğÉ½","where":"foshan" ]),   
-         ([ "changxi":"ÈªÖİ","where":"quanzhou"]),   
-         ([ "changxi":"º¼Öİ","where":"hangzhou"]),   
-         ([ "changxi":"ÁéÖİ","where":"lingzhou"]),   
-         ([ "changxi":"ËÕÖİ","where":"suzhou"]),   
+         ([ "changxi":"æ‰¬å·","where":"city"   ]),
+         ([ "changxi":"åŒ—äº¬","where":"beijing"  ]),
+         ([ "changxi":"æˆéƒ½","where":"chengdu"]),   
+         ([ "changxi":"å¤§ç†","where":"dali"   ]),   
+         ([ "changxi":"ä½›å±±","where":"foshan" ]),   
+         ([ "changxi":"æ³‰å·","where":"quanzhou"]),   
+         ([ "changxi":"æ­å·","where":"hangzhou"]),   
+         ([ "changxi":"çµå·","where":"lingzhou"]),   
+         ([ "changxi":"è‹å·","where":"suzhou"]),   
                    });
 mapping query_changxi()
 {
@@ -27,11 +27,11 @@ mapping query_changxi()
 
 void create()
 {
-        set_name("¹ÜÊÂ", ({"guan shi", "guan"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç®¡äº‹", ({"guan shi", "guan"}));
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("long", 
-                "ËûÊÇÏåÑôÏ·ÔºµÄ¹ÜÊÂ¡£\n");
+                "ä»–æ˜¯è¥„é˜³æˆé™¢çš„ç®¡äº‹ã€‚\n");
         set("qi", 100);
         set("max_qi", 100);
         set("jing", 100);
@@ -42,11 +42,11 @@ void create()
         set("score", 200);
         
         set("inquiry", ([
-                "¹¤×÷" : (: do_gongzuo :),
+                "å·¥ä½œ" : (: do_gongzuo :),
                 "job"  : (: do_gongzuo :),
                 "work" : (: do_gongzuo :),
-                "Íê³É" : (: ask_done    :),
-                "±¨³ê" : (: ask_done    :),
+                "å®Œæˆ" : (: ask_done    :),
+                "æŠ¥é…¬" : (: ask_done    :),
         ]) );
 
         setup();
@@ -60,18 +60,18 @@ int do_gongzuo()
         
     if( me->query_temp("obj/changxi")>0)
     {
-                tell_object(me,"¿ìÈ¥±íÑİ°É¡£\n");
+                tell_object(me,"å¿«å»è¡¨æ¼”å§ã€‚\n");
                 return 1;
     } 
     else 
     if( me->query("combat_exp")>500000)
     {
-                tell_object(me,"ÄãÒÑ¾­ºÜÀûº¦ÁË£¬ÕâÖÖ¹¤×÷²»ºÏÊÊÄã×öÁË¡£\n");
+                tell_object(me,"ä½ å·²ç»å¾ˆåˆ©å®³äº†ï¼Œè¿™ç§å·¥ä½œä¸åˆé€‚ä½ åšäº†ã€‚\n");
                 return 1;
     }
     changxi = this_object()->query_changxi();
     changxiwhere = changxi["where"];
-    message_vision(CYN"¹ÜÊÂ¶Ô$NËµµÀ£ºÄãÈ¥" + changxi["changxi"] + "µÄ´ó½ÖÉÏ±íÑİÒ»ÏÂ°É¡£\n"NOR,me); 
+    message_vision(CYN"ç®¡äº‹å¯¹$Nè¯´é“ï¼šä½ å»" + changxi["changxi"] + "çš„å¤§è¡—ä¸Šè¡¨æ¼”ä¸€ä¸‹å§ã€‚\n"NOR,me); 
         me->set_temp("obj/changxi", 1);
         me->set_temp("obj/where",changxiwhere);
         ob=new(__DIR__ "daoju");
@@ -87,15 +87,15 @@ int ask_done()
         
     if( me->query_temp("obj/changxi")< 1)
     {
-                tell_object(me,"ÄãÔøÀ´ÎÒÕâ¶ùÒª¹ıÈÎÎñ£¿¡£\n");
+                tell_object(me,"ä½ æ›¾æ¥æˆ‘è¿™å„¿è¦è¿‡ä»»åŠ¡ï¼Ÿã€‚\n");
                 return 1;
     } 
     if( me->query_temp("obj/done")< 1)
     {
-                tell_object(me,"»¹Ã»±íÑİÄã¾ÍÒÔÎª×Ô¼ºÍê³ÉÁË£¿¿ìÈ¥±íÑİ°É¡£\n");
+                tell_object(me,"è¿˜æ²¡è¡¨æ¼”ä½ å°±ä»¥ä¸ºè‡ªå·±å®Œæˆäº†ï¼Ÿå¿«å»è¡¨æ¼”å§ã€‚\n");
                 return 1;
     }
-    message_vision(CYN"¹ÜÊÂ¶Ô$NËµµÀ£º×öµÃ²»´í£¡¸øÄãĞ©½±Àø°É¡£\n"NOR,me); 
+    message_vision(CYN"ç®¡äº‹å¯¹$Nè¯´é“ï¼šåšå¾—ä¸é”™ï¼ç»™ä½ äº›å¥–åŠ±å§ã€‚\n"NOR,me); 
     me->add("combat_exp",80+random(30));
     me->add("potential",50+random(20));
     me->delete_temp("obj");
@@ -104,7 +104,7 @@ int ask_done()
     ob->move(me);
     if (ob = present("changxi daoju", this_player()))
     {
-       message_vision("¹ÜÊÂ°Ñ³ªÏ·µÀ¾ßÊÕÁË»ØÈ¥£¡\n",me);
+       message_vision("ç®¡äº‹æŠŠå”±æˆé“å…·æ”¶äº†å›å»ï¼\n",me);
        destruct(ob);
        return 1;
     }

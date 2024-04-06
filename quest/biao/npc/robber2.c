@@ -1,14 +1,14 @@
-//gemini¸ÄÓÚ2000.4.4 Ê¹µÃ¸´ÖÆÊ±²»²Î¿¼literateµÈ¼¶
+//geminiæ”¹äº2000.4.4 ä½¿å¾—å¤åˆ¶æ—¶ä¸å‚è€ƒliterateç­‰çº§
 
 #include <ansi.h>
 inherit NPC;
 #include "robber.h"
 void create()
 { 
-        set_name(HIW"½Ù·Ë"NOR,({"robber"}));
-        set("long","ÕâÊÇÒ»Î»Îäµ±ÅÉÆúÍ½¡£\n");
-        set("title","À¹Â·ÇÀ½Ù");
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIW"åŠ«åŒª"NOR,({"robber"}));
+        set("long","è¿™æ˜¯ä¸€ä½æ­¦å½“æ´¾å¼ƒå¾’ã€‚\n");
+        set("title","æ‹¦è·¯æŠ¢åŠ«");
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+14);
         
         set("vendetta/authority", 1);

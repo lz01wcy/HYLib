@@ -10,19 +10,19 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("½ğÇ¹Óã", ({ "jqy" }) );
+	set_name("é‡‘æªé±¼", ({ "jqy" }) );
 	set_weight(30000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ìõ½ğÇ¹Óã\n");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+		set("long", "ä¸€æ¡é‡‘æªé±¼\n");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_get",1);
 		set("no_give",1);
 		set("no_steal",1);
 		set("no_put",1);
 	
-		set("unit", "Ìõ");
+		set("unit", "æ¡");
 		set("value", 500);
 		set("food_remaining", 3);
 		set("food_supply", 60);

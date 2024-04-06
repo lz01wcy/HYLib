@@ -1,5 +1,5 @@
-// ying-kuang.c ¿óÂö
-// ÐÇÐÇlywin 2000/8/27
+// ying-kuang.c çŸ¿è„‰
+// æ˜Ÿæ˜Ÿlywin 2000/8/27
 
 #include <ansi.h>
 inherit ITEM;  
@@ -19,16 +19,16 @@ void init()
 
 void create() 
 {
-        set_name("Óæäç",({"yu tan", "tan"}));
+        set_name("æ¸”æº",({"yu tan", "tan"}));
         set_weight(500000000);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-		set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈËÍ´£¡\n");
+                set("unit", "å—");
+		set("no_drop","ä¸è¦ä¹±ä¸¢ï¼Œè¿™ä¸œè¥¿æ‰“åˆ°äººç—›ï¼\n");
 		set("no_put",1);
 		set("no_get:",1);
-                set("long", "ÕâÊÇÒ»¿éºÜºÃµÄÓæäç£¬Äã¿ÉÒÔÓÃ£¨buyu£©À´ÊÔÊÔÄãµÄÔËÆøÈçºÎ¡£\n");
+                set("long", "è¿™æ˜¯ä¸€å—å¾ˆå¥½çš„æ¸”æºï¼Œä½ å¯ä»¥ç”¨ï¼ˆbuyuï¼‰æ¥è¯•è¯•ä½ çš„è¿æ°”å¦‚ä½•ã€‚\n");
              }
         setup();
 }
@@ -37,32 +37,32 @@ int do_wakuang()
 {
         object me=this_player();
 
-        if( me->is_busy() ) return notify_fail("ÄãÏÖÔÚºÜÃ¦£¡²»ÄÜ²¶Óã£¡\n");
+        if( me->is_busy() ) return notify_fail("ä½ çŽ°åœ¨å¾ˆå¿™ï¼ä¸èƒ½æ•é±¼ï¼\n");
         if ((me->query("combat_exp") < 100000))
         {  
-          tell_object(me,"ÄãµÄ¾­Ñé²»×ã£¡\n");
+          tell_object(me,"ä½ çš„ç»éªŒä¸è¶³ï¼\n");
           return 1;
         }
 
         if ((me->query("jing") < 30))
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖÐ£¬²»¿ÉÒÔ²¶Óã£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œä¸å¯ä»¥æ•é±¼ï¼\n");
           return 1;
         }
         else
         if ((me->query("qi") < 50 ))
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î£¬²»ÄÜ²¶Óã£¡\n");
+          tell_object(me,"ä½ çš„èº«ä½“çŠ¶æ€å¤ªå·®ï¼Œä¸èƒ½æ•é±¼ï¼\n");
           return 1;
         }
         else
         if ((int)me->query_condition("skill2_busy"))  
             {
-         tell_object(me,"Äã¸Õ¸Õ²Å¸É¹ý»î,ÒªÐÝÏ¢Ò»»áÁË£¡\n");
+         tell_object(me,"ä½ åˆšåˆšæ‰å¹²è¿‡æ´»,è¦ä¼‘æ¯ä¸€ä¼šäº†ï¼\n");
                       return 1;
             }
 
-        message_vision(HIC"$NÄÃÆðÓãÍø¿ªÊ¼ÔÚÓæäçÀï²¶ÆðÓãÆðÀ´¡£\n"NOR,me);
+        message_vision(HIC"$Næ‹¿èµ·é±¼ç½‘å¼€å§‹åœ¨æ¸”æºé‡Œæ•èµ·é±¼èµ·æ¥ã€‚\n"NOR,me);
         me->add("jing",-40);
         me->add("qi",-50);
         if (me->query("combat_exp")<1000000)
@@ -90,14 +90,14 @@ int wakuang(object me)
 
       if (random(7)<1)
       {
-          message_vision(CYN"Ò»ÕóÀÍ¶¯Ö®ºó£¬$NÊ²Ã´Ò²Ã»²¶µ½¡£\n"NOR,me);
+          message_vision(CYN"ä¸€é˜µåŠ³åŠ¨ä¹‹åŽï¼Œ$Nä»€ä¹ˆä¹Ÿæ²¡æ•åˆ°ã€‚\n"NOR,me);
 //          this_player()->add("work/buyu",1);
           return 1;
       }
       else
       if ((int)me->query("work/buyu") > 600 )
         {
-           message_vision(HIR"$NÊìÁ·µÄÔÚÓæäç²¶ÁËÒ»»á£¬²»Ò»»á¶ù¾ÍÓÐÁËºÃµÄÊÕ³É¡£\n"NOR,me); 
+           message_vision(HIR"$Nç†Ÿç»ƒçš„åœ¨æ¸”æºæ•äº†ä¸€ä¼šï¼Œä¸ä¸€ä¼šå„¿å°±æœ‰äº†å¥½çš„æ”¶æˆã€‚\n"NOR,me); 
            me->add("work/buyu",1);
            ob=new(kuang6[random(8)]);
            ob->move(me);
@@ -107,7 +107,7 @@ int wakuang(object me)
        else
       if ((int)me->query("work/buyu") > 500 )
         {
-           message_vision(HIY"$NÊìÁ·µÄÔÚÓæäçÀï¸ÉÁËÒ»»á£¬²»Ò»»á¶ù¾ÍÓÐÁËºÃµÄÊÕ³É¡£\n"NOR,me); 
+           message_vision(HIY"$Nç†Ÿç»ƒçš„åœ¨æ¸”æºé‡Œå¹²äº†ä¸€ä¼šï¼Œä¸ä¸€ä¼šå„¿å°±æœ‰äº†å¥½çš„æ”¶æˆã€‚\n"NOR,me); 
            me->add("work/buyu",1);
            ob=new(kuang5[random(7)]);
            ob->move(me);
@@ -117,7 +117,7 @@ int wakuang(object me)
        else
       if ((int)me->query("work/buyu") > 400 )
         {
-           message_vision(HIY"$NÊìÁ·µÄÔÚÓæäçÀï¸ÉÁËÒ»»á£¬²»Ò»»á¶ù¾ÍÓÐÁËÊÕ³É¡£\n"NOR,me); 
+           message_vision(HIY"$Nç†Ÿç»ƒçš„åœ¨æ¸”æºé‡Œå¹²äº†ä¸€ä¼šï¼Œä¸ä¸€ä¼šå„¿å°±æœ‰äº†æ”¶æˆã€‚\n"NOR,me); 
            me->add("work/buyu",1);
            ob=new(kuang4[random(6)]);
            ob->move(me);
@@ -127,7 +127,7 @@ int wakuang(object me)
        else
       if ((int)me->query("work/buyu") > 300 )
         {
-           message_vision(HIY"$NÔÚÓæäçÀï¸ÉÁËÒ»»á£¬ÓÐÁËÊÕ³É¡£¡£\n"NOR,me); 
+           message_vision(HIY"$Nåœ¨æ¸”æºé‡Œå¹²äº†ä¸€ä¼šï¼Œæœ‰äº†æ”¶æˆã€‚ã€‚\n"NOR,me); 
            me->add("work/buyu",1);
            ob=new(kuang3[random(5)]);
            ob->move(me);
@@ -137,7 +137,7 @@ int wakuang(object me)
        else
       if ((int)me->query("work/buyu") > 200 )
         {
-           message_vision(HIY"$NÔÚÓæäçÀï¸ÉÁËÒ»»á£¬ºÃ³¤Ê±¼ä²ÅÓÐÁËÊÕ³É¡£\n"NOR,me); 
+           message_vision(HIY"$Nåœ¨æ¸”æºé‡Œå¹²äº†ä¸€ä¼šï¼Œå¥½é•¿æ—¶é—´æ‰æœ‰äº†æ”¶æˆã€‚\n"NOR,me); 
            me->add("work/buyu",1);
            ob=new(kuang2[random(4)]);
            ob->move(me);
@@ -147,7 +147,7 @@ int wakuang(object me)
        else
       if ((int)me->query("work/buyu") > 100 )
         {
-           message_vision(HIY"$NÔÚÓæäçÖÐ¸ãÀ´¸ãÈ¥£¬ºÃ²»ÈÝÒ×ÓÐÁËÊÕ³É¡£\n"NOR,me); 
+           message_vision(HIY"$Nåœ¨æ¸”æºä¸­æžæ¥æžåŽ»ï¼Œå¥½ä¸å®¹æ˜“æœ‰äº†æ”¶æˆã€‚\n"NOR,me); 
            me->add("work/buyu",1);
            ob=new(kuang1[random(3)]);
            ob->move(me);
@@ -156,7 +156,7 @@ int wakuang(object me)
        }
       else
       { 
-        message_vision(HIG"$N²¶ÁË°ëÌì£¬ÖÕÓÚÓÐÁËÒ»µãÊÕ³É¡£\n"NOR,me); 
+        message_vision(HIG"$Næ•äº†åŠå¤©ï¼Œç»ˆäºŽæœ‰äº†ä¸€ç‚¹æ”¶æˆã€‚\n"NOR,me); 
         me->add("work/buyu",1);
         ob1 = new( __DIR__ "eat1");
         ob1->move(me);

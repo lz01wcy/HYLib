@@ -2,25 +2,25 @@
 inherit NPC;
 
 string *nm1_jp =({
-"½ðÒÁÕË","³É¼ªË¼","´óºÃÉ½","ÈÕ²»Âä","½ðÍõ³¯",
+"é‡‘ä¼Šè´¦","æˆå‰æ€","å¤§å¥½å±±","æ—¥ä¸è½","é‡‘çŽ‹æœ",
 });
 
     
 string *nm2_jp =({
-"ºº",
+"æ±‰",
 });
 
 void create()
 {
    int i = random(sizeof(nm1_jp));
     set_name(nm1_jp[i]+nm2_jp[random(sizeof(nm2_jp))], ({"yuanshuai"}));
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
-//        set_name("¶«ÑóÙÁ¿Ü", ({ "wokou", "japan wokou" }) );
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
+//        set_name("ä¸œæ´‹å€­å¯‡", ({ "wokou", "japan wokou" }) );
         set("long",
-"Ò»¸öÉí¸ß´óµ«ÂúÁ³ÓÖÊÇÉË°Ì¼ÓºáÈâµÄÃÉ¹ÅÈË¡£\n");
+"ä¸€ä¸ªèº«é«˜å¤§ä½†æ»¡è„¸åˆæ˜¯ä¼¤ç–¤åŠ æ¨ªè‚‰çš„è’™å¤äººã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
-	set("nickname",HIR"ÃÉ¹ÅÌØÎñ"NOR);
+	set("nickname",HIR"è’™å¤ç‰¹åŠ¡"NOR);
   set("force_factor",2+random(390));
   set("max_qi",300+random(1690));
   set("max_jing",300+random(1890));
@@ -99,10 +99,10 @@ void die()
         
 if (me)
 {
-       message_vision(WHT"$N´ó½ÐÒ»Éù,´óººÍòËê!!µ¹µØ¶øÍö¡£\n"NOR,ob,me);
+       message_vision(WHT"$Nå¤§å«ä¸€å£°,å¤§æ±‰ä¸‡å²!!å€’åœ°è€Œäº¡ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-        message("vision", me->name() + "´ÓÃÉ¹ÅÌØÎñÉíÉÏ·¢ÏÖÁË´óÁ¿µÄÒøÁ½¡£\n", me);
+        message("vision", me->name() + "ä»Žè’™å¤ç‰¹åŠ¡èº«ä¸Šå‘çŽ°äº†å¤§é‡çš„é“¶ä¸¤ã€‚\n", me);
         obn=new("/clone/money/gold");
         obn->set_amount(random(50));
         obn->move(me);

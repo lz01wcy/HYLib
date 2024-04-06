@@ -4,17 +4,17 @@
 inherit ROOM;
 void create()
 {
-  set ("short",HIG"ËÄº£»õÔËµê"NOR);
+  set ("short",HIG"å››æµ·è´§è¿åº—"NOR);
 set ("long",@LONG
-ÕâÀïÊÇÑïÖÝËÄº£»õÔËµê,ÎõÎõÈÁÈÁµÄÈËºÜ¶à,·Ç³£·±Ã¦¡£
-´ËµêÕýÔÚÕÐÊÕ½­ºþÈËÊ¿Ç°À´°ïÃ¦£¬ÒÔ´Î»ñµÃÒ»Ð©±¨³ê¡£Ç½ÉÏÌû×ÅÒ»ÕÅ²¼¸æ(post)¡£
+è¿™é‡Œæ˜¯æ‰¬å·žå››æµ·è´§è¿åº—,ç†™ç†™æ”˜æ”˜çš„äººå¾ˆå¤š,éžå¸¸ç¹å¿™ã€‚
+æ­¤åº—æ­£åœ¨æ‹›æ”¶æ±Ÿæ¹–äººå£«å‰æ¥å¸®å¿™ï¼Œä»¥æ¬¡èŽ·å¾—ä¸€äº›æŠ¥é…¬ã€‚å¢™ä¸Šå¸–ç€ä¸€å¼ å¸ƒå‘Š(post)ã€‚
 LONG
 );
   set("objects",([
   "/quest/songhuo/postman":1,
 ]));
 set("item_desc",([
-"post":"²¼¸æÉÏÃæÐ´×Å:±¾µê³ÏÕÐËÍ»õÔ±ÓÐÒâ¶¼ÇëÓÃquestÀ´´òÌý¡£\n",
+"post":"å¸ƒå‘Šä¸Šé¢å†™ç€:æœ¬åº—è¯šæ‹›é€è´§å‘˜æœ‰æ„éƒ½è¯·ç”¨questæ¥æ‰“å¬ã€‚\n",
 ]));
   set("exits",([
   "north": "d/city/youju",

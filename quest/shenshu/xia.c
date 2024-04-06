@@ -2,7 +2,7 @@
 inherit ITEM;
 void create()
 {
-    set_name("ÏôÇïË®´«ÆæÏÂ²á"NOR, ({ "xiabook" }) );
+    set_name("è§ç§‹æ°´ä¼ å¥‡ä¸‹å†Œ"NOR, ({ "xiabook" }) );
             set("no_put", 1);
             set("value", 0);
     set_weight(1);
@@ -10,10 +10,10 @@ void create()
             set_default_object(__FILE__);
     else {
 	        
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("no_put", 1);
             set("material", "paper");
-            set("long", "Ò»±¾ÓÉÉñÊéºÏ²¢³ÉµÄ¾í²á£¬Äã¿ÉÒÔÓÃ(chayue)À´²éÔÄËü¡£\n");
+            set("long", "ä¸€æœ¬ç”±ç¥žä¹¦åˆå¹¶æˆçš„å·å†Œï¼Œä½ å¯ä»¥ç”¨(chayue)æ¥æŸ¥é˜…å®ƒã€‚\n");
           }
 
     setup();
@@ -33,11 +33,11 @@ int do_cha()
              me->add("combat_exp",exp);
              me->add("potential",pot);
              me->add("score",score);
-     	      message_vision("$N×ÐÏ¸µØ²éÔÄÁËÒ»±é"+this_object()->query("name")+"¡£\n", me);
-tell_object(me,"Äã±»½±ÀøÁË£º\n" +
-             chinese_number(exp) + "µãÊµÕ½¾­Ñé\n"+
-             chinese_number(pot) + "µãÇ±ÄÜ\n" +
-            chinese_number(score)+"µã½­ºþÔÄÀú\n");
+     	      message_vision("$Nä»”ç»†åœ°æŸ¥é˜…äº†ä¸€é"+this_object()->query("name")+"ã€‚\n", me);
+tell_object(me,"ä½ è¢«å¥–åŠ±äº†ï¼š\n" +
+             chinese_number(exp) + "ç‚¹å®žæˆ˜ç»éªŒ\n"+
+             chinese_number(pot) + "ç‚¹æ½œèƒ½\n" +
+            chinese_number(score)+"ç‚¹æ±Ÿæ¹–é˜…åŽ†\n");
 if (random(3)==0)
 {
         corpse=new("/clone/gem/gem");
@@ -51,10 +51,10 @@ if (random(3)==1)
 {
         ob=new(__DIR__"sdan");
         ob->move(me);
-message("channel:chat", HIC"¡¾½­ºþ´«ÎÅ¡¿"GRN + me->query("name")+"µÃµ½Ò»¿Å"+HIY":" + ob->query("name")+HIG"À²£¡\n"NOR,users() );
+message("channel:chat", HIC"ã€æ±Ÿæ¹–ä¼ é—»ã€‘"GRN + me->query("name")+"å¾—åˆ°ä¸€é¢—"+HIY":" + ob->query("name")+HIG"å•¦ï¼\n"NOR,users() );
 }
 
-message("channel:chat", HIM"¡¾½­ºþÒ¥ÑÔ¡¿ÌýËµ"+me->name() + "Í¨¹ýÉñÊéÈÎÎñÕÒµ½ÁËÒ»¿Å"+corpse->query("name")+HIM"!"NOR"¡£\n", users());
+message("channel:chat", HIM"ã€æ±Ÿæ¹–è°£è¨€ã€‘å¬è¯´"+me->name() + "é€šè¿‡ç¥žä¹¦ä»»åŠ¡æ‰¾åˆ°äº†ä¸€é¢—"+corpse->query("name")+HIM"!"NOR"ã€‚\n", users());
              corpse->move(me);
 }
 

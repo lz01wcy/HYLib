@@ -2,25 +2,25 @@
 inherit NPC;
 
 string *nm1_jp =({
-"ÍêÑÕ",
+"å®Œé¢œ",
 });
     
 string *nm2_jp =({
-"ÖÒ","Ð¢","Àñ","Òå","ÖÇ","ÓÂ","ÈÊ","¿ï","ÏÜ","Áî","¸£","Â»","´ó","Ð¡","Ïþ",
-"¸ß","¿É","°¢","½ð","ÊÀ","¿Ë","Êå","Ö®","¹«","·ò","Ê±","Èô","Çì","ÎÄ","Îä",
-"¶à","²Å","³¤","×Ó","ÓÀ","ÓÑ","×Ô","ÈË","Îª","Ìú","¿µ","ºéÁÒ",
+"å¿ ","å­","ç¤¼","ä¹‰","æ™º","å‹‡","ä»","åŒ¡","å®ª","ä»¤","ç¦","ç¦„","å¤§","å°","æ™“",
+"é«˜","å¯","é˜¿","é‡‘","ä¸–","å…‹","å”","ä¹‹","å…¬","å¤«","æ—¶","è‹¥","åº†","æ–‡","æ­¦",
+"å¤š","æ‰","é•¿","å­","æ°¸","å‹","è‡ª","äºº","ä¸º","é“","åº·","æ´ªçƒˆ",
 });
 
 void create()
 {
    int i = random(sizeof(nm1_jp));
     set_name(nm1_jp[i]+nm2_jp[random(sizeof(nm2_jp))], ({"yuanshuai"}));
-    set("gender", "ÄÐÐÔ" );//ÐÔ±ðÓëÉÏÃæ¶ÔÓ¦
+    set("gender", "ç”·æ€§" );//æ€§åˆ«ä¸Žä¸Šé¢å¯¹åº”
         set("long",
-"Ò»¸öÈ«ÉíÅû¹ÒµÄ½ð±øÌØÎñ¡£\n");
+"ä¸€ä¸ªå…¨èº«æŠ«æŒ‚çš„é‡‘å…µç‰¹åŠ¡ã€‚\n");
         set("attitude", "aggressive");
         set("vendetta/authority",1);
-	set("nickname",HIR"½ð±øÌØÎñ"NOR);
+	set("nickname",HIR"é‡‘å…µç‰¹åŠ¡"NOR);
  set("force_factor",2+random(1390));
   set("max_qi",300+random(1690));
   set("max_jing",300+random(1890));
@@ -100,10 +100,10 @@ void die()
 
 if (me)
 {       
-        message_vision(WHT"$N´ó½ÐÒ»Éù,´ó½ðÍòËê!!µ¹µØ¶øÍö¡£\n"NOR,ob,me);
+        message_vision(WHT"$Nå¤§å«ä¸€å£°,å¤§é‡‘ä¸‡å²!!å€’åœ°è€Œäº¡ã€‚\n"NOR,ob,me);
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         corpse->move(environment(this_object()));
-        message("vision", me->name() + "´Ó½ð±øÌØÎñÉíÉÏ·¢ÏÖÁË´óÁ¿µÄÒøÁ½¡£\n", me);
+        message("vision", me->name() + "ä»Žé‡‘å…µç‰¹åŠ¡èº«ä¸Šå‘çŽ°äº†å¤§é‡çš„é“¶ä¸¤ã€‚\n", me);
         obn=new("/clone/money/gold");
         obn->set_amount(random(50));
         obn->move(me);

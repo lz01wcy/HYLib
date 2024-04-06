@@ -2,8 +2,8 @@ inherit NPC;
 #include "biaotou.h"
 void create()
 {
-        set_name("ïÚÍ·", ({ "biao tou" }));
-        set("long", "ËûÔ­ÊÇÉÙÁÖÅÉµÜ×Ó£¬ºóÀ´×öÁËïÚÍ·¡£");
+        set_name("é•–å¤´", ({ "biao tou" }));
+        set("long", "ä»–åŸæ˜¯å°‘æ—æ´¾å¼Ÿå­ï¼Œåæ¥åšäº†é•–å¤´ã€‚");
         set("age", random(20) + 20);
         set("str", 26);
         set("int", 28);

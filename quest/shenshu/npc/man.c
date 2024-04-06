@@ -2,110 +2,110 @@
 int do_walk();
 inherit NPC;
 string  ask_job();
-string *first_name = ({ "ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ","ÕÅ","³Â","Áø","·ç","Áõ","ÁÖ", }); 
-string *name_words = ({ "Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®", });
-string *color_title = ({"[ÌìÉ±ÃÅ]É±ÊÖ","[µØÉ·ÃÅ]É±ÊÖ",});
+string *first_name = ({ "èµµ","é’±","å­™","æ","å‘¨","å´","éƒ‘","ç‹","å¼ ","é™ˆ","æŸ³","é£","åˆ˜","æ—", }); 
+string *name_words = ({ "ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ","å…«","ä¹","å", });
+string *color_title = ({"[å¤©æ€é—¨]æ€æ‰‹","[åœ°ç…é—¨]æ€æ‰‹",});
 string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
 mapping *data=({
-(["name":"¹Ù±ø",	"id":"guan bing",	"mw":-1,"weapon":"gangdao",]),
-(["name":"Óæ·ò",	"id":"yu fu",	"mw":-1,]),
-(["name":"ÄĞº¢",	"id":"boy",	"mw":-1,]),
-(["name":"Å®º¢",	"id":"girl",	"mw":1,]),
-(["name":"µêĞ¡¶ş",	"id":"xiao er",	"mw":-1,]),
-(["name":"Ô±Íâ",	"id":"yuanwai",	"mw":-1,]),
-(["name":"¸è¼Ë",	"id":"ge ji",	"mw":1,]),					
-(["name":"¹Ü¼Ò",	"id":"guan jia",	"mw":-1,]),
-(["name":"¹ê¹«",	"id":"gui gong",	"mw":-1,]),
-(["name":"ºìÄï",	"id":"hong niang",	"mw":1,]),
-(["name":"Ğ¡»ì»ì",	"id":"xiao hunhun",	"mw":-1,]),
-(["name":"»ğ¹¤É®",	"id":"huogong seng",	"mw":-1,]),
-(["name":"»ï¼Æ",	"id":"huoji",	"mw":-1,]),
-(["name":"¿´ÃÅÉ®",	"id":"kanmen seng",	"mw":-1,]),
-(["name":"ÑïÖİÅ®º¢",	"id":"girl",	"mw":1,]),
-(["name":"Ì¤ÇàÉÙÅ®",	"id":"girl",	"mw":1,]),
-(["name":"½­ÄÏÅ®º¢",	"id":"girl",	"mw":1,]),
-(["name":"Ğ¡Ñ¾Í·",	"id":"littlegirl",	"mw":1,]),											
-(["name":"ÂéÍ¯",	"id":"ma tong",	"mw":-1,]),
-(["name":"°×÷×ÀÏÍ·",	"id":"lao tou",	"mw":-1,]),		
-(["name":"ÀÏÆÅÆÅ",	"id":"lao popo",	"mw":1,]),		
-(["name":"Ç©¿Í",	"id":"qian ke",	"mw":-1,]),		
-(["name":"ÂôÌÇĞ¡··",	"id":"tang fan",	"mw":-1,]),				
-(["name":"ÑÃ²î",	"id":"ya chai",	"mw":-1,]),		
-(["name":"É½Ôô",	"id":"shan zei",	"mw":-1,]),		
-(["name":"³øÊ¦",	"id":"chu shi",	"mw":-1,]),		
-(["name":"¹ó·òÈË",	"id":"fu ren",	"mw":1,]),		
-(["name":"Å®¹ó¼Ò",	"id":"guan jia",	"mw":1,]),				
-(["name":"À®Âï",	"id":"lama",	"mw":-1,]),		
-(["name":"´óÀ®Âï",	"id":"lama",	"mw":-1,]),		
-(["name":"ÆÍÒÛ",	"id":"pu yi",	"mw":-1,]),		
-(["name":"ÓùÇ°ÊÌÎÀ",	"id":"shi wei",	"mw":-1,	"weapon":"gangdao",]),		
-(["name":"æçÆïÓªÊÌÎÀ",	"id":"shi wei",	"mw":-1,	"weapon":"gangdao",]),				
-(["name":"Ìú½³",	"id":"tiejiang",	"mw":-1,]),		
-(["name":"ÆòØ¤",	"id":"qi gai",	"mw":-1,]),			
-(["name":"Å®ÆòØ¤",	"id":"nvqi gai",	"mw":1,]),			
-(["name":"µÀÊ¿",	"id":"dao shi",	"mw":-1,]),			
-(["name":"Å®µÀÊ¿",	"id":"nv daoshi",	"mw":1,]),
-(["name":"Ï·×Ó",	"id":"xi zi",	"mw":1,]),		
-(["name":"Ñ¾»·",	"id":"ya huan",	"mw":1,]),	
-(["name":"Ô°¶¡",	"id":"yuan ding",	"mw":-1,]),	
-(["name":"ÕÆ¹ñ",	"id":"zhanggui",	"mw":-1,]),	
-(["name":"²É²èÅ®",	"id":"cha girl",	"mw":-1,]),	
-(["name":"ÀÏìøÊ¦",	"id":"old chanshi",	"mw":-1,]),	
-(["name":"µ¶¿Í",	"id":"dao ke",	"mw":-1,]),	
-(["name":"½øÏã¿Í",	"id":"jinxiang ke",	"mw":-1,]),	
-(["name":"ºì»¨»áÖÚ",	"id":"hong hua",	"mw":-1,]),	
-(["name":"½£¿Í",	"id":"jian ke",	"mw":-1,]),	
-(["name":"Âí·ò",	"id":"ma fu",	"mw":-1,]),	
-(["name":"Ã½ÆÅ",	"id":"mei po",	"mw":-1,]),		
-(["name":"ÃÉÃæÈË",	"id":"mengmianren",	"mw":-1,]),			
-(["name":"Çîºº",	"id":"poor man",	"mw":-1,]),				
-(["name":"ÊéÉú",	"id":"shu sheng",	"mw":-1,]),				
-(["name":"ÀÏºÍÉĞ",	"id":"lao heshang",	"mw":-1,]),				
-(["name":"Ğ¡É³ÃÖ",	"id":"xiao shami",	"mw":-1,]),				
-(["name":"Ìô·ò",	"id":"tiao fu",	"mw":-1,]),							
-(["name":"ÓÎ¿Í",	"id":"youke",	"mw":-1,]),				
-(["name":"¹«×Ó¸ç",	"id":"gongzi",	"mw":-1,]),				
-(["name":"æ¾Å®",	"id":"bi nu",	"mw":1,]),				
-(["name":"Äá¹Ã",	"id":"ni gu",	"mw":1,]),							
-(["name":"Ğ¡··",	"id":"xiao fan",	"mw":-1,]),			
-(["name":"¼ËÅ®",	"id":"ji nv",	"mw":1,]),	
-(["name":"ÀÏ¸¸×Ó",	"id":"fu zi",	"mw":1,]),	
-(["name":"²¶Í·",	"id":"bu tou",	"mw":-1,	]),
-(["name":"¿ì²¶",	"id":"kuai bu",	"mw":-1,	]),
-(["name":"Ìú²¶",	"id":"tie bu",	"mw":-1,	]),
-(["name":"ÑÃÒÛ",	"id":"ya yi",	"mw":-1,	]),
-(["name":"¹«¹«",	"id":"gong gong",	"mw":-1,	]),
-(["name":"ÅÜÌÃ",	"id":"pao tang",	"mw":-1,	]),
-(["name":"½Å·ò",	"id":"jiao fu",	"mw":-1,	]),
-(["name":"²Ã·ì",	"id":"cai feng",	"mw":-1,	]),
-(["name":"Ò©Ê¦",	"id":"yao shi",	"mw":-1,	]),
-(["name":"¹Ù²î",	"id":"guan cha",	"mw":-1,	]),
-(["name":"Îä½«",	"id":"wu jiang",	"mw":-1,	]),
-(["name":"É½ÔôÍ·",	"id":"shan zeitou",	"mw":-1,	]),
-(["name":"¿Íµê»ï¼Æ",	"id":"huo ji",	"mw":-1,	"weapon":"gangdao",	]),
-(["name":"ÊËÎÀ",	"id":"shi wei",	"mw":-1,	"weapon":"changqiang",	]),
-(["name":"Ìú½³",	"id":"tie jiang",	"mw":-1,	"weapon":"gangdao",	]),
-(["name":"Á÷Ã¥Í·",	"id":"liumang tou",	"mw":-1,	"weapon":"gangjian",	]),
-(["name":"¹ó¹«×Ó",	"id":"gui gongzi",		"mw":-1,	"weapon":"gangjian",	]),
-(["name":"ĞĞÕß",	"id":"xing ze",	"mw":-1,	"weapon":"gangdao",]),
-(["name":"ÍÁ·ËÍ·",	"id":"tufei tou",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ï·×Ó",		"id":"xi zi",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"Ì¨ÒÄÉÌ··",	"id":"shang fan",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"½­ºşÒÕÈË",	"id":"yi ren",	"mw":-1,	"weapon":"gangjian",]),
-(["name":"¿³ÖñÈË",	"id":"kanzu ren",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"ÁÔÈË",		"id":"lie ren",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"Ì¨ÒÄÁÔÈË",	"id":"old lieren",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÄÁÑòÈË",	"id":"muyang ren",	"mw":-1,	"weapon":"gangjian",]),
-(["name":"Å©·ò",	"id":"nong fu",	"mw":-1,	"weapon":"gangjian",]),
-(["name":"Æ¤»õÉÌ",	"id":"pihuo sang",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ê¯½³",		"id":"shi jiang",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"µÀÈË",	"id":"dao ren",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"ÓÎ¿Í",	"id":"you ke",	"mw":-1,	"weapon":"gangjian",]),
-(["name":"ÊéÍ¯",	"id":"shu tong",	"mw":1,	"weapon":"gangjian",]),
-(["name":"ÂÌÓª»áÖÚ",	"id":"guan bing",	"mw":-1,	"weapon":"changbian",	]),
-(["name":"Ô±Íâ",		"id":"yuan wai",	"mw":-1,	"weapon":"lianzi",]),
-(["name":"±ÈÇğ",	"id":"bi qiu",		"mw":-1,	"weapon":"hammer",	]),
-(["name":"Á÷Ã¥",	"id":"liu mang",	"mw":-1,	"weapon":"gangjian",]),
+(["name":"å®˜å…µ",	"id":"guan bing",	"mw":-1,"weapon":"gangdao",]),
+(["name":"æ¸”å¤«",	"id":"yu fu",	"mw":-1,]),
+(["name":"ç”·å­©",	"id":"boy",	"mw":-1,]),
+(["name":"å¥³å­©",	"id":"girl",	"mw":1,]),
+(["name":"åº—å°äºŒ",	"id":"xiao er",	"mw":-1,]),
+(["name":"å‘˜å¤–",	"id":"yuanwai",	"mw":-1,]),
+(["name":"æ­Œå¦“",	"id":"ge ji",	"mw":1,]),					
+(["name":"ç®¡å®¶",	"id":"guan jia",	"mw":-1,]),
+(["name":"é¾Ÿå…¬",	"id":"gui gong",	"mw":-1,]),
+(["name":"çº¢å¨˜",	"id":"hong niang",	"mw":1,]),
+(["name":"å°æ··æ··",	"id":"xiao hunhun",	"mw":-1,]),
+(["name":"ç«å·¥åƒ§",	"id":"huogong seng",	"mw":-1,]),
+(["name":"ä¼™è®¡",	"id":"huoji",	"mw":-1,]),
+(["name":"çœ‹é—¨åƒ§",	"id":"kanmen seng",	"mw":-1,]),
+(["name":"æ‰¬å·å¥³å­©",	"id":"girl",	"mw":1,]),
+(["name":"è¸é’å°‘å¥³",	"id":"girl",	"mw":1,]),
+(["name":"æ±Ÿå—å¥³å­©",	"id":"girl",	"mw":1,]),
+(["name":"å°ä¸«å¤´",	"id":"littlegirl",	"mw":1,]),											
+(["name":"éº»ç«¥",	"id":"ma tong",	"mw":-1,]),
+(["name":"ç™½é«¯è€å¤´",	"id":"lao tou",	"mw":-1,]),		
+(["name":"è€å©†å©†",	"id":"lao popo",	"mw":1,]),		
+(["name":"ç­¾å®¢",	"id":"qian ke",	"mw":-1,]),		
+(["name":"å–ç³–å°è´©",	"id":"tang fan",	"mw":-1,]),				
+(["name":"è¡™å·®",	"id":"ya chai",	"mw":-1,]),		
+(["name":"å±±è´¼",	"id":"shan zei",	"mw":-1,]),		
+(["name":"å¨å¸ˆ",	"id":"chu shi",	"mw":-1,]),		
+(["name":"è´µå¤«äºº",	"id":"fu ren",	"mw":1,]),		
+(["name":"å¥³è´µå®¶",	"id":"guan jia",	"mw":1,]),				
+(["name":"å–‡å˜›",	"id":"lama",	"mw":-1,]),		
+(["name":"å¤§å–‡å˜›",	"id":"lama",	"mw":-1,]),		
+(["name":"ä»†å½¹",	"id":"pu yi",	"mw":-1,]),		
+(["name":"å¾¡å‰ä¾å«",	"id":"shi wei",	"mw":-1,	"weapon":"gangdao",]),		
+(["name":"éªéª‘è¥ä¾å«",	"id":"shi wei",	"mw":-1,	"weapon":"gangdao",]),				
+(["name":"é“åŒ ",	"id":"tiejiang",	"mw":-1,]),		
+(["name":"ä¹ä¸",	"id":"qi gai",	"mw":-1,]),			
+(["name":"å¥³ä¹ä¸",	"id":"nvqi gai",	"mw":1,]),			
+(["name":"é“å£«",	"id":"dao shi",	"mw":-1,]),			
+(["name":"å¥³é“å£«",	"id":"nv daoshi",	"mw":1,]),
+(["name":"æˆå­",	"id":"xi zi",	"mw":1,]),		
+(["name":"ä¸«ç¯",	"id":"ya huan",	"mw":1,]),	
+(["name":"å›­ä¸",	"id":"yuan ding",	"mw":-1,]),	
+(["name":"æŒæŸœ",	"id":"zhanggui",	"mw":-1,]),	
+(["name":"é‡‡èŒ¶å¥³",	"id":"cha girl",	"mw":-1,]),	
+(["name":"è€ç¦…å¸ˆ",	"id":"old chanshi",	"mw":-1,]),	
+(["name":"åˆ€å®¢",	"id":"dao ke",	"mw":-1,]),	
+(["name":"è¿›é¦™å®¢",	"id":"jinxiang ke",	"mw":-1,]),	
+(["name":"çº¢èŠ±ä¼šä¼—",	"id":"hong hua",	"mw":-1,]),	
+(["name":"å‰‘å®¢",	"id":"jian ke",	"mw":-1,]),	
+(["name":"é©¬å¤«",	"id":"ma fu",	"mw":-1,]),	
+(["name":"åª’å©†",	"id":"mei po",	"mw":-1,]),		
+(["name":"è’™é¢äºº",	"id":"mengmianren",	"mw":-1,]),			
+(["name":"ç©·æ±‰",	"id":"poor man",	"mw":-1,]),				
+(["name":"ä¹¦ç”Ÿ",	"id":"shu sheng",	"mw":-1,]),				
+(["name":"è€å’Œå°š",	"id":"lao heshang",	"mw":-1,]),				
+(["name":"å°æ²™å¼¥",	"id":"xiao shami",	"mw":-1,]),				
+(["name":"æŒ‘å¤«",	"id":"tiao fu",	"mw":-1,]),							
+(["name":"æ¸¸å®¢",	"id":"youke",	"mw":-1,]),				
+(["name":"å…¬å­å“¥",	"id":"gongzi",	"mw":-1,]),				
+(["name":"å©¢å¥³",	"id":"bi nu",	"mw":1,]),				
+(["name":"å°¼å§‘",	"id":"ni gu",	"mw":1,]),							
+(["name":"å°è´©",	"id":"xiao fan",	"mw":-1,]),			
+(["name":"å¦“å¥³",	"id":"ji nv",	"mw":1,]),	
+(["name":"è€çˆ¶å­",	"id":"fu zi",	"mw":1,]),	
+(["name":"æ•å¤´",	"id":"bu tou",	"mw":-1,	]),
+(["name":"å¿«æ•",	"id":"kuai bu",	"mw":-1,	]),
+(["name":"é“æ•",	"id":"tie bu",	"mw":-1,	]),
+(["name":"è¡™å½¹",	"id":"ya yi",	"mw":-1,	]),
+(["name":"å…¬å…¬",	"id":"gong gong",	"mw":-1,	]),
+(["name":"è·‘å ‚",	"id":"pao tang",	"mw":-1,	]),
+(["name":"è„šå¤«",	"id":"jiao fu",	"mw":-1,	]),
+(["name":"è£ç¼",	"id":"cai feng",	"mw":-1,	]),
+(["name":"è¯å¸ˆ",	"id":"yao shi",	"mw":-1,	]),
+(["name":"å®˜å·®",	"id":"guan cha",	"mw":-1,	]),
+(["name":"æ­¦å°†",	"id":"wu jiang",	"mw":-1,	]),
+(["name":"å±±è´¼å¤´",	"id":"shan zeitou",	"mw":-1,	]),
+(["name":"å®¢åº—ä¼™è®¡",	"id":"huo ji",	"mw":-1,	"weapon":"gangdao",	]),
+(["name":"ä»•å«",	"id":"shi wei",	"mw":-1,	"weapon":"changqiang",	]),
+(["name":"é“åŒ ",	"id":"tie jiang",	"mw":-1,	"weapon":"gangdao",	]),
+(["name":"æµæ°“å¤´",	"id":"liumang tou",	"mw":-1,	"weapon":"gangjian",	]),
+(["name":"è´µå…¬å­",	"id":"gui gongzi",		"mw":-1,	"weapon":"gangjian",	]),
+(["name":"è¡Œè€…",	"id":"xing ze",	"mw":-1,	"weapon":"gangdao",]),
+(["name":"åœŸåŒªå¤´",	"id":"tufei tou",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"æˆå­",		"id":"xi zi",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"å°å¤·å•†è´©",	"id":"shang fan",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ±Ÿæ¹–è‰ºäºº",	"id":"yi ren",	"mw":-1,	"weapon":"gangjian",]),
+(["name":"ç ç«¹äºº",	"id":"kanzu ren",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"çŒäºº",		"id":"lie ren",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"å°å¤·çŒäºº",	"id":"old lieren",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"ç‰§ç¾Šäºº",	"id":"muyang ren",	"mw":-1,	"weapon":"gangjian",]),
+(["name":"å†œå¤«",	"id":"nong fu",	"mw":-1,	"weapon":"gangjian",]),
+(["name":"çš®è´§å•†",	"id":"pihuo sang",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"çŸ³åŒ ",		"id":"shi jiang",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"é“äºº",	"id":"dao ren",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æ¸¸å®¢",	"id":"you ke",	"mw":-1,	"weapon":"gangjian",]),
+(["name":"ä¹¦ç«¥",	"id":"shu tong",	"mw":1,	"weapon":"gangjian",]),
+(["name":"ç»¿è¥ä¼šä¼—",	"id":"guan bing",	"mw":-1,	"weapon":"changbian",	]),
+(["name":"å‘˜å¤–",		"id":"yuan wai",	"mw":-1,	"weapon":"lianzi",]),
+(["name":"æ¯”ä¸˜",	"id":"bi qiu",		"mw":-1,	"weapon":"hammer",	]),
+(["name":"æµæ°“",	"id":"liu mang",	"mw":-1,	"weapon":"gangjian",]),
 });
 
 
@@ -138,7 +138,7 @@ set("max_jing",15000);
 set("per",16+random(20));
 	set_skill("dodge",300);
 	set("shen_type",npc["mw"]);
-if (npc["mw"]=1) set("gender", "Å®ĞÔ");
+if (npc["mw"]=1) set("gender", "å¥³æ€§");
         set("chat_chance", 50);
         set("chat_msg", ({
                 (: do_walk :),
@@ -167,7 +167,7 @@ if (npc["mw"]=1) set("gender", "Å®ĞÔ");
            (: random_move :),
         }) );
         set("inquiry", ([
-   	    "ÉñÊé"  : (: ask_job :),
+   	    "ç¥ä¹¦"  : (: ask_job :),
 	    "task"  : (: ask_job :),
             ]));
 
@@ -205,7 +205,7 @@ int do_walk()
       if (time() - query("check_time") > 3000 && random(100)>98 || !query_heart_beat(this_object()))
         {
        set_name((order[random(13)])+name, ({ "killer", "shashou", "sha shou" }));
-       set("gender", "ÄĞĞÔ");
+       set("gender", "ç”·æ€§");
        set("title", color_title[random(sizeof(color_title))]);
         n = 0;
 	inv = all_inventory(this_object());
@@ -213,10 +213,10 @@ int do_walk()
 	for (i = 0; i < sizeof(inv); i++)
         {
                 if (inv[i]->query("dynamic_quest"))
-command("chat "+inv[i]->query("name")+(order[random(13)])+"ÎÒÒÑ¾­ÄÃµ½ÊÖÁË¡£¡£¡£³·!!  \n"NOR);
+command("chat "+inv[i]->query("name")+(order[random(13)])+"æˆ‘å·²ç»æ‹¿åˆ°æ‰‹äº†ã€‚ã€‚ã€‚æ’¤!!  \n"NOR);
         }
 
-                        message_vision("$NĞ¦ÁËĞ¦Ëµ£º¶«Î÷ÒÑ¾­µ½ÊÖ£¬ÈÎÎñÍê³É£¬³·ÁË£¡\n"NOR, this_object());
+                        message_vision("$Nç¬‘äº†ç¬‘è¯´ï¼šä¸œè¥¿å·²ç»åˆ°æ‰‹ï¼Œä»»åŠ¡å®Œæˆï¼Œæ’¤äº†ï¼\n"NOR, this_object());
                         destruct(this_object());
                         return 0;
         }
@@ -239,8 +239,8 @@ command("chat "+inv[i]->query("name")+(order[random(13)])+"ÎÒÒÑ¾­ÄÃµ½ÊÖÁË¡£¡£¡£³
 int accept_fight(object ob)
 {
 				command("say " + RANK_D->query_self(this_object())
-					+ "ÔõÃ´¿ÉÄÜÊÇ" + RANK_D->query_respect(ob)
-					+ "µÄ¶ÔÊÖ£¿\n");
+					+ "æ€ä¹ˆå¯èƒ½æ˜¯" + RANK_D->query_respect(ob)
+					+ "çš„å¯¹æ‰‹ï¼Ÿ\n");
 		  return 0;
 }
 
@@ -256,10 +256,10 @@ int kill_ob(object ob)
         name = color_title[random(sizeof(color_title))]+first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))]; 
 		  command("fear");
-		  command("say ²»ºÃ£¬ÎÒ±»Ê¶ÆÆÁË!!");
+		  command("say ä¸å¥½ï¼Œæˆ‘è¢«è¯†ç ´äº†!!");
 if (random(3)==1)
 {
-command("say ÌÓ°¡!!");
+command("say é€ƒå•Š!!");
 if (random(2)==1)
 {
 command("go south");
@@ -309,7 +309,7 @@ command("go west");
 }
 else if ((ob->query("combat_exp") > 2500000 && random(3)==1) || random(66)==0)
 {
-command("say ÀÏ×ÓºÍÄãÆ´ÁË!!");
+command("say è€å­å’Œä½ æ‹¼äº†!!");
 set("qi",20000);
 set("jing",20000);
 set("eff_qi",20000);
@@ -317,7 +317,7 @@ set("eff_jing",20000);
 set("max_qi",20000);
 set("max_jing",25000);
   set_name((order[random(13)])+name+NOR, ({ "killer", "shashou", "sha shou" }));
-       set("gender", "ÄĞĞÔ");
+       set("gender", "ç”·æ€§");
 
 	set("neili", 28000);
 	set("max_neili", 28000);
@@ -353,7 +353,7 @@ set("max_jing",25000);
 else if (ob->query("combat_exp") > 5000000 && random(3)==1
 )
 {
-command("say È¥ËÀ°É!!");
+command("say å»æ­»å§!!");
 set("qi",38000);
 set("jing",38000);
 set("eff_qi",30000);
@@ -361,7 +361,7 @@ set("eff_jing",30000);
 set("max_qi",30000);
 set("max_jing",30000);
   set_name((order[random(13)])+name+NOR, ({ "killer", "shashou", "sha shou" }));
-       set("gender", "ÄĞĞÔ");
+       set("gender", "ç”·æ€§");
 
 	set("neili", 38000);
 	set("max_neili", 38000);
@@ -470,10 +470,10 @@ string ask_job()
 	  guo =this_object();
 	  ob=this_player();
  if (!environment(guo)->query("no_fight"))
-return  "ÄãÏë×öÊ²Ã´ÄØ?";
+return  "ä½ æƒ³åšä»€ä¹ˆå‘¢?";
  if (environment(guo)->query("no_fight"))
 {
-command("say ÌÓ°¡!!");
+command("say é€ƒå•Š!!");
 if (random(2)==1)
 {
 random_move();
@@ -496,7 +496,7 @@ random_move();
 
 }
 }
-return  "ÕâÀïÈË¶à£¬²»°²È«£¬¿ì×ß!";
+return  "è¿™é‡Œäººå¤šï¼Œä¸å®‰å…¨ï¼Œå¿«èµ°!";
 }
 
 int hit_ob(object me, object ob, int damage)
@@ -520,7 +520,7 @@ string msg;
 if (random(6)==0)
 ob->apply_condition("sanxiao_poison", 2);
 }
-           msg = HIR"$N"HIR"¼éĞ¦Ò»Éù,Èö³öÁËÒ»´ó°ü¶¾Ò©,"HIR"$n"HIR"±»ÃÔµÄÁ½ÑÛÕö²»¿ªÁË!!\n"NOR;
+           msg = HIR"$N"HIR"å¥¸ç¬‘ä¸€å£°,æ’’å‡ºäº†ä¸€å¤§åŒ…æ¯’è¯,"HIR"$n"HIR"è¢«è¿·çš„ä¸¤çœ¼çä¸å¼€äº†!!\n"NOR;
             message_vision(msg, me, ob);
 
 }
