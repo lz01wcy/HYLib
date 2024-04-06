@@ -16,9 +16,9 @@ int diary_write(object ob,string sth)
     dir="/data/diary/"+sprintf("%-1.1s",idu);
      path="/data/diary/"+sprintf("%-1.1s",idu)+"/"+idu;
     if(file_size(path)<=0) back=mkdir(dir); 
-    write(HIG"Äã½ñÌìµÄÊÂ¼£,ÓÀ¾ÃµØ¼ÇÈëÁË»ØÒäÂ¼.\n"NOR);
+    write(HIG"ä½ ä»Šå¤©çš„äº‹è¿¹,æ°¸ä¹…åœ°è®°å…¥äº†å›žå¿†å½•.\n"NOR);
 
-     back= write_file(path,HIY" "+ time+"   "HIR +nameu+"ÔÚ"+place+sth+NOR"\n",0);
+     back= write_file(path,HIY" "+ time+"   "HIR +nameu+"åœ¨"+place+sth+NOR"\n",0);
 return back;
 }
 
@@ -28,7 +28,7 @@ string g_place(object ob)
 {
  object  where;
 
-if(!where=environment(ob)) return "Ä³´¦";
+if(!where=environment(ob)) return "æŸå¤„";
  where=environment(ob);
 return where->query("short");
 }  

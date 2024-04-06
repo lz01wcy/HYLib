@@ -73,8 +73,8 @@
 #define U ESC+"[4m"             /* Initialize underscore mode */
 #define REV ESC+"[7m"           /* Turns reverse video mode on */
 #define HIREV ESC+"[1,7m"       /* Hi intensity reverse video  */
-#define SETDISPLAY(x,y)  (ESC+"["+x+";"+y+"f")        /*Éè¶¨¹â±êÎ»ÖÃ*/
-#define DELLINE	ESC+"[K"               /*É¾³ı¹â±êËùÔÚµÄĞĞ*/
+#define SETDISPLAY(x,y)  (ESC+"["+x+";"+y+"f")        /*è®¾å®šå…‰æ ‡ä½ç½®*/
+#define DELLINE	ESC+"[K"               /*åˆ é™¤å…‰æ ‡æ‰€åœ¨çš„è¡Œ*/
 #define SAVEC ESC+"[s"           /* Save cursor position */
 #define REST ESC+"[u"            /* Restore cursor to saved position */
  

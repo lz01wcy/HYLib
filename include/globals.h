@@ -51,11 +51,11 @@
 #define SKILL_D(x)	("/kungfu/skill/" + x)
 #define CONDITION_D(x)	("/kungfu/condition/" + x)
 
-// ¸ßÊÖÅÅĞĞ°å
+// é«˜æ‰‹æ’è¡Œæ¿
 #define RICHMAN_D       "/adm/daemons/tenrichmand"
 #define GAOSHOU_D       "/adm/daemons/tengaoshoud"
 
-//×ÔÔìÎä¹¦
+//è‡ªé€ æ­¦åŠŸ
 #define SKILL_MODEL_UNARMED    "/maxim/skill_model_unarmed.c"
 #define SKILL_MODEL_WEAPON     "/maxim/skill_model_weapon.c"
 #define SKILL_MODEL_DEFAULT    "/maxim/skill_model_default.c"

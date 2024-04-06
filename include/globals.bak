@@ -39,7 +39,7 @@
 #define SKILL_D(x)	("/kungfu/skill/" + x)
 #define CONDITION_D(x)	("/kungfu/condition/" + x)
 
-// ¸ßÊÖÅÅĞĞ°å
+// é«˜æ‰‹æ’è¡Œæ¿
 #define RICHMAN_D       "/adm/daemons/tenrichmand"
 #define GAOSHOU_D       "/adm/daemons/tengaoshoud"
 
