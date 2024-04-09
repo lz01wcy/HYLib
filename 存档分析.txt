@@ -1,0 +1,2 @@
+以/data/login和/data/user为例
+都是以.o的类似于map的形式的文本文件进行存档
